@@ -1,0 +1,20 @@
+{
+	"name": "@offirmo-private/monorepo-scripts",
+	"version": "2.0.0",
+	"private": true,
+
+	"type": "module",
+	"sideEffects": false,
+
+	"bin": {
+		"monorepo-script--clean-package": "./clean.mjs",
+		"monorepo-script--build-typescript-package": "./build-typescript.mjs"
+	},
+
+	"dependencies": {
+		"chalk": "^5",
+		"meow": "^10",
+		"tiny-invariant": "^1"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/0-meta/build-tools/scripts"
+}

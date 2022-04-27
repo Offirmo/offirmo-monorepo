@@ -1,0 +1,7 @@
+
+:root {
+	/* https://evilmartians.com/chronicles/scroll-to-the-future-modern-javascript-css-scrolling-implementations */
+	scroll-behavior: smooth;
+
+	line-height: 1.5;
+}

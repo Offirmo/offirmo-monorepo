@@ -1,0 +1,27 @@
+@import '../../../../../node_modules/@offirmo-private/ui--browser--css/src/style.css';
+
+.tab-controls h1,
+.tab-controls h2,
+.tab-controls h3 {
+	color: var(--o⋄color⁚fg--main) !important; /* TODO use Ak theming */
+}
+
+.tab-debug-info {
+}
+
+
+.left-right-aligned
+{
+	display: table;
+	width: 100%;
+}
+.left-right-aligned > div:first-child
+{
+	display: table-cell;
+	text-align: left;
+}
+.left-right-aligned > div:last-child
+{
+	display: table-cell;
+	text-align: right;
+}

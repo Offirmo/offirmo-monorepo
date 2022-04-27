@@ -1,0 +1,67 @@
+{
+	"name": "offirmo-monorepo",
+	"description": "A monorepo for all my JavaScript / TypeScript personal projects. So convenient!",
+	"repository": "https://github.com/Offirmo/offirmo-monorepo",
+	"version": "2.4.0",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"COMMENTS": {
+		"01": "dependencies: Netlify build only installs PROD dependencies, so make sure modules critical for scripts are included!"
+	},
+
+	"heroku-run-build-script": false,
+
+	"engines": {
+		"node": "16.x"
+	},
+
+	"scripts": {
+		"heroku-prebuild": "echo This runs before Heroku nodjs buildback installs dependencies. Ensuring monorepo setup... && pwd && test -f Procfile",
+		"heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies. && pwd && ls -l",
+
+		"manypkg--check": "manypkg check",
+		"manypkg--fix": "manypkg fix",
+
+		"clean--all": "manypkg exec yarn clean",
+		"clean--root": "rm -rf node_modules .npm npm-debug.log package-lock.json yarn.lock yarn-error.log .yalc .awcache .parcel .parcel-cache bower_components typings",
+		"clean": "run-s  clean--all clean--root",
+
+		"build--all": "manypkg exec yarn build"
+	},
+	"workspaces": [
+		"0-meta/build-tools/*",
+		"0-meta/toolboxes/*",
+		"1-stdlib/*",
+		"x2-foundation/*",
+		"x3-advanced--browser/*",
+		"x3-advanced--isomorphic/*",
+		"x3-advanced--multi/*",
+		"x3-advanced--node/*",
+		"x4-tools/*",
+		"x5-incubator/active/*",
+		"x9-oh-my-rpg/*",
+		"xA-apps--core/immortal-clicker/*",
+		"xA-apps--core/the-boring-rpg/*",
+		"xA-apps--core/isekai-capitalist/*",
+		"xB-apps--support/online-adventur.es/*",
+		"xC-apps--clients/immortal-clicker/*",
+		"xC-apps--clients/the-boring-rpg/*",
+		"xD-minisites/*"
+	],
+	"dependencies": {
+		"chalk": "^5",
+		"fs-extra": "^10",
+		"meow": "^10",
+		"tiny-invariant": "^1"
+	},
+	"devDependencies": {
+		"@manypkg/cli": "^0.19",
+		"cpx": "^1",
+		"npm-run-all": "^4",
+		"typescript": "^4",
+		"zx": "^6"
+	},
+	"resolutions": {}
+}

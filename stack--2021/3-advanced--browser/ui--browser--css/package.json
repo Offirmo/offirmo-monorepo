@@ -1,0 +1,34 @@
+{
+	"name": "@offirmo-private/ui--browser--css",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Small reusable CSS classes",
+	"license": "Unlicense",
+	"scripts": {
+		"clean": "node ../../0-scripts/clean.js …dist …cache",
+
+		"start:parcel": "parcel --out-dir .parcel --no-autoinstall doc/demo/*.html",
+
+		"build:copy": "mkdir -p dist && cpx 'src/**/*.woff2' dist --verbose",
+		"build:cleancss:main": "mkdir -p dist && cleancss --output dist/offirmo-reset+utils.css src/style.css",
+		"build-storybook": "build-storybook",
+
+		"storybook": "start-storybook -p 7306",
+		"demo": "run-s clean start:parcel",
+		"build": "npm-run-all --parallel build:copy build:cleancss:main"
+	},
+	"dependencies": {
+	},
+	"devDependencies": {
+		"@fontsource/roboto": "^4",
+		"@fontsource/roboto-condensed": "^4",
+		"@fontsource/roboto-mono": "^4",
+		"@offirmo-private/storybook--utils": "^0",
+		"@storybook/react": "^6",
+		"clean-css-cli": "^5",
+		"cpx": "^1",
+		"normalize.css": "^8",
+		"npm-run-all": "^4"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/3-advanced--browser/ui--browser--css"
+}

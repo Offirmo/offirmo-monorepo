@@ -1,0 +1,17 @@
+{
+	"name": "@offirmo-private/ensure-device-uuid-browser",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+	"version": "0.0.1",
+
+	"esnext": "index.js",
+	"module": "index.js",
+	"source": "index.js",
+	"sideEffects": false,
+
+	"dependencies": {
+		"@offirmo-private/uuid": "^0"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/2-foundation/ensure-device-uuid-browser"
+}

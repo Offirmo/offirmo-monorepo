@@ -1,0 +1,19 @@
+{
+	"name": "@offirmo-private/poll-window-variable",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"esnext": "index.js",
+	"module": "index.js",
+	"source": "index.js",
+	"sideEffects": false,
+
+	"dependencies": {
+		"@offirmo-private/poll": "^0"
+	},
+
+	"scripts": {},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/3-advanced--browser/poll-window-variable"
+}

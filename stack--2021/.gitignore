@@ -1,0 +1,48 @@
+## https://www.atlassian.com/git/tutorials/saving-changes/gitignore#git-ignore-patterns
+
+
+## Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+## Dependency directories
+node_modules
+!C-apps--clients/the-boring-rpg/client--browser/dist/__/node_modules
+
+## regenerable
+## standard dist
+**/dist/src.es2019/
+**/dist/src.es2019.cjs/
+**/dist/src.es2021/
+**/dist/src.es2021.cjs/
+## pre-build heroku for convenience
+!B-apps--support/online-adventur.es/heroku/dist/src.es2019.cjs/
+## non-standard dist
+4-tools/universal-debug-api-companion-webextension/dist/
+#B-apps--support/online-adventur.es/functions/functions -> NO, to make them available in staging!
+
+## misc
+#...
+
+
+## tools folders
+.netlify
+
+
+## Temp files
+## LibreOffice
+.~lock.*
+## caches
+.cache
+## parcel 1
+.parcel
+## parcel 2
+.parcel-cache
+
+
+## may be auto-generated (shouldn't), but not used
+package-lock.json

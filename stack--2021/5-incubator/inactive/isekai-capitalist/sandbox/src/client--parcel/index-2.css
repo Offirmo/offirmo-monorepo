@@ -1,0 +1,22 @@
+
+html, body {
+/*	overflow: hidden; /* for case when tooltip overflow up/down */
+}
+
+body {
+	width: -webkit-fill-available;
+	width: -moz-available;
+	width: fill-available;
+
+	--o⋄font-size--default: 15px;
+	padding-top: 0;
+	padding-bottom: 10px;
+}
+
+.float-container {
+	z-index: 111;
+}
+
+.o⋄rich-text {
+	display: contents;
+}

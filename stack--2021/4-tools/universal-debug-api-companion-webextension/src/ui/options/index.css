@@ -1,0 +1,10 @@
+@import '../../../node_modules/@offirmo-private/ui--browser--css/src/style.css';
+
+:root {
+	--o⋄font-size--default: 14px;
+}
+
+body {
+	max-width: unset;
+}
+

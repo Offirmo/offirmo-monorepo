@@ -1,0 +1,57 @@
+{
+	"name": "@isekai-capitalist/sandbox",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Sandbox to try things",
+	"license": "Unlicense",
+
+	"dependencies": {
+		"@babel/core": "^7",
+		"@offirmo-private/async-utils": "^0",
+		"@offirmo-private/marketing-rsrc": "^0",
+		"@offirmo-private/normalize-string": "^0",
+		"@offirmo-private/react-error-boundary": "^0",
+		"@offirmo-private/rich-text-format": "^0",
+		"@offirmo-private/rich-text-format-to-react": "^0",
+		"@offirmo-private/soft-execution-context": "^0",
+		"@offirmo-private/soft-execution-context-browser": "^0",
+		"@offirmo-private/state-utils": "^0",
+		"@offirmo-private/timestamps": "^0",
+		"@offirmo-private/ts-utils": "^0",
+		"@offirmo-private/ui--browser--css": "^0",
+		"@offirmo/universal-debug-api-browser": "^1",
+		"@offirmo/universal-debug-api-placeholder": "^1",
+		"@oh-my-rpg/assets--cursors": "^0",
+		"@oh-my-rpg/ui--browser--css": "^0",
+		"classnames": "^2",
+		"dequal": "^2",
+		"emittery": "^0.8",
+		"fraction.js": "^4",
+		"react": "^17",
+		"react-dom": "^17",
+		"tiny-invariant": "^1",
+		"tslib": "^2",
+		"typescript-string-enums": "^1"
+	},
+
+	"scripts": {
+		"clean": "node ../../../0-scripts/clean.js …dist …cache",
+
+		"build:dev:watch": "node ../../../0-scripts/build-typescript.js --watch",
+
+		"typecheck": "run-s clean build:dev:watch",
+		"storybook": "start-storybook -p 9110",
+
+		"parcel--build": "parcel build --no-minify src/client--parcel/*.html --public-url ./",
+		"parcel--start": "PARCEL_AUTOINSTALL=false parcel src/client--parcel/index.html --out-dir .parcel --no-autoinstall --port 8080",
+		"parcel--dev": "npm-run-all --parallel parcel--start",
+		"build": "npm-run-all clean parcel--build"
+	},
+	"devDependencies": {
+		"@offirmo-private/storybook--utils": "^0",
+		"@offirmo-private/ts-types": "^0",
+		"@storybook/react": "^6",
+		"npm-run-all": "^4"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/A-apps--core/isekai-capitalist/sandbox"
+}

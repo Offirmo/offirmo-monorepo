@@ -1,0 +1,32 @@
+{
+	"name": "@offirmo-private/view-chat",
+	"description": "chat-like generic interface",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"esnext": "src/index.js",
+	"module": "src/index.js",
+	"source": "src/index.js",
+	"sideEffects": false,
+
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"caught": "^0.1",
+		"is-promise": "^4",
+		"p-progress": "^0.5"
+	},
+
+	"devDependencies": {
+		"npm-run-all": "^4",
+		"tslib": "^2"
+	},
+	"scripts": {
+		"cheatsheet": "node doc/cheatsheet.js",
+		"demo": "node doc/demo.js"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/3-advanced--multi/view-chat"
+}

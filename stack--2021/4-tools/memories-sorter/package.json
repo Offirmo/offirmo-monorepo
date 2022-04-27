@@ -1,0 +1,59 @@
+{
+	"name": "@offirmo-private/memories-sorter",
+	"version": "0.0.1",
+	"description": "An automated photo/media sorter",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"dependencies": {
+		"@offirmo-private/normalize-string": "^0",
+		"@offirmo-private/prettify-any": "^0",
+		"@offirmo-private/soft-execution-context": "^0",
+		"@offirmo-private/state-utils": "^0",
+		"@offirmo-private/timestamps": "^0",
+		"@offirmo/cli-toolbox": "^2",
+		"@offirmo/error-utils": "^0",
+		"@offirmo/practical-logger-core": "^3",
+		"@offirmo/universal-debug-api-node": "^0",
+		"async": "^3",
+		"cli-progress": "^3",
+		"exiftool-vendored": "^16",
+		"fs-extra": "^10",
+		"hasha": "^5",
+		"json-stable-stringify": "^1",
+		"lodash": "^4",
+		"luxon": "^2",
+		"memoize-one": "^6",
+		"micro-memoize": "^4",
+		"tslib": "^2",
+		"typescript-string-enums": "^1",
+		"utimes": "^4"
+	},
+
+	"scripts": {
+		"clean": "node ../../0-scripts/clean.js …dist",
+
+		"build:dev:watch": "node ../../0-scripts/build-typescript.js --watch",
+		"build:prod": "node ../../0-scripts/build-typescript.js",
+
+		"dev": "run-s clean build:dev:watch",
+		"xtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.js 'dist/src.es2019.cjs/**/*spec.js'",
+
+		"test0": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.js 'dist/src.es2019.cjs/services/*spec.js'",
+		"test1": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.js 'dist/src.es2019.cjs/state/file/*spec.js'",
+		"test2": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.js 'dist/src.es2019.cjs/state/folder/*spec.js'",
+		"test3": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.js 'dist/src.es2019.cjs/state/db/*spec.js'",
+		"test4": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.js 'dist/src.es2019.cjs/state/notes/*spec.js'",
+
+		"build": "run-s build:prod",
+
+		"start": "node dist/src.es2019.cjs/index.js"
+	},
+	"devDependencies": {
+		"@offirmo-private/ts-types": "^0",
+		"@offirmo/unit-test-toolbox": "^8",
+		"npm-run-all": "^4"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/4-tools/memories-sorter"
+}

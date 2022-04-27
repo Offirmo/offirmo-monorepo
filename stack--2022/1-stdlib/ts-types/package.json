@@ -1,0 +1,38 @@
+{
+	"name": "@offirmo-private/ts-types",
+	"description": "TypeScript base types definitions",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"type": "module",
+	"esnext": "dist/src.es2021/index.js",
+	"module": "dist/src.es2021/index.js",
+	"main": "dist/src.es2021.cjs/index.js",
+	"typings": "dist/src.es2021.cjs/index.d.ts",
+	"source": "src/index.ts",
+	"sideEffects": false,
+
+	"peerDependencies": {
+	},
+	"dependencies": {
+	},
+
+	"devDependencies": {
+		"npm-run-all": "^4"
+	},
+	"scripts": {
+		"clean": "monorepo-script--clean-package …dist",
+
+		"build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"build:prod": "monorepo-script--build-typescript-package",
+
+		"dev": "run-s clean build:dev:watch",
+		"build": "run-s clean build:prod",
+
+		"cheatsheet": "node doc/cheatsheet.js"
+	},
+
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/1-stdlib/ts-types"
+}

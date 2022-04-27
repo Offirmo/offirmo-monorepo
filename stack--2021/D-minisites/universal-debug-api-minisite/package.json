@@ -1,0 +1,33 @@
+{
+	"name": "@offirmo/universal-debug-api-minisite",
+	"description": "website showcasing Offirmo's universal debug API",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+
+	"dependencies": {
+		"@babel/core": "^7",
+		"@offirmo-private/ui--browser--css": "^0",
+		"@offirmo/practical-logger-core": "^3",
+		"@offirmo/universal-debug-api-browser": "^1",
+		"@offirmo/universal-debug-api-placeholder": "^1",
+		"tslib": "^2"
+	},
+
+	"scripts": {
+		"clean": "node ../../0-scripts/clean.js …dist …cache",
+
+		"start:parcel": "PARCEL_AUTOINSTALL=false parcel src/index.html --out-dir .parcel --no-autoinstall",
+
+		"build:parcel": "parcel build --no-minify src/index.html --public-url ./",
+
+		"dev": "run-s start:parcel",
+		"build": "run-s build:parcel"
+	},
+	"devDependencies": {
+		"np": "^7",
+		"npm-run-all": "^4",
+		"parcel-bundler": "^1"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/D-minisites/universal-debug-api-minisite"
+}

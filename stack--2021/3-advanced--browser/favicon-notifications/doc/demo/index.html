@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="o⋄top-container">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/png" href="./favicon_16x16.png">
+
+		<title>Favicon notifications Demo</title>
+
+		<link href="../../../ui--browser--css/src/style.css" rel="stylesheet">
+
+		<style type="text/css">
+			/* super early styles while the page is loading */
+			iframe {
+				width: 100%;
+				height: 300px;
+				border: solid 1px;
+			}
+		</style>
+
+		<script>
+			// ...
+		</script>
+	</head>
+
+	<body>
+		<h1>Demo of favicon notifications</h1>
+		<button onclick="x()">cycling demo start/stop</button>
+		<button onclick="set_number_in_favicon(4)">to 4</button>
+		<button onclick="set_number_in_favicon(.4)">to .4</button>
+		<pre>
+			set_number_in_favicon(4)
+			set_number_in_favicon(.4)
+		</pre>
+		iframe
+		<iframe>
+			<p>An iframe should be here</p>
+		</iframe>
+		<script src="./index.js"></script>
+	</body>
+</html>

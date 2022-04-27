@@ -1,0 +1,26 @@
+{
+	"name": "@offirmo-private/ui--browser--css",
+	"description": "Small reusable CSS classes",
+	"version": "0.0.1",
+	"license": "Unlicense",
+	"private": true,
+
+	"source": "src/index.css",
+
+	"dependencies": {
+		"@offirmo-private/css--sane-defaults": "^0"
+	},
+
+	"scripts": {
+		"clean": "monorepo-script--clean-package …dist …cache",
+
+		"storybook": "start-storybook -p 7306"
+	},
+
+	"devDependencies": {
+		"@offirmo-private/toolbox--storybook": "^0",
+		"cpx": "^1",
+		"npm-run-all": "^4"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/3-advanced--browser/css--framework"
+}

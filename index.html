@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<!-- html5_006 : WTE micro template -->
+
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Offirmo's monorepo</title>
+	<meta name="monetization" content="$ilp.uphold.com/26PeD6EzMhYJ">
+
+	<link rel="stylesheet" type="text/css"
+			href="https://cdn.jsdelivr.net/gh/Offirmo/offirmo-monorepo@master/3-advanced--browser/ui--browser--css/dist/offirmo-reset%2Butils.css"/>
+
+	<style type="text/css">
+	</style>
+</head>
+
+<h1>…</h1>
+
+<p>
+	This is my <a href="https://github.com/Offirmo/ama">personal</a> monorepo for all my JS/TS projects. <a href="https://github.com/Offirmo/offirmo-monorepo">Hosted on GitHub</a>.
+</p>
+<p>
+	<b>Note: ensure you access this page through <a href="https://offirmo-monorepo.netlify.app/">https://offirmo-monorepo.netlify.app/</a></b>
+</p>
+
+<ul>
+	<li>
+		Apps:
+		<ul>
+			<li><a href="./C-apps--clients/the-boring-rpg/client--browser/dist">The boring RPG, reborn!</a></li>
+		</ul>
+	</li>
+	<li>
+		Tools:
+		<ul>
+			<li><a href="https://universal-debug-api-js.netlify.app/">Universal Web Dev Tool</a></li>
+		</ul>
+	</li>
+	<li>
+		npm modules
+		<ul>
+			<li><a href="./0-doc/modules-directory/index.html">Public npm modules directory</a>
+		</ul>
+	</li>
+</ul>
+
+<aside>
+	<details>
+		<summary>Dev…</summary>
+		<ul>
+			<li>
+				<!-- Add a menu:
+				Log in / Sign up - when the user is not logged in
+				Username / Log out - when the user is logged in
+				-->
+				<div data-netlify-identity-menu></div>
+			<li>
+				<!-- Add a simpler button:
+				Simple button that will open the modal.
+				-->
+				<div data-netlify-identity-button></div>
+
+			<li>
+				<button onclick="netlifyIdentity.open()">auth interface…</button>
+			<li>
+				<button onclick="query('.netlify/functions/echo?foo=bar&baz=42')">echo (incl. env)</button>
+			<li>
+				<button onclick="query('.netlify/functions/whoami')">whoami</button>
+			<li>
+				<button onclick="query('.netlify/functions/temp')">temp</button>
+			<li>
+				<button onclick="query('.netlify/functions/report-error?message=test-error-report!')">report-error</button>
+			<li><a>/.netlify/functions/hello-world</a>
+			<li><a>/.netlify/functions/hello-world-advanced</a>
+			<li><a>/.netlify/functions/echo?foo=bar&baz=42</a>
+			<li><a>/.netlify/functions/test-error-handling</a>
+			<li><a>/.netlify/functions/404</a>
+			<li><a>/.netlify/functions/whoami</a> (won't work without the headers, see JS)
+		</ul>
+	</details>
+</aside>
+
+<script>
+	document.querySelector('h1').textContent = document.title
+	Array.prototype.forEach.call(document.querySelectorAll('a'), function (el) {
+		el.href || (el.href = el.text)
+	})
+</script>
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+	// Bind to events
+	netlifyIdentity.on('init',   user => console.log('Netlify init:', user))
+	netlifyIdentity.on('login',  user => console.log('Netlify login:', user))
+	netlifyIdentity.on('logout', ()   => console.log('Netlify logged out'))
+	netlifyIdentity.on('error',  err  => console.error('Netlify error', err))
+	netlifyIdentity.on('open',   ()   => console.log('Netlify widget opened'))
+	netlifyIdentity.on('close',  ()   => console.log('Netlify widget closed'))
+
+	netlifyIdentity.on('login', () => {
+		const user = netlifyIdentity.currentUser()
+
+		if (!user) {
+			console.log('Netlify login: no user??')
+		}
+		else {
+			// refresh token, https://github.com/netlify/netlify-identity-widget/issues/108
+			console.log('Netlify: refreshing token…')
+			user.jwt()
+				.then(() => {
+					console.info('Netlify: user refreshed', user)
+				})
+		}
+	})
+
+   // Open the modal
+	//netlifyIdentity.open();
+
+	// Get the current user:
+	//const user = netlifyIdentity.currentUser();
+
+	// Close the modal
+	//netlifyIdentity.close();
+
+	// Log out the user
+	//netlifyIdentity.logout();
+
+	window.query = (url, method = 'GET', body = undefined) => {
+		const user = netlifyIdentity.currentUser()
+		if (!user)
+			console.warn('Querying: Not logged in…')
+
+		let ok = false // so far
+		let errorMessage = 'Failed fetch' // so far
+		let err = null // so far
+		const headers = {
+			'Content-Type': 'application/json',
+			'X-Foo': 'Bar',
+			 ...(user && { 'Authorization': `Bearer ${user.token.access_token}`, }),
+		}
+		console.log('fetching…', {url, headers, method, body})
+
+		fetch(url, { headers, method, body: JSON.stringify(body) })
+			.then(response => {
+				// REM: we can't destructure response because .json() needs a binding to response
+
+				console.log('fetched response:', { ok: response.ok, status: response.statusCode })
+
+				if (!response.ok)
+					errorMessage += `, status="${response.status}"`
+
+				return response.text() // not JSON yet, we are not sure, will check ourselves
+			})
+			.then(responseData => {
+				try {
+					return JSON.parse(responseData)
+				}
+				catch {
+					return responseData
+				}
+			})
+			.then(responseData => {
+				console.log('fetched response body:', {url, responseData})
+
+				if (responseData && responseData.error) {
+					ok = false // just in case
+					errorMessage += `, error="${responseData.error.message}"`
+				}
+				else {
+					ok = true
+				}
+			})
+			.catch(e => {
+				err = e // store it
+				ok = false // just in case
+				throw err
+			})
+			.finally(() => {
+				if (!ok)
+					throw err || new Error(errorMessage)
+			})
+			.catch(err => {
+				console.error('error fetching:', {url, err})
+				throw err
+			})
+	}
+</script>
+
+<small>20200907b</small>

@@ -1,0 +1,51 @@
+
+.override-line {
+}
+
+.override-enable-toggle {
+	vertical-align: middle;
+}
+
+.override-enable-toggle > div {
+	display: inline-block;
+}
+
+.override-label {
+	font-size: 1em;
+}
+
+.override-input {
+}
+
+.override-input-label {
+	font-size: .9em;
+}
+
+.override-input-Cohort {
+	min-width: 80px;
+}
+.override-input-Cohort .single-select {
+	min-width: 130px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.override-input-boolean > div > label {
+	vertical-align: middle;
+}
+
+.override-input-LogLevel {
+	width: 200px;
+}
+.override-input-LogLevel-label {
+	position: relative;
+	top: -20px;
+}
+
+.override-input-string input {
+	width: 195px;
+	margin: 0 2px 0 1px; /* TODO review */
+}
+.override-input--error {
+	border: solid 2px var(--o⋄color⁚fg--error);
+}

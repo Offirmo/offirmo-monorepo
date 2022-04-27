@@ -1,0 +1,25 @@
+{
+	"name": "@offirmo-private/custom-errors",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"esnext": "dist/src.es9/index.js",
+	"module": "dist/src.es9/index.js",
+	"main": "dist/src.es9.cjs/index.js",
+	"typings": "dist/src.es9.cjs/index.d.ts",
+	"source": "src/index.ts",
+	"sideEffects": false,
+
+	"peerDependencies": {
+	},
+	"dependencies": {
+		"tslib": "^1"
+	},
+
+	"devDependencies": {
+	},
+	"scripts": {
+	}
+}

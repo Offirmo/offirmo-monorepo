@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!-- OT⋄GENERATED-FROM-TEMPLATE html5 micro template v2.1.0 -->
+
+<!-- maximum language hints to prevent Chrome from incorrectly suggesting a translation -->
+<html lang="en" xml:lang="en" class="o⋄top-container">
+<head>
+	<!-- https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML -->
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="en" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- OT⋄CUSTOM BEGIN meta description -->
+	<meta name="description" content="blah blah">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="author" content="John Smith">
+	<!-- OT⋄CUSTOM END meta description -->
+
+	<!-- OT⋄CUSTOM BEGIN open graph -->
+	<!-- TODO https://ogp.me/ -->
+	<!-- OT⋄CUSTOM END open graph -->
+
+	<title>Emergency card</title>
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gridforms@^1/gridforms/gridforms.css" />
+	<style type="text/css">
+		/* OT⋄CUSTOM BEGIN early styles */
+		/* available while the page is loading */
+		/* Note: using https://github.com/furiouscollective/gridforms */
+		:root {
+			--bg: white;
+			--fg: black;
+			--font: -apple-system, BlinkMacSystemFont, "lucida grande", roboto, noto, ubuntu, sans-serif;
+
+			--cc-long-side-length: 85.6mm;
+			--cc-short-side-length: 53.98mm;
+
+			--scale: 1;
+
+			--card--main--visual-position: 3;
+			--card--relatives--visual-position: 2;
+			--card--other-notes--visual-position: 1;
+			--card--other-numbers--visual-position: 4;
+		}
+
+		* {
+			background-color: var(--bg);
+			color: var(--fg);
+			font-family: var(--font);
+			font-size: var(--font-size, revert);
+		}
+
+		/* apply a natural box layout model to all elements, but allowing components to change
+		 * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+		 * https://github.com/mike-engel/a11y-css-reset/pull/12#issuecomment-516582884
+		 */
+		html                 { box-sizing: border-box; }
+		*, *::before, *::after { box-sizing: inherit; }
+
+		body {
+		}
+
+		@media print {
+			pre {
+				display: none;
+			}
+			main {
+				/* for convenience while developing, allow to match the screen size with the physical size with a single change */
+				--scale: 1;
+			}
+			.grid-form [data-row-span] {
+				height: unset !important;
+			}
+		}
+
+		main {
+			--font-size: xx-small;
+			margin: 0 auto 0;
+
+			transform: scale(var(--scale));
+			transform-origin: 0 0;
+
+			width: var(--cc-long-side-length);
+			text-transform: uppercase;
+		}
+		form {
+			display: grid;
+			grid-template-rows: var(--cc-short-side-length) var(--cc-short-side-length) var(--cc-short-side-length) var(--cc-short-side-length);
+			grid-template-columns: calc(1 / 11 * var(--cc-long-side-length)) calc(9 / 11 * var(--cc-long-side-length)) calc(1 / 11 * var(--cc-long-side-length));
+		}
+		form > * {
+			overflow: hidden;
+		}
+
+		.grid-form * {
+			letter-spacing: unset !important;
+			padding-bottom: 0 !important;
+			margin-bottom: 0 !important;
+		}
+		.grid-form legend,
+		.header-like {
+			--bg: red;
+			--fg: white;
+			color: var(--fg) !important;
+			border-bottom: 0 !important;
+			font-size: small !important;
+			margin: 0;
+		}
+		.grid-form [data-row-span] [data-field-span] {
+			padding: 0;
+		}
+		.grid-form label {
+			margin-left: .2em;
+		}
+		.grid-form fieldset {
+			border-bottom: 1px solid red;
+		}
+
+		#main {
+			border-left: solid 1px red;
+			grid-column-start: 1;
+			grid-column-end: 3;
+			grid-row-start: var(--card--main--visual-position);
+		}
+		#main input,
+		#main textarea {
+			/* fine adjustment for vertical fit */
+			font-size: 1.2em;
+		}
+		#main textarea:last-child {
+			/* fine adjustment for filling more */
+			font-size: 2.8em;
+		}
+		#main ~ aside {
+			writing-mode: vertical-rl;
+			grid-column-start: 3;
+			grid-row-start: var(--card--main--visual-position);
+		}
+
+		#relatives {
+			border-right: solid 1px red;
+			grid-column-start: 1;
+			grid-column-end: 3;
+			grid-row-start: var(--card--relatives--visual-position);
+
+			transform: rotate(180deg);
+			transform-origin: center;
+		}
+		#relatives [data-row-span]:nth-child(odd) {
+			border-bottom-width: 2px;
+		}
+		#relatives input,
+		#relatives textarea {
+			/* fine adjustment for vertical fit */
+			font-size: 1.5em;
+		}
+		#relatives ~ aside {
+			writing-mode: vertical-rl;
+			grid-column-start: 3;
+			grid-row-start: var(--card--relatives--visual-position);
+		}
+
+		#numbers {
+			border: solid 1px red;
+			border-top-width: 0;
+			grid-column-start: 1;
+			grid-column-end: 4;
+			grid-row-start: var(--card--other-notes--visual-position);
+
+			transform: rotate(180deg);
+			transform-origin: center;
+		}
+		#notes textarea {
+			font-size: x-small;
+		}
+
+		#notes {
+			border: solid 1px red;
+			border-top-width: 0;
+			grid-column-start: 1;
+			grid-column-end: 4;
+			grid-row-start: var(--card--other-numbers--visual-position);
+		}
+		#numbers textarea {
+			font-size: x-small;
+		}
+		/* OT⋄CUSTOM END early styles */
+	</style>
+</head>
+
+<!-- OT⋄CUSTOM BEGIN body -->
+<body>
+		<h1></h1>
+		<ul>
+			<li>Usage: Print at original size (100%), cut and fold to a credit card size. Put in your wallet or in your phone case
+			<li>Author: Offirmo <a>https://github.com/Offirmo</a>
+			<li>License: Unlicense
+			<li>Credits to: <a>https://github.com/furiouscollective/gridforms</a>
+		</ul>
+		<pre>document.documentElement.style.setProperty('--scale', 1.34) // whatever makes your resolution have the right size</pre>
+
+	<main>
+		<section>
+			<form class="grid-form">
+
+				<fieldset id="main">
+					<legend>⬇ Emergency infos ⬇</legend>
+					<p class="header-like">In emergency, call 🇦🇺 000 🇪🇺 112 🇺🇸 911</p>
+
+					<div data-row-span="1">
+						<div data-field-span="1">
+							<label>
+								<span style="text-transform: lowercase">name</span> SURNAME
+								<input type="text">
+							</label>
+						</div>
+					</div>
+
+					<div data-row-span="12">
+						<div data-field-span="4">
+							<label>
+								Phone
+								<input type="tel">
+							</label>
+						</div>
+
+						<div data-field-span="8">
+							<label>
+								e-mail
+								<input type="email">
+							</label>
+						</div>
+					</div>
+
+					<div data-row-span="12">
+						<div data-field-span="3">
+							<label>
+								Blood type
+								<input type="text">
+							</label>
+						</div>
+
+						<div data-field-span="5">
+							<label>
+								D.O.Birth
+								<input type="text">
+							</label>
+						</div>
+
+						<div data-field-span="4">
+							<label>
+								organ donor
+								<input type="text">
+							</label>
+						</div>
+					</div>
+
+					<div data-row-span="1">
+						<div data-field-span="1">
+							<label>
+								other notes & instructions
+								<textarea></textarea>
+							</label>
+						</div>
+					</div>
+
+				</fieldset>
+
+				<aside class="header-like">⬇ Emergency infos ⬇</aside>
+
+				<fieldset id="relatives">
+					<legend>⬇ Relatives to call ⬇</legend>
+
+					<div data-row-span="12">
+						<div data-field-span="9">
+							<label>
+								<span style="text-transform: lowercase">name</span> SURNAME
+								<input type="text">
+							</label>
+						</div>
+						<div data-field-span="3">
+							<label>
+								relation
+								<input type="text">
+							</label>
+						</div>
+					</div>
+					<div data-row-span="12">
+						<div data-field-span="4">
+							<label>
+								Phone
+								<input type="tel">
+							</label>
+						</div>
+
+						<div data-field-span="8">
+							<label>
+								e-mail
+								<input type="email">
+							</label>
+						</div>
+					</div>
+
+					<div data-row-span="12">
+						<div data-field-span="9">
+							<label>
+								<span style="text-transform: lowercase">name</span> SURNAME
+								<input type="text">
+							</label>
+						</div>
+						<div data-field-span="3">
+							<label>
+								relation
+								<input type="text">
+							</label>
+						</div>
+					</div>
+					<div data-row-span="12">
+						<div data-field-span="4">
+							<label>
+								Phone
+								<input type="tel">
+							</label>
+						</div>
+
+						<div data-field-span="8">
+							<label>
+								e-mail
+								<input type="email">
+							</label>
+						</div>
+					</div>
+
+					<div data-row-span="12">
+						<div data-field-span="9">
+							<label>
+								<span style="text-transform: lowercase">name</span> SURNAME
+								<input type="text">
+							</label>
+						</div>
+						<div data-field-span="3">
+							<label>
+								relation
+								<input type="text">
+							</label>
+						</div>
+					</div>
+					<div data-row-span="12">
+						<div data-field-span="4">
+							<label>
+								Phone
+								<input type="tel">
+							</label>
+						</div>
+
+						<div data-field-span="8">
+							<label>
+								e-mail
+								<input type="email">
+							</label>
+						</div>
+					</div>
+				</fieldset>
+
+				<aside class="header-like">⬇ Emergency infos ⬇</aside>
+
+				<fieldset id="notes">
+					<div data-row-span="1">
+						<div data-field-span="1">
+							<label>
+								other notes
+								<textarea rows="16">Citizenship(s):</textarea>
+							</label>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset id="numbers">
+					<div data-row-span="1">
+						<div data-field-span="1">
+							<label>
+								other emergency numbers
+								<textarea rows="16">lost credit card:
+lost credit card (international):
+travel insurance:
+road assistance:
+company assistance:
+consulate: </textarea>
+							</label>
+						</div>
+					</div>
+				</fieldset>
+
+			</form>
+		</section>
+
+	</main>
+</body>
+<!-- OT⋄CUSTOM END body -->
+
+<script type="module">
+	document.querySelector('h1').textContent = document.querySelector('h1').textContent || document.title
+	Array.prototype.forEach.call(document.querySelectorAll('a'), function(el) {
+		el.href || (el.href = el.text)
+	})
+</script>
+
+<!-- https://perfops.net/rum -->
+<script async src="https://cdn.perfops.net/rom3/rom3.min.js"></script>

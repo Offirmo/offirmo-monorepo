@@ -1,0 +1,37 @@
+{
+	"name": "@offirmo-private/heroku",
+	"description": "Heroku empty server",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"[COMMENTED]engines": {
+		"node": "12.x // NO! 1) we can't restrict node version != root version, breaks bolt! 2) we don't have control on the heroku node selection, can't restrict too much."
+	},
+	"main": "dist/src.es2019.cjs/index.js",
+
+	"dependencies": {
+		"express": "^4"
+	},
+
+	"scripts": {
+		"clean": "node ../../../0-scripts/clean.js …dist",
+
+		"refresh-build-variables": "node ../../../0-scripts/update_build_variables.js --mode=ts",
+		"build--dev--watch": "node ../../../0-scripts/build-typescript.js --watch",
+		"build--prod": "node ../../../0-scripts/build-typescript.js --onlyNode",
+
+		"dev": "run-s clean refresh-build-variables build--dev--watch",
+		"start": "nodemon --delay 1 dist/src.es2019.cjs/index.js",
+
+		"build": "run-s refresh-build-variables build--prod",
+		"start--prod": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 dist/src.es2019.cjs/index.js"
+	},
+	"devDependencies": {
+		"nodemon": "^2",
+		"npm-run-all": "^4",
+		"typescript": "^4"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/B-apps--support/online-adventur.es/heroku"
+}

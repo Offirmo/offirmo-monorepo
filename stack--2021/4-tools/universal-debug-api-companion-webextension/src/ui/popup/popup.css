@@ -1,0 +1,16 @@
+@import '../../../node_modules/@offirmo-private/ui--browser--css/src/style.css';
+@import '../../../node_modules/@offirmo-private/ui--browser--css/src/style--theme--dark--colorhunt212.css';
+
+:root {
+	--o⋄font-size--default: 14px;
+}
+
+/* adjustments */
+[data-o-theme="dark--colorhunt212"] {
+	--o⋄color⁚bg--main: var(--o⋄color⁚co212__brown);
+}
+
+body {
+	width: 650px; /* needed to force popup size */
+	padding: 0 10px 10px 10px;
+}

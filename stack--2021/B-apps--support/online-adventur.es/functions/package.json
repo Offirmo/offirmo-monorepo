@@ -1,0 +1,81 @@
+{
+	"name": "@offirmo-private/functions",
+	"description": "Netlify functions for online-adventures.",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+	"size-limit": [
+		{
+			"limit": "250MB",
+			"path": "functions/",
+			"gzip": false
+		},
+		{
+			"limit": "50MB",
+			"path": "functions/",
+			"gzip": true
+		},
+		{
+			"limit": "100kb",
+			"path": "functions/hello-world.js",
+			"gzip": false
+		},
+		{
+			"limit": "3MB",
+			"path": "functions/key-value.js",
+			"gzip": false
+		},
+		{
+			"limit": "2MB",
+			"path": "functions/whoami.js",
+			"gzip": false
+		}
+	],
+	"dependencies": {
+		"@offirmo-private/async-utils": "^0",
+		"@offirmo-private/db": "^0",
+		"@offirmo-private/soft-execution-context": "^0",
+		"@offirmo-private/soft-execution-context-node": "^0",
+		"@offirmo-private/state-utils": "^0",
+		"@offirmo-private/timestamps": "^0",
+		"@offirmo-private/ts-types": "^0",
+		"@offirmo-private/uuid": "^0",
+		"@offirmo/error-utils": "^0",
+		"@offirmo/universal-debug-api-node": "^0",
+		"@offirmo/universal-debug-api-placeholder": "^1",
+		"@online-adventur.es/api-interface": "^0",
+		"@sentry/node": "^6",
+		"@tbrpg/definitions": "^0",
+		"@tbrpg/state": "^0",
+		"json-stable-stringify": "^1",
+		"memoize-one": "^6",
+		"noop2": "^2",
+		"tiny-invariant": "^1",
+		"tslib": "^2",
+		"typescript-string-enums": "^1"
+	},
+	"scripts": {
+		"clean": "node ../../../0-scripts/clean.js …dist functions",
+		"refresh-build-variables": "node ../../../0-scripts/update_build_variables.js --mode=ts --outputDir=src/sub",
+		"build:dev:watch": "node ../../../0-scripts/build-typescript.js --watch --onlyNode",
+		"build:prod": "node ../../../0-scripts/build-typescript.js --onlyNode",
+		"build:netlify-functions": "rm -rf ./functions && netlify-lambda build ./dist/src.es2019.cjs --config ./webpack.config.ts",
+		"ensure-privacy": "grep --null -RIl `whoami` functions/* | xargs -0 sed -i '' -e s/`whoami`/offirmo/g",
+		"ensure-size": "size-limit",
+		"dev": "run-s clean refresh-build-variables build:dev:watch",
+		"start": "NODE_ENV=development node ./node_modules/.bin/netlify-lambda serve ./dist/src.es2019.cjs --config ./webpack.config.ts",
+		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.js 'dist/src.es2019.cjs/**/*spec.js'",
+		"build": "run-s refresh-build-variables build:prod build:netlify-functions ensure-privacy"
+	},
+	"devDependencies": {
+		"@offirmo/unit-test-toolbox": "^8",
+		"@online-adventur.es/api-client": "^0",
+		"@size-limit/file": "^5",
+		"@types/aws-lambda": "^8",
+		"netlify-lambda": "^2",
+		"npm-run-all": "^4",
+		"size-limit": "^5"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/B-apps--support/online-adventur.es/functions"
+}

@@ -1,0 +1,53 @@
+
+:root {
+	--cell-size: 24px;
+}
+
+
+table.gridⵧsquare {
+	/*table-layout: fixed;
+	border-collapse: collapse;*/
+	border: solid 1px;
+}
+
+table.gridⵧsquare td {
+	overflow: hidden;
+	border: solid 1px;
+	height: var(--cell-size);
+	width: var(--cell-size);
+}
+
+table.gridⵧsquare td.biome--sea {
+	background-color: navy;
+}
+table.gridⵧsquare td.biome--singularity {
+	background-color: yellow;
+}
+
+table.gridⵧsquare td.biome--polar {
+	background-color: white;
+	color: darkblue;
+}
+table.gridⵧsquare td.biome--grassland {
+	background-color: springgreen;
+}
+table.gridⵧsquare td.biome--forest--green {
+	background-color: green;
+}
+table.gridⵧsquare td.biome--forest--dark {
+	background-color: darkgreen;
+}
+table.gridⵧsquare td.biome--barren {
+	background-color: chocolate;
+}
+table.gridⵧsquare td.biome--desert {
+	background-color: sienna;
+}
+
+table.gridⵧsquare td.undiscovered {
+	background-color: black;
+}
+
+table.gridⵧsquare td.fog {
+	opacity: 50%;
+}

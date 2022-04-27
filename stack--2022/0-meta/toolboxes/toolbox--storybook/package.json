@@ -1,0 +1,33 @@
+{
+	"name": "@offirmo-private/toolbox--storybook",
+	"version": "0.0.1",
+	"description": "An aggregation of npm modules related to Storybook.",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+
+	"engines": {
+		"npm": ">=3"
+	},
+
+	"sideEffects": true,
+
+	"dependencies": {
+		"@geometricpanda/storybook-addon-iframe": "^0",
+		"@storybook/addon-actions": "^6",
+		"@storybook/addon-console": "^1",
+		"@storybook/addon-essentials": "^6",
+		"@storybook/addon-links": "^6",
+		"@storybook/react": "^6",
+		"storybook-addon-grid": "^0",
+		"storybook-addon-jsx": "^7",
+		"storybook-dark-mode": "^1",
+		"storybook-mobile": "^1"
+	},
+	"optionalDependencies": {
+	},
+
+	"scripts": {
+		"test": "echo \"* @offirmo/toolbox--xyz: no need for unit tests for this kind of repo (meta)\""
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/0-meta/toolboxes/toolbox--storybook"
+}

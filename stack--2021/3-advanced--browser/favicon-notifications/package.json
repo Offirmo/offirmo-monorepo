@@ -1,0 +1,34 @@
+{
+	"name": "@offirmo-private/favicon-notifications",
+	"description": "Dynamic notifications in your favicon",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"esnext": "src/index.js",
+	"module": "src/index.js",
+	"source": "src/index.js",
+	"sideEffects": false,
+
+	"dependencies": {
+		"@offirmo-private/async-utils": "^0",
+		"@offirmo-private/xoff": "^0",
+		"favico.js": "^0.3",
+		"piecon": "^0.5"
+	},
+
+	"scripts": {
+		"clean": "node ../../0-scripts/clean.js …cache",
+		"start:parcel": "parcel --out-dir .parcel --no-autoinstall doc/demo/index.html",
+		"demo--built": "parcel build --out-dir .parcel --no-autoinstall doc/demo/index.html --public-url ./",
+
+		"demo": "run-s clean start:parcel"
+	},
+	"devDependencies": {
+		"@babel/core": "^7",
+		"npm-run-all": "^4",
+		"parcel-bundler": "^1"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/3-advanced--browser/favicon-notifications"
+}

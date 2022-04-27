@@ -1,0 +1,18 @@
+{
+	"name": "@offirmo-private/marketing-rsrc",
+	"version": "0.0.1",
+	"description": "Marketing resources",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"esnext": "index.js",
+	"module": "index.js",
+	"source": "index.js",
+	"sideEffects": false,
+
+	"dependencies": {},
+	"devDependencies": {},
+	"scripts": {},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/3-advanced--isomorphic/marketing-rsrc"
+}

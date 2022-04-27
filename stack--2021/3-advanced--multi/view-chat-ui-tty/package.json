@@ -1,0 +1,38 @@
+{
+	"name": "@offirmo-private/view-chat-ui-tty",
+	"description": "A TTY ui for the generic @oh-my-rpg/view-chat micro-framework.",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"esnext": "src/index.js",
+	"module": "src/index.js",
+	"source": "src/index.js",
+	"sideEffects": false,
+
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@offirmo-private/prettify-any": "^0",
+		"ansi-escapes": "^4",
+		"chalk": "^4",
+		"gauge": "^4",
+		"linewrap": "^0.2",
+		"ora": "^5",
+		"p-progress": "^0.5",
+		"strip-ansi": "^6",
+		"term-size": "^2"
+	},
+
+	"devDependencies": {
+		"@offirmo-private/view-chat": "^0",
+		"npm-run-all": "^4",
+		"tslib": "^2"
+	},
+	"scripts": {
+		"demo": "node doc/demo.js"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/3-advanced--multi/view-chat-ui-tty"
+}
