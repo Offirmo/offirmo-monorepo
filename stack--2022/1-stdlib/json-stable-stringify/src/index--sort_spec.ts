@@ -1,7 +1,7 @@
 import { expect } from 'chai'
-import * as fetch_ponyfill from 'fetch-ponyfill'
+import fetch_ponyfill from 'fetch-ponyfill'
 
-import stable_stringify from '.'
+import stable_stringify from './index.js'
 
 const { fetch } = fetch_ponyfill()
 

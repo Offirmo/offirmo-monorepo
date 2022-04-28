@@ -1,7 +1,7 @@
 import {
 	Immutable,
 	ImmutabilityEnforcer,
-} from './immutable'
+} from './index.js'
 
 
 /////////////////////////////////////////////////

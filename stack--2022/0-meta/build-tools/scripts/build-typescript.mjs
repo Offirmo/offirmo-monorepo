@@ -17,10 +17,6 @@ import tsc from 'node-typescript-compiler'
 const cli = meow('build', {
 	importMeta: import.meta,
 	flags: {
-		onlyNode: {
-			type: 'boolean',
-			default: false,
-		},
 		watch: {
 			type: 'boolean',
 			default: false,
@@ -133,14 +129,13 @@ function build_latest_es() {
 // thus we build only this one in watch = dev mode.
 Promise.resolve()
 	.then(() => {
-		return build_convenience_prebuilt()
-	})
-	.then(() => {
-		if (cli.flags.watch) return
-		if (cli.flags.onlyNode) return
-
 		return build_latest_es()
 	})
+	/*.then(() => {
+		if (cli.flags.watch) return
+
+		return build_convenience_prebuilt()
+	})*/
 	.then(() => console.log(`🛠  🔺 building ${stylize_string.bold(PKG_NAME)} done ✔`))
 	/*.catch(err => {
 		process.exit(-1)

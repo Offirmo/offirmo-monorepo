@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import stable_stringify from '.'
+import stable_stringify from './index.js'
 
 
 describe('json-stable-stringify', function() {
