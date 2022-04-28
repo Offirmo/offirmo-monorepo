@@ -19,7 +19,7 @@
 	},
 
 	"scripts": {
-		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.js 'src/**/*spec.js'"
+		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'src/**/*spec.js'"
 	},
 	"devDependencies": {
 		"@offirmo-private/uuid": "^0",
