@@ -20,7 +20,7 @@ export function create_logger_state(banner = DEFAULT_BANNER) {
 
 export function display_banner_if_1st_output(logger_state) {
 	if (!logger_state.seen_any_output_yet) {
-		console.log(banner)
+		console.log(logger_state.banner)
 		logger_state = {
 			...logger_state,
 			seen_any_output_yet: true,
