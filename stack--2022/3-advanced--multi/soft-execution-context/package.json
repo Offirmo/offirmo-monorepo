@@ -32,11 +32,11 @@
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",
 
-		"build:dev:watch": "monorepo-script--build-typescript-package --watch",
-		"build:prod": "monorepo-script--build-typescript-package",
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"_build:prod": "monorepo-script--build-typescript-package",
 
-		"dev": "run-s clean build:dev:watch",
-		"build": "run-s build:prod",
+		"dev": "run-s clean _build:dev:watch",
+		"build": "run-s  clean _build:prod",
 		"cheatsheet": "node doc/cheatsheet.js",
 		"demo": "echo '-> Open the pages in a browser'"
 	},

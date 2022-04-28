@@ -39,17 +39,17 @@
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",
 
-		"build:dev:watch": "monorepo-script--build-typescript-package --watch",
-		"build:prod": "monorepo-script--build-typescript-package",
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"_build:prod": "monorepo-script--build-typescript-package",
 		"build:bundle": "parcel build --no-autoinstall --no-source-maps --out-file index-bundle.js  src/index.ts",
 		"ensure-size": "size-limit",
 
-		"dev": "run-s clean build:dev:watch",
-		"build": "run-s build:prod",
+		"dev": "run-s clean _build:dev:watch",
+		"build": "run-s  clean _build:prod",
 		"demo": "UDA_OVERRIDE__LOGGER_FOO_LOGLEVEL=verbose UDA_OVERRIDE__DB_URL=localhost:1234 node ./doc/demo.js",
 
 		"np": "np --no-publish",
-		"prepublishOnly": "run-s clean build:prod ensure-size"
+		"prepublishOnly": "run-s clean _build:prod ensure-size"
 	},
 
 	"files": [

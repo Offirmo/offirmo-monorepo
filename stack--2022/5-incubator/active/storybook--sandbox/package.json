@@ -17,9 +17,9 @@
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",
 
-		"build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
 
-		"typecheck": "run-s clean build:dev:watch",
+		"typecheck": "run-s clean _build:dev:watch",
 
 		"storybook": "start-storybook -p 6006"
 	},

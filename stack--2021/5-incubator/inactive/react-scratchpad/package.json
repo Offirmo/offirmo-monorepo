@@ -39,9 +39,9 @@
 
 		"start:parcel": "PARCEL_AUTOINSTALL=false parcel src/index.html --out-dir .parcel --no-autoinstall",
 		"build:parcel": "parcel build src/index.html --public-url ./",
-		"build:dev:watch": "node ../../../0-scripts/build-typescript.js --watch",
+		"_build:dev:watch": "node ../../../0-scripts/build-typescript.js --watch",
 
-		"dev": "run-s clean build:dev:watch",
+		"dev": "run-s clean _build:dev:watch",
 		"start": "run-s start:parcel",
 		"build": "run-s build:parcel"
 	},

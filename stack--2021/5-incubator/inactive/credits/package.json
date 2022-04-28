@@ -25,11 +25,11 @@
 	"scripts": {
 		"clean": "node ../../../0-scripts/clean.js …dist",
 
-		"build:dev:watch": "node ../../../0-scripts/build-typescript.js --watch",
-		"build:prod": "node ../../../0-scripts/build-typescript.js",
+		"_build:dev:watch": "node ../../../0-scripts/build-typescript.js --watch",
+		"_build:prod": "node ../../../0-scripts/build-typescript.js",
 
-		"dev": "run-s clean build:dev:watch",
-		"build": "run-s build:prod",
+		"dev": "run-s clean _build:dev:watch",
+		"build": "run-s  clean _build:prod",
 		"cheatsheet": "node doc/cheatsheet.js"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/5-incubator/active/credits"

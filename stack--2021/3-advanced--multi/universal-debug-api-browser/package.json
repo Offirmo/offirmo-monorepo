@@ -45,13 +45,13 @@
 	"scripts": {
 		"clean": "node ../../0-scripts/clean.js …dist",
 
-		"build:dev:watch": "node ../../0-scripts/build-typescript.js --watch",
-		"build:prod": "node ../../0-scripts/build-typescript.js",
+		"_build:dev:watch": "node ../../0-scripts/build-typescript.js --watch",
+		"_build:prod": "node ../../0-scripts/build-typescript.js",
 		"build:bundle": "parcel build --no-autoinstall --no-source-maps --out-file index-bundle.js  src/index.ts",
 		"ensure-size": "size-limit",
 
-		"dev": "run-s clean build:dev:watch",
-		"build": "run-p build:prod build:bundle",
+		"dev": "run-s clean _build:dev:watch",
+		"build": "run-p _build:prod build:bundle",
 		"demo": "parcel --out-dir .parcel --no-autoinstall doc/demo/index.html",
 
 		"np": "np --no-publish",

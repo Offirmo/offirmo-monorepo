@@ -28,13 +28,13 @@
 		"clean": "monorepo-script--clean-package …dist",
 
 		"sync": "node ./scripts/sync.js",
-		"dev": "run-s clean build:dev:watch",
+		"dev": "run-s clean _build:dev:watch",
 		"xtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.js 'dist/src.es2021.cjs/**/*spec.js'",
 
-		"build:dev:watch": "monorepo-script--build-typescript-package --watch",
-		"build:prod": "monorepo-script--build-typescript-package",
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"_build:prod": "monorepo-script--build-typescript-package",
 
-		"build": "run-s sync build:prod",
+		"build": "run-s sync _build:prod",
 
 		"demo--node": "node doc/demo/node.js",
 		"demo--browser": "rm -rf cache .parcel && run-s start:parcel"
