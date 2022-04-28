@@ -1,6 +1,6 @@
 {
 	"name": "@offirmo-private/simple-upgradable-template",
-	"description": "Tool/mod to create files from a template then keeping them up to date",
+	"description": "Tool to create files from a template then keeping them up to date",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",

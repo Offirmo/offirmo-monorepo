@@ -28,7 +28,8 @@
 		"clean--root": "rm -rf node_modules .npm npm-debug.log package-lock.json yarn.lock yarn-error.log .yalc .awcache .parcel .parcel-cache bower_components typings",
 		"clean": "run-s  clean--all clean--root",
 
-		"build": "manypkg exec yarn build"
+		"build": "manypkg exec yarn build",
+		"test": "manypkg exec yarn test"
 	},
 	"workspaces": [
 		"0-meta/build-tools/*",
