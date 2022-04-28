@@ -35,5 +35,5 @@
 		"build": "run-s  clean _build:prod",
 		"cheatsheet": "node doc/cheatsheet.js"
 	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/2-foundation/ts-utils"
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/2-foundation/ts-utils"
 }

@@ -12,7 +12,7 @@ A minimum of knowledge of web programming is required to be able to properly use
 
 Technical details and usage guide: https://universal-debug-api-js.netlify.com/
 
-Source (open): https://github.com/Offirmo/offirmo-monorepo/tree/master/4-tools/universal-debug-api-companion-webextension/src
+Source (open): https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/4-tools/universal-debug-api-companion-webextension/src
 
 This is for web developers writing complex/semi-complex JavaScript.
 
@@ -77,4 +77,3 @@ This extension will, on request, inject debugging code in the current tab and di
 This extension needs to recognize a tab's origin to save and restore settings for this origin.
 
 This extension is a generic tool, not made for a particular site.
-

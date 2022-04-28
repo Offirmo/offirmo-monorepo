@@ -32,7 +32,7 @@ const THE_NPM_RPG = {
 	url: 'https://www.npmjs.com/package/the-npm-rpg',
 	cta: 'play',
 	homepage_url: 'https://www.online-adventur.es/the-npm-rpg',
-	repo_url: 'https://github.com/Offirmo/offirmo-monorepo/tree/master/A-apps/the-npm-rpg',
+	repo_url: 'https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/A-apps/the-npm-rpg',
 	issues_url: 'https://github.com/Offirmo/offirmo-monorepo/issues',
 	social_urls: {
 		product_hunt: 'https://www.producthunt.com/upcoming/the-npm-rpg',
@@ -46,7 +46,7 @@ const THE_BORING_RPG = {
 	cta: 'play',
 	homepage_url: 'https://www.online-adventur.es/the-boring-rpg',
 	changelog: 'https://www.reddit.com/r/boringrpg/',
-	repo_url: 'https://github.com/Offirmo/offirmo-monorepo/tree/master/C-apps--clients/the-boring-rpg',
+	repo_url: 'https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/C-apps--clients/the-boring-rpg',
 	issues_url: 'https://github.com/Offirmo/offirmo-monorepo/issues',
 	aggregated_links_url: 'https://linktr.ee/theboringrpg',
 	social_urls: {

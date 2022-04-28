@@ -60,7 +60,7 @@ export function create(debug_id: string, notes_to_copy?: Immutable<State>): Stat
 	logger.trace(`${LIB} create(…) (${debug_id})`, { })
 
 	let state: State = {
-		_comment: "This data is from @offirmo/photo-sorter https://github.com/Offirmo/offirmo-monorepo/tree/master/5-incubator/active/photos-sorter",
+		_comment: "This data is from @offirmo/photo-sorter https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/5-incubator/active/photos-sorter",
 
 		schema_version: SCHEMA_VERSION,
 		revision: 0,

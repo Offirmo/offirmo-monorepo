@@ -54,12 +54,12 @@
 		"dist",
 		"src"
 	],
-	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/2-foundation/error-utils",
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/2-foundation/error-utils",
 	"keywords": [
 		"error",
 		"typescript"
 	],
-	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/master/2-foundation/error-utils",
+	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/2-foundation/error-utils",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
 	}

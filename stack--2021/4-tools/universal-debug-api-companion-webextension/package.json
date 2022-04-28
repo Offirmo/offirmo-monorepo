@@ -56,5 +56,5 @@
 		"typescript-string-enums": "^1",
 		"webextension-polyfill-ts": "^0"
 	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/4-tools/universal-debug-api-companion-webextension"
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/4-tools/universal-debug-api-companion-webextension"
 }

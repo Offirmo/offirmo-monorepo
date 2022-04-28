@@ -15,7 +15,7 @@ import { State } from './types'
 // needed for demos
 
 const DEMO_STATE: Immutable<State> = enforce_immutability<State>({
-	_comment: 'This data is from @offirmo/photo-sorter https://github.com/Offirmo/offirmo-monorepo/tree/master/5-incubator/active/photos-sorter',
+	_comment: 'This data is from @offirmo/photo-sorter https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/5-incubator/active/photos-sorter',
 	schema_version: SCHEMA_VERSION,
 	revision: 0,
 	last_user_investment_tms: 1613965853218,

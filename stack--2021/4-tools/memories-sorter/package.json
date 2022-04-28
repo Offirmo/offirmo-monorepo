@@ -55,5 +55,5 @@
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4"
 	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/4-tools/memories-sorter"
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/4-tools/memories-sorter"
 }

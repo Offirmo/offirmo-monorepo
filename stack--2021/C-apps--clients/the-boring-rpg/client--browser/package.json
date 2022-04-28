@@ -86,5 +86,5 @@
 	"commentedDependencies": {
 		"parcel-plugin-bundle-visualiser": "^1"
 	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/C-apps--clients/the-boring-rpg/client--browser"
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/C-apps--clients/the-boring-rpg/client--browser"
 }

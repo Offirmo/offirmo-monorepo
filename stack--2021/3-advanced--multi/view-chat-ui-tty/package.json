@@ -34,5 +34,5 @@
 	"scripts": {
 		"demo": "node doc/demo.js"
 	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/3-advanced--multi/view-chat-ui-tty"
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/3-advanced--multi/view-chat-ui-tty"
 }

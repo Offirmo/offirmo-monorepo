@@ -54,5 +54,5 @@
 		"strip-ansi": "^6",
 		"tslib": "^2"
 	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/A-apps--core/the-boring-rpg/ui--rich-text"
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/A-apps--core/the-boring-rpg/ui--rich-text"
 }

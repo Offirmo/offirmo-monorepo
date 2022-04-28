@@ -11,5 +11,5 @@
 	"devDependencies": {
 		"browserslist": "^4"
 	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/master/0-meta/browserslist-config"
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/0-meta/browserslist-config"
 }
