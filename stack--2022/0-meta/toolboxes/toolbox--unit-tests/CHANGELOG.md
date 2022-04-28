@@ -4,7 +4,7 @@
 ## PENDING
 * [chore] moved in the monorepo
 * [feat][breaking] added the `fail-zero` option to fail when having 0 tests
-
+* [feat][breaking] properly set the init file's extension to .cjs
 * ...
 
 ## v8.0.0
