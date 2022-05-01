@@ -23,7 +23,7 @@
 		"chai-subset": "^1",
 		"eslint-plugin-chai-expect": "^3",
 		"eslint-plugin-mocha": "^10",
-		"mocha": "^9",
+		"mocha": "^10",
 		"sinon": "^13",
 		"sinon-chai": "^3"
 	},

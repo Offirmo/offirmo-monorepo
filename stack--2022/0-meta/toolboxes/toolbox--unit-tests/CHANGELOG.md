@@ -5,11 +5,12 @@
 * [chore] moved in the monorepo
 * [feat][breaking] added the `fail-zero` option to fail when having 0 tests
 * [feat][breaking] properly set the init file's extension to .cjs
+* [chore][breaking] bumped deps: mocha 10
 * ...
 
 ## v8.0.0
 2022/04/03
-* [chore] [breaking] bumped deps: mocha 9, sinon 13, eslint packages + types
+* [chore][breaking] bumped deps: mocha 9, sinon 13, eslint packages + types
 * [doc] marked as maintained in 2022! Happy new year!
 
 ## v7.0.0
