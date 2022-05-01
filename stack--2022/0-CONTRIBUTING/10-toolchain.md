@@ -10,11 +10,17 @@ Why yarn over npm?
 
 
 ## monorepo
-* **yarn workspaces**
+
+* **bolt**
 * complemented by https://github.com/Thinkmill/manypkg
+* downside: bundle duplication
 
 Why not bolt? https://github.com/boltpkg/bolt
 * maintained but sort of dead
+
+Why not yarn workspaces?
+* they can't run commands in the dependency order
+* they can't run commands on a glob
 
 Why not rush? https://rushjs.io/
 * has benefits

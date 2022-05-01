@@ -177,7 +177,7 @@ since node 10 in maintenance mode since 2020-05-19 https://nodejs.org/en/about/r
 			"require": "./dist/src.es2021.cjs/index.js"
 		}
 	},
-	"main": "dist/src.es2021.cjs/index.js",
+	"main": "dist/src.es2021.cjs/index.js",  XXX needed for typescript as of 4.5
 	"typings": "dist/src.es2021.cjs/index.d.ts",
 	"source": "src/index.ts",
 

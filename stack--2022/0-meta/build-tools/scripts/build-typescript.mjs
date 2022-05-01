@@ -127,14 +127,15 @@ function build_latest_es() {
 // build sequentially to not duplicate the errors if any.
 // CJS is usable in both node and bundled frontend,
 // thus we build only this one in watch = dev mode.
+// (update marker) as of 2022/05 the ecosystem (typescript) is not ready for pure ESM
 Promise.resolve()
 	.then(() => {
-		return build_latest_es()
+		return build_convenience_prebuilt()
 	})
 	.then(() => {
 		if (cli.flags.watch) return
 
-		return build_convenience_prebuilt()
+		return build_latest_es()
 	})
 	.then(() => console.log(`🛠  🔺 building ${stylize_string.bold(PKG_NAME)} done ✔`))
 	/*.catch(err => {
