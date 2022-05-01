@@ -38,7 +38,7 @@
 	"devDependencies": {
 		"@babel/core": "^7",
 		"@offirmo/practical-logger-core": "^3",
-		"@size-limit/preset-small-lib": "^5",
+		"@size-limit/preset-small-lib": "^7",
 		"npm-run-all": "^4",
 		"size-limit": "^5",
 		"ts-node": "^10"

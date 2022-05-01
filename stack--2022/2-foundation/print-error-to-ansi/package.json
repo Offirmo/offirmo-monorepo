@@ -6,12 +6,17 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"esnext": "dist/src.es2021/index.js",
-	"module": "dist/src.es2021/index.js",
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"import": "./dist/src.es2021/index.js",
+			"require": "./dist/src.es2021.cjs/index.js"
+		}
+	},
 	"main": "dist/src.es2021.cjs/index.js",
 	"typings": "dist/src.es2021.cjs/index.d.ts",
 	"source": "src/index.ts",
-	"sideEffects": false,
 
 	"peerDependencies": {
 		"tslib": "^2"
@@ -21,10 +26,6 @@
 		"chalk": "^4"
 	},
 
-	"devDependencies": {
-		"npm-run-all": "^4",
-		"tslib": "^2"
-	},
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
@@ -34,5 +35,11 @@
 		"build": "run-s  clean _build:prod",
 		"demo": "node doc/demo.js"
 	},
+	"devDependencies": {
+		"@offirmo/unit-test-toolbox": "^8",
+		"npm-run-all": "^4",
+		"tslib": "^2"
+	},
+
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/2-foundation/print-error-to-ansi"
 }

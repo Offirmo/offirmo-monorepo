@@ -7,12 +7,16 @@
 	"private": true,
 
 	"type": "module",
-	"esnext": "dist/src.es2021/index.js",
-	"module": "dist/src.es2021/index.js",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"import": "./dist/src.es2021/index.js",
+			"require": "./dist/src.es2021.cjs/index.js"
+		}
+	},
 	"main": "dist/src.es2021.cjs/index.js",
 	"typings": "dist/src.es2021.cjs/index.d.ts",
 	"source": "src/index.ts",
-	"sideEffects": false,
 
 	"peerDependencies": {
 		"tslib": "^2"

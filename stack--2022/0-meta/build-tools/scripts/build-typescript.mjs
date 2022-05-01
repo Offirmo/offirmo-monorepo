@@ -131,11 +131,11 @@ Promise.resolve()
 	.then(() => {
 		return build_latest_es()
 	})
-	/*.then(() => {
+	.then(() => {
 		if (cli.flags.watch) return
 
 		return build_convenience_prebuilt()
-	})*/
+	})
 	.then(() => console.log(`🛠  🔺 building ${stylize_string.bold(PKG_NAME)} done ✔`))
 	/*.catch(err => {
 		process.exit(-1)

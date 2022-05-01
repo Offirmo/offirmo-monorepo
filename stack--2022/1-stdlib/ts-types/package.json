@@ -23,9 +23,6 @@
 	"dependencies": {
 	},
 
-	"devDependencies": {
-		"npm-run-all": "^4"
-	},
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",
 
@@ -36,6 +33,10 @@
 		"build": "run-s  clean _build:prod",
 
 		"cheatsheet": "node doc/cheatsheet.js"
+	},
+	"devDependencies": {
+		"@offirmo/unit-test-toolbox": "^8",
+		"npm-run-all": "^4"
 	},
 
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/1-stdlib/ts-types"

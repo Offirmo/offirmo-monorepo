@@ -5,12 +5,17 @@
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 
-	"esnext": "dist/src.es2021/index.js",
-	"module": "dist/src.es2021/index.js",
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"import": "./dist/src.es2021/index.js",
+			"require": "./dist/src.es2021.cjs/index.js"
+		}
+	},
 	"main": "dist/src.es2021.cjs/index.js",
 	"typings": "dist/src.es2021.cjs/index.d.ts",
 	"source": "src/index.ts",
-	"sideEffects": false,
 
 	"size-limit": [
 		{
@@ -44,7 +49,7 @@
 	},
 	"devDependencies": {
 		"@offirmo/unit-test-toolbox": "^8",
-		"@size-limit/preset-small-lib": "^5",
+		"@size-limit/preset-small-lib": "^7",
 		"deep-freeze-strict": "^1",
 		"npm-run-all": "^4",
 		"size-limit": "^7"
