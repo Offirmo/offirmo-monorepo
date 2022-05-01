@@ -45,7 +45,7 @@
 		"@offirmo/practical-logger-core": "^3",
 		"@size-limit/preset-small-lib": "^7",
 		"npm-run-all": "^4",
-		"size-limit": "^5",
+		"size-limit": "^7",
 		"ts-node": "^10"
 	},
 	"scripts": {

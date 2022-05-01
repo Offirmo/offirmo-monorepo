@@ -39,7 +39,7 @@
 	},
 	"devDependencies": {
 		"@offirmo/unit-test-toolbox": "^8",
-		"chalk": "^4",
+		"chalk": "^5",
 		"fetch-ponyfill": "^7",
 		"npm-run-all": "^4",
 		"tslib": "^2"

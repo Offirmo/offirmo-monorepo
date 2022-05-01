@@ -11,7 +11,7 @@
 	"sideEffects": false,
 
 	"peerDependencies": {
-		"react": "^17"
+		"react": "^18"
 	},
 	"dependencies": {
 		"@offirmo-private/features-detection-browser": "^0",
@@ -31,7 +31,7 @@
 	"devDependencies": {
 		"@babel/core": "^7",
 		"parcel-bundler": "^1",
-		"react": "^17"
+		"react": "^18"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--multi/rich-text-format-to-react"
 }
