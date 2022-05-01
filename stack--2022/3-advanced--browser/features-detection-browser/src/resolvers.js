@@ -1,5 +1,5 @@
-// beware of multiplicity!
-// https://www.stucox.com/blog/the-good-and-bad-of-level-4-media-queries/#multiplicity
+import memoize_once from 'memoize-one'
+
 
 import {
 	get_usage_observations,
@@ -9,7 +9,10 @@ import {
 
 /////////////////////
 
-function _get_relevant_media_queries() {
+const _get_relevant_media_queries = memoize_once(function _get_relevant_media_queries() {
+	// beware of multiplicity!
+	// https://www.stucox.com/blog/the-good-and-bad-of-level-4-media-queries/#multiplicity
+
 	const result = {}
 
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
@@ -29,8 +32,7 @@ function _get_relevant_media_queries() {
 	})
 
 	return result
-}
-const relevant_media_queries = _get_relevant_media_queries()
+})
 
 ///////
 
@@ -38,6 +40,8 @@ const relevant_media_queries = _get_relevant_media_queries()
 // https://www.stucox.com/blog/you-cant-detect-a-touchscreen/
 function has_any_hover() {
 	// from more trustable to less trustable:
+
+	const relevant_media_queries = _get_relevant_media_queries()
 
 	// if a MQ is true, it should be reliable
 	if (relevant_media_queries['(any-hover: hover)']) {

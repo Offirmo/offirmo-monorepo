@@ -1,0 +1,39 @@
+{
+	"name": "@offirmo-private/promise-try",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"import": "./dist/src.es2021/index.js",
+			"require": "./dist/src.es2021.cjs/index.js"
+		}
+	},
+	"main": "dist/src.es2021.cjs/index.js",
+	"typings": "dist/src.es2021.cjs/index.d.ts",
+	"source": "src/index.ts",
+
+	"peerDependencies": {
+	},
+	"dependencies": {
+	},
+
+	"scripts": {
+		"clean": "node ../../0-scripts/clean.js …dist",
+
+		"_build:dev:watch": "node ../../0-scripts/build-typescript.js --watch",
+		"_build:prod": "node ../../0-scripts/build-typescript.js",
+
+		"dev": "run-s clean _build:dev:watch",
+		"build": "run-s  clean _build:prod",
+		"demo": "node doc/demo.js"
+	},
+	"devDependencies": {
+		"npm-run-all": "^4"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/1-stdlib/promise-try"
+}

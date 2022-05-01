@@ -142,3 +142,4 @@ catch (_err) {
 
 ## See also
 * https://github.com/jshttp/http-errors
+* TODO look into https://www.stacktracejs.com/

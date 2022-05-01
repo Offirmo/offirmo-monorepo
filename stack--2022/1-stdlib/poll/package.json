@@ -1,0 +1,20 @@
+{
+	"name": "@offirmo-private/poll",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"import": "./index.js"
+		}
+	},
+
+	"dependencies": {},
+
+	"scripts": {},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/1-stdlib/poll"
+}

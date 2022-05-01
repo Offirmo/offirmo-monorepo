@@ -1,6 +1,6 @@
 import Bowser from 'bowser'
 import { getRootSEC } from '@offirmo-private/soft-execution-context'
-import ensureDeviceUUID from '@offirmo-private/ensure-device-uuid-browser'
+//import ensureDeviceUUID from '@offirmo-private/ensure-device-uuid-browser'
 import { LS_KEYS } from './consts'
 
 
@@ -92,7 +92,7 @@ function decorateWithDetectedEnv(SEC) {
 
 	const browser = Bowser.getParser(window.navigator.userAgent)
 	const details = {
-		DEVICE_UUID: ensureDeviceUUID(),
+		//DEVICE_UUID: ensureDeviceUUID(), TODO reevaluate the need
 		// TODO normalize browser/os detection!
 		OS_NAME: browser.getOSName(),
 		OS_RELEASE: browser.getOSVersion(),

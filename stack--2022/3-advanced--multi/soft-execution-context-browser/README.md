@@ -1,5 +1,4 @@
 
 Extra injections:
 * bowser results
-* DEVICE_UUID
-
+* (NO) DEVICE_UUID 		"@offirmo-private/ensure-device-uuid-browser": "^0"

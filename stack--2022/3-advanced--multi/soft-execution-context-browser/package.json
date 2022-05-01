@@ -15,7 +15,6 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/ensure-device-uuid-browser": "^0"
 	},
 
 	"scripts": {

@@ -72,4 +72,3 @@ export {
 	has_seen_tab_key_usage,
 	has_seen_touch_usage,
 }
-
