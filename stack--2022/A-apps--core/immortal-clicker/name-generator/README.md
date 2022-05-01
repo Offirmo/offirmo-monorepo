@@ -7,11 +7,6 @@
 
 
 
-	"esnext": "dist/src.es2021/index.js",
-	"module": "dist/src.es2021/index.js",
-	"typings": "dist/src.es2021.cjs/index.d.ts",
-
-
 https://culturalatlas.sbs.com.au/chinese-culture/chinese-culture-naming
 https://en.wikipedia.org/wiki/Chinese_name
 https://blog.reedsy.com/character-name-generator/language/mandarin-chinese/

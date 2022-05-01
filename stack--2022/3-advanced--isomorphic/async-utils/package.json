@@ -6,12 +6,17 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"esnext": "dist/src.es2021/index.js",
-	"module": "dist/src.es2021/index.js",
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"import": "./dist/src.es2021/index.js",
+			"require": "./dist/src.es2021.cjs/index.js"
+		}
+	},
 	"main": "dist/src.es2021.cjs/index.js",
 	"typings": "dist/src.es2021.cjs/index.d.ts",
 	"source": "src/index.ts",
-	"sideEffects": false,
 
 	"peerDependencies": {
 		"@offirmo-private/soft-execution-context": "^0",
@@ -41,5 +46,6 @@
 		"npm-run-all": "^4",
 		"tslib": "^2"
 	},
+
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--isomorphic/async-utils"
 }

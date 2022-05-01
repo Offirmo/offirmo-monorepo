@@ -6,10 +6,10 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"esnext": "src/index.js",
-	"module": "src/index.js",
+	"type": "module",
+	"sideEffects": true,
+	"exports": "./src/index.js",
 	"source": "src/index.js",
-	"sideEffects": false,
 
 	"dependencies": {
 		"memoize-one": "^6"

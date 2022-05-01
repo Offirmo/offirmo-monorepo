@@ -6,12 +6,8 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"esnext": "dist/src.es2021/client/index.js",
-	"module": "dist/src.es2021/client/index.js",
-	"main": "dist/src.es2021.cjs/client/index.js",
-	"typings": "dist/src.es2021.cjs/client/index.d.ts",
-	"source": "src/client/index.ts",
 	"sideEffects": true,
+	"source": "src/index.html",
 
 	"optionalDependencies": {
 		"@offirmo-private/xoff": "^0"
@@ -39,5 +35,6 @@
 		"npm-run-all": "^4",
 		"typescript": "^4"
 	},
+
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/iframe--loading"
 }

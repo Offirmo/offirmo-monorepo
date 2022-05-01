@@ -6,7 +6,6 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"esnext": "index.js",
 	"module": "index.js",
 	"source": "index.js",
 	"sideEffects": false,
