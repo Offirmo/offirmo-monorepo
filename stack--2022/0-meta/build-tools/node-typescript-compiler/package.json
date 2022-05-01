@@ -5,7 +5,6 @@
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 
-
 	"type": "module",
 	"sideEffects": false,
 	"exports": "./src/index.mjs",
@@ -14,8 +13,6 @@
 	"engines": {
 		"npm": ">=3"
 	},
-
-
 	"peerDependencies": {
 	},
 	"dependencies": {
@@ -24,6 +21,7 @@
 		"path-exists": "^5",
 		"tildify": "^3"
 	},
+
 
 	"devDependencies": {
 	},
