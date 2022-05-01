@@ -1,11 +1,9 @@
 # Offirmo’s monorepo
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/25734112-d205-4789-ad2f-bfcdf8d65252/deploy-status)](https://app.netlify.com/sites/offirmo-monorepo/deploys)
-
-A monorepo for all my JavaScript / TypeScript projects. So convenient.
+A monorepo for all my JavaScript / TypeScript projects. So convenient!
 
 Public npm modules:
-* listed [here](https://offirmo-monorepo.netlify.app/0-doc/modules-directory/index.html)
+* listed [here](https://offirmo-monorepo.netlify.app/public/modules-directory/index.html)
 
 Public webapps:
 * [The Boring RPG, reborn](https://www.online-adventur.es/apps/the-boring-rpg/)
@@ -20,41 +18,22 @@ This repo is published on [Github Pages](https://www.offirmo.net/offirmo-monorep
 
 
 ## Contributing
-See [CONTRIBUTING/README.md](./CONTRIBUTING/README.md)
+See [CONTRIBUTING/README.md](./stack--2022/0-CONTRIBUTING/01-intro.md)
 
-
-## Credits and Hat tips
-
-Credits:
-- Adriano Emerick "Mobile Security" icon https://thenounproject.com/search/?q=security mobile&i=153136
-- José Hernandez "Weight" icon https://thenounproject.com/search/?q=weight&i=9409
-
-Tools
-- Color converter https://www.cssportal.com/css-color-converter/
-- favicon https://realfavicongenerator.net/
-- https://github.com/scottsidwell/bundle-inspector
 
 ## License
 
-* WARNING: If present, an individual package's license overrides the root one!
-* WARNING: the code is free but not the *marketing efforts*, i.e. you are free to copy but must reasonably change the name if competing
-* by default: [`Unlicense`](https://unlicense.org/) so far.
-
 The general principle is that I want to give back,
-and I don't mind people reusing my code and creating jobs / value from it even without crediting me.
+and I welcome people reusing my code and creating jobs/value from it even without crediting me.
 
-However, I'd like the (small) marketing efforts I made to benefit only me,
-for ex. the name of the modules or the apps may not be re-usable.
-Also I don't want my name to be used as an endorsement.
+[`Unlicense`](https://unlicense.org/) is the license marked in package.json and the one most closely reflecting my intent. However this license is rejected by some companies, hence I'm multi-licensing all the code marked as "unlicensed" into:
+* Creative Commons Zero (CC0) License (Public Domain) as well
+* MIT License as well
 
-That's why I'm looking into [CC0](https://creativecommons.org/publicdomain/zero/1.0/) but not decided yet.
+For your convenience.
 
-I'm not an expert in licenses, so my work is **implicitly dual-licensed** as fully private for my own use.
-This is to allow me to change the license in the future if deemed needed.
-```
-                  Unlicense branch, may stop being updated at some point
-                  /
-private version ------------------ (forever living private branch)
-                      \
-                      maybe one day: other license branch (maybe CC0)
-```
+* NOTE: If present, a specific file's or package's license overrides the default/root one! For example some assets have their own license and some packages are forks retaining a specific license.
+* NOTE: for my games/apps/tools, the code is free but not the *marketing efforts*, i.e. you are free to copy but must reasonably change the name if competing
+* Also I don't want my name to be used as an endorsement.
+
+I'm not an expert in licenses, so I reserve the right to "fork" into any other kind of license, without removing what was already shared of course.

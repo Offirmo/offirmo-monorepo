@@ -1,20 +1,21 @@
 
-# Export and transpilation policy
+# JS modules export and transpilation policy
 
 ## Policy
 
-The public modules in this mono-repo ase exposed as:
+The public modules in this monorepo ase exposed as:
 - Latest stable ES, with latest stable module exports
   - with sometimes a few stage 4 features when they are already widely supported https://github.com/tc39/ecma262
+  - instructions [here](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) and [here](https://www.typescriptlang.org/docs/handbook/esm-node.html)
 - as a convenience, pre-built CJS for latest ES (https://node.green/)
   supported by the oldest active LTS node (https://nodejs.org/en/about/releases/ or https://github.com/nodejs/Release)
 - for modules in Typescript, trying to use the latest Typescript, best effort.
 - while webpack is not used in this repo(*), we acknowledge that it's widely used and thus aim to support its latest version
-  - unfortunately we have an old webpack for netlify-lambda
 
 See below more exact numbers.
 
 Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue]()
+
 
 ## Technical details
 
@@ -23,7 +24,26 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 - TODO full ES6 https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-move-my-commonjs-project-to-esm
 - 2022/10/25 oldest active LTS node 16 → 18  https://nodejs.org/en/about/releases/
 - ??? webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
-- TODO get rid of netlify-lambda!!
+- TODO check [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762)
+
+
+### update 2022-05-02
+* Policy update: NO LONGER held back by the old webpack from netlify-lambda!! 🥳
+* Policy update: replaced ES support criteria by "reasonable support"
+* Note: considering switch to [pure ESM](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) however this will happen gradually, need code rewrite
+
+Updated state:
+* latest ES = [ES2021](https://en.wikipedia.org/wiki/ECMAScript#Versions)
+* oldest active LTS node = [16](https://nodejs.org/en/about/releases/)
+* latest ES reasonably supported by this node LTS (latest minor) = [ES2021](https://node.green/#ES2022)
+* latest ES syntax supported by Webpack (= Acorn supports it + webpack bumped Acorn) = ES2021
+  * latest webpack version = [5](https://webpack.js.org/)
+  * version of Acorn in this webpack version = [^8](https://github.com/webpack/webpack/blob/master/package.json)
+  * latest ES syntax reasonably supported by this Acorn = [2021](https://github.com/acornjs/acorn/tree/master/acorn)
+* FYI compilers/polyfills https://kangax.github.io/compat-table/es2016plus/
+
+= latest supported node = 16
+= latest convenient ES = 2021
 
 
 ### update 2022-03-21
@@ -140,4 +160,35 @@ since node 10 in maintenance mode since 2020-05-19 https://nodejs.org/en/about/r
 
 ## TODO
 - TODO are refreshes major or minor?? Most likely major (see @sindre)
-- TODO new typescript ?
+- clarify not restricting node engine
+
+```json
+	"name": "@offirmo/deferred",
+	"description": "Implementation of the deferred pattern on top of a Promise",
+	"version": "4.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"import": "./dist/src.es2021/index.js",
+			"require": "./dist/src.es2021.cjs/index.js"
+		}
+	},
+	"main": "dist/src.es2021.cjs/index.js",
+	"typings": "dist/src.es2021.cjs/index.d.ts",
+	"source": "src/index.ts",
+
+	"size-limit": [
+		{
+			"limit": "250b",
+			"path": "dist/src.es2021/index.js"
+		},
+		{
+			"limit": "250b",
+			"path": "dist/src.es2021.cjs/index.js"
+		}
+	],
+```

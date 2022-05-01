@@ -31,7 +31,7 @@ export interface LogDetails { [k: string]: any }
 // - omitting the message: it will be extracted from details.message
 // - passing an error directly, either as the only arg or as details
 //   (to allow the simple logging of an error)
-// Those "tolerances" are non standard and may not be handled!
+// Those "tolerances" are non-standard and may not be handled!
 export type LogPrimitive = (message?: string, details?: Readonly<LogDetails>) => void
 
 // The top-level interface
@@ -76,7 +76,7 @@ export interface LogPayload {
 	details: LogDetails
 }
 
-// a fn responsible to display a log line (or whatever)
+// a function responsible to display a log line (or whatever)
 export type LogSink = (payload: LogPayload) => void
 
 // a suggested base logger state

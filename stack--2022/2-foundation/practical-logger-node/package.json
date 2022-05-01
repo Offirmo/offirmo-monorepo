@@ -29,7 +29,7 @@
 		"@offirmo/practical-logger-types": "^3",
 		"chalk": "^4",
 		"indent-string": "^5",
-		"size-limit": "^5"
+		"size-limit": "^7"
 	},
 
 	"scripts": {
