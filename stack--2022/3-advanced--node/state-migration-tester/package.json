@@ -22,6 +22,7 @@
 		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'src/**/*spec.js'"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4"
 	},

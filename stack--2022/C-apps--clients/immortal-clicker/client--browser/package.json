@@ -26,6 +26,7 @@
 	},
 
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@parcel/config-default": "^2",
 		"@parcel/transformer-typescript-tsc": "^2",
 		"@size-limit/file": "^5",

@@ -16,6 +16,7 @@
 	},
 
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"npm-run-all": "^4"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/css--reset"

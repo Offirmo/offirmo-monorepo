@@ -37,6 +37,7 @@
 		"build": "run-p _build:prod"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@babel/core": "^7",
 		"npm-run-all": "^4",
 		"typescript": "^4"

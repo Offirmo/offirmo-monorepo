@@ -34,6 +34,7 @@
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"npm-run-all": "^4"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--isomorphic/unicode-data"

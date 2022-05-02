@@ -38,6 +38,7 @@
 		"cheatsheet": "node doc/cheatsheet.js"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4",
 		"tslib": "^2",

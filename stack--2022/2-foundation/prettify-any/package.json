@@ -38,6 +38,7 @@
 		"cheatsheet": "node doc/cheatsheet.js"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^8",
 		"chalk": "^5",
 		"fetch-ponyfill": "^7",

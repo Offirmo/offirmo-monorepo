@@ -37,6 +37,7 @@
 		"demo": "node doc/demo-node/index.js"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/prettify-any": "^0",
 		"@offirmo-private/ts-types": "^0",
 		"@offirmo/practical-logger-browser": "^3",

@@ -31,6 +31,7 @@
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4"
 	},

@@ -14,7 +14,9 @@
 
 	"dependencies": {
 		"chalk": "^5",
+		"fs-extra": "^10",
 		"meow": "^10",
+		"node-typescript-compiler": "*",
 		"tiny-invariant": "^1"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/0-meta/build-tools/scripts"

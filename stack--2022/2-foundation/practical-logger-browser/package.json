@@ -52,6 +52,7 @@
 		"prepublishOnly": "run-s clean build test ensure-size"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@babel/core": "^7",
 		"@offirmo/unit-test-toolbox": "^8",
 		"@size-limit/preset-small-lib": "^7",

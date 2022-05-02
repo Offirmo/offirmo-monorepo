@@ -6,17 +6,8 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"source": "src/web-component--social-links.js",
 	"sideEffects": true,
+	"source": "src/web-component--social-links.js",
 
-	"optionalDependencies": {
-	},
-	"dependencies": {
-	},
-
-	"scripts": {
-	},
-	"devDependencies": {
-	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/wc--social"
 }

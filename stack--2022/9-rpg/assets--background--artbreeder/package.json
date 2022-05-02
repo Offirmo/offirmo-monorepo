@@ -45,6 +45,7 @@
 		"demo--browser": "rm -rf cache .parcel && run-s start:parcel"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@babel/core": "^7",
 		"@offirmo-private/prettify-any": "^0",
 		"@offirmo-private/rich-text-format-to-ansi": "^0",

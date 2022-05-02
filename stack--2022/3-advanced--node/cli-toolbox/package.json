@@ -26,6 +26,7 @@
 		"test": "npm run demo"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"loud-rejection": "^2",
 		"pokemon": "^2",
 		"sum-up": "^3"

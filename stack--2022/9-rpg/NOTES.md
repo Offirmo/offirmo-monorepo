@@ -640,3 +640,13 @@ bride rescued from caravan, doesn't know to whom she was to be married
 
 stances
 https://www.thegamer.com/elden-ring-two-hand-power-stance-explained-guide/
+
+
+Microaggressions are often brief slights or actions made toward members of oppressed or targeted groups: people who experience unequal treatment and have significantly less control or power than members of a dominant or majority group.
+Microaggressions can be verbal or behavioral and can convey hostile, derogatory, or negative connotations, which can alienate colleagues by making them feel like they don’t belong. Even if microaggressions are enacted without ill intentions, they can still be hurtful. This form of discrimination can be subtle and well disguised, and can therefore be difficult to identify and address. Microaggressions can reinforce and even condone more overt and severe forms of discrimination, so it’s important that you learn to recognize the ways microaggressions can take shape and how best to address them.
+
+Affinity Bias
+
+Positive/Negative Emphasis
+
+Stereotyping

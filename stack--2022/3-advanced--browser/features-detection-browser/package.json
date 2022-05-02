@@ -15,7 +15,5 @@
 		"memoize-one": "^6"
 	},
 
-	"devDependencies": {},
-	"scripts": {},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/features-detection-browser"
 }

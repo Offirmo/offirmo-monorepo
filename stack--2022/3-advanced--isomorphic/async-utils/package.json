@@ -39,6 +39,7 @@
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/soft-execution-context-node": "^0",
 		"@offirmo/unit-test-toolbox": "^8",

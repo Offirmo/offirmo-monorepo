@@ -48,6 +48,7 @@
 		"prepublishOnly": "run-s clean _build:prod ensure-size"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^8",
 		"@size-limit/preset-small-lib": "^7",
 		"npm-run-all": "^4",

@@ -20,6 +20,7 @@
 	"scripts": {
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@babel/core": "^7",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo/practical-logger-browser": "^3",

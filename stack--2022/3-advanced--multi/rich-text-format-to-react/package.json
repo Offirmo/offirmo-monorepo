@@ -29,6 +29,7 @@
 		"demo": "run-s clean start:parcel"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@babel/core": "^7",
 		"parcel-bundler": "^1",
 		"react": "^18"

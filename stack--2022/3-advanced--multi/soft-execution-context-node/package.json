@@ -23,6 +23,7 @@
 		"demo": "./doc/demo/demo.js"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo/practical-logger-node": "^0",
 		"npm-run-all": "^4",

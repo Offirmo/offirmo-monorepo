@@ -26,6 +26,7 @@
 		"demo": "run-s clean start:parcel"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@babel/core": "^7",
 		"@offirmo-private/soft-execution-context": "*",
 		"parcel-bundler": "^1",
