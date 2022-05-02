@@ -26,7 +26,7 @@ const cli = meow('build', {
 
 /////////////////////
 
-// [Last updated TODO](update marker)
+// [Last updated 2022/05](update marker)
 const LATEST_CONVENIENT_ES = 'ES2021' // convenient = works with most tools, such as webpack
 const LATEST_ES_OLDEST_ACTIVE_NODE_LTS = 'ES2021' // should be <= LATEST_CONVENIENT_ES
 const LATEST_ES_MODULES = 'ES2020'

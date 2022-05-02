@@ -1,8 +1,6 @@
 const fs = require('fs-extra')
 const path = require('path')
 
-const json = require('./json')
-
 // hat tip to https://stackoverflow.com/a/24594123/587407
 function lsDirsSync(srcpath, options = {}) {
 	options = {
@@ -41,8 +39,6 @@ function lsFilesSync(srcpath, options = {}) {
 }
 
 module.exports = {
-	...fs,
-	json,
 	lsDirsSync,
 	lsFilesSync
 }

@@ -1,6 +1,8 @@
 		"bolt": "^0.24",
 
 
+		"test": "manypkg exec yarn test",
+		"build": "manypkg exec yarn build"
 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/25734112-d205-4789-ad2f-bfcdf8d65252/deploy-status)](https://app.netlify.com/sites/offirmo-monorepo/deploys)

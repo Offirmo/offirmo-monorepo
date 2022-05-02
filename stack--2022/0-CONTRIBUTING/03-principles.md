@@ -12,7 +12,7 @@ Unless it's more convenient for some reasons, this repo strives to adhere to tho
 * mobile first
 * offline first
 * open source
-  * give back with licenses such as UNLICENSE, CC prefered
+  * give back with licenses such as UNLICENSE or CC
   * open source whenever possible
 * use boring technologies. Examples:
   * (if possible) node LTS over latest

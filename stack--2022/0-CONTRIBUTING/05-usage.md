@@ -23,7 +23,8 @@ At the moment, there are dependency loops which require a refactoring I don't pl
 For ex. to make everything work again step by step!
 
 ```bash
-bolt ws run test  --only-fs "0-meta/*"
+bolt --only-fs "0-meta/build-tools/*" ws run build
+bolt --only-fs "0-meta/build-tools/*" ws run test
 bolt --only-fs "1-stdlib/*" ws run build
 bolt --only-fs "1-stdlib/*" ws run test
 bolt --only-fs "2-foundation/*" ws run build

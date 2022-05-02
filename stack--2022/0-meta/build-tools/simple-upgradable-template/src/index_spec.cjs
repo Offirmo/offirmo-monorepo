@@ -1,7 +1,7 @@
 const { expect } = require('chai')
 
-const { LIB } = require('./consts')
-const { apply } = require('.')
+const { LIB } = require('./consts.cjs')
+const { apply } = require('./index.cjs')
 
 
 describe(`${LIB}`, function() {

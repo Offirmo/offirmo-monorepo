@@ -8,7 +8,8 @@
 
 	"bin": {
 		"monorepo-script--clean-package": "./clean.mjs",
-		"monorepo-script--build-typescript-package": "./build-typescript.mjs"
+		"monorepo-script--build-typescript-package": "./build-typescript.mjs",
+		"monorepo-script--monorepo-utils": "./monorepo-utils.cjs"
 	},
 
 	"dependencies": {

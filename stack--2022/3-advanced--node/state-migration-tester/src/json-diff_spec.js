@@ -1,7 +1,5 @@
 const { expect } = require('chai')
 
-const { generate_uuid, xxx_test_unrandomize_element } = require('@offirmo-private/uuid')
-
 
 const {
 	get_raw_diff,
@@ -41,8 +39,8 @@ describe(`${LIB} - json diff`, function() {
 		context('when non-semantic difference: @offirmo-private/state-migration-tester', function () {
 
 			it('should work', () => {
-				const test_obj_a = { uuid: generate_uuid() }
-				const test_obj_b = { uuid: generate_uuid() }
+				const test_obj_a = { uuid: '<uuid1>' }
+				const test_obj_b = { uuid: '<uuid2>' }
 
 				expect(get_advanced_diff( test_obj_a, test_obj_b )).to.be.undefined
 
