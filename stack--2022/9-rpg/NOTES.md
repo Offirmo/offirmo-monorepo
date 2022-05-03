@@ -646,7 +646,34 @@ Microaggressions are often brief slights or actions made toward members of oppre
 Microaggressions can be verbal or behavioral and can convey hostile, derogatory, or negative connotations, which can alienate colleagues by making them feel like they don’t belong. Even if microaggressions are enacted without ill intentions, they can still be hurtful. This form of discrimination can be subtle and well disguised, and can therefore be difficult to identify and address. Microaggressions can reinforce and even condone more overt and severe forms of discrimination, so it’s important that you learn to recognize the ways microaggressions can take shape and how best to address them.
 
 Affinity Bias
-
 Positive/Negative Emphasis
-
 Stereotyping
+
+
+Recognizing Disrespect
+LOOK FOR…
+* A disregard for privacy, physical space, viewpoints, or belongings
+* Intimidation, aggressive behavior, or “the silent treatment”
+* Thoughtless or arrogant behavior, like using profanity when someone objects to it
+
+Recognizing Bullying
+LOOK FOR A PATTERN OF...
+* The abuse of power
+* Disrespectful behavior that is overt or subtle, in public or behind closed doors
+* Verbal aggression, sarcasm, or psychological manipulation
+* Unreasonable or constantly changing directives and deadlines
+* Singling out individuals
+* “Mobbing,” in which a group of people gang up on an individual
+
+Recognizing Harassment
+LOOK FOR…
+* Subtle behaviors, like repeated, unwelcome, low-grade flirtation, or overt behaviors, like a racial slur
+* Intrusive behaviors, such as unwanted touching or sexual attention
+* Jokes, pranks, and written or graphic material intended to demean
+* A single incident can be harassment when it’s severe, like a physical threat or an assault
+
+Solutions
+Direct: address the concerns directly
+Distract: create a diversion to diffuse the situation.
+Delegate: get others involved to intervene in the situation.
+Delay: follow up later to ask if he was okay.

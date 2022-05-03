@@ -169,16 +169,19 @@ since node 10 in maintenance mode since 2020-05-19 https://nodejs.org/en/about/r
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 
-	"type": "module",
+	"type": "module",  XXX No as [2022/05](update marker) this is taken too seriously by node which refuses to use commonjs
 	"sideEffects": false,
-	"exports": {
+	"exports": { XXX are there any tools able to read that? Even typescript doesnt (as of 4.5)
 		".": {
+         XXX those fields must start with ./
+           XXX other fields must NOT (ex. https://github.com/vuejs/vue/blob/v2.2.2/package.json#L6)
 			"import": "./dist/src.es2021/index.js",
 			"require": "./dist/src.es2021.cjs/index.js"
 		}
 	},
-	"main": "dist/src.es2021.cjs/index.js",  XXX needed for typescript as of 4.5
-	"typings": "dist/src.es2021.cjs/index.d.ts",
+	"module": "dist/src.es2021/index.js", XXX eventually, this is the most supported field https://stackoverflow.com/questions/42708484/what-is-the-module-package-json-field-for
+	"main": "dist/src.es2021.cjs/index.js",  oldest, used for cjs XXX needed for typescript as of 4.5
+	"typings": "dist/src.es2021.cjs/index.d.ts", XXX idem, needed for typescript 4.5
 	"source": "src/index.ts",
 
 	"size-limit": [
