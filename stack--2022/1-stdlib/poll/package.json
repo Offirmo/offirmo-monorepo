@@ -5,16 +5,15 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"type": "module",
 	"sideEffects": false,
 	"exports": {
 		".": {
 			"import": "./index.js"
 		}
 	},
+	"module": "index.js",
+	"main": "index.js",
+	"source": "index.js",
 
-	"dependencies": {},
-
-	"scripts": {},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/1-stdlib/poll"
 }

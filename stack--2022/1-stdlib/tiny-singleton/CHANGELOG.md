@@ -4,7 +4,7 @@
 ## pending
 * TODO use globalThis to ensure there is no accidental duplication due to incorrect bundling or bundle split? (to review)
 * [chore] [breaking] cjs pre-build now targeting node12/ES2021 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
-* [chore] [breaking] module now advertised as ESM `"type": "module"` in package.json
+* (TODO when the ecosystem is ready) [chore] [breaking] module now advertised as ESM `"type": "module"` in package.json
 * ...
 
 ## v1.0.0

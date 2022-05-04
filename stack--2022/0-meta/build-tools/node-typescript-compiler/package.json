@@ -5,7 +5,6 @@
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 
-	"type": "module",
 	"sideEffects": false,
 	"exports": "./src/index.mjs",
 	"source": "./src/index.mjs",
