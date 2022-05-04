@@ -2,7 +2,7 @@
 **This package follows [semver](https://semver.org/).**
 
 ## PENDING
-* [test] TODO unit tests!
+* [chore] added unit tests!
 * [chore] [breaking] cjs pre-build now targeting node12/ES2021 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
 * [chore] [breaking] module now advertised as ESM `"type": "module"` in package.json
 * ...
