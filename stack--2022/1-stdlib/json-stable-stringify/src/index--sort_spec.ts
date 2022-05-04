@@ -1,15 +1,11 @@
 import { expect } from 'chai'
-import fetch_ponyfill from 'fetch-ponyfill'
 
 import stable_stringify from './index.js'
-
-const { fetch } = fetch_ponyfill()
-
 
 describe('json-stable-stringify', function() {
 
 	// test that we perform exactly as JSON.stringify for already sorted data
-	describe.only('SORTABLE situations', function () {
+	describe('SORTABLE situations', function () {
 
 		function test_against_builtin(value: any): void {
 			const resultⵧbuiltin = (() => {
@@ -31,7 +27,12 @@ describe('json-stable-stringify', function() {
 			})()
 
 			if (resultⵧbuiltin === resultⵧstable) {
+				if (resultⵧstable === '<exception! Converting circular structure to JSON>') {
+					// this case is valid
+					return
+				}
 				console.log('☑ JSON.stringify    :', resultⵧbuiltin)
+				console.log('☐ stable-stringify  :', resultⵧstable)
 				throw new Error('Unexpected equality. Is it a sortable situation?')
 			}
 			else {
@@ -47,56 +48,32 @@ describe('json-stable-stringify', function() {
 
 		describe('handling of sortable nodes', function() {
 
-			describe('arrays', function() {
-
-				it('should work with elements being primitive types', () => {
-					test_against_builtin([ 'foo', 'bar', 42, Symbol('key') ])
-				})
-
-				it('should work with elements being non-primitive types', () => {
-					test_against_builtin([ () => {}, { foo: 'bar'} ])
-				})
-
-				it('should work with depth', () => {
-					test_against_builtin([ [ 0 ], [ 1, 2 ] ])
-				})
-
-				it('should work with holes', () => {
-					test_against_builtin(new Array(5))
-					const a = new Array(5)
-					a[3] = 3
-					test_against_builtin(a)
-				})
-
-				it('should work with repeated references (NOT circular)', () => {
-					const r: any = { foo: '42' }
-					const a = [ r, r ]
-					test_against_builtin(a)
-				})
-
-				it('should work with circular references', () => {
-					const a: any[] = []
-					a.push(a)
-					test_against_builtin(a)
-				})
-			})
-
+			// objects are the only thing that need stability
 			describe('objects/hashes', function() {
-				it('should work with attributes of primitive types  (key + value)', () => {
+
+				// see deterministic ECMA ordering https://262.ecma-international.org/6.0/#sec-ordinary-object-internal-methods-and-internal-slots-ownpropertykeys
+				it('should work with attributes of primitive types  (key + value) -- strings', () => {
 					test_against_builtin({
 						k: undefined,
-						23: null,
+						z: 0,
 						[Symbol('key')]: 'bar',
-						x: 42,
+						a: 0,
 					})
 				})
-
-				it('should work with attributes of non-primitive types  (key + value)', () => {
+				it('should work with attributes of primitive types  (key + value) -- integers', () => {
 					test_against_builtin({
-						foo() {},
-						.2e3: {
-							n: 42
-						}
+						k: undefined,
+						10: 0,
+						[Symbol('key')]: 'bar',
+						3: 0,
+					})
+				})
+				it('should work with attributes of primitive types  (key + value) -- mixed', () => {
+					test_against_builtin({
+						z: 0,
+						a: 0,
+						10: 0,
+						3: 0,
 					})
 				})
 
@@ -113,7 +90,7 @@ describe('json-stable-stringify', function() {
 
 				it('should work with attributes = repeated references (NOT circular)', () => {
 					const r: any = { foo: '42' }
-					const obj: any = { bar: r, baz: r }
+					const obj: any = { baz: r, bar: r }
 					test_against_builtin(obj)
 				})
 
@@ -127,17 +104,8 @@ describe('json-stable-stringify', function() {
 
 		describe('special cases', function() {
 
-			it('should be able to handle deep objects - fetch', () => {
-				const ↆf = fetch('https://www.google.com')
-
-				return ↆf.then(
-					(fetch_raw_result: any) => {
-						test_against_builtin(fetch_raw_result)
-					}
-				)
-			})
-
 			it('should be able to handle huge blobs', () => {
+				// brittle test, rely on process.env not being sorted
 				test_against_builtin(process.env)
 			})
 		})
