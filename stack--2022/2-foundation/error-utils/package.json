@@ -51,7 +51,8 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^8",
 		"@size-limit/preset-small-lib": "^7",
-		"deep-freeze-strict": "^1",
+		"@types/icepick": "^2",
+		"icepick": "^2",
 		"npm-run-all": "^4",
 		"size-limit": "^7"
 	},

@@ -49,6 +49,7 @@
 		"@offirmo-private/soft-execution-context-node": "^0",
 		"@offirmo/unit-test-toolbox": "^8",
 		"@offirmo/universal-debug-api-node": "^0",
+		"@types/icepick": "^2",
 		"npm-run-all": "^4",
 		"tslib": "^2"
 	},

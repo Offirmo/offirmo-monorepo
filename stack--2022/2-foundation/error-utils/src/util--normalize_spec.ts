@@ -1,9 +1,8 @@
 import { expect } from 'chai'
-import deep_freeze from 'deep-freeze-strict'
+
+import * as icepick from 'icepick'
 
 import {
-	QUASI_STANDARD_ERROR_FIELDS,
-	COMMON_ERROR_FIELDS,
 	COMMON_ERROR_FIELDS_EXTENDED,
 } from './fields'
 
@@ -11,7 +10,7 @@ import { XXError } from './types'
 import { normalizeError } from './util--normalize'
 
 
-describe(`common-error-fields - utils`, () => {
+describe(`@offirmo/error-utils`, () => {
 
 	describe('normalizeError', () => {
 		const _demo_error = new Error('[Test!]')
@@ -20,7 +19,7 @@ describe(`common-error-fields - utils`, () => {
 
 			it('should work and re-create only if the object is not already an error -- base', () => {
 				let err = new Error('foo!')
-				err = deep_freeze(err)
+				err = icepick.freeze(err)
 
 				const normalized_err = normalizeError(err)
 				expect(normalized_err).to.equal(err) // NO re-creation
@@ -31,7 +30,7 @@ describe(`common-error-fields - utils`, () => {
 				xerr.details = {
 					foo: 42
 				}
-				xerr = deep_freeze(xerr)
+				xerr = icepick.freeze(xerr)
 
 				const normalized_err = normalizeError(xerr)
 				expect(normalized_err).to.equal(xerr) // NO re-creation
@@ -101,7 +100,7 @@ describe(`common-error-fields - utils`, () => {
 				xerr.details = {
 					foo: 42
 				}
-				xerr = deep_freeze<any>(xerr)
+				xerr = icepick.freeze<any>(xerr)
 
 				const normalized_err = normalizeError(xerr, {alwaysRecreate: true})
 				expect(normalized_err).not.to.equal(xerr)

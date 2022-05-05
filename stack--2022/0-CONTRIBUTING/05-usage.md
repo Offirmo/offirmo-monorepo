@@ -23,10 +23,12 @@ At the moment, there are dependency loops which require a refactoring I don't pl
 For ex. to make everything work again step by step!
 
 ```bash
+bolt monorepo-utils--fix
 bolt --only-fs "0-meta/build-tools/*" ws run build
 bolt --only-fs "0-meta/build-tools/*" ws run test
 bolt --only-fs "1-stdlib/*" ws run build
 bolt --only-fs "1-stdlib/*" ws run test
+bolt --only-fs "1-stdlib/*" ws run ensure-size
 bolt --only-fs "2-foundation/*" ws run build
 bolt --only-fs "2-foundation/*" ws run test
 bolt --only-fs "3-advanced--multi/*" ws run build

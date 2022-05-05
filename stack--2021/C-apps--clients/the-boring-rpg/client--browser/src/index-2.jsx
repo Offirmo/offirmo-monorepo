@@ -6,7 +6,7 @@ import { overrideHook } from '@offirmo/universal-debug-api-browser'
 import get_loader from '@offirmo-private/iframe--loading'
 import { asap_but_out_of_immediate_execution, schedule_when_idle_but_within_human_perception } from '@offirmo-private/async-utils'
 
-import { setTextEncoder } from '@tbrpg/flux'
+import { inject_text_encoder } from '@tbrpg/flux'
 
 import { CHANNEL } from './services/channel'
 import { BUILD_DATE } from './build.json'
@@ -42,7 +42,7 @@ get_loader().configure({
 	],
 })
 
-setTextEncoder(TextEncoder)
+inject_text_encoder(TextEncoder)
 init_cordova()
 init_analytics()
 init_analytics_ga4()

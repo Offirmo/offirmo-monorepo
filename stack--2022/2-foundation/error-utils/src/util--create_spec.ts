@@ -1,9 +1,6 @@
 import { expect } from 'chai'
-import deep_freeze from 'deep-freeze-strict'
 
 import {
-	QUASI_STANDARD_ERROR_FIELDS,
-	COMMON_ERROR_FIELDS,
 	COMMON_ERROR_FIELDS_EXTENDED,
 } from './fields'
 
@@ -12,7 +9,7 @@ import { XXError } from './types'
 import { createError } from './util--create'
 
 
-describe(`common-error-fields - utils`, () => {
+describe(`@offirmo/error-utils`, () => {
 
 	describe('createError()', () => {
 
@@ -26,13 +23,13 @@ describe(`common-error-fields - utils`, () => {
 			expect(err.message).to.equal('Error: foo')
 
 			expect(err.statusCode).to.equal(555)
-			expect(err.details?.statusCode).to.be.undefined
+			expect(err.details?.['statusCode']).to.be.undefined
 
-			expect(err.details?.foo).to.equal(42)
+			expect(err.details?.['foo']).to.equal(42)
 			expect((err as any).foo).to.be.undefined
 
-			expect(err.details?.framesToPop).to.be.undefined
 			expect(err.framesToPop).to.equal(4) // +1 added
+			expect(err.details?.['framesToPop']).to.be.undefined
 		})
 
 		describe('message', function() {
@@ -58,6 +55,8 @@ describe(`common-error-fields - utils`, () => {
 
 		describe('attributes', function() {
 			it('should attach the attributes at the correct place', () => {
+				const chained_error = new Error('Foo!')
+
 				const err = createError('test!', {
 					name: 'TEST_NAME', // will be ignored and lost
 					message: 'TEST_MSG', // idem
@@ -67,6 +66,7 @@ describe(`common-error-fields - utils`, () => {
 					bar: 33,
 
 					// should stay as is
+					cause: chained_error,
 					code: '1234', // rem: string type according to nodejs doc
 					statusCode: 567,
 					shouldRedirect: false,
@@ -88,6 +88,7 @@ describe(`common-error-fields - utils`, () => {
 					name: 'TypeError',
 					message: 'TypeError: test!',
 					stack: err.stack,
+					cause: chained_error,
 					code: '1234', // rem: string type according to nodejs doc
 					statusCode: 567,
 					shouldRedirect: false,
@@ -104,7 +105,7 @@ describe(`common-error-fields - utils`, () => {
 				}
 				COMMON_ERROR_FIELDS_EXTENDED.forEach((k: keyof XXError) => {
 					expect(err, k).to.have.property(k)
-					expect(err[k], k).to.deep.equal(expected[k])
+					expect(err[k], k).to.deep.equal((expected as any)[k])
 				})
 				Object.keys(err).forEach(k => {
 					expect(expected, k).to.have.property(k)

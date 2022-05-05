@@ -7,7 +7,7 @@ export interface XError extends Error {
 	name: string
 	message: string
 	stack?: string
-	cause?: string
+	cause?: Error
 
 	// optional
 	code?: string
