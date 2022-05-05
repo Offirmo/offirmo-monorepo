@@ -1,0 +1,13 @@
+{
+	"name": "wikidata-tests",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
+	"private": true,
+	"dependencies": {
+		"@entitree/helper": "^0.4",
+		"wikidata-entity-lookup": "^2",
+		"wikidata-lang": "^4",
+		"wikidata-sdk": "^8"
+	}
+}
