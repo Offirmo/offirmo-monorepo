@@ -15,7 +15,7 @@
 
 ## v7.0.0
 2021/01/03
-* [chore] [breaking] now requiring the oldest node LTS = 14 (may still work with older ones, just not supported)
+* [chore][breaking] now requiring the oldest node LTS = 14 (may still work with older ones, just not supported)
 * [fix] [breaking] major bump of chai-fetch-mock because of a conflict with sinon-chai (which [I reported](https://github.com/gakimball/chai-fetch-mock/issues/3))
 * [feat]+[fix] Optionally, the init script will now initialize a node SEC/UDA environment if those are available
    This happens only in my monorepo thus I silenced an existing warning (fix)
@@ -27,8 +27,8 @@
 
 ## v6.0.0
 2020/07/01
-* [chore] [breaking] following the deprecation of `--opts mocha.opts` in mocha 8, converted the options to `--config mocharc.json`
-* [chore] [breaking] now requiring oldest node LTS = 12 (may still work with older ones)
+* [chore][breaking] following the deprecation of `--opts mocha.opts` in mocha 8, converted the options to `--config mocharc.json`
+* [chore][breaking] now requiring oldest node LTS = 12 (may still work with older ones)
 * [chore] bumped deps: sinon 8, mocha 7
 * [chore] reorganized source paths = links update in the doc
 * [feat] added *optional* installation of [chai-fetch-mock](https://github.com/gakimball/chai-fetch-mock)

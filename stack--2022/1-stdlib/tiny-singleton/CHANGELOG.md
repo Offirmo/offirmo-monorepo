@@ -24,7 +24,7 @@
 
 ## v0.0.3
 2020/07/01
-* [chore] [breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
+* [chore][breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
 * [doc] README++
 * [feat] minor tweak to shave a few bytes
 

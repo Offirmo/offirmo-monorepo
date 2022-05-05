@@ -16,7 +16,7 @@
 
 ## v3.0.0
 2020/07/01
-* [chore] [breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
+* [chore][breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
 
 ## v2.0.1
 2019/12/12
@@ -24,7 +24,7 @@
 
 ## v2.0.0
 2019/10/27
-* [chore] [breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../CONTRIBUTING/module-exports.md)
+* [chore][breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../CONTRIBUTING/module-exports.md)
 * [feat] new "forcedLevel" creation option
 * [feat] allow passing a custom sink or options to the sink (platform dependent)
 * [test] added unit tests

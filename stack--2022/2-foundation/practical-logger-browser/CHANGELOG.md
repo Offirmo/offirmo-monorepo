@@ -23,7 +23,7 @@ NOTE: not much reason to publish this lib since it's supposed to be bundled
 
 ## v3.0.0
 2020/07/01
-* [chore] [breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
+* [chore][breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
 * [feat] improved error display, now always printed as "details" so that the props are inspectable
 * [feat] slightly improved some messages
 * [chore] bumped dependencies
@@ -42,9 +42,9 @@ NOTE: not much reason to publish this lib since it's supposed to be bundled
 
 ## v2.0.0
 2019/11/05
-* [feat] [breaking] (opt out) warnings and errors now break out from groups, to prevent them from being hidden in groupCollapsed()
-* [feat] [breaking] (opt out) groups are now lazily created, only if they have some content
-* [chore] [breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../CONTRIBUTING/module-exports.md)
+* [feat][breaking] (opt out) warnings and errors now break out from groups, to prevent them from being hidden in groupCollapsed()
+* [feat][breaking] (opt out) groups are now lazily created, only if they have some content
+* [chore][breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../CONTRIBUTING/module-exports.md)
 * [feat] now re-export the entire practical-logger-interface
 * [feat] better browser detection + now supports non firefox/chromium/safari browsers (ex. msie)
 * [feat] ability to opt-out from fancy sinks

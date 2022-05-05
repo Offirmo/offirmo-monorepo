@@ -15,7 +15,7 @@
 
 ## v3.0.0
 2020/07/01
-* [chore] [breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
+* [chore][breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
 * [chore] bumped dependencies
 
 ## v2.1.1
@@ -36,8 +36,8 @@
 
 ## v2.0.0
 2019/10/27
-* [feat] [breaking] now implementing 2.0.0 interface
-* [chore] [breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../CONTRIBUTING/module-exports.md)
+* [feat][breaking] now implementing 2.0.0 interface
+* [chore][breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../CONTRIBUTING/module-exports.md)
 * [feat] handle the new `forcedLevel` creation param (see interface)
 * [feat] now using Typescript 3.7 assertions
 * [feat] split a file to allow pinpoint consumption in some rare cases

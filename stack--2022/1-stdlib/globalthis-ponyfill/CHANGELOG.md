@@ -21,7 +21,7 @@
 
 ## v3.0.0
 2020/07/01
-* [chore] [breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
+* [chore][breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
 * [doc] README++
 * [feat] also provide unnamed export
 
@@ -31,7 +31,7 @@
 
 ## v2.0.0
 2019/11/18
-* [chore] [breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../CONTRIBUTING/module-exports.md)
+* [chore][breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../CONTRIBUTING/module-exports.md)
 * [chore] linted automatically (no logic change)
 
 ## v1.0.2

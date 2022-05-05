@@ -13,7 +13,7 @@
 
 ## v1.0.0
 2020/07/01
-* [chore] [breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
+* [chore][breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
 * [chore] tweaked the tsconfig to not use nor import tslib, it was bloating the bundle size.
 * [feat] micro refactor to lower the lib size
 * [chore] bumped dependencies (incl. most recent interface)
@@ -34,7 +34,7 @@
 * [refactor] [breaking] renamed to "placeholder"
 * [refactor] [breaking] remove mentions of "web" since this lib is not restricted to the web
 * [doc] README++
-* [chore] [breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../CONTRIBUTING/module-exports.md)
+* [chore][breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../CONTRIBUTING/module-exports.md)
 * [chore] bumped dependencies
 
 ## v0.1.1

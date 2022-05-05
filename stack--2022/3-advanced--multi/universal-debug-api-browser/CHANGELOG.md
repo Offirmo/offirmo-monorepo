@@ -18,7 +18,7 @@ NOTE: Reminder to increase REVISION when releasing!
 
 ## v1.0.0
 2020/07/02
-* [chore] [breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
+* [chore][breaking] cjs pre-build now targeting node12/ES2019 [details](../../CONTRIBUTING/module-exports.md)
 * [feat] better internal logging
 * [doc] README++
 * [chore] improved "attaching" logic with hints on setup error and improves some bad cases
@@ -41,6 +41,6 @@ NOTE: Reminder to increase REVISION when releasing!
 
 ## TEMPLATE
 * [doc] README++
-* [chore] [breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../CONTRIBUTING/module-exports.md)
+* [chore][breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../CONTRIBUTING/module-exports.md)
 * [chore] bumped dependencies
 * ...
