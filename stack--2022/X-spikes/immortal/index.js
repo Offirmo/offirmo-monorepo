@@ -1,4 +1,5 @@
 // http://thebedrockblog.blogspot.com/2017/12/legends-of-ogre-gate-chapter-56-sun.html
+// https://jeremybai.com/
 
 const BEGINNING = [
 	'After the wedding',
@@ -103,7 +104,7 @@ const BEGINNING = [
 	'Without knowledge',
 ]
 
-const MIDDLE = [
+const END = [
 	'is this not man?',
 	'only then can you be a true scholar',
 	'you never truly work',
@@ -206,7 +207,7 @@ const MIDDLE = [
 	'your heart will be at peace',
 ]
 
-const END = [
+const BONUS = [
 	'but not all men can see the perfect realm',
 	'but the achievement is without meaning',
 	'but the perfect realm cannot truly be attained',
@@ -218,3 +219,42 @@ const END = [
 	'or there will be no peace',
 	'or you will never understand Wan Mei',
 ]
+
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+function getRandomIntInclusive(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+}
+
+function gen() {
+	let special = 0
+	let part1 = BEGINNING[getRandomInt(0, BEGINNING.length)]
+	if (part1.endsWith('+')) {
+		special++
+		part1 = part1.slice(0, -1)
+	}
+	let part2 = END[getRandomInt(0, END.length)]
+	if (part2.endsWith('+')) {
+		special++
+		part2 = part2.slice(0, -1)
+	}
+	const part3 = special === 2 ? BONUS[getRandomInt(0, BONUS.length)] : ''
+	let result = [part1, part2, part3]
+		.filter(p => !!p)
+		.join(', ')
+	if (!result.endsWith('?'))
+		result += '.'
+
+	return result
+}
+
+console.log(gen())
+console.log(gen())
+console.log(gen())
+console.log(gen())
