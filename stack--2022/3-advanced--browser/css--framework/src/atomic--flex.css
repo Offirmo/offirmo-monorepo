@@ -1,0 +1,22 @@
+.o⋄flex--directionꘌrow {
+	display: flex;
+	flex-direction: row;
+}
+.o⋄flex--directionꘌcolumn {
+	display: flex;
+	flex-direction: column;
+}
+
+.o⋄flex--centered-content {
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+/* https://stackoverflow.com/questions/90178/make-a-div-fill-the-height-of-the-remaining-screen-space */
+.o⋄flex-element--nogrow {
+	flex-grow: 0;
+}
+.o⋄flex-element--grow {
+	flex-grow: 1;
+}

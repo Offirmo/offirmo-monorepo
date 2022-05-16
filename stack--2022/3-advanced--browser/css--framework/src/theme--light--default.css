@@ -1,9 +1,6 @@
 /* Traditional, most efficient theme
  */
-
-:root {
-
-}
+@import './vars--colors--boz.css';
 
 
 :root, /* this theme is the default */

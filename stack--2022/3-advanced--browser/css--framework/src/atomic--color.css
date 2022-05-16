@@ -1,0 +1,17 @@
+
+.o⋄colorꘌmain {
+	color: var(--o⋄color⁚fg--main);
+}
+
+.o⋄colorꘌsecondary {
+	color: var(--o⋄color⁚fg--secondary);
+}
+
+.o⋄colorꘌancillary {
+	color: var(--o⋄color⁚fg--ancillary);
+}
+
+
+.o⋄bg-colorꘌbackdrop {
+	background-color: var(--o⋄color⁚bg--main--backdrop);
+}

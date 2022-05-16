@@ -1,0 +1,30 @@
+
+.o⋄text-alignꘌcenter {
+	text-align: center;
+}
+
+.o⋄marginꘌnone {
+	margin: 0;
+}
+
+.o⋄overflow-yꘌauto {
+	overflow-y: auto;
+}
+
+/* XXX NO there is likely an underlying problem!
+.o⋄no-overflow {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+*/
+
+.o⋄widthꘌ100pc {
+	width: 100%;
+}
+.o⋄heightꘌ100pc {
+	height: 100%;
+}
+
+.o⋄fast-tap {
+	touch-action: manipulation; /* https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
+}

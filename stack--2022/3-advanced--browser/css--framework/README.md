@@ -8,7 +8,7 @@ Can also be used as a base for more advanced CSS frameworks like @tbrpg/ui--brow
 
 Features:
 - by default, the minimal styles to make a page looks good (cf. "motherfucking website")
-- by default, activates clever settings gleaned across blog posts (see list at bottom)
+- by default, activates clever non-reset settings gleaned across blog posts (see list at bottom)
 - several "atomic" classes (see [tachyons](https://tachyons.io/) / [atomic CSS](https://acss.io/))
 
 Inspiration:
@@ -169,3 +169,19 @@ TODO review scalability
 TODO review font size https://tonsky.me/blog/font-size/
 TODO https://mxstbr.com/thoughts/margin/ https://www.madebymike.com.au/writing/css-architecture-for-modern-web-applications/
 TODO https://tympanus.net/codrops/2021/10/25/the-process-of-building-a-css-framework/
+TODO https://equinusocio.dev/blog/web-fonts-in-2018
+
+
+/* Good tools:
+* https://www.cssportal.com/css-color-converter/
+* https://picular.co/quality
+*
+* Principles:
+* - https://ianstormtaylor.com/design-tip-never-use-black/
+    */
+
+/*
+TODO "steal" themes from:
+multiples https://themer.dev/
+dark: https://github.com/gaearon/subliminal
+*/

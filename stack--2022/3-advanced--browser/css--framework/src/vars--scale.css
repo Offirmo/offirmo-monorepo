@@ -1,0 +1,3 @@
+:root {
+	--o⋄scale: 1.0; /* overall scale of the UI, to allow programmatic scaling TODO calc(var(--o⋄scale) * XXX);*/
+}

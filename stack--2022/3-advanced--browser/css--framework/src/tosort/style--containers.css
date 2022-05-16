@@ -39,9 +39,7 @@
 	margin-right: .3em;
 }
 
-.o⋄border⁚default {
-	border: solid var(--o⋄border--thickness) var(--o⋄color⁚fg--main);
-}
+
 
 .o⋄error-report {
 	font-size: xx-small;
@@ -61,9 +59,6 @@
 .o⋄box {
 	padding: .5em;
 	border: solid calc(var(--o⋄border--thickness) * 1) var(--o⋄color⁚fg--main);
-}
-.o⋄bg-colorꘌbackdrop {
-	background-color: var(--o⋄color⁚bg--main--backdrop);
 }
 
 

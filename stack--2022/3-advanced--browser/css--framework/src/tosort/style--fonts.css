@@ -1,49 +1,7 @@
 
-/*********************/
-/* TODO https://equinusocio.dev/blog/web-fonts-in-2018 */
-
-:root {
-	/* https://perfectmotherfuckingwebsite.com/ */
-	--o⋄font-family--fast_and_good_enough: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans", roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu, "franklin gothic medium", "century gothic", "Liberation Sans", sans-serif;
-	--o⋄font-family--system: "o⋄system", -apple-system, BlinkMacSystemFont, "avenir next", avenir, "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans", roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu, "franklin gothic medium", "century gothic", "Liberation Sans", sans-serif;
-	--o⋄font-family--roboto: "Roboto", -apple-system, BlinkMacSystemFont, "avenir next", avenir, "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans", roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu, "franklin gothic medium", "century gothic", "Liberation Sans", sans-serif;
-	--o⋄font-family--roboto-condensed: "Roboto Condensed", "Roboto", -apple-system, BlinkMacSystemFont, "avenir next", avenir, "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans", roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu, "franklin gothic medium", "century gothic", "Liberation Sans", sans-serif;
-	--o⋄font-family--roboto-mono: "Roboto Mono", monospace;
-}
-
-/*********************/
-
-.o⋄fontꘌfast-and-good-enough {
-	font-family: var(--o⋄font-family--fast_and_good_enough);
-	/* TODO font size */
-}
-
-.o⋄fontꘌsystem {
-	font-family: var(--o⋄font-family--system);
-}
-
-.o⋄fontꘌroboto {
-	font-family: var(--o⋄font-family--roboto);
-}
-
-.o⋄fontꘌroboto-condensed {
-	font-family: var(--o⋄font-family--roboto-condensed);
-}
-
-.o⋄fontꘌroboto-mono {
-	font-family: var(--o⋄font-family--roboto-mono);
-}
-
-/*********************/
 
 
-/* https://css-tricks.com/snippets/css/system-font-stack/ */
-@font-face {
-	font-family: 'o⋄system';
-	font-style: normal;
-	font-weight: 300;
-	src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
-}
+
 
 /* adapted from:
  https://fonts.google.com/?selection.family=Roboto|Roboto+Condensed|Roboto+Mono&query=roboto&selection.subset=latin-ext

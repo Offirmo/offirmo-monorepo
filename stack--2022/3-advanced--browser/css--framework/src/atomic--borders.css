@@ -1,0 +1,8 @@
+
+.o⋄border⁚default {
+	border: solid var(--o⋄border--thickness) var(--o⋄color⁚fg--main);
+}
+
+.o⋄border-colorꘌancillary {
+	border-color: var(--o⋄color⁚fg--ancillary);
+}

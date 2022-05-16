@@ -1,7 +1,15 @@
 /*! @offirmo-private/ui--browser--css v0.0.1 | Unlicense | github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/ui--browser--css */
 
+/* While most of the files in this CSS framework are "cherry-pickable"
+ * we provide this index which should properly render a "motherfucking website" properly.
+ * Use of this file is optional.
+ */
+
 @import 'npm:@offirmo-private/css--sane-defaults/src/index.css';
 
+@import 'theme--light--default.css';
+
+/*
 @import './style--global_variables.css';
 @import './style--reset--controls.css';
 @import './style--rhythm.css';
@@ -13,3 +21,4 @@
 @import './style--semantic.css';
 @import './style--technical.css';
 @import './style--misc.css';
+*/
