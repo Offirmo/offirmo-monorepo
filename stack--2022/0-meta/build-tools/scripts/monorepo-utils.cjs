@@ -11,27 +11,6 @@ const { lsDirsSync } = require('../../../3-advanced--node/cli-toolbox/fs/extra')
 
 console.log(`🛠  🔻 tweaking the monorepo…`)
 
-/////////////////////
-
-function get_pkg_1st_level_dependencies_relpaths(pkg_abs_path) {
-	const NODE_MODULES_PATH = path.join(pkg_abs_path, 'node_modules')
-	try {
-		const node_module_children_basenames = lsDirsSync(NODE_MODULES_PATH, { full_path: false })
-		return node_module_children_basenames.reduce((acc, basename) => {
-			if (basename === '.bin' || basename === '.cache') return acc
-
-			return acc.concat(
-				basename.startsWith('@')
-					? lsDirsSync(path.join(NODE_MODULES_PATH, basename), { full_path: false }).map(b => path.join(basename, b))
-					: [basename]
-			)
-		}, [])
-	}
-	catch (err) {
-		if (err.code === 'ENOENT') return []
-		throw err
-	}
-}
 
 /////////////////////
 
@@ -326,3 +305,26 @@ await Promise.all([
 console.log(stats)
 */
 console.log(`🛠  🔺 tweaked the monorepo ✔`)
+
+/////////////////////
+/*
+function get_pkg_1st_level_dependencies_relpaths(pkg_abs_path) {
+	const NODE_MODULES_PATH = path.join(pkg_abs_path, 'node_modules')
+	try {
+		const node_module_children_basenames = lsDirsSync(NODE_MODULES_PATH, { full_path: false })
+		return node_module_children_basenames.reduce((acc, basename) => {
+			if (basename === '.bin' || basename === '.cache') return acc
+
+			return acc.concat(
+				basename.startsWith('@')
+					? lsDirsSync(path.join(NODE_MODULES_PATH, basename), { full_path: false }).map(b => path.join(basename, b))
+					: [basename]
+			)
+		}, [])
+	}
+	catch (err) {
+		if (err.code === 'ENOENT') return []
+		throw err
+	}
+}
+*/

@@ -27,9 +27,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@babel/core": "^7",
 		"@offirmo-private/soft-execution-context": "*",
-		"parcel-bundler": "^1",
 		"prop-types": "^15",
 		"react": "^18",
 		"react-dom": "^18"

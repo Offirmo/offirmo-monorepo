@@ -24,7 +24,6 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@babel/core": "^7",
 		"npm-run-all": "^4",
 		"typescript": "^4"
 	},
