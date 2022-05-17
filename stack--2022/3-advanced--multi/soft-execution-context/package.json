@@ -31,7 +31,6 @@
 
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@babel/core": "^7",
 		"@offirmo/practical-logger-browser": "^3",
 		"npm-run-all": "^4",
 		"tslib": "^2"

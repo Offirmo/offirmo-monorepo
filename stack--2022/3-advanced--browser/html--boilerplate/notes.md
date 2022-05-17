@@ -27,7 +27,6 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@babel/core": "^7",
 		"@offirmo-private/simple-upgradable-template": "^0",
 		"@size-limit/preset-small-lib": "^7",
 		"npm-run-all": "^4",
