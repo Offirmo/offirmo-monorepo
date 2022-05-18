@@ -7,10 +7,7 @@ node_modules
 
 
 ### re-generable or auto-generated
-**/dist/src.es2019/
-**/dist/src.es2019.cjs/
-**/dist/src.es2021/
-**/dist/src.es2021.cjs/
+**/dist
 ## intentionally unused
 package-lock.json
 

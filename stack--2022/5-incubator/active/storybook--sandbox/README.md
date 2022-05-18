@@ -23,7 +23,7 @@
 		"@offirmo/universal-debug-api-placeholder": "^1",
 		"@storybook/react": "^6",
 		"classnames": "^2",
-		"emittery": "^0.10",
+		"emittery": "^0.11",
 		"prop-types": "^15",
 		"react": "^18",
 		"react-dom": "^18",
