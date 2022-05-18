@@ -1,9 +1,17 @@
 #!/usr/bin/env zx
 // using https://github.com/google/zx
-const path = require('path')
-const fs = require('fs')
+import path from 'node:path'
+import { promises as fs } from 'node:fs'
 
-const write_json_file = require('write-json-file') // TODO remove dep
+import { writeJsonFile as write_json_file } from 'write-json-file' // TODO remove dep
+
+// extracted from https://github.com/sindresorhus/load-json-file/blob/main/index.js
+async function load_json_file(filePath) {
+	const buffer = await fs.readFile(filePath)
+	// Unlike `buffer.toString()` and `fs.readFile(path, 'utf8')`, `TextDecoder`` will remove BOM.
+	const data = new TextDecoder().decode(buffer)
+	return JSON.parse(data)
+}
 
 const { lsDirsSync } = require('../../../3-advanced--node/cli-toolbox/fs/extra')
 
@@ -16,10 +24,10 @@ console.log(`🛠  🔻 tweaking the monorepo…`)
 
 const MONOREPO_ROOT = path.join(__dirname, '../../..')
 const MONOREPO_PKG_JSON_PATH = path.join(MONOREPO_ROOT, 'package.json')
-const MONOREPO_PKG_JSON = require(MONOREPO_PKG_JSON_PATH)
+const MONOREPO_PKG_JSON = await load_json_file(MONOREPO_PKG_JSON_PATH)
 /*
 const CURRENT_PKG_PATH = process.cwd()
-const CURRENT_PKG_JSON = require(path.join(CURRENT_PKG_PATH, 'package.json'))
+const CURRENT_PKG_JSON = await load_json_file(path.join(CURRENT_PKG_PATH, 'package.json'))
 */
 /////////////////////
 // 1. gathering environment data
