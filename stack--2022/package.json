@@ -39,7 +39,6 @@
 	"bolt": {
 		"workspaces": [
 			"0-meta/build-tools/*",
-			"0-meta/toolboxes/*",
 			"1-stdlib/*",
 			"2-foundation/*",
 			"3-advanced--browser/*",
