@@ -8,14 +8,17 @@
 	"source": "src/index.css",
 
 	"dependencies": {
+		"@offirmo-private/css--reset": "^0"
 	},
 
 	"scripts": {
+		"dev": "parcel serve --log-level verbose  'doc/demo/*.html' --lazy"
 	},
 
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/css--reset": "^0",
+		"@offirmo-private/toolbox--parcel": "^0",
+		"@offirmo-private/toolbox--storybook": "^0",
 		"npm-run-all": "^4"
 	},
 

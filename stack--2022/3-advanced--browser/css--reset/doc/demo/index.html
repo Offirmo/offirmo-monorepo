@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<nav>
+	<a>./perfect-motherfucking-website--raw.html</a>
+	<a>./perfect-motherfucking-website--reset.html</a>
+	<a>./ut-elements.html</a>
+</nav>
+
+<script>
+	Array.prototype.forEach.call(document.querySelectorAll('a'), function(el) {
+		el.href || (el.href = el.text)
+	})
+</script>
+</body>
+</html>

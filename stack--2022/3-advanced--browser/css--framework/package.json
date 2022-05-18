@@ -14,7 +14,7 @@
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",
 
-		"_parcel:serve": "parcel serve --log-level verbose  'doc/demo/*.html' --lazy",
+		"_parcel:serve": "parcel serve --log-level verbose  'doc/demo/*.html' --lazy --port",
 		"dev1": "npm-run-all clean --parallel _parcel:serve",
 
 		"storybook": "start-storybook -p 7306"

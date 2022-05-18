@@ -1,8 +1,9 @@
-const fs = require('fs-extra')
-const path = require('path')
+import path from 'node:path'
+
+import fs from 'fs-extra'
 
 // hat tip to https://stackoverflow.com/a/24594123/587407
-function lsDirsSync(srcpath, options = {}) {
+export function lsDirsSync(srcpath, options = {}) {
 	options = {
 		full_path: true, // because it's what we usually want
 		...options,
@@ -20,7 +21,7 @@ function lsDirsSync(srcpath, options = {}) {
 	return result.sort()
 }
 
-function lsFilesSync(srcpath, options = {}) {
+export function lsFilesSync(srcpath, options = {}) {
 	options = {
 		full_path: true, // because it's what we usually want
 		...options,
@@ -36,9 +37,4 @@ function lsFilesSync(srcpath, options = {}) {
 		result = result.map(file => path.join(srcpath, file))
 
 	return result.sort()
-}
-
-module.exports = {
-	lsDirsSync,
-	lsFilesSync
 }

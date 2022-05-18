@@ -8,15 +8,16 @@
 	"source": "src/index.css",
 
 	"dependencies": {
-		"normalize.css": "^8"
 	},
 
 	"scripts": {
-		"dev": "parcel src2/*.html"
+		"dev": "parcel --log-level verbose  'doc/demo/*.html' --lazy --port 3010"
 	},
 
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/toolbox--parcel": "^0",
+		"@offirmo-private/toolbox--storybook": "^0",
 		"npm-run-all": "^4"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/css--reset"

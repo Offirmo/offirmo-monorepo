@@ -21,10 +21,10 @@
 		"heroku-prebuild": "echo This runs before Heroku nodjs buildback installs dependencies. Ensuring monorepo setup... && pwd && test -f Procfile",
 		"heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies. && pwd && ls -l",
 
-		"postinstall": "node ./0-meta/build-tools/scripts/monorepo-utils.cjs",
+		"postinstall": "node ./0-meta/build-tools/scripts/monorepo-utils.mjs",
 
-		"monorepo-utils--fix": "node ./0-meta/build-tools/scripts/monorepo-utils.cjs",
-		"monorepo-utils--fix2": "./node_modules/.bin/zx ./0-meta/build-tools/scripts/monorepo-utils.cjs",
+		"XXXmonorepo-utils--fix": "node ./0-meta/build-tools/scripts/monorepo-utils.mjs",
+		"XXXmonorepo-utils--fix2": "./node_modules/.bin/zx ./0-meta/build-tools/scripts/monorepo-utils.mjs",
 		"manypkg--check": "manypkg check",
 		"manypkg--fix": "manypkg fix",
 
@@ -122,7 +122,6 @@
 		"meow": "^10",
 		"mocha": "^10",
 		"murmurhash3js-revisited": "^3",
-		"normalize.css": "^8",
 		"npm-run-all": "^4",
 		"parcel": "^2",
 		"path-exists": "^5",

@@ -170,7 +170,7 @@ TODO review font size https://tonsky.me/blog/font-size/
 TODO https://mxstbr.com/thoughts/margin/ https://www.madebymike.com.au/writing/css-architecture-for-modern-web-applications/
 TODO https://tympanus.net/codrops/2021/10/25/the-process-of-building-a-css-framework/
 TODO https://equinusocio.dev/blog/web-fonts-in-2018
-
+TODO review https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/
 
 /* Good tools:
 * https://www.cssportal.com/css-color-converter/

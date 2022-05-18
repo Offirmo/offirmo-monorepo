@@ -1,19 +1,20 @@
 #!/usr/bin/env zx
 // using https://github.com/google/zx
+import { fileURLToPath } from 'node:url'
 import path from 'node:path'
-import { promises as fs } from 'node:fs'
+import * as fs from 'node:fs'
 
 import { writeJsonFile as write_json_file } from 'write-json-file' // TODO remove dep
 
 // extracted from https://github.com/sindresorhus/load-json-file/blob/main/index.js
-async function load_json_file(filePath) {
-	const buffer = await fs.readFile(filePath)
+function load_json_file(filePath) {
+	const buffer = fs.readFileSync(filePath)
 	// Unlike `buffer.toString()` and `fs.readFile(path, 'utf8')`, `TextDecoder`` will remove BOM.
 	const data = new TextDecoder().decode(buffer)
 	return JSON.parse(data)
 }
 
-const { lsDirsSync } = require('../../../3-advanced--node/cli-toolbox/fs/extra')
+import { lsDirsSync } from '../../../3-advanced--node/cli-toolbox/fs/extra/ls/index.mjs'
 
 /////////////////////
 
@@ -21,10 +22,11 @@ console.log(`🛠  🔻 tweaking the monorepo…`)
 
 
 /////////////////////
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const MONOREPO_ROOT = path.join(__dirname, '../../..')
 const MONOREPO_PKG_JSON_PATH = path.join(MONOREPO_ROOT, 'package.json')
-const MONOREPO_PKG_JSON = await load_json_file(MONOREPO_PKG_JSON_PATH)
+const MONOREPO_PKG_JSON = load_json_file(MONOREPO_PKG_JSON_PATH)
 /*
 const CURRENT_PKG_PATH = process.cwd()
 const CURRENT_PKG_JSON = await load_json_file(path.join(CURRENT_PKG_PATH, 'package.json'))
@@ -49,7 +51,7 @@ let MONOREPO_PKGS_NAMES = new Set()
 const MONOREPO_PKGS_DEPENDENCIES = new Map()
 const MONOREPO_PKGS_ABSPATHS_BY_PKG_NAME = {}
 MONOREPO_PKGS_ABSPATHS.forEach(monorepo_pkg_path => {
-	const PKG_JSON = require(path.join(monorepo_pkg_path, 'package.json'))
+	const PKG_JSON = load_json_file(path.join(monorepo_pkg_path, 'package.json'))
 
 	const PKG_NAME = PKG_JSON.name
 	const split = PKG_NAME.split('/')
