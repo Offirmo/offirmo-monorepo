@@ -2,7 +2,7 @@
 
 Nothing to see here, one day I plan to make my own CSS reset.
 
-In the meantime, it's just normalize.css + notes
+In the meantime, it's just normalize.css + notes (`"normalize.css": "^8"`)
 
 
 ## Introduction
@@ -55,5 +55,3 @@ What we want:
 Ideas
 * TODO one day check if there is a standard default stylesheet https://stackoverflow.com/a/22510220/587407
 * TODO one day check if one can use js to grab the default style from inside a browser
-
-  	"normalize.css": "^8"

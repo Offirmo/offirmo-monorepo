@@ -2,6 +2,6 @@
 
 @import 'global--box-layout.css';
 
-@import 'elements.css';
+@import 'elements/index.css';
 
-@import 'xxx-toreview.css';
+/*@import 'xxx-toreview.css';*/
