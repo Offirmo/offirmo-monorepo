@@ -1,6 +1,6 @@
 /*! @offirmo-private/css--reset v0.0.1 | Unlicense | github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/ui--browser--css */
 
-@import './toremove.css'; /* heh heh :cries: */
+/*@import './toremove.css'; /* heh heh :cries: */
 
 @import './chrome/index.css';
 @import './firefox/index.css';

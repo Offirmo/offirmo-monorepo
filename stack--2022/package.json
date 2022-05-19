@@ -146,5 +146,10 @@
 		"typescript": "^4",
 		"typescript-string-enums": "^1"
 	},
-	"resolutions": {}
+	"resolutions": {
+		"**/@babel/core": "^7",
+		"**/react": "^18",
+		"**/react-dom": "^18",
+		"**/react-refresh": "^0"
+	}
 }

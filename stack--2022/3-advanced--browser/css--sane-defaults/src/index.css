@@ -1,7 +1,7 @@
-@import 'npm:@offirmo-private/css--reset/src/index.css';
+@import 'npm:@offirmo-private/css--reset';
 
-@import 'global--box-layout.css';
+@import 'box-model.css';
+/*@import 'typography.css';
+@import 'colors.css';*/
 
 @import 'elements/index.css';
-
-/*@import 'xxx-toreview.css';*/

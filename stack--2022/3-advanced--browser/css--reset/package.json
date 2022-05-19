@@ -13,7 +13,7 @@
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",
 
-		"_parcel:serve": "parcel serve --log-level verbose  'doc/demo/*.html' --lazy --port 3010",
+		"_parcel:serve": "parcel serve --log-level verbose  'doc/demo/*.html' --port 3010",
 		"dev": "npm-run-all clean --parallel _parcel:serve",
 
 		"storybook": "start-storybook -p 3011"

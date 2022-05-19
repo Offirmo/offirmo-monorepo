@@ -1,0 +1,16 @@
+
+:root {
+	/* defaults, overrides welcome */
+	font-family: var(--o⋄font-family--fast_and_good_enough, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+
+	/* https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/ */
+	text-rendering: optimizeLegibility; /* challenge about perf: https://marco.org/2012/11/15/text-rendering-optimize-legibility
+	                                     * Tested: this options makes a TOO HUGE difference in quality to be missed.
+	                                     * For ex. it enables the computing of lighter/bolder variants.
+	                                     */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	line-height: 1.5;
+	font-size: var(--o⋄font-size--default, 18px);
+}
