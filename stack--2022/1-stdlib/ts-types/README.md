@@ -1,6 +1,7 @@
 Useful TypeScript types
 
 ```js
+import { Immutable } from '@offirmo-private/ts-types'
 import { NumberMap } from '@offirmo-private/ts-types'
 import { I18nMessages } from '@offirmo-private/ts-types'
 

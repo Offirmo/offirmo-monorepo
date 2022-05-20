@@ -57,7 +57,7 @@
 		"@offirmo/unit-test-toolbox": "^8",
 		"@size-limit/preset-small-lib": "^7",
 		"npm-run-all": "^4",
-		"parcel-bundler": "^1"
+		"@offirmo-private/toolbox--parcel": "^0"
 	},
 
 	"files": [

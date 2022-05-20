@@ -21,6 +21,7 @@ From Eric Meyer https://meyerweb.com/eric/tools/css/reset/
 My own reflexions on top of the above
 * we not only want the same display across browsers and os, we also want stability across time = different versions of browser
 * technically we should provide 1 reset per browser, maybe per combination browser+os
+* we won't come up with new styles, we'll settle on the most rational from all the big 3 browsers
 
 ### Why a new one?
 
