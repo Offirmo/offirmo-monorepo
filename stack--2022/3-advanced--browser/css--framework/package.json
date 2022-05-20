@@ -14,16 +14,13 @@
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",
 
-		"_parcel:serve": "parcel serve --log-level verbose  'doc/demo/*.html' --lazy --port",
-		"dev1": "npm-run-all clean --parallel _parcel:serve",
-
-		"storybook": "start-storybook -p 7306"
+		"_parcel:serve": "parcel serve --log-level verbose  'doc/demo/*.html' --port 3030 --no-autoinstall",
+		"dev": "npm-run-all clean --parallel _parcel:serve"
 	},
 
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/toolbox--parcel": "^0",
-		"@offirmo-private/toolbox--storybook": "^0",
 		"cpx": "^1",
 		"npm-run-all": "^4"
 	},

@@ -25,7 +25,6 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/toolbox--storybook": "^0",
 		"@types/react-swipeable-views": "^0",
 		"@types/react-swipeable-views-core": "^0",
 		"@types/react-swipeable-views-utils": "^0",
