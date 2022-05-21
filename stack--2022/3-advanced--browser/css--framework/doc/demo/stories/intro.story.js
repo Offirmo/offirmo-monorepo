@@ -1,6 +1,12 @@
 
 export default {
 	title: 'Foo',
+	decorators: [
+		(Story) => {
+			import('@offirmo-private/css--sane-defaults')
+			return Story
+		}
+	]
 }
 
 export function Intro() {

@@ -1,14 +1,14 @@
 import { Immutable } from '@offirmo-private/ts-types'
 import assert from 'tiny-invariant'
-import '@offirmo-private/css--sane-defaults'
-import './index.css'
+import nearest_pkg from '~/package.json'
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 type Path = string
 
 interface Story {
-
+	fn: Function
+	defaults: any
 }
 interface StoryTree {
 	[key: string]: Story | StoryTree
@@ -26,10 +26,10 @@ interface State {
 }
 
 export function is_story_tree(s: any): s is StoryTree {
-	return typeof s !== 'function'
+	return typeof s?.fn !== 'function'
 }
 export function is_story(s: any): s is Story {
-	return typeof s === 'function'
+	return typeof s?.fn === 'function'
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -37,6 +37,7 @@ export function is_story(s: any): s is Story {
 export function start_storypad(stories_glob: Immutable<any>, config: Immutable<Config> = {}) {
 	console.group(`Starting storypad…`)
 	console.log('config =', config)
+	console.log(nearest_pkg)
 	//console.log('glob =', stories_glob)
 
 	let state = init()
@@ -132,14 +133,18 @@ function _add_story_file(state: Immutable<State>, story_module: any, parent_path
 		const id = [...parent_path, story_key].join('Ⳇ')
 
 		if (story_key === 'default') {
-			console.warn(`TODO handle default export "${id}"`)
+			assert(typeof story_key['default'] !== 'function')
 			return
 		}
 
 		console.log(`Found story: "${id}"`)
-		assert(is_story(story_module[story_key]), `${id} is not a story??`)
+		const story: Story = {
+			fn: story_module[story_key],
+			defaults: story_module['default'],
+		}
+		assert(is_story(story), `${id} is not a story??`)
 		assert(!leaf[story_key], `conflict on "${id}"???`)
-		leaf[story_key] = story_module[story_key] as Story
+		leaf[story_key] = story
 		current_story‿path ||= id
 	})
 
@@ -159,6 +164,9 @@ function render(state: Immutable<State>) {
 		_render_as_iframe(state)
 		return
 	}
+
+	import('@offirmo-private/css--sane-defaults')
+	import('./index.css')
 
 	const iframe_elt = document.createElement('iframe')
 	iframe_elt.src = get_story_url(state)
@@ -184,7 +192,12 @@ function _render_as_iframe(state) {
 
 		const story = get_story(state, storypath)
 		try {
-			const content = story()
+			const content = story.fn()
+			console.log(story)
+			const decorators = [
+				...story.decorators,
+				...story.defaults.decorators,
+			]
 			document.body.innerHTML = content
 		}
 		catch (err) {
@@ -200,7 +213,7 @@ function _append_folder(state, parent_elt, tree, path) {
 	let details_elt = document.createElement('details')
 	details_elt.open = true
 	details_elt.innerHTML = `
-	<summary><code>${path.slice(-1)[0] || 'Stories'}</code></summary>
+	<summary><code>${path.slice(-1)[0] || nearest_pkg?.name || 'Stories'}</code></summary>
 	`
 	Object.keys(tree).forEach(key => {
 		if (is_story_tree(tree[key]))
