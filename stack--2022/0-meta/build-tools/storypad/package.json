@@ -1,0 +1,20 @@
+{
+	"name": "@offirmo-private/storypad",
+	"version": "0.0.1",
+	"description": "Standalone storybook replacement",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+
+	"sideEffects": false,
+	"source": "src/index.ts",
+
+	"dependencies": {
+		"@storybook/csf": "^0",
+		"tiny-invariant": "^1"
+	},
+	"optionalDependencies": {
+	},
+
+	"scripts": {
+	}
+}

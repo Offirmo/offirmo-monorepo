@@ -1,0 +1,21 @@
+
+<script type="module">
+	import * as stories_reset from '../../../css--reset/**/*.stories.@(js|jsx|ts|tsx|mdx)'
+	import * as stories_sane from '../../../css--sane-defaults/**/*.stories.@(js|jsx|ts|tsx|mdx)'
+	//import * as stories from '../../../css--*/**/*.stories.js'
+
+	import nearest_pkg from '~/package.json'
+
+	import start_storypad from '@offirmo-private/storypad'
+
+	const stories = {
+		reset: stories_reset,
+		'sane-defaults': stories_sane,
+	}
+	start_storypad(stories, {
+		root_title: nearest_pkg?.name,
+		decorators: [
+
+		]
+	})
+</script>

@@ -79,6 +79,7 @@
 		"@parcel/transformer-webmanifest": "^2",
 		"@parcel/transformer-xml": "^2",
 		"@size-limit/preset-small-lib": "^7",
+		"@storybook/csf": "^0",
 		"@types/chai": "^4",
 		"@types/chai-as-promised": "^7",
 		"@types/icepick": "^2",
