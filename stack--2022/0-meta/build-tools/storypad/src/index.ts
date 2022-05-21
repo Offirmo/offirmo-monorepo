@@ -203,7 +203,6 @@ function render(state: Immutable<State>) {
 	}
 
 	// TODO review
-	import('@offirmo-private/css--sane-defaults')
 	import('./index.css')
 
 	const iframe_elt = document.createElement('iframe')
