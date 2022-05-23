@@ -20,8 +20,7 @@ From Eric Meyer https://meyerweb.com/eric/tools/css/reset/
 
 My own reflexions on top of the above
 * we not only want the same display across browsers and os, we also want stability across time = different versions of browser
-* technically we should provide 1 reset per browser, maybe per combination browser+os
-* we won't come up with new styles, we'll settle on the most rational from all the big 3 browsers
+* technically we should provide 1 reset per browser, maybe per combination browser + os
 
 ### Why a new one?
 
@@ -45,14 +44,15 @@ Reviewing the well known CSS, it appears they are not pure CSS reset:
 What we want:
 * ideally we want a pure reset bringing all browsers/os to the same common denominator
   WITHOUT introducing opinions or "recommended"
-* this common denominator should display properly a semantic HTML (thus adding styles can be acceptable)
-* deprecated elements and browsers/os should not longer be included
-* should be unit tested with visual regression
+* we won't come up with new styles, we'll settle on the most rational from all the big 3 browsers
 * "sane defaults" should NOT be included, such recommended styles should be built upon the reset in a separated sheet
+* however this common denominator should display properly a semantic HTML (thus adding a few styles can be acceptable)
+* deprecated elements and browsers/os should no longer be included
+* should be unit tested with visual regression
 
 
 ## Notes
 
 Ideas
 * TODO one day check if there is a standard default stylesheet https://stackoverflow.com/a/22510220/587407
-* TODO one day check if one can use js to grab the default style from inside a browser
+* TODO one day check if one can use js to grab the default style from inside a browser?

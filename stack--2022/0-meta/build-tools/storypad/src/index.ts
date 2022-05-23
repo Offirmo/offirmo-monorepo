@@ -50,6 +50,9 @@ const SEP = 'Ⳇ'
 const MAIN_IFRAME_QUERYPARAMS = {
 	story_id: 'story_id',
 }
+const LS_KEYS = {
+	current_story_id: 'current_story_id',
+}
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -101,7 +104,13 @@ function init(): Immutable<State> {
 		},
 		stories_by_id: {},
 		story_tree: {},
-		current_story‿id: undefined,
+		current_story‿id: (() => {
+			try {
+				return localStorage.getItem(LS_KEYS.current_story_id)
+			}
+			catch { /* ignore */}
+			return undefined
+		})(),
 	}
 }
 
@@ -216,7 +225,13 @@ function render(state: Immutable<State>) {
 	document.body.addEventListener('click', function(e) {
 		if (e.target?.href) {
 			e.preventDefault()
+
 			iframe_elt.src = e.target.href
+
+			try {
+				localStorage.setItem(LS_KEYS.current_story_id, (new URL(e.target.href)).searchParams.get(MAIN_IFRAME_QUERYPARAMS.story_id))
+			}
+			catch { /* ignore */}
 		}
 	})
 }
