@@ -1,0 +1,26 @@
+{
+	"name": "@offirmo-private/css--utils",
+	"description": "Some CSS utilities",
+	"version": "0.0.1",
+	"license": "Unlicense",
+	"private": true,
+
+	"source": "src/index.css",
+
+	"dependencies": {
+	},
+
+	"scripts": {
+		"clean": "monorepo-script--clean-package …dist …cache",
+
+		"_parcel:serve": "parcel serve --log-level verbose  'doc/demo/*.html' --port 3010 --no-autoinstall",
+		"dev": "npm-run-all clean --parallel _parcel:serve"
+	},
+
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/storypad": "^0",
+		"@offirmo-private/toolbox--parcel": "^0",
+		"npm-run-all": "^4"
+	}
+}
