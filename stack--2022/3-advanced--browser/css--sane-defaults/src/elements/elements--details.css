@@ -9,16 +9,13 @@ details summary {
 	cursor: pointer;
 
 	margin-left: -1rem;
-	border: solid 1px red;
 }
 details summary > * {
 	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
 	display: inline;
-	border: solid 1px yellow;
 }
 details[open] {
 	border-color: var(--o⋄color⁚fg--main);
 }
 details > *:nth-child(n+2) { /* assuming the 1st child is the <summary> */
-	border: solid 1px green;
 }

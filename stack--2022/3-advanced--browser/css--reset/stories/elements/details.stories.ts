@@ -44,26 +44,46 @@ export function NestedSimple() {
 
 export function NestedMixed() {
 	return `
-<details open>
-	<summary>summary 1</summary>
+<article>
+	<p>Lorem Ipsum…</p>
+	<ul>
+		<li>hello</li>
+		<li>world!</li>
+		<ul>
+			<li>hello</li>
+			<li>world!</li>
+		</ul>
+	</ul>
 	<details open>
-		<summary>summary 2</summary>
+		<summary>summary 1</summary>
 		<details open>
-			<summary>summary 3</summary>
+			<summary>summary 2</summary>
+			<details open>
+				<summary>summary 3</summary>
+				<ol>
+					<li>item 1.3</li>
+					<li>item 2.3</li>
+				</ol>
+			</details>
 			<ol>
-				<li>item 1.3</li>
-				<li>item 2.3</li>
+				<li>item 1.2</li>
+				<li>item 2.2</li>
 			</ol>
 		</details>
 		<ol>
-			<li>item 1.2</li>
-			<li>item 2.2</li>
+			<li>item 1.0</li>
+			<li>item 2.0</li>
 		</ol>
 	</details>
 	<ol>
-		<li>item 1.0</li>
-		<li>item 2.0</li>
+		<li>hello</li>
+		<li>world!</li>
+		<ol>
+			<li>hello</li>
+			<li>world!</li>
+		</ol>
 	</ol>
-</details>
+	<p>Lorem Ipsum…</p>
+</article>
 	`
 }

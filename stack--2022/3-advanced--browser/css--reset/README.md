@@ -1,9 +1,6 @@
 ## CSS reset
 
-Nothing to see here, one day I plan to make my own CSS reset.
-
-In the meantime, it's just normalize.css + notes (`"normalize.css": "^8"`)
-
+My own CSS reset. A true reset.
 
 ## Introduction
 
@@ -18,7 +15,9 @@ From Eric Meyer https://meyerweb.com/eric/tools/css/reset/
 > Goal: After including the appropriate stylesheet from this module,
 > HTML pages using non-deprecated elements should look identical on every browser and form factor
 
-My own reflexions on top of the above
+**My own reflexions on top of the above:**
+* a true reset should not be destructive, it should display at least as well as the browser default stylesheet
+* a true reset should NOT introduce opinionated styles
 * we not only want the same display across browsers and os, we also want stability across time = different versions of browser
 * technically we should provide 1 reset per browser, maybe per combination browser + os
 
@@ -44,9 +43,9 @@ Reviewing the well known CSS, it appears they are not pure CSS reset:
 What we want:
 * ideally we want a pure reset bringing all browsers/os to the same common denominator
   WITHOUT introducing opinions or "recommended"
-* we won't come up with new styles, we'll settle on the most rational from all the big 3 browsers
-* "sane defaults" should NOT be included, such recommended styles should be built upon the reset in a separated sheet
-* however this common denominator should display properly a semantic HTML (thus adding a few styles can be acceptable)
+* we won't come up with new styles, we'll settle on the most rational from any of the big 3 browsers
+* "sane defaults" should NOT be included, such recommended styles should be built upon the reset in a **separated** stylesheet
+  * however this common denominator should display properly a semantic HTML (thus adding a few styles can be acceptable if not handled by the any default stylesheet)
 * deprecated elements and browsers/os should no longer be included
 * should be unit tested with visual regression
 

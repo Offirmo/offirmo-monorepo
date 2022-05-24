@@ -1,12 +1,46 @@
 
+:root {
+	--o⋄font-family--system--sans:   -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, "Ubuntu", Roboto, Noto, Arial, sans-serif;
+}
+
 body {
 	padding: 0;
 	display: flex;
 	max-width: 100%;
+	font-family: var(--o⋄font-family--system--sans)
 }
 
 iframe#storypad⋄iframe {
 	border: solid 1px;
 	width: 100%;
 	height: 100%;
+}
+
+
+details > * {
+	margin: 0;
+}
+details > ol {
+	list-style-type: none;
+	padding-inline-start: 0;
+}
+
+
+/* nicer collapsibles */
+details {
+	border-left: dashed 1px;
+	padding-left: .65rem; /* for the content */
+}
+details summary {
+	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
+	cursor: pointer;
+
+	margin-left: -1rem;
+}
+details summary > * {
+	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
+	display: inline;
+}
+details[open] {
+	border-color: var(--o⋄color⁚fg--main);
 }

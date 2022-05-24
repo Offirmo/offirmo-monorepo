@@ -1,0 +1,14 @@
+:root {
+
+	/* https://systemfontstack.com/
+	 * Note:
+	 * 1) there is some debate about the exact list and various sites uses various combos. This should be plenty ok, though.
+	 * 2) this list has to be maintained over time
+	 */
+	--o⋄font-family--system--sans:   -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, "Ubuntu", Roboto, Noto, Arial, sans-serif;
+	--o⋄font-family--system--serif:  "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--o⋄font-family--system--mono:   Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace;
+
+	/* semantic alias */
+	--o⋄font-family--fast_and_good_enough: var(--o⋄font-family--system--sans);
+}
