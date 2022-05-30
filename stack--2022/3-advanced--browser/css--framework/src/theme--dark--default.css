@@ -15,6 +15,7 @@
 	--o⋄dtoken⁚bg--s: 0%;
 	--o⋄dtoken⁚bg--l: 17%;
 
+	/*
 	--o⋄color⁚fg--main:       hsl(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l));
 	--o⋄color⁚fg--secondary: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .66);
 	--o⋄color⁚fg--ancillary: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .33);
@@ -24,11 +25,9 @@
 
 	--o⋄color⁚bg--main:            hsl(var(--o⋄dtoken⁚bg--h), var(--o⋄dtoken⁚bg--s), var(--o⋄dtoken⁚bg--l));
 	--o⋄color⁚bg--main--backdrop: hsla(var(--o⋄dtoken⁚bg--h), var(--o⋄dtoken⁚bg--s), var(--o⋄dtoken⁚bg--l), .9);
-
+*/
 	--o⋄color⁚bg--highlight--1: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .2);
 	--o⋄color⁚bg--highlight--2: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .4);
-
-	--o⋄color⁚shadow: hsla(var(--o⋄dtoken⁚bg--h), var(--o⋄dtoken⁚bg--s), var(--o⋄dtoken⁚bg--l), .2);
 
 	--o⋄color⁚fg--error: red;
 	--o⋄color⁚fg--warning: var(--o⋄color⁚boz__yellow);

@@ -1,0 +1,27 @@
+
+:root {
+	/* font sans serif = #1 most important styling according to https://jgthms.com/web-design-in-4-minutes/#font-family
+	 * "system sans" font from https://systemfontstack.com/ (copied 2022/05)
+	 */
+	font-family: var(--o⋄font-family--fast_and_good_enough, -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, "Ubuntu", Roboto, Noto, Arial, sans-serif);
+
+	/* https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/ */
+	text-rendering: optimizeLegibility; /* challenge about perf: https://marco.org/2012/11/15/text-rendering-optimize-legibility
+	                                     * Tested: this options makes a TOO HUGE difference in quality to be missed.
+	                                     * For ex. it enables the computing of lighter/bolder variants.
+	                                     */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	line-height: 1.5; /* #3 most important styling according to https://jgthms.com/web-design-in-4-minutes/#spacing */
+	/* do NOT change the root font-size as it's used as a default zoom by accessibility users cf. https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/ */
+
+	/* Help discriminate 0 and O https://piccalil.li/quick-tip/control-changing-numbers-with-font-variant-numeric/
+	 * This works only if the font supports it, of course.
+	 */
+	font-variant-numeric: slashed-zero;
+}
+
+/*
+TODO https://piccalil.li/tutorial/fluid-typography-with-css-clamp/
+ */

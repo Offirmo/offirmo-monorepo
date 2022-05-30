@@ -1,15 +1,15 @@
 
 body {
+	min-height: 100vh; /* this is usually what we want ! TODO review safari mobile https://piccalil.li/quick-tip/safe-viewport-height/ */
+
 	padding: .7em; /* good default, cancel it explicitly if needed */
 
-	/* adapted from https://perfectmotherfuckingwebsite.com */
-	max-width: var(--o⋄content-recommended-width, 650px);
+	/* max width + centering = #1 most important styling according to https://jgthms.com/web-design-in-4-minutes/#centering
+	 * recommendation for max width of content
+	   - 40-55 https://buffer.com/library/the-ideal-length-of-everything-online-according-to-science/#the-ideal-width-of-a-paragraph-is-40-55-characters
+	   -
+	   adapted from https://perfectmotherfuckingwebsite.com */
+	/* TODO use ch and tweak it according to font-face https://piccalil.li/quick-tip/line-length/ */
+	max-width: var(--o⋄content-recommended-width, 60ch);
 	margin: 0 auto; /* 0 for the 100% trick to work, auto for centering */
 }
-
-/*
-margin: 40px auto;
-padding: 0 10px;
-font: 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-color: #444
-*/

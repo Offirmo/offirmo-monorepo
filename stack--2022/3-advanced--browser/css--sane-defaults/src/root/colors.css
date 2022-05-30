@@ -1,5 +1,13 @@
 
 :root {
+	/* Color selection
+	* There is a raging debate:
+	 * - https://github.com/KeenRivals/bestmotherfucking.website/issues/54 discussion
+	 * - https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/
+	 * - https://ianstormtaylor.com/design-tip-never-use-black/
+	 * - https://bestmotherfucking.website/ is using true white/black
+	 * - Github is using rgb(36, 41, 47) on
+	 */
 	/* quasi black */
 	--o⋄dtoken⁚fg--h: 0;
 	--o⋄dtoken⁚fg--s: 0%;
@@ -23,16 +31,14 @@
 	--o⋄color⁚bg--highlight--2: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .3); /* alt, ex. for hovered/clicked buttons */
 
 	--o⋄color⁚shadow: hsla(var(--o⋄dtoken⁚bg--h), var(--o⋄dtoken⁚bg--s), var(--o⋄dtoken⁚bg--l), .2); /* = fg translucent */
-
-	--o⋄color⁚fg--error: hsl(2, 75%, 45%);
-	--o⋄color⁚fg--warning: var(--o⋄color⁚boz__yellow);
-	--o⋄color⁚fg--info: var(--o⋄color⁚boz__blue);
-	--o⋄color⁚fg--success: var(--o⋄color⁚boz__green);
 }
 
-body {
-	/* defaults, overrides welcome */
+:root {
+	/*color = #4 most important styling according to https://jgthms.com/web-design-in-4-minutes/#color-contrast
+	 */
 	color: var(--o⋄color⁚fg--main);
 	background-color: var(--o⋄color⁚bg--main);
 	accent-color: var(--o⋄color⁚fg--accent); /* https://web.dev/accent-color/ https://www.smashingmagazine.com/2021/09/simplifying-form-styles-accent-color/ */
 }
+
+/* TODO dark mode */

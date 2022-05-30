@@ -1,0 +1,12 @@
+@import './vars--font-families--system.css';
+
+
+.o⋄fontꘌsystem--sans {
+	font-family: var(--o⋄font-family--system--sans);
+}
+.o⋄fontꘌsystem--serif {
+	font-family: var(--o⋄font-family--system--serif);
+}
+.o⋄fontꘌsystem--mono {
+	font-family: var(--o⋄font-family--system--mono);
+}

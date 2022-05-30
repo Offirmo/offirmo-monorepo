@@ -34,7 +34,7 @@ Reviewing the well known CSS, it appears they are not pure CSS reset:
 * [Josh Comeau's](https://www.joshwcomeau.com/css/custom-css-reset/)
   * not versioned/modularized (copy/paste on a blog post)
   * goes beyond a reset by "improving" styles
-* [piccalilli](https://hankchizljaw.com/wrote/a-modern-css-reset/)
+* [piccalilli](https://piccalil.li/blog/a-modern-css-reset/)
   * not versioned/modularized (copy/paste on a blog post)
   * goes beyond a reset with opiniated choices, ex. default list "style none"
 * [a11y-css-reset](https://github.com/mike-engel/a11y-css-reset)
@@ -50,8 +50,19 @@ What we want:
 * should be unit tested with visual regression
 
 
+## Contributing
+
+Please report display differences across browsers, if possible with a reproduction!
+
+CSS
+* use the correct unit
+* use logical properties https://piccalil.li/tutorial/css-logical-properties/
+
 ## Notes
 
 Ideas
 * TODO one day check if there is a standard default stylesheet https://stackoverflow.com/a/22510220/587407
 * TODO one day check if one can use js to grab the default style from inside a browser?
+
+
+[canonical link](https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/css--reset#readme)

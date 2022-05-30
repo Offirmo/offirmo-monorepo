@@ -1,5 +1,7 @@
 
 
+/* KNOWN SEMANTIC ERROR */
+
 export function InArticle() {
 	return `
 <article>

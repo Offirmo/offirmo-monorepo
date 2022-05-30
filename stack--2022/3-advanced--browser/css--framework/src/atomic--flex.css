@@ -14,9 +14,14 @@
 }
 
 /* https://stackoverflow.com/questions/90178/make-a-div-fill-the-height-of-the-remaining-screen-space */
-.o⋄flex-element--nogrow {
+.o⋄flex-element--no-grow {
 	flex-grow: 0;
 }
 .o⋄flex-element--grow {
 	flex-grow: 1;
+}
+
+/* https://piccalil.li/quick-tip/prevent-squishy-elements-with-flex-none/ */
+.o⋄flex-element--no-squish {
+	flex: none;
 }

@@ -17,5 +17,3 @@ details summary > * {
 details[open] {
 	border-color: var(--o⋄color⁚fg--main);
 }
-details > *:nth-child(n+2) { /* assuming the 1st child is the <summary> */
-}

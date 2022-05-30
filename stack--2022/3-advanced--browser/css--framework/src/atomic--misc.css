@@ -28,3 +28,7 @@
 .o⋄fast-tap {
 	touch-action: manipulation; /* https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
 }
+
+
+/* TODO tabular nums https://piccalil.li/quick-tip/control-changing-numbers-with-font-variant-numeric/
+ */
