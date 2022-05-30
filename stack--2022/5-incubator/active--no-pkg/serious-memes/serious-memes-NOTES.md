@@ -1,3 +1,9 @@
+
+
+
+
+
+
 (agile "what the client wanted")
 1 or 2 way door
 1st practice what you preach
@@ -11,12 +17,14 @@ FOMO
 FUD
 Ikigai
 Irredentism https://www.reddit.com/r/history/comments/sji919/is_there_a_term_for_this_phenomenon/
+It's not about lowering the bar, it's about helping more people reach it.
 Juger vs. évaluer
 Maslow's pyramid
 On peut toujours faire mieux
 Pardon pas oubli
 Passive aggressive
 Pay it forward
+Personal Knowledge Management https://fortelabs.co/blog/para/
 Prix au kilo
 Procastination
 Put into words
@@ -26,8 +34,11 @@ Sex Ed
 Spreadsheet
 Survival of the fittest / fit enough
 T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
+Tools
 Trello
+Trust, but verify
 Voleur volé
+Wisdom
 a wisdom for left may not be valid for right
 affirmative action?
 be prepared
@@ -52,6 +63,11 @@ hangry / before aftr lunch
 happiness is a skill
 helicopter parent
 herbe toujours plus verte
+https://cobeats.com/folder/ryfTgPr9H
+https://en.wikipedia.org/wiki/If%E2%80%94
+https://en.wikipedia.org/wiki/Johari_window
+https://flinkliv.com/
+https://www.mindtools.com/pages/article/newHTE_91.htm
 https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 impostor syndrome
 infotainment
@@ -76,24 +92,9 @@ social pressure / free will
 stakeholder
 start with the most risky / complicated
 start with why
+time management
 tip of the iceberg
 top-down/bottom-up
 tradeoffs / can't have everything
 who moved my cheese?
 être heureux n'est pas nécessairement confortable
-
-
-Tools
-https://en.wikipedia.org/wiki/Johari_window
-time management
-https://www.mindtools.com/pages/article/newHTE_91.htm
-
-Wisdom
-Trust, but verify
-
-
-https://cobeats.com/folder/ryfTgPr9H
-https://flinkliv.com/
-https://en.wikipedia.org/wiki/If%E2%80%94
-
-It's not about lowering the bar, it's about helping more people reach it.

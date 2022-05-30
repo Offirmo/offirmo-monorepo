@@ -273,7 +273,7 @@ function _append_folder(state, parent_elt, tree, path) {
 	let details_elt = document.createElement('details')
 	details_elt.open = true
 	details_elt.innerHTML = `
-	<summary><code>${path.slice(-1)[0] || state.config.root_title}</code></summary>
+	<summary>${path.slice(-1)[0] || state.config.root_title}</summary>
 	`
 	Object.keys(tree).forEach(key => {
 		if (is_story_tree(tree[key]))
