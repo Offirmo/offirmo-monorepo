@@ -22,15 +22,17 @@ From Eric Meyer https://meyerweb.com/eric/tools/css/reset/
 * technically we should provide 1 reset per browser, maybe per combination browser + os
 
 ### Why a new one?
+fyi reset history https://css-tricks.com/reboot-resets-reasoning/
 
 Reviewing the well known CSS, it appears they are not pure CSS reset:
-* [normalize.css](https://github.com/necolas/normalize.css/)
-  * removes all margins = bad display
-  * still supports IE
 * [Eric Meyer's](https://meyerweb.com/eric/tools/css/reset/)
   * not versioned/modularized (copy/paste on a web page)
   * not clearly commented (ex. mentions "older browsers")
   * goes beyond a reset by setting "recommended" styles
+* rihrd http://html5doctor.com/html-5-reset-stylesheet/
+* [normalize.css](https://github.com/necolas/normalize.css/)
+  * removes all margins = bad display
+  * still supports IE
 * [Josh Comeau's](https://www.joshwcomeau.com/css/custom-css-reset/)
   * not versioned/modularized (copy/paste on a blog post)
   * goes beyond a reset by "improving" styles
@@ -39,6 +41,10 @@ Reviewing the well known CSS, it appears they are not pure CSS reset:
   * goes beyond a reset with opiniated choices, ex. default list "style none"
 * [a11y-css-reset](https://github.com/mike-engel/a11y-css-reset)
   * is not a reset, more like a "recommended"
+* https://github.com/jensimmons/cssremedy https://css-tricks.com/css-remedy/
+* https://css-tricks.com/should-css-override-default-styles/
+* https://css-tricks.com/notes-on-josh-comeaus-custom-css-reset/
+* https://css-tricks.com/reboot-resets-reasoning/
 
 What we want:
 * ideally we want a pure reset bringing all browsers/os to the same common denominator

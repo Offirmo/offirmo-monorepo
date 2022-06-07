@@ -2,6 +2,7 @@
 :root {
 	/* font sans serif = #1 most important styling according to https://jgthms.com/web-design-in-4-minutes/#font-family
 	 * "system sans" font from https://systemfontstack.com/ (copied 2022/05)
+	 * TODO review? https://distrowatch.com/dwres.php?resource=major
 	 */
 	font-family: var(--o⋄font-family--fast_and_good_enough, -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, "Ubuntu", Roboto, Noto, Arial, sans-serif);
 

@@ -1,6 +1,8 @@
 
 * +++ plenty of libs to use https://github.com/dphilipson
 
+https://css-tricks.com/css-dappled-light-effect/
+
 https://www.vantajs.com/?effect=fog
 
 
