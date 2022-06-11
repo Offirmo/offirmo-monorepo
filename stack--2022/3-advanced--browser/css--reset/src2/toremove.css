@@ -83,15 +83,6 @@ code,
 kbd,
 samp {
 	font-family: monospace, monospace; /* 1 */
-	font-size: 1em; /* 2 */
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-	font-size: 80%;
 }
 
 /**

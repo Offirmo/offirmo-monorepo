@@ -22,14 +22,17 @@ From Eric Meyer https://meyerweb.com/eric/tools/css/reset/
 * technically we should provide 1 reset per browser, maybe per combination browser + os
 
 ### Why a new one?
-fyi reset history https://css-tricks.com/reboot-resets-reasoning/
+2017 FYI resets history https://css-tricks.com/reboot-resets-reasoning/
 
 Reviewing the well known CSS, it appears they are not pure CSS reset:
-* [Eric Meyer's](https://meyerweb.com/eric/tools/css/reset/)
+* [list of early reset](https://perishablepress.com/a-killer-collection-of-global-css-reset-styles/)
+* 2007 [Eric Meyer's](https://meyerweb.com/eric/tools/css/reset/)
   * not versioned/modularized (copy/paste on a web page)
   * not clearly commented (ex. mentions "older browsers")
   * goes beyond a reset by setting "recommended" styles
-* rihrd http://html5doctor.com/html-5-reset-stylesheet/
+* [Richard Clark's](http://html5doctor.com/html-5-reset-stylesheet/)
+  * (iteration of Eric Meyer's, same issues)
+  * (TODO look at)
 * [normalize.css](https://github.com/necolas/normalize.css/)
   * removes all margins = bad display
   * still supports IE
@@ -61,8 +64,9 @@ What we want:
 Please report display differences across browsers, if possible with a reproduction!
 
 CSS
-* use the correct unit
-* use logical properties https://piccalil.li/tutorial/css-logical-properties/
+* use :root instead of html
+* use logical properties https://adrianroselli.com/2019/11/css-logical-properties.html
+* use the most appropriate unit https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/
 
 ## Notes
 

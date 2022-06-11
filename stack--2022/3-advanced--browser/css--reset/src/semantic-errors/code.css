@@ -1,0 +1,15 @@
+
+code,
+kbd,
+pre,
+samp {
+	/* XXX to review */
+	/* strangely, the default font-size=1em ends up smaller (ex. seen 13px for a root font-size of 16px)
+	 * This is an old design choice ending in a semantic error.
+	 * Bug seen on Chrome102, Firefox91 and Safari15
+	 * Also strangely, the solution is to redefine the font-family twice
+	 * "Nobody knows why this works; it just does."
+	 * https://stackoverflow.com/questions/38781089/font-family-monospace-monospace
+	 */
+	font-family: monospace, monospace; /* seen working on Chrome102, Firefox91 and Safari15 */
+}

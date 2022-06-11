@@ -1,9 +1,11 @@
 .o⋄flex--directionꘌrow {
 	display: flex;
+	flex-wrap: wrap; /* defensive CSS https://ishadeed.com/article/defensive-css/ */
 	flex-direction: row;
 }
 .o⋄flex--directionꘌcolumn {
 	display: flex;
+	flex-wrap: wrap; /* defensive CSS https://ishadeed.com/article/defensive-css/ */
 	flex-direction: column;
 }
 

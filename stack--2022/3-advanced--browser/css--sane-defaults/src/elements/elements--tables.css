@@ -10,5 +10,5 @@ td {
 }
 /* zebra striping */
 tbody tr:nth-child(odd) {
-	background-color: var(--o⋄color⁚bg--highlight--1);
+	background-color: var(--o⋄color⁚bg--highlight--1); XXX
 }

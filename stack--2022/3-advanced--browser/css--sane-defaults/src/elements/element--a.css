@@ -3,7 +3,7 @@
  * Better than the defaults.
  */
 a {
-	text-decoration-color: var(--o⋄color⁚fg--secondary);
+	text-decoration-color: var(--o⋄color⁚fg--secondary); /* TODO review XXX */
 	touch-action: manipulation; /* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
 }
 a:link,

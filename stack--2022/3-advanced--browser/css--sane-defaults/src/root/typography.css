@@ -15,6 +15,7 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	line-height: 1.5; /* #3 most important styling according to https://jgthms.com/web-design-in-4-minutes/#spacing */
+	/* 1.5 is recommended by accessibility (TODO ref) */
 	/* do NOT change the root font-size as it's used as a default zoom by accessibility users cf. https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/ */
 
 	/* Help discriminate 0 and O https://piccalil.li/quick-tip/control-changing-numbers-with-font-variant-numeric/

@@ -2,7 +2,7 @@
 body {
 	min-height: 100vh; /* this is usually what we want ! TODO review safari mobile https://piccalil.li/quick-tip/safe-viewport-height/ */
 
-	padding: .7em; /* good default, cancel it explicitly if needed */
+	padding: .7em; /* better default than the px one from default stylesheet, cancel it explicitly if needed */
 
 	/* max width + centering = #1 most important styling according to https://jgthms.com/web-design-in-4-minutes/#centering
 	 * recommendation for max width of content
