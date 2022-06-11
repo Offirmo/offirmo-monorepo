@@ -2,6 +2,7 @@
 ':' //# https://sambal.org/?p=1014 ; exec /usr/bin/env node "$0" "$@"
 'use strict';
 
+import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 
 import meow from 'meow'
@@ -15,6 +16,8 @@ const cli = meow('clean', {
 })
 
 /////////////////////
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const PKG_PATH = process.cwd()
 
@@ -40,6 +43,7 @@ Promise.all(cli.input
 					fs.remove(path.join(PKG_PATH, 'node_modules/.cache')),
 					fs.remove(path.join(PKG_PATH, '.parcel')), // parcel 1
 					fs.remove(path.join(PKG_PATH, '.parcel-cache')), // parcel 2
+					fs.remove(path.join(__dirname, '../../../.parcel-cache')), // parcel 2 shared cache which causes heaps of troubles in monorepos
 				])
 
 			default:
