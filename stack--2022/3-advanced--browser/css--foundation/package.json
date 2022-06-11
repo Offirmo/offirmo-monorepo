@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/css--sane-defaults",
+	"name": "@offirmo-private/css--foundation",
 	"description": "A thin layer of universal good semantic CSS",
 	"version": "0.0.1",
 	"license": "Unlicense",

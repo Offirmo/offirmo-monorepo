@@ -5,7 +5,7 @@
  * Use of this file is optional.
  */
 
-@import 'npm:@offirmo-private/css--sane-defaults/src/index.css';
+@import 'npm:@offirmo-private/css--foundation/src/index.css';
 
 
 @import 'vars--scale.css';

@@ -3,7 +3,7 @@ export default {
 	title: 'Foo',
 	decorators: [
 		(Story) => {
-			import('@offirmo-private/css--sane-defaults')
+			import('@offirmo-private/css--foundation')
 			return Story
 		}
 	]
