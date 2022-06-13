@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+		@import "npm:@offirmo-private/css--foundation";
+
+		:root {
+			/*
+			--o⋄dtoken⁚fg--h: 0;
+			--o⋄dtoken⁚fg--s: 0%;
+			--o⋄dtoken⁚fg--l: 0%;
+			--o⋄dtoken⁚bg--h: 0;
+			--o⋄dtoken⁚bg--s: 0%;
+			--o⋄dtoken⁚bg--l: 100%;
+			--o⋄content-recommended-width
+			*/
+		}
+
+
+	</style>
+</head>
+<body>
+<h1>@offirmo-private/css--foundation</h1>
+<nav>
+	<a>./perfect-motherfucking-website--raw.html</a><br>
+	<a>./perfect-motherfucking-website--styled.html</a><br>
+	<a>./ut-elements.html</a><br>
+</nav>
+
+<script>
+	Array.prototype.forEach.call(document.querySelectorAll('a'), function(el) {
+		el.href || (el.href = el.text)
+	})
+</script>
+</body>
+</html>

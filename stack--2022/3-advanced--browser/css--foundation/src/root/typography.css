@@ -18,8 +18,8 @@
 	/* 1.5 is recommended by accessibility (TODO ref) */
 	/* do NOT change the root font-size as it's used as a default zoom by accessibility users cf. https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/ */
 
-	/* Help discriminate 0 and O https://piccalil.li/quick-tip/control-changing-numbers-with-font-variant-numeric/
-	 * This works only if the font supports it, of course.
+	/* Help discriminate 0 and O if the font supports it.
+	 * https://piccalil.li/quick-tip/control-changing-numbers-with-font-variant-numeric/
 	 */
 	font-variant-numeric: slashed-zero;
 }

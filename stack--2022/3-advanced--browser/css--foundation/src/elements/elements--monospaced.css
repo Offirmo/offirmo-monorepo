@@ -9,20 +9,29 @@
 
 @import '../tokens/colors.css';
 
+:root {
+	--o⋄color⁚bg--code: hsl(var(--o⋄dtoken⁚bg--h), var(--o⋄dtoken⁚bg--s), calc(var(--o⋄dtoken⁚bg--l) * 0.93));
+}
+
 code,
 kbd,
 pre,
 samp {
 	/* First cancel the browser-engine level font resizing.
-	 * Strangely, the solution is to redefine the font-family twice
+	 * Strangely, the solution is to redefine the font-family twice.
 	 * "Nobody knows why this works; it just does."
 	 * cf. https://stackoverflow.com/questions/38781089/font-family-monospace-monospace
+	 * TODO var font-family!
 	 */
 	font-family: monospace, monospace; /* seen working on Chrome102, Firefox91 and Safari15 */
-	/* Now re-enable the font resizing wih proper css
+
+	/* Now re-enable the font resizing with proper css
+	 * (we tweak the value)
 	 */
-	font-size: .8em;
+	font-size: .9em;
 
-
-	background: #eee; /* TODO token */
+	/* Apply a light background on those elements.
+	 * This is now a widely accepted semantic style.
+	 */
+	background: var(--o⋄color⁚bg--code);
 }
