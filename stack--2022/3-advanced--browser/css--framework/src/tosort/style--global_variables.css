@@ -6,7 +6,6 @@
 	--o⋄adjusted-em: 1em; /* use this instead of the em unit, to allow each font to slightly adjust its em */
 
 	/* base sizes */
-	--o⋄content-recommended-width: calc(650px * var(--o⋄scale)); /* a suggested good max width for text content. Taken from https://bettermotherfuckingwebsite.com/ */
 	--o⋄font-size--default: calc(14px * var(--o⋄scale));
 	--o⋄line-height--default: 1.5;
 	--o⋄border--thickness: 1px;

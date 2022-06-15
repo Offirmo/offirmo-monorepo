@@ -2,8 +2,10 @@
 
 /* Ideally we should keep the default blue color of links,
  * as it's widely recognized and trigger a "muscle memory" https://blog.mozilla.org/en/internet-culture/deep-dives/why-are-hyperlinks-blue/
+ * FYI blue (not visited) = rgb(0, 0, 238)
+ *     violet (visited)   = rgb(85, 26, 139)
  *
- * However links color is an ideal for giving one's site identity.
+ * However links color is an ideal candidate for giving one's site identity.
  */
 :root {
 	/* inherit = links will be more subtle
@@ -16,15 +18,18 @@
 a {
 	/* color TODO */
 	/*text-decoration-color: var(--o⋄color⁚fg--secondary); /* TODO review XXX */
-	touch-action: manipulation; /* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
+
+	/* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
+	touch-action: manipulation;
 }
-
-
 a:link,
 a:visited {
 
 }
 a:hover,
 a:active {
-	/*color: var(--o⋄color⁚fg--activity-outline);*/
+	/* There is no hover indicator on links.
+	 * Adding one is a no-brainer.
+	 */
+	color: var(--o⋄color⁚fg--activity-outline);
 }

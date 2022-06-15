@@ -30,8 +30,13 @@ samp {
 	 */
 	font-size: .9em;
 
-	/* Apply a light background on those elements.
+	/* Apply a slightly different background on those elements.
 	 * This is now a widely accepted semantic style.
 	 */
 	background: var(--o⋄color⁚bg--code);
+
+	/* To prevent the background from being too close to the content,
+	 * Add a separator padding on inline elements
+	 */
+	padding-inline: .3ch;
 }

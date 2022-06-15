@@ -1,15 +1,16 @@
 @import '../tokens/colors.css';
+@import '../tokens/sizes.css';
 
 /* nicer collapsibles */
 details {
-	border: dashed 1px;
+	border: dashed var(--o⋄border--thickness);
 	padding-left: 1.4rem; /* for the content */
 }
 details summary {
 	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
 	cursor: pointer;
 
-	margin-left: -1rem;
+	margin-left: -1rem; /* xxx rem */
 }
 details summary > * {
 	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
