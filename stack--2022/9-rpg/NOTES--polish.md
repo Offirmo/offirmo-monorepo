@@ -5,6 +5,7 @@ https://css-tricks.com/css-dappled-light-effect/
 
 https://www.vantajs.com/?effect=fog
 
+bords https://css-tricks.com/flip-invert-and-reverse/
 
 * maps https://mapeffects.co/ https://mapeffects.co/blog/size
 

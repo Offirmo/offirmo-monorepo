@@ -1,11 +1,22 @@
 @import '../tokens/colors.css';
 
 /* Ideally we should keep the default blue color of links,
- * as it's widely recognized and trigger a "muscle memory" https://blog.mozilla.org/en/internet-culture/deep-dives/why-are-hyperlinks-blue/
+ * as it's widely recognized and trigger a "muscle memory"
+ * https://blog.mozilla.org/en/internet-culture/deep-dives/why-are-hyperlinks-blue/
  * FYI blue (not visited) = rgb(0, 0, 238)
  *     violet (visited)   = rgb(85, 26, 139)
  *
  * However links color is an ideal candidate for giving one's site identity.
+ * [advices]()
+If you are to change the link color, here are my lists of requirements for the perfect color when choosing a link color:
+- Optimal text accessibility with the background color and surrounding text.
+  Your design decisions shouldn’t be the reason a user can’t access content on a page.
+- Interactive states should always be styled in your stylesheets.
+  Examples include: touch, visited, hover, active and focus.
+- Links and buttons should be large enough to tap or click.
+  You can’t be sure how people are interacting with your content on devices
+  by using styluses, fingers, mice or trackpads.
+  It’s your job to make sure your links are easy to navigate and have enough space around them.
  */
 :root {
 	/* inherit = links will be more subtle

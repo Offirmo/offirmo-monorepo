@@ -5,6 +5,8 @@ img {
 
 	/* defensive CSS, feel free to override https://ishadeed.com/article/defensive-css/ */
 	object-fit: cover;
+	max-width: 100%;
+	background-color: grey; /* in case the image doesn't load */
 
 	/* src: ? */
 	image-rendering: -webkit-optimize-contrast;
