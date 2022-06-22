@@ -7,10 +7,12 @@
  * We keep it but we improve it.
  */
 
-@import '../tokens/colors.css';
+@import '../tokens/tokens--colors.css';
+@import '../tokens/tokens--font-families.css';
 
 :root {
-	--o⋄color⁚bg--code: hsl(var(--o⋄dtoken⁚bg--h), var(--o⋄dtoken⁚bg--s), calc(var(--o⋄dtoken⁚bg--l) * 0.93));
+	/* TODO move */
+	--o⋄color⁚bg--code: hsl(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), calc(var(--o⋄color⁚bg--main__l) * 0.93));
 }
 
 code,
@@ -19,11 +21,11 @@ pre,
 samp {
 	/* First cancel the browser-engine level font resizing.
 	 * Strangely, the solution is to redefine the font-family twice.
-	 * "Nobody knows why this works; it just does."
+	 * "Nobody knows why this works; it just does." (last checked was working on Chrome102, Firefox91 and Safari15)
 	 * cf. https://stackoverflow.com/questions/38781089/font-family-monospace-monospace
-	 * TODO var font-family!
+	 * (see var definition)
 	 */
-	font-family: monospace, monospace; /* seen working on Chrome102, Firefox91 and Safari15 */
+	font-family: var(--o⋄font-family--code);
 
 	/* Now re-enable the font resizing with proper css
 	 * (we tweak the value)

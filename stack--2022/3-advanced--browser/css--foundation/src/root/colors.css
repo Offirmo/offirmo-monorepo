@@ -1,4 +1,4 @@
-@import '../tokens/colors.css';
+@import '../tokens/tokens--colors.css';
 
 :root {
 	/*color = #4 most important styling according to https://jgthms.com/web-design-in-4-minutes/#color-contrast

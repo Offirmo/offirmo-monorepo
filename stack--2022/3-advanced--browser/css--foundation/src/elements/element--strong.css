@@ -1,0 +1,7 @@
+@import '../tokens/tokens--colors.css';
+@import '../tokens/tokens--font-families.css';
+
+strong {
+	color: var(--o⋄color⁚fg--strong);
+	font-family: var(--o⋄font-family--important);
+}

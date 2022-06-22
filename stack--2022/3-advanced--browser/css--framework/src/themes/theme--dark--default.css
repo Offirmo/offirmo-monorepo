@@ -7,27 +7,27 @@
  */
 [data-o-theme="dark--default"] {
 	/* quasi white */
-	--o⋄dtoken⁚fg--h: 0;
-	--o⋄dtoken⁚fg--s: 0%;
-	--o⋄dtoken⁚fg--l: 98%;
+	--o⋄color⁚fg--main__h: 0;
+	--o⋄color⁚fg--main__s: 0%;
+	--o⋄color⁚fg--main__l: 98%;
 	/* quasi black */
-	--o⋄dtoken⁚bg--h: 0;
-	--o⋄dtoken⁚bg--s: 0%;
-	--o⋄dtoken⁚bg--l: 17%;
+	--o⋄color⁚bg--main__h: 0;
+	--o⋄color⁚bg--main__s: 0%;
+	--o⋄color⁚bg--main__l: 17%;
 
 	/*
-	--o⋄color⁚fg--main:       hsl(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l));
-	--o⋄color⁚fg--secondary: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .66);
-	--o⋄color⁚fg--ancillary: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .33);
+	--o⋄color⁚fg--main:       hsl(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l));
+	--o⋄color⁚fg--secondary: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .66);
+	--o⋄color⁚fg--ancillary: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .33);
 
 	--o⋄color⁚fg--accent: var(--o⋄color⁚fg--main);
 	--o⋄color⁚fg--activity-outline: #7AACFE;
 
-	--o⋄color⁚bg--main:            hsl(var(--o⋄dtoken⁚bg--h), var(--o⋄dtoken⁚bg--s), var(--o⋄dtoken⁚bg--l));
-	--o⋄color⁚bg--main--backdrop: hsla(var(--o⋄dtoken⁚bg--h), var(--o⋄dtoken⁚bg--s), var(--o⋄dtoken⁚bg--l), .9);
+	--o⋄color⁚bg--main:            hsl(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l));
+	--o⋄color⁚bg--main--backdrop: hsla(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l), .9);
 */
-	--o⋄color⁚bg--highlight--1: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .2);
-	--o⋄color⁚bg--highlight--2: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .4);
+	--o⋄color⁚bg--highlight--1: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .2);
+	--o⋄color⁚bg--highlight--2: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .4);
 
 	--o⋄color⁚fg--error: red;
 	--o⋄color⁚fg--warning: var(--o⋄color⁚boz__yellow);

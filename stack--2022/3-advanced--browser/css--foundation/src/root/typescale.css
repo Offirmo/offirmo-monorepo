@@ -34,3 +34,18 @@ h4 {font-size: 1.563rem;}
 h5 {font-size: 1.25rem;}
 
 small, .text_small {font-size: 0.8rem;}
+
+/*
+h1, h2, h3, p {
+	margin: 0; /* cancel normalize.css. Please use a flow/rhythm class instead! *//*
+}
+h1 {
+	xxfont-size: calc(var(--o⋄font-size--default) * var(--o⋄header-scale-ratio));
+}
+h2 {
+	xxfont-size: calc(var(--o⋄font-size--default) * (1 + ((var(--o⋄header-scale-ratio) - 1) * .66)));
+}
+h3 {
+	xxfont-size: calc(var(--o⋄font-size--default) * (1 + ((var(--o⋄header-scale-ratio) - 1) * .33)));
+}
+*/

@@ -5,28 +5,28 @@
 
 [data-o-theme="dark--colorhunt212"] {
 	/* light beige */
-	--o⋄dtoken⁚fg--h: 42;
-	--o⋄dtoken⁚fg--s: 100%;
-	--o⋄dtoken⁚fg--l: 87%;
+	--o⋄color⁚fg--main__h: 42;
+	--o⋄color⁚fg--main__s: 100%;
+	--o⋄color⁚fg--main__l: 87%;
 	/* dark */
-	--o⋄dtoken⁚bg--h: 248;
-	--o⋄dtoken⁚bg--s: 9%;
-	--o⋄dtoken⁚bg--l: 17%;
+	--o⋄color⁚bg--main__h: 248;
+	--o⋄color⁚bg--main__s: 9%;
+	--o⋄color⁚bg--main__l: 17%;
 
-	--o⋄color⁚fg--main:       hsl(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l));
-	--o⋄color⁚fg--secondary: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .66);
-	--o⋄color⁚fg--ancillary: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .33);
+	--o⋄color⁚fg--main:       hsl(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l));
+	--o⋄color⁚fg--secondary: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .66);
+	--o⋄color⁚fg--ancillary: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .33);
 
 	--o⋄color⁚fg--accent: var(--o⋄color⁚fg--main);
 	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚co212__blue);
 
-	--o⋄color⁚bg--main:            hsl(var(--o⋄dtoken⁚bg--h), var(--o⋄dtoken⁚bg--s), var(--o⋄dtoken⁚bg--l));
-	--o⋄color⁚bg--main--backdrop: hsla(var(--o⋄dtoken⁚bg--h), var(--o⋄dtoken⁚bg--s), var(--o⋄dtoken⁚bg--l), .9);
+	--o⋄color⁚bg--main:            hsl(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l));
+	--o⋄color⁚bg--main--backdrop: hsla(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l), .9);
 
-	--o⋄color⁚bg--highlight--1: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .2);
-	--o⋄color⁚bg--highlight--2: hsla(var(--o⋄dtoken⁚fg--h), var(--o⋄dtoken⁚fg--s), var(--o⋄dtoken⁚fg--l), .4);
+	--o⋄color⁚bg--highlight--1: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .2);
+	--o⋄color⁚bg--highlight--2: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .4);
 
-	--o⋄color⁚shadow: hsla(var(--o⋄dtoken⁚bg--h), var(--o⋄dtoken⁚bg--s), var(--o⋄dtoken⁚bg--l), .2);
+	--o⋄color⁚shadow: hsla(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l), .2);
 
 	--o⋄color⁚fg--error: red;
 	--o⋄color⁚fg--warning: var(--o⋄color⁚boz__yellow);

@@ -1,16 +1,18 @@
-@import '../tokens/colors.css';
-@import '../tokens/sizes.css';
+@import '../tokens/tokens--colors.css';
+@import '../tokens/tokens--sizes.css';
+
+/* TODO better align */
 
 /* nicer collapsibles */
 details {
 	border: dashed var(--o⋄border--thickness);
-	padding-left: 1.4rem; /* for the content */
+	padding-inline-start: 1.4rem; /* for the content */
 }
 details summary {
 	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
 	cursor: pointer;
 
-	margin-left: -1rem; /* xxx rem */
+	margin-inline-start: -1rem; /* xxx rem */
 }
 details summary > * {
 	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */

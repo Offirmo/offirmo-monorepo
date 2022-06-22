@@ -1,0 +1,73 @@
+/* TODO convert to LCH when supported https://caniuse.com/css-lch-lab */
+
+:root {
+	/* Very conservative default colors
+	 * light mode by default
+	 */
+	--o⋄color⁚fg--main__h: 15;
+	--o⋄color⁚fg--main__s: 100%;
+	--o⋄color⁚fg--main__l: 10%; /* slightly not full black to have a tint */
+
+	--o⋄color⁚bg--main__h: var(--o⋄color⁚fg--main__h);
+	--o⋄color⁚bg--main__s: 100%;
+	--o⋄color⁚bg--main__l: 100%; /* full white */
+
+	--o⋄color⁚fg--strong: hsl(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), clamp(0%, calc(var(--o⋄color⁚fg--main__l) - 10%), 20%)); /* headers and strong, in case we want different than main */
+	--o⋄color⁚fg--main:   hsl(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l)); /* text */
+
+	/* Ideally we should keep the default blue color of links,
+	 * as it's widely recognized and trigger a "muscle memory"
+	 * https://blog.mozilla.org/en/internet-culture/deep-dives/why-are-hyperlinks-blue/
+	 * FYI blue (not visited) = rgb(0, 0, 238)
+	 *     violet (visited)   = rgb(85, 26, 139)
+	 *
+	 * However links color is an ideal candidate for giving one's site identity.
+	 * [advices]()
+	If you are to change the link color, here are my lists of requirements for the perfect color when choosing a link color:
+	- Optimal text accessibility with the background color and surrounding text.
+	  Your design decisions shouldn’t be the reason a user can’t access content on a page.
+	- Interactive states should always be styled in your stylesheets.
+	  Examples include: touch, visited, hover, active and focus.
+	- Links and buttons should be large enough to tap or click.
+	  You can’t be sure how people are interacting with your content on devices
+	  by using styluses, fingers, mice or trackpads.
+	  It’s your job to make sure your links are easy to navigate and have enough space around them.
+	 */
+	--o⋄color⁚fg--link:          hsl(240, 100%, 50%);
+	--o⋄color⁚fg--link--visited: hsl(271, 68%, 32%);
+
+	/*--o⋄color⁚fg--secondary: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .66); /* ex. date an article was published */
+	/*--o⋄color⁚fg--ancillary: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .33); /* ex. copyright notice in a footer */
+
+	/*--o⋄color⁚fg--accent: var(--o⋄color⁚fg--main); TODO review */
+	--o⋄color⁚fg--activity-outline: #7AACFE; /* accent on tab, seldom used */
+
+	--o⋄color⁚bg--main: hsl(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l));
+	--o⋄color⁚bg--code: hsl(var(--o⋄color⁚bg--main__h), 1%, clamp(0%, calc(var(--o⋄color⁚bg--main__l) - 10%), 20%));
+	/*--o⋄color⁚bg--main--backdrop: hsla(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l), .9); /* for modals, tooltips etc. tried and tested, 0.9 is the best, see stories */
+
+	/*--o⋄color⁚bg--highlight--1: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .1); /* bg color visible on normal bg, ex. for buttons */
+	/*--o⋄color⁚bg--highlight--2: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .3); /* alt, ex. for hovered/clicked buttons */
+
+	/*--o⋄color⁚shadow: hsla(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l), .2); /* = fg translucent */
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* quasi white */
+		--o⋄color⁚fg--main__h: 0;
+		--o⋄color⁚fg--main__s: 0%;
+		--o⋄color⁚fg--main__l: 90%;
+
+		/* black */
+		--o⋄color⁚bg--main__h: 0;
+		--o⋄color⁚bg--main__s: 0%;
+		--o⋄color⁚bg--main__l: 0%;
+
+		--o⋄color⁚fg--strong: hsl(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), clamp(80%, calc(var(--o⋄color⁚fg--main__l) + 10%), 100%));
+
+		--o⋄color⁚fg--link--visited:hsl(240, 100%, 80%);
+	}
+}

@@ -1,0 +1,10 @@
+
+:root {
+	--o⋄border--thickness: .07rem;
+
+	/* recommendation for max width of content:
+	 - 40-55 https://buffer.com/library/the-ideal-length-of-everything-online-according-to-science/#the-ideal-width-of-a-paragraph-is-40-55-characters
+	 - 60-75 https://piccalil.li/quick-tip/line-length/
+	 */
+	--o⋄content-recommended-width: 60ch;
+}

@@ -1,11 +1,11 @@
-@import '../tokens/colors.css';
-@import '../tokens/sizes.css';
+@import '../tokens/tokens--colors.css';
+@import '../tokens/tokens--sizes.css';
 
 /* Nicer HR
  * possible ideas: https://css-tricks.com/examples/hrs/
  */
 hr {
-	/* simple one */
+	/* simple one TODO review*/
 	width: 100%;
 	border: none;
 	border-top: var(--o⋄border--thickness) solid;
