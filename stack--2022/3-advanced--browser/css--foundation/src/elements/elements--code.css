@@ -10,11 +10,6 @@
 @import '../tokens/tokens--colors.css';
 @import '../tokens/tokens--font-families.css';
 
-:root {
-	/* TODO move */
-	--o⋄color⁚bg--code: hsl(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), calc(var(--o⋄color⁚bg--main__l) * 0.93));
-}
-
 code,
 kbd,
 pre,

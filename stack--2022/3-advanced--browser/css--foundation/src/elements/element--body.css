@@ -10,3 +10,11 @@ body {
 	max-width: var(--o⋄content-recommended-width);
 	margin: 0 auto; /* 0 for the 100% trick to work, auto for centering */
 }
+
+/* TODO review
+html, body {
+	height: 100%;
+	min-height: 100%;
+	width: 100%;
+}
+*/

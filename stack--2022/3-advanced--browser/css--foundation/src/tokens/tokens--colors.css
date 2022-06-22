@@ -59,15 +59,17 @@
 		/* quasi white */
 		--o⋄color⁚fg--main__h: 0;
 		--o⋄color⁚fg--main__s: 0%;
-		--o⋄color⁚fg--main__l: 90%;
+		--o⋄color⁚fg--main__l: 90%; /* slightly not full white to have a tint */
 
 		/* black */
 		--o⋄color⁚bg--main__h: 0;
 		--o⋄color⁚bg--main__s: 0%;
-		--o⋄color⁚bg--main__l: 0%;
+		--o⋄color⁚bg--main__l: 10%; /* slightly not full black to have a tint */
 
 		--o⋄color⁚fg--strong: hsl(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), clamp(80%, calc(var(--o⋄color⁚fg--main__l) + 10%), 100%));
 
 		--o⋄color⁚fg--link--visited:hsl(240, 100%, 80%);
+
+		--o⋄color⁚bg--code:  hsl(var(--o⋄color⁚bg--main__h), 3%, clamp(0%, calc(var(--o⋄color⁚bg--main__l) + 15%), 20%));
 	}
 }
