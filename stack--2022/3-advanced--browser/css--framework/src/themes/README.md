@@ -4,4 +4,4 @@ Color selection
 * - https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/
 * - https://ianstormtaylor.com/design-tip-never-use-black/
 * - https://bestmotherfucking.website/ is using true white/black
-* - Github is using rgb(36, 41, 47) on
+* - Github is using rgb(36, 41, 47)

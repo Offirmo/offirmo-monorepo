@@ -1,4 +1,4 @@
-## @offirmo-private/ui--browser--css
+## @offirmo-private/css--framework
 
 A micro CSS framework (like Bootstrap but with minimal features), mostly for my personal use.
 **[live demo on CodePen](https://codepen.io/Offirmo/pen/qYYWVy)** TODO BROKEN

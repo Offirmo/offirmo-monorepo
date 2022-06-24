@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/ui--browser--css",
+	"name": "@offirmo-private/css--framework",
 	"description": "Small reusable CSS classes",
 	"version": "0.0.1",
 	"license": "Unlicense",

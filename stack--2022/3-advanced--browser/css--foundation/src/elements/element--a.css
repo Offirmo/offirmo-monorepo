@@ -1,20 +1,7 @@
-
-
 @import '../tokens/tokens--colors.css';
-
-
-:root {
-	/* inherit = links will be more subtle
-	 * TODO
-	 * -webkit-link
-	 */
-	/*--o⋄color⁚link--unvisited:*/
-}
-
 
 a {
 	color: var(--o⋄color⁚fg--link);
-	/*text-decoration-color: var(--o⋄color⁚fg--secondary); /* TODO review XXX */
 
 	/* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
 	touch-action: manipulation;
