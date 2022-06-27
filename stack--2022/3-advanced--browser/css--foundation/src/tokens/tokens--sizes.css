@@ -1,5 +1,8 @@
 
 :root {
+	/* Reminder: borders should be avoided as much as possible
+	 * cf. https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886 §4
+	 */
 	--o⋄border--thickness: .07rem;
 
 	/* recommendation for max width of content:

@@ -5,6 +5,4 @@
 	 */
 	color: var(--o⋄color⁚fg--main);
 	background-color: var(--o⋄color⁚bg--main);
-
-	accent-color: var(--o⋄color⁚fg--accent); /* https://web.dev/accent-color/ https://www.smashingmagazine.com/2021/09/simplifying-form-styles-accent-color/ */
 }

@@ -1,7 +1,8 @@
 
 <script type="module">
-	import * as stories_reset from '../../../css--reset/**/*.stories.@(js|jsx|ts|tsx|mdx)'
-	//import * as stories_sane from '../../../css--sane-defaults/**/*.stories.@(js|jsx|ts|tsx|mdx)'
+	import * as stories_reset from '../../../css--reset/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)'
+	import * as stories_sane from '../../../css--foundation/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)'
+	import * as stories_framework from '../../../css--framework/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)'
 	//import * as stories from '../../../css--*/**/*.stories.js'
 
 	import nearest_pkg from '~/package.json'
@@ -10,15 +11,16 @@
 
 	const stories = {
 		reset: stories_reset,
-		//'sane-defaults': stories_sane,
+		'sane-defaults': stories_sane,
+		framework: stories_framework,
 	}
 	start_storypad(stories, {
 		root_title: nearest_pkg?.name,
 		decorators: [
 			(story) => {
 				//import('@offirmo-private/css--reset')
-				import('@offirmo-private/css--foundation')
-				//import('../../src/index.css')
+				//import('@offirmo-private/css--foundation')
+				import('@offirmo-private/css--framework')
 				//import('@offirmo-private/css--utils/src/debug/index.css')
 				//import('@offirmo-private/css--utils/src/diagnostics/index.css')
 				return story
