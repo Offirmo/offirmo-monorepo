@@ -1,8 +1,6 @@
 @import '../tokens/tokens--colors.css';
 @import '../tokens/tokens--font-families.css';
 
-/* Note that h4~h6 are smaller than p! usage not recommended */
-
 :is(h1, h2, h3, h4, h5, h6) {
 	color: var(--o⋄color⁚fg--strong);
 	font-family: var(--o⋄font-family--important);

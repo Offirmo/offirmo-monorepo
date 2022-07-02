@@ -57,7 +57,7 @@ th:not([scope=col], [scope=row])
 *[href=""],
 *[id=""],
 *[src=""],
-*[summary=""],
+*[summary=""], /* deprecated but empty is still bad */
 *[title=""]
 {
 	border: 3px dotted var(--o⋄color⁚diagnostics--empty) !important;

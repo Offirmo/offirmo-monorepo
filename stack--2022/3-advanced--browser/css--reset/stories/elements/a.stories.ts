@@ -12,12 +12,14 @@ export function NeverVisited() {
 	console.log('hello')
 
 	return `
-		<a href="${location.origin + location.pathname + location.search + '#' + String(Math.random())}">link -- never visited</a>
+		<a href="${location.origin + location.pathname + location.search + '&random=' + String(Math.random())}">link -- never visited</a>
 	`
 }
 
 export function AlreadyVisited() {
+	const location = document.location
+
 	return `
-		<a href="${window.top.location.href}">link -- already visited</a>
+		<a href="${location.origin + location.pathname + location.search}">link -- already visited</a>
 	`
 }

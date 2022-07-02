@@ -1,26 +1,39 @@
-/* TODO convert to LCH when supported https://caniuse.com/css-lch-lab */
+/* Declare very conservative "light mode" default colors,
+ * while allowing some personalisation
+ */
 
 :root {
-	/* Very conservative default colors
-	 * light mode by default
+	/* A very easy way to add personality to your site is to start with a "brand" color
+	 * (ex. facebook and twitter have their special "blue" color)
+	 * and decline it into the other colors.
+	 * It's quite easy to do arithmetic with hsl https://hslpicker.com/
+	 * TODO convert to LCH when supported ? https://caniuse.com/css-lch-lab
 	 */
-	--o⋄color⁚fg--main__h: 15; /* select your tint here */
-	--o⋄color⁚fg--main__s: 100%;
-	--o⋄color⁚fg--main__l: 10%; /* slightly not full black to allow a hint of a tint */
+	--o⋄color⁚brand__h: 26;
+	--o⋄color⁚brand__s: 99%;
+	--o⋄color⁚brand__l: 54%;
 
-	--o⋄color⁚bg--main__h: var(--o⋄color⁚fg--main__h);
+	/* foreground color = quasi black */
+	--o⋄color⁚fg--main__h: var(--o⋄color⁚brand__h);
+	--o⋄color⁚fg--main__s: 100%;
+	--o⋄color⁚fg--main__l: 7%; /* 0 = full black, we select slightly not full black to allow a hint of a tint */
+
+	/* background color = white */
+	--o⋄color⁚bg--main__h: var(--o⋄color⁚brand__h);
 	--o⋄color⁚bg--main__s: 100%;
-	--o⋄color⁚bg--main__l: 100%; /* full white, the best bg */
+	--o⋄color⁚bg--main__l: 100%; /* 100 = full white, the best bg */
 
 	/* main color for "primary content" = normal text
 	 */
 	--o⋄color⁚fg--main:   hsl(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l));
+
 	/* Slightly stronger color for headers and <strong>.
 	 * As suggested by https://jgthms.com/web-design-in-4-minutes/#color-contrast "Color & contrast"
 	 * Can be equal to the main color without any problem.
 	 */
 	--o⋄color⁚fg--strong: hsl(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), clamp(0%, calc(var(--o⋄color⁚fg--main__l) - 10%), 20%));
-	/* a color for secondary content,
+
+	/* Weaker color for secondary content,
 	 * ex. date an article was published
 	 * as suggested by https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886
 	 * Note that we use transparency to adapt to any background (cf. same link)
@@ -35,27 +48,29 @@
 
 	/* An "accent color" is an easy way to add "that dash of visual flair to your UI"
 	 * cf. https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886 §6
-	 * It's also an easy way to style inputs
+	 * It's also an easy way to style inputs.
+	 * Note: because browsers will do auto-contrast, we need to use a light accent on light mode and vice versa
 	 */
-	--o⋄color⁚fg--accent: hsl(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), 50%);
-	/*
+	--o⋄color⁚fg--accent: hsl(var(--o⋄color⁚brand__h), var(--o⋄color⁚brand__s), 65%);
+
+	/* Outline color for elements being interacted with,
+	 * ex. buttons being pressed, links being pressed/hovered.
+	 * Also used as focus ring color (if enabled).
 	 */
-	--o⋄color⁚fg--activity-outline: #7AACFE; /* accent on tab, seldom used */
+	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--accent);
 
 	/* Background color
 	 */
 	--o⋄color⁚bg--main: hsl(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l));
 	/* Variation of background color for code.
 	 * This is a very common pattern.
+	 * We use S = 5% to make a gray (desaturate) then lower the luminosity
 	 */
-	--o⋄color⁚bg--code: hsl(var(--o⋄color⁚bg--main__h), 1%, clamp(0%, calc(var(--o⋄color⁚bg--main__l) - 10%), 20%));
-
+	--o⋄color⁚bg--code: hsl(var(--o⋄color⁚bg--main__h), 5%, clamp(60%, calc(var(--o⋄color⁚bg--main__l) - 10%), 90%));
 
 	/*--o⋄color⁚bg--main--backdrop: hsla(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l), .9); /* for modals, tooltips etc. tried and tested, 0.9 is the best, see stories */
-
-	/*--o⋄color⁚bg--highlight--1: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .1); /* bg color visible on normal bg, ex. for buttons */
-	/*--o⋄color⁚bg--highlight--2: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .3); /* alt, ex. for hovered/clicked buttons */
-
+	--o⋄color⁚bg--highlight--1: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .1); /* bg color visible on normal bg, ex. for buttons */
+	--o⋄color⁚bg--highlight--2: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .3); /* alt, ex. for hovered/clicked buttons */
 	/*--o⋄color⁚shadow: hsla(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l), .2); /* = fg translucent */
 
 	/* Ideally we should keep the default blue color of links,
@@ -83,7 +98,12 @@
 
 
 @media (prefers-color-scheme: dark) {
-	:root {
+
+	/* NO!
+	 * dark mode is broken at the current time: https://www.bram.us/2022/05/25/dark-mode-toggles-should-be-a-browser-feature/
+	 * We may want to use JS instead.
+	 */
+	:xxroot {
 		/* quasi white */
 		--o⋄color⁚fg--main__h: 0;
 		--o⋄color⁚fg--main__s: 0%;
