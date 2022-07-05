@@ -1,11 +1,8 @@
-@import '../tokens/tokens--colors.css';
-@import '../tokens/tokens--sizes.css';
-
 /* TODO better align */
 
 /* nicer collapsibles */
 details {
-	border: dashed var(--o⋄border--thickness);
+	border: dashed var(--o⋄border--thickness, .07rem);
 	padding-inline-start: 1.4rem; /* for the content */
 }
 details summary {
@@ -19,5 +16,5 @@ details summary > * {
 	display: inline;
 }
 details[open] {
-	border-color: var(--o⋄color⁚fg--main);
+	border-color: var(--o⋄color⁚fg--main, black);
 }

@@ -41,8 +41,9 @@ https://parceljs.org/
 
 ### to evaluate
 
-https://docs.volta.sh/guide/understanding
-https://asdf-vm.com/guide/introduction.html#nvm-n-rbenv-etc
+https://www.honeybadger.io/blog/node-environment-managers/
+* https://docs.volta.sh/guide/understanding
+* https://asdf-vm.com/guide/introduction.html#nvm-n-rbenv-etc
 
 https://github.com/folke/ultra-runner
 https://blog.logrocket.com/boost-your-productivity-with-typescript-project-references/

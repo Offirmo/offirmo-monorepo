@@ -1,11 +1,11 @@
-@import '../tokens/tokens--colors.css';
+@import '../consts/consts--colors--defaults.css';
 
 /* Order is important
  * https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links
  */
 
 a {
-	color: var(--o⋄color⁚fg--link);
+	color: var(--o⋄color⁚fg--link, var(--o⋄color⁚fg--link--default));
 
 	/* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
 	touch-action: manipulation;
@@ -16,7 +16,7 @@ a:link {
 }
 
 a:visited {
-	color: var(--o⋄color⁚fg--link--visited);
+	color: var(--o⋄color⁚fg--link--visited, var(--o⋄color⁚fg--link--visited--default));
 }
 
 a:focus {
@@ -28,5 +28,5 @@ a:active {
 	/* There is no hover indicator on links.
 	 * Adding one is a no-brainer.
 	 */
-	color: var(--o⋄color⁚fg--activity-outline);
+	color: var(--o⋄color⁚fg--activity-outline, var(--o⋄color⁚fg--activity-outline--default));
 }

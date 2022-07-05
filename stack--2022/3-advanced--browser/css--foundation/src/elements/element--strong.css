@@ -1,9 +1,6 @@
-@import '../tokens/tokens--colors.css';
-@import '../tokens/tokens--font-families.css';
-
 strong {
-	color: var(--o⋄color⁚fg--strong);
-	font-family: var(--o⋄font-family--important);
+	color: var(--o⋄color⁚fg--strong, var(--o⋄color⁚fg--main, black));
+	font-family: var(--o⋄font-family--important, ui-sans-serif, system-ui, sans-serif);
 	/* TODO also emphasize with font? https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886
 	 * weight 600-700
 	 */

@@ -1,0 +1,9 @@
+
+:root {
+	/* https://blog.mozilla.org/en/internet-culture/deep-dives/why-are-hyperlinks-blue/
+	 */
+	--o⋄color⁚fg--link--default: hsl(240, 100%, 50%);
+	--o⋄color⁚fg--link--visited--default: hsl(271, 68%, 32%);
+
+	--o⋄color⁚fg--activity-outline--default: hsl(217, 99%, 65%);
+}

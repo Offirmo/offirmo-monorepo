@@ -5,3 +5,6 @@ Color selection
 * - https://ianstormtaylor.com/design-tip-never-use-black/
 * - https://bestmotherfucking.website/ is using true white/black
 * - Github is using rgb(36, 41, 47)
+
+
+	 * TODO convert to LCH when supported ? https://caniuse.com/css-lch-lab

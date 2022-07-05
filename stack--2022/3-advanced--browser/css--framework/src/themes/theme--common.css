@@ -1,0 +1,8 @@
+
+[data-o-theme] {
+	color: var(--o⋄color⁚fg--main);
+	background-color: var(--o⋄color⁚bg--main);
+	accent-color: var(--o⋄color⁚fg--accent);
+
+	/* TODO scrollbar */
+}

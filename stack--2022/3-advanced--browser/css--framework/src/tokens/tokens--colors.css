@@ -1,7 +1,7 @@
 @import '../themes/theme--light--default.css';
 
 @media (prefers-color-scheme: dark) {
-	/* We do NOT support auto dark mode.
+	/* We INTENTIONALLY do NOT support auto dark mode.
 	 * 1. https://www.bram.us/2022/05/25/dark-mode-toggles-should-be-a-browser-feature/
 	 * 2. some apps don't want to have 2 schemes (ex. games)
 	 */

@@ -8,7 +8,6 @@
  */
 
 @import '../tokens/tokens--colors.css';
-@import '../tokens/tokens--font-families.css';
 
 code,
 kbd,
@@ -20,7 +19,7 @@ samp {
 	 * cf. https://stackoverflow.com/questions/38781089/font-family-monospace-monospace
 	 * (see var definition)
 	 */
-	font-family: var(--o⋄font-family--code);
+	font-family: var(--o⋄font-family--code, ui-monospace, monospace, monospace);
 
 	/* Now re-enable the font resizing with proper css
 	 * (we tweak the value)
