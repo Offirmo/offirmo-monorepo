@@ -6,17 +6,13 @@ function _ANeverVisited() {
 	const location = document.location
 	console.log('hello')
 
-	return `
-		<a href="${location.origin + location.pathname + location.search + '&random=' + String(Math.random())}">link -- never visited</a>
-	`
+	return `<a href="${location.origin + location.pathname + location.search + '&random=' + String(Math.random())}">link -- never visited</a>`
 }
 
 function _AAlreadyVisited() {
 	const location = document.location
 
-	return `
-		<a href="${location.origin + location.pathname + location.search}">link -- already visited</a>
-	`
+	return `<a href="${location.origin + location.pathname + location.search}">link -- already visited</a>`
 }
 
 function _demo_content(theme: string = '[no theme = default]', is_alternate: boolean = false) {
@@ -26,7 +22,7 @@ function _demo_content(theme: string = '[no theme = default]', is_alternate: boo
 			<h2>Theme preview</h2>
 
 			<p>
-				<code>data-o-theme="${theme}"</code>
+				<pre><code>data-o-theme="${theme}"</code></pre>
 			</p>
 
 			<p>
@@ -41,10 +37,10 @@ function _demo_content(theme: string = '[no theme = default]', is_alternate: boo
 				<small>small text</small>
 			</p>
 
-			<ol>
-				<li>${_ANeverVisited()}</li>
-				<li>${_AAlreadyVisited()}</li>
-			</ol>
+			<p>
+				${_ANeverVisited()},
+				${_AAlreadyVisited()}
+			</p>
 
 			<p>
 				<span class="o⋄colorꘌerror">error</span>

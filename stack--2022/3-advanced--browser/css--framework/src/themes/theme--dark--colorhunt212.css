@@ -17,7 +17,7 @@
 	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚co212__blue);
 	--o⋄color⁚bg--main: var(--o⋄color⁚co212__brown);
 	xxx--o⋄color⁚bg--main: var(--o⋄color⁚co212__dark);
-	--o⋄color⁚bg--code: var(--o⋄color⁚lighter--20);
+	--o⋄color⁚bg--code: #75636a;
 
 	/* "app" mode, we don't emphasize links */
 	--o⋄color⁚fg--link:          var(--o⋄color⁚co212__beige);

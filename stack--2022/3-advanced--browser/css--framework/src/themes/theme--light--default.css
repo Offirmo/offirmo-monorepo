@@ -12,10 +12,10 @@
 	--o⋄color⁚fg--secondary: var(--o⋄color⁚darker--66);
 	--o⋄color⁚fg--ancillary: var(--o⋄color⁚darker--33);
 
-	--o⋄color⁚fg--accent: var(--o⋄color⁚fg--accent--default);
+	--o⋄color⁚fg--accent:           var(--o⋄color⁚fg--accent--default);
 	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
 	--o⋄color⁚bg--main: white;
-	--o⋄color⁚bg--code: var(--o⋄color⁚darker--10);
+	--o⋄color⁚bg--code: hsl(0, 0%, 90%);
 
 	/* leave links to their default colors */
 	--o⋄color⁚fg--link:          var(--o⋄color⁚fg--link--default);
