@@ -1,9 +1,3 @@
-
-
-
-
-
-
 (agile "what the client wanted")
 1 or 2 way door
 1st practice what you preach
@@ -98,3 +92,4 @@ top-down/bottom-up
 tradeoffs / can't have everything
 who moved my cheese?
 être heureux n'est pas nécessairement confortable
+SWOT

@@ -1,9 +1,27 @@
 /* Traditional dark theme
  */
-@import './theme--dark--common.css';
+@import 'npm:@offirmo-private/css--foundation/src/consts/consts--colors--defaults.css';
+@import '../consts/consts--colors--modifiers.css';
+
+@import 'theme--common.css';
 
 /* TODO https://blog.superhuman.com/how-to-design-delightful-dark-themes-7b3da644ff1f
  */
 [data-o-theme="dark--default"] {
+	--o⋄color⁚fg--main: white;
+	--o⋄color⁚fg--secondary: var(--o⋄color⁚lighter--66);
+	--o⋄color⁚fg--ancillary: var(--o⋄color⁚lighter--33);
 
+	--o⋄color⁚fg--accent: var(--o⋄color⁚fg--accent--default);
+	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
+	--o⋄color⁚bg--main: black;
+	--o⋄color⁚bg--code: var(--o⋄color⁚lighter--20);
+
+	--o⋄color⁚fg--link:          var(--o⋄color⁚fg--link--default);
+	--o⋄color⁚fg--link--visited: hsl(271, 68%, 32%);
+
+	--o⋄color⁚fg--error: red;
+	--o⋄color⁚fg--warning: var(--o⋄color⁚boz__yellow);
+	--o⋄color⁚fg--info: var(--o⋄color⁚boz__blue);
+	--o⋄color⁚fg--success: var(--o⋄color⁚boz__green);
 }

@@ -2,5 +2,7 @@
 	color: var(--o⋄color⁚fg--strong, var(--o⋄color⁚fg--main, black));
 	font-family: var(--o⋄font-family--important, ui-sans-serif, system-ui, sans-serif);
 
-	/*line-height: 1.2; https://perfectmotherfuckingwebsite.com/ TODO */
+	/* smaller margins than the default stylesheet */
+	margin-block-start: 0.5em;
+	margin-block-end: 0.5em;
 }

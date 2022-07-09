@@ -34,5 +34,22 @@ alternatively:
 @import 'TODO';
 ```
 
+### customization
+
+```css
+:root {
+	--o⋄color⁚fg--main: black;
+	--o⋄color⁚fg--strong: var(--o⋄color⁚fg--main);
+	--o⋄color⁚fg--secondary: 0.66;
+	--o⋄color⁚fg--ancillary: 0.33;
+	--o⋄color⁚fg--accent: (default blue);
+	--o⋄color⁚fg--activity-outline: (default another blue);
+	--o⋄color⁚bg--main: white;
+	--o⋄color⁚bg--code: ;
+
+	--o⋄color⁚fg--link:          hsl(240, 100%, 50%);
+	--o⋄color⁚fg--link--visited: hsl(271, 68%, 32%);
+}
+```
 
 TODO favicon unicode https://piccalil.li/quick-tip/add-inline-svg-directly-in-your-css/

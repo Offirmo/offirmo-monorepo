@@ -30,9 +30,10 @@ samp {
 	 * This is now a widely accepted semantic style.
 	 */
 	background: var(--o⋄color⁚bg--code);
+	border-radius: 0.2em;
 
 	/* To prevent the background from being too close to the content,
 	 * Add a separator padding on inline elements
 	 */
-	padding-inline: .3ch;
+	padding-inline: .5ch;
 }

@@ -1,32 +1,27 @@
 /* "colorhunt 212" light on dark theme
  */
-@import './vars--colors--colorhunt--212.css';
-@import './vars--colors--boz.css';
+@import '../consts/consts--colors--colorhunt--212.css';
+@import '../consts/consts--colors--modifiers.css';
+
+@import 'theme--common.css';
 
 [data-o-theme="dark--colorhunt212"] {
-	/* light beige */
-	--o⋄color⁚fg--main__h: 42;
-	--o⋄color⁚fg--main__s: 100%;
-	--o⋄color⁚fg--main__l: 87%;
-	/* dark */
-	--o⋄color⁚bg--main__h: 248;
-	--o⋄color⁚bg--main__s: 9%;
-	--o⋄color⁚bg--main__l: 17%;
 
-	--o⋄color⁚fg--main:       hsl(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l));
-	--o⋄color⁚fg--secondary: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .66);
-	--o⋄color⁚fg--ancillary: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .33);
+	--o⋄color⁚fg--main: var(--o⋄color⁚co212__beige);
+	xx--o⋄color⁚fg--strong: var(--o⋄color⁚fg--main);
 
-	--o⋄color⁚fg--accent: var(--o⋄color⁚fg--main);
+	--o⋄color⁚fg--secondary: hsla(42, 100%, 87%, 0.66);
+	--o⋄color⁚fg--ancillary: hsla(42, 100%, 87%, 0.33);
+
+	--o⋄color⁚fg--accent: var(--o⋄color⁚co212__beige);
 	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚co212__blue);
+	--o⋄color⁚bg--main: var(--o⋄color⁚co212__brown);
+	xxx--o⋄color⁚bg--main: var(--o⋄color⁚co212__dark);
+	--o⋄color⁚bg--code: var(--o⋄color⁚lighter--20);
 
-	--o⋄color⁚bg--main:            hsl(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l));
-	--o⋄color⁚bg--main--backdrop: hsla(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l), .9);
-
-	--o⋄color⁚bg--highlight--1: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .2);
-	--o⋄color⁚bg--highlight--2: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .4);
-
-	--o⋄color⁚shadow: hsla(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l), .2);
+	/* "app" mode, we don't emphasize links */
+	--o⋄color⁚fg--link:          var(--o⋄color⁚co212__beige);
+	--o⋄color⁚fg--link--visited: var(--o⋄color⁚co212__beige);
 
 	--o⋄color⁚fg--error: red;
 	--o⋄color⁚fg--warning: var(--o⋄color⁚boz__yellow);

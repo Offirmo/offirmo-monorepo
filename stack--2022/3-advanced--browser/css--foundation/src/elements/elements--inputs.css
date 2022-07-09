@@ -1,8 +1,9 @@
+
 :root {
 	/* https://web.dev/accent-color/
 	 * https://www.smashingmagazine.com/2021/09/simplifying-form-styles-accent-color/
 	 */
-	accent-color: var(--o⋄color⁚fg--accent);
+	accent-color: var(--o⋄color⁚fg--accent); /* TODO default? */
 }
 
 

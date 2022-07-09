@@ -8,7 +8,8 @@
 
 @import 'npm:@offirmo-private/css--foundation';
 
-@import 'atomic/index.css'
+@import 'atomic/index.css';
+
 /*
 @import 'vars--scale.css';
 @import 'vars--inset.css';

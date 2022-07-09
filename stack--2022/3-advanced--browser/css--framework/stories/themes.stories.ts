@@ -19,9 +19,9 @@ function _AAlreadyVisited() {
 	`
 }
 
-function _demo_content(theme: string) {
+function _demo_content(theme: string = '[no theme = default]', is_alternate: boolean = false) {
 	return `
-		<main>
+		<section data-o-theme="${theme}" ${is_alternate?'class="o⋄paddingꘌmedium"':''}>
 			<h1>${LIB}</h1>
 			<h2>Theme preview</h2>
 
@@ -30,11 +30,7 @@ function _demo_content(theme: string) {
 			</p>
 
 			<p>
-				What I’m saying is that it’s so, so simple to make sites easier to read. Websites are broken by default,
-				they are
-				functional, high-performing, and accessible, but they’re also fucking ugly. You and all the other web
-				designers out
-				there need to make them not total shit.
+				What I’m saying is that it’s so, so simple to make sites easier to read!
 			</p>
 
 			<p>
@@ -49,7 +45,29 @@ function _demo_content(theme: string) {
 				<li>${_ANeverVisited()}</li>
 				<li>${_AAlreadyVisited()}</li>
 			</ol>
-		</main>
+
+			<p>
+				<span class="">error</span>
+				<span class="">warning</span>
+				<span class="">info</span>
+				<span class="">success</span>
+			</p>
+
+			<form>
+			<input type="checkbox" checked>test accent
+</form>
+		</section>
+	`
+}
+
+function _theme_demo(theme: string) {
+	const alternate_theme = theme?.startsWith('dark')
+		? 'light--default'
+		: 'dark--default'
+
+	return `
+		${_demo_content(theme)}
+		${_demo_content(alternate_theme, is_alternate = true)}
 	`
 }
 
@@ -68,20 +86,20 @@ function _decorator_select_theme(theme) {
 }
 
 export function NoThemeNoLoad() {
-	return _demo_content('[no theme]')
+	return _theme_demo()
 }
 NoThemeNoLoad.decorators = [
 ]
 
 export function NoTheme() {
-	return _demo_content('[no theme]')
+	return _theme_demo()
 }
 NoTheme.decorators = [
 	_decorator_add_all_themes,
 ]
 
 export function NoThemeCustomized() {
-	return _demo_content('[no theme]')
+	return _theme_demo()
 }
 NoThemeCustomized.decorators = [
 	_decorator_add_all_themes,
@@ -114,7 +132,7 @@ NoThemeCustomized.decorators = [
 
 
 export function LightDefault() {
-	return _demo_content('light--default')
+	return _theme_demo('light--default')
 }
 LightDefault.decorators = [
 	_decorator_add_all_themes,
@@ -122,7 +140,7 @@ LightDefault.decorators = [
 ]
 
 export function LightCustomized() {
-	return _demo_content('light--default')
+	return _theme_demo('light--default')
 	/*
 
 		*/
@@ -133,7 +151,7 @@ LightCustomized.decorators = [
 ]
 
 export function DarkDefault() {
-	return _demo_content('dark--default')
+	return _theme_demo('dark--default')
 }
 DarkDefault.decorators = [
 	_decorator_add_all_themes,
@@ -141,7 +159,7 @@ DarkDefault.decorators = [
 ]
 
 export function DarkCustom() {
-	return _demo_content('dark--default')
+	return _theme_demo('dark--default')
 }
 DarkDefault.decorators = [
 	_decorator_add_all_themes,
@@ -156,7 +174,7 @@ DarkDefault.decorators = [
 ]
 
 export function DarkColorhunt212() {
-	return _demo_content('dark--colorhunt212')
+	return _theme_demo('dark--colorhunt212')
 }
 DarkColorhunt212.decorators = [
 	_decorator_add_all_themes,

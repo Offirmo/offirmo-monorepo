@@ -1,0 +1,6 @@
+/* This is just a semantic alias
+ * to ensure design color tokens are defined
+ * regardless of whether a them has been specified or not.
+ */
+
+@import 'theme--light--default.css';
