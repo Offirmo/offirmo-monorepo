@@ -1,6 +1,7 @@
 /* Traditional, most efficient theme
  */
 @import 'npm:@offirmo-private/css--foundation/src/consts/consts--colors--defaults.css';
+@import '../consts/consts--colors--boz.css';
 @import '../consts/consts--colors--modifiers.css';
 
 @import 'theme--common.css';

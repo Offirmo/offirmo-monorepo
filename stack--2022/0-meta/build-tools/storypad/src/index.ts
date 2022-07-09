@@ -250,11 +250,13 @@ function _render_as_iframe(state) {
 		const story = get_story_by_id(state, story_id)
 		try {
 			let content = story.fn()
-			const decorators = [
-				...state.config.decorators,
-				...(story.defaults?.decorators || []),
-				...(story.fn.decorators || []),
-			].reverse()
+			const decorators = story.fn.decorators === null
+				? [] // allow reseting decorators
+				:[
+					...state.config.decorators,
+					...(story.defaults?.decorators || []),
+					...(story.fn.decorators || []),
+				].reverse()
 			decorators.forEach(decorator => {
 				content = decorator(content)
 			})

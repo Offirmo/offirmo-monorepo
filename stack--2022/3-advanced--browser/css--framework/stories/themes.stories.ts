@@ -35,7 +35,7 @@ function _demo_content(theme: string = '[no theme = default]', is_alternate: boo
 
 			<p>
 				<strong>emphasized text</strong>
-				Normal text
+				normal text
 				<span class="o⋄colorꘌsecondary">secondary text</span>
 				<span class="o⋄colorꘌancillary">ancillary text</span>
 				<small>small text</small>
@@ -47,10 +47,10 @@ function _demo_content(theme: string = '[no theme = default]', is_alternate: boo
 			</ol>
 
 			<p>
-				<span class="">error</span>
-				<span class="">warning</span>
-				<span class="">info</span>
-				<span class="">success</span>
+				<span class="o⋄colorꘌerror">error</span>
+				<span class="o⋄colorꘌwarning">warning</span>
+				<span class="o⋄colorꘌinfo">info</span>
+				<span class="o⋄colorꘌsuccess">success</span>
 			</p>
 
 			<form>
@@ -141,9 +141,6 @@ LightDefault.decorators = [
 
 export function LightCustomized() {
 	return _theme_demo('light--default')
-	/*
-
-		*/
 }
 LightCustomized.decorators = [
 	_decorator_add_all_themes,
@@ -161,7 +158,7 @@ DarkDefault.decorators = [
 export function DarkCustom() {
 	return _theme_demo('dark--default')
 }
-DarkDefault.decorators = [
+DarkCustom.decorators = [
 	_decorator_add_all_themes,
 	_decorator_select_theme('dark--default'),
 	(story) => {
