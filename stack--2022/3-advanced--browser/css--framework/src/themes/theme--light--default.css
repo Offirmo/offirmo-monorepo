@@ -21,7 +21,7 @@
 	--o⋄color⁚fg--link:          var(--o⋄color⁚fg--link--default);
 	--o⋄color⁚fg--link--visited: var(--o⋄color⁚fg--link--visited--default);
 
-	--o⋄color⁚fg--error:       red;
+	--o⋄color⁚fg--error:       rgb(242, 47, 70);
 	--o⋄color⁚fg--warning: var(--o⋄color⁚boz__yellow);
 	--o⋄color⁚fg--info:    var(--o⋄color⁚boz__blue);
 	--o⋄color⁚fg--success: var(--o⋄color⁚boz__green);
