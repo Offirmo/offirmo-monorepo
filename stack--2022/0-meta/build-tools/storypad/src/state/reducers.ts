@@ -25,7 +25,10 @@ export function init(): Immutable<State> {
 			decorators: [],
 		},
 		stories_by_id: {},
-		story_tree: {},
+		story_tree: {
+			is_open: true,
+			leaves: {},
+		},
 		current_story‿id: undefined,
 	}
 }
@@ -66,15 +69,19 @@ export function register_stories_from_glob(state: Immutable<State>, stories_glob
 
 	// build the story_tree
 	// TODO one day improve
-	let story_tree = {}
+	let story_tree = {
+		is_open: true,
+		leaves: {},
+	}
+
 	Object.keys(state.stories_by_id).forEach(story_id => {
 		const parts = story_id.split(SEP_FOR_IDS)
 		let leaf = story_tree
 		parts.slice(0, -1).forEach(part => {
-			leaf[part] ||= {}
-			leaf = leaf[part]
+			leaf.leaves[part] ||= { is_open: false, leaves: {}}
+			leaf = leaf.leaves[part]
 		})
-		leaf[parts.slice(-1)[0]] = state.stories_by_id[story_id]
+		leaf.leaves[parts.slice(-1)[0]] = state.stories_by_id[story_id]
 	})
 
 	return {
@@ -106,7 +113,7 @@ function _register_stories_from_glob(state: Immutable<State>, stories_glob: any,
 	return state
 }
 function _register_stories_from_module(state: Immutable<State>, story_module: any, parent_path: string[] = []): Immutable<State> {
-	console.log('_register_stories_from_module()', { story_module, parent_path })
+	//console.log('_register_stories_from_module()', { story_module, parent_path })
 
 	Object.keys(story_module).forEach(story_key => {
 		const id = [...parent_path, story_key].join(SEP_FOR_IDS)

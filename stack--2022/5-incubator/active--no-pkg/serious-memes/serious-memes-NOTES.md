@@ -93,3 +93,4 @@ tradeoffs / can't have everything
 who moved my cheese?
 être heureux n'est pas nécessairement confortable
 SWOT
+RICE Reach Impact Confidence Estimate

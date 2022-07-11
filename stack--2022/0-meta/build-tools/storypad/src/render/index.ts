@@ -97,21 +97,21 @@ function _render_as_iframe(state) {
 function _append_folder(state, parent_elt, tree, path) {
 	//console.log('_append_folder()', { parent_elt, tree, path, })
 	let details_elt = document.createElement('details')
-	details_elt.open = true
+	details_elt.open = tree.is_open
 	details_elt.innerHTML = `
 	<summary>${path.slice(-1)[0] || state.config.root_title}</summary>
 	`
-	Object.keys(tree).forEach(key => {
-		if (is_story_tree(tree[key]))
-			_append_folder(state, details_elt, tree[key], [...path, key])
+	Object.keys(tree.leaves).forEach(key => {
+		if (is_story_tree(tree.leaves[key]))
+			_append_folder(state, details_elt, tree.leaves[key], [...path, key])
 	})
 	let ol_elt = document.createElement('ol')
 	details_elt.appendChild(ol_elt)
-	Object.keys(tree).forEach(key => {
-		if (is_story_tree(tree[key]))
+	Object.keys(tree.leaves).forEach(key => {
+		if (is_story_tree(tree.leaves[key]))
 			return
-		if (is_story_and_notes(tree[key]))
-			_append_leaf(state, ol_elt, tree[key], [...path, key])
+		if (is_story_and_notes(tree.leaves[key]))
+			_append_leaf(state, ol_elt, tree.leaves[key], [...path, key])
 		else {
 			console.error(tree[key])
 			throw new Error(`Unrecognized tree part!`)

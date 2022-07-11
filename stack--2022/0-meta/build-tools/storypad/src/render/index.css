@@ -19,6 +19,7 @@ body {
 body > details:first-child {
 	border-inline-end: dotted 1px;
 	overflow-y: scroll;
+	resize: horizontal;
 }
 iframe#storypad⋄iframe {
 	border: none;

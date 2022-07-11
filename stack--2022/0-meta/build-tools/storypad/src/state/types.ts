@@ -15,7 +15,10 @@ export function is_story_and_notes(s: any): s is StoryAndNotes {
 }
 
 interface StoryTree {
-	[key: string]: StoryAndNotes | StoryTree
+	is_open: boolean
+	leaves: {
+		[key: string]: StoryAndNotes | StoryTree
+	}
 }
 export function is_story_tree(s: any): s is StoryTree {
 	return typeof s?.fn !== 'function' // TODO conflict possible?
