@@ -1,6 +1,11 @@
 
-Browser history:
 
+## Default styles
+
+https://stackoverflow.com/questions/6867254/browsers-default-css-for-html-elements/22510220#22510220
+
+
+Browsers:
 - KDE HTML layout engine [wikipedia](https://en.wikipedia.org/wiki/KHTML) (dead)
   * ↳ WebCore (part of webkit/Safari) 2001/06/25 [wikipedia](https://en.wikipedia.org/wiki/WebKit)
   * ↳ WebCore2 (part of WebKit2/Safari) 2010/04/08
@@ -10,13 +15,10 @@ Browser history:
 - Gecko 1997 [wikipedia](https://en.wikipedia.org/wiki/Gecko_(software))
   * ↳ Quantum (2016/10)
     - [default styles](https://searchfox.org/mozilla-central/source/layout/style/res/html.css)
+- 🪦dead Trident = former edge browser
+- 🪦dead Presto = former Opera browser
 
-Dead:
-- Trident = former edge browser
-- Presto = former Opera browser
-
-
-Default styles: https://stackoverflow.com/questions/6867254/browsers-default-css-for-html-elements/22510220#22510220
+From W3C: https://drafts.csswg.org/css2/#html-stylesheet
 
 
 Layout differences:

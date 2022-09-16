@@ -71,7 +71,6 @@ CSS
 ## Notes
 
 Ideas
-* TODO one day check if there is a standard default stylesheet https://stackoverflow.com/a/22510220/587407
 * TODO one day check if one can use js to grab the default style from inside a browser?
 
 
