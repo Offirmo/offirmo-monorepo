@@ -35,7 +35,6 @@
 
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@babel/core": "^7",
 		"@offirmo/practical-logger-core": "^3",
 		"@size-limit/preset-small-lib": "^7",
 		"npm-run-all": "^4",
