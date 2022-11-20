@@ -2,7 +2,7 @@
 	"name": "offirmo-monorepo",
 	"description": "A monorepo for all my JavaScript / TypeScript personal projects. So convenient!",
 	"repository": "https://github.com/Offirmo/offirmo-monorepo",
-	"version": "2.4.0",
+	"version": "2.5.0",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 	"private": true,
@@ -14,7 +14,7 @@
 	"heroku-run-build-script": false,
 
 	"engines": {
-		"node": "16.x"
+		"node": "18.x"
 	},
 
 	"scripts": {
