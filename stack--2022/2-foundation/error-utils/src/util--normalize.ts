@@ -48,6 +48,8 @@ export function hasErrorShape(err_like: any) {
 export function normalizeError(err_like: Readonly<Partial<Error>> | unknown = undefined as unknown, { alwaysRecreate = false }: { alwaysRecreate?: boolean } = {}): XXError {
 	const has_minimal_error_shape = hasErrorShape(err_like)
 
+	// TODO should we normalize "cause" as well?
+
 	if (has_minimal_error_shape && !alwaysRecreate) {
 		// shortcut for most of the time
 		return err_like as any

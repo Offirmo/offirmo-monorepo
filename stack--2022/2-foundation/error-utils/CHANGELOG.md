@@ -7,6 +7,7 @@
 * [feat] `normalizeError(errLike)` now accept the "unknown" type as an input, to help handling Typescript 4.4 changes
   https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#use-unknown-catch-variables
 * [feat] new `hasErrorShape(errLike)` exposed (should hardly be useful)
+* [feat] now supports the ES2022 "cause" attribute
 * [chore] bumped deps
 * ...
 
