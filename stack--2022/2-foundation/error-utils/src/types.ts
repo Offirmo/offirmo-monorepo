@@ -1,4 +1,4 @@
-// explanation of the fields is in ./consts.ts
+// explanation of those fields is in ./fields.ts
 
 // eXtended error
 export interface XError extends Error {
@@ -7,7 +7,7 @@ export interface XError extends Error {
 	name: string
 	message: string
 	stack?: string
-	cause?: Error
+	cause?: XError | Error
 
 	// optional
 	code?: string
@@ -17,6 +17,8 @@ export interface XError extends Error {
 }
 
 export interface XXError extends XError {
+
+	cause?: XXError | XError | Error
 
 	details?: {
 		logicalStack?: string

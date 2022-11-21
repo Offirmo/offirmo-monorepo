@@ -8,6 +8,7 @@
   https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#use-unknown-catch-variables
 * [feat] new `hasErrorShape(errLike)` exposed (should hardly be useful)
 * [feat] now supports the ES2022 "cause" attribute
+* [chore] supports typescript 4.8
 * [chore] bumped deps
 * ...
 

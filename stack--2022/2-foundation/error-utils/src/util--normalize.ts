@@ -54,23 +54,22 @@ export function normalizeError(err_like: Readonly<Partial<Error>> | unknown = un
 		// shortcut for most of the time
 		return err_like as any
 	}
-
 	if (!has_minimal_error_shape) {
 		WARN && console.warn(`WARNING: normalizeError() saw a non-Error thing thrown!`, { err_like })
 	}
 
 	if (err_like === undefined || err_like === null) {
 		// we can't get prototype from those, shortcut it:
-		return new Error(`[non-error: "${err_like}" thrown!]`)
+		return (new Error(`[non-error: "${err_like}" thrown!]`)) as any
 	}
 
 	// just for a clearer message
 	if (typeof err_like === 'string') {
-		return new Error(`[non-error of type "${typeof err_like}" thrown: "${err_like}"!]`)
+		return new Error(`[non-error of type "${typeof err_like}" thrown: "${err_like}"!]`) as any
 	}
 	else if (typeof err_like !== 'object') {
 		// we can't get prototype from those, shortcut it:
-		return new Error(`[non-error of type "${typeof err_like}" thrown!]`)
+		return new Error(`[non-error of type "${typeof err_like}" thrown!]`) as any
 	}
 
 	try {
@@ -97,7 +96,7 @@ export function normalizeError(err_like: Readonly<Partial<Error>> | unknown = un
 					catch (_err) {
 						DEBUG && console.error('NE1', _err)
 						// the constructor didn't work or didn't yield a proper error, fallback to a normal, safe Error
-						const true_err: XXError = new Error(message)
+						const true_err: XXError = new Error(message) as any
 						return true_err
 					}
 				})()
@@ -124,6 +123,6 @@ export function normalizeError(err_like: Readonly<Partial<Error>> | unknown = un
 		DEBUG && console.error('NE2', _err)
 		WARN && console.warn(`WARNING: normalizeError() saw a dangerous thing thrown!`, { err_like })
 		// if we're here, that means that err_like is *very* fancy, better not probe out further.
-		return new Error(`[non-error: <fancy object> thrown!]`)
+		return new Error(`[non-error: <fancy object> thrown!]`) as any
 	}
 }
