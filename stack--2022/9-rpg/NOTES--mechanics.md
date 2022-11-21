@@ -79,3 +79,6 @@ Jobs
 	  - sharpshooting
     - buckler
     -
+
+
+https://www.pcgamesn.com/the-elder-scrolls-v-skyrim/mod-blood-magic-hemomancy
