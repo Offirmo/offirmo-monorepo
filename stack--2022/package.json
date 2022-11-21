@@ -23,8 +23,6 @@
 
 		"postinstall": "node ./0-meta/build-tools/scripts/monorepo-utils.mjs",
 
-		"XXXmonorepo-utils--fix": "node ./0-meta/build-tools/scripts/monorepo-utils.mjs",
-		"XXXmonorepo-utils--fix2": "./node_modules/.bin/zx ./0-meta/build-tools/scripts/monorepo-utils.mjs",
 		"manypkg--check": "manypkg check",
 		"manypkg--fix": "manypkg fix",
 

@@ -23,7 +23,7 @@ At the moment, there are dependency loops which require a refactoring I don't pl
 For ex. to make everything work again step by step!
 
 ```bash
-bolt monorepo-utils--fix
+bolt postinstall
 bolt --only-fs "0-meta/build-tools/*" ws run build
 bolt --only-fs "0-meta/build-tools/*" ws run test
 bolt --only-fs "1-stdlib/*" ws run build
@@ -83,7 +83,7 @@ bolt clean
 ```bash
 nvm i
 onn
-bolt clean && rm -rf node_modules yarn.lock package-lock.json && bolt && bolt xpostinstall && bolt xpostinstall && yarn outdated     && bolt build
+bolt clean && rm -rf node_modules yarn.lock package-lock.json && bolt && yarn outdated     && bolt build
 bolt clean && rm -rf node_modules yarn.lock package-lock.json && bolt && bolt build
 npx yarn-tools list-duplicates yarn.lock
 yarn eslint:packages --fix
