@@ -1120,3 +1120,8 @@ https://roadwithoutend.com/43-pieces-of-advice-from-an-ancient-egyptian-vizier-t
 
 https://fr.wikipedia.org/wiki/Faux_semis
 https://fr.wikipedia.org/wiki/Technique_culturale_simplifi%C3%A9e
+
+https://oishya.com/journal/difference-single-double-edged-blade/
+https://oishya.com/journal/steel-qualities-kitchen-knives-cheat-sheet-chart/
+
+https://mapeffects.co/tutorials/population-size
