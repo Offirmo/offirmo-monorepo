@@ -1,13 +1,6 @@
-import {
-	LogLevel,
-	LogDetails,
-	LogPrimitive,
-	Logger,
-	LogPayload,
-	LogSink,
-	BaseInternalLoggerState,
-	LoggerCreationParams,
-} from '.'
+import { expect } from 'chai'
+
+import * as lib from '.'
 
 describe('@offirmo/practical-logger-types', function () {
 
@@ -15,7 +8,7 @@ describe('@offirmo/practical-logger-types', function () {
 
 		it('should compile with no errors', () => {
 			// that's it
-			const log_level: LogLevel = 'warn'
+			expect(lib).not.to.have.any.keys
 		})
 	})
 })
