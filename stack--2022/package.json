@@ -58,7 +58,7 @@
 
 	"dependencies": {
 		"@manypkg/cli": "^0.19",
-		"chalk": "^5",
+		"chalk": "^4",
 		"fs-extra": "^10",
 		"meow": "^10",
 		"tiny-invariant": "^1",
@@ -95,7 +95,6 @@
 		"chai-fetch-mock": "^3",
 		"chai-moment": "^0.1",
 		"chai-subset": "^1",
-		"chalk": "^5",
 		"classnames": "^2",
 		"cli-columns": "^4",
 		"columnify": "^1",
