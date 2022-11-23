@@ -1,5 +1,8 @@
 import { XError, XXError } from './types'
 
+// order is important!
+// it may be used for display by other libs
+
 export const STRICT_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
 	// standard fields
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/prototype
@@ -42,7 +45,7 @@ export const COMMON_ERROR_FIELDS_EXTENDED = new Set<keyof XXError>([
 	'_temp', // used for passing state around during error handling
 	'details', // hash to store any other property not defined in this set
 
-	// To evaluate if need arises:
-	// TODO triage field?
-	// TODO timestamp?
+	// TODO evaluate if need arises:
+	// - triage field?
+	// - timestamp?
 ])

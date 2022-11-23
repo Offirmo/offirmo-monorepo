@@ -10,26 +10,19 @@ import { createError } from '@offirmo/error-utils'
 
 describe(`@offirmo-private/print-error-to-ansi`, () => {
 
-	describe('displayError()', () => {
+	describe('error_to_string()', () => {
 
-		it.only('should work -- trivial error', () => {
+		it('should work -- trivial error', () => {
 			const err = new Error('foo')
 			;(err as any).statusCode = 555
 
-			displayError(err)
-			console.log()
 			console.error(error_to_string(err))
 		})
 
 		it('should work -- typed error', () => {
-			const err = createError('foo', {
-				statusCode: 555,
-				foo: 42,
-				framesToPop: 3,
-			})
+			const err = new TypeError('foo')
+			;(err as any).statusCode = 555
 
-			displayError(err)
-			console.log()
 			console.error(error_to_string(err))
 		})
 
@@ -40,24 +33,20 @@ describe(`@offirmo-private/print-error-to-ansi`, () => {
 				framesToPop: 3,
 			})
 
-			displayError(err)
-			console.log()
 			console.error(error_to_string(err))
 		})
 
 		describe('cause chaining', function () {
 
+			it.only('should work -- trivial error', () => {
+				const err1 = new Error('bar')
+				;(err1 as any).code = 'ERR_CPU_USAGE'
 
-			it('should work -- simple error', () => {
-				const err = createError('foo', {
-					statusCode: 555,
-					foo: 42,
-					framesToPop: 3,
-				})
+				const err2 = new Error('foo')
+				;(err2 as any).statusCode = 555
+				err2.cause = err1
 
-				displayError(err)
-				console.log()
-				console.error(error_to_string(err))
+				console.error(error_to_string(err2))
 			})
 
 
@@ -68,23 +57,27 @@ describe(`@offirmo-private/print-error-to-ansi`, () => {
 					framesToPop: 3,
 				})
 
-				displayError(err)
-				console.log()
 				console.error(error_to_string(err))
 			})
 
 
-			it('should work -- infinite loop', () => {
-				const err = createError('foo', {
-					statusCode: 555,
-					foo: 42,
-					framesToPop: 3,
-				})
+			it('should work -- infinite loop -- trivial', () => {
+				const err = new Error('foo')
+				;(err as any).statusCode = 555
+				err.cause = err
 
-				displayError(err)
-				console.log()
 				console.error(error_to_string(err))
 			})
+		})
+	})
+
+	describe('displayError()', () => {
+
+		it('should work', () => {
+			const err = new Error('foo')
+			;(err as any).statusCode = 555
+
+			displayError(err)
 		})
 	})
 })
