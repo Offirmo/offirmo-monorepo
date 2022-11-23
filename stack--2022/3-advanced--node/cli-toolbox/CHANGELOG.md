@@ -9,6 +9,8 @@
 * [chore] reduced the number files published
 * [doc] improved doc
 * [chore] bumped dependencies
+* [chore][breaking] now targeting node18 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
+
 
 ## v2.0.0
 2020/10/22

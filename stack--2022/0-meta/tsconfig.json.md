@@ -18,9 +18,8 @@ Last update: [https://devblogs.microsoft.com/typescript/](update marker) 2022/03
 
 ### modules
 
-* `module` set to latest ES we support
-  * [TODO switch to ES2022](update marker)
-* `esModuleInterop` we intentionally set to false to better detect non-ESM code
+* `module` set to the latest ES we support
+* `esModuleInterop` intentionally set to false in order to better detect non-ESM code
 * [`moduleResolution`](https://www.typescriptlang.org/docs/handbook/module-resolution.html) kept to node as the ecosystem is not ready :-(
   * [https://github.com/microsoft/TypeScript/issues/46452](update marker)
 

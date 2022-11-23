@@ -26,9 +26,10 @@ const cli = meow('build', {
 
 /////////////////////
 
-// [Last updated 2022/05](update marker)
-const LATEST_CONVENIENT_ES = 'ES2021' // convenient = works with most tools, such as webpack
-const LATEST_ES_OLDEST_ACTIVE_NODE_LTS = 'ES2021' // should be <= LATEST_CONVENIENT_ES
+// [Last updated 2022/11](update marker)
+// note: we could object to this info being duplicated here from tsconfig
+// but it's better semantic (hard to comment in tsconfig)
+const LATEST_ES_OLDEST_ACTIVE_NODE_LTS = 'ES2022' // should be <= LATEST_CONVENIENT_ES
 const LATEST_ES_MODULES = 'ES2020'
 
 /////////////////////
@@ -47,7 +48,7 @@ assert(!LOCAL_TSCONFIG_JSON.compilerOptions.target, 'local tsconfig should not o
 assert(!LOCAL_TSCONFIG_JSON.compilerOptions.module, 'local tsconfig should not override "module"')
 
 const ROOT_TSCONFIG_JSON = JSON.parse(await fs.readFile(path.join(__dirname, '..', '..', 'tsconfig.json')))
-assert(ROOT_TSCONFIG_JSON.compilerOptions.target === LATEST_CONVENIENT_ES, 'root tsconfig and this script should be in sync: target')
+const LATEST_CONVENIENT_ES = ROOT_TSCONFIG_JSON.compilerOptions.target
 assert(ROOT_TSCONFIG_JSON.compilerOptions.lib.includes(LATEST_CONVENIENT_ES), 'root tsconfig and this script should be in sync: lib')
 assert(ROOT_TSCONFIG_JSON.compilerOptions.module === LATEST_ES_MODULES, 'root tsconfig and this script should be in sync: module')
 

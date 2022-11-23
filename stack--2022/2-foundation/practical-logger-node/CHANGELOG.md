@@ -10,6 +10,7 @@
 * [chore] re-organized the source (monorepo) and tweaked the shared build script. No logic change.
 * [chore] bumped dependencies (minor)
 * [doc] marked as maintained in 2021! Happy new year!
+* [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
 * ...
 
 ## v0.3.0

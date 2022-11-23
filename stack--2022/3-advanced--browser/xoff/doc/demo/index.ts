@@ -12,7 +12,7 @@ import {
 	get_log_symbol,
 }
 //from '../../src'
-from '../../dist/src.es2021.cjs'
+from '../../dist/src.es2022.cjs'
 
 interface LocalExtras {
 	foo: string

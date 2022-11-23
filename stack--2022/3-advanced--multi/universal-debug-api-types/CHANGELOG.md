@@ -4,6 +4,7 @@
 ## PENDING
 * TODO unit & type tests!
 * TODO clean the useless debug setup? NO IT PROVED USEFUL EVEN FOR MYSELF
+* [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
 * ...
 
 ## v1.0.1

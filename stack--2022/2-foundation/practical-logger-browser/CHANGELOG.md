@@ -11,6 +11,7 @@ NOTE: not much reason to publish this lib since it's supposed to be bundled
 * TODO test Windows, Ubuntu
 * TODO local pictures
 * [chore] micro code style change
+* [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
 * ...
 
 ## v3.1.0

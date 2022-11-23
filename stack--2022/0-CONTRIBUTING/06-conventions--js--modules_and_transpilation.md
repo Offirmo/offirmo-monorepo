@@ -20,11 +20,26 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 ## Technical details
 
 ### PENDING updates
-- ES2022
-- TODO full ES6 https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-move-my-commonjs-project-to-esm
-- 2022/10/25 oldest active LTS node 16 → 18  https://nodejs.org/en/about/releases/
-- ??? webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
+- [ ] ES2023
+- [ ] full ES6 https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-move-my-commonjs-project-to-esm
+- [ ] 2023/10 oldest active LTS node 18 → 20  https://nodejs.org/en/about/releases/
+- [ ] webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
 - TODO check [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762)
+
+
+### update 2022-11-20
+Updated state:
+* latest ES = [ES2022](https://en.wikipedia.org/wiki/ECMAScript#Versions)
+* oldest active LTS node = [18](https://nodejs.org/en/about/releases/)
+* latest ES reasonably supported by this node LTS (latest minor) = [ES2023](https://node.green/#ES2022)
+* latest ES syntax supported by Webpack (= Acorn supports it + webpack bumped Acorn) = ES2021
+  * latest webpack version = [5](https://webpack.js.org/)
+  * version of Acorn in this webpack version = [^8.7.1](https://github.com/webpack/webpack/blob/master/package.json)
+  * latest ES syntax reasonably supported by this Acorn = [2023](https://github.com/acornjs/acorn/blob/master/acorn/CHANGELOG.md)
+* FYI compilers/polyfills https://kangax.github.io/compat-table/es2016plus/
+
+= latest supported node = 18
+= latest convenient ES = 2022 (if changed, need search&replace in package.json)
 
 
 ### update 2022-05-02
@@ -175,23 +190,23 @@ since node 10 in maintenance mode since 2020-05-19 https://nodejs.org/en/about/r
 		".": {
          XXX those fields must start with ./
            XXX other fields must NOT (ex. https://github.com/vuejs/vue/blob/v2.2.2/package.json#L6)
-			"import": "./dist/src.es2021/index.js",
-			"require": "./dist/src.es2021.cjs/index.js"
+			"import": "./dist/src.es2022/index.js",
+			"require": "./dist/src.es2022.cjs/index.js"
 		}
 	},
-	"module": "dist/src.es2021/index.js", XXX eventually, this is the most supported field https://stackoverflow.com/questions/42708484/what-is-the-module-package-json-field-for
-	"main": "dist/src.es2021.cjs/index.js",  oldest, used for cjs XXX needed for typescript as of 4.5
-	"typings": "dist/src.es2021.cjs/index.d.ts", XXX idem, needed for typescript 4.5
+	"module": "dist/src.es2022/index.js", XXX eventually, this is the most supported field https://stackoverflow.com/questions/42708484/what-is-the-module-package-json-field-for
+	"main": "dist/src.es2022.cjs/index.js",  oldest, used for cjs XXX needed for typescript as of 4.5
+	"typings": "dist/src.es2022.cjs/index.d.ts", XXX idem, needed for typescript 4.5
 	"source": "src/index.ts",
 
 	"size-limit": [
 		{
 			"limit": "250b",
-			"path": "dist/src.es2021/index.js"
+			"path": "dist/src.es2022/index.js"
 		},
 		{
 			"limit": "250b",
-			"path": "dist/src.es2021.cjs/index.js"
+			"path": "dist/src.es2022.cjs/index.js"
 		}
 	],
 ```

@@ -52,8 +52,8 @@
 		"emitDecoratorMetadata": false,
 		"experimentalDecorators": false,
 		"jsx": "preserve",
-		"lib": [ "ES2021" ],
-		"target": "ES2021",
+		"lib": [ "ES2022" ],
+		"target": "ES2022",
 
 
 		"listEmittedFiles": false,

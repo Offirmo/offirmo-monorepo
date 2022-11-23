@@ -6,6 +6,7 @@ NOTE: Reminder to increase REVISION when releasing!
 * TODO fix underlying practical-logger-node!!
 * TODO node & browser should share some logic
 * TODO unit tests!
+* [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
 * ...
 
 ## v0.2.0

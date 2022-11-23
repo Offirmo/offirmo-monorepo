@@ -8,23 +8,23 @@
 	"sideEffects": true,
 	"exports": {
 		".": {
-			"import": "./dist/src.es2021/index.js",
-			"require": "./dist/src.es2021.cjs/index.js"
+			"import": "./dist/src.es2022/index.js",
+			"require": "./dist/src.es2022.cjs/index.js"
 		}
 	},
-	"module": "dist/src.es2021/index.js",
-	"main": "dist/src.es2021.cjs/index.js",
-	"typings": "dist/src.es2021.cjs/index.d.ts",
+	"module": "dist/src.es2022/index.js",
+	"main": "dist/src.es2022.cjs/index.js",
+	"typings": "dist/src.es2022.cjs/index.d.ts",
 	"source": "src/index.ts",
 
 	"size-limit": [
 		{
 			"limit": "600b",
-			"path": "dist/src.es2021/index.js"
+			"path": "dist/src.es2022/index.js"
 		},
 		{
 			"limit": "700b",
-			"path": "dist/src.es2021.cjs/index.js"
+			"path": "dist/src.es2022.cjs/index.js"
 		},
 		{
 			"limit": "1.3kb",
