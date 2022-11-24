@@ -12,7 +12,7 @@ describe(`${LIB} - normalize args`, () => {
 	function getNormalizedDetails(...args: any[]): LogDetails {
 		return normalizeArguments(arguments)[1]
 	}
-	const err: XXError = new Error('err_msg!')
+	const err: XXError = new Error('err_msg!') as any
 	err.statusCode = 1234
 	err.details = {
 		hello: 42,

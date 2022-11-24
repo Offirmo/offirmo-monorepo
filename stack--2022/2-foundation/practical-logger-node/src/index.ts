@@ -1,4 +1,4 @@
-import { Logger, LoggerCreationParams, BaseSinkOptions } from '@offirmo/practical-logger-types'
+import { Logger, LoggerCreationParams } from '@offirmo/practical-logger-types'
 import { createLogger as createLoggerCore } from '@offirmo/practical-logger-core'
 
 import { SinkOptions } from './types'

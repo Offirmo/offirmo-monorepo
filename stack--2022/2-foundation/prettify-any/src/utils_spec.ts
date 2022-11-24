@@ -1,4 +1,4 @@
-import chalk from 'chalk'
+import * as chalk from 'chalk'
 import { inject_lib__chalk } from './injectable-lib--chalk'
 inject_lib__chalk(chalk)
 import { expect } from 'chai'

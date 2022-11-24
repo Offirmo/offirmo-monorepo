@@ -1,4 +1,4 @@
-import chalk from 'chalk'
+import * as chalk from 'chalk'
 
 import { LOG_LEVEL_TO_HUMAN } from '@offirmo/practical-logger-core'
 

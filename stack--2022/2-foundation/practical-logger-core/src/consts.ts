@@ -30,9 +30,8 @@ export const LOG_LEVEL_TO_INTEGER: Readonly<{ readonly [k: string]: number }> = 
 }
 
 export const ALL_LOG_LEVELS: ReadonlyArray<LogLevel> =
-	Object.keys(LOG_LEVEL_TO_INTEGER)
-		.map(s => s as LogLevel)
-		.sort((a: LogLevel, b: LogLevel) => LOG_LEVEL_TO_INTEGER[a] - LOG_LEVEL_TO_INTEGER[b])
+	(Object.keys(LOG_LEVEL_TO_INTEGER) as LogLevel[])
+		.sort((a: LogLevel, b: LogLevel) => LOG_LEVEL_TO_INTEGER[a]! - LOG_LEVEL_TO_INTEGER[b]!)
 
 // rationalization to a clear, human understandable string
 // generated to shave a few bytes

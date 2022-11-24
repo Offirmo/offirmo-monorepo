@@ -3,7 +3,9 @@
 	"compilerOptions": {
 		"lib": [ "DOM" ],
 		"importHelpers": false,
-		"noEmitHelpers": false
+		"noEmitHelpers": false,
+
+		"noUncheckedIndexedAccess": false
 	},
 	"include": [
 		"../../0-typings-custom/**/*.ts",

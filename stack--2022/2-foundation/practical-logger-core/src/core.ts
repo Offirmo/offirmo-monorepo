@@ -71,14 +71,14 @@ export function create(
 		checkLevel(level)
 
 		internalState.level = level
-		levelAsInt = LOG_LEVEL_TO_INTEGER[level]
+		levelAsInt = LOG_LEVEL_TO_INTEGER[level]!
 	}
 	setLevel(getLevel()) // to check it
 
 	function isLevelEnabled(level: LogLevel) {
 		checkLevel(level)
 
-		return LOG_LEVEL_TO_INTEGER[level] <= levelAsInt
+		return LOG_LEVEL_TO_INTEGER[level]! <= levelAsInt
 	}
 
 	function getLevel() {
@@ -86,7 +86,7 @@ export function create(
 	}
 
 	function addCommonDetails(details: Readonly<LogDetails>): void {
-		if (details.err)
+		if (details['err'])
 			throw new Error(`[${LIB}] Can't set reserved property "err"!`)
 
 		internalState.commonDetails = {

@@ -1,4 +1,3 @@
-import { expect } from 'chai'
 import { LogSink, LogPayload } from '@offirmo/practical-logger-types'
 import { ALL_LOG_LEVELS } from '@offirmo/practical-logger-core'
 

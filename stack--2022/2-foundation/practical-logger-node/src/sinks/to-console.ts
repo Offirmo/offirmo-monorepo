@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import chalk from 'chalk'
+import * as chalk from 'chalk'
 
 import { inject_lib__chalk, prettify_any } from '@offirmo-private/prettify-any'
 import { displayError } from '@offirmo-private/print-error-to-ansi'

@@ -43,17 +43,16 @@ export function normalizeArguments(raw_args: IArguments | any[]): [ string, LogD
 			message_parts.push(String(arg))
 		})
 
-	if (typeof details.message === 'string' && !message_parts.length) {
-		message_parts.push(details.message)
-		delete details.message
+	if (typeof details['message'] === 'string' && !message_parts.length) {
+		message_parts.push(details['message'])
+		delete details['message']
 	}
 
 	const message = message_parts.join(' ') || (err as any)?.message || '(no message)'
 	if (err)
-		details.err = err
+		details['err'] = err
 	else
-		delete details.err // because could be present but not be a correct err type
+		delete details['err'] // because could be present but not be a correct err type
 
 	return [ message, details ]
 }
-

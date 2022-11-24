@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const chalk = require('chalk')
+import * as chalk from 'chalk'
 
 import { COMMON_ERROR_FIELDS_EXTENDED } from '@offirmo/error-utils'
 

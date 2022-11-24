@@ -23,7 +23,7 @@ const HEADER_FONT_SIZE_STYLE = 'font-size: 8px'
 const MESSAGE_FONT_SIZE_STYLE = 'font-size: 11px'
 
 export const sink: LogSink = (payload: Readonly<LogPayload>): void => {
-	const { level, name, msg, err, details: details_orginal } = payload
+	const { level, name, msg } = payload
 	const console_method_name: string = LEVEL_TO_CONSOLE_METHOD[level]
 	const console_method: Console['log'] = (console as any)[console_method_name]
 

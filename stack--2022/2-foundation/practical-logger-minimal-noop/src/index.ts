@@ -34,7 +34,7 @@ function createLogger(_?: any): Logger {
 }
 
 export {
-	Logger,
-	LoggerCreationParams,
+	type Logger,
+	type LoggerCreationParams,
 	createLogger,
 }

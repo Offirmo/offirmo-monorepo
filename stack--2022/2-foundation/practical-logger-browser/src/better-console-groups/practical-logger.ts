@@ -76,7 +76,7 @@ function install({ uncollapse_level = 'warn', lazy = true, original_console = co
 	})
 
 	function better_group(...p: any[]): void {
-		if (DEBUG) ORIGINAL_METHODS.log('>>> before group', { lazy, depth: group_invocations.length}, `"${p[0]}"`)
+		if (DEBUG) ORIGINAL_METHODS['log']('>>> before group', { lazy, depth: group_invocations.length}, `"${p[0]}"`)
 
 		group_invocations.push({
 			params: p,
@@ -85,14 +85,14 @@ function install({ uncollapse_level = 'warn', lazy = true, original_console = co
 		})
 		if (!lazy) {
 			in_original_call = true
-			ORIGINAL_METHODS.group(...p)
+			ORIGINAL_METHODS['group'](...p)
 			in_original_call = false
 		}
 
-		if (DEBUG) ORIGINAL_METHODS.log('<<< after group', { depth: group_invocations.length})
+		if (DEBUG) ORIGINAL_METHODS['log']('<<< after group', { depth: group_invocations.length})
 	}
 	function better_groupCollapsed(...p: any[]): void {
-		if (DEBUG) ORIGINAL_METHODS.log('>>> before groupCollapsed', { lazy, depth: group_invocations.length}, `"${p[0]}"`)
+		if (DEBUG) ORIGINAL_METHODS['log']('>>> before groupCollapsed', { lazy, depth: group_invocations.length}, `"${p[0]}"`)
 
 		group_invocations.push({
 			params: p,
@@ -101,23 +101,23 @@ function install({ uncollapse_level = 'warn', lazy = true, original_console = co
 		})
 		if (!lazy) {
 			in_original_call = true
-			ORIGINAL_METHODS.groupCollapsed(...p)
+			ORIGINAL_METHODS['groupCollapsed'](...p)
 			in_original_call = false
 		}
 
-		if (DEBUG) ORIGINAL_METHODS.log('after groupCollapsed', { depth: group_invocations.length})
+		if (DEBUG) ORIGINAL_METHODS['log']('after groupCollapsed', { depth: group_invocations.length})
 	}
 	function better_groupEnd(...p: any[]): void {
-		if (DEBUG) ORIGINAL_METHODS.log('>>> before groupEnd', { lazy, depth: group_invocations.length}, `"${p[0]}"`)
+		if (DEBUG) ORIGINAL_METHODS['log']('>>> before groupEnd', { lazy, depth: group_invocations.length}, `"${p[0]}"`)
 
 		const last_invocation = group_invocations.pop()
 		if (last_invocation&& last_invocation.is_effective) {
 			in_original_call = true
-			ORIGINAL_METHODS.groupEnd(...p)
+			ORIGINAL_METHODS['groupEnd'](...p)
 			in_original_call = false
 		}
 
-		if (DEBUG) ORIGINAL_METHODS.log('<<< after groupEnd', { lazy, depth: group_invocations.length})
+		if (DEBUG) ORIGINAL_METHODS['log']('<<< after groupEnd', { lazy, depth: group_invocations.length})
 	}
 
 	function better_output(original_method: Console['log'], uncollapse: boolean, ...p: any[]): void {
@@ -136,13 +136,13 @@ function install({ uncollapse_level = 'warn', lazy = true, original_console = co
 
 			if (uncollapse || is_deployed) {
 				in_original_call = true
-				ORIGINAL_METHODS.group(...params)
+				ORIGINAL_METHODS['group'](...params)
 				in_original_call = false
 				invocation.is_deployed = true
 			}
 			else {
 				in_original_call = true
-				ORIGINAL_METHODS.groupCollapsed(...params)
+				ORIGINAL_METHODS['groupCollapsed'](...params)
 				in_original_call = false
 				invocation.is_deployed = false
 			}
@@ -162,7 +162,7 @@ function install({ uncollapse_level = 'warn', lazy = true, original_console = co
 				&& group_invocations.length > lowest_uncollapsed_index
 			) {
 				better_groupEnd()
-				ORIGINAL_METHODS.debug('(forced break out of collapsed group ↑ due to critical log ↓)')
+				ORIGINAL_METHODS['debug']('(forced break out of collapsed group ↑ due to critical log ↓)')
 			}
 		}
 
@@ -181,16 +181,16 @@ function install({ uncollapse_level = 'warn', lazy = true, original_console = co
 	console.groupEnd = better_groupEnd
 	patched.add('groupEnd')
 
-	console.warn = better_output.bind(null, ORIGINAL_METHODS.warn, uncollapse_level === 'warn')
+	console.warn = better_output.bind(null, ORIGINAL_METHODS['warn'], uncollapse_level === 'warn')
 	patched.add('warn')
-	console.error = better_output.bind(null, ORIGINAL_METHODS.error, true)
+	console.error = better_output.bind(null, ORIGINAL_METHODS['error'], true)
 	patched.add('error')
 	console.assert = (assertion: boolean, ...args: any[]) => {
 		if (assertion) {
 			// do nothing
 		}
 		else {
-			better_output(ORIGINAL_METHODS.assert, true, assertion, ...args)
+			better_output(ORIGINAL_METHODS['assert'], true, assertion, ...args)
 		}
 	}
 	patched.add('assert')

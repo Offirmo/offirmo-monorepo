@@ -1,4 +1,4 @@
-import chalk from 'chalk'
+import * as chalk from 'chalk'
 import { render as prettify_json } from 'prettyjson'
 import * as fetch_ponyfill from 'fetch-ponyfill'
 
