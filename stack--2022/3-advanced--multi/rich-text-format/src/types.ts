@@ -53,8 +53,8 @@ type Document = Node
 
 export {
 	NodeType,
-	CheckedNode,
-	Node,
+	type CheckedNode,
+	type Node,
 
-	Document,
+	type Document,
 }

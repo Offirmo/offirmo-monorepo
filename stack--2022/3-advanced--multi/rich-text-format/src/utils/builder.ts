@@ -217,8 +217,8 @@ function key_value(key: Node | string, value: Node | string): Builder {
 
 export {
 	NodeType,
-	Document,
-	Builder,
+	type Document,
+	type Builder,
 
 	create,
 

@@ -1,3 +1,5 @@
+import assert from 'tiny-invariant'
+
 import { LIB } from './consts'
 
 import {
@@ -42,7 +44,7 @@ export interface OnClassParams<State> extends BaseParams<State> {
 }
 export interface OnTypeParams<State> extends BaseParams<State> {
 	$type: NodeType
-	$parent_node?: CheckedNode
+	$parent_node: CheckedNode | undefined
 }
 
 interface WalkerReducer<State, P extends BaseParams<State>, RenderingOptions> {
@@ -95,7 +97,7 @@ function get_default_callbacks<State, RenderingOptions = any>(): WalkerCallbacks
 				const str = '' + generic_state.str
 				return {
 					...(generic_state as any),
-					str: str[0].toUpperCase() + str.slice(1),
+					str: str.slice(0,1).toUpperCase() + str.slice(1),
 				} as State
 			}
 
@@ -116,7 +118,7 @@ const SUB_NODE_HR: Node = {
 }
 
 
-function walk_content<State, RenderingOptions>(
+function _walk_content<State, RenderingOptions>(
 	$node: CheckedNode,
 	callbacks: WalkerCallbacks<State, RenderingOptions>,
 	state: State,
@@ -124,23 +126,31 @@ function walk_content<State, RenderingOptions>(
 	options: RenderingOptions,
 ) {
 	const { $content, $sub: $sub_nodes } = $node
-	const split1 = $content.split('{{')
+	// $content looks like "Hello {{world}}, welcome to {{place|filter1|filter2}}
+	const split_begin = $content.split('{{')
+	if (split_begin.length === 1) {
+		assert($content.split('}}').length === 1, `${LIB}: syntax error in content "${$content}", unmatched {{}}!`)
+	}
 
-	const initial_str: string = split1.shift()!
-	if (initial_str)
+	const initial_str: string = split_begin.shift()!
+	if (initial_str) {
+		assert(initial_str.split('}}').length === 1, `${LIB}: syntax error in content "${$content}", unmatched {{}}!`)
 		state = callbacks.on_concatenate_str({
 			str: initial_str,
 			state,
 			$node,
 			depth,
 		}, options)
+	}
 
-	state = split1.reduce((state, paramAndText) => {
-		const split2 = paramAndText.split('}}')
-		if (split2.length !== 2)
+	state = split_begin.reduce((state, paramAndText) => {
+		const split_end = paramAndText.split('}}')
+		if (split_end.length !== 2)
 			throw new Error(`${LIB}: syntax error in content "${$content}", unmatched {{}}!`)
 
-		const [ sub_node_id, ...$filters ] = split2.shift()!.split('|')
+		// splitting the {{place|filter1|filter2}} content
+		const [ sub_node_id, ...$filters ] = split_end.shift()!.split('|')
+		assert(sub_node_id, `${LIB}: syntax error in content "${$content}", empty {{}}!`)
 
 		let $sub_node = $sub_nodes[sub_node_id]
 
@@ -198,9 +208,9 @@ function walk_content<State, RenderingOptions>(
 			depth,
 		}, options)
 
-		if (split2[0])
+		if (split_end[0])
 			state = callbacks.on_concatenate_str({
-				str: split2[0],
+				str: split_end[0],
 				state,
 				$node,
 				depth,
@@ -223,7 +233,7 @@ function walk<State, RenderingOptions>(
 		$id = 'root',
 		depth = 0,
 	}: {
-	$parent_node?: Readonly<CheckedNode>,
+	$parent_node?: Readonly<CheckedNode> | undefined,
 	$id?: string,
 	depth?: number,
 	} = {},
@@ -285,7 +295,7 @@ function walk<State, RenderingOptions>(
 				$type: NodeType.li,
 				$content: '{{content}}',
 				$sub: {
-					content: $sub_nodes[key],
+					content: $sub_nodes[key]!,
 				},
 			}
 			const sub_state = walk( $sub_node, callbacks, options, {
@@ -304,7 +314,7 @@ function walk<State, RenderingOptions>(
 		})
 	}
 	else
-		state = walk_content($node, callbacks, state, depth, options)
+		state = _walk_content($node, callbacks, state, depth, options)
 
 	state = $classes.reduce(
 		(state, $class) => callbacks.on_class_after({ $class, state, $node, depth }, options),
@@ -327,9 +337,9 @@ function walk<State, RenderingOptions>(
 
 export {
 	NodeType,
-	CheckedNode,
-	Node,
-	WalkerReducer,
-	WalkerCallbacks,
+	type CheckedNode,
+	type Node,
+	type WalkerReducer,
+	type WalkerCallbacks,
 	walk,
 }

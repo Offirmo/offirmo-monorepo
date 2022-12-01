@@ -1,7 +1,6 @@
 import {
 	OnConcatenateStringParams,
 	OnConcatenateSubNodeParams,
-	OnNodeEnterParams,
 	OnTypeParams,
 	walk,
 	WalkerCallbacks,

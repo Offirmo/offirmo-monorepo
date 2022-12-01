@@ -24,6 +24,7 @@ export interface XXError extends XError {
 		logicalStack?: string
 		[k: string]: boolean | number | string | null | undefined
 	}
+
 	_temp?: {
 		SEC?: any // Software Execution Context (Offirmo private)
 		statePath?: string // idem

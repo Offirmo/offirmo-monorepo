@@ -3,7 +3,7 @@ import { NODE_TYPE_TO_DISPLAY_MODE } from '../consts'
 import {
 	OnConcatenateStringParams,
 	OnConcatenateSubNodeParams,
-	OnNodeEnterParams, OnNodeExitParams,
+	OnNodeExitParams,
 	walk,
 	WalkerCallbacks,
 	WalkerReducer,

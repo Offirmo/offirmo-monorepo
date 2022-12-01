@@ -1,3 +1,5 @@
+import assert from 'tiny-invariant'
+
 import { LIB, SCHEMA_VERSION } from './consts'
 
 import {
@@ -8,6 +10,8 @@ import {
 
 
 function normalize_node($raw_node: Readonly<Node>): CheckedNode {
+	assert(!!$raw_node, `normalize_node(): undefined or null!`)
+
 	const {
 		$v = 1,
 		$type = NodeType.inline_fragment,

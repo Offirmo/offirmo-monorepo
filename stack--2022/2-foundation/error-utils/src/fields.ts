@@ -9,6 +9,7 @@ export const STRICT_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
 	'name', // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/name
 	'message', // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/message
 	'cause' // ES2022 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause
+	        // see also https://devblogs.microsoft.com/typescript/announcing-typescript-4-8/#lib-d-ts-updates
 ])
 
 export const QUASI_STANDARD_ERROR_FIELDS = new Set<keyof XError>([

@@ -1,7 +1,5 @@
 import {
-	NodeType,
 	CheckedNode,
-	Node,
 } from '../types'
 
 function is_list($node: CheckedNode): boolean {

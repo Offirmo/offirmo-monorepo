@@ -3,7 +3,6 @@ import {
 	NodeType,
 	OnConcatenateStringParams,
 	OnConcatenateSubNodeParams, OnNodeExitParams,
-	OnTypeParams,
 	walk,
 	WalkerCallbacks,
 	WalkerReducer,
