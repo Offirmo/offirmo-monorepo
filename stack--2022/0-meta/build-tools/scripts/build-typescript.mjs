@@ -42,12 +42,30 @@ const PKG_JSON = JSON.parse(await fs.readFile(path.join(PKG_PATH, 'package.json'
 const PKG_NAME = PKG_JSON.name
 console.log(`🛠  🔻 building ${stylize_string.bold(PKG_NAME)}…` + (cli.flags.watch ? ' (watch mode)' : ''))
 
-const LOCAL_TSCONFIG_JSON = JSON.parse(await fs.readFile(path.join(PKG_PATH, 'tsconfig.json')))
+const LOCAL_TSCONFIG_JSON = await (async () => {
+	const tsconfig_path = path.join(PKG_PATH, 'tsconfig.json')
+	try {
+		return JSON.parse(await fs.readFile(tsconfig_path))
+	}
+	catch (err) {
+		console.error('ERROR when loading then parsing PKG tsconfig.json', { tsconfig_path })
+		throw err
+	}
+})()
 LOCAL_TSCONFIG_JSON.compilerOptions = LOCAL_TSCONFIG_JSON.compilerOptions || {}
 assert(!LOCAL_TSCONFIG_JSON.compilerOptions.target, 'local tsconfig should not override "target"')
 assert(!LOCAL_TSCONFIG_JSON.compilerOptions.module, 'local tsconfig should not override "module"')
 
-const ROOT_TSCONFIG_JSON = JSON.parse(await fs.readFile(path.join(__dirname, '..', '..', 'tsconfig.json')))
+const ROOT_TSCONFIG_JSON = await (async () => {
+	const tsconfig_path = path.join(__dirname, '..', '..', 'tsconfig.json')
+	try {
+		return JSON.parse(await fs.readFile(tsconfig_path))
+	}
+	catch (err) {
+		console.error('ERROR when loading then parsing ROOT tsconfig.json', { tsconfig_path })
+		throw err
+	}
+})()
 const LATEST_CONVENIENT_ES = ROOT_TSCONFIG_JSON.compilerOptions.target
 assert(ROOT_TSCONFIG_JSON.compilerOptions.lib.includes(LATEST_CONVENIENT_ES), 'root tsconfig and this script should be in sync: lib')
 assert(ROOT_TSCONFIG_JSON.compilerOptions.module === LATEST_ES_MODULES, 'root tsconfig and this script should be in sync: module')
@@ -93,7 +111,7 @@ function build_convenience_prebuilt() {
 					...(LOCAL_TSCONFIG_JSON.compilerOptions.lib || []),
 				].filter(s => s !== LATEST_CONVENIENT_ES),
 			],
-			module: 'commonjs',
+			module: 'commonjs', // cf. https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#type-in-package-json-and-new-extensions
 			outDir: path.join(DIST_DIR, out_dir),
 			project: PKG_PATH,
 		},
