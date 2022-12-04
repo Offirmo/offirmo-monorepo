@@ -33,7 +33,7 @@ let document: never
 ////////////////////////////////////
 
 // note that should NEVER be accessed directly on another iframe without a try/catch
-// due to cross origin/sandbox
+// due to cross-origin/sandbox
 const PROP = 'oᐧextra'
 const FLAG_DEBUG_XOFF = 'debug_xoff'
 const FLAG_DEBUG_RENDER = 'debug_render'
@@ -286,4 +286,3 @@ window.addEventListener('message', ({data, origin, source}) => {
 }, false)
 
 if (get_xoff_flag(FLAG_DEBUG_XOFF)) console.log(`${get_log_prefix()} is listening`)
-

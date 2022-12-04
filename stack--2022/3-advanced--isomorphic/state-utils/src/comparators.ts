@@ -4,8 +4,6 @@ import memoize_one from 'memoize-one'
 const jsondiffpatch = require('jsondiffpatch')
 
 import {
-	is_time_stamped,
-	is_revisioned,
 	is_RootState,
 } from './type-guards'
 import {

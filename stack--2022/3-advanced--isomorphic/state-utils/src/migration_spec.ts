@@ -7,7 +7,6 @@ import { LIB } from './consts'
 import {
 	LastMigrationStep,
 	MigrationStep,
-	CleanupStep,
 	generic_migrate_to_latest,
 } from './migration'
 

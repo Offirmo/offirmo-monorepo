@@ -34,6 +34,8 @@ export const DEFAULTS_STYLIZE_OPTIONS__NONE: StylizeOptions = {
 
 const DEBUG = false
 export const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
+	never_throw: true,
+
 	// TODO follow max string size
 
 	// primitives

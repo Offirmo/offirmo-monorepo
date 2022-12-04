@@ -24,6 +24,8 @@ export interface StylizeOptions {
 }
 
 export interface PrettifyOptions {
+	never_throw: boolean
+
 	prettify_string: (x: string, st: State) => string
 	prettify_number: (x: number, st: State) => string
 	prettify_bigint: (x: bigint, st: State) => string

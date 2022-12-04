@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import { SoftExecutionContext } from '@offirmo-private/soft-execution-context'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { BaseState, UTBundle, BaseRootState, AnyOffirmoState, BaseUState, BaseTState } from './types'
+import { BaseState, UTBundle, BaseRootState, AnyOffirmoState } from './types'
 import {
 	AnyBaseState,
 	AnyBaseUState,

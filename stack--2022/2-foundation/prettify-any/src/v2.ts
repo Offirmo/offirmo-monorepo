@@ -23,7 +23,10 @@ export function prettify_any(js: Immutable<any>, options: Immutable<Partial<Opti
 		return st.o.prettify_any(js, st)
 	}
 	catch (err) {
-		return `[error prettifying:${(err as any)?.message}]`
+		if (options?.never_throw)
+			return `[error prettifying:${(err as any)?.message}]`
+
+		throw err
 	}
 }
 

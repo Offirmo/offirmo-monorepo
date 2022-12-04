@@ -1,4 +1,3 @@
-import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { AnyOffirmoState } from './types'

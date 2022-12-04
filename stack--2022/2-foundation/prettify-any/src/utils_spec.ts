@@ -1,6 +1,6 @@
-import * as chalk from 'chalk'
+const chalk = require('chalk')
 import { inject_lib__chalk } from './injectable-lib--chalk'
-inject_lib__chalk(chalk)
+inject_lib__chalk(chalk as any)
 import { expect } from 'chai'
 
 
