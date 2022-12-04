@@ -2,12 +2,12 @@
 
 const lastResort: { [k:string]: any } = {}
 
-export default function getGlobalThis(this: any): { [k:string]: any } {
+export default function getGlobalThis<T = typeof globalThis>(this: any): T {
 
-	if (typeof globalThis !== 'undefined') return globalThis
+	if (typeof globalThis !== 'undefined') return globalThis as any
 
 	// check node first https://github.com/ljharb/globalThis/issues/2
-	if (typeof global !== 'undefined') return global
+	if (typeof global !== 'undefined') return global as any
 
 	// @ts-expect-error TS2304
 	if (typeof self !== 'undefined') return self
@@ -17,7 +17,7 @@ export default function getGlobalThis(this: any): { [k:string]: any } {
 
 	if (typeof this !== 'undefined') return this
 
-	return lastResort // should never happen
+	return lastResort as any // should never happen
 }
 
 export { getGlobalThis }

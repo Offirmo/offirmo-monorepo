@@ -3,6 +3,7 @@
 
 ## PENDING
 * [chore] added unit tests!
+* [chore][breaking] now type safe by correctly returning "typeof globalThis". The global scope needs to be extended, cf. unit tests.
 * [chore][breaking] removed the package.json "esnext" property, can't find any reference of tools using it
 * [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
 * (TODO when the ecosystem is ready) [chore][breaking] module now advertised as ESM `"type": "module"` in package.json
