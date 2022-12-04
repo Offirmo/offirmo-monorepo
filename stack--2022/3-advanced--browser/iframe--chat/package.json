@@ -17,7 +17,7 @@
 
 		"start:parcel--demo": "parcel --out-dir .parcel --no-autoinstall doc/demo/*.html",
 
-		"build:parcel": "parcel build --no-minify src/*.html src/*.css --public-url ./",
+		"build:parcel": "parcel build src/*.html src/*.css --public-url ./",
 
 		"demo": "run-s clean start:parcel--demo",
 		"build": "npm-run-all clean build:parcel"
