@@ -876,6 +876,6 @@ const CHARACTERS: Readonly<{ [k: string]: Readonly<UnicodeCharDetails> }> = {
 }
 
 export {
-	UnicodeCharDetails,
+	type UnicodeCharDetails,
 	CHARACTERS,
 }

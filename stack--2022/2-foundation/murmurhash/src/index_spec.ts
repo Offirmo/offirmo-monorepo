@@ -13,11 +13,11 @@ describe('@offirmo-private/murmurhash', function() {
 
 				// https://cimi.io/murmurhash3js-revisited/
 				const TEST_CASES = {
-					'I will not buy this record, it is scratched.': 'c382657f9a06c49d4a71fdc6d9b0d48f',
+					'I will not buy this record, it is scratched.':       'c382657f9a06c49d4a71fdc6d9b0d48f',
 					'I will not buy this tobaconnists, it is scratched.': '3806612222fe88e1af1a4b5a59115634',
-					'My hovercraft is full of eels.': '03e5e14d358c16d1e5ae86df7ed5cfcb',
-					'My 🚀 is full of 🦎.': 'd047391e58c6c9dfccde62c92e049f50',
-					'吉 星 高 照': 'bde3d304c55081c5749baf93de78c3bd',
+					'My hovercraft is full of eels.':                     '03e5e14d358c16d1e5ae86df7ed5cfcb',
+					'My 🚀 is full of 🦎.':                               'd047391e58c6c9dfccde62c92e049f50',
+					'吉 星 高 照':                                          'bde3d304c55081c5749baf93de78c3bd',
 				}
 				Object.entries(TEST_CASES).forEach(([str, expected_hash], index) => {
 

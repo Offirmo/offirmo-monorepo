@@ -96,3 +96,6 @@ SWOT
 RICE Reach Impact Confidence Estimate
 grit
 fire
+https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
+https://neal.fun/absurd-trolley-problems/
+“The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.

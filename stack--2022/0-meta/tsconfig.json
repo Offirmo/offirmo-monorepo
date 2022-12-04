@@ -42,8 +42,8 @@
 		"allowJs": false,
 
 
-		"allowSyntheticDefaultImports": false,
-		"esModuleInterop": false,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"isolatedModules": true,
 		"preserveSymlinks": false,

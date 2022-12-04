@@ -16,10 +16,17 @@ Last update: [https://devblogs.microsoft.com/typescript/](update marker) 2022/03
 * VERY IMPORTANT https://www.typescriptlang.org/docs/handbook/module-resolution.html
 
 
+### strictness
+* `"noUncheckedIndexedAccess": false,` TODO set to true. Meanwhile, this triggers too many errors and would need a long time to fix
+* `"noUnusedParameters": false,` TODO one day set to true. I don't see much value in this one.
+
 ### modules
 
 * `module` set to the latest ES we support
-* `esModuleInterop` intentionally set to false in order to better detect non-ESM code
+* `esModuleInterop` intentionally set to false in order to better detect non-ESM code https://www.typescriptlang.org/tsconfig#esModuleInterop
+  * NO!!! moved back to "true" due to still using cjs, ex. pb importing "memoize-one"
+* `allowSyntheticDefaultImports` intentionally set to false in order to better detect non-ESM code
+  * NO!!! moved back to "true" due to still using cjs, ex. pb importing "fetch-ponyfill" or sindre
 * [`moduleResolution`](https://www.typescriptlang.org/docs/handbook/module-resolution.html) kept to node as the ecosystem is not ready :-(
   * [https://github.com/microsoft/TypeScript/issues/46452](update marker)
 
@@ -35,9 +42,11 @@ Last update: [https://devblogs.microsoft.com/typescript/](update marker) 2022/03
 
 notes:
 
-This should be the standard
+cjs+ESM cohabitation standard
 ```json
 "esModuleInterop": true,
 "allowSyntheticDefaultImports": true,
 ```
+https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports
+
 Also the correct way to import React is `import * as React from 'react'`, cf. https://github.com/facebook/react/pull/18102
