@@ -5,7 +5,12 @@
 		"importHelpers": false,
 		"noEmitHelpers": false,
 
-		"noUncheckedIndexedAccess": false
+		"exactOptionalPropertyTypes": false,
+		"noPropertyAccessFromIndexSignature": false,
+		"noUncheckedIndexedAccess": false,
+		"noUnusedLocals": false,
+		"strictNullChecks": false,
+		"strictPropertyInitialization": false
 	},
 	"include": [
 		"../../0-typings-custom/**/*.ts",
