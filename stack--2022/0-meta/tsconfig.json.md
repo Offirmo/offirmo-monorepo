@@ -19,6 +19,8 @@ Last update: [https://devblogs.microsoft.com/typescript/](update marker) 2022/03
 ### strictness
 * `"noUncheckedIndexedAccess": false,` TODO set to true. Meanwhile, this triggers too many errors and would need a long time to fix
 * `"noUnusedParameters": false,` TODO one day set to true. I don't see much value in this one.
+* `"noUnusedLocals": false,` intentionally set to false. This is not a correctness risk and my editor already outlines unused vars.
+                             It's convenient to over-import and this options makes it a chore to clean unused imports all the time.
 
 ### modules
 
