@@ -52,11 +52,11 @@
 
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
 		"_build:prod": "monorepo-script--build-typescript-package",
-		"build:bundle": "parcel build --no-autoinstall --no-source-maps --out-file index-bundle.js  src/index.ts",
+		"xxxbuild:bundle": "parcel build --no-autoinstall --no-source-maps --out-file index-bundle.js  src/index.ts",
 		"ensure-size": "size-limit",
 
 		"dev": "run-s clean _build:dev:watch",
-		"build": "run-p _build:prod build:bundle",
+		"build": "run-p _build:prod",
 		"demo": "parcel --out-dir .parcel --no-autoinstall doc/demo/index.html",
 
 		"np": "np --no-publish",

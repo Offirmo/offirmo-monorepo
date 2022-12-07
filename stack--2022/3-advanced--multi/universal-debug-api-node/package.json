@@ -46,7 +46,6 @@
 
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
 		"_build:prod": "monorepo-script--build-typescript-package",
-		"build:bundle": "parcel build --no-autoinstall --no-source-maps --out-file index-bundle.js  src/index.ts",
 		"ensure-size": "size-limit",
 
 		"dev": "run-s clean _build:dev:watch",
