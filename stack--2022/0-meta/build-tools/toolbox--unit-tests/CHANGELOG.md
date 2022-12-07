@@ -6,6 +6,7 @@
 * [feat][breaking] added the `fail-zero` option to fail when having 0 tests
 * [feat][breaking] properly set the init file's extension to .cjs
 * [chore][breaking] bumped deps: mocha 10
+* [chore][breaking] bumped deps: sinon 15
 * ...
 
 ## v8.0.0

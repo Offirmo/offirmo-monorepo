@@ -14,7 +14,7 @@
 	"dependencies": {
 		"@types/chai": "^4",
 		"@types/chai-as-promised": "^7",
-		"@types/mocha": "^9",
+		"@types/mocha": "^10",
 		"@types/sinon": "^10",
 		"@types/sinon-chai": "^3",
 		"chai": "^4",
@@ -24,7 +24,7 @@
 		"eslint-plugin-chai-expect": "^3",
 		"eslint-plugin-mocha": "^10",
 		"mocha": "^10",
-		"sinon": "^13",
+		"sinon": "^15",
 		"sinon-chai": "^3"
 	},
 	"optionalDependencies": {
