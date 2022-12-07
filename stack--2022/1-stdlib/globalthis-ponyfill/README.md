@@ -43,7 +43,16 @@ This is a trivial TypeScript-compatible [`globalThis`](https://developer.mozilla
 ```js
 import { getGlobalThis } from '@offirmo/globalthis-ponyfill'
 
+// typed access
+declare global {
+	var foo: number
+}
 const globalThis = getGlobalThis()
+globalThis.foo = 42
+
+// untyped access
+const globalThis = getGlobalThis<any>()
+globalThis.bar = 42
 ```
 
 
