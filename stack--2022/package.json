@@ -59,11 +59,11 @@
 	"dependencies": {
 		"@manypkg/cli": "^0.19",
 		"chalk": "^4",
-		"fs-extra": "^10",
+		"fs-extra": "^11",
 		"meow": "^10",
 		"tiny-invariant": "^1",
 		"write-json-file": "^5",
-		"zx": "^6"
+		"zx": "^7"
 	},
 	"devDependencies": {
 		"@parcel/config-default": "^2",

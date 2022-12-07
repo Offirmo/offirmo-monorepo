@@ -51,7 +51,7 @@
 		"@offirmo/cli-toolbox": "^2",
 		"@offirmo/unit-test-toolbox": "^8",
 		"@offirmo/universal-debug-api-node": "^0",
-		"fs-extra": "^10",
+		"fs-extra": "^11",
 		"lodash": "^4",
 		"npm-run-all": "^4",
 		"term-img": "^6",
