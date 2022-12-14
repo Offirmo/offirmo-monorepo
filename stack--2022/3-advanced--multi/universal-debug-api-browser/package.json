@@ -43,9 +43,9 @@
 
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@size-limit/preset-small-lib": "^7",
+		"@size-limit/preset-small-lib": "^8",
 		"npm-run-all": "^4",
-		"size-limit": "^7"
+		"size-limit": "^8"
 	},
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",

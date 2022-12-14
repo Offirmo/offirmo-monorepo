@@ -53,9 +53,9 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/error-utils": "^0",
 		"@offirmo/unit-test-toolbox": "^8",
-		"@size-limit/preset-small-lib": "^7",
+		"@size-limit/preset-small-lib": "^8",
 		"npm-run-all": "^4",
-		"size-limit": "^7"
+		"size-limit": "^8"
 	},
 
 	"files": [

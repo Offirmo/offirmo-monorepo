@@ -28,7 +28,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/simple-upgradable-template": "^0",
-		"@size-limit/preset-small-lib": "^7",
+		"@size-limit/preset-small-lib": "^8",
 		"npm-run-all": "^4",
 		"typescript": "^4"
 	}

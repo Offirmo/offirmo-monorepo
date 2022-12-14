@@ -23,7 +23,7 @@
 			"path": "dist/src.es2022/index.js"
 		},
 		{
-			"limit": "200B",
+			"limit": "300B",
 			"path": "dist/src.es2022.cjs/index.js"
 		}
 	],
@@ -49,9 +49,9 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^8",
-		"@size-limit/preset-small-lib": "^7",
+		"@size-limit/preset-small-lib": "^8",
 		"npm-run-all": "^4",
-		"size-limit": "^7"
+		"size-limit": "^8"
 	},
 
 	"files": [
