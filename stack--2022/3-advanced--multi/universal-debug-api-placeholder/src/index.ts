@@ -3,16 +3,16 @@ import { DebugApiRoot, DebugApi } from '@offirmo/universal-debug-api-interface'
 
 import createV1 from './v1'
 
-const globalThis = getGlobalThis()
-
 // ensure the root is present
-globalThis._debug = globalThis._debug || {} as DebugApiRoot
+const _p = '_debug'
+const globalThis = getGlobalThis<any>()
+globalThis[_p] ||= {} as DebugApiRoot
 
 // install globally if no other implementation already present
-globalThis._debug.v1 = globalThis._debug.v1 || createV1()
+globalThis[_p].v1 ||= createV1()
 
 // expose the installed implementation
-const instance: DebugApi = globalThis._debug.v1
+const instance: DebugApi = globalThis[_p].v1
 
 const {
 	getLogger,

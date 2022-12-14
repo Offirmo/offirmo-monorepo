@@ -25,7 +25,7 @@
 		"@offirmo-private/promise-try": "^0",
 		"@offirmo-private/timestamps": "^0",
 		"@offirmo/error-utils": "^0",
-		"@offirmo/globalthis-ponyfill": "^3",
+		"@offirmo/globalthis-ponyfill": "^4",
 		"emittery": "^0.11"
 	},
 

@@ -2,12 +2,16 @@
 **This package follows [semver](https://semver.org/).**
 
 ## PENDING
-* [chore] added unit tests!
-* [chore][breaking] now type safe by correctly returning "typeof globalThis". The global scope needs to be extended, cf. unit tests.
-* [chore][breaking] removed the package.json "esnext" property, can't find any reference of tools using it
-* [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
 * (TODO when the ecosystem is ready) [chore][breaking] module now advertised as ESM `"type": "module"` in package.json
 * ...
+
+## v4.0.0
+2022/12/15
+* [chore][breaking] (typescript only) added type correctness by correctly returning "typeof globalThis".
+                    When dealing with new properties, typing can be either opted out or extended in the global scope, cf. unit tests and README.
+* [chore][breaking] pre-builds now targeting the latest LTS node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
+* [chore][breaking] removed the package.json "esnext" property, I can't find any reference of tools using it
+* [chore] added unit tests
 
 ## v3.0.2
 2022/04/02

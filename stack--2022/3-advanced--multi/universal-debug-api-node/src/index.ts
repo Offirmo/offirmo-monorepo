@@ -3,12 +3,13 @@ import { DebugApiRoot, DebugApi } from '@offirmo/universal-debug-api-interface'
 
 import createV1, { OWN_LOGGER_NAME } from './v1'
 
-const globalThis = getGlobalThis()
 
 // ensure the root is present
-globalThis._debug = globalThis._debug || {}
+const globalThis = getGlobalThis<any>()
+const _p = '_debug'
+globalThis[_p] ||= {}
 
-const root: DebugApiRoot = globalThis._debug
+const root: DebugApiRoot = globalThis[_p]
 
 //////////// v1 ////////////
 

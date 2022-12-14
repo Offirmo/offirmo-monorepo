@@ -6,17 +6,15 @@ import { createSEC } from './core'
 
 /////////////////////
 
-const GLOBAL_VAR_NAME = '__global_root_sec'
-
 function getRootSEC<Injections = {}, AnalyticsDetails = {}, ErrorDetails = {}>(): SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails> {
-	const global_this = getGlobalThis()
+	const global_this = getGlobalThis<any>()
 
-	if (!global_this[GLOBAL_VAR_NAME]) {
+	if (!global_this.__global_root_sec) {
 		//console.log(`[${LIB}] Creating root context…`)
-		global_this[GLOBAL_VAR_NAME] = createSEC()
+		global_this.__global_root_sec = createSEC()
 	}
 
-	return global_this[GLOBAL_VAR_NAME]
+	return global_this.__global_root_sec
 }
 
 /////////////////////

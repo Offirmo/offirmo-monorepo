@@ -24,7 +24,7 @@
 	},
 	"dependencies": {
 		"@offirmo-private/timestamps": "^0",
-		"@offirmo/globalthis-ponyfill": "^3",
+		"@offirmo/globalthis-ponyfill": "^4",
 		"tiny-invariant": "^1"
 	},
 
