@@ -5,6 +5,7 @@
 * TODO unit tests!
 * [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
 * [chore][breaking] no longer shipping a pre-bundled lib. Current tooling makes it complicated + there are other solutions.
+* [feat] fixed compatibility with the latest Typescript version (4.9)
 * ...
 
 ## v1.0.1

@@ -7,12 +7,12 @@ interface DebugApiRoot {
 type DebugApi = DebugApiV1
 
 export {
-	DebugApiV1,
+	type DebugApiV1,
 
 	// v latest
-	DebugApi,
-	DebugApiRoot,
+	type DebugApi,
+	type DebugApiRoot,
 }
 
 // for convenience
-export { Logger, LoggerCreationParams } from '@offirmo/practical-logger-types'
+export { type Logger, type LoggerCreationParams } from '@offirmo/practical-logger-types'

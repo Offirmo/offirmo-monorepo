@@ -25,7 +25,8 @@ interface DebugApi {
 }
 
 export {
-	Logger,
-	LoggerCreationParams,
-	DebugApi,
+	type Logger,
+	type LoggerCreationParams,
+
+	type DebugApi,
 }

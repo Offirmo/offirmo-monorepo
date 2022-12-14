@@ -76,7 +76,7 @@ export default function create(): DebugApiV1 {
 
 			const rawValue = _getOverrideRequestedSJson(key)
 			if (rawValue) {
-				overrides[key].isOn = true
+				overrides[key]!.isOn = true
 				// for the node version where escaping is hard, as a convenience, we auto-type common cases
 				const value = (() => {
 					// we allow the non-JSON "undefined"
@@ -94,12 +94,12 @@ export default function create(): DebugApiV1 {
 					}
 				})()
 
-				overrides[key].value = value
+				overrides[key]!.value = value
 				_ownLogger.log(` 🔵 overriden "${key}"`, { override: value })
 			}
 		}
 
-		return overrides[key]
+		return overrides[key]!
 	}
 
 	////////////////////////////////////
@@ -136,7 +136,7 @@ export default function create(): DebugApiV1 {
 		return defaultValue
 	}
 
-	function getLogger(p: Readonly<LoggerCreationParams> = {}) {
+	function getLogger(p: Readonly<LoggerCreationParams> = {}): Logger {
 		const name = p.name || DEFAULT_LOGGER_KEY // we need a name immediately
 
 		if (!loggers[name]) {
@@ -157,7 +157,7 @@ export default function create(): DebugApiV1 {
 			loggers[name] = createLogger(p)
 		}
 
-		return loggers[name]
+		return loggers[name]!
 	}
 
 	function exposeInternal(path: string, value: any): void {
