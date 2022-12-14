@@ -2,7 +2,6 @@
 	"extends": "../../0-meta/tsconfig.json",
 	"compilerOptions": {
 
-
 		"exactOptionalPropertyTypes": false,
 		"noPropertyAccessFromIndexSignature": false,
 		"noUncheckedIndexedAccess": false,

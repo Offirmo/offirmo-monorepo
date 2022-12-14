@@ -18,7 +18,7 @@ export const nextTick: (callback: Function, ...args: any[]) => void
 
 
 // XXX DO NOT USE except for very special nodejs I/O cases
-// node only so far >=0.9.1
+// This primitive is node-only so far >=0.9.1 and not on track to be standardized https://developer.mozilla.org/en-US/docs/Web/API/Window/setImmediate
 // Schedules the "immediate" execution of the callback after I/O events' callbacks.
 // that could happen in current event loop or in the next one, depending on where we are
 interface Immediate { // credits: node typings
@@ -28,10 +28,10 @@ interface Immediate { // credits: node typings
 	_onImmediate: Function // to distinguish it from the Timeout class
 }
 export const setImmediate: (callback: (...args: any[]) => void, ...args: any[]) => Immediate
-	= getGlobalThis().setImmediate
-	|| function setImmediatePonyFill(callback: (...args: any[]) => void, ...args: any[]): void {
-		// closest possible effect
-		setTimeout(callback, 0, ...args)
+	= (getGlobalThis<any>().setImmediate) // <any>: as of @type/node 11 setImmediate is not very well typed, my typing is better IMO
+	|| function setImmediatePonyFill(callback: (...args: any[]) => void, ...args: any[]): any {
+		// closest possible effect. We should also provide clearImmediate()
+		return setTimeout(callback, 0, ...args)
 	}
 
 

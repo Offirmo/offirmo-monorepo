@@ -28,17 +28,20 @@ import {
 export const enforce_immutability: ImmutabilityEnforcer = <T>(state: T | Immutable<T>): Immutable<T> => icepick.freeze<T>(state as T) as Immutable<T>
 //const enforce_immutability: ImmutabilityEnforcer = (state: T): Immutable<T> => state
 //const enforce_immutability: ImmutabilityEnforcer = <T>(state: T): Immutable<T> => deep_freeze<T>(state)
-export { Immutable, ImmutabilityEnforcer } from '@offirmo-private/ts-types' // for convenience
+export {
+	type Immutable,
+	type ImmutabilityEnforcer
+} from '@offirmo-private/ts-types' // for convenience
 
 export function get_mutable_copy<I>(state: I): Mutable<I> {
 	return icepick.thaw<Mutable<I>>(state as any)
 }
 
-// Use this in case of reducing a child state while unsure whether this child state has changed or not.
+// Use this in case you reduced a child state (optionally updating the timestamp as well) but are unsure whether this reducer caused the child state to change or not.
 // - the best case is to return 'previous' = no mutation
 // - if a child state's revision increased, increase ours and keep the mutation
 // - it's possible that an "update to now" was invoked, it's ok to ignore that if that's the only change
-// - this fn will intentionally NOT go deeper than 1st level, each state is responsible for itself!
+// - this fn will intentionally NOT go deeper than 1st level, each state is responsible for its children!
 // - this fn will intentionally NOT handle time changes, this should be done separately at the end! (separate update_to_now call)
 export function complete_or_cancel_eager_mutation_propagating_possible_child_mutation<
 	BU extends BaseUState,
@@ -46,19 +49,19 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 	BR extends BaseRootState<BU, BT>,
 	T = BU | BT | UTBundle<BU, BT> | BR,
 >(
-	previous: Immutable<T>,
-	current: Immutable<T>,
-	updated: Immutable<T> = previous,
+	previous: Immutable<T>, // initial state, usually the one we got as a param in the reducer calling this
+	current: Immutable<T>, // initial state + only child mutations that we're not sure are actual changes
+	updated: Immutable<T> = previous, // initial state + "updated_to_now" which can === initial state (if no time elapsed)
 	debug_id: string = 'unknown src',
 ): Immutable<T> {
 	const PREFIX = `CoCEMPPCM(${debug_id})`
-	assert(previous, `${PREFIX}: should have previous`)
-	/*if (!previous)
-		return current*/
-	if (current === previous)
-		return previous
-	if (current === updated)
-		return previous
+
+	assert(!!previous, `${PREFIX}: should have previous`)
+	assert(!!current, `${PREFIX}: should have current`)
+	assert(current !== previous, `${PREFIX}: why are you calling this if you didn't perform any mutation?`)
+	if (current === updated) {
+		return previous // "updated"
+	}
 
 	if (is_UTBundle(current)) {
 		// this is a more advanced state

@@ -24,7 +24,7 @@ export default function json_stable_stringify(
 	if (typeof indent === 'number')
 		indent = Array(indent + 1).join(' ')
 
-	/*
+	/* TODO implement cmp?
 	const cmp = opts.cmp && (function (f) {
 		return function (node) {
 			return function (a, b) {

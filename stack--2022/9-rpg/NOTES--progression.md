@@ -65,3 +65,10 @@ relationship progression
 
 intimacy
 - 1st base -> 2nd -> 3rd
+
+
+https://www.reddit.com/r/ProgressionFantasy/comments/ff1i15/the_progression_treadmill_thoughts_on_a_potential/
+The Progression Treadmill (thoughts on a potential problem in progression fantasy)
+
+https://www.reddit.com/r/ProgressionFantasy/comments/thz50q/feats_and_informed_power_another_essay_about/
+Feats and Informed Power (another essay about progression fantasy)

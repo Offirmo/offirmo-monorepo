@@ -1125,3 +1125,8 @@ https://oishya.com/journal/difference-single-double-edged-blade/
 https://oishya.com/journal/steel-qualities-kitchen-knives-cheat-sheet-chart/
 
 https://mapeffects.co/tutorials/population-size
+
+https://en.wikipedia.org/wiki/Modified_Mercalli_intensity_scale
+
+https://www.pcgamesn.com/best-dragon-games
+https://www.pcgamesn.com/100-best-free-pc-games

@@ -85,7 +85,7 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 	]>
 }): Immutable<State> {
 	return SEC.xTry('migrate_to_latest', ({SEC, logger}) => {
-		const existing_version = get_schema_version_loose(legacy_state)
+		const existing_version = get_schema_version_loose(legacy_state as any)
 		console.groupCollapsed(`migration of schema ${ LIB } from v${ existing_version } to v${ SCHEMA_VERSION }`)
 
 		const RSEC = SEC

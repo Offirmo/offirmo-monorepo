@@ -18,9 +18,7 @@ export interface I18nMessages {
 
 /////////////////////
 
-// TODO review Record!
-export interface HashOf<T> {
-	[k: string]: T
-}
+// https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type
+export type HashOf<T> = Record<string, T>
 
 /////////////////////
