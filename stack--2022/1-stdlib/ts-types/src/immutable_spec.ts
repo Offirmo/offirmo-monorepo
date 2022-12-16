@@ -3,6 +3,7 @@
  * (not runnable)
  */
 import {
+	ImmutableObject,
 	Immutable,
 	ImmutabilityEnforcer,
 } from './index.js'
@@ -20,50 +21,73 @@ const t: Test = { foo: 42, bar: { baz: 'x' } }
 
 /////////////////////////////////////////////////
 // test underlying typescript mechanisms
-function testBuiltin__Readonly__Any(x: Readonly<any>): void {
+function mutateBuiltin__Readonly__Any(x: Readonly<any>): void {
 	// @ts-expect-error TS2542
 	x.foo = 33
 	// XXX No error... What can we do?
 	x.foo.bar = 33
 }
-testBuiltin__Readonly__Any(t)
-function testBuiltin__Never(x: never): void {
+mutateBuiltin__Readonly__Any(t)
+function mutateBuiltin__Never(x: never): void {
 	// @ts-expect-error TS2322
 	x = 33
 }
-testBuiltin__Never(null as never)
+mutateBuiltin__Never(null as never)
 
 /////////////////////////////////////////////////
 // nothing we can really test...
-function testPrimitiveType__number(x: Immutable<number>): void {
+function mutatePrimitiveType__number(x: Immutable<number>): void {
 	x = 33
 }
-testPrimitiveType__number(42)
+mutatePrimitiveType__number(42)
 
-function testPrimitiveType__string(x: Immutable<string>): void {
+function mutatePrimitiveType__string(x: Immutable<string>): void {
 	x = 'y'
 }
-testPrimitiveType__string('x')
+mutatePrimitiveType__string('x')
 
-function testPrimitiveType__boolean(x: Immutable<boolean>): void {
+function mutatePrimitiveType__boolean(x: Immutable<boolean>): void {
 	x = false
 }
-testPrimitiveType__boolean(true)
+mutatePrimitiveType__boolean(true)
+
+/*
+function mut(a: number[]) {
+	a[0] = 0
+}
+function indirect(a: ReadonlyArray<number>) {
+	mut(a)
+}
+indirect([] as ReadonlyArray<number>)*/
 
 /////////////////////////////////////////////////
-function testAny(x: Immutable<any>): void {
-	// XXX the errors below are not what we want
+// unknown
+/*const a: Immutable<unknown> = 1
+
+function mutateUnknown(x: Immutable<unknown>): void {
+	// XXX the errors below are not what we want but better than nothing!
+	x.foo = 33
+	x['foo'] = 33
+	x['bar'].baz = 'y'
+}
+mutateUnknown({})
+mutateUnknown({} as Immutable<unknown>)
+*/
+/////////////////////////////////////////////////
+function mutateAny(x: Immutable<any>): void {
+	// XXX the errors below are not what we want but better than nothing!
 	// @ts-expect-error TS2542
 	x.foo = 33
 	// @ts-expect-error TS2542
 	x['foo'] = 33
-	// xx@ts-expect-error TS4111 TS2542
-	x['bar'].baz = 'y' // XXX not the error we want
+	// @ts-expect-error TS7053 TS4111 TS2542
+	x['bar'].baz = 'y'
 }
-testAny({})
+mutateAny({})
+mutateAny({} as Immutable<unknown>)
 
 /////////////////////////////////////////////////
-function testStructure(struct: Immutable<Test>): void {
+function mutateStructure(struct: Immutable<Test>): void {
 	// @ts-expect-error TS2540
 	struct.foo = 33
 
@@ -71,10 +95,23 @@ function testStructure(struct: Immutable<Test>): void {
 	// @ts-expect-error TS2540
 	struct.bar.baz = 'y'
 }
-testStructure(t)
+mutateStructure(t)
+
+// Immutable<any> should be castable to any other Immutable
+mutateStructure(t as Immutable<unknown>)
+
+// https://github.com/microsoft/TypeScript/issues/13923#issuecomment-1347610117
+function mutateMutableStructure(struct: Test): void {
+	struct.foo = 33
+}
+function indirectlyMutateImmutableStructure(struct: { readonly [K in keyof Test]: Test[K] }): void {
+	// @xxx-ts-expect-error bug https://github.com/microsoft/TypeScript/issues/13347
+	mutateMutableStructure(struct)
+}
+indirectlyMutateImmutableStructure(t)
 
 /////////////////////////////////////////////////
-function testArray(array: Immutable<[Test]>): void {
+function mutateArray(array: Immutable<[Test]>): void {
 	// @ts-expect-error TS2540
 	array[0] = { foo: 42, bar: { baz: 'x' } }
 
@@ -82,10 +119,11 @@ function testArray(array: Immutable<[Test]>): void {
 	// @ts-expect-error TS2540
 	array[0].bar.baz = 'y'
 }
-testArray([t])
+mutateArray([t])
+mutateArray([t] as Immutable<unknown>)
 
 /////////////////////////////////////////////////
-function testTuple(tuple: Immutable<[number, Test]>): void {
+function mutateTuple(tuple: Immutable<[number, Test]>): void {
 	// @ts-expect-error TS2540
 	tuple[0] = 42
 	// @ts-expect-error TS2540
@@ -95,10 +133,11 @@ function testTuple(tuple: Immutable<[number, Test]>): void {
 	// @ts-expect-error
 	tuple[1].bar.baz = 'y'
 }
-testTuple([42, { foo: 42, bar: { baz: 'x' } }])
+mutateTuple([42, { foo: 42, bar: { baz: 'x' } }])
+mutateTuple(1 as Immutable<unknown>)
 
 /////////////////////////////////////////////////
-function testUnion(x: Immutable<Test | number>): void {
+function mutateUnion(x: Immutable<Test | number>): void {
 	if (typeof x !== 'number') {
 		// @ts-expect-error TS2540
 		x.foo = 42
@@ -108,18 +147,20 @@ function testUnion(x: Immutable<Test | number>): void {
 		x.bar.baz = 'y'
 	}
 }
-testUnion(1)
-testUnion(t)
+mutateUnion(1)
+mutateUnion(t)
+mutateUnion(t as Immutable<unknown>)
 
 /////////////////////////////////////////////////
-function testFunction(f: Immutable<(x: string) => string>): void {
+function mutateFunction(f: Immutable<(x: string) => string>): void {
 	const s1: string = f('world')
 	const s2: string = f.call(undefined, 'world')
 }
-testFunction((s: string) => `Hello, ${s}!`)
+mutateFunction((s: string) => `Hello, ${s}!`)
+mutateFunction(1 as Immutable<unknown>)
 
 /////////////////////////////////////////////////
-function testRecord(x: Immutable<Record<string, Test>>): void {
+function mutateRecord(x: Immutable<Record<string, Test>>): void {
 	// @ts-expect-error TS2542
 	x['foo'] = { foo: 42, bar: { baz: 'x' } }
 
@@ -127,10 +168,11 @@ function testRecord(x: Immutable<Record<string, Test>>): void {
 	// @ts-expect-error TS2540
 	x['foo'].bar.baz = 'y'
 }
-testRecord({ 'foo': t })
+mutateRecord({ 'foo': t })
+mutateRecord({ 'foo': t } as Immutable<any>)
 
 /////////////////////////////////////////////////
-function testSet(set: Immutable<Set<Test>>): void {
+function mutateSet(set: Immutable<Set<Test>>): void {
 	// @ts-expect-error TS2339
 	set.add({ foo: 42, bar: { baz: 'x' } })
 
@@ -144,10 +186,11 @@ function testSet(set: Immutable<Set<Test>>): void {
 	// @ts-expect-error TS2540
 	;[...set.values()][0]!.bar.baz = 'y'
 }
-testSet(new Set<Test>([t]))
+mutateSet(new Set<Test>([t]))
+mutateSet((new Set<Test>([t])) as Immutable<unknown>)
 
 /////////////////////////////////////////////////
-function testMap(map: Immutable<Map<Test, Test>>): void {
+function mutateMap(map: Immutable<Map<Test, Test>>): void {
 	const t2: Test = { foo: 33, bar: { baz: 'y' } }
 	// @ts-expect-error TS2339
 	map.add(t2, t2)
@@ -174,7 +217,8 @@ function testMap(map: Immutable<Map<Test, Test>>): void {
 	const map = new Map<Test, Test>
 	map.set(t, t)
 
-	testMap(map)
+	mutateMap(map)
+	mutateMap(map as Immutable<unknown>)
 })()
 
 
