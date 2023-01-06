@@ -2,9 +2,16 @@
 // better than Readonly<T>
 // To be used in parameters to enforce immutability / no side effects
 //
+// XXX MANAGE YOUR EXPECTATIONS!
+// Due to various bugs and limitations of TypeScript,
+// it's not possible to provide a true Immutable<T> type.
+// The one below is a trade-off.
+// Also, remember that Immutable<T> is already good as documentation
+// even if TypeScript can't enforce it!
+//
 // Why providing this type ourselves when there are many libs offering it?
 // - it's critical
-// - uses the "Immutable" vocabulary
+// - uses the "Immutable" semantic
 // - deep by default
 // - has unit tests
 // - can be cancelled for special cases
@@ -12,56 +19,37 @@
 // We aim at the most common types, not exhaustive
 // Reminder: Readonly is meaningful for aggregation types (arrays, maps, etc.)
 
-// https://stackoverflow.com/questions/49927523/disallow-call-with-any/49928360#49928360
-type IsAny<T> = 0 extends 1 & T ? true : false;
-
-
 // 1) derived from https://github.com/microsoft/TypeScript/issues/13923#issuecomment-557509399
 // 2) improved
 // 3) then contributed back https://github.com/microsoft/TypeScript/issues/13923#issuecomment-716706151
 export type ImmutablePrimitive = undefined | null | boolean | string | number | Function
+interface EmptyStruct {}
 
-
-export type Immutable<T> =
-	// order is important, some checks are greedy
-	IsAny<T> extends true ? Readonly<unknown> // better than Readonly<any>. This version is 1) deep 2) allows casting
-		: T extends ImmutablePrimitive ? T // already immutable + no real point for primitive types
-			//: T extends Array<infer U> ? ImmutableArray<U> doesn't seem needed, doesn't change anything
-				: T extends Map<infer K, infer V> ? ImmutableMap<K, V>
-					: T extends Set<infer M> ? ImmutableSet<M>
-						:  T extends {} ? ImmutableObject<T> // catch-all, must be at the end
-								: never // unhandled, we should investigate
-
-//	IsAny<T> extends true ? Readonly<any> | ImmutableObject<{ [k: string]: any }> // better than Readonly<any>. This version is 1)  deep 2) allows casting
-
-/*
-export type Immutable<T> =
-	// order is important, some checks are greedy
-	IsAny<T> extends true ? Readonly<any> // not deep, but best we can do :( TODO report?
-		//: T extends Array<infer U> ? ImmutableArray<U> not needed
-			: T extends Map<infer K, infer V> ? ImmutableMap<K, V>
-				: T extends Set<infer M> ? ImmutableSet<M>
-					: T extends ImmutablePrimitive ? T // already immutable + no real point for primitive types
-						: T extends {} ? ImmutableObject<T> // catch-all, must be at the end
-							: never // unhandled, we should investigate
-*/
-
-/* old version, doesn't handle Readonly<any> well
-export type Immutable<T> =
-	T extends ImmutablePrimitive ? T
-		//: T extends Array<infer U> ? ImmutableArray<U> no need!
-		: T extends Map<infer K, infer V> ? ImmutableMap<K, V>
-			: T extends Set<infer M> ? ImmutableSet<M>
-				: ImmutableObject<T>
+/* Implementation notes:
+ *
+ * Readonly<any> exists but
+ * 1) not deep :-(
+ * 2) Not castable to other types
+ * In the global Immutable<T> we don't use Readonly<any>
+ * and Immutable<any> resolves to "any".
+ * This is a compromise.
+ *
+ * All type test: https://gist.github.com/c6a67f81526eb2f43ae600523747ceaf#file-condtypes-ts
  */
-
 
 export type ImmutableArray<T>  = ReadonlyArray<Immutable<T>>
 export type ImmutableMap<K, V> = ReadonlyMap<Immutable<K>, Immutable<V>>
 export type ImmutableSet<T>    = ReadonlySet<Immutable<T>>
 export type ImmutableObject<T> = { +readonly [K in keyof T]: Immutable<T[K]> }
-// TODO add WeakMap, WeakSet?
-// TODO add Promise?
+
+export type Immutable<T> = true extends false ? never
+	// IMPORTANT! All those conditional type tests are distributive on "any" https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types
+	: T extends ImmutablePrimitive    ? T // "any" matches, turning "Immutable<any>" into "any" (due to "x | y | any" being coalesced as just "any")
+	//: T extends Array<infer U>        ? ImmutableArray<U> XXX strangely this line is 1) not needed 2) causes problem with tuples (spreading = possibly undef)
+	: T extends Map<infer K, infer V> ? ImmutableMap<K, V>
+	: T extends Set<infer M>          ? ImmutableSet<M>
+	: T extends EmptyStruct           ? ImmutableObject<T> // this line is greedy with other container types+fn, must be last!
+	: never // if we reach this, need to extend this conditional type
 
 /////////////////////
 

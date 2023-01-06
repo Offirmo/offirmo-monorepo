@@ -67,7 +67,7 @@ export function get_schema_version_loose<
 >(s: Immutable<V> | Immutable<AnyOffirmoState>): number {
 
 	if (has_versioned_schema(s))
-		return get_schema_version(s)
+		return get_schema_version(s as Immutable<V>)
 
 	// specific fallbacks
 	if (Array.isArray(s)) {
@@ -122,7 +122,7 @@ export function get_revision_loose<
 	BR extends BaseRootState,
 >(s: Immutable<V> | Immutable<AnyOffirmoState>): number {
 	if (is_revisioned(s))
-		return get_revision(s)
+		return get_revision(s as Immutable<V>)
 
 	// specific fallbacks:
 	if (Array.isArray(s)) {
@@ -213,7 +213,7 @@ export function get_last_user_activity_timestamp_loose<
 	BR extends BaseRootState,
 >(s: Immutable<V> | Immutable<AnyOffirmoState>): number {
 	if (is_WithLastUserInvestmentTimestamp(s))
-		return get_last_user_activity_timestamp(s)
+		return get_last_user_activity_timestamp(s as Immutable<V>)
 
 	// final fallback
 	return 0

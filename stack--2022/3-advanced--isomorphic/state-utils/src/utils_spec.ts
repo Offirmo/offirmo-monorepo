@@ -32,16 +32,11 @@ describe(`${LIB} - utils`, function() {
 		context('on a base state with sub states', function() {
 			const previous = DEMO_BASE_STATE_WITH_SUBS
 
-			it('should avoid a mutation if the state has no change at all', () => {
-				const new_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous, previous)
-				expect(new_state).to.equal(previous)
-			})
-
-			it('should avoid a mutation if the state has no semantic increment', () => {
+			it('should cancel the mutation -- if the sub-states had no changes at all', () => {
 				const current_base = enforce_immutability<typeof previous>({
 					...previous,
 					subC: {
-						// fake mutation, in truth there was no change
+						// the mutation was eager, in truth there was no change
 						...previous.subC,
 					},
 				})
@@ -49,7 +44,9 @@ describe(`${LIB} - utils`, function() {
 				expect(new_state).to.equal(previous)
 			})
 
-			it('should throw if the state has an immediate increment', () => {
+			it('should cancel the mutation -- if the sub-states had changes but no semantic')
+
+			it('should throw -- if the state has an immediate increment', () => {
 				const current_base = enforce_immutability<typeof previous>({
 					...previous,
 					own_u: 'bad!',
@@ -57,7 +54,28 @@ describe(`${LIB} - utils`, function() {
 				expect(() => complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous, current_base)).to.throw('not needed')
 			})
 
-			it('should increment if sub-increments', () => {
+			it('should throw -- if the state was already incremented', () => {
+				const current_base = enforce_immutability<typeof previous>({
+					...previous,
+					revision: 104, // bad
+					subC: {
+						...previous.subC,
+						revision: 46,
+						fizz: 'hello',
+					},
+				})
+				expect(() => complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous, current_base))
+					.to.throw('already incremented')
+			})
+
+			it('should throw -- if the state has no change at all', () => {
+				// warning against wrong use.
+				// normal use should have at least a de+re-structuring
+				expect(() => complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous, previous))
+					.to.throw('didn\'t perform any mutation')
+			})
+
+			it('should complete the mutation if the sub-states had sub-increments', () => {
 				const current_base = enforce_immutability<typeof previous>({
 					...previous,
 					subC: {
@@ -75,31 +93,19 @@ describe(`${LIB} - utils`, function() {
 				expect(new_state).not.to.equal(current_base)
 				expect(new_state).to.deep.equal(expected)
 			})
-
-			it('should throw if already incremented', () => {
-				const current_base = enforce_immutability<typeof previous>({
-					...previous,
-					revision: 104, // bad
-					subC: {
-						...previous.subC,
-						revision: 46,
-						fizz: 'hello',
-					},
-				})
-				expect(() => complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous, current_base))
-					.to.throw('already incremented')
-			})
 		})
 
 		context('on a bundled state', function() {
 			const previous = DEMO_BUNDLE_STATE
 
-			it('should avoid a mutation if the state has no change at all', () => {
-				const new_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous, previous)
-				expect(new_state).to.equal(previous)
+			it('should throw -- if the state has no change at all', () => {
+				// warning against wrong use.
+				// normal use should have at least a de+re-structuring
+				expect(() => complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous, previous))
+					.to.throw('didn\'t perform any mutation')
 			})
 
-			it('should avoid a mutation if the state has no semantic increment', () => {
+			it('should cancel the mutation -- if the sub-states had no changes at all', () => {
 				const current_base = enforce_immutability<typeof previous>([
 					{
 						...previous[0],
@@ -113,17 +119,21 @@ describe(`${LIB} - utils`, function() {
 				const new_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous, current_base)
 				expect(new_state).to.equal(previous)
 			})
+
+			it('should cancel the mutation -- if the sub-states had changes but no semantic')
 		})
 
 		context('on a root state', function() {
 			const previous = DEMO_ROOT_STATE
 
-			it('should avoid a mutation if the state has no change at all', () => {
-				const new_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous, previous)
-				expect(new_state).to.equal(previous)
+			it('should throw -- if the state has no change at all', () => {
+				// warning against wrong use.
+				// normal use should have at least a de+re-structuring
+				expect(() => complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous, previous))
+					.to.throw('didn\'t perform any mutation')
 			})
 
-			it('should avoid a mutation if the state has no semantic increment', () => {
+			it('should cancel the mutation -- if the sub-states had no changes at all', () => {
 				const current_root = enforce_immutability<typeof previous>({
 					...previous,
 					u_state: {
@@ -138,7 +148,7 @@ describe(`${LIB} - utils`, function() {
 			})
 
 			it('should NOT throw if the state has an immediate increment', () => {
-				// this is outside of the semantic world (should rot be abused)
+				// this is outside the semantic world (should not be abused)
 				const current_root = enforce_immutability<typeof previous>({
 					...previous,
 					own_r: 888,

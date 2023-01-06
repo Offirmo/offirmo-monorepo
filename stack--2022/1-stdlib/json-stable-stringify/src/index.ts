@@ -2,9 +2,10 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 type Key = string | number
 type Node = Parameters<JSON['stringify']>[0]
+type Replacer = (this: Immutable<Node>, key: Key, value: Immutable<Node>) => Immutable<Node>
 
 interface Options {
-	replacer: (this: Immutable<Node>, key: Key, value: Immutable<Node>) => Immutable<Node> // cf. 2nd param of JSON.stringify
+	replacer: Replacer // cf. 2nd param of JSON.stringify
 	indent: Parameters<JSON['stringify']>[2]
 	cmp: Function // comparison function generator for sorting object's keys
 

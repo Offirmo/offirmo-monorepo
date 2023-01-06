@@ -53,12 +53,13 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 	current: Immutable<T>, // initial state + only child mutations that we're not sure are actual changes
 	updated: Immutable<T> = previous, // initial state + "updated_to_now" which can === initial state (if no time elapsed)
 	debug_id: string = 'unknown src',
+	recursive: boolean = false
 ): Immutable<T> {
 	const PREFIX = `CoCEMPPCM(${debug_id})`
 
 	assert(!!previous, `${PREFIX}: should have previous`)
 	assert(!!current, `${PREFIX}: should have current`)
-	assert(current !== previous, `${PREFIX}: why are you calling this if you didn't perform any mutation?`)
+	if (!recursive) assert(current !== previous, `${PREFIX}: why are you calling this if you didn't perform any mutation?`)
 	if (current === updated) {
 		return previous // "updated"
 	}
@@ -67,8 +68,8 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 		// this is a more advanced state
 		assert(is_UTBundle(previous), `${PREFIX}: previous also has bundle data structure!`)
 		assert(is_UTBundle(updated), `${PREFIX}: updated also has bundle data structure!`)
-		const final_u_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous[0], current[0], updated?.[0])
-		const final_t_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous[1], current[1], updated?.[1])
+		const final_u_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous[0], current[0], updated?.[0], debug_id + '/B.u_state', true)
+		const final_t_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous[1], current[1], updated?.[1], debug_id + '/B.t_state', true)
 		if (final_u_state === previous[0] && final_t_state === previous[1])
 			return previous
 		if (final_u_state === updated[0] && final_t_state === updated[1])
@@ -80,8 +81,8 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 		// this is a more advanced state
 		assert(is_RootState(previous), `${PREFIX}: previous also has root data structure!`)
 		assert(is_RootState(updated), `${PREFIX}: updated also has root data structure!`)
-		const final_u_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous.u_state, current.u_state, updated.u_state, debug_id + '.u_state')
-		const final_t_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous.t_state, current.t_state, updated.t_state, debug_id + '.t_state')
+		const final_u_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous.u_state, current.u_state, updated.u_state, debug_id + '/R.u_state', true)
+		const final_t_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous.t_state, current.t_state, updated.t_state, debug_id + '/R.t_state', true)
 		if (final_u_state === previous.u_state && final_t_state === previous.t_state)
 			return previous
 		if (final_u_state === updated.u_state && final_t_state === updated.t_state)

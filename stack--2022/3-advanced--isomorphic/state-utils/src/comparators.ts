@@ -3,6 +3,8 @@ import { Enum } from 'typescript-string-enums'
 import memoize_one from 'memoize-one'
 const jsondiffpatch = require('jsondiffpatch')
 
+import { Immutable, JSONObject } from '@offirmo-private/ts-types'
+
 import {
 	is_RootState,
 } from './type-guards'
@@ -12,18 +14,15 @@ import {
 	get_last_user_activity_timestamp_loose,
 	get_timestamp_loose,
 } from './selectors'
-import { JSONObject } from '@offirmo-private/ts-types'
 
 ////////////////////////////////////
 
-export { dequal as is_deep_equal } from 'dequal'
-
 // tslint:disable-next-line: variable-name
 export const SemanticDifference = Enum(
-	'none',
-	'time', // time of last meaningful activity, not T-State. Important to discriminate forks.
-	'minor',
-	'major',
+	'none', // fully equal
+	'time', // t-state difference but semantically equal
+	'minor', // different revisions and/or last meaningful activity (could also be a fork)
+	'major', // different schema version (could also be a fork, so we may still want to keep and migrate the older schema version)
 )
 export type SemanticDifference = Enum<typeof SemanticDifference> // eslint-disable-line no-redeclare
 
@@ -46,18 +45,19 @@ const _get_advanced_json_differ = memoize_one(() => {
 	const advanced_json_differ = jsondiffpatch.create({
 		// method used to match objects when diffing arrays
 		// by default === operator is used
-		objectHash: (obj: any) => JSON.stringify(obj),
+		objectHash: (obj: any) => JSON.stringify(obj), // TODO use stable stringify?
 	})
 
 	return advanced_json_differ
 })
-
-export function get_json_difference(a: any, b: any): JSONObject {
+export function get_json_difference(a: Immutable<any>, b: Immutable<any>): JSONObject {
 	return _get_advanced_json_differ().diff(a, b)
 }
 
 
 // TODO improve unclear semantics
+// different schema version: we may want to compare investment instead of pure schema version
+// same schema + revision: could still be a fork, take the most recent?
 export function UNCLEAR_get_difference__full(a: any, b?: any): { type: SemanticDifference, direction: number } {
 	//console.log('compare()', { a, b })
 
@@ -72,7 +72,7 @@ export function UNCLEAR_get_difference__full(a: any, b?: any): { type: SemanticD
 	const exists__b = !!b
 	if (exists__a !== exists__b)
 		return {
-			type: SemanticDifference.minor, // by convention
+			type: SemanticDifference.minor, // by convention, exists vs. non-exists (= state creation) is minor
 			direction: (exists__a ? 1 : 0) - (exists__b ? 1 : 0)
 		}
 
@@ -84,6 +84,8 @@ export function UNCLEAR_get_difference__full(a: any, b?: any): { type: SemanticD
 			direction: schema_version__a - schema_version__b
 		}
 
+	// special case: the schema evolved to have a "root state" shape = major
+	// the one having a root state is considered more evolved
 	const is_root__a = is_RootState(a)
 	const is_root__b = is_RootState(b)
 	if (is_root__a !== is_root__b)
@@ -91,18 +93,10 @@ export function UNCLEAR_get_difference__full(a: any, b?: any): { type: SemanticD
 			type: SemanticDifference.major,
 			direction: (is_root__a ? 1 : 0) - (is_root__b ? 1 : 0)
 		}
-	/* TODO is it needed? revision should work on a state
-	if (is_root__a) {
-		const u_state_rev__a = get_revision_loose(a.u_state)
-		const u_state_rev__b = get_revision_loose(b.u_state)
-		if (u_state_rev__a !== u_state_rev__b)
-			return u_state_rev__a - u_state_rev__b
 
-		const t_state_rev__a = get_revision_loose(a.t_state)
-		const t_state_rev__b = get_revision_loose(b.t_state)
-		if (t_state_rev__a !== t_state_rev__b)
-			return t_state_rev__a - t_state_rev__b
-	}*/
+	// we now know that both or neither are root states ✔
+
+	// safety check
 	if (is_root__a && a.ⵙapp_id && b.ⵙapp_id) {
 		assert(a.ⵙapp_id === b.ⵙapp_id, `UNCLEAR_get_difference() states should be in the same universe!`)
 	}
@@ -119,7 +113,7 @@ export function UNCLEAR_get_difference__full(a: any, b?: any): { type: SemanticD
 	const activity_tms__b = get_last_user_activity_timestamp_loose(b)
 	if (activity_tms__a !== activity_tms__b)
 		return {
-			type: SemanticDifference.minor, // fork
+			type: SemanticDifference.minor, // must be a fork since same revision
 			direction: activity_tms__a - activity_tms__b,
 		}
 
@@ -138,7 +132,8 @@ export function UNCLEAR_get_difference__full(a: any, b?: any): { type: SemanticD
 		activity_tms__a,
 		t_tms__a
 	].join(',') === '0,0,0,0') {
-		// compared stuff are not semantic states
+		// everything being equal and 0
+		// means neither compared stuff are semantic states
 		return {
 			type: SemanticDifference.minor, // by convention = minor change on an implied "schema version = 0"
 			direction: t_tms__a - t_tms__b,
@@ -151,6 +146,7 @@ export function UNCLEAR_get_difference__full(a: any, b?: any): { type: SemanticD
 	}
 }
 
+// UNCLEAR see comments above
 export function UNCLEAR_get_difference(a: any, b?: any): SemanticDifference {
 	return UNCLEAR_get_difference__full(a, b).type
 }

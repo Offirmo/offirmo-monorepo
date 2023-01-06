@@ -99,3 +99,12 @@ fire
 https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 https://neal.fun/absurd-trolley-problems/
 “The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.
+https://fsj.fr/2013/09/les-7-degres-lascension-spirituelle/
+https://fr.wikipedia.org/wiki/%C5%92uvres_de_mis%C3%A9ricorde
+7 degres misericorde 1) absence de jugement 2) compassion 3) confiance pardon/resilience 4) absolution 5) http://www.chemindamourverslepere.com/archive/2016/04/08/meditation-les-degres-de-la-misericorde-5785524.html
+http://voiemystique.free.fr/ruysbroeck_sept_degres.htm
+fast reading
+English
+testaments spirituels St Louis St Remy https://www.famillechretienne.fr/39532/article/le-testament-spirituel-de-benoit-xvi-texte-integral
+"The noisy door gets the oil" https://9gag.com/gag/aGEgp07?ref=ios
+Pretty privilege -> karen

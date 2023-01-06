@@ -16,7 +16,7 @@ import { get_schema_version_loose, get_base_loose } from './selectors'
 ////////////////////////////////////////////////////////////////////////////////////
 
 // the overall goal
-export type OverallMigrateToLatest<State> = (
+export type FullMigrateToLatestFn<State> = (
 	SEC: SoftExecutionContext,
 	legacy_state: Immutable<any>,
 	hints?: Immutable<any>,
@@ -30,17 +30,22 @@ const LIBS: Libs = {
 }
 
 
-export type GenericMigration<State = any, OlderState = any> = (
+// Basic interface of a migration fn
+// for ex. able to migrate 1 version, v(n-1) -> v(n)
+export type GenericMigrationFn<State = any, OlderState = any> = (
 	SEC: SoftExecutionContext<any, any, any>,
 	legacy_state: Immutable<OlderState>,
 	hints: Immutable<any>,
 ) => Immutable<State> // must be immutable as well since we may return the input unchanged
 
+
+// Slightly more complex fn able to call a previous migration if the legacy state is not at a desired input level
+// should be able to handle v(0) -> v(n)
 export type MigrationStep<State = any, OlderState = any> = (
 	SEC: SoftExecutionContext<any, any, any>,
 	legacy_state: Immutable<OlderState>,
 	hints: Immutable<any>,
-	previous: GenericMigration<OlderState>,
+	previous: GenericMigrationFn<OlderState>,
 	// for convenience:
 	legacy_schema_version: number,
 	libs: Immutable<Libs>,
@@ -55,7 +60,7 @@ export type CleanupStep<State> = (
 	hints: Immutable<any>,
 ) => Immutable<State>
 
-export type SubStatesMigrations = { [key: string]: GenericMigration }
+export type SubStatesMigrationFns = { [key: string]: GenericMigrationFn }
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -77,7 +82,7 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 	SCHEMA_VERSION: number
 	legacy_state: Immutable<any>
 	hints: Immutable<any>
-	sub_states_migrate_to_latest: SubStatesMigrations
+	sub_states_migrate_to_latest: SubStatesMigrationFns
 	cleanup?: CleanupStep<State>
 	pipeline: Immutable<[
 		LastMigrationStep<State>,
@@ -98,13 +103,15 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 		if (existing_version > SCHEMA_VERSION)
 			throw new Error('Your data is from a more recent version of this lib. Please update!')
 
-		let state = legacy_state as Immutable<State> // for starter, may actually be true
+		let state = legacy_state as Immutable<State> // optimistic initial typecast, may actually be true
 
 		if (existing_version < SCHEMA_VERSION) {
 			logger.info(`attempting to migrate schema of ${LIB} from v${existing_version} to v${SCHEMA_VERSION}…`)
 			RSEC.fireAnalyticsEvent('schema_migration.began')
 
-			function previous(
+			/* recursive wrapper around the migration steps adding traces and try/catch
+			 */
+			function _recursively_migrate_down_the_pipeline(
 				index: number,
 				SEC: SoftExecutionContext,
 				legacy_state: Immutable<any>,
@@ -114,15 +121,14 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 				const current_step_name = index >= pipeline.length
 					? 'not-found'
 					: migrate_step?.name || 'unknown'
+
 				return RSEC.xTry('migration step:' + current_step_name, ({ SEC }) => {
 					if (index >= pipeline.length) {
 						throw new Error(`No known migration for updating a v${get_schema_version_loose(legacy_state)}!`)
 					}
 					assert(typeof migrate_step === 'function', 'migrate step should be a function!')
 
-					const legacy_schema_version = get_schema_version_loose(legacy_state)
-					//_last_SEC = SEC
-					//console.log('_last_SEC now =', SEC.getLogicalStack(), '\n', SEC.getShortLogicalStack())
+					const legacy_schema_version = get_schema_version_loose(legacy_state as any)
 					logger.trace(`[${LIB}] ⭆ invoking migration pipeline step ${pipeline.length-index}/${pipeline.length} "${current_step_name}"…`,
 						_get_state_summary(legacy_state)
 					)
@@ -130,7 +136,7 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 						SEC,
 						legacy_state,
 						hints,
-						previous.bind(null, index + 1),
+						_recursively_migrate_down_the_pipeline.bind(null, index + 1),
 						legacy_schema_version,
 						LIBS,
 					)
@@ -138,14 +144,13 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 					logger.trace(`[${LIB}] ⭅ returned from migration pipeline step ${pipeline.length-index}/${pipeline.length} "${current_step_name}".`,
 						_get_state_summary(state)
 					)
-					//_check_response(SEC, index, 'out')
 					return state
 				})
 			}
 
-			// launch the chain
+			// launch the migration chain
 			try {
-				state = previous(0, RSEC, state, hints)
+				state = _recursively_migrate_down_the_pipeline(0, RSEC, state, hints) as Immutable<State>
 			}
 			catch (err) {
 				logger.error(`failed to migrate schema of ${LIB} from v${existing_version} to v${SCHEMA_VERSION}!`)
@@ -184,7 +189,7 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 function _migrate_sub_states__bundle(
 	SEC: SoftExecutionContext,
 	state: Immutable<UTBundle<AnyBaseUState, AnyBaseTState>>,
-	sub_states_migrate_to_latest: SubStatesMigrations,
+	sub_states_migrate_to_latest: SubStatesMigrationFns,
 	hints: Immutable<any>,
 ): Immutable<UTBundle<AnyBaseUState, AnyBaseTState>> {
 	let has_change = false
@@ -303,7 +308,7 @@ function _migrate_sub_states__bundle(
 function _migrate_sub_states__root<State extends BaseRootState = AnyRootState>(
 	SEC: SoftExecutionContext,
 	state: Immutable<State>,
-	sub_states_migrate_to_latest: SubStatesMigrations,
+	sub_states_migrate_to_latest: SubStatesMigrationFns,
 	hints: Immutable<any>,
 ): Immutable<State> {
 	const { u_state: previous_u_state, t_state: previous_t_state } = state as AnyRootState
@@ -329,7 +334,7 @@ function _migrate_sub_states__root<State extends BaseRootState = AnyRootState>(
 function _migrate_sub_states__base<State extends BaseState>(
 	SEC: SoftExecutionContext,
 	state: Immutable<State>,
-	sub_states_migrate_to_latest: SubStatesMigrations,
+	sub_states_migrate_to_latest: SubStatesMigrationFns,
 	hints: Immutable<any>,
 ): Immutable<State> {
 	//let has_change = false
