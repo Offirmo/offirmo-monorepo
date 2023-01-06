@@ -57,6 +57,7 @@ function demo(toolbox_path, underlying_pkgs, demo_fn) {
 let sequence = Promise.resolve()
 
 ////////////////////////////////////
+/* removing meow as I only use it in internal build tools and don't want a circular dep
 sequence = sequence.then(() => demo(
 	'framework/meow',
 	'meow',
@@ -74,7 +75,7 @@ sequence = sequence.then(() => demo(
 
 		console.log('building…', { flags: cli.flags })
 	}
-))
+))*/
 ////////////////////////////////////
 /*sequence = sequence.then(() => demo(
 	'framework/vorpal',
@@ -88,7 +89,7 @@ sequence = sequence.then(() => demo(
 	'fs/json',
 	[ 'load-json-file', 'write-json-file' ],
 	() => {
-		const json = require('@offirmo/cli-toolbox/fs/json')
+		const json = require('@offirmo/cli-toolbox/fs/extra/json')
 
 		const filepath = path.join(__dirname, '..', 'package.json')
 

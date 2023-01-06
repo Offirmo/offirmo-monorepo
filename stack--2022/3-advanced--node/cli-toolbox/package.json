@@ -9,7 +9,7 @@
 	"sideEffects": false,
 
 	"dependencies": {
-		"ansi-escapes": "^5",
+		"ansi-escapes": "^4",
 		"boxen": "^6",
 		"chalk": "^4",
 		"cli-columns": "^4",
@@ -17,7 +17,6 @@
 		"fs-extra": "^11",
 		"load-json-file": "^7",
 		"log-symbols": "^5",
-		"meow": "^10",
 		"write-json-file": "^5"
 	},
 

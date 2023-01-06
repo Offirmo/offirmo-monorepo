@@ -43,8 +43,8 @@ bolt --only-fs "4-tools/*" ws run build
 bolt --only-fs "4-tools/*" ws run test
 bolt --only-fs "5-incubator/**/*" ws run build
 bolt --only-fs "5-incubator/**/*" ws run test
-bolt --only-fs "9-oh-my-rpg/**/*" ws run build
-bolt --only-fs "9-oh-my-rpg/**/*" ws run test
+bolt --only-fs "9-rpg/**/*" ws run build
+bolt --only-fs "9-rpg/**/*" ws run test
 bolt --only-fs "A-apps--core/the-boring-rpg/**/*" ws run build
 bolt --only-fs "A-apps--core/the-boring-rpg/**/*" ws run test
 bolt --only-fs "B-apps--support/online-adventur.es/**/*" ws run build

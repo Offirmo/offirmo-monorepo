@@ -4,9 +4,11 @@ import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import * as fs from 'node:fs'
 
-import { writeJsonFile as write_json_file } from 'write-json-file' // TODO remove dep
+import { writeJsonFile as write_json_file } from 'write-json-file' // full pkg is too useful, ex. preserve indent
+import { lsDirsSync } from '../../../3-advanced--node/cli-toolbox/fs/extra/ls/index.mjs'
 
 // extracted from https://github.com/sindresorhus/load-json-file/blob/main/index.js
+// in order to have as few external deps as possible
 function load_json_file(filePath) {
 	const buffer = fs.readFileSync(filePath)
 	// Unlike `buffer.toString()` and `fs.readFile(path, 'utf8')`, `TextDecoder`` will remove BOM.
@@ -14,10 +16,7 @@ function load_json_file(filePath) {
 	return JSON.parse(data)
 }
 
-import { lsDirsSync } from '../../../3-advanced--node/cli-toolbox/fs/extra/ls/index.mjs'
-
 /////////////////////
-
 console.log(`🛠  🔻 tweaking the monorepo…`)
 
 

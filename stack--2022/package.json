@@ -87,7 +87,7 @@
 		"@types/prettyjson": "^0",
 		"@types/sinon": "^10",
 		"@types/sinon-chai": "^3",
-		"ansi-escapes": "^5",
+		"ansi-escapes": "^4",
 		"bowser": "^2",
 		"boxen": "^6",
 		"chai": "^4",
