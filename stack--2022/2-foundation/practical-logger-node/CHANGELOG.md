@@ -11,6 +11,7 @@
 * [chore] bumped dependencies (minor)
 * [doc] marked as maintained in 2021! Happy new year!
 * [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
+* [fix] fixed a dev dep incorrectly listed in prod
 * ...
 
 ## v0.3.0
