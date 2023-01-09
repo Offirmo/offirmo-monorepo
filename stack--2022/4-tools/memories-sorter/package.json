@@ -18,27 +18,27 @@
 		"@offirmo/universal-debug-api-node": "^0",
 		"async": "^3",
 		"cli-progress": "^3",
-		"exiftool-vendored": "^16",
-		"fs-extra": "^10",
+		"exiftool-vendored": "^18",
+		"fs-extra": "^11",
 		"hasha": "^5",
 		"json-stable-stringify": "^1",
 		"lodash": "^4",
-		"luxon": "^2",
+		"luxon": "^3",
 		"memoize-one": "^6",
 		"micro-memoize": "^4",
 		"tslib": "^2",
 		"typescript-string-enums": "^1",
-		"utimes": "^4"
+		"utimes": "^5"
 	},
 
 	"scripts": {
-		"clean": "node ../../0-scripts/clean.js …dist",
+		"clean": "monorepo-script--clean-package …dist",
 
-		"_build:dev:watch": "node ../../0-scripts/build-typescript.js --watch",
-		"_build:prod": "node ../../0-scripts/build-typescript.js",
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"_build:prod": "monorepo-script--build-typescript-package",
 
 		"dev": "run-s clean _build:dev:watch",
-		"xtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2019.cjs/**/*spec.js'",
+		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2022.cjs/**/*spec.js'",
 
 		"test0": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2019.cjs/services/*spec.js'",
 		"test1": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2019.cjs/state/file/*spec.js'",
@@ -51,6 +51,7 @@
 		"start": "node dist/src.es2019.cjs/index.js"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "^0",
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4"

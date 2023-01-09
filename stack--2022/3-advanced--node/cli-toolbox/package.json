@@ -10,7 +10,7 @@
 
 	"dependencies": {
 		"ansi-escapes": "^4",
-		"boxen": "^6",
+		"boxen": "^7",
 		"chalk": "^4",
 		"cli-columns": "^4",
 		"columnify": "^1",
