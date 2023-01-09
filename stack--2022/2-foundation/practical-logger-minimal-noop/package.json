@@ -44,7 +44,6 @@
 
 		"dev": "run-s clean _build:dev:watch",
 		"build": "run-s  clean _build:prod",
-		"cheatsheet": "node doc/cheatsheet.js",
 		"demo": "node doc/demo.js",
 
 		"prepublishOnly": "run-s clean build test ensure-size"

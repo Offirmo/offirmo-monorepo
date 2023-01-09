@@ -1,7 +1,7 @@
-const stylizeString = require('@offirmo/cli-toolbox/string/stylize')
-const boxify = require('@offirmo/cli-toolbox/string/boxify')
+import stylizeString from '@offirmo/cli-toolbox/string/stylize.mjs'
+import boxify from '@offirmo/cli-toolbox/string/boxify.mjs'
 
-const PKG_JSON = require('../package.json')
+import PKG_JSON from '../package.json' assert { type: 'json' }
 
 const {
 	get_UTC_timestamp_ms,
@@ -9,7 +9,8 @@ const {
 	get_human_readable_UTC_timestamp_seconds,
 	get_human_readable_UTC_timestamp_minutes,
 	get_human_readable_UTC_timestamp_days,
-} = require('..')
+} = await import('../' + PKG_JSON.main)
+
 
 console.log(boxify(`
 import {  } from '${stylizeString.bold(PKG_JSON.name)}'

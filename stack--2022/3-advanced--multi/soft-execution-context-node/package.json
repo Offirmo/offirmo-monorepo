@@ -19,7 +19,7 @@
 	},
 
 	"scripts": {
-		"cheatsheet": "node doc/cheatsheet.js",
+		"cheatsheet": "node doc/cheatsheet.mjs",
 		"demo": "./doc/demo/demo.js"
 	},
 	"devDependencies": {

@@ -57,7 +57,6 @@
 
 		"dev": "run-s clean _build:dev:watch",
 		"build": "run-p _build:prod",
-		"cheatsheet": "node doc/cheatsheet.js",
 		"demo:node": "./doc/demo.ts",
 		"demo": "parcel --out-dir .parcel --no-autoinstall doc/demo-web/index.html",
 

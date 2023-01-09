@@ -252,7 +252,7 @@ sequence = sequence.then(() => demo(
 	'string/boxify',
 	'boxen',
 	() => {
-		const boxify = require('@offirmo/cli-toolbox/string/boxify')
+		import boxify from '@offirmo/cli-toolbox/string/boxify.mjs'
 
 		console.log(boxify('Hello'))
 	}

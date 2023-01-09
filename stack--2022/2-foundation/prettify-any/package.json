@@ -35,8 +35,7 @@
 
 		"dev": "run-s clean _build:dev:watch",
 		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2022.cjs/**/*spec.js'",
-		"build": "run-s  clean _build:prod",
-		"cheatsheet": "node doc/cheatsheet.js"
+		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

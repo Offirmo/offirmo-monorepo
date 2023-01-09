@@ -133,7 +133,7 @@ Based on:
 * boxen v4.2.0
   * Create boxes in the terminal
 ```js
-const boxify = require('@offirmo/cli-toolbox/string/boxify')
+import boxify from '@offirmo/cli-toolbox/string/boxify.mjs'
 
 console.log(boxify('Hello'))
 ```
