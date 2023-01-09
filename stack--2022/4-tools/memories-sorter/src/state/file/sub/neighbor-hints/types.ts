@@ -12,7 +12,7 @@ export type FsReliability = 'reliable' | 'unreliable' | 'unknown'
  */
 export interface NeighborHints {
 	// if present (for unit tests), this prop will override any estimation of FS reliability
-	_unit_test_shortcut?: FsReliability
+	_unit_test_shortcut?: FsReliability | undefined
 
 	tz: undefined | TimeZone // folder tz aggregated from all children
 	bcdⵧfrom_fs__reliabilityⵧassessed_from_phase1: FsReliability

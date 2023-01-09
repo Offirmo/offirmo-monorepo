@@ -14,6 +14,6 @@ const get_lib_SEC = memoize_once(function _get_lib_SEC(parent?: SoftExecutionCon
 })
 
 export {
-	SoftExecutionContext,
+	type SoftExecutionContext,
 	get_lib_SEC,
 }

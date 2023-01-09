@@ -54,6 +54,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "^0",
 		"@offirmo/unit-test-toolbox": "^8",
+		"@types/async": "^3",
 		"npm-run-all": "^4"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/4-tools/memories-sorter"

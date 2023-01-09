@@ -20,7 +20,7 @@ import { State } from './types'
 import { get_historical_fs_reliability } from '../file/sub/neighbor-hints'
 import { get_lib_SEC } from '../../services/sec'
 
-export { State } from './types'
+export { type State } from './types'
 import { migrate_to_latest as _migrate_to_latest } from './migrations'
 import { get_file_basename_extension‿normalized } from '../../services/name_parser'
 import { get_params, Params } from '../../params'

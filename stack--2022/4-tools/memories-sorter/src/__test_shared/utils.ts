@@ -256,7 +256,7 @@ export function get_test_single_file_DB_state_generator() {
 		let state = DB.create('root')
 
 		function _get_file_state(): Immutable<FileLib.State> {
-			return state.files[file_id]
+			return state.files[file_id]!
 		}
 
 		state = DB.on_folder_found(state, '', '.')

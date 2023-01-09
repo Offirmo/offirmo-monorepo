@@ -17,7 +17,7 @@ export function create(): NeighborHints {
 
 export function _createⵧfor_ut(params: {
 	reliability_shortcut?: FsReliability,
-	junk_bcd? : BetterDate,
+	junk_bcd?: BetterDate | undefined,
 } = {}): NeighborHints {
 	let state = create() // so far
 	state._unit_test_shortcut = params.reliability_shortcut
