@@ -6,8 +6,9 @@ Too bad we can't add comments to the file ;)
 
 This is a base config meant to be *extended* (through https://www.typescriptlang.org/tsconfig#extends)
 
-Last update: [https://devblogs.microsoft.com/typescript/](update marker) 2022/03/21
+REMINDER: the build script relax a few rules in dev mode (--watch), see `build-typescript.mjs`
 
+Last update: [https://devblogs.microsoft.com/typescript/](update marker) 2022/03/21
 
 ### References
 

@@ -1,4 +1,4 @@
-import { XError, XXError } from './types'
+import { XError, XXError } from './types.js'
 
 // order is important!
 // it may be used for display by other libs

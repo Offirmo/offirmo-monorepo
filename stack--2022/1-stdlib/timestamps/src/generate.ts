@@ -10,7 +10,7 @@ import {
 	HumanReadableTimestampUTCMinutes,
 	HumanReadableTimestampUTCSeconds,
 	HumanReadableTimestampUTCMs,
-} from './types'
+} from './types.js'
 
 // ex. 1542780045627
 export function get_UTC_timestamp_ms(now: Readonly<Date> = new Date()): TimestampUTCMs {

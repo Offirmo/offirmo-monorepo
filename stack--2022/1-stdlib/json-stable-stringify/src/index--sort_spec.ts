@@ -2,6 +2,7 @@ import { expect } from 'chai'
 
 import stable_stringify from './index.js'
 
+
 describe('json-stable-stringify', function() {
 
 	// test that we perform exactly as JSON.stringify for already sorted data

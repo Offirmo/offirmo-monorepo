@@ -21,6 +21,10 @@ const cli = meow('build', {
 			type: 'boolean',
 			default: false,
 		},
+		module: {
+			type: 'string',
+			default: 'esm', // also allowed: cjs
+		},
 	},
 })
 
@@ -96,10 +100,10 @@ if (cli.flags.watch) {
 
 /////////////////////
 
-function build_convenience_prebuilt() {
+function build_cjs() {
 	const target = LATEST_ES_OLDEST_ACTIVE_NODE_LTS.toLowerCase()
 	const out_dir = `src.${target}.cjs`
-	console.log(`      building ${PKG_NAME}/dist/${stylize_string.bold(out_dir)}`/*, ROOT_TSCONFIG_JSON, LOCAL_TSCONFIG_JSON*/)
+	console.log(`      building CJS into ${PKG_NAME}/dist/${stylize_string.bold(out_dir)}`/*, ROOT_TSCONFIG_JSON, LOCAL_TSCONFIG_JSON*/)
 	return tsc.compile(
 		{
 			...compilerOptions,
@@ -122,10 +126,10 @@ function build_convenience_prebuilt() {
 	)
 }
 
-function build_latest_es() {
+function build_esm() {
 	const target = ROOT_TSCONFIG_JSON.compilerOptions.target.toLowerCase()
-	const out_dir = `src.${target}`
-	console.log(`      building ${PKG_NAME}/dist/${stylize_string.bold(out_dir)}`)
+	const out_dir = `src.${target}.esm` //
+	console.log(`      building ESM into ${PKG_NAME}/dist/${stylize_string.bold(out_dir)}`)
 	return tsc.compile(
 		{
 			...compilerOptions,
@@ -149,12 +153,27 @@ function build_latest_es() {
 // (update marker) as of 2022/05 the ecosystem (typescript) is not ready for pure ESM
 Promise.resolve()
 	.then(() => {
-		return build_convenience_prebuilt()
+		if (cli.flags.watch) {
+			// watch = single mode
+			switch(cli.flags.module) {
+				case 'esm':
+					return build_esm()
+				case 'cjs':
+					return build_cjs()
+				default:
+					throw new Error(`Unknown param --module="${cli.flags.module}"!`)
+			}
+		}
 	})
 	.then(() => {
-		if (cli.flags.watch) return
+		if (cli.flags.watch && cli.flags.module === 'esm') return
 
-		return build_latest_es()
+		return build_esm()
+	})
+	.then(() => {
+		if (cli.flags.watch && cli.flags.module === 'cjs') return
+
+		return build_cjs()
 	})
 	.then(() => console.log(`🛠  🔺 building ${stylize_string.bold(PKG_NAME)} done ✔`))
 	/*.catch(err => {

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import tiny_singleton from '.'
+import tiny_singleton from './index.js'
 
 
 describe('tiny-singleton', function () {

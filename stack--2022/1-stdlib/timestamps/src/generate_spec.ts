@@ -8,9 +8,10 @@ import {
 	get_human_readable_UTC_timestamp_minutes,
 	get_human_readable_UTC_timestamp_days,
 	TEST_TIMESTAMP_MS,
-} from '.'
+} from './index.js'
 
 declare const console: any
+
 
 describe('@offirmo-private/timestamps', function() {
 
