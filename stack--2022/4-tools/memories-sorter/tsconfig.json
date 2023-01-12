@@ -2,10 +2,12 @@
 	"extends": "../../0-meta/tsconfig.json",
 	"compilerOptions": {
 		"declaration": false,
+		"declarationMap": false,
 		"allowJs": true,
 
 		"noUncheckedIndexedAccess": false,
-		"noPropertyAccessFromIndexSignature": false
+		"noPropertyAccessFromIndexSignature": false,
+		"exactOptionalPropertyTypes": false
 	},
 	"include": [
 		"../../0-typings-custom/**/*.ts",

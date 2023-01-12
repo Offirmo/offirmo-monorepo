@@ -2,7 +2,7 @@
 
 const path = require('path')
 
-const fs = require('@offirmo/cli-toolbox/fs/extra')
+const fs = require('@offirmo/cli-toolbox/fs/extra/index.cjs')
 const { expect } = require('chai')
 const sinon = require('sinon')
 const { cloneDeep } = require('lodash')
