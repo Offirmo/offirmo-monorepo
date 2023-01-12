@@ -119,6 +119,7 @@
 		"jsondiffpatch": "^0.4",
 		"load-json-file": "^7",
 		"lodash": "^4",
+		"lodash-es": "^4",
 		"log-symbols": "^5",
 		"loud-rejection": "^2",
 		"luxon": "^3",

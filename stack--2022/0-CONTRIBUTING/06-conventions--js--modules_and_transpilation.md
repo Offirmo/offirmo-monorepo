@@ -190,11 +190,11 @@ since node 10 in maintenance mode since 2020-05-19 https://nodejs.org/en/about/r
 		".": {
          XXX those fields must start with ./
            XXX other fields must NOT (ex. https://github.com/vuejs/vue/blob/v2.2.2/package.json#L6)
-			"import": "./dist/src.es2022/index.js",
+			"import": "./dist/src.es2022.esm/index.js",
 			"require": "./dist/src.es2022.cjs/index.js"
 		}
 	},
-	"module": "dist/src.es2022/index.js", XXX eventually, this is the most supported field https://stackoverflow.com/questions/42708484/what-is-the-module-package-json-field-for
+	"module": "dist/src.es2022.esm/index.js", XXX eventually, this is the most supported field https://stackoverflow.com/questions/42708484/what-is-the-module-package-json-field-for
 	"main": "dist/src.es2022.cjs/index.js",  oldest, used for cjs XXX needed for typescript as of 4.5
 	"typings": "dist/src.es2022.cjs/index.d.ts", XXX idem, needed for typescript 4.5
 	"source": "src/index.ts",
@@ -202,7 +202,7 @@ since node 10 in maintenance mode since 2020-05-19 https://nodejs.org/en/about/r
 	"size-limit": [
 		{
 			"limit": "250b",
-			"path": "dist/src.es2022/index.js"
+			"path": "dist/src.es2022.esm/index.js"
 		},
 		{
 			"limit": "250b",
