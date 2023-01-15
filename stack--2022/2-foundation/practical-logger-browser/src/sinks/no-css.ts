@@ -3,8 +3,8 @@ import {
 	LogSink,
 } from '@offirmo/practical-logger-types'
 
-import { SinkOptions } from '../types'
-import { LEVEL_TO_CONSOLE_METHOD, to_uniform_level } from './common'
+import { SinkOptions } from '../types.js'
+import { LEVEL_TO_CONSOLE_METHOD, to_uniform_level } from './common.js'
 
 
 export default function create(options: Readonly<SinkOptions> = {}): LogSink {

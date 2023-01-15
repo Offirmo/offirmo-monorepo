@@ -1,7 +1,8 @@
-const { TextEncoder } = require('util')
+import { TextEncoder } from 'node:util'
 import { expect } from 'chai'
 
-import create from '.'
+import create from './index.js'
+
 
 describe('@offirmo-private/murmurhash', function() {
 

@@ -5,7 +5,7 @@ const LIB = '@offirmo/practical-logger-minimal-noop'
 
 import {
 	createLogger,
-} from '.'
+} from './index.js'
 
 
 describe(`${LIB} - index`, () => {

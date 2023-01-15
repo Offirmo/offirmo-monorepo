@@ -5,7 +5,7 @@ import {
 	LOG_LEVEL_TO_INTEGER,
 	ALL_LOG_LEVELS,
 	LOG_LEVEL_TO_HUMAN,
-} from './consts'
+} from './consts.js'
 
 
 describe(`${LIB} - consts`, () => {

@@ -3,11 +3,11 @@ import {
 	PrettifyOptions,
 	StylizeOptions,
 	State,
-} from './types'
+} from './types.js'
 import {
 	is_negative_zero,
 	cmp,
-} from './utils'
+} from './utils.js'
 
 ////////////////////////////////////////////////////////////////////////////////////
 

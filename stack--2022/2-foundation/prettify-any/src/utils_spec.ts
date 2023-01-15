@@ -1,12 +1,12 @@
-const chalk = require('chalk')
-import { inject_lib__chalk } from './injectable-lib--chalk'
+import chalk from 'chalk'
+import { inject_lib__chalk } from './injectable-lib--chalk.js'
 inject_lib__chalk(chalk as any)
 import { expect } from 'chai'
 
 
 import {
 	cmp,
-} from './utils'
+} from './utils.js'
 
 
 describe('@offirmo-private/prettify-any - utils', function() {

@@ -2,9 +2,9 @@ import tiny_singleton from '@offirmo/tiny-singleton'
 import { LogSink, Logger, LoggerCreationParams } from '@offirmo/practical-logger-types'
 import { createLogger as createLoggerCore } from '@offirmo/practical-logger-core'
 
-import { SinkOptions } from './types'
-import { create } from './sinks'
-import improve_console_groups from './better-console-groups/practical-logger'
+import { SinkOptions } from './types.js'
+import { create } from './sinks/index.js'
+import improve_console_groups from './better-console-groups/practical-logger.js'
 
 const ORIGINAL_CONSOLE = console
 

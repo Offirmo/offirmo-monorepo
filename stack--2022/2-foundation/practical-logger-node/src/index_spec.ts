@@ -3,11 +3,11 @@ import { ALL_LOG_LEVELS } from '@offirmo/practical-logger-core'
 
 import {
 	LIB
-} from './consts'
+} from './consts.js'
 
 import {
 	createLogger,
-} from '.'
+} from './index.js'
 
 
 describe(`${LIB} - index`, () => {

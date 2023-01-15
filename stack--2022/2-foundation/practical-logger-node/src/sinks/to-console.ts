@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const chalk = require('chalk')
+import chalk from 'chalk'
 
 import { inject_lib__chalk, prettify_any } from '@offirmo-private/prettify-any'
 import { displayError } from '@offirmo-private/print-error-to-ansi'
@@ -11,12 +11,13 @@ import {
 	LogSink,
 } from '@offirmo/practical-logger-types'
 
-import { SinkOptions } from '../types'
+import { SinkOptions } from '../types.js'
 
 import {
 	LEVEL_TO_ASCII,
 	LEVEL_TO_STYLIZE,
-} from './common'
+} from './common.js'
+
 
 export function createSink(options: Readonly<SinkOptions> = {}): LogSink {
 	const displayTime = options.displayTime || false

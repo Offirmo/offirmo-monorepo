@@ -1,12 +1,12 @@
-const chalk = require('chalk')
+import chalk from 'chalk'
 import { render as prettify_json } from 'prettyjson'
 
-import { inject_lib__chalk } from './injectable-lib--chalk'
+import { inject_lib__chalk } from './injectable-lib--chalk.js'
 inject_lib__chalk(chalk as any)
 
 import {
 	prettify_any as _prettify_any,
-} from './v2'
+} from './v2.js'
 
 
 
@@ -322,8 +322,8 @@ describe('@offirmo-private/prettify-any', function() {
 				console.log('☐ prettify_any(…):', prettify_any(deep_mixed))
 			})
 
-			it('should be able to handle deep objects - fetch', () => {
-				const fetch_ponyfill = require('fetch-ponyfill')
+			it('should be able to handle deep objects - fetch', async () => {
+				const fetch_ponyfill = (await import('fetch-ponyfill')).default
 				const { fetch } = fetch_ponyfill()
 				const ↆf = fetch('https://www.google.com')
 

@@ -4,10 +4,10 @@ import * as icepick from 'icepick'
 
 import {
 	COMMON_ERROR_FIELDS_EXTENDED,
-} from './fields'
+} from './fields.js'
 
-import { XXError } from './types'
-import { normalizeError } from './util--normalize'
+import { XXError } from './types.js'
+import { normalizeError } from './util--normalize.js'
 
 
 describe(`@offirmo/error-utils`, () => {

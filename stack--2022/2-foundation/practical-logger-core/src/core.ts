@@ -15,9 +15,10 @@ import {
 	LOG_LEVEL_TO_INTEGER,
 	DEFAULT_LOG_LEVEL,
 	DEFAULT_LOGGER_KEY,
-} from './consts'
+} from './consts.js'
 
-import { normalizeArguments } from './normalize-args'
+import { normalizeArguments } from './normalize-args.js'
+
 
 export function checkLevel(level: any): asserts level is LogLevel {
 	if (!ALL_LOG_LEVELS.includes(level))

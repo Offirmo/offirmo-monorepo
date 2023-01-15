@@ -2,9 +2,9 @@ import { expect } from 'chai'
 
 import { ALL_LOG_LEVELS } from '@offirmo/practical-logger-core'
 
-import { LIB } from '../../consts'
+import { LIB } from '../../consts.js'
 
-import { LEVEL_TO_COLOR_STYLE } from './common'
+import { LEVEL_TO_COLOR_STYLE } from './common.js'
 
 
 describe(`${LIB} / sinks / advanced - common`, () => {

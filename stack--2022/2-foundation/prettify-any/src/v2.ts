@@ -3,8 +3,8 @@ import { Immutable } from '@offirmo-private/ts-types'
 import {
 	Options,
 	State,
-} from './types'
-import { get_options } from './options'
+} from './types.js'
+import { get_options } from './options.js'
 
 ////////////////////////////////////
 

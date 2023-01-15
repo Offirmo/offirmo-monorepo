@@ -1,18 +1,18 @@
 
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { Options } from './types'
+import { Options } from './types.js'
 import {
 	DEFAULTS_PRETTIFY_OPTIONS,
 	DEFAULTS_STYLE_OPTIONS,
 	DEFAULTS_STYLIZE_OPTIONS__NONE,
-} from './options--compatible'
+} from './options--compatible.js'
 import {
 	get_stylize_options_ansi
-} from './options--ansi'
+} from './options--ansi.js'
 import {
 	get_lib__chalk,
-} from './injectable-lib--chalk'
+} from './injectable-lib--chalk.js'
 
 
 

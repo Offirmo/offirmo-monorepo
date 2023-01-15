@@ -1,6 +1,6 @@
 import {
 	StylizeOptions,
-} from './types'
+} from './types.js'
 
 
 export function get_stylize_options_ansi(chalk: any): StylizeOptions {

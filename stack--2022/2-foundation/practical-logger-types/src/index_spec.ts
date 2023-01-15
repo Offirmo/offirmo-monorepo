@@ -1,6 +1,7 @@
 import { expect } from 'chai'
 
-import * as lib from '.'
+import * as lib from './index.js'
+
 
 describe('@offirmo/practical-logger-types', function () {
 

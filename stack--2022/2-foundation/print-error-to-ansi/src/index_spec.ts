@@ -3,7 +3,7 @@
 import {
 	displayError,
 	error_to_string,
-} from '.'
+} from './index.js'
 
 import { createError } from '@offirmo/error-utils'
 

@@ -1,5 +1,5 @@
-import { XXError } from './types'
-import { COMMON_ERROR_FIELDS_EXTENDED } from './fields'
+import { XXError } from './types.js'
+import { COMMON_ERROR_FIELDS_EXTENDED } from './fields.js'
 
 const DEBUG = false
 const WARN = true

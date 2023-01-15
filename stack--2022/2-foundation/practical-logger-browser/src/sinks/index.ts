@@ -1,10 +1,10 @@
 import { LogSink } from '@offirmo/practical-logger-types'
 
-import { Browser, SinkOptions } from '../types'
-import sink_firefox from './advanced/firefox'
-import sink_chromium from './advanced/chromium'
-import sink_safari from './advanced/safari'
-import create_sink_no_css from './no-css'
+import { Browser, SinkOptions } from '../types.js'
+import sink_firefox from './advanced/firefox.js'
+import sink_chromium from './advanced/chromium.js'
+import sink_safari from './advanced/safari.js'
+import create_sink_no_css from './no-css.js'
 
 // TODO export that?
 function quick_detect_browser(): Browser {

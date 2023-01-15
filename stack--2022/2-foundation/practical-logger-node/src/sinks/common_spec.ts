@@ -2,9 +2,9 @@ import { expect } from 'chai'
 
 import { ALL_LOG_LEVELS } from '@offirmo/practical-logger-core'
 
-import { LIB } from '../consts'
+import { LIB } from '../consts.js'
 
-import { LEVEL_TO_ASCII, LEVEL_TO_STYLIZE } from './common'
+import { LEVEL_TO_ASCII, LEVEL_TO_STYLIZE } from './common.js'
 
 
 describe(`${LIB} / sinks - common`, () => {

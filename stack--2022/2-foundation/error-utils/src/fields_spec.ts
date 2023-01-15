@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import {
 	QUASI_STANDARD_ERROR_FIELDS,
 	COMMON_ERROR_FIELDS,
-} from './fields'
+} from './fields.js'
 
 describe(`@offirmo/error-utils`, () => {
 

@@ -1,6 +1,7 @@
 // https://cimi.io/murmurhash3js-revisited/
-import * as MurmurHash3 from 'murmurhash3js-revisited'
+import MurmurHash3 from 'murmurhash3js-revisited'
 import stable_stringify from '@offirmo-private/json-stable-stringify'
+
 
 type TextEncoderConstructor = any
 let tec: TextEncoderConstructor | undefined = undefined

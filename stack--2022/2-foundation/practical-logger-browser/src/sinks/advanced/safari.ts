@@ -6,14 +6,15 @@ import {
 import {
 	LEVEL_TO_CONSOLE_METHOD,
 	to_uniform_level,
-} from '../common'
+} from '../common.js'
 import {
 	FONT_FAMILY_BETTER_PROPORTIONAL,
 	FONT_FAMILY_BETTER_MONOSPACE,
 	LEVEL_TO_COLOR_STYLE,
 	add_styled_string,
 	build_args,
-} from './common'
+} from './common.js'
+
 
 function has_details_indicator(console_method_name: string, details: any): boolean {
 	return details || console_method_name === 'error'

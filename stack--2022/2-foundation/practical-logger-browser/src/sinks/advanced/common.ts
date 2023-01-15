@@ -2,6 +2,7 @@ import {
 	LogPayload,
 } from '@offirmo/practical-logger-types'
 
+
 const FONT_FAMILY_BETTER_PROPORTIONAL = 'font-family: ' + [
 	'-apple-system',
 	'BlinkMacSystemFont', // good sans-serif available in blink = Chrome

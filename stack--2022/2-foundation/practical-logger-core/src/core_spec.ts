@@ -2,12 +2,12 @@ import { expect } from 'chai'
 
 import {
 	LIB,
-} from './consts'
+} from './consts.js'
 
 import {
 	create,
 	checkLevel,
-} from './core'
+} from './core.js'
 
 
 describe(`${LIB} - core`, () => {

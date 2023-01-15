@@ -1,9 +1,10 @@
 import { expect } from 'chai'
 import { LogDetails } from '@offirmo/practical-logger-types'
-
-import { LIB } from './consts'
-import { normalizeArguments } from './normalize-args'
 import { XXError } from '@offirmo/error-utils'
+
+import { LIB } from './consts.js'
+import { normalizeArguments } from './normalize-args.js'
+
 
 describe(`${LIB} - normalize args`, () => {
 	function getNormalizedMessage(...args: any[]): string {
