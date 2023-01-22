@@ -1,6 +1,7 @@
 import {
 	CheckedNode,
-} from '../types'
+} from '../types.js'
+
 
 function is_list($node: CheckedNode): boolean {
 	return ($node.$type === 'ul' || $node.$type === 'ol')

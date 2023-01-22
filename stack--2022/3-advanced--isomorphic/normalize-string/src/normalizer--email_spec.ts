@@ -2,7 +2,7 @@
 
 import {expect} from 'chai'
 
-import { NORMALIZERS } from '.'
+import { NORMALIZERS } from './normalizers.js'
 
 ////////////////////////////////////
 

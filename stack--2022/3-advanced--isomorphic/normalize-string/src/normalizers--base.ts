@@ -1,5 +1,5 @@
-import { StringNormalizer } from './types'
-import { combine_normalizers, default_to } from './normalize'
+import { StringNormalizer } from './types.js'
+import { combine_normalizers, default_to } from './normalize.js'
 
 /////////////////////
 

@@ -6,13 +6,14 @@
 	"private": true,
 
 	"sideEffects": false,
+	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2022/index.js",
+			"import": "./dist/src.es2022.esm/index.js",
 			"require": "./dist/src.es2022.cjs/index.js"
 		}
 	},
-	"module": "dist/src.es2022/index.js",
+	"module": "dist/src.es2022.esm/index.js",
 	"main": "dist/src.es2022.cjs/index.js",
 	"typings": "dist/src.es2022.cjs/index.d.ts",
 	"source": "src/index.ts",
@@ -27,7 +28,7 @@
 		"_build:prod": "monorepo-script--build-typescript-package",
 
 		"dev": "run-s clean _build:dev:watch",
-		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2022.cjs/**/*spec.js'",
+		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2022.esm/**/*spec.js'",
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {

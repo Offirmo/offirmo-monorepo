@@ -1,11 +1,12 @@
-import { LIB, SCHEMA_VERSION } from '../consts'
+import { LIB, SCHEMA_VERSION } from '../consts.js'
 
 import {
 	NodeType,
 	CheckedNode,
 	Node,
 	Document,
-} from '../types'
+} from '../types.js'
+
 
 interface CommonOptions {
 	id?: string

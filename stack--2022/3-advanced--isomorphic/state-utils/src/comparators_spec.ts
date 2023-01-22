@@ -1,13 +1,13 @@
 import { expect } from 'chai'
 import { Enum } from 'typescript-string-enums'
 
-import { LIB } from './consts'
+import { LIB } from './consts.js'
 
 import {
 	DEMO_BASE_STATE,
 	DEMO_TSTATE,
 	DEMO_ROOT_STATE,
-} from './_test_helpers'
+} from './_test_helpers.js'
 
 import {
 	get_json_difference,
@@ -15,13 +15,13 @@ import {
 	s_max,
 	UNCLEAR_get_difference,
 	UNCLEAR_compare,
-} from './comparators'
+} from './comparators.js'
 import {
 	BaseRootState,
 	BaseState,
 	BaseTState,
 	UTBundle,
-} from './types'
+} from './types.js'
 
 
 describe(`${LIB} - comparators`, function() {

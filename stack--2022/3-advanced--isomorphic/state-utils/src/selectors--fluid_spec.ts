@@ -1,10 +1,10 @@
 import { expect } from 'chai'
 
-import { LIB } from './consts'
+import { LIB } from './consts.js'
 
 import {
 	fluid_select
-} from './selectors--fluid'
+} from './selectors--fluid.js'
 
 import {
 	DEMO_USTATE,
@@ -12,7 +12,7 @@ import {
 	DEMO_BASE_STATE_WITH_SUBS,
 	DEMO_TSTATE,
 	DEMO_ROOT_STATE,
-} from './_test_helpers'
+} from './_test_helpers.js'
 
 
 describe(`${LIB} - FLUID selectors`, function() {

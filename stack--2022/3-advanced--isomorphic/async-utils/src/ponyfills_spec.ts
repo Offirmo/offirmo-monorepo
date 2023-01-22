@@ -4,14 +4,7 @@ import {
 	nextTick as nextTick_p,
 	setImmediate as setImmediate_p,
 	requestIdleCallback,
-} from './ponyfills'
-
-import {
-	elapsed_time_ms,
-	end_of_current_event_loop,
-	next_idle,
-	all_planned_idle_executed, next_microtask,
-} from './awaitable'
+} from './ponyfills.js'
 
 
 describe('underlying functions', function() {

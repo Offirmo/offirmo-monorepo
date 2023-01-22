@@ -1,3 +1,3 @@
-export * from './awaitable'
-export * from './ponyfills'
-export * from './semantic'
+export * from './awaitable.js'
+export * from './ponyfills.js'
+export * from './semantic.js'

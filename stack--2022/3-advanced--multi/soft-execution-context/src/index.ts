@@ -1,7 +1,6 @@
 
-export * from './types'
-export * from './root'
+export * from './types.js'
+export * from './root.js'
 
-export * from './core'
-export * from './utils'
-
+export * from './core.js'
+export * from './utils.js'

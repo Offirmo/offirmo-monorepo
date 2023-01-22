@@ -1,4 +1,4 @@
-import { StringNormalizer } from './types'
+import { StringNormalizer } from './types.js'
 
 import {
 	default_to_empty,
@@ -14,13 +14,13 @@ import {
 	convert_spaces_to_camel_case,
 	coerce_to_safe_nickname,
 	coerce_to_redeemable_code,
-} from './normalizers--base'
+} from './normalizers--base.js'
 
 import {
 	normalize_email_safe,
 	normalize_email_reasonable,
 	normalize_email_full,
-} from './normalizer--email'
+} from './normalizer--email.js'
 
 /////////////////////
 

@@ -1,7 +1,7 @@
 /* global NODE_ENV process */
 import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 
-import { SoftExecutionContext } from './types'
+import { SoftExecutionContext } from './types.js'
 
 function decorateWithDetectedEnv(SEC: SoftExecutionContext<any>) {
 	const ENV = (() => {

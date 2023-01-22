@@ -1,4 +1,4 @@
-import { requestIdleCallback, MAX_IDLE_DELAY_MS } from './ponyfills'
+import { requestIdleCallback, MAX_IDLE_DELAY_MS } from './ponyfills.js'
 
 type VoidFunction = () => void
 

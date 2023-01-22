@@ -1,9 +1,9 @@
-import { LIB, INTERNAL_PROP } from './consts'
-import { SoftExecutionContext } from './types'
-import { ROOT_PROTOTYPE } from './root-prototype'
-import * as State from './state'
-import { PLUGINS } from './plugins/index'
-import { decorateWithDetectedEnv } from './common'
+import { LIB, INTERNAL_PROP } from './consts.js'
+import { SoftExecutionContext } from './types.js'
+import { ROOT_PROTOTYPE } from './root-prototype.js'
+import * as State from './state.js'
+import { PLUGINS } from './plugins/index.js'
+import { decorateWithDetectedEnv } from './common.js'
 
 ROOT_PROTOTYPE.createChild = function createChild(args: any) {
 	return createSEC({

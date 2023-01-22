@@ -6,10 +6,10 @@ import {
 	walk,
 	WalkerCallbacks,
 	WalkerReducer,
-} from '../walk'
-import { CheckedNode, Node } from '../types'
+} from '../walk.js'
+import { CheckedNode, Node } from '../types.js'
 
-import { is_list, is_link, is_KVP_list, is_uuid_list } from './common'
+import { is_list, is_link, is_KVP_list, is_uuid_list } from './common.js'
 
 const LIB = 'rich_text_to_html'
 
@@ -35,6 +35,7 @@ const NODE_TYPE_TO_HTML_ELEMENT: { [k: string]: string } = {
 	[NodeType.block_fragment]: 'div',
 }
 
+// @ts-expect-error TODO FIX
 const warn_kvp = memoize_one(() => console.warn(`${LIB} TODO KVP`))
 
 const on_concatenate_sub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, Options> = ({$node, state, sub_state}) => {

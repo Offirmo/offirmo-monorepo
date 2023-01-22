@@ -3,7 +3,7 @@ export {
 	to_react,
 	intermediate_on_node_exit,
 	intermediate_assemble,
-} from './to_react'
+} from './to_react.js'
 
-import InteractiveRichTextFragment from './interactive-fragment'
+import InteractiveRichTextFragment from './interactive-fragment.jsx'
 export { InteractiveRichTextFragment }

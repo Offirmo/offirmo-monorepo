@@ -1,5 +1,5 @@
-import { combine_normalizers } from './normalize'
-import { normalize_unicode } from './normalizers--base'
+import { combine_normalizers } from './normalize.js'
+import { normalize_unicode } from './normalizers--base.js'
 
 ////////////////////////////////////
 // general infos: https://github.com/Offirmo-team/wiki/wiki/courriel

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { LIB } from './consts'
+import { LIB } from './consts.js'
 
 import {
 	is_BaseState,
@@ -8,11 +8,11 @@ import {
 	is_TState,
 	is_RootState,
 	is_UTBundle,
-} from './type-guards'
+} from './type-guards.js'
 
 import {
 	DEMO_ROOT_STATE,
-} from './_test_helpers'
+} from './_test_helpers.js'
 
 
 describe(`${LIB} - type guards`, function() {

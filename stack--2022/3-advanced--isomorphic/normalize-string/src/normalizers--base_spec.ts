@@ -1,9 +1,8 @@
 import { expect } from 'chai'
 
-import {
-	StringNormalizer,
-	NORMALIZERS,
-} from '.'
+import { StringNormalizer } from './types.js'
+import { NORMALIZERS } from './normalizers.js'
+
 
 describe('normalize-string - base normalizers', function() {
 

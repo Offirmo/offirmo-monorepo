@@ -3,12 +3,12 @@ import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 import { createError as _createError, normalizeError } from '@offirmo/error-utils'
 
 
-import { INTERNAL_PROP } from '../../consts'
-import { flattenToOwn } from '../../utils'
-import * as State from './state'
-import { createCatcher } from './catch-factory'
-import { PLUGIN_ID as ID_DI } from '../dependency-injection/index'
-import * as TopState from '../../state'
+import { INTERNAL_PROP } from '../../consts.js'
+import { flattenToOwn } from '../../utils.js'
+import * as State from './state.js'
+import { createCatcher } from './catch-factory.js'
+import { PLUGIN_ID as ID_DI } from '../dependency-injection/index.js'
+import * as TopState from '../../state.js'
 
 const PLUGIN_ID = 'error_handling'
 

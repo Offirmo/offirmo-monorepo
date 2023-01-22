@@ -1,10 +1,10 @@
 
-export * from './types'
+export * from './types.js'
 
-export * from './type-guards'
-export * from './selectors'
-export * from './selectors--fluid'
-export * from './comparators'
+export * from './type-guards.js'
+export * from './selectors.js'
+export * from './selectors--fluid.js'
+export * from './comparators.js'
 
-export * from './migration'
-export * from './utils'
+export * from './migration.js'
+export * from './utils.js'

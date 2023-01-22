@@ -6,4 +6,4 @@ export {
 	uses_tab,
 
 	get_debug_snapshot,
-} from './resolvers'
+} from './resolvers.js'

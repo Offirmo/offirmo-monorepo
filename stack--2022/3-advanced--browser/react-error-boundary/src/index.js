@@ -1,2 +1,2 @@
-export default from './error-boundary'
-export * from './render-any'
+export default from './error-boundary.jsx'
+export * from './render-any.jsx'

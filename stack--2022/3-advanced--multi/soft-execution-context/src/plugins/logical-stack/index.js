@@ -1,15 +1,15 @@
 
-import {INTERNAL_PROP} from '../../consts'
-import * as TopState from '../../state'
+import {INTERNAL_PROP} from '../../consts.js'
+import * as TopState from '../../state.js'
 import {
 	LOGICAL_STACK_BEGIN_MARKER,
 	LOGICAL_STACK_END_MARKER,
 	LOGICAL_STACK_SEPARATOR,
 	LOGICAL_STACK_OPERATION_MARKER,
 	LOGICAL_STACK_SEPARATOR_NON_ADJACENT,
-} from './consts'
-import * as State from './state'
-import { _getSECStatePath } from '../../utils'
+} from './consts.js'
+import * as State from './state.js'
+import { _getSECStatePath } from '../../utils.js'
 
 const PLUGIN_ID = 'logical_stack'
 

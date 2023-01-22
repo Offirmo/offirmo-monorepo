@@ -2,7 +2,7 @@
 import {
 	CheckedNode,
 	Node,
-} from '../types'
+} from '../types.js'
 
 import {
 	WalkerCallbacks,
@@ -13,7 +13,8 @@ import {
 	OnClassParams,
 	OnTypeParams,
 	walk,
-} from '../walk'
+} from '../walk.js'
+
 
 const MANY_SPACES = '                                                                                                '
 

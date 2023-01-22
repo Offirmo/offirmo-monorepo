@@ -1,4 +1,4 @@
-import { StringNormalizer } from './types'
+import { StringNormalizer } from './types.js'
 
 
 export function combine_normalizers(...normalizers: StringNormalizer[]): StringNormalizer {

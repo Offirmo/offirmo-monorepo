@@ -19,7 +19,7 @@
 	},
 
 	"scripts": {
-		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'src/**/*spec.js'"
+		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'src/**/*spec.mjs'"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

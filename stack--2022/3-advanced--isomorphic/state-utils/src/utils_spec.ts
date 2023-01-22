@@ -1,18 +1,18 @@
 import { expect } from 'chai'
 
-import { LIB } from './consts'
+import { LIB } from './consts.js'
 
 import {
 	DEMO_BASE_STATE_WITH_SUBS,
 	DEMO_BUNDLE_STATE,
 	DEMO_ROOT_STATE,
-} from './_test_helpers'
+} from './_test_helpers.js'
 
 import {
 	complete_or_cancel_eager_mutation_propagating_possible_child_mutation,
 	are_ustate_revision_requirements_met,
 	enforce_immutability,
-} from './utils'
+} from './utils.js'
 
 
 describe(`${LIB} - utils`, function() {

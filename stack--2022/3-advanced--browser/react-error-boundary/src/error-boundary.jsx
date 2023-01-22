@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import assert from 'tiny-invariant'
 import { asap_but_not_synchronous } from '@offirmo-private/async-utils'
 
-import { get_lib_SEC } from './sec'
-import { render_any } from './render-any'
+import { get_lib_SEC } from './sec.js'
+import { render_any } from './render-any.jsx'
 
 
 class ErrorBoundary extends React.Component {

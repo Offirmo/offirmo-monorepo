@@ -13,7 +13,7 @@ import {
 	BaseRootState,
 	StateInfos,
 	AnyOffirmoState,
-} from './types'
+} from './types.js'
 import {
 	is_WithSchemaVersion,
 	is_WithRevision,
@@ -24,7 +24,7 @@ import {
 	is_time_stamped,
 	is_RootState,
 	is_UTBundle,
-} from './type-guards'
+} from './type-guards.js'
 
 // "loose" =
 // can recover from some legacy states (wrong structure) and will fallback to 0 if not a state (ex. undefined or unrecognized)

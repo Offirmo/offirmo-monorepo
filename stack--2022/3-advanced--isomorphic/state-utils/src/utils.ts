@@ -9,20 +9,20 @@ import {
 	BaseRootState,
 	UTBundle,
 	BaseAction,
-} from './types'
+} from './types.js'
 import {
 	AnyBaseState,
 	AnyRootState,
-} from './types--internal'
+} from './types--internal.js'
 import {
 	is_RootState,
 	is_TState,
 	is_UState, is_UTBundle, is_WithRevision,
-} from './type-guards'
+} from './type-guards.js'
 import {
 	get_revision,
 	get_revision_loose,
-} from './selectors'
+} from './selectors.js'
 
 
 export const enforce_immutability: ImmutabilityEnforcer = <T>(state: T | Immutable<T>): Immutable<T> => icepick.freeze<T>(state as T) as Immutable<T>

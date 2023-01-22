@@ -1,19 +1,19 @@
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 import memoize_one from 'memoize-one'
-const jsondiffpatch = require('jsondiffpatch')
+import jsondiffpatch from 'jsondiffpatch'
 
 import { Immutable, JSONObject } from '@offirmo-private/ts-types'
 
 import {
 	is_RootState,
-} from './type-guards'
+} from './type-guards.js'
 import {
 	get_schema_version_loose,
 	get_revision_loose,
 	get_last_user_activity_timestamp_loose,
 	get_timestamp_loose,
-} from './selectors'
+} from './selectors.js'
 
 ////////////////////////////////////
 
@@ -41,6 +41,8 @@ export function s_max(a: SemanticDifference, b: SemanticDifference): SemanticDif
 }
 
 // used only in tests AFAIK
+console.log(memoize_one)
+// @ts-expect-error
 const _get_advanced_json_differ = memoize_one(() => {
 	const advanced_json_differ = jsondiffpatch.create({
 		// method used to match objects when diffing arrays

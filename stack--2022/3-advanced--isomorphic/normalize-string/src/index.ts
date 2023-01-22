@@ -1,3 +1,3 @@
-export * from './types'
-export * from './normalize'
-export * from './normalizers'
+export * from './types.js'
+export * from './normalize.js'
+export * from './normalizers.js'

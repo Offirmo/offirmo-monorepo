@@ -1,8 +1,8 @@
 import { getGlobalThis } from '@offirmo/globalthis-ponyfill'
 
-import { SoftExecutionContext } from './types'
-import { LIB } from './consts'
-import { createSEC } from './core'
+import { SoftExecutionContext } from './types.js'
+import { LIB } from './consts.js'
+import { createSEC } from './core.js'
 
 /////////////////////
 

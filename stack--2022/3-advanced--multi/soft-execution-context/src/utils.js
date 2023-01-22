@@ -1,4 +1,4 @@
-import { INTERNAL_PROP } from './consts'
+import { INTERNAL_PROP } from './consts.js'
 
 function flattenToOwn(object) {
 	if (!object) return object

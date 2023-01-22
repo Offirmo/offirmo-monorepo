@@ -1,12 +1,12 @@
 import assert from 'tiny-invariant'
 
-import { LIB, SCHEMA_VERSION } from './consts'
+import { LIB, SCHEMA_VERSION } from './consts.js'
 
 import {
 	NodeType,
 	CheckedNode,
 	Node,
-} from './types'
+} from './types.js'
 
 
 function normalize_node($raw_node: Readonly<Node>): CheckedNode {

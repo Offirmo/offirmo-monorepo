@@ -3,7 +3,7 @@ import { extend_xoff, get_xoff } from '@offirmo-private/xoff'
 import {
 	LoaderConfig,
 	Loader,
-} from './types'
+} from './types.js'
 
 /////////////////////
 

@@ -2,10 +2,10 @@ import { expect } from 'chai'
 
 import {
 	LIB
-} from './consts'
+} from './consts.js'
 
-//import * as RichText from '.'
-import { walk, WalkerCallbacks } from '.'
+
+import { walk, WalkerCallbacks } from './walk.js'
 
 describe(`${LIB}`, function () {
 

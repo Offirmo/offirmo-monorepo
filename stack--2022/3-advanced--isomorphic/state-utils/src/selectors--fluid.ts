@@ -1,12 +1,12 @@
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { AnyOffirmoState } from './types'
+import { AnyOffirmoState } from './types.js'
 import {
 	get_schema_version_loose,
 	get_revision_loose,
 	get_last_user_activity_timestamp_loose,
 	get_base_loose,
-} from './selectors'
+} from './selectors.js'
 
 
 export function fluid_select(stateA: Immutable<AnyOffirmoState>) {

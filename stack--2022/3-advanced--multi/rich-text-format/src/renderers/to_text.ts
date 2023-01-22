@@ -1,5 +1,5 @@
-import { Node, CheckedNode } from '../types'
-import { NODE_TYPE_TO_DISPLAY_MODE } from '../consts'
+import { Node, CheckedNode } from '../types.js'
+import { NODE_TYPE_TO_DISPLAY_MODE } from '../consts.js'
 import {
 	OnConcatenateStringParams,
 	OnConcatenateSubNodeParams,
@@ -7,9 +7,9 @@ import {
 	walk,
 	WalkerCallbacks,
 	WalkerReducer,
-} from '../walk'
+} from '../walk.js'
 
-import { is_link, is_KVP_list } from './common'
+import { is_link, is_KVP_list } from './common.js'
 
 export type Options = {
 	style: 'basic' | 'advanced' | 'markdown'
@@ -17,6 +17,7 @@ export type Options = {
 export const DEFAULT_OPTIONS: Options = {
 	style: 'advanced',
 }
+
 
 type State = {
 	sub_nodes: CheckedNode[]

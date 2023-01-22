@@ -2,7 +2,7 @@ import {
 	IdleDeadline,
 	requestIdleCallback,
 	MAX_IDLE_DELAY_MS,
-} from './ponyfills'
+} from './ponyfills.js'
 
 
 export async function next_microtask(): Promise<void> {

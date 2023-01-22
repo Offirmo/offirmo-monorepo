@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { LIB } from './consts'
+import { LIB } from './consts.js'
 
 import {
 	get_schema_version,
@@ -10,7 +10,7 @@ import {
 	get_timestamp,
 	get_timestamp_loose,
 	get_base_loose,
-} from './selectors'
+} from './selectors.js'
 
 import {
 	DEMO_USTATE,
@@ -18,7 +18,7 @@ import {
 	DEMO_BASE_STATE_WITH_SUBS,
 	DEMO_TSTATE,
 	DEMO_ROOT_STATE,
-} from './_test_helpers'
+} from './_test_helpers.js'
 
 
 describe(`${LIB} - selectors`, function() {

@@ -3,11 +3,11 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 import { exiftool } from 'exiftool-vendored'
 
-import { LIB } from './consts'
-import { get_params, Params } from './params'
-import * as DB from './state/db'
-import logger from './services/logger'
-import { exec_pending_actions_recursively_until_no_more, get_report_to_string } from './services/actions'
+import { LIB } from './consts.js'
+import { get_params, Params } from './params.js'
+import * as DB from './state/db/index.js'
+import logger from './services/logger.js'
+import { exec_pending_actions_recursively_until_no_more, get_report_to_string } from './services/actions.js'
 
 console.log(`******* ${LIB.toUpperCase()} *******`)
 

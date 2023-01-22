@@ -1,7 +1,7 @@
 import Bowser from 'bowser'
 import { getRootSEC } from '@offirmo-private/soft-execution-context'
 //import ensureDeviceUUID from '@offirmo-private/ensure-device-uuid-browser'
-import { LS_KEYS } from './consts'
+import { LS_KEYS } from './consts.js'
 
 
 // XXX redundant, next one is better (?rly)

@@ -9,11 +9,11 @@
 	"sideEffects": false,
 	"exports": {
 		".": {
-			"import": "./dist/src.es2022/index.js",
+			"import": "./dist/src.es2022.esm/index.js",
 			"require": "./dist/src.es2022.cjs/index.js"
 		}
 	},
-	"module": "dist/src.es2022/index.js",
+	"module": "dist/src.es2022.esm/index.js",
 	"main": "dist/src.es2022.cjs/index.js",
 	"typings": "dist/src.es2022.cjs/index.d.ts",
 	"source": "src/index.ts",
@@ -30,6 +30,7 @@
 		"_build:prod": "monorepo-script--build-typescript-package",
 
 		"dev": "run-s clean _build:dev:watch",
+		"test": "echo @offirmo-private/ts-types: no dynamic tests, this package only decare types.",
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {

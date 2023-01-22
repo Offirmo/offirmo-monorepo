@@ -5,8 +5,8 @@ import {
 	walk,
 	WalkerCallbacks,
 	WalkerReducer,
-} from '../walk'
-import { Node, CheckedNode } from '../types'
+} from '../walk.js'
+import { Node, CheckedNode } from '../types.js'
 
 export interface Action {
 	$node: CheckedNode
@@ -15,6 +15,7 @@ export interface Action {
 	// priority ?
 	// TODO more
 }
+
 
 export type Options = {}
 export const DEFAULT_OPTIONS = {}

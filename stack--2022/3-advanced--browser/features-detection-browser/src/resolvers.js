@@ -5,7 +5,7 @@ import {
 	get_usage_observations,
 	has_seen_tab_key_usage,
 	has_seen_touch_usage,
-} from './event-listeners'
+} from './event-listeners.js'
 
 /////////////////////
 

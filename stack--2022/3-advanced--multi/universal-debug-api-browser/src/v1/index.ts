@@ -10,7 +10,7 @@ import {
 	createLogger,
 } from '@offirmo/practical-logger-browser'
 
-import { LS_ROOT, getOverrideKeyForLogger, getLSKeyForOverride } from './keys'
+import { LS_ROOT, getOverrideKeyForLogger, getLSKeyForOverride } from './keys.js'
 
 
 ////////////////////////////////////

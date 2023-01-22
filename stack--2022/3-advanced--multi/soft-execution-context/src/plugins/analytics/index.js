@@ -1,10 +1,10 @@
 import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 
-import { INTERNAL_PROP } from '../../consts'
-import * as TopState from '../../state'
-import { flattenToOwn } from '../../utils'
-import * as State from './state'
-import {PLUGIN_ID as ID_DI} from '../dependency-injection'
+import { INTERNAL_PROP } from '../../consts.js'
+import * as TopState from '../../state.js'
+import { flattenToOwn } from '../../utils.js'
+import * as State from './state.js'
+import {PLUGIN_ID as ID_DI} from '../dependency-injection.js'
 
 const PLUGIN_ID = 'analytics'
 
