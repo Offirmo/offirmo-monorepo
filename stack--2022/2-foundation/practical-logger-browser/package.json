@@ -46,7 +46,7 @@
 
 		"dev": "run-s clean _build:dev:watch",
 		"build": "run-s  clean _build:prod",
-		"demo": "parcel --out-dir .parcel --no-autoinstall doc/demo/index.html",
+		"demo": "parcel --no-autoinstall doc/demo/index.html",
 
 		"prepublishOnly": "run-s clean build test ensure-size"
 	},

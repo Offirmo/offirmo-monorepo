@@ -144,6 +144,14 @@ if (MONOREPO_PKG_JSON.bolt) (function _update_root_dependencies_for_bolt() {
 				return
 			}
 
+			const is_known_global_dev_dep = [
+				'parcel-resolver-typescript-esm', // https://github.com/b8kkyn/parcel-resolver-typescript-esm
+			].includes(dep_name)
+			if (is_known_global_dev_dep) {
+				// allowed, global dev deps on the root package
+				return
+			}
+
 			console.warn(`⚠️ extraneous root DEV dependency "${dep_name}" in the root package.json! Will clean.`)
 			delete candidate_root_package_json.dependencies[dep_name]
 			delete candidate_root_package_json.devDependencies[dep_name]

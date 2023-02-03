@@ -33,6 +33,7 @@ Relaxed:
   * NO!!! moved back to "true" due to still using cjs, ex. pb importing "fetch-ponyfill" or sindre
 * [`moduleResolution`](https://www.typescriptlang.org/docs/handbook/module-resolution.html) kept to node as the ecosystem is not ready :-(
   * [https://github.com/microsoft/TypeScript/issues/46452](update marker)
+* `isolatedModules` set to true always bc. parcel needs it, cf. https://parceljs.org/languages/typescript/#isolatedmodules
 
 
 ### TOSORT

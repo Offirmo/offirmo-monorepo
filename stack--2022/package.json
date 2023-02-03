@@ -129,6 +129,7 @@
 		"murmurhash3js-revisited": "^3",
 		"npm-run-all": "^4",
 		"parcel": "^2",
+		"parcel-resolver-typescript-esm": "^1",
 		"path-exists": "^5",
 		"pokemon": "^2",
 		"prettyjson": "^1",
