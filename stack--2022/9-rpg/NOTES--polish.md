@@ -39,6 +39,7 @@ https://www.reddit.com/r/ImaginaryWinterscapes/
 https://www.world-machine.com/download.php
 
 SNOW
+https://embed.im/snow/
 #snow {
     display: block !important;
     background-image: url('../images/snow1.png'), url('../images/snow2.png'), url('../images/snow3.png');

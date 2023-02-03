@@ -10,6 +10,8 @@
 * https://en.wikipedia.org/wiki/Schadenfreude the experience of pleasure, joy, or self-satisfaction that comes from learning of or witnessing the troubles, failures, or humiliation of another.
 * https://en.wikipedia.org/wiki/Chicken_(game)
 
+thieves https://melmagazine.com/en-us/story/kunsthal-heist-romania-constantin-dinescu
+
 Recognizing Bullying
 LOOK FOR A PATTERN OF...
 * Lack of consideration and empathy for those without power
