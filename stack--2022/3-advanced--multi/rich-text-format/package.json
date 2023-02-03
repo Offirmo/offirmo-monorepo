@@ -35,7 +35,7 @@
 		"dev": "run-s clean _build:dev:watch",
 		"build": "run-s  clean _build:prod",
 		"cheatsheet": "node doc/cheatsheet.mjs",
-		"demo": "node doc/demo-node/index.js"
+		"demo": "node doc/demo-node/index.cjs"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

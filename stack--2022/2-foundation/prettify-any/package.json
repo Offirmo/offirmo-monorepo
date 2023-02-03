@@ -41,8 +41,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^8",
 		"@types/prettyjson": "^0",
-		"chalk": "^4",
-		"fetch-ponyfill": "^7",
+		"chalk": "^5",
 		"npm-run-all": "^4",
 		"prettyjson": "^1",
 		"tslib": "^2"

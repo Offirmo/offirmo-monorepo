@@ -12,9 +12,9 @@
 	},
 
 	"dependencies": {
-		"chalk": "^4",
+		"chalk": "^5",
 		"fs-extra": "^11",
-		"meow": "^10",
+		"meow": "^11",
 		"node-typescript-compiler": "*",
 		"tiny-invariant": "^1",
 		"write-json-file": "^5"

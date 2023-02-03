@@ -32,7 +32,7 @@
 		"@offirmo-private/print-error-to-ansi": "^0",
 		"@offirmo/practical-logger-core": "^3",
 		"@offirmo/practical-logger-types": "^3",
-		"chalk": "^4",
+		"chalk": "^5",
 		"indent-string": "^5"
 	},
 

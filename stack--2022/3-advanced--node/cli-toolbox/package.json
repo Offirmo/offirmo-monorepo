@@ -9,9 +9,9 @@
 	"sideEffects": false,
 
 	"dependencies": {
-		"ansi-escapes": "^4",
+		"ansi-escapes": "^6",
 		"boxen": "^7",
-		"chalk": "^4",
+		"chalk": "^5",
 		"cli-columns": "^4",
 		"columnify": "^1",
 		"fs-extra": "^11",

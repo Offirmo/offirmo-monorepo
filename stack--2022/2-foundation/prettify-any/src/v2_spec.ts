@@ -323,8 +323,7 @@ describe('@offirmo-private/prettify-any', function() {
 			})
 
 			it('should be able to handle deep objects - fetch', async () => {
-				const fetch_ponyfill = (await import('fetch-ponyfill')).default
-				const { fetch } = fetch_ponyfill()
+				//@ts-expect-error TODO fix as soon as fetch global is added to @types/node
 				const ↆf = fetch('https://www.google.com')
 
 				return ↆf.then(

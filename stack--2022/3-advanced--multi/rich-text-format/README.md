@@ -33,3 +33,4 @@ Related, discovered after I made mine:
 
 Tosort
 * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl
+* https://formatjs.io/docs/core-concepts/icu-syntax/
