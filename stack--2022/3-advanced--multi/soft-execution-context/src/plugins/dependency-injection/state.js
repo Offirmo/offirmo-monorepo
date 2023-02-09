@@ -2,7 +2,7 @@
 function create(parent_state) {
 	const context = parent_state
 		? Object.create(parent_state.context)
-		: Object.create(null) // NO auto-injections here, let's keep it simple. See core.
+		: Object.create(null) // NO auto-injections here, let's keep it simple. See core & common
 
 	return {
 		context,

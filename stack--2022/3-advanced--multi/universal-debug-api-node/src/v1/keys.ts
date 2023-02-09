@@ -1,6 +1,6 @@
-import { ENV_ROOT } from '../consts'
+import { ENV_ROOT } from '../consts.js'
 
-export { ENV_ROOT } from '../consts'
+export { ENV_ROOT } from '../consts.js'
 
 function normalizeKey(key: string): string {
 	return key

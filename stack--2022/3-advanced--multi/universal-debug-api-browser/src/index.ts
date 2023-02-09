@@ -1,7 +1,7 @@
 import { getGlobalThis } from '@offirmo/globalthis-ponyfill'
 import { DebugApiRoot, DebugApi } from '@offirmo/universal-debug-api-interface'
 
-import createV1, { OWN_LOGGER_NAME } from './v1.js'
+import createV1, { OWN_LOGGER_NAME } from './v1/index.js'
 
 
 // ensure the root is present

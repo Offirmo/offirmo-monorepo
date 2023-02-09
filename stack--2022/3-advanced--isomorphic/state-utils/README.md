@@ -43,3 +43,6 @@ Types of change
   * migrations
   * time elapsed (with no user action)
   * shared state = guild update? ranking update? trade update (ex. successfully sold item)? TODO review
+
+
+TODO review https://automerge.org/docs/quickstart/

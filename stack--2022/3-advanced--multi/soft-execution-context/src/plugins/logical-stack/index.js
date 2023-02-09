@@ -1,5 +1,5 @@
 
-import {INTERNAL_PROP} from '../../consts.js'
+import { INTERNAL_PROP } from '../../consts.js'
 import * as TopState from '../../state.js'
 import {
 	LOGICAL_STACK_BEGIN_MARKER,

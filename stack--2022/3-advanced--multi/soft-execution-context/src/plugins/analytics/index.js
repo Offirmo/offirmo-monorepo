@@ -4,7 +4,7 @@ import { INTERNAL_PROP } from '../../consts.js'
 import * as TopState from '../../state.js'
 import { flattenToOwn } from '../../utils.js'
 import * as State from './state.js'
-import {PLUGIN_ID as ID_DI} from '../dependency-injection.js'
+import {PLUGIN_ID as ID_DI} from '../dependency-injection/index.js'
 
 const PLUGIN_ID = 'analytics'
 

@@ -113,3 +113,17 @@ We analysed the script and were asked to identify the parts where we thought wer
 This is usually something where there is a change from the status quo - it could be a new character introduced, the meeting of hearts, a power dynamic change between characters or a climax/twist.
 We call this a beat. A short film like this (~10 minutes) will probably have a maximum of 5-6 beats, so we started with around 10+ beats and culled it to 6 core ones.
 Of all the different beats, there will be the heart of the film in one of the beats. If we had to only show one scene, this will be the beat that we will show.
+
+
+le mal n’est jamais tant exogène qu’endogène puisqu’il emprunte sa consistance et sa puissance à nos peurs (faut-il rappeler que, peut-être le premier, Tolkien l’avait mis en scène dans le combat de Grand-Pas contre les Nazguls à la Tour Sombre ?)
+http://pascalide.fr/critique/ca-chapitre-2/
+
+on doit à King lui-même la tripartition des films d’horreur en fonction des niveaux d’émotions qu’il vise à provoquer : la terreur, où tout est suggéré et laissé au travail de l’imagination ; l’horreur proprement dite, qui entraîne une réaction viscérale teintée de peur en présentant quelque chose de monstrueux ou d’anormal ; la révulsion, qui a pour but de provoquer un choc en suscitant le dégoût
+Stephen King, Anatomie de l’horreur, trad. Jean-Daniel Brèque, Monaco, Le Rocher, 1981, p. 29-34.
+
+graduation ternaire est souvent convoquée dans ces critiques. Rappelons qu’elle emprunte autant à saint Augustin (les trois moments extérieur, puis intérieur, enfin supérieur) qu’à Kierkegaard (stades esthétique, éthique et religieux).
+
+cette institution ne cesse de transgresser sans état d’âme tous les commandements de la deuxième table du Décalogue : mensonge, d’hypocrisie, de vol, de trahison, voire de fornication, qu’est le monde de l’espionnage. Cela, au nom d’un unique principe supérieur : « Nous sommes en guerre ». Absolutisé et donc idolâtré, ce principe cynique qui est une relecture partiellement falsifiée de la réalité géopolitique, justifie tous les machiavélismes et assassine sa conscience morale.
+http://pascalide.fr/critique/the-operative/
+
+https://tolkiengateway.net/wiki/Galadriel +++

@@ -1,6 +1,6 @@
-import { LS_ROOT } from '../consts'
+import { LS_ROOT } from '../consts.js'
 
-export { LS_ROOT } from '../consts'
+export { LS_ROOT } from '../consts.js'
 
 export function getOverrideKeyForLogger(name: string): string {
 	return `logger.${name || 'default'}.logLevel`

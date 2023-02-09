@@ -17,8 +17,15 @@ function getRootSEC<Injections = {}, AnalyticsDetails = {}, ErrorDetails = {}>()
 	return global_this.__global_root_sec
 }
 
+function _test_only__reset_root_SEC() {
+	const global_this = getGlobalThis<any>()
+
+	delete global_this.__global_root_sec
+}
+
 /////////////////////
 
 export {
 	getRootSEC,
+	_test_only__reset_root_SEC,
 }
