@@ -8,6 +8,7 @@ export interface XError extends Error {
 	message: string
 	stack?: string
 	cause?: XError | Error
+	errors?: Array<XError | Error>
 
 	// optional
 	code?: string
@@ -19,6 +20,7 @@ export interface XError extends Error {
 export interface XXError extends XError {
 
 	cause?: XXError | XError | Error
+	errors?: Array<XXError | XError | Error>
 
 	details?: {
 		logicalStack?: string

@@ -4,10 +4,12 @@
 ## PENDING
 * [feat][breaking] `normalizeError(errLike)` will now return the passed object if it has a proper error shape.
   It no longer always creates a copy, unless `{ alwaysRecreate: true }` is passed as a second argument
+* [feat][breaking] `normalizeError(errLike)` now normalize well-known props (only framesToPop for now)
 * [feat] `normalizeError(errLike)` now accept the "unknown" type as an input, to help handling Typescript 4.4 changes
   https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#use-unknown-catch-variables
 * [feat] new `hasErrorShape(errLike)` exposed (should hardly be useful)
 * [feat] now supports the ES2022 "cause" attribute
+* [feat] now supports Firefox's "errors" attribute
 * [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
 * [chore] supports typescript 4.8
 * [chore] bumped deps

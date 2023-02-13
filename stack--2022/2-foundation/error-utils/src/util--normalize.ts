@@ -102,14 +102,26 @@ export function normalizeError(err_like: Readonly<Partial<Error>> | unknown = un
 				})()
 
 				// properly re-attach fields if they exist
+				// and normalize them if well defined and important enough
 				COMMON_ERROR_FIELDS_EXTENDED.forEach(prop => {
-					if (prop === 'message' || prop === 'name') {
-						// those props are from the constructor, don't copy them
-						return
-					}
 					if ((err_like as any)[prop]) {
-						// TODO consider deep copies?
-						(true_err as any)[prop] = (err_like as any)[prop]
+						switch(prop) {
+							case 'message':
+								// this prop is from the constructor, no need to copy it
+								break
+							case 'name':
+								// this prop is from the constructor, no need to copy it
+								break
+							case 'framesToPop':
+								// normalization recommended for processing the stack properly
+								(true_err as any)[prop] = Number.parseInt((err_like as any)[prop])
+								break
+							default:
+								// TODO consider deep copies?
+								(true_err as any)[prop] = (err_like as any)[prop]
+								break
+						}
+
 					}
 				})
 
