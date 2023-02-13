@@ -1,4 +1,5 @@
-//import { expect } from 'chai'
+import { expect } from 'chai'
+import strip_ansi from 'strip-ansi'
 
 import {
 	displayError,
@@ -16,48 +17,87 @@ describe(`@offirmo-private/print-error-to-ansi`, () => {
 			const err = new Error('foo')
 			;(err as any).statusCode = 555
 
-			console.error(error_to_string(err))
+			const s = strip_ansi(error_to_string(err))
+			//console.error(error_to_string(err), '\n' + s)
+			expect(s).to.include('❗ Error ❗') // name
+			expect(s).to.include('message: "foo"')
+			expect(s).to.include('statusCode: "555"')
 		})
 
 		it('should work -- typed error', () => {
 			const err = new TypeError('foo')
 			;(err as any).statusCode = 555
 
-			console.error(error_to_string(err))
+			const s = strip_ansi(error_to_string(err))
+			expect(s).to.include('❗ TypeError ❗') // name
+			expect(s).to.include('message: "foo"')
+			expect(s).to.include('statusCode: "555"')
 		})
 
-		it('should work -- advanced error', () => {
+
+		it('should work -- advanced error -- framesToPop', () => {
 			const err = createError('foo', {
-				statusCode: 555,
-				foo: 42,
-				framesToPop: 3,
+				framesToPop: 3, // REM createError() will +1 that
 			})
 
-			console.error(error_to_string(err))
+			const s = strip_ansi(error_to_string(err))
+			//console.error(error_to_string(err), '\n' + s)
+			expect(s).not.to.include('framesToPop: ') // should not be displayed as a prop
+			expect(s).to.include('↳ ⟨frames popped: 4⟩') // displayed as part of the stack
+		})
+
+		it('should work -- advanced error -- extra field', () => {
+			const err = createError('foo', {
+				foo: 42,
+			})
+
+			const s = strip_ansi(error_to_string(err))
+			//console.error(error_to_string(err), '\n' + s)
+			expect(s).to.include('details:')
+			expect(s).to.include('  foo: "42"')
 		})
 
 		describe('cause chaining', function () {
 
-			it.only('should work -- trivial error', () => {
-				const err1 = new Error('bar')
+			it('should work -- trivial error', () => {
+				const err1 = new RangeError('bar')
 				;(err1 as any).code = 'ERR_CPU_USAGE'
 
 				const err2 = new Error('foo')
 				;(err2 as any).statusCode = 555
 				err2.cause = err1
 
-				console.error(error_to_string(err2))
+				const s = strip_ansi(error_to_string(err2))
+				//console.error(error_to_string(err2), '\n' + s)
+				expect(s).to.include('cause:')
+				expect(s).to.include('┃ ┏━❗ RangeError ❗')
+				expect(s).to.include('┃ ┃ message: "bar"')
+				expect(s).to.include('┃ ┃ code: "ERR_CPU_USAGE"')
 			})
 
 
 			it('should work -- advanced error', () => {
-				const err = createError('foo', {
+				const err1 = createError('bar', {
+					statusCode: 555,
+					foo: 42,
+					framesToPop: 1,
+				}, RangeError)
+
+				const err2 = createError('foo', {
 					statusCode: 555,
 					foo: 42,
 					framesToPop: 3,
+					cause: err1,
 				})
 
-				console.error(error_to_string(err))
+				const s = strip_ansi(error_to_string(err2))
+				//console.error(error_to_string(err2), '\n' + s)
+				expect(s).to.include('┃ cause:')
+				expect(s).to.include('┃ ┏━❗ RangeError ❗')
+				expect(s).to.include('┃ ┃ message: "RangeError: bar"')
+				expect(s).to.include('┃ ┃ details:')
+				expect(s).to.include('┃ ┃   foo: "42"')
+				expect(s).to.include('┃ ┃ ↳ ⟨frames popped: 2⟩')
 			})
 
 
@@ -66,7 +106,9 @@ describe(`@offirmo-private/print-error-to-ansi`, () => {
 				;(err as any).statusCode = 555
 				err.cause = err
 
-				console.error(error_to_string(err))
+				const s = strip_ansi(error_to_string(err))
+				//console.error(error_to_string(err), '\n' + s)
+				expect(s).to.include('cause: <circular reference>')
 			})
 		})
 	})

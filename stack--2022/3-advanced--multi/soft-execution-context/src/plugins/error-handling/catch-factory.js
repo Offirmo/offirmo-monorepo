@@ -1,4 +1,4 @@
-function createCatcher({decorators = [], onError, debugId = '?'} = {}) {
+export function _create_catcher({decorators = [], onError, debugId = '?'} = {}) {
 
 	return (err) => {
 		//console.info(`[catchFactory from ${debugId}]`)
@@ -23,10 +23,7 @@ function createCatcher({decorators = [], onError, debugId = '?'} = {}) {
 
 		if (onError)
 			return onError(err)
+
 		throw err // or rethrow since still unhandled
 	}
-}
-
-export {
-	createCatcher,
 }

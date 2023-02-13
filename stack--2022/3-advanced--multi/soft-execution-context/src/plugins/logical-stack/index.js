@@ -90,6 +90,8 @@ const PLUGIN = {
 				+ LOGICAL_STACK_END_MARKER
 		}
 
+		// internal only
+		// expects an already normalized error (through @offirmo/error-utils)
 		prototype._decorateErrorWithLogicalStack = function _decorateErrorWithLogicalStack(err) {
 			const SEC = this
 
@@ -145,7 +147,10 @@ const PLUGIN = {
 					/* eslint-enable no-console */
 				}
 				else {
-					err.message = logicalStack.short + ': ' + err.message
+					const original_message = err.message
+					err.message = logicalStack.short + ': ' + original_message
+					if (err.stack?.startsWith(original_message))
+						err.stack = err.message + err.stack.slice(original_message.length)
 				}
 
 				err.details.logicalStack = logicalStack.full

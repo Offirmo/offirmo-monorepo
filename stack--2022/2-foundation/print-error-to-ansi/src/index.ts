@@ -3,8 +3,6 @@ import chalk from 'chalk'
 
 import { COMMON_ERROR_FIELDS_EXTENDED } from '@offirmo/error-utils'
 
-// TODO make it more pro!
-
 interface Context {
 	// params
 	line_separator: string
@@ -66,6 +64,17 @@ function _propertyⵧstack_to_string(context: Context, errLike: Readonly<any>, p
 			.split(context.line_separator)
 			.filter(line => !line.startsWith('Error'))
 			.map(line => line.trim())
+
+	const ftp = Number.parseInt(errLike['framesToPop'])
+	if (ftp > 0) {
+		if (ftp !== errLike['framesToPop'] || ftp >= lines.length) {
+			lines.splice(0, 0, `⟨framesToPop: ${ftp}???⟩`)
+		}
+		else {
+			const ftp_line = _apply_styleⵧdim(context, `⟨frames popped: ${ftp}⟩`)
+			lines.splice(0, Math.max(ftp, lines.length - 1), ftp_line)
+		}
+	}
 
 	return lines.map(line => _apply_styleⵧdim(context, ' ↳ ') + line)
 }
@@ -136,10 +145,14 @@ function error_to_string(errLike: Readonly<Partial<Error>>, context: Context = {
 		].map(s => s.trim()).filter(s => !!s).join(' ')
 	)
 
-	// TODO use normalize error?
+	// We don't use normalizeError() from @offirmo/error-utils
+	// on the ground that a well-defined error wiring
+	// should already have used it.
 
 	const displayedProps = new Set()
-	displayedProps.add('name')
+	displayedProps.add('name') // already displayed as the title
+	if (errLike.stack)
+		displayedProps.add('framesToPop') // will be displayed as part of the stack
 
 	if (errLike.message) {
 		lines.push(..._error_prop_to_string(context, errLike, 'message'))

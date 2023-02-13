@@ -40,6 +40,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4",
+		"strip-ansi": "^7",
 		"tslib": "^2"
 	},
 

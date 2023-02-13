@@ -6,7 +6,7 @@ import { PLUGINS } from './plugins/index.js'
 import { decorateWithDetectedEnv } from './common.js'
 
 ROOT_PROTOTYPE.createChild = function createChild(args: any) {
-	return createSEC({
+	return _createSEC({
 		...args,
 		parent: this,
 	})
@@ -20,7 +20,9 @@ function isSEC(SEC: any): SEC is SoftExecutionContext {
 	return (SEC && SEC[INTERNAL_PROP])
 }
 
-function createSEC<Injections = {}, AnalyticsDetails = {}, ErrorDetails = {}>(args: any = {}): SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails> {
+// this function should normally NOT be called directly
+// use getRootSEC() or make a getLibSEC()
+function _createSEC<Injections = {}, AnalyticsDetails = {}, ErrorDetails = {}>(args: any = {}): SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails> {
 	/////// PARAMS ///////
 
 	if (args.parent && !isSEC(args.parent))
@@ -54,7 +56,7 @@ function createSEC<Injections = {}, AnalyticsDetails = {}, ErrorDetails = {}>(ar
 	//console.log('createSEC', SEC, args.parent)
 
 	// Here we could send an event on the SEC bus. No usage for now.
-	// Her we could have lifecycle methods. No usage for now.
+	// Here we could have lifecycle methods. No usage for now.
 
 	if (unhandled_args.length)
 		throw new Error(`${LIB}›createSEC() argument error: unknown args: [${unhandled_args.join(',')}]!`)
@@ -67,5 +69,5 @@ function createSEC<Injections = {}, AnalyticsDetails = {}, ErrorDetails = {}>(ar
 export {
 	LIB,
 	isSEC,
-	createSEC,
+	_createSEC,
 }

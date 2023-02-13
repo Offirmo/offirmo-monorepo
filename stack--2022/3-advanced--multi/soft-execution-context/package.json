@@ -31,6 +31,7 @@
 
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/print-error-to-ansi": "^0",
 		"@offirmo/practical-logger-browser": "^3",
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4",

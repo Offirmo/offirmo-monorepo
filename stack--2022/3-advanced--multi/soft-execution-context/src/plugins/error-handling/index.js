@@ -6,13 +6,13 @@ import { createError as _createError, normalizeError } from '@offirmo/error-util
 import { INTERNAL_PROP } from '../../consts.js'
 import { flattenToOwn } from '../../utils.js'
 import * as State from './state.js'
-import { createCatcher } from './catch-factory.js'
+import { _create_catcher } from './catch-factory.js'
 import { PLUGIN_ID as ID_DI } from '../dependency-injection/index.js'
 import * as TopState from '../../state.js'
 
 const PLUGIN_ID = 'error_handling'
 
-function cleanTemp(err) {
+function _clean_temp(err) {
 	delete err._temp
 	return err
 }
@@ -23,7 +23,7 @@ const PLUGIN = {
 	augment: prototype => {
 
 		prototype._handleError = function handleError({SEC, debugId = '?', shouldRethrow = true}, err) {
-			createCatcher({
+			_create_catcher({
 				debugId,
 				decorators: [
 					err => normalizeError(err, { alwaysRecreate: true }),
@@ -32,7 +32,7 @@ const PLUGIN = {
 				],
 				onError: shouldRethrow
 					? null
-					: err => SEC.emitter.emit('final-error', { SEC, err: cleanTemp(err) }),
+					: err => SEC.emitter.emit('final-error', { SEC, err: _clean_temp(err) }),
 			})(err)
 		}
 

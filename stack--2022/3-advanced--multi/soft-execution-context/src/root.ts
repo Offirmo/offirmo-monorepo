@@ -2,7 +2,7 @@ import { getGlobalThis } from '@offirmo/globalthis-ponyfill'
 
 import { SoftExecutionContext } from './types.js'
 import { LIB } from './consts.js'
-import { createSEC } from './core.js'
+import { _createSEC } from './core.js'
 
 /////////////////////
 
@@ -11,7 +11,7 @@ function getRootSEC<Injections = {}, AnalyticsDetails = {}, ErrorDetails = {}>()
 
 	if (!global_this.__global_root_sec) {
 		//console.log(`[${LIB}] Creating root context…`)
-		global_this.__global_root_sec = createSEC()
+		global_this.__global_root_sec = _createSEC()
 	}
 
 	return global_this.__global_root_sec

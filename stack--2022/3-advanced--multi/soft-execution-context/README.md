@@ -40,7 +40,7 @@ BE DEFENSIVE !!!
 
 Each SEC is linked to a parent, forming a graph.
 
-Thus a SEC is usually created from a parent with `parentSEC.createChild()`.
+Thus, a SEC is usually created from a parent with `parentSEC.createChild()`.
 
 There is always a unique (singleton) top SEC. It is lazily created on call of `getRootSEC()`.
 
@@ -92,22 +92,22 @@ SEC.emitter.emit('analytics', { SEC, eventId, details })
 
 ### Injections
 
-| value  | Injected | Analytics | Error context | notes |
-| ------------- | ------------- |------------- |------------- |------------- |
-| `SEC` | yes✅ | - | - | the current Software Execution Context |
-| `logger` | yes✅ | - | - | default to console |
-| `NODE_ENV` | yes✅ | - | - | intended usage: if "development", may activate extra error checks, extra error reporting (cf. React) Mirror of NODE_ENV at evaluation time, defaulting to `'development'` if not set. `'production'` or `development` |
-| `ENV` | yes✅ | yes✅ | yes✅ | less connoted alias of `NODE_ENV` 😉 |
-| `IS_DEV_MODE` | yes✅ | - | - | default to `false`. Used to activate dev commands or reportings, ex. extra settings, extra UI |
-| `IS_VERBOSE` | yes✅ | - | - | default to `false`. Used to activate extra reporting on tasks, intent like --verbose |
-| `CHANNEL` | yes✅ | yes✅ | yes✅ | current channel of rollout deployment. Default to `'dev'`. Suggested possible values: `'dev'`, `'staging'`, `'prod'` |
-| `SESSION_START_TIME_MS` | yes✅ | - | - | UTC timestamp in ms of the time of start |
-| `TIME` | - | yes✅ | yes✅ | UTC timestamp in ms of the time of the error/analytics |
-| `SESSION_DURATION_MS` | - | yes✅ | yes✅ | ms elapsed from the start of the session |
-| `OS_NAME` | yes✅ | yes✅ | yes✅ | (Expected to be set by platform-specific code) |
-| `DEVICE_UUID` | - | yes✅ | yes✅ | (Expected to be set by platform-specific code) |
-| `VERSION` | - | yes✅ | yes✅ | (Expected to be set by the user) |
-| `?` | - | - | - |  |
+| value                   | Injected | Analytics | Error context | notes |
+|-------------------------|----------|-----------|---------------|------------- |
+| `SEC`                   | yes✅    | -         | -             | the current Software Execution Context |
+| `logger`                | yes✅     | -         | -             | default to console |
+| `NODE_ENV`              | yes✅     | -         | -             | intended usage: if "development", may activate extra error checks, extra error reporting (cf. React) Mirror of NODE_ENV at evaluation time, defaulting to `'development'` if not set. `'production'` or `development` |
+| `ENV`                   | yes✅     | yes✅      | yes✅       | less connoted alias of `NODE_ENV` 😉 |
+| `IS_DEV_MODE`           | yes✅     | -         | -             | default to `false`. Used to activate dev commands or reportings, ex. extra settings, extra UI |
+| `IS_VERBOSE`            | yes✅     | -         | -             | default to `false`. Used to activate extra reporting on tasks, intent like --verbose |
+| `CHANNEL`               | yes✅     | yes✅      | yes✅          | current channel of rollout deployment. Default to `'dev'`. Suggested possible values: `'dev'`, `'staging'`, `'prod'` |
+| `SESSION_START_TIME_MS` | yes✅     | -         | -             | UTC timestamp in ms of the time of start |
+| `TIME`                  | -        | yes✅      | yes✅          | UTC timestamp in ms of the time of the error/analytics |
+| `SESSION_DURATION_MS`   | -        | yes✅      | yes✅          | ms elapsed from the start of the session |
+| `OS_NAME`               | yes✅*    | yes✅*     | yes✅*         | (Expected to be set by platform-specific code) |
+| `DEVICE_UUID`           | -        | yes✅*     | yes✅*         | (Expected to be set by platform-specific code) |
+| `VERSION`               | -        | yes✅*     | yes✅*         | (Expected to be set by the user) |
+| `?`                     | -        | -         | -             |  |
 
 
 ### Event emitter
