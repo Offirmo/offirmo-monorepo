@@ -42,7 +42,7 @@ function _propertyⵧraw_to_string(context: Context, errLike: Readonly<any>, pro
 function _propertyⵧcause_to_string(context: Context, errLike: Readonly<any>, prop: string = 'cause'): string[] {
 	const cause_err = errLike[prop]
 	if (context.seen_errors.has(cause_err))
-		return [_apply_styleⵧdim(context, ' cause: <circular reference>')]
+		return [_apply_styleⵧdim(context, ' cause: ⟨CIRCULAR REFERENCE!!⟩')]
 	context.seen_errors.add(cause_err)
 
 	return [
@@ -139,8 +139,8 @@ function error_to_string(errLike: Readonly<Partial<Error>>, context: Context = {
 	lines.push(
 		[
 			context.visual_marker,
-			errLike.name?.toLowerCase().includes('error') ? '' : 'Error:',
-			_apply_styleⵧbold(context, errLike.name || 'Error'),
+			errLike.name?.toLowerCase().includes('error') ? '' : '⟨Error⟩',
+			_apply_styleⵧbold(context, errLike.name || '⟨unnamed??⟩'),
 			context.visual_marker,
 		].map(s => s.trim()).filter(s => !!s).join(' ')
 	)

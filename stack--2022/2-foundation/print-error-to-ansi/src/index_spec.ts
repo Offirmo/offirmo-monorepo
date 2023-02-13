@@ -34,7 +34,6 @@ describe(`@offirmo-private/print-error-to-ansi`, () => {
 			expect(s).to.include('statusCode: "555"')
 		})
 
-
 		it('should work -- advanced error -- framesToPop', () => {
 			const err = createError('foo', {
 				framesToPop: 3, // REM createError() will +1 that
@@ -55,6 +54,43 @@ describe(`@offirmo-private/print-error-to-ansi`, () => {
 			//console.error(error_to_string(err), '\n' + s)
 			expect(s).to.include('details:')
 			expect(s).to.include('  foo: "42"')
+		})
+
+		it('should ensure the title mentions an error -- custom name', () => {
+			// custom error
+			function CustomException(this: Error & { stack: any}, message: string) {
+				this.name = 'CustomException'
+				this.message = message || 'XYZ will not run.'
+				this.stack = (new Error()).stack
+			}
+			CustomException.prototype = Object.create(Error.prototype)
+			CustomException.prototype.constructor = CustomException
+
+			// @ts-expect-error
+			const err = new CustomException('foo')
+
+			const s = strip_ansi(error_to_string(err))
+			//console.error(error_to_string(err), '\n' + s)
+			expect(s).to.include('┏━❗ ⟨Error⟩ CustomException ❗')
+		})
+
+		it('should ensure the title mentions an error -- no name', () => {
+			// custom error
+			function CustomException(this: Error & { stack: any}, message: string) {
+				// @ts-expect-error
+				this.name = undefined // the horror!
+				this.message = message || 'XYZ will not run.'
+				this.stack = (new Error()).stack
+			}
+			CustomException.prototype = Object.create(Error.prototype)
+			CustomException.prototype.constructor = CustomException
+
+			// @ts-expect-error
+			const err = new CustomException('foo')
+
+			const s = strip_ansi(error_to_string(err))
+			//console.error(error_to_string(err), '\n' + s)
+			expect(s).to.include('┏━❗ ⟨Error⟩ ⟨unnamed??⟩ ❗')
 		})
 
 		describe('cause chaining', function () {
@@ -108,7 +144,7 @@ describe(`@offirmo-private/print-error-to-ansi`, () => {
 
 				const s = strip_ansi(error_to_string(err))
 				//console.error(error_to_string(err), '\n' + s)
-				expect(s).to.include('cause: <circular reference>')
+				expect(s).to.include('cause: ⟨CIRCULAR REFERENCE!!⟩')
 			})
 		})
 	})

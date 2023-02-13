@@ -7,7 +7,7 @@ import {
 	COMMON_ERROR_FIELDS_EXTENDED,
 } from './fields.js'
 
-interface ErrorCreationAttributes extends XXError {
+export interface ErrorCreationAttributes extends XXError {
 	[k: string]: any
 }
 

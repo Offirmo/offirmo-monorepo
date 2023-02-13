@@ -6,7 +6,7 @@ import {
 
 import { XXError } from './types.js'
 
-import { createError } from './util--create.js'
+import { createError, ErrorCreationAttributes } from './util--create.js'
 
 
 describe(`@offirmo/error-utils`, () => {
@@ -54,8 +54,11 @@ describe(`@offirmo/error-utils`, () => {
 		})
 
 		describe('attributes', function() {
+
 			it('should attach the attributes at the correct place', () => {
 				const chained_error = new Error('Foo!')
+
+				expect(COMMON_ERROR_FIELDS_EXTENDED, 'This unit test needs an update! (1)').to.have.lengthOf(11)
 
 				const err = createError('test!', {
 					name: 'TEST_NAME', // will be ignored and lost
@@ -67,6 +70,7 @@ describe(`@offirmo/error-utils`, () => {
 
 					// should stay as is
 					cause: chained_error,
+					errors: [ chained_error ],
 					code: '1234', // rem: string type according to nodejs doc
 					statusCode: 567,
 					shouldRedirect: false,
@@ -81,7 +85,6 @@ describe(`@offirmo/error-utils`, () => {
 
 					// leftovers, should be added in details (post)
 					logicalStack: 'TST_LOGICAL_STACK',
-
 				}, TypeError)
 
 				const expected = {
@@ -89,6 +92,7 @@ describe(`@offirmo/error-utils`, () => {
 					message: 'TypeError: test!',
 					stack: err.stack,
 					cause: chained_error,
+					errors: [ chained_error ],
 					code: '1234', // rem: string type according to nodejs doc
 					statusCode: 567,
 					shouldRedirect: false,
@@ -104,8 +108,8 @@ describe(`@offirmo/error-utils`, () => {
 					},
 				}
 				COMMON_ERROR_FIELDS_EXTENDED.forEach((k: keyof XXError) => {
-					expect(err, k).to.have.property(k)
-					expect(err[k], k).to.deep.equal((expected as any)[k])
+					expect(err, `have field "${k}"`).to.have.property(k)
+					expect(err[k], `preserved field "${k}"`).to.deep.equal((expected as any)[k])
 				})
 				Object.keys(err).forEach(k => {
 					expect(expected, k).to.have.property(k)

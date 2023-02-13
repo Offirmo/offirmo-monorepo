@@ -1132,3 +1132,5 @@ https://en.wikipedia.org/wiki/Modified_Mercalli_intensity_scale
 
 https://www.pcgamesn.com/best-dragon-games
 https://www.pcgamesn.com/100-best-free-pc-games
+
+https://universe.eveonline.com/scientific-articles

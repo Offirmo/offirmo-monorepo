@@ -1,2 +1,14 @@
-TODO move to error utils? -> no this is node specific (text output)
-TODO add optional support of https://www.stacktracejs.com/
+
+## Improved display of an error on a terminal
+
+The terminal (node.js) lacks the observability of the browser's console.
+The default error display (console) is inferior and hard to detect + parse.
+
+This lib solves all the issues ✅
+
+Note:
+* this lib relies on `@offirmo/error-utils` but is separated since specific to node.js / terminal
+* this lib occusionally adds content not present on the error object. Such content is denoted by special brackets: `⟨...⟩`
+
+Roadmap
+* TODO MAYBE? improve stack display with https://www.stacktracejs.com/
