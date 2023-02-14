@@ -111,7 +111,6 @@ describe(`@offirmo-private/print-error-to-ansi`, () => {
 				expect(s).to.include('┃ ┃ code: "ERR_CPU_USAGE"')
 			})
 
-
 			it('should work -- advanced error', () => {
 				const err1 = createError('bar', {
 					statusCode: 555,
@@ -135,7 +134,6 @@ describe(`@offirmo-private/print-error-to-ansi`, () => {
 				expect(s).to.include('┃ ┃   foo: "42"')
 				expect(s).to.include('┃ ┃ ↳ ⟨frames popped: 2⟩')
 			})
-
 
 			it('should work -- infinite loop -- trivial', () => {
 				const err = new Error('foo')

@@ -5,6 +5,10 @@ The terminal (node.js) lacks the observability of the browser's console.
 The default error display (console) is inferior and hard to detect + parse.
 
 This lib solves all the issues ✅
+* all fields are displayed
+* "details" are displayed
+* "cause" is displayed
+* the stack is cleaned with 1) framesToPop 2) first useless line
 
 Note:
 * this lib relies on `@offirmo/error-utils` but is separated since specific to node.js / terminal

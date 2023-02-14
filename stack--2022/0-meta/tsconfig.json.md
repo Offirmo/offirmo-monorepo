@@ -26,12 +26,31 @@ Relaxed:
 
 ### modules
 
-* `module` set to the latest ES we support
-* `esModuleInterop` intentionally set to false in order to better detect non-ESM code https://www.typescriptlang.org/tsconfig#esModuleInterop
-  * NO!!! moved back to "true" due to still using cjs, ex. pb importing "memoize-one"
-* `allowSyntheticDefaultImports` intentionally set to false in order to better detect non-ESM code
-  * NO!!! moved back to "true" due to still using cjs, ex. pb importing "fetch-ponyfill" or sindre
-* [`moduleResolution`](https://www.typescriptlang.org/docs/handbook/module-resolution.html) kept to node as the ecosystem is not ready :-(
+Very complicated!
+
+Example of errors:
+> import path from 'path'
+> -> error TS1259: Module '"path"' can only be default-imported using the 'allowSyntheticDefaultImports' flag. This module is declared with 'export =', and can only be used with a default import when using the 'allowSyntheticDefaultImports' flag.
+
+> error TS2349: This expression is not callable. (node_modules/micro-memoize/index")' has no call signatures.
+
+* `module` set to the latest ES we support https://www.typescriptlang.org/tsconfig#module
+  * this prop affects code GENERATION
+  * XXX this property affects `moduleResolution` (see below)
+
+Compatibility:
+* `esModuleInterop` https://www.typescriptlang.org/tsconfig#esModuleInterop
+  * IIUC makes the generated code use helper functions
+  * IDEALLY we want it to false:
+    * no extra helper functions
+    * better detect non-ESM code
+  * BUT moved back to "true" due to: "most libraries with CommonJS/AMD/UMD modules didn’t conform as strictly as TypeScript’s implementation"
+  * TODO move back to false en a while to check progress
+* `allowSyntheticDefaultImports` intentionally set to `false` in order to better detect non-ESM code https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports
+  * NO!! moved back to `true` due to still using cjs, ex. pb importing "fetch-ponyfill" or sindre
+  * NO!! moved back to `false`, adds wrappers that ends up undefined. Above longer needed since we switched to pure ESM
+  *
+* `moduleResolution` (https://www.typescriptlang.org/docs/handbook/module-resolution.html) kept to node as the ecosystem is not ready :-(
   * [https://github.com/microsoft/TypeScript/issues/46452](update marker)
 * `isolatedModules` set to true always bc. parcel needs it, cf. https://parceljs.org/languages/typescript/#isolatedmodules
 

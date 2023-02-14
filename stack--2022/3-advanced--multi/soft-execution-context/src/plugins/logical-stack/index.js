@@ -149,8 +149,9 @@ const PLUGIN = {
 				else {
 					const original_message = err.message
 					err.message = logicalStack.short + ': ' + original_message
-					if (err.stack?.startsWith(original_message))
-						err.stack = err.message + err.stack.slice(original_message.length)
+					const expected_first_line_of_the_stack = `${err.name}: ${original_message}`
+					if (err.stack?.startsWith(expected_first_line_of_the_stack))
+						err.stack = `${err.name}: ${err.message}` + err.stack.slice(expected_first_line_of_the_stack.length)
 				}
 
 				err.details.logicalStack = logicalStack.full

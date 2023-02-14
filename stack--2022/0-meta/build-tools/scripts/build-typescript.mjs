@@ -34,8 +34,9 @@ const cli = meow('build', {
 // note: we could object to this info being duplicated here from tsconfig
 // but it's better semantic (hard to comment in tsconfig)
 const LATEST_ES_OLDEST_ACTIVE_NODE_LTS = 'ES2022' // should be <= LATEST_CONVENIENT_ES
-const LATEST_ES_MODULES = 'ES2020'
-
+const LATEST_ES_MODULES = 'ES2022'
+// "NodeNext" is recommended by https://2ality.com/2021/06/typescript-esm-nodejs.html
+// XXX "NodeNext" is an "intelligent" setting that also affects module resolution https://www.typescriptlang.org/tsconfig#node16nodenext-nightly-builds
 /////////////////////
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))

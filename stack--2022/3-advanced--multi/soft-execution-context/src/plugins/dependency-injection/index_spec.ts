@@ -10,6 +10,7 @@ import {
 
 describe(`${LIB}`, function () {
 	function _mocha_bug_clean_global() {
+		// https://github.com/mochajs/mocha/issues/4954
 		_test_only__reset_root_SEC()
 	}
 	before(_test_only__reset_root_SEC)

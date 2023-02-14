@@ -62,7 +62,7 @@ function _propertyⵧstack_to_string(context: Context, errLike: Readonly<any>, p
 	const lines =
 		stack__raw
 			.split(context.line_separator)
-			.filter(line => !line.startsWith('Error'))
+			.filter(line => !line.startsWith(errLike['name'] || 'Error:'))
 			.map(line => line.trim())
 
 	const ftp = Number.parseInt(errLike['framesToPop'])

@@ -1,4 +1,5 @@
 import { expect } from 'chai'
+import { error_to_string, displayError } from '@offirmo-private/print-error-to-ansi'
 
 import {
 	LIB,
@@ -10,6 +11,7 @@ import {
 
 describe(`${LIB}`, function () {
 	function _mocha_bug_clean_global() {
+		// https://github.com/mochajs/mocha/issues/4954
 		_test_only__reset_root_SEC()
 	}
 	before(_test_only__reset_root_SEC)
@@ -26,13 +28,13 @@ describe(`${LIB}`, function () {
 					getRootSEC().xTry('level1', ({SEC: SEC1, ENV}) => {
 
 						SEC1.xTry('level2', ({SEC: SEC2}) => {
-
+							// we don't mind having "undefined", it prompts the user to properly configure the lib
 							expect(SEC2.getLogicalStack()).to.equal('›level1›level2')
-							expect(SEC2.getShortLogicalStack()).to.equal('…level2')
+							expect(SEC2.getShortLogicalStack()).to.equal('undefined…level2')
 							expect(SEC1.getLogicalStack()).to.equal('›level1')
-							expect(SEC1.getShortLogicalStack()).to.equal('…level1')
+							expect(SEC1.getShortLogicalStack()).to.equal('undefined…level1')
 							expect(getRootSEC().getLogicalStack()).to.equal('')
-							expect(getRootSEC().getShortLogicalStack()).to.equal('…')
+							expect(getRootSEC().getShortLogicalStack()).to.equal('undefined…undefined')
 						})
 					})
 
@@ -52,7 +54,7 @@ describe(`${LIB}`, function () {
 							expect(SEC1.getLogicalStack()).to.equal('app›level1')
 							expect(SEC1.getShortLogicalStack()).to.equal('app…level1')
 							expect(getRootSEC().getLogicalStack()).to.equal('app')
-							expect(getRootSEC().getShortLogicalStack()).to.equal('app…')
+							expect(getRootSEC().getShortLogicalStack()).to.equal('app…undefined')
 						})
 					})
 
@@ -90,7 +92,8 @@ describe(`${LIB}`, function () {
 				function great_politely(target: string, {SEC} = {} as { SEC?: SoftExecutionContext}) {
 					get_lib_SEC(SEC).xTry('great', ({SEC, ENV, logger}) => {
 
-						console.log(polite_hello(target, {SEC}))
+						const s = polite_hello(target, {SEC})
+						expect(s).to.equal('Hello, Mx. Offirmo! (from FOO›great›add_honorifics›hello)')
 					})
 				}
 
@@ -123,9 +126,12 @@ describe(`${LIB}`, function () {
 						getRootSEC().setLogicalStack({module: 'foo'})
 
 						getRootSEC().xTry('bar', ({SEC}) => {
-							const raw_error = new Error('TEST!')
+							const raw_error = new TypeError('TEST!')
 							const err = (SEC as any)._decorateErrorWithLogicalStack(raw_error)
+							//displayError(err)
+							//console.error(err.stack)
 							expect(err).to.equal(raw_error) // yes, this internal
+
 							expect(err.message).to.equal('foo…bar: TEST!')
 						})
 
@@ -136,10 +142,10 @@ describe(`${LIB}`, function () {
 						getRootSEC().setLogicalStack({module: 'foo'})
 
 						getRootSEC().xTry('bar', ({SEC}) => {
-							const raw_error = new Error('TEST!')
+							const raw_error = new TypeError('TEST!')
 							const err = (SEC as any)._decorateErrorWithLogicalStack(raw_error)
 							expect(err.message).to.equal('foo…bar: TEST!')
-							expect(err.stack.startsWith('foo…bar: TEST!')).to.be.true
+							expect(err.stack.startsWith('TypeError: foo…bar: TEST!')).to.be.true
 						})
 
 						_mocha_bug_clean_global()
@@ -152,13 +158,13 @@ describe(`${LIB}`, function () {
 						let raw_error: any = null
 						let err_from_l2: any = null
 						let err_from_l1: any = null
-
+						getRootSEC().setLogicalStack({module: 'test'})
 						try {
 							getRootSEC().xTry('level1', ({SEC: SEC1, ENV}) => {
 
 								try {
 									SEC1.xTry('level2', ({SEC: SEC2}) => {
-										raw_error = new Error('Test!')
+										raw_error = new TypeError('Test!')
 										throw raw_error
 									})
 								}
@@ -171,14 +177,14 @@ describe(`${LIB}`, function () {
 						catch (err) {
 							err_from_l1 = err
 
-							console.log({
-								raw_error,
-								err_from_l2,
-								err_from_l1,
-							})
-
-							expect(err_from_l2.message).to.equal('foo…bar: TEST!')
-							expect(err_from_l2.stack.startsWith('foo…bar: TEST!')).to.be.true
+							//displayError(err_from_l2)
+							//console.error(err.stack)
+							expect(raw_error.message).to.equal('Test!')
+							expect(raw_error.stack.startsWith('TypeError: Test!')).to.be.true
+							expect(err_from_l2.message).to.equal('test…level2: Test!')
+							expect(err_from_l2.stack.startsWith('TypeError: test…level2: Test!')).to.be.true
+							expect(err_from_l1.message).to.equal('test…level2: Test!')
+							expect(err_from_l1.stack.startsWith('TypeError: test…level2: Test!')).to.be.true
 						}
 
 						_mocha_bug_clean_global()

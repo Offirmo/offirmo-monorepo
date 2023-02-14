@@ -50,10 +50,14 @@ import { getRootSEC } from '${stylizeString.bold(PKG_JSON.name)}'
 
 const LIB = 'FOO'
 
-function get_lib_SEC(parent) {
-	return (parent ?? getRootSEC())
+function get_lib_SEC(parent: SEC = getRootSEC()): SEC {
+	// TODO memoize ? (if !parent)
+	return parent
 		.createChild()
 		.setLogicalStack({module: LIB})
+		.injectDependencies({
+			name: parent.getInjectedDependencies().name || 'root',
+	})
 }
 
 function hello(target, {SEC} = {}) {
