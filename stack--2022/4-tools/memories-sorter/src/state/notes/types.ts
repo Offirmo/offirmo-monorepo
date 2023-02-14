@@ -1,6 +1,6 @@
 import { BaseState, WithLastUserInvestmentTimestamp } from '@offirmo-private/state-utils'
 
-import { PersistedNotes as FileNotes } from '../file'
+import { PersistedNotes as FileNotes } from '../file/index.js'
 
 ////////////////////////////////////
 

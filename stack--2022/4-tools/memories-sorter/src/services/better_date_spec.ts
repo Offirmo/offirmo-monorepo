@@ -29,8 +29,8 @@ import {
 	get_elapsed_days_between_ordered_simple_dates,
 
 	assertㆍBetterDateㆍdeepㆍequal,
-} from './better-date'
-import { get_params } from '../params'
+} from './better-date.js'
+import { get_params } from '../params.js'
 
 describe('Better Date', function() {
 	const PARAMS = {

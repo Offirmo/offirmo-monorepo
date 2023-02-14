@@ -4,26 +4,26 @@ import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 import { get_mutable_copy } from '@offirmo-private/state-utils'
 import stylize_string from 'chalk'
 
-import logger from '../../services/logger'
-import { FileHash } from '../../services/hash'
+import logger from '../../services/logger.js'
+import { FileHash } from '../../services/hash.js'
 import {
 	get_human_readable_timestamp_auto,
 	create_better_date_from_utc_tms,
-} from '../../services/better-date'
+} from '../../services/better-date.js'
 import {
 	PersistedNotes as FileNotes,
 	merge_notes,
-} from '../file'
+} from '../file/index.js'
 
-import { LIB, SCHEMA_VERSION } from './consts'
-import { State } from './types'
-import { get_historical_fs_reliability } from '../file/sub/neighbor-hints'
-import { get_lib_SEC } from '../../services/sec'
+import { LIB, SCHEMA_VERSION } from './consts.js'
+import { State } from './types.js'
+import { get_historical_fs_reliability } from '../file/sub/neighbor-hints/index.js'
+import { get_lib_SEC } from '../../services/sec.js'
 
-export { type State } from './types'
-import { migrate_to_latest as _migrate_to_latest } from './migrations'
-import { get_file_basename_extension‿normalized } from '../../services/name_parser'
-import { get_params, Params } from '../../params'
+export { type State } from './types.js'
+import { migrate_to_latest as _migrate_to_latest } from './migrations.js'
+import { get_file_basename_extension‿normalized } from '../../services/name_parser.js'
+import { get_params, Params } from '../../params.js'
 
 ///////////////////// ACCESSORS /////////////////////
 

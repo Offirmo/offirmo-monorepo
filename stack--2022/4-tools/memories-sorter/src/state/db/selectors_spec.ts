@@ -2,9 +2,9 @@ import { expect } from 'chai'
 import path from 'path'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { get_test_single_file_DB_state_generator } from '../../__test_shared/utils'
-import { LIB } from '../../consts'
-import * as Notes from '../notes'
+import { get_test_single_file_DB_state_generator } from '../../__test_shared/utils.js'
+import { LIB } from '../../consts.js'
+import * as Notes from '../notes/index.js'
 import {
 	clean_up_duplicates,
 	create,
@@ -26,15 +26,15 @@ import {
 	on_hash_computed,
 	on_note_file_found,
 	to_string,
-} from '.'
+} from './index.js'
 import {
 	create_better_date,
 	_get_exif_datetime,
 	get_timestamp_utc_ms_from,
 	get_compact_date,
-} from '../../services/better-date'
-import * as File from '../file'
-import * as Folder from '../folder'
+} from '../../services/better-date.js'
+import * as File from '../file/index.js'
+import * as Folder from '../folder/index.js'
 
 /////////////////////
 

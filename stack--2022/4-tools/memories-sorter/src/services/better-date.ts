@@ -6,7 +6,7 @@
  * - TC39 Temporal https://tc39.es/proposal-temporal/docs/cookbook.html
  */
 
-const { deepStrictEqual: assert_deepStrictEqual } = require('assert').strict
+import { strict as node_assert } from 'assert'
 
 import assert from 'tiny-invariant'
 import { ExifDateTime } from 'exiftool-vendored'
@@ -21,9 +21,9 @@ import { get_json_difference } from '@offirmo-private/state-utils'
 import { DateTime as LuxonDateTime } from 'luxon'
 ///////
 
-import { SimpleYYYYMMDD, TimeZone } from '../types'
-import { get_default_timezone, get_params, Params } from '../params'
-import logger from './logger'
+import { SimpleYYYYMMDD, TimeZone } from '../types.js'
+import { get_default_timezone, get_params, Params } from '../params.js'
+import logger from './logger.js'
 
 ////////////////////////////////////
 
@@ -612,7 +612,7 @@ export function assertㆍBetterDateㆍdeepㆍequal(s1: Immutable<BetterDate>, s2
 	const s2_alt = _clean_debug(s2)
 
 	try {
-		assert_deepStrictEqual(s1_alt, s2_alt)
+		node_assert.deepStrictEqual(s1_alt, s2_alt)
 	}
 	catch (err) {
 		if (should_log)

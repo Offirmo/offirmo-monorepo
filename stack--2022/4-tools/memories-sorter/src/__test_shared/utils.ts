@@ -16,18 +16,18 @@ import {
 	get_compact_date,
 	get_human_readable_timestamp_auto,
 	get_timestamp_utc_ms_from,
-} from '../services/better-date'
+} from '../services/better-date.js'
 import {
 	PersistedNotes,
 	FsReliability,
-} from '../state/file'
-import * as FileLib from '../state/file'
-import * as DB from '../state/db'
-import * as Notes from '../state/notes'
-import { Basename } from '../types'
+} from '../state/file/index.js'
+import * as FileLib from '../state/file/index.js'
+import * as DB from '../state/db/index.js'
+import * as Notes from '../state/notes/index.js'
+import { Basename } from '../types.js'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
-import { FsStatsSubset } from '../services/fs_stats'
-import { read_exif_data } from '../services/exif'
+import { FsStatsSubset } from '../services/fs_stats.js'
+import { read_exif_data } from '../services/exif.js'
 
 
 export async function load_real_media_file(abs_path: string): Promise<Immutable<FileLib.State>> {

@@ -1,14 +1,14 @@
 
-import { AbsolutePath } from '../../types'
-import { Action } from '../actions'
+import { AbsolutePath } from '../../types.js'
+import { Action } from '../actions.js'
 
-import * as Folder from '../folder'
-import * as File from '../file'
-import * as Notes from '../notes'
-import { FolderId } from '../folder'
-import { FileId } from '../file'
+import * as Folder from '../folder/index.js'
+import * as File from '../file/index.js'
+import * as Notes from '../notes/index.js'
+import { FolderId } from '../folder/index.js'
+import { FileId } from '../file/index.js'
 
-import { FileHash } from '../../services/hash'
+import { FileHash } from '../../services/hash.js'
 
 /////////////////////
 

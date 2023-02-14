@@ -1,6 +1,6 @@
 ////////////////////////////////////
 
-import { get_params } from '../params'
+import { get_params } from '../params.js'
 
 const PARAMS = get_params()
 

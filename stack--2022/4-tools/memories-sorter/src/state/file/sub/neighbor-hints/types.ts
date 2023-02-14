@@ -1,5 +1,5 @@
-import { BetterDate, DateRange, BetterDateMembers } from '../../../../services/better-date'
-import { TimeZone } from '../../../../types'
+import { BetterDate, DateRange, BetterDateMembers } from '../../../../services/better-date.js'
+import { TimeZone } from '../../../../types.js'
 
 export type FsReliability = 'reliable' | 'unreliable' | 'unknown'
 

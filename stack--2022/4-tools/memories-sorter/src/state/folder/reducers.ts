@@ -2,25 +2,25 @@ import path from 'path'
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { RelativePath, SimpleYYYYMMDD } from '../../types'
-import { Params, get_params, get_default_timezone } from '../../params'
-import { pathㆍparse_memoized } from '../../services/name_parser'
-import logger from '../../services/logger'
-import * as BetterDateLib from '../../services/better-date'
-import { is_year } from '../../services/matchers'
-import * as File from '../file'
+import { RelativePath, SimpleYYYYMMDD } from '../../types.js'
+import { Params, get_params, get_default_timezone } from '../../params.js'
+import { pathㆍparse_memoized } from '../../services/name_parser.js'
+import logger from '../../services/logger.js'
+import * as BetterDateLib from '../../services/better-date.js'
+import { is_year } from '../../services/matchers.js'
+import * as File from '../file/index.js'
 
 import {
 	LIB,
 	SPECIAL_FOLDERⵧINBOX__BASENAME,
 	SPECIAL_FOLDERⵧCANT_AUTOSORT__BASENAME,
 	SPECIAL_FOLDERⵧCANT_RECOGNIZE__BASENAME,
-} from './consts'
+} from './consts.js'
 import {
 	FolderId,
 	Type,
 	State,
-} from './types'
+} from './types.js'
 import {
 	get_depth,
 	get_event_end_date‿symd,
@@ -29,7 +29,7 @@ import {
 	ERROR__RANGE_TOO_BIG,
 	is_looking_like_a_backup,
 	get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources,
-} from './selectors'
+} from './selectors.js'
 
 ////////////////////////////////////
 

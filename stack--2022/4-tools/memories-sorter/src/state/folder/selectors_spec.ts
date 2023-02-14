@@ -1,21 +1,21 @@
 import { expect } from 'chai'
 
-import { LIB } from '../../consts'
+import { LIB } from '../../consts.js'
 import {
 	create_better_date_obj,
 	_get_exif_datetime,
 	create_better_date_from_symd,
 	get_human_readable_timestamp_auto,
-} from '../../services/better-date'
+} from '../../services/better-date.js'
 
-import { State } from './types'
+import { State } from './types.js'
 import {
 	create,
 	on_fs_exploration_done,
 	on_subfile_all_infos_gathered,
 	on_subfile_found,
 	on_subfile_primary_infos_gathered,
-} from './reducers'
+} from './reducers.js'
 
 import {
 	get_ideal_basename,
@@ -28,12 +28,12 @@ import {
 	to_string,
 	get_neighbor_primary_hints,
 	get_tz,
-} from './selectors'
-import * as File from '../file/index'
-import './__test_shared'
-import { ALL_MEDIA_DEMOS } from '../../__test_shared/real_files'
-import { get_test_single_file_state_generator } from '../../__test_shared/utils'
-import * as BetterDateLib from '../../services/better-date'
+} from './selectors.js'
+import * as File from '../file/index.js'
+import './__test_shared.js'
+import { ALL_MEDIA_DEMOS } from '../../__test_shared/real_files/index.js'
+import { get_test_single_file_state_generator } from '../../__test_shared/utils.js'
+import * as BetterDateLib from '../../services/better-date.js'
 
 /////////////////////
 

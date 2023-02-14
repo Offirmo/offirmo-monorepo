@@ -4,7 +4,7 @@ import { expect } from 'chai'
 import { Immutable } from '@offirmo-private/ts-types'
 import { enforce_immutability } from '@offirmo-private/state-utils'
 
-import { LIB } from '../../consts'
+import { LIB } from '../../consts.js'
 import {
 	FileId,
 	PersistedNotes,
@@ -12,20 +12,20 @@ import {
 	HistoricalData,
 	merge_notes,
 	merge_duplicates,
-} from '.'
+} from './index.js'
 import {
 	_get_exif_datetime,
 	create_better_date,
 	get_timestamp_utc_ms_from,
-} from '../../services/better-date'
+} from '../../services/better-date.js'
 import {
 	get_test_single_file_state_generator,
-} from '../../__test_shared/utils'
+} from '../../__test_shared/utils.js'
 
 import {
 	expectㆍfileㆍstatesㆍdeepㆍequal,
 	expectㆍfileㆍstatesㆍNOTㆍdeepㆍequal,
-} from './__test_shared'
+} from './__test_shared.js'
 
 /////////////////////
 

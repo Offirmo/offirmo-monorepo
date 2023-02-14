@@ -1,7 +1,7 @@
 #!/bin/sh
 ':' //# https://sambal.org/?p=1014 ; exec /usr/bin/env node "$0" "$@"
 
-require('loud-rejection/register')
+import 'loud-rejection/register'
 
 const path = require('path')
 const sum_up_module = require('sum-up')

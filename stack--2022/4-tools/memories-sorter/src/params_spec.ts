@@ -7,7 +7,7 @@ import {
 	Params,
 	_UNSAFE_CURRENT_SYSTEM_TIMEZONE,
 	get_default_timezone,
-} from './params'
+} from './params.js'
 
 describe('Params', function() {
 

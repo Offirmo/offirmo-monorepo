@@ -5,14 +5,14 @@ import { Immutable } from '@offirmo-private/ts-types'
 import { enforce_immutability } from '@offirmo-private/state-utils'
 import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 
-import { BROKEN_FILE_EXTENSIONS_LC } from '../../consts'
-import { get_params } from '../../params'
-import logger from '../../services/logger'
+import { BROKEN_FILE_EXTENSIONS_LC } from '../../consts.js'
+import { get_params } from '../../params.js'
+import logger from '../../services/logger.js'
 import {
 	FsStatsSubset,
 	get_most_reliable_birthtime_from_fs_stats,
-} from '../../services/fs_stats'
-import { get_orientation_from_exif, has_errors } from '../../services/exif'
+} from '../../services/fs_stats.js'
+import { get_orientation_from_exif, has_errors } from '../../services/exif.js'
 import {
 	get_file_basename_copy_index,
 	get_file_basename_extension‿normalized,
@@ -22,17 +22,17 @@ import {
 	is_normalized_event_folder_relpath,
 	is_processed_media_basename,
 	pathㆍparse_memoized,
-} from '../../services/name_parser'
-import * as BetterDateLib from '../../services/better-date'
+} from '../../services/name_parser.js'
+import * as BetterDateLib from '../../services/better-date.js'
 
-import { LIB } from './consts'
+import { LIB } from './consts.js'
 import {
 	FileId,
 	State,
 	NeighborHints,
 	PersistedNotes,
 	HistoricalNeighborHints,
-} from './types'
+} from './types.js'
 import {
 	is_exif_powered_media_file,
 	get_current_extension‿normalized,
@@ -46,9 +46,9 @@ import {
 	get_creation_dateⵧfrom_fsⵧcurrent‿tms,
 	get_creation_dateⵧfrom_fsⵧcurrent__reliability_according_to_our_own_trustable_current_primary_date_sources,
 	is_media_file,
-} from './selectors'
-import * as NeighborHintsLib from './sub/neighbor-hints'
-import { get_bcd_from_parent_path, get_fs_reliability_score } from './sub/neighbor-hints'
+} from './selectors.js'
+import * as NeighborHintsLib from './sub/neighbor-hints/index.js'
+import { get_bcd_from_parent_path, get_fs_reliability_score } from './sub/neighbor-hints/index.js'
 
 ////////////////////////////////////
 

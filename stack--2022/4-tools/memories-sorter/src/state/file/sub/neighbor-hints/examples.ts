@@ -1,11 +1,11 @@
 
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
-import { REAL_CREATION_DATE‿TMS } from '../../../../__test_shared/utils'
-import { create_better_date_from_utc_tms } from '../../../../services/better-date'
+import { REAL_CREATION_DATE‿TMS } from '../../../../__test_shared/utils.js'
+import { create_better_date_from_utc_tms } from '../../../../services/better-date.js'
 
-import { NeighborHints, HistoricalNeighborHints } from './types'
-import { get_historical_representation } from './selectors'
+import { NeighborHints, HistoricalNeighborHints } from './types.js'
+import { get_historical_representation } from './selectors.js'
 
 /////////////////////
 

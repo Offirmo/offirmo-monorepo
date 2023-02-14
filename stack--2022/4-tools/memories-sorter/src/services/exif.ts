@@ -5,7 +5,7 @@ import { Immutable, HashOf } from '@offirmo-private/ts-types'
 import micro_memoize from 'micro-memoize'
 import { enforce_immutability } from '@offirmo-private/state-utils'
 
-import { AbsolutePath, TimeZone } from '../types'
+import { AbsolutePath, TimeZone } from '../types.js'
 import {
 	LegacyDate,
 	create_better_date_from_ExifDateTime,
@@ -13,8 +13,8 @@ import {
 	get_embedded_timezone,
 	are_same_tms_date_with_potential_tz_difference,
 	are_tms_within_24h_of_each_other,
-} from './better-date'
-import logger from './logger'
+} from './better-date.js'
+import logger from './logger.js'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
 ////////////////////////////////////

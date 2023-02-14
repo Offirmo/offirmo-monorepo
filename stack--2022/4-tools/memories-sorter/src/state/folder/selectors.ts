@@ -5,29 +5,29 @@ import { Immutable } from '@offirmo-private/ts-types'
 import { NORMALIZERS } from '@offirmo-private/normalize-string'
 import micro_memoize from 'micro-memoize'
 
-import { DIGIT_PROTECTION_SEPARATOR } from '../../consts'
-import { Basename, RelativePath, SimpleYYYYMMDD, TimeZone } from '../../types'
-import logger from '../../services/logger'
-import { is_digit } from '../../services/matchers'
+import { DIGIT_PROTECTION_SEPARATOR } from '../../consts.js'
+import { Basename, RelativePath, SimpleYYYYMMDD, TimeZone } from '../../types.js'
+import logger from '../../services/logger.js'
+import { is_digit } from '../../services/matchers.js'
 import {
 	parse_folder_basename,
 	ParseResult,
 	pathㆍparse_memoized,
 	is_folder_basename__matching_a_processed_event_format,
-} from '../../services/name_parser'
-import * as BetterDateLib from '../../services/better-date'
-import { BetterDate, compare_utc, DateRange } from '../../services/better-date'
-import { FsReliability, NeighborHints } from '../file'
-import * as FileLib from '../file'
+} from '../../services/name_parser.js'
+import * as BetterDateLib from '../../services/better-date.js'
+import { BetterDate, compare_utc, DateRange } from '../../services/better-date.js'
+import { FsReliability, NeighborHints } from '../file/index.js'
+import * as FileLib from '../file/index.js'
 
 import {
 	LIB,
-} from './consts'
+} from './consts.js'
 import {
 	Type,
 	State,
-} from './types'
-import { get_default_timezone, get_params, Params } from '../../params'
+} from './types.js'
+import { get_default_timezone, get_params, Params } from '../../params.js'
 
 ////////////////////////////////////
 

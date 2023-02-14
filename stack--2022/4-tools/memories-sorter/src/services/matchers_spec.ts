@@ -1,14 +1,14 @@
 import { expect } from 'chai'
 
-import { LIB } from '../consts'
-import { CURRENT_YEAR } from '../params'
+import { LIB } from '../consts.js'
+import { CURRENT_YEAR } from '../params.js'
 import {
 	is_day_fragment,
 	is_month_fragment,
 	is_year,
 	is_YYYYMMDD,
 	is_DDMMYYYY,
-} from './matchers'
+} from './matchers.js'
 
 /////////////////////
 

@@ -1,2 +1,2 @@
 
-import '../../__test_shared/mocha_spec'
+import '../../__test_shared/mocha_spec.js'

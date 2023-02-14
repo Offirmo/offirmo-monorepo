@@ -15,16 +15,16 @@ import {
 	Basename,
 	RelativePath,
 	SimpleYYYYMMDD,
-} from '../../types'
-import { FsStatsSubset } from '../../services/fs_stats'
-import { FileHash } from '../../services/hash'
+} from '../../types.js'
+import { FsStatsSubset } from '../../services/fs_stats.js'
+import { FileHash } from '../../services/hash.js'
 
-import { HistoricalNeighborHints, NeighborHints } from './sub/neighbor-hints/types'
-import { BetterDateMembers } from '../../services/better-date'
+import { HistoricalNeighborHints, NeighborHints } from './sub/neighbor-hints/types.js'
+import { BetterDateMembers } from '../../services/better-date.js'
 
 /////////////////////////////////////////////////
 
-export * from './sub/neighbor-hints/types'
+export * from './sub/neighbor-hints/types.js'
 
 // Data that we'll destroy/modify but is worth keeping
 export interface HistoricalData {

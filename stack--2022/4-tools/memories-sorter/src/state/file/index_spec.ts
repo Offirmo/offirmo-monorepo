@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { LIB } from '../../consts'
+import { LIB } from '../../consts.js'
 import {
 	get_best_creation_date,
 	_get_best_creation_date‿compact,
@@ -11,15 +11,15 @@ import {
 	get_ideal_basename,
 	is_confident_in_date_enough_to__fix_fs,
 	is_confident_in_date_enough_to__sort,
-} from '.'
+} from './index.js'
 import {
 	get_embedded_timezone,
 	get_human_readable_timestamp_auto,
-} from '../../services/better-date'
-import { ALL_MEDIA_DEMOS } from '../../__test_shared/real_files'
+} from '../../services/better-date.js'
+import { ALL_MEDIA_DEMOS } from '../../__test_shared/real_files/index.js'
 
 
-import './__test_shared'
+import './__test_shared.js'
 
 /////////////////////
 

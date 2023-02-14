@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
-import { LIB, NOTES_BASENAME_SUFFIX_LC } from '../../consts'
-import * as Notes from '../notes'
+import { LIB, NOTES_BASENAME_SUFFIX_LC } from '../../consts.js'
+import * as Notes from '../notes/index.js'
 import {
 	clean_up_duplicates,
 	create,
@@ -20,9 +20,9 @@ import {
 	on_hash_computed,
 	on_note_file_found,
 	to_string,
-} from '.'
-import { create_better_date, _get_exif_datetime, get_timestamp_utc_ms_from } from '../../services/better-date'
-import * as File from '../file'
+} from './index.js'
+import { create_better_date, _get_exif_datetime, get_timestamp_utc_ms_from } from '../../services/better-date.js'
+import * as File from '../file/index.js'
 
 /////////////////////
 

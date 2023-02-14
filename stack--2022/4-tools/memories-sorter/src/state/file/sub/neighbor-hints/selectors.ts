@@ -2,8 +2,8 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
-import logger from '../../../../services/logger'
-import { NeighborHints, HistoricalNeighborHints, FsReliability } from './types'
+import logger from '../../../../services/logger.js'
+import { NeighborHints, HistoricalNeighborHints, FsReliability } from './types.js'
 import {
 	BetterDate,
 	DateRange,
@@ -12,14 +12,14 @@ import {
 	get_members_for_serialization,
 	compare_utc,
 	add_days,
-} from '../../../../services/better-date'
+} from '../../../../services/better-date.js'
 import {
 	is_folder_basename__matching_a_processed_event_format,
 	parse_folder_basename,
 	pathㆍparse_memoized,
-} from '../../../../services/name_parser'
-import { RelativePath } from '../../../../types'
-import { get_params, Params } from '../../../../params'
+} from '../../../../services/name_parser.js'
+import { RelativePath } from '../../../../types.js'
+import { get_params, Params } from '../../../../params.js'
 
 /////////////////////
 

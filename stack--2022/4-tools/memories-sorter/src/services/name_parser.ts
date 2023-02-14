@@ -4,8 +4,8 @@ import { NORMALIZERS } from '@offirmo-private/normalize-string'
 import { Immutable } from '@offirmo-private/ts-types'
 import micro_memoize from 'micro-memoize'
 
-import { RELATIVE_PATH_NORMALIZATION_VERSION } from '../consts'
-import { get_params } from '../params'
+import { RELATIVE_PATH_NORMALIZATION_VERSION } from '../consts.js'
+import { get_params } from '../params.js'
 import {
 	SEPARATORS,
 	deep_trim,
@@ -20,14 +20,14 @@ import {
 	is_YYYYMMDD,
 	NON_MEANINGFUL_ENDINGS_RE,
 	NON_MEANINGFUL_FULL,
-} from './matchers'
+} from './matchers.js'
 import {
 	BetterDate,
 	create_better_date,
 	get_debug_representation,
-} from './better-date'
-import logger from './logger'
-import { Basename, RelativePath } from '../types'
+} from './better-date.js'
+import logger from './logger.js'
+import { Basename, RelativePath } from '../types.js'
 
 ////////////////////////////////////
 

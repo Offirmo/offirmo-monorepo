@@ -1,21 +1,21 @@
 import { expect } from 'chai'
 
-import { LIB } from '../../consts'
-import { ALL_MEDIA_DEMOS } from '../../__test_shared/real_files'
-import * as File from '../file'
+import { LIB } from '../../consts.js'
+import { ALL_MEDIA_DEMOS } from '../../__test_shared/real_files/index.js'
+import * as File from '../file/index.js'
 
 import {
 	State,
-} from './types'
+} from './types.js'
 import {
 	create,
 	on_subfile_found,
 	on_subfile_primary_infos_gathered,
 	on_fs_exploration_done,
 	on_all_infos_gathered,
-} from './reducers'
+} from './reducers.js'
 
-import './__test_shared'
+import './__test_shared.js'
 
 
 

@@ -1,11 +1,11 @@
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
-import { SCHEMA_VERSION } from './consts'
-import { State } from './types'
+import { SCHEMA_VERSION } from './consts.js'
+import { State } from './types.js'
 /*import {
 	DEMO_STATE as DEMO_NEIGHBOR_HINTS,
 	DEMO_STATEⵧHISTORICAL as DEMO_NEIGHBOR_HINTSⵧHISTORICAL,
-} from '../file/sub/neighbor-hints/examples'*/
+} from '../file/sub/neighbor-hints/examples.js'*/
 
 /////////////////////
 

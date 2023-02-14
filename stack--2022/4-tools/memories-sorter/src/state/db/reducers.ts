@@ -5,22 +5,22 @@ import { Tags } from 'exiftool-vendored'
 import { Immutable } from '@offirmo-private/ts-types'
 import { get_base_loose } from '@offirmo-private/state-utils'
 
-import { AbsolutePath, RelativePath, SimpleYYYYMMDD } from '../../types'
-import { Action, ActionType } from '../actions'
-import * as Actions from '../actions'
-import { FileHash } from '../../services/hash'
-import { FsStatsSubset } from '../../services/fs_stats'
-import logger from '../../services/logger'
-import { add_days_to_simple_date } from '../../services/better-date'
+import { AbsolutePath, RelativePath, SimpleYYYYMMDD } from '../../types.js'
+import { Action, ActionType } from '../actions.js'
+import * as Actions from '../actions.js'
+import { FileHash } from '../../services/hash.js'
+import { FsStatsSubset } from '../../services/fs_stats.js'
+import logger from '../../services/logger.js'
+import { add_days_to_simple_date } from '../../services/better-date.js'
 
-import * as Folder from '../folder'
-import * as File from '../file'
-import * as Notes from '../notes'
-import { SPECIAL_FOLDERⵧCANT_RECOGNIZE__BASENAME } from '../folder'
-import { FileId, PersistedNotes } from '../file'
+import * as Folder from '../folder/index.js'
+import * as File from '../file/index.js'
+import * as Notes from '../notes/index.js'
+import { SPECIAL_FOLDERⵧCANT_RECOGNIZE__BASENAME } from '../folder/index.js'
+import { FileId, PersistedNotes } from '../file/index.js'
 
-import { LIB } from './consts'
-import {	State } from './types'
+import { LIB } from './consts.js'
+import {	State } from './types.js'
 import {
 	get_all_files_except_meta,
 	get_all_folders,
@@ -31,8 +31,8 @@ import {
 	get_all_file_ids,
 	get_ideal_file_relative_path,
 	get_all_folder_ids,
-} from './selectors'
-import { NOTES_BASENAME_SUFFIX_LC } from '../../consts'
+} from './selectors.js'
+import { NOTES_BASENAME_SUFFIX_LC } from '../../consts.js'
 
 ///////////////////// REDUCERS /////////////////////
 

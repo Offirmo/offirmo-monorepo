@@ -9,24 +9,24 @@ import { NORMALIZERS } from '@offirmo-private/normalize-string'
 import { normalizeError } from '@offirmo/error-utils'
 import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 
-import { Basename, RelativePath } from '../types'
-import { NOTES_BASENAME_SUFFIX_LC } from '../consts'
-import { get_params, Params } from '../params'
+import { Basename, RelativePath } from '../types.js'
+import { NOTES_BASENAME_SUFFIX_LC } from '../consts.js'
+import { get_params, Params } from '../params.js'
 
-import * as File from '../state/file'
-import * as Notes from '../state/notes'
-import * as DB from '../state/db'
-import { State } from '../state/db'
-import { Action, ActionType } from '../state/actions'
+import * as File from '../state/file/index.js'
+import * as Notes from '../state/notes/index.js'
+import * as DB from '../state/db/index.js'
+import { State } from '../state/db/index.js'
+import { Action, ActionType } from '../state/actions.js'
 
-import logger from './logger'
-import fs_extra, { _is_same_inode } from './fs-extra'
-import { get_relevant_fs_stats_subset } from './fs_stats'
-import get_file_hash from './hash'
-import { pathㆍparse_memoized } from './name_parser'
-import { FolderId, SPECIAL_FOLDERⵧINBOX__BASENAME } from '../state/folder'
-import { FileId } from '../state/file'
-import { read_exif_data } from './exif'
+import logger from './logger.js'
+import fs_extra, { _is_same_inode } from './fs-extra.js'
+import { get_relevant_fs_stats_subset } from './fs_stats.js'
+import get_file_hash from './hash.js'
+import { pathㆍparse_memoized } from './name_parser.js'
+import { FolderId, SPECIAL_FOLDERⵧINBOX__BASENAME } from '../state/folder/index.js'
+import { FileId } from '../state/file/index.js'
+import { read_exif_data } from './exif.js'
 
 ////////////////////////////////////
 
@@ -52,7 +52,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 	// https://www.npmjs.com/package/cli-progress
 	let progress_multibar = null as any
 	if (display_progress) {
-		const CliProgress = require('cli-progress')
+		const CliProgress = await import('cli-progress')
 		progress_multibar = new CliProgress.MultiBar({
 			clearOnComplete: false,
 			linewrap: null,

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { LIB } from '../consts'
+import { LIB } from '../consts.js'
 
 /////////////////////
 

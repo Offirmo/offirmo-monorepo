@@ -1,4 +1,5 @@
-import path from 'path'
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
 
 import memoize_once from 'memoize-one'
 import micro_memoize from 'micro-memoize'
@@ -7,9 +8,9 @@ import { expect } from 'chai'
 import { enforce_immutability } from '@offirmo-private/state-utils'
 import { utimes } from 'utimes'
 
-import { AbsolutePath, Basename, SimpleYYYYMMDD, ISODateString, RelativePath, TimeZone } from '../../types'
-import { _UNSAFE_CURRENT_SYSTEM_TIMEZONE } from '../../params'
-import { load_real_media_file as _load_real_media_file } from '../utils'
+import { AbsolutePath, Basename, SimpleYYYYMMDD, ISODateString, RelativePath, TimeZone } from '../../types.js'
+import { _UNSAFE_CURRENT_SYSTEM_TIMEZONE } from '../../params.js'
+import { load_real_media_file as _load_real_media_file } from '../utils.js'
 import {
 	State,
 	get_best_creation_date,
@@ -17,16 +18,17 @@ import {
 	get_best_creation_date__year,
 	get_ideal_basename,
 	DateConfidence, NeighborHints, PersistedNotes,
-} from '../../state/file'
+} from '../../state/file/index.js'
 import {
 	get_embedded_timezone,
 	get_human_readable_timestamp_auto,
-} from '../../services/better-date'
-import * as FileLib from '../../state/file'
+} from '../../services/better-date.js'
+import * as FileLib from '../../state/file/index.js'
 
 /////////////////////////////////////////////////
 
 const TEST_FILES_DIR: RelativePath = '../../../../src/__test_shared/real_files'
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const TEST_FILES_DIR_ABS = path.join(__dirname, TEST_FILES_DIR)
 
 interface MediaDemo {

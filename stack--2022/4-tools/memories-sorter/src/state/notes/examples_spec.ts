@@ -2,11 +2,11 @@
 
 import {expect} from 'chai'
 
-import {get_lib_SEC} from '../../services/sec'
+import {get_lib_SEC} from '../../services/sec.js'
 
-import {LIB, SCHEMA_VERSION} from './consts'
-import { DEMO_STATE } from './examples'
-import { migrate_to_latest } from './migrations'
+import {LIB, SCHEMA_VERSION} from './consts.js'
+import { DEMO_STATE } from './examples.js'
+import { migrate_to_latest } from './migrations.js'
 
 /////////////////////
 

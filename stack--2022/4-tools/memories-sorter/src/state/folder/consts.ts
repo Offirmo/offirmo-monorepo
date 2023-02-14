@@ -1,5 +1,5 @@
-import { Basename } from '../../types'
-import { Type} from './types'
+import { Basename } from '../../types.js'
+import { Type} from './types.js'
 
 export const LIB = '📂'
 

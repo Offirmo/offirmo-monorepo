@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
-import { RELATIVE_PATH_NORMALIZATION_VERSION } from '../consts'
-import { TimeZone } from '../types'
-import { create_better_date, _clean_debug } from '../services/better-date'
-import { ParseResult } from '../services/name_parser'
+import { RELATIVE_PATH_NORMALIZATION_VERSION } from '../consts.js'
+import { TimeZone } from '../types.js'
+import { create_better_date, _clean_debug } from '../services/better-date.js'
+import { ParseResult } from '../services/name_parser.js'
 
 assert(RELATIVE_PATH_NORMALIZATION_VERSION === 1, 'test filenames should contain test cases for all RELATIVE_PATH_NORMALIZATION_VERSION')
 

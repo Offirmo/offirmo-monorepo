@@ -6,7 +6,7 @@ fs = require('@offirmo/cli-toolbox/fs/extra')
 
 export default fs
 
-import { AbsolutePath } from '../types'
+import { AbsolutePath } from '../types.js'
 
 export function _is_same_inode(abs_path_a: AbsolutePath, abs_path_b: AbsolutePath): boolean {
 	const stats_a = fs.statSync(abs_path_a)

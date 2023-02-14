@@ -6,10 +6,10 @@ import {
 	generic_migrate_to_latest,
 } from '@offirmo-private/state-utils'
 
-import { LIB, SCHEMA_VERSION } from './consts'
-import { State } from './types'
-import { SoftExecutionContext } from '../../services/sec'
-import { PersistedNotes as FileNotes } from '../file'
+import { LIB, SCHEMA_VERSION } from './consts.js'
+import { State } from './types.js'
+import { SoftExecutionContext } from '../../services/sec.js'
+import { PersistedNotes as FileNotes } from '../file/index.js'
 
 // some hints may be needed to migrate to demo state
 // need to export them for composing tests

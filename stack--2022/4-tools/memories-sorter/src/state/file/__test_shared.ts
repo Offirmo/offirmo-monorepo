@@ -1,11 +1,11 @@
-const { deepStrictEqual: assert_deepStrictEqual } = require('assert').strict
+import { strict as node_assert } from 'assert'
 
 import { normalizeError } from '@offirmo/error-utils'
 import { Immutable } from '@offirmo-private/ts-types'
 import { get_json_difference } from '@offirmo-private/state-utils'
 
-import '../../__test_shared/mocha_spec'
-import { State } from './types'
+import '../../__test_shared/mocha_spec.js'
+import { State } from './types.js'
 
 
 export function expectㆍfileㆍstatesㆍdeepㆍequal(s1: Immutable<State>, s2: Immutable<State>, should_log = true): void {
@@ -19,7 +19,7 @@ export function expectㆍfileㆍstatesㆍdeepㆍequal(s1: Immutable<State>, s2: 
 	}
 
 	try {
-		assert_deepStrictEqual(s1_alt, s2_alt)
+		node_assert.deepStrictEqual(s1_alt, s2_alt)
 	}
 	catch (err) {
 		if (should_log)

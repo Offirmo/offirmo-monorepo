@@ -1,9 +1,9 @@
-import { BetterDate } from '../../../../services/better-date'
+import { BetterDate } from '../../../../services/better-date.js'
 
-export * from './types'
-export * from './selectors'
+export * from './types.js'
+export * from './selectors.js'
 
-import { FsReliability, NeighborHints } from './types'
+import { FsReliability, NeighborHints } from './types.js'
 
 export function create(): NeighborHints {
 	// safest possible

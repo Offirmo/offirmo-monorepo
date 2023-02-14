@@ -1,15 +1,15 @@
 import { expect } from 'chai'
 
-import { LIB, RELATIVE_PATH_NORMALIZATION_VERSION } from '../consts'
+import { LIB, RELATIVE_PATH_NORMALIZATION_VERSION } from '../consts.js'
 import {
 	CURRENT_YEAR,
-} from '../params'
+} from '../params.js'
 import {
 	DATED_NAMES_SAMPLES,
 	UNDATED_NAMES_SAMPLES,
 	NON_MEANINGFUL_NAMES_SAMPLES,
 	ALL_SAMPLES,
-} from '../__test_shared/filenames'
+} from '../__test_shared/filenames.js'
 import {
 	DigitsParseResult,
 	ParseResult,
@@ -25,14 +25,14 @@ import {
 	is_normalized_media_basename,
 	is_processed_media_basename,
 	parse,
-} from './name_parser'
+} from './name_parser.js'
 import {
 	BetterDate,
 	_clean_debug,
 	create_better_date,
 	get_embedded_timezone,
 	get_human_readable_timestamp_auto,
-} from './better-date'
+} from './better-date.js'
 import { Immutable } from '@offirmo-private/ts-types'
 
 /////////////////////

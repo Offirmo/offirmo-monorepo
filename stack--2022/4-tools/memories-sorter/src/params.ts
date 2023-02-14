@@ -5,9 +5,9 @@ import memoize_once from 'memoize-one'
 import { Immutable } from '@offirmo-private/ts-types'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
-import { EXIF_POWERED_FILE_EXTENSIONS_LC } from './consts'
-import { SimpleYYYYMMDD, AbsolutePath, TimeZone } from './types'
-import logger from './services/logger'
+import { EXIF_POWERED_FILE_EXTENSIONS_LC } from './consts.js'
+import { SimpleYYYYMMDD, AbsolutePath, TimeZone } from './types.js'
+import logger from './services/logger.js'
 
 /////////////////////////////////////////////////
 

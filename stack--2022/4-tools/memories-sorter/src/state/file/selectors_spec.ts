@@ -1,12 +1,12 @@
 import { expect } from 'chai'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { LIB } from '../../consts'
+import { LIB } from '../../consts.js'
 import {
 	create_better_date,
 	get_human_readable_timestamp_auto,
 	get_timestamp_utc_ms_from,
-} from '../../services/better-date'
+} from '../../services/better-date.js'
 import {
 	create,
 	get_best_creation_date‿meta,
@@ -19,8 +19,8 @@ import {
 	on_info_read__fs_stats,
 	on_info_read__hash,
 	on_notes_recovered,
-} from '.'
-import * as NeighborHintsLib from './sub/neighbor-hints'
+} from './index.js'
+import * as NeighborHintsLib from './sub/neighbor-hints/index.js'
 
 import {
 	get_test_single_file_state_generator,
@@ -30,8 +30,8 @@ import {
 	REAL_CREATION_DATE‿HRTS,
 	BAD_CREATION_DATE_CANDIDATE‿TMS,
 	BAD_CREATION_DATE_CANDIDATE‿HRTS,
-} from '../../__test_shared/utils'
-import './__test_shared'
+} from '../../__test_shared/utils.js'
+import './__test_shared.js'
 
 /////////////////////
 

@@ -1,19 +1,19 @@
 import { expect } from 'chai'
 import { ExifDateTime } from 'exiftool-vendored'
 
-import { LIB } from '../consts'
+import { LIB } from '../consts.js'
 import {
 	get_best_creation_date_from_exif,
 	get_creation_timezone_from_exif,
 	read_exif_data,
-} from './exif'
+} from './exif.js'
 import {
 	get_human_readable_timestamp_auto,
 	create_better_date_from_ExifDateTime,
-} from './better-date'
+} from './better-date.js'
 
-import { ALL_MEDIA_DEMOS } from '../__test_shared/real_files'
-import '../__test_shared/mocha_spec'
+import { ALL_MEDIA_DEMOS } from '../__test_shared/real_files/index.js'
+import '../__test_shared/mocha_spec.js'
 
 /////////////////////
 
