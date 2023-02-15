@@ -24,8 +24,8 @@
 
 
 		"allowUmdGlobalAccess": false,
-		"module": "ES2020",
-		"moduleResolution": "node",
+		"module": "ES2022",
+		"moduleResolution": "NodeNext",
 		"resolveJsonModule": true,
 
 
@@ -41,8 +41,8 @@
 		"allowJs": false,
 
 
-		"allowSyntheticDefaultImports": true,
-		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": false,
+		"esModuleInterop": false,
 		"forceConsistentCasingInFileNames": true,
 		"isolatedModules": true,
 		"preserveSymlinks": false,

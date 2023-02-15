@@ -28,6 +28,9 @@ Relaxed:
 
 Very complicated!
 
+Current understanding: by default, especially for building libs, the settings should be set to the most standard + modern + strict settings (ESM, ES2022, no tolerance)
+HOWEVER when building a final app (especially node app) then we ad-hoc relax the setting, cf. tools/memory-sorter (seen experimentally, still don't fully understand)
+
 Example of errors:
 > import path from 'path'
 > -> error TS1259: Module '"path"' can only be default-imported using the 'allowSyntheticDefaultImports' flag. This module is declared with 'export =', and can only be used with a default import when using the 'allowSyntheticDefaultImports' flag.
@@ -40,18 +43,21 @@ Example of errors:
 
 Compatibility:
 * `esModuleInterop` https://www.typescriptlang.org/tsconfig#esModuleInterop
-  * IIUC makes the generated code use helper functions
-  * IDEALLY we want it to false:
-    * no extra helper functions
-    * better detect non-ESM code
-  * BUT moved back to "true" due to: "most libraries with CommonJS/AMD/UMD modules didn’t conform as strictly as TypeScript’s implementation"
-  * TODO move back to false en a while to check progress
-* `allowSyntheticDefaultImports` intentionally set to `false` in order to better detect non-ESM code https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports
+  * AFAIU makes the generated code use helper functions
+  * IDEALLY we want it to `false`:
+    * no extra helper functions ✔️
+    * better detect non-ESM code ✔️
+  * BUT we may have to relax it to `true` due to: "most libraries with CommonJS/AMD/UMD modules didn’t conform as strictly as TypeScript’s implementation"
+  * CURRENTLY set to false by default, ad-hoc relaxing in specific module as needed
+* `allowSyntheticDefaultImports` https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports
+  * AFAIU adds wrappers to the generated code that ends up undefined (?)
+  * intentionally set to `false` in order to better detect non-ESM code
   * NO!! moved back to `true` due to still using cjs, ex. pb importing "fetch-ponyfill" or sindre
-  * NO!! moved back to `false`, adds wrappers that ends up undefined. Above longer needed since we switched to pure ESM
-  *
-* `moduleResolution` (https://www.typescriptlang.org/docs/handbook/module-resolution.html) kept to node as the ecosystem is not ready :-(
-  * [https://github.com/microsoft/TypeScript/issues/46452](update marker)
+  * CURRENTLY set to false by default since we switched all to pure ESM, ad-hoc relaxing in specific module as needed
+* `moduleResolution` https://www.typescriptlang.org/docs/handbook/module-resolution.html
+  * AFAIU particularly affects node.js apps
+  * CURRENTLY be set to "NodeNext" = most recent
+  * BUT seen a need in node tools, ad-hoc relaxing in specific module as needed
 * `isolatedModules` set to true always bc. parcel needs it, cf. https://parceljs.org/languages/typescript/#isolatedmodules
 
 

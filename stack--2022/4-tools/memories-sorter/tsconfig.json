@@ -3,11 +3,14 @@
 	"compilerOptions": {
 		"declaration": false,
 		"declarationMap": false,
-		"allowJs": true,
 
 		"noUncheckedIndexedAccess": false,
 		"noPropertyAccessFromIndexSignature": false,
-		"exactOptionalPropertyTypes": false
+		"exactOptionalPropertyTypes": false,
+
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"moduleResolution": "node"
 	},
 	"include": [
 		"../../0-typings-custom/**/*.ts",
