@@ -110,7 +110,7 @@
 		"emittery": "^1",
 		"eslint-plugin-chai-expect": "^3",
 		"eslint-plugin-mocha": "^10",
-		"exiftool-vendored": "^20",
+		"exiftool-vendored": "^21",
 		"hasha": "^5",
 		"icepick": "^2",
 		"indent-string": "^5",
