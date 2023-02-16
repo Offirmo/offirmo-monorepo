@@ -3,6 +3,7 @@
 
 ## PENDING
 * [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
+* [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
 * ...
 
 ## v3.1.0

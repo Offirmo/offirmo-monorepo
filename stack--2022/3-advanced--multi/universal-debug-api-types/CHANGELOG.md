@@ -6,6 +6,7 @@
 * TODO clean the useless debug setup? NO IT PROVED USEFUL EVEN FOR MYSELF
 * [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
 * [feat] fixed compatibility with the latest Typescript version (4.9)
+* [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
 * ...
 
 ## v1.0.1

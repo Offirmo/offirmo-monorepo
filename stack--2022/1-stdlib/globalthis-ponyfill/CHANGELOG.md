@@ -2,7 +2,7 @@
 **This package follows [semver](https://semver.org/).**
 
 ## PENDING
-* (TODO when the ecosystem is ready) [chore][breaking] module now advertised as ESM `"type": "module"` in package.json
+* [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
 * ...
 
 ## v4.0.0

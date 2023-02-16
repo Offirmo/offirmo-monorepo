@@ -6,6 +6,7 @@
 	"license": "Unlicense",
 	"private": true,
 
+	"type": "module",
 	"module": "index.js",
 	"source": "index.js",
 	"sideEffects": false,

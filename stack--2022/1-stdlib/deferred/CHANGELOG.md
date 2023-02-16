@@ -5,7 +5,7 @@
 * [chore] added unit tests!
 * [chore][breaking] removed the package.json "esnext" property, can't reference of tools using it
 * [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
-* (TODO when the ecosystem is ready) [chore][breaking] module now advertised as ESM `"type": "module"` in package.json
+* [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
 * ...
 
 ## 4.0.1

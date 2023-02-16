@@ -6,6 +6,7 @@
 	"license": "Unlicense",
 
 	"sideEffects": true,
+	"type": "module",
 	"exports": {
 		".": {
 			"import": "./dist/src.es2022.esm/index.js",

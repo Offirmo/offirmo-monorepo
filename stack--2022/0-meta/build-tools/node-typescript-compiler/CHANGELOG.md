@@ -4,7 +4,7 @@
 ## PENDING
 * TODO remove lodash as a dependency
 * TODO change the interface to use named params
-* [chore][breaking] turned to ES modules, requires node 12+
+* [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
   * as such, the typescript module resolution through `require` is now resolved through `import.meta.resolve`
 * [chore][breaking] main functions are now correctly marked async
 * [chore] logger state is no longer leaked between invocations (it was using a global state)
