@@ -5,6 +5,6 @@ const ls = require('./ls/index.cjs')
 
 module.exports = {
 	...fs,
-	...json,
+	json, // as a var, intended!
 	...ls,
 }

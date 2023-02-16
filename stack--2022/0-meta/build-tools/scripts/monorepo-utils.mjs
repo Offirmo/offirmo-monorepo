@@ -134,35 +134,38 @@ if (MONOREPO_PKG_JSON.bolt) (function _update_root_dependencies_for_bolt() {
 	Object.keys(all_root_dependencies).forEach(function _ensure_existing_root_dep_is_not_extraneous_and_has_unique_semver(dep_name) {
 		const dep_version = all_root_dependencies[dep_name]
 
-		const is_extraneous = !MONOREPO_PKGS_DEPENDENCIES.has(dep_name)
+		// extraneous check:
+		const is_meta_script_dependency = dep_name in dependencies // ok, minimal modules needed for the scripts (clean, build) to work
+		const is_known_global_dev_dep = [
+			'parcel-resolver-typescript-esm', // https://github.com/b8kkyn/parcel-resolver-typescript-esm
+		].includes(dep_name) // global dev deps on the root package, we don't require individual pkg to declare the dep
+		const is_package_dependency = MONOREPO_PKGS_DEPENDENCIES.has(dep_name) // ok, needed by a package
+		const is_type_for_package_dependency = dep_name.startsWith('@types/') && MONOREPO_PKGS_DEPENDENCIES.has(dep_name.slice(7)) // typings for a package (we don't require the types to be declared as dependency in the package)
+		const is_extraneous = !(
+				is_package_dependency
+				|| is_type_for_package_dependency
+				|| is_meta_script_dependency
+				|| is_known_global_dev_dep
+			)
 		if (is_extraneous) {
-
-			const is_prod_dependency = dep_name in dependencies
-			if (is_prod_dependency) {
-				// allowed, prod deps on the root package
-				// = minimal modules needed for the scripts (clean, build) to work
-				return
-			}
-
-			const is_known_global_dev_dep = [
-				'parcel-resolver-typescript-esm', // https://github.com/b8kkyn/parcel-resolver-typescript-esm
-			].includes(dep_name)
-			if (is_known_global_dev_dep) {
-				// allowed, global dev deps on the root package
-				return
-			}
-
-			console.warn(`⚠️ extraneous root DEV dependency "${dep_name}" in the root package.json! Will clean.`)
+			console.warn(`⚠️⚠️⚠️ extraneous root DEV dependency "${dep_name}" in the root package.json! Will clean.`, {
+				is_meta_script_dependency,
+				is_known_global_dev_dep,
+				is_package_dependency,
+				is_type_for_package_dependency,
+			})
 			delete candidate_root_package_json.dependencies[dep_name]
 			delete candidate_root_package_json.devDependencies[dep_name]
 			needs_update = true
 			return
 		}
 
-		const existing_version = MONOREPO_PKGS_DEPENDENCIES.get(dep_name)
-		if (existing_version !== dep_version) {
-			console.error(`⛔️ version conflict for "${dep_name}" at the root: "${dep_version}" vs. "${existing_version}"!`)
-			throw new Error(`⛔️ root version conflict for "${dep_name}"!`)
+		if (is_package_dependency) {
+			const existing_version = MONOREPO_PKGS_DEPENDENCIES.get(dep_name)
+			if (existing_version !== dep_version) {
+				console.error(`⛔️ version conflict for "${dep_name}" at the root: "${dep_version}" vs. in package(s) "${existing_version}"!`)
+				throw new Error(`⛔️ root version conflict for "${dep_name}"!`)
+			}
 		}
 
 		// special case of packages changing name when changing version
@@ -231,6 +234,7 @@ if (MONOREPO_PKG_JSON.bolt) (function _update_root_dependencies_for_bolt() {
 
 if (MONOREPO_PKG_JSON.bolt) (function _hoist_local_packages_to_root_node_modules() {
 	// yarn workspace does it, not bolt :(
+	// XXX why do we need this already?
 
 	MONOREPO_PKGS_NAMESPACES.forEach(ns => {
 		const namespace_abspath = path.join(MONOREPO_ROOT, 'node_modules', ns)
@@ -247,7 +251,7 @@ if (MONOREPO_PKG_JSON.bolt) (function _hoist_local_packages_to_root_node_modules
 		const link_path = path.join(MONOREPO_ROOT, 'node_modules', pkg_name)
 		try {
 			fs.symlinkSync(pkg_src_abspath, link_path)
-			console.log('hoisted: ' + link_path + ' ← ' + pkg_src_abspath)
+			//console.log('hoisted: ' + link_path + ' ← ' + pkg_src_abspath)
 		}
 		catch (err) { if (err.code !== 'EEXIST') throw err }
 		hoisted_count++

@@ -1,7 +1,13 @@
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
+
+
 import { expect } from 'chai'
 
 import { LIB } from '../../consts.mjs'
 import { itㆍshouldㆍmigrateㆍcorrectly } from '../../migration_assertion.mjs'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 
 describe(`${LIB} - example usage`, function() {
@@ -28,7 +34,7 @@ describe(`${LIB} - example usage`, function() {
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA,
 			migrate_to_latest,
-			absolute_dir_path: require('path').join(__dirname, './migrations_of_blank_state_specs'),
+			absolute_dir_path: path.join(__dirname, './migrations_of_blank_state_specs'),
 			describe, context, it, expect,
 		})
 	})
@@ -42,7 +48,7 @@ describe(`${LIB} - example usage`, function() {
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA,
 			migrate_to_latest,
-			absolute_dir_path: require('path').join(__dirname, './migrations_of_active_state_specs'),
+			absolute_dir_path: path.join(__dirname, './migrations_of_active_state_specs'),
 			describe, context, it, expect,
 		})
 	})

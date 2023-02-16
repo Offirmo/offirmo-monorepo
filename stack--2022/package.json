@@ -81,6 +81,7 @@
 		"@types/async": "^3",
 		"@types/chai": "^4",
 		"@types/chai-as-promised": "^7",
+		"@types/cli-progress": "^3",
 		"@types/icepick": "^2",
 		"@types/json-stable-stringify": "^1",
 		"@types/mocha": "^10",

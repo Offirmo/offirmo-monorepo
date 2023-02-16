@@ -1,7 +1,6 @@
 import path from 'node:path'
 
 import * as fs from '@offirmo/cli-toolbox/fs/extra/index.mjs'
-import { expect } from 'chai'
 import sinon from 'sinon'
 import { cloneDeep } from 'lodash-es'
 import { prettify_json } from '@offirmo-private/prettify-any'
@@ -266,8 +265,8 @@ itㆍshouldㆍmigrateㆍcorrectly.skip = function(options) {
 	})
 }
 
-module.exports = {
+export {
 	itㆍshouldㆍmigrateㆍcorrectly,
-	get_advanced_json_diff: base_get_json_diff,
+	base_get_json_diff as get_advanced_json_diff,
 	TEST_TIMESTAMP_MS,
 }
