@@ -11,7 +11,7 @@ import { LIB, HINTS_FILENAME } from './consts.mjs'
 import { get_advanced_diff as base_get_json_diff } from './json-diff.mjs'
 
 
-function itㆍshouldㆍmigrateㆍcorrectly({
+export function itㆍshouldㆍmigrateㆍcorrectly({
 	// TODO LIB?
 	use_hints = true,
 	migration_hints_for_chaining = undefined, // if not explicitly provided or disabled, will try to read from a file
@@ -263,10 +263,4 @@ itㆍshouldㆍmigrateㆍcorrectly.skip = function(options) {
 		...options,
 		should_skip: true,
 	})
-}
-
-export {
-	itㆍshouldㆍmigrateㆍcorrectly,
-	base_get_json_diff as get_advanced_json_diff,
-	TEST_TIMESTAMP_MS,
 }
