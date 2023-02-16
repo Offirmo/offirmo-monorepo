@@ -42,35 +42,37 @@ describe(`${LIB} - exif service`, function() {
 		describe('real files', function() {
 
 			ALL_MEDIA_DEMOS.forEach(({ data: MEDIA_DEMO }, index) => {
+
 				it(`should work - #${index}: "${MEDIA_DEMO.BASENAME}"`, async () => {
 
 					const exif_data = await read_exif_data(MEDIA_DEMO.ABS_PATH)
 					//console.log('exif data', exif_data)
 
+					const EXPECTED_EXIF_DATA = MEDIA_DEMO.EXIF_DATA
 					const bcd_edt = get_best_creation_date_from_exif(exif_data)
-					if (!MEDIA_DEMO.EXIF_DATA) {
+					if (!EXPECTED_EXIF_DATA) {
 						expect(bcd_edt).to.be.undefined
 					}
 					else {
 						if (!bcd_edt) {
 							// we have EXIF data but not containing any date
-							expect(MEDIA_DEMO.EXIF_DATA.EMBEDDED_TZ).to.be.undefined
-							expect(MEDIA_DEMO.EXIF_DATA.FINAL_TZ).to.be.undefined
-							expect(MEDIA_DEMO.EXIF_DATA.YEAR).to.be.undefined
-							expect(MEDIA_DEMO.EXIF_DATA.DATE__COMPACT).to.be.undefined
-							expect(MEDIA_DEMO.EXIF_DATA.DATE__ISO_STRING).to.be.undefined
-							expect(MEDIA_DEMO.EXIF_DATA.DATE__HUMAN_AUTO).to.be.undefined
+							expect(EXPECTED_EXIF_DATA.EMBEDDED_TZ).to.be.undefined
+							expect(EXPECTED_EXIF_DATA.FINAL_TZ).to.be.undefined
+							expect(EXPECTED_EXIF_DATA.YEAR).to.be.undefined
+							expect(EXPECTED_EXIF_DATA.DATE__COMPACT).to.be.undefined
+							expect(EXPECTED_EXIF_DATA.DATE__ISO_STRING).to.be.undefined
+							expect(EXPECTED_EXIF_DATA.DATE__HUMAN_AUTO).to.be.undefined
 						}
 						else {
-							expect(get_creation_timezone_from_exif(exif_data)).to.equal(MEDIA_DEMO.EXIF_DATA.EMBEDDED_TZ)
-							expect(get_creation_timezone_from_exif(exif_data)).to.equal(MEDIA_DEMO.EXIF_DATA.EMBEDDED_TZ)
-							expect(bcd_edt!.toISOString()).to.equal(MEDIA_DEMO.EXIF_DATA.DATE__ISO_STRING)
+							expect(get_creation_timezone_from_exif(exif_data), 'TZ').to.equal(EXPECTED_EXIF_DATA.EMBEDDED_TZ)
+							expect(bcd_edt!.toISOString(), 'edt iso').to.equal(EXPECTED_EXIF_DATA.DATE__ISO_STRING)
 							expect(
 								get_human_readable_timestamp_auto(
 									create_better_date_from_ExifDateTime(bcd_edt!),
 									'tz:embedded',
-								)
-							).to.equal(MEDIA_DEMO.EXIF_DATA.DATE__HUMAN_AUTO)
+								),
+								'date human'
+							).to.equal(EXPECTED_EXIF_DATA.DATE__HUMAN_AUTO)
 						}
 					}
 				})

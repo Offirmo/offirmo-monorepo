@@ -6,7 +6,8 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"main": "src/index.js",
+	"type": "module",
+	"main": "src/mjs/index.mjs",
 	"sideEffects": false,
 
 	"dependencies": {

@@ -1,4 +1,5 @@
 import { expect } from 'chai'
+import { _test_only__reset_root_SEC } from '@offirmo-private/soft-execution-context'
 
 import { LIB, NOTES_BASENAME_SUFFIX_LC } from '../../consts.js'
 import * as Notes from '../notes/index.js'
@@ -26,7 +27,13 @@ import * as File from '../file/index.js'
 
 /////////////////////
 
-describe(`${LIB} - DB (root) state`, function() {
+describe(`${LIB} - DB (state) aka. root state`, function() {
+	function _mocha_bug_clean_global() {
+		// https://github.com/mochajs/mocha/issues/4954
+		_test_only__reset_root_SEC()
+	}
+	before(_test_only__reset_root_SEC)
+	afterEach(_test_only__reset_root_SEC)
 
 	describe('integration', function() {
 
@@ -270,6 +277,8 @@ describe(`${LIB} - DB (root) state`, function() {
 
 				//console.log(to_string(state))
 				//console.log(Notes.to_string(persisted_notes))
+
+				_mocha_bug_clean_global()
 			})
 		})
 	})
