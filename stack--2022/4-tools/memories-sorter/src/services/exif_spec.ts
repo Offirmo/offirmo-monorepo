@@ -17,7 +17,7 @@ import '../__test_shared/mocha_spec.js'
 
 /////////////////////
 
-describe(`${LIB} - exif service`, function() {
+describe(`${LIB} -- service -- exif`, function() {
 
 	describe('ExifDatetime', function () {
 

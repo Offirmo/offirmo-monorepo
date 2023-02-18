@@ -13,7 +13,7 @@ import { DEMO_STATE } from './examples.js'
 import { get_lib_SEC } from '../../services/sec.js'
 import { create } from './index.js'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 describe(`${LIB} - migration`, function() {
 	/*const TEST_DATE_MS = 1234567890

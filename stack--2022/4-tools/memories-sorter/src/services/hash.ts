@@ -6,11 +6,11 @@ import logger from './logger.js'
 
 export type FileHash = string
 
-export async function get_file_hash(abs_path: AbsolutePath): Promise<FileHash> {
-	const hash = await hasha.fromFile(abs_path, {algorithm: 'sha256'})
+export async function ↆget_file_hash(abs_path: AbsolutePath): Promise<FileHash> {
+	const hash = await hasha.fromFile(abs_path, { algorithm: 'sha256' })
 	assert(hash, 'hasha ok')
 	logger.silly(`- got hash for "${abs_path}"…`, { hash })
 	return hash
 }
 
-export default get_file_hash
+export default ↆget_file_hash

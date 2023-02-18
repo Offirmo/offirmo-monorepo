@@ -31,8 +31,11 @@ import {
 	assertㆍBetterDateㆍdeepㆍequal,
 } from './better-date.js'
 import { get_params } from '../params.js'
+import { LIB } from '../consts.js'
 
-describe('Better Date', function() {
+/////////////////////
+
+describe(`${LIB} -- service -- Better Date`, function() {
 	const PARAMS = {
 		...get_params(),
 		default_timezones: [

@@ -1,9 +1,9 @@
-import path from 'path'
-import util from 'util'
-import fs from 'fs'
+import path from 'node:path'
+import util from 'node:util'
+import fs from 'node:fs'
 import assert from 'tiny-invariant'
 import async from 'async'
-import json from '@offirmo/cli-toolbox/fs/extra/json/index.mjs'
+import * as json from '@offirmo/cli-toolbox/fs/extra/json/index.mjs'
 import { Immutable } from '@offirmo-private/ts-types'
 import { NORMALIZERS } from '@offirmo-private/normalize-string'
 import { normalizeError } from '@offirmo/error-utils'
@@ -20,9 +20,10 @@ import { State } from '../state/db/index.js'
 import { Action, ActionType } from '../state/actions.js'
 
 import logger from './logger.js'
-import fs_extra, { _is_same_inode } from './fs-extra.js'
+import * as fs_extra from '@offirmo/cli-toolbox/fs/extra/index.mjs'
+import { _is_same_inode } from './inode.js'
 import { get_relevant_fs_stats_subset } from './fs_stats.js'
-import get_file_hash from './hash.js'
+import ↆget_file_hash from './hash.js'
 import { pathㆍparse_memoized } from './name_parser.js'
 import { FolderId, SPECIAL_FOLDERⵧINBOX__BASENAME } from '../state/folder/index.js'
 import { FileId } from '../state/file/index.js'
@@ -184,7 +185,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 
 		try {
 			const abs_path = DB.get_absolute_path(db, id)
-			const hash = await get_file_hash(abs_path)
+			const hash = await ↆget_file_hash(abs_path)
 			logger.silly(`- got hash for "${id}""`, { hash })
 			db = DB.on_hash_computed(db, id, hash!)
 		}
@@ -739,12 +740,9 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 ////////////////////////////////////
 
 export function get_report_to_string(): string {
-
-
-
 	let report = ''
 
-	report += 'Action report: ' + JSON.stringify(_report, null, '\t')
+	report += 'Actions report: ' + JSON.stringify(_report, null, '\t')
 
 	const counts = JSON.stringify(
 		Object.fromEntries(
