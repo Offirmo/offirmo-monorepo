@@ -24,6 +24,7 @@
 
 
 	"devDependencies": {
+		"@total-typescript/ts-reset": "^0.3"
 	},
 	"scripts": {
 		"test": "node --experimental-import-meta-resolve ./test/test.mjs"

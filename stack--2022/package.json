@@ -78,6 +78,7 @@
 		"@parcel/transformer-xml": "^2",
 		"@size-limit/preset-small-lib": "^8",
 		"@storybook/csf": "^0",
+		"@total-typescript/ts-reset": "^0.3",
 		"@types/async": "^3",
 		"@types/chai": "^4",
 		"@types/chai-as-promised": "^7",

@@ -21,7 +21,6 @@ export interface DefaultTzChange {
 
 export interface Params {
 	root: AbsolutePath
-	dry_run: boolean
 	date_lower_boundⳇₓyear: number
 	date_upper_boundⳇₓyear: number
 	date_lower_boundⳇsymd: SimpleYYYYMMDD
@@ -32,7 +31,10 @@ export interface Params {
 	extensions_to_delete‿lc: string[]
 	worthless_file_basenames‿lc: string[]
 	default_timezones: DefaultTzChange[]
-	expect_perfect_state: boolean // For me (author) debug purpose.
+
+	// For debug purpose, do NOT use unless you're a maintainer
+	dry_run: boolean // don't perform any write/change (NOTE: full run with this option is unsupported, hence being a debug option)
+	expect_perfect_state: boolean //  true = expect to be the 1st execution, no file should be already normalized. false = normal, allows re-run on already sorted
 }
 
 export const CURRENT_YEAR: number = (new Date()).getFullYear()
@@ -83,6 +85,7 @@ export const get_params = memoize_once(function get_params(): Params {
 		//root: path.normalize(`/Users/${process.env.USER}/Dropbox/…documents/…memories/…me/…circa--2010/- 2019`),
 
 		...(false // WARNING true = local execution on author's machine, WARNING don't commit "true"
+		// DEBUG options, do NOT use!
 			? {
 					//dry_run: true,
 					dry_run: false,

@@ -22,9 +22,11 @@ Personal Knowledge Management https://fortelabs.co/blog/para/
 Prix au kilo
 Procastination
 Put into words
+root cause misattribution https://www.zeptonaut.com/posts/rocket-league-and-root-cause-misattribution/
 Question authority
 SBI
 Sex Ed
+The THINK hack: Is it True? Helpful? Inspiring? Necessary? Kind?
 Spreadsheet
 Survival of the fittest / fit enough
 T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437

@@ -26,7 +26,7 @@ What we want to know?
   * useful to know if the state should be migrated to most recent format (with a backup in case the migration has a pb)
 * between those two states, which one should prevail?
   * = the most recently active? Not always, if the player played a lot offline and a tiny bit online on a different device, he's likely to want the one they spent most effort on
-  * = the most up-to-date in terms of schema version? Same, if the player played offline on a outdated version, they may still want the
+  * = the most up-to-date in terms of schema version? Not always, if the player played offline on an outdated version, they may still want the "most investment" one
 
 * backups
   * chain of backups
@@ -46,3 +46,4 @@ Types of change
 
 
 TODO review https://automerge.org/docs/quickstart/
+TODO review "Conflict Free Replicated Data types (CRDTs)" https://vlcn.io/blog/gentle-intro-to-crdts.html
