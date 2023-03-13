@@ -1,0 +1,47 @@
+{
+	"name": "@oh-my-rpg/state-engagement",
+	"description": "feedback messages state and reducer",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"esnext": "dist/src.es2019/index.js",
+	"module": "dist/src.es2019/index.js",
+	"main": "dist/src.es2019.cjs/index.js",
+	"typings": "dist/src.es2019.cjs/index.d.ts",
+	"source": "src/index.ts",
+	"sideEffects": false,
+
+	"peerDependencies": {
+		"@offirmo-private/soft-execution-context": "^0",
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@offirmo-private/state-utils": "^0",
+		"@offirmo-private/timestamps": "^0",
+		"@tbrpg/definitions": "^0",
+		"tiny-invariant": "^1",
+		"typescript-string-enums": "^1"
+	},
+
+	"scripts": {
+		"clean": "node ../../../0-scripts/clean.js …dist",
+
+		"_build:dev:watch": "node ../../../0-scripts/build-typescript.js --watch",
+		"_build:prod": "node ../../../0-scripts/build-typescript.js",
+
+		"dev": "run-s clean _build:dev:watch",
+		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2019.cjs/**/*spec.js'",
+		"build": "run-s  clean _build:prod"
+	},
+	"devDependencies": {
+		"@offirmo-private/soft-execution-context": "*",
+		"@offirmo-private/state-migration-tester": "^0",
+		"@offirmo-private/ts-types": "^0",
+		"@offirmo/unit-test-toolbox": "^8",
+		"npm-run-all": "^4",
+		"tslib": "^2"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/A-apps--core/the-boring-rpg/state--engagement"
+}
