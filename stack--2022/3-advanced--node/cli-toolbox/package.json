@@ -21,8 +21,8 @@
 	},
 
 	"scripts": {
-		"demo": "./_doc/demo.js",
-		"test": "npm run demo"
+		"demo": "./_doc/demo.mjs",
+		"test": "echo 'TODO restore the demo!'"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

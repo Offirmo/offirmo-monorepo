@@ -1,7 +1,6 @@
 {
 	"compileOnSave": false,
 	"compilerOptions": {
-
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
 		"alwaysStrict": true,
@@ -71,6 +70,7 @@
 		"skipLibCheck": true
 	},
 	"include": [
-		"./0-typings-custom/**/*.ts"
+		"./0-typings-custom/**/*.ts",
+		"@total-typescript/ts-reset"
 	]
 }

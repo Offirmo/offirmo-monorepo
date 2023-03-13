@@ -110,3 +110,5 @@ English
 testaments spirituels St Louis St Remy https://www.famillechretienne.fr/39532/article/le-testament-spirituel-de-benoit-xvi-texte-integral
 "The noisy door gets the oil" https://9gag.com/gag/aGEgp07?ref=ios
 Pretty privilege -> karen
+Trust is earned
+Trust takes years to earn and seconds to lose / Trust is built slowly, and lost quickly
