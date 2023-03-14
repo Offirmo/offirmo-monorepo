@@ -5,7 +5,6 @@
 		"noEmitHelpers": false
 	},
 	"include": [
-		"../../0-typings-custom/**/*.ts",
 		"src/**/*.ts"
 	]
 }
