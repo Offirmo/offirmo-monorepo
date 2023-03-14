@@ -1,28 +1,26 @@
 # @Offirmo/random
 
-**This used to be an improved fork of [Random.js](https://github.com/ckknight/random-js) adding ES6 and typescript compatibility. Hat tip to original author!👒**
+**This used to be an improved fork of [Random.js](https://github.com/ckknight/random-js) adding ES6 and typescript compatibility. Hat tip to original author.**
 
-**This has now (2023) been totally reworked with a single interface (but still using the original core)**
+**This has now (2023) been totally reworked with a new interface (but still using the original core)**
 
-**XXX THIS PRNG IS NOT CRYPTOGRAPHICALLY SECURE, IT'S MAINTAINED BY A NON-SCIENTIST FOR WRITING GAMES!**
+This is designed to be a mathematically correct random number generator library for JavaScript.
 
-Pitch: a mathematically correct pseudo random number generator library for JavaScript:
-* convenient interface for generating various type of random values (over the default Math.random())
-* correct random generation (easy to make wrong when using Math.Random)
-* Optional PSEUDO-random generation (useful for repeatability, esp. in unit tests but also for speed runs)
-  * the state is savable/restorable
-* Immutable (functional programming) WHEN POSSIBLE
+## Why is this needed?
 
+Despite `Math.random()` being capable of producing numbers within [0, 1), there are a few downsides to doing so:
 
-Interface change from Random.js
-* only 1 interface
-  * We keep the "inconvenient" interface with the potential of the highest speed (as much pre-computation as possible)
-* parameters type enforcement (no affordances)
-* better naming
-* better structure/readability
-* native TypeScript
-* native ESM
+ * It is inconsistent between engines as to how many bits of randomness:
+    * Internet Explorer: 53 bits
+    * Mozilla Firefox: 53 bits
+    * Google Chrome/node.js: 32 bits
+    * Apple Safari: 32 bits
+ * It is non-deterministic, which means you can't replay results consistently
+ * In older browsers, there can be manipulation through cross-frame random polling. *This is mostly fixed in newer browsers and is required to be fixed in ECMAScript 6.*
 
+Also, and most crucially, most developers tend to use improper and biased logic as to generating integers within a uniform distribution.
+
+## How does Random.js alleviate these problems?
 
 Random.js provides a set of "engines" for producing random integers, which consistently provide values within [0, 4294967295], i.e. 32 bits of randomness.
 
