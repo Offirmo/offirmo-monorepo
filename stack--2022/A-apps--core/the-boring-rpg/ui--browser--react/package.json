@@ -32,7 +32,6 @@
 		"@babel/core": "^7",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/xoff": "^0",
-		"parcel-bundler": "^1",
 		"react": "^18"
 	},
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/A-apps--core/the-boring-rpg/ui--browser--react"

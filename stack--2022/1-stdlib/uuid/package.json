@@ -1,0 +1,63 @@
+{
+	"name": "@offirmo-private/uuid",
+	"description": "UUID primitive definitions",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/src.es2022.esm/index.js",
+			"require": "./dist/src.es2022.cjs/index.js"
+		}
+	},
+	"module": "dist/src.es2022.esm/index.js",
+	"main": "dist/src.es2022.cjs/index.js",
+	"typings": "dist/src.es2022.cjs/index.d.ts",
+	"source": "src/index.ts",
+
+	"size-limit": [
+		{
+			"limit": "250b",
+			"path": "dist/src.es2022.esm/index.js"
+		},
+		{
+			"limit": "250b",
+			"path": "dist/src.es2022.cjs/index.js"
+		}
+	],
+
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@offirmo/random": "^3",
+		"nanoid": "^4"
+	},
+
+	"scripts": {
+		"clean": "node ../../0-scripts/clean.js …dist",
+
+		"_build:dev:watch": "node ../../0-scripts/build-typescript.js --watch",
+		"_build:prod": "node ../../0-scripts/build-typescript.js",
+		"ensure-size": "size-limit",
+
+		"dev": "run-s clean _build:dev:watch",
+		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2022.cjs/**/*spec.js'",
+		"build": "run-s  clean _build:prod",
+
+		"cheatsheet": "node doc/cheatsheet.js"
+	},
+	"devDependencies": {
+		"@offirmo/unit-test-toolbox": "^8",
+		"@size-limit/preset-small-lib": "^8",
+		"np": "^7",
+		"npm-run-all": "^4",
+		"size-limit": "^8",
+		"tslib": "^2"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/1-stdlib/uuid"
+}

@@ -6,10 +6,10 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"esnext": "dist/src.es2019/index.js",
-	"module": "dist/src.es2019/index.js",
-	"main": "dist/src.es2019.cjs/index.js",
-	"typings": "dist/src.es2019.cjs/index.d.ts",
+	"esnext": "dist/src.es2022.esm/index.js",
+	"module": "dist/src.es2022.esm/index.js",
+	"main": "dist/src.es2022.cjs/index.js",
+	"typings": "dist/src.es2022.cjs/index.d.ts",
 	"source": "src/index.ts",
 	"sideEffects": false,
 
@@ -40,7 +40,7 @@
 		"_build:prod": "node ../../../0-scripts/build-typescript.js",
 
 		"dev": "run-s clean _build:dev:watch",
-		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2019.cjs/**/*spec.js'",
+		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2022.cjs/**/*spec.js'",
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
