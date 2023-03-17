@@ -112,3 +112,9 @@ testaments spirituels St Louis St Remy https://www.famillechretienne.fr/39532/ar
 Pretty privilege -> karen
 Trust is earned
 Trust takes years to earn and seconds to lose / Trust is built slowly, and lost quickly
+Ring theory: https://en.wikipedia.org/wiki/Ring_theory_(psychology)
+Here are the rules:
+- The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
+- When you are talking to a person in a ring smaller than yours, someone closer to the center of the crisis, the goal is to help. Listening is often more helpful than talking. But if you're going to open your mouth, first ask yourself if what you are about to say is likely to provide comfort and support. If it isn't, don't say it. Don't, for example, give advice. People who are suffering from trauma don't need advice. They need comfort and support. So say, "I'm sorry," or, "This must really be hard for you," or, "Can I bring you a pot roast?" Don't say, "You should hear what happened to me," or, "Here's what I would do if I were you." And don't say, "This is really bringing me down."
+Mental Health: I am not my thoughts and rather than feeling like I needed to have control of every situation, that by surrendering that control, I will have more control over my life than I ever did before.
+praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism

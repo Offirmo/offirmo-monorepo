@@ -1134,3 +1134,5 @@ https://www.pcgamesn.com/best-dragon-games
 https://www.pcgamesn.com/100-best-free-pc-games
 
 https://universe.eveonline.com/scientific-articles
+
+https://worldbuilding.stackexchange.com/questions/243687/what-sort-of-strategies-would-a-medieval-military-use-against-a-fantasy-giant

@@ -7,6 +7,9 @@ import {
 
 export async function next_microtask(): Promise<void> {
 	await Promise.resolve() // promise resolution is in microtasks
+
+	// XXX should it be return Promise.resolve().then(() => {}) ??
+	// XXX or even await "anything" ??
 }
 
 export async function end_of_current_event_loop(): Promise<void> {

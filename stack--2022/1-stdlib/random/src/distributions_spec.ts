@@ -2,12 +2,12 @@ import { expect } from 'chai'
 
 import { get_random_generator_ofꓽbool } from './distributions.js'
 import { RNGEngine } from './types.js'
-import { get_RNGⵧMathᐧrandom } from './engines/MathRandom/index.js'
+import { get_RNGⵧMathᐧrandomⵧimmutable } from './engines/MathRandom/index.js'
 import { ROUNDS_COUNT } from './_test_helpers.js'
 
 
 describe('@offirmo/random', function() {
-	let engine: RNGEngine = get_RNGⵧMathᐧrandom()
+	let engine: RNGEngine = get_RNGⵧMathᐧrandomⵧimmutable()
 	before(function () {
 
 	})
