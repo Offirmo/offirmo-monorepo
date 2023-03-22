@@ -46,7 +46,7 @@
 
 
 /* js string (ucs-2/utf16) to a 32-bit integer (utf-8 chars, little-endian) array */
-import { Int32, PRNGEngine } from '../../types.js'
+import { Int32, PRNGEngine, Seed } from '../../types.js'
 import { assert } from '../../utils/assert.js'
 
 // XXX "this"
@@ -102,6 +102,12 @@ function _toIntArray(s: string): Array<any> {
 	return result;
 }
 
+// 32-bit integer safe adder
+function _add(x: Int32, y: Int32): Int32 {
+	const lsb = (x & 0xffff) + (y & 0xffff)
+	const msb = (x >>>   16) + (y >>>   16) + (lsb >>> 16)
+	return (msb << 16) | (lsb & 0xffff)
+}
 
 export function get_RNGⵧISAACⵧmutating(): PRNGEngine {
 
@@ -119,13 +125,6 @@ export function get_RNGⵧISAACⵧmutating(): PRNGEngine {
 		temp_mem.fill(0)
 		results.fill(0)
 		next_available_result_index = -1
-	}
-
-	// XXX Int or UInt ??
-	function _add(x: Int32, y: Int32): Int32 {
-		const lsb = (x & 0xffff) + (y & 0xffff)
-		const msb = (x >>>   16) + (y >>>   16) + (lsb >>> 16)
-		return (msb << 16) | (lsb & 0xffff)
 	}
 
 	function _seed(raw_seed: number[] | number | string): void {
@@ -150,8 +149,10 @@ export function get_RNGⵧISAACⵧmutating(): PRNGEngine {
 
 		_reset_state()
 
-		for(let i = 0; i < seed.length; i++) {
-			results[i % SIZE] += seed[i]!
+		if (seed) {
+			for(let i = 0; i < seed.length; i++) {
+				results[i % SIZE] += seed[i]!
+			}
 		}
 
 		let a: Int32, b: Int32, c: Int32, d: Int32, e: Int32, f: Int32, g: Int32, h: Int32
@@ -171,7 +172,7 @@ export function get_RNGⵧISAACⵧmutating(): PRNGEngine {
 			h ^= a >>>  9; c = _add(c, h); a = _add(a, b)
 		}
 
-		for(let i = 0; i < 4; i++) /* scramble it */
+		for(let i = 0; i < 4; ++i) /* scramble it */
 			_seed_mix();
 
 		for(let i = 0; i < SIZE; i += 8) {
@@ -189,10 +190,10 @@ export function get_RNGⵧISAACⵧmutating(): PRNGEngine {
 		if (seed) {
 			/* do a second pass to make all of the seed affect all of temp_mem[] */
 			for(let i = 0; i < 256; i += 8) {
-				a = _add(a, temp_mem[i + 0]); b = _add(b, temp_mem[i + 1])
-				c = _add(c, temp_mem[i + 2]); d = _add(d, temp_mem[i + 3])
-				e = _add(e, temp_mem[i + 4]); f = _add(f, temp_mem[i + 5])
-				g = _add(g, temp_mem[i + 6]); h = _add(h, temp_mem[i + 7])
+				a = _add(a, temp_mem[i + 0]!); b = _add(b, temp_mem[i + 1]!)
+				c = _add(c, temp_mem[i + 2]!); d = _add(d, temp_mem[i + 3]!)
+				e = _add(e, temp_mem[i + 4]!); f = _add(f, temp_mem[i + 5]!)
+				g = _add(g, temp_mem[i + 6]!); h = _add(h, temp_mem[i + 7]!)
 				_seed_mix()
 				/* fill in temp_mem[] with messy stuff (again) */
 				temp_mem[i + 0] = a; temp_mem[i + 1] = b; temp_mem[i + 2] = c; temp_mem[i + 3] = d
@@ -237,12 +238,32 @@ export function get_RNGⵧISAACⵧmutating(): PRNGEngine {
 		get_Int32() {
 			return {
 				i: _next(),
-				// between 0…1: i: 0.5 + _next() * 2.3283064365386963e-10, // 2^-32,
 				next_engine: engine,
 			}
 		},
-		seed() {
-			throw new Error('Not Implemented!')
+		seed(seed: Seed) {
+			let normalized_seed = ((raw_seed): ReadonlyArray<number> => {
+
+				if(typeof raw_seed === 'string') {
+					assert(raw_seed.length > 0, `seed as string should not be empty!`)
+					return _toIntArray(raw_seed)
+				}
+
+				if(typeof raw_seed === 'number') {
+					// TODO check format?
+					return [ raw_seed ]
+				}
+
+				return raw_seed
+			})(seed)
+
+			// seed should now be an array<number>
+			assert(Array.isArray(normalized_seed), `_seed: wrong param type!`)
+			assert(normalized_seed.every(i => typeof i === 'number'), `seed: array should be array of numbers!`)
+
+			_seed(normalized_seed)
+
+			return engine
 		},
 		set_state() {
 			throw new Error('Not Implemented!')

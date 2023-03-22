@@ -37,6 +37,7 @@ function _is_last_bitꘌ1(i: Int32) {
 	return (i & 1) === 1
 }
 
+// between 0…1: i: 0.5 + _next() * 2.3283064365386963e-10, // 2^-32,
 
 export function get_random_generator_ofꓽbool(): RandomValueGenerator<boolean> {
 	return function _randomly_generateꓽbool(engine: Immutable<RNGEngine>) {

@@ -25,16 +25,17 @@
 	},
 
 	"scripts": {
-		"clean": "node ../../../0-scripts/clean.js …dist",
+		"clean": "monorepo-script--clean-package …dist",
 
-		"_build:dev:watch": "node ../../../0-scripts/build-typescript.js --watch",
-		"_build:prod": "node ../../../0-scripts/build-typescript.js",
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"_build:prod": "monorepo-script--build-typescript-package",
 
 		"dev": "run-s clean _build:dev:watch",
-		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2022.cjs/**/*spec.js'",
+		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2022.esm/**/*spec.js'",
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "^0",
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4",

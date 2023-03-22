@@ -32,6 +32,7 @@
 
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/monorepo-scripts": "*",
 		"npm-run-all": "^4",
 		"tslib": "^2"
 	},

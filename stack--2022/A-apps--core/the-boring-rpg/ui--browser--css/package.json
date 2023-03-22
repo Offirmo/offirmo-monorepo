@@ -5,7 +5,7 @@
 	"description": "Graphical css and assets for an RPG UI",
 	"license": "Unlicense",
 	"scripts": {
-		"clean": "node ../../../0-scripts/clean.js …dist",
+		"clean": "monorepo-script--clean-package …dist",
 		"build:copy": "mkdir -p dist && cpx 'src/**/*.{woff,woff2,eot,svg,ttf,png,jpg}' dist --verbose",
 		"build:cleancss": "mkdir -p dist && cleancss -o dist/oh-my-rpg-browser.css src/style.css",
 		"build": "npm-run-all --parallel build:copy build:cleancss"
@@ -13,6 +13,7 @@
 	"dependencies": {
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/css--framework": "^0",
 		"clean-css-cli": "^5",
 		"cpx": "^1",

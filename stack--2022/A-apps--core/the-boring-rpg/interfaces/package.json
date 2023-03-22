@@ -25,15 +25,16 @@
 	},
 
 	"scripts": {
-		"clean": "node ../../../0-scripts/clean.js …dist",
+		"clean": "monorepo-script--clean-package …dist",
 
-		"_build:dev:watch": "node ../../../0-scripts/build-typescript.js --watch",
-		"_build:prod": "node ../../../0-scripts/build-typescript.js",
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"_build:prod": "monorepo-script--build-typescript-package",
 
 		"dev": "run-s clean _build:dev:watch",
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "^0",
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4",
