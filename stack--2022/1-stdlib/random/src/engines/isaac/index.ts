@@ -109,8 +109,31 @@ function _add(x: Int32, y: Int32): Int32 {
 	return (msb << 16) | (lsb & 0xffff)
 }
 
+function _normalize_seed(raw_seed: Seed): ReadonlyArray<number> {
+	let normalized_seed = ((): ReadonlyArray<number> => {
 
-export function get_RNGⵧISAAC32ⵧmutating(seed: Seed = Math.random()): PRNGEngine {
+		if(typeof raw_seed === 'string') {
+			assert(raw_seed.length > 0, `seed as string should not be empty!`)
+			return _toIntArray(raw_seed)
+		}
+
+		if(typeof raw_seed === 'number') {
+			// TODO check format?
+			return [ raw_seed ]
+		}
+
+		return raw_seed
+	})()
+
+	// seed should now be an array<number>
+	assert(Array.isArray(normalized_seed), `_seed: wrong param type!`)
+	assert(normalized_seed.every(i => typeof i === 'number'), `seed: array should be array of numbers!`)
+
+	return normalized_seed
+}
+
+
+export function get_RNGⵧISAAC32ⵧmutating(options: { seed: Seed | undefined, flag: boolean } = { seed: [ Math.random() * 0xffffffff], flag: true }): PRNGEngine {
 	let results: Int32[] = Array(SIZE)
 	let next_available_result_index = -1
 	let temp_mem: Int32[] = Array(SIZE)
@@ -129,7 +152,7 @@ export function get_RNGⵧISAAC32ⵧmutating(seed: Seed = Math.random()): PRNGEn
 	//      flag should normally always be true
 	// seeding is unclearly defined in the ISAAC spec but since the current "result" is used as a seed,
 	//      it makes sense to init the "result" array with the provided seed
-	function _seed(seed?: ReadonlyArray<number>, flag = true): void {
+	function _seed(seed?: ReadonlyArray<number>, flag = options.flag): void {
 		_reset_state()
 
 		if (seed) {
@@ -215,7 +238,7 @@ export function get_RNGⵧISAAC32ⵧmutating(seed: Seed = Math.random()): PRNGEn
 	}
 
 	// XXX TOREVIEW
-	_seed()
+	_seed(options.seed ? _normalize_seed(options.seed) : undefined)
 	//_seed([Math.random() * 0xffffffff])
 
 	const engine = {
@@ -227,27 +250,7 @@ export function get_RNGⵧISAAC32ⵧmutating(seed: Seed = Math.random()): PRNGEn
 			}
 		},
 		seed(seed: Seed) {
-			let normalized_seed = ((raw_seed): ReadonlyArray<number> => {
-
-				if(typeof raw_seed === 'string') {
-					assert(raw_seed.length > 0, `seed as string should not be empty!`)
-					return _toIntArray(raw_seed)
-				}
-
-				if(typeof raw_seed === 'number') {
-					// TODO check format?
-					return [ raw_seed ]
-				}
-
-				return raw_seed
-			})(seed)
-
-			// seed should now be an array<number>
-			assert(Array.isArray(normalized_seed), `_seed: wrong param type!`)
-			assert(normalized_seed.every(i => typeof i === 'number'), `seed: array should be array of numbers!`)
-
-			_seed(normalized_seed)
-
+			_seed(_normalize_seed(seed))
 			return engine
 		},
 		set_state() {
