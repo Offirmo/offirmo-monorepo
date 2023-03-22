@@ -159,7 +159,7 @@
 		"tiny-invariant": "^1",
 		"ts-node": "^10",
 		"tslib": "^2",
-		"typescript": "^4",
+		"typescript": "^5",
 		"typescript-string-enums": "^1",
 		"utimes": "^5"
 	},

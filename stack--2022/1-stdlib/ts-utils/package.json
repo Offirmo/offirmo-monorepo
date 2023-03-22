@@ -42,7 +42,7 @@
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"typescript": "^4"
+		"typescript": "^5"
 	},
 
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/1-stdlib/ts-utils"

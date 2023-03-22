@@ -29,5 +29,4 @@
 		"react-dom": "^18",
 		"tiny-invariant": "^1",
 		"tslib": "^2",
-		"typescript": "^4",
 		"typescript-string-enums": "^1"

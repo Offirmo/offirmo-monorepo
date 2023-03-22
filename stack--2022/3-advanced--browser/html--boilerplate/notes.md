@@ -29,7 +29,6 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/simple-upgradable-template": "^0",
 		"@size-limit/preset-small-lib": "^8",
-		"npm-run-all": "^4",
-		"typescript": "^4"
+		"npm-run-all": "^4"
 	}
 }
