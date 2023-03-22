@@ -49,8 +49,8 @@
 import { Int32, PRNGEngine, Seed } from '../../types.js'
 import { assert } from '../../utils/assert.js'
 
-// XXX "this"
-// XXX "any"
+const SIZE = 256 // For readability only. SIZE=256 is a property of the algorithm and can't be changed
+
 
 function _toIntArray(s: string): Array<any> {
 	const result = []
@@ -109,44 +109,27 @@ function _add(x: Int32, y: Int32): Int32 {
 	return (msb << 16) | (lsb & 0xffff)
 }
 
-export function get_RNGⵧISAACⵧmutating(): PRNGEngine {
 
-	const SIZE = 256 // MUST be 256? TODO check what this size is
-
-	let temp_mem = Array(SIZE) // internal memory
-	let accumulator = 0
-	let brs = 0        // last result
-	let cnt = 0        // counter
-	let results: Int32[] = Array(SIZE) // result array
+export function get_RNGⵧISAAC32ⵧmutating(seed: Seed = Math.random()): PRNGEngine {
+	let results: Int32[] = Array(SIZE)
 	let next_available_result_index = -1
+	let temp_mem: Int32[] = Array(SIZE)
+	let generation_count: Int32 = 0 // # of generations of a new result
+	let accumulator: Int32 = 0
+	let brs: Int32 = 0 // last result (unclear what this is)
 
 	function _reset_state() {
-		accumulator = brs = cnt = 0
-		temp_mem.fill(0)
 		results.fill(0)
 		next_available_result_index = -1
+		temp_mem.fill(0)
+		generation_count = accumulator = brs = 0
 	}
 
-	function _seed(raw_seed: number[] | number | string): void {
-		let seed = ((): number[] => {
-
-			if(typeof raw_seed === 'string') {
-				assert(raw_seed.length > 0, `seed as string should not be empty!`)
-				return _toIntArray(raw_seed)
-			}
-
-			if(typeof raw_seed === 'number') {
-				// TODO check format?
-				return [ raw_seed ]
-			}
-
-			return raw_seed
-		})()
-
-		// seed should now be an array<number>
-		assert(Array.isArray(seed), `seed: wrong param type!`)
-		assert(seed.every(i => typeof i === 'number'), `seed: array should be array of numbers!`)
-
+	// flag is an unclear param that trigger using the current "result" array to init a..h = seeding
+	//      flag should normally always be true
+	// seeding is unclearly defined in the ISAAC spec but since the current "result" is used as a seed,
+	//      it makes sense to init the "result" array with the provided seed
+	function _seed(seed?: ReadonlyArray<number>, flag = true): void {
 		_reset_state()
 
 		if (seed) {
@@ -176,7 +159,7 @@ export function get_RNGⵧISAACⵧmutating(): PRNGEngine {
 			_seed_mix();
 
 		for(let i = 0; i < SIZE; i += 8) {
-			if(seed) { /* use all the information in the seed */
+			if (flag) { /* use all the information in the seed */
 				a = _add(a, results[i + 0]!); b = _add(b, results[i + 1]!)
 				c = _add(c, results[i + 2]!); d = _add(d, results[i + 3]!)
 				e = _add(e, results[i + 4]!); f = _add(f, results[i + 5]!)
@@ -187,7 +170,7 @@ export function get_RNGⵧISAACⵧmutating(): PRNGEngine {
 			temp_mem[i + 0] = a; temp_mem[i + 1] = b; temp_mem[i + 2] = c; temp_mem[i + 3] = d
 			temp_mem[i + 4] = e; temp_mem[i + 5] = f; temp_mem[i + 6] = g; temp_mem[i + 7] = h
 		}
-		if (seed) {
+		if (flag) {
 			/* do a second pass to make all of the seed affect all of temp_mem[] */
 			for(let i = 0; i < 256; i += 8) {
 				a = _add(a, temp_mem[i + 0]!); b = _add(b, temp_mem[i + 1]!)
@@ -206,19 +189,20 @@ export function get_RNGⵧISAACⵧmutating(): PRNGEngine {
 		if (next_available_result_index >= 0)
 			return
 
-		cnt = _add(cnt,   1);
-		brs = _add(brs, cnt);
+		generation_count = _add(generation_count,   1);
+		brs = _add(brs, generation_count);
 
-		for(let x, y, i = 0; i < SIZE; i++) {
+		for(let x: Int32 = 0, y: Int32 = 0, i = 0; i < SIZE; i++) {
 			switch(i & 3) {
 				case 0: accumulator ^= accumulator <<  13; break;
 				case 1: accumulator ^= accumulator >>>  6; break;
 				case 2: accumulator ^= accumulator <<   2; break;
 				case 3: accumulator ^= accumulator >>> 16; break;
 			}
-			accumulator       = _add(temp_mem[(i +  128) & 0xff], accumulator); x = temp_mem[i];
-			temp_mem[i] =   y = _add(temp_mem[(x >>>  2) & 0xff], _add(accumulator, brs));
-			results[i]  = brs = _add(temp_mem[(y >>> 10) & 0xff], x);
+			accumulator       = _add(temp_mem[(i +  128) & 0xff]!, accumulator)
+			                x = temp_mem[i]!
+			temp_mem[i] =   y = _add(temp_mem[(x >>>  2) & 0xff]!, _add(accumulator, brs))
+			results[i]  = brs = _add(temp_mem[(y >>> 10) & 0xff]!, x)
 		}
 
 		next_available_result_index += SIZE
@@ -231,7 +215,8 @@ export function get_RNGⵧISAACⵧmutating(): PRNGEngine {
 	}
 
 	// XXX TOREVIEW
-	_seed(Math.random() * 0xffffffff)
+	_seed()
+	//_seed([Math.random() * 0xffffffff])
 
 	const engine = {
 		is_mutating() { return true },
@@ -270,6 +255,16 @@ export function get_RNGⵧISAACⵧmutating(): PRNGEngine {
 		},
 		get_state() {
 			throw new Error('Not Implemented!')
+		},
+		_get_internals() {
+			return {
+				results,
+				next_available_result_index,
+				temp_mem,
+				generation_count,
+				accumulator,
+				brs,
+			}
 		}
 	}
 	return engine

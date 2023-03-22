@@ -10,7 +10,17 @@ describe('@offirmo/random', function() {
 
 			itᐧshouldᐧbeᐧaᐧvalidᐧengine(get_RNGⵧISAAC32ⵧmutating)
 
-			it('should pass the official unit tests -- randvec', () => {
+
+			it.only('should pass the official unit tests -- randvect', () => {
+
+				const engine = get_RNGⵧISAAC32ⵧmutating('This is <i>not</i> the right mytext.')
+				//engine.seed([1])
+				//engine.seed('This is <i>not</i> the right mytext.')
+				for(let i = 0; i < 10 ; ++i) {
+					//console.log(engine.get_Int32().i.toString(16).padStart(8, '0'))
+					console.log(toHex(engine.get_Int32().i))
+				}
+
 
 
 
