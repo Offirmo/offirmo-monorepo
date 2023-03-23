@@ -52,8 +52,8 @@ import { assert } from '../../utils/assert.js'
 const SIZE = 256 // For readability only. SIZE=256 is a property of the algorithm and can't be changed
 
 
-function _toIntArray(s: string): Array<any> {
-	const result = []
+function _to_Int32Array(s: string): Int32Array {
+	const result: Int32[] = []
 	s = s + '\0\0\0'; // pad string to avoid discarding last chars
 	const l = s.length - 1;
 
@@ -99,7 +99,7 @@ function _toIntArray(s: string): Array<any> {
 		}
 	}
 
-	return result;
+	return new Int32Array(result.length).map((v, i) => result[i]!)
 }
 
 // 32-bit integer safe adder
@@ -109,29 +109,48 @@ function _add(x: Int32, y: Int32): Int32 {
 	return (msb << 16) | (lsb & 0xffff)
 }
 
-function _normalize_seed(raw_seed: Seed): ReadonlyArray<number> {
-	let normalized_seed = ((): ReadonlyArray<number> => {
+function _normalize_seed(raw_seed: Seed | Int32Array): Int32Array {
+	let normalized_seed = ((): Int32Array => {
 
 		if(typeof raw_seed === 'string') {
 			assert(raw_seed.length > 0, `seed as string should not be empty!`)
-			return _toIntArray(raw_seed)
+			return _to_Int32Array(raw_seed)
 		}
 
 		if(typeof raw_seed === 'number') {
 			// TODO check format?
-			return [ raw_seed ]
+			return new Int32Array(1).fill(raw_seed)
 		}
 
-		return raw_seed
+		if (Array.isArray(raw_seed)) {
+			return new Int32Array(raw_seed.length).fill(0).map((v, i) => raw_seed[i]!)
+		}
+
+		assert((raw_seed as any)?.BYTES_PER_ELEMENT === 4, `_seed: wrong TypeArray type!`)
+		return (raw_seed as any)
 	})()
 
-	// seed should now be an array<number>
-	assert(Array.isArray(normalized_seed), `_seed: wrong param type!`)
+	// seed should now be an Int32Array
+	assert(normalized_seed.BYTES_PER_ELEMENT === 4, `_seed: wrong param type!`)
 	assert(normalized_seed.every(i => typeof i === 'number'), `seed: array should be array of numbers!`)
 
 	return normalized_seed
 }
 
+function _get_random_seed(): Seed | Int32Array {
+	// @ts-expect-error
+	if (globalThis?.crypto?.getRandomValues) {
+		// @ts-expect-error
+		return globalThis.crypto.getRandomValues(new Int32Array(SIZE))
+	}
+
+	return (new Array(SIZE)).fill(0).map(() => Math.random() * 0x100_000_000 | 0)
+}
+
+
+
+console.log((globalThis as any).crypto)
+//
 
 // DO NOT USE THE OPTIONS
 // THEY ARE PROVIDED FOR UNIT TESTS ONLY
@@ -142,10 +161,10 @@ function _normalize_seed(raw_seed: Seed): ReadonlyArray<number> {
 // flag
 // - unclear param that alters the behavior of the seeding
 // - should always be true, but one of the test suite requires it to be false
-export function get_RNGⵧISAAC32ⵧmutating(options: { seed: Seed | undefined | null, flag: boolean } = { seed: [ Math.random() * 0xffffffff], flag: true }): PRNGEngine {
-	let results: Int32[] = Array(SIZE)
+export function get_RNGⵧISAAC32ⵧmutating(options: { seed: Seed | Int32Array | undefined | null, flag: boolean } = { seed: _get_random_seed(), flag: true }): PRNGEngine {
+	let results = new Int32Array(SIZE)
 	let next_available_result_index = -1
-	let temp_mem: Int32[] = Array(SIZE)
+	let temp_mem = new Int32Array(SIZE)
 	let generation_count: Int32 = 0 // # of generations of a new result
 	let accumulator: Int32 = 0
 	let brs: Int32 = 0 // last result (unclear what this is)
@@ -157,7 +176,7 @@ export function get_RNGⵧISAAC32ⵧmutating(options: { seed: Seed | undefined |
 		generation_count = accumulator = brs = 0
 	}
 
-	function _seed(seed?: ReadonlyArray<number>, flag = options.flag): void {
+	function _seed(seed?: Int32Array, flag = options.flag): void {
 		_reset_state()
 
 		if (seed) {
