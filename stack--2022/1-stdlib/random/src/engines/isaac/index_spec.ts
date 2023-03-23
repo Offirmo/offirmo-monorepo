@@ -20,17 +20,6 @@ describe('@offirmo/random', function() {
 				return result
 			}
 
-/*
-			function decToHex(dec: number): string {
-				return (dec + Math.pow(16, 6)).toString(16).substr(-6)
-			}
-			function toHexString(n: number): string {
-				if(n < 0) {
-					n = 0xFFFFFFFF + n + 1;
-				}
-				return "0x" + ("00000000" + n.toString(16).toUpperCase()).substr(-8);
-			}*/
-
 			function _internal_result_toHex(results: Int32[]): string {
 				let s = ''
 
@@ -42,8 +31,33 @@ describe('@offirmo/random', function() {
 				return s
 			}
 
-			it('should pass the official unit tests -- randvect', () => {
+			it('should pass the official unit tests -- internal state', () => {
+				// https://www.burtleburtle.net/bob/rand/isaac.html
+				// "If the initial internal state is all zero, after ten calls the values of aa, bb, and cc in hexadecimal will be d4d3f473, 902c0691, and 0000000a"
+				const engine = get_RNGⵧISAAC32ⵧmutating({ seed: null, flag: false })
 
+				for(let j = 0; j < 10; ++j) {
+					let s = (engine as any)._get_internals()
+					//console.log(" = accumulator = ", toHex(s.accumulator))
+					//console.log(" = brs = ", toHex(s.brs))
+					//console.log(" = generation_count = ", toHex(s.generation_count))
+
+					for (let i = 0; i < 256; ++i) {
+						engine.get_Int32()
+					}
+				}
+
+				let s = (engine as any)._get_internals()
+				//console.log(s)
+				//console.log(" = accumulator = ", toHex(s.accumulator))
+				//console.log(" = brs = ", toHex(s.brs))
+				//console.log(" = generation_count = ", toHex(s.generation_count))
+				expect(toHex(s.generation_count)).to.equal('0000000a')
+				expect(toHex(s.accumulator)).to.equal('d4d3f473')
+				expect(toHex(s.brs)).to.equal('902c0691')
+			})
+
+			it('should pass the official unit tests -- randvect', () => {
 				const engine = get_RNGⵧISAAC32ⵧmutating({ seed: undefined, flag: true })
 				//engine.seed([1])
 				//engine.seed('This is <i>not</i> the right mytext.')
@@ -137,7 +151,6 @@ f7f395f1bc6172c7a86f875e0e6c51b3cdfec2af73c0e762824c2009c5a87748
 			})
 
 			it('should pass the official unit tests -- randseed', () => {
-
 				const engine = get_RNGⵧISAAC32ⵧmutating()
 				engine.seed('This is <i>not</i> the right mytext.')
 

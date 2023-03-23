@@ -133,7 +133,16 @@ function _normalize_seed(raw_seed: Seed): ReadonlyArray<number> {
 }
 
 
-export function get_RNGⵧISAAC32ⵧmutating(options: { seed: Seed | undefined, flag: boolean } = { seed: [ Math.random() * 0xffffffff], flag: true }): PRNGEngine {
+// DO NOT USE THE OPTIONS
+// THEY ARE PROVIDED FOR UNIT TESTS ONLY
+// seed:
+// - not provided: init'ed from Math.random() not the best, better than nothing, cf. discussion https://github.com/rubycon/isaac.js/issues/2
+// - null = no seed, no seeding at all
+// - undefined = seeding happens, using the "default" seed
+// flag
+// - unclear param that alters the behavior of the seeding
+// - should always be true, but one of the test suite requires it to be false
+export function get_RNGⵧISAAC32ⵧmutating(options: { seed: Seed | undefined | null, flag: boolean } = { seed: [ Math.random() * 0xffffffff], flag: true }): PRNGEngine {
 	let results: Int32[] = Array(SIZE)
 	let next_available_result_index = -1
 	let temp_mem: Int32[] = Array(SIZE)
@@ -148,14 +157,13 @@ export function get_RNGⵧISAAC32ⵧmutating(options: { seed: Seed | undefined, 
 		generation_count = accumulator = brs = 0
 	}
 
-	// flag is an unclear param that trigger using the current "result" array to init a..h = seeding
-	//      flag should normally always be true
-	// seeding is unclearly defined in the ISAAC spec but since the current "result" is used as a seed,
-	//      it makes sense to init the "result" array with the provided seed
 	function _seed(seed?: ReadonlyArray<number>, flag = options.flag): void {
 		_reset_state()
 
 		if (seed) {
+			// seeding is unclearly defined in the ISAAC spec
+			// but since the algorithm uses the current "result" as a seed,
+			// it makes sense to init the "result" array with what is provided as a seed
 			for(let i = 0; i < seed.length; i++) {
 				results[i % SIZE] += seed[i]!
 			}
@@ -237,9 +245,18 @@ export function get_RNGⵧISAAC32ⵧmutating(options: { seed: Seed | undefined, 
 		return results[next_available_result_index--]!
 	}
 
-	// XXX TOREVIEW
-	_seed(options.seed ? _normalize_seed(options.seed) : undefined)
-	//_seed([Math.random() * 0xffffffff])
+	switch (options.seed) {
+		case null:
+			// the user really doesn't want to seed at all
+			break
+		case undefined:
+			// seed with the default seed
+			_seed(undefined)
+			break
+		default:
+			_seed(_normalize_seed(options.seed))
+			break
+	}
 
 	const engine = {
 		is_mutating() { return true },
