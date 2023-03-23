@@ -58,11 +58,11 @@ function _toIntArray(s: string): Array<any> {
 	const l = s.length - 1;
 
 	let i = 0
+	let r4 = []
 	while(i < l) {
 		const w1 = s.charCodeAt(i++)
 		const w2 = s.charCodeAt(i+1)
-		let r4 = []
-		if       (w1 < 0x0080) {
+		if        (w1 < 0x0080) {
 			// 0x0000 - 0x007f code point: basic ascii
 			r4.push(w1);
 		} else if (w1 < 0x0800) {

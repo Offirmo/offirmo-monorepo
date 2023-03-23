@@ -9,7 +9,7 @@ export const INT32_MAX =  0x7f_fff_fff
 export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngine) {
 	let engine = engine_ctor()
 
-	describe(`interface: ${engine.is_mutating() ? 'mutating' : 'immutable'}`, function () {
+	describe(`interface variant: ${engine.is_mutating() ? 'mutating' : 'immutable'}`, function () {
 
 		describe('output', function () {
 
@@ -68,9 +68,7 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 			})
 		})
 
-		describe('interface', function () {
-
-		describe('immutability', function() {
+		describe(`immutability${engine.is_mutating() ? ' (NOT)' : ''}`, function() {
 
 			it(`should work -- ${engine.is_mutating() ? 'always mutating' : 'mutating only on demand'}`, () => {
 				let spread = new Set<number>()
@@ -105,7 +103,5 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 				}
 			})
 		})
-	})
-
 	})
 }

@@ -67,7 +67,7 @@ export const get_params = memoize_once(function get_params(): Params {
 		max_event_durationⳇₓday: max_event_durationⳇₓday,
 
 		root: path.normalize(`/Users/${process.env['USER']}/Documents/Memories`),
-		//root: path.normalize(`/Users/${process.env.USER}/Dropbox/- TEST photos sorter/- sorted`), // LOCAL TEST, DON'T COMMIT
+		//root: path.normalize(`/Users/${process.env.USER}/work/tmp/- TEST photos sorter/- sorted`), // LOCAL TEST, DON'T COMMIT
 		//root: path.normalize(`/Users/${process.env.USER}/Dropbox/- TEST photos sorter/- notes`), // LOCAL TEST, DON'T COMMIT
 		//root: path.normalize(`/Users/${process.env.USER}/Dropbox/…documents/…memories/…me/- inbox`),
 		//root: path.normalize(`/Users/${process.env.USER}/Dropbox/…documents/…memories/…me/…circa--1980/- 1981`),
@@ -84,8 +84,8 @@ export const get_params = memoize_once(function get_params(): Params {
 		//root: path.normalize(`/Users/${process.env.USER}/Dropbox/…documents/…memories/…me/…circa--2010/- 2018`),
 		//root: path.normalize(`/Users/${process.env.USER}/Dropbox/…documents/…memories/…me/…circa--2010/- 2019`),
 
-		...(false // WARNING true = local execution on author's machine, WARNING don't commit "true"
 		// DEBUG options, do NOT use!
+		...(false // WARNING true = local execution on author's machine, WARNING don't commit "true"
 			? {
 					//dry_run: true,
 					dry_run: false,
