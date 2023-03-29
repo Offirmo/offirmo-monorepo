@@ -149,19 +149,22 @@ function _get_random_seed(): Seed | Int32Array {
 
 
 
-console.log((globalThis as any).crypto)
-//
-
 // DO NOT USE THE OPTIONS
 // THEY ARE PROVIDED FOR UNIT TESTS ONLY
-// seed:
-// - not provided: init'ed from Math.random() not the best, better than nothing, cf. discussion https://github.com/rubycon/isaac.js/issues/2
-// - null = no seed, no seeding at all
-// - undefined = seeding happens, using the "default" seed
-// flag
-// - unclear param that alters the behavior of the seeding
-// - should always be true, but one of the test suite requires it to be false
-export function get_RNGⵧISAAC32ⵧmutating(options: { seed: Seed | Int32Array | undefined | null, flag: boolean } = { seed: _get_random_seed(), flag: true }): PRNGEngine {
+
+
+export function get_RNGⵧISAAC32ⵧmutating(options: {
+	// seed:
+	// - not provided: init'ed from Math.random() not the best, better than nothing, cf. discussion https://github.com/rubycon/isaac.js/issues/2
+	// - null = no seed, no seeding at all
+	// - undefined = seeding happens, using the "default" seed
+	seed: Seed | Int32Array | undefined | null,
+	// TODO seeding method
+	// flag
+	// - unclear param that alters the behavior of the seeding
+	// - should always be true, but one of the test suite requires it to be false
+	flag: boolean,
+} = { seed: _get_random_seed(), flag: true }): PRNGEngine {
 	let results = new Int32Array(SIZE)
 	let next_available_result_index = -1
 	let temp_mem = new Int32Array(SIZE)
@@ -279,6 +282,7 @@ export function get_RNGⵧISAAC32ⵧmutating(options: { seed: Seed | Int32Array 
 
 	const engine = {
 		is_mutating() { return true },
+		is_prng() { return true },
 		get_Int32() {
 			return {
 				i: _next(),

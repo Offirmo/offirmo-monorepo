@@ -5,7 +5,7 @@ interface WithUUID {
 	readonly uuid: UUID
 }
 
-export {
+export type {
 	UUID,
 	WithUUID,
 }

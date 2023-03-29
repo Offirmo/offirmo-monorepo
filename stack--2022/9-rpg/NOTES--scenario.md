@@ -127,3 +127,7 @@ cette institution ne cesse de transgresser sans état d’âme tous les commande
 http://pascalide.fr/critique/the-operative/
 
 https://tolkiengateway.net/wiki/Galadriel +++
+
+
+Mistakes
+* "fridging" https://www.bbc.com/culture/article/20230315-how-shrinking-perpetuates-hollywoods-most-sexist-clich

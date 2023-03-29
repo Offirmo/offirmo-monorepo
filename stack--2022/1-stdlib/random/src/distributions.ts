@@ -79,7 +79,7 @@ export function get_random_generator_ofꓽboolⵧweighted(percentage: Percentage
 		return _get_random_generator_ofꓽboolⵧtrue()
 
 	const scaled_percentageⵧfast = percentage * 0x100_000_000;
-	const is_scaled_percentageⵧfast_good_enough = scaled_percentageⵧfast % 1 === 0 // ===0 means no practional part = ok
+	const is_scaled_percentageⵧfast_good_enough = scaled_percentageⵧfast % 1 === 0 // ===0 means no fractional part = ok
 	if (is_scaled_percentageⵧfast_good_enough) {
 		const ceil = scaled_percentageⵧfast - 0x80_000_000
 		return function _randomly_generateꓽboolⵧfast(engine: Immutable<RNGEngine>) {

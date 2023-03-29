@@ -18,6 +18,8 @@ Last update: [https://devblogs.microsoft.com/typescript/](update marker) 2022/03
 
 
 ### strictness
+
+TODO `	"extends": "@tsconfig/strictest/tsconfig.json",` cf. https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#supporting-multiple-configuration-files-in-extends
 Relaxed:
 * `"noUncheckedIndexedAccess": false,` TODO set to true. Meanwhile, this triggers too many errors and would need a long time to fix
 * `"noUnusedParameters": false,` TODO one day set to true. This is not a correctness risk, my editor already outlines unused vars and don't see much value in this one.

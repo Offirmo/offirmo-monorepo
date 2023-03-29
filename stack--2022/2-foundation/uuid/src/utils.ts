@@ -1,4 +1,4 @@
-import { UUID, WithUUID } from './types'
+import { UUID, WithUUID } from './types.js'
 
 function xxx_test_unrandomize_element<T extends WithUUID>(x: Readonly<T>, hint?: UUID): T {
 	return {

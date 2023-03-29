@@ -24,11 +24,13 @@ export type HashOf<T> = Record<string, T>
 /////////////////////
 // for readability. Unfortunately this doesn't cause a real additional safety
 
+// Arithmetic
 export type Integer = number
+export type PositiveInteger = number
 export type Percentage = number
 
 export type TimeZone = string // https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 export type Basename = string
-export type RelativePath = string // implied relative to "root"
+export type RelativePath = string // implied relative to some "working dir"
 export type AbsolutePath = string

@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { ROUNDS_COUNT } from '../_test_helpers.js'
-import { RNGEngine } from '../types.js'
+import { RNGEngine, Int32, PRNGEngine } from '../types.js'
 
 export const INT32_MIN = -0x80_000_000
 export const INT32_MAX =  0x7f_fff_fff
@@ -102,6 +102,98 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 					expect(spread.size).to.be.at.least(ROUNDS_COUNT / 10 * 0.9)
 				}
 			})
+		})
+
+		describe('internals', function () {
+
+			it('should allow several instances to be used independently')
+
+			if (engine.is_prng()) {
+
+				describe('seeding', function () {
+
+					context('when no seed is provided', function () {
+
+						it('should auto-seed properly (non repeatable, enough randomness)', function () {
+							let e1 = engine_ctor()
+							let e2 = engine_ctor()
+							let e3 = engine_ctor()
+							let p1: Int32 = -0
+
+							let unexpected_equalities = 0
+							for(let i = 0; i < ROUNDS_COUNT; ++i) {
+								let o1 = e1.get_Int32()
+								let o2 = e2.get_Int32()
+								let o3 = e3.get_Int32()
+
+								if (o2.i === o1.i) unexpected_equalities++
+								if (o3.i === o1.i) unexpected_equalities++
+								if (p1 !== -0) {
+									if (o1.i === p1) unexpected_equalities++
+									if (o2.i === p1) unexpected_equalities++
+									if (o3.i === p1) unexpected_equalities++
+								}
+								p1 = o1.i
+
+								e1 = o1.next_engine
+								e2 = o2.next_engine
+								e3 = o3.next_engine
+							}
+
+							//console.log(unexpected_equalities, ROUNDS_COUNT * 0.001 * 2.5)
+							expect(unexpected_equalities, 'equal results between randomly seeded different engines').to.be.at.most(ROUNDS_COUNT * 0.001 * 2.5)
+						})
+					})
+
+					context('when a seed is provided', function () {
+
+						it('should provide a stable, repeatable output', function () {
+							const seed = 'Hello, world!'
+							let e1 = engine_ctor() as PRNGEngine
+							e1 = e1.seed(seed)
+							let e2 = engine_ctor() as PRNGEngine
+							e2 = e2.seed(seed)
+							let e3 = engine_ctor() as PRNGEngine
+							e3 = e3.seed(seed)
+							let p1: Int32 = -0
+
+							let expected_equalities = 0
+							let unexpected_equalities = 0
+							for(let i = 0; i < ROUNDS_COUNT; ++i) {
+								let o1 = e1.get_Int32()
+								let o2 = e2.get_Int32()
+								let o3 = e3.get_Int32()
+
+								if (o2.i === o1.i) expected_equalities++
+								if (o3.i === o1.i) expected_equalities++
+								if (p1 !== -0) {
+									if (o1.i === p1) unexpected_equalities++
+									if (o2.i === p1) unexpected_equalities++
+									if (o3.i === p1) unexpected_equalities++
+								}
+								p1 = o1.i
+
+								e1 = o1.next_engine
+								e2 = o2.next_engine
+								e3 = o3.next_engine
+							}
+
+							//console.log(expected_equalities, unexpected_equalities, ROUNDS_COUNT * 0.001 * 2.5)
+							expect(expected_equalities, 'expected equal results between equally seeded different engines').to.equal(ROUNDS_COUNT * 2)
+							expect(unexpected_equalities, 'unexpected equal results').to.be.at.most(ROUNDS_COUNT * 0.001 * 2.5)
+						})
+
+						it('should use the provided seed appropriately')
+					})
+				})
+
+				describe('state save & restore', function () {
+
+					it('should work')
+
+					it('should not take too much time to restore')
+				})
+			}
 		})
 	})
 }

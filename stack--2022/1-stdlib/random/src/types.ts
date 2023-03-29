@@ -10,12 +10,16 @@ export type UInt53 = number
 
 export interface RNGEngine {
 	get_Int32(): { i: Int32, next_engine: RNGEngine }
+
 	is_mutating(): boolean // whether this engine will mutate on generation or stay immutable (and keep generating the same value)
+	is_prng(): this is PRNGEngine // whether this engine is a pseudo-RNG
 }
 
 export type Seed = ReadonlyArray<number> | number | string
 
-export interface PRNGEngine extends RNGEngine{
+export interface PRNGEngine extends RNGEngine {
+	get_Int32(): { i: Int32, next_engine: PRNGEngine }
+
 	seed(seed: Seed): PRNGEngine
 	// seedⵧauto(p: unknown) // TODO work out the params
 
