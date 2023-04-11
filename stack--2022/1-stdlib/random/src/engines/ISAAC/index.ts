@@ -47,7 +47,7 @@
 
 /* js string (ucs-2/utf16) to a 32-bit integer (utf-8 chars, little-endian) array */
 import { Int32, PRNGEngine, Seed } from '../../types.js'
-import { assert } from '../../utils/assert.js'
+import { assert } from '../../embedded-deps/assert/index.js'
 
 const SIZE = 256 // For readability only. SIZE=256 is a property of the algorithm and can't be changed
 
@@ -153,7 +153,7 @@ function _get_random_seed(): Seed | Int32Array {
 // THEY ARE PROVIDED FOR UNIT TESTS ONLY
 
 
-export function get_RNGⵧISAAC32ⵧmutating(options: {
+export function get_RNGⵧISAAC32(options: {
 	// seed:
 	// - not provided: init'ed from Math.random() not the best, better than nothing, cf. discussion https://github.com/rubycon/isaac.js/issues/2
 	// - null = no seed, no seeding at all
@@ -281,13 +281,9 @@ export function get_RNGⵧISAAC32ⵧmutating(options: {
 	}
 
 	const engine = {
-		is_mutating() { return true },
 		is_prng() { return true },
 		get_Int32() {
-			return {
-				i: _next(),
-				next_engine: engine,
-			}
+			return _next()
 		},
 		seed(seed: Seed) {
 			_seed(_normalize_seed(seed))

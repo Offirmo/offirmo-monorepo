@@ -32,7 +32,6 @@
 	"peerDependencies": {
 	},
 	"dependencies": {
-		"@offirmo-private/ts-types": "^0"
 	},
 
 	"scripts": {

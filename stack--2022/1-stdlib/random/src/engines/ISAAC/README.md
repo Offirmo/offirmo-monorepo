@@ -10,3 +10,8 @@ Isaac
   *
 
 https://jtobin.io/crushing-isaac
+
+
+CREDITS
+* This code is a derivation of https://github.com/rubycon/isaac.js  MIT Licence: Copyright (c) 2012 Yves-Marie K. Rinquin
+  * Which itself is derived from http://www.burtleburtle.net/bob/rand/isaacafa.html

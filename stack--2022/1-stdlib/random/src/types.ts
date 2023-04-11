@@ -2,27 +2,41 @@
 // PRNG = Pseudorandom Number Generator https://en.wikipedia.org/wiki/Pseudorandom_number_generator
 
 
-import { Integer, Immutable } from '@offirmo-private/ts-types'
+import { Integer, PositiveInteger } from './embedded-deps/types/index.js'
 
+export type Int8 = number
 export type Int32 = number
-export type UInt53 = number
+export type UInt53 = number // 53bits = MAX_SAFE_INTEGER cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER
+export type Seed = ReadonlyArray<number> | number | string
 
 
 export interface RNGEngine {
-	get_Int32(): { i: Int32, next_engine: RNGEngine }
+	get_Int32(): Int32
 
-	is_mutating(): boolean // whether this engine will mutate on generation or stay immutable (and keep generating the same value)
 	is_prng(): this is PRNGEngine // whether this engine is a pseudo-RNG
 }
 
-export type Seed = ReadonlyArray<number> | number | string
-
+// for convenience, the setters return 'this' to allow fluid chaining
 export interface PRNGEngine extends RNGEngine {
-	get_Int32(): { i: Int32, next_engine: PRNGEngine }
+	seed(seed: Seed): RNGEngine // shortcut for set_state()
 
-	seed(seed: Seed): PRNGEngine
+	set_state(seed: Seed, call_count: PositiveInteger): RNGEngine
+	get_state(): {seed: Seed, call_count: PositiveInteger}
+}
+
+/*
+export interface ImmutableRNGEngine {
+	get_Int32(): { i: Int32, next_engine: ImmutableRNGEngine }
+
+	is_prng(): this is ImmutablePRNGEngine // whether this engine is a pseudo-RNG
+}
+export interface ImmutablePRNGEngine extends ImmutableRNGEngine {
+	get_Int32(): { i: Int32, next_engine: ImmutablePRNGEngine }
+
+	seed(seed: Seed): ImmutablePRNGEngine
 	// seedⵧauto(p: unknown) // TODO work out the params
 
-	set_state(seed: Seed, call_count: Integer): PRNGEngine
+	set_state(seed: Seed, call_count: Integer): ImmutablePRNGEngine
 	get_state(): {seed: Seed, call_count: Integer}
 }
+*/

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { get_RNGⵧISAAC32ⵧmutating } from './index.js'
+import { get_RNGⵧISAAC32 } from './index.js'
 import { itᐧshouldᐧbeᐧaᐧvalidᐧengine } from '../_test_helpers.js'
 import { Int32 } from '../../types.js'
 
@@ -11,7 +11,7 @@ describe('@offirmo/random', function() {
 
 		describe('ISAAC-32', function() {
 
-			itᐧshouldᐧbeᐧaᐧvalidᐧengine(get_RNGⵧISAAC32ⵧmutating)
+			itᐧshouldᐧbeᐧaᐧvalidᐧengine(get_RNGⵧISAAC32)
 
 			/* number to hexadecimal string representation /w padding */
 			function toHex(n: number, padding: number = 8): string {
@@ -34,7 +34,7 @@ describe('@offirmo/random', function() {
 			it('should pass the official unit tests -- internal state', () => {
 				// https://www.burtleburtle.net/bob/rand/isaac.html
 				// "If the initial internal state is all zero, after ten calls the values of aa, bb, and cc in hexadecimal will be d4d3f473, 902c0691, and 0000000a"
-				const engine = get_RNGⵧISAAC32ⵧmutating({ seed: null, flag: false })
+				const engine = get_RNGⵧISAAC32({ seed: null, flag: false })
 
 				for(let j = 0; j < 10; ++j) {
 					let s = (engine as any)._get_internals()
@@ -58,7 +58,7 @@ describe('@offirmo/random', function() {
 			})
 
 			it('should pass the official unit tests -- randvect', () => {
-				const engine = get_RNGⵧISAAC32ⵧmutating({ seed: undefined, flag: true })
+				const engine = get_RNGⵧISAAC32({ seed: undefined, flag: true })
 				//engine.seed([1])
 				//engine.seed('This is <i>not</i> the right mytext.')
 
@@ -151,14 +151,14 @@ f7f395f1bc6172c7a86f875e0e6c51b3cdfec2af73c0e762824c2009c5a87748
 			})
 
 			it('should pass the official unit tests -- randseed', () => {
-				const engine = get_RNGⵧISAAC32ⵧmutating()
+				const engine = get_RNGⵧISAAC32()
 				engine.seed('This is <i>not</i> the right mytext.')
 
 				let results = ''
 
 				for(let j = 0; j < 10; j++) {
 					for(let i = 0; i < 256; i++) {
-						results += toHex(engine.get_Int32().i)
+						results += toHex(engine.get_Int32())
 						if((i & 7) === 7)
 							results += '\n'
 						else
