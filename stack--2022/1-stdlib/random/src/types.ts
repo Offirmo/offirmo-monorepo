@@ -2,7 +2,7 @@
 // PRNG = Pseudorandom Number Generator https://en.wikipedia.org/wiki/Pseudorandom_number_generator
 
 
-import { Integer, PositiveInteger } from './embedded-deps/types/index.js'
+import { Immutable, PositiveInteger } from './embedded-deps/types/index.js'
 
 export type Int8 = number
 export type Int32 = number
@@ -13,15 +13,20 @@ export type Seed = ReadonlyArray<number> | number | string
 export interface RNGEngine {
 	get_Int32(): Int32
 
-	is_prng(): this is PRNGEngine // whether this engine is a pseudo-RNG
+	is_prng(/*this: RNGEngine | PRNGEngine*/): this is PRNGEngine // whether this engine is a pseudo-RNG
+}
+
+export interface PRNGState {
+	seed: Seed
+	call_count: PositiveInteger
 }
 
 // for convenience, the setters return 'this' to allow fluid chaining
 export interface PRNGEngine extends RNGEngine {
 	seed(seed: Seed): RNGEngine // shortcut for set_state()
 
-	set_state(seed: Seed, call_count: PositiveInteger): RNGEngine
-	get_state(): {seed: Seed, call_count: PositiveInteger}
+	set_state(state: Immutable<PRNGState>): PRNGEngine
+	get_state(): PRNGState
 }
 
 /*

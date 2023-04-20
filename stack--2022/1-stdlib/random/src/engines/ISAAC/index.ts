@@ -1,57 +1,11 @@
-/* ----------------------------------------------------------------------
- * Copyright (c) 2012 Yves-Marie K. Rinquin
- *
- * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the
- * "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish,
- * distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
- *
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
- * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
- * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
- * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- *
- * ----------------------------------------------------------------------
- *
- * ISAAC is a cryptographically secure pseudo-random number generator
- * (or CSPRNG for short) designed by Robert J. Jenkins Jr. in 1996 and
- * based on RC4. It is designed for speed and security.
- *
- * ISAAC's informations & analysis:
- *   http://burtleburtle.net/bob/rand/isaac.html
- * ISAAC's implementation details:
- *   http://burtleburtle.net/bob/rand/isaacafa.html
- *
- * ISAAC succesfully passed TestU01
- *
- * ----------------------------------------------------------------------
- *
- * Usage:
- *   <script src="isaac.js"></script>
- *   var random_number = isaac.random();
- *
- * Output: [ 0x00000000; 0xffffffff]
- *         [-2147483648; 2147483647]
- *
- */
-
-
-/* js string (ucs-2/utf16) to a 32-bit integer (utf-8 chars, little-endian) array */
-import { Int32, PRNGEngine, Seed } from '../../types.js'
+import { Int32, PRNGEngine, PRNGState, Seed } from '../../types.js'
 import { assert } from '../../embedded-deps/assert/index.js'
+import { Immutable } from '../../embedded-deps/types/index.js'
 
 const SIZE = 256 // For readability only. SIZE=256 is a property of the algorithm and can't be changed
 
 
+/* js string (ucs-2/utf16) to a 32-bit integer (utf-8 chars, little-endian) array */
 function _to_Int32Array(s: string): Int32Array {
 	const result: Int32[] = []
 	s = s + '\0\0\0'; // pad string to avoid discarding last chars
@@ -137,11 +91,11 @@ function _normalize_seed(raw_seed: Seed | Int32Array): Int32Array {
 	return normalized_seed
 }
 
-function _get_random_seed(): Seed | Int32Array {
+function _get_random_seed(): Seed {
 	// @ts-expect-error
 	if (globalThis?.crypto?.getRandomValues) {
 		// @ts-expect-error
-		return globalThis.crypto.getRandomValues(new Int32Array(SIZE))
+		return [...globalThis.crypto.getRandomValues(new Int32Array(SIZE)).values()]
 	}
 
 	return (new Array(SIZE)).fill(0).map(() => Math.random() * 0x100_000_000 | 0)
@@ -149,37 +103,38 @@ function _get_random_seed(): Seed | Int32Array {
 
 
 
-// DO NOT USE THE OPTIONS
-// THEY ARE PROVIDED FOR UNIT TESTS ONLY
-
 
 export function get_RNGⵧISAAC32(options: {
+	// DO NOT USE THOSE OPTIONS
+	// THEY ARE PROVIDED FOR UNIT TESTS ONLY
 	// seed:
-	// - not provided: init'ed from Math.random() not the best, better than nothing, cf. discussion https://github.com/rubycon/isaac.js/issues/2
-	// - null = no seed, no seeding at all
-	// - undefined = seeding happens, using the "default" seed
-	seed: Seed | Int32Array | undefined | null,
+	// - [not provided] = init'ed from Math.random() not the best, better than nothing, cf. discussion https://github.com/rubycon/isaac.js/issues/2
+	// - undefined      = seeding happens, using the "internal/spec default" seed (FOR UNIT TESTS ONLY)
+	// - null           = no seed, no seeding at all (FOR UNIT TESTS ONLY)
+	_xxx_seed: Seed | undefined | null,
 	// TODO seeding method
 	// flag
 	// - unclear param that alters the behavior of the seeding
 	// - should always be true, but one of the test suite requires it to be false
-	flag: boolean,
-} = { seed: _get_random_seed(), flag: true }): PRNGEngine {
+	_xxx_flag: boolean,
+} = { _xxx_seed: _get_random_seed(), _xxx_flag: true }): PRNGEngine {
 	let results = new Int32Array(SIZE)
-	let next_available_result_index = -1
+	let next_available_result_index = -1 // -1 means no more results in the buffer
 	let temp_mem = new Int32Array(SIZE)
-	let generation_count: Int32 = 0 // # of generations of a new result
+	let generation_count: Int32 = 0 // # of generations of a new results buffer
 	let accumulator: Int32 = 0
 	let brs: Int32 = 0 // last result (unclear what this is)
+	let last_seed: Seed = 0
 
 	function _reset_state() {
 		results.fill(0)
 		next_available_result_index = -1
 		temp_mem.fill(0)
 		generation_count = accumulator = brs = 0
+		last_seed = 0
 	}
 
-	function _seed(seed?: Int32Array, flag = options.flag): void {
+	function _seed(seed?: Int32Array, flag = options._xxx_flag): void {
 		_reset_state()
 
 		if (seed) {
@@ -238,10 +193,7 @@ export function get_RNGⵧISAAC32(options: {
 		}
 	}
 
-	function _ensure_enough_result_available() {
-		if (next_available_result_index >= 0)
-			return
-
+	function _generate_next_batch_of_results() {
 		generation_count = _add(generation_count,   1);
 		brs = _add(brs, generation_count);
 
@@ -253,12 +205,17 @@ export function get_RNGⵧISAAC32(options: {
 				case 3: accumulator ^= accumulator >>> 16; break;
 			}
 			accumulator       = _add(temp_mem[(i +  128) & 0xff]!, accumulator)
-			                x = temp_mem[i]!
+			x = temp_mem[i]!
 			temp_mem[i] =   y = _add(temp_mem[(x >>>  2) & 0xff]!, _add(accumulator, brs))
 			results[i]  = brs = _add(temp_mem[(y >>> 10) & 0xff]!, x)
 		}
 
-		next_available_result_index += SIZE
+		next_available_result_index = SIZE - 1
+	}
+
+	function _ensure_enough_result_available() {
+		if (next_available_result_index < 0)
+			_generate_next_batch_of_results()
 	}
 
 	function _next(): Int32 {
@@ -267,7 +224,7 @@ export function get_RNGⵧISAAC32(options: {
 		return results[next_available_result_index--]!
 	}
 
-	switch (options.seed) {
+	switch (options._xxx_seed) {
 		case null:
 			// the user really doesn't want to seed at all
 			break
@@ -276,7 +233,8 @@ export function get_RNGⵧISAAC32(options: {
 			_seed(undefined)
 			break
 		default:
-			_seed(_normalize_seed(options.seed))
+			_seed(_normalize_seed(options._xxx_seed))
+			last_seed = options._xxx_seed
 			break
 	}
 
@@ -287,13 +245,31 @@ export function get_RNGⵧISAAC32(options: {
 		},
 		seed(seed: Seed) {
 			_seed(_normalize_seed(seed))
+			last_seed = seed
 			return engine
 		},
-		set_state() {
-			throw new Error('Not Implemented!')
+		set_state(state: Immutable<PRNGState>) {
+			_seed(_normalize_seed(state.seed))
+			last_seed = state.seed
+			if (state.call_count > 0) {
+				for(let i = 0; i < state.call_count / SIZE; ++i) {
+					_generate_next_batch_of_results()
+				}
+				const remainder = state.call_count % SIZE || 256 // remainder = 0 means we used the whole batch = 256 results
+				if (remainder) {
+					//_generate_next_batch_of_results()
+					next_available_result_index -= remainder
+				}
+			}
+			return engine
 		},
 		get_state() {
-			throw new Error('Not Implemented!')
+			return {
+				seed: last_seed,
+				call_count: generation_count === 0
+					? 0
+					: generation_count * SIZE - next_available_result_index - 1,
+			}
 		},
 		_get_internals() {
 			return {

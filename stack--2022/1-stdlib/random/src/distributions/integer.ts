@@ -2,6 +2,7 @@ import { Immutable, Integer, Percentage } from '../embedded-deps/types/index.js'
 import { RNGEngine, Int32, UInt53 } from '../types.js'
 import { assert } from '../embedded-deps/assert/index.js'
 import { RandomValueGenerator } from './types.js'
+import { _get_generator_of_a_constant } from './_internal.js'
 
 
 // TODO validate params!

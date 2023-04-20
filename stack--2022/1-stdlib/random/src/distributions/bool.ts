@@ -3,7 +3,7 @@ import { Immutable, Percentage } from '../embedded-deps/types/index.js'
 import { assert } from '../embedded-deps/assert/index.js'
 import { RandomValueGenerator } from './types.js'
 import { _get_generator_of_a_constant } from './_internal.js'
-import { _randomly_generateꓽintegerⵧUInt53 } from './base.js'
+//import { _randomly_generateꓽintegerⵧUInt53 } from './base.js'
 
 
 function _is_last_bitꘌ1(i: Int32): boolean {
@@ -26,7 +26,8 @@ export function get_random_generator_ofꓽboolⵧweighted(percentage: Percentage
 	if (percentage === 1)
 		return _get_generator_of_a_constant(true)
 
-	const scaled_percentageⵧfast = percentage * 0x100_000_000;
+	throw new Error('Not Implemented!')
+/*	const scaled_percentageⵧfast = percentage * 0x100_000_000;
 	const is_scaled_percentageⵧfast_good_enough = Number.isInteger(scaled_percentageⵧfast)
 	if (is_scaled_percentageⵧfast_good_enough) {
 		const ceil = scaled_percentageⵧfast - 0x80_000_000
@@ -41,5 +42,5 @@ export function get_random_generator_ofꓽboolⵧweighted(percentage: Percentage
 	return function _randomly_generateꓽboolⵧweightedⵧslow(engine: Immutable<RNGEngine>) {
 		const i = _get_random_UInt53(engine)
 		return i < ceil
-	}
+	}*/
 }
