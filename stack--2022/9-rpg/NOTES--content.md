@@ -9,6 +9,7 @@
 * https://www.reddit.com/r/AlreadyRed/comments/34l1ae/discussion_on_the_gervais_principle_xpost/
 * https://en.wikipedia.org/wiki/Schadenfreude the experience of pleasure, joy, or self-satisfaction that comes from learning of or witnessing the troubles, failures, or humiliation of another.
 * https://en.wikipedia.org/wiki/Chicken_(game)
+* mercenaries https://www.smh.com.au/world/europe/ex-wagner-commander-seeks-asylum-in-norway-after-fleeing-russia-20230118-p5cdbg.html
 
 thieves https://melmagazine.com/en-us/story/kunsthal-heist-romania-constantin-dinescu
 

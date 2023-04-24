@@ -1,37 +1,54 @@
+"The noisy door gets the oil" https://9gag.com/gag/aGEgp07?ref=ios
 (agile "what the client wanted")
+- The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
+- When you are talking to a person in a ring smaller than yours, someone closer to the center of the crisis, the goal is to help. Listening is often more helpful than talking. But if you're going to open your mouth, first ask yourself if what you are about to say is likely to provide comfort and support. If it isn't, don't say it. Don't, for example, give advice. People who are suffering from trauma don't need advice. They need comfort and support. So say, "I'm sorry," or, "This must really be hard for you," or, "Can I bring you a pot roast?" Don't say, "You should hear what happened to me," or, "Here's what I would do if I were you." And don't say, "This is really bringing me down."
 1 or 2 way door
 1st practice what you preach
 5 regrets of dying
+7 degres ascension spirituelle https://fsj.fr/2013/09/les-7-degres-lascension-spirituelle/
+7 degres misericorde 1) absence de jugement 2) compassion 3) confiance pardon/resilience 4) absolution 5) http://www.chemindamourverslepere.com/archive/2016/04/08/meditation-les-degres-de-la-misericorde-5785524.html
+7 demeures https://mailchi.mp/mariedenazareth.com/quelles-sont-les-etapes-de-la-vie-mystique-selon-sainte-therese-davila
+7+7 ouvres de misericorde https://fr.wikipedia.org/wiki/%C5%92uvres_de_mis%C3%A9ricorde
 80/20
 Amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
+Asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
 Cognitive bias
 Confiance doit se gagner
 Courses après le repas
+English
 FOMO
 FUD
+Giftedness and Talent https://campbellms.typepad.com/files/gagne-a-differentiated-model-of-giftedness-and-talent-dmgt.pdf https://www.gigers.com/matthias/gifted/gagne_dmgt.html
+Here are the rules:
 Ikigai
 Irredentism https://www.reddit.com/r/history/comments/sji919/is_there_a_term_for_this_phenomenon/
 It's not about lowering the bar, it's about helping more people reach it.
 Juger vs. évaluer
 Maslow's pyramid
+Mental Health: I am not my thoughts and rather than feeling like I needed to have control of every situation, that by surrendering that control, I will have more control over my life than I ever did before.
 On peut toujours faire mieux
 Pardon pas oubli
 Passive aggressive
 Pay it forward
 Personal Knowledge Management https://fortelabs.co/blog/para/
+Pretty privilege -> karen
 Prix au kilo
 Procastination
 Put into words
-root cause misattribution https://www.zeptonaut.com/posts/rocket-league-and-root-cause-misattribution/
 Question authority
+RICE Reach Impact Confidence Estimate
+Ring theory: https://en.wikipedia.org/wiki/Ring_theory_(psychology)
 SBI
+SWOT
 Sex Ed
-The THINK hack: Is it True? Helpful? Inspiring? Necessary? Kind?
 Spreadsheet
 Survival of the fittest / fit enough
 T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
+The THINK hack: Is it True? Helpful? Inspiring? Necessary? Kind?
 Tools
 Trello
+Trust is earned
+Trust takes years to earn and seconds to lose / Trust is built slowly, and lost quickly
 Trust, but verify
 Voleur volé
 Wisdom
@@ -53,16 +70,22 @@ every occupation has its pro/cons
 excuses vs. solutions
 exiger seulement ce qu’on peut faire soi même
 false good idea
+fast reading
+fire
 golden rule
+grit
 growth mindset
 hangry / before aftr lunch
 happiness is a skill
 helicopter parent
 herbe toujours plus verte
+http://voiemystique.free.fr/ruysbroeck_sept_degres.htm
 https://cobeats.com/folder/ryfTgPr9H
 https://en.wikipedia.org/wiki/If%E2%80%94
 https://en.wikipedia.org/wiki/Johari_window
 https://flinkliv.com/
+https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
+https://neal.fun/absurd-trolley-problems/
 https://www.mindtools.com/pages/article/newHTE_91.htm
 https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 impostor syndrome
@@ -73,14 +96,17 @@ jamais assez / 1st times
 keeping up with the jones
 leader must never ask sth they couldn't do
 leadership is for everyone
+leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 naiveté: abus sexuels, mafia
 non violence
 picture the success
+praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism
 priming
 productivity
 productivity vs. impact, value
 progress over perfection
 psychological safety
+root cause misattribution https://www.zeptonaut.com/posts/rocket-league-and-root-cause-misattribution/
 self appreciation
 self love
 short term / long term
@@ -88,34 +114,11 @@ social pressure / free will
 stakeholder
 start with the most risky / complicated
 start with why
+testaments spirituels St Louis St Remy https://www.famillechretienne.fr/39532/article/le-testament-spirituel-de-benoit-xvi-texte-integral
 time management
 tip of the iceberg
 top-down/bottom-up
 tradeoffs / can't have everything
 who moved my cheese?
 être heureux n'est pas nécessairement confortable
-SWOT
-RICE Reach Impact Confidence Estimate
-grit
-fire
-https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
-https://neal.fun/absurd-trolley-problems/
 “The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.
-7 degres ascension spirituelle https://fsj.fr/2013/09/les-7-degres-lascension-spirituelle/
-7+7 ouvres de misericorde https://fr.wikipedia.org/wiki/%C5%92uvres_de_mis%C3%A9ricorde
-7 degres misericorde 1) absence de jugement 2) compassion 3) confiance pardon/resilience 4) absolution 5) http://www.chemindamourverslepere.com/archive/2016/04/08/meditation-les-degres-de-la-misericorde-5785524.html
-http://voiemystique.free.fr/ruysbroeck_sept_degres.htm
-fast reading
-English
-testaments spirituels St Louis St Remy https://www.famillechretienne.fr/39532/article/le-testament-spirituel-de-benoit-xvi-texte-integral
-"The noisy door gets the oil" https://9gag.com/gag/aGEgp07?ref=ios
-Pretty privilege -> karen
-Trust is earned
-Trust takes years to earn and seconds to lose / Trust is built slowly, and lost quickly
-Ring theory: https://en.wikipedia.org/wiki/Ring_theory_(psychology)
-Here are the rules:
-- The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
-- When you are talking to a person in a ring smaller than yours, someone closer to the center of the crisis, the goal is to help. Listening is often more helpful than talking. But if you're going to open your mouth, first ask yourself if what you are about to say is likely to provide comfort and support. If it isn't, don't say it. Don't, for example, give advice. People who are suffering from trauma don't need advice. They need comfort and support. So say, "I'm sorry," or, "This must really be hard for you," or, "Can I bring you a pot roast?" Don't say, "You should hear what happened to me," or, "Here's what I would do if I were you." And don't say, "This is really bringing me down."
-Mental Health: I am not my thoughts and rather than feeling like I needed to have control of every situation, that by surrendering that control, I will have more control over my life than I ever did before.
-praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism
-Asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!

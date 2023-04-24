@@ -11,6 +11,9 @@ export const INT32_MAX =  0x7fff_ffff
 
 export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngine) {
 	let engine: RNGEngine | PRNGEngine = engine_ctor()
+	beforeEach(() => {
+		engine = engine_ctor()
+	})
 
 	describe('output', function () {
 
@@ -261,19 +264,21 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 					expect(e.get_state(), 'xyz').to.deep.equal(TEST_STATE)
 				})
 
-
 				it('should not take too much time to restore', function() {
+					this.timeout(5_000)
+
 					const OLD_STATE: Immutable<PRNGState> = {
 							seed: 'From a small seed a mighty trunk may grow', // https://www.brainyquote.com/quotes/aeschylus_398833
-							call_count: 0 * 365 // ten years…
-								* 8 * 60 // …of 8h of daily play…
-								* 1000, // …with ~1000 random number generations/minute
+							call_count: 10 * 365 // ten years…
+								* 8 // …of 8h of daily play…
+								* 60 * 100, // …with ~ random number generations/minute
 						}
 
 					let e = engine as PRNGEngine
 
 					e.set_state(OLD_STATE)
-					expect(e.get_state()).to.deep.equal(OLD_STATE)
+					const s = e.get_state()
+					expect(s).to.deep.equal(OLD_STATE)
 				})
 			})
 		}
