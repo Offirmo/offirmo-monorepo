@@ -6,6 +6,7 @@ import { Immutable, PositiveInteger } from './embedded-deps/types/index.js'
 
 export type Int8 = number
 export type Int32 = number
+export type Int53 = number
 export type UInt53 = number // 53bits = MAX_SAFE_INTEGER cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER
 export type Seed = ReadonlyArray<number> | number | string
 

@@ -122,3 +122,5 @@ tradeoffs / can't have everything
 who moved my cheese?
 être heureux n'est pas nécessairement confortable
 “The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.
+good life questions https://radreads.co/10k-questions/
+personal moral inventory https://domprice.me/personal-moral-inventory/
