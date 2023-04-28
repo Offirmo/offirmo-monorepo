@@ -27,7 +27,7 @@ export function get_random_generator_ofꓽboolⵧweighted(percentage: Percentage
 		return _get_generator_of_a_constant(true)
 
 	throw new Error('Not Implemented!')
-/*	const scaled_percentageⵧfast = percentage * 0x100_000_000;
+/*	const scaled_percentageⵧfast = percentage * 0x1_0000_0000;
 	const is_scaled_percentageⵧfast_good_enough = Number.isInteger(scaled_percentageⵧfast)
 	if (is_scaled_percentageⵧfast_good_enough) {
 		const ceil = scaled_percentageⵧfast - 0x80_000_000
