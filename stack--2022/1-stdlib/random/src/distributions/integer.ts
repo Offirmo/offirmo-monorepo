@@ -8,11 +8,11 @@ export function get_random_generator_ofꓽintegerⵧbetween(min: Integer, max: I
 	assert(Number.isInteger(min), `min should be an integer!`)
 	assert(Number.isInteger(max), `max should be an integer!`)
 
-	const range = max - min;
-	assert(range >= 0, `range should be positive!`)
-	assert(Number.isInteger(range), `range should be an integer!`)
+	const possible_output_count = max - min + 1;
+	assert(possible_output_count >= 1, `range should be positive!`)
+	assert(Number.isInteger(possible_output_count), `range should be an integer!`)
 
-	if (range === 0)
+	if (possible_output_count === 1)
 		return _get_generator_of_a_constant(min)
 
 	// ok we have a range
@@ -20,40 +20,75 @@ export function get_random_generator_ofꓽintegerⵧbetween(min: Integer, max: I
 	// Cf. https://github.com/ckknight/random-js#how-does-randomjs-alleviate-these-problems
 
 	// how many bits do we need at minimum to store this range?
-	const bits_needed = Math.ceil(Math.log2(range + 1)) || 1 // log2(1) = 0 https://en.wikipedia.org/wiki/Binary_logarithm
-	// Reminder: max = 53 bits = Number.MAX_SAFE_INTEGER
-	assert(bits_needed <= 53, `Range error: range should be <= 53 bits!`)
+	const bits_needed = Math.ceil(Math.log2(possible_output_count)) // https://en.wikipedia.org/wiki/Binary_logarithm
+	// JS allows up to 53 bits integers
+	assert(bits_needed <= 53, `Range error: JS only supports integers up to 53 bits!`)
+
+	// While JS allows up to 32 bits integers,
+	// binary operators only allows 32 bits
+	// We decide to only support up to 32 bits so far
+	// (not a hard limitation, 53 bits support could be added)
+	assert(bits_needed <= 32, `Range error: this lib only supports range up to 32 bits!`)
 
 	const mask = Math.pow(2, bits_needed) - 1
 
+	/*console.log('generator', {
+		min,
+		max,
+		possible_output_count,
+		bits_needed,
+		mask: Number(mask).toString(2),
+	})*/
 	return function _randomly_generateꓽintegerⵧcustom_range(engine: Immutable<RNGEngine>) {
 		let available_bits: UInt53 = 0
 		let available_bits_count: PositiveInteger = 0
 
 		function _get_candidate_covering_the_range(): number {
 			while (available_bits_count < bits_needed) {
-				assert(available_bits_count <= 64, `internal error, should never reach > 64, infinite loop?`) // 64 = 2*32 = max to cover 53bits
-				const new_bits = (engine.get_Int32() >>> 0) & 0xFFFF_FFFF // turn the bits into positive representation. No change, just easier to follow in the debugger
-				available_bits = (available_bits << 32) + new_bits
-				available_bits_count += 32
+				// shortcut!
+				// since we get bits by batches of 32
+				// and we don't allow more than 32 bits
+				// it's easier to just refill the batch and discard the leftover
+				const new_bits = (engine.get_Int32() >>> 0) // turn the bits into positive representation. No change, just easier to follow in the debugger
+				available_bits = new_bits
+				available_bits_count = 32
+				/*console.log('got new bits', {
+					available_bits_count,
+					xxxxxxxxxxxxxx: '44444444333333332222222211111111',
+					new_bits______: Number(new_bits).toString(2),
+					available_bits: Number(available_bits).toString(2),
+					available_bits_: available_bits,
+				})*/
 			}
 
-			const result = available_bits & mask
-			available_bits >> bits_needed
+			const result = (available_bits & mask) >>> 0
+			available_bits >>= bits_needed
 			available_bits_count -= bits_needed
+
+			/*console.log(`used ${bits_needed}`, {
+				available_bits_count,
+				xxxxxxxxxxxxxx: '44444444333333332222222211111111',
+				available_bits: Number(available_bits).toString(2),
+				available_bits_: available_bits,
+			})*/
 
 			return result
 		}
 
 		let candidate = 0
+		let count = 0
 		do {
+
 			candidate = _get_candidate_covering_the_range()
 			// if the candidate is above the range,
 			// we need to re-draw with new bits.
 			// otherwise the distribution would not be even.
 			// ex. range 0-6 = 3 bits
 			// if candidate = 7 we start over with new bits.
-		} while(candidate > range)
+			//if (candidate >= range) console.log(`will loop #${count + 1} (range = ${range}, candidate=${candidate})`)
+			count++
+		} while(candidate >= possible_output_count)
+		//console.log(`downrange needed #${count} loops. (range = ${range})`)
 
 		return candidate + min
 	}
