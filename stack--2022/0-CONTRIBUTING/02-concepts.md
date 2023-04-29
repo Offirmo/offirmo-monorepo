@@ -4,5 +4,5 @@
 Familiarize yourself with the following concepts:
 
 - monorepo: https://monorepo.tools/
-- js modules, ESM, commonjs
+- js modules: ESM, commonjs
 - ...

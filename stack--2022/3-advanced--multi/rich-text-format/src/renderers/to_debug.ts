@@ -19,9 +19,8 @@ import {
 const MANY_SPACES = '                                                                                                '
 
 function indent(n: number) {
-	return (console.groupCollapsed || console.group)
-		? ''
-		: MANY_SPACES.slice(0, n * 2)
+	return '' // indentation is provided for free by console.group() / console.groupCollapsed()
+	// MANY_SPACES.slice(0, n * 2)
 }
 
 ////////////////////////////////////

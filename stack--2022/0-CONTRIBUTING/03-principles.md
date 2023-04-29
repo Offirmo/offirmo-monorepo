@@ -20,6 +20,6 @@ Unless it's more convenient for some reasons, this repo strives to adhere to tho
   * as few tools as possible
   * Postgres
 * dev should be possible locally
-  * avoid using cloud only services
+  * avoid using cloud-only services
 * avoid vendor lock-in
   * ex. auth, aws...

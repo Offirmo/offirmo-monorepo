@@ -29,5 +29,7 @@ Interface change from Random.js
 
 
 
-TODO
-Interesting: https://github.com/davidbau/seedrandom
+
+TODO review https://stackoverflow.com/questions/4720822/what-is-the-best-pseudo-random-number-generator-as-of-today
+TODO review https://github.com/davidbau/seedrandom
+TODO review https://github.com/sindresorhus/randoma
