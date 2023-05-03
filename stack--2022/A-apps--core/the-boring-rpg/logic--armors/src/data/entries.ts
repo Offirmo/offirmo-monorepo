@@ -104,6 +104,6 @@ const ENTRIES: Readonly<RawArmorEntry>[] = [
 ]
 
 export {
-	RawArmorEntry,
+	type RawArmorEntry,
 	ENTRIES,
 }

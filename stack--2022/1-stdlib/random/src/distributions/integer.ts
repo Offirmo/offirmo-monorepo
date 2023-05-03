@@ -99,5 +99,12 @@ export function get_random_generator_ofꓽintegerⵧin_interval(interval: [Integ
 }
 
 export function get_random_picker<T>(items: ReadonlyArray<T>): RandomValueGenerator<T> {
-	throw new Error('NIMP!')
+	const max_index = items.length - 1
+	const generate_random_index = get_random_generator_ofꓽintegerⵧbetween(0, max_index)
+
+	return function _randomly_pick_from_array(engine: Immutable<RNGEngine>) {
+		let index = generate_random_index(engine)
+
+		return items[index] as T
+	}
 }

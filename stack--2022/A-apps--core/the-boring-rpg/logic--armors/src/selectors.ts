@@ -5,8 +5,8 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 import { ItemQuality, InventorySlot } from '@tbrpg/definitions'
 
-import { LIB, MAX_ENHANCEMENT_LEVEL } from './consts'
-import { Armor } from './types'
+import { LIB, MAX_ENHANCEMENT_LEVEL } from './consts.js'
+import { Armor } from './types.js'
 
 ////////////////////////////////////
 
@@ -44,8 +44,8 @@ if (Object.keys(SPREAD_PCT_BY_QUALITY).length !== Enum.keys(ItemQuality).length)
 const TEMP_BASE_STRENGTH_INTERVAL_BY_QUALITY: { [k: string]: [number, number] } = {}
 Object.keys(OVERALL_STRENGTH_INTERVAL_BY_QUALITY).forEach((k: string): void => {
 	const quality = k as ItemQuality
-	const [ overall_min, overall_max ] = OVERALL_STRENGTH_INTERVAL_BY_QUALITY[quality]
-	const spread_pct = SPREAD_PCT_BY_QUALITY[quality]
+	const [ overall_min, overall_max ] = OVERALL_STRENGTH_INTERVAL_BY_QUALITY[quality]!
+	const spread_pct = SPREAD_PCT_BY_QUALITY[quality]!
 
 	//console.log({quality, overall_min, overall_max})
 
@@ -69,9 +69,9 @@ const BASE_STRENGTH_INTERVAL_BY_QUALITY: Readonly<{ [k: string]: [number, number
 
 
 function get_interval(base_strength: number, quality: ItemQuality, enhancement_level: number): [number, number] {
-	const spread_pct = SPREAD_PCT_BY_QUALITY[quality]
+	const spread_pct = SPREAD_PCT_BY_QUALITY[quality]!
 	const enhancement_ratio = (1 + ENHANCEMENT_MULTIPLIER * enhancement_level)
-	const [ overall_min, overall_max ] = OVERALL_STRENGTH_INTERVAL_BY_QUALITY[quality]
+	const [ overall_min, overall_max ] = OVERALL_STRENGTH_INTERVAL_BY_QUALITY[quality]!
 
 	// Constrain interval due to rounding.
 	// It shouldn't change the numbers a lot.

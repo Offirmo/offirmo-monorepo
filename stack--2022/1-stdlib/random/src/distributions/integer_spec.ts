@@ -46,7 +46,7 @@ describe('@offirmo/random', function() {
 						// pattern
 					}
 
-					console.log({
+					/*console.log({
 						count,
 						min,
 						mean_lb: (1 + possible_output_count) * 0.49,
@@ -54,7 +54,7 @@ describe('@offirmo/random', function() {
 						mean_ub: (1 + possible_output_count) * 0.51,
 						max,
 						spread: spread.size,
-					})
+					})*/
 					// min should be ~close to the absolute minimum
 					expect(min, 'min lower bound').to.be.at.least(1)
 					expect(min, 'min upper bound').to.be.at.most(1 + possible_output_count * 0.05)

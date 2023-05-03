@@ -28,7 +28,7 @@ interface Armor extends Item {
 
 export {
 	ArmorPartType,
-	Armor,
+	type Armor,
 }
 
 /////////////////////

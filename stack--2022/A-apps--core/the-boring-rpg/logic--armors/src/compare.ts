@@ -3,8 +3,8 @@
 import { Immutable } from '@offirmo-private/ts-types'
 import { compare_items_by_quality } from '@tbrpg/definitions'
 
-import { Armor } from './types'
-import { get_ultimate_medium_damage_reduction } from './selectors'
+import { Armor } from './types.js'
+import { get_ultimate_medium_damage_reduction } from './selectors.js'
 
 /////////////////////
 

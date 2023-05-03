@@ -2,16 +2,16 @@ import { expect } from 'chai'
 import { Enum } from 'typescript-string-enums'
 
 import { InventorySlot, ItemQuality, ElementType, xxx_test_unrandomize_element } from '@tbrpg/definitions'
-import { Random, Engine } from '@offirmo/random'
+import { get_engine, RNGEngine } from '@offirmo/random'
 
-import { LIB } from './consts'
+import { LIB } from './consts.js'
 import {
 	Armor,
 	MAX_ENHANCEMENT_LEVEL,
 	create,
 	generate_random_demo_armor,
 	enhance,
-} from '.'
+} from './index.js'
 
 
 function assert_shape(armor: Readonly<Armor>) {
@@ -47,24 +47,24 @@ function assert_shape(armor: Readonly<Armor>) {
 }
 
 
-describe(`${LIB} - logic`, function() {
+describe(`${LIB} - state`, function() {
 
 	describe('creation', function() {
 
 		it('should allow creating a random armor', function() {
-			const rng: Engine = Random.engines.mt19937().seed(789)
+			const rng = get_engine.for_unit_tests()
 			const armor1 = xxx_test_unrandomize_element<Armor>(create(rng))
 			assert_shape(armor1)
-			expect((rng as any).getUseCount(), '# rng draws 1').to.equal(5)
+			expect(rng.get_state().call_count, '# rng draws 1').to.equal(5)
 
 			const armor2 = xxx_test_unrandomize_element<Armor>(create(rng))
 			assert_shape(armor2)
-			expect((rng as any).getUseCount(), '# rng draws 2').to.equal(10)
+			expect(rng.get_state().call_count, '# rng draws 2').to.equal(10)
 			expect(armor2).not.to.deep.equal(armor1)
 		})
 
 		it('should allow creating a partially predefined armor', function() {
-			const rng: Engine = Random.engines.mt19937().seed(789)
+			const rng = get_engine.for_unit_tests()
 			const armor = xxx_test_unrandomize_element<Armor>(create(rng, {
 				base_hid: 'socks',
 				quality: 'artifact',
@@ -74,13 +74,13 @@ describe(`${LIB} - logic`, function() {
 				element_type: ElementType.item,
 				slot: InventorySlot.armor,
 				base_hid: 'socks',
-				qualifier1_hid: 'skeleton',
-				qualifier2_hid: 'training',
+				qualifier1_hid: 'sapphire',
+				qualifier2_hid: 'brave',
 				quality: ItemQuality.artifact,
-				base_strength: 38351,
+				base_strength: 52105,
 				enhancement_level: 0,
 			})
-			expect((rng as any).getUseCount(), '# rng draws').to.equal(3) // 2 less random picks
+			expect(rng.get_state().call_count, '# rng draws').to.equal(3) // 2 less random picks
 		})
 	})
 

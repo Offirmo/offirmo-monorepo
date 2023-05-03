@@ -30,6 +30,18 @@ Interface change from Random.js
 
 
 
+import { get_engine, RNGEngine } from '@offirmo/random'
+const rng = get_engine.for_unit_tests()
+const rng = get_engine.for_unit_tests()
+
+import { get_random, RNGEngine } from '@offirmo/random'
+const gen = get_random.generator_of.integer.between(1, 1000)
+const gen = get_random.picker.of(ARMOR_BASES)
+const gen get_random.generator_of.integer.in_interval(BASE_STRENGTH_INTERVAL_BY_QUALITY[quality]!)
+v = gen(rng)
+
+
+
 TODO review https://stackoverflow.com/questions/4720822/what-is-the-best-pseudo-random-number-generator-as-of-today
 TODO review https://github.com/davidbau/seedrandom
 TODO review https://github.com/sindresorhus/randoma

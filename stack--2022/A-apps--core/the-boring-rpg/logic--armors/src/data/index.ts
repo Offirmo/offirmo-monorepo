@@ -1,8 +1,8 @@
 import { I18nMessages } from '@offirmo-private/ts-types'
 
-import { ArmorPartType } from '../types'
-import en from './i18n_en'
-import { ENTRIES } from './entries'
+import { ArmorPartType } from '../types.js'
+import en from './i18n_en.js'
+import { ENTRIES } from './entries.js'
 
 /////////////////////
 
