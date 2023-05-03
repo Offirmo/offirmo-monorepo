@@ -2,7 +2,7 @@
 
 import { Enum } from 'typescript-string-enums'
 
-import { ItemQuality, InventorySlot } from './types'
+import { ItemQuality, InventorySlot } from './types.js'
 
 ///////
 
@@ -39,4 +39,3 @@ export const MIN_LEVEL = 1
 export const MAX_LEVEL = 9999
 
 /////////////////////
-

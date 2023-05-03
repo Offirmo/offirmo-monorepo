@@ -6,7 +6,8 @@ import {
 	ITEM_QUALITIES_TO_INT,
 	ITEM_SLOTS,
 	ITEM_SLOTS_TO_INT,
-} from '.'
+} from './consts.js'
+
 
 describe(`${LIB} - constants`, function() {
 

@@ -30,40 +30,45 @@ Why not rush? https://rushjs.io/
 Recent news
 * 2023 https://www.robinwieruch.de/web-development-trends/ ("Monorepos")
 
+TODO evaluate turborepo
+TODO evaluate https://nx.dev/
+TODO evaluate lerna recent versions
+
+
 ## isomorphic
 typescript
 
+TODO evaluate https://blog.logrocket.com/boost-your-productivity-with-typescript-project-references/
+TODO evaluate [self referencing in Typescript]()
+
+
+## bundler / compiler
+https://parceljs.org/
+
+TODO evaluate vite
+TODO evaluate Rome https://rome.tools/#about-rome
 
 ## web
 https://parceljs.org/
 
+TODO evaluate vite
 
 
-## TODO
+## environment manager
 
-### to evaluate
+nvm
 
-https://www.honeybadger.io/blog/node-environment-managers/
+TODO evaluate https://www.honeybadger.io/blog/node-environment-managers/
 * https://docs.volta.sh/guide/understanding
 * https://asdf-vm.com/guide/introduction.html#nvm-n-rbenv-etc
 
+
+
+## TODO evaluate
+
 https://github.com/folke/ultra-runner
-https://blog.logrocket.com/boost-your-productivity-with-typescript-project-references/
-[Pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)
-[self referencing in Typescript]()
 
-
-TODO evaluate workflow
+### workflow
 - https://www.npmjs.com/package/@atlaskit/build-releases
 - https://yarnpkg.com/features/release-workflow
 - changesets
-
-
-### to reevaluate in a while
-
-https://rome.tools/#about-rome
-
-better monorepo tooling (replace bolt)
-- https://nx.dev/
-- lerna
-- turborepo

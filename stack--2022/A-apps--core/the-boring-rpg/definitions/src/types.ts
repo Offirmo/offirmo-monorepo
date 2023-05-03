@@ -52,11 +52,11 @@ interface Item extends Element {
 
 export {
 	ElementType,
-	Element,
+	type Element,
 
 	ItemQuality,
 	InventorySlot,
-	Item,
+	type Item,
 }
 
 /////////////////////

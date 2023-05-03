@@ -1,12 +1,13 @@
 import { expect } from 'chai'
 
-import { Item, InventorySlot, ItemQuality } from './types'
-import { LIB } from './consts'
+import { Item, InventorySlot, ItemQuality } from './types.js'
+import { LIB } from './consts.js'
 import {
 	create_item_base,
 	compare_items_by_slot,
 	compare_items_by_quality,
-} from './'
+} from './item.js'
+
 
 describe(`${LIB} - item utilities`, function() {
 
@@ -28,6 +29,7 @@ describe(`${LIB} - item utilities`, function() {
 			])
 		})
 	})
+
 	describe('compare_items_by_quality', function() {
 
 		it('should sort correctly', () => {

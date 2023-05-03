@@ -3,20 +3,20 @@
 import { BaseInjections, SoftExecutionContext } from '@offirmo-private/soft-execution-context'
 import { Logger } from '@offirmo/practical-logger-types'
 
-import { PRODUCT } from './consts'
+import { PRODUCT } from './consts.js'
 
 /////////////////////
 
-interface OMRInjections extends BaseInjections {
+interface TBRInjections extends BaseInjections {
 	logger: Logger
 	//enforce_immutability: ImmutabilityEnforcer
 }
 
-type OMRSoftExecutionContext = SoftExecutionContext<OMRInjections>
+type TBRSoftExecutionContext = SoftExecutionContext<TBRInjections>
 
 /////////////////////
 
-function decorate_SEC(SEC: OMRSoftExecutionContext): OMRSoftExecutionContext {
+function decorate_SEC(SEC: TBRSoftExecutionContext): TBRSoftExecutionContext {
 	/*SEC.injectDependencies({
 		enforce_immutability, // TODO remove
 	})*/
@@ -32,7 +32,7 @@ function decorate_SEC(SEC: OMRSoftExecutionContext): OMRSoftExecutionContext {
 /////////////////////
 
 export {
-	OMRInjections,
-	OMRSoftExecutionContext,
+	type TBRInjections,
+	type TBRSoftExecutionContext,
 	decorate_SEC,
 }

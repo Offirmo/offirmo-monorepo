@@ -24,7 +24,8 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 - [ ] full ES6 https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-move-my-commonjs-project-to-esm
 - [ ] 2023-10-24 oldest active LTS node 18 → 20  https://github.com/nodejs/release#release-schedule
 - [ ] webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
-- TODO check [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762)
+- [ ] one day: No longer using webpack!
+- [ ] TS 4.7 check [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762)
 
 
 ### update 2022-11-20
