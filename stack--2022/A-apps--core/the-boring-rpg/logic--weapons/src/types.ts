@@ -30,7 +30,7 @@ interface Weapon extends Item {
 
 export {
 	WeaponPartType,
-	Weapon,
+	type Weapon,
 }
 
 /////////////////////

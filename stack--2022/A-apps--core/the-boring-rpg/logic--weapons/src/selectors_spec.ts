@@ -2,9 +2,9 @@ import { expect } from 'chai'
 
 import { Enum } from 'typescript-string-enums'
 import { ItemQuality, InventorySlot } from '@tbrpg/definitions'
-import { Random, Engine } from '@offirmo/random'
+import { get_engine } from '@offirmo/random'
 
-import { LIB } from './consts'
+import { LIB } from './consts.js'
 import {
 	OVERALL_STRENGTH_INTERVAL_BY_QUALITY,
 	BASE_STRENGTH_INTERVAL_BY_QUALITY,
@@ -15,14 +15,14 @@ import {
 	get_medium_damage,
 	get_ultimate_medium_damage,
 	matches,
-} from '.'
+} from './index.js'
 
 
 describe(`${LIB} - selectors`, function() {
-	let rng: Engine = Random.engines.mt19937().seed(789)
+	let rng = get_engine.for_unit_tests()
 	let TEST_ITEM: Weapon = create(rng)
 	beforeEach(() => {
-		rng = Random.engines.mt19937().seed(789)
+		rng = get_engine.for_unit_tests()
 		TEST_ITEM = create(rng, {
 			base_hid: 'luth',
 			qualifier1_hid: 'simple',
@@ -55,9 +55,9 @@ describe(`${LIB} - selectors`, function() {
 				expect(max).to.be.a('number')
 				expect(max).to.be.above(min)
 
-				expect(min, 'overall min').to.be.above(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary][0]) // min for legend+3
-				expect(max, 'base max').to.be.above(BASE_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary][1]) // max for legend+3
-				expect(max, 'overall max').to.be.below(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary][1]) // max for legend+3
+				expect(min, 'overall min').to.be.above(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary]![0]) // min for legend+3
+				expect(max, 'base max').to.be.above(BASE_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary]![1]) // max for legend+3
+				expect(max, 'overall max').to.be.below(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary]![1]) // max for legend+3
 
 				expect(min).to.equal(55575)
 				expect(max).to.equal(61425)
@@ -70,9 +70,9 @@ describe(`${LIB} - selectors`, function() {
 				const med = get_medium_damage(TEST_ITEM)
 				expect(med).to.be.a('number')
 
-				expect(med, 'overall min').to.be.above(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary][0])
-				expect(med, 'base min').to.be.above(BASE_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary][0])
-				expect(med, 'overall max').to.be.below(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary][1])
+				expect(med, 'overall min').to.be.above(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary]![0])
+				expect(med, 'base min').to.be.above(BASE_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary]![0])
+				expect(med, 'overall max').to.be.below(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary]![1])
 
 				expect(med).to.equal(Math.round((55575 + 61425) / 2))
 			})
@@ -85,14 +85,14 @@ describe(`${LIB} - selectors`, function() {
 			const umed = get_ultimate_medium_damage(TEST_ITEM)
 			expect(umed).to.be.a('number')
 
-			expect(umed, 'overall min').to.be.above(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary][0])
-			expect(umed, 'base min').to.be.above(BASE_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary][0])
+			expect(umed, 'overall min').to.be.above(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary]![0])
+			expect(umed, 'base min').to.be.above(BASE_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary]![0])
 			expect(umed, 'current med').to.be.above(get_medium_damage(TEST_ITEM))
 			expect(umed, 'formula').to.equal(get_medium_damage({
 				...TEST_ITEM,
 				enhancement_level: MAX_ENHANCEMENT_LEVEL,
 			}))
-			expect(umed, 'overall max').to.be.below(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary][1])
+			expect(umed, 'overall max').to.be.below(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary]![1])
 
 			expect(umed).to.equal(81000)
 		})
