@@ -212,13 +212,15 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 			if (latest_snapshot_data_matches_latest_expected_data)
 				return
 
-			if (latest_snapshot_path)
+			if (latest_snapshot_path) {
 				console.log(`${LOG_PREFIX} ❌ Current latest snapshot is not up to date. Difference with previous:\n`, prettify_json(latest_migrated_diff))
-			else
+			} else {
 				console.log(`${LOG_PREFIX} ❌ Current latest, up-to-date data is missing.`)
+			}
 
 			if (!can_update_snapshots) {
 				// hard to display the diff TODO https://www.npmjs.com/package/diff
+				console.log(`Please check the CODE *AND* the JSON`)
 				throw new Error(`${LOG_PREFIX} ❌ Current latest, up-to-date data is not up to date!`)
 			}
 
