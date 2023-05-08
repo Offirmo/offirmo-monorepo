@@ -19,7 +19,8 @@ describe(`${LIB} - migration`, function() {
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA: enforce_immutability<any>(create()),
 			migrate_to_latest: migrate_to_latest.bind(null, get_lib_SEC()),
-			absolute_dir_path: require('path').join(__dirname, '../../src/migrations_of_blank_state_specs'),
+			import_meta_url: import.meta.url, // for resolving the path below
+			relative_dir_path: '../../src/migrations_of_blank_state_specs',
 			describe, context, it, expect,
 		})
 	})
@@ -33,7 +34,8 @@ describe(`${LIB} - migration`, function() {
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA: DEMO_STATE,
 			migrate_to_latest: migrate_to_latest.bind(null, get_lib_SEC()),
-			absolute_dir_path: require('path').join(__dirname, '../../src/migrations_of_active_state_specs'),
+			import_meta_url: import.meta.url, // for resolving the path below
+relative_dir_path: '../../src/migrations_of_active_state_specs',
 			describe, context, it, expect,
 		})
 	})

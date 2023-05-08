@@ -4,6 +4,7 @@ import { generate_uuid } from '@offirmo-private/uuid'
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { State } from './types.js'
 import { TBRSoftExecutionContext, get_lib_SEC } from './sec.js'
+import { PRNGState } from '@offirmo/random'
 
 // some hints may be needed to migrate to demo state
 // need to export them for composing tests
@@ -13,7 +14,7 @@ const MIGRATION_HINTS_FOR_TESTS: any = enforce_immutability<any>({
 /////////////////////
 
 function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any> = {}): State {
-	const existing_version = (legacy_state && legacy_state.schema_version) || 0
+	const existing_version = (legacy_state && legacy_state['schema_version']) || 0
 
 	SEC = get_lib_SEC(SEC)
 		.setAnalyticsAndErrorDetails({
@@ -33,7 +34,7 @@ function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Readonly<
 			SEC.fireAnalyticsEvent('schema_migration.began')
 
 			try {
-				state = migrate_to_3(SEC, legacy_state, hints)
+				state = migrate_to_4(SEC, legacy_state, hints)
 			}
 			catch (err) {
 				SEC.fireAnalyticsEvent('schema_migration.failed')
@@ -52,13 +53,34 @@ function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Readonly<
 
 /////////////////////
 
+function migrate_to_4(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any>): State {
+	let state: State = (legacy_state['schema_version'] < 3)
+		? migrate_to_3(SEC, legacy_state, hints)
+		: legacy_state as State
+
+	const { seed, use_count, ...rest } = state as any
+
+	state = {
+		...rest,
+		schema_version: 4,
+		prng_state: {
+			seed: seed as PRNGState['seed'],
+			call_count: use_count as PRNGState['call_count'],
+			algorithm_id: 'MT19937',
+		}
+	}
+
+	return state
+}
+
 function migrate_to_3(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any>): State {
-	let state: State = (legacy_state.schema_version < 2)
+	let state: State = (legacy_state['schema_version'] < 2)
 		? migrate_to_2(SEC, legacy_state, hints)
 		: legacy_state as State
 
 	state = {
 		...state,
+		schema_version: 3,
 		uuid: generate_uuid(),
 	}
 

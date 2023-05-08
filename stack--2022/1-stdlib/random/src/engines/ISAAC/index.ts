@@ -1,7 +1,8 @@
 import { Int32, PRNGEngine, PRNGState, Seed } from '../../types.js'
 import { assert } from '../../embedded-deps/assert/index.js'
-import { Immutable } from '../../embedded-deps/types/index.js'
+import { Immutable, PositiveInteger } from '../../embedded-deps/types/index.js'
 
+const ALGORITHM_ID: PRNGState['algorithm_id'] = 'ISAAC32'
 const SIZE = 256 // For readability only. SIZE=256 is a property of the algorithm and can't be changed
 
 
@@ -193,6 +194,22 @@ export function get_RNGⵧISAAC32(options: {
 		}
 	}
 
+	function _discard(call_count: PositiveInteger) {
+		if (call_count === 0) return
+
+		if (_get_used_results_count() !== 0)
+			throw new Error(`ISAAC PRNG: discarding results on an already used instance is not implemented!`)
+
+		for(let i = 0; i < call_count / SIZE; ++i) {
+			_generate_next_batch_of_results()
+		}
+		const remainder = call_count % SIZE || 256 // remainder = 0 means we used the whole batch = 256 results
+		if (remainder) {
+			//_generate_next_batch_of_results()
+			next_available_result_index -= remainder
+		}
+	}
+
 	function _generate_next_batch_of_results() {
 		generation_count = _add(generation_count,   1);
 		brs = _add(brs, generation_count);
@@ -224,6 +241,12 @@ export function get_RNGⵧISAAC32(options: {
 		return results[next_available_result_index--]!
 	}
 
+	function _get_used_results_count(): PositiveInteger {
+		return generation_count === 0
+			? 0
+			: generation_count * SIZE - next_available_result_index - 1
+	}
+
 	switch (options._xxx_seed) {
 		case null:
 			// the user really doesn't want to seed at all
@@ -248,28 +271,22 @@ export function get_RNGⵧISAAC32(options: {
 			last_seed = seed
 			return engine
 		},
+		discard(call_count: PositiveInteger) {
+			_discard(call_count)
+			return engine
+		},
 		set_state(state: Immutable<PRNGState>) {
+			assert((state.algorithm_id || ALGORITHM_ID) === ALGORITHM_ID, `Invalid state restoration request: mismatching algorithms!`)
 			_seed(_normalize_seed(state.seed))
 			last_seed = state.seed
-			if (state.call_count > 0) {
-				for(let i = 0; i < state.call_count / SIZE; ++i) {
-					_generate_next_batch_of_results()
-				}
-				const remainder = state.call_count % SIZE || 256 // remainder = 0 means we used the whole batch = 256 results
-				if (remainder) {
-					//_generate_next_batch_of_results()
-					next_available_result_index -= remainder
-				}
-			}
+			_discard(state.call_count)
 			return engine
 		},
 		get_state() {
 			return {
-				algorithm_id: 'ISAAC32',
+				algorithm_id: ALGORITHM_ID,
 				seed: last_seed,
-				call_count: generation_count === 0
-					? 0
-					: generation_count * SIZE - next_available_result_index - 1,
+				call_count: _get_used_results_count(),
 			} as PRNGState
 		},
 		_get_internals() {

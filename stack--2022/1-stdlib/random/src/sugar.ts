@@ -5,7 +5,8 @@ import {
 } from './distributions/index.js'
 import { get_RNGⵧISAAC32 } from './engines/ISAAC/index.js'
 import { get_RNGⵧMathᐧrandom } from './engines/MathRandom/index.js'
-import { PRNGEngine } from './types.js'
+import { PRNGEngine, PRNGState } from './types.js'
+import { Immutable } from './embedded-deps/types/index.js'
 
 function _get_random_generator_ofꓽbool() {
 	return get_random_generator_ofꓽbool()
@@ -30,8 +31,28 @@ export const get_random = {
 
 // () => xxx() to hide the custom params
 export const get_engine = {
+	// direct
 	ISAAC32: () => get_RNGⵧISAAC32(),
 	Mathᐧrandom: () => get_RNGⵧMathᐧrandom(),
+
+	from_state(state: Immutable<PRNGState>): PRNGEngine {
+		const engine: PRNGEngine = (() => {
+			switch (state.algorithm_id) {
+				case 'ISAAC32':
+					return get_RNGⵧISAAC32()
+				case 'MT19937':
+					throw new Error('Not Implemented')
+				case undefined:
+					return get_RNGⵧISAAC32()
+				default:
+					throw new Error(`Unknown PRNG id: "${state.algorithm_id}!`)
+			}
+		})()
+
+		engine.set_state(state)
+
+		return engine
+	},
 
 	// aliases
 	good_enough: () => get_RNGⵧISAAC32(),

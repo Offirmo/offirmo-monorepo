@@ -1,0 +1,10 @@
+{
+	"schema_version": 4,
+	"uuid": "uu1daYM8pBPIz7rw_NY64BYu",
+	"revision": 0,
+	"prng_state": {
+		"seed": 987,
+		"call_count": 0
+	},
+	"recently_encountered_by_id": {}
+}

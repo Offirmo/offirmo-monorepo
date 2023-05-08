@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 
 import * as fs from '@offirmo/cli-toolbox/fs/extra/index.mjs'
@@ -12,13 +13,13 @@ import { get_advanced_diff as base_get_json_diff } from './json-diff.mjs'
 
 
 export function itㆍshouldㆍmigrateㆍcorrectly({
-	// TODO LIB?
 	use_hints = true,
 	migration_hints_for_chaining = undefined, // if not explicitly provided or disabled, will try to read from a file
 	SCHEMA_VERSION,
 	LATEST_EXPECTED_DATA,
 	migrate_to_latest,
-	absolute_dir_path,
+	relative_dir_path,
+	import_meta_url,
 	advanced_diff_json = undefined,
 	clean_json_diff = undefined,
 	describe, context, it, expect,
@@ -33,6 +34,11 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 		LATEST_EXPECTED_DATA = LATEST_EXPECTED_DATA()
 		clock.restore()
 	}
+
+	// https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#what-do-i-use-instead-of-__dirname-and-__filename
+	const caller_dirname = path.dirname(fileURLToPath(import_meta_url))
+	const absolute_dir_path = path.join(caller_dirname, relative_dir_path)
+
 
 	const LOG_PREFIX = `[${LIB} - ${path.basename(absolute_dir_path)}]`
 	console.log(`${LOG_PREFIX} building unit tests...`)

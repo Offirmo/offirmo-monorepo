@@ -9,16 +9,15 @@ import {
 	DEFAULT_SEED,
 	create,
 
-	set_seed,
 	update_use_count,
 
 	get_prng,
-	generate_random_seed,
 
-	xxx_internal_reset_prng_cache,
+	xxx_internal_reset_prng_cache, State,
 } from './index.js'
 
-describe('@oh-my-rpg/state-prng - reducer', function() {
+
+describe(`${LIB} - state`, function() {
 	beforeEach(xxx_internal_reset_prng_cache)
 
 	describe('🆕  initial value', function() {
@@ -31,11 +30,13 @@ describe('@oh-my-rpg/state-prng - reducer', function() {
 				'uuid': 'uu1~test~test~test~test~',
 				revision: 0,
 
-				seed: DEFAULT_SEED,
-				use_count: 0,
+				prng_state: {
+					seed: DEFAULT_SEED,
+					call_count: 0,
+				},
 
 				recently_encountered_by_id: {},
-			})
+			} as State)
 		})
 	})
 
@@ -54,7 +55,7 @@ describe('@oh-my-rpg/state-prng - reducer', function() {
 			expect(get_random.generator_of.integer.between(0, 10)(prng), 'random 2').to.equal(5)
 
 			state = update_use_count(state, prng)
-			expect(state.use_count).to.equal(2)
+			expect(state.prng_state.call_count).to.equal(2)
 		})
 	})
 })

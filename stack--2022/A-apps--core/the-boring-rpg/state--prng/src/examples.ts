@@ -8,16 +8,18 @@ import { State } from './types.js'
 // useful for demos and unit tests
 const DEMO_STATE: Immutable<State> = enforce_immutability<State>({
 	uuid: 'uu1~example~state~PRNG~~',
-	schema_version: 3,
+	schema_version: 4,
 	revision: 108,
 
-	seed: 1234,
-	use_count: 107,
+	prng_state: {
+		call_count: 107,
+		seed: 1234,
+	},
 
 	recently_encountered_by_id: {
 		'item': [ 'axe', 'sword'],
 		'adventures': [ 'dragon', 'king'],
-		'mistery': [],
+		'mystery': [],
 	},
 })
 

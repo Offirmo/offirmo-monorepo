@@ -1,6 +1,6 @@
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
-import { State } from './types'
+import { State } from './types.js'
 
 /////////////////////
 

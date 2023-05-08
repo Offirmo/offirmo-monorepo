@@ -34,7 +34,8 @@ describe(`${LIB} - example usage`, function() {
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA,
 			migrate_to_latest,
-			absolute_dir_path: path.join(__dirname, './migrations_of_blank_state_specs'),
+			import_meta_url: import.meta.url, // for resolving the path below
+relative_dir_path: './migrations_of_blank_state_specs',
 			describe, context, it, expect,
 		})
 	})
@@ -48,7 +49,8 @@ describe(`${LIB} - example usage`, function() {
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA,
 			migrate_to_latest,
-			absolute_dir_path: path.join(__dirname, './migrations_of_active_state_specs'),
+			import_meta_url: import.meta.url, // for resolving the path below
+relative_dir_path: './migrations_of_active_state_specs',
 			describe, context, it, expect,
 		})
 	})
