@@ -9,7 +9,7 @@ import {
 } from './item.js'
 
 
-describe(`${LIB} - item utilities`, function() {
+describe(`${LIB} - item (utilities)`, function() {
 
 	describe('compare_items_by_slot', function() {
 

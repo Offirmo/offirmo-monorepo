@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { get_random } from '@offirmo/random'
-import { xxx_test_unrandomize_element } from '@tbrpg/definitions'
+import { xxx_test_unrandomize_element } from '@offirmo-private/uuid'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 

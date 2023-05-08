@@ -1,13 +1,12 @@
 /////////////////////
 
 import assert from 'tiny-invariant'
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable } from '@offirmo-private/state-utils'
 import { get_engine, PRNGEngine } from '@offirmo/random'
-
-import { get_logger } from '@tbrpg/definitions'
 
 import { LIB } from './consts.js'
 import { State } from './types.js'
+import { get_logger } from './sec.js'
 
 /////////////////////
 

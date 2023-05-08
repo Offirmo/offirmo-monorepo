@@ -5,10 +5,9 @@ import { Immutable } from '@offirmo-private/state-utils'
 import { get_engine, PRNGEngine } from '@offirmo/random'
 import { generate_uuid } from '@offirmo-private/uuid'
 
-import { get_logger } from '@tbrpg/definitions'
-
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { State } from './types.js'
+import { get_logger } from './sec.js'
 
 /////////////////////
 

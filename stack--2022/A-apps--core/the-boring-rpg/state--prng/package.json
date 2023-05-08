@@ -26,8 +26,8 @@
 	"dependencies": {
 		"@offirmo-private/state-utils": "^0",
 		"@offirmo-private/uuid": "^0",
+		"@offirmo/practical-logger-types": "^3",
 		"@offirmo/random": "^3",
-		"@tbrpg/definitions": "^0",
 		"tiny-invariant": "^1"
 	},
 
