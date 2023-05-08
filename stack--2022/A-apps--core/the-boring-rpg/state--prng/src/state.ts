@@ -7,8 +7,8 @@ import { generate_uuid } from '@offirmo-private/uuid'
 
 import { get_logger } from '@tbrpg/definitions'
 
-import { LIB, SCHEMA_VERSION } from './consts'
-import { MT19937WithSeed, State } from './types'
+import { LIB, SCHEMA_VERSION } from './consts.js'
+import { MT19937WithSeed, State } from './types.js'
 
 /////////////////////
 

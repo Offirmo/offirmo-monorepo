@@ -265,11 +265,12 @@ export function get_RNGⵧISAAC32(options: {
 		},
 		get_state() {
 			return {
+				algorithm_id: 'ISAAC32',
 				seed: last_seed,
 				call_count: generation_count === 0
 					? 0
 					: generation_count * SIZE - next_available_result_index - 1,
-			}
+			} as PRNGState
 		},
 		_get_internals() {
 			return {

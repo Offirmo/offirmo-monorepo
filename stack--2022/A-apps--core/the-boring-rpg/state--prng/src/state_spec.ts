@@ -1,9 +1,9 @@
 import { expect } from 'chai'
 
-import { Random, Engine } from '@offirmo/random'
+import { get_random } from '@offirmo/random'
 import { xxx_test_unrandomize_element } from '@tbrpg/definitions'
 
-import { LIB, SCHEMA_VERSION } from './consts'
+import { LIB, SCHEMA_VERSION } from './consts.js'
 
 import {
 	DEFAULT_SEED,
@@ -16,7 +16,7 @@ import {
 	generate_random_seed,
 
 	xxx_internal_reset_prng_cache,
-} from '.'
+} from './index.js'
 
 describe('@oh-my-rpg/state-prng - reducer', function() {
 	beforeEach(xxx_internal_reset_prng_cache)
@@ -50,8 +50,8 @@ describe('@oh-my-rpg/state-prng - reducer', function() {
 			let state = create()
 
 			const prng = get_prng(state)
-			expect(Random.integer(0, 10)(prng), 'random 1').to.equal(2)
-			expect(Random.integer(0, 10)(prng), 'random 2').to.equal(5)
+			expect(get_random.generator_of.integer.between(0, 10)(prng), 'random 1').to.equal(2)
+			expect(get_random.generator_of.integer.between(0, 10)(prng), 'random 2').to.equal(5)
 
 			state = update_use_count(state, prng)
 			expect(state.use_count).to.equal(2)

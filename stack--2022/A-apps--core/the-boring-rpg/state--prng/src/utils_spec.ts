@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { Random, Engine } from '@offirmo/random'
+import { get_random } from '@offirmo/random'
 
 import {
 	DEFAULT_SEED,
@@ -15,7 +15,7 @@ import {
 	regenerate_until_not_recently_encountered,
 
 	xxx_internal_reset_prng_cache,
-} from '.'
+} from './index.js'
 
 describe('@oh-my-rpg/state-prng - utils', function() {
 	beforeEach(xxx_internal_reset_prng_cache)
@@ -72,7 +72,7 @@ describe('@oh-my-rpg/state-prng - utils', function() {
 			function gen() {
 				const val = regenerate_until_not_recently_encountered({
 					id,
-					generate: () => Random.integer(0, 1)(prng),
+					generate: () => get_random.generator_of.integer.between(0, 1)(prng),
 					state,
 				})
 
@@ -108,7 +108,7 @@ describe('@oh-my-rpg/state-prng - utils', function() {
 			function gen() {
 				const val = regenerate_until_not_recently_encountered({
 					id,
-					generate: () => Random.integer(0, 9)(prng),
+					generate: () => get_random.generator_of.integer.between(0, 9)(prng),
 					state,
 					max_tries: 50, // need help
 				})

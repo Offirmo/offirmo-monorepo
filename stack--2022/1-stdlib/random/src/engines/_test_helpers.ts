@@ -71,6 +71,13 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 
 	describe('internals', function () {
 
+		function _get_standardized_state(e: PRNGEngine): PRNGState {
+			const { algorithm_id, ...rest} = e.get_state()
+			return {
+				...rest
+			}
+		}
+
 		it('should allow several instances to be used independently')
 
 		if (engine.is_prng()) {
@@ -216,6 +223,7 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 
 				describe('set_state', function () {
 
+
 					it('should work', () => {
 						const e_ref = engine as PRNGEngine
 						e_ref.set_state({...TEST_STATE, call_count: 0})
@@ -248,20 +256,22 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 				it('should be reflexive', () => {
 					let e = engine as PRNGEngine
 
+
+
 					// try limits
 					e.set_state({...TEST_STATE, call_count: 0})
-					expect(e.get_state(), '0').to.deep.equal({...TEST_STATE, call_count: 0})
+					expect(_get_standardized_state(e), '0').to.deep.equal({...TEST_STATE, call_count: 0})
 					e.set_state({...TEST_STATE, call_count: 1})
-					expect(e.get_state(), '1').to.deep.equal({...TEST_STATE, call_count: 1})
+					expect(_get_standardized_state(e), '1').to.deep.equal({...TEST_STATE, call_count: 1})
 					e.set_state({...TEST_STATE, call_count: 255})
-					expect(e.get_state(), '255').to.deep.equal({...TEST_STATE, call_count: 255})
+					expect(_get_standardized_state(e), '255').to.deep.equal({...TEST_STATE, call_count: 255})
 					e.set_state({...TEST_STATE, call_count: 256})
-					expect(e.get_state(), '256').to.deep.equal({...TEST_STATE, call_count: 256})
+					expect(_get_standardized_state(e), '256').to.deep.equal({...TEST_STATE, call_count: 256})
 					e.set_state({...TEST_STATE, call_count: 257})
-					expect(e.get_state(), '257').to.deep.equal({...TEST_STATE, call_count: 257})
+					expect(_get_standardized_state(e), '257').to.deep.equal({...TEST_STATE, call_count: 257})
 
 					e.set_state(TEST_STATE)
-					expect(e.get_state(), 'xyz').to.deep.equal(TEST_STATE)
+					expect(_get_standardized_state(e), 'xyz').to.deep.equal(TEST_STATE)
 				})
 
 				it('should not take too much time to restore', function() {
@@ -277,8 +287,7 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 					let e = engine as PRNGEngine
 
 					e.set_state(OLD_STATE)
-					const s = e.get_state()
-					expect(s).to.deep.equal(OLD_STATE)
+					expect(_get_standardized_state(e)).to.deep.equal(OLD_STATE)
 				})
 			})
 		}

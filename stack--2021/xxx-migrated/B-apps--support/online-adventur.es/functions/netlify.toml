@@ -1,0 +1,5 @@
+## This FAKE netlify.toml is needed by the "netlify-lambda" tool
+# No netlify.toml found. This is needed to configure the function settings. For more info: https://github.com/netlify/netlify-lambda#installation
+
+[build]
+	functions = "./functions"

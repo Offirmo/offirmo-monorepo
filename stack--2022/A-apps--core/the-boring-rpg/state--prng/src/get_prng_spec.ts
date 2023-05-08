@@ -1,8 +1,8 @@
 import { expect } from 'chai'
 
-import { Random, Engine } from '@offirmo/random'
+import { get_random } from '@offirmo/random'
 
-import { LIB, SCHEMA_VERSION } from './consts'
+import { LIB, SCHEMA_VERSION } from './consts.js'
 
 import {
 	DEFAULT_SEED,
@@ -15,9 +15,9 @@ import {
 	generate_random_seed,
 
 	xxx_internal_reset_prng_cache,
-} from '.'
+} from './index.js'
 
-describe('@oh-my-rpg/state-prng - get', function() {
+describe(`${LIB} - get`, function() {
 	beforeEach(xxx_internal_reset_prng_cache)
 
 	it('should return a working PRNG engine', function() {

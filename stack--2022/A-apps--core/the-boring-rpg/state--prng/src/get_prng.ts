@@ -2,12 +2,12 @@
 
 import assert from 'tiny-invariant'
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
-import { Random, MT19937 } from '@offirmo/random'
+import { get_engine, PRNGEngine } from '@offirmo/random'
 
 import { get_logger } from '@tbrpg/definitions'
 
-import { LIB } from './consts'
-import { MT19937WithSeed, State } from './types'
+import { LIB } from './consts.js'
+import { State } from './types.js'
 
 /////////////////////
 
@@ -37,7 +37,7 @@ function get_prng_simple(state: Immutable<State>): MT19937WithSeed {
 // Also, we control that the usage conforms to those expectations.
 
 let cached_prngs: {
-	[k: string]: MT19937WithSeed | null
+	[k: string]: PRNGEngine | null
 } = {}
 
 function xxx_internal_reset_prng_cache() {
@@ -46,7 +46,7 @@ function xxx_internal_reset_prng_cache() {
 }
 
 // WARNING this method has expectations ! (see above)
-function get_prng_dev(state: Immutable<State>): MT19937WithSeed {
+function get_prng_dev(state: Immutable<State>): PRNGEngine {
 	/*console.trace('get PRNG', {
      state,
      cached_prng,

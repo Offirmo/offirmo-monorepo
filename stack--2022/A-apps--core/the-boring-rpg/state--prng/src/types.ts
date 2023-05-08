@@ -1,23 +1,17 @@
 import { BaseUState } from '@offirmo-private/state-utils'
 import { UUID } from '@offirmo-private/uuid'
+import { PRNGState } from '@offirmo/random'
 
 /////////////////////
-
-// TODO improve offirmo/random
-import { MT19937 } from '@offirmo/random'
-interface MT19937WithSeed extends MT19937 {
-	_seed?: number
-}
-
 
 interface State extends BaseUState {
 	uuid: UUID // for caching / debug. Do not mind.
 
-	// reflect @offirmo/random Mersenne twister state
-	seed: number
-	use_count: number
+	// underlying @offirmo/random state
+	prng_state: PRNGState
 
-	// prevent repetition
+	// additional features:
+	// - prevent repetition
 	recently_encountered_by_id: {
 		[k: string]: Array<string | number>
 	}
@@ -27,8 +21,7 @@ interface State extends BaseUState {
 /////////////////////
 
 export {
-	MT19937WithSeed,
-	State,
+	type State,
 }
 
 /////////////////////

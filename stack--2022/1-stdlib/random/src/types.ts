@@ -18,14 +18,17 @@ export interface RNGEngine {
 }
 
 export interface PRNGState {
+	algorithm_id?: 'ISAAC32' | 'MT19937',
 	seed: Seed
 	call_count: PositiveInteger
 }
 
 // for convenience, the setters return 'this' to allow fluid chaining
 export interface PRNGEngine extends RNGEngine {
-	seed(seed: Seed): RNGEngine // shortcut for set_state()
+	seed(seed: Seed): RNGEngine
+	discard(call_count: PositiveInteger): RNGEngine
 
+	// set/get both seed + call_count
 	set_state(state: Immutable<PRNGState>): PRNGEngine
 	get_state(): PRNGState
 }

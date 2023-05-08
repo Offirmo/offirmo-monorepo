@@ -2,11 +2,11 @@ import { expect } from 'chai'
 import { enforce_immutability } from '@offirmo-private/state-utils'
 import { itㆍshouldㆍmigrateㆍcorrectly } from '@offirmo-private/state-migration-tester'
 
-import { LIB, SCHEMA_VERSION } from './consts'
-import { migrate_to_latest, MIGRATION_HINTS_FOR_TESTS } from './migrations'
-import { DEMO_STATE } from './examples'
-import { get_lib_SEC } from './sec'
-import { create } from './state'
+import { LIB, SCHEMA_VERSION } from './consts.js'
+import { migrate_to_latest, MIGRATION_HINTS_FOR_TESTS } from './migrations.js'
+import { DEMO_STATE } from './examples.js'
+import { get_lib_SEC } from './sec.js'
+import { create } from './state.js'
 
 
 describe(`${LIB} - migration`, function() {
