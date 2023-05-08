@@ -19,6 +19,7 @@ import {
 
 describe(`${LIB} - state`, function() {
 	beforeEach(xxx_internal_reset_prng_cache)
+	const gen = get_random.generator_of.integer.between(0, 10)
 
 	describe('🆕  initial value', function() {
 
@@ -31,6 +32,7 @@ describe(`${LIB} - state`, function() {
 				revision: 0,
 
 				prng_state: {
+					algorithm_id: 'ISAAC32',
 					seed: DEFAULT_SEED,
 					call_count: 0,
 				},
@@ -51,8 +53,15 @@ describe(`${LIB} - state`, function() {
 			let state = create()
 
 			const prng = get_prng(state)
-			expect(get_random.generator_of.integer.between(0, 10)(prng), 'random 1').to.equal(2)
-			expect(get_random.generator_of.integer.between(0, 10)(prng), 'random 2').to.equal(5)
+
+			/*
+			console.log(gen(prng))
+			console.log(gen(prng))
+			console.log(gen(prng))
+			*/
+
+			expect(gen(prng), 'random 1').to.equal(3)
+			expect(gen(prng), 'random 2').to.equal(5)
 
 			state = update_use_count(state, prng)
 			expect(state.prng_state.call_count).to.equal(2)

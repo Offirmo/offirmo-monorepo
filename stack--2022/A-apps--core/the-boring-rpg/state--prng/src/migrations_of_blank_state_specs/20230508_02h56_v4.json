@@ -1,8 +1,9 @@
 {
 	"schema_version": 4,
-	"uuid": "uu1daYM8pBPIz7rw_NY64BYu",
+	"uuid": "uu1~state~PRNG~mig~blank",
 	"revision": 0,
 	"prng_state": {
+		"algorithm_id": "ISAAC32",
 		"seed": 987,
 		"call_count": 0
 	},

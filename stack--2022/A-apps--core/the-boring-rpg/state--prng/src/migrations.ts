@@ -66,7 +66,7 @@ function migrate_to_4(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>,
 		prng_state: {
 			seed: seed as PRNGState['seed'],
 			call_count: use_count as PRNGState['call_count'],
-			algorithm_id: 'MT19937',
+			algorithm_id: use_count === 0 ? 'ISAAC32' : 'MT19937', // we now recommend ISAAC32 but v3 states were using MT19937
 		}
 	}
 
@@ -81,7 +81,7 @@ function migrate_to_3(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>,
 	state = {
 		...state,
 		schema_version: 3,
-		uuid: generate_uuid(),
+		uuid: state.uuid || generate_uuid(),
 	}
 
 	return state

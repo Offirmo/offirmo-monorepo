@@ -1,18 +1,11 @@
 /////////////////////
 
-import { Random, MT19937 } from '@offirmo/random'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { MT19937WithSeed, State } from './types'
-import { LIB } from './consts'
+import { State } from './types.js'
+import { LIB } from './consts.js'
 
 /////////////////////
-
-// useful for re-seeding
-function generate_random_seed(): number {
-	const rng: MT19937WithSeed = Random.engines.mt19937().autoSeed()
-	return Random.integer(-2147483646, 2147483647)(rng) // doc is unclear about allowed bounds...
-}
 
 interface RegenerateParams {
 	id: string
@@ -50,8 +43,7 @@ function regenerate_until_not_recently_encountered({
 /////////////////////
 
 export {
-	generate_random_seed,
-	RegenerateParams,
+	type RegenerateParams,
 	regenerate_until_not_recently_encountered,
 }
 

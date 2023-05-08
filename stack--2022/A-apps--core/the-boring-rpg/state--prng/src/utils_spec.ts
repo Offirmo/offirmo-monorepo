@@ -3,15 +3,11 @@ import { expect } from 'chai'
 import { get_random } from '@offirmo/random'
 
 import {
-	DEFAULT_SEED,
 	create,
 
-	set_seed,
-	update_use_count,
 	register_recently_used,
 
 	get_prng,
-	generate_random_seed,
 	regenerate_until_not_recently_encountered,
 
 	xxx_internal_reset_prng_cache,
@@ -20,6 +16,7 @@ import {
 describe('@oh-my-rpg/state-prng - utils', function() {
 	beforeEach(xxx_internal_reset_prng_cache)
 
+	/* TODO review this feature
 	describe('generate_random_seed', function() {
 
 		it('should return a random seed', function () {
@@ -31,7 +28,7 @@ describe('@oh-my-rpg/state-prng - utils', function() {
 			expect(s1).not.to.equal(s3)
 			expect(s2).not.to.equal(s3)
 		})
-	})
+	})*/
 
 	describe('optional duplicate prevention', function() {
 		const id = 'tails_or_head'

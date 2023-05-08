@@ -2,7 +2,6 @@ import { expect } from 'chai'
 
 import { RNGEngine } from '../types.js'
 import { get_RNGⵧMathᐧrandom } from '../engines/MathRandom/index.js'
-import { get_RNGⵧISAAC32 } from '../engines/ISAAC/index.js'
 import { ROUNDS_COUNT } from '../_test_helpers.js'
 import { get_random_generator_ofꓽintegerⵧbetween } from './integer.js'
 

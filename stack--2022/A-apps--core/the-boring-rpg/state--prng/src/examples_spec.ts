@@ -1,6 +1,6 @@
 /////////////////////
 
-import {expect} from 'chai'
+import { expect } from 'chai'
 
 import { LIB } from './consts.js'
 import { get_lib_SEC } from './sec.js'

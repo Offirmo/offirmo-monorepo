@@ -12,6 +12,7 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>({
 	revision: 108,
 
 	prng_state: {
+		algorithm_id: 'MT19937',
 		call_count: 107,
 		seed: 1234,
 	},
