@@ -1,15 +1,16 @@
 import { expect } from 'chai'
 import { Enum } from 'typescript-string-enums'
-import { Random, Engine } from '@offirmo/random'
+import { get_engine } from '@offirmo/random'
 import { MAX_LEVEL } from '@tbrpg/definitions'
 
 import {
 	Monster,
 	MonsterRank,
 	create,
-} from '.'
+} from './index.js'
 
-function assert_shape(monster: Readonly<Monster>) {
+
+function _assert_shape(monster: Readonly<Monster>) {
 	expect(Object.keys(monster)).to.have.lengthOf(4)
 
 	expect(monster.name).to.be.a('string')
@@ -29,33 +30,33 @@ function assert_shape(monster: Readonly<Monster>) {
 describe('@oh-my-rpg/logic-monsters - factory', function() {
 
 	it('should allow creating a random monster', function() {
-		const rng: Engine = Random.engines.mt19937().seed(789)
-		expect((rng as any).getUseCount(), '# rng draws 1').to.equal(0)
+		const rng = get_engine.for_unit_tests()
+		expect(rng.get_state().call_count, '# rng draws 1').to.equal(0)
 
 		const monster1 = create(rng)
-		assert_shape(monster1)
+		_assert_shape(monster1)
 
-		expect((rng as any).getUseCount(), '# rng draws 1').to.equal(4)
+		expect(rng.get_state().call_count, '# rng draws 1').to.equal(4)
 
 		const monster2 = create(rng)
-		assert_shape(monster2)
-		expect((rng as any).getUseCount(), '# rng draws 2').to.equal(10)
+		_assert_shape(monster2)
+		expect(rng.get_state().call_count, '# rng draws 2').to.equal(10)
 		expect(monster2).not.to.deep.equal(monster1)
 	})
 
 	it('should allow creating a partially predefined monster', function() {
-		const rng: Engine = Random.engines.mt19937().seed(123)
+		const rng = get_engine.for_unit_tests()
 		const monster = create(rng, {
 			name: 'crab',
 			level: 12,
 		})
-		assert_shape(monster)
+		_assert_shape(monster)
 		expect(monster).to.deep.equal({
 			name: 'crab',
 			level: 12,
 			rank: MonsterRank.common,
 			possible_emoji: '🦀',
 		})
-		expect((rng as any).getUseCount(), '# rng draws').to.equal(3) // less random picks
+		expect(rng.get_state().call_count, '# rng draws').to.equal(3) // less random picks
 	})
 })

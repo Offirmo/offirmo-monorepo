@@ -1,3 +1,4 @@
+import { Immutable } from '@offirmo-private/ts-types'
 
 interface UnicodeCharDetails {
 	code_point: number
@@ -8,11 +9,12 @@ interface UnicodeCharDetails {
 	gendered?: boolean
 	skin_colorizable?: boolean,
 	properties: {
+		description: string
 		[k: string]: string
 	}
 }
 
-const CHARACTERS: Readonly<{ [k: string]: Readonly<UnicodeCharDetails> }> = {
+const CHARACTERS: Immutable<Record<string, UnicodeCharDetails>> = {
 
 	'01f400': {
 		code_point: 128000,

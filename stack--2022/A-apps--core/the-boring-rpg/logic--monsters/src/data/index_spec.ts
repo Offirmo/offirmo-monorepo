@@ -1,10 +1,6 @@
 import { expect } from 'chai'
 
-import { Random, Engine } from '@offirmo/random'
-
-import {
-	ENTRIES,
-} from '.'
+import { ENTRIES } from './index.js'
 
 describe('@oh-my-rpg/logic-monsters - data:', function() {
 

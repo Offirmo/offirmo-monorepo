@@ -22,7 +22,7 @@ interface Monster {
 
 export {
 	MonsterRank,
-	Monster,
+	type Monster,
 }
 
 /////////////////////
