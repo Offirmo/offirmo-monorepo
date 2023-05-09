@@ -14,7 +14,7 @@ const {
 	DOC_DEMO_RPG_02,
 	DOC_DEMO_RPG_03,
 	DOC_DEMO_INVENTORY,
-} = require('../examples')
+} = require('../examples.js')
 
 let to_ansi = null
 try {

@@ -17,13 +17,14 @@ import tsc from 'node-typescript-compiler'
 const cli = meow('build', {
 	importMeta: import.meta,
 	flags: {
+		module: {
+			type: 'string',
+			default: 'esm,cjs', // also allowed: 'esm' | 'cjs' | (comma-separated combo)
+		},
 		watch: {
 			type: 'boolean',
 			default: false,
-		},
-		module: {
-			type: 'string',
-			default: 'esm', // also allowed: cjs
+			// - if true, only the first mode is built and continuously rebuilt
 		},
 	},
 })
@@ -85,20 +86,6 @@ let compilerOptions = {
 	//listEmittedFiles: true,
 }
 
-if (cli.flags.watch) {
-	compilerOptions = {
-		...compilerOptions,
-
-		watch: true,
-
-		// it's dev mode, relax a bit:
-		noUnusedLocals: false,
-		noUnusedParameters: false,
-		allowUnreachableCode: true,
-		"jsx": "react-jsxdev",
-	}
-}
-
 /////////////////////
 
 function build_cjs() {
@@ -152,11 +139,25 @@ function build_esm() {
 // CJS is usable in both node and bundled frontend,
 // thus we build only this one in watch = dev mode.
 // (update marker) as of 2022/05 the ecosystem (typescript) is not ready for pure ESM
+const target_modules = cli.flags.module.split(',')
+assert(target_modules.length && target_modules.every(e => e === 'esm' || e === 'cjs'), `Unknown value for --module="${cli.flags.module}"!`)
 Promise.resolve()
 	.then(() => {
 		if (cli.flags.watch) {
+			compilerOptions = {
+				...compilerOptions,
+
+				watch: true,
+
+				// it's dev mode, relax a bit:
+				noUnusedLocals: false,
+				noUnusedParameters: false,
+				allowUnreachableCode: true,
+				jsx: 'react-jsxdev',
+			}
+
 			// watch = single mode
-			switch(cli.flags.module) {
+			switch(target_modules[0]) {
 				case 'esm':
 					return build_esm()
 				case 'cjs':
@@ -167,12 +168,14 @@ Promise.resolve()
 		}
 	})
 	.then(() => {
-		if (cli.flags.watch && cli.flags.module === 'esm') return
+		if (cli.flags.watch) return
+		if (!target_modules.includes('esm')) return
 
 		return build_esm()
 	})
 	.then(() => {
-		if (cli.flags.watch && cli.flags.module === 'cjs') return
+		if (cli.flags.watch) return
+		if (!target_modules.includes('cjs')) return
 
 		return build_cjs()
 	})

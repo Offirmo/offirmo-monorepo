@@ -5,4 +5,5 @@ export * from './item.js'
 export * from './root_sec.js'
 export * from './logger.js'
 
-export { xxx_test_unrandomize_element } from '@offirmo-private/uuid' // for convenience
+// for convenience when dealing with elements (which have a UUID)
+export { xxx_test_unrandomize_element } from '@offirmo-private/uuid'

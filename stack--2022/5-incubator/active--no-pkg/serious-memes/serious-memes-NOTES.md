@@ -113,6 +113,7 @@ can't satisfy others
 comfort zone
 communication non violente
 differences: introvert/extrovert
+don't expect perfection -> trigger self-consciousness = counter-productive
 drive by
 due diligence
 effet projecteur
@@ -153,6 +154,8 @@ naiveté: abus sexuels, mafia
 non violence
 personal moral inventory https://domprice.me/personal-moral-inventory/
 picture the success
+praise in public (and private), criticize in private
+praise more than criticize
 praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism
 priming
 productivity
