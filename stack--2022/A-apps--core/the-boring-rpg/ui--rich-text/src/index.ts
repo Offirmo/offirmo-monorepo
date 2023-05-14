@@ -1,4 +1,4 @@
-export * from './types'
+export * from './types.js'
 export * from './achievements'
 export * from './adventure'
 export * from './attributes'

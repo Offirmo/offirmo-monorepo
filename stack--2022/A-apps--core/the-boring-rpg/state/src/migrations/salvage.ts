@@ -9,8 +9,8 @@ import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 import { CharacterClass } from '@tbrpg/state--character'
 import * as EngagementState from '@oh-my-rpg/state-engagement'
 
-import { LIB } from '../consts'
-import { State } from '../types'
+import { LIB } from '../consts.js'
+import { State } from '../types.js'
 import { get_logger } from '../services/logger'
 import {
 	create,

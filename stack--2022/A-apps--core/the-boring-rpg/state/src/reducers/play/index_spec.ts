@@ -14,8 +14,8 @@ import {
 	get_currency_amount,
 } from '@oh-my-rpg/state-wallet'
 
-import { LIB } from '../../consts'
-import { State} from '../../types'
+import { LIB } from '../../consts.js'
+import { State} from '../../types.js'
 import {
 	get_available_energy_float,
 } from '../../selectors'

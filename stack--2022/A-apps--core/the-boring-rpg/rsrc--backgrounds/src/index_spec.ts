@@ -1,8 +1,8 @@
 import { expect } from 'chai'
 
-import { LIB } from './consts'
+import { LIB } from './consts.js'
 
-import { ELEMENTS } from '.'
+import { ELEMENTS } from './index.js'
 
 describe(`${LIB} - rsrcs`, function() {
 

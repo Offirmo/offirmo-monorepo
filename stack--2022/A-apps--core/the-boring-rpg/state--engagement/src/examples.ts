@@ -3,7 +3,7 @@ import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 import {
 	EngagementType,
 	State,
-} from './types'
+} from './types.js'
 
 /////////////////////
 

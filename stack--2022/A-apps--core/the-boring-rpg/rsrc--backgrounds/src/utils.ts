@@ -1,6 +1,6 @@
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { Background } from './types'
+import { Background } from './types.js'
 
 
 function render_artwork_legend(artwork: Readonly<Background>): RichText.Document {

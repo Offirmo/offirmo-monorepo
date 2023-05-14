@@ -2,11 +2,11 @@ import { expect } from 'chai'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { generate_random_demo_armor, DEMO_ARMOR_1, DEMO_ARMOR_2 } from '@oh-my-rpg/logic-armors'
+import { generate_random_demo_armor, DEMO_ARMOR_1, DEMO_ARMOR_2 } from '@tbrpg/logic-armors'
 
 const rich_text_to_ansi = require('@offirmo-private/rich-text-format-to-ansi')
 
-import { render_armor_detailed } from '.'
+import { render_armor_detailed } from './index.js'
 
 
 describe('🔠  view to @offirmo-private/rich-text-format - armor', function() {

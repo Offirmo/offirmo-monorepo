@@ -1,9 +1,9 @@
 import { expect } from 'chai'
 
-import { DEMO_ARMOR_1 } from '@oh-my-rpg/logic-armors'
-import { DEMO_WEAPON_1 } from '@oh-my-rpg/logic-weapons'
+import { DEMO_ARMOR_1 } from '@tbrpg/logic-armors'
+import { DEMO_WEAPON_1 } from '@tbrpg/logic-weapons'
 
-import { appraise_sell_value } from '.'
+import { appraise_sell_value } from './index.js'
 
 
 describe('@tbrpg/logic--shop - selectors:', function() {

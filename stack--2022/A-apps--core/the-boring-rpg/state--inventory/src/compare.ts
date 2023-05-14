@@ -9,16 +9,16 @@ import {
 import {
 	Armor,
 	compare_armors_by_potential,
-} from '@oh-my-rpg/logic-armors'
+} from '@tbrpg/logic-armors'
 
 import {
 	Weapon,
 	compare_weapons_by_potential,
-} from '@oh-my-rpg/logic-weapons'
+} from '@tbrpg/logic-weapons'
 
 import {
 	LIB,
-} from './consts'
+} from './consts.js'
 
 /////////////////////
 

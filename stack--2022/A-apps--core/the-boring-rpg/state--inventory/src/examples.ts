@@ -1,10 +1,10 @@
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
 import { InventorySlot } from '@tbrpg/definitions'
-import { DEMO_WEAPON_1, DEMO_WEAPON_2 } from '@oh-my-rpg/logic-weapons'
-import { DEMO_ARMOR_1, DEMO_ARMOR_2 } from '@oh-my-rpg/logic-armors'
+import { DEMO_WEAPON_1, DEMO_WEAPON_2 } from '@tbrpg/logic-weapons'
+import { DEMO_ARMOR_1, DEMO_ARMOR_2 } from '@tbrpg/logic-armors'
 
-import { State } from './types'
+import { State } from './types.js'
 
 /////////////////////
 

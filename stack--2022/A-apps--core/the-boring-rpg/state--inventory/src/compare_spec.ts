@@ -2,16 +2,16 @@ import { expect } from 'chai'
 
 import {
 	generate_random_demo_armor,
-} from '@oh-my-rpg/logic-armors'
+} from '@tbrpg/logic-armors'
 import {
 	generate_random_demo_weapon,
-} from '@oh-my-rpg/logic-weapons'
+} from '@tbrpg/logic-weapons'
 
-import { LIB } from './consts'
+import { LIB } from './consts.js'
 import {
 	Item,
 	compare_items_by_slot_then_strength,
-} from '.'
+} from './index.js'
 
 describe(`${LIB} - sorting`, function() {
 

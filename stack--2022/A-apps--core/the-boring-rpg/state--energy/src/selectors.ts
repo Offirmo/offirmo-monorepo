@@ -5,8 +5,8 @@ import memoize_one from 'memoize-one'
 import { get_logger } from '@tbrpg/definitions'
 import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 
-import { LIB, TICK_MS } from './consts'
-import { UState, TState } from './types'
+import { LIB, TICK_MS } from './consts.js'
+import { UState, TState } from './types.js'
 import { time_to_human } from './utils'
 
 ////////////////////////////////////

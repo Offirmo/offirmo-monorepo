@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 
 
-import { LIB } from '../consts'
+import { LIB } from '../consts.js'
 import {create} from '../reducers'
 import {appraise_item_value} from './inventory'
 

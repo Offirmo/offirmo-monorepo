@@ -5,13 +5,13 @@ import {
 	MAX_ENHANCEMENT_LEVEL,
 	Armor,
 	get_damage_reduction_interval as get_armor_damage_reduction_interval,
-} from '@oh-my-rpg/logic-armors'
+} from '@tbrpg/logic-armors'
 import * as RichText from '@offirmo-private/rich-text-format'
-import { i18n_messages as I18N_ARMORS } from '@oh-my-rpg/logic-armors'
+import { i18n_messages as I18N_ARMORS } from '@tbrpg/logic-armors'
 import { appraise_power, appraise_sell_value } from '@tbrpg/logic--shop'
 
-import { RenderItemOptions } from './types'
-import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts'
+import { RenderItemOptions } from './types.js'
+import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.js'
 
 /////////////////////
 

@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 
 
-import { LIB } from '../consts'
+import { LIB } from '../consts.js'
 
 import {
 	get_available_energy_float,
@@ -15,7 +15,7 @@ import {
 
 import {
 	create,
-} from '.'
+} from './index.js'
 
 describe(`${LIB} - reducer - internals`, function() {
 	beforeEach(() => xxx_internal_reset_prng_cache())

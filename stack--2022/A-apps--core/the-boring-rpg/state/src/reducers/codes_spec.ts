@@ -3,19 +3,19 @@ import { expect } from 'chai'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 import { enforce_immutability } from '@offirmo-private/state-utils'
 
-import { LIB } from '../consts'
+import { LIB } from '../consts.js'
 import { EngagementKey } from '../data/engagement'
 import {
 	create,
 	reseed,
 	attempt_to_redeem_code,
-} from '.'
+} from './index.js'
 
 import {
 	_lose_all_energy,
 	_ack_all_engagements,
 } from './internal'
-import {State} from '../types'
+import {State} from '../types.js'
 
 describe(`${LIB} - reducer - codes`, function() {
 	beforeEach(() => xxx_internal_reset_prng_cache())

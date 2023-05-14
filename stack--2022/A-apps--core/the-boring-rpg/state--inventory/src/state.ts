@@ -5,8 +5,8 @@ import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 import { InventorySlot } from '@tbrpg/definitions'
 
 
-import { SCHEMA_VERSION } from './consts'
-import { Item, State } from './types'
+import { SCHEMA_VERSION } from './consts.js'
+import { Item, State } from './types.js'
 import { compare_items_by_slot_then_strength } from './compare'
 import { is_full, get_item_in_slot } from './selectors'
 import { OMRSoftExecutionContext, get_lib_SEC } from './sec'

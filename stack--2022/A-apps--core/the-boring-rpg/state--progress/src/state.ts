@@ -7,12 +7,12 @@ import {
 } from '@offirmo-private/timestamps'
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
-import { LIB, SCHEMA_VERSION } from './consts'
+import { LIB, SCHEMA_VERSION } from './consts.js'
 
 import {
 	AchievementStatus,
 	State,
-} from './types'
+} from './types.js'
 
 import { get_last_known_achievement_status } from './selectors'
 

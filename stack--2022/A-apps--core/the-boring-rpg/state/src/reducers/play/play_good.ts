@@ -1,7 +1,7 @@
 /////////////////////
 
 import { Immutable} from '@offirmo-private/ts-types'
-import { Random, Engine } from '@offirmo/random'
+import { Random, RNGEngine } from '@offirmo/random'
 
 /////////////////////
 
@@ -25,8 +25,8 @@ import {
 
 /////////////////////
 
-import { LIB } from '../../consts'
-import { State, UState } from '../../types'
+import { LIB } from '../../consts.js'
+import { State, UState } from '../../types.js'
 import { _play_adventure } from './play_adventure'
 
 /////////////////////
@@ -34,7 +34,7 @@ import { _play_adventure } from './play_adventure'
 const ADVENTURE_GOOD_NON_REPETITION_ID = 'adventure_archetype--good'
 const ADVENTURE_GOOD_NON_REPETITION_COUNT = 30
 
-function pick_random_non_repetitive_good_archetype(u_state: Immutable<UState>, rng: Engine): Immutable<AdventureArchetype> {
+function pick_random_non_repetitive_good_archetype(u_state: Immutable<UState>, rng: RNGEngine): Immutable<AdventureArchetype> {
 	let archetype: AdventureArchetype
 
 	regenerate_until_not_recently_encountered({
@@ -50,7 +50,7 @@ function pick_random_non_repetitive_good_archetype(u_state: Immutable<UState>, r
 	return archetype!
 }
 
-function pick_ideal_non_repetitive_good_archetype(u_state: Immutable<UState>, rng: Engine): Immutable<AdventureArchetype> {
+function pick_ideal_non_repetitive_good_archetype(u_state: Immutable<UState>, rng: RNGEngine): Immutable<AdventureArchetype> {
 	//console.log(WalletState.get_currency_amount(u_state.wallet, WalletState.Currency.coin))
 	if (WalletState.get_currency_amount(u_state.wallet, WalletState.Currency.coin) === 0) {
 		// needed to prevent the wallet from staying at 0

@@ -1,9 +1,9 @@
 import { expect } from 'chai'
 
-import { SCHEMA_VERSION } from './consts'
+import { SCHEMA_VERSION } from './consts.js'
 import {
 	create,
-} from '.'
+} from './index.js'
 import { get_lib_SEC } from './sec'
 
 describe('@oh-my-rpg/state-engagement - reducer', function() {

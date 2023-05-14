@@ -14,12 +14,12 @@ import * as CodesState from '@oh-my-rpg/state-codes'
 import * as ProgressState from '@tbrpg/state--progress'
 import * as MetaState from '@oh-my-rpg/state-meta'
 
-import { LIB, SCHEMA_VERSION } from '../consts'
-import { migrate_to_latest } from '.'
+import { LIB, SCHEMA_VERSION } from '../consts.js'
+import { migrate_to_latest } from './index.js'
 import { get_lib_SEC } from '../services/sec'
 
 import {create} from '..'
-import { DEMO_STATE } from '../examples'
+import { DEMO_STATE } from '../examples.js'
 
 // some hints may be needed to migrate to demo state
 const MIGRATION_HINTS_FOR_TESTS = enforce_immutability<any>({

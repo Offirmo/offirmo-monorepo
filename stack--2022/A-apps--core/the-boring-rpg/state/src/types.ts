@@ -8,9 +8,9 @@ import {
 	BaseRootState,
 } from '@offirmo-private/state-utils'
 
-import { Weapon } from '@oh-my-rpg/logic-weapons'
-import { Armor } from '@oh-my-rpg/logic-armors'
-import { Monster } from '@oh-my-rpg/logic-monsters'
+import { Weapon } from '@tbrpg/logic-weapons'
+import { Armor } from '@tbrpg/logic-armors'
+import { Monster } from '@tbrpg/logic-monsters'
 
 import { State as CharacterState } from '@tbrpg/state--character'
 import { State as InventoryState } from '@tbrpg/state--inventory'

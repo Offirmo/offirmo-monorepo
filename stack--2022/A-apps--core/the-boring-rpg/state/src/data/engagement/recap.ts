@@ -1,7 +1,7 @@
 import { Immutable} from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { UState } from '../../types'
+import { UState } from '../../types.js'
 
 function get_recap(u_state: Immutable<UState>): RichText.Document {
 	const isNewGame = (u_state.revision === 0)

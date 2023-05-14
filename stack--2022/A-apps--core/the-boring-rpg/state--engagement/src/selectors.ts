@@ -1,5 +1,5 @@
 import { Immutable } from '@offirmo-private/ts-types'
-import { State, Engagement, EngagementType, PendingEngagement } from './types'
+import { State, Engagement, EngagementType, PendingEngagement } from './types.js'
 
 
 /////////////////////

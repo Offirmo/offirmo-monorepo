@@ -1,21 +1,21 @@
 /////////////////////
 
-import { Random, Engine } from '@offirmo/random'
+import { Random, RNGEngine } from '@offirmo/random'
 import { Item, InventorySlot } from '@tbrpg/definitions'
 import {
 	Weapon,
 	create as create_weapon,
 	get_medium_damage,
-} from '@oh-my-rpg/logic-weapons'
+} from '@tbrpg/logic-weapons'
 import {
 	Armor,
 	create as create_armor,
 	get_medium_damage_reduction,
-} from '@oh-my-rpg/logic-armors'
+} from '@tbrpg/logic-armors'
 
 /////////////////////
 
-function create(rng: Engine): void {
+function create(rng: RNGEngine): void {
 	// TODO one day
 }
 

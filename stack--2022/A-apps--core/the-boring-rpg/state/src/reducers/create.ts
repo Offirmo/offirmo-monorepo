@@ -26,11 +26,11 @@ import {
 import {
 	Weapon,
 	create as create_weapon,
-} from '@oh-my-rpg/logic-weapons'
+} from '@tbrpg/logic-weapons'
 import {
 	Armor,
 	create as create_armor,
-} from '@oh-my-rpg/logic-armors'
+} from '@tbrpg/logic-armors'
 
 
 /////////////////////

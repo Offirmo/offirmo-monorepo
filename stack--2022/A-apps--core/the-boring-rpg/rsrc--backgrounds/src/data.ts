@@ -2,7 +2,7 @@ import {
 	Author,
 	AuthorHash,
 	Background,
-} from './types'
+} from './types.js'
 
 const AUTHORS: Readonly<Author>[] = [
 	{

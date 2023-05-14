@@ -2,12 +2,12 @@
 
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
-import { LIB, SCHEMA_VERSION } from './consts'
+import { LIB, SCHEMA_VERSION } from './consts.js'
 
 import {
 	Currency,
 	State,
-} from './types'
+} from './types.js'
 
 /////////////////////
 

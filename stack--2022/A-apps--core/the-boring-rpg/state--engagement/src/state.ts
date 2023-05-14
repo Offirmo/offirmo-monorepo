@@ -3,13 +3,13 @@
 import assert from 'tiny-invariant'
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
-import { SCHEMA_VERSION } from './consts'
+import { SCHEMA_VERSION } from './consts.js'
 
 import {
 	Engagement,
 	PendingEngagement,
 	State,
-} from './types'
+} from './types.js'
 
 import { OMRSoftExecutionContext, get_lib_SEC } from './sec'
 

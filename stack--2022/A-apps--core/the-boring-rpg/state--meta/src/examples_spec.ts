@@ -4,7 +4,7 @@ import {expect} from 'chai'
 
 import {LIB, SCHEMA_VERSION} from './consts.js'
 import {get_lib_SEC} from './sec'
-import { DEMO_STATE } from './examples'
+import { DEMO_STATE } from './examples.js'
 import { migrate_to_latest } from './migrations'
 
 /////////////////////

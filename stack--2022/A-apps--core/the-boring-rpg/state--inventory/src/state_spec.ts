@@ -6,12 +6,12 @@ import {
 } from '@tbrpg/definitions'
 import {
 	generate_random_demo_armor,
-} from '@oh-my-rpg/logic-armors'
+} from '@tbrpg/logic-armors'
 import {
 	generate_random_demo_weapon,
-} from '@oh-my-rpg/logic-weapons'
+} from '@tbrpg/logic-weapons'
 
-import { LIB, SCHEMA_VERSION } from './consts'
+import { LIB, SCHEMA_VERSION } from './consts.js'
 
 
 import {
@@ -29,7 +29,7 @@ import {
 	get_item,
 	get_item_in_slot,
 	iterables_unslotted,
-} from '.'
+} from './index.js'
 
 describe(`${LIB} - reducer`, function() {
 	const DUMMY_ITEM: Item = generate_random_demo_weapon()

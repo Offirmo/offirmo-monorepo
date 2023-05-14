@@ -5,13 +5,13 @@ import {
 	Weapon,
 	get_damage_interval as get_weapon_damage_interval,
 	MAX_ENHANCEMENT_LEVEL,
-} from '@oh-my-rpg/logic-weapons'
+} from '@tbrpg/logic-weapons'
 import * as RichText from '@offirmo-private/rich-text-format'
-import { i18n_messages as I18N_WEAPONS } from '@oh-my-rpg/logic-weapons'
+import { i18n_messages as I18N_WEAPONS } from '@tbrpg/logic-weapons'
 import { appraise_power, appraise_sell_value } from '@tbrpg/logic--shop'
 
-import { RenderItemOptions } from './types'
-import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts'
+import { RenderItemOptions } from './types.js'
+import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.js'
 
 /////////////////////
 

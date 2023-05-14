@@ -2,7 +2,7 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 import * as Inventory from '@tbrpg/state--inventory'
 
-import { Power } from './types'
+import { Power } from './types.js'
 
 export function appraise_powerⵧequipment(
 	inventory: Immutable<Inventory.State>,

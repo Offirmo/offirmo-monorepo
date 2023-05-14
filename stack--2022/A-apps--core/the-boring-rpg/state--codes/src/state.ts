@@ -3,13 +3,13 @@
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 import { get_human_readable_UTC_timestamp_minutes } from '@offirmo-private/timestamps'
 
-import { SCHEMA_VERSION } from './consts'
+import { SCHEMA_VERSION } from './consts.js'
 
 import {
 	CodeSpec,
 	CodeRedemption,
 	State,
-} from './types'
+} from './types.js'
 
 import { is_code_redeemable } from './selectors'
 

@@ -1,14 +1,14 @@
 import { expect } from 'chai'
 import sinon from 'sinon'
 
-import { SCHEMA_VERSION } from './consts'
+import { SCHEMA_VERSION } from './consts.js'
 import {
 	State,
 	AchievementStatus,
 	create,
 	on_played,
 	on_achieved,
-} from '.'
+} from './index.js'
 import { get_lib_SEC } from './sec'
 
 

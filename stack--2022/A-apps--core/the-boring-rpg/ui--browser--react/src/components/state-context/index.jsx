@@ -138,7 +138,7 @@ class ContextProvider extends React.Component {
 	}
 
 	render() {
-		//console.log(`--- Provider ---`, JSON.parse(JSON.stringify(this.state)))
+		//console.log(`--- Provider ---`, structuredClone(this.state))
 		return (
 			<OhMyRPGUIContext.Provider value={this.state}>
 				{this.props.children}

@@ -8,10 +8,10 @@ import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
 import { InventorySlot, Item, ItemQuality } from '@tbrpg/definitions'
 
-import { Weapon } from '@oh-my-rpg/logic-weapons'
-import * as WeaponLib from '@oh-my-rpg/logic-weapons'
-import { Armor } from '@oh-my-rpg/logic-armors'
-import * as ArmorLib from '@oh-my-rpg/logic-armors'
+import { Weapon } from '@tbrpg/logic-weapons'
+import * as WeaponLib from '@tbrpg/logic-weapons'
+import { Armor } from '@tbrpg/logic-armors'
+import * as ArmorLib from '@tbrpg/logic-armors'
 import { appraise_power_normalized } from '@tbrpg/logic--shop'
 import {
 	CharacterAttribute,
@@ -26,7 +26,7 @@ import * as EngagementState from '@oh-my-rpg/state-engagement'
 
 /////////////////////
 
-import { State } from '../types'
+import { State } from '../types.js'
 
 import {
 	appraise_item_value,

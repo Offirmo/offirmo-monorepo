@@ -6,11 +6,11 @@ import {
 	Armor,
 	get_ultimate_medium_damage_reduction,
 	ATTACK_VS_DEFENSE_RATIO,
-} from '@oh-my-rpg/logic-armors'
+} from '@tbrpg/logic-armors'
 import {
 	Weapon,
 	get_ultimate_medium_damage,
-} from '@oh-my-rpg/logic-weapons'
+} from '@tbrpg/logic-weapons'
 
 /////////////////////
 

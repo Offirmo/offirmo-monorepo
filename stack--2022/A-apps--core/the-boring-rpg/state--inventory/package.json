@@ -20,8 +20,8 @@
 	"dependencies": {
 		"@offirmo-private/state-utils": "^0",
 		"@offirmo-private/uuid": "^0",
-		"@oh-my-rpg/logic-armors": "^0",
-		"@oh-my-rpg/logic-weapons": "^0",
+		"@tbrpg/logic-armors": "^0",
+		"@tbrpg/logic-weapons": "^0",
 		"@tbrpg/definitions": "^0",
 		"tiny-invariant": "^1"
 	},

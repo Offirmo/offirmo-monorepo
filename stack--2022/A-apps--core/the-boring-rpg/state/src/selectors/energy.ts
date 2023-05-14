@@ -5,7 +5,7 @@ import {
 	get_human_time_to_next,
 } from '@oh-my-rpg/state-energy'
 
-import { State, TState } from '../types'
+import { State, TState } from '../types.js'
 
 /////////////////////
 

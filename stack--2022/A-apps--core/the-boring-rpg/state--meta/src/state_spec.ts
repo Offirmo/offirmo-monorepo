@@ -1,11 +1,11 @@
 import { expect } from 'chai'
 
-import { LIB, SCHEMA_VERSION } from './consts'
+import { LIB, SCHEMA_VERSION } from './consts.js'
 
 import {
 	State,
 	create,
-} from '.'
+} from './index.js'
 
 describe(`${LIB} - reducer`, function() {
 

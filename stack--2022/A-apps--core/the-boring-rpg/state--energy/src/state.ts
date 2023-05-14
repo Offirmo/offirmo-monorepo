@@ -5,8 +5,8 @@ import Fraction from 'fraction.js'
 import { TimestampUTCMs, get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 import { get_logger } from '@tbrpg/definitions'
 
-import { LIB, SCHEMA_VERSION, TICK_MS } from './consts'
-import { UState, TState } from './types'
+import { LIB, SCHEMA_VERSION, TICK_MS } from './consts.js'
+import { UState, TState } from './types.js'
 import {
 	get_milliseconds_to_next,
 	get_human_time_to_next,

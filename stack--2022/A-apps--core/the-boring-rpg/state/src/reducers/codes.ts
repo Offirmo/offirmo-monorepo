@@ -14,12 +14,12 @@ import * as ProgressState from '@tbrpg/state--progress'
 
 import { ItemQuality } from '@tbrpg/definitions'
 import { get_prng } from '@oh-my-rpg/state-prng'
-import { create as create_weapon } from '@oh-my-rpg/logic-weapons'
-import { create as create_armor } from '@oh-my-rpg/logic-armors'
+import { create as create_weapon } from '@tbrpg/logic-weapons'
+import { create as create_armor } from '@tbrpg/logic-armors'
 
 /////////////////////
 
-import { State } from '../types'
+import { State } from '../types.js'
 import { EngagementKey } from '../data/engagement'
 import { CODE_SPECS_BY_KEY } from '../data/codes'
 

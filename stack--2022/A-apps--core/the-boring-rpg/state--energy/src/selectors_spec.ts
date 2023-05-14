@@ -4,7 +4,7 @@ import Fraction from 'fraction.js'
 import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 import { dump_prettified_any } from '@offirmo-private/prettify-any'
 
-import {LIB, TICK_MS} from './consts'
+import {LIB, TICK_MS} from './consts.js'
 import {
 	UState,
 	TState,
@@ -17,7 +17,7 @@ import {
 	get_milliseconds_to_next,
 	get_available_energy_float,
 	get_human_time_to_next,
-} from '.'
+} from './index.js'
 
 
 // TODO fix energy limit

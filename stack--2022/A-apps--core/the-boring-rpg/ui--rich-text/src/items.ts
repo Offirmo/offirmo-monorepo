@@ -1,13 +1,13 @@
 import { Immutable } from '@offirmo-private/ts-types'
 import { ItemQuality, InventorySlot, Item } from '@tbrpg/definitions'
-import { Armor } from '@oh-my-rpg/logic-armors'
-import { Weapon } from '@oh-my-rpg/logic-weapons'
+import { Armor } from '@tbrpg/logic-armors'
+import { Weapon } from '@tbrpg/logic-weapons'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import { render_armor_short, render_armor_detailed } from './items--armor'
 import { render_weapon_short, render_weapon_detailed } from './items--weapon'
-import { RenderItemOptions } from './types'
-import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts'
+import { RenderItemOptions } from './types.js'
+import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.js'
 
 
 function decorate_with_common_item_props(i: Immutable<Item>, doc: RichText.Document): RichText.Document {

@@ -3,7 +3,7 @@ import { get_human_readable_UTC_timestamp_minutes } from '@offirmo-private/times
 
 import { CodeSpec, normalize_code, State as ProgressState } from '@oh-my-rpg/state-codes'
 
-import { State } from '../types'
+import { State } from '../types.js'
 import {
 	is_alpha,
 	is_registered_alpha_player,

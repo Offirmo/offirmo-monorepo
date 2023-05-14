@@ -3,7 +3,7 @@ import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 import {
 	CharacterClass,
 	State,
-} from './types'
+} from './types.js'
 
 /////////////////////
 

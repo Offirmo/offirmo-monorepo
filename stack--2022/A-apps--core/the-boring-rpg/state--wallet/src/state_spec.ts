@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { LIB, SCHEMA_VERSION } from './consts'
+import { LIB, SCHEMA_VERSION } from './consts.js'
 
 import {
 	Currency,
@@ -13,7 +13,7 @@ import {
 
 	get_currency_amount,
 	iterables_currency,
-} from '.'
+} from './index.js'
 
 describe('@oh-my-rpg/state-wallet - reducer', function() {
 	const EXPECTED_CURRENCY_SLOT_COUNT = 2

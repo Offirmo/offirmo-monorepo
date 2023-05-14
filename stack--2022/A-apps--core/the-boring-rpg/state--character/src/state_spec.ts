@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { SCHEMA_VERSION, LIB } from './consts'
+import { SCHEMA_VERSION, LIB } from './consts.js'
 import {
 	CharacterAttribute,
 	CharacterClass,
@@ -8,7 +8,7 @@ import {
 
 	create,
 	increase_stat,
-} from '.'
+} from './index.js'
 import { get_lib_SEC } from './sec'
 
 describe(`${LIB} - reducer`, function() {

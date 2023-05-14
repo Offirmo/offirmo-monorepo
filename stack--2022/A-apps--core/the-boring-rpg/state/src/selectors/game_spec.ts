@@ -4,7 +4,7 @@ import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 
-import { LIB } from '../consts'
+import { LIB } from '../consts.js'
 import {create, State} from '..'
 import {
 	get_available_classes,

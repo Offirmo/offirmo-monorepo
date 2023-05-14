@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { Random, Engine } from '@offirmo/random'
+import { Random, RNGEngine } from '@offirmo/random'
 
 import {
 	CoinsGain,
@@ -14,7 +14,7 @@ import {
 	ALL_BAD_ADVENTURE_ARCHETYPES,
 	ALL_GOOD_ADVENTURE_ARCHETYPES,
 	GOOD_ADVENTURE_ARCHETYPES_BY_TYPE,
-} from '.'
+} from './index.js'
 
 describe('@oh-my-rpg/logic-adventures - logic', function () {
 
@@ -41,7 +41,7 @@ describe('@oh-my-rpg/logic-adventures - logic', function () {
 	describe('bad adventures picker', function () {
 
 		it('should provide bad adventure archetypes', () => {
-			const rng: Engine = Random.engines.mt19937().seed(789)
+			const rng = get_engine.for_unit_tests()
 
 			const baa1 = pick_random_bad_archetype(rng)
 			expect(baa1.good).to.be.false
@@ -54,7 +54,7 @@ describe('@oh-my-rpg/logic-adventures - logic', function () {
 	describe('good adventures picker', function () {
 
 		it('should provide good adventure archetypes', () => {
-			const rng: Engine = Random.engines.mt19937().seed(789)
+			const rng = get_engine.for_unit_tests()
 
 			const baa1 = pick_random_good_archetype(rng)
 			expect(baa1.good).to.be.true
@@ -67,7 +67,7 @@ describe('@oh-my-rpg/logic-adventures - logic', function () {
 	describe('coin gain picker', function () {
 
 		it('should provide an amount proportional to the gain category', () => {
-			const rng: Engine = Random.engines.mt19937().seed(789)
+			const rng = get_engine.for_unit_tests()
 			const player_level = 1 / 1.1 // hack
 
 			const clS1 = generate_random_coin_gain_or_loss(rng, { range: CoinsGain.lossꘌsmall, player_level, current_wallet_amount: 100000 })
@@ -124,7 +124,7 @@ describe('@oh-my-rpg/logic-adventures - logic', function () {
 		it('should provide an amount proportional to the player level')
 
 		it('should cap the loss to the current wallet amount', () => {
-			const rng: Engine = Random.engines.mt19937().seed(789)
+			const rng = get_engine.for_unit_tests()
 			const player_level = 1 / 1.1 // hack
 
 			// -1  -6  -2

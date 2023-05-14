@@ -1,11 +1,11 @@
 import { enforce_immutability } from '@offirmo-private/state-utils'
 import { expect } from 'chai'
 
-import { LIB, SCHEMA_VERSION } from './consts'
+import { LIB, SCHEMA_VERSION } from './consts.js'
 import {
 	create,
 	attempt_to_redeem_code,
-} from '.'
+} from './index.js'
 import { get_lib_SEC } from './sec'
 
 import { CodesConditions, CODESPECS_BY_KEY } from './test'

@@ -1,7 +1,7 @@
 /////////////////////
 
 import { Immutable} from '@offirmo-private/ts-types'
-import { Random, Engine } from '@offirmo/random'
+import { Random, RNGEngine } from '@offirmo/random'
 import { get_human_readable_UTC_timestamp_days } from '@offirmo-private/timestamps'
 import { get_revision, complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
 
@@ -17,7 +17,7 @@ import {
 
 /////////////////////
 
-import { State } from '../types'
+import { State } from '../types.js'
 
 import {
 	get_available_energy_float,

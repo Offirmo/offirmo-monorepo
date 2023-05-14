@@ -4,7 +4,7 @@ import * as Character from '@tbrpg/state--character'
 import * as Inventory from '@tbrpg/state--inventory'
 import * as Progress from '@tbrpg/state--progress'
 
-import { Power } from './types'
+import { Power } from './types.js'
 import { appraise_powerⵧequipment } from './appraisal--equipment'
 
 export function appraise_powerⵧoverall(

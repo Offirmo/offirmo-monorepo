@@ -9,7 +9,7 @@ import {
 
 const rich_text_to_ansi = require('@offirmo-private/rich-text-format-to-ansi')
 
-import { render_achievements_snapshot } from '.'
+import { render_achievements_snapshot } from './index.js'
 
 describe('🔠  view to @offirmo-private/rich-text-format - achievements', function() {
 

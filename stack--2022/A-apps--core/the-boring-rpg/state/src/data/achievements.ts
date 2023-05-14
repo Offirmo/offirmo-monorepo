@@ -5,11 +5,11 @@ import { appraise_sell_value, appraise_power } from '@tbrpg/logic--shop'
 import { AchievementStatus, AchievementDefinition } from '@tbrpg/state--progress'
 import { CharacterClass, DEFAULT_AVATAR_NAME } from '@tbrpg/state--character'
 import { get_item_in_slot } from '@tbrpg/state--inventory'
-import { Weapon, matches as matches_weapon } from '@oh-my-rpg/logic-weapons'
-import { Armor, matches as matches_armor } from '@oh-my-rpg/logic-armors'
+import { Weapon, matches as matches_weapon } from '@tbrpg/logic-weapons'
+import { Armor, matches as matches_armor } from '@tbrpg/logic-armors'
 import { ALL_GOOD_ADVENTURE_ARCHETYPES } from '@oh-my-rpg/logic-adventures'
 
-import { UState } from '../types'
+import { UState } from '../types.js'
 import { STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC } from '../reducers/create'
 
 // ’

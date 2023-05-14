@@ -4,7 +4,7 @@ import { Immutable} from '@offirmo-private/ts-types'
 import { Enum } from 'typescript-string-enums'
 
 import { generate_uuid } from '@offirmo-private/uuid'
-import { Random, Engine } from '@offirmo/random'
+import { Random, RNGEngine } from '@offirmo/random'
 
 import { InventorySlot } from '@tbrpg/definitions'
 
@@ -32,18 +32,18 @@ import {
 	MAX_ENHANCEMENT_LEVEL as MAX_WEAPON_ENHANCEMENT_LEVEL,
 	is_at_max_enhancement as is_weapon_at_max_enhancement,
 	DEMO_WEAPON_1,
-} from '@oh-my-rpg/logic-weapons'
+} from '@tbrpg/logic-weapons'
 import {
 	Armor,
 	create as create_armor,
 	enhance as enhance_armor,
 	MAX_ENHANCEMENT_LEVEL as MAX_ARMOR_ENHANCEMENT_LEVEL,
-} from '@oh-my-rpg/logic-armors'
+} from '@tbrpg/logic-armors'
 
 import {
 	create as create_monster,
 	DEMO_MONSTER_01,
-} from '@oh-my-rpg/logic-monsters'
+} from '@tbrpg/logic-monsters'
 
 import {
 	CoinsGain,
@@ -60,9 +60,9 @@ import {
 import {
 	State,
 	Adventure,
-} from '../../types'
+} from '../../types.js'
 
-import { LIB } from '../../consts'
+import { LIB } from '../../consts.js'
 
 import {
 	_receive_stat_increase,

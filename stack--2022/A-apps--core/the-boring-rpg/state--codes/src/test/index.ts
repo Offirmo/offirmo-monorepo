@@ -1,7 +1,7 @@
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
 import normalize_code from '../normalize-code'
-import { CodeSpec, State } from '../types'
+import { CodeSpec, State } from '../types.js'
 
 ////////////
 // for test only

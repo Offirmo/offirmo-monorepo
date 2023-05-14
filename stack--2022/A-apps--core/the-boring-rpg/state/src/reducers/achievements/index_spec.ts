@@ -4,10 +4,10 @@ import { expect } from 'chai'
 import { AchievementStatus, AchievementDefinition } from '@tbrpg/state--progress'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 
-import { LIB } from '../../consts'
-import { State, UState } from '../../types'
+import { LIB } from '../../consts.js'
+import { State, UState } from '../../types.js'
 import { create } from '..'
-import { _refresh_achievements } from '.'
+import { _refresh_achievements } from './index.js'
 import ACHIEVEMENT_DEFINITIONS from '../../data/achievements'
 
 

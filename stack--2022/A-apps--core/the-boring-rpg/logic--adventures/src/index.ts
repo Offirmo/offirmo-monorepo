@@ -1,14 +1,14 @@
 /////////////////////
 
 import assert from 'tiny-invariant'
-import { Random, Engine } from '@offirmo/random'
+import { Random, RNGEngine } from '@offirmo/random'
 
 import {
 	CoinsGain,
 	AdventureType,
 	OutcomeArchetype,
 	AdventureArchetype,
-} from './types'
+} from './types.js'
 
 import { i18n_messages, ENTRIES } from './data'
 

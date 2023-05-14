@@ -1,7 +1,7 @@
 /////////////////////
 
 import { Immutable} from '@offirmo-private/ts-types'
-import { Random, Engine } from '@offirmo/random'
+import { Random, RNGEngine } from '@offirmo/random'
 
 /////////////////////
 
@@ -24,8 +24,8 @@ import {
 
 /////////////////////
 
-import { LIB } from '../../consts'
-import { State, UState } from '../../types'
+import { LIB } from '../../consts.js'
+import { State, UState } from '../../types.js'
 import { _play_adventure } from './play_adventure'
 
 /////////////////////
@@ -33,7 +33,7 @@ import { _play_adventure } from './play_adventure'
 const ADVENTURE_BAD_NON_REPETITION_ID = 'adventure_archetype--bad'
 const ADVENTURE_BAD_NON_REPETITION_COUNT = 2
 
-function pick_random_non_repetitive_bad_archetype(u_state: Immutable<UState>, rng: Engine): Immutable<AdventureArchetype> {
+function pick_random_non_repetitive_bad_archetype(u_state: Immutable<UState>, rng: RNGEngine): Immutable<AdventureArchetype> {
 	let archetype: AdventureArchetype
 
 	regenerate_until_not_recently_encountered({

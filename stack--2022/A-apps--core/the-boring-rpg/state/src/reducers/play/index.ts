@@ -11,7 +11,7 @@ import * as ProgressState from '@tbrpg/state--progress'
 
 /////////////////////
 
-import { State } from '../../types'
+import { State } from '../../types.js'
 
 import { will_next_play_be_good_at } from '../../selectors'
 import { _update_to_now } from '../internal'

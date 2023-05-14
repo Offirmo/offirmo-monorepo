@@ -10,8 +10,8 @@ import * as RichText from '@offirmo-private/rich-text-format'
 import { render_item_short } from './items'
 import { render_currency_amount } from './wallet'
 import { render_monster } from './monster'
-import { RenderItemOptions } from './types'
-import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts'
+import { RenderItemOptions } from './types.js'
+import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.js'
 
 
 function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItemOptions> = DEFAULT_RENDER_ITEM_OPTIONS): RichText.Document {

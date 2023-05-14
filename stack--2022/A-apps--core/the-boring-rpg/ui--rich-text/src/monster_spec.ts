@@ -1,11 +1,11 @@
 import { expect } from 'chai'
 
-import { generate_random_demo_monster } from '@oh-my-rpg/logic-monsters'
+import { generate_random_demo_monster } from '@tbrpg/logic-monsters'
 const rich_text_to_ansi = require('@offirmo-private/rich-text-format-to-ansi')
 
 import {
 	render_monster,
-} from '.'
+} from './index.js'
 
 
 describe('🔠  view to @offirmo-private/rich-text-format - monster', function() {

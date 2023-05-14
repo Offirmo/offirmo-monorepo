@@ -1,7 +1,7 @@
 import { enforce_immutability } from '@offirmo-private/state-utils'
 import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
 
-import { UState, TState } from './types'
+import { UState, TState } from './types.js'
 
 /////////////////////
 // a full featured, non-trivial demo state

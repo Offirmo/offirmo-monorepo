@@ -4,8 +4,8 @@ import { Immutable} from '@offirmo-private/ts-types'
 import { InventorySlot, Element } from '@tbrpg/definitions'
 import { is_full } from '@tbrpg/state--inventory'
 import { appraise_sell_value, appraise_power } from '@tbrpg/logic--shop'
-import { Weapon } from '@oh-my-rpg/logic-weapons'
-import { Armor } from '@oh-my-rpg/logic-armors'
+import { Weapon } from '@tbrpg/logic-weapons'
+import { Armor } from '@tbrpg/logic-armors'
 import {
 	Item,
 	get_item as _get_item,
@@ -14,7 +14,7 @@ import {
 
 /////////////////////
 
-import { UState } from '../types'
+import { UState } from '../types.js'
 
 /////////////////////
 
