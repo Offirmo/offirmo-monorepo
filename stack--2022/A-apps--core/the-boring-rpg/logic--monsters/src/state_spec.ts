@@ -27,36 +27,40 @@ function _assert_shape(monster: Readonly<Monster>) {
 	expect(monster.possible_emoji).to.have.lengthOf(2) // emoji
 }
 
-describe('@oh-my-rpg/logic-monsters - factory', function() {
 
-	it('should allow creating a random monster', function() {
-		const rng = get_engine.for_unit_tests()
-		expect(rng.get_state().call_count, '# rng draws 1').to.equal(0)
+describe('@tbrpg/logic-monsters - state', function() {
 
-		const monster1 = create(rng)
-		_assert_shape(monster1)
+	describe('create()', function () {
 
-		expect(rng.get_state().call_count, '# rng draws 1').to.equal(4)
+		it('should allow creating a random monster', function() {
+			const rng = get_engine.for_unit_tests()
+			expect(rng.get_state().call_count, '# rng draws 1').to.equal(0)
 
-		const monster2 = create(rng)
-		_assert_shape(monster2)
-		expect(rng.get_state().call_count, '# rng draws 2').to.equal(10)
-		expect(monster2).not.to.deep.equal(monster1)
-	})
+			const monster1 = create(rng)
+			_assert_shape(monster1)
 
-	it('should allow creating a partially predefined monster', function() {
-		const rng = get_engine.for_unit_tests()
-		const monster = create(rng, {
-			name: 'crab',
-			level: 12,
+			expect(rng.get_state().call_count, '# rng draws 1').to.equal(3) // name + level + rank
+
+			const monster2 = create(rng)
+			_assert_shape(monster2)
+			expect(rng.get_state().call_count, '# rng draws 2').to.equal(6) // x2
+			expect(monster2).not.to.deep.equal(monster1)
 		})
-		_assert_shape(monster)
-		expect(monster).to.deep.equal({
-			name: 'crab',
-			level: 12,
-			rank: MonsterRank.common,
-			possible_emoji: '🦀',
+
+		it('should allow creating a partially predefined monster', function() {
+			const rng = get_engine.for_unit_tests()
+			const monster = create(rng, {
+				name: 'crab',
+				level: 12,
+			})
+			_assert_shape(monster)
+			expect(monster).to.deep.equal({
+				name: 'crab',
+				level: 11, // yes, we automatically "wiggle" a little bit around the hinted rank
+				rank: MonsterRank.common,
+				possible_emoji: '🦀',
+			})
+			expect(rng.get_state().call_count, '# rng draws').to.equal(2) // only the level variation + rank
 		})
-		expect(rng.get_state().call_count, '# rng draws').to.equal(3) // less random picks
 	})
 })

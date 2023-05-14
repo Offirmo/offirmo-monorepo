@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import { Enum } from 'typescript-string-enums'
 
 import { InventorySlot, ItemQuality, ElementType, xxx_test_unrandomize_element } from '@tbrpg/definitions'
-import { get_engine, RNGEngine } from '@offirmo/random'
+import { get_engine } from '@offirmo/random'
 
 import { LIB } from './consts.js'
 import {

@@ -2,6 +2,7 @@ import {
 	UnicodeCharDetails,
 	UNICODE_CHARS,
 } from '@offirmo-private/unicode-data'
+import { Immutable } from '@offirmo-private/ts-types'
 
 interface RawMonsterEntry {
 	name: string
@@ -9,9 +10,9 @@ interface RawMonsterEntry {
 }
 
 const EMOJI_ENTRIES: Readonly<RawMonsterEntry>[] = Object.keys(UNICODE_CHARS)
-	.map(key => UNICODE_CHARS[key])
-	.filter(charDetails => charDetails.taxonomy.includes('monster'))
-	.map((charDetails: UnicodeCharDetails) => ({
+	.map((key: keyof typeof UNICODE_CHARS) => UNICODE_CHARS[key]!)
+	.filter(charDetails => charDetails!.taxonomy.includes('monster'))
+	.map((charDetails: Immutable<UnicodeCharDetails>) => ({
 		name: charDetails.properties.description,
 		emoji: charDetails.char,
 	}))
@@ -52,6 +53,6 @@ const EXTRA_ENTRIES: Readonly<RawMonsterEntry>[] = [
 const ENTRIES: Readonly<RawMonsterEntry>[] = ([] as RawMonsterEntry[]).concat(...EMOJI_ENTRIES, ...EXTRA_ENTRIES)
 
 export {
-	RawMonsterEntry,
+	type RawMonsterEntry,
 	ENTRIES,
 }
