@@ -1,7 +1,9 @@
 import {
 	get_random_generator_ofꓽbool,
 	get_random_generator_ofꓽboolⵧweighted,
-	get_random_generator_ofꓽintegerⵧbetween, get_random_generator_ofꓽintegerⵧin_interval, get_random_picker,
+	get_random_generator_ofꓽintegerⵧbetween,
+	get_random_generator_ofꓽintegerⵧin_interval,
+	get_random_picker,
 } from './distributions/index.js'
 import { get_RNGⵧISAAC32 } from './engines/ISAAC/index.js'
 import { get_RNGⵧMathᐧrandom } from './engines/MathRandom/index.js'

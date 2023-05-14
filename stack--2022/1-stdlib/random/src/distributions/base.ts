@@ -12,12 +12,13 @@ export function _randomly_generateꓽintegerⵧInt32(engine: Immutable<RNGEngine
 
 // 53bits = limit of
 // [0, 0x1f_ffff_ffff_ffff]
+/*
 export function _randomly_generateꓽintegerⵧUInt53(engine: Immutable<RNGEngine>): ReturnType<RandomValueGenerator<UInt53>> {
 	const high = engine.get_Int32()
 	const low = engine.get_Int32()
 
-	return high * 0x100000000 + low
-}
+	return high * 0x1_0000_0000 + low
+}*/
 
 /////// factories
 
@@ -25,22 +26,7 @@ export function get_random_generator_ofꓽintegerⵧInt32(): RandomValueGenerato
 	return _randomly_generateꓽintegerⵧInt32
 }
 
+/*
 export function get_random_generator_ofꓽintegerⵧUInt53(): RandomValueGenerator<Int32> {
 	return _randomly_generateꓽintegerⵧUInt53
-}
-
-/*
-function _get_random_Int32(engine: Immutable<RNGEngine>): ReturnType<RandomValueGenerator<Int32>> {
-	const high = (() => {
-		const i = engine.get_Int32()
-		return i & 0x1fffff
-	})()
-
-	const low = (() => {
-		const i = engine.get_Int32()
-		return i >>> 0
-	})()
-
-	return high * 0x100000000 + low
-}
-*/
+}*/

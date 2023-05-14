@@ -3,7 +3,6 @@ import { Immutable, Percentage } from '../embedded-deps/types/index.js'
 import { assert } from '../embedded-deps/assert/index.js'
 import { RandomValueGenerator } from './types.js'
 import { _get_generator_of_a_constant } from './_internal.js'
-//import { _randomly_generateꓽintegerⵧUInt53 } from './base.js'
 
 
 function _is_last_bitꘌ1(i: Int32): boolean {
@@ -26,21 +25,32 @@ export function get_random_generator_ofꓽboolⵧweighted(percentage: Percentage
 	if (percentage === 1)
 		return _get_generator_of_a_constant(true)
 
-	throw new Error('Not Implemented!')
-/*	const scaled_percentageⵧfast = percentage * 0x1_0000_0000;
-	const is_scaled_percentageⵧfast_good_enough = Number.isInteger(scaled_percentageⵧfast)
-	if (is_scaled_percentageⵧfast_good_enough) {
-		const ceil = scaled_percentageⵧfast - 0x80_000_000
-		return function _randomly_generateꓽboolⵧweightedⵧfast(engine: Immutable<RNGEngine>) {
-			const i = engine.get_Int32()
-			return i < ceil
-		}
+	// scale the percentage to Int32
+	// while not 100% precise, the precision should be plenty enough
+	let scaled_percentageⵧ32bits = percentage * 0x1_0000_0000;
+	const is_scaled_percentageⵧ32bits_perfect = Number.isInteger(scaled_percentageⵧ32bits)
+	if (!is_scaled_percentageⵧ32bits_perfect) {
+		// In case the 32bits scaling doesn't fall on an integer,
+		// the original library (random.js) used to scale to 53 bits = max possible in js
+		// this was at the cost of speed, drawing 53bits being twice more costly (2x 32 bits)
+		// and not always pertinent since irrational binary numbers may not benefit from a scaling to more bits
+		// In this lib, we consider that a precision of 1/4_294_967_295 is plenty good enough!
+		// TODO consider a warning if too close to 0 or 1?
+		scaled_percentageⵧ32bits = Math.round(scaled_percentageⵧ32bits) // really needed?
 	}
 
-	// we need to scale more, at the cost of drawing more randomness
-	const ceil = Math.round(percentage * 0x20_000_000_000_000)
-	return function _randomly_generateꓽboolⵧweightedⵧslow(engine: Immutable<RNGEngine>) {
-		const i = _get_random_UInt53(engine)
+	const ceil = scaled_percentageⵧ32bits - 0x8000_0000 // convert to unsigned
+	/*console.log({
+		percentage,
+		bounds: {
+			min: -(2 ** 31 - 1),
+			max: 2 ** 31 - 1,
+		},
+		scaled_percentageⵧ32bits,
+		ceil,
+	})*/
+	return function _randomly_generateꓽboolⵧweighted(engine: Immutable<RNGEngine>) {
+		const i = engine.get_Int32()
 		return i < ceil
-	}*/
+	}
 }
