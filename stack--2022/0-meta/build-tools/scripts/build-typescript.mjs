@@ -19,12 +19,14 @@ const cli = meow('build', {
 	flags: {
 		module: {
 			type: 'string',
-			default: 'esm,cjs', // also allowed: 'esm' | 'cjs' | (comma-separated combo)
+			isMultiple: true,
+			choices: ['esm', 'cjs'],
+			default: ['esm', 'cjs'], // by default this script builds all of those
 		},
 		watch: {
+			// if true, only the first "module" is built and continuously rebuilt
 			type: 'boolean',
 			default: false,
-			// - if true, only the first mode is built and continuously rebuilt
 		},
 	},
 })
@@ -139,8 +141,6 @@ function build_esm() {
 // CJS is usable in both node and bundled frontend,
 // thus we build only this one in watch = dev mode.
 // (update marker) as of 2022/05 the ecosystem (typescript) is not ready for pure ESM
-const target_modules = cli.flags.module.split(',')
-assert(target_modules.length && target_modules.every(e => e === 'esm' || e === 'cjs'), `Unknown value for --module="${cli.flags.module}"!`)
 Promise.resolve()
 	.then(() => {
 		if (cli.flags.watch) {
@@ -157,7 +157,7 @@ Promise.resolve()
 			}
 
 			// watch = single mode
-			switch(target_modules[0]) {
+			switch(cli.flags.module[0]) {
 				case 'esm':
 					return build_esm()
 				case 'cjs':
@@ -169,13 +169,13 @@ Promise.resolve()
 	})
 	.then(() => {
 		if (cli.flags.watch) return
-		if (!target_modules.includes('esm')) return
+		if (!cli.flags.module.includes('esm')) return
 
 		return build_esm()
 	})
 	.then(() => {
 		if (cli.flags.watch) return
-		if (!target_modules.includes('cjs')) return
+		if (!cli.flags.module.includes('cjs')) return
 
 		return build_cjs()
 	})
