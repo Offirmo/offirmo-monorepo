@@ -1,15 +1,14 @@
 import { expect } from 'chai'
 import { Enum } from 'typescript-string-enums'
 
-import { Random, RNGEngine } from '@offirmo/random'
-
 import { CoinsGain } from '../types.js'
 import {
 	RawAdventureArchetypeEntry,
 	i18n_messages,
 	ENTRIES,
 } from './index.js'
-import { OFFIRMO_BLAND_REPARTITION_ADJUSTMENT } from './i18n_en'
+import { OFFIRMO_BLAND_REPARTITION_ADJUSTMENT } from './i18n_en.js'
+
 
 const DISTRIB_ADJUSTMENT_ENTRIES_HIDS: string[] = [
 	...Object.keys(OFFIRMO_BLAND_REPARTITION_ADJUSTMENT),
@@ -17,7 +16,7 @@ const DISTRIB_ADJUSTMENT_ENTRIES_HIDS: string[] = [
 ]
 
 describe('@oh-my-rpg/logic-adventures - data:', function () {
-	const _: any = i18n_messages.en
+	const _: any = i18n_messages['en']
 	const ARCHETYPES: { [key: string]: RawAdventureArchetypeEntry } = {}
 	ENTRIES.forEach(entry => ARCHETYPES[entry.hid] = entry)
 
@@ -42,8 +41,8 @@ describe('@oh-my-rpg/logic-adventures - data:', function () {
 			it('should have the correct format', () => {
 				expect(ARCHETYPES[hid]).to.have.property('good')
 				expect(ARCHETYPES[hid]).to.have.property('outcome')
-				if (ARCHETYPES[hid].good)
-					expect(Object.keys(ARCHETYPES[hid].outcome).length, 'outcome length').to.be.above(0)
+				if (ARCHETYPES[hid]!.good)
+					expect(Object.keys(ARCHETYPES[hid]!.outcome).length, 'outcome length').to.be.above(0)
 			})
 
 			it('should have an en i18n message', () => {

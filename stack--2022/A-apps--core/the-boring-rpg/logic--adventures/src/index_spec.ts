@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { Random, RNGEngine } from '@offirmo/random'
+import { get_engine } from '@offirmo/random'
 
 import {
 	CoinsGain,
@@ -29,11 +29,11 @@ describe('@oh-my-rpg/logic-adventures - logic', function () {
 				throw new Error('Data sanity failure: ALL_BAD_ADVENTURE_ARCHETYPES')
 			if (ALL_GOOD_ADVENTURE_ARCHETYPES.length < 100)
 				throw new Error('Data sanity failure: ALL_GOOD_ADVENTURE_ARCHETYPES')
-			if (GOOD_ADVENTURE_ARCHETYPES_BY_TYPE.fight.length !== 6) {
-				console.error(GOOD_ADVENTURE_ARCHETYPES_BY_TYPE.fight)
+			if (GOOD_ADVENTURE_ARCHETYPES_BY_TYPE['fight']!.length !== 6) {
+				console.error(GOOD_ADVENTURE_ARCHETYPES_BY_TYPE['fight'])
 				throw new Error('Data sanity failure: GOOD_ADVENTURE_ARCHETYPES_BY_TYPE.fight')
 			}
-			if (GOOD_ADVENTURE_ARCHETYPES_BY_TYPE.story.length < 100)
+			if (GOOD_ADVENTURE_ARCHETYPES_BY_TYPE['story']!.length < 100)
 				throw new Error('Data sanity failure: GOOD_ADVENTURE_ARCHETYPES_BY_TYPE.story')
 		})
 	})

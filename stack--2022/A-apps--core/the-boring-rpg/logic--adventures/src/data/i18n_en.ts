@@ -639,7 +639,7 @@ You gain +{{luck}} luck!
 	`,
 }
 
-const OFFIRMO_INPIRED_FROM_VIDEOGAMES: I18nMessages = {
+const OFFIRMO_INSPIRED_FROM_VIDEOGAMES: I18nMessages = {
 
 	// LOTRO
 	visual_effect: `
@@ -1157,8 +1157,7 @@ Following this conversation, you buy an upgrade for your armor, it is now strong
 }
 
 export const OFFIRMO_BLAND_REPARTITION_ADJUSTMENT: I18nMessages = {
-	// we can change the target attribute to improve the distribution
-
+	// change the target attribute to fix the distribution
 
 	found_random_mushroom: `
 You find a golden mushroom and eat it.
@@ -1222,6 +1221,7 @@ You read it and learn from their failure: +{{attr}} {{attr_name}}!`,
 }
 
 const OFFIRMO_TECHNICALS: I18nMessages = {
+	// used if the user has 0 coin
 	found_coin: `
 You find a coin on the ground!`,
 }
@@ -1240,7 +1240,7 @@ const raw_messages: I18nMessages = {
 		...OFFIRMO_INSPIRED_FROM_RPG_MEMES_FROM_THE_NET,
 		...OFFIRMO_INSPIRED_FROM_NET_RSRCS,
 		...OFFIRMO_INSPIRED_FROM_INSTAGRAM_POSTS,
-		...OFFIRMO_INPIRED_FROM_VIDEOGAMES,
+		...OFFIRMO_INSPIRED_FROM_VIDEOGAMES,
 		...OFFIRMO_INSPIRED_FROM_MANGAS,
 		...OFFIRMO_INSPIRED_BY_POPULAR_CULTURE,
 
@@ -1254,10 +1254,10 @@ const messages: I18nMessages = {
 	adventures: {},
 }
 
-Object.keys(raw_messages.adventures)
+Object.keys(raw_messages['adventures']!)
 	.filter(key => !key.startsWith('xxx'))
 	.forEach((entry: string) => {
-		(messages.adventures as any)[entry] = clean_multiline_string((raw_messages as any).adventures[entry])
+		(messages['adventures'] as any)[entry] = clean_multiline_string((raw_messages as any).adventures[entry])
 	})
 
 function clean_multiline_string(str: string): string {

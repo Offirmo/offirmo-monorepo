@@ -10,7 +10,7 @@ interface Shop {
 }
 
 export {
-	Shop,
+	type Shop,
 }
 
 /////////////////////

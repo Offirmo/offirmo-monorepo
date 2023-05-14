@@ -74,8 +74,8 @@ type OutcomeArchetype = AdventureArchetype['outcome']
 export {
 	CoinsGain,
 	AdventureType,
-	AdventureArchetype,
-	OutcomeArchetype,
+	type AdventureArchetype,
+	type OutcomeArchetype,
 }
 
 /////////////////////

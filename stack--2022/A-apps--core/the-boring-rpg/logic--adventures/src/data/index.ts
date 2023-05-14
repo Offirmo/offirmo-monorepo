@@ -1,6 +1,6 @@
 import { I18nMessages } from '@offirmo-private/ts-types'
 
-import { messages as en } from './i18n_en'
+import { messages as en } from './i18n_en.js'
 
 // TODO type better? (coins)
 import { CoinsGain, OutcomeArchetype, AdventureType } from '../types.js'
@@ -254,7 +254,7 @@ const i18n_messages: Readonly<I18nMessages> = {
 
 
 export {
-	RawAdventureArchetypeEntry,
+	type RawAdventureArchetypeEntry,
 	ENTRIES,
 	i18n_messages,
 }
