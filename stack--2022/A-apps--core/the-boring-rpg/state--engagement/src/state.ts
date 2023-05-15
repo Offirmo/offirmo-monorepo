@@ -1,4 +1,4 @@
-/////////////////////
+//////////////////////////////////////////////////////////////////////
 
 import assert from 'tiny-invariant'
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
@@ -11,11 +11,11 @@ import {
 	State,
 } from './types.js'
 
-import { OMRSoftExecutionContext, get_lib_SEC } from './sec'
+import { SoftExecutionContext, get_lib_SEC } from './sec.js'
 
-/////////////////////
+//////////////////////////////////////////////////////////////////////
 
-function create(SEC?: OMRSoftExecutionContext): Immutable<State> {
+function create(SEC?: SoftExecutionContext): Immutable<State> {
 	return get_lib_SEC(SEC).xTry('create', () => {
 		return enforce_immutability<State>({
 			schema_version: SCHEMA_VERSION,
@@ -77,7 +77,7 @@ function acknowledge_all_seen(state: Immutable<State>): Immutable<State> {
 	}
 }
 
-/////////////////////
+//////////////////////////////////////////////////////////////////////
 
 export {
 	create,
@@ -86,4 +86,4 @@ export {
 	acknowledge_all_seen,
 }
 
-/////////////////////
+//////////////////////////////////////////////////////////////////////

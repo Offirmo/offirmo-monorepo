@@ -1,5 +1,5 @@
 export * from './types.js'
 export * from './examples.js'
-export * from './selectors'
+export * from './selectors.js'
 export * from './state.js'
-export * from './migrations'
+export * from './migrations.js'

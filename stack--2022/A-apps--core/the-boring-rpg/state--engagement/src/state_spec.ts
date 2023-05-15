@@ -1,14 +1,18 @@
+//////////////////////////////////////////////////////////////////////
+
 import { expect } from 'chai'
 
 import { SCHEMA_VERSION } from './consts.js'
 import {
 	create,
 } from './index.js'
-import { get_lib_SEC } from './sec'
+import { get_lib_SEC } from './sec.js'
 
-describe('@oh-my-rpg/state-engagement - reducer', function() {
+//////////////////////////////////////////////////////////////////////
 
-	describe('🆕  initial state', function() {
+describe('@oh-my-rpg/state-engagement - state', function() {
+
+	describe('🆕  create()', function() {
 
 		it('should have correct defaults', function() {
 			const state = create(get_lib_SEC())

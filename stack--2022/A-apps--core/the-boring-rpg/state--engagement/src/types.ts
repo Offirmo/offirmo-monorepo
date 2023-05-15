@@ -1,13 +1,15 @@
+//////////////////////////////////////////////////////////////////////
+
 import { Enum } from 'typescript-string-enums'
 
 import { BaseUState } from '@offirmo-private/state-utils'
 
-/////////////////////
+//////////////////////////////////////////////////////////////////////
 
 const EngagementType = Enum(
 	'flow', // normal immediate feedback to user actions
 	'aside', // side message like an achievement
-	'warning', // side message with an higher priority
+	'warning', // side message with a higher priority
 	// 'full_transient', // full screen like a level up
 	// 'announcement',
 	// 'modal', // so important that it must be acknowledged
@@ -47,10 +49,10 @@ interface State extends BaseUState {
 
 export {
 	EngagementType,
-	Engagement,
-	EngagementParams,
-	PendingEngagement,
-	State,
+	type Engagement,
+	type EngagementParams,
+	type PendingEngagement,
+	type State,
 }
 
-/////////////////////
+//////////////////////////////////////////////////////////////////////
