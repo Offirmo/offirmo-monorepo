@@ -45,7 +45,7 @@ describe('Params', function() {
 			const now_utc_ms = Number(new Date())
 
 			beforeEach(() => {
-				test_params = JSON.parse(JSON.stringify(get_params()))
+				test_params = structuredClone(get_params())
 				test_params.default_timezones = []
 			})
 

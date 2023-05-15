@@ -204,11 +204,11 @@ export function get_test_single_file_state_generator(stategen_to_copy?: Immutabl
 			)
 
 			let notes: null | Immutable<PersistedNotes> = (() => {
-				const notes = JSON.parse(JSON.stringify(
+				const notes = structuredClone(
 					inputs.notes === 'auto'
 						? _get_auto_notes(inputs)
 						: inputs.notes
-				)) as PersistedNotes
+				) as PersistedNotes
 				if (notes)
 					notes._currently_known_as = inputs.basenameⵧcurrent
 				return notes

@@ -54,7 +54,7 @@ describe(`${LIB} - file (state)`, function() {
 				) {
 					const first_encounter_final_state = first_encounter_stategen.create_state()
 					const bcdm_1st_encounter = get_best_creation_date‿meta(first_encounter_final_state)
-					const notes_from_first_encounter = JSON.parse(JSON.stringify(first_encounter_final_state.notes))
+					const notes_from_first_encounter = structuredClone(first_encounter_final_state.notes)
 
 					switch (mode) {
 						case 're-encounter--same': {

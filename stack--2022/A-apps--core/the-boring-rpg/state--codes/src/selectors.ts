@@ -2,7 +2,7 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from './consts.js'
 import {State, CodeSpec, CodeRedemption} from './types.js'
-import normalize_code from './normalize-code'
+import normalize_code from './normalize-code.js'
 
 /////////////////////
 

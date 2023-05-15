@@ -11,13 +11,13 @@ import {
 	State,
 } from './types.js'
 
-import { is_code_redeemable } from './selectors'
+import { is_code_redeemable } from './selectors.js'
 
-import { OMRSoftExecutionContext, get_lib_SEC } from './sec'
+import { SoftExecutionContext, get_lib_SEC } from './sec.js'
 
 /////////////////////
 
-function create(SEC?: OMRSoftExecutionContext): Immutable<State> {
+function create(SEC?: SoftExecutionContext): Immutable<State> {
 	return get_lib_SEC(SEC).xTry('create', () => {
 		return enforce_immutability<State>({
 			schema_version: SCHEMA_VERSION,

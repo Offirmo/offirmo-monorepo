@@ -1,20 +1,17 @@
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
-import { OMRSoftExecutionContext, decorate_SEC } from '@tbrpg/definitions'
+import { getRootSEC, SoftExecutionContext } from '@offirmo-private/soft-execution-context'
 
-import { LIB } from './consts'
+import { LIB } from './consts.js'
 
-function get_lib_SEC(parent?: OMRSoftExecutionContext): OMRSoftExecutionContext {
-	return decorate_SEC(
-		(parent || getRootSEC())
-			.createChild()
-			.setLogicalStack({module: LIB})
-			.setAnalyticsAndErrorDetails({
-				sub_product: 'state-codes',
-			}),
-	)
+function get_lib_SEC(parent?: SoftExecutionContext): SoftExecutionContext {
+	return (parent || getRootSEC())
+		.createChild()
+		.setLogicalStack({ module: LIB })
+		.setAnalyticsAndErrorDetails({
+			sub_product: 'state-codes',
+		})
 }
 
 export {
-	OMRSoftExecutionContext,
+	type SoftExecutionContext,
 	get_lib_SEC,
 }

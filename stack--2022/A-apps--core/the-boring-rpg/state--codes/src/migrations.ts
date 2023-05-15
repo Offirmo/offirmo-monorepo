@@ -1,8 +1,8 @@
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
-import { LIB, SCHEMA_VERSION } from './consts'
-import { State } from './types'
-import { OMRSoftExecutionContext, get_lib_SEC } from './sec'
+import { LIB, SCHEMA_VERSION } from './consts.js'
+import { State } from './types.js'
+import { SoftExecutionContext, get_lib_SEC } from './sec.js'
 
 // some hints may be needed to migrate to demo state
 // need to export them for composing tests
@@ -11,7 +11,7 @@ const MIGRATION_HINTS_FOR_TESTS = enforce_immutability<any>({
 
 /////////////////////
 
-function migrate_to_latest(SEC: OMRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): State {
+function migrate_to_latest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): State {
 	const existing_version = (legacy_state && legacy_state.schema_version) || 0
 
 	SEC = get_lib_SEC(SEC)
@@ -32,7 +32,7 @@ function migrate_to_latest(SEC: OMRSoftExecutionContext, legacy_state: Immutable
 			SEC.fireAnalyticsEvent('schema_migration.began')
 
 			try {
-				state = migrate_to_2(SEC, legacy_state, hints)
+				state = migrate_to_X(SEC, legacy_state, hints)
 			}
 			catch (err) {
 				SEC.fireAnalyticsEvent('schema_migration.failed')
@@ -51,7 +51,7 @@ function migrate_to_latest(SEC: OMRSoftExecutionContext, legacy_state: Immutable
 
 /////////////////////
 
-function migrate_to_2(SEC: OMRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any>): State {
+function migrate_to_X(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any>): State {
 	throw new Error('Schema is too old (pre-beta), can’t migrate!')
 }
 

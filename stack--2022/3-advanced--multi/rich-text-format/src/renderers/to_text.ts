@@ -172,7 +172,7 @@ const on_concatenate_sub_node: WalkerReducer<State, OnConcatenateSubNodeParams<S
 				str: sub_str,
 				starts_with_block: sub_starts_with_block,
 		},
-		state: JSON.parse(JSON.stringify(state)),
+		state: structuredClone(state),
 	})*/
 
 	if (state.str.length === 0) {
@@ -202,7 +202,7 @@ const callbacks: Partial<WalkerCallbacks<State, Options>> = {
 		sub_nodes: [],
 	}),
 	on_concatenate_str: ({state, str}: OnConcatenateStringParams<State>) => {
-		//console.log('on_concatenate_str()', {str, state: JSON.parse(JSON.stringify(state)),})
+		//console.log('on_concatenate_str()', {str, state: structuredClone(state),})
 		if (state.ends_with_block) {
 			state.str += ''.padStart(state.margin_bottom + 1,'\n')
 			state.ends_with_block = false

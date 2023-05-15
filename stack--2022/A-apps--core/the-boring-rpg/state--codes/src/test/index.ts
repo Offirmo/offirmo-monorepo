@@ -1,6 +1,6 @@
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
-import normalize_code from '../normalize-code'
+import normalize_code from '../normalize-code.js'
 import { CodeSpec, State } from '../types.js'
 
 ////////////
@@ -47,7 +47,7 @@ const ALL_CODESPECS: Immutable<CodeSpec<CodesConditions>>[] = Object.keys(RAW_CO
 		code,
 		redeem_limit,
 		is_redeemable,
-	} = RAW_CODES[key]
+	} = RAW_CODES[key]!
 
 	if (code)
 		throw new Error(`Code entry "${key}" redundantly specifies a code!`)
@@ -72,7 +72,7 @@ const CODESPECS_BY_KEY: Immutable<{ [key: string]: CodeSpec<CodesConditions> }> 
 ////////////
 
 export {
-	CodesConditions,
+	type CodesConditions,
 	CODESPECS_BY_KEY,
 	ALL_CODESPECS,
 }

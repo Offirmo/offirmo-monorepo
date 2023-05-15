@@ -6,13 +6,14 @@ import {
 	create,
 	attempt_to_redeem_code,
 } from './index.js'
-import { get_lib_SEC } from './sec'
+import { get_lib_SEC } from './sec.js'
 
-import { CodesConditions, CODESPECS_BY_KEY } from './test'
+import { CodesConditions, CODESPECS_BY_KEY } from './test/index.js'
 
-describe(`${LIB} - reducer`, function() {
 
-	describe('🆕  initial state', function() {
+describe(`${LIB} - state`, function() {
+
+	describe('🆕 create()', function() {
 
 		it('should have correct defaults', function() {
 			const state = create(get_lib_SEC())
@@ -38,7 +39,7 @@ describe(`${LIB} - reducer`, function() {
 			// no need to test detailed, see selectors
 			it('should reject and not update the state', () => {
 				const state = create()
-				const code_spec = CODESPECS_BY_KEY['TESTNEVER']
+				const code_spec = CODESPECS_BY_KEY['TESTNEVER']!
 
 				const do_it = () => attempt_to_redeem_code(state, code_spec, BASE_INFOS)
 				expect(do_it).to.throw('This code is either non-existing or non redeemable at the moment')
@@ -51,7 +52,7 @@ describe(`${LIB} - reducer`, function() {
 
 			it('should update the state', () => {
 				let state = create()
-				const code_spec = CODESPECS_BY_KEY['TESTALWAYS']
+				const code_spec = CODESPECS_BY_KEY['TESTALWAYS']!
 				const code = code_spec.code
 
 				state = attempt_to_redeem_code(state, code_spec, BASE_INFOS)

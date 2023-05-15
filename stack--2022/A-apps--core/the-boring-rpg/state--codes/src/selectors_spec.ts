@@ -9,7 +9,7 @@ import {
 	attempt_to_redeem_code,
 } from './index.js'
 
-import { CodesConditions, CODESPECS_BY_KEY } from './test'
+import { CodesConditions, CODESPECS_BY_KEY } from './test/index.js'
 
 /////////////////////
 
@@ -60,7 +60,7 @@ describe(`${LIB} - selectors`, function() {
 
 				it('should return true until the limit is met - once', () => {
 					let state = create()
-					const code_spec = CODESPECS_BY_KEY['TESTONCE']
+					const code_spec = CODESPECS_BY_KEY['TESTONCE']!
 					expect(is_code_redeemable(state, code_spec, BASE_INFOS), '#1').to.be.true
 					state = attempt_to_redeem_code(state, code_spec, BASE_INFOS)
 					expect(is_code_redeemable(state, code_spec, BASE_INFOS), '#2').to.be.false
@@ -68,7 +68,7 @@ describe(`${LIB} - selectors`, function() {
 
 				it('should return true until the limit is met - twice', () => {
 					let state = create()
-					const code_spec = CODESPECS_BY_KEY['TESTTWICE']
+					const code_spec = CODESPECS_BY_KEY['TESTTWICE']!
 					expect(is_code_redeemable(state,code_spec, BASE_INFOS), '#1').to.be.true
 					state = attempt_to_redeem_code(state, code_spec, BASE_INFOS)
 					expect(is_code_redeemable(state,code_spec, BASE_INFOS), '#2').to.be.true
@@ -82,7 +82,7 @@ describe(`${LIB} - selectors`, function() {
 				context('when the conditions are met', function() {
 
 					it('should always return true', () => {
-						const code_spec = CODESPECS_BY_KEY['TESTALWAYS']
+						const code_spec = CODESPECS_BY_KEY['TESTALWAYS']!
 						expect(is_code_redeemable(create(),code_spec, BASE_INFOS)).to.be.true
 					})
 				})
@@ -90,7 +90,7 @@ describe(`${LIB} - selectors`, function() {
 				context('when the condition are NOT met', function() {
 
 					it('should return false', () => {
-						const code_spec = CODESPECS_BY_KEY['TESTNEVER']
+						const code_spec = CODESPECS_BY_KEY['TESTNEVER']!
 						expect(is_code_redeemable(create(),code_spec, BASE_INFOS)).to.be.false
 					})
 				})

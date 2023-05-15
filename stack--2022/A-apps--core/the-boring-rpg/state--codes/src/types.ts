@@ -9,7 +9,6 @@ interface CodeSpec<T> {
 	redeem_limit: number | null // null = no limit or non-count limit (see is_redeemable)
 	is_redeemable: (infos: Immutable<T>, state: Immutable<State>) => boolean
 	redemption_success_message?: string
-	//redemption_success_reducer: (state: Immutable<State>) => Immutable<State>,
 }
 
 interface CodeRedemption {
@@ -25,9 +24,9 @@ interface State extends BaseUState {
 /////////////////////
 
 export {
-	CodeSpec,
-	CodeRedemption,
-	State,
+	type CodeSpec,
+	type CodeRedemption,
+	type State,
 }
 
 /////////////////////
