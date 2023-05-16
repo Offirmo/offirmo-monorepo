@@ -10,8 +10,7 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2022.esm/index.js",
-			"require": "./dist/src.es2022.cjs/index.js"
+			"import": "./dist/src.es2022.esm/index.js"
 		}
 	},
 	"module": "dist/src.es2022.esm/index.js",
@@ -33,8 +32,8 @@
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",
 
-		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
-		"_build:prod": "monorepo-script--build-typescript-package",
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
+		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
 
 		"dev": "run-s clean _build:dev:watch",
 		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2022.esm/**/*spec.js'",

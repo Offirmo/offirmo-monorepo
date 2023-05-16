@@ -13,3 +13,18 @@ then it's much more likely that they'll have a good time.
 > https://gamedevelopment.tutsplus.com/tutorials/making-healing-fun--cms-26273
 
 
+
+Repair after major changes:
+definitions
+logic
+* armor
+* weapon
+* monsters
+* adventures
+* shop
+state
+* inventory
+* character
+* progress
+aggregation
+* logic power
