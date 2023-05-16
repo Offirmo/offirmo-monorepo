@@ -1,4 +1,4 @@
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 import { generate_uuid } from '@offirmo-private/uuid'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
@@ -13,7 +13,7 @@ const MIGRATION_HINTS_FOR_TESTS: any = enforce_immutability<any>({
 
 /////////////////////
 
-function migrate_to_latest(SEC: SoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any> = {}): State {
+function migrate_to_latest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): State {
 	const existing_version = (legacy_state && legacy_state['schema_version']) || 0
 
 	SEC = get_lib_SEC(SEC)

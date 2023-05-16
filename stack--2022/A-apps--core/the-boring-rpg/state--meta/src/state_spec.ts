@@ -7,9 +7,9 @@ import {
 	create,
 } from './index.js'
 
-describe(`${LIB} - reducer`, function() {
+describe(`${LIB} - state`, function() {
 
-	describe('🆕  initial state', function() {
+	describe('🆕  create()', function() {
 
 		it('should have correct defaults', function() {
 			const state = create()

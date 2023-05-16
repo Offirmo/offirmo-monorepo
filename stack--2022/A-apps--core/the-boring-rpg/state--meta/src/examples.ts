@@ -6,7 +6,7 @@ import { State } from './types.js'
 
 // needed to test migrations, both here and in composing parents
 
-// a full featured, non-trivial demo state
+// a full-featured, non-trivial demo state
 // needed for demos
 
 const DEMO_STATE: Immutable<State> = enforce_immutability<State>({

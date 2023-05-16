@@ -23,8 +23,8 @@ logic
 * adventures
 * shop
 state
-* inventory
 * character
+* inventory
 * progress
 aggregation
 * logic power
