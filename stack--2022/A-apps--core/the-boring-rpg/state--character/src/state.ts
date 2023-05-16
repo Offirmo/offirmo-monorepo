@@ -12,7 +12,7 @@ import {
 	State,
 } from './types.js'
 
-import { OMRSoftExecutionContext, get_lib_SEC } from './sec'
+import { TBRSoftExecutionContext, get_lib_SEC } from './sec.js'
 
 /////////////////////
 
@@ -38,7 +38,7 @@ const CHARACTER_CLASSES = Enum.keys(CharacterClass)
 
 ///////
 
-function create(SEC?: OMRSoftExecutionContext): Immutable<State> {
+function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
 	return get_lib_SEC(SEC).xTry('create', () => {
 		return enforce_immutability<State>({
 			schema_version: SCHEMA_VERSION,
@@ -65,7 +65,7 @@ function create(SEC?: OMRSoftExecutionContext): Immutable<State> {
 
 /////////////////////
 
-function rename(SEC: OMRSoftExecutionContext, state: Immutable<State>, new_name: string): Immutable<State> {
+function rename(SEC: TBRSoftExecutionContext, state: Immutable<State>, new_name: string): Immutable<State> {
 	return get_lib_SEC(SEC).xTry('rename', () => {
 		// TODO name normalization
 		if (!new_name)
@@ -81,7 +81,7 @@ function rename(SEC: OMRSoftExecutionContext, state: Immutable<State>, new_name:
 	})
 }
 
-function switch_class(SEC: OMRSoftExecutionContext, state: Immutable<State>, klass: CharacterClass): Immutable<State> {
+function switch_class(SEC: TBRSoftExecutionContext, state: Immutable<State>, klass: CharacterClass): Immutable<State> {
 	return get_lib_SEC(SEC).xTry('switch_class', () => {
 		if (klass === state.klass)
 			return state
@@ -97,7 +97,7 @@ function switch_class(SEC: OMRSoftExecutionContext, state: Immutable<State>, kla
 	})
 }
 
-function increase_stat(SEC: OMRSoftExecutionContext, state: Immutable<State>, stat: CharacterAttribute, amount = 1): Immutable<State> {
+function increase_stat(SEC: TBRSoftExecutionContext, state: Immutable<State>, stat: CharacterAttribute, amount = 1): Immutable<State> {
 	return get_lib_SEC(SEC).xTry('increase_stat', () => {
 		if (amount <= 0)
 			throw new Error(`${LIB}: Error while increasing stat "${stat}": invalid amount!`) // TODO details
@@ -120,8 +120,8 @@ function increase_stat(SEC: OMRSoftExecutionContext, state: Immutable<State>, st
 export {
 	CharacterAttribute,
 	CharacterClass,
-	CharacterAttributes,
-	State,
+	type CharacterAttributes,
+	type State,
 
 	DEFAULT_AVATAR_NAME,
 	CHARACTER_ATTRIBUTES,

@@ -1,8 +1,12 @@
-import { enforce_immutability } from '@offirmo-private/state-utils'
+//////////////////////////////////////////////////////////////////////
 
-import { LIB, SCHEMA_VERSION } from './consts'
-import { State } from './types'
-import { OMRSoftExecutionContext, get_lib_SEC } from './sec'
+import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+
+import { LIB, SCHEMA_VERSION } from './consts.js'
+import { State } from './types.js'
+import { TBRSoftExecutionContext, get_lib_SEC } from './sec.js'
+
+//////////////////////////////////////////////////////////////////////
 
 // some hints may be needed to migrate to demo state
 // need to export them for composing tests
@@ -11,7 +15,7 @@ const MIGRATION_HINTS_FOR_TESTS = enforce_immutability<any>({
 
 /////////////////////
 
-function migrate_to_latest(SEC: OMRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any> = {}): State {
+function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): State {
 	return get_lib_SEC(SEC).xTry('migrate_to_latest', ({SEC, logger}) => {
 		const existing_version = legacy_state?.schema_version || 0
 		SEC.setAnalyticsAndErrorDetails({
@@ -48,13 +52,15 @@ function migrate_to_latest(SEC: OMRSoftExecutionContext, legacy_state: Readonly<
 
 /////////////////////
 
-function migrate_to_2(SEC: OMRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any>): State {
+function migrate_to_2(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any>): State {
 	throw new Error('Schema is too old (pre-beta), can’t migrate!')
 }
 
-/////////////////////
+//////////////////////////////////////////////////////////////////////
 
 export {
 	migrate_to_latest,
 	MIGRATION_HINTS_FOR_TESTS,
 }
+
+//////////////////////////////////////////////////////////////////////

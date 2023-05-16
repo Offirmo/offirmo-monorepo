@@ -9,7 +9,7 @@ import {
 	create,
 	increase_stat,
 } from './index.js'
-import { get_lib_SEC } from './sec'
+import { get_lib_SEC } from './sec.js'
 
 describe(`${LIB} - reducer`, function() {
 

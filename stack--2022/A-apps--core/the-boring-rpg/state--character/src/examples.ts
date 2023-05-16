@@ -7,7 +7,7 @@ import {
 
 /////////////////////
 
-// a full featured, non-trivial demo state
+// a full-featured, non-trivial demo state
 // useful for demos and unit tests
 const DEMO_STATE: Immutable<State> = enforce_immutability<State>({
 	schema_version: 2,

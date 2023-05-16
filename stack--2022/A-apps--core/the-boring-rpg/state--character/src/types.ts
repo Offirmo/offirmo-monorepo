@@ -109,8 +109,8 @@ interface State extends BaseUState {
 export {
 	CharacterAttribute,
 	CharacterClass,
-	CharacterAttributes,
-	State,
+	type CharacterAttributes,
+	type State,
 }
 
 /////////////////////
