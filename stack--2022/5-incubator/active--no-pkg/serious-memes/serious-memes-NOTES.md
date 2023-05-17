@@ -112,7 +112,7 @@ mimetic Theory of Conflict: People who are similar are more likely to fight than
 mimetic Theory of Desire: Humans are like sheep. We don’t know what we want, so we imitate each other. Instead of creating our own desires, we desire the same things as other people. The entire advertising industry is built on this idea.
 naiveté: abus sexuels, mafia
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
-non violence
+non-violence
 on peut toujours faire mieux
 opportunity Cost: By reading this tweet, you are choosing not to read something else. Everything we do is like this. Doing one thing requires giving up another. Whenever you explicitly choose to do one thing, you implicitly choose not to do another thing.
 paradox of Abundance: The average quality of information is getting worse and worse. But the best stuff is getting better and better. Markets of abundance are simultaneously bad for the median consumer but good for conscious consumers.
@@ -133,7 +133,7 @@ preference Falsification: People lie about their true opinions and conform to so
 pretty privilege -> karen
 priming
 prix au kilo
-procastination
+procrastination
 productivity
 productivity vs. impact, value
 progress over perfection

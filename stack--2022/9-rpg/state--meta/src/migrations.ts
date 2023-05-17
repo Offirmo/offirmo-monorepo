@@ -1,5 +1,8 @@
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+//////////////////////////////////////////////////////////////////////
+
 import {
+	Immutable,
+	enforce_immutability,
 	LastMigrationStep,
 	MigrationStep,
 	generic_migrate_to_latest,
@@ -7,18 +10,20 @@ import {
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { State } from './types.js'
-import { TBRSoftExecutionContext } from './sec.js'
+import { SoftExecutionContext } from './sec.js'
+
+//////////////////////////////////////////////////////////////////////
 
 // some hints may be needed to migrate to demo state
 // need to export them for composing tests
-export const MIGRATION_HINTS_FOR_TESTS: any = enforce_immutability<any>({
+const MIGRATION_HINTS_FOR_TESTS = enforce_immutability<any>({
 })
 
 /////////////////////
 
 type StateForMigration = State
 
-export function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<StateForMigration> {
+function migrate_to_latest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<StateForMigration> {
 	return generic_migrate_to_latest<StateForMigration>({
 		SEC: SEC as any,
 		LIB,
@@ -27,18 +32,18 @@ export function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Im
 		hints,
 		sub_states_migrate_to_latest: {},
 		pipeline: [
-			migrate_to_3x,
-			migrate_to_2,
+			_migrate_to_3,
+			_migrate_to_2,
 		]
 	})
 }
 
 /////////////////////
 
-const migrate_to_3x: LastMigrationStep<StateForMigration, any> = (SEC, legacy_state, hints, next, legacy_schema_version) => {
-	//console.log('hello from migrate_to_3x', legacy_state, hints, legacy_schema_version)
+const _migrate_to_3: LastMigrationStep<StateForMigration, any> = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+	//console.log('hello from _migrate_to_3', legacy_state, hints, legacy_schema_version)
 	if (legacy_schema_version < 2)
-		legacy_state = next(SEC, legacy_state, hints)
+		legacy_state = previous(SEC, legacy_state, hints)
 
 	let state: any = {
 		...legacy_state,
@@ -50,8 +55,15 @@ const migrate_to_3x: LastMigrationStep<StateForMigration, any> = (SEC, legacy_st
 	return state
 }
 
-const migrate_to_2: MigrationStep<any, any> = () => {
+const _migrate_to_2: MigrationStep<any, any> = () => {
 	throw new Error('Schema is too old (pre-beta), can’t migrate!')
 }
 
 /////////////////////
+
+export {
+	migrate_to_latest,
+	MIGRATION_HINTS_FOR_TESTS,
+}
+
+//////////////////////////////////////////////////////////////////////
