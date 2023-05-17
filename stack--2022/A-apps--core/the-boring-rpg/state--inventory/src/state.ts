@@ -7,13 +7,13 @@ import { InventorySlot } from '@tbrpg/definitions'
 
 import { SCHEMA_VERSION } from './consts.js'
 import { Item, State } from './types.js'
-import { compare_items_by_slot_then_strength } from './compare'
-import { is_full, get_item_in_slot } from './selectors'
-import { OMRSoftExecutionContext, get_lib_SEC } from './sec'
+import { compare_items_by_slot_then_strength } from './compare.js'
+import { is_full, get_item_in_slot } from './selectors.js'
+import { TBRSoftExecutionContext, get_lib_SEC } from './sec.js'
 
 /////////////////////
 
-function create(SEC?: OMRSoftExecutionContext): Immutable<State> {
+function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
 	return get_lib_SEC(SEC).xTry('rename', () => {
 		return enforce_immutability<State>({
 			schema_version: SCHEMA_VERSION,

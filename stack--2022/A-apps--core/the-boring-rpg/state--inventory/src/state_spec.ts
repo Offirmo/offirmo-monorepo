@@ -31,10 +31,10 @@ import {
 	iterables_unslotted,
 } from './index.js'
 
-describe(`${LIB} - reducer`, function() {
+describe(`${LIB} - state`, function() {
 	const DUMMY_ITEM: Item = generate_random_demo_weapon()
 
-	describe('🆕 initial state', function() {
+	describe('🆕  create()', function() {
 
 		it('should have correct defaults', function() {
 			const state = create()

@@ -18,8 +18,8 @@ interface State extends BaseUState {
 /////////////////////
 
 export {
-	Item,
-	State,
+	type Item,
+	type State,
 }
 
 /////////////////////
