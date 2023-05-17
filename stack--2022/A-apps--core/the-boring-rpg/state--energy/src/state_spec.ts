@@ -18,7 +18,7 @@ import {
 const SECOND_ms = 1000
 const HOUR_ms = 3600 * SECOND_ms
 
-describe(`${LIB} - reducer`, function() {
+describe(`${LIB} - state`, function() {
 	beforeEach(function () {
 		this.clock = sinon.useFakeTimers()
 	})
@@ -26,7 +26,7 @@ describe(`${LIB} - reducer`, function() {
 		this.clock.restore()
 	})
 
-	describe('🆕  initial state', function() {
+	describe('🆕  create()', function() {
 
 		it('should have correct defaults', function() {
 			const [ u_state, t_state ] = create()
@@ -59,6 +59,7 @@ describe(`${LIB} - reducer`, function() {
 
 			context('when using sinon', function() {
 				beforeEach(function () {
+					this.clock.restore()
 					this.clock = sinon.useFakeTimers(TEST_TIMESTAMP_MS)
 				})
 				afterEach(function () {

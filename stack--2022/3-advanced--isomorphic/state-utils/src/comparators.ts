@@ -41,7 +41,7 @@ export function s_max(a: SemanticDifference, b: SemanticDifference): SemanticDif
 }
 
 // used only in tests AFAIK
-// @ts-expect-error memoize_one import issue
+// @ts-expect-error memoize_one import issue TODO fix
 const _get_advanced_json_differ = memoize_one(() => {
 	const advanced_json_differ = jsondiffpatch.create({
 		// method used to match objects when diffing arrays

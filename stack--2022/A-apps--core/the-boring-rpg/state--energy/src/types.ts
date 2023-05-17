@@ -15,8 +15,8 @@ interface TState extends BaseTState {
 /////////////////////
 
 export {
-	UState,
-	TState,
+	type UState,
+	type TState,
 }
 
 /////////////////////

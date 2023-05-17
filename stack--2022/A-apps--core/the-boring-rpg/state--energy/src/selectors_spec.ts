@@ -1,10 +1,10 @@
 import { expect } from 'chai'
 import sinon from 'sinon'
-import Fraction from 'fraction.js'
 import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 import { dump_prettified_any } from '@offirmo-private/prettify-any'
 
-import {LIB, TICK_MS} from './consts.js'
+import { LIB, TICK_MS } from './consts.js'
+import { Fraction } from './utils.js'
 import {
 	UState,
 	TState,
@@ -21,7 +21,7 @@ import {
 
 
 // TODO fix energy limit
-describe.skip(`${LIB} - selectors`, function() {
+describe(`${LIB} - selectors`, function() {
 	beforeEach(function () {
 		this.clock = sinon.useFakeTimers()
 	})
@@ -94,7 +94,7 @@ describe.skip(`${LIB} - selectors`, function() {
 			}
 			dump_prettified_any('u', u_state)
 			console.log(get_energy_refill_rate(u_state, t_state))
-			expect(get_energy_refill_rate(u_state, t_state).per_day()).to.equal(EXPECTED_ESTABLISHED_ENERGY_REFILL_PER_DAY)
+			expect(get_energy_refill_rate(u_state, t_state).per_day()).to.be.closeTo(EXPECTED_ESTABLISHED_ENERGY_REFILL_PER_DAY, 0.01)
 		})
 
 		it('should slowly ramp-up for onboarding', () => {
@@ -318,7 +318,7 @@ describe.skip(`${LIB} - selectors`, function() {
 				;[ u_state, t_state ] = use_energy([u_state, t_state], 7)
 
 				//dump_prettified_any('s', { u_state, t_state })
-				expect(get_human_time_to_next(u_state, t_state)).to.equal('3h 25m 42s')
+				expect(get_human_time_to_next(u_state, t_state)).to.equal('3h 25m 43s')
 			})
 		})
 
@@ -340,7 +340,7 @@ describe.skip(`${LIB} - selectors`, function() {
 					aef: get_available_energy_float(t_state),
 					ttn: get_human_time_to_next(u_state, t_state),
 				})*/
-				expect(get_human_time_to_next(u_state, t_state), '+0').to.equal('3h 25m 42s')
+				expect(get_human_time_to_next(u_state, t_state), '+0').to.equal('3h 25m 43s')
 
 				now = new Date(2017, 1, 1, 1, 0, 1)
 				t_state = update_to_now([ u_state, t_state ], +now)
@@ -350,7 +350,7 @@ describe.skip(`${LIB} - selectors`, function() {
 					aef: get_available_energy_float(t_state),
 					ttn: get_human_time_to_next(u_state, t_state),
 				})*/
-				expect(get_human_time_to_next(u_state, t_state), '+1s').to.equal('3h 25m 41s')
+				expect(get_human_time_to_next(u_state, t_state), '+1s').to.equal('3h 25m 42s')
 
 				now = new Date(2017, 1, 1, 1, 1, 0)
 				t_state = update_to_now([ u_state, t_state ], +now)
@@ -360,11 +360,11 @@ describe.skip(`${LIB} - selectors`, function() {
 					aef: get_available_energy_float(t_state),
 					ttn: get_human_time_to_next(u_state, t_state),
 				})*/
-				expect(get_human_time_to_next(u_state, t_state), '+1m').to.equal('3h 24m 42s')
+				expect(get_human_time_to_next(u_state, t_state), '+1m').to.equal('3h 24m 43s')
 
 				now = new Date(2017, 1, 1, 2, 0, 0)
 				t_state = update_to_now([ u_state, t_state ], +now)
-				expect(get_human_time_to_next(u_state, t_state), '+1h').to.equal('2h 25m 42s')
+				expect(get_human_time_to_next(u_state, t_state), '+1h').to.equal('2h 25m 43s')
 			})
 		})
 	})

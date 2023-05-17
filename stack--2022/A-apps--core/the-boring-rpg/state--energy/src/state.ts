@@ -1,17 +1,17 @@
 /////////////////////
 
 import assert from 'tiny-invariant'
-import Fraction from 'fraction.js'
 import { TimestampUTCMs, get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 import { get_logger } from '@tbrpg/definitions'
 
 import { LIB, SCHEMA_VERSION, TICK_MS } from './consts.js'
 import { UState, TState } from './types.js'
+import { Fraction } from './utils.js'
 import {
 	get_milliseconds_to_next,
 	get_human_time_to_next,
 	get_current_energy_refilling_rate_per_ms, get_available_energy_float,
-} from './selectors'
+} from './selectors.js'
 
 const DEBUG = false
 

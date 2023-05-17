@@ -4,7 +4,7 @@ import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
 import { UState, TState } from './types.js'
 
 /////////////////////
-// a full featured, non-trivial demo state
+// a full-featured, non-trivial demo state
 // useful for demos and unit tests
 
 const DEMO_U_STATE: Readonly<UState> = enforce_immutability<UState>({

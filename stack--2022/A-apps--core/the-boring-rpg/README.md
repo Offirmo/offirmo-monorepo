@@ -24,6 +24,7 @@ logic
 * shop
 state
 * character
+* energy
 * inventory
 * progress
 aggregation

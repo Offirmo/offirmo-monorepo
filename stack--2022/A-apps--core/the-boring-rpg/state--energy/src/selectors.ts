@@ -1,5 +1,4 @@
 import assert from 'tiny-invariant'
-import Fraction from 'fraction.js'
 import memoize_one from 'memoize-one'
 
 import { get_logger } from '@tbrpg/definitions'
@@ -7,11 +6,15 @@ import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 
 import { LIB, TICK_MS } from './consts.js'
 import { UState, TState } from './types.js'
-import { time_to_human } from './utils'
+import { Fraction, time_to_human } from './utils.js'
 
 ////////////////////////////////////
 
-const MIN_RESULT = new Fraction(1, 2.1) // must be smaller than .5 for rounding reasons
+// Safely define a max refilling rate.
+// This cap is to avoid huge numbers during onboarding that causes UX issues.
+// must be smaller than .5 for rounding reasons (TODO why?)
+const MAX_ALLOWED_REFILLING_RATE_PER_MS = new Fraction(10, 21) // 10 energy / 21 ms = huge.
+
 function get_current_energy_refilling_rate_per_ms(u_state: Readonly<UState>, t_state: Readonly<TState> ): Fraction {
 	if (t_state.timestamp_ms + TICK_MS < get_UTC_timestamp_ms()) {
 		get_logger().warn(`${LIB}.get_current_energy_refilling_rate_per_ms() called on outdated state!`)
@@ -30,7 +33,7 @@ function get_current_energy_refilling_rate_per_ms(u_state: Readonly<UState>, t_s
 
 	if (total_energy_refilled_so_far <= 0) {
 		// <= 0 to avoid dividing by 0
-		return MIN_RESULT
+		return MAX_ALLOWED_REFILLING_RATE_PER_MS
 	}
 
 	const established_energy_refilling_rate_per_ms = new Fraction(
@@ -55,13 +58,13 @@ function get_current_energy_refilling_rate_per_ms(u_state: Readonly<UState>, t_s
 			.floor(12) // 12 because seen dropping the /day rate at 10
 	)
 
-	if (total_energy_refilled_so_far <= 10 && rate.compare(MIN_RESULT) > 0) {
-		rate = MIN_RESULT
+	if (total_energy_refilled_so_far <= 10 && rate.compare(MAX_ALLOWED_REFILLING_RATE_PER_MS) > 0) {
+		rate = MAX_ALLOWED_REFILLING_RATE_PER_MS
 		// onboarding early values may be too big
-		// we don't use Math.max to check that it only happens during onboarding
+		// we don't use Math.max to check that, it only happens during onboarding
 	}
 
-	if (rate.compare(MIN_RESULT) > 0) {
+	if (rate.compare(MAX_ALLOWED_REFILLING_RATE_PER_MS) > 0) {
 		get_logger().error('rate too big!', {
 			rate,
 			rate_v: rate.valueOf(),
@@ -75,7 +78,7 @@ function get_current_energy_refilling_rate_per_ms(u_state: Readonly<UState>, t_s
 			den: Math.pow(total_energy_refilled_so_far, onboarding_power),
 		})
 	}
-	assert(rate.compare(MIN_RESULT) <= 0, 'rate too big')
+	assert(rate.compare(MAX_ALLOWED_REFILLING_RATE_PER_MS) <= 0, 'rate should not be too big')
 
 	return rate
 }
@@ -94,6 +97,7 @@ function debugTTNx(energy_refilling_rate_per_ms: number) {
 		ttn,
 	})*/
 }
+// @ts-expect-error memoize_one import issue TODO fix
 const debugTTN = memoize_one(debugTTNx)
 
 function get_milliseconds_to_next(u_state: Readonly<UState>, t_state: Readonly<TState>): number {
