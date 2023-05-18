@@ -1,61 +1,11 @@
 import { Int32, PRNGEngine, PRNGState, Seed } from '../../types.js'
 import { assert } from '../../embedded-deps/assert/index.js'
 import { Immutable, PositiveInteger } from '../../embedded-deps/types/index.js'
+import { get_seed_as_Int32Array } from '../../utils.js'
 
 const ALGORITHM_ID: PRNGState['algorithm_id'] = 'ISAAC32'
 const SIZE = 256 // For readability only. SIZE=256 is a property of the algorithm and can't be changed
 
-
-/* js string (ucs-2/utf16) to a 32-bit integer (utf-8 chars, little-endian) array */
-function _to_Int32Array(s: string): Int32Array {
-	const result: Int32[] = []
-	s = s + '\0\0\0'; // pad string to avoid discarding last chars
-	const l = s.length - 1;
-
-	let i = 0
-	let r4 = []
-	while(i < l) {
-		const w1 = s.charCodeAt(i++)
-		const w2 = s.charCodeAt(i+1)
-		if        (w1 < 0x0080) {
-			// 0x0000 - 0x007f code point: basic ascii
-			r4.push(w1);
-		} else if (w1 < 0x0800) {
-			// 0x0080 - 0x07ff code point
-			r4.push(((w1 >>>  6) & 0x1f) | 0xc0);
-			r4.push(((w1 >>>  0) & 0x3f) | 0x80);
-		} else if ((w1 & 0xf800) != 0xd800) {
-			// 0x0800 - 0xd7ff / 0xe000 - 0xffff code point
-			r4.push(((w1 >>> 12) & 0x0f) | 0xe0);
-			r4.push(((w1 >>>  6) & 0x3f) | 0x80);
-			r4.push(((w1 >>>  0) & 0x3f) | 0x80);
-		} else if (((w1 & 0xfc00) == 0xd800)
-			&& ((w2 & 0xfc00) == 0xdc00)) {
-			// 0xd800 - 0xdfff surrogate / 0x10ffff - 0x10000 code point
-			const u = ((w2 & 0x3f) | ((w1 & 0x3f) << 10)) + 0x10000;
-			r4.push(((u >>> 18) & 0x07) | 0xf0);
-			r4.push(((u >>> 12) & 0x3f) | 0x80);
-			r4.push(((u >>>  6) & 0x3f) | 0x80);
-			r4.push(((u >>>  0) & 0x3f) | 0x80);
-			i++;
-		} else {
-			// invalid char
-			throw new Error('unexpected char!')
-		}
-
-		/* add integer (four utf-8 value) to array */
-		if(r4.length >= 4) {
-			// little endian
-			result.push(
-				  (r4.shift()! <<  0)
-				| (r4.shift()! <<  8)
-				| (r4.shift()! << 16)
-				| (r4.shift()! << 24))
-		}
-	}
-
-	return new Int32Array(result.length).map((v, i) => result[i]!)
-}
 
 // 32-bit integer safe adder
 function _add(x: Int32, y: Int32): Int32 {
@@ -64,33 +14,6 @@ function _add(x: Int32, y: Int32): Int32 {
 	return (msb << 16) | (lsb & 0xffff)
 }
 
-function _normalize_seed(raw_seed: Seed | Int32Array): Int32Array {
-	let normalized_seed = ((): Int32Array => {
-
-		if(typeof raw_seed === 'string') {
-			assert(raw_seed.length > 0, `seed as string should not be empty!`)
-			return _to_Int32Array(raw_seed)
-		}
-
-		if(typeof raw_seed === 'number') {
-			// TODO check format?
-			return new Int32Array(1).fill(raw_seed)
-		}
-
-		if (Array.isArray(raw_seed)) {
-			return new Int32Array(raw_seed.length).fill(0).map((v, i) => raw_seed[i]!)
-		}
-
-		assert((raw_seed as any)?.BYTES_PER_ELEMENT === 4, `_seed: wrong TypeArray type!`)
-		return (raw_seed as any)
-	})()
-
-	// seed should now be an Int32Array
-	assert(normalized_seed.BYTES_PER_ELEMENT === 4, `_seed: wrong param type!`)
-	assert(normalized_seed.every(i => typeof i === 'number'), `seed: array should be array of numbers!`)
-
-	return normalized_seed
-}
 
 function _get_random_seed(): Seed {
 	// @ts-expect-error
@@ -99,10 +22,8 @@ function _get_random_seed(): Seed {
 		return [...globalThis.crypto.getRandomValues(new Int32Array(SIZE)).values()]
 	}
 
-	return (new Array(SIZE)).fill(0).map(() => Math.random() * 0x100_000_000 | 0)
+	return (new Array(SIZE)).fill(0).map(() => Math.random() * 0x1_0000_0000 | 0)
 }
-
-
 
 
 export function get_RNGⵧISAAC32(options: {
@@ -256,7 +177,7 @@ export function get_RNGⵧISAAC32(options: {
 			_seed(undefined)
 			break
 		default:
-			_seed(_normalize_seed(options._xxx_seed))
+			_seed(get_seed_as_Int32Array(options._xxx_seed))
 			last_seed = options._xxx_seed
 			break
 	}
@@ -267,7 +188,7 @@ export function get_RNGⵧISAAC32(options: {
 			return _next()
 		},
 		seed(seed: Seed) {
-			_seed(_normalize_seed(seed))
+			_seed(get_seed_as_Int32Array(seed))
 			last_seed = seed
 			return engine
 		},
@@ -277,7 +198,7 @@ export function get_RNGⵧISAAC32(options: {
 		},
 		set_state(state: Immutable<PRNGState>) {
 			assert((state.algorithm_id || ALGORITHM_ID) === ALGORITHM_ID, `Invalid state restoration request: mismatching algorithms!`)
-			_seed(_normalize_seed(state.seed))
+			_seed(get_seed_as_Int32Array(state.seed))
 			last_seed = state.seed
 			_discard(state.call_count)
 			return engine

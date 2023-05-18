@@ -32,9 +32,9 @@ interface AchievementSnapshot extends Element {
 	name: string
 	icon: string
 	description: string
-	lore?: string
+	lore: string | undefined
 	status: AchievementStatus
-	completion_rate?: [number, number]
+	completion_rate: [number, number] | undefined
 }
 
 /////////////////////

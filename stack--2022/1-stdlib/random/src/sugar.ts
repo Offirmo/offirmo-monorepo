@@ -37,26 +37,37 @@ export const get_engine = {
 	ISAAC32: () => get_RNGⵧISAAC32(),
 	Mathᐧrandom: () => get_RNGⵧMathᐧrandom(),
 
-	from_state(state: Immutable<PRNGState>): PRNGEngine {
-		const engine: PRNGEngine = (() => {
-			switch (state.algorithm_id) {
-				case 'ISAAC32':
-					return get_RNGⵧISAAC32()
-				case 'MT19937':
-					throw new Error('Not Implemented')
-				case undefined:
-					return get_RNGⵧISAAC32()
-				default:
-					throw new Error(`Unknown PRNG id: "${state.algorithm_id}!`)
+	prng: {
+		from_state(state: Immutable<Partial<PRNGState>>): PRNGEngine {
+			const engine: PRNGEngine = (() => {
+				switch (state.algorithm_id) {
+					case 'ISAAC32':
+						return get_RNGⵧISAAC32()
+					case 'MT19937':
+						throw new Error('Not Implemented')
+					case undefined:
+						return get_RNGⵧISAAC32()
+					default:
+						throw new Error(`Unknown PRNG algorithm: "${state.algorithm_id}!`)
+				}
+			})()
+
+			if (state.seed) {
+				engine.seed(state.seed)
 			}
-		})()
+			if (state.call_count) {
+				engine.discard(state.call_count)
+			}
 
-		engine.set_state(state)
+			return engine
+		},
 
-		return engine
+		// aliases
+		good_enough: () => get_RNGⵧISAAC32(),
 	},
 
+
 	// aliases
-	good_enough: () => get_RNGⵧISAAC32(),
+	good_enough: () => get_RNGⵧMathᐧrandom(),
 	for_unit_tests: () => get_RNGⵧISAAC32().seed([-1, 0, 1]) as PRNGEngine, // always PRNG for reproducibility
 }

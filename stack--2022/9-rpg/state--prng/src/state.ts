@@ -2,7 +2,7 @@
 
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/state-utils'
-import { get_engine, PRNGEngine } from '@offirmo/random'
+import { Seed, get_engine, PRNGEngine, PRNGState } from '@offirmo/random'
 import { generate_uuid } from '@offirmo-private/uuid'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
@@ -13,16 +13,16 @@ import { get_logger } from './sec.js'
 
 const DEFAULT_SEED = 987
 
-// TODO review seeding!
-function create(seed: number = DEFAULT_SEED): Immutable<State> {
+
+function create(seed: Seed = DEFAULT_SEED): Immutable<State> {
 	return {
 		schema_version: SCHEMA_VERSION,
 		uuid: generate_uuid(),
 		revision: 0,
 
 		prng_state: {
-			...get_engine.good_enough().get_state(),
-			seed, // up to the caller to change it
+			...get_engine.prng.good_enough().get_state(),
+			seed, // up to the caller to change it, see "auto seed"
 		},
 
 		recently_encountered_by_id: {},
@@ -31,7 +31,32 @@ function create(seed: number = DEFAULT_SEED): Immutable<State> {
 
 /////////////////////
 
-function set_seed(state: Immutable<State>, seed: number): Immutable<State> {
+
+function auto_reseed(state: Immutable<State>, algorithm_id?: PRNGState['algorithm_id']): Immutable<State> {
+	// we need to generate a new seed
+	// each engine auto-seeds with their own algo
+	// => we create a fresh engine and copy its seed
+	// ALSO this re-seeding is the opportunity to upgrade from an old PRNG algo to a new one!
+	const engine = get_engine.prng.from_state({
+		...(algorithm_id && { algorithm_id }),
+	})
+
+	return {
+		...state,
+
+		prng_state: {
+			...engine.get_state(),
+		},
+
+		revision: state.revision + 1,
+	}
+}
+
+// not recommended
+function set_seed(state: Immutable<State>, seed: Seed): Immutable<State> {
+	if (seed === state.prng_state.seed)
+		return state
+
 	return {
 		...state,
 
@@ -110,6 +135,7 @@ export {
 	DEFAULT_SEED,
 	create,
 
+	auto_reseed,
 	set_seed,
 	update_use_count,
 	register_recently_used,

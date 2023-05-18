@@ -256,8 +256,6 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 				it('should be reflexive', () => {
 					let e = engine as PRNGEngine
 
-
-
 					// try limits
 					e.set_state({...TEST_STATE, call_count: 0})
 					expect(_get_standardized_state(e), '0').to.deep.equal({...TEST_STATE, call_count: 0})

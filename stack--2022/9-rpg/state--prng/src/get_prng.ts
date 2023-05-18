@@ -46,7 +46,7 @@ function get_prng(state: Immutable<State>): PRNGEngine {
 	const cached_prng = cached_prngs[app_key]
 
 	if (!cached_prng) {
-		cached_prngs[app_key] = get_engine.from_state(state.prng_state)
+		cached_prngs[app_key] = get_engine.prng.from_state(state.prng_state)
 		return cached_prngs[app_key]!
 	}
 
