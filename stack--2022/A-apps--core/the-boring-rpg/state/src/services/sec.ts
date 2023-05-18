@@ -1,20 +1,21 @@
 import { getRootSEC } from '@offirmo-private/soft-execution-context'
-import { OMRSoftExecutionContext, decorate_SEC } from '@tbrpg/definitions'
+import { TBRSoftExecutionContext, decorate_SEC } from '@tbrpg/definitions'
 
 import { LIB } from '../consts.js'
+import { get_logger } from './logger.js'
 
-function get_lib_SEC(parent?: OMRSoftExecutionContext): OMRSoftExecutionContext {
+function get_lib_SEC(parent?: TBRSoftExecutionContext): TBRSoftExecutionContext {
 	return decorate_SEC(
 		(parent || getRootSEC())
 			.createChild()
 			.setLogicalStack({module: LIB})
 			.setAnalyticsAndErrorDetails({
 				sub_product: LIB,
-			}),
+			})
 	)
 }
 
 export {
-	OMRSoftExecutionContext,
+	type TBRSoftExecutionContext,
 	get_lib_SEC,
 }

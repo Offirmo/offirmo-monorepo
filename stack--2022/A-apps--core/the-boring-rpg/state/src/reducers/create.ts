@@ -8,20 +8,16 @@ import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
 import { ItemQuality } from '@tbrpg/definitions'
 
-import * as CharacterState from '@tbrpg/state--character'
-import * as WalletState from '@oh-my-rpg/state-wallet'
-import * as InventoryState from '@tbrpg/state--inventory'
-import * as EnergyState from '@oh-my-rpg/state-energy'
-import * as EngagementState from '@oh-my-rpg/state-engagement'
-import * as PRNGState from '@oh-my-rpg/state-prng'
 import * as CodesState from '@oh-my-rpg/state-codes'
-import * as ProgressState from '@tbrpg/state--progress'
+import * as EngagementState from '@oh-my-rpg/state-engagement'
 import * as MetaState from '@oh-my-rpg/state-meta'
+import * as PRNGState from '@oh-my-rpg/state-prng'
 
-import {
-	get_prng,
-	generate_random_seed,
-} from '@oh-my-rpg/state-prng'
+import * as CharacterState from '@tbrpg/state--character'
+import * as EnergyState from '@tbrpg/state-energy'
+import * as InventoryState from '@tbrpg/state--inventory'
+import * as ProgressState from '@tbrpg/state--progress'
+import * as WalletState from '@tbrpg/state-wallet'
 
 import {
 	Weapon,
@@ -35,17 +31,17 @@ import {
 
 /////////////////////
 
-import { SCHEMA_VERSION } from '../consts'
-import { OMRSoftExecutionContext, get_lib_SEC } from '../services/sec'
-import { State } from '../types'
-import { EngagementKey } from '../data/engagement'
+import { SCHEMA_VERSION } from '../consts.js'
+import { TBRSoftExecutionContext, get_lib_SEC } from '../services/sec.js'
+import { State } from '../types.js'
+import { EngagementKey } from '../data/engagement/index.js'
 import {
 	_update_to_now,
 	_receive_item,
 	_ack_all_engagements,
-} from './internal'
-import { equip_item } from './base'
-import { _refresh_achievements } from './achievements'
+} from './internal.js'
+import { equip_item } from './base.js'
+import { _refresh_achievements } from './achievements/index.js'
 
 /////////////////////
 

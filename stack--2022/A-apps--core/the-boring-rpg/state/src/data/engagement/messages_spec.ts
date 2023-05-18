@@ -9,7 +9,7 @@ import {
 	//create,
 	EngagementKey,
 	get_engagement_message,
-} from '../..'
+} from '../../index.js'
 
 
 describe(`${LIB} - engagement messages`, function() {

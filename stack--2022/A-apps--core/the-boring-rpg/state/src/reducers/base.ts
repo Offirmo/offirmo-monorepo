@@ -25,14 +25,14 @@ import * as MetaState from '@oh-my-rpg/state-meta'
 
 import { LIB } from '../consts.js'
 import { State } from '../types.js'
-import { get_lib_SEC } from '../services/sec'
-import { get_available_classes } from '../selectors'
+import { get_lib_SEC } from '../services/sec.js'
+import { get_available_classes } from '../selectors/index.js'
 
-import { _refresh_achievements } from './achievements'
+import { _refresh_achievements } from './achievements/index.js'
 import {
 	_sell_item,
 	_update_to_now,
-} from './internal'
+} from './internal.js'
 
 /////////////////////
 

@@ -7,8 +7,8 @@ import { TimestampUTCMs } from '@offirmo-private/timestamps'
 /////////////////////
 
 import { State, UState } from '../types.js'
-import { get_available_energy_float } from './energy'
-import { _update_to_now } from '../reducers/internal'
+import { get_available_energy_float } from './energy.js'
+import { _update_to_now } from '../reducers/internal.js'
 
 /////////////////////
 

@@ -61,8 +61,8 @@ describe(`${LIB} - reducer - create`, function() {
 		it('should work', function() {
 			const { u_state } = reseed(create())
 
-			expect(u_state.prng.seed).to.be.a('number')
-			expect(u_state.prng.seed).not.to.equal(DEFAULT_SEED)
+			expect(u_state.prng.prng_state.seed).to.be.a('number')
+			expect(u_state.prng.prng_state.seed).not.to.equal(DEFAULT_SEED)
 		})
 	})
 })

@@ -6,9 +6,9 @@ import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 
 import { LIB } from '../../consts.js'
 import { State, UState } from '../../types.js'
-import { create } from '..'
+import { create } from '../index.js'
 import { _refresh_achievements } from './index.js'
-import ACHIEVEMENT_DEFINITIONS from '../../data/achievements'
+import ACHIEVEMENT_DEFINITIONS from '../../data/achievements.js'
 
 
 describe(`${LIB} - reducer`, function() {

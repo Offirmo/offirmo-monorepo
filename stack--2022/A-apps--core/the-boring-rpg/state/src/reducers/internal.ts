@@ -6,6 +6,8 @@ import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
 /////////////////////
 
+import * as EngagementState from '@oh-my-rpg/state-engagement'
+
 import { InventorySlot, Item, ItemQuality } from '@tbrpg/definitions'
 
 import { Weapon } from '@tbrpg/logic-weapons'
@@ -17,12 +19,10 @@ import {
 	CharacterAttribute,
 	increase_stat,
 } from '@tbrpg/state--character'
-import { Currency } from '@oh-my-rpg/state-wallet'
-
-import * as EnergyState from '@oh-my-rpg/state-energy'
-import * as WalletState from '@oh-my-rpg/state-wallet'
+import { Currency } from '@tbrpg/state-wallet'
+import * as EnergyState from '@tbrpg/state-energy'
+import * as WalletState from '@tbrpg/state-wallet'
 import * as InventoryState from '@tbrpg/state--inventory'
-import * as EngagementState from '@oh-my-rpg/state-engagement'
 
 /////////////////////
 
@@ -31,11 +31,11 @@ import { State } from '../types.js'
 import {
 	appraise_item_value,
 	is_inventory_full,
-} from '../selectors'
+} from '../selectors/index.js'
 
-import { get_lib_SEC } from '../services/sec'
+import { get_lib_SEC } from '../services/sec.js'
 
-import {STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC} from './create'
+import {STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC} from './create.js'
 
 /////////////////////
 

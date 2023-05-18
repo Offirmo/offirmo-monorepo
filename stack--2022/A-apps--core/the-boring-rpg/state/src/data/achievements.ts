@@ -7,10 +7,10 @@ import { CharacterClass, DEFAULT_AVATAR_NAME } from '@tbrpg/state--character'
 import { get_item_in_slot } from '@tbrpg/state--inventory'
 import { Weapon, matches as matches_weapon } from '@tbrpg/logic-weapons'
 import { Armor, matches as matches_armor } from '@tbrpg/logic-armors'
-import { ALL_GOOD_ADVENTURE_ARCHETYPES } from '@oh-my-rpg/logic-adventures'
+import { ALL_GOOD_ADVENTURE_ARCHETYPES } from '@tbrpg/logic-adventures'
 
 import { UState } from '../types.js'
-import { STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC } from '../reducers/create'
+import { STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC } from '../reducers/create.js'
 
 // ’
 
@@ -1295,7 +1295,7 @@ const ENTRIES: Immutable<AchievementDefinition<UState>>[] = RAW_ENTRIES
 			lore,
 			get_status: get_status!,
 			get_completion_rate,
-		}
+		} as AchievementDefinition<UState>
 	})
 
 export default ENTRIES

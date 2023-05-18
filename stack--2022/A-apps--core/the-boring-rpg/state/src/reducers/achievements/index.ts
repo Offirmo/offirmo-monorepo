@@ -14,8 +14,8 @@ import {
 
 import { State, UState } from '../../types.js'
 
-import ACHIEVEMENT_DEFINITIONS from '../../data/achievements'
-import {EngagementKey} from '../../data/engagement'
+import ACHIEVEMENT_DEFINITIONS from '../../data/achievements.js'
+import {EngagementKey} from '../../data/engagement/index.js'
 
 /////////////////////
 

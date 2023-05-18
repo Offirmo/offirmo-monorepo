@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import icepick from 'icepick'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
-import { ALL_ADVENTURE_ARCHETYPES } from '@oh-my-rpg/logic-adventures'
+import { ALL_ADVENTURE_ARCHETYPES } from '@tbrpg/logic-adventures'
 import {
 	InventorySlot,
 	get_unequipped_item_count,
@@ -12,20 +12,23 @@ import {
 import {
 	Currency,
 	get_currency_amount,
-} from '@oh-my-rpg/state-wallet'
+} from '@tbrpg/state-wallet'
 
 import { LIB } from '../../consts.js'
 import { State} from '../../types.js'
 import {
 	get_available_energy_float,
-} from '../../selectors'
+} from '../../selectors/index.js'
 import {
 	_lose_all_energy,
-} from '../internal'
+} from '../internal.js'
 import {
 	create,
+} from '../index.js'
+import {
 	play,
-} from '..'
+} from './index.js'
+
 
 describe(`${LIB} - reducer - play`, function() {
 	beforeEach(() => xxx_internal_reset_prng_cache())

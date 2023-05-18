@@ -4,8 +4,8 @@ import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 
 
 import { LIB } from '../consts.js'
-import {create} from '../reducers'
-import {appraise_item_value} from './inventory'
+import { create } from '../reducers/index.js'
+import { appraise_item_value } from './inventory.js'
 
 
 describe(`${LIB} - selectors - inventory`, function() {

@@ -8,7 +8,7 @@ import {
 	is_alpha,
 	is_registered_alpha_player,
 	get_available_energy_float,
-} from '../selectors'
+} from '../selectors/index.js'
 
 ////////////
 
@@ -92,7 +92,7 @@ const ALL_CODESPECS: Immutable<CodeSpec<State>>[] = Object.keys(RAW_CODES).map(k
 		code,
 		redeem_limit,
 		is_redeemable,
-	} = RAW_CODES[key]
+	} = RAW_CODES[key]!
 
 	if (code)
 		throw new Error(`Code entry "${key}" redundantly specifies a code!`)

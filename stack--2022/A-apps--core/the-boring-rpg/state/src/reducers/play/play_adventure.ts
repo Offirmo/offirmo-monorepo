@@ -4,7 +4,7 @@ import { Immutable} from '@offirmo-private/ts-types'
 import { Enum } from 'typescript-string-enums'
 
 import { generate_uuid } from '@offirmo-private/uuid'
-import { Random, RNGEngine } from '@offirmo/random'
+import { get_random, RNGEngine } from '@offirmo/random'
 
 import { InventorySlot } from '@tbrpg/definitions'
 
@@ -16,11 +16,10 @@ import {
 } from '@tbrpg/state--character'
 
 import * as InventoryState from '@tbrpg/state--inventory'
-import * as WalletState from '@oh-my-rpg/state-wallet'
+import * as WalletState from '@tbrpg/state-wallet'
 import * as PRNGState from '@oh-my-rpg/state-prng'
 import {
 	get_prng,
-	generate_random_seed,
 	register_recently_used,
 	regenerate_until_not_recently_encountered,
 } from '@oh-my-rpg/state-prng'
@@ -55,7 +54,7 @@ import {
 	pick_random_good_archetype,
 	pick_random_bad_archetype,
 	generate_random_coin_gain_or_loss,
-} from '@oh-my-rpg/logic-adventures'
+} from '@tbrpg/logic-adventures'
 
 import {
 	State,
@@ -72,7 +71,7 @@ import {
 	_receive_item,
 	_enhance_an_armor,
 	_enhance_a_weapon,
-} from '../internal'
+} from '../internal.js'
 
 /////////////////////
 
@@ -156,7 +155,7 @@ if (Object.keys(SECONDARY_STATS_BY_CLASS).length !== Enum.keys(CharacterClass).l
 
 
 function instantiate_adventure_archetype(
-	rng: Engine,
+	rng: RNGEngine,
 	aa: Immutable<AdventureArchetype>,
 	character: Immutable<CharacterState>,
 	inventory: Immutable<InventoryState.State>,
@@ -169,7 +168,7 @@ function instantiate_adventure_archetype(
 
 	// instantiate the special gains
 	if (should_gain.random_attribute) {
-		const stat: keyof OutcomeArchetype = Random.pick(rng, ALL_ATTRIBUTES_X_LVL) as keyof OutcomeArchetype
+		const stat: keyof OutcomeArchetype = get_random.picker.of(ALL_ATTRIBUTES_X_LVL)(rng) as keyof OutcomeArchetype
 		(should_gain as any)[stat] = true
 	}
 	if (should_gain.lowest_attribute) {
@@ -179,17 +178,17 @@ function instantiate_adventure_archetype(
 		(should_gain as any)[lowest_stat] = true
 	}
 	if (should_gain.class_primary_attribute) {
-		const stat: keyof OutcomeArchetype = Random.pick(rng, PRIMARY_STATS_BY_CLASS[character.klass]) as keyof OutcomeArchetype
+		const stat: keyof OutcomeArchetype = get_random.picker.of(PRIMARY_STATS_BY_CLASS[character.klass]!)(rng) as keyof OutcomeArchetype
 		(should_gain as any)[stat] = true
 	}
 	if (should_gain.class_secondary_attribute) {
-		const stat: keyof OutcomeArchetype = Random.pick(rng, SECONDARY_STATS_BY_CLASS[character.klass]) as keyof OutcomeArchetype
+		const stat: keyof OutcomeArchetype = get_random.picker.of(SECONDARY_STATS_BY_CLASS[character.klass]!)(rng) as keyof OutcomeArchetype
 		(should_gain as any)[stat] = true
 	}
 
 	if (should_gain.armor_or_weapon) {
 		// TODO take into account the existing inventory?
-		if (Random.bool()(rng))
+		if (get_random.generator_of.bool()(rng))
 			should_gain.armor = true
 		else
 			should_gain.weapon = true
@@ -197,7 +196,7 @@ function instantiate_adventure_archetype(
 	if (should_gain.improvementⵧarmor_or_weapon) {
 		if (is_weapon_at_max_enhancement(InventoryState.get_slotted_weapon(inventory)!)) // most likely to happen
 			should_gain.improvementⵧarmor = true
-		else if (Random.bool()(rng))
+		else if (get_random.generator_of.bool()(rng))
 			should_gain.improvementⵧarmor = true
 		else
 			should_gain.improvementⵧweapon = true

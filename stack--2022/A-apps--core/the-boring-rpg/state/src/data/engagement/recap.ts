@@ -3,6 +3,7 @@ import * as RichText from '@offirmo-private/rich-text-format'
 
 import { UState } from '../../types.js'
 
+
 function get_recap(u_state: Immutable<UState>): RichText.Document {
 	const isNewGame = (u_state.revision === 0)
 	if (isNewGame) {

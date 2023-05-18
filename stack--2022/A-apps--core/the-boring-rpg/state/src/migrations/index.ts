@@ -2,27 +2,27 @@ import {
 	Immutable,
 	LastMigrationStep,
 	MigrationStep,
-	SubStatesMigrations,
+	SubStatesMigrationFns,
 	CleanupStep,
 	generic_migrate_to_latest,
 } from '@offirmo-private/state-utils'
 import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 
 import * as CharacterState from '@tbrpg/state--character'
-import * as WalletState from '@oh-my-rpg/state-wallet'
+import * as WalletState from '@tbrpg/state-wallet'
 import * as InventoryState from '@tbrpg/state--inventory'
 import * as PRNGState from '@oh-my-rpg/state-prng'
-import * as EnergyState from '@oh-my-rpg/state-energy'
+import * as EnergyState from '@tbrpg/state-energy'
 import * as EngagementState from '@oh-my-rpg/state-engagement'
 import * as CodesState from '@oh-my-rpg/state-codes'
 import * as ProgressState from '@tbrpg/state--progress'
 import * as MetaState from '@oh-my-rpg/state-meta'
 
-import { LIB, SCHEMA_VERSION } from '../consts'
-import { State } from '../types'
-import { OMRSoftExecutionContext } from '../services/sec'
-import { _refresh_achievements } from '../reducers/achievements'
-import { reset_and_salvage } from './salvage'
+import { LIB, SCHEMA_VERSION } from '../consts.js'
+import { State } from '../types.js'
+import { TBRSoftExecutionContext } from '../services/sec.js'
+import { _refresh_achievements } from '../reducers/achievements/index.js'
+import { reset_and_salvage } from './salvage.js'
 
 /////////////////////
 
@@ -31,19 +31,19 @@ import { reset_and_salvage } from './salvage'
 
 /////////////////////
 
-const SUB_STATES_MIGRATIONS: SubStatesMigrations = {
+const SUB_STATES_MIGRATIONS: SubStatesMigrationFns = {
 	avatar:     CharacterState.migrate_to_latest,
-	inventory:  InventoryState.migrate_to_latest,
-	wallet:     WalletState.migrate_to_latest,
-	prng:       PRNGState.migrate_to_latest,
+	codes:      CodesState.migrate_to_latest,
 	energy:     EnergyState.migrate_to_latest,
 	engagement: EngagementState.migrate_to_latest,
-	codes:      CodesState.migrate_to_latest,
-	progress:   ProgressState.migrate_to_latest,
+	inventory:  InventoryState.migrate_to_latest,
 	meta:       MetaState.migrate_to_latest,
+	prng:       PRNGState.migrate_to_latest,
+	progress:   ProgressState.migrate_to_latest,
+	wallet:     WalletState.migrate_to_latest,
 }
 
-export function migrate_to_latest(SEC: OMRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<State> {
+export function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<State> {
 	let state = legacy_state as Immutable<State> // for starter
 
 	try {
@@ -174,7 +174,7 @@ const migrate_to_15x: LastMigrationStep<State, any> = (SEC, legacy_state, hints,
 	return state
 }
 
-const migrate_to_14: MigrationStep<State, any> = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+const migrate_to_14: MigrationStep = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
 	if (legacy_schema_version < 13)
 		legacy_state = previous(SEC, legacy_state, hints)
 
@@ -214,7 +214,7 @@ const migrate_to_14: MigrationStep<State, any> = (SEC, legacy_state, hints, prev
 	return state
 }
 
-const migrate_to_13: MigrationStep<State, any> = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+const migrate_to_13: MigrationStep = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
 	if (legacy_schema_version < 12)
 		legacy_state = previous(SEC, legacy_state, hints)
 
@@ -255,6 +255,6 @@ const migrate_to_13: MigrationStep<State, any> = (SEC, legacy_state, hints, prev
 	return state
 }
 
-const migrate_to_12: MigrationStep<State> = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+const migrate_to_12: MigrationStep = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
 	throw new Error('Alpha release outdated schema, won’t migrate, would take too much time and schema is still unstable!')
 }

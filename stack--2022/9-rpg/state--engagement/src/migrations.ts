@@ -32,15 +32,15 @@ function migrate_to_latest(SEC: SoftExecutionContext, legacy_state: Immutable<an
 		hints,
 		sub_states_migrate_to_latest: {},
 		pipeline: [
-			_migrate_to_X,
+			_migrate_to_Xx,
 		]
 	})
 }
 
 /////////////////////
 
-const _migrate_to_X: LastMigrationStep<StateForMigration, any> = (SEC, legacy_state, hints, next, legacy_schema_version) => {
-	throw new Error('Schema is too old (pre-beta), can’t migrate!')
+const _migrate_to_Xx: LastMigrationStep<StateForMigration, any> = (SEC, legacy_state, hints, next, legacy_schema_version) => {
+	throw new Error('Schema is too old can’t migrate!')
 }
 
 /////////////////////

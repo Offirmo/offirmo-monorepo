@@ -6,11 +6,11 @@ import * as RichText from '@offirmo-private/rich-text-format'
 import { LIB } from '../../consts.js'
 import {
 	create,
-} from '../..'
+} from '../../index.js'
 
 import {
 	get_recap,
-} from './recap'
+} from './recap.js'
 
 
 describe(`${LIB} - engagement - recap`, function() {

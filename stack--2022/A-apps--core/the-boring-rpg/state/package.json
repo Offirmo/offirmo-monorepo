@@ -6,12 +6,16 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"esnext": "dist/src.es2022.esm/index.js",
-	"module": "dist/src.es2022.esm/index.js",
-	"main": "dist/src.es2022.cjs/index.js",
-	"typings": "dist/src.es2022.cjs/index.d.ts",
-	"source": "src/index.ts",
 	"sideEffects": false,
+	"type": "module",
+	"source": "src/index.ts",
+	"exports": {
+		".": {
+			"import": "./dist/src.es2022.esm/index.js"
+		}
+	},
+	"module": "dist/src.es2022.esm/index.js",
+	"typings": "dist/src.es2022.esm/index.d.ts",
 
 	"peerDependencies": {
 		"@offirmo-private/soft-execution-context": "^0",
@@ -25,21 +29,21 @@
 		"@offirmo-private/unicode-data": "^0",
 		"@offirmo-private/uuid": "^0",
 		"@offirmo/universal-debug-api-placeholder": "^1",
-		"@oh-my-rpg/logic-adventures": "^0",
-		"@tbrpg/logic-armors": "^0",
-		"@tbrpg/logic-monsters": "^0",
-		"@tbrpg/logic-weapons": "^0",
 		"@oh-my-rpg/state-codes": "^0",
-		"@oh-my-rpg/state-energy": "^0",
 		"@oh-my-rpg/state-engagement": "^0",
 		"@oh-my-rpg/state-meta": "^0",
 		"@oh-my-rpg/state-prng": "^0",
-		"@oh-my-rpg/state-wallet": "^0",
 		"@tbrpg/definitions": "^0",
 		"@tbrpg/logic--shop": "^0",
+		"@tbrpg/logic-adventures": "^0",
+		"@tbrpg/logic-armors": "^0",
+		"@tbrpg/logic-monsters": "^0",
+		"@tbrpg/logic-weapons": "^0",
 		"@tbrpg/state--character": "^0",
 		"@tbrpg/state--inventory": "^0",
 		"@tbrpg/state--progress": "^0",
+		"@tbrpg/state-energy": "^0",
+		"@tbrpg/state-wallet": "^0",
 		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
@@ -61,6 +65,5 @@
 		"icepick": "^2",
 		"npm-run-all": "^4",
 		"tslib": "^2"
-	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/A-apps--core/the-boring-rpg/state"
+	}
 }

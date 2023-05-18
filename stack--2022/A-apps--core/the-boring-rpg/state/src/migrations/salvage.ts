@@ -11,15 +11,15 @@ import * as EngagementState from '@oh-my-rpg/state-engagement'
 
 import { LIB } from '../consts.js'
 import { State } from '../types.js'
-import { get_logger } from '../services/logger'
+import { get_logger } from '../services/logger.js'
 import {
 	create,
 	reseed,
 	rename_avatar,
 	change_avatar_class,
 	_autoplay,
-} from '../reducers'
-import { EngagementKey } from '../data/engagement'
+} from '../reducers/index.js'
+import { EngagementKey } from '../data/engagement/index.js'
 
 /////////////////////
 

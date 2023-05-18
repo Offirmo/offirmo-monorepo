@@ -1,12 +1,12 @@
 /////////////////////
 
 import { Immutable} from '@offirmo-private/ts-types'
-import { Random, RNGEngine } from '@offirmo/random'
+import { RNGEngine } from '@offirmo/random'
 
 /////////////////////
 
 import * as PRNGState from '@oh-my-rpg/state-prng'
-import * as WalletState from '@oh-my-rpg/state-wallet'
+import * as WalletState from '@tbrpg/state-wallet'
 
 import {
 	get_prng,
@@ -21,13 +21,13 @@ import {
 	get_archetype,
 	pick_random_good_archetype,
 	pick_random_bad_archetype,
-} from '@oh-my-rpg/logic-adventures'
+} from '@tbrpg/logic-adventures'
 
 /////////////////////
 
 import { LIB } from '../../consts.js'
 import { State, UState } from '../../types.js'
-import { _play_adventure } from './play_adventure'
+import { _play_adventure } from './play_adventure.js'
 
 /////////////////////
 

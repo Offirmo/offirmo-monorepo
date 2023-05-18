@@ -5,7 +5,7 @@ import { enforce_immutability } from '@offirmo-private/state-utils'
 
 import { LIB } from '../consts.js'
 
-import { reset_and_salvage } from './salvage'
+import { reset_and_salvage } from './salvage.js'
 import { DEMO_STATE } from '../examples.js'
 
 

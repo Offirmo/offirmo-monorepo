@@ -6,7 +6,7 @@ import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation }
 
 /////////////////////
 
-import * as EnergyState from '@oh-my-rpg/state-energy'
+import * as EnergyState from '@tbrpg/state-energy'
 import * as EngagementState from '@oh-my-rpg/state-engagement'
 import * as PRNGState from '@oh-my-rpg/state-prng'
 import * as CodesState from '@oh-my-rpg/state-codes'
@@ -20,18 +20,18 @@ import { create as create_armor } from '@tbrpg/logic-armors'
 /////////////////////
 
 import { State } from '../types.js'
-import { EngagementKey } from '../data/engagement'
-import { CODE_SPECS_BY_KEY } from '../data/codes'
+import { EngagementKey } from '../data/engagement/index.js'
+import { CODE_SPECS_BY_KEY } from '../data/codes.js'
 
 import {
 	_update_to_now,
 	_receive_item,
 	_auto_make_room,
-} from './internal'
+} from './internal.js'
 
-import { _refresh_achievements } from './achievements'
-import { reset_and_salvage } from '../migrations/salvage'
-import { reseed } from './create'
+import { _refresh_achievements } from './achievements/index.js'
+import { reset_and_salvage } from '../migrations/salvage.js'
+import { reseed } from './create.js'
 
 /////////////////////
 

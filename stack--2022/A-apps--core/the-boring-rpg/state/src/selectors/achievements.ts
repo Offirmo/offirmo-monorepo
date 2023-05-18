@@ -10,7 +10,7 @@ import {
 
 import { UState } from '../types.js'
 
-import ACHIEVEMENT_DEFINITIONS from '../data/achievements'
+import ACHIEVEMENT_DEFINITIONS from '../data/achievements.js'
 
 /////////////////////
 
@@ -29,7 +29,7 @@ function get_achievement_snapshot(u_state: Immutable<UState>, definition: Immuta
 		lore,
 		status: status!,
 		completion_rate: get_completion_rate ? get_completion_rate(u_state) : undefined,
-	}
+	} as AchievementSnapshot
 }
 
 function get_achievement_snapshot_by_temporary_id(u_state: Immutable<UState>, temporary_id: string): ReturnType<typeof get_achievement_snapshot> {

@@ -3,7 +3,7 @@ import { Immutable} from '@offirmo-private/ts-types'
 import {
 	get_available_energy_float as _get_available_energy_float,
 	get_human_time_to_next,
-} from '@oh-my-rpg/state-energy'
+} from '@tbrpg/state-energy'
 
 import { State, TState } from '../types.js'
 

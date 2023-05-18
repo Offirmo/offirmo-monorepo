@@ -6,18 +6,18 @@ import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation }
 
 /////////////////////
 
-import * as EnergyState from '@oh-my-rpg/state-energy'
+import * as EnergyState from '@tbrpg/state-energy'
 import * as ProgressState from '@tbrpg/state--progress'
 
 /////////////////////
 
 import { State } from '../../types.js'
 
-import { will_next_play_be_good_at } from '../../selectors'
-import { _update_to_now } from '../internal'
-import { _play_good } from './play_good'
-import { _play_bad } from './play_bad'
-import { _refresh_achievements } from '../achievements'
+import { will_next_play_be_good_at } from '../../selectors/index.js'
+import { _update_to_now } from '../internal.js'
+import { _play_good } from './play_good.js'
+import { _play_bad } from './play_bad.js'
+import { _refresh_achievements } from '../achievements/index.js'
 
 /////////////////////
 

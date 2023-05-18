@@ -1,14 +1,14 @@
 /////////////////////
 
 import { Immutable} from '@offirmo-private/ts-types'
-import { Random, RNGEngine } from '@offirmo/random'
+import { get_random, get_engine } from '@offirmo/random'
 import { get_human_readable_UTC_timestamp_days } from '@offirmo-private/timestamps'
 import { get_revision, complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
 
 /////////////////////
 
 import * as CharacterState from '@tbrpg/state--character'
-import * as EnergyState from '@oh-my-rpg/state-energy'
+import * as EnergyState from '@tbrpg/state-energy'
 
 import {
 	CharacterClass,
@@ -23,25 +23,25 @@ import {
 	get_available_energy_float,
 	find_better_unequipped_armor,
 	find_better_unequipped_weapon, get_available_classes,
-} from '../selectors'
+} from '../selectors/index.js'
 
 import {
 	_lose_all_energy,
 	_auto_make_room,
 	_ack_all_engagements,
-} from './internal'
+} from './internal.js'
 
 import {
 	rename_avatar,
 	change_avatar_class,
 	equip_item,
-} from './base'
+} from './base.js'
 
 import {
 	play,
-} from './play'
+} from './play/index.js'
 
-import { _refresh_achievements } from './achievements'
+import { _refresh_achievements } from './achievements/index.js'
 
 /////////////////////
 
@@ -87,7 +87,7 @@ function _autogroom(state: Immutable<State>, options: { DEBUG?: boolean } = {}):
 }
 
 /* Autoplay, as efficiently as possible,
- * trying to restore as much achievements as possible
+ * trying to restore as many achievements as possible
  */
 function _autoplay(previous_state: Immutable<State>, options: Immutable<{ target_good_play_count?: number, target_bad_play_count?: number, DEBUG?: boolean }> = {}): Immutable<State> {
 	let state = previous_state

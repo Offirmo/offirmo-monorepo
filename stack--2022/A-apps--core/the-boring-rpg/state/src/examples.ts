@@ -1,19 +1,8 @@
 /////////////////////
 
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
-import { TEST_TIMESTAMP_MS, get_human_readable_UTC_timestamp_minutes } from '@offirmo-private/timestamps'
 
 /////////////////////
-
-import * as Character from '@tbrpg/state--character'
-import * as Inventory from '@tbrpg/state--inventory'
-import * as Wallet from '@oh-my-rpg/state-wallet'
-import * as PRNG from '@oh-my-rpg/state-prng'
-import * as Energy from '@oh-my-rpg/state-energy'
-import * as Engagement from '@oh-my-rpg/state-engagement'
-import * as Codes from '@oh-my-rpg/state-codes'
-import * as Progress from '@tbrpg/state--progress'
-import * as MetaState from '@oh-my-rpg/state-meta'
 
 import { DEMO_WEAPON_1, Weapon } from '@tbrpg/logic-weapons'
 import { Armor } from '@tbrpg/logic-armors'
@@ -21,16 +10,15 @@ import { DEMO_MONSTER_01 } from '@tbrpg/logic-monsters'
 
 /////////////////////
 
-import { SCHEMA_VERSION } from './consts.js'
 import { State, Adventure } from './types.js'
-import { cleanup } from './migrations'
-import { get_lib_SEC } from './services/sec'
+import { cleanup } from './migrations/index.js'
+import { get_lib_SEC } from './services/sec.js'
 
 /////////////////////
 
 // needed to test migrations, both here and in composing parents
 
-// a full featured, non-trivial demo state
+// a full-featured, non-trivial demo state
 // with dev gain
 const DEMO_ADVENTURE_01: Immutable<Adventure> = enforce_immutability<Adventure>({
 	hid: 'fight_lost_any',

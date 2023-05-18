@@ -3,10 +3,10 @@ import { expect } from 'chai'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 
 import { LIB } from '../consts.js'
-import { create } from '..'
+import { create } from '../index.js'
 import {
 	find_element,
-} from './others'
+} from './others.js'
 
 
 describe(`${LIB} - selectors - others`, function() {

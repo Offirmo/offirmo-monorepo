@@ -5,10 +5,10 @@ import { itㆍshouldㆍmigrateㆍcorrectly } from '@offirmo-private/state-migrat
 import { enforce_immutability } from '@offirmo-private/state-utils'
 
 import * as CharacterState from '@tbrpg/state--character'
-import * as WalletState from '@oh-my-rpg/state-wallet'
+import * as WalletState from '@tbrpg/state-wallet'
 import * as InventoryState from '@tbrpg/state--inventory'
 import * as PRNGState from '@oh-my-rpg/state-prng'
-import * as EnergyState from '@oh-my-rpg/state-energy'
+import * as EnergyState from '@tbrpg/state-energy'
 import * as EngagementState from '@oh-my-rpg/state-engagement'
 import * as CodesState from '@oh-my-rpg/state-codes'
 import * as ProgressState from '@tbrpg/state--progress'
@@ -16,9 +16,9 @@ import * as MetaState from '@oh-my-rpg/state-meta'
 
 import { LIB, SCHEMA_VERSION } from '../consts.js'
 import { migrate_to_latest } from './index.js'
-import { get_lib_SEC } from '../services/sec'
+import { get_lib_SEC } from '../services/sec.js'
 
-import {create} from '..'
+import { create } from '../index.js'
 import { DEMO_STATE } from '../examples.js'
 
 // some hints may be needed to migrate to demo state

@@ -18,8 +18,8 @@ import { AchievementSnapshot } from '@tbrpg/state--progress'
 /////////////////////
 
 import { UState } from '../types.js'
-import { get_engagement_message } from '../data/engagement'
-import { get_achievement_snapshot_by_temporary_id } from './achievements'
+import { get_engagement_message } from '../data/engagement/index.js'
+import { get_achievement_snapshot_by_temporary_id } from './achievements.js'
 
 /////////////////////
 

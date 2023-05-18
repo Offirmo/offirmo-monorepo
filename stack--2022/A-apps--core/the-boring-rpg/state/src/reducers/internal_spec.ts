@@ -7,20 +7,22 @@ import { LIB } from '../consts.js'
 
 import {
 	get_available_energy_float,
-} from '../selectors'
+} from '../selectors/energy.js'
 
 import {
 	_lose_all_energy,
-} from './internal'
+} from './internal.js'
 
 import {
 	create,
 } from './index.js'
 
-describe(`${LIB} - reducer - internals`, function() {
+
+describe(`${LIB} -- reducers -- internal`, function() {
 	beforeEach(() => xxx_internal_reset_prng_cache())
 
 	describe('_lose_all_energy', function() {
+
 		it('should work', () => {
 			let state = create()
 

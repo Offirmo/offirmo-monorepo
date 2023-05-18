@@ -11,13 +11,14 @@ import { Armor, matches as matches_armor } from '@tbrpg/logic-armors'
 import { LIB } from '../consts.js'
 import {
 	is_inventory_full,
-} from '../selectors'
+} from '../selectors/index.js'
 import {
 	STARTING_WEAPON_SPEC,
 	STARTING_ARMOR_SPEC,
 	create,
-} from './create'
-import { _autoplay } from './autoplay'
+} from './create.js'
+import { _autoplay } from './autoplay.js'
+
 
 describe(`${LIB} - reducer`, function() {
 	beforeEach(() => xxx_internal_reset_prng_cache())

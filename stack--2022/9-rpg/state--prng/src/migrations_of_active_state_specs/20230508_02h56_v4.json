@@ -1,6 +1,6 @@
 {
-	"uuid": "uu1~example~state~PRNG~~",
 	"schema_version": 4,
+	"uuid": "uu1~example~state~PRNG~~",
 	"revision": 108,
 	"prng_state": {
 		"algorithm_id": "MT19937",

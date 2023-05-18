@@ -4,7 +4,7 @@ import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 import { enforce_immutability } from '@offirmo-private/state-utils'
 
 import { LIB } from '../consts.js'
-import { EngagementKey } from '../data/engagement'
+import { EngagementKey } from '../data/engagement/index.js'
 import {
 	create,
 	reseed,
@@ -14,7 +14,7 @@ import {
 import {
 	_lose_all_energy,
 	_ack_all_engagements,
-} from './internal'
+} from './internal.js'
 import {State} from '../types.js'
 
 describe(`${LIB} - reducer - codes`, function() {
@@ -48,9 +48,9 @@ describe(`${LIB} - reducer - codes`, function() {
 				state = attempt_to_redeem_code(state, code)
 
 				expect(state.u_state.engagement.queue.length).to.be.above(0)
-				let notif = state.u_state.engagement.queue.slice(-1)[0]
+				let notif = state.u_state.engagement.queue.slice(-1)[0]!
 				if (notif.engagement.key === EngagementKey['achievement-unlocked'])
-					notif = state.u_state.engagement.queue.slice(-2)[0]
+					notif = state.u_state.engagement.queue.slice(-2)[0]!
 				//console.log(notif)
 				expect(notif).to.have.nested.property('engagement.type', 'flow')
 				expect(notif).to.have.nested.property('engagement.key', EngagementKey['code_redemption--succeeded'])
