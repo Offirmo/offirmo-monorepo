@@ -5,9 +5,10 @@ import {
 	create,
 } from './index.js'
 import { get_lib_SEC } from './sec.js'
+import { LIB } from './consts.js'
 
 
-describe('@tbrpg/state--progress - selectors', function() {
+describe(`${LIB} - selectors`, function() {
 
 
 })

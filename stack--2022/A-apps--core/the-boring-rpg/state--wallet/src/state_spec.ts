@@ -15,7 +15,7 @@ import {
 	iterables_currency,
 } from './index.js'
 
-describe('@tbrpg/state-wallet - state', function() {
+describe(`${LIB} - state`, function() {
 	const EXPECTED_CURRENCY_SLOT_COUNT = 2
 
 	describe('🆕  create()', function() {

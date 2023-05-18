@@ -13,7 +13,7 @@ import {
 	compare_items_by_slot_then_strength,
 } from './index.js'
 
-describe(`${LIB} - sorting`, function() {
+describe(`${LIB} - compare`, function() {
 
 	describe('comparison of different types', function() {
 

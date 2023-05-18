@@ -11,9 +11,9 @@ import {
 } from './index.js'
 import { get_lib_SEC } from './sec.js'
 
-describe(`${LIB} - reducer`, function() {
+describe(`${LIB} - state`, function() {
 
-	describe('🆕  initial state', function() {
+	describe('🆕  create()', function() {
 
 		it('should have correct defaults', function() {
 			const state = create(get_lib_SEC())

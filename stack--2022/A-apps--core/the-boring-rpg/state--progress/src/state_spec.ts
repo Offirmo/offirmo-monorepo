@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import sinon from 'sinon'
 
-import { SCHEMA_VERSION } from './consts.js'
+import { LIB, SCHEMA_VERSION } from './consts.js'
 import {
 	State,
 	AchievementStatus,
@@ -12,7 +12,7 @@ import {
 import { get_lib_SEC } from './sec.js'
 
 
-describe('@tbrpg/state--progress - state', function() {
+describe(`${LIB} - state`, function() {
 
 	beforeEach(function () {
 		// @ts-expect-error
