@@ -7,7 +7,7 @@ import { State, AchievementStatus } from './types.js'
 
 const TRUE_TRUE: true = true // https://github.com/Microsoft/TypeScript/issues/19360
 
-// a full featured, non-trivial demo state
+// a full-featured, non-trivial demo state
 // useful for demos and unit tests
 const DEMO_STATE: Immutable<State> = enforce_immutability<State>({
 	schema_version: 3,

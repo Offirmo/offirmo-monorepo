@@ -21,7 +21,7 @@ interface State extends BaseUState {
 
 export {
 	Currency,
-	State,
+	type State,
 }
 
 /////////////////////

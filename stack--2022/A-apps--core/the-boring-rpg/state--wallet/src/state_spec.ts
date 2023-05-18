@@ -15,10 +15,10 @@ import {
 	iterables_currency,
 } from './index.js'
 
-describe('@oh-my-rpg/state-wallet - reducer', function() {
+describe('@tbrpg/state-wallet - state', function() {
 	const EXPECTED_CURRENCY_SLOT_COUNT = 2
 
-	describe('🆕 initial state', function() {
+	describe('🆕  create()', function() {
 
 		it('should have correct defaults to 0', function() {
 			const state = create()
@@ -65,7 +65,7 @@ describe('@oh-my-rpg/state-wallet - reducer', function() {
 			function remove() {
 				state = remove_amount(state, Currency.coin, 3)
 			}
-			expect(remove).to.throw('state-wallet: can’t remove more than available, no credit !')
+			expect(remove).to.throw('not enough')
 		})
 
 		it('should throw on currency slot too low', function() {
@@ -74,7 +74,7 @@ describe('@oh-my-rpg/state-wallet - reducer', function() {
 			function remove() {
 				state = remove_amount(state, Currency.coin, 6)
 			}
-			expect(remove).to.throw('state-wallet: can’t remove more than available, no credit !')
+			expect(remove).to.throw('not enough')
 		})
 
 		it('should work in nominal case', function() {

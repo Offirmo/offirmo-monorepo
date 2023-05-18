@@ -27,5 +27,6 @@ state
 * energy
 * inventory
 * progress
+* wallet
 aggregation
 * logic power
