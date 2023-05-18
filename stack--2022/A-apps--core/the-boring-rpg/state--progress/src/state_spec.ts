@@ -9,19 +9,21 @@ import {
 	on_played,
 	on_achieved,
 } from './index.js'
-import { get_lib_SEC } from './sec'
+import { get_lib_SEC } from './sec.js'
 
 
-describe('@tbrpg/state--progress - reducer', function() {
+describe('@tbrpg/state--progress - state', function() {
 
 	beforeEach(function () {
+		// @ts-expect-error
 		this.clock = sinon.useFakeTimers() // needed to have a reproducible timestamp
 	})
 	afterEach(function () {
+		// @ts-expect-error
 		this.clock.restore()
 	})
 
-	describe('🆕  initial state', function() {
+	describe('🆕  create()', function() {
 
 		it('should have correct defaults', function() {
 			const state = create(get_lib_SEC())

@@ -1,8 +1,8 @@
 import { enforce_immutability, LastMigrationStep, MigrationStep, generic_migrate_to_latest } from '@offirmo-private/state-utils'
 
-import { LIB, SCHEMA_VERSION } from './consts'
-import { State } from './types'
-import { OMRSoftExecutionContext } from './sec'
+import { LIB, SCHEMA_VERSION } from './consts.js'
+import { State } from './types.js'
+import { TBRSoftExecutionContext } from './sec.js'
 
 // some hints may be needed to migrate to demo state
 // need to export them for composing tests
@@ -13,7 +13,7 @@ export const MIGRATION_HINTS_FOR_TESTS: any = enforce_immutability({
 /////////////////////
 
 type StateForMigration = State
-export function migrate_to_latest(SEC: OMRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any> = {}): StateForMigration {
+export function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any> = {}): StateForMigration {
 	return generic_migrate_to_latest({
 		SEC: SEC as any,
 		LIB,

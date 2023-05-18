@@ -14,13 +14,13 @@ import {
 	State,
 } from './types.js'
 
-import { get_last_known_achievement_status } from './selectors'
+import { get_last_known_achievement_status } from './selectors.js'
 
-import { OMRSoftExecutionContext, get_lib_SEC } from './sec'
+import { TBRSoftExecutionContext, get_lib_SEC } from './sec.js'
 
 /////////////////////
 
-function create(SEC?: OMRSoftExecutionContext): Immutable<State> {
+function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
 	return get_lib_SEC(SEC).xTry('create', () => {
 		const now_hrtday = get_human_readable_UTC_timestamp_days()
 		return enforce_immutability<State>({

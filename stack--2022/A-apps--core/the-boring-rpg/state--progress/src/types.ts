@@ -90,10 +90,10 @@ interface State extends BaseUState {
 /////////////////////
 
 export {
-	AchievementSnapshot,
+	type AchievementSnapshot,
 	AchievementStatus,
-	AchievementDefinition,
-	State,
+	type AchievementDefinition,
+	type State,
 }
 
 /////////////////////
