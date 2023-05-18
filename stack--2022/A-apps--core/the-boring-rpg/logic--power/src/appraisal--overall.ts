@@ -5,7 +5,7 @@ import * as Inventory from '@tbrpg/state--inventory'
 import * as Progress from '@tbrpg/state--progress'
 
 import { Power } from './types.js'
-import { appraise_powerⵧequipment } from './appraisal--equipment'
+import { appraise_powerⵧequipment } from './appraisal--equipment.js'
 
 export function appraise_powerⵧoverall(
 	avatar: Immutable<Character.State>,

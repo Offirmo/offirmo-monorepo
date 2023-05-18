@@ -15,7 +15,7 @@ const DISTRIB_ADJUSTMENT_ENTRIES_HIDS: string[] = [
 	'cookies_grandmas',
 ]
 
-describe('@oh-my-rpg/logic-adventures - data:', function () {
+describe('@tbrpg/logic-adventures - data:', function () {
 	const _: any = i18n_messages['en']
 	const ARCHETYPES: { [key: string]: RawAdventureArchetypeEntry } = {}
 	ENTRIES.forEach(entry => ARCHETYPES[entry.hid] = entry)

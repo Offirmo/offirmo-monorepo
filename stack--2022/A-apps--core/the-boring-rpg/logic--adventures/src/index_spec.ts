@@ -16,7 +16,7 @@ import {
 	GOOD_ADVENTURE_ARCHETYPES_BY_TYPE,
 } from './index.js'
 
-describe('@oh-my-rpg/logic-adventures - logic', function () {
+describe('@tbrpg/logic-adventures - logic', function () {
 
 	describe('data', function () {
 

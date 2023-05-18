@@ -6,12 +6,18 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"esnext": "dist/src.es2022.esm/index.js",
+	"sideEffects": false,
+	"type": "module",
+	"source": "src/index.ts",
+	"exports": {
+		".": {
+			"import": "./dist/src.es2022.esm/index.js",
+			"require": "./dist/src.es2022.cjs/index.js"
+		}
+	},
 	"module": "dist/src.es2022.esm/index.js",
 	"main": "dist/src.es2022.cjs/index.js",
-	"typings": "dist/src.es2022.cjs/index.d.ts",
-	"source": "src/index.ts",
-	"sideEffects": false,
+	"typings": "dist/src.es2022.esm/index.d.ts",
 
 	"peerDependencies": {
 		"tslib": "^2"
@@ -42,6 +48,5 @@
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4",
 		"tslib": "^2"
-	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/A-apps--core/the-boring-rpg/logic--power"
+	}
 }
