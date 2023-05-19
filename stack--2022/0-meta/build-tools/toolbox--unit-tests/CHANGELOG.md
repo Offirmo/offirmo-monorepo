@@ -7,6 +7,8 @@
 * [feat][breaking] properly set the init file's extension to .cjs
 * [chore][breaking] bumped deps: mocha 10
 * [chore][breaking] bumped deps: sinon 15
+* [chore][breaking] moved the offirmo specific inits to another file, wrapped in try/catch so should be safe
+* [feat] properly ignore the global variables from the Offirmo specific setup (you most likely don't care)
 * ...
 
 ## v8.0.0
