@@ -1,9 +1,10 @@
-const os = require('os')
+import os from 'node:os'
 
-const { getRootSEC } = require('@offirmo-private/soft-execution-context')
+import { getRootSEC } from '@offirmo-private/soft-execution-context'
+
+/////////////////////
 
 // TODO protect from double install
-
 
 function listenToUncaughtErrors() {
 	const SEC = getRootSEC()
@@ -74,8 +75,10 @@ function _force_set_level_of_uda_default_logger(suggestedLevel) {
 	}
 }
 
-module.exports = {
-	...require('@offirmo-private/soft-execution-context'),
+/////////////////////
+
+export * from '@offirmo-private/soft-execution-context'
+export {
 	listenToUncaughtErrors,
 	listenToUnhandledRejections,
 	decorateWithDetectedEnv,

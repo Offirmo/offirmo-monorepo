@@ -28,7 +28,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 	should_skip = false, // allow skipping the test, like it.skip
 }) {
 	if (typeof LATEST_EXPECTED_DATA === 'function') {
-		// to allow the creation to benefit from the fake timers
+		// wrap the call into the fake timers
 		const clock = sinon.useFakeTimers(TEST_TIMESTAMP_MS)
 		expect(+Date.now()).to.equal(TEST_TIMESTAMP_MS) // sanity check
 		LATEST_EXPECTED_DATA = LATEST_EXPECTED_DATA()

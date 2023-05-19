@@ -5,8 +5,8 @@ import { RandomValueGenerator } from './types.js'
 import { _get_generator_of_a_constant } from './_internal.js'
 
 export function get_random_generator_ofꓽintegerⵧbetween(min: Integer, max: Integer): RandomValueGenerator<Integer> {
-	assert(Number.isInteger(min), `min should be an integer!`)
-	assert(Number.isInteger(max), `max should be an integer!`)
+	assert(Number.isInteger(min), `min should be an integer (${min})!`)
+	assert(Number.isInteger(max), `max should be an integer (${max})!`)
 
 	const possible_output_count = max - min + 1;
 	assert(possible_output_count >= 1, `range should be positive!`)

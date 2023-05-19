@@ -128,10 +128,13 @@ function generate_random_coin_gain_or_loss(rng: RNGEngine, {
 
 		default: {
 			const level_multiplier = player_level * COINS_GAIN_MULTIPLIER_PER_LEVEL
-			let interval = COINS_GAIN_RANGES[range]
+			let interval = COINS_GAIN_RANGES[range]!
 			assert(interval, `known range "${range}"`)
-			interval = [ interval[0] * level_multiplier, interval[1] * level_multiplier ]
-			return get_random.generator_of.integer.between(interval[0], interval[1])(rng)
+			interval = [
+				Math.round(interval[0] * level_multiplier),
+				Math.round(interval[1] * level_multiplier)
+			]
+			return get_random.generator_of.integer.in_interval(interval)(rng)
 		}
 	}
 }
