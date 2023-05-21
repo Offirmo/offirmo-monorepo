@@ -60,7 +60,7 @@ const STARTING_ARMOR_SPEC: Immutable<Partial<Armor>> = {
 	base_strength: 1,
 }
 
-function create(SEC?: OMRSoftExecutionContext, seed?: number): Immutable<State> {
+function create(SEC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable<State> {
 	return get_lib_SEC(SEC).xTry('create', () => {
 		const [ u_state_energy, t_state_energy ] = EnergyState.create()
 		const now = new Date()
@@ -96,7 +96,7 @@ function create(SEC?: OMRSoftExecutionContext, seed?: number): Immutable<State> 
 			},
 		}
 
-		const rng = get_prng(state.u_state.prng)
+		const rng = PRNGState.get_prng(state.u_state.prng)
 
 		const starting_weapon = create_weapon(rng, STARTING_WEAPON_SPEC)
 		state = _receive_item(state, starting_weapon)
@@ -122,7 +122,7 @@ function create(SEC?: OMRSoftExecutionContext, seed?: number): Immutable<State> 
 		}
 
 		assert(
-			state.u_state.prng.use_count === 0,
+			state.u_state.prng.prng_state.call_count === 0,
 			'prng never used yet',
 		)
 		//state.prng = PRNGState.update_use_count(state.prng, rng)
@@ -144,17 +144,29 @@ function create(SEC?: OMRSoftExecutionContext, seed?: number): Immutable<State> 
 	})
 }
 
-function reseed(state: Immutable<State>, seed?: number): Immutable<State> {
-	seed = seed || generate_random_seed()
-
-	state = {
-		...state,
-		u_state: {
-			...state.u_state,
-			prng: PRNGState.set_seed(state.u_state.prng, seed),
-			revision: state.u_state.revision + 1,
-		},
+function reseed(state: Immutable<State>, seed?: PRNGState.Seed): Immutable<State> {
+	if (seed) {
+		console.warn('TODO review manual seeding!')
+		state = {
+			...state,
+			u_state: {
+				...state.u_state,
+				prng: PRNGState.set_seed(state.u_state.prng, seed),
+				revision: state.u_state.revision + 1,
+			},
+		}
 	}
+	else {
+		state = {
+			...state,
+			u_state: {
+				...state.u_state,
+				prng: PRNGState.auto_reseed(state.u_state.prng),
+				revision: state.u_state.revision + 1,
+			},
+		}
+	}
+
 
 	return enforce_immutability<State>(state)
 }

@@ -1,7 +1,1 @@
-import { getLogger } from '@offirmo/universal-debug-api-placeholder'
-
-export function get_logger() {
-	return getLogger({
-		name: '@tbrpg',
-	})
-}
+export { get_logger } from '@tbrpg/definitions'

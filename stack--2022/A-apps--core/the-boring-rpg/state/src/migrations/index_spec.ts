@@ -56,7 +56,8 @@ describe(`${LIB} - schema migration`, function() {
 				return new_state
 			},
 			migrate_to_latest: migrate_to_latest.bind(null, get_lib_SEC()),
-			absolute_dir_path: require('path').join(__dirname, '../../../src/migrations/migrations_of_blank_state_specs'),
+			import_meta_url: import.meta.url, // for resolving the path below
+			relative_dir_path: '../../../src/migrations/migrations_of_blank_state_specs',
 			clean_json_diff,
 			describe, context, it, expect,
 		})
@@ -71,7 +72,8 @@ describe(`${LIB} - schema migration`, function() {
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA: DEMO_STATE,
 			migrate_to_latest: migrate_to_latest.bind(null, get_lib_SEC()),
-			absolute_dir_path: require('path').join(__dirname, '../../../src/migrations/migrations_of_active_state_specs'),
+			import_meta_url: import.meta.url, // for resolving the path below
+			relative_dir_path: '../../../src/migrations/migrations_of_active_state_specs',
 			clean_json_diff,
 			describe, context, it, expect,
 		})

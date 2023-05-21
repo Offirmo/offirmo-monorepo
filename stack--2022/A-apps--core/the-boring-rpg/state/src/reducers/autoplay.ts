@@ -50,18 +50,22 @@ function _autogroom(state: Immutable<State>, options: { DEBUG?: boolean } = {}):
 
 	if (DEBUG) console.log(`  - Autogroom… (inventory holding ${state.u_state.inventory.unslotted.length} items)`)
 
+	// we want to pick some random but without affecting the in-game PRNG
+	// let's fork it!
+	const side_engine = get_engine.prng.from_state(state.u_state.prng.prng_state)
+
 	// User
 	// User class
 	if (state.u_state.avatar.klass === CharacterClass.novice) {
 		// change class
 		const available_classes = get_available_classes(state.u_state)
-		const new_class: CharacterClass = Random.pick(Random.engines.nativeMath, available_classes)
+		const new_class: CharacterClass = get_random.picker.of(available_classes)(side_engine)
 		if (DEBUG) console.log(`    - Changing class to ${new_class}…`)
 		state = change_avatar_class(state, new_class)
 	}
 	// User name
 	if (state.u_state.avatar.name === CharacterState.DEFAULT_AVATAR_NAME) {
-		const new_name = 'A' + Math.abs(state.u_state.prng.seed)
+		const new_name = 'A' + Math.abs(side_engine.get_Int32())
 		if (DEBUG) console.log(`    - renaming to ${new_name}…`)
 		state = rename_avatar(state, new_name)
 	}

@@ -57,7 +57,8 @@ export function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Im
 			sub_states_migrate_to_latest: SUB_STATES_MIGRATIONS,
 			cleanup,
 			pipeline: [
-				migrate_to_15x,
+				migrate_to_16x,
+				migrate_to_15,
 				migrate_to_14,
 				migrate_to_13,
 				migrate_to_12,
@@ -113,7 +114,31 @@ export const cleanup: CleanupStep<State> = (SEC, state, hints) => {
 	return state
 }
 
-const migrate_to_15x: LastMigrationStep<State, any> = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+const migrate_to_16x: LastMigrationStep<State, any> = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+	if (legacy_schema_version < 15)
+		legacy_state = previous(SEC, legacy_state, hints)
+
+	// it's just a sub-state getting an update
+	let state: State = legacy_state
+
+	// eventually, update schema version
+	state = {
+		...state,
+		schema_version: 16,
+		u_state: {
+			...state.u_state,
+			schema_version: 16,
+		},
+		t_state: {
+			...state.t_state,
+			schema_version: 16,
+		},
+	}
+
+	return state
+}
+
+const migrate_to_15: MigrationStep = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
 	if (legacy_schema_version < 14)
 		legacy_state = previous(SEC, legacy_state, hints)
 

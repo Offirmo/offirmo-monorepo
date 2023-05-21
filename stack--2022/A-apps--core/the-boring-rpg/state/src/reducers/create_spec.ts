@@ -11,7 +11,7 @@ import { LIB, SCHEMA_VERSION } from '../consts.js'
 import { create, reseed } from './index.js'
 
 
-describe(`${LIB} - reducer - create`, function() {
+describe(`${LIB} -- reducers -- create`, function() {
 	beforeEach(() => xxx_internal_reset_prng_cache())
 
 	describe('🆕  initial state', function() {
@@ -61,7 +61,7 @@ describe(`${LIB} - reducer - create`, function() {
 		it('should work', function() {
 			const { u_state } = reseed(create())
 
-			expect(u_state.prng.prng_state.seed).to.be.a('number')
+			expect(u_state.prng.prng_state.seed).to.have.lengthOf(256) // characteristic of auto-generated
 			expect(u_state.prng.prng_state.seed).not.to.equal(DEFAULT_SEED)
 		})
 	})

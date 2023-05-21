@@ -79,9 +79,9 @@ type AttributesArray = CharacterAttribute[]
 
 const ALL_ATTRIBUTES_X_LVL: AttributesArray = [ 'health', 'mana', 'strength', 'agility', 'charisma', 'wisdom', 'luck' ]
 
-const WARRIOR_LIKE_PRIMARY_ATTRIBUTES: AttributesArray = ['strength']
-const ROGUE_LIKE_PRIMARY_ATTRIBUTES: AttributesArray = ['agility']
-const MAGE_LIKE_PRIMARY_ATTRIBUTES: AttributesArray = ['mana']
+const WARRIOR_LIKE_PRIMARY_ATTRIBUTES: AttributesArray        = ['strength']
+const ROGUE_LIKE_PRIMARY_ATTRIBUTES: AttributesArray          = ['agility']
+const MAGE_LIKE_PRIMARY_ATTRIBUTES: AttributesArray           = ['mana']
 const HYBRID_PALADIN_LIKE_PRIMARY_ATTRIBUTES: AttributesArray = ['strength', 'mana']
 
 const PRIMARY_STATS_BY_CLASS: { [k: string]: AttributesArray } = {

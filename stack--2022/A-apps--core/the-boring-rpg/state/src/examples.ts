@@ -116,10 +116,10 @@ const DEMO_ADVENTURE_04: Immutable<Adventure> = enforce_immutability<Adventure>(
 // taken from a real savegame:
 const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(get_lib_SEC(), {
 	ⵙapp_id: 'tbrpg',
-	'schema_version': 15,
+	'schema_version': 16,
 	last_user_investment_tms: 1598854698575,
 	't_state': {
-		'schema_version': 15,
+		'schema_version': 16,
 		revision: 0,
 		'timestamp_ms': 1598854700150,
 		'energy': {
@@ -129,7 +129,7 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(get_lib
 		},
 	},
 	'u_state': {
-		'schema_version': 15,
+		'schema_version': 16,
 		'revision': 1185,
 		'avatar': {
 			'attributes': {
@@ -247,9 +247,11 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(get_lib
 				'adventure_archetype--good': ['magical_cooking_ragnaros', 'famous_stone_emerald', 'fight_lost_shortcoming', 'socketed_item', 'pet_squirrel', 'green_food', 'church_cellar_prisoner', 'fight_won_coins', 'rachel', 'fight_observe', 'found_silver_potion', 'unmatched_set', 'erika', 'always_keep_potions', 'found_fizzing_potion', 'side_quests', 'caravan_success', 'flying_rat', 'raining_dwarves', 'caravan_failure', 'bards', 'pet_black_cat', 'arrow_in_the_knee', 'sword_in_rock', 'refreshing_nap', 'chilies', 'vampire_castle', 'famous_stone_diamond', 'good_end', 'found_random_mushroom'],
 			},
 			'revision': 2607,
-			'schema_version': 3,
-			'seed': -1163955302,
-			'use_count': 6504,
+			'schema_version': 4,
+			prng_state: {
+				seed: -1163955302,
+				call_count: 6504,
+			},
 			'uuid': 'uu1IZxPCefT_N5wrZtkgVg3Q',
 		},
 		'progress': {
