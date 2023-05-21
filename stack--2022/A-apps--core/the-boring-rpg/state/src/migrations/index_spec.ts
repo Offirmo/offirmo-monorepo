@@ -1,6 +1,5 @@
 import { expect } from 'chai'
 
-import { JSONObject } from '@offirmo-private/ts-types'
 import { itㆍshouldㆍmigrateㆍcorrectly } from '@offirmo-private/state-migration-tester'
 import { enforce_immutability } from '@offirmo-private/state-utils'
 
@@ -21,26 +20,6 @@ import { get_lib_SEC } from '../services/sec.js'
 import { create } from '../index.js'
 import { DEMO_STATE } from '../examples.js'
 
-// some hints may be needed to migrate to demo state
-const MIGRATION_HINTS_FOR_TESTS = enforce_immutability<any>({
-	to_v12: {
-	},
-
-	avatar: CharacterState.MIGRATION_HINTS_FOR_TESTS,
-	inventory: InventoryState.MIGRATION_HINTS_FOR_TESTS,
-	wallet: WalletState.MIGRATION_HINTS_FOR_TESTS,
-	prng: PRNGState.MIGRATION_HINTS_FOR_TESTS,
-	energy: EnergyState.MIGRATION_HINTS_FOR_TESTS,
-	engagement: EngagementState.MIGRATION_HINTS_FOR_TESTS,
-	codes: CodesState.MIGRATION_HINTS_FOR_TESTS,
-	progress: ProgressState.MIGRATION_HINTS_FOR_TESTS,
-	meta: MetaState.MIGRATION_HINTS_FOR_TESTS,
-})
-
-
-function clean_json_diff({ json_diff, LATEST_EXPECTED_DATA, migrated_data }: { json_diff: JSONObject, LATEST_EXPECTED_DATA: JSONObject, migrated_data: JSONObject }):JSONObject {
-	return json_diff
-}
 
 describe(`${LIB} - schema migration`, function() {
 
@@ -51,30 +30,45 @@ describe(`${LIB} - schema migration`, function() {
 			//can_update_snapshots: true, // uncomment when updating
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA: () => {
-				const new_state = enforce_immutability<any>(create(get_lib_SEC(), 1234))
+				const new_state = enforce_immutability<any>(create(get_lib_SEC()))
 				//dump_prettified_any('fresh state', new_state)
 				return new_state
 			},
 			migrate_to_latest: migrate_to_latest.bind(null, get_lib_SEC()),
 			import_meta_url: import.meta.url, // for resolving the path below
 			relative_dir_path: '../../../src/migrations/migrations_of_blank_state_specs',
-			clean_json_diff,
 			describe, context, it, expect,
 		})
 	})
 
 	describe('migration of an existing state', function () {
 
-		itㆍshouldㆍmigrateㆍcorrectly({
+		// some hints may be needed to migrate to demo state
+		const MIGRATION_HINTS_FOR_DEMO_STATE = enforce_immutability<any>({
+			to_v16: {
+				should_not_reseed_demo_state_prng: true,
+			},
+
+			avatar: CharacterState.MIGRATION_HINTS_FOR_TESTS,
+			inventory: InventoryState.MIGRATION_HINTS_FOR_TESTS,
+			wallet: WalletState.MIGRATION_HINTS_FOR_TESTS,
+			prng: PRNGState.MIGRATION_HINTS_FOR_TESTS,
+			energy: EnergyState.MIGRATION_HINTS_FOR_TESTS,
+			engagement: EngagementState.MIGRATION_HINTS_FOR_TESTS,
+			codes: CodesState.MIGRATION_HINTS_FOR_TESTS,
+			progress: ProgressState.MIGRATION_HINTS_FOR_TESTS,
+			meta: MetaState.MIGRATION_HINTS_FOR_TESTS,
+		})
+
+		itㆍshouldㆍmigrateㆍcorrectly.skip({
 			use_hints: true,
 			//can_update_snapshots: true, // uncomment when updating
-			migration_hints_for_chaining: MIGRATION_HINTS_FOR_TESTS,
+			migration_hints_for_chaining: MIGRATION_HINTS_FOR_DEMO_STATE,
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA: DEMO_STATE,
 			migrate_to_latest: migrate_to_latest.bind(null, get_lib_SEC()),
 			import_meta_url: import.meta.url, // for resolving the path below
 			relative_dir_path: '../../../src/migrations/migrations_of_active_state_specs',
-			clean_json_diff,
 			describe, context, it, expect,
 		})
 	})

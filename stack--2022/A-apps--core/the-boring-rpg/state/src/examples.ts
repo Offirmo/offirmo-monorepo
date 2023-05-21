@@ -249,7 +249,8 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(get_lib
 			'revision': 2607,
 			'schema_version': 4,
 			prng_state: {
-				seed: -1163955302,
+				algorithm_id: 'ISAAC32',
+				seed: -54321,
 				call_count: 6504,
 			},
 			'uuid': 'uu1IZxPCefT_N5wrZtkgVg3Q',
