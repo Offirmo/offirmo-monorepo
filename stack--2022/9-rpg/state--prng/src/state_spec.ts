@@ -60,8 +60,8 @@ describe(`${LIB} - state`, function() {
 			console.log(gen(prng))
 			*/
 
-			expect(gen(prng), 'random 1').to.equal(3)
-			expect(gen(prng), 'random 2').to.equal(5)
+			expect(gen(prng), 'random 1').to.equal(1)
+			expect(gen(prng), 'random 2').to.equal(2)
 
 			state = update_use_count(state, prng)
 			expect(state.prng_state.call_count).to.equal(2)

@@ -11,7 +11,7 @@ import { get_logger } from './sec.js'
 
 /////////////////////
 
-const DEFAULT_SEED = 987
+const DEFAULT_SEED = 98765
 
 
 function create(seed: Seed = DEFAULT_SEED): Immutable<State> {

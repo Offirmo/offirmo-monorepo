@@ -4,7 +4,7 @@
 	"revision": 0,
 	"prng_state": {
 		"algorithm_id": "ISAAC32",
-		"seed": 987,
+		"seed": 98765,
 		"call_count": 0
 	},
 	"recently_encountered_by_id": {}
