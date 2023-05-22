@@ -15,6 +15,48 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 		engine = engine_ctor()
 	})
 
+	function _expect_balanced_and_spread() {
+		let min = -0
+		let max = 0
+		let mean = 0
+		let count = 0
+		let spread = new Set<number>()
+
+		for(let i = 0; i < ROUNDS_COUNT; ++i) {
+			const random_int32 = engine.get_Int32()
+
+			spread.add(random_int32)
+			min = Math.min(min, random_int32)
+			max = Math.max(max, random_int32)
+			mean = (mean * count + random_int32) / (count + 1)
+			count++
+		}
+
+		/*console.log({
+			count,
+			min,
+			max,
+			mean,
+			spread: spread.size,
+		})*/
+
+		// min should be ~close to the absolute minimum
+		expect(min, 'min lower bound').to.be.at.least(INT32_MIN)
+		expect(min, 'min upper bound').to.be.at.most(INT32_MIN * 0.9)
+
+		// similarly, max should be ~close to the absolute maximum
+		expect(max, 'max upper bound').to.be.at.most(INT32_MAX)
+		expect(max, 'max lower bound').to.be.at.least(INT32_MAX * 0.9)
+
+		// the mean should be ~close to 0
+		expect(mean, 'mean lower bound').to.be.at.least(INT32_MIN * 0.1)
+		expect(mean, 'mean upper bound').to.be.at.most(INT32_MAX * 0.1)
+
+		// the values should not repeat too much
+		expect(spread.size).to.be.at.least(ROUNDS_COUNT * 0.9)
+	}
+
+
 	describe('output', function () {
 
 		it('should have the correct shape', () => {
@@ -28,44 +70,7 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 		})
 
 		it('should be decently balanced and spread', () => {
-			let min = -0
-			let max = 0
-			let mean = 0
-			let count = 0
-			let spread = new Set<number>()
-
-			for(let i = 0; i < ROUNDS_COUNT; ++i) {
-				const random_int32 = engine.get_Int32()
-
-				spread.add(random_int32)
-				min = Math.min(min, random_int32)
-				max = Math.max(max, random_int32)
-				mean = (mean * count + random_int32) / (count + 1)
-				count++
-			}
-
-			/*console.log({
-				count,
-				min,
-				max,
-				mean,
-				spread: spread.size,
-			})*/
-
-			// min should be ~close to the absolute minimum
-			expect(min, 'min lower bound').to.be.at.least(INT32_MIN)
-			expect(min, 'min upper bound').to.be.at.most(INT32_MIN * 0.9)
-
-			// similarly, max should be ~close to the absolute maximum
-			expect(max, 'max upper bound').to.be.at.most(INT32_MAX)
-			expect(max, 'max lower bound').to.be.at.least(INT32_MAX * 0.9)
-
-			// the mean should be ~close to 0
-			expect(mean, 'mean lower bound').to.be.at.least(INT32_MIN * 0.1)
-			expect(mean, 'mean upper bound').to.be.at.most(INT32_MAX * 0.1)
-
-			// the values should not repeat too much
-			expect(spread.size).to.be.at.least(ROUNDS_COUNT * 0.9)
+			_expect_balanced_and_spread()
 		})
 	})
 
@@ -171,6 +176,42 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 					})
 
 					it('should use the provided seed appropriately')
+
+					/* This is important as the standard way to seed in many libs
+					 * is to pass a random number
+					 */
+					context('when the seed is weak', function () {
+
+						it('should still output decent randomness -- 0', () => {
+							;(engine as PRNGEngine).seed(0)
+
+							_expect_balanced_and_spread()
+						})
+
+						it('should still output decent randomness -- integer (1)', () => {
+							;(engine as PRNGEngine).seed(98765)
+
+							_expect_balanced_and_spread()
+						})
+
+						it('should still output decent randomness -- integer (2)', () => {
+							;(engine as PRNGEngine).seed(-54321)
+
+							_expect_balanced_and_spread()
+						})
+
+						it('should still output decent randomness -- 1…0 (1)', () => {
+							;(engine as PRNGEngine).seed(Math.random())
+
+							_expect_balanced_and_spread()
+						})
+
+						it('should still output decent randomness -- 1…0 (2)', () => {
+							;(engine as PRNGEngine).seed(Math.random())
+
+							_expect_balanced_and_spread()
+						})
+					})
 				})
 			})
 
