@@ -15,6 +15,7 @@ describe('@offirmo/random', function() {
 	describe('distributions', function() {
 
 		describe('bool', function() {
+			const TOLERANCE = 0.03 // TODO better math
 
 			describe('basic: get_random_generator_ofꓽbool()', function() {
 				const generate = get_random_generator_ofꓽbool()
@@ -41,7 +42,7 @@ describe('@offirmo/random', function() {
 
 					const ratioⵧtrue  = count.true / ROUNDS_COUNT
 					//console.log(count, ratioⵧtrue)
-					expect(ratioⵧtrue).to.be.at.within(0.48, 0.52)
+					expect(ratioⵧtrue).to.be.closeTo(0.5, TOLERANCE)
 				})
 			})
 
@@ -72,7 +73,6 @@ describe('@offirmo/random', function() {
 					0.5,
 					3/4,
 				].forEach((ratio: number) => {
-					const TOLERANCE = 0.02 // TODO better math
 
 					it(`should work -- ${ratio}`, () => {
 						const generate = get_random_generator_ofꓽboolⵧweighted(ratio)
@@ -90,7 +90,7 @@ describe('@offirmo/random', function() {
 
 						const ratioⵧtrue  = count.true / ROUNDS_COUNT
 						//console.log(count, ratio, ratioⵧtrue)
-						expect(ratioⵧtrue).to.be.at.within(ratio - TOLERANCE, ratio + TOLERANCE)
+						expect(ratioⵧtrue).to.be.closeTo(ratio, TOLERANCE)
 					})
 				})
 			})

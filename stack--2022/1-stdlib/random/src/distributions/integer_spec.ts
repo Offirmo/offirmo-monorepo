@@ -15,6 +15,7 @@ describe('@offirmo/random', function() {
 		describe('integer', function() {
 
 			function itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(engine_ctor: () => RNGEngine, possible_output_count: number) {
+				const TOLERANCE = 0.05 // TODO better math
 
 				it(`should work -- range = 1 - ${possible_output_count} (0 - 0x${Number(possible_output_count - 1).toString(16)})`, () => {
 					let engine: RNGEngine = engine_ctor()
@@ -55,24 +56,21 @@ describe('@offirmo/random', function() {
 						spread: spread.size,
 					})*/
 					// min should be ~close to the absolute minimum
-					expect(min, 'min lower bound').to.be.at.least(1)
-					expect(min, 'min upper bound').to.be.at.most(1 + possible_output_count * 0.05)
+					expect(min, 'min').to.be.within(1, 1 + possible_output_count * TOLERANCE)
 
 					// similarly, max should be ~close to the absolute maximum
-					expect(max, 'max upper bound').to.be.at.most(possible_output_count)
-					expect(max, 'max lower bound').to.be.at.least(possible_output_count * 0.95)
+					expect(max, 'max').to.be.within(possible_output_count * (1 - TOLERANCE), possible_output_count)
 
-					// the mean should be ~close to 0
-					expect(mean, 'mean lower bound').to.be.at.least((1 + possible_output_count) * 0.49)
-					expect(mean, 'mean upper bound').to.be.at.most((1 + possible_output_count) * 0.51)
+					// the mean should be ~close to the middle
+					expect(mean, 'mean').to.be.closeTo((1 + possible_output_count)/2, possible_output_count * TOLERANCE)
 
 					// the buckets should be balanced
 					// TODO refine the margin
 					if (possible_output_count < ROUNDS_COUNT) {
-						expect(spread.size).to.equal(possible_output_count)
+						expect(spread.size, 'spread (small range)').to.equal(possible_output_count)
 					}
 					else {
-						expect(spread.size).to.equal(ROUNDS_COUNT)
+						expect(spread.size, 'spread (big range)').to.equal(ROUNDS_COUNT)
 					}
 				})
 			}

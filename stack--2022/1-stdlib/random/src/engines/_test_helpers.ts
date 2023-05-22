@@ -16,6 +16,7 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 	})
 
 	function _expect_balanced_and_spread() {
+		const TOLERANCE = 0.05 // TODO better math
 		let min = -0
 		let max = 0
 		let mean = 0
@@ -41,19 +42,17 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 		})*/
 
 		// min should be ~close to the absolute minimum
-		expect(min, 'min lower bound').to.be.at.least(INT32_MIN)
-		expect(min, 'min upper bound').to.be.at.most(INT32_MIN * 0.9)
+		expect(min, 'min').to.be.within(INT32_MIN, INT32_MIN * (1 - TOLERANCE))
 
 		// similarly, max should be ~close to the absolute maximum
-		expect(max, 'max upper bound').to.be.at.most(INT32_MAX)
-		expect(max, 'max lower bound').to.be.at.least(INT32_MAX * 0.9)
+		expect(max, 'max').to.be.within(INT32_MAX * (1 - TOLERANCE), INT32_MAX)
 
 		// the mean should be ~close to 0
-		expect(mean, 'mean lower bound').to.be.at.least(INT32_MIN * 0.1)
-		expect(mean, 'mean upper bound').to.be.at.most(INT32_MAX * 0.1)
+		// but the big range can skew
+		expect(mean, 'mean lower bound').to.be.closeTo(0, INT32_MAX * TOLERANCE)
 
 		// the values should not repeat too much
-		expect(spread.size).to.be.at.least(ROUNDS_COUNT * 0.9)
+		expect(spread.size).to.be.at.least(ROUNDS_COUNT * (1 - TOLERANCE))
 	}
 
 
@@ -188,13 +187,13 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 							_expect_balanced_and_spread()
 						})
 
-						it('should still output decent randomness -- integer (1)', () => {
+						it('should still output decent randomness -- Int32 (1)', () => {
 							;(engine as PRNGEngine).seed(98765)
 
 							_expect_balanced_and_spread()
 						})
 
-						it('should still output decent randomness -- integer (2)', () => {
+						it('should still output decent randomness -- Int32 (2)', () => {
 							;(engine as PRNGEngine).seed(-54321)
 
 							_expect_balanced_and_spread()
