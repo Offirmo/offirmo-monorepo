@@ -1,3 +1,4 @@
+import assert from 'tiny-invariant'
 import {
 	Immutable,
 	LastMigrationStep,
@@ -23,6 +24,8 @@ import { State } from '../types.js'
 import { TBRSoftExecutionContext } from '../services/sec.js'
 import { _refresh_achievements } from '../reducers/achievements/index.js'
 import { reset_and_salvage } from './salvage.js'
+import { get_engine } from '@offirmo/random'
+
 
 /////////////////////
 
@@ -118,8 +121,25 @@ const migrate_to_16x: LastMigrationStep<State, any> = (SEC, legacy_state, hints,
 	if (legacy_schema_version < 15)
 		legacy_state = previous(SEC, legacy_state, hints)
 
-	// it's just a sub-state getting an update
+	// XXX reminder that this step runs BEFORE the sub-state migrations
 	let state: State = legacy_state
+
+	// the PRNG lib got re-written
+	// We need to switch to ISAAC-32, since we no longer have a MT implementation!
+
+	// first migrate normally then force the new algorithm
+	state = {
+		...state,
+		u_state: {
+			...state.u_state,
+			prng: {
+				...PRNGState.migrate_to_latest(SEC, state.u_state.prng) as any,
+			}
+		},
+	}
+
+	let fresh_recommended_prng_engine = get_engine.prng.good_enough()
+	state.u_state.prng.prng_state.algorithm_id = fresh_recommended_prng_engine.get_state().algorithm_id!
 
 	// eventually, update schema version
 	state = {
@@ -281,5 +301,5 @@ const migrate_to_13: MigrationStep = (SEC, legacy_state, hints, previous, legacy
 }
 
 const migrate_to_12: MigrationStep = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
-	throw new Error('Alpha release outdated schema, won’t migrate, would take too much time and schema is still unstable!')
+	throw new Error('Outdated schema (pre-beta), won’t migrate, would take too much time and schema is still unstable!')
 }

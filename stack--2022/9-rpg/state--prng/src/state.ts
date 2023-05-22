@@ -32,14 +32,23 @@ function create(seed: Seed = DEFAULT_SEED): Immutable<State> {
 /////////////////////
 
 
-function auto_reseed(state: Immutable<State>, algorithm_id?: PRNGState['algorithm_id']): Immutable<State> {
+function auto_reseed(state: Immutable<State>, explicit_algorithm_id?: PRNGState['algorithm_id'], use_full_seed: boolean = false): Immutable<State> {
 	// we need to generate a new seed
 	// each engine auto-seeds with their own algo
-	// => we create a fresh engine and copy its seed
-	// ALSO this re-seeding is the opportunity to upgrade from an old PRNG algo to a new one!
-	const engine = get_engine.prng.from_state({
-		...(algorithm_id && { algorithm_id }),
+	// => we create a fresh engine and let it auto-seed itself
+	// ALSO this re-seeding is the opportunity to upgrade from an old PRNG algo to the current recommended one!
+	let engine = get_engine.prng.from_state({
+		...(explicit_algorithm_id && { algorithm_id: explicit_algorithm_id }),
 	})
+
+	// HOWEVER the default seed can be:
+	// - big (ex. ISAAC 256x Int32) => we don't need a huge seed (makes the state too big)
+	// - non-standard = other engines may not need/handle such a big seed
+	if (!use_full_seed) {
+		// switch to a smaller seed
+		// plenty enough for common usage such as games
+		engine.seed(engine.get_Int32())
+	}
 
 	return {
 		...state,

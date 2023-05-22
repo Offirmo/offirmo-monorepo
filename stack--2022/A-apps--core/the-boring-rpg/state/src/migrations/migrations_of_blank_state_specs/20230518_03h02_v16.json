@@ -27,7 +27,7 @@
 			"unslotted_capacity": 20,
 			"slotted": {
 				"weapon": {
-					"uuid": "uu1zM-7hN2er_gA3PbyfOQ7f",
+					"uuid": "uu1KYurP9-LuHV1ocfkvAeeo",
 					"element_type": "item",
 					"slot": "weapon",
 					"quality": "common",
@@ -38,7 +38,7 @@
 					"enhancement_level": 0
 				},
 				"armor": {
-					"uuid": "uu1xbs2q-L419ZKhqfyCwqZW",
+					"uuid": "uu1sEFPWXYxqYwqE1EbwBusi",
 					"element_type": "item",
 					"slot": "armor",
 					"quality": "common",
@@ -59,7 +59,7 @@
 		},
 		"prng": {
 			"schema_version": 4,
-			"uuid": "uu1_4JcH433C4JyOP7W4OQ6P",
+			"uuid": "uu1C0-a6Bs8JX5CaIIc6CFur",
 			"revision": 0,
 			"prng_state": {
 				"algorithm_id": "ISAAC32",

@@ -146,7 +146,7 @@ function create(SEC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable
 
 function reseed(state: Immutable<State>, seed?: PRNGState.Seed): Immutable<State> {
 	if (seed) {
-		console.warn('TODO review manual seeding!')
+		console.warn('TODO review manual seeding!') // unless UT we don't want a manual seed
 		state = {
 			...state,
 			u_state: {

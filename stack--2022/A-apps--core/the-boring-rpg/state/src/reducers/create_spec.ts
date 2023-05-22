@@ -61,7 +61,7 @@ describe(`${LIB} -- reducers -- create`, function() {
 		it('should work', function() {
 			const { u_state } = reseed(create())
 
-			expect(u_state.prng.prng_state.seed).to.have.lengthOf(256) // characteristic of auto-generated
+			expect(u_state.prng.prng_state.seed).to.be.a('number')
 			expect(u_state.prng.prng_state.seed).not.to.equal(DEFAULT_SEED)
 		})
 	})

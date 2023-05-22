@@ -28,7 +28,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 	should_skip = false, // allow skipping the test, like it.skip
 }) {
 	if (typeof LATEST_EXPECTED_DATA === 'function') {
-		// wrap the call into the fake timers
+		// wrap the call with the fake timers
 		const clock = sinon.useFakeTimers(TEST_TIMESTAMP_MS)
 		expect(+Date.now()).to.equal(TEST_TIMESTAMP_MS) // sanity check
 		LATEST_EXPECTED_DATA = LATEST_EXPECTED_DATA()
@@ -93,7 +93,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 
 			it('should return the state without change', () => {
 				try {
-					expect(get_schema_version(LATEST_EXPECTED_DATA), 'schema version').to.equal(SCHEMA_VERSION) // make sure our tests are up to date
+					expect(get_schema_version(LATEST_EXPECTED_DATA), 'schema version').to.equal(SCHEMA_VERSION) // make sure our tests are up-to-date
 					const migrated_data = migrate_to_latest(LATEST_EXPECTED_DATA)
 					expect(migrated_data, 'deep no change').to.deep.equal(LATEST_EXPECTED_DATA)
 					expect(migrated_data, 'immutability').to.equal(LATEST_EXPECTED_DATA)
@@ -156,11 +156,6 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 		const ALL_SNAPSHOTS = ALL_FILES
 			.filter(snap_path => snap_path !== HINTS_FILE)
 
-		if (ALL_SNAPSHOTS.length === 0 && can_update_snapshots) {
-			// create one
-
-		}
-
 		console.log(`${LOG_PREFIX} Found snapshots: ` + prettify_json(ALL_SNAPSHOTS.map(p => path.basename(p))))
 
 		/////// create hints file if requested and not present
@@ -191,7 +186,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 		})(migration_hints_for_chaining)
 
 		/////// create / update latest file if allowed / not present
-		;(function create_or_update_latest_if_allowed() {
+		;(function create_or_update_latest_snapshot_if_allowed() {
 			if (should_skip) return
 
 			const latest_snapshot_path = ALL_SNAPSHOTS.slice(-1)[0]

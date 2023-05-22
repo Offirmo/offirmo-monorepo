@@ -60,7 +60,7 @@ describe(`${LIB} - schema migration`, function() {
 			meta: MetaState.MIGRATION_HINTS_FOR_TESTS,
 		})
 
-		itㆍshouldㆍmigrateㆍcorrectly.skip({
+		itㆍshouldㆍmigrateㆍcorrectly({
 			use_hints: true,
 			//can_update_snapshots: true, // uncomment when updating
 			migration_hints_for_chaining: MIGRATION_HINTS_FOR_DEMO_STATE,
