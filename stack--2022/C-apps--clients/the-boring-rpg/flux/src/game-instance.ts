@@ -15,13 +15,13 @@ import { get_revision } from '@offirmo-private/state-utils'
 
 import { LIB } from './consts'
 
-import { OMRSoftExecutionContext } from './sec'
+import { OMRSoftExecutionContext } from './sec.js'
 import { create as create_dispatcher } from './dispatcher'
 import create_store__local_storage from './stores/local-storage'
 import create_store__in_memory from './stores/in-memory'
 import create_store__cloud_storage from './stores/cloud'
 import { get_commands } from './dispatcher/sugar'
-import { get_queries } from './selectors'
+import { get_queries } from './selectors.js'
 
 // tslint:disable-next-line: variable-name
 const Event = Enum(

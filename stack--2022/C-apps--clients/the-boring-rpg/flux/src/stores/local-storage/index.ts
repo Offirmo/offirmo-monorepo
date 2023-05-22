@@ -18,7 +18,7 @@ import { State, SCHEMA_VERSION } from '@tbrpg/state'
 import { Action } from '@tbrpg/interfaces'
 
 
-import { OMRSoftExecutionContext } from '../../sec'
+import { OMRSoftExecutionContext } from '../../sec.js'
 import { Store, Dispatcher } from '../../types'
 import { reduce_action } from '../../utils/reduce-action'
 import try_or_fallback from '../../utils/try_or_fallback'

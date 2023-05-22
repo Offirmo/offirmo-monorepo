@@ -9,7 +9,7 @@ import { State, DEMO_STATE, EngagementKey } from '@tbrpg/state'
 import { StorageKey } from './stores/local-storage'
 
 import { LIB } from './consts'
-import { get_lib_SEC } from './sec'
+import { get_lib_SEC } from './sec.js'
 import { create_game_instance } from '.'
 
 /////////////////////

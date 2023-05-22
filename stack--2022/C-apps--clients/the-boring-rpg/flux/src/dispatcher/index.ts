@@ -7,7 +7,7 @@ import { State, SCHEMA_VERSION } from '@tbrpg/state'
 
 
 import { Dispatcher, Store } from '../types'
-import { OMRSoftExecutionContext } from '../sec'
+import { OMRSoftExecutionContext } from '../sec.js'
 
 
 export function create(

@@ -9,7 +9,7 @@ import {
 	get_base_loose,
 } from '@offirmo-private/state-utils'
 
-import { OMRSoftExecutionContext } from '../../sec'
+import { OMRSoftExecutionContext } from '../../sec.js'
 import { Store } from '../../types'
 import { reduce_action } from '../../utils/reduce-action'
 
