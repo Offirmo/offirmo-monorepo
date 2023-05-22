@@ -18,7 +18,7 @@
 	"scripts": {
 		"clean": "node ../../../0-scripts/clean.js …dist",
 
-		"refresh-build-variables": "node ../../../0-scripts/update_build_variables.js --mode=ts",
+		"refresh-build-variables": "monoropo-script--update_build_variables  --mode=ts",
 		"build--dev--watch": "node ../../../0-scripts/build-typescript.js --watch",
 		"build--prod": "node ../../../0-scripts/build-typescript.js --onlyNode",
 

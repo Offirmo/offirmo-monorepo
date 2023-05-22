@@ -6,9 +6,10 @@
 	"sideEffects": false,
 
 	"bin": {
-		"monorepo-script--clean-package": "./clean.mjs",
 		"monorepo-script--build-typescript-package": "./build-typescript.mjs",
-		"monorepo-script--monorepo-utils": "./monorepo-utils.cjs"
+		"monorepo-script--clean-package": "./clean.mjs",
+		"monorepo-script--monorepo-utils": "./monorepo-utils.mjs",
+		"monoropo-script--update_build_variables": "./update_build_variables.mjs"
 	},
 
 	"dependencies": {
@@ -19,6 +20,5 @@
 		"node-typescript-compiler": "*",
 		"tiny-invariant": "^1",
 		"write-json-file": "^5"
-	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/0-meta/build-tools/scripts"
+	}
 }
