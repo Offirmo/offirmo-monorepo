@@ -6,12 +6,18 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"esnext": "dist/src.es2022.esm/index.js",
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/src.es2022.esm/index.js",
+			"require": "./dist/src.es2022.cjs/index.js"
+		}
+	},
 	"module": "dist/src.es2022.esm/index.js",
 	"main": "dist/src.es2022.cjs/index.js",
-	"typings": "dist/src.es2022.cjs/index.d.ts",
+	"typings": "dist/src.es2022.esm/index.d.ts",
 	"source": "src/index.ts",
-	"sideEffects": false,
 
 	"peerDependencies": {
 		"tslib": "^2"
