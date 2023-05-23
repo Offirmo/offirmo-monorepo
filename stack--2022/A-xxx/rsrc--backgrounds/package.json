@@ -6,12 +6,18 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"esnext": "dist/src.es2022.esm/index.js",
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/src.es2022.esm/index.js",
+			"require": "./dist/src.es2022.cjs/index.js"
+		}
+	},
 	"module": "dist/src.es2022.esm/index.js",
 	"main": "dist/src.es2022.cjs/index.js",
-	"typings": "dist/src.es2022.cjs/index.d.ts",
+	"typings": "dist/src.es2022.esm/index.d.ts",
 	"source": "src/index.ts",
-	"sideEffects": false,
 
 	"peerDependencies": {
 		"tslib": "^2"
@@ -42,7 +48,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@babel/core": "^7",
 		"@offirmo-private/prettify-any": "^0",
-		"@offirmo-private/rich-text-format-to-ansi": "^0",
+		"@offirmo-private/rich-text-format--to-ansi": "^0",
 		"@offirmo/cli-toolbox": "^2",
 		"@offirmo/unit-test-toolbox": "^8",
 		"fs-extra": "^11",

@@ -2,7 +2,7 @@ const path = require('path')
 
 const { /*trim, replace,*/ capitalize } = require('lodash')
 const { dump_prettified_any, prettify_json } = require('@offirmo-private/prettify-any')
-const rich_text_to_ansi = require('@offirmo-private/rich-text-format-to-ansi')
+const rich_text_to_ansi = require('@offirmo-private/rich-text-format--to-ansi')
 const fs = require('@offirmo/cli-toolbox/fs/extra')
 
 const { AUTHORS_BY_NAME, ELEMENTS, render_artwork_legend } = require('../dist/src.es2019.cjs')
@@ -14,7 +14,7 @@ function humanize(s) {
 		.toLowerCase()
 		.split('_').join(' ')
 		.split('-').join(' ')
-		.split('.').join(' ')
+		.split('./index.js').join(' ')
 		.split(' ')
 		.map(s => s.trim())
 		.filter(s => !!s)
@@ -27,7 +27,7 @@ function canonize(s) {
 		.toLowerCase()
 		.split('_').join(' ')
 		.split('-').join(' ')
-		.split('.').join(' ')
+		.split('./index.js').join(' ')
 
 		// remove punctuation
 		.replace('’', '')
