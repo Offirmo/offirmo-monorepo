@@ -29,7 +29,7 @@ function push_values(builder: Builder, i: Immutable<Armor>, options: Immutable<{
 	return builder.pushNode($node, {id: 'values'})
 }
 
-function push_power(builder: Builder, i: Immutable<Armor>, options: Immutable<{short?: boolean, reference_power?: number}> = {short: false}): Builder {
+function push_power(builder: Builder, i: Immutable<Armor>, options: Immutable<{short?: boolean | undefined, reference_power?: number | undefined}> = {short: false}): Builder {
 	const power = appraise_power(i)
 
 	if (!options.short) {

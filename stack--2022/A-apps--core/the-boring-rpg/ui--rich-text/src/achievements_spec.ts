@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-const strip_ansi = require('strip-ansi')
+import stripAnsi from 'strip-ansi'
 
 import {
 	create,
@@ -7,9 +7,10 @@ import {
 	get_achievements_snapshot,
 } from '@tbrpg/state'
 
-const rich_text_to_ansi = require('@offirmo-private/rich-text-format-to-ansi')
+import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-ansi'
 
 import { render_achievements_snapshot } from './index.js'
+
 
 describe('🔠  view to @offirmo-private/rich-text-format - achievements', function() {
 

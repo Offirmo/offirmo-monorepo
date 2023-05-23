@@ -5,12 +5,12 @@ import { dump_prettified_any } from '@offirmo-private/prettify-any'
 
 import { generate_random_demo_weapon, DEMO_WEAPON_1, DEMO_WEAPON_2 } from '@tbrpg/logic-weapons'
 
-const rich_text_to_ansi = require('@offirmo-private/rich-text-format-to-ansi')
+import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-ansi'
 
 import { render_weapon_detailed } from './index.js'
 
 
-describe('🔠  view to @offirmo-private/rich-text-format -  weapon', function() {
+describe('🔠  view to @offirmo-private/rich-text-format - items -- weapon', function() {
 
 	context('when not enhanced', function() {
 

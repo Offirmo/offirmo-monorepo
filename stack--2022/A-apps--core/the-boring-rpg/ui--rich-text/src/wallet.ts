@@ -1,7 +1,8 @@
 import { Immutable } from '@offirmo-private/ts-types'
-import { State as WalletState, ALL_CURRENCIES, Currency, get_currency_amount } from '@oh-my-rpg/state-wallet'
+import { State as WalletState, ALL_CURRENCIES, Currency, get_currency_amount } from '@tbrpg/state-wallet'
 
 import * as RichText from '@offirmo-private/rich-text-format'
+
 
 function render_currency_amount(currency: Currency, amount: number, { render_unit }: { render_unit: boolean} = { render_unit: true }): RichText.Document {
 	const doc = RichText.inline_fragment()

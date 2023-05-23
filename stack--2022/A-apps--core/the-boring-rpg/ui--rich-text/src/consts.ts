@@ -3,7 +3,7 @@ import { RenderItemOptions } from './types.js'
 
 /////////////////////
 
-export const LIB = '@oh-my-rpg/view-rich-text'
+export const LIB = '@tbrpg/ui--rich-text'
 
 export const DEFAULT_RENDER_ITEM_OPTIONS: RenderItemOptions = {
 	// most conservative mode by default

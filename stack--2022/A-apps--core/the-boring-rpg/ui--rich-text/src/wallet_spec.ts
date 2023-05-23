@@ -7,9 +7,9 @@ import {
 	DEMO_STATE,
 	create as create_wallet,
 	add_amount,
-} from '@oh-my-rpg/state-wallet'
+} from '@tbrpg/state-wallet'
 
-const rich_text_to_ansi = require('@offirmo-private/rich-text-format-to-ansi')
+import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-ansi'
 
 import {
 	render_wallet,

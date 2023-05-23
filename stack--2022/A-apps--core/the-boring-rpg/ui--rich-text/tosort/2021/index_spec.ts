@@ -6,7 +6,7 @@ import { InventorySlot, ItemQuality } from '@tbrpg/definitions'
 import { generate_random_demo_weapon } from '@oh-my-rpg/logic-weapons'
 import { i18n_messages as i18n_messages_armor, generate_random_demo_armor } from '@oh-my-rpg/logic-armors'
 import { en as en_weapons } from '@oh-my-rpg/data/src/weapon_component/i18n'
-import { i18n_messages as i18n_messages_adventure } from '@oh-my-rpg/logic-adventures'
+import { i18n_messages as i18n_messages_adventure } from '@tbrpg/logic-adventures'
 import { generate_random_demo_monster } from '@oh-my-rpg/logic-monsters'
 
 import {
@@ -22,7 +22,7 @@ import {
 	State as WalletState,
 	factory as wallet_factory,
 	add_amount,
-} from '@oh-my-rpg/state-wallet'
+} from '@tbrpg/state-wallet'
 
 import { Random, Engine } from '@offirmo/random'
 

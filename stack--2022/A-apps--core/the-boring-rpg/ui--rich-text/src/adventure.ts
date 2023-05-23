@@ -1,15 +1,15 @@
 import { Immutable } from '@offirmo-private/ts-types'
 import { InventorySlot, ITEM_SLOTS } from '@tbrpg/definitions'
 import { CHARACTER_ATTRIBUTES, CharacterAttribute } from '@tbrpg/state--character'
-import { i18n_messages as I18N_ADVENTURES } from '@oh-my-rpg/logic-adventures'
+import { i18n_messages as I18N_ADVENTURES } from '@tbrpg/logic-adventures'
 import { Adventure } from '@tbrpg/state'
-import { ALL_CURRENCIES, Currency, get_currency_amount } from '@oh-my-rpg/state-wallet'
+import { ALL_CURRENCIES, Currency, get_currency_amount } from '@tbrpg/state-wallet'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { render_item_short } from './items'
-import { render_currency_amount } from './wallet'
-import { render_monster } from './monster'
+import { render_item_short } from './items.js'
+import { render_currency_amount } from './wallet.js'
+import { render_monster } from './monster.js'
 import { RenderItemOptions } from './types.js'
 import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.js'
 

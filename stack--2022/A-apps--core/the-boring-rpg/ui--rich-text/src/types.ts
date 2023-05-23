@@ -25,7 +25,7 @@ interface RenderItemOptions {
 
 export {
 	TextClass,
-	RenderItemOptions,
+	type RenderItemOptions,
 }
 
 /////////////////////

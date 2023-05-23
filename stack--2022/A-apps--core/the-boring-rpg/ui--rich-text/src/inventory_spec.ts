@@ -16,9 +16,9 @@ import {
 	Currency,
 	create as create_wallet,
 	add_amount,
-} from '@oh-my-rpg/state-wallet'
+} from '@tbrpg/state-wallet'
 
-const rich_text_to_ansi = require('@offirmo-private/rich-text-format-to-ansi')
+import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-ansi'
 
 import { LIB } from './consts.js'
 import {
@@ -54,7 +54,7 @@ describe(`🔠  ${LIB} - inventory`, function() {
 				inventory = add_item(inventory, generate_random_demo_weapon())
 				inventory = add_item(inventory, generate_random_demo_armor())
 				inventory = add_item(inventory, generate_random_demo_armor())
-				inventory = remove_item_from_unslotted(inventory, inventory.unslotted[4].uuid)
+				inventory = remove_item_from_unslotted(inventory, inventory.unslotted[4]!.uuid)
 
 				const $doc = render_backpack(inventory)
 				const str = RichText.to_text($doc)
@@ -88,7 +88,7 @@ describe(`🔠  ${LIB} - inventory`, function() {
 				inventory = add_item(inventory, generate_random_demo_weapon())
 				inventory = add_item(inventory, generate_random_demo_armor())
 				inventory = add_item(inventory, generate_random_demo_armor())
-				inventory = remove_item_from_unslotted(inventory, inventory.unslotted[4].uuid)
+				inventory = remove_item_from_unslotted(inventory, inventory.unslotted[4]!.uuid)
 
 				const $doc = render_backpack(inventory)
 				//console.log(prettify_json($doc))
@@ -160,7 +160,7 @@ describe(`🔠  ${LIB} - inventory`, function() {
 				inventory = add_item(inventory, generate_random_demo_weapon())
 				inventory = add_item(inventory, generate_random_demo_armor())
 				inventory = add_item(inventory, generate_random_demo_armor())
-				inventory = remove_item_from_unslotted(inventory, inventory.unslotted[4].uuid)
+				inventory = remove_item_from_unslotted(inventory, inventory.unslotted[4]!.uuid)
 
 				let wallet = create_wallet()
 				wallet = add_amount(wallet, Currency.coin, 12345)

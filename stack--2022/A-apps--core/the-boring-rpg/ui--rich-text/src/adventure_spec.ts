@@ -1,8 +1,8 @@
 import { expect } from 'chai'
-const strip_ansi = require('strip-ansi')
+import stripAnsi from 'strip-ansi'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
-import { ALL_GOOD_ADVENTURE_ARCHETYPES, ALL_BAD_ADVENTURE_ARCHETYPES } from '@oh-my-rpg/logic-adventures'
+import { ALL_GOOD_ADVENTURE_ARCHETYPES, ALL_BAD_ADVENTURE_ARCHETYPES } from '@tbrpg/logic-adventures'
 import {
 	create,
 	play,
@@ -12,10 +12,10 @@ import {
 	DEMO_ADVENTURE_04,
 } from '@tbrpg/state'
 
-const rich_text_to_ansi = require('@offirmo-private/rich-text-format-to-ansi')
-
+import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-ansi'
 
 import { render_adventure } from './index.js'
+
 
 describe('🔠  view to @offirmo-private/rich-text-format - adventure', function() {
 
@@ -23,7 +23,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 		const $doc = render_adventure(DEMO_ADVENTURE_01)
 		//console.log(prettify_json($doc))
 
-		const str = strip_ansi(rich_text_to_ansi($doc))
+		const str = stripAnsi(rich_text_to_ansi($doc))
 		//console.log(str)
 		expect(str).to.be.a('string')
 		expect(str).to.include('You were attacked and nearly killed')
@@ -37,7 +37,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 		const $doc = render_adventure(DEMO_ADVENTURE_02)
 		//console.log(prettify_json($doc))
 
-		const str = strip_ansi(rich_text_to_ansi($doc))
+		const str = stripAnsi(rich_text_to_ansi($doc))
 		//console.log(str)
 		expect(str).to.be.a('string')
 		expect(str).to.include('A dying man on the street left you everything he had.')
@@ -49,7 +49,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 		const $doc = render_adventure(DEMO_ADVENTURE_03)
 		//console.log(prettify_json($doc))
 
-		const str = strip_ansi(rich_text_to_ansi($doc))
+		const str = stripAnsi(rich_text_to_ansi($doc))
 		//console.log(str)
 		expect(str).to.be.a('string')
 		expect(str).to.include('You come across an old man with eccentric apparel')
@@ -60,7 +60,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 		const $doc = render_adventure(DEMO_ADVENTURE_04)
 		//console.log(prettify_json($doc))
 
-		const str = strip_ansi(rich_text_to_ansi($doc))
+		const str = stripAnsi(rich_text_to_ansi($doc))
 		//console.log(str)
 		expect(str).to.be.a('string')
 		expect(str).to.include('You won’t take back the princess!')

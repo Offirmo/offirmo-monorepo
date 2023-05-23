@@ -1,7 +1,7 @@
 const path = require('path')
 
 //const { dump_prettified_any } = require('@offirmo-private/prettify-any')
-//const rich_text_to_ansi = require('@offirmo-private/rich-text-format-to-ansi')
+//const rich_text_to_ansi = require('@offirmo-private/rich-text-format--to-ansi')
 const fs = require('@offirmo/cli-toolbox/fs/extra')
 const { getLogger } = require('@offirmo/universal-debug-api-node')
 
@@ -214,4 +214,3 @@ export default BACKGROUNDS
 `
 
 fs.writeFileSync(target_path, data)
-

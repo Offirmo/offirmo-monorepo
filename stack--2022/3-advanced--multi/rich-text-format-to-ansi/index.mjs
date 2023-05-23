@@ -1,12 +1,11 @@
-"use strict";
+import stylize_string from 'chalk'
 
-const stylize_string = require('chalk')
-
-const { to_text_callbacks, to_text, Enum, NodeType, walk, is_list, is_uuid_list, is_KVP_list } = require('@offirmo-private/rich-text-format')
+import { to_text_callbacks, to_text, Enum, NodeType, walk, is_list, is_uuid_list, is_KVP_list } from '@offirmo-private/rich-text-format'
 
 const LIB = 'rich_text_to_ansi'
 
 // TODO handle boxification ? (needed?)
+// TODO single warning on unknown classes
 
 // TODO use unicode database
 const WIDTH_COMPENSATION = ' '
@@ -197,5 +196,11 @@ function to_ansi(doc, callback_overrides = {}) {
 	)
 }
 
-module.exports = to_ansi
-exports.callbacks = callbacks
+///////
+
+export default to_ansi
+
+export {
+	to_ansi,
+	callbacks,
+}

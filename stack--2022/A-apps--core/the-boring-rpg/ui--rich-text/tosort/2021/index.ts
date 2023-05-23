@@ -9,7 +9,7 @@ import { Armor, get_damage_reduction_interval as get_armor_damage_reduction_inte
 import { Weapon, get_damage_interval as get_weapon_damage_interval } from '@oh-my-rpg/logic-weapons'
 import { MonsterRank, Monster } from '@oh-my-rpg/logic-monsters'
 import { State as InventoryState, iterables_unslotted, get_item_in_slot } from '@tbrpg/state--inventory'
-import { State as WalletState, Currency, get_currency_amount } from '@oh-my-rpg/state-wallet'
+import { State as WalletState, Currency, get_currency_amount } from '@tbrpg/state-wallet'
 import { State as CharacterState, CharacterAttribute, CHARACTER_STATS } from '@oh-my-rpg/state-character'
 import { Adventure, GainType } from '@tbrpg/state'
 

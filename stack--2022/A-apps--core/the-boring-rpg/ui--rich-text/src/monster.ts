@@ -3,6 +3,7 @@ import { MonsterRank, Monster } from '@tbrpg/logic-monsters'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 
+
 function render_monster(m: Immutable<Monster>): RichText.Document {
 	const $doc = RichText.inline_fragment()
 		.addClass('monster', 'monster--rank--' + m.rank)
