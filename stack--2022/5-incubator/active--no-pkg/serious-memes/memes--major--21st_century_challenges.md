@@ -6,3 +6,5 @@ social medias
 dark age of internet
 China
 big companies / balance of power / democracy
+trans
+metoo
