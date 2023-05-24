@@ -5,7 +5,7 @@ import {
 	listenToErrorEvents,
 	listenToUnhandledRejections,
 	decorateWithDetectedEnv,
-} from '@offirmo-private/soft-execution-context-browser'
+} from '@offirmo-private/soft-execution-context--browser'
 import { decorate_SEC } from '@tbrpg/definitions'
 
 import { LIB } from './consts'

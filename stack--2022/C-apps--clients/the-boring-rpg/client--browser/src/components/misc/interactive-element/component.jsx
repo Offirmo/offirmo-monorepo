@@ -3,13 +3,13 @@ import { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import { ElementType } from '@tbrpg/definitions'
-import { InteractiveRichTextFragment } from '@offirmo-private/rich-text-format-to-react'
+import { InteractiveRichTextFragment } from '@offirmo-private/rich-text-format--to-react'
 import {
 	render_item_short,
 	render_item_detailed,
 	render_achievement_snapshot_short,
 	render_achievement_snapshot_detailed,
-} from '@oh-my-rpg/view-rich-text'
+} from '@tbrpg/ui--rich-text'
 
 import logger from '../../../services/logger'
 import rich_text_to_react from '../../../services/rich-text-to-react'

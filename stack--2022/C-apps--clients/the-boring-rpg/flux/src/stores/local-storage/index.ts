@@ -180,7 +180,7 @@ export function create(
 			const most_recent_previous_major_version = bkp__older[0] as any
 			logger.trace(`[${LIB}] _enqueue_in_major_bkp_pipeline()`, {
 				...fluid_select(legacy_state).get_debug_infos_about_comparison_with(most_recent_previous_major_version, 'enqueued', 'most_recent_major'),
-				current_major_bkp_pipeline: JSON.parse(JSON.stringify(bkp__older))
+				current_major_bkp_pipeline: structuredClone(bkp__older)
 			})
 
 			assert(
@@ -229,7 +229,7 @@ export function create(
 
 			if (recovered_states_unmigrated_ordered_oldest_first.length)
 				logger.trace(`[${LIB}] found ${recovered_states_unmigrated_ordered_oldest_first.length} past backups:`, {
-					recovered_states_unmigrated_ordered_most_recent_first: JSON.parse(JSON.stringify(recovered_states_unmigrated_ordered_oldest_first)),
+					recovered_states_unmigrated_ordered_most_recent_first: structuredClone(recovered_states_unmigrated_ordered_oldest_first),
 					...(bkp__current && { main: bkp__current }),
 					...(bkp__recent && { minor: bkp__recent }),
 					...(bkp__older[0] && { major_1: bkp__older[0]}),
@@ -248,9 +248,9 @@ export function create(
 				// memorize it for later
 				restored_migrated = migrate_to_latest(SEC,
 					// deep clone in case the migration is not immutable (seen!)
-					JSON.parse(JSON.stringify(
+					structuredClone(
 						most_recent_unmigrated_bkp
-					))
+					)
 				)
 
 				// immediate sync restoration

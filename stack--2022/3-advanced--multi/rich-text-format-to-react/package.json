@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/rich-text-format-to-react",
+	"name": "@offirmo-private/rich-text-format--to-react",
 	"version": "0.0.1",
 	"description": "Rendering rich text format to React",
 	"author": "Offirmo <offirmo.net@gmail.com>",

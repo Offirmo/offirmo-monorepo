@@ -70,6 +70,8 @@ exiger seulement ce qu’on peut faire soi même
 false good idea
 fast reading
 fire
+game theory
+game theory -- prisoner's dilemma https://www.bennorthrop.com/Home/Blog/2007_11_17_prisoners_dilemma.php
 giftedness and talent https://campbellms.typepad.com/files/gagne-a-differentiated-model-of-giftedness-and-talent-dmgt.pdf https://www.gigers.com/matthias/gifted/gagne_dmgt.html
 go-for-it Window: Large gaps between accelerating technologies and stagnating social norms create lucrative new business opportunities. But they are only available for a short time when people can capitalize on the difference between the real and perceived state of the world. For example, 2007 was the perfect time to launch the iPhone, but Google Glasses launched too early.
 golden rule

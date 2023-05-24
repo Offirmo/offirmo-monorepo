@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/soft-execution-context-browser",
+	"name": "@offirmo-private/soft-execution-context--browser",
 	"description": "browser-specific Software Execution Context",
 	"version": "0.0.2",
 	"author": "Offirmo <offirmo.net@gmail.com>",

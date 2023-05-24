@@ -57,7 +57,7 @@
 	},
 	"scripts": {
 		"clean": "node ../../../0-scripts/clean.js …dist functions",
-		"refresh-build-variables": "monoropo-script--update_build_variables  --mode=ts --outputDir=src/sub",
+		"refresh-build-variables": "monoropo-script--update_build_variables --mode=ts --outputDir=src/sub",
 		"_build:dev:watch": "node ../../../0-scripts/build-typescript.js --watch --onlyNode",
 		"_build:prod": "node ../../../0-scripts/build-typescript.js --onlyNode",
 		"build:netlify-functions": "rm -rf ./functions && netlify-lambda build ./dist/src.es2019.cjs --config ./webpack.config.ts",

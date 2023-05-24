@@ -6,7 +6,7 @@ import { get_top_ish_window, execute_from_top } from '@offirmo-private/xoff'
 import * as RichText from '@offirmo-private/rich-text-format'
 import { THE_BORING_RPG } from '@offirmo-private/marketing-rsrc'
 import { SCHEMA_VERSION, NUMERIC_VERSION as ENGINE_VERSION } from '@tbrpg/flux'
-import { LS_KEYS } from '@offirmo-private/soft-execution-context-browser/src/consts'
+import { LS_KEYS } from '@offirmo-private/soft-execution-context--browser/src/consts'
 
 import { BUILD_DATE } from '../../../build.json'
 import NetlifyWidget from '../../misc/netlify'

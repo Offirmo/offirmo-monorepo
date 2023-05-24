@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { render_achievements_snapshot } from '@oh-my-rpg/view-rich-text'
+import { render_achievements_snapshot } from '@tbrpg/ui--rich-text'
 
 import rich_text_to_react from '../../../services/rich-text-to-react'
 import '../index.css'

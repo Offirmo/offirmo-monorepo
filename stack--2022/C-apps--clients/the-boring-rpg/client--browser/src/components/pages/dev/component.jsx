@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { render_adventure, render_character_sheet, render_full_inventory, render_item_short } from '@oh-my-rpg/view-rich-text'
+import { render_adventure, render_character_sheet, render_full_inventory, render_item_short } from '@tbrpg/ui--rich-text'
 
 import { Short, Detailed } from '../../misc/interactive-element'
 import rich_text_to_react from '../../../services/rich-text-to-react'

@@ -21,7 +21,7 @@ import create_store__local_storage from './stores/local-storage'
 import create_store__in_memory from './stores/in-memory'
 import create_store__cloud_storage from './stores/cloud'
 import { get_commands } from './dispatcher/sugar'
-import { get_queries } from './selectors.js'
+import { get_queries } from './selectors/index.js'
 
 // tslint:disable-next-line: variable-name
 const Event = Enum(

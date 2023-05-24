@@ -2,7 +2,7 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
-import { render_adventure } from '@oh-my-rpg/view-rich-text'
+import { render_adventure } from '@tbrpg/ui--rich-text'
 
 import { Chat } from '../../utils/chat-interface'
 import rich_text_to_react from '../../../services/rich-text-to-react'

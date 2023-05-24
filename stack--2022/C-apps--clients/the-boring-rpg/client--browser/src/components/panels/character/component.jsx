@@ -1,7 +1,7 @@
 import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import { render_character_sheet } from '@oh-my-rpg/view-rich-text'
+import { render_character_sheet } from '@tbrpg/ui--rich-text'
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
 import { is_likely_to_be_mobile } from '../../../services/mobile-detection'

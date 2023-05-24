@@ -61,7 +61,7 @@ function _ↆrefresh_login_state() {
 		// refresh token, https://github.com/netlify/netlify-identity-widget/issues/108
 		return user.jwt()
 			.then(function _wait_for_user_constructed() {
-				logger.info('NetlifyIdentity: user refreshed (1/2)', JSON.parse(JSON.stringify(user)))
+				logger.info('NetlifyIdentity: user refreshed (1/2)', structuredClone(user))
 
 				// seen that user is not immediately fully populated
 				// we need to wait a bit
@@ -71,7 +71,7 @@ function _ↆrefresh_login_state() {
 				)
 			})
 			.then(function _log() {
-				logger.info('NetlifyIdentity: user refreshed (2/2)', JSON.parse(JSON.stringify(user)))
+				logger.info('NetlifyIdentity: user refreshed (2/2)', structuredClone(user))
 			})
 			.catch(err => {
 				logger.warn('NetlifyIdentity⚡ error on trying to finalize user', {

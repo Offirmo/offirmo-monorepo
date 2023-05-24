@@ -1,7 +1,7 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
 
-import { render_full_inventory } from '@oh-my-rpg/view-rich-text'
+import { render_full_inventory } from '@tbrpg/ui--rich-text'
 
 import rich_text_to_react from '../../../services/rich-text-to-react'
 
