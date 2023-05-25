@@ -6,7 +6,7 @@ import {
 	StoryId,
 	StoryAndNotes,
 	is_story_and_notes,
-} from './types.js'
+} from './types'
 
 
 export function get_story_by_id(state: Immutable<State>, id: StoryId): Immutable<StoryAndNotes> {

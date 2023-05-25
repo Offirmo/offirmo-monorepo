@@ -1,16 +1,16 @@
 import assert from 'tiny-invariant'
-import { Immutable } from './deps/immutable.js'
+import { Immutable } from './deps/immutable'
 
 import { Config } from './types.js'
-import { LS_KEYS, MAIN_IFRAME_QUERYPARAMS } from './consts/index.js'
+import { LS_KEYS, MAIN_IFRAME_QUERYPARAMS } from './consts'
 
 import {
 	init,
 	set_config,
 	register_stories_from_glob,
 	set_current_story,
-} from './state/reducers.js'
-import { render } from './render/index.js'
+} from './state/reducers'
+import { render } from './render'
 
 ////////////////////////////////////////////////////////////////////////////////////
 

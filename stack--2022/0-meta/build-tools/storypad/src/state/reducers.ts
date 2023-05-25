@@ -1,16 +1,13 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '../deps/immutable.js'
+import { Immutable } from '../deps/immutable'
 
 import {
-	Config
-} from '../types.js'
-
-import {
+	Config,
 	StoryId,
 	StoryAndNotes,
 	State,
 	is_story_and_notes,
-} from './types.js'
+} from './types'
 
 
 const SEP = 'Ⳇ'

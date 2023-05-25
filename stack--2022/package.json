@@ -66,7 +66,6 @@
 		"zx": "^7"
 	},
 	"devDependencies": {
-		"@babel/core": "^7",
 		"@parcel/config-default": "^2",
 		"@parcel/core": "^2",
 		"@parcel/packager-raw-url": "^2",
@@ -106,7 +105,6 @@
 		"chai-moment": "^0.1",
 		"chai-subset": "^1",
 		"classnames": "^2",
-		"clean-css-cli": "^5",
 		"cli-columns": "^4",
 		"cli-progress": "^3",
 		"columnify": "^1",
@@ -119,7 +117,6 @@
 		"exiftool-vendored": "^22",
 		"fraction.js": "^4",
 		"hasha": "^5",
-		"howler": "^2",
 		"icepick": "^2",
 		"indent-string": "^5",
 		"json-stable-stringify": "^1",
@@ -145,9 +142,7 @@
 		"prettyjson": "^1",
 		"prop-types": "^15",
 		"react": "^18",
-		"react-burger-menu": "^3",
 		"react-dom": "^18",
-		"react-notification-system": "^0.4",
 		"react-overlays": "^5",
 		"react-portal-tooltip": "^2",
 		"react-swipeable-views": "^0",
