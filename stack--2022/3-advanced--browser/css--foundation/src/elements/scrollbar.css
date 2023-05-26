@@ -2,8 +2,6 @@
  * https://webkit.org/blog/363/styling-scrollbars/
  */
 
-@import '../tokens/tokens--colors.css';
-
 :root {
 	/* Standard
 	 * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars

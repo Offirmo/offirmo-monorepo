@@ -1,7 +1,75 @@
 
 :root {
 	--o⋄font-family--system--sans:   -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, "Ubuntu", Roboto, Noto, Arial, sans-serif;
+
+	/* tree */
+	--line-width: 1px;
+	--indentation-width: 12px;
 }
+
+
+
+/************************************/
+
+
+/************************************/
+
+a {
+	text-decoration: none;
+}
+
+details > * {
+	margin: 0;
+	width: max-content;
+}
+
+details > ol {
+	list-style-type: none;
+	padding-inline-start: 0;
+	margin-left: calc(-1 * (var(--indentation-width) - var(--line-width)) / 2);
+}
+
+
+/* nicer collapsibles */
+
+/* Open/close markers
+ * credits to https://codepen.io/ninjabryan/pen/vRdgbO
+ * also https://css-tricks.com/quick-reminder-that-details-summary-is-the-easiest-way-ever-to-make-an-accordion/
+ */
+details > summary {
+	list-style-image: url(./icon--tree--expand.svg);
+}
+details[open] > summary {
+	list-style-image: url(./icon--tree--collapse.svg);
+}
+
+details {
+	padding-left: calc(var(--indentation-width) - var(--line-width));
+}
+details summary {
+	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
+	cursor: pointer;
+
+	/* the summary has an icon, align it with the line */
+	margin-left: calc(-1 * var(--indentation-width) - (var(--indentation-width) - var(--line-width)) / 2);
+}
+detail summary > * {
+	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
+	display: inline;
+}
+
+/* tree-style
+ */
+details[open] {
+
+	border-left: dotted var(--line-width);
+	border-color: var(--o⋄color⁚fg--main);
+	margin-left: calc(-1 * var(--line-width)); /* to compensate */
+}
+
+
+
+/************************************/
 
 body {
 	padding: 0;
@@ -21,37 +89,9 @@ body > details:first-child {
 	overflow-y: scroll;
 	resize: horizontal;
 }
+
 iframe#storypad⋄iframe {
 	border: none;
 	width: 100%;
 	height: 100vh;
-}
-
-
-details > * {
-	margin: 0;
-}
-details > ol {
-	list-style-type: none;
-	padding-inline-start: 0;
-}
-
-
-/* nicer collapsibles */
-details {
-	border-left: dashed 1px;
-	padding-left: .65rem; /* for the content */
-}
-details summary {
-	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
-	cursor: pointer;
-
-	margin-left: -1rem;
-}
-details summary > * {
-	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
-	display: inline;
-}
-details[open] {
-	border-color: var(--o⋄color⁚fg--main);
 }
