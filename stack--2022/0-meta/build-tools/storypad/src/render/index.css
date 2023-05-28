@@ -4,12 +4,17 @@
 
 	/* tree */
 	--line-width: 1px;
-	--indentation-width: 12px;
+	--indentation-width: 11px;
+	--icon-width: 12px; /* to update if icon changed */
 }
 
 
 
 /************************************/
+/* debug */
+details { background-color: rgba(255,0,0,.2); }
+summary { background-color: rgba(0,255,0,.2); }
+ol { background-color: rgba(0,255,255,.2); }
 
 
 /************************************/
@@ -26,7 +31,7 @@ details > * {
 details > ol {
 	list-style-type: none;
 	padding-inline-start: 0;
-	margin-left: calc(-1 * (var(--indentation-width) - var(--line-width)) / 2);
+	xxmargin-left: calc(-1 * (var(--indentation-width) - var(--line-width)) / 2);
 }
 
 
@@ -44,24 +49,31 @@ details[open] > summary {
 }
 
 details {
-	padding-left: calc(var(--indentation-width) - var(--line-width));
-}
-details summary {
-	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
-	cursor: pointer;
-
-	/* the summary has an icon, align it with the line */
-	margin-left: calc(-1 * var(--indentation-width) - (var(--indentation-width) - var(--line-width)) / 2);
+	padding-left: var(--indentation-width);
 }
 detail summary > * {
 	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
 	display: inline;
 }
+details summary {
+	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
+	cursor: pointer;
+
+	/* normally summaries are indented with the details content
+	 * we add a collapse/expand icon to it + shift it left so that the icon is aligned with the vertical line
+	 */
+	margin-left: calc(-1 * var(--indentation-width) - 0.5 * (var(--icon-width) + var(--line-width)));
+}
+details > ol {
+	/* finally we align the details content (after the summary) with the summary text
+	 */
+	margin-left: calc( -0.5 * var(--icon-width) + var(--line-width));
+}
+
 
 /* tree-style
  */
 details[open] {
-
 	border-left: dotted var(--line-width);
 	border-color: var(--o⋄color⁚fg--main);
 	margin-left: calc(-1 * var(--line-width)); /* to compensate */
@@ -85,7 +97,6 @@ body {
 }
 
 body > details:first-child {
-	border-inline-end: dotted 1px;
 	overflow-y: scroll;
 	resize: horizontal;
 }

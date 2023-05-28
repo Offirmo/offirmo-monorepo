@@ -2,12 +2,13 @@ import assert from 'tiny-invariant'
 import { Immutable } from '../deps/immutable'
 
 import {
-	Config,
+	UserConfig,
 	StoryId,
-	StoryAndNotes,
+	StoryEntry,
 	State,
-	is_story_and_notes,
+	is_story_entry,
 } from './types'
+import { LS_KEYS } from '../consts'
 
 
 const SEP = 'Ⳇ'
@@ -15,7 +16,7 @@ const SEP_FOR_IDS = ':'
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export function init(): Immutable<State> {
+export function create(): Immutable<State> {
 	return {
 		config: {
 			root_title: 'Stories',
@@ -37,8 +38,7 @@ export function set_current_story(state: Immutable<State>, story_id: StoryId): I
 	}
 }
 
-
-export function set_config(state: Immutable<State>, config: Immutable<Config>): Immutable<State> {
+export function set_config(state: Immutable<State>, config: Immutable<UserConfig> | undefined): Immutable<State> {
 	return {
 		...state,
 		config: {
@@ -48,7 +48,7 @@ export function set_config(state: Immutable<State>, config: Immutable<Config>): 
 	}
 }
 
-export function register_story(state: Immutable<State>, story: StoryAndNotes): Immutable<State> {
+export function register_story(state: Immutable<State>, story: StoryEntry): Immutable<State> {
 	return {
 		...state,
 		stories_by_id: {
@@ -117,19 +117,54 @@ function _register_stories_from_module(state: Immutable<State>, story_module: an
 		assert(![...parent_path, story_key].some(p => p.includes(SEP)), `Story "${id}" contains a forbidden character!`) // TODO one day improve
 
 		if (story_key === 'default') {
+			// TODO one day store meta
 			assert(typeof story_key['default'] !== 'function')
 			return
 		}
 
 		//console.log(`Found story: "${id}"`)
-		const story: StoryAndNotes = {
+		const story: StoryEntry = {
 			id,
 			defaults: story_module['default'],
-			fn: story_module[story_key],
+			story: story_module[story_key],
 		}
-		assert(is_story_and_notes(story), `${id} is not a story??`)
+		assert(is_story_entry(story), `${id} is not a story??`)
 		state = register_story(state, story)
 	})
 
 	return state
+}
+
+export function enrich_state_from_local_storage(state: Immutable<State>): Immutable<State> {
+	// TODO
+	/*
+	try {
+		const id = localStorage.getItem(LS_KEYS.current_story_id)
+		if (id)
+			state = set_current_story(state, id)
+	}
+	catch { /* ignore *}*/
+	return {
+		...state,
+	}
+}
+
+export function enrich_state_from_query_parameters(state: Immutable<State>): Immutable<State> {
+
+	return {
+		...state,
+	}
+}
+
+export function enrich_state_from_env(state: Immutable<State>): Immutable<State> {
+
+	// TODO ex. if small window, don't show the UI etc.
+	return {
+		...state,
+	}
+}
+
+export function leaveⵧexpand(state: Immutable<State>): Immutable<State> {
+
+
 }

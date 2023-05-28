@@ -1,35 +1,38 @@
-import { Config, Story } from '../types'
+import { UserConfig, Story, is_story } from '../types'
 
 export type StoryId = string
-type Path = string
 
 
-export interface StoryAndNotes {
+export interface StoryEntry {
 	id: StoryId
 	defaults: any
 
-	fn: Story
+	story: Story
 }
-export function is_story_and_notes(s: any): s is StoryAndNotes {
-	return typeof s?.id === 'string' && typeof s?.fn === 'function'
+
+
+export function is_story_entry(s: any): s is StoryEntry {
+	return is_story(s?.story)
 }
 
 interface StoryTree {
+	id: string
+
 	is_open: boolean
 	leaves: {
-		[key: string]: StoryAndNotes | StoryTree
+		[key: string]: StoryEntry | StoryTree
 	}
 }
 export function is_story_tree(s: any): s is StoryTree {
-	return typeof s?.fn !== 'function' // TODO conflict possible?
+	return !is_story_entry(s) // simple for now ;)
 }
 
 
 export interface State {
-	config: Config
+	config: UserConfig
 
 	stories_by_id: {
-		[k: StoryId]: StoryAndNotes,
+		[k: StoryId]: StoryEntry,
 	}
 
 	story_tree: StoryTree
