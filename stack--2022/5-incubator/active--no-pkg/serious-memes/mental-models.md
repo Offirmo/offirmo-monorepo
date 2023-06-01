@@ -1,13 +1,8 @@
 "The noisy door gets the oil" https://9gag.com/gag/aGEgp07?ref=ios
-(agile "what the client wanted")
 1 or 2 way door
 1st practice what you preach
 5 Harsh Truths for Success from Linus Torvalds https://medium.com/codex/5-harsh-truths-from-linus-torvalds-406ab20cea02
 5 regrets of dying
-7 degres ascension spirituelle https://fsj.fr/2013/09/les-7-degres-lascension-spirituelle/
-7 degres misericorde 1) absence de jugement 2) compassion 3) confiance pardon/resilience 4) absolution 5) http://www.chemindamourverslepere.com/archive/2016/04/08/meditation-les-degres-de-la-misericorde-5785524.html
-7 demeures https://mailchi.mp/mariedenazareth.com/quelles-sont-les-etapes-de-la-vie-mystique-selon-sainte-therese-davila
-7+7 œuvres de misericorde https://fr.wikipedia.org/wiki/%C5%92uvres_de_mis%C3%A9ricorde
 80/20 rule (Pareto)
 Copernican Principle: The more we learn about astronomy, the less it seems that earth is special. It’s a small part of the universe, and each human is a small part of the earth. We are all spinning through the solar system — nowhere near the beginning or end of time.
 English
@@ -35,6 +30,7 @@ The Map Is Not the Territory: Reality will never match the elegance of theory. A
 The Medium Is the Message: We pay too much attention to what is being said. But the medium of communication is more impactful. For example, the Internet’s impact on humanity has a bigger influence than anything that’s said on the Internet.
 a wisdom for left may not be valid for right
 affirmative action?
+agile "what the client wanted"
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
 availability Cascade: A self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
@@ -74,15 +70,13 @@ game theory
 game theory -- prisoner's dilemma https://www.bennorthrop.com/Home/Blog/2007_11_17_prisoners_dilemma.php
 giftedness and talent https://campbellms.typepad.com/files/gagne-a-differentiated-model-of-giftedness-and-talent-dmgt.pdf https://www.gigers.com/matthias/gifted/gagne_dmgt.html
 go-for-it Window: Large gaps between accelerating technologies and stagnating social norms create lucrative new business opportunities. But they are only available for a short time when people can capitalize on the difference between the real and perceived state of the world. For example, 2007 was the perfect time to launch the iPhone, but Google Glasses launched too early.
-golden rule
 good life questions https://radreads.co/10k-questions/
 grit
 growth mindset
-hangry / before aftr lunch
+hangry / before after lunch
 happiness is a skill
 helicopter parent
 herbe toujours plus verte
-http://voiemystique.free.fr/ruysbroeck_sept_degres.htm
 https://cobeats.com/folder/ryfTgPr9H
 https://en.wikipedia.org/wiki/If%E2%80%94
 https://en.wikipedia.org/wiki/Johari_window
@@ -154,10 +148,12 @@ self appreciation
 self love
 sex ed
 short term / long term
+slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 social pressure / free will
 stakeholder
 start with the most risky / complicated
 start with why
+survival of the fittest / fit enough
 table Selection: This idea comes from poker, where you’re advised to choose your opponents carefully. That means you shouldn’t compete against the best people. You don’t need to get good at doing difficult things if you get good at avoiding difficult things. If you want to win, pick an easy table and nail your execution.
 talent vs. Genius: Society is good at training talent but terrible at cultivating genius. Talented people are good at hitting targets others can’t hit, but geniuses find targets others can’t see. They are opposite modes of excellence. Talent is predictable, genius is unpredictable.
 testaments spirituels St Louis St Remy https://www.famillechretienne.fr/39532/article/le-testament-spirituel-de-benoit-xvi-texte-integral
@@ -172,7 +168,6 @@ tradeoffs / can't have everything
 trust is earned
 trust takes years to earn and seconds to lose / Trust is built slowly, and lost quickly
 trust, but verify
-urvival of the fittest / fit enough
 via Negativa: When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 voleur volé
 who moved my cheese?

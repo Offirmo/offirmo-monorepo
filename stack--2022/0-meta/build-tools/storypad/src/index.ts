@@ -7,7 +7,7 @@ import { LS_KEYS, MAIN_IFRAME_QUERYPARAMS } from './consts'
 import {
 	create,
 	set_config,
-	register_stories_from_glob,
+	register_storiesⵧfrom_glob,
 	enrich_state_from_local_storage,
 	enrich_state_from_query_parameters,
 	enrich_state_from_env,
@@ -24,7 +24,7 @@ export function start_storypad(stories_glob: Immutable<any>, config?: Immutable<
 	let state = create()
 	state = set_config(state, config)
 
-	state = register_stories_from_glob(state, stories_glob)
+	state = register_storiesⵧfrom_glob(state, stories_glob)
 
 	state = enrich_state_from_local_storage(state)
 	state = enrich_state_from_query_parameters(state)

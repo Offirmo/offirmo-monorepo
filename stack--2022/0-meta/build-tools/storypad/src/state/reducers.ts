@@ -3,12 +3,16 @@ import { Immutable } from '../deps/immutable'
 
 import {
 	UserConfig,
+	Glob, Module, isꓽModule, Meta,
+} from '../types'
+
+import {
 	StoryId,
 	StoryEntry,
 	State,
-	is_story_entry,
+	isꓽStoryEntry,
 } from './types'
-import { LS_KEYS } from '../consts'
+
 
 
 const SEP = 'Ⳇ'
@@ -59,8 +63,10 @@ export function register_story(state: Immutable<State>, story: StoryEntry): Immu
 	}
 }
 
-export function register_stories_from_glob(state: Immutable<State>, stories_glob: any): Immutable<State> {
-	//console.trace(`register_stories_from_glob()`)
+const DEBUGⵧglob_parsing = true
+
+export function register_stories_from_glob(state: Immutable<State>, stories_glob: Immutable<Glob>): Immutable<State> {
+	DEBUGⵧglob_parsing && console.trace(`register_stories_from_glob()`)
 
 	state = _register_stories_from_glob(state, stories_glob, [])
 
@@ -86,50 +92,48 @@ export function register_stories_from_glob(state: Immutable<State>, stories_glob
 		story_tree,
 	}
 }
-function _register_stories_from_glob(state: Immutable<State>, stories_glob: any, parent_path: string[] = []): Immutable<State> {
-	//console.trace(`_register_stories_from_glob()`)
+function _register_stories_from_glob(state: Immutable<State>, stories_glob: Glob, parent_path: string[] = []): Immutable<State> {
+	DEBUGⵧglob_parsing && console.group(`_register_stories_from_glob(${parent_path})`)
 	Object.keys(stories_glob).forEach(key => {
 		const blob = stories_glob[key]
 		if (!blob) {
 			throw new Error(`strange key???`)
 		}
 
-		if (blob.__esModule === true) {
-			if (key === 'ts') {
-				// skip meaningless path part
-				state = _register_stories_from_module(state, blob, parent_path)
-			}
-			else
-				state = _register_stories_from_module(state, blob, [ ...parent_path, key ])
-			return
+		if (isꓽModule(blob)) {
+			state = _register_stories_from_module(state, blob, [ ...parent_path, key ])
 		}
-
-		state = _register_stories_from_glob(state, blob, [ ...parent_path, key ])
+		else {
+			state = _register_stories_from_glob(state, blob, [ ...parent_path, key ])
+		}
 	})
+
+	DEBUGⵧglob_parsing && console.groupEnd()
 
 	return state
 }
-function _register_stories_from_module(state: Immutable<State>, story_module: any, parent_path: string[] = []): Immutable<State> {
-	//console.log('_register_stories_from_module()', { story_module, parent_path })
+function _register_stories_from_module(state: Immutable<State>, story_module: Module, parent_path: string[] = []): Immutable<State> {
+	DEBUGⵧglob_parsing && console.log('_register_stories_from_module()', { story_module, parent_path })
 
-	Object.keys(story_module).forEach(story_key => {
+	const module = story_module.ts
+
+	const meta: Meta | undefined = module.default as any
+
+	Object.keys(module).forEach(story_key => {
+		if (story_key === 'default') return
+
 		const id = [...parent_path, story_key].join(SEP_FOR_IDS)
 		assert(![...parent_path, story_key].some(p => p.includes(SEP)), `Story "${id}" contains a forbidden character!`) // TODO one day improve
 
-		if (story_key === 'default') {
-			// TODO one day store meta
-			assert(typeof story_key['default'] !== 'function')
-			return
-		}
-
-		//console.log(`Found story: "${id}"`)
-		const story: StoryEntry = {
+		DEBUGⵧglob_parsing && console.log(`Found story: "${id}"`)
+		const story_entry: StoryEntry = {
 			id,
-			defaults: story_module['default'],
-			story: story_module[story_key],
+			story: module[story_key],
+			meta,
 		}
-		assert(is_story_entry(story), `${id} is not a story??`)
-		state = register_story(state, story)
+		console.log(`new story entry: ${id}`, story_entry)
+		assert(isꓽStoryEntry(story_entry), `freshly inserted ${id} is not a story entry??`)
+		state = register_story(state, story_entry)
 	})
 
 	return state

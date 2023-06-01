@@ -1,5 +1,5 @@
 import { Immutable } from '../deps/immutable'
-import { is_story_entry, is_story_tree, State, StoryId } from '../state/types'
+import { isꓽStoryEntry, isꓽStoryTree, State, StoryId } from '../state/types'
 import { MAIN_IFRAME_QUERYPARAMS } from '../consts'
 import { get_current_url__cleaned } from '../services/env'
 
@@ -28,15 +28,15 @@ function _append_folder(state, parent_elt, tree, path) {
 	<summary>${path.slice(-1)[0] || state.config.root_title}</summary>
 	`
 	Object.keys(tree.leaves).forEach(key => {
-		if (is_story_tree(tree.leaves[key]))
+		if (isꓽStoryTree(tree.leaves[key]))
 			_append_folder(state, details_elt, tree.leaves[key], [...path, key])
 	})
 	let ol_elt = document.createElement('ol')
 	details_elt.appendChild(ol_elt)
 	Object.keys(tree.leaves).forEach(key => {
-		if (is_story_tree(tree.leaves[key]))
+		if (isꓽStoryTree(tree.leaves[key]))
 			return
-		if (is_story_entry(tree.leaves[key]))
+		if (isꓽStoryEntry(tree.leaves[key]))
 			_append_leaf(state, ol_elt, tree.leaves[key], [...path, key])
 		else {
 			console.error(tree[key])

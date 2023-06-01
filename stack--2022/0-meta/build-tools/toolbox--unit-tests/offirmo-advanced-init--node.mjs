@@ -20,7 +20,7 @@ lib_udaⵧnode = await import('@offirmo/universal-debug-api-node')
 try {
 	let lib_secⵧnode = await
 		import('@offirmo-private/soft-execution-context-node')
-			.catch(err => import('../../../3-advanced--multi/soft-execution-context-node/src/index.mjs'))
+			.catch(err => import('../../../3-advanced--multi/soft-execution-context--node/src/index.mjs'))
 
 	lib_udaⵧnode = lib_udaⵧnode || await import('../../../3-advanced--multi/universal-debug-api-node/dist/src.es2022.esm/index.js')
 

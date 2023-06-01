@@ -2,20 +2,26 @@
 :root {
 	--o⋄font-family--system--sans:   -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, "Ubuntu", Roboto, Noto, Arial, sans-serif;
 
+	--clrs--silver: #DDDDDD;
+	--clrs--blue:   #0074D9;
+
+	--o⋄color⁚fg--main: var(--clrs--silver);
+	--o⋄color⁚bg--main: var(--clrs--blue);
+
 	/* tree */
+	--icon-width: 10px; /* actual fixed width from the SVG */
 	--line-width: 1px;
-	--indentation-width: 11px;
-	--icon-width: 12px; /* to update if icon changed */
+	--indentation-width: 12px; /* should be ~icon width and ~font size for best effect */
 }
 
 
 
 /************************************/
-/* debug */
+/* debug
 details { background-color: rgba(255,0,0,.2); }
 summary { background-color: rgba(0,255,0,.2); }
 ol { background-color: rgba(0,255,255,.2); }
-
+*/
 
 /************************************/
 
@@ -23,19 +29,22 @@ a {
 	text-decoration: none;
 }
 
-details > * {
-	margin: 0;
+* {
 	width: max-content;
 }
 
 details > ol {
 	list-style-type: none;
 	padding-inline-start: 0;
-	xxmargin-left: calc(-1 * (var(--indentation-width) - var(--line-width)) / 2);
 }
 
 
-/* nicer collapsibles */
+/* collapsibles as tree */
+
+details > * {
+	margin-left: 0;
+	padding-left: 0;
+}
 
 /* Open/close markers
  * credits to https://codepen.io/ninjabryan/pen/vRdgbO
@@ -51,7 +60,7 @@ details[open] > summary {
 details {
 	padding-left: var(--indentation-width);
 }
-detail summary > * {
+details summary > * {
 	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
 	display: inline;
 }
@@ -67,7 +76,8 @@ details summary {
 details > ol {
 	/* finally we align the details content (after the summary) with the summary text
 	 */
-	margin-left: calc( -0.5 * var(--icon-width) + var(--line-width));
+	--summary-offset: calc( 0.5 * (var(--icon-width) - var(--line-width)) + 0.5ch);
+	margin-left: calc( -1 * var(--indentation-width) + var(--summary-offset));
 }
 
 
@@ -89,6 +99,7 @@ body {
 
 	font-family: var(--o⋄font-family--system--sans);
 	font-size: 12px;
+	font-stretch: ultra-condensed;
 
 	max-width: 100%;
 

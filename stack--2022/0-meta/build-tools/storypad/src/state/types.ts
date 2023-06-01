@@ -1,18 +1,19 @@
-import { UserConfig, Story, is_story } from '../types'
+import { UserConfig, Story, Meta, isꓽStory, isꓽStory‿v3 } from '../types'
 
 export type StoryId = string
 
 
 export interface StoryEntry {
 	id: StoryId
-	defaults: any
 
 	story: Story
+
+	meta: Meta | undefined
 }
 
 
-export function is_story_entry(s: any): s is StoryEntry {
-	return is_story(s?.story)
+export function isꓽStoryEntry(x: any): x is StoryEntry {
+	return isꓽStory(x?.story)
 }
 
 interface StoryTree {
@@ -23,8 +24,8 @@ interface StoryTree {
 		[key: string]: StoryEntry | StoryTree
 	}
 }
-export function is_story_tree(s: any): s is StoryTree {
-	return !is_story_entry(s) // simple for now ;)
+export function isꓽStoryTree(x: any): x is StoryTree {
+	return !isꓽStoryEntry(x) // simple for now ;)
 }
 
 

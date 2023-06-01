@@ -5,7 +5,7 @@ import {
 	State,
 	StoryId,
 	StoryEntry,
-	is_story_entry,
+	isꓽStoryEntry,
 } from './types'
 import { MAIN_IFRAME_QUERYPARAMS } from '../consts'
 import { get_current_url__cleaned } from '../services/env'
@@ -13,7 +13,7 @@ import { get_current_url__cleaned } from '../services/env'
 
 export function get_story_by_id(state: Immutable<State>, id: StoryId): Immutable<StoryEntry> {
 	const result = state.stories_by_id[id]
-	assert(is_story_entry(result))
+	assert(isꓽStoryEntry(result))
 	return result
 }
 

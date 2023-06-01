@@ -20,7 +20,7 @@ function renderⵧstory(state) {
 				? [] // allow resetting decorators
 				:[
 					...state.config.decorators,
-					...(story.defaults?.decorators || []),
+					...(story.meta?.decorators || []),
 					...(story.story.decorators || []),
 				].reverse()
 			decorators.forEach(decorator => {
