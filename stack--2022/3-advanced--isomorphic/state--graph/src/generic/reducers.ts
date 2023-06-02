@@ -5,10 +5,14 @@ import {
 	Graph,
 
 	Node, NodeUId, CustomNodeUId,
-	Edge, EdgeUId, CustomEdgeUId,
+	Link, LinkUId, CustomLinkUId,
 
 	Options,
 } from './types.js'
+import {
+	_assert_custom_node_id_is_valid,
+	_assert_custom_id_is_valid,
+} from './utils.js'
 import {
 	getꓽnodeⵧby_custom_id,
 } from './selectors.js'
@@ -18,12 +22,24 @@ import {
 const PAD_LENGTH = 3
 
 function create(options: Immutable<Partial<Options>> = {}): Immutable<Graph> {
+
+	if (options.is_arborescence === true) {
+		assert(options.is_directed !== false, `option is_directed and is_arborescence should not clash`) // a tree is always directed
+		assert(options.allows_cycles !== true, `option allows_cycles and is_arborescence should not clash`) // a tree is always directed
+		assert(options.allows_loops !== true, `option allows_loops and is_arborescence should not clash`) // a tree is always directed
+		assert(options.allows_duplicate_links !== true, `option allows_duplicate_links and is_arborescence should not clash`) // a tree is always directed
+	}
+
 	return {
 		options: {
-			is_directed: false, // if not,
-			allows_cycles: true,
-			allows_duplicate_edges: true,
-			auto_edge_id_separator: '→',
+			// defaults
+			is_arborescence: false,
+			is_directed: !!options.is_arborescence,
+			allows_cycles: !options.is_arborescence,
+			allows_loops: !options.is_arborescence,
+			allows_duplicate_links: !options.is_arborescence,
+			auto_link_id_separator: '→',
+			// overrides
 			...options,
 		},
 		uid_generator: 0,
@@ -36,17 +52,7 @@ function create(options: Immutable<Partial<Options>> = {}): Immutable<Graph> {
 
 ////////////////////////////////////
 
-// TODO unicode normalization?
 
-function _assert_custom_id_is_valid(graph: Immutable<Graph>, cuid: CustomNodeUId | CustomEdgeUId) {
-	assert(cuid.length > 0)
-	assert(cuid.trim() === cuid)
-}
-
-function _assert_custom_node_id_is_valid(graph: Immutable<Graph>, node_cuid: CustomNodeUId) {
-	_assert_custom_id_is_valid(graph, node_cuid)
-	assert(!node_cuid.includes(graph.options.auto_edge_id_separator))
-}
 
 function _getꓽedge_internal_uid(graph: Immutable<Graph>, node_uidⵧfrom: NodeUId, node_uidⵧto: NodeUId) {
 	return `${node_uidⵧfrom}→${node_uidⵧto}`
@@ -64,7 +70,8 @@ function _insertꓽnode(graph: Immutable<Graph>, node_cuid: CustomNodeUId): Immu
 	const node = {
 		uid,
 		custom_id: node_cuid,
-		edges_from: [],
+		links_from: [],
+		...(graph.options.is_arborescence && { depth: 0 }),
 	} as Node
 
 	return {
@@ -101,9 +108,9 @@ function upsertꓽnode(graph: Immutable<Graph>, node_cuid: CustomNodeUId): Immut
 
 ////////////////////////////////////
 
-function _insertꓽedge(graph: Immutable<Graph>, from_uid: NodeUId, to_uid: NodeUId, custom_id?: CustomEdgeUId): Immutable<Graph> {
-	let uid = _getꓽedge_internal_uid(graph, from_uid, to_uid)
-	if (graph.options.allows_duplicate_edges && custom_id) {
+function _insertꓽedge(graph: Immutable<Graph>, nodeⵧfrom: Immutable<Node>, nodeⵧto: Immutable<Node>, custom_id?: CustomLinkUId): Immutable<Graph> {
+	let uid = _getꓽedge_internal_uid(graph, nodeⵧfrom.uid, nodeⵧto.uid)
+	if (graph.options.allows_duplicate_links && custom_id) {
 		uid = `${uid}/${String(graph.uid_generator)}`
 		graph = {
 			...graph,
@@ -114,10 +121,9 @@ function _insertꓽedge(graph: Immutable<Graph>, from_uid: NodeUId, to_uid: Node
 	const edge = {
 		uid,
 		...(custom_id && { custom_id }),
-		from: from_uid,
-		to: to_uid,
-	} as Edge
-
+		from: nodeⵧfrom.uid,
+		to: nodeⵧto.uid,
+	} as Link
 	graph = {
 		...graph,
 
@@ -126,7 +132,6 @@ function _insertꓽedge(graph: Immutable<Graph>, from_uid: NodeUId, to_uid: Node
 			[uid]: edge,
 		},
 	}
-
 	if (custom_id) {
 		graph = {
 			...graph,
@@ -138,8 +143,37 @@ function _insertꓽedge(graph: Immutable<Graph>, from_uid: NodeUId, to_uid: Node
 		}
 	}
 
-	// TODO update nodes links
-	// TODO update depth
+	nodeⵧfrom = {
+		...nodeⵧfrom,
+		links_from: [
+			...nodeⵧfrom.links_from,
+			uid,
+		].sort(),
+	}
+	graph = {
+		...graph,
+		nodes_by_uid: {
+			...graph.nodes_by_uid,
+			[nodeⵧfrom.uid]: nodeⵧfrom,
+		}
+	}
+
+	if (graph.options.is_arborescence) {
+		assert(nodeⵧto.depth === 0, `When the graph is an arborescence, on link insertion, the target node should have depth = 0!`)
+		assert(Object.keys(nodeⵧto.links_from).length === 0, `When the graph is an arborescence, on link insertion, the target node should be freshly created!`) // we could implement differently and recursively increase the depth but no use case for now
+		assert(nodeⵧfrom.depth !== undefined, `When the graph is an arborescence, on link insertion, the source node should have a depth!`) // internal error
+		nodeⵧto = {
+			...nodeⵧto,
+			depth: nodeⵧfrom.depth + 1,
+		}
+		graph = {
+			...graph,
+			nodes_by_uid: {
+				...graph.nodes_by_uid,
+				[nodeⵧto.uid]: nodeⵧto,
+			}
+		}
+	}
 
 	return graph
 }
@@ -151,7 +185,7 @@ function _insertꓽedge(graph: Immutable<Graph>, from_uid: NodeUId, to_uid: Node
  * - will be auto-generated if not provided
  * - must be unique if provided
  */
-function insertꓽedge(graph: Immutable<Graph>, node_cuidⵧfrom: CustomNodeUId, node_cuidⵧto: CustomNodeUId, edge_cuid?: CustomEdgeUId): Immutable<Graph> {
+function insertꓽedge(graph: Immutable<Graph>, node_cuidⵧfrom: CustomNodeUId, node_cuidⵧto: CustomNodeUId, edge_cuid?: CustomLinkUId): Immutable<Graph> {
 	if (edge_cuid) {
 		_assert_custom_id_is_valid(graph, edge_cuid)
 		assert(!graph.edges_uids_by_custom_id[edge_cuid], `edge id "${edge_cuid}" should not already exist!`)
@@ -177,11 +211,11 @@ function insertꓽedge(graph: Immutable<Graph>, node_cuidⵧfrom: CustomNodeUId,
 		assert(!graph.edges_by_uid[uid], `edge between "${nodeⵧfrom.custom_id}" and "${nodeⵧto.custom_id}" should not already exist!`)
 	}
 
-	return _insertꓽedge(graph, nodeⵧfrom.uid, nodeⵧto.uid, edge_cuid)
+	return _insertꓽedge(graph, nodeⵧfrom, nodeⵧto, edge_cuid)
 }
 
 // same arguments as insert
-function upsertꓽedge(graph: Immutable<Graph>, node_cuidⵧfrom: CustomNodeUId, node_cuidⵧto: CustomNodeUId, edge_cuid?: CustomEdgeUId): Immutable<Graph> {
+function upsertꓽedge(graph: Immutable<Graph>, node_cuidⵧfrom: CustomNodeUId, node_cuidⵧto: CustomNodeUId, edge_cuid?: CustomLinkUId): Immutable<Graph> {
 	if (edge_cuid) {
 		_assert_custom_id_is_valid(graph, edge_cuid)
 		if (graph.edges_uids_by_custom_id[edge_cuid]) return graph
@@ -207,9 +241,29 @@ function upsertꓽedge(graph: Immutable<Graph>, node_cuidⵧfrom: CustomNodeUId,
 		if (graph.edges_by_uid[uid]) return graph
 	}
 
-	return _insertꓽedge(graph, nodeⵧfrom.uid, nodeⵧto.uid, edge_cuid)
+	return _insertꓽedge(graph, nodeⵧfrom, nodeⵧto, edge_cuid)
 }
 
+/////////////////////////////////////////////////
+
+// insert all the nodes + links between them by index order
+function upsertꓽbranch(graph: Immutable<Graph>, ...node_cuids: CustomNodeUId[]): Immutable<Graph> {
+	node_cuids.forEach(node_cuid => {
+		_assert_custom_node_id_is_valid(graph, node_cuid)
+	})
+
+	node_cuids.forEach((node_cuid, index) => {
+		graph = upsertꓽnode(graph, node_cuid)
+
+		if (index > 0) {
+			// add the edge TO this node
+			const node_cuidⵧfrom = node_cuids[index - 1]!
+			graph = upsertꓽedge(graph, node_cuidⵧfrom, node_cuid)
+		}
+	})
+
+	return graph
+}
 
 /////////////////////////////////////////////////
 
@@ -219,4 +273,5 @@ export {
 	upsertꓽnode,
 	insertꓽedge,
 	upsertꓽedge,
+	upsertꓽbranch
 }

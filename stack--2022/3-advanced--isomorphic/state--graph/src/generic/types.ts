@@ -4,15 +4,19 @@
 // since we implement Adjacency List storage through a map, all those ids should be strings
 // we allow custom ids while also using smaller auto-generated internal ids under the hood
 type NodeUId = string
-type EdgeUId = string
+type LinkUId = string
 type CustomNodeUId = string
-type CustomEdgeUId = string
+type CustomLinkUId = string
 
 interface Options {
-	is_directed: boolean
-	allows_cycles: boolean
-	allows_duplicate_edges: boolean
-	auto_edge_id_separator: string // must not appear in node ids
+	is_arborescence: boolean // if yes, must be directed and no node can have 2 edges pointing to it. Will unlock the "depth" property https://en.wikipedia.org/wiki/Tree_(graph_theory)#Rooted_tree
+
+	is_directed: boolean // if not, edges are auto-normalized (from->to) by alphabetical order
+	allows_cycles: boolean // TODO DETECTION NOT IMPLEMENTED
+	allows_loops: boolean // edge between the same node https://en.wikipedia.org/wiki/Loop_(graph_theory)
+	allows_duplicate_links: boolean // https://en.wikipedia.org/wiki/Multiple_edges even if allowed, they must have uids (could implement further but no need at this stage)
+
+	auto_link_id_separator: string // must not appear in node ids
 
 	//get_unique_id: Function | undefined
 }
@@ -22,13 +26,17 @@ interface Node {
 
 	uid: NodeUId
 
-	edges_from: EdgeUId[]
+	links_from: LinkUId[]
+
+	// TODO links_to? if useful
+
+	depth?: number // optional, for arborescences
 }
 
-interface Edge {
-	custom_id?: CustomEdgeUId // edges don't always need a custom id
+interface Link {
+	custom_id?: CustomLinkUId // edges don't require a custom id
 
-	uid: EdgeUId
+	uid: LinkUId
 
 	from: NodeUId
 	to: NodeUId
@@ -45,7 +53,7 @@ interface Graph {
 		[k: NodeUId]: Node
 	}
 	edges_by_uid: {
-		[k: EdgeUId]: Edge
+		[k: LinkUId]: Link
 	}
 
 	nodes_uids_by_custom_id: {
@@ -53,7 +61,7 @@ interface Graph {
 	}
 
 	edges_uids_by_custom_id: {
-		[k: CustomEdgeUId]: EdgeUId
+		[k: CustomLinkUId]: LinkUId
 	}
 }
 
@@ -63,7 +71,7 @@ export {
 	type Graph,
 
 	type Node, type NodeUId, type CustomNodeUId,
-	type Edge, type EdgeUId, type CustomEdgeUId,
+	type Link, type LinkUId, type CustomLinkUId,
 
 	type Options,
 }

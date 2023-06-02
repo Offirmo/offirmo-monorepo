@@ -68,7 +68,7 @@ describe(`${LIB} -- generic -- reducers`, function() {
 
 		it('should reject duplicates -- by id (auto)', () => {
 			let graph = create({
-				//allows_duplicate_edges: false,
+				//allows_duplicate_links: false,
 			})
 
 			graph = insertꓽnode(graph, 'Paris')
@@ -88,7 +88,7 @@ describe(`${LIB} -- generic -- reducers`, function() {
 			// allowed bc different id
 			graph = insertꓽedge(graph, 'Paris', 'Rome', 'train')
 
-			console.log(graph)
+			//console.log(graph)
 		})
 	})
 

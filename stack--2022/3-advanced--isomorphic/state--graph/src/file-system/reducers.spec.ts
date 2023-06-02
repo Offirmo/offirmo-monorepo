@@ -7,6 +7,9 @@ import {
 	upsertꓽfile,
 	mkdirp,
 } from './index.js'
+import {
+	getꓽarborescence_view
+} from '../generic/index.js'
 
 
 
@@ -16,14 +19,15 @@ import {
 
 describe(`${LIB} -- File System -- reducers`, function() {
 
-	it('should work', () => {
+	it.only('should work', () => {
 		let fs = create()
 
-		fs = upsertꓽfile(fs, 'foo/bar/baz')
-		fs = upsertꓽfile(fs, 'foo/glop')
-		fs = mkdirp(fs, 'foo/bar/gnokman')
+		fs = upsertꓽfile(fs, 'foo/bar/baz.xyz')
+		fs = upsertꓽfile(fs, 'foo/glop.xyz')
+		fs = mkdirp(fs, 'foo/bar/gnokman/')
 
-
+		console.log(fs)
+		console.log(getꓽarborescence_view(fs.graph))
 	})
 
 	it('should reject duplicates')
