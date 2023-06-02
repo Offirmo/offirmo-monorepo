@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { LIB } from '../consts.js'
+import { LIB } from './consts.js'
 
 import {
 	create,
@@ -17,26 +17,20 @@ import {
 
 
 
-describe(`${LIB} -- File System -- reducers`, function() {
+describe(`${LIB} -- reducers`, function() {
 
-	it.only('should work', () => {
+	it('should work', () => {
 		let fs = create()
 
 		fs = upsertꓽfile(fs, 'foo/bar/baz.xyz')
 		fs = upsertꓽfile(fs, 'foo/glop.xyz')
 		fs = mkdirp(fs, 'foo/bar/gnokman/')
 
-		console.log(fs)
+		//console.log(fs)
 		console.log(getꓽarborescence_view(fs.graph))
 	})
 
 	it('should reject duplicates')
 
-	it('should allow navigating the tree', () => {
-		//const folders = get_folders(fs)
 
-		//const files = get_files(fs)
-		//const empty_folders = get_empty_folders(fs)
-
-	})
 })

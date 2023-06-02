@@ -58,14 +58,12 @@ function upsertꓽfile(fs: Immutable<FileSystem>, path: Path): Immutable<FileSys
 	return _upsertꓽpath(fs, path, true)
 }
 
-
 function mkdirp(fs: Immutable<FileSystem>, path: Path): Immutable<FileSystem> {
 	if (path.startsWith(SEP)) path = path.slice(SEP.length)
 	if (path.endsWith(SEP)) path = path.slice(0, -SEP.length)
 
 	return _upsertꓽpath(fs, path, false)
 }
-
 
 /////////////////////////////////////////////////
 
