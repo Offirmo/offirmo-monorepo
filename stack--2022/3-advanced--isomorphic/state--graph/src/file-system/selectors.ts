@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable } from '../embedded-deps/immutable.js'
 
 import * as Graph from '../generic/index.js'
 
