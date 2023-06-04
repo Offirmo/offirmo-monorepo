@@ -3,21 +3,21 @@ import { Immutable } from '../embedded-deps/immutable.js'
 
 import * as Graph from '../generic/index.js'
 
-import { FileSystem, Path } from './types.js'
+import { FileSystem, FSPath } from './types.js'
 
 /////////////////////////////////////////////////
 
-function getꓽfilesⵧall(fs: Immutable<FileSystem>): Path[] {
+function getꓽfilesⵧall(fs: Immutable<FileSystem>): FSPath[] {
 	const nodes‿cuid = Graph.getꓽnodesⵧall‿cuid(fs.graph)
 	return nodes‿cuid.filter(cuid => !cuid.endsWith(fs.options.separator))
 }
 
-function getꓽfoldersⵧall(fs: Immutable<FileSystem>): Path[] {
+function getꓽfoldersⵧall(fs: Immutable<FileSystem>): FSPath[] {
 	const nodes‿cuid = Graph.getꓽnodesⵧall‿cuid(fs.graph)
 	return nodes‿cuid.filter(cuid => cuid.endsWith(fs.options.separator))
 }
 
-function getꓽchildren_of(fs: Immutable<FileSystem>, folder_path: Path | '/'): Path[] {
+function getꓽchildren_of(fs: Immutable<FileSystem>, folder_path: FSPath | '/'): FSPath[] {
 	const SEP = fs.options.separator
 	if (folder_path.startsWith(SEP)) folder_path = folder_path.slice(SEP.length)
 	if (!folder_path.endsWith(SEP)) folder_path = folder_path + SEP

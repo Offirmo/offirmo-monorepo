@@ -27,8 +27,8 @@ function getꓽnodesⵧall‿cuid(graph: Immutable<Graph>): CustomNodeUId[] {
 function getꓽnodesⵧsource(graph: Immutable<Graph>): Immutable<Node>[] {
 	const nodes_with_links_to = new Set<NodeUId>()
 
-	Object.values(graph.edges_by_uid).forEach(edge => {
-		nodes_with_links_to.add(edge.to)
+	Object.values(graph.links_by_uid).forEach(link => {
+		nodes_with_links_to.add(link.to)
 	})
 
 	return Object.values(graph.nodes_by_uid).filter(node => !nodes_with_links_to.has(node.uid))
@@ -38,11 +38,12 @@ function getꓽnodesⵧsuccessors_of(graph: Immutable<Graph>, node: Immutable<No
 	return node === 'root'
 		? getꓽnodesⵧsource(graph)
 		: node.links_from
-			.map(edge_uid => graph.edges_by_uid[edge_uid]!)
-			.map(edge => edge.to)
+			.map(link_uid => graph.links_by_uid[link_uid]!)
+			.map(link => link.to)
 			.map(node_uid => graph.nodes_by_uid[node_uid]!)
 }
 
+// arborescences only!
 function getꓽnodesⵧby_depth(graph: Immutable<Graph>, depth: number): Immutable<Node>[] {
 	assert(graph.options.is_arborescence, `Should be an arborescence!`)
 
@@ -51,13 +52,13 @@ function getꓽnodesⵧby_depth(graph: Immutable<Graph>, depth: number): Immutab
 
 /////////////////////////////////////////////////
 
-function getꓽarborescence_view(graph: Immutable<Graph>): string {
+function getꓽrepresentationⵧarborescence(graph: Immutable<Graph>): string {
 	assert(graph.options.is_arborescence, `Should be an arborescence!`)
 
 	return [
 		`[root]`,
 		...getꓽnodesⵧsuccessors_of(graph, 'root')
-			.map((node, i, a) => _getꓽarborescence_view(
+			.map((node, i, a) => _getꓽrepresentationⵧarborescence(
 				graph,
 				node,
 				0,
@@ -67,11 +68,11 @@ function getꓽarborescence_view(graph: Immutable<Graph>): string {
 	].join('\n')
 }
 
-function _getꓽarborescence_view(graph: Immutable<Graph>, node: Immutable<Node>, depth: number, is_last: boolean, padding: string): string {
+function _getꓽrepresentationⵧarborescence(graph: Immutable<Graph>, node: Immutable<Node>, depth: number, is_last: boolean, padding: string): string {
 	return [
 		 `${padding}${is_last?'└':'├'} ${node.custom_id}`, // [${node.uid}]  (${node.depth})
 		...getꓽnodesⵧsuccessors_of(graph, node)
-			.map((child_node, i, a) => _getꓽarborescence_view(
+			.map((child_node, i, a) => _getꓽrepresentationⵧarborescence(
 				graph,
 				child_node,
 				depth + 1,
@@ -90,5 +91,5 @@ export {
 	getꓽnodesⵧsuccessors_of,
 	getꓽnodesⵧby_depth,
 
-	getꓽarborescence_view,
+	getꓽrepresentationⵧarborescence,
 }

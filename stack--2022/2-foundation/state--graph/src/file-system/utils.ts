@@ -1,7 +1,7 @@
-import { Path } from './types.js'
+import { FSPath } from './types.js'
 
 
-function normalize_path(raw_path: Path): Path {
+function normalize_path(raw_path: FSPath): FSPath {
 	return raw_path
 }
 

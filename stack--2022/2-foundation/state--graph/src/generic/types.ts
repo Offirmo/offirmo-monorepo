@@ -34,7 +34,7 @@ interface Node {
 }
 
 interface Link {
-	custom_id?: CustomLinkUId // edges don't require a custom id
+	custom_id?: CustomLinkUId // links don't require a custom id
 
 	uid: LinkUId
 
@@ -52,7 +52,7 @@ interface Graph {
 	nodes_by_uid: {
 		[k: NodeUId]: Node
 	}
-	edges_by_uid: {
+	links_by_uid: {
 		[k: LinkUId]: Link
 	}
 
@@ -60,7 +60,7 @@ interface Graph {
 		[k: CustomNodeUId]: NodeUId
 	}
 
-	edges_uids_by_custom_id: {
+	links_uids_by_custom_id: {
 		[k: CustomLinkUId]: LinkUId
 	}
 }

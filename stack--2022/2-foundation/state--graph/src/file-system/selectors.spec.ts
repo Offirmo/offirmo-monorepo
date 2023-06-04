@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import { LIB } from './consts.js'
 
 import {
-	create, mkdirp, upsertꓽfile,
+	createꓽgraphⵧfile_system, mkdirp, upsertꓽfile,
 	getꓽfilesⵧall,
 	getꓽfoldersⵧall,
 	getꓽchildren_of,
@@ -14,7 +14,7 @@ import {
 describe(`${LIB} -- selectors`, function() {
 
 	it('should allow navigating the tree', () => {
-		let fs = create()
+		let fs = createꓽgraphⵧfile_system()
 
 		fs = upsertꓽfile(fs, 'foo/bar/baz.xyz')
 		fs = upsertꓽfile(fs, 'foo/glop.xyz')

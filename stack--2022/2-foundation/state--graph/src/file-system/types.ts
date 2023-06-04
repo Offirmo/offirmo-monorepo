@@ -2,7 +2,7 @@ import { Graph } from '../generic/index.js'
 
 /////////////////////////////////////////////////
 
-type Path = string
+type FSPath = string
 
 interface FileSystem {
 	options: {
@@ -15,6 +15,6 @@ interface FileSystem {
 /////////////////////////////////////////////////
 
 export {
-	type Path,
+	type FSPath,
 	type FileSystem,
 }

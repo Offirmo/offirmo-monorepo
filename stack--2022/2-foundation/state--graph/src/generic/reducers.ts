@@ -21,7 +21,7 @@ import {
 
 const PAD_LENGTH = 3
 
-function create(options: Immutable<Partial<Options>> = {}): Immutable<Graph> {
+function createꓽgraphⵧgeneric(options: Immutable<Partial<Options>> = {}): Immutable<Graph> {
 
 	if (options.is_arborescence === true) {
 		assert(options.is_directed !== false, `option is_directed and is_arborescence should not clash`) // a tree is always directed
@@ -44,17 +44,15 @@ function create(options: Immutable<Partial<Options>> = {}): Immutable<Graph> {
 		},
 		uid_generator: 0,
 		nodes_by_uid: {},
-		edges_by_uid: {},
+		links_by_uid: {},
 		nodes_uids_by_custom_id: {},
-		edges_uids_by_custom_id: {},
+		links_uids_by_custom_id: {},
 	}
 }
 
 ////////////////////////////////////
 
-
-
-function _getꓽedge_internal_uid(graph: Immutable<Graph>, node_uidⵧfrom: NodeUId, node_uidⵧto: NodeUId) {
+function _getꓽlink__canonical_uid(graph: Immutable<Graph>, node_uidⵧfrom: NodeUId, node_uidⵧto: NodeUId) {
 	return `${node_uidⵧfrom}→${node_uidⵧto}`
 }
 
@@ -108,8 +106,8 @@ function upsertꓽnode(graph: Immutable<Graph>, node_cuid: CustomNodeUId): Immut
 
 ////////////////////////////////////
 
-function _insertꓽedge(graph: Immutable<Graph>, nodeⵧfrom: Immutable<Node>, nodeⵧto: Immutable<Node>, custom_id?: CustomLinkUId): Immutable<Graph> {
-	let uid = _getꓽedge_internal_uid(graph, nodeⵧfrom.uid, nodeⵧto.uid)
+function _insertꓽlink(graph: Immutable<Graph>, nodeⵧfrom: Immutable<Node>, nodeⵧto: Immutable<Node>, custom_id?: CustomLinkUId): Immutable<Graph> {
+	let uid = _getꓽlink__canonical_uid(graph, nodeⵧfrom.uid, nodeⵧto.uid)
 	if (graph.options.allows_duplicate_links && custom_id) {
 		uid = `${uid}/${String(graph.uid_generator)}`
 		graph = {
@@ -118,7 +116,7 @@ function _insertꓽedge(graph: Immutable<Graph>, nodeⵧfrom: Immutable<Node>, n
 		}
 	}
 
-	const edge = {
+	const new_link = {
 		uid,
 		...(custom_id && { custom_id }),
 		from: nodeⵧfrom.uid,
@@ -127,17 +125,17 @@ function _insertꓽedge(graph: Immutable<Graph>, nodeⵧfrom: Immutable<Node>, n
 	graph = {
 		...graph,
 
-		edges_by_uid: {
-			...graph.edges_by_uid,
-			[uid]: edge,
+		links_by_uid: {
+			...graph.links_by_uid,
+			[uid]: new_link,
 		},
 	}
 	if (custom_id) {
 		graph = {
 			...graph,
 
-			edges_uids_by_custom_id: {
-				...graph.edges_uids_by_custom_id,
+			links_uids_by_custom_id: {
+				...graph.links_uids_by_custom_id,
 				[custom_id]: uid,
 			},
 		}
@@ -181,14 +179,14 @@ function _insertꓽedge(graph: Immutable<Graph>, nodeⵧfrom: Immutable<Node>, n
 /*
  * from/to
  * - will be normalized (auto-sorted) if the graph is not "directed"
- * edge_id:
+ * link_id:
  * - will be auto-generated if not provided
  * - must be unique if provided
  */
-function insertꓽedge(graph: Immutable<Graph>, node_cuidⵧfrom: CustomNodeUId, node_cuidⵧto: CustomNodeUId, edge_cuid?: CustomLinkUId): Immutable<Graph> {
-	if (edge_cuid) {
-		_assert_custom_id_is_valid(graph, edge_cuid)
-		assert(!graph.edges_uids_by_custom_id[edge_cuid], `edge id "${edge_cuid}" should not already exist!`)
+function insertꓽlink(graph: Immutable<Graph>, node_cuidⵧfrom: CustomNodeUId, node_cuidⵧto: CustomNodeUId, link_cuid?: CustomLinkUId): Immutable<Graph> {
+	if (link_cuid) {
+		_assert_custom_id_is_valid(graph, link_cuid)
+		assert(!graph.links_uids_by_custom_id[link_cuid], `link id "${link_cuid}" should not already exist!`)
 	}
 
 	_assert_custom_node_id_is_valid(graph, node_cuidⵧfrom)
@@ -206,19 +204,19 @@ function insertꓽedge(graph: Immutable<Graph>, node_cuidⵧfrom: CustomNodeUId,
 	const nodeⵧfrom = getꓽnodeⵧby_custom_id(graph, node_cuidⵧfrom)
 	const nodeⵧto = getꓽnodeⵧby_custom_id(graph, node_cuidⵧto)
 
-	if (!edge_cuid) {
-		let uid = _getꓽedge_internal_uid(graph, nodeⵧfrom.uid, nodeⵧto.uid)
-		assert(!graph.edges_by_uid[uid], `edge between "${nodeⵧfrom.custom_id}" and "${nodeⵧto.custom_id}" should not already exist!`)
+	if (!link_cuid) {
+		let uid = _getꓽlink__canonical_uid(graph, nodeⵧfrom.uid, nodeⵧto.uid)
+		assert(!graph.links_by_uid[uid], `link between "${nodeⵧfrom.custom_id}" and "${nodeⵧto.custom_id}" should not already exist!`)
 	}
 
-	return _insertꓽedge(graph, nodeⵧfrom, nodeⵧto, edge_cuid)
+	return _insertꓽlink(graph, nodeⵧfrom, nodeⵧto, link_cuid)
 }
 
 // same arguments as insert
-function upsertꓽedge(graph: Immutable<Graph>, node_cuidⵧfrom: CustomNodeUId, node_cuidⵧto: CustomNodeUId, edge_cuid?: CustomLinkUId): Immutable<Graph> {
-	if (edge_cuid) {
-		_assert_custom_id_is_valid(graph, edge_cuid)
-		if (graph.edges_uids_by_custom_id[edge_cuid]) return graph
+function upsertꓽlink(graph: Immutable<Graph>, node_cuidⵧfrom: CustomNodeUId, node_cuidⵧto: CustomNodeUId, link_cuid?: CustomLinkUId): Immutable<Graph> {
+	if (link_cuid) {
+		_assert_custom_id_is_valid(graph, link_cuid)
+		if (graph.links_uids_by_custom_id[link_cuid]) return graph
 	}
 
 	_assert_custom_node_id_is_valid(graph, node_cuidⵧfrom)
@@ -236,12 +234,12 @@ function upsertꓽedge(graph: Immutable<Graph>, node_cuidⵧfrom: CustomNodeUId,
 	const nodeⵧfrom = getꓽnodeⵧby_custom_id(graph, node_cuidⵧfrom)
 	const nodeⵧto = getꓽnodeⵧby_custom_id(graph, node_cuidⵧto)
 
-	if (!edge_cuid) {
-		let uid = _getꓽedge_internal_uid(graph, nodeⵧfrom.uid, nodeⵧto.uid)
-		if (graph.edges_by_uid[uid]) return graph
+	if (!link_cuid) {
+		let uid = _getꓽlink__canonical_uid(graph, nodeⵧfrom.uid, nodeⵧto.uid)
+		if (graph.links_by_uid[uid]) return graph
 	}
 
-	return _insertꓽedge(graph, nodeⵧfrom, nodeⵧto, edge_cuid)
+	return _insertꓽlink(graph, nodeⵧfrom, nodeⵧto, link_cuid)
 }
 
 /////////////////////////////////////////////////
@@ -256,9 +254,9 @@ function upsertꓽbranch(graph: Immutable<Graph>, ...node_cuids: CustomNodeUId[]
 		graph = upsertꓽnode(graph, node_cuid)
 
 		if (index > 0) {
-			// add the edge TO this node
+			// add the link TO this node
 			const node_cuidⵧfrom = node_cuids[index - 1]!
-			graph = upsertꓽedge(graph, node_cuidⵧfrom, node_cuid)
+			graph = upsertꓽlink(graph, node_cuidⵧfrom, node_cuid)
 		}
 	})
 
@@ -268,10 +266,10 @@ function upsertꓽbranch(graph: Immutable<Graph>, ...node_cuids: CustomNodeUId[]
 /////////////////////////////////////////////////
 
 export {
-	create,
+	createꓽgraphⵧgeneric,
 	insertꓽnode,
 	upsertꓽnode,
-	insertꓽedge,
-	upsertꓽedge,
+	insertꓽlink,
+	upsertꓽlink,
 	upsertꓽbranch
 }
