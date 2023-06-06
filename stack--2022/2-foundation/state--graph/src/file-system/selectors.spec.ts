@@ -20,17 +20,18 @@ describe(`${LIB} -- selectors`, function() {
 		fs = upsertꓽfile(fs, 'foo/glop.xyz')
 		fs = mkdirp(fs, 'foo/bar/gnokman/')
 
-		console.log({
+		/*console.log({
 			folders: getꓽfoldersⵧall(fs),
 			files: getꓽfilesⵧall(fs),
 			0: getꓽchildren_of(fs, '/'),
 			1: getꓽchildren_of(fs, 'foo/'),
-		})
+		})*/
 
-		//const folders = get_folders(fs)
+		expect(getꓽfoldersⵧall(fs)).to.deep.equal([ 'foo/', 'foo/bar/', 'foo/bar/gnokman/' ])
+		expect(getꓽfilesⵧall(fs)).to.deep.equal([ 'foo/bar/baz.xyz', 'foo/glop.xyz' ])
+		expect(getꓽchildren_of(fs, '/')).to.deep.equal([ 'foo/' ])
+		expect(getꓽchildren_of(fs, 'foo/')).to.deep.equal([ 'foo/bar/', 'foo/glop.xyz' ])
 
-		//const files = get_files(fs)
 		//const empty_folders = get_empty_folders(fs)
-
 	})
 })

@@ -44,7 +44,9 @@ function createꓽgraphⵧgeneric(options: Immutable<Partial<Options>> = {}): Im
 		},
 		uid_generator: 0,
 		nodes_by_uid: {},
+		last_inserted_node‿uid: undefined,
 		links_by_uid: {},
+		last_inserted_link‿uid: undefined,
 		nodes_uids_by_custom_id: {},
 		links_uids_by_custom_id: {},
 	}
@@ -79,6 +81,7 @@ function _insertꓽnode(graph: Immutable<Graph>, node_cuid: CustomNodeUId): Immu
 			...graph.nodes_by_uid,
 			[uid]: node,
 		},
+		last_inserted_node‿uid: node.uid,
 
 		nodes_uids_by_custom_id: {
 			...graph.nodes_uids_by_custom_id,
@@ -129,6 +132,7 @@ function _insertꓽlink(graph: Immutable<Graph>, nodeⵧfrom: Immutable<Node>, n
 			...graph.links_by_uid,
 			[uid]: new_link,
 		},
+		last_inserted_link‿uid: new_link.uid,
 	}
 	if (custom_id) {
 		graph = {

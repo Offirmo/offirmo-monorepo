@@ -1,12 +1,23 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '../embedded-deps/immutable.js'
 
-import { CustomNodeUId, Graph, Node, NodeUId } from './types.js'
+import { Graph,
+	Node, NodeUId, CustomNodeUId,
+	CustomLinkUId,
+} from './types.js'
 import {
 	_assert_custom_node_id_is_valid
 } from './utils.js'
 
 /////////////////////////////////////////////////
+
+// pre-condition that a node was inserted. Will throw otherwise.
+// will NOT work with UPsert!
+function getꓽnodeⵧlast_inserted‿cuid(graph: Immutable<Graph>): CustomNodeUId {
+	assert(graph.last_inserted_node‿uid, `A node should have previously been inserted!`)
+
+	return graph.nodes_by_uid[graph.last_inserted_node‿uid]!.custom_id
+}
 
 function getꓽnodeⵧby_custom_id(graph: Immutable<Graph>, node_cuid: CustomNodeUId): Immutable<Node> {
 	_assert_custom_node_id_is_valid(graph, node_cuid)
@@ -50,6 +61,20 @@ function getꓽnodesⵧby_depth(graph: Immutable<Graph>, depth: number): Immutab
 	return Object.values(graph.nodes_by_uid).filter(node => node.depth === depth)
 }
 
+
+/////////////////////////////////////////////////
+
+// pre-condition that a link was inserted. Will throw otherwise.
+// pre-condition that the link was inserted WITH A CUSTOM UID (or else why accessing it?). Will throw otherwise.
+// will NOT work with UPsert!
+function getꓽlinkⵧlast_inserted‿cuid(graph: Immutable<Graph>): CustomLinkUId {
+	assert(graph.last_inserted_link‿uid, `A link should have previously been inserted!`)
+	const link = graph.links_by_uid[graph.last_inserted_link‿uid]!
+	assert(link.custom_id, `The last inserted link should have a custom id!`)
+
+	return link.custom_id
+}
+
 /////////////////////////////////////////////////
 
 function getꓽrepresentationⵧarborescence(graph: Immutable<Graph>): string {
@@ -85,11 +110,14 @@ function _getꓽrepresentationⵧarborescence(graph: Immutable<Graph>, node: Imm
 /////////////////////////////////////////////////
 
 export {
+	getꓽnodeⵧlast_inserted‿cuid,
 	getꓽnodeⵧby_custom_id,
 	getꓽnodesⵧall‿cuid,
 	getꓽnodesⵧsource,
 	getꓽnodesⵧsuccessors_of,
 	getꓽnodesⵧby_depth,
+
+	getꓽlinkⵧlast_inserted‿cuid,
 
 	getꓽrepresentationⵧarborescence,
 }

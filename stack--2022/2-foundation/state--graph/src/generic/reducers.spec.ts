@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { LIB } from '../consts.js'
+import { LIB } from './consts.js'
 import {
 	Graph,
 	createꓽgraphⵧgeneric,
@@ -13,7 +13,7 @@ import * as console from 'console'
 
 /////////////////////////////////////////////////
 
-describe(`${LIB} -- generic -- reducers`, function() {
+describe(`${LIB} -- reducers`, function() {
 
 	describe('create()', function () {
 

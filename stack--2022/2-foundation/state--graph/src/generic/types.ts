@@ -9,11 +9,11 @@ type CustomNodeUId = string
 type CustomLinkUId = string
 
 interface Options {
-	is_arborescence: boolean // if yes, must be directed and no node can have 2 edges pointing to it. Will unlock the "depth" property https://en.wikipedia.org/wiki/Tree_(graph_theory)#Rooted_tree
+	is_arborescence: boolean // if yes, must be directed and no node can have 2 links pointing to it. Will unlock the "depth" property https://en.wikipedia.org/wiki/Tree_(graph_theory)#Rooted_tree
 
-	is_directed: boolean // if not, edges are auto-normalized (from->to) by alphabetical order
+	is_directed: boolean // if not, links are auto-normalized (from->to) by alphabetical order
 	allows_cycles: boolean // TODO DETECTION NOT IMPLEMENTED
-	allows_loops: boolean // edge between the same node https://en.wikipedia.org/wiki/Loop_(graph_theory)
+	allows_loops: boolean // loop = link from/to the same node https://en.wikipedia.org/wiki/Loop_(graph_theory)
 	allows_duplicate_links: boolean // https://en.wikipedia.org/wiki/Multiple_edges even if allowed, they must have uids (could implement further but no need at this stage)
 
 	auto_link_id_separator: string // must not appear in node ids
@@ -52,9 +52,12 @@ interface Graph {
 	nodes_by_uid: {
 		[k: NodeUId]: Node
 	}
+	last_inserted_node‿uid: undefined | NodeUId
+
 	links_by_uid: {
 		[k: LinkUId]: Link
 	}
+	last_inserted_link‿uid: undefined | LinkUId
 
 	nodes_uids_by_custom_id: {
 		[k: CustomNodeUId]: NodeUId
