@@ -11,7 +11,6 @@ import {
 	getꓽnodeⵧlast_inserted‿cuid,
 	getꓽlinkⵧlast_inserted‿cuid,
 } from './index.js'
-import * as console from 'console'
 
 
 
@@ -31,6 +30,8 @@ describe(`${LIB} -- selectors`, function() {
 
 			graph = insertꓽnode(graph, 'Rome')
 			expect(getꓽnodeⵧlast_inserted‿cuid(graph), 'DI2').to.equal('Rome')
+
+			// XXX TOREVIEW
 
 			graph = upsertꓽnode(graph, 'Paris')
 			expect(getꓽnodeⵧlast_inserted‿cuid(graph), 'UN').to.equal('Rome') // no change

@@ -1,5 +1,5 @@
 import { Immutable } from '../deps/immutable'
-import { isꓽStoryEntry, isꓽStoryTree, State, StoryId } from '../state/types'
+import { isꓽStoryEntry, isꓽStoryFolder, State, StoryId } from '../state/types'
 import { MAIN_IFRAME_QUERYPARAMS } from '../consts'
 import { get_current_url__cleaned } from '../services/env'
 
@@ -23,21 +23,21 @@ function renderⵧside_panel(state: Immutable<State>) {
 function _append_folder(state, parent_elt, tree, path) {
 	//console.log('_append_folder()', { parent_elt, tree, path, })
 	let details_elt = document.createElement('details')
-	details_elt.open = tree.is_open
+	details_elt.open = tree.is_expanded
 	details_elt.innerHTML = `
 	<summary>${path.slice(-1)[0] || state.config.root_title}</summary>
 	`
-	Object.keys(tree.leaves).forEach(key => {
-		if (isꓽStoryTree(tree.leaves[key]))
-			_append_folder(state, details_elt, tree.leaves[key], [...path, key])
+	Object.keys(tree.children).forEach(key => {
+		if (isꓽStoryFolder(tree.children[key]))
+			_append_folder(state, details_elt, tree.children[key], [...path, key])
 	})
 	let ol_elt = document.createElement('ol')
 	details_elt.appendChild(ol_elt)
-	Object.keys(tree.leaves).forEach(key => {
-		if (isꓽStoryTree(tree.leaves[key]))
+	Object.keys(tree.children).forEach(key => {
+		if (isꓽStoryFolder(tree.children[key]))
 			return
-		if (isꓽStoryEntry(tree.leaves[key]))
-			_append_leaf(state, ol_elt, tree.leaves[key], [...path, key])
+		if (isꓽStoryEntry(tree.children[key]))
+			_append_leaf(state, ol_elt, tree.children[key], [...path, key])
 		else {
 			console.error(tree[key])
 			throw new Error(`Unrecognized tree part!`)

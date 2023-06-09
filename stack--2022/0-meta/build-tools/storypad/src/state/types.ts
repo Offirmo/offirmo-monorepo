@@ -1,30 +1,31 @@
-import { UserConfig, Story, Meta, isꓽStory, isꓽStory‿v3 } from '../types'
+import { FileSystem } from '../deps/@offirmo-private/state--graph.js'
+import {
+	UserConfig,
+	Story, isꓽStory,
+	Meta,
+} from '../types'
 
 export type StoryId = string
+export type FolderId = string
 
 
 export interface StoryEntry {
-	id: StoryId
+	uid: StoryId
 
 	story: Story
 
 	meta: Meta | undefined
 }
-
-
 export function isꓽStoryEntry(x: any): x is StoryEntry {
 	return isꓽStory(x?.story)
 }
 
-interface StoryTree {
-	id: string
+export interface StoryFolder {
+	uid: FolderId
 
-	is_open: boolean
-	leaves: {
-		[key: string]: StoryEntry | StoryTree
-	}
+	is_expanded: boolean
 }
-export function isꓽStoryTree(x: any): x is StoryTree {
+export function isꓽStoryFolder(x: any): x is StoryFolder {
 	return !isꓽStoryEntry(x) // simple for now ;)
 }
 
@@ -36,7 +37,11 @@ export interface State {
 		[k: StoryId]: StoryEntry,
 	}
 
-	story_tree: StoryTree
+	folders_by_id: {
+		[k: FolderId]: StoryFolder,
+	}
 
 	current_story‿id: StoryId | undefined
+
+	graph: FileSystem
 }

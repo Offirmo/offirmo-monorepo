@@ -4,6 +4,7 @@ import { Immutable } from '../embedded-deps/immutable.js'
 import * as GenericGraph from '../generic/index.js'
 
 import { FSPath, FileSystem } from './types.js'
+import { normalize_path } from './utils.js'
 
 /////////////////////////////////////////////////
 
@@ -21,6 +22,17 @@ function createꓽgraphⵧfile_system(): Immutable<FileSystem> {
 	} as FileSystem
 }
 
+// insert the file but upsert the path to it
+function insertꓽfile(fs: Immutable<FileSystem>, path: FSPath): Immutable<FileSystem> {
+	path = normalize_path
+	assert(!path.endsWith(SEP), `file path should not end with a separator! "${path}"`)
+	if (path.startsWith(SEP)) path = path.slice(SEP.length)
+
+	assert(!fs.graph.nodes_uids_by_custom_id[path], 'file should not already exist!'
+	)
+	return _upsertꓽpath(fs, path, true)
+}
+
 function upsertꓽfile(fs: Immutable<FileSystem>, path: FSPath): Immutable<FileSystem> {
 	assert(!path.endsWith(SEP), `file path should not end with a separator! "${path}"`)
 	if (path.startsWith(SEP)) path = path.slice(SEP.length)
@@ -35,7 +47,7 @@ function mkdirp(fs: Immutable<FileSystem>, path: FSPath): Immutable<FileSystem> 
 	return _upsertꓽpath(fs, path, false)
 }
 
-function _upsertꓽpath(fs: Immutable<FileSystem>, path: FSPath, is_file: boolean): Immutable<FileSystem> {
+function _upsertꓽpath(fs: Immutable<FileSystem>, path: FSPath, type: 'file' | 'folder'): Immutable<FileSystem> {
 	const path‿split = path.split(SEP)
 	assert(path‿split.every(p => !!p), `path should not have a hole! "${path}"`)
 
@@ -44,7 +56,7 @@ function _upsertꓽpath(fs: Immutable<FileSystem>, path: FSPath, is_file: boolea
 			let path = path‿split.slice(0, index + 1).join(SEP)
 
 			const is_last_segment = index === path‿split.length - 1
-			if (!is_last_segment || !is_file)
+			if (!is_last_segment || type === 'folder')
 				path += SEP
 
 			return path
