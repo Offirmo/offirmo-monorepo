@@ -74,8 +74,8 @@ EDIT : .....on 2nd thought, I just realised that if you began with Ri, you'll se
 
 Progression
 RI
-- Founadtion Establishment (7)
-- Core Fromation (19)
+- Foundation Establishment (7)
+- Core Formation (19)
 - Nascent Soul (26)
 - Soul Formation (37)
 - Soul Transformation (45)
@@ -87,12 +87,12 @@ RI
 - Nirvana Shaterrer (+500)
 - Heaven's blight
 - (3rd step = 4 void realms)
-- Nirvana Void
-- Spirit Void
-- Arcane Void
-- Void Tribulant
+    - Nirvana Void
+    - Spirit Void
+    - Arcane Void
+    - Void Tribulant
 - (4th step)
-- Heaven Trampling
+    - Heaven Trampling
 
 
-he ability to accrue social capital within the organization. Social capital is the healthy network of connections with others that can emerge naturally in a culture of trust and tolerance.
+The ability to accrue social capital within the organization. Social capital is the healthy network of connections with others that can emerge naturally in a culture of trust and tolerance.

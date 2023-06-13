@@ -68,7 +68,6 @@ essence of karma
 essence of life & death
 essence of light / darkness
 essence of lightning
-essence of lightning
 essence of lust
 essence of plant & vegetation
 essence of poison
