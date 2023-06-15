@@ -1,0 +1,2116 @@
+## https://www.drivethrurpg.com/shopping_cart.php?products_id=342503
+## RBRB_Naming_BW_v3.pdf
+
++Common
+1 國慶 国庆
+Guoqing
+Guo
+Qing
+M
+Guoqing: National Day holiday in China
+Guo: Country, nation
+Qing: Celebrate, celebration
+2 海濤 海涛
+Haitao
+Hai
+Tao
+M
+Haitao: Ocean waves
+Hai: Ocean, sea
+Tao: Big wave
+3 愛民 爱民 Aimin
+Ai M
+Aimin: Care for the common people (usually said of a ruler, official, army, etc.)
+Ai: Love
+Min: People, citizens, clan
+4 小凡 小凡
+Xiaofan
+Xiao
+Fan
+G
+Xiao: Small, little
+Fan: Ordinary, normal, mortal
+5 雅文 雅文
+Yawen
+Ya
+Wen
+G
+Yawen: Refined and elegant
+Ya: Elegant
+Wen: Language, culture, writing
+6 小磊 小磊
+Xiaolei
+Xiao
+Lei
+G
+Xiao: Small, little
+Lei: Heap of stones, open and honest
+7 華鏡 华镜
+Huajing
+Hua
+Jing
+F
+Hua: Splendid, beautiful, glorious, China
+Jing: Mirror, lens, glass
+8 美麗 美丽
+Meili
+Mei
+Li
+F
+Meili: Beautiful
+Mei: Beautiful, good, pretty
+Li: Gorgeous, ravishing, beautiful
+9 秀英 秀英
+Xiuying
+Xiu
+Ying
+F
+Xiu: Handsome, refined, elegant
+Ying: Hero, outstanding, excellent
+10 海榮 海荣
+Hairong
+Hai
+Rong
+F
+Hai: Ocean, sea
+Rong: Honor, glory, prosperous, thriving
+
+
+
+Uncommon
+## These names feature uncommon or archaic characters that aren’t often seen. Generally speaking, these names sound impressive and unique, and are the type that would stand out or be easy to recall.
+1 長卿 长卿
+Changqing
+Chang
+Qing
+M
+Changqing: An archaic word for butterfly
+Chang: Long
+Qing: Official, dignitary
+2 源宸 源宸
+Yuanchen
+Yuan
+Chen
+M
+Yuan: Root, origin
+Chen: Mansion, imperial palace, throne
+3 懿泰 懿泰
+Yitai
+Yi
+Tai
+M
+Yi: Virtuous, restrain
+Tai: Safe, peaceful, grand
+4 勍彥 勍彦
+Qingyan
+Qing
+Yan
+G
+Qing: Violent, strong
+Yan: Accomplished, elegant
+5 澤源 泽源
+Zeyuan
+Ze
+Yuan
+G
+Ze: pool, pond, damp, moist
+Yuan: source, origin
+6 南生 南生
+Nansheng
+Nan
+Sheng
+G
+Nan: South
+Sheng: Life, birth, grow
+7 文熙 文熙
+Wenxi
+Wen
+Xi
+G
+Wen: Language, culture, writing
+Xi: Prosperous, splendid
+8 子柒 子柒
+Ziqi
+Zi
+Qi
+F
+Zi: Child, son, first Earthly branch
+Qi: Seven
+9 語嫣 语嫣
+Yuyan
+Yu
+Yan
+F
+Yu: Language, speech
+Yan: Captivating
+10 可卿 可卿
+Keqing
+Ke
+Qing
+F
+Ke: Can, may, approve,
+Qing: Official, dignitary
+
+## Dark
+## These are names that generally come across as either sounding evil, dangerous, violent, or negative in some way. Generally, they are perfect for villainous characters, or at least, characters who are not righteous heroes. They are best paired with the Dark surnames above, although that is not a hard and fast rule.
+1 天霸 天霸
+Tianba
+Tian
+Ba
+M
+Tian: Heaven, sky
+Ba: Hegemon, tyrant, bully, dominate
+2 傲血 傲血
+Aoxue
+Ao
+Xue
+M
+Ao: Proud, arrogant, unyielding
+Xue: Blood
+3 萬仇 万仇
+Wanchou
+Wan
+Chou
+M
+Wan: Myriad, ten thousand, countless
+Chou: Enemy, foe, hate, loathe, grudge
+4 洛殤 洛殇
+Luoshang
+Luo
+Shang
+G
+Luo: Luo River
+Shang: Die in war, die young
+5 冷炎 冷炎
+Lengyan
+Leng
+Yan
+G
+Leng: Cold
+Yan: Fire, flame
+6 剎礫 刹砾
+Shali
+Sha
+Li
+G
+Sha: Brake, stop. (This character is pronounced the same and resembles
+the character for “kill” 杀)
+Li: Gravel, small stone
+7 無情 无情
+Wuqing
+Wu
+Qing
+G
+Wuqing: Ruthless, pitiless, merciless
+Wu: Without, lacking
+Qing: feeling, affection, sentiment
+8 莫愁 莫愁
+Mochou
+Mo
+Chou
+F
+Mochou: This is the given name of a famous wuxia villainess, Li Mouchou
+Mo: Do not, there is none who
+Chou: anxious, worry about
+9 沫刖 沫刖
+Moyue
+Mo
+Yue
+F
+Mo: Froth, foam, saliva
+Yue: Amputate the feet as punishment
+10 泠姐 泠姐
+Lingjie
+Ling
+Jie
+F
+Ling: The sound of flowing water
+Jie: Older sister
+
+
+## Righteous
+## These are names that sound upright, righteous, and good. They are the type of names you would expect to be borne by heroic people who espouse justice and fight for the commoners.
+1 展鹏 展鹏
+Zhanpeng
+Zhan
+Peng
+M
+Zhan: Open up, exhibit
+Peng: The Peng, a mythological bird sometimes translated as “roc”
+2 天正 天正
+Tianzheng
+Tian
+Zheng
+M
+Tian: Heaven, sky
+Zheng: Right, proper, positive, upright
+3 豐毅 丰毅
+Fengyi
+Feng
+Yi
+M
+Feng: Luxuriant, abundant, plentiful
+Yi: Firm, resolute, staunch
+4 霄雲 霄云
+Xiaoyun
+Xiao
+Yun
+G
+Xiao: Sky, heaven, firmament, cloud
+Yun: Cloud
+5 未風 未风
+Weifeng
+Wei
+Feng
+G
+Wei: Did not, have not, eighth Earthly branch
+Feng: Wind
+6 山霖 山霖
+Shanlin
+Shan
+Lin
+G
+Shan: Mountain
+Lin: Continuous rain
+7 尚傑 尚杰
+Shangjie
+Shang
+Jie
+G
+Shang: Still, yet
+Jie: Oustanding, prominent, heroic
+8 天瑤 天瑶
+Tianyao
+Tian
+Yao
+F
+Tian: Heaven, sky
+Yao: Jade, mother-of-pearl, nacre, jasper
+9 佳穎 佳颖
+Jiaying
+Jia
+Ying
+F
+Jia: Beautiful, good, fine
+Ying: Clever, gifted, outstanding
+10 楚喬 楚乔
+Chuqiao
+Chu
+Qiao
+F
+Chu: Clear, neat, distinct
+Qiao: tall, high
+
+
+## Dramatic
+## These are names which sound emotional, melancholic, or dramatic in some way. They are best paired with the Dramatic surnames above, although that is not a hard and fast rule.
+1 清揚 清扬
+Qingyang
+Qing
+Yang
+M
+Qing: Bright, clear
+Yang: Raise, hoist, flutter
+2 問情 问情
+Wenqing
+Wen
+Qing
+M
+Wen: Ask, inquire
+Qing: Feeling, emotion, passion
+3 秋風 秋风
+Qiufeng
+Qiu
+Feng
+M
+Qiu: Autumn, fall
+Feng: Wind
+4 清綰 清绾
+Qingguan
+Qing
+Guan
+G
+Qing: Bright, clear
+Guan: Coil up, string together
+5 見歡 见欢
+Jianhuan
+Xun
+Huan
+G
+Jian: See, meet
+Huan: Joyous, merry, jubilant
+6 妆痕 妆痕
+Zhuanghen
+Zhuang
+Hen
+G
+Zhuang: To dress up, to adorn, makeup
+Hen: Scar, mark, traces
+7 風吟 风吟
+Fengyin
+Feng
+Yin
+G
+Feng: Wind
+Yin: Chant, moan, recite
+8 魅璃 魅璃
+Meili
+Mei
+Li
+F
+Mei: Bewitching, charming
+Li: Colored glaze, glass
+9 夢枕 梦枕
+Mengzhen
+Meng
+Zhen
+F
+Meng: Dream, to dream
+Zhen: Pillow, rest one’s head in sleep
+10 明月 明月
+Mingyue
+Ming
+Yue
+F
+Mingyue: Bright moon
+Ming: Brightness, justice, bright, brilliant
+Yue: Moon
+
+
+## Beautiful/Attractive
+1 風眠 风眠
+Fengmian
+Feng
+Mian
+M
+Feng: Wind
+Mian: Sleep
+2 長卿 长卿
+Changqing
+Chang
+Qing
+M
+Changqing: A rare word for butterfly
+Chang: Long
+Qing: High-ranking official, dignitary
+3 子宸 子宸
+Zichen
+Zi
+Chen
+M
+Zi: Child, son, first Earthly branch
+Chen: Mansion, imperial palace, throne
+4 墨憶 墨忆
+Moyi
+Mo
+Yi
+F
+Mo: Ink, black, tattoo
+Yi: Memory, remember
+5 陌裊 陌袅
+Moniao
+Mo
+Niao
+G
+Mo: Path, footway
+Niao: Delicate, graceful, ochre
+6 慕言 慕言
+Muyan
+Mu
+Yan
+G
+Mu: Admire
+Yan: Word, speech
+7 喬木 乔木
+Qiaomu
+Qiao
+Mu
+G
+Qiaomu: Tall tree
+Qiao: Tall, high
+Mu: Tree, timber, wood
+8 綰兮 绾兮
+Wanxi
+Wan
+Xi
+G
+Wan: String together, bind up
+Xi: No meaning. This character is an exclamatory particle.
+9 晨雪 晨雪
+Chenxue
+Chen
+Xue
+F
+Chen: Morning, dawn, daybreak
+Xue: Snow, snowfall
+10 夢歌 梦歌
+Mengge
+Meng
+Ge
+F
+Meng: Dream
+Ge: Song
+
+## Masculine
+## These names all sound masculine in nature.
+1 星瀚 星瀚
+Xinghan
+Xing
+Han
+M
+Xing: Star, heavenly body
+Han: Ocean, vastness
+2 展豪 展豪
+Zhanhao
+Zhan
+Hao
+M
+Zhan: Spread out, open, exhibit
+Hao: grand, outstanding, heroic
+3 問天 问天
+Wentian
+Wen
+Tian
+M
+Wen: Ask
+Tian: Heaven, sky
+4 正南 正南
+Zhengnan
+Zheng
+Nan
+M
+Zhengnan: Due south
+Zheng: Right, proper, positive, upright
+Nan: South
+5 少龍 少龙
+Shaolong
+Shao
+Long
+M
+Shao: Few, less, seldom
+Long: Dragon
+6 博浩 博浩
+Bohao
+Bo
+Hao
+M
+Bo: Rich, plentiful, win, obtain
+Hao: Grand, vast, great
+7 青天 青天
+Qingtian
+Qing
+Tian
+M
+Qingtian: Blue sky, clear sky
+Qing: Blue, azure, green, clear
+Tian: Heaven, sky
+8 乾坤 乾坤
+Qiankun
+Qian
+Kun
+M
+Qiankun: Heaven and earth, Yin and Yang, the universe, the cosmos
+Qian: Heaven, male, Yang-related, one of the eight trigrams
+Kun: Earth, feminine, female, Yin-related, one of the eight trigrams
+9 天嘯 天啸
+Tianxiao
+Tian
+Xiao
+M
+Tian: Heaven, sky
+Xiao: Hiss, whistle
+10 千源 千源
+Qianyuan
+Qian
+Yuan
+M
+Qian: Thousand
+Yuan: Origin, root, source
+
+
+## Feminine
+## These names all sound feminine in nature.
+1 煙雨 烟雨
+Yanyu
+Yan
+Yu
+F
+Yanyu: Drizzle, misty rain
+Yan: Mist, smoke, vapor
+Yu: Rain
+2 婉婷 婉婷
+Wanting
+Wan
+Ting
+F
+Wan: Graceful, tactful
+Ting: Graceful
+3 夢歌 梦歌
+Mengge
+Meng
+Ge
+F
+Meng: Dream
+Ge: Song
+4 若曦 若曦
+Ruoxi
+Ruo
+Xi
+F
+Ruo: Seem, like, as, if
+Xi: Light of day
+5 瑩瑩 莹莹 Yingying
+Ying F Ying: Luster of gems
+6 思晴 思晴
+Siqing
+Si
+Qing
+F
+Si: Thought, think, consider
+Qing: Clear, fine
+7 嫣然 嫣然
+Yanran
+Yan
+Ran
+F
+Yanran: Beautiful, sweet, engaging, gracious
+Yan: Beautiful
+Ran: Correct, right
+8 書欣 书欣
+Shuxin
+Shu
+Xin
+F
+Shu: Book
+Xin: Happy, glad, joyful
+9 雨曦 雨曦
+Yuxi
+Yu
+Xi
+F
+Yu: Rain
+Xi: Light of day
+10 紫薇 紫薇
+Ziwei
+Zi
+Wei
+F
+Ziwei: Crape myrtle (a tree that usually has purplish flowers)
+Zi: Purple, violet, mauve
+Wei: Plant name
+
+
+## Gender-neutral
+## These are names which are not immediately identifiable as being either masculine or feminine.
+1 源逸 源逸
+Yuanyi
+Yuan
+Yi
+G
+Yuan: Origin, root, source
+Yi: Escape, leisurely, outstanding
+2 葉青 叶青
+Yeqing
+Ye
+Qing
+G
+Ye: Leaf
+Qing: Blue, azure, green, clear
+3 嘉楠 嘉楠
+Jianan
+Jia
+Nan
+G
+Jia: Excellent, auspicious, praise, commend
+Nan: Cedar, redwood
+4 啟明 启明
+Qiming
+Qi
+Ming
+G
+Qiming: Classical Chinese name for planet Venus
+Qi: Open, start, intiate
+Ming: Brightness, justice, bright, brilliant
+5 壹諾 一诺
+Yinuo
+Yi
+Nuo
+G
+Yi: One
+Nuo: Consent, promise
+6 天辰 天辰
+Tianchen
+Tian
+Chen
+G
+Tian: Heaven, sky
+Chen: Celestial bodies. Fifth Earthly branch
+7 淩塵 凌尘
+Lingchen
+Ling
+Chen
+G
+Ling: approach, rise high, intimidate
+Chen: Dust, dirt, earth
+8 蕭 萧 Xiao G Xiao: Miserable, desolate, dreary
+9 子凡 子凡
+Zifan
+Zi
+Fan
+G
+Zi: Child, son, first Earthly branch
+Fan: Ordinary, mundane, mortal
+10 碩 硕 Shuo G Shuo: Large, big
+
+
+
+## NAMES BY OCCUPATION
+## We have selected names for each of the various occupations characters can assume in Righteous Blood, Ruthless Blades.
+
+Artisan
+## For the most part, these are just ordinary names that you would expect a common person to have. Being prepared for Artisans in mind, many have a fanciful, creative feeling to them.
+1 青陽 青阳
+Qingyang
+Qing
+Yang
+M
+Qingyang: Spring, youth
+Qing: Blue, azure, green, clear
+Yang: Positive, sun, hot, masculine (from Yin and Yang)
+2 飛揚 飞扬
+Feiyang
+Fei
+Yang
+M
+Fei: Fly, flight
+Yang: Raise, flutter
+Feiyang: Fly upward, rise
+3 大千 大千
+Daqian
+Da
+Qian
+M
+Daqian: The infinite universe, chiliocosm
+Da: Great, grand
+Qian: Thousand, many
+4 雲迪 云迪
+Yundi
+Yun
+Di
+G
+Yun: Cloud
+Di: Enlighten, favor, direct
+5 逸飛 逸飞
+Yifei
+Yi
+Fei
+G
+Yi: Escape, leisurely, outstanding
+Fei: Fly, flight
+6 文卓 文卓
+Wenzhuo
+Wen
+Zhuo
+G
+Wen: Language, culture, writing
+Zhuo: Tall, erect, eminient, outstanding
+7 崇夏 崇夏
+Chong Xia
+Chong
+Xia
+G
+Chong: High, sublime, lofty, worship
+Xia: Summer
+8 夢辰 梦辰
+Mengchen
+Meng
+Chen
+F
+Meng: Dream
+Chen: Celestial bodies. Fifth Earthly branch
+9 浮生 浮生
+Fusheng
+Fu
+Sheng
+F
+Fu: Float, unstable, superficial
+Sheng: Life
+10 竹木 竹木
+Zhumu
+Zhu
+Mu
+F
+Zhu: Bamboo
+Mu: Tree, timber, wood
+
+
+Assassin
+## These names are perfect for hardened killers. Most sound dramatic or dangerous.
+1 荊軻 荆轲
+Jingke
+Jing
+Ke
+M
+Jing Ke: A famous historical assassin
+Jing: Chaste tree (a type of tree), thorns, brambles
+Ke: Carraige
+2 要離 要离
+Yaoli
+Yao
+Li
+M
+Yao: Want, ask for, demand, request
+Li: Leave, part from
+3 夜痕 夜痕
+Yehen
+Ye
+Hen
+M
+Ye: Night
+Hen: Scar, mark, traces
+4 血影 血影
+Xueying
+Xue
+Ying
+G
+Xue: Blood
+Ying: Shadow
+5 無心 无心
+Wuxin
+Wu
+Xin
+G
+Wuxin: Without thought, the mind free from illusion, mindless
+Wu: Without, lacking, no
+Xin: Heart, mind
+6 冥沙 冥沙
+Mingsha
+Ming
+Sha
+G
+Ming: Dark, deep, underworld
+Sha: Sand, powder
+7 殘月 残月
+Canyue
+Can
+Yue
+G
+Canyue: Waning moon
+Can: Incomplete, fragmented
+Yue: Moon
+8 凝雪 凝雪
+Ningxue
+Ning
+Xue
+F
+Ning: Congeal, concentrate
+Xue: Snow
+9 隱娘 隐娘
+Yin’niang
+Yin
+NIang
+F
+Yin: Secret, hidden, concealed
+Niang: Young lady, woman, mother
+10 羅剎 罗刹
+Luocha
+Luo
+Sha
+F
+Luocha: Raksha, rakshasa (demons that devour men)
+Luo: Net, sieve, to collect
+Sha: Brake, stop. (When used alone, this character is pronounced the
+same and resembles the character for “kill” 杀)
+
+
+Bandit
+## Most of these names sound like they would belong to common, rough-and-tumble individuals who have fallen into a life of crime.
+1 霸天 霸天
+Batian
+Ba
+Tian
+M
+Ba: Hegemon, tyrant, bully, dominate
+Tian: Heaven, sky
+2 喪彪 丧彪
+Sangbiao
+Sang
+Biao
+M
+Sang: Funeral, mourning
+Biao: Tiger stripes, tiger cub
+3 黑狗 黑狗
+Heigou
+Hei
+Gou
+M
+Hei: Black
+Gou: Dog
+4 張慶 张庆
+Zhangqing
+Zhang
+Qing
+G
+Zhang: Open, spread
+Qing: Celebrate, celebration
+5 杜立 杜立
+Duli
+Du
+Li
+G
+Du: Stop, prevent
+Li: Stand, set up, establish
+6 衝冠 冲冠
+Chongguan
+Chong
+Guan
+G
+Chong: Charge, clash, strong
+Guan: Crown, crest, hat
+7 十三 十三
+Shisan
+Shi
+San
+G
+Shisan: Thirteen, thirteenth
+Shi: Ten, tenth
+San: Three, third
+8 二娘 二娘
+Erniang
+Er
+Niang
+F
+Er: Two, second
+Niang: Young lady, woman, mother
+9 幺妹 幺妹
+Yaomei
+Yao
+Mei
+F
+Yao: Tiny, junior, one
+Mei: Younger sister
+10 白蓮 白莲
+Bailian
+Bai
+Lian
+F
+Bai: White, pure
+Lian: Lotus
+
+
+Beggar
+## Most of these names are humble and perhaps even somewhat shameful.
+1 二狗 二狗 Ergou
+Er M Er: Two, second
+Gou: Dog
+2 石頭 石头
+Shitou
+Shi
+Tou
+M
+Shitou: Rock, stone
+Shi: Rock, stone
+Tou: Head
+3 狗剩 狗剩
+Gousheng
+Gou
+Sheng
+M
+Gou: Dog
+Sheng: Remain, be left, have as a remainder
+4 大林 大林
+Dalin
+Da
+Lin
+G
+Da: Great, grand, big
+Lin: Forest, jungle
+5 猴子 猴子
+Houzi
+Hou
+Zi
+G
+Houzi: Monkey
+Hou: Monkey
+Zi: Child, son, first Earthly branch
+6 黑蛋 黑蛋
+Heidan
+Hei
+Dan
+G
+Hei: Black, dark
+Dan: Egg
+7 四楞 四楞
+Sileng
+Si
+Leng
+G
+Si: Four, fourth
+Leng: Corner, edge
+8 二丫 二丫
+Erya
+Er
+Ya
+F
+Er: Two, second
+Ya: Girl
+9 傻妞 傻妞
+Shaniu
+Sha
+Niu
+F
+Sha: Stupid, foolish
+Niu: Girl
+10 秀姑 秀姑
+Xiugu
+Xiu
+Gu
+F
+Xiu: Refined, elegant, graceful
+Gu: Aunt
+
+
++Constable
+## For the most part, these are names for ordinary people, but emphasize justice and righteousness, qualities that upstanding constables would espouse.
+1 展堂 展堂
+Zhantang
+Zhan
+Tang
+M
+Zhan: Open up, exhibit
+Tang: Hall, court, yamen hall
+2 雲翔 云翔
+Yunxiang
+Yun
+Xiang
+M
+Yun: Cloud
+Xiang: Soar, glide
+3 俊傑 俊杰
+Junijie
+Jun
+Jie
+M
+Jun: Smart, handsome, talented
+Jie: Outstanding, heroic
+4 小六 小六
+Xiaoliu
+Xiao
+Liu
+G
+Xiao: Small, little
+Liu: Six, sixth
+5 鴻祺 鸿祺
+Hongqi
+Hong
+Qi
+G
+Hong: Grand, great, goose
+Qi: Felicity, lucky
+6 王華 王华
+Wanghua
+Wang
+Hua
+G
+Wang: King, royal
+Hua: Splendid, beautiful, glorious, China
+7 景平 景平
+Jingping
+Jing
+Ping
+G
+Jing: Scenery, revere, admire
+Ping: Peace, calm
+8 瑾方 瑾方
+Jinfang
+Jin
+Fang
+F
+Jin: Brilliance
+Fang: Square, direction, way
+9 紅綾 红绫
+Hongling
+Hong
+Ling
+F
+Hong: Red, popular, revolutionary
+Ling: Damask, thin silk
+10 明月 明月
+Mingyue
+Ming
+Yue
+F
+Ming: Brightness, justice, bright, brilliant
+Yue: Moon
+
+
++Dedicated Martial Practitioner
+## These names generally feature aspects that cause one to think of martial arts or combat.
+1 三豐 三丰
+Sanfeng
+San
+Feng
+M
+Sanfeng: The given name of Zhan Sanfeng, legendary real-life Daoist who
+is credited with inventing Taichi
+San: Three, third
+Feng: Luxuriant, abundant, plentiful
+2 宗元 宗元
+Zongyuan
+Zong
+Yuan
+M
+Zongyuan: The given name of Liu Zongyuan, a Tang Dynasty poet
+Zong: School, sect, purpose, model, ancestor
+Yuan: First, original, root, origin
+3 葉問 叶问
+Yewen
+Ye
+Wen
+M
+Yewen: The surname and given name of Ip Man, Cantonese martial artist
+and teacher of Bruce Lee
+Ye: Leaf
+Wen: Ask, inquire
+4 謝笑 谢笑
+Xiexiao
+Xie
+Xiao
+G
+Xie: Thank, apologize, decline
+Xiao: Smile, laugh
+5 侠 侠 Xia G Xia: Hero, brave, chivalrous
+6 劍飛 剑飞
+Jianfei
+Jian
+Fei
+G
+Jian: Sword
+Fei: Fly, flight
+7 露禪 露禅
+Luchan
+Lu
+Chan
+G
+Li: Dew, syrup
+Chan: Zen
+8 大娘 大娘
+Daniang
+Da
+Niang
+F
+Daniang: Aunt
+Da: Great, Grand
+Niang: Young lady, woman, mother
+9 劍雲 剑云
+Jianyun
+Jian
+Yun
+F
+Jian: Sword
+Yun: Cloud
+10 九兒 九儿
+Jiu’er
+Jiu
+Er
+F
+Jiu: Nine
+Er: Child, son, or a sound word
+
+
++Detective
+## These names conjure the image of an intelligent, free-thinking person.
+1 仁傑 仁杰
+Renjie
+Ren
+Jie
+M
+Ren: Humane, benevolence
+Jie: Oustanding, prominent, heroic
+2 文斌 文斌
+Wenbin
+Wen
+Bin
+M
+Wen: Language, culture, writing
+Bin: Refined, ornamental
+3 睿 睿 Rui M Rui: Astute, perspicacious, intelligent
+4 尧知 尧知
+Yaozhi
+Yao
+Zhi
+G
+Yao: A name
+Zhi: Know, notify, inform
+5 明亮 明亮
+Mingliang
+Ming
+Liang
+G
+Ming: Brightness, justice, bright, brilliant
+Liang: Bright, light
+6 靈華 灵华
+Linghua
+Ling
+Hua
+G
+Ling: Spirit, alert, quick
+Hua: Hua: Splendid, beautiful, glorious, China
+7 觀微 观微
+Guanwei
+Guan
+Wei
+G
+Guan: Watch, observe, view
+Wei: Micro, tiny, minute
+8 如歌
+如歌 Ruge
+Ru
+Ge
+F
+Ru: Like, as if
+Ge: Song
+9 雨蕁 雨荨
+Yuxun
+Yu
+Xun
+F
+Yu: Rain:
+Xun: Nettle
+10 思思 思思 Sisi
+Si F Si: Thought, consider
+
+
++Doctor
+## These names conjure a sensation of benevolence, thoughtfulness, and humanity.
+1 志卿 志卿
+Zhiqing
+Zhi
+Qing
+M
+Zhi: Annals, record, will
+Qing: Minister
+2 華佗 华佗
+Huatuo
+Hua
+Tuo
+M
+Huatuo: Hua Tuo was a famous doctor during the Han Dynasty
+Hua: Splendid, beautiful, glorious, China
+Tuo: To carry on the back
+3 時珍 时珍
+Shizhen
+Shi
+Zhen
+M
+Shi: Time, hour, season, period
+Zhen: Treasure, rare, precious thing, gem
+4 思邈 思邈
+Simiao
+Si
+Miao
+G
+Si: Thought, think, consider
+Miao: Profound, remote
+5 符裳 符裳
+Fushang
+Fu
+Shang
+G
+Fu: Symbol, talisman, mark, seal
+Shang: Lower garment, skirts
+6 于衍 于衍
+Yuyan
+Yu
+Yan
+G
+Yu: To go, to take
+Yan: To spread out, develop, amplify
+7 程壹 程一
+Chengyi
+Cheng
+Yi
+G
+Cheng: Rule, order, journey
+Yi: One, first
+8 白芷 白芷
+Baizhi
+Bai
+Zhi
+F
+Bai: White, pure
+Zhi: Chinese angelica (medicinal plant)
+9 钟秀 钟秀
+Zhongxiu
+Zhong
+Xiu
+F
+Zhong: Bell, timepice, chime
+Xiu: Beautiful, elegant, excellent
+10 胡愔 胡愔
+Huyin
+Hu
+Yin
+F
+Hu: Reckless, outrageous, beard, foreign
+Yin: Peaceful, solemn
+
+
++Entertainer
+## These are light, creative names that are perfect for everyone from singers, to actors, to courtesans.
+1 潤鳴 润鸣
+Runming
+Run
+Ming
+M
+Run: Profit, embellish, moist, smooth
+Ming: Sound, sing, ring
+2 一洪 一洪
+Yihong
+Yi
+Hong
+M
+Yi: One, first
+Hong: Flood, big, vast
+3 嵇康 嵇康
+Jikang
+Ji
+Kang
+M
+Ji: Name of a mountain
+Kang: Healthy, peaceful, abundant
+4 朝雲 朝云
+Chaoyun
+Chao
+Yun
+G
+Chao: Court, government, dynasty
+Yun: Cloud
+5 欣怡 欣怡
+Xinyi
+Xin
+Yi
+G
+Xin: Glad, happy
+Yi; Happy, joyful, harmony
+6 笑川 笑川
+Xiaochuan
+Xiao
+Chuan
+G
+Xiao: Smile, laugh
+Chuan: River, plain, Sichuan Province
+7 言 言 Yan G Yan: Words, speech
+8 師師 师师 Shishi
+Shi F Shi: Teacher, master, expert
+9 鳳仙 凤仙
+Fengxian
+Feng
+Xian
+F
+Feng: Phoenix
+Xian: Immortal
+Fengxian: Garden balsam
+10 藝嘉 艺嘉
+Yijia
+Yi
+Jia
+F
+Yi: Art, skil
+Jia: Fine, good, great, pretty, glorious
+
++Farmer
+## These are simple, common names that one would expect to see among ordinary people. Many emphasize an aspect of nature or hard work that typify farmers.
+1 二虎 二虎
+Erhu
+Er
+Hu
+M
+Er: Two, second
+Hu: Tiger
+2 大業 大业
+Daye
+Da
+Ye
+M
+Daye: Great undertaking, great cause
+Da: Great, Grand
+Ye: Industry, business, profession
+3 鐵柱 铁柱
+Tiezhu
+Tie
+Zhu
+M
+Tie: Iron, indisputable
+Zhu: Column, pillar, post
+4 玉海 玉海
+Yuhai
+Yu
+Hai
+G
+Yu: Jade
+Hai: Ocean, sea
+5 瓜娃 瓜娃
+Guawa
+Gua
+Wa
+G
+Gua: Melon
+Wa: Baby, doll, child
+6 慶有 庆有
+Qingyou
+Qing
+You
+G
+Qing: Celebrate, celebration
+You: Have, be, exist
+7 春喜 春喜
+Chunxi
+Chun
+Xi
+G
+Chun: Spring, youth
+Xi: Like, be fond of, happy, happiness
+8 翠花 翠花
+Cuihua
+Cui
+Hua
+F
+Cui: Emerald, green, blue-green
+Hua: Flower, blossom, flowery
+9 美鳳 美凤
+Meifeng
+Mei
+Feng
+F
+Mei: Beautiful, good, pretty
+Feng: Phoenix
+10 艷紅 艳红
+Yanhong
+Yan
+Hong
+F
+Yan: Colorful, gaudy, amorous
+Hong: Red, popular, revolutionary
+
+
++Fisher
+## These are simple, common names that one would expect to see among ordinary people. Many emphasize an aspect of nature, water, rivers, or the ocean that typify fishers.
+1 旺發 旺发
+Wangfa
+Wang
+Fa
+M
+Wang: Prosperous, flourishing
+Fa: Send out, show, to issue, to develop
+2 江濤 江涛
+Jiangtao
+Jiang
+Tao
+M
+Jiang: River
+Tao: Big wave
+3 海仔 海仔
+Haizai
+Hai
+Zi
+M
+Hai: Ocean, sea
+Zai: Young man, child
+4 阿波 阿波
+Abo
+A
+Bo
+G
+A: No meaning
+Bo: Wave, rippled, storm
+5 漁歌 渔歌
+Yuge
+Yu
+Ge
+G
+Yu: Fish
+Ge: Song
+6 舟山 舟山
+Zhoushan
+Zhou
+Shan
+G
+Zhou: Boat
+Shan: Mountain
+7 許河 许河
+Xuhe
+Xu
+He
+G
+Xu: Allow, permit, promise
+He: River
+8 海燕 海燕
+Haiyan
+Hai
+Yan
+F
+Haiyan: Storm petrel (bird)
+Hai: Ocean, sea
+Yan: Swallow (bird)
+9 綠宛 绿宛
+Luwan
+Lu
+Wan
+F
+Lu: Green
+Wan: Winding, similar
+10 彩霞 彩霞
+Caixia
+Cai
+Xia
+F
+Caixia: Rosy or pink clouds
+Cai: Color, colored, variety, prize
+Xia: Red clouds, sunset glow, sunrise glow
+
+
++Government Official
+## These are names that sound formal and dignified, perfect for people attached to the imperial bureaucracy.
+1 少康 少康
+Xiaokang
+Xiao
+Kang
+M
+Xiao: Small, little
+Kang: Healthy, peaceful, abundant
+2 彥豪 彦豪
+Yanhao
+Yan
+Hao
+M
+Yan: Elegant, accomplished
+Hao: grand, outstanding, heroic
+3 正淳 正淳
+Zhengchun
+Zheng
+Chun
+M
+Zheng: Right, proper, positive, upright
+Chun: Genuine, pure, honest
+4 敬宣 敬宣
+Jingxuan
+Jing
+Xuan
+G
+Jing: Respect, venerate, salute, offer
+Xuan: Announce, declare publicly
+5 景瑜 景瑜
+Jingyu
+Jing
+Yu
+G
+Jing: Bright, circumstance, scenery
+Yu: Excellence, cluster of gems
+6 望舒 望舒
+Wangshu
+Wang
+Shu
+G
+Wang: Hope, expect, watch, view, gaze
+Shu: Relax, smooth away, smooth down
+7 羽豐 羽丰
+Yufeng
+Yu
+Feng
+G
+Yu: Feather
+Feng: Abundant, plentiful, vast, lavish
+8 碧君 碧君
+Bijun
+Bi
+Jun
+F
+Bi: Green jade, bluish green, blue, jade
+Jun: Monarch, lord, princess
+9 悅暢 悦畅
+Yuechang
+Yue
+Chang
+F
+Yue: Pleased, happy, delighted
+Chang: Smooth, free, fluent, joyful
+10 聂青 聂青
+Nieqing
+Nie
+Qing
+F
+Nie: Whisper
+Qing: Blue, azure, green, clear
+
+
++Loyalist
+## These names are perfect for faithful, focused individuals.
+1 蘇武 苏武 Suwu M
+Su Wu: A famous Chinese statesman from the Han Dynasty
+Su: Recover consciousness, wake, awake
+Wu: Martial, fierce, valiant
+2 天祥 天祥 Tianxiang M
+Tianxiang: Blessed by heaven
+Tian: Heaven, sky
+Xiang: Auspicious, propitious, lucky
+3 垣 垣 Yuan M Yuan: Wall, city
+4 秦恬 秦恬
+Qintian
+Qin
+Tian
+G
+Qin: Dynasty name
+Tian: Qiet, calm, tranquil, peaceful
+5 田恒 田恒
+Tianheng
+Tian
+Heng
+G
+Tian: Field, farm
+Heng: Permanent, constant, fixed
+6 清風 清风
+Qingfeng
+Qing
+Feng
+G
+Qingfeng: Cool breeze, pure and honest
+Qing: Bright, clear
+Feng: Wing
+7 成信 成信
+Chengxin
+Cheng
+Xin
+G
+Cheng: Succeed, finish, complete, accomplish
+Xin: Confidence, trust, faith
+8 魏瓊 魏琼
+Weiqiong
+Wei
+Qiong
+F
+Wei: Tower, dynasty/kingdom name
+Qiong: Jaster, fine jade, beautiful
+9 勤思 勤思
+Qinsi
+Qin
+Si
+F
+Qin: Diligent, industrious, thoughtful
+Si: Thought, think, consider
+10 羽彤 羽彤
+Yutong
+Yu
+Tong
+F
+Yu: Feather
+Tong: Red, scarlet, vermilion, crimson
+
+
++Merchant
+## These names emphasize wealth and profit, making them perfect for business people.
+1 萬貫 万贯
+Wanguan
+Wan
+Guan
+M
+Wanguan: Ten thousand strings of cash, wealthy, millionaire
+Wan: Myriad, ten thousand, countless
+Guan: Pierce, penetrate, follow
+2 复銀 复银
+Fuyin
+Fu
+Yin
+M
+Fu: To return, to resume, to recover
+Yin: Silver
+3 萬三 万三
+Wansan
+Wan
+San
+M
+Wan: Ten thousand, myriad, countless
+San: Three, third
+4 向錢 向钱
+Xiangqian
+Xiang
+Qian
+G
+Xiang: Toward, in the direction of
+Qian: Money
+5 金玉 金玉
+Jinyu
+Jin
+Yu
+G
+Jin: Gold, metal
+Yu: Jade
+6 清清 清清 Qingqing
+Qing G Qing: Bright, clear
+7 于俊 于俊
+Yujun
+Yu
+Jun
+G
+Yu: To go, to take
+Jun: Smart, elegant, talented
+8 金珠 金珠
+Jinzhu
+Jin
+Zhu
+F
+Jin: Gold, metal
+Zhu: Pearl, bead
+9 夏荷 夏荷
+Fuhe
+Fu
+He
+F
+Fu: To return, to resume, to recover
+He: Lotus
+10 明珠 明珠
+Mingzhu
+Ming
+Zhu
+F
+Ming: Brightness, justice, bright, brilliant
+Zhu: Pearl, bead
+
+
++Playboy/Young Master
+## These names are generally grandiose and refined.
+1 留香 留香
+Liuxiang
+Liu
+Xiang
+M
+Liuxiang: The given name of a famous character from wuxia
+novels, Chu Liuxiang
+Liu: To leave, retain, stay, remain, keep
+Xiang: Fragrant, aromatic, sweet-smelling
+2 樂懷 乐怀
+Yuehuai
+Yue
+Huai
+M
+Yue: Music
+Huai: Bosom, heart, mind
+3 尋歡 寻欢
+Xunhuan
+Xun
+Huan
+M
+Xunhuan: Seek pleasure, frolic
+Xun: Seek, search
+Huan: Joyous, merry, jubilant
+4 子瑜 子瑜
+Ziyu
+Zi
+Yu
+G
+Zi: Child, son, first Earthly branch
+Yu: Excellence, cluster of gems
+5 滿天 满天
+Mantian
+Man
+Tian
+G
+Mantian: filling the whole sky, boundless, limitless, everywhere
+Man: Overflow, inundate, be everywhere
+Tian: Heaven, sky
+6 于彤 于彤
+Yutong
+Yu
+Tong
+G
+Yu: To go, to take
+Tong: Red, scarlet, vermilion, crimson
+7 林楓 林枫
+Linfeng
+Lin
+Feng
+G
+Lin: Forest, jungle
+Feng: Tree name, maple
+8 心念 心念
+Xin’nian
+Xin
+Nian
+F
+Xin’nian: Idea, thought, aspiration
+Xin: Heart, mind
+Nian: Thought, idea
+9 蕭玉 萧玉
+Xiaoyu
+Xiao
+Yu
+F
+Xiao: Bleak, dreary, desolate
+Yu: Jade
+10 星兒 星儿
+Xinger
+Xing
+Er
+F
+Xing: Star, heavenly body
+Er: Child, son, or a sound word
+
+
++Scholar
+## These names sound cultured, refined, and educated, perfect for experts in the scholarly arts.
+1 崖子 崖子
+Yazi
+Ya
+Zi
+M
+Ya: Cliff, precipice
+Zi: Child, son, first Earthly branch
+2 楓颯 枫飒
+Fengsa
+Feng
+Sa
+M
+Feng: Tree name, maple
+Sa: Sound of the wind
+3 伯仲 伯仲
+Bozhong
+Bo
+Zhong
+M
+Bo: Uncle, senior, count
+Zhong: Second month of a season, middle, intermediate
+4 敬梓 敬梓
+Jingzi
+Jing
+Zi
+G
+Jing: Respect, venerate, salute, offer
+Zi: Catalpa (a genus of flowering plants)
+5 俞宏 俞宏
+Yuhong
+Yu
+Hong
+G
+Yue: accede, assent
+Hong: Great, magnificent, grand
+6 班昭 班昭
+Banzhao
+Ban
+Zhao
+G
+Ban: Team, class, squad
+Zhao: Bright, clear, manifest
+7 希文 希文
+Xiwen
+Xi
+Wen
+G
+Xi: Hope
+Wen: Language, culture, writing
+8 阮君 阮君
+Ruanjun
+Ruan
+Jun
+F
+Ruan: Ancient musical instrument
+Jun: Monarch, lord, princess
+9 婉貞 婉贞
+Wanzhen
+Wan
+Zhen
+F
+Wan: Graceful, tactful
+Zhen: Chase
+10 清照 清照
+Qingzhao
+Qing
+Zhao
+F
+Qing: Bright, clear
+Zhao: Bright, clear, manifest
+
+
+
++Servant
+## These are humble but elegant names.
+1 卓子 卓子
+Zhuozi
+Zhuo
+Zi
+M
+Zhuo: Outstanding, eminent
+Zi: Child, son, first Earthly branch
+2 天寶 天宝
+Tianbao
+Tian
+Bao
+M
+Tian: Heaven, sky
+Bao: Treasure, gem
+3 林三 林三
+Linsan
+Lin
+San
+M
+Lin: Forest, jungle
+San: Three, third
+4 来福 来福
+Laifu
+Lai
+Fu
+G
+Laifu: Bring, come
+Fu: Blessing, fortune, luck
+5 天玉 天玉
+Tianyu
+Tian
+Yu
+G
+Tian: Heaven, sky
+Yu: Jade
+6 碧痕 碧痕
+Bihen
+Bi
+Hen
+G
+Bi: Green jade, bluish green, blue, jade
+Hen: Scar, mark, traces
+7 洗玉 洗玉
+Xiyu
+Xi
+Yu
+G
+Xi: Wash, bathe
+Yu: Jade
+8 茗煙 茗烟
+Mingyan
+Ming
+Yan
+F
+Ming: Young tea leaves
+Yan: Mist, smoke, vapor
+9 彩霞 彩霞
+Caixia
+Cai
+Xia
+F
+Caixia: Rosy or pink clouds
+Cai: Color, appluase, cheer, variety
+Xia: Red clouds, sunset glow, sunrise glow
+10 桑柔 桑柔
+Sangrou
+Sang
+Rou
+F
+Sang: White mulberry
+Rou: Soft, supple, flexible
+
+
++Shop Owner
+## These are common-sounding names that emphasize hard work and profit.
+1 雲貴 云贵
+Yungui
+Yun
+Gui
+M
+Yun: Cloud
+Gui: Expensive, noble, precious
+2 七爺 七爷
+Qiye
+Qi
+Ye
+M
+Qi: Seven, seventh
+Ye: Master, grandfather, gentleman
+3 愛財 爱财
+Aicai
+Ai
+Cai
+M
+Aicai: To love money
+Ai: Love
+Cai: Wealth, money
+4 喜梢 喜梢
+Xishao
+Xi
+Shao
+G
+Xi: To like, enjoy, delight, love
+Shao: Tip of branch
+5 金貴 金贵
+Jingui
+Jin
+Gui
+G
+Jin: Gold, metal
+Gui: Expensive, noble, precious
+6 秦奮 秦奋
+Qinfen
+Qin
+Fen
+G
+Qin: Qin Dynasty
+Fen: To exert oneself, rouse
+7 念安 念安
+Nian’an
+Nian
+An
+G
+Nian: Thought, idea
+An: Content, calm, quiet, safe
+8 坤裕 坤裕
+Kunyu
+Kun
+Yu
+F
+Kun: Earth, feminine, female, Yin-related, one of the eight trigrams
+Yu: Abundant, opulent, plentiful
+9 阿姐 阿姐 A’jie F A: Sound word
+Jie: Older sister
+10 珍珍 珍珍 Zhenzhen
+Zhen F Zhen: Treasure, rare, precious thing, gem
+
+
++Soldier
+## These names sound heroic and active, making them perfect for people who fight professionally.
+1 蕭劍 萧剑
+Xiaojian
+Xiao
+Jian
+M
+Xiao: Bleak, dreary, desolate
+Jian: Sword
+2 載駿 载骏
+Zaijun
+Zai
+Jun
+M
+Zai: Carry, convey, lift, hold
+Jun: Spirited horse
+3 安邦 安邦
+Anbang
+An
+Bang
+M
+Anbang: To bring peace, stability, and order to a country
+An: Content, calm, quiet, safe
+Bang: Nation, state, country
+4 戎良 戎良
+Rongliang
+Rong
+Liang
+G
+Rong: Weapon
+Liang: Good, beautiful, docile
+5 英布 英布
+Yingbu
+Ying
+Bu
+G
+Ying: Hero, outstanding, excellent
+Bu: Cloth, fabric, spread, publish
+6 武寧 武宁
+Wuning
+Wu
+Ning
+G
+Wu: Martial, fierce, valiant
+Ning: Peaceful, tranquil
+7 衛佳 卫佳
+Weijia
+Wei
+Jia
+G
+Wei: Guard, defend, protect
+Jia: Good, excellent, beautiful, fine
+8 木蘭 木兰
+Mulan
+Mu
+Lan
+F
+Mulan: The given name of Hua Mulan, the most famous female soldier in
+the history of China
+Mu: Tree, timber, wood
+Lan: Orchid
+9 楚喬 楚乔
+Chuqiao
+Chu
+Qiao
+F
+Chu: Clear, neat, distinct
+Qiao: tall, high
+10 英子 英子
+Xiadong
+Xia
+Dong
+F
+Ying: Hero, outstanding, excellent
+Zi: Child, son, first Earthly branch
+
+
++Thief
+## These names sound fanciful and free, making them perfect for thieves.
+1 壹手 一手
+Yishou
+Yi
+Shou
+M
+Yi: One, first
+Shou: Hand, arm
+2 上飛 上飞
+Shangfei
+Shang
+Fei
+M
+Shang: Upon, above, upper, go up
+Fei: Fly, flight
+3 車兒 车儿
+Che’er
+Che
+Er
+M
+Che: Car, vehicle, carriage
+Er: Son, child, or a sound word
+4 柳謙 柳谦
+Liuqian
+Liu
+Qian
+G
+Liu: Willow
+Qian: Modest
+5 南飛 南飞
+Nanfei
+Nan
+Fei
+G
+Nan: South
+Fei: Fly, flight
+6 謝飛 谢飞
+Xiefei
+Xie
+Fei
+G
+Xie: Thank, apologize, decline
+Fei: Fly, flight
+7 遷 迁 Qian G Qian: Move, shift, change
+8 四娘 四娘
+Siniang
+Si
+Niang
+F
+Si: Four, fourth
+Niang: Young lady, woman, mother
+9 飛燕 飞燕
+Feiyan
+Fei
+Yan
+F
+Fei: Fly, flight
+Yan: Swallow (bird)
+10 袁艾 袁艾
+Yuan’ai
+Yuan
+Ai
+F
+Yuan: Long robe,
+Ai: Chinese mugwort
