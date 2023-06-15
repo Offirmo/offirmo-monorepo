@@ -26,6 +26,7 @@
 		"@offirmo-private/timestamps": "^0",
 		"@offirmo-private/ts-types": "^0",
 		"@offirmo-private/uuid": "^0",
+		"@offirmo/random": "^3",
 		"@offirmo/universal-debug-api-placeholder": "^1",
 		"@oh-my-rpg/state-codes": "^0",
 		"@oh-my-rpg/state-engagement": "^0",

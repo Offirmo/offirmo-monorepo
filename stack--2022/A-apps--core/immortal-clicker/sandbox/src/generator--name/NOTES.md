@@ -1,6 +1,7 @@
 https://www.google.com/search?q=China+top+100+family+names
 - https://www.sinosplice.com/learn-chinese/chinese-vocabulary-lists/the-top-100-chinese-surnames
--
+- https://www.familyeducation.com/baby-names/surname/origin/chinese
+- https://www.familyeducation.com/baby-names/first-name/origin/chinese
 
 
 Deathblade https://www.drivethrurpg.com/shopping_cart.php?products_id=342503
