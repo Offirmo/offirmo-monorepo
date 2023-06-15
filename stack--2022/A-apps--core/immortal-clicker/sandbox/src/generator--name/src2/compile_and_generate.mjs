@@ -1,7 +1,8 @@
 import fs from 'node:fs'
 
 import assert from 'tiny-invariant'
-import { normalize, NORMALIZERS } from '@offirmo-private/normalize-string'
+import { normalize, NORMALIZERS, combine_normalizers } from '@offirmo-private/normalize-string'
+
 
 // https://github.com/dundalek/latinize/blob/master/latinize.js
 //  BSD-2-Clause license
@@ -920,6 +921,18 @@ function latinize(str) {
 	}
 }
 
+const normalizeⵧstandard = combine_normalizers(
+	NORMALIZERS.trim,
+	NORMALIZERS.normalize_unicode,
+	NORMALIZERS.to_lower_case,
+	latinize,
+	NORMALIZERS.normalize_unicode,
+)
+
+const normalizeⵧname_part = combine_normalizers(
+	normalizeⵧstandard,
+	NORMALIZERS.capitalize,
+)
 
 ;(() => {
 	const raw_content = fs.readFileSync('./src/generator--name/src2/surnames--top100_sinosplice.txt', 'utf8')
@@ -935,14 +948,7 @@ function latinize(str) {
 		const raw_surname = split[2]
 		//console.log(split, raw_surname)
 		assert(raw_surname)
-		const surname = normalize(raw_surname,
-			NORMALIZERS.trim,
-			NORMALIZERS.normalize_unicode,
-			NORMALIZERS.to_lower_case,
-			NORMALIZERS.capitalize,
-			latinize,
-			NORMALIZERS.normalize_unicode,
-		)
+		const surname = normalizeⵧname_part(raw_surname)
 		//console.log({ raw_surname, surname })
 		return surname
 	})
@@ -987,20 +993,127 @@ export {
 				case 'G':
 					return true // gender indicator, keep it
 				default:
-					const split = l.split(':')
-					return split.length > 1
-					break
+					// keep only the "meaning/origin" and tags lines
+					if (l.startsWith('+'))
+						return true // tag
+
+					const splitⵧsemi = l.split(':')
+					if (splitⵧsemi.length <= 1) {
+						// detect misformating
+						const splitⵧspace = l.split(' ')
+						assert(splitⵧspace.length <= 1, `split space "${l}"!`)
+					}
+					return splitⵧsemi.length > 1
 			}
 		})
 
-	console.log(lines)
+	const firstnames = new Map()
+	function create_firstname(str, gender) {
+		return {
+			str,
+			gender: gender === 'G' ? 'N' : gender,
+			associations: [],
+			tags: [],
+		}
+	}
+	const parsing_state = {
+		last_tag: undefined,
+		last_gender: undefined,
+		last_str: undefined
+	}
+	lines.forEach(l => {
+		//console.log(l)
+
+		switch (l) {
+			case 'M':
+			case 'F':
+			case 'G':
+				parsing_state.last_gender = l
+				//console.log('gender is now ' + parsing_state.last_gender)
+				break
+
+			default:
+				if (l.startsWith('+')) {
+					parsing_state.last_tag = (() => {
+						let tag = l.slice(1)
+						tag = tag.split(' ').map(normalizeⵧstandard).join('_')
+						tag = '#' + tag
+						return tag
+					})()
+					//console.log(`tag is now "${parsing_state.last_tag}"`)
+					break
+				}
+
+				let [str, associations, ...rest] = l.split(':')
+				assert(rest.length === 0, `rest error "${l}"!`)
+				str = normalizeⵧname_part(str)
+				assert(str, `str error "${l}"!`)
+				assert(str.split(' ').length <= 2, `str split error "${l}"!`)
+				assert(associations, `associations error "${l}"!`)
+				associations = associations.split(',').map(normalizeⵧstandard)
+				//console.log({ str, associations })
+
+				const entryⵧnew = create_firstname(str, parsing_state.last_gender)
+				entryⵧnew.associations = associations.sort()
+				entryⵧnew.tags = [ parsing_state.last_tag ]
+
+				if (firstnames.has(str)) {
+					const entryⵧexisting = firstnames.get(str)
+					if (entryⵧexisting.gender !== entryⵧnew.gender) {
+						// it's a subpart which must be neutral
+						//console.log(`${str}: coalescing gender ${entryⵧexisting.gender}+${entryⵧnew.gender} to N`)
+						entryⵧnew.gender = 'N'
+					}
+
+					// merge tags and associations
+					entryⵧnew.tags = [
+						...entryⵧnew.tags,
+						...entryⵧexisting.tags,
+					].sort()
+					entryⵧnew.associations = [
+						...new Set([
+							...entryⵧnew.associations,
+							...entryⵧexisting.associations,
+						])
+					].sort()
+				}
+				firstnames.set(str, entryⵧnew)
+				break
+		}
+	})
+
+	//console.log(firstnames)
 	const code = `// THIS FILE IS AUTO GENERATED
 
+interface FirstNameEntry {
+	str: string
+	gender: 'M' | 'F' | 'N'
+	tags: string[]
+	associations: string[]
+}
+
+const FIRST_NAME_ENTRIES: FirstNameEntry[] = [
+${
+	[...firstnames.keys()]
+		.map(str => {
+			const entry = firstnames.get(str)
+			return `{
+	str: '${str}',
+	gender: '${entry.gender}',
+	tags: [ ${entry.tags.map(t => `'${t}'`).join(', ')} ],
+	associations: [ ${entry.associations.map(t => `'${t}'`).join(', ')} ],
+},`
+		})
+		.join('\n')
+}
+]
+
 export {
+	FIRST_NAME_ENTRIES,
 }
 `
 	//console.log(code)
 
-	//fs.writeFileSync('./src/generator--name/src/data--auto-generated/lastnames--sinosplice.ts', code)
+	fs.writeFileSync('./src/generator--name/src/data--auto-generated/firstnames--RBRB.ts', code)
 
 })()

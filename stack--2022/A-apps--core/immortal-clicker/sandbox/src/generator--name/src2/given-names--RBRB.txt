@@ -1,5 +1,8 @@
 ## https://www.drivethrurpg.com/shopping_cart.php?products_id=342503
 ## RBRB_Naming_BW_v3.pdf
+## This is a copy/paste from the pdf
+## only the "first name" section
+## lightly cleaned by hand
 
 +Common
 1 國慶 国庆
@@ -18,8 +21,10 @@ M
 Haitao: Ocean waves
 Hai: Ocean, sea
 Tao: Big wave
-3 愛民 爱民 Aimin
-Ai M
+3 愛民 爱民
+Aimin
+Ai
+M
 Aimin: Care for the common people (usually said of a ruler, official, army, etc.)
 Ai: Love
 Min: People, citizens, clan
@@ -77,7 +82,7 @@ Rong: Honor, glory, prosperous, thriving
 
 
 
-Uncommon
++Uncommon
 ## These names feature uncommon or archaic characters that aren’t often seen. Generally speaking, these names sound impressive and unique, and are the type that would stand out or be easy to recall.
 1 長卿 长卿
 Changqing
@@ -151,7 +156,8 @@ F
 Ke: Can, may, approve,
 Qing: Official, dignitary
 
-## Dark
+
++Dark
 ## These are names that generally come across as either sounding evil, dangerous, violent, or negative in some way. Generally, they are perfect for villainous characters, or at least, characters who are not righteous heroes. They are best paired with the Dark surnames above, although that is not a hard and fast rule.
 1 天霸 天霸
 Tianba
@@ -193,8 +199,7 @@ Shali
 Sha
 Li
 G
-Sha: Brake, stop. (This character is pronounced the same and resembles
-the character for “kill” 杀)
+Sha: Brake, stop. (This character is pronounced the same and resembles the character for “kill” 杀)
 Li: Gravel, small stone
 7 無情 无情
 Wuqing
@@ -228,7 +233,7 @@ Ling: The sound of flowing water
 Jie: Older sister
 
 
-## Righteous
++Righteous
 ## These are names that sound upright, righteous, and good. They are the type of names you would expect to be borne by heroic people who espouse justice and fight for the commoners.
 1 展鹏 展鹏
 Zhanpeng
@@ -302,7 +307,7 @@ Chu: Clear, neat, distinct
 Qiao: tall, high
 
 
-## Dramatic
++Dramatic
 ## These are names which sound emotional, melancholic, or dramatic in some way. They are best paired with the Dramatic surnames above, although that is not a hard and fast rule.
 1 清揚 清扬
 Qingyang
@@ -559,8 +564,11 @@ Xi
 F
 Ruo: Seem, like, as, if
 Xi: Light of day
-5 瑩瑩 莹莹 Yingying
-Ying F Ying: Luster of gems
+5 瑩瑩 莹莹
+Yingying
+Ying
+F
+Ying: Luster of gems
 6 思晴 思晴
 Siqing
 Si
@@ -600,7 +608,7 @@ Zi: Purple, violet, mauve
 Wei: Plant name
 
 
-## Gender-neutral
++Gender-neutral
 ## These are names which are not immediately identifiable as being either masculine or feminine.
 1 源逸 源逸
 Yuanyi
@@ -644,7 +652,7 @@ Tian
 Chen
 G
 Tian: Heaven, sky
-Chen: Celestial bodies. Fifth Earthly branch
+Chen: Celestial bodies, Fifth Earthly branch
 7 淩塵 凌尘
 Lingchen
 Ling
@@ -652,7 +660,10 @@ Chen
 G
 Ling: approach, rise high, intimidate
 Chen: Dust, dirt, earth
-8 蕭 萧 Xiao G Xiao: Miserable, desolate, dreary
+8 蕭 萧
+Xiao
+G
+Xiao: Miserable, desolate, dreary
 9 子凡 子凡
 Zifan
 Zi
@@ -660,14 +671,17 @@ Fan
 G
 Zi: Child, son, first Earthly branch
 Fan: Ordinary, mundane, mortal
-10 碩 硕 Shuo G Shuo: Large, big
+10 碩 硕
+Shuo
+G
+Shuo: Large, big
 
 
 
 ## NAMES BY OCCUPATION
 ## We have selected names for each of the various occupations characters can assume in Righteous Blood, Ruthless Blades.
 
-Artisan
++Artisan
 ## For the most part, these are just ordinary names that you would expect a common person to have. Being prepared for Artisans in mind, many have a fanciful, creative feeling to them.
 1 青陽 青阳
 Qingyang
@@ -715,7 +729,7 @@ G
 Wen: Language, culture, writing
 Zhuo: Tall, erect, eminient, outstanding
 7 崇夏 崇夏
-Chong Xia
+ChongXia
 Chong
 Xia
 G
@@ -744,7 +758,7 @@ Zhu: Bamboo
 Mu: Tree, timber, wood
 
 
-Assassin
++Assassin
 ## These names are perfect for hardened killers. Most sound dramatic or dangerous.
 1 荊軻 荆轲
 Jingke
@@ -819,11 +833,10 @@ Sha
 F
 Luocha: Raksha, rakshasa (demons that devour men)
 Luo: Net, sieve, to collect
-Sha: Brake, stop. (When used alone, this character is pronounced the
-same and resembles the character for “kill” 杀)
+Sha: Brake, stop. (When used alone, this character is pronounced the same and resembles the character for “kill” 杀)
 
 
-Bandit
++Bandit
 ## Most of these names sound like they would belong to common, rough-and-tumble individuals who have fallen into a life of crime.
 1 霸天 霸天
 Batian
@@ -898,10 +911,13 @@ Bai: White, pure
 Lian: Lotus
 
 
-Beggar
++Beggar
 ## Most of these names are humble and perhaps even somewhat shameful.
-1 二狗 二狗 Ergou
-Er M Er: Two, second
+1 二狗 二狗
+Ergou
+Er
+M
+Er: Two, second
 Gou: Dog
 2 石頭 石头
 Shitou
@@ -1051,8 +1067,7 @@ Sanfeng
 San
 Feng
 M
-Sanfeng: The given name of Zhan Sanfeng, legendary real-life Daoist who
-is credited with inventing Taichi
+Sanfeng: The given name of Zhan Sanfeng, legendary real-life Daoist who is credited with inventing Taichi
 San: Three, third
 Feng: Luxuriant, abundant, plentiful
 2 宗元 宗元
@@ -1068,8 +1083,7 @@ Yewen
 Ye
 Wen
 M
-Yewen: The surname and given name of Ip Man, Cantonese martial artist
-and teacher of Bruce Lee
+Yewen: The surname and given name of Ip Man, Cantonese martial artist and teacher of Bruce Lee
 Ye: Leaf
 Wen: Ask, inquire
 4 謝笑 谢笑
@@ -1079,7 +1093,10 @@ Xiao
 G
 Xie: Thank, apologize, decline
 Xiao: Smile, laugh
-5 侠 侠 Xia G Xia: Hero, brave, chivalrous
+5 侠 侠
+Xia
+G
+Xia: Hero, brave, chivalrous
 6 劍飛 剑飞
 Jianfei
 Jian
@@ -1134,7 +1151,10 @@ Bin
 M
 Wen: Language, culture, writing
 Bin: Refined, ornamental
-3 睿 睿 Rui M Rui: Astute, perspicacious, intelligent
+3 睿 睿
+Rui
+M
+Rui: Astute, perspicacious, intelligent
 4 尧知 尧知
 Yaozhi
 Yao
@@ -1155,7 +1175,7 @@ Ling
 Hua
 G
 Ling: Spirit, alert, quick
-Hua: Hua: Splendid, beautiful, glorious, China
+Hua: Splendid, beautiful, glorious, China
 7 觀微 观微
 Guanwei
 Guan
@@ -1163,8 +1183,8 @@ Wei
 G
 Guan: Watch, observe, view
 Wei: Micro, tiny, minute
-8 如歌
-如歌 Ruge
+8 如歌 如歌
+Ruge
 Ru
 Ge
 F
@@ -1175,10 +1195,13 @@ Yuxun
 Yu
 Xun
 F
-Yu: Rain:
+Yu: Rain
 Xun: Nettle
-10 思思 思思 Sisi
-Si F Si: Thought, consider
+10 思思 思思
+Sisi
+Si
+F
+Si: Thought, consider
 
 
 +Doctor
@@ -1292,7 +1315,7 @@ Xin
 Yi
 G
 Xin: Glad, happy
-Yi; Happy, joyful, harmony
+Yi: Happy, joyful, harmony
 6 笑川 笑川
 Xiaochuan
 Xiao
@@ -1300,9 +1323,15 @@ Chuan
 G
 Xiao: Smile, laugh
 Chuan: River, plain, Sichuan Province
-7 言 言 Yan G Yan: Words, speech
-8 師師 师师 Shishi
-Shi F Shi: Teacher, master, expert
+7 言 言
+Yan
+G
+Yan: Words, speech
+8 師師 师师
+Shishi
+Shi
+F
+Shi: Teacher, master, expert
 9 鳳仙 凤仙
 Fengxian
 Feng
@@ -1316,7 +1345,7 @@ Yijia
 Yi
 Jia
 F
-Yi: Art, skil
+Yi: Art, skill
 Jia: Fine, good, great, pretty, glorious
 
 +Farmer
@@ -1546,15 +1575,21 @@ Qing: Blue, azure, green, clear
 
 +Loyalist
 ## These names are perfect for faithful, focused individuals.
-1 蘇武 苏武 Suwu M
+1 蘇武 苏武
+Suwu
+M
 Su Wu: A famous Chinese statesman from the Han Dynasty
 Su: Recover consciousness, wake, awake
 Wu: Martial, fierce, valiant
-2 天祥 天祥 Tianxiang M
+2 天祥 天祥
+Tianxiang
+M
 Tianxiang: Blessed by heaven
 Tian: Heaven, sky
 Xiang: Auspicious, propitious, lucky
-3 垣 垣 Yuan M Yuan: Wall, city
+3 垣 垣 Yuan
+M
+Yuan: Wall, city
 4 秦恬 秦恬
 Qintian
 Qin
@@ -1645,8 +1680,11 @@ Yu
 G
 Jin: Gold, metal
 Yu: Jade
-6 清清 清清 Qingqing
-Qing G Qing: Bright, clear
+6 清清 清清
+Qingqing
+Qing
+G
+Qing: Bright, clear
 7 于俊 于俊
 Yujun
 Yu
@@ -1684,8 +1722,7 @@ Liuxiang
 Liu
 Xiang
 M
-Liuxiang: The given name of a famous character from wuxia
-novels, Chu Liuxiang
+Liuxiang: The given name of a famous character from wuxia novels, Chu Liuxiang
 Liu: To leave, retain, stay, remain, keep
 Xiang: Fragrant, aromatic, sweet-smelling
 2 樂懷 乐怀
@@ -1965,10 +2002,16 @@ Yu
 F
 Kun: Earth, feminine, female, Yin-related, one of the eight trigrams
 Yu: Abundant, opulent, plentiful
-9 阿姐 阿姐 A’jie F A: Sound word
+9 阿姐 阿姐
+A’jie
+F
+A: Sound word
 Jie: Older sister
-10 珍珍 珍珍 Zhenzhen
-Zhen F Zhen: Treasure, rare, precious thing, gem
+10 珍珍 珍珍
+Zhenzhen
+Zhen
+F
+Zhen: Treasure, rare, precious thing, gem
 
 
 +Soldier
@@ -1992,7 +2035,7 @@ Anbang
 An
 Bang
 M
-Anbang: To bring peace, stability, and order to a country
+Anbang: To bring peace to a country, To bring stability to a country, To bring order to a country
 An: Content, calm, quiet, safe
 Bang: Nation, state, country
 4 戎良 戎良
@@ -2028,8 +2071,7 @@ Mulan
 Mu
 Lan
 F
-Mulan: The given name of Hua Mulan, the most famous female soldier in
-the history of China
+Mulan: The given name of Hua Mulan = the most famous female soldier in the history of China
 Mu: Tree, timber, wood
 Lan: Orchid
 9 楚喬 楚乔
@@ -2092,7 +2134,10 @@ Fei
 G
 Xie: Thank, apologize, decline
 Fei: Fly, flight
-7 遷 迁 Qian G Qian: Move, shift, change
+7 遷 迁
+Qian
+G
+Qian: Move, shift, change
 8 四娘 四娘
 Siniang
 Si
