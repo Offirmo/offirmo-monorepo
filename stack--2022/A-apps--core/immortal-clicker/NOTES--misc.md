@@ -12,8 +12,6 @@ https://immortalmountain.wordpress.com/glossary/wuxia-xianxia-xuanhuan-terms/
 
 https://www.reddit.com/r/incremental_games/comments/cvjrvt/an_incremental_game_based_on_chinese_xianxia/
 
-https://www.deviantart.com/phucan1908/about
-
 Inspiration:
 * http://www.lerpinglemur.com/arcanum/
 * XianXia incremental https://xi.khdev.ch/
@@ -49,7 +47,7 @@ Battle
 - deception
 - escape
 
-https://www.google.com/search?q=China+top+100+family+names
+
 
 Er Gen https://forum.webnovel.com/d/8302-er-gen-s-new-novel-three-inches-silver-human-mtl-names/20
 The chronological order is : PoT -> Ri -> New novel -> ISSTH -> AWE

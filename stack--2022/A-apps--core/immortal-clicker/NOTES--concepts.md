@@ -123,8 +123,11 @@ possession
 power
 puppets
 qi
+qi -- blood
+qi -- death
 qi -- demonic
 qi -- frigid
+qi -- inborn https://cultivation-chat-group.fandom.com/wiki/Inborn_true_qi
 qi -- yang
 qi -- yin
 rank - chief
