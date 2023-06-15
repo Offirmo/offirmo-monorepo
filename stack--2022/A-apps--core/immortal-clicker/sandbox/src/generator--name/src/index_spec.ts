@@ -5,8 +5,8 @@ import { get_engine } from '@offirmo/random'
 import { LIB } from './consts.js'
 
 import {
-	getꓽfirstname,
-	getꓽlastname,
+	get_randomꓽfirstname,
+	get_randomꓽlastname,
 } from './index.js'
 
 /////////////////////////////////////////////////
@@ -18,7 +18,7 @@ describe(`${LIB}`, function() {
 
 		it('should work -- no hints', () => {
 			for(let i = 0; i < 10; ++i) {
-				console.log(getꓽlastname(engine))
+				console.log(get_randomꓽlastname(engine))
 			}
 		})
 
@@ -29,7 +29,7 @@ describe(`${LIB}`, function() {
 
 		it('should work -- no hints', () => {
 			for(let i = 0; i < 10; ++i) {
-				console.log(getꓽfirstname(engine))
+				console.log(get_randomꓽfirstname(engine))
 			}
 		})
 

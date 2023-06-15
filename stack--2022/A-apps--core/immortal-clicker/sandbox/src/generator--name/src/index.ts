@@ -22,7 +22,7 @@ interface LastNameOptions {
 	epicness: never
 	alignment: never
 }
-function getꓽlastname(engine: RNGEngine, options: Immutable<Partial<LastNameOptions>> = {}): LastName {
+function get_randomꓽlastname(engine: RNGEngine, options: Immutable<Partial<LastNameOptions>> = {}): LastName {
 	return get_random.picker.of(LASTNAMES_ORDERED_BY_RARITY)(engine)
 }
 
@@ -31,8 +31,8 @@ interface FirstNameOptions {
 	epicness: never
 	alignment: never
 }
-function getꓽfirstname(engine: RNGEngine, options: Immutable<Partial<FirstNameOptions>> = {}): FirstName {
-	const candidates = FIRST_NAME_ENTRIES
+function get_randomꓽfirstname(engine: RNGEngine, options: Immutable<Partial<FirstNameOptions>> = {}): FirstName {
+	let candidates = FIRST_NAME_ENTRIES
 	const candidate = get_random.picker.of(candidates)(engine)
 	return candidate.str
 }
@@ -40,6 +40,6 @@ function getꓽfirstname(engine: RNGEngine, options: Immutable<Partial<FirstName
 /////////////////////////////////////////////////
 
 export {
-	getꓽlastname,
-	getꓽfirstname,
+	get_randomꓽlastname,
+	get_randomꓽfirstname,
 }
