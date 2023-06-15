@@ -24,32 +24,27 @@ function createꓽgraphⵧfile_system(): Immutable<FileSystem> {
 
 // insert the file but upsert the path to it
 function insertꓽfile(fs: Immutable<FileSystem>, path: FSPath): Immutable<FileSystem> {
-	path = normalize_path
-	assert(!path.endsWith(SEP), `file path should not end with a separator! "${path}"`)
-	if (path.startsWith(SEP)) path = path.slice(SEP.length)
+	path = normalize_path(fs, path, 'file')
 
-	assert(!fs.graph.nodes_uids_by_custom_id[path], 'file should not already exist!'
-	)
-	return _upsertꓽpath(fs, path, true)
+	assert(!fs.graph.nodes_uids_by_custom_id[path], 'file should not already exist!')
+
+	return _upsertꓽpath(fs, path, 'file')
 }
 
 function upsertꓽfile(fs: Immutable<FileSystem>, path: FSPath): Immutable<FileSystem> {
-	assert(!path.endsWith(SEP), `file path should not end with a separator! "${path}"`)
-	if (path.startsWith(SEP)) path = path.slice(SEP.length)
+	path = normalize_path(fs, path, 'file')
 
-	return _upsertꓽpath(fs, path, true)
+	return _upsertꓽpath(fs, path, 'file')
 }
 
 function mkdirp(fs: Immutable<FileSystem>, path: FSPath): Immutable<FileSystem> {
-	if (path.startsWith(SEP)) path = path.slice(SEP.length)
-	if (path.endsWith(SEP)) path = path.slice(0, -SEP.length)
+	path = normalize_path(fs, path, 'folder')
 
-	return _upsertꓽpath(fs, path, false)
+	return _upsertꓽpath(fs, path, 'folder')
 }
 
 function _upsertꓽpath(fs: Immutable<FileSystem>, path: FSPath, type: 'file' | 'folder'): Immutable<FileSystem> {
 	const path‿split = path.split(SEP)
-	assert(path‿split.every(p => !!p), `path should not have a hole! "${path}"`)
 
 	const node_cuids = path‿split
 		.map((last_segment, index) => {
