@@ -18,7 +18,8 @@ describe(`${LIB}`, function() {
 
 		it('should work -- no hints', () => {
 			for(let i = 0; i < 10; ++i) {
-				console.log(get_randomꓽlastname(engine))
+				const n = get_randomꓽlastname(engine)
+				//console.log(n)
 			}
 		})
 
@@ -29,11 +30,18 @@ describe(`${LIB}`, function() {
 
 		it('should work -- no hints', () => {
 			for(let i = 0; i < 10; ++i) {
-				console.log(get_randomꓽfirstname(engine))
+				const n = get_randomꓽfirstname(engine)
+				//console.log(n)
 			}
 		})
 
-		it('should work -- gender -- female')
+		it('should work -- gender -- female', () => {
+			for(let i = 0; i < 10; ++i) {
+				const n = get_randomꓽfirstname(engine, { gender: 'female'})
+				//console.log(n)
+			}
+		})
+
 		it('should work -- gender -- male')
 		it('should work -- gender -- neutral')
 	})

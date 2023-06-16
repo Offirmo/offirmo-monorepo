@@ -7,6 +7,7 @@ import { LIB } from './consts.js'
 import {
 	get_randomꓽnuclear_family
 } from './index.js'
+import * as console from 'console'
 
 /////////////////////////////////////////////////
 
@@ -17,7 +18,8 @@ describe(`${LIB}`, function() {
 
 		it('should work -- no hints', () => {
 			for(let i = 0; i < 10; ++i) {
-				console.log(get_randomꓽnuclear_family(engine))
+				const n = get_randomꓽnuclear_family(engine)
+				//console.log(n)
 			}
 		})
 

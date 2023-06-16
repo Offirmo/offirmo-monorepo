@@ -1433,5 +1433,6 @@ const FIRST_NAME_ENTRIES: FirstNameEntry[] = [
 ]
 
 export {
+	type FirstNameEntry,
 	FIRST_NAME_ENTRIES,
 }

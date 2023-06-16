@@ -31,6 +31,15 @@ interface NuclearFamily {
 		lastname: string
 	}
 
+	// father's parents are living at his home
+	grandfather: {
+		firstname: string
+	}
+	grandmother: {
+		firstname: string
+		lastname: string
+	}
+
 	children: Sibling[]
 }
 
@@ -45,6 +54,15 @@ function get_randomꓽnuclear_family(engine: RNGEngine, options: Immutable<Parti
 		},
 
 		mother: {
+			firstname: get_randomꓽfirstname(engine, { gender: 'female'}),
+			lastname: get_randomꓽlastname(engine),
+		},
+
+		grandfather: {
+			firstname: get_randomꓽfirstname(engine, { gender: 'male'}),
+		},
+
+		grandmother: {
 			firstname: get_randomꓽfirstname(engine, { gender: 'female'}),
 			lastname: get_randomꓽlastname(engine),
 		},
