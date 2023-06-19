@@ -18,5 +18,5 @@ interface Sect {
 /////////////////////////////////////////////////
 
 export {
-	Sect,
+	type Sect,
 }
