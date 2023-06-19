@@ -158,12 +158,6 @@ teleportation -- minor, greater
 teleportation portals, vortex, spatial cracks
 treasures
 tribe
-undying codex -- 1 undying skin
-undying codex -- 2 undying ? (nascent sect level resources)
-undying codex -- 3 undying tendons (deva sect level resources)
-undying codex -- 4 undying bones
-undying codex -- 5 undying blood
-undying codex -- shackles of mortality
 weapons
 willpower
 wounds

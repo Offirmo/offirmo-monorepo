@@ -13,11 +13,13 @@ const SCHEMA_VERSION = 0
 
 /////////////////////////////////////////////////
 
-function create(): Immutable<State> {
+function create(seed: 'unit-test' | 'auto' = 'unit-test'): Immutable<State> {
 	const now = new Date()
 	const tms = get_UTC_timestamp_ms(now)
 
 	let prng_state = PRNGState.create()
+	if (seed === 'auto')
+		prng_state = PRNGState.auto_reseed(prng_state)
 	const engine = PRNGState.get_prng(prng_state)
 
 	const family = get_randomꓽnuclear_family(engine)
@@ -39,7 +41,7 @@ function create(): Immutable<State> {
 				children_position
 			},
 
-			avatar: {} as any, // TODO
+			avatar: _get_avatar_from_family(family, children_position),
 		},
 		t_state: {
 			schema_version: SCHEMA_VERSION,
@@ -61,6 +63,7 @@ function _get_avatar_from_family(family: Immutable<NuclearFamily>, children_posi
 		cultivation: createꓽCultivation(),
 	} as Avatar
 }
+
 function update_prng(state: Immutable<State>, engine: PRNGEngine): Immutable<State> {
 	return {
 		...state,
@@ -71,8 +74,15 @@ function update_prng(state: Immutable<State>, engine: PRNGEngine): Immutable<Sta
 	}
 }
 
+function join_sectꓽfirst(state: Immutable<State>): Immutable<State> {
+	// TODO
+	return state
+}
+
 /////////////////////////////////////////////////
 
 export {
 	create,
+
+	join_sectꓽfirst,
 }
