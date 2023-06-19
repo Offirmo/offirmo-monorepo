@@ -58,7 +58,7 @@
 	},
 
 	"dependencies": {
-		"@manypkg/cli": "^0.20",
+		"@manypkg/cli": "^0.21",
 		"chalk": "^5",
 		"fs-extra": "^11",
 		"meow": "^12",
@@ -134,7 +134,6 @@
 		"mocha": "^10",
 		"murmurhash3js-revisited": "^3",
 		"nanoid": "^4",
-		"np": "^7",
 		"npm-run-all": "^4",
 		"parcel": "^2",
 		"parcel-resolver-typescript-esm": "^1",

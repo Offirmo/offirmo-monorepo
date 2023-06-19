@@ -3,9 +3,9 @@
 
 **This used to be an improved fork of [Random.js](https://github.com/ckknight/random-js) adding ES6 and typescript compatibility. Hat tip to original author!👒**
 
-**This has now (2023) been totally reworked with a single interface (but still using the original core)**
+**This has now (2023) been totally rewritten, drawing strong inspiration from the architecture and logic**
 
-**XXX THIS RNG LIB MAKES NO CLAIM OF CORRECTNESS/ BEING CRYPTOGRAPHICALLY SECURE, IT'S MAINTAINED BY A NON-SCIENTIST FOR WRITING GAMES!**
+**XXX THIS RNG LIB MAKES NO CLAIM OF CORRECTNESS / BEING CRYPTOGRAPHICALLY SECURE, IT'S MAINTAINED BY A NON-SCIENTIST FOR WRITING GAMES!**
 
 Pitch: a mathematically correct pseudo random number generator library for JavaScript:
 * no dependencies
