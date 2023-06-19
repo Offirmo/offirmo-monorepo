@@ -18,10 +18,21 @@ not implemented yet as long as I'm the sole contributor
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
+import {  } from './types.js'
+
 /////////////////////////////////////////////////
 
 function get(): void {
-
+/*
+ϟbestↆofꓺaꘌb
+notᝍbadₓasⳇwell‿noǃ
+bar𝝣fooǃfooꓽfoo𖾚foo
+fooꜛbarꜜfoo
+too wide
+fooⵧbar
+too thin
+ꓽfoo𐅛barᐧfooꓺbar
+ */
 }
 
 /////////////////////////////////////////////////

@@ -53,6 +53,9 @@ function get_randomꓽfirstname(engine: RNGEngine, options: Immutable<Partial<Fi
 /////////////////////////////////////////////////
 
 export {
+	type LastName,
+	type FirstName,
+
 	get_randomꓽlastname,
 	get_randomꓽfirstname,
 }

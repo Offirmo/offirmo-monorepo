@@ -3,6 +3,7 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 import { get_random, RNGEngine } from '@offirmo/random'
 
+import { get_randomꓽBiologicalSex, BiologicalSex } from '../torefine/index.js'
 import {
 	get_randomꓽfirstname,
 	get_randomꓽlastname,
@@ -10,11 +11,10 @@ import {
 
 /////////////////////////////////////////////////
 
-type Sex = 'male' | 'female' | 'unclear'
-
-interface Sibling {
-	sex: Sex
-	age_diff: number
+interface Children {
+	sex: BiologicalSex
+	age_diff: number // difference from the age of the FIRST child. Useful to retro-compute from oneself if one of the child
+	firstname: string
 }
 
 interface NuclearFamily {
@@ -40,9 +40,11 @@ interface NuclearFamily {
 		lastname: string
 	}
 
-	children: Sibling[]
+	children: Children[]
 }
 
+// NOTE it's very primitive of course
+// iterative work!
 interface Options {
 }
 function get_randomꓽnuclear_family(engine: RNGEngine, options: Immutable<Partial<Options>> = {}): NuclearFamily {
@@ -70,6 +72,19 @@ function get_randomꓽnuclear_family(engine: RNGEngine, options: Immutable<Parti
 		children: [],
 	}
 
+	const n_of_children = get_random.generator_of.integer.between(1, 5)(engine)
+	let accumulated_diff = 0
+	for (let i = 0; i < n_of_children; ++i) {
+		const sex = get_randomꓽBiologicalSex(engine)
+		result.children.push({
+			age_diff: accumulated_diff,
+			sex,
+			firstname: get_randomꓽfirstname(engine, { gender: sex })
+		} as Children)
+		// age diff with next child
+		accumulated_diff += get_random.generator_of.integer.between(1, 3)(engine)
+	}
+
 	return result
 }
 
@@ -77,5 +92,7 @@ function get_randomꓽnuclear_family(engine: RNGEngine, options: Immutable<Parti
 /////////////////////////////////////////////////
 
 export {
+	type NuclearFamily,
+
 	get_randomꓽnuclear_family,
 }

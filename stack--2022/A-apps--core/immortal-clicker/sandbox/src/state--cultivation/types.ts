@@ -1,28 +1,25 @@
-
-
 /////////////////////////////////////////////////
+// BY DEFINITION Cultivation = any self-improvement above natural state
 
-interface MortalCultivation {
-    physique: number
+
+/*interface MortalCultivation {
+	physique: number
 }
 
 interface FoundationEstablishment {
-    rank: number
-    method: string
-}
+	rank: number
+	method: string | undefined
+}*/
 
 interface Cultivation {
-    rank: {
-        major: number
-        minor: number
-    }
-
-    rank00: MortalCultivation
-    rank01: FoundationEstablishment
+	rank: {
+		major: number
+		minor: number
+	}
 }
 
 /////////////////////////////////////////////////
 
 export {
-    type Cultivation,
+	type Cultivation,
 }

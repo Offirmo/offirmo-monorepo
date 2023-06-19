@@ -45,3 +45,4 @@ v = gen(rng)
 TODO review https://stackoverflow.com/questions/4720822/what-is-the-best-pseudo-random-number-generator-as-of-today
 TODO review https://github.com/davidbau/seedrandom
 TODO review https://github.com/sindresorhus/randoma
+TODO review https://github.com/ChrisCavs/aimless.js
