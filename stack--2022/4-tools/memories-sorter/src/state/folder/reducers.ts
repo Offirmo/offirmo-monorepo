@@ -3,7 +3,7 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { RelativePath, SimpleYYYYMMDD } from '../../types.js'
-import { Params, get_params, get_default_timezone } from '../../params.js'
+import { Params, getꓽparams, getꓽdefault_timezone } from '../../params.js'
 import { pathㆍparse_memoized } from '../../services/name_parser.js'
 import logger from '../../services/logger.js'
 import * as BetterDateLib from '../../services/better-date.js'
@@ -38,7 +38,7 @@ function _get_inferred_folder_type_from_path(id: FolderId, pathㆍparsed: path.P
 
 	if (id === '.') return Type.root
 
-	const depth = get_depth(pathㆍparsed)
+	const depth = getꓽdepth(pathㆍparsed)
 
 	if (depth === 0 && pathㆍparsed.base === SPECIAL_FOLDERⵧINBOX__BASENAME) return Type.inbox
 	if (depth === 0 && pathㆍparsed.base === SPECIAL_FOLDERⵧCANT_AUTOSORT__BASENAME) return Type.cant_autosort
@@ -411,7 +411,7 @@ export function on_all_infos_gathered(state: Immutable<State>): Immutable<State>
 	} else
 	{
 		try {
-			const event_range = get_event_range(state)
+			const event_range = getꓽevent_range(state)
 
 			if (!event_range) {
 				logger.warn(`${LIB} FYI folder fully explored: type="${state.type}", has media children but event date range = NONE!?`, {
@@ -420,7 +420,7 @@ export function on_all_infos_gathered(state: Immutable<State>): Immutable<State>
 					media_children_count,
 					...(state.reason_for_demotion_from_event && { reason_for_demotion_from_event: state.reason_for_demotion_from_event }),
 					is_looking_like_a_backup: is_looking_like_a_backup(state),
-					event_beginⵧfrom_folder_basename: get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state),
+					event_beginⵧfrom_folder_basename: getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state),
 				})
 			}
 			else {
@@ -430,7 +430,7 @@ export function on_all_infos_gathered(state: Immutable<State>): Immutable<State>
 					// replace with an explicit tz
 					state = {
 						...state,
-						media_children_aggregated_tz: get_default_timezone(BetterDateLib.get_timestamp_utc_ms_from(event_range.begin))
+						media_children_aggregated_tz: getꓽdefault_timezone(BetterDateLib.get_timestamp_utc_ms_from(event_range.begin))
 					}
 					logger.debug(`${LIB} settling down on tz="${state.media_children_aggregated_tz}" for folder "${state.id}"`)
 				}
@@ -463,9 +463,9 @@ export function on_all_infos_gathered(state: Immutable<State>): Immutable<State>
 	return  state
 }
 
-export function on_overlap_clarified(state: Immutable<State>, target_end_date‿symd: SimpleYYYYMMDD, PARAMS: Immutable<Params> = get_params()): Immutable<State> {
+export function on_overlap_clarified(state: Immutable<State>, target_end_date‿symd: SimpleYYYYMMDD, PARAMS: Immutable<Params> = getꓽparams()): Immutable<State> {
 	logger.trace(`${LIB} on_overlap_clarified(…)`, {
-		prev_end_date‿symd: get_event_end_date‿symd(state),
+		prev_end_date‿symd: getꓽevent_end_date‿symd(state),
 		new_end_date‿symd: target_end_date‿symd,
 	})
 
@@ -479,7 +479,7 @@ export function on_overlap_clarified(state: Immutable<State>, target_end_date‿
 	return {
 		...state,
 		forced_event_range: {
-			begin: get_event_begin_date(state),
+			begin: getꓽevent_begin_date(state),
 			end: end_date,
 		},
 	}

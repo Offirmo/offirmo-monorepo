@@ -33,7 +33,7 @@ import {
 	is_inventory_full,
 } from '../selectors/index.js'
 
-import { get_lib_SEC } from '../services/sec.js'
+import { getꓽlib_SEC } from '../services/sec.js'
 
 import {STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC} from './create.js'
 

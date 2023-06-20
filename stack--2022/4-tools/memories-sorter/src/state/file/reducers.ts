@@ -3,16 +3,16 @@ import assert from 'tiny-invariant'
 import { Tags as EXIFTags } from 'exiftool-vendored'
 import { Immutable } from '@offirmo-private/ts-types'
 import { enforce_immutability } from '@offirmo-private/state-utils'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
 
 import { BROKEN_FILE_EXTENSIONS_LC } from '../../consts.js'
-import { get_params } from '../../params.js'
+import { getꓽparams } from '../../params.js'
 import logger from '../../services/logger.js'
 import {
 	FsStatsSubset,
 	get_most_reliable_birthtime_from_fs_stats,
 } from '../../services/fs_stats.js'
-import { get_orientation_from_exif, has_errors } from '../../services/exif.js'
+import { getꓽorientation_from_exif, has_errors } from '../../services/exif.js'
 import {
 	get_file_basename_copy_index,
 	get_file_basename_extension‿normalized,
@@ -48,7 +48,7 @@ import {
 	is_media_file,
 } from './selectors.js'
 import * as NeighborHintsLib from './sub/neighbor-hints/index.js'
-import { get_bcd_from_parent_path, get_fs_reliability_score } from './sub/neighbor-hints/index.js'
+import { getꓽbcd_from_parent_path, getꓽfs_reliability_score } from './sub/neighbor-hints/index.js'
 
 ////////////////////////////////////
 
@@ -71,7 +71,7 @@ export function create(id: FileId): Immutable<State> {
 				basename: parsed_path.base,
 				parent_path: parsed_path.dir,
 
-				fs_bcd_tms: get_UTC_timestamp_ms(), // so far
+				fs_bcd_tms: getꓽUTC_timestamp_ms(), // so far
 				neighbor_hints: NeighborHintsLib.get_historical_representation(NeighborHintsLib.create(), undefined),
 
 				exif_orientation: undefined,
@@ -121,7 +121,7 @@ export function on_info_read__fs_stats(state: Immutable<State>, fs_stats_subset:
 			historical: {
 				// as far as we know we are dealing with the original
 				...state.notes.historical,
-				fs_bcd_tms: get_most_reliable_birthtime_from_fs_stats(fs_stats_subset),
+				fs_bcd_tms: getꓽmost_reliable_birthtime_from_fs_stats(fs_stats_subset),
 			}
 		}
 	}
@@ -169,7 +169,7 @@ export function on_info_read__exif(state: Immutable<State>, exif_data: Immutable
 			historical: {
 				// as far as we know we are dealing with the original
 				...state.notes.historical,
-				exif_orientation: get_orientation_from_exif(exif_data),
+				exif_orientation: getꓽorientation_from_exif(exif_data),
 			}
 		}
 	}
@@ -192,16 +192,16 @@ export function on_info_read__hash(state: Immutable<State>, hash: string): Immut
 }
 
 function _get_historical_neighbor_hints_with_no_redundancy(state: Immutable<State>, neighbor_hints: Immutable<NeighborHints>): Immutable<HistoricalNeighborHints> {
-	let historical_hints = NeighborHintsLib.get_historical_representation(neighbor_hints, get_creation_dateⵧfrom_fsⵧcurrent‿tms(state))
+	let historical_hints = NeighborHintsLib.get_historical_representation(neighbor_hints, getꓽcreation_dateⵧfrom_fsⵧcurrent‿tms(state))
 
-	const self_reliability = get_creation_dateⵧfrom_fsⵧcurrent__reliability_according_to_our_own_trustable_current_primary_date_sources(state)
+	const self_reliability = getꓽcreation_dateⵧfrom_fsⵧcurrent__reliability_according_to_our_own_trustable_current_primary_date_sources(state)
 	if (self_reliability === historical_hints.fs_reliability || historical_hints.fs_reliability === 'unknown') {
 		// redundant
 		historical_hints.fs_reliability = undefined
 	}
 
 	if (historical_hints.parent_bcd) {
-		const parent_bcd_from_its_basename = get_bcd_from_parent_path(state.notes.historical.parent_path)
+		const parent_bcd_from_its_basename = getꓽbcd_from_parent_path(state.notes.historical.parent_path)
 		if (parent_bcd_from_its_basename) {
 			const bcd_h_h = BetterDateLib.create_better_date_obj(historical_hints.parent_bcd)
 			if (BetterDateLib.is_deep_equal(parent_bcd_from_its_basename, bcd_h_h)) {
@@ -261,8 +261,8 @@ export function on_notes_recovered(state: Immutable<State>, recovered_notes: nul
 	assert(state.current_fs_stats, 'on_notes_recovered() should be called after FS') // obvious but just in case…
 
 	if (recovered_notes) {
-		const current_ext‿norm = get_current_extension‿normalized(state)
-		const original_ext‿norm = get_file_basename_extension‿normalized(recovered_notes.historical.basename)
+		const current_ext‿norm = getꓽcurrent_extension‿normalized(state)
+		const original_ext‿norm = getꓽfile_basename_extension‿normalized(recovered_notes.historical.basename)
 		assert(
 			current_ext‿norm === original_ext‿norm
 			|| BROKEN_FILE_EXTENSIONS_LC.includes(original_ext‿norm), // normal to change extension if "broken" file
@@ -304,9 +304,9 @@ export function on_notes_recovered(state: Immutable<State>, recovered_notes: nul
 export function on_consolidated(state: Immutable<State>): Immutable<State> {
 
 	if (is_media_file(state)) {
-		const meta = get_best_creation_date‿meta(state)
+		const meta = getꓽbest_creation_date‿meta(state)
 
-		const _bcd_afawk‿symd = BetterDateLib.get_compact_date(meta.candidate, get_best_tz(state))
+		const _bcd_afawk‿symd = BetterDateLib.get_compact_date(meta.candidate, getꓽbest_tz(state))
 		const _bcd_source = meta.source
 
 		if (state.notes._bcd_afawk‿symd !== _bcd_afawk‿symd || state.notes._bcd_source !== _bcd_source) {
@@ -330,16 +330,16 @@ export function on_moved(state: Immutable<State>, new_id: FileId): Immutable<Sta
 	logger.trace(`${LIB} on_moved(…)`, { previous_id: state.id, new_id })
 	assert(new_id !== state.id, `on_moved() should be a real move`)
 
-	const previous_basename = get_current_basename(state)
-	const ideal_basename = get_ideal_basename(state)
-	const meta = get_best_creation_date‿meta(state)
+	const previous_basename = getꓽcurrent_basename(state)
+	const ideal_basename = getꓽideal_basename(state)
+	const meta = getꓽbest_creation_date‿meta(state)
 
 	state =  {
 		...state,
 		id: new_id,
 	}
 
-	const new_basename = get_current_basename(state)
+	const new_basename = getꓽcurrent_basename(state)
 	state = {
 		...state,
 		notes: {
@@ -349,7 +349,7 @@ export function on_moved(state: Immutable<State>, new_id: FileId): Immutable<Sta
 	}
 
 	if (new_basename !== previous_basename) {
-		const new_basename_without_copy_index = get_file_basename_without_copy_index(new_basename)
+		const new_basename_without_copy_index = getꓽfile_basename_without_copy_index(new_basename)
 		if(new_basename_without_copy_index !== ideal_basename) {
 			// can that happen?
 			assert(new_basename_without_copy_index === ideal_basename, `file renaming should only be a normalization! previous="${previous_basename}", new="${new_basename_without_copy_index}", ideal="${ideal_basename}"`)
@@ -396,13 +396,13 @@ export function merge_duplicates(...states: Immutable<State[]>): Immutable<State
 
 	const reasons = new Set<string>()
 	let selected_state = states[0] // so far
-	//let min_fs_bcd_tms = get_most_reliable_birthtime_from_fs_stats(selected_state.current_fs_stats!) // so far
+	//let min_fs_bcd_tms = getꓽmost_reliable_birthtime_from_fs_stats(selected_state.current_fs_stats!) // so far
 	states.forEach(candidate_state => {
 		if (candidate_state === selected_state) return
 
 		// equal so far, try to discriminate with a criteria
-		const selected__has_normalized_basename = get_file_basename_without_copy_index(get_current_basename(selected_state)) === get_ideal_basename(selected_state)
-		const candidate__has_normalized_basename = get_file_basename_without_copy_index(get_current_basename(candidate_state)) === get_ideal_basename(candidate_state)
+		const selected__has_normalized_basename = getꓽfile_basename_without_copy_index(get_current_basename(selected_state)) === getꓽideal_basename(selected_state)
+		const candidate__has_normalized_basename = getꓽfile_basename_without_copy_index(get_current_basename(candidate_state)) === getꓽideal_basename(candidate_state)
 		if (selected__has_normalized_basename !== candidate__has_normalized_basename) {
 			reasons.add('normalized_basename')
 
@@ -428,8 +428,8 @@ export function merge_duplicates(...states: Immutable<State[]>): Immutable<State
 		}
 
 		// still equal so far, try to discriminate with another criteria
-		let selected__current_copy_index = get_file_basename_copy_index(get_current_basename(selected_state))
-		let candidate__current_copy_index = get_file_basename_copy_index(get_current_basename(candidate_state))
+		let selected__current_copy_index = getꓽfile_basename_copy_index(get_current_basename(selected_state))
+		let candidate__current_copy_index = getꓽfile_basename_copy_index(get_current_basename(candidate_state))
 		if (selected__current_copy_index !== candidate__current_copy_index) {
 			reasons.add('copy_index')
 
@@ -459,8 +459,8 @@ export function merge_duplicates(...states: Immutable<State[]>): Immutable<State
 		}
 
 		// still equal so far, try to discriminate with another criteria
-		const selected__current_fs_creation_date_tms = get_creation_dateⵧfrom_fsⵧcurrent‿tms(selected_state)
-		const candidate__current_fs_creation_date_tms = get_creation_dateⵧfrom_fsⵧcurrent‿tms(candidate_state)
+		const selected__current_fs_creation_date_tms = getꓽcreation_dateⵧfrom_fsⵧcurrent‿tms(selected_state)
+		const candidate__current_fs_creation_date_tms = getꓽcreation_dateⵧfrom_fsⵧcurrent‿tms(candidate_state)
 		if (selected__current_fs_creation_date_tms !== candidate__current_fs_creation_date_tms) {
 			reasons.add('current_fs_creation_date')
 			//console.log('different best_creation_date', selected__best_creation_date_tms, candidate__best_creation_date_tms)
@@ -474,11 +474,11 @@ export function merge_duplicates(...states: Immutable<State[]>): Immutable<State
 		}
 
 		// still equal so far, try to discriminate with another criteria
-		if (get_current_basename(selected_state).length !== get_current_basename(candidate_state).length) {
+		if (get_current_basename(selected_state).length !== getꓽcurrent_basename(candidate_state).length) {
 			reasons.add('current_basename.length')
 
 			// shorter name wins!
-			if (get_current_basename(selected_state).length < get_current_basename(candidate_state).length)
+			if (get_current_basename(selected_state).length < getꓽcurrent_basename(candidate_state).length)
 				return // current is better
 
 			selected_state = candidate_state
@@ -630,10 +630,10 @@ export function merge_notes(...notes: Immutable<PersistedNotes[]>): Immutable<Pe
 		// so we pick the best for each field 1 by 1
 
 		// used by several:
-		const basemane__current__nv = get_media_basename_normalisation_version(merged_notes.historical.basename)
-		const basename__candidate__nv = get_media_basename_normalisation_version(basename)
-		const parent_path__current__nv = get_folder_basename_normalisation_version(merged_notes.historical.parent_path.split(path.sep).slice(-1)[0] || 'root')
-		const parent_path__candidate__nv = get_folder_basename_normalisation_version(parent_path.split(path.sep).slice(-1)[0] || 'root')
+		const basemane__current__nv = getꓽmedia_basename_normalisation_version(merged_notes.historical.basename)
+		const basename__candidate__nv = getꓽmedia_basename_normalisation_version(basename)
+		const parent_path__current__nv = getꓽfolder_basename_normalisation_version(merged_notes.historical.parent_path.split(path.sep).slice(-1)[0] || 'root')
+		const parent_path__candidate__nv = getꓽfolder_basename_normalisation_version(parent_path.split(path.sep).slice(-1)[0] || 'root')
 
 		// basename + parent_path (those 2 go together)
 		let oldest_basename_and_path: 'current' | 'candidate' | 'both' = (() => {
@@ -760,8 +760,8 @@ export function merge_notes(...notes: Immutable<PersistedNotes[]>): Immutable<Pe
 				// they're the same, so there is room for selection:
 				// compare by reliability
 				if (fs_reliability !== merged_notes.historical.neighbor_hints.fs_reliability) {
-					const rsa = get_fs_reliability_score(merged_notes.historical.neighbor_hints.fs_reliability)
-					const rsb = get_fs_reliability_score(fs_reliability)
+					const rsa = getꓽfs_reliability_score(merged_notes.historical.neighbor_hints.fs_reliability)
+					const rsb = getꓽfs_reliability_score(fs_reliability)
 
 					if (rsa !== rsb) {
 						return rsa >= rsb ? 'current' : 'candidate'

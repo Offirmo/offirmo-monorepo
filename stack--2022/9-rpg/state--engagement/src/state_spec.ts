@@ -6,7 +6,7 @@ import { SCHEMA_VERSION } from './consts.js'
 import {
 	create,
 } from './index.js'
-import { get_lib_SEC } from './sec.js'
+import { getꓽlib_SEC } from './sec.js'
 
 //////////////////////////////////////////////////////////////////////
 

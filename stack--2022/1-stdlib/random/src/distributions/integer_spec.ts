@@ -1,14 +1,14 @@
 import { expect } from 'chai'
 
 import { RNGEngine } from '../types.js'
-import { get_RNGⵧMathᐧrandom } from '../engines/MathRandom/index.js'
+import { getꓽRNGⵧMathᐧrandom } from '../engines/MathRandom/index.js'
 import { ROUNDS_COUNT } from '../_test_helpers.js'
-import { get_random_generator_ofꓽintegerⵧbetween } from './integer.js'
+import { getꓽrandom_generator_ofꓽintegerⵧbetween } from './integer.js'
 
 
 describe('@offirmo/random', function() {
-	const get_RNG = get_RNGⵧMathᐧrandom
-	let engine: RNGEngine = get_RNG()
+	const getꓽRNG = getꓽRNGⵧMathᐧrandom
+	let engine: RNGEngine = getꓽRNG()
 
 	describe('distributions', function() {
 
@@ -19,7 +19,7 @@ describe('@offirmo/random', function() {
 
 				it(`should work -- range = 1 - ${possible_output_count} (0 - 0x${Number(possible_output_count - 1).toString(16)})`, () => {
 					let engine: RNGEngine = engine_ctor()
-					const generate = get_random_generator_ofꓽintegerⵧbetween(1, possible_output_count)
+					const generate = getꓽrandom_generator_ofꓽintegerⵧbetween(1, possible_output_count)
 
 					let min = Number.MAX_SAFE_INTEGER
 					let max = Number.MIN_SAFE_INTEGER
@@ -78,7 +78,7 @@ describe('@offirmo/random', function() {
 			describe('get_random_generator_ofꓽintegerⵧbetween()', function() {
 
 				it('should work -- range size = 1 = constant', () => {
-					const generate = get_random_generator_ofꓽintegerⵧbetween(-5, -5)
+					const generate = getꓽrandom_generator_ofꓽintegerⵧbetween(-5, -5)
 
 					expect(generate(engine)).to.equal(-5)
 					expect(generate(engine)).to.equal(-5)
@@ -98,7 +98,7 @@ describe('@offirmo/random', function() {
 				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(get_RNG, 0xFFFF_FFFF + 1) // power of 2
 
 				it('should reject ranges > 32 bits', () => {
-					expect(() => get_random_generator_ofꓽintegerⵧbetween(0, 0xFFFF_FFFF + 1)).to.throw('Range error')
+					expect(() => getꓽrandom_generator_ofꓽintegerⵧbetween(0, 0xFFFF_FFFF + 1)).to.throw('Range error')
 				})
 			})
 		})

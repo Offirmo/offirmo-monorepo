@@ -7,7 +7,7 @@ import {
 	CleanupStep,
 	generic_migrate_to_latest,
 } from '@offirmo-private/state-utils'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
 
 import * as CharacterState from '@tbrpg/state--character'
 import * as WalletState from '@tbrpg/state-wallet'
@@ -24,7 +24,7 @@ import { State } from '../types.js'
 import { TBRSoftExecutionContext } from '../services/sec.js'
 import { _refresh_achievements } from '../reducers/achievements/index.js'
 import { reset_and_salvage } from './salvage.js'
-import { get_engine } from '@offirmo/random'
+import { getꓽengine } from '@offirmo/random'
 
 
 /////////////////////
@@ -138,7 +138,7 @@ const migrate_to_16x: LastMigrationStep<State, any> = (SEC, legacy_state, hints,
 		},
 	}
 
-	let fresh_recommended_prng_engine = get_engine.prng.good_enough()
+	let fresh_recommended_prng_engine = getꓽengine.prng.good_enough()
 	state.u_state.prng.prng_state.algorithm_id = fresh_recommended_prng_engine.get_state().algorithm_id!
 
 	// eventually, update schema version
@@ -164,7 +164,7 @@ const migrate_to_15: MigrationStep = (SEC, legacy_state, hints, previous, legacy
 
 	// minor migration: cleanup uuid field
 	const { last_user_action_tms, creation_date: creation_date_hrtmin, uuid, ...rest__u_state } = legacy_state.u_state
-	const last_user_investment_tms = last_user_action_tms ?? get_UTC_timestamp_ms()
+	const last_user_investment_tms = last_user_action_tms ?? getꓽUTC_timestamp_ms()
 
 	//console.log('@@@@@', { last_user_action_tms, creation_date_hrtmin, uuid, schema_version: legacy_state.schema_version })
 	let state = {

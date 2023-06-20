@@ -51,10 +51,10 @@ function pick_random_non_repetitive_bad_archetype(u_state: Immutable<UState>, rn
 
 function _play_bad(state: Immutable<State>, explicit_adventure_archetype_hid?: string): Immutable<State> {
 	let prng_state = state.u_state.prng
-	const rng = get_prng(prng_state)
+	const rng = getꓽprng(prng_state)
 
 	const aa: AdventureArchetype = explicit_adventure_archetype_hid
-		? get_archetype(explicit_adventure_archetype_hid)
+		? getꓽarchetype(explicit_adventure_archetype_hid)
 		: pick_random_non_repetitive_bad_archetype(state.u_state, rng)
 
 	if (!aa)

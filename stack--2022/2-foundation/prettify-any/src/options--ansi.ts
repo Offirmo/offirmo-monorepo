@@ -3,7 +3,7 @@ import {
 } from './types.js'
 
 
-export function get_stylize_options_ansi(chalk: any): StylizeOptions {
+export function getꓽstylize_options_ansi(chalk: any): StylizeOptions {
 	return {
 		stylize_dim: (s: string) => chalk.dim(s),
 		stylize_suspicious: (s: string) => chalk.bold(s),

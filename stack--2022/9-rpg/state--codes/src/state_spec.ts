@@ -6,7 +6,7 @@ import {
 	create,
 	attempt_to_redeem_code,
 } from './index.js'
-import { get_lib_SEC } from './sec.js'
+import { getꓽlib_SEC } from './sec.js'
 
 import { CodesConditions, CODESPECS_BY_KEY } from './test/index.js'
 

@@ -30,7 +30,7 @@ import {
 
 	assertㆍBetterDateㆍdeepㆍequal,
 } from './better-date.js'
-import { get_params } from '../params.js'
+import { getꓽparams } from '../params.js'
 import { LIB } from '../consts.js'
 
 /////////////////////
@@ -158,7 +158,7 @@ describe(`${LIB} -- service -- Better Date`, function() {
 			describe('get_human_readable_timestamp_days()', function () {
 
 				it('should return correct timestamps up to the day', function () {
-					const stamp = get_human_readable_timestamp_days(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
+					const stamp = getꓽhuman_readable_timestamp_days(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
 					//console.log(stamp)
 					expect(stamp).to.be.a('string')
 					expect(stamp.length).to.equal(10)
@@ -171,7 +171,7 @@ describe(`${LIB} -- service -- Better Date`, function() {
 			describe('get_human_readable_timestamp_minutes()', function () {
 
 				it('should return correct timestamps up to the minute', function () {
-					const stamp = get_human_readable_timestamp_minutes(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
+					const stamp = getꓽhuman_readable_timestamp_minutes(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
 					//console.log(stamp)
 					expect(stamp).to.be.a('string')
 					expect(stamp.length).to.equal(16)
@@ -182,7 +182,7 @@ describe(`${LIB} -- service -- Better Date`, function() {
 			describe('get_human_readable_timestamp_second()', function () {
 
 				it('should return correct timestamps up to the second', function () {
-					const stamp = get_human_readable_timestamp_seconds(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
+					const stamp = getꓽhuman_readable_timestamp_seconds(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
 					//console.log(stamp)
 					expect(stamp).to.be.a('string')
 					expect(stamp.length).to.equal(19)
@@ -193,7 +193,7 @@ describe(`${LIB} -- service -- Better Date`, function() {
 			describe('get_human_readable_timestamp_millis()', function () {
 
 				it('should return correct timestamps up to the millisecond', function () {
-					const stamp = get_human_readable_timestamp_millis(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
+					const stamp = getꓽhuman_readable_timestamp_millis(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
 					//console.log(stamp)
 					expect(stamp).to.be.a('string')
 					expect(stamp.length).to.equal(23)
@@ -204,7 +204,7 @@ describe(`${LIB} -- service -- Better Date`, function() {
 			describe('get_human_readable_timestamp_auto()', function () {
 
 				it('should work', function () {
-					const stamp = get_human_readable_timestamp_auto(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
+					const stamp = getꓽhuman_readable_timestamp_auto(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
 					//console.log(stamp)
 					expect(stamp).to.be.a('string')
 					expect(stamp.length).to.equal(23)
@@ -234,13 +234,13 @@ describe(`${LIB} -- service -- Better Date`, function() {
 			describe('get_members_for_serialization()', function () {
 
 				it('should work -- explicit tz', () => {
-					const members = get_members_for_serialization(TEST_DATE_EXPLICIT_TZ)
+					const members = getꓽmembers_for_serialization(TEST_DATE_EXPLICIT_TZ)
 					const reconstructed = create_better_date_obj(members)
 					assertㆍBetterDateㆍdeepㆍequal(TEST_DATE_EXPLICIT_TZ, reconstructed)
 				})
 
 				it('should work -- auto tz', () => {
-					const members = get_members_for_serialization(TEST_DATE_AUTO_TZ)
+					const members = getꓽmembers_for_serialization(TEST_DATE_AUTO_TZ)
 					const reconstructed = create_better_date_obj(members)
 					assertㆍBetterDateㆍdeepㆍequal(TEST_DATE_AUTO_TZ, reconstructed)
 				})
@@ -302,9 +302,9 @@ describe(`${LIB} -- service -- Better Date`, function() {
 			describe('compare_utc()', function () {
 
 				it('should work', () => {
-					const t1_utc = get_timestamp_utc_ms_from(TEST_DATE_1)
-					const t2_utc = get_timestamp_utc_ms_from(TEST_DATE_2_nearly_1)
-					const t3_utc = get_timestamp_utc_ms_from(TEST_DATE_3)
+					const t1_utc = getꓽtimestamp_utc_ms_from(TEST_DATE_1)
+					const t2_utc = getꓽtimestamp_utc_ms_from(TEST_DATE_2_nearly_1)
+					const t3_utc = getꓽtimestamp_utc_ms_from(TEST_DATE_3)
 					expect(t2_utc).to.be.below(t1_utc)
 					expect(t3_utc).to.be.above(t1_utc)
 					expect(t3_utc).to.be.above(t2_utc)
@@ -503,20 +503,20 @@ describe(`${LIB} -- service -- Better Date`, function() {
 					it('should work and pick the default tz', () => {
 						const date = create_better_date('tz:auto', 2016, 11, 21, 9, 8, 7, 654, PARAMS)
 						expect(date._has_explicit_timezone).to.be.false
-						const tz = get_embedded_timezone(date)
+						const tz = getꓽembedded_timezone(date)
 						expect(tz).to.equal('Indian/Kerguelen') // auto from PARAMS
 					})
 
 					it('should be reversible', () => {
 						const date1 = create_better_date('tz:auto', 2016, 11, 21, 9, 8, 7, 654, PARAMS)
 						//console.log(date1)
-						const tms1 = get_timestamp_utc_ms_from(date1)
+						const tms1 = getꓽtimestamp_utc_ms_from(date1)
 						const date2 = create_better_date_from_utc_tms(tms1, 'tz:auto', PARAMS)
-						const tms2 = get_timestamp_utc_ms_from(date2)
+						const tms2 = getꓽtimestamp_utc_ms_from(date2)
 						expect(tms2).to.equal(tms1)
 
-						const tz1 = get_embedded_timezone(date1)
-						const tz2 = get_embedded_timezone(date2)
+						const tz1 = getꓽembedded_timezone(date1)
+						const tz2 = getꓽembedded_timezone(date2)
 						expect(tz1).to.equal('Indian/Kerguelen')
 						expect(tz2).to.equal('Indian/Kerguelen')
 
@@ -529,7 +529,7 @@ describe(`${LIB} -- service -- Better Date`, function() {
 					it('should work and use the given tz', () => {
 						const date = create_better_date('Europe/Paris', 2016, 11, 21, 9, 8, 7, 654)
 						expect(date._has_explicit_timezone).to.be.true
-						const tz = get_embedded_timezone(date)
+						const tz = getꓽembedded_timezone(date)
 						expect(tz).to.equal('Europe/Paris')
 					})
 				})

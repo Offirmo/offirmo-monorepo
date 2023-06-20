@@ -55,7 +55,7 @@ function pick_ideal_non_repetitive_good_archetype(u_state: Immutable<UState>, rn
 	if (WalletState.get_currency_amount(u_state.wallet, WalletState.Currency.coin) === 0) {
 		// needed to prevent the wallet from staying at 0
 		// which mess up adventures needing a coin loss
-		return get_archetype('found_coin')
+		return getꓽarchetype('found_coin')
 	}
 
 	return pick_random_non_repetitive_good_archetype(u_state, rng)
@@ -63,10 +63,10 @@ function pick_ideal_non_repetitive_good_archetype(u_state: Immutable<UState>, rn
 
 function _play_good(state: Immutable<State>, explicit_adventure_archetype_hid?: string): Immutable<State> {
 	let prng_state = state.u_state.prng
-	const rng = get_prng(prng_state)
+	const rng = getꓽprng(prng_state)
 
 	const aa: AdventureArchetype = explicit_adventure_archetype_hid
-		? get_archetype(explicit_adventure_archetype_hid)
+		? getꓽarchetype(explicit_adventure_archetype_hid)
 		: pick_ideal_non_repetitive_good_archetype(state.u_state, rng)
 
 	if (!aa)

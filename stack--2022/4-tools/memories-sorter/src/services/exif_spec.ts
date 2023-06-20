@@ -49,7 +49,7 @@ describe(`${LIB} -- service -- exif`, function() {
 					//console.log('exif data', exif_data)
 
 					const EXPECTED_EXIF_DATA = MEDIA_DEMO.EXIF_DATA
-					const bcd_edt = get_best_creation_date_from_exif(exif_data)
+					const bcd_edt = getꓽbest_creation_date_from_exif(exif_data)
 					if (!EXPECTED_EXIF_DATA) {
 						expect(bcd_edt).to.be.undefined
 					}

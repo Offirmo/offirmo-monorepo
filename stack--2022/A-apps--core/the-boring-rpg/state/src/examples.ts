@@ -12,7 +12,7 @@ import { DEMO_MONSTER_01 } from '@tbrpg/logic-monsters'
 
 import { State, Adventure } from './types.js'
 import { cleanup } from './migrations/index.js'
-import { get_lib_SEC } from './services/sec.js'
+import { getꓽlib_SEC } from './services/sec.js'
 
 /////////////////////
 
@@ -639,7 +639,7 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(get_lib
 		schema_version: SCHEMA_VERSION,
 		revision: 203,
 
-		creation_date: get_human_readable_UTC_timestamp_minutes(new Date(TEST_TIMESTAMP_MS)),
+		creation_date: getꓽhuman_readable_UTC_timestamp_minutes(new Date(TEST_TIMESTAMP_MS)),
 
 		avatar: Character.DEMO_STATE,
 		inventory: Inventory.DEMO_STATE,

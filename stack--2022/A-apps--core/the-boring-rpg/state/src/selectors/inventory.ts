@@ -38,11 +38,11 @@ function is_inventory_full(u_state: Immutable<UState>): boolean {
 	return is_full(u_state.inventory)
 }
 
-function get_item_in_slot(u_state: Immutable<UState>, slot: InventorySlot): Immutable<Item> | null {
+function getꓽitem_in_slot(u_state: Immutable<UState>, slot: InventorySlot): Immutable<Item> | null {
 	return _get_item_in_slot(u_state.inventory, slot)
 }
 
-function get_item(u_state: Immutable<UState>, uuid: UUID): Immutable<Item> | null {
+function getꓽitem(u_state: Immutable<UState>, uuid: UUID): Immutable<Item> | null {
 	return _get_item(u_state.inventory, uuid)
 }
 

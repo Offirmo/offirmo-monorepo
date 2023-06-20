@@ -3,7 +3,7 @@ import path from 'path'
 import assert from 'tiny-invariant'
 import { Tags } from 'exiftool-vendored'
 import { Immutable } from '@offirmo-private/ts-types'
-import { get_base_loose } from '@offirmo-private/state-utils'
+import { getꓽbase_loose } from '@offirmo-private/state-utils'
 
 import { AbsolutePath, RelativePath, SimpleYYYYMMDD } from '../../types.js'
 import { Action, ActionType } from '../actions.js'
@@ -188,7 +188,7 @@ export function on_file_found(state: Immutable<State>, parent_id: RelativePath, 
 
 // REM: called by Actions.create_action_load_notes initiated by on_file_found
 export function on_note_file_found(state: Immutable<State>, raw_data: any): Immutable<State> {
-	logger.trace(`${LIB} on_notes_found(…)`, { base: get_base_loose(raw_data) })
+	logger.trace(`${LIB} on_notes_found(…)`, { base: getꓽbase_loose(raw_data) })
 	logger.verbose(`${LIB} found previous notes, processing them…`)
 
 	const recovered_data = Notes.migrate_to_latest(raw_data)
@@ -358,7 +358,7 @@ export function backup_notes(state: Immutable<State>, mode: 'mode:intermediate' 
 	state = _enqueue_action(state, Actions.create_action_persist_notes('.'))
 
 	if (mode === 'mode:final') {
-		const year_folder_states = get_all_folders(state).filter(fstate => fstate.type === Folder.Type.year)
+		const year_folder_states = getꓽall_folders(state).filter(fstate => fstate.type === Folder.Type.year)
 		year_folder_states.forEach(fstate => {
 			state = _enqueue_action(state, Actions.create_action_persist_notes(fstate.id))
 		})
@@ -447,13 +447,13 @@ function _on_file_notes_recovered(state: Immutable<State>, file_id: FileId, reco
 function _consolidate_notes_between_persisted_regenerated_and_duplicates(state: Immutable<State>): Immutable<State> {
 	logger.trace(`${LIB} _consolidate_notes_between_persisted_regenerated_and_duplicates()…`)
 
-	const all_media_hashes = get_all_media_files(state).reduce((acc, file_state) => {
+	const all_media_hashes = getꓽall_media_files(state).reduce((acc, file_state) => {
 		const { current_hash } = file_state
 		assert(current_hash, `_consolidate_notes_between_persisted_regenerated_and_duplicates: should have current hash`)
 		acc.add(current_hash)
 		return acc
 	}, new Set<FileHash>())
-	const file_ids_by_hash = get_file_ids_by_hash(state)
+	const file_ids_by_hash = getꓽfile_ids_by_hash(state)
 
 	all_media_hashes.forEach(hash => {
 		logger.trace(`_consolidate_notes_between_persisted_regenerated_and_duplicates…() processing ${hash}`)
@@ -529,12 +529,12 @@ function _consolidate_folders_by_demoting_and_de_overlapping(state: Immutable<St
 	state = { ...state, folders }
 
 	logger.debug(`${LIB} _consolidate_folders_by_demoting_and_de_overlapping()… intermediate 1 =\n`
-		+ get_all_folder_ids(state).map(id => Folder.to_string(folders[id])).join('\n')
+		+ getꓽall_folder_ids(state).map(id => Folder.to_string(folders[id])).join('\n')
 	)
 
 	// demote event folders with no dates
 	folders = { ...state.folders }
-	let all_event_folder_ids = get_all_event_folder_ids(state)
+	let all_event_folder_ids = getꓽall_event_folder_ids(state)
 	all_event_folder_ids.forEach(id => {
 		const folder = folders[id]
 		if (!Folder.get_event_range(folder)) {
@@ -549,11 +549,11 @@ function _consolidate_folders_by_demoting_and_de_overlapping(state: Immutable<St
 	state = { ...state, folders }
 
 	logger.debug(`${LIB} _consolidate_folders_by_demoting_and_de_overlapping()… intermediate 2 =\n`
-		+ get_all_folder_ids(state).map(id => Folder.to_string(folders[id])).join('\n')
+		+ getꓽall_folder_ids(state).map(id => Folder.to_string(folders[id])).join('\n')
 	)
 
 	// demote non-canonical or overlapping folder events but create the canonical ones
-	all_event_folder_ids = get_all_event_folder_ids(state)
+	all_event_folder_ids = getꓽall_event_folder_ids(state)
 	// first get all the start dates + demote conflictings
 	const event_folders_by_start_date‿symd = all_event_folder_ids.reduce((acc, id) => {
 		const candidate_folder_state = folders[id]
@@ -641,7 +641,7 @@ export function clean_up_duplicates(state: Immutable<State>): Immutable<State> {
 	logger.trace(`${LIB} clean_up_duplicates()…`)
 	logger.verbose(`${LIB} Detecting duplicates and cleaning the lower ranked copies…`)
 
-	const file_ids_by_hash = get_file_ids_by_hash(state)
+	const file_ids_by_hash = getꓽfile_ids_by_hash(state)
 
 	const files = {
 		...state.files,
@@ -680,7 +680,7 @@ export function normalize_files_in_place(state: Immutable<State>): Immutable<Sta
 	logger.trace(`${LIB} normalize_files_in_place()…`)
 	logger.verbose(`${LIB} Normalizing files in-place…`)
 
-	const all_files = get_all_files_except_meta(state)
+	const all_files = getꓽall_files_except_meta(state)
 	all_files.forEach(file_state => {
 		state = _enqueue_action(state, Actions.create_action_normalize_file(file_state.id))
 	})
@@ -712,7 +712,7 @@ export function ensure_structural_dirs_are_present(state: Immutable<State>): Imm
 export function move_all_files_to_their_ideal_location(state: Immutable<State>): Immutable<State> {
 	logger.trace(`${LIB} move_all_files_to_their_ideal_location()…`)
 
-	const all_file_ids = get_all_file_ids(state)
+	const all_file_ids = getꓽall_file_ids(state)
 
 	all_file_ids.forEach(id => {
 		if (File.is_notes(state.files[id])) {
@@ -720,7 +720,7 @@ export function move_all_files_to_their_ideal_location(state: Immutable<State>):
 			return
 		}
 
-		const target_id = get_ideal_file_relative_path(state, id)
+		const target_id = getꓽideal_file_relative_path(state, id)
 		assert(target_id.includes(path.sep), `move_all_files_to_their_ideal_location() unexpected ${id}`)
 		if (id === target_id) {
 			logger.silly(`- DB.MTIL: "${id}" = is already in ideal location`)
@@ -738,7 +738,7 @@ export function move_all_files_to_their_ideal_location(state: Immutable<State>):
 export function clean_non_canonical_notes(state: Immutable<State>): Immutable<State> {
 	logger.trace(`${LIB} clean_misplaced_notes()…`)
 
-	const notes_states = get_all_files(state)
+	const notes_states = getꓽall_files(state)
 		.filter(state => File.is_notes(state))
 
 	notes_states.forEach(notes_state => {
@@ -767,7 +767,7 @@ export function delete_empty_folders_recursively(state: Immutable<State>, target
 	logger.trace(`${LIB} delete_empty_folders_recursively(target_depth = ${target_depth})…`)
 	logger.verbose(`${LIB} deleting empty folders at depth ${target_depth}…`)
 
-	const folder_states_at_depth: Immutable<Folder.State>[] = get_all_folders(state)
+	const folder_states_at_depth: Immutable<Folder.State>[] = getꓽall_folders(state)
 		.filter(folder_state => Folder.get_depth(folder_state) === target_depth)
 
 	folder_states_at_depth.forEach(folder_state => {

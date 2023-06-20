@@ -32,7 +32,7 @@ import {
 import * as File from '../file/index.js'
 import './__test_shared.js'
 import { ALL_MEDIA_DEMOS } from '../../__test_shared/real_files/index.js'
-import { get_test_single_file_state_generator } from '../../__test_shared/utils.js'
+import { getꓽtest_single_file_state_generator } from '../../__test_shared/utils.js'
 import * as BetterDateLib from '../../services/better-date.js'
 
 /////////////////////
@@ -56,7 +56,7 @@ describe(`${LIB} - folder state`, function() {
 
 						state = on_fs_exploration_done(state)
 
-						const begin_date = get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
+						const begin_date = getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 						expect(begin_date).to.be.null
 					})
 				})
@@ -67,7 +67,7 @@ describe(`${LIB} - folder state`, function() {
 						let state = create('2014-541')
 						state = on_fs_exploration_done(state)
 
-						const begin_date = get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
+						const begin_date = getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 						expect(begin_date).to.be.null
 					})
 				})
@@ -79,7 +79,7 @@ describe(`${LIB} - folder state`, function() {
 					let state = create('20140803 - holidays')
 					state = on_fs_exploration_done(state)
 
-					const begin_date = get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
+					const begin_date = getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 					expect(begin_date).not.to.be.null
 					expect(get_human_readable_timestamp_auto(begin_date!, 'tz:embedded')).to.equal('2014-08-03')
 				})
@@ -88,19 +88,19 @@ describe(`${LIB} - folder state`, function() {
 					let state = create('20140803 - BackuP ')
 					state = on_fs_exploration_done(state)
 
-					let begin_date = get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
+					let begin_date = getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 					expect(begin_date).to.be.null
 
 					state = create('20140803 - SauveGarde ')
 					state = on_fs_exploration_done(state)
 
-					begin_date = get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
+					begin_date = getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 					expect(begin_date).to.be.null
 
 					state = create('20140803 - imPort')
 					state = on_fs_exploration_done(state)
 
-					begin_date = get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
+					begin_date = getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 					expect(begin_date).to.be.null
 				})
 
@@ -108,7 +108,7 @@ describe(`${LIB} - folder state`, function() {
 					let state = create('holidays 2014-08-03')
 					state = on_fs_exploration_done(state)
 
-					const begin_date = get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
+					const begin_date = getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 					expect(begin_date).not.to.be.null
 					expect(get_human_readable_timestamp_auto(begin_date!, 'tz:embedded')).to.equal('2014-08-03')
 				})
@@ -121,7 +121,7 @@ describe(`${LIB} - folder state`, function() {
 					state = on_subfile_primary_infos_gathered(state, file_state)
 					state = on_fs_exploration_done(state)
 
-					const begin_date = get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
+					const begin_date = getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 					expect(begin_date).not.to.be.null
 					expect(get_human_readable_timestamp_auto(begin_date!, 'tz:embedded')).to.equal('2018-09-01')
 				})
@@ -135,7 +135,7 @@ describe(`${LIB} - folder state`, function() {
 
 					state = on_fs_exploration_done(state)
 
-					const begin_date = get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
+					const begin_date = getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 					expect(begin_date).to.be.null // since the basename date is unrelated to the range start
 				})
 
@@ -152,7 +152,7 @@ describe(`${LIB} - folder state`, function() {
 					state = on_fs_exploration_done(state)
 
 					// keep the folder as event
-					const begin_date = get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
+					const begin_date = getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 					expect(begin_date, 'begin date').not.to.be.null
 					expect(get_human_readable_timestamp_auto(begin_date!, 'tz:embedded')).to.equal('2015-08-03')
 				})
@@ -160,7 +160,7 @@ describe(`${LIB} - folder state`, function() {
 		})
 
 		describe('is_current_basename_intentful_of_event_start()', function() {
-			// implicitly tested through get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources()
+			// implicitly tested through getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources()
 		})
 
 		describe('get_event_range() + is_looking_like_a_backup()', function() {
@@ -172,7 +172,7 @@ describe(`${LIB} - folder state`, function() {
 				it('should NOT complain', () => {
 					let state = create('holiday 2018-09-04')
 
-					expect(() => get_event_range(state)).not.to.throw()
+					expect(() => getꓽevent_range(state)).not.to.throw()
 				})
 			})
 
@@ -186,10 +186,10 @@ describe(`${LIB} - folder state`, function() {
 						let file_state_01 = await ALL_MEDIA_DEMOS[0].get_phase1_state()
 						/*console.log(file_state_01.current_exif_data!.SourceFile)
 						console.log((() => {
-							const m = get_best_creation_dateⵧfrom_current_data‿meta(file_state_01)
+							const m = getꓽbest_creation_dateⵧfrom_current_data‿meta(file_state_01)
 							return {
 								...m,
-								candidate: get_debug_representation(m.candidate)
+								candidate: getꓽdebug_representation(m.candidate)
 							}
 						})())*/
 						state = on_subfile_found(state, file_state_01)
@@ -214,10 +214,10 @@ describe(`${LIB} - folder state`, function() {
 							} as any,
 						}
 						/*console.log((() => {
-							const m = get_best_creation_dateⵧfrom_current_data‿meta(file_state_02)
+							const m = getꓽbest_creation_dateⵧfrom_current_data‿meta(file_state_02)
 							return {
 								...m,
-								candidate: get_debug_representation(m.candidate)
+								candidate: getꓽdebug_representation(m.candidate)
 							}
 						})())*/
 						state = on_subfile_found(state, file_state_02)
@@ -247,7 +247,7 @@ describe(`${LIB} - folder state`, function() {
 							state = on_fs_exploration_done(state)
 
 							expect(is_looking_like_a_backup(state), 'is_looking_like_a_backup').to.be.false
-							expect(() => get_event_range(state)).to.throw('too big')
+							expect(() => getꓽevent_range(state)).to.throw('too big')
 						})
 					})
 				})
@@ -274,7 +274,7 @@ describe(`${LIB} - folder state`, function() {
 
 							let state = create('2018-11-23 holiday')
 
-							let stategen = get_test_single_file_state_generator()
+							let stategen = getꓽtest_single_file_state_generator()
 							stategen.inputs.dateⵧfsⵧcurrent‿tms = 1234 // precondition for the test
 							let file_state = stategen.get_phase1_state()
 							state = on_subfile_found(state, file_state)
@@ -313,7 +313,7 @@ describe(`${LIB} - folder state`, function() {
 							state = on_subfile_primary_infos_gathered(state, file_state)
 							state = on_fs_exploration_done(state)
 
-							const hints = get_neighbor_primary_hints(state)
+							const hints = getꓽneighbor_primary_hints(state)
 							expect(hints.tz, 'tz in hints').to.equal('Asia/Shanghai') // aggregated from the file
 							file_state = File.on_info_read__current_neighbors_primary_hints(file_state, hints)
 							file_state = File.on_notes_recovered(file_state, null)
@@ -395,12 +395,12 @@ describe(`${LIB} - folder state`, function() {
 
 					const has_date_in_basename = !!get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 
-					//console.log(tc, { state, has_date_in_basename, ebfb: get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state) })
+					//console.log(tc, { state, has_date_in_basename, ebfb: getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state) })
 					if (!has_date_in_basename) {
 						if (tc !== '- inbox') {
 							expect(state.type).to.equal('event')
-							expect(() => get_ideal_basename(state), tc).to.throw('should have')
-							expect(() => get_ideal_basename(state), tc).to.throw('range')
+							expect(() => getꓽideal_basename(state), tc).to.throw('should have')
+							expect(() => getꓽideal_basename(state), tc).to.throw('range')
 
 							// TODO review use reducer?
 							state = {

@@ -4,17 +4,17 @@ import { Immutable } from '@offirmo-private/ts-types'
 import { exiftool } from 'exiftool-vendored'
 
 import { LIB } from './consts.js'
-import { get_params, Params } from './params.js'
+import { getꓽparams, Params } from './params.js'
 import * as DB from './state/db/index.js'
 import logger from './services/logger.js'
-import { exec_pending_actions_recursively_until_no_more, get_report_to_string } from './services/actions.js'
+import { exec_pending_actions_recursively_until_no_more, getꓽreport_to_string } from './services/actions.js'
 
 console.log(`******* ${LIB.toUpperCase()} *******`)
 
 ////////////////////////////////////
 
 
-async function sort_all_medias(PARAMS: Immutable<Params> = get_params()) {
+async function sort_all_medias(PARAMS: Immutable<Params> = getꓽparams()) {
 	// for debug
 	const up_to = 'cleanup' as 'explore_and_take_notes' | 'deduplicate' | 'normalize' | 'move' | 'cleanup'
 
@@ -92,7 +92,7 @@ async function sort_all_medias(PARAMS: Immutable<Params> = get_params()) {
 
 	logger.verbose('Sort up to: "' + up_to + '" done.')
 	//logger.info('DB = ' + DB.to_string(db))
-	console.log('\nactions done: ' + get_report_to_string())
+	console.log('\nactions done: ' + getꓽreport_to_string())
 }
 
 ////////////////////////////////////

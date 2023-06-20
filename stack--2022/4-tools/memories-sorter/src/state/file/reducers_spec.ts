@@ -111,13 +111,13 @@ describe(`${LIB} - file (state)`, function() {
 					const basename = splitted.pop() as string
 					const parent_relpath = splitted.join(path.sep)
 
-					const stategen = get_test_single_file_state_generator()
+					const stategen = getꓽtest_single_file_state_generator()
 					stategen.inputs.basenameⵧcurrent = basename
 					stategen.inputs.parent_pathⵧcurrent‿relative = parent_relpath ?? stategen.inputs.parent_pathⵧcurrent‿relative
-					stategen.inputs.dateⵧfsⵧcurrent‿tms = get_timestamp_utc_ms_from(time)
+					stategen.inputs.dateⵧfsⵧcurrent‿tms = getꓽtimestamp_utc_ms_from(time)
 					stategen.inputs.dateⵧexif = _get_exif_datetime(time)
 					stategen.inputs.notes = 'auto'
-					stategen.inputs.autoǃdate__fs_ms__historical = get_timestamp_utc_ms_from(EARLIER_CREATION_DATE)
+					stategen.inputs.autoǃdate__fs_ms__historical = getꓽtimestamp_utc_ms_from(EARLIER_CREATION_DATE)
 
 					let state = stategen.create_state()
 					expect(state.id, 'create_demo internal').to.equal(id)
@@ -163,7 +163,7 @@ describe(`${LIB} - file (state)`, function() {
 							historical: {
 								basename: 'original.jpg',
 								parent_path: 'original_parent_path',
-								fs_bcd_tms: get_timestamp_utc_ms_from(EARLIER_CREATION_DATE),
+								fs_bcd_tms: getꓽtimestamp_utc_ms_from(EARLIER_CREATION_DATE),
 								neighbor_hints: {},
 								exif_orientation: undefined,
 								trailing_extra_bytes_cleaned: undefined,
@@ -222,7 +222,7 @@ describe(`${LIB} - file (state)`, function() {
 								historical: {
 									basename: 'original.jpg',
 									parent_path: 'original_parent_path',
-									fs_bcd_tms: get_timestamp_utc_ms_from(EARLIER_CREATION_DATE),
+									fs_bcd_tms: getꓽtimestamp_utc_ms_from(EARLIER_CREATION_DATE),
 									neighbor_hints: {},
 									exif_orientation: 3,
 									trailing_extra_bytes_cleaned: undefined,
@@ -312,7 +312,7 @@ describe(`${LIB} - file (state)`, function() {
 									..._s1.notes,
 									historical: {
 										..._s1.notes.historical,
-										fs_bcd_tms: get_timestamp_utc_ms_from(EARLIER_CREATION_DATE), // selected from s3 thanks to neighbor_hints.fs_reliability
+										fs_bcd_tms: getꓽtimestamp_utc_ms_from(EARLIER_CREATION_DATE), // selected from s3 thanks to neighbor_hints.fs_reliability
 										parent_path: 'original_parent_path',
 										neighbor_hints: {
 											fs_reliability: 'reliable',
@@ -394,8 +394,8 @@ describe(`${LIB} - file (state)`, function() {
 						const s2 = create_demo('foo/bar.jpg', EARLIER_CREATION_DATE)
 						const s3 = create_demo()
 						/*console.log({
-							s1: get_best_creation_date(s1),
-							s2: get_best_creation_date(s2),
+							s1: getꓽbest_creation_date(s1),
+							s2: getꓽbest_creation_date(s2),
 						})*/
 
 						const s = merge_duplicates(s1, s2, s3)

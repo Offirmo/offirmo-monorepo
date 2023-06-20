@@ -30,14 +30,14 @@ Interface change from Random.js
 
 
 
-import { get_engine, RNGEngine } from '@offirmo/random'
-const rng = get_engine.for_unit_tests()
-const rng = get_engine.for_unit_tests()
+import { getꓽengine, RNGEngine } from '@offirmo/random'
+const rng = getꓽengine.for_unit_tests()
+const rng = getꓽengine.for_unit_tests()
 
-import { get_random, RNGEngine } from '@offirmo/random'
-const gen = get_random.generator_of.integer.between(1, 1000)
-const gen = get_random.picker.of(ARMOR_BASES)
-const gen get_random.generator_of.integer.in_interval(BASE_STRENGTH_INTERVAL_BY_QUALITY[quality]!)
+import { getꓽrandom, RNGEngine } from '@offirmo/random'
+const gen = getꓽrandom.generator_of.integer.between(1, 1000)
+const gen = getꓽrandom.picker.of(ARMOR_BASES)
+const gen getꓽrandom.generator_of.integer.in_interval(BASE_STRENGTH_INTERVAL_BY_QUALITY[quality]!)
 v = gen(rng)
 
 

@@ -1,1 +1,1 @@
-export { get_logger } from '@tbrpg/definitions'
+export { getꓽlogger } from '@tbrpg/definitions'

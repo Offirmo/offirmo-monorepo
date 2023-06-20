@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import path from 'path'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { get_test_single_file_DB_state_generator } from '../../__test_shared/utils.js'
+import { getꓽtest_single_file_DB_state_generator } from '../../__test_shared/utils.js'
 import { LIB } from '../../consts.js'
 import * as Notes from '../notes/index.js'
 import {
@@ -43,7 +43,7 @@ describe(`${LIB} - DB (root) state`, function() {
 	describe('selectors', function() {
 
 		const CREATION_DATE = create_better_date('tz:auto', 2017, 10, 20, 5, 1, 44, 625)
-		const CREATION_DATE_MS = get_timestamp_utc_ms_from(CREATION_DATE)
+		const CREATION_DATE_MS = getꓽtimestamp_utc_ms_from(CREATION_DATE)
 		//console.log(state.queue)
 		//console.log(to_string(state))
 
@@ -98,9 +98,9 @@ describe(`${LIB} - DB (root) state`, function() {
 		describe('get_ideal_file_relative_path()', function() {
 			// intentionally pick a SUNDAY to showcase the auto-weekend
 			const CREATION_DATE = create_better_date('tz:auto', 2016, 11, 20, 12, 12, 0, 12)
-			const CREATION_DATE_MS = get_timestamp_utc_ms_from(CREATION_DATE)
+			const CREATION_DATE_MS = getꓽtimestamp_utc_ms_from(CREATION_DATE)
 
-			const stategen = get_test_single_file_DB_state_generator()
+			const stategen = getꓽtest_single_file_DB_state_generator()
 			beforeEach(() => {
 				stategen.reset()
 				stategen.inputs.file.dateⵧfsⵧcurrent‿tms = CREATION_DATE_MS

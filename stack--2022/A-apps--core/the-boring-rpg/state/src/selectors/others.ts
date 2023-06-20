@@ -18,8 +18,8 @@ import { AchievementSnapshot } from '@tbrpg/state--progress'
 /////////////////////
 
 import { UState } from '../types.js'
-import { get_engagement_message } from '../data/engagement/index.js'
-import { get_achievement_snapshot_by_temporary_id } from './achievements.js'
+import { getꓽengagement_message } from '../data/engagement/index.js'
+import { getꓽachievement_snapshot_by_temporary_id } from './achievements.js'
 
 /////////////////////
 
@@ -44,7 +44,7 @@ function find_element(u_state: Immutable<UState>, uuid: UUID): Immutable<Element
 	// only inventory for now
 	let possible_achievement: AchievementSnapshot | null = null
 	try {
-		possible_achievement = get_achievement_snapshot_by_temporary_id(u_state, uuid)
+		possible_achievement = getꓽachievement_snapshot_by_temporary_id(u_state, uuid)
 	}
 	catch (err) {
 		// not found, swallow
@@ -53,25 +53,25 @@ function find_element(u_state: Immutable<UState>, uuid: UUID): Immutable<Element
 }
 
 // TODO code duplication
-function get_oldest_pending_flow_engagement(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: PendingEngagement } | null {
-	const pe = get_oldest_queued_flow(u_state.engagement)
+function getꓽoldest_pending_flow_engagement(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: PendingEngagement } | null {
+	const pe = getꓽoldest_queued_flow(u_state.engagement)
 	if (!pe)
 		return null
 
 	return {
 		uid: pe.uid,
-		$doc: get_engagement_message(pe),
+		$doc: getꓽengagement_message(pe),
 		pe,
 	}
 }
-function get_oldest_pending_non_flow_engagement(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: PendingEngagement } | null {
-	const pe = get_oldest_queued_non_flow(u_state.engagement)
+function getꓽoldest_pending_non_flow_engagement(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: PendingEngagement } | null {
+	const pe = getꓽoldest_queued_non_flow(u_state.engagement)
 	if (!pe)
 		return null
 
 	return {
 		uid: pe.uid,
-		$doc: get_engagement_message(pe),
+		$doc: getꓽengagement_message(pe),
 		pe,
 	}
 }

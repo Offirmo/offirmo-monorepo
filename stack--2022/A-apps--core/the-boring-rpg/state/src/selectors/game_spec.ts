@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { enforce_immutability } from '@offirmo-private/state-utils'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 
@@ -24,7 +24,7 @@ describe(`${LIB} - selectors - game`, function() {
 		it('should return class strings', () => {
 			const { u_state } = enforce_immutability<State>(create())
 
-			const klasses = get_available_classes(u_state)
+			const klasses = getꓽavailable_classes(u_state)
 
 			expect(klasses).to.be.an('array')
 			klasses.forEach(k => {
@@ -36,7 +36,7 @@ describe(`${LIB} - selectors - game`, function() {
 		it('should filter out novice', () => {
 			const { u_state } = enforce_immutability<State>(create())
 
-			const klasses = get_available_classes(u_state)
+			const klasses = getꓽavailable_classes(u_state)
 
 			expect(klasses.includes(CharacterClass.novice)).to.be.false
 		})
@@ -47,19 +47,19 @@ describe(`${LIB} - selectors - game`, function() {
 		it('should return a correct boolean', () => {
 			let state = enforce_immutability<State>(create())
 
-			expect(will_next_play_be_good_at(state, get_UTC_timestamp_ms())).to.be.true
+			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp_ms())).to.be.true
 
 			state = _lose_all_energy(state)
-			expect(will_next_play_be_good_at(state, get_UTC_timestamp_ms())).to.be.false
+			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp_ms())).to.be.false
 		})
 
 		it('should properly take into account the given time', () => {
 			let state = enforce_immutability<State>(create())
 
 			state = _lose_all_energy(state)
-			expect(will_next_play_be_good_at(state, get_UTC_timestamp_ms())).to.be.false
+			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp_ms())).to.be.false
 
-			expect(will_next_play_be_good_at(state, get_UTC_timestamp_ms() + 4 * 3600 * 1000)).to.be.true
+			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp_ms() + 4 * 3600 * 1000)).to.be.true
 		})
 	})
 })

@@ -11,6 +11,6 @@ export function inject_lib__chalk(chalk_lib: ChalkInstance) {
 	chalk = chalk_lib
 }
 
-export function get_lib__chalk(): ChalkInstance | undefined {
+export function getꓽlib__chalk(): ChalkInstance | undefined {
 	return chalk
 }

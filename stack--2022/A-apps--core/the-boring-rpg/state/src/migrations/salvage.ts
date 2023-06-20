@@ -3,7 +3,7 @@
 import { Enum } from 'typescript-string-enums'
 
 import { Immutable, JSONObject, JSON } from '@offirmo-private/ts-types'
-import { get_schema_version_loose } from '@offirmo-private/state-utils'
+import { getꓽschema_version_loose } from '@offirmo-private/state-utils'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 import { CharacterClass } from '@tbrpg/state--character'
@@ -11,7 +11,7 @@ import * as EngagementState from '@oh-my-rpg/state-engagement'
 
 import { LIB } from '../consts.js'
 import { State } from '../types.js'
-import { get_logger } from '../services/logger.js'
+import { getꓽlogger } from '../services/logger.js'
 import {
 	create,
 	reseed,
@@ -34,13 +34,13 @@ function coerce_to_number_or_zero(x: any): number {
 	return Number.isNaN(res) ? 0 : res
 }
 
-const get_name_v4 = mb('avatar', 'name')
-const get_name_v9 = mb('u_state', 'avatar', 'name')
-const get_name = (ls: any) => get_name_v9(ls) || get_name_v4(ls)
+const getꓽname_v4 = mb('avatar', 'name')
+const getꓽname_v9 = mb('u_state', 'avatar', 'name')
+const getꓽname = (ls: any) => getꓽname_v9(ls) || getꓽname_v4(ls)
 
-const get_class_v4 = mb('avatar', 'klass')
-const get_class_v9 = mb('u_state', 'avatar', 'klass')
-const get_class = (ls: any) => get_class_v9(ls) || get_class_v4(ls)
+const getꓽclass_v4 = mb('avatar', 'klass')
+const getꓽclass_v9 = mb('u_state', 'avatar', 'klass')
+const getꓽclass = (ls: any) => getꓽclass_v9(ls) || getꓽclass_v4(ls)
 
 const get_seed_v4 = mb('prng', 'seed')
 const get_seed_v9 = mb('u_state', 'prng', 'seed')

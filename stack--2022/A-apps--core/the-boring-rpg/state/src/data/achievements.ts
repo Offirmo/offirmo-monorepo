@@ -4,7 +4,7 @@ import { ItemQuality, InventorySlot, ITEM_QUALITIES_TO_INT, ITEM_SLOTS } from '@
 import { appraise_sell_value, appraise_power } from '@tbrpg/logic--shop'
 import { AchievementStatus, AchievementDefinition } from '@tbrpg/state--progress'
 import { CharacterClass, DEFAULT_AVATAR_NAME } from '@tbrpg/state--character'
-import { get_item_in_slot } from '@tbrpg/state--inventory'
+import { getꓽitem_in_slot } from '@tbrpg/state--inventory'
 import { Weapon, matches as matches_weapon } from '@tbrpg/logic-weapons'
 import { Armor, matches as matches_armor } from '@tbrpg/logic-armors'
 import { ALL_GOOD_ADVENTURE_ARCHETYPES } from '@tbrpg/logic-adventures'
@@ -18,7 +18,7 @@ import { STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC } from '../reducers/create.js
 function _are_all_slots_equipped_with_quality_higher_or_equal_than(u_state: Immutable<UState>, quality: ItemQuality): boolean {
 	return ITEM_SLOTS.every(
 		slot => {
-			const item = get_item_in_slot(u_state.inventory, slot)
+			const item = getꓽitem_in_slot(u_state.inventory, slot)
 			return item ? ITEM_QUALITIES_TO_INT[item.quality] <= ITEM_QUALITIES_TO_INT[quality] : false
 		},
 	)
@@ -26,7 +26,7 @@ function _are_all_slots_equipped_with_quality_higher_or_equal_than(u_state: Immu
 function _get_combined_equipped_items_power(u_state: Immutable<UState>): number {
 	return ITEM_SLOTS.reduce(
 		(acc, slot) => {
-			const item = get_item_in_slot(u_state.inventory, slot)
+			const item = getꓽitem_in_slot(u_state.inventory, slot)
 			return acc + (item ? appraise_power(item) : 0)
 		},
 		0,
@@ -1282,7 +1282,7 @@ const RAW_ENTRIES: Immutable<Partial<AchievementDefinition<UState>>>[] = [
 const UID_CHECK: Set<string> = new Set()
 const ENTRIES: Immutable<AchievementDefinition<UState>>[] = RAW_ENTRIES
 	.filter(raw => raw.name && raw.description && raw.get_status)
-	.map(({name, icon, description, lore, get_status, get_completion_rate}, index) => {
+	.map(({name, icon, description, lore, getꓽstatus, getꓽcompletion_rate}, index) => {
 		if (UID_CHECK.has(name!))
 			throw new Error(`Achievements: duplicate definition for "${name}"!`)
 		UID_CHECK.add(name!)
@@ -1293,7 +1293,7 @@ const ENTRIES: Immutable<AchievementDefinition<UState>>[] = RAW_ENTRIES
 			name: name!,
 			description: description!,
 			lore,
-			get_status: get_status!,
+			get_status: getꓽstatus!,
 			get_completion_rate,
 		} as AchievementDefinition<UState>
 	})

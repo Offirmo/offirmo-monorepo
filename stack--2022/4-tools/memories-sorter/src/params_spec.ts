@@ -41,7 +41,7 @@ describe('Params', function() {
 		})
 
 		describe('get_default_timezone()', function() {
-			let test_params: Params = get_params()
+			let test_params: Params = getꓽparams()
 			const now_utc_ms = Number(new Date())
 
 			beforeEach(() => {
@@ -51,7 +51,7 @@ describe('Params', function() {
 
 			it('should work - empty array', () => {
 				const system_tz = _UNSAFE_CURRENT_SYSTEM_TIMEZONE
-				const default_tz = get_default_timezone(now_utc_ms, test_params)
+				const default_tz = getꓽdefault_timezone(now_utc_ms, test_params)
 				//console.log({ test_params, system_tz, default_tz })
 				expect(default_tz).to.equal(system_tz)
 			})
@@ -80,24 +80,24 @@ describe('Params', function() {
 				//console.log({ test_params, dt: test_params.default_timezones, _UNSAFE_CURRENT_SYSTEM_TIMEZONE })
 
 				// before 1970 = negative timestamp
-				const default_tz_1900 = get_default_timezone(Number(Date.UTC(1900, 0)), test_params)
+				const default_tz_1900 = getꓽdefault_timezone(Number(Date.UTC(1900, 0)), test_params)
 				expect(default_tz_1900, '1900').to.equal('Europe/Paris')
 
-				const default_tz_2001 = get_default_timezone(Number(Date.UTC(2001, 0)), test_params)
+				const default_tz_2001 = getꓽdefault_timezone(Number(Date.UTC(2001, 0)), test_params)
 				expect(default_tz_2001, '2001').to.equal('Europe/Paris')
 
-				const default_tz_2009_08_09 = get_default_timezone(Number(Date.UTC(2009, 7, 9)), test_params)
+				const default_tz_2009_08_09 = getꓽdefault_timezone(Number(Date.UTC(2009, 7, 9)), test_params)
 				expect(default_tz_2009_08_09).to.equal('Europe/Paris')
-				const default_tz_2009_08_10 = get_default_timezone(Number(Date.UTC(2009, 7, 10)), test_params)
+				const default_tz_2009_08_10 = getꓽdefault_timezone(Number(Date.UTC(2009, 7, 10)), test_params)
 				expect(default_tz_2009_08_10).to.equal('Asia/Bangkok')
 
-				const default_tz_2010_07_08 = get_default_timezone(Number(Date.UTC(2010, 6, 8)), test_params)
+				const default_tz_2010_07_08 = getꓽdefault_timezone(Number(Date.UTC(2010, 6, 8)), test_params)
 				expect(default_tz_2010_07_08).to.equal('Europe/Paris')
 
-				const default_tz_2018 = get_default_timezone(Number(Date.UTC(2018, 0)), test_params)
+				const default_tz_2018 = getꓽdefault_timezone(Number(Date.UTC(2018, 0)), test_params)
 				expect(default_tz_2018, '2018').to.equal('Australia/Sydney')
 
-				const default_tz_now = get_default_timezone(now_utc_ms, test_params)
+				const default_tz_now = getꓽdefault_timezone(now_utc_ms, test_params)
 				expect(default_tz_now, 'now').to.equal('Australia/Sydney')
 			})
 
@@ -110,7 +110,7 @@ describe('Params', function() {
 				].sort((a, b) => a.date_utc_ms - b.date_utc_ms)
 				//console.log({ test_params, dt: test_params.default_timezones, system_tz })
 
-				const default_tz_now = get_default_timezone(now_utc_ms, test_params)
+				const default_tz_now = getꓽdefault_timezone(now_utc_ms, test_params)
 				// TODO spy logger.warn
 			})
 		})

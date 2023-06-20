@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { get_RNGⵧISAAC32 } from '@offirmo/random'
+import { getꓽRNGⵧISAAC32 } from '@offirmo/random'
 
 import {
 	UUID, WithUUID,
@@ -21,7 +21,7 @@ describe('@offirmo-private/uuid - utils', function() {
 
 			it('should turn it into a fixed value', function () {
 
-				const rng = get_RNGⵧISAAC32().seed(123)
+				const rng = getꓽRNGⵧISAAC32().seed(123)
 
 				const out: Readonly<Test> = {
 					uuid: generate_uuid({rng}),

@@ -15,7 +15,7 @@ import * as MetaState from '@oh-my-rpg/state-meta'
 
 import { LIB, SCHEMA_VERSION } from '../consts.js'
 import { migrate_to_latest } from './index.js'
-import { get_lib_SEC } from '../services/sec.js'
+import { getꓽlib_SEC } from '../services/sec.js'
 
 import { create } from '../index.js'
 import { DEMO_STATE } from '../examples.js'
@@ -34,7 +34,7 @@ describe(`${LIB} - schema migration`, function() {
 				//dump_prettified_any('fresh state', new_state)
 				return new_state
 			},
-			migrate_to_latest: migrate_to_latest.bind(null, get_lib_SEC()),
+			migrate_to_latest: migrate_to_latest.bind(null, getꓽlib_SEC()),
 			import_meta_url: import.meta.url, // for resolving the path below
 			relative_dir_path: '../../../src/migrations/migrations_of_blank_state_specs',
 			describe, context, it, expect,
@@ -66,7 +66,7 @@ describe(`${LIB} - schema migration`, function() {
 			migration_hints_for_chaining: MIGRATION_HINTS_FOR_DEMO_STATE,
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA: DEMO_STATE,
-			migrate_to_latest: migrate_to_latest.bind(null, get_lib_SEC()),
+			migrate_to_latest: migrate_to_latest.bind(null, getꓽlib_SEC()),
 			import_meta_url: import.meta.url, // for resolving the path below
 			relative_dir_path: '../../../src/migrations/migrations_of_active_state_specs',
 			describe, context, it, expect,

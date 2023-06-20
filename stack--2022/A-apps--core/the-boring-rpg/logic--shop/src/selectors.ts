@@ -56,12 +56,12 @@ function appraise_power_normalized(item: Immutable<Item>, potential: boolean = t
 
 const ARMOR_DMG_REDUCTION_TO_COINS_RATIO = 1
 function appraise_armor_base_value(armor: Readonly<Armor>): number {
-	return get_ultimate_medium_damage_reduction(armor) * ARMOR_DMG_REDUCTION_TO_COINS_RATIO
+	return getꓽultimate_medium_damage_reduction(armor) * ARMOR_DMG_REDUCTION_TO_COINS_RATIO
 }
 
 const WEAPON_DMG_TO_COINS_RATIO = 1.5
 function appraise_weapon_base_value(weapon: Readonly<Weapon>): number {
-	return get_ultimate_medium_damage(weapon) * WEAPON_DMG_TO_COINS_RATIO
+	return getꓽultimate_medium_damage(weapon) * WEAPON_DMG_TO_COINS_RATIO
 }
 
 const SELL_RATIO = .25

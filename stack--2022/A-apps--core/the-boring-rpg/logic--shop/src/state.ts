@@ -1,6 +1,6 @@
 /////////////////////
 
-import { get_engine, RNGEngine } from '@offirmo/random'
+import { getꓽengine, RNGEngine } from '@offirmo/random'
 import { Item, InventorySlot } from '@tbrpg/definitions'
 import {
 	Weapon,
@@ -23,7 +23,7 @@ function create(rng: RNGEngine): void {
 
 // for demo purpose, all attributes having the same probability + also random enhancement level
 function generate_random_demo_shop(): void {
-	const rng = get_engine.good_enough()
+	const rng = getꓽengine.good_enough()
 	return create(rng)
 }
 

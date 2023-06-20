@@ -464,7 +464,7 @@ describe(`${LIB} - (base)name parser`, function() {
 			const { _comment, copy_index } = expected
 
 			it(ꓺ(`should correctly extract the copy index #${copy_index} from`, `"${filename}"`, _comment), () => {
-				const copy_index = get_file_basename_copy_index(filename)
+				const copy_index = getꓽfile_basename_copy_index(filename)
 
 				expect( copy_index ).to.equal(expected.copy_index)
 			})

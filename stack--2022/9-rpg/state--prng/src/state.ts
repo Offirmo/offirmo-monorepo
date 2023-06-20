@@ -2,12 +2,12 @@
 
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/state-utils'
-import { Seed, get_engine, PRNGEngine, PRNGState } from '@offirmo/random'
+import { Seed, getꓽengine, PRNGEngine, PRNGState } from '@offirmo/random'
 import { generate_uuid } from '@offirmo-private/uuid'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { State } from './types.js'
-import { get_logger } from './sec.js'
+import { getꓽlogger } from './sec.js'
 
 /////////////////////
 
@@ -37,7 +37,7 @@ function auto_reseed(state: Immutable<State>, explicit_algorithm_id?: PRNGState[
 	// each engine auto-seeds with their own algo
 	// => we create a fresh engine and let it auto-seed itself
 	// ALSO this re-seeding is the opportunity to upgrade from an old PRNG algo to the current recommended one!
-	let engine = get_engine.prng.from_state({
+	let engine = getꓽengine.prng.from_state({
 		...(explicit_algorithm_id && { algorithm_id: explicit_algorithm_id }),
 	})
 

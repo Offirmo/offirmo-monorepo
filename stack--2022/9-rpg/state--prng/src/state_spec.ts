@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { get_random } from '@offirmo/random'
+import { getꓽrandom } from '@offirmo/random'
 import { xxx_test_unrandomize_element } from '@offirmo-private/uuid'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
@@ -19,7 +19,7 @@ import {
 
 describe(`${LIB} - state`, function() {
 	beforeEach(xxx_internal_reset_prng_cache)
-	const gen = get_random.generator_of.integer.between(0, 10)
+	const gen = getꓽrandom.generator_of.integer.between(0, 10)
 
 	describe('🆕  initial value', function() {
 
@@ -52,7 +52,7 @@ describe(`${LIB} - state`, function() {
 		it('should correctly persist prng state', function() {
 			let state = create()
 
-			const prng = get_prng(state)
+			const prng = getꓽprng(state)
 
 			/*
 			console.log(gen(prng))

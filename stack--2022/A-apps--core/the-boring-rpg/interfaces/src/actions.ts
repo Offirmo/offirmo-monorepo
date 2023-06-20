@@ -2,7 +2,7 @@ import { Enum } from 'typescript-string-enums'
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { UUID } from '@offirmo-private/uuid'
-import { TimestampUTCMs, get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { TimestampUTCMs, getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
 import { State } from '@tbrpg/state'
 import { CharacterClass } from '@tbrpg/state--character'
 
@@ -125,20 +125,20 @@ export type Action =
 /////////////////////
 
 // needed for some validations
-export function get_action_types(): string[] {
+export function getꓽaction_types(): string[] {
 	return Enum.keys(ActionType)
 }
 
 /////////////////////
 
-export function create_base_action(time: TimestampUTCMs = get_UTC_timestamp_ms()): BaseAction {
+export function create_base_action(time: TimestampUTCMs = getꓽUTC_timestamp_ms()): BaseAction {
 	return {
 		time,
 		expected_revisions: {},
 	}
 }
 
-export function create_action<SomeAction extends BaseAction>(attributes: Omit<SomeAction, 'time'>, time: TimestampUTCMs = get_UTC_timestamp_ms()): SomeAction {
+export function create_action<SomeAction extends BaseAction>(attributes: Omit<SomeAction, 'time'>, time: TimestampUTCMs = getꓽUTC_timestamp_ms()): SomeAction {
 	return {
 		...create_base_action(time),
 		...attributes,

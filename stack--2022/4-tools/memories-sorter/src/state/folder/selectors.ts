@@ -27,7 +27,7 @@ import {
 	Type,
 	State,
 } from './types.js'
-import { get_default_timezone, get_params, Params } from '../../params.js'
+import { getꓽdefault_timezone, getꓽparams, Params } from '../../params.js'
 
 ////////////////////////////////////
 
@@ -35,26 +35,26 @@ export const ERROR__RANGE_TOO_BIG = `Folder: range is too big!`
 
 ////////////////////////////////////
 
-export function get_current_relative_path(state: Immutable<State>): RelativePath {
+export function getꓽcurrent_relative_path(state: Immutable<State>): RelativePath {
 	return state.id
 }
 
-export function get_current_path‿pparsed(state: Immutable<State>): Immutable<path.ParsedPath> {
+export function getꓽcurrent_path‿pparsed(state: Immutable<State>): Immutable<path.ParsedPath> {
 	return pathㆍparse_memoized(get_current_relative_path(state))
 }
 
-export function get_current_basename(state: Immutable<State>): Basename {
-	return get_current_path‿pparsed(state).base
+export function getꓽcurrent_basename(state: Immutable<State>): Basename {
+	return getꓽcurrent_path‿pparsed(state).base
 }
 
-export function get_current_basename‿parsed(state: Immutable<State>): Immutable<ParseResult> {
+export function getꓽcurrent_basename‿parsed(state: Immutable<State>): Immutable<ParseResult> {
 	return parse_folder_basename(get_current_basename(state))
 }
 
-export function get_depth(data: Immutable<State> | Immutable<path.ParsedPath>): number {
+export function getꓽdepth(data: Immutable<State> | Immutable<path.ParsedPath>): number {
 	const pathㆍparsed = (data as any).base
 		? (data as Immutable<path.ParsedPath>)
-		: get_current_path‿pparsed(data as Immutable<State>)
+		: getꓽcurrent_path‿pparsed(data as Immutable<State>)
 
 	return pathㆍparsed.dir
 		? pathㆍparsed.dir.split(path.sep).length
@@ -105,8 +105,8 @@ export function _get_current_best_children_range(state: Immutable<State>): undef
 		const is_fs_valuable = _get_children_fs_reliability(state) !== 'unreliable'
 		if (is_fs_valuable) {
 			return {
-				begin: BetterDateLib.create_better_date_from_utc_tms(state.media_children_bcd_ranges.from_fsⵧcurrent.begin, get_tz(state, 'fallback:none') || 'tz:auto'),
-				end: BetterDateLib.create_better_date_from_utc_tms(state.media_children_bcd_ranges.from_fsⵧcurrent.end, get_tz(state, 'fallback:none') || 'tz:auto'),
+				begin: BetterDateLib.create_better_date_from_utc_tms(state.media_children_bcd_ranges.from_fsⵧcurrent.begin, getꓽtz(state, 'fallback:none') || 'tz:auto'),
+				end: BetterDateLib.create_better_date_from_utc_tms(state.media_children_bcd_ranges.from_fsⵧcurrent.end, getꓽtz(state, 'fallback:none') || 'tz:auto'),
 			}
 		}
 	}
@@ -114,7 +114,7 @@ export function _get_current_best_children_range(state: Immutable<State>): undef
 	return undefined
 }
 
-export const get_event_range = micro_memoize(function _get_event_range(state: Immutable<State>, ): DateRange | null | undefined {
+export const getꓽevent_range = micro_memoize(function _get_event_range(state: Immutable<State>, ): DateRange | null | undefined {
 	if (state.type !== Type.event && state.type !== Type.overlapping_event)
 		return null
 
@@ -127,7 +127,7 @@ export const get_event_range = micro_memoize(function _get_event_range(state: Im
 	if (is_looking_like_a_backup(state))
 		return null
 
-	const event_beginⵧfrom_folder_basename = get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
+	const event_beginⵧfrom_folder_basename = getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 
 	const children_range = _get_current_best_children_range(state)
 
@@ -149,7 +149,7 @@ export const get_event_range = micro_memoize(function _get_event_range(state: Im
 		}
 	}*/
 
-	const PARAMS = get_params()
+	const PARAMS = getꓽparams()
 	const capped_end_date = BetterDateLib.add_days(event_begin_date, PARAMS.max_event_durationⳇₓday)
 
 	let event_end_date = children_range?.end ?? capped_end_date // for now
@@ -184,17 +184,17 @@ export const get_event_range = micro_memoize(function _get_event_range(state: Im
 		}
 })
 
-export function get_event_begin_date(state: Immutable<State>): Immutable<BetterDate> {
-	assert(state.type === Type.event || state.type === Type.overlapping_event, `${LIB} get_event_begin_date() should be called on an ~event`)
-	const range = get_event_range(state)
-	assert(range, `${LIB} get_event_begin_date([event]"${state.id}") should have a date range!`)
+export function getꓽevent_begin_date(state: Immutable<State>): Immutable<BetterDate> {
+	assert(state.type === Type.event || state.type === Type.overlapping_event, `${LIB} getꓽevent_begin_date() should be called on an ~event`)
+	const range = getꓽevent_range(state)
+	assert(range, `${LIB} getꓽevent_begin_date([event]"${state.id}") should have a date range!`)
 
 	return range.begin
 }
-export function get_event_end_date(state: Immutable<State>): Immutable<BetterDate> {
-	assert(state.type === Type.event || state.type === Type.overlapping_event, `${LIB} get_event_end_date() should be called on an ~event`)
-	const range = get_event_range(state)
-	assert(range, `${LIB} get_event_end_date() should have a date range!`)
+export function getꓽevent_end_date(state: Immutable<State>): Immutable<BetterDate> {
+	assert(state.type === Type.event || state.type === Type.overlapping_event, `${LIB} getꓽevent_end_date() should be called on an ~event`)
+	const range = getꓽevent_range(state)
+	assert(range, `${LIB} getꓽevent_end_date() should have a date range!`)
 
 	return range.end
 }
@@ -202,7 +202,7 @@ export function get_event_end_date(state: Immutable<State>): Immutable<BetterDat
 // get the best folder tz we know
 // can be called at any time, should not cause infinite loops.
 // Because a tz can't always be computed, fallback instructions should be provided
-export function get_tz(state: Immutable<State>, fallback: 'fallback:none' | 'fallback:resolved_auto', date_for_auto?: Immutable<BetterDate>): TimeZone | undefined {
+export function getꓽtz(state: Immutable<State>, fallback: 'fallback:none' | 'fallback:resolved_auto', date_for_auto?: Immutable<BetterDate>): TimeZone | undefined {
 	const tz = state.media_children_aggregated_tz
 	assert(tz !== 'tz:embedded', `aggregated tz should never = tz:embedded!`)
 	if (tz && tz !== 'tz:auto')
@@ -217,10 +217,10 @@ export function get_tz(state: Immutable<State>, fallback: 'fallback:none' | 'fal
 		case 'fallback:resolved_auto': {
 			if (!date_for_auto) {
 				assert(is_pass_1_data_available_for_all_children(state), `get_intermediate_tz('fallback:resolved_auto') pass 1 should be done!`)
-				date_for_auto = get_event_begin_date(state)
+				date_for_auto = getꓽevent_begin_date(state)
 			}
 
-			return get_default_timezone(BetterDateLib.get_timestamp_utc_ms_from(date_for_auto))
+			return getꓽdefault_timezone(BetterDateLib.get_timestamp_utc_ms_from(date_for_auto))
 		}
 
 		default:
@@ -229,28 +229,28 @@ export function get_tz(state: Immutable<State>, fallback: 'fallback:none' | 'fal
 }
 
 
-export function get_event_begin_date‿symd(state: Immutable<State>): SimpleYYYYMMDD {
-	return BetterDateLib.get_compact_date(get_event_begin_date(state), get_tz(state, 'fallback:resolved_auto')!)
+export function getꓽevent_begin_date‿symd(state: Immutable<State>): SimpleYYYYMMDD {
+	return BetterDateLib.get_compact_date(get_event_begin_date(state), getꓽtz(state, 'fallback:resolved_auto')!)
 }
-export function get_event_end_date‿symd(state: Immutable<State>): SimpleYYYYMMDD {
-	return BetterDateLib.get_compact_date(get_event_end_date(state), get_tz(state, 'fallback:resolved_auto')!)
-}
-
-export function get_event_begin_year(state: Immutable<State>): number | undefined {
-	return BetterDateLib.get_year(get_event_begin_date(state), get_tz(state, 'fallback:resolved_auto')!)
+export function getꓽevent_end_date‿symd(state: Immutable<State>): SimpleYYYYMMDD {
+	return BetterDateLib.get_compact_date(get_event_end_date(state), getꓽtz(state, 'fallback:resolved_auto')!)
 }
 
-export function get_ideal_basename(state: Immutable<State>): Basename {
-	const current_basename = get_current_basename(state)
+export function getꓽevent_begin_year(state: Immutable<State>): number | undefined {
+	return BetterDateLib.get_year(get_event_begin_date(state), getꓽtz(state, 'fallback:resolved_auto')!)
+}
+
+export function getꓽideal_basename(state: Immutable<State>): Basename {
+	const current_basename = getꓽcurrent_basename(state)
 
 	if (state.type !== Type.event)
 		return NORMALIZERS.trim(NORMALIZERS.normalize_unicode(current_basename))
 
 	assert(get_event_begin_date(state), 'get_ideal_basename() event range should have a start')
 
-	logger.trace(`${LIB}: get_ideal_basename(…)`, get_current_basename‿parsed(state))
+	logger.trace(`${LIB}: getꓽideal_basename(…)`, getꓽcurrent_basename‿parsed(state))
 
-	let meaningful_part = get_current_basename‿parsed(state).meaningful_part
+	let meaningful_part = getꓽcurrent_basename‿parsed(state).meaningful_part
 	if (is_digit(meaningful_part[0])) {
 		// protection to prevent future executions to parse the meaningful part as DD/HH/MM/SS
 		meaningful_part = DIGIT_PROTECTION_SEPARATOR + meaningful_part
@@ -258,7 +258,7 @@ export function get_ideal_basename(state: Immutable<State>): Basename {
 
 	return NORMALIZERS.trim(
 		NORMALIZERS.normalize_unicode(
-			String(BetterDateLib.get_compact_date(get_event_begin_date(state), get_tz(state, 'fallback:resolved_auto')!))
+			String(BetterDateLib.get_compact_date(get_event_begin_date(state), getꓽtz(state, 'fallback:resolved_auto')!))
 			+ ' - '
 			+ meaningful_part
 		)
@@ -266,7 +266,7 @@ export function get_ideal_basename(state: Immutable<State>): Basename {
 }
 
 export function _is_basename_hinting_at_backup(state: Immutable<State>): boolean {
-	const basename‿parsed = get_current_basename‿parsed(state)
+	const basename‿parsed = getꓽcurrent_basename‿parsed(state)
 	const lc = basename‿parsed.meaningful_part.toLowerCase()
 	return lc.includes('backup')
 		|| lc.includes('save')
@@ -275,7 +275,7 @@ export function _is_basename_hinting_at_backup(state: Immutable<State>): boolean
 }
 
 function _get_event_begin_from_basename_if_present(state: Immutable<State>): undefined | null | Immutable<BetterDate> {
-	const basename‿parsed = get_current_basename‿parsed(state)
+	const basename‿parsed = getꓽcurrent_basename‿parsed(state)
 
 	if ((basename‿parsed.date_digits?.length ?? 0) < 6) {
 		// must be big enough, need precision up to month
@@ -286,7 +286,7 @@ function _get_event_begin_from_basename_if_present(state: Immutable<State>): und
 		return basename‿parsed.date
 
 	// the basename has no tz info. the parser uses "auto" but we should switch to "folder tz" without changing the members
-	const folder_tz = get_tz(state, 'fallback:none')
+	const folder_tz = getꓽtz(state, 'fallback:none')
 	if (folder_tz) {
 		return BetterDateLib.reinterpret_with_different_tz(basename‿parsed.date, folder_tz)
 	}
@@ -294,9 +294,9 @@ function _get_event_begin_from_basename_if_present(state: Immutable<State>): und
 	return basename‿parsed.date
 }
 
-// Note: this is logically and semantically different from get_expected_bcd_range_from_parent_path()
+// Note: this is logically and semantically different from getꓽexpected_bcd_range_from_parent_path()
 // Note: even if the basename contains a date, this function will only return it if it looks like an EVENT
-export function get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state: Immutable<State>): null | Immutable<BetterDate> {
+export function getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state: Immutable<State>): null | Immutable<BetterDate> {
 	const basename_date = _get_event_begin_from_basename_if_present(state)
 	if (!basename_date)
 		return null
@@ -319,7 +319,7 @@ export function get_event_begin_date_from_basename_if_present_and_confirmed_by_o
 		const date__from_basename‿symd = BetterDateLib.get_compact_date(basename_date, 'tz:embedded') // should always use tz:embedded for this one
 
 		// TODO use the best available data?
-		const tz = get_tz(state, 'fallback:none') || 'tz:auto'
+		const tz = getꓽtz(state, 'fallback:none') || 'tz:auto'
 		const date_range_begin‿symd = BetterDateLib.get_compact_date(children_range.begin, tz)
 		const date_range_end‿symd = BetterDateLib.get_compact_date(children_range.end, tz)
 		/*console.log('get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources() DEBUG', {
@@ -366,13 +366,13 @@ export function get_event_begin_date_from_basename_if_present_and_confirmed_by_o
 }
 
 export function is_current_basename_intentful_of_event_start(state: Immutable<State>): boolean {
-	return get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state) !== null
+	return getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state) !== null
 }
 
 // TODO improve, saw a lot of "slightly" mismatched event folders, ex. with only 1 intruder.
 // We may want to be a little bit more tolerant OR salvage the folder name
 export function is_looking_like_a_backup(state: Immutable<State>): boolean {
-	const basename‿parsed = get_current_basename‿parsed(state)
+	const basename‿parsed = getꓽcurrent_basename‿parsed(state)
 
 	// if a date is present in the basename, try to cross-reference with the children date range = best source of info
 	if (basename‿parsed.date) {
@@ -387,8 +387,8 @@ export function is_looking_like_a_backup(state: Immutable<State>): boolean {
 			const date__from_basename‿symd = BetterDateLib.get_compact_date(basename‿parsed.date, 'tz:embedded') // should always use embedded tz here
 
 			// TODO use the best available data?
-			const children_range_begin‿symd = BetterDateLib.get_compact_date(children_date_range.begin, get_tz(state, 'fallback:resolved_auto', children_date_range.begin)!)
-			const children_range_end‿symd = BetterDateLib.get_compact_date(children_date_range.end, get_tz(state, 'fallback:resolved_auto', children_date_range.begin)!)
+			const children_range_begin‿symd = BetterDateLib.get_compact_date(children_date_range.begin, getꓽtz(state, 'fallback:resolved_auto', children_date_range.begin)!)
+			const children_range_end‿symd = BetterDateLib.get_compact_date(children_date_range.end, getꓽtz(state, 'fallback:resolved_auto', children_date_range.begin)!)
 			/*console.log('is_looking_like_a_backup() DEBUG', {
 				begin: children_range_begin‿symd, //get_debug_representation(begin),
 				end: children_range_end‿symd, //get_debug_representation(end),
@@ -413,7 +413,7 @@ export function is_looking_like_a_backup(state: Immutable<State>): boolean {
 	return _is_basename_hinting_at_backup(state)
 }
 
-export function get_neighbor_primary_hints(state: Immutable<State>, PARAMS: Immutable<Params> = get_params()): Immutable<NeighborHints> {
+export function getꓽneighbor_primary_hints(state: Immutable<State>, PARAMS: Immutable<Params> = getꓽparams()): Immutable<NeighborHints> {
 	assert(is_pass_1_data_available_for_all_children(state), `get_neighbor_primary_hints() pass 1 should be complete`)
 
 	let hints = FileLib.NeighborHintsLib.create()
@@ -447,8 +447,8 @@ export function get_neighbor_primary_hints(state: Immutable<State>, PARAMS: Immu
 	const children_range_from_non_fs = state.media_children_bcd_ranges.from_primaryⵧfinal ?? state.media_children_bcd_ranges.from_primaryⵧcurrentⵧphase_1
 	if (children_range_from_non_fs && state.media_children_count > 1) {
 		// enlarge it by a percentage
-		const begin_symd = BetterDateLib.get_compact_date(children_range_from_non_fs.begin, get_tz(state, 'fallback:resolved_auto', children_range_from_non_fs.begin)!)
-		const end_symd = BetterDateLib.get_compact_date(children_range_from_non_fs.end, get_tz(state, 'fallback:resolved_auto', children_range_from_non_fs.begin)!)
+		const begin_symd = BetterDateLib.get_compact_date(children_range_from_non_fs.begin, getꓽtz(state, 'fallback:resolved_auto', children_range_from_non_fs.begin)!)
+		const end_symd = BetterDateLib.get_compact_date(children_range_from_non_fs.end, getꓽtz(state, 'fallback:resolved_auto', children_range_from_non_fs.begin)!)
 		if (end_symd < begin_symd) {
 			console.log('ERROR imminent', {
 				id: state.id,
@@ -465,10 +465,10 @@ export function get_neighbor_primary_hints(state: Immutable<State>, PARAMS: Immu
 		})
 	}
 
-	hints.fallback_junk_bcd = get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
+	hints.fallback_junk_bcd = getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources(state)
 		?? _get_current_best_children_range(state)?.begin
 
-	hints.tz = get_tz(state, 'fallback:none')
+	hints.tz = getꓽtz(state, 'fallback:none')
 
 	return hints
 }
@@ -476,8 +476,8 @@ export function get_neighbor_primary_hints(state: Immutable<State>, PARAMS: Immu
 export function is_date_matching_this_event(state: Immutable<State>, date: Immutable<BetterDate>): boolean {
 	assert(state.type === Type.event, `${LIB} is_date_matching_this_event() should be an event`)
 
-	const begin_date = get_event_begin_date(state)
-	const end_date = get_event_end_date(state)
+	const begin_date = getꓽevent_begin_date(state)
+	const end_date = getꓽevent_end_date(state)
 
 	return BetterDateLib.compare_utc(begin_date, date) <= 0
 		&& BetterDateLib.compare_utc(date, end_date) <= 0
@@ -487,8 +487,8 @@ export function is_date_matching_this_event(state: Immutable<State>, date: Immut
 export function is_date_matching_this_event‿symd(state: Immutable<State>, date‿symd: SimpleYYYYMMDD): boolean {
 	assert(state.type === Type.event, `${LIB} is_matching_event‿symd() should be an event`)
 
-	const begin_date‿symd = get_event_begin_date‿symd(state)
-	const end_date‿symd = get_event_end_date‿symd(state)
+	const begin_date‿symd = getꓽevent_begin_date‿symd(state)
+	const end_date‿symd = getꓽevent_end_date‿symd(state)
 
 	return date‿symd >= begin_date‿symd && date‿symd <= end_date‿symd
 }

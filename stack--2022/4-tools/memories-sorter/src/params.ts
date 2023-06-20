@@ -39,7 +39,7 @@ export interface Params {
 
 export const CURRENT_YEAR: number = (new Date()).getFullYear()
 
-// UNSAFE bc should not be used in place of get_default_timezone()!
+// UNSAFE bc should not be used in place of getꓽdefault_timezone()!
 export const _UNSAFE_CURRENT_SYSTEM_TIMEZONE: TimeZone =
 	// https://stackoverflow.com/a/44096051/587407
 	Intl.DateTimeFormat().resolvedOptions().timeZone
@@ -58,7 +58,7 @@ assert(date_upper_boundⳇsymd >= date_lower_boundⳇsymd, 'higher >= lower 2')
 
 const max_event_durationⳇₓday = 28
 
-export const get_params = memoize_once(function get_params(): Params {
+export const getꓽparams = memoize_once(function getꓽparams(): Params {
 	return {
 		date_lower_boundⳇₓyear: date_lower_boundⳇₓyear,
 		date_upper_boundⳇₓyear: date_upper_boundⳇₓyear,
@@ -182,7 +182,7 @@ export const get_params = memoize_once(function get_params(): Params {
 
 /////////////////////////////////////////////////
 
-export function get_default_timezone(date_utc_ms: TimestampUTCMs, PARAMS: Immutable<Params> = get_params()): TimeZone {
+export function getꓽdefault_timezone(date_utc_ms: TimestampUTCMs, PARAMS: Immutable<Params> = getꓽparams()): TimeZone {
 	//console.log('get_default_timezone()', { date_utc_ms, PARAMS })
 
 	let res: TimeZone = _UNSAFE_CURRENT_SYSTEM_TIMEZONE

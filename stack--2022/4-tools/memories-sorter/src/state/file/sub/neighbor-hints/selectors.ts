@@ -7,7 +7,7 @@ import { NeighborHints, HistoricalNeighborHints, FsReliability } from './types.j
 import {
 	BetterDate,
 	DateRange,
-	get_debug_representation as get_better_date_debug_representation,
+	get_debug_representation as getꓽbetter_date_debug_representation,
 	create_better_date_from_utc_tms,
 	get_members_for_serialization,
 	compare_utc,
@@ -19,12 +19,12 @@ import {
 	pathㆍparse_memoized,
 } from '../../../../services/name_parser.js'
 import { RelativePath } from '../../../../types.js'
-import { get_params, Params } from '../../../../params.js'
+import { getꓽparams, Params } from '../../../../params.js'
 
 /////////////////////
 
 // for comparisons, higher is better
-export function get_fs_reliability_score(reliability: FsReliability | undefined): number {
+export function getꓽfs_reliability_score(reliability: FsReliability | undefined): number {
 	switch (reliability) {
 		case 'unreliable':
 			return 0
@@ -39,7 +39,7 @@ export function get_fs_reliability_score(reliability: FsReliability | undefined)
 	}
 }
 
-export function get_bcd_from_parent_path(parent_path: RelativePath): null | undefined | BetterDate {
+export function getꓽbcd_from_parent_path(parent_path: RelativePath): null | undefined | BetterDate {
 	// try to infer a date from parent path
 
 	const folder_path‿pparsed = pathㆍparse_memoized(parent_path)
@@ -55,10 +55,10 @@ export function get_bcd_from_parent_path(parent_path: RelativePath): null | unde
 }
 
 // TODO review usage
-export function get_expected_bcd_range_from_parent_path(parent_path: RelativePath, PARAMS: Immutable<Params> = get_params()): null | undefined | DateRange {
+export function getꓽexpected_bcd_range_from_parent_path(parent_path: RelativePath, PARAMS: Immutable<Params> = getꓽparams()): null | undefined | DateRange {
 
 	// try to infer a date from parent path
-	const date = get_bcd_from_parent_path(parent_path)
+	const date = getꓽbcd_from_parent_path(parent_path)
 	if (!date)
 		return date
 
@@ -89,11 +89,11 @@ export function get_expected_bcd_range_from_parent_path(parent_path: RelativePat
 
 ///////////////////// Current /////////////////////
 
-export function get_neighbors_fs_reliability(state: Immutable<NeighborHints>): FsReliability {
+export function getꓽneighbors_fs_reliability(state: Immutable<NeighborHints>): FsReliability {
 	return state.bcdⵧfrom_fs__reliabilityⵧassessed_from_phase1
 }
 
-export function get_fallback_junk_bcd(state: Immutable<NeighborHints>): undefined | BetterDate {
+export function getꓽfallback_junk_bcd(state: Immutable<NeighborHints>): undefined | BetterDate {
 	return state.fallback_junk_bcd
 }
 
@@ -128,7 +128,7 @@ export function is_candidate_fs_bcd_looking_reliable_according_to_neighbor_hints
 	}
 
 	// still unknown
-	const siblings_fs_bcd_assessed_reliability = get_neighbors_fs_reliability(state)
+	const siblings_fs_bcd_assessed_reliability = getꓽneighbors_fs_reliability(state)
 	switch(siblings_fs_bcd_assessed_reliability) {
 		case 'reliable':
 			logger.trace(`is_candidate_fs_bcd_looking_reliable_according_to_neighbor_hints() current fs reliability has been assessed to "reliable" from parent reliability=reliable, assuming ours is reliable as well`)
@@ -175,7 +175,7 @@ export function to_string(state: undefined | Immutable<NeighborHints>): any {
 	return result
 }
 
-export function get_debug_representation(state: undefined | Immutable<NeighborHints>): any {
+export function getꓽdebug_representation(state: undefined | Immutable<NeighborHints>): any {
 	if (!state)
 		return undefined
 
@@ -199,11 +199,11 @@ export function get_debug_representation(state: undefined | Immutable<NeighborHi
 		bcdⵧfrom_fs__reliabilityⵧassessed_from_phase1,
 		expected_bcd_ranges: expected_bcd_ranges.map(range => {
 			return {
-				begin: get_better_date_debug_representation(range.begin),
-				end: get_better_date_debug_representation(range.end),
+				begin: getꓽbetter_date_debug_representation(range.begin),
+				end: getꓽbetter_date_debug_representation(range.end),
 			}
 		}),
-		fallback_junk_bcd: get_better_date_debug_representation(fallback_junk_bcd),
+		fallback_junk_bcd: getꓽbetter_date_debug_representation(fallback_junk_bcd),
 		tz,
 	}
 
@@ -212,7 +212,7 @@ export function get_debug_representation(state: undefined | Immutable<NeighborHi
 
 ///////////////////// historical /////////////////////
 
-export function get_historical_representation(state: Immutable<NeighborHints>, fs_bcd‿tms: undefined | TimestampUTCMs): HistoricalNeighborHints {
+export function getꓽhistorical_representation(state: Immutable<NeighborHints>, fs_bcd‿tms: undefined | TimestampUTCMs): HistoricalNeighborHints {
 	const {
 		_unit_test_shortcut,
 		bcdⵧfrom_fs__reliabilityⵧassessed_from_phase1,
@@ -233,18 +233,18 @@ export function get_historical_representation(state: Immutable<NeighborHints>, f
 	return {
 		fs_reliability,
 		...(fs_reliability === 'unreliable' && {
-			parent_bcd: fallback_junk_bcd ? get_members_for_serialization(fallback_junk_bcd) : undefined,
+			parent_bcd: fallback_junk_bcd ? getꓽmembers_for_serialization(fallback_junk_bcd) : undefined,
 		})
 	}
 }
 
-export function get_historical_fs_reliability(state: Immutable<HistoricalNeighborHints>, candidate‿tms: TimestampUTCMs): FsReliability {
+export function getꓽhistorical_fs_reliability(state: Immutable<HistoricalNeighborHints>, candidate‿tms: TimestampUTCMs): FsReliability {
 	//console.log('get_historical_fs_reliability(…)', state)
 	return state.fs_reliability ?? 'unknown'
 	/* TODO review
 	const bcd__from_parent_folder__current = neighbor_hints.parent_folder_bcd
 	if (bcd__from_parent_folder__current) {
-		const bcd__from_parent_folder__current‿tms = get_timestamp_utc_ms_from(bcd__from_parent_folder__current)
+		const bcd__from_parent_folder__current‿tms = getꓽtimestamp_utc_ms_from(bcd__from_parent_folder__current)
 
 		if (bcdⵧfrom_fsⵧcurrent‿tms >= bcd__from_parent_folder__current‿tms
 			&& bcdⵧfrom_fsⵧcurrent‿tms < (bcd__from_parent_folder__current‿tms + PARAMS.max_event_durationⳇₓday * DAY_IN_MILLIS)) {

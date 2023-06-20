@@ -22,7 +22,7 @@ import {
 	on_note_file_found,
 	to_string,
 } from './index.js'
-import { create_better_date, _get_exif_datetime, get_timestamp_utc_ms_from } from '../../services/better-date.js'
+import { create_better_date, _get_exif_datetime, getꓽtimestamp_utc_ms_from } from '../../services/better-date.js'
 import * as File from '../file/index.js'
 
 /////////////////////
@@ -38,7 +38,7 @@ describe(`${LIB} - DB (state) aka. root state`, function() {
 	describe('integration', function() {
 
 		const CREATION_DATE = create_better_date('tz:auto', 2017, 10, 20, 5, 1, 44, 625)
-		const CREATION_DATE_MS = get_timestamp_utc_ms_from(CREATION_DATE)
+		const CREATION_DATE_MS = getꓽtimestamp_utc_ms_from(CREATION_DATE)
 		//console.log(state.queue)
 		//console.log(to_string(state))
 
@@ -180,7 +180,7 @@ describe(`${LIB} - DB (state) aka. root state`, function() {
 				const BASENAME = 'Capture d’écran 2019-07-31 à 21.00.15.png'
 				const CREATION_DATE_MS = 1564542022000
 
-				let persisted_notes = get_past_and_present_notes(create('.'))
+				let persisted_notes = getꓽpast_and_present_notes(create('.'))
 				let file_ut_basename = BASENAME
 
 				///////////////// FIRST ROUND /////////////////
@@ -208,12 +208,12 @@ describe(`${LIB} - DB (state) aka. root state`, function() {
 				state = on_fs_exploration_done_consolidate_data_and_backup_originals(state)
 				DEBUG && console.log('exploration done.')
 				expect(get_pending_actions(state), 'after consolidation 1').to.have.lengthOf(0) // formerly auto notes bkp, removed
-				persisted_notes = get_past_and_present_notes(state)
+				persisted_notes = getꓽpast_and_present_notes(state)
 				//state = discard_all_pending_actions(state)
 
 				state = clean_up_duplicates(state)
 				expect(get_pending_actions(state), 'after clean up duplicate 1').to.have.lengthOf(0) // no duplicates
-				persisted_notes = get_past_and_present_notes(state)
+				persisted_notes = getꓽpast_and_present_notes(state)
 				//state = discard_all_pending_actions(state)
 
 				state = normalize_files_in_place(state)
@@ -223,7 +223,7 @@ describe(`${LIB} - DB (state) aka. root state`, function() {
 				//console.log(next_id, state.files)
 				state = on_file_moved(state, file_ut_basename, next_id)
 				file_ut_basename = next_id
-				persisted_notes = get_past_and_present_notes(state)
+				persisted_notes = getꓽpast_and_present_notes(state)
 				state = discard_all_pending_actions(state)
 
 				DEBUG && console.log('........EO 1st round.......')
@@ -264,12 +264,12 @@ describe(`${LIB} - DB (state) aka. root state`, function() {
 
 				state = on_fs_exploration_done_consolidate_data_and_backup_originals(state)
 				expect(get_pending_actions(state), 'after consolidation 2').to.have.lengthOf(0)
-				persisted_notes = get_past_and_present_notes(state)
+				persisted_notes = getꓽpast_and_present_notes(state)
 				//state = discard_all_pending_actions(state)
 
 				state = clean_up_duplicates(state)
 				expect(get_pending_actions(state), 'after duplicate 2').to.have.lengthOf(0)
-				persisted_notes = get_past_and_present_notes(state)
+				persisted_notes = getꓽpast_and_present_notes(state)
 				state = discard_all_pending_actions(state)
 
 				next_id = File.get_ideal_basename(state.files[file_ut_basename])

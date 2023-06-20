@@ -63,14 +63,14 @@ function create_db_client(ip: string, logger: Console = console): DBClient {
 }
 
 // example 1: best semantic
-const get_db_client = tiny_singleton(() => create_db_client('127.0.0.1'))
+const getꓽdb_client = tiny_singleton(() => create_db_client('127.0.0.1'))
 get_db_client().read(1234).then(...)
 
 // example 2: with params (not recommended as the params will only affect the 1st call, but sometimes convenient)
-const get_db_client = tiny_singleton(create_db_client)
+const getꓽdb_client = tiny_singleton(create_db_client)
 
 // alternative (not better, just an alternative example)
-const get_db_client = tiny_singleton((options?: CreationOptions) => create_db_client(options.ip || '127.0.0.1'))
+const getꓽdb_client = tiny_singleton((options?: CreationOptions) => create_db_client(options.ip || '127.0.0.1'))
 
 // usage
 get_db_client('127.0.0.1')

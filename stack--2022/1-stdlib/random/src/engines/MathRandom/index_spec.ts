@@ -1,4 +1,4 @@
-import { get_RNGⵧMathᐧrandom } from './index.js'
+import { getꓽRNGⵧMathᐧrandom } from './index.js'
 import { itᐧshouldᐧbeᐧaᐧvalidᐧengine } from '../_test_helpers.js'
 
 

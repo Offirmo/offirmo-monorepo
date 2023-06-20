@@ -32,17 +32,17 @@ describe(`${LIB} - file (state)`, function() {
 
 			ALL_MEDIA_DEMOS
 				//.slice(5)
-				.forEach(({ data: MEDIA_DEMO, get_phase1_state, get_phase2_state }, index) => {
+				.forEach(({ data: MEDIA_DEMO, getꓽphase1_state, getꓽphase2_state }, index) => {
 
 				it(`should work up to phase 1 - #${index+1}: "${MEDIA_DEMO.BASENAME}"`, async () => {
-					let state = await get_phase1_state()
+					let state = await getꓽphase1_state()
 
 					expect(get_current_basename(state)).to.equal(MEDIA_DEMO.BASENAME)
 					expect(get_current_parent_folder_id(state)).to.equal('.')
 				})
 
 				it(`should work up to phase 2 - #${index+1}: "${MEDIA_DEMO.BASENAME}"`, async () => {
-					let state = await get_phase2_state()
+					let state = await getꓽphase2_state()
 
 					expect(get_current_basename(state), 'current bn').to.equal(MEDIA_DEMO.BASENAME)
 					expect(get_current_parent_folder_id(state), 'current parent').to.equal('.')
@@ -53,7 +53,7 @@ describe(`${LIB} - file (state)`, function() {
 					expect(_get_best_creation_date‿compact(state), 'compact').to.equal(MEDIA_DEMO.DATE__COMPACT)
 					expect(get_embedded_timezone(get_best_creation_date(state)), 'tz').to.deep.equal(MEDIA_DEMO.FINAL_TZ)
 
-					const bcd_meta = get_best_creation_date‿meta(state)
+					const bcd_meta = getꓽbest_creation_date‿meta(state)
 					//console.log(bcd_meta)
 					expect(bcd_meta.confidence, 'confidence').to.equal(MEDIA_DEMO.CONFIDENCE)
 					expect(is_confident_in_date_enough_to__fix_fs(state)).to.equal(MEDIA_DEMO.CONFIDENCE === 'primary')

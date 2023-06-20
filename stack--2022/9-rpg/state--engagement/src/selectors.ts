@@ -5,12 +5,12 @@ import { State, Engagement, EngagementType, PendingEngagement } from './types.js
 
 //////////////////////////////////////////////////////////////////////
 
-function get_oldest_queued_flow(state: Immutable<State>): Immutable<PendingEngagement> | undefined {
+function getꓽoldest_queued_flow(state: Immutable<State>): Immutable<PendingEngagement> | undefined {
 	return state.queue
 		.find(queued => queued.engagement.type === EngagementType.flow)
 }
 
-function get_oldest_queued_non_flow(state: Immutable<State>): Immutable<PendingEngagement> | undefined {
+function getꓽoldest_queued_non_flow(state: Immutable<State>): Immutable<PendingEngagement> | undefined {
 	return state.queue
 		.find(queued => queued.engagement.type !== EngagementType.flow)
 }

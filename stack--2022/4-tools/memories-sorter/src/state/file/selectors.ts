@@ -20,7 +20,7 @@ import {
 	SimpleYYYYMMDD,
 	TimeZone,
 } from '../../types.js'
-import { Params, get_params } from '../../params.js'
+import { Params, getꓽparams } from '../../params.js'
 import logger from '../../services/logger.js'
 import {
 	get_most_reliable_birthtime_from_fs_stats,
@@ -49,51 +49,51 @@ import {
 	FsReliability,
 } from './types.js'
 import * as NeighborHintsLib from './sub/neighbor-hints/index.js'
-import { get_bcd_from_parent_path } from './sub/neighbor-hints/index.js'
+import { getꓽbcd_from_parent_path } from './sub/neighbor-hints/index.js'
 
 ////////////////////////////////////
 
-export function get_current_relative_path(state: Immutable<State>): RelativePath {
+export function getꓽcurrent_relative_path(state: Immutable<State>): RelativePath {
 	return state.id
 }
 
-export function get_current_path‿pparsed(state: Immutable<State>): Immutable<path.ParsedPath> {
+export function getꓽcurrent_path‿pparsed(state: Immutable<State>): Immutable<path.ParsedPath> {
 	return pathㆍparse_memoized(get_current_relative_path(state))
 }
 
-export function get_current_basename(state: Immutable<State>): Basename {
-	return get_current_path‿pparsed(state).base
+export function getꓽcurrent_basename(state: Immutable<State>): Basename {
+	return getꓽcurrent_path‿pparsed(state).base
 }
 
-export function get_oldest_known_basename(state: Immutable<State>): Basename {
+export function getꓽoldest_known_basename(state: Immutable<State>): Basename {
 	assert(state.are_notes_restored, `get_oldest_known_basename() expects notes restored!`)
 	return state.notes.historical.basename
 }
 
-export function get_current_basename‿parsed(state: Immutable<State>): Immutable<ParseResult> {
+export function getꓽcurrent_basename‿parsed(state: Immutable<State>): Immutable<ParseResult> {
 	return parse_file_basename(get_current_basename(state))
 }
 
-export function get_oldest_known_basename‿parsed(state: Immutable<State>): Immutable<ParseResult> {
+export function getꓽoldest_known_basename‿parsed(state: Immutable<State>): Immutable<ParseResult> {
 	return parse_file_basename(get_oldest_known_basename(state))
 }
 
-export function get_current_extension‿normalized(state: Immutable<State>): string {
-	return get_file_basename_extension‿normalized(get_current_basename(state))
+export function getꓽcurrent_extension‿normalized(state: Immutable<State>): string {
+	return getꓽfile_basename_extension‿normalized(get_current_basename(state))
 }
 
-export function get_current_parent_folder_id(state: Immutable<State>): RelativePath {
-	return get_current_path‿pparsed(state).dir || '.'
+export function getꓽcurrent_parent_folder_id(state: Immutable<State>): RelativePath {
+	return getꓽcurrent_path‿pparsed(state).dir || '.'
 }
 
-export function get_current_top_parent_folder_id(state: Immutable<State>): RelativePath {
-	return get_current_relative_path(state).split(path.sep)[0] || '.'
+export function getꓽcurrent_top_parent_folder_id(state: Immutable<State>): RelativePath {
+	return getꓽcurrent_relative_path(state).split(path.sep)[0] || '.'
 }
 
 export function is_notes(state: Immutable<State>): boolean {
-	return get_current_basename(state).endsWith(NOTES_BASENAME_SUFFIX_LC)
-		|| get_current_basename(state).endsWith('.@offirmo-memories-sorter_notes copy.json') // macOs copy
-		|| get_current_basename(state).endsWith('@offirmo-photos-sorter_notes.json') // legacy name, should exist on author machine only
+	return getꓽcurrent_basename(state).endsWith(NOTES_BASENAME_SUFFIX_LC)
+		|| getꓽcurrent_basename(state).endsWith('.@offirmo-memories-sorter_notes copy.json') // macOs copy
+		|| getꓽcurrent_basename(state).endsWith('@offirmo-photos-sorter_notes.json') // legacy name, should exist on author machine only
 }
 
 export function has_neighbor_hints(state: Immutable<State>): boolean {
@@ -105,29 +105,29 @@ export function has_neighbor_hints(state: Immutable<State>): boolean {
 export function is_broken_file(state: Immutable<State>): boolean {
 
 	if (state.are_notes_restored) {
-		const parsed_oldest_known_basename = get_oldest_known_basename‿parsed(state)
+		const parsed_oldest_known_basename = getꓽoldest_known_basename‿parsed(state)
 		let extension = parsed_oldest_known_basename.extension_lc
 		return BROKEN_FILE_EXTENSIONS_LC.includes(extension)
 	}
 
-	const current_ext = get_current_extension‿normalized(state)
+	const current_ext = getꓽcurrent_extension‿normalized(state)
 	return BROKEN_FILE_EXTENSIONS_LC.includes(current_ext)
 }
 
-export function is_media_file(state: Immutable<State>, PARAMS: Immutable<Params> = get_params()): boolean {
-	const path_parsed = get_current_path‿pparsed(state)
+export function is_media_file(state: Immutable<State>, PARAMS: Immutable<Params> = getꓽparams()): boolean {
+	const path_parsed = getꓽcurrent_path‿pparsed(state)
 
 	const is_invisible_file = path_parsed.base.startsWith('.')
 	if (is_invisible_file) return false
 
-	let normalized_extension = get_current_extension‿normalized(state)
+	let normalized_extension = getꓽcurrent_extension‿normalized(state)
 	return PARAMS.extensions_of_media_files‿lc.includes(normalized_extension)
 }
 
 export function is_exif_powered_media_file(state: Immutable<State>): boolean {
 	if (!is_media_file(state)) return false
 
-	let normalized_extension = get_current_extension‿normalized(state)
+	let normalized_extension = getꓽcurrent_extension‿normalized(state)
 
 	return EXIF_POWERED_FILE_EXTENSIONS_LC.includes(normalized_extension)
 }
@@ -215,7 +215,7 @@ function _get_creation_dateⵧfrom_exif‿edt(state: Immutable<State>): ExifDate
 	assert(!!current_exif_data, `_get_creation_date_from_exif__edt(): ${id} exif data available`)
 
 	try {
-		return get_best_creation_date_from_exif(current_exif_data)
+		return getꓽbest_creation_date_from_exif(current_exif_data)
 	}
 	catch (err) {
 		logger.fatal(`_get_creation_date_from_exif__edt() error for "${id}"!`, { err })
@@ -228,7 +228,7 @@ function _get_creation_tzⵧfrom_exif(state: Immutable<State>): TimeZone | undef
 	assert(!!current_exif_data, `_get_creation_tz_from_exif(): ${id} exif data available`)
 
 	try {
-		return get_creation_timezone_from_exif(current_exif_data)
+		return getꓽcreation_timezone_from_exif(current_exif_data)
 	}
 	catch (err) {
 		logger.fatal(`_get_creation_tz_from_exif() error for "${id}"!`, { err })
@@ -265,14 +265,14 @@ function _get_creation_dateⵧfrom_fsⵧoldest_known‿tms(state: Immutable<Stat
 	// TODO one day ignore if we implement FS normalization & historical basename is processed
 	return state.notes.historical.fs_bcd_tms
 }
-export function get_creation_dateⵧfrom_fsⵧcurrent‿tms(state: Immutable<State>): TimestampUTCMs {
+export function getꓽcreation_dateⵧfrom_fsⵧcurrent‿tms(state: Immutable<State>): TimestampUTCMs {
 	assert(state.current_fs_stats, 'get_creation_dateⵧfrom_fsⵧcurrent‿tms() fs stats collected')
-	return get_most_reliable_birthtime_from_fs_stats(state.current_fs_stats)
+	return getꓽmost_reliable_birthtime_from_fs_stats(state.current_fs_stats)
 }
 function _get_creation_dateⵧfrom_basename_npⵧoldest_known(state: Immutable<State>): BetterDate | undefined {
 	assert(state.are_notes_restored, `_get_creation_date__from_basename_np__oldest_known() needs notes restored`)
 
-	const oldest_known_basename = get_oldest_known_basename(state)
+	const oldest_known_basename = getꓽoldest_known_basename(state)
 
 	if (is_processed_media_basename(oldest_known_basename)) {
 		// this is not the original basename, we lost the info...
@@ -283,13 +283,13 @@ function _get_creation_dateⵧfrom_basename_npⵧoldest_known(state: Immutable<S
 		return undefined
 	}
 
-	const parsed = get_oldest_known_basename‿parsed(state)
+	const parsed = getꓽoldest_known_basename‿parsed(state)
 	return parsed.date
 }
 function _get_creation_dateⵧfrom_basename_pⵧoldest_known(state: Immutable<State>): BetterDate | undefined {
 	assert(state.are_notes_restored, `_get_creation_date__from_basename_p__oldest_known() needs notes restored`)
 
-	const oldest_known_basename = get_oldest_known_basename(state)
+	const oldest_known_basename = getꓽoldest_known_basename(state)
 
 	if (!is_processed_media_basename(oldest_known_basename)) {
 		// cool, ideal case of still knowing the original basename
@@ -298,12 +298,12 @@ function _get_creation_dateⵧfrom_basename_pⵧoldest_known(state: Immutable<St
 
 	// we lost the original basename
 	// use this info with caution, since earlier versions of this tool may have had a bad algorithm
-	const parsed = get_oldest_known_basename‿parsed(state)
+	const parsed = getꓽoldest_known_basename‿parsed(state)
 	return parsed.date
 }
 function _get_creation_dateⵧfrom_basename_npⵧcurrent(state: Immutable<State>): BetterDate | undefined {
 	if (!is_processed_media_basename(get_current_basename(state))) {
-		const parsed = get_current_basename‿parsed(state)
+		const parsed = getꓽcurrent_basename‿parsed(state)
 		if (parsed.date)
 			return parsed.date
 	}
@@ -312,7 +312,7 @@ function _get_creation_dateⵧfrom_basename_npⵧcurrent(state: Immutable<State>
 }
 function _get_creation_dateⵧfrom_basename_pⵧcurrent(state: Immutable<State>): BetterDate | undefined {
 	if (is_processed_media_basename(get_current_basename(state))) {
-		const parsed = get_current_basename‿parsed(state)
+		const parsed = getꓽcurrent_basename‿parsed(state)
 		if (parsed.date)
 			return parsed.date
 	}
@@ -327,7 +327,7 @@ function _get_creation_dateⵧfrom_envⵧoldest_known(state: Immutable<State>): 
 	if (historical_neighbor_hints.parent_bcd)
 		return BetterDateLib.create_better_date_obj(historical_neighbor_hints.parent_bcd)
 
-	return get_bcd_from_parent_path(state.notes.historical.parent_path)
+	return getꓽbcd_from_parent_path(state.notes.historical.parent_path)
 }
 function _get_creation_dateⵧfrom_envⵧcurrent(state: Immutable<State>): BetterDate | undefined {
 	assert(state.current_neighbor_hints, `_get_creation_dateⵧfrom_envⵧcurrent() needs neighbor hints`)
@@ -363,7 +363,7 @@ function _reinterpret_with_neighbor_tz_if_not_explicit(date: Immutable<BetterDat
 // for stability, we try to rely on the oldest known data first and foremost.
 // Note that oldest known !== original
 // (ideally this func should NOT rely on anything else than TRULY ORIGINAL data)
-export const get_best_creation_dateⵧfrom_oldest_known_data‿meta = micro_memoize(function get_best_creation_dateⵧfrom_oldest_known_data‿meta(state: Immutable<State>): BestCreationDate {
+export const getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta = micro_memoize(function getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state: Immutable<State>): BestCreationDate {
 	logger.trace(`get_best_creation_dateⵧfrom_oldest_known_data‿meta()`, { id: state.id })
 
 	assert(
@@ -427,7 +427,7 @@ export const get_best_creation_dateⵧfrom_oldest_known_data‿meta = micro_memo
 				else {
 					// this is suspicious, report it
 					logger.warn(`get_best_creation_date_meta__from_historical_data() EXIF vs. historical-basename discrepancy`, {
-						oldest_known_basename: get_oldest_known_basename(state),
+						oldest_known_basename: getꓽoldest_known_basename(state),
 						diff: Math.abs(BetterDateLib.get_timestamp_utc_ms_from(bcd__from_exif) - BetterDateLib.get_timestamp_utc_ms_from(bcd__from_basename_np__oldest_known)),
 						id: state.id,
 						auto_from_basename,
@@ -571,7 +571,7 @@ export const get_best_creation_dateⵧfrom_oldest_known_data‿meta = micro_memo
 // used on 1st stage consolidation => it should be able to work without hints and notes
 // info may be overriden by notes later
 // useful for files we encounter for the first time
-export const get_best_creation_dateⵧfrom_current_data‿meta = micro_memoize(function get_best_creation_dateⵧfrom_current_data‿meta(state: Immutable<State>): BestCreationDate {
+export const getꓽbest_creation_dateⵧfrom_current_data‿meta = micro_memoize(function getꓽbest_creation_dateⵧfrom_current_data‿meta(state: Immutable<State>): BestCreationDate {
 	logger.trace(`get_best_creation_dateⵧfrom_current_data‿meta()`, { id: state.id })
 
 	assert(
@@ -583,7 +583,7 @@ export const get_best_creation_dateⵧfrom_current_data‿meta = micro_memoize(f
 		'get_best_creation_dateⵧfrom_current_data‿meta() has_all_infos_for_extracting_the_creation_date()'
 	)
 
-	const bcd__from_fs__current‿tms = get_creation_dateⵧfrom_fsⵧcurrent‿tms(state)
+	const bcd__from_fs__current‿tms = getꓽcreation_dateⵧfrom_fsⵧcurrent‿tms(state)
 	const bcd__from_fs__current = BetterDateLib.create_better_date_from_utc_tms(bcd__from_fs__current‿tms, state.current_neighbor_hints?.tz || 'tz:auto')
 	assert(bcd__from_fs__current‿tms === BetterDateLib.get_timestamp_utc_ms_from(bcd__from_fs__current), `current fs tms back and forth stability`)
 
@@ -634,8 +634,8 @@ export const get_best_creation_dateⵧfrom_current_data‿meta = micro_memoize(f
 				else {
 					// this is suspicious, report it
 					logger.warn(`_get_best_creation_date_meta__from_current_data() EXIF/np-basename discrepancy`, {
-						basename: get_current_basename(state),
-						//oldest_known_basename: get_oldest_known_basename(state),
+						basename: getꓽcurrent_basename(state),
+						//oldest_known_basename: getꓽoldest_known_basename(state),
 						diff: Math.abs(BetterDateLib.get_timestamp_utc_ms_from(bcd__from_exif) - BetterDateLib.get_timestamp_utc_ms_from(bcd__from_basename_np__current)),
 						id: state.id,
 						auto_from_np_basename,
@@ -791,7 +791,7 @@ export const get_best_creation_dateⵧfrom_current_data‿meta = micro_memoize(f
 
 // Best creation date overall
 // mixes the best info from historical and current + takes into account "manual"
-export const get_best_creation_date‿meta = micro_memoize(function get_best_creation_date_meta(state: Immutable<State>): BestCreationDate {
+export const getꓽbest_creation_date‿meta = micro_memoize(function getꓽbest_creation_date_meta(state: Immutable<State>): BestCreationDate {
 	logger.trace(`get_best_creation_date‿meta()`, { id: state.id })
 
 	assert(
@@ -831,7 +831,7 @@ export const get_best_creation_date‿meta = micro_memoize(function get_best_cre
 
 	// then rely on original data as much as possible
 	logger.trace('get_best_creation_date‿meta() trying historical data…')
-	const meta__from_oldest_known = get_best_creation_dateⵧfrom_oldest_known_data‿meta(state)
+	const meta__from_oldest_known = getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state)
 	if (meta__from_oldest_known.confidence === 'primary') {
 		logger.trace(`get_best_creation_date‿meta() resolved to ${BetterDateLib.get_debug_representation(meta__from_oldest_known.candidate)} from ${result.source} of oldest data result ✔ (primary)`)
 		return meta__from_oldest_known
@@ -843,7 +843,7 @@ export const get_best_creation_date‿meta = micro_memoize(function get_best_cre
 	assert(!bcd__from_exif, `get_best_creation_date‿meta() EXIF should have already been covered by "oldest known"`)
 
 	logger.trace('get_best_creation_date‿meta() trying current data…')
-	const meta__from_current = get_best_creation_dateⵧfrom_current_data‿meta(state)
+	const meta__from_current = getꓽbest_creation_dateⵧfrom_current_data‿meta(state)
 	if (meta__from_current.confidence === 'primary') {
 		logger.trace(`get_best_creation_date‿meta() resolved to ${BetterDateLib.get_debug_representation(meta__from_current.candidate)} from ${result.source} of current data result ✔ (primary)`)
 		return meta__from_current
@@ -879,27 +879,27 @@ export const get_best_creation_date‿meta = micro_memoize(function get_best_cre
 	}
 })
 
-export function get_best_tz(state: Immutable<State>): TimeZone {
+export function getꓽbest_tz(state: Immutable<State>): TimeZone {
 	return state.current_neighbor_hints?.tz
 		|| BetterDateLib.get_embedded_timezone(get_best_creation_date‿meta(state).candidate)
 }
 
 // TODO: allow to suggest a tz?
-export function get_best_creation_date(state: Immutable<State>): BetterDate {
-	const meta = get_best_creation_date‿meta(state)
+export function getꓽbest_creation_date(state: Immutable<State>): BetterDate {
+	const meta = getꓽbest_creation_date‿meta(state)
 	return meta.candidate
 }
 
-export function _get_best_creation_date‿compact(state: Immutable<State>, suggested_tz = get_best_tz(state)): SimpleYYYYMMDD {
+export function _get_best_creation_date‿compact(state: Immutable<State>, suggested_tz = getꓽbest_tz(state)): SimpleYYYYMMDD {
 	return BetterDateLib.get_compact_date(get_best_creation_date(state), suggested_tz)
 }
 
-export function get_best_creation_date__year(state: Immutable<State>, suggested_tz = get_best_tz(state)): number {
+export function getꓽbest_creation_date__year(state: Immutable<State>, suggested_tz = getꓽbest_tz(state)): number {
 	return Math.trunc(_get_best_creation_date‿compact(state, suggested_tz) / 10000)
 }
 
 function _is_confident_in_date(state: Immutable<State>, up_to: DateConfidence): boolean {
-	const meta = get_best_creation_date‿meta(state)
+	const meta = getꓽbest_creation_date‿meta(state)
 	const { confidence } = meta
 
 	let is_confident = false
@@ -937,7 +937,7 @@ export function is_confident_in_date_enough_to__sort(state: Immutable<State>): b
 	return _is_confident_in_date(state, 'secondary')
 }
 
-export function get_creation_dateⵧfrom_fsⵧcurrent__reliability_according_to_our_own_trustable_current_primary_date_sources(state: Immutable<State>): FsReliability {
+export function getꓽcreation_dateⵧfrom_fsⵧcurrent__reliability_according_to_our_own_trustable_current_primary_date_sources(state: Immutable<State>): FsReliability {
 	const bcdⵧfrom_fsⵧcurrent‿tms = get_creation_dateⵧfrom_fsⵧcurrent‿tms(state)
 	const bcdⵧfrom_fsⵧcurrent = BetterDateLib.create_better_date_from_utc_tms(bcdⵧfrom_fsⵧcurrent‿tms, state.current_neighbor_hints?.tz || 'tz:auto')
 

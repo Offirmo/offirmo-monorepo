@@ -21,7 +21,7 @@ describe('@offirmo-private/timestamps', function() {
 			//console.log(get_UTC_timestamp_ms())
 
 			for(let i = 0; i < 10; ++i) {
-				const stamp = get_UTC_timestamp_ms()
+				const stamp = getꓽUTC_timestamp_ms()
 				//console.log(stamp)
 				expect(stamp).to.be.a('number')
 				expect(stamp).to.be.within(
@@ -35,7 +35,7 @@ describe('@offirmo-private/timestamps', function() {
 			it('should allow passing a forced time', function() {
 				const date = new Date(TEST_TIMESTAMP_MS)
 				expect(Number(date)).to.equal(TEST_TIMESTAMP_MS)
-				const stamp = get_UTC_timestamp_ms(date)
+				const stamp = getꓽUTC_timestamp_ms(date)
 				expect(stamp).to.equal(TEST_TIMESTAMP_MS)
 			})
 
@@ -53,7 +53,7 @@ describe('@offirmo-private/timestamps', function() {
 					expect(Number(date)).to.equal(TEST_TIMESTAMP_MS)
 
 					// and us
-					const stamp = get_UTC_timestamp_ms()
+					const stamp = getꓽUTC_timestamp_ms()
 					expect(stamp).to.equal(TEST_TIMESTAMP_MS)
 				})
 			})
@@ -66,7 +66,7 @@ describe('@offirmo-private/timestamps', function() {
 			//console.log(get_human_readable_UTC_timestamp_ms())
 
 			for(let i = 0; i < 10; ++i) {
-				const stamp = get_human_readable_UTC_timestamp_ms()
+				const stamp = getꓽhuman_readable_UTC_timestamp_ms()
 				//console.log(stamp)
 				expect(stamp).to.be.a('string')
 				expect(stamp.length).to.equal(21)
@@ -80,7 +80,7 @@ describe('@offirmo-private/timestamps', function() {
 			//console.log(get_human_readable_UTC_timestamp_seconds())
 
 			for(let i = 0; i < 10; ++i) {
-				const stamp = get_human_readable_UTC_timestamp_seconds()
+				const stamp = getꓽhuman_readable_UTC_timestamp_seconds()
 				//console.log(stamp)
 				expect(stamp).to.be.a('string')
 				expect(stamp.length).to.equal(17)
@@ -94,7 +94,7 @@ describe('@offirmo-private/timestamps', function() {
 			//console.log(get_human_readable_UTC_timestamp_minutes())
 
 			for(let i = 0; i < 10; ++i) {
-				const stamp = get_human_readable_UTC_timestamp_minutes()
+				const stamp = getꓽhuman_readable_UTC_timestamp_minutes()
 				//console.log(stamp)
 				expect(stamp).to.be.a('string')
 				expect(stamp.length).to.equal(14)
@@ -108,7 +108,7 @@ describe('@offirmo-private/timestamps', function() {
 			//console.log(get_human_readable_UTC_timestamp_days())
 
 			for(let i = 0; i < 10; ++i) {
-				const stamp = get_human_readable_UTC_timestamp_days()
+				const stamp = getꓽhuman_readable_UTC_timestamp_days()
 				//console.log(stamp)
 				expect(stamp).to.be.a('string')
 				expect(stamp.length).to.equal(8)

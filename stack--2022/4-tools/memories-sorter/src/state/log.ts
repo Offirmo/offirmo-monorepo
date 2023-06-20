@@ -7,7 +7,7 @@ import {
 	ALL_LOG_LEVELS,
 	normalizeArguments,
 } from '@offirmo/practical-logger-core'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
 
 interface WithLogs {
 	logs: {
@@ -24,9 +24,9 @@ interface StatefulLogger<State extends WithLogs> extends Logger {
 //////////// Selectors ////////////
 
 /*
-export function get_logger<State extends WithLogs>(state: Immutable<State>, existing_logger: Immutable<Logger>): StatefulLogger<State> {
+export function getꓽlogger<State extends WithLogs>(state: Immutable<State>, existing_logger: Immutable<Logger>): StatefulLogger<State> {
 
-	function get_state() {
+	function getꓽstate() {
 		return state
 	}
 
@@ -58,7 +58,7 @@ function _log(state: Immutable<WithLogs>, level: LogLevel, rawMessage?: string, 
 				...state.logs[level],
 				[msg]: state.logs[level][msg] || {
 					name: '',
-					time: get_UTC_timestamp_ms(),
+					time: getꓽUTC_timestamp_ms(),
 					level,
 					msg,
 					err,

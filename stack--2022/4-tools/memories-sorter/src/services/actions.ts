@@ -7,11 +7,11 @@ import * as json from '@offirmo/cli-toolbox/fs/extra/json/index.mjs'
 import { Immutable } from '@offirmo-private/ts-types'
 import { NORMALIZERS } from '@offirmo-private/normalize-string'
 import { normalizeError } from '@offirmo/error-utils'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
 
 import { Basename, RelativePath } from '../types.js'
 import { NOTES_BASENAME_SUFFIX_LC } from '../consts.js'
-import { get_params, Params } from '../params.js'
+import { getꓽparams, Params } from '../params.js'
 
 import * as File from '../state/file/index.js'
 import * as Notes from '../state/notes/index.js'
@@ -22,7 +22,7 @@ import { Action, ActionType } from '../state/actions.js'
 import logger from './logger.js'
 import * as fs_extra from '@offirmo/cli-toolbox/fs/extra/index.mjs'
 import { _is_same_inode } from './inode.js'
-import { get_relevant_fs_stats_subset } from './fs_stats.js'
+import { getꓽrelevant_fs_stats_subset } from './fs_stats.js'
 import ↆget_file_hash from './hash.js'
 import { pathㆍparse_memoized } from './name_parser.js'
 import { FolderId, SPECIAL_FOLDERⵧINBOX__BASENAME } from '../state/folder/index.js'
@@ -43,10 +43,10 @@ const _report = {
 	phases_duration_ms: {} as { [k: string]: number },
 }
 
-export async function exec_pending_actions_recursively_until_no_more(db: Immutable<State>, debug_id: string, PARAMS: Immutable<Params> = get_params()): Promise<Immutable<State>> {
+export async function exec_pending_actions_recursively_until_no_more(db: Immutable<State>, debug_id: string, PARAMS: Immutable<Params> = getꓽparams()): Promise<Immutable<State>> {
 	logger.trace(`executing actions from "${debug_id}"…`)
 
-	const start_date_ms = get_UTC_timestamp_ms()
+	const start_date_ms = getꓽUTC_timestamp_ms()
 
 	const display_progress = true // activating sort of turns off wrapping in iTerm = bad for debug
 
@@ -157,7 +157,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 			const abs_path = DB.get_absolute_path(db, id)
 			const stats = await util.promisify(fs.stat)(abs_path)
 			logger.silly(`- got fs stats data for "${id}"…`)
-			db = DB.on_fs_stats_read(db, id, get_relevant_fs_stats_subset(stats))
+			db = DB.on_fs_stats_read(db, id, getꓽrelevant_fs_stats_subset(stats))
 		}
 		catch (_err) {
 			const err = normalizeError(_err)
@@ -727,7 +727,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		// stop all bars
 		if (display_progress) progress_multibar.stop()
 
-		const end_date_ms = get_UTC_timestamp_ms()
+		const end_date_ms = getꓽUTC_timestamp_ms()
 		const exec_duration_ms = end_date_ms - start_date_ms
 		_report.phases_duration_ms[debug_id] = exec_duration_ms
 
@@ -739,7 +739,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 
 ////////////////////////////////////
 
-export function get_report_to_string(): string {
+export function getꓽreport_to_string(): string {
 	let report = ''
 
 	report += 'Actions report: ' + JSON.stringify(_report, null, '\t')

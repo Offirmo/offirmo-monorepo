@@ -1,14 +1,14 @@
 import { Immutable } from '../deps/immutable'
 import { isꓽStoryEntry, isꓽStoryFolder, State, StoryId } from '../state/types'
 import { MAIN_IFRAME_QUERYPARAMS } from '../consts'
-import { get_current_url__cleaned } from '../services/env'
+import { getꓽcurrent_url__cleaned } from '../services/env'
 
-function get_main_iframe_url(state: Immutable<State>, explicit_id: StoryId = state.current_story‿id): string {
+function getꓽmain_iframe_url(state: Immutable<State>, explicit_id: StoryId = state.current_story‿id): string {
 	const sp = new URLSearchParams({
 		[MAIN_IFRAME_QUERYPARAMS.story_id]: explicit_id,
 	})
 
-	return get_current_url__cleaned() + '?' + sp.toString()
+	return getꓽcurrent_url__cleaned() + '?' + sp.toString()
 }
 
 

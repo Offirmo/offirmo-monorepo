@@ -15,7 +15,7 @@ describe('@offirmo-private/ts-utils', function () {
 			age: number
 		}
 
-		function get_age(p: Immutable<Person>): number {
+		function getꓽage(p: Immutable<Person>): number {
 			return p.age
 		}
 
@@ -30,24 +30,24 @@ describe('@offirmo-private/ts-utils', function () {
 				age: 3,
 			}
 
-			expect(compare(p1, '===', p2, get_age)).to.be.false
-			expect(compare(p1, '!==', p2, get_age)).to.be.true
-			expect(compare(p1, '>',   p2, get_age)).to.be.true
-			expect(compare(p1, '>=',  p2, get_age)).to.be.true
-			expect(compare(p1, '<',   p2, get_age)).to.be.false
-			expect(compare(p1, '<=',  p2, get_age)).to.be.false
+			expect(compare(p1, '===', p2, getꓽage)).to.be.false
+			expect(compare(p1, '!==', p2, getꓽage)).to.be.true
+			expect(compare(p1, '>',   p2, getꓽage)).to.be.true
+			expect(compare(p1, '>=',  p2, getꓽage)).to.be.true
+			expect(compare(p1, '<',   p2, getꓽage)).to.be.false
+			expect(compare(p1, '<=',  p2, getꓽage)).to.be.false
 
 			const p3: Person = {
 				name: 'child2',
 				age: 3,
 			}
 
-			expect(compare(p2, '===', p3, get_age)).to.be.true
-			expect(compare(p2, '!==', p3, get_age)).to.be.false
-			expect(compare(p2, '>',   p3, get_age)).to.be.false
-			expect(compare(p2, '>=',  p3, get_age)).to.be.true
-			expect(compare(p2, '<',   p3, get_age)).to.be.false
-			expect(compare(p2, '<=',  p3, get_age)).to.be.true
+			expect(compare(p2, '===', p3, getꓽage)).to.be.true
+			expect(compare(p2, '!==', p3, getꓽage)).to.be.false
+			expect(compare(p2, '>',   p3, getꓽage)).to.be.false
+			expect(compare(p2, '>=',  p3, getꓽage)).to.be.true
+			expect(compare(p2, '<',   p3, getꓽage)).to.be.false
+			expect(compare(p2, '<=',  p3, getꓽage)).to.be.true
 		})
 	})
 })

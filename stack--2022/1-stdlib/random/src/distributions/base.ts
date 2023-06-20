@@ -22,11 +22,11 @@ export function _randomly_generateꓽintegerⵧUInt53(engine: Immutable<RNGEngin
 
 /////// factories
 
-export function get_random_generator_ofꓽintegerⵧInt32(): RandomValueGenerator<Int32> {
+export function getꓽrandom_generator_ofꓽintegerⵧInt32(): RandomValueGenerator<Int32> {
 	return _randomly_generateꓽintegerⵧInt32
 }
 
 /*
-export function get_random_generator_ofꓽintegerⵧUInt53(): RandomValueGenerator<Int32> {
+export function getꓽrandom_generator_ofꓽintegerⵧUInt53(): RandomValueGenerator<Int32> {
 	return _randomly_generateꓽintegerⵧUInt53
 }*/

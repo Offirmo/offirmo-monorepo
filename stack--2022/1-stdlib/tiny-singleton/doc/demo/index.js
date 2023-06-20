@@ -13,7 +13,7 @@ function create_person(name, logger = console) {
 	}
 }
 
-const get_person = tiny_singleton(() => create_person('Luke', console))
+const getꓽperson = tiny_singleton(() => create_person('Luke', console))
 
 console.assert(get_person().ask_name() === 'Luke')
 console.assert(get_person().ask_name() === 'Luke')
@@ -22,7 +22,7 @@ console.assert(get_person().ask_name() === 'Luke')
 //get_person().foo
 
 
-const get_owner = tiny_singleton((name) => create_person(name || 'Luke'))
+const getꓽowner = tiny_singleton((name) => create_person(name || 'Luke'))
 
 console.assert(get_owner('Anakin').ask_name() === 'Anakin')
 console.assert(get_owner('Luke').ask_name() === 'Anakin')

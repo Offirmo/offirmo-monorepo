@@ -1,7 +1,7 @@
 /////////////////////
 
 import { Immutable} from '@offirmo-private/ts-types'
-import { TimestampUTCMs, get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { TimestampUTCMs, getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
 import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
 
 /////////////////////
@@ -13,7 +13,7 @@ import * as CodesState from '@oh-my-rpg/state-codes'
 import * as ProgressState from '@tbrpg/state--progress'
 
 import { ItemQuality } from '@tbrpg/definitions'
-import { get_prng } from '@oh-my-rpg/state-prng'
+import { getꓽprng } from '@oh-my-rpg/state-prng'
 import { create as create_weapon } from '@tbrpg/logic-weapons'
 import { create as create_armor } from '@tbrpg/logic-armors'
 
@@ -35,7 +35,7 @@ import { reseed } from './create.js'
 
 /////////////////////
 
-function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: TimestampUTCMs = get_UTC_timestamp_ms()): Immutable<State> {
+function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: TimestampUTCMs = getꓽUTC_timestamp_ms()): Immutable<State> {
 	let previous_state: Immutable<State> | null = _state // allow null for special manipulation such as reset
 	let updated_state: Immutable<State> | null = _state // for now
 	let state: Immutable<State> = _state // for now
@@ -213,7 +213,7 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 				break
 
 			case 'ALPHATWINK': {
-				const rng = get_prng(u_state.prng)
+				const rng = getꓽprng(u_state.prng)
 				const weapon = create_weapon(rng, {
 					quality: ItemQuality.artifact,
 					qualifier2_hid: 'twink',

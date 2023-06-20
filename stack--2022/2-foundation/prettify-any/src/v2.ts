@@ -4,13 +4,13 @@ import {
 	Options,
 	State,
 } from './types.js'
-import { get_options } from './options.js'
+import { getꓽoptions } from './options.js'
 
 ////////////////////////////////////
 
 function create_state(options: Options): State {
 	return {
-		o: get_options(options),
+		o: getꓽoptions(options),
 
 		circular: new WeakSet<object>()
 	}

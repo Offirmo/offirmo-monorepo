@@ -15,7 +15,7 @@ Object.keys(BiomeId).forEach(biome_id => {
 })
 
 //console.log(BiomeId)
-const grassland_bgs = get_backgrounds_for_biome(BiomeId.terrestrialⵧgrassland)
+const grassland_bgs = getꓽbackgrounds_for_biome(BiomeId.terrestrialⵧgrassland)
 //console.log(grassland_bgs)
 
 function fallback() {

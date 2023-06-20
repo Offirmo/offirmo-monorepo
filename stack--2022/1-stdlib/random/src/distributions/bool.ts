@@ -10,13 +10,13 @@ function _is_last_bitꘌ1(i: Int32): boolean {
 }
 
 
-export function get_random_generator_ofꓽbool(): RandomValueGenerator<boolean> {
+export function getꓽrandom_generator_ofꓽbool(): RandomValueGenerator<boolean> {
 	return function _randomly_generateꓽbool(engine: Immutable<RNGEngine>) {
 		return _is_last_bitꘌ1(engine.get_Int32())
 	}
 }
 
-export function get_random_generator_ofꓽboolⵧweighted(percentage: Percentage): RandomValueGenerator<boolean> {
+export function getꓽrandom_generator_ofꓽboolⵧweighted(percentage: Percentage): RandomValueGenerator<boolean> {
 	assert(percentage >= 0, 'percentage should be >= 0')
 	assert(percentage <= 1, 'percentage should be <= 1')
 

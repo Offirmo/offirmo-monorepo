@@ -63,7 +63,7 @@ function _to_Int32Arrayⵧstring(s: string): Int32Array {
 }
 
 
-function get_seed_as_Int32Array(raw_seed: Seed | Int32Array): Int32Array {
+function getꓽseed_as_Int32Array(raw_seed: Seed | Int32Array): Int32Array {
 	let normalized_seed = ((): Int32Array => {
 
 		if(typeof raw_seed === 'string') {

@@ -41,7 +41,7 @@ describe(`${LIB} - file (state)`, function() {
 
 		describe('get_best_creation_date()', function() {
 			const DEBUG = false
-			let stategen = get_test_single_file_state_generator()
+			let stategen = getꓽtest_single_file_state_generator()
 			beforeEach(() => stategen.reset())
 			beforeEach(() => DEBUG && console.log('-------'))
 
@@ -50,29 +50,29 @@ describe(`${LIB} - file (state)`, function() {
 				function expect_second_encounter_to_be_stable(
 					mode: 're-encounter--same' | 're-encounter--after_loss',
 					//expected_bcd_source?: undefined | BestCreationDate['source'],
-					first_encounter_stategen: ReturnType<typeof get_test_single_file_state_generator> = stategen
+					first_encounter_stategen: ReturnType<typeof getꓽtest_single_file_state_generator> = stategen
 				) {
 					const first_encounter_final_state = first_encounter_stategen.create_state()
-					const bcdm_1st_encounter = get_best_creation_date‿meta(first_encounter_final_state)
+					const bcdm_1st_encounter = getꓽbest_creation_date‿meta(first_encounter_final_state)
 					const notes_from_first_encounter = structuredClone(first_encounter_final_state.notes)
 
 					switch (mode) {
 						case 're-encounter--same': {
 							// re-encountering in-place, no change
 							DEBUG && console.log('--- R.E. #1')
-							const stategen = get_test_single_file_state_generator(first_encounter_stategen)
+							const stategen = getꓽtest_single_file_state_generator(first_encounter_stategen)
 							stategen.inputs.notes = notes_from_first_encounter
 							const state = stategen.create_state()
 
-							const bcdmⵧoldest = get_best_creation_dateⵧfrom_oldest_known_data‿meta(state)
+							const bcdmⵧoldest = getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state)
 							expect(bcdmⵧoldest.source, 'O same source as 1st encounter (1)')
 								.to.equal(bcdm_1st_encounter.source.replaceAll('current', 'oldest'))
 
-							const bcdmⵧcurrent = get_best_creation_dateⵧfrom_current_data‿meta(state)
+							const bcdmⵧcurrent = getꓽbest_creation_dateⵧfrom_current_data‿meta(state)
 							expect(bcdmⵧcurrent.source, 'C same source as 1st encounter (1)')
 								.to.equal(bcdm_1st_encounter.source.replaceAll('oldest', 'current'))
 
-							const bcdm = get_best_creation_date‿meta(state)
+							const bcdm = getꓽbest_creation_date‿meta(state)
 							expect(bcdm.source, 'same source as 1st encounter (1)')
 								.to.equal(bcdm_1st_encounter.source)
 
@@ -82,7 +82,7 @@ describe(`${LIB} - file (state)`, function() {
 						case 're-encounter--after_loss': {
 							// re-encountering when everything has changed
 							DEBUG && console.log('--- R.E. #2')
-							const stategen = get_test_single_file_state_generator()
+							const stategen = getꓽtest_single_file_state_generator()
 							stategen.inputs.parent_pathⵧcurrent‿relative = 'lost'
 							stategen.inputs.basenameⵧcurrent = 'lost.jpeg'
 							stategen.inputs.dateⵧfsⵧcurrent‿tms = BAD_CREATION_DATE_CANDIDATE‿TMS
@@ -92,13 +92,13 @@ describe(`${LIB} - file (state)`, function() {
 							stategen.inputs.notes = notes_from_first_encounter
 							const state = stategen.create_state()
 
-							const bcdmⵧoldest = get_best_creation_dateⵧfrom_oldest_known_data‿meta(state)
+							const bcdmⵧoldest = getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state)
 							expect(bcdmⵧoldest.source, 'O same source as 1st encounter (2)')
 								.to.equal(bcdm_1st_encounter.source.replaceAll('current', 'oldest'))
 
 							// no need to compare current, voided by lost data
 
-							const bcdm = get_best_creation_date‿meta(state)
+							const bcdm = getꓽbest_creation_date‿meta(state)
 							expect(bcdm.source, 'same source as 1st encounter (2)')
 								.to.equal(bcdm_1st_encounter.source.replaceAll('current', 'oldest')) // since data loss, source should come from oldest
 
@@ -121,10 +121,10 @@ describe(`${LIB} - file (state)`, function() {
 					it('should be prioritized as a primary source', () => {
 						let state = stategen.create_state()
 
-						const bcdmⵧoldest = get_best_creation_dateⵧfrom_oldest_known_data‿meta(state)
+						const bcdmⵧoldest = getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state)
 						expect(bcdmⵧoldest.source, 'oldest.source').to.equal('exifⵧoldest')
 
-						const bcdmⵧcurrent = get_best_creation_dateⵧfrom_current_data‿meta(state)
+						const bcdmⵧcurrent = getꓽbest_creation_dateⵧfrom_current_data‿meta(state)
 						expect(bcdmⵧcurrent.source, 'current.source').to.equal('exifⵧcurrent')
 
 						expect(bcdmⵧoldest.source.replaceAll('oldest', 'xxx'), 'O+C same source on 1st encounter')
@@ -132,7 +132,7 @@ describe(`${LIB} - file (state)`, function() {
 						expect(get_human_readable_timestamp_auto(bcdmⵧoldest.candidate, 'tz:embedded'), 'O+C same date on 1st encounter')
 							.to.equal(get_human_readable_timestamp_auto(bcdmⵧcurrent.candidate, 'tz:embedded'))
 
-						const bcdm = get_best_creation_date‿meta(state)
+						const bcdm = getꓽbest_creation_date‿meta(state)
 						expect(bcdm.source, 'source').to.equal('exifⵧoldest') // oldest indeed, those are original data afawk
 						expect(get_human_readable_timestamp_auto(bcdm.candidate, 'tz:embedded'), 'date hr').to.equal(REAL_CREATION_DATE‿HRTS)
 						expect(bcdm.confidence, 'confidence').to.equal('primary')
@@ -180,10 +180,10 @@ describe(`${LIB} - file (state)`, function() {
 							it('should use the basename and enrich it with fs, as primary', () => {
 								let state = stategen.create_state()
 
-								const bcdmⵧoldest = get_best_creation_dateⵧfrom_oldest_known_data‿meta(state)
+								const bcdmⵧoldest = getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state)
 								expect(bcdmⵧoldest.source, 'oldest.source').to.equal('basename_npⵧoldest+fs')
 
-								const bcdmⵧcurrent = get_best_creation_dateⵧfrom_current_data‿meta(state)
+								const bcdmⵧcurrent = getꓽbest_creation_dateⵧfrom_current_data‿meta(state)
 								expect(bcdmⵧcurrent.source, 'current.source').to.equal('basename_npⵧcurrent+fs')
 
 								expect(bcdmⵧoldest.source.replaceAll('oldest', 'xxx'), 'O+C same source on 1st encounter')
@@ -191,7 +191,7 @@ describe(`${LIB} - file (state)`, function() {
 								expect(get_human_readable_timestamp_auto(bcdmⵧoldest.candidate, 'tz:embedded'), 'O+C same date on 1st encounter')
 									.to.equal(get_human_readable_timestamp_auto(bcdmⵧcurrent.candidate, 'tz:embedded'))
 
-								const bcdm = get_best_creation_date‿meta(state)
+								const bcdm = getꓽbest_creation_date‿meta(state)
 								expect(bcdm.source, 'source').to.equal('basename_npⵧoldest+fs')
 								expect(get_human_readable_timestamp_auto(bcdm.candidate, 'tz:embedded'), 'date hr').to.equal(REAL_CREATION_DATE‿HRTS)
 								expect(bcdm.confidence, 'confidence').to.equal('primary')
@@ -228,10 +228,10 @@ describe(`${LIB} - file (state)`, function() {
 							it('should use the basename only as primary WITHOUT using fs', () => {
 									let state = stategen.create_state()
 
-									const bcdmⵧoldest = get_best_creation_dateⵧfrom_oldest_known_data‿meta(state)
+									const bcdmⵧoldest = getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state)
 									expect(bcdmⵧoldest.source, 'oldest.source').to.equal('basename_npⵧoldest')
 
-									const bcdmⵧcurrent = get_best_creation_dateⵧfrom_current_data‿meta(state)
+									const bcdmⵧcurrent = getꓽbest_creation_dateⵧfrom_current_data‿meta(state)
 									expect(bcdmⵧcurrent.source, 'current.source').to.equal('basename_npⵧcurrent')
 
 									expect(bcdmⵧoldest.source.replaceAll('oldest', 'xxx'), 'O+C same source on 1st encounter')
@@ -239,7 +239,7 @@ describe(`${LIB} - file (state)`, function() {
 									expect(get_human_readable_timestamp_auto(bcdmⵧoldest.candidate, 'tz:embedded'), 'O+C same date on 1st encounter')
 										.to.equal(get_human_readable_timestamp_auto(bcdmⵧcurrent.candidate, 'tz:embedded'))
 
-									const bcdm = get_best_creation_date‿meta(state)
+									const bcdm = getꓽbest_creation_date‿meta(state)
 									expect(bcdm.source, 'source').to.equal('basename_npⵧoldest')
 									expect(get_human_readable_timestamp_auto(bcdm.candidate, 'tz:embedded'), 'date hr').to.equal(REAL_CREATION_DATE‿HRTS.slice(0, 16))
 									expect(bcdm.confidence, 'confidence').to.equal('primary')
@@ -280,10 +280,10 @@ describe(`${LIB} - file (state)`, function() {
 							it('should use FS as primary', () => {
 								let state = stategen.create_state()
 
-								const bcdmⵧoldest = get_best_creation_dateⵧfrom_oldest_known_data‿meta(state)
+								const bcdmⵧoldest = getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state)
 								expect(bcdmⵧoldest.source, 'oldest.source').to.equal('fsⵧoldest+neighbor✔')
 
-								const bcdmⵧcurrent = get_best_creation_dateⵧfrom_current_data‿meta(state)
+								const bcdmⵧcurrent = getꓽbest_creation_dateⵧfrom_current_data‿meta(state)
 								expect(bcdmⵧcurrent.source, 'current.source').to.equal('fsⵧcurrent+neighbor✔')
 
 								expect(bcdmⵧoldest.source.replaceAll('oldest', 'xxx'), 'O+C same source on 1st encounter')
@@ -291,7 +291,7 @@ describe(`${LIB} - file (state)`, function() {
 								expect(get_human_readable_timestamp_auto(bcdmⵧoldest.candidate, 'tz:embedded'), 'O+C same date on 1st encounter')
 									.to.equal(get_human_readable_timestamp_auto(bcdmⵧcurrent.candidate, 'tz:embedded'))
 
-								const bcdm = get_best_creation_date‿meta(state)
+								const bcdm = getꓽbest_creation_date‿meta(state)
 								expect(bcdm.source, 'source').to.equal('fsⵧoldest+neighbor✔')
 								expect(get_human_readable_timestamp_auto(bcdm.candidate, 'tz:embedded'), 'date hr').to.equal(REAL_CREATION_DATE‿HRTS)
 								expect(bcdm.confidence, 'confidence').to.equal('primary')
@@ -339,10 +339,10 @@ describe(`${LIB} - file (state)`, function() {
 									// however it's a secondary
 									let state = stategen.create_state()
 
-									const bcdmⵧoldest = get_best_creation_dateⵧfrom_oldest_known_data‿meta(state)
+									const bcdmⵧoldest = getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state)
 									expect(bcdmⵧoldest.source, 'oldest.source').to.equal('basename_pⵧoldest')
 
-									const bcdmⵧcurrent = get_best_creation_dateⵧfrom_current_data‿meta(state)
+									const bcdmⵧcurrent = getꓽbest_creation_dateⵧfrom_current_data‿meta(state)
 									expect(bcdmⵧcurrent.source, 'current.source').to.equal('basename_pⵧcurrent')
 
 									expect(bcdmⵧoldest.source.replaceAll('oldest', 'xxx'), 'O+C same source on 1st encounter')
@@ -350,7 +350,7 @@ describe(`${LIB} - file (state)`, function() {
 									expect(get_human_readable_timestamp_auto(bcdmⵧoldest.candidate, 'tz:embedded'), 'O+C same date on 1st encounter')
 										.to.equal(get_human_readable_timestamp_auto(bcdmⵧcurrent.candidate, 'tz:embedded'))
 
-									const bcdm = get_best_creation_date‿meta(state)
+									const bcdm = getꓽbest_creation_date‿meta(state)
 									expect(bcdm.source, 'source').to.equal('basename_pⵧcurrent') // secondary = current now has precedence to stay in same folder
 									expect(get_human_readable_timestamp_auto(bcdm.candidate, 'tz:embedded'), 'date hr').to.equal(REAL_CREATION_DATE‿HRTS)
 									expect(bcdm.confidence, 'confidence').to.equal('secondary')
@@ -394,10 +394,10 @@ describe(`${LIB} - file (state)`, function() {
 									// however it's a secondary
 									let state = stategen.create_state()
 
-									const bcdmⵧoldest = get_best_creation_dateⵧfrom_oldest_known_data‿meta(state)
+									const bcdmⵧoldest = getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state)
 									expect(bcdmⵧoldest.source, 'oldest.source').to.equal('fsⵧoldest+neighbor?')
 
-									const bcdmⵧcurrent = get_best_creation_dateⵧfrom_current_data‿meta(state)
+									const bcdmⵧcurrent = getꓽbest_creation_dateⵧfrom_current_data‿meta(state)
 									expect(bcdmⵧcurrent.source, 'current.source').to.equal('fsⵧcurrent+neighbor?')
 
 									expect(bcdmⵧoldest.source.replaceAll('oldest', 'xxx'), 'O+C same source on 1st encounter')
@@ -405,7 +405,7 @@ describe(`${LIB} - file (state)`, function() {
 									expect(get_human_readable_timestamp_auto(bcdmⵧoldest.candidate, 'tz:embedded'), 'O+C same date on 1st encounter')
 										.to.equal(get_human_readable_timestamp_auto(bcdmⵧcurrent.candidate, 'tz:embedded'))
 
-									const bcdm = get_best_creation_date‿meta(state)
+									const bcdm = getꓽbest_creation_date‿meta(state)
 									expect(bcdm.source, 'source').to.equal('fsⵧcurrent+neighbor?')
 									expect(get_human_readable_timestamp_auto(bcdm.candidate, 'tz:embedded'), 'date hr').to.equal(REAL_CREATION_DATE‿HRTS)
 									expect(bcdm.confidence, 'confidence').to.equal('secondary')
@@ -453,10 +453,10 @@ describe(`${LIB} - file (state)`, function() {
 									// however it's a secondary
 									let state = stategen.create_state()
 
-									const bcdmⵧoldest = get_best_creation_dateⵧfrom_oldest_known_data‿meta(state)
+									const bcdmⵧoldest = getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state)
 									expect(bcdmⵧoldest.source, 'oldest.source').to.equal('basename_pⵧoldest')
 
-									const bcdmⵧcurrent = get_best_creation_dateⵧfrom_current_data‿meta(state)
+									const bcdmⵧcurrent = getꓽbest_creation_dateⵧfrom_current_data‿meta(state)
 									expect(bcdmⵧcurrent.source, 'current.source').to.equal('basename_pⵧcurrent')
 
 									expect(bcdmⵧoldest.source.replaceAll('oldest', 'xxx'), 'O+C same source on 1st encounter')
@@ -464,7 +464,7 @@ describe(`${LIB} - file (state)`, function() {
 									expect(get_human_readable_timestamp_auto(bcdmⵧoldest.candidate, 'tz:embedded'), 'O+C same date on 1st encounter')
 										.to.equal(get_human_readable_timestamp_auto(bcdmⵧcurrent.candidate, 'tz:embedded'))
 
-									const bcdm = get_best_creation_date‿meta(state)
+									const bcdm = getꓽbest_creation_date‿meta(state)
 									expect(bcdm.source, 'source').to.equal('basename_pⵧcurrent') // secondary = current now has precedence to stay in same folder
 									expect(get_human_readable_timestamp_auto(bcdm.candidate, 'tz:embedded'), 'date hr').to.equal(REAL_CREATION_DATE‿HRTS)
 									expect(bcdm.confidence, 'confidence').to.equal('secondary')
@@ -511,10 +511,10 @@ describe(`${LIB} - file (state)`, function() {
 										let state = stategen.create_state()
 										expect(state.current_neighbor_hints?.fallback_junk_bcd, 'prereq').not.to.be.undefined // check prerequisite
 
-										const bcdmⵧoldest = get_best_creation_dateⵧfrom_oldest_known_data‿meta(state)
+										const bcdmⵧoldest = getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state)
 										expect(bcdmⵧoldest.source, 'oldest.source').to.equal('parentⵧoldest')
 
-										const bcdmⵧcurrent = get_best_creation_dateⵧfrom_current_data‿meta(state)
+										const bcdmⵧcurrent = getꓽbest_creation_dateⵧfrom_current_data‿meta(state)
 										expect(bcdmⵧcurrent.source, 'current.source').to.equal('parentⵧcurrent')
 
 										expect(bcdmⵧoldest.source.replaceAll('oldest', 'xxx'), 'O+C same source on 1st encounter')
@@ -522,7 +522,7 @@ describe(`${LIB} - file (state)`, function() {
 										expect(get_human_readable_timestamp_auto(bcdmⵧoldest.candidate, 'tz:embedded'), 'O+C same date on 1st encounter')
 											.to.equal(get_human_readable_timestamp_auto(bcdmⵧcurrent.candidate, 'tz:embedded'))
 
-										const bcdm = get_best_creation_date‿meta(state)
+										const bcdm = getꓽbest_creation_date‿meta(state)
 										expect(bcdm.source, 'source').to.equal('parentⵧcurrent')
 										expect(get_human_readable_timestamp_auto(bcdm.candidate, 'tz:embedded'), 'date hr').to.equal(REAL_CREATION_DATE‿HRTS)
 										expect(bcdm.confidence, 'confidence').to.equal('secondary')
@@ -561,10 +561,10 @@ describe(`${LIB} - file (state)`, function() {
 										let state = stategen.create_state()
 										expect(state.current_neighbor_hints?.fallback_junk_bcd, 'prereq').to.be.undefined // check prerequisite
 
-										const bcdmⵧoldest = get_best_creation_dateⵧfrom_oldest_known_data‿meta(state)
+										const bcdmⵧoldest = getꓽbest_creation_dateⵧfrom_oldest_known_data‿meta(state)
 										expect(bcdmⵧoldest.source, 'oldest.source').to.equal('fsⵧoldest+neighbor✖')
 
-										const bcdmⵧcurrent = get_best_creation_dateⵧfrom_current_data‿meta(state)
+										const bcdmⵧcurrent = getꓽbest_creation_dateⵧfrom_current_data‿meta(state)
 										expect(bcdmⵧcurrent.source, 'current.source').to.equal('fsⵧcurrent+neighbor✖')
 
 										expect(bcdmⵧoldest.source.replaceAll('oldest', 'xxx'), 'O+C same source on 1st encounter')
@@ -572,7 +572,7 @@ describe(`${LIB} - file (state)`, function() {
 										expect(get_human_readable_timestamp_auto(bcdmⵧoldest.candidate, 'tz:embedded'), 'O+C same date on 1st encounter')
 											.to.equal(get_human_readable_timestamp_auto(bcdmⵧcurrent.candidate, 'tz:embedded'))
 
-										const bcdm = get_best_creation_date‿meta(state)
+										const bcdm = getꓽbest_creation_date‿meta(state)
 										expect(bcdm.source, 'source').to.equal('fsⵧoldest+neighbor✖')
 										expect(get_human_readable_timestamp_auto(bcdm.candidate, 'tz:embedded'), 'date hr').to.equal(BAD_CREATION_DATE_CANDIDATE‿HRTS)
 										expect(bcdm.confidence, 'confidence').to.equal('junk')
@@ -644,7 +644,7 @@ describe(`${LIB} - file (state)`, function() {
 										it(`should be stable = no change`, () => {
 											let state = stategen.create_state()
 
-											const bcdm = get_best_creation_date‿meta(state)
+											const bcdm = getꓽbest_creation_date‿meta(state)
 											expect(bcdm.source, 'source').not.to.equal('some_basename_normalized') // data was restored identical from original data
 											expect(get_human_readable_timestamp_auto(bcdm.candidate, 'tz:embedded'), 'date hr').to.equal('2019-07-31_21h00m15')
 											expect(bcdm.confidence, 'confidence').to.equal('primary')
@@ -687,7 +687,7 @@ describe(`${LIB} - file (state)`, function() {
 		})
 
 		describe('get_ideal_basename()', function () {
-			const stategen = get_test_single_file_state_generator()
+			const stategen = getꓽtest_single_file_state_generator()
 			beforeEach(() => stategen.reset())
 
 			context('when encountering the file for the first time', function () {
@@ -712,11 +712,11 @@ describe(`${LIB} - file (state)`, function() {
 						// build confidence
 						stategen.inputs.dateⵧexif = null //_get_exif_datetime(BCD)
 						stategen.inputs.neighbor_hints__fs_reliability_shortcut = 'reliable'
-						stategen.inputs.dateⵧfsⵧcurrent‿tms = get_timestamp_utc_ms_from(BCD)
+						stategen.inputs.dateⵧfsⵧcurrent‿tms = getꓽtimestamp_utc_ms_from(BCD)
 
 						let state = stategen.create_state()
 
-						const bcd_meta = get_best_creation_date‿meta(state)
+						const bcd_meta = getꓽbest_creation_date‿meta(state)
 						expect(bcd_meta.confidence).not.to.equal('junk')
 						expect(
 							get_ideal_basename(state, { requested_confidence: false }),
@@ -767,7 +767,7 @@ describe(`${LIB} - file (state)`, function() {
 			})
 
 			context('when the basename has a copy marker', function() {
-				function get_test_state() {
+				function getꓽtest_state() {
 					const CURRENT_BASENAME = 'foo - copie 3.png'
 					let state = create(CURRENT_BASENAME)
 					const creation_date‿tms = 1564542022000

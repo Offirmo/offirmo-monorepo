@@ -22,7 +22,7 @@ describe(`${LIB} - engagement - recap`, function() {
 
 			it('should return an intro', () => {
 				const state = create()
-				const doc = get_recap(state.u_state)
+				const doc = getꓽrecap(state.u_state)
 				const str = RichText.to_text(doc)
 				expect(str).to.include('Congratulations, you were chosen')
 			})

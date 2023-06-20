@@ -5,20 +5,20 @@ import {
 	get_random_generator_ofꓽboolⵧweighted,
 } from './bool.js'
 import { RNGEngine } from '../types.js'
-import { get_RNGⵧMathᐧrandom } from '../engines/MathRandom/index.js'
+import { getꓽRNGⵧMathᐧrandom } from '../engines/MathRandom/index.js'
 import { ROUNDS_COUNT } from '../_test_helpers.js'
 
 
 describe('@offirmo/random', function() {
-	let engine: RNGEngine = get_RNGⵧMathᐧrandom()
+	let engine: RNGEngine = getꓽRNGⵧMathᐧrandom()
 
 	describe('distributions', function() {
 
 		describe('bool', function() {
 			const TOLERANCE = 0.03 // TODO better math
 
-			describe('basic: get_random_generator_ofꓽbool()', function() {
-				const generate = get_random_generator_ofꓽbool()
+			describe('basic: getꓽrandom_generator_ofꓽbool()', function() {
+				const generate = getꓽrandom_generator_ofꓽbool()
 
 				it('should work -- shape', () => {
 					for(let i = 0; i < ROUNDS_COUNT; ++i) {
@@ -49,7 +49,7 @@ describe('@offirmo/random', function() {
 			describe('get_random_generator_ofꓽboolⵧweighted()', function () {
 
 				it('should work -- limits -- 0', () => {
-					const generate = get_random_generator_ofꓽboolⵧweighted(0)
+					const generate = getꓽrandom_generator_ofꓽboolⵧweighted(0)
 
 					for(let i = 0; i < ROUNDS_COUNT; ++i) {
 						const random_bool = generate(engine)
@@ -58,7 +58,7 @@ describe('@offirmo/random', function() {
 				})
 
 				it('should work -- limits -- 1', () => {
-					const generate = get_random_generator_ofꓽboolⵧweighted(1)
+					const generate = getꓽrandom_generator_ofꓽboolⵧweighted(1)
 
 					for(let i = 0; i < ROUNDS_COUNT; ++i) {
 						const random_bool = generate(engine)
@@ -75,7 +75,7 @@ describe('@offirmo/random', function() {
 				].forEach((ratio: number) => {
 
 					it(`should work -- ${ratio}`, () => {
-						const generate = get_random_generator_ofꓽboolⵧweighted(ratio)
+						const generate = getꓽrandom_generator_ofꓽboolⵧweighted(ratio)
 
 						const count: any = {
 							ROUNDS_COUNT,

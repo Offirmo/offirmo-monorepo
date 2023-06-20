@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { get_RNGⵧISAAC32 } from '@offirmo/random'
+import { getꓽRNGⵧISAAC32 } from '@offirmo/random'
 
 import { generate_uuid, UUID_LENGTH } from './index.js'
 
@@ -9,7 +9,7 @@ describe('@offirmo-private/uuid - generate', function() {
 		context('when provided a random generator', function() {
 
 			it('should return correct uuids', function () {
-				const rng = get_RNGⵧISAAC32().seed(123)
+				const rng = getꓽRNGⵧISAAC32().seed(123)
 
 				for (let i = 0; i < 10; ++i) {
 					const uuid = generate_uuid({rng})

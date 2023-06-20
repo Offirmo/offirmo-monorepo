@@ -4,7 +4,7 @@ import { ELEMENTS } from '../src'
 
 console.log(ELEMENTS)
 
-function get_bg_id(css_class: string): string {
+function getꓽbg_id(css_class: string): string {
 	return css_class.split('⁚')[1]
 }
 
@@ -20,7 +20,7 @@ interface State {
 
 const state: State = {
 	previous_bg_id: null,
-	bg_id: current_search_params.get('id') || get_bg_id(ELEMENTS[0].css_class),
+	bg_id: current_search_params.get('id') || getꓽbg_id(ELEMENTS[0].css_class),
 }
 
 ////////////////////////////////////

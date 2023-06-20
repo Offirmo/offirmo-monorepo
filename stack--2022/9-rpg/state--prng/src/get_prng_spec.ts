@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { get_random } from '@offirmo/random'
+import { getꓽrandom } from '@offirmo/random'
 
 import { LIB } from './consts.js'
 
@@ -13,12 +13,12 @@ import {
 
 describe(`${LIB} - get`, function() {
 	beforeEach(xxx_internal_reset_prng_cache)
-	const gen = get_random.generator_of.integer.between(0, 10)
+	const gen = getꓽrandom.generator_of.integer.between(0, 10)
 
 	it('should return a working PRNG engine', function() {
 		const state = create()
 
-		const prng = get_prng(state)
+		const prng = getꓽprng(state)
 		/*console.log(gen(prng))
 		console.log(gen(prng))
 		console.log(gen(prng))
@@ -41,7 +41,7 @@ describe(`${LIB} - get`, function() {
 	it('should return a repeatable PRNG engine', function() {
 		let state = create()
 
-		let prng = get_prng(state)
+		let prng = getꓽprng(state)
 		expect(gen(prng), 'random 1').to.equal(1)
 		expect(gen(prng), 'random 2').to.equal(2)
 		expect(gen(prng), 'random 3').to.equal(0)
@@ -52,7 +52,7 @@ describe(`${LIB} - get`, function() {
 		expect(gen(prng), 'random 6a').to.equal(1)
 
 		xxx_internal_reset_prng_cache()
-		prng = get_prng(state)
+		prng = getꓽprng(state)
 		expect(gen(prng), 'random 4b').to.equal(7)
 		expect(gen(prng), 'random 5b').to.equal(7)
 		expect(gen(prng), 'random 6b').to.equal(1)

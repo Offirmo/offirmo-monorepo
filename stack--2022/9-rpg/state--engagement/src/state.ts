@@ -11,12 +11,12 @@ import {
 	State,
 } from './types.js'
 
-import { SoftExecutionContext, get_lib_SEC } from './sec.js'
+import { SoftExecutionContext, getꓽlib_SEC } from './sec.js'
 
 //////////////////////////////////////////////////////////////////////
 
 function create(SEC?: SoftExecutionContext): Immutable<State> {
-	return get_lib_SEC(SEC).xTry('create', () => {
+	return getꓽlib_SEC(SEC).xTry('create', () => {
 		return enforce_immutability<State>({
 			schema_version: SCHEMA_VERSION,
 			revision: 0,

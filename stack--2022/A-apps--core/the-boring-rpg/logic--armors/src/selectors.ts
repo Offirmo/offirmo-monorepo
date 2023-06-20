@@ -68,7 +68,7 @@ Object.keys(OVERALL_STRENGTH_INTERVAL_BY_QUALITY).forEach((k: string): void => {
 const BASE_STRENGTH_INTERVAL_BY_QUALITY: Readonly<{ [k: string]: [number, number] }> = TEMP_BASE_STRENGTH_INTERVAL_BY_QUALITY
 
 
-function get_interval(base_strength: number, quality: ItemQuality, enhancement_level: number): [number, number] {
+function getꓽinterval(base_strength: number, quality: ItemQuality, enhancement_level: number): [number, number] {
 	const spread_pct = SPREAD_PCT_BY_QUALITY[quality]!
 	const enhancement_ratio = (1 + ENHANCEMENT_MULTIPLIER * enhancement_level)
 	const [ overall_min, overall_max ] = OVERALL_STRENGTH_INTERVAL_BY_QUALITY[quality]!
@@ -89,8 +89,8 @@ function get_interval(base_strength: number, quality: ItemQuality, enhancement_l
 
 /////////////////////
 
-function get_damage_reduction_interval(armor: Immutable<Armor>): [number, number] {
-	return get_interval(
+function getꓽdamage_reduction_interval(armor: Immutable<Armor>): [number, number] {
+	return getꓽinterval(
 		armor.base_strength,
 		armor.quality,
 		armor.enhancement_level,

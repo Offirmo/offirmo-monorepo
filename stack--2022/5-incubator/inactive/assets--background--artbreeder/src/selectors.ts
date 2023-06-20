@@ -14,21 +14,21 @@ import BACKGROUNDS from './data'
 ////////////////////////////////////////////////////////////////////////////////////
 // TOP
 
-export const get_backgrounds_by_biome_id = memoize_one(function get_backgrounds_by_biome_id(): Immutable<Record<BiomeId, Background[]>> {
+export const getꓽbackgrounds_by_biome_id = memoize_one(function getꓽbackgrounds_by_biome_id(): Immutable<Record<BiomeId, Background[]>> {
 	return BACKGROUNDS.reduce((acc, val) => {
 		acc[val.biome_id] ??= []
 		acc[val.biome_id].push(val)
 		return acc
-	}, {} as Mutable<ReturnType<typeof get_backgrounds_by_biome_id>>)
+	}, {} as Mutable<ReturnType<typeof getꓽbackgrounds_by_biome_id>>)
 })
 
 ////////////////////////////////////////////////////////////////////////////////////
 // BIOME
 
-export function get_backgrounds_for_biome(id: BiomeId): Immutable<Background[]> {
+export function getꓽbackgrounds_for_biome(id: BiomeId): Immutable<Background[]> {
 	assert(id, `get_backgrounds_for_biome() should be given an id`)
 	assert(Enum.isType(BiomeId, id), `get_backgrounds_for_biome() should be given a valid id "${id}"`)
-	const backgrounds_by_biome_id = get_backgrounds_by_biome_id()
+	const backgrounds_by_biome_id = getꓽbackgrounds_by_biome_id()
 	assert((backgrounds_by_biome_id[id] ?? []).length > 0, `get_backgrounds_for_biome() should find backgrounds for "${id}"`)
 	return backgrounds_by_biome_id[id]
 }
@@ -40,7 +40,7 @@ export interface BackgroundMatch {
 	excluding_those_basenames?: string[],
 }
 
-export function get_backgrounds_matching(match?: BackgroundMatch): Immutable<Background[]> {
+export function getꓽbackgrounds_matching(match?: BackgroundMatch): Immutable<Background[]> {
 	const {
 		biome_id,
 		features_settlement = false,
@@ -48,7 +48,7 @@ export function get_backgrounds_matching(match?: BackgroundMatch): Immutable<Bac
 		excluding_those_basenames,
 	} = match || {}
 
-	let candidate_backgrounds = biome_id ? get_backgrounds_for_biome(biome_id) : BACKGROUNDS
+	let candidate_backgrounds = biome_id ? getꓽbackgrounds_for_biome(biome_id) : BACKGROUNDS
 
 	candidate_backgrounds = candidate_backgrounds.filter(bg => bg.features_settlement === features_settlement)
 
@@ -78,14 +78,14 @@ export function get_backgrounds_matching(match?: BackgroundMatch): Immutable<Bac
 	return candidate_backgrounds
 }
 
-export function get_background_matching(match?: BackgroundMatch): Immutable<Background> {
-	return get_backgrounds_matching(match)[0]
+export function getꓽbackground_matching(match?: BackgroundMatch): Immutable<Background> {
+	return getꓽbackgrounds_matching(match)[0]
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
 // BACKGROUND
 
-export function get_background_url(bg: Immutable<Background>): string {
+export function getꓽbackground_url(bg: Immutable<Background>): string {
 	const end_path = path.join(...[
 		'src',
 		'assets',

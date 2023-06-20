@@ -107,7 +107,7 @@ export async function read_exif_data(abs_path: AbsolutePath): Promise<Immutable<
 
 ////////////////////////////////////
 
-// TODO memory optim get_relevant_exif_subset
+// TODO memory optim getꓽrelevant_exif_subset
 
 function _get_valid_exifdate_field(field: keyof Tags, exif_data: Immutable<Tags>, { DEBUG }: { DEBUG: boolean }): undefined | ExifDateTime {
 	const SourceFile = exif_data[EXIF_FIELD__SOURCEFILE]
@@ -230,8 +230,8 @@ function _intelligently_get_earliest_defined_date_from_selected_fields_of_exif_d
 		}
 
 		// select this one or keep the previous?
-		const candidate_dateⳇtms = get_timestamp_ms_from_ExifDateTime(candidate_dateⳇexif)
-		const min_dateⳇtms = get_timestamp_ms_from_ExifDateTime(min_dateⳇexif)
+		const candidate_dateⳇtms = getꓽtimestamp_ms_from_ExifDateTime(candidate_dateⳇexif)
+		const min_dateⳇtms = getꓽtimestamp_ms_from_ExifDateTime(min_dateⳇexif)
 		if (candidate_dateⳇtms === min_dateⳇtms) {
 			// no change TODO switch the field if better
 			confirmation_count++
@@ -266,8 +266,8 @@ function _intelligently_get_earliest_defined_date_from_selected_fields_of_exif_d
 				SourceFile,
 				candidate_field,
 				min_date_origin_field,
-				candidate: get_debug_representation(candidate_dateⳇtms),
-				min: get_debug_representation(min_dateⳇtms),
+				candidate: getꓽdebug_representation(candidate_dateⳇtms),
+				min: getꓽdebug_representation(min_dateⳇtms),
 			})
 			if (is_known_unreliable_field) {
 				// experimentally seen EXIF_DATE_FIELD__CREATE_DATE to be unreliable
@@ -276,8 +276,8 @@ function _intelligently_get_earliest_defined_date_from_selected_fields_of_exif_d
 					SourceFile,
 					candidate_field,
 					min_date_origin_field,
-					candidate: get_debug_representation(candidate_dateⳇtms),
-					min: get_debug_representation(min_dateⳇtms),
+					candidate: getꓽdebug_representation(candidate_dateⳇtms),
+					min: getꓽdebug_representation(min_dateⳇtms),
 				})
 				if (field === EXIF_DATE_FIELD__CREATE_DATE) {
 					return min_dateⳇexif
@@ -301,8 +301,8 @@ function _intelligently_get_earliest_defined_date_from_selected_fields_of_exif_d
 					candidate_field,
 					min_date_origin_field,
 					previous_confirmation_count,
-					candidate: get_debug_representation(candidate_dateⳇtms),
-					min: get_debug_representation(min_dateⳇtms),
+					candidate: getꓽdebug_representation(candidate_dateⳇtms),
+					min: getꓽdebug_representation(min_dateⳇtms),
 				})
 			}
 			min_date_origin_field = field
@@ -319,8 +319,8 @@ function _intelligently_get_earliest_defined_date_from_selected_fields_of_exif_d
 
 	DEBUG && console.log(`- final result`, {
 		min_dateⳇexif,
-		tms: get_timestamp_ms_from_ExifDateTime(min_dateⳇexif),
-		min: get_debug_representation(create_better_date_from_ExifDateTime(min_dateⳇexif)),
+		tms: getꓽtimestamp_ms_from_ExifDateTime(min_dateⳇexif),
+		min: getꓽdebug_representation(create_better_date_from_ExifDateTime(min_dateⳇexif)),
 	})
 
 	assert(get_timestamp_ms_from_ExifDateTime(min_dateⳇexif) !== +now_legacy, 'coherent dates') // TODO improve test by taking the date on exec start
@@ -390,8 +390,8 @@ function _get_creation_date_from_exif__nocache(exif_data: Immutable<Tags>): Exif
 				SourceFile,
 				candidate: _to_debug(candidate_date𖾚exif),
 				from_creation_date: _to_debug(date_from_CreationDate𖾚exif),
-				candidate_tms: get_timestamp_ms_from_ExifDateTime(candidate_date𖾚exif),
-				from_creation_date_tms: get_timestamp_ms_from_ExifDateTime(date_from_CreationDate𖾚exif),
+				candidate_tms: getꓽtimestamp_ms_from_ExifDateTime(candidate_date𖾚exif),
+				from_creation_date_tms: getꓽtimestamp_ms_from_ExifDateTime(date_from_CreationDate𖾚exif),
 			})
 			// we have seen CreationDate to be more reliable
 			candidate_date𖾚exif = date_from_CreationDate𖾚exif
@@ -404,16 +404,16 @@ function _get_creation_date_from_exif__nocache(exif_data: Immutable<Tags>): Exif
 		// HOWEVER the file date happens to be correct. Attempt to fix the exif date that way...
 
 		if (earliest_date_from_fs𖾚exif && earliest_date_from_fs𖾚exif.tzoffsetMinutes !== undefined
-			&& are_same_tms_date_with_potential_tz_difference(get_timestamp_ms_from_ExifDateTime(earliest_date_from_fs𖾚exif), get_timestamp_ms_from_ExifDateTime(candidate_date𖾚exif))) {
+			&& are_same_tms_date_with_potential_tz_difference(get_timestamp_ms_from_ExifDateTime(earliest_date_from_fs𖾚exif), getꓽtimestamp_ms_from_ExifDateTime(candidate_date𖾚exif))) {
 			// perfect, the FS date is perfectly matching + has a tz
 			candidate_date𖾚exif = earliest_date_from_fs𖾚exif
 			const bd = create_better_date_from_ExifDateTime(candidate_date𖾚exif)
 			/*logger.info(`✔️️ _get_creation_date_from_exif__nocache() recovered missing TZ thanks to fs date.`, {
 				SourceFile,
-				//tms1: get_timestamp_ms_from_ExifDateTime(earliest_date_from_fs𖾚exif),
-				//tms2: get_timestamp_ms_from_ExifDateTime(candidate_date𖾚exif),
-				tz: get_embedded_timezone(bd),
-				local: get_debug_representation(bd),
+				//tms1: getꓽtimestamp_ms_from_ExifDateTime(earliest_date_from_fs𖾚exif),
+				//tms2: getꓽtimestamp_ms_from_ExifDateTime(candidate_date𖾚exif),
+				tz: getꓽembedded_timezone(bd),
+				local: getꓽdebug_representation(bd),
 			})*/
 		}
 		else {
@@ -424,7 +424,7 @@ function _get_creation_date_from_exif__nocache(exif_data: Immutable<Tags>): Exif
 	return candidate_date𖾚exif
 }
 
-export const get_best_creation_date_from_exif = micro_memoize(function get_best_creation_date_from_exif(exif_data: Immutable<Tags>): ExifDateTime | undefined {
+export const getꓽbest_creation_date_from_exif = micro_memoize(function getꓽbest_creation_date_from_exif(exif_data: Immutable<Tags>): ExifDateTime | undefined {
 	const SourceFile = exif_data[EXIF_FIELD__SOURCEFILE]
 	assert(SourceFile, `get_creation_date_from_exif() exif data should have SourceFile!`)
 
@@ -433,7 +433,7 @@ export const get_best_creation_date_from_exif = micro_memoize(function get_best_
 	//maxSize: 10,
 })
 
-export function get_creation_timezone_from_exif(exif_data: Immutable<Tags>): TimeZone | undefined {
+export function getꓽcreation_timezone_from_exif(exif_data: Immutable<Tags>): TimeZone | undefined {
 	// TODO extract a better tz from GPS?
 	const res = exif_data[EXIF_FIELD__TZ]
 	assert(typeof res === 'string' || typeof res === 'undefined', 'exif_data.tz type check')
@@ -463,17 +463,17 @@ export function has_actual_exif_fields(exif_data: Immutable<Tags>): boolean {
 
 
 // there are several orientation fields, provision for the future
-export function get_orientation_from_exif(exif_data: Immutable<Tags>): number | undefined {
+export function getꓽorientation_from_exif(exif_data: Immutable<Tags>): number | undefined {
 	return exif_data[EXIF_FIELD__ORIENTATION] as any
 }
 
-export function get_timestamp_ms_from_ExifDateTime(date_exif: ExifDateTime): TimestampUTCMs {
+export function getꓽtimestamp_ms_from_ExifDateTime(date_exif: ExifDateTime): TimestampUTCMs {
 	const date_legacy = date_exif.toDate()
 	return +date_legacy
 }
 
 function _to_debug(date_exif: ExifDateTime): string {
-	return get_debug_representation(
+	return getꓽdebug_representation(
 		create_better_date_from_ExifDateTime(date_exif)
 	)
 }

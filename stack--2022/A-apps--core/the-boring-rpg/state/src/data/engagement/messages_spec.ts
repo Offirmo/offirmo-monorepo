@@ -19,7 +19,7 @@ describe(`${LIB} - engagement messages`, function() {
 
 		it('should suggest to play', () => {
 			//const state = create()
-			const doc = get_engagement_message({
+			const doc = getꓽengagement_message({
 				uid: 0,
 				engagement: {
 					key: EngagementKey['tip--first_play'],

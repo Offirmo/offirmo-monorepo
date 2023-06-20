@@ -17,7 +17,7 @@ describe(`${LIB} -- service -- Actions`, function() {
 	describe('get_report_to_string()', function () {
 
 		it('should work', () => {
-			const s = get_report_to_string()
+			const s = getꓽreport_to_string()
 			expect(s).to.include('Actions report:')
 			expect(s).to.include('Aggregated counters:')
 		})

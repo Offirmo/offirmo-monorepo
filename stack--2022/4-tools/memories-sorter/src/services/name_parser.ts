@@ -5,7 +5,7 @@ import { Immutable } from '@offirmo-private/ts-types'
 import micro_memoize from 'micro-memoize'
 
 import { RELATIVE_PATH_NORMALIZATION_VERSION } from '../consts.js'
-import { get_params } from '../params.js'
+import { getꓽparams } from '../params.js'
 import {
 	SEPARATORS,
 	deep_trim,
@@ -33,7 +33,7 @@ import { Basename, RelativePath } from '../types.js'
 
 type DatePattern = 'D-M-Y' | 'Y-M-D' | 'unknown'
 
-const PARAMS = get_params()
+const PARAMS = getꓽparams()
 const DEBUG = false
 const DIGITS = '0123456789'
 const SCREENSHOT_ALIASES_LC = [
@@ -57,7 +57,7 @@ export const pathㆍparse_memoized = micro_memoize(path.parse, {
 
 ////////////////////////////////////
 
-export const normalize_extension = micro_memoize(function get_normalized_extension(extension: string): string {
+export const normalize_extension = micro_memoize(function getꓽnormalized_extension(extension: string): string {
 	if (extension === '') return '' // special case of no extension at all
 
 	assert(extension[0] === '.', `get_normalized_extension('${extension}') param should starts with dot`)
@@ -73,14 +73,14 @@ export const normalize_extension = micro_memoize(function get_normalized_extensi
 })
 
 // return '.xyz' or '' if no extension
-export function get_file_basename_extension(basename: Basename): string {
+export function getꓽfile_basename_extension(basename: Basename): string {
 	const split_by_dot = basename.split('.')
 
 	return split_by_dot.length <= 1
 		? ''
 		: ('.' + split_by_dot.slice(-1)[0])
 }
-export function get_file_basename_extension‿normalized(basename: Basename): string {
+export function getꓽfile_basename_extension‿normalized(basename: Basename): string {
 	return normalize_extension(get_file_basename_extension(basename))
 }
 
@@ -96,7 +96,7 @@ export function _get_y2k_year_from_fragment(s: string, separator = 70): number |
 	return null
 }
 
-export function get_digit_pattern(s: string): string {
+export function getꓽdigit_pattern(s: string): string {
 	return s.split('')
 		.map(c => {
 			if (DIGITS.includes(c)) {
@@ -120,7 +120,7 @@ function _get_DigitsParseResult_debug_representation(dpresult: Immutable<DigitsP
 	const { date, ...rest } = dpresult
 	return {
 		...rest,
-		date: get_debug_representation(date),
+		date: getꓽdebug_representation(date),
 	}
 }
 
@@ -460,7 +460,7 @@ function _get_ParseResult_debug_representation(presult: Immutable<ParseResult>):
 	const { date, ...rest } = presult
 	return {
 		...rest,
-		date: get_debug_representation(date),
+		date: getꓽdebug_representation(date),
 	}
 }
 
@@ -778,12 +778,12 @@ export function parse_file_basename(basename: Basename): Immutable<ParseResult> 
 	return parse(basename, { parse_up_to: 'full', type: 'file' })
 }
 
-export function get_file_basename_copy_index(basename: Basename): undefined | number {
+export function getꓽfile_basename_copy_index(basename: Basename): undefined | number {
 	const result = parse(basename, { parse_up_to: 'copy_index', type: 'file' })
 	return result.copy_index
 }
 
-export function get_file_basename_without_copy_index(basename: Basename): string {
+export function getꓽfile_basename_without_copy_index(basename: Basename): string {
 	const result = parse(basename, { parse_up_to: 'copy_index', type: 'file' })
 	return result.meaningful_part + result.extension_lc
 }
@@ -794,7 +794,7 @@ export function parse_folder_basename(basename: Basename): Immutable<ParseResult
 
 ////////////
 
-export function get_media_basename_normalisation_version(basename: Basename): number | undefined {
+export function getꓽmedia_basename_normalisation_version(basename: Basename): number | undefined {
 	const splitted_by_dot = basename.split('.')
 	if (splitted_by_dot.length <= 1)
 		return undefined
@@ -803,7 +803,7 @@ export function get_media_basename_normalisation_version(basename: Basename): nu
 	if (ext.length <= 2)
 		return undefined
 
-	const dp = get_digit_pattern(basename)
+	const dp = getꓽdigit_pattern(basename)
 	//console.log('is_normalized_media_basename()', { basename, dp })
 
 	// v1
@@ -826,19 +826,19 @@ export function get_media_basename_normalisation_version(basename: Basename): nu
 }
 
 export function is_normalized_media_basename(basename: Basename): boolean {
-	return get_media_basename_normalisation_version(basename) === RELATIVE_PATH_NORMALIZATION_VERSION
+	return getꓽmedia_basename_normalisation_version(basename) === RELATIVE_PATH_NORMALIZATION_VERSION
 }
 
 export function is_processed_media_basename(basename: Basename): boolean {
-	return get_media_basename_normalisation_version(basename) !== undefined
+	return getꓽmedia_basename_normalisation_version(basename) !== undefined
 }
 
 ////////////
 
-export function get_folder_basename_normalisation_version(basename: Basename): number | undefined {
+export function getꓽfolder_basename_normalisation_version(basename: Basename): number | undefined {
 	assert(basename.split(path.sep).length === 1, `get_folder_basename_normalisation_version() should be given a basename`)
 
-	const dp_basename = get_digit_pattern(basename)
+	const dp_basename = getꓽdigit_pattern(basename)
 
 	if (dp_basename.startsWith('xxxxxxxx - ')
 		&& is_YYYYMMDD(basename.slice(0, 8)))
@@ -847,23 +847,23 @@ export function get_folder_basename_normalisation_version(basename: Basename): n
 	return undefined
 }
 
-export function get_folder_relpath_normalisation_version(relpath: RelativePath): number | undefined {
+export function getꓽfolder_relpath_normalisation_version(relpath: RelativePath): number | undefined {
 	const splitted = relpath.split(path.sep)
 
 	const basename = splitted.slice(-1)[0]
 
 	if (splitted.length === 2
 		&& is_year(splitted[0])
-		&& get_folder_basename_normalisation_version(basename) === 1)
+		&& getꓽfolder_basename_normalisation_version(basename) === 1)
 		return 1
 
 	return undefined
 }
 
 export function is_normalized_event_folder_relpath(relpath: RelativePath): boolean {
-	return get_folder_relpath_normalisation_version(relpath) === RELATIVE_PATH_NORMALIZATION_VERSION
+	return getꓽfolder_relpath_normalisation_version(relpath) === RELATIVE_PATH_NORMALIZATION_VERSION
 }
 
 export function is_folder_basename__matching_a_processed_event_format(basename: Basename): boolean {
-	return get_folder_basename_normalisation_version(basename) !== undefined
+	return getꓽfolder_basename_normalisation_version(basename) !== undefined
 }

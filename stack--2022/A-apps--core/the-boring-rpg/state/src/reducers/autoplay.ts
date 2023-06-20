@@ -1,9 +1,9 @@
 /////////////////////
 
 import { Immutable} from '@offirmo-private/ts-types'
-import { get_random, get_engine } from '@offirmo/random'
-import { get_human_readable_UTC_timestamp_days } from '@offirmo-private/timestamps'
-import { get_revision, complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
+import { getꓽrandom, getꓽengine } from '@offirmo/random'
+import { getꓽhuman_readable_UTC_timestamp_days } from '@offirmo-private/timestamps'
+import { getꓽrevision, complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
 
 /////////////////////
 
@@ -22,7 +22,7 @@ import { State } from '../types.js'
 import {
 	get_available_energy_float,
 	find_better_unequipped_armor,
-	find_better_unequipped_weapon, get_available_classes,
+	find_better_unequipped_weapon, getꓽavailable_classes,
 } from '../selectors/index.js'
 
 import {
@@ -52,14 +52,14 @@ function _autogroom(state: Immutable<State>, options: { DEBUG?: boolean } = {}):
 
 	// we want to pick some random but without affecting the in-game PRNG
 	// let's fork it!
-	const side_engine = get_engine.prng.from_state(state.u_state.prng.prng_state)
+	const side_engine = getꓽengine.prng.from_state(state.u_state.prng.prng_state)
 
 	// User
 	// User class
 	if (state.u_state.avatar.klass === CharacterClass.novice) {
 		// change class
-		const available_classes = get_available_classes(state.u_state)
-		const new_class: CharacterClass = get_random.picker.of(available_classes)(side_engine)
+		const available_classes = getꓽavailable_classes(state.u_state)
+		const new_class: CharacterClass = getꓽrandom.picker.of(available_classes)(side_engine)
 		if (DEBUG) console.log(`    - Changing class to ${new_class}…`)
 		state = change_avatar_class(state, new_class)
 	}
@@ -130,7 +130,7 @@ function _autoplay(previous_state: Immutable<State>, options: Immutable<{ target
 	state = _autogroom(state, options)
 
 	// do we have energy?
-	const available_energy = get_available_energy_float(state.t_state)
+	const available_energy = getꓽavailable_energy_float(state.t_state)
 	let have_energy = available_energy >= 1.
 
 	if (target_bad_play_count > state.u_state.progress.statistics.bad_play_count) {
@@ -149,7 +149,7 @@ function _autoplay(previous_state: Immutable<State>, options: Immutable<{ target
 	if (target_good_play_count > state.u_state.progress.statistics.good_play_count) {
 		// play good
 		for (let i = state.u_state.progress.statistics.good_play_count; i < target_good_play_count; ++i) {
-			const available_energy = get_available_energy_float(state.t_state)
+			const available_energy = getꓽavailable_energy_float(state.t_state)
 			have_energy = available_energy >= 1.
 
 			if (!have_energy) {
@@ -195,7 +195,7 @@ function _autoplay(previous_state: Immutable<State>, options: Immutable<{ target
 
 	state = _refresh_achievements(state)
 	state = _ack_all_engagements(state)
-	if (get_revision(state) === get_revision(previous_state))
+	if (get_revision(state) === getꓽrevision(previous_state))
 		state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous_state, state, undefined, '_autoplay')
 
 	return state

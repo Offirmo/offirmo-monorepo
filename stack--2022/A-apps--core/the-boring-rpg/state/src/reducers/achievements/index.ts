@@ -27,7 +27,7 @@ function _refresh_achievements(state: Immutable<State>): Immutable<State> {
 	ACHIEVEMENT_DEFINITIONS.forEach((definition: AchievementDefinition<UState>) => {
 		const { icon, name } = definition
 
-		const last_known_status = get_last_known_achievement_status(progress, name)
+		const last_known_status = getꓽlast_known_achievement_status(progress, name)
 		if (last_known_status === AchievementStatus.unlocked) return // can't change, already best
 
 		const current_status = definition.get_status(u_state)

@@ -263,7 +263,7 @@ if (MONOREPO_PKG_JSON.bolt) (function _hoist_local_packages_to_root_node_modules
 /////////////////////
 
 /*
-function get_pkg_1st_level_dependencies_relpaths(pkg_abs_path) {
+function getꓽpkg_1st_level_dependencies_relpaths(pkg_abs_path) {
 	const NODE_MODULES_PATH = path.join(pkg_abs_path, 'node_modules')
 	try {
 		const node_module_children_basenames = lsDirsSync(NODE_MODULES_PATH, { full_path: false })
@@ -290,8 +290,8 @@ const WHITELIST = [ // TODO whitelist for what?
 const stats = {
 }
 
-const MONOREPO_1ST_LEVEL_DEPS‿RELPATH = get_pkg_1st_level_dependencies_relpaths(MONOREPO_ROOT)
-const CURRENT_PKG_1ST_LEVEL_DEPS‿RELPATH = get_pkg_1st_level_dependencies_relpaths(CURRENT_PKG_PATH)
+const MONOREPO_1ST_LEVEL_DEPS‿RELPATH = getꓽpkg_1st_level_dependencies_relpaths(MONOREPO_ROOT)
+const CURRENT_PKG_1ST_LEVEL_DEPS‿RELPATH = getꓽpkg_1st_level_dependencies_relpaths(CURRENT_PKG_PATH)
 
 //console.log(JSON.stringify(MONOREPO_1ST_LEVEL_DEPS‿RELPATH))
 /*
@@ -304,7 +304,7 @@ MONOREPO_1ST_LEVEL_DEPS‿RELPATH.forEach(relpath1 => {
 	//console.log('reviewing deps of ' + relpath1 + '…')
 
 	const module1_abspath = path.join(MONOREPO_ROOT, 'node_modules', relpath1)
-	const second_level_deps‿relpath = get_pkg_1st_level_dependencies_relpaths(module1_abspath)
+	const second_level_deps‿relpath = getꓽpkg_1st_level_dependencies_relpaths(module1_abspath)
 
 	const redundant_dependencies‿relpaths = second_level_deps‿relpath.filter(relpath2 => {
 

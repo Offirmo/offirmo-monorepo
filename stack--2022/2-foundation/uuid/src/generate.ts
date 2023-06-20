@@ -2,7 +2,7 @@
 
 import { nanoid, customRandom, urlAlphabet } from 'nanoid'
 
-import { get_random_generator_ofꓽintegerⵧbetween, RNGEngine } from '@offirmo/random'
+import { getꓽrandom, RNGEngine } from '@offirmo/random'
 
 import { UUID } from './types.js'
 
@@ -18,7 +18,7 @@ function generate_uuid({length = NANOID_LENGTH_FOR_1BTH_COLLISION_CHANCES, rng}:
 	if (!rng)
 		return UUID_RADIX + nanoid(length)
 
-	const gen = get_random_generator_ofꓽintegerⵧbetween(0, 255)
+	const gen = getꓽrandom_generator_ofꓽintegerⵧbetween(0, 255)
 
 	return UUID_RADIX + customRandom(urlAlphabet, length, (size: number): Uint8Array => {
 			//const result: number[] = []

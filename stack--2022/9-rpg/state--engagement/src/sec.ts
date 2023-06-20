@@ -6,7 +6,7 @@ import { LIB } from './consts.js'
 
 //////////////////////////////////////////////////////////////////////
 
-function get_lib_SEC(parent?: SoftExecutionContext): SoftExecutionContext {
+function getꓽlib_SEC(parent?: SoftExecutionContext): SoftExecutionContext {
 	return (parent || getRootSEC())
 		.createChild()
 		.setLogicalStack({module: LIB})

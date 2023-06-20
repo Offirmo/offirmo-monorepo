@@ -12,7 +12,7 @@ import assert from 'tiny-invariant'
 import { ExifDateTime } from 'exiftool-vendored'
 import { Immutable } from '@offirmo-private/ts-types'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
-import { get_json_difference } from '@offirmo-private/state-utils'
+import { getꓽjson_difference } from '@offirmo-private/state-utils'
 
 ///////
 // Note: we defaulted on Luxon bc
@@ -22,7 +22,7 @@ import { DateTime as LuxonDateTime } from 'luxon'
 ///////
 
 import { SimpleYYYYMMDD, TimeZone } from '../types.js'
-import { get_default_timezone, get_params, Params } from '../params.js'
+import { getꓽdefault_timezone, getꓽparams, Params } from '../params.js'
 import logger from './logger.js'
 
 ////////////////////////////////////
@@ -65,7 +65,7 @@ export interface DateRange<DateType = BetterDate> {
 ////////////////////////////////////
 // Selectors
 
-export function get_timestamp_utc_ms_from(date: Immutable<BetterDate>): TimestampUTCMs {
+export function getꓽtimestamp_utc_ms_from(date: Immutable<BetterDate>): TimestampUTCMs {
 	return date._lx.toMillis()
 }
 
@@ -80,11 +80,11 @@ const DATE_FORMAT_TO_SECONDS_NATURAL = DATE_FORMAT_TO_MINUTES_NATURAL + `'m'ss`
 const DATE_FORMAT_TO_MILLIS_NATURAL = DATE_FORMAT_TO_SECONDS_NATURAL + `'s'SSS`
 const DATE_FORMAT_TO_MILLIS_DIGITS = DATE_FORMAT_TO_DAYS_COMPACT + `HHmmssSSS`
 
-export function get_compact_date(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): SimpleYYYYMMDD {
+export function getꓽcompact_date(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): SimpleYYYYMMDD {
 	const _lx = tz === 'tz:embedded' ? date._lx : date._lx.setZone(tz)
 	/*console.log('get_compact_date', {
 		tz,
-		embedded_tz: get_embedded_timezone(date),
+		embedded_tz: getꓽembedded_timezone(date),
 		compact_embedded_tz: date._lx.toFormat(DATE_FORMAT_TO_DAYS_COMPACT),
 		final_compact: _lx.toFormat(DATE_FORMAT_TO_DAYS_COMPACT),
 	})*/
@@ -92,35 +92,35 @@ export function get_compact_date(date: Immutable<BetterDate>, tz: TimeZone | 'tz
 }
 
 // ex. 2018-11-21
-export function get_human_readable_timestamp_days(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): PhotoSorterTimestampDays {
+export function getꓽhuman_readable_timestamp_days(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): PhotoSorterTimestampDays {
 	const _lx = tz === 'tz:embedded' ? date._lx : date._lx.setZone(tz)
 
 	return _lx.toFormat(DATE_FORMAT_TO_DAYS_NATURAL)
 }
 
 // ex. 2018-11-21_06h00
-export function get_human_readable_timestamp_minutes(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): PhotoSorterTimestampMinutes {
+export function getꓽhuman_readable_timestamp_minutes(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): PhotoSorterTimestampMinutes {
 	const _lx = tz === 'tz:embedded' ? date._lx : date._lx.setZone(tz)
 
 	return _lx.toFormat(DATE_FORMAT_TO_MINUTES_NATURAL)
 }
 
 // ex. 2018-11-21_04h23m15
-export function get_human_readable_timestamp_seconds(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): PhotoSorterTimestampSeconds {
+export function getꓽhuman_readable_timestamp_seconds(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): PhotoSorterTimestampSeconds {
 	const _lx = tz === 'tz:embedded' ? date._lx : date._lx.setZone(tz)
 
 	return _lx.toFormat(DATE_FORMAT_TO_SECONDS_NATURAL)
 }
 
 // ex. 2018-11-21_06h00m45s632
-export function get_human_readable_timestamp_millis(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): PhotoSorterTimestampMillis {
+export function getꓽhuman_readable_timestamp_millis(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): PhotoSorterTimestampMillis {
 	const _lx = tz === 'tz:embedded' ? date._lx : date._lx.setZone(tz)
 
 	return _lx.toFormat(DATE_FORMAT_TO_MILLIS_NATURAL)
 }
 
 // same as the above without trailing 0s
-export function get_human_readable_timestamp_auto(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): PhotoSorterTimestampAuto {
+export function getꓽhuman_readable_timestamp_auto(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): PhotoSorterTimestampAuto {
 	assert(date && date._lx, 'get_human_readable_timestamp_auto() bad date')
 
 	const digits = date._lx.toFormat(DATE_FORMAT_TO_MILLIS_DIGITS) // tz is irrelevant for this counting
@@ -128,36 +128,36 @@ export function get_human_readable_timestamp_auto(date: Immutable<BetterDate>, t
 	assert(digits.length === 17, 'get_human_readable_timestamp_auto() digits length')
 
 	if (digits.endsWith('000000000'))
-		return get_human_readable_timestamp_days(date, tz)
+		return getꓽhuman_readable_timestamp_days(date, tz)
 
 	if (digits.endsWith('00000'))
-		return get_human_readable_timestamp_minutes(date, tz)
+		return getꓽhuman_readable_timestamp_minutes(date, tz)
 
 	if (digits.endsWith('000'))
-		return get_human_readable_timestamp_seconds(date, tz)
+		return getꓽhuman_readable_timestamp_seconds(date, tz)
 
-	return get_human_readable_timestamp_millis(date, tz)
+	return getꓽhuman_readable_timestamp_millis(date, tz)
 }
 
-export function get_embedded_timezone(date: Immutable<BetterDate>): TimeZone {
+export function getꓽembedded_timezone(date: Immutable<BetterDate>): TimeZone {
 	return date._lx.zone.name
 }
 
 // sunday = 0
-export function get_day_of_week_index(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): number {
+export function getꓽday_of_week_index(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): number {
 	const _lx = tz === 'tz:embedded' ? date._lx : date._lx.setZone(tz)
 
 	return _lx.weekday % 7
 }
 
-export function get_year(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): number {
+export function getꓽyear(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): number {
 	const _lx = tz === 'tz:embedded' ? date._lx : date._lx.setZone(tz)
 
 	return _lx.year
 }
 
 // serializable version
-export function get_members_for_serialization(date: Immutable<BetterDate>): BetterDateMembers {
+export function getꓽmembers_for_serialization(date: Immutable<BetterDate>): BetterDateMembers {
 	return {
 		year: date._lx.year,
 		month: date._lx.month,
@@ -190,7 +190,7 @@ export function _get_exif_datetime(date: Immutable<BetterDate>): ExifDateTime {
 	return edt
 }
 
-export function get_debug_representation(date: Immutable<BetterDate> | TimestampUTCMs | undefined | null): string {
+export function getꓽdebug_representation(date: Immutable<BetterDate> | TimestampUTCMs | undefined | null): string {
 	if (date === undefined)
 		return '[undefined date]'
 
@@ -206,13 +206,13 @@ export function get_debug_representation(date: Immutable<BetterDate> | Timestamp
 	}
 	else {
 		better_date = date
-		timestamp_utc_ms = get_timestamp_utc_ms_from(date)
+		timestamp_utc_ms = getꓽtimestamp_utc_ms_from(date)
 	}
 
 	return `<BetterDate>(${get_human_readable_timestamp_auto(better_date, 'tz:embedded')}/${get_embedded_timezone(better_date)}/${timestamp_utc_ms})`
 }
 
-export function get_range_debug_representation(range: undefined | null | DateRange<TimestampUTCMs> | DateRange): string {
+export function getꓽrange_debug_representation(range: undefined | null | DateRange<TimestampUTCMs> | DateRange): string {
 	return `${get_debug_representation(range?.begin)} → ${get_debug_representation(range?.end)}`
 }
 
@@ -223,8 +223,8 @@ export function get_range_debug_representation(range: undefined | null | DateRan
 // < 0 	sort a before b
 // === 0 	keep original order of a and b
 export function compare_utc(date_a: Immutable<BetterDate>, date_b: Immutable<BetterDate>): number {
-	const tms_a = get_timestamp_utc_ms_from(date_a)
-	const tms_b = get_timestamp_utc_ms_from(date_b)
+	const tms_a = getꓽtimestamp_utc_ms_from(date_a)
+	const tms_b = getꓽtimestamp_utc_ms_from(date_b)
 
 	return tms_a - tms_b
 }
@@ -250,7 +250,7 @@ export function is_deep_equal(date_a: Immutable<BetterDate> | undefined, date_b:
 	if (date_a!._has_explicit_timezone !== date_b!._has_explicit_timezone)
 		return false
 
-	return get_embedded_timezone(date_a!) === get_embedded_timezone(date_b!)
+	return getꓽembedded_timezone(date_a!) === getꓽembedded_timezone(date_b!)
 }
 
 export function min(date_a: Immutable<BetterDate>, date_b: Immutable<BetterDate>): Immutable<BetterDate> {
@@ -296,11 +296,11 @@ export function are_same_tms_date_with_potential_tz_difference(tms1: TimestampUT
 }
 
 export function are_dates_matching_while_disregarding_tz_and_precision(d1: Immutable<BetterDate>, d2: Immutable<BetterDate>, debug_id?: string): boolean {
-	const tms1 = get_timestamp_utc_ms_from(d1)
-	const tms2 = get_timestamp_utc_ms_from(d2)
+	const tms1 = getꓽtimestamp_utc_ms_from(d1)
+	const tms2 = getꓽtimestamp_utc_ms_from(d2)
 
-	const auto1 = get_human_readable_timestamp_auto(d1, 'tz:embedded')
-	const auto2 = get_human_readable_timestamp_auto(d2, 'tz:embedded')
+	const auto1 = getꓽhuman_readable_timestamp_auto(d1, 'tz:embedded')
+	const auto2 = getꓽhuman_readable_timestamp_auto(d2, 'tz:embedded')
 
 	const is_tms_matching = are_same_tms_date_with_potential_tz_difference(tms1, tms2)
 
@@ -333,11 +333,11 @@ export function are_dates_matching_while_disregarding_tz_and_precision(d1: Immut
 ////////////////////////////////////
 
 // needed to create from file times
-export function create_better_date_from_utc_tms(tms: TimestampUTCMs, tz: TimeZone | 'tz:auto', PARAMS: Immutable<Params> = get_params()): BetterDate {
+export function create_better_date_from_utc_tms(tms: TimestampUTCMs, tz: TimeZone | 'tz:auto', PARAMS: Immutable<Params> = getꓽparams()): BetterDate {
 	assert(!!tms, 'create_better_date_from_utc_tms should have a correct input: truthy!')
 	assert(Number.isSafeInteger(tms), `create_better_date_from_utc_tms correct input: isSafeInteger(${tms})`)
 
-	const _tz = tz === 'tz:auto' ? get_default_timezone(tms, PARAMS) : tz
+	const _tz = tz === 'tz:auto' ? getꓽdefault_timezone(tms, PARAMS) : tz
 
 	const _ld = new LegacyDate(tms)
 
@@ -370,13 +370,13 @@ export function create_better_date_from_utc_tms(tms: TimestampUTCMs, tz: TimeZon
 // while an explicit locale may be in the other TZ field, cf. unit test
 // if better_tz supplied, expecting a similar shift
 // https://photostructure.github.io/exiftool-vendored.js/classes/ExifDateTime.html
-export function create_better_date_from_ExifDateTime(exif_date: ExifDateTime, better_tz?: TimeZone, PARAMS: Immutable<Params> = get_params()): BetterDate {
+export function create_better_date_from_ExifDateTime(exif_date: ExifDateTime, better_tz?: TimeZone, PARAMS: Immutable<Params> = getꓽparams()): BetterDate {
 	let _lx: LuxonDateTime = exif_date.toDateTime()
 	assert(!_lx.invalidReason && !_lx.invalidExplanation, 'create_better_date_from_ExifDateTime()--01: ' + _lx.invalidReason + '; ' + _lx.invalidExplanation)
 
 	if (!exif_date.hasZone) {
 		assert(!better_tz, 'create_better_date_from_ExifDateTime() tz suggested with no tz embedded = ???')
-		let tz: TimeZone = get_default_timezone(_lx.toMillis(), PARAMS)
+		let tz: TimeZone = getꓽdefault_timezone(_lx.toMillis(), PARAMS)
 		_lx = LuxonDateTime.fromObject({
 			year: exif_date.year,
 			month: exif_date.month,
@@ -429,7 +429,7 @@ export function create_better_date_from_ExifDateTime(exif_date: ExifDateTime, be
 	return date
 }
 
-export function create_better_date_from_symd(simple_date: SimpleYYYYMMDD, tz: TimeZone | 'tz:auto', PARAMS: Immutable<Params> = get_params()): BetterDate {
+export function create_better_date_from_symd(simple_date: SimpleYYYYMMDD, tz: TimeZone | 'tz:auto', PARAMS: Immutable<Params> = getꓽparams()): BetterDate {
 	let day = simple_date % 100
 	let month = Math.trunc(simple_date / 100) % 100
 	let year = Math.trunc(simple_date / 10000)
@@ -461,7 +461,7 @@ export function create_better_date(
 	minute?: number,
 	second?: number,
 	milli?: number,
-	PARAMS: Immutable<Params> = get_params(),
+	PARAMS: Immutable<Params> = getꓽparams(),
 ): BetterDate {
 	const members = {
 		year,
@@ -501,7 +501,7 @@ export function create_better_date_obj({
 	milli,
 	tz = 'tz:auto',
 	...unhandled
-}: Immutable<BetterDateMembers>, PARAMS: Immutable<Params> = get_params()): BetterDate {
+}: Immutable<BetterDateMembers>, PARAMS: Immutable<Params> = getꓽparams()): BetterDate {
 	//console.log(PARAMS)
 	assert(Object.keys(unhandled).length === 0, `create_better_date_obj() unhandled params:"${Object.keys(unhandled).join(',')}"!`)
 	const members_for_luxon = {
@@ -525,7 +525,7 @@ export function create_better_date_obj({
 
 	if (tz === 'tz:auto') {
 		// rely on the 1st creation to get the millis
-		const zone = get_default_timezone(_lx.toMillis(), PARAMS)
+		const zone = getꓽdefault_timezone(_lx.toMillis(), PARAMS)
 		//console.log('tz:auto defaulting to', zone)
 		_lx = LuxonDateTime.fromObject({
 			...members_for_luxon,
@@ -557,10 +557,10 @@ export function create_better_date_obj({
 ////////////////////////////////////
 
 export function reinterpret_with_different_tz(previous: Immutable<BetterDate>, tz: TimeZone): BetterDate {
-	if (tz === get_embedded_timezone(previous))
+	if (tz === getꓽembedded_timezone(previous))
 		return previous
 
-	const members = get_members_for_serialization(previous)
+	const members = getꓽmembers_for_serialization(previous)
 	members.tz = tz
 
 	return create_better_date_obj(members)
@@ -597,7 +597,7 @@ function _get_legacy_from_simple_date(date: SimpleYYYYMMDD): LegacyDate {
 	return new LegacyDate(years, months - 1, days)
 }
 
-export function get_elapsed_days_between_ordered_simple_dates(d1: SimpleYYYYMMDD, d2: SimpleYYYYMMDD): number {
+export function getꓽelapsed_days_between_ordered_simple_dates(d1: SimpleYYYYMMDD, d2: SimpleYYYYMMDD): number {
 	assert(d2 >= d1, `get_elapsed_days_between_ordered_simple_dates() d1 must be <= d2! "${d1}", "${d2}"`)
 
 	const _ld1 = _get_legacy_from_simple_date(d1)
@@ -615,7 +615,7 @@ export function assertㆍBetterDateㆍdeepㆍequal(s1: Immutable<BetterDate>, s2
 		node_assert.deepStrictEqual(s1_alt, s2_alt)
 	}
 	catch (err: any) {
-		const js_diff = get_json_difference(s1_alt, s2_alt)
+		const js_diff = getꓽjson_difference(s1_alt, s2_alt)
 		if (err.message.includes('Values have same structure but are not reference-equal') && js_diff === undefined) {
 			// no difference
 			// TODO review if node_assert.deepStrictEqual makes sense

@@ -1,8 +1,8 @@
 ////////////////////////////////////
 
-import { get_params } from '../params.js'
+import { getꓽparams } from '../params.js'
 
-const PARAMS = get_params()
+const PARAMS = getꓽparams()
 
 ///////////////////// NO Regexp :) /////////////////////
 

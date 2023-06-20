@@ -2,11 +2,11 @@
 
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/state-utils'
-import { get_engine, PRNGEngine } from '@offirmo/random'
+import { getꓽengine, PRNGEngine } from '@offirmo/random'
 
 import { LIB } from './consts.js'
 import { State } from './types.js'
-import { get_logger } from './sec.js'
+import { getꓽlogger } from './sec.js'
 
 /////////////////////
 
@@ -33,9 +33,9 @@ function xxx_internal_reset_prng_cache() {
 	cached_prngs = {}
 }
 
-// get_prng() is an ideal checkpoint to detect a lot of bugs and misuses.
+// getꓽprng() is an ideal checkpoint to detect a lot of bugs and misuses.
 // WARNING this method has expectations ! (see above)
-function get_prng(state: Immutable<State>): PRNGEngine {
+function getꓽprng(state: Immutable<State>): PRNGEngine {
 	/*console.trace('get PRNG', {
      state,
      cached_prng,
@@ -46,7 +46,7 @@ function get_prng(state: Immutable<State>): PRNGEngine {
 	const cached_prng = cached_prngs[app_key]
 
 	if (!cached_prng) {
-		cached_prngs[app_key] = get_engine.prng.from_state(state.prng_state)
+		cached_prngs[app_key] = getꓽengine.prng.from_state(state.prng_state)
 		return cached_prngs[app_key]!
 	}
 
@@ -58,7 +58,7 @@ function get_prng(state: Immutable<State>): PRNGEngine {
 
 	if (cached_prng.get_state().call_count !== state.prng_state.call_count) {
 		// should never happen, this is the bug we are after
-		const msg = `${LIB}: get_prng(): unexpected case: mismatching use_count!`
+		const msg = `${LIB}: getꓽprng(): unexpected case: mismatching use_count!`
 		get_logger().error(msg, {
 			cached_use_count: cached_prng.get_state().call_count,
 			required_use_count: state.prng_state.call_count,

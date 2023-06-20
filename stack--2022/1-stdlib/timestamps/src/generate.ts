@@ -13,7 +13,7 @@ import {
 } from './types.js'
 
 // ex. 1542780045627
-export function get_UTC_timestamp_ms(now: Readonly<Date> = new Date()): TimestampUTCMs {
+export function getꓽUTC_timestamp_ms(now: Readonly<Date> = new Date()): TimestampUTCMs {
 	return (+now)
 }
 
@@ -24,7 +24,7 @@ export function get_UTC_timestamp_ms(now: Readonly<Date> = new Date()): Timestam
 
 // ex. 20181121
 // assumed side effect of being castable to a number
-export function get_human_readable_UTC_timestamp_days(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCDays {
+export function getꓽhuman_readable_UTC_timestamp_days(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCDays {
 	const YYYY = now.getUTCFullYear()
 	const MM = String(now.getUTCMonth() + 1).padStart(2, '0')
 	const DD = String(now.getUTCDate()).padStart(2, '0')
@@ -33,47 +33,47 @@ export function get_human_readable_UTC_timestamp_days(now: Readonly<Date> = new 
 }
 
 // ex. 20181121_06h00
-export function get_human_readable_UTC_timestamp_minutes(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCMinutes {
+export function getꓽhuman_readable_UTC_timestamp_minutes(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCMinutes {
 	const hh = String(now.getUTCHours()).padStart(2, '0')
 	const mm = String(now.getUTCMinutes()).padStart(2, '0')
 
-	return get_human_readable_UTC_timestamp_days(now) + `_${hh}h${mm}`
+	return getꓽhuman_readable_UTC_timestamp_days(now) + `_${hh}h${mm}`
 }
 
 // ex. 20190608_04h23m15
-export function get_human_readable_UTC_timestamp_seconds(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCSeconds {
+export function getꓽhuman_readable_UTC_timestamp_seconds(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCSeconds {
 	const ss = String(now.getUTCSeconds()).padStart(2, '0')
 
-	return get_human_readable_UTC_timestamp_minutes(now) + `m${ss}`
+	return getꓽhuman_readable_UTC_timestamp_minutes(now) + `m${ss}`
 }
 
 // ex.      20181121_06h00m45s632
 // formerly 20181121_06h00+45.632
-export function get_human_readable_UTC_timestamp_ms(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCMs {
+export function getꓽhuman_readable_UTC_timestamp_ms(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCMs {
 	const mmm = String(now.getUTCMilliseconds()).padStart(3, '0')
 
-	return get_human_readable_UTC_timestamp_seconds(now) + `s${mmm}`
+	return getꓽhuman_readable_UTC_timestamp_seconds(now) + `s${mmm}`
 }
 
 /////////////////////
 
 // ISO 8601 Extended Format. The format is as follows: YYYY-MM-DDTHH:mm:ss.sssZ
 // https://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15
-export function get_ISO8601_extended_ms(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCMs {
+export function getꓽISO8601_extended_ms(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCMs {
 	return now.toISOString()
 }
 
-export function get_ISO8601_simplified_minutes(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCMs {
-	return get_ISO8601_extended_ms(now).slice(0, 16)
+export function getꓽISO8601_simplified_minutes(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCMs {
+	return getꓽISO8601_extended_ms(now).slice(0, 16)
 }
 
-export function get_ISO8601_simplified_day(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCMs {
-	return get_ISO8601_extended_ms(now).slice(0, 10)
+export function getꓽISO8601_simplified_day(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCMs {
+	return getꓽISO8601_extended_ms(now).slice(0, 10)
 }
 
 // fun but unclear
 // https://space.stackexchange.com/questions/36628/utc-timestamp-format-for-launch-vehicles
-/*function get_space_timestamp_ms(now: Readonly<Date> = new Date()): string {
+/*function getꓽspace_timestamp_ms(now: Readonly<Date> = new Date()): string {
 	const YYYY = now.getUTCFullYear()
 	const MM = now.getUTCMonth()
 	const DD = ('0' + now.getUTCDate()).slice(-2)

@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
 import { getꓽmutable_copy } from '@offirmo-private/state-utils'
 import stylize_string from 'chalk'
 
@@ -17,17 +17,17 @@ import {
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { State } from './types.js'
-import { get_historical_fs_reliability } from '../file/sub/neighbor-hints/index.js'
-import { get_lib_SEC } from '../../services/sec.js'
+import { getꓽhistorical_fs_reliability } from '../file/sub/neighbor-hints/index.js'
+import { getꓽlib_SEC } from '../../services/sec.js'
 
 export { type State } from './types.js'
 import { migrate_to_latest as _migrate_to_latest } from './migrations.js'
-import { get_file_basename_extension‿normalized } from '../../services/name_parser.js'
-import { get_params, Params } from '../../params.js'
+import { getꓽfile_basename_extension‿normalized } from '../../services/name_parser.js'
+import { getꓽparams, Params } from '../../params.js'
 
 ///////////////////// ACCESSORS /////////////////////
 
-export function get_oldest_hash(state: Immutable<State>, hash: FileHash): FileHash {
+export function getꓽoldest_hash(state: Immutable<State>, hash: FileHash): FileHash {
 	assert(hash, `get_oldest_hash() param`)
 
 	let has_redirect = false
@@ -44,14 +44,14 @@ export function get_oldest_hash(state: Immutable<State>, hash: FileHash): FileHa
 	return hash
 }
 
-export function get_file_notes_for_hash(state: Immutable<State>, hash: FileHash): null | Immutable<FileNotes> {
-	hash = get_oldest_hash(state, hash)
+export function getꓽfile_notes_for_hash(state: Immutable<State>, hash: FileHash): null | Immutable<FileNotes> {
+	hash = getꓽoldest_hash(state, hash)
 
 	return state.encountered_files[hash] || null
 }
 
 export function has_notes_for_hash(state: Immutable<State>, hash: FileHash): boolean {
-	return get_file_notes_for_hash(state, hash) !== null
+	return getꓽfile_notes_for_hash(state, hash) !== null
 }
 
 ///////////////////// REDUCERS /////////////////////
@@ -64,7 +64,7 @@ export function create(debug_id: string, notes_to_copy?: Immutable<State>): Stat
 
 		schema_version: SCHEMA_VERSION,
 		revision: 0,
-		last_user_investment_tms: get_UTC_timestamp_ms(),
+		last_user_investment_tms: getꓽUTC_timestamp_ms(),
 
 		encountered_files: {},
 		known_modifications_new_to_old: {},
@@ -86,7 +86,7 @@ export function migrate_to_latest(prev: any): Immutable<State> {
 	return _migrate_to_latest(get_lib_SEC(), prev)
 }
 
-export function on_previous_notes_found(state: Immutable<State>, previous_state: Immutable<State>, PARAMS: Immutable<Params> = get_params()): Immutable<State> {
+export function on_previous_notes_found(state: Immutable<State>, previous_state: Immutable<State>, PARAMS: Immutable<Params> = getꓽparams()): Immutable<State> {
 	logger.trace(`${LIB} on_previous_notes_found(…)`, { })
 
 	const { encountered_files: encountered_files_current } = state
@@ -127,7 +127,7 @@ export function on_previous_notes_found(state: Immutable<State>, previous_state:
 			const { _currently_known_as } = notes
 			if (!_currently_known_as) return
 
-			const normalized_extension = get_file_basename_extension‿normalized(_currently_known_as)
+			const normalized_extension = getꓽfile_basename_extension‿normalized(_currently_known_as)
 			assert(PARAMS.extensions_of_media_files‿lc.includes(normalized_extension), `on_previous_notes_found() notes should only be stored for media files!`)
 		})
 		const final_notes = notes.length === 1
@@ -146,7 +146,7 @@ export function on_file_notes_recovered_into_active_file_state(state: Immutable<
 		...state.encountered_files,
 	}
 
-	const oldest_hash = get_oldest_hash(state, current_hash)
+	const oldest_hash = getꓽoldest_hash(state, current_hash)
 	assert(encountered_files[oldest_hash], `on_file_notes_recovered() notes should exist`)
 	delete encountered_files[oldest_hash] // clean to avoid redundancy
 	assert(!encountered_files[oldest_hash], 'on_file_notes_recovered_into_active_file_state() delete')
@@ -219,7 +219,7 @@ export function to_string(state: Immutable<State>, mode: 'mode:full' | 'mode:sum
 function notes_to_string(notes: Immutable<FileNotes>): string {
 	let str = ''
 
-	const historical_fs_reliability = get_historical_fs_reliability(notes.historical.neighbor_hints, notes.historical.fs_bcd_tms)
+	const historical_fs_reliability = getꓽhistorical_fs_reliability(notes.historical.neighbor_hints, notes.historical.fs_bcd_tms)
 	const reliability_icon = historical_fs_reliability === 'unknown'
 		? '❓'
 		: historical_fs_reliability === 'reliable'

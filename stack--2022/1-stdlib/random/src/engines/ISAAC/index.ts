@@ -1,7 +1,7 @@
 import { Int32, PRNGEngine, PRNGState, Seed } from '../../types.js'
 import { assert } from '../../embedded-deps/assert/index.js'
 import { Immutable, PositiveInteger } from '../../embedded-deps/types/index.js'
-import { get_seed_as_Int32Array } from '../../utils.js'
+import { getꓽseed_as_Int32Array } from '../../utils.js'
 
 const ALGORITHM_ID: PRNGState['algorithm_id'] = 'ISAAC32'
 const SIZE = 256 // For readability only. SIZE=256 is a property of the algorithm and can't be changed
@@ -26,7 +26,7 @@ function _get_random_seed(): Seed {
 }
 
 
-export function get_RNGⵧISAAC32(options: {
+export function getꓽRNGⵧISAAC32(options: {
 	// DO NOT USE THOSE OPTIONS
 	// THEY ARE PROVIDED FOR UNIT TESTS ONLY
 	// seed:

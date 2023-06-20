@@ -2,7 +2,7 @@ import { expect } from 'chai'
 
 import { Enum } from 'typescript-string-enums'
 import { ItemQuality, InventorySlot } from '@tbrpg/definitions'
-import { get_engine, RNGEngine } from '@offirmo/random'
+import { getꓽengine, RNGEngine } from '@offirmo/random'
 
 import { LIB } from './consts.js'
 import {
@@ -18,7 +18,7 @@ import {
 
 
 describe(`${LIB} - selectors`, function() {
-	const rng = get_engine.for_unit_tests()
+	const rng = getꓽengine.for_unit_tests()
 
 	describe('damage', function() {
 

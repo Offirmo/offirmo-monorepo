@@ -7,7 +7,7 @@ import {
 	InventorySlot,
 	create_item_base,
 } from '@tbrpg/definitions'
-import { get_random, RNGEngine } from '@offirmo/random'
+import { getꓽrandom, RNGEngine } from '@offirmo/random'
 
 import {
 	Armor,

@@ -9,7 +9,7 @@ import { enforce_immutability } from '@offirmo-private/state-utils'
 import { LIB as APP } from '../../consts.js'
 import { AbsolutePath, RelativePath } from '../../types.js'
 import { Action } from '../actions.js'
-import { get_file_basename_without_copy_index } from '../../services/name_parser.js'
+import { getꓽfile_basename_without_copy_index } from '../../services/name_parser.js'
 import * as BetterDateLib from '../../services/better-date.js'
 import logger from '../../services/logger.js'
 
@@ -18,12 +18,12 @@ import * as File from '../file/index.js'
 import * as Notes from '../notes/index.js'
 import { FolderId } from '../folder/index.js'
 import { FileId, is_recoverable_broken_file } from '../file/index.js'
-import { get_params } from '../../params.js'
+import { getꓽparams } from '../../params.js'
 
 import { LIB } from './consts.js'
 import {	State } from './types.js'
 
-export function get_absolute_path(state: Immutable<State>, id: RelativePath): AbsolutePath {
+export function getꓽabsolute_path(state: Immutable<State>, id: RelativePath): AbsolutePath {
 	return path.join(state.root, id)
 }
 
@@ -31,60 +31,60 @@ export function has_pending_actions(state: Immutable<State>): boolean {
 	return state.queue.length > 0
 }
 
-export function get_first_pending_action(state: Immutable<State>): Immutable<Action> {
+export function getꓽfirst_pending_action(state: Immutable<State>): Immutable<Action> {
 	if (!has_pending_actions(state))
 		throw new Error('No more pending actions!')
 
 	return state.queue[0]
 }
 
-export function get_pending_actions(state: Immutable<State>): Immutable<Action>[] {
+export function getꓽpending_actions(state: Immutable<State>): Immutable<Action>[] {
 	return [...state.queue]
 }
 
-export function get_all_folders(state: Immutable<State>): Immutable<Folder.State>[] {
+export function getꓽall_folders(state: Immutable<State>): Immutable<Folder.State>[] {
 	return Object.values(state.folders)
 }
 
-export function get_max_folder_depth(state: Immutable<State>): number {
-	return get_all_folders(state).reduce((acc, folder_state) => {
+export function getꓽmax_folder_depth(state: Immutable<State>): number {
+	return getꓽall_folders(state).reduce((acc, folder_state) => {
 		const depth = Folder.get_depth(folder_state)
 		return Math.max(acc, depth)
 	}, 0)
 }
 
-export function get_all_folder_ids(state: Immutable<State>): string[] {
+export function getꓽall_folder_ids(state: Immutable<State>): string[] {
 	return Object.keys(state.folders)
 		.sort()
 }
 
-export function get_all_event_folder_ids(state: Immutable<State>): string[] {
-	return get_all_folder_ids(state)
+export function getꓽall_event_folder_ids(state: Immutable<State>): string[] {
+	return getꓽall_folder_ids(state)
 		.filter(k => state.folders[k].type === Folder.Type.event)
 }
 
-export function get_all_files(state: Immutable<State>): Immutable<File.State>[] {
+export function getꓽall_files(state: Immutable<State>): Immutable<File.State>[] {
 	return Object.values(state.files)
 }
 
-export function get_all_file_ids(state: Immutable<State>): string[] {
+export function getꓽall_file_ids(state: Immutable<State>): string[] {
 	return Object.keys(state.files)
 		.sort()
 }
 
-export function get_all_files_except_meta(state: Immutable<State>): Immutable<File.State>[] {
-	return get_all_files(state)
+export function getꓽall_files_except_meta(state: Immutable<State>): Immutable<File.State>[] {
+	return getꓽall_files(state)
 		.filter(state => !File.is_notes(state))
 }
 
-export function get_all_media_files(state: Immutable<State>): Immutable<File.State>[] {
-	return get_all_files(state)
+export function getꓽall_media_files(state: Immutable<State>): Immutable<File.State>[] {
+	return getꓽall_files(state)
 		.filter(s => File.is_media_file(s))
 }
 
 /*
-export function get_all_media_file_ids(state: Immutable<State>): string[] {
-	return get_all_media_files(state)
+export function getꓽall_media_file_ids(state: Immutable<State>): string[] {
+	return getꓽall_media_files(state)
 		.map(s => s.id)
 }
 */
@@ -101,8 +101,8 @@ export function is_folder_existing(state: Immutable<State>, id: FolderId): boole
 }
 
 // CORE LOGIC
-export function get_ideal_file_relative_folder(state: Immutable<State>, id: FileId): RelativePath {
-	logger.trace(`✴️ get_ideal_file_relative_folder()`, { id })
+export function getꓽideal_file_relative_folder(state: Immutable<State>, id: FileId): RelativePath {
+	logger.trace(`✴️ getꓽideal_file_relative_folder()`, { id })
 	const DEBUG = false
 
 	const file_state = state.files[id]
@@ -121,7 +121,7 @@ export function get_ideal_file_relative_folder(state: Immutable<State>, id: File
 		is_media_file = false
 	}
 
-	logger.trace(`✴️ get_ideal_file_relative_folder() processing…`, {
+	logger.trace(`✴️ getꓽideal_file_relative_folder() processing…`, {
 		top_parent_id,
 		is_top_parent_special,
 		parent_folder_type: current_parent_folder_state.type,
@@ -186,7 +186,7 @@ export function get_ideal_file_relative_folder(state: Immutable<State>, id: File
 		return Folder.get_event_begin_date(current_parent_folder_state)
 	})()
 
-	let compatible_event_folder_id = get_all_event_folder_ids(state)
+	let compatible_event_folder_id = getꓽall_event_folder_ids(state)
 		.find(fid => Folder.is_date_matching_this_event(state.folders[fid], date_for_matching_an_event))
 	if (!compatible_event_folder_id) {
 		if (current_parent_folder_state.type === Folder.Type.overlapping_event) {
@@ -233,7 +233,7 @@ export function get_ideal_file_relative_folder(state: Immutable<State>, id: File
 	// we have reasonable confidence, we don't have a folder
 	const year = String(BetterDateLib.get_year(file_bcd, 'tz:embedded'))
 	const event_folder_base = ((): string => {
-		const all_events_folder_ids = get_all_event_folder_ids(state)
+		const all_events_folder_ids = getꓽall_event_folder_ids(state)
 
 		let compatible_event_folder_id = all_events_folder_ids.find(fid => Folder.is_date_matching_this_event(state.folders[fid], file_bcd))
 		if (compatible_event_folder_id) {
@@ -266,7 +266,7 @@ export function get_ideal_file_relative_folder(state: Immutable<State>, id: File
 	return path.join(year, event_folder_base)
 }
 
-export function get_ideal_file_relative_path(state: Immutable<State>, id: FileId): RelativePath {
+export function getꓽideal_file_relative_path(state: Immutable<State>, id: FileId): RelativePath {
 	logger.trace(`get_ideal_file_relative_path()`, { id })
 
 	const file_state = state.files[id]
@@ -279,7 +279,7 @@ export function get_ideal_file_relative_path(state: Immutable<State>, id: FileId
 	let ideal_basename = File.get_ideal_basename(file_state)
 	if (!get_params().dry_run) {
 		const current_basename = File.get_current_basename(file_state)
-		const current_basename_cleaned = get_file_basename_without_copy_index(current_basename)
+		const current_basename_cleaned = getꓽfile_basename_without_copy_index(current_basename)
 		assert(
 			current_basename_cleaned === ideal_basename,
 			`get_ideal_file_relative_path() file should already have been normalized in place! ideal="${ideal_basename}" vs current(no copy index)="${current_basename_cleaned}" from "${current_basename}"`
@@ -289,11 +289,11 @@ export function get_ideal_file_relative_path(state: Immutable<State>, id: FileId
 	return path.join(get_ideal_file_relative_folder(state, id), ideal_basename)
 }
 
-export function get_past_notes(state: Immutable<State>): Immutable<Notes.State> {
+export function getꓽpast_notes(state: Immutable<State>): Immutable<Notes.State> {
 	return enforce_immutability(Notes.create('for persisting -- old', state.extra_notes))
 }
 
-export function get_present_notes(state: Immutable<State>): Immutable<Notes.State> {
+export function getꓽpresent_notes(state: Immutable<State>): Immutable<Notes.State> {
 	let result = enforce_immutability(Notes.create('for persisting -- present'))
 
 	const encountered_files = { ...result.encountered_files }
@@ -316,9 +316,9 @@ export function get_present_notes(state: Immutable<State>): Immutable<Notes.Stat
 	return result
 }
 
-export function get_past_and_present_notes(state: Immutable<State>): Immutable<Notes.State> {
-	let past = get_past_notes(state)
-	let current = get_present_notes(state)
+export function getꓽpast_and_present_notes(state: Immutable<State>): Immutable<Notes.State> {
+	let past = getꓽpast_notes(state)
+	let current = getꓽpresent_notes(state)
 	let result = enforce_immutability(Notes.create('for persisting -- all'))
 
 	result = {
@@ -337,14 +337,14 @@ export function get_past_and_present_notes(state: Immutable<State>): Immutable<N
 	return result
 }
 
-export function get_file_ids_by_hash(state: Immutable<State>): { [hash: string]: FileId[] } {
+export function getꓽfile_ids_by_hash(state: Immutable<State>): { [hash: string]: FileId[] } {
 	/*const duplicated_hashes: Set<FileHash> = new Set<FileHash>(
 		Object.entries(state.encountered_hash_count)
 			.filter(([ hash, count ]) => count > 1)
 			.map(([ hash ]) => hash)
 	)*/
 
-	const file_ids_by_hash = get_all_file_ids(state)
+	const file_ids_by_hash = getꓽall_file_ids(state)
 		.reduce((acc, file_id) => {
 			const file_state = state.files[file_id]
 			const hash = File.get_hash(file_state)
@@ -359,7 +359,7 @@ export function get_file_ids_by_hash(state: Immutable<State>): { [hash: string]:
 			return acc
 		}, {} as { [hash: string]: FileId[] })
 
-	/*const duplicate_original_basenames_by_hash: { [hash: string]: FileId[] } = get_all_file_ids(state)
+	/*const duplicate_original_basenames_by_hash: { [hash: string]: FileId[] } = getꓽall_file_ids(state)
 		.reduce((acc, file_id) => {
 			const file_state = state.files[file_id]
 			const hash = File.get_hash(file_state)
@@ -385,15 +385,15 @@ ${stylize_string.blue.bold(`##################### ${LIB} ${APP}’s DB #########
 Root: "${stylize_string.yellow.bold(root)}"
 `
 
-	const all_folder_ids = get_all_folder_ids(state)
+	const all_folder_ids = getꓽall_folder_ids(state)
 	str += stylize_string.bold(
 		`\n${stylize_string.blue('' + all_folder_ids.length)} folders:\n`,
 	)
 	str += all_folder_ids.map(id => Folder.to_string(folders[id])).join('\n')
 
 
-	//const all_file_ids = get_all_media_file_ids(state)
-	const all_file_ids = get_all_file_ids(state)
+	//const all_file_ids = getꓽall_media_file_ids(state)
+	const all_file_ids = getꓽall_file_ids(state)
 	str += stylize_string.bold(
 		`\n\n${stylize_string.blue(String(all_file_ids.length))} files in ${stylize_string.blue(String(all_folder_ids.length))} folders:\n`,
 	)

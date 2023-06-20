@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { Enum } from 'typescript-string-enums'
-import { get_engine } from '@offirmo/random'
+import { getꓽengine } from '@offirmo/random'
 import { MAX_LEVEL } from '@tbrpg/definitions'
 
 import {
@@ -33,7 +33,7 @@ describe('@tbrpg/logic-monsters - state', function() {
 	describe('create()', function () {
 
 		it('should allow creating a random monster', function() {
-			const rng = get_engine.for_unit_tests()
+			const rng = getꓽengine.for_unit_tests()
 			expect(rng.get_state().call_count, '# rng draws 1').to.equal(0)
 
 			const monster1 = create(rng)
@@ -48,7 +48,7 @@ describe('@tbrpg/logic-monsters - state', function() {
 		})
 
 		it('should allow creating a partially predefined monster', function() {
-			const rng = get_engine.for_unit_tests()
+			const rng = getꓽengine.for_unit_tests()
 			const monster = create(rng, {
 				name: 'crab',
 				level: 12,

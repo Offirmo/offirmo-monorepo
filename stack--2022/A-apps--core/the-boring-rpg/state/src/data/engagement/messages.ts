@@ -5,7 +5,7 @@ import { EngagementKey } from './types.js'
 
 ////////////////////////////////////
 
-export function get_engagement_message(pe: Immutable<PendingEngagement>): RichText.Document {
+export function getꓽengagement_message(pe: Immutable<PendingEngagement>): RichText.Document {
 	const { engagement: {key}, params} = pe
 
 	switch(key) {

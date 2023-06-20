@@ -4,7 +4,7 @@ import { assert } from '../embedded-deps/assert/index.js'
 import { RandomValueGenerator } from './types.js'
 import { _get_generator_of_a_constant } from './_internal.js'
 
-export function get_random_generator_ofꓽintegerⵧbetween(min: Integer, max: Integer): RandomValueGenerator<Integer> {
+export function getꓽrandom_generator_ofꓽintegerⵧbetween(min: Integer, max: Integer): RandomValueGenerator<Integer> {
 	assert(Number.isInteger(min), `min should be an integer (${min})!`)
 	assert(Number.isInteger(max), `max should be an integer (${max})!`)
 
@@ -94,13 +94,13 @@ export function get_random_generator_ofꓽintegerⵧbetween(min: Integer, max: I
 	}
 }
 
-export function get_random_generator_ofꓽintegerⵧin_interval(interval: [Integer, Integer]): RandomValueGenerator<Integer> {
-	return get_random_generator_ofꓽintegerⵧbetween(...interval)
+export function getꓽrandom_generator_ofꓽintegerⵧin_interval(interval: [Integer, Integer]): RandomValueGenerator<Integer> {
+	return getꓽrandom_generator_ofꓽintegerⵧbetween(...interval)
 }
 
-export function get_random_picker<T>(items: ReadonlyArray<T>): RandomValueGenerator<T> {
+export function getꓽrandom_picker<T>(items: ReadonlyArray<T>): RandomValueGenerator<T> {
 	const max_index = items.length - 1
-	const generate_random_index = get_random_generator_ofꓽintegerⵧbetween(0, max_index)
+	const generate_random_index = getꓽrandom_generator_ofꓽintegerⵧbetween(0, max_index)
 
 	return function _randomly_pick_from_array(engine: Immutable<RNGEngine>) {
 		let index = generate_random_index(engine)

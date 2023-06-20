@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { get_random } from '@offirmo/random'
+import { getꓽrandom } from '@offirmo/random'
 
 import {
 	create,
@@ -37,7 +37,7 @@ describe('@oh-my-rpg/state-prng - utils', function() {
 		it('should prevent repetition up to 0', () => {
 			let state = create()
 
-			const prng = get_prng(state)
+			const prng = getꓽprng(state)
 
 			function gen() {
 				const val = regenerate_until_not_recently_encountered({
@@ -64,12 +64,12 @@ describe('@oh-my-rpg/state-prng - utils', function() {
 		it('should prevent repetition up to 1', () => {
 			let state = create()
 
-			const prng = get_prng(state)
+			const prng = getꓽprng(state)
 
 			function gen() {
 				const val = regenerate_until_not_recently_encountered({
 					id,
-					generate: () => get_random.generator_of.integer.between(0, 1)(prng),
+					generate: () => getꓽrandom.generator_of.integer.between(0, 1)(prng),
 					state,
 				})
 
@@ -91,7 +91,7 @@ describe('@oh-my-rpg/state-prng - utils', function() {
 		it('should prevent repetition up to N', () => {
 			let state = create()
 
-			const prng = get_prng(state)
+			const prng = getꓽprng(state)
 			state = register_recently_used(state, id, 0, 9)
 			state = register_recently_used(state, id, 1, 9)
 			state = register_recently_used(state, id, 2, 9)
@@ -105,7 +105,7 @@ describe('@oh-my-rpg/state-prng - utils', function() {
 			function gen() {
 				const val = regenerate_until_not_recently_encountered({
 					id,
-					generate: () => get_random.generator_of.integer.between(0, 9)(prng),
+					generate: () => getꓽrandom.generator_of.integer.between(0, 9)(prng),
 					state,
 					max_tries: 50, // need help
 				})

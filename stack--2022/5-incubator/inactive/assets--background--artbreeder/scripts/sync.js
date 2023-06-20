@@ -49,11 +49,11 @@ function autocomplete_raw_biome_id(raw_biome_id) {
 	return raw_biome_id
 }
 
-function get_code_biome_id(raw_biome_id) {
+function getꓽcode_biome_id(raw_biome_id) {
 	return raw_biome_id.split('--').join('ⵧ')
 }
 
-function get_uuid(image_basename) {
+function getꓽuuid(image_basename) {
 	let uuid = image_basename.split('.')[0]
 	uuid = uuid.split('_')[0]
 	return uuid
@@ -88,7 +88,7 @@ function compare_backgrounds(b1, b2) {
 function register_raw_background(raw_bg) {
 	// TODO add assertions
 	if (raw_bg.basename.includes('small')) {
-		logger.warn('Small artbreeder picture need a bigger format!', {...raw_bg, url: 'https://www.artbreeder.com/i?k=' + get_uuid(raw_bg.basename)})
+		logger.warn('Small artbreeder picture need a bigger format!', {...raw_bg, url: 'https://www.artbreeder.com/i?k=' + getꓽuuid(raw_bg.basename)})
 	}
 	if (raw_bg.transitions_to && !raw_biome_ids.includes(raw_bg.transitions_to)) {
 		report_unknown_raw_biome(raw_bg.transitions_to)

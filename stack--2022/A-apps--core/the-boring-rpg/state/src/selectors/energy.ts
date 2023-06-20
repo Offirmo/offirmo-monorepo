@@ -9,12 +9,12 @@ import { State, TState } from '../types.js'
 
 /////////////////////
 
-function get_available_energy_float(t_state: Immutable<TState>): number {
+function getꓽavailable_energy_float(t_state: Immutable<TState>): number {
 	return _get_available_energy_float(t_state.energy)
 }
 
-function get_human_time_to_next_energy({u_state, t_state}: Immutable<State>): string {
-	return get_human_time_to_next(u_state.energy, t_state.energy)
+function getꓽhuman_time_to_next_energy({u_state, t_state}: Immutable<State>): string {
+	return getꓽhuman_time_to_next(u_state.energy, t_state.energy)
 }
 
 /////////////////////

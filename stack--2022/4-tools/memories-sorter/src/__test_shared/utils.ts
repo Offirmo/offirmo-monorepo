@@ -63,29 +63,29 @@ export async function load_real_media_file(abs_path: string): Promise<Immutable<
 }
 
 export const REAL_CREATION_DATE = enforce_immutability(create_better_date('tz:auto', 2003, 3, 13, 23, 33, 43, 333))
-export const REAL_CREATION_DATE‿HRTS = get_human_readable_timestamp_auto(REAL_CREATION_DATE, 'tz:embedded')
+export const REAL_CREATION_DATE‿HRTS = getꓽhuman_readable_timestamp_auto(REAL_CREATION_DATE, 'tz:embedded')
 assert(REAL_CREATION_DATE‿HRTS === '2003-03-13_23h33m43s333', 'REAL_CREATION_DATE‿HRTS should be correct')
-export const REAL_CREATION_DATE‿TMS = get_timestamp_utc_ms_from(REAL_CREATION_DATE)
+export const REAL_CREATION_DATE‿TMS = getꓽtimestamp_utc_ms_from(REAL_CREATION_DATE)
 const REAL_CREATION_DATE‿LEGACY = new Date(REAL_CREATION_DATE‿TMS)
 export const REAL_CREATION_DATE‿EXIF = _get_exif_datetime(REAL_CREATION_DATE)
 
 // must be OLDER yet we won't pick it
 const BAD_CREATION_DATE_CANDIDATE = enforce_immutability(create_better_date('tz:auto', 2006, 6, 26, 16, 36, 46, 666))
-export const BAD_CREATION_DATE_CANDIDATE‿HRTS = get_human_readable_timestamp_auto(BAD_CREATION_DATE_CANDIDATE, 'tz:embedded')
+export const BAD_CREATION_DATE_CANDIDATE‿HRTS = getꓽhuman_readable_timestamp_auto(BAD_CREATION_DATE_CANDIDATE, 'tz:embedded')
 assert(BAD_CREATION_DATE_CANDIDATE‿HRTS === '2006-06-26_16h36m46s666', 'BAD_CREATION_DATE_CANDIDATE‿HRTS should be correct')
-export const BAD_CREATION_DATE_CANDIDATE‿TMS = get_timestamp_utc_ms_from(BAD_CREATION_DATE_CANDIDATE)
+export const BAD_CREATION_DATE_CANDIDATE‿TMS = getꓽtimestamp_utc_ms_from(BAD_CREATION_DATE_CANDIDATE)
 const BAD_CREATION_DATE_CANDIDATE‿LEGACY = new Date(BAD_CREATION_DATE_CANDIDATE‿TMS)
 const BAD_CREATION_DATE_CANDIDATE‿EXIF = _get_exif_datetime(BAD_CREATION_DATE_CANDIDATE)
-const BAD_CREATION_DATE_CANDIDATE‿SYMD = get_compact_date(BAD_CREATION_DATE_CANDIDATE, 'tz:embedded')
+const BAD_CREATION_DATE_CANDIDATE‿SYMD = getꓽcompact_date(BAD_CREATION_DATE_CANDIDATE, 'tz:embedded')
 /*console.log({
-	dtz: get_default_timezone(BAD_CREATION_DATE_CANDIDATE‿TMS),
+	dtz: getꓽdefault_timezone(BAD_CREATION_DATE_CANDIDATE‿TMS),
 	BAD_CREATION_DATE_CANDIDATE,
-	bcd_tz: get_embedded_timezone(BAD_CREATION_DATE_CANDIDATE),
+	bcd_tz: getꓽembedded_timezone(BAD_CREATION_DATE_CANDIDATE),
 	tt: create_better_date_from_utc_tms(BAD_CREATION_DATE_CANDIDATE‿TMS, 'tz:auto'),
-	tt_tz: get_embedded_timezone(create_better_date_from_utc_tms(BAD_CREATION_DATE_CANDIDATE‿TMS, 'tz:auto')),
+	tt_tz: getꓽembedded_timezone(create_better_date_from_utc_tms(BAD_CREATION_DATE_CANDIDATE‿TMS, 'tz:auto')),
 })*/
 
-function get_DEFAULT_FILE_INPUTS() {
+function getꓽDEFAULT_FILE_INPUTS() {
 	return {
 		// MUST BE FLAT
 
@@ -107,7 +107,7 @@ function get_DEFAULT_FILE_INPUTS() {
 		autoǃdate__fs_ms__historical: undefined as TimestampUTCMs | undefined,
 	}
 }
-type FileInputs = ReturnType<typeof get_DEFAULT_FILE_INPUTS>
+type FileInputs = ReturnType<typeof getꓽDEFAULT_FILE_INPUTS>
 
 function _get_file_id(inputs: Immutable<FileInputs>): FileLib.FileId {
 	return path.join(...[
@@ -163,8 +163,8 @@ function _get_auto_exif_data(inputs: Immutable<FileInputs>): EXIFTags {
 	return exif_data
 }
 
-export function get_test_single_file_state_generator(stategen_to_copy?: Immutable<any>) {
-	const DEFAULT_FILE_INPUTS = get_DEFAULT_FILE_INPUTS()
+export function getꓽtest_single_file_state_generator(stategen_to_copy?: Immutable<any>) {
+	const DEFAULT_FILE_INPUTS = getꓽDEFAULT_FILE_INPUTS()
 	const inputs: FileInputs = {
 		...DEFAULT_FILE_INPUTS,
 		...(stategen_to_copy?.inputs),
@@ -229,8 +229,8 @@ export function get_test_single_file_state_generator(stategen_to_copy?: Immutabl
 	}
 }
 
-export function get_test_single_file_DB_state_generator() {
-	const DEFAULT_FILE_INPUTS = get_DEFAULT_FILE_INPUTS()
+export function getꓽtest_single_file_DB_state_generator() {
+	const DEFAULT_FILE_INPUTS = getꓽDEFAULT_FILE_INPUTS()
 	const DEFAULT_INPUTS = {
 		extra_parent: null as null | Basename,
 		file: DEFAULT_FILE_INPUTS,
@@ -246,12 +246,12 @@ export function get_test_single_file_DB_state_generator() {
 		inputs.file = { ...DEFAULT_FILE_INPUTS }
 	}
 
-	function get_file_id(): FileLib.FileId {
+	function getꓽfile_id(): FileLib.FileId {
 		return _get_file_id(inputs.file)
 	}
 
 	function create_test_db_state(): Immutable<DB.State> {
-		const file_id = get_file_id()
+		const file_id = getꓽfile_id()
 
 		let state = DB.create('root')
 

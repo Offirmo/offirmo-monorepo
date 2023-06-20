@@ -4,7 +4,7 @@ import { Immutable} from '@offirmo-private/ts-types'
 import { Enum } from 'typescript-string-enums'
 
 import { generate_uuid } from '@offirmo-private/uuid'
-import { get_random, RNGEngine } from '@offirmo/random'
+import { getꓽrandom, RNGEngine } from '@offirmo/random'
 
 import { InventorySlot } from '@tbrpg/definitions'
 
@@ -168,7 +168,7 @@ function instantiate_adventure_archetype(
 
 	// instantiate the special gains
 	if (should_gain.random_attribute) {
-		const stat: keyof OutcomeArchetype = get_random.picker.of(ALL_ATTRIBUTES_X_LVL)(rng) as keyof OutcomeArchetype
+		const stat: keyof OutcomeArchetype = getꓽrandom.picker.of(ALL_ATTRIBUTES_X_LVL)(rng) as keyof OutcomeArchetype
 		(should_gain as any)[stat] = true
 	}
 	if (should_gain.lowest_attribute) {
@@ -178,11 +178,11 @@ function instantiate_adventure_archetype(
 		(should_gain as any)[lowest_stat] = true
 	}
 	if (should_gain.class_primary_attribute) {
-		const stat: keyof OutcomeArchetype = get_random.picker.of(PRIMARY_STATS_BY_CLASS[character.klass]!)(rng) as keyof OutcomeArchetype
+		const stat: keyof OutcomeArchetype = getꓽrandom.picker.of(PRIMARY_STATS_BY_CLASS[character.klass]!)(rng) as keyof OutcomeArchetype
 		(should_gain as any)[stat] = true
 	}
 	if (should_gain.class_secondary_attribute) {
-		const stat: keyof OutcomeArchetype = get_random.picker.of(SECONDARY_STATS_BY_CLASS[character.klass]!)(rng) as keyof OutcomeArchetype
+		const stat: keyof OutcomeArchetype = getꓽrandom.picker.of(SECONDARY_STATS_BY_CLASS[character.klass]!)(rng) as keyof OutcomeArchetype
 		(should_gain as any)[stat] = true
 	}
 
@@ -237,7 +237,7 @@ function instantiate_adventure_archetype(
 /////////////////////
 
 function _play_adventure(state: Immutable<State>, aa: Immutable<AdventureArchetype>): Immutable<State> {
-	const rng = get_prng(state.u_state.prng)
+	const rng = getꓽprng(state.u_state.prng)
 
 	const adventure = instantiate_adventure_archetype(
 		rng,

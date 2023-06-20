@@ -1,5 +1,5 @@
 import { MAIN_IFRAME_QUERYPARAMS } from '../consts'
-import { get_story_by_id } from '../state/selectors'
+import { getꓽstory_by_id } from '../state/selectors'
 
 function renderⵧstory(state) {
 	const sp = (new URL(window.location.href)).searchParams
@@ -13,7 +13,7 @@ function renderⵧstory(state) {
 
 		document.body.innerText = `Loading story "${story_id}"…`
 
-		const story = get_story_by_id(state, story_id)
+		const story = getꓽstory_by_id(state, story_id)
 		try {
 			let content = story.story()
 			const decorators = story.story.decorators === null
