@@ -33,7 +33,7 @@ export {
 	type ImmutabilityEnforcer
 } from '@offirmo-private/ts-types' // for convenience
 
-export function get_mutable_copy<I>(state: I): Mutable<I> {
+export function getꓽmutable_copy<I>(state: I): Mutable<I> {
 	return icepick.thaw<Mutable<I>>(state as any)
 }
 

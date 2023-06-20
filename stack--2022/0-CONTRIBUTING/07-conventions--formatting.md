@@ -24,14 +24,18 @@ import {  } from './types.js'
 
 function get(): void {
 /*
+getꓽXYZ()
+setꓽXYZ()
+insertꓽnode()
+assertꓽnode_is_xyz()
+isꓽStory‿v2()
+ↆfoo
 ϟbestↆofꓺaꘌb
 notᝍbadₓasⳇwell‿noǃ
 bar𝝣fooǃfooꓽfoo𖾚foo
 fooꜛbarꜜfoo
-too wide
 fooⵧbar
-too thin
-ꓽfoo𐅛barᐧfooꓺbar
+ꓽfooᐧfoo
  */
 }
 

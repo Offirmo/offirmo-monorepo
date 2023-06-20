@@ -41,13 +41,14 @@ const CORE = [
 	'flower',
 
 	// elements
-	'yin',
-	'yang',
-	'yin-yang',
-	'wood',
-	'gold',
 	'fire',
+	'gold',
 	'ice',
+	'water',
+	'wood',
+	'yang',
+	'yin',
+	'yin-Yang',
 
 	// features
 	'river',

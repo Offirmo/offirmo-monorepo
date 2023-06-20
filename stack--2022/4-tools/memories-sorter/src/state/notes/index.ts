@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
-import { get_mutable_copy } from '@offirmo-private/state-utils'
+import { getꓽmutable_copy } from '@offirmo-private/state-utils'
 import stylize_string from 'chalk'
 
 import logger from '../../services/logger.js'
@@ -72,10 +72,10 @@ export function create(debug_id: string, notes_to_copy?: Immutable<State>): Stat
 
 	if (notes_to_copy) {
 		state.encountered_files = {
-			...get_mutable_copy(notes_to_copy.encountered_files),
+			...getꓽmutable_copy(notes_to_copy.encountered_files),
 		}
 		state.known_modifications_new_to_old = {
-			...get_mutable_copy(notes_to_copy.known_modifications_new_to_old)
+			...getꓽmutable_copy(notes_to_copy.known_modifications_new_to_old)
 		}
 	}
 

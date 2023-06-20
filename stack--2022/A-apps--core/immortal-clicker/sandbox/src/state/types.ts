@@ -16,6 +16,12 @@ interface UState extends BaseUState {
 	avatar: Avatar
 
 	setting: {
+		//deal: {
+			// what was given at birth
+			// body type
+			// soul type
+		//}
+
 		family: NuclearFamily,
 		children_position: number,
 	}
