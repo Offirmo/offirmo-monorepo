@@ -23,14 +23,14 @@ describe('tiny-singleton', function () {
 		it('should work and prevent subsequent creations', () => {
 			const getꓽperson: () => Person = tiny_singleton(() => create_person('Luke'))
 
-			expect(get_person()).to.equal(get_person())
-			expect(get_person().ask_name()).to.equal('Luke')
-			expect(get_person()).to.equal(get_person())
-			expect(get_person().ask_name()).to.equal('Luke')
+			expect(getꓽperson()).to.equal(getꓽperson())
+			expect(getꓽperson().ask_name()).to.equal('Luke')
+			expect(getꓽperson()).to.equal(getꓽperson())
+			expect(getꓽperson().ask_name()).to.equal('Luke')
 
 			// this line should trigger a TypeScript error
 			// @ts-expect-error
-			get_person().foo
+			getꓽperson().foo
 		})
 	})
 
@@ -39,10 +39,10 @@ describe('tiny-singleton', function () {
 		it('should forward the params the 1st time', () => {
 			const getꓽowner: (name?: string) => Person = tiny_singleton((name?: string) => create_person(name || 'Luke'))
 
-			expect(get_owner('Anakin').ask_name() === 'Anakin')
-			expect(get_owner('Luke').ask_name() === 'Anakin') // no change, previous invocation got priority
-			expect(get_owner().ask_name() === 'Anakin')
-			expect(get_owner()).to.equal(get_owner()) // still stable
+			expect(getꓽowner('Anakin').ask_name() === 'Anakin')
+			expect(getꓽowner('Luke').ask_name() === 'Anakin') // no change, previous invocation got priority
+			expect(getꓽowner().ask_name() === 'Anakin')
+			expect(getꓽowner()).to.equal(getꓽowner()) // still stable
 		})
 	})
 })

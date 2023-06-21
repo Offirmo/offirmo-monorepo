@@ -1,13 +1,14 @@
 import { expect } from 'chai'
 
 import {
-	get_random_generator_ofꓽbool,
-	get_random_generator_ofꓽboolⵧweighted,
+	getꓽrandom_generator_ofꓽbool,
+	getꓽrandom_generator_ofꓽboolⵧweighted,
 } from './bool.js'
 import { RNGEngine } from '../types.js'
 import { getꓽRNGⵧMathᐧrandom } from '../engines/MathRandom/index.js'
 import { ROUNDS_COUNT } from '../_test_helpers.js'
 
+/////////////////////////////////////////////////
 
 describe('@offirmo/random', function() {
 	let engine: RNGEngine = getꓽRNGⵧMathᐧrandom()
@@ -46,7 +47,7 @@ describe('@offirmo/random', function() {
 				})
 			})
 
-			describe('get_random_generator_ofꓽboolⵧweighted()', function () {
+			describe('getꓽrandom_generator_ofꓽboolⵧweighted()', function () {
 
 				it('should work -- limits -- 0', () => {
 					const generate = getꓽrandom_generator_ofꓽboolⵧweighted(0)

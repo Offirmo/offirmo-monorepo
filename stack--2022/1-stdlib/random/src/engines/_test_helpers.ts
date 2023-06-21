@@ -5,11 +5,13 @@ import { RNGEngine, Int32, PRNGEngine, PRNGState } from '../types.js'
 import { Immutable } from '../embedded-deps/types/index.js'
 import { assert } from '../embedded-deps/assert/index.js'
 
-export const INT32_MIN = -0x8000_0000
-export const INT32_MAX =  0x7fff_ffff
+/////////////////////////////////////////////////
+
+const INT32_MIN = -0x8000_0000
+const INT32_MAX =  0x7fff_ffff
 
 
-export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngine) {
+function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngine) {
 	let engine: RNGEngine | PRNGEngine = engine_ctor()
 	beforeEach(() => {
 		engine = engine_ctor()
@@ -330,4 +332,12 @@ export function itᐧshouldᐧbeᐧaᐧvalidᐧengine(engine_ctor: () => RNGEngi
 			})
 		}
 	})
+}
+
+/////////////////////////////////////////////////
+
+export {
+	INT32_MIN, INT32_MAX,
+
+	itᐧshouldᐧbeᐧaᐧvalidᐧengine,
 }

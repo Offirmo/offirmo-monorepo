@@ -1,7 +1,9 @@
 import { Int32, PRNGEngine, PRNGState, Seed } from '../../types.js'
 import { assert } from '../../embedded-deps/assert/index.js'
 import { Immutable, PositiveInteger } from '../../embedded-deps/types/index.js'
-import { getꓽseed_as_Int32Array } from '../../utils.js'
+import { getꓽseed‿Int32Array } from '../../utils.js'
+
+/////////////////////////////////////////////////
 
 const ALGORITHM_ID: PRNGState['algorithm_id'] = 'ISAAC32'
 const SIZE = 256 // For readability only. SIZE=256 is a property of the algorithm and can't be changed
@@ -14,7 +16,6 @@ function _add(x: Int32, y: Int32): Int32 {
 	return (msb << 16) | (lsb & 0xffff)
 }
 
-
 function _get_random_seed(): Seed {
 	// @ts-expect-error
 	if (globalThis?.crypto?.getRandomValues) {
@@ -26,7 +27,7 @@ function _get_random_seed(): Seed {
 }
 
 
-export function getꓽRNGⵧISAAC32(options: {
+function getꓽRNGⵧISAAC32(options: {
 	// DO NOT USE THOSE OPTIONS
 	// THEY ARE PROVIDED FOR UNIT TESTS ONLY
 	// seed:
@@ -177,7 +178,7 @@ export function getꓽRNGⵧISAAC32(options: {
 			_seed(undefined)
 			break
 		default:
-			_seed(get_seed_as_Int32Array(options._xxx_seed))
+			_seed(getꓽseed‿Int32Array(options._xxx_seed))
 			last_seed = options._xxx_seed
 			break
 	}
@@ -188,7 +189,7 @@ export function getꓽRNGⵧISAAC32(options: {
 			return _next()
 		},
 		seed(seed: Seed) {
-			_seed(get_seed_as_Int32Array(seed))
+			_seed(getꓽseed‿Int32Array(seed))
 			last_seed = seed
 			return engine
 		},
@@ -198,7 +199,7 @@ export function getꓽRNGⵧISAAC32(options: {
 		},
 		set_state(state: Immutable<PRNGState>) {
 			assert((state.algorithm_id || ALGORITHM_ID) === ALGORITHM_ID, `Invalid state restoration request: mismatching algorithms!`)
-			_seed(get_seed_as_Int32Array(state.seed))
+			_seed(getꓽseed‿Int32Array(state.seed))
 			last_seed = state.seed
 			_discard(state.call_count)
 			return engine
@@ -222,4 +223,10 @@ export function getꓽRNGⵧISAAC32(options: {
 		}
 	}
 	return engine
+}
+
+/////////////////////////////////////////////////
+
+export {
+	getꓽRNGⵧISAAC32,
 }

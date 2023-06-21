@@ -4,6 +4,7 @@ import { getꓽRNGⵧISAAC32 } from './index.js'
 import { itᐧshouldᐧbeᐧaᐧvalidᐧengine } from '../_test_helpers.js'
 import { Int32 } from '../../types.js'
 
+/////////////////////////////////////////////////
 
 describe('@offirmo/random', function() {
 
@@ -11,7 +12,7 @@ describe('@offirmo/random', function() {
 
 		describe('ISAAC-32', function() {
 
-			itᐧshouldᐧbeᐧaᐧvalidᐧengine(get_RNGⵧISAAC32)
+			itᐧshouldᐧbeᐧaᐧvalidᐧengine(getꓽRNGⵧISAAC32)
 
 			/* number to hexadecimal string representation /w padding */
 			function toHex(n: number, padding: number = 8): string {

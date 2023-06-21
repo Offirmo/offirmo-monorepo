@@ -5,6 +5,7 @@ import { getꓽRNGⵧMathᐧrandom } from '../engines/MathRandom/index.js'
 import { ROUNDS_COUNT } from '../_test_helpers.js'
 import { getꓽrandom_generator_ofꓽintegerⵧbetween } from './integer.js'
 
+/////////////////////////////////////////////////
 
 describe('@offirmo/random', function() {
 	const getꓽRNG = getꓽRNGⵧMathᐧrandom
@@ -75,7 +76,7 @@ describe('@offirmo/random', function() {
 				})
 			}
 
-			describe('get_random_generator_ofꓽintegerⵧbetween()', function() {
+			describe('getꓽrandom_generator_ofꓽintegerⵧbetween()', function() {
 
 				it('should work -- range size = 1 = constant', () => {
 					const generate = getꓽrandom_generator_ofꓽintegerⵧbetween(-5, -5)
@@ -85,17 +86,17 @@ describe('@offirmo/random', function() {
 					expect(generate(engine)).to.equal(-5)
 				})
 
-				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(get_RNG, 2)
-				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(get_RNG, 3)
-				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(get_RNG, 4)
-				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(get_RNG, 5)
-				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(get_RNG, 7)
-				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(get_RNG, 255) // -1
-				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(get_RNG, 256) // power of 2
-				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(get_RNG, 257) // +1
-				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(get_RNG, 0x8000_0000)
-				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(get_RNG, 0xFFFF_FFFF)
-				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(get_RNG, 0xFFFF_FFFF + 1) // power of 2
+				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(getꓽRNG, 2)
+				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(getꓽRNG, 3)
+				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(getꓽRNG, 4)
+				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(getꓽRNG, 5)
+				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(getꓽRNG, 7)
+				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(getꓽRNG, 255) // -1
+				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(getꓽRNG, 256) // power of 2
+				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(getꓽRNG, 257) // +1
+				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(getꓽRNG, 0x8000_0000)
+				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(getꓽRNG, 0xFFFF_FFFF)
+				itᐧshouldᐧbeᐧaᐧvalidᐧintegerᐧgenerator(getꓽRNG, 0xFFFF_FFFF + 1) // power of 2
 
 				it('should reject ranges > 32 bits', () => {
 					expect(() => getꓽrandom_generator_ofꓽintegerⵧbetween(0, 0xFFFF_FFFF + 1)).to.throw('Range error')

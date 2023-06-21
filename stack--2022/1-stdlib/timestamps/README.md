@@ -3,19 +3,19 @@
 `import {} from '@offirmo-private/timestamps'`
 
 Examples:
-get_UTC_timestamp_ms()
+getꓽUTC_timestamp‿ms()
 1542780045627
 
-get_human_readable_UTC_timestamp_ms()
+getꓽUTC_timestampⵧhuman_readable‿ms()
 20181121_06h00+45.632
 
-get_human_readable_UTC_timestamp_seconds()
+getꓽUTC_timestampⵧhuman_readable‿seconds()
 20190608_04h23+15
 
-get_human_readable_UTC_timestamp_minutes()
+getꓽUTC_timestampⵧhuman_readable‿minutes()
 20181121_06h00
 
-get_human_readable_UTC_timestamp_days()
+getꓽUTC_timestampⵧhuman_readable‿days()
 20181121
 
 ## Roadmap

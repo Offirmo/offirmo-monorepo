@@ -1,10 +1,11 @@
 import { expect } from 'chai'
 
 import {
-	get_random,
-	get_engine,
+	getꓽrandom,
+	getꓽengine,
 } from './index.js' // TODO self-ref
 
+/////////////////////////////////////////////////
 
 describe('@offirmo/random', function() {
 

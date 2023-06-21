@@ -4,29 +4,31 @@
 
 import { Immutable, PositiveInteger } from './embedded-deps/types/index.js'
 
-export type Int8 = number
-export type Int32 = number
-export type Int53 = number
-export type UInt53 = number // 53bits = MAX_SAFE_INTEGER cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER
-export type Seed = ReadonlyArray<number> | number | string
+/////////////////////////////////////////////////
+
+type Int8 = number
+type Int32 = number
+type Int53 = number
+type UInt53 = number // 53bits = MAX_SAFE_INTEGER cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER
+type Seed = ReadonlyArray<number> | number | string
 
 
-export interface RNGEngine {
+interface RNGEngine {
 	get_Int32(): Int32
 
 	is_prng(/*this: RNGEngine | PRNGEngine*/): this is PRNGEngine // whether this engine is a pseudo-RNG
 }
 
-export interface PRNGState {
+interface PRNGState {
 	algorithm_id?: 'ISAAC32' | 'MT19937',
 	seed: Seed
 	call_count: PositiveInteger
 }
 
 // for convenience, the setters return 'this' to allow fluid chaining
-export interface PRNGEngine extends RNGEngine {
-	seed(seed: Seed): RNGEngine
-	discard(call_count: PositiveInteger): RNGEngine
+interface PRNGEngine extends RNGEngine {
+	seed(seed: Seed): PRNGEngine
+	discard(call_count: PositiveInteger): PRNGEngine
 
 	// set/get both seed + call_count
 	set_state(state: Immutable<PRNGState>): PRNGEngine
@@ -49,3 +51,17 @@ export interface ImmutablePRNGEngine extends ImmutableRNGEngine {
 	get_state(): {seed: Seed, call_count: Integer}
 }
 */
+
+/////////////////////////////////////////////////
+
+export {
+	type Int8,
+	type Int32,
+	type Int53, type UInt53,
+
+	type Seed,
+
+	type RNGEngine,
+	type PRNGState,
+	type PRNGEngine,
+}

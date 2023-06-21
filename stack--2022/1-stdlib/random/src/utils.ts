@@ -1,10 +1,9 @@
-
-
 import { Seed, Int32 } from './types.js'
 import { assert } from './embedded-deps/assert/index.js'
 
+/////////////////////////////////////////////////
 
-function _to_Int32Arrayⵧarray(arr: Int32[]): Int32Array {
+function _toꓽInt32Arrayⵧarray(arr: Int32[]): Int32Array {
 	assert(arr.every(i => typeof i === 'number'), `array should be array of number!`)
 	// TODO check Int32
 
@@ -12,7 +11,7 @@ function _to_Int32Arrayⵧarray(arr: Int32[]): Int32Array {
 }
 
 /* js string (ucs-2/utf16) to a 32-bit integer (utf-8 chars, little-endian) array */
-function _to_Int32Arrayⵧstring(s: string): Int32Array {
+function _toꓽInt32Arrayⵧstring(s: string): Int32Array {
 	const result: Int32[] = []
 	s = s + '\0\0\0'; // pad string to avoid discarding last chars
 	const l = s.length - 1;
@@ -59,16 +58,16 @@ function _to_Int32Arrayⵧstring(s: string): Int32Array {
 		}
 	}
 
-	return _to_Int32Arrayⵧarray(result)
+	return _toꓽInt32Arrayⵧarray(result)
 }
 
 
-function getꓽseed_as_Int32Array(raw_seed: Seed | Int32Array): Int32Array {
+function getꓽseed‿Int32Array(raw_seed: Seed | Int32Array): Int32Array {
 	let normalized_seed = ((): Int32Array => {
 
 		if(typeof raw_seed === 'string') {
 			assert(raw_seed.length > 0, `seed as string should not be empty!`)
-			return _to_Int32Arrayⵧstring(raw_seed)
+			return _toꓽInt32Arrayⵧstring(raw_seed)
 		}
 
 		if(typeof raw_seed === 'number') {
@@ -77,7 +76,7 @@ function getꓽseed_as_Int32Array(raw_seed: Seed | Int32Array): Int32Array {
 		}
 
 		if (Array.isArray(raw_seed)) {
-			return _to_Int32Arrayⵧarray(raw_seed)
+			return _toꓽInt32Arrayⵧarray(raw_seed)
 		}
 
 		assert((raw_seed as any)?.BYTES_PER_ELEMENT === 4, `_seed: wrong TypeArray type!`)
@@ -94,5 +93,5 @@ function getꓽseed_as_Int32Array(raw_seed: Seed | Int32Array): Int32Array {
 ///////
 
 export {
-	get_seed_as_Int32Array,
+	getꓽseed‿Int32Array,
 }

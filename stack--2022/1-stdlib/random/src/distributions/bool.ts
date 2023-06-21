@@ -2,28 +2,29 @@ import { Int32, RNGEngine } from '../types.js'
 import { Immutable, Percentage } from '../embedded-deps/types/index.js'
 import { assert } from '../embedded-deps/assert/index.js'
 import { RandomValueGenerator } from './types.js'
-import { _get_generator_of_a_constant } from './_internal.js'
+import { _getꓽgenerator_ofꓽconstant } from './_internal.js'
 
+/////////////////////////////////////////////////
 
-function _is_last_bitꘌ1(i: Int32): boolean {
+function _hasꓽlast_bitꘌ1(i: Int32): boolean {
 	return (i & 1) === 1
 }
 
 
-export function getꓽrandom_generator_ofꓽbool(): RandomValueGenerator<boolean> {
+function getꓽrandom_generator_ofꓽbool(): RandomValueGenerator<boolean> {
 	return function _randomly_generateꓽbool(engine: Immutable<RNGEngine>) {
-		return _is_last_bitꘌ1(engine.get_Int32())
+		return _hasꓽlast_bitꘌ1(engine.get_Int32())
 	}
 }
 
-export function getꓽrandom_generator_ofꓽboolⵧweighted(percentage: Percentage): RandomValueGenerator<boolean> {
+function getꓽrandom_generator_ofꓽboolⵧweighted(percentage: Percentage): RandomValueGenerator<boolean> {
 	assert(percentage >= 0, 'percentage should be >= 0')
 	assert(percentage <= 1, 'percentage should be <= 1')
 
 	if (percentage === 0)
-		return _get_generator_of_a_constant(false)
+		return _getꓽgenerator_ofꓽconstant(false)
 	if (percentage === 1)
-		return _get_generator_of_a_constant(true)
+		return _getꓽgenerator_ofꓽconstant(true)
 
 	// scale the percentage to Int32
 	// while not 100% precise, the precision should be plenty enough
@@ -53,4 +54,11 @@ export function getꓽrandom_generator_ofꓽboolⵧweighted(percentage: Percenta
 		const i = engine.get_Int32()
 		return i < ceil
 	}
+}
+
+/////////////////////////////////////////////////
+
+export {
+	getꓽrandom_generator_ofꓽbool,
+	getꓽrandom_generator_ofꓽboolⵧweighted,
 }

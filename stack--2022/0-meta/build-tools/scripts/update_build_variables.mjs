@@ -33,7 +33,7 @@ const cli = meow('build', {
 
 
 // ex. 20181121_06h00
-function getꓽhuman_readable_UTC_timestamp_minutes(now = new Date()) {
+function getꓽUTC_timestampⵧhuman_readable‿minutes(now = new Date()) {
 	const YYYY = now.getUTCFullYear()
 	const MM = String(now.getUTCMonth() + 1).padStart(2, '0')
 	const DD = String(now.getUTCDate()).padStart(2, '0')
@@ -50,7 +50,7 @@ function getꓽhuman_readable_UTC_timestamp_minutes(now = new Date()) {
 const PACKAGE_JSON_PATH = path.resolve(cli.flags.inputDir || process.cwd(), './package.json')
 const PKG_JSON = JSON.parse(fs.readFileSync(path.join(PACKAGE_JSON_PATH)))
 let { version: VERSION, name: NAME } = PKG_JSON
-const BUILD_DATE = getꓽhuman_readable_UTC_timestamp_minutes()
+const BUILD_DATE = getꓽUTC_timestampⵧhuman_readable‿minutes()
 
 
 //console.log('🧙️  mode:', cli.flags.mode)

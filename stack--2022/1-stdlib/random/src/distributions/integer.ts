@@ -2,9 +2,11 @@ import { Immutable, Integer, PositiveInteger } from '../embedded-deps/types/inde
 import { RNGEngine, UInt53 } from '../types.js'
 import { assert } from '../embedded-deps/assert/index.js'
 import { RandomValueGenerator } from './types.js'
-import { _get_generator_of_a_constant } from './_internal.js'
+import { _getꓽgenerator_ofꓽconstant } from './_internal.js'
 
-export function getꓽrandom_generator_ofꓽintegerⵧbetween(min: Integer, max: Integer): RandomValueGenerator<Integer> {
+/////////////////////////////////////////////////
+
+function getꓽrandom_generator_ofꓽintegerⵧbetween(min: Integer, max: Integer): RandomValueGenerator<Integer> {
 	assert(Number.isInteger(min), `min should be an integer (${min})!`)
 	assert(Number.isInteger(max), `max should be an integer (${max})!`)
 
@@ -13,7 +15,7 @@ export function getꓽrandom_generator_ofꓽintegerⵧbetween(min: Integer, max:
 	assert(Number.isInteger(possible_output_count), `range should be an integer!`)
 
 	if (possible_output_count === 1)
-		return _get_generator_of_a_constant(min)
+		return _getꓽgenerator_ofꓽconstant(min)
 
 	// ok we have a range
 	// WARNING properly downscaling into a range is NOT TRIVIAL
@@ -94,11 +96,11 @@ export function getꓽrandom_generator_ofꓽintegerⵧbetween(min: Integer, max:
 	}
 }
 
-export function getꓽrandom_generator_ofꓽintegerⵧin_interval(interval: [Integer, Integer]): RandomValueGenerator<Integer> {
+function getꓽrandom_generator_ofꓽintegerⵧin_interval(interval: [Integer, Integer]): RandomValueGenerator<Integer> {
 	return getꓽrandom_generator_ofꓽintegerⵧbetween(...interval)
 }
 
-export function getꓽrandom_picker<T>(items: ReadonlyArray<T>): RandomValueGenerator<T> {
+function getꓽrandom_picker<T>(items: ReadonlyArray<T>): RandomValueGenerator<T> {
 	const max_index = items.length - 1
 	const generate_random_index = getꓽrandom_generator_ofꓽintegerⵧbetween(0, max_index)
 
@@ -107,4 +109,13 @@ export function getꓽrandom_picker<T>(items: ReadonlyArray<T>): RandomValueGene
 
 		return items[index] as T
 	}
+}
+
+/////////////////////////////////////////////////
+
+export {
+	getꓽrandom_generator_ofꓽintegerⵧbetween,
+	getꓽrandom_generator_ofꓽintegerⵧin_interval,
+
+	getꓽrandom_picker,
 }

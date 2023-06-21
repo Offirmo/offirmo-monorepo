@@ -1,3 +1,4 @@
+/////////////////////////////////////////////////
 
 export default function tiny_singleton<
 	CreateFn extends (...args: any[]) => ReturnType<CreateFn>
@@ -15,4 +16,8 @@ export default function tiny_singleton<
 	}
 }
 
-export { tiny_singleton }
+/////////////////////////////////////////////////
+
+export {
+	tiny_singleton,
+}

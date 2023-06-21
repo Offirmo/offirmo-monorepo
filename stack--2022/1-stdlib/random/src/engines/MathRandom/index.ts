@@ -1,7 +1,8 @@
 import { RNGEngine } from '../../types.js'
 
+/////////////////////////////////////////////////
 
-export function getꓽRNGⵧMathᐧrandom(): RNGEngine {
+function getꓽRNGⵧMathᐧrandom(): RNGEngine {
 	const engine = {
 		is_prng() { return false },
 		get_Int32() {
@@ -9,4 +10,10 @@ export function getꓽRNGⵧMathᐧrandom(): RNGEngine {
 		},
 	}
 	return engine
+}
+
+/////////////////////////////////////////////////
+
+export {
+	getꓽRNGⵧMathᐧrandom,
 }
