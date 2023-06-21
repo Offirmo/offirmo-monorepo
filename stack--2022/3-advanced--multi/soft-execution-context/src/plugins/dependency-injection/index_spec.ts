@@ -139,7 +139,7 @@ describe(`${LIB}`, function () {
 					name: string,
 				}
 				type SEC = SoftExecutionContext<Injections>
-				function get_lib_SEC(parent: SEC = getRootSEC()): SEC {
+				function getꓽSEC(parent: SEC = getRootSEC()): SEC {
 					// TODO memoize ? (if !parent)
 					return parent
 						.createChild()
@@ -148,7 +148,7 @@ describe(`${LIB}`, function () {
 						})
 				}
 				function hello({SEC} = {} as { SEC?: SEC}): string {
-					return get_lib_SEC(SEC).xTry('hello', ({SEC, ENV, logger, name}) => {
+					return getꓽSEC(SEC).xTry('hello', ({SEC, ENV, logger, name}) => {
 						return `Hello, ${name}!`
 					})
 				}

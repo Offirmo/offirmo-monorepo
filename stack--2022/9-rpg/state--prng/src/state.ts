@@ -21,7 +21,7 @@ function create(seed: Seed = DEFAULT_SEED): Immutable<State> {
 		revision: 0,
 
 		prng_state: {
-			...get_engine.prng.good_enough().get_state(),
+			...getꓽengine.prng.good_enough().get_state(),
 			seed, // up to the caller to change it, see "auto seed"
 		},
 
@@ -95,7 +95,7 @@ function update_use_count(state: Immutable<State>, prng: PRNGEngine, options: an
 	if (new_call_count === state.prng_state.call_count) {
 		if (!options.I_swear_I_really_cant_know_whether_the_rng_was_used) {
 			const err = new Error(`[Warning] ${LIB}: update PRNG state: count hasn't changed = no random was generated! This is most likely a bug, check your code!`).stack
-			get_logger().warn('update_use_count no change!', { err })
+			getꓽlogger().warn('update_use_count no change!', { err })
 		}
 		return state
 	}
@@ -137,7 +137,7 @@ function register_recently_used(state: Immutable<State>, id: string, value: numb
 	}
 }
 
-/////////////////////
+/////////////////////////////////////////////////
 
 export {
 	type State,
@@ -149,5 +149,3 @@ export {
 	update_use_count,
 	register_recently_used,
 }
-
-/////////////////////

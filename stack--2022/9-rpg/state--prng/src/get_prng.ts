@@ -1,5 +1,3 @@
-/////////////////////
-
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/state-utils'
 import { getꓽengine, PRNGEngine } from '@offirmo/random'
@@ -8,8 +6,7 @@ import { LIB } from './consts.js'
 import { State } from './types.js'
 import { getꓽlogger } from './sec.js'
 
-/////////////////////
-
+/////////////////////////////////////////////////
 
 // since
 // 1. we want our app to use a single, repeatable PRNG
@@ -59,7 +56,7 @@ function getꓽprng(state: Immutable<State>): PRNGEngine {
 	if (cached_prng.get_state().call_count !== state.prng_state.call_count) {
 		// should never happen, this is the bug we are after
 		const msg = `${LIB}: getꓽprng(): unexpected case: mismatching use_count!`
-		get_logger().error(msg, {
+		getꓽlogger().error(msg, {
 			cached_use_count: cached_prng.get_state().call_count,
 			required_use_count: state.prng_state.call_count,
 		})
@@ -69,13 +66,11 @@ function getꓽprng(state: Immutable<State>): PRNGEngine {
 	return cached_prng
 }
 
-/////////////////////
+/////////////////////////////////////////////////
 
 export {
-	get_prng,
+	getꓽprng,
 
 	// exposed for testability, do not use !
 	xxx_internal_reset_prng_cache,
 }
-
-/////////////////////

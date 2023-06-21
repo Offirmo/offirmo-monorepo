@@ -11,11 +11,12 @@ import {
 
 	update_use_count,
 
-	get_prng,
+	getꓽprng,
 
 	xxx_internal_reset_prng_cache, State,
 } from './index.js'
 
+/////////////////////////////////////////////////
 
 describe(`${LIB} - state`, function() {
 	beforeEach(xxx_internal_reset_prng_cache)

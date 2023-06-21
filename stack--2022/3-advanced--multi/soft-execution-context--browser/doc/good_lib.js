@@ -3,7 +3,7 @@ import { getRootSEC } from '@offirmo-private/soft-execution-context'
 
 const LIB = 'GOOD_LIB'
 
-function get_lib_SEC(parent) {
+function getꓽSEC(parent) {
 	return (parent || getRootSEC())
 		.createChild()
 		.setLogicalStack({module: LIB})
@@ -13,7 +13,7 @@ let instance_count = 0
 
 function create({SEC} = {}) {
 	instance_count++
-	SEC = get_lib_SEC(SEC)
+	SEC = getꓽSEC(SEC)
 
 	// TODO add an id?
 	return SEC.xTryCatch(`instantiating#${instance_count}`, ({logger, ENV}) => {

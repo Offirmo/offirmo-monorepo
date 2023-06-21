@@ -1,7 +1,7 @@
 /////////////////////
 
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
-import { getꓽhuman_readable_UTC_timestamp_minutes } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 
 import { SCHEMA_VERSION } from './consts.js'
 
@@ -13,12 +13,12 @@ import {
 
 import { is_code_redeemable } from './selectors.js'
 
-import { SoftExecutionContext, getꓽlib_SEC } from './sec.js'
+import { SoftExecutionContext, getꓽSEC } from './sec.js'
 
 /////////////////////
 
 function create(SEC?: SoftExecutionContext): Immutable<State> {
-	return getꓽlib_SEC(SEC).xTry('create', () => {
+	return getꓽSEC(SEC).xTry('create', () => {
 		return enforce_immutability<State>({
 			schema_version: SCHEMA_VERSION,
 			revision: 0,
@@ -31,7 +31,7 @@ function create(SEC?: SoftExecutionContext): Immutable<State> {
 /////////////////////
 
 function attempt_to_redeem_code<T>(state: Immutable<State>, code_spec: Immutable<CodeSpec<T>>, infos: Immutable<T>): Immutable<State> {
-	return getꓽlib_SEC().xTry('redeem_code', (): Immutable<State> => {
+	return getꓽSEC().xTry('redeem_code', (): Immutable<State> => {
 		if (!is_code_redeemable(state, code_spec, infos))
 			throw new Error('This code is either non-existing or non redeemable at the moment!')
 
@@ -50,7 +50,7 @@ function attempt_to_redeem_code<T>(state: Immutable<State>, code_spec: Immutable
 				[code]: {
 					...r,
 					redeem_count: r.redeem_count + 1,
-					last_redeem_date_minutes: getꓽhuman_readable_UTC_timestamp_minutes(),
+					last_redeem_date_minutes: getꓽUTC_timestampⵧhuman_readable‿minutes(),
 				},
 			},
 

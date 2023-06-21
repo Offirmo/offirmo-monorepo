@@ -6,7 +6,7 @@ import { enforce_immutability } from '@offirmo-private/state-utils'
 import {
 	create,
 } from './index.js'
-import { getꓽlib_SEC } from './sec.js'
+import { getꓽSEC } from './sec.js'
 
 //////////////////////////////////////////////////////////////////////
 

@@ -64,14 +64,14 @@ describe(`${LIB}`, function () {
 
 			describe('usage -- in a lib', function() {
 				const LIB = 'FOO'
-				function get_lib_SEC(parent?: SoftExecutionContext): SoftExecutionContext {
+				function getꓽSEC(parent?: SoftExecutionContext): SoftExecutionContext {
 					// TODO memoize ? (if !parent)
 					return (parent || getRootSEC())
 						.createChild()
 						.setLogicalStack({module: LIB}) // <-- THIS
 				}
 				function hello(target: string, {SEC} = {} as { SEC?: SoftExecutionContext}): string {
-					return get_lib_SEC(SEC).xTry('hello', ({SEC, ENV, logger}) => {
+					return getꓽSEC(SEC).xTry('hello', ({SEC, ENV, logger}) => {
 
 						expect(SEC.getShortLogicalStack()).to.equal('FOO…hello') // always
 						expect(SEC.getLogicalStack().startsWith('FOO›')).to.be.true
@@ -84,13 +84,13 @@ describe(`${LIB}`, function () {
 					})
 				}
 				function polite_hello(target: string, {SEC} = {} as { SEC?: SoftExecutionContext}): string {
-					return get_lib_SEC(SEC).xTry('add_honorifics', ({SEC, ENV, logger}) => {
+					return getꓽSEC(SEC).xTry('add_honorifics', ({SEC, ENV, logger}) => {
 
 						return hello(`Mx. ${target}`, {SEC})
 					})
 				}
 				function great_politely(target: string, {SEC} = {} as { SEC?: SoftExecutionContext}) {
-					get_lib_SEC(SEC).xTry('great', ({SEC, ENV, logger}) => {
+					getꓽSEC(SEC).xTry('great', ({SEC, ENV, logger}) => {
 
 						const s = polite_hello(target, {SEC})
 						expect(s).to.equal('Hello, Mx. Offirmo! (from FOO›great›add_honorifics›hello)')

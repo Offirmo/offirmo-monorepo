@@ -6,7 +6,7 @@ import {
 	create,
 	attempt_to_redeem_code,
 } from './index.js'
-import { getꓽlib_SEC } from './sec.js'
+import { getꓽSEC } from './sec.js'
 
 import { CodesConditions, CODESPECS_BY_KEY } from './test/index.js'
 
@@ -16,7 +16,7 @@ describe(`${LIB} - state`, function() {
 	describe('🆕 create()', function() {
 
 		it('should have correct defaults', function() {
-			const state = create(get_lib_SEC())
+			const state = create(getꓽSEC())
 			expect(state).to.deep.equal({
 				schema_version: SCHEMA_VERSION,
 				revision: 0,

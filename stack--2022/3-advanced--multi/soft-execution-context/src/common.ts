@@ -1,5 +1,5 @@
 /* global NODE_ENV process */
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import { SoftExecutionContext } from './types.js'
 
@@ -24,7 +24,7 @@ function decorateWithDetectedEnv(SEC: SoftExecutionContext<any>) {
 	const IS_DEV_MODE = false
 	const IS_VERBOSE = false
 	const CHANNEL = 'dev'
-	const SESSION_START_TIME_MS = get_UTC_timestamp_ms()
+	const SESSION_START_TIME_MS = getꓽUTC_timestamp‿ms()
 
 	SEC.injectDependencies({
 		ENV,

@@ -1,5 +1,5 @@
 import { promiseTry } from '@offirmo-private/promise-try'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { createError as _createError, normalizeError } from '@offirmo/error-utils'
 
 
@@ -39,7 +39,7 @@ const PLUGIN = {
 		prototype._decorateErrorWithDetails = function _decorateErrorWithDetails(err) {
 			const SEC = this
 			const state = SEC[INTERNAL_PROP]
-			const now = get_UTC_timestamp_ms()
+			const now = getꓽUTC_timestamp‿ms()
 
 			const autoDetails = {
 				ENV: state.plugins[ID_DI].context.ENV,

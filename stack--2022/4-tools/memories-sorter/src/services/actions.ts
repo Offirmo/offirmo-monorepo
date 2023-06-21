@@ -7,7 +7,7 @@ import * as json from '@offirmo/cli-toolbox/fs/extra/json/index.mjs'
 import { Immutable } from '@offirmo-private/ts-types'
 import { NORMALIZERS } from '@offirmo-private/normalize-string'
 import { normalizeError } from '@offirmo/error-utils'
-import { getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import { Basename, RelativePath } from '../types.js'
 import { NOTES_BASENAME_SUFFIX_LC } from '../consts.js'
@@ -46,7 +46,7 @@ const _report = {
 export async function exec_pending_actions_recursively_until_no_more(db: Immutable<State>, debug_id: string, PARAMS: Immutable<Params> = getꓽparams()): Promise<Immutable<State>> {
 	logger.trace(`executing actions from "${debug_id}"…`)
 
-	const start_date_ms = getꓽUTC_timestamp_ms()
+	const start_date_ms = getꓽUTC_timestamp‿ms()
 
 	const display_progress = true // activating sort of turns off wrapping in iTerm = bad for debug
 
@@ -727,7 +727,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		// stop all bars
 		if (display_progress) progress_multibar.stop()
 
-		const end_date_ms = getꓽUTC_timestamp_ms()
+		const end_date_ms = getꓽUTC_timestamp‿ms()
 		const exec_duration_ms = end_date_ms - start_date_ms
 		_report.phases_duration_ms[debug_id] = exec_duration_ms
 

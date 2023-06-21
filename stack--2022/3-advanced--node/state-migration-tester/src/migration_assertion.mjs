@@ -5,7 +5,7 @@ import * as fs from '@offirmo/cli-toolbox/fs/extra/index.mjs'
 import sinon from 'sinon'
 import { cloneDeep } from 'lodash-es'
 import { prettify_json } from '@offirmo-private/prettify-any'
-import { TEST_TIMESTAMP_MS, get_human_readable_UTC_timestamp_minutes } from '@offirmo-private/timestamps'
+import { TEST_TIMESTAMP_MS, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 import { get_schema_version, get_schema_version_loose } from '@offirmo-private/state-utils'
 
 import { LIB, HINTS_FILENAME } from './consts.mjs'
@@ -220,7 +220,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 			}
 
 			// create a new snapshot with the new expected data
-			const name = get_human_readable_UTC_timestamp_minutes() + '_v' + SCHEMA_VERSION + '.json'
+			const name = getꓽUTC_timestampⵧhuman_readable‿minutes() + '_v' + SCHEMA_VERSION + '.json'
 			console.log(`${LOG_PREFIX} Creating a new data snapshot: ${name}.`)
 			fs.json.writeSync(path.join(absolute_dir_path, name), LATEST_EXPECTED_DATA)
 		})()

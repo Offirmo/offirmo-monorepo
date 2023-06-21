@@ -1,5 +1,5 @@
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
-import { TEST_TIMESTAMP_MS, getꓽhuman_readable_UTC_timestamp_minutes } from '@offirmo-private/timestamps'
+import { TEST_TIMESTAMP_MS, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 
 import { State } from './types.js'
 
@@ -14,7 +14,7 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>({
 	redeemed_codes: {
 		BORED: {
 			'redeem_count': 1,
-			'last_redeem_date_minutes': getꓽhuman_readable_UTC_timestamp_minutes(new Date(TEST_TIMESTAMP_MS)),
+			'last_redeem_date_minutes': getꓽUTC_timestampⵧhuman_readable‿minutes(new Date(TEST_TIMESTAMP_MS)),
 		},
 	},
 })

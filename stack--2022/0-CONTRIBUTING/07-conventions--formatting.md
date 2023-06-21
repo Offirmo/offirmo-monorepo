@@ -51,7 +51,7 @@ export {
 import { expect } from 'chai'
 
 import { LIB } from './consts.js'
-import { get_lib_SEC } from './sec.js'
+import { getꓽSEC } from './sec.js'
 
 import {
   ...
@@ -64,7 +64,7 @@ describe(`${LIB} -- examples`, function() {
 	describe('DEMO_STATE', function () {
 
 		it('should be stable and up to date', () => {
-			const migrated = migrate_to_latest(get_lib_SEC(), DEMO_STATE)
+			const migrated = migrate_to_latest(getꓽSEC(), DEMO_STATE)
 			expect(migrated).to.equal(DEMO_STATE)
 		})
 	})

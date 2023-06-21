@@ -7,7 +7,7 @@ import {
 	ALL_LOG_LEVELS,
 	normalizeArguments,
 } from '@offirmo/practical-logger-core'
-import { getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 interface WithLogs {
 	logs: {
@@ -58,7 +58,7 @@ function _log(state: Immutable<WithLogs>, level: LogLevel, rawMessage?: string, 
 				...state.logs[level],
 				[msg]: state.logs[level][msg] || {
 					name: '',
-					time: getꓽUTC_timestamp_ms(),
+					time: getꓽUTC_timestamp‿ms(),
 					level,
 					msg,
 					err,

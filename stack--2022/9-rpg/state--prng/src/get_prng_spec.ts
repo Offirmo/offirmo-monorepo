@@ -7,9 +7,11 @@ import { LIB } from './consts.js'
 import {
 	create,
 	update_use_count,
-	get_prng,
+	getꓽprng,
 	xxx_internal_reset_prng_cache,
 } from './index.js'
+
+/////////////////////////////////////////////////
 
 describe(`${LIB} - get`, function() {
 	beforeEach(xxx_internal_reset_prng_cache)

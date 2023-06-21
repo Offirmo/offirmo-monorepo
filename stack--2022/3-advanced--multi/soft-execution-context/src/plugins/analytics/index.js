@@ -1,4 +1,4 @@
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import { INTERNAL_PROP } from '../../consts.js'
 import * as TopState from '../../state.js'
@@ -31,7 +31,7 @@ const PLUGIN = {
 
 		prototype.fireAnalyticsEvent = function fireAnalyticsEvent(eventId, details = {}) {
 			const SEC = this
-			const now = get_UTC_timestamp_ms()
+			const now = getꓽUTC_timestamp‿ms()
 			const root_state = SEC[INTERNAL_PROP]
 
 			if (!eventId)

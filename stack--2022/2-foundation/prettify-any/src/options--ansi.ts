@@ -2,8 +2,9 @@ import {
 	StylizeOptions,
 } from './types.js'
 
+/////////////////////////////////////////////////
 
-export function getꓽstylize_options_ansi(chalk: any): StylizeOptions {
+function getꓽstylize_optionsⵧansi(chalk: any): StylizeOptions {
 	return {
 		stylize_dim: (s: string) => chalk.dim(s),
 		stylize_suspicious: (s: string) => chalk.bold(s),
@@ -13,4 +14,10 @@ export function getꓽstylize_options_ansi(chalk: any): StylizeOptions {
 		stylize_syntax: (s: string) => chalk.yellow(s),
 		stylize_user: (s: string) => chalk.blue(s),
 	}
+}
+
+/////////////////////////////////////////////////
+
+export {
+	getꓽstylize_optionsⵧansi,
 }

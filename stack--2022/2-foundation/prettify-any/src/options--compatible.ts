@@ -5,13 +5,13 @@ import {
 	State,
 } from './types.js'
 import {
-	is_negative_zero,
+	isꓽnegative_zero,
 	cmp,
 } from './utils.js'
 
-////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////
 
-export const DEFAULTS_STYLE_OPTIONS: StyleOptions = {
+const DEFAULTS_STYLE_OPTIONS: StyleOptions = {
 	max_width: null,
 	outline: false,
 	indent: 'tabs',
@@ -22,7 +22,7 @@ export const DEFAULTS_STYLE_OPTIONS: StyleOptions = {
 	date_serialization_fn: 'toLocaleString'
 }
 
-export const DEFAULTS_STYLIZE_OPTIONS__NONE: StylizeOptions = {
+const DEFAULTS_STYLIZE_OPTIONS__NONE: StylizeOptions = {
 	stylize_dim: (s: string) => s,
 	stylize_suspicious: (s: string) => s,
 	stylize_error: (s: string) => s,
@@ -33,7 +33,7 @@ export const DEFAULTS_STYLIZE_OPTIONS__NONE: StylizeOptions = {
 }
 
 const DEBUG = false
-export const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
+const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 	never_throw: true,
 
 	// TODO follow max string size
@@ -64,7 +64,7 @@ export const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 
 		return isNaN(n)
 			? o.stylize_error(String(n))
-			: is_negative_zero(n)
+			: isꓽnegative_zero(n)
 				? o.stylize_error('-0')
 				: o.stylize_primitive(String(n))
 	},
@@ -320,4 +320,12 @@ export const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 			return o.stylize_error(`[error prettifying:${(err as any)?.message}/pa]`)
 		}
 	},
+}
+
+/////////////////////////////////////////////////
+
+export {
+	DEFAULTS_STYLE_OPTIONS,
+	DEFAULTS_STYLIZE_OPTIONS__NONE,
+	DEFAULTS_PRETTIFY_OPTIONS,
 }

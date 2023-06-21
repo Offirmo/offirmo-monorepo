@@ -1,7 +1,7 @@
 
-////////////////////////////////////
+/////////////////////////////////////////////////
 
-export interface StyleOptions {
+interface StyleOptions {
 	max_width: null | number // max width before need to wrap
 	outline: boolean // add a strong separator at top and bottom so that it stands out
 	indent: string // what should be used for indenting
@@ -13,7 +13,7 @@ export interface StyleOptions {
 }
 
 // TODO find a better name
-export interface StylizeOptions {
+interface StylizeOptions {
 	stylize_dim: (s: string) => string
 	stylize_suspicious: (s: string) => string
 	stylize_error: (s: string) => string
@@ -23,7 +23,7 @@ export interface StylizeOptions {
 	stylize_user: (s: string) => string
 }
 
-export interface PrettifyOptions {
+interface PrettifyOptions {
 	never_throw: boolean
 
 	prettify_string: (x: string, st: State) => string
@@ -41,10 +41,20 @@ export interface PrettifyOptions {
 	prettify_any: (a: any, st: State) => string
 }
 
-export type Options = StyleOptions & StylizeOptions & PrettifyOptions
+type Options = StyleOptions & StylizeOptions & PrettifyOptions
 
-export interface State {
+interface State {
 	o: Options
 
 	circular: WeakSet<object>
+}
+
+/////////////////////////////////////////////////
+
+export {
+	type StyleOptions,
+	type StylizeOptions,
+	type PrettifyOptions,
+	type Options,
+	type State,
 }

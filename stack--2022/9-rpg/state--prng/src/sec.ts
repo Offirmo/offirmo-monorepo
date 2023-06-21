@@ -4,8 +4,9 @@ import { Logger } from '@offirmo/practical-logger-types'
 
 import { LIB } from './consts.js'
 
+/////////////////////////////////////////////////
 
-function getꓽlib_SEC(parent?: SoftExecutionContext): SoftExecutionContext {
+function getꓽSEC(parent?: SoftExecutionContext): SoftExecutionContext {
 	return (parent || getRootSEC())
 		.createChild()
 		.setLogicalStack({ module: LIB })
@@ -14,14 +15,16 @@ function getꓽlib_SEC(parent?: SoftExecutionContext): SoftExecutionContext {
 		})
 }
 
-function getꓽlogger(SEC: SoftExecutionContext = getꓽlib_SEC()): Logger {
+function getꓽlogger(SEC: SoftExecutionContext = getꓽSEC()): Logger {
 	const { logger } = SEC.getInjectedDependencies()
 	assert(logger.addCommonDetails, `${LIB}: expecting a SEC-injected Offirmo Practical Logger!`)
 	return logger
 }
 
+/////////////////////////////////////////////////
+
 export {
 	type SoftExecutionContext, // for convenience
-	get_lib_SEC,
-	get_logger,
+	getꓽSEC,
+	getꓽlogger,
 }

@@ -8,28 +8,33 @@ import {
 	DEFAULTS_STYLIZE_OPTIONS__NONE,
 } from './options--compatible.js'
 import {
-	get_stylize_options_ansi
+	getꓽstylize_optionsⵧansi
 } from './options--ansi.js'
 import {
-	get_lib__chalk,
+	getꓽlibꓽchalk,
 } from './injectable-lib--chalk.js'
 
+/////////////////////////////////////////////////
 
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export function getꓽdefault_options(): Options {
+function getꓽoptionsⵧdefault(): Options {
 	return {
 		...DEFAULTS_STYLE_OPTIONS,
 		...DEFAULTS_PRETTIFY_OPTIONS,
 		...DEFAULTS_STYLIZE_OPTIONS__NONE,
-		...(get_lib__chalk() && getꓽstylize_options_ansi(get_lib__chalk())),
+		...(getꓽlibꓽchalk() && getꓽstylize_optionsⵧansi(getꓽlibꓽchalk())),
 	}
 }
 
-export function getꓽoptions(options: Immutable<Partial<Options>> = {}): Options {
+function getꓽoptions(options: Immutable<Partial<Options>> = {}): Options {
 	return {
-		...get_default_options(),
+		...getꓽoptionsⵧdefault(),
 		...options,
 	}
+}
+
+/////////////////////////////////////////////////
+
+export {
+	getꓽoptionsⵧdefault,
+	getꓽoptions,
 }

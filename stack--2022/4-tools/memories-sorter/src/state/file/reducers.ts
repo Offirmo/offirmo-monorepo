@@ -3,7 +3,7 @@ import assert from 'tiny-invariant'
 import { Tags as EXIFTags } from 'exiftool-vendored'
 import { Immutable } from '@offirmo-private/ts-types'
 import { enforce_immutability } from '@offirmo-private/state-utils'
-import { getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import { BROKEN_FILE_EXTENSIONS_LC } from '../../consts.js'
 import { getꓽparams } from '../../params.js'
@@ -71,7 +71,7 @@ export function create(id: FileId): Immutable<State> {
 				basename: parsed_path.base,
 				parent_path: parsed_path.dir,
 
-				fs_bcd_tms: getꓽUTC_timestamp_ms(), // so far
+				fs_bcd_tms: getꓽUTC_timestamp‿ms(), // so far
 				neighbor_hints: NeighborHintsLib.get_historical_representation(NeighborHintsLib.create(), undefined),
 
 				exif_orientation: undefined,

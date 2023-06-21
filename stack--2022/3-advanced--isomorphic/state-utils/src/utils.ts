@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import icepick from 'icepick'
 import { Immutable, Mutable, ImmutabilityEnforcer } from '@offirmo-private/ts-types'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import {
 	BaseUState,
@@ -169,7 +169,7 @@ export function finalize_action_if_needed<State, Action extends BaseAction>(acti
 	if (action.time <= 0) {
 		action = {
 			...action,
-			time: get_UTC_timestamp_ms(),
+			time: getꓽUTC_timestamp‿ms(),
 		}
 	}
 

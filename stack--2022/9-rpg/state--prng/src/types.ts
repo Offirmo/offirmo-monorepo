@@ -2,7 +2,7 @@ import { BaseUState } from '@offirmo-private/state-utils'
 import { UUID } from '@offirmo-private/uuid'
 import { PRNGState } from '@offirmo/random'
 
-/////////////////////
+/////////////////////////////////////////////////
 
 interface State extends BaseUState {
 	uuid: UUID // for caching / debug. Do not mind.
@@ -18,10 +18,8 @@ interface State extends BaseUState {
 }
 
 
-/////////////////////
+/////////////////////////////////////////////////
 
 export {
 	type State,
 }
-
-/////////////////////

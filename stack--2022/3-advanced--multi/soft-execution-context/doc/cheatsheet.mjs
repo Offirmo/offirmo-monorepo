@@ -50,7 +50,7 @@ import { getRootSEC } from '${stylizeString.bold(PKG_JSON.name)}'
 
 const LIB = 'FOO'
 
-function get_lib_SEC(parent: SEC = getRootSEC()): SEC {
+function getꓽSEC(parent: SEC = getRootSEC()): SEC {
 	// TODO memoize ? (if !parent)
 	return parent
 		.createChild()
@@ -61,7 +61,7 @@ function get_lib_SEC(parent: SEC = getRootSEC()): SEC {
 }
 
 function hello(target, {SEC} = {}) {
-	get_lib_SEC(SEC).xTry('hello', ({SEC, logger}) => {
+	getꓽSEC(SEC).xTry('hello', ({SEC, logger}) => {
 		...
 	})
 }

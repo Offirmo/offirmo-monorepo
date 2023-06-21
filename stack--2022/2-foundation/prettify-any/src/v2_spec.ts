@@ -1,8 +1,8 @@
 import chalk from 'chalk'
 import { render as prettify_json } from 'prettyjson'
 
-import { inject_lib__chalk } from './injectable-lib--chalk.js'
-inject_lib__chalk(chalk as any)
+import { injectꓽlibꓽchalk } from './injectable-lib--chalk.js'
+injectꓽlibꓽchalk(chalk as any)
 
 import {
 	prettify_any as _prettify_any,

@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
-import { getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { getꓽmutable_copy } from '@offirmo-private/state-utils'
 import stylize_string from 'chalk'
 
@@ -18,7 +18,7 @@ import {
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { State } from './types.js'
 import { getꓽhistorical_fs_reliability } from '../file/sub/neighbor-hints/index.js'
-import { getꓽlib_SEC } from '../../services/sec.js'
+import { getꓽSEC } from '../../services/sec.js'
 
 export { type State } from './types.js'
 import { migrate_to_latest as _migrate_to_latest } from './migrations.js'
@@ -64,7 +64,7 @@ export function create(debug_id: string, notes_to_copy?: Immutable<State>): Stat
 
 		schema_version: SCHEMA_VERSION,
 		revision: 0,
-		last_user_investment_tms: getꓽUTC_timestamp_ms(),
+		last_user_investment_tms: getꓽUTC_timestamp‿ms(),
 
 		encountered_files: {},
 		known_modifications_new_to_old: {},
@@ -83,7 +83,7 @@ export function create(debug_id: string, notes_to_copy?: Immutable<State>): Stat
 }
 
 export function migrate_to_latest(prev: any): Immutable<State> {
-	return _migrate_to_latest(get_lib_SEC(), prev)
+	return _migrate_to_latest(getꓽSEC(), prev)
 }
 
 export function on_previous_notes_found(state: Immutable<State>, previous_state: Immutable<State>, PARAMS: Immutable<Params> = getꓽparams()): Immutable<State> {

@@ -2,11 +2,11 @@
 
 import { nanoid, customRandom, urlAlphabet } from 'nanoid'
 
-import { getꓽrandom, RNGEngine } from '@offirmo/random'
+import { RNGEngine, getꓽrandom_generator_ofꓽintegerⵧbetween } from '@offirmo/random'
 
 import { UUID } from './types.js'
 
-///////
+/////////////////////////////////////////////////
 
 const UUID_RADIX = 'uu1'
 
@@ -27,11 +27,9 @@ function generate_uuid({length = NANOID_LENGTH_FOR_1BTH_COLLISION_CHANCES, rng}:
 		})()
 }
 
-/////////////////////
+/////////////////////////////////////////////////
 
 export {
 	UUID_LENGTH,
 	generate_uuid,
 }
-
-/////////////////////

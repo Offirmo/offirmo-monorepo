@@ -7,11 +7,11 @@ import {
 	xxx_test_unrandomize_element,
 } from './index.js'
 
+/////////////////////////////////////////////////
 
 interface Test extends WithUUID {
 	another: UUID
 }
-
 
 describe('@offirmo-private/uuid - utils', function() {
 

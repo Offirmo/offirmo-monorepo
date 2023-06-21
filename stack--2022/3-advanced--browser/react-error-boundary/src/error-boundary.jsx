@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import assert from 'tiny-invariant'
 import { asap_but_not_synchronous } from '@offirmo-private/async-utils'
 
-import { get_lib_SEC } from './sec.js'
+import { getꓽSEC } from './sec.js'
 import { render_any } from './render-any.jsx'
 
 
@@ -19,7 +19,7 @@ class ErrorBoundary extends React.Component {
 
 		const {name, SEC} = props
 		assert(name, 'ErrorBoundary must have a name!!!')
-		this.SEC = get_lib_SEC(SEC).createChild()
+		this.SEC = getꓽSEC(SEC).createChild()
 			.setLogicalStack({module: `EB:${name}`})
 			.setAnalyticsAndErrorDetails({
 				error_boundary: name,

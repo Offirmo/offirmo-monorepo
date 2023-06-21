@@ -18,7 +18,7 @@ function create_state(options: Options): State {
 
 export function prettify_any(js: Immutable<any>, options: Immutable<Partial<Options>> = {}): string {
 	try {
-		const st = create_state(get_options(options))
+		const st = create_state(getꓽoptions(options))
 
 		return st.o.prettify_any(js, st)
 	}
@@ -31,7 +31,7 @@ export function prettify_any(js: Immutable<any>, options: Immutable<Partial<Opti
 }
 
 export function prettify_json(js: Immutable<any>, options: Immutable<Partial<Options>> = {}): string {
-	const st = create_state(get_options(options))
+	const st = create_state(getꓽoptions(options))
 
 	// TODO show not JSON
 	return st.o.prettify_any(js, st)

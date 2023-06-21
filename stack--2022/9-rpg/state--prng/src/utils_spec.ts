@@ -7,11 +7,13 @@ import {
 
 	register_recently_used,
 
-	get_prng,
+	getꓽprng,
 	regenerate_until_not_recently_encountered,
 
 	xxx_internal_reset_prng_cache,
 } from './index.js'
+
+/////////////////////////////////////////////////
 
 describe('@oh-my-rpg/state-prng - utils', function() {
 	beforeEach(xxx_internal_reset_prng_cache)
