@@ -1,6 +1,6 @@
 
 import { expect } from 'chai'
-import { get_engine } from '@offirmo/random'
+import { getꓽengine } from '@offirmo/random'
 
 import { LIB } from './consts.js'
 
@@ -11,7 +11,7 @@ import {
 /////////////////////////////////////////////////
 
 describe(`${LIB}`, function() {
-	let engine = get_engine.for_unit_tests()
+	let engine = getꓽengine.for_unit_tests()
 
 	describe('get_randomꓽsect()', function () {
 

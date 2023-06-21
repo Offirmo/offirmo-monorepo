@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
-import { get_UTC_timestamp_ms, get_human_readable_UTC_timestamp_minutes } from '@offirmo-private/timestamps'
-import { PRNGEngine, get_random } from '@offirmo/random'
+import { getꓽUTC_timestamp‿ms, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
+import { PRNGEngine, getꓽrandom } from '@offirmo/random'
 import * as PRNGState from '@oh-my-rpg/state-prng'
 
 import { State } from './types.js'
@@ -15,15 +15,15 @@ const SCHEMA_VERSION = 0
 
 function create(seed: 'unit-test' | 'auto' = 'unit-test'): Immutable<State> {
 	const now = new Date()
-	const tms = get_UTC_timestamp_ms(now)
+	const tms = getꓽUTC_timestamp‿ms(now)
 
 	let prng_state = PRNGState.create()
 	if (seed === 'auto')
 		prng_state = PRNGState.auto_reseed(prng_state)
-	const engine = PRNGState.get_prng(prng_state)
+	const engine = PRNGState.getꓽprng(prng_state)
 
 	const family = get_randomꓽnuclear_family(engine)
-	const children_position = get_random.generator_of.integer.between(1, family.children.length)(engine)
+	const children_position = getꓽrandom.generator_of.integer.between(1, family.children.length)(engine)
 
 	let state: Immutable<State> = {
 		ⵙapp_id: 'xianxia1',

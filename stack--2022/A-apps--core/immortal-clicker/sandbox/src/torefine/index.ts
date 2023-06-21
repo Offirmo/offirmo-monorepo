@@ -1,4 +1,4 @@
-import { get_random, RNGEngine } from '@offirmo/random'
+import { getꓽrandom, RNGEngine } from '@offirmo/random'
 
 import { BiologicalSex } from './types.js'
 
@@ -6,7 +6,7 @@ import { BiologicalSex } from './types.js'
 
 
 function get_randomꓽBiologicalSex(engine: RNGEngine): BiologicalSex {
-	return get_random.generator_of.bool()(engine) ? 'female' : 'male'
+	return getꓽrandom.generator_of.bool()(engine) ? 'female' : 'male'
 }
 
 /////////////////////////////////////////////////

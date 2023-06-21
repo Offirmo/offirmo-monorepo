@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
-import { get_random, RNGEngine } from '@offirmo/random'
+import { getꓽrandom, RNGEngine } from '@offirmo/random'
 import { NORMALIZERS } from '@offirmo-private/normalize-string'
 
 import { Sect } from './types.js'
@@ -131,9 +131,9 @@ const EPIC_MODIFIERS = [
 
 
 function get_randomꓽsect(engine: RNGEngine): Sect {
-	const variant = get_random.picker.of(VARIANTS)(engine)
-	const core = get_random.picker.of(CORE)(engine)
-	const modifier = get_random.picker.of(MODIFIERS)(engine)
+	const variant = getꓽrandom.picker.of(VARIANTS)(engine)
+	const core = getꓽrandom.picker.of(CORE)(engine)
+	const modifier = getꓽrandom.picker.of(MODIFIERS)(engine)
 
 	let parts = [ modifier, core, variant].join(' ').split(' ').map(NORMALIZERS.capitalize)
 

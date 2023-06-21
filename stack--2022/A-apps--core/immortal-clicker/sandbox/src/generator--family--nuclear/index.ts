@@ -1,7 +1,7 @@
 
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
-import { get_random, RNGEngine } from '@offirmo/random'
+import { getꓽrandom, RNGEngine } from '@offirmo/random'
 
 import { get_randomꓽBiologicalSex, BiologicalSex } from '../torefine/index.js'
 import {
@@ -72,7 +72,7 @@ function get_randomꓽnuclear_family(engine: RNGEngine, options: Immutable<Parti
 		children: [],
 	}
 
-	const n_of_children = get_random.generator_of.integer.between(1, 5)(engine)
+	const n_of_children = getꓽrandom.generator_of.integer.between(1, 5)(engine)
 	let accumulated_diff = 0
 	for (let i = 0; i < n_of_children; ++i) {
 		const sex = get_randomꓽBiologicalSex(engine)
@@ -82,7 +82,7 @@ function get_randomꓽnuclear_family(engine: RNGEngine, options: Immutable<Parti
 			firstname: get_randomꓽfirstname(engine, { gender: sex })
 		} as Children)
 		// age diff with next child
-		accumulated_diff += get_random.generator_of.integer.between(1, 3)(engine)
+		accumulated_diff += getꓽrandom.generator_of.integer.between(1, 3)(engine)
 	}
 
 	return result
