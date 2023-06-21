@@ -3,11 +3,11 @@ import { expect } from 'chai'
 import { LIB } from './consts.js'
 
 import {
-	is_BaseState,
-	is_UState,
-	is_TState,
-	is_RootState,
-	is_UTBundle,
+	isꓽBaseState,
+	isꓽUState,
+	isꓽTState,
+	isꓽRootState,
+	isꓽUTBundle,
 } from './type-guards.js'
 
 import {
@@ -17,88 +17,88 @@ import {
 
 describe(`${LIB} - type guards`, function() {
 
-	describe('is_BaseState', function() {
+	describe('isꓽBaseState', function() {
 		it('should work on non matching: FALSE', () => {
-			expect(is_BaseState(undefined)).to.be.false
-			expect(is_BaseState(null)).to.be.false
-			expect(is_BaseState(0)).to.be.false
-			expect(is_BaseState([])).to.be.false
-			expect(is_BaseState({})).to.be.false
-			expect(is_BaseState(new Error('Test!'))).to.be.false
-			expect(is_BaseState(DEMO_ROOT_STATE)).to.be.false
+			expect(isꓽBaseState(undefined)).to.be.false
+			expect(isꓽBaseState(null)).to.be.false
+			expect(isꓽBaseState(0)).to.be.false
+			expect(isꓽBaseState([])).to.be.false
+			expect(isꓽBaseState({})).to.be.false
+			expect(isꓽBaseState(new Error('Test!'))).to.be.false
+			expect(isꓽBaseState(DEMO_ROOT_STATE)).to.be.false
 		})
 
 		it('should work on matching: TRUE', () => {
-			expect(is_BaseState(DEMO_ROOT_STATE.t_state)).to.be.true
-			expect(is_BaseState(DEMO_ROOT_STATE.u_state)).to.be.true
+			expect(isꓽBaseState(DEMO_ROOT_STATE.t_state)).to.be.true
+			expect(isꓽBaseState(DEMO_ROOT_STATE.u_state)).to.be.true
 		})
 	})
 
-	describe('is_UState', function() {
+	describe('isꓽUState', function() {
 		it('should work on non matching: FALSE', () => {
-			expect(is_UState(undefined)).to.be.false
-			expect(is_UState(null)).to.be.false
-			expect(is_UState(0)).to.be.false
-			expect(is_UState([])).to.be.false
-			expect(is_UState({})).to.be.false
-			expect(is_UState(new Error('Test!'))).to.be.false
-			expect(is_UState(DEMO_ROOT_STATE)).to.be.false
-			expect(is_UState(DEMO_ROOT_STATE.t_state)).to.be.false
+			expect(isꓽUState(undefined)).to.be.false
+			expect(isꓽUState(null)).to.be.false
+			expect(isꓽUState(0)).to.be.false
+			expect(isꓽUState([])).to.be.false
+			expect(isꓽUState({})).to.be.false
+			expect(isꓽUState(new Error('Test!'))).to.be.false
+			expect(isꓽUState(DEMO_ROOT_STATE)).to.be.false
+			expect(isꓽUState(DEMO_ROOT_STATE.t_state)).to.be.false
 		})
 
 		it('should work on matching: TRUE', () => {
-			expect(is_UState(DEMO_ROOT_STATE.u_state)).to.be.true
+			expect(isꓽUState(DEMO_ROOT_STATE.u_state)).to.be.true
 		})
 	})
 
-	describe('is_TState', function() {
+	describe('isꓽTState', function() {
 		it('should work on non matching: FALSE', () => {
-			expect(is_TState(undefined)).to.be.false
-			expect(is_TState(null)).to.be.false
-			expect(is_TState(0)).to.be.false
-			expect(is_TState([])).to.be.false
-			expect(is_TState({})).to.be.false
-			expect(is_TState(new Error('Test!'))).to.be.false
-			expect(is_TState(DEMO_ROOT_STATE)).to.be.false
-			expect(is_TState(DEMO_ROOT_STATE.u_state)).to.be.false
+			expect(isꓽTState(undefined)).to.be.false
+			expect(isꓽTState(null)).to.be.false
+			expect(isꓽTState(0)).to.be.false
+			expect(isꓽTState([])).to.be.false
+			expect(isꓽTState({})).to.be.false
+			expect(isꓽTState(new Error('Test!'))).to.be.false
+			expect(isꓽTState(DEMO_ROOT_STATE)).to.be.false
+			expect(isꓽTState(DEMO_ROOT_STATE.u_state)).to.be.false
 		})
 
 		it('should work on matching: TRUE', () => {
-			expect(is_TState(DEMO_ROOT_STATE.t_state)).to.be.true
+			expect(isꓽTState(DEMO_ROOT_STATE.t_state)).to.be.true
 		})
 	})
 
-	describe('is_RootState', function() {
+	describe('isꓽRootState', function() {
 		it('should work on non matching: FALSE', () => {
-			expect(is_RootState(undefined)).to.be.false
-			expect(is_RootState(null)).to.be.false
-			expect(is_RootState(0)).to.be.false
-			expect(is_RootState([])).to.be.false
-			expect(is_RootState({})).to.be.false
-			expect(is_RootState(new Error('Test!'))).to.be.false
-			expect(is_RootState(DEMO_ROOT_STATE.t_state)).to.be.false
-			expect(is_RootState(DEMO_ROOT_STATE.u_state)).to.be.false
+			expect(isꓽRootState(undefined)).to.be.false
+			expect(isꓽRootState(null)).to.be.false
+			expect(isꓽRootState(0)).to.be.false
+			expect(isꓽRootState([])).to.be.false
+			expect(isꓽRootState({})).to.be.false
+			expect(isꓽRootState(new Error('Test!'))).to.be.false
+			expect(isꓽRootState(DEMO_ROOT_STATE.t_state)).to.be.false
+			expect(isꓽRootState(DEMO_ROOT_STATE.u_state)).to.be.false
 		})
 
 		it('should work on matching: TRUE', () => {
-			expect(is_RootState(DEMO_ROOT_STATE)).to.be.true
+			expect(isꓽRootState(DEMO_ROOT_STATE)).to.be.true
 		})
 	})
 
-	describe('is_UTBundle()', function() {
+	describe('isꓽUTBundle()', function() {
 		it('should work on non matching: FALSE', () => {
-			expect(is_UTBundle(undefined)).to.be.false
-			expect(is_UTBundle(null)).to.be.false
-			expect(is_UTBundle(0)).to.be.false
-			expect(is_UTBundle([])).to.be.false
-			expect(is_UTBundle({})).to.be.false
-			expect(is_UTBundle(new Error('Test!'))).to.be.false
-			expect(is_UTBundle(DEMO_ROOT_STATE.t_state)).to.be.false
-			expect(is_UTBundle(DEMO_ROOT_STATE.u_state)).to.be.false
+			expect(isꓽUTBundle(undefined)).to.be.false
+			expect(isꓽUTBundle(null)).to.be.false
+			expect(isꓽUTBundle(0)).to.be.false
+			expect(isꓽUTBundle([])).to.be.false
+			expect(isꓽUTBundle({})).to.be.false
+			expect(isꓽUTBundle(new Error('Test!'))).to.be.false
+			expect(isꓽUTBundle(DEMO_ROOT_STATE.t_state)).to.be.false
+			expect(isꓽUTBundle(DEMO_ROOT_STATE.u_state)).to.be.false
 		})
 
 		it('should work on matching: TRUE', () => {
-			expect(is_UTBundle([ DEMO_ROOT_STATE.u_state, DEMO_ROOT_STATE.t_state ])).to.be.true
+			expect(isꓽUTBundle([ DEMO_ROOT_STATE.u_state, DEMO_ROOT_STATE.t_state ])).to.be.true
 		})
 	})
 })

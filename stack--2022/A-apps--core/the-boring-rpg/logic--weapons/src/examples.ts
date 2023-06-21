@@ -1,7 +1,7 @@
 /////////////////////
 
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
-import { get_engine, get_random, RNGEngine } from '@offirmo/random'
+import { getꓽengine, getꓽrandom, RNGEngine } from '@offirmo/random'
 
 import {
 	ItemQuality,
@@ -56,9 +56,9 @@ const DEMO_WEAPON_2: Immutable<Weapon> = enforce_immutability<Weapon>({
 
 // for demo purpose, all attributes having the same probability + also random enhancement level
 function generate_random_demo_weapon(rng?: RNGEngine): Weapon {
-	rng = rng || get_engine.good_enough()
+	rng = rng || getꓽengine.good_enough()
 	return create(rng!, {
-		enhancement_level: get_random.generator_of.integer.between(MIN_ENHANCEMENT_LEVEL, MAX_ENHANCEMENT_LEVEL)(rng),
+		enhancement_level: getꓽrandom.generator_of.integer.between(MIN_ENHANCEMENT_LEVEL, MAX_ENHANCEMENT_LEVEL)(rng),
 	})
 }
 

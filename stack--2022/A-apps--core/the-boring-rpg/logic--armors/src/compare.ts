@@ -4,14 +4,14 @@ import { Immutable } from '@offirmo-private/ts-types'
 import { compare_items_by_quality } from '@tbrpg/definitions'
 
 import { Armor } from './types.js'
-import { get_ultimate_medium_damage_reduction } from './selectors.js'
+import { getꓽultimate_medium_damage_reduction } from './selectors.js'
 
 /////////////////////
 
 // for sorting
 function compare_armors_by_potential(a: Immutable<Armor>, b: Immutable<Armor>): number {
-	const a_dmg = get_ultimate_medium_damage_reduction(a)
-	const b_dmg = get_ultimate_medium_damage_reduction(b)
+	const a_dmg = getꓽultimate_medium_damage_reduction(a)
+	const b_dmg = getꓽultimate_medium_damage_reduction(b)
 	if (a_dmg !== b_dmg)
 		return b_dmg - a_dmg
 

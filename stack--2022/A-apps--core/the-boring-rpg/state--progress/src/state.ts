@@ -2,8 +2,8 @@
 
 import assert from 'tiny-invariant'
 import {
-	get_human_readable_UTC_timestamp_days,
-	get_human_readable_UTC_timestamp_minutes,
+	getꓽUTC_timestampⵧhuman_readable‿days,
+	getꓽUTC_timestampⵧhuman_readable‿minutes,
 } from '@offirmo-private/timestamps'
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
@@ -16,13 +16,13 @@ import {
 
 import { get_last_known_achievement_status } from './selectors.js'
 
-import { TBRSoftExecutionContext, get_lib_SEC } from './sec.js'
+import { TBRSoftExecutionContext, getꓽSEC } from './sec.js'
 
 /////////////////////
 
 function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
-	return get_lib_SEC(SEC).xTry('create', () => {
-		const now_hrtday = get_human_readable_UTC_timestamp_days()
+	return getꓽSEC(SEC).xTry('create', () => {
+		const now_hrtday = getꓽUTC_timestampⵧhuman_readable‿days()
 		return enforce_immutability<State>({
 			schema_version: SCHEMA_VERSION,
 			revision: 0,
@@ -56,7 +56,7 @@ function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
 /////////////////////
 
 function _on_activity(state: Immutable<State>, previous_revision: number): Immutable<State> {
-	const now_hrtday = get_human_readable_UTC_timestamp_days()
+	const now_hrtday = getꓽUTC_timestampⵧhuman_readable‿days()
 	const is_new_day = state.statistics.last_visited_timestamp_hrtday !== now_hrtday
 	if (is_new_day) {
 		state = {

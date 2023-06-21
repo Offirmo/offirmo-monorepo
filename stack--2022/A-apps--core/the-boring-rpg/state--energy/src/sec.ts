@@ -3,7 +3,7 @@ import { TBRSoftExecutionContext, decorate_SEC } from '@tbrpg/definitions'
 
 import { LIB } from './consts.js'
 
-function get_lib_SEC(parent?: TBRSoftExecutionContext): TBRSoftExecutionContext {
+function getꓽSEC(parent?: TBRSoftExecutionContext): TBRSoftExecutionContext {
 	return decorate_SEC(
 		(parent || getRootSEC())
 			.createChild()
@@ -16,5 +16,5 @@ function get_lib_SEC(parent?: TBRSoftExecutionContext): TBRSoftExecutionContext 
 
 export {
 	type TBRSoftExecutionContext,
-	get_lib_SEC,
+	getꓽSEC,
 }

@@ -9,8 +9,8 @@ import {
 	AnyBaseTState,
 	AnyRootState,
 } from './types--internal.js'
-import { is_RootState, has_versioned_schema, is_BaseState, is_UTBundle } from './type-guards.js'
-import { get_schema_version_loose, get_base_loose } from './selectors.js'
+import { isꓽRootState, has_versioned_schema, isꓽBaseState, isꓽUTBundle } from './type-guards.js'
+import { getꓽschema_versionⵧloose, getꓽbaseⵧloose } from './selectors.js'
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -64,7 +64,7 @@ export type SubStatesMigrationFns = { [key: string]: GenericMigrationFn }
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-const _get_state_summary = get_base_loose
+const _get_state_summary = getꓽbaseⵧloose
 
 export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 	SEC,
@@ -90,7 +90,7 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 	]>
 }): Immutable<State> {
 	return SEC.xTry('migrate_to_latest', ({SEC, logger}) => {
-		const existing_version = get_schema_version_loose(legacy_state as any)
+		const existing_version = getꓽschema_versionⵧloose(legacy_state as any)
 		console.groupCollapsed(`migration of schema ${ LIB } from v${ existing_version } to v${ SCHEMA_VERSION }`)
 
 		const RSEC = SEC
@@ -124,11 +124,11 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 
 				return RSEC.xTry('migration step:' + current_step_name, ({ SEC }) => {
 					if (index >= pipeline.length) {
-						throw new Error(`No known migration for updating a v${get_schema_version_loose(legacy_state)}!`)
+						throw new Error(`No known migration for updating a v${getꓽschema_versionⵧloose(legacy_state)}!`)
 					}
 					assert(typeof migrate_step === 'function', 'migrate step should be a function!')
 
-					const legacy_schema_version = get_schema_version_loose(legacy_state as any)
+					const legacy_schema_version = getꓽschema_versionⵧloose(legacy_state as any)
 					logger.trace(`[${LIB}] ⭆ invoking migration pipeline step ${pipeline.length-index}/${pipeline.length} "${current_step_name}"…`,
 						_get_state_summary(legacy_state)
 					)
@@ -165,13 +165,13 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 		}
 
 		// migrate sub-reducers if any...
-		if (is_UTBundle(state)) {
+		if (isꓽUTBundle(state)) {
 			state = _migrate_sub_states__bundle(SEC, state, sub_states_migrate_to_latest, hints) as unknown as Immutable<State>
 		}
-		else if (is_RootState(state)) {
+		else if (isꓽRootState(state)) {
 			state = _migrate_sub_states__root<BaseRootState>(SEC, state, sub_states_migrate_to_latest, hints) as unknown as Immutable<State>
 		}
-		else if (is_BaseState(state)) {
+		else if (isꓽBaseState(state)) {
 			state = _migrate_sub_states__base<BaseState>(SEC, state as any, sub_states_migrate_to_latest, hints) as unknown as Immutable<State>
 		}
 		else {

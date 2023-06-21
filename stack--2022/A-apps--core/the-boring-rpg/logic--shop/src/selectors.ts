@@ -4,12 +4,12 @@ import { Immutable } from '@offirmo-private/ts-types'
 import { Item, InventorySlot } from '@tbrpg/definitions'
 import {
 	Armor,
-	get_ultimate_medium_damage_reduction,
+	getꓽultimate_medium_damage_reduction,
 	ATTACK_VS_DEFENSE_RATIO,
 } from '@tbrpg/logic-armors'
 import {
 	Weapon,
-	get_ultimate_medium_damage,
+	getꓽultimate_medium_damage,
 } from '@tbrpg/logic-weapons'
 
 /////////////////////
@@ -21,12 +21,12 @@ import {
  */
 const ARMOR_DMG_REDUCTION_TO_POWER_RATIO = 1.
 function appraise_armor_power(armor: Immutable<Armor>, potential: boolean): number {
-	return Math.round(get_ultimate_medium_damage_reduction(armor) * ARMOR_DMG_REDUCTION_TO_POWER_RATIO)
+	return Math.round(getꓽultimate_medium_damage_reduction(armor) * ARMOR_DMG_REDUCTION_TO_POWER_RATIO)
 }
 
 const WEAPON_DMG_TO_POWER_RATIO = 1.
 function appraise_weapon_power(weapon: Immutable<Weapon>, potential: boolean): number {
-	return Math.round(get_ultimate_medium_damage(weapon) * WEAPON_DMG_TO_POWER_RATIO)
+	return Math.round(getꓽultimate_medium_damage(weapon) * WEAPON_DMG_TO_POWER_RATIO)
 }
 
 function appraise_power(item: Immutable<Item>, potential: boolean = true): number {

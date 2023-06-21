@@ -98,12 +98,12 @@ function getꓽdamage_reduction_interval(armor: Immutable<Armor>): [number, numb
 }
 
 function get_medium_damage_reduction(armor: Immutable<Armor>): number {
-	const damage_range = get_damage_reduction_interval(armor)
+	const damage_range = getꓽdamage_reduction_interval(armor)
 	return Math.round((damage_range[0] + damage_range[1]) / 2)
 }
 
-function get_ultimate_medium_damage_reduction(armor: Immutable<Armor>): number {
-	const max_damage_range = get_interval(
+function getꓽultimate_medium_damage_reduction(armor: Immutable<Armor>): number {
+	const max_damage_range = getꓽinterval(
 		armor.base_strength,
 		armor.quality,
 		MAX_ENHANCEMENT_LEVEL,
@@ -145,9 +145,9 @@ export {
 	OVERALL_STRENGTH_INTERVAL_BY_QUALITY,
 	BASE_STRENGTH_INTERVAL_BY_QUALITY,
 
-	get_damage_reduction_interval,
+	getꓽdamage_reduction_interval,
 	get_medium_damage_reduction,
-	get_ultimate_medium_damage_reduction,
+	getꓽultimate_medium_damage_reduction,
 	matches,
 	is_at_max_enhancement,
 }

@@ -35,13 +35,13 @@ function get_unslotted_item(state: Immutable<State>, uuid: UUID): Immutable<Item
 	return item ? item : null
 }
 
-function get_item(state: Immutable<State>, uuid: UUID): Immutable<Item> | null {
+function getꓽitem(state: Immutable<State>, uuid: UUID): Immutable<Item> | null {
 	let item: Item | undefined | null = get_unslotted_item(state, uuid)
 	item = item || Object.values(state.slotted).find(i => !!i && i.uuid === uuid)
 	return item ? item : null
 }
 
-function get_item_in_slot(state: Immutable<State>, slot: InventorySlot): Immutable<Item> | null {
+function getꓽitem_in_slot(state: Immutable<State>, slot: InventorySlot): Immutable<Item> | null {
 	return (state.slotted as { [k: string]: Item})[slot] || null
 }
 function get_slotted_armor(state: Immutable<State>): Immutable<Armor> | null {
@@ -75,8 +75,8 @@ export {
 	get_unequipped_item_count,
 	get_item_count,
 	get_unslotted_item,
-	get_item,
-	get_item_in_slot,
+	getꓽitem,
+	getꓽitem_in_slot,
 	get_slotted_armor,
 	get_slotted_weapon,
 	iterables_unslotted,

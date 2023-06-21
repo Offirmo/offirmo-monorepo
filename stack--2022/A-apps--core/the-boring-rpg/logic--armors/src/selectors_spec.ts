@@ -10,7 +10,7 @@ import {
 	BASE_STRENGTH_INTERVAL_BY_QUALITY,
 	Armor,
 	create,
-	get_damage_reduction_interval,
+	getꓽdamage_reduction_interval,
 	get_medium_damage_reduction,
 	matches,
 } from './index.js'
@@ -34,7 +34,7 @@ describe(`${LIB} - selectors`, function() {
 		describe('interval', function() {
 
 			it('should work', () => {
-				const [min, max] = get_damage_reduction_interval(create(rng, {
+				const [min, max] = getꓽdamage_reduction_interval(create(rng, {
 					base_hid: 'luth',
 					qualifier1_hid: 'simple',
 					qualifier2_hid: 'mercenary',
@@ -88,7 +88,7 @@ describe(`${LIB} - selectors`, function() {
 				},
 			].forEach(quality_limits => {
 				it(`should have the correct minimal limit for quality "${quality_limits.quality}"`, () => {
-					const [min, max] = get_damage_reduction_interval(create(rng, {
+					const [min, max] = getꓽdamage_reduction_interval(create(rng, {
 						base_hid: 'whatever',
 						qualifier1_hid: 'whatever',
 						qualifier2_hid: 'whatever',
@@ -100,7 +100,7 @@ describe(`${LIB} - selectors`, function() {
 					expect(min).to.equal(quality_limits.min)
 				})
 				it(`should have the correct maximal limit for quality "${quality_limits.quality}"`, () => {
-					const [min, max] = get_damage_reduction_interval(create(rng, {
+					const [min, max] = getꓽdamage_reduction_interval(create(rng, {
 						base_hid: 'whatever',
 						qualifier1_hid: 'whatever',
 						qualifier2_hid: 'whatever',

@@ -7,7 +7,7 @@ import {
 	InventorySlot,
 	create_item_base,
 } from '@tbrpg/definitions'
-import { get_random, RNGEngine } from '@offirmo/random'
+import { getꓽrandom, RNGEngine } from '@offirmo/random'
 
 import {
 	Weapon,
@@ -34,7 +34,7 @@ import {
 
 function pick_random_quality(rng: RNGEngine): ItemQuality {
 	// see armor for numbers
-	let p = get_random.generator_of.integer.between(1, 1000)(rng)
+	let p = getꓽrandom.generator_of.integer.between(1, 1000)(rng)
 
 	if (p <= 300)
 		return ItemQuality.common
@@ -55,16 +55,16 @@ function pick_random_quality(rng: RNGEngine): ItemQuality {
 }
 
 function pick_random_base(rng: RNGEngine): string {
-	return get_random.picker.of(WEAPON_BASES)(rng).hid
+	return getꓽrandom.picker.of(WEAPON_BASES)(rng).hid
 }
 function pick_random_qualifier1(rng: RNGEngine): string {
-	return get_random.picker.of(WEAPON_QUALIFIERS1)(rng).hid
+	return getꓽrandom.picker.of(WEAPON_QUALIFIERS1)(rng).hid
 }
 function pick_random_qualifier2(rng: RNGEngine): string {
-	return get_random.picker.of(WEAPON_QUALIFIERS2)(rng).hid
+	return getꓽrandom.picker.of(WEAPON_QUALIFIERS2)(rng).hid
 }
 function pick_random_base_strength(rng: RNGEngine, quality: ItemQuality): number {
-	return get_random.generator_of.integer.between(...BASE_STRENGTH_INTERVAL_BY_QUALITY[quality]!)(rng)
+	return getꓽrandom.generator_of.integer.between(...BASE_STRENGTH_INTERVAL_BY_QUALITY[quality]!)(rng)
 }
 
 /////////////////////

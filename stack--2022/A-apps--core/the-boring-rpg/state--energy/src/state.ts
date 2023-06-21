@@ -1,8 +1,8 @@
 /////////////////////
 
 import assert from 'tiny-invariant'
-import { TimestampUTCMs, get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
-import { get_logger } from '@tbrpg/definitions'
+import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { getꓽlogger } from '@tbrpg/definitions'
 
 import { LIB, SCHEMA_VERSION, TICK_MS } from './consts.js'
 import { UState, TState } from './types.js'
@@ -10,7 +10,7 @@ import { Fraction } from './utils.js'
 import {
 	get_milliseconds_to_next,
 	get_human_time_to_next,
-	get_current_energy_refilling_rate_per_ms, get_available_energy_float,
+	get_current_energy_refilling_rate_per_ms, getꓽavailable_energy‿float,
 } from './selectors.js'
 
 const DEBUG = false
@@ -46,7 +46,7 @@ function create(now_ms?: TimestampUTCMs): [ Readonly<UState>, Readonly<TState> ]
 
 function update_to_now(
 	[ u_state, t_state ]: [ Readonly<UState>, Readonly<TState> ],
-	now_ms: TimestampUTCMs = get_UTC_timestamp_ms(),
+	now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms(),
 ): Readonly<TState> {
 	const elapsed_time_ms = now_ms - t_state.timestamp_ms
 	if (DEBUG) console.log('- UTN: starting...')
@@ -55,7 +55,7 @@ function update_to_now(
 
 	if (elapsed_time_ms < 0) {
 		// time went backward? Must be a "daylight saving".
-		get_logger().warn(`${LIB}.update_to_now(): Time went backward. Daylight saving?`)
+		getꓽlogger().warn(`${LIB}.update_to_now(): Time went backward. Daylight saving?`)
 		// just do nothing while time is not positive again
 		return t_state
 	}
@@ -167,7 +167,7 @@ function update_to_now(
 function use_energy(
 	[ u_state, t_state ]: [ Readonly<UState>, Readonly<TState> ],
 	qty: number = 1,
-	now_ms: TimestampUTCMs = get_UTC_timestamp_ms(),
+	now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms(),
 ): [ Readonly<UState>, Readonly<TState> ] {
 	if (now_ms < t_state.timestamp_ms)
 		throw new Error(`${LIB}: time went backward! (cheating attempt?)`)
@@ -206,7 +206,7 @@ function use_energy(
 function lose_all_energy(
 	[ u_state, t_state ]: [ Readonly<UState>, Readonly<TState> ],
 	qty: number = 1,
-	now_ms: TimestampUTCMs = get_UTC_timestamp_ms(),
+	now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms(),
 ): Readonly<TState> {
 	t_state = {
 		...t_state,
@@ -229,7 +229,7 @@ function lose_all_energy(
 function restore_energy(
 	[ u_state, t_state ]: [ Readonly<UState>, Readonly<TState> ],
 	qty: number = 1,
-	now_ms: TimestampUTCMs = get_UTC_timestamp_ms(),
+	now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms(),
 ): Readonly<TState> {
 
 	t_state = update_to_now([u_state, t_state], now_ms)

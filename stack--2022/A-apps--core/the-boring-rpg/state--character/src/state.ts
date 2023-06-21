@@ -12,7 +12,7 @@ import {
 	State,
 } from './types.js'
 
-import { TBRSoftExecutionContext, get_lib_SEC } from './sec.js'
+import { TBRSoftExecutionContext, getꓽSEC } from './sec.js'
 
 /////////////////////
 
@@ -29,7 +29,7 @@ const CHARACTER_ATTRIBUTES_SORTED: Readonly<CharacterAttribute>[] = [
 	'luck',
 ]
 
-get_lib_SEC().xTry('boot checks', () => {
+getꓽSEC().xTry('boot checks', () => {
 	if (CHARACTER_ATTRIBUTES.length !== CHARACTER_ATTRIBUTES_SORTED.length)
 		throw new Error(`${LIB}: CHARACTER_ATTRIBUTES to update!`)
 })
@@ -39,7 +39,7 @@ const CHARACTER_CLASSES = Enum.keys(CharacterClass)
 ///////
 
 function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
-	return get_lib_SEC(SEC).xTry('create', () => {
+	return getꓽSEC(SEC).xTry('create', () => {
 		return enforce_immutability<State>({
 			schema_version: SCHEMA_VERSION,
 			revision: 0,
@@ -66,7 +66,7 @@ function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
 /////////////////////
 
 function rename(SEC: TBRSoftExecutionContext, state: Immutable<State>, new_name: string): Immutable<State> {
-	return get_lib_SEC(SEC).xTry('rename', () => {
+	return getꓽSEC(SEC).xTry('rename', () => {
 		// TODO name normalization
 		if (!new_name)
 			throw new Error(`${LIB}: Error while renaming to "${new_name}": invalid target value!`) // TODO details
@@ -82,7 +82,7 @@ function rename(SEC: TBRSoftExecutionContext, state: Immutable<State>, new_name:
 }
 
 function switch_class(SEC: TBRSoftExecutionContext, state: Immutable<State>, klass: CharacterClass): Immutable<State> {
-	return get_lib_SEC(SEC).xTry('switch_class', () => {
+	return getꓽSEC(SEC).xTry('switch_class', () => {
 		if (klass === state.klass)
 			return state
 
@@ -98,7 +98,7 @@ function switch_class(SEC: TBRSoftExecutionContext, state: Immutable<State>, kla
 }
 
 function increase_stat(SEC: TBRSoftExecutionContext, state: Immutable<State>, stat: CharacterAttribute, amount = 1): Immutable<State> {
-	return get_lib_SEC(SEC).xTry('increase_stat', () => {
+	return getꓽSEC(SEC).xTry('increase_stat', () => {
 		if (amount <= 0)
 			throw new Error(`${LIB}: Error while increasing stat "${stat}": invalid amount!`) // TODO details
 

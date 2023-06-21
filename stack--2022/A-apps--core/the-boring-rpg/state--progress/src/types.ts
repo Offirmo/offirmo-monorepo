@@ -23,8 +23,8 @@ interface AchievementDefinition<S> {
 	icon: string
 	description: string
 	lore?: string
-	get_status: (state: Immutable<S>) => AchievementStatus
-	get_completion_rate?: (state: Immutable<S>) => [number, number]
+	getꓽstatus: (state: Immutable<S>) => AchievementStatus
+	getꓽcompletion_rate?: (state: Immutable<S>) => [number, number]
 }
 
 // useful for display

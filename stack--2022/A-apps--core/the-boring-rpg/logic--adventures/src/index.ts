@@ -1,7 +1,7 @@
 /////////////////////
 
 import assert from 'tiny-invariant'
-import { get_random, RNGEngine } from '@offirmo/random'
+import { getꓽrandom, RNGEngine } from '@offirmo/random'
 
 import {
 	CoinsGain,
@@ -76,23 +76,23 @@ const COINS_GAIN_RANGES: Readonly<{ [k: string]: [number, number] }> = {
 /////////////////////
 
 // useful for picking an exact archetype (ex. tests)
-function get_archetype(hid: string): Readonly<AdventureArchetype> {
+function getꓽarchetype(hid: string): Readonly<AdventureArchetype> {
 	const aa = ALL_ADVENTURE_ARCHETYPES.find(aa => aa.hid === hid)
 	if (!aa)
-		throw new Error(`logic-adventures, get_archetype(): couldn't find archetype "${hid}" !`)
+		throw new Error(`logic-adventures, getꓽarchetype(): couldn't find archetype "${hid}" !`)
 	return aa!
 }
 
 const FIGHT_ENCOUNTER_RATIO = 0.33
 
 function pick_random_good_archetype(rng: RNGEngine): Readonly<AdventureArchetype> {
-	return get_random.generator_of.bool.weighted(FIGHT_ENCOUNTER_RATIO)(rng)
-		? get_random.picker.of(GOOD_ADVENTURE_ARCHETYPES_BY_TYPE['fight']!)(rng)
-		: get_random.picker.of(GOOD_ADVENTURE_ARCHETYPES_BY_TYPE['story']!)(rng)
+	return getꓽrandom.generator_of.bool.weighted(FIGHT_ENCOUNTER_RATIO)(rng)
+		? getꓽrandom.picker.of(GOOD_ADVENTURE_ARCHETYPES_BY_TYPE['fight']!)(rng)
+		: getꓽrandom.picker.of(GOOD_ADVENTURE_ARCHETYPES_BY_TYPE['story']!)(rng)
 }
 
 function pick_random_bad_archetype(rng: RNGEngine): Readonly<AdventureArchetype> {
-	return get_random.picker.of(ALL_BAD_ADVENTURE_ARCHETYPES)(rng)
+	return getꓽrandom.picker.of(ALL_BAD_ADVENTURE_ARCHETYPES)(rng)
 }
 
 function generate_random_coin_gain_or_loss(rng: RNGEngine, {
@@ -110,7 +110,7 @@ function generate_random_coin_gain_or_loss(rng: RNGEngine, {
 			assert(current_wallet_amount > 0, 'wallet should not be empty for loss to be allowed!')
 			let interval = COINS_GAIN_RANGES[range]
 			assert(interval, `known range "${range}"`)
-			const amount = get_random.generator_of.integer.between(interval[0], interval[1])(rng)
+			const amount = getꓽrandom.generator_of.integer.between(interval[0], interval[1])(rng)
 			const capped_amount = Math.max(
 				amount,
 				-current_wallet_amount
@@ -134,7 +134,7 @@ function generate_random_coin_gain_or_loss(rng: RNGEngine, {
 				Math.round(interval[0] * level_multiplier),
 				Math.round(interval[1] * level_multiplier)
 			]
-			return get_random.generator_of.integer.in_interval(interval)(rng)
+			return getꓽrandom.generator_of.integer.in_interval(interval)(rng)
 		}
 	}
 }
@@ -157,7 +157,7 @@ export {
 	pick_random_good_archetype,
 	pick_random_bad_archetype,
 	generate_random_coin_gain_or_loss,
-	get_archetype,
+	getꓽarchetype,
 }
 
 /////////////////////

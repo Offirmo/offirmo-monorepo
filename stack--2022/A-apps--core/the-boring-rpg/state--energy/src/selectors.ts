@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
 import memoize_one from 'memoize-one'
 
-import { get_logger } from '@tbrpg/definitions'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽlogger } from '@tbrpg/definitions'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import { LIB, TICK_MS } from './consts.js'
 import { UState, TState } from './types.js'
@@ -16,8 +16,8 @@ import { Fraction, time_to_human } from './utils.js'
 const MAX_ALLOWED_REFILLING_RATE_PER_MS = new Fraction(10, 21) // 10 energy / 21 ms = huge.
 
 function get_current_energy_refilling_rate_per_ms(u_state: Readonly<UState>, t_state: Readonly<TState> ): Fraction {
-	if (t_state.timestamp_ms + TICK_MS < get_UTC_timestamp_ms()) {
-		get_logger().warn(`${LIB}.get_current_energy_refilling_rate_per_ms() called on outdated state!`)
+	if (t_state.timestamp_ms + TICK_MS < getꓽUTC_timestamp‿ms()) {
+		getꓽlogger().warn(`${LIB}.get_current_energy_refilling_rate_per_ms() called on outdated state!`)
 	}
 
 	// allow an "onboarding" regeneration rate:
@@ -28,7 +28,7 @@ function get_current_energy_refilling_rate_per_ms(u_state: Readonly<UState>, t_s
 	//                        (total_energy_refilled_so_far + adjust)^onboarding_power
 
 	const { total_energy_consumed_so_far } = u_state
-	const total_energy_refilled_so_far = total_energy_consumed_so_far + get_available_energy_int(t_state) - u_state.max_energy
+	const total_energy_refilled_so_far = total_energy_consumed_so_far + getꓽavailable_energy‿int(t_state) - u_state.max_energy
 	assert(total_energy_refilled_so_far >= 0, `${LIB}.get_current_energy_refilling_rate_per_ms() total_energy_refilled_so_far = ${total_energy_refilled_so_far}!`)
 
 	if (total_energy_refilled_so_far <= 0) {
@@ -65,7 +65,7 @@ function get_current_energy_refilling_rate_per_ms(u_state: Readonly<UState>, t_s
 	}
 
 	if (rate.compare(MAX_ALLOWED_REFILLING_RATE_PER_MS) > 0) {
-		get_logger().error('rate too big!', {
+		getꓽlogger().error('rate too big!', {
 			rate,
 			rate_v: rate.valueOf(),
 			u_state,
@@ -101,13 +101,13 @@ function debugTTNx(energy_refilling_rate_per_ms: number) {
 const debugTTN = memoize_one(debugTTNx)
 
 function get_milliseconds_to_next(u_state: Readonly<UState>, t_state: Readonly<TState>): number {
-	if (t_state.timestamp_ms + TICK_MS < get_UTC_timestamp_ms()) {
+	if (t_state.timestamp_ms + TICK_MS < getꓽUTC_timestamp‿ms()) {
 		/*console.log('outdated:', {
 			TICK_MS,
 			't_state.timestamp_ms': t_state.timestamp_ms,
-			UTC_timestamp_ms: get_UTC_timestamp_ms()
+			UTC_timestamp_ms: getꓽUTC_timestamp‿ms()
 		})*/
-		get_logger().warn(`${LIB}.get_milliseconds_to_next() called on outdated state!`)
+		getꓽlogger().warn(`${LIB}.get_milliseconds_to_next() called on outdated state!`)
 	}
 
 	const available_energy = new Fraction(t_state.available_energy)
@@ -133,7 +133,7 @@ function get_milliseconds_to_next(u_state: Readonly<UState>, t_state: Readonly<T
 
 	// if 0, sth is wrong
 	if (ttn <= 0) {
-		get_logger().log('ms 0!', {
+		getꓽlogger().log('ms 0!', {
 			u_state,
 			t_state,
 			available_energy,
@@ -156,8 +156,8 @@ function get_milliseconds_to_next(u_state: Readonly<UState>, t_state: Readonly<T
 }
 
 function get_human_time_to_next(u_state: Readonly<UState>, t_state: Readonly<TState>): string {
-	if (t_state.timestamp_ms + TICK_MS < get_UTC_timestamp_ms()) {
-		get_logger().warn(`${LIB}.get_human_time_to_next() called on outdated state!`)
+	if (t_state.timestamp_ms + TICK_MS < getꓽUTC_timestamp‿ms()) {
+		getꓽlogger().warn(`${LIB}.get_human_time_to_next() called on outdated state!`)
 	}
 
 	const energy = new Fraction(t_state.available_energy)
@@ -172,21 +172,21 @@ function get_human_time_to_next(u_state: Readonly<UState>, t_state: Readonly<TSt
 
 ////////////
 
-function get_available_energy_float(t_state: Readonly<TState>): number {
-	if (t_state.timestamp_ms + TICK_MS < get_UTC_timestamp_ms()) {
-		get_logger().warn(`${LIB}.get_available_energy_float() called on outdated state!`)
+function getꓽavailable_energy‿float(t_state: Readonly<TState>): number {
+	if (t_state.timestamp_ms + TICK_MS < getꓽUTC_timestamp‿ms()) {
+		getꓽlogger().warn(`${LIB}.getꓽavailable_energy‿float() called on outdated state!`)
 	}
 
 	const available_energy = new Fraction(t_state.available_energy)
 	return available_energy.floor(2).valueOf()
 }
 
-function get_available_energy_int(t_state: Readonly<TState>): number {
-	if (t_state.timestamp_ms + TICK_MS < get_UTC_timestamp_ms()) {
-		get_logger().warn(`${LIB}.get_available_energy_int() called on outdated state!`)
+function getꓽavailable_energy‿int(t_state: Readonly<TState>): number {
+	if (t_state.timestamp_ms + TICK_MS < getꓽUTC_timestamp‿ms()) {
+		getꓽlogger().warn(`${LIB}.getꓽavailable_energy‿int() called on outdated state!`)
 	}
 
-	return Math.floor(get_available_energy_float(t_state))
+	return Math.floor(getꓽavailable_energy‿float(t_state))
 }
 
 ////////////////////////////////////
@@ -195,5 +195,7 @@ export {
 	get_current_energy_refilling_rate_per_ms,
 	get_milliseconds_to_next,
 	get_human_time_to_next,
-	get_available_energy_float,
+
+	getꓽavailable_energy‿float,
+	getꓽavailable_energy‿int,
 }

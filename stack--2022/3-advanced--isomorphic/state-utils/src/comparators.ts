@@ -6,13 +6,13 @@ import jsondiffpatch from 'jsondiffpatch'
 import { Immutable, JSONObject } from '@offirmo-private/ts-types'
 
 import {
-	is_RootState,
+	isꓽRootState,
 } from './type-guards.js'
 import {
-	get_schema_version_loose,
-	get_revision_loose,
-	get_last_user_activity_timestamp_loose,
-	get_timestamp_loose,
+	getꓽschema_versionⵧloose,
+	getꓽrevisionⵧloose,
+	getꓽlast_user_activity_timestampⵧloose,
+	getꓽtimestampⵧloose,
 } from './selectors.js'
 
 ////////////////////////////////////
@@ -77,8 +77,8 @@ export function UNCLEAR_get_difference__full(a: any, b?: any): { type: SemanticD
 			direction: (exists__a ? 1 : 0) - (exists__b ? 1 : 0)
 		}
 
-	const schema_version__a = get_schema_version_loose(a)
-	const schema_version__b = get_schema_version_loose(b)
+	const schema_version__a = getꓽschema_versionⵧloose(a)
+	const schema_version__b = getꓽschema_versionⵧloose(b)
 	if (schema_version__a !== schema_version__b)
 		return {
 			type: SemanticDifference.major,
@@ -87,8 +87,8 @@ export function UNCLEAR_get_difference__full(a: any, b?: any): { type: SemanticD
 
 	// special case: the schema evolved to have a "root state" shape = major
 	// the one having a root state is considered more evolved
-	const is_root__a = is_RootState(a)
-	const is_root__b = is_RootState(b)
+	const is_root__a = isꓽRootState(a)
+	const is_root__b = isꓽRootState(b)
 	if (is_root__a !== is_root__b)
 		return {
 			type: SemanticDifference.major,
@@ -102,16 +102,16 @@ export function UNCLEAR_get_difference__full(a: any, b?: any): { type: SemanticD
 		assert(a.ⵙapp_id === b.ⵙapp_id, `UNCLEAR_get_difference() states should be in the same universe!`)
 	}
 
-	const revision__a = get_revision_loose(a)
-	const revision__b = get_revision_loose(b)
+	const revision__a = getꓽrevisionⵧloose(a)
+	const revision__b = getꓽrevisionⵧloose(b)
 	if (revision__a !== revision__b)
 		return {
 			type: SemanticDifference.minor,
 			direction: revision__a - revision__b,
 		}
 
-	const activity_tms__a = get_last_user_activity_timestamp_loose(a)
-	const activity_tms__b = get_last_user_activity_timestamp_loose(b)
+	const activity_tms__a = getꓽlast_user_activity_timestampⵧloose(a)
+	const activity_tms__b = getꓽlast_user_activity_timestampⵧloose(b)
 	if (activity_tms__a !== activity_tms__b)
 		return {
 			type: SemanticDifference.minor, // must be a fork since same revision
@@ -119,8 +119,8 @@ export function UNCLEAR_get_difference__full(a: any, b?: any): { type: SemanticD
 		}
 
 	// last resort if state is/has a T_state
-	const t_tms__a = get_timestamp_loose(a)
-	const t_tms__b = get_timestamp_loose(b)
+	const t_tms__a = getꓽtimestampⵧloose(a)
+	const t_tms__b = getꓽtimestampⵧloose(b)
 	if (t_tms__a !== t_tms__b)
 		return {
 			type: SemanticDifference.time,

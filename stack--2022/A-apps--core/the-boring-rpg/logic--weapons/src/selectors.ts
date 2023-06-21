@@ -64,7 +64,7 @@ Object.keys(OVERALL_STRENGTH_INTERVAL_BY_QUALITY).forEach((k: string): void => {
 const BASE_STRENGTH_INTERVAL_BY_QUALITY: Readonly<{ [k: string]: [number, number] }> = TEMP_BASE_STRENGTH_INTERVAL_BY_QUALITY
 
 
-function get_interval(base_strength: number, quality: ItemQuality, enhancement_level: number): [number, number] {
+function getꓽinterval(base_strength: number, quality: ItemQuality, enhancement_level: number): [number, number] {
 	const spread_pct = SPREAD_PCT_BY_QUALITY[quality]!
 	const enhancement_ratio = (1 + ENHANCEMENT_MULTIPLIER * enhancement_level)
 	const [ overall_min, overall_max ] = OVERALL_STRENGTH_INTERVAL_BY_QUALITY[quality]!
@@ -86,7 +86,7 @@ function get_interval(base_strength: number, quality: ItemQuality, enhancement_l
 /////////////////////
 
 function get_damage_interval(weapon: Immutable<Weapon>): [number, number] {
-	return get_interval(
+	return getꓽinterval(
 		weapon.base_strength,
 		weapon.quality,
 		weapon.enhancement_level,
@@ -98,8 +98,8 @@ function get_medium_damage(weapon: Immutable<Weapon>): number {
 	return Math.round((damage_range[0] + damage_range[1]) / 2)
 }
 
-function get_ultimate_medium_damage(weapon: Immutable<Weapon>): number {
-	const max_damage_range = get_interval(
+function getꓽultimate_medium_damage(weapon: Immutable<Weapon>): number {
+	const max_damage_range = getꓽinterval(
 		weapon.base_strength,
 		weapon.quality,
 		MAX_ENHANCEMENT_LEVEL,
@@ -142,7 +142,7 @@ export {
 
 	get_damage_interval,
 	get_medium_damage,
-	get_ultimate_medium_damage,
+	getꓽultimate_medium_damage,
 	matches,
 	is_at_max_enhancement,
 }

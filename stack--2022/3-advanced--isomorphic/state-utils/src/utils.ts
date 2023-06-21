@@ -15,13 +15,13 @@ import {
 	AnyRootState,
 } from './types--internal.js'
 import {
-	is_RootState,
-	is_TState,
-	is_UState, is_UTBundle, is_WithRevision,
+	isꓽRootState,
+	isꓽTState,
+	isꓽUState, isꓽUTBundle, isꓽWithRevision,
 } from './type-guards.js'
 import {
-	get_revision,
-	get_revision_loose,
+	getꓽrevision,
+	getꓽrevisionⵧloose,
 } from './selectors.js'
 
 
@@ -64,10 +64,10 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 		return previous // "updated"
 	}
 
-	if (is_UTBundle(current)) {
+	if (isꓽUTBundle(current)) {
 		// this is a more advanced state
-		assert(is_UTBundle(previous), `${PREFIX}: previous also has bundle data structure!`)
-		assert(is_UTBundle(updated), `${PREFIX}: updated also has bundle data structure!`)
+		assert(isꓽUTBundle(previous), `${PREFIX}: previous also has bundle data structure!`)
+		assert(isꓽUTBundle(updated), `${PREFIX}: updated also has bundle data structure!`)
 		const final_u_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous[0], current[0], updated?.[0], debug_id + '/B.u_state', true)
 		const final_t_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous[1], current[1], updated?.[1], debug_id + '/B.t_state', true)
 		if (final_u_state === previous[0] && final_t_state === previous[1])
@@ -77,10 +77,10 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 
 		return enforce_immutability<T>([ final_u_state, final_t_state ] as any as T)
 	}
-	else if (is_RootState(current)) {
+	else if (isꓽRootState(current)) {
 		// this is a more advanced state
-		assert(is_RootState(previous), `${PREFIX}: previous also has root data structure!`)
-		assert(is_RootState(updated), `${PREFIX}: updated also has root data structure!`)
+		assert(isꓽRootState(previous), `${PREFIX}: previous also has root data structure!`)
+		assert(isꓽRootState(updated), `${PREFIX}: updated also has root data structure!`)
 		const final_u_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous.u_state, current.u_state, updated.u_state, debug_id + '/R.u_state', true)
 		const final_t_state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous.t_state, current.t_state, updated.t_state, debug_id + '/R.t_state', true)
 		if (final_u_state === previous.u_state && final_t_state === previous.t_state)
@@ -95,11 +95,11 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 		})
 	}
 
-	//let is_t_state = is_TState(current)
-	assert(is_UState(current) || is_TState(current), `${PREFIX}: current has U/TState data structure!`) // unneeded except for helping TS type inference
+	//let is_t_state = isꓽTState(current)
+	assert(isꓽUState(current) || isꓽTState(current), `${PREFIX}: current has U/TState data structure!`) // unneeded except for helping TS type inference
 	assert(
-		is_UState(previous) && is_UState(updated) && is_UState(current)
-		|| is_TState(previous) && is_TState(updated) && is_TState(current),
+		isꓽUState(previous) && isꓽUState(updated) && isꓽUState(current)
+		|| isꓽTState(previous) && isꓽTState(updated) && isꓽTState(current),
 		`${PREFIX}: current+previous+updated have the same U/TState data structure!`
 	)
 	assert(previous.revision === updated.revision, `${PREFIX}: previous & updated should have the same revision`)
@@ -117,8 +117,8 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 	//let has_timestamp_change: boolean | undefined = undefined
 
 	for (const k in typed_current) {
-		const previous_has_revision = is_WithRevision(typed_updated[k])
-		const current_has_revision = is_WithRevision(typed_current[k])
+		const previous_has_revision = isꓽWithRevision(typed_updated[k])
+		const current_has_revision = isꓽWithRevision(typed_current[k])
 		assert(previous_has_revision === current_has_revision, `${PREFIX}/${k}: revisioning should be coherent!`)
 		if (!current_has_revision) {
 			//let has_change = typed_updated[k] !== typed_current[k]
@@ -126,11 +126,11 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 			assert(typed_updated[k] === typed_current[k], `${PREFIX}/${k}: manual change on Base/UState non-child key seen! This call is not needed since you’re sure there was a change!`)
 		}
 
-		const previous_revision = get_revision_loose(typed_previous[k])
-		const updated_revision = get_revision_loose(typed_updated[k])
+		const previous_revision = getꓽrevisionⵧloose(typed_previous[k])
+		const updated_revision = getꓽrevisionⵧloose(typed_updated[k])
 		assert(previous_revision === updated_revision, `${PREFIX}/${k}: previous & updated child should have the same revision`)
 
-		const current_revision = get_revision_loose(typed_current[k])
+		const current_revision = getꓽrevisionⵧloose(typed_current[k])
 		if (current_revision !== updated_revision) {
 			if (current_revision !== updated_revision + 1) {
 				// NO! It may be normal for a sub to have been stimulated more than once,
@@ -147,7 +147,7 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 
 	return enforce_immutability<T>({
 		...current as any,
-		revision: get_revision(current as any) + 1,
+		revision: getꓽrevision(current as any) + 1,
 	})
 }
 

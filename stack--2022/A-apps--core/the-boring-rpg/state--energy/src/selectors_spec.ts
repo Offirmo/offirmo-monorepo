@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import sinon from 'sinon'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { dump_prettified_any } from '@offirmo-private/prettify-any'
 
 import { LIB, TICK_MS } from './consts.js'
@@ -15,7 +15,7 @@ import {
 
 	get_current_energy_refilling_rate_per_ms,
 	get_milliseconds_to_next,
-	get_available_energy_float,
+	getꓽavailable_energy‿float,
 	get_human_time_to_next,
 } from './index.js'
 
@@ -57,7 +57,7 @@ describe(`${LIB} - selectors`, function() {
 		}
 
 		it('should slowly ramp-up for onboarding - demo', () => {
-			let [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+			let [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
 			for(let i = 0; i < 50 ; ++i) {
 				u_state = {
@@ -86,7 +86,7 @@ describe(`${LIB} - selectors`, function() {
 		})
 
 		it(`should tends towards ${EXPECTED_ESTABLISHED_ENERGY_REFILL_PER_DAY}`, () => {
-			let [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+			let [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
 			u_state = {
 				...u_state,
@@ -98,7 +98,7 @@ describe(`${LIB} - selectors`, function() {
 		})
 
 		it('should slowly ramp-up for onboarding', () => {
-			let [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+			let [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
 			const rate_0 = get_energy_refill_rate(u_state, t_state)
 			expect(rate_0.per_s(), 'initial').to.be.at.least(1)
@@ -125,7 +125,7 @@ describe(`${LIB} - selectors`, function() {
 		context('on full state', function() {
 
 			it('should throw', function() {
-				const [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+				const [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
 				expect(() => get_milliseconds_to_next(u_state, t_state)).to.throw()
 			})
@@ -136,7 +136,7 @@ describe(`${LIB} - selectors`, function() {
 			context('depleted in one shot', function() {
 
 				it('should yield a correct value', function() {
-					let [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+					let [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
 					t_state = {
 						...t_state,
@@ -146,31 +146,31 @@ describe(`${LIB} - selectors`, function() {
 						},
 					}
 
-					expect(get_available_energy_float(t_state)).to.equal(0.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(0.)
 				})
 			})
 
 			context('depleted in consecutive shots', function() {
 
 				it('should yield a correct value', function() {
-					let [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+					let [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
-					expect(get_available_energy_float(t_state)).to.equal(7.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(7.)
 
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(6.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(6.)
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(5.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(5.)
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(4.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(4.)
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(3.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(3.)
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(2.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(2.)
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(1.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(1.)
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(0.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(0.)
 				})
 			})
 		})
@@ -178,7 +178,7 @@ describe(`${LIB} - selectors`, function() {
 		context('on an intermediate state', function() {
 
 			it('should yield a correct value - rounded', function() {
-				let [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+				let [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
 				t_state = {
 					...t_state,
@@ -188,11 +188,11 @@ describe(`${LIB} - selectors`, function() {
 					},
 				}
 
-				expect(get_available_energy_float(t_state)).to.equal(4.)
+				expect(getꓽavailable_energy‿float(t_state)).to.equal(4.)
 			})
 
 			it('should yield a correct value - unrounded', function() {
-				let [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+				let [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
 				t_state = {
 					...t_state,
@@ -202,19 +202,19 @@ describe(`${LIB} - selectors`, function() {
 					},
 				}
 
-				expect(get_available_energy_float(t_state)).to.equal(3.7)
+				expect(getꓽavailable_energy‿float(t_state)).to.equal(3.7)
 			})
 		})
 	})
 
-	describe('get_available_energy_float()', function () {
+	describe('getꓽavailable_energy‿float()', function () {
 
 		context('on initial state', function() {
 
 			it('should yield a correct value', function() {
-				const [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+				const [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
-				expect(get_available_energy_float(t_state)).to.equal(7)
+				expect(getꓽavailable_energy‿float(t_state)).to.equal(7)
 			})
 		})
 
@@ -223,7 +223,7 @@ describe(`${LIB} - selectors`, function() {
 			context('depleted in one shot', function() {
 
 				it('should yield a correct value', function() {
-					let [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+					let [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
 					t_state = {
 						...t_state,
@@ -233,31 +233,31 @@ describe(`${LIB} - selectors`, function() {
 						},
 					}
 
-					expect(get_available_energy_float(t_state)).to.equal(0.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(0.)
 				})
 			})
 
 			context('depleted in consecutive shots', function() {
 
 				it('should yield a correct value', function() {
-					let [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+					let [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
-					expect(get_available_energy_float(t_state)).to.equal(7.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(7.)
 
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(6.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(6.)
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(5.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(5.)
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(4.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(4.)
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(3.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(3.)
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(2.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(2.)
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(1.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(1.)
 					;[ u_state, t_state ] = use_energy([u_state, t_state], 1)
-					expect(get_available_energy_float(t_state)).to.equal(0.)
+					expect(getꓽavailable_energy‿float(t_state)).to.equal(0.)
 				})
 			})
 		})
@@ -265,7 +265,7 @@ describe(`${LIB} - selectors`, function() {
 		context('on an intermediate state', function() {
 
 			it('should yield a correct value - rounded', function() {
-				let [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+				let [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
 				t_state = {
 					...t_state,
@@ -275,11 +275,11 @@ describe(`${LIB} - selectors`, function() {
 					},
 				}
 
-				expect(get_available_energy_float(t_state)).to.equal(4.)
+				expect(getꓽavailable_energy‿float(t_state)).to.equal(4.)
 			})
 
 			it('should yield a correct value - unrounded', function() {
-				let [ u_state, t_state ] = create(get_UTC_timestamp_ms())
+				let [ u_state, t_state ] = create(getꓽUTC_timestamp‿ms())
 
 				t_state = {
 					...t_state,
@@ -289,7 +289,7 @@ describe(`${LIB} - selectors`, function() {
 					},
 				}
 
-				expect(get_available_energy_float(t_state)).to.equal(3.7)
+				expect(getꓽavailable_energy‿float(t_state)).to.equal(3.7)
 			})
 		})
 	})
@@ -335,9 +335,9 @@ describe(`${LIB} - selectors`, function() {
 				let now = new Date(2017, 1, 1, 1, 0, 0)
 				;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1, +now)
 				/*dump_prettified_any('+0', {
-					now: get_UTC_timestamp_ms(now),
+					now: getꓽUTC_timestamp‿ms(now),
 					t_state,
-					aef: get_available_energy_float(t_state),
+					aef: getꓽavailable_energy‿float(t_state),
 					ttn: get_human_time_to_next(u_state, t_state),
 				})*/
 				expect(get_human_time_to_next(u_state, t_state), '+0').to.equal('3h 25m 43s')
@@ -345,9 +345,9 @@ describe(`${LIB} - selectors`, function() {
 				now = new Date(2017, 1, 1, 1, 0, 1)
 				t_state = update_to_now([ u_state, t_state ], +now)
 				/*dump_prettified_any('+1s', {
-					now: get_UTC_timestamp_ms(now),
+					now: getꓽUTC_timestamp‿ms(now),
 					t_state,
-					aef: get_available_energy_float(t_state),
+					aef: getꓽavailable_energy‿float(t_state),
 					ttn: get_human_time_to_next(u_state, t_state),
 				})*/
 				expect(get_human_time_to_next(u_state, t_state), '+1s').to.equal('3h 25m 42s')
@@ -355,9 +355,9 @@ describe(`${LIB} - selectors`, function() {
 				now = new Date(2017, 1, 1, 1, 1, 0)
 				t_state = update_to_now([ u_state, t_state ], +now)
 				/*dump_prettified_any('+1s', {
-					now: get_UTC_timestamp_ms(now),
+					now: getꓽUTC_timestamp‿ms(now),
 					t_state,
-					aef: get_available_energy_float(t_state),
+					aef: getꓽavailable_energy‿float(t_state),
 					ttn: get_human_time_to_next(u_state, t_state),
 				})*/
 				expect(get_human_time_to_next(u_state, t_state), '+1m').to.equal('3h 24m 43s')

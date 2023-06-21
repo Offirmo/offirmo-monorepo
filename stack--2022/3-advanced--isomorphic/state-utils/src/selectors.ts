@@ -15,15 +15,15 @@ import {
 	AnyOffirmoState,
 } from './types.js'
 import {
-	is_WithSchemaVersion,
-	is_WithRevision,
-	is_WithTimestamp,
-	is_WithLastUserInvestmentTimestamp,
+	isꓽWithSchemaVersion,
+	isꓽWithRevision,
+	isꓽWithTimestamp,
+	isꓽWithLastUserInvestmentTimestamp,
 	has_versioned_schema,
 	is_revisioned,
 	is_time_stamped,
-	is_RootState,
-	is_UTBundle,
+	isꓽRootState,
+	isꓽUTBundle,
 } from './type-guards.js'
 
 // "loose" =
@@ -31,7 +31,7 @@ import {
 // BUT we don't type them as accepting null | undefined | any to better catch errors
 
 
-export function get_schema_version<
+export function getꓽschema_version<
 	V extends WithSchemaVersion,
 	B extends BaseState,
 	BU extends BaseUState,
@@ -39,26 +39,26 @@ export function get_schema_version<
 	BR extends BaseRootState,
 >(s: Immutable<V> | Immutable<B> | Immutable<UTBundle<BU, BT>> | Immutable<BR>): number {
 
-	if (is_WithSchemaVersion(s)) {
+	if (isꓽWithSchemaVersion(s)) {
 		const { schema_version } = s
-		assert(Number.isSafeInteger(schema_version), 'get_schema_version() safeInteger!')
+		assert(Number.isSafeInteger(schema_version), 'getꓽschema_version() safeInteger!')
 		return schema_version
 	}
 
-	if (is_UTBundle(s)) {
-		assert(get_schema_version(s[0]) === get_schema_version(s[1]), 'get_schema_version() U & T versions should match inside a bundle!')
-		return get_schema_version(s[0])
+	if (isꓽUTBundle(s)) {
+		assert(getꓽschema_version(s[0]) === getꓽschema_version(s[1]), 'getꓽschema_version() U & T versions should match inside a bundle!')
+		return getꓽschema_version(s[0])
 	}
 
-	if (is_RootState(s)) {
-		assert(get_schema_version(s.u_state) === get_schema_version(s.t_state), 'get_schema_version() U & T versions should match inside a root!')
-		return get_schema_version(s.u_state)
+	if (isꓽRootState(s)) {
+		assert(getꓽschema_version(s.u_state) === getꓽschema_version(s.t_state), 'getꓽschema_version() U & T versions should match inside a root!')
+		return getꓽschema_version(s.u_state)
 	}
 
-	throw new Error('get_schema_version() should have a recognized versioned structure!')
+	throw new Error('getꓽschema_version() should have a recognized versioned structure!')
 }
 
-export function get_schema_version_loose<
+export function getꓽschema_versionⵧloose<
 	V extends WithSchemaVersion,
 	B extends BaseState,
 	BU extends BaseUState,
@@ -67,20 +67,20 @@ export function get_schema_version_loose<
 >(s: Immutable<V> | Immutable<AnyOffirmoState>): number {
 
 	if (has_versioned_schema(s))
-		return get_schema_version(s as Immutable<V>)
+		return getꓽschema_version(s as Immutable<V>)
 
 	// specific fallbacks
 	if (Array.isArray(s)) {
 		const maybe_legacy_bundle = s
 		if (has_versioned_schema(maybe_legacy_bundle[0])) {
-			return get_schema_version(maybe_legacy_bundle[0])
+			return getꓽschema_version(maybe_legacy_bundle[0])
 		}
 	}
 
 	if (s && typeof s === 'object') {
 		const maybe_legacy_root_state = s as any
 		if (maybe_legacy_root_state.u_state) {
-			return get_schema_version(maybe_legacy_root_state.u_state)
+			return getꓽschema_version(maybe_legacy_root_state.u_state)
 		}
 	}
 
@@ -89,7 +89,7 @@ export function get_schema_version_loose<
 }
 
 
-export function get_revision<
+export function getꓽrevision<
 	V extends WithRevision,
 	B extends BaseState,
 	BU extends BaseUState,
@@ -97,24 +97,24 @@ export function get_revision<
 	BR extends BaseRootState,
 >(s: Immutable<V> | Immutable<B> | Immutable<UTBundle<BU, BT>> | Immutable<BR>): number {
 
-	if (is_WithRevision(s)) {
+	if (isꓽWithRevision(s)) {
 		const { revision } = s
-		assert(Number.isSafeInteger(revision), 'get_revision() should be a safeInteger')
+		assert(Number.isSafeInteger(revision), 'getꓽrevision() should be a safeInteger')
 		return revision
 	}
 
-	if (is_UTBundle(s)) {
-		return get_revision(s[0]) + get_revision(s[1])
+	if (isꓽUTBundle(s)) {
+		return getꓽrevision(s[0]) + getꓽrevision(s[1])
 	}
 
-	if (is_RootState(s)) {
-		return get_revision(s.u_state) + get_revision(s.t_state)
+	if (isꓽRootState(s)) {
+		return getꓽrevision(s.u_state) + getꓽrevision(s.t_state)
 	}
 
-	throw new Error('get_revision() should have a recognized revisioned structure!')
+	throw new Error('getꓽrevision() should have a recognized revisioned structure!')
 }
 
-export function get_revision_loose<
+export function getꓽrevisionⵧloose<
 	V extends WithRevision,
 	B extends BaseState,
 	BU extends BaseUState,
@@ -122,20 +122,20 @@ export function get_revision_loose<
 	BR extends BaseRootState,
 >(s: Immutable<V> | Immutable<AnyOffirmoState>): number {
 	if (is_revisioned(s))
-		return get_revision(s as Immutable<V>)
+		return getꓽrevision(s as Immutable<V>)
 
 	// specific fallbacks:
 	if (Array.isArray(s)) {
 		const maybe_legacy_bundle = s
 		if (is_revisioned(maybe_legacy_bundle[0])) {
-			return get_revision(maybe_legacy_bundle[0]) + get_revision_loose(maybe_legacy_bundle[1])
+			return getꓽrevision(maybe_legacy_bundle[0]) + getꓽrevisionⵧloose(maybe_legacy_bundle[1])
 		}
 	}
 
 	if (s && typeof s === 'object') {
 		const maybe_legacy_root_state = s as any
 		if (maybe_legacy_root_state.u_state || maybe_legacy_root_state.t_state) {
-			return get_revision(maybe_legacy_root_state.u_state) + get_revision_loose(maybe_legacy_root_state.t_state)
+			return getꓽrevision(maybe_legacy_root_state.u_state) + getꓽrevisionⵧloose(maybe_legacy_root_state.t_state)
 		}
 	}
 
@@ -144,50 +144,50 @@ export function get_revision_loose<
 }
 
 
-export function get_timestamp<
+export function getꓽtimestamp<
 	T extends WithTimestamp,
 	BU extends BaseUState,
 	BT extends BaseTState,
 	BR extends BaseRootState,
 >(s: Immutable<T> | Immutable<UTBundle<BU, BT>> | Immutable<BR>): number {
 
-	if (is_WithTimestamp(s)) {
+	if (isꓽWithTimestamp(s)) {
 		const { timestamp_ms } = s
-		assert(Number.isSafeInteger(timestamp_ms), 'get_timestamp() safeInteger')
+		assert(Number.isSafeInteger(timestamp_ms), 'getꓽtimestamp() safeInteger')
 		return timestamp_ms
 	}
 
-	if (is_UTBundle(s)) {
-		return get_timestamp(s[1])
+	if (isꓽUTBundle(s)) {
+		return getꓽtimestamp(s[1])
 	}
 
-	if (is_RootState(s)) {
-		return get_timestamp(s.t_state)
+	if (isꓽRootState(s)) {
+		return getꓽtimestamp(s.t_state)
 	}
 
-	throw new Error('get_timestamp() should have a recognized revisioned structure!')
+	throw new Error('getꓽtimestamp() should have a recognized revisioned structure!')
 }
 
-export function get_timestamp_loose<
+export function getꓽtimestampⵧloose<
 	V extends WithTimestamp,
 	BU extends BaseUState,
 	BT extends BaseTState,
 	BR extends BaseRootState,
 >(s: Immutable<V> | Immutable<AnyOffirmoState>): number {
 	if (is_time_stamped(s))
-		return get_timestamp(s as any)
+		return getꓽtimestamp(s as any)
 
 	// specific fallbacks:
 	// loose bundles
 	if (Array.isArray(s) && is_time_stamped(s[1]))
-		return get_timestamp(s[1])
+		return getꓽtimestamp(s[1])
 
 	// final fallback
 	return 0
 }
 
 
-export function get_last_user_activity_timestamp<
+export function getꓽlast_user_activity_timestamp<
 	T extends WithLastUserInvestmentTimestamp,
 	B extends BaseState,
 	BU extends BaseUState,
@@ -195,25 +195,25 @@ export function get_last_user_activity_timestamp<
 	BR extends BaseRootState,
 >(s: Immutable<T> | Immutable<BR>): number {
 
-	if(is_WithLastUserInvestmentTimestamp(s)) {
+	if(isꓽWithLastUserInvestmentTimestamp(s)) {
 		const { last_user_investment_tms } = s
-		assert(Number.isSafeInteger(last_user_investment_tms), 'get_last_user_activity_timestamp() safeInteger')
+		assert(Number.isSafeInteger(last_user_investment_tms), 'getꓽlast_user_activity_timestamp() safeInteger')
 		return last_user_investment_tms
 	}
 
-	throw new Error('get_last_user_activity_timestamp() should have a recognized activity-stamped structure!')
+	throw new Error('getꓽlast_user_activity_timestamp() should have a recognized activity-stamped structure!')
 
 }
 
-export function get_last_user_activity_timestamp_loose<
+export function getꓽlast_user_activity_timestampⵧloose<
 	V extends WithLastUserInvestmentTimestamp,
 	B extends BaseState,
 	BU extends BaseUState,
 	BT extends BaseTState,
 	BR extends BaseRootState,
 >(s: Immutable<V> | Immutable<AnyOffirmoState>): number {
-	if (is_WithLastUserInvestmentTimestamp(s))
-		return get_last_user_activity_timestamp(s as Immutable<V>)
+	if (isꓽWithLastUserInvestmentTimestamp(s))
+		return getꓽlast_user_activity_timestamp(s as Immutable<V>)
 
 	// final fallback
 	return 0
@@ -221,7 +221,7 @@ export function get_last_user_activity_timestamp_loose<
 
 
 // TODO review name
-export function get_base_loose<
+export function getꓽbaseⵧloose<
 	VR extends WithSchemaVersion & WithRevision & WithLastUserInvestmentTimestamp,
 	B extends BaseState,
 	BU extends BaseUState,
@@ -235,9 +235,9 @@ export function get_base_loose<
 	if (typeof s !== 'object')
 		return `[not a state! ${typeof s}]`
 	return {
-		schema_version: get_schema_version_loose(s as any),
-		revision: get_revision_loose(s as any),
-		last_user_investment_tms: get_last_user_activity_timestamp_loose(s as any),
-		timestamp_ms: get_timestamp_loose(s as any),
+		schema_version: getꓽschema_versionⵧloose(s as any),
+		revision: getꓽrevisionⵧloose(s as any),
+		last_user_investment_tms: getꓽlast_user_activity_timestampⵧloose(s as any),
+		timestamp_ms: getꓽtimestampⵧloose(s as any),
 	}
 }

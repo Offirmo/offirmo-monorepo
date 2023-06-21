@@ -50,7 +50,7 @@ function _pick_random_quality(rng: RNGEngine): ItemQuality {
 	// epic:     =  120/1000
 	// legendary =   30/1000
 
-	let p = get_random.generator_of.integer.between(1, 1000)(rng)
+	let p = getꓽrandom.generator_of.integer.between(1, 1000)(rng)
 
 	if (p <= 300)
 		return ItemQuality.common
@@ -71,16 +71,16 @@ function _pick_random_quality(rng: RNGEngine): ItemQuality {
 }
 
 function _pick_random_base(rng: RNGEngine): string {
-	return get_random.picker.of(ARMOR_BASES)(rng).hid
+	return getꓽrandom.picker.of(ARMOR_BASES)(rng).hid
 }
 function _pick_random_qualifier1(rng: RNGEngine): string {
-	return get_random.picker.of(ARMOR_QUALIFIERS1)(rng).hid
+	return getꓽrandom.picker.of(ARMOR_QUALIFIERS1)(rng).hid
 }
 function _pick_random_qualifier2(rng: RNGEngine): string {
-	return get_random.picker.of(ARMOR_QUALIFIERS2)(rng).hid
+	return getꓽrandom.picker.of(ARMOR_QUALIFIERS2)(rng).hid
 }
 function _pick_random_base_strength(rng: RNGEngine, quality: ItemQuality): number {
-	return get_random.generator_of.integer.in_interval(BASE_STRENGTH_INTERVAL_BY_QUALITY[quality]!)(rng)
+	return getꓽrandom.generator_of.integer.in_interval(BASE_STRENGTH_INTERVAL_BY_QUALITY[quality]!)(rng)
 }
 
 /////////////////////

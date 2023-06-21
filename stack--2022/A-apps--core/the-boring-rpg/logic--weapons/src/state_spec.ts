@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import { Enum } from 'typescript-string-enums'
 
 import { InventorySlot, ItemQuality, ElementType, xxx_test_unrandomize_element } from '@tbrpg/definitions'
-import { get_engine } from '@offirmo/random'
+import { getꓽengine } from '@offirmo/random'
 
 import { LIB } from './consts.js'
 import {
@@ -52,7 +52,7 @@ describe(`${LIB} - state`, function() {
 	describe('creation', function() {
 
 		it('should allow creating a random weapon', function() {
-			const rng = get_engine.for_unit_tests()
+			const rng = getꓽengine.for_unit_tests()
 			const weapon1 = xxx_test_unrandomize_element<Weapon>(create(rng))
 			assert_shape(weapon1)
 			expect(rng.get_state().call_count, '# rng draws 1').to.equal(5)
@@ -64,7 +64,7 @@ describe(`${LIB} - state`, function() {
 		})
 
 		it('should allow creating a partially predefined weapon', function() {
-			const rng = get_engine.for_unit_tests()
+			const rng = getꓽengine.for_unit_tests()
 			const weapon = xxx_test_unrandomize_element<Weapon>(create(rng, {
 				base_hid: 'spoon',
 				quality: 'artifact',

@@ -2,7 +2,7 @@ import { expect } from 'chai'
 
 import { Enum } from 'typescript-string-enums'
 import { ItemQuality, InventorySlot } from '@tbrpg/definitions'
-import { get_engine } from '@offirmo/random'
+import { getꓽengine } from '@offirmo/random'
 
 import { LIB } from './consts.js'
 import {
@@ -13,16 +13,16 @@ import {
 	create,
 	get_damage_interval,
 	get_medium_damage,
-	get_ultimate_medium_damage,
+	getꓽultimate_medium_damage,
 	matches,
 } from './index.js'
 
 
 describe(`${LIB} - selectors`, function() {
-	let rng = get_engine.for_unit_tests()
+	let rng = getꓽengine.for_unit_tests()
 	let TEST_ITEM: Weapon = create(rng)
 	beforeEach(() => {
-		rng = get_engine.for_unit_tests()
+		rng = getꓽengine.for_unit_tests()
 		TEST_ITEM = create(rng, {
 			base_hid: 'luth',
 			qualifier1_hid: 'simple',
@@ -79,10 +79,10 @@ describe(`${LIB} - selectors`, function() {
 		})
 	})
 
-	describe('get_ultimate_medium_damage()', function() {
+	describe('getꓽultimate_medium_damage()', function() {
 
 		it('should work', () => {
-			const umed = get_ultimate_medium_damage(TEST_ITEM)
+			const umed = getꓽultimate_medium_damage(TEST_ITEM)
 			expect(umed).to.be.a('number')
 
 			expect(umed, 'overall min').to.be.above(OVERALL_STRENGTH_INTERVAL_BY_QUALITY[ItemQuality.legendary]![0])

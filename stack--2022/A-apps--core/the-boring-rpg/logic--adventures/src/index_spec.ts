@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { get_engine } from '@offirmo/random'
+import { getꓽengine } from '@offirmo/random'
 
 import { LIB } from './consts.js'
 import {
@@ -42,7 +42,7 @@ describe(`${LIB} - logic`, function () {
 	describe('bad adventures picker', function () {
 
 		it('should provide bad adventure archetypes', () => {
-			const rng = get_engine.for_unit_tests()
+			const rng = getꓽengine.for_unit_tests()
 
 			const baa1 = pick_random_bad_archetype(rng)
 			expect(baa1.good).to.be.false
@@ -55,7 +55,7 @@ describe(`${LIB} - logic`, function () {
 	describe('good adventures picker', function () {
 
 		it('should provide good adventure archetypes', () => {
-			const rng = get_engine.for_unit_tests()
+			const rng = getꓽengine.for_unit_tests()
 
 			const baa1 = pick_random_good_archetype(rng)
 			expect(baa1.good).to.be.true
@@ -68,7 +68,7 @@ describe(`${LIB} - logic`, function () {
 	describe('coin gain picker', function () {
 
 		it('should provide an amount proportional to the gain category', () => {
-			const rng = get_engine.for_unit_tests()
+			const rng = getꓽengine.for_unit_tests()
 			const player_level = 1 / 1.1 // hack
 
 			const clS1 = generate_random_coin_gain_or_loss(rng, { range: CoinsGain.lossꘌsmall, player_level, current_wallet_amount: 100000 })
@@ -125,7 +125,7 @@ describe(`${LIB} - logic`, function () {
 		it('should provide an amount proportional to the player level')
 
 		it('should cap the loss to the current wallet amount', () => {
-			const rng = get_engine.for_unit_tests()
+			const rng = getꓽengine.for_unit_tests()
 			const player_level = 1 / 1.1 // hack
 
 			// -1  -6  -2

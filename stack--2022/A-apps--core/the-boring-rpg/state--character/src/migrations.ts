@@ -4,7 +4,7 @@ import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { State } from './types.js'
-import { TBRSoftExecutionContext, get_lib_SEC } from './sec.js'
+import { TBRSoftExecutionContext, getꓽSEC } from './sec.js'
 
 //////////////////////////////////////////////////////////////////////
 
@@ -16,7 +16,7 @@ const MIGRATION_HINTS_FOR_TESTS = enforce_immutability<any>({
 /////////////////////
 
 function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): State {
-	return get_lib_SEC(SEC).xTry('migrate_to_latest', ({SEC, logger}) => {
+	return getꓽSEC(SEC).xTry('migrate_to_latest', ({SEC, logger}) => {
 		const existing_version = legacy_state?.schema_version || 0
 		SEC.setAnalyticsAndErrorDetails({
 			version_from: existing_version,

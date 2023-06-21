@@ -26,8 +26,8 @@ import {
 	get_equipped_item_count,
 	get_unequipped_item_count,
 	get_item_count,
-	get_item,
-	get_item_in_slot,
+	getꓽitem,
+	getꓽitem_in_slot,
 	iterables_unslotted,
 } from './index.js'
 
@@ -205,7 +205,7 @@ describe(`${LIB} - state`, function() {
 			expect(get_equipped_item_count(state), 'e').to.equal(1)
 			expect(get_unequipped_item_count(state), 'u').to.equal(0)
 			expect(get_item_count(state), 'i').to.equal(1)
-			expect(get_item_in_slot(state, InventorySlot.weapon)).to.deep.equal(item1)
+			expect(getꓽitem_in_slot(state, InventorySlot.weapon)).to.deep.equal(item1)
 			expect(state.unslotted).to.have.lengthOf(0)
 
 			const item2: Item = generate_random_demo_weapon()
@@ -216,7 +216,7 @@ describe(`${LIB} - state`, function() {
 			expect(get_unequipped_item_count(state), 'u').to.equal(1)
 			expect(get_item_count(state), 'i').to.equal(2)
 
-			expect(get_item_in_slot(state, InventorySlot.weapon)).to.deep.equal(item2)
+			expect(getꓽitem_in_slot(state, InventorySlot.weapon)).to.deep.equal(item2)
 			expect(state.unslotted[0]).to.deep.equal(item1)
 		})
 	})

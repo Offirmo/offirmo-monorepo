@@ -8,13 +8,13 @@ import { InventorySlot } from '@tbrpg/definitions'
 import { SCHEMA_VERSION } from './consts.js'
 import { Item, State } from './types.js'
 import { compare_items_by_slot_then_strength } from './compare.js'
-import { is_full, get_item_in_slot } from './selectors.js'
-import { TBRSoftExecutionContext, get_lib_SEC } from './sec.js'
+import { is_full, getꓽitem_in_slot } from './selectors.js'
+import { TBRSoftExecutionContext, getꓽSEC } from './sec.js'
 
 /////////////////////
 
 function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
-	return get_lib_SEC(SEC).xTry('rename', () => {
+	return getꓽSEC(SEC).xTry('rename', () => {
 		return enforce_immutability<State>({
 			schema_version: SCHEMA_VERSION,
 			revision: 0,
@@ -77,7 +77,7 @@ function equip_item(state: Immutable<State>, uuid: UUID): Immutable<State> {
 
 	const target_slot = item_to_equip.slot
 
-	const item_previously_in_slot = get_item_in_slot(state, target_slot) // may be null
+	const item_previously_in_slot = getꓽitem_in_slot(state, target_slot) // may be null
 
 	// swap them
 	let new_state = {

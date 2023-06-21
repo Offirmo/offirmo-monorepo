@@ -1,5 +1,5 @@
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
-import { get_human_readable_UTC_timestamp_days, TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestampⵧhuman_readable‿days, TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
 
 import { State, AchievementStatus } from './types.js'
 
@@ -37,8 +37,8 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>({
 	},
 
 	statistics: {
-		creation_date_hrtday: get_human_readable_UTC_timestamp_days(new Date(TEST_TIMESTAMP_MS - 100_000)),
-		last_visited_timestamp_hrtday: get_human_readable_UTC_timestamp_days(new Date(TEST_TIMESTAMP_MS)),
+		creation_date_hrtday: getꓽUTC_timestampⵧhuman_readable‿days(new Date(TEST_TIMESTAMP_MS - 100_000)),
+		last_visited_timestamp_hrtday: getꓽUTC_timestampⵧhuman_readable‿days(new Date(TEST_TIMESTAMP_MS)),
 		active_day_count: 12,
 		good_play_count: 12,
 		bad_play_count: 3,
