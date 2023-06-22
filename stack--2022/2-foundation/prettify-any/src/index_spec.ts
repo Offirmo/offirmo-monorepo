@@ -292,6 +292,7 @@ describe('@offirmo-private/prettify-any', function() {
 		describe('special cases', function() {
 
 			describe('deep objects', function () {
+				const DEPTH = 100
 				const deep_obj: any = {
 					depth: 0,
 				}
@@ -304,7 +305,7 @@ describe('@offirmo-private/prettify-any', function() {
 				let deep_arr_deepest: any = deep_arr
 				let deep_mixed_deepest: any = deep_mixed
 
-				for (let i = 1; i < 100; ++i) {
+				for (let i = 1; i < DEPTH; ++i) {
 					deep_obj_deepest = deep_obj_deepest.sub = {
 						depth: i,
 					}
@@ -317,8 +318,8 @@ describe('@offirmo-private/prettify-any', function() {
 				}
 
 				it.only('should be able to handle deep objects -- object', () => {
-					test_to_console(deep_obj)
-					//console.log('☐ prettifyꓽany(…):', prettifyꓽany(deep_obj))
+					//test_to_console(deep_obj)
+					console.log('☐ prettifyꓽany(…):', prettifyꓽany(deep_obj))
 				})
 
 				it('should be able to handle deep objects -- array', () => {

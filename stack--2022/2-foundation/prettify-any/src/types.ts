@@ -3,10 +3,10 @@
 
 interface RenderOptions {
 	eol: '' | '\n' | '\r\n' // what should be used for EOL. '' (empty string) = no line return
-	max_width: null | number // max width before need to wrap                             NOT IMPLEMENTED
-	outline: boolean // add a strong separator at top and bottom so that it stands out    NOT IMPLEMENTED
-	indent: string // what should be used for indenting                                   NOT IMPLEMENTED
-	max_primitive_str_size: null | number // NOT IMPLEMENTED
+	max_width‿charcount: number // max width before need to wrap NOT IMPLEMENTED TODO
+	outline: boolean // add a strong separator at top and bottom so that it stands out    NOT IMPLEMENTED TODO
+	indent_size‿charcount: number, // how many spaces to use for indentation
+	max_primitive_str_size: null | number // NOT IMPLEMENTED TODO
 	should_recognize_constants: boolean
 	should_recognize_globals: boolean
 	quote: '\'' | '"'
@@ -48,7 +48,11 @@ type Options = RenderOptions & StylizeOptions & PrettifyOptions
 
 interface State {
 	o: Options
-	indent_level: number
+
+	indent_string: string // optim/convenience
+	indent_levelⵧcurrent: number
+	remaining_width‿charcount: number
+	indent_levelⵧmax: number
 
 	circular: WeakSet<object>
 }

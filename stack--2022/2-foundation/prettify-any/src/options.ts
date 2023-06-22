@@ -1,4 +1,4 @@
-
+import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { Options } from './types.js'
@@ -26,10 +26,16 @@ function getꓽoptionsⵧdefault(): Options {
 }
 
 function getꓽoptions(options: Immutable<Partial<Options>> = {}): Options {
-	return {
+	const final_options = {
 		...getꓽoptionsⵧdefault(),
 		...options,
 	}
+
+	if (!final_options.eol) {
+		final_options.indent_size‿charcount = 0
+	}
+
+	return final_options
 }
 
 /////////////////////////////////////////////////

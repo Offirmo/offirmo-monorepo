@@ -6,10 +6,15 @@ import { getꓽoptions } from './options.js'
 /////////////////////////////////////////////////
 
 function _createꓽstate(options: Options): State {
-	return {
-		o: getꓽoptions(options),
+	const o = getꓽoptions(options)
 
-		indent_level: 0,
+	return {
+		o,
+
+		indent_string: new Array(o.indent_size‿charcount).fill(' ').join(''),
+		indent_levelⵧcurrent: 0,
+		remaining_width‿charcount: o.max_width‿charcount,
+		indent_levelⵧmax: 0,
 
 		circular: new WeakSet<object>()
 	}
@@ -19,7 +24,26 @@ function prettifyꓽany(js: Immutable<any>, options: Immutable<Partial<Options>>
 	try {
 		const st = _createꓽstate(getꓽoptions(options))
 
-		return st.o.prettifyꓽany(js, st).join(st.o.eol)
+		let result = st.o.prettifyꓽany(js, st).join(st.o.eol)
+		//console.log('max indent', st.indent_levelⵧmax)
+
+		// backtrack if too big
+		if (st.o.eol && st.indent_levelⵧmax * st.o.indent_size‿charcount > st.o.max_width‿charcount) {
+			// the object is too deep and cause unwanted multi line display. Can we ease it by reducing the indentation size?
+			const ideal_indent_size‿charcount = Math.max(1, Math.floor(st.o.max_width‿charcount / st.indent_levelⵧmax))
+			if (ideal_indent_size‿charcount < st.o.indent_size‿charcount) {
+				// re-display with reduced indent
+				//console.warn('backtrack', ideal_indent_size‿charcount)
+				options = {
+					...options,
+					indent_size‿charcount: ideal_indent_size‿charcount,
+				}
+				const st = _createꓽstate(getꓽoptions(options))
+				result = st.o.prettifyꓽany(js, st).join(st.o.eol)
+			}
+		}
+
+		return result
 	}
 	catch (err) {
 		if (options?.never_throw)

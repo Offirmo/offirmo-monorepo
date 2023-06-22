@@ -1,6 +1,7 @@
 import { EOL } from 'os'
 
 import getꓽterminal_size from 'term-size'
+import toꓽstringⵧwithout_ansi from 'strip-ansi';
 
 import {
 	RenderOptions,
@@ -17,10 +18,9 @@ import {
 
 const DEFAULTS_STYLE_OPTIONS: RenderOptions = {
 	eol: EOL as RenderOptions['eol'],
-	max_width: getꓽterminal_size().columns,
+	max_width‿charcount: getꓽterminal_size().columns,
 	outline: false,
-	indent: '\t', // TODO auto clear if EOL = ''
-	indent_size‿charcount: 3, // TODO auto
+	indent_size‿charcount: 3,
 	max_primitive_str_size: null,
 	should_recognize_constants: true,
 	should_recognize_globals: true,
@@ -42,8 +42,6 @@ const DEBUG = false
 const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 	never_throw: true,
 	sort_keys: false,
-
-	// TODO follow max string size
 
 	// primitives
 	prettifyꓽstring: (s: string, st: State) => {
@@ -240,6 +238,12 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 			}
 
 			const keys = Reflect.ownKeys(obj)
+
+			if (keys.length === 0 && skip_constructor)
+				return [ o.stylizeꓽdim(`/*${obj.toString()}*/`) ]
+
+			///// display as hash:
+
 			if (o.sort_keys)
 				keys.sort((a: string | number | symbol, b: string | number | symbol) => {
 					let res = cmp(typeof a, typeof b)
@@ -251,18 +255,18 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 					return res
 				})
 
-			if (keys.length === 0 && skip_constructor) {
-				return [ o.stylizeꓽdim(`/*${obj.toString()}*/`) ]
-			}
-
+			const parent_state = st // for passing infos up
 			st = {
 				...st,
-				indent_level: st.indent_level + 1,
+				indent_levelⵧcurrent: st.indent_levelⵧcurrent + 1,
+				remaining_width‿charcount: st.remaining_width‿charcount - o.indent_size‿charcount,
+				indent_levelⵧmax: Math.max(st.indent_levelⵧmax, st.indent_levelⵧcurrent + 1),
 				circular: new Set([ ...Array.from(st.circular as any), obj ]),
 			}
 
+			const trailing_comma = o.stylizeꓽsyntax(',')
 			let lines: string[] = [
-				...keys.map((k): string[] => {
+				...keys.map((k): string[] | string => {
 					const v = (obj as any)[k]
 
 					if (typeof v === 'function' && v.name === k)
@@ -271,26 +275,33 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 					const key = o.prettifyꓽproperty__name(k, st)
 					let sub_lines = o.prettifyꓽany(v, st)
 
-					for (sub_lines.join(',').length <) {
-
+					/*
+					const max_remaining_length‿charcount = o.max_width‿charcount - st.indent_levelⵧcurrent * o.indent_size‿charcount - toꓽstringⵧwithout_ansi(key).length - 1
+					if (toꓽstringⵧwithout_ansi(sub_lines.join(',')).length < max_remaining_length‿charcount) {
+						// coerce into a single line
+						sub_lines = [
+							sub_lines.join(', '),
+						]
 					}
+*/
 					if (sub_lines.length === 1) {
 						// merge into a single line
-						return [
-							key + o.stylizeꓽsyntax(': ') + sub_lines[0] + o.stylizeꓽsyntax(','),
-						]
+						return key + o.stylizeꓽsyntax(': ') + sub_lines[0] + trailing_comma
 					}
 
 					return [
-						key + o.stylizeꓽsyntax(': '),
-						...sub_lines.slice(1).map(s => s + o.stylizeꓽsyntax(',')),
+						key + o.stylizeꓽsyntax(': ') + sub_lines[0],
+						...sub_lines.slice(1, -1),
+						...sub_lines.slice(-1).map(s => s + trailing_comma),
 					]
 				}),
 			].flat()
+			// pass up
+			parent_state.indent_levelⵧmax = Math.max(parent_state.indent_levelⵧmax, st.indent_levelⵧmax)
 
 			return [
 				o.stylizeꓽsyntax('{'),
-				...lines,
+				...lines.map(s => st.indent_string + s),
 				o.stylizeꓽsyntax('}'),
 			]
 		}
