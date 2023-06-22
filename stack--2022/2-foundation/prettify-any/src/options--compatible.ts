@@ -1,4 +1,7 @@
 import { EOL } from 'os'
+
+import getꓽterminal_size from 'term-size'
+
 import {
 	RenderOptions,
 	PrettifyOptions,
@@ -14,14 +17,15 @@ import {
 
 const DEFAULTS_STYLE_OPTIONS: RenderOptions = {
 	eol: EOL as RenderOptions['eol'],
-	max_width: null,
+	max_width: getꓽterminal_size().columns,
 	outline: false,
-	indent: '\t',
+	indent: '\t', // TODO auto clear if EOL = ''
+	indent_size‿charcount: 3, // TODO auto
 	max_primitive_str_size: null,
 	should_recognize_constants: true,
 	should_recognize_globals: true,
 	quote: '\'',
-	date_serialization_fn: 'toLocaleString'
+	date_serialization_fn: 'toLocaleString',
 }
 
 const DEFAULTS_STYLIZE_OPTIONS__NONE: StylizeOptions = {
@@ -49,15 +53,22 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 	prettifyꓽnumber: (n: number, st: State) => {
 		const { o } = st
 		if (o.should_recognize_constants) {
-			switch(n) {
-				case Number.EPSILON: return o.stylizeꓽglobal('Number.EPSILON')
-				case Number.MAX_VALUE: return o.stylizeꓽglobal('Number.MAX_VALUE')
-				case Number.MIN_VALUE: return o.stylizeꓽglobal('Number.MIN_VALUE')
-				case Number.MAX_SAFE_INTEGER: return o.stylizeꓽglobal('Number.MAX_SAFE_INTEGER')
-				case Number.MIN_SAFE_INTEGER: return o.stylizeꓽglobal('Number.MIN_SAFE_INTEGER')
+			switch (n) {
+				case Number.EPSILON:
+					return o.stylizeꓽglobal('Number.EPSILON')
+				case Number.MAX_VALUE:
+					return o.stylizeꓽglobal('Number.MAX_VALUE')
+				case Number.MIN_VALUE:
+					return o.stylizeꓽglobal('Number.MIN_VALUE')
+				case Number.MAX_SAFE_INTEGER:
+					return o.stylizeꓽglobal('Number.MAX_SAFE_INTEGER')
+				case Number.MIN_SAFE_INTEGER:
+					return o.stylizeꓽglobal('Number.MIN_SAFE_INTEGER')
 
-				case Math.PI: return o.stylizeꓽglobal('Math.PI')
-				case Math.E: return o.stylizeꓽglobal('Math.E')
+				case Math.PI:
+					return o.stylizeꓽglobal('Math.PI')
+				case Math.E:
+					return o.stylizeꓽglobal('Math.E')
 				// no more Math, seldom used
 
 				default:
@@ -76,15 +87,15 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 		return o.stylizeꓽprimitive(String(b) + 'n')
 	},
 	prettifyꓽboolean: (b: boolean, st: State) => {
-		const {o} = st
+		const { o } = st
 		return o.stylizeꓽprimitive(String(b))
 	},
 	prettifyꓽundefined: (u: undefined, st: State) => {
-		const {o} = st
+		const { o } = st
 		return o.stylizeꓽsuspicious(String(u))
 	},
 	prettifyꓽsymbol: (s: symbol, st: State) => {
-		const {o} = st
+		const { o } = st
 		try {
 			return ''
 				+ o.stylizeꓽglobal('Symbol')
@@ -104,7 +115,7 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 		return o.stylizeꓽprimitive('null')
 	},
 	prettifyꓽfunction: (f: Function, st: State, { as_prop = false } = {}) => {
-		const {o} = st
+		const { o } = st
 
 		if (f.name && (globalThis as any)[f.name] === f) {
 			return o.stylizeꓽuser(f.name)
@@ -133,7 +144,7 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 		if (DEBUG) console.log('prettifyꓽarray', a)
 		st = {
 			...st,
-			circular: new Set([...Array.from(st.circular as any), a])
+			circular: new Set([ ...Array.from(st.circular as any), a ]),
 		}
 		const { o } = st
 
@@ -142,8 +153,8 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 			o.stylizeꓽsyntax('[')
 			+ a.map(e => o.prettifyꓽany(e, st)) // NOTE when fully empty, map won't execute (but it looks nice, no pb)
 				.join(o.stylizeꓽsyntax(','))
-			+ o.stylizeꓽsyntax(']')
-			]
+			+ o.stylizeꓽsyntax(']'),
+		]
 	},
 	prettifyꓽobject: (obj: Object, st: State, { skip_constructor = false } = {}): string[] => {
 		if (DEBUG) console.log('prettifyꓽobject', obj)
@@ -152,8 +163,9 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 		try {
 			if (o.should_recognize_globals) {
 				try {
-					switch(obj) {
-						case globalThis: return [ o.stylizeꓽglobal('globalThis') ]
+					switch (obj) {
+						case globalThis:
+							return [ o.stylizeꓽglobal('globalThis') ]
 
 						default:
 						// fallback
@@ -171,54 +183,54 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 						if (proto.constructor !== Object) {
 							return [
 								o.stylizeꓽsyntax('new ')
-									+ ((globalThis as any)[proto.constructor.name] === proto.constructor
+								+ ((globalThis as any)[proto.constructor.name] === proto.constructor
 										? o.stylizeꓽglobal(proto.constructor.name)
 										: o.stylizeꓽuser(proto.constructor.name)
-									)
-									+ o.stylizeꓽsyntax('(')
-									+ (() => {
-										switch (proto.constructor.name) {
-											// all primitives that can be an Object
-											case 'String':
-												return o.prettifyꓽstring(obj as string, st)
-											case 'Number':
-												return o.prettifyꓽnumber(obj as number, st)
-											case 'Boolean':
-												return o.prettifyꓽboolean(obj as boolean, st)
+								)
+								+ o.stylizeꓽsyntax('(')
+								+ (() => {
+									switch (proto.constructor.name) {
+										// all primitives that can be an Object
+										case 'String':
+											return o.prettifyꓽstring(obj as string, st)
+										case 'Number':
+											return o.prettifyꓽnumber(obj as number, st)
+										case 'Boolean':
+											return o.prettifyꓽboolean(obj as boolean, st)
 
-											// recognize some objects
-											case 'Set':
-												return o.prettifyꓽarray(Array.from((obj as Set<any>).keys()), st)
-											case 'WeakSet':
-												return o.stylizeꓽdim('/\*not enumerable*\/')
-											case 'Date':
-												return o.stylizeꓽdim(`/*${(obj as any)[o.date_serialization_fn]()}*/`)
+										// recognize some objects
+										case 'Set':
+											return o.prettifyꓽarray(Array.from((obj as Set<any>).keys()), st)
+										case 'WeakSet':
+											return o.stylizeꓽdim('/\*not enumerable*\/')
+										case 'Date':
+											return o.stylizeꓽdim(`/*${(obj as any)[o.date_serialization_fn]()}*/`)
 
-											// node
-											case 'Buffer':
-												// too big!
-												return '/*…*/'
-											case 'Gunzip': // seen in fetch_ponyfill response
-												// too big!
-												return '/*…*/'
+										// node
+										case 'Buffer':
+											// too big!
+											return '/*…*/'
+										case 'Gunzip': // seen in fetch_ponyfill response
+											// too big!
+											return '/*…*/'
 
-											// other
-											default:
-												if (proto.constructor.name.endsWith('Error')) {
-													const err: Error = obj as any
-													// no need to pretty print it as copy/pastable to code,
-													// 99.9% chance that's not what we want here
-													return o.stylizeꓽerror(o.quote + err.message + o.quote)
-												}
+										// other
+										default:
+											if (proto.constructor.name.endsWith('Error')) {
+												const err: Error = obj as any
+												// no need to pretty print it as copy/pastable to code,
+												// 99.9% chance that's not what we want here
+												return o.stylizeꓽerror(o.quote + err.message + o.quote)
+											}
 
-												// Beware! This can turn into a huge thing, ex. a fetch response
-												// REM we MUST have skip_constructor = true to avoid infinite loops
-												return o.prettifyꓽobject(obj, st, { skip_constructor: true })
-												//return '/*…*/'
-										}
-									})()
-									+ o.stylizeꓽsyntax(')')
-								]
+											// Beware! This can turn into a huge thing, ex. a fetch response
+											// REM we MUST have skip_constructor = true to avoid infinite loops
+											return o.prettifyꓽobject(obj, st, { skip_constructor: true })
+										//return '/*…*/'
+									}
+								})()
+								+ o.stylizeꓽsyntax(')'),
+							]
 						}
 					}
 				}
@@ -230,14 +242,14 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 			const keys = Reflect.ownKeys(obj)
 			if (o.sort_keys)
 				keys.sort((a: string | number | symbol, b: string | number | symbol) => {
-				let res = cmp(typeof a, typeof b)
+					let res = cmp(typeof a, typeof b)
 
-				if (res === 0) {
-					res = cmp(a, b)
-				}
+					if (res === 0) {
+						res = cmp(a, b)
+					}
 
-				return res
-			})
+					return res
+				})
 
 			if (keys.length === 0 && skip_constructor) {
 				return [ o.stylizeꓽdim(`/*${obj.toString()}*/`) ]
@@ -246,41 +258,41 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 			st = {
 				...st,
 				indent_level: st.indent_level + 1,
-				circular: new Set([...Array.from(st.circular as any), obj])
+				circular: new Set([ ...Array.from(st.circular as any), obj ]),
 			}
 
 			let lines: string[] = [
 				...keys.map((k): string[] => {
-						const v = (obj as any)[k]
+					const v = (obj as any)[k]
 
-						if (typeof v === 'function' && v.name === k)
-							return [ o.prettifyꓽfunction(v, st, { as_prop: true }) ]
+					if (typeof v === 'function' && v.name === k)
+						return [ o.prettifyꓽfunction(v, st, { as_prop: true }) ]
 
-						const key= o.prettifyꓽproperty__name(k, st)
-						let sub_lines = o.prettifyꓽany(v, st)
+					const key = o.prettifyꓽproperty__name(k, st)
+					let sub_lines = o.prettifyꓽany(v, st)
 
-					for (sub_lines.join(',').length < ) {
+					for (sub_lines.join(',').length <) {
 
 					}
-						if (sub_lines.length === 1) {
-							// merge into a single line
-							return [
-								key + o.stylizeꓽsyntax(': ') + sub_lines[0] + o.stylizeꓽsyntax(','),
-							]
-						}
-
+					if (sub_lines.length === 1) {
+						// merge into a single line
 						return [
-								key + o.stylizeꓽsyntax(': '),
-								...sub_lines.slice(1).map(s => s + o.stylizeꓽsyntax(',')),
-							]
-					}),
-				].flat()
+							key + o.stylizeꓽsyntax(': ') + sub_lines[0] + o.stylizeꓽsyntax(','),
+						]
+					}
+
+					return [
+						key + o.stylizeꓽsyntax(': '),
+						...sub_lines.slice(1).map(s => s + o.stylizeꓽsyntax(',')),
+					]
+				}),
+			].flat()
 
 			return [
-					o.stylizeꓽsyntax('{'),
-					...lines,
-					o.stylizeꓽsyntax('}'),
-				]
+				o.stylizeꓽsyntax('{'),
+				...lines,
+				o.stylizeꓽsyntax('}'),
+			]
 		}
 		catch (err) {
 			return [ o.stylizeꓽerror(`[error prettifying:${(err as any)?.message}/po]`) ]
@@ -289,10 +301,10 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 
 	// utils
 	prettifyꓽproperty__name: (p: string | number | symbol, st: State) => {
-		const {o} = st
+		const { o } = st
 
 		try {
-			switch(typeof p) {
+			switch (typeof p) {
 				case 'number':
 					return o.prettifyꓽnumber(p, st)
 				case 'string': {
