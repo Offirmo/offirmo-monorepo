@@ -5,7 +5,7 @@ import { injectꓽlibꓽchalk } from './injectable-lib--chalk.js'
 injectꓽlibꓽchalk(chalk as any)
 
 import {
-	prettify_any as _prettify_any,
+	prettifyꓽany as _prettify_any,
 } from './v2.js'
 
 
@@ -13,8 +13,8 @@ import {
 describe('@offirmo-private/prettify-any', function() {
 	const should_test_verbose = false
 
-	describe('prettify_any()', function() {
-		function prettify_any(...args: Parameters<typeof _prettify_any>) {
+	describe('prettifyꓽany()', function() {
+		function prettifyꓽany(...args: Parameters<typeof _prettify_any>) {
 			const prettified = _prettify_any(...args)
 			if (prettified.startsWith('[error prettifying:'))
 				throw new Error(prettified)
@@ -32,7 +32,7 @@ describe('@offirmo-private/prettify-any', function() {
 				}
 
 			})())
-			console.log('☐ prettify_any(…):', prettify_any(value, {never_throw: false}))
+			console.log('☐ prettifyꓽany(…):', prettifyꓽany(value, {never_throw: false}))
 		}
 
 		describe('handling of primitive type/values', function() {
@@ -291,7 +291,7 @@ describe('@offirmo-private/prettify-any', function() {
 
 		describe('special cases', function() {
 
-			it('should be able to handle deep objects', () => {
+			describe('deep objects', function () {
 				const deep_obj: any = {
 					depth: 0,
 				}
@@ -314,13 +314,22 @@ describe('@offirmo-private/prettify-any', function() {
 					deep_mixed_deepest = deep_mixed_deepest[0].sub = [{
 						depth: i*2,
 					}]
-
-
 				}
-				console.log('☐ prettify_any(…):', prettify_any(deep_obj))
-				console.log('☐ prettify_any(…):', prettify_any(deep_arr))
-				console.log('☐ prettify_any(…):', prettify_any(deep_mixed))
+
+				it.only('should be able to handle deep objects -- object', () => {
+					test_to_console(deep_obj)
+					//console.log('☐ prettifyꓽany(…):', prettifyꓽany(deep_obj))
+				})
+
+				it('should be able to handle deep objects -- array', () => {
+					console.log('☐ prettifyꓽany(…):', prettifyꓽany(deep_arr))
+				})
+
+				it('should be able to handle deep objects -- mixed', () => {
+					console.log('☐ prettifyꓽany(…):', prettifyꓽany(deep_mixed))
+				})
 			})
+
 
 			it('should be able to handle deep objects - fetch', async () => {
 				//@ts-expect-error TODO fix as soon as fetch global is added to @types/node
@@ -334,7 +343,7 @@ describe('@offirmo-private/prettify-any', function() {
 			})
 
 			it('should be able to handle huge blobs', () => {
-				console.log('☐ prettify_any(…):', prettify_any(process.env))
+				console.log('☐ prettifyꓽany(…):', prettifyꓽany(process.env))
 			})
 		})
 	})

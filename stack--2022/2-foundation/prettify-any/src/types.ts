@@ -1,50 +1,54 @@
 
 /////////////////////////////////////////////////
 
-interface StyleOptions {
-	max_width: null | number // max width before need to wrap
-	outline: boolean // add a strong separator at top and bottom so that it stands out
-	indent: string // what should be used for indenting
-	max_primitive_str_size: null | number
+interface RenderOptions {
+	eol: '' | '\n' | '\r\n' // what should be used for EOL. '' (empty string) = no line return
+	max_width: null | number // max width before need to wrap                             NOT IMPLEMENTED
+	outline: boolean // add a strong separator at top and bottom so that it stands out    NOT IMPLEMENTED
+	indent: string // what should be used for indenting                                   NOT IMPLEMENTED
+	max_primitive_str_size: null | number // NOT IMPLEMENTED
 	should_recognize_constants: boolean
 	should_recognize_globals: boolean
 	quote: '\'' | '"'
 	date_serialization_fn: string
 }
 
-// TODO find a better name
 interface StylizeOptions {
-	stylize_dim: (s: string) => string
-	stylize_suspicious: (s: string) => string
-	stylize_error: (s: string) => string
-	stylize_global: (s: string) => string
-	stylize_primitive: (s: string) => string
-	stylize_syntax: (s: string) => string
-	stylize_user: (s: string) => string
+	stylizeꓽdim: (s: string) => string
+	stylizeꓽsuspicious: (s: string) => string
+	stylizeꓽerror: (s: string) => string
+	stylizeꓽglobal: (s: string) => string
+	stylizeꓽprimitive: (s: string) => string
+	stylizeꓽsyntax: (s: string) => string
+	stylizeꓽuser: (s: string) => string
 }
 
 interface PrettifyOptions {
 	never_throw: boolean
+	sort_keys: boolean
 
-	prettify_string: (x: string, st: State) => string
-	prettify_number: (x: number, st: State) => string
-	prettify_bigint: (x: bigint, st: State) => string
-	prettify_boolean: (x: boolean, st: State) => string
-	prettify_undefined: (x: undefined, st: State) => string
-	prettify_symbol: (x: symbol, st: State) => string
+	prettifyꓽstring: (x: string, st: State) => string
+	prettifyꓽnumber: (x: number, st: State) => string
+	prettifyꓽbigint: (x: bigint, st: State) => string
+	prettifyꓽboolean: (x: boolean, st: State) => string
+	prettifyꓽundefined: (x: undefined, st: State) => string
+	prettifyꓽsymbol: (x: symbol, st: State) => string
 
-	prettify_function: (x: Function, st: State, ox?: { as_prop?: boolean }) => string
-	prettify_array: (x: Array<any>, st: State) => string
-	prettify_property_name: (x: string | number | symbol, st: State) => string
-	prettify_object: (x: Object, st: State, ox?: { skip_constructor?: boolean }) => string
+	prettifyꓽnull: (st: State) => string
+	prettifyꓽfunction: (x: Function, st: State, ox?: { as_prop?: boolean }) => string
+	prettifyꓽarray: (x: Array<any>, st: State) => string[]
+	prettifyꓽobject: (x: Object, st: State, ox?: { skip_constructor?: boolean }) => string[]
 
-	prettify_any: (a: any, st: State) => string
+	prettifyꓽproperty__name: (x: string | number | symbol, st: State) => string
+
+	prettifyꓽany: (a: any, st: State) => string[]
 }
 
-type Options = StyleOptions & StylizeOptions & PrettifyOptions
+type Options = RenderOptions & StylizeOptions & PrettifyOptions
 
 interface State {
 	o: Options
+	indent_level: number
 
 	circular: WeakSet<object>
 }
@@ -52,7 +56,7 @@ interface State {
 /////////////////////////////////////////////////
 
 export {
-	type StyleOptions,
+	type RenderOptions,
 	type StylizeOptions,
 	type PrettifyOptions,
 	type Options,

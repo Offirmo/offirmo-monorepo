@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import chalk from 'chalk'
 
-import { injectꓽlibꓽchalk, prettify_any } from '@offirmo-private/prettify-any'
+import { injectꓽlibꓽchalk, prettifyꓽany } from '@offirmo-private/prettify-any'
 import { displayError } from '@offirmo-private/print-error-to-ansi'
 
 injectꓽlibꓽchalk(chalk)
@@ -36,7 +36,7 @@ export function createSink(options: Readonly<SinkOptions> = {}): LogSink {
 				Reflect.ownKeys(details).length === 0
 					? ''
 					//: (' ' + JSON.stringify(details))
-					: prettify_any(details, {
+					: prettifyꓽany(details, {
 						//line_width:
 						//first_line_already_used:
 					}),

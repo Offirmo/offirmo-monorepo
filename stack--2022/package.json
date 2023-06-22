@@ -151,6 +151,7 @@
 		"size-limit": "^8",
 		"strip-ansi": "^7",
 		"sum-up": "^3",
+		"term-size": "^3",
 		"tildify": "^3",
 		"tiny-invariant": "^1",
 		"ts-node": "^10",

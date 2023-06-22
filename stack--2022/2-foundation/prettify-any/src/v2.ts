@@ -1,26 +1,25 @@
 import { Immutable } from '@offirmo-private/ts-types'
 
-import {
-	Options,
-	State,
-} from './types.js'
+import { Options, State } from './types.js'
 import { getꓽoptions } from './options.js'
 
-////////////////////////////////////
+/////////////////////////////////////////////////
 
-function create_state(options: Options): State {
+function _createꓽstate(options: Options): State {
 	return {
 		o: getꓽoptions(options),
+
+		indent_level: 0,
 
 		circular: new WeakSet<object>()
 	}
 }
 
-export function prettify_any(js: Immutable<any>, options: Immutable<Partial<Options>> = {}): string {
+function prettifyꓽany(js: Immutable<any>, options: Immutable<Partial<Options>> = {}): string {
 	try {
-		const st = create_state(getꓽoptions(options))
+		const st = _createꓽstate(getꓽoptions(options))
 
-		return st.o.prettify_any(js, st)
+		return st.o.prettifyꓽany(js, st).join(st.o.eol)
 	}
 	catch (err) {
 		if (options?.never_throw)
@@ -30,16 +29,17 @@ export function prettify_any(js: Immutable<any>, options: Immutable<Partial<Opti
 	}
 }
 
-export function prettify_json(js: Immutable<any>, options: Immutable<Partial<Options>> = {}): string {
-	const st = create_state(getꓽoptions(options))
+function prettify_json(js: Immutable<any>, options: Immutable<Partial<Options>> = {}): string {
+	const st = _createꓽstate(getꓽoptions(options))
 
 	// TODO show not JSON
-	return st.o.prettify_any(js, st)
+	return st.o.prettifyꓽany(js, st).join(st.o.eol)
 }
 
-export function dump_prettified_any(msg: string, data: Immutable<any>, options: Immutable<Partial<Options>> = {}): void {
+
+function dump_prettified_any(msg: string, data: Immutable<any>, options: Immutable<Partial<Options>> = {}): void {
 	console.log(msg)
-	console.log(prettify_any(data, options))
+	console.log(prettifyꓽany(data, options))
 }
 
 /* TODO one day
@@ -47,3 +47,11 @@ export function is_pure_json(js: Immutable<any>): boolean {
 	return false
 }
 */
+
+/////////////////////////////////////////////////
+
+export {
+	prettifyꓽany,
+	prettify_json,
+	dump_prettified_any,
+}

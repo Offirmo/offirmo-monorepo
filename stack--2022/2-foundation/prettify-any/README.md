@@ -1,4 +1,4 @@
-A node module to conveniently print JSON.
+A **node** module to conveniently print JSON.
 
 
 ## Introduction
