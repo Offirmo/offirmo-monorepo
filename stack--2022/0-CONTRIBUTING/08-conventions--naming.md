@@ -37,6 +37,14 @@ variables prefixed with `_` hints at internal/local use / not exported `_update�
 * `setꓽ`: `setꓽXYZ()`
 * other: `insertꓽnode()`, `deleteꓽnode()`
 
+Counter example:
+```
+import terminal_size from 'term-size'
+terminal_size.columns // error it's a function = unclean name
+
+
+```
+
 #### Tests
 * assertions `assert`: `assertꓽnode_is_xyz()`
 * type guards `isꓽStory‿v2()`
