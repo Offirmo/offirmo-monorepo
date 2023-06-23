@@ -53,6 +53,7 @@ interface State {
 	indent_levelⵧcurrent: number
 	remaining_width‿charcount: number
 	indent_levelⵧmax: number
+	isꓽjson: boolean
 
 	circular: WeakSet<object>
 }

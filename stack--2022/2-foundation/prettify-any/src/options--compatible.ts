@@ -74,13 +74,18 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 			}
 		}
 
-		return isNaN(n)
+		// https://mailarchive.ietf.org/arch/msg/json/RRT0jWUruScN1oXlgZlTqETivSU/
+		if (!isFinite(n) || isꓽnegative_zero(n))
+			st.isꓽjson = false
+
+		return !isFinite(n) // REM: covers NaN and +-Infinity
 			? o.stylizeꓽerror(String(n))
 			: isꓽnegative_zero(n)
 				? o.stylizeꓽerror('-0')
 				: o.stylizeꓽprimitive(String(n))
 	},
 	prettifyꓽbigint: (b: bigint, st: State) => {
+		st.isꓽjson = false
 		const { o } = st
 		return o.stylizeꓽprimitive(String(b) + 'n')
 	},
@@ -93,6 +98,7 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 		return o.stylizeꓽsuspicious(String(u))
 	},
 	prettifyꓽsymbol: (s: symbol, st: State) => {
+		st.isꓽjson = false
 		const { o } = st
 		try {
 			return ''
@@ -113,6 +119,7 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 		return o.stylizeꓽprimitive('null')
 	},
 	prettifyꓽfunction: (f: Function, st: State, { as_prop = false } = {}) => {
+		st.isꓽjson = false
 		const { o } = st
 
 		if (f.name && (globalThis as any)[f.name] === f) {
@@ -140,16 +147,20 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 	},
 	prettifyꓽarray: (a: Array<any>, st: State) => {
 		if (DEBUG) console.log('prettifyꓽarray', a)
+		const parent_state = st // for passing infos up
 		st = {
 			...st,
 			circular: new Set([ ...Array.from(st.circular as any), a ]),
 		}
 		const { o } = st
 
+		const elements = a.map(e => o.prettifyꓽany(e, st)) // NOTE when fully empty, map won't execute (but it looks nice, no pb)
+		parent_state.isꓽjson = parent_state.isꓽjson && st.isꓽjson
+
 		// TODO MULTI LINE
 		return [
 			o.stylizeꓽsyntax('[')
-			+ a.map(e => o.prettifyꓽany(e, st)) // NOTE when fully empty, map won't execute (but it looks nice, no pb)
+			+ elements
 				.join(o.stylizeꓽsyntax(','))
 			+ o.stylizeꓽsyntax(']'),
 		]
@@ -163,6 +174,7 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 				try {
 					switch (obj) {
 						case globalThis:
+							st.isꓽjson = false
 							return [ o.stylizeꓽglobal('globalThis') ]
 
 						default:
@@ -179,6 +191,7 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 					const proto = Object.getPrototypeOf(obj)
 					if (proto && proto.constructor && proto.constructor.name) {
 						if (proto.constructor !== Object) {
+							st.isꓽjson = false
 							return [
 								o.stylizeꓽsyntax('new ')
 								+ ((globalThis as any)[proto.constructor.name] === proto.constructor
@@ -298,6 +311,7 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 			].flat()
 			// pass up
 			parent_state.indent_levelⵧmax = Math.max(parent_state.indent_levelⵧmax, st.indent_levelⵧmax)
+			parent_state.isꓽjson = parent_state.isꓽjson && st.isꓽjson
 
 			return [
 				o.stylizeꓽsyntax('{'),
@@ -367,10 +381,12 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 					if (any === null)
 						return [ o.prettifyꓽnull(st) ]
 
-					if (st.circular.has(any))
+					if (st.circular.has(any)) {
+						st.isꓽjson = false
 						return Array.isArray(any)
 							? [ o.stylizeꓽerror('[<Circular ref!>]') ]
 							: [ o.stylizeꓽerror('{<Circular ref!>}') ]
+					}
 
 					if (Array.isArray(any))
 						return o.prettifyꓽarray(any, st)

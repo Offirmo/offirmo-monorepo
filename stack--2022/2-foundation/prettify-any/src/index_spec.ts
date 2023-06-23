@@ -7,6 +7,7 @@ injectꓽlibꓽchalk(chalk as any)
 import {
 	prettifyꓽany as _prettify_any,
 } from './v2.js'
+import { getꓽstylize_optionsⵧansi } from './options--ansi.js'
 
 
 
@@ -14,6 +15,7 @@ describe('@offirmo-private/prettify-any', function() {
 	const should_test_verbose = false
 
 	describe('prettifyꓽany()', function() {
+		const stylizeꓽerror = getꓽstylize_optionsⵧansi(chalk).stylizeꓽerror
 		function prettifyꓽany(...args: Parameters<typeof _prettify_any>) {
 			const prettified = _prettify_any(...args)
 			if (prettified.startsWith('[error prettifying:'))
@@ -23,12 +25,21 @@ describe('@offirmo-private/prettify-any', function() {
 		function test_to_console(value: any): void {
 			console.log('≡')
 			console.log('☑ default console:', value)
+			console.log('☐ JSON.stringify :', (() => {
+				try {
+					return JSON.stringify(value)
+				}
+				catch (err) {
+					return stylizeꓽerror(`<JSON.stringify error! "${(err as any)?.message}">`)
+				}
+
+			})())
 			console.log('☐ prettyjson     :', (() => {
 				try {
 					return prettify_json(value)
 				}
 				catch (err) {
-					return '<prettyjson error!>'
+					return stylizeꓽerror(`<prettyjson error! "${(err as any)?.message}">`)
 				}
 
 			})())
@@ -317,7 +328,7 @@ describe('@offirmo-private/prettify-any', function() {
 					}]
 				}
 
-				it.only('should be able to handle deep objects -- object', () => {
+				it('should be able to handle deep objects -- object', () => {
 					//test_to_console(deep_obj)
 					console.log('☐ prettifyꓽany(…):', prettifyꓽany(deep_obj))
 				})

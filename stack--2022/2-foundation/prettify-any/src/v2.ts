@@ -15,6 +15,7 @@ function _createꓽstate(options: Options): State {
 		indent_levelⵧcurrent: 0,
 		remaining_width‿charcount: o.max_width‿charcount,
 		indent_levelⵧmax: 0,
+		isꓽjson: true, // so far
 
 		circular: new WeakSet<object>()
 	}
