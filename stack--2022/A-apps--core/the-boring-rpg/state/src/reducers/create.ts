@@ -1,6 +1,6 @@
 /////////////////////
 
-import { getꓽUTC_timestamp_ms, getꓽhuman_readable_UTC_timestamp_minutes } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 import assert from 'tiny-invariant'
 import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
 
@@ -32,7 +32,7 @@ import {
 /////////////////////
 
 import { SCHEMA_VERSION } from '../consts.js'
-import { TBRSoftExecutionContext, getꓽlib_SEC } from '../services/sec.js'
+import { TBRSoftExecutionContext, getꓽSEC } from '../services/sec.js'
 import { State } from '../types.js'
 import { EngagementKey } from '../data/engagement/index.js'
 import {
@@ -61,7 +61,7 @@ const STARTING_ARMOR_SPEC: Immutable<Partial<Armor>> = {
 }
 
 function create(SEC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable<State> {
-	return getꓽlib_SEC(SEC).xTry('create', () => {
+	return getꓽSEC(SEC).xTry('create', () => {
 		const [ u_state_energy, t_state_energy ] = EnergyState.create()
 		const now = new Date()
 		//console.log('creation', now)
@@ -69,7 +69,7 @@ function create(SEC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable
 		let state: Immutable<State> = {
 			ⵙapp_id: 'tbrpg',
 			schema_version: SCHEMA_VERSION,
-			last_user_investment_tms: getꓽUTC_timestamp_ms(now),
+			last_user_investment_tms: getꓽUTC_timestamp‿ms(now),
 
 			u_state: {
 				schema_version: SCHEMA_VERSION,
@@ -96,7 +96,7 @@ function create(SEC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable
 			},
 		}
 
-		const rng = PRNGState.get_prng(state.u_state.prng)
+		const rng = PRNGState.getꓽprng(state.u_state.prng)
 
 		const starting_weapon = create_weapon(rng, STARTING_WEAPON_SPEC)
 		state = _receive_item(state, starting_weapon)

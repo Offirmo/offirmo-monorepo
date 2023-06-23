@@ -8,7 +8,7 @@ import { RNGEngine } from '@offirmo/random'
 import * as PRNGState from '@oh-my-rpg/state-prng'
 
 import {
-	get_prng,
+	getꓽprng,
 	register_recently_used,
 	regenerate_until_not_recently_encountered,
 } from '@oh-my-rpg/state-prng'
@@ -17,7 +17,7 @@ import {
 	AdventureType,
 	AdventureArchetype,
 
-	get_archetype,
+	getꓽarchetype,
 	pick_random_good_archetype,
 	pick_random_bad_archetype,
 } from '@tbrpg/logic-adventures'

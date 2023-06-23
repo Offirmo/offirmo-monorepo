@@ -12,7 +12,7 @@ import { create_action_noop } from '@tbrpg/interfaces'
 import { end_of_current_event_loop, all_planned_idle_executed } from '@offirmo-private/async-utils'
 
 import { LIB } from '../../consts'
-import { get_lib_SEC } from '../../sec.js'
+import { getꓽSEC } from '../../sec.js'
 
 import { create, StorageKey } from '.'
 
@@ -31,11 +31,11 @@ describe(`${LIB} - store - local storage`, function() {
 		name: LIB,
 		suggestedLevel: 'silly', // change here if bug
 	})
-	let SEC = get_lib_SEC()
+	let SEC = getꓽSEC()
 	const STUB_ACTION = create_action_noop()
 
 	beforeEach(() => {
-		SEC = get_lib_SEC().createChild()
+		SEC = getꓽSEC().createChild()
 			.injectDependencies({ logger })
 		local_storage.clear()
 	})

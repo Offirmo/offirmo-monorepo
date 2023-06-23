@@ -1,7 +1,7 @@
 /////////////////////
 
 import { Immutable} from '@offirmo-private/ts-types'
-import { TimestampUTCMs, getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
 
 /////////////////////
@@ -35,7 +35,7 @@ import { reseed } from './create.js'
 
 /////////////////////
 
-function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: TimestampUTCMs = getꓽUTC_timestamp_ms()): Immutable<State> {
+function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
 	let previous_state: Immutable<State> | null = _state // allow null for special manipulation such as reset
 	let updated_state: Immutable<State> | null = _state // for now
 	let state: Immutable<State> = _state // for now

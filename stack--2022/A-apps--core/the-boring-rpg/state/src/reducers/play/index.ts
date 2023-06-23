@@ -1,7 +1,7 @@
 /////////////////////
 
 import { Immutable} from '@offirmo-private/ts-types'
-import { TimestampUTCMs, getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
 
 /////////////////////
@@ -22,7 +22,7 @@ import { _refresh_achievements } from '../achievements/index.js'
 /////////////////////
 
 // note: allows passing an explicit adventure archetype for testing
-function play(previous_state: Immutable<State>, now_ms: TimestampUTCMs = getꓽUTC_timestamp_ms(), explicit_adventure_archetype_hid?: string): Immutable<State> {
+function play(previous_state: Immutable<State>, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms(), explicit_adventure_archetype_hid?: string): Immutable<State> {
 	let updated_state = _update_to_now(previous_state, now_ms)
 	let state = updated_state
 

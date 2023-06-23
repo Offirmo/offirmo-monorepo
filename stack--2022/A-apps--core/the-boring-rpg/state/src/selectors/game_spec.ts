@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { enforce_immutability } from '@offirmo-private/state-utils'
-import { getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 

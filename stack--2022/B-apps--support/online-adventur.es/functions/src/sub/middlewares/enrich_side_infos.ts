@@ -1,4 +1,4 @@
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import {
 	OAServerResponseBody,
 	create_server_response_body__data,
@@ -51,6 +51,6 @@ export default async function enrich_side_infos(
 	//body.side.latest_news = body.side.latest_news || []
 
 	// add meta
-	//body.meta.processing_time_ms = get_UTC_timestamp_ms() - SESSION_START_TIME_MS
+	//body.meta.processing_time_ms = getꓽUTC_timestamp‿ms() - SESSION_START_TIME_MS
 	//body.meta.request_summary = `${event.httpMethod.toUpperCase()}:${event.path}`
 }

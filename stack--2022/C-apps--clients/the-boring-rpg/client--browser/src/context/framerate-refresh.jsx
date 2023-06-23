@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { asap_but_out_of_current_event_loop } from '@offirmo-private/async-utils'
 
 import ReactAnimationFrame from 'react-animation-frame'
-import {get_UTC_timestamp_ms} from '@offirmo-private/timestamps'
+import {getꓽUTC_timestamp‿ms} from '@offirmo-private/timestamps'
 
 import get_game_instance from '../services/game-instance-browser'
 import logger from '../services/logger'
@@ -43,7 +43,7 @@ class AppStateListenerAndProviderRAF extends React.Component {
 	update_to_now = throttle((time) => {
 		if (window.oᐧextra.flagꓽis_paused) return
 
-		const now_ms = get_UTC_timestamp_ms()
+		const now_ms = getꓽUTC_timestamp‿ms()
 
 		if (!this.time_1st_iteration) {
 			// debug

@@ -4,13 +4,13 @@ import assert from 'tiny-invariant'
 import EventEmitter from 'emittery'
 import deep_merge from 'deepmerge'
 import { Enum } from 'typescript-string-enums'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { Immutable, Storage } from '@offirmo-private/ts-types'
 import * as TBRPGState from '@tbrpg/state'
 import { State } from '@tbrpg/state'
 import { Action} from '@tbrpg/interfaces'
 import { asap_but_out_of_current_event_loop, schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
-import { get_revision } from '@offirmo-private/state-utils'
+import { getꓽrevision } from '@offirmo-private/state-utils'
 
 
 import { LIB } from './consts'
@@ -133,7 +133,7 @@ function create_game_instance<T extends AppState>({SEC, local_storage, app_state
 			logger.log('⚡ action dispatched:', { action: debug })
 
 			// complete "action" object that may be missing some parts
-			action.time = action.time || get_UTC_timestamp_ms()
+			action.time = action.time || getꓽUTC_timestamp‿ms()
 			const state: Immutable<State> = in_memory_store.get()
 			Object.keys(action.expected_revisions).forEach(sub_state_key => {
 				if (action.expected_revisions[sub_state_key] === -1) {
@@ -199,7 +199,7 @@ function create_game_instance<T extends AppState>({SEC, local_storage, app_state
 
 				subscribe(id: string, fn: () => void): () => void {
 					const unbind = emitter.on(Event.view_change, (src: string) => {
-						logger.trace(`🌀🌀 root/view change reported to subscriber "${id}" (model: rev#${get_revision(in_memory_store.get())}, source: view/${src})`)
+						logger.trace(`🌀🌀 root/view change reported to subscriber "${id}" (model: rev#${getꓽrevision(in_memory_store.get())}, source: view/${src})`)
 						fn()
 					})
 					return unbind

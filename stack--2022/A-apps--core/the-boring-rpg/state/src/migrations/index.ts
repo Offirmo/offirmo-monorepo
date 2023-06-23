@@ -7,7 +7,7 @@ import {
 	CleanupStep,
 	generic_migrate_to_latest,
 } from '@offirmo-private/state-utils'
-import { getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import * as CharacterState from '@tbrpg/state--character'
 import * as WalletState from '@tbrpg/state-wallet'
@@ -164,7 +164,7 @@ const migrate_to_15: MigrationStep = (SEC, legacy_state, hints, previous, legacy
 
 	// minor migration: cleanup uuid field
 	const { last_user_action_tms, creation_date: creation_date_hrtmin, uuid, ...rest__u_state } = legacy_state.u_state
-	const last_user_investment_tms = last_user_action_tms ?? getꓽUTC_timestamp_ms()
+	const last_user_investment_tms = last_user_action_tms ?? getꓽUTC_timestamp‿ms()
 
 	//console.log('@@@@@', { last_user_action_tms, creation_date_hrtmin, uuid, schema_version: legacy_state.schema_version })
 	let state = {

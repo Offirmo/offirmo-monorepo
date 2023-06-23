@@ -1,5 +1,5 @@
 import { Immutable } from '@offirmo-private/ts-types'
-import { TimestampUTCMs, get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { UUID } from '@offirmo-private/uuid'
 import { CharacterClass } from '@tbrpg/state--character'
 import { State } from '@tbrpg/state'
@@ -35,7 +35,7 @@ export function get_commands(
 ) {
 
 	const commands = {
-		play(time: TimestampUTCMs = get_UTC_timestamp_ms()) {
+		play(time: TimestampUTCMs = getꓽUTC_timestamp‿ms()) {
 			const action: ActionPlay = {
 				time,
 				type: ActionType.play,
@@ -45,7 +45,7 @@ export function get_commands(
 			}
 			dispatch(action)
 		},
-		equip_item(target_uuid: UUID, time: TimestampUTCMs = get_UTC_timestamp_ms()) {
+		equip_item(target_uuid: UUID, time: TimestampUTCMs = getꓽUTC_timestamp‿ms()) {
 			const action: ActionEquipItem = {
 				time,
 				type: ActionType.equip_item,
@@ -56,7 +56,7 @@ export function get_commands(
 			}
 			dispatch(action)
 		},
-		sell_item(target_uuid: UUID, time: TimestampUTCMs = get_UTC_timestamp_ms()) {
+		sell_item(target_uuid: UUID, time: TimestampUTCMs = getꓽUTC_timestamp‿ms()) {
 			const action: ActionSellItem = {
 				time,
 				type: ActionType.sell_item,
@@ -67,7 +67,7 @@ export function get_commands(
 			}
 			dispatch(action)
 		},
-		rename_avatar(new_name: string, time: TimestampUTCMs = get_UTC_timestamp_ms()) {
+		rename_avatar(new_name: string, time: TimestampUTCMs = getꓽUTC_timestamp‿ms()) {
 			const action: ActionRenameAvatar = {
 				time,
 				type: ActionType.rename_avatar,
@@ -78,7 +78,7 @@ export function get_commands(
 			}
 			dispatch(action)
 		},
-		change_avatar_class(new_class: CharacterClass, time: TimestampUTCMs = get_UTC_timestamp_ms()) {
+		change_avatar_class(new_class: CharacterClass, time: TimestampUTCMs = getꓽUTC_timestamp‿ms()) {
 			const action: ActionChangeAvatarClass = {
 				time,
 				type: ActionType.change_avatar_class,
@@ -89,7 +89,7 @@ export function get_commands(
 			}
 			dispatch(action)
 		},
-		attempt_to_redeem_code(code: string, time: TimestampUTCMs = get_UTC_timestamp_ms()) {
+		attempt_to_redeem_code(code: string, time: TimestampUTCMs = getꓽUTC_timestamp‿ms()) {
 			const action: ActionRedeemCode = {
 				time,
 				type: ActionType.redeem_code,
@@ -100,7 +100,7 @@ export function get_commands(
 		},
 
 		start_game() { throw new Error(`[${LIB}] unexpected start_game !`)},
-		on_start_session(is_web_diversity_supporter: boolean, time: TimestampUTCMs = get_UTC_timestamp_ms()) {
+		on_start_session(is_web_diversity_supporter: boolean, time: TimestampUTCMs = getꓽUTC_timestamp‿ms()) {
 			const action: ActionStartSession = {
 				time,
 				type: ActionType.on_start_session,
@@ -109,7 +109,7 @@ export function get_commands(
 			}
 			dispatch(action)
 		},
-		on_logged_in_refresh(is_logged_in: boolean, roles: string[] = [], time: TimestampUTCMs = get_UTC_timestamp_ms()) {
+		on_logged_in_refresh(is_logged_in: boolean, roles: string[] = [], time: TimestampUTCMs = getꓽUTC_timestamp‿ms()) {
 			const action: ActionUpdateLoggedInInfos = {
 				time,
 				type: ActionType.on_logged_in_refresh,
@@ -119,7 +119,7 @@ export function get_commands(
 			}
 			dispatch(action)
 		},
-		acknowledge_engagement_msg_seen(uid: number, time: TimestampUTCMs = get_UTC_timestamp_ms()) {
+		acknowledge_engagement_msg_seen(uid: number, time: TimestampUTCMs = getꓽUTC_timestamp‿ms()) {
 			const action: ActionAcknowledgeEngagementMsgSeen = {
 				time,
 				type: ActionType.acknowledge_engagement_msg_seen,
@@ -128,7 +128,7 @@ export function get_commands(
 			}
 			dispatch(action)
 		},
-		update_to_now(time: TimestampUTCMs = get_UTC_timestamp_ms()) {
+		update_to_now(time: TimestampUTCMs = getꓽUTC_timestamp‿ms()) {
 			const action: ActionUpdateToNow = {
 				time,
 				type: ActionType.update_to_now,
@@ -140,7 +140,7 @@ export function get_commands(
 		set(state: Immutable<State>) {
 			dispatch(create_action__set(state))
 		},
-		custom(custom_reducer: ActionHack['custom_reducer'], time: TimestampUTCMs = get_UTC_timestamp_ms()) {
+		custom(custom_reducer: ActionHack['custom_reducer'], time: TimestampUTCMs = getꓽUTC_timestamp‿ms()) {
 			const action: ActionHack = {
 				time,
 				type: ActionType.hack,

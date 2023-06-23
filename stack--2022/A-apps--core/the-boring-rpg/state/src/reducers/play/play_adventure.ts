@@ -19,7 +19,7 @@ import * as InventoryState from '@tbrpg/state--inventory'
 import * as WalletState from '@tbrpg/state-wallet'
 import * as PRNGState from '@oh-my-rpg/state-prng'
 import {
-	get_prng,
+	getꓽprng,
 	register_recently_used,
 	regenerate_until_not_recently_encountered,
 } from '@oh-my-rpg/state-prng'
@@ -188,7 +188,7 @@ function instantiate_adventure_archetype(
 
 	if (should_gain.armor_or_weapon) {
 		// TODO take into account the existing inventory?
-		if (get_random.generator_of.bool()(rng))
+		if (getꓽrandom.generator_of.bool()(rng))
 			should_gain.armor = true
 		else
 			should_gain.weapon = true
@@ -196,7 +196,7 @@ function instantiate_adventure_archetype(
 	if (should_gain.improvementⵧarmor_or_weapon) {
 		if (is_weapon_at_max_enhancement(InventoryState.get_slotted_weapon(inventory)!)) // most likely to happen
 			should_gain.improvementⵧarmor = true
-		else if (get_random.generator_of.bool()(rng))
+		else if (getꓽrandom.generator_of.bool()(rng))
 			should_gain.improvementⵧarmor = true
 		else
 			should_gain.improvementⵧweapon = true

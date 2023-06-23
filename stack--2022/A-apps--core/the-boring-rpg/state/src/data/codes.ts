@@ -1,5 +1,5 @@
 import { Immutable} from '@offirmo-private/ts-types'
-import { getꓽhuman_readable_UTC_timestamp_minutes } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 
 import { CodeSpec, normalize_code, State as ProgressState } from '@oh-my-rpg/state-codes'
 
@@ -7,7 +7,7 @@ import { State } from '../types.js'
 import {
 	is_alpha,
 	is_registered_alpha_player,
-	get_available_energy_float,
+	getꓽavailable_energy‿float,
 } from '../selectors/index.js'
 
 ////////////
@@ -54,14 +54,14 @@ const POWER_CODES: Immutable<{ [key: string]: Immutable<Partial<CodeSpec<State>>
 	BORED: {
 		redeem_limit: null,
 		is_redeemable: (state: Immutable<State>, progress_state: Immutable<ProgressState>) => {
-			const has_energy_depleted = getꓽavailable_energy_float(state.t_state) < 1.
+			const has_energy_depleted = getꓽavailable_energy‿float(state.t_state) < 1.
 			if (!has_energy_depleted)
 				return false
 
 			if (!progress_state.redeemed_codes['BORED'])
 				return true
 
-			const now_minutes = getꓽhuman_readable_UTC_timestamp_minutes()
+			const now_minutes = getꓽUTC_timestampⵧhuman_readable‿minutes()
 			const last_redeem_date_minutes = progress_state.redeemed_codes['BORED']!.last_redeem_date_minutes
 			const is_same_day = now_minutes.slice(0, 8) === last_redeem_date_minutes.slice(0, 8)
 			return !is_same_day

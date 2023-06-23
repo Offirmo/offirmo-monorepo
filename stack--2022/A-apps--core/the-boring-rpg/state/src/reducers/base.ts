@@ -2,7 +2,7 @@
 
 import { Immutable} from '@offirmo-private/ts-types'
 import { UUID } from '@offirmo-private/uuid'
-import { TimestampUTCMs, getꓽUTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
 
 /////////////////////
@@ -25,7 +25,7 @@ import * as MetaState from '@oh-my-rpg/state-meta'
 
 import { LIB } from '../consts.js'
 import { State } from '../types.js'
-import { getꓽlib_SEC } from '../services/sec.js'
+import { getꓽSEC } from '../services/sec.js'
 import { getꓽavailable_classes } from '../selectors/index.js'
 
 import { _refresh_achievements } from './achievements/index.js'
@@ -36,7 +36,7 @@ import {
 
 /////////////////////
 
-function on_start_session(previous_state: Immutable<State>, is_web_diversity_supporter: boolean, now_ms: TimestampUTCMs = getꓽUTC_timestamp_ms()): Immutable<State> {
+function on_start_session(previous_state: Immutable<State>, is_web_diversity_supporter: boolean, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
 	// update energy (not sure needed but good safety)
 	let state = _update_to_now(previous_state, now_ms)
 
@@ -59,7 +59,7 @@ function on_start_session(previous_state: Immutable<State>, is_web_diversity_sup
 	return _refresh_achievements(state)
 }
 
-function on_logged_in_refresh(previous_state: Immutable<State>, is_logged_in: boolean, roles: Immutable<string[]> = [], now_ms: TimestampUTCMs = getꓽUTC_timestamp_ms()): Immutable<State> {
+function on_logged_in_refresh(previous_state: Immutable<State>, is_logged_in: boolean, roles: Immutable<string[]> = [], now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
 	// update energy (not sure needed but good safety)
 	let updated_state = _update_to_now(previous_state, now_ms)
 	let state = updated_state
@@ -81,11 +81,11 @@ function on_logged_in_refresh(previous_state: Immutable<State>, is_logged_in: bo
 	return state
 }
 
-function update_to_now(state: Immutable<State>, now_ms: TimestampUTCMs = getꓽUTC_timestamp_ms()): Immutable<State> {
+function update_to_now(state: Immutable<State>, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
 	return _update_to_now(state, now_ms)
 }
 
-function equip_item(previous_state: Immutable<State>, uuid: UUID, now_ms: TimestampUTCMs = getꓽUTC_timestamp_ms()): Immutable<State> {
+function equip_item(previous_state: Immutable<State>, uuid: UUID, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
 	let state = previous_state
 	state = {
 		...state,
@@ -101,7 +101,7 @@ function equip_item(previous_state: Immutable<State>, uuid: UUID, now_ms: Timest
 	return _refresh_achievements(state)
 }
 
-function sell_item(previous_state: Immutable<State>, uuid: UUID, now_ms: TimestampUTCMs = getꓽUTC_timestamp_ms()): Immutable<State> {
+function sell_item(previous_state: Immutable<State>, uuid: UUID, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
 	let state = previous_state
 	state = _sell_item(state, uuid)
 	state = {
@@ -117,7 +117,7 @@ function sell_item(previous_state: Immutable<State>, uuid: UUID, now_ms: Timesta
 	return _refresh_achievements(state)
 }
 
-function rename_avatar(previous_state: Immutable<State>, new_name: string, now_ms: TimestampUTCMs = getꓽUTC_timestamp_ms()): Immutable<State> {
+function rename_avatar(previous_state: Immutable<State>, new_name: string, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
 	let state = previous_state
 	state = {
 		...state,
@@ -125,7 +125,7 @@ function rename_avatar(previous_state: Immutable<State>, new_name: string, now_m
 
 		u_state: {
 			...state.u_state,
-			avatar: rename(get_lib_SEC(), state.u_state.avatar, new_name),
+			avatar: rename(getꓽSEC(), state.u_state.avatar, new_name),
 			revision: previous_state.u_state.revision + 1,
 		},
 	}
@@ -133,7 +133,7 @@ function rename_avatar(previous_state: Immutable<State>, new_name: string, now_m
 	return _refresh_achievements(state)
 }
 
-function change_avatar_class(previous_state: Immutable<State>, new_class: CharacterClass, now_ms: TimestampUTCMs = getꓽUTC_timestamp_ms()): Immutable<State> {
+function change_avatar_class(previous_state: Immutable<State>, new_class: CharacterClass, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
 	if (!get_available_classes(previous_state.u_state).includes(new_class))
 		throw new Error(`${LIB}: switch class: invalid class "${new_class}"!`)
 
@@ -144,7 +144,7 @@ function change_avatar_class(previous_state: Immutable<State>, new_class: Charac
 
 		u_state: {
 			...state.u_state,
-			avatar: switch_class(get_lib_SEC(), state.u_state.avatar, new_class),
+			avatar: switch_class(getꓽSEC(), state.u_state.avatar, new_class),
 			revision: previous_state.u_state.revision + 1,
 		},
 	}
@@ -152,7 +152,7 @@ function change_avatar_class(previous_state: Immutable<State>, new_class: Charac
 	return _refresh_achievements(state)
 }
 
-function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, uid: number, now_ms: TimestampUTCMs = getꓽUTC_timestamp_ms()): Immutable<State> {
+function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, uid: number, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
 	let state = previous_state
 	state = {
 		...state,

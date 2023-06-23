@@ -2,7 +2,7 @@
 
 import { Immutable} from '@offirmo-private/ts-types'
 import { getꓽrandom, getꓽengine } from '@offirmo/random'
-import { getꓽhuman_readable_UTC_timestamp_days } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestampⵧhuman_readable‿days } from '@offirmo-private/timestamps'
 import { getꓽrevision, complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
 
 /////////////////////
@@ -108,7 +108,7 @@ function _autoplay(previous_state: Immutable<State>, options: Immutable<{ target
 
 	let last_visited_timestamp_num = (() => {
 		const days_needed = Math.ceil((target_good_play_count - state.u_state.progress.statistics.good_play_count) / 8) // TODO magic number!!!
-		const from_now = Number(get_human_readable_UTC_timestamp_days()) - days_needed
+		const from_now = Number(getꓽUTC_timestampⵧhuman_readable‿days()) - days_needed
 		return Math.min(from_now, Number(state.u_state.progress.statistics.last_visited_timestamp_hrtday))
 	})()
 	if (last_visited_timestamp_num !== Number(state.u_state.progress.statistics.last_visited_timestamp_hrtday)) {

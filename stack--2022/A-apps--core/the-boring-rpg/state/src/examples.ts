@@ -12,7 +12,7 @@ import { DEMO_MONSTER_01 } from '@tbrpg/logic-monsters'
 
 import { State, Adventure } from './types.js'
 import { cleanup } from './migrations/index.js'
-import { getꓽlib_SEC } from './services/sec.js'
+import { getꓽSEC } from './services/sec.js'
 
 /////////////////////
 
@@ -114,7 +114,7 @@ const DEMO_ADVENTURE_04: Immutable<Adventure> = enforce_immutability<Adventure>(
 
 // can't build an example from disconnected sample states.
 // taken from a real savegame:
-const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(get_lib_SEC(), {
+const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(getꓽSEC(), {
 	ⵙapp_id: 'tbrpg',
 	'schema_version': 16,
 	last_user_investment_tms: 1598854698575,
@@ -631,7 +631,7 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(get_lib
 	},
 }, {}))
 
-/*const FAKE_DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(get_lib_SEC(), {
+/*const FAKE_DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(getꓽSEC(), {
 	schema_version: SCHEMA_VERSION,
 	last_user_investment_tms: TEST_TIMESTAMP_MS,
 
@@ -639,7 +639,7 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(get_lib
 		schema_version: SCHEMA_VERSION,
 		revision: 203,
 
-		creation_date: getꓽhuman_readable_UTC_timestamp_minutes(new Date(TEST_TIMESTAMP_MS)),
+		creation_date: getꓽUTC_timestampⵧhuman_readable‿minutes(new Date(TEST_TIMESTAMP_MS)),
 
 		avatar: Character.DEMO_STATE,
 		inventory: Inventory.DEMO_STATE,
