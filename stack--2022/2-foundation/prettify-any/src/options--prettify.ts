@@ -1,14 +1,4 @@
-import { EOL } from 'os'
-
-import getꓽterminal_size from 'term-size'
-import toꓽstringⵧwithout_ansi from 'strip-ansi';
-
-import {
-	RenderOptions,
-	PrettifyOptions,
-	StylizeOptions,
-	State,
-} from './types.js'
+import { PrettifyOptions, State } from './types.js'
 import {
 	isꓽnegative_zero,
 	cmp,
@@ -16,37 +6,46 @@ import {
 
 /////////////////////////////////////////////////
 
-const DEFAULTS_STYLE_OPTIONS: RenderOptions = {
-	eol: EOL as RenderOptions['eol'],
-	max_width‿charcount: getꓽterminal_size().columns,
-	outline: false,
-	indent_size‿charcount: 3,
-	max_primitive_str_size: null,
-	should_recognize_constants: true,
-	should_recognize_globals: true,
-	quote: '\'',
-	date_serialization_fn: 'toLocaleString',
-}
+function _set_monoline(st: State): State {
+	if (!st.o.eol)
+		return st // already monoline
 
-const DEFAULTS_STYLIZE_OPTIONS__NONE: StylizeOptions = {
-	stylizeꓽdim: (s: string) => s,
-	stylizeꓽsuspicious: (s: string) => s,
-	stylizeꓽerror: (s: string) => s,
-	stylizeꓽglobal: (s: string) => s,
-	stylizeꓽprimitive: (s: string) => s,
-	stylizeꓽsyntax: (s: string) => s,
-	stylizeꓽuser: (s: string) => s,
+	return {
+		...st,
+		o: {
+			...st.o,
+			eol: '',
+			indent_size‿charcount: 0,
+		},
+		indent_string: '',
+	}
+}
+function _increase_indentation(st: State): State {
+	return {
+		...st,
+		indent_levelⵧcurrent: st.indent_levelⵧcurrent + 1,
+		remaining_width‿charcount: st.remaining_width‿charcount - st.o.indent_size‿charcount,
+		indent_levelⵧmax: Math.max(st.indent_levelⵧmax, st.indent_levelⵧcurrent + 1),
+	}
 }
 
 const DEBUG = false
-const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
-	never_throw: true,
-	sort_keys: false,
+const OPTIONS__PRETTIFYⵧDEFAULT: PrettifyOptions = {
+	can_throw: false, // common usage is to debug, we need to always work
 
-	// primitives
-	prettifyꓽstring: (s: string, st: State) => {
+	// primitives, in order of https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values
+	prettifyꓽnull: (st: State) => {
+		if (DEBUG) console.log('prettifyꓽnull')
 		const { o } = st
-		return o.stylizeꓽdim(o.quote) + o.stylizeꓽuser(s) + o.stylizeꓽdim(o.quote)
+		return o.stylizeꓽprimitive('null')
+	},
+	prettifyꓽundefined: (u: undefined, st: State) => {
+		const { o } = st
+		return o.stylizeꓽsuspicious(String(u))
+	},
+	prettifyꓽboolean: (b: boolean, st: State) => {
+		const { o } = st
+		return o.stylizeꓽprimitive(String(b))
 	},
 	prettifyꓽnumber: (n: number, st: State) => {
 		const { o } = st
@@ -89,13 +88,9 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 		const { o } = st
 		return o.stylizeꓽprimitive(String(b) + 'n')
 	},
-	prettifyꓽboolean: (b: boolean, st: State) => {
+	prettifyꓽstring: (s: string, st: State) => {
 		const { o } = st
-		return o.stylizeꓽprimitive(String(b))
-	},
-	prettifyꓽundefined: (u: undefined, st: State) => {
-		const { o } = st
-		return o.stylizeꓽsuspicious(String(u))
+		return o.stylizeꓽdim(o.quote) + o.stylizeꓽuser(s) + o.stylizeꓽdim(o.quote)
 	},
 	prettifyꓽsymbol: (s: symbol, st: State) => {
 		st.isꓽjson = false
@@ -112,12 +107,7 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 		}
 	},
 
-	// objects
-	prettifyꓽnull: (st: State) => {
-		if (DEBUG) console.log('prettifyꓽnull')
-		const { o } = st
-		return o.stylizeꓽprimitive('null')
-	},
+	// "objects"
 	prettifyꓽfunction: (f: Function, st: State, { as_prop = false } = {}) => {
 		st.isꓽjson = false
 		const { o } = st
@@ -148,13 +138,18 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 	prettifyꓽarray: (a: Array<any>, st: State) => {
 		if (DEBUG) console.log('prettifyꓽarray', a)
 		const parent_state = st // for passing infos up
+		st = _set_monoline(st)
 		st = {
 			...st,
 			circular: new Set([ ...Array.from(st.circular as any), a ]),
 		}
 		const { o } = st
 
-		const elements = a.map(e => o.prettifyꓽany(e, st)) // NOTE when fully empty, map won't execute (but it looks nice, no pb)
+		const elements = a
+			// NOTE when fully empty, map won't execute (but it looks nice, no pb)
+			.map(e => o.prettifyꓽany(e, st))
+			.map(lines => lines.join(''))
+
 		parent_state.isꓽjson = parent_state.isꓽjson && st.isꓽjson
 
 		// TODO MULTI LINE
@@ -165,7 +160,7 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 			+ o.stylizeꓽsyntax(']'),
 		]
 	},
-	prettifyꓽobject: (obj: Object, st: State, { skip_constructor = false } = {}): string[] => {
+	prettifyꓽobject: (obj: Object, st: State, { display_constructor = true } = {}): string[] => {
 		if (DEBUG) console.log('prettifyꓽobject', obj)
 		const { o } = st
 
@@ -186,7 +181,7 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 				}
 			}
 
-			if (!skip_constructor) {
+			if (display_constructor) {
 				try {
 					const proto = Object.getPrototypeOf(obj)
 					if (proto && proto.constructor && proto.constructor.name) {
@@ -235,8 +230,8 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 											}
 
 											// Beware! This can turn into a huge thing, ex. a fetch response
-											// REM we MUST have skip_constructor = true to avoid infinite loops
-											return o.prettifyꓽobject(obj, st, { skip_constructor: true })
+											// REM we MUST NOT have display_constructor = true to avoid infinite loops
+											return o.prettifyꓽobject(obj, st, { display_constructor: false })
 										//return '/*…*/'
 									}
 								})()
@@ -252,12 +247,14 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 
 			const keys = Reflect.ownKeys(obj)
 
-			if (keys.length === 0 && skip_constructor)
+			if (keys.length === 0) {
+				// ??? TODO why this specific path?
 				return [ o.stylizeꓽdim(`/*${obj.toString()}*/`) ]
+			}
 
 			///// display as hash:
 
-			if (o.sort_keys)
+			if (o.should_sort_keys)
 				keys.sort((a: string | number | symbol, b: string | number | symbol) => {
 					let res = cmp(typeof a, typeof b)
 
@@ -269,53 +266,63 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 				})
 
 			const parent_state = st // for passing infos up
+			st = _increase_indentation(st)
 			st = {
 				...st,
-				indent_levelⵧcurrent: st.indent_levelⵧcurrent + 1,
-				remaining_width‿charcount: st.remaining_width‿charcount - o.indent_size‿charcount,
-				indent_levelⵧmax: Math.max(st.indent_levelⵧmax, st.indent_levelⵧcurrent + 1),
 				circular: new Set([ ...Array.from(st.circular as any), obj ]),
 			}
 
-			const trailing_comma = o.stylizeꓽsyntax(',')
-			let lines: string[] = [
-				...keys.map((k): string[] | string => {
-					const v = (obj as any)[k]
+			const trailing_comma = 'o' + o.stylizeꓽsyntax(',') + 'o'
+			let kvs: string[][] = keys.map((k): string[] => {
+				const v = (obj as any)[k]
 
-					if (typeof v === 'function' && v.name === k)
-						return [ o.prettifyꓽfunction(v, st, { as_prop: true }) ]
+				if (typeof v === 'function' && v.name === k) {
+					// special display
+					return [ o.prettifyꓽfunction(v, st, { as_prop: true }) ]
+				}
 
-					const key = o.prettifyꓽproperty__name(k, st)
-					let sub_lines = o.prettifyꓽany(v, st)
+				const key = o.prettifyꓽproperty__name(k, st)
+				let sub_lines = o.prettifyꓽany(v, st)
 
-					/*
-					const max_remaining_length‿charcount = o.max_width‿charcount - st.indent_levelⵧcurrent * o.indent_size‿charcount - toꓽstringⵧwithout_ansi(key).length - 1
-					if (toꓽstringⵧwithout_ansi(sub_lines.join(',')).length < max_remaining_length‿charcount) {
-						// coerce into a single line
-						sub_lines = [
-							sub_lines.join(', '),
-						]
-					}
-*/
-					if (sub_lines.length === 1) {
-						// merge into a single line
-						return key + o.stylizeꓽsyntax(': ') + sub_lines[0] + trailing_comma
-					}
-
-					return [
-						key + o.stylizeꓽsyntax(': ') + sub_lines[0],
-						...sub_lines.slice(1, -1),
-						...sub_lines.slice(-1).map(s => s + trailing_comma),
+				/*
+				const max_remaining_length‿charcount = o.max_width‿charcount - st.indent_levelⵧcurrent * o.indent_size‿charcount - toꓽstringⵧwithout_ansi(key).length - 1
+				if (toꓽstringⵧwithout_ansi(sub_lines.join(',')).length < max_remaining_length‿charcount) {
+					// coerce into a single line
+					sub_lines = [
+						sub_lines.join(', '),
 					]
-				}),
-			].flat()
-			// pass up
+				}
+*/
+
+				return [
+					key + o.stylizeꓽsyntax(': ') + sub_lines[0],
+					...sub_lines.slice(1),
+				]
+			})
+
+			if (kvs.length > 1 || o.eol) {
+				// separate entries with commas
+				kvs = [
+					...kvs.slice(0, -1).map(sub_lines => {
+						return [
+							...sub_lines.slice(0, -1),
+							...sub_lines.slice(-1).map(s => s + trailing_comma),
+						]
+					}),
+					...kvs.slice(-1)
+
+					]
+			}
+			let lines: string[] = kvs.flat()
+
+			// pass some infos up
 			parent_state.indent_levelⵧmax = Math.max(parent_state.indent_levelⵧmax, st.indent_levelⵧmax)
 			parent_state.isꓽjson = parent_state.isꓽjson && st.isꓽjson
 
 			return [
 				o.stylizeꓽsyntax('{'),
-				...lines.map(s => st.indent_string + s),
+				...lines.slice(1, -1).map(s => st.indent_string + s),
+				...lines.slice(-1),
 				o.stylizeꓽsyntax('}'),
 			]
 		}
@@ -407,7 +414,5 @@ const DEFAULTS_PRETTIFY_OPTIONS: PrettifyOptions = {
 /////////////////////////////////////////////////
 
 export {
-	DEFAULTS_STYLE_OPTIONS,
-	DEFAULTS_STYLIZE_OPTIONS__NONE,
-	DEFAULTS_PRETTIFY_OPTIONS,
+	OPTIONS__PRETTIFYⵧDEFAULT,
 }

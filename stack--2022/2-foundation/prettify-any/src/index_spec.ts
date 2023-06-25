@@ -7,7 +7,7 @@ injectꓽlibꓽchalk(chalk as any)
 import {
 	prettifyꓽany as _prettify_any,
 } from './v2.js'
-import { getꓽstylize_optionsⵧansi } from './options--ansi.js'
+import { getꓽstylize_optionsⵧansi } from './options--stylize--ansi.js'
 
 
 
@@ -25,6 +25,14 @@ describe('@offirmo-private/prettify-any', function() {
 		function test_to_console(value: any): void {
 			console.log('≡')
 			console.log('☑ default console:', value)
+			console.log('☐ .toString      :', (() => {
+				try {
+					return String(value)
+				}
+				catch (err) {
+					return stylizeꓽerror(`<.toString error! "${(err as any)?.message}">`)
+				}
+			})())
 			console.log('☐ JSON.stringify :', (() => {
 				try {
 					return JSON.stringify(value)
@@ -43,7 +51,7 @@ describe('@offirmo-private/prettify-any', function() {
 				}
 
 			})())
-			console.log('☐ prettifyꓽany(…):', prettifyꓽany(value, {never_throw: false}))
+			console.log('☐ prettifyꓽany(…):', prettifyꓽany(value, {can_throw: true}))
 		}
 
 		describe('handling of primitive type/values', function() {
@@ -112,32 +120,58 @@ describe('@offirmo-private/prettify-any', function() {
 			})
 
 			describe('arrays', function() {
-				it('should work with elements being primitive types', () => {
-					test_to_console([ 'foo', 'bar', 42, Symbol('key') ])
+
+				it('should work -- tuple -- 0', () => {
+					test_to_console([])
 				})
 
-				it('should work with elements being non-primitive types', () => {
-					test_to_console([ () => {}, { foo: 'bar'} ])
+				context('with elements being primitive types', function () {
+
+					it('should work -- tuple -- 1', () => {
+						test_to_console(['foo'])
+					})
+
+					it('should work -- tuple -- 2', () => {
+						test_to_console(['foo', 'bar'])
+					})
+
+					it('should work -- assortment', () => {
+						test_to_console([ 'foo', 'bar', 42, Symbol('key') ])
+					})
 				})
 
-				it('should work with depth', () => {
+				context('with elements being non-primitive types', function () {
+
+					it('should work -- simple', () => {
+						test_to_console([{ foo: 'bar' }])
+					})
+
+					it('should work -- assortment', () => {
+						test_to_console([
+							() => {},
+							{ foo: 'bar' },
+						])
+					})
+				})
+
+				it('should work -- depth', () => {
 					test_to_console([ [ 0 ], [ 1, 2 ] ])
 				})
 
-				it('should work with holes', () => {
+				it('should work -- holes', () => {
 					test_to_console(new Array(5))
 					const a = new Array(5)
 					a[3] = 3
 					test_to_console(a)
 				})
 
-				it('should work with repeated references (NOT circular)', () => {
+				it('should work -- repeated references (NOT circular)', () => {
 					const r: any = { foo: '42' }
 					const a = [ r, r ]
 					test_to_console(a)
 				})
 
-				it('should work with circular references', () => {
+				it('should work -- circular references', () => {
 					const a: any[] = []
 					a.push(a)
 					test_to_console(a)
@@ -145,7 +179,12 @@ describe('@offirmo-private/prettify-any', function() {
 			})
 
 			describe('objects/hashes', function() {
-				it('should work with attributes of primitive types  (key + value)', () => {
+
+				it('should work -- trivial object', () => {
+					test_to_console({ foo: 42 })
+				})
+
+				it('should work -- attributes of primitive types  (key + value)', () => {
 					test_to_console({
 						k: undefined,
 						23: null,
@@ -154,7 +193,7 @@ describe('@offirmo-private/prettify-any', function() {
 					})
 				})
 
-				it('should work with attributes of non-primitive types  (key + value)', () => {
+				it('should work -- attributes of non-primitive types  (key + value)', () => {
 					test_to_console({
 						foo() {},
 						.2e3: {
@@ -163,7 +202,7 @@ describe('@offirmo-private/prettify-any', function() {
 					})
 				})
 
-				it('should work with attributes of pure JSON', () => {
+				it('should work -- attributes of pure JSON', () => {
 					test_to_console({
 						foo: 42,
 						bar: 'baz',
@@ -174,56 +213,60 @@ describe('@offirmo-private/prettify-any', function() {
 					})
 				})
 
-				it('should work with attributes = repeated references', () => {
+				it('should work -- attributes = repeated references', () => {
 					const r: any = { foo: '42' }
 					const obj: any = { bar: r, baz: r }
 					test_to_console(obj)
 				})
 
-				it('should work with attributes containing circular references', () => {
+				it('should work -- attributes containing circular references', () => {
 					const obj: any = { foo: '42' }
 					obj.bar = obj
 					test_to_console(obj)
 				})
 			})
 
-			it('should work with complex circular references -- array + hashes', () => {
-				const o: any = { circular: true }
-				const a: any[] = [ 'circular' ]
-				o.a = a
-				a.push(o)
+			describe('circular references', function () {
 
-				test_to_console(o)
-			})
-			it('should work with complex circular references -- cross', () => {
-				const o1: any = { id: 1 }
-				const o2: any = { id: 2 }
-				o1.ref = o2
-				o2.ref = o1
+				it('should work -- array + hashes', () => {
+					const o: any = { circular: true }
+					const a: any[] = [ 'circular' ]
+					o.a = a
+					a.push(o)
 
-				test_to_console({ o1, o2 })
+					test_to_console(o)
+				})
+
+				it('should work -- cross', () => {
+					const o1: any = { id: 1 }
+					const o2: any = { id: 2 }
+					o1.ref = o2
+					o2.ref = o1
+
+					test_to_console({ o1, o2 })
+				})
 			})
 
 			describe('other object', function() {
 
-				it('should work with objects -- base', () => {
+				it('should work -- with objects -- base', () => {
 					test_to_console({})
 					test_to_console(new Object())
 				})
 
-				it('should work with objects -- no proto', () => {
+				it('should work -- with objects -- no proto', () => {
 					test_to_console(Object.create(null))
 				})
 
-				it('should work with objects -- this', () => {
+				it('should work -- with objects -- this', () => {
 					if (should_test_verbose) test_to_console(this)
 				})
 
-				it('should work with objects -- known global', () => {
+				it('should work -- with objects -- known global', () => {
 					if (should_test_verbose) test_to_console(globalThis)
 				})
 
-				it('should work with common object types: function', () => {
+				it('should work -- with common object types: function', () => {
 					test_to_console((a: number) => {})
 					test_to_console(function foo(a: number) {})
 					test_to_console(Number)
@@ -233,12 +276,12 @@ describe('@offirmo-private/prettify-any', function() {
 					test_to_console({ bar: (a: number) => {} }) // unnamed in an object
 				})
 
-				it('should work with common object types: Error', () => {
+				it('should work -- with common object types: Error', () => {
 					test_to_console(new Error('foo!'))
 					test_to_console(new TypeError('foo!'))
 				})
 
-				it('should work with common object types: Set', () => {
+				it('should work -- with common object types: Set', () => {
 					const s0 = new Set()
 					test_to_console(s0)
 
@@ -261,22 +304,22 @@ describe('@offirmo-private/prettify-any', function() {
 					test_to_console(ws1)
 				})
 
-				it('should work with common object types: Map', () => {
+				it('should work -- with common object types: Map', () => {
 					test_to_console(new Map())
 				})
 
-				it('should work with common object types: primitive types in their object form', () => {
+				it('should work -- with common object types: primitive types in their object form', () => {
 					test_to_console(new String('string'))
 					test_to_console(new Number(42))
 					test_to_console(new Boolean(true))
 				})
 
-				it('should work with common object types: Date', () => {
+				it('should work -- with common object types: Date', () => {
 					const d1 = new Date()
 					test_to_console(d1)
 				})
 
-				it('should work with common object types: classes', () => {
+				it('should work -- with common object types: classes', () => {
 					class Greeter {
 						greeting: string
 
@@ -300,7 +343,7 @@ describe('@offirmo-private/prettify-any', function() {
 
 		})
 
-		describe('special cases', function() {
+		describe('handling of special cases', function() {
 
 			describe('deep objects', function () {
 				const DEPTH = 100
@@ -328,34 +371,39 @@ describe('@offirmo-private/prettify-any', function() {
 					}]
 				}
 
-				it('should be able to handle deep objects -- object', () => {
+				it('should handle deep objects -- object', () => {
 					//test_to_console(deep_obj)
 					console.log('☐ prettifyꓽany(…):', prettifyꓽany(deep_obj))
 				})
 
-				it('should be able to handle deep objects -- array', () => {
+				it('should handle deep objects -- array', () => {
 					console.log('☐ prettifyꓽany(…):', prettifyꓽany(deep_arr))
 				})
 
-				it('should be able to handle deep objects -- mixed', () => {
+				it('should handle deep objects -- mixed', () => {
 					console.log('☐ prettifyꓽany(…):', prettifyꓽany(deep_mixed))
+				})
+
+				it('should handle deep objects - fetch', async () => {
+					//@ts-expect-error TODO fix as soon as fetch global is added to @types/node
+					const ↆf = fetch('https://www.google.com')
+
+					return ↆf.then(
+						(fetch_raw_result: any) => {
+							test_to_console(fetch_raw_result)
+						}
+					)
 				})
 			})
 
 
-			it('should be able to handle deep objects - fetch', async () => {
-				//@ts-expect-error TODO fix as soon as fetch global is added to @types/node
-				const ↆf = fetch('https://www.google.com')
-
-				return ↆf.then(
-					(fetch_raw_result: any) => {
-						test_to_console(fetch_raw_result)
-					}
-				)
+			it('should handle huge blobs', () => {
+				console.log('☐ prettifyꓽany(…):', prettifyꓽany(process.env))
 			})
 
-			it('should be able to handle huge blobs', () => {
-				console.log('☐ prettifyꓽany(…):', prettifyꓽany(process.env))
+			it('should handle objects with no prototype (no .toString', () => {
+				const out = Object.create(null)
+				test_to_console(out)
 			})
 		})
 	})

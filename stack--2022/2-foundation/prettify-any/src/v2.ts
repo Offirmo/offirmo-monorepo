@@ -44,13 +44,18 @@ function prettifyꓽany(js: Immutable<any>, options: Immutable<Partial<Options>>
 			}
 		}
 
+		if (!st.isꓽjson) {
+			//console.log(st.o.stylizeꓽerror('not json!'))
+			result += ' ' + st.o.stylizeꓽerror('[not JSON!]')
+		}
+
 		return result
 	}
 	catch (err) {
-		if (options?.never_throw)
-			return `[error prettifying:${(err as any)?.message}]`
+		if (options?.can_throw)
+			throw err
 
-		throw err
+		return `[error prettifying:${(err as any)?.message}]`
 	}
 }
 

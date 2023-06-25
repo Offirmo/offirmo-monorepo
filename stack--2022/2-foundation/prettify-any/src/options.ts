@@ -2,25 +2,19 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { Options } from './types.js'
-import {
-	DEFAULTS_PRETTIFY_OPTIONS,
-	DEFAULTS_STYLE_OPTIONS,
-	DEFAULTS_STYLIZE_OPTIONS__NONE,
-} from './options--compatible.js'
-import {
-	getꓽstylize_optionsⵧansi
-} from './options--ansi.js'
-import {
-	getꓽlibꓽchalk,
-} from './injectable-lib--chalk.js'
+import { OPTIONS__DISPLAYⵧDEFAULT } from './options--display.js'
+import { OPTIONS__PRETTIFYⵧDEFAULT } from './options--prettify.js'
+import { OPTIONS__STYLIZEⵧNONE } from './options--stylize--none.js'
+import { getꓽstylize_optionsⵧansi } from './options--stylize--ansi.js'
+import { getꓽlibꓽchalk } from './injectable-lib--chalk.js'
 
 /////////////////////////////////////////////////
 
 function getꓽoptionsⵧdefault(): Options {
 	return {
-		...DEFAULTS_STYLE_OPTIONS,
-		...DEFAULTS_PRETTIFY_OPTIONS,
-		...DEFAULTS_STYLIZE_OPTIONS__NONE,
+		...OPTIONS__DISPLAYⵧDEFAULT,
+		...OPTIONS__PRETTIFYⵧDEFAULT,
+		...OPTIONS__STYLIZEⵧNONE,
 		...(getꓽlibꓽchalk() && getꓽstylize_optionsⵧansi(getꓽlibꓽchalk())),
 	}
 }

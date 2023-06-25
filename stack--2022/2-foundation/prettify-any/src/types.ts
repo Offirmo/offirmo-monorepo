@@ -1,7 +1,7 @@
 
 /////////////////////////////////////////////////
 
-interface RenderOptions {
+interface DisplayOptions {
 	eol: '' | '\n' | '\r\n' // what should be used for EOL. '' (empty string) = no line return
 	max_width‿charcount: number // max width before need to wrap NOT IMPLEMENTED TODO
 	outline: boolean // add a strong separator at top and bottom so that it stands out    NOT IMPLEMENTED TODO
@@ -9,6 +9,7 @@ interface RenderOptions {
 	max_primitive_str_size: null | number // NOT IMPLEMENTED TODO
 	should_recognize_constants: boolean
 	should_recognize_globals: boolean
+	should_sort_keys: boolean
 	quote: '\'' | '"'
 	date_serialization_fn: string
 }
@@ -24,8 +25,7 @@ interface StylizeOptions {
 }
 
 interface PrettifyOptions {
-	never_throw: boolean
-	sort_keys: boolean
+	can_throw: boolean
 
 	prettifyꓽstring: (x: string, st: State) => string
 	prettifyꓽnumber: (x: number, st: State) => string
@@ -37,14 +37,14 @@ interface PrettifyOptions {
 	prettifyꓽnull: (st: State) => string
 	prettifyꓽfunction: (x: Function, st: State, ox?: { as_prop?: boolean }) => string
 	prettifyꓽarray: (x: Array<any>, st: State) => string[]
-	prettifyꓽobject: (x: Object, st: State, ox?: { skip_constructor?: boolean }) => string[]
+	prettifyꓽobject: (x: Object, st: State, ox?: { display_constructor?: boolean }) => string[]
 
 	prettifyꓽproperty__name: (x: string | number | symbol, st: State) => string
 
 	prettifyꓽany: (a: any, st: State) => string[]
 }
 
-type Options = RenderOptions & StylizeOptions & PrettifyOptions
+type Options = DisplayOptions & StylizeOptions & PrettifyOptions
 
 interface State {
 	o: Options
@@ -61,7 +61,7 @@ interface State {
 /////////////////////////////////////////////////
 
 export {
-	type RenderOptions,
+	type DisplayOptions,
 	type StylizeOptions,
 	type PrettifyOptions,
 	type Options,

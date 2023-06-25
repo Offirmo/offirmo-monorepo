@@ -35,7 +35,6 @@ export function createSink(options: Readonly<SinkOptions> = {}): LogSink {
 			),
 			Reflect.ownKeys(details).length === 0
 				? ''
-				//: (' ' + JSON.stringify(details))
 				: prettifyꓽany(details, {
 					eol: '',
 					sort_keys: true,
