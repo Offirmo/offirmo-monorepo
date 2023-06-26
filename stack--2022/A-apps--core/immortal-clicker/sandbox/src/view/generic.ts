@@ -1,13 +1,74 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
-import { Options, dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
+import { Options, State, dumpꓽanyⵧprettified, getꓽoptionsⵧfull } from '@offirmo-private/prettify-any'
+import { isꓽWithSchemaVersion, isꓽBaseState, isꓽUState, isꓽTState, isꓽRootState } from '@offirmo-private/state-utils'
+import { getꓽUTC_timestampⵧhuman_readable‿ms } from '@offirmo-private/timestamps'
 
 /////////////////////////////////////////////////
 
 function renderⵧgeneric(state: Immutable<Object>): void {
-	const options: Partial<Options> = {
+	const options = getꓽoptionsⵧfull()
 
+	const _prettifyꓽobjectⵧkeyⳇvalue = options.prettifyꓽobjectⵧkeyⳇvalue
+
+	options.prettifyꓽobjectⵧkeyⳇvalue = function prettifyꓽobjectⵧkeyⳇvalue(obj: Object, st: State): string[] {
+		let { o } = st
+
+		if (!isꓽWithSchemaVersion(obj)) {
+			return _prettifyꓽobjectⵧkeyⳇvalue(obj, st)
+		}
+
+		const { ⵙapp_id, schema_version, revision, last_user_investment_tms, timestamp_ms, ...rest } = obj as any
+
+		let header: string[] = []
+		if (ⵙapp_id) {
+			header.push(''
+				+ 'ᘛ'
+				+ o.stylizeꓽglobal(ⵙapp_id)
+				+ 'ᘚ'
+			)
+		}
+		if (revision !== undefined) {
+			header.push(''
+				+ 'rev#'
+				+ o.stylizeꓽglobal(revision)
+			)
+		}
+		if (last_user_investment_tms !== undefined) {
+			const d = new Date(last_user_investment_tms)
+			header.push(''
+				+ '⏲'
+				+ o.stylizeꓽglobal(getꓽUTC_timestampⵧhuman_readable‿ms(d))
+			)
+		}
+		if (timestamp_ms !== undefined) {
+			const d = new Date(timestamp_ms)
+			header.push(''
+				+ '⏲'
+				+ o.stylizeꓽglobal(getꓽUTC_timestampⵧhuman_readable‿ms(d))
+			)
+		}
+		if (schema_version !== undefined) {
+			header.push(''
+				+ 'ⓥ '
+				+ o.stylizeꓽglobal(schema_version)
+			)
+		}
+
+		st = {
+			...st,
+			o: {
+				...st.o,
+				should_compact_objects: false,
+			}
+		}
+		const lines = _prettifyꓽobjectⵧkeyⳇvalue(rest, st)
+		return [
+			[lines[0], ...header].join(' '),
+			...lines.slice(1),
+		]
 	}
+
 	dumpꓽanyⵧprettified('------ state ------', state, options)
 }
 

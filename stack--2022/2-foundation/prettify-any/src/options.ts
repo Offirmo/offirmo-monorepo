@@ -19,7 +19,7 @@ function getꓽoptionsⵧdefault(): Options {
 	}
 }
 
-function getꓽoptions(options: Immutable<Partial<Options>> = {}): Options {
+function getꓽoptionsⵧfull(options: Immutable<Partial<Options>> = {}): Options {
 	const final_options = {
 		...getꓽoptionsⵧdefault(),
 		...options,
@@ -36,5 +36,5 @@ function getꓽoptions(options: Immutable<Partial<Options>> = {}): Options {
 
 export {
 	getꓽoptionsⵧdefault,
-	getꓽoptions,
+	getꓽoptionsⵧfull,
 }

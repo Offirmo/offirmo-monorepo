@@ -39,6 +39,7 @@ interface PrettifyOptions {
 	prettifyꓽnull: (st: State) => string
 	prettifyꓽfunction: (x: Function, st: State, ox?: { as_prop?: boolean }) => string
 	prettifyꓽarray: (x: Array<any>, st: State) => string[]
+	prettifyꓽobjectⵧkeyⳇvalue: (obj: Object, st: State) => string[]
 	prettifyꓽobject: (x: Object, st: State, ox?: { display_constructor?: boolean }) => string[]
 
 	prettifyꓽproperty__name: (x: string | number | symbol, st: State) => string

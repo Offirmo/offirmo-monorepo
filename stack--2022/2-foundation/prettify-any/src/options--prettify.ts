@@ -162,102 +162,12 @@ const OPTIONS__PRETTIFYⵧDEFAULT: PrettifyOptions = {
 			+ o.stylizeꓽsyntax(']'),
 		]
 	},
-	prettifyꓽobject: (obj: Object, st: State, { display_constructor = true } = {}): string[] => {
-		if (DEBUG) console.log('prettifyꓽobject', obj)
+	prettifyꓽobjectⵧkeyⳇvalue: (obj: Object, st: State): string[] => {
+		if (DEBUG) console.log('prettifyꓽobjectⵧkeyⳇvalue', obj)
 		let { o } = st
 
 		try {
-			if (o.should_recognize_globals) {
-				try {
-					switch (obj) {
-						case globalThis:
-							st.isꓽjson = false
-							return [ o.stylizeꓽglobal('globalThis') ]
-
-						// @ts-expect-error TS7029
-						case process.env:
-							o = {
-								...o,
-								should_sort_keys: true, // force for this object
-							}
-							// fallthrough
-
-						default:
-						// fallback
-					}
-				}
-				catch (err) {
-					return [ o.stylizeꓽerror(`[error prettifying:${(err as any)?.message}/po.g]`) ]
-				}
-			}
-
-			if (display_constructor) {
-				try {
-					const proto = Object.getPrototypeOf(obj)
-					if (proto && proto.constructor && proto.constructor.name) {
-						if (proto.constructor !== Object) {
-							st.isꓽjson = false
-							return [
-								o.stylizeꓽsyntax('new ')
-								+ ((globalThis as any)[proto.constructor.name] === proto.constructor
-										? o.stylizeꓽglobal(proto.constructor.name)
-										: o.stylizeꓽuser(proto.constructor.name)
-								)
-								+ o.stylizeꓽsyntax('(')
-								+ (() => {
-									switch (proto.constructor.name) {
-										// all primitives that can be an Object
-										case 'String':
-											return o.prettifyꓽstring(obj as string, st)
-										case 'Number':
-											return o.prettifyꓽnumber(obj as number, st)
-										case 'Boolean':
-											return o.prettifyꓽboolean(obj as boolean, st)
-
-										// recognize some objects
-										case 'Set':
-											return o.prettifyꓽarray(Array.from((obj as Set<any>).keys()), st)
-										case 'WeakSet':
-											return o.stylizeꓽdim('/\*not enumerable*\/')
-										case 'Date':
-											return o.stylizeꓽdim(`/*${(obj as any)[o.date_serialization_fn]()}*/`)
-
-										// node
-										case 'Buffer':
-											// too big!
-											return '/*…*/'
-										case 'Gunzip': // seen in fetch_ponyfill response
-											// too big!
-											return '/*…*/'
-
-										// other
-										default:
-											if (proto.constructor.name.endsWith('Error')) {
-												const err: Error = obj as any
-												// no need to pretty print it as copy/pastable to code,
-												// 99.9% chance that's not what we want here
-												return o.stylizeꓽerror(o.quote + err.message + o.quote)
-											}
-
-											// Beware! This can turn into a huge thing, ex. a fetch response
-											// REM we MUST NOT have display_constructor = true to avoid infinite loops
-											return o.prettifyꓽobject(obj, st, { display_constructor: false })
-										//return '/*…*/'
-									}
-								})()
-								+ o.stylizeꓽsyntax(')'),
-							]
-						}
-					}
-				}
-				catch (err) {
-					return [ o.stylizeꓽerror(`[error prettifying:${(err as any)?.message}/po.c]`) ]
-				}
-			}
-
 			const keys = Reflect.ownKeys(obj)
-
-			///// display as hash:
 
 			if (o.should_sort_keys)
 				keys.sort((a: string | number | symbol, b: string | number | symbol) => {
@@ -351,15 +261,114 @@ const OPTIONS__PRETTIFYⵧDEFAULT: PrettifyOptions = {
 			// indent
 			final_lines = [
 				final_lines[0]!,
-				...final_lines.slice(1, -2).map(s => st.indent_string + s),
+				...final_lines.slice(1, -1).map(s => st.indent_string + s),
 				...final_lines.slice(-1),
 			]
 
 			return final_lines
 		}
 		catch (err) {
+			return [ o.stylizeꓽerror(`[error prettifying:${(err as any)?.message}/po--kv]`) ]
+		}
+	},
+	prettifyꓽobject: (obj: Object, st: State, { display_constructor = true } = {}): string[] => {
+		if (DEBUG) console.log('prettifyꓽobject', obj)
+		let { o } = st
+
+		try {
+			if (o.should_recognize_globals) {
+				try {
+					switch (obj) {
+						case globalThis:
+							st.isꓽjson = false
+							return [ o.stylizeꓽglobal('globalThis') ]
+
+						// @ts-expect-error TS7029
+						case process.env:
+							o = {
+								...o,
+								should_sort_keys: true, // force for this object
+							}
+							// fallthrough
+
+						default:
+						// fallback
+					}
+				}
+				catch (err) {
+					return [ o.stylizeꓽerror(`[error prettifying:${(err as any)?.message}/po.g]`) ]
+				}
+			}
+
+			if (display_constructor) {
+				try {
+					const proto = Object.getPrototypeOf(obj)
+					if (proto && proto.constructor && proto.constructor.name) {
+						if (proto.constructor !== Object) {
+							st.isꓽjson = false
+							return [
+								o.stylizeꓽsyntax('new ')
+								+ ((globalThis as any)[proto.constructor.name] === proto.constructor
+										? o.stylizeꓽglobal(proto.constructor.name)
+										: o.stylizeꓽuser(proto.constructor.name)
+								)
+								+ o.stylizeꓽsyntax('(')
+								+ (() => {
+									switch (proto.constructor.name) {
+										// all primitives that can be an Object
+										case 'String':
+											return o.prettifyꓽstring(obj as string, st)
+										case 'Number':
+											return o.prettifyꓽnumber(obj as number, st)
+										case 'Boolean':
+											return o.prettifyꓽboolean(obj as boolean, st)
+
+										// recognize some objects
+										case 'Set':
+											return o.prettifyꓽarray(Array.from((obj as Set<any>).keys()), st)
+										case 'WeakSet':
+											return o.stylizeꓽdim('/\*not enumerable*\/')
+										case 'Date':
+											return o.stylizeꓽdim(`/*${(obj as any)[o.date_serialization_fn]()}*/`)
+
+										// node
+										case 'Buffer':
+											// too big!
+											return '/*…*/'
+										case 'Gunzip': // seen in fetch_ponyfill response
+											// too big!
+											return '/*…*/'
+
+										// other
+										default:
+											if (proto.constructor.name.endsWith('Error')) {
+												const err: Error = obj as any
+												// no need to pretty print it as copy/pastable to code,
+												// 99.9% chance that's not what we want here
+												return o.stylizeꓽerror(o.quote + err.message + o.quote)
+											}
+
+											// Beware! This can turn into a huge thing, ex. a fetch response
+											// REM we MUST NOT have display_constructor = true to avoid infinite loops
+											return o.prettifyꓽobject(obj, st, { display_constructor: false })
+										//return '/*…*/'
+									}
+								})()
+								+ o.stylizeꓽsyntax(')'),
+							]
+						}
+					}
+				}
+				catch (err) {
+					return [ o.stylizeꓽerror(`[error prettifying:${(err as any)?.message}/po.c]`) ]
+				}
+			}
+		}
+		catch (err) {
 			return [ o.stylizeꓽerror(`[error prettifying:${(err as any)?.message}/po]`) ]
 		}
+
+		return o.prettifyꓽobjectⵧkeyⳇvalue(obj, st)
 	},
 
 	// utils

@@ -1,12 +1,12 @@
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { Options, State } from './types.js'
-import { getꓽoptions } from './options.js'
+import { getꓽoptionsⵧfull } from './options.js'
 
 /////////////////////////////////////////////////
 
 function _createꓽstate(options: Options): State {
-	const o = getꓽoptions(options)
+	const o = getꓽoptionsⵧfull(options)
 
 	return {
 		o,
@@ -24,7 +24,7 @@ function _createꓽstate(options: Options): State {
 
 function prettifyꓽany(js: Immutable<any>, options: Immutable<Partial<Options>> = {}): string {
 	try {
-		const st = _createꓽstate(getꓽoptions(options))
+		const st = _createꓽstate(getꓽoptionsⵧfull(options))
 
 		let result = st.o.prettifyꓽany(js, st).join(st.o.eol)
 		//console.log('max indent', st.indent_levelⵧmax)
@@ -40,7 +40,7 @@ function prettifyꓽany(js: Immutable<any>, options: Immutable<Partial<Options>>
 					...options,
 					indent_size‿charcount: ideal_indent_size‿charcount,
 				}
-				const st = _createꓽstate(getꓽoptions(options))
+				const st = _createꓽstate(getꓽoptionsⵧfull(options))
 				result = st.o.prettifyꓽany(js, st).join(st.o.eol)
 			}
 		}
@@ -67,7 +67,6 @@ function prettifyꓽjson(js: Immutable<any>, options: Immutable<Partial<Options>
 
 	return prettifyꓽany(js, options)
 }
-
 
 function dumpꓽanyⵧprettified(msg: string, data: Immutable<any>, options: Immutable<Partial<Options>> = {}): void {
 	console.log(msg)
