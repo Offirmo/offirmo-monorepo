@@ -1,5 +1,8 @@
+import * as util from 'node:util'
+import getꓽterminal_size from 'term-size'
+
 import chalk from 'chalk'
-import { render as prettify_json } from 'prettyjson'
+import { render as prettyjson } from 'prettyjson'
 
 import { injectꓽlibꓽchalk } from './injectable-lib--chalk.js'
 injectꓽlibꓽchalk(chalk as any)
@@ -9,7 +12,7 @@ import {
 } from './v2.js'
 import { getꓽstylize_optionsⵧansi } from './options--stylize--ansi.js'
 
-
+/////////////////////////////////////////////////
 
 describe('@offirmo-private/prettify-any', function() {
 	const should_test_verbose = false
@@ -23,8 +26,17 @@ describe('@offirmo-private/prettify-any', function() {
 			return prettified
 		}
 		function test_to_console(value: any): void {
-			console.log('≡')
-			console.log('☑ default console:', value)
+			console.log('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+			console.log('☑ console.log    :', value)
+			console.log('☑ console.dir    :')
+			console.dir(value)
+			console.log('☑ util.inspect   :', util.inspect(value, {
+				depth: Infinity,
+				colors: true,
+				maxArrayLength: Infinity,
+				breakLength: getꓽterminal_size().columns,
+				compact: true,
+			}))
 			console.log('☐ .toString      :', (() => {
 				try {
 					return String(value)
@@ -44,14 +56,14 @@ describe('@offirmo-private/prettify-any', function() {
 			})())
 			console.log('☐ prettyjson     :', (() => {
 				try {
-					return prettify_json(value)
+					return prettyjson(value)
 				}
 				catch (err) {
 					return stylizeꓽerror(`<prettyjson error! "${(err as any)?.message}">`)
 				}
 
 			})())
-			console.log('☐ prettifyꓽany(…):', prettifyꓽany(value, {can_throw: true}))
+			console.log(chalk.bold.greenBright('☐ prettifyꓽany(…):'), prettifyꓽany(value, {can_throw: true, should_warn_not_json: true}))
 		}
 
 		describe('handling of primitive type/values', function() {
@@ -104,20 +116,22 @@ describe('@offirmo-private/prettify-any', function() {
 				let sym1 = Symbol()
 				let sym2 = Symbol("key")
 				let sym3 = Symbol("key")
+				let sym4 = Symbol.for('nodejs.util.inspect.custom')
 
 				test_to_console(sym1)
 				test_to_console(sym2)
 				test_to_console(sym3)
+				test_to_console(sym4)
 			})
-		})
-
-		describe('handling of non-primitive type/values', function() {
 
 			describe('null', function() {
 				it('should work', () => {
 					test_to_console(null)
 				})
 			})
+		})
+
+		describe('handling of non-primitive type/values', function() {
 
 			describe('arrays', function() {
 
@@ -247,7 +261,32 @@ describe('@offirmo-private/prettify-any', function() {
 				})
 			})
 
-			describe('other object', function() {
+			describe('functions', function () {
+
+				it('should work -- basic', () => {
+					test_to_console((a: number) => {})
+					test_to_console(function foo(a: number) {})
+				})
+
+				it('should work -- Constructors', () => {
+					test_to_console(Number)
+				})
+
+				it('should work -- in objects', () => {
+					test_to_console({ foo(a: number) {} }) // directly in an object
+					test_to_console({ bar: function foo(a: number) {} }) // indirectly in an object
+					test_to_console({ bar: (a: number) => {} }) // unnamed in an object
+				})
+
+				it('should work -- async', () => {
+					test_to_console(async (a: number) => {})
+					test_to_console(async function foo(a: number) {})
+				})
+
+				it('should work -- generator')
+			})
+
+			describe('other objects', function() {
 
 				it('should work -- with objects -- base', () => {
 					test_to_console({})
@@ -266,22 +305,13 @@ describe('@offirmo-private/prettify-any', function() {
 					if (should_test_verbose) test_to_console(globalThis)
 				})
 
-				it('should work -- with common object types: function', () => {
-					test_to_console((a: number) => {})
-					test_to_console(function foo(a: number) {})
-					test_to_console(Number)
 
-					test_to_console({ foo(a: number) {} }) // directly in an object
-					test_to_console({ bar: function foo(a: number) {} }) // indirectly in an object
-					test_to_console({ bar: (a: number) => {} }) // unnamed in an object
-				})
-
-				it('should work -- with common object types: Error', () => {
+				it('should work -- with common object types -- Error', () => {
 					test_to_console(new Error('foo!'))
 					test_to_console(new TypeError('foo!'))
 				})
 
-				it('should work -- with common object types: Set', () => {
+				it('should work -- with common object types -- Set', () => {
 					const s0 = new Set()
 					test_to_console(s0)
 
@@ -304,22 +334,22 @@ describe('@offirmo-private/prettify-any', function() {
 					test_to_console(ws1)
 				})
 
-				it('should work -- with common object types: Map', () => {
+				it('should work -- with common object types -- Map', () => {
 					test_to_console(new Map())
 				})
 
-				it('should work -- with common object types: primitive types in their object form', () => {
+				it('should work -- with common object types -- primitive types in their object form', () => {
 					test_to_console(new String('string'))
 					test_to_console(new Number(42))
 					test_to_console(new Boolean(true))
 				})
 
-				it('should work -- with common object types: Date', () => {
+				it('should work -- with common object types -- Date', () => {
 					const d1 = new Date()
 					test_to_console(d1)
 				})
 
-				it('should work -- with common object types: classes', () => {
+				it('should work -- with common object types -- classes', () => {
 					class Greeter {
 						greeting: string
 
@@ -339,8 +369,17 @@ describe('@offirmo-private/prettify-any', function() {
 					function Foo() {}
 					test_to_console(Foo)
 				})
-			})
 
+				// TODO
+				it('should work -- with common object types -- Promise', () => {
+					test_to_console(Promise.resolve(42))
+				})
+
+				// TODO
+				it('should work -- with common object types -- Regexp', () => {
+					test_to_console(/abc/)
+				})
+			})
 		})
 
 		describe('handling of special cases', function() {
@@ -396,14 +435,20 @@ describe('@offirmo-private/prettify-any', function() {
 				})
 			})
 
-
 			it('should handle huge blobs', () => {
-				console.log('☐ prettifyꓽany(…):', prettifyꓽany(process.env))
+				const out = process.env
+				test_to_console(out)
+				//console.log('☐ prettifyꓽany(…):', prettifyꓽany(out))
 			})
 
-			it('should handle objects with no prototype (no .toString', () => {
+			it('should handle objects with no prototype (no .toString)', () => {
 				const out = Object.create(null)
 				test_to_console(out)
+			})
+
+			// TODO
+			it('should handle arguments', () => {
+				test_to_console(arguments)
 			})
 		})
 	})

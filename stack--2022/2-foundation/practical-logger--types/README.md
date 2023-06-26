@@ -74,6 +74,7 @@ A logger will have the following interface:
 ## Concept
 Other loggers:
 * https://getpino.io/#/docs/benchmarks
+  * pitch https://stackoverflow.com/a/71812457/587407
 * discovered later:  https://github.com/ianstormtaylor/browser-logger
 
 ## Credits

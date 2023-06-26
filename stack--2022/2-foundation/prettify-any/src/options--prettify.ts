@@ -3,6 +3,7 @@ import {
 	isꓽnegative_zero,
 	cmp,
 } from './utils.js'
+import * as process from 'node:process'
 
 /////////////////////////////////////////////////
 
@@ -20,6 +21,7 @@ function _set_monoline(st: State): State {
 		indent_string: '',
 	}
 }
+
 function _increase_indentation(st: State): State {
 	return {
 		...st,
@@ -162,7 +164,7 @@ const OPTIONS__PRETTIFYⵧDEFAULT: PrettifyOptions = {
 	},
 	prettifyꓽobject: (obj: Object, st: State, { display_constructor = true } = {}): string[] => {
 		if (DEBUG) console.log('prettifyꓽobject', obj)
-		const { o } = st
+		let { o } = st
 
 		try {
 			if (o.should_recognize_globals) {
@@ -171,6 +173,14 @@ const OPTIONS__PRETTIFYⵧDEFAULT: PrettifyOptions = {
 						case globalThis:
 							st.isꓽjson = false
 							return [ o.stylizeꓽglobal('globalThis') ]
+
+						// @ts-expect-error TS7029
+						case process.env:
+							o = {
+								...o,
+								should_sort_keys: true, // force for this object
+							}
+							// fallthrough
 
 						default:
 						// fallback
@@ -247,11 +257,6 @@ const OPTIONS__PRETTIFYⵧDEFAULT: PrettifyOptions = {
 
 			const keys = Reflect.ownKeys(obj)
 
-			if (keys.length === 0) {
-				// ??? TODO why this specific path?
-				return [ o.stylizeꓽdim(`/*${obj.toString()}*/`) ]
-			}
-
 			///// display as hash:
 
 			if (o.should_sort_keys)
@@ -272,7 +277,8 @@ const OPTIONS__PRETTIFYⵧDEFAULT: PrettifyOptions = {
 				circular: new Set([ ...Array.from(st.circular as any), obj ]),
 			}
 
-			const trailing_comma = 'o' + o.stylizeꓽsyntax(',') + 'o'
+			//const trailing_comma = '⧼' + o.stylizeꓽsyntax(',') + '⧽' // debug
+			const trailing_comma = o.stylizeꓽsyntax(',')
 			let kvs: string[][] = keys.map((k): string[] => {
 				const v = (obj as any)[k]
 
@@ -300,8 +306,9 @@ const OPTIONS__PRETTIFYⵧDEFAULT: PrettifyOptions = {
 				]
 			})
 
-			if (kvs.length > 1 || o.eol) {
-				// separate entries with commas
+			if (keys.length > 1) {
+				// separate the entries with commas
+				// TODO one day trailing comma, but only if multi-line
 				kvs = [
 					...kvs.slice(0, -1).map(sub_lines => {
 						return [
@@ -309,9 +316,8 @@ const OPTIONS__PRETTIFYⵧDEFAULT: PrettifyOptions = {
 							...sub_lines.slice(-1).map(s => s + trailing_comma),
 						]
 					}),
-					...kvs.slice(-1)
-
-					]
+					...kvs.slice(-1),
+				]
 			}
 			let lines: string[] = kvs.flat()
 
@@ -319,12 +325,37 @@ const OPTIONS__PRETTIFYⵧDEFAULT: PrettifyOptions = {
 			parent_state.indent_levelⵧmax = Math.max(parent_state.indent_levelⵧmax, st.indent_levelⵧmax)
 			parent_state.isꓽjson = parent_state.isꓽjson && st.isꓽjson
 
-			return [
+			// compact the representation if appropriate
+			let should_compact_to_single_line: boolean = !o.eol || (() => {
+				if (!o.should_compact_objects) return false
+
+				if (keys.length <= 1)
+					return true
+
+				// TODO compact on small objects
+
+
+				return false
+			})()
+
+			let final_lines = [
 				o.stylizeꓽsyntax('{'),
-				...lines.slice(1, -1).map(s => st.indent_string + s),
-				...lines.slice(-1),
+				...lines,
 				o.stylizeꓽsyntax('}'),
 			]
+
+			if (should_compact_to_single_line) {
+				return [ final_lines.join('') ]
+			}
+
+			// indent
+			final_lines = [
+				final_lines[0]!,
+				...final_lines.slice(1, -2).map(s => st.indent_string + s),
+				...final_lines.slice(-1),
+			]
+
+			return final_lines
 		}
 		catch (err) {
 			return [ o.stylizeꓽerror(`[error prettifying:${(err as any)?.message}/po]`) ]
@@ -336,6 +367,7 @@ const OPTIONS__PRETTIFYⵧDEFAULT: PrettifyOptions = {
 		const { o } = st
 
 		try {
+			// TODO change color
 			switch (typeof p) {
 				case 'number':
 					return o.prettifyꓽnumber(p, st)

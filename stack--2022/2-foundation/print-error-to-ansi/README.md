@@ -16,3 +16,4 @@ Note:
 
 Roadmap
 * TODO MAYBE? improve stack display with https://www.stacktracejs.com/
+* TODO use util.getSystemErrorName(err) https://nodejs.org/api/util.html#utilgetsystemerrornameerr

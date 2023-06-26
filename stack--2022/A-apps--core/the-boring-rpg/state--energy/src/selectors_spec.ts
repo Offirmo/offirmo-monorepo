@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import sinon from 'sinon'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
-import { dump_prettified_any } from '@offirmo-private/prettify-any'
+import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 
 import { LIB, TICK_MS } from './consts.js'
 import { Fraction } from './utils.js'
@@ -92,7 +92,7 @@ describe(`${LIB} - selectors`, function() {
 				...u_state,
 				total_energy_consumed_so_far: 1_000, // should be established by this time
 			}
-			dump_prettified_any('u', u_state)
+			dumpꓽanyⵧprettified('u', u_state)
 			console.log(get_energy_refill_rate(u_state, t_state))
 			expect(get_energy_refill_rate(u_state, t_state).per_day()).to.be.closeTo(EXPECTED_ESTABLISHED_ENERGY_REFILL_PER_DAY, 0.01)
 		})
@@ -317,7 +317,7 @@ describe(`${LIB} - selectors`, function() {
 
 				;[ u_state, t_state ] = use_energy([u_state, t_state], 7)
 
-				//dump_prettified_any('s', { u_state, t_state })
+				//dumpꓽanyⵧprettified('s', { u_state, t_state })
 				expect(get_human_time_to_next(u_state, t_state)).to.equal('3h 25m 43s')
 			})
 		})
@@ -334,7 +334,7 @@ describe(`${LIB} - selectors`, function() {
 
 				let now = new Date(2017, 1, 1, 1, 0, 0)
 				;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1, +now)
-				/*dump_prettified_any('+0', {
+				/*dumpꓽanyⵧprettified('+0', {
 					now: getꓽUTC_timestamp‿ms(now),
 					t_state,
 					aef: getꓽavailable_energy‿float(t_state),
@@ -344,7 +344,7 @@ describe(`${LIB} - selectors`, function() {
 
 				now = new Date(2017, 1, 1, 1, 0, 1)
 				t_state = update_to_now([ u_state, t_state ], +now)
-				/*dump_prettified_any('+1s', {
+				/*dumpꓽanyⵧprettified('+1s', {
 					now: getꓽUTC_timestamp‿ms(now),
 					t_state,
 					aef: getꓽavailable_energy‿float(t_state),
@@ -354,7 +354,7 @@ describe(`${LIB} - selectors`, function() {
 
 				now = new Date(2017, 1, 1, 1, 1, 0)
 				t_state = update_to_now([ u_state, t_state ], +now)
-				/*dump_prettified_any('+1s', {
+				/*dumpꓽanyⵧprettified('+1s', {
 					now: getꓽUTC_timestamp‿ms(now),
 					t_state,
 					aef: getꓽavailable_energy‿float(t_state),

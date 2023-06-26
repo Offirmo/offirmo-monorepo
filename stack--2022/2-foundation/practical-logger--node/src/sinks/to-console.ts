@@ -37,7 +37,7 @@ export function createSink(options: Readonly<SinkOptions> = {}): LogSink {
 				? ''
 				: prettifyꓽany(details, {
 					eol: '',
-					sort_keys: true,
+					should_sort_keys: true,
 				}),
 		].filter(x => !!x).join(' ')
 

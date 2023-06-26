@@ -3,7 +3,7 @@ import path from 'path'
 import assert from 'tiny-invariant'
 import stylize_string from 'chalk'
 import { Immutable } from '@offirmo-private/ts-types'
-import { prettify_json } from '@offirmo-private/prettify-any'
+import { prettifyꓽjson } from '@offirmo-private/prettify-any'
 import { enforce_immutability } from '@offirmo-private/state-utils'
 
 import { LIB as APP } from '../../consts.js'
@@ -409,7 +409,7 @@ Root: "${stylize_string.yellow.bold(root)}"
 	if (queue.length === 0) str += '\n  (empty)'
 	queue.forEach(task => {
 		const { type, ...details } = task
-		str += `\n- pending task "${type}" ${prettify_json(details)}`
+		str += `\n- pending task "${type}" ${prettifyꓽjson(details)}`
 	})
 
 	return str

@@ -21,6 +21,7 @@ function _createꓽstate(options: Options): State {
 	}
 }
 
+
 function prettifyꓽany(js: Immutable<any>, options: Immutable<Partial<Options>> = {}): string {
 	try {
 		const st = _createꓽstate(getꓽoptions(options))
@@ -44,9 +45,8 @@ function prettifyꓽany(js: Immutable<any>, options: Immutable<Partial<Options>>
 			}
 		}
 
-		if (!st.isꓽjson) {
-			//console.log(st.o.stylizeꓽerror('not json!'))
-			result += ' ' + st.o.stylizeꓽerror('[not JSON!]')
+		if (!st.isꓽjson && st.o.should_warn_not_json) {
+			result += ' ' + st.o.stylizeꓽerror('[NOT JSON!]')
 		}
 
 		return result
@@ -59,15 +59,17 @@ function prettifyꓽany(js: Immutable<any>, options: Immutable<Partial<Options>>
 	}
 }
 
-function prettify_json(js: Immutable<any>, options: Immutable<Partial<Options>> = {}): string {
-	const st = _createꓽstate(getꓽoptions(options))
+function prettifyꓽjson(js: Immutable<any>, options: Immutable<Partial<Options>> = {}): string {
+	options = {
+		...options,
+		should_warn_not_json: true, // forced
+	}
 
-	// TODO show not JSON
-	return st.o.prettifyꓽany(js, st).join(st.o.eol)
+	return prettifyꓽany(js, options)
 }
 
 
-function dump_prettified_any(msg: string, data: Immutable<any>, options: Immutable<Partial<Options>> = {}): void {
+function dumpꓽanyⵧprettified(msg: string, data: Immutable<any>, options: Immutable<Partial<Options>> = {}): void {
 	console.log(msg)
 	console.log(prettifyꓽany(data, options))
 }
@@ -82,6 +84,6 @@ export function is_pure_json(js: Immutable<any>): boolean {
 
 export {
 	prettifyꓽany,
-	prettify_json,
-	dump_prettified_any,
+	prettifyꓽjson,
+	dumpꓽanyⵧprettified,
 }

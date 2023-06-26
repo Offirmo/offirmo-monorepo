@@ -10,6 +10,8 @@ interface DisplayOptions {
 	should_recognize_constants: boolean
 	should_recognize_globals: boolean
 	should_sort_keys: boolean
+	should_compact_objects: boolean // if true, will attempt to compact simpler objects on a single line as long as they fit
+	should_warn_not_json: boolean // if true, will print in red if not JSON
 	quote: '\'' | '"'
 	date_serialization_fn: string
 }

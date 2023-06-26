@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import sinon from 'sinon'
 import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
-import { dump_prettified_any } from '@offirmo-private/prettify-any'
+import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 
@@ -79,12 +79,12 @@ describe(`${LIB} - state`, function() {
 		it('should work on a T=0 freshly created state', function() {
 			let [ u_state, t_state ] = create()
 
-			//dump_prettified_any('s', { u_state, t_state })
+			//dumpꓽanyⵧprettified('s', { u_state, t_state })
 			//expect(getꓽavailable_energy‿float(t_state)).to.equal(7.)
 
 			t_state = update_to_now([ u_state, t_state ])
 
-			//dump_prettified_any('s', { u_state, t_state })
+			//dumpꓽanyⵧprettified('s', { u_state, t_state })
 			expect(getꓽavailable_energy‿float(t_state)).to.equal(7.)
 		})
 
@@ -241,9 +241,9 @@ describe(`${LIB} - state`, function() {
 			it('should decrement energy correctly', function() {
 				let [ u_state, t_state ] = create()
 
-				//dump_prettified_any('s', { u_state, t_state })
+				//dumpꓽanyⵧprettified('s', { u_state, t_state })
 				;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
-				//dump_prettified_any('s', { u_state, t_state })
+				//dumpꓽanyⵧprettified('s', { u_state, t_state })
 				expect(getꓽavailable_energy‿float(t_state)).to.equal(6.)
 
 				;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)

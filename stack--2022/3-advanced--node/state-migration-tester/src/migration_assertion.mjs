@@ -4,7 +4,7 @@ import path from 'node:path'
 import * as fs from '@offirmo/cli-toolbox/fs/extra/index.mjs'
 import sinon from 'sinon'
 import { cloneDeep } from 'lodash-es'
-import { prettify_json } from '@offirmo-private/prettify-any'
+import { prettifyꓽjson } from '@offirmo-private/prettify-any'
 import { TEST_TIMESTAMP_MS, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 import { getꓽschema_version, getꓽschema_versionⵧloose } from '@offirmo-private/state-utils'
 
@@ -59,7 +59,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 		if (advanced_diff_json) {
 			diff = advanced_diff_json(a, b, {
 				diff_json: base_get_json_diff,
-				prettify_json,
+				prettifyꓽjson,
 				diff,
 			})
 			if (!Object.keys(diff).length)
@@ -123,7 +123,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 			)
 			if (LATEST_EXPECTED_DATA_migrated_diff) {
 				// this error will be caught by the test, but we display the diff to help:
-				console.error(`${LOG_PREFIX} ❌ LATEST_EXPECTED_DATA is not up to date! Difference when migrated:\n`, prettify_json(LATEST_EXPECTED_DATA_migrated_diff))
+				console.error(`${LOG_PREFIX} ❌ LATEST_EXPECTED_DATA is not up to date! Difference when migrated:\n`, prettifyꓽjson(LATEST_EXPECTED_DATA_migrated_diff))
 				return false
 			}
 
@@ -156,7 +156,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 		const ALL_SNAPSHOTS = ALL_FILES
 			.filter(snap_path => snap_path !== HINTS_FILE)
 
-		console.log(`${LOG_PREFIX} Found snapshots: ` + prettify_json(ALL_SNAPSHOTS.map(p => path.basename(p))))
+		console.log(`${LOG_PREFIX} Found snapshots: ` + prettifyꓽjson(ALL_SNAPSHOTS.map(p => path.basename(p))))
 
 		/////// create hints file if requested and not present
 		migration_hints_for_chaining = (function generate_and_update_hints(hints_from_params) {
@@ -196,7 +196,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 				: undefined
 
 			//if (latest_snapshot_data) console.log(`${LOG_PREFIX} found latest snapshot data ✔`)
-			//console.log(`${LOG_PREFIX} latest_snapshot_data:`, prettify_json(latest_snapshot_data))
+			//console.log(`${LOG_PREFIX} latest_snapshot_data:`, prettifyꓽjson(latest_snapshot_data))
 
 			const latest_migrated_diff = get_json_diff(
 				LATEST_EXPECTED_DATA,
@@ -208,7 +208,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 				return
 
 			if (latest_snapshot_path) {
-				console.log(`${LOG_PREFIX} ❌ Current latest snapshot is not up to date. Difference with previous:\n`, prettify_json(latest_migrated_diff))
+				console.log(`${LOG_PREFIX} ❌ Current latest snapshot is not up to date. Difference with previous:\n`, prettifyꓽjson(latest_migrated_diff))
 			} else {
 				console.log(`${LOG_PREFIX} ❌ Current latest, up-to-date data is missing.`)
 			}
@@ -247,7 +247,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 							})
 						}
 						if (json_diff) {
-							console.warn('Test failure: additional diff (json) for info:', prettify_json(json_diff))
+							console.warn('Test failure: additional diff (json) for info:', prettifyꓽjson(json_diff))
 							expect(migrated_data).to.deep.equal(LATEST_EXPECTED_DATA)
 						}
 					} catch (err) {
