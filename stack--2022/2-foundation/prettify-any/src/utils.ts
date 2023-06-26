@@ -1,3 +1,6 @@
+import * as util from 'node:util'
+import { Immutable } from '@offirmo-private/ts-types'
+
 /////////////////////////////////////////////////
 
 // https://2ality.com/2012/03/signedzero.html (outdated)
@@ -19,6 +22,17 @@ function cmp<T>(a: T, b: T): number {
 	}
 
 	return -(a < b) || +(a > b)
+}
+
+
+function _fast_prettify_ugly_single_line(js: Immutable<any>): string {
+	return util.inspect(js, {
+		depth: 100,
+		colors: false,
+		maxArrayLength: 100,
+		breakLength: Infinity,
+		compact: true,
+	})
 }
 
 /////////////////////////////////////////////////

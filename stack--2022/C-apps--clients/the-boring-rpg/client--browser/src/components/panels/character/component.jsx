@@ -19,7 +19,7 @@ function * gen_next_step() {
 	do {
 		const steps = []
 
-		const engagement_msg = game_instance.queries.get_oldest_pending_flow_engagement()
+		const engagement_msg = game_instance.queries.getꓽoldest_pending_flow_engagement()
 		if (engagement_msg) {
 			const { uid, $doc } = engagement_msg
 			steps.push({
@@ -34,7 +34,7 @@ function * gen_next_step() {
 			if (view_state.changing_character_class) {
 				steps.push({
 					msg_main: 'Choose your path wisely:',
-					choices: get_game_instance().queries.get_available_classes()
+					choices: get_game_instance().queries.getꓽavailable_classes()
 						.map(klass => ({
 							msg_cta: klass,
 							value: klass,

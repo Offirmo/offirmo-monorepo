@@ -42,19 +42,19 @@ describe('🔠  view to @offirmo-private/rich-text-format - items -- armor', fun
 		it('shows off armors', () => {
 
 			const doc1 = render_armor_detailed(DEMO_ARMOR_1)
-			//console.log(prettify_json(doc1))
+			//console.log(prettifyꓽjson(doc1))
 			let str = rich_text_to_ansi(doc1)
 			// should just not throw
 
 			const doc2 = render_armor_detailed(DEMO_ARMOR_2)
-			//console.log(prettify_json(doc2))
+			//console.log(prettifyꓽjson(doc2))
 			str = rich_text_to_ansi(doc2)
 			// should just not throw
 
 			for(let i = 0; i < 10; ++i) {
 				const item = generate_random_demo_armor()
 				const $doc = render_armor_detailed(item)
-				//console.log(prettify_json($doc))
+				//console.log(prettifyꓽjson($doc))
 				const str = rich_text_to_ansi($doc)
 				// should just not throw
 			}

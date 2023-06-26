@@ -7,9 +7,9 @@ import { JSONObject, Storage } from '@offirmo-private/ts-types'
 import {
 	fluid_select,
 	Immutable,
-	get_schema_version_loose,
-	get_base_loose,
-	get_revision_loose,
+	getꓽschema_versionⵧloose,
+	getꓽbaseⵧloose,
+	getꓽrevisionⵧloose,
 	UNCLEAR_compare,
 } from '@offirmo-private/state-utils'
 import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
@@ -61,7 +61,7 @@ export function _safe_read_parse_and_validate_from_storage<State>(
 				return fallback
 
 			// NOTE base/root was reworked over time, can be valid while not passing those type guards
-			//const is_valid_state: boolean = is_BaseState(json) || is_RootState(json) || has_versioned_schema(json)
+			//const is_valid_state: boolean = isꓽBaseState(json) || isꓽRootState(json) || has_versioned_schema(json)
 
 			return json as any as State
 		}
@@ -94,7 +94,7 @@ export function create(
 
 		function _store_key_value(key: string, json: any): void {
 			const value = stable_stringify(json)
-			logger.trace(`[${LIB}] 💾 writing "${key}"…`, get_base_loose(json))
+			logger.trace(`[${LIB}] 💾 writing "${key}"…`, getꓽbaseⵧloose(json))
 			storage.setItem(key, value)
 			logger.trace(`[${LIB}] 💾 written "${key}" ✔`, { /*snapshot: JSON.parse(value)*/ })
 		}
@@ -129,14 +129,14 @@ export function create(
 		// Return value: not used TODO review and clean
 		async function _enqueue_in_bkp_pipeline(some_state: Immutable<State>): Promise<boolean> {
 			logger.trace(`[${LIB}] _enqueue_in_bkp_pipeline()`, {
-				candidate: get_base_loose(some_state as any),
-				current: get_base_loose(state as any),
-				bkp__current: get_base_loose(bkp__current as any),
+				candidate: getꓽbaseⵧloose(some_state as any),
+				current: getꓽbaseⵧloose(state as any),
+				bkp__current: getꓽbaseⵧloose(bkp__current as any),
 				'legacy.length': recovered_states_unmigrated_ordered_oldest_first.length,
 				//some_state,
 			})
 
-			assert(get_schema_version_loose(some_state) === SCHEMA_VERSION, `_enqueue_in_bkp_pipeline(): schema version === ${SCHEMA_VERSION} (current)!`)
+			assert(getꓽschema_versionⵧloose(some_state) === SCHEMA_VERSION, `_enqueue_in_bkp_pipeline(): schema version === ${SCHEMA_VERSION} (current)!`)
 
 			if (some_state === restored_migrated) {
 				logger.trace(`[${LIB}] _enqueue_in_bkp_pipeline(): echo from restoration, no change ✔`)
@@ -155,7 +155,7 @@ export function create(
 			bkp__current = some_state
 			promises.push(_optimized_store_key_value(StorageKey.bkp_main, bkp__current))
 			if (bkp__recent) {
-				if (get_schema_version_loose(bkp__recent) === SCHEMA_VERSION)
+				if (getꓽschema_versionⵧloose(bkp__recent) === SCHEMA_VERSION)
 					promises.push(_optimized_store_key_value(StorageKey.bkp_minor, bkp__recent))
 				else {
 					// cleanup, we move it to the major pipeline, cf. lines below
@@ -167,7 +167,7 @@ export function create(
 				logger.trace(`[${LIB}] _enqueue_in_bkp_pipeline(): this is the first valuable change, moving restored states along the major bkp pipeline…`)
 			while(recovered_states_unmigrated_ordered_oldest_first.length) {
 				const some_legacy_state = recovered_states_unmigrated_ordered_oldest_first.shift()
-				if (get_schema_version_loose(some_legacy_state) < SCHEMA_VERSION)
+				if (getꓽschema_versionⵧloose(some_legacy_state) < SCHEMA_VERSION)
 					promises.push(_enqueue_in_major_bkp_pipeline(some_legacy_state))
 			}
 			await Promise.all(promises)
@@ -200,10 +200,10 @@ export function create(
 				bkp__older[0] = legacy_state
 			}
 
-			logger.trace(`[${LIB}] _enqueue_in_major_bkp_pipeline(): saving major`, get_base_loose(bkp__older[0] as any))
+			logger.trace(`[${LIB}] _enqueue_in_major_bkp_pipeline(): saving major`, getꓽbaseⵧloose(bkp__older[0] as any))
 			await _optimized_store_key_value(StorageKey.bkp_major_old, bkp__older[0])
 			if (bkp__older[1]) {
-				logger.trace(`[${LIB}] _enqueue_in_major_bkp_pipeline(): saving major-1`, get_base_loose(bkp__older[1] as any))
+				logger.trace(`[${LIB}] _enqueue_in_major_bkp_pipeline(): saving major-1`, getꓽbaseⵧloose(bkp__older[1] as any))
 				await _optimized_store_key_value(StorageKey.bkp_major_older, bkp__older[1])
 			}
 
@@ -242,7 +242,7 @@ export function create(
 				logger.trace(`[${LIB}] found NO candidate state to be restored.`)
 			}
 			else {
-				logger.trace(`[${LIB}] found candidate state to be restored`, get_base_loose(most_recent_unmigrated_bkp))
+				logger.trace(`[${LIB}] found candidate state to be restored`, getꓽbaseⵧloose(most_recent_unmigrated_bkp))
 				logger.trace(`[${LIB}] automigrating and restoring this candidate state…`)
 
 				// memorize it for later
@@ -276,8 +276,8 @@ export function create(
 		function set(new_state: Immutable<State>): void {
 			const has_valuable_difference = !state || fluid_select(new_state).has_valuable_difference_with(state)
 			logger.trace(`[${LIB}].set()`, {
-				new_state: get_base_loose(new_state),
-				existing_state: get_base_loose(state as any),
+				new_state: getꓽbaseⵧloose(new_state),
+				existing_state: getꓽbaseⵧloose(state as any),
 			})
 
 			if (!state) {
@@ -307,7 +307,7 @@ export function create(
 
 		function on_dispatch(action: Immutable<Action>, eventual_state_hint?: Immutable<State>): void {
 			logger.trace(`[${LIB}] ⚡ action dispatched: ${action.type}`, {
-				eventual_state_hint: get_base_loose(eventual_state_hint as any),
+				eventual_state_hint: getꓽbaseⵧloose(eventual_state_hint as any),
 			})
 			assert(state || eventual_state_hint, `[${LIB}].on_dispatch(): should be provided a hint or a previous state`)
 			assert(!!eventual_state_hint, `[${LIB}].on_dispatch(): (upper level architectural invariant) hint is mandatory in this store`)
@@ -316,8 +316,8 @@ export function create(
 			state = eventual_state_hint || reduce_action(state!, action)
 			const has_valuable_difference = !previous_state || fluid_select(state).has_valuable_difference_with(previous_state)
 			logger.trace(`[${LIB}] ⚡ action dispatched & reduced:`, {
-				current_rev: get_revision_loose(previous_state as any),
-				new_rev: get_revision_loose(state as any),
+				current_rev: getꓽrevisionⵧloose(previous_state as any),
+				new_rev: getꓽrevisionⵧloose(state as any),
 				has_valuable_difference,
 			})
 			if (!has_valuable_difference) {

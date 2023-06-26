@@ -11,7 +11,7 @@ import { UStateListenerAndProvider } from '../../../context'
 
 const AchievementsPanelC1M = React.memo(
 	function AchievementsPanelC1({u_state}) {
-		const achievements_snapshot = get_game_instance().queries.get_achievements_snapshot()
+		const achievements_snapshot = get_game_instance().queries.getꓽachievements_snapshot()
 
 		return (
 			<View achievements_snapshot={achievements_snapshot} />

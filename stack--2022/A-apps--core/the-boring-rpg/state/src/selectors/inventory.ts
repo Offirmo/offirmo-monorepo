@@ -8,8 +8,8 @@ import { Weapon } from '@tbrpg/logic-weapons'
 import { Armor } from '@tbrpg/logic-armors'
 import {
 	Item,
-	get_item as _get_item,
-	get_item_in_slot as _get_item_in_slot,
+	getꓽitem as _get_item,
+	getꓽitem_in_slot as _get_item_in_slot,
 } from '@tbrpg/state--inventory'
 
 /////////////////////
@@ -61,7 +61,7 @@ function find_better_unequipped_armor(u_state: Immutable<UState>): Immutable<Ele
 		return null
 
 	const best_unequipped_power = appraise_power(best_unequipped_armor)
-	const equipped_power = appraise_power(get_item_in_slot(u_state, InventorySlot.armor)!)
+	const equipped_power = appraise_power(getꓽitem_in_slot(u_state, InventorySlot.armor)!)
 	if (best_unequipped_power > equipped_power)
 		return best_unequipped_armor
 
@@ -83,7 +83,7 @@ function find_better_unequipped_weapon(u_state: Immutable<UState>): Immutable<El
 		return null
 
 	const best_unequipped_power = appraise_power(best_unequipped_weapon)
-	const equipped_power = appraise_power(get_item_in_slot(u_state, InventorySlot.weapon)!)
+	const equipped_power = appraise_power(getꓽitem_in_slot(u_state, InventorySlot.weapon)!)
 	if (best_unequipped_power > equipped_power)
 		return best_unequipped_weapon
 
@@ -96,8 +96,8 @@ export {
 	appraise_item_value,
 	appraise_item_power,
 	is_inventory_full,
-	get_item_in_slot,
-	get_item,
+	getꓽitem_in_slot,
+	getꓽitem,
 	find_better_unequipped_armor,
 	find_better_unequipped_weapon,
 }

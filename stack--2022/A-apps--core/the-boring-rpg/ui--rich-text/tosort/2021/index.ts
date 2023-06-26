@@ -5,10 +5,10 @@ import { Enum } from 'typescript-string-enums'
 import { Random, Engine } from '@offirmo/random'
 
 import { ItemQuality, InventorySlot, Item, ITEM_SLOTS } from '@tbrpg/definitions'
-import { Armor, get_damage_reduction_interval as get_armor_damage_reduction_interval } from '@oh-my-rpg/logic-armors'
+import { Armor, getꓽdamage_reduction_interval as get_armor_damage_reduction_interval } from '@oh-my-rpg/logic-armors'
 import { Weapon, get_damage_interval as get_weapon_damage_interval } from '@oh-my-rpg/logic-weapons'
 import { MonsterRank, Monster } from '@oh-my-rpg/logic-monsters'
-import { State as InventoryState, iterables_unslotted, get_item_in_slot } from '@tbrpg/state--inventory'
+import { State as InventoryState, iterables_unslotted, getꓽitem_in_slot } from '@tbrpg/state--inventory'
 import { State as WalletState, Currency, get_currency_amount } from '@tbrpg/state-wallet'
 import { State as CharacterState, CharacterAttribute, CHARACTER_STATS } from '@oh-my-rpg/state-character'
 import { Adventure, GainType } from '@tbrpg/state'
@@ -189,7 +189,7 @@ function render_characteristics(state: CharacterState, options: RenderingOptions
 }
 
 function render_equipment(inventory: InventoryState, options: RenderingOptions = DEFAULT_RENDERING_OPTIONS): string {
-	const equipped_items = ITEM_SLOTS.map(partial(get_item_in_slot, inventory))
+	const equipped_items = ITEM_SLOTS.map(partial(getꓽitem_in_slot, inventory))
 	const {last_adventure: la} = options
 
 	return equipped_items.map((i: Item | null, index: number) => {

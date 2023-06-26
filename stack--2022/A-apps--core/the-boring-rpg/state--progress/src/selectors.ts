@@ -5,11 +5,11 @@ import { State, AchievementStatus } from './types.js'
 
 /////////////////////
 
-function get_last_known_achievement_status(state: Immutable<State>, key: string): AchievementStatus | undefined {
+function getꓽlast_known_achievement_status(state: Immutable<State>, key: string): AchievementStatus | undefined {
 	return state.achievements[key]
 }
 
-function is_achievement_already_unlocked(state: Immutable<State>, key: string): boolean {
+function isꓽachievement_already_unlocked(state: Immutable<State>, key: string): boolean {
 	return state.achievements.hasOwnProperty(key)
 		? state.achievements[key] === AchievementStatus.unlocked
 		: false
@@ -17,6 +17,6 @@ function is_achievement_already_unlocked(state: Immutable<State>, key: string): 
 /////////////////////
 
 export {
-	get_last_known_achievement_status,
-	is_achievement_already_unlocked,
+	getꓽlast_known_achievement_status,
+	isꓽachievement_already_unlocked,
 }

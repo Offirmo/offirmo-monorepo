@@ -50,7 +50,7 @@ import {
 	AdventureType,
 	AdventureArchetype,
 
-	get_archetype,
+	getꓽarchetype,
 	pick_random_good_archetype,
 	pick_random_bad_archetype,
 	generate_random_coin_gain_or_loss,
@@ -323,11 +323,11 @@ function _play_adventure(state: Immutable<State>, aa: Immutable<AdventureArchety
 	}
 
 	if (aa.good && !gain_count) {
-		//dump_prettified_any('Error NO gain!', {aa, adventure})
+		//dumpꓽanyⵧprettified('Error NO gain!', {aa, adventure})
 		throw new Error(`${LIB}: play_adventure() for "good click" hid "${aa.hid}" unexpectedly resulted in NO gains!`)
 	}
 	if (item_gain_count > 1) {
-		//dump_prettified_any('Error 2x item gain!', {aa, adventure})
+		//dumpꓽanyⵧprettified('Error 2x item gain!', {aa, adventure})
 		throw new Error(`${LIB}: play_adventure() for hid "${aa.hid}" unexpectedly resulted in ${item_gain_count} item gains!`)
 	}
 

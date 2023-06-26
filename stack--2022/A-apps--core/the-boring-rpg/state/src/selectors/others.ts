@@ -5,13 +5,13 @@ import * as RichText from '@offirmo-private/rich-text-format'
 import { ITEM_SLOTS, InventorySlot, Element } from '@tbrpg/definitions'
 import { appraise_power } from '@tbrpg/logic--shop'
 import {
-	get_item as _get_item,
-	get_item_in_slot as _get_item_in_slot,
+	getꓽitem as _get_item,
+	getꓽitem_in_slot as _get_item_in_slot,
 } from '@tbrpg/state--inventory'
 import {
 	PendingEngagement,
-	get_oldest_queued_flow,
-	get_oldest_queued_non_flow,
+	getꓽoldest_queuedⵧflow,
+	getꓽoldest_queuedⵧnon_flow,
 } from '@oh-my-rpg/state-engagement'
 import { AchievementSnapshot } from '@tbrpg/state--progress'
 
@@ -54,7 +54,7 @@ function find_element(u_state: Immutable<UState>, uuid: UUID): Immutable<Element
 
 // TODO code duplication
 function getꓽoldest_pending_flow_engagement(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: PendingEngagement } | null {
-	const pe = getꓽoldest_queued_flow(u_state.engagement)
+	const pe = getꓽoldest_queuedⵧflow(u_state.engagement)
 	if (!pe)
 		return null
 
@@ -65,7 +65,7 @@ function getꓽoldest_pending_flow_engagement(u_state: Immutable<UState>): { uid
 	}
 }
 function getꓽoldest_pending_non_flow_engagement(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: PendingEngagement } | null {
-	const pe = getꓽoldest_queued_non_flow(u_state.engagement)
+	const pe = getꓽoldest_queuedⵧnon_flow(u_state.engagement)
 	if (!pe)
 		return null
 
@@ -82,8 +82,8 @@ function getꓽoldest_pending_non_flow_engagement(u_state: Immutable<UState>): {
 export {
 	find_element,
 	appraise_player_power,
-	get_oldest_pending_flow_engagement,
-	get_oldest_pending_non_flow_engagement,
+	getꓽoldest_pending_flow_engagement,
+	getꓽoldest_pending_non_flow_engagement,
 }
 
 /////////////////////

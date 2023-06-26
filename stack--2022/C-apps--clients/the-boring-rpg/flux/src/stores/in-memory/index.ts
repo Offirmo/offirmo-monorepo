@@ -4,9 +4,9 @@ import { State } from '@tbrpg/state'
 import { Action } from '@tbrpg/interfaces'
 import {
 	Immutable,
-	get_revision_loose,
+	getꓽrevisionⵧloose,
 	fluid_select,
-	get_base_loose,
+	getꓽbaseⵧloose,
 } from '@offirmo-private/state-utils'
 
 import { OMRSoftExecutionContext } from '../../sec.js'
@@ -32,7 +32,7 @@ export function create(
 
 		function set(new_state: Immutable<State>): void {
 			const has_valuable_difference = !state || fluid_select(new_state).has_valuable_difference_with(state)
-			logger.trace(`[${LIB}].set()`, { state: get_base_loose(new_state), has_valuable_difference })
+			logger.trace(`[${LIB}].set()`, { state: getꓽbaseⵧloose(new_state), has_valuable_difference })
 
 			if (!state) {
 				logger.trace(`[${LIB}].set(): init ✔`)
@@ -54,7 +54,7 @@ export function create(
 
 		function on_dispatch(action: Immutable<Action>, eventual_state_hint?: Immutable<State>): void {
 			logger.trace(`[${LIB}] ⚡ action dispatched: ${action.type}`, {
-				eventual_state_hint: get_base_loose(eventual_state_hint as any),
+				eventual_state_hint: getꓽbaseⵧloose(eventual_state_hint as any),
 			})
 			assert(state || eventual_state_hint, `[${LIB}].on_dispatch(): should be provided a hint or a previous state`)
 			assert(!eventual_state_hint, `[${LIB}].on_dispatch(): (upper level architectural invariant) hint not expected in this store`)
@@ -63,8 +63,8 @@ export function create(
 			state = eventual_state_hint || reduce_action(state!, action)
 			const has_valuable_difference = state !== previous_state
 			logger.trace(`[${LIB}] ⚡ action dispatched & reduced:`, {
-				current_rev: get_revision_loose(previous_state as any),
-				new_rev: get_revision_loose(state as any),
+				current_rev: getꓽrevisionⵧloose(previous_state as any),
+				new_rev: getꓽrevisionⵧloose(state as any),
 				has_valuable_difference,
 			})
 			if (!has_valuable_difference) {

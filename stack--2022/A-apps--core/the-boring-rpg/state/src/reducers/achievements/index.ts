@@ -1,11 +1,10 @@
 import { Immutable} from '@offirmo-private/ts-types'
 
 import {
-	State as ProgressState,
 	AchievementDefinition,
 	AchievementStatus,
 	on_achieved,
-	get_last_known_achievement_status,
+	getꓽlast_known_achievement_status,
 } from '@tbrpg/state--progress'
 import {
 	enqueue as enqueueEngagement,
@@ -30,7 +29,7 @@ function _refresh_achievements(state: Immutable<State>): Immutable<State> {
 		const last_known_status = getꓽlast_known_achievement_status(progress, name)
 		if (last_known_status === AchievementStatus.unlocked) return // can't change, already best
 
-		const current_status = definition.get_status(u_state)
+		const current_status = definition.getꓽstatus(u_state)
 		if (last_known_status === current_status) return
 
 		has_change = true

@@ -39,5 +39,5 @@ function getꓽrecap(u_state: Immutable<UState>): RichText.Document {
 }
 
 export {
-	get_recap,
+	getꓽrecap,
 }

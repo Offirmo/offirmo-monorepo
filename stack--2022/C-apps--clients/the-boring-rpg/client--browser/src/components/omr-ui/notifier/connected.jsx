@@ -56,7 +56,7 @@ const OMRUINotifierC1 = React.memo(
 
 		let pending_non_flow_engagement
 		do {
-			pending_non_flow_engagement = get_game_instance().queries.get_oldest_pending_non_flow_engagement()
+			pending_non_flow_engagement = get_game_instance().queries.getꓽoldest_pending_non_flow_engagement()
 			if (pending_non_flow_engagement) {
 				const { uid, $doc, pe } = pending_non_flow_engagement
 				logger.log('Dequeing engagement: ', {uid, $doc, pe, pending_non_flow_engagement})

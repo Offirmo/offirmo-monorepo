@@ -14,11 +14,11 @@ import ErrorBoundary from "@offirmo-private/react-error-boundary"
 const InfoboxC1 = React.memo(
 	function InfoboxC1({state}) {
 		const game_instance = get_game_instance()
-		const achievements_completion_pct = (new Fraction(game_instance.queries.get_achievements_completion())).mul(100).floor(2).valueOf()
+		const achievements_completion_pct = (new Fraction(game_instance.queries.getꓽachievements_completion())).mul(100).floor(2).valueOf()
 
 		return (
 			<InfoboxView
-				energy_float={game_instance.queries.get_available_energy_float()}
+				energy_float={game_instance.queries.getꓽavailable_energy‿float()}
 				human_time_to_next={game_instance.queries.get_human_time_to_next_energy()}
 				achievements_completion_pct={achievements_completion_pct}
 			/>
@@ -28,7 +28,7 @@ const InfoboxC1 = React.memo(
 
 
 function InfoBoxC2() {
-	//console.log('🔄 InfoboxC2'/*, this.context, get_available_energy_float(this.context.model)*/)
+	//console.log('🔄 InfoboxC2'/*, this.context, getꓽavailable_energy‿float(this.context.model)*/)
 
 	return (
 		<ErrorBoundary name={'tbrpg:infobox'}>

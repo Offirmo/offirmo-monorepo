@@ -155,9 +155,9 @@ function get_milliseconds_to_next(u_state: Readonly<UState>, t_state: Readonly<T
 	return ttn
 }
 
-function get_human_time_to_next(u_state: Readonly<UState>, t_state: Readonly<TState>): string {
+function getꓽhuman_time_to_next(u_state: Readonly<UState>, t_state: Readonly<TState>): string {
 	if (t_state.timestamp_ms + TICK_MS < getꓽUTC_timestamp‿ms()) {
-		getꓽlogger().warn(`${LIB}.get_human_time_to_next() called on outdated state!`)
+		getꓽlogger().warn(`${LIB}.getꓽhuman_time_to_next() called on outdated state!`)
 	}
 
 	const energy = new Fraction(t_state.available_energy)
@@ -194,7 +194,7 @@ function getꓽavailable_energy‿int(t_state: Readonly<TState>): number {
 export {
 	get_current_energy_refilling_rate_per_ms,
 	get_milliseconds_to_next,
-	get_human_time_to_next,
+	getꓽhuman_time_to_next,
 
 	getꓽavailable_energy‿float,
 	getꓽavailable_energy‿int,

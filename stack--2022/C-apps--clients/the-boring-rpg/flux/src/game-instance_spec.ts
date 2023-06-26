@@ -4,12 +4,12 @@ import { expect } from 'chai'
 import sinon from 'sinon'
 import { createLocalStorage } from 'localstorage-ponyfill'
 import { createLogger } from '@offirmo/practical-logger-node'
-import { is_RootState } from '@offirmo-private/state-utils'
+import { isꓽRootState } from '@offirmo-private/state-utils'
 import { State, DEMO_STATE, EngagementKey } from '@tbrpg/state'
 import { StorageKey } from './stores/local-storage'
 
 import { LIB } from './consts'
-import { get_lib_SEC } from './sec.js'
+import { getꓽSEC } from './sec.js'
 import { create_game_instance } from '.'
 
 /////////////////////
@@ -25,11 +25,11 @@ describe(`${LIB} - game-instance`, function() {
 		name: LIB,
 		suggestedLevel: 'info', // change here if bug
 	})
-	let SEC = get_lib_SEC()
+	let SEC = getꓽSEC()
 	const START_MS = 100_000
 
 	beforeEach(() => {
-		SEC = get_lib_SEC()
+		SEC = getꓽSEC()
 			.injectDependencies({ logger })
 		local_storage.clear()
 	})
@@ -50,7 +50,7 @@ describe(`${LIB} - game-instance`, function() {
 					app_state: {} as any,
 				})
 
-				expect(is_RootState(game_instance.model.get())).to.be.true
+				expect(isꓽRootState(game_instance.model.get())).to.be.true
 			})
 		})
 
@@ -63,7 +63,7 @@ describe(`${LIB} - game-instance`, function() {
 					app_state: {} as any,
 				})
 
-				expect(is_RootState(game_instance.model.get())).to.be.true
+				expect(isꓽRootState(game_instance.model.get())).to.be.true
 			})
 		})
 
@@ -77,7 +77,7 @@ describe(`${LIB} - game-instance`, function() {
 				})
 
 				const model = game_instance.model.get()
-				expect(is_RootState(model)).to.be.true
+				expect(isꓽRootState(model)).to.be.true
 
 				expect(model.u_state.avatar.name).to.equal('PerteProd')
 				expect(model.u_state.avatar.klass).to.equal('knight')

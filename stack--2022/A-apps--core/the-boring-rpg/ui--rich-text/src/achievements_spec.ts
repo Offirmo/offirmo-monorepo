@@ -4,7 +4,7 @@ import stripAnsi from 'strip-ansi'
 import {
 	create,
 	play,
-	get_achievements_snapshot,
+	getꓽachievements_snapshot,
 } from '@tbrpg/state'
 
 import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-ansi'
@@ -17,8 +17,8 @@ describe('🔠  view to @offirmo-private/rich-text-format - achievements', funct
 	it('should render properly - demo', () => {
 		const state = play(create())
 
-		const $doc = render_achievements_snapshot(get_achievements_snapshot(state.u_state))
-		//console.log(prettify_json($doc))
+		const $doc = render_achievements_snapshot(getꓽachievements_snapshot(state.u_state))
+		//console.log(prettifyꓽjson($doc))
 		const str = rich_text_to_ansi($doc)
 		console.log(str)
 		expect(str).to.be.a('string')

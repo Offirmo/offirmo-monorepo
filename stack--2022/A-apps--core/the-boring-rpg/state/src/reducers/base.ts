@@ -134,7 +134,7 @@ function rename_avatar(previous_state: Immutable<State>, new_name: string, now_m
 }
 
 function change_avatar_class(previous_state: Immutable<State>, new_class: CharacterClass, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
-	if (!get_available_classes(previous_state.u_state).includes(new_class))
+	if (!getꓽavailable_classes(previous_state.u_state).includes(new_class))
 		throw new Error(`${LIB}: switch class: invalid class "${new_class}"!`)
 
 	let state = previous_state

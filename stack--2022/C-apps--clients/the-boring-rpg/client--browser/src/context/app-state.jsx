@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import { get_revision } from '@offirmo-private/state-utils'
+import { getꓽrevision } from '@offirmo-private/state-utils'
 
 import get_game_instance from '../services/game-instance-browser'
 import logger from '../services/logger'
-import { get_timestamp } from '@offirmo-private/state-utils/src'
+import { getꓽtimestamp } from '@offirmo-private/state-utils/src'
 
 
 // https://reactjs.org/docs/context.html
@@ -37,12 +37,12 @@ class AppStateListenerAndProvider extends React.Component {
 		// yes, we shortcut React and make sure to pick the latest version
 		// Without that, there is a delay while setState get propagated
 		const latest_app_state = get_game_instance().view.get()
-		const latest_model_revision = latest_app_state ? get_revision(latest_app_state.model) : -1
+		const latest_model_revision = latest_app_state ? getꓽrevision(latest_app_state.model) : -1
 
-		logger.trace(`🔄 AppStateListenerAndProvider (model is rev#${latest_model_revision},T=${get_timestamp(latest_app_state.model)})`/*, {app_state: this.state.app_state}*/);
+		logger.trace(`🔄 AppStateListenerAndProvider (model is rev#${latest_model_revision},T=${getꓽtimestamp(latest_app_state.model)})`/*, {app_state: this.state.app_state}*/);
 
 		/* Yes this triggers
-		const local_revision = this.state.app_state ? get_revision(this.state.app_state.model) : -1
+		const local_revision = this.state.app_state ? getꓽrevision(this.state.app_state.model) : -1
 		if (latest_model_revision !== local_revision)
 			console.warn(`FYI App State Context discrepancy: local = ${local_revision}, latest = ${latest_model_revision}`)
 		*/

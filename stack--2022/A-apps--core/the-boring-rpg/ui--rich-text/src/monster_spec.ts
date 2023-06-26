@@ -16,7 +16,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - monster', function()
 			for(let i = 0; i < 10; ++i) {
 				const m = generate_random_demo_monster()
 				const $doc = render_monster(m)
-				//console.log(prettify_json($doc))
+				//console.log(prettifyꓽjson($doc))
 				const str = rich_text_to_ansi($doc)
 				// should just not throw
 			}

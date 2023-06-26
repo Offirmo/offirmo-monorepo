@@ -4,13 +4,13 @@ import debounce from 'lodash/debounce'
 import stable_stringify from 'json-stable-stringify'
 import { normalizeError } from '@offirmo/error-utils'
 import { overrideHook } from '@offirmo/universal-debug-api-placeholder'
-import { TimestampUTCMs, get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { Immutable, Storage } from '@offirmo-private/ts-types'
 import {
 	fluid_select,
-	get_schema_version_loose,
-	get_base_loose,
-	get_revision_loose,
+	getꓽschema_versionⵧloose,
+	getꓽbaseⵧloose,
+	getꓽrevisionⵧloose,
 	UNCLEAR_get_difference__full,
 } from '@offirmo-private/state-utils'
 import { getGlobalThis } from '@offirmo/globalthis-ponyfill'
@@ -58,7 +58,7 @@ function is_healthy(state: Immutable<CloudSyncState>): boolean {
 // TODO evaluate https://github.com/vercel/async-sema
 
 function has_recent_sync(state: Immutable<CloudSyncState>): boolean {
-	const now = get_UTC_timestamp_ms()
+	const now = getꓽUTC_timestamp‿ms()
 	if (now - state.last_successful_sync_tms >= 30 * 60 * 1000)
 		return false
 
@@ -77,7 +77,7 @@ function on_network_error(state: Immutable<CloudSyncState>, err: Error): Immutab
 function on_sync_result(state: Immutable<CloudSyncState>): Immutable<CloudSyncState> {
 	return {
 		...state,
-		last_successful_sync_tms: get_UTC_timestamp_ms(),
+		last_successful_sync_tms: getꓽUTC_timestamp‿ms(),
 		error_count: 0,
 	}
 }
@@ -142,8 +142,8 @@ export function create(
 					_is_initialised,
 					_is_online,
 					_is_healthy,
-					candidate_rev: get_revision_loose(state!),
-					last_known_cloud_rev: get_revision_loose(last_known_cloud_state!),
+					candidate_rev: getꓽrevisionⵧloose(state!),
+					last_known_cloud_rev: getꓽrevisionⵧloose(last_known_cloud_state!),
 					_has_valuable_difference,
 					_has_recent_sync,
 					is_sync_in_flight,
@@ -179,7 +179,7 @@ export function create(
 			try {
 				logger.info(`[${LIB}] _sync_with_cloud() initiating call…`)
 				is_sync_in_flight = true
-				const revision_on_last_sync_start = get_revision_loose(state!)
+				const revision_on_last_sync_start = getꓽrevisionⵧloose(state!)
 				const result = await fetch_oa<State, State>({
 					SEC: SEC as any,
 					method: 'PATCH',
@@ -229,7 +229,7 @@ export function create(
 					}
 
 					last_known_cloud_state = data
-					if (get_revision_loose(state!) !== revision_on_last_sync_start) {
+					if (getꓽrevisionⵧloose(state!) !== revision_on_last_sync_start) {
 						// the local state changed since we initiated the sync
 						// this result is outdated.
 						// we need to re-attempt to sync asap
@@ -243,7 +243,7 @@ export function create(
 						semantic_difference: UNCLEAR_get_difference__full(last_known_cloud_state, state),
 					})
 
-					let cloud_schema_version = get_schema_version_loose(last_known_cloud_state)
+					let cloud_schema_version = getꓽschema_versionⵧloose(last_known_cloud_state)
 					if (cloud_schema_version > SCHEMA_VERSION) {
 						// TODO trigger an update
 						assert(cloud_schema_version <= SCHEMA_VERSION, `[${LIB}] schema version of cloud state should match`)
@@ -254,7 +254,7 @@ export function create(
 						// - a legacy client (ex. mobile app not up to date due to offline or store validation) is still active with higher involvement
 						// no worries, we can migrate it
 						last_known_cloud_state = migrate_to_latest(SEC, last_known_cloud_state)
-						cloud_schema_version = get_schema_version_loose(last_known_cloud_state)
+						cloud_schema_version = getꓽschema_versionⵧloose(last_known_cloud_state)
 						assert(cloud_schema_version === SCHEMA_VERSION, `[${LIB}] schema version of cloud state should match after migration`)
 					}
 					// schema versions now match
@@ -321,8 +321,8 @@ export function create(
 		function set(new_state: Immutable<State>): void {
 			const has_valuable_difference = !state || fluid_select(new_state).has_valuable_difference_with(state)
 			logger.trace(`[${LIB}].set()`, {
-				'new': get_base_loose(new_state),
-				existing: get_base_loose(state as any),
+				'new': getꓽbaseⵧloose(new_state),
+				existing: getꓽbaseⵧloose(state as any),
 				has_valuable_difference,
 			})
 
@@ -350,7 +350,7 @@ export function create(
 
 		function on_dispatch(action: Immutable<Action>, eventual_state_hint?: Immutable<State>): void {
 			logger.trace(`[${LIB}] ⚡ action dispatched: ${action.type}`, {
-				eventual_state_hint: get_base_loose(eventual_state_hint as any),
+				eventual_state_hint: getꓽbaseⵧloose(eventual_state_hint as any),
 			})
 
 			assert(state || eventual_state_hint, `[${LIB}].on_dispatch(): should be provided a hint or a previous state`)
@@ -360,8 +360,8 @@ export function create(
 			state = eventual_state_hint || reduce_action(state!, action)
 			const has_valuable_difference = !previous_state || fluid_select(state).has_valuable_difference_with(previous_state)
 			logger.trace(`[${LIB}] ⚡ action dispatched & reduced:`, {
-				current_rev: get_revision_loose(previous_state as any),
-				new_rev: get_revision_loose(state as any),
+				current_rev: getꓽrevisionⵧloose(previous_state as any),
+				new_rev: getꓽrevisionⵧloose(state as any),
 				has_valuable_difference,
 			})
 

@@ -18,7 +18,7 @@ import { get_actions_for_element } from './get_actions'
 
 
 interface Queries {
-	get_item(
+	getꓽitem(
 		uuid: UUID, state: Immutable<State>
 	): Item | null
 	appraise_item_value(
@@ -33,22 +33,22 @@ interface Queries {
 	get_actions_for_element(
 		uuid: UUID, state: Immutable<State>
 	): Action[]
-	get_oldest_pending_flow_engagement(
+	getꓽoldest_pending_flow_engagement(
 		state: Immutable<State>
 	): { uid: number, $doc: Document, pe: PendingEngagement } | null
-	get_oldest_pending_non_flow_engagement(
+	getꓽoldest_pending_non_flow_engagement(
 		state: Immutable<State>
 	): { uid: number, $doc: Document, pe: PendingEngagement } | null
-	get_achievements_snapshot(
+	getꓽachievements_snapshot(
 		state: Immutable<State>
 	): Immutable<AchievementSnapshot>[]
-	get_available_energy_float(
+	getꓽavailable_energy‿float(
 		state: Immutable<State>
 	): number
 	get_human_time_to_next_energy(
 		state: Immutable<State>
 	): string
-	get_achievements_completion(
+	getꓽachievements_completion(
 		state: Immutable<State>
 	): [number, number]
 	get_last_adventure(
@@ -60,7 +60,7 @@ interface Queries {
 	is_inventory_full(
 		state: Immutable<State>
 	): boolean
-	get_available_classes(
+	getꓽavailable_classes(
 		state: Immutable<State>
 	): string[]
 	// https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html
@@ -70,8 +70,8 @@ interface Queries {
 }
 function get_queries(store: Store)/*: Queries*/ {
 	return {
-		get_item(uuid: UUID, state: Immutable<State> = store.get()): Item | null {
-			return selectors.get_item(state.u_state, uuid)
+		getꓽitem(uuid: UUID, state: Immutable<State> = store.get()): Item | null {
+			return selectors.getꓽitem(state.u_state, uuid)
 		},
 		appraise_item_value(uuid: UUID, state: Immutable<State> = store.get()): number {
 			return selectors.appraise_item_value(state.u_state, uuid)
@@ -85,23 +85,23 @@ function get_queries(store: Store)/*: Queries*/ {
 		get_actions_for_element(uuid: UUID, state: Immutable<State> = store.get()): Action[] {
 			return get_actions_for_element(state.u_state, uuid)
 		},
-		get_oldest_pending_flow_engagement(state: Immutable<State> = store.get()): { uid: number, $doc: Document, pe: PendingEngagement } | null {
-			return selectors.get_oldest_pending_flow_engagement(state.u_state)
+		getꓽoldest_pending_flow_engagement(state: Immutable<State> = store.get()): { uid: number, $doc: Document, pe: PendingEngagement } | null {
+			return selectors.getꓽoldest_pending_flow_engagement(state.u_state)
 		},
-		get_oldest_pending_non_flow_engagement(state: Immutable<State> = store.get()): { uid: number, $doc: Document, pe: PendingEngagement } | null {
-			return selectors.get_oldest_pending_non_flow_engagement(state.u_state)
+		getꓽoldest_pending_non_flow_engagement(state: Immutable<State> = store.get()): { uid: number, $doc: Document, pe: PendingEngagement } | null {
+			return selectors.getꓽoldest_pending_non_flow_engagement(state.u_state)
 		},
-		get_achievements_snapshot(state: Immutable<State> = store.get()): Immutable<AchievementSnapshot[]> {
-			return selectors.get_achievements_snapshot(state.u_state)
+		getꓽachievements_snapshot(state: Immutable<State> = store.get()): Immutable<AchievementSnapshot[]> {
+			return selectors.getꓽachievements_snapshot(state.u_state)
 		},
-		get_available_energy_float(state: Immutable<State> = store.get()): number {
-			return selectors.get_available_energy_float(state.t_state)
+		getꓽavailable_energy‿float(state: Immutable<State> = store.get()): number {
+			return selectors.getꓽavailable_energy‿float(state.t_state)
 		},
 		get_human_time_to_next_energy(state: Immutable<State> = store.get()): string {
 			return selectors.get_human_time_to_next_energy(state)
 		},
-		get_achievements_completion(state: Immutable<State> = store.get()): [number, number] {
-			return selectors.get_achievements_completion(state.u_state)
+		getꓽachievements_completion(state: Immutable<State> = store.get()): [number, number] {
+			return selectors.getꓽachievements_completion(state.u_state)
 		},
 		get_last_adventure(state: Immutable<State> = store.get()): Immutable<Adventure> | null {
 			return state.u_state.last_adventure
@@ -112,8 +112,8 @@ function get_queries(store: Store)/*: Queries*/ {
 		is_inventory_full(state: Immutable<State> = store.get()): boolean {
 			return selectors.is_inventory_full(state.u_state)
 		},
-		get_available_classes(state: Immutable<State> = store.get()): string[] {
-			return selectors.get_available_classes(state.u_state)
+		getꓽavailable_classes(state: Immutable<State> = store.get()): string[] {
+			return selectors.getꓽavailable_classes(state.u_state)
 		},
 		// https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html
 		get_sub_state<K extends keyof UState>(key: K, state: Immutable<State> = store.get()): Immutable<UState>[K] {

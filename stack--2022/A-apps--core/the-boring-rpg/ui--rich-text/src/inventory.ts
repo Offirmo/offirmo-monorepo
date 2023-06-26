@@ -9,7 +9,7 @@ import {
 import {
 	State as InventoryState,
 	iterables_unslotted,
-	get_item_in_slot,
+	getꓽitem_in_slot,
 } from '@tbrpg/state--inventory'
 
 import { State as WalletState } from '@tbrpg/state-wallet'
@@ -29,7 +29,7 @@ function render_equipment(inventory: Immutable<InventoryState>, options?: Immuta
 		.done()
 
 	ITEM_SLOTS.forEach((slot: InventorySlot) => {
-		const item = get_item_in_slot(inventory, slot)
+		const item = getꓽitem_in_slot(inventory, slot)
 
 		const $doc_item = item
 			? render_item_short(item, options)
@@ -67,7 +67,7 @@ function render_backpack(inventory: Immutable<InventoryState>, options?: Immutab
 
 	misc_items.forEach((i: Item) => {
 		if (!reference_powers[i.slot]) {
-			const item = get_item_in_slot(inventory, i.slot)
+			const item = getꓽitem_in_slot(inventory, i.slot)
 			reference_powers[i.slot] = item ? appraise_power(item) : 0
 		}
 

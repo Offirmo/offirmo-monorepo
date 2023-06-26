@@ -13,7 +13,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - meta', function() {
 	describe('demo', function() {
 		it('shows off', () => {
 			const $doc = render_account_info(DEMO_STATE)
-			//console.log(prettify_json($doc))
+			//console.log(prettifyꓽjson($doc))
 			const str = rich_text_to_ansi($doc)
 			// should just not throw
 		})

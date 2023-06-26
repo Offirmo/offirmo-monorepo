@@ -230,7 +230,7 @@ function _auto_make_room(state: Immutable<State>, options: { DEBUG?: boolean } =
 
 
 function _enhance_an_armor(state: Immutable<State>): Immutable<State> {
-	const slotted = InventoryState.get_item_in_slot(state.u_state.inventory, InventorySlot.armor) as Armor
+	const slotted = InventoryState.getꓽitem_in_slot(state.u_state.inventory, InventorySlot.armor) as Armor
 
 	if (ArmorLib.is_at_max_enhancement(slotted)) {
 		// TODO try to enhance another armor
@@ -252,7 +252,7 @@ function _enhance_an_armor(state: Immutable<State>): Immutable<State> {
 	}
 }
 function _enhance_a_weapon(state: Immutable<State>): Immutable<State> {
-	const slotted = InventoryState.get_item_in_slot(state.u_state.inventory, InventorySlot.weapon) as Weapon
+	const slotted = InventoryState.getꓽitem_in_slot(state.u_state.inventory, InventorySlot.weapon) as Weapon
 
 	if (WeaponLib.is_at_max_enhancement(slotted)) {
 		// TODO try to enhance another weapon

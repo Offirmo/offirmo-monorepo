@@ -16,7 +16,7 @@ import {
 	get_current_energy_refilling_rate_per_ms,
 	get_milliseconds_to_next,
 	getꓽavailable_energy‿float,
-	get_human_time_to_next,
+	getꓽhuman_time_to_next,
 } from './index.js'
 
 
@@ -294,14 +294,14 @@ describe(`${LIB} - selectors`, function() {
 		})
 	})
 
-	describe('get_human_time_to_next()', function () {
+	describe('getꓽhuman_time_to_next()', function () {
 
 		context('on initial state', function() {
 
 			it('should yield a correct value', function () {
 				const [u_state, t_state] = create()
 
-				expect(get_human_time_to_next(u_state, t_state)).to.equal('')
+				expect(getꓽhuman_time_to_next(u_state, t_state)).to.equal('')
 			})
 		})
 
@@ -318,7 +318,7 @@ describe(`${LIB} - selectors`, function() {
 				;[ u_state, t_state ] = use_energy([u_state, t_state], 7)
 
 				//dumpꓽanyⵧprettified('s', { u_state, t_state })
-				expect(get_human_time_to_next(u_state, t_state)).to.equal('3h 25m 43s')
+				expect(getꓽhuman_time_to_next(u_state, t_state)).to.equal('3h 25m 43s')
 			})
 		})
 
@@ -338,9 +338,9 @@ describe(`${LIB} - selectors`, function() {
 					now: getꓽUTC_timestamp‿ms(now),
 					t_state,
 					aef: getꓽavailable_energy‿float(t_state),
-					ttn: get_human_time_to_next(u_state, t_state),
+					ttn: getꓽhuman_time_to_next(u_state, t_state),
 				})*/
-				expect(get_human_time_to_next(u_state, t_state), '+0').to.equal('3h 25m 43s')
+				expect(getꓽhuman_time_to_next(u_state, t_state), '+0').to.equal('3h 25m 43s')
 
 				now = new Date(2017, 1, 1, 1, 0, 1)
 				t_state = update_to_now([ u_state, t_state ], +now)
@@ -348,9 +348,9 @@ describe(`${LIB} - selectors`, function() {
 					now: getꓽUTC_timestamp‿ms(now),
 					t_state,
 					aef: getꓽavailable_energy‿float(t_state),
-					ttn: get_human_time_to_next(u_state, t_state),
+					ttn: getꓽhuman_time_to_next(u_state, t_state),
 				})*/
-				expect(get_human_time_to_next(u_state, t_state), '+1s').to.equal('3h 25m 42s')
+				expect(getꓽhuman_time_to_next(u_state, t_state), '+1s').to.equal('3h 25m 42s')
 
 				now = new Date(2017, 1, 1, 1, 1, 0)
 				t_state = update_to_now([ u_state, t_state ], +now)
@@ -358,13 +358,13 @@ describe(`${LIB} - selectors`, function() {
 					now: getꓽUTC_timestamp‿ms(now),
 					t_state,
 					aef: getꓽavailable_energy‿float(t_state),
-					ttn: get_human_time_to_next(u_state, t_state),
+					ttn: getꓽhuman_time_to_next(u_state, t_state),
 				})*/
-				expect(get_human_time_to_next(u_state, t_state), '+1m').to.equal('3h 24m 43s')
+				expect(getꓽhuman_time_to_next(u_state, t_state), '+1m').to.equal('3h 24m 43s')
 
 				now = new Date(2017, 1, 1, 2, 0, 0)
 				t_state = update_to_now([ u_state, t_state ], +now)
-				expect(get_human_time_to_next(u_state, t_state), '+1h').to.equal('2h 25m 43s')
+				expect(getꓽhuman_time_to_next(u_state, t_state), '+1h').to.equal('2h 25m 43s')
 			})
 		})
 	})

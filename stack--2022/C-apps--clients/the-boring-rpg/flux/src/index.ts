@@ -1,4 +1,4 @@
-export { VERSION, NUMERIC_VERSION, SCHEMA_VERSION, BUILD_DATE, get_logger } from '@tbrpg/state'
+export { VERSION, NUMERIC_VERSION, SCHEMA_VERSION, BUILD_DATE, getꓽlogger } from '@tbrpg/state'
 
 export * from './game-instance'
 export { Store } from './stores/types'

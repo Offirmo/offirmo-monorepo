@@ -20,7 +20,7 @@ function * gen_next_step() {
 	do {
 		const steps = []
 
-		const engagement_msg = game_instance.queries.get_oldest_pending_flow_engagement()
+		const engagement_msg = game_instance.queries.getꓽoldest_pending_flow_engagement()
 		if (engagement_msg) {
 			const { uid, $doc } = engagement_msg
 			steps.push({

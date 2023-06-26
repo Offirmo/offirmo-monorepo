@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable, get_schema_version_loose, is_RootState, get_base_loose } from '@offirmo-private/state-utils'
+import { Immutable, getꓽschema_versionⵧloose, isꓽRootState, getꓽbaseⵧloose } from '@offirmo-private/state-utils'
 import { dequal as is_deep_equal } from 'dequal'
 
 import { Action } from '@tbrpg/interfaces'
@@ -48,12 +48,12 @@ export function create(
 		}
 
 		function set(state: Immutable<State>): void {
-			logger.trace(`${LIB}.set()`, { state: get_base_loose(state) })
+			logger.trace(`${LIB}.set()`, { state: getꓽbaseⵧloose(state) })
 
 			assert(stores.length, 'Dispatcher: set() before registering any stores!')
 
-			assert(is_RootState(state), `Dispatcher: set() is_RootState()!`)
-			assert(get_schema_version_loose(state) === SCHEMA_VERSION, `Dispatcher: set() schema version === ${SCHEMA_VERSION} (current)!`)
+			assert(isꓽRootState(state), `Dispatcher: set() isꓽRootState()!`)
+			assert(getꓽschema_versionⵧloose(state) === SCHEMA_VERSION, `Dispatcher: set() schema version === ${SCHEMA_VERSION} (current)!`)
 
 			stores.forEach(store => {
 				store.set(state)

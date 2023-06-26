@@ -7,7 +7,7 @@ import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 import { LIB } from '../consts.js'
 import {create, State} from '../index.js'
 import {
-	get_available_classes,
+	getꓽavailable_classes,
 	will_next_play_be_good_at,
 } from './game.js'
 import { CharacterClass } from '@tbrpg/state--character'
@@ -19,7 +19,7 @@ import {
 describe(`${LIB} - selectors - game`, function() {
 	beforeEach(() => xxx_internal_reset_prng_cache())
 
-	describe('get_available_classes()', function() {
+	describe('getꓽavailable_classes()', function() {
 
 		it('should return class strings', () => {
 			const { u_state } = enforce_immutability<State>(create())
@@ -47,19 +47,19 @@ describe(`${LIB} - selectors - game`, function() {
 		it('should return a correct boolean', () => {
 			let state = enforce_immutability<State>(create())
 
-			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp_ms())).to.be.true
+			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp‿ms())).to.be.true
 
 			state = _lose_all_energy(state)
-			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp_ms())).to.be.false
+			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp‿ms())).to.be.false
 		})
 
 		it('should properly take into account the given time', () => {
 			let state = enforce_immutability<State>(create())
 
 			state = _lose_all_energy(state)
-			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp_ms())).to.be.false
+			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp‿ms())).to.be.false
 
-			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp_ms() + 4 * 3600 * 1000)).to.be.true
+			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp‿ms() + 4 * 3600 * 1000)).to.be.true
 		})
 	})
 })

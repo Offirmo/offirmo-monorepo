@@ -21,7 +21,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 
 	it('should render properly - with gain of skills', () => {
 		const $doc = render_adventure(DEMO_ADVENTURE_01)
-		//console.log(prettify_json($doc))
+		//console.log(prettifyꓽjson($doc))
 
 		const str = stripAnsi(rich_text_to_ansi($doc))
 		//console.log(str)
@@ -35,7 +35,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 
 	it('should render properly - with gain of coins', () => {
 		const $doc = render_adventure(DEMO_ADVENTURE_02)
-		//console.log(prettify_json($doc))
+		//console.log(prettifyꓽjson($doc))
 
 		const str = stripAnsi(rich_text_to_ansi($doc))
 		//console.log(str)
@@ -47,7 +47,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 
 	it('should render properly - with gain of item(s)', () => {
 		const $doc = render_adventure(DEMO_ADVENTURE_03)
-		//console.log(prettify_json($doc))
+		//console.log(prettifyꓽjson($doc))
 
 		const str = stripAnsi(rich_text_to_ansi($doc))
 		//console.log(str)
@@ -58,7 +58,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 
 	it('should render properly - with gain of item improvement', () => {
 		const $doc = render_adventure(DEMO_ADVENTURE_04)
-		//console.log(prettify_json($doc))
+		//console.log(prettifyꓽjson($doc))
 
 		const str = stripAnsi(rich_text_to_ansi($doc))
 		//console.log(str)
@@ -79,7 +79,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 						state = play(state, undefined, hid)
 
 						const $doc = render_adventure(state.u_state.last_adventure!)
-						//console.log(prettify_json($doc))
+						//console.log(prettifyꓽjson($doc))
 
 						// should just not throw
 						const str = rich_text_to_ansi($doc)
@@ -105,7 +105,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 						state = play(state, undefined, hid)
 
 						const $doc = render_adventure(state.u_state.last_adventure!)
-						//console.log(prettify_json($doc))
+						//console.log(prettifyꓽjson($doc))
 						const str = rich_text_to_ansi($doc)
 						//console.log(str)
 						// should just not throw

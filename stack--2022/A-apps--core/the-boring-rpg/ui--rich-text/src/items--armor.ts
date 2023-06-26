@@ -4,7 +4,7 @@ import { InventorySlot } from '@tbrpg/definitions'
 import {
 	MAX_ENHANCEMENT_LEVEL,
 	Armor,
-	get_damage_reduction_interval as get_armor_damage_reduction_interval,
+	getꓽdamage_reduction_interval as get_armor_damage_reduction_interval,
 } from '@tbrpg/logic-armors'
 import * as RichText from '@offirmo-private/rich-text-format'
 import { i18n_messages as I18N_ARMORS } from '@tbrpg/logic-armors'

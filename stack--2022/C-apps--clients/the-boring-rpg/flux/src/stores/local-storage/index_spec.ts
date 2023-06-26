@@ -6,7 +6,7 @@ import { enforce_immutability } from '@offirmo-private/state-utils'
 import stable_stringify from 'json-stable-stringify'
 import { createLocalStorage } from 'localstorage-ponyfill'
 import { createLogger } from '@offirmo/practical-logger-node'
-import { get_schema_version_loose, WithRevision, WithSchemaVersion } from '@offirmo-private/state-utils'
+import { getꓽschema_versionⵧloose, WithRevision, WithSchemaVersion } from '@offirmo-private/state-utils'
 import { State, DEMO_STATE, SCHEMA_VERSION, migrate_to_latest } from '@tbrpg/state'
 import { create_action_noop } from '@tbrpg/interfaces'
 import { end_of_current_event_loop, all_planned_idle_executed } from '@offirmo-private/async-utils'
@@ -218,7 +218,7 @@ describe(`${LIB} - store - local storage`, function() {
 					const store = create(SEC, local_storage, migrate_to_latest)
 
 					let step = 'sync'
-					expect(get_schema_version_loose(store.get()), `${step} get`).to.equal(SCHEMA_VERSION)
+					expect(getꓽschema_versionⵧloose(store.get()), `${step} get`).to.equal(SCHEMA_VERSION)
 
 					step = 'unpersist'
 					await all_planned_idle_executed()
@@ -246,7 +246,7 @@ describe(`${LIB} - store - local storage`, function() {
 					//console.log(storage_to_string(local_storage))
 					expect(local_storage, `${step} ls size`).to.have.lengthOf(2)
 					let main_bkp = JSON.parse(local_storage.getItem(StorageKey.bkp_main)!)
-					expect(get_schema_version_loose(main_bkp), `${step} main`).to.equal(SCHEMA_VERSION)
+					expect(getꓽschema_versionⵧloose(main_bkp), `${step} main`).to.equal(SCHEMA_VERSION)
 					expect(store.get(), `${step} get`).to.deep.equal(main_bkp)
 					expect(local_storage.getItem(StorageKey.bkp_main), `${step} main str`).to.equal(stable_stringify(DEMO_LATEST))
 					expect(local_storage.getItem(StorageKey.bkp_minor), `${step} minor str`).to.equal(null)
@@ -276,7 +276,7 @@ describe(`${LIB} - store - local storage`, function() {
 					// no change
 					expect(local_storage, `${step} ls size`).to.have.lengthOf(4)
 					let main_bkp = JSON.parse(local_storage.getItem(StorageKey.bkp_main)!)
-					expect(get_schema_version_loose(main_bkp), `${step} main`).to.equal(SCHEMA_VERSION)
+					expect(getꓽschema_versionⵧloose(main_bkp), `${step} main`).to.equal(SCHEMA_VERSION)
 					expect(store.get(), `${step} get`).to.deep.equal(main_bkp)
 					expect(local_storage.getItem(StorageKey.bkp_main), `${step} main str`).to.deep.equal(stable_stringify(DEMO_LATEST_ALT))
 					expect(local_storage.getItem(StorageKey.bkp_minor), `${step} minor str`).to.deep.equal(stable_stringify(DEMO_LATEST))
@@ -319,7 +319,7 @@ describe(`${LIB} - store - local storage`, function() {
 					const store = create(SEC, local_storage, migrate_to_latest)
 
 					let step = 'sync'
-					expect(get_schema_version_loose(store.get()), `${step} get`).to.equal(SCHEMA_VERSION)
+					expect(getꓽschema_versionⵧloose(store.get()), `${step} get`).to.equal(SCHEMA_VERSION)
 
 					step = 'unpersist'
 					await all_planned_idle_executed()
@@ -346,7 +346,7 @@ describe(`${LIB} - store - local storage`, function() {
 					//console.log(storage_to_string(local_storage))
 					expect(local_storage, `${step} ls size`).to.have.lengthOf(2)
 					let main_bkp = JSON.parse(local_storage.getItem(StorageKey.bkp_main)!)
-					expect(get_schema_version_loose(main_bkp), `${step} main`).to.equal(SCHEMA_VERSION)
+					expect(getꓽschema_versionⵧloose(main_bkp), `${step} main`).to.equal(SCHEMA_VERSION)
 					expect(store.get(), `${step} get`).to.deep.equal(main_bkp)
 					expect(local_storage.getItem(StorageKey.bkp_main), `${step} main str`).to.equal(stable_stringify(DEMO_LATEST))
 					expect(local_storage.getItem(StorageKey.bkp_minor), `${step} minor str`).to.equal(null)
@@ -379,7 +379,7 @@ describe(`${LIB} - store - local storage`, function() {
 					const store = create(SEC, local_storage, migrate_to_latest)
 
 					let step = 'sync'
-					expect(get_schema_version_loose(store.get()), `${step} get`).to.equal(SCHEMA_VERSION)
+					expect(getꓽschema_versionⵧloose(store.get()), `${step} get`).to.equal(SCHEMA_VERSION)
 
 					// no change in LS
 					step = 'unpersist'
@@ -414,7 +414,7 @@ describe(`${LIB} - store - local storage`, function() {
 					//console.log(storage_to_string(local_storage))
 					expect(local_storage, `${step} ls size`).to.have.lengthOf(3)
 					let main_bkp = JSON.parse(local_storage.getItem(StorageKey.bkp_main)!)
-					expect(get_schema_version_loose(main_bkp), `${step} main`).to.equal(SCHEMA_VERSION)
+					expect(getꓽschema_versionⵧloose(main_bkp), `${step} main`).to.equal(SCHEMA_VERSION)
 					expect(store.get(), `${step} get`).to.deep.equal(main_bkp)
 					expect(local_storage.getItem(StorageKey.bkp_main), `${step} main str`).to.equal(stable_stringify(DEMO_LATEST))
 					expect(local_storage.getItem(StorageKey.bkp_minor), `${step} minor str`).to.equal(null)
@@ -447,7 +447,7 @@ describe(`${LIB} - store - local storage`, function() {
 					const store = create(SEC, local_storage, migrate_to_latest)
 
 					let step = 'sync'
-					expect(get_schema_version_loose(store.get()), `${step} get`).to.equal(SCHEMA_VERSION)
+					expect(getꓽschema_versionⵧloose(store.get()), `${step} get`).to.equal(SCHEMA_VERSION)
 
 					// no change in LS
 					step = 'unpersist'
@@ -482,7 +482,7 @@ describe(`${LIB} - store - local storage`, function() {
 					console.log(storage_to_string(local_storage))
 					expect(local_storage, `${step} ls size`).to.have.lengthOf(3)
 					let main_bkp = JSON.parse(local_storage.getItem(StorageKey.bkp_main)!)
-					expect(get_schema_version_loose(main_bkp), `${step} main`).to.equal(SCHEMA_VERSION)
+					expect(getꓽschema_versionⵧloose(main_bkp), `${step} main`).to.equal(SCHEMA_VERSION)
 					expect(store.get(), `${step} get`).to.deep.equal(main_bkp)
 					expect(local_storage.getItem(StorageKey.bkp_main), `${step} main str`).to.equal(stable_stringify(DEMO_LATEST))
 					expect(local_storage.getItem(StorageKey.bkp_minor), `${step} minor str`).to.equal(null)

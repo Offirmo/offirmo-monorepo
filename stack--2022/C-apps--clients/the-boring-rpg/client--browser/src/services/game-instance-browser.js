@@ -40,7 +40,7 @@ const get = memoize_one(() => getRootSEC().xTry('creating game instance', ({SEC,
 		set_item(key, value) {
 			localStorage.setItem(`the-boring-rpg.${key}`, value)
 		},
-		get_item(key) {
+		getꓽitem(key) {
 			let temp = localStorage.getItem(`the-boring-rpg.${key}`)
 			if (key === 'savegame' && !temp) // migration, TODO remove after a while
 				temp = localStorage.getItem('the-boring-rpg.savegame-bkp.v11')

@@ -7,7 +7,7 @@ import { TimestampUTCMs } from '@offirmo-private/timestamps'
 /////////////////////
 
 import { State, UState } from '../types.js'
-import { getꓽavailable_energy_float } from './energy.js'
+import { getꓽavailable_energy‿float } from './energy.js'
 import { _update_to_now } from '../reducers/internal.js'
 
 /////////////////////
@@ -22,7 +22,7 @@ function will_next_play_be_good_at(state: Immutable<State>, now_ms: TimestampUTC
 
 	const { t_state } = state
 
-	const available_energy = getꓽavailable_energy_float(t_state)
+	const available_energy = getꓽavailable_energy‿float(t_state)
 	const is_good_play = available_energy >= 1.
 
 	return is_good_play
@@ -31,7 +31,7 @@ function will_next_play_be_good_at(state: Immutable<State>, now_ms: TimestampUTC
 /////////////////////
 
 export {
-	get_available_classes,
+	getꓽavailable_classes,
 	will_next_play_be_good_at,
 }
 

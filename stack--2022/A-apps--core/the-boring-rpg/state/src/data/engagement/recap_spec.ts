@@ -9,7 +9,7 @@ import {
 } from '../../index.js'
 
 import {
-	get_recap,
+	getꓽrecap,
 } from './recap.js'
 
 

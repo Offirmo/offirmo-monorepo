@@ -91,7 +91,7 @@ describe(`🔠  ${LIB} - inventory`, function() {
 				inventory = remove_item_from_unslotted(inventory, inventory.unslotted[4]!.uuid)
 
 				const $doc = render_backpack(inventory)
-				//console.log(prettify_json($doc))
+				//console.log(prettifyꓽjson($doc))
 				const str = rich_text_to_ansi($doc)
 				// should just not throw
 				//console.log(str)

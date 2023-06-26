@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { dump_prettified_any } from '@offirmo-private/prettify-any'
+import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 
 import { ItemQuality, Item, InventorySlot } from '@tbrpg/definitions'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
@@ -37,11 +37,11 @@ describe(`${LIB} - reducer`, function() {
 				}
 			}
 			catch (err) {
-				dump_prettified_any('crash', state)
+				dumpꓽanyⵧprettified('crash', state)
 				throw err
 			}
 
-			//dump_prettified_any('success', state)
+			//dumpꓽanyⵧprettified('success', state)
 			expect(state.u_state.progress.statistics.good_play_count).to.equal(1000)
 			expect(state.u_state.progress.statistics.bad_play_count).to.equal(0)
 		})
@@ -55,11 +55,11 @@ describe(`${LIB} - reducer`, function() {
 				})
 			}
 			catch (err) {
-				dump_prettified_any('crash', state)
+				dumpꓽanyⵧprettified('crash', state)
 				throw err
 			}
 
-			//dump_prettified_any('success', state)
+			//dumpꓽanyⵧprettified('success', state)
 			expect(state.u_state.progress.statistics.good_play_count).to.equal(1000)
 			expect(state.u_state.progress.statistics.bad_play_count).to.equal(0)
 
@@ -83,11 +83,11 @@ describe(`${LIB} - reducer`, function() {
 				})
 			}
 			catch (err) {
-				dump_prettified_any('crash', state)
+				dumpꓽanyⵧprettified('crash', state)
 				throw err
 			}
 
-			//dump_prettified_any('success', state)
+			//dumpꓽanyⵧprettified('success', state)
 			expect(state.u_state.progress.statistics.good_play_count).to.equal(2000)
 			expect(state.u_state.progress.statistics.bad_play_count).to.equal(100)
 		})

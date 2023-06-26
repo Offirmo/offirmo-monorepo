@@ -58,7 +58,7 @@ describe(`${LIB} - reducer`, function() {
 				it('should be testable and not throw', () => {
 					const state = create()
 
-					const status = definition.get_status(state.u_state)
+					const status = definition.getꓽstatus(state.u_state)
 					expect(Enum.isType(AchievementStatus, status)).to.be.true
 				})
 			})

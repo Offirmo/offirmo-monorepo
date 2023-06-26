@@ -14,7 +14,7 @@ import {
 	State,
 } from './types.js'
 
-import { get_last_known_achievement_status } from './selectors.js'
+import { getꓽlast_known_achievement_status } from './selectors.js'
 
 import { TBRSoftExecutionContext, getꓽSEC } from './sec.js'
 
@@ -157,7 +157,7 @@ function on_played(previous_state: Immutable<State>, details: PlayedDetails): Im
 /////////////////////
 
 function on_achieved(previous_state: Immutable<State>, key: string, new_status: AchievementStatus): Immutable<State> {
-	const last_known_status = get_last_known_achievement_status(previous_state, key)
+	const last_known_status = getꓽlast_known_achievement_status(previous_state, key)
 
 	if (last_known_status === new_status) return previous_state
 

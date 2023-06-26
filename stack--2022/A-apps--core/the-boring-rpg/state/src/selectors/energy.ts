@@ -1,15 +1,15 @@
 import { Immutable} from '@offirmo-private/ts-types'
 
 import {
-	get_available_energy_float as _get_available_energy_float,
-	get_human_time_to_next,
+	getꓽavailable_energy‿float as _get_available_energy_float,
+	getꓽhuman_time_to_next,
 } from '@tbrpg/state-energy'
 
 import { State, TState } from '../types.js'
 
 /////////////////////
 
-function getꓽavailable_energy_float(t_state: Immutable<TState>): number {
+function getꓽavailable_energy‿float(t_state: Immutable<TState>): number {
 	return _get_available_energy_float(t_state.energy)
 }
 
@@ -20,6 +20,6 @@ function getꓽhuman_time_to_next_energy({u_state, t_state}: Immutable<State>): 
 /////////////////////
 
 export {
-	get_available_energy_float,
-	get_human_time_to_next_energy,
+	getꓽavailable_energy‿float,
+	getꓽhuman_time_to_next_energy,
 }

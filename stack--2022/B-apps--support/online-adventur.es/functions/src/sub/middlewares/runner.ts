@@ -2,10 +2,10 @@ import '../services/sec'
 
 import assert from 'tiny-invariant'
 import stable_stringify from 'json-stable-stringify'
-import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { getRootSEC, SoftExecutionContext, OperationParams } from '@offirmo-private/soft-execution-context'
 import { XXError } from '@offirmo/error-utils'
-import { get_base_loose, Immutable, is_revisioned } from '@offirmo-private/state-utils'
+import { getꓽbaseⵧloose, Immutable, is_revisioned } from '@offirmo-private/state-utils'
 import {
 	OAServerResponseBody,
 	create_server_response_body__data,
@@ -56,12 +56,12 @@ function _get_body_debug_representation(body: Immutable<any>): string {
 		if (is_revisioned(body.data)) {
 			body = {
 				...body,
-				data: { '[DEBUG]': get_base_loose(body.data) }
+				data: { '[DEBUG]': getꓽbaseⵧloose(body.data) }
 			}
 		}
 	}
 	else if (is_revisioned(body))
-		body = { '[DEBUG]': get_base_loose(body) }
+		body = { '[DEBUG]': getꓽbaseⵧloose(body) }
 
 	if (typeof body !== 'string') {
 		body = JSON.stringify(body)
@@ -90,7 +90,7 @@ export function use_middlewares_with_error_safety_net(
 ): Promise<Response> {
 	console.log('\n\n\n\n' +Array.from({length: 100}, () => '→').join(' '))
 
-	const SESSION_START_TIME_MS = get_UTC_timestamp_ms()
+	const SESSION_START_TIME_MS = getꓽUTC_timestamp‿ms()
 
 	return SEC.xTry('MWRunner', ({SEC, logger}) => {
 		const context: NetlifyContext = badly_typed_context as any
@@ -138,7 +138,7 @@ export function use_middlewares_with_error_safety_net(
 		//body.side.latest_news = body.side.latest_news || []
 
 		// add meta
-		const now_tms = get_UTC_timestamp_ms()
+		const now_tms = getꓽUTC_timestamp‿ms()
 		body.meta.now_tms = now_tms
 		body.meta.processing_time_ms = now_tms - SESSION_START_TIME_MS
 		body.meta.request_summary = `${event.httpMethod.toUpperCase()}:${event.path}`
@@ -153,7 +153,7 @@ export function use_middlewares_with_error_safety_net(
 		(err: Error) => { console.warn('FYI Overall promise rejected with:', err); throw err },
 	)
 	.finally(() => {
-		console.log(`FYI processed in ${(get_UTC_timestamp_ms() - SESSION_START_TIME_MS) / 1000.}s`)
+		console.log(`FYI processed in ${(getꓽUTC_timestamp‿ms() - SESSION_START_TIME_MS) / 1000.}s`)
 	})
 }
 
@@ -166,7 +166,7 @@ function _run_with_safety_net(
 	return SEC.xPromiseTry((event?.httpMethod?.toUpperCase() || '???') + '/' + (loosely_get_clean_path(event) || '???'), ({SEC}) =>
 		SEC.xNewPromise('⓵ ', ({SEC, logger}, resolve, reject) => {
 			const PREFIX = 'MR1'
-			logger.log(`[${PREFIX}] Starting handling: ${event.httpMethod.toUpperCase()} ${event.path}…`, {time: get_UTC_timestamp_ms(), mw_count: middlewares.length})
+			logger.log(`[${PREFIX}] Starting handling: ${event.httpMethod.toUpperCase()} ${event.path}…`, {time: getꓽUTC_timestamp‿ms(), mw_count: middlewares.length})
 
 			assert(middlewares.length >= 1, `[${PREFIX}] please provide some middlewares!`)
 

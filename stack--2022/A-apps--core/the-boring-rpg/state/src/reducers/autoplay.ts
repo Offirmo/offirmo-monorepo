@@ -20,7 +20,7 @@ import {
 import { State } from '../types.js'
 
 import {
-	get_available_energy_float,
+	getꓽavailable_energy‿float,
 	find_better_unequipped_armor,
 	find_better_unequipped_weapon, getꓽavailable_classes,
 } from '../selectors/index.js'
@@ -130,7 +130,7 @@ function _autoplay(previous_state: Immutable<State>, options: Immutable<{ target
 	state = _autogroom(state, options)
 
 	// do we have energy?
-	const available_energy = getꓽavailable_energy_float(state.t_state)
+	const available_energy = getꓽavailable_energy‿float(state.t_state)
 	let have_energy = available_energy >= 1.
 
 	if (target_bad_play_count > state.u_state.progress.statistics.bad_play_count) {
@@ -149,7 +149,7 @@ function _autoplay(previous_state: Immutable<State>, options: Immutable<{ target
 	if (target_good_play_count > state.u_state.progress.statistics.good_play_count) {
 		// play good
 		for (let i = state.u_state.progress.statistics.good_play_count; i < target_good_play_count; ++i) {
-			const available_energy = getꓽavailable_energy_float(state.t_state)
+			const available_energy = getꓽavailable_energy‿float(state.t_state)
 			have_energy = available_energy >= 1.
 
 			if (!have_energy) {
@@ -195,7 +195,7 @@ function _autoplay(previous_state: Immutable<State>, options: Immutable<{ target
 
 	state = _refresh_achievements(state)
 	state = _ack_all_engagements(state)
-	if (get_revision(state) === getꓽrevision(previous_state))
+	if (getꓽrevision(state) === getꓽrevision(previous_state))
 		state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous_state, state, undefined, '_autoplay')
 
 	return state

@@ -9,7 +9,7 @@ import { UState, TState } from './types.js'
 import { Fraction } from './utils.js'
 import {
 	get_milliseconds_to_next,
-	get_human_time_to_next,
+	getꓽhuman_time_to_next,
 	get_current_energy_refilling_rate_per_ms, getꓽavailable_energy‿float,
 } from './selectors.js'
 
@@ -114,7 +114,7 @@ function update_to_now(
 
 		const time_to_next_ms = get_milliseconds_to_next(u_state, t_state)
 		if (DEBUG) console.log(`         time to next = ${time_to_next_ms}ms`)
-		if (DEBUG) console.log(`                      = ${get_human_time_to_next(u_state, t_state)}`)
+		if (DEBUG) console.log(`                      = ${getꓽhuman_time_to_next(u_state, t_state)}`)
 
 		const time_handled_in_this_iteration_ms = Math.min(time_left_to_process_ms, time_to_next_ms)
 

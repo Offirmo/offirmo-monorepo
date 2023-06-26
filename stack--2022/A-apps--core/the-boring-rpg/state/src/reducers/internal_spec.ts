@@ -6,7 +6,7 @@ import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 import { LIB } from '../consts.js'
 
 import {
-	get_available_energy_float,
+	getꓽavailable_energy‿float,
 } from '../selectors/energy.js'
 
 import {
@@ -26,11 +26,11 @@ describe(`${LIB} -- reducers -- internal`, function() {
 		it('should work', () => {
 			let state = create()
 
-			expect(get_available_energy_float(state.t_state)).to.equal(7.)
+			expect(getꓽavailable_energy‿float(state.t_state)).to.equal(7.)
 
 			state = _lose_all_energy(state)
 
-			expect(get_available_energy_float(state.t_state)).to.equal(0.)
+			expect(getꓽavailable_energy‿float(state.t_state)).to.equal(0.)
 		})
 	})
 })

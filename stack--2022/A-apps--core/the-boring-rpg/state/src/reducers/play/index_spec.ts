@@ -17,7 +17,7 @@ import {
 import { LIB } from '../../consts.js'
 import { State} from '../../types.js'
 import {
-	get_available_energy_float,
+	getꓽavailable_energy‿float,
 } from '../../selectors/index.js'
 import {
 	_lose_all_energy,
@@ -91,7 +91,7 @@ describe(`${LIB} - reducer - play`, function() {
 				expect(state.u_state.last_adventure).not.to.be.null
 				expect(state.u_state.last_adventure!.good).to.be.false
 
-				expect(get_available_energy_float(state.t_state)).to.equal(0.) // was force depleted
+				expect(getꓽavailable_energy‿float(state.t_state)).to.equal(0.) // was force depleted
 			})
 		})
 

@@ -2,7 +2,7 @@ import { ElementType } from '@tbrpg/definitions'
 import { Immutable} from '@offirmo-private/ts-types'
 
 import {
-	get_last_known_achievement_status,
+	getꓽlast_known_achievement_status,
 	AchievementDefinition,
 	AchievementStatus,
 	AchievementSnapshot,
@@ -43,13 +43,13 @@ function getꓽachievement_snapshot_by_temporary_id(u_state: Immutable<UState>, 
 function getꓽachievements_snapshot(u_state: Immutable<UState>): ReturnType<typeof getꓽachievement_snapshot>[] {
 	return ACHIEVEMENT_DEFINITIONS
 		.map((definition: AchievementDefinition<UState>): AchievementSnapshot => {
-			return get_achievement_snapshot(u_state, definition)
+			return getꓽachievement_snapshot(u_state, definition)
 		})
 		.filter(as => as.status !== AchievementStatus.secret)
 }
 
-function get_achievements_completion(u_state: Immutable<UState>): [number, number] {
-	const snapshot = get_achievements_snapshot(u_state)
+function getꓽachievements_completion(u_state: Immutable<UState>): [number, number] {
+	const snapshot = getꓽachievements_snapshot(u_state)
 	const unlocked_ach_count = snapshot
 		.filter(as => as.status === AchievementStatus.unlocked)
 		.length
@@ -60,8 +60,8 @@ function get_achievements_completion(u_state: Immutable<UState>): [number, numbe
 /////////////////////
 
 export {
-	get_achievement_snapshot,
-	get_achievement_snapshot_by_temporary_id,
-	get_achievements_snapshot,
-	get_achievements_completion,
+	getꓽachievement_snapshot,
+	getꓽachievement_snapshot_by_temporary_id,
+	getꓽachievements_snapshot,
+	getꓽachievements_completion,
 }
