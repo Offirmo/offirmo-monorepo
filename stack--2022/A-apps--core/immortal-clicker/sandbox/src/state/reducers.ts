@@ -1,13 +1,15 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
-import { getꓽUTC_timestamp‿ms, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
+import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { PRNGEngine, getꓽrandom } from '@offirmo/random'
+
 import * as PRNGState from '@oh-my-rpg/state-prng'
+import * as EngagementState from '@oh-my-rpg/state-engagement'
 
 import { State } from './types.js'
 import { get_randomꓽnuclear_family, NuclearFamily } from '../generator--family--nuclear/index.js'
 import { Avatar } from '../state--avatar/types.js'
-import { createꓽCultivation } from '../state--cultivation/index.js'
+import * as CultivationState from '../state--cultivation/index.js'
 
 const SCHEMA_VERSION = 0
 
@@ -35,13 +37,16 @@ function create(seed: 'unit-test' | 'auto' = 'unit-test'): Immutable<State> {
 			revision: 0,
 
 			prng: prng_state,
+			engagement: EngagementState.create(),
 
 			setting: {
 				family,
 				children_position
 			},
 
-			avatar: _get_avatar_from_family(family, children_position),
+			avatar: _getꓽavatar_from_family(family, children_position),
+
+			cultivation: CultivationState.createꓽstate(),
 		},
 		t_state: {
 			schema_version: SCHEMA_VERSION,
@@ -50,9 +55,9 @@ function create(seed: 'unit-test' | 'auto' = 'unit-test'): Immutable<State> {
 		},
 	}
 
-	return update_prng(state, engine)
+	return _updateꓽprng(state, engine)
 }
-function _get_avatar_from_family(family: Immutable<NuclearFamily>, children_position: number): Avatar {
+function _getꓽavatar_from_family(family: Immutable<NuclearFamily>, children_position: number): Avatar {
 	const child = family.children[children_position - 1]
 	return {
 		nameⵧlast: family.lastname,
@@ -60,11 +65,10 @@ function _get_avatar_from_family(family: Immutable<NuclearFamily>, children_posi
 		nameⵧdao: undefined,
 		ageⵧbiological: 15,
 		sex: child.sex,
-		cultivation: createꓽCultivation(),
 	} as Avatar
 }
 
-function update_prng(state: Immutable<State>, engine: PRNGEngine): Immutable<State> {
+function _updateꓽprng(state: Immutable<State>, engine: PRNGEngine): Immutable<State> {
 	return {
 		...state,
 		u_state: {
@@ -74,7 +78,63 @@ function update_prng(state: Immutable<State>, engine: PRNGEngine): Immutable<Sta
 	}
 }
 
+function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, uid: number, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
+	let state = previous_state
+	state = {
+		...state,
+		last_user_investment_tms: now_ms,
+
+		u_state: {
+			...state.u_state,
+			engagement: EngagementState.acknowledge_seen(state.u_state.engagement, uid),
+			revision: previous_state.u_state.revision + 1,
+		},
+	}
+
+	return state
+}
+
 function join_sectꓽfirst(state: Immutable<State>): Immutable<State> {
+	// TODO
+	return state
+}
+
+function cultivate(state: Immutable<State>): Immutable<State> {
+	// TODO need a method
+	// TODO need no bottleneck
+	return {
+		...state,
+		u_state: {
+			...state.u_state,
+			cultivation: CultivationState.cultivate(state.u_state.cultivation),
+			revision: state.u_state.revision + 1,
+		}
+	}
+}
+
+function attempt_breakthrough(state: Immutable<State>): Immutable<State> {
+	// TODO
+	return {
+		...state,
+		u_state: {
+			...state.u_state,
+			cultivation: CultivationState.attempt_breakthrough(state.u_state.cultivation),
+			revision: state.u_state.revision + 1,
+		}
+	}
+}
+
+function loot(state: Immutable<State>): Immutable<State> {
+	// TODO
+	return state
+}
+
+function kill_some_enemies(state: Immutable<State>): Immutable<State> {
+	// TODO
+	return state
+}
+
+function win_some_tournament(state: Immutable<State>): Immutable<State> {
 	// TODO
 	return state
 }
@@ -85,4 +145,7 @@ export {
 	create,
 
 	join_sectꓽfirst,
+
+	cultivate,
+	attempt_breakthrough,
 }

@@ -3,7 +3,11 @@ import {
 	BaseTState,
 	BaseRootState,
 } from '@offirmo-private/state-utils'
-import { State as PRNGState } from '@oh-my-rpg/state-prng'
+
+import * as PRNGState from '@oh-my-rpg/state-prng'
+import * as EngagementState from '@oh-my-rpg/state-engagement'
+
+import * as CultivationState from '../state--cultivation/index.js'
 
 import { Avatar } from '../state--avatar/types.js'
 import { NuclearFamily } from '../generator--family--nuclear/index.js'
@@ -11,9 +15,12 @@ import { NuclearFamily } from '../generator--family--nuclear/index.js'
 /////////////////////////////////////////////////
 
 interface UState extends BaseUState {
-	prng: PRNGState
+	prng: PRNGState.State
+	engagement: EngagementState.State
 
 	avatar: Avatar
+
+	cultivation: CultivationState.State
 
 	setting: {
 		//deal: {
@@ -24,6 +31,8 @@ interface UState extends BaseUState {
 
 		family: NuclearFamily,
 		children_position: number,
+
+		// nearby sect
 	}
 	//engagement: EngagementState
 	//inventory: InventoryState

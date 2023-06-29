@@ -54,6 +54,7 @@ function renderⵧgeneric(state: Immutable<Object>): void {
 				+ o.stylizeꓽglobal(schema_version)
 			)
 		}
+		assert(header.length, `header length!`)
 
 		st = {
 			...st,
@@ -64,7 +65,7 @@ function renderⵧgeneric(state: Immutable<Object>): void {
 		}
 		const lines = _prettifyꓽobjectⵧkeyⳇvalue(rest, st)
 		return [
-			[lines[0], ...header].join(' '),
+			[lines[0], o.stylizeꓽdim('/*'), ...header, o.stylizeꓽdim('*/')].join(' '),
 			...lines.slice(1),
 		]
 	}

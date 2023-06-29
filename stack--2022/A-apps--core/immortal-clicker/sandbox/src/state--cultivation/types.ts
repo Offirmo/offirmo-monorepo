@@ -11,15 +11,13 @@ interface FoundationEstablishment {
 	method: string | undefined
 }*/
 
-interface Cultivation {
-	rank: {
-		major: number
-		minor: number
-	}
+interface State {
+	rankⵧmajor: number
+	rankⵧminor: number
 }
 
 /////////////////////////////////////////////////
 
 export {
-	type Cultivation,
+	type State,
 }

@@ -19,15 +19,8 @@ import * as InventoryState from '@tbrpg/state--inventory'
 import * as ProgressState from '@tbrpg/state--progress'
 import * as WalletState from '@tbrpg/state-wallet'
 
-import {
-	Weapon,
-	create as create_weapon,
-} from '@tbrpg/logic-weapons'
-import {
-	Armor,
-	create as create_armor,
-} from '@tbrpg/logic-armors'
-
+import { Weapon, create as create_weapon } from '@tbrpg/logic-weapons'
+import { Armor, create as create_armor } from '@tbrpg/logic-armors'
 
 /////////////////////
 

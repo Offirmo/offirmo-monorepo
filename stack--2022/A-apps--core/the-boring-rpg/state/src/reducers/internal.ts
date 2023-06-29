@@ -228,7 +228,6 @@ function _auto_make_room(state: Immutable<State>, options: { DEBUG?: boolean } =
 	return state
 }
 
-
 function _enhance_an_armor(state: Immutable<State>): Immutable<State> {
 	const slotted = InventoryState.getꓽitem_in_slot(state.u_state.inventory, InventorySlot.armor) as Armor
 

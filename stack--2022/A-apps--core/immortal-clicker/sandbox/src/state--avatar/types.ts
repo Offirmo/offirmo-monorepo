@@ -3,7 +3,6 @@
 
 import { BiologicalSex } from '../torefine/types.js'
 import { FirstName, LastName } from '../generator--name/src/index.js'
-import { Cultivation } from '../state--cultivation/types.js'
 
 interface Avatar {
 	sex: BiologicalSex
@@ -14,8 +13,6 @@ interface Avatar {
 	//birth‿year: number // TODO if useful
 
 	ageⵧbiological: number
-
-	cultivation: Cultivation
 }
 
 /////////////////////////////////////////////////
