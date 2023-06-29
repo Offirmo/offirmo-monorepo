@@ -3,11 +3,12 @@ Magic arsenal - extract killed ppl from reincarnation
 
 Nether guide
 
-Corpse guard puppet of bodies of ennemies
+Corpse guard puppet of bodies of enemies
 
 Yang Yin ancestral spell
 
 Soul search
+Soul descent
 
 form transposition
 
@@ -26,3 +27,11 @@ undying codex -- 3 undying tendons (deva sect level resources)
 undying codex -- 4 undying bones
 undying codex -- 5 undying blood
 undying codex -- shackles of mortality
+
+
+divine abilities
+magical techniques
+daoist magic / magic art
+scripture
+codex
+battle law

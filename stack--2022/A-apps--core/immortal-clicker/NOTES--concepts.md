@@ -4,7 +4,7 @@
 33 hells
 4 symbols https://en.wikipedia.org/wiki/Four_Symbols
 5 elements
-5 venoms centipede, scorpion, spider, lizard, viper
+5 venoms: centipede, scorpion, spider, lizard, viper
 7 emotions and 6 pleasures
 Fengdu Ghost City https://en.wikipedia.org/wiki/Fengdu_Ghost_City
 alchemy
@@ -31,7 +31,6 @@ beasts -- wolf
 bedevilment
 bloodline
 body cultivation
-body cultivation
 borrowed power
 bottleneck
 breakthrough
@@ -44,14 +43,13 @@ compass
 cultivation
 cultivation base
 cultivation furnace
-cultivation realm
 cultivation realms
 curses
 dantian https://en.wikipedia.org/wiki/Dantian
 dao
 dao protector
 dao reserve
-daosource
+dao source
 deduction
 divine abilities
 divine sense
@@ -82,7 +80,6 @@ essence of sword
 essence of thunder
 essence of time
 essence of wind
-false immortal
 feng shui
 frigid 2 adept
 frigid 3 master
@@ -91,6 +88,7 @@ grand magic
 heaven -> man -> earth
 heaven and hearth
 hex
+immortal -- false
 immortal ruins
 incantations
 jades
@@ -149,6 +147,7 @@ severing
 shields
 soul
 soul lamps (-- normal / prime / true prime / paragon)
+source
 spell formations
 spirit jades
 spirit stones
