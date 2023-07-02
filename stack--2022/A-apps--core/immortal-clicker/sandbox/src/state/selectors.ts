@@ -7,6 +7,7 @@ import { UState } from './types.js'
 
 function getꓽrecap(u_state: Immutable<UState>): RichText.Document {
 	const isNewGame = (u_state.revision === 0)
+	/*
 	if (isNewGame) {
 		return RichText.inline_fragment()
 			.pushText('You are an ')
@@ -19,27 +20,43 @@ function getꓽrecap(u_state: Immutable<UState>): RichText.Document {
 			.pushText('But for now, let’s go on an adventure, for glory ⚔ and loot 📦 💰 !')
 			.done()
 	}
+*/
 
-	return RichText.block_fragment()
+	// name
+	// cultivator or not
+	// situation
+	// challenge
+
+	let recap = RichText.block_fragment()
 		.pushText('You are ')
-		.pushInlineFragment(u_state.avatar.nameⵧlast, {
-			id: 'nameⵧlast',
+
+	// name
+	recap.pushNode((() => {
+		return RichText.strong()
+			.pushInlineFragment(u_state.avatar.nameⵧlast, {
+				id: 'nameⵧlast',
+			})
+			.pushText(' ')
+			.pushInlineFragment(u_state.avatar.nameⵧfirst, {
+				id: 'nameⵧfirst',
+			})
+			.done()
+	})())
+
+	// ...
+	recap = recap.pushText(', a ')
+		.pushInlineFragment('15', {
+			id: 'age',
+			classes: [],
 		})
-		.pushText(' ')
-		.pushInlineFragment(u_state.avatar.nameⵧfirst, {
-			id: 'nameⵧfirst',
-		})
-		/*.pushText(', the ')
-		.pushInlineFragment(u_state.avatar.klass, {
-			id: 'class',
-			classes: ['avatar__class'],
-		})
-		.pushText(' from another world.{{br}}')
-		.pushText('You are adventuring in the mysterious world of ')
-		.pushStrong('Jaema')
-		.pushText('…{{br}}')
-		.pushStrong('For glory ⚔  and loot 📦 💰 !')*/
-		.done()
+		.pushText(' years old ')
+	recap.pushNode((() => {
+			return RichText.strong()
+				.pushText(' immortal cultivator from the XYZ sect')
+				.done()
+		})())
+
+	return recap.done()
 }
 
 /////////////////////////////////////////////////

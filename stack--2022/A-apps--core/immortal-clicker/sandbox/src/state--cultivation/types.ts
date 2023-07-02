@@ -12,8 +12,9 @@ interface FoundationEstablishment {
 }*/
 
 interface State {
-	rankⵧmajor: number
-	rankⵧminor: number
+
+	immortalᝍrankⵧmajor: number
+	immortalᝍrankⵧminor: number
 }
 
 /////////////////////////////////////////////////

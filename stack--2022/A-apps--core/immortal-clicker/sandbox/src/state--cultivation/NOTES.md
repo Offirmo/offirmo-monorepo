@@ -10,6 +10,16 @@ https://www.healthline.com/health/dantian
 Meridians
 
 
+## what is a cultivator?
+
+While we're usually talking about **immortal** cultivation,
+we want to promote that anyone striving to improve oneself is a cultivator, at least in mind.
+
+fundamental difference between mortal vs immortal
+
+cultivation of the mind / heart
+
+
 
 ## pre-cultivation
 

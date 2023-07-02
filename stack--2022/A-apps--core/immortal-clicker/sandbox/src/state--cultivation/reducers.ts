@@ -5,23 +5,23 @@ import { State } from './types.js'
 
 function createꓽstate(): State {
 	return {
-		rankⵧmajor: 0,
-		rankⵧminor: 0,
+		immortalᝍrankⵧmajor: 0,
+		immortalᝍrankⵧminor: 0,
 	} as State
 }
 
 function cultivate(state: Immutable<State>): Immutable<State> {
 	return {
 		...state,
-		rankⵧminor: state.rankⵧminor + 1,
+		immortalᝍrankⵧminor: state.immortalᝍrankⵧminor + 1,
 	}
 }
 
 function attempt_breakthrough(state: Immutable<State>): Immutable<State> {
 	return {
 		...state,
-		rankⵧmajor: state.rankⵧmajor + 1,
-		rankⵧminor: 0,
+		immortalᝍrankⵧmajor: state.immortalᝍrankⵧmajor + 1,
+		immortalᝍrankⵧminor: 0,
 	}
 }
 
