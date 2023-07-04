@@ -4,6 +4,7 @@ import { getꓽrandom, RNGEngine } from '@offirmo/random'
 import { NORMALIZERS } from '@offirmo-private/normalize-string'
 
 import { Sect } from './types.js'
+import { GenderRequirement } from '../../torefine/index.js'
 
 /////////////////////////////////////////////////
 
@@ -98,10 +99,10 @@ const MODIFIERS = [
 	'yellow', 'golden',
 
 	// numbers
-	'twin', 'nine', 'thousand',
+	'twin', 'nine', 'hundred', 'thousand',
 
 	// tosort
-	//'free and unfettered',
+	// TODO 'free and unfettered',
 	'ancient',
 	'bright',
 	'flying', 'returning',
@@ -129,8 +130,12 @@ const EPIC_MODIFIERS = [
 ]
 
 
-
-function get_randomꓽsect(engine: RNGEngine): Sect {
+interface Options {
+	requirement_gender: GenderRequirement,
+	// TODO alignment
+	// TODO epicness
+}
+function get_randomꓽsect(engine: RNGEngine, options: Immutable<Partial<Options>> = {}): Sect {
 	const variant = getꓽrandom.picker.of(VARIANTS)(engine)
 	const core = getꓽrandom.picker.of(CORE)(engine)
 	const modifier = getꓽrandom.picker.of(MODIFIERS)(engine)

@@ -7,8 +7,11 @@ import { Immutable } from '@offirmo-private/ts-types'
 // keep it simple for starter
 type BiologicalSex = 'male' | 'female'
 
+type GenderRequirement = BiologicalSex | null
+
 /////////////////////////////////////////////////
 
 export {
-	type BiologicalSex
+	type BiologicalSex,
+	type GenderRequirement,
 }

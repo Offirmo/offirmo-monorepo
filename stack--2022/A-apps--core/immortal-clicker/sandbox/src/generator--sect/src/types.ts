@@ -4,11 +4,10 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 
-interface NPC {
-
-}
+type SectUID = string
 
 interface Sect {
+	uid: SectUID
 	//alignment: 'orthodox' | 'evil'
 	name: string
 	//sect_master: NPC
@@ -18,5 +17,6 @@ interface Sect {
 /////////////////////////////////////////////////
 
 export {
+	type SectUID,
 	type Sect,
 }

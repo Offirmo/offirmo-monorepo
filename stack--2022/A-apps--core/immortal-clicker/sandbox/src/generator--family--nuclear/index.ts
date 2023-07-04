@@ -49,7 +49,7 @@ interface Options {
 }
 function get_randomꓽnuclear_family(engine: RNGEngine, options: Immutable<Partial<Options>> = {}): NuclearFamily {
 	const result: NuclearFamily = {
-		lastname: get_randomꓽlastname(engine),
+		lastname: get_randomꓽlastname(engine), // TODO infuse occupation
 
 		father: {
 			firstname: get_randomꓽfirstname(engine, { gender: 'male'}),

@@ -4,17 +4,31 @@ import { State } from './types.js'
 
 /////////////////////////////////////////////////
 
-function isꓽcultivator(state: Immutable<State>): boolean {
-	// TODO
-	return false
-}
-
 function isꓽcultivatorⵧimmortal(state: Immutable<State>): boolean {
 	return state.immortalᝍrankⵧmajor > 0 || state.immortalᝍrankⵧminor > 0
 }
+
+// TODO crippling / mortal
+function getꓽcultivationⵧtype(state: Immutable<State>): 'none' | 'mortal' | 'immortal' | 'crippled' {
+
+	const has_immortal_cultivation = isꓽcultivatorⵧimmortal(state)
+
+	return has_immortal_cultivation
+		? 'immortal'
+		: 'none'
+}
+
+/*
+function isꓽcultivator(state: Immutable<State>): boolean {
+	// TODO
+	return false
+}*/
+
+
 
 /////////////////////////////////////////////////
 
 export {
 	isꓽcultivatorⵧimmortal,
+	getꓽcultivationⵧtype,
 }

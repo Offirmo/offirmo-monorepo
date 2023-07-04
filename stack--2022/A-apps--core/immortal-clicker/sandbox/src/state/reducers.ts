@@ -10,6 +10,7 @@ import { State } from './types.js'
 import { get_randomꓽnuclear_family, NuclearFamily } from '../generator--family--nuclear/index.js'
 import { Avatar } from '../state--avatar/types.js'
 import * as CultivationState from '../state--cultivation/index.js'
+import { get_randomꓽsect } from '../generator--sect/src/index.js'
 
 const SCHEMA_VERSION = 0
 
@@ -41,7 +42,10 @@ function create(seed: 'unit-test' | 'auto' = 'unit-test'): Immutable<State> {
 
 			setting: {
 				family,
-				children_position
+				children_position,
+				sects: {
+					nearby: get_randomꓽsect(engine)
+				},
 			},
 
 			avatar: _getꓽavatar_from_family(family, children_position),
@@ -95,8 +99,15 @@ function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, uid: 
 }
 
 function join_sectꓽfirst(state: Immutable<State>): Immutable<State> {
-	// TODO
-	return state
+	const sect = state.u_state.setting.sects['nearby']
+	return {
+		...state,
+		u_state: {
+			...state.u_state,
+			cultivation: CultivationState.join_sect(state.u_state.cultivation, sect),
+			revision: state.u_state.revision + 1,
+		}
+	}
 }
 
 function cultivate(state: Immutable<State>): Immutable<State> {

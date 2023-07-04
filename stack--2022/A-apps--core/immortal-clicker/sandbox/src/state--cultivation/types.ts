@@ -1,6 +1,9 @@
 /////////////////////////////////////////////////
-// BY DEFINITION Cultivation = any self-improvement above natural state
 
+import { SectUID } from '../generator--sect/src/types.js'
+
+/////////////////////////////////////////////////
+// BY DEFINITION Cultivation = any self-improvement above natural state
 
 /*interface MortalCultivation {
 	physique: number
@@ -11,10 +14,12 @@ interface FoundationEstablishment {
 	method: string | undefined
 }*/
 
-interface State {
 
+interface State {
 	immortalᝍrankⵧmajor: number
 	immortalᝍrankⵧminor: number
+
+	sectⵧcurrent‿uid: null | SectUID
 }
 
 /////////////////////////////////////////////////

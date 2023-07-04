@@ -11,6 +11,7 @@ import * as CultivationState from '../state--cultivation/index.js'
 
 import { Avatar } from '../state--avatar/types.js'
 import { NuclearFamily } from '../generator--family--nuclear/index.js'
+import { Sect } from '../generator--sect/src/index.js'
 
 /////////////////////////////////////////////////
 
@@ -32,7 +33,9 @@ interface UState extends BaseUState {
 		family: NuclearFamily,
 		children_position: number,
 
-		// nearby sect
+		sects: {
+			nearby: Sect,
+		}
 	}
 	//engagement: EngagementState
 	//inventory: InventoryState
