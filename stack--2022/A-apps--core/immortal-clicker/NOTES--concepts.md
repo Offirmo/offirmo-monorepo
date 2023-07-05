@@ -7,6 +7,7 @@
 5 venoms: centipede, scorpion, spider, lizard, viper
 7 emotions and 6 pleasures
 Fengdu Ghost City https://en.wikipedia.org/wiki/Fengdu_Ghost_City
+acupuncture
 alchemy
 allheaven
 ancient demons
@@ -20,6 +21,7 @@ battle - mutual destruction
 battle momentum
 battle opening
 bazaar
+beast core
 beasts
 beasts -- centipede
 beasts -- dragon (flood, storm)
@@ -46,7 +48,31 @@ cultivation furnace
 cultivation realms
 curses
 dantian https://en.wikipedia.org/wiki/Dantian
+dantians
 dao
+dao of (5 elements)
+dao of blood
+dao of emotions
+dao of extermination
+dao of gravity
+dao of karma
+dao of life & death
+dao of light / darkness
+dao of lightning
+dao of lust
+dao of plant & vegetation
+dao of poison
+dao of rain
+dao of reality
+dao of reincarnation
+dao of sea
+dao of slaughter
+dao of space https://writings.stephenwolfram.com/2022/03/on-the-concept-of-motion/
+dao of sun / moon / stars
+dao of sword
+dao of thunder
+dao of time
+dao of wind
 dao protector
 dao reserve
 dao source
@@ -57,29 +83,6 @@ domain
 eccentric
 energy of heaven and earth
 energy of the world
-essence of (5 elements)
-essence of blood
-essence of emotions
-essence of extermination
-essence of gravity
-essence of karma
-essence of life & death
-essence of light / darkness
-essence of lightning
-essence of lust
-essence of plant & vegetation
-essence of poison
-essence of rain
-essence of reality
-essence of reincarnation
-essence of sea
-essence of slaughter
-essence of space https://writings.stephenwolfram.com/2022/03/on-the-concept-of-motion/
-essence of sun / moon / stars
-essence of sword
-essence of thunder
-essence of time
-essence of wind
 feng shui
 frigid 2 adept
 frigid 3 master
@@ -96,6 +99,7 @@ laws
 leagues (demon sealers)
 life-saving magic
 magical items
+meridian
 meridians
 merits
 military rank --     0 soldier
@@ -120,7 +124,6 @@ poison(s)
 possession
 power
 puppets
-qi
 qi -- blood
 qi -- death
 qi -- demonic
@@ -128,6 +131,8 @@ qi -- frigid
 qi -- inborn https://cultivation-chat-group.fandom.com/wiki/Inborn_true_qi
 qi -- yang
 qi -- yin
+qi deviation
+qi https://en.wikipedia.org/wiki/Qi
 rank - chief
 rank - lord
 rank - master
@@ -137,7 +142,10 @@ restrictions
 scriptures / classic daoist scriptures
 seals
 sect
+sect ancestral founders
+sect foundations
 sect reserve power
+sect restricted areas
 sect secrets
 sect shield
 self-confidence

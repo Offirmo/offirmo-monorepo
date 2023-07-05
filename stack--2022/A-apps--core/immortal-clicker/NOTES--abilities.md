@@ -1,37 +1,30 @@
-
+Celestial Emperor Bai Fan six spells: 1) call the wind 2) Summon the rain
+Corpse guard - puppet of bodies of enemies
+Imperial Sky Technique = flying at low level
 Magic arsenal - extract killed ppl from reincarnation
-
 Nether guide
-
-Corpse guard puppet of bodies of enemies
-
-Yang Yin ancestral spell
-
-Soul search
 Soul descent
-
+Soul search
+Yang Yin ancestral spell
+battle law
+codex
+cultivation -- dual - harmonious unification
+cultivation -- hidding
+cultivation -- rotation
+daoist magic / magic art
+divine abilities
 form transposition
-
+magical techniques
 merging with the void
-
-Celestial Emperor Bai Fan six spells:
-- call the wind
-- Summon the rain
-
+misc - cripple cultivation
+mysterious techniques
+scripture
 spells vs. dao spells
-
-
+teleportation -- major
+teleportation -- minor
 undying codex -- 1 undying skin
 undying codex -- 2 undying ? (nascent sect level resources)
 undying codex -- 3 undying tendons (deva sect level resources)
 undying codex -- 4 undying bones
 undying codex -- 5 undying blood
 undying codex -- shackles of mortality
-
-
-divine abilities
-magical techniques
-daoist magic / magic art
-scripture
-codex
-battle law

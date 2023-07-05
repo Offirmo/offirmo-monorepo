@@ -3,3 +3,13 @@
 crushing ennemies
 incredible powers
 powers reaching cosmic levels
+
+flying swords
+flying
+
+loyalty
+taoist moral
+honor family
+honor ancestor
+
+shifu
