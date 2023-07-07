@@ -9,7 +9,7 @@ function createꓽstate(): State {
 		immortalᝍrankⵧmajor: 0,
 		immortalᝍrankⵧminor: 0,
 		sectⵧcurrent‿uid: null,
-	} as State
+	} satisfies State
 }
 
 function join_sect(state: Immutable<State>, sect: Immutable<Sect>): Immutable<State> {

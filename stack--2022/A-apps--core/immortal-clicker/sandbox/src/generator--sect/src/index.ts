@@ -45,7 +45,7 @@ const CORE = [
 	// elements
 	'fire',
 	'gold',
-	'ice',
+	'ice', 'frost',
 	'water',
 	'wood',
 	'yang',
@@ -85,6 +85,8 @@ const CORE = [
 	// tosort
 	'lightning',
 	'sword',
+	'sieve',
+	'sword',
 ]
 
 const MODIFIERS = [
@@ -111,6 +113,7 @@ const MODIFIERS = [
 	'high', 'great',
 	'mysterious',
 	'void',
+	'solitary',
 ]
 
 const EPIC_MODIFIERS = [
@@ -146,8 +149,9 @@ function get_randomꓽsect(engine: RNGEngine, options: Immutable<Partial<Options
 	let parts = [ modifier, core, variant].join(' ').split(' ').map(NORMALIZERS.capitalize)
 
 	return {
+		uid: 'sect:' + parts.join('-').toLowerCase(),
 		name: parts.join(' '),
-	} as Sect
+	} satisfies Sect
 }
 
 

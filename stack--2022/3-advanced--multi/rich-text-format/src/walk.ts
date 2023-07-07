@@ -98,7 +98,7 @@ function get_default_callbacks<State, RenderingOptions = any>(): WalkerCallbacks
 				return {
 					...(generic_state as any),
 					str: str.slice(0,1).toUpperCase() + str.slice(1),
-				} as State
+				} satisfies State
 			}
 
 			return state

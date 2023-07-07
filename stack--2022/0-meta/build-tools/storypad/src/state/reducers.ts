@@ -34,7 +34,7 @@ export function create(): Immutable<State> {
 		folders_by_id: {},
 		current_story‿id: undefined,
 		graph: createꓽgraphⵧfile_system(),
-	} as State
+	}
 }
 
 export function set_current_story(state: Immutable<State>, story_id: StoryId): Immutable<State> {

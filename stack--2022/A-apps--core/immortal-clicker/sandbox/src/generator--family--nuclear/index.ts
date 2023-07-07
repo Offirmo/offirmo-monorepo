@@ -80,7 +80,7 @@ function get_randomꓽnuclear_family(engine: RNGEngine, options: Immutable<Parti
 			age_diff: accumulated_diff,
 			sex,
 			firstname: get_randomꓽfirstname(engine, { gender: sex })
-		} as Children)
+		} satisfies Children)
 		// age diff with next child
 		accumulated_diff += getꓽrandom.generator_of.integer.between(1, 3)(engine)
 	}

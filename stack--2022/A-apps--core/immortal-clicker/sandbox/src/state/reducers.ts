@@ -69,7 +69,7 @@ function _getꓽavatar_from_family(family: Immutable<NuclearFamily>, children_po
 		nameⵧdao: undefined,
 		ageⵧbiological: 15,
 		sex: child.sex,
-	} as Avatar
+	} satisfies Avatar
 }
 
 function _updateꓽprng(state: Immutable<State>, engine: PRNGEngine): Immutable<State> {

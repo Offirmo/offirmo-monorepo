@@ -57,7 +57,7 @@ describe(`${LIB} - state`, function() {
 					has_account: false,
 					is_registered_alpha_player: false,
 				},
-			} as State)
+			} satisfies State)
 		})
 	})
 
@@ -99,7 +99,7 @@ describe(`${LIB} - state`, function() {
 					items_gained: 56,
 					has_account: false,
 					is_registered_alpha_player: false,
-				} as State['statistics'])
+				} satisfies State['statistics'])
 			})
 		})
 
@@ -140,7 +140,7 @@ describe(`${LIB} - state`, function() {
 					items_gained: 56,
 					has_account: false,
 					is_registered_alpha_player: false,
-				} as State['statistics'])
+				} satisfies State['statistics'])
 
 				state = on_played(state, {
 					good: true,
@@ -177,7 +177,7 @@ describe(`${LIB} - state`, function() {
 					items_gained: 112,
 					has_account: false,
 					is_registered_alpha_player: false,
-				} as State['statistics'])
+				} satisfies State['statistics'])
 			})
 		})
 	})
@@ -191,7 +191,7 @@ describe(`${LIB} - state`, function() {
 
 			expect(state.achievements).to.deep.equal({
 				foo: AchievementStatus.revealed,
-			} as State['achievements'])
+			} satisfies State['achievements'])
 
 			state = on_achieved(state, 'bar', AchievementStatus.revealed)
 			state = on_achieved(state, 'foo', AchievementStatus.unlocked)
@@ -199,7 +199,7 @@ describe(`${LIB} - state`, function() {
 			expect(state.achievements).to.deep.equal({
 				bar: AchievementStatus.revealed,
 				foo: AchievementStatus.unlocked,
-			} as State['achievements'])
+			} satisfies State['achievements'])
 		})
 	})
 })

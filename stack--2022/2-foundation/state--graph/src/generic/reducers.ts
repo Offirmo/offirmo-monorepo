@@ -67,12 +67,12 @@ function _insertꓽnode(graph: Immutable<Graph>, node_cuid: CustomNodeUId): Immu
 		uid_generator: graph.uid_generator + 1,
 	}
 
-	const node = {
+	const node: Node = {
 		uid,
 		custom_id: node_cuid,
 		links_from: [],
 		...(graph.options.is_arborescence && { depth: 0 }),
-	} as Node
+	}
 
 	return {
 		...graph,
@@ -119,12 +119,12 @@ function _insertꓽlink(graph: Immutable<Graph>, nodeⵧfrom: Immutable<Node>, n
 		}
 	}
 
-	const new_link = {
+	const new_link: Link = {
 		uid,
 		...(custom_id && { custom_id }),
 		from: nodeⵧfrom.uid,
 		to: nodeⵧto.uid,
-	} as Link
+	}
 	graph = {
 		...graph,
 

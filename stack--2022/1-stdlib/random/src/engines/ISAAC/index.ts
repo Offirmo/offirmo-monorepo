@@ -5,7 +5,7 @@ import { getꓽseed‿Int32Array } from '../../utils.js'
 
 /////////////////////////////////////////////////
 
-const ALGORITHM_ID: PRNGState['algorithm_id'] = 'ISAAC32'
+const ALGORITHM_ID = 'ISAAC32' satisfies PRNGState['algorithm_id']
 const SIZE = 256 // For readability only. SIZE=256 is a property of the algorithm and can't be changed
 
 
@@ -209,7 +209,7 @@ function getꓽRNGⵧISAAC32(options: {
 				algorithm_id: ALGORITHM_ID,
 				seed: last_seed,
 				call_count: _get_used_results_count(),
-			} as PRNGState
+			} satisfies PRNGState
 		},
 		_get_internals() {
 			return {

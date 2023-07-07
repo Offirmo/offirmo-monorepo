@@ -19,7 +19,7 @@ function createꓽgraphⵧfile_system(): Immutable<FileSystem> {
 			is_arborescence: true,
 			//auto_link_id_separator: '→',
 		}),
-	} as FileSystem
+	}
 }
 
 // insert the file but upsert the path to it

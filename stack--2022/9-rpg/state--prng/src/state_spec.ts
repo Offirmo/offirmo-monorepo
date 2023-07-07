@@ -39,7 +39,7 @@ describe(`${LIB} - state`, function() {
 				},
 
 				recently_encountered_by_id: {},
-			} as State)
+			} satisfies State)
 		})
 	})
 
