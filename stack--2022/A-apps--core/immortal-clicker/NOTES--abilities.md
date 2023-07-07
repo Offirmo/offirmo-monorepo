@@ -9,7 +9,7 @@ Yang Yin ancestral spell
 battle law
 codex
 cultivation -- dual - harmonious unification
-cultivation -- hidding
+cultivation -- hiding
 cultivation -- rotation
 daoist magic / magic art
 divine abilities
@@ -28,3 +28,7 @@ undying codex -- 3 undying tendons (deva sect level resources)
 undying codex -- 4 undying bones
 undying codex -- 5 undying blood
 undying codex -- shackles of mortality
+“Classic’ – a book which people praise and don’t read.”
+refining
+refining -- blood # faster but costly
+curses

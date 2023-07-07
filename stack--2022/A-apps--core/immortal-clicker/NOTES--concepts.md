@@ -47,13 +47,11 @@ cultivation base
 cultivation furnace
 cultivation realms
 curses
-dantian https://en.wikipedia.org/wiki/Dantian
-dantians
+dantian(s) https://en.wikipedia.org/wiki/Dantian
 dao
 dao of (5 elements)
 dao of blood
 dao of emotions
-dao of extermination
 dao of gravity
 dao of karma
 dao of life & death
@@ -66,10 +64,11 @@ dao of rain
 dao of reality
 dao of reincarnation
 dao of sea
-dao of slaughter
+dao of slaughter / extermination
 dao of space https://writings.stephenwolfram.com/2022/03/on-the-concept-of-motion/
 dao of sun / moon / stars
 dao of sword
+dao of the heavens
 dao of thunder
 dao of time
 dao of wind

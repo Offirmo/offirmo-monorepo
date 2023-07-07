@@ -30,16 +30,17 @@ const VARIANTS = [
 ]
 
 const CORE = [
-	'reliance',
-	'heaven',
-	'ghost',
-	'demon',
-	'dao',
 	'corpse',
-	'spirit',
-	'netherworld',
+	'dao',
+	'demon',
 	'desolation',
+	'elixir',
 	'flower',
+	'ghost',
+	'heaven',
+	'netherworld',
+	'reliance',
+	'spirit',
 
 	// elements
 	'fire',
@@ -99,15 +100,17 @@ const MODIFIERS = [
 	'yellow', 'golden',
 
 	// numbers
-	'twin', 'nine', 'hundred', 'thousand',
+	'twin', 'nine', 'hundred', 'thousand', 'myriad',
 
 	// tosort
 	// TODO 'free and unfettered',
 	'ancient',
 	'bright',
 	'flying', 'returning',
+	'formless',
 	'high', 'great',
 	'mysterious',
+	'void',
 ]
 
 const EPIC_MODIFIERS = [
