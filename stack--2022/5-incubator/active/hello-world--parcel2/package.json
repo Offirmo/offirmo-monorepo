@@ -1,0 +1,28 @@
+{
+	"name": "@offirmo-private/hello-world--parcel2",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"source": "src/index.js",
+	"sideEffects": false,
+
+	"peerDependencies": {
+	},
+	"dependencies": {
+	},
+
+	"scripts": {
+		"clean": "monorepo-script--clean-package …dist …cache",
+
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+
+		"typecheck": "run-s clean _build:dev:watch"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/toolbox--parcel": "^0",
+		"npm-run-all": "^4"
+	}
+}

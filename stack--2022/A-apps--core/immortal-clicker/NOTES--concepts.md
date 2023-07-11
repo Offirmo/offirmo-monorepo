@@ -167,3 +167,7 @@ tribe
 weapons
 willpower
 wounds
+tribulation -- starfall ## Apo
+tribulation -- 3000 scarlet fire ## Apo
+tribulation -- heart demon ## Apo
+tribulation -- thunder ## Apo

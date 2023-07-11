@@ -10,3 +10,5 @@ confession / eucharist
 
 prayer of Jesus
 prayer of rosary
+custom rosary
+watch "the chosen"
