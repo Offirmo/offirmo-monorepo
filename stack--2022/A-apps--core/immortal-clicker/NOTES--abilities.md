@@ -32,3 +32,7 @@ undying codex -- shackles of mortality
 refining
 refining -- blood # faster but costly
 curses
+true phoenix
+purple extreme
+crying ghost soul snake (soul poison) ## Apo
+universal spatial array
