@@ -172,7 +172,7 @@ const migrate_to_15: MigrationStep = (SEC, legacy_state, hints, previous, legacy
 		u_state: {
 			...rest__u_state,
 		},
-	} as State // for starter
+	} satisfies State // for starter
 
 	state = {
 		...state,

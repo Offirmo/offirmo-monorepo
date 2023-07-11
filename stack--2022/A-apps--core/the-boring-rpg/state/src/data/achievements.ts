@@ -1295,7 +1295,7 @@ const ENTRIES: Immutable<AchievementDefinition<UState>>[] = RAW_ENTRIES
 			lore,
 			getꓽstatus: getꓽstatus!,
 			getꓽcompletion_rate,
-		} as AchievementDefinition<UState>
+		} satisfies AchievementDefinition<UState>
 	})
 
 export default ENTRIES

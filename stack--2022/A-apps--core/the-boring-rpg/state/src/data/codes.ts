@@ -103,7 +103,7 @@ const ALL_CODESPECS: Immutable<CodeSpec<State>>[] = Object.keys(RAW_CODES).map(k
 		code: key,
 		redeem_limit,
 		is_redeemable,
-	} as CodeSpec<State>
+	} satisfies CodeSpec<State>
 })
 
 const CODE_SPECS_BY_KEY: { [key: string]: Immutable<CodeSpec<State>> } = ALL_CODESPECS.reduce(

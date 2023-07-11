@@ -188,7 +188,7 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(getꓽS
 				'quality': 'common',
 				'slot': 'weapon',
 				'uuid': 'uu1SCAdaa62Dv-QHaaDQ7Nwf',
-			} as Weapon, {
+			} satisfies Weapon, {
 				'base_hid': 'shoes',
 				'base_strength': 39841,
 				'element_type': 'item',
@@ -198,7 +198,7 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(getꓽS
 				'quality': 'legendary',
 				'slot': 'armor',
 				'uuid': 'uu15ixnqBzBX_IMsvJ2WV-sS',
-			} as Armor, {
+			} satisfies Armor, {
 				'base_hid': 'socks',
 				'base_strength': 1,
 				'element_type': 'item',
@@ -208,7 +208,7 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(getꓽS
 				'quality': 'common',
 				'slot': 'armor',
 				'uuid': 'uu1PJz7O5R5LLDmPYVUdGu77',
-			} as Armor
+			} satisfies Armor
 			],
 			'unslotted_capacity': 20,
 		},

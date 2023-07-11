@@ -29,7 +29,7 @@ function getꓽachievement_snapshot(u_state: Immutable<UState>, definition: Immu
 		lore,
 		status: status!,
 		completion_rate: getꓽcompletion_rate ? getꓽcompletion_rate(u_state) : undefined,
-	} as AchievementSnapshot
+	} satisfies AchievementSnapshot
 }
 
 function getꓽachievement_snapshot_by_temporary_id(u_state: Immutable<UState>, temporary_id: string): ReturnType<typeof getꓽachievement_snapshot> {
