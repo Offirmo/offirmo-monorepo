@@ -28,7 +28,7 @@ getꓽXYZ()
 setꓽXYZ()
 insertꓽnode()
 assertꓽnode_is_xyz()
-isꓽStory‿v2()
+isꓽStory‿v2(x: Immutable<any>): s is Story‿v2 {
 ↆfoo
 ϟbestↆofꓺaꘌb
 notᝍbadₓasⳇwell‿noǃ

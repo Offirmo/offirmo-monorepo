@@ -58,7 +58,8 @@ TODO evaluate vite
 
 nvm
 
-TODO evaluate https://www.honeybadger.io/blog/node-environment-managers/
+* TODO evaluate https://github.com/Schniz/fnm
+* TODO evaluate https://www.honeybadger.io/blog/node-environment-managers/
 * https://docs.volta.sh/guide/understanding
 * https://asdf-vm.com/guide/introduction.html#nvm-n-rbenv-etc
 

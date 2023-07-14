@@ -1,13 +1,14 @@
+import { Book } from './types.js'
 
 /////////////////////////////////////////////////
 
 // qi condensation manual
-const MANUALⵧCULTIVATIONⵧQI_CONDENSATION = {
+const MANUALⵧCULTIVATIONⵧQI_CONDENSATION: Book = {
 	// ex. https://ww5.mangakakalot.tv/chapter/manga-ii985865/chapter-3
 	// writings and drawings
 	// The physical exercise chart https://en.wikipedia.org/wiki/Qigong
 	// fake to teach the cultivation basics
-	// + jauge the talent, motivation, affinities
+	// + gauge the talent, motivation, affinities
 	// will include
 	// - some bottleneck
 	// - discipline
@@ -17,9 +18,10 @@ const MANUALⵧCULTIVATIONⵧQI_CONDENSATION = {
 	// - limited guidance to check if resourceful
 
 	title: '{{origin}}’s Qi Condensation Manual',
+
 	// 9 volumes
+	parts_type: 'volume',
 	parts: {
-		_type: 'volume',
 		volume01: {
 			// intro
 			content: `
@@ -68,11 +70,10 @@ a few basic arts with wide compatibility
 			`
 		},
 	}
-
 }
 
 /////////////////////////////////////////////////
 
 export {
-
+	MANUALⵧCULTIVATIONⵧQI_CONDENSATION,
 }

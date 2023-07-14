@@ -42,6 +42,8 @@
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
 		"dev": "run-s clean _build:dev:watch",
 
+		"d1": "node ./dist/src.es2022.esm/content--books/demo/index.js",
+
 		"p1": "node ./dist/src.es2022.esm/test01/index.js",
 
 		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2022.esm/**/*spec.js'"
