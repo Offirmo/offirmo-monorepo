@@ -17,6 +17,10 @@
 // smallest unit of a "book" that can be displayed / linked to / have a "next" button
 interface Page {
 	content: string
+	contentⵧvisual?: string // url
+	/*sub?: {
+		[k: string]: string
+	}*/
 }
 
 interface BookPart {
@@ -25,20 +29,27 @@ interface BookPart {
 		[k: string]: BookPart | Page | string
 	}
 }
+
 interface Book extends BookPart {
 	title: string
 	titleⵧsub?: string
-
 }
 
+////////////////////////////////////
+
+type AccessLevel =
+	| 'unaware'                  // no access + not even aware of existence
+	| 'copyⵧno'                  // aware of the book existence but not in possession thus obviously can't read it
+	| 'copyⵧyes'                 // has a physical copy (borrowed, stolen, bought, etc.)
+
+
+// assuming we have access
 type ComprehensionLevel =
-	| 'unaware'
-	| 'noaccess'                 // pretend this book or book part is not in the reader's possession = they know about the book existence but obviously can't read it
-	| 'forbidden'
+	| 'forbidden'                // owner may not want to read it, ex. forbidden knowledge
 	| 'unviewed'                 // not viewed at all = book never opened, page never turned
-	| 'viewedⵧblocked'           // ex. can't read or can't understand the language
+	| 'viewedⵧblocked'           // ex. can browse the book but comprehension is blocked, bc can't read or can't understand the language
 	| 'understoodⵧpartially'     // ex. skimmed quickly
-	| 'understoodⵧsuperficially' // ex. can barely read or missing concepts, understand the general idea but not much more
+	| 'understoodⵧsuperficially' // ex. can barely read or missing concepts, understand the general idea but not much more (ex. Math book but math level is too low)
 	| 'understood'               // normal
 	| 'understoodⵧthoroughly'    // expert
 	| 'understoodⵧcritically'    // can find the flaws in this book
@@ -58,5 +69,6 @@ export {
 	type Page,
 	type BookPart,
 	type Book,
+
 	type BookReadingStatus,
 }

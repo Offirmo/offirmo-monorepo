@@ -3,20 +3,18 @@
 ## package manager
 **yarn**
 
-Why yarn over npm?
+Why not npm?
 * last try 2022/03 npm ^8
 * (blocker) npm output spurious "timing" lines blotting the output
-* npm requires "run" npm run dev
+* npm requires "run" `npm run dev`
 
 
 ## monorepo
 
-* **bolt**
+**bolt**
 * complemented by https://github.com/Thinkmill/manypkg
 * downside: bundle duplication
-
-Why not bolt? https://github.com/boltpkg/bolt
-* maintained but sort of dead
+* downside: maintained but sort of dead
 
 Why not yarn workspaces?
 * they can't run commands in the dependency order
@@ -42,11 +40,14 @@ TODO evaluate https://blog.logrocket.com/boost-your-productivity-with-typescript
 TODO evaluate [self referencing in Typescript]()
 
 
+
+
 ## bundler / compiler
 https://parceljs.org/
 
 TODO evaluate vite
 TODO evaluate Rome https://rome.tools/#about-rome
+
 
 ## web
 https://parceljs.org/
@@ -64,8 +65,30 @@ nvm
 * https://asdf-vm.com/guide/introduction.html#nvm-n-rbenv-etc
 
 
+## database
 
-## TODO evaluate
+### PostGresQL
+### libSQL
+https://libsql.org/about
+
+### Query builder and ORM
+knex
+
+TODO evaluate https://docs.turso.tech/3p-dev-tools
+TODO evaluate https://github.com/drizzle-team/drizzle-orm#readme
+
+### migration
+
+TODO evaluate https://atlasgo.io/
+TODO evaluate https://flywaydb.org/
+TODO evaluate https://github.com/golang-migrate/migrate
+
+### misc
+
+
+## Misc / new
+
+TODO evaluate edge DB https://atlasgo.io/guides/sqlite/turso
 
 https://github.com/folke/ultra-runner
 

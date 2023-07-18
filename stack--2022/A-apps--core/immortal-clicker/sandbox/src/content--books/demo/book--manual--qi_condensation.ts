@@ -1,4 +1,9 @@
-import { Book } from './types.js'
+import { Book } from '../types.js'
+
+const imageUrl = new URL(
+	'xian_ni_chap7.png',
+	import.meta.url,
+)
 
 /////////////////////////////////////////////////
 
@@ -17,7 +22,7 @@ const MANUALⵧCULTIVATIONⵧQI_CONDENSATION: Book = {
 	// - fighting
 	// - limited guidance to check if resourceful
 
-	title: '{{origin}}’s Qi Condensation Manual',
+	title: '⎨⎨origin⎬⎬’s Qi Condensation Manual',
 
 	// 9 volumes
 	parts_type: 'volume',
@@ -25,15 +30,21 @@ const MANUALⵧCULTIVATIONⵧQI_CONDENSATION: Book = {
 		volume01: {
 			// intro
 			content: `
+Introduce sect
 Introduce Spiritual Qi
 Qi condensation
-foundation establishment
-			`
+			`,
+			//contentⵧvisual: imageUrl.toString(),
+			/*sub: {
+
+			}*/
 		},
 		volume02: {
 			// breathing technique / Qigong
 			// https://mangakakalot.com/chapter/xian_ni/chapter_7
 			content: `
+[Introduce breathing technique]
+foundation establishment
 			`
 		},
 		volume03: {
