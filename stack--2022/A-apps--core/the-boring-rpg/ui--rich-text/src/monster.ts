@@ -5,19 +5,19 @@ import * as RichText from '@offirmo-private/rich-text-format'
 
 
 function render_monster(m: Immutable<Monster>): RichText.Document {
-	const $doc = RichText.inline_fragment()
+	const $doc = RichText.fragmentⵧinline()
 		.addClass('monster', 'monster--rank--' + m.rank)
-		.pushText('{{level}} {{rank}} {{name||Capitalize}}')
+		.pushText('⎨⎨level⎬⎬ ⎨⎨rank⎬⎬ ⎨⎨name||Capitalize⎬⎬')
 		.pushRawNode(
-			RichText.inline_fragment().pushText('L') .pushText('' + m.level).done(),
+			RichText.fragmentⵧinline().pushText('L') .pushText('' + m.level).done(),
 			{id: 'level'},
 		)
 		.pushRawNode(
-			RichText.inline_fragment().addClass('rank--' + m.rank).pushText(m.rank).done(),
+			RichText.fragmentⵧinline().addClass('rank--' + m.rank).pushText(m.rank).done(),
 			{id: 'rank'},
 		)
 		.pushRawNode(
-			RichText.inline_fragment().addClass('monster__name').pushText(m.name).done(),
+			RichText.fragmentⵧinline().addClass('monster__name').pushText(m.name).done(),
 			{id: 'name'},
 		)
 		.addHints({ possible_emoji: m.possible_emoji })

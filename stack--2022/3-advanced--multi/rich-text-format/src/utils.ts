@@ -8,13 +8,14 @@ import {
 	Node,
 } from './types.js'
 
+/////////////////////////////////////////////////
 
-function normalize_node($raw_node: Readonly<Node>): CheckedNode {
+function normalizeꓽnode($raw_node: Readonly<Node>): CheckedNode {
 	assert(!!$raw_node, `normalize_node(): undefined or null!`)
 
 	const {
 		$v = 1,
-		$type = NodeType.inline_fragment,
+		$type = NodeType.fragmentⵧinline,
 		$classes = [],
 		$content = '',
 		$sub = {},
@@ -39,6 +40,8 @@ function normalize_node($raw_node: Readonly<Node>): CheckedNode {
 	return $node
 }
 
+/////////////////////////////////////////////////
+
 export {
-	normalize_node,
+	normalizeꓽnode,
 }

@@ -1,4 +1,4 @@
-const RichText = require('..')
+import * as RichText from '@offirmo-private/rich-text-format'
 
 /*
 const {
@@ -21,15 +21,15 @@ const {
 /////// parts ///////
 
 const SUB_UL_ITEMS = {
-	'002': {$type: 'inline_fragment', $content: 'ul #2'},
-	'001': {$type: 'inline_fragment', $content: 'ul #1'},
-	'003': {$type: 'inline_fragment', $content: 'ul #3'},
+	'002': {$type: 'fragmentⵧinline', $content: 'ul #2'},
+	'001': {$type: 'fragmentⵧinline', $content: 'ul #1'},
+	'003': {$type: 'fragmentⵧinline', $content: 'ul #3'},
 }
 
 const SUB_UL_KEY_VALUE_PAIRS = {
 	'001': {
-		$type: 'inline_fragment',
-		$content: '{{key}}: {{value}}',
+		$type: 'fragmentⵧinline',
+		$content: '⎨⎨key⎬⎬: ⎨⎨value⎬⎬',
 		$sub: {
 			key: {
 				$content: 'level',
@@ -40,8 +40,8 @@ const SUB_UL_KEY_VALUE_PAIRS = {
 		},
 	},
 	'002': {
-		$type: 'inline_fragment',
-		$content: '{{key}}: {{value}}',
+		$type: 'fragmentⵧinline',
+		$content: '⎨⎨key⎬⎬: ⎨⎨value⎬⎬',
 		$sub: {
 			key: {
 				$content: 'health',
@@ -52,8 +52,8 @@ const SUB_UL_KEY_VALUE_PAIRS = {
 		},
 	},
 	'003': {
-		$type: 'inline_fragment',
-		$content: '{{key}}: {{value}}',
+		$type: 'fragmentⵧinline',
+		$content: '⎨⎨key⎬⎬: ⎨⎨value⎬⎬',
 		$sub: {
 			key: {
 				$content: 'mana',
@@ -67,31 +67,31 @@ const SUB_UL_KEY_VALUE_PAIRS = {
 
 const DOC_WEAPON_01_NAME = {
 	$classes: ['item--name', 'item--weapon--name'],
-	$content: '{{qualifier2|Capitalize}} {{qualifier1|Capitalize}} {{base|Capitalize}}',
+	$content: '⎨⎨qualifier2|Capitalize⎬⎬ ⎨⎨qualifier1|Capitalize⎬⎬ ⎨⎨base|Capitalize⎬⎬',
 	$sub: {
 		qualifier2: {
-			$type: 'inline_fragment',
+			$type: 'fragmentⵧinline',
 			$content: 'warfield king’s',
 		},
 		qualifier1: {
-			$type: 'inline_fragment',
+			$type: 'fragmentⵧinline',
 			$content: 'onyx',
 		},
 		base: {
-			$type: 'inline_fragment',
+			$type: 'fragmentⵧinline',
 			$content: 'longsword',
 		},
 	},
 }
 
 const DOC_WEAPON_01 = {
-	$type: 'inline_fragment',
+	$type: 'fragmentⵧinline',
 	$classes: ['item', 'item--weapon', 'item--quality--legendary'],
-	$content: '{{weapon_name}} {{enhancement}}',
+	$content: '⎨⎨weapon_name⎬⎬ ⎨⎨enhancement⎬⎬',
 	$sub: {
 		weapon_name: DOC_WEAPON_01_NAME,
 		enhancement: {
-			$type: 'inline_fragment',
+			$type: 'fragmentⵧinline',
 			$classes: ['item--enhancement'],
 			$content: '+3',
 		},
@@ -102,9 +102,9 @@ const DOC_WEAPON_01 = {
 }
 
 const DOC_PLACE_01 = {
-	$type: 'inline_fragment',
+	$type: 'fragmentⵧinline',
 	$classes: ['place'],
-	$content: 'the country of {{name}}',
+	$content: 'the country of ⎨⎨name⎬⎬',
 	$sub: {
 		name: {
 			$classes: ['place--name'],
@@ -117,7 +117,7 @@ const DOC_PLACE_01 = {
 }
 
 const DOC_NPC_01 = {
-	$type: 'inline_fragment',
+	$type: 'fragmentⵧinline',
 	$classes: ['person', 'npc', 'monster--rank--boss'],
 	$content: 'John Smith',
 	$hints: {
@@ -140,21 +140,21 @@ const SUB_UL_ACTIONABLE_ITEMS = {
 /////// COMPLETE DOCS ///////
 
 const DOC_DEMO_BASE_TYPES = {
-	$type: 'inline_fragment',
+	$type: 'fragmentⵧinline',
 	$classes: [],
-	$content: '{{fragment1}}{{fragment2}}',
+	$content: '⎨⎨fragment1⎬⎬⎨⎨fragment2⎬⎬',
 	$sub: {
 		fragment1: {
-			$type: 'inline_fragment',
+			$type: 'fragmentⵧinline',
 			$classes: [],
-			$content: 'horizontal rule:{{hr}}Heading:{{heading}}Another heading:{{heading}}Some text:{{br}}{{text}}{{br}}{{strong}}{{br}}{{weak}}{{br}}{{em}}{{br}}Unordered list:{{ul}}Ordered list:{{ol}}More text.',
+			$content: 'horizontal rule:⎨⎨hr⎬⎬Heading:⎨⎨heading⎬⎬Another heading:⎨⎨heading⎬⎬Some text:⎨⎨br⎬⎬⎨⎨text⎬⎬⎨⎨br⎬⎬⎨⎨strong⎬⎬⎨⎨br⎬⎬⎨⎨weak⎬⎬⎨⎨br⎬⎬⎨⎨em⎬⎬⎨⎨br⎬⎬Unordered list:⎨⎨ul⎬⎬Ordered list:⎨⎨ol⎬⎬More text.',
 			$sub: {
 				heading: {
 					$type: 'heading',
 					$content: 'heading',
 				},
 				text: {
-					$type: 'inline_fragment',
+					$type: 'fragmentⵧinline',
 					$content: 'normal',
 				},
 				strong: {
@@ -176,15 +176,15 @@ const DOC_DEMO_BASE_TYPES = {
 				ol: {
 					$type: 'ol',
 					$sub: {
-						'002': {$type: 'inline_fragment', $content: 'ol #2'},
-						'001': {$type: 'inline_fragment', $content: 'ol #1'},
-						'003': {$type: 'inline_fragment', $content: 'ol #3'},
+						'002': {$type: 'fragmentⵧinline', $content: 'ol #2'},
+						'001': {$type: 'fragmentⵧinline', $content: 'ol #1'},
+						'003': {$type: 'fragmentⵧinline', $content: 'ol #3'},
 					},
 				},
 			},
 		},
 		fragment2: {
-			$type: 'block_fragment',
+			$type: 'fragmentⵧblock',
 			$classes: [],
 			$content: 'Some text in a block fragment',
 		},
@@ -192,9 +192,9 @@ const DOC_DEMO_BASE_TYPES = {
 }
 
 const DOC_DEMO_ADVANCED_TYPES = {
-	$type: 'inline_fragment',
+	$type: 'fragmentⵧinline',
 	$classes: [],
-	$content: '{{heading}}Key-value pairs:{{kvdefault}}Nested list:{{nested_list}}Actionable items:{{uuid_list}}Done.',
+	$content: '⎨⎨heading⎬⎬Key-value pairs:⎨⎨kvdefault⎬⎬Nested list:⎨⎨nested_list⎬⎬Actionable items:⎨⎨uuid_list⎬⎬Done.',
 	$sub: {
 		heading: {
 			$type: 'heading',
@@ -211,24 +211,24 @@ const DOC_DEMO_ADVANCED_TYPES = {
 			$type: 'ul',
 			$sub: {
 				'foo': {
-					$type: 'inline_fragment',
-					$content: 'fooc: {{sublist}}',
+					$type: 'fragmentⵧinline',
+					$content: 'fooc: ⎨⎨sublist⎬⎬',
 					$sub: {
 						sublist: {
 							$type: 'ul',
 							$sub: {
 								'foo': {
-									$type: 'inline_fragment',
+									$type: 'fragmentⵧinline',
 									$content: 'fooc',
 									$sub: {},
 								},
 								'bar': {
-									$type: 'inline_fragment',
+									$type: 'fragmentⵧinline',
 									$content: 'barc',
 									$sub: {},
 								},
 								'baz': {
-									$type: 'inline_fragment',
+									$type: 'fragmentⵧinline',
 									$content: 'bazc',
 									$sub: {},
 								},
@@ -237,13 +237,13 @@ const DOC_DEMO_ADVANCED_TYPES = {
 					},
 				},
 				'bar': {
-					$type: 'inline_fragment',
+					$type: 'fragmentⵧinline',
 					$content: 'barc',
 					$sub: {
 					},
 				},
 				'baz': {
-					$type: 'inline_fragment',
+					$type: 'fragmentⵧinline',
 					$content: 'bazc',
 					$sub: {
 					},
@@ -262,16 +262,16 @@ const DOC_DEMO_ADVANCED_TYPES = {
 }
 
 const DOC_DEMO_HINTS = {
-	$type: 'inline_fragment',
+	$type: 'fragmentⵧinline',
 	$classes: [],
-	$content: '{{heading}}link: {{link}}{{br}}List with no bullets:{{list}}Done.',
+	$content: '⎨⎨heading⎬⎬link: ⎨⎨link⎬⎬⎨⎨br⎬⎬List with no bullets:⎨⎨list⎬⎬Done.',
 	$sub: {
 		heading: {
 			$type: 'heading',
 			$content: 'Hints',
 		},
 		link: {
-			$type: 'inline_fragment',
+			$type: 'fragmentⵧinline',
 			$content: 'offirmo’s website',
 			$hints: {
 				href: 'https://www.offirmo.net',
@@ -289,8 +289,8 @@ const DOC_DEMO_HINTS = {
 
 const DOC_DEMO_RPG_01 = {
 	$v: 1,
-	$type: 'block_fragment',
-	$content: 'You are in {{place}}. You meet {{npc}}.{{br}}He gives you a {{item}}.{{hr}}',
+	$type: 'fragmentⵧblock',
+	$content: 'You are in ⎨⎨place⎬⎬. You meet ⎨⎨npc⎬⎬.⎨⎨br⎬⎬He gives you a ⎨⎨item⎬⎬.⎨⎨hr⎬⎬',
 	$sub: {
 		place: DOC_PLACE_01,
 		npc: DOC_NPC_01,
@@ -308,29 +308,29 @@ const DOC_DEMO_RPG_02 = {
 	},
 }
 
-const DOC_DEMO_RPG_03 = RichText.block_fragment()
+const DOC_DEMO_RPG_03 = RichText.fragmentⵧblock()
 	.pushText(''
-		+ 'Great sages prophetized your coming,{{br}}'
-		+ 'commoners are waiting for their hero{{br}}'
-		+ 'and kings are trembling from fear of change...{{br}}'
-		+ '…undoubtly, you’ll make a name in this world and fulfill your destiny!{{br}}',
+		+ 'Great sages prophetized your coming,⎨⎨br⎬⎬'
+		+ 'commoners are waiting for their hero⎨⎨br⎬⎬'
+		+ 'and kings are trembling from fear of change...⎨⎨br⎬⎬'
+		+ '…undoubtly, you’ll make a name in this world and fulfill your destiny!⎨⎨br⎬⎬',
 	)
 	.pushStrong('A great saga just started.')
-	.pushText('{{br}}loot:')
+	.pushText('⎨⎨br⎬⎬loot:')
 	.pushNode(DOC_DEMO_RPG_02, 'loot')
 	.done()
 
 const DOC_DEMO_INVENTORY = {
 	'$v': 1,
-	'$type': 'block_fragment',
+	'$type': 'fragmentⵧblock',
 	'$classes': [],
-	'$content': '{{equipped}}{{wallet}}{{backpack}}',
+	'$content': '⎨⎨equipped⎬⎬⎨⎨wallet⎬⎬⎨⎨backpack⎬⎬',
 	'$sub': {
 		'equipped': {
 			'$v': 1,
-			'$type': 'block_fragment',
+			'$type': 'fragmentⵧblock',
 			'$classes': [],
-			'$content': '{{header}}{{list}}',
+			'$content': '⎨⎨header⎬⎬⎨⎨list⎬⎬',
 			'$sub': {
 				'header': {
 					'$v': 1,
@@ -350,23 +350,23 @@ const DOC_DEMO_INVENTORY = {
 					'$sub': {
 						'001': {
 							'$v': 1,
-							'$type': 'inline_fragment',
+							'$type': 'fragmentⵧinline',
 							'$classes': [],
-							'$content': 'weapon: {{s1}}',
+							'$content': 'weapon: ⎨⎨s1⎬⎬',
 							'$sub': {
 								's1': {
 									'$v': 1,
-									'$type': 'inline_fragment',
+									'$type': 'fragmentⵧinline',
 									'$classes': [
 										'item--weapon',
 										'item--quality--common',
 										'item',
 									],
-									'$content': '{{quality}} {{name}} {{values}}',
+									'$content': '⎨⎨quality⎬⎬ ⎨⎨name⎬⎬ ⎨⎨values⎬⎬',
 									'$sub': {
 										'quality': {
 											'$v': 1,
-											'$type': 'inline_fragment',
+											'$type': 'fragmentⵧinline',
 											'$classes': [],
 											'$content': 'common',
 											'$sub': {},
@@ -374,15 +374,15 @@ const DOC_DEMO_INVENTORY = {
 										},
 										'name': {
 											'$v': 1,
-											'$type': 'inline_fragment',
+											'$type': 'fragmentⵧinline',
 											'$classes': [
 												'item__name',
 											],
-											'$content': '{{q2|Capitalize}} {{q1|Capitalize}} {{base|Capitalize}}',
+											'$content': '⎨⎨q2|Capitalize⎬⎬ ⎨⎨q1|Capitalize⎬⎬ ⎨⎨base|Capitalize⎬⎬',
 											'$sub': {
 												'base': {
 													'$v': 1,
-													'$type': 'inline_fragment',
+													'$type': 'fragmentⵧinline',
 													'$classes': [],
 													'$content': 'spear',
 													'$sub': {},
@@ -390,7 +390,7 @@ const DOC_DEMO_INVENTORY = {
 												},
 												'q1': {
 													'$v': 1,
-													'$type': 'inline_fragment',
+													'$type': 'fragmentⵧinline',
 													'$classes': [],
 													'$content': 'heavy',
 													'$sub': {},
@@ -398,7 +398,7 @@ const DOC_DEMO_INVENTORY = {
 												},
 												'q2': {
 													'$v': 1,
-													'$type': 'inline_fragment',
+													'$type': 'fragmentⵧinline',
 													'$classes': [],
 													'$content': 'woodsman’s',
 													'$sub': {},
@@ -409,7 +409,7 @@ const DOC_DEMO_INVENTORY = {
 										},
 										'values': {
 											'$v': 1,
-											'$type': 'inline_fragment',
+											'$type': 'fragmentⵧinline',
 											'$classes': [
 												'weapon--values',
 											],
@@ -427,23 +427,23 @@ const DOC_DEMO_INVENTORY = {
 						},
 						'002': {
 							'$v': 1,
-							'$type': 'inline_fragment',
+							'$type': 'fragmentⵧinline',
 							'$classes': [],
-							'$content': 'armor : {{s1}}',
+							'$content': 'armor : ⎨⎨s1⎬⎬',
 							'$sub': {
 								's1': {
 									'$v': 1,
-									'$type': 'inline_fragment',
+									'$type': 'fragmentⵧinline',
 									'$classes': [
 										'item--armor',
 										'item--quality--common',
 										'item',
 									],
-									'$content': '{{quality}} {{name}} {{values}}',
+									'$content': '⎨⎨quality⎬⎬ ⎨⎨name⎬⎬ ⎨⎨values⎬⎬',
 									'$sub': {
 										'quality': {
 											'$v': 1,
-											'$type': 'inline_fragment',
+											'$type': 'fragmentⵧinline',
 											'$classes': [],
 											'$content': 'common',
 											'$sub': {},
@@ -451,15 +451,15 @@ const DOC_DEMO_INVENTORY = {
 										},
 										'name': {
 											'$v': 1,
-											'$type': 'inline_fragment',
+											'$type': 'fragmentⵧinline',
 											'$classes': [
 												'item__name',
 											],
-											'$content': '{{q1|Capitalize}} {{base|Capitalize}} {{q2|Capitalize}}',
+											'$content': '⎨⎨q1|Capitalize⎬⎬ ⎨⎨base|Capitalize⎬⎬ ⎨⎨q2|Capitalize⎬⎬',
 											'$sub': {
 												'base': {
 													'$v': 1,
-													'$type': 'inline_fragment',
+													'$type': 'fragmentⵧinline',
 													'$classes': [],
 													'$content': 'socks',
 													'$sub': {},
@@ -467,7 +467,7 @@ const DOC_DEMO_INVENTORY = {
 												},
 												'q1': {
 													'$v': 1,
-													'$type': 'inline_fragment',
+													'$type': 'fragmentⵧinline',
 													'$classes': [],
 													'$content': 'used',
 													'$sub': {},
@@ -475,7 +475,7 @@ const DOC_DEMO_INVENTORY = {
 												},
 												'q2': {
 													'$v': 1,
-													'$type': 'inline_fragment',
+													'$type': 'fragmentⵧinline',
 													'$classes': [],
 													'$content': 'of the noob',
 													'$sub': {},
@@ -486,7 +486,7 @@ const DOC_DEMO_INVENTORY = {
 										},
 										'values': {
 											'$v': 1,
-											'$type': 'inline_fragment',
+											'$type': 'fragmentⵧinline',
 											'$classes': [
 												'armor--values',
 											],
@@ -510,9 +510,9 @@ const DOC_DEMO_INVENTORY = {
 		},
 		'wallet': {
 			'$v': 1,
-			'$type': 'block_fragment',
+			'$type': 'fragmentⵧblock',
 			'$classes': [],
-			'$content': '{{header}}{{list}}',
+			'$content': '⎨⎨header⎬⎬⎨⎨list⎬⎬',
 			'$sub': {
 				'header': {
 					'$v': 1,
@@ -532,15 +532,15 @@ const DOC_DEMO_INVENTORY = {
 					'$sub': {
 						'coin': {
 							'$v': 1,
-							'$type': 'inline_fragment',
+							'$type': 'fragmentⵧinline',
 							'$classes': [
 								'currency--coin',
 							],
-							'$content': '{{amount}} coins',
+							'$content': '⎨⎨amount⎬⎬ coins',
 							'$sub': {
 								'amount': {
 									'$v': 1,
-									'$type': 'inline_fragment',
+									'$type': 'fragmentⵧinline',
 									'$classes': [],
 									'$content': '17',
 									'$sub': {},
@@ -551,15 +551,15 @@ const DOC_DEMO_INVENTORY = {
 						},
 						'token': {
 							'$v': 1,
-							'$type': 'inline_fragment',
+							'$type': 'fragmentⵧinline',
 							'$classes': [
 								'currency--token',
 							],
-							'$content': '{{amount}} tokens',
+							'$content': '⎨⎨amount⎬⎬ tokens',
 							'$sub': {
 								'amount': {
 									'$v': 1,
-									'$type': 'inline_fragment',
+									'$type': 'fragmentⵧinline',
 									'$classes': [],
 									'$content': '0',
 									'$sub': {},
@@ -576,9 +576,9 @@ const DOC_DEMO_INVENTORY = {
 		},
 		'backpack': {
 			'$v': 1,
-			'$type': 'block_fragment',
+			'$type': 'fragmentⵧblock',
 			'$classes': [],
-			'$content': '{{header}}{{list}}',
+			'$content': '⎨⎨header⎬⎬⎨⎨list⎬⎬',
 			'$sub': {
 				'header': {
 					'$v': 1,
@@ -598,7 +598,7 @@ const DOC_DEMO_INVENTORY = {
 					'$sub': {
 						'-': {
 							'$v': 1,
-							'$type': 'inline_fragment',
+							'$type': 'fragmentⵧinline',
 							'$classes': [],
 							'$content': '(empty)',
 							'$sub': {},
@@ -616,7 +616,7 @@ const DOC_DEMO_INVENTORY = {
 
 ////////////
 
-module.exports = {
+export {
 	DOC_DEMO_BASE_TYPES,
 	DOC_DEMO_ADVANCED_TYPES,
 	DOC_DEMO_HINTS,

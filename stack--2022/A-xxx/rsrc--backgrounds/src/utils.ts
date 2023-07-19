@@ -6,7 +6,7 @@ import { Background } from './types.js'
 function render_artwork_legend(artwork: Readonly<Background>): RichText.Document {
 	const { author, source, display_name, keywords, position_pct } = artwork
 
-	const artwork_name = RichText.inline_fragment()
+	const artwork_name = RichText.fragmentⵧinline()
 		.pushText('« ')
 		.pushText(
 			display_name.endsWith('Ii')
@@ -19,21 +19,21 @@ function render_artwork_legend(artwork: Readonly<Background>): RichText.Document
 		})
 		.done()
 
-	const author_name = RichText.inline_fragment()
+	const author_name = RichText.fragmentⵧinline()
 		.pushText(author.display_name)
 		.addHints({
 			href: author.url,
 		})
 		.done()
 
-	const builder = RichText.inline_fragment()
+	const builder = RichText.fragmentⵧinline()
 		.pushNode(artwork_name)
 		.pushLineBreak()
 		.pushText(' by ')
 		.pushNode(author_name)
 
 	let has_errors = false
-	const errors = RichText.inline_fragment()
+	const errors = RichText.fragmentⵧinline()
 	if (source.length < 12) {
 		has_errors = true
 		errors.pushLineBreak().pushText('💥  missing source!')

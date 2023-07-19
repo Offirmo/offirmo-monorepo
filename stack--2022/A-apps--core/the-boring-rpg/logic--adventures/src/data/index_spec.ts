@@ -143,19 +143,19 @@ describe('@tbrpg/logic-adventures - data:', function () {
 					const text = _.adventures[key]
 
 					if (text.includes('level')) outcome.level = true
-					if (text.includes('{{health}}')) outcome.health = true
-					if (text.includes('{{mana}}')) outcome.mana = true
-					if (text.includes('{{strength}}')) outcome.strength = true
-					if (text.includes('{{agility}}')) outcome.agility = true
-					if (text.includes('{{charisma}}')) outcome.charisma = true
-					if (text.includes('{{wisdom}}')) outcome.wisdom = true
-					if (text.includes('{{luck}}')) outcome.luck = true
-					if (text.includes('{{attr_name}}')) outcome.XXX_attribute = true
+					if (text.includes('⎨⎨health⎬⎬')) outcome.health = true
+					if (text.includes('⎨⎨mana⎬⎬')) outcome.mana = true
+					if (text.includes('⎨⎨strength⎬⎬')) outcome.strength = true
+					if (text.includes('⎨⎨agility⎬⎬')) outcome.agility = true
+					if (text.includes('⎨⎨charisma⎬⎬')) outcome.charisma = true
+					if (text.includes('⎨⎨wisdom⎬⎬')) outcome.wisdom = true
+					if (text.includes('⎨⎨luck⎬⎬')) outcome.luck = true
+					if (text.includes('⎨⎨attr_name⎬⎬')) outcome.XXX_attribute = true
 
-					if (text.includes('{{coin}}')) outcome.coin = 'XXX'
-					if (text.includes('{{token}}')) outcome.token = 1
+					if (text.includes('⎨⎨coin⎬⎬')) outcome.coin = 'XXX'
+					if (text.includes('⎨⎨token⎬⎬')) outcome.token = 1
 
-					if (text.includes('{{item}}')) outcome.XXX_armor_or_weapon = true
+					if (text.includes('⎨⎨item⎬⎬')) outcome.XXX_armor_or_weapon = true
 
 					if(Object.keys(outcome).length === 0) outcome.improvementⵧarmor_or_weapon = true
 

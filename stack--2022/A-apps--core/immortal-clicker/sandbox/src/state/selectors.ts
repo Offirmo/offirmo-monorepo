@@ -29,14 +29,14 @@ function getꓽrecap(u_state: Immutable<UState>): RichText.Document {
 	const isNewGame = (u_state.revision === 0)
 	/*
 	if (isNewGame) {
-		return RichText.inline_fragment()
+		return RichText.fragmentⵧinline()
 			.pushText('You are an ')
 			.pushStrong('otherworlder')
-			.pushText(', an adventurer from another world…{{br}}')
+			.pushText(', an adventurer from another world…⎨⎨br⎬⎬')
 			.pushText('Congratulations, you were chosen to enter the unknown realm of ')
 			.pushStrong('Jaema')
-			.pushText('!{{br}}')
-			.pushText('Maybe were you just more courageous, cunning and curious than your peers?{{br}}')
+			.pushText('!⎨⎨br⎬⎬')
+			.pushText('Maybe were you just more courageous, cunning and curious than your peers?⎨⎨br⎬⎬')
 			.pushText('But for now, let’s go on an adventure, for glory ⚔ and loot 📦 💰 !')
 			.done()
 	}
@@ -47,7 +47,7 @@ function getꓽrecap(u_state: Immutable<UState>): RichText.Document {
 	// situation
 	// challenge
 
-	let recap = RichText.block_fragment()
+	let recap = RichText.fragmentⵧblock()
 		.pushText('You are ')
 
 	// name
@@ -80,7 +80,7 @@ function getꓽrecap(u_state: Immutable<UState>): RichText.Document {
 					.done()
 
 			case 'crippled':
-				return RichText.inline_fragment()
+				return RichText.fragmentⵧinline()
 					.pushStrong('crippled') // TODO red
 					.pushText(' ')
 					.pushStrong('immortal cultivator')
@@ -95,14 +95,14 @@ function getꓽrecap(u_state: Immutable<UState>): RichText.Document {
 				const current_sect = getꓽsectⵧcurrent(u_state)
 
 				if (!current_sect) {
-					return RichText.inline_fragment()
+					return RichText.fragmentⵧinline()
 						.pushStrong('rogue') // TODO color
 						.pushText(' ')
 						.pushStrong('immortal cultivator')
 						.done()
 				}
 
-				return RichText.inline_fragment()
+				return RichText.fragmentⵧinline()
 					.pushStrong('immortal cultivator')
 					.pushText(' from the ')
 					.pushStrong(current_sect.name)

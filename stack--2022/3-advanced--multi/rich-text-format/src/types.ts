@@ -1,22 +1,22 @@
 import { Enum } from 'typescript-string-enums'
 
-///////
+/////////////////////////////////////////////////
 
 const NodeType = Enum(
 	// https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block
 
 	// display "inline"
-	'inline_fragment', // = span
+	'fragmentⵧinline', // = span
 	'strong', // strong but less strong than heading. Ex. ansi.bold
 	'weak', // opposite of strong ;) Ex. ansi.dim
 	'em', // TODO semantic difference with strong? Alternate? (= italic)
 
 	// display "block"
-	'block_fragment',  // = div
+	'fragmentⵧblock',  // = div
 	'heading',
-	'hr',
 	'ol',
 	'ul',
+	'hr',
 
 	// special
 	'br',
@@ -49,7 +49,7 @@ type Node = Partial<CheckedNode>
 // aliases
 type Document = Node
 
-////////////
+/////////////////////////////////////////////////
 
 export {
 	NodeType,

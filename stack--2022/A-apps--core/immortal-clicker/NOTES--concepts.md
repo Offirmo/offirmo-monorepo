@@ -2,7 +2,9 @@
 12 zodiac
 33 heavens
 33 hells
+4 books https://en.wikipedia.org/wiki/Four_Books_and_Five_Classics#Four_Books
 4 symbols https://en.wikipedia.org/wiki/Four_Symbols
+5 classics https://en.wikipedia.org/wiki/Four_Books_and_Five_Classics#Five_Classics
 5 elements
 5 venoms: centipede, scorpion, spider, lizard, viper
 7 emotions and 6 pleasures
@@ -164,10 +166,10 @@ teleportation -- minor, greater
 teleportation portals, vortex, spatial cracks
 treasures
 tribe
+tribulation -- 3000 scarlet fire ## Apo
+tribulation -- heart demon ## Apo
+tribulation -- starfall ## Apo
+tribulation -- thunder ## Apo
 weapons
 willpower
 wounds
-tribulation -- starfall ## Apo
-tribulation -- 3000 scarlet fire ## Apo
-tribulation -- heart demon ## Apo
-tribulation -- thunder ## Apo

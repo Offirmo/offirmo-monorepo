@@ -7,6 +7,7 @@ import {
 	Document,
 } from '../types.js'
 
+/////////////////////////////////////////////////
 
 interface CommonOptions {
 	id?: string
@@ -117,16 +118,16 @@ function create($type: NodeType): Builder {
 	// node ref is auto added into content
 	function pushNode(node: Node, options: CommonOptions = {}): Builder {
 		const id = options.id || ('000' + ++sub_id).slice(-4)
-		$node.$content += `{{${id}}}`
+		$node.$content += `⎨⎨${id}⎬⎬`
 		return pushRawNode(node, { ...options, id })
 	}
 
 	function pushInlineFragment(str: string, options?: CommonOptions): Builder {
-		return _buildAndPush(inline_fragment(), str, options)
+		return _buildAndPush(fragmentⵧinline(), str, options)
 	}
 
 	function pushBlockFragment(str: string, options?: CommonOptions): Builder {
-		return _buildAndPush(block_fragment(), str, options)
+		return _buildAndPush(fragmentⵧblock(), str, options)
 	}
 
 	function pushStrong(str: string, options?: CommonOptions): Builder {
@@ -142,12 +143,12 @@ function create($type: NodeType): Builder {
 	}
 
 	function pushHorizontalRule(): Builder {
-		$node.$content += '{{hr}}'
+		$node.$content += '⎨⎨hr⎬⎬'
 		return builder
 	}
 
 	function pushLineBreak(): Builder {
-		$node.$content += '{{br}}'
+		$node.$content += '⎨⎨br⎬⎬'
 		return builder
 	}
 
@@ -174,11 +175,11 @@ function create($type: NodeType): Builder {
 	return builder
 }
 
-function inline_fragment(): Builder {
-	return create(NodeType.inline_fragment)
+function fragmentⵧinline(): Builder {
+	return create(NodeType.fragmentⵧinline)
 }
-function block_fragment(): Builder {
-	return create(NodeType.block_fragment)
+function fragmentⵧblock(): Builder {
+	return create(NodeType.fragmentⵧblock)
 }
 
 function heading(): Builder {
@@ -193,28 +194,30 @@ function weak(): Builder {
 	return create(NodeType.weak)
 }
 
-function ordered_list(): Builder {
+function listⵧordered(): Builder {
 	return create(NodeType.ol)
 }
 
-function unordered_list(): Builder {
+function listⵧunordered(): Builder {
 	return create(NodeType.ul)
 }
 
 function key_value(key: Node | string, value: Node | string): Builder {
 	const key_node: Node = typeof key === 'string'
-		? inline_fragment().pushText(key).done()
+		? fragmentⵧinline().pushText(key).done()
 		: key
 
 	const value_node: Node = typeof value === 'string'
-		? inline_fragment().pushText(value).done()
+		? fragmentⵧinline().pushText(value).done()
 		: value
 
-	return inline_fragment()
+	return fragmentⵧinline()
 		.pushNode(key_node, { id: 'key' })
 		.pushText(': ')
 		.pushNode(value_node, { id: 'value' })
 }
+
+/////////////////////////////////////////////////
 
 export {
 	NodeType,
@@ -223,12 +226,12 @@ export {
 
 	create,
 
-	inline_fragment,
-	block_fragment,
+	fragmentⵧinline,
+	fragmentⵧblock,
 	heading,
 	strong,
 	weak,
-	ordered_list,
-	unordered_list,
+	listⵧordered,
+	listⵧunordered,
 	key_value,
 }

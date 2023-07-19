@@ -1,12 +1,8 @@
-#!/bin/sh
-':' //# https://sambal.org/?p=1014 ; exec /usr/bin/env node "$0" "$@"
-'use strict'
-
 console.log('Rich Text Format Demo')
 
-const RichText = require('../..')
+import * as RichText from '@offirmo-private/rich-text-format'
 
-const {
+import {
 	DOC_DEMO_BASE_TYPES,
 	DOC_DEMO_ADVANCED_TYPES,
 	DOC_DEMO_HINTS,
@@ -14,17 +10,9 @@ const {
 	DOC_DEMO_RPG_02,
 	DOC_DEMO_RPG_03,
 	DOC_DEMO_INVENTORY,
-} = require('../examples.js')
+} from '../examples.mjs'
 
-let to_ansi = null
-try {
-	to_ansi = require('../../../rich-text-format-to-ansi')
-}
-catch(err) {
-	console.warn('error loading to_ansi:', err)
-}
-
-
+import to_ansi from '../../../rich-text-format--to-ansi/index.mjs'
 
 function demo(wrapped_doc) {
 	const key = Object.keys(wrapped_doc)[0]

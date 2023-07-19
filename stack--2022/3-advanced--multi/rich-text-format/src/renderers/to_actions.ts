@@ -8,7 +8,9 @@ import {
 } from '../walk.js'
 import { Node, CheckedNode } from '../types.js'
 
-export interface Action {
+/////////////////////////////////////////////////
+
+interface Action {
 	$node: CheckedNode
 	type: 'link' | undefined
 	data: any
@@ -16,9 +18,8 @@ export interface Action {
 	// TODO more
 }
 
-
-export type Options = {}
-export const DEFAULT_OPTIONS = {}
+type Options = {}
+const DEFAULT_OPTIONS = {}
 
 type State = {
 	actions: Action[],
@@ -56,12 +57,14 @@ const callbacks: Partial<WalkerCallbacks<State, Options>> = {
 	on_type,
 }
 
-
 function to_actions($doc: Node, options: Options = DEFAULT_OPTIONS): Action[] {
 	return walk<State, Options>($doc, callbacks, options).actions
 }
 
+/////////////////////////////////////////////////
+
 export {
 	callbacks,
+	type Action,
 	to_actions,
 }

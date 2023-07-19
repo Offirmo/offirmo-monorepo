@@ -6,7 +6,7 @@ import PKG_JSON from '../package.json' assert { type: 'json' }
 console.log(boxify(`
 import { RichText } from '${stylizeString.bold(PKG_JSON.name)}'
 
-const doc = RichText.inline_fragment()
+const doc = RichText.fragmentⵧinline()
    .pushText('Hello ')
    .pushStrong('world!')
    .done()

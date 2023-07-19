@@ -33,10 +33,10 @@ function render_equipment(inventory: Immutable<InventoryState>, options?: Immuta
 
 		const $doc_item = item
 			? render_item_short(item, options)
-			: RichText.inline_fragment().pushText('-').done()
+			: RichText.fragmentⵧinline().pushText('-').done()
 
 		//const $doc_line = RichText.key_value(slot, $doc_item).done()
-		const $doc_line = RichText.inline_fragment()
+		const $doc_line = RichText.fragmentⵧinline()
 			.pushText(slot)
 			.pushText(': ')
 			.pushNode($doc_item, {id: 'item'})
@@ -45,7 +45,7 @@ function render_equipment(inventory: Immutable<InventoryState>, options?: Immuta
 		$doc_list.$sub[`000${ITEM_SLOTS_TO_INT[slot]}`.slice(-3)] = $doc_line
 	})
 
-	const $doc = RichText.block_fragment()
+	const $doc = RichText.fragmentⵧblock()
 		.pushNode(RichText.heading().pushText('Active equipment:').done(), {id: 'header'})
 		.pushNode($doc_list, {id: 'list'})
 		.done()
@@ -82,10 +82,10 @@ function render_backpack(inventory: Immutable<InventoryState>, options?: Immutab
 	if (Object.keys($doc_list.$sub).length === 0) {
 		// completely empty
 		$doc_list.$type = RichText.NodeType.ul
-		$doc_list.$sub['-'] = RichText.inline_fragment().pushText('(empty)').done()
+		$doc_list.$sub['-'] = RichText.fragmentⵧinline().pushText('(empty)').done()
 	}
 
-	const $doc = RichText.block_fragment()
+	const $doc = RichText.fragmentⵧblock()
 		.pushNode(RichText.heading().pushText(`Backpack: (${item_count}/${inventory.unslotted_capacity})`).done(), {id: 'header'})
 		.pushNode($doc_list, {id: 'list'})
 		.done()
@@ -94,7 +94,7 @@ function render_backpack(inventory: Immutable<InventoryState>, options?: Immutab
 }
 
 function render_full_inventory(inventory: Immutable<InventoryState>, wallet: Immutable<WalletState>, options: Immutable<RenderItemOptions> = DEFAULT_RENDER_ITEM_OPTIONS): RichText.Document {
-	const $doc = RichText.block_fragment()
+	const $doc = RichText.fragmentⵧblock()
 		.pushNode(render_equipment(inventory, options), {id: 'equipped'})
 		.pushNode(render_wallet(wallet), {id: 'wallet'})
 		.pushNode(render_backpack(inventory, options), {id: 'backpack'})

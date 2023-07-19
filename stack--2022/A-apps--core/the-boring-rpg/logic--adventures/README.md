@@ -1,19 +1,19 @@
 
 ```
-{{encounter}}
-{{coin}}
-{{item}}
-{{attr}} {{attr_name}}
+⎨⎨encounter⎬⎬
+⎨⎨coin⎬⎬
+⎨⎨item⎬⎬
+⎨⎨attr⎬⎬ ⎨⎨attr_name⎬⎬
 
-{{level}}
-{{health}}
-{{mana}}
+⎨⎨level⎬⎬
+⎨⎨health⎬⎬
+⎨⎨mana⎬⎬
 
-{{agility}}
-{{charisma}}
-{{luck}}
-{{strength}}
-{{wisdom}}
+⎨⎨agility⎬⎬
+⎨⎨charisma⎬⎬
+⎨⎨luck⎬⎬
+⎨⎨strength⎬⎬
+⎨⎨wisdom⎬⎬
 
 coins gain:
 	'none',

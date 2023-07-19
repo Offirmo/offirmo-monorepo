@@ -2,7 +2,7 @@ import memoize_one from 'memoize-one'
 import * as React from 'react'
 import classNames from 'classnames'
 
-import { Enum, NodeType, walk, is_list, is_uuid_list, is_KVP_list } from '@offirmo-private/rich-text-format'
+import { Enum, NodeType, walk, isꓽlist, isꓽlistⵧuuid, isꓽlistⵧKV } from '@offirmo-private/rich-text-format'
 import '@offirmo-private/rich-text-format/src/renderers/style.css'
 
 const LIB = 'rich_text_to_react'
@@ -11,8 +11,8 @@ export const NODE_TYPE_TO_COMPONENT = {
 	// will default to own tag if not in this list (ex. strong => strong)
 	[NodeType.weak]: 'span',
 	[NodeType.heading]: 'h3',
-	[NodeType.inline_fragment]: 'span',
-	[NodeType.block_fragment]: 'div',
+	[NodeType.fragmentⵧinline]: 'span',
+	[NodeType.fragmentⵧblock]: 'div',
 }
 
 export const NODE_TYPE_TO_EXTRA_CLASSES = {
@@ -89,10 +89,10 @@ export function intermediate_on_node_exit({$node, $id, state}, options) {
 
 	result.classes.push(...(NODE_TYPE_TO_EXTRA_CLASSES[$type] || []), 'o⋄children-spacing⁚flow')
 
-	if (is_list($node)) {
+	if (isꓽlist($node)) {
 		result.classes.push('o⋄rich-text⋄list')
 
-		if (is_uuid_list($node)) {
+		if (isꓽlistⵧuuid($node)) {
 			//console.log(`${LIB} seen uuid list`)
 			result.classes.push('o⋄rich-text⋄list--interactive')
 		}
@@ -106,7 +106,7 @@ export function intermediate_on_node_exit({$node, $id, state}, options) {
 				break
 		}
 
-		if (is_KVP_list($node)) {
+		if (isꓽlistⵧKV($node)) {
 			// TODO rewrite completely
 			warn_kvp()
 			result.classes.push('o⋄rich-text⋄list--no-bullet')

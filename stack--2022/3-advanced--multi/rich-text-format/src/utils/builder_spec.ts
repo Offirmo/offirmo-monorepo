@@ -10,7 +10,7 @@ describe(`${LIB}`, () => {
 	describe(`utils -- builder`, () => {
 
 		it('should work', () => {
-			const builder = RichText.inline_fragment()
+			const builder = RichText.fragmentⵧinline()
 				.addClass('achievement')
 
 			builder

@@ -28,9 +28,9 @@ function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItem
 	// coin
 	// improved_item
 	// 2. also generate some "summaries" for some gains
-	let $listing_of_loot = RichText.block_fragment().done()
-	let $listing_of_character_improvement = RichText.block_fragment().done()
-	let $listing_of_item_improvement = RichText.block_fragment().done()
+	let $listing_of_loot = RichText.fragmentⵧblock().done()
+	let $listing_of_character_improvement = RichText.fragmentⵧblock().done()
+	let $listing_of_item_improvement = RichText.fragmentⵧblock().done()
 	// make sure that we handled every possible outcomes
 	const handled_adventure_outcomes_so_far: Set<string> = new Set()
 
@@ -45,7 +45,7 @@ function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItem
 			const $doc = render_item_short(gains[slot], options)
 
 			$story_sub_elements.item = $doc
-			$story_sub_elements.item_slot = RichText.inline_fragment().pushText(slot).done()
+			$story_sub_elements.item_slot = RichText.fragmentⵧinline().pushText(slot).done()
 			$story_sub_elements[slot] = $doc
 			$loot_list.$sub[slot] = $doc
 
@@ -65,7 +65,7 @@ function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItem
 
 		const hasLoot = !!Object.keys($loot_list.$sub).length
 		if (hasLoot)
-			$listing_of_loot = RichText.block_fragment()
+			$listing_of_loot = RichText.fragmentⵧblock()
 				//.pushLineBreak()
 				.pushText('Loot:')
 				.pushNode($loot_list, {id: 'list'})
@@ -80,16 +80,16 @@ function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItem
 			//console.info('handling adventure outcome [c1]: ' + attr)
 			if (!gains[attr]) return
 
-			$story_sub_elements.attr_name = RichText.inline_fragment().pushText(attr).done()
+			$story_sub_elements.attr_name = RichText.fragmentⵧinline().pushText(attr).done()
 
-			const $doc_attr_gain_value = RichText.inline_fragment().pushText('' + gains[attr]).done()
+			const $doc_attr_gain_value = RichText.fragmentⵧinline().pushText('' + gains[attr]).done()
 			$story_sub_elements.attr = $doc_attr_gain_value // generic
 			$story_sub_elements[attr] = $doc_attr_gain_value // precise
 
 
 			$improvement_list.$sub[attr] = attr === 'level'
-				? RichText.inline_fragment().pushText('🆙 You leveled up!').done()
-				: RichText.inline_fragment().pushText(`You improved your ${attr} by ${gains[attr]}!`).done() // TODO improve
+				? RichText.fragmentⵧinline().pushText('🆙 You leveled up!').done()
+				: RichText.fragmentⵧinline().pushText(`You improved your ${attr} by ${gains[attr]}!`).done() // TODO improve
 
 			handled_adventure_outcomes_so_far.add(attr)
 		})
@@ -98,7 +98,7 @@ function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItem
 
 		const has_improvement = !!Object.keys($improvement_list.$sub).length
 		if (has_improvement)
-			$listing_of_character_improvement = RichText.block_fragment()
+			$listing_of_character_improvement = RichText.fragmentⵧblock()
 				//.pushLineBreak()
 				.pushText('Character improvement:')
 				.pushNode($improvement_list, {id: 'list'})
@@ -117,7 +117,7 @@ function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItem
 			handled_adventure_outcomes_so_far.add('improvementⵧweapon')
 
 		if (has_improvement)
-			$listing_of_item_improvement = RichText.block_fragment()
+			$listing_of_item_improvement = RichText.fragmentⵧblock()
 				//.pushLineBreak()
 				.pushText('Item improvement:')
 				.pushNode($improvement_list, {id: 'list'})
@@ -141,7 +141,7 @@ function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItem
 	const _ = I18N_ADVENTURES.en as any
 	const story = _.adventures[a.hid]
 
-	const $doc = RichText.block_fragment()
+	const $doc = RichText.fragmentⵧblock()
 		.pushText(story)
 		//.pushLineBreak()
 		//.pushNode($listing_of_loot, 'loot')

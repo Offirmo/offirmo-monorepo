@@ -24,15 +24,15 @@ describe(`${LIB}`, function () {
 				}
 			}
 
-			it('should detect unmatched {{}} -- {{ 1', () => {
+			it('should detect unmatched ⎨⎨⎬⎬ -- ⎨⎨ 1', () => {
 				const $doc = {
-					$content: '{{foo',
+					$content: '⎨⎨foo',
 				}
 				expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
 			})
-			it('should detect unmatched {{}} -- {{ 2', () => {
+			it('should detect unmatched ⎨⎨⎬⎬ -- ⎨⎨ 2', () => {
 				const $doc = {
-					$content: '{{foo}} {{bar',
+					$content: '⎨⎨foo⎬⎬ ⎨⎨bar',
 					$sub: {
 						'foo': {}
 					},
@@ -40,27 +40,27 @@ describe(`${LIB}`, function () {
 				expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
 			})
 
-			it('should detect unmatched {{}} -- }} 1', () => {
+			it('should detect unmatched ⎨⎨⎬⎬ -- ⎬⎬ 1', () => {
 
 				const $doc = {
-					$content: 'foo}}',
+					$content: 'foo⎬⎬',
 				}
 				expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
 			})
-			it('should detect unmatched {{}} -- }} 2', () => {
+			it('should detect unmatched ⎨⎨⎬⎬ -- ⎬⎬ 2', () => {
 
 				const $doc = {
-					$content: '{{foo}} bar}}',
+					$content: '⎨⎨foo⎬⎬ bar⎬⎬',
 					$sub: {
 						'foo': {}
 					},
 				}
 				expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
 			})
-			it('should detect unmatched {{}} -- }} 2', () => {
+			it('should detect unmatched ⎨⎨⎬⎬ -- ⎬⎬ 2', () => {
 
 				const $doc = {
-					$content: 'bar}} {{foo}}',
+					$content: 'bar⎬⎬ ⎨⎨foo⎬⎬',
 					$sub: {
 						'foo': {}
 					},

@@ -10,14 +10,14 @@ export function getꓽengagement_message(pe: Immutable<PendingEngagement>): Rich
 
 	switch(key) {
 		case EngagementKey['just-some-text']:
-			return RichText.block_fragment()
+			return RichText.fragmentⵧblock()
 				.pushText(params.text)
 				.done()
 
 		case EngagementKey['hello_world--flow']:
 		case EngagementKey['hello_world--aside']:
 		case EngagementKey['hello_world--warning']:
-			return RichText.block_fragment()
+			return RichText.fragmentⵧblock()
 				.pushText('[TEST] Hello, ')
 				.pushInlineFragment(params.name || 'world', {id: 'name'})
 				.pushText('!')

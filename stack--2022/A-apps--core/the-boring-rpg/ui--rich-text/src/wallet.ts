@@ -5,7 +5,7 @@ import * as RichText from '@offirmo-private/rich-text-format'
 
 
 function render_currency_amount(currency: Currency, amount: number, { render_unit }: { render_unit: boolean} = { render_unit: true }): RichText.Document {
-	const doc = RichText.inline_fragment()
+	const doc = RichText.fragmentⵧinline()
 		.addClass('currency--' + currency)
 		.pushInlineFragment('' + amount, {id: 'amount'}) // TODO format according to locale?
 
@@ -25,7 +25,7 @@ function render_wallet(wallet: Immutable<WalletState>): RichText.Document {
 		$doc_list.$sub[currency] = render_currency_amount(currency, amount)
 	})
 
-	const $doc = RichText.block_fragment()
+	const $doc = RichText.fragmentⵧblock()
 		.pushHeading('Wallet:', {id: 'header'})
 		.pushNode($doc_list, {id: 'list'})
 		.done()

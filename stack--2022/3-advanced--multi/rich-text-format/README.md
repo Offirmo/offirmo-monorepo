@@ -9,7 +9,7 @@ See /demos/*
 ```js
 import * as RichText from '@offirmo-private/rich-text-format'
 
-const $doc = RichText.block_fragment()
+const $doc = RichText.fragmentⵧblock()
 		.pushNode(RichText.heading().pushText('Identity:').done(), {id: 'header'})
 		.pushNode(
 			RichText.unordered_list()
@@ -18,7 +18,6 @@ const $doc = RichText.block_fragment()
 				.done()
 		)
 		.done()
-		
 ```
 
 Inspiration:

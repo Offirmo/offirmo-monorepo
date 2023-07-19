@@ -128,31 +128,31 @@ export function render_meta(statistics) {
 
 	const $doc_list_builder = RichText.unordered_list()
 	$doc_list_builder.pushRawNode(
-		RichText.inline_fragment().pushText(`Play count: ${statistics.good_play_count}`).done(),
+		RichText.fragmentⵧinline().pushText(`Play count: ${statistics.good_play_count}`).done(),
 		'01-playcount',
 	)
 	$doc_list_builder.pushRawNode(
-		RichText.inline_fragment().pushText(`Game version: ${(ENGINE_VERSION*100).toFixed(2)}`).done(),
+		RichText.fragmentⵧinline().pushText(`Game version: ${(ENGINE_VERSION*100).toFixed(2)}`).done(),
 		'02-version',
 	)
 	$doc_list_builder.pushRawNode(
-		RichText.inline_fragment().pushText(`Build date (UTC): ${BUILD_DATE}`).done(),
+		RichText.fragmentⵧinline().pushText(`Build date (UTC): ${BUILD_DATE}`).done(),
 		'03-builddate',
 	)
 	$doc_list_builder.pushRawNode(
-		RichText.inline_fragment().pushText(`Release channel: ${CHANNEL}`).done(),
+		RichText.fragmentⵧinline().pushText(`Release channel: ${CHANNEL}`).done(),
 		'04-channel',
 	)
 	$doc_list_builder.pushRawNode(
-		RichText.inline_fragment().pushText(`Exec env: ${ENV}`).done(),
+		RichText.fragmentⵧinline().pushText(`Exec env: ${ENV}`).done(),
 		'05-env',
 	)
 	$doc_list_builder.pushRawNode(
-		RichText.inline_fragment().pushText(`Savegame version: ${SCHEMA_VERSION}`).done(),
+		RichText.fragmentⵧinline().pushText(`Savegame version: ${SCHEMA_VERSION}`).done(),
 		'07-savegame',
 	)
 
-	const $doc = RichText.inline_fragment()
+	const $doc = RichText.fragmentⵧinline()
 		.pushNode(RichText.heading().pushText('Client infos:').done(), 'header')
 		.pushNode($doc_list_builder.done(), 'list')
 		.done()

@@ -10,7 +10,7 @@ import * as RichText from '@offirmo-private/rich-text-format'
 function render_achievement_snapshot_short(achievement_snapshot: Immutable<AchievementSnapshot>): RichText.Document {
 	const { uuid, icon, name, status, completion_rate } = achievement_snapshot
 
-	const builder = RichText.inline_fragment()
+	const builder = RichText.fragmentⵧinline()
 		.addClass('achievement', `achievement--${status}`)
 
 	let icon_text = ''
@@ -66,7 +66,7 @@ function render_achievement_snapshot_detailed(achievement_snapshot: Immutable<Ac
 	const { uuid, icon, name, description, lore, status, completion_rate } = achievement_snapshot
 	const element_tags = [ 'achievement' ]
 
-	const builder = RichText.block_fragment()
+	const builder = RichText.fragmentⵧblock()
 		.addClass('achievement')
 
 	let icon_text = null
@@ -180,7 +180,7 @@ function render_achievements_snapshot(ordered_achievement_snapshots: Immutable<A
 		unlocked_count: 0,
 	})
 
-	const $doc = RichText.block_fragment()
+	const $doc = RichText.fragmentⵧblock()
 		.pushNode(RichText.heading().pushText(`Achievements (${stats.unlocked_count}/${stats.visible_count})`).done(), {id: 'header'})
 		.pushNode($doc_list, {id: 'list'})
 		.done()

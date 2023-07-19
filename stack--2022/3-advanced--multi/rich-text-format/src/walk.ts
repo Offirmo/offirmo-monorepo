@@ -8,9 +8,9 @@ import {
 	Node,
 } from './types.js'
 
-import { normalize_node } from './utils.js'
+import { normalizeꓽnode } from './utils.js'
 
-
+/////////////////////////////////////////////////
 
 export interface BaseParams<State> {
 	state: State
@@ -74,7 +74,7 @@ interface WalkerCallbacks<State, RenderingOptions> {
 	//[on_type_x: string]: WalkerReducer<State, OnTypeParams<State>>,
 }
 
-function get_default_callbacks<State, RenderingOptions = any>(): WalkerCallbacks<State, RenderingOptions> {
+function _getꓽcallbacksⵧdefault<State, RenderingOptions = any>(): WalkerCallbacks<State, RenderingOptions> {
 	function nothing(): void {}
 	function identity({state}: {state: State}): State {
 		return state
@@ -126,15 +126,15 @@ function _walk_content<State, RenderingOptions>(
 	options: RenderingOptions,
 ) {
 	const { $content, $sub: $sub_nodes } = $node
-	// $content looks like "Hello {{world}}, welcome to {{place|filter1|filter2}}
-	const split_begin = $content.split('{{')
+	// $content looks like "Hello ⎨⎨world⎬⎬, welcome to ⎨⎨place|filter1|filter2⎬⎬
+	const split_begin = $content.split('⎨⎨')
 	if (split_begin.length === 1) {
-		assert($content.split('}}').length === 1, `${LIB}: syntax error in content "${$content}", unmatched {{}}!`)
+		assert($content.split('⎬⎬').length === 1, `${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬!`)
 	}
 
 	const initial_str: string = split_begin.shift()!
 	if (initial_str) {
-		assert(initial_str.split('}}').length === 1, `${LIB}: syntax error in content "${$content}", unmatched {{}}!`)
+		assert(initial_str.split('⎬⎬').length === 1, `${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬!`)
 		state = callbacks.on_concatenate_str({
 			str: initial_str,
 			state,
@@ -143,14 +143,14 @@ function _walk_content<State, RenderingOptions>(
 		}, options)
 	}
 
-	state = split_begin.reduce((state, paramAndText) => {
-		const split_end = paramAndText.split('}}')
+	state = split_begin.reduce((state: State, paramAndText: string): State => {
+		const split_end = paramAndText.split('⎬⎬')
 		if (split_end.length !== 2)
-			throw new Error(`${LIB}: syntax error in content "${$content}", unmatched {{}}!`)
+			throw new Error(`${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬!`)
 
-		// splitting the {{place|filter1|filter2}} content
+		// splitting the ⎨⎨place|filter1|filter2⎬⎬ content
 		const [ sub_node_id, ...$filters ] = split_end.shift()!.split('|')
-		assert(sub_node_id, `${LIB}: syntax error in content "${$content}", empty {{}}!`)
+		assert(sub_node_id, `${LIB}: syntax error in content "${$content}", empty ⎨⎨⎬⎬!`)
 
 		let $sub_node = $sub_nodes[sub_node_id]
 
@@ -204,7 +204,7 @@ function _walk_content<State, RenderingOptions>(
 			$id: sub_node_id,
 			$parent_node: $node,
 			state,
-			$node: normalize_node($sub_node),
+			$node: normalizeꓽnode($sub_node),
 			depth,
 		}, options)
 
@@ -239,7 +239,7 @@ function walk<State, RenderingOptions>(
 	} = {},
 ) {
 
-	const $node = normalize_node($raw_node)
+	const $node = normalizeꓽnode($raw_node)
 	const {
 		$type,
 		$classes,
@@ -253,7 +253,7 @@ function walk<State, RenderingOptions>(
 	const isRoot = !$parent_node
 	if (isRoot) {
 		callbacks = {
-			...get_default_callbacks<State, RenderingOptions>(),
+			..._getꓽcallbacksⵧdefault<State, RenderingOptions>(),
 			...callbacks,
 		}
 		callbacks.on_root_enter(options)
@@ -293,7 +293,7 @@ function walk<State, RenderingOptions>(
 		sorted_keys.forEach(key => {
 			const $sub_node: Node = {
 				$type: NodeType.li,
-				$content: '{{content}}',
+				$content: '⎨⎨content⎬⎬',
 				$sub: {
 					content: $sub_nodes[key]!,
 				},
@@ -307,7 +307,7 @@ function walk<State, RenderingOptions>(
 				state,
 				sub_state,
 				$id: key,
-				$node: normalize_node($sub_node),
+				$node: normalizeꓽnode($sub_node),
 				$parent_node: $node,
 				depth,
 			}, options)
@@ -334,6 +334,8 @@ function walk<State, RenderingOptions>(
 
 	return state
 }
+
+/////////////////////////////////////////////////
 
 export {
 	NodeType,

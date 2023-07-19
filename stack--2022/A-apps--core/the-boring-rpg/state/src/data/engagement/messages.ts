@@ -10,21 +10,21 @@ export function getꓽengagement_message(pe: Immutable<PendingEngagement>): Rich
 
 	switch(key) {
 		case EngagementKey['just-some-text']:
-			return RichText.block_fragment()
+			return RichText.fragmentⵧblock()
 				.pushText(params.text)
 				.done()
 
 		case EngagementKey['hello_world--flow']:
 		case EngagementKey['hello_world--aside']:
 		case EngagementKey['hello_world--warning']:
-			return RichText.block_fragment()
+			return RichText.fragmentⵧblock()
 				.pushText('[TEST] Hello, ')
 				.pushInlineFragment(params.name || 'world', {id: 'name'})
 				.pushText('!')
 				.done()
 
 		case EngagementKey['tip--first_play']:
-			return RichText.block_fragment()
+			return RichText.fragmentⵧblock()
 				.pushStrong('Tip: ')
 				.pushText('Select ')
 				.pushStrong('play')
@@ -32,24 +32,24 @@ export function getꓽengagement_message(pe: Immutable<PendingEngagement>): Rich
 				.done()
 
 		case EngagementKey['code_redemption--failed']:
-			return RichText.block_fragment()
+			return RichText.fragmentⵧblock()
 				.pushStrong('Error: This code is either non-existing or non redeemable at the moment.')
 				.done()
 
 		case EngagementKey['code_redemption--succeeded']:
-			return RichText.block_fragment()
+			return RichText.fragmentⵧblock()
 				.pushWeak('Code successfully redeemed.')
 				.done()
 
 		case EngagementKey['achievement-unlocked']:
-			return RichText.block_fragment()
+			return RichText.fragmentⵧblock()
 				.pushStrong('🏆 Achievement unlocked:')
 				.pushLineBreak()
 				.pushText(`“${params.icon} ${params.name}“`)
 				.done()
 
 		case EngagementKey['reborn']:
-			return RichText.block_fragment()
+			return RichText.fragmentⵧblock()
 				.pushStrong('You got reborn')
 				.pushLineBreak()
 				.pushText('Sorry, I changed the data format 😰.')

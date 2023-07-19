@@ -1,5 +1,5 @@
 import { Node, CheckedNode } from '../types.js'
-import { NODE_TYPE_TO_DISPLAY_MODE } from '../consts.js'
+import { NODE_TYPE_𝝣_DISPLAY_MODE } from '../consts.js'
 import {
 	OnConcatenateStringParams,
 	OnConcatenateSubNodeParams,
@@ -9,15 +9,16 @@ import {
 	WalkerReducer,
 } from '../walk.js'
 
-import { is_link, is_KVP_list } from './common.js'
+import { isꓽlink, isꓽlistⵧKV } from './common.js'
 
-export type Options = {
+/////////////////////////////////////////////////
+
+type Options = {
 	style: 'basic' | 'advanced' | 'markdown'
 }
-export const DEFAULT_OPTIONS: Options = {
+const DEFAULT_OPTIONS: Options = {
 	style: 'advanced',
 }
-
 
 type State = {
 	sub_nodes: CheckedNode[]
@@ -77,7 +78,7 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({s
 				break
 		}
 
-		if (is_link($node))
+		if (isꓽlink($node))
 			state.str = `[${state.str}](${$node.$hints.href})`
 	}
 	else {
@@ -94,7 +95,7 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({s
 				break
 		}
 
-		if (style === 'advanced' && is_KVP_list($node)) {
+		if (style === 'advanced' && isꓽlistⵧKV($node)) {
 			// rewrite completely to a better-looking one
 			const key_value_pairs: [string, string][] = []
 
@@ -122,7 +123,7 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({s
 		}
 	}
 
-	if (NODE_TYPE_TO_DISPLAY_MODE[$node.$type] === 'block') {
+	if (NODE_TYPE_𝝣_DISPLAY_MODE[$node.$type] === 'block') {
 		state.starts_with_block = true
 		state.ends_with_block = true
 	}
@@ -226,9 +227,9 @@ function to_text(
 	}, options).str
 }
 
+/////////////////////////////////////////////////
+
 export {
 	callbacks,
 	to_text,
 }
-
-// TODO capitalize

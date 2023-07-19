@@ -4,10 +4,10 @@ import { State as CharacterState, CharacterAttribute, CHARACTER_ATTRIBUTES_SORTE
 
 
 function render_avatar(state: Immutable<CharacterState>): RichText.Document {
-	const $doc_name = RichText.inline_fragment().addClass('avatar__name').pushText(state.name).done()
-	const $doc_class = RichText.inline_fragment().addClass('avatar__class').pushText(state.klass).done()
+	const $doc_name = RichText.fragmentⵧinline().addClass('avatar__name').pushText(state.name).done()
+	const $doc_class = RichText.fragmentⵧinline().addClass('avatar__class').pushText(state.klass).done()
 
-	const $doc = RichText.block_fragment()
+	const $doc = RichText.fragmentⵧblock()
 		.pushHeading('Identity:', {id: 'header'})
 		.pushNode(
 			RichText.unordered_list()
@@ -34,7 +34,7 @@ function render_attributes(state: Immutable<CharacterState>): RichText.Document 
 		$doc_list.$sub[`000${index}`.slice(-3)] = $doc_attr
 	})
 
-	const $doc = RichText.block_fragment()
+	const $doc = RichText.fragmentⵧblock()
 		.pushNode(RichText.heading().pushText('Attributes:').done(), {id: 'header'})
 		.pushNode($doc_list, {id: 'list'})
 		.done()
@@ -43,7 +43,7 @@ function render_attributes(state: Immutable<CharacterState>): RichText.Document 
 }
 
 function render_character_sheet(state: Immutable<CharacterState>): RichText.Document {
-	const $doc = RichText.block_fragment()
+	const $doc = RichText.fragmentⵧblock()
 		.pushNode(render_avatar(state), {id: 'avatar'})
 		.pushNode(render_attributes(state), {id: 'attributes'})
 		.done()

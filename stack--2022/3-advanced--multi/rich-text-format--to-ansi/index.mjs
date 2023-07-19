@@ -1,6 +1,8 @@
 import stylize_string from 'chalk'
 
-import { to_text_callbacks, to_text, Enum, NodeType, walk, is_list, is_uuid_list, is_KVP_list } from '@offirmo-private/rich-text-format'
+import { to_text } from '@offirmo-private/rich-text-format'
+
+
 
 const LIB = 'rich_text_to_ansi'
 
@@ -11,6 +13,9 @@ const LIB = 'rich_text_to_ansi'
 const WIDTH_COMPENSATION = ' '
 
 ////////////
+
+// TODO handle clickable links https://github.com/sindresorhus/terminal-link
+// TODO handle pictures https://github.com/sindresorhus/terminal-image
 
 function on_type({ $type, $parent_node, state, $node, depth }, options) {
 	//console.log(`${LIB} on_type()`)
@@ -180,8 +185,6 @@ const callbacks = {
 	on_class_after,
 }
 
-////////////
-
 function to_ansi(doc, callback_overrides = {}) {
 	//console.log(`${LIB} Rendering:`, doc)
 	return to_text(
@@ -196,7 +199,7 @@ function to_ansi(doc, callback_overrides = {}) {
 	)
 }
 
-///////
+/////////////////////////////////////////////////
 
 export default to_ansi
 

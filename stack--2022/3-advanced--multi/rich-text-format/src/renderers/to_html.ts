@@ -9,14 +9,16 @@ import {
 } from '../walk.js'
 import { CheckedNode, Node } from '../types.js'
 
-import { is_list, is_link, is_KVP_list, is_uuid_list } from './common.js'
+import { isꓽlist, isꓽlink, isꓽlistⵧKV, isꓽlistⵧuuid } from './common.js'
+
+/////////////////////////////////////////////////
 
 const LIB = 'rich_text_to_html'
 
 const MANY_TABS = '																																							'
 
-export type Options = {}
-export const DEFAULT_OPTIONS = {}
+type Options = {}
+const DEFAULT_OPTIONS = {}
 
 type State = {
 	sub_nodes: CheckedNode[]
@@ -31,8 +33,8 @@ const NODE_TYPE_TO_HTML_ELEMENT: { [k: string]: string } = {
 	// will default to own tag if not in this list (ex. strong => strong)
 	[NodeType.weak]: 'span',
 	[NodeType.heading]: 'h3',
-	[NodeType.inline_fragment]: 'span',
-	[NodeType.block_fragment]: 'div',
+	[NodeType.fragmentⵧinline]: 'span',
+	[NodeType.fragmentⵧblock]: 'div',
 }
 
 // @ts-expect-error memoize_one import issue TODO fix
@@ -74,7 +76,7 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({s
 			classes.push('o⋄colorꘌsecondary')
 			is_inline = true
 			break
-		case 'inline_fragment':
+		case 'fragmentⵧinline':
 			//classes.push('o⋄rich-text⋄inline')
 			is_inline = true
 			break
@@ -87,7 +89,7 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({s
 
 	const element: string = NODE_TYPE_TO_HTML_ELEMENT[$type] || $type
 
-	if (is_list($node)) {
+	if (isꓽlist($node)) {
 		classes.push('o⋄rich-text⋄list')
 
 		switch($hints.bullets_style) {
@@ -99,12 +101,12 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({s
 				break
 		}
 
-		if (is_uuid_list($node)) {
+		if (isꓽlistⵧuuid($node)) {
 			//console.log(`${LIB} seen uuid list`)
 			classes.push('o⋄rich-text⋄list--interactive')
 		}
 
-		if (is_KVP_list($node)) {
+		if (isꓽlistⵧKV($node)) {
 			classes.push('o⋄rich-text⋄list--no-bullet')
 			// TODO rewrite completely
 			warn_kvp()
@@ -116,7 +118,7 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({s
 		result += ` class="${classes.join(' ')}"`
 	result += '>' + state.str + ($sub_node_count ? '\n' + indent(depth) : '') + `</${element}>`
 
-	if (is_link($node))
+	if (isꓽlink($node))
 		result = `<a href="${$hints.href}" target="_blank">${result}</a>`
 
 	// for demo only
@@ -144,4 +146,9 @@ function to_html($doc: Node, options: Options = DEFAULT_OPTIONS): string {
 	return '<div class="o⋄rich-text o⋄children-spacing⁚flow">\n	' + walk<State, Options>($doc, callbacks, options).str + '\n</div>\n'
 }
 
-export { callbacks, to_html }
+/////////////////////////////////////////////////
+
+export {
+	callbacks,
+	to_html,
+}

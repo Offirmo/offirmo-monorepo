@@ -10,7 +10,7 @@ function render_meta_infos(metas: Immutable<{[k: string]: string | number | unde
 
 	Object.keys(metas).forEach((key: string) => {
 		$doc_list.pushRawNode(
-			RichText.inline_fragment().pushText(key + ': ' + metas[key]).done(),
+			RichText.fragmentⵧinline().pushText(key + ': ' + metas[key]).done(),
 			{id: key},
 		)
 	})
@@ -28,7 +28,7 @@ function render_account_info(m: Immutable<State>, extra: Immutable<{[k: string]:
 	if (m.email) meta_infos['email'] = m.email
 	*/
 
-	const $doc = RichText.block_fragment()
+	const $doc = RichText.fragmentⵧblock()
 		.pushHeading('Account infos:', {id: 'header'})
 		.pushNode(
 			render_meta_infos(meta_infos),

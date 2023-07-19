@@ -6,17 +6,17 @@ const PKG_JSON = require('../package.json')
 console.log(boxify(`
 Declaring adventures:
 
-You have defeated a {{encounter}}!{{br}}
-You looted {{coin}} {{item_slot}} {{[slot]}} {{item}} from its corpse.
-You perfected your {{attr_name}} during the fight: +{{attr}} {{attr_name}}!
-You gained +{{strength}} strength!
-You gained +{{level}} level!
-You gained +{{mana}} mana!
-You gained +{{health}} health!
-You gained +{{wisdom}} wisdom!
-You gained +{{agility}} agility!
-You gained +{{charisma}} charisma!
-You gained +{{luck}} luck!
+You have defeated a ⎨⎨encounter⎬⎬!⎨⎨br⎬⎬
+You looted ⎨⎨coin⎬⎬ ⎨⎨item_slot⎬⎬ ⎨⎨[slot]⎬⎬ ⎨⎨item⎬⎬ from its corpse.
+You perfected your ⎨⎨attr_name⎬⎬ during the fight: +⎨⎨attr⎬⎬ ⎨⎨attr_name⎬⎬!
+You gained +⎨⎨strength⎬⎬ strength!
+You gained +⎨⎨level⎬⎬ level!
+You gained +⎨⎨mana⎬⎬ mana!
+You gained +⎨⎨health⎬⎬ health!
+You gained +⎨⎨wisdom⎬⎬ wisdom!
+You gained +⎨⎨agility⎬⎬ agility!
+You gained +⎨⎨charisma⎬⎬ charisma!
+You gained +⎨⎨luck⎬⎬ luck!
 
 outcome: {
   token: true
@@ -44,4 +44,3 @@ outcome: {
 
 Note: max 1 attribute at a time!
 `.trim()))
-

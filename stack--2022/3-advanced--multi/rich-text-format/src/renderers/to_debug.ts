@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+
 import {
 	CheckedNode,
 	Node,
@@ -15,6 +16,7 @@ import {
 	walk,
 } from '../walk.js'
 
+/////////////////////////////////////////////////
 
 const MANY_SPACES = '                                                                                                '
 
@@ -33,8 +35,9 @@ function debug_node_short($node: CheckedNode) {
 
 ////////////////////////////////////
 
-export type Options = {}
-export const DEFAULT_OPTIONS = {}
+type Options = {}
+const DEFAULT_OPTIONS = {}
+
 type State = string
 
 const consoleGroupStart: Function = (console.groupCollapsed || console.group || console.log).bind(console)
@@ -134,4 +137,9 @@ function to_debug($doc: Node, options: Options = DEFAULT_OPTIONS): string {
 	return walk<State, Options>($doc, callbacks, options)
 }
 
-export { callbacks, to_debug }
+/////////////////////////////////////////////////
+
+export {
+	callbacks,
+	to_debug,
+}
