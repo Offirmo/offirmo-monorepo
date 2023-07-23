@@ -88,7 +88,6 @@ function create($type: NodeType): Builder {
 		return builder
 	}
 
-
 	function _buildAndPush(builder: Builder, str: string, options: CommonOptions = {}) {
 		options = {
 			classes: [],

@@ -37,6 +37,27 @@ const DEFAULT_STATE: State = Object.freeze({
 	str: '',
 })
 
+/////////////////////////////////////////////////
+// callbacks
+
+const on_node_enter = (): State => {
+	return {
+		...DEFAULT_STATE,
+		sub_nodes: [],
+	}
+}
+
+const on_concatenate_str: WalkerReducer<State, OnConcatenateStringParams<State>, Options> = ({state, str}) => {
+	//console.log('on_concatenate_str()', {str, state: structuredClone(state),})
+	if (state.ends_with_block) {
+		state.str += ''.padStart(state.margin_bottom + 1,'\n')
+		state.ends_with_block = false
+		state.margin_bottom = 0
+	}
+	state.str += str
+	return state
+}
+
 const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({state, $node, depth}, {style}) => {
 	//console.log('[on_type]', { $type, state })
 
@@ -198,20 +219,8 @@ const on_concatenate_sub_node: WalkerReducer<State, OnConcatenateSubNodeParams<S
 }
 
 const callbacks: Partial<WalkerCallbacks<State, Options>> = {
-	on_node_enter: () => ({
-		...DEFAULT_STATE,
-		sub_nodes: [],
-	}),
-	on_concatenate_str: ({state, str}: OnConcatenateStringParams<State>) => {
-		//console.log('on_concatenate_str()', {str, state: structuredClone(state),})
-		if (state.ends_with_block) {
-			state.str += ''.padStart(state.margin_bottom + 1,'\n')
-			state.ends_with_block = false
-			state.margin_bottom = 0
-		}
-		state.str += str
-		return state
-	},
+	on_node_enter,
+	on_concatenate_str,
 	on_concatenate_sub_node,
 	on_node_exit,
 }

@@ -72,6 +72,75 @@ https://neural.love/ai-art-generator/1edc2e18-4478-675a-a6f9-d95240e6c7f1/snowy-
 
 a beautiful hyperrealistic anime (Mountain exploding:1.4), painted by Chiho Aoshima, by makoto shinkai, by takashi takeuchi, by studio ghibli, akihiko yoshida, anime, clean soft lighting, finely detailed features, high-resolution, perfect art, stunning atmosphere, trending on pixiv fanbox, 4k
 
+### simpler
+
+Giant mushrooms
+Giant mushrooms forest +++
+Dwarven metal and stone city
+Dwarven city
+Dwarven city gate
+Elven city
+Dwarven city inside glittering caves, jewels, flowing water, fantasy
+Stonework, stone, jungle, mountainside, foothills
+deep caves, large cave, flowing water, glittering jewels, lord of the rings, dark, realistic
+sauron realistic rings of power lord of the rings the one ring sauron dark lord
+The Lord of the Rings
+Lord of the rings library with arches  +++
+city under siege, lord of the rings, Cinematic. Epic composition. Realistic cinematography. Hyperdetailed. 8k +++
+Simple stone houses dwarven quarters in german old town
+Old german town market square with river and stone bridge +++
+Old german town street with stone bridge
+Mexico traditional town cute
+Traditional china town with people
+Traditional china city with people landscape
+german town
+Town walls with gatehouse busy crowded german town
+Crowded busy german town square dramatic broken clouds
+nature
+the eternal city
+stormwind
+castle
+mountains
+summer morning in the mountains
+Morning in misty mountains
+
+Sprawling medieval German city nestled below frozen mountains, with a temple in the middle
+sprawling medieval German city nestled below frozen mountains
+city amongst frozen mountains
+View of a big medieval city next to a lake, with fields around it and mountains in the distance
+french medieval town +++
+Small island with a town, medieval, french
+Dwarven stronghold
+Dwarven university
+Under the mountain dwarven stone city
+ruined entrance to a dilapidated dwarven city in the mountains
+Badlands, shrubs, to mountains, small farms, city on mountain in distance
+landscape of elven city in the forest, world of warcraft, lord of the rings +++
+Elven silver stone medieval fantasy city
+Ancient black dragon fighting androsphinx and gynosphinx over dwarven city
+ancient indian city
+ancient indian palace
+dragon fighting tiger
+Dwarven huge stone wall and village high on mountain side,ominous storm brewing below
+Dwarven cottage in the forest
+Dwarven mountain city underground
+CG background, anime style, high quality, capital palace day castle
+Desert city, sprawling, capital, walled center palace, anchor
+Monolithic gate into a Desert city, sprawling, capital, walled center palace, ancient, sandstone skyscraper
+Desert, Arcane City, Capital
+Dwemer underground city
+Underground fantasy city panorama
+underground city of gold medieval city of kings
+aerial view of medieval city
+Central square, medieval city, aerial view
+Interior view of a wooden medieval study room at night, window, snowing outside, fireplace, medieval lighting, 8K
+abandoned medieval cemetery in the field, view from above, map
+pink leaves on a tree
+fairy forest
+Alien swamp land +++
+dark swamp
+
+
 ## no
 blender, cropped, lowres, double, blurred, deformed, repetitive, black and white, poor quality resolution, low quality
 bad art, strange colors, sketch, lacklustre, repetitive, cropped, lowres, old, deformed, childrish, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, malformed limbs, missing arms, missing legs, extra arms, extra legs, mutated hands, long neck, bad composition, compressed, low quality, text, watermark, cropped, worst quality, jpeg artifacts, signature, asymmetrical eyes, split images

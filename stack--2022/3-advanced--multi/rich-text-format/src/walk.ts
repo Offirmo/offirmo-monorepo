@@ -2,46 +2,59 @@ import assert from 'tiny-invariant'
 
 import { LIB } from './consts.js'
 
-import {
-	NodeType,
-	CheckedNode,
-	Node,
-} from './types.js'
+import { NodeType, CheckedNode, Node } from './types.js'
 
 import { normalizeꓽnode } from './utils.js'
 
 /////////////////////////////////////////////////
+// "walk" is the foundation on which all the renderer are based
 
+////////////
+// hooks inputs
+
+// common
 export interface BaseParams<State> {
 	state: State
 	$node: CheckedNode
 	depth: number
 }
+
+// NODE ENTER
+// Useful for:
+// - initialising the state
+// (only callback not inheriting from BaseParams)
 export interface OnNodeEnterParams {
 	$id: string
 	$node: CheckedNode
 	depth: number
 }
+// NODE EXIT
 export interface OnNodeExitParams<State> extends BaseParams<State> {
 	$id: string
 }
+// ROOT EXIT
 export interface OnRootExitParams<State> extends BaseParams<State> {
 }
+// CONCAT STRING
 export interface OnConcatenateStringParams<State> extends BaseParams<State> {
 	str: string
 }
+// CONCAT SUB-NODE
 export interface OnConcatenateSubNodeParams<State> extends BaseParams<State> {
 	sub_state: State
 	$id: string
 	$parent_node: CheckedNode
 }
+// FILTER
 export interface OnFilterParams<State> extends BaseParams<State> {
 	$filter: string
 	$filters: string[]
 }
+// CLASS
 export interface OnClassParams<State> extends BaseParams<State> {
 	$class: string
 }
+// TYPE
 export interface OnTypeParams<State> extends BaseParams<State> {
 	$type: NodeType
 	$parent_node: CheckedNode | undefined
@@ -109,13 +122,13 @@ function _getꓽcallbacksⵧdefault<State, RenderingOptions = any>(): WalkerCall
 	}
 }
 
-const SUB_NODE_BR: Node = {
+const SUB_NODE_BR: Node = Object.freeze<Node>({
 	$type: 'br',
-}
+})
 
-const SUB_NODE_HR: Node = {
+const SUB_NODE_HR: Node = Object.freeze<Node>({
 	$type: 'hr',
-}
+})
 
 
 function _walk_content<State, RenderingOptions>(

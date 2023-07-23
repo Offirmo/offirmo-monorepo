@@ -4,6 +4,7 @@ import {
 	LIB
 } from './consts.js'
 
+/////////////////////////////////////////////////
 
 import { walk, WalkerCallbacks } from './walk.js'
 
@@ -47,7 +48,7 @@ describe(`${LIB}`, function () {
 				}
 				expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
 			})
-			it('should detect unmatched ⎨⎨⎬⎬ -- ⎬⎬ 2', () => {
+			it('should detect unmatched ⎨⎨⎬⎬ -- ⎬⎬ 2a', () => {
 
 				const $doc = {
 					$content: '⎨⎨foo⎬⎬ bar⎬⎬',
@@ -57,10 +58,21 @@ describe(`${LIB}`, function () {
 				}
 				expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
 			})
-			it('should detect unmatched ⎨⎨⎬⎬ -- ⎬⎬ 2', () => {
+			it('should detect unmatched ⎨⎨⎬⎬ -- ⎬⎬ 2b', () => {
 
 				const $doc = {
 					$content: 'bar⎬⎬ ⎨⎨foo⎬⎬',
+					$sub: {
+						'foo': {}
+					},
+				}
+				expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
+			})
+
+			it('should detect reversed ⎨⎨⎬⎬', () => {
+
+				const $doc = {
+					$content: '⎬⎬foo⎨⎨',
 					$sub: {
 						'foo': {}
 					},
