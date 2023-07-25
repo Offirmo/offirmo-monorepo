@@ -12,12 +12,12 @@ import './rich-text-to-react.css'
 
 /////////////////////////////////////////////////
 
-function on_node_exit(params, options) {
+function on_nodeⵧexit(params, options) {
 	const { children, classes, component, wrapper } = intermediate_on_node_exit(params, options)
 	const { state, $node, $id } = params
 	const { $hints } = $node
 
-	//console.warn('final on_node_exit', state)
+	//console.warn('final on_nodeⵧexit', state)
 
 	if (classes.includes('monster')) {
 		children.push(<span key={$id} className="monster-emoji">{$hints.possible_emoji}</span>)
@@ -52,7 +52,7 @@ export default function rich_text_to_react(doc, options = {}) {
 	return to_react(
 		doc,
 		{
-			on_node_exit,
+			on_nodeⵧexit,
 		},
 		{
 			...DEFAULT_OPTIONS,

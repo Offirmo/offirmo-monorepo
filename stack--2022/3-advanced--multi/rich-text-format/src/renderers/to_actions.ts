@@ -1,4 +1,5 @@
 import {
+	BaseRenderingOptions,
 	OnConcatenateStringParams,
 	OnConcatenateSubNodeParams,
 	OnTypeParams,
@@ -18,14 +19,16 @@ interface Action {
 	// TODO more
 }
 
-type Options = {}
-const DEFAULT_OPTIONS = {}
+interface RenderingOptionsⵧToActions extends BaseRenderingOptions {}
+const DEFAULT_RENDERING_OPTIONSⵧToActions= Object.freeze<RenderingOptionsⵧToActions>({
+	shouldꓽrecover_from_unknown_sub_nodes: false,
+})
 
 type State = {
 	actions: Action[],
 }
 
-const on_type: WalkerReducer<State, OnTypeParams<State>, Options> = ({$type, state, $node, depth}) => {
+const on_type: WalkerReducer<State, OnTypeParams<State>, RenderingOptionsⵧToActions> = ({$type, state, $node, depth}) => {
 	//console.log('[on_type]', { $type, state })
 
 	if ($node.$hints.href) {
@@ -39,32 +42,34 @@ const on_type: WalkerReducer<State, OnTypeParams<State>, Options> = ({$type, sta
 	return state
 }
 
-const on_concatenate_sub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, Options> = ({state, sub_state, $node, $id, $parent_node}) => {
+const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToActions> = ({state, sub_state, $node, $id, $parent_node}) => {
 	state.actions = state.actions.concat(...sub_state.actions)
 
 	return state
 }
 
-const callbacks: Partial<WalkerCallbacks<State, Options>> = {
-	on_node_enter: () => ({
+const callbacksⵧToActions: Partial<WalkerCallbacks<State, RenderingOptionsⵧToActions>> = {
+	on_nodeⵧenter: () => ({
 		actions: [],
 	}),
-	on_concatenate_str: ({state, str}: OnConcatenateStringParams<State>) => {
+	on_concatenateⵧstr: ({state, str}: OnConcatenateStringParams<State>) => {
 		// nothing
 		return state
 	},
-	on_concatenate_sub_node,
+	on_concatenateⵧsub_node,
 	on_type,
 }
 
-function to_actions($doc: Node, options: Options = DEFAULT_OPTIONS): Action[] {
-	return walk<State, Options>($doc, callbacks, options).actions
+function renderⵧto_actions($doc: Node, options: RenderingOptionsⵧToActions = DEFAULT_RENDERING_OPTIONSⵧToActions): Action[] {
+	return walk<State, RenderingOptionsⵧToActions>($doc, callbacksⵧToActions, options).actions
 }
 
 /////////////////////////////////////////////////
 
 export {
-	callbacks,
 	type Action,
-	to_actions,
+	type RenderingOptionsⵧToActions,
+	DEFAULT_RENDERING_OPTIONSⵧToActions,
+	renderⵧto_actions,
+	callbacksⵧToActions,
 }

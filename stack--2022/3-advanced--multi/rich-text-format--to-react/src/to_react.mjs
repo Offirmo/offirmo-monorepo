@@ -163,7 +163,7 @@ export function intermediate_assemble({ $id, $node, children, classes, component
 /// XXX ////
 // default version,
 // replace it for extension
-function on_node_exit(params, options) {
+function on_nodeⵧexit(params, options) {
 	const { children, classes, component, wrapper } = intermediate_on_node_exit(params, options)
 
 	params.state.element = intermediate_assemble({ ...params, children, classes, component, wrapper }, options)
@@ -172,29 +172,29 @@ function on_node_exit(params, options) {
 }
 /// XXX ////
 
-function on_concatenate_str({state, str}) {
+function on_concatenateⵧstr({state, str}) {
 	state.children.push({
 		element: str,
 	})
 	return state
 }
 
-function on_concatenate_sub_node({$node, state, sub_state}, options) {
+function on_concatenateⵧsub_node({$node, state, sub_state}, options) {
 	state.sub_nodes.push($node)
 	state.children.push(sub_state)
 	return state
 }
 
 const callbacks = {
-	on_node_enter: () => ({
+	on_nodeⵧenter: () => ({
 		sub_nodes: [],
 		element: null,
 		children: [],
 	}),
-	on_node_exit,
-	on_concatenate_str,
-	on_concatenate_sub_node,
-	on_filter_Capitalize: ({state}) => {
+	on_nodeⵧexit,
+	on_concatenateⵧstr,
+	on_concatenateⵧsub_node,
+	on_filterꘌCapitalize: ({state}) => {
 		//console.warn('rich-text-to-react Capitalize', state)
 
 		state.element = React.cloneElement(

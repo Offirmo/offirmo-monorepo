@@ -1,5 +1,6 @@
 import memoize_one from 'memoize-one'
 import {
+	BaseRenderingOptions,
 	NodeType,
 	OnConcatenateStringParams,
 	OnConcatenateSubNodeParams, OnNodeExitParams,
@@ -12,13 +13,16 @@ import { CheckedNode, Node } from '../types.js'
 import { isꓽlist, isꓽlink, isꓽlistⵧKV, isꓽlistⵧuuid } from './common.js'
 
 /////////////////////////////////////////////////
+// much simpler than "to text" since HTML is doing a lot for us
 
 const LIB = 'rich_text_to_html'
 
 const MANY_TABS = '																																							'
 
-type Options = {}
-const DEFAULT_OPTIONS = {}
+interface RenderingOptionsⵧToHtml extends BaseRenderingOptions {}
+const DEFAULT_RENDERING_OPTIONSⵧToHtml= Object.freeze<RenderingOptionsⵧToHtml>({
+	shouldꓽrecover_from_unknown_sub_nodes: false,
+})
 
 type State = {
 	sub_nodes: CheckedNode[]
@@ -37,21 +41,18 @@ const NODE_TYPE_TO_HTML_ELEMENT: { [k: string]: string } = {
 	[NodeType.fragmentⵧblock]: 'div',
 }
 
-// @ts-expect-error memoize_one import issue TODO fix
+// @ts-expect-error memoize_one import issue TODO fix "warn once" lib
 const warn_kvp = memoize_one(() => console.warn(`${LIB} TODO KVP`))
 
-const on_concatenate_sub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, Options> = ({$node, state, sub_state}) => {
+const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToHtml> = ({$node, state, sub_state}) => {
 	state.sub_nodes.push($node)
 	state.str = state.str + sub_state.str
 	return state
 }
 
-const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({state, $node, depth}) => {
+const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOptionsⵧToHtml> = ({state, $node, depth}) => {
 	const { $type, $classes, $sub, $hints } = $node
 	const $sub_node_count = Object.keys($sub).length
-
-	//$type: NodeType, str
-	//}: string, $classes: string[], $sub_node_count: number, depth: number): string {
 
 	if ($type === 'br') {
 		state.str = '<br/>\n'
@@ -129,26 +130,28 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({s
 	return state
 }
 
-const callbacks: Partial<WalkerCallbacks<State, Options>> = {
-	on_node_enter: () => ({
+const callbacksⵧToHtml: Partial<WalkerCallbacks<State, RenderingOptionsⵧToHtml>> = {
+	on_nodeⵧenter: () => ({
 		sub_nodes: [],
 		str: '',
 	}),
-	on_concatenate_str: ({state, str}: OnConcatenateStringParams<State>) => {
+	on_concatenateⵧstr: ({state, str}: OnConcatenateStringParams<State>) => {
 		state.str += str
 		return state
 	},
-	on_concatenate_sub_node,
-	on_node_exit,
+	on_concatenateⵧsub_node,
+	on_nodeⵧexit,
 }
 
-function to_html($doc: Node, options: Options = DEFAULT_OPTIONS): string {
-	return '<div class="o⋄rich-text o⋄children-spacing⁚flow">\n	' + walk<State, Options>($doc, callbacks, options).str + '\n</div>\n'
+function renderⵧto_html($doc: Node, options: RenderingOptionsⵧToHtml = DEFAULT_RENDERING_OPTIONSⵧToHtml): string {
+	return '<div class="o⋄rich-text o⋄children-spacing⁚flow">\n	'
+		+ walk<State, RenderingOptionsⵧToHtml>($doc, callbacksⵧToHtml, options).str
+		+ '\n</div>\n'
 }
 
 /////////////////////////////////////////////////
 
 export {
-	callbacks,
-	to_html,
+	callbacksⵧToHtml,
+	renderⵧto_html,
 }

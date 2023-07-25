@@ -9,7 +9,7 @@ import {
 
 ////////////
 
-function on_node_exit(params, options) {
+function on_nodeⵧexit(params, options) {
 	const { children, classes, component, wrapper } = intermediate_on_node_exit(params, options)
 	const { state, $node: { $hints }, $id } = params
 
@@ -64,7 +64,7 @@ export default function rich_text_to_react(doc, options = {}) {
 	return to_react(
 		doc,
 		{
-			on_node_exit,
+			on_nodeⵧexit,
 		},
 		{
 			...DEFAULT_OPTIONS,

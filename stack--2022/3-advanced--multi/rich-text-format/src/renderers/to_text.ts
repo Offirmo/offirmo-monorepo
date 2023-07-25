@@ -1,6 +1,7 @@
 import { Node, CheckedNode } from '../types.js'
 import { NODE_TYPE_𝝣_DISPLAY_MODE } from '../consts.js'
 import {
+	BaseRenderingOptions,
 	OnConcatenateStringParams,
 	OnConcatenateSubNodeParams,
 	OnNodeExitParams,
@@ -13,52 +14,64 @@ import { isꓽlink, isꓽlistⵧKV } from './common.js'
 
 /////////////////////////////////////////////////
 
-type Options = {
-	style: 'basic' | 'advanced' | 'markdown'
+interface RenderingOptionsⵧToText extends BaseRenderingOptions {
+	style:
+		| 'basic'    // text only
+		| 'advanced' // more intelligent: detect KV lists; allow bullet-less lists
+		| 'markdown'
 }
-const DEFAULT_OPTIONS: Options = {
+const DEFAULT_RENDERING_OPTIONSⵧToText = Object.freeze<RenderingOptionsⵧToText>({
+	shouldꓽrecover_from_unknown_sub_nodes: false,
 	style: 'advanced',
-}
+})
 
 type State = {
-	sub_nodes: CheckedNode[]
+	sub_nodes: CheckedNode[] // sometimes need to remember them, for ex. for K/V lists
+
+	// whether the current $node starts or/and end with NL
+	// needed to coalesce new lines.
+	// for ex. if the current block starts with a NL and its immediate child also starts with a NL, we should have only 1 NL
 	starts_with_block: boolean
 	ends_with_block: boolean
-	margin_top: number
-	margin_bottom: number
+
+	// # of lines to put on top and bottom
+	// (esp. for markdown)
+	marginⵧtop‿lines: number
+	marginⵧbottom‿lines: number
+
 	str: string
 }
 const DEFAULT_STATE: State = Object.freeze({
 	sub_nodes: [],
 	starts_with_block: false,
 	ends_with_block: false,
-	margin_top: 0,
-	margin_bottom: 0,
+	marginⵧtop‿lines: 0,
+	marginⵧbottom‿lines: 0,
 	str: '',
 })
 
 /////////////////////////////////////////////////
 // callbacks
 
-const on_node_enter = (): State => {
+const on_nodeⵧenter = (): State => {
 	return {
 		...DEFAULT_STATE,
 		sub_nodes: [],
 	}
 }
 
-const on_concatenate_str: WalkerReducer<State, OnConcatenateStringParams<State>, Options> = ({state, str}) => {
-	//console.log('on_concatenate_str()', {str, state: structuredClone(state),})
+const on_concatenateⵧstr: WalkerReducer<State, OnConcatenateStringParams<State>, RenderingOptionsⵧToText> = ({state, str}) => {
+	//console.log('on_concatenateⵧstr()', {str, state: structuredClone(state),})
 	if (state.ends_with_block) {
-		state.str += ''.padStart(state.margin_bottom + 1,'\n')
+		state.str += ''.padStart(state.marginⵧbottom‿lines + 1,'\n')
 		state.ends_with_block = false
-		state.margin_bottom = 0
+		state.marginⵧbottom‿lines = 0
 	}
 	state.str += str
 	return state
 }
 
-const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({state, $node, depth}, {style}) => {
+const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOptionsⵧToText> = ({state, $node, depth}, {style}) => {
 	//console.log('[on_type]', { $type, state })
 
 	switch ($node.$type) {
@@ -74,8 +87,8 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({s
 		switch ($node.$type) {
 			case 'heading':
 				state.str = `### ${state.str}`
-				state.margin_top = Math.max(state.margin_top, 1)
-				state.margin_bottom = Math.max(state.margin_bottom, 1)
+				state.marginⵧtop‿lines = Math.max(state.marginⵧtop‿lines, 1)
+				state.marginⵧbottom‿lines = Math.max(state.marginⵧbottom‿lines, 1)
 				break
 
 			case 'strong':
@@ -105,7 +118,7 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({s
 	else {
 		switch ($node.$type) {
 			case 'heading':
-				state.margin_top = Math.max(state.margin_top, 1)
+				state.marginⵧtop‿lines = Math.max(state.marginⵧtop‿lines, 1)
 				break
 
 			case 'hr':
@@ -129,8 +142,8 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({s
 				const key_node = kv_node.$sub.key!
 				const value_node = kv_node.$sub.value!
 
-				const key_text = to_text(key_node)
-				const value_text = to_text(value_node)
+				const key_text = renderⵧto_text(key_node)
+				const value_text = renderⵧto_text(value_node)
 
 				max_key_length = Math.max(max_key_length, key_text.length)
 				max_value_length = Math.max(max_value_length, value_text.length)
@@ -152,7 +165,7 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({s
 	return state
 }
 
-const on_concatenate_sub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, Options> = ({state, sub_state, $node, $id, $parent_node}, {style}) => {
+const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToText> = ({state, sub_state, $node, $id, $parent_node}, {style}) => {
 	let sub_str = sub_state.str
 	let sub_starts_with_block = sub_state.starts_with_block
 
@@ -172,7 +185,7 @@ const on_concatenate_sub_node: WalkerReducer<State, OnConcatenateSubNodeParams<S
 			break
 		}
 		case 'ol': {
-		// automake sub-state a ol > li
+			// automake sub-state a ol > li
 			const bullet: string = (() => {
 				if (style === 'markdown')
 					return `${$id}. `
@@ -187,7 +200,7 @@ const on_concatenate_sub_node: WalkerReducer<State, OnConcatenateSubNodeParams<S
 			break
 	}
 
-	/*console.log('on_concatenate_sub_node()', {
+	/*console.log('on_concatenateⵧsub_node()', {
 		sub_node: $node,
 		sub_state: {
 			...sub_state,
@@ -202,12 +215,12 @@ const on_concatenate_sub_node: WalkerReducer<State, OnConcatenateSubNodeParams<S
 		if (sub_state.starts_with_block) {
 			// propagate start
 			state.starts_with_block = true
-			state.margin_top = Math.max(state.margin_top, sub_state.margin_top)
+			state.marginⵧtop‿lines = Math.max(state.marginⵧtop‿lines, sub_state.marginⵧtop‿lines)
 		}
 	}
 	else {
 		if (state.ends_with_block || sub_starts_with_block) {
-			state.str += ''.padStart(Math.max(state.margin_bottom, sub_state.margin_top) + 1,'\n')
+			state.str += ''.padStart(Math.max(state.marginⵧbottom‿lines, sub_state.marginⵧtop‿lines) + 1,'\n')
 		}
 	}
 
@@ -218,20 +231,20 @@ const on_concatenate_sub_node: WalkerReducer<State, OnConcatenateSubNodeParams<S
 	return state
 }
 
-const callbacks: Partial<WalkerCallbacks<State, Options>> = {
-	on_node_enter,
-	on_concatenate_str,
-	on_concatenate_sub_node,
-	on_node_exit,
+const callbacksⵧToText: Partial<WalkerCallbacks<State, RenderingOptionsⵧToText>> = {
+	on_nodeⵧenter,
+	on_concatenateⵧstr,
+	on_concatenateⵧsub_node,
+	on_nodeⵧexit,
 }
 
-function to_text(
+function renderⵧto_text(
 	$doc: Node,
-	options: Options = DEFAULT_OPTIONS,
-	callback_overrides: Partial<WalkerCallbacks<State, Options>> = {},
+	options: RenderingOptionsⵧToText = DEFAULT_RENDERING_OPTIONSⵧToText,
+	callback_overrides: Partial<WalkerCallbacks<State, RenderingOptionsⵧToText>> = {},
 ): string {
-	return walk<State, Options>($doc, {
-		...callbacks,
+	return walk<State, RenderingOptionsⵧToText>($doc, {
+		...callbacksⵧToText,
 		...callback_overrides,
 	}, options).str
 }
@@ -239,6 +252,8 @@ function to_text(
 /////////////////////////////////////////////////
 
 export {
-	callbacks,
-	to_text,
+	type RenderingOptionsⵧToText,
+	DEFAULT_RENDERING_OPTIONSⵧToText,
+	callbacksⵧToText,
+	renderⵧto_text,
 }

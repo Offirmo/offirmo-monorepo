@@ -39,8 +39,8 @@ function on_type({ $type, $parent_node, state, $node, depth }, options) {
 }
 
 // TODO remove and put somewhere else? (extensible)
-function on_class_after({ $class, state, $node, depth }, options) {
-	//console.log(`${LIB} on_class_after()`)
+function on_classⵧafter({ $class, state, $node, depth }, options) {
+	//console.log(`${LIB} on_classⵧafter()`)
 	const { $hints } = $node
 	switch($class) {
 		case 'item__name':
@@ -182,7 +182,7 @@ function on_class_after({ $class, state, $node, depth }, options) {
 const callbacks = {
 	//...to_text_callbacks,
 	on_type,
-	on_class_after,
+	on_classⵧafter,
 }
 
 function to_ansi(doc, callback_overrides = {}) {

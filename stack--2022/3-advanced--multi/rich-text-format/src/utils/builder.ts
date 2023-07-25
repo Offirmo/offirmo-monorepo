@@ -30,7 +30,7 @@ interface Builder {
 	pushHorizontalRule(): Builder
 	pushLineBreak(): Builder
 
-	pushKeyValue(key: Node | string, value: Node | string, options?: CommonOptions): Builder
+	pushKeyValue(key: Node | string, value: Node | string | number, options?: CommonOptions): Builder
 
 	done(): CheckedNode
 }
@@ -151,7 +151,7 @@ function create($type: NodeType): Builder {
 		return builder
 	}
 
-	function pushKeyValue(key: Node | string, value: Node | string, options: CommonOptions = {}): Builder {
+	function pushKeyValue(key: Node | string, value: Node | string | number, options: CommonOptions = {}): Builder {
 		if ($node.$type !== NodeType.ol && $node.$type !== NodeType.ul)
 			throw new Error(`${LIB}: Key/value is intended to be used in a ol/ul only!`)
 
@@ -159,7 +159,7 @@ function create($type: NodeType): Builder {
 			classes: [],
 			...options,
 		}
-		const kv_node: Node = key_value(key, value)
+		const kv_node: Node = key_value(key, String(value))
 			.addClass(...options.classes!)
 			.done()
 		delete options.classes

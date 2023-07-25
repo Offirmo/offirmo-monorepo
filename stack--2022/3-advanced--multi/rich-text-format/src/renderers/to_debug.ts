@@ -13,7 +13,7 @@ import {
 	OnNodeExitParams, OnConcatenateStringParams, OnConcatenateSubNodeParams, OnFilterParams,
 	OnClassParams,
 	OnTypeParams,
-	walk,
+	walk, BaseRenderingOptions,
 } from '../walk.js'
 
 /////////////////////////////////////////////////
@@ -35,33 +35,35 @@ function debug_node_short($node: CheckedNode) {
 
 ////////////////////////////////////
 
-type Options = {}
-const DEFAULT_OPTIONS = {}
+interface RenderingOptions extends BaseRenderingOptions {}
+const DEFAULT_RENDERING_OPTIONS= Object.freeze<RenderingOptions>({
+	shouldꓽrecover_from_unknown_sub_nodes: false,
+})
 
 type State = string
 
 const consoleGroupStart: Function = (console.groupCollapsed || console.group || console.log).bind(console)
 const consoleGroupEnd: Function = (console.groupEnd || console.log).bind(console)
 
-const on_root_enter = () => {
-	consoleGroupStart('⟩ [on_root_enter]')
+const on_rootⵧenter = () => {
+	consoleGroupStart('⟩ [on_rootⵧenter]')
 }
-const on_root_exit = ({state}: OnRootExitParams<State>): State => {
-	console.log('⟨ [on_root_exit]')
+const on_rootⵧexit = ({state}: OnRootExitParams<State>): State => {
+	console.log('⟨ [on_rootⵧexit]')
 	console.log(`  [state="${state}"]`)
 	consoleGroupEnd()
 	return state
 }
 
-const on_node_enter = ({$node, $id, depth}: OnNodeEnterParams): State => {
-	consoleGroupStart(indent(depth) + `⟩ [on_node_enter] #${$id}/` + debug_node_short($node))
+const on_nodeⵧenter = ({$node, $id, depth}: OnNodeEnterParams): State => {
+	consoleGroupStart(indent(depth) + `⟩ [on_nodeⵧenter] #${$id}/` + debug_node_short($node))
 	const state = ''
 	console.log(indent(depth) + `  [state="${state}"] (init)`)
 	return state
 }
 
-const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({$node, $id, state, depth}) => {
-	console.log(indent(depth) + `⟨ [on_node_exit] #${$id}`)
+const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOptions> = ({$node, $id, state, depth}) => {
+	console.log(indent(depth) + `⟨ [on_nodeⵧexit] #${$id}`)
 	console.log(indent(depth) + `  [state="${state}"]`)
 	consoleGroupEnd()
 
@@ -70,48 +72,50 @@ const on_node_exit: WalkerReducer<State, OnNodeExitParams<State>, Options> = ({$
 
 
 // when walking inside the content
-const on_concatenate_str: WalkerReducer<State, OnConcatenateStringParams<State>, Options> = ({str, state, $node, depth}) => {
-	console.log(indent(depth) + `+ [on_concatenate_str] "${str}"`)
+const on_concatenateⵧstr: WalkerReducer<State, OnConcatenateStringParams<State>, RenderingOptions> = ({str, state, $node, depth}) => {
+	console.log(indent(depth) + `+ [on_concatenateⵧstr] "${str}"`)
 	state = state + str
 	console.log(indent(depth) + `  [state="${state}"]`)
 	return state
 }
 
-const on_concatenate_sub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, Options> = ({state, sub_state, depth, $id, $parent_node}) => {
-	console.log(indent(depth) + `+ [on_concatenate_sub_node] "${sub_state}"`)
+const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptions> = ({state, sub_state, depth, $id, $parent_node}) => {
+	console.log(indent(depth) + `+ [on_concatenateⵧsub_node] "${sub_state}"`)
 	state = state + sub_state
 	console.log(indent(depth) + `  [state="${state}"]`)
 	return state
 }
 
-const on_filter: WalkerReducer<State, OnFilterParams<State>, Options> = ({$filter, $filters, state, $node, depth}) => {
+const on_filter: WalkerReducer<State, OnFilterParams<State>, RenderingOptions> = ({$filter, $filters, state, $node, depth}) => {
 	console.log(indent(depth) + `  [on_filter] "${$filter}`)
 	return state
 }
 
-const on_class_before: WalkerReducer<State, OnClassParams<State>, Options> = ({$class, state, $node, depth}) => {
-	console.log(indent(depth) + `  [⟩on_class_before] .${$class}`)
+const on_classⵧbefore: WalkerReducer<State, OnClassParams<State>, RenderingOptions> = ({$class, state, $node, depth}) => {
+	console.log(indent(depth) + `  [⟩on_classⵧbefore] .${$class}`)
 	return state
 }
-const on_class_after: WalkerReducer<State, OnClassParams<State>, Options> = ({$class, state, $node, depth}) => {
-	console.log(indent(depth) + `  [⟨on_class_after] .${$class}`)
+const on_classⵧafter: WalkerReducer<State, OnClassParams<State>, RenderingOptions> = ({$class, state, $node, depth}) => {
+	console.log(indent(depth) + `  [⟨on_classⵧafter] .${$class}`)
 	return state
 }
 
-const on_type: WalkerReducer<State, OnTypeParams<State>, Options> = ({$type, state, $node, depth}) => {
+const on_type: WalkerReducer<State, OnTypeParams<State>, RenderingOptions> = ({$type, state, $node, depth}) => {
 	console.log(indent(depth) + `  [on_type] "${$type}" ${$node.$classes}`)
 	return state
 }
 
 ////////////////////////////////////
 
-const callbacks: Partial<WalkerCallbacks<State, Options>> = {
-	on_root_enter,
-	on_root_exit,
-	on_node_enter,
-	on_node_exit,
-	on_concatenate_str,
-	on_concatenate_sub_node,
+const callbacksⵧToDebug: Partial<WalkerCallbacks<State, RenderingOptions>> = {
+	on_rootⵧenter,
+	on_rootⵧexit,
+
+	on_nodeⵧenter,
+	on_nodeⵧexit,
+
+	on_concatenateⵧstr,
+	on_concatenateⵧsub_node,
 	/*
 	on_sub_node_id: ({$id, state, $node, depth}) => {
 		console.log(indent(depth) + `  [sub-node] #${$id}`)
@@ -120,26 +124,28 @@ const callbacks: Partial<WalkerCallbacks<State, Options>> = {
 	},
 	*/
 	on_filter,
-	on_class_before,
-	on_class_after,
+
+	on_classⵧbefore,
+	on_classⵧafter,
+
 	on_type,
-	on_type_br: ({state, depth}: {state: any, depth: number}) => {
-		console.log(indent(depth) + '  [on_type_br]')
+	on_typeꘌbr: ({state, depth}: {state: any, depth: number}) => {
+		console.log(indent(depth) + '  [on_typeꘌbr]')
 		return state + '\\\\br\\\\'
 	},
-	on_type_hr: ({state, depth}: {state: any, depth: number}) => {
-		console.log(indent(depth) + '  [on_type_hr]')
+	on_typeꘌhr: ({state, depth}: {state: any, depth: number}) => {
+		console.log(indent(depth) + '  [on_typeꘌhr]')
 		return state + '--hr--'
 	},
 }
 
-function to_debug($doc: Node, options: Options = DEFAULT_OPTIONS): string {
-	return walk<State, Options>($doc, callbacks, options)
+function renderⵧto_debug($doc: Node, options: RenderingOptions = DEFAULT_RENDERING_OPTIONS): string {
+	return walk<State, RenderingOptions>($doc, callbacksⵧToDebug, options)
 }
 
 /////////////////////////////////////////////////
 
 export {
-	callbacks,
-	to_debug,
+	callbacksⵧToDebug,
+	renderⵧto_debug,
 }
