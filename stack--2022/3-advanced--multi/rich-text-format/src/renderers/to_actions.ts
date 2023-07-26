@@ -48,7 +48,7 @@ const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams
 	return state
 }
 
-const callbacksⵧToActions: Partial<WalkerCallbacks<State, RenderingOptionsⵧToActions>> = {
+const callbacksⵧto_actions: Partial<WalkerCallbacks<State, RenderingOptionsⵧToActions>> = {
 	on_nodeⵧenter: () => ({
 		actions: [],
 	}),
@@ -61,7 +61,7 @@ const callbacksⵧToActions: Partial<WalkerCallbacks<State, RenderingOptionsⵧT
 }
 
 function renderⵧto_actions($doc: Node, options: RenderingOptionsⵧToActions = DEFAULT_RENDERING_OPTIONSⵧToActions): Action[] {
-	return walk<State, RenderingOptionsⵧToActions>($doc, callbacksⵧToActions, options).actions
+	return walk<State, RenderingOptionsⵧToActions>($doc, callbacksⵧto_actions, options).actions
 }
 
 /////////////////////////////////////////////////
@@ -71,5 +71,5 @@ export {
 	type RenderingOptionsⵧToActions,
 	DEFAULT_RENDERING_OPTIONSⵧToActions,
 	renderⵧto_actions,
-	callbacksⵧToActions,
+	callbacksⵧto_actions,
 }

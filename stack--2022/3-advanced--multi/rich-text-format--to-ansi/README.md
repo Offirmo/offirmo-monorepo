@@ -8,3 +8,9 @@ import to_ansi from '@offirmo-private/rich-text-format--to-ansi'
 	console.log(to_ansi($node))
 
 ```
+
+
+TODO support images
++		"terminal-image": "^2",
+TODO support links
++		"terminal-link": "^2",

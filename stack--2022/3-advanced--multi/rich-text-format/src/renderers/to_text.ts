@@ -231,7 +231,7 @@ const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams
 	return state
 }
 
-const callbacksⵧToText: Partial<WalkerCallbacks<State, RenderingOptionsⵧToText>> = {
+const callbacksⵧto_text: Partial<WalkerCallbacks<State, RenderingOptionsⵧToText>> = {
 	on_nodeⵧenter,
 	on_concatenateⵧstr,
 	on_concatenateⵧsub_node,
@@ -244,7 +244,7 @@ function renderⵧto_text(
 	callback_overrides: Partial<WalkerCallbacks<State, RenderingOptionsⵧToText>> = {},
 ): string {
 	return walk<State, RenderingOptionsⵧToText>($doc, {
-		...callbacksⵧToText,
+		...callbacksⵧto_text,
 		...callback_overrides,
 	}, options).str
 }
@@ -254,6 +254,6 @@ function renderⵧto_text(
 export {
 	type RenderingOptionsⵧToText,
 	DEFAULT_RENDERING_OPTIONSⵧToText,
-	callbacksⵧToText,
+	callbacksⵧto_text,
 	renderⵧto_text,
 }

@@ -1,10 +1,19 @@
 import stylize_string from 'chalk'
 
-import { to_text } from '@offirmo-private/rich-text-format'
+import {
+	DEFAULT_RENDERING_OPTIONSⵧToText,
+	renderⵧto_text,
+} from '@offirmo-private/rich-text-format'
 
-
+/////////////////////////////////////////////////
 
 const LIB = 'rich_text_to_ansi'
+
+const DEFAULT_RENDERING_OPTIONSⵧToAnsi = Object.freeze({
+	...DEFAULT_RENDERING_OPTIONSⵧToText,
+})
+
+/////////////////////////////////////////////////
 
 // TODO handle boxification ? (needed?)
 // TODO single warning on unknown classes
@@ -179,21 +188,20 @@ function on_classⵧafter({ $class, state, $node, depth }, options) {
 	return state
 }
 
-const callbacks = {
-	//...to_text_callbacks,
+const callbacksⵧto_ansi = {
 	on_type,
 	on_classⵧafter,
 }
 
-function to_ansi(doc, callback_overrides = {}) {
+function renderⵧto_ansi(doc, callback_overrides = {}) {
 	//console.log(`${LIB} Rendering:`, doc)
-	return to_text(
+	return renderⵧto_text(
 		doc,
 		{
 			style: 'advanced',
 		},
 		{
-			...callbacks,
+			...callbacksⵧto_ansi,
 			...callback_overrides,
 		},
 	)
@@ -201,9 +209,9 @@ function to_ansi(doc, callback_overrides = {}) {
 
 /////////////////////////////////////////////////
 
-export default to_ansi
+export default renderⵧto_ansi
 
 export {
-	to_ansi,
-	callbacks,
+	renderⵧto_ansi,
+	callbacksⵧto_ansi,
 }

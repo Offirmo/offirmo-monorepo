@@ -31,7 +31,7 @@ const MANUALⵧCULTIVATIONⵧQI_CONDENSATION: Book = {
 	// - fighting
 	// - limited guidance to check if resourceful
 
-	title: '⎨⎨sect⎬⎬’s Qi Condensation Manual',
+	title: '⎨⎨slotꓽsect⎬⎬’s Qi Condensation Manual',
 
 	// 9 volumes
 	parts_type: 'volume',
@@ -46,8 +46,6 @@ Explains how the sect has a profound understanding of the Dao, prestigious origi
 should not be shared outside of the sect
 and that traitors will be severely punished.
 This includes this manual!]`,
-
-
 			},
 			//contentⵧvisual: imageUrl.toString(),
 			/*sub: {

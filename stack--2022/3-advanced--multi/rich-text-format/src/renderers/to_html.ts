@@ -130,7 +130,7 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 	return state
 }
 
-const callbacksⵧToHtml: Partial<WalkerCallbacks<State, RenderingOptionsⵧToHtml>> = {
+const callbacksⵧto_html: Partial<WalkerCallbacks<State, RenderingOptionsⵧToHtml>> = {
 	on_nodeⵧenter: () => ({
 		sub_nodes: [],
 		str: '',
@@ -145,13 +145,13 @@ const callbacksⵧToHtml: Partial<WalkerCallbacks<State, RenderingOptionsⵧToHt
 
 function renderⵧto_html($doc: Node, options: RenderingOptionsⵧToHtml = DEFAULT_RENDERING_OPTIONSⵧToHtml): string {
 	return '<div class="o⋄rich-text o⋄children-spacing⁚flow">\n	'
-		+ walk<State, RenderingOptionsⵧToHtml>($doc, callbacksⵧToHtml, options).str
+		+ walk<State, RenderingOptionsⵧToHtml>($doc, callbacksⵧto_html, options).str
 		+ '\n</div>\n'
 }
 
 /////////////////////////////////////////////////
 
 export {
-	callbacksⵧToHtml,
+	callbacksⵧto_html,
 	renderⵧto_html,
 }

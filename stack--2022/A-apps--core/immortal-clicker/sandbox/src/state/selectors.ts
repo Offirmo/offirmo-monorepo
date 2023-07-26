@@ -119,5 +119,6 @@ function getꓽrecap(u_state: Immutable<UState>): RichText.Document {
 /////////////////////////////////////////////////
 
 export {
+	getꓽsectⵧcurrent,
 	getꓽrecap,
 }

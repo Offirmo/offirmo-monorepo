@@ -152,7 +152,7 @@ author_dirs.forEach(author_dir => {
 			case 'review':
 				console.log(
 					existing_bg
-						? ' Previously known as: ' + rich_text_to_ansi(render_artwork_legend(existing_bg))
+						? ' Previously known as: ' + renderⵧto_ansi(render_artwork_legend(existing_bg))
 						: '🆕'
 				)
 				/* fallthrough */

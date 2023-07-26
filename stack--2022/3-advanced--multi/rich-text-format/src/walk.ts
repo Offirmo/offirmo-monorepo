@@ -215,7 +215,7 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 
 			// sub node is missing, advance resolution:
 
-			const candidate_from_resolver= callbacks.resolve_unknown_subnode(
+			const candidate_from_resolver = callbacks.resolve_unknown_subnode(
 				sub_node_id,
 				{
 					$node,

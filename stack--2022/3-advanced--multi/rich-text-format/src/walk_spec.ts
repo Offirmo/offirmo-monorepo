@@ -107,7 +107,7 @@ describe(`${LIB}`, function () {
 				}
 
 				const str = RichText.renderⵧto_text($doc, undefined, {
-					...RichText.callbacksⵧToText,
+					...RichText.callbacksⵧto_text,
 					resolve_unknown_subnode($sub_node_id: string, ...rest): Node | undefined {
 						if ($sub_node_id === 'gꓽbar')
 							return {

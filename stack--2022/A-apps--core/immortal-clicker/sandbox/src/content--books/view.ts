@@ -1,45 +1,96 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
-import getꓽterminal_size from 'term-size'
+
 import terminalImage from 'terminal-image'
 import * as RichText from '@offirmo-private/rich-text-format'
-import to_ansi from '@offirmo-private/rich-text-format--to-ansi'
+import {
+	renderⵧto_ansi,
+	callbacksⵧto_ansi,
+} from '@offirmo-private/rich-text-format--to-ansi'
 
 import { Book, BookPart, Page } from './types.js'
-import { isꓽBook, isꓽBookPart, isꓽPage } from './types--guards.js'
+import { isꓽBook, isꓽBookPart, isꓽPage, isꓽPageⵧlike } from './types--guards.js'
 
 /////////////////////////////////////////////////
 
-async function renderꓽBook(book: Immutable<Book>): Promise<void> {
+async function renderꓽBook(book: Immutable<Book>, options: { resolver?: (id:string) => RichText.Node | undefined } = {}): Promise<void> {
 	assert(isꓽBook(book), `should be a book!`)
+	assert(book.title, `should have a title!`)
 
-	const $node = RichText.heading()
-		.pushText(book.title)
-		.done()
-	console.log(to_ansi($node))
+	function resolve_unknown_subnode(sub_node_id: string): RichText.Node | undefined {
+		// BEWARE OF INFINITE LOOPS!
+		// RECOMMENDED TO ONLY RETURN SIMPLE NODES (just text)
 
-	if (book.titleⵧsub)
-		console.log(book.titleⵧsub)
+		switch (sub_node_id) {
+			case 'gᐧtitle':
+				return _raw_text_to_$node(book.title)
+
+			// ideas
+			case 'gᐧtitleⵧoriginal':
+				throw new Error('NIMP!')
+
+			default: {
+				if (options.resolver) {
+					const $node = options.resolver(sub_node_id)
+					if ($node) return $node
+				}
+				break;
+			}
+		}
+
+		console.warn(`resolver: unrecognized sub id "${sub_node_id}"!`)
+		return undefined
+	}
+
+	const $nodeⵧtitle = _raw_text_to_$node(book.title)
+	console.log(renderⵧto_ansi(
+		RichText.heading()
+			.pushText(`‖ ⎨⎨gᐧtitle⎬⎬ ‖`)
+			.done(),
+		{
+			resolve_unknown_subnode,
+		},
+		))
+
+	if (book.titleⵧsub) {
+		throw new Error('NIMP!')
+	}
 
 	await _renderꓽBookPart(book)
 }
 
 async function _renderꓽBookPart(book_parts: Immutable<BookPart>): Promise<void> {
 	const part‿keys = Object.keys(book_parts.parts).sort()
+
+	const part_type = book_parts.parts_type
+		|| (
+			part‿keys.map(part‿key => book_parts.parts[part‿key]).every(part => isꓽPageⵧlike(part))
+				? 'page'
+				: 'part'
+		)
+
 	part‿keys.forEach((part‿key: string, index: number) => {
-		console.log(`${index + 1}/${part‿keys.length + 1}`)
+		console.log(`↳ ${part_type} ${index + 1}/${part‿keys.length}`)
 		const part = book_parts.parts[part‿key]
+
 		if (isꓽPage(part)) {
 			_renderꓽPage(part)
 		}
 		else if (isꓽBookPart(part)) {
 			_renderꓽBookPart(part)
 		}
+		else if (typeof part === 'string') {
+			_renderꓽPage(_string_to_page(part))
+		}
 		else {
 			console.log(part)
 			throw new Error('should be a page or a book part!')
 		}
 	})
+}
+
+function _string_to_page(content: string): Page {
+	return { content }
 }
 
 async function _renderꓽPage(page: Immutable<Page>): Promise<void> {
@@ -88,6 +139,7 @@ function _split_into_sentences(p: string): string[] {
 	return res
 }
 
+// TODO own package? check how parcel handles it first.
 function _fix_url(url: string): string {
 	if (url.startsWith('file://'))
 		url = url.slice(7)
@@ -113,6 +165,14 @@ function _fix_url(url: string): string {
 
 	return parts.join('/')
 }
+
+// input looks like:
+// "Hello ⎨⎨world⎬⎬, welcome to ⎨⎨place|filter1|filter2⎬⎬
+function _raw_text_to_$node(txt: string) {
+	return { $content: txt }
+}
+
+
 /////////////////////////////////////////////////
 
 export {

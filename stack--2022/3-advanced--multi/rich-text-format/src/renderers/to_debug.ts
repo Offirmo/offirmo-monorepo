@@ -107,7 +107,7 @@ const on_type: WalkerReducer<State, OnTypeParams<State>, RenderingOptions> = ({$
 
 ////////////////////////////////////
 
-const callbacksⵧToDebug: Partial<WalkerCallbacks<State, RenderingOptions>> = {
+const callbacksⵧto_debug: Partial<WalkerCallbacks<State, RenderingOptions>> = {
 	on_rootⵧenter,
 	on_rootⵧexit,
 
@@ -140,12 +140,12 @@ const callbacksⵧToDebug: Partial<WalkerCallbacks<State, RenderingOptions>> = {
 }
 
 function renderⵧto_debug($doc: Node, options: RenderingOptions = DEFAULT_RENDERING_OPTIONS): string {
-	return walk<State, RenderingOptions>($doc, callbacksⵧToDebug, options)
+	return walk<State, RenderingOptions>($doc, callbacksⵧto_debug, options)
 }
 
 /////////////////////////////////////////////////
 
 export {
-	callbacksⵧToDebug,
+	callbacksⵧto_debug,
 	renderⵧto_debug,
 }
