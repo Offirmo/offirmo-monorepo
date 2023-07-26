@@ -35,6 +35,7 @@ interface Builder {
 	done(): CheckedNode
 }
 
+/////////////////////////////////////////////////
 
 function create($type: NodeType): Builder {
 
@@ -196,7 +197,6 @@ function weak(): Builder {
 function listⵧordered(): Builder {
 	return create(NodeType.ol)
 }
-
 function listⵧunordered(): Builder {
 	return create(NodeType.ul)
 }
@@ -219,6 +219,7 @@ function key_value(key: Node | string, value: Node | string): Builder {
 /////////////////////////////////////////////////
 
 export {
+	// for convenience
 	NodeType,
 	type Document,
 	type Builder,

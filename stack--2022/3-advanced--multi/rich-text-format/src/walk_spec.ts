@@ -98,7 +98,7 @@ describe(`${LIB}`, function () {
 				expect(str).to.equal('foo{{??gꓽbar??}}baz')
 			})
 
-			it('should work -- resolver', () => {
+			it('should work -- handling missing -- resolver', () => {
 				const $doc = {
 					$content: 'foo⎨⎨gꓽbar⎬⎬baz',
 					$sub: {
@@ -108,14 +108,14 @@ describe(`${LIB}`, function () {
 
 				const str = RichText.renderⵧto_text($doc, undefined, {
 					...RichText.callbacksⵧToText,
-					resolve_unknown_subnode($sub_node_id: string, ...rest): Node {
+					resolve_unknown_subnode($sub_node_id: string, ...rest): Node | undefined {
 						if ($sub_node_id === 'gꓽbar')
 							return {
 								$content: '33',
 								$type: RichText.NodeType.fragmentⵧblock,
 							}
 
-						return RichText.callbacksⵧToText.resolve_unknown_subnode!($sub_node_id, ...rest)
+						return undefined
 					},
 				})
 				expect(str).to.equal('foo\n33\nbaz')

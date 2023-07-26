@@ -4,6 +4,7 @@ import { LIB } from '../consts.js'
 
 import * as RichText from './builder.js'
 
+/////////////////////////////////////////////////
 
 describe(`${LIB}`, () => {
 

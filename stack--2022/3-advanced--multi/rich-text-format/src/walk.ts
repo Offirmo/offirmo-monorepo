@@ -65,7 +65,7 @@ export interface OnTypeParams<State> extends BaseParams<State> {
 }
 // unknown sub node resolver
 export interface UnknownSubNodeResolver<State, RenderingOptions> {
-	($sub_node_id: string, context: BaseParams<State>, options: RenderingOptions): Node
+	($sub_node_id: string, context: BaseParams<State>, options: RenderingOptions): Node | undefined
 }
 
 
@@ -123,8 +123,10 @@ function _getꓽcallbacksⵧdefault<State, RenderingOptions extends BaseRenderin
 		on_classⵧbefore: identity,
 		on_classⵧafter: identity,
 
-		resolve_unknown_subnode($sub_node_id: string, context: BaseParams<State>, options: RenderingOptions): Node {
-			throw new Error(`${LIB}: syntax error in content "${context?.$node?.$content}", it's referring to an unknown sub-node "${$sub_node_id}"!`)
+		resolve_unknown_subnode($sub_node_id: string, context: BaseParams<State>, options: RenderingOptions): Node | undefined {
+			// BEWARE OF INFINITE LOOPS!
+			// RECOMMENDED TO ONLY RETURN SIMPLE NODES (just text)
+			return undefined
 		},
 
 		on_filter: identity,
@@ -196,7 +198,7 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 		const [ sub_node_id, ...$filters ] = split_end.shift()!.split('|')
 		assert(sub_node_id, `${LIB}: syntax error in content "${$content}", empty ⎨⎨⎬⎬!`)
 
-		let $sub_node = (() => {
+		let $sub_node = (function _resolve_sub_node_by_id(): Node {
 			if (sub_node_id === 'br') {
 				assert(!$sub_nodes[sub_node_id], `${LIB}: error in content "${$content}", having a reserved subnode "${sub_node_id}"!`)
 				return SUB_NODE_BR
@@ -211,7 +213,9 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 				return $sub_nodes[sub_node_id]!
 			}
 
-			return callbacks.resolve_unknown_subnode(
+			// sub node is missing, advance resolution:
+
+			const candidate_from_resolver= callbacks.resolve_unknown_subnode(
 				sub_node_id,
 				{
 					$node,
@@ -220,6 +224,14 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 				},
 				options
 			)
+			if (candidate_from_resolver)
+				return candidate_from_resolver
+
+			if (options.shouldꓽrecover_from_unknown_sub_nodes) {
+				return { $content: `{{??${sub_node_id}??}}` }
+			}
+
+			throw new Error(`${LIB}: syntax error in content "${$content}", it's referencing an unknown sub-node "${sub_node_id}"!`)
 		})()
 
 		let sub_state = walk($sub_node, callbacks, options, {
@@ -306,8 +318,8 @@ function walk<State, RenderingOptions extends BaseRenderingOptions>(
 	} = $node
 
 	// quick check
-	if (!Object.keys(raw_callbacks).every(k => k.startsWith('on_')))
-		console.warn(`${LIB} Bad callbacks, check the API!`)
+	if (!Object.keys(raw_callbacks).every(k => k === 'resolve_unknown_subnode' || k.startsWith('on_')))
+		console.warn(`${LIB} Unexpected unrecognized callbacks, check the API!`)
 	let callbacks: WalkerCallbacks<State, RenderingOptions> = raw_callbacks as any as WalkerCallbacks<State, RenderingOptions>
 	const isRoot = !$parent_node
 	if (isRoot) {
