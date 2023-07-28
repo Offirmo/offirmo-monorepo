@@ -18,6 +18,8 @@ const ps = {
 }
 
 const MANUALⵧCULTIVATIONⵧQI_CONDENSATION: Book = {
+	uuid: 'manualⵧcultivationⵧqi_condensation',
+
 	// ex. https://ww5.mangakakalot.tv/chapter/manga-ii985865/chapter-3
 	// writings and drawings
 	// The physical exercise chart https://en.wikipedia.org/wiki/Qigong
@@ -76,7 +78,7 @@ Note that "Immortal" doesn't mean that
 			content: `
 breaking through 1st level = impurities
 a few basic arts with wide compatibility
-bottleneck about mortalily
+bottleneck about mortality
 			`
 		},
 		volume04: {

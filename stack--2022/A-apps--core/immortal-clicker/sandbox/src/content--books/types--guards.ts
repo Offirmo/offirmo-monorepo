@@ -1,4 +1,3 @@
-import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { Page, BookPart, Book } from './types.js'
@@ -9,7 +8,7 @@ function isꓽPage(x: Immutable<any>): x is Page {
 	return typeof x?.content === 'string'
 }
 function isꓽPageⵧlike(x: Immutable<any>): x is Page | string {
-	return typeof x === 'string' || isꓽPage(x)
+	return isꓽPage(x) || typeof x === 'string'
 }
 
 function isꓽBookPart(x: Immutable<any>): x is BookPart {
@@ -17,7 +16,9 @@ function isꓽBookPart(x: Immutable<any>): x is BookPart {
 }
 
 function isꓽBook(x: Immutable<any>): x is Book {
-	return typeof x?.title === 'string' && isꓽBookPart(x)
+	return typeof x?.title === 'string'
+		&& typeof x?.uuid === 'string'
+		&& isꓽBookPart(x)
 }
 
 /////////////////////////////////////////////////

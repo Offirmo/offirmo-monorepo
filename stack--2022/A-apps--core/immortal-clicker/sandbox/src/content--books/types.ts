@@ -23,16 +23,34 @@ interface Page {
 	}*/
 }
 
+// any unit above the "page" one
+// ex. volume, chapter...
 interface BookPart {
+	title?: string
+	titleⵧsub?: string
+	// author?
+
 	parts_type?: string
 	parts: {
-		[k: string]: BookPart | Page | string
+		[k: string]: Book | BookPart | Page | string
 	}
 }
 
+// top part that can be independently considered
 interface Book extends BookPart {
+	uuid: string // for reference
 	title: string
-	titleⵧsub?: string
+}
+
+// some books can be customized and thus have several instances
+// ex.
+// - a child book customized so that the child is the hero
+// - an RPG where the book refers to a changeable settings (hero name, past actions)
+interface BookInstance {
+	book_uuid: string
+	params: {
+		[key: string]: string // TODO clarify
+	}
 }
 
 ////////////////////////////////////
@@ -54,7 +72,7 @@ type ComprehensionLevel =
 	| 'understoodⵧthoroughly'    // expert
 	| 'understoodⵧcritically'    // can find the flaws in this book
 
-interface BookReadingStatus {
+interface BookExperience {
 
 	comprehension_level‿by_page: {
 
@@ -69,6 +87,4 @@ export {
 	type Page,
 	type BookPart,
 	type Book,
-
-	type BookReadingStatus,
 }

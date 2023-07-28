@@ -13,6 +13,44 @@ import { isꓽBook, isꓽBookPart, isꓽPage, isꓽPageⵧlike } from './types--
 
 /////////////////////////////////////////////////
 
+interface WalkState {
+	path: Array<{
+		type: string
+		index: number // 0 based
+		length: number
+	}>
+}
+
+function getꓽdepth(walk_state: Immutable<WalkState>): number {
+	return walk_state.path.length
+}
+
+function enqueue_part(walk_state: Immutable<WalkState>, book_parts: Immutable<BookPart>): Immutable<WalkState> {
+	return {
+		...walk_state,
+		path: [
+			...walk_state.path,
+			{
+				type: getꓽpart_type(book_parts),
+				index: -1,
+				length: -1,
+			}
+		]
+	}
+}
+
+/////////////////////////////////////////////////
+
+function getꓽpart_type(book_parts: Immutable<BookPart>): string {
+	if (book_parts.parts_type)
+		return book_parts.parts_type
+
+	if (Object.values(book_parts.parts).every(part => isꓽPageⵧlike(part)))
+		return 'page'
+
+	return 'part' // generic
+}
+
 async function renderꓽBook(book: Immutable<Book>, options: { resolver?: (id:string) => RichText.Node | undefined } = {}): Promise<void> {
 	assert(isꓽBook(book), `should be a book!`)
 	assert(book.title, `should have a title!`)
@@ -56,31 +94,27 @@ async function renderꓽBook(book: Immutable<Book>, options: { resolver?: (id:st
 		throw new Error('NIMP!')
 	}
 
-	await _renderꓽBookPart(book)
+	let walk_state = {} as WalkState
+	await _renderꓽBookPart(book, walk_state)
 }
 
-async function _renderꓽBookPart(book_parts: Immutable<BookPart>): Promise<void> {
+async function _renderꓽBookPart(book_parts: Immutable<BookPart>, walk_state: WalkState): Promise<void> {
 	const part‿keys = Object.keys(book_parts.parts).sort()
 
-	const part_type = book_parts.parts_type
-		|| (
-			part‿keys.map(part‿key => book_parts.parts[part‿key]).every(part => isꓽPageⵧlike(part))
-				? 'page'
-				: 'part'
-		)
+	const part_type = getꓽpart_type(book_parts)
 
 	part‿keys.forEach((part‿key: string, index: number) => {
 		console.log(`↳ ${part_type} ${index + 1}/${part‿keys.length}`)
 		const part = book_parts.parts[part‿key]
 
 		if (isꓽPage(part)) {
-			_renderꓽPage(part)
+			_renderꓽPage(part, walk_state)
 		}
 		else if (isꓽBookPart(part)) {
-			_renderꓽBookPart(part)
+			_renderꓽBookPart(part, walk_state)
 		}
 		else if (typeof part === 'string') {
-			_renderꓽPage(_string_to_page(part))
+			_renderꓽPage(_string_to_page(part), walk_state)
 		}
 		else {
 			console.log(part)
@@ -93,7 +127,7 @@ function _string_to_page(content: string): Page {
 	return { content }
 }
 
-async function _renderꓽPage(page: Immutable<Page>): Promise<void> {
+async function _renderꓽPage(page: Immutable<Page>, walk_state: WalkState): Promise<void> {
 	// TODO count all pages
 	console.log(`┌──┄┄ page x/y TODO`)
 
