@@ -86,7 +86,7 @@ Note that "Immortal" doesn't mean that
 		volume04: {
 			// only given if L1
 			parts: {
-			content: `
+				content: `
 			(formula to L2)
 			`
 			},
@@ -94,9 +94,8 @@ Note that "Immortal" doesn't mean that
 		volume05: {
 			parts: {
 				content: `
-			},
 			`
-		},
+			},
 		},
 		volume06: {
 			parts: {
@@ -118,7 +117,7 @@ Note that "Immortal" doesn't mean that
 			},
 		},
 		volume09: {
-				content: `
+			content: `
 			`
 		},
 	}

@@ -176,21 +176,31 @@ async function _renderꓽPage(page: Immutable<Page>, walk_state: Immutable<WalkS
 
 	console.log(`┌──┄┄ ${path_last.type} ${path_last.index + 1}/${path_last.length}`)
 
-	//const $node = Ri
 	let has_content = false // so far
 
 	// load and format the content
-	const paragraphs: string[][] = page.content.split('\n')
+	const paragraphs: string[] = page.content.split('\n\n')
 		.map(p => p.trim())
-		.filter((p => !!p))
-		.map(p => _split_into_sentences(p))
+		.filter(p => !!p)
+		.map(p => p.replaceAll('\n', ' ')) // single EOL are in fact spaces
 
-	paragraphs.forEach(p => {
-		p.forEach(s => {
-			// TODO word break
+	paragraphs.forEach((p, index) => {
+		if (index !== 0)
+			console.log('│') // paragraph separator
+
+			/*
+		const sentences = _split_into_sentences(p)
+			.map(s => s.trim())
+			.filter(s => !!s)
+
+			sentences.forEach(s => {
+			// TODO word split -- NO should be in the sub-lib!
 			console.log('│' + s)
 			has_content = true
 		})
+		*/
+		console.log('│' + p)
+		has_content = true
 	})
 
 	if (page.contentⵧvisual) {
