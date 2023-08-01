@@ -75,37 +75,50 @@ Note that "Immortal" doesn't mean that
 		},
 		volume03: {
 			// https://mangakakalot.com/chapter/xian_ni/chapter_12
-			content: `
-breaking through 1st level = impurities
-a few basic arts with wide compatibility
-bottleneck about mortality
-			`
+			parts: {
+				content: `
+	breaking through 1st level = impurities
+	a few basic arts with wide compatibility
+	bottleneck about mortality
+				`
+			},
 		},
 		volume04: {
 			// only given if L1
+			parts: {
 			content: `
 			(formula to L2)
 			`
+			},
 		},
 		volume05: {
-			content: `
+			parts: {
+				content: `
+			},
 			`
+		},
 		},
 		volume06: {
-			content: `
+			parts: {
+				content: `
 			bottleneck about law of the Jungle
-			`
+			`,
+			},
 		},
 		volume07: {
-			content: `
+			parts: {
+				content: `
 			`
+			},
 		},
 		volume08: {
-			content: `
+			parts: {
+				content: `
 			`
+			},
 		},
 		volume09: {
-			content: `
+				content: `
 			`
 		},
 	}

@@ -1,7 +1,6 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import terminalImage from 'terminal-image'
 import * as RichText from '@offirmo-private/rich-text-format'
 import {
 	renderⵧto_ansi,
@@ -33,7 +32,20 @@ function enqueue_part(walk_state: Immutable<WalkState>, book_parts: Immutable<Bo
 			{
 				type: getꓽpart_type(book_parts),
 				index: -1,
-				length: -1,
+				length: Object.keys(book_parts.parts).length,
+			}
+		]
+	}
+}
+
+function update_path_last_index(walk_state: Immutable<WalkState>, index: number): Immutable<WalkState> {
+	return {
+		...walk_state,
+		path: [
+			...walk_state.path.slice(0, -1),
+			{
+				...walk_state.path.slice(-1)[0],
+				index,
 			}
 		]
 	}
@@ -51,7 +63,14 @@ function getꓽpart_type(book_parts: Immutable<BookPart>): string {
 	return 'part' // generic
 }
 
+function _string_to_page(content: string): Page {
+	return { content }
+}
+
+const DEBUG = false
+
 async function renderꓽBook(book: Immutable<Book>, options: { resolver?: (id:string) => RichText.Node | undefined } = {}): Promise<void> {
+	if (DEBUG) console.group(`renderꓽBook`)
 	assert(isꓽBook(book), `should be a book!`)
 	assert(book.title, `should have a title!`)
 
@@ -94,44 +113,71 @@ async function renderꓽBook(book: Immutable<Book>, options: { resolver?: (id:st
 		throw new Error('NIMP!')
 	}
 
-	let walk_state = {} as WalkState
+	let walk_state: WalkState = {
+		path: [],
+	}
 	await _renderꓽBookPart(book, walk_state)
+	if (DEBUG) console.groupEnd()
 }
 
-async function _renderꓽBookPart(book_parts: Immutable<BookPart>, walk_state: WalkState): Promise<void> {
+async function _renderꓽBookPart(book_parts: Immutable<BookPart>, walk_state: Immutable<WalkState>): Promise<void> {
+	if (DEBUG) console.group(`_renderꓽBookPart`)
+	if (DEBUG) console.log(walk_state)
+
 	const part‿keys = Object.keys(book_parts.parts).sort()
 
 	const part_type = getꓽpart_type(book_parts)
 
+	console.log(`[${walk_state.path.map(part => `${part.type} ${part.index + 1}/${part.length}`).join(' > ')}]`)
+
 	part‿keys.forEach((part‿key: string, index: number) => {
-		console.log(`↳ ${part_type} ${index + 1}/${part‿keys.length}`)
+		//console.log(`↳ ${part_type} ${index + 1}/${part‿keys.length}`)
 		const part = book_parts.parts[part‿key]
 
+		let _ws = walk_state
+		_ws = enqueue_part(_ws, book_parts)
+		_ws = update_path_last_index(_ws, index)
+
 		if (isꓽPage(part)) {
-			_renderꓽPage(part, walk_state)
+			/*if (part_type !== 'page') {
+				// this is a shortcut
+				// ex a volume containing a single page
+				// we properly insert a fake page in the path
+				console.log('shortcut non-page detected!')
+				_ws = enqueue_part(walk_state, {
+					parts: {
+						content: part
+					}
+				})
+				_ws = update_path_last_index(walk_state, 0)
+			}*/
+			_renderꓽPage(part, _ws)
 		}
 		else if (isꓽBookPart(part)) {
-			_renderꓽBookPart(part, walk_state)
+			_renderꓽBookPart(part, _ws)
 		}
 		else if (typeof part === 'string') {
-			_renderꓽPage(_string_to_page(part), walk_state)
+			_renderꓽPage(_string_to_page(part), _ws)
 		}
 		else {
 			console.log(part)
 			throw new Error('should be a page or a book part!')
 		}
 	})
+	if (DEBUG) console.groupEnd()
 }
 
-function _string_to_page(content: string): Page {
-	return { content }
-}
+async function _renderꓽPage(page: Immutable<Page>, walk_state: Immutable<WalkState>): Promise<void> {
+	if (DEBUG) console.group(`_renderꓽPage()`)
+	if (DEBUG) console.log(walk_state)
 
-async function _renderꓽPage(page: Immutable<Page>, walk_state: WalkState): Promise<void> {
-	// TODO count all pages
-	console.log(`┌──┄┄ page x/y TODO`)
+	const path_parent = walk_state.path.slice(0, -1)
+	const path_last = walk_state.path.slice(-1)[0]
+
+	console.log(`┌──┄┄ ${path_last.type} ${path_last.index + 1}/${path_last.length}`)
 
 	//const $node = Ri
+	let has_content = false // so far
 
 	// load and format the content
 	const paragraphs: string[][] = page.content.split('\n')
@@ -143,16 +189,22 @@ async function _renderꓽPage(page: Immutable<Page>, walk_state: WalkState): Pro
 		p.forEach(s => {
 			// TODO word break
 			console.log('│' + s)
+			has_content = true
 		})
 	})
 
 	if (page.contentⵧvisual) {
 		const url = _fix_url(page.contentⵧvisual)
-		console.log(await terminalImage.file(url, {width: '50%'}))
 		console.log(`TODO display ${url}`)
+		has_content = true
+	}
+
+	if (!has_content) {
+		console.log('│' + `[ERROR: page with no content!]`)
 	}
 
 	console.log(`└──┄┄`)
+	if (DEBUG) console.groupEnd()
 }
 
 const SENTENCES_SEPARATORS = [ '.', '!', '?' ]
@@ -205,7 +257,6 @@ function _fix_url(url: string): string {
 function _raw_text_to_$node(txt: string) {
 	return { $content: txt }
 }
-
 
 /////////////////////////////////////////////////
 

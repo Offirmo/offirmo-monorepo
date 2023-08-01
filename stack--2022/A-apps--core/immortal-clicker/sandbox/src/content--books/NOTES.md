@@ -4,6 +4,7 @@ Use cases:
 * traditional book / chapters
 * "bites"
 * BHBV
+* inside a RPG
 
 
 ⌜⌝
