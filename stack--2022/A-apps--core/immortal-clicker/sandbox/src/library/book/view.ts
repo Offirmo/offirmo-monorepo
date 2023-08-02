@@ -128,7 +128,8 @@ async function _renderꓽBookPart(book_parts: Immutable<BookPart>, walk_state: I
 
 	const part_type = getꓽpart_type(book_parts)
 
-	console.log(`[${walk_state.path.map(part => `${part.type} ${part.index + 1}/${part.length}`).join(' > ')}]`)
+	if (walk_state.path.length)
+		console.log(`[${walk_state.path.map(part => `${part.type} ${part.index + 1}/${part.length}`).join(' > ')}]`)
 
 	part‿keys.forEach((part‿key: string, index: number) => {
 		//console.log(`↳ ${part_type} ${index + 1}/${part‿keys.length}`)

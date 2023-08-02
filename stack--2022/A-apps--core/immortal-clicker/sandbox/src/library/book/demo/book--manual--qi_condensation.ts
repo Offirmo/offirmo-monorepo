@@ -42,7 +42,8 @@ const MANUALⵧCULTIVATIONⵧQI_CONDENSATION: Book = {
 			parts: {
 				'01-sect_intro': `
 [This volume introduce the sect:
-Explains how the sect has a profound understanding of the Dao, prestigious origins, deep foundations, superior techniques, etc.]`,
+Explains how the sect has a profound understanding of the Dao,
+prestigious origins, deep foundations, superior techniques, etc.]`,
 				'02-warning_traitors': `
 [This volume also warns that the sect's techniques and teachings
 should not be shared outside of the sect
@@ -67,7 +68,7 @@ Once enough Immortal Qi is gathered, one should succeed in controlling this Qi a
 ]
 `,
 				'02-cultivation_intro_cont': `
-
+TODO
 Note that "Immortal" doesn't mean that
 `,
 				'03-breathing_technique': `[Introduce breathing technique]`,
