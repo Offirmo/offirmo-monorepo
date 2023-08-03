@@ -7,8 +7,8 @@ import {
 	callbacksⵧto_ansi,
 } from '@offirmo-private/rich-text-format--to-ansi'
 
-import { Book, BookPart, Page } from './types.js'
-import { isꓽBook, isꓽBookPart, isꓽPage, isꓽPageⵧlike } from './types--guards.js'
+import { Book, BookPart, Page } from '../book/types.js'
+import { isꓽBook, isꓽBookPart, isꓽPage, isꓽPageⵧlike } from '../book/types--guards.js'
 
 /////////////////////////////////////////////////
 

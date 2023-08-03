@@ -22,6 +22,7 @@
 // Those types purely describe the technical aspect of displaying a book
 // any "meta" feature is in the subsequent "book experience" type (later)
 
+type BookUId = string
 
 // smallest unit of a "book" that can be displayed / linked to / have a "next" button
 // TODO review "auto splitting of long text" aka. auto splitting into pages
@@ -35,6 +36,7 @@ interface Page {
 
 // any unit above the "page" one
 // ex. volume, chapter...
+// Can form a tree of any depth
 interface BookPart {
 	title?: string
 	titleⵧsub?: string
@@ -46,10 +48,15 @@ interface BookPart {
 	}
 }
 
-// top part that can be independently considered
+// top part
+// that can be independently considered
 interface Book extends BookPart {
-	uuid: string // for referencing
+	uuid: BookUId // for referencing
 	title: string
+
+	is_template?: true
+	
+	// TODO declare template slots?
 }
 
 // some books can be customized and thus have several instances
@@ -58,50 +65,19 @@ interface Book extends BookPart {
 // - an RPG where the book refers to a changeable settings (randomized wordlbuiding, hero name, past actions...)
 interface BookInstance {
 	book_uuid: string
-	params: {
-		[key: string]: string // TODO clarify
+	params: { // TODO clarify
+		[key: string]: string
 	}
 }
 
-// point to a part or a page
-type Reference = string
-
-
-////////////////////////////////////
-// Book EXPERIENCE
-// = meta customization
-
-type AccessLevel =
-	| 'unaware'                  // no access + not even aware of existence
-	| 'accessⵧno'                // aware of existence but not in possession thus obviously can't read it
-	| 'accessⵧyes'               // has a physical copy (borrowed, stolen, bought, etc.)
-
-
-// assuming we have access
-type ComprehensionLevel =
-	| 'forbidden'                // owner may not want to read it, ex. forbidden knowledge
-	| 'unviewed'                 // not viewed at all = book never opened, page never turned
-	| 'viewedⵧblocked'           // ex. can browse the book but comprehension is blocked, bc can't read or can't understand the language
-	| 'understoodⵧpartially'     // ex. skimmed quickly
-	| 'understoodⵧsuperficially' // ex. can barely read or missing concepts, understand the general idea but not much more (ex. Math book but math level is too low)
-	| 'understood'               // normal
-	| 'understoodⵧthoroughly'    // expert
-	| 'understoodⵧcritically'    // can find the flaws in this book
-
-interface BookExperience {
-	current_reading_place: Reference
-	
-	comprehension_level‿by_path: {
-		[place: Reference]: AccessLevel | ComprehensionLevel
-	}
-
-	// TODO bookmarks
-}
 
 /////////////////////////////////////////////////
 
 export {
 	type Page,
 	type BookPart,
+
+	type BookUId,
 	type Book,
+	type BookInstance,
 }
