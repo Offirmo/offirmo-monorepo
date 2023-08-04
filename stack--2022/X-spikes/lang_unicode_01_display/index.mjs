@@ -1,9 +1,7 @@
-#!/usr/bin/env node
-'use strict';
 
 console.log('The boring RPG')
 
-const stylize = require('chalk')
+import stylize from 'chalk'
 
 const dingbats = [
 	[parseInt('2700', 16), parseInt('27BF', 16)],
@@ -69,13 +67,6 @@ const emoji_set = [
 	//[parseInt('1F910', 16), parseInt('1F9FF', 16)], // Supplemental Symbols and Pictographs
 ]
 
-
-const set = enclosed_parens_set
-//const set = enclosed_white_round_set
-//const set = monsters_set
-//const set = emoji_set
-//const set = [[parseInt('1d400', 16), parseInt('1d433', 16)]]
-
 function render_set(set) {
 	console.log('----')
 	set.forEach(e => {
@@ -119,4 +110,11 @@ function render_codepoint(codepoint) {
 }
 
 console.log('123456789012345678901234567890')
-render_set(set)
+render_set(enclosed_parens_set)
+render_set(enclosed_white_round_set)
+render_set(enclosed_black_round_set)
+render_set(enclosed_white_square_set)
+render_set(enclosed_black_square_set)
+render_set(monsters_set)
+render_set(emoji_set)
+render_set([[parseInt('1d400', 16), parseInt('1d433', 16)]])

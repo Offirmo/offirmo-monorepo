@@ -1,9 +1,7 @@
-#!/usr/bin/env node
-'use strict';
 
 console.log('The boring RPG')
 
-const stylize = require('chalk')
+import stylize from 'chalk'
 
 // https://jrgraphix.net/r/Unicode/20D0-20FF
 console.log('Hello 1\u20dd a\u20dd A\u20dd world')

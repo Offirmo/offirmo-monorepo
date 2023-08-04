@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-'use strict';
 
 console.log('The boring RPG')
 // https://jrgraphix.net/r/Unicode/2500-257F

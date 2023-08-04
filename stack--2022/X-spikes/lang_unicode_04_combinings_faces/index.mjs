@@ -1,9 +1,7 @@
-#!/usr/bin/env node
-'use strict';
 
 console.log('Mixing emojis')
 
-const stylize = require('chalk')
+import stylize from 'chalk'
 
 const ZERO_WIDTH_JOINER = '\u200D'
 
