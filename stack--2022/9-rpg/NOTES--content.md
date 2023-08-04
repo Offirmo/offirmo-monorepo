@@ -20,7 +20,7 @@ LOOK FOR A PATTERN OF...
 * Verbal aggression, sarcasm, or psychological manipulation
 * Unreasonable or constantly changing directives and deadlines
 * Singling out individuals
-* “Mobbing,” in which a group of people gang up on an individual
+* “Mobbing” in which a group of people gang up on an individual
 
 Maria is under pressure to finish a project. She has a strong personality and always puts her work first. She is easily angered when details are missed and struggles to productively handle other people’s mistakes. She is ambitious, eager to be promoted, and values team members who have been around the longest, as they have the most experience. She is wary of new people—not knowing whether she can rely on them makes her very nervous.
 
@@ -40,8 +40,8 @@ https://www.famillechretienne.fr/6603/article/manipulateurs-pervers-narcissiques
   parce que ceux-ci sont généralement chaleureux et ouverts à la compassion. L’entourage du victimaire est alors intégralement mobilisé à son service,
   culpabilisé de ne pas en faire assez, sans être jamais remercié et sans que le victimaire fasse le moindre effort pour se sortir de sa situation.
   Et le profil du sauveteur ?
+  Là encore, distinguons le sauveur du sauveteur. André Frossard disait que l’intégriste est celui qui fait la volonté de Dieu que Dieu le veuille ou non. Eh bien, le sauveteur est celui qui fait le bien de l’autre… que l’autre le veuille ou non ! C’est la personne qui impose son aide – « C’est pour ton bien » ! Jésus, Lui, propose, Il ne s’impose pas : « Que veux-tu que je fasse pour toi ? »
 
-Là encore, distinguons le sauveur du sauveteur. André Frossard disait que l’intégriste est celui qui fait la volonté de Dieu que Dieu le veuille ou non. Eh bien, le sauveteur est celui qui fait le bien de l’autre… que l’autre le veuille ou non ! C’est la personne qui impose son aide – « C’est pour ton bien » ! Jésus, Lui, propose, Il ne s’impose pas : « Que veux-tu que je fasse pour toi ? »
 
 Cinq conseils pour discerner
 1. Si une personne ne reconnaît jamais ses torts, en reconnaît quelques-uns mais ne change pas, voire vous le fait payer, attention ! Peut-être avez-vous affaire à une PN.
@@ -67,7 +67,6 @@ ideas for bad guys:
 
 personalité
 https://www.personalityresearch.org/bigfive.html
-
 
 
 She learned that you should never try to intimidate people into telling you the truth. They’ll just put up their guard. Instead, watch for signs of unsuitable nervousness and anxiety, and any pretense of a lack of interest in your questions. The more you talk, the less you’ll learn about the other person – including his or her deceptions. Listen instead. If what the person says sounds rehearsed, you may not be getting the truth. Active listening is the best way to tell truths from lies.
