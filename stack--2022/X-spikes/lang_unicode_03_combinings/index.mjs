@@ -10,3 +10,5 @@ console.log('Hello 1\u20df a\u20df A\u20df world')
 console.log('Hello 1\u20e3 a\u20e3 A\u20e3 world')
 console.log('Hello 1\u20e4 a\u20e4 A\u20e4 world')
 console.log('Hello 1\u20e9 a\u20e9 A\u20e9 world')
+const COMBINING_ENCLOSING__KEYCAP = '⃣'
+console.log(COMBINING_ENCLOSING__KEYCAP + 'a')
