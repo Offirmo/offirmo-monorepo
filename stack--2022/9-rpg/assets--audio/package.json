@@ -1,0 +1,19 @@
+{
+	"name": "@offirmo-private/assets--audio",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
+	"private": true,
+
+	"sideEffects": true,
+	"type": "module",
+	"exports": {
+		"./SpellBook--TurnPage--01": "./src/licensed/audio_alchemist/spellbook_turnpage_01.ts"
+	},
+
+	"scripts": {},
+	"dependencies": {
+		"howler": "^2"
+	},
+	"devDependencies": {}
+}

@@ -174,3 +174,6 @@ who moved my cheese?
 wisdom
 être heureux n'est pas nécessairement confortable
 “The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.
+collaboration issue -- Gridlock, where many different interests slow the analytic process
+collaboration issue -- Compromise, where the estimates contain only "lowest common denominator" language
+collaboration issue -- Groupthink, where opposing views are subconsciously discouraged
