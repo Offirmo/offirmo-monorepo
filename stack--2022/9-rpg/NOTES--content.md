@@ -26,6 +26,9 @@ Maria is under pressure to finish a project. She has a strong personality and al
 
 villains https://www.news.com.au/entertainment/books-magazines/books/mary-trump-book-review-donald-trumps-father-fred-painted-as-the-true-villain/news-story/eb590b4237ffd5f7db207ff9d5e79ae0
 
+"+ grandes industries criminelles"
+Appelé l’industrie criminelle à la plus grande croissance au monde, le trafic des êtres humains inclut le travail forcé
+
 
 https://www.famillechretienne.fr/6603/article/manipulateurs-pervers-narcissiques-comment-les-reconnaitre
 * certitude d'être exceptionnel
