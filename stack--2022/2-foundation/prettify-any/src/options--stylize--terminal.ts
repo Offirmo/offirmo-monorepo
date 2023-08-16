@@ -4,7 +4,7 @@ import {
 
 /////////////////////////////////////////////////
 
-function getꓽstylize_optionsⵧansi(chalk: any): StylizeOptions {
+function getꓽstylize_optionsⵧterminal(chalk: any): StylizeOptions {
 	return {
 		stylizeꓽdim: (s: string) => chalk.dim(s),
 		stylizeꓽsuspicious: (s: string) => chalk.bold(s),
@@ -20,5 +20,5 @@ function getꓽstylize_optionsⵧansi(chalk: any): StylizeOptions {
 /////////////////////////////////////////////////
 
 export {
-	getꓽstylize_optionsⵧansi,
+	getꓽstylize_optionsⵧterminal,
 }

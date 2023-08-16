@@ -5,7 +5,7 @@ import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 
 import { generate_random_demo_weapon, DEMO_WEAPON_1, DEMO_WEAPON_2 } from '@tbrpg/logic-weapons'
 
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
+import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 import { render_weapon_detailed } from './index.js'
 
@@ -44,19 +44,19 @@ describe('🔠  view to @offirmo-private/rich-text-format - items -- weapon', fu
 
 			const doc1 = render_weapon_detailed(DEMO_WEAPON_1, 2000)
 			//dumpꓽanyⵧprettified(doc1)
-			let str = rich_text_to_ansi(doc1)
+			let str = rich_text_to_terminal(doc1)
 			// should just not throw
 
 			const doc2 = render_weapon_detailed(DEMO_WEAPON_2, 2000)
 			//dumpꓽanyⵧprettified(doc2)
-			str = rich_text_to_ansi(doc2)
+			str = rich_text_to_terminal(doc2)
 			// should just not throw
 
 			for(let i = 0; i < 10; ++i) {
 				const item = generate_random_demo_weapon()
 				const $doc = render_weapon_detailed(item, 2000)
 				//dumpꓽanyⵧprettified($doc)
-				const str = rich_text_to_ansi($doc)
+				const str = rich_text_to_terminal($doc)
 				//console.log(str)
 				// should just not throw
 			}

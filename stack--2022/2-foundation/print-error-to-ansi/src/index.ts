@@ -6,8 +6,8 @@ import { COMMON_ERROR_FIELDS_EXTENDED } from '@offirmo/error-utils'
 interface Context {
 	// params
 	line_separator: string
-	use_ansi: boolean
-	cause_chain_limit: number
+	shouldꓽuse_escape_codes: boolean
+	//cause_chain_limit: number TODO implement
 	visual_marker: string
 
 	// processing state
@@ -15,17 +15,17 @@ interface Context {
 }
 
 function _apply_styleⵧred(context: Context, s: string): string {
-	if (context.use_ansi)
+	if (context.shouldꓽuse_escape_codes)
 		return chalk.red(s)
 	return s
 }
 function _apply_styleⵧbold(context: Context, s: string): string {
-	if (context.use_ansi)
+	if (context.shouldꓽuse_escape_codes)
 		return chalk.bold(s)
 	return s
 }
 function _apply_styleⵧdim(context: Context, s: string): string {
-	if (context.use_ansi)
+	if (context.shouldꓽuse_escape_codes)
 		return chalk.dim(s)
 	return s
 }
@@ -126,9 +126,9 @@ function _error_prop_to_string(context: Context, errLike: Readonly<any>, prop: s
 
 
 function error_to_string(errLike: Readonly<Partial<Error>>, context: Context = {
-	use_ansi: true,
+	shouldꓽuse_escape_codes: true,
 	line_separator: ((new Error('test')).stack?.split('\r\n')?.length || 1) > 1 ? '\r\n' : '\n',
-	cause_chain_limit: -1,
+	//cause_chain_limit: -1,
 	visual_marker: '❗', // 🔥🔥🔥🔥🔥🔥🔥 ❗
 	seen_errors: new Set(),
 } ): string {

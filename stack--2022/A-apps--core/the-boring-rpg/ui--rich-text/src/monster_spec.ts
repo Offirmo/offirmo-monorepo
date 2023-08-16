@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { generate_random_demo_monster } from '@tbrpg/logic-monsters'
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
+import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 import {
 	render_monster,
@@ -17,7 +17,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - monster', function()
 				const m = generate_random_demo_monster()
 				const $doc = render_monster(m)
 				//console.log(prettifyꓽjson($doc))
-				const str = rich_text_to_ansi($doc)
+				const str = rich_text_to_terminal($doc)
 				// should just not throw
 			}
 		})

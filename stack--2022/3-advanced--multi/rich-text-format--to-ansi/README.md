@@ -1,11 +1,11 @@
 
 ```
-import to_ansi from '@offirmo-private/rich-text-format--to-terminal'
+import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 	const $node = RichText.heading()
 		.pushText(book.title)
 		.done()
-	console.log(to_ansi($node))
+	console.log(to_terminal($node))
 
 ```
 

@@ -4,7 +4,7 @@ import * as RichText from '@offirmo-private/rich-text-format'
 
 import { generate_random_demo_armor, DEMO_ARMOR_1, DEMO_ARMOR_2 } from '@tbrpg/logic-armors'
 
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
+import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 import { render_armor_detailed } from './index.js'
 
@@ -43,19 +43,19 @@ describe('🔠  view to @offirmo-private/rich-text-format - items -- armor', fun
 
 			const doc1 = render_armor_detailed(DEMO_ARMOR_1)
 			//console.log(prettifyꓽjson(doc1))
-			let str = rich_text_to_ansi(doc1)
+			let str = rich_text_to_terminal(doc1)
 			// should just not throw
 
 			const doc2 = render_armor_detailed(DEMO_ARMOR_2)
 			//console.log(prettifyꓽjson(doc2))
-			str = rich_text_to_ansi(doc2)
+			str = rich_text_to_terminal(doc2)
 			// should just not throw
 
 			for(let i = 0; i < 10; ++i) {
 				const item = generate_random_demo_armor()
 				const $doc = render_armor_detailed(item)
 				//console.log(prettifyꓽjson($doc))
-				const str = rich_text_to_ansi($doc)
+				const str = rich_text_to_terminal($doc)
 				// should just not throw
 			}
 		})

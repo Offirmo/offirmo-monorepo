@@ -1,5 +1,4 @@
 import { expect } from 'chai'
-import stripAnsi from 'strip-ansi'
 
 import {
 	create,
@@ -7,7 +6,7 @@ import {
 	getꓽachievements_snapshot,
 } from '@tbrpg/state'
 
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
+import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 import { render_achievements_snapshot } from './index.js'
 
@@ -19,7 +18,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - achievements', funct
 
 		const $doc = render_achievements_snapshot(getꓽachievements_snapshot(state.u_state))
 		//console.log(prettifyꓽjson($doc))
-		const str = rich_text_to_ansi($doc)
+		const str = rich_text_to_terminal($doc)
 		console.log(str)
 		expect(str).to.be.a('string')
 	})

@@ -5,7 +5,7 @@ import { Options } from './types.js'
 import { OPTIONS__DISPLAYⵧDEFAULT } from './options--display.js'
 import { OPTIONS__PRETTIFYⵧDEFAULT } from './options--prettify.js'
 import { OPTIONS__STYLIZEⵧNONE } from './options--stylize--none.js'
-import { getꓽstylize_optionsⵧansi } from './options--stylize--ansi.js'
+import { getꓽstylize_optionsⵧterminal } from './options--stylize--terminal.js'
 import { getꓽlibꓽchalk } from './injectable-lib--chalk.js'
 
 /////////////////////////////////////////////////
@@ -15,7 +15,7 @@ function getꓽoptionsⵧdefault(): Options {
 		...OPTIONS__DISPLAYⵧDEFAULT,
 		...OPTIONS__PRETTIFYⵧDEFAULT,
 		...OPTIONS__STYLIZEⵧNONE,
-		...(getꓽlibꓽchalk() && getꓽstylize_optionsⵧansi(getꓽlibꓽchalk())),
+		...(getꓽlibꓽchalk() && getꓽstylize_optionsⵧterminal(getꓽlibꓽchalk())),
 	}
 }
 

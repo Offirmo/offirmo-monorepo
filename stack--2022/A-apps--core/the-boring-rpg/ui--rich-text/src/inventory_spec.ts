@@ -18,7 +18,7 @@ import {
 	add_amount,
 } from '@tbrpg/state-wallet'
 
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
+import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 import { LIB } from './consts.js'
 import {
@@ -92,7 +92,7 @@ describe(`🔠  ${LIB} - inventory`, function() {
 
 				const $doc = render_backpack(inventory)
 				//console.log(prettifyꓽjson($doc))
-				const str = rich_text_to_ansi($doc)
+				const str = rich_text_to_terminal($doc)
 				// should just not throw
 				//console.log(str)
 			})
@@ -139,7 +139,7 @@ describe(`🔠  ${LIB} - inventory`, function() {
 				inventory = equip_item(inventory, DEMO_ARMOR_2.uuid)
 
 				const $doc = render_equipment(inventory)
-				const str = rich_text_to_ansi($doc)
+				const str = rich_text_to_terminal($doc)
 				// should just not throw
 			})
 		})
@@ -167,7 +167,7 @@ describe(`🔠  ${LIB} - inventory`, function() {
 				wallet = add_amount(wallet, Currency.token, 67)
 
 				const $doc = render_full_inventory(inventory, wallet)
-				const str = rich_text_to_ansi($doc)
+				const str = rich_text_to_terminal($doc)
 				// should just not throw
 			})
 		})

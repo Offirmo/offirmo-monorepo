@@ -3,8 +3,7 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 import {
-	renderⵧto_ansi,
-	callbacksⵧto_ansi,
+	renderⵧto_terminal,
 } from '@offirmo-private/rich-text-format--to-terminal'
 
 import { Book, BookPart, Page } from '../book/types.js'
@@ -100,7 +99,7 @@ async function renderꓽBook(book: Immutable<Book>, options: { resolver?: (id:st
 	}
 
 	const $nodeⵧtitle = _raw_text_to_$node(book.title)
-	console.log(renderⵧto_ansi(
+	console.log(renderⵧto_terminal(
 		RichText.heading()
 			.pushText(`‖ ⎨⎨gᐧtitle⎬⎬ ‖`)
 			.done(),

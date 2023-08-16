@@ -1,7 +1,7 @@
 /*import { expect } from 'chai'
 
 import { DEMO_STATE } from '@tbrpg/state--character'
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
+import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 
 import {
@@ -17,7 +17,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - attributes', functio
 		describe('demo', function() {
 			it('shows off', () => {
 				const $doc = render_character_sheet(DEMO_STATE)
-				const str = rich_text_to_ansi($doc)
+				const str = rich_text_to_terminal($doc)
 				// should just not throw
 			})
 		})

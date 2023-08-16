@@ -9,7 +9,7 @@ import {
 	add_amount,
 } from '@tbrpg/state-wallet'
 
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
+import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 import {
 	render_wallet,
@@ -52,7 +52,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - wallet', function() 
 		it('shows off', () => {
 			const $doc = render_wallet(DEMO_STATE)
 			//console.log(prettifyꓽjson($doc))
-			const str = rich_text_to_ansi($doc)
+			const str = rich_text_to_terminal($doc)
 			// should just not throw
 		})
 	})

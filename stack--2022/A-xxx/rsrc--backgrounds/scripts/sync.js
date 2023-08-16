@@ -2,7 +2,7 @@ const path = require('path')
 
 const { /*trim, replace,*/ capitalize } = require('lodash')
 const { dumpꓽanyⵧprettified, prettifyꓽjson } = require('@offirmo-private/prettify-any')
-const rich_text_to_ansi = require('@offirmo-private/rich-text-format--to-terminal')
+const rich_text_to_terminal = require('@offirmo-private/rich-text-format--to-terminal')
 const fs = require('@offirmo/cli-toolbox/fs/extra')
 
 const { AUTHORS_BY_NAME, ELEMENTS, render_artwork_legend } = require('../dist/src.es2019.cjs')
@@ -152,7 +152,7 @@ author_dirs.forEach(author_dir => {
 			case 'review':
 				console.log(
 					existing_bg
-						? ' Previously known as: ' + renderⵧto_ansi(render_artwork_legend(existing_bg))
+						? ' Previously known as: ' + renderⵧto_terminal(render_artwork_legend(existing_bg))
 						: '🆕'
 				)
 				/* fallthrough */

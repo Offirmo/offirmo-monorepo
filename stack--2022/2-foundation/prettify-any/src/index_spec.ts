@@ -10,7 +10,7 @@ injectꓽlibꓽchalk(chalk as any)
 import {
 	prettifyꓽany as _prettify_any,
 } from './v2.js'
-import { getꓽstylize_optionsⵧansi } from './options--stylize--ansi.js'
+import { getꓽstylize_optionsⵧterminal } from './options--stylize--terminal.js'
 
 /////////////////////////////////////////////////
 
@@ -18,7 +18,7 @@ describe('@offirmo-private/prettify-any', function() {
 	const should_test_verbose = false
 
 	describe('prettifyꓽany()', function() {
-		const stylizeꓽerror = getꓽstylize_optionsⵧansi(chalk).stylizeꓽerror
+		const stylizeꓽerror = getꓽstylize_optionsⵧterminal(chalk).stylizeꓽerror
 		function prettifyꓽany(...args: Parameters<typeof _prettify_any>) {
 			const prettified = _prettify_any(...args)
 			if (prettified.startsWith('[error prettifying:'))

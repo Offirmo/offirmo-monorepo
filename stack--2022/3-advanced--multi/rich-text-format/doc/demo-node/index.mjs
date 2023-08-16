@@ -12,7 +12,7 @@ import {
 	DOC_DEMO_INVENTORY,
 } from '../examples.mjs'
 
-import renderⵧto_ansi from '../../../rich-text-format--to-ansi/index.mjs'
+import renderⵧto_terminal from '../../../rich-text-format--to-ansi/index.mjs'
 
 function demo(wrapped_doc) {
 	const key = Object.keys(wrapped_doc)[0]
@@ -22,7 +22,7 @@ function demo(wrapped_doc) {
 
 	console.log('\n------- to text -------\n' + RichText.to_text(doc))
 
-	if (renderⵧto_ansi) console.log('\n------- to ansi -------\n' + renderⵧto_ansi(doc))
+	if (renderⵧto_terminal) console.log('\n------- to terminal -------\n' + renderⵧto_terminal(doc))
 }
 
 ////////////////////////////////////

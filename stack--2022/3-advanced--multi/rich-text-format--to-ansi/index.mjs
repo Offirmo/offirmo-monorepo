@@ -7,7 +7,7 @@ import {
 
 /////////////////////////////////////////////////
 
-const LIB = 'rich_text_to_ansi'
+const LIB = '@offirmo-private/rich-text-format--to-terminal'
 
 const DEFAULT_RENDERING_OPTIONSⵧToAnsi = Object.freeze({
 	...DEFAULT_RENDERING_OPTIONSⵧToText,
@@ -188,12 +188,12 @@ function on_classⵧafter({ $class, state, $node, depth }, options) {
 	return state
 }
 
-const callbacksⵧto_ansi = {
+const callbacksⵧto_terminal = {
 	on_type,
 	on_classⵧafter,
 }
 
-function renderⵧto_ansi(doc, callback_overrides = {}) {
+function renderⵧto_terminal(doc, callback_overrides = {}) {
 	//console.log(`${LIB} Rendering:`, doc)
 	return renderⵧto_text(
 		doc,
@@ -201,7 +201,7 @@ function renderⵧto_ansi(doc, callback_overrides = {}) {
 			style: 'advanced',
 		},
 		{
-			...callbacksⵧto_ansi,
+			...callbacksⵧto_terminal,
 			...callback_overrides,
 		},
 	)
@@ -209,9 +209,9 @@ function renderⵧto_ansi(doc, callback_overrides = {}) {
 
 /////////////////////////////////////////////////
 
-export default renderⵧto_ansi
+export default renderⵧto_terminal
 
 export {
-	renderⵧto_ansi,
-	callbacksⵧto_ansi,
+	renderⵧto_terminal,
+	callbacksⵧto_terminal,
 }
