@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { generate_random_demo_monster } from '@tbrpg/logic-monsters'
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-ansi'
+import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
 
 import {
 	render_monster,

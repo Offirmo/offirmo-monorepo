@@ -5,7 +5,7 @@ import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 
 import { generate_random_demo_weapon, DEMO_WEAPON_1, DEMO_WEAPON_2 } from '@tbrpg/logic-weapons'
 
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-ansi'
+import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
 
 import { render_weapon_detailed } from './index.js'
 

@@ -1,6 +1,6 @@
 
 ```
-import to_ansi from '@offirmo-private/rich-text-format--to-ansi'
+import to_ansi from '@offirmo-private/rich-text-format--to-terminal'
 
 	const $node = RichText.heading()
 		.pushText(book.title)

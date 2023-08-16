@@ -18,7 +18,7 @@ import {
 	add_amount,
 } from '@tbrpg/state-wallet'
 
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-ansi'
+import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
 
 import { LIB } from './consts.js'
 import {

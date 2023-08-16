@@ -12,7 +12,7 @@ import {
 	DEMO_ADVENTURE_04,
 } from '@tbrpg/state'
 
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-ansi'
+import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
 
 import { render_adventure } from './index.js'
 

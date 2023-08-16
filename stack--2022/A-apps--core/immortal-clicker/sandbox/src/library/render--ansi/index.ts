@@ -5,7 +5,7 @@ import * as RichText from '@offirmo-private/rich-text-format'
 import {
 	renderⵧto_ansi,
 	callbacksⵧto_ansi,
-} from '@offirmo-private/rich-text-format--to-ansi'
+} from '@offirmo-private/rich-text-format--to-terminal'
 
 import { Book, BookPart, Page } from '../book/types.js'
 import { isꓽBook, isꓽBookPart, isꓽPage, isꓽPageⵧlike } from '../book/types--guards.js'

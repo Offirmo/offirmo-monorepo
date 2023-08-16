@@ -24,30 +24,31 @@ For ex. to make everything work again step by step!
 
 ```bash
 bolt postinstall
+
 bolt --only-fs "[0-9]-*/*" ws run build
 bolt --only-fs "[0-9]-*/*" ws run test
-bolt --only-fs "0-meta/build-tools/*" ws run build
-bolt --only-fs "0-meta/build-tools/*" ws run test
-bolt --only-fs "1-stdlib/*" ws run build
-bolt --only-fs "1-stdlib/*" ws run test
-bolt --only-fs "1-stdlib/*" ws run ensure-size
-bolt --only-fs "2-foundation/*" ws run build
-bolt --only-fs "2-foundation/*" ws run test
-bolt --only-fs "3-advanced--*/*" ws run build
-bolt --only-fs "3-advanced--multi/*" ws run build
-bolt --only-fs "3-advanced--multi/*" ws run test
-bolt --only-fs "3-advanced--isomorphic/*" ws run build
-bolt --only-fs "3-advanced--isomorphic/*" ws run test
-bolt --only-fs "3-advanced--browser/*" ws run build
-bolt --only-fs "3-advanced--browser/*" ws run test
-bolt --only-fs "3-advanced--node/*" ws run build
-bolt --only-fs "3-advanced--node/*" ws run test
-bolt --only-fs "4-tools/*" ws run build
-bolt --only-fs "4-tools/*" ws run test
-bolt --only-fs "5-incubator/**/*" ws run build
-bolt --only-fs "5-incubator/**/*" ws run test
-bolt --only-fs "9-rpg/**/*" ws run build
-bolt --only-fs "9-rpg/**/*" ws run test
+  bolt --only-fs "0-meta/build-tools/*" ws run build
+  bolt --only-fs "0-meta/build-tools/*" ws run test
+  bolt --only-fs "1-stdlib/*" ws run build
+  bolt --only-fs "1-stdlib/*" ws run test
+  bolt --only-fs "1-stdlib/*" ws run ensure-size
+  bolt --only-fs "2-foundation/*" ws run build
+  bolt --only-fs "2-foundation/*" ws run test
+  bolt --only-fs "3-advanced--*/*" ws run build
+    bolt --only-fs "3-advanced--multi/*" ws run build
+    bolt --only-fs "3-advanced--multi/*" ws run test
+    bolt --only-fs "3-advanced--isomorphic/*" ws run build
+    bolt --only-fs "3-advanced--isomorphic/*" ws run test
+    bolt --only-fs "3-advanced--browser/*" ws run build
+    bolt --only-fs "3-advanced--browser/*" ws run test
+    bolt --only-fs "3-advanced--node/*" ws run build
+    bolt --only-fs "3-advanced--node/*" ws run test
+  bolt --only-fs "4-tools/*" ws run build
+  bolt --only-fs "4-tools/*" ws run test
+  bolt --only-fs "5-incubator/**/*" ws run build
+  bolt --only-fs "5-incubator/**/*" ws run test
+  bolt --only-fs "9-rpg/**/*" ws run build
+  bolt --only-fs "9-rpg/**/*" ws run test
 bolt --only-fs "A-apps--core/the-boring-rpg/**/*" ws run build
 bolt --only-fs "A-apps--core/the-boring-rpg/**/*" ws run test
 bolt --only-fs "B-apps--support/online-adventur.es/**/*" ws run build

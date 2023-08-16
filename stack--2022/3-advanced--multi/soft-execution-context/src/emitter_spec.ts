@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { displayError } from '@offirmo-private/print-error-to-ansi'
+import { displayError } from '@offirmo-private/print-error-to-terminal'
 
 import {
 	LIB,

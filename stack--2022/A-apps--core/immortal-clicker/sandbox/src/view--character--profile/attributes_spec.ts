@@ -1,7 +1,7 @@
 /*import { expect } from 'chai'
 
 import { DEMO_STATE } from '@tbrpg/state--character'
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-ansi'
+import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
 
 
 import {

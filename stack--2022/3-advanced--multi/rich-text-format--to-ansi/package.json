@@ -1,7 +1,7 @@
 {
-	"name": "@offirmo-private/rich-text-format--to-ansi",
+	"name": "@offirmo-private/rich-text-format--to-terminal",
 	"version": "0.0.1",
-	"description": "Rendering rich text format to Ansi (Terminal)",
+	"description": "Rendering rich text format for display on a Terminal (with escape codes)",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 	"private": true,

@@ -2,7 +2,7 @@
 import chalk from 'chalk'
 
 import { injectꓽlibꓽchalk, prettifyꓽany } from '@offirmo-private/prettify-any'
-import { displayError } from '@offirmo-private/print-error-to-ansi'
+import { displayError } from '@offirmo-private/print-error-to-terminal'
 
 injectꓽlibꓽchalk(chalk)
 

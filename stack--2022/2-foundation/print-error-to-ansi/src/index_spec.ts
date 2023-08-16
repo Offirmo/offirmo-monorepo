@@ -9,7 +9,7 @@ import {
 import { createError } from '@offirmo/error-utils'
 
 
-describe(`@offirmo-private/print-error-to-ansi`, () => {
+describe(`@offirmo-private/print-error-to-terminal`, () => {
 
 	describe('error_to_string()', () => {
 

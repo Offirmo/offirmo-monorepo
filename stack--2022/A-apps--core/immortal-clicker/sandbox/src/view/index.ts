@@ -6,7 +6,7 @@ const root_logger = getLogger()
 root_logger.setLevel('silly')
 
 import * as RichText from '@offirmo-private/rich-text-format'
-import renderⵧto_ansi from '@offirmo-private/rich-text-format--to-ansi'
+import renderⵧto_ansi from '@offirmo-private/rich-text-format--to-terminal'
 
 import * as State from '../state/index.js'
 import { renderⵧgeneric } from './generic.js'

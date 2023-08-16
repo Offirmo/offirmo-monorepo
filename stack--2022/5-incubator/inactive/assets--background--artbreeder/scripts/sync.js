@@ -1,7 +1,7 @@
 const path = require('path')
 
 //const { dumpꓽanyⵧprettified } = require('@offirmo-private/prettify-any')
-//const rich_text_to_ansi = require('@offirmo-private/rich-text-format--to-ansi')
+//const rich_text_to_ansi = require('@offirmo-private/rich-text-format--to-terminal')
 const fs = require('@offirmo/cli-toolbox/fs/extra')
 const { getLogger } = require('@offirmo/universal-debug-api-node')
 

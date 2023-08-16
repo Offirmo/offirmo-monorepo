@@ -4,7 +4,7 @@ import * as RichText from '@offirmo-private/rich-text-format'
 
 import { generate_random_demo_armor, DEMO_ARMOR_1, DEMO_ARMOR_2 } from '@tbrpg/logic-armors'
 
-import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-ansi'
+import rich_text_to_ansi from '@offirmo-private/rich-text-format--to-terminal'
 
 import { render_armor_detailed } from './index.js'
 
