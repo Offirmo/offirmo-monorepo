@@ -20,17 +20,44 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 ## Technical details
 
 ### PENDING updates
-- [ ] ES2023
-- [ ] full ES6 https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-move-my-commonjs-project-to-esm
-- [ ] 2023-10-24 oldest active LTS node 18 → 20  https://github.com/nodejs/release#release-schedule
+- [ ] TODO DONE TS supports [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762) = update unit tests!
+- [ ] 🆙2023-10-24 oldest active LTS node 18 → 20  https://github.com/nodejs/release#release-schedule
+- [ ] mid 2024 [ES2024](https://en.wikipedia.org/wiki/ECMAScript_version_history)
+- [ ] TS supports importing .ts
+- [ ] TS supports exporting with explicit module infos
 - [ ] webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
-- [ ] one day: No longer using webpack!
-- [ ] TS 4.7 check [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762)
+
+
+
+### update 2023-08-16
+Updated state:
+
+1. Node runtime version
+   * oldest active LTS node = [18](https://nodejs.org/en/about/releases/)
+   * 🆕most recent node supported by AWS lambda = [18](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)
+
+⭆ latest supported node = 18
+
+2. ECMASCript version
+* 🆕latest ES = [ES2023](https://en.wikipedia.org/wiki/ECMAScript_version_history)
+* latest ES reasonably supported by this node LTS (latest minor) = [ES2023](https://node.green/#ES2023)
+* 🆕latest ES supported by TypeScript as a target = [2022](https://www.typescriptlang.org/tsconfig#target)
+* 🆕latest ES supported by TypeScript as a lib = [2022](https://www.typescriptlang.org/tsconfig#lib)
+* 🆕latest ES reasonably supported by browsers or polyfills = [ES2023](https://kangax.github.io/compat-table/es2016plus/)
+* 🆕we no longer consider webpack (outdated tool, we no longer use it)
+
+⭆ latest convenient ES = 2022 (if changed, need search&replace in package.json, search for "es2022" and "update marker")
+
+3. ES module
+- 🆕we consider webpack oudtated and are no longer taking into account its limitations
+- 🆕we consider the ecosystem advanced enough to move to full ES6 https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-move-my-commonjs-project-to-esm
+
+⭆ 🆕latest convenient module = ES (module = 2022 in TypeScript)
 
 
 ### update 2022-11-20
 Updated state:
-* latest ES = [ES2022](https://en.wikipedia.org/wiki/ECMAScript#Versions)
+* latest ES = [ES2022](https://en.wikipedia.org/wiki/ECMAScript_version_history)
 * oldest active LTS node = [18](https://nodejs.org/en/about/releases/)
 * latest ES reasonably supported by this node LTS (latest minor) = [ES2023](https://node.green/#ES2022)
 * latest ES syntax supported by Webpack (= Acorn supports it + webpack bumped Acorn) = ES2021
@@ -39,8 +66,8 @@ Updated state:
   * latest ES syntax reasonably supported by this Acorn = [2023](https://github.com/acornjs/acorn/blob/master/acorn/CHANGELOG.md)
 * FYI compilers/polyfills https://kangax.github.io/compat-table/es2016plus/
 
-= latest supported node = 18
-= latest convenient ES = 2022 (if changed, need search&replace in package.json)
+= 🆕latest supported node = 18
+= 🆕latest convenient ES = 2022 (if changed, need search&replace in package.json)
 
 
 ### update 2022-05-02
@@ -59,7 +86,7 @@ Updated state:
 * FYI compilers/polyfills https://kangax.github.io/compat-table/es2016plus/
 
 = latest supported node = 16
-= latest convenient ES = 2021
+= 🆕latest convenient ES = 2021
 
 
 ### update 2022-03-21
@@ -185,7 +212,6 @@ since node 10 in maintenance mode since 2020-05-19 https://nodejs.org/en/about/r
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 
-	"type": "module",  XXX No as [2022/05](update marker) this is taken too seriously by node which refuses to use commonjs
 	"sideEffects": false,
 	"exports": { XXX are there any tools able to read that? Even typescript doesnt (as of 4.5)
 		".": {

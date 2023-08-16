@@ -32,13 +32,13 @@ const cli = meow('build', {
 
 /////////////////////
 
-// [Last updated 2022/11](update marker)
+// [Last updated 2023/08](update marker)
 // note: we could object to this info being duplicated here from tsconfig
 // but it's better semantic (hard to comment in tsconfig)
 const LATEST_ES_OLDEST_ACTIVE_NODE_LTS = 'ES2022' // should be <= LATEST_CONVENIENT_ES
-const LATEST_ES_MODULES = 'ES2022'
+const LATEST_ES_MODULES = 'ES2022' // from https://www.typescriptlang.org/tsconfig#module
 // "NodeNext" is recommended by https://2ality.com/2021/06/typescript-esm-nodejs.html
-// XXX "NodeNext" is an "intelligent" setting that also affects module resolution https://www.typescriptlang.org/tsconfig#node16nodenext-nightly-builds
+// BUT NO! "NodeNext" is an "intelligent" setting that also affects module resolution https://www.typescriptlang.org/tsconfig#node16nodenext-nightly-builds
 /////////////////////
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -139,7 +139,7 @@ function build_esm() {
 // build sequentially to not duplicate the errors if any.
 // CJS is usable in both node and bundled frontend,
 // thus we build only this one in watch = dev mode.
-// (update marker) as of 2022/05 the ecosystem (typescript) is not ready for pure ESM
+// (update marker) as of 2023/08 the ecosystem (typescript) is somehow ready for pure ESM
 Promise.resolve()
 	.then(() => {
 		if (cli.flags.watch) {

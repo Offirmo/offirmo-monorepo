@@ -7,3 +7,5 @@ Nathan Cooley Aug 2022
 
 https://html2canvas.hertzen.com/features/
 https://github.com/bubkoo/html-to-image
+
+unified inbox https://www.theverge.com/2023/8/9/23824562/slack-redesign-app-dms-activity-later
