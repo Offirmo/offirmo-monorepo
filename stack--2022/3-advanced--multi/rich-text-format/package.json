@@ -47,6 +47,5 @@
 		"npm-run-all": "^4",
 		"tiny-invariant": "^1",
 		"tslib": "^2"
-	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--multi/rich-text-format"
+	}
 }

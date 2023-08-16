@@ -31,6 +31,5 @@
 
 	"scripts": {
 		"test": "echo \"* @offirmo/toolbox--xyz: no need for unit tests for this kind of repo (meta)\""
-	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/0-meta/toolboxes/toolbox--parcel"
+	}
 }

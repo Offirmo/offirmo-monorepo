@@ -47,7 +47,5 @@
 		"npm-run-all": "^4",
 		"prettyjson": "^1",
 		"tslib": "^2"
-	},
-
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/2-foundation/prettify-any"
+	}
 }

@@ -5,7 +5,5 @@
 	"description": "Graphical assets for an RPG UI: cursors",
 	"license": "Unlicense",
 
-	"dependencies": {},
-
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/9-oh-my-rpg/assets--cursors"
+	"dependencies": {}
 }

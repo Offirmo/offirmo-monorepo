@@ -26,7 +26,5 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4"
-	},
-
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--node/state-migration-tester"
+	}
 }

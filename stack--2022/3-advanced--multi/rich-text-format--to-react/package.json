@@ -33,6 +33,5 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/toolbox--parcel": "^0",
 		"react": "^18"
-	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--multi/rich-text-format-to-react"
+	}
 }

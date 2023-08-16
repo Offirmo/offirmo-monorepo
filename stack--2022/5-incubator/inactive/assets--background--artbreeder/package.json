@@ -57,6 +57,5 @@
 		"npm-run-all": "^4",
 		"term-img": "^6",
 		"tslib": "^2"
-	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/9-oh-my-rpg/assets--background--artbreeder"
+	}
 }

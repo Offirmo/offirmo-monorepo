@@ -47,6 +47,5 @@
 		"@offirmo/unit-test-toolbox": "^8",
 		"npm-run-all": "^4",
 		"tslib": "^2"
-	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/A-apps--core/the-boring-rpg/logic--weapons"
+	}
 }

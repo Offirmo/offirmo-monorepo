@@ -43,7 +43,5 @@
 		"npm-run-all": "^4",
 		"strip-ansi": "^7",
 		"tslib": "^2"
-	},
-
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/2-foundation/print-error-to-ansi"
+	}
 }

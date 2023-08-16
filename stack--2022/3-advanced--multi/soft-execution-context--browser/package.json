@@ -27,6 +27,5 @@
 		"bowser": "^2",
 		"npm-run-all": "^4",
 		"tslib": "^2"
-	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--multi/soft-execution-context-browser"
+	}
 }

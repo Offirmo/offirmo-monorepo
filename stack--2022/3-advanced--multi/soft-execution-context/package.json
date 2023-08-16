@@ -49,6 +49,5 @@
 		"build": "run-s  clean _build:prod",
 		"cheatsheet": "node doc/cheatsheet.mjs",
 		"demo": "echo '-> Open the pages in a browser'"
-	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--multi/soft-execution-context"
+	}
 }

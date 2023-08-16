@@ -24,7 +24,5 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^8"
-	},
-
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/0-meta/build-tools/simple-upgradable-template"
+	}
 }

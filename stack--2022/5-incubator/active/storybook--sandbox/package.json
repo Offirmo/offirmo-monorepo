@@ -29,6 +29,5 @@
 		"@types/react-swipeable-views-core": "^0",
 		"@types/react-swipeable-views-utils": "^0",
 		"npm-run-all": "^4"
-	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/storybook--utils"
+	}
 }

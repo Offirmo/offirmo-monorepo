@@ -14,7 +14,5 @@
 	},
 	"module": "index.js",
 	"main": "index.js",
-	"source": "index.js",
-
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/1-stdlib/poll"
+	"source": "index.js"
 }
