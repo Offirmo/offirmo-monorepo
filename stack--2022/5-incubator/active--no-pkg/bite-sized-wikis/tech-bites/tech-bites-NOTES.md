@@ -1,17 +1,16 @@
 Senior Dev tips!
 * individual contributor
 * TL vs PM vs PM vs EM
-* "DRY"
-  * don't repeat yourself
-  * WET https://overreacted.io/the-wet-codebase/
-* "dependency hell" https://en.wikipedia.org/wiki/Dependency_hell
-* "dry run"
-* "shaving the yak"
-* KISS
-* KTLO
-* crunch
-* SME
-* OKR
+DRY don't repeat yourself
+WET https://overreacted.io/the-wet-codebase/
+dependency hell" https://en.wikipedia.org/wiki/Dependency_hell
+dry run"
+shaving the yak"
+KISS
+KTLO
+crunch
+SME
+OKR
 * progress over perfection
 * submarine
 * better ask for forgiveness than for permission
@@ -39,7 +38,6 @@ how to break out of a mental rut
 https://hbr.org/2019/09/to-coach-junior-employees-start-with-4-conversations
 
 https://adr.github.io/ Sustainable Architectural Decisions
-
 
 https://blockprotocol.org/
 
@@ -72,6 +70,7 @@ https://itnext.io/deployment-maturity-levels-feab55c20d04
 https://xyproblem.info/
 
 https://en.wikipedia.org/wiki/Inner-platform_effect
+https://en.wikipedia.org/wiki/Cross-cutting_concern
 
 functional programming, single source of truth, flux architecture, heap memory, stack, stack memory, stack overflow, database, async/sync, atomic, context switch, queue, fifo, pointer, handle, register, assembly, microcode, RAM, allocation, garbage collector, message passing, ownership, flux architecture, global variable, scope, loop, breaking out of a loop, jump/goto, map, flatmap, event loop, blocking, semaphore, thread, system call, file write, file read, cache, flushing, object, class, function, constructor, state, typecast, types, prototypes, hooks, log, MVC, dependencies, dependency hell, recursion, linked list, tree, revisions, tree walk, compiler, transpiler, comment, annotation
 Well done sourcing the mental models from your readers ;)
@@ -135,7 +134,7 @@ executive
 vaporware
 
 rate-limiting
-cost based rate limiting
+rate-limiting -- cost based
 
 magic number
 
@@ -328,103 +327,65 @@ This is a psychologically and emotionally healthy place to work.
 This is a psychologically and emotionally healthy place to work.
 
 People here are treated fairly regardless of their age.
-People here are treated fairly regardless of their age.
-
 Promotions go to those who best deserve them.
-Promotions go to those who best deserve them.
-
 People look forward to coming to work here.
-People look forward to coming to work here.
-
 I can be myself around here.
-I can be myself around here.
-
 Management delivers on its promises.
-Management delivers on its promises.
-
 People here are treated fairly regardless of their race.
-People here are treated fairly regardless of their race.
-
 People care about each other here.
-People care about each other here.
-
 Management's actions match its words.
-Management's actions match its words.
-
 Our facilities contribute to a good working environment.
-Our facilities contribute to a good working environment.
-
 People here are treated fairly regardless of their gender.
-People here are treated fairly regardless of their gender.
-
 I'm proud to tell others I work here.
-I'm proud to tell others I work here.
-
 People celebrate special events around here.
-People celebrate special events around here.
-
 I believe management would lay people off only as a last resort.
-I believe management would lay people off only as a last resort.
-
-People avoid politicking and backstabbing as ways to get things done.
 People avoid politicking and backstabbing as ways to get things done.
 
 People are encouraged to balance their work life and their personal life.
-People are encouraged to balance their work life and their personal life.
 
-People here are treated fairly regardless of their sexual orientation.
 People here are treated fairly regardless of their sexual orientation.
 
 Management is competent at running the business.
-Management is competent at running the business.
 
-If I am unfairly treated, I believe I'll be given a fair shake if I appeal.
 If I am unfairly treated, I believe I'll be given a fair shake if I appeal.
 
 We have special and unique benefits here.
-We have special and unique benefits here.
 
-Management is honest and ethical in its business practices.
 Management is honest and ethical in its business practices.
 
 Management shows a sincere interest in me as a person, not just an employee.
-Management shows a sincere interest in me as a person, not just an employee.
 
-I want to work here for a long time.
 I want to work here for a long time.
 
 I am treated as a full member here regardless of my position.
-I am treated as a full member here regardless of my position.
 
-I am able to take time off from work when I think it's necessary.
 I am able to take time off from work when I think it's necessary.
 
 I feel I make a difference here.
-I feel I make a difference here.
 
-When you join the company, you are made to feel welcome.
 When you join the company, you are made to feel welcome.
 
 This is a fun place to work.
-This is a fun place to work.
 
-Management hires people who fit in well here.
 Management hires people who fit in well here.
 
 I would strongly endorse my company to friends and family as a great place to work.
-I would strongly endorse my company to friends and family as a great place to work.
 
-Our customers would rate the service we deliver as "excellent."
 Our customers would rate the service we deliver as "excellent."
 
 Our executives fully embody the best characteristics of our company.
-Our executives fully embody the best characteristics of our company.
 
-We celebrate people who try new and better ways of doing things, regardless of the outcome.
 We celebrate people who try new and better ways of doing things, regardless of the outcome.
 
 People here quickly adapt to changes needed for our organization's success.
-People here quickly adapt to changes needed for our organization's success.
 
 Taking everything into account, I would say this is a great place to work.
-Taking everything into account, I would say this is a great place to work.
+
+devops
+finops
+
+state management
+
+conventional commits
+conventional changelogs https://github.com/conventional-changelog
+conventional comments

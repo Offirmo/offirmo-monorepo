@@ -29,6 +29,7 @@ villains https://www.news.com.au/entertainment/books-magazines/books/mary-trump-
 "+ grandes industries criminelles"
 Appelé l’industrie criminelle à la plus grande croissance au monde, le trafic des êtres humains inclut le travail forcé
 
+https://en.wikipedia.org/wiki/Putting-out_system
 
 https://www.famillechretienne.fr/6603/article/manipulateurs-pervers-narcissiques-comment-les-reconnaitre
 * certitude d'être exceptionnel
@@ -52,6 +53,10 @@ Cinq conseils pour discerner
 3. Plus l’identité d’une communauté est forte, plus il est nécessaire de distinguer les « fonctions » : modérateur, accompagnateur spirituel, médecin Toujours bien séparer for interne et for externe.
 4. Toute personne qui exerce une fonction de gouvernement doit connaître les signes principaux de la PN. En cas de doute, elle doit s’informer auprès d’une personne compétente.
 5. Repérer les PN ne suffit pas, il faut aussi et d’abord prendre soin des nombreuses victimes dans l’entourage.
+
+
+https://theconversation.com/gary-mckee-what-it-takes-to-run-a-marathon-a-day-for-a-year-197184
+https://womensagenda.com.au/latest/erchana-murray-is-running-one-marathon-daily-for-150-consecutive-days-to-run-length-of-australia/
 
 
 Wiseman’s book focuses on bringing out individuals’ inner potential, hopes, and motivation to improve the self

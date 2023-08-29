@@ -36,3 +36,4 @@ Basics:
 * https://ricardoborges.dev/data-structures-in-typescript-graph
 * https://en.wikipedia.org/wiki/Graph_theory
 * Existing implementation: https://segfaultx64.github.io/typescript-graph/index.html
+* other lib https://github.com/dagrejs/graphlib/wiki

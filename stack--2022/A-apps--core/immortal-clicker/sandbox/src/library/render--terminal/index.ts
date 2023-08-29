@@ -6,7 +6,7 @@ import {
 	renderⵧto_terminal,
 } from '@offirmo-private/rich-text-format--to-terminal'
 
-import { Book, BookPart, Page } from '../book/types.js'
+import { Book, BookInstance, BookPart, BookPage } from '../book/types.js'
 import { isꓽBook, isꓽBookPart, isꓽPage, isꓽPageⵧlike } from '../book/types--guards.js'
 
 /////////////////////////////////////////////////
@@ -62,11 +62,47 @@ function getꓽpart_type(book_parts: Immutable<BookPart>): string {
 	return 'part' // generic
 }
 
-function _string_to_page(content: string): Page {
+function _string_to_page(content: string): BookPage {
 	return { content }
 }
 
 const DEBUG = false
+
+
+async function renderꓽBookInstance(book: Immutable<BookInstance>, options: { resolver?: (id:string) => RichText.Node | undefined } = {}): Promise<void> {
+	if (DEBUG) console.group(`renderꓽBookInstance`)
+	//assert(isꓽBook(book), `should be a book!`)
+	//assert(book.title, `should have a title!`)
+
+	function resolve_unknown_subnode(sub_node_id: string): RichText.Node | undefined {
+		// BEWARE OF INFINITE LOOPS!
+		// RECOMMENDED TO ONLY RETURN SIMPLE NODES (just text)
+
+		switch (sub_node_id) {
+			case 'gᐧtitle':
+				return _raw_text_to_$node(book.title)
+
+			// ideas
+			case 'gᐧtitleⵧoriginal':
+				throw new Error('NIMP!')
+
+			default: {
+				if (options.resolver) {
+					const $node = options.resolver(sub_node_id)
+					if ($node) return $node
+				}
+				break;
+			}
+		}
+
+		console.warn(`resolver: unrecognized sub id "${sub_node_id}"!`)
+		return undefined
+	}
+
+	throw new Error('NIMP!')
+
+	if (DEBUG) console.groupEnd()
+}
 
 async function renderꓽBook(book: Immutable<Book>, options: { resolver?: (id:string) => RichText.Node | undefined } = {}): Promise<void> {
 	if (DEBUG) console.group(`renderꓽBook`)
@@ -167,7 +203,7 @@ async function _renderꓽBookPart(book_parts: Immutable<BookPart>, walk_state: I
 	if (DEBUG) console.groupEnd()
 }
 
-async function _renderꓽPage(page: Immutable<Page>, walk_state: Immutable<WalkState>): Promise<void> {
+async function _renderꓽPage(page: Immutable<BookPage>, walk_state: Immutable<WalkState>): Promise<void> {
 	if (DEBUG) console.group(`_renderꓽPage()`)
 	if (DEBUG) console.log(walk_state)
 
@@ -271,5 +307,6 @@ function _raw_text_to_$node(txt: string) {
 /////////////////////////////////////////////////
 
 export {
+	renderꓽBookInstance,
 	renderꓽBook,
 }

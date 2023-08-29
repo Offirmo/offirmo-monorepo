@@ -7,7 +7,10 @@ Use cases:
 * inside a RPG
 
 
-TODO lazy loading
+Required features
+* lazy loading
+
+
 
 
 ⌜⌝

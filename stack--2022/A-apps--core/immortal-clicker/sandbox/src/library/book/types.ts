@@ -17,6 +17,7 @@
 // - a serious environment (reader app)
 // - inside a game, RPG setting
 
+// TODO allow RichText!!
 
 /////////////////////////////////////////////////
 // Those types purely describe the technical aspect of displaying a book
@@ -24,9 +25,26 @@
 
 type BookUId = string
 
+type Author = string // TODO implement
+
+/////////////////////////////////////////////////
+
+// Because we have lazy loading,
+// we want to be able to progressively load a book, starting from the most basic infos
+// cover = 1st level, needed to display a list of books and decide whether one wants to read it
+interface BookCover {
+	title: string
+	author?: Author
+	subtitles?: string[] // TODO allow rich text?
+
+	hints?: {
+		pages_count?: number
+	}
+}
+
 // smallest unit of a "book" that can be displayed / linked to / have a "next" button
 // TODO review "auto splitting of long text" aka. auto splitting into pages
-interface Page {
+interface BookPage {
 	content: string
 	contentⵧvisual?: string // url
 	/*sub?: {
@@ -38,24 +56,25 @@ interface Page {
 // ex. volume, chapter...
 // Can form a tree of any depth
 interface BookPart {
-	title?: string
-	titleⵧsub?: string
-	// author?
-
 	parts_type?: string
 	parts: {
-		[k: string]: Book | BookPart | Page | string
+		[k: string]: Book | BookPart | BookPage | string
 	}
+
+	// optionally a part may have its own infos
+	title?: string
+	subtitles?: string[]
+	author?: Author
 }
 
 // top part
 // that can be independently considered
-interface Book extends BookPart {
-	uuid: BookUId // for referencing
+interface Book extends BookPart, BookCover {
+	uid: BookUId // for referencing
+
 	title: string
 
-	is_template?: true
-	
+	is_template?: true // TODO review
 	// TODO declare template slots?
 }
 
@@ -64,20 +83,20 @@ interface Book extends BookPart {
 // - a child book customized so that the hero has the child's name
 // - an RPG where the book refers to a changeable settings (randomized wordlbuiding, hero name, past actions...)
 interface BookInstance {
-	book_uuid: string
+	book_uid: string
 	params: { // TODO clarify
 		[key: string]: string
 	}
 }
 
-
 /////////////////////////////////////////////////
 
 export {
-	type Page,
+	type BookPage,
 	type BookPart,
 
 	type BookUId,
+	type BookCover,
 	type Book,
 	type BookInstance,
 }

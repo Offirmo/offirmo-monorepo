@@ -12,7 +12,7 @@ import {
 	DOC_DEMO_INVENTORY,
 } from '../examples.mjs'
 
-import renderⵧto_terminal from '../../../rich-text-format--to-ansi/index.mjs'
+import renderⵧto_terminal from '../../../rich-text-format--to-terminal/index.mjs'
 
 function demo(wrapped_doc) {
 	const key = Object.keys(wrapped_doc)[0]

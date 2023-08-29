@@ -44,6 +44,9 @@ buy nice or buy twice
 can't satisfy others
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
 cognitive bias
+collaboration issue -- Compromise, where the estimates contain only "lowest common denominator" language
+collaboration issue -- Gridlock, where many different interests slow the analytic process
+collaboration issue -- Groupthink, where opposing views are subconsciously discouraged
 comfort zone
 communication non violente
 competition is for Losers: Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
@@ -168,12 +171,10 @@ tradeoffs / can't have everything
 trust is earned
 trust takes years to earn and seconds to lose / Trust is built slowly, and lost quickly
 trust, but verify
+verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 via Negativa: When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 voleur volé
 who moved my cheese?
 wisdom
 être heureux n'est pas nécessairement confortable
 “The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.
-collaboration issue -- Gridlock, where many different interests slow the analytic process
-collaboration issue -- Compromise, where the estimates contain only "lowest common denominator" language
-collaboration issue -- Groupthink, where opposing views are subconsciously discouraged

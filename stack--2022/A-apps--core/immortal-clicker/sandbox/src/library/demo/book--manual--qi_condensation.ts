@@ -18,7 +18,7 @@ const ps = {
 }
 
 const MANUALⵧCULTIVATIONⵧQI_CONDENSATION: Book = {
-	uuid: 'manualⵧcultivationⵧqi_condensation',
+	uid: 'manualⵧcultivationⵧqi_condensation',
 
 	// ex. https://ww5.mangakakalot.tv/chapter/manga-ii985865/chapter-3
 	// writings and drawings

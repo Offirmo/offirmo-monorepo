@@ -1,13 +1,13 @@
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { Page, BookPart, Book } from './types.js'
+import { BookPage, BookPart, Book } from './types.js'
 
 /////////////////////////////////////////////////
 
-function isꓽPage(x: Immutable<any>): x is Page {
+function isꓽPage(x: Immutable<any>): x is BookPage {
 	return typeof x?.content === 'string'
 }
-function isꓽPageⵧlike(x: Immutable<any>): x is Page | string {
+function isꓽPageⵧlike(x: Immutable<any>): x is BookPage | string {
 	return isꓽPage(x) || typeof x === 'string'
 }
 
@@ -17,7 +17,7 @@ function isꓽBookPart(x: Immutable<any>): x is BookPart {
 
 function isꓽBook(x: Immutable<any>): x is Book {
 	return typeof x?.title === 'string'
-		&& typeof x?.uuid === 'string'
+		&& typeof x?.uid === 'string'
 		&& isꓽBookPart(x)
 }
 

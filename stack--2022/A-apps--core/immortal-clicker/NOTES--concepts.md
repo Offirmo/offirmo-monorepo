@@ -6,8 +6,10 @@
 4 symbols https://en.wikipedia.org/wiki/Four_Symbols
 5 classics https://en.wikipedia.org/wiki/Four_Books_and_Five_Classics#Five_Classics
 5 elements
+5 grains https://en.wikipedia.org/wiki/Five_Grains
 5 venoms: centipede, scorpion, spider, lizard, viper
 7 emotions and 6 pleasures
+8 principles https://en.wikipedia.org/wiki/Eight_principles
 Fengdu Ghost City https://en.wikipedia.org/wiki/Fengdu_Ghost_City
 acupuncture
 alchemy
@@ -49,6 +51,7 @@ cultivation base
 cultivation furnace
 cultivation realms
 curses
+dantian https://en.wikipedia.org/wiki/Dantian
 dantian(s) https://en.wikipedia.org/wiki/Dantian
 dao
 dao of (5 elements)
@@ -111,6 +114,8 @@ military rank -- 10000 major general
 military rank -- general
 mount
 mouthful of blood
+moxibustion https://en.wikipedia.org/wiki/Moxibustion
+neidan https://en.wikipedia.org/wiki/Neidan
 neidan https://en.wikipedia.org/wiki/Neidan
 pair cultivation
 pill -- aphrodisiac
@@ -134,6 +139,8 @@ qi -- yang
 qi -- yin
 qi deviation
 qi https://en.wikipedia.org/wiki/Qi
+qi https://en.wikipedia.org/wiki/Qi
+qiqong https://en.wikipedia.org/wiki/Qigong
 rank - chief
 rank - lord
 rank - master
@@ -151,8 +158,10 @@ sect secrets
 sect shield
 self-confidence
 self-sealing cultivation
+sericulture https://en.wikipedia.org/wiki/Sericulture
 servants, guards
 severing
+shiatsu https://en.wikipedia.org/wiki/Shiatsu
 shields
 soul
 soul lamps (-- normal / prime / true prime / paragon)

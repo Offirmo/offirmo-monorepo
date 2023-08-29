@@ -1,10 +1,25 @@
-
 /////////////////////////////////////////////////
 // Book EXPERIENCE
 // = meta customization
 
+
+
+// specs
+// know of a book
+// own a book
+// comprehension:
+// can't
+
+
+
+/////////////////////////////////////////////////
+
+import { BookUId } from '../book/types.js'
+
+/////////////////////////////////////////////////
+
 // path to a part or a page
-type Reference = string
+type Reference = string // TODO clarify
 
 type AccessLevel =
 	| 'unaware'                  // no access + not even aware of existence
@@ -23,9 +38,11 @@ type ComprehensionLevel =
 	| 'understoodⵧcritically'    // such comprehension that can find flaws in this book and rewrite it better
 
 interface BookExperience {
-	current_reading_path: Reference
-	
-	comprehension_level‿by_path: {
+	book_uid: BookUId
+
+	current_reading_path?: Reference
+
+	comprehension_level‿by_path?: {
 		[place: Reference]: AccessLevel | ComprehensionLevel
 	}
 
