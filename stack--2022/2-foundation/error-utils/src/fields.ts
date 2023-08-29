@@ -20,6 +20,10 @@ export const QUASI_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
 	// quasi-standard: followed by all browsers + node
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/prototype
 	'stack', // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/Stack
+
+	// ES2024
+	// already supported in TypeScript https://devblogs.microsoft.com/typescript/announcing-typescript-5-2/#using-declarations-and-explicit-resource-management
+	'suppressed',
 ])
 
 export const COMMON_ERROR_FIELDS = new Set<keyof XError>([
