@@ -1,3 +1,4 @@
+000 https://docs.google.com/spreadsheets/d/1QI1cm0mL444yehgJdHmBPh0j3RVeNUZRrcALWVFhTmA/edit?skip_itp2_check=true&pli=1#gid=509728303
 12 ornaments https://en.wikipedia.org/wiki/Twelve_Ornaments
 12 zodiac
 33 heavens
@@ -10,7 +11,10 @@
 5 venoms: centipede, scorpion, spider, lizard, viper
 7 emotions and 6 pleasures
 8 principles https://en.wikipedia.org/wiki/Eight_principles
+Classic of Mountains and Seas https://en.wikipedia.org/wiki/Classic_of_Mountains_and_Seas
 Fengdu Ghost City https://en.wikipedia.org/wiki/Fengdu_Ghost_City
+Immortality  https://en.wikipedia.org/wiki/Immortality
+Xiuzhen Tu  https://en.wikipedia.org/wiki/Xiuzhen_Tu
 acupuncture
 alchemy
 allheaven
@@ -91,9 +95,11 @@ feng shui
 frigid 2 adept
 frigid 3 master
 frigid 4 paragon
+grain avoidance   https://en.wikipedia.org/wiki/Bigu_(grain_avoidance)
 grand magic
 heaven -> man -> earth
 heaven and hearth
+herbology   https://en.wikipedia.org/wiki/Chinese_herbology
 hex
 immortal -- false
 immortal ruins
@@ -179,6 +185,7 @@ tribulation -- 3000 scarlet fire ## Apo
 tribulation -- heart demon ## Apo
 tribulation -- starfall ## Apo
 tribulation -- thunder ## Apo
+tui na   https://en.wikipedia.org/wiki/Tui_na
 weapons
 willpower
 wounds

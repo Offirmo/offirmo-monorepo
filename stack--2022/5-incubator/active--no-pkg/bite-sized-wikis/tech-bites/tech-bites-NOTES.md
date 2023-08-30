@@ -389,3 +389,5 @@ state management
 conventional commits
 conventional changelogs https://github.com/conventional-changelog
 conventional comments
+
+https://12factor.net/
