@@ -32,5 +32,6 @@ https://en.wikipedia.org/wiki/Draft:Free_Kindergarten_Movement
 https://en.wikipedia.org/w/index.php?search=+Free+Kindergarten+Union&title=Special%3ASearch&ns0=1
 google free kindergarten movement
 google Free Kindergarten Movement 1800 usa
+https://jvns.ca/blog/2023/03/06/possible-reasons-8-bit-bytes/
 
 https://global2033.org/

@@ -45,6 +45,10 @@ Battle
 - escape
 
 
+competition
+- https://manigacian.github.io/
+- https://mathiashjelm.gitlab.io/arcanum/
+
 
 Er Gen https://forum.webnovel.com/d/8302-er-gen-s-new-novel-three-inches-silver-human-mtl-names/20
 The chronological order is : PoT -> Ri -> New novel -> ISSTH -> AWE

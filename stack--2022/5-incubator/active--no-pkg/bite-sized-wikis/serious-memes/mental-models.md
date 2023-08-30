@@ -81,6 +81,7 @@ happiness is a skill
 helicopter parent
 herbe toujours plus verte
 https://cobeats.com/folder/ryfTgPr9H
+https://en.wikipedia.org/wiki/Group_polarization
 https://en.wikipedia.org/wiki/If%E2%80%94
 https://en.wikipedia.org/wiki/Johari_window
 https://flinkliv.com/
@@ -174,7 +175,9 @@ trust, but verify
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 via Negativa: When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 voleur volé
+wartime peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 who moved my cheese?
 wisdom
 être heureux n'est pas nécessairement confortable
 “The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.
+https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/

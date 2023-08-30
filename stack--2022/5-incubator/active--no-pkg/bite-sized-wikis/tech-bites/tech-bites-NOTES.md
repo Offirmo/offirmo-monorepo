@@ -391,3 +391,4 @@ conventional changelogs https://github.com/conventional-changelog
 conventional comments
 
 https://12factor.net/
+https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
