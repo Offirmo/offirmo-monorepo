@@ -392,3 +392,11 @@ conventional comments
 
 https://12factor.net/
 https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
+
+tech debt -- Deliberate  - e.g. optimising for short term delivery, knowing it increases the cost of future work.
+
+tech debt -- Accidental - e.g. bugs due to human error that unknowingly increases the cost of future work.
+
+tech debt -- Incidental  - e.g. organic changes in complexity over time that increases the cost of future work.
+
+SWE at Google https://abseil.io/resources/swe-book/html/toc.html

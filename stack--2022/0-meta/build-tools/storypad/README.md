@@ -10,3 +10,8 @@ This is an alternative which is:
 
 CAVEAT this tool can't discover the stories on its own.
 However this is trivial to do thanks to recent bundler's feature of "import glob" = ``
+
+
+https://storybook.js.org/docs/react/api/csf
+https://github.com/ComponentDriven/csf
+https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories

@@ -5,6 +5,7 @@
 5 regrets of dying
 80/20 rule (Pareto)
 Copernican Principle: The more we learn about astronomy, the less it seems that earth is special. It’s a small part of the universe, and each human is a small part of the earth. We are all spinning through the solar system — nowhere near the beginning or end of time.
+Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
 English
 FOMO
 FUD
@@ -16,10 +17,13 @@ Hock Principle: Simple, clear purpose and principles give rise to complex and in
 Hormesis: A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
 Horseshoe Theory: Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
 Maslow's pyramid
+McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
+Monty Hall Pb https://en.wikipedia.org/wiki/Monty_Hall_problem
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
 Overton Window: You can control thought without limiting speech. You can do it by defining the limits of acceptable thought while allowing for lively debate within these barriers. For example, Fox News and MSNBC set limits on what political thoughts they consider acceptable, but in the grand scheme of things, they’re both fairly conventional. The political spectrum stretches far beyond the ideas they entertain, but ideas outside their limits are shunned.
 Parkinson’s Law: Work expands to fill the time available. People don’t want to look like they’re lazy, so they find extra tasks to tackle, even if they’re trivial. If you have six months to complete a project, it will take six months to complete. Set deadlines accordingly.
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
+Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
 RICE Reach Impact Confidence Estimate
 Russell Conjugation: Journalists often change the meaning of a sentence by replacing one word with a synonym that implies a different meaning. For example, the same person can support an estate tax but oppose a death tax — even though they are the same thing.
 SBI
@@ -69,6 +73,7 @@ exiger seulement ce qu’on peut faire soi même
 false good idea
 fast reading
 fire
+fundamental attribution error https://en.wikipedia.org/wiki/Fundamental_attribution_error
 game theory
 game theory -- prisoner's dilemma https://www.bennorthrop.com/Home/Blog/2007_11_17_prisoners_dilemma.php
 giftedness and talent https://campbellms.typepad.com/files/gagne-a-differentiated-model-of-giftedness-and-talent-dmgt.pdf https://www.gigers.com/matthias/gifted/gagne_dmgt.html
@@ -87,6 +92,7 @@ https://en.wikipedia.org/wiki/Johari_window
 https://flinkliv.com/
 https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 https://neal.fun/absurd-trolley-problems/
+https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 https://www.mindtools.com/pages/article/newHTE_91.htm
 https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 ikigai
@@ -157,6 +163,7 @@ social pressure / free will
 stakeholder
 start with the most risky / complicated
 start with why
+surv https://en.wikipedia.org/wiki/Survivorship_bias
 survival of the fittest / fit enough
 table Selection: This idea comes from poker, where you’re advised to choose your opponents carefully. That means you shouldn’t compete against the best people. You don’t need to get good at doing difficult things if you get good at avoiding difficult things. If you want to win, pick an easy table and nail your execution.
 talent vs. Genius: Society is good at training talent but terrible at cultivating genius. Talented people are good at hitting targets others can’t hit, but geniuses find targets others can’t see. They are opposite modes of excellence. Talent is predictable, genius is unpredictable.
@@ -180,4 +187,4 @@ who moved my cheese?
 wisdom
 être heureux n'est pas nécessairement confortable
 “The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.
-https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
+Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory
