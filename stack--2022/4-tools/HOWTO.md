@@ -6,9 +6,11 @@
 1. Duplicates
 1. Media Types -- Screenshots
    1. export UNMODIFIED originals
+      IN A FOLDER (to check progress)
    1. delete
 1. Media Types -- Portrait
    1. export photos (NOT ORIGINALS)
+      IN A FOLDER (to check progress)
    1. delete
 1. Library -- "filter by" -- edited
    1. export photos (NOT ORIGINALS)
