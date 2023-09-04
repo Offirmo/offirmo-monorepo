@@ -14,9 +14,11 @@ Gall’s Law: A complex system that works is invariably found to have evolved fr
 Goodhart’s Law: When a measure becomes a target, it ceases to be a good measure. One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
 Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
 Hock Principle: Simple, clear purpose and principles give rise to complex and intelligent behavior. Complex rules and regulations give rise to simple and stupid behavior.
+Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory
 Hormesis: A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
 Horseshoe Theory: Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
 Maslow's pyramid
+soft skills https://softskills.audio/
 McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
 Monty Hall Pb https://en.wikipedia.org/wiki/Monty_Hall_problem
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
@@ -26,7 +28,10 @@ Planck’s Principle: Science doesn’t progress because people change their vie
 Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
 RICE Reach Impact Confidence Estimate
 Russell Conjugation: Journalists often change the meaning of a sentence by replacing one word with a synonym that implies a different meaning. For example, the same person can support an estate tax but oppose a death tax — even though they are the same thing.
-SBI
+SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
+SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
+SBI https://medium.com/pm101/the-situation-behavior-impact-feedback-framework-e20ce52c9357
+elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 SWOT
 T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
 THINK hack: Is it True? Helpful? Inspiring? Necessary? Kind?
@@ -44,6 +49,7 @@ be prepared
 bee browsing
 bike-shed Effect: A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
 bonne et mauvaises cartes
+busy work https://en.wikipedia.org/wiki/Busy_work
 buy nice or buy twice
 can't satisfy others
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
@@ -83,6 +89,7 @@ grit
 growth mindset
 hangry / before after lunch
 happiness is a skill
+happiness score https://www.ted.com/talks/dominic_price_what_s_your_happiness_score
 helicopter parent
 herbe toujours plus verte
 https://cobeats.com/folder/ryfTgPr9H
@@ -187,4 +194,3 @@ who moved my cheese?
 wisdom
 être heureux n'est pas nécessairement confortable
 “The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.
-Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory

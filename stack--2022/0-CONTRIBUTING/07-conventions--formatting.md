@@ -29,8 +29,8 @@ setꓽXYZ()
 insertꓽnode()
 assertꓽnode_is_xyz()
 isꓽStory‿v2(x: Immutable<any>): s is Story‿v2 {
-ↆfoo  // fetch
-ೱfoo  // promise
+ↆfoo ⵧ fetch
+ೱfoo ⵧ promise
 ϟbestↆofꓺaꘌb
 notᝍbadₓasⳇwell‿noǃ
 bar𝝣fooǃfooꓽfoo𖾚foo
