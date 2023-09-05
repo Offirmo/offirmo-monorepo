@@ -68,6 +68,7 @@ global variable
 graph
 handle
 hooks
+Connascence https://en.wikipedia.org/wiki/Connascence
 hotfix
 shim vs polyfill vs ponyfill
 https://en.wikipedia.org/wiki/Cache_stampede
