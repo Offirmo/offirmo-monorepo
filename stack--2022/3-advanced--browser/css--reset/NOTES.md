@@ -23,3 +23,5 @@ From W3C: https://drafts.csswg.org/css2/#html-stylesheet
 
 Layout differences:
 - Do NOT use a font smaller than 16px in inputs https://twitter.com/joshwcomeau/status/1379782931116351490
+
++++ https://atlassian.design/foundations/typography

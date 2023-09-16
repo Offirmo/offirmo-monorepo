@@ -294,7 +294,6 @@ Taking everything into account, I would say this is a great place to work.
 
 
 
-https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
 
 
 

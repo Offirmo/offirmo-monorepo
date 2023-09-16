@@ -9,7 +9,7 @@ CAP ACID https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-hav
 Connascence https://en.wikipedia.org/wiki/Connascence
 DACI Decision Making Framework “driver, approver, contributor, informed" https://www.atlassian.com/team-playbook/plays/daci
 DDOS
-DDOS - self
+DDOS - self https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
 DRY don't repeat yourself
 IIFE
 JSON
@@ -59,7 +59,7 @@ constructor
 context switch
 conventional changelogs https://github.com/conventional-changelog
 conventional comments
-conventional commits
+conventional commits https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13 https://www.conventionalcommits.org/
 cost based rate limiting
 courbe d'expertise
 crunch
@@ -75,7 +75,6 @@ dry run
 démos
 effacement d'une liste pendant qu'on la parcourt
 emscripten
-event loop
 event loop
 executive
 exposer des variables
@@ -117,7 +116,6 @@ https://en.wikipedia.org/wiki/Design_smell
 https://en.wikipedia.org/wiki/God_object
 https://en.wikipedia.org/wiki/Hofstadter's_law
 https://en.wikipedia.org/wiki/Inner-platform_effect
-https://en.wikipedia.org/wiki/Not_invented_here
 https://en.wikipedia.org/wiki/Not_invented_here
 https://en.wikipedia.org/wiki/Reference_class_forecasting
 https://en.wikipedia.org/wiki/Robustness_principle
@@ -182,7 +180,6 @@ scaling horizontal
 scope
 semaphore
 semver
-semver
 service availability
 shaving the yak
 shim vs polyfill vs ponyfill
@@ -211,3 +208,5 @@ use strict
 vaporware
 variables pointeur / natives
 web assembly (asm.js)
+monitoring
+observability

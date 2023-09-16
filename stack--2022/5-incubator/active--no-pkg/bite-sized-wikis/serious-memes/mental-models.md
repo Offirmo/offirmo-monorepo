@@ -18,7 +18,6 @@ Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s
 Hormesis: A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
 Horseshoe Theory: Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
 Maslow's pyramid
-soft skills https://softskills.audio/
 McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
 Monty Hall Pb https://en.wikipedia.org/wiki/Monty_Hall_problem
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
@@ -28,10 +27,9 @@ Planck’s Principle: Science doesn’t progress because people change their vie
 Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
 RICE Reach Impact Confidence Estimate
 Russell Conjugation: Journalists often change the meaning of a sentence by replacing one word with a synonym that implies a different meaning. For example, the same person can support an estate tax but oppose a death tax — even though they are the same thing.
-SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
-SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
 SBI https://medium.com/pm101/the-situation-behavior-impact-feedback-framework-e20ce52c9357
-elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
+SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
+SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
 SWOT
 T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
 THINK hack: Is it True? Helpful? Inspiring? Necessary? Kind?
@@ -72,6 +70,7 @@ drive by
 due diligence
 effet projecteur
 effet rétroviseur
+elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
 every occupation has its pro/cons
 excuses vs. solutions
@@ -167,6 +166,7 @@ sex ed
 short term / long term
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 social pressure / free will
+soft skills https://softskills.audio/
 stakeholder
 start with the most risky / complicated
 start with why
@@ -174,6 +174,7 @@ surv https://en.wikipedia.org/wiki/Survivorship_bias
 survival of the fittest / fit enough
 table Selection: This idea comes from poker, where you’re advised to choose your opponents carefully. That means you shouldn’t compete against the best people. You don’t need to get good at doing difficult things if you get good at avoiding difficult things. If you want to win, pick an easy table and nail your execution.
 talent vs. Genius: Society is good at training talent but terrible at cultivating genius. Talented people are good at hitting targets others can’t hit, but geniuses find targets others can’t see. They are opposite modes of excellence. Talent is predictable, genius is unpredictable.
+tax -- lazy https://www.insurancewatch.com.au/lazy-tax-insurance.html
 testaments spirituels St Louis St Remy https://www.famillechretienne.fr/39532/article/le-testament-spirituel-de-benoit-xvi-texte-integral
 the Wisdom of Paradox: Logic is the key to scientific truths, but paradoxes are the key to psychological ones. When it comes to the human condition, the deepest truths are often counter-intuitive. When you find two opposites that are both true, start exploring.
 theory of Constraints: A system is only as strong as its weakest point. Focus on the bottleneck. Counterintuitively, if you break down the entire system and optimize each component individually, you’ll lower the effectiveness of the system. Optimize the entire system instead.
