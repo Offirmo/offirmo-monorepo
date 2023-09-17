@@ -16,7 +16,7 @@ From Eric Meyer https://meyerweb.com/eric/tools/css/reset/
 > HTML pages using non-deprecated elements should look identical on every browser and form factor
 
 **My own reflexions on top of the above:**
-* a true reset should not be destructive, it should display at least as well as the browser default stylesheet
+* a true reset should still be readable, it should display at least as well as the browser default stylesheet
 * a true reset should NOT introduce opinionated styles
 * we not only want the same display across browsers and os, we also want stability across time = different versions of browser
 * technically we should provide 1 reset per browser, maybe per combination browser + os
