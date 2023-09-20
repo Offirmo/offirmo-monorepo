@@ -37,16 +37,20 @@ interface BookCover {
 	author?: Author
 	subtitles?: string[] // TODO allow rich text?
 
+	// since we have lazy loading, allow hints for overall data
+	// that would otherwise need a complete load, ex. number of pages
 	hints?: {
 		pages_count?: number
 	}
 }
 
-// smallest unit of a "book" that can be displayed / linked to / have a "next" button
-// TODO review "auto splitting of long text" aka. auto splitting into pages
+// page = smallest unit of a "book" that can be displayed / linked to / have a "next" button
+// TODO review "auto splitting of long text" aka. auto splitting into pages?
 interface BookPage {
+	// TODO clarify if the visual replaces or complement the text? We'll decide later with real use cases
 	content: string
 	contentⵧvisual?: string // url
+
 	/*sub?: {
 		[k: string]: string
 	}*/
@@ -78,16 +82,20 @@ interface Book extends BookPart, BookCover {
 	// TODO declare template slots?
 }
 
+// path to a part or a page
+type PageReference = string // TODO clarify the format
+
 // some books can be customized and thus have several instances
 // ex.
 // - a child book customized so that the hero has the child's name
 // - an RPG where the book refers to a changeable settings (randomized wordlbuiding, hero name, past actions...)
-interface BookInstance {
+// NO!! The customization will now directly go in the "book experience"
+/*interface BookInstance {
 	book_uid: string
 	params: { // TODO clarify
 		[key: string]: string
 	}
-}
+}*/
 
 /////////////////////////////////////////////////
 
@@ -98,5 +106,7 @@ export {
 	type BookUId,
 	type BookCover,
 	type Book,
-	type BookInstance,
+
+	type PageReference,
+	//type BookInstance,
 }

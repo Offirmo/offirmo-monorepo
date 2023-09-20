@@ -6,8 +6,8 @@ import {
 	renderⵧto_terminal,
 } from '@offirmo-private/rich-text-format--to-terminal'
 
-import { Book, BookInstance, BookPart, BookPage } from '../book/types.js'
-import { isꓽBook, isꓽBookPart, isꓽPage, isꓽPageⵧlike } from '../book/types--guards.js'
+import { Book, BookInstance, BookPart, BookPage } from '../../src/library/book/types'
+import { isꓽBook, isꓽBookPart, isꓽPage, isꓽPageⵧlike } from '../../src/library/book/types--guards'
 
 /////////////////////////////////////////////////
 

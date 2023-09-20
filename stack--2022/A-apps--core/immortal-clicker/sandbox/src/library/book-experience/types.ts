@@ -3,7 +3,6 @@
 // = meta customization
 
 
-
 // specs
 // know of a book
 // own a book
@@ -11,15 +10,11 @@
 // can't
 
 
-
 /////////////////////////////////////////////////
 
-import { BookUId } from '../book/types.js'
+import { BookUId, PageReference } from '../book/types.js'
 
 /////////////////////////////////////////////////
-
-// path to a part or a page
-type Reference = string // TODO clarify
 
 type AccessLevel =
 	| 'unaware'                  // no access + not even aware of existence
@@ -40,20 +35,19 @@ type ComprehensionLevel =
 interface BookExperience {
 	book_uid: BookUId
 
-	current_reading_path?: Reference
+	current_reading_path?: PageReference
 
 	comprehension_level‿by_path?: {
-		[place: Reference]: AccessLevel | ComprehensionLevel
+		[place: PageReference]: AccessLevel | ComprehensionLevel
 	}
 
 	// TODO bookmarks
-	// TODO allow custom extension
+	// TODO allow customization
 }
 
 /////////////////////////////////////////////////
 
 export {
-	type Reference,
 	type AccessLevel,
 	type ComprehensionLevel,
 

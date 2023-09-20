@@ -1,4 +1,4 @@
-import { Book } from '../book/types.js'
+import { Book } from '../../src/library/book/types'
 
 
 /////////////////////////////////////////////////

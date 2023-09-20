@@ -42,7 +42,7 @@
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
 		"dev": "run-s clean _build:dev:watch",
 
-		"d1": "node ./dist/src.es2022.esm/library/demo/index.js",
+		"d1": "node ./dist/src.es2022.esm/demo--library/index.js",
 
 		"p1": "node ./dist/src.es2022.esm/test01/index.js",
 

@@ -1,11 +1,10 @@
 import '@offirmo/universal-debug-api-node'
 
-import * as State from '../../state/index.js'
-import { render } from '../../view/index.js'
-import { renderꓽBook, renderꓽBookInstance } from '../render--terminal/index.js'
+import * as State from '../../src/state'
+import { render } from '../../src/view'
+import { renderꓽBook, renderꓽBookInstance } from '../render--terminal'
 
-import { MANUALⵧCULTIVATIONⵧQI_CONDENSATION } from './book--manual--qi_condensation.js'
-import { BookInstance } from '../book/types.js'
+import { MANUALⵧCULTIVATIONⵧQI_CONDENSATION } from './book--manual--qi_condensation'
 
 /////////////////////////////////////////////////
 
