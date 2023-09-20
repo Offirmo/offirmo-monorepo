@@ -150,11 +150,13 @@ microcode
 migrations
 mocha / chai
 monde du web ?
+monitoring
 namespace
 nommage des fonctions
 npm
 nyan cat
 object
+observability
 optim des || et && effet de bord
 ownership
 perf as a feature
@@ -166,6 +168,7 @@ polyfill
 promises
 prototypes
 queue
+ratcheting https://robertgreiner.com/continuous-code-improvement-using-ratcheting/ https://leaddev.com/building-better-software/introducing-quality-ratchets-tool-managing-complex-systems
 rate-limiting
 rate-limiting -- cost based
 reactive programming
@@ -208,5 +211,3 @@ use strict
 vaporware
 variables pointeur / natives
 web assembly (asm.js)
-monitoring
-observability

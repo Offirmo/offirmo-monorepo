@@ -122,3 +122,4 @@ see also https://www.businessinsider.com/guides/streaming/what-is-x-ray-on-prime
 
 
 https://www.reddit.com/r/DoesAnybodyElse/comments/118u5vc/dae_like_early_stages_of_games_more_and_because/
+https://en.wikipedia.org/wiki/Dog_breed#Basal_breeds

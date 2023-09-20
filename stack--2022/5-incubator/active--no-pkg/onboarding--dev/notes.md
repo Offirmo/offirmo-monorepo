@@ -27,3 +27,6 @@ https://www.crowdstrike.com/cybersecurity-101/observability/observability-vs-mon
 https://www.crowdstrike.com/cybersecurity-101/observability/logging-vs-monitoring/
 https://www.dynatrace.com/news/blog/observability-vs-monitoring/
 https://cloud.google.com/architecture/devops/devops-measurement-monitoring-and-observability
+
+
+Product analytics events capture what users see and do in our products. We usually call this instrumentation.
