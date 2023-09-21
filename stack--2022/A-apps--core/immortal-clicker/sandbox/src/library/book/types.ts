@@ -41,6 +41,7 @@ interface BookCover {
 	// that would otherwise need a complete load, ex. number of pages
 	hints?: {
 		pages_count?: number
+		emoji?: string // 📔📕📗📘📙📓📒📃📜📄📰🗺
 	}
 }
 
@@ -76,14 +77,22 @@ interface BookPart {
 interface Book extends BookPart, BookCover {
 	uid: BookUId // for referencing
 
-	title: string
+	title: string // mandatory
 
 	is_template?: true // TODO review
 	// TODO declare template slots?
 }
 
-// path to a part or a page
+// basic types needed for advanced stuff
+
+// path to a specific page, for ex. for bookmarking
 type PageReference = string // TODO clarify the format
+
+// path to any part of a book
+type PartPath = string // TODO clarify the format
+const PATH = {
+	whole: '*' as PartPath,
+}
 
 // some books can be customized and thus have several instances
 // ex.
@@ -108,5 +117,8 @@ export {
 	type Book,
 
 	type PageReference,
+	type PartPath,
+	PATH,
+
 	//type BookInstance,
 }

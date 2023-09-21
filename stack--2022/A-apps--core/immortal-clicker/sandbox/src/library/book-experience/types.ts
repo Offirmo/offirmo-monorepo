@@ -12,7 +12,7 @@
 
 /////////////////////////////////////////////////
 
-import { BookUId, PageReference } from '../book/types.js'
+import { BookUId, PageReference, PartPath } from '../book/types.js'
 
 /////////////////////////////////////////////////
 
@@ -35,10 +35,12 @@ type ComprehensionLevel =
 interface BookExperience {
 	book_uid: BookUId
 
-	current_reading_path?: PageReference
+	current_bookmark?: PageReference
 
+	// by path bc we can have complex situations
+	// for ex. 10 volumes be we only have access to the first 3
 	comprehension_level‿by_path?: {
-		[place: PageReference]: AccessLevel | ComprehensionLevel
+		[place: PartPath]: AccessLevel | ComprehensionLevel
 	}
 
 	// TODO bookmarks

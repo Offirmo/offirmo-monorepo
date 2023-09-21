@@ -947,7 +947,7 @@ const normalizeⵧname_part = combine_normalizers(
 		const split = line.split('\t')
 		const raw_surname = split[2]
 		//console.log(split, raw_surname)
-		assert(raw_surname)
+		assert(raw_surname, 'raw_surname')
 		const surname = normalizeⵧname_part(raw_surname)
 		//console.log({ raw_surname, surname })
 		return surname

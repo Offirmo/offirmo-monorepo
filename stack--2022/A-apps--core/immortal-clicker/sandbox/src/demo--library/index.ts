@@ -7,23 +7,44 @@ import * as BookResolverLib from '../library/book-resolver/index.js'
 
 import { BookEntryꓽBHBHⳇ001 } from './bhbv/01/index.js'
 import { BookEntryꓽBHBHⳇ022 } from './bhbv/22/index.js'
-import { renderꓽBookStash } from '../library/render/render--RichText.js'
+import { renderꓽBookStash } from '../library/state--book-stash/render--RichText.js'
+import { renderꓽBookCover, renderꓽBookPage } from '../library/book/render--RichText.js'
 
 /////////////////////////////////////////////////
 // this technical index store the books UIDs and the loading function
-BookResolverLib.registerꓽBook(BookEntryꓽBHBHⳇ022)
 BookResolverLib.registerꓽBook(BookEntryꓽBHBHⳇ001)
+BookResolverLib.registerꓽBook(BookEntryꓽBHBHⳇ022)
 
 /////////////////////////////////////////////////
 
 let stash = BookStashLib.create()
-stash = BookStashLib.addꓽbook(stash, BookEntryꓽBHBHⳇ022.uid)
 stash = BookStashLib.addꓽbook(stash, BookEntryꓽBHBHⳇ001.uid)
+stash = BookStashLib.addꓽbook(stash, BookEntryꓽBHBHⳇ022.uid)
 
 /////////////////////////////////////////////////
 
+// imagine a landing page, with the list of books
+console.log(`📚📚📚 Stash 📚📚📚`)
 console.log(to_terminal(renderꓽBookStash(
 	stash
 )))
+console.log('')
+
+// now let's imagine we click on one to learn more
+console.log(`🔎 Inspecting:`)
+console.log(to_terminal(renderꓽBookCover(
+	BookResolverLib.getꓽBookCover(BookEntryꓽBHBHⳇ022.uid),
+	//BookStashLib.getꓽexperience(stash, BookEntryꓽBHBHⳇ022.uid), TODO
+)))
+console.log('')
+
+// now let's start reading it
+console.log(`📖 Reading…`)
+BookResolverLib.ↆgetꓽBook(BookEntryꓽBHBHⳇ022.uid).then(book => {
+	console.log(to_terminal(renderꓽBookPage(
+		book,
+		''
+	)))
+})
 
 /////////////////////////////////////////////////

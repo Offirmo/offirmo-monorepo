@@ -1,6 +1,6 @@
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { BookPage, BookPart, Book } from './types.js'
+import { BookPage, BookPart, Book, BookCover } from './types.js'
 
 /////////////////////////////////////////////////
 
@@ -15,10 +15,30 @@ function isꓽBookPart(x: Immutable<any>): x is BookPart {
 	return !!x && x.hasOwnProperty('parts') && Object.getPrototypeOf(x.parts).constructor?.name === 'Object'
 }
 
+function isꓽBookCover(x: Immutable<any>): x is BookCover {
+	const has_type = typeof x?.title === 'string'
+	if (!has_type)
+		return false
+
+	const has_shape = !!x.title
+	if (!has_shape)
+		return false
+
+	return true
+}
+
 function isꓽBook(x: Immutable<any>): x is Book {
-	return typeof x?.title === 'string'
-		&& typeof x?.uid === 'string'
-		&& isꓽBookPart(x)
+	if (!isꓽBookCover(x))
+		return false
+
+	if (!isꓽBookPart(x))
+		return false
+
+	// TODO report TS error
+	if (typeof (x as any).uid !== 'string')
+		return false
+
+	return true
 }
 
 /////////////////////////////////////////////////
@@ -27,5 +47,6 @@ export {
 	isꓽPage,
 	isꓽPageⵧlike,
 	isꓽBookPart,
+	isꓽBookCover,
 	isꓽBook,
 }

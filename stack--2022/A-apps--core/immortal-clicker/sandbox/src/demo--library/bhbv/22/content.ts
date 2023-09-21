@@ -7,6 +7,8 @@ import { BookPart } from '../../../library/book/types.js'
 // 	import.meta.url,
 // )
 
+console.log('hello from BHBV 22 content!')
+
 const content: BookPart = {
 	parts_type: 'panel',
 	parts: {

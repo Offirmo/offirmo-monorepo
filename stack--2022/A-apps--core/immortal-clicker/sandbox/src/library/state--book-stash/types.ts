@@ -12,6 +12,10 @@ interface BookStash {
 		[uid: string]: BookExperience
 		// books not in the book stash are implicitly AccessLevel = 'unaware'
 	}
+
+	// TODO memory of most recently read
+	// TODO "star"
+	// TODO custom comment on each book
 }
 
 /////////////////////////////////////////////////
