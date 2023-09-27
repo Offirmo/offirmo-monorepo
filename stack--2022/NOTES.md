@@ -1,5 +1,5 @@
 		"bolt": "^0.24",
-
+  "cpx"
 
 		"test": "manypkg exec yarn test",
 		"build": "manypkg exec yarn build"

@@ -34,7 +34,6 @@ export function has_data_not_synced_with_the_cloud(state: Immutable<State>): boo
 
 ////////////////////////////////////
 
-
 const get_date_formatter = memoize_one(function _get_date_formatter(): (date_tms: number) => string {
 	const intl_date_formatter = new Intl.DateTimeFormat(undefined, {
 		dateStyle: 'short',

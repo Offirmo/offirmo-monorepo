@@ -15,7 +15,7 @@
 		"@offirmo-private/state-utils": "^0",
 		"@offirmo-private/timestamps": "^0",
 		"@offirmo/cli-toolbox": "^2",
-		"jsondiffpatch": "^0.4",
+		"jsondiffpatch": "^0.5",
 		"lodash-es": "^4"
 	},
 

@@ -1,7 +1,8 @@
 
 
 
-
+TEMPORARY REMOVED 		"utimes": "^5"
+bug reported: https://github.com/baileyherbert/utimes/issues/26
 
 
 LOG ANALYSIS

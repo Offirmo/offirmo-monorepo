@@ -24,7 +24,7 @@
 		"eslint-plugin-chai-expect": "^3",
 		"eslint-plugin-mocha": "^10",
 		"mocha": "^10",
-		"sinon": "^15",
+		"sinon": "^16",
 		"sinon-chai": "^3"
 	},
 	"optionalDependencies": {

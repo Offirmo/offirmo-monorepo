@@ -38,6 +38,8 @@ This is a trivial TypeScript-compatible [`globalThis`](https://developer.mozilla
 * doesn't alter the environment ([ponyfill](https://ponyfill.com/))
 * compatible with node & browser
 
+TODO review as of 2023 is it still needed???
+
 
 ## Usage
 ```js
@@ -74,4 +76,4 @@ globalThis.bar = 42
 and started my implementation from it! Thanks a lot and all credits due!
 
 About the proposed implementation here: https://mathiasbynens.be/notes/globalthis we can't use it: it creates a polyfill, not a ponyfill.
-However I took a line from the "naive implementation".
+However, I took a line from the "naive implementation".

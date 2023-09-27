@@ -58,7 +58,7 @@ describe(`@offirmo/error-utils`, () => {
 			it('should attach the attributes at the correct place', () => {
 				const chained_error = new Error('Foo!')
 
-				expect(COMMON_ERROR_FIELDS_EXTENDED, 'This unit test needs an update! (1)').to.have.lengthOf(11)
+				expect(COMMON_ERROR_FIELDS_EXTENDED, 'This unit test needs an update! (1)').to.have.lengthOf(12)
 
 				const err = createError('test!', {
 					name: 'TEST_NAME', // will be ignored and lost
@@ -71,6 +71,7 @@ describe(`@offirmo/error-utils`, () => {
 					// should stay as is
 					cause: chained_error,
 					errors: [ chained_error ],
+					suppressed: chained_error,
 					code: '1234', // rem: string type according to nodejs doc
 					statusCode: 567,
 					shouldRedirect: false,
@@ -93,6 +94,7 @@ describe(`@offirmo/error-utils`, () => {
 					stack: err.stack,
 					cause: chained_error,
 					errors: [ chained_error ],
+					suppressed: chained_error,
 					code: '1234', // rem: string type according to nodejs doc
 					statusCode: 567,
 					shouldRedirect: false,

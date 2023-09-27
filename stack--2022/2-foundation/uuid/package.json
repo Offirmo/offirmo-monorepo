@@ -35,7 +35,7 @@
 	},
 	"dependencies": {
 		"@offirmo/random": "^3",
-		"nanoid": "^4"
+		"nanoid": "^5"
 	},
 
 	"scripts": {

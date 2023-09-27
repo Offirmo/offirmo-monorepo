@@ -30,3 +30,6 @@ https://cloud.google.com/architecture/devops/devops-measurement-monitoring-and-o
 
 
 Product analytics events capture what users see and do in our products. We usually call this instrumentation.
+
+how to debug?
+how to log?
