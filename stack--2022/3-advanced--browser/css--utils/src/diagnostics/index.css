@@ -14,6 +14,7 @@
 
 	--o⋄color⁚diagnostics--deprecated: purple;
 	--o⋄color⁚diagnostics--accessibility: cyan;
+	--o⋄color⁚diagnostics--not-semantic: var(--o⋄color⁚diagnostics--error);
 	--o⋄color⁚diagnostics--broken: var(--o⋄color⁚diagnostics--error);
 	--o⋄color⁚diagnostics--security: var(--o⋄color⁚diagnostics--error);
 }
@@ -31,12 +32,21 @@ a[href="#"] /* acceptable for page navs? */
 
 /************ SEMANTIC ERRORS ************/
 
-/* TODO https://codeclimate.com/github/facebook/react/packages/react-dom/src/client/validateDOMNesting.js/source */
+/* those tags are not semantic and should never be used */
+b, i {
+	border: 3px dotted var(--o⋄color⁚diagnostics--not-semantic) !important;
+}
+
 
 th:not([scope=col], [scope=row])
 {
 	border: 3px dotted var(--o⋄color⁚diagnostics--empty) !important;
 }
+
+/* TODO check incorrect nesting
+    https://github.com/facebook/react/blob/49eba01930e9e1f331b34967fca65d5a0ba62846/packages/react-dom-bindings/src/client/validateDOMNesting.js#L436
+ */
+
 
 /************ FASHION POLICE ************/
 /* TODO */

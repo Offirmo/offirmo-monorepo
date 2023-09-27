@@ -20,6 +20,7 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 ## Technical details
 
 ### PENDING updates
+- [ ] TODO remove all cjs since we can no longer generate it since Typescript 5.2
 - [ ] TODO DONE TS supports [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762) = update unit tests!
 - [ ] 🆙2023-10-24 oldest active LTS node 18 → 20  https://github.com/nodejs/release#release-schedule
 - [ ] mid 2024 [ES2024](https://en.wikipedia.org/wiki/ECMAScript_version_history)
@@ -49,8 +50,8 @@ Updated state:
 ⭆ latest convenient ES = 2022 (if changed, need search&replace in package.json, search for "es2022" and "update marker")
 
 3. ES module
-- 🆕we consider webpack oudtated and are no longer taking into account its limitations
-- 🆕we consider the ecosystem advanced enough to move to full ES6 https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-move-my-commonjs-project-to-esm
+- 🆕we consider webpack outdated and are no longer taking into account its limitations
+- 🆕we consider the ecosystem advanced enough to move to full ESM https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-move-my-commonjs-project-to-esm
 
 ⭆ 🆕latest convenient module = ES (module = 2022 in TypeScript)
 

@@ -36,9 +36,11 @@ Reviewing the well known CSS, it appears they are not pure CSS reset:
 * [normalize.css](https://github.com/necolas/normalize.css/)
   * removes all margins = bad display
   * still supports IE
-* [Josh Comeau's](https://www.joshwcomeau.com/css/custom-css-reset/)
+* [Josh Comeau's custom CSS reset](https://www.joshwcomeau.com/css/custom-css-reset/)
   * not versioned/modularized (copy/paste on a blog post)
   * goes beyond a reset by "improving" styles
+* [Josh Comeau's global styles](https://courses.joshwcomeau.com/css-for-js/treasure-trove/010-global-styles)
+  * later version of the previous one
 * [piccalilli](https://piccalil.li/blog/a-modern-css-reset/)
   * not versioned/modularized (copy/paste on a blog post)
   * goes beyond a reset with opiniated choices, ex. default list "style none"

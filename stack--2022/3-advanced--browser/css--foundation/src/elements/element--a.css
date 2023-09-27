@@ -3,6 +3,9 @@
  */
 
 a {
+	/* a color are being overwritten by the default style.
+	 * make it specific and inheritable
+	 */
 	color: var(--o⋄color⁚fg--link, var(--o⋄color⁚fg--link--default));
 
 	/* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
