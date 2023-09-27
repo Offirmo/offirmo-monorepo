@@ -39,11 +39,23 @@ Example of errors:
 
 > error TS2349: This expression is not callable. (node_modules/micro-memoize/index")' has no call signatures.
 
-* `module` set to the latest ES we support https://www.typescriptlang.org/tsconfig#module
+* `module` https://www.typescriptlang.org/tsconfig#module
+  * IDEALLY set to the latest ES we support
   * this prop affects code GENERATION
   * XXX this property affects `moduleResolution` (see below)
+    * 2023/09 especially since 5.2!!! https://devblogs.microsoft.com/typescript/announcing-typescript-5-2/#breaking-changes-and-correctness-fixes
+* `moduleResolution` https://www.typescriptlang.org/docs/handbook/module-resolution.html
+  * UNCLEAR allowed values
+  * AFAIU particularly affects node.js apps
+  * CURRENTLY 2023/09 a total mess since 5.2!!! https://devblogs.microsoft.com/typescript/announcing-typescript-5-2/#breaking-changes-and-correctness-fixes
+  * CURRENTLY set to "bundler", let's see what happens...
 
 Compatibility:
+* `allowSyntheticDefaultImports` https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports
+  * AFAIU doesn't add any code, it's just type checking (cf. official doc)
+  * IDEALLY we want it to `false`:
+    * better detect non-ESM code ✔️
+  * CURRENTLY set intentionally to `false` by default since we switched all to pure ESM, ad-hoc relaxing in specific module as needed
 * `esModuleInterop` https://www.typescriptlang.org/tsconfig#esModuleInterop
   * AFAIU makes the generated code use helper functions
   * IDEALLY we want it to `false`:
@@ -51,16 +63,8 @@ Compatibility:
     * better detect non-ESM code ✔️
   * BUT we may have to relax it to `true` due to: "most libraries with CommonJS/AMD/UMD modules didn’t conform as strictly as TypeScript’s implementation"
   * CURRENTLY set to false by default, ad-hoc relaxing in specific module as needed
-* `allowSyntheticDefaultImports` https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports
-  * AFAIU adds wrappers to the generated code that ends up undefined (?)
-  * intentionally set to `false` in order to better detect non-ESM code
-  * NO!! moved back to `true` due to still using cjs, ex. pb importing "fetch-ponyfill" or sindre
-  * CURRENTLY set to false by default since we switched all to pure ESM, ad-hoc relaxing in specific module as needed
-* `moduleResolution` https://www.typescriptlang.org/docs/handbook/module-resolution.html
-  * AFAIU particularly affects node.js apps
-  * CURRENTLY be set to "NodeNext" = most recent
-  * BUT seen a need in node tools, ad-hoc relaxing in specific module as needed
-* `isolatedModules` set to true always bc. parcel needs it, cf. https://parceljs.org/languages/typescript/#isolatedmodules
+* `isolatedModules` https://www.typescriptlang.org/tsconfig#isolatedModules
+  * set to true always bc. parcel needs it, cf. https://parceljs.org/languages/typescript/#isolatedmodules
 
 
 ### TOSORT

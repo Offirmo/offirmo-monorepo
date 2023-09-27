@@ -1,4 +1,4 @@
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import normalize_code from '../normalize-code.js'
 import { CodeSpec, State } from '../types.js'
@@ -13,7 +13,7 @@ interface CodesConditions {
 	is_player_since_alpha: boolean
 }
 
-const TEST_CODES = enforce_immutability<{ [key: string]: Partial<CodeSpec<CodesConditions>> }>({
+const TEST_CODES = enforceꓽimmutable<{ [key: string]: Partial<CodeSpec<CodesConditions>> }>({
 
 	TESTNEVER: {
 		redeem_limit: null,
@@ -36,7 +36,7 @@ const TEST_CODES = enforce_immutability<{ [key: string]: Partial<CodeSpec<CodesC
 	},
 })
 
-const RAW_CODES = enforce_immutability<{ [key: string]: Partial<CodeSpec<CodesConditions>> }>({
+const RAW_CODES = enforceꓽimmutable<{ [key: string]: Partial<CodeSpec<CodesConditions>> }>({
 	...TEST_CODES,
 })
 

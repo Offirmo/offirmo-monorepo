@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import icepick from 'icepick'
+import * as icepick from 'icepick'
 import { Immutable, Mutable, ImmutabilityEnforcer } from '@offirmo-private/ts-types'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
@@ -25,9 +25,9 @@ import {
 } from './selectors.js'
 
 
-export const enforce_immutability: ImmutabilityEnforcer = <T>(state: T | Immutable<T>): Immutable<T> => icepick.freeze<T>(state as T) as Immutable<T>
-//const enforce_immutability: ImmutabilityEnforcer = (state: T): Immutable<T> => state
-//const enforce_immutability: ImmutabilityEnforcer = <T>(state: T): Immutable<T> => deep_freeze<T>(state)
+export const enforceꓽimmutable: ImmutabilityEnforcer = <T>(state: T | Immutable<T>): Immutable<T> => icepick.freeze<T>(state as T) as Immutable<T>
+//const enforceꓽimmutable: ImmutabilityEnforcer = (state: T): Immutable<T> => state
+//const enforceꓽimmutable: ImmutabilityEnforcer = <T>(state: T): Immutable<T> => deep_freeze<T>(state)
 export {
 	type Immutable,
 	type ImmutabilityEnforcer
@@ -75,7 +75,7 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 		if (final_u_state === updated[0] && final_t_state === updated[1])
 			return previous
 
-		return enforce_immutability<T>([ final_u_state, final_t_state ] as any as T)
+		return enforceꓽimmutable<T>([ final_u_state, final_t_state ] as any as T)
 	}
 	else if (isꓽRootState(current)) {
 		// this is a more advanced state
@@ -88,7 +88,7 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 		if (final_u_state === updated.u_state && final_t_state === updated.t_state)
 			return previous
 
-		return enforce_immutability<T>({
+		return enforceꓽimmutable<T>({
 			...current as any,
 			u_state: final_u_state,
 			t_state: final_t_state,
@@ -145,7 +145,7 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 
 	if (!has_child_revision_increment) return previous
 
-	return enforce_immutability<T>({
+	return enforceꓽimmutable<T>({
 		...current as any,
 		revision: getꓽrevision(current as any) + 1,
 	})

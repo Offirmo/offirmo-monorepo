@@ -1,6 +1,6 @@
 /////////////////////
 
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 
@@ -11,7 +11,7 @@ import {
 /////////////////////
 
 function create(): Immutable<State> {
-	return enforce_immutability<State>({
+	return enforceꓽimmutable<State>({
 		schema_version: SCHEMA_VERSION,
 		revision: 0,
 
@@ -28,7 +28,7 @@ function create(): Immutable<State> {
 function on_start_session(previous_state: Immutable<State>, is_web_diversity_supporter: boolean): Immutable<State> {
 	if (previous_state.is_web_diversity_supporter === is_web_diversity_supporter) return previous_state
 
-	return enforce_immutability<State>({
+	return enforceꓽimmutable<State>({
 		...previous_state,
 
 		is_web_diversity_supporter,
@@ -50,7 +50,7 @@ function on_logged_in_refresh(previous_state: Immutable<State>, is_logged_in: bo
 
 	let state = previous_state
 
-	return enforce_immutability<State>({
+	return enforceꓽimmutable<State>({
 		...state,
 
 		is_logged_in,

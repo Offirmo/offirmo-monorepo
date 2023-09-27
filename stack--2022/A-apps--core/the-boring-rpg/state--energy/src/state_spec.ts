@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import sinon from 'sinon'
+import * as sinon from 'sinon'
 import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
 import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 

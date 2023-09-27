@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////
 
 import assert from 'tiny-invariant'
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { SCHEMA_VERSION } from './consts.js'
 
@@ -17,7 +17,7 @@ import { SoftExecutionContext, getꓽSEC } from './sec.js'
 
 function create(SEC?: SoftExecutionContext): Immutable<State> {
 	return getꓽSEC(SEC).xTry('create', () => {
-		return enforce_immutability<State>({
+		return enforceꓽimmutable<State>({
 			schema_version: SCHEMA_VERSION,
 			revision: 0,
 

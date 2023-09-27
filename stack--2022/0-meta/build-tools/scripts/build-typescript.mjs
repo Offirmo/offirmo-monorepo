@@ -20,7 +20,7 @@ const cli = meow('build', {
 			type: 'string',
 			isMultiple: true,
 			choices: ['esm', 'cjs'],
-			default: ['esm', 'cjs'], // by default this script builds all of those
+			default: ['esm'], // 2023/09 by default this script builds only ESM. Also cjs is since typescript 5.2 2023/10
 		},
 		watch: {
 			// if true, only the first "module" is built and continuously rebuilt
@@ -89,6 +89,7 @@ let compilerOptions = {
 
 /////////////////////
 
+// BROKEN since typescript 5.2 2023/10
 function build_cjs() {
 	const target = LATEST_ES_OLDEST_ACTIVE_NODE_LTS.toLowerCase()
 	const out_dir = `src.${target}.cjs`
@@ -105,6 +106,7 @@ function build_cjs() {
 				].filter(s => s !== LATEST_CONVENIENT_ES),
 			],
 			module: 'commonjs', // cf. https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#type-in-package-json-and-new-extensions
+			moduleResolution: 'nodenext', // BROKEN since typescript 5.2 2023/10
 			outDir: path.join(DIST_DIR, out_dir),
 			project: PKG_PATH,
 		},

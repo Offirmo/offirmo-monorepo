@@ -2,7 +2,7 @@ import path from 'path'
 import assert from 'tiny-invariant'
 import { Tags as EXIFTags } from 'exiftool-vendored'
 import { Immutable } from '@offirmo-private/ts-types'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import { BROKEN_FILE_EXTENSIONS_LC } from '../../consts.js'
@@ -99,7 +99,7 @@ export function create(id: FileId): Immutable<State> {
 		)
 	}
 
-	return enforce_immutability(state)
+	return enforceꓽimmutable(state)
 }
 
 // Those PRIMARY "on_info_read..." happens first and have no inter-dependencies

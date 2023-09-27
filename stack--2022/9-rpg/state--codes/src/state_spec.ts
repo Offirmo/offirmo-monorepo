@@ -1,4 +1,4 @@
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { expect } from 'chai'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
@@ -27,7 +27,7 @@ describe(`${LIB} - state`, function() {
 	})
 
 	describe('code redemption', function() {
-		const BASE_INFOS = enforce_immutability<CodesConditions>({
+		const BASE_INFOS = enforceꓽimmutable<CodesConditions>({
 			has_energy_depleted: false,
 			good_play_count: 0,
 			is_alpha_player: true,

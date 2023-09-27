@@ -97,7 +97,6 @@ function debugTTNx(energy_refilling_rate_per_ms: number) {
 		ttn,
 	})*/
 }
-// @ts-expect-error memoize_one import issue TODO fix
 const debugTTN = memoize_one(debugTTNx)
 
 function get_milliseconds_to_next(u_state: Readonly<UState>, t_state: Readonly<TState>): number {

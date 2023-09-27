@@ -2,7 +2,7 @@ import path from 'path'
 import { expect } from 'chai'
 
 import { Immutable } from '@offirmo-private/ts-types'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { LIB } from '../../consts.js'
 import {
@@ -122,7 +122,7 @@ describe(`${LIB} - file (state)`, function() {
 					let state = stategen.create_state()
 					expect(state.id, 'create_demo internal').to.equal(id)
 
-					return enforce_immutability(state)
+					return enforceꓽimmutable(state)
 				}
 
 				describe('assumptions', function() {
@@ -140,7 +140,7 @@ describe(`${LIB} - file (state)`, function() {
 
 					it('should always merge notes and pick the best of all', () => {
 						const _s1 = create_demo('foo/bar.jpg')
-						const s1 = enforce_immutability<State>({
+						const s1 = enforceꓽimmutable<State>({
 							..._s1,
 							notes: {
 								..._s1.notes,
@@ -148,7 +148,7 @@ describe(`${LIB} - file (state)`, function() {
 							}
 						})
 						const _s2 = create_demo('foo/very very long/ha ha/bar.jpg')
-						const s2 = enforce_immutability<State>({
+						const s2 = enforceꓽimmutable<State>({
 							..._s2,
 						})
 						const s3 = create_demo('foo/bar - copy.jpg', EARLIER_CREATION_DATE) // should not impact
@@ -179,7 +179,7 @@ describe(`${LIB} - file (state)`, function() {
 
 						it('should also properly merge historical notes and pick the best of all', () => {
 							const _s1 = create_demo()
-							const s1 = enforce_immutability<State>({
+							const s1 = enforceꓽimmutable<State>({
 								..._s1,
 								notes: {
 									..._s1.notes,
@@ -190,7 +190,7 @@ describe(`${LIB} - file (state)`, function() {
 								}
 							})
 							const _s2 = create_demo('20010325 - life/2001-03-24_12h34m56s789.jpg') // should NOT be picked since normalized
-							const s2 = enforce_immutability<State>({
+							const s2 = enforceꓽimmutable<State>({
 								..._s2,
 								notes: {
 									..._s2.notes,
@@ -201,7 +201,7 @@ describe(`${LIB} - file (state)`, function() {
 								}
 							})
 							const _s3 = create_demo('foo/bar - copy.jpg', EARLIER_CREATION_DATE) // should date should be picked
-							const s3 = enforce_immutability<State>({
+							const s3 = enforceꓽimmutable<State>({
 								..._s3,
 								notes: {
 									..._s3.notes,
@@ -247,7 +247,7 @@ describe(`${LIB} - file (state)`, function() {
 
 							it('should also properly merge and pick the best of all', () => {
 								const _s1 = create_demo()
-								const s1 = enforce_immutability<State>({
+								const s1 = enforceꓽimmutable<State>({
 									..._s1,
 									notes: {
 										..._s1.notes,
@@ -260,7 +260,7 @@ describe(`${LIB} - file (state)`, function() {
 									},
 								})
 								const _s2 = create_demo()
-								const s2 = enforce_immutability<State>({
+								const s2 = enforceꓽimmutable<State>({
 									..._s2,
 									notes: {
 										..._s2.notes,
@@ -282,7 +282,7 @@ describe(`${LIB} - file (state)`, function() {
 									},
 								})
 								const _s3 = create_demo('foo/bar - copy.jpg', EARLIER_CREATION_DATE) // should not impact
-								const s3 = enforce_immutability<State>({
+								const s3 = enforceꓽimmutable<State>({
 									..._s3,
 									notes: {
 										..._s3.notes,
@@ -295,7 +295,7 @@ describe(`${LIB} - file (state)`, function() {
 									},
 								})
 								const _s4 = create_demo()
-								const s4 = enforce_immutability<State>({
+								const s4 = enforceꓽimmutable<State>({
 									..._s4,
 									notes: {
 										..._s4.notes,

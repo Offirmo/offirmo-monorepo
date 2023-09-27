@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 import {
 	LastMigrationStep,
 	MigrationStep,
@@ -13,7 +13,7 @@ import { PersistedNotes as FileNotes } from '../file/index.js'
 
 // some hints may be needed to migrate to demo state
 // need to export them for composing tests
-export const MIGRATION_HINTS_FOR_TESTS: any = enforce_immutability<any>({
+export const MIGRATION_HINTS_FOR_TESTS: any = enforceꓽimmutable<any>({
 })
 
 /////////////////////

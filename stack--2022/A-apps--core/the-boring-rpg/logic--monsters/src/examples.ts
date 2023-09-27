@@ -1,6 +1,6 @@
 /////////////////////
 
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { getꓽengine } from '@offirmo/random'
 
 import {
@@ -11,7 +11,7 @@ import { create } from './state.js'
 
 /////////////////////
 
-const DEMO_MONSTER_01: Immutable<Monster> = enforce_immutability<Monster>({
+const DEMO_MONSTER_01: Immutable<Monster> = enforceꓽimmutable<Monster>({
 	name: 'chicken',
 	level: 7,
 	rank: MonsterRank.elite,

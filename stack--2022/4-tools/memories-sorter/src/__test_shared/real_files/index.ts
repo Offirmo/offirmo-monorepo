@@ -5,7 +5,7 @@ import memoize_once from 'memoize-one'
 import micro_memoize from 'micro-memoize'
 import { Immutable } from '@offirmo-private/ts-types'
 import { expect } from 'chai'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { utimes } from 'utimes'
 
 import { AbsolutePath, Basename, SimpleYYYYMMDD, ISODateString, RelativePath, TimeZone } from '../../types.js'
@@ -99,7 +99,7 @@ async function _get_demo_state(
 		expect(get_ideal_basename(state), 'ideal basename').to.equal(MEDIA.IDEAL_BASENAME)
 	}
 
-	return enforce_immutability(state)
+	return enforceꓽimmutable(state)
 }
 
 // 2018-09-03_20h46m14s506

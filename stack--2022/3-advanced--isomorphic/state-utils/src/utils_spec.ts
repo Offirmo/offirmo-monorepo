@@ -11,18 +11,18 @@ import {
 import {
 	complete_or_cancel_eager_mutation_propagating_possible_child_mutation,
 	are_ustate_revision_requirements_met,
-	enforce_immutability,
+	enforceꓽimmutable,
 } from './utils.js'
 
 
 describe(`${LIB} - utils`, function() {
 
-	describe('enforce_immutability', function () {
+	describe('enforceꓽimmutable', function () {
 
 		it('should work', () => {
 			expect(() => {
 				// @ts-expect-error
-				enforce_immutability(DEMO_BASE_STATE_WITH_SUBS).subA.foo = 33
+				enforceꓽimmutable(DEMO_BASE_STATE_WITH_SUBS).subA.foo = 33
 			}).to.throw('read only')
 		})
 	})
@@ -33,7 +33,7 @@ describe(`${LIB} - utils`, function() {
 			const previous = DEMO_BASE_STATE_WITH_SUBS
 
 			it('should cancel the mutation -- if the sub-states had no changes at all', () => {
-				const current_base = enforce_immutability<typeof previous>({
+				const current_base = enforceꓽimmutable<typeof previous>({
 					...previous,
 					subC: {
 						// the mutation was eager, in truth there was no change
@@ -47,7 +47,7 @@ describe(`${LIB} - utils`, function() {
 			it('should cancel the mutation -- if the sub-states had changes but no semantic')
 
 			it('should throw -- if the state has an immediate increment', () => {
-				const current_base = enforce_immutability<typeof previous>({
+				const current_base = enforceꓽimmutable<typeof previous>({
 					...previous,
 					own_u: 'bad!',
 				})
@@ -55,7 +55,7 @@ describe(`${LIB} - utils`, function() {
 			})
 
 			it('should throw -- if the state was already incremented', () => {
-				const current_base = enforce_immutability<typeof previous>({
+				const current_base = enforceꓽimmutable<typeof previous>({
 					...previous,
 					revision: 104, // bad
 					subC: {
@@ -76,7 +76,7 @@ describe(`${LIB} - utils`, function() {
 			})
 
 			it('should complete the mutation if the sub-states had sub-increments', () => {
-				const current_base = enforce_immutability<typeof previous>({
+				const current_base = enforceꓽimmutable<typeof previous>({
 					...previous,
 					subC: {
 						...previous.subC,
@@ -84,7 +84,7 @@ describe(`${LIB} - utils`, function() {
 						fizz: 'hello',
 					},
 				})
-				const expected = enforce_immutability<typeof previous>({
+				const expected = enforceꓽimmutable<typeof previous>({
 					...current_base,
 					revision: 104,
 				})
@@ -106,7 +106,7 @@ describe(`${LIB} - utils`, function() {
 			})
 
 			it('should cancel the mutation -- if the sub-states had no changes at all', () => {
-				const current_base = enforce_immutability<typeof previous>([
+				const current_base = enforceꓽimmutable<typeof previous>([
 					{
 						...previous[0],
 						subC: {
@@ -134,7 +134,7 @@ describe(`${LIB} - utils`, function() {
 			})
 
 			it('should cancel the mutation -- if the sub-states had no changes at all', () => {
-				const current_root = enforce_immutability<typeof previous>({
+				const current_root = enforceꓽimmutable<typeof previous>({
 					...previous,
 					u_state: {
 						...previous.u_state,
@@ -149,7 +149,7 @@ describe(`${LIB} - utils`, function() {
 
 			it('should NOT throw if the state has an immediate increment', () => {
 				// this is outside the semantic world (should not be abused)
-				const current_root = enforce_immutability<typeof previous>({
+				const current_root = enforceꓽimmutable<typeof previous>({
 					...previous,
 					own_r: 888,
 				})
@@ -157,7 +157,7 @@ describe(`${LIB} - utils`, function() {
 			})
 
 			it('should increment if sub-increments', () => {
-				const current_root = enforce_immutability<typeof previous>({
+				const current_root = enforceꓽimmutable<typeof previous>({
 					...previous,
 					u_state: {
 						...previous.u_state,
@@ -168,7 +168,7 @@ describe(`${LIB} - utils`, function() {
 						},
 					},
 				})
-				const expected = enforce_immutability<typeof previous>({
+				const expected = enforceꓽimmutable<typeof previous>({
 					...current_root,
 					u_state: {
 						...current_root.u_state,
@@ -182,7 +182,7 @@ describe(`${LIB} - utils`, function() {
 			})
 
 			it('should throw if already incremented', () => {
-				const current_root = enforce_immutability<typeof previous>({
+				const current_root = enforceꓽimmutable<typeof previous>({
 					...previous,
 					u_state: {
 						...previous.u_state,

@@ -1,4 +1,4 @@
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { State } from './types.js'
 
@@ -9,7 +9,7 @@ import { State } from './types.js'
 // a full-featured, non-trivial demo state
 // needed for demos
 
-const DEMO_STATE: Immutable<State> = enforce_immutability<State>({
+const DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>({
 	schema_version: 3,
 	revision: 5,
 

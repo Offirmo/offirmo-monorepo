@@ -2,7 +2,7 @@ import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 
 import * as fs from '@offirmo/cli-toolbox/fs/extra/index.mjs'
-import sinon from 'sinon'
+import * as sinon from 'sinon'
 import { cloneDeep } from 'lodash-es'
 import { prettifyꓽjson } from '@offirmo-private/prettify-any'
 import { TEST_TIMESTAMP_MS, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'

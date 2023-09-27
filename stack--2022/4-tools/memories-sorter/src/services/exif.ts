@@ -3,7 +3,7 @@ import { normalizeError } from '@offirmo/error-utils'
 import { exiftool, Tags, ExifDateTime } from 'exiftool-vendored'
 import { Immutable, HashOf } from '@offirmo-private/ts-types'
 import micro_memoize from 'micro-memoize'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { AbsolutePath, TimeZone } from '../types.js'
 import {
@@ -101,7 +101,7 @@ export async function read_exif_data(abs_path: AbsolutePath): Promise<Immutable<
 				}
 			})
 
-			return enforce_immutability(exif_data)
+			return enforceꓽimmutable(exif_data)
 		})
 }
 

@@ -1,7 +1,7 @@
 /////////////////////
 
 import { getꓽrandom, getꓽengine, RNGEngine } from '@offirmo/random'
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import {
 	ItemQuality,
@@ -30,7 +30,7 @@ import { create } from './state.js'
 
 /////////////////////
 
-const DEMO_ARMOR_1: Immutable<Armor> = enforce_immutability<Armor>({
+const DEMO_ARMOR_1: Immutable<Armor> = enforceꓽimmutable<Armor>({
 	uuid: 'uu1~test~demo~armor~0001',
 	element_type: ElementType.item,
 	slot: InventorySlot.armor,
@@ -42,7 +42,7 @@ const DEMO_ARMOR_1: Immutable<Armor> = enforce_immutability<Armor>({
 	enhancement_level: MIN_ENHANCEMENT_LEVEL,
 })
 
-const DEMO_ARMOR_2: Immutable<Armor> = enforce_immutability<Armor>({
+const DEMO_ARMOR_2: Immutable<Armor> = enforceꓽimmutable<Armor>({
 	uuid: 'uu1~test~demo~armor~0002',
 	element_type: ElementType.item,
 	slot: InventorySlot.armor,

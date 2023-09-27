@@ -1,6 +1,6 @@
 /////////////////////
 
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 
 import { SCHEMA_VERSION } from './consts.js'
@@ -19,7 +19,7 @@ import { SoftExecutionContext, getꓽSEC } from './sec.js'
 
 function create(SEC?: SoftExecutionContext): Immutable<State> {
 	return getꓽSEC(SEC).xTry('create', () => {
-		return enforce_immutability<State>({
+		return enforceꓽimmutable<State>({
 			schema_version: SCHEMA_VERSION,
 			revision: 0,
 
@@ -42,7 +42,7 @@ function attempt_to_redeem_code<T>(state: Immutable<State>, code_spec: Immutable
 			last_redeem_date_minutes: '',
 		} as CodeRedemption)
 
-		return enforce_immutability<State>({
+		return enforceꓽimmutable<State>({
 			...state,
 
 			redeemed_codes: {

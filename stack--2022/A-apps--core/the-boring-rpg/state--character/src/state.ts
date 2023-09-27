@@ -1,7 +1,7 @@
 /////////////////////
 
 import { Enum } from 'typescript-string-enums'
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 
@@ -40,7 +40,7 @@ const CHARACTER_CLASSES = Enum.keys(CharacterClass)
 
 function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
 	return getꓽSEC(SEC).xTry('create', () => {
-		return enforce_immutability<State>({
+		return enforceꓽimmutable<State>({
 			schema_version: SCHEMA_VERSION,
 			revision: 0,
 
@@ -73,7 +73,7 @@ function rename(SEC: TBRSoftExecutionContext, state: Immutable<State>, new_name:
 		if (new_name === state.name)
 			return state
 
-		return enforce_immutability<State>({
+		return enforceꓽimmutable<State>({
 			...state,
 			name: new_name,
 			revision: state.revision + 1,
@@ -89,7 +89,7 @@ function switch_class(SEC: TBRSoftExecutionContext, state: Immutable<State>, kla
 		if (!Enum.isType(CharacterClass, klass))
 			throw new Error(`${LIB}: "${klass}" is not a valid class!`)
 
-		return enforce_immutability<State>({
+		return enforceꓽimmutable<State>({
 			...state,
 			klass,
 			revision: state.revision + 1,
@@ -104,7 +104,7 @@ function increase_stat(SEC: TBRSoftExecutionContext, state: Immutable<State>, st
 
 		// TODO stats caps?
 
-		return enforce_immutability<State>({
+		return enforceꓽimmutable<State>({
 			...state,
 			attributes: {
 				...state.attributes,

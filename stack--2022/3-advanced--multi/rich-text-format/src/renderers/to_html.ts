@@ -41,7 +41,6 @@ const NODE_TYPE_TO_HTML_ELEMENT: { [k: string]: string } = {
 	[NodeType.fragmentⵧblock]: 'div',
 }
 
-// @ts-expect-error memoize_one import issue TODO fix "warn once" lib
 const warn_kvp = memoize_one(() => console.warn(`${LIB} TODO KVP`))
 
 const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToHtml> = ({$node, state, sub_state}) => {

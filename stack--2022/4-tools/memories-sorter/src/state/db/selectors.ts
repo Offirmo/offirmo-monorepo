@@ -4,7 +4,7 @@ import assert from 'tiny-invariant'
 import stylize_string from 'chalk'
 import { Immutable } from '@offirmo-private/ts-types'
 import { prettifyꓽjson } from '@offirmo-private/prettify-any'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { LIB as APP } from '../../consts.js'
 import { AbsolutePath, RelativePath } from '../../types.js'
@@ -290,11 +290,11 @@ export function getꓽideal_file_relative_path(state: Immutable<State>, id: File
 }
 
 export function getꓽpast_notes(state: Immutable<State>): Immutable<Notes.State> {
-	return enforce_immutability(Notes.create('for persisting -- old', state.extra_notes))
+	return enforceꓽimmutable(Notes.create('for persisting -- old', state.extra_notes))
 }
 
 export function getꓽpresent_notes(state: Immutable<State>): Immutable<Notes.State> {
-	let result = enforce_immutability(Notes.create('for persisting -- present'))
+	let result = enforceꓽimmutable(Notes.create('for persisting -- present'))
 
 	const encountered_files = { ...result.encountered_files }
 
@@ -319,7 +319,7 @@ export function getꓽpresent_notes(state: Immutable<State>): Immutable<Notes.St
 export function getꓽpast_and_present_notes(state: Immutable<State>): Immutable<Notes.State> {
 	let past = getꓽpast_notes(state)
 	let current = getꓽpresent_notes(state)
-	let result = enforce_immutability(Notes.create('for persisting -- all'))
+	let result = enforceꓽimmutable(Notes.create('for persisting -- all'))
 
 	result = {
 		...result,

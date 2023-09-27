@@ -1,4 +1,4 @@
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { SCHEMA_VERSION } from './consts.js'
 import { State } from './types.js'
@@ -14,7 +14,7 @@ import { State } from './types.js'
 // a full-featured, non-trivial demo state
 // needed for demos
 
-const DEMO_STATE: Immutable<State> = enforce_immutability<State>({
+const DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>({
 	_comment: 'This data is from @offirmo/photo-sorter https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/5-incubator/active/photos-sorter',
 	schema_version: SCHEMA_VERSION,
 	revision: 0,

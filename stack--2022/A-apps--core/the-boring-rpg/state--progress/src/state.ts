@@ -5,7 +5,7 @@ import {
 	getꓽUTC_timestampⵧhuman_readable‿days,
 	getꓽUTC_timestampⵧhuman_readable‿minutes,
 } from '@offirmo-private/timestamps'
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 
@@ -23,7 +23,7 @@ import { TBRSoftExecutionContext, getꓽSEC } from './sec.js'
 function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
 	return getꓽSEC(SEC).xTry('create', () => {
 		const now_hrtday = getꓽUTC_timestampⵧhuman_readable‿days()
-		return enforce_immutability<State>({
+		return enforceꓽimmutable<State>({
 			schema_version: SCHEMA_VERSION,
 			revision: 0,
 

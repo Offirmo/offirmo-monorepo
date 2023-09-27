@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
@@ -22,7 +22,7 @@ describe(`${LIB} - selectors - game`, function() {
 	describe('getꓽavailable_classes()', function() {
 
 		it('should return class strings', () => {
-			const { u_state } = enforce_immutability<State>(create())
+			const { u_state } = enforceꓽimmutable<State>(create())
 
 			const klasses = getꓽavailable_classes(u_state)
 
@@ -34,7 +34,7 @@ describe(`${LIB} - selectors - game`, function() {
 		})
 
 		it('should filter out novice', () => {
-			const { u_state } = enforce_immutability<State>(create())
+			const { u_state } = enforceꓽimmutable<State>(create())
 
 			const klasses = getꓽavailable_classes(u_state)
 
@@ -45,7 +45,7 @@ describe(`${LIB} - selectors - game`, function() {
 	describe('will_next_play_be_good_at()', function() {
 
 		it('should return a correct boolean', () => {
-			let state = enforce_immutability<State>(create())
+			let state = enforceꓽimmutable<State>(create())
 
 			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp‿ms())).to.be.true
 
@@ -54,7 +54,7 @@ describe(`${LIB} - selectors - game`, function() {
 		})
 
 		it('should properly take into account the given time', () => {
-			let state = enforce_immutability<State>(create())
+			let state = enforceꓽimmutable<State>(create())
 
 			state = _lose_all_energy(state)
 			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp‿ms())).to.be.false

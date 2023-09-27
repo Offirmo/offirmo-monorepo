@@ -3,7 +3,7 @@ import path from 'path'
 import fs from 'fs'
 
 import { Immutable, Mutable } from '@offirmo-private/ts-types'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { expect } from 'chai'
 import assert from 'tiny-invariant'
 import { Tags as EXIFTags } from 'exiftool-vendored'
@@ -59,10 +59,10 @@ export async function load_real_media_file(abs_path: string): Promise<Immutable<
 		require_notes: false,
 	})).to.be.true
 
-	return enforce_immutability(state)
+	return enforceꓽimmutable(state)
 }
 
-export const REAL_CREATION_DATE = enforce_immutability(create_better_date('tz:auto', 2003, 3, 13, 23, 33, 43, 333))
+export const REAL_CREATION_DATE = enforceꓽimmutable(create_better_date('tz:auto', 2003, 3, 13, 23, 33, 43, 333))
 export const REAL_CREATION_DATE‿HRTS = getꓽhuman_readable_timestamp_auto(REAL_CREATION_DATE, 'tz:embedded')
 assert(REAL_CREATION_DATE‿HRTS === '2003-03-13_23h33m43s333', 'REAL_CREATION_DATE‿HRTS should be correct')
 export const REAL_CREATION_DATE‿TMS = getꓽtimestamp_utc_ms_from(REAL_CREATION_DATE)
@@ -70,7 +70,7 @@ const REAL_CREATION_DATE‿LEGACY = new Date(REAL_CREATION_DATE‿TMS)
 export const REAL_CREATION_DATE‿EXIF = _get_exif_datetime(REAL_CREATION_DATE)
 
 // must be OLDER yet we won't pick it
-const BAD_CREATION_DATE_CANDIDATE = enforce_immutability(create_better_date('tz:auto', 2006, 6, 26, 16, 36, 46, 666))
+const BAD_CREATION_DATE_CANDIDATE = enforceꓽimmutable(create_better_date('tz:auto', 2006, 6, 26, 16, 36, 46, 666))
 export const BAD_CREATION_DATE_CANDIDATE‿HRTS = getꓽhuman_readable_timestamp_auto(BAD_CREATION_DATE_CANDIDATE, 'tz:embedded')
 assert(BAD_CREATION_DATE_CANDIDATE‿HRTS === '2006-06-26_16h36m46s666', 'BAD_CREATION_DATE_CANDIDATE‿HRTS should be correct')
 export const BAD_CREATION_DATE_CANDIDATE‿TMS = getꓽtimestamp_utc_ms_from(BAD_CREATION_DATE_CANDIDATE)

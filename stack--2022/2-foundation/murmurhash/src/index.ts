@@ -1,7 +1,9 @@
 // https://cimi.io/murmurhash3js-revisited/
-import MurmurHash3 from 'murmurhash3js-revisited'
+// https://github.com/cimi/murmurhash3js-revisited
+import * as _MurmurHash3_cjs from 'murmurhash3js-revisited'
 import stable_stringify from '@offirmo-private/json-stable-stringify'
 
+const MurmurHash3 = (_MurmurHash3_cjs as any).default
 
 type TextEncoderConstructor = any
 let tec: TextEncoderConstructor | undefined = undefined
@@ -35,5 +37,5 @@ export {
 	create,
 	inject_text_encoder,
 
-	MurmurHash3,
+	//MurmurHash3,
 }

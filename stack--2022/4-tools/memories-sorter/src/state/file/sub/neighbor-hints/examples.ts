@@ -1,5 +1,5 @@
 
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { REAL_CREATION_DATE‿TMS } from '../../../../__test_shared/utils.js'
 import { create_better_date_from_utc_tms } from '../../../../services/better-date.js'
@@ -10,7 +10,7 @@ import { getꓽhistorical_representation } from './selectors.js'
 /////////////////////
 
 
-export const DEMO_STATE: Immutable<NeighborHints> = enforce_immutability<NeighborHints>({
+export const DEMO_STATE: Immutable<NeighborHints> = enforceꓽimmutable<NeighborHints>({
 	bcdⵧfrom_fs__reliabilityⵧassessed_from_phase1: 'unknown',
 	expected_bcd_ranges: [
 		{
@@ -22,7 +22,7 @@ export const DEMO_STATE: Immutable<NeighborHints> = enforce_immutability<Neighbo
 	tz: undefined, // TODO
 })
 
-/*export const DEMO_STATEⵧHISTORICAL: Immutable<HistoricalNeighborHints> = enforce_immutability<HistoricalNeighborHints>(
+/*export const DEMO_STATEⵧHISTORICAL: Immutable<HistoricalNeighborHints> = enforceꓽimmutable<HistoricalNeighborHints>(
 	get_historical_representation(DEMO_STATE)
 )*/
 

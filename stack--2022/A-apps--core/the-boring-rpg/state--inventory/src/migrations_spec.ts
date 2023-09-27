@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { itㆍshouldㆍmigrateㆍcorrectly } from '@offirmo-private/state-migration-tester'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
@@ -17,7 +17,7 @@ describe(`${LIB} - migration`, function() {
 			use_hints: false,
 			//can_update_snapshots: true, // uncomment temporarily to update the snapshots
 			SCHEMA_VERSION,
-			LATEST_EXPECTED_DATA: enforce_immutability<any>(create()),
+			LATEST_EXPECTED_DATA: enforceꓽimmutable<any>(create()),
 			migrate_to_latest: migrate_to_latest.bind(null, getꓽSEC()),
 			import_meta_url: import.meta.url, // for resolving the path below
 			relative_dir_path: '../../src/migrations_of_blank_state_specs',

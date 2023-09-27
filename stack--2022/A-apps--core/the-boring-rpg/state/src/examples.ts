@@ -1,6 +1,6 @@
 /////////////////////
 
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 /////////////////////
 
@@ -20,7 +20,7 @@ import { getꓽSEC } from './services/sec.js'
 
 // a full-featured, non-trivial demo state
 // with dev gain
-const DEMO_ADVENTURE_01: Immutable<Adventure> = enforce_immutability<Adventure>({
+const DEMO_ADVENTURE_01: Immutable<Adventure> = enforceꓽimmutable<Adventure>({
 	hid: 'fight_lost_any',
 	uuid: 'uu1~example~adventure~01',
 	good: true,
@@ -43,7 +43,7 @@ const DEMO_ADVENTURE_01: Immutable<Adventure> = enforce_immutability<Adventure>(
 	},
 })
 // with coin gain
-const DEMO_ADVENTURE_02: Immutable<Adventure> = enforce_immutability<Adventure>({
+const DEMO_ADVENTURE_02: Immutable<Adventure> = enforceꓽimmutable<Adventure>({
 	hid: 'dying_man',
 	uuid: 'uu1~example~adventure~02',
 	good: true,
@@ -66,7 +66,7 @@ const DEMO_ADVENTURE_02: Immutable<Adventure> = enforce_immutability<Adventure>(
 	},
 })
 // with loot gain
-const DEMO_ADVENTURE_03: Immutable<Adventure> = enforce_immutability<Adventure>({
+const DEMO_ADVENTURE_03: Immutable<Adventure> = enforceꓽimmutable<Adventure>({
 	hid: 'rare_goods_seller',
 	uuid: 'uu1~example~adventure~03',
 	good: true,
@@ -89,7 +89,7 @@ const DEMO_ADVENTURE_03: Immutable<Adventure> = enforce_immutability<Adventure>(
 	},
 })
 // with weapon enhancement gain
-const DEMO_ADVENTURE_04: Immutable<Adventure> = enforce_immutability<Adventure>({
+const DEMO_ADVENTURE_04: Immutable<Adventure> = enforceꓽimmutable<Adventure>({
 	hid: 'princess',
 	uuid: 'uu1~example~adventure~04',
 	good: true,
@@ -114,7 +114,7 @@ const DEMO_ADVENTURE_04: Immutable<Adventure> = enforce_immutability<Adventure>(
 
 // can't build an example from disconnected sample states.
 // taken from a real savegame:
-const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(getꓽSEC(), {
+const DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>(cleanup(getꓽSEC(), {
 	ⵙapp_id: 'tbrpg',
 	'schema_version': 16,
 	last_user_investment_tms: 1598854698575,
@@ -631,7 +631,7 @@ const DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(getꓽS
 	},
 }, {}))
 
-/*const FAKE_DEMO_STATE: Immutable<State> = enforce_immutability<State>(cleanup(getꓽSEC(), {
+/*const FAKE_DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>(cleanup(getꓽSEC(), {
 	schema_version: SCHEMA_VERSION,
 	last_user_investment_tms: TEST_TIMESTAMP_MS,
 

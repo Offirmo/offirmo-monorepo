@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////
 
 import { expect } from 'chai'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import {
 	create,

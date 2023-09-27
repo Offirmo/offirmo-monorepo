@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { itㆍshouldㆍmigrateㆍcorrectly } from '@offirmo-private/state-migration-tester'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import * as CharacterState from '@tbrpg/state--character'
 import * as WalletState from '@tbrpg/state-wallet'
@@ -30,7 +30,7 @@ describe(`${LIB} - schema migration`, function() {
 			//can_update_snapshots: true, // uncomment when updating
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA: () => {
-				const new_state = enforce_immutability<any>(create(getꓽSEC()))
+				const new_state = enforceꓽimmutable<any>(create(getꓽSEC()))
 				//dumpꓽanyⵧprettified('fresh state', new_state)
 				return new_state
 			},
@@ -44,7 +44,7 @@ describe(`${LIB} - schema migration`, function() {
 	describe('migration of an existing state', function () {
 
 		// some hints may be needed to migrate to demo state
-		const MIGRATION_HINTS_FOR_DEMO_STATE = enforce_immutability<any>({
+		const MIGRATION_HINTS_FOR_DEMO_STATE = enforceꓽimmutable<any>({
 			to_v16: {
 				should_not_reseed_demo_state_prng: true,
 			},

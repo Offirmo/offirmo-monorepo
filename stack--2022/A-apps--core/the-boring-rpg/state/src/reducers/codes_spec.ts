@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { LIB } from '../consts.js'
 import { EngagementKey } from '../data/engagement/index.js'
@@ -34,7 +34,7 @@ describe(`${LIB} - reducer - codes`, function() {
 	CODES.forEach(code => {
 		describe(`good code "${code}"`, function() {
 			it('should not cause a crash', function() {
-				const initial_state = enforce_immutability<State>(
+				const initial_state = enforceꓽimmutable<State>(
 					_ack_all_engagements(
 						_lose_all_energy( // for BORED
 							reseed(
@@ -65,7 +65,7 @@ describe(`${LIB} - reducer - codes`, function() {
 	describe('good code with redemption limit', function() {
 		// bug seen, v0.59
 		it('should correctly crash on second attempt', () => {
-			const initial_state = enforce_immutability<State>(
+			const initial_state = enforceꓽimmutable<State>(
 				_ack_all_engagements(
 					reseed(
 						create(),
@@ -87,7 +87,7 @@ describe(`${LIB} - reducer - codes`, function() {
 
 	describe('bad code', function() {
 		it('should cause a crash', function() {
-			const initial_state = enforce_immutability<State>(
+			const initial_state = enforceꓽimmutable<State>(
 				_ack_all_engagements(
 					reseed(
 						create(),

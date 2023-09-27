@@ -2,7 +2,7 @@
 
 import {
 	Immutable,
-	enforce_immutability,
+	enforceꓽimmutable,
 	LastMigrationStep,
 	MigrationStep,
 	generic_migrate_to_latest,
@@ -16,7 +16,7 @@ import { TBRSoftExecutionContext } from './sec.js'
 
 // some hints may be needed to migrate to demo state
 // need to export them for composing tests
-const MIGRATION_HINTS_FOR_TESTS = enforce_immutability<any>({
+const MIGRATION_HINTS_FOR_TESTS = enforceꓽimmutable<any>({
 })
 
 /////////////////////

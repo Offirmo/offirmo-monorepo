@@ -2,7 +2,7 @@
 
 import { getꓽUTC_timestamp‿ms, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 import assert from 'tiny-invariant'
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 /////////////////////
 
@@ -133,7 +133,7 @@ function create(SEC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable
 		// hurts the unit tests!
 		//state = _update_to_now(state, now_ms) // not sure needed but doesn't hurt
 
-		return enforce_immutability<State>(state)
+		return enforceꓽimmutable<State>(state)
 	})
 }
 
@@ -161,7 +161,7 @@ function reseed(state: Immutable<State>, seed?: PRNGState.Seed): Immutable<State
 	}
 
 
-	return enforce_immutability<State>(state)
+	return enforceꓽimmutable<State>(state)
 }
 
 /////////////////////

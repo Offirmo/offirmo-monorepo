@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import sinon from 'sinon'
+import * as sinon from 'sinon'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import {

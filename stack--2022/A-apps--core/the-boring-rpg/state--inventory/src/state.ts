@@ -1,7 +1,7 @@
 /////////////////////
 
 import { UUID } from '@offirmo-private/uuid'
-import { Immutable, enforce_immutability } from '@offirmo-private/state-utils'
+import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { InventorySlot } from '@tbrpg/definitions'
 
 
@@ -15,7 +15,7 @@ import { TBRSoftExecutionContext, getꓽSEC } from './sec.js'
 
 function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
 	return getꓽSEC(SEC).xTry('rename', () => {
-		return enforce_immutability<State>({
+		return enforceꓽimmutable<State>({
 			schema_version: SCHEMA_VERSION,
 			revision: 0,
 
