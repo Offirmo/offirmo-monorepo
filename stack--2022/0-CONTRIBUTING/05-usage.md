@@ -35,10 +35,10 @@ bolt --only-fs "[0-9]-*/*" ws run test
   bolt --only-fs "2-foundation/*" ws run build
   bolt --only-fs "2-foundation/*" ws run test
   bolt --only-fs "3-advanced--*/*" ws run build
-    bolt --only-fs "3-advanced--multi/*" ws run build
-    bolt --only-fs "3-advanced--multi/*" ws run test
     bolt --only-fs "3-advanced--isomorphic/*" ws run build
     bolt --only-fs "3-advanced--isomorphic/*" ws run test
+    bolt --only-fs "3-advanced--multi/*" ws run build
+    bolt --only-fs "3-advanced--multi/*" ws run test
     bolt --only-fs "3-advanced--browser/*" ws run build
     bolt --only-fs "3-advanced--browser/*" ws run test
     bolt --only-fs "3-advanced--node/*" ws run build

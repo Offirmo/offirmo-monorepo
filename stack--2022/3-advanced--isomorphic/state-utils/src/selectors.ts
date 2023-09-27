@@ -71,7 +71,7 @@ export function getꓽschema_versionⵧloose<
 
 	// specific fallbacks
 	if (Array.isArray(s)) {
-		const maybe_legacy_bundle = s
+		const maybe_legacy_bundle = s as any[]
 		if (has_versioned_schema(maybe_legacy_bundle[0])) {
 			return getꓽschema_version(maybe_legacy_bundle[0])
 		}
@@ -126,7 +126,7 @@ export function getꓽrevisionⵧloose<
 
 	// specific fallbacks:
 	if (Array.isArray(s)) {
-		const maybe_legacy_bundle = s
+		const maybe_legacy_bundle = s as any[]
 		if (is_revisioned(maybe_legacy_bundle[0])) {
 			return getꓽrevision(maybe_legacy_bundle[0]) + getꓽrevisionⵧloose(maybe_legacy_bundle[1])
 		}
@@ -179,8 +179,11 @@ export function getꓽtimestampⵧloose<
 
 	// specific fallbacks:
 	// loose bundles
-	if (Array.isArray(s) && is_time_stamped(s[1]))
-		return getꓽtimestamp(s[1])
+	if (Array.isArray(s)) {
+		const maybe_loose_bundle = s as any[]
+		if (is_time_stamped(maybe_loose_bundle[1]))
+			return getꓽtimestamp(maybe_loose_bundle[1])
+	}
 
 	// final fallback
 	return 0
