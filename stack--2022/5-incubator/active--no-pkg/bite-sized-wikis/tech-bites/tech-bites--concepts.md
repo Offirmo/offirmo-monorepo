@@ -1,45 +1,14 @@
 12 factors https://12factor.net/
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 97 Things Every Programmer Should Know
-APIs web
-Agile
-Applis web
-By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
-CAP ACID https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
-Connascence https://en.wikipedia.org/wiki/Connascence
-DACI Decision Making Framework “driver, approver, contributor, informed" https://www.atlassian.com/team-playbook/plays/daci
-DDOS
-DDOS - self https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
-DRY don't repeat yourself
-IIFE
-JSON
-Joel test
-KISS
-KTLO
-LTS, maintenance LTS, active LTS https://nodejs.org/en/about/releases/
-MDN
-MVC
-OKR
-OOP
-Pair-programming
-RAM
-RFC https://rfc.fyi/
-React
-SLI Service Level Indicator A measurement of how reliable or performant a Capability is. Example: “time it takes to create a ticket”
-SLO Service Level Objective (proactive) A target set on the SLI. Failing to hit the target == unhappy customer! Example: “Jira ticket created in less than 1s”
-SME
-Scrum
-Sustainable Architectural Decisions https://adr.github.io/
-TDD
-TDZ
-WET https://overreacted.io/the-wet-codebase/
-X considered harmful
-YAGINTF - yet another guideline I need to follow?
 abstraction https://www.merrickchristensen.com/articles/abstraction/
+Agile
 allocation
 annotation
 anomaly detection
+APIs web
 appli web ?
+Applis web
 apply / call / bind
 arguments
 assembly
@@ -47,14 +16,18 @@ asymc / design pattern réacteur
 async/sync
 asynchrone
 atomic
+authentication
 auto-scaling and load-shedding
 blocking
+By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
 cache
+CAP ACID https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
 capability is an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
 class
 comment
 compile to js
 compiler
+Connascence https://en.wikipedia.org/wiki/Connascence
 constructor
 context switch
 conventional changelogs https://github.com/conventional-changelog
@@ -63,7 +36,10 @@ conventional commits https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518c
 cost based rate limiting
 courbe d'expertise
 crunch
+DACI Decision Making Framework “driver, approver, contributor, informed" https://www.atlassian.com/team-playbook/plays/daci
 database
+DDOS
+DDOS - self https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
 debugger
 debugging
 defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actually-healthy-5flj
@@ -71,9 +47,11 @@ dependencies
 dependency hell https://en.wikipedia.org/wiki/Dependency_hell
 devops
 double authent
+DRY don't repeat yourself
 dry run
 démos
 effacement d'une liste pendant qu'on la parcourt
+egress
 emscripten
 event loop
 executive
@@ -126,12 +104,17 @@ https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-
 https://www.atlassian.com/team-playbook/plays/elevator-pitch
 https://xyproblem.info/
 héritage prototypal, héritage en diamant
+IIFE
 immutability
 io.js
+Joel test
 jQuery
 js equality
+JSON
 jump/goto
 kebab-case vs snake etc
+KISS
+KTLO
 language interprété types simples / types par référence
 language trends
 lazy-loading
@@ -141,8 +124,10 @@ lodash
 log
 loop
 loop - breaking out of
+LTS, maintenance LTS, active LTS https://nodejs.org/en/about/releases/
 magic number
 map
+MDN
 memory -- heap
 memory -- stack
 message passing
@@ -151,14 +136,18 @@ migrations
 mocha / chai
 monde du web ?
 monitoring
+MVC
 namespace
 nommage des fonctions
 npm
 nyan cat
 object
 observability
+OKR
+OOP
 optim des || et && effet de bord
 ownership
+Pair-programming
 perf as a feature
 perfs
 pipeline express success / error / next / send
@@ -167,33 +156,46 @@ pointer
 polyfill
 promises
 prototypes
+proxy
 queue
+RAM
 ratcheting https://robertgreiner.com/continuous-code-improvement-using-ratcheting/ https://leaddev.com/building-better-software/introducing-quality-ratchets-tool-managing-complex-systems
 rate-limiting
 rate-limiting -- cost based
+React
 reactive programming
 reactor pattern
 recursion
 register
 release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-10-insider-program-from-rings-to-release-channels/
 revisions
+RFC https://rfc.fyi/
 rollback
 rolling deploy
 scaling horizontal
 scope
+Scrum
 semaphore
 semver
+service
 service availability
+Service Proxy Egress authentication
 shaving the yak
 shim vs polyfill vs ponyfill
 shrinkwrap
 single source of truth
+SLI Service Level Indicator A measurement of how reliable or performant a Capability is. Example: “time it takes to create a ticket”
+SLO Service Level Objective (proactive) A target set on the SLI. Failing to hit the target == unhappy customer! Example: “Jira ticket created in less than 1s”
+SME
 spec js
 stack overflow
 state
 state management
 streams
+Sustainable Architectural Decisions https://adr.github.io/
 system call
+TDD
+TDZ
 tech debt -- Accidental - e.g. bugs due to human error that unknowingly increases the cost of future work.
 tech debt -- Deliberate  - e.g. optimising for short term delivery, knowing it increases the cost of future work.
 tech debt -- Incidental  - e.g. organic changes in complexity over time that increases the cost of future work.
@@ -211,3 +213,6 @@ use strict
 vaporware
 variables pointeur / natives
 web assembly (asm.js)
+WET https://overreacted.io/the-wet-codebase/
+X considered harmful
+YAGINTF - yet another guideline I need to follow?
