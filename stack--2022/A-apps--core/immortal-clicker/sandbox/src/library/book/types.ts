@@ -92,7 +92,7 @@ type PageReference = string // TODO clarify the format
 // path to any part of a book
 type PartPath = string // TODO clarify the format
 const PATH = {
-	whole: '*' as PartPath,
+	whole: '*' as PartPath, // TODO
 }
 
 // some books can be customized and thus have several instances
@@ -111,6 +111,7 @@ const PATH = {
 
 export {
 	type BookPage,
+	type BookPartKey,
 	type BookPart,
 
 	type BookUId,

@@ -12,6 +12,10 @@ import { BookPart } from '../../../library/book/types.js'
 const content: BookPart = {
 	parts_type: 'panel',
 	parts: {
+		'000': {
+			content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulputate eu. In fermentum et sollicitudin ac orci phasellus egestas tellus. Sed turpis tincidunt id aliquet risus feugiat in ante metus. Ut pharetra sit amet aliquam. Aliquet porttitor lacus luctus accumsan tortor posuere. Porttitor leo a diam sollicitudin tempor id. Velit dignissim sodales ut eu sem integer vitae justo. A diam sollicitudin tempor id eu nisl nunc mi. At auctor urna nunc id cursus metus aliquam eleifend mi.',
+			contentⵧvisual: 'https://fakeimg.pl/400x600?text=000',
+		},
 		'001': {
 			content: 'Ac feugiat sed lectus vestibulum mattis. Tristique senectus et netus et malesuada fames. Elit ut aliquam purus sit. Vitae tortor condimentum lacinia quis vel eros donec. Ac turpis egestas integer eget aliquet. Pellentesque nec nam aliquam sem et tortor consequat id porta. At imperdiet dui accumsan sit amet nulla. Nunc consequat interdum varius sit amet mattis vulputate enim. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Amet luctus venenatis lectus magna. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Tellus mauris a diam maecenas sed enim ut sem. Diam donec adipiscing tristique risus nec feugiat in fermentum. Bibendum enim facilisis gravida neque convallis a cras semper. Leo vel fringilla est ullamcorper eget nulla facilisi. Facilisis leo vel fringilla est ullamcorper. Hendrerit gravida rutrum quisque non tellus orci ac auctor augue. Tincidunt arcu non sodales neque sodales ut etiam. Feugiat in ante metus dictum at tempor commodo ullamcorper.',
 			contentⵧvisual: 'https://fakeimg.pl/400x600?text=001',
@@ -679,10 +683,6 @@ const content: BookPart = {
 		'167': {
 			content: 'Volutpat odio facilisis mauris sit amet massa. Luctus venenatis lectus magna fringilla urna porttitor rhoncus. Blandit massa enim nec dui nunc mattis enim ut. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Sed nisi lacus sed viverra tellus. Vitae congue eu consequat ac felis. Viverra accumsan in nisl nisi scelerisque. Vivamus at augue eget arcu dictum varius duis. Adipiscing tristique risus nec feugiat in fermentum. Duis convallis convallis tellus id interdum velit laoreet id donec. Lobortis elementum nibh tellus molestie nunc non blandit massa. Sed turpis tincidunt id aliquet risus feugiat in ante metus. Pharetra diam sit amet nisl suscipit adipiscing bibendum. Ac turpis egestas maecenas pharetra convallis posuere morbi leo. Nisl tincidunt eget nullam non nisi est sit amet.',
 			contentⵧvisual: 'https://fakeimg.pl/400x600?text=167',
-		},
-		'168': {
-			content: 'Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Venenatis cras sed felis eget velit aliquet sagittis. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Dictumst quisque sagittis purus sit. Suscipit tellus mauris a diam maecenas sed. Urna molestie at elementum eu facilisis sed. Et netus et malesuada fames ac turpis. Ac turpis egestas sed tempus urna et pharetra pharetra massa. A condimentum vitae sapien pellentesque habitant morbi. Non curabitur gravida arcu ac tortor dignissim. Diam maecenas sed enim ut sem viverra. Diam vel quam elementum pulvinar etiam non quam lacus suspendisse. Suscipit tellus mauris a diam maecenas sed enim ut sem. Ut porttitor leo a diam sollicitudin tempor id.',
-			contentⵧvisual: 'https://fakeimg.pl/400x600?text=168',
 		},
 	},
 }
