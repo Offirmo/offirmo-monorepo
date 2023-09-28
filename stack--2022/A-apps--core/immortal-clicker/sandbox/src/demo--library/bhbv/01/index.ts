@@ -1,11 +1,11 @@
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { Book, BookCover, BookPage, BookUId, PageReference } from '../../../library/book/types.js'
-import { BookResolverEntry } from '../../../library/book-resolver/index.js'
+import { Book, BookCover, BookUId } from '../../../library/book/types.js'
+import { BookResolver, BookResolverEntry } from '../../../library/book-resolver/index.js'
 
 /////////////////////////////////////////////////
 
-const uid: BookUId = '〖BOOKꓽBHBVⵧ001〗【la_plus_belle_histoire】'
+const uid: BookUId = '〖BOOKꓽBHBVⵧ001【la_plus_belle_histoire】〗'
 
 const cover: BookCover = {
 	title: 'La plus belle histoire',
@@ -15,8 +15,7 @@ const cover: BookCover = {
 	},
 }
 
-async function ↆget(ref?: PageReference): Promise<Book> {
-
+const ↆget: BookResolver = async function ↆget(existing, ref): Promise<Book> {
 	throw new Error('NIMP!')
 }
 

@@ -24,23 +24,32 @@ stash = BookStashLib.addꓽbook(stash, BookEntryꓽBHBHⳇ022.uid)
 /////////////////////////////////////////////////
 
 // imagine a landing page, with the list of books
-console.log(`📚📚📚 Stash 📚📚📚`)
+console.log(`\n📚📚📚 Stash 📚📚📚`)
 console.log(to_terminal(renderꓽBookStash(
 	stash
 )))
 console.log('')
 
 // now let's imagine we click on one to learn more
-console.log(`🔎 Inspecting:`)
+console.log(`\n🔎🔎🔎 Inspecting a book: 🔎🔎🔎`)
 console.log(to_terminal(renderꓽBookCover(
 	BookResolverLib.getꓽBookCover(BookEntryꓽBHBHⳇ022.uid),
 	//BookStashLib.getꓽexperience(stash, BookEntryꓽBHBHⳇ022.uid), TODO
 )))
+console.log('TODO take the experience into account!!!')
 console.log('')
 
 // now let's start reading it
-console.log(`📖 Reading…`)
-BookResolverLib.ↆgetꓽBook(BookEntryꓽBHBHⳇ022.uid).then(book => {
+console.log(`\n📖📖📖 Reading… 📖📖📖`)
+await BookResolverLib.ↆgetꓽBook(BookEntryꓽBHBHⳇ022.uid).then(book => {
+	console.log(to_terminal(renderꓽBookPage(
+		book,
+		''
+	)))
+})
+
+console.log(`\n📖📖📖 Reading… 📖📖📖`)
+await BookResolverLib.ↆgetꓽBook(BookEntryꓽBHBHⳇ022.uid).then(book => {
 	console.log(to_terminal(renderꓽBookPage(
 		book,
 		''

@@ -1,9 +1,14 @@
+import { Immutable } from '@offirmo-private/ts-types'
 
 import { Book, BookCover, BookUId, PageReference } from '../book/types.js'
 
 /////////////////////////////////////////////////
 
-type BookResolver = (path?: PageReference) => Promise<Book>
+// dynamically loads the content. Especially designed at lazy loading.
+// Note that we support granular loading, the result may not be a fully loaded book
+// hence the param:
+// - page_ref: optional, in case we have a granular dynamic loading
+type BookResolver = (existing: Immutable<BookCover> | Immutable<Book>, page_ref?: PageReference) => Promise<Immutable<Book>>
 
 interface BookResolverEntry {
 	uid: BookUId
@@ -14,7 +19,7 @@ interface BookResolverEntry {
 interface BookResolversIndex {
 	entries: {
 		[book_uid: BookUId]: {
-			book: BookCover | Book // TODO review whether we can auto-transform cover to book
+			book: BookCover | Book
 			ↆget: BookResolver
 		}
 	}

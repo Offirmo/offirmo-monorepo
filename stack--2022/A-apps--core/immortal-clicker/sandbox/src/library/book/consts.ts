@@ -1,0 +1,6 @@
+
+const PAGE_REFERENCEⵧSEPARATOR = '↳'
+
+export {
+	PAGE_REFERENCEⵧSEPARATOR,
+}

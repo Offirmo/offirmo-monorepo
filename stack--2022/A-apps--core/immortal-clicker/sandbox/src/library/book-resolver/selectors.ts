@@ -15,13 +15,14 @@ function getꓽBookCover(state: Immutable<BookResolversIndex>, uid: BookUId): Im
 	return cover
 }
 
-async function ↆgetꓽBook(state: Immutable<BookResolversIndex>, uid: BookUId, path?: PageReference): Promise<Immutable<Book>> {
+async function ↆgetꓽBook(state: Immutable<BookResolversIndex>, uid: BookUId, page_ref?: PageReference): Promise<Immutable<Book>> {
 	const ↆget =state.entries[uid]?.ↆget
+	const existing = getꓽBookCover(state, uid)
 
 	//console.log(state)
 	assert(!!ↆget, `The resolver should have a loader for id "${uid}"!`)
 
-	return ↆget()
+	return ↆget(existing, page_ref)
 }
 
 /////////////////////////////////////////////////

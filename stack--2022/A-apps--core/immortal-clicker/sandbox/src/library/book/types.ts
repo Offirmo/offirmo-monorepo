@@ -60,10 +60,11 @@ interface BookPage {
 // any unit above the "page" one
 // ex. volume, chapter...
 // Can form a tree of any depth
+type BookPartKey = string
 interface BookPart {
 	parts_type?: string
 	parts: {
-		[k: string]: Book | BookPart | BookPage | string
+		[k: BookPartKey]: BookPart | BookPage | string
 	}
 
 	// optionally a part may have its own infos
@@ -77,7 +78,7 @@ interface BookPart {
 interface Book extends BookPart, BookCover {
 	uid: BookUId // for referencing
 
-	title: string // mandatory
+	title: string // mandatory property (needed to properly inherit)
 
 	is_template?: true // TODO review
 	// TODO declare template slots?
