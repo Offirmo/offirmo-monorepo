@@ -5,13 +5,22 @@
 7+7 œuvres de misericorde https://fr.wikipedia.org/wiki/%C5%92uvres_de_mis%C3%A9ricorde
 Animism
 Apostles - what happened to them
+armor of Christ
 Countries - how christianism was introduced
+doubt https://aleteia.org/2023/04/15/is-all-doubt-bad/
 Fatima: message, children, secrets
 Human sacrifice
 Jacques Fesch
+le sacré
 Lourdes
+mercy
+médaille -- miraculeuse
+médaille -- st Benoit
 Natural Religiosity
+prayer -- extension of selfishness: santa's list, promise to be good, implore, negotiate, plead
 Russian Pilgrim
+selfishness
+small & simple better than savant
 St (france)
 St Benedict Joseph Labre
 St Carmélites de Compiègne
@@ -25,13 +34,5 @@ St Rita
 St Simeon Salos
 St Zita
 Ste Thérèse
+testaments spirituels St Louis St Remy https://www.famillechretienne.fr/39532/article/le-testament-spirituel-de-benoit-xvi-texte-integral
 What is even a religion?
-doubt https://aleteia.org/2023/04/15/is-all-doubt-bad/
-le sacré
-mercy
-médaille -- miraculeuse
-médaille -- st Benoit
-prayer -- extension of selfishness: santa's list, promise to be good, implore, negotiate, plead
-selfishness
-small & simple better than savant
-armor of Christ
