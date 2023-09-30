@@ -1,11 +1,11 @@
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { Book, BookCover, BookUId } from '../../../library/book/types.js'
-import { BookResolver, BookResolverEntry } from '../../../library/book-resolver/index.js'
+import { BookResolver, BookResolverEntry } from '../../../library/book--resolver/index.js'
 
 /////////////////////////////////////////////////
 
-const uid: BookUId = '〖BOOKꓽBHBVⵧ001【la_plus_belle_histoire】〗'
+const uid: BookUId = '〖BOOKꓽBHBVⵧ001【la plus belle histoire】〗'
 
 const cover: BookCover = {
 	title: 'La plus belle histoire',

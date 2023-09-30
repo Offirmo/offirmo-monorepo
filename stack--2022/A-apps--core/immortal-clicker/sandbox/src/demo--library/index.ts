@@ -2,13 +2,13 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
-import * as BookStashLib from '../library/state--book-stash/index.js'
-import * as BookResolverLib from '../library/book-resolver/index.js'
+import * as BookStashLib from '../library/book--stash/index.js'
+import * as BookResolverLib from '../library/book--resolver/index.js'
+import { renderꓽBookStash } from '../library/book--stash/render--RichText.js'
+import { renderꓽBookCover, renderꓽBookPage } from '../library/book/render--RichText.js'
 
 import { BookEntryꓽBHBHⳇ001 } from './bhbv/01/index.js'
 import { BookEntryꓽBHBHⳇ022 } from './bhbv/22/index.js'
-import { renderꓽBookStash } from '../library/state--book-stash/render--RichText.js'
-import { renderꓽBookCover, renderꓽBookPage } from '../library/book/render--RichText.js'
 
 /////////////////////////////////////////////////
 // this technical index store the books UIDs and the loading function

@@ -3,7 +3,7 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 import { BookStash } from './types.js'
 import { BookUId } from '../book/types.js'
-import { BookExperience } from '../book-experience/types.js'
+import { BookExperience } from '../book--experience/types.js'
 
 /////////////////////////////////////////////////
 

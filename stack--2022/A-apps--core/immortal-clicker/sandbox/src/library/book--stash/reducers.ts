@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { BookUId } from '../book/types.js'
-import { AccessLevel, BookExperience, ComprehensionLevel } from '../book-experience/types.js'
+import { AccessLevel, BookExperience, ComprehensionLevel } from '../book--experience/types.js'
 import { BookStash } from './types.js'
 
 /////////////////////////////////////////////////

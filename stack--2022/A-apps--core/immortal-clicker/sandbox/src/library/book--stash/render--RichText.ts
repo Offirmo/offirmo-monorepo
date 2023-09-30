@@ -3,7 +3,7 @@ import { Immutable } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import { BookUId } from '../book/types.js'
-import * as BookResolverLib from '../book-resolver/index.js'
+import * as BookResolverLib from '../book--resolver/index.js'
 import * as BookStashLib from './index.js'
 
 /////////////////////////////////////////////////

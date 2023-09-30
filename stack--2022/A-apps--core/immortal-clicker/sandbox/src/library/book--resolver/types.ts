@@ -8,7 +8,9 @@ import { Book, BookCover, BookUId, PageReference } from '../book/types.js'
 // Note that we support granular loading, the result may not be a fully loaded book
 // hence the param:
 // - page_ref: optional, in case we have a granular dynamic loading
-type BookResolver = (existing: Immutable<BookCover> | Immutable<Book>, page_ref?: PageReference) => Promise<Immutable<Book>>
+type BookResolver =
+	(existing: Immutable<BookCover> | Immutable<Book>, page_ref?: PageReference)
+		=> Promise<Immutable<Book>>
 
 interface BookResolverEntry {
 	uid: BookUId
@@ -19,7 +21,7 @@ interface BookResolverEntry {
 interface BookResolversIndex {
 	entries: {
 		[book_uid: BookUId]: {
-			book: BookCover | Book
+			book: BookCover | Book // reminder: book can be loaded in a granular way, may not be complete
 			ↆget: BookResolver
 		}
 	}

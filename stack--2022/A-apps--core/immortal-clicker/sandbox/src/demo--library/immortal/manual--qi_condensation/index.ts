@@ -9,16 +9,12 @@ import { isꓽBook } from '../../../library/book/types--guards.js'
 
 /////////////////////////////////////////////////
 
-const uid: BookUId = '〖BOOKꓽBHBVⵧ022【Odile la belle dame d’Alsace】〗'
+const uid: BookUId = '〖BOOKꓽIMMORTAL【[SECT]’s Qi Condensation Manual】〗'
 
 const cover: BookCover = {
-	title: 'Odile, la belle dame d’Alsace',
+	title: '⎨⎨slotꓽsect⎬⎬’s Qi Condensation Manual',
 
-	author: 'M.-C. Mainé', // TODO more
-
-	hints: {
-		pages_count: 168,
-	},
+	author: '(unknown)',
 }
 
 const ↆget: BookResolver = async function ↆget(existing, ref) {
@@ -57,5 +53,5 @@ export {
 	ↆget,
 	entry,
 
-	entry as BookEntryꓽBHBHⳇ022,
+	entry as BookEntryꓽIMMORTALⳇQiCondensationManual,
 }
