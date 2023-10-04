@@ -63,3 +63,6 @@ styles using tokens MUST NOT import them, or it make it hard to override the tok
 It's up to the caller to import the tokens
 
 TODO solve that with layers! (when supported in parcel)
+
+
+TODO +++ https://atlassian.design/foundations/typography

@@ -14,3 +14,9 @@ Toast
 
 
 https://good-design.org/projects/atlassians-colour-system-at-scale/
+
+
+TODO semantic fonts
+- https://airbnb.design/cereal/
+- charlie
+- etc.

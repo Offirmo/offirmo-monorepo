@@ -2,9 +2,10 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { Book, BookCover, PageReference } from './types.js'
+import { Book, BookCover, BookPage, PageReference } from './types.js'
 import { isꓽBook, isꓽBookCover } from './types--guards.js'
-import { getꓽBookPage } from './selectors.js'
+import { getꓽBookPage, getꓽBookPageⵧchain } from './selectors.js'
+import { PAGE_REFERENCEⵧSEPARATOR } from './consts.js'
 
 /////////////////////////////////////////////////
 
@@ -69,6 +70,7 @@ function renderꓽBookCover(
 	return builder.done()
 }
 
+
 function renderꓽBookPage(
 	book: Immutable<Book>,
 	page_ref: PageReference,
@@ -79,10 +81,21 @@ function renderꓽBookPage(
 
 	assert(isꓽBook(book), `should be a book!`)
 
-	const page = getꓽBookPage(book, page_ref)
+	const chain = getꓽBookPageⵧchain(book, page_ref)
+	const page = chain.page
 
 	let builder = RichText.fragmentⵧblock()
-		.pushText(page.content) // TODO add image
+
+	builder.pushHeading(book.title)
+
+	chain.steps.forEach((step, index) => {
+		const { book_part, keysⵧallⵧordered, keyⵧselected} = step
+		const key_index = keysⵧallⵧordered.indexOf(keyⵧselected)
+		builder.pushBlockFragment(`${book_part.parts_type || 'page'} ${key_index+1}/${keysⵧallⵧordered.length}`)
+	})
+
+	builder.pushText(page.content) // TODO add image
+
 
 	if (DEBUG) console.groupEnd()
 

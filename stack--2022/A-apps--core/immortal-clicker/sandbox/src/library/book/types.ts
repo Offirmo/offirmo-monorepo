@@ -87,7 +87,7 @@ interface Book extends BookPart, BookCover {
 // basic types needed for advanced stuff
 
 // path to a specific page, for ex. for bookmarking
-type PageReference = string // TODO clarify the format
+type PageReference = string // TODO clarify the format, BookPartKey separated by XX
 
 // path to any part of a book
 type PartPath = string // TODO clarify the format

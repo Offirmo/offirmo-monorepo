@@ -46,6 +46,8 @@ await BookResolverLib.ↆgetꓽBook(BookEntryꓽBHBHⳇ022.uid).then(book => {
 		book,
 		''
 	)))
+	console.log('TODO take the experience into account!!!')
+	console.log('')
 })
 
 console.log(`\n📖📖📖 Reading… 📖📖📖`)
@@ -54,6 +56,8 @@ await BookResolverLib.ↆgetꓽBook(BookEntryꓽBHBHⳇ022.uid).then(book => {
 		book,
 		''
 	)))
+	console.log('TODO take the experience into account!!!')
+	console.log('')
 })
 
 /////////////////////////////////////////////////
