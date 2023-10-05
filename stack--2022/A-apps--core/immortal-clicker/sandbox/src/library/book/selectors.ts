@@ -94,7 +94,8 @@ function _getꓽBookPageⵧchain(
 	const child = _getꓽBookPart__childⵧby_key(book_part, keyⵧselected)
 	if (isꓽPageⵧlike(child)) {
 		// end of the chain
-		assert(page_ref.length <= 1, `_getꓽBookPageⵧchain: when reaching a page, the path should be empty!`)
+		// TODO REVIEW when doing NEXT/PREVIOUS, we may switch to a part that is not as deep as the previous one, hence different chain length
+		assert(page_ref.length <= 1, `_getꓽBookPageⵧchain: when reaching a page, the path should be empty! (TODO IMPROVE LOGIC)`)
 		return {
 			steps: [chain_step],
 			page: _ensureꓽisꓽBookPage(child)
@@ -104,7 +105,7 @@ function _getꓽBookPageⵧchain(
 	// not the end, recurse
 	const chain = _getꓽBookPageⵧchain(
 		book_part,
-		page_ref.slice(1),
+		page_ref.slice(1), // TODO if empty, we may want to propagate FIRST/LAST! In case different book parts don't have the same depth
 	)
 
 	return {
@@ -180,8 +181,14 @@ function getꓽBookPageⵧchainⵧfrom_chain(
 				throw new Error('Switch default!')
 		}
 	})
-	assert(has_advanced, `getꓽBookPageⵧchainⵧfrom_chain() should be able to advance (to ${modifier})!`)
-	console.log('getꓽBookPageⵧchainⵧfrom_chain new ref[] =', pathⵧsplit)
+
+	//console.log('getꓽBookPageⵧchainⵧfrom_chain new ref[] =', pathⵧsplit)
+	if (!has_advanced) {
+		// this is possible and normal
+		// a full chain of "first" and "last" will have been constructed
+		// when doing "BACK" on the FIRST page -> will properly loop to the LAST page ✅
+		// when doing "NEXT" on the LAST page -> will properly loop to the FIRST page
+	}
 
 	return _getꓽBookPageⵧchain(chain.steps[0].book_part, pathⵧsplit)
 }

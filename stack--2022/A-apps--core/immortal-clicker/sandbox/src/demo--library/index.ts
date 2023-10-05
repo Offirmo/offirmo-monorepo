@@ -73,8 +73,17 @@ await BookResolverLib.ↆgetꓽBook(BookEntryꓽBHBHⳇ022.uid).then(book => {
 	console.log(`TODO Bookmark current page: "${current_page_ref}"`)
 	console.log('')
 
-	for(let i = 0; i < 10; ++i) {
+	for(let i = 0; i < 3; ++i) {
 		chain = getꓽBookPageⵧchainⵧfrom_chain(chain, 'next')
+		console.log(to_terminal(renderꓽBookPageⵧfrom_chain(chain)))
+		console.log('TODO take the experience into account!!!')
+		current_page_ref = getꓽBookPageRefⵧfrom_chain(chain)
+		console.log(`TODO Bookmark current page: "${current_page_ref}"`)
+		console.log('')
+	}
+
+	for(let i = 0; i < 5; ++i) {
+		chain = getꓽBookPageⵧchainⵧfrom_chain(chain, 'previous')
 		console.log(to_terminal(renderꓽBookPageⵧfrom_chain(chain)))
 		console.log('TODO take the experience into account!!!')
 		current_page_ref = getꓽBookPageRefⵧfrom_chain(chain)
