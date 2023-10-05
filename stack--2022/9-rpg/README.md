@@ -42,3 +42,6 @@ See package.json.
 
 Extra:
 - UI inspired by https://ronenness.github.io/RPGUI/
+
+
+http://www.mythencyclopedia.com/

@@ -1,6 +1,6 @@
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { Book, BookCover, BookUId, PageReference } from '../book/types.js'
+import { Book, BookCover, BookUId, BookPageReference } from '../book/types.js'
 
 /////////////////////////////////////////////////
 
@@ -9,7 +9,7 @@ import { Book, BookCover, BookUId, PageReference } from '../book/types.js'
 // hence the param:
 // - page_ref: optional, in case we have a granular dynamic loading
 type BookResolver =
-	(existing: Immutable<BookCover> | Immutable<Book>, page_ref?: PageReference)
+	(existing: Immutable<BookCover> | Immutable<Book>, page_ref?: BookPageReference)
 		=> Promise<Immutable<Book>>
 
 interface BookResolverEntry {

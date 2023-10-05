@@ -66,3 +66,5 @@ TODO solve that with layers! (when supported in parcel)
 
 
 TODO +++ https://atlassian.design/foundations/typography
+
+TODO     width: fit-content; on all? https://courses.joshwcomeau.com/css-for-js/01-rendering-logic-1/09-flow-layout

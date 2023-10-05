@@ -2,10 +2,22 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
-import * as BookStashLib from '../library/book--stash/index.js'
+import {
+	BookPageReference,
+} from '../library/book/types.js'
+import {
+	getꓽBookPageⵧchain,
+	getꓽBookPageRefⵧfrom_chain,
+	getꓽBookPageⵧchainⵧfrom_chain,
+} from '../library/book/selectors.js'
+import {
+	renderꓽBookCover,
+	renderꓽBookPage,
+	renderꓽBookPageⵧfrom_chain,
+} from '../library/book/render--RichText.js'
 import * as BookResolverLib from '../library/book--resolver/index.js'
+import * as BookStashLib from '../library/book--stash/index.js'
 import { renderꓽBookStash } from '../library/book--stash/render--RichText.js'
-import { renderꓽBookCover, renderꓽBookPage } from '../library/book/render--RichText.js'
 
 import { BookEntryꓽBHBHⳇ001 } from './bhbv/01/index.js'
 import { BookEntryꓽBHBHⳇ022 } from './bhbv/22/index.js'
@@ -40,7 +52,7 @@ console.log('TODO take the experience into account!!!')
 console.log('')
 
 // now let's start reading it
-console.log(`\n📖📖📖 Reading… 📖📖📖`)
+/*console.log(`\n📖📖📖 Reading… 📖📖📖`)
 await BookResolverLib.ↆgetꓽBook(BookEntryꓽBHBHⳇ022.uid).then(book => {
 	console.log(to_terminal(renderꓽBookPage(
 		book,
@@ -48,16 +60,27 @@ await BookResolverLib.ↆgetꓽBook(BookEntryꓽBHBHⳇ022.uid).then(book => {
 	)))
 	console.log('TODO take the experience into account!!!')
 	console.log('')
-})
+})*/
 
 console.log(`\n📖📖📖 Reading… 📖📖📖`)
 await BookResolverLib.ↆgetꓽBook(BookEntryꓽBHBHⳇ022.uid).then(book => {
-	console.log(to_terminal(renderꓽBookPage(
-		book,
-		''
-	)))
+
+	let current_page_ref: BookPageReference = '' // empty = first
+	let chain = getꓽBookPageⵧchain(book, '')
+	console.log(to_terminal(renderꓽBookPageⵧfrom_chain(chain)))
 	console.log('TODO take the experience into account!!!')
+	current_page_ref = getꓽBookPageRefⵧfrom_chain(chain)
+	console.log(`TODO Bookmark current page: "${current_page_ref}"`)
 	console.log('')
+
+	for(let i = 0; i < 10; ++i) {
+		chain = getꓽBookPageⵧchainⵧfrom_chain(chain, 'next')
+		console.log(to_terminal(renderꓽBookPageⵧfrom_chain(chain)))
+		console.log('TODO take the experience into account!!!')
+		current_page_ref = getꓽBookPageRefⵧfrom_chain(chain)
+		console.log(`TODO Bookmark current page: "${current_page_ref}"`)
+		console.log('')
+	}
 })
 
 /////////////////////////////////////////////////

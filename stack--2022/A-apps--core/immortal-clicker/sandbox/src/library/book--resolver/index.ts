@@ -3,7 +3,7 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 
-import { Book, PageReference } from '../book/types.js'
+import { Book, BookPageReference } from '../book/types.js'
 import { BookResolverEntry, BookResolversIndex } from './types.js'
 
 import {
@@ -42,7 +42,7 @@ function getꓽBookCover(uid: Immutable<BookUId>, index: Immutable<BookResolvers
 	return _getꓽBookCover(index, uid)
 }
 
-async function ↆgetꓽBook(uid: Immutable<BookUId>, path?: PageReference, index: Immutable<BookResolversIndex> = indexⵧdefault): Promise<Immutable<Book>> {
+async function ↆgetꓽBook(uid: Immutable<BookUId>, path?: BookPageReference, index: Immutable<BookResolversIndex> = indexⵧdefault): Promise<Immutable<Book>> {
 	return _ↆgetꓽBook(index, uid, path)
 }
 

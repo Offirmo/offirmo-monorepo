@@ -61,6 +61,9 @@ interface BookPage {
 // ex. volume, chapter...
 // Can form a tree of any depth
 type BookPartKey = string
+const BOOK_PART_KEY_KEYWORDSᐧFIRST: BookPartKey = '⟦first⟧'
+const BOOK_PART_KEY_KEYWORDSᐧLAST: BookPartKey = '⟦last⟧'
+
 interface BookPart {
 	parts_type?: string
 	parts: {
@@ -87,13 +90,11 @@ interface Book extends BookPart, BookCover {
 // basic types needed for advanced stuff
 
 // path to a specific page, for ex. for bookmarking
-type PageReference = string // TODO clarify the format, BookPartKey separated by XX
+type BookPageReference = string // TODO clarify the format, BookPartKey separated by XX
 
 // path to any part of a book
-type PartPath = string // TODO clarify the format
-const PATH = {
-	whole: '*' as PartPath, // TODO
-}
+type BookPartReference = string // TODO clarify the format
+
 
 // some books can be customized and thus have several instances
 // ex.
@@ -118,9 +119,10 @@ export {
 	type BookCover,
 	type Book,
 
-	type PageReference,
-	type PartPath,
-	PATH,
+	type BookPageReference,
+	type BookPartReference,
+	BOOK_PART_KEY_KEYWORDSᐧFIRST,
+	BOOK_PART_KEY_KEYWORDSᐧLAST,
 
 	//type BookInstance,
 }

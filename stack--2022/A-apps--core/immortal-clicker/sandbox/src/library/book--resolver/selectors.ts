@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { BookUId, Book, BookCover, PageReference } from '../book/types.js'
+import { BookUId, Book, BookCover, BookPageReference } from '../book/types.js'
 import { BookResolversIndex } from './types.js'
 
 /////////////////////////////////////////////////
@@ -15,7 +15,7 @@ function getꓽBookCover(state: Immutable<BookResolversIndex>, uid: BookUId): Im
 	return cover
 }
 
-async function ↆgetꓽBook(state: Immutable<BookResolversIndex>, uid: BookUId, page_ref?: PageReference): Promise<Immutable<Book>> {
+async function ↆgetꓽBook(state: Immutable<BookResolversIndex>, uid: BookUId, page_ref?: BookPageReference): Promise<Immutable<Book>> {
 	const ↆget =state.entries[uid]?.ↆget
 	const existing = getꓽBookCover(state, uid)
 

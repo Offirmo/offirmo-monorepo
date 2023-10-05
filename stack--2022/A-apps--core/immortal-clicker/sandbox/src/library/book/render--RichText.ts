@@ -2,9 +2,9 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { Book, BookCover, BookPage, PageReference } from './types.js'
+import { Book, BookCover, BookPage, BookPageReference } from './types.js'
 import { isꓽBook, isꓽBookCover } from './types--guards.js'
-import { getꓽBookPage, getꓽBookPageⵧchain } from './selectors.js'
+import { BookPageReferenceChain, getꓽBookPageⵧchain } from './selectors.js'
 import { PAGE_REFERENCEⵧSEPARATOR } from './consts.js'
 
 /////////////////////////////////////////////////
@@ -71,17 +71,13 @@ function renderꓽBookCover(
 }
 
 
-function renderꓽBookPage(
-	book: Immutable<Book>,
-	page_ref: PageReference,
+function renderꓽBookPageⵧfrom_chain(
+	chain: Immutable<BookPageReferenceChain>,
 ): RichText.Node {
-	if (DEBUG) console.group(`renderꓽBookPage`)
+	if (DEBUG) console.group(`renderꓽBookPageⵧfrom_chain`)
+	const book = chain.steps[0].book_part
 	if (DEBUG) console.log('book=', book)
-	if (DEBUG) console.log('reference=', page_ref)
 
-	assert(isꓽBook(book), `should be a book!`)
-
-	const chain = getꓽBookPageⵧchain(book, page_ref)
 	const page = chain.page
 
 	let builder = RichText.fragmentⵧblock()
@@ -96,10 +92,27 @@ function renderꓽBookPage(
 
 	builder.pushText(page.content) // TODO add image
 
-
 	if (DEBUG) console.groupEnd()
 
 	return builder.done()
+}
+
+function renderꓽBookPage(
+	book: Immutable<Book>,
+	page_ref: BookPageReference,
+): RichText.Node {
+	if (DEBUG) console.group(`renderꓽBookPage`)
+	if (DEBUG) console.log('book=', book)
+	if (DEBUG) console.log('reference=', page_ref)
+
+	assert(isꓽBook(book), `should be a book!`)
+
+	const chain = getꓽBookPageⵧchain(book, page_ref)
+	const result = renderꓽBookPageⵧfrom_chain(chain)
+
+	if (DEBUG) console.groupEnd()
+
+	return result
 }
 
 /////////////////////////////////////////////////
@@ -107,4 +120,6 @@ function renderꓽBookPage(
 export {
 	renderꓽBookCover,
 	renderꓽBookPage,
+
+	renderꓽBookPageⵧfrom_chain,
 }

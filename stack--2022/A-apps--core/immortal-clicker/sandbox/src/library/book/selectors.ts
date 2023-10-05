@@ -2,7 +2,15 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { Book, BookPage, BookPart, PageReference, BookPartKey } from './types.js'
+import {
+	Book,
+	BookPage,
+	BookPart,
+	BookPageReference,
+	BookPartKey,
+	BOOK_PART_KEY_KEYWORDSᐧFIRST,
+	BOOK_PART_KEY_KEYWORDSᐧLAST,
+} from './types.js'
 import { PAGE_REFERENCEⵧSEPARATOR } from './consts.js'
 import { isꓽBookPart, isꓽPageⵧlike } from './types--guards.js'
 
@@ -17,15 +25,24 @@ function _getꓽBookPart__part_keysⵧordered(book_part: Immutable<BookPart>): A
 }
 
 function _getꓽBookPartKeyⵧresolved(book_part: Immutable<BookPart>, key: BookPartKey | undefined): BookPartKey {
-	if (!key) {
-		const part__keysⵧordered = _getꓽBookPart__part_keysⵧordered(book_part)
-		return part__keysⵧordered[0]
+	if (!!book_part.parts[key])
+		return key
+
+	const part__keysⵧordered = _getꓽBookPart__part_keysⵧordered(book_part)
+	assert(part__keysⵧordered.length > 0, `_getꓽBookPartKeyⵧresolved()`)
+
+	switch (key) {
+		case undefined:
+			/* fallthrough */
+		case '':
+			/* fallthrough */
+		case BOOK_PART_KEY_KEYWORDSᐧFIRST:
+			return part__keysⵧordered[0]
+		case BOOK_PART_KEY_KEYWORDSᐧLAST:
+			return part__keysⵧordered.slice(-1)[0]
+		default:
+			throw new Error(`Unrecognized BookPartKey, not present, not keyword!`)
 	}
-
-	// TODO allow special semantic keys, ex. first, last, etc.
-
-	assert(!!book_part.parts[key], `_getꓽBookPartKeyⵧresolved(): BookPartKey "${key}" should be referencing a part!`)
-	return key
 }
 
 function _getꓽBookPart__childⵧby_key(book_part: Immutable<BookPart>, key: BookPartKey): Immutable<BookPart['parts']['x']> {
@@ -51,14 +68,15 @@ function _ensureꓽisꓽBookPage(page: Immutable<BookPage> | string): Immutable<
  */
 interface BookPageReferenceChainStep {
 	book_part: Immutable<BookPart>
-	keysⵧallⵧordered: Array<BookPartKey>
+	keysⵧallⵧordered: BookPartKey[]
 	keyⵧselected: BookPartKey
 }
 interface BookPageReferenceChain {
-	steps: Array<BookPageReferenceChainStep>
+	steps: BookPageReferenceChainStep[]
 
 	page: Immutable<BookPage>
 }
+
 
 function _getꓽBookPageⵧchain(
 	book_part: Immutable<BookPart>,
@@ -97,77 +115,82 @@ function _getꓽBookPageⵧchain(
 
 function getꓽBookPageⵧchain(
 	book: Immutable<Book>,
-	page_ref: PageReference,
+	page_ref: BookPageReference,
 ): BookPageReferenceChain {
 	const pathⵧsplit = page_ref.split(PAGE_REFERENCEⵧSEPARATOR)
-
 	return _getꓽBookPageⵧchain(book, pathⵧsplit)
 }
 
+// if there is no next page, return the same
+function getꓽBookPageRefⵧfrom_chain(
+	chain: Immutable<BookPageReferenceChain>
+): BookPageReference {
+	const chain_keys: BookPartKey[] = chain.steps.map(step => step.keyⵧselected)
 
-/*
-function _getꓽBookPartⵧpath(book_part: Immutable<BookPart>, path: string | string[]): Immutable<BookPart> | Immutable<BookPage> | string {
-
-	const key = Array.isArray(path) ? path[0] : path
-
-	const child_part = _getꓽBookPartⵧkey(book_part, key)
-
-	if (path === key || path.length === 1)
-		return child_part
-
-	assert(isꓽBookPart(child_part), `_getꓽBookPartⵧpath() for sub-key "${key}" should be a BookPart!`)
-	return _getꓽBookPartⵧpath(child_part, path.slice(1))
-}*/
-
-
-/*
-function _getꓽBookPartsⵧby_path(book_part: Immutable<BookPart>, path: Array<BookPartKey | undefined>): Array<{
-	part: Immutable<BookPart>,
-	parts_count: number,
-	next_key: BookPartKey,
-	next_key_index: number,
-	next_next_key: BookPartKey,
-}> {
-	const part__keys = Object.keys(book_part.parts).sort()
-	const parts_count = part__keys.length
-	assert(parts_count > 0, `_getꓽBookPartsⵧby_path(): should have parts!`)
-
-	const next_key = (() => {
-		if (!!path?.[0])
-			return path[0]
-
-		return part__keys[0]
-	})()
-
-	const entry = {
-		part: book_part,
-		next_key,
-	}
-
-	const next_part = _getꓽBookPart__childⵧby_key(book_part, next_key)
-	if (isꓽPageⵧlike(next_part)) {
-		// we're at the end of the chain
-		assert(path.length <= 1, `_getꓽBookPartsⵧby_path(): path is >=1 yet we reached a page!`)
-		return [
-			entry
-		]
-	}
-
-	assert(isꓽBookPart(next_part), `_getꓽBookPartsⵧby_path() for sub-key "${next_key}" should be a BookPart!`)
-	return [
-		entry,
-		..._getꓽBookPartsⵧby_path(next_part, path.slice(1)),
-	]
+	return chain_keys.join(PAGE_REFERENCEⵧSEPARATOR)
 }
-*/
 
+function getꓽBookPageⵧchainⵧfrom_chain(
+	chain: Immutable<BookPageReferenceChain>,
+	modifier: 'previous' | 'next',
+): BookPageReferenceChain {
+	const pathⵧsplit = [] as BookPartKey[]
 
+	let has_advanced = false // so far
+	;[...chain.steps].reverse().forEach((step: Immutable<BookPageReferenceChainStep>) => {
+		if (has_advanced) {
+			// no change
+			pathⵧsplit.unshift(step.keyⵧselected)
+			return
+		}
+
+		// try to advance
+		const {
+			book_part,
+			keysⵧallⵧordered,
+			keyⵧselected
+		} = step
+		const key_index = keysⵧallⵧordered.indexOf(keyⵧselected)
+		assert(key_index >= 0, `getꓽBookPageⵧchainⵧnext_page key not found!`)
+
+		switch(modifier) {
+			case 'next': {
+				const can_advance = (key_index + 1) < keysⵧallⵧordered.length
+				if (!can_advance) {
+					pathⵧsplit.unshift(BOOK_PART_KEY_KEYWORDSᐧFIRST)
+				}
+				else {
+					pathⵧsplit.unshift(keysⵧallⵧordered[key_index + 1])
+					has_advanced = true
+				}
+				break
+			}
+			case 'previous': {
+				const can_advance = key_index > 0
+				if (!can_advance) {
+					pathⵧsplit.unshift(BOOK_PART_KEY_KEYWORDSᐧLAST)
+				}
+				else {
+					pathⵧsplit.unshift(keysⵧallⵧordered[key_index - 1])
+					has_advanced = true
+				}
+				break
+			}
+			default:
+				throw new Error('Switch default!')
+		}
+	})
+	assert(has_advanced, `getꓽBookPageⵧchainⵧfrom_chain() should be able to advance (to ${modifier})!`)
+	console.log('getꓽBookPageⵧchainⵧfrom_chain new ref[] =', pathⵧsplit)
+
+	return _getꓽBookPageⵧchain(chain.steps[0].book_part, pathⵧsplit)
+}
 
 /////////////////////////////////////////////////
 
 function getꓽBookPage(
 	book: Immutable<Book>,
-	page_ref: PageReference,
+	page_ref: BookPageReference,
 ): Immutable<BookPage> {
 	const chain = getꓽBookPageⵧchain(book, page_ref)
 	return chain.page
@@ -176,6 +199,11 @@ function getꓽBookPage(
 /////////////////////////////////////////////////
 
 export {
+	type BookPageReferenceChain,
+
 	getꓽBookPage,
+
 	getꓽBookPageⵧchain,
+	getꓽBookPageRefⵧfrom_chain,
+	getꓽBookPageⵧchainⵧfrom_chain,
 }
