@@ -23,7 +23,7 @@ At the moment, there are dependency loops which require a refactoring I don't pl
 For ex. to make everything work again step by step!
 
 ```bash
-bolt postinstall
+## automated: `bolt postinstall`
 
 bolt --only-fs "[0-9]-*/*" ws run build
 bolt --only-fs "[0-9]-*/*" ws run test
@@ -35,6 +35,7 @@ bolt --only-fs "[0-9]-*/*" ws run test
   bolt --only-fs "2-foundation/*" ws run build
   bolt --only-fs "2-foundation/*" ws run test
   bolt --only-fs "3-advanced--*/*" ws run build
+  bolt --only-fs "3-advanced--*/*" ws run test
     bolt --only-fs "3-advanced--isomorphic/*" ws run build
     bolt --only-fs "3-advanced--isomorphic/*" ws run test
     bolt --only-fs "3-advanced--multi/*" ws run build
