@@ -7,30 +7,39 @@
 	font-family: var(--o⋄font-family--fast_and_good_enough, -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, "Ubuntu", Roboto, Noto, Arial, sans-serif);
 
 	/*
-	 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/)
+	 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/
+	 *  see also https://www.webdesignerdepot.com/2013/05/how-to-optimize-for-legibility-using-text-rendering/
+	    and https://wp-mix.com/font-smoothing-chrome-firefox/)
 	 * tested 2023/10 on high and low DPI:
 	 * -> on Chrome, geometricPrecision is REALLY the best ✅
 	 *    for ex. it enables the computing of lighter/bolder variants if you don't provide them
 	 *    (on Safari and FF the effect is less clear)
 	 * challenge about perf: https://marco.org/2012/11/15/text-rendering-optimize-legibility
 	 * -> TODO test on mobile!
+	 * -> TODO allow switch in prefs?
 	 */
-	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
 
-	/* chrome / safari only
-	 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/)
+	/* chrome / safari only, macOs only
+	 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/
+	 *  see also https://wp-mix.com/font-smoothing-chrome-firefox/)
 	 * tested 2023/10 on high and low DPI
 	 * -> antialiased is the best all-rounder ✅ esp. when coupled with 'optimizeLegibility' above
 	 *    (subpixel is mushy on low-dpi but no much better on high dpi)
 	 */
 	-webkit-font-smoothing: antialiased;
 
-	/* Firefox only
-	 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/)
+	/* Firefox only, macOs only
+	 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/
+	 *  see also https://wp-mix.com/font-smoothing-chrome-firefox/)
 	 * tested 2023/10 on high and low DPI
 	 * -> grayscale is always better ✅
 	 */
 	-moz-osx-font-smoothing: grayscale;
+
+	/* See also
+	 * https://szafranek.net/blog/2009/02/22/font-smoothing-explained/
+	 */
 
 	line-height: 1.5; /* #3 most important styling according to https://jgthms.com/web-design-in-4-minutes/#spacing */
 	/* 1.5 is recommended by accessibility https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html */
@@ -41,3 +50,10 @@
 	 */
 	font-variant-numeric: slashed-zero;
 }
+
+/* TODO
+ * There are claims that -webkit-font-smoothing doesn't properly inherit down
+ * ex. https://courses.joshwcomeau.com/css-for-js/06-typography-and-media/02-text-rendering
+ * ex. (10y old) https://stackoverflow.com/questions/13556481/font-smoothing-not-applied-to-buttons
+ * However as of 2023 I couldn't reproduce it. (Chrome, Safari, FF)
+ */

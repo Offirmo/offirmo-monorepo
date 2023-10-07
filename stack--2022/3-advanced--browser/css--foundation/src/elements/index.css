@@ -18,3 +18,11 @@
 @import 'elements--tables.css';
 
 @import 'scrollbar.css';
+
+/* TODO "replaced elements" = display block to remove the magic space?
+ * img
+ * video
+ * canvas
+ * svg?
+ * (not that simple)
+ */

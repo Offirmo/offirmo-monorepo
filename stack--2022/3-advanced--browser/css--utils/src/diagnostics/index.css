@@ -165,8 +165,9 @@ a[href="#"], a[href="javascript:void(0)"] /* abuse of a as button https://develo
 
 /************ BROKEN EXPERIENCE ************/
 
+img[src=""], img:not([src]),
 a[href=""], a:not([href]),
-html:not([lang]) body
+html:not([lang]) body /* lang is important for some CSS features to work, ex. "hyphens: auto"
 {
 	outline: 5px dashed var(--o⋄color⁚diagnostics--broken) !important;
 }
@@ -181,3 +182,9 @@ a[target=_blank]:not([rel^=noreferrer]):not([rel^=noopener]) /* https://develope
 {
 	outline: 5px dashed var(--o⋄color⁚diagnostics--security) !important;
 }
+
+/* TODO
+figure with no figcaption
+figcaption not last child
+picture with no img
+ */
