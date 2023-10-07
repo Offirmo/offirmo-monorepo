@@ -60,6 +60,9 @@ What we want:
 * deprecated elements and browsers/os should no longer be included
 * should be unit tested with visual regression
 
+IMPORTANT NOTE
+* since we may be using a foundation, this reset will only contain the needed stuff to correct ACTUAL USEFUL differences.
+  * we don't aim at covering all the rare quirks
 
 ## Contributing
 

@@ -6,12 +6,30 @@
 	 */
 	font-family: var(--o⋄font-family--fast_and_good_enough, -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, "Ubuntu", Roboto, Noto, Arial, sans-serif);
 
-	/* https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/ */
-	text-rendering: optimizeLegibility; /* challenge about perf: https://marco.org/2012/11/15/text-rendering-optimize-legibility
-	                                     * Tested: this options makes a TOO HUGE difference in quality to be missed.
-	                                     * For ex. it enables the computing of lighter/bolder variants.
-	                                     */
+	/*
+	 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/)
+	 * tested 2023/10 on high and low DPI:
+	 * -> on Chrome, geometricPrecision is REALLY the best ✅
+	 *    for ex. it enables the computing of lighter/bolder variants if you don't provide them
+	 *    (on Safari and FF the effect is less clear)
+	 * challenge about perf: https://marco.org/2012/11/15/text-rendering-optimize-legibility
+	 * -> TODO test on mobile!
+	 */
+	text-rendering: optimizeLegibility;
+
+	/* chrome / safari only
+	 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/)
+	 * tested 2023/10 on high and low DPI
+	 * -> antialiased is the best all-rounder ✅ esp. when coupled with 'optimizeLegibility' above
+	 *    (subpixel is mushy on low-dpi but no much better on high dpi)
+	 */
 	-webkit-font-smoothing: antialiased;
+
+	/* Firefox only
+	 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/)
+	 * tested 2023/10 on high and low DPI
+	 * -> grayscale is always better ✅
+	 */
 	-moz-osx-font-smoothing: grayscale;
 
 	line-height: 1.5; /* #3 most important styling according to https://jgthms.com/web-design-in-4-minutes/#spacing */
