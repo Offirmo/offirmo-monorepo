@@ -28,9 +28,11 @@ import { getꓽUTC_timestampⵧhuman_readable‿ms } from '@offirmo-private/time
 	revision: number
 }*/
 
+interface Options {
 
+}
 
-function _renderⵧWithSchemaVersion(state: Immutable<WithSchemaVersion>): RichText.Document {
+function _renderⵧWithSchemaVersion(state: Immutable<WithSchemaVersion>, key?: string): RichText.Document {
 	const builder = RichText.fragmentⵧinline()
 
 	builder.pushText(`ⓥ  ${state.schema_version}`)
@@ -38,7 +40,7 @@ function _renderⵧWithSchemaVersion(state: Immutable<WithSchemaVersion>): RichT
 	return builder.done()
 }
 
-function _renderⵧWithRevision(state: Immutable<WithRevision>): RichText.Document {
+function _renderⵧWithRevision(state: Immutable<WithRevision>, key?: string): RichText.Document {
 	const builder = RichText.fragmentⵧinline()
 
 	builder.pushText(`rev# ${state.revision}`)
@@ -46,7 +48,7 @@ function _renderⵧWithRevision(state: Immutable<WithRevision>): RichText.Docume
 	return builder.done()
 }
 
-function _renderⵧWithTimestamp(state: Immutable<WithTimestamp>): RichText.Document {
+function _renderⵧWithTimestamp(state: Immutable<WithTimestamp>, key?: string): RichText.Document {
 	const builder = RichText.fragmentⵧinline()
 
 	const d = new Date(state.timestamp_ms)
@@ -55,7 +57,7 @@ function _renderⵧWithTimestamp(state: Immutable<WithTimestamp>): RichText.Docu
 	return builder.done()
 }
 
-function _renderⵧWithLastUserInvestmentTimestamp(state: Immutable<WithLastUserInvestmentTimestamp>): RichText.Document {
+function _renderⵧWithLastUserInvestmentTimestamp(state: Immutable<WithLastUserInvestmentTimestamp>, key?: string): RichText.Document {
 	const builder = RichText.fragmentⵧinline()
 
 	const d = new Date(state.last_user_investment_tms)
@@ -64,8 +66,34 @@ function _renderⵧWithLastUserInvestmentTimestamp(state: Immutable<WithLastUser
 	return builder.done()
 }
 
+function _renderⵧUState(state: Immutable<BaseUState>, options: Immutable<Options>, key?: string): RichText.Document {
+	const builder = RichText.fragmentⵧblock()
 
-function _renderⵧRootState(state: Immutable<BaseRootState>): RichText.Document {
+	const keys = new Set([
+		...Object.keys(state),
+	])
+
+
+	builder.pushNode(_renderⵧWithSchemaVersion(state as any))
+	builder.pushLineBreak()
+	keys.delete('schema_version')
+
+	builder.pushNode(_renderⵧWithRevision(state as any))
+	builder.pushLineBreak()
+	keys.delete('revision')
+
+
+	const kvⵧown = RichText.listⵧunordered()
+	keys.forEach(k => {
+		kvⵧown.pushKeyValue(k, (state as any)[k])
+	})
+	builder.pushNode(kvⵧown.done())
+
+	return builder.done()
+}
+
+
+function _renderⵧRootState(state: Immutable<BaseRootState>, options: Options): RichText.Document {
 	const builder = RichText.fragmentⵧblock()
 
 	const keys = new Set([
@@ -94,7 +122,7 @@ function _renderⵧRootState(state: Immutable<BaseRootState>): RichText.Document
 	})
 	builder.pushNode(kvⵧown.done())
 
-	builder.pushHorizontalRule()
+	//builder.pushHorizontalRule()
 
 	const subkeys = new Set<string>([
 		...Object.keys(state.u_state),
@@ -109,10 +137,10 @@ function _renderⵧRootState(state: Immutable<BaseRootState>): RichText.Document
 		builder.pushHeading(`{${NORMALIZERS['capitalize']!(k)}}`)
 		//console.log({ u: !!u, t: !!t })
 		if (!t) {
-			builder.pushNode(_render(u!))
+			builder.pushNode(_render(u!, options, k))
 		}
 		else {
-			builder.pushNode(_render([u, t] as any))
+			builder.pushNode(_render([u, t] as any, options, k))
 		}
 	})
 
@@ -120,12 +148,13 @@ function _renderⵧRootState(state: Immutable<BaseRootState>): RichText.Document
 }
 
 
-function _render(raw_state: Immutable<AnyOffirmoState>): RichText.Document {
+function _render(raw_state: Immutable<AnyOffirmoState>, options: Immutable<Options>, key?: string): RichText.Document {
 	const builder = RichText.fragmentⵧblock()
 
 	switch (true) {
 		case isꓽRootState(raw_state): {
-			builder.pushNode(_renderⵧRootState(raw_state as any))
+			assert(!key)
+			builder.pushNode(_renderⵧRootState(raw_state as any, options))
 			break
 		}
 
@@ -135,7 +164,7 @@ function _render(raw_state: Immutable<AnyOffirmoState>): RichText.Document {
 		}
 
 		case isꓽUState(raw_state): {
-			builder.pushHeading('TODO UState!')
+			builder.pushNode(_renderⵧUState(raw_state as any, options, key))
 			break
 		}
 
@@ -160,68 +189,8 @@ function _render(raw_state: Immutable<AnyOffirmoState>): RichText.Document {
 
 
 function renderꓽstateⵧrich_text(state: Immutable<AnyOffirmoState>): RichText.Document {
-	return _render(state)
-	//throw new Error('NIMP!')
-/*
-	options.prettifyꓽobjectⵧkeyⳇvalue = function prettifyꓽobjectⵧkeyⳇvalue(obj: Object, st: State): string[] {
-		let { o } = st
-
-		if (!isꓽWithSchemaVersion(obj)) {
-			return _prettifyꓽobjectⵧkeyⳇvalue(obj, st)
-		}
-
-		const { ⵙapp_id, schema_version, revision, last_user_investment_tms, timestamp_ms, ...rest } = obj as any
-
-		let header: string[] = []
-		if (ⵙapp_id) {
-			header.push(''
-				+ 'ᘛ'
-				+ o.stylizeꓽglobal(ⵙapp_id)
-				+ 'ᘚ'
-			)
-		}
-		if (revision !== undefined) {
-			header.push(''
-				+ 'rev#'
-				+ o.stylizeꓽglobal(revision)
-			)
-		}
-		if (last_user_investment_tms !== undefined) {
-			const d = new Date(last_user_investment_tms)
-			header.push(''
-				+ '⏲'
-				+ o.stylizeꓽglobal(getꓽUTC_timestampⵧhuman_readable‿ms(d))
-			)
-		}
-		if (timestamp_ms !== undefined) {
-			const d = new Date(timestamp_ms)
-			header.push(''
-				+ '⏲'
-				+ o.stylizeꓽglobal(getꓽUTC_timestampⵧhuman_readable‿ms(d))
-			)
-		}
-		if (schema_version !== undefined) {
-			header.push(''
-				+ 'ⓥ '
-				+ o.stylizeꓽglobal(schema_version)
-			)
-		}
-		assert(header.length, `header length!`)
-
-		st = {
-			...st,
-			o: {
-				...st.o,
-				should_compact_objects: false,
-			}
-		}
-		const lines = _prettifyꓽobjectⵧkeyⳇvalue(rest, st)
-		return [
-			[lines[0], o.stylizeꓽdim('/*'), ...header, o.stylizeꓽdim('*//*')].join(' '),
-			...lines.slice(1),
-		]
-	}
-*/
+	const options: Options = {}
+	return _render(state, options)
 }
 
 /////////////////////////////////////////////////
