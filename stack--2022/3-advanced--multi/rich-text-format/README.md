@@ -18,6 +18,9 @@ const $doc = RichText.fragmentⵧblock()
 				.done()
 		)
 		.done()
+
+console.log(RichText.renderⵧto_text($doc))
+console.log(RichText.renderⵧto_actions($doc))
 ```
 
 Inspiration:
