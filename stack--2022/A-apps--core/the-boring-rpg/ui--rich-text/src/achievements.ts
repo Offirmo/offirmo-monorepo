@@ -143,7 +143,7 @@ function render_achievement_snapshot_detailed(achievement_snapshot: Immutable<Ac
 }
 
 function render_achievements_snapshot(ordered_achievement_snapshots: Immutable<AchievementSnapshot>[]): RichText.Document {
-	const builder = RichText.unordered_list()
+	const builder = RichText.listⵧunordered()
 		.addClass('achievements-snapshot')
 
 	ordered_achievement_snapshots.forEach((achievement_snapshot) => {

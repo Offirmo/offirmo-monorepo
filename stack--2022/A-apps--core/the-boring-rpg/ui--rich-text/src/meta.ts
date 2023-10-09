@@ -6,7 +6,7 @@ import * as RichText from '@offirmo-private/rich-text-format'
 
 
 function render_meta_infos(metas: Immutable<{[k: string]: string | number | undefined}>): RichText.Document {
-	const $doc_list = RichText.unordered_list()
+	const $doc_list = RichText.listⵧunordered()
 
 	Object.keys(metas).forEach((key: string) => {
 		$doc_list.pushRawNode(

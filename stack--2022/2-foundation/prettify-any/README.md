@@ -26,10 +26,14 @@ Missing features (worse than util.inspect)
 
 ```ts
 // "@offirmo-private/prettify-any": "^0",
+import chalk from 'chalk'
 import {
-  prettifyꓽany,
-  prettifyꓽjson,
+	injectꓽlibꓽchalk,
+	prettifyꓽany,
+	prettifyꓽjson,
 } from '@offirmo-private/prettify-any'
+
+injectꓽlibꓽchalk(chalk)
 
 prettifyꓽjson(foo)
 prettifyꓽjson({foo}, {outline: true})

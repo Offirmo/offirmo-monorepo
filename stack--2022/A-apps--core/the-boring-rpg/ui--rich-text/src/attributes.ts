@@ -10,7 +10,7 @@ function render_avatar(state: Immutable<CharacterState>): RichText.Document {
 	const $doc = RichText.fragmentⵧblock()
 		.pushHeading('Identity:', {id: 'header'})
 		.pushNode(
-			RichText.unordered_list()
+			RichText.listⵧunordered()
 				.pushKeyValue('name', $doc_name)
 				.pushKeyValue('class', $doc_class)
 				.done(),
@@ -21,7 +21,7 @@ function render_avatar(state: Immutable<CharacterState>): RichText.Document {
 }
 
 function render_attributes(state: Immutable<CharacterState>): RichText.Document {
-	const $doc_list = RichText.unordered_list()
+	const $doc_list = RichText.listⵧunordered()
 		.addClass('attributes')
 		.done()
 

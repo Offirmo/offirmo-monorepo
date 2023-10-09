@@ -12,7 +12,7 @@ import * as RichText from '@offirmo-private/rich-text-format'
 const $doc = RichText.fragmentⵧblock()
 		.pushNode(RichText.heading().pushText('Identity:').done(), {id: 'header'})
 		.pushNode(
-			RichText.unordered_list()
+			RichText.listⵧunordered()
 				.pushKeyValue('name', $doc_name)
 				.pushKeyValue('class', $doc_class)
 				.done()

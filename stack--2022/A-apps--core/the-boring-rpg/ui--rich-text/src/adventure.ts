@@ -36,7 +36,7 @@ function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItem
 
 	/////// Loot ///////
 	;(function render_loot(): void {
-		const $loot_list = RichText.unordered_list().done()
+		const $loot_list = RichText.listⵧunordered().done()
 
 		ITEM_SLOTS.forEach((slot: InventorySlot) => {
 			//console.info('handling adventure outcome [l1]: ' + slot)
@@ -74,7 +74,7 @@ function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItem
 
 	/////// Attributes / knowledge ///////
 	;(function render_character_improvement(): void {
-		const $improvement_list = RichText.unordered_list().done()
+		const $improvement_list = RichText.listⵧunordered().done()
 
 		CHARACTER_ATTRIBUTES.forEach((attr: CharacterAttribute) => {
 			//console.info('handling adventure outcome [c1]: ' + attr)
@@ -108,7 +108,7 @@ function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItem
 	/////// Item enhancement ///////
 	;(function render_item_improvement(): void {
 		const has_improvement = gains.improvementⵧarmor || gains.improvementⵧweapon
-		const $improvement_list = RichText.unordered_list().done()
+		const $improvement_list = RichText.listⵧunordered().done()
 
 		// TODO
 		if (gains.improvementⵧarmor)

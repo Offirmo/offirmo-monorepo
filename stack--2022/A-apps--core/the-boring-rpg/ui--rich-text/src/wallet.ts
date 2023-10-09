@@ -16,7 +16,7 @@ function render_currency_amount(currency: Currency, amount: number, { render_uni
 }
 
 function render_wallet(wallet: Immutable<WalletState>): RichText.Document {
-	const $doc_list = RichText.unordered_list()
+	const $doc_list = RichText.listⵧunordered()
 		.addClass('inventory--wallet')
 		.done()
 

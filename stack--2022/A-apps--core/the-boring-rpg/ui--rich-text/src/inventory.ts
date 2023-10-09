@@ -24,7 +24,7 @@ import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.js'
 
 // we want the slots sorted by types according to an arbitrary order
 function render_equipment(inventory: Immutable<InventoryState>, options?: Immutable<RenderItemOptions>): RichText.Document {
-	const $doc_list = RichText.unordered_list()
+	const $doc_list = RichText.listⵧunordered()
 		.addClass('inventory--equipment')
 		.done()
 
@@ -56,7 +56,7 @@ function render_equipment(inventory: Immutable<InventoryState>, options?: Immuta
 // we want the slots sorted by types according to an arbitrary order
 // = nothing to do, the inventory is auto-sorted
 function render_backpack(inventory: Immutable<InventoryState>, options?: Immutable<RenderItemOptions>): RichText.Document {
-	const builder = RichText.ordered_list()
+	const builder = RichText.listⵧordered()
 		.addClass('inventory--backpack')
 
 	const misc_items: Item[] = Array.from(iterables_unslotted(inventory))
