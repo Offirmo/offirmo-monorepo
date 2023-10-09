@@ -16,7 +16,7 @@ const AchievementStatus = Enum(
 type AchievementStatus = Enum<typeof AchievementStatus> // eslint-disable-line no-redeclare
 
 interface AchievementDefinition<S> {
-	// TODO rename to temporary ID
+	// TODO rename to temporary ID (need migration)
 	session_uuid: string // to help React + rich text with a sortable id which may not be stable outside of the current session. Should NOT be stored.
 
 	name: string // is also the key
@@ -32,7 +32,7 @@ interface AchievementSnapshot extends Element {
 	name: string
 	icon: string
 	description: string
-	lore: string | undefined
+	lore?: string
 	status: AchievementStatus
 	completion_rate: [number, number] | undefined
 }

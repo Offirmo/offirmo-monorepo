@@ -37,7 +37,7 @@ describe(`🔠  ${LIB} - inventory`, function() {
 			it('should render properly', () => {
 				const inventory = create_inventory()
 				const $doc = render_backpack(inventory)
-				const str = RichText.to_text($doc)
+				const str = RichText.renderⵧto_text($doc)
 
 				expect(str).to.be.a('string')
 				expect(str).to.contain('empty')
@@ -57,7 +57,7 @@ describe(`🔠  ${LIB} - inventory`, function() {
 				inventory = remove_item_from_unslotted(inventory, inventory.unslotted[4]!.uuid)
 
 				const $doc = render_backpack(inventory)
-				const str = RichText.to_text($doc)
+				const str = RichText.renderⵧto_text($doc)
 
 				expect(str).to.be.a('string')
 				expect(str).not.to.contain('00.')
@@ -106,7 +106,7 @@ describe(`🔠  ${LIB} - inventory`, function() {
 			it('should render properly', () => {
 				const inventory = create_inventory()
 				const $doc = render_equipment(inventory)
-				const str = RichText.to_text($doc)
+				const str = RichText.renderⵧto_text($doc)
 				expect(str).to.be.a('string')
 				expect(str).to.contain('armor: -')
 				expect(str).to.contain('weapon: -')
@@ -123,7 +123,7 @@ describe(`🔠  ${LIB} - inventory`, function() {
 				inventory = equip_item(inventory, DEMO_ARMOR_2.uuid)
 
 				const $doc = render_equipment(inventory)
-				const str = RichText.to_text($doc)
+				const str = RichText.renderⵧto_text($doc)
 				expect(str).to.be.a('string')
 				expect(str).to.contain('armor: Apprentice’s Brass Belt +8')
 				expect(str).to.contain('weapon: Adjudicator’s Admirable Axe')

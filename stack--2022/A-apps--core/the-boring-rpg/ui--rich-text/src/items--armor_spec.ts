@@ -15,7 +15,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - items -- armor', fun
 
 		it('should render properly', () => {
 			const $doc = render_armor_detailed(DEMO_ARMOR_1)
-			const str = RichText.to_text($doc)
+			const str = RichText.renderⵧto_text($doc)
 			expect(str).to.be.a('string')
 			expect(str).to.include('Armguards')
 			expect(str).to.include('Of the ancients')
@@ -28,7 +28,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - items -- armor', fun
 
 		it('should render properly', () => {
 			const $doc = render_armor_detailed(DEMO_ARMOR_2)
-			const str = RichText.to_text($doc)
+			const str = RichText.renderⵧto_text($doc)
 			expect(str).to.be.a('string')
 			expect(str).to.include('Belt')
 			expect(str).to.include('Brass')

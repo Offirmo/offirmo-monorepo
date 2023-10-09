@@ -11,5 +11,5 @@ const doc = RichText.fragmentⵧinline()
    .pushStrong('world!')
    .done()
 
-console.log('to text:' + RichText.to_text(doc))
+console.log('to text:' + RichText.renderⵧto_text(doc))
 `.trim()))

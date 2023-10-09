@@ -39,7 +39,7 @@ or
 or:
 const View = ({x}) => (
 		<Fragment>
-			{RichText.to_text(doc)} />
+			{RichText.renderⵧto_text(doc)} />
 		</Fragment>
 )
 <ErrorBoundary name={'foo'}>

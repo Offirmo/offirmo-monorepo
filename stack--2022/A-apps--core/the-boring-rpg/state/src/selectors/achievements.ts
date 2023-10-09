@@ -26,7 +26,7 @@ function getꓽachievement_snapshot(u_state: Immutable<UState>, definition: Immu
 		name,
 		icon,
 		description,
-		lore,
+		...(!!lore && { lore }),
 		status: status!,
 		completion_rate: getꓽcompletion_rate ? getꓽcompletion_rate(u_state) : undefined,
 	} satisfies AchievementSnapshot

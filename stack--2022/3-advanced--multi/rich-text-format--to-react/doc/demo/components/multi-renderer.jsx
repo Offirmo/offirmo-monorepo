@@ -8,7 +8,7 @@ import rich_text_to_react from '../services/rich-text-to-react'
 const RichTextView = ({doc, mode = 'to_html'}) => {
 	switch(mode) {
 		case 'to_text':
-			return <pre>{RichText.to_text(doc)}</pre>
+			return <pre>{RichText.renderⵧto_text(doc)}</pre>
 
 		case 'to_html':
 			return <div dangerouslySetInnerHTML={{ __html: RichText.to_html(doc) }} />

@@ -1,3 +1,4 @@
+import assert from 'tiny-invariant'
 import { Immutable} from '@offirmo-private/ts-types'
 import { getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 
@@ -85,6 +86,8 @@ const RAW_CODES: Immutable<{ [key: string]: Immutable<Partial<CodeSpec<State>>> 
 	...POWER_CODES,
 }
 
+// TODO common mobile games codes VIP777 etc.
+
 ////////////
 
 const ALL_CODESPECS: Immutable<CodeSpec<State>>[] = Object.keys(RAW_CODES).map(key => {
@@ -95,9 +98,10 @@ const ALL_CODESPECS: Immutable<CodeSpec<State>>[] = Object.keys(RAW_CODES).map(k
 	} = RAW_CODES[key]!
 
 	if (code)
-		throw new Error(`Code entry "${key}" redundantly specifies a code!`)
-	if (key !== normalize_code(key))
-		throw new Error(`Code entry "${key}" should have normalized form "${normalize_code(key)}"!`)
+		throw new Error(`Code entry "${key}" redundantly specifies a code!`) // it's taken from the key in this file
+	assert(key === normalize_code(key), `Code entry "${key}" should have normalized form "${normalize_code(key)}"!`)
+	assert(redeem_limit === null || typeof redeem_limit === 'number', `redeem_limit should be null or an integer!`)
+	assert(!!is_redeemable, `is_redeemable!`)
 
 	return {
 		code: key,

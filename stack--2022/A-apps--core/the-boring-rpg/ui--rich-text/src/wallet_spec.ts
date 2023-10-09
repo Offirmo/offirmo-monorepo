@@ -23,7 +23,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - wallet', function() 
 		it('should render properly', () => {
 			const wallet = create_wallet()
 			const $doc = render_wallet(wallet)
-			const str = RichText.to_text($doc)
+			const str = RichText.renderⵧto_text($doc)
 
 			expect(str).to.be.a('string')
 			expect(str).to.contain(' 0 coins')
@@ -39,7 +39,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - wallet', function() 
 			wallet = add_amount(wallet, Currency.token, 67)
 
 			const $doc = render_wallet(wallet)
-			const str = RichText.to_text($doc)
+			const str = RichText.renderⵧto_text($doc)
 
 			expect(str).to.be.a('string')
 			expect(str).not.to.contain('0')

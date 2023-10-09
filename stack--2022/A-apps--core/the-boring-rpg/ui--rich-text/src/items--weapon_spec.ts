@@ -16,7 +16,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - items -- weapon', fu
 
 		it('should render properly', () => {
 			const $doc = render_weapon_detailed(DEMO_WEAPON_1)
-			const str = RichText.to_text($doc)
+			const str = RichText.renderⵧto_text($doc)
 			expect(str).to.be.a('string')
 			expect(str).to.include('Axe')
 			expect(str).to.include('Admirable')
@@ -29,7 +29,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - items -- weapon', fu
 
 		it('should render properly', () => {
 			const $doc = render_weapon_detailed(DEMO_WEAPON_2)
-			const str = RichText.to_text($doc)
+			const str = RichText.renderⵧto_text($doc)
 			expect(str).to.be.a('string')
 			expect(str).to.include('Bow')
 			expect(str).to.include('Arcanic')

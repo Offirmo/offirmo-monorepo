@@ -90,8 +90,9 @@ nvm i
 onn
 bolt clean && rm -rf node_modules yarn.lock package-lock.json && bolt && yarn outdated     && bolt build
 bolt clean && rm -rf node_modules yarn.lock package-lock.json && bolt && bolt build
-npx yarn-tools list-duplicates yarn.lock
-yarn eslint:packages --fix
+##yarn eslint:packages --fix
+npx update-browserslist-db@latest
+npx yarn-deduplicate --list
 ```
 
 ## serve for dev

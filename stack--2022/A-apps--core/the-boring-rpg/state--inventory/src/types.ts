@@ -8,8 +8,8 @@ import { Weapon } from '@tbrpg/logic-weapons'
 
 interface State extends BaseUState {
 	slotted: {
-		[InventorySlot.armor]?: Armor
-		[InventorySlot.weapon]?: Weapon
+		[InventorySlot.armor]: Armor | undefined
+		[InventorySlot.weapon]: Weapon | undefined
 	}
 	unslotted_capacity: number
 	unslotted: Array<Item>

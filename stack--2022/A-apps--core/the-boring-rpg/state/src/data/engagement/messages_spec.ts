@@ -27,7 +27,7 @@ describe(`${LIB} - engagement messages`, function() {
 				},
 				params: {},
 			})
-			const str = RichText.to_text(doc!)
+			const str = RichText.renderⵧto_text(doc!)
 			//console.log(`"${str}"`)
 			expect(str).to.include('Tip:')
 			expect(str).to.include('Select play')

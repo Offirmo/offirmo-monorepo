@@ -20,7 +20,7 @@ function demo(wrapped_doc) {
 
 	console.log(`\n------- ${key} -------`)
 
-	console.log('\n------- to text -------\n' + RichText.to_text(doc))
+	console.log('\n------- to text -------\n' + RichText.renderⵧto_text(doc))
 
 	if (renderⵧto_terminal) console.log('\n------- to terminal -------\n' + renderⵧto_terminal(doc))
 }

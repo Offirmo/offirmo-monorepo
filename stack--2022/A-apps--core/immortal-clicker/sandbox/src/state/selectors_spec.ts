@@ -21,7 +21,7 @@ describe(`${LIB} - recap`, function() {
 			it('should return an intro'/*, () => {
 				const state = create()
 				const doc = getꓽrecap(state.u_state)
-				const str = RichText.to_text(doc)
+				const str = RichText.renderⵧto_text(doc)
 				expect(str).to.include('Congratulations, you were chosen')
 			}*/)
 		})

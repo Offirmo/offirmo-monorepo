@@ -1286,15 +1286,15 @@ const ENTRIES: Immutable<AchievementDefinition<UState>>[] = RAW_ENTRIES
 		if (UID_CHECK.has(name!))
 			throw new Error(`Achievements: duplicate definition for "${name}"!`)
 		UID_CHECK.add(name!)
-		const session_uuid = [`${index}`.padStart(4, '0'), name].join(' ')
+		const temporary_uuid = [`${index}`.padStart(4, '0'), name].join(' ')
 		return {
-			session_uuid,
-			icon: icon || '🏆',
+			session_uuid: temporary_uuid,
 			name: name!,
+			icon: icon || '🏆',
 			description: description!,
-			lore,
+			...(!!lore && { lore}),
 			getꓽstatus: getꓽstatus!,
-			getꓽcompletion_rate,
+			...(!!getꓽcompletion_rate && { getꓽcompletion_rate }),
 		} satisfies AchievementDefinition<UState>
 	})
 

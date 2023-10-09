@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import icepick from 'icepick'
+import * as icepick from 'icepick'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
 import { ALL_ADVENTURE_ARCHETYPES } from '@tbrpg/logic-adventures'
