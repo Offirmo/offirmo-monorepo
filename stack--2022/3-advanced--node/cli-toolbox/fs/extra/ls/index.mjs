@@ -10,6 +10,66 @@ export function lsDirsSync(srcpath, options = {}) {
 	}
 
 	let result = fs
+		.readdirSync(srcpath, { withFileTypes: true })
+		.map(dirent => {
+			//console.log(dirent)
+			return dirent
+		})
+		.filter(dirent => dirent.isDirectory())
+		.map(dirent => options.full_path
+			? path.join(dirent.path, dirent.name)
+			: dirent.name)
+
+	return result.sort()
+}
+
+export function lsFilesSync(srcpath, options = {}) {
+	options = {
+		full_path: true, // because it's what we usually want
+		...options,
+	}
+
+	let result = fs
+		.readdirSync(srcpath, { withFileTypes: true })
+		.map(dirent => {
+			//console.log(dirent)
+			return dirent
+		})
+		.filter(dirent => dirent.isFile())
+		.map(dirent => options.full_path
+			? path.join(dirent.path, dirent.name)
+			: dirent.name)
+
+	return result.sort()
+}
+
+export function lsFilesRecursiveSync(srcpath) {
+	const options = {
+		full_path: true, // because it's what we usually want
+	}
+
+	let result = lsFilesSync(srcpath, options)
+	let dirs = lsDirsSync(srcpath, options)
+	dirs.forEach(full_dir => {
+		result = [
+			...result,
+			...lsFilesRecursiveSync(full_dir)
+		]
+	})
+
+	return result.sort()
+}
+
+
+
+///////////
+export function lsDirsSyncLEGACY(srcpath, options = {}) {
+	options = {
+		full_path: true, // because it's what we usually want
+		...options,
+	}
+
+	let result = fs
 		.readdirSync(srcpath)
 		.filter(file => fs.statSync(
 			path.join(srcpath, file)
@@ -20,8 +80,7 @@ export function lsDirsSync(srcpath, options = {}) {
 
 	return result.sort()
 }
-
-export function lsFilesSync(srcpath, options = {}) {
+export function lsFilesSyncLEGACY(srcpath, options = {}) {
 	options = {
 		full_path: true, // because it's what we usually want
 		...options,

@@ -5,8 +5,19 @@
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 
-	"main": "index.js",
 	"sideEffects": false,
+	"exports": {
+		"./framework/cli-interface":  "./framework/cli-interface.mjs",
+		"./fs/extra":                 "./fs/extra/index.mjs",
+		"./fs/extra/json":            "./fs/extra/json/index.mjs",
+		"./fs/extra/ls":              "./fs/extra/json/index.mjs",
+		"./stdout/clear-cli":         "./stdout/clear-cli.mjs",
+		"./string/arrayify":          "./string/arrayify.mjs",
+		"./string/boxify":            "./string/boxify.mjs",
+		"./string/columnify":         "./string/columnify.mjs",
+		"./string/log-symbols":       "./string/log-symbols.mjs",
+		"./string/stylize":           "./string/stylize.mjs"
+	},
 
 	"dependencies": {
 		"ansi-escapes": "^6",
@@ -17,6 +28,7 @@
 		"fs-extra": "^11",
 		"load-json-file": "^7",
 		"log-symbols": "^5",
+		"meow": "^12",
 		"write-json-file": "^5"
 	},
 
@@ -46,32 +58,5 @@
 	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--node/cli-toolbox",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
-	},
-	"toreview": {
-		"bytes": "^2",
-		"cfonts": "^1",
-		"cli-truncate": "^1",
-		"cli-width": "^2",
-		"conf": "^1",
-		"figures": "^2",
-		"humanize-duration": "^3",
-		"humanize-string": "^1",
-		"indent-string": "^3",
-		"json-stringify-safe": "^5",
-		"json3": "^3",
-		"linewrap": "^0.2.1",
-		"listr": "^0.12",
-		"lodash": "^4",
-		"observatory": "^1",
-		"ora": "^1",
-		"prettyjson": "^1",
-		"sparkly": "^3",
-		"string-width": "^2",
-		"supports-color": "^4",
-		"tildify": "^1",
-		"untildify": "^3",
-		"update-notifier": "^2",
-		"vorpal": "^1",
-		"yargs": "^8"
 	}
 }

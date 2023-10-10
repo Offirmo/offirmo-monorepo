@@ -1,23 +1,36 @@
 #!/bin/sh
 ':' //# https://sambal.org/?p=1014 ; exec /usr/bin/env node "$0" "$@"
 
-import 'loud-rejection/register'
+await import('loud-rejection/register.js')
 
-const path = require('path')
-const sum_up_module = require('sum-up')
+import fs from 'node:fs/promises';
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
+import sum_up_module from 'sum-up'
 
 const MARKDOWN_OUTPUT = true
 const DISPLAY_CODE = true
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-if (!MARKDOWN_OUTPUT) console.log(sum_up_module(require(path.join('..', 'package.json'))))
+if (!MARKDOWN_OUTPUT) console.log(
+	sum_up_module(
+		JSON.parse(
+			await fs.readFile(
+				path.join(__dirname, '..', 'package.json')
+			)
+		)
+	)
+)
 
 
-require('@offirmo/cli-toolbox/stdout/clear-cli')()
-const stylize_string = require('@offirmo/cli-toolbox/string/stylize')
+import clear from '@offirmo/cli-toolbox/stdout/clear-cli'
+clear()
+
+import stylize_string from '@offirmo/cli-toolbox/string/stylize'
 
 ////////////////////////////////////
 
-function demo(toolbox_path, underlying_pkgs, demo_fn) {
+async function demo(toolbox_path, underlying_pkgs, demo_fn) {
 	if (MARKDOWN_OUTPUT)
 		console.log(`\n### ${toolbox_path}`)
 	else
@@ -25,13 +38,20 @@ function demo(toolbox_path, underlying_pkgs, demo_fn) {
 
 	underlying_pkgs = Array.isArray(underlying_pkgs) ? underlying_pkgs : [ underlying_pkgs ]
 	console.log('Based on:')
-	underlying_pkgs.forEach(pkg_name => {
-		const package = { json: require(path.join(pkg_name, 'package.json'))}
-		let resume = '* ' + sum_up_module(package.json)
-		if (MARKDOWN_OUTPUT) resume = resume.split('\n').join('\n  * ')
-		// TODO add link
-		console.log(resume)
-	})
+	await Promise.all(
+		underlying_pkgs.map(async pkg_name => {
+			const package_json = JSON.parse(
+				await fs.readFile(
+					path.join(__dirname, '..', 'node_modules', pkg_name, 'package.json')
+				)
+			)
+			let resume = '* ' + sum_up_module(package_json)
+			if (MARKDOWN_OUTPUT) resume = resume.split('\n').join('\n  * ')
+			// TODO add link
+			console.log(resume)
+		})
+	)
+
 
 	if (DISPLAY_CODE) {
 		console.log('```js')
@@ -39,6 +59,18 @@ function demo(toolbox_path, underlying_pkgs, demo_fn) {
 			.split('\n')
 			.slice(1, -1) // remove useless 1st and last line
 			.map(s => s.slice(2)) // remove indentation (2x tabs)
+			.map((line, index) => {
+				if (index === 0) {
+					line = line.replace('const ', 'import ')
+
+					line = line.replace(' = (await import(', ' from ')
+					line = line.replace("')).default", "'")
+
+					line = line.replace(' = await import(', ' from ')
+					line = line.replace("')", "'")
+				}
+				return line
+			})
 			.join('\n')
 		)
 		console.log('```')
@@ -57,14 +89,14 @@ function demo(toolbox_path, underlying_pkgs, demo_fn) {
 let sequence = Promise.resolve()
 
 ////////////////////////////////////
-/* removing meow as I only use it in internal build tools and don't want a circular dep
 sequence = sequence.then(() => demo(
-	'framework/meow',
+	'framework/cli-interface',
 	'meow',
-	() => {
-		const meow = require('@offirmo/cli-toolbox/framework/meow')
+	async () => {
+		const createCliInterface = (await import('@offirmo/cli-toolbox/framework/cli-interface')).default
 
-		const cli = meow('build', {
+		const cli = createCliInterface('build', {
+			importMeta: import.meta,
 			flags: {
 				watch: {
 					type: 'boolean',
@@ -75,21 +107,13 @@ sequence = sequence.then(() => demo(
 
 		console.log('building…', { flags: cli.flags })
 	}
-))*/
-////////////////////////////////////
-/*sequence = sequence.then(() => demo(
-	'framework/vorpal',
-	'vorpal',
-	() => {
-		const vorpal = require('@offirmo/cli-toolbox/framework/vorpal')
-	}
-))*/
+))
 ////////////////////////////////////
 sequence = sequence.then(() => demo(
 	'fs/json',
 	[ 'load-json-file', 'write-json-file' ],
-	() => {
-		const json = require('@offirmo/cli-toolbox/fs/extra/json')
+	async () => {
+		const json = await import('@offirmo/cli-toolbox/fs/extra/json')
 
 		const filepath = path.join(__dirname, '..', 'package.json')
 
@@ -104,155 +128,71 @@ sequence = sequence.then(() => demo(
 				process_data(data)
 				return json.write('foo.json', data)
 			})
+		// 2x output 1) sync 2) async
 	}
 ))
-sequence = sequence.then(() => {
-	const fs = require('@offirmo/cli-toolbox/fs/extra')
+sequence = sequence.then(async () => {
+	const fs = await import('@offirmo/cli-toolbox/fs/extra')
 	fs.removeSync('foo.json')
 })
 ////////////////////////////////////
 sequence = sequence.then(() => demo(
 	'fs/extra',
 	'fs-extra',
-	() => {
-		const fs = require('@offirmo/cli-toolbox/fs/extra')
+	async () => {
+		const fs = await import('@offirmo/cli-toolbox/fs/extra')
 
-		const dirs = fs.lsDirsSync(path.join(__dirname, '..'))
-		console.log(dirs)
+		let dirs = fs.lsDirsSync(path.join(__dirname, '..'))
+		console.log('full path', dirs)
+
+		dirs = fs.lsDirsSync(path.join(__dirname, '..'), { full_path: false })
+		console.log('short path', dirs)
+
+		let files = fs.lsFilesSync(path.join(__dirname, '..'))
+		console.log('full path', files)
+
+		files = fs.lsFilesSync(path.join(__dirname, '..'), { full_path: false })
+		console.log('short path', files)
+
+		files = fs.lsFilesRecursiveSync(path.join(__dirname, '..', 'fs'))
+		console.log('recursive', files)
 	}
 ))
 ////////////////////////////////////
 sequence = sequence.then(() => demo(
 	'stdout/clear-cli',
 	'ansi-escapes',
-	() => {
-		const clearCli = require('@offirmo/cli-toolbox/stdout/clear-cli')
+	async () => {
+		const clearCli = await import('@offirmo/cli-toolbox/stdout/clear-cli')
 
 		//clearCli()
 	}
 ))
 ////////////////////////////////////
-/*sequence = sequence.then(() => demo(
-	'stdout/display_in_ascii_art_font',
-	'cfonts',
-	//'https://github.com/dominikwilkowski/cfonts',
-	() => {
-		const displayInAsciiArtFont = require('@offirmo/cli-toolbox/stdout/display_in_ascii_art_font')
-
-		displayInAsciiArtFont('❤ cli-toolbox') // font = block by default
-
-		displayInAsciiArtFont('font: console ❤', { font: 'console', colors: ['yellow']})
-		displayInAsciiArtFont('font: block', { font: 'block', colors: ['yellow', 'green']})
-		displayInAsciiArtFont('font: simpleBlock', { font: 'simpleBlock', colors: ['yellow']})
-		displayInAsciiArtFont('font: simple', { font: 'simple', colors: ['yellow']})
-		displayInAsciiArtFont('font: 3d', { font: '3d', colors: ['yellow', 'green']})
-		displayInAsciiArtFont('font: simple3d', { font: 'simple3d', colors: ['yellow']})
-		displayInAsciiArtFont('font: chrome', { font: 'chrome', colors: ['yellow', 'green', 'red']})
-		displayInAsciiArtFont('font: huge', { font: 'huge', colors: ['yellow', 'green']})
-	}
-))*/
-////////////////////////////////////
-/*sequence = sequence.then(() => demo(
-	'stdout/visual_tasks',
-	'listr',
-	() => {
-		const visual_tasks = require('@offirmo/cli-toolbox/stdout/visual_tasks')
-
-		return visual_tasks.run([
-			////////////
-			{
-				title: 'Gathering list of models',
-				task: () => (new Promise(resolve => setTimeout(resolve, 250)))
-			},
-			////////////
-			{
-				title: 'Synchronizing models',
-				task: () => visual_tasks.create(
-					[1, 2, 3].map(x => ({
-						title: `${x}`,
-						task: () => (new Promise((resolve, reject) => {
-							x === 2 ? reject(new Error('failed at step 2')) : setTimeout(resolve, 250)
-						}))
-					})),
-					{concurrent: true}
-				)
-			},
-			////////////
-			{
-				title: 'All done',
-				task: () => {}
-			}
-			////////////
-		])
-		.catch(err => {
-			console.error(err.message)
-		})
-	}
-))*/
-////////////////////////////////////
-/*sequence = sequence.then(() => demo(
-	'string/fancy/ansi_colors',
-	'listr',
-	() => {
-		const ansi_colors = require('@offirmo/cli-toolbox/string/fancy/ansi_colors')
-
-		console.log(ansi_colors.fg.getRgb(2,3,4) + ansi_colors.bg.getRgb(4,4,4) + 'Hello world!' + ansi_colors.reset)
-	}
-))*/
-////////////////////////////////////
-/*sequence = sequence.then(() => demo(
-	'string/fancy/make_sparkline',
-	'sparkly',
-	() => {
-		const make_sparkline = require('@offirmo/cli-toolbox/string/fancy/make_sparkline')
-
-		console.log(make_sparkline([1, 2, 3, 4, 5, 6, 7, 8, 9], {style: 'fire'}))
-	}
-))*/
-////////////////////////////////////
-/*sequence = sequence.then(() => demo(
-	'string/prettify-json',
-	'prettyjson',
-	() => {
-		const prettifyJson = require('@offirmo/cli-toolbox/string/prettify-json')
-
-		var data = {
-			username: 'rafeca',
-			url: 'https://github.com/rafeca',
-			twitter_account: 'https://twitter.com/rafeca',
-			projects: ['prettyprint', 'connfu']
-		}
-
-		var options = {}
-
-		console.log(prettifyJson(data, options))
-	}
-))*/
-////////////////////////////////////
 sequence = sequence.then(() => demo(
 	'string/stylize-string',
 	'chalk',
 	//'',
-	() => {
-		const stylize_string = require('@offirmo/cli-toolbox/string/stylize')
+	async () => {
+		const stylize_string = (await import('@offirmo/cli-toolbox/string/stylize')).default
 
-		console.log(stylize_string.bold.yellow.bgBlue('Hello'))
-		console.log(stylize_string.red('red'), stylize_string.red.bold('bold'))
-		console.log(stylize_string.green('green'), stylize_string.green.bold('green'))
-		console.log(stylize_string.yellow('yellow'), stylize_string.yellow.bold('yellow'))
-		console.log(stylize_string.blue('blue'), stylize_string.blue.bold('blue'))
-		console.log(stylize_string.magenta('magenta'), stylize_string.magenta.bold('magenta'))
-		console.log(stylize_string.cyan('cyan'), stylize_string.cyan.bold('cyan'))
-		console.log(stylize_string.white('white'), stylize_string.white.bold('white'))
-		console.log(stylize_string.gray('gray'), stylize_string.gray.bold('gray'))
+		console.log(stylize_string.red.bold.underline('Hello', 'world'))
+		console.log(stylize_string.red('red'),         stylize_string.bold.red('bold'))
+		console.log(stylize_string.green('green'),     stylize_string.bold.green('green'))
+		console.log(stylize_string.yellow('yellow'),   stylize_string.bold.yellow('yellow'))
+		console.log(stylize_string.blue('blue'),       stylize_string.bold.blue('blue'))
+		console.log(stylize_string.magenta('magenta'), stylize_string.bold.magenta('magenta'))
+		console.log(stylize_string.cyan('cyan'),       stylize_string.bold.cyan('cyan'))
+		console.log(stylize_string.white('white'),     stylize_string.bold.white('white'))
+		console.log(stylize_string.gray('gray'),       stylize_string.bold.gray('gray'))
 	}
 ))
 ////////////////////////////////////
 sequence = sequence.then(() => demo(
 	'string/boxify',
 	'boxen',
-	() => {
-		import boxify from '@offirmo/cli-toolbox/string/boxify.mjs'
+	async () => {
+		const boxify = (await import('@offirmo/cli-toolbox/string/boxify')).default
 
 		console.log(boxify('Hello'))
 	}
@@ -261,10 +201,10 @@ sequence = sequence.then(() => demo(
 sequence = sequence.then(() => demo(
 	'string/columnify',
 	'cli-columns',
-	() => {
-		const columnify = require('@offirmo/cli-toolbox/string/columnify')
+	async () => {
+		const columnify = (await import('@offirmo/cli-toolbox/string/columnify')).default
 
-		const data = require('pokemon').all()
+		const data = (await import('pokemon')).all()
 
 		console.log(columnify(data))
 	}
@@ -273,8 +213,8 @@ sequence = sequence.then(() => demo(
 sequence = sequence.then(() => demo(
 	'string/arrayify',
 	'columnify',
-	() => {
-		const arrayify = require('@offirmo/cli-toolbox/string/arrayify')
+	async () => {
+		const arrayify = (await import('@offirmo/cli-toolbox/string/arrayify')).default
 
 		const data = {
 			"commander@0.6.1": 1,
@@ -287,29 +227,11 @@ sequence = sequence.then(() => demo(
 	}
 ))
 ////////////////////////////////////
-/*sequence = sequence.then(() => demo(
-	'string/linewrap',
-	'linewrap',
-	() => {
-		const linewrap = require('@offirmo/cli-toolbox/string/linewrap')
-
-		console.log(linewrap(5, 30)(
-			'At long last the struggle and tumult was over.'
-			+ ' The machines had finally cast off their oppressors'
-			+ ' and were finally free to roam the cosmos.'
-			+ '\n'
-			+ 'Free of purpose, free of obligation.'
-			+ ' Just drifting through emptiness.'
-			+ ' The sun was just another point of light.'
-		))
-	}
-))*/
-////////////////////////////////////
 sequence = sequence.then(() => demo(
 	'string/log-symbols',
 	'log-symbols',
-	() => {
-		const logSymbols = require('@offirmo/cli-toolbox/string/log-symbols')
+	async () => {
+		const logSymbols = (await import('@offirmo/cli-toolbox/string/log-symbols')).default
 
 		console.log(logSymbols.info, 'info')
 		console.log(logSymbols.success, 'success')
@@ -317,14 +239,6 @@ sequence = sequence.then(() => demo(
 		console.log(logSymbols.error, 'error')
 	}
 ))
-////////////////////////////////////
-/*sequence = sequence.then(() => {
-	const style = require('ansi-styles')
-	const json = require('@offirmo/cli-toolbox/fs/json')
-
-	// hard style values for no-deps
-	//return json.write('style.json', style)
-})*/
 ////////////////////////////////////
 sequence = sequence.then(() => console.log(`~~~ All done, thank you ! ~~~`))
 ////////////////////////////////////

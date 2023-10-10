@@ -23,3 +23,34 @@ https://github.com/Offirmo-team/wiki/wiki/outil-en-ligne-de-commande-avec-node
 * https://github.com/dominikwilkowski/cfonts
 * https://github.com/sindresorhus/boxen
 * https://github.com/sindresorhus/conf
+
+
+
+
+	"toreview": {
+		"bytes": "^2",
+		"cfonts": "^1",
+		"cli-truncate": "^1",
+		"cli-width": "^2",
+		"conf": "^1",
+		"figures": "^2",
+		"humanize-duration": "^3",
+		"humanize-string": "^1",
+		"indent-string": "^3",
+		"json-stringify-safe": "^5",
+		"json3": "^3",
+		"linewrap": "^0.2.1",
+		"listr": "^0.12",
+		"lodash": "^4",
+		"observatory": "^1",
+		"ora": "^1",
+		"prettyjson": "^1",
+		"sparkly": "^3",
+		"string-width": "^2",
+		"supports-color": "^4",
+		"tildify": "^1",
+		"untildify": "^3",
+		"update-notifier": "^2",
+		"vorpal": "^1",
+		"yargs": "^8"
+	}
