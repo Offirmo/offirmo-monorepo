@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 
 import micro_memoize from 'micro-memoize'
 import stylize_string from 'chalk'

@@ -1,3 +1,4 @@
++++ https://martinfowler.com/
 12 factors https://12factor.net/
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 97 Things Every Programmer Should Know

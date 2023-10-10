@@ -22,7 +22,9 @@ console.log('/////////////////////////////////////////////////')
 console.log(renderꓽstateⵧprettified_text(state))
 
 console.log('/////////////////////////////////////////////////')
-const $doc = renderꓽstateⵧrich_text(state)
+const $doc = renderꓽstateⵧrich_text(state, {
+
+})
 console.log(to_terminal($doc))
 
 console.log('/////////////////////////////////////////////////')
