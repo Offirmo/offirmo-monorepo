@@ -6,7 +6,7 @@ import { LIB } from './consts.js'
 
 import * as RichText from './index.js'
 import { walk, WalkerCallbacks } from './walk.js'
-import { BaseParams, BaseRenderingOptions, Node } from './index.js'
+import { BaseRenderingOptions, Node } from './index.js'
 
 describe(`${LIB}`, function () {
 

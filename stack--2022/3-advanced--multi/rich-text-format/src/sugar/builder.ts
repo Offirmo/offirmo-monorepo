@@ -6,6 +6,7 @@ import {
 	Node,
 	Document,
 } from '../types.js'
+import { promoteꓽto_node } from '../utils/promote.js'
 
 /////////////////////////////////////////////////
 
@@ -98,7 +99,7 @@ function create($type: NodeType): Builder {
 			.pushText(str)
 			.addClass(...options.classes!)
 			.done()
-		delete options.classes
+		delete options.classes // TODO immu
 
 		return pushNode(node, options)
 	}
@@ -160,10 +161,10 @@ function create($type: NodeType): Builder {
 			classes: [],
 			...options,
 		}
-		const kv_node: Node = key_value(key, String(value))
+		const kv_node: Node = key_value(key, value)
 			.addClass(...options.classes!)
 			.done()
-		delete options.classes
+		delete options.classes // TODO review
 
 		return pushRawNode(kv_node, options)
 	}
@@ -201,14 +202,10 @@ function listⵧunordered(): Builder {
 	return create(NodeType.ul)
 }
 
-function key_value(key: Node | string, value: Node | string): Builder {
-	const key_node: Node = typeof key === 'string'
-		? fragmentⵧinline().pushText(key).done()
-		: key
+function key_value(key: Node | string, value: Node | string | number): Builder {
+	const key_node: Node = promoteꓽto_node(key)
 
-	const value_node: Node = typeof value === 'string'
-		? fragmentⵧinline().pushText(value).done()
-		: value
+	const value_node: Node = promoteꓽto_node(value)
 
 	return fragmentⵧinline()
 		.pushNode(key_node, { id: 'key' })

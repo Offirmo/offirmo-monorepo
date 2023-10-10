@@ -26,8 +26,9 @@ const NodeType = Enum(
 )
 type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 
-
-interface CheckedNode {
+// using type instead of interface to prevent extra properties
+// (not supposed to extend this)
+type CheckedNode = {
 	$v: number // schema version
 	$type: NodeType
 	$classes: string[]
@@ -44,6 +45,9 @@ interface CheckedNode {
 
 type Node = Partial<CheckedNode>
 
+// trivial to promote to a Node
+type NodeLike = Node | string | number
+
 ///////
 
 // aliases
@@ -55,6 +59,7 @@ export {
 	NodeType,
 	type CheckedNode,
 	type Node,
+	type NodeLike,
 
 	type Document,
 }

@@ -3,7 +3,6 @@ import { expect } from 'chai'
 import { LIB } from '../consts.js'
 
 import * as RichText from '../index.js'
-import { fragmentⵧblock, listⵧordered, renderⵧto_text } from '../index.js'
 
 /////////////////////////////////////////////////
 

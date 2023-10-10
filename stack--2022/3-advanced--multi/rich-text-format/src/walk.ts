@@ -4,7 +4,7 @@ import { LIB } from './consts.js'
 
 import { NodeType, CheckedNode, Node } from './types.js'
 
-import { normalizeꓽnode } from './utils.js'
+import { normalizeꓽnode } from './utils/normalize.js'
 
 /////////////////////////////////////////////////
 // "walk" is the foundation on which all the renderer are based
@@ -231,6 +231,7 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 				return { $content: `{{??${sub_node_id}??}}` }
 			}
 
+			//console.error($node, { $content, sub_node_id })
 			throw new Error(`${LIB}: syntax error in content "${$content}", it's referencing an unknown sub-node "${sub_node_id}"!`)
 		})()
 

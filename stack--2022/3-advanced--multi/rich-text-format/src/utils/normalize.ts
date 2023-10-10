@@ -1,12 +1,12 @@
 import assert from 'tiny-invariant'
 
-import { LIB, SCHEMA_VERSION } from './consts.js'
+import { LIB, SCHEMA_VERSION } from '../consts.js'
 
 import {
 	NodeType,
 	CheckedNode,
 	Node,
-} from './types.js'
+} from '../types.js'
 
 /////////////////////////////////////////////////
 
@@ -20,7 +20,9 @@ function normalizeꓽnode($raw_node: Readonly<Node>): CheckedNode {
 		$content = '',
 		$sub = {},
 		$hints = {},
+		...rest
 	} = $raw_node
+	assert(Object.keys(rest).length === 0, `${LIB}: node contain extraneous keys! (${Object.keys(rest).join(',')})`)
 
 	// TODO migration
 	if ($v !== SCHEMA_VERSION)
