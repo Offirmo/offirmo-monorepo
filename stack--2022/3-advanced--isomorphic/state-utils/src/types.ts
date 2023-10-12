@@ -35,7 +35,7 @@ export interface BaseUState extends BaseState {
 export interface BaseTState extends BaseState, WithTimestamp {
 }
 // tuple of U+T State
-export type UTBundle<U extends BaseUState, T extends BaseTState> = [ U, T ]
+export type UTBundle<U extends BaseUState = BaseUState, T extends BaseTState = BaseTState> = [ U, T ]
 
 // most advanced state = aggregation of multiple U+T states
 export interface BaseRootState<U extends BaseUState = BaseUState, T extends BaseTState = BaseTState> extends WithLastUserInvestmentTimestamp {

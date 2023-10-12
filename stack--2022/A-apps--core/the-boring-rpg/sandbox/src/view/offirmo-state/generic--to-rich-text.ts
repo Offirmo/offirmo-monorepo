@@ -11,6 +11,7 @@ import {
 	AnyOffirmoState,
 	BaseRootState,
 	isꓽRootState,
+	UTBundle,
 	isꓽUTBundle,
 	BaseUState,
 	BaseTState,
@@ -18,24 +19,34 @@ import {
 } from '@offirmo-private/state-utils'
 import { getꓽUTC_timestampⵧhuman_readable‿ms } from '@offirmo-private/timestamps'
 
+import * as RRT from '@tbrpg/ui--rich-text'
 
 /////////////////////////////////////////////////
 
-
-// count of user-initiated *changes*
-// (should not increment if an action triggers no change)
-/*export interface WithRevision {
-	revision: number
-}*/
-
-interface Options {
-
+function _getꓽstate_type(raw_state: Immutable<any>): 'root' | 'bundle' | 'U' | 'T' | 'base' | 'unknown' {
+	switch (true) {
+		case isꓽRootState(raw_state):
+			return 'root'
+		case isꓽUTBundle(raw_state):
+			return 'bundle'
+		case isꓽUState(raw_state):
+			return 'U'
+		case isꓽTState(raw_state):
+			return 'T'
+		case isꓽBaseState(raw_state):
+			return 'base'
+		// we don't go deeper (WithSchema etc. as we'll handle those common props on everything
+		default:
+			return 'unknown'
+	}
 }
+
+/////////////////////////////////////////////////
 
 function _renderⵧWithSchemaVersion(state: Immutable<WithSchemaVersion>, key?: string): RichText.Document {
 	const builder = RichText.fragmentⵧinline()
 
-	builder.pushText(`ⓥ  ${state.schema_version}`)
+	builder.pushText(`v${state.schema_version}`)
 
 	return builder.done()
 }
@@ -66,34 +77,11 @@ function _renderⵧWithLastUserInvestmentTimestamp(state: Immutable<WithLastUser
 	return builder.done()
 }
 
-function _renderⵧUState(state: Immutable<BaseUState>, options: Immutable<Options>, key?: string): RichText.Document {
-	const builder = RichText.fragmentⵧblock()
+/////////////////////////////////////////////////
 
-	const keys = new Set([
-		...Object.keys(state),
-	])
+function _renderⵧRootState(state: Immutable<BaseRootState>, options: Options, key?: string): RichText.Document {
+	assert(!key, `root should be root! "${key}"`)
 
-
-	builder.pushNode(_renderⵧWithSchemaVersion(state as any))
-	builder.pushLineBreak()
-	keys.delete('schema_version')
-
-	builder.pushNode(_renderⵧWithRevision(state as any))
-	builder.pushLineBreak()
-	keys.delete('revision')
-
-
-	const kvⵧown = RichText.listⵧunordered()
-	keys.forEach(k => {
-		kvⵧown.pushKeyValue(k, (state as any)[k])
-	})
-	builder.pushNode(kvⵧown.done())
-
-	return builder.done()
-}
-
-
-function _renderⵧRootState(state: Immutable<BaseRootState>, options: Options): RichText.Document {
 	const builder = RichText.fragmentⵧblock()
 
 	const keys = new Set([
@@ -147,50 +135,144 @@ function _renderⵧRootState(state: Immutable<BaseRootState>, options: Options):
 	return builder.done()
 }
 
-
-function _render(raw_state: Immutable<AnyOffirmoState>, options: Immutable<Options>, key?: string): RichText.Document {
+function _renderⵧUTBundle(state: Immutable<UTBundle>, options: Options, key?: string): RichText.Document {
 	const builder = RichText.fragmentⵧblock()
 
-	switch (true) {
-		case isꓽRootState(raw_state): {
-			assert(!key)
-			builder.pushNode(_renderⵧRootState(raw_state as any, options))
-			break
-		}
-
-		case isꓽUTBundle(raw_state): {
-			builder.pushHeading('TODO UTBundle!')
-			break
-		}
-
-		case isꓽUState(raw_state): {
-			builder.pushNode(_renderⵧUState(raw_state as any, options, key))
-			break
-		}
-
-		case isꓽTState(raw_state): {
-			builder.pushHeading('TODO TState!')
-			break
-		}
-
-		case isꓽBaseState(raw_state): {
-			builder.pushHeading('TODO BaseState!')
-			break
-		}
-
-		default:
-			builder.pushHeading('TODO ANY!')
-			//console.log(raw_state)
-			break
-	}
+	builder.pushHeading('TODO UTBundle!')
 
 	return builder.done()
 }
 
+function _renderⵧUState(state: Immutable<BaseUState>, options: Immutable<Options>, key?: string): RichText.Document {
+	const builder = RichText.fragmentⵧblock()
 
-function renderꓽstateⵧrich_text(state: Immutable<AnyOffirmoState>): RichText.Document {
-	const options: Options = {}
-	return _render(state, options)
+	const keys = new Set([
+		...Object.keys(state),
+	])
+
+	builder.pushNode(_renderⵧWithSchemaVersion(state as any))
+	builder.pushLineBreak()
+	keys.delete('schema_version')
+
+	builder.pushNode(_renderⵧWithRevision(state as any))
+	builder.pushLineBreak()
+	keys.delete('revision')
+
+	const renderedⵧdedicated = _getꓽrendererⵧdedicated('U', options,key)
+	const remaining_keys_node = renderedⵧdedicated
+		? renderedⵧdedicated(state, options, key)
+		: _renderⵧremaining_keys(state, options, keys)
+	builder.pushNode(remaining_keys_node)
+
+	return builder.done()
+}
+
+function _renderⵧTState(state: Immutable<UTBundle>, options: Options, key?: string): RichText.Document {
+	const builder = RichText.fragmentⵧblock()
+
+	builder.pushHeading('TODO TState!')
+
+	return builder.done()
+}
+
+function _renderⵧBaseState(state: Immutable<UTBundle>, options: Options, key?: string): RichText.Document {
+	const builder = RichText.fragmentⵧblock()
+
+	builder.pushHeading('TODO BaseState!')
+
+	return builder.done()
+}
+
+function _renderⵧany(state: Immutable<any>, options: Options, key?: string): RichText.Document {
+	const builder = RichText.fragmentⵧblock()
+
+	builder.pushHeading('TODO Any!')
+
+	return builder.done()
+}
+
+function _renderⵧremaining_keys(state: Immutable<any>, options: Options, keys: Set<string>): RichText.Document {
+	const builder = RichText.listⵧunordered()
+
+	keys.forEach(k => {
+		builder.pushKeyValue(k, String((state as any)[k]))
+		//builder.pushKeyValue(k, JSON.stringify((state as any)[k]))
+	})
+
+	return builder.done()
+}
+
+function _getꓽrendererⵧby_type(type: ReturnType<typeof _getꓽstate_type>): Renderer {
+	switch (type) {
+		case 'root':
+			return _renderⵧRootState
+
+		case 'bundle':
+			return _renderⵧUTBundle
+
+		case 'U':
+			return _renderⵧUState
+
+		case 'T':
+			return _renderⵧTState
+
+		case 'base':
+			return _renderⵧBaseState
+
+		default:
+			return _renderⵧany
+	}
+}
+
+/////////////////////////////////////////////////
+
+type Renderer = (raw_state: Immutable<any>, options: Immutable<Options>, key?: string) => RichText.Document
+
+interface Options {
+	// TODO review
+	//rendererⵧgeneric: Renderer,
+	//rendererⵧWithSchemaVersion: Renderer,
+	//rendererⵧWithRevision: Renderer,
+
+	renderers: {
+		[k: string]: Renderer,
+	}
+}
+
+function _getꓽrendererⵧdedicated(type: ReturnType<typeof _getꓽstate_type>, options: Immutable<Options>, key?: string): Renderer | undefined {
+	let candidate = `${type}:${key}`
+	if (options.renderers[candidate])
+		return options.renderers[candidate]!
+
+	candidate = `${key}`
+	if (options.renderers[candidate])
+		return options.renderers[candidate]!
+
+	candidate = `${type}`
+	if (options.renderers[candidate])
+		return options.renderers[candidate]!
+
+	return undefined
+}
+
+/////////////////////////////////////////////////
+
+function _render(raw_state: Immutable<any>, options: Immutable<Options>, key?: string): RichText.Document {
+	const type = _getꓽstate_type(raw_state)
+
+	const renderer = _getꓽrendererⵧby_type(type)
+
+	return renderer(raw_state, options, key)
+}
+
+
+function renderꓽstateⵧrich_text(state: Immutable<any>, options: Immutable<Partial<Options>> = {}): RichText.Document {
+	const full_options: Immutable<Options> = {
+		//rendererⵧgeneric: _render,
+		renderers: {},
+		...options,
+	}
+	return _render(state, full_options)
 }
 
 /////////////////////////////////////////////////

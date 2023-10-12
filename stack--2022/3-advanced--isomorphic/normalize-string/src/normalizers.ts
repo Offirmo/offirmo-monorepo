@@ -17,13 +17,15 @@ import {
 } from './normalizers--base.js'
 
 import {
-	normalize_email_safe,
-	normalize_email_reasonable,
-	normalize_email_full,
+	normalizeꓽemailⵧsafe,
+	normalizeꓽemailⵧreasonable,
+	normalizeꓽemailⵧfull,
 } from './normalizer--email.js'
 
 /////////////////////
 
+// TODO refactor this ugly mistyped thing
+// we should use import * from instead
 export const NORMALIZERS: Readonly<{ [key: string]: StringNormalizer }> = {
 	default_to_empty,
 	ensure_string,
@@ -38,9 +40,9 @@ export const NORMALIZERS: Readonly<{ [key: string]: StringNormalizer }> = {
 	convert_spaces_to_camel_case,
 	coerce_to_safe_nickname,
 	coerce_to_redeemable_code,
-	normalize_email_safe,
-	normalize_email_reasonable,
-	normalize_email_full,
+	normalizeꓽemailⵧsafe,
+	normalizeꓽemailⵧreasonable,
+	normalizeꓽemailⵧfull,
 }
 
 /////////////////////

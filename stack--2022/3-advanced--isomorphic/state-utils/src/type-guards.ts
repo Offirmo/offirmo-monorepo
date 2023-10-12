@@ -62,7 +62,7 @@ export function isꓽTState(s: Immutable<any>): s is BaseTState {
 		&& isꓽWithTimestamp(s)
 }
 
-export function isꓽUTBundle(s: Immutable<any>): s is UTBundle<BaseUState, BaseTState> {
+export function isꓽUTBundle(s: Immutable<any>): s is UTBundle {
 	return Array.isArray(s)
 		&& s.length === 2
 		&& isꓽUState(s[0])

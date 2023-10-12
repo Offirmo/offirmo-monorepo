@@ -135,7 +135,7 @@ describe('normalize-string - base normalizers', function() {
 		})
 	})
 
-	TEST_CASES['normalize_email_safe'] = TEST_CASES['normalize_email_reasonable'] = TEST_CASES['normalize_email_full'] = true
+	TEST_CASES['normalizeꓽemailⵧsafe'] = TEST_CASES['normalizeꓽemailⵧreasonable'] = TEST_CASES['normalizeꓽemailⵧfull'] = true
 	Object.keys(NORMALIZERS).forEach(key => {
 		if (!TEST_CASES[key])
 			throw new Error(`(internal check) Missing test cases for normalizer "${key}"!`)

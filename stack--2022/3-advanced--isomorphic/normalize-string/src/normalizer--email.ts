@@ -121,14 +121,14 @@ function validate_email_structure(possible_email: string): string {
 // normalizing too hard prevents us from using gravatar
 // ex. offirmo.net@gmail.com is not matching gravatar offirmonet@gmail.com
 
-export const normalize_email_safe = combine_normalizers(
+export const normalizeꓽemailⵧsafe = combine_normalizers(
 	normalize_unicode,
 	remove_all_spaces,
 	validate_email_structure,
 	lowercase_domain,
 )
 
-export const normalize_email_reasonable = combine_normalizers(
+export const normalizeꓽemailⵧreasonable = combine_normalizers(
 	normalize_unicode,
 	remove_all_spaces,
 	validate_email_structure,
@@ -137,7 +137,7 @@ export const normalize_email_reasonable = combine_normalizers(
 	lowercase_local_part_if_insensitive,
 )
 
-export const normalize_email_full = combine_normalizers(
+export const normalizeꓽemailⵧfull = combine_normalizers(
 	normalize_unicode,
 	remove_all_spaces,
 	validate_email_structure,
