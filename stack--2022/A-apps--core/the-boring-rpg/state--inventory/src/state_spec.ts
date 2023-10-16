@@ -44,17 +44,20 @@ describe(`${LIB} - state`, function() {
 				revision: 0,
 
 				unslotted_capacity: 20,
-				slotted: {},
+				slotted: {
+					[InventorySlot.armor]: undefined,
+					[InventorySlot.weapon]: undefined,
+				},
 				unslotted: [],
 			})
 
 			expect(state.unslotted_capacity).to.equal(20)
 			expect(state.unslotted).to.have.lengthOf(0)
-			expect(Object.keys(state.slotted)).to.have.lengthOf(0)
+			expect(Object.keys(state.slotted)).to.have.lengthOf(2)
 
-			expect(get_item_count(state), 'i').to.equal(0)
-			expect(get_equipped_item_count(state), 'e').to.equal(0)
-			expect(get_unequipped_item_count(state), 'u').to.equal(0)
+			expect(get_item_count(state), 'get_item_count()').to.equal(0)
+			expect(get_equipped_item_count(state), 'get_equipped_item_count()').to.equal(0)
+			expect(get_unequipped_item_count(state), 'get_unequipped_item_count()').to.equal(0)
 		})
 	})
 

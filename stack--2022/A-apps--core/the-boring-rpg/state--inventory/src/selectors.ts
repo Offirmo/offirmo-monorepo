@@ -19,7 +19,9 @@ function is_full(state: Immutable<State>): boolean {
 }
 
 function get_equipped_item_count(state: Immutable<State>): number {
-	return Object.keys(state.slotted).length
+	return Object.values(state.slotted)
+		.filter(v => !!v)
+		.length
 }
 
 function get_unequipped_item_count(state: Immutable<State>): number {

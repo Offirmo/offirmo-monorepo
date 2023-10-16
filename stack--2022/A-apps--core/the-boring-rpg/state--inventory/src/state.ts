@@ -21,7 +21,10 @@ function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
 
 			// todo rename equipped / backpack ?
 			unslotted_capacity: 20,
-			slotted: {},
+			slotted: {
+				[InventorySlot.armor]: undefined,
+				[InventorySlot.weapon]: undefined,
+			},
 			unslotted: [],
 		})
 	})
