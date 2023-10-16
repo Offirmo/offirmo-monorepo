@@ -24,6 +24,8 @@ By synchronous we mean a function that calls its callback on the same tick in th
 cache
 CAP ACID https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
 capability is an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
+CD https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
+CI https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
 comment
 compile to js
@@ -46,7 +48,9 @@ debugging
 defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actually-healthy-5flj
 dependencies
 dependency hell https://en.wikipedia.org/wiki/Dependency_hell
+devex
 devops
+DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 double authent
 DRY don't repeat yourself
 dry run
@@ -58,11 +62,13 @@ event loop
 executive
 exposer des variables
 express, middlewares
+feedback loop -- speed needed
 fifo
 file read
 file write
 finops
 flatmap
+flow state: deep concentration, enjoyment, and a sense of progress
 flushing
 flux architecture
 framework -- "a new framework every day"
