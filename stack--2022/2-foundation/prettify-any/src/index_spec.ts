@@ -424,7 +424,6 @@ describe('@offirmo-private/prettify-any', function() {
 				})
 
 				it('should handle deep objects - fetch', async () => {
-					//@ts-expect-error TODO fix as soon as fetch global is added to @types/node
 					const ↆf = fetch('https://www.google.com')
 
 					return ↆf.then(
@@ -438,7 +437,6 @@ describe('@offirmo-private/prettify-any', function() {
 			it('should handle huge blobs', () => {
 				const out = process.env
 				test_to_console(out)
-				//console.log('☐ prettifyꓽany(…):', prettifyꓽany(out))
 			})
 
 			it('should handle objects with no prototype (no .toString)', () => {

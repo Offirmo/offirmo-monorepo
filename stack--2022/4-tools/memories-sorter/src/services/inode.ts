@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 
-import * as fse from '@offirmo/cli-toolbox/fs/extra/index.mjs'
+import * as fse from '@offirmo/cli-toolbox/fs/extra'
 
 //console.log('XXXXXXXX fse im\n', Object.keys(fse).sort().filter(k => k[0].toLowerCase() === k[0]).join('\n'))
 

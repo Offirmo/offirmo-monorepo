@@ -92,7 +92,7 @@ sequence = sequence.then(() => demo(
 	'string/boxify',
 	'boxen',
 	() => {
-		const boxify = require('@offirmo/cli-toolbox/string/boxify.mjs')
+		const boxify = require('@offirmo/cli-toolbox/string/boxify')
 
 		console.log(boxify('Hello'))
 	}

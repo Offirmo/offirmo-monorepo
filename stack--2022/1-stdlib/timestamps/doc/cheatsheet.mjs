@@ -1,5 +1,5 @@
-import stylizeString from '@offirmo/cli-toolbox/string/stylize.mjs'
-import boxify from '@offirmo/cli-toolbox/string/boxify.mjs'
+import stylizeString from '@offirmo/cli-toolbox/string/stylize'
+import boxify from '@offirmo/cli-toolbox/string/boxify'
 
 import PKG_JSON from '../package.json' assert { type: 'json' }
 
