@@ -1,7 +1,11 @@
-# CHANGELOG
-**This package follows [semver](https://semver.org/).**
+# Changelog
 
-## PENDING
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
 * [chore] added unit tests!
 * [chore][breaking] removed the package.json "esnext" property, can't reference of tools using it
 * [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)

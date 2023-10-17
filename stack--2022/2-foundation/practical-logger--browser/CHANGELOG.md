@@ -1,9 +1,13 @@
-# CHANGELOG
-**This package follows [semver](https://semver.org/).**
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 NOTE: not much reason to publish this lib since it's supposed to be bundled
 
-## PENDING
+## [Unreleased]
 * TODO more unit tests!
 * TODO lower size by removing duplication + useless sink
   * NOTE big size not really a problem since you're not supposed to bundle this lib
