@@ -1,7 +1,4 @@
-'use strict'
-
-///////////////////////////////////////////////////////
-
+import { EOL } from 'node:os'
 import path from 'node:path'
 
 import { spawn } from 'cross-spawn'
@@ -9,16 +6,12 @@ import tildify from 'tildify'
 import _ from 'lodash'
 const { flatten, map, split, isArray } = _ // 2022/03 lodash is still commonjs
 
-
 import { EXECUTABLE, find_tsc } from './find-tsc.mjs'
 import { LIB } from './consts.mjs'
 import { create_logger_state, display_banner_if_1st_output } from './logger.mjs'
 
 ///////////////////////////////////////////////////////
 
-const spawn_options = {
-	env: process.env,
-}
 const RADIX = EXECUTABLE
 
 ///////////////////////////////////////////////////////
@@ -30,9 +23,7 @@ export async function compile(tscOptions, files, options) {
 	options.verbose = Boolean(options.verbose)
 	let logger_state = create_logger_state(options.banner)
 
-
 	if (options.verbose) logger_state = display_banner_if_1st_output(logger_state)
-
 
 	return new Promise((resolve, reject) => {
 		let stdout = ''
@@ -45,16 +36,16 @@ export async function compile(tscOptions, files, options) {
 			stdout = stdout.trim()
 			stderr = stderr.trim()
 
-			const reason_from_stdout = (() => {
+			const reason_from_output = (() => {
 				const src = stderr || stdout
-				const first_line = src.split('\n')[0]
+				const first_line = src.split(EOL)[0]
 				if (first_line && first_line.toLowerCase().includes('error'))
 					return first_line
 
 				return null
 			})()
 
-			err = err || new Error(`${reason_from_stdout || reason}`)
+			err = err || new Error(`${reason_from_output || reason}`)
 			err.stdout = stdout
 			err.stderr = stderr
 			err.reason = reason
@@ -86,33 +77,38 @@ export async function compile(tscOptions, files, options) {
 
 			// not returning due to complex "callback style" async code
 			find_tsc(function _display_banner_if_1st_output() {
-				logger_state = display_banner_if_1st_output(logger_state)
-			})
+					logger_state = display_banner_if_1st_output(logger_state)
+				})
 				.then(tsc_executable_absolute_path => {
 					if (options.verbose) console.log(`[${LIB}] ✔ found a typescript compiler at this location: "${tsc_executable_absolute_path}" aka. "${tildify(tsc_executable_absolute_path)}"`)
 					if (options.verbose) console.log(`[${LIB}] ► now spawning the compilation command: "${[tsc_executable_absolute_path, ...spawn_params].join(' ')}"...\n`)
 
+					const spawn_options = {
+						env: process.env,
+					}
 					const spawn_instance = spawn(tsc_executable_absolute_path, spawn_params, spawn_options)
 
 					// listen to events
 					spawn_instance.on('error', err => {
-						on_failure('Spawn: got event "err"', err)
+						on_failure('got event "err"', err)
 					})
 					spawn_instance.on('disconnect', () => {
 						logger_state = display_banner_if_1st_output(logger_state)
 						console.log(`[${LIB}] Spawn: got event "disconnect"`)
 					})
 					spawn_instance.on('exit', (code, signal) => {
-						if (code === 0)
-							resolve(stdout)
-						else
-							on_failure(`Spawn: got event "exit" with error code "${code}" & signal "${signal}"!`)
+						// when receiving "exit", io streams may still be open
+						// we do nothing, another event "close" will follow.
+						if (code !== 0) {
+							logger_state = display_banner_if_1st_output(logger_state)
+							console.log(`[${LIB}] Spawn: got event "exit" with error code "${code}" & signal "${signal}"!`)
+						}
 					})
 					spawn_instance.on('close', (code, signal) => {
 						if (code === 0)
 							resolve(stdout)
 						else
-							on_failure(`Spawn: got event "close" with error code "${code}" & signal "${signal}"`)
+							on_failure(`got event "close" with error code "${code}" & signal "${signal}"`)
 					})
 
 					// for debug purpose only
@@ -127,7 +123,7 @@ export async function compile(tscOptions, files, options) {
 
 					spawn_instance.stdout.on('data', data => {
 						logger_state = display_banner_if_1st_output(logger_state)
-						split(data, '\n').forEach(line => {
+						split(data, EOL).forEach(line => {
 							if (!line.length) return // convenience for more compact output
 
 							if (line[0] === '/')
@@ -147,7 +143,7 @@ export async function compile(tscOptions, files, options) {
 
 					spawn_instance.stderr.on('data', data => {
 						logger_state = display_banner_if_1st_output(logger_state)
-						split(data, '\n').forEach(line => console.log(RADIX + '! ' + line))
+						split(data, EOL).forEach(line => console.log(RADIX + '! ' + line))
 						stderr += data
 					})
 					// mandatory for correct error detection

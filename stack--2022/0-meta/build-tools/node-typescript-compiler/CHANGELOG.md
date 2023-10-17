@@ -4,12 +4,18 @@
 ## PENDING
 * TODO remove lodash as a dependency
 * TODO change the interface to use named params
+* TODO add types through comments?
+* [feat] improved the nvm global module resolution, should now work on unix (not tested)
+* [chore] removed a dev dependency
+* [chore] bumped dependencies (minor)
 * [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
   * as such, the typescript module resolution through `require` is now resolved through `import.meta.resolve`
 * [chore][breaking] main functions are now correctly marked async
+* [fix] improved a rare potential case where we could detect the spawn termination too early and miss out output
+  * according to the doc, not actually seen
 * [chore] logger state is no longer leaked between invocations (it was using a global state)
-* [chore] removed a dev dependency
-* [chore] bumped dependencies (minor)
+* [chore] process.env is refreshed for each invocation
+* [chore] refactored the code a bit
 * [doc]++
 * ...
 
