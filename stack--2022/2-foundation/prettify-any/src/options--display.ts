@@ -1,4 +1,4 @@
-import { EOL } from 'os'
+import { EOL } from 'node:os'
 import getꓽterminal_size from 'term-size'
 
 import { DisplayOptions } from './types.js'

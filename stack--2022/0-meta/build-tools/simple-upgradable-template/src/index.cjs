@@ -4,7 +4,7 @@ const memoize_one = require('memoize-one')
 
 /////////////////////
 
-const EOL = '\n'
+const EOL = '\n' // TODO load from git prefs or OS?
 const EXCERPT_LENGTH = 30
 
 const KEYWORDS = {

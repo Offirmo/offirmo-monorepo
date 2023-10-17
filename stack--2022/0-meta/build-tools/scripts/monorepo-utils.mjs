@@ -17,7 +17,7 @@ function load_json_file(filePath) {
 }
 
 /////////////////////
-console.log(`🛠  🔻 tweaking the monorepo…`)
+console.log(`🔧  🔻 tweaking the monorepo…`)
 
 
 /////////////////////
@@ -366,6 +366,6 @@ await Promise.all([
 
 console.log(stats)
 */
-console.log(`🛠  🔺 tweaked the monorepo ✔`)
+console.log(`🔧  🔺 tweaked the monorepo ✔`)
 
 /////////////////////

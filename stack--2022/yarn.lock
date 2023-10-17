@@ -2381,9 +2381,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.535:
-  version "1.4.554"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/electron-to-chromium/-/electron-to-chromium-1.4.554.tgz#04e09c2ee31dc0f1546174033809b54cc372740b"
-  integrity sha512-Q0umzPJjfBrrj8unkONTgbKQXzXRrH7sVV7D9ea2yBV3Oaogz991yhbpfvo2LMNkJItmruXTEzVpP9cp7vaIiQ==
+  version "1.4.557"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/electron-to-chromium/-/electron-to-chromium-1.4.557.tgz#f3941b569c82b7bb909411855c6ff9bfe1507829"
+  integrity sha512-6x0zsxyMXpnMJnHrondrD3SuAeKcwij9S+83j2qHAQPXbGTDDfgImzzwgGlzrIcXbHQ42tkG4qA6U860cImNhw==
 
 emittery@^1:
   version "1.0.1"

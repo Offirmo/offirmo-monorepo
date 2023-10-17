@@ -26,7 +26,7 @@ const PKG_NAME = PKG_JSON.name
 /////////////////////
 
 //console.log({PKG_PATH, DIST_DIR, DEPS_DIR})
-console.log(`🔧  🔻 Cleaning ${stylize_string.bold(PKG_NAME)} [${cli.input}]...`)
+console.log(`🧹  🔻 Cleaning ${stylize_string.bold(PKG_NAME)} [${cli.input}]...`)
 
 
 Promise.all(cli.input
@@ -50,4 +50,4 @@ Promise.all(cli.input
 		}
 	})
 )
-	.then(() => console.log(`🔧  🔺 Cleaning ${stylize_string.bold(PKG_NAME)} [${cli.input}] done ✔`))
+	.then(() => console.log(`🧹  🔺 Cleaning ${stylize_string.bold(PKG_NAME)} [${cli.input}] done ✔`))
