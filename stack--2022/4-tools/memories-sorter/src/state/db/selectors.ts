@@ -48,7 +48,7 @@ export function getꓽall_folders(state: Immutable<State>): Immutable<Folder.Sta
 
 export function getꓽmax_folder_depth(state: Immutable<State>): number {
 	return getꓽall_folders(state).reduce((acc, folder_state) => {
-		const depth = Folder.get_depth(folder_state)
+		const depth = Folder.getꓽdepth(folder_state)
 		return Math.max(acc, depth)
 	}, 0)
 }
@@ -107,13 +107,13 @@ export function getꓽideal_file_relative_folder(state: Immutable<State>, id: Fi
 
 	const file_state = state.files[id]
 
-	assert(!File.is_notes(file_state), `get_ideal_file_relative_folder() should not be called on notes`) // bc notes have their own consolidation/cleaning logic
+	assert(!File.is_notes(file_state), `getꓽideal_file_relative_folder() should not be called on notes`) // bc notes have their own consolidation/cleaning logic
 
-	const current_parent_folder_id: FolderId = File.get_current_parent_folder_id(file_state)
-	assert(is_folder_existing(state, current_parent_folder_id), `get_ideal_file_relative_folder() current parent folder exists "${current_parent_folder_id}"`)
+	const current_parent_folder_id: FolderId = File.getꓽcurrent_parent_folder_id(file_state)
+	assert(is_folder_existing(state, current_parent_folder_id), `getꓽideal_file_relative_folder() current parent folder exists "${current_parent_folder_id}"`)
 	const current_parent_folder_state = state.folders[current_parent_folder_id]
 
-	const top_parent_id: FolderId = File.get_current_top_parent_folder_id(file_state)
+	const top_parent_id: FolderId = File.getꓽcurrent_top_parent_folder_id(file_state)
 	const is_top_parent_special = Folder.SPECIAL_FOLDERS_BASENAMES.includes(top_parent_id)
 
 	let is_media_file = File.is_media_file(file_state)
@@ -132,22 +132,22 @@ export function getꓽideal_file_relative_folder(state: Immutable<State>, id: Fi
 	// first, if not media, clear out from the medias
 	if (!is_media_file) {
 		// keep the exact same path, ensuring it's below "can't recognize"
-		let target_split_path = File.get_current_relative_path(file_state).split(path.sep).slice(0, -1)
+		let targetꓽsplit_path = File.getꓽcurrent_relative_path(file_state).split(path.sep).slice(0, -1)
 		if (is_top_parent_special)
-			target_split_path[0] = Folder.SPECIAL_FOLDERⵧCANT_RECOGNIZE__BASENAME
+			targetꓽsplit_path[0] = Folder.SPECIAL_FOLDERⵧCANT_RECOGNIZE__BASENAME
 		else
-			target_split_path.unshift(Folder.SPECIAL_FOLDERⵧCANT_RECOGNIZE__BASENAME)
+			targetꓽsplit_path.unshift(Folder.SPECIAL_FOLDERⵧCANT_RECOGNIZE__BASENAME)
 		logger.warn(`✴️ !media = Unfortunately can't manage to recognize a file :-(`, {
 			id,
 			parent_folder_type: current_parent_folder_state.type,
 			//current_parent_folder_state,
 		})
 		DEBUG && console.log(`✴️ ${id} can't sort`)
-		return path.join(target_split_path.join(path.sep))
+		return path.join(targetꓽsplit_path.join(path.sep))
 	}
 
 	// Ok, it's a media file.
-	const file_bcd = File.get_best_creation_date(file_state)
+	const file_bcd = File.getꓽbest_creation_date(file_state)
 
 	// whatever the file, is it already in an event folder? (= already sorted)
 	// BEWARE that:
@@ -168,8 +168,8 @@ export function getꓽideal_file_relative_folder(state: Immutable<State>, id: Fi
 		}
 
 		if (should_stay_in_this_event_folder) {
-			const event_folder_base = Folder.get_ideal_basename(current_parent_folder_state)
-			const year = String(Folder.get_event_begin_year(current_parent_folder_state))
+			const event_folder_base = Folder.getꓽideal_basename(current_parent_folder_state)
+			const year = String(Folder.getꓽevent_begin_year(current_parent_folder_state))
 
 			DEBUG && console.log(`✴️ ${id} is already in event and computed that it should stay in`)
 			return path.join(year, event_folder_base)
@@ -183,7 +183,7 @@ export function getꓽideal_file_relative_folder(state: Immutable<State>, id: Fi
 		if (File.is_confident_in_date_enough_to__sort(file_state))
 			return file_bcd
 
-		return Folder.get_event_begin_date(current_parent_folder_state)
+		return Folder.getꓽevent_begin_date(current_parent_folder_state)
 	})()
 
 	let compatible_event_folder_id = getꓽall_event_folder_ids(state)
@@ -195,20 +195,20 @@ export function getꓽideal_file_relative_folder(state: Immutable<State>, id: Fi
 			// Let's investigate if that happens:
 			logger.warn(`File was in an overlapped event but couldn't find a matching event`, {
 				id,
-				date_for_matching: BetterDateLib.get_debug_representation(date_for_matching_an_event),
+				date_for_matching: BetterDateLib.getꓽdebug_representation(date_for_matching_an_event),
 			})
 		}
 		// fall through to other rules
 	}
 	else {
 		// we found a matching event, all good
-		const event_folder_base = Folder.get_ideal_basename(state.folders[compatible_event_folder_id])
+		const event_folder_base = Folder.getꓽideal_basename(state.folders[compatible_event_folder_id])
 
-		const year = String(Folder.get_event_begin_year(state.folders[compatible_event_folder_id]))
+		const year = String(Folder.getꓽevent_begin_year(state.folders[compatible_event_folder_id]))
 
 		DEBUG && console.log(`✴️ ${id} found a matching event`, {
 			confidence_to_sort: File.is_confident_in_date_enough_to__sort(file_state),
-			file_date: BetterDateLib.get_debug_representation(date_for_matching_an_event),
+			file_date: BetterDateLib.getꓽdebug_representation(date_for_matching_an_event),
 		})
 		return path.join(year, event_folder_base)
 	}
@@ -217,45 +217,45 @@ export function getꓽideal_file_relative_folder(state: Immutable<State>, id: Fi
 
 	if (!File.is_confident_in_date_enough_to__sort(file_state)) {
 		// we really can't sort this media file :(
-		let target_split_path = File.get_current_relative_path(file_state).split(path.sep).slice(0, -1)
+		let targetꓽsplit_path = File.getꓽcurrent_relative_path(file_state).split(path.sep).slice(0, -1)
 		if (is_top_parent_special)
-			target_split_path[0] = Folder.SPECIAL_FOLDERⵧCANT_AUTOSORT__BASENAME
+			targetꓽsplit_path[0] = Folder.SPECIAL_FOLDERⵧCANT_AUTOSORT__BASENAME
 		else
-			target_split_path.unshift(Folder.SPECIAL_FOLDERⵧCANT_AUTOSORT__BASENAME)
+			targetꓽsplit_path.unshift(Folder.SPECIAL_FOLDERⵧCANT_AUTOSORT__BASENAME)
 		DEBUG && console.log(`✴️ ${id} really not confident`)
 		logger.warn(`✴️ !confident = Unfortunately really not confident about sorting the file :-(`, {
 			id,
 			parent_folder_type: current_parent_folder_state.type,
 		})
-		return target_split_path.join(path.sep)
+		return targetꓽsplit_path.join(path.sep)
 	}
 
 	// we have reasonable confidence, we don't have a folder
-	const year = String(BetterDateLib.get_year(file_bcd, 'tz:embedded'))
+	const year = String(BetterDateLib.getꓽyear(file_bcd, 'tz:embedded'))
 	const event_folder_base = ((): string => {
 		const all_events_folder_ids = getꓽall_event_folder_ids(state)
 
 		let compatible_event_folder_id = all_events_folder_ids.find(fid => Folder.is_date_matching_this_event(state.folders[fid], file_bcd))
 		if (compatible_event_folder_id) {
 			DEBUG && console.log(`✴️ ${id} found existing compatible event folder:`, compatible_event_folder_id)
-			return Folder.get_ideal_basename(state.folders[compatible_event_folder_id])
+			return Folder.getꓽideal_basename(state.folders[compatible_event_folder_id])
 		}
 
 		// need to create a new event folder!
 		// We don't group too much, split day / wek-end
 		let folder_date = file_bcd
-		DEBUG && console.log(`✴️ ${id} !found compatible event folder = creating one`, BetterDateLib.get_debug_representation(folder_date))
-		if (BetterDateLib.get_day_of_week_index(folder_date, 'tz:embedded') === 0) {
+		DEBUG && console.log(`✴️ ${id} !found compatible event folder = creating one`, BetterDateLib.getꓽdebug_representation(folder_date))
+		if (BetterDateLib.getꓽday_of_week_index(folder_date, 'tz:embedded') === 0) {
 			// sunday is coalesced to sat = start of weekend
 			folder_date = BetterDateLib.add_days(folder_date, -1)
 		}
 
 		const new_event_folder_basename =
-			String(BetterDateLib.get_compact_date(folder_date, 'tz:embedded'))
+			String(BetterDateLib.getꓽcompact_date(folder_date, 'tz:embedded'))
 			+ ' - '
-			+ (BetterDateLib.get_day_of_week_index(folder_date, 'tz:embedded') === 6 ? 'weekend' : 'life') // TODO use the existing parent folder as a base hint anyway
+			+ (BetterDateLib.getꓽday_of_week_index(folder_date, 'tz:embedded') === 6 ? 'weekend' : 'life') // TODO use the existing parent folder as a base hint anyway
 		DEBUG && console.log(`✴️ ${id} !found compatible event folder = created one`, {
-			adjusted_date: BetterDateLib.get_debug_representation(folder_date),
+			adjusted_date: BetterDateLib.getꓽdebug_representation(folder_date),
 			new_event_folder_basename,
 		})
 
@@ -267,26 +267,26 @@ export function getꓽideal_file_relative_folder(state: Immutable<State>, id: Fi
 }
 
 export function getꓽideal_file_relative_path(state: Immutable<State>, id: FileId): RelativePath {
-	logger.trace(`get_ideal_file_relative_path()`, { id })
+	logger.trace(`getꓽideal_file_relative_path()`, { id })
 
 	const file_state = state.files[id]
-	assert(file_state, `get_ideal_file_relative_path() should refer to a state! "${id}"`)
+	assert(file_state, `getꓽideal_file_relative_path() should refer to a state! "${id}"`)
 
 	if (File.is_notes(file_state)) {
 		return id // duplicate non-canonical notes will be cleaned at a later stage, no change for now
 	}
 
-	let ideal_basename = File.get_ideal_basename(file_state)
-	if (!get_params().dry_run) {
-		const current_basename = File.get_current_basename(file_state)
+	let ideal_basename = File.getꓽideal_basename(file_state)
+	if (!getꓽparams().dry_run) {
+		const current_basename = File.getꓽcurrent_basename(file_state)
 		const current_basename_cleaned = getꓽfile_basename_without_copy_index(current_basename)
 		assert(
 			current_basename_cleaned === ideal_basename,
-			`get_ideal_file_relative_path() file should already have been normalized in place! ideal="${ideal_basename}" vs current(no copy index)="${current_basename_cleaned}" from "${current_basename}"`
+			`getꓽideal_file_relative_path() file should already have been normalized in place! ideal="${ideal_basename}" vs current(no copy index)="${current_basename_cleaned}" from "${current_basename}"`
 		)
 	}
 
-	return path.join(get_ideal_file_relative_folder(state, id), ideal_basename)
+	return path.join(getꓽideal_file_relative_folder(state, id), ideal_basename)
 }
 
 export function getꓽpast_notes(state: Immutable<State>): Immutable<Notes.State> {
@@ -298,12 +298,12 @@ export function getꓽpresent_notes(state: Immutable<State>): Immutable<Notes.St
 
 	const encountered_files = { ...result.encountered_files }
 
-	get_all_media_files(state)
+	getꓽall_media_files(state)
 		.forEach(file_state => {
-			assert(file_state.current_hash, `get_past_and_present_notes() should happen on hashed files`)
+			assert(file_state.current_hash, `getꓽpast_and_present_notes() should happen on hashed files`)
 			assert(
 				!state.extra_notes.encountered_files[file_state.current_hash],
-				`get_past_and_present_notes() should not have conflicting data for hash "${file_state.current_hash}"`
+				`getꓽpast_and_present_notes() should not have conflicting data for hash "${file_state.current_hash}"`
 			)
 			encountered_files[file_state.current_hash] = file_state.notes
 		})
@@ -333,7 +333,7 @@ export function getꓽpast_and_present_notes(state: Immutable<State>): Immutable
 		}
 	}
 
-	//logger.info(`get_past_and_present_notes(): ` + Notes.to_string(result))
+	//logger.info(`getꓽpast_and_present_notes(): ` + Notes.to_string(result))
 	return result
 }
 
@@ -347,7 +347,7 @@ export function getꓽfile_ids_by_hash(state: Immutable<State>): { [hash: string
 	const file_ids_by_hash = getꓽall_file_ids(state)
 		.reduce((acc, file_id) => {
 			const file_state = state.files[file_id]
-			const hash = File.get_hash(file_state)
+			const hash = File.getꓽhash(file_state)
 
 			if (!hash) {
 				// happens for some special files such as notes. TODO clarify
@@ -362,7 +362,7 @@ export function getꓽfile_ids_by_hash(state: Immutable<State>): { [hash: string
 	/*const duplicate_original_basenames_by_hash: { [hash: string]: FileId[] } = getꓽall_file_ids(state)
 		.reduce((acc, file_id) => {
 			const file_state = state.files[file_id]
-			const hash = File.get_hash(file_state)
+			const hash = File.getꓽhash(file_state)
 			if (hash && duplicated_hashes.has(hash)) {
 				acc[hash] ??= []
 				acc[hash].push(file_state.extra_notes.original.basename)
@@ -400,10 +400,10 @@ Root: "${stylize_string.yellow.bold(root)}"
 	str += all_file_ids.map(id => File.to_string(files[id])).join('\n')
 
 	str += stylize_string.bold('\n\nExtra notes:') + ' (on hashes no longer existing we encountered in the past)'
-	str += (Notes.to_string(get_past_notes(state), 'mode:summary') || '\n  (none)')
+	str += (Notes.to_string(getꓽpast_notes(state), 'mode:summary') || '\n  (none)')
 
 	str += stylize_string.bold('\n\nPresent notes:')
-	str += (Notes.to_string(get_present_notes(state)) || '\n  (none)')
+	str += (Notes.to_string(getꓽpresent_notes(state)) || '\n  (none)')
 
 	str += stylize_string.bold('\n\nActions queue:')
 	if (queue.length === 0) str += '\n  (empty)'

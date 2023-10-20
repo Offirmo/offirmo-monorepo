@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import {
-	get_report_to_string,
+	getꓽreport_to_string,
 } from './actions.js'
 import { LIB } from '../consts.js'
 
@@ -14,7 +14,7 @@ describe(`${LIB} -- service -- Actions`, function() {
 		it('should work')
 	})
 
-	describe('get_report_to_string()', function () {
+	describe('getꓽreport_to_string()', function () {
 
 		it('should work', () => {
 			const s = getꓽreport_to_string()

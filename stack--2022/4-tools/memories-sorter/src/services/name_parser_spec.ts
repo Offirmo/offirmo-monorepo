@@ -2,7 +2,7 @@ import { expect } from 'chai'
 
 import { LIB, RELATIVE_PATH_NORMALIZATION_VERSION } from '../consts.js'
 import {
-	CURRENT_YEAR,
+	YEARⵧCURRENT,
 } from '../params.js'
 import {
 	DATED_NAMES_SAMPLES,
@@ -13,13 +13,13 @@ import {
 import {
 	DigitsParseResult,
 	ParseResult,
-	_get_y2k_year_from_fragment,
+	_getꓽy2k_year_from_fragment,
 	_parse_digit_blocks,
-	get_digit_pattern,
-	get_file_basename_copy_index,
-	get_folder_basename_normalisation_version,
-	get_folder_relpath_normalisation_version,
-	get_media_basename_normalisation_version,
+	getꓽdigit_pattern,
+	getꓽfile_basename_copy_index,
+	getꓽfolder_basename_normalisation_version,
+	getꓽfolder_relpath_normalisation_version,
+	getꓽmedia_basename_normalisation_version,
 	is_folder_basename__matching_a_processed_event_format,
 	is_normalized_event_folder_relpath,
 	is_normalized_media_basename,
@@ -30,8 +30,8 @@ import {
 	BetterDate,
 	_clean_debug,
 	create_better_date,
-	get_embedded_timezone,
-	get_human_readable_timestamp_auto,
+	getꓽembedded_timezone,
+	getꓽhuman_readable_timestamp_auto,
 } from './better-date.js'
 import { Immutable } from '@offirmo-private/ts-types'
 
@@ -53,22 +53,22 @@ describe(`${LIB} - (base)name parser`, function() {
 		return result
 	}
 
-	describe('_get_y2k_year_from_fragment()', function () {
+	describe('_getꓽy2k_year_from_fragment()', function () {
 		it('should work', () => {
-			expect(_get_y2k_year_from_fragment('70')).to.equal(1970)
-			expect(_get_y2k_year_from_fragment('99')).to.equal(1999)
-			expect(_get_y2k_year_from_fragment('00')).to.equal(2000)
-			expect(_get_y2k_year_from_fragment('01')).to.equal(2001)
-			expect(_get_y2k_year_from_fragment('19')).to.equal(2019)
+			expect(_getꓽy2k_year_from_fragment('70')).to.equal(1970)
+			expect(_getꓽy2k_year_from_fragment('99')).to.equal(1999)
+			expect(_getꓽy2k_year_from_fragment('00')).to.equal(2000)
+			expect(_getꓽy2k_year_from_fragment('01')).to.equal(2001)
+			expect(_getꓽy2k_year_from_fragment('19')).to.equal(2019)
 
-			const date_upper_boundⳇₓyear = CURRENT_YEAR + 1
-			if (date_upper_boundⳇₓyear >= 2069) {
-				expect(_get_y2k_year_from_fragment('69')).to.equal(2069)
+			const dateⵧupper_bound‿ₓyear = YEARⵧCURRENT + 1
+			if (dateⵧupper_bound‿ₓyear >= 2069) {
+				expect(_getꓽy2k_year_from_fragment('69')).to.equal(2069)
 			}
 			else {
-				expect(_get_y2k_year_from_fragment('69')).to.equal(null) // outside of param range
+				expect(_getꓽy2k_year_from_fragment('69')).to.equal(null) // outside of param range
 			}
-			expect(_get_y2k_year_from_fragment('1')).to.equal(null)
+			expect(_getꓽy2k_year_from_fragment('1')).to.equal(null)
 		})
 	})
 
@@ -106,7 +106,7 @@ describe(`${LIB} - (base)name parser`, function() {
 					}
 
 					expect(
-						get_human_readable_timestamp_auto(result.date!, 'tz:embedded'),
+						getꓽhuman_readable_timestamp_auto(result.date!, 'tz:embedded'),
 						`human ts`
 					).to.equal(human_ts_current_tz_for_tests)
 					//console.log(result.date!.toISOString())
@@ -237,7 +237,7 @@ describe(`${LIB} - (base)name parser`, function() {
 							`digits for ${[_comment, `"${filename}"`].join(': ')}`
 						).to.equal(expected.date_digits)
 						expect(
-							get_human_readable_timestamp_auto(result.date!, 'tz:embedded'),
+							getꓽhuman_readable_timestamp_auto(result.date!, 'tz:embedded'),
 							`human ts for ${[_comment, `"${filename}"`].join(': ')}`
 						).to.equal(expected.human_ts_current_tz_for_tests)
 					})
@@ -285,7 +285,7 @@ describe(`${LIB} - (base)name parser`, function() {
 					it(ꓺ('should correctly extract or infer the TZ', _comment, `"${filename}"`), () => {
 						const result = _clean_parse_result(parse(filename, { type: 'file' }))
 						//console.log(result.date)
-						expect(get_embedded_timezone(result.date!)).to.equal(expected_tz)
+						expect(getꓽembedded_timezone(result.date!)).to.equal(expected_tz)
 					})
 				})
 			})
@@ -454,7 +454,7 @@ describe(`${LIB} - (base)name parser`, function() {
 		})
 	})
 
-	describe('get_file_basename_copy_index()', function () {
+	describe('getꓽfile_basename_copy_index()', function () {
 		const filenames = Object.keys(ALL_SAMPLES)
 		//.filter(name => name === 'IMG_20160327_102742 2.jpg') // TEMP XXDCU
 		//.slice(0, 2) // TEMP XXDCU
@@ -471,15 +471,15 @@ describe(`${LIB} - (base)name parser`, function() {
 		})
 	})
 
-	describe('get_digit_pattern()', function() {
+	describe('getꓽdigit_pattern()', function() {
 
 		it('should work', () => {
-			expect(get_digit_pattern('MM2019-07-31_21h00m15_screenshot.mp3'))
+			expect(getꓽdigit_pattern('MM2019-07-31_21h00m15_screenshot.mp3'))
 				.to.equal('MMxxxx-xx-xx_xxhxxmxx_screenshot.mpx')
 		})
 	})
 
-	describe('get_media_basename_normalisation_version(), is_normalized_media_basename(), is_processed_media_basename()', function() {
+	describe('getꓽmedia_basename_normalisation_version(), is_normalized_media_basename(), is_processed_media_basename()', function() {
 		const T: { [k: string]: number | undefined } = {
 			// v1
 			'MM2019-07-31_21h00m15_screenshot.mp3': 1,
@@ -496,7 +496,7 @@ describe(`${LIB} - (base)name parser`, function() {
 
 		Object.keys(T).forEach(basename => {
 			it(`should work for "${basename}"`, () => {
-				expect(get_media_basename_normalisation_version(basename))
+				expect(getꓽmedia_basename_normalisation_version(basename))
 					.to.equal(T[basename])
 				expect(is_normalized_media_basename(basename))
 					.to.equal(T[basename] === RELATIVE_PATH_NORMALIZATION_VERSION)
@@ -506,7 +506,7 @@ describe(`${LIB} - (base)name parser`, function() {
 		})
 	})
 
-	describe('get_folder_relpath_normalisation_version(), is_normalized_event_folder_relpath()', function() {
+	describe('getꓽfolder_relpath_normalisation_version(), is_normalized_event_folder_relpath()', function() {
 		const T: { [k: string]: undefined | number } = {
 			// v1
 			'2007/20070101 - foo'                : 1,
@@ -527,7 +527,7 @@ describe(`${LIB} - (base)name parser`, function() {
 
 		Object.keys(T).forEach(relpath => {
 			it(`should work for "${relpath}"`, () => {
-				expect(get_folder_relpath_normalisation_version(relpath))
+				expect(getꓽfolder_relpath_normalisation_version(relpath))
 					.to.equal(T[relpath])
 				expect(is_normalized_event_folder_relpath(relpath))
 					.to.equal(T[relpath] === RELATIVE_PATH_NORMALIZATION_VERSION)
@@ -536,7 +536,7 @@ describe(`${LIB} - (base)name parser`, function() {
 
 	})
 
-	describe('get_folder_basename_normalisation_version(), is_folder_basename__matching_a_processed_event_format()', function() {
+	describe('getꓽfolder_basename_normalisation_version(), is_folder_basename__matching_a_processed_event_format()', function() {
 		const T: { [k: string]: undefined | number } = {
 			// v1
 			'20070101 - foo'                 : 1,
@@ -552,7 +552,7 @@ describe(`${LIB} - (base)name parser`, function() {
 
 		Object.keys(T).forEach(basename => {
 			it(`should work for "${basename}"`, () => {
-				expect(get_folder_basename_normalisation_version(basename))
+				expect(getꓽfolder_basename_normalisation_version(basename))
 					.to.equal(T[basename])
 				expect(is_folder_basename__matching_a_processed_event_format(basename))
 					.to.equal(T[basename] !== undefined)

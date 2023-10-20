@@ -7,7 +7,7 @@ import stylize_string from 'chalk'
 import logger from '../../services/logger.js'
 import { FileHash } from '../../services/hash.js'
 import {
-	get_human_readable_timestamp_auto,
+	getꓽhuman_readable_timestamp_auto,
 	create_better_date_from_utc_tms,
 } from '../../services/better-date.js'
 import {
@@ -28,17 +28,17 @@ import { getꓽparams, Params } from '../../params.js'
 ///////////////////// ACCESSORS /////////////////////
 
 export function getꓽoldest_hash(state: Immutable<State>, hash: FileHash): FileHash {
-	assert(hash, `get_oldest_hash() param`)
+	assert(hash, `getꓽoldest_hash() param`)
 
 	let has_redirect = false
 	while (state.known_modifications_new_to_old[hash]) {
 		has_redirect = true
-		assert(!state.encountered_files[hash], 'get_oldest_hash() newer hash should not have notes')
+		assert(!state.encountered_files[hash], 'getꓽoldest_hash() newer hash should not have notes')
 		hash = state.known_modifications_new_to_old[hash]
 	}
 
 	if (has_redirect) {
-		assert(state.encountered_files[hash], 'get_oldest_hash() known hash should have notes')
+		assert(state.encountered_files[hash], 'getꓽoldest_hash() known hash should have notes')
 	}
 
 	return hash
@@ -193,7 +193,7 @@ export function to_string(state: Immutable<State>, mode: 'mode:full' | 'mode:sum
 					}, {} as { [old: string]: string[] })
 
 			const newest_hashes: string[] = Object.keys(known_modifications_new_to_old)
-			const target_hashes: string[] = Object.values(known_modifications_new_to_old)*/
+			const targetꓽhashes: string[] = Object.values(known_modifications_new_to_old)*/
 
 			oldest_hashes.forEach(hash => {
 				processed.add(hash)
@@ -230,7 +230,7 @@ function notes_to_string(notes: Immutable<FileNotes>): string {
 			notes.historical.parent_path,
 			notes.historical.basename,
 		].filter(e => !!e).join('/')
-	)}" 📅(fs)${reliability_icon}${get_human_readable_timestamp_auto(create_better_date_from_utc_tms(notes.historical.fs_bcd_tms, 'tz:auto'), 'tz:embedded')}`
+	)}" 📅(fs)${reliability_icon}${getꓽhuman_readable_timestamp_auto(create_better_date_from_utc_tms(notes.historical.fs_bcd_tms, 'tz:auto'), 'tz:embedded')}`
 
 	return str
 }

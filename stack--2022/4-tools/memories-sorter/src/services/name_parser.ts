@@ -24,7 +24,7 @@ import {
 import {
 	BetterDate,
 	create_better_date,
-	get_debug_representation,
+	getꓽdebug_representation,
 } from './better-date.js'
 import logger from './logger.js'
 import { Basename, RelativePath } from '../types.js'
@@ -60,7 +60,7 @@ export const pathㆍparse_memoized = micro_memoize(path.parse, {
 export const normalize_extension = micro_memoize(function getꓽnormalized_extension(extension: string): string {
 	if (extension === '') return '' // special case of no extension at all
 
-	assert(extension[0] === '.', `get_normalized_extension('${extension}') param should starts with dot`)
+	assert(extension[0] === '.', `getꓽnormalized_extension('${extension}') param should starts with dot`)
 
 	let normalized_extension = extension
 	normalized_extension = NORMALIZERS.normalize_unicode(normalized_extension) // useful? never hurts…
@@ -81,16 +81,16 @@ export function getꓽfile_basename_extension(basename: Basename): string {
 		: ('.' + split_by_dot.slice(-1)[0])
 }
 export function getꓽfile_basename_extension‿normalized(basename: Basename): string {
-	return normalize_extension(get_file_basename_extension(basename))
+	return normalize_extension(getꓽfile_basename_extension(basename))
 }
 
-export function _get_y2k_year_from_fragment(s: string, separator = 70): number | null {
+export function _getꓽy2k_year_from_fragment(s: string, separator = 70): number | null {
 	const n = Math.trunc(Number(s))
 	if (n.toString().padStart(2, '0') !== s) return null
 
 	const y = (n >= separator ? 1900 : 2000) + n
 
-	if (y >= PARAMS.date_lower_boundⳇₓyear && y <= PARAMS.date_upper_boundⳇₓyear)
+	if (y >= PARAMS.dateⵧlower_bound‿ₓyear && y <= PARAMS.dateⵧupper_bound‿ₓyear)
 		return y
 
 	return null
@@ -116,7 +116,7 @@ export interface DigitsParseResult {
 	is_ambiguous: boolean
 }
 
-function _get_DigitsParseResult_debug_representation(dpresult: Immutable<DigitsParseResult>): Object {
+function _getꓽDigitsParseResult_debug_representation(dpresult: Immutable<DigitsParseResult>): Object {
 	const { date, ...rest } = dpresult
 	return {
 		...rest,
@@ -150,21 +150,21 @@ export function _parse_digit_blocks(digit_blocks: string, separator: 'none' | 's
 		if (digits.length < 8) {
 			result.summary = 'need_more'
 			result.reason = 'too few digits'
-			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 			return result
 		}
 
 		if (separator === 'none') {
 			result.summary = 'need_more'
 			result.reason = 'not on sep'
-			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 			return result
 		}
 
 		if (blocks[0].length > 4 && blocks[0].length !== 8) {
 			result.summary = 'no_match'
 			result.reason = '1st block mismatch - length'
-			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 			return result
 		}
 
@@ -225,12 +225,12 @@ export function _parse_digit_blocks(digit_blocks: string, separator: 'none' | 's
 					digits_after: blocks.join(''),
 				})
 				result.reason = 'internal error while improving the splitting'
-				logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+				logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 				return result
 			}
 		}
 		catch (e) {
-			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 			return result
 		}
 
@@ -260,15 +260,15 @@ export function _parse_digit_blocks(digit_blocks: string, separator: 'none' | 's
 
 					if (  is_day_fragment(blocks[0])
 						&& is_day_fragment(blocks[2])
-						&& _get_y2k_year_from_fragment(blocks[0]) !== null
-						&& _get_y2k_year_from_fragment(blocks[2]) !== null
+						&& _getꓽy2k_year_from_fragment(blocks[0]) !== null
+						&& _getꓽy2k_year_from_fragment(blocks[2]) !== null
 					) {
 						result.is_ambiguous = true
 					}
 
-					if (is_day_fragment(blocks[0]) && _get_y2k_year_from_fragment(blocks[2]) !== null)
+					if (is_day_fragment(blocks[0]) && _getꓽy2k_year_from_fragment(blocks[2]) !== null)
 						return 'D-M-Y'
-					if (_get_y2k_year_from_fragment(blocks[0]) !== null && is_day_fragment(blocks[2]))
+					if (_getꓽy2k_year_from_fragment(blocks[0]) !== null && is_day_fragment(blocks[2]))
 						return 'Y-M-D'
 
 					return 'unknown'
@@ -276,7 +276,7 @@ export function _parse_digit_blocks(digit_blocks: string, separator: 'none' | 's
 		if (date_pattern === 'unknown') {
 			result.summary = 'no_match'
 			result.reason = 'unknown date pattern'
-			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 			return result
 		}
 
@@ -284,7 +284,7 @@ export function _parse_digit_blocks(digit_blocks: string, separator: 'none' | 's
 
 		switch (date_pattern) {
 			case 'Y-M-D': {
-				if (blocks.length >= 1 && (!is_year(blocks[0]) && !_get_y2k_year_from_fragment(blocks[0])))
+				if (blocks.length >= 1 && (!is_year(blocks[0]) && !_getꓽy2k_year_from_fragment(blocks[0])))
 					error = true
 				if (blocks.length >= 2 && !is_month_fragment(blocks[1]))
 					error = true
@@ -294,21 +294,21 @@ export function _parse_digit_blocks(digit_blocks: string, separator: 'none' | 's
 				if (error) {
 					result.summary = 'no_match'
 					result.reason = 'Y-M-D mismatch'
-					logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+					logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 					return result
 				}
 
 				if (blocks.length < 3) {
 					result.summary = 'need_more'
 					result.reason = 'Y-M-D needs more blocks'
-					logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+					logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 					return result
 				}
 
 				if (is_year(blocks[0]))
 					date_creation_args.push(Number(blocks[0]))
 				else
-					date_creation_args.push(_get_y2k_year_from_fragment(blocks[2])!)
+					date_creation_args.push(_getꓽy2k_year_from_fragment(blocks[2])!)
 				date_creation_args.push(Number(blocks[1]))
 				date_creation_args.push(Number(blocks[2]))
 				break
@@ -319,20 +319,20 @@ export function _parse_digit_blocks(digit_blocks: string, separator: 'none' | 's
 					error = true
 				if (blocks.length >= 2 && !is_month_fragment(blocks[1]))
 					error = true
-				if (blocks.length >= 3 && (!is_year(blocks[2]) && !_get_y2k_year_from_fragment(blocks[2])))
+				if (blocks.length >= 3 && (!is_year(blocks[2]) && !_getꓽy2k_year_from_fragment(blocks[2])))
 					error = true
 
 				if (error) {
 					result.summary = 'no_match'
 					result.reason = 'D-M-Y mismatch'
-					logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+					logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 					return result
 				}
 
 				if (blocks.length < 3) {
 					result.summary = 'need_more'
 					result.reason = 'D-M-Y needs more blocks'
-					logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+					logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 					return result
 				}
 
@@ -340,7 +340,7 @@ export function _parse_digit_blocks(digit_blocks: string, separator: 'none' | 's
 				if (is_year(blocks[2]))
 					date_creation_args.push(Number(blocks[2]))
 				else
-					date_creation_args.push(_get_y2k_year_from_fragment(blocks[2])!)
+					date_creation_args.push(_getꓽy2k_year_from_fragment(blocks[2])!)
 				date_creation_args.push(Number(blocks[1]))
 				date_creation_args.push(Number(blocks[0]))
 				break
@@ -398,13 +398,13 @@ export function _parse_digit_blocks(digit_blocks: string, separator: 'none' | 's
 				reason: result.reason,
 				date_creation_args,
 			})
-			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 			return result
 		}
 
 		if (blocks.length > 7) {
 			result.summary = 'too_much'
-			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 			return result
 		}
 
@@ -416,7 +416,7 @@ export function _parse_digit_blocks(digit_blocks: string, separator: 'none' | 's
 			DEBUG  && logger.silly(`parse digit blocks done, ${result.summary} match:`, { 'blocks.length': blocks.length, date_creation_args})
 			result.date = create_better_date('tz:auto', ...(date_creation_args as [ number, number ]))
 			//console.log(result.date!.toISOString())
-			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 			return result
 		}
 
@@ -427,13 +427,13 @@ export function _parse_digit_blocks(digit_blocks: string, separator: 'none' | 's
 			DEBUG  && logger.silly(`parse digit blocks done, ${result.summary} match:`, { 'blocks.length': blocks.length, date_creation_args})
 			result.date = create_better_date('tz:auto', ...(date_creation_args as [ number, number ]))
 			//console.log(result.date!.toISOString())
-			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+			logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 			return result
 		}
 
 		result.summary = 'need_more'
 		result.reason = 'end'
-		DEBUG && logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _get_DigitsParseResult_debug_representation(result))
+		DEBUG && logger.trace(`<<< _parse_digit_blocks(): ${result.summary}`, _getꓽDigitsParseResult_debug_representation(result))
 		return result
 	}
 	catch (err) {
@@ -456,7 +456,7 @@ export interface ParseResult {
 
 	copy_index: undefined | number
 }
-function _get_ParseResult_debug_representation(presult: Immutable<ParseResult>): Object {
+function _getꓽParseResult_debug_representation(presult: Immutable<ParseResult>): Object {
 	const { date, ...rest } = presult
 	return {
 		...rest,
@@ -517,7 +517,7 @@ const _parse_memoized = micro_memoize(function _parse(basename: Basename, type: 
 			name: basename,
 			state,
 			dpr,
-			result: _get_ParseResult_debug_representation(result),
+			result: _getꓽParseResult_debug_representation(result),
 		})
 	}
 	function on_successful_non_optimal_dpr(dpr: DigitsParseResult) {
@@ -526,7 +526,7 @@ const _parse_memoized = micro_memoize(function _parse(basename: Basename, type: 
 		}
 	}
 
-	DEBUG  && logger.silly('initial state', { state, result: _get_ParseResult_debug_representation(result) })
+	DEBUG  && logger.silly('initial state', { state, result: _getꓽParseResult_debug_representation(result) })
 
 	if (type === 'file') {
 		const name_lc = basename.toLowerCase()
@@ -566,12 +566,12 @@ const _parse_memoized = micro_memoize(function _parse(basename: Basename, type: 
 		}, state.buffer)
 	} while (non_meaningful_part_removed)
 
-	DEBUG && logger.silly('after buffer cleanup', { state, result: _get_ParseResult_debug_representation(result) })
+	DEBUG && logger.silly('after buffer cleanup', { state, result: _getꓽParseResult_debug_representation(result) })
 
 	if (parse_up_to === 'copy_index') {
 		result.meaningful_part = state.buffer
 
-		logger.trace('« parse basename final result =', _get_ParseResult_debug_representation(result))
+		logger.trace('« parse basename final result =', _getꓽParseResult_debug_representation(result))
 		return result
 	}
 
@@ -756,7 +756,7 @@ const _parse_memoized = micro_memoize(function _parse(basename: Basename, type: 
 
 	result.meaningful_part = meaningful_part
 
-	logger.trace('« parse basename final result =', _get_ParseResult_debug_representation(result))
+	logger.trace('« parse basename final result =', _getꓽParseResult_debug_representation(result))
 
 	return result
 }, {
@@ -836,7 +836,7 @@ export function is_processed_media_basename(basename: Basename): boolean {
 ////////////
 
 export function getꓽfolder_basename_normalisation_version(basename: Basename): number | undefined {
-	assert(basename.split(path.sep).length === 1, `get_folder_basename_normalisation_version() should be given a basename`)
+	assert(basename.split(path.sep).length === 1, `getꓽfolder_basename_normalisation_version() should be given a basename`)
 
 	const dp_basename = getꓽdigit_pattern(basename)
 

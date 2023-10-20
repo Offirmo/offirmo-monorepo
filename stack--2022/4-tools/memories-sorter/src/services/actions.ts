@@ -10,7 +10,7 @@ import { normalizeError } from '@offirmo/error-utils'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import { Basename, RelativePath } from '../types.js'
-import { NOTES_BASENAME_SUFFIX_LC } from '../consts.js'
+import { NOTES_FILE__BASENAME‿LC } from '../consts.js'
 import { getꓽparams, Params } from '../params.js'
 
 import * as File from '../state/file/index.js'
@@ -23,7 +23,7 @@ import logger from './logger.js'
 import * as fs_extra from '@offirmo/cli-toolbox/fs/extra'
 import { _is_same_inode } from './inode.js'
 import { getꓽrelevant_fs_stats_subset } from './fs_stats.js'
-import ↆget_file_hash from './hash.js'
+import ↆgetꓽfile_hash from './hash.js'
 import { pathㆍparse_memoized } from './name_parser.js'
 import { FolderId, SPECIAL_FOLDERⵧINBOX__BASENAME } from '../state/folder/index.js'
 import { FileId } from '../state/file/index.js'
@@ -100,7 +100,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		try {
 			let pending_tasks: Promise<void>[] = []
 
-			const abs_path = DB.get_absolute_path(db, id)
+			const abs_path = DB.getꓽabsolute_path(db, id)
 
 			logger.group(`- exploring dir "${id}"…`)
 			try {
@@ -120,7 +120,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 						const should_delete_asap = !!PARAMS.extensions_to_delete‿lc.find(ext => basename_lc.endsWith(ext))
 							|| PARAMS.worthless_file_basenames‿lc.includes(basename_lc)
 						if (should_delete_asap) {
-							const abs_path_target = DB.get_absolute_path(db, path.join(id, basename))
+							const abs_path_target = DB.getꓽabsolute_path(db, path.join(id, basename))
 							if (PARAMS.dry_run) {
 								logger.verbose(`✍️ encountered trash, DRY RUN would have deleted it`, { basename })
 							}
@@ -154,7 +154,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		logger.trace(`[Action] initiating query_fs_stats for "${id}"…`)
 
 		try {
-			const abs_path = DB.get_absolute_path(db, id)
+			const abs_path = DB.getꓽabsolute_path(db, id)
 			const stats = await util.promisify(fs.stat)(abs_path)
 			logger.silly(`- got fs stats data for "${id}"…`)
 			db = DB.on_fs_stats_read(db, id, getꓽrelevant_fs_stats_subset(stats))
@@ -169,7 +169,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		logger.trace(`[Action] initiating query_exif for "${id}"…`)
 
 		try {
-			const abs_path = DB.get_absolute_path(db, id)
+			const abs_path = DB.getꓽabsolute_path(db, id)
 			const exif_data = await read_exif_data(abs_path)
 			logger.trace(`- got exif data for "${id}"…`)
 			db = DB.on_exif_read(db, id, exif_data)
@@ -184,8 +184,8 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		logger.trace(`[Action] initiating compute_hash for "${id}"…`)
 
 		try {
-			const abs_path = DB.get_absolute_path(db, id)
-			const hash = await ↆget_file_hash(abs_path)
+			const abs_path = DB.getꓽabsolute_path(db, id)
+			const hash = await ↆgetꓽfile_hash(abs_path)
 			logger.silly(`- got hash for "${id}""`, { hash })
 			db = DB.on_hash_computed(db, id, hash!)
 		}
@@ -199,7 +199,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		logger.trace(`[Action] initiating load_notes from "${path}"…`)
 
 		try {
-			const abs_path = DB.get_absolute_path(db, path)
+			const abs_path = DB.getꓽabsolute_path(db, path)
 			const data = await json.read(abs_path)
 			assert(data?.schema_version, 'load_notes()')
 			db = DB.on_note_file_found(db, data)
@@ -238,7 +238,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 				await ensure_folder(split_path.slice(0, -1).join(path.sep))
 			}
 
-			const abs_path = DB.get_absolute_path(db, id)
+			const abs_path = DB.getꓽabsolute_path(db, id)
 			const is_existing_according_to_fs = fs.existsSync(abs_path)
 			if (is_existing_according_to_fs) {
 				// The path exists but we don't have it in DB
@@ -280,7 +280,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		logger.verbose(`- ✍️ deleting file "${id}"…`)
 
 		try {
-			const abs_path = DB.get_absolute_path(db, id)
+			const abs_path = DB.getꓽabsolute_path(db, id)
 
 			_report.file_deletions.push(id)
 			if (PARAMS.dry_run) {
@@ -303,9 +303,9 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		logger.trace(`[Action] initiating persist_notes "${folder_path}"…`)
 		logger.verbose(`- ✍️ persisting notes into "${folder_path}"…`)
 
-		data = data ?? DB.get_past_and_present_notes(db)
-		const relative_path = path.join(folder_path, NOTES_BASENAME_SUFFIX_LC)
-		const abs_path = DB.get_absolute_path(db, relative_path)
+		data = data ?? DB.getꓽpast_and_present_notes(db)
+		const relative_path = path.join(folder_path, NOTES_FILE__BASENAME‿LC)
+		const abs_path = DB.getꓽabsolute_path(db, relative_path)
 		logger.info(`persisting ${Object.keys(data.encountered_files).length} notes and ${Object.keys(data.known_modifications_new_to_old).length} redirects into: "${abs_path}"…`)
 
 		try {
@@ -348,7 +348,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 	// - expecting the folder to be pre-existing
 	function _intelligently_normalize_file_basename_sync(
 		id: RelativePath,
-		target_folder: FolderId = File.get_current_parent_folder_id(db.files[id])
+		targetꓽfolder: FolderId = File.getꓽcurrent_parent_folder_id(db.files[id])
 	): void {
 		logger.trace(`[Action] (sub-INFB) _intelligently_normalize_file_basename_sync() "${id}"…`)
 
@@ -356,35 +356,35 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		assert(current_file_state, `_intelligently_normalize_file_basename_sync() should have current_file_state "${id}"`)
 
 		let copy_marker: 'none' | 'preserve' | number = 'none'
-		let target_basename: Basename = '(pending)'
+		let targetꓽbasename: Basename = '(pending)'
 
 		// there will be a change, ensure there is no conflict:
-		const abs_pathⵧcurrent = DB.get_absolute_path(db, id)
-		let good_target_found = false
+		const abs_pathⵧcurrent = DB.getꓽabsolute_path(db, id)
+		let good_targetꓽfound = false
 		let safety = 15
 		do {
 			safety--
-			logger.trace('INFB (still) looking for the ideal normalized basename…', { id, target_folder, safety })
-			target_basename = File.get_ideal_basename(current_file_state, { copy_marker })
-			const target_id = path.join(target_folder, target_basename)
-			if (id === target_id) {
+			logger.trace('INFB (still) looking for the ideal normalized basename…', { id, targetꓽfolder, safety })
+			targetꓽbasename = File.getꓽideal_basename(current_file_state, { copy_marker })
+			const targetꓽid = path.join(targetꓽfolder, targetꓽbasename)
+			if (id === targetꓽid) {
 				// perfect! Nothing to do!
 				return
 			}
 
-			const abs_pathⵧtarget = DB.get_absolute_path(db, target_id)
+			const abs_pathⵧtarget = DB.getꓽabsolute_path(db, targetꓽid)
 
 			/*logger.trace('intermediate infos 1', {
-				target_basename,
-				target_id,
+				targetꓽbasename,
+				targetꓽid,
 				abs_pathⵧtarget,
-				'DB.is_file_existing': DB.is_file_existing(db, target_id),
+				'DB.is_file_existing': DB.is_file_existing(db, targetꓽid),
 				'fs_extra.pathExistsSync': fs_extra.pathExistsSync(abs_pathⵧtarget),
 			})*/
 
-			if (!DB.is_file_existing(db, target_id) && !fs_extra.pathExistsSync(abs_pathⵧtarget)) {
+			if (!DB.is_file_existing(db, targetꓽid) && !fs_extra.pathExistsSync(abs_pathⵧtarget)) {
 				// good, fs target emplacement is free
-				good_target_found = true
+				good_targetꓽfound = true
 				break
 			}
 
@@ -401,7 +401,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 			if (_is_same_inode(abs_pathⵧcurrent, abs_pathⵧtarget)) {
 				// same file but name is not ideal = unicode, case sensitive
 				// will be taken care of later
-				good_target_found = true
+				good_targetꓽfound = true
 				break
 			}
 
@@ -422,38 +422,38 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 					copy_marker += 1
 					break
 			}
-		} while (safety > 0 && !good_target_found && (typeof copy_marker !== 'number' || copy_marker <= 10))
+		} while (safety > 0 && !good_targetꓽfound && (typeof copy_marker !== 'number' || copy_marker <= 10))
 		assert(safety, 'no infinite loop')
 
-		const target_id = path.join(target_folder, target_basename)
+		const targetꓽid = path.join(targetꓽfolder, targetꓽbasename)
 
-		if (!good_target_found) {
-			logger.error(`Couldn't rename "${id}" to a proper normalized name "${target_id}" due to conflicts...`)
-			assert(good_target_found, 'should be able to normalize files. Could there be a bug?') // seen, was a bug
+		if (!good_targetꓽfound) {
+			logger.error(`Couldn't rename "${id}" to a proper normalized name "${targetꓽid}" due to conflicts...`)
+			assert(good_targetꓽfound, 'should be able to normalize files. Could there be a bug?') // seen, was a bug
 		}
 		else {
-			const abs_pathⵧtarget = DB.get_absolute_path(db, target_id)
+			const abs_pathⵧtarget = DB.getꓽabsolute_path(db, targetꓽid)
 			const source_norm = NORMALIZERS.normalize_unicode(abs_pathⵧcurrent)
-			const target_norm = NORMALIZERS.normalize_unicode(abs_pathⵧtarget)
-			if (source_norm === target_norm) {
+			const targetꓽnorm = NORMALIZERS.normalize_unicode(abs_pathⵧtarget)
+			if (source_norm === targetꓽnorm) {
 				// TODO one day normalize the folders
 				return
 			}
 
-			if (File.get_current_basename(current_file_state) !== target_basename) {
-				_report.file_renamings[id] = target_basename
-				logger.verbose(`✍️ about to normalize:rename "${id}" to "${target_id}"…`)
+			if (File.getꓽcurrent_basename(current_file_state) !== targetꓽbasename) {
+				_report.file_renamings[id] = targetꓽbasename
+				logger.verbose(`✍️ about to normalize:rename "${id}" to "${targetꓽid}"…`)
 			}
-			if (File.get_current_parent_folder_id(current_file_state) !== target_folder) {
-				_report.file_moves[id] = target_folder
-				logger.verbose(`✍️ about to normalize:move "${id}" to "${target_id}"…`)
+			if (File.getꓽcurrent_parent_folder_id(current_file_state) !== targetꓽfolder) {
+				_report.file_moves[id] = targetꓽfolder
+				logger.verbose(`✍️ about to normalize:move "${id}" to "${targetꓽid}"…`)
 			}
 
 			if (PARAMS.dry_run) {
-				logger.verbose(`✍️ DRY RUN would have renamed/moved "${id}" to "${target_id}"`)
+				logger.verbose(`✍️ DRY RUN would have renamed/moved "${id}" to "${targetꓽid}"`)
 			}
 			else {
-				//logger.trace(`about to rename/move "${id}" to "${target_id}"…`)
+				//logger.trace(`about to rename/move "${id}" to "${targetꓽid}"…`)
 
 				// TODO NOW fix unicode normalization?
 
@@ -461,29 +461,29 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 				try {
 					logger.log(`💾 move("${abs_pathⵧcurrent}", "${abs_pathⵧtarget}")`)
 					fs_extra.moveSync(abs_pathⵧcurrent, abs_pathⵧtarget)
-					db = DB.on_file_moved(db, id, target_id)
+					db = DB.on_file_moved(db, id, targetꓽid)
 				}
 				catch (_err) {
 					const err = normalizeError(_err)
 					if (err.message.includes('Source and destination must not be the same')) {
 						// this may happens for unicode normalization or case-sensitivity of the underlying FS
-						assert(NORMALIZERS.normalize_unicode(id.toLowerCase()) === NORMALIZERS.normalize_unicode(target_id.toLowerCase()), 'expecting real identity')
-						const intermediate_target_id = path.join(target_folder, File.get_ideal_basename(current_file_state, { copy_marker: 'temp' }))
-						const intermediate_target_abs_path = DB.get_absolute_path(db, intermediate_target_id)
-						fs_extra.moveSync(abs_pathⵧcurrent, intermediate_target_abs_path)
-						fs_extra.moveSync(intermediate_target_abs_path, abs_pathⵧtarget)
-						db = DB.on_file_moved(db, id, target_id)
-						if (File.get_current_basename(current_file_state) !== target_basename)
-							_report.file_renamings[id] = target_basename
-						if (File.get_current_parent_folder_id(current_file_state) !== target_folder)
-							_report.file_moves[id] = target_folder
+						assert(NORMALIZERS.normalize_unicode(id.toLowerCase()) === NORMALIZERS.normalize_unicode(targetꓽid.toLowerCase()), 'expecting real identity')
+						const intermediate_targetꓽid = path.join(targetꓽfolder, File.getꓽideal_basename(current_file_state, { copy_marker: 'temp' }))
+						const intermediate_targetꓽabs_path = DB.getꓽabsolute_path(db, intermediate_targetꓽid)
+						fs_extra.moveSync(abs_pathⵧcurrent, intermediate_targetꓽabs_path)
+						fs_extra.moveSync(intermediate_targetꓽabs_path, abs_pathⵧtarget)
+						db = DB.on_file_moved(db, id, targetꓽid)
+						if (File.getꓽcurrent_basename(current_file_state) !== targetꓽbasename)
+							_report.file_renamings[id] = targetꓽbasename
+						if (File.getꓽcurrent_parent_folder_id(current_file_state) !== targetꓽfolder)
+							_report.file_moves[id] = targetꓽfolder
 					}
 					else {
 						logger.error('norm: #3 error', {
 							id,
-							target_id,
-							id_equality: id === target_id,
-							id_equality_u: NORMALIZERS.normalize_unicode(id) === NORMALIZERS.normalize_unicode(target_id),
+							targetꓽid,
+							id_equality: id === targetꓽid,
+							id_equality_u: NORMALIZERS.normalize_unicode(id) === NORMALIZERS.normalize_unicode(targetꓽid),
 							abs_pathⵧcurrent,
 							abs_pathⵧtarget,
 							path_equality: abs_pathⵧcurrent === abs_pathⵧtarget,
@@ -497,24 +497,24 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 	}
 
 	async function move_file_to_ideal_location(id: RelativePath): Promise<void> {
-		const target_id = DB.get_ideal_file_relative_path(db, id)
+		const targetꓽid = DB.getꓽideal_file_relative_path(db, id)
 
-		logger.trace(`[Action] initiating move_file_to_ideal_location "${id}" to DIFFERENT "${target_id}"…`)
-		assert(target_id !== id, 'MTIL') // should have been pre-filtered
+		logger.trace(`[Action] initiating move_file_to_ideal_location "${id}" to DIFFERENT "${targetꓽid}"…`)
+		assert(targetꓽid !== id, 'MTIL') // should have been pre-filtered
 
 		try {
 			const parsed = pathㆍparse_memoized(id)
-			const parsed_target = pathㆍparse_memoized(target_id)
+			const parsed_target = pathㆍparse_memoized(targetꓽid)
 			const is_renaming = parsed.base !== parsed_target.base
 			const folder_source = id.split(path.sep).slice(0, -1).join(path.sep)
-			const folder_target = target_id.split(path.sep).slice(0, -1).join(path.sep)
+			const folder_target = targetꓽid.split(path.sep).slice(0, -1).join(path.sep)
 			const is_moving = folder_source !== folder_target
 			assert(is_moving || is_renaming, `move_file_to_ideal_location() should do sth!`)
 
 			if (is_moving && !is_renaming) {
 				const folder_source_norm = NORMALIZERS.normalize_unicode(folder_source)
-				const folder_target_norm = NORMALIZERS.normalize_unicode(folder_target)
-				if (folder_source_norm === folder_target_norm) {
+				const folder_targetꓽnorm = NORMALIZERS.normalize_unicode(folder_target)
+				if (folder_source_norm === folder_targetꓽnorm) {
 					// TODO one day normalize the folders
 					logger.warn(`MTIL: we should normalize folder ${folder_source_norm}`)
 					return
@@ -522,27 +522,27 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 			}
 
 			if (is_moving) {
-				logger.verbose(`- ✍️ [MTIL] about to move file "${id}" to DIFFERENT ideal location "${target_id}"…`)
+				logger.verbose(`- ✍️ [MTIL] about to move file "${id}" to DIFFERENT ideal location "${targetꓽid}"…`)
 			}
 			else {
 				logger.verbose(`- ✍️ [MTIL] about to rename file in-place from "${parsed.base}" to DIFFERENT ideally "${parsed_target.base}"…`)
 			}
 
 			/* TODO ?
-			if (get_params().expect_perfect_state && File.is_media_file() && File.get_confidence_in_date()) {
+			if (getꓽparams().expect_perfect_state && File.is_media_file() && File.getꓽconfidence_in_date()) {
 				assert(
 					is_normalized_media_basename(parsed.base),
 					`PERFECT STATE when moving to ideal location, file "${parsed.base}" is expected to be already normalized to "${parsed_target.base}"`
 				)
 			}*/
 
-			const target_folder_id = DB.get_ideal_file_relative_folder(db, id)
+			const targetꓽfolder_id = DB.getꓽideal_file_relative_folder(db, id)
 			if (!PARAMS.dry_run) {
-				//const is_target_folder_existing_according_to_db = DB.is_folder_existing(db, target_folder_id)
-				//assert(is_target_folder_existing_according_to_db, `INFBS is_target_folder_existing_according_to_db!`)
-				await ensure_folder(target_folder_id)
+				//const is_targetꓽfolder_existing_according_to_db = DB.is_folder_existing(db, targetꓽfolder_id)
+				//assert(is_targetꓽfolder_existing_according_to_db, `INFBS is_targetꓽfolder_existing_according_to_db!`)
+				await ensure_folder(targetꓽfolder_id)
 			}
-			_intelligently_normalize_file_basename_sync(id, target_folder_id)
+			_intelligently_normalize_file_basename_sync(id, targetꓽfolder_id)
 		}
 		catch (_err) {
 			const err = normalizeError(_err)
@@ -589,7 +589,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		logger.trace(`[Action] initiating delete_folder_if_empty "${id}"…`)
 
 		try {
-			const abs_path = DB.get_absolute_path(db, id)
+			const abs_path = DB.getꓽabsolute_path(db, id)
 
 			const children = [
 				...fs_extra.lsDirsSync(abs_path, { full_path: false }),
@@ -691,7 +691,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 	})
 
 	function dequeue_and_schedule_all_first_level_db_actions(): void {
-		const pending_actions = DB.get_pending_actions(db)
+		const pending_actions = DB.getꓽpending_actions(db)
 		if (pending_actions.length) {
 			db = DB.discard_all_pending_actions(db)
 			pending_actions.forEach(action => {

@@ -3,12 +3,12 @@ import { ExifDateTime } from 'exiftool-vendored'
 
 import { LIB } from '../consts.js'
 import {
-	get_best_creation_date_from_exif,
-	get_creation_timezone_from_exif,
+	getꓽbest_creation_date_from_exif,
+	getꓽcreation_timezone_from_exif,
 	read_exif_data,
 } from './exif.js'
 import {
-	get_human_readable_timestamp_auto,
+	getꓽhuman_readable_timestamp_auto,
 	create_better_date_from_ExifDateTime,
 } from './better-date.js'
 
@@ -64,10 +64,10 @@ describe(`${LIB} -- service -- exif`, function() {
 							expect(EXPECTED_EXIF_DATA.DATE__HUMAN_AUTO).to.be.undefined
 						}
 						else {
-							expect(get_creation_timezone_from_exif(exif_data), 'TZ').to.equal(EXPECTED_EXIF_DATA.EMBEDDED_TZ)
+							expect(getꓽcreation_timezone_from_exif(exif_data), 'TZ').to.equal(EXPECTED_EXIF_DATA.EMBEDDED_TZ)
 							expect(bcd_edt!.toISOString(), 'edt iso').to.equal(EXPECTED_EXIF_DATA.DATE__ISO_STRING)
 							expect(
-								get_human_readable_timestamp_auto(
+								getꓽhuman_readable_timestamp_auto(
 									create_better_date_from_ExifDateTime(bcd_edt!),
 									'tz:embedded',
 								),

@@ -3,7 +3,7 @@ import path from 'path'
 import assert from 'tiny-invariant'
 import { Tags } from 'exiftool-vendored'
 import { Immutable } from '@offirmo-private/ts-types'
-import { getꓽbase_loose } from '@offirmo-private/state-utils'
+import { getꓽbaseⵧloose } from '@offirmo-private/state-utils'
 
 import { AbsolutePath, RelativePath, SimpleYYYYMMDD } from '../../types.js'
 import { Action, ActionType } from '../actions.js'
@@ -22,17 +22,17 @@ import { FileId, PersistedNotes } from '../file/index.js'
 import { LIB } from './consts.js'
 import {	State } from './types.js'
 import {
-	get_all_files_except_meta,
-	get_all_folders,
-	get_all_media_files,
-	get_file_ids_by_hash,
-	get_all_files,
-	get_all_event_folder_ids,
-	get_all_file_ids,
-	get_ideal_file_relative_path,
-	get_all_folder_ids,
+	getꓽall_files_except_meta,
+	getꓽall_folders,
+	getꓽall_media_files,
+	getꓽfile_ids_by_hash,
+	getꓽall_files,
+	getꓽall_event_folder_ids,
+	getꓽall_file_ids,
+	getꓽideal_file_relative_path,
+	getꓽall_folder_ids,
 } from './selectors.js'
-import { NOTES_BASENAME_SUFFIX_LC } from '../../consts.js'
+import { NOTES_FILE__BASENAME‿LC } from '../../consts.js'
 
 ///////////////////// REDUCERS /////////////////////
 
@@ -133,7 +133,7 @@ export function on_file_found(state: Immutable<State>, parent_id: RelativePath, 
 	assert(!state.files[id], `on_file_found("${id}"): should not be already registered!`)
 
 	const file_state = File.create(id)
-	const folder_id = File.get_current_parent_folder_id(file_state)
+	const folder_id = File.getꓽcurrent_parent_folder_id(file_state)
 	const old_folder_state = state.folders[folder_id]
 	if (!old_folder_state) {
 		console.error('imminent error', state)
@@ -188,7 +188,7 @@ export function on_file_found(state: Immutable<State>, parent_id: RelativePath, 
 
 // REM: called by Actions.create_action_load_notes initiated by on_file_found
 export function on_note_file_found(state: Immutable<State>, raw_data: any): Immutable<State> {
-	logger.trace(`${LIB} on_notes_found(…)`, { base: getꓽbase_loose(raw_data) })
+	logger.trace(`${LIB} on_notes_found(…)`, { base: getꓽbaseⵧloose(raw_data) })
 	logger.verbose(`${LIB} found previous notes, processing them…`)
 
 	const recovered_data = Notes.migrate_to_latest(raw_data)
@@ -258,23 +258,23 @@ export function on_hash_computed(state: Immutable<State>, file_id: FileId, hash:
 
 ///////
 
-export function on_file_moved(state: Immutable<State>, id: RelativePath, target_id: RelativePath): Immutable<State> {
-	logger.trace(`${LIB} on_file_moved(…)`, { id, target_id })
+export function on_file_moved(state: Immutable<State>, id: RelativePath, targetꓽid: RelativePath): Immutable<State> {
+	logger.trace(`${LIB} on_file_moved(…)`, { id, targetꓽid })
 
-	assert(id !== target_id, 'on_file_moved(): should be an actual move!')
+	assert(id !== targetꓽid, 'on_file_moved(): should be an actual move!')
 	assert(state.files[id], 'on_file_moved() file state: src should exist')
-	assert(!state.files[target_id], 'on_file_moved() file state: target should no already exist')
+	assert(!state.files[targetꓽid], 'on_file_moved() file state: target should no already exist')
 
 	// TODO inc/dec folders
 
 	let file_state = state.files[id]
-	file_state = File.on_moved(file_state, target_id)
+	file_state = File.on_moved(file_state, targetꓽid)
 
 	let files: { [id: string]: Immutable<File.State> } = {
 		...state.files
 	}
 	delete files[id]
-	files[target_id] = file_state
+	files[targetꓽid] = file_state
 
 	state = {
 		...state,
@@ -296,7 +296,7 @@ export function on_file_deleted(state: Immutable<State>, id: FileId): Immutable<
 	delete files[id]
 
 	// 2. parent folder (note: useless for now but never mind)
-	let folder_state = state.folders[File.get_current_parent_folder_id(file_state)]
+	let folder_state = state.folders[File.getꓽcurrent_parent_folder_id(file_state)]
 	assert(folder_state, 'on_file_deleted() folder state')
 	let folders = { ...state.folders }
 	folders[folder_state.id] = Folder.on_subfile_removed(folders[folder_state.id])
@@ -377,30 +377,30 @@ function _consolidate_and_propagate_neighbor_hints(state: Immutable<State>): Imm
 
 	// iterate over ALL files to consolidate their immediate data into their parent folders
 	let folders = { ...state.folders }
-	get_all_files_except_meta(state).forEach((file_state) => {
-		const parent_folder_id = File.get_current_parent_folder_id(file_state)
+	getꓽall_files_except_meta(state).forEach((file_state) => {
+		const parent_folder_id = File.getꓽcurrent_parent_folder_id(file_state)
 		assert(folders[parent_folder_id], `${LIB} _consolidate_and_propagate_neighbor_hints() should have folder state`)
 
 		folders[parent_folder_id] = Folder.on_subfile_primary_infos_gathered(folders[parent_folder_id], file_state)
 	})
 	state = { ...state, folders }
-	get_all_folders(state).forEach((folder_state) => {
+	getꓽall_folders(state).forEach((folder_state) => {
 		folders[folder_state.id] = Folder.on_fs_exploration_done(folder_state)
 	})
 	state = { ...state, folders }
 
 	// folders now have consolidated infos and can generate neighbor hints
 	// debug
-	get_all_folders(state).forEach(folder_state => {
+	getꓽall_folders(state).forEach(folder_state => {
 		if (folder_state.media_children_count === 0) return
 
-		const consolidated_neighbor_hints = Folder.get_neighbor_primary_hints(folder_state)
+		const consolidated_neighbor_hints = Folder.getꓽneighbor_primary_hints(folder_state)
 		logger.trace(
 			`Folder "${folder_state.id}" neighbor hints have been consolidated`,
-			File.NeighborHintsLib.get_debug_representation(consolidated_neighbor_hints)
+			File.NeighborHintsLib.getꓽdebug_representation(consolidated_neighbor_hints)
 		)
 
-		const reliability = File.NeighborHintsLib.get_neighbors_fs_reliability(consolidated_neighbor_hints)
+		const reliability = File.NeighborHintsLib.getꓽneighbors_fs_reliability(consolidated_neighbor_hints)
 		/*const log_func = (reliability === 'unreliable')
 			? logger.error
 			: (reliability === 'unknown')
@@ -412,12 +412,12 @@ function _consolidate_and_propagate_neighbor_hints(state: Immutable<State>): Imm
 	})
 	// flow the hints back to every files
 	let files = { ...state.files }
-	get_all_files_except_meta(state).forEach(file_state => {
-		const parent_folder_id = File.get_current_parent_folder_id(file_state)
+	getꓽall_files_except_meta(state).forEach(file_state => {
+		const parent_folder_id = File.getꓽcurrent_parent_folder_id(file_state)
 
 		files[file_state.id] = File.on_info_read__current_neighbors_primary_hints(
 			file_state,
-			Folder.get_neighbor_primary_hints(folders[parent_folder_id]),
+			Folder.getꓽneighbor_primary_hints(folders[parent_folder_id]),
 		)
 	})
 	state = { ...state, files }
@@ -463,7 +463,7 @@ function _consolidate_notes_between_persisted_regenerated_and_duplicates(state: 
 		const hash_has_restored_notes = Notes.has_notes_for_hash(state.extra_notes, hash)
 		if (hash_has_restored_notes) {
 			logger.trace(`- found notes`)
-			all_notes_for_this_hash.push(Notes.get_file_notes_for_hash(state.extra_notes, hash)!)
+			all_notes_for_this_hash.push(Notes.getꓽfile_notes_for_hash(state.extra_notes, hash)!)
 		}
 
 		const has_duplicates = file_ids_by_hash[hash].length > 1
@@ -495,7 +495,7 @@ function _consolidate_notes_between_persisted_regenerated_and_duplicates(state: 
 		}
 	})
 
-	get_all_files_except_meta(state).forEach(file_state => {
+	getꓽall_files_except_meta(state).forEach(file_state => {
 		if(!File.is_media_file(file_state)) {
 			state = _on_file_notes_recovered(state, file_state.id, null)
 		}
@@ -516,14 +516,14 @@ function _consolidate_folders_by_demoting_and_de_overlapping(state: Immutable<St
 
 	// iterate over ALL files to consolidate their immediate data into their parent folders
 	let folders = { ...state.folders }
-	get_all_files(state).forEach((file_state) => {
-		const parent_folder_id = File.get_current_parent_folder_id(file_state)
+	getꓽall_files(state).forEach((file_state) => {
+		const parent_folder_id = File.getꓽcurrent_parent_folder_id(file_state)
 		assert(folders[parent_folder_id], `${LIB} _consolidate_folders_by_demoting_and_de_overlapping() should have folder state`)
 
 		folders[parent_folder_id] = Folder.on_subfile_all_infos_gathered(folders[parent_folder_id], file_state)
 	})
 	state = { ...state, folders }
-	get_all_folders(state).forEach((folder_state) => {
+	getꓽall_folders(state).forEach((folder_state) => {
 		folders[folder_state.id] = Folder.on_all_infos_gathered(folder_state)
 	})
 	state = { ...state, folders }
@@ -537,7 +537,7 @@ function _consolidate_folders_by_demoting_and_de_overlapping(state: Immutable<St
 	let all_event_folder_ids = getꓽall_event_folder_ids(state)
 	all_event_folder_ids.forEach(id => {
 		const folder = folders[id]
-		if (!Folder.get_event_range(folder)) {
+		if (!Folder.getꓽevent_range(folder)) {
 			folders[id] = Folder.demote_to_unknown(
 					folder,
 					Folder.is_looking_like_a_backup(folder)
@@ -557,8 +557,8 @@ function _consolidate_folders_by_demoting_and_de_overlapping(state: Immutable<St
 	// first get all the start dates + demote conflictings
 	const event_folders_by_start_date‿symd = all_event_folder_ids.reduce((acc, id) => {
 		const candidate_folder_state = folders[id]
-		const start_date = Folder.get_event_begin_date(candidate_folder_state)
-		const start_date‿symd = Folder.get_event_begin_date‿symd(candidate_folder_state)
+		const start_date = Folder.getꓽevent_begin_date(candidate_folder_state)
+		const start_date‿symd = Folder.getꓽevent_begin_date‿symd(candidate_folder_state)
 		const existing_folder_state = acc[start_date‿symd]
 		acc[start_date‿symd] = (() => {
 			if (!existing_folder_state)
@@ -579,8 +579,8 @@ function _consolidate_folders_by_demoting_and_de_overlapping(state: Immutable<St
 
 			// same canonical status...
 			// the shortest one wins
-			const existing_range_size = Folder.get_event_end_date‿symd(existing_folder_state) - start_date‿symd
-			const candidate_range_size = Folder.get_event_end_date‿symd(candidate_folder_state) - start_date‿symd
+			const existing_range_size = Folder.getꓽevent_end_date‿symd(existing_folder_state) - start_date‿symd
+			const candidate_range_size = Folder.getꓽevent_end_date‿symd(candidate_folder_state) - start_date‿symd
 			if (candidate_range_size === existing_range_size) {
 				// perfect match, demote the competing one
 				folders[candidate_folder_state.id] = Folder.demote_to_overlapping(candidate_folder_state)
@@ -599,7 +599,7 @@ function _consolidate_folders_by_demoting_and_de_overlapping(state: Immutable<St
 		const folder_state = event_folders_by_start_date‿symd[start_date]
 		const next_start_date‿symd = ordered_start_dates‿symd[index + 1]
 		if (next_start_date‿symd) {
-			if (next_start_date‿symd <= Folder.get_event_end_date‿symd(folder_state))
+			if (next_start_date‿symd <= Folder.getꓽevent_end_date‿symd(folder_state))
 				folders[folder_state.id] = Folder.on_overlap_clarified(
 					folder_state,
 					add_days_to_simple_date(next_start_date‿symd, - 1)
@@ -616,7 +616,7 @@ function _refresh_debug_infos(state: Immutable<State>): Immutable<State> {
 
 	// iterate over ALL files to refresh their debug infos
 	let files = { ...state.files }
-	get_all_files(state).forEach((file_state) => {
+	getꓽall_files(state).forEach((file_state) => {
 		files[file_state.id] = File.on_consolidated(file_state)
 	})
 	state = { ...state, files }
@@ -698,8 +698,8 @@ export function ensure_structural_dirs_are_present(state: Immutable<State>): Imm
 	state = _enqueue_action(state, Actions.create_action_ensure_folder(Folder.SPECIAL_FOLDERⵧCANT_RECOGNIZE__BASENAME))
 
 	const years = new Set<number>()
-	get_all_media_files(state).forEach(file_state => {
-		const year = File.get_best_creation_date__year(file_state)
+	getꓽall_media_files(state).forEach(file_state => {
+		const year = File.getꓽbest_creation_date__year(file_state)
 		years.add(year)
 	})
 	for(const y of years) {
@@ -720,14 +720,14 @@ export function move_all_files_to_their_ideal_location(state: Immutable<State>):
 			return
 		}
 
-		const target_id = getꓽideal_file_relative_path(state, id)
-		assert(target_id.includes(path.sep), `move_all_files_to_their_ideal_location() unexpected ${id}`)
-		if (id === target_id) {
+		const targetꓽid = getꓽideal_file_relative_path(state, id)
+		assert(targetꓽid.includes(path.sep), `move_all_files_to_their_ideal_location() unexpected ${id}`)
+		if (id === targetꓽid) {
 			logger.silly(`- DB.MTIL: "${id}" = is already in ideal location`)
 			return
 		}
 
-		logger.silly(`- DB.MTIL: "${id}": is scheduled to move to "${target_id}"`)
+		logger.silly(`- DB.MTIL: "${id}": is scheduled to move to "${targetꓽid}"`)
 
 		state = _enqueue_action(state, Actions.create_action_move_file_to_ideal_location(id))
 	})
@@ -743,11 +743,11 @@ export function clean_non_canonical_notes(state: Immutable<State>): Immutable<St
 
 	notes_states.forEach(notes_state => {
 		const is_canonical = (() => {
-			const basename = File.get_current_basename(notes_state)
-			if (basename !== NOTES_BASENAME_SUFFIX_LC)
+			const basename = File.getꓽcurrent_basename(notes_state)
+			if (basename !== NOTES_FILE__BASENAME‿LC)
 				return false
 
-			const parent_folder_id = File.get_current_parent_folder_id(notes_state)
+			const parent_folder_id = File.getꓽcurrent_parent_folder_id(notes_state)
 			const folder_state = state.folders[parent_folder_id]
 			if (folder_state.type !== Folder.Type.root && folder_state.type !== Folder.Type.year)
 				return false
@@ -763,12 +763,12 @@ export function clean_non_canonical_notes(state: Immutable<State>): Immutable<St
 	return state
 }
 
-export function delete_empty_folders_recursively(state: Immutable<State>, target_depth: number): Immutable<State> {
-	logger.trace(`${LIB} delete_empty_folders_recursively(target_depth = ${target_depth})…`)
-	logger.verbose(`${LIB} deleting empty folders at depth ${target_depth}…`)
+export function delete_empty_folders_recursively(state: Immutable<State>, targetꓽdepth: number): Immutable<State> {
+	logger.trace(`${LIB} delete_empty_folders_recursively(targetꓽdepth = ${targetꓽdepth})…`)
+	logger.verbose(`${LIB} deleting empty folders at depth ${targetꓽdepth}…`)
 
 	const folder_states_at_depth: Immutable<Folder.State>[] = getꓽall_folders(state)
-		.filter(folder_state => Folder.get_depth(folder_state) === target_depth)
+		.filter(folder_state => Folder.getꓽdepth(folder_state) === targetꓽdepth)
 
 	folder_states_at_depth.forEach(folder_state => {
 		if (folder_state.id === Folder.SPECIAL_FOLDERⵧINBOX__BASENAME) return

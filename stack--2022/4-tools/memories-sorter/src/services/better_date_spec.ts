@@ -3,16 +3,16 @@ import * as Luxon from 'luxon'
 import { DateTime as LuxonDateTime } from 'luxon'
 
 import {
-	_get_exif_datetime,
-	get_compact_date,
-	get_human_readable_timestamp_auto,
-	get_human_readable_timestamp_days,
-	get_human_readable_timestamp_millis,
-	get_human_readable_timestamp_minutes,
-	get_human_readable_timestamp_seconds,
-	get_members_for_serialization,
-	get_timestamp_utc_ms_from,
-	get_embedded_timezone,
+	_getꓽexif_datetime,
+	getꓽcompact_date,
+	getꓽhuman_readable_timestamp_auto,
+	getꓽhuman_readable_timestamp_days,
+	getꓽhuman_readable_timestamp_millis,
+	getꓽhuman_readable_timestamp_minutes,
+	getꓽhuman_readable_timestamp_seconds,
+	getꓽmembers_for_serialization,
+	getꓽtimestamp_utc_ms_from,
+	getꓽembedded_timezone,
 
 	compare_utc,
 	is_deep_equal,
@@ -26,7 +26,7 @@ import {
 	reinterpret_with_different_tz,
 
 	add_days_to_simple_date,
-	get_elapsed_days_between_ordered_simple_dates,
+	getꓽelapsed_days_between_ordered_simple_dates,
 
 	assertㆍBetterDateㆍdeepㆍequal,
 } from './better-date.js'
@@ -37,12 +37,12 @@ import { LIB } from '../consts.js'
 
 describe(`${LIB} -- service -- Better Date`, function() {
 	const PARAMS = {
-		...get_params(),
+		...getꓽparams(),
 		default_timezones: [
 			// if no time zone, infer it according to this timetable
 			// Expected to be in order
 			{
-				date_utc_ms: Number(Date.UTC(get_params().date_lower_boundⳇₓyear, 0)),
+				date_utc_ms: Number(Date.UTC(getꓽparams().dateⵧlower_bound‿ₓyear, 0)),
 				new_default: 'Indian/Kerguelen',
 			},
 		],
@@ -120,24 +120,24 @@ describe(`${LIB} -- service -- Better Date`, function() {
 				tz: 'tz:auto',
 			})
 
-			describe('get_timestamp_utc_ms_from()', function () {
+			describe('getꓽtimestamp_utc_ms_from()', function () {
 
 				it('should work', () => {
 					// https://www.epochconverter.com/timezones?q=1049504828009&tz=Indian%2FKerguelen
-					expect(get_timestamp_utc_ms_from(TEST_DATE_EXPLICIT_TZ)).to.equal(1049504828009)
+					expect(getꓽtimestamp_utc_ms_from(TEST_DATE_EXPLICIT_TZ)).to.equal(1049504828009)
 				})
 
 				it('should work - reflexive', () => {
 					const TEST_TMS = 1234567890
 					const ut = create_better_date_from_utc_tms(TEST_TMS, 'tz:auto')
-					expect(get_timestamp_utc_ms_from(ut)).to.equal(TEST_TMS)
+					expect(getꓽtimestamp_utc_ms_from(ut)).to.equal(TEST_TMS)
 				})
 			})
 
-			describe('get_compact_date()', function () {
+			describe('getꓽcompact_date()', function () {
 
 				it('should work', () => {
-					expect(get_compact_date(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')).to.equal(20030405)
+					expect(getꓽcompact_date(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')).to.equal(20030405)
 				})
 
 				it('should work - taking tz into account', () => {
@@ -150,12 +150,12 @@ describe(`${LIB} -- service -- Better Date`, function() {
 						minute: 42,
 						tz: 'Europe/Paris',
 					})
-					expect(get_compact_date(TEST_DATE, 'tz:embedded')).to.equal(20110421)
-					expect(get_compact_date(TEST_DATE, 'Australia/Sydney')).to.equal(20110422)
+					expect(getꓽcompact_date(TEST_DATE, 'tz:embedded')).to.equal(20110421)
+					expect(getꓽcompact_date(TEST_DATE, 'Australia/Sydney')).to.equal(20110422)
 				})
 			})
 
-			describe('get_human_readable_timestamp_days()', function () {
+			describe('getꓽhuman_readable_timestamp_days()', function () {
 
 				it('should return correct timestamps up to the day', function () {
 					const stamp = getꓽhuman_readable_timestamp_days(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
@@ -168,7 +168,7 @@ describe(`${LIB} -- service -- Better Date`, function() {
 				// TODO test tz
 			})
 
-			describe('get_human_readable_timestamp_minutes()', function () {
+			describe('getꓽhuman_readable_timestamp_minutes()', function () {
 
 				it('should return correct timestamps up to the minute', function () {
 					const stamp = getꓽhuman_readable_timestamp_minutes(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
@@ -179,7 +179,7 @@ describe(`${LIB} -- service -- Better Date`, function() {
 				})
 			})
 
-			describe('get_human_readable_timestamp_second()', function () {
+			describe('getꓽhuman_readable_timestamp_second()', function () {
 
 				it('should return correct timestamps up to the second', function () {
 					const stamp = getꓽhuman_readable_timestamp_seconds(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
@@ -190,7 +190,7 @@ describe(`${LIB} -- service -- Better Date`, function() {
 				})
 			})
 
-			describe('get_human_readable_timestamp_millis()', function () {
+			describe('getꓽhuman_readable_timestamp_millis()', function () {
 
 				it('should return correct timestamps up to the millisecond', function () {
 					const stamp = getꓽhuman_readable_timestamp_millis(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
@@ -201,7 +201,7 @@ describe(`${LIB} -- service -- Better Date`, function() {
 				})
 			})
 
-			describe('get_human_readable_timestamp_auto()', function () {
+			describe('getꓽhuman_readable_timestamp_auto()', function () {
 
 				it('should work', function () {
 					const stamp = getꓽhuman_readable_timestamp_auto(TEST_DATE_EXPLICIT_TZ, 'tz:embedded')
@@ -212,11 +212,11 @@ describe(`${LIB} -- service -- Better Date`, function() {
 				})
 			})
 
-			describe('_get_exif_datetime', function () {
+			describe('_getꓽexif_datetime', function () {
 
 				it('should behave as expected -- tz auto', () => {
 					const date = create_better_date('tz:auto', 2017, 10, 20, 5, 1, 44, 625, PARAMS)
-					const exif_datetime = _get_exif_datetime(date)
+					const exif_datetime = _getꓽexif_datetime(date)
 					expect(exif_datetime.zone).to.equal('Indian/Kerguelen')
 					const date2 = create_better_date_from_ExifDateTime(exif_datetime)
 					assertㆍBetterDateㆍdeepㆍequal(date, date2)
@@ -224,14 +224,14 @@ describe(`${LIB} -- service -- Better Date`, function() {
 
 				it('should behave as expected - tz explicit', () => {
 					const date = create_better_date('PST', 2017, 10, 20, 5, 1, 44, 625, PARAMS)
-					const exif_datetime = _get_exif_datetime(date)
+					const exif_datetime = _getꓽexif_datetime(date)
 					expect(exif_datetime.zone).to.equal('PST')
 					const date2 = create_better_date_from_ExifDateTime(exif_datetime)
 					assertㆍBetterDateㆍdeepㆍequal(date, date2)
 				})
 			})
 
-			describe('get_members_for_serialization()', function () {
+			describe('getꓽmembers_for_serialization()', function () {
 
 				it('should work -- explicit tz', () => {
 					const members = getꓽmembers_for_serialization(TEST_DATE_EXPLICIT_TZ)
@@ -430,7 +430,7 @@ describe(`${LIB} -- service -- Better Date`, function() {
 						milli: 0,
 						tz: 'tz:auto',
 					})
-					expect(get_timestamp_utc_ms_from(TEST_DATE_A) === 1303332168000)
+					expect(getꓽtimestamp_utc_ms_from(TEST_DATE_A) === 1303332168000)
 
 					const TEST_DATE_B = create_better_date_obj({
 						year: 2011,
@@ -442,7 +442,7 @@ describe(`${LIB} -- service -- Better Date`, function() {
 						milli: 0,
 						tz: 'tz:auto',
 					})
-					expect(get_timestamp_utc_ms_from(TEST_DATE_B) === 1303324964000)
+					expect(getꓽtimestamp_utc_ms_from(TEST_DATE_B) === 1303324964000)
 
 					expect(max(TEST_DATE_B, TEST_DATE_A)).to.equal(TEST_DATE_B)
 					expect(min(TEST_DATE_B, TEST_DATE_A)).to.equal(TEST_DATE_A)
@@ -457,16 +457,16 @@ describe(`${LIB} -- service -- Better Date`, function() {
 				it('should work -- tz auto', () => {
 					const bd1 = create_better_date_from_utc_tms(1278547200000, 'tz:auto')
 					expect(bd1._has_explicit_timezone).to.be.false
-					expect(get_human_readable_timestamp_auto(bd1, 'tz:embedded')).to.equal('2010-07-08_02h00')
-					expect(get_timestamp_utc_ms_from(bd1)).to.equal(1278547200000)
+					expect(getꓽhuman_readable_timestamp_auto(bd1, 'tz:embedded')).to.equal('2010-07-08_02h00')
+					expect(getꓽtimestamp_utc_ms_from(bd1)).to.equal(1278547200000)
 				})
 
 				it('should work -- tz explicit', () => {
 					const bd1 = create_better_date_from_utc_tms(1278547200000, 'Indian/Kerguelen')
 					expect(bd1._has_explicit_timezone).to.be.true
-					expect(get_embedded_timezone(bd1)).to.equal('Indian/Kerguelen')
-					expect(get_human_readable_timestamp_auto(bd1, 'tz:embedded')).to.equal('2010-07-08_05h00')
-					expect(get_timestamp_utc_ms_from(bd1)).to.equal(1278547200000)
+					expect(getꓽembedded_timezone(bd1)).to.equal('Indian/Kerguelen')
+					expect(getꓽhuman_readable_timestamp_auto(bd1, 'tz:embedded')).to.equal('2010-07-08_05h00')
+					expect(getꓽtimestamp_utc_ms_from(bd1)).to.equal(1278547200000)
 				})
 			})
 
@@ -475,14 +475,14 @@ describe(`${LIB} -- service -- Better Date`, function() {
 				it('should work -- tz auto', () => {
 					const bd1 = create_better_date_from_symd(20000101, 'tz:auto')
 					expect(bd1._has_explicit_timezone).to.be.false
-					expect(get_human_readable_timestamp_auto(bd1, 'tz:embedded')).to.equal('2000-01-01')
+					expect(getꓽhuman_readable_timestamp_auto(bd1, 'tz:embedded')).to.equal('2000-01-01')
 				})
 
 				it('should work -- tz explicit', () => {
 					const bd1 = create_better_date_from_symd(20000101, 'Indian/Kerguelen')
 					expect(bd1._has_explicit_timezone).to.be.true
-					expect(get_embedded_timezone(bd1)).to.equal('Indian/Kerguelen')
-					expect(get_human_readable_timestamp_auto(bd1, 'tz:embedded')).to.equal('2000-01-01')
+					expect(getꓽembedded_timezone(bd1)).to.equal('Indian/Kerguelen')
+					expect(getꓽhuman_readable_timestamp_auto(bd1, 'tz:embedded')).to.equal('2000-01-01')
 				})
 
 				it('should detect errors', () => {
@@ -560,12 +560,12 @@ describe(`${LIB} -- service -- Better Date`, function() {
 						milli: 9,
 						tz: 'Indian/Kerguelen', // random not GMT, not UTC, not my system
 					})
-					expect(get_human_readable_timestamp_auto(kg_date, 'tz:embedded')).to.equal('2003-04-05_06h07m08s009')
+					expect(getꓽhuman_readable_timestamp_auto(kg_date, 'tz:embedded')).to.equal('2003-04-05_06h07m08s009')
 
 					const UTC_date = reinterpret_with_different_tz(kg_date, 'UTC')
 
 					// no change, we didn't change the human components
-					expect(get_human_readable_timestamp_auto(UTC_date, 'tz:embedded')).to.equal('2003-04-05_06h07m08s009')
+					expect(getꓽhuman_readable_timestamp_auto(UTC_date, 'tz:embedded')).to.equal('2003-04-05_06h07m08s009')
 				})
 			})
 		})
@@ -626,22 +626,22 @@ describe(`${LIB} -- service -- Better Date`, function() {
 				})
 			})
 
-			describe('get_elapsed_days_between_ordered_simple_dates()', function() {
+			describe('getꓽelapsed_days_between_ordered_simple_dates()', function() {
 
 				it('should work - trivial case', () => {
-					expect(get_elapsed_days_between_ordered_simple_dates(20220204, 20220205)).to.equal(1)
-					expect(get_elapsed_days_between_ordered_simple_dates(20220204, 20220214)).to.equal(10)
-					expect(get_elapsed_days_between_ordered_simple_dates(20220204, 20220316)).to.equal(40)
+					expect(getꓽelapsed_days_between_ordered_simple_dates(20220204, 20220205)).to.equal(1)
+					expect(getꓽelapsed_days_between_ordered_simple_dates(20220204, 20220214)).to.equal(10)
+					expect(getꓽelapsed_days_between_ordered_simple_dates(20220204, 20220316)).to.equal(40)
 				})
 
 				it('should work - limits', () => {
-					expect(get_elapsed_days_between_ordered_simple_dates(20001231, 20010101)).to.equal(1)
-					expect(get_elapsed_days_between_ordered_simple_dates(20001231, 20011231)).to.equal(365)
-					expect(get_elapsed_days_between_ordered_simple_dates(20001231, 20020101)).to.equal(366)
+					expect(getꓽelapsed_days_between_ordered_simple_dates(20001231, 20010101)).to.equal(1)
+					expect(getꓽelapsed_days_between_ordered_simple_dates(20001231, 20011231)).to.equal(365)
+					expect(getꓽelapsed_days_between_ordered_simple_dates(20001231, 20020101)).to.equal(366)
 				})
 
 				it('should work - corner cases', () => {
-					expect(get_elapsed_days_between_ordered_simple_dates(20220228, 20220301)).to.equal(1)
+					expect(getꓽelapsed_days_between_ordered_simple_dates(20220228, 20220301)).to.equal(1)
 				})
 			})
 		})

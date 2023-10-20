@@ -7,10 +7,10 @@ import { create_better_date_from_utc_tms } from '../../../../services/better-dat
 import { NeighborHints, HistoricalNeighborHints } from './types.js'
 import { getꓽhistorical_representation } from './selectors.js'
 
-/////////////////////
+/////////////////////////////////////////////////
 
 
-export const DEMO_STATE: Immutable<NeighborHints> = enforceꓽimmutable<NeighborHints>({
+const DEMO_STATE: Immutable<NeighborHints> = enforceꓽimmutable<NeighborHints>({
 	bcdⵧfrom_fs__reliabilityⵧassessed_from_phase1: 'unknown',
 	expected_bcd_ranges: [
 		{
@@ -23,7 +23,11 @@ export const DEMO_STATE: Immutable<NeighborHints> = enforceꓽimmutable<Neighbor
 })
 
 /*export const DEMO_STATEⵧHISTORICAL: Immutable<HistoricalNeighborHints> = enforceꓽimmutable<HistoricalNeighborHints>(
-	get_historical_representation(DEMO_STATE)
+	getꓽhistorical_representation(DEMO_STATE)
 )*/
 
-/////////////////////
+/////////////////////////////////////////////////
+
+export {
+	DEMO_STATE,
+}

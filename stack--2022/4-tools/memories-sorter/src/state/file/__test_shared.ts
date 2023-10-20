@@ -1,4 +1,4 @@
-import { strict as node_assert } from 'assert'
+import { strict as node_assert } from 'node:assert'
 
 import { normalizeError } from '@offirmo/error-utils'
 import { Immutable } from '@offirmo-private/ts-types'

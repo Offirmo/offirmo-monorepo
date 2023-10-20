@@ -1,11 +1,11 @@
-import path from 'path'
+import path from 'node:path'
 
 import assert from 'tiny-invariant'
 import memoize_once from 'memoize-one'
 import { Immutable } from '@offirmo-private/ts-types'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
-import { EXIF_POWERED_FILE_EXTENSIONS_LC } from './consts.js'
+import { FILE_EXTENSIONSⵧEXIF_POWERED‿LC } from './consts.js'
 import { SimpleYYYYMMDD, AbsolutePath, TimeZone } from './types.js'
 import logger from './services/logger.js'
 
@@ -14,18 +14,18 @@ import logger from './services/logger.js'
 const TZONE_FR: TimeZone = 'Europe/Paris'
 const TZONE_AU: TimeZone = 'Australia/Sydney'
 
-export interface DefaultTzChange {
+interface DefaultTzChange {
 	date_utc_ms: number,
 	new_default: string
 }
 
-export interface Params {
+interface Params {
 	root: AbsolutePath
-	date_lower_boundⳇₓyear: number
-	date_upper_boundⳇₓyear: number
-	date_lower_boundⳇsymd: SimpleYYYYMMDD
-	date_upper_boundⳇsymd: SimpleYYYYMMDD
-	max_event_durationⳇₓday: number
+	dateⵧlower_bound‿ₓyear: number
+	dateⵧupper_bound‿ₓyear: number
+	dateⵧlower_bound‿symd: SimpleYYYYMMDD
+	dateⵧupper_bound‿symd: SimpleYYYYMMDD
+	event_durationⵧmax‿ₓday: number
 	extensions_to_normalize‿lc: { [k: string]: string }
 	extensions_of_media_files‿lc: string[]
 	extensions_to_delete‿lc: string[]
@@ -37,37 +37,37 @@ export interface Params {
 	expect_perfect_state: boolean //  true = expect to be the 1st execution, no file should be already normalized. false = normal, allows re-run on already sorted
 }
 
-export const CURRENT_YEAR: number = (new Date()).getFullYear()
+const YEARⵧCURRENT: number = (new Date()).getFullYear()
 
-// UNSAFE bc should not be used in place of getꓽdefault_timezone()!
-export const _UNSAFE_CURRENT_SYSTEM_TIMEZONE: TimeZone =
+// UNSAFE bc should not be used in place of getꓽtimezoneⵧdefault()!
+const _UNSAFE_CURRENT_SYSTEM_TIMEZONE: TimeZone =
 	// https://stackoverflow.com/a/44096051/587407
 	Intl.DateTimeFormat().resolvedOptions().timeZone
 
 // the earliest known photo was taken in 1826
 // https://en.wikipedia.org/wiki/View_from_the_Window_at_Le_Gras
-const date_lower_boundⳇₓyear = 1826
-assert(date_lower_boundⳇₓyear >= 1826, 'earliest known')
+const dateⵧlower_bound‿ₓyear = 1826
+assert(dateⵧlower_bound‿ₓyear >= 1826, 'earliest known')
 
-const date_upper_boundⳇₓyear = CURRENT_YEAR + 1 // TODO review +1 to handle taking pictures during new year eve
-assert(date_upper_boundⳇₓyear >= date_lower_boundⳇₓyear, 'higher >= lower 1')
+const dateⵧupper_bound‿ₓyear = YEARⵧCURRENT + 1 // TODO review +1 to handle taking pictures during new year eve
+assert(dateⵧupper_bound‿ₓyear >= dateⵧlower_bound‿ₓyear, 'higher >= lower 1')
 
-const date_lower_boundⳇsymd: SimpleYYYYMMDD = (date_lower_boundⳇₓyear * 10000) + 101
-const date_upper_boundⳇsymd: SimpleYYYYMMDD = (date_upper_boundⳇₓyear * 10000) + 101 // photos taken "next" year can only happen during new year eve
-assert(date_upper_boundⳇsymd >= date_lower_boundⳇsymd, 'higher >= lower 2')
+const dateⵧlower_bound‿symd: SimpleYYYYMMDD = (dateⵧlower_bound‿ₓyear * 10000) + 101
+const dateⵧupper_bound‿symd: SimpleYYYYMMDD = (dateⵧupper_bound‿ₓyear * 10000) + 101 // photos taken "next" year can only happen during new year eve
+assert(dateⵧupper_bound‿symd >= dateⵧlower_bound‿symd, 'higher >= lower 2')
 
-const max_event_durationⳇₓday = 28
+const event_durationⵧmax‿ₓday = 28
 
-export const getꓽparams = memoize_once(function getꓽparams(): Params {
+const getꓽparams = memoize_once(function getꓽparams(): Params {
 	return {
-		date_lower_boundⳇₓyear: date_lower_boundⳇₓyear,
-		date_upper_boundⳇₓyear: date_upper_boundⳇₓyear,
-		date_lower_boundⳇsymd: date_lower_boundⳇsymd,
-		date_upper_boundⳇsymd: date_upper_boundⳇsymd,
-		max_event_durationⳇₓday: max_event_durationⳇₓday,
+		dateⵧlower_bound‿ₓyear,
+		dateⵧupper_bound‿ₓyear,
+		dateⵧlower_bound‿symd,
+		dateⵧupper_bound‿symd,
+		event_durationⵧmax‿ₓday,
 
-		root: path.normalize(`/Users/${process.env['USER']}/Documents/Memories`),
-		//root: path.normalize(`/Users/${process.env.USER}/work/tmp/- TEST photos sorter/- sorted`), // LOCAL TEST, DON'T COMMIT
+		//root: path.normalize(`/Users/${process.env['USER']}/Documents/Memories`),
+		root: path.normalize(`/Users/${process.env.USER}/work/tmp/- TEST photos sorter/- sorted`), // LOCAL TEST, DON'T COMMIT
 		//root: path.normalize(`/Users/${process.env.USER}/Dropbox/- TEST photos sorter/- notes`), // LOCAL TEST, DON'T COMMIT
 		//root: path.normalize(`/Users/${process.env.USER}/Dropbox/…documents/…memories/…me/- inbox`),
 		//root: path.normalize(`/Users/${process.env.USER}/Dropbox/…documents/…memories/…me/…circa--1980/- 1981`),
@@ -108,7 +108,7 @@ export const getꓽparams = memoize_once(function getꓽparams(): Params {
 		}).map(([ from, to ]) => [ from.toLowerCase(), to.toLowerCase() ])),
 
 		extensions_of_media_files‿lc: [
-			...EXIF_POWERED_FILE_EXTENSIONS_LC,
+			...FILE_EXTENSIONSⵧEXIF_POWERED‿LC,
 			'.3gp', // videos taken with my old Palm
 			'.avi', // old videos
 			'.bmp',
@@ -153,7 +153,7 @@ export const getꓽparams = memoize_once(function getꓽparams(): Params {
 			// Expected to be in order
 			// REMINDER month = 0-based
 			{
-				date_utc_ms: Number(Date.UTC(date_lower_boundⳇₓyear, 0)),
+				date_utc_ms: Number(Date.UTC(dateⵧlower_bound‿ₓyear, 0)),
 				new_default: TZONE_FR,
 			},
 			{
@@ -182,8 +182,8 @@ export const getꓽparams = memoize_once(function getꓽparams(): Params {
 
 /////////////////////////////////////////////////
 
-export function getꓽdefault_timezone(date_utc_ms: TimestampUTCMs, PARAMS: Immutable<Params> = getꓽparams()): TimeZone {
-	//console.log('get_default_timezone()', { date_utc_ms, PARAMS })
+function getꓽtimezoneⵧdefault(date_utc_ms: TimestampUTCMs, PARAMS: Immutable<Params> = getꓽparams()): TimeZone {
+	//console.log('getꓽtimezoneⵧdefault()', { date_utc_ms, PARAMS })
 
 	let res: TimeZone = _UNSAFE_CURRENT_SYSTEM_TIMEZONE
 	const change_after = PARAMS.default_timezones.find(tz_change => {
@@ -205,5 +205,18 @@ export function getꓽdefault_timezone(date_utc_ms: TimestampUTCMs, PARAMS: Immu
 	return res
 }
 
-assert(get_default_timezone(+Date.now()), 'PARAMS should be correct 01a')
-assert(get_default_timezone(+Date.now()) === _UNSAFE_CURRENT_SYSTEM_TIMEZONE, 'PARAMS should be correct 01b')
+assert(getꓽtimezoneⵧdefault(+Date.now()), 'PARAMS should be correct 01a')
+assert(getꓽtimezoneⵧdefault(+Date.now()) === _UNSAFE_CURRENT_SYSTEM_TIMEZONE, 'PARAMS should be correct 01b')
+
+/////////////////////////////////////////////////
+
+export {
+	type DefaultTzChange,
+	type Params,
+
+	YEARⵧCURRENT,
+	_UNSAFE_CURRENT_SYSTEM_TIMEZONE,
+
+	getꓽparams,
+	getꓽtimezoneⵧdefault,
+}

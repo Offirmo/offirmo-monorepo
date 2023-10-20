@@ -13,15 +13,15 @@ import { _UNSAFE_CURRENT_SYSTEM_TIMEZONE } from '../../params.js'
 import { load_real_media_file as _load_real_media_file } from '../utils.js'
 import {
 	State,
-	get_best_creation_date,
-	_get_best_creation_date‿compact,
-	get_best_creation_date__year,
-	get_ideal_basename,
+	getꓽbest_creation_date,
+	_getꓽbest_creation_date‿compact,
+	getꓽbest_creation_date__year,
+	getꓽideal_basename,
 	DateConfidence, NeighborHints, PersistedNotes,
 } from '../../state/file/index.js'
 import {
-	get_embedded_timezone,
-	get_human_readable_timestamp_auto,
+	getꓽembedded_timezone,
+	getꓽhuman_readable_timestamp_auto,
 } from '../../services/better-date.js'
 import * as FileLib from '../../state/file/index.js'
 
@@ -58,7 +58,7 @@ const load_real_media_file = micro_memoize(_load_real_media_file, {
 	maxSize: Number.MAX_SAFE_INTEGER,
 })
 
-async function _get_demo_state(
+async function _getꓽdemo_state(
 	MEDIA: MediaDemo,
 	phase2?: {
 		neighbor_hints: null | Immutable<NeighborHints>
@@ -83,7 +83,7 @@ async function _get_demo_state(
 			require_notes: false,
 		})).to.be.true
 
-		const bcd_meta = FileLib.get_best_creation_dateⵧfrom_current_data‿meta(state)
+		const bcd_meta = FileLib.getꓽbest_creation_dateⵧfrom_current_data‿meta(state)
 
 	}
 	else {
@@ -92,11 +92,11 @@ async function _get_demo_state(
 			require_notes: true,
 		})).to.be.true
 
-		expect(get_best_creation_date__year(state), 'bcy').to.equal(MEDIA.YEAR)
-		expect(_get_best_creation_date‿compact(state), 'compact').to.equal(MEDIA.DATE__COMPACT)
-		expect(get_embedded_timezone(get_best_creation_date(state)), 'tz').to.deep.equal(MEDIA.FINAL_TZ)
-		expect(get_human_readable_timestamp_auto(get_best_creation_date(state), 'tz:embedded'), 'auto').to.deep.equal(MEDIA.DATE__HUMAN_AUTO)
-		expect(get_ideal_basename(state), 'ideal basename').to.equal(MEDIA.IDEAL_BASENAME)
+		expect(getꓽbest_creation_date__year(state), 'bcy').to.equal(MEDIA.YEAR)
+		expect(_getꓽbest_creation_date‿compact(state), 'compact').to.equal(MEDIA.DATE__COMPACT)
+		expect(getꓽembedded_timezone(getꓽbest_creation_date(state)), 'tz').to.deep.equal(MEDIA.FINAL_TZ)
+		expect(getꓽhuman_readable_timestamp_auto(getꓽbest_creation_date(state), 'tz:embedded'), 'auto').to.deep.equal(MEDIA.DATE__HUMAN_AUTO)
+		expect(getꓽideal_basename(state), 'ideal basename').to.equal(MEDIA.IDEAL_BASENAME)
 	}
 
 	return enforceꓽimmutable(state)
@@ -287,38 +287,38 @@ utimes( // ensure expected fs time
 
 export const ALL_MEDIA_DEMOS: Array<{
 	data: MediaDemo,
-	get_phase1_state: () => ReturnType<typeof load_real_media_file>,
-	get_phase2_state: () => ReturnType<typeof load_real_media_file>,
+	getꓽphase1_state: () => ReturnType<typeof load_real_media_file>,
+	getꓽphase2_state: () => ReturnType<typeof load_real_media_file>,
 }> = [
 	{
 		data: MEDIA_DEMO_00,
 		// safe to memoize, we enforced immutability ✔
-		get_phase1_state: memoize_once(() => _get_demo_state(MEDIA_DEMO_00)),
-		get_phase2_state: memoize_once(() => _get_demo_state(MEDIA_DEMO_00, { neighbor_hints: null, recovered_notes: null })),
+		getꓽphase1_state: memoize_once(() => _getꓽdemo_state(MEDIA_DEMO_00)),
+		getꓽphase2_state: memoize_once(() => _getꓽdemo_state(MEDIA_DEMO_00, { neighbor_hints: null, recovered_notes: null })),
 	},
 	{
 		data: MEDIA_DEMO_01,
-		get_phase1_state: memoize_once(() => _get_demo_state(MEDIA_DEMO_01)),
-		get_phase2_state: memoize_once(() => _get_demo_state(MEDIA_DEMO_01, { neighbor_hints: null, recovered_notes: null })),
+		getꓽphase1_state: memoize_once(() => _getꓽdemo_state(MEDIA_DEMO_01)),
+		getꓽphase2_state: memoize_once(() => _getꓽdemo_state(MEDIA_DEMO_01, { neighbor_hints: null, recovered_notes: null })),
 	},
 	{
 		data: MEDIA_DEMO_02,
-		get_phase1_state: memoize_once(() => _get_demo_state(MEDIA_DEMO_02)),
-		get_phase2_state: memoize_once(() => _get_demo_state(MEDIA_DEMO_02, { neighbor_hints: null, recovered_notes: null })),
+		getꓽphase1_state: memoize_once(() => _getꓽdemo_state(MEDIA_DEMO_02)),
+		getꓽphase2_state: memoize_once(() => _getꓽdemo_state(MEDIA_DEMO_02, { neighbor_hints: null, recovered_notes: null })),
 	},
 	{
 		data: MEDIA_DEMO_03,
-		get_phase1_state: memoize_once(() => _get_demo_state(MEDIA_DEMO_03)),
-		get_phase2_state: memoize_once(() => _get_demo_state(MEDIA_DEMO_03, { neighbor_hints: null, recovered_notes: null })),
+		getꓽphase1_state: memoize_once(() => _getꓽdemo_state(MEDIA_DEMO_03)),
+		getꓽphase2_state: memoize_once(() => _getꓽdemo_state(MEDIA_DEMO_03, { neighbor_hints: null, recovered_notes: null })),
 	},
 	{
 		data: MEDIA_DEMO_04,
-		get_phase1_state: memoize_once(() => _get_demo_state(MEDIA_DEMO_04)),
-		get_phase2_state: memoize_once(() => _get_demo_state(MEDIA_DEMO_04, { neighbor_hints: null, recovered_notes: null })),
+		getꓽphase1_state: memoize_once(() => _getꓽdemo_state(MEDIA_DEMO_04)),
+		getꓽphase2_state: memoize_once(() => _getꓽdemo_state(MEDIA_DEMO_04, { neighbor_hints: null, recovered_notes: null })),
 	},
 	{
 		data: MEDIA_DEMO_05,
-		get_phase1_state: memoize_once(() => _get_demo_state(MEDIA_DEMO_05)),
-		get_phase2_state: memoize_once(() => _get_demo_state(MEDIA_DEMO_05, { neighbor_hints: null, recovered_notes: null })),
+		getꓽphase1_state: memoize_once(() => _getꓽdemo_state(MEDIA_DEMO_05)),
+		getꓽphase2_state: memoize_once(() => _getꓽdemo_state(MEDIA_DEMO_05, { neighbor_hints: null, recovered_notes: null })),
 	},
 ]

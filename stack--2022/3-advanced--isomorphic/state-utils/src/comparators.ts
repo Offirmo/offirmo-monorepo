@@ -50,7 +50,7 @@ const _get_advanced_json_differ = memoize_one(() => {
 
 	return advanced_json_differ
 })
-export function get_json_difference(a: Immutable<any>, b: Immutable<any>): JSONObject {
+export function getꓽjson_difference(a: Immutable<any>, b: Immutable<any>): JSONObject {
 	return _get_advanced_json_differ().diff(a, b) as any // hide the proprietary return type, not needed for now
 }
 

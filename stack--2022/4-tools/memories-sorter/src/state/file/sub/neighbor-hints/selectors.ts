@@ -7,9 +7,9 @@ import { NeighborHints, HistoricalNeighborHints, FsReliability } from './types.j
 import {
 	BetterDate,
 	DateRange,
-	get_debug_representation as getꓽbetter_date_debug_representation,
+	getꓽdebug_representation as getꓽbetter_date_debug_representation,
 	create_better_date_from_utc_tms,
-	get_members_for_serialization,
+	getꓽmembers_for_serialization,
 	compare_utc,
 	add_days,
 } from '../../../../services/better-date.js'
@@ -21,10 +21,10 @@ import {
 import { RelativePath } from '../../../../types.js'
 import { getꓽparams, Params } from '../../../../params.js'
 
-/////////////////////
+/////////////////////////////////////////////////
 
 // for comparisons, higher is better
-export function getꓽfs_reliability_score(reliability: FsReliability | undefined): number {
+export function getꓽfs_reliability‿numeric_score(reliability: FsReliability | undefined): number {
 	switch (reliability) {
 		case 'unreliable':
 			return 0
@@ -35,7 +35,7 @@ export function getꓽfs_reliability_score(reliability: FsReliability | undefine
 		case 'reliable':
 			return 2
 		default:
-			throw new Error(`get_fs_reliability_index() switch unhandled for "${reliability}"!`)
+			throw new Error(`getꓽfs_reliability_score() switch unhandled for "${reliability}"!`)
 	}
 }
 
@@ -69,7 +69,7 @@ export function getꓽexpected_bcd_range_from_parent_path(parent_path: RelativeP
 
 	if (basename‿parsed.meaningful_part.toLowerCase().includes('backup')) {
 		// clearly not an event
-		throw new Error(`get_expected_bcd_range_from_parent_path() NIMP backup range!`)
+		throw new Error(`getꓽexpected_bcd_range_from_parent_path() NIMP backup range!`)
 		/*return {
 			begin: xxx, what to use?
 			end: date,
@@ -80,7 +80,7 @@ export function getꓽexpected_bcd_range_from_parent_path(parent_path: RelativeP
 		// this looks very very much like an event
 		return {
 			begin: date,
-			end: add_days(date, PARAMS.max_event_durationⳇₓday),
+			end: add_days(date, PARAMS.event_durationⵧmax‿ₓday),
 		}
 	}
 
@@ -167,7 +167,7 @@ export function to_string(state: undefined | Immutable<NeighborHints>): any {
 		if (Object.keys(unhandled).length > 0)
 			throw new Error('NeighborHints.to_string() needs upgrade!')
 
-		result += `${expected_bcd_ranges.length} ranges; fb-junk-date=${get_better_date_debug_representation(fallback_junk_bcd)}`
+		result += `${expected_bcd_ranges.length} ranges; fb-junk-date=${getꓽbetter_date_debug_representation(fallback_junk_bcd)}`
 	}
 
 	result += ']'
@@ -191,7 +191,7 @@ export function getꓽdebug_representation(state: undefined | Immutable<Neighbor
 	} = state
 
 	if (Object.keys(unhandled).length > 0)
-		throw new Error('NeighborHints.get_debug_representation needs upgrade!')
+		throw new Error('NeighborHints.getꓽdebug_representation needs upgrade!')
 
 	result = {
 		...result,
@@ -239,7 +239,7 @@ export function getꓽhistorical_representation(state: Immutable<NeighborHints>,
 }
 
 export function getꓽhistorical_fs_reliability(state: Immutable<HistoricalNeighborHints>, candidate‿tms: TimestampUTCMs): FsReliability {
-	//console.log('get_historical_fs_reliability(…)', state)
+	//console.log('getꓽhistorical_fs_reliability(…)', state)
 	return state.fs_reliability ?? 'unknown'
 	/* TODO review
 	const bcd__from_parent_folder__current = neighbor_hints.parent_folder_bcd
@@ -247,9 +247,9 @@ export function getꓽhistorical_fs_reliability(state: Immutable<HistoricalNeigh
 		const bcd__from_parent_folder__current‿tms = getꓽtimestamp_utc_ms_from(bcd__from_parent_folder__current)
 
 		if (bcdⵧfrom_fsⵧcurrent‿tms >= bcd__from_parent_folder__current‿tms
-			&& bcdⵧfrom_fsⵧcurrent‿tms < (bcd__from_parent_folder__current‿tms + PARAMS.max_event_durationⳇₓday * DAY_IN_MILLIS)) {
+			&& bcdⵧfrom_fsⵧcurrent‿tms < (bcd__from_parent_folder__current‿tms + PARAMS.event_durationⵧmax‿ₓday * DAY_IN_MILLIS)) {
 			// ok, looks like an event folder configuration
-			logger.trace(`_get_current_fs_reliability_according_to_own_and_env() current fs reliability has been assessed to "reliable" from our fs + parent folder bcd`)
+			logger.trace(`_getꓽcurrent_fs_reliability_according_to_own_and_env() current fs reliability has been assessed to "reliable" from our fs + parent folder bcd`)
 			return 'reliable'
 		}*/
 }
@@ -262,3 +262,5 @@ export function to_stringⵧhistorical(state: Immutable<HistoricalNeighborHints>
 
 	return '<HistoricalNeighborHints>'
 }
+
+/////////////////////////////////////////////////

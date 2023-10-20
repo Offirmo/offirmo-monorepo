@@ -18,7 +18,7 @@ interface WithLogs {
 }
 
 interface StatefulLogger<State extends WithLogs> extends Logger {
-	get_state: () => State
+	getꓽstate: () => State
 }
 
 //////////// Selectors ////////////
@@ -32,7 +32,7 @@ export function getꓽlogger<State extends WithLogs>(state: Immutable<State>, ex
 
 	return {
 		...logger,
-		get_state,
+		getꓽstate,
 	}
 }
 */

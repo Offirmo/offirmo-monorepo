@@ -22,7 +22,7 @@ import { DateTime as LuxonDateTime } from 'luxon'
 ///////
 
 import { SimpleYYYYMMDD, TimeZone } from '../types.js'
-import { getꓽdefault_timezone, getꓽparams, Params } from '../params.js'
+import { getꓽtimezoneⵧdefault, getꓽparams, Params } from '../params.js'
 import logger from './logger.js'
 
 ////////////////////////////////////
@@ -82,7 +82,7 @@ const DATE_FORMAT_TO_MILLIS_DIGITS = DATE_FORMAT_TO_DAYS_COMPACT + `HHmmssSSS`
 
 export function getꓽcompact_date(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): SimpleYYYYMMDD {
 	const _lx = tz === 'tz:embedded' ? date._lx : date._lx.setZone(tz)
-	/*console.log('get_compact_date', {
+	/*console.log('getꓽcompact_date', {
 		tz,
 		embedded_tz: getꓽembedded_timezone(date),
 		compact_embedded_tz: date._lx.toFormat(DATE_FORMAT_TO_DAYS_COMPACT),
@@ -121,11 +121,11 @@ export function getꓽhuman_readable_timestamp_millis(date: Immutable<BetterDate
 
 // same as the above without trailing 0s
 export function getꓽhuman_readable_timestamp_auto(date: Immutable<BetterDate>, tz: TimeZone | 'tz:embedded'): PhotoSorterTimestampAuto {
-	assert(date && date._lx, 'get_human_readable_timestamp_auto() bad date')
+	assert(date && date._lx, 'getꓽhuman_readable_timestamp_auto() bad date')
 
 	const digits = date._lx.toFormat(DATE_FORMAT_TO_MILLIS_DIGITS) // tz is irrelevant for this counting
-	//logger.log('get_human_readable_timestamp_auto()', { digits, date })
-	assert(digits.length === 17, 'get_human_readable_timestamp_auto() digits length')
+	//logger.log('getꓽhuman_readable_timestamp_auto()', { digits, date })
+	assert(digits.length === 17, 'getꓽhuman_readable_timestamp_auto() digits length')
 
 	if (digits.endsWith('000000000'))
 		return getꓽhuman_readable_timestamp_days(date, tz)
@@ -171,7 +171,7 @@ export function getꓽmembers_for_serialization(date: Immutable<BetterDate>): Be
 }
 
 // used in unit tests only
-export function _get_exif_datetime(date: Immutable<BetterDate>): ExifDateTime {
+export function _getꓽexif_datetime(date: Immutable<BetterDate>): ExifDateTime {
 	//constructor(year: number, month: number, day: number, hour: number, minute: number, second: number, millisecond?: number | undefined, tzoffsetMinutes?: number | undefined, rawValue?: string | undefined, zoneName?: string | undefined);
 	const edt = new ExifDateTime(
 		date._lx.year,
@@ -209,11 +209,11 @@ export function getꓽdebug_representation(date: Immutable<BetterDate> | Timesta
 		timestamp_utc_ms = getꓽtimestamp_utc_ms_from(date)
 	}
 
-	return `<BetterDate>(${get_human_readable_timestamp_auto(better_date, 'tz:embedded')}/${get_embedded_timezone(better_date)}/${timestamp_utc_ms})`
+	return `<BetterDate>(${getꓽhuman_readable_timestamp_auto(better_date, 'tz:embedded')}/${getꓽembedded_timezone(better_date)}/${timestamp_utc_ms})`
 }
 
 export function getꓽrange_debug_representation(range: undefined | null | DateRange<TimestampUTCMs> | DateRange): string {
-	return `${get_debug_representation(range?.begin)} → ${get_debug_representation(range?.end)}`
+	return `${getꓽdebug_representation(range?.begin)} → ${getꓽdebug_representation(range?.end)}`
 }
 
 /////////// Comparisons / operators
@@ -337,7 +337,7 @@ export function create_better_date_from_utc_tms(tms: TimestampUTCMs, tz: TimeZon
 	assert(!!tms, 'create_better_date_from_utc_tms should have a correct input: truthy!')
 	assert(Number.isSafeInteger(tms), `create_better_date_from_utc_tms correct input: isSafeInteger(${tms})`)
 
-	const _tz = tz === 'tz:auto' ? getꓽdefault_timezone(tms, PARAMS) : tz
+	const _tz = tz === 'tz:auto' ? getꓽtimezoneⵧdefault(tms, PARAMS) : tz
 
 	const _ld = new LegacyDate(tms)
 
@@ -376,7 +376,7 @@ export function create_better_date_from_ExifDateTime(exif_date: ExifDateTime, be
 
 	if (!exif_date.hasZone) {
 		assert(!better_tz, 'create_better_date_from_ExifDateTime() tz suggested with no tz embedded = ???')
-		let tz: TimeZone = getꓽdefault_timezone(_lx.toMillis(), PARAMS)
+		let tz: TimeZone = getꓽtimezoneⵧdefault(_lx.toMillis(), PARAMS)
 		_lx = LuxonDateTime.fromObject({
 			year: exif_date.year,
 			month: exif_date.month,
@@ -425,7 +425,7 @@ export function create_better_date_from_ExifDateTime(exif_date: ExifDateTime, be
 			return exif_date.hasZone
 		})()
 	}
-	//logger.trace(`create_better_date_from_ExifDateTime(${exif_date.rawValue}) -> ${get_debug_representation(date)}`)
+	//logger.trace(`create_better_date_from_ExifDateTime(${exif_date.rawValue}) -> ${getꓽdebug_representation(date)}`)
 	return date
 }
 
@@ -525,7 +525,7 @@ export function create_better_date_obj({
 
 	if (tz === 'tz:auto') {
 		// rely on the 1st creation to get the millis
-		const zone = getꓽdefault_timezone(_lx.toMillis(), PARAMS)
+		const zone = getꓽtimezoneⵧdefault(_lx.toMillis(), PARAMS)
 		//console.log('tz:auto defaulting to', zone)
 		_lx = LuxonDateTime.fromObject({
 			...members_for_luxon,
@@ -590,7 +590,7 @@ export function add_days_to_simple_date(date: SimpleYYYYMMDD, inc_days: number):
 	return _ld.getDate() + (_ld.getMonth() + 1) * 100 + _ld.getFullYear() * 10000
 }
 
-function _get_legacy_from_simple_date(date: SimpleYYYYMMDD): LegacyDate {
+function _getꓽlegacy_from_simple_date(date: SimpleYYYYMMDD): LegacyDate {
 	const days = date % 100
 	const months = Math.trunc(date / 100) % 100
 	const years = Math.trunc(date / 10000)
@@ -598,10 +598,10 @@ function _get_legacy_from_simple_date(date: SimpleYYYYMMDD): LegacyDate {
 }
 
 export function getꓽelapsed_days_between_ordered_simple_dates(d1: SimpleYYYYMMDD, d2: SimpleYYYYMMDD): number {
-	assert(d2 >= d1, `get_elapsed_days_between_ordered_simple_dates() d1 must be <= d2! "${d1}", "${d2}"`)
+	assert(d2 >= d1, `getꓽelapsed_days_between_ordered_simple_dates() d1 must be <= d2! "${d1}", "${d2}"`)
 
-	const _ld1 = _get_legacy_from_simple_date(d1)
-	const _ld2 = _get_legacy_from_simple_date(d2)
+	const _ld1 = _getꓽlegacy_from_simple_date(d1)
+	const _ld2 = _getꓽlegacy_from_simple_date(d2)
 
 	const diff_ms = _ld2.getTime() - _ld1.getTime()
 	return Math.floor(diff_ms / 1000 / 3600 / 24)

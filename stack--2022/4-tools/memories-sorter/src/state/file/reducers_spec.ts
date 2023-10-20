@@ -14,12 +14,12 @@ import {
 	merge_duplicates,
 } from './index.js'
 import {
-	_get_exif_datetime,
+	_getꓽexif_datetime,
 	create_better_date,
-	get_timestamp_utc_ms_from,
+	getꓽtimestamp_utc_ms_from,
 } from '../../services/better-date.js'
 import {
-	get_test_single_file_state_generator,
+	getꓽtest_single_file_state_generator,
 } from '../../__test_shared/utils.js'
 
 import {
@@ -115,7 +115,7 @@ describe(`${LIB} - file (state)`, function() {
 					stategen.inputs.basenameⵧcurrent = basename
 					stategen.inputs.parent_pathⵧcurrent‿relative = parent_relpath ?? stategen.inputs.parent_pathⵧcurrent‿relative
 					stategen.inputs.dateⵧfsⵧcurrent‿tms = getꓽtimestamp_utc_ms_from(time)
-					stategen.inputs.dateⵧexif = _get_exif_datetime(time)
+					stategen.inputs.dateⵧexif = _getꓽexif_datetime(time)
 					stategen.inputs.notes = 'auto'
 					stategen.inputs.autoǃdate__fs_ms__historical = getꓽtimestamp_utc_ms_from(EARLIER_CREATION_DATE)
 

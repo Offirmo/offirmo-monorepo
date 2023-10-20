@@ -1,10 +1,4 @@
 
-
-
-TEMPORARY REMOVED 		"utimes": "^5"
-bug reported: https://github.com/baileyherbert/utimes/issues/26
-
-
 LOG ANALYSIS
 ```
 VERBOSE› >>>>>>> FS READ, NOW CONSOLIDATING >>>>>>>
@@ -59,3 +53,6 @@ https://github.com/as-com/mozjpeg-js
 jpegtran
 
 Discovered later: https://consumerreviewer.org/best-photo-backup-devices/
+
+
+2023 https://getaround.tech/exif-data-manipulation-javascript/

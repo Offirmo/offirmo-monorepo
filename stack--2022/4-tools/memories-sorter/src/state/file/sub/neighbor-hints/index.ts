@@ -1,11 +1,10 @@
 import { BetterDate } from '../../../../services/better-date.js'
 
-export * from './types.js'
-export * from './selectors.js'
-
 import { FsReliability, NeighborHints } from './types.js'
 
-export function create(): NeighborHints {
+/////////////////////////////////////////////////
+
+function create(): NeighborHints {
 	// safest possible
 	return {
 		bcdⵧfrom_fs__reliabilityⵧassessed_from_phase1: 'unknown',
@@ -15,7 +14,7 @@ export function create(): NeighborHints {
 	}
 }
 
-export function _createⵧfor_ut(params: {
+function _createⵧfor_ut(params: {
 	reliability_shortcut?: FsReliability,
 	junk_bcd?: BetterDate | undefined,
 } = {}): NeighborHints {
@@ -23,4 +22,14 @@ export function _createⵧfor_ut(params: {
 	state._unit_test_shortcut = params.reliability_shortcut
 	state.fallback_junk_bcd = params.junk_bcd
 	return state
+}
+
+/////////////////////////////////////////////////
+
+export * from './types.js'
+export * from './selectors.js'
+
+export {
+	create,
+	_createⵧfor_ut,
 }

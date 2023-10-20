@@ -9,8 +9,8 @@ import { AbsolutePath, TimeZone } from '../types.js'
 import {
 	LegacyDate,
 	create_better_date_from_ExifDateTime,
-	get_debug_representation,
-	get_embedded_timezone,
+	getꓽdebug_representation,
+	getꓽembedded_timezone,
 	are_same_tms_date_with_potential_tz_difference,
 	are_tms_within_24h_of_each_other,
 } from './better-date.js'
@@ -109,14 +109,14 @@ export async function read_exif_data(abs_path: AbsolutePath): Promise<Immutable<
 
 // TODO memory optim getꓽrelevant_exif_subset
 
-function _get_valid_exifdate_field(field: keyof Tags, exif_data: Immutable<Tags>, { DEBUG }: { DEBUG: boolean }): undefined | ExifDateTime {
+function _getꓽvalid_exifdate_field(field: keyof Tags, exif_data: Immutable<Tags>, { DEBUG }: { DEBUG: boolean }): undefined | ExifDateTime {
 	const SourceFile = exif_data[EXIF_FIELD__SOURCEFILE]
 	let raw_exiftool_date: undefined | any = exif_data[field]
-	DEBUG && console.log(`_get_valid_exifdate_field("${field}"): raw = ${raw_exiftool_date}`)
+	DEBUG && console.log(`_getꓽvalid_exifdate_field("${field}"): raw = ${raw_exiftool_date}`)
 	if (!raw_exiftool_date) return undefined
 
 	const now_legacy = new LegacyDate()
-	DEBUG && console.log(`_get_valid_exifdate_field("${field}"): FYI`, { exif_tz: exif_data[EXIF_FIELD__TZ], now_legacy })
+	DEBUG && console.log(`_getꓽvalid_exifdate_field("${field}"): FYI`, { exif_tz: exif_data[EXIF_FIELD__TZ], now_legacy })
 
 	// https://github.com/photostructure/exiftool-vendored.js/issues/73
 	// "If date fields aren't parsable, the raw string from exiftool will be provided."
@@ -134,7 +134,7 @@ function _get_valid_exifdate_field(field: keyof Tags, exif_data: Immutable<Tags>
 	}
 
 	let exiftool_date: ExifDateTime = raw_exiftool_date
-	DEBUG && console.log(`_get_valid_exifdate_field("${field}"): seems we have an ExifDateTime (pending further validation):`, {
+	DEBUG && console.log(`_getꓽvalid_exifdate_field("${field}"): seems we have an ExifDateTime (pending further validation):`, {
 		exiftool_date,
 		...(!!exiftool_date.toDate && {
 			toDate: exiftool_date.toDate(),
@@ -156,11 +156,11 @@ function _get_valid_exifdate_field(field: keyof Tags, exif_data: Immutable<Tags>
 	}
 
 	if (exiftool_date.tzoffsetMinutes === undefined) {
-		DEBUG && console.warn(`_get_valid_exifdate_field("${field}"): missing tz…`, { SourceFile, field })
+		DEBUG && console.warn(`_getꓽvalid_exifdate_field("${field}"): missing tz…`, { SourceFile, field })
 		// TODO find a real example of a tz fixable with this method
 		// we'd rather not botcher things without it.
 		/*
-		const auto_tz = exif_data[EXIF_FIELD__TZ] ?? undefined //get_default_timezone(get_timestamp_ms_from_ExifDateTime(exiftool_date))
+		const auto_tz = exif_data[EXIF_FIELD__TZ] ?? undefined //getꓽtimezoneⵧdefault(getꓽtimestamp_ms_from_ExifDateTime(exiftool_date))
 		if (auto_tz) {
 			DEBUG && console.log(`  - #${index}: reparsing with better tz…`, { auto_tz })
 			assert(raw_exiftool_date.rawValue, 'exif date has raw value')
@@ -173,9 +173,9 @@ function _get_valid_exifdate_field(field: keyof Tags, exif_data: Immutable<Tags>
 	// further validate the date
 	try {
 		const date = exiftool_date.toDate()
-		assert(date && date.getFullYear, `_get_valid_exifdate_field("${field}") has correct shape (1)`)
-		assert(+date, `_get_valid_exifdate_field("${field}") has correct shape (2)`)
-		assert(+date < +now_legacy, `_get_valid_exifdate_field("${field}") value is ok compared to now`) // seen when recent photo and wrong default timezone => photo in the future
+		assert(date && date.getFullYear, `_getꓽvalid_exifdate_field("${field}") has correct shape (1)`)
+		assert(+date, `_getꓽvalid_exifdate_field("${field}") has correct shape (2)`)
+		assert(+date < +now_legacy, `_getꓽvalid_exifdate_field("${field}") value is ok compared to now`) // seen when recent photo and wrong default timezone => photo in the future
 	}
 	catch (_err) {
 		const err = normalizeError(_err)
@@ -193,9 +193,9 @@ function _get_valid_exifdate_field(field: keyof Tags, exif_data: Immutable<Tags>
 	return exiftool_date
 }
 
-function _intelligently_get_earliest_defined_date_from_selected_fields_of_exif_data(fields: Array<keyof Tags>, exif_data: Immutable<Tags>, { DEBUG }: { DEBUG: boolean }): ExifDateTime | undefined {
+function _intelligently_getꓽearliest_defined_date_from_selected_fields_of_exif_data(fields: Array<keyof Tags>, exif_data: Immutable<Tags>, { DEBUG }: { DEBUG: boolean }): ExifDateTime | undefined {
 	const SourceFile = exif_data[EXIF_FIELD__SOURCEFILE]
-	DEBUG && console.log(`_get_earliest_defined_date_from_selected_fields_of_exif_data() starting…`, { SourceFile })
+	DEBUG && console.log(`_getꓽearliest_defined_date_from_selected_fields_of_exif_data() starting…`, { SourceFile })
 
 	const now_legacy = new LegacyDate()
 	DEBUG && console.log(`- FYI`, { fields, exif_tz: exif_data[EXIF_FIELD__TZ], now_legacy })
@@ -206,7 +206,7 @@ function _intelligently_get_earliest_defined_date_from_selected_fields_of_exif_d
 	const candidate_exifdates: HashOf<ExifDateTime> = fields.reduce((acc: HashOf<ExifDateTime>, field, index) => {
 		DEBUG && console.log(`  - #${index}: reading "${field}"…`)
 
-		let exiftool_date: ExifDateTime | undefined = _get_valid_exifdate_field(field, exif_data, { DEBUG })
+		let exiftool_date: ExifDateTime | undefined = _getꓽvalid_exifdate_field(field, exif_data, { DEBUG })
 		if (exiftool_date)
 			acc[field] = exiftool_date
 
@@ -323,15 +323,15 @@ function _intelligently_get_earliest_defined_date_from_selected_fields_of_exif_d
 		min: getꓽdebug_representation(create_better_date_from_ExifDateTime(min_dateⳇexif)),
 	})
 
-	assert(get_timestamp_ms_from_ExifDateTime(min_dateⳇexif) !== +now_legacy, 'coherent dates') // TODO improve test by taking the date on exec start
+	assert(getꓽtimestamp_ms_from_ExifDateTime(min_dateⳇexif) !== +now_legacy, 'coherent dates') // TODO improve test by taking the date on exec start
 
 	return min_dateⳇexif
 }
 
-function _get_creation_date_from_exif__nocache(exif_data: Immutable<Tags>): ExifDateTime | undefined {
+function _getꓽcreation_date_from_exif__nocache(exif_data: Immutable<Tags>): ExifDateTime | undefined {
 	const SourceFile = exif_data[EXIF_FIELD__SOURCEFILE]
 	const DEBUG = false
-	DEBUG && console.log(`get_creation_date_from_exif() starting…`, { SourceFile })
+	DEBUG && console.log(`getꓽcreation_date_from_exif() starting…`, { SourceFile })
 
 	// if only exif data was reliable… 😭😭😭
 	// unfortunately we encountered several cases of the exif data being botched
@@ -343,7 +343,7 @@ function _get_creation_date_from_exif__nocache(exif_data: Immutable<Tags>): Exif
 	//console.log(exif_data)
 
 	// unreliable in itself, but useful as a cross-validation
-	const earliest_date_from_fs𖾚exif: ExifDateTime | undefined = _intelligently_get_earliest_defined_date_from_selected_fields_of_exif_data(
+	const earliest_date_from_fs𖾚exif: ExifDateTime | undefined = _intelligently_getꓽearliest_defined_date_from_selected_fields_of_exif_data(
 		FS_DATE_FIELDS,
 		exif_data,
 		{
@@ -353,7 +353,7 @@ function _get_creation_date_from_exif__nocache(exif_data: Immutable<Tags>): Exif
 
 	// this undocumented key has been seen as the most reliable in some iPhone photos,
 	// however we'll cross-validate it before using it
-	const date_from_CreationDate𖾚exif: ExifDateTime | undefined = _get_valid_exifdate_field(
+	const date_from_CreationDate𖾚exif: ExifDateTime | undefined = _getꓽvalid_exifdate_field(
 		EXIF_DATE_FIELD__CREATION_DATE,
 		exif_data,
 		{
@@ -362,7 +362,7 @@ function _get_creation_date_from_exif__nocache(exif_data: Immutable<Tags>): Exif
 	)
 
 	// normal algorithm
-	let candidate_date𖾚exif: ExifDateTime | undefined = _intelligently_get_earliest_defined_date_from_selected_fields_of_exif_data(
+	let candidate_date𖾚exif: ExifDateTime | undefined = _intelligently_getꓽearliest_defined_date_from_selected_fields_of_exif_data(
 		EXIF_DATE_FIELDS,
 		exif_data,
 		{
@@ -383,8 +383,8 @@ function _get_creation_date_from_exif__nocache(exif_data: Immutable<Tags>): Exif
 	// we have candidates, let's cross-check them
 	if (date_from_CreationDate𖾚exif) {
 		if (!are_same_tms_date_with_potential_tz_difference(
-			get_timestamp_ms_from_ExifDateTime(candidate_date𖾚exif),
-			get_timestamp_ms_from_ExifDateTime(date_from_CreationDate𖾚exif),
+			getꓽtimestamp_ms_from_ExifDateTime(candidate_date𖾚exif),
+			getꓽtimestamp_ms_from_ExifDateTime(date_from_CreationDate𖾚exif),
 		)) {
 			logger.warn('EXIF compatible file has EXIF dates discrepancy!', {
 				SourceFile,
@@ -404,11 +404,11 @@ function _get_creation_date_from_exif__nocache(exif_data: Immutable<Tags>): Exif
 		// HOWEVER the file date happens to be correct. Attempt to fix the exif date that way...
 
 		if (earliest_date_from_fs𖾚exif && earliest_date_from_fs𖾚exif.tzoffsetMinutes !== undefined
-			&& are_same_tms_date_with_potential_tz_difference(get_timestamp_ms_from_ExifDateTime(earliest_date_from_fs𖾚exif), getꓽtimestamp_ms_from_ExifDateTime(candidate_date𖾚exif))) {
+			&& are_same_tms_date_with_potential_tz_difference(getꓽtimestamp_ms_from_ExifDateTime(earliest_date_from_fs𖾚exif), getꓽtimestamp_ms_from_ExifDateTime(candidate_date𖾚exif))) {
 			// perfect, the FS date is perfectly matching + has a tz
 			candidate_date𖾚exif = earliest_date_from_fs𖾚exif
 			const bd = create_better_date_from_ExifDateTime(candidate_date𖾚exif)
-			/*logger.info(`✔️️ _get_creation_date_from_exif__nocache() recovered missing TZ thanks to fs date.`, {
+			/*logger.info(`✔️️ _getꓽcreation_date_from_exif__nocache() recovered missing TZ thanks to fs date.`, {
 				SourceFile,
 				//tms1: getꓽtimestamp_ms_from_ExifDateTime(earliest_date_from_fs𖾚exif),
 				//tms2: getꓽtimestamp_ms_from_ExifDateTime(candidate_date𖾚exif),
@@ -426,9 +426,9 @@ function _get_creation_date_from_exif__nocache(exif_data: Immutable<Tags>): Exif
 
 export const getꓽbest_creation_date_from_exif = micro_memoize(function getꓽbest_creation_date_from_exif(exif_data: Immutable<Tags>): ExifDateTime | undefined {
 	const SourceFile = exif_data[EXIF_FIELD__SOURCEFILE]
-	assert(SourceFile, `get_creation_date_from_exif() exif data should have SourceFile!`)
+	assert(SourceFile, `getꓽcreation_date_from_exif() exif data should have SourceFile!`)
 
-	return _get_creation_date_from_exif__nocache(exif_data)
+	return _getꓽcreation_date_from_exif__nocache(exif_data)
 }, {
 	//maxSize: 10,
 })

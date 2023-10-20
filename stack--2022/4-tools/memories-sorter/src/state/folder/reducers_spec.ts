@@ -57,7 +57,7 @@ describe(`${LIB} - folder state`, function() {
 			it('should aggregate primary info', async () => {
 				let state = create('foo')
 
-				let file_state = await ALL_MEDIA_DEMOS[0].get_phase1_state()
+				let file_state = await ALL_MEDIA_DEMOS[0].getꓽphase1_state()
 				state = on_subfile_found(state, file_state)
 				expect(state.media_children_pass_1_count).to.equal(0)
 				expect(state.media_children_fs_reliability_count).to.deep.equal({ unknown: 0, unreliable: 0, reliable: 0 })
@@ -114,7 +114,7 @@ describe(`${LIB} - folder state`, function() {
 				it('should set the date range', async () => {
 					let state = create('foo')
 
-					let file_state = await ALL_MEDIA_DEMOS[0].get_phase1_state()
+					let file_state = await ALL_MEDIA_DEMOS[0].getꓽphase1_state()
 					state = on_subfile_found(state, file_state)
 					state = on_subfile_primary_infos_gathered(state, file_state)
 
@@ -133,7 +133,7 @@ describe(`${LIB} - folder state`, function() {
 					expect(state.event_begin_date_symd, 'inferred event begin').to.equal(20180904)
 					expect(state.event_end_date_symd, 'inferred event end').to.equal(20180904)
 
-					let file_state = await ALL_MEDIA_DEMOS[0].get_phase1_state()
+					let file_state = await ALL_MEDIA_DEMOS[0].getꓽphase1_state()
 					state = on_subfile_found(state, file_state)
 					state = on_subfile_primary_infos_gathered(state, file_state)
 
@@ -150,7 +150,7 @@ describe(`${LIB} - folder state`, function() {
 					expect(state.event_end_date_symd).to.equal(20180904)
 					expect(is_current_basename_intentful_of_event_start(state)).to.be.true
 
-					let file_state = await ALL_MEDIA_DEMOS[0].get_phase1_state()
+					let file_state = await ALL_MEDIA_DEMOS[0].getꓽphase1_state()
 					state = on_subfile_found(state, file_state)
 					state = on_subfile_primary_infos_gathered(state, file_state)
 
@@ -164,7 +164,7 @@ describe(`${LIB} - folder state`, function() {
 					expect(state.event_begin_date_symd).to.equal(20180902)
 					expect(state.event_end_date_symd).to.equal(20180902)
 
-					let file_state = await ALL_MEDIA_DEMOS[0].get_phase1_state()
+					let file_state = await ALL_MEDIA_DEMOS[0].getꓽphase1_state()
 					state = on_subfile_found(state, file_state)
 					state = on_subfile_primary_infos_gathered(state, file_state)
 
@@ -181,7 +181,7 @@ describe(`${LIB} - folder state`, function() {
 					it('should demote', async () => {
 						let state = create('holiday 20180704')
 
-						let file_state = await ALL_MEDIA_DEMOS[0].get_phase1_state()
+						let file_state = await ALL_MEDIA_DEMOS[0].getꓽphase1_state()
 						state = on_subfile_found(state, file_state)
 						state = on_subfile_primary_infos_gathered(state, file_state)
 
@@ -198,7 +198,7 @@ describe(`${LIB} - folder state`, function() {
 					it('should not demote but cap the range', async () => {
 						let state = create('20180704 - holiday')
 
-						let file_state = await ALL_MEDIA_DEMOS[0].get_phase1_state()
+						let file_state = await ALL_MEDIA_DEMOS[0].getꓽphase1_state()
 						state = on_subfile_found(state, file_state)
 						state = on_subfile_primary_infos_gathered(state, file_state)
 

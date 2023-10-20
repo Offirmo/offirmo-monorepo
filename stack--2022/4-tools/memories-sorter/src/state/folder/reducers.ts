@@ -3,7 +3,7 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { RelativePath, SimpleYYYYMMDD } from '../../types.js'
-import { Params, getꓽparams, getꓽdefault_timezone } from '../../params.js'
+import { Params, getꓽparams, getꓽtimezoneⵧdefault } from '../../params.js'
 import { pathㆍparse_memoized } from '../../services/name_parser.js'
 import logger from '../../services/logger.js'
 import * as BetterDateLib from '../../services/better-date.js'
@@ -22,19 +22,19 @@ import {
 	State,
 } from './types.js'
 import {
-	get_depth,
-	get_event_end_date‿symd,
-	get_event_range,
-	get_event_begin_date,
+	getꓽdepth,
+	getꓽevent_end_date‿symd,
+	getꓽevent_range,
+	getꓽevent_begin_date,
 	ERROR__RANGE_TOO_BIG,
 	is_looking_like_a_backup,
-	get_event_begin_date_from_basename_if_present_and_confirmed_by_other_sources,
+	getꓽevent_begin_date_from_basename_if_present_and_confirmed_by_other_sources,
 } from './selectors.js'
 
 ////////////////////////////////////
 
-function _get_inferred_folder_type_from_path(id: FolderId, pathㆍparsed: path.ParsedPath): Type {
-	assert(id, '_get_inferred_folder_type_from_path() id')
+function _getꓽinferred_folder_type_from_path(id: FolderId, pathㆍparsed: path.ParsedPath): Type {
+	assert(id, '_getꓽinferred_folder_type_from_path() id')
 
 	if (id === '.') return Type.root
 
@@ -54,7 +54,7 @@ export function create(id: RelativePath): Immutable<State> {
 	logger.trace(`${LIB} create(…)`, { id })
 
 	const pathㆍparsed = pathㆍparse_memoized(id)
-	const type = _get_inferred_folder_type_from_path(id, pathㆍparsed)
+	const type = _getꓽinferred_folder_type_from_path(id, pathㆍparsed)
 
 	return {
 		id,
@@ -104,7 +104,7 @@ export function on_subfile_found(state: Immutable<State>, file_state: Immutable<
 
 function _aggregate_tz(state: Immutable<State>, date: Immutable<BetterDateLib.BetterDate>): Immutable<State> {
 	const previous_aggregated_tz = state.media_children_aggregated_tz
-	const candidate_tz = BetterDateLib.get_embedded_timezone(date)
+	const candidate_tz = BetterDateLib.getꓽembedded_timezone(date)
 
 	logger.trace(`${LIB} _aggregate_tz()`, {
 		previous_aggregated_tz,
@@ -178,7 +178,7 @@ export function on_subfile_primary_infos_gathered(state: Immutable<State>, file_
 	assert(state.media_children_pass_1_count < state.media_children_count, `on_subfile_primary_infos_gathered() should not be called x times!`)
 
 	//////////// consolidate: reliability
-	const file_bcd__reliabilityⵧfrom_fsⵧcurrent = File.get_creation_dateⵧfrom_fsⵧcurrent__reliability_according_to_our_own_trustable_current_primary_date_sources(file_state)
+	const file_bcd__reliabilityⵧfrom_fsⵧcurrent = File.getꓽcreation_dateⵧfrom_fsⵧcurrent__reliability_according_to_our_own_trustable_current_primary_date_sources(file_state)
 	/*if (file_bcd__reliabilityⵧfrom_fsⵧcurrent === 'unreliable') {
 		logger.warn(`⚠️ File "${file_state.id}" fs bcd reliability has been estimated as UNRELIABLE after phase 1`)
 	}*/
@@ -193,7 +193,7 @@ export function on_subfile_primary_infos_gathered(state: Immutable<State>, file_
 	}
 
 	//////////// consolidate: date range -- fs current
-	const file_bcdⵧfrom_fsⵧcurrent‿tms = File.get_creation_dateⵧfrom_fsⵧcurrent‿tms(file_state)
+	const file_bcdⵧfrom_fsⵧcurrent‿tms = File.getꓽcreation_dateⵧfrom_fsⵧcurrent‿tms(file_state)
 
 	const new_children_begin_dateⵧfrom_fsⵧcurrent = Math.min(
 			state.media_children_bcd_ranges.from_fsⵧcurrent?.begin ?? Infinity,
@@ -213,12 +213,12 @@ export function on_subfile_primary_infos_gathered(state: Immutable<State>, file_
 			{
 				id: state.id,
 				...(new_children_begin_dateⵧfrom_fsⵧcurrent !== state.media_children_bcd_ranges.from_fsⵧcurrent?.begin && {
-					begin_before: BetterDateLib.get_debug_representation(state.media_children_bcd_ranges.from_fsⵧcurrent?.begin),
-					begin_new: BetterDateLib.get_debug_representation(new_children_begin_dateⵧfrom_fsⵧcurrent),
+					begin_before: BetterDateLib.getꓽdebug_representation(state.media_children_bcd_ranges.from_fsⵧcurrent?.begin),
+					begin_new: BetterDateLib.getꓽdebug_representation(new_children_begin_dateⵧfrom_fsⵧcurrent),
 				}),
 				...(new_children_end_dateⵧfrom_fsⵧcurrent !== state.media_children_bcd_ranges.from_fsⵧcurrent?.end && {
-					end_before: BetterDateLib.get_debug_representation(state.media_children_bcd_ranges.from_fsⵧcurrent?.end),
-					end_new: BetterDateLib.get_debug_representation(new_children_end_dateⵧfrom_fsⵧcurrent),
+					end_before: BetterDateLib.getꓽdebug_representation(state.media_children_bcd_ranges.from_fsⵧcurrent?.end),
+					end_new: BetterDateLib.getꓽdebug_representation(new_children_end_dateⵧfrom_fsⵧcurrent),
 				}),
 			}
 		)
@@ -238,7 +238,7 @@ export function on_subfile_primary_infos_gathered(state: Immutable<State>, file_
 
 	//////////// consolidate: date range -- primary current
 	assert(!File.has_neighbor_hints(file_state), `on_subfile_primary_infos_gathered() should not have neighbor hints yet`)
-	const file_bcdⵧfrom_primaryⵧcurrent‿meta = File.get_best_creation_dateⵧfrom_current_data‿meta(file_state)
+	const file_bcdⵧfrom_primaryⵧcurrent‿meta = File.getꓽbest_creation_dateⵧfrom_current_data‿meta(file_state)
 	if (file_bcdⵧfrom_primaryⵧcurrent‿meta.confidence !== 'primary') {
 		// low confidence = don't act on that
 	}
@@ -257,10 +257,10 @@ export function on_subfile_primary_infos_gathered(state: Immutable<State>, file_
 			)
 
 		/*console.log({
-			sb: BetterDateLib.get_debug_representation(state.media_children_bcd_ranges.from_primaryⵧcurrentⵧphase_1?.begin),
-			cb: BetterDateLib.get_debug_representation(new_children_begin_dateⵧfrom_primaryⵧcurrent),
-			se: BetterDateLib.get_debug_representation(state.media_children_bcd_ranges.from_primaryⵧcurrentⵧphase_1?.end),
-			ce: BetterDateLib.get_debug_representation(new_children_end_dateⵧfrom_primaryⵧcurrent),
+			sb: BetterDateLib.getꓽdebug_representation(state.media_children_bcd_ranges.from_primaryⵧcurrentⵧphase_1?.begin),
+			cb: BetterDateLib.getꓽdebug_representation(new_children_begin_dateⵧfrom_primaryⵧcurrent),
+			se: BetterDateLib.getꓽdebug_representation(state.media_children_bcd_ranges.from_primaryⵧcurrentⵧphase_1?.end),
+			ce: BetterDateLib.getꓽdebug_representation(new_children_end_dateⵧfrom_primaryⵧcurrent),
 		})*/
 
 		if (  BetterDateLib.is_deep_equal(new_children_begin_dateⵧfrom_primaryⵧcurrent, state.media_children_bcd_ranges.from_primaryⵧcurrentⵧphase_1?.begin)
@@ -273,12 +273,12 @@ export function on_subfile_primary_infos_gathered(state: Immutable<State>, file_
 					id: state.id,
 					file_id: file_state.id,
 					...(new_children_begin_dateⵧfrom_primaryⵧcurrent !== state.media_children_bcd_ranges.from_primaryⵧcurrentⵧphase_1?.begin && {
-						begin_before: BetterDateLib.get_debug_representation(state.media_children_bcd_ranges.from_primaryⵧcurrentⵧphase_1?.begin),
-						begin_now: BetterDateLib.get_debug_representation(new_children_begin_dateⵧfrom_primaryⵧcurrent),
+						begin_before: BetterDateLib.getꓽdebug_representation(state.media_children_bcd_ranges.from_primaryⵧcurrentⵧphase_1?.begin),
+						begin_now: BetterDateLib.getꓽdebug_representation(new_children_begin_dateⵧfrom_primaryⵧcurrent),
 					}),
 					...(new_children_end_dateⵧfrom_primaryⵧcurrent !== state.media_children_bcd_ranges.from_primaryⵧcurrentⵧphase_1?.end && {
-						end_before: BetterDateLib.get_debug_representation(state.media_children_bcd_ranges.from_primaryⵧcurrentⵧphase_1?.end),
-						end_now: BetterDateLib.get_debug_representation(new_children_end_dateⵧfrom_primaryⵧcurrent),
+						end_before: BetterDateLib.getꓽdebug_representation(state.media_children_bcd_ranges.from_primaryⵧcurrentⵧphase_1?.end),
+						end_now: BetterDateLib.getꓽdebug_representation(new_children_end_dateⵧfrom_primaryⵧcurrent),
 					}),
 				}
 			)
@@ -338,7 +338,7 @@ export function on_subfile_all_infos_gathered(state: Immutable<State>, file_stat
 	assert(state.media_children_pass_2_count < state.media_children_count, `on_subfile_all_infos_gathered() should not be called x times!`)
 
 	//////////// consolidate: date range -- primary final
-	const file_bcd‿meta = File.get_best_creation_date‿meta(file_state)
+	const file_bcd‿meta = File.getꓽbest_creation_date‿meta(file_state)
 	if (file_bcd‿meta.confidence !== 'primary') {
 		// low confidence = don't act on that
 	}
@@ -365,12 +365,12 @@ export function on_subfile_all_infos_gathered(state: Immutable<State>, file_stat
 				{
 					id: state.id,
 					...(new_children_begin_date__primary_final !== state.media_children_bcd_ranges.from_primaryⵧfinal?.begin && {
-						begin_before: BetterDateLib.get_debug_representation(state.media_children_bcd_ranges.from_primaryⵧfinal?.begin),
-						begin_now: BetterDateLib.get_debug_representation(new_children_begin_date__primary_final),
+						begin_before: BetterDateLib.getꓽdebug_representation(state.media_children_bcd_ranges.from_primaryⵧfinal?.begin),
+						begin_now: BetterDateLib.getꓽdebug_representation(new_children_begin_date__primary_final),
 					}),
 					...(new_children_end_date__primary_final !== state.media_children_bcd_ranges.from_primaryⵧfinal?.end && {
-						end_before: BetterDateLib.get_debug_representation(state.media_children_bcd_ranges.from_primaryⵧfinal?.end),
-						end_now: BetterDateLib.get_debug_representation(new_children_end_date__primary_final),
+						end_before: BetterDateLib.getꓽdebug_representation(state.media_children_bcd_ranges.from_primaryⵧfinal?.end),
+						end_now: BetterDateLib.getꓽdebug_representation(new_children_end_date__primary_final),
 					}),
 				}
 			)
@@ -430,7 +430,7 @@ export function on_all_infos_gathered(state: Immutable<State>): Immutable<State>
 					// replace with an explicit tz
 					state = {
 						...state,
-						media_children_aggregated_tz: getꓽdefault_timezone(BetterDateLib.get_timestamp_utc_ms_from(event_range.begin))
+						media_children_aggregated_tz: getꓽtimezoneⵧdefault(BetterDateLib.getꓽtimestamp_utc_ms_from(event_range.begin))
 					}
 					logger.debug(`${LIB} settling down on tz="${state.media_children_aggregated_tz}" for folder "${state.id}"`)
 				}
@@ -440,7 +440,7 @@ export function on_all_infos_gathered(state: Immutable<State>): Immutable<State>
 					id: state.id,
 					media_children_count,
 					folder_tz: state.media_children_aggregated_tz,
-					event_range: BetterDateLib.get_range_debug_representation(event_range),
+					event_range: BetterDateLib.getꓽrange_debug_representation(event_range),
 					// TODO range size in days
 				})
 			}
@@ -463,17 +463,17 @@ export function on_all_infos_gathered(state: Immutable<State>): Immutable<State>
 	return  state
 }
 
-export function on_overlap_clarified(state: Immutable<State>, target_end_date‿symd: SimpleYYYYMMDD, PARAMS: Immutable<Params> = getꓽparams()): Immutable<State> {
+export function on_overlap_clarified(state: Immutable<State>, targetꓽend_date‿symd: SimpleYYYYMMDD, PARAMS: Immutable<Params> = getꓽparams()): Immutable<State> {
 	logger.trace(`${LIB} on_overlap_clarified(…)`, {
 		prev_end_date‿symd: getꓽevent_end_date‿symd(state),
-		new_end_date‿symd: target_end_date‿symd,
+		new_end_date‿symd: targetꓽend_date‿symd,
 	})
 
 	assert(state.type === Type.event, `on_overlap_clarified() should be called on an event`)
-	assert(!!get_event_range(state), `on_overlap_clarified() should be called on a dated event`)
+	assert(!!getꓽevent_range(state), `on_overlap_clarified() should be called on a dated event`)
 
-	const end_date = BetterDateLib.create_better_date_from_symd(target_end_date‿symd, 'tz:auto')
-	const capped_end_date = BetterDateLib.add_days(get_event_begin_date(state), PARAMS.max_event_durationⳇₓday)
+	const end_date = BetterDateLib.create_better_date_from_symd(targetꓽend_date‿symd, 'tz:auto')
+	const capped_end_date = BetterDateLib.add_days(getꓽevent_begin_date(state), PARAMS.event_durationⵧmax‿ₓday)
 	assert(BetterDateLib.compare_utc(end_date, capped_end_date) <= 0, `on_overlap_clarified() target event range should be acceptable`)
 
 	return {

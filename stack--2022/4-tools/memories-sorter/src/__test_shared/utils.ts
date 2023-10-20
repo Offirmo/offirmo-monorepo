@@ -11,11 +11,11 @@ import hasha from 'hasha'
 
 import {
 	BetterDate,
-	_get_exif_datetime,
+	_getꓽexif_datetime,
 	create_better_date,
-	get_compact_date,
-	get_human_readable_timestamp_auto,
-	get_timestamp_utc_ms_from,
+	getꓽcompact_date,
+	getꓽhuman_readable_timestamp_auto,
+	getꓽtimestamp_utc_ms_from,
 } from '../services/better-date.js'
 import {
 	PersistedNotes,
@@ -67,7 +67,7 @@ export const REAL_CREATION_DATE‿HRTS = getꓽhuman_readable_timestamp_auto(REA
 assert(REAL_CREATION_DATE‿HRTS === '2003-03-13_23h33m43s333', 'REAL_CREATION_DATE‿HRTS should be correct')
 export const REAL_CREATION_DATE‿TMS = getꓽtimestamp_utc_ms_from(REAL_CREATION_DATE)
 const REAL_CREATION_DATE‿LEGACY = new Date(REAL_CREATION_DATE‿TMS)
-export const REAL_CREATION_DATE‿EXIF = _get_exif_datetime(REAL_CREATION_DATE)
+export const REAL_CREATION_DATE‿EXIF = _getꓽexif_datetime(REAL_CREATION_DATE)
 
 // must be OLDER yet we won't pick it
 const BAD_CREATION_DATE_CANDIDATE = enforceꓽimmutable(create_better_date('tz:auto', 2006, 6, 26, 16, 36, 46, 666))
@@ -75,10 +75,10 @@ export const BAD_CREATION_DATE_CANDIDATE‿HRTS = getꓽhuman_readable_timestamp
 assert(BAD_CREATION_DATE_CANDIDATE‿HRTS === '2006-06-26_16h36m46s666', 'BAD_CREATION_DATE_CANDIDATE‿HRTS should be correct')
 export const BAD_CREATION_DATE_CANDIDATE‿TMS = getꓽtimestamp_utc_ms_from(BAD_CREATION_DATE_CANDIDATE)
 const BAD_CREATION_DATE_CANDIDATE‿LEGACY = new Date(BAD_CREATION_DATE_CANDIDATE‿TMS)
-const BAD_CREATION_DATE_CANDIDATE‿EXIF = _get_exif_datetime(BAD_CREATION_DATE_CANDIDATE)
+const BAD_CREATION_DATE_CANDIDATE‿EXIF = _getꓽexif_datetime(BAD_CREATION_DATE_CANDIDATE)
 const BAD_CREATION_DATE_CANDIDATE‿SYMD = getꓽcompact_date(BAD_CREATION_DATE_CANDIDATE, 'tz:embedded')
 /*console.log({
-	dtz: getꓽdefault_timezone(BAD_CREATION_DATE_CANDIDATE‿TMS),
+	dtz: getꓽtimezoneⵧdefault(BAD_CREATION_DATE_CANDIDATE‿TMS),
 	BAD_CREATION_DATE_CANDIDATE,
 	bcd_tz: getꓽembedded_timezone(BAD_CREATION_DATE_CANDIDATE),
 	tt: create_better_date_from_utc_tms(BAD_CREATION_DATE_CANDIDATE‿TMS, 'tz:auto'),
@@ -109,14 +109,14 @@ function getꓽDEFAULT_FILE_INPUTS() {
 }
 type FileInputs = ReturnType<typeof getꓽDEFAULT_FILE_INPUTS>
 
-function _get_file_id(inputs: Immutable<FileInputs>): FileLib.FileId {
+function _getꓽfile_id(inputs: Immutable<FileInputs>): FileLib.FileId {
 	return path.join(...[
 			//...inputs.parent_pathⵧcurrent‿relative.split(path.sep),
 			inputs.parent_pathⵧcurrent‿relative,
 			inputs.basenameⵧcurrent,
 		].filter(x => !!x) as string[])
 }
-function _get_auto_notes(inputs: Immutable<FileInputs>): PersistedNotes {
+function _getꓽauto_notes(inputs: Immutable<FileInputs>): PersistedNotes {
 	return {
 		_currently_known_as: 'whatever, write-only.xyz',
 		_bcd_afawk‿symd: undefined,
@@ -139,7 +139,7 @@ function _get_auto_notes(inputs: Immutable<FileInputs>): PersistedNotes {
 		},
 	}
 }
-function _get_auto_fs_stats(inputs: Immutable<FileInputs>): FsStatsSubset {
+function _getꓽauto_fs_stats(inputs: Immutable<FileInputs>): FsStatsSubset {
 	return {
 		birthtimeMs: inputs.dateⵧfsⵧcurrent‿tms,
 		atimeMs:     inputs.dateⵧfsⵧcurrent‿tms + 10000,
@@ -147,9 +147,9 @@ function _get_auto_fs_stats(inputs: Immutable<FileInputs>): FsStatsSubset {
 		ctimeMs:     inputs.dateⵧfsⵧcurrent‿tms + 10000,
 	}
 }
-function _get_auto_exif_data(inputs: Immutable<FileInputs>): EXIFTags {
+function _getꓽauto_exif_data(inputs: Immutable<FileInputs>): EXIFTags {
 	const exif_data = {
-		SourceFile: _get_file_id(inputs),
+		SourceFile: _getꓽfile_id(inputs),
 		...(inputs.dateⵧexif && {
 			// may be exif powered without the info we need
 			'CreateDate': inputs.dateⵧexif,
@@ -159,7 +159,7 @@ function _get_auto_exif_data(inputs: Immutable<FileInputs>): EXIFTags {
 			// TODO exif orientation
 		} as EXIFTags),
 	}
-	//console.log('_get_auto_exif_data() EXIFTags', exif_data)
+	//console.log('_getꓽauto_exif_data() EXIFTags', exif_data)
 	return exif_data
 }
 
@@ -184,12 +184,12 @@ export function getꓽtest_single_file_state_generator(stategen_to_copy?: Immuta
 
 	function create_test_file_state(up_to: 'phase-1' | 'phase-2' = 'phase-2'): Immutable<FileLib.State> {
 		//console.log('create_test_file_state()', inputs)
-		const id = _get_file_id(inputs)
+		const id = _getꓽfile_id(inputs)
 		let state = FileLib.create(id)
 
-		state = FileLib.on_info_read__fs_stats(state, _get_auto_fs_stats(inputs))
+		state = FileLib.on_info_read__fs_stats(state, _getꓽauto_fs_stats(inputs))
 		if (FileLib.is_exif_powered_media_file(state)) {
-			state = FileLib.on_info_read__exif(state, _get_auto_exif_data(inputs))
+			state = FileLib.on_info_read__exif(state, _getꓽauto_exif_data(inputs))
 		}
 		state = FileLib.on_info_read__hash(state, inputs.hashⵧcurrent)
 
@@ -206,7 +206,7 @@ export function getꓽtest_single_file_state_generator(stategen_to_copy?: Immuta
 			let notes: null | Immutable<PersistedNotes> = (() => {
 				const notes = structuredClone(
 					inputs.notes === 'auto'
-						? _get_auto_notes(inputs)
+						? _getꓽauto_notes(inputs)
 						: inputs.notes
 				) as PersistedNotes
 				if (notes)
@@ -224,8 +224,8 @@ export function getꓽtest_single_file_state_generator(stategen_to_copy?: Immuta
 		inputs,
 		reset,
 		create_state: create_test_file_state,
-		get_phase1_state: () => create_test_file_state('phase-1'),
-		get_phase2_state: create_test_file_state,
+		getꓽphase1_state: () => create_test_file_state('phase-1'),
+		getꓽphase2_state: create_test_file_state,
 	}
 }
 
@@ -247,7 +247,7 @@ export function getꓽtest_single_file_DB_state_generator() {
 	}
 
 	function getꓽfile_id(): FileLib.FileId {
-		return _get_file_id(inputs.file)
+		return _getꓽfile_id(inputs.file)
 	}
 
 	function create_test_db_state(): Immutable<DB.State> {
@@ -255,7 +255,7 @@ export function getꓽtest_single_file_DB_state_generator() {
 
 		let state = DB.create('root')
 
-		function _get_file_state(): Immutable<FileLib.State> {
+		function _getꓽfile_state(): Immutable<FileLib.State> {
 			return state.files[file_id]!
 		}
 
@@ -270,9 +270,9 @@ export function getꓽtest_single_file_DB_state_generator() {
 		state = DB.on_file_found(state, '.', file_id)
 
 		state = DB.on_hash_computed(state, file_id, inputs.file.hashⵧcurrent)
-		state = DB.on_fs_stats_read(state, file_id, _get_auto_fs_stats(inputs.file))
-		if (FileLib.is_exif_powered_media_file(_get_file_state())) {
-			state = DB.on_exif_read(state, file_id, _get_auto_exif_data(inputs.file))
+		state = DB.on_fs_stats_read(state, file_id, _getꓽauto_fs_stats(inputs.file))
+		if (FileLib.is_exif_powered_media_file(_getꓽfile_state())) {
+			state = DB.on_exif_read(state, file_id, _getꓽauto_exif_data(inputs.file))
 		}
 
 		let notes = null as null | Immutable<Notes.State>
@@ -282,7 +282,7 @@ export function getꓽtest_single_file_DB_state_generator() {
 				...notes,
 				encountered_files: {
 					...notes.encountered_files,
-					[inputs.file.hashⵧcurrent]: _get_auto_notes(inputs.file),
+					[inputs.file.hashⵧcurrent]: _getꓽauto_notes(inputs.file),
 				}
 			}
 			state = DB.on_note_file_found(state, notes)
@@ -299,6 +299,6 @@ export function getꓽtest_single_file_DB_state_generator() {
 		inputs,
 		reset,
 		create_state: create_test_db_state,
-		get_file_id,
+		getꓽfile_id,
 	}
 }

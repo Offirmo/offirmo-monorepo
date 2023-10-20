@@ -5,7 +5,7 @@ import { getRootSEC, SoftExecutionContext } from '@offirmo-private/soft-executio
 import { LIB } from '../consts.js'
 import logger from './logger.js'
 
-const getꓽSEC = memoize_once(function _get_lib_SEC(parent?: SoftExecutionContext): SoftExecutionContext {
+const getꓽSEC = memoize_once(function _getꓽlib_SEC(parent?: SoftExecutionContext): SoftExecutionContext {
 	// TODO review memoize?
 	return (parent || getRootSEC())
 		.createChild()

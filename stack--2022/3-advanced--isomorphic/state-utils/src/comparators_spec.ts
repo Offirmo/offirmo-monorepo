@@ -10,7 +10,7 @@ import {
 } from './_test_helpers.js'
 
 import {
-	get_json_difference,
+	getꓽjson_difference,
 	SemanticDifference,
 	s_max,
 	UNCLEAR_get_difference,
@@ -26,10 +26,10 @@ import {
 
 describe(`${LIB} - comparators`, function() {
 
-	describe('get_json_difference()', function() {
+	describe('getꓽjson_difference()', function() {
 
 		it('should work', () => {
-			const nodiff = get_json_difference({
+			const nodiff = getꓽjson_difference({
 					foo: 33,
 				},
 				{
@@ -37,7 +37,7 @@ describe(`${LIB} - comparators`, function() {
 				})
 			expect(nodiff, 'no diff').to.deep.equal(undefined)
 
-			const diff = get_json_difference({
+			const diff = getꓽjson_difference({
 					foo: 33,
 					bar:42,
 				},

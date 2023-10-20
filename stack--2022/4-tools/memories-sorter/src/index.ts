@@ -14,7 +14,7 @@ console.log(`******* ${LIB.toUpperCase()} *******`)
 ////////////////////////////////////
 
 
-async function sort_all_medias(PARAMS: Immutable<Params> = getꓽparams()) {
+async function sortꓽmedias__all(PARAMS: Immutable<Params> = getꓽparams()) {
 	// for debug
 	const up_to = 'cleanup' as 'explore_and_take_notes' | 'deduplicate' | 'normalize' | 'move' | 'cleanup'
 
@@ -31,11 +31,11 @@ async function sort_all_medias(PARAMS: Immutable<Params> = getꓽparams()) {
 		logger.group('******* 1. STARTING EXPLORATION PHASE *******')
 		db = DB.explore_fs_recursively(db)
 		db = await exec_pending_actions_recursively_until_no_more(db, '1.1 explore_fs_recursively')
-		assert(DB.get_pending_actions(db).length === 0, 'eq 1')
+		assert(DB.getꓽpending_actions(db).length === 0, 'eq 1')
 		logger.verbose('>>>>>>> FS READ, NOW CONSOLIDATING >>>>>>>')
 		db = DB.on_fs_exploration_done_consolidate_data_and_backup_originals(db)
 		db = await exec_pending_actions_recursively_until_no_more(db, '1.2 on_fs_exploration_done_consolidate_data_and_backup_originals')
-		assert(DB.get_pending_actions(db).length === 0, 'eq 2')
+		assert(DB.getꓽpending_actions(db).length === 0, 'eq 2')
 		logger.verbose('>>>>>>> CONSOLIDATION DONE ✔️ >>>>>>>')
 		db = DB.backup_notes(db, 'mode:intermediate')
 		db = await exec_pending_actions_recursively_until_no_more(db, '1.3 backup_notes')
@@ -49,7 +49,7 @@ async function sort_all_medias(PARAMS: Immutable<Params> = getꓽparams()) {
 		// let's do it first so that we can clean the copy markers, unneeded
 		db = DB.clean_up_duplicates(db)
 		db = await exec_pending_actions_recursively_until_no_more(db, '2.0 clean_up_duplicates')
-		assert(DB.get_pending_actions(db).length === 0, 'eq 3')
+		assert(DB.getꓽpending_actions(db).length === 0, 'eq 3')
 		logger.groupEnd()
 		if (up_to === 'deduplicate') return
 
@@ -77,7 +77,7 @@ async function sort_all_medias(PARAMS: Immutable<Params> = getꓽparams()) {
 		logger.group('******* 5. STARTING FINAL CLEANUP PHASE *******')
 		db = DB.clean_non_canonical_notes(db)
 		db = await exec_pending_actions_recursively_until_no_more(db, '5.0 clean_misplaced_notes')
-		const max_folder_depth = DB.get_max_folder_depth(db)
+		const max_folder_depth = DB.getꓽmax_folder_depth(db)
 		console.log({ max_folder_depth })
 		for(let depth = max_folder_depth; depth >= 0; --depth) {
 			db = DB.delete_empty_folders_recursively(db, depth)
@@ -97,7 +97,7 @@ async function sort_all_medias(PARAMS: Immutable<Params> = getꓽparams()) {
 
 ////////////////////////////////////
 
-sort_all_medias()
+sortꓽmedias__all()
 	.then(() => logger.info('All done, my pleasure!'))
 	.catch(err => logger.fatal('Crash, please report.', { err }))
 	.finally(() => {

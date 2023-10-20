@@ -1,15 +1,15 @@
 import { expect } from 'chai'
 import { _test_only__reset_root_SEC } from '@offirmo-private/soft-execution-context'
 
-import { LIB, NOTES_BASENAME_SUFFIX_LC } from '../../consts.js'
+import { LIB, NOTES_FILE__BASENAME‿LC } from '../../consts.js'
 import * as Notes from '../notes/index.js'
 import {
 	clean_up_duplicates,
 	create,
 	discard_all_pending_actions,
-	get_first_pending_action,
-	get_past_and_present_notes,
-	get_pending_actions,
+	getꓽfirst_pending_action,
+	getꓽpast_and_present_notes,
+	getꓽpending_actions,
 	normalize_files_in_place,
 	on_exif_read,
 	on_file_deleted,
@@ -22,7 +22,7 @@ import {
 	on_note_file_found,
 	to_string,
 } from './index.js'
-import { create_better_date, _get_exif_datetime, getꓽtimestamp_utc_ms_from } from '../../services/better-date.js'
+import { create_better_date, _getꓽexif_datetime, getꓽtimestamp_utc_ms_from } from '../../services/better-date.js'
 import * as File from '../file/index.js'
 
 /////////////////////
@@ -78,15 +78,15 @@ describe(`${LIB} - DB (state) aka. root state`, function() {
 
 				state = on_exif_read(state, 'foo.jpg', {
 					'SourceFile': 'foo.jpg',
-					'CreateDate': _get_exif_datetime(CREATION_DATE),
+					'CreateDate': _getꓽexif_datetime(CREATION_DATE),
 				})
 				state = on_exif_read(state, 'bar.jpg', {
 					'SourceFile': 'bar.jpg',
-					'CreateDate': _get_exif_datetime(CREATION_DATE),
+					'CreateDate': _getꓽexif_datetime(CREATION_DATE),
 				})
 				state = on_exif_read(state, 'baz.jpg', {
 					'SourceFile': 'baz.jpg',
-					'CreateDate': _get_exif_datetime(CREATION_DATE),
+					'CreateDate': _getꓽexif_datetime(CREATION_DATE),
 				})
 
 				state = on_fs_exploration_done_consolidate_data_and_backup_originals(state)
@@ -98,8 +98,8 @@ describe(`${LIB} - DB (state) aka. root state`, function() {
 				state = clean_up_duplicates(state)
 
 				//console.log(to_string(state))
-				expect(get_pending_actions(state)).to.have.lengthOf(1)
-				expect(get_first_pending_action(state)).to.deep.equal({
+				expect(getꓽpending_actions(state)).to.have.lengthOf(1)
+				expect(getꓽfirst_pending_action(state)).to.deep.equal({
 					type: 'delete_file',
 					id: 'baz.jpg'
 				})
@@ -144,8 +144,8 @@ describe(`${LIB} - DB (state) aka. root state`, function() {
 				state = clean_up_duplicates(state)
 
 				//console.log(to_string(state))
-				expect(get_pending_actions(state)).to.have.lengthOf(1)
-				expect(get_first_pending_action(state)).to.deep.equal({
+				expect(getꓽpending_actions(state)).to.have.lengthOf(1)
+				expect(getꓽfirst_pending_action(state)).to.deep.equal({
 					type: 'delete_file',
 					id: 'foo/description.txt',
 				})
@@ -193,7 +193,7 @@ describe(`${LIB} - DB (state) aka. root state`, function() {
 				state = on_file_found(state, '.', file_ut_basename)
 				// (no notes found)
 
-				expect(get_pending_actions(state), 'after exploration').to.have.lengthOf(3)
+				expect(getꓽpending_actions(state), 'after exploration').to.have.lengthOf(3)
 				state = on_hash_computed(state, file_ut_basename, 'hash01')
 				state = on_fs_stats_read(state, file_ut_basename, {
 					birthtimeMs: CREATION_DATE_MS,
@@ -202,23 +202,23 @@ describe(`${LIB} - DB (state) aka. root state`, function() {
 					ctimeMs:     CREATION_DATE_MS,
 				})
 				// load notes: none
-				expect(get_pending_actions(state), 'after primary infos 1').to.have.lengthOf(3) // explore, hash, fs.stats
+				expect(getꓽpending_actions(state), 'after primary infos 1').to.have.lengthOf(3) // explore, hash, fs.stats
 				state = discard_all_pending_actions(state)
 
 				state = on_fs_exploration_done_consolidate_data_and_backup_originals(state)
 				DEBUG && console.log('exploration done.')
-				expect(get_pending_actions(state), 'after consolidation 1').to.have.lengthOf(0) // formerly auto notes bkp, removed
+				expect(getꓽpending_actions(state), 'after consolidation 1').to.have.lengthOf(0) // formerly auto notes bkp, removed
 				persisted_notes = getꓽpast_and_present_notes(state)
 				//state = discard_all_pending_actions(state)
 
 				state = clean_up_duplicates(state)
-				expect(get_pending_actions(state), 'after clean up duplicate 1').to.have.lengthOf(0) // no duplicates
+				expect(getꓽpending_actions(state), 'after clean up duplicate 1').to.have.lengthOf(0) // no duplicates
 				persisted_notes = getꓽpast_and_present_notes(state)
 				//state = discard_all_pending_actions(state)
 
 				state = normalize_files_in_place(state)
-				expect(get_pending_actions(state), 'after normalize 1').to.have.lengthOf(1) // normalize
-				let next_id = File.get_ideal_basename(state.files[file_ut_basename])
+				expect(getꓽpending_actions(state), 'after normalize 1').to.have.lengthOf(1) // normalize
+				let next_id = File.getꓽideal_basename(state.files[file_ut_basename])
 				expect(next_id).to.equal('MM2019-07-31_21h00m15_screenshot.png')
 				//console.log(next_id, state.files)
 				state = on_file_moved(state, file_ut_basename, next_id)
@@ -240,10 +240,10 @@ describe(`${LIB} - DB (state) aka. root state`, function() {
 				state = on_folder_found(state, '', '.')
 				state = on_file_found(state, '.', file_ut_basename)
 				// notes found this time!
-				state = on_file_found(state, '.', NOTES_BASENAME_SUFFIX_LC)
+				state = on_file_found(state, '.', NOTES_FILE__BASENAME‿LC)
 
 				//console.log(state.queue)
-				expect(get_pending_actions(state), 'after explore 2').to.have.lengthOf(4) // explore, hash, fs stats, load notes
+				expect(getꓽpending_actions(state), 'after explore 2').to.have.lengthOf(4) // explore, hash, fs stats, load notes
 				state = discard_all_pending_actions(state)
 				// explore done = #1
 				state = on_hash_computed(state, file_ut_basename, 'hash01') // #2
@@ -260,19 +260,19 @@ describe(`${LIB} - DB (state) aka. root state`, function() {
 					ctimeMs:     +Date.now(),
 				})*/
 				state = on_note_file_found(state, persisted_notes) // #5
-				expect(get_pending_actions(state), 'after load data 2').to.have.lengthOf(0)
+				expect(getꓽpending_actions(state), 'after load data 2').to.have.lengthOf(0)
 
 				state = on_fs_exploration_done_consolidate_data_and_backup_originals(state)
-				expect(get_pending_actions(state), 'after consolidation 2').to.have.lengthOf(0)
+				expect(getꓽpending_actions(state), 'after consolidation 2').to.have.lengthOf(0)
 				persisted_notes = getꓽpast_and_present_notes(state)
 				//state = discard_all_pending_actions(state)
 
 				state = clean_up_duplicates(state)
-				expect(get_pending_actions(state), 'after duplicate 2').to.have.lengthOf(0)
+				expect(getꓽpending_actions(state), 'after duplicate 2').to.have.lengthOf(0)
 				persisted_notes = getꓽpast_and_present_notes(state)
 				state = discard_all_pending_actions(state)
 
-				next_id = File.get_ideal_basename(state.files[file_ut_basename])
+				next_id = File.getꓽideal_basename(state.files[file_ut_basename])
 				expect(next_id).to.equal(file_ut_basename) // should be stable!!!
 
 				//console.log(to_string(state))
