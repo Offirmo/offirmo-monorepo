@@ -50,7 +50,7 @@
 		"emitDecoratorMetadata": false,
 		"experimentalDecorators": false,
 		"jsx": "preserve",
-		"lib": [ "ES2022" ],
+		"lib": [ "ES2023" ],
 		"target": "ES2022",
 
 

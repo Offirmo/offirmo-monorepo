@@ -23,10 +23,12 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 - [ ] TODO remove all cjs since we can no longer generate it since Typescript 5.2
 - [ ] TODO DONE TS supports [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762) = update unit tests!
 - [ ] 🆙2023-10-24 oldest active LTS node 18 → 20  https://github.com/nodejs/release#release-schedule
+- [ ] 🆙2024-10-29 oldest active LTS node 20 → 22  https://github.com/nodejs/release#release-schedule
+- [ ] 🆙2025-10-28 oldest active LTS node 22 → 24  https://github.com/nodejs/release#release-schedule
 - [ ] mid 2024 [ES2024](https://en.wikipedia.org/wiki/ECMAScript_version_history)
 - [ ] TS supports importing .ts
 - [ ] TS supports exporting with explicit module infos
-- [ ] webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
+- [ ] 🆙webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
 
 
 

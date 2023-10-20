@@ -32,10 +32,11 @@ const cli = meow('build', {
 
 /////////////////////
 
-// [Last updated 2023/08](update marker)
+// [Last updated 2023/10](update marker)
 // note: we could object to this info being duplicated here from tsconfig
 // but it's better semantic (hard to comment in tsconfig)
-const LATEST_ES_OLDEST_ACTIVE_NODE_LTS = 'ES2022' // should be <= LATEST_CONVENIENT_ES
+const LATEST_ESⵧSUPPORTED_BY_TYPESCRIPTⵧIN_LIB = 'ES2023' // = "max ES we can use"
+const LATEST_ESⵧSUPPORTED_BY_ENVꘌOLDEST_ACTIVE_NODE_LTS = 'ES2023' // should be <= LATEST_ESⵧSUPPORTED_BY_TYPESCRIPTⵧIN_LIB
 const LATEST_ES_MODULES = 'ES2022' // from https://www.typescriptlang.org/tsconfig#module
 // "NodeNext" is recommended by https://2ality.com/2021/06/typescript-esm-nodejs.html
 // BUT NO! "NodeNext" is an "intelligent" setting that also affects module resolution https://www.typescriptlang.org/tsconfig#node16nodenext-nightly-builds
@@ -73,9 +74,9 @@ const ROOT_TSCONFIG_JSON = await (async () => {
 		throw err
 	}
 })()
-const LATEST_CONVENIENT_ES = ROOT_TSCONFIG_JSON.compilerOptions.target
-assert(ROOT_TSCONFIG_JSON.compilerOptions.lib.includes(LATEST_CONVENIENT_ES), 'root tsconfig and this script should be in sync: lib')
+assert(ROOT_TSCONFIG_JSON.compilerOptions.lib.includes(LATEST_ESⵧSUPPORTED_BY_TYPESCRIPTⵧIN_LIB), 'root tsconfig and this script should be in sync: lib')
 assert(ROOT_TSCONFIG_JSON.compilerOptions.module === LATEST_ES_MODULES, 'root tsconfig and this script should be in sync: module')
+const LATEST_ESⵧSUPPORTED_BY_TYPESCRIPTⵧAS_TARGET = ROOT_TSCONFIG_JSON.compilerOptions.target
 
 /////////////////////
 
@@ -91,7 +92,8 @@ let compilerOptions = {
 
 // BROKEN since typescript 5.2 2023/10
 function build_cjs() {
-	const target = LATEST_ES_OLDEST_ACTIVE_NODE_LTS.toLowerCase()
+	// cjs usually = node! BUT NOT TRUE TODO FIX SEMANTIC
+	const target = LATEST_ESⵧSUPPORTED_BY_ENVꘌOLDEST_ACTIVE_NODE_LTS.toLowerCase()
 	const out_dir = `src.${target}.cjs`
 	console.log(`      building CJS into ${PKG_NAME}/dist/${stylize_string.bold(out_dir)}`/*, ROOT_TSCONFIG_JSON, LOCAL_TSCONFIG_JSON*/)
 	return tsc.compile(
@@ -99,11 +101,11 @@ function build_cjs() {
 			...compilerOptions,
 			target,
 			lib: [
-				LATEST_ES_OLDEST_ACTIVE_NODE_LTS,
+				LATEST_ESⵧSUPPORTED_BY_ENVꘌOLDEST_ACTIVE_NODE_LTS,
 				...[
 					...ROOT_TSCONFIG_JSON.compilerOptions.lib,
 					...(LOCAL_TSCONFIG_JSON.compilerOptions.lib || []),
-				].filter(s => s !== LATEST_CONVENIENT_ES),
+				].filter(s => s !== LATEST_ESⵧSUPPORTED_BY_TYPESCRIPTⵧAS_TARGET),
 			],
 			module: 'commonjs', // cf. https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#type-in-package-json-and-new-extensions
 			moduleResolution: 'nodenext', // BROKEN since typescript 5.2 2023/10
