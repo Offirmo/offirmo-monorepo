@@ -27,7 +27,7 @@ import * as Notes from '../state/notes/index.js'
 import { Basename } from '../types.js'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
 import { FsStatsSubset } from '../services/fs_stats.js'
-import { read_exif_data } from '../services/exif.js'
+import { readꓽexif_data } from '../services/exif.js'
 
 
 export async function load_real_media_file(abs_path: string): Promise<Immutable<FileLib.State>> {
@@ -47,7 +47,7 @@ export async function load_real_media_file(abs_path: string): Promise<Immutable<
 				expect(FileLib.has_all_infos_for_extracting_the_creation_date(state, { should_log: false }), 'load_real_media_file() has_all_infos_for_extracting_the_creation_date 2').to.be.false
 				state = FileLib.on_info_read__fs_stats(state, stats)
 			}),
-		read_exif_data(abs_path)
+		readꓽexif_data(abs_path)
 			.then(exif_data => {
 				expect(FileLib.has_all_infos_for_extracting_the_creation_date(state, { should_log: false }), 'load_real_media_file() has_all_infos_for_extracting_the_creation_date 3').to.be.false
 				state = FileLib.on_info_read__exif(state, exif_data)

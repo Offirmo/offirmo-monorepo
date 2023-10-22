@@ -27,7 +27,7 @@ import ↆgetꓽfile_hash from './hash.js'
 import { pathㆍparse_memoized } from './name_parser.js'
 import { FolderId, SPECIAL_FOLDERⵧINBOX__BASENAME } from '../state/folder/index.js'
 import { FileId } from '../state/file/index.js'
-import { read_exif_data } from './exif.js'
+import { readꓽexif_data } from './exif.js'
 
 ////////////////////////////////////
 
@@ -170,7 +170,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 
 		try {
 			const abs_path = DB.getꓽabsolute_path(db, id)
-			const exif_data = await read_exif_data(abs_path)
+			const exif_data = await readꓽexif_data(abs_path)
 			logger.trace(`- got exif data for "${id}"…`)
 			db = DB.on_exif_read(db, id, exif_data)
 		}

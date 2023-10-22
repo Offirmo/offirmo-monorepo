@@ -57,6 +57,9 @@
 		]
 	},
 
+	"manypkg": {
+		"defaultBranch": "main"
+	},
 	"dependencies": {
 		"@manypkg/cli": "^0.21",
 		"chalk": "^5",
@@ -116,6 +119,7 @@
 		"eslint-plugin-mocha": "^10",
 		"exiftool-vendored": "^23",
 		"fraction.js": "^4",
+		"geo-tz": "^7",
 		"hasha": "^5",
 		"howler": "^2",
 		"icepick": "^2",
@@ -129,7 +133,6 @@
 		"loud-rejection": "^2",
 		"luxon": "^3",
 		"memoize-one": "^6",
-		"meow": "^12",
 		"micro-memoize": "^4",
 		"mocha": "^10",
 		"murmurhash3js-revisited": "^3",
@@ -153,7 +156,6 @@
 		"sum-up": "^3",
 		"term-size": "^3",
 		"tildify": "^3",
-		"tiny-invariant": "^1",
 		"ts-node": "^10",
 		"tslib": "^2",
 		"typescript": "^5",

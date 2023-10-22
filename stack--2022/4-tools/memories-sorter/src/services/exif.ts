@@ -17,7 +17,7 @@ import {
 import logger from './logger.js'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
-////////////////////////////////////
+/////////////////////////////////////////////////
 
 /** ☆☆☆☆ ✔ Example: 1 */
 //TimeZoneOffset?: number;
@@ -66,7 +66,7 @@ const EXIF_DATE_FIELDS: Array<keyof Tags> = [
 	'TrackCreateDate', // seen on movies, usually == CreateDate but sometimes yields a better date
 ]
 
-// we won't rely on those but we use them for cross-checks
+// we won't rely on those, but we use them for cross-checks
 const FS_DATE_FIELDS: Array<keyof Tags> = [
 	'FileModifyDate',
 	'FileAccessDate',
@@ -89,8 +89,8 @@ const USEFUL_FIELDS = [
 
 ////////////////////////////////////
 
-export async function read_exif_data(abs_path: AbsolutePath): Promise<Immutable<Tags>> {
-	//console.log('??? read_exif_data()…', abs_path)
+export async function readꓽexif_data(abs_path: AbsolutePath): Promise<Immutable<Tags>> {
+	//console.log('??? readꓽexif_data()…', abs_path)
 	return exiftool.read(abs_path)
 		.then(_exif_data => {
 			// cleanup of unused fields to save RAM
@@ -424,7 +424,7 @@ function _getꓽcreation_date_from_exif__nocache(exif_data: Immutable<Tags>): Ex
 	return candidate_date𖾚exif
 }
 
-export const getꓽbest_creation_date_from_exif = micro_memoize(function getꓽbest_creation_date_from_exif(exif_data: Immutable<Tags>): ExifDateTime | undefined {
+const getꓽbest_creation_date_from_exif = micro_memoize(function getꓽbest_creation_date_from_exif(exif_data: Immutable<Tags>): ExifDateTime | undefined {
 	const SourceFile = exif_data[EXIF_FIELD__SOURCEFILE]
 	assert(SourceFile, `getꓽcreation_date_from_exif() exif data should have SourceFile!`)
 
@@ -433,19 +433,19 @@ export const getꓽbest_creation_date_from_exif = micro_memoize(function getꓽb
 	//maxSize: 10,
 })
 
-export function getꓽcreation_timezone_from_exif(exif_data: Immutable<Tags>): TimeZone | undefined {
+function getꓽcreation_timezone_from_exif(exif_data: Immutable<Tags>): TimeZone | undefined {
 	// TODO extract a better tz from GPS?
 	const res = exif_data[EXIF_FIELD__TZ]
 	assert(typeof res === 'string' || typeof res === 'undefined', 'exif_data.tz type check')
 	return res
 }
 
-export function has_errors(exif_data: Immutable<Tags>): boolean {
+function has_errors(exif_data: Immutable<Tags>): boolean {
 	return (!!exif_data.errors) && (exif_data.errors.length > 0)
 }
 
 // useful when reading EXIF on files we're not sure are exif-powered
-export function has_actual_exif_fields(exif_data: Immutable<Tags>): boolean {
+function has_actual_exif_fields(exif_data: Immutable<Tags>): boolean {
 	for (let key in exif_data) {
 		if (key === 'errors' || key === 'SourceFile')
 			continue
@@ -463,11 +463,11 @@ export function has_actual_exif_fields(exif_data: Immutable<Tags>): boolean {
 
 
 // there are several orientation fields, provision for the future
-export function getꓽorientation_from_exif(exif_data: Immutable<Tags>): number | undefined {
+function getꓽorientation_from_exif(exif_data: Immutable<Tags>): number | undefined {
 	return exif_data[EXIF_FIELD__ORIENTATION] as any
 }
 
-export function getꓽtimestamp_ms_from_ExifDateTime(date_exif: ExifDateTime): TimestampUTCMs {
+function getꓽtimestamp_ms_from_ExifDateTime(date_exif: ExifDateTime): TimestampUTCMs {
 	const date_legacy = date_exif.toDate()
 	return +date_legacy
 }
@@ -476,4 +476,15 @@ function _to_debug(date_exif: ExifDateTime): string {
 	return getꓽdebug_representation(
 		create_better_date_from_ExifDateTime(date_exif)
 	)
+}
+
+/////////////////////////////////////////////////
+
+export {
+	getꓽbest_creation_date_from_exif,
+	getꓽcreation_timezone_from_exif,
+	has_errors,
+	has_actual_exif_fields,
+	getꓽorientation_from_exif,
+	getꓽtimestamp_ms_from_ExifDateTime,
 }

@@ -5,7 +5,7 @@ import { LIB } from '../consts.js'
 import {
 	getꓽbest_creation_date_from_exif,
 	getꓽcreation_timezone_from_exif,
-	read_exif_data,
+	readꓽexif_data,
 } from './exif.js'
 import {
 	getꓽhuman_readable_timestamp_auto,
@@ -45,7 +45,7 @@ describe(`${LIB} -- service -- exif`, function() {
 
 				it(`should work - #${index}: "${MEDIA_DEMO.BASENAME}"`, async () => {
 
-					const exif_data = await read_exif_data(MEDIA_DEMO.ABS_PATH)
+					const exif_data = await readꓽexif_data(MEDIA_DEMO.ABS_PATH)
 					//console.log('exif data', exif_data)
 
 					const EXPECTED_EXIF_DATA = MEDIA_DEMO.EXIF_DATA
