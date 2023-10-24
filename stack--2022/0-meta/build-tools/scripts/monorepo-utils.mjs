@@ -239,10 +239,15 @@ if (MONOREPO_PKG_JSON.bolt) (function _hoist_local_packages_to_root_node_modules
 	MONOREPO_PKGS_NAMESPACES.forEach(ns => {
 		const namespace_abspath = path.join(MONOREPO_ROOT, 'node_modules', ns)
 		try {
-			fs.mkdirSync(namespace_abspath)
+			fs.mkdirSync(namespace_abspath, { recursive: true })
 			//console.log('created dir: ' + namespace_abspath)
 		}
-		catch (err) { if (err.code !== 'EEXIST') throw err }
+		catch (err) {
+			if (err.code !== 'EEXIST') {
+				console.error('failed to create a directory while hoisting')
+				throw err
+			}
+		}
 	})
 
 	let hoisted_count = 0
@@ -253,7 +258,12 @@ if (MONOREPO_PKG_JSON.bolt) (function _hoist_local_packages_to_root_node_modules
 			fs.symlinkSync(pkg_src_abspath, link_path)
 			//console.log('hoisted: ' + link_path + ' ← ' + pkg_src_abspath)
 		}
-		catch (err) { if (err.code !== 'EEXIST') throw err }
+		catch (err) {
+			if (err.code !== 'EEXIST') {
+				console.error('failed to symlink while hoisting')
+				throw err
+			}
+		}
 		hoisted_count++
 	})
 	if (hoisted_count)
