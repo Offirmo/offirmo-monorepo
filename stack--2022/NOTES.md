@@ -19,3 +19,7 @@ Tools
 - Color converter https://www.cssportal.com/css-color-converter/
 - favicon https://realfavicongenerator.net/
 - https://github.com/scottsidwell/bundle-inspector
+
+
+
+TODO 	"packageManager": "yarn@1",
