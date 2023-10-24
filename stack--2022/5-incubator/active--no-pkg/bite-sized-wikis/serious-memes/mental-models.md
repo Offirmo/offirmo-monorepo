@@ -102,6 +102,7 @@ legibility: We are blind to what we cannot measure. Not everything that counts c
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 living the good life
 look for Things That Don’t Make Sense: The world always makes sense. But it can be confusing. When it is, your model of the world is wrong. So, things that don’t make sense are a learning opportunity. Big opportunities won’t make sense until it’s too late to profit from them.
+love = wanting the best
 Maslow's pyramid
 McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
 MECE https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
@@ -163,6 +164,7 @@ SCQA – Situation Complication Question Answer - A Framework For Defining Probl
 second Law of Thermodynamics: The world tends towards disorder. That’s why your room becomes messier and messier over time. It’s also why an engine converts only ~35% of its energy into useful work. Time moves towards increasing one direction: increasing entropy.
 secrets are Hidden in Plain Sight:  Most people think of secrets as Easter eggs. They assume that if a secret is important, it’s necessarily going to be hard to find. The best ideas can come from things that are so well-known that they aren’t well-seen.
 self appreciation
+self centered vs. take into account others (cf. woke salaryman)
 self love
 sex ed
 sex ed -- "sex positive"
@@ -184,6 +186,7 @@ tax -- lazy https://www.insurancewatch.com.au/lazy-tax-insurance.html
 The Map Is Not the Territory: Reality will never match the elegance of theory. All models have inconsistencies, but some are still useful. Some maps are useful because they’re inaccurate. If you want to find an edge, look for what the map leaves out.
 The Medium Is the Message: We pay too much attention to what is being said. But the medium of communication is more impactful. For example, the Internet’s impact on humanity has a bigger influence than anything that’s said on the Internet.
 the Wisdom of Paradox: Logic is the key to scientific truths, but paradoxes are the key to psychological ones. When it comes to the human condition, the deepest truths are often counter-intuitive. When you find two opposites that are both true, start exploring.
+theory of constraints https://www.tocinstitute.org/theory-of-constraints.html
 theory of Constraints: A system is only as strong as its weakest point. Focus on the bottleneck. Counterintuitively, if you break down the entire system and optimize each component individually, you’ll lower the effectiveness of the system. Optimize the entire system instead.
 THINK hack: Is it True? Helpful? Inspiring? Necessary? Kind?
 time management
@@ -207,5 +210,3 @@ wisdom
 wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 être heureux n'est pas nécessairement confortable
 “The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.
-self centered vs. take into account others (cf. woke salaryman)
-theory of constraints https://www.tocinstitute.org/theory-of-constraints.html

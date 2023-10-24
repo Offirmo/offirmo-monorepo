@@ -1,5 +1,6 @@
 body {
-	/* max width + centering = #1 most important styling according to https://jgthms.com/web-design-in-4-minutes/#centering
+	/* XXX to review compatible web apps??
+	 * max width + centering = #1 most important styling according to https://jgthms.com/web-design-in-4-minutes/#centering
 	 */
 	max-width: var(--o⋄content-recommended-width);
 	margin: 0 max(1ch, (100vw - var(--o⋄content-recommended-width))/2); /* intelligent centering with a minimum margin for small screens */

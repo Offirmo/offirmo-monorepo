@@ -39,6 +39,7 @@ constructor
 context switch
 cost based rate limiting
 courbe d'expertise
+cron https://onlineornot.com/the-complete-guide-to-cron-jobs
 crunch
 DACI Decision Making Framework “driver, approver, contributor, informed" https://www.atlassian.com/team-playbook/plays/daci
 database

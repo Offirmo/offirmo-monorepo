@@ -37,3 +37,6 @@ Basics:
 * https://en.wikipedia.org/wiki/Graph_theory
 * Existing implementation: https://segfaultx64.github.io/typescript-graph/index.html
 * other lib https://github.com/dagrejs/graphlib/wiki
+
+
+See also https://en.wikipedia.org/wiki/Trie

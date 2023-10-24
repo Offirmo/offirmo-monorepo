@@ -1,6 +1,7 @@
 
 :root {
 	/*color = #4 most important styling according to https://jgthms.com/web-design-in-4-minutes/#color-contrast
+	* ALSO setting bgcolor on html has an impact: body bg color no longer bleeds on the whole viewport
 	 */
 	color: var(--o⋄color⁚fg--main, black);
 	background-color: var(--o⋄color⁚bg--main, white);
