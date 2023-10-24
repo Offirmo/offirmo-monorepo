@@ -31,6 +31,31 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 - [ ] 🆙webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
 
 
+### update 2023-10-24
+Updated state:
+
+1. Node runtime version
+  * 🆕oldest active LTS node = [20](https://nodejs.org/en/about/releases/)
+  * most recent node supported by AWS lambda = [18](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)
+
+⭆ latest supported node = 18 (if updated, search for "engines")
+
+2. ECMASCript version
+* latest ES = [ES2023](https://en.wikipedia.org/wiki/ECMAScript_version_history)
+* latest ES reasonably supported by this node LTS (latest minor) = [ES2023](https://node.green/#ES2023)
+* 🆕latest ES supported by TypeScript as a target = [2022](https://www.typescriptlang.org/tsconfig#target)
+* 🆕latest ES supported by TypeScript as a lib = [2023](https://www.typescriptlang.org/tsconfig#lib)
+* latest ES reasonably supported by browsers or polyfills = [ES2023](https://kangax.github.io/compat-table/es2016plus/)
+* we no longer consider webpack (outdated tool, we no longer use it)
+
+⭆ 🆕latest convenient ES = 2023 (if changed, need search&replace in package.json, search for "es2022" and "update marker")
+
+3. ES module
+- we consider webpack outdated and are no longer taking into account its limitations
+- we consider the ecosystem advanced enough to move to full ESM https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-move-my-commonjs-project-to-esm
+
+⭆ latest convenient module = ES (module = 2022 in TypeScript)
+
 
 ### update 2023-08-16
 Updated state:

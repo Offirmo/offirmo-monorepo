@@ -14,7 +14,7 @@
 	"heroku-run-build-script": false,
 
 	"engines": {
-		"node": "18.x"
+		"node": "20.x"
 	},
 
 	"scripts": {
