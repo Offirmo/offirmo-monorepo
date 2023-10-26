@@ -1,0 +1,7 @@
+https://www.robotstxt.org/
+
+## www.robotstxt.org/
+## https://en.wikipedia.org/wiki/Robots_exclusion_standard
+## https://support.google.com/webmasters/answer/6062596
+User-agent: *
+Disallow: /
