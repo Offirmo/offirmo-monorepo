@@ -1,0 +1,12 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element
+ * they are a bit harder to style
+ */
+
+/* https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design#responsive_images
+ * embed ? iframe ?
+ */
+img,
+picture,
+video {
+	max-width: 100%;
+}
