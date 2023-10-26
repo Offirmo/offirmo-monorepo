@@ -45,4 +45,7 @@ export const NORMALIZERS: Readonly<{ [key: string]: StringNormalizer }> = {
 	normalizeꓽemailⵧfull,
 }
 
+export * from './normalizers--base.js'
+export * from './normalizer--email.js'
+
 /////////////////////

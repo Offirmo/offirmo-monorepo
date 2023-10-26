@@ -2,14 +2,13 @@
 
 import {expect} from 'chai'
 
-import { NORMALIZERS } from './normalizers.js'
+import { normalizeꓽemailⵧfull, normalizeꓽemailⵧreasonable } from './normalizers.js'
 
 ////////////////////////////////////
 
 const LIB = 'normalize-string'
 
 describe(`${LIB} - utils`, function() {
-	const { normalizeꓽemailⵧfull, normalizeꓽemailⵧreasonable } = NORMALIZERS
 
 	describe('normalizeꓽemailⵧfull()', function () {
 

@@ -149,6 +149,7 @@ psychological safety
 put into words
 Pyramid Principle https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/
 question authority
+race to the bottom
 resource Curse: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources.
 RICE Reach Impact Confidence Estimate
 ring theory: - The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.

@@ -16,7 +16,10 @@ assembly
 asymc / design pattern réacteur
 async/sync
 asynchrone
+algorithm -- BPE / Byte pair encoding https://github.com/openai/tiktoken
+algorithm -- CRDT
 atomic
+Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
 authentication
 auto-scaling and load-shedding
 blocking

@@ -3,8 +3,7 @@ import { normalize_unicode } from './normalizers--base.js'
 
 ////////////////////////////////////
 // general infos: https://github.com/Offirmo-team/wiki/wiki/courriel
-// credits to
-
+// credits to TODO ???
 
 
 
@@ -121,14 +120,14 @@ function validate_email_structure(possible_email: string): string {
 // normalizing too hard prevents us from using gravatar
 // ex. offirmo.net@gmail.com is not matching gravatar offirmonet@gmail.com
 
-export const normalizeꓽemailⵧsafe = combine_normalizers(
+const normalizeꓽemailⵧsafe = combine_normalizers(
 	normalize_unicode,
 	remove_all_spaces,
 	validate_email_structure,
 	lowercase_domain,
 )
 
-export const normalizeꓽemailⵧreasonable = combine_normalizers(
+const normalizeꓽemailⵧreasonable = combine_normalizers(
 	normalize_unicode,
 	remove_all_spaces,
 	validate_email_structure,
@@ -137,7 +136,7 @@ export const normalizeꓽemailⵧreasonable = combine_normalizers(
 	lowercase_local_part_if_insensitive,
 )
 
-export const normalizeꓽemailⵧfull = combine_normalizers(
+const normalizeꓽemailⵧfull = combine_normalizers(
 	normalize_unicode,
 	remove_all_spaces,
 	validate_email_structure,
@@ -146,3 +145,11 @@ export const normalizeꓽemailⵧfull = combine_normalizers(
 	remove_dots_from_local_part_if_insensitive,
 	lowercase_local_part_if_insensitive,
 )
+
+/////////////////////////////////////////////////
+
+export {
+	normalizeꓽemailⵧsafe,
+	normalizeꓽemailⵧreasonable,
+	normalizeꓽemailⵧfull,
+}

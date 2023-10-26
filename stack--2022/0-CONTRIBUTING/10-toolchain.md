@@ -1,12 +1,17 @@
 
 
 ## package manager
+
 **yarn**
 
 Why not npm?
 * last try 2022/03 npm ^8
 * (blocker) npm output spurious "timing" lines blotting the output
 * npm requires "run" `npm run dev`
+* overall npm doesn't seem as reliable as yarn
+
+TODO use yarn v4!!
+TODO use corepack (2023/10 impossible to set up with yarn v1, too bleeding edge)
 
 
 ## monorepo
