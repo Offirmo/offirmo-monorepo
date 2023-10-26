@@ -5,7 +5,7 @@ import assert from 'tiny-invariant'
 import async from 'async'
 import * as json from '@offirmo/cli-toolbox/fs/extra/json'
 import { Immutable } from '@offirmo-private/ts-types'
-import { NORMALIZERS } from '@offirmo-private/normalize-string'
+import { normalize_unicode } from '@offirmo-private/normalize-string'
 import { normalizeError } from '@offirmo/error-utils'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
@@ -433,8 +433,8 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 		}
 		else {
 			const abs_pathⵧtarget = DB.getꓽabsolute_path(db, targetꓽid)
-			const source_norm = NORMALIZERS.normalize_unicode(abs_pathⵧcurrent)
-			const targetꓽnorm = NORMALIZERS.normalize_unicode(abs_pathⵧtarget)
+			const source_norm = normalize_unicode(abs_pathⵧcurrent)
+			const targetꓽnorm = normalize_unicode(abs_pathⵧtarget)
 			if (source_norm === targetꓽnorm) {
 				// TODO one day normalize the folders
 				return
@@ -467,7 +467,7 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 					const err = normalizeError(_err)
 					if (err.message.includes('Source and destination must not be the same')) {
 						// this may happens for unicode normalization or case-sensitivity of the underlying FS
-						assert(NORMALIZERS.normalize_unicode(id.toLowerCase()) === NORMALIZERS.normalize_unicode(targetꓽid.toLowerCase()), 'expecting real identity')
+						assert(normalize_unicode(id.toLowerCase()) === normalize_unicode(targetꓽid.toLowerCase()), 'expecting real identity')
 						const intermediate_targetꓽid = path.join(targetꓽfolder, File.getꓽideal_basename(current_file_state, { copy_marker: 'temp' }))
 						const intermediate_targetꓽabs_path = DB.getꓽabsolute_path(db, intermediate_targetꓽid)
 						fs_extra.moveSync(abs_pathⵧcurrent, intermediate_targetꓽabs_path)
@@ -483,11 +483,11 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 							id,
 							targetꓽid,
 							id_equality: id === targetꓽid,
-							id_equality_u: NORMALIZERS.normalize_unicode(id) === NORMALIZERS.normalize_unicode(targetꓽid),
+							id_equality_u: normalize_unicode(id) === normalize_unicode(targetꓽid),
 							abs_pathⵧcurrent,
 							abs_pathⵧtarget,
 							path_equality: abs_pathⵧcurrent === abs_pathⵧtarget,
-							path_equality_u: NORMALIZERS.normalize_unicode(abs_pathⵧcurrent) === NORMALIZERS.normalize_unicode(abs_pathⵧtarget),
+							path_equality_u: normalize_unicode(abs_pathⵧcurrent) === normalize_unicode(abs_pathⵧtarget),
 							err,
 						})
 					}
@@ -512,8 +512,8 @@ export async function exec_pending_actions_recursively_until_no_more(db: Immutab
 			assert(is_moving || is_renaming, `move_file_to_ideal_location() should do sth!`)
 
 			if (is_moving && !is_renaming) {
-				const folder_source_norm = NORMALIZERS.normalize_unicode(folder_source)
-				const folder_targetꓽnorm = NORMALIZERS.normalize_unicode(folder_target)
+				const folder_source_norm = normalize_unicode(folder_source)
+				const folder_targetꓽnorm = normalize_unicode(folder_target)
 				if (folder_source_norm === folder_targetꓽnorm) {
 					// TODO one day normalize the folders
 					logger.warn(`MTIL: we should normalize folder ${folder_source_norm}`)

@@ -36,7 +36,16 @@ const coerce_blanks_to_single_spaces: StringNormalizer = s => s.replace(ANY_BLAN
 const ANY_DELIMITER_REGEXP = new RegExp('[-+()*/:? _\.ⵧ]', 'g')
 const coerce_delimiters_to_space: StringNormalizer = s => s.replace(ANY_DELIMITER_REGEXP, ' ')
 
-const convert_spaces_to_camel_case: StringNormalizer = s => s.split(' ').map(capitalize).join('')
+const convert_spaces_to_camel_case: StringNormalizer = s =>
+		s.split(' ')
+		.filter(s => !!s)
+		.map(capitalize)
+		.join('')
+
+const convert_spaces_to_snake_case: StringNormalizer = s =>
+		s.split(' ')
+		.filter(s => !!s)
+		.join('-')
 
 // for user names, player names...
 const coerce_to_safe_nickname = combine_normalizers(
@@ -56,6 +65,18 @@ const coerce_to_redeemable_code = combine_normalizers(
 	convert_spaces_to_camel_case,
 )
 
+// for files safe from unicode, spaces & case sensitivity
+const coerce_to_safe_basenameⵧstrictest = combine_normalizers(
+	normalize_unicode,
+	coerce_to_ascii,
+	to_lower_case,
+	coerce_delimiters_to_space,
+	trim,
+	coerce_blanks_to_single_spaces,
+	convert_spaces_to_snake_case,
+)
+
+
 /////////////////////////////////////////////////
 
 export {
@@ -71,6 +92,10 @@ export {
 	coerce_blanks_to_single_spaces,
 	coerce_delimiters_to_space,
 	convert_spaces_to_camel_case,
+	convert_spaces_to_snake_case,
+
 	coerce_to_safe_nickname,
 	coerce_to_redeemable_code,
+
+	coerce_to_safe_basenameⵧstrictest,
 }

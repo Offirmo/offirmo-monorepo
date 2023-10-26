@@ -12,8 +12,10 @@ import {
 	coerce_blanks_to_single_spaces,
 	coerce_delimiters_to_space,
 	convert_spaces_to_camel_case,
+	convert_spaces_to_snake_case,
 	coerce_to_safe_nickname,
 	coerce_to_redeemable_code,
+	coerce_to_safe_basenameⵧstrictest,
 } from './normalizers--base.js'
 
 import {
@@ -38,8 +40,10 @@ export const NORMALIZERS: Readonly<{ [key: string]: StringNormalizer }> = {
 	coerce_blanks_to_single_spaces,
 	coerce_delimiters_to_space,
 	convert_spaces_to_camel_case,
+	convert_spaces_to_snake_case,
 	coerce_to_safe_nickname,
 	coerce_to_redeemable_code,
+	coerce_to_safe_basenameⵧstrictest,
 	normalizeꓽemailⵧsafe,
 	normalizeꓽemailⵧreasonable,
 	normalizeꓽemailⵧfull,

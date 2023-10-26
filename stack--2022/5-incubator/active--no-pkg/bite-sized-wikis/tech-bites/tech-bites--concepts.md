@@ -14,6 +14,7 @@ apply / call / bind
 arguments
 assembly
 asymc / design pattern réacteur
+encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube.com/watch?v=RXJKdh1KZ0w
 async/sync
 asynchrone
 algorithm -- BPE / Byte pair encoding https://github.com/openai/tiktoken

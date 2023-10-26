@@ -1,10 +1,10 @@
-export type CSSColor = string
+export type CssColor = string
 
 export interface LoaderConfig {
 	legend: string
 	expected_rsrc_count: number
-	bg_color: CSSColor
-	fg_color: CSSColor
+	bg_color: CssColor
+	fg_color: CssColor
 	bg_picture: null | [ CSSStyleDeclaration['backgroundImage'], CSSStyleDeclaration['backgroundPositionX'], CSSStyleDeclaration['backgroundPositionY'] ]
 }
 

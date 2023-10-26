@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { StringNormalizer } from './types.js'
-import { NORMALIZERS } from './normalizers.js'
+import { convert_spaces_to_snake_case, NORMALIZERS } from './normalizers.js'
 
 
 describe('normalize-string - base normalizers', function() {
@@ -98,6 +98,14 @@ describe('normalize-string - base normalizers', function() {
 			'lord Mok': 'LordMok',
 		},
 
+		convert_spaces_to_snake_case: {
+			'': '',
+			' ': '',
+			'a': 'a',
+			'Côte et Ciel': 'Côte-et-Ciel',
+			'lord Mok': 'lord-Mok',
+		},
+
 		coerce_to_safe_nickname: {
 			'': '',
 			' ': '',
@@ -114,6 +122,15 @@ describe('normalize-string - base normalizers', function() {
 			'bored ': 'BORED',
 			'ALPH-Art': 'ALPHART',
 		},
+
+		coerce_to_safe_basenameⵧstrictest: {
+			'A': 'a',
+			'.A-': 'a',
+			'.a--b..c': 'a-b-c',
+			'Côte et Ciel': 'cote-et-ciel',
+			' lord  MOK ': 'lord-mok',
+			'**lord_MOK** ': 'lord-mok',
+		}
 	}
 
 	Object.keys(TEST_CASES).forEach(key => {

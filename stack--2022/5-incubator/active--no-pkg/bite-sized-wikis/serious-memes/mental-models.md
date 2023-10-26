@@ -171,6 +171,7 @@ sex ed
 sex ed -- "sex positive"
 short term / long term
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
+SMART goal-setting framework
 social pressure / free will
 soft skills https://softskills.audio/
 stakeholder
