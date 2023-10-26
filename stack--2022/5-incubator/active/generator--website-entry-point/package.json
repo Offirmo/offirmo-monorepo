@@ -1,6 +1,6 @@
 {
-	"name": "@offirmo-private/generator--index-html",
-	"description": "Generator of index.html",
+	"name": "@offirmo-private/generator--website-entry-points",
+	"description": "Generator of a web site/app entry points: index.html, webmanifest, favicons...",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",

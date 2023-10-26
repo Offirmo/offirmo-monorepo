@@ -1,5 +1,5 @@
 import { Immutable } from '@offirmo-private/ts-types'
-import { PositiveIntegerInRange, RealInRange, Charset, CssColor } from '@offirmo-private/ts-types'
+import { PositiveIntegerInRange, RealInRange, Charset, CssColor, IETFLanguageType } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 // spec'ced types
@@ -19,6 +19,7 @@ import { PositiveIntegerInRange, RealInRange, Charset, CssColor } from '@offirmo
 
 // 2. manual definitions
 
+// intro https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
 interface HtmlMetaContentⳇContentSecurityPolicy {
 	// TODO
@@ -61,6 +62,8 @@ interface HtmlMetas {
 	// <meta name="<KEY>" content="<VALUE>">
 	document: {
 
+		// CRITICAL to advertise mobile compatibility
+		// see details in dedicated type
 		viewport: HtmlMetaContentⳇViewport
 
 		// https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
@@ -75,15 +78,42 @@ interface HtmlMetas {
 
 	// pragma directives, equivalent to http headers
 	// <meta http-equiv="<KEY>" content="<VALUE>" />
+	// WARNING there is debate about case-sensitivity: https://webmasters.stackexchange.com/questions/67760/which-meta-names-are-case-sensitive
 	pragmas: {
+
+		// CRITICAL for security and privacy
+		// see details in dedicated type
 		'content-security-policy'?: HtmlMetaContentⳇContentSecurityPolicy
-		'content-type': string
+
+		// https://www.w3.org/TR/2014/CR-html5-20140731/document-metadata.html#attr-meta-http-equiv-content-type
+		'content-type': `text/html;charset=${Charset}`
+
+		// this meta is controversial
+		// it's marked as "non conforming" cf. https://www.w3.org/TR/2014/CR-html5-20140731/document-metadata.html#attr-meta-http-equiv-content-language
+		// it's marked as "bad practice" (TODO find ref)
+		// it's semantically different from the corresponding Http Header
+		// - meta = lang of the document
+		// - header = lang of the target audience (can be different)
+		// Let's keep it for now to prevent google translate from triggering incorrectly
+		// TODO re-evaluate
+		'content-language': IETFLanguageType,
+
+		// https://www.w3.org/TR/2014/CR-html5-20140731/document-metadata.html#attr-meta-http-equiv-refresh
+		// WARNING refresh has issues (accessibility), can cause loops.
+		// tread carefully
 		refresh?: unknown
+
 		'application-name'?: unknown
 		author?: unknown
-		description: unknown
+		description?: unknown
 		generator: string
+
+		// 2009 google doesn't use ithttps://developers.google.com/search/blog/2009/09/google-does-not-use-keywords-meta-tag
+		// because it was abused by spammers
+		// but that doesn't mean other search engine don't?
+		// (don't spend too much time on it)
 		keywords: string[]
+
 		referrer?: 'no-referrer'
 			| 'origin'
 			| 'no-referrer-when-downgrade'
@@ -92,7 +122,7 @@ interface HtmlMetas {
 			| 'strict-origin'
 			| 'strict-origin-when-cross-origin'
 			| 'unsafe-URL',
-		'theme-color': CssColor
+		'theme-color'?: CssColor
 		'color-scheme'?: unknown
 	}
 

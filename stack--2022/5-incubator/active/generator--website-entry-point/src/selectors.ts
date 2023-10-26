@@ -81,7 +81,7 @@ function getꓽcolorⵧtheme(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
 	return spec.colorⵧtheme || getꓽcolorⵧbackground(spec)
 }
 
-
+// keywords: todo dedupe, add categories, lowercase, etc.
 /////////////////////////////////////////////////
 
 export {
@@ -91,6 +91,7 @@ export {
 	getꓽbasenameⵧwebmanifest,
 
 	getꓽlang,
+	getꓽcharset,
 
 	getꓽtitleⵧpage,
 	getꓽtitleⵧsocial,

@@ -4,7 +4,7 @@ import { Category, WebsiteEntryPointSpec } from './types.js'
 
 /////////////////////////////////////////////////
 
-const LIB = 'generator--website-entry-point'
+const LIB = '@offirmo/generator--website-entry-points'
 
 const DEFAULT_SPEC: Immutable<WebsiteEntryPointSpec> = {
 	basename: 'index',

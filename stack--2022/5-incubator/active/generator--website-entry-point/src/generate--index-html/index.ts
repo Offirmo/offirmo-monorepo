@@ -10,18 +10,32 @@ import {
 	getꓽtitleⵧsocial,
 	getꓽcolorⵧtheme,
 } from '../selectors.js'
+import { getꓽmetas } from './selectors.js'
 
 /////////////////////////////////////////////////
 const EOL = '\n'
 
-function indent(multi_line_string: string): string {
+function _indent(multi_line_string: string, only_nth_lines: boolean = false): string {
 	const lines = multi_line_string.split(EOL)
 
 	return lines
-		.map((line, index) => '	' + line)
+		.map((line, index) => (index === 0 && only_nth_lines) ? line : '	' + line)
 		.join(EOL)
 }
 
+function _has_content(x: any, prop?: string): boolean {
+	if (!!prop)
+		x = x[prop]
+
+	switch (true) {
+		case !!x === false: // null, undef, empty string
+			return false
+		case Array.isArray(x):
+			return x.length > 0
+		default:
+			return Object.keys(x).length > 0
+	}
+}
 
 function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 	// TODO mandatory background color!!!
@@ -67,27 +81,57 @@ function generateꓽhtml__head__meta__opengraph(spec: Immutable<WebsiteEntryPoin
 }
 
 function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
-	// XXX keywords are ignored bc spammers were abusing them
-	// https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#metadata_the_meta_element
-	const keywords = [ 'game', 'incremental', 'fantasy', 'rpg', 'free', 'indie']
+	const metas = getꓽmetas(spec)
 
-//		<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1, maximum-scale=1, user-scalable=no">
-	const meta__vieport = 'TODO!!!'
-
-	// TODO manifest 	<link rel="manifest" href="./app--viewport--03.webmanifest">
 	return [
-		`<meta charset="${charset‿lc}" />`,
-		`<meta http-equiv="Content-Type" content="text/html; charset=${charset‿lc}" />`,
+		`<meta charset="${metas.charset}" />`,
 
-		// maximum language hints to prevent Chrome from incorrectly suggesting a translation
-		`<meta http-equiv="Content-Language" content="${getꓽlang(spec)}" />`,
+		...Object.keys(metas.document)
+			.filter(name => _has_content(metas.document, name))
+			.sort()
+			.map(name => {
+				// @ts-ignore
+				let content: string = metas.document[name]
+				switch(name) {
+					// TODO stringify
+					default:
+						break
+				}
+				// TODO assertions
+				return `<meta name="${name}" content="${content}">`
+			}),
 
-		`<meta name="viewport" content="${meta__vieport}">`,
+		...Object.keys(metas.pragmas)
+			.filter(httpᝍequiv => _has_content(metas.pragmas, httpᝍequiv))
+			.sort()
+			.map(httpᝍequiv => {
+				// @ts-ignore
+				let content = metas.pragmas[httpᝍequiv]
+				switch(httpᝍequiv) {
+					// TODO stringify
+					default:
+						break
+				}
+				// TODO assertions
+				return `<meta http-equiv="${httpᝍequiv}" content="${content}">`
+			}),
 
-		generateꓽhtml__head__meta__opengraph(spec),
-		generateꓽhtml__head__meta__twitter(spec),
-		generateꓽhtml__head__meta__pwa(spec),
-	].join(EOL).trim()
+		...Object.keys(metas.properties)
+			.filter(property => _has_content(metas.properties, property))
+			.sort()
+			.map(property => {
+				// @ts-ignore
+				let content = metas.properties[property]
+				switch(property) {
+					// TODO stringify
+					default:
+						break
+				}
+				// TODO assertions
+				return `<meta property="${property}" content="${content}">`
+			}),
+
+		].join(EOL).trim()
 }
 
 function generateꓽhtml__head(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
@@ -95,13 +139,16 @@ function generateꓽhtml__head(spec: Immutable<WebsiteEntryPointSpec>): HtmlStri
 
 
 	// TODO link to webmanifest!!
+	// TODO manifest 	<link rel="manifest" href="./app--viewport--03.webmanifest">
+
+
 	return `
 <head>
-	${generateꓽhtml__head__meta(spec)}
+	${_indent(generateꓽhtml__head__meta(spec), true)}
 
 	<title>${getꓽtitleⵧpage(spec)}</title>
 
-	${generateꓽhtml__head__style(spec)}
+	${_indent(generateꓽhtml__head__style(spec), true)}
 </head>
 	`.trim()
 }
@@ -128,11 +175,11 @@ function generate(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 		'<!-- AUTOMATICALLY GENERATED, DO NOT EDIT MANUALLY! -->',
 
 		// maximum language hints to prevent Chrome from incorrectly suggesting a translation
-		`<html lang="${getꓽlang(spec)}" xml:lang="${getꓽlang(spec)}" class="o⋄top-container">`,
+		`<html lang="${getꓽlang(spec)}" xml:lang="${getꓽlang(spec)}">`,
 
-		indent(generateꓽhtml__head(spec)),
+		_indent(generateꓽhtml__head(spec)),
 
-		indent(generateꓽhtml__body(spec)),
+		_indent(generateꓽhtml__body(spec)),
 
 		`</html>`,
 	].join(EOL)

@@ -35,7 +35,8 @@ Object.keys(result).forEach(basename => {
 })
 
 /////////////////////////////////////////////////
-const dirpath = path.join((process as any).env.PWD, 'public')
+const dirpath = path.join((process as any).env.PWD, '..', 'dist', 'public')
+// TODO rm?
 fs.mkdirSync(dirpath, { recursive: true })
 Object.keys(result).forEach(basename => {
 	const filepath = path.join(dirpath, basename)
