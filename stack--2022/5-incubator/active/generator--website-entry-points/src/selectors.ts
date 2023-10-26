@@ -73,8 +73,13 @@ function getꓽtitleⵧappⵧshort(spec: Immutable<WebsiteEntryPointSpec>): stri
 	return getꓽtitleⵧapp(spec)
 }
 
+function getꓽcolorⵧforeground(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
+	assert(spec.colorⵧforeground)
+	return spec.colorⵧforeground
+}
+
 function getꓽcolorⵧbackground(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
-	assert(spec.basename)
+	assert(spec.colorⵧbackground)
 	return spec.colorⵧbackground
 }
 function getꓽcolorⵧtheme(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
@@ -98,6 +103,7 @@ export {
 	getꓽtitleⵧapp,
 	getꓽtitleⵧappⵧshort,
 
+	getꓽcolorⵧforeground,
 	getꓽcolorⵧbackground,
 	getꓽcolorⵧtheme,
 }

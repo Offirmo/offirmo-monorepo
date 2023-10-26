@@ -9,6 +9,8 @@ import {
 	getꓽtitleⵧpage,
 	getꓽtitleⵧsocial,
 	getꓽcolorⵧtheme,
+	getꓽcolorⵧbackground,
+	getꓽcolorⵧforeground,
 } from '../selectors.js'
 import { getꓽmetas } from './selectors.js'
 
@@ -46,7 +48,16 @@ function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): H
 	return `
 <style>
 	:root {
-		/* TODO colors */
+		--color--bg: ${getꓽcolorⵧbackground(spec)};
+		--color--fg: ${getꓽcolorⵧforeground(spec)};
+		--font: -apple-system, system, sans-serif;
+
+		margin: 0;
+		padding: 0;
+
+		color: var(--color--fg);
+		background-color: var(--color--bg);
+		font-family: var(--font);
 	}
 </style>
 `.trim()
@@ -184,6 +195,7 @@ function generate(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 		`</html>`,
 	].join(EOL)
 
+	// TODO check IW10
 	return normalize_unicode(result)
 }
 
