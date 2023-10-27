@@ -16,8 +16,29 @@ import { WebsiteEntryPointSpec } from './types.js'
 
 /////////////////////////////////////////////////
 
+function hasꓽown_navigation(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+	return spec.hasꓽown_navigation ?? false
+}
+
+function isꓽuser_scalable(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+	// TODO improve, incorrect
+	return hasꓽown_navigation(spec)
+}
+
 function needsꓽwebmanifest(spec: Immutable<WebsiteEntryPointSpec>): boolean {
-	return spec.semanticⳇisꓽpwa !== false
+	return spec.wantsꓽinstall !== false
+}
+
+function supportsꓽscreensⵧwith_shape(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+	return spec.supportsꓽscreensⵧwith_shape ?? false
+}
+
+function canꓽuse_window_controls_overlay(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+	return spec.canꓽuse_window_controls_overlay ?? false
+}
+
+function usesꓽpull_to_refresh(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+	return spec.usesꓽpull_to_refresh ?? true
 }
 
 /////////////////////////////////////////////////
@@ -35,6 +56,7 @@ function getꓽbasenameⵧindexᐧhtml(spec: Immutable<WebsiteEntryPointSpec>): 
 }
 
 function getꓽbasenameⵧwebmanifest(spec: Immutable<WebsiteEntryPointSpec>): Basename {
+	// the recommended extension is .webmanifest https://web.dev/learn/pwa/web-app-manifest/
 	return `${_getꓽbasename_without_extension(spec)}.webmanifest`
 }
 
@@ -53,22 +75,26 @@ function _getꓽtitle(spec: Immutable<WebsiteEntryPointSpec>): string {
 }
 
 function getꓽtitleⵧpage(spec: Immutable<WebsiteEntryPointSpec>): string {
+	// TODO isꓽdebug
 	return _getꓽtitle(spec)
 }
 
 function getꓽtitleⵧsocial(spec: Immutable<WebsiteEntryPointSpec>): string {
+	// TODO isꓽdebug
 	return !!spec.titleⵧsocial
 		? normalize_unicode(spec.titleⵧsocial).trim()
 		: _getꓽtitle(spec)
 }
 
 function getꓽtitleⵧapp(spec: Immutable<WebsiteEntryPointSpec>): string {
+	// TODO isꓽdebug
 	return !!spec.titleⵧapp
 		? normalize_unicode(spec.titleⵧapp).trim()
 		: _getꓽtitle(spec)
 }
 
 function getꓽtitleⵧappⵧshort(spec: Immutable<WebsiteEntryPointSpec>): string {
+	// TODO isꓽdebug
 	// TODO
 	return getꓽtitleⵧapp(spec)
 }
@@ -87,9 +113,17 @@ function getꓽcolorⵧtheme(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
 }
 
 // keywords: todo dedupe, add categories, lowercase, etc.
+
 /////////////////////////////////////////////////
 
 export {
+	isꓽuser_scalable,
+	hasꓽown_navigation,
+
+	supportsꓽscreensⵧwith_shape,
+	canꓽuse_window_controls_overlay,
+	usesꓽpull_to_refresh,
+
 	needsꓽwebmanifest,
 
 	getꓽbasenameⵧindexᐧhtml,

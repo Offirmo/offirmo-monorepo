@@ -4,27 +4,35 @@ import { Immutable } from '@offirmo-private/ts-types'
 import { Category, WebsiteEntryPointSpec } from '../types.js'
 import { WebManifest } from './types.js'
 import {
+	canꓽuse_window_controls_overlay,
+	hasꓽown_navigation,
 	getꓽbasenameⵧindexᐧhtml,
 	getꓽlang,
 	getꓽtitleⵧapp,
 	getꓽtitleⵧappⵧshort,
 	getꓽcolorⵧbackground,
-	getꓽcolorⵧtheme,
+	getꓽcolorⵧtheme, supportsꓽscreensⵧwith_shape,
 } from '../selectors.js'
 
 /////////////////////////////////////////////////
 
-function generateꓽicons(spec: Immutable<WebsiteEntryPointSpec>): [] {
+function _generateꓽicons(spec: Immutable<WebsiteEntryPointSpec>): [] {
 	// TODO
 	return []
 }
+
 function generate(spec: Immutable<WebsiteEntryPointSpec>): WebManifest {
 	const result: WebManifest = {
 		// critical to be installable
 		name: getꓽtitleⵧapp(spec),
-		icons: generateꓽicons(spec),
-		start_url: `./${getꓽbasenameⵧindexᐧhtml(spec)}?pinned=true`, // TODO review query param
-		display: 'standalone', // TODO refine
+		icons: _generateꓽicons(spec),
+		start_url: `./${getꓽbasenameⵧindexᐧhtml(spec)}?ref=webmanifest`, // TODO review query params
+
+		display: hasꓽown_navigation(spec)
+			? supportsꓽscreensⵧwith_shape(spec)
+				? 'fullscreen'
+				: 'standalone'
+			: 'minimal-ui',
 
 		// critical for good experience
 		short_name: getꓽtitleⵧappⵧshort(spec),
@@ -32,8 +40,7 @@ function generate(spec: Immutable<WebsiteEntryPointSpec>): WebManifest {
 		background_color: getꓽcolorⵧbackground(spec),
 		lang: getꓽlang(spec),
 
-		// nice to have
-		//display_override: ['window-controls-overlay'], // https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/window-controls-overlay#enable-the-window-controls-overlay-in-your-app
+		...(canꓽuse_window_controls_overlay(spec) && {display_override: ['window-controls-overlay']}),
 
 		//description: ...
 		//categories: ...

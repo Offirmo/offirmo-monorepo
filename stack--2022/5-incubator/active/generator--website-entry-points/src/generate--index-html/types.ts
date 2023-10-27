@@ -36,7 +36,7 @@ interface HtmlMetaContentⳇViewport {
 	'user-scalable'?: 0 |  1 | 'yes' | 'no' // ignored by Safari mobile and nearly all other mobile browser. However will work if installed PWA
 
 	'viewport-fit'?:
-		// https://drafts.csswg.org/css-round-display/?ref=stephenradford.me#viewport-fit-descriptor
+		// https://drafts.csswg.org/css-round-display/#viewport-fit-descriptor
 		| 'auto'    // [DEFAULT] safest
 		| 'contain' // visual viewport set to the largest rectangle which is inscribed in the display of the device
 		| 'cover'   // layout viewport and visual viewport are set to the circumscribed rectangle of the display of the device.

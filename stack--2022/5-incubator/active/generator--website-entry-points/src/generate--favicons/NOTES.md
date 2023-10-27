@@ -8,7 +8,11 @@
 > Caution: Some resources will suggest you add more icon sizes for Android, such as 48 by 48, 72 by 72, 96 by 96, 144 by 144, 168 by 168, 256 by 256. While you can add as many sizes as you want, these are no longer necessary as they are Android icon sizes for legacy devices; even if you still have some users expecting those resolutions, the browser will resize one of your shipped icons.
 
 
-https://realfavicongenerator.net/favicon_checker
+https://realfavicongenerator.net/
 https://github.com/RealFaviconGenerator/rfg-api
 
 https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browsers-836a6aace3df
+
+TODO favicon unicode https://piccalil.li/quick-tip/add-inline-svg-directly-in-your-css/
+
+https://github.com/audreyfeldroy/favicon-cheat-sheet

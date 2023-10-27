@@ -50,6 +50,9 @@ type DisplayOverrideMode = DisplayMode | 'window-controls-overlay'
 
 interface WebsiteEntryPointSpec {
 	// must be flat for easy defaulting
+	// optional '?:' = truly optional (can be easily derived)
+
+	isꓽpublic: boolean
 
 	basename: Basename // without extension
 
@@ -76,15 +79,29 @@ interface WebsiteEntryPointSpec {
 	colorⵧforeground: CssColor
 	colorⵧtheme: CssColor // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
 
-	semanticⳇisꓽpwa:
-		| false
-		| 'capable' // TODO clarify
-		| 'installable' // https://web.dev/articles/install-criteria
+	supportsꓽscreensⵧwith_shape: boolean
+	hasꓽown_navigation: boolean
+	canꓽuse_window_controls_overlay: boolean
+	usesꓽpull_to_refresh: boolean
+
+	wantsꓽinstall:
+		| false     // won't provide much benefit
+		| 'partial' // TODO clarify (we may want to manually prompt the user)
+		| 'prompt'  // to the point the browser is expected to prompt https://web.dev/articles/install-criteria
+		// TODO link to app store?
 
 	//semanticⳇsupportsꓽscreens:
 	// https://drafts.csswg.org/css-round-display/
 
+	styles?: Array<string
+		| 'snippet:natural-box-layout'
+		>,
+
+	// TODO overscroll
+
 	// TODO one day themes
+
+	isꓽdebug?: boolean // true = want to debug those entry points, will add extra content to pinpoint which entry point is used
 }
 
 interface EntryPoints {

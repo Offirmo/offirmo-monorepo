@@ -3,7 +3,7 @@ import { Immutable } from '@offirmo-private/ts-types'
 import { normalize_unicode } from '@offirmo-private/normalize-string'
 
 import { WebsiteEntryPointSpec } from '../types.js'
-import { HtmlString } from './types.js'
+import { HtmlMetaContentⳇViewport, HtmlMetas, HtmlString } from './types.js'
 import {
 	getꓽlang,
 	getꓽtitleⵧpage,
@@ -11,6 +11,7 @@ import {
 	getꓽcolorⵧtheme,
 	getꓽcolorⵧbackground,
 	getꓽcolorⵧforeground,
+	usesꓽpull_to_refresh, needsꓽwebmanifest, getꓽbasenameⵧwebmanifest,
 } from '../selectors.js'
 import { getꓽmetas } from './selectors.js'
 
@@ -30,27 +31,30 @@ function _has_content(x: any, prop?: string): boolean {
 		x = x[prop]
 
 	switch (true) {
-		case !!x === false: // null, undef, empty string
+		case !!x === false: // null, undef, empty string, 0
 			return false
 		case Array.isArray(x):
 			return x.length > 0
+		case typeof x === 'number':
+			return !isNaN(x) && x !== 0.
 		default:
 			return Object.keys(x).length > 0
 	}
 }
 
 function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
-	// TODO mandatory background color!!!
-	// TODO display? https://developer.mozilla.org/en-US/docs/Web/Manifest/display
-	// TODO inset vars
-	// TODO titlebar vars https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/window-controls-overlay
 	// TODO https://medium.com/@stephenbunch/how-to-make-a-scrollable-container-with-dynamic-height-using-flexbox-5914a26ae336
+	// TODO https://developer.chrome.com/blog/overscroll-behavior/
+
+	// https://www.smashingmagazine.com/2015/08/understanding-critical-css/
 	return `
 <style>
+	/* critical CSS */
+
 	:root {
 		--color--bg: ${getꓽcolorⵧbackground(spec)};
 		--color--fg: ${getꓽcolorⵧforeground(spec)};
-		--font: -apple-system, system, sans-serif;
+		--font: -apple-system, ui-sans-serif, sans-serif;
 
 		margin: 0;
 		padding: 0;
@@ -58,7 +62,32 @@ function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): H
 		color: var(--color--fg);
 		background-color: var(--color--bg);
 		font-family: var(--font);
+
+		${usesꓽpull_to_refresh(spec) ? '' : 'overscroll-behavior: none;'}
 	}
+
+	${(spec.styles ?? [])
+		.map(style => {
+			switch (style) {
+				case 'snippet:natural-box-layout':
+					/* apply a natural box layout model to all elements
+					 * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+					 * https://github.com/mike-engel/a11y-css-reset/pull/12#issuecomment-516582884
+					 */
+					return _indent(`
+/* apply a natural box layout model to all elements
+ * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://github.com/mike-engel/a11y-css-reset/pull/12#issuecomment-516582884
+ */
+:root                  { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+					`)
+				default:
+					return style
+			}
+		})
+		.map(s => s.trim())
+		.join(EOL + EOL + '	')}
 </style>
 `.trim()
 }
@@ -91,8 +120,33 @@ function generateꓽhtml__head__meta__opengraph(spec: Immutable<WebsiteEntryPoin
 	].join(EOL).trim()
 }
 
+function _generateꓽmeta__contentⵧviewport__value(viewport_spec: Immutable<HtmlMetaContentⳇViewport>): string {
+	return Object.entries(viewport_spec)
+		.map(([key, value]) => {
+			assert(_has_content(value), `viewport entry "${key}" should not be empty: "${value}"!`)
+			return `${key}=${value}`
+		})
+		.join(',')
+}
+
+function _generateꓽlinks(spec: Immutable<WebsiteEntryPointSpec>): { [rel: string]: string } {
+
+	/* TODO
+	https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browsers-836a6aace3df
+			<link rel="preconnect" href="https://identity.netlify.com">
+	<link rel="icon" href="./favicons/favicon.svg">
+	<link rel="apple-touch-icon" href="./favicons/apple-touch-icon-180x180.png">
+	<link rel="mask-icon" href="./favicons/safari-mask-icon.svg" color="#543d46">
+	 */
+
+	return {
+		...(needsꓽwebmanifest(spec) && { manifest: './' + getꓽbasenameⵧwebmanifest(spec) }),
+	}
+}
+
 function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 	const metas = getꓽmetas(spec)
+	const links = _generateꓽlinks(spec)
 
 	return [
 		`<meta charset="${metas.charset}" />`,
@@ -102,13 +156,15 @@ function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Ht
 			.sort()
 			.map(name => {
 				// @ts-ignore
-				let content: string = metas.document[name]
+				let content = metas.document[name]
 				switch(name) {
-					// TODO stringify
+					case 'viewport':
+						content = _generateꓽmeta__contentⵧviewport__value(content)
+						break
 					default:
 						break
 				}
-				// TODO assertions
+				assert(typeof content === 'string' && !!content, `document meta "${name}" should be a non-empty string: "${content}"!`)
 				return `<meta name="${name}" content="${content}">`
 			}),
 
@@ -142,6 +198,15 @@ function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Ht
 				return `<meta property="${property}" content="${content}">`
 			}),
 
+		...Object.keys(links)
+			.filter(rel => _has_content(links, rel))
+			.sort()
+			.map(rel => {
+				// @ts-ignore
+				let href = links[rel]
+				// TODO assertions
+				return `<link rel="${rel}" href="${href}">`
+			}),
 		].join(EOL).trim()
 }
 
@@ -169,10 +234,18 @@ function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): HtmlStri
 <body class="">
 	<noscript>You need to enable JavaScript to run this app.</noscript>
 
-	<div id="root" class="o⋄top-container">
-		<!-- React will render here -->
-		Loading…
-	</div>
+	<main id="root" class="o⋄top-container">
+		<!-- React will render here and replace this -->
+		<section style="
+			text-align: center;
+			--width: 60ch;
+			max-width: var(--width);
+			margin: 0 max(1ch, (100vw - var(--width))/2);
+			">
+			<h1>${getꓽtitleⵧpage(spec)}</h1>
+			<em>Loading…</em>
+		</section>
+	</main>
 </body>
 	`.trim()
 }

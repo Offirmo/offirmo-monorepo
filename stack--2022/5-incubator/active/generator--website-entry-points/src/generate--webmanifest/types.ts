@@ -16,7 +16,7 @@ interface WebManifest {
 	icons: unknown[] // TODO https://developer.mozilla.org/en-US/docs/Web/Manifest/icons
 	start_url: UrlString // https://developer.mozilla.org/en-US/docs/Web/Manifest/start_url // TODO auto add a query param!
 	display: Exclude<DisplayMode, 'browser'> // https://developer.mozilla.org/en-US/docs/Web/Manifest/display
-	// 'browser' would prevent the app from being installable cf. https://web.dev/articles/install-criteria
+	                             // 'browser' would prevent the app from being installable cf. https://web.dev/articles/install-criteria
 
 	// critical for good experience
 	short_name: string
@@ -28,7 +28,16 @@ interface WebManifest {
 	// nice to have
 	id?: unknown // TODO https://developer.mozilla.org/en-US/docs/Web/Manifest/id  https://developer.chrome.com/articles/pwa-manifest-id/
 	scope?: UrlString // https://developer.mozilla.org/en-US/docs/Web/Manifest/scope
-	orientation?: 'any' | 'natural' | 'landscape' | 'landscape-primary' | 'landscape-secondary' | 'portrait' | 'portrait-primary' | 'portrait-secondary'
+	orientation?: // https://developer.mozilla.org/en-US/docs/Web/Manifest/orientation
+		// https://www.w3.org/TR/screen-orientation/#the-current-screen-orientation-type-and-angle
+		| 'any'
+		| 'natural'
+		| 'landscape'
+		| 'portrait'
+		| 'landscape-primary'
+		| 'landscape-secondary'
+		| 'portrait-primary'
+		| 'portrait-secondary'
 	display_override?: DisplayOverrideMode[] // https://developer.mozilla.org/en-US/docs/Web/Manifest/display_override
 
 	// "Promotional fields" = app stores related
