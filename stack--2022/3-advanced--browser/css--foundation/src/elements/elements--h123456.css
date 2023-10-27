@@ -5,4 +5,9 @@
 	/* smaller margins than the default stylesheet */
 	margin-block-start: 0.5em;
 	margin-block-end: 0.5em;
+
+	/* ensure the text wraps in a way that creates a harmonious text block
+	 * cf. 2023 https://developer.chrome.com/blog/css-text-wrap-pretty/
+	 */
+	text-wrap: balance;
 }

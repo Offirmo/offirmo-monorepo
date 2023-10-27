@@ -13,6 +13,9 @@ import {
 	getꓽcolorⵧforeground,
 	usesꓽpull_to_refresh, needsꓽwebmanifest, getꓽbasenameⵧwebmanifest,
 } from '../selectors.js'
+import {
+	ifꓽdebug
+} from '../utils.js'
 import { getꓽmetas } from './selectors.js'
 
 /////////////////////////////////////////////////
@@ -63,7 +66,12 @@ function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): H
 		background-color: var(--color--bg);
 		font-family: var(--font);
 
-		${usesꓽpull_to_refresh(spec) ? '' : 'overscroll-behavior: none;'}
+		${
+			// https://www.the-koi.com/projects/how-to-disable-pull-to-refresh/
+			usesꓽpull_to_refresh(spec)
+				? ''
+				: 'overscroll-behavior: none;'
+		}
 	}
 
 	${(spec.styles ?? [])
@@ -92,6 +100,7 @@ function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): H
 `.trim()
 }
 
+// TODO
 function generateꓽhtml__head__meta__pwa(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 	// TODO check if PWA
 	// 2023 https://www.computerworld.com/article/3688575/why-is-apple-making-big-improvements-to-web-apps-for-iphone.html
@@ -105,6 +114,7 @@ function generateꓽhtml__head__meta__pwa(spec: Immutable<WebsiteEntryPointSpec>
 	`.trim()
 }
 
+// TODO
 function generateꓽhtml__head__meta__twitter(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 	// https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards
 
@@ -112,6 +122,7 @@ function generateꓽhtml__head__meta__twitter(spec: Immutable<WebsiteEntryPointS
 	].join(EOL).trim()
 }
 
+// TODO
 function generateꓽhtml__head__meta__opengraph(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 	// https://ogp.me/
 
@@ -120,7 +131,7 @@ function generateꓽhtml__head__meta__opengraph(spec: Immutable<WebsiteEntryPoin
 	].join(EOL).trim()
 }
 
-function _generateꓽmeta__contentⵧviewport__value(viewport_spec: Immutable<HtmlMetaContentⳇViewport>): string {
+function _stringifyꓽmetaⵧviewport__content(viewport_spec: Immutable<HtmlMetaContentⳇViewport>): string {
 	return Object.entries(viewport_spec)
 		.map(([key, value]) => {
 			assert(_has_content(value), `viewport entry "${key}" should not be empty: "${value}"!`)
@@ -134,12 +145,14 @@ function _generateꓽlinks(spec: Immutable<WebsiteEntryPointSpec>): { [rel: stri
 	/* TODO
 	https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browsers-836a6aace3df
 			<link rel="preconnect" href="https://identity.netlify.com">
-	<link rel="icon" href="./favicons/favicon.svg">
 	<link rel="apple-touch-icon" href="./favicons/apple-touch-icon-180x180.png">
 	<link rel="mask-icon" href="./favicons/safari-mask-icon.svg" color="#543d46">
 	 */
+	const emoji = '3️⃣'
 
 	return {
+		//canonical: `https://TODO`,
+		icon: `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>${emoji}</text></svg>`,
 		...(needsꓽwebmanifest(spec) && { manifest: './' + getꓽbasenameⵧwebmanifest(spec) }),
 	}
 }
@@ -159,7 +172,7 @@ function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Ht
 				let content = metas.document[name]
 				switch(name) {
 					case 'viewport':
-						content = _generateꓽmeta__contentⵧviewport__value(content)
+						content = _stringifyꓽmetaⵧviewport__content(content)
 						break
 					default:
 						break
@@ -212,17 +225,11 @@ function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Ht
 
 function generateꓽhtml__head(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 	// https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
-
-
-	// TODO link to webmanifest!!
-	// TODO manifest 	<link rel="manifest" href="./app--viewport--03.webmanifest">
-
-
 	return `
 <head>
 	${_indent(generateꓽhtml__head__meta(spec), true)}
 
-	<title>${getꓽtitleⵧpage(spec)}</title>
+	<title>${ifꓽdebug(spec).prefixꓽwith(`[title--page]`, getꓽtitleⵧpage(spec))}</title>
 
 	${_indent(generateꓽhtml__head__style(spec), true)}
 </head>
@@ -242,7 +249,7 @@ function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): HtmlStri
 			max-width: var(--width);
 			margin: 0 max(1ch, (100vw - var(--width))/2);
 			">
-			<h1>${getꓽtitleⵧpage(spec)}</h1>
+			<h1>${ifꓽdebug(spec).prefixꓽwith(`[title--page]`, getꓽtitleⵧpage(spec))}</h1>
 			<em>Loading…</em>
 		</section>
 	</main>
@@ -268,7 +275,7 @@ function generate(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 		`</html>`,
 	].join(EOL)
 
-	// TODO check IW10
+	// TODO check IW10 <14k https://developers.google.com/speed/docs/insights/mobile#delivering-the-sub-one-second-rendering-experience
 	return normalize_unicode(result)
 }
 

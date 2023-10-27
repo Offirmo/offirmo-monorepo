@@ -14,3 +14,6 @@ Fonts:
       "@fontsource/roboto": "^4",
       "@fontsource/roboto-condensed": "^4",
       "@fontsource/roboto-mono": "^4",
+
+
+TODO learn https://ishadeed.com/article/photoshop-web-css/

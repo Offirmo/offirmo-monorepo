@@ -39,6 +39,8 @@ const EXAMPLEⵧWEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentry
 
 const EXAMPLEⵧEXPERIMENTⵧVIEWPORT: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[0] = {
 	isꓽpublic: false,
+	isꓽdebug: true,
+
 	wantsꓽinstall: 'partial',
 	hasꓽown_navigation: true,
 	supportsꓽscreensⵧwith_shape: true,
@@ -62,8 +64,8 @@ const EXAMPLEⵧEXPERIMENTⵧVIEWPORT: Parameters<typeof generateꓽwebsiteᝍen
 
 const result = generateꓽwebsiteᝍentryᝍpoint(
 	//EXAMPLEⵧSIMPLE_PAGE
-//EXAMPLEⵧWEBAPPⵧTBRPG2023
-EXAMPLEⵧEXPERIMENTⵧVIEWPORT
+	//EXAMPLEⵧWEBAPPⵧTBRPG2023
+	EXAMPLEⵧEXPERIMENTⵧVIEWPORT
 )
 
 Object.keys(result).forEach(basename => {

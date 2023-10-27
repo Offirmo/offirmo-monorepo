@@ -13,6 +13,9 @@ import {
 	getꓽcolorⵧbackground,
 	getꓽcolorⵧtheme, supportsꓽscreensⵧwith_shape,
 } from '../selectors.js'
+import {
+	ifꓽdebug
+} from '../utils.js'
 
 /////////////////////////////////////////////////
 
@@ -24,7 +27,9 @@ function _generateꓽicons(spec: Immutable<WebsiteEntryPointSpec>): [] {
 function generate(spec: Immutable<WebsiteEntryPointSpec>): WebManifest {
 	const result: WebManifest = {
 		// critical to be installable
-		name: getꓽtitleⵧapp(spec),
+		name: ifꓽdebug(spec).prefixꓽwith(`[wm.name]`,
+			getꓽtitleⵧapp(spec)
+		),
 		icons: _generateꓽicons(spec),
 		start_url: `./${getꓽbasenameⵧindexᐧhtml(spec)}?ref=webmanifest`, // TODO review query params
 
@@ -35,7 +40,9 @@ function generate(spec: Immutable<WebsiteEntryPointSpec>): WebManifest {
 			: 'minimal-ui',
 
 		// critical for good experience
-		short_name: getꓽtitleⵧappⵧshort(spec),
+		short_name: ifꓽdebug(spec).prefixꓽwith(`[wm.short]`,
+			getꓽtitleⵧappⵧshort(spec)
+		),
 		theme_color: getꓽcolorⵧtheme(spec),
 		background_color: getꓽcolorⵧbackground(spec),
 		lang: getꓽlang(spec),

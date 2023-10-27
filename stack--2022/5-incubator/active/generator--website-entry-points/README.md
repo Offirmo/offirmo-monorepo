@@ -8,19 +8,11 @@ index.html are a mess:
 - critical CSS
 - preload
 - 3rd party scripts
-
+- webmanifest with repetition: titles, favicons...
 
 And above all it's hard to properly comment!
 
 I need a tool.
-
-
-TODO CSP
-TODO Open Graph & co
-TODO IW10 <14k
-TODO early styles
-TODO sitelinks
-TODO https://developer.mozilla.org/en-US/docs/Web/Manifest#splash_screens
 
 
 NOT IN SCOPE

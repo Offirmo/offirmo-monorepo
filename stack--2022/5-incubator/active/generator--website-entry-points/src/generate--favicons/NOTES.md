@@ -1,5 +1,6 @@
 
 +++ https://web.dev/learn/pwa/web-app-manifest/#icons
++++ https://web.dev/learn/pwa/app-design#the_icon
 
 > Caution: While PNGs can include transparency, providing transparent icons may cause unexpected issues on some operating systems. For example, iOS, iPadOS, and Android 8 and later fill in the transparency with a background color out of your control. For better compatibility, use a square non-transparent icon.
 
@@ -16,3 +17,4 @@ https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browse
 TODO favicon unicode https://piccalil.li/quick-tip/add-inline-svg-directly-in-your-css/
 
 https://github.com/audreyfeldroy/favicon-cheat-sheet
++++ https://austingil.com/svg-favicons/

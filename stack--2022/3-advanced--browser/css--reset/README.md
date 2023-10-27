@@ -78,6 +78,8 @@ CSS
 Ideas
 * TODO one day check if one can use js to grab the default style from inside a browser?
 * TODO https://web.dev/baseline
+* TODO https://andy-bell.co.uk/a-more-modern-css-reset/
+* TODO https://bedrocss.austingil.com/
 
 
 [canonical link](https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/css--reset#readme)

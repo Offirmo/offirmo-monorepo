@@ -7,6 +7,7 @@ import { Category, WebsiteEntryPointSpec } from './types.js'
 const LIB = '@offirmo/generator--website-entry-points'
 
 // safest possible defaults
+// TODO move to selectors with ?? + assert criticals
 const DEFAULT_SPEC: Immutable<WebsiteEntryPointSpec> = {
 	isꓽpublic: false,
 

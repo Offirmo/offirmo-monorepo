@@ -6,11 +6,16 @@ import { LIB } from '../consts.js'
 import {
 	getꓽlang,
 	getꓽcolorⵧtheme,
-	getꓽcharset, isꓽuser_scalable,
+	getꓽcharset,
+	isꓽuser_scalable,
 	supportsꓽscreensⵧwith_shape,
+	wantsꓽinstall,
 } from '../selectors.js'
+import {
+	ifꓽdebug
+} from '../utils.js'
 import { HtmlMetaContentⳇContentSecurityPolicy, HtmlMetaContentⳇViewport, HtmlMetas } from './types.js'
-import { DEFAULT_VIEWPORT_META } from './consts.js'
+
 
 /////////////////////////////////////////////////
 
@@ -43,7 +48,17 @@ function getꓽmetas(spec: Immutable<WebsiteEntryPointSpec>): HtmlMetas {
 		// document-level metadata
 		// <meta name="<KEY>" content="<VALUE>">
 		document: {
-				viewport: _getꓽmetasⵧviewport(spec),
+			viewport: _getꓽmetasⵧviewport(spec),
+
+
+			...(wantsꓽinstall(spec) && {
+				'apple-mobile-web-app-capable': 'yes',
+				'apple-mobile-web-app-status-bar-style': supportsꓽscreensⵧwith_shape(spec)
+					? 'black-translucent'
+					: 'black',
+			}),
+
+			'format-detection': 'telephone=no', // TODO
 		},
 
 		// pragma directives, equivalent to http headers
@@ -63,6 +78,7 @@ function getꓽmetas(spec: Immutable<WebsiteEntryPointSpec>): HtmlMetas {
 
 		// <meta property="<KEY>" content="<VALUE>"/>
 		properties: {
+			//TODO Open Graph & co
 
 		},
 

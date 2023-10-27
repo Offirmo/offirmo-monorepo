@@ -33,7 +33,9 @@
 		"clean": "run-s  _clean--all--cmd _clean--all--rm _clean--root",
 		"build": "bolt ws run build",
 		"test": "bolt ws run test",
-		"serve": "serve --listen 1987 --debug"
+
+		"serve": "serve --listen 1987 --debug",
+		"serve--pub": "ngrok http 1987 --domain=national-rat-supreme.ngrok-free.app"
 	},
 	"bolt": {
 		"workspaces": [

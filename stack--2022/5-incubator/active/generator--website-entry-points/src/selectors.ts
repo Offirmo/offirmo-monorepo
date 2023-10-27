@@ -16,6 +16,10 @@ import { WebsiteEntryPointSpec } from './types.js'
 
 /////////////////////////////////////////////////
 
+function wantsꓽinstall(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+	return (spec.wantsꓽinstall ?? false) !== false
+}
+
 function hasꓽown_navigation(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 	return spec.hasꓽown_navigation ?? false
 }
@@ -26,7 +30,7 @@ function isꓽuser_scalable(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 }
 
 function needsꓽwebmanifest(spec: Immutable<WebsiteEntryPointSpec>): boolean {
-	return spec.wantsꓽinstall !== false
+	return wantsꓽinstall(spec)
 }
 
 function supportsꓽscreensⵧwith_shape(spec: Immutable<WebsiteEntryPointSpec>): boolean {
@@ -75,7 +79,6 @@ function _getꓽtitle(spec: Immutable<WebsiteEntryPointSpec>): string {
 }
 
 function getꓽtitleⵧpage(spec: Immutable<WebsiteEntryPointSpec>): string {
-	// TODO isꓽdebug
 	return _getꓽtitle(spec)
 }
 
@@ -117,6 +120,7 @@ function getꓽcolorⵧtheme(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
 /////////////////////////////////////////////////
 
 export {
+	wantsꓽinstall,
 	isꓽuser_scalable,
 	hasꓽown_navigation,
 
