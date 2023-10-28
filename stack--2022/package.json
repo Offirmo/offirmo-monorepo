@@ -133,7 +133,7 @@
 		"load-json-file": "^7",
 		"lodash": "^4",
 		"lodash-es": "^4",
-		"log-symbols": "^5",
+		"log-symbols": "^6",
 		"loud-rejection": "^2",
 		"luxon": "^3",
 		"memoize-one": "^6",
