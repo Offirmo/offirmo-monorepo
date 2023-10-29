@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 * [chore] added unit tests!
 * [chore][breaking] removed the package.json "esnext" property, can't reference of tools using it
-* [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
+* [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
 * [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
 * ...
 
@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 3.0.0
 2020/06/30
 * [chore][breaking] will now by default prevent the "uncaught rejection" message
-* [chore][breaking] cjs pre-build now targeting node12/ES2019 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
+* [chore][breaking] cjs pre-build now targeting node12/ES2019 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
 * [feat] slightly improved typings, following the latest Promise definition (Typescript 3.8.3)
 * [doc] credits
 
@@ -36,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 2.0.0
 2019/11/18
-* [chore][breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../0-CONTRIBUTING/06-conventions--js--modules.md)
+* [chore][breaking] no longer exporting ES5, reverted to [this more rationale export setup](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
 * [chore] fixed dist folder name to match the target (ES2019)
 * [feat] also provide an ES5 pre-built version
   * Idiot me... so it wasn't a breaking since ES5 was never released :facepalm:

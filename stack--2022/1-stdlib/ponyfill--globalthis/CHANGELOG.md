@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 2022/12/15
 * [chore][breaking] (typescript only) added type correctness by correctly returning "typeof globalThis".
                     When dealing with new properties, typing can be either opted out or extended in the global scope, cf. unit tests and README.
-* [chore][breaking] pre-builds now targeting the latest LTS node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules.md)
+* [chore][breaking] pre-builds now targeting the latest LTS node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
 * [chore][breaking] removed the package.json "esnext" property, I can't find any reference of tools using it
 * [chore] added unit tests
 
