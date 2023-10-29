@@ -166,6 +166,8 @@ function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Ht
 	const links = _generateꓽlinks(spec)
 
 	return [
+		// should be first!
+		// https://github.com/h5bp/html5-boilerplate/blob/main/docs/html.md#the-order-of-the-title-and-meta-tags
 		`<meta charset="${metas.charset}" />`,
 
 		...Object.keys(metas.document)

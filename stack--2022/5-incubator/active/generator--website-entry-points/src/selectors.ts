@@ -17,9 +17,18 @@ import { WebsiteEntryPointSpec } from './types.js'
 /////////////////////////////////////////////////
 // always use safe defaults
 
+function isꓽdebug(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+	return spec.isꓽdebug ?? false
+}
+
 function wantsꓽinstall(spec: Immutable<WebsiteEntryPointSpec>): boolean {
-	if (typeof spec.wantsꓽinstall === 'boolean')
-		return spec.wantsꓽinstall
+	if (typeof spec.wantsꓽinstall === 'string')
+		return true
+
+	if (spec.wantsꓽinstall === false)
+		return false
+
+	// not provided
 
 	if (spec.preset === 'game')
 		return true
@@ -139,6 +148,7 @@ function getꓽcolorⵧtheme(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
 /////////////////////////////////////////////////
 
 export {
+	isꓽdebug,
 	wantsꓽinstall,
 	isꓽuser_scalable,
 	hasꓽown_navigation,

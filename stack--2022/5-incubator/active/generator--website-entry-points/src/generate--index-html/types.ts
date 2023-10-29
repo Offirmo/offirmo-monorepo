@@ -48,9 +48,8 @@ interface HtmlMetaContentⳇViewport {
 		| 'resizes-content'  // Resize both the Visual Viewport and Layout Viewport
 		| 'overlays-content' // Do not resize any viewport
 
-	// old? still useful?
-	// TODO
-	// https://stackoverflow.com/questions/33767533/what-does-the-shrink-to-fit-viewport-meta-attribute-do
+	// DEPRECATED cf. [Time to remove the shrink-to-fit=no band aid?](https://www.scottohara.me/blog/2018/12/11/shrink-to-fit.html)
+	// listed for reference only
 	'shrink-to-fit'?: 'no',
 
 }

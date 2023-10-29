@@ -25,7 +25,7 @@ function _getꓽmetasⵧviewport(spec: Immutable<WebsiteEntryPointSpec>): HtmlMe
 		// which site is not mobile friendly those day?
 		// and those who are not are obviously NOT using this tool ;)
 		width: 'device-width',
-		height: 'device-height',
+		//height: 'device-height', NO this seems to be a default, no site use it
 		'initial-scale': 1,
 
 		// scalability

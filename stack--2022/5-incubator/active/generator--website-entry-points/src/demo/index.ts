@@ -11,12 +11,10 @@ import generateꓽwebsiteᝍentryᝍpoint from '../index.js'
 
 
 const EXAMPLEⵧSIMPLE_PAGE: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[0] = {
-	isꓽpublic: true,
 	title: 'The Boring RPG',
 }
 
 const EXAMPLEⵧWEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[0] = {
-	isꓽpublic: true,
 	preset: 'game',
 
 	wantsꓽinstall: 'prompt',
@@ -40,7 +38,6 @@ const EXAMPLEⵧWEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentry
 }
 
 const EXAMPLEⵧEXPERIMENTⵧVIEWPORT: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[0] = {
-	isꓽpublic: false,
 	isꓽdebug: true,
 
 	wantsꓽinstall: 'partial',

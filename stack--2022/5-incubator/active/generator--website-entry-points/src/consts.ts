@@ -1,5 +1,7 @@
 import { Immutable } from '@offirmo-private/ts-types'
 
+import { env } from 'node:process'
+
 import { Category, WebsiteEntryPointSpec } from './types.js'
 
 /////////////////////////////////////////////////
@@ -9,7 +11,7 @@ const LIB = '@offirmo/generator--website-entry-points'
 // safest possible defaults
 // TODO move to selectors with ?? + assert criticals
 const DEFAULT_SPEC: Immutable<WebsiteEntryPointSpec> = {
-	isꓽpublic: false,
+	env: env['NODE_ENV'] ?? 'dev',
 
 	basename: 'index',
 	lang: 'en',

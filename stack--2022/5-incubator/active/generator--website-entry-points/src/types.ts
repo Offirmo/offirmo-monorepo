@@ -53,8 +53,9 @@ interface WebsiteEntryPointSpec {
 	// must be flat for easy defaulting
 	// optional '?:' = truly optional (can be easily derived)
 
-	isꓽpublic: boolean
-	preset?: 'game'
+	env?: 'prod' | 'production' | string // default to env.NODE_ENV ?? dev
+	isꓽpublic?: boolean // default: true if prod, false else
+	preset?: 'game' | 'landing--app' // TODO
 
 	basename?: Basename // without extension. default to "index"
 
