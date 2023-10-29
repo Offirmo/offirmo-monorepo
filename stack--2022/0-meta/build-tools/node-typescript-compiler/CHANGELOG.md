@@ -5,32 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
 ## [Unreleased]
 * TODO remove lodash as a dependency
 * TODO change the interface to use named params
 * TODO add types through comments?
-* [feat] improved the nvm global module resolution, should now work on unix (not tested)
-* [chore] removed a dev dependency
-* [chore] bumped dependencies (minor)
-* [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
-  * as such, the typescript module resolution through `require` is now resolved through `import.meta.resolve`
-* [chore][breaking] main functions are now correctly marked async
-* [fix] improved a rare potential case where we could detect the spawn termination too early and miss out output
-  * according to the doc, not actually seen
-* [chore] logger state is no longer leaked between invocations (it was using a global state)
-* [chore] process.env is refreshed for each invocation
-* [chore] refactored the code a bit
-* [doc]++
 * ...
 
 
-## v3.0.0
-2022/04/25
+## [4.0.0] - 2023-10-30
+* [chore][BREAKING] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
+  * as such, the typescript module resolution through `require` is now resolved through `import.meta.resolve`
+* [chore][BREAKING] main functions are now correctly marked async
+* [feat] improved the nvm global module resolution, should now work on unix (not tested)
+* [fix] improved a rare potential case where we could detect the spawn termination too early and miss out output
+  * according to the doc, not actually seen
+* [fix] logger state is no longer leaked between invocations (it was using a global state)
+* [doc]++
+* [chore] removed a dev dependency
+* [chore] bumped dependencies
+* [chore] refactored the code a bit
+
+
+## [3.0.0] - 2022/04/25
 * [feat][breaking] now using [cross-spawn](https://github.com/moxystudio/node-cross-spawn) to hopefully add Windows compatibility
   * marked as "breaking change" out of safety but should not change anything
   * credits to [photonstorm](https://github.com/photonstorm) for the [suggestion](https://github.com/Offirmo/offirmo-monorepo/issues/5#issuecomment-879942830)
   * credits to [MisterLuffy](https://github.com/MisterLuffy) for [reminding me about it](https://github.com/Offirmo/offirmo-monorepo/pull/10)
 * [chore] bumped dependencies (minor)
+
 
 ## v2.4.0
 2022/04/03
