@@ -1,5 +1,6 @@
 import { Immutable } from '@offirmo-private/ts-types'
 import { Basename, CssColor, IETFLanguageType, PositiveIntegerInRange, RealInRange, Charset } from '@offirmo-private/ts-types'
+import { HtmlString } from './generate--index-html/types'
 
 /////////////////////////////////////////////////
 
@@ -53,10 +54,11 @@ interface WebsiteEntryPointSpec {
 	// optional '?:' = truly optional (can be easily derived)
 
 	isꓽpublic: boolean
+	preset?: 'game'
 
-	basename: Basename // without extension
+	basename?: Basename // without extension. default to "index"
 
-	lang: IETFLanguageType
+	lang?: IETFLanguageType // default to en
 
 	title: string
 	titleⵧsocial?: string
@@ -66,8 +68,8 @@ interface WebsiteEntryPointSpec {
 	descriptionⵧsocial?: string
 	descriptionⵧapp?: string
 
-	app_categories: Category[]
-	keywords: string[]
+	app_categories?: Category[]
+	keywords?: string[]
 
 	// https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors
 	// +++ https://css-tricks.com/meta-theme-color-and-trickery/
@@ -75,16 +77,16 @@ interface WebsiteEntryPointSpec {
 	// from: https://web.dev/learn/pwa/web-app-manifest/#recommended_fields
 	//   Warning: Do not use transparency, CSS variables, gradient functions, or color functions with transparency (such as rgba())
 	//   as they are not supported by most browsers. You will get inconsistent results.
-	colorⵧbackground: CssColor
-	colorⵧforeground: CssColor
-	colorⵧtheme: CssColor // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
+	colorⵧbackground?: CssColor
+	colorⵧforeground?: CssColor
+	colorⵧtheme?: CssColor // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
 
-	supportsꓽscreensⵧwith_shape: boolean
-	hasꓽown_navigation: boolean
-	canꓽuse_window_controls_overlay: boolean
-	usesꓽpull_to_refresh: boolean
+	supportsꓽscreensⵧwith_shape?: boolean
+	hasꓽown_navigation?: boolean
+	canꓽuse_window_controls_overlay?: boolean
+	usesꓽpull_to_refresh?: boolean
 
-	wantsꓽinstall:
+	wantsꓽinstall?:
 		| false     // won't provide much benefit
 		| 'partial' // TODO clarify (we may want to manually prompt the user)
 		| 'prompt'  // to the point the browser is expected to prompt https://web.dev/articles/install-criteria
@@ -97,7 +99,9 @@ interface WebsiteEntryPointSpec {
 		| 'snippet:natural-box-layout'
 		>,
 
-	// TODO overscroll
+	html?: HtmlString // TODO refine
+
+	scripts?: string[] // TODO refine
 
 	// TODO one day themes
 

@@ -4,6 +4,7 @@ import { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
 import { WebsiteEntryPointSpec } from '../types.js'
 import { LIB } from '../consts.js'
 import {
+	prefersꓽorientation,
 	getꓽlang,
 	getꓽcolorⵧtheme,
 	getꓽcharset,
@@ -28,7 +29,10 @@ function _getꓽmetasⵧviewport(spec: Immutable<WebsiteEntryPointSpec>): HtmlMe
 		'initial-scale': 1,
 
 		// scalability
-		...(!isꓽuser_scalable(spec) && {
+		// - either we explicitely don't want it
+		// - or/and we support orientation change and if we don't lock the scale, the viewport doesn't fit on orientation change (cf. https://stackoverflow.com/a/12114397)
+		// hence we're not afraid to lock user scaling
+		...((!prefersꓽorientation(spec) || !isꓽuser_scalable(spec)) && {
 			'user-scalable': 'no',
 			'minimum-scale': 1,
 			'maximum-scale': 1,

@@ -47,6 +47,12 @@ interface HtmlMetaContentⳇViewport {
 		| 'resizes-visual'   // [DEFAULT] Resize only the Visual Viewport but not the Layout Viewport
 		| 'resizes-content'  // Resize both the Visual Viewport and Layout Viewport
 		| 'overlays-content' // Do not resize any viewport
+
+	// old? still useful?
+	// TODO
+	// https://stackoverflow.com/questions/33767533/what-does-the-shrink-to-fit-viewport-meta-attribute-do
+	'shrink-to-fit'?: 'no',
+
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta

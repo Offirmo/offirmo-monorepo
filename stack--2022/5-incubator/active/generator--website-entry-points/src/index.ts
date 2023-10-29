@@ -15,14 +15,9 @@ import generateꓽwebmanifest from './generate--webmanifest/index.js'
 
 /////////////////////////////////////////////////
 
-function generateꓽwebsiteᝍentryᝍpoint(specⵧraw: Immutable<Partial<WebsiteEntryPointSpec>>): EntryPoints {
-	assert(!!specⵧraw.title, `should have a title!`)
-	assert(typeof specⵧraw.isꓽpublic === 'boolean', `should tell if public!`)
-
-	const spec: Immutable<WebsiteEntryPointSpec> = {
-		...DEFAULT_SPEC,
-		...specⵧraw,
-	}
+function generateꓽwebsiteᝍentryᝍpoint(spec: Immutable<WebsiteEntryPointSpec>): EntryPoints {
+	assert(!!spec.title, `should have a title!`)
+	assert(typeof spec.isꓽpublic === 'boolean', `should tell if public!`)
 
 	return {
 		[getꓽbasenameⵧindexᐧhtml(spec)]: generateꓽindexᐧhtml(spec),

@@ -67,11 +67,11 @@ function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): H
 		font-family: var(--font);
 
 		${
-			// https://www.the-koi.com/projects/how-to-disable-pull-to-refresh/
-			usesꓽpull_to_refresh(spec)
-				? ''
-				: 'overscroll-behavior: none;'
-		}
+		// https://www.the-koi.com/projects/how-to-disable-pull-to-refresh/
+		usesꓽpull_to_refresh(spec)
+			? ''
+			: 'overscroll-behavior: none;'
+	}
 	}
 
 	${(spec.styles ?? [])
@@ -152,8 +152,12 @@ function _generateꓽlinks(spec: Immutable<WebsiteEntryPointSpec>): { [rel: stri
 
 	return {
 		//canonical: `https://TODO`,
+
 		icon: `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>${emoji}</text></svg>`,
-		...(needsꓽwebmanifest(spec) && { manifest: './' + getꓽbasenameⵧwebmanifest(spec) }),
+		...(needsꓽwebmanifest(spec) && {
+			// tested 2023/10 iOs 16 / android 11 using relative path ./xyz doesn't work
+			manifest: getꓽbasenameⵧwebmanifest(spec),
+		}),
 	}
 }
 
@@ -237,22 +241,26 @@ function generateꓽhtml__head(spec: Immutable<WebsiteEntryPointSpec>): HtmlStri
 }
 
 function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
+
 	return `
 <body class="">
 	<noscript>You need to enable JavaScript to run this app.</noscript>
 
-	<main id="root" class="o⋄top-container">
-		<!-- React will render here and replace this -->
-		<section style="
-			text-align: center;
-			--width: 60ch;
-			max-width: var(--width);
-			margin: 0 max(1ch, (100vw - var(--width))/2);
-			">
-			<h1>${ifꓽdebug(spec).prefixꓽwith(`[title--page]`, getꓽtitleⵧpage(spec))}</h1>
-			<em>Loading…</em>
-		</section>
-	</main>
+	${spec.html ?? `
+<main id="root">
+	<!-- React will render here and replace this -->
+	<section style="
+		text-align: center;
+		--width: 60ch;
+		max-width: var(--width);
+		margin: 0 max(1ch, (100vw - var(--width))/2);
+		">
+		<h1>${ifꓽdebug(spec).prefixꓽwith(`[title--page]`, getꓽtitleⵧpage(spec))}</h1>
+		<em>Loading…</em>
+	</section>
+</main>`
+	}
+
 </body>
 	`.trim()
 }

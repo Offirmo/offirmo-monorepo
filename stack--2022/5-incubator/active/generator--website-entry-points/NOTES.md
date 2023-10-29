@@ -16,7 +16,7 @@ TODO https://developer.mozilla.org/en-US/docs/Web/Manifest#splash_screens
 TODO https://web.dev/articles/window-controls-overlay
 TODO https://alistapart.com/article/breaking-out-of-the-box/
 TODO https://medium.com/samsung-internet-dev/toolbars-keyboards-and-the-viewports-10abcc6c3769
-
+TODO on rotate, should resize the viewport (TODO test iOs)
 
 ### non-rectangle screen shapes
 

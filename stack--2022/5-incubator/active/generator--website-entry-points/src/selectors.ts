@@ -15,13 +15,26 @@ import {
 import { WebsiteEntryPointSpec } from './types.js'
 
 /////////////////////////////////////////////////
+// always use safe defaults
 
 function wantsꓽinstall(spec: Immutable<WebsiteEntryPointSpec>): boolean {
-	return (spec.wantsꓽinstall ?? false) !== false
+	if (typeof spec.wantsꓽinstall === 'boolean')
+		return spec.wantsꓽinstall
+
+	if (spec.preset === 'game')
+		return true
+
+	return false
 }
 
 function hasꓽown_navigation(spec: Immutable<WebsiteEntryPointSpec>): boolean {
-	return spec.hasꓽown_navigation ?? false
+	if (typeof spec.hasꓽown_navigation === 'boolean')
+		return spec.hasꓽown_navigation
+
+	if (spec.preset === 'game')
+		return true
+
+	return false
 }
 
 function isꓽuser_scalable(spec: Immutable<WebsiteEntryPointSpec>): boolean {
@@ -45,10 +58,17 @@ function usesꓽpull_to_refresh(spec: Immutable<WebsiteEntryPointSpec>): boolean
 	return spec.usesꓽpull_to_refresh ?? true
 }
 
+function prefersꓽorientation(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+	// TODO
+	return false
+}
+
 /////////////////////////////////////////////////
 
 function _getꓽbasename_without_extension(spec: Immutable<WebsiteEntryPointSpec>): Basename {
-	assert(!!spec.basename)
+	if (!spec.basename)
+		return 'index'
+
 	assert(path.extname(spec.basename) === '')
 	const safe_version = coerce_to_safe_basenameⵧstrictest(spec.basename)
 	assert(spec.basename === safe_version, `basename "${spec.basename}" is unsafe, it should be "${safe_version}"!`)
@@ -65,7 +85,10 @@ function getꓽbasenameⵧwebmanifest(spec: Immutable<WebsiteEntryPointSpec>): B
 }
 
 function getꓽlang(spec: Immutable<WebsiteEntryPointSpec>): IETFLanguageType {
-	assert(!!spec.lang)
+	if (!spec.lang)
+		return 'en'
+
+	// TODO check format
 	return normalize_unicode(spec.lang).toLowerCase()
 }
 
@@ -83,36 +106,32 @@ function getꓽtitleⵧpage(spec: Immutable<WebsiteEntryPointSpec>): string {
 }
 
 function getꓽtitleⵧsocial(spec: Immutable<WebsiteEntryPointSpec>): string {
-	// TODO isꓽdebug
 	return !!spec.titleⵧsocial
 		? normalize_unicode(spec.titleⵧsocial).trim()
 		: _getꓽtitle(spec)
 }
 
 function getꓽtitleⵧapp(spec: Immutable<WebsiteEntryPointSpec>): string {
-	// TODO isꓽdebug
 	return !!spec.titleⵧapp
 		? normalize_unicode(spec.titleⵧapp).trim()
 		: _getꓽtitle(spec)
 }
 
 function getꓽtitleⵧappⵧshort(spec: Immutable<WebsiteEntryPointSpec>): string {
-	// TODO isꓽdebug
 	// TODO
 	return getꓽtitleⵧapp(spec)
 }
 
 function getꓽcolorⵧforeground(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
-	assert(spec.colorⵧforeground)
-	return spec.colorⵧforeground
+	return spec.colorⵧforeground ?? 'black'
 }
 
 function getꓽcolorⵧbackground(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
-	assert(spec.colorⵧbackground)
-	return spec.colorⵧbackground
+	return spec.colorⵧbackground ?? 'white'
 }
+
 function getꓽcolorⵧtheme(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
-	return spec.colorⵧtheme || getꓽcolorⵧbackground(spec)
+	return spec.colorⵧtheme ?? getꓽcolorⵧbackground(spec)
 }
 
 // keywords: todo dedupe, add categories, lowercase, etc.
@@ -123,6 +142,7 @@ export {
 	wantsꓽinstall,
 	isꓽuser_scalable,
 	hasꓽown_navigation,
+	prefersꓽorientation,
 
 	supportsꓽscreensⵧwith_shape,
 	canꓽuse_window_controls_overlay,
