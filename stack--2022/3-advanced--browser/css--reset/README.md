@@ -46,10 +46,11 @@ Reviewing the well known CSS, it appears they are not pure CSS reset:
   * goes beyond a reset with opiniated choices, ex. default list "style none"
 * [a11y-css-reset](https://github.com/mike-engel/a11y-css-reset)
   * is not a reset, more like a "recommended"
-* https://github.com/jensimmons/cssremedy https://css-tricks.com/css-remedy/
-* https://css-tricks.com/should-css-override-default-styles/
-* https://css-tricks.com/notes-on-josh-comeaus-custom-css-reset/
-* https://css-tricks.com/reboot-resets-reasoning/
+* TODO https://github.com/jensimmons/cssremedy https://css-tricks.com/css-remedy/
+* TODO https://css-tricks.com/should-css-override-default-styles/
+* TODO https://css-tricks.com/notes-on-josh-comeaus-custom-css-reset/
+* TODO https://css-tricks.com/reboot-resets-reasoning/
+* TODO https://github.com/h5bp/main.css
 
 What we want:
 * ideally we want a pure reset bringing all browsers/os to the same common denominator
