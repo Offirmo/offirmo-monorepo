@@ -14,7 +14,7 @@
 		"@offirmo-private/soft-execution-context": "^0",
 		"@offirmo-private/state-utils": "^0",
 		"@offirmo-private/timestamps": "^0",
-		"@offirmo/cli-toolbox": "^2",
+		"@offirmo/cli-toolbox": "^3",
 		"@offirmo/error-utils": "^0",
 		"@offirmo/practical-logger-core": "^3",
 		"@offirmo/universal-debug-api-node": "^0",

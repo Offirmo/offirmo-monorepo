@@ -1,13 +1,15 @@
 # cli-toolbox
 
-An aggregation of useful quality modules related to writing CLI node apps.
+A convenient aggregation of useful quality modules related to writing CLI node apps.
 
 
 ## Introduction
 
 This module is an aggregation of frequently used terminal / CLI related modules that frequently work together.
 
-> When writing a CLI script/tool, you just need this single dep + the interface is cleaner!
+When writing a CLI script/tool,
+if you don't mind the extra space,
+you just need this single dep + the interface is cleaner!
 
 Goals:
 - not have to depend on a flurry of small modules, depend on this single one instead
