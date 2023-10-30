@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
-* TODO remove lodash as a dependency
-* TODO change the interface to use named params
+* [chore] removed the dependency to lodash 🎉
+* TODO change the interface to use named params?
 * TODO add types through comments?
 * ...
 

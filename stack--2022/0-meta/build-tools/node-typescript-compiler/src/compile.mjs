@@ -3,8 +3,6 @@ import path from 'node:path'
 
 import { spawn } from 'cross-spawn'
 import tildify from 'tildify'
-import _ from 'lodash'
-const { flatten, map, split, isArray } = _ // 2022/03 lodash is still commonjs
 
 import { EXECUTABLE, find_tsc } from './find-tsc.mjs'
 import { LIB } from './consts.mjs'
@@ -63,15 +61,18 @@ export async function compile(tscOptions, files, options) {
 		}
 
 		try {
-			const tsc_options_as_array = flatten(map(tscOptions, (value, key) => {
+			const tsc_options_as_array = Object.entries(tscOptions).reduce((acc, [key, value]) => {
 				if (value === false)
-					return []
+					return acc
+
 				if (value === true)
-					return [ `--${key}` ]
-				if (isArray(value))
+					return [ ...acc, `--${key}` ]
+
+				if (Array.isArray(value))
 					value = value.join(',')
-				return [ `--${key}`, value ]
-			}))
+
+				return [ ...acc, `--${key}`, value ]
+			}, [])
 			const spawn_params = tsc_options_as_array.concat(files)
 
 
@@ -123,7 +124,7 @@ export async function compile(tscOptions, files, options) {
 
 					spawn_instance.stdout.on('data', data => {
 						logger_state = display_banner_if_1st_output(logger_state)
-						split(data, EOL).forEach(line => {
+						String(data).split(EOL).forEach(line => {
 							if (!line.length) return // convenience for more compact output
 
 							if (line[0] === '/')
@@ -143,7 +144,7 @@ export async function compile(tscOptions, files, options) {
 
 					spawn_instance.stderr.on('data', data => {
 						logger_state = display_banner_if_1st_output(logger_state)
-						split(data, EOL).forEach(line => console.log(RADIX + '! ' + line))
+						String(data).split(EOL).forEach(line => console.log(RADIX + '! ' + line))
 						stderr += data
 					})
 					// mandatory for correct error detection
