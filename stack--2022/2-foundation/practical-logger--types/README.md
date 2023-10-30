@@ -13,9 +13,9 @@
 		  src="https://img.shields.io/npm/v/@offirmo/practical-logger-types.svg">
 	</a>
 	<a alt="dependencies analysis"
-	  href="https://david-dm.org/offirmo/offirmo-monorepo?path=2-foundation%2Fpractical-logger-types">
+	  href="https://david-dm.org/offirmo/offirmo-monorepo?path=stack--2022%2F2-foundation%2Fpractical-logger--types">
 		<img alt="dependencies badge"
-		  src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=2-foundation%2Fpractical-logger-types">
+		  src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=stack--2022%2F2-foundation%2Fpractical-logger--types">
 	</a>
 	<a alt="bundle size evaluation"
 	  href="https://bundlephobia.com/result?p=@offirmo/practical-logger-types">

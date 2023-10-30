@@ -13,9 +13,9 @@
 		  src="https://img.shields.io/npm/v/@offirmo/practical-logger-minimal-noop.svg">
 	</a>
 	<a alt="dependencies analysis"
-	  href="https://david-dm.org/offirmo/offirmo-monorepo?path=2-foundation%2Fpractical-logger-minimal-noop">
+	  href="https://david-dm.org/offirmo/offirmo-monorepo?path=stack--2022%2F2-foundation%2Fpractical-logger--minimal-noop">
 		<img alt="dependencies badge"
-		  src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=2-foundation%2Fpractical-logger-minimal-noop">
+		  src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=stack--2022%2F2-foundation%2Fpractical-logger--minimal-noop">
 	</a>
 	<a alt="bundle size evaluation"
 	  href="https://bundlephobia.com/result?p=@offirmo/practical-logger-minimal-noop">

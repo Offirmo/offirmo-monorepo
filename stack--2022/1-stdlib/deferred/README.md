@@ -13,9 +13,9 @@
 		  src="https://img.shields.io/npm/v/@offirmo/deferred.svg">
 	</a>
 	<a alt="dependencies analysis"
-	  href="https://david-dm.org/offirmo/offirmo-monorepo?path=1-stdlib%2Fdeferred">
+	  href="https://david-dm.org/offirmo/offirmo-monorepo?path=stack--2022%2F1-stdlib%2Fdeferred">
 		<img alt="dependencies badge"
-		  src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=1-stdlib%2Fdeferred">
+		  src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=stack--2022%2F1-stdlib%2Fdeferred">
 	</a>
 	<a alt="bundle size evaluation"
 	  href="https://bundlephobia.com/result?p=@offirmo/deferred">

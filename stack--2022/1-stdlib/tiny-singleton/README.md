@@ -13,9 +13,9 @@
 		  src="https://img.shields.io/npm/v/@offirmo/tiny-singleton.svg">
 	</a>
 	<a alt="dependencies analysis"
-	  href="https://david-dm.org/offirmo/offirmo-monorepo?path=1-stdlib%2Ftiny-singleton">
+	  href="https://david-dm.org/offirmo/offirmo-monorepo?path=stack--2022%2F1-stdlib%2Ftiny-singleton">
 		<img alt="dependencies badge"
-		  src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=1-stdlib%2Ftiny-singleton">
+		  src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=stack--2022%2F1-stdlib%2Ftiny-singleton">
 	</a>
 	<a alt="bundle size evaluation"
 	  href="https://bundlephobia.com/result?p=@offirmo/tiny-singleton">
