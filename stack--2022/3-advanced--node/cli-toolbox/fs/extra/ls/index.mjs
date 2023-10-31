@@ -12,7 +12,20 @@ export function lsDirsSync(srcpath, options = {}) {
 	let result = fs
 		.readdirSync(srcpath, { withFileTypes: true })
 		.map(dirent => {
-			//console.log(dirent)
+			if (!dirent.path) {
+				throw new Error('Missing dirent.path! Are you properly using node >= 18?')
+			}
+			/*console.log('from dirent:', {
+				path: dirent.path,
+				name: dirent.name,
+				type: dirent.isSymbolicLink()
+					? 'symlink'
+					: dirent.isDirectory()
+						? 'dir'
+						: dirent.isFile()
+							? 'file'
+							: '???'
+			})*/
 			return dirent
 		})
 		.filter(dirent => dirent.isDirectory())
@@ -32,7 +45,20 @@ export function lsFilesSync(srcpath, options = {}) {
 	let result = fs
 		.readdirSync(srcpath, { withFileTypes: true })
 		.map(dirent => {
-			//console.log(dirent)
+			if (!dirent.path) {
+				throw new Error('Missing dirent.path! Are you properly using node >= 18?')
+			}
+			/*console.log('from dirent:', {
+				path: dirent.path,
+				name: dirent.name,
+				type: dirent.isSymbolicLink()
+					? 'symlink'
+					: dirent.isDirectory()
+						? 'dir'
+						: dirent.isFile()
+							? 'file'
+							: '???'
+			})*/
 			return dirent
 		})
 		.filter(dirent => dirent.isFile())
