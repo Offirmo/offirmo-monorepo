@@ -2,6 +2,7 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 import { normalize_unicode } from '@offirmo-private/normalize-string'
 
+import { EOL } from '../consts.js'
 import { WebsiteEntryPointSpec } from '../types.js'
 import { HtmlMetaContentⳇViewport, HtmlMetas, HtmlString } from './types.js'
 import {
@@ -13,13 +14,14 @@ import {
 	getꓽcolorⵧforeground,
 	usesꓽpull_to_refresh, needsꓽwebmanifest, getꓽbasenameⵧwebmanifest,
 } from '../selectors.js'
-import {
-	ifꓽdebug
-} from '../utils.js'
+import { ifꓽdebug } from '../utils/debug.js'
 import { getꓽmetas } from './selectors.js'
+import snippetꓽnormalizeᝍtrailingᝍslash from './snippets/js/snippet--normalize-url.js'
+import {
+	generateꓽiconⵧinline as generateꓽfavicon__iconⵧinline,
+} from '../generate--favicons/index.js'
 
 /////////////////////////////////////////////////
-const EOL = '\n'
 
 function _indent(multi_line_string: string, only_nth_lines: boolean = false): string {
 	const lines = multi_line_string.split(EOL)
@@ -100,18 +102,30 @@ function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): H
 `.trim()
 }
 
-// TODO
-function generateꓽhtml__head__meta__pwa(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
-	// TODO check if PWA
-	// 2023 https://www.computerworld.com/article/3688575/why-is-apple-making-big-improvements-to-web-apps-for-iphone.html
-
-	// TODO theme color https://www.w3.org/TR/appmanifest/#theme_color-member
-	// https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
-	//`<meta name="format-detection" content="telephone=no">`,
+function generateꓽhtml__head__script(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 
 	return `
-<meta name="theme-color" content="${getꓽcolorⵧtheme(spec)}">
-	`.trim()
+<script>
+	/* critical JS */
+	${(spec.scripts ?? [])
+		.map(script => {
+			switch (script) {
+				case 'snippet:normalize-trailing-slash': {
+					return String(snippetꓽnormalizeᝍtrailingᝍslash).replaceAll('    ', '	')
+				}
+				default:
+					return script
+			}
+		})
+		.map(s => s.trim())
+		.map(s => {
+			assert(s.startsWith('function '), `All snippets should be a named fuction! (${s})}`)
+			return `;(${s})()`
+		})
+		.join(EOL + EOL + '	')}
+</script>
+`.trim()
+
 }
 
 // TODO
@@ -141,22 +155,18 @@ function _stringifyꓽmetaⵧviewport__content(viewport_spec: Immutable<HtmlMeta
 }
 
 function _generateꓽlinks(spec: Immutable<WebsiteEntryPointSpec>): { [rel: string]: string } {
-
-	/* TODO
-	https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browsers-836a6aace3df
-			<link rel="preconnect" href="https://identity.netlify.com">
-	<link rel="apple-touch-icon" href="./favicons/apple-touch-icon-180x180.png">
-	<link rel="mask-icon" href="./favicons/safari-mask-icon.svg" color="#543d46">
-	 */
-	const emoji = '3️⃣'
-
 	return {
 		//canonical: `https://TODO`,
 
-		icon: `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>${emoji}</text></svg>`,
+		icon: `data:image/svg+xml;utf8,${generateꓽfavicon__iconⵧinline(spec)}`,
+
 		...(needsꓽwebmanifest(spec) && {
-			// tested 2023/10 iOs 16 / android 11 using relative path ./xyz doesn't work
-			manifest: getꓽbasenameⵧwebmanifest(spec),
+
+			// tests
+			// 2023/10 iOs  relative ./xyz.webmanifest = works
+			// 2023/10 iOs  relative   xyz.webmanifest = works
+			// 2023/10 iOs  saw queries to <parent>/index.webmanifest ???
+			manifest: `./${getꓽbasenameⵧwebmanifest(spec)}`,
 		}),
 	}
 }
@@ -238,6 +248,8 @@ function generateꓽhtml__head(spec: Immutable<WebsiteEntryPointSpec>): HtmlStri
 	<title>${ifꓽdebug(spec).prefixꓽwith(`[title--page]`, getꓽtitleⵧpage(spec))}</title>
 
 	${_indent(generateꓽhtml__head__style(spec), true)}
+
+	${_indent(generateꓽhtml__head__script(spec), true)}
 </head>
 	`.trim()
 }
@@ -288,7 +300,6 @@ function generate(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 	// TODO check IW10 <14k https://developers.google.com/speed/docs/insights/mobile#delivering-the-sub-one-second-rendering-experience
 	return normalize_unicode(result)
 }
-
 
 /////////////////////////////////////////////////
 

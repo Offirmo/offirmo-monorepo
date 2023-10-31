@@ -129,7 +129,11 @@ interface HtmlMetas {
 			| 'strict-origin'
 			| 'strict-origin-when-cross-origin'
 			| 'unsafe-URL',
+
+		// https://www.w3.org/TR/appmanifest/#theme_color-member
+		// https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
 		'theme-color'?: CssColor
+
 		'color-scheme'?: unknown
 	}
 

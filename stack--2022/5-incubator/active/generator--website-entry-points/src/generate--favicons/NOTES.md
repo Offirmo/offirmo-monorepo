@@ -14,7 +14,7 @@ https://github.com/RealFaviconGenerator/rfg-api
 
 https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browsers-836a6aace3df
 
-TODO favicon unicode https://piccalil.li/quick-tip/add-inline-svg-directly-in-your-css/
+https://piccalil.li/quick-tip/add-inline-svg-directly-in-your-css/
 
 https://github.com/audreyfeldroy/favicon-cheat-sheet
 +++ https://austingil.com/svg-favicons/

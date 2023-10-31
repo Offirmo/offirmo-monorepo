@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { WebsiteEntryPointSpec } from './types.js'
-import { isꓽdebug } from './selectors.js'
+import { WebsiteEntryPointSpec } from '../types.js'
+import { isꓽdebug } from '../selectors.js'
 
 /////////////////////////////////////////////////
 

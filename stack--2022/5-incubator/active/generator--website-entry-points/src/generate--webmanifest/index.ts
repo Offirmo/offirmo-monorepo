@@ -13,9 +13,7 @@ import {
 	getꓽcolorⵧbackground,
 	getꓽcolorⵧtheme, supportsꓽscreensⵧwith_shape,
 } from '../selectors.js'
-import {
-	ifꓽdebug
-} from '../utils.js'
+import { ifꓽdebug } from '../utils/debug.js'
 
 /////////////////////////////////////////////////
 

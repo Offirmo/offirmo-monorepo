@@ -49,6 +49,7 @@ const EXAMPLEⵧEXPERIMENTⵧVIEWPORT: Parameters<typeof generateꓽwebsiteᝍen
 	usesꓽpull_to_refresh: false,
 
 	title: 'Viewport Test 03',
+	favicon: '3️⃣',
 	description: 'Prototype of PWA-compatible page using the full viewport',
 
 	// https://www.colorhunt.co/palette/1926553876bfe1aa74f3f0ca

@@ -12,9 +12,7 @@ import {
 	supportsꓽscreensⵧwith_shape,
 	wantsꓽinstall,
 } from '../selectors.js'
-import {
-	ifꓽdebug
-} from '../utils.js'
+import { ifꓽdebug } from '../utils/debug.js'
 import { HtmlMetaContentⳇContentSecurityPolicy, HtmlMetaContentⳇViewport, HtmlMetas } from './types.js'
 
 

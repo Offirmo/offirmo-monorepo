@@ -1,5 +1,5 @@
 import { Immutable } from '@offirmo-private/ts-types'
-import { Basename, CssColor, IETFLanguageType, PositiveIntegerInRange, RealInRange, Charset } from '@offirmo-private/ts-types'
+import { Emoji, Basename, CssColor, IETFLanguageType, PositiveIntegerInRange, RealInRange, Charset } from '@offirmo-private/ts-types'
 import { HtmlString } from './generate--index-html/types'
 
 /////////////////////////////////////////////////
@@ -64,6 +64,7 @@ interface WebsiteEntryPointSpec {
 	title: string
 	titleⵧsocial?: string
 	titleⵧapp?: string
+	favicon?: Emoji // TODO extend
 
 	description?: string // displayed by google search, very useful for SEO
 	descriptionⵧsocial?: string
@@ -102,7 +103,10 @@ interface WebsiteEntryPointSpec {
 
 	html?: HtmlString // TODO refine
 
-	scripts?: string[] // TODO refine
+	scripts?: Array<string
+		| 'snippet:normalize-trailing-slash'
+		// TODO google analytics etc.
+	>,
 
 	// TODO one day themes
 

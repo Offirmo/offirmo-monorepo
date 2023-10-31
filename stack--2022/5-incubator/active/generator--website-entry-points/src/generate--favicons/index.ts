@@ -4,21 +4,34 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 import { WebsiteEntryPointSpec } from '../types.js'
 
+import { renderꓽsvg, createꓽfrom_emoji, SVG } from '../utils/svg/index.js'
+
 /////////////////////////////////////////////////
 
+function generateꓽsvg(spec: Immutable<WebsiteEntryPointSpec>): Immutable<SVG> {
+	return createꓽfrom_emoji(
+			spec.favicon ?? '🔥' // TODO selector, TODO improve
+		)
+}
 
-function create(): string {
-	// emoji favicon https://twitter.com/LeaVerou/status/1241619866475474946
-	//  fill='#e67e22'
-	return `
-	<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-		<text y='.9em' font-size='90'>🦄</text>
-	</svg>
-`.trim()
+function generateꓽfile(spec: Immutable<WebsiteEntryPointSpec>): string {
+	return renderꓽsvg(generateꓽsvg(spec), {
+			//wantsꓽcompact: true,
+		}
+	)
+}
+
+function generateꓽiconⵧinline(spec: Immutable<WebsiteEntryPointSpec>): string {
+	return renderꓽsvg(generateꓽsvg(spec), {
+			wantsꓽcompact: true,
+		}
+	)
 }
 
 /////////////////////////////////////////////////
 
 export {
-
+	generateꓽsvg,
+	generateꓽfile,
+	generateꓽiconⵧinline,
 }
