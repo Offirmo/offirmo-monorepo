@@ -18,3 +18,6 @@ Alternate Forms of Phishing - Smishing, Vishing & Whaling
 :eight:  Reliability: All COMPANY Products offer and meet their internal SLA commitments for covered  experiences
 :nine:  Privacy: All access to UGC complies with our access policy
 :keycap_ten:  Compliance: All transaction and continuous engagements with customers, suppliers, partners and MP vendors are checked for regulatory compliance with applicable sanctions and export controls.
+
+
+https://www.google.com/search/howsearchworks/how-search-works/detecting-spam/

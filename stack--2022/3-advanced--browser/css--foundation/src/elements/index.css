@@ -10,6 +10,7 @@
 @import 'element--p.css';
 @import 'element--pre.css';
 @import 'element--strong.css';
+@import 'element--svg.css';
 @import 'element--textarea.css';
 
 @import 'elements--code.css';
@@ -21,11 +22,3 @@
 @import 'elements--tables.css';
 
 @import 'scrollbar.css';
-
-/* TODO "replaced elements" = display block to remove the magic space?
- * (not that simple)
- * img
- * video
- * canvas
- * svg?
- */

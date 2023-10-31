@@ -8,6 +8,9 @@ import { Category, WebsiteEntryPointSpec } from './types.js'
 
 const LIB = '@offirmo/generator--website-entry-points'
 
+const EOL = '\n'
+const TAB = '	'
+
 // safest possible defaults
 // TODO move to selectors with ?? + assert criticals
 const DEFAULT_SPEC: Immutable<WebsiteEntryPointSpec> = {
@@ -38,5 +41,7 @@ const DEFAULT_SPEC: Immutable<WebsiteEntryPointSpec> = {
 
 export {
 	LIB,
+	EOL,
+	TAB,
 	DEFAULT_SPEC,
 }

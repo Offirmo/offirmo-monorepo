@@ -1,6 +1,7 @@
 /* Order is important
  * https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links
  */
+/* TODO nest */
 
 a {
 	/* a color are being overwritten by the default style.

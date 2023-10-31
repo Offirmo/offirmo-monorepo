@@ -48,3 +48,5 @@ export type AbsolutePath = string
 
 export type CssColor = string
 export type UrlString = string
+
+export type Emoji = string

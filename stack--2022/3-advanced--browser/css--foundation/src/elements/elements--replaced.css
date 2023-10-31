@@ -10,3 +10,11 @@ picture,
 video {
 	max-width: 100%;
 }
+
+/* TODO display block to remove the magic space?
+ * (not that simple)
+ * img
+ * video
+ * canvas
+ * svg?
+ */
