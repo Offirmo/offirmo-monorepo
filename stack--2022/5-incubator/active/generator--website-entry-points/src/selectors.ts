@@ -143,6 +143,42 @@ function getꓽcolorⵧtheme(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
 	return spec.colorⵧtheme ?? getꓽcolorⵧbackground(spec)
 }
 
+function getꓽicon__sizes(spec: Immutable<WebsiteEntryPointSpec>): Uint32Array {
+	const sizes = new Set<number>()
+
+	// https://web.dev/learn/pwa/web-app-manifest/#icons
+	// If you need to pick only one icon size, it should be 512 by 512 pixels
+	sizes.add(512)
+	// However, providing more sizes is recommended including…
+	// TODO one day customize per size
+	sizes.add(1024)
+	sizes.add(384)
+	sizes.add(192)
+
+	// iOs
+	// https://developer.apple.com/design/human-interface-guidelines/app-icons#iOS-iPadOS-app-icon-sizes
+	// "You need to provide a large version of your app icon, measuring 1024x1024"
+	sizes.add(1024)
+	// You can let the system automatically scale down your large app icon to produce all other sizes,
+	// or — if you want to customize the appearance of the icon at specific sizes — you can supply multiple versions.
+	// (TODO one day customize per size, for now it's always the same icon)
+
+	// macOs
+	// https://developer.apple.com/design/human-interface-guidelines/app-icons#macOS-app-icon-sizes
+	// create a 1024x1024 px version of your macOS app icon
+	sizes.add(1024)
+	// In addition, you also need to supply the icon in the following sizes...
+	// (TODO one day customize per size)
+
+	// TODO add other stores / oses specifications
+
+	return Uint32Array.from(sizes.values()).sort().reverse()
+}
+
+function getꓽicon__basename(spec: Immutable<WebsiteEntryPointSpec>, size: number): Basename {
+	return `icon-${size}.svg`
+}
+
 // keywords: todo dedupe, add categories, lowercase, etc.
 
 /////////////////////////////////////////////////
@@ -174,4 +210,7 @@ export {
 	getꓽcolorⵧforeground,
 	getꓽcolorⵧbackground,
 	getꓽcolorⵧtheme,
+
+	getꓽicon__sizes,
+	getꓽicon__basename,
 }

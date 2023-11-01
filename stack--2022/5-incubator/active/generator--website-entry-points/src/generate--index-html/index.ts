@@ -18,8 +18,8 @@ import { ifꓽdebug } from '../utils/debug.js'
 import { getꓽmetas } from './selectors.js'
 import snippetꓽnormalizeᝍtrailingᝍslash from './snippets/js/snippet--normalize-url.js'
 import {
-	generateꓽiconⵧinline as generateꓽfavicon__iconⵧinline,
-} from '../generate--favicons/index.js'
+	generateꓽinline as generateꓽfavicon__iconⵧinline,
+} from '../generate--icons/index.js'
 
 /////////////////////////////////////////////////
 
@@ -155,10 +155,15 @@ function _stringifyꓽmetaⵧviewport__content(viewport_spec: Immutable<HtmlMeta
 }
 
 function _generateꓽlinks(spec: Immutable<WebsiteEntryPointSpec>): { [rel: string]: string } {
+	const favicon_candidate = generateꓽfavicon__iconⵧinline(spec)
+	const shouldꓽinline_favicon = !favicon_candidate.includes('"') && favicon_candidate.length < 256 // arbitrary number
+
 	return {
 		//canonical: `https://TODO`,
 
-		icon: `data:image/svg+xml;utf8,${generateꓽfavicon__iconⵧinline(spec)}`,
+		icon: shouldꓽinline_favicon
+			? `data:image/svg+xml;utf8,${favicon_candidate}`
+			: `./icon.svg`,
 
 		...(needsꓽwebmanifest(spec) && {
 

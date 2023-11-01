@@ -8,10 +8,12 @@ import {
 
 	getꓽbasenameⵧindexᐧhtml,
 	getꓽbasenameⵧwebmanifest,
+	getꓽicon__sizes,
+	getꓽicon__basename,
 } from './selectors.js'
 import generateꓽindexᐧhtml from './generate--index-html/index.js'
 import generateꓽwebmanifest from './generate--webmanifest/index.js'
-import { generateꓽfile as generateꓽfavicon_file } from './generate--favicons/index.js'
+import { generateꓽfile as generateꓽicon_file } from './generate--icons/index.js'
 
 /////////////////////////////////////////////////
 
@@ -19,7 +21,13 @@ function generateꓽwebsiteᝍentryᝍpoint(spec: Immutable<WebsiteEntryPointSpe
 	return {
 		[getꓽbasenameⵧindexᐧhtml(spec)]: generateꓽindexᐧhtml(spec),
 
-		['favicon.svg']: generateꓽfavicon_file(spec),
+		...getꓽicon__sizes(spec).reduce((acc, size) => {
+				acc[getꓽicon__basename(spec, size)] = generateꓽicon_file(spec, size)
+				return acc
+		}, {} as EntryPoints),
+
+		// size-less version
+		'icon.svg': generateꓽicon_file(spec),
 
 		...(needsꓽwebmanifest(spec) && { [getꓽbasenameⵧwebmanifest(spec)]: JSON.stringify(generateꓽwebmanifest(spec), undefined, '	')}),
 	}

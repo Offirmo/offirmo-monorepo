@@ -9,11 +9,19 @@ import { DisplayMode, DisplayOverrideMode, Category } from '../types.js'
 // +++ https://developer.mozilla.org/en-US/docs/Web/Manifest
 // IMPORTANT https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#installation_from_an_app_store
 
+// https://developer.mozilla.org/en-US/docs/Web/Manifest/icons
+interface Icon {
+	src: UrlString
+	type?: `image/${string}` // TODO dedicated type? https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+	sizes: string // representing an array of sizes TODO one day better type?
+	purposes?: 'maskable' | 'monochrome' // ('any' is the default = absent)
+}
+
 interface WebManifest {
 	// critical to be installable
 	// cf. https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#required_manifest_members
 	name: string
-	icons: unknown[] // TODO https://developer.mozilla.org/en-US/docs/Web/Manifest/icons
+	icons: Icon[]
 	start_url: UrlString // https://developer.mozilla.org/en-US/docs/Web/Manifest/start_url // TODO auto add a query param!
 	display: Exclude<DisplayMode, 'browser'> // https://developer.mozilla.org/en-US/docs/Web/Manifest/display
 	                             // 'browser' would prevent the app from being installable cf. https://web.dev/articles/install-criteria
@@ -66,5 +74,6 @@ interface WebManifest {
 /////////////////////////////////////////////////
 
 export {
-	type WebManifest
+	type Icon,
+	type WebManifest,
 }

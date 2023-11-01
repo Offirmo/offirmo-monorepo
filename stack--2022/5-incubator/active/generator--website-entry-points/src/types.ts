@@ -1,6 +1,7 @@
 import { Immutable } from '@offirmo-private/ts-types'
 import { Emoji, Basename, CssColor, IETFLanguageType, PositiveIntegerInRange, RealInRange, Charset } from '@offirmo-private/ts-types'
 import { HtmlString } from './generate--index-html/types'
+import { SVG } from './utils/svg'
 
 /////////////////////////////////////////////////
 
@@ -64,7 +65,7 @@ interface WebsiteEntryPointSpec {
 	title: string
 	titleⵧsocial?: string
 	titleⵧapp?: string
-	favicon?: Emoji // TODO extend
+	icon?: Immutable<SVG>
 
 	description?: string // displayed by google search, very useful for SEO
 	descriptionⵧsocial?: string

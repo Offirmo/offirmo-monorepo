@@ -5,6 +5,8 @@
 97 Things Every Programmer Should Know
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 Agile
+algorithm -- BPE / Byte pair encoding https://github.com/openai/tiktoken
+algorithm -- CRDT
 allocation
 annotation
 anomaly detection
@@ -15,13 +17,9 @@ apply / call / bind
 arguments
 assembly
 asymc / design pattern réacteur
-encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube.com/watch?v=RXJKdh1KZ0w
 async/sync
 asynchrone
-algorithm -- BPE / Byte pair encoding https://github.com/openai/tiktoken
-algorithm -- CRDT
 atomic
-Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
 authentication
 auto-scaling and load-shedding
 blocking
@@ -65,6 +63,7 @@ démos
 effacement d'une liste pendant qu'on la parcourt
 egress
 emscripten
+encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube.com/watch?v=RXJKdh1KZ0w
 event loop
 executive
 exposer des variables
@@ -120,6 +119,7 @@ https://xyproblem.info/
 héritage prototypal, héritage en diamant
 IIFE
 immutability
+Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
 io.js
 Joel test
 jQuery
@@ -223,6 +223,7 @@ tuckman model
 typecast
 types
 uptime
+use boring technology
 use strict
 vaporware
 variables pointeur / natives

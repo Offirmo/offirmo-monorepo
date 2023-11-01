@@ -1,4 +1,3 @@
-
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
@@ -8,23 +7,28 @@ import { renderꓽsvg, createꓽfrom_emoji, SVG } from '../utils/svg/index.js'
 
 /////////////////////////////////////////////////
 
+// TODO get
 function generateꓽsvg(spec: Immutable<WebsiteEntryPointSpec>): Immutable<SVG> {
-	return createꓽfrom_emoji(
-			spec.favicon ?? '🔥' // TODO selector, TODO improve
-		)
+	return spec.icon ?? createꓽfrom_emoji('🔥')
 }
 
-function generateꓽfile(spec: Immutable<WebsiteEntryPointSpec>): string {
-	return renderꓽsvg(generateꓽsvg(spec), {
+function generateꓽfile(spec: Immutable<WebsiteEntryPointSpec>, size?: number): string {
+	return renderꓽsvg(
+		generateꓽsvg(spec),
+		{
+			...(size && {
+				width: size,
+				height: size,
+			}),
 			//wantsꓽcompact: true,
-		}
+		},
 	)
 }
 
-function generateꓽiconⵧinline(spec: Immutable<WebsiteEntryPointSpec>): string {
+function generateꓽinline(spec: Immutable<WebsiteEntryPointSpec>): string {
 	return renderꓽsvg(generateꓽsvg(spec), {
 			wantsꓽcompact: true,
-		}
+		},
 	)
 }
 
@@ -33,5 +37,5 @@ function generateꓽiconⵧinline(spec: Immutable<WebsiteEntryPointSpec>): strin
 export {
 	generateꓽsvg,
 	generateꓽfile,
-	generateꓽiconⵧinline,
+	generateꓽinline,
 }
