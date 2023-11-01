@@ -21,7 +21,7 @@ function _generateꓽicons(spec: Immutable<WebsiteEntryPointSpec>): WebManifest[
 	return getꓽicon__sizes(spec).reduce((acc, size) => {
 		acc.push({
 			src: `./${getꓽicon__basename(spec, size)}`,
-			type: `image/svg`,
+			type: `image/svg+xml`,
 			sizes: `${size}x${size}`
 		} as Icon)
 		return acc
