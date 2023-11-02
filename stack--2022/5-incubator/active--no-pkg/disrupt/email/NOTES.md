@@ -9,3 +9,6 @@ https://html2canvas.hertzen.com/features/
 https://github.com/bubkoo/html-to-image
 
 unified inbox https://www.theverge.com/2023/8/9/23824562/slack-redesign-app-dms-activity-later
+
+https://www.nylas.com/products/email-api/
+https://www.theregister.com/2023/08/23/email_like_a_pro/

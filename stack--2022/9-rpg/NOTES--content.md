@@ -1144,3 +1144,5 @@ https://www.pcgamesn.com/100-best-free-pc-games
 https://universe.eveonline.com/scientific-articles
 
 https://worldbuilding.stackexchange.com/questions/243687/what-sort-of-strategies-would-a-medieval-military-use-against-a-fantasy-giant
+
+https://lifehacker.com/how-much-garden-you-would-need-to-100-survive-on-1848829190
