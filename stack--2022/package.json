@@ -93,6 +93,7 @@
 		"@types/chai": "^4",
 		"@types/chai-as-promised": "^7",
 		"@types/cli-progress": "^3",
+		"@types/cross-spawn": "^6",
 		"@types/fs-extra": "^11",
 		"@types/icepick": "^2",
 		"@types/json-stable-stringify": "^1",
