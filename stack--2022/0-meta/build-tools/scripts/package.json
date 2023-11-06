@@ -19,6 +19,7 @@
 		"meow": "^12",
 		"node-typescript-compiler": "*",
 		"tiny-invariant": "^1",
+		"typescript": "^5",
 		"write-json-file": "^5"
 	}
 }
