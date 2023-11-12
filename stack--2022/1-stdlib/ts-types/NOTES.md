@@ -33,3 +33,7 @@ IsAny<T> extends true ? Readonly<any> // not deep, but best we can do :( TODO re
   : T extends Set<infer M> ? ImmutableSet<M>
   : ImmutableObject<T>
   */
+
+
+
+TODO https://blog.whatwg.org/url-pattern-standard

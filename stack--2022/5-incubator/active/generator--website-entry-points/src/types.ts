@@ -49,30 +49,27 @@ type DisplayMode =
 // https://developer.mozilla.org/en-US/docs/Web/Manifest/display_override#values
 type DisplayOverrideMode = DisplayMode | 'window-controls-overlay'
 
+type Author = string
 
 interface WebsiteEntryPointSpec {
 	// must be flat for easy defaulting
 	// optional '?:' = truly optional (can be easily derived)
-
-	env?: 'prod' | 'production' | string // default to env.NODE_ENV ?? dev
-	isꓽpublic?: boolean // default: true if prod, false else
 	preset?: 'game' | 'landing--app' // TODO
 
-	basename?: Basename // without extension. default to "index"
-
+	/////// CONTENT
 	lang?: IETFLanguageType // default to en
 
+	html?: HtmlString // TODO refine
+
 	title: string
-	titleⵧsocial?: string
-	titleⵧapp?: string
 	icon?: Immutable<SVG>
 
 	description?: string // displayed by google search, very useful for SEO
-	descriptionⵧsocial?: string
-	descriptionⵧapp?: string
 
-	app_categories?: Category[]
 	keywords?: string[]
+	app_categories?: Category[]
+
+	author?: Author
 
 	// https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors
 	// +++ https://css-tricks.com/meta-theme-color-and-trickery/
@@ -84,33 +81,42 @@ interface WebsiteEntryPointSpec {
 	colorⵧforeground?: CssColor
 	colorⵧtheme?: CssColor // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
 
-	supportsꓽscreensⵧwith_shape?: boolean
-	hasꓽown_navigation?: boolean
-	canꓽuse_window_controls_overlay?: boolean
-	usesꓽpull_to_refresh?: boolean
-
-	wantsꓽinstall?:
-		| false     // won't provide much benefit
-		| 'partial' // TODO clarify (we may want to manually prompt the user)
-		| 'prompt'  // to the point the browser is expected to prompt https://web.dev/articles/install-criteria
-		// TODO link to app store?
-
-	//semanticⳇsupportsꓽscreens:
-	// https://drafts.csswg.org/css-round-display/
-
 	styles?: Array<string
 		| 'snippet:natural-box-layout'
-		>,
-
-	html?: HtmlString // TODO refine
+	>,
 
 	scripts?: Array<string
 		| 'snippet:normalize-trailing-slash'
 		// TODO google analytics etc.
 	>,
 
+	/////// SOCIAL
+	titleⵧsocial?: string
+	descriptionⵧsocial?: string
+
+	/////// OUTPUT
+	basename?: Basename // without extension. default to "index"
+	env?: 'prod' | 'production' | string // default to env.NODE_ENV ?? dev
+	isꓽpublic?: boolean // default: true if prod, false else
+
+	/////// PWA
+	wantsꓽinstall?:
+		| false     // won't provide much benefit
+		| 'partial' // TODO clarify (we may want to manually prompt the user)
+		| 'prompt'  // to the point the browser is expected to prompt https://web.dev/articles/install-criteria
+	// TODO link to app store?
+	titleⵧapp?: string
+	descriptionⵧapp?: string
+	hasꓽown_navigation?: boolean
+	supportsꓽscreensⵧwith_shape?: boolean // https://drafts.csswg.org/css-round-display/
+	canꓽuse_window_controls_overlay?: boolean
+	usesꓽpull_to_refresh?: boolean
+
+
+
 	// TODO one day themes
 
+	/////// META
 	isꓽdebug?: boolean // true = want to debug those entry points, will add extra content to pinpoint which entry point is used
 }
 

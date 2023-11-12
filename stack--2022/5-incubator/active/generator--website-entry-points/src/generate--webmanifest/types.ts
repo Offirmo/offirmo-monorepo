@@ -46,7 +46,9 @@ interface WebManifest {
 		| 'landscape-secondary'
 		| 'portrait-primary'
 		| 'portrait-secondary'
+	// ⬇ AFAIK should only be used for feature overlay!!
 	display_override?: DisplayOverrideMode[] // https://developer.mozilla.org/en-US/docs/Web/Manifest/display_override
+
 
 	// "Promotional fields" = app stores related
 	// https://www.w3.org/TR/manifest-app-info/#supplementary-manifest-members
