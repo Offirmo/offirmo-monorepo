@@ -8,6 +8,8 @@ import * as fs from 'node:fs'
 import generateꓽwebsiteᝍentryᝍpoint from '../index.js'
 import * as SVG from '../utils/svg/index.js'
 import { createꓽfrom_emoji } from '../utils/svg/index.js'
+import { HtmlString } from '../generate--index-html/types'
+import { Category } from '../types'
 
 /////////////////////////////////////////////////
 
@@ -230,12 +232,56 @@ const EXAMPLEⵧEXPERIMENTⵧVIEWPORT: Parameters<typeof generateꓽwebsiteᝍen
 	`
 }
 
+const ADVENTURERS_FANTASY_ILLUSTRATION: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[0] = {
+	isꓽdebug: true, // TODO false
+	env: 'prod',
+	//preset: TODO?
+
+	wantsꓽinstall: false,
+	title: '«Adventurers» open-source fantasy digital illustration',
+	description: '«Adventurers» is an open-source digital illustration featuring fantasy themes, free to use and remix (CC BY 4.0) by Albert Weand & Offirmo.',
+	keywords: [ 'illustration', 'fantasy', 'isekai', 'adventurers', 'background', 'art' ],
+
+	icon: SVG.addꓽcontent(
+		SVG.setꓽbackground_color(
+			SVG.setꓽviewBox(
+				SVG.createꓽempty(),
+				[ 0, 0, 1024, 1024 ],
+			),
+			'#3876bf',
+		),
+		`
+<g transform='translate(-684,-84)'>
+	<path
+		style='fill:#f3f0ca;fill-rule:evenodd;stroke-width:48;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1'
+		d='m 1218.2004,207.86424 c -43.7014,14.1636 -86.7236,44.97289 -116.1971,89.15266 28.1667,76.89959 28.1667,91.93015 0,168.82813 31.9813,24.82564 64.7075,39.75185 97.5847,44.10272 -3.3121,-41.04105 -5.8279,-82.08852 1.8061,-123.12476 -21.8747,-2.38093 -37.5266,-9.62489 -59.4029,-22.27451 v -51.72557 c 57.5823,30.65837 99.2832,30.14622 158.6429,0 v 51.72878 c -21.4557,10.43084 -35.1377,17.91722 -56.5934,21.22132 5.8022,41.04907 5.5871,82.12063 2.2075,123.17291 29.9327,-5.24191 59.7819,-19.44725 89.1045,-43.09928 -23.0435,-76.89798 -23.0467,-91.93015 0,-168.82653 -27.2643,-44.96646 -76.1851,-74.86865 -117.1523,-89.15587 z m -208.0614,13.19389 c -41.59177,177.26817 -43.91008,345.70938 -43.99037,531.29077 -30.2473,-2.46763 -60.33731,-8.22009 -89.95051,-17.85301 v 45.84306 h 110.8845 c 13.99178,56.23216 10.39071,112.46753 -1.6633,168.7013 h 45.16228 c -11.5514,-56.23377 -13.2244,-112.46914 -1.3999,-168.7013 h 110.6244 v -45.84467 c -29.6855,7.93432 -59.814,13.73012 -90.063,16.79339 0.1317,-184.53461 4.0073,-358.13264 -39.6025,-530.22794 z m 143.6428,324.91031 c 0,188.27539 40.9672,374.62741 192.9074,414.16732 167.2644,-33.7714 193.1127,-225.37336 193.1127,-414.16893 h -386.0233 z'
+		/>
+</g>`),
+
+	colorⵧbackground: '#3876bf',
+	colorⵧforeground: '#f3f0ca',
+	colorⵧtheme: '#e1aa74',
+
+	styles: [
+		'snippet:natural-box-layout'
+	],
+
+	html: 'TODO',
+
+	scripts: [
+		'snippet:normalize-trailing-slash'
+		// TODO google analytics etc.
+	],
+}
+
+
 /////////////////////////////////////////////////
 
 const result = generateꓽwebsiteᝍentryᝍpoint(
 	//EXAMPLEⵧSIMPLE_PAGE
 	//EXAMPLEⵧWEBAPPⵧTBRPG2023
-	EXAMPLEⵧEXPERIMENTⵧVIEWPORT
+	//EXAMPLEⵧEXPERIMENTⵧVIEWPORT
+	ADVENTURERS_FANTASY_ILLUSTRATION
 )
 
 Object.keys(result).forEach(basename => {

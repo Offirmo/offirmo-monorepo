@@ -14,8 +14,7 @@ export const STRICT_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
 
 export const QUASI_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
 	// first inherit from previous
-	// conv to array needed due to a babel bug 😢
-	...Array.from(STRICT_STANDARD_ERROR_FIELDS),
+	...STRICT_STANDARD_ERROR_FIELDS,
 
 	// quasi-standard: followed by all browsers + node
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/prototype
@@ -28,8 +27,7 @@ export const QUASI_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
 
 export const COMMON_ERROR_FIELDS = new Set<keyof XError>([
 	// first inherit from previous
-	// conv to array needed due to a babel bug 😢
-	...Array.from(QUASI_STANDARD_ERROR_FIELDS),
+	...QUASI_STANDARD_ERROR_FIELDS,
 
 	// standard in node only:
 	'code', // https://medium.com/the-node-js-collection/node-js-errors-changes-you-need-to-know-about-dc8c82417f65
@@ -44,10 +42,11 @@ export const COMMON_ERROR_FIELDS = new Set<keyof XError>([
 	'framesToPop', // see facebook https://github.com/facebook/flux/blob/2.0.2/src/invariant.js
 ])
 
+// TODO node has a lot of other fields https://nodejs.org/api/errors.html
+
 export const COMMON_ERROR_FIELDS_EXTENDED = new Set<keyof XXError>([
 	// first inherit from previous
-	// conv to array needed due to a babel bug 😢
-	...Array.from(COMMON_ERROR_FIELDS),
+	...COMMON_ERROR_FIELDS,
 
 	// My (Offirmo) extensions:
 	'_temp', // used for passing state around during error handling

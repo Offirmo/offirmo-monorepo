@@ -12,3 +12,7 @@ unified inbox https://www.theverge.com/2023/8/9/23824562/slack-redesign-app-dms-
 
 https://www.nylas.com/products/email-api/
 https://www.theregister.com/2023/08/23/email_like_a_pro/
+
+
+"core platform service"
+https://www.theverge.com/2023/11/8/23951935/google-european-telcos-apple-imessage-digital-markets-act-core-platform-service-gatekeeper-lobbying

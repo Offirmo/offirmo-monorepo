@@ -17,5 +17,3 @@ export interface NumberMap {
 export type HashOf<T> = Record<string, T>
 
 /////////////////////
-
-export type Emoji = string

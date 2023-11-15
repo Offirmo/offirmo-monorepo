@@ -1,7 +1,8 @@
 import { Immutable } from '@offirmo-private/ts-types'
-import { Emoji, Basename, CssColor, IETFLanguageType, PositiveIntegerInRange, RealInRange, Charset } from '@offirmo-private/ts-types'
+import { ThingWithOnlinePresence, Emoji, Basename, CssColor, IETFLanguageType, PositiveIntegerInRange, RealInRange, Charset } from '@offirmo-private/ts-types'
 import { HtmlString } from './generate--index-html/types'
 import { SVG } from './utils/svg'
+import { Contentⳇweb, Css‿str, Descriptionⳇtitle, JS‿str } from '@offirmo-private/ts-types/src'
 
 /////////////////////////////////////////////////
 
@@ -49,27 +50,34 @@ type DisplayMode =
 // https://developer.mozilla.org/en-US/docs/Web/Manifest/display_override#values
 type DisplayOverrideMode = DisplayMode | 'window-controls-overlay'
 
-type Author = string
+// TODO special interfaces for web page, Open Graph etc.
 
-interface WebsiteEntryPointSpec {
+interface WebPage extends ThingWithOnlinePresence {
+	title: Descriptionⳇtitle
+	icon?: Immutable<SVG>
+	keywords?: string[]
+
+	content: Contentⳇweb
+
+	styles?: Array<
+		| 'snippet:natural-box-layout'
+		// TODO more
+		| Css‿str
+	>,
+
+	scripts?: Array<
+		| 'snippet:normalize-trailing-slash'
+		// TODO google analytics etc.
+		| JS‿str
+	>,
+}
+
+interface WebsiteEntryPointSpec extends WebPage {
 	// must be flat for easy defaulting
 	// optional '?:' = truly optional (can be easily derived)
-	preset?: 'game' | 'landing--app' // TODO
 
 	/////// CONTENT
-	lang?: IETFLanguageType // default to en
-
-	html?: HtmlString // TODO refine
-
-	title: string
-	icon?: Immutable<SVG>
-
-	description?: string // displayed by google search, very useful for SEO
-
-	keywords?: string[]
-	app_categories?: Category[]
-
-	author?: Author
+	preset?: 'game' | 'landing--app' // TODO clarify
 
 	// https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors
 	// +++ https://css-tricks.com/meta-theme-color-and-trickery/
@@ -81,42 +89,31 @@ interface WebsiteEntryPointSpec {
 	colorⵧforeground?: CssColor
 	colorⵧtheme?: CssColor // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
 
-	styles?: Array<string
-		| 'snippet:natural-box-layout'
-	>,
-
-	scripts?: Array<string
-		| 'snippet:normalize-trailing-slash'
-		// TODO google analytics etc.
-	>,
-
 	/////// SOCIAL
 	titleⵧsocial?: string
 	descriptionⵧsocial?: string
 
-	/////// OUTPUT
-	basename?: Basename // without extension. default to "index"
-	env?: 'prod' | 'production' | string // default to env.NODE_ENV ?? dev
-	isꓽpublic?: boolean // default: true if prod, false else
 
 	/////// PWA
+	app_categories?: Category[]
 	wantsꓽinstall?:
-		| false     // won't provide much benefit
-		| 'partial' // TODO clarify (we may want to manually prompt the user)
-		| 'prompt'  // to the point the browser is expected to prompt https://web.dev/articles/install-criteria
-	// TODO link to app store?
-	titleⵧapp?: string
+		| false     // won't provide much benefit, no need to advertise it
+		| 'partial' // not enough to be automatically "prompted to install" so we may want to advertise it in JS
+		| 'prompt'  // full to the point the browser is expected to prompt https://web.dev/articles/install-criteria
+		| 'redirect' // we want to redirect to an app store TODO clarify
+	titleⵧapp?: Descriptionⳇtitle
 	descriptionⵧapp?: string
 	hasꓽown_navigation?: boolean
 	supportsꓽscreensⵧwith_shape?: boolean // https://drafts.csswg.org/css-round-display/
 	canꓽuse_window_controls_overlay?: boolean
 	usesꓽpull_to_refresh?: boolean
 
-
-
 	// TODO one day themes
 
 	/////// META
+	basename?: Basename // without extension. default to "index"
+	env?: 'prod' | 'production' | string // default to env.NODE_ENV ?? dev
+	isꓽpublic?: boolean // default: true if prod, false else
 	isꓽdebug?: boolean // true = want to debug those entry points, will add extra content to pinpoint which entry point is used
 }
 

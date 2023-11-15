@@ -24,13 +24,12 @@ console.log(RichText.renderⵧto_actions($doc))
 ```
 
 Inspiration:
-* https://developer.atlassian.com/cloud/stride/apis/document/structure/
-* https://bitbucket.org/atlassian/adf-builder-javascript#readme
+* "Atlassian Document Format" https://bitbucket.org/atlassian/adf-builder-javascript#readme
 
 Related, discovered after I made mine:
-* https://api.slack.com/block-kit
+* Slack's "block kit" https://api.slack.com/block-kit
   * https://api.slack.com/tools/block-kit-builder
-
+* Twitter Text https://github.com/twitter/twitter-text
 
 
 Tosort
