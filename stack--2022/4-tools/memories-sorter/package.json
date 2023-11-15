@@ -23,7 +23,7 @@
 		"exiftool-vendored": "^23",
 		"fs-extra": "^11",
 		"geo-tz": "^7",
-		"hasha": "^5",
+		"hasha": "^6",
 		"json-stable-stringify": "^1",
 		"lodash": "^4",
 		"luxon": "^3",

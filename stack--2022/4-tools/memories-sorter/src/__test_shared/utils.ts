@@ -7,7 +7,7 @@ import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { expect } from 'chai'
 import assert from 'tiny-invariant'
 import { Tags as EXIFTags } from 'exiftool-vendored'
-import hasha from 'hasha'
+import { hashFile } from 'hasha'
 
 import {
 	BetterDate,
@@ -36,7 +36,7 @@ export async function load_real_media_file(abs_path: string): Promise<Immutable<
 	expect(FileLib.is_exif_powered_media_file(state)).to.be.true
 
 	await Promise.all([
-		hasha.fromFile(abs_path, {algorithm: 'sha256'})
+		hashFile(abs_path, {algorithm: 'sha256'})
 			.then(hash => {
 				expect(FileLib.has_all_infos_for_extracting_the_creation_date(state, { should_log: false }), 'load_real_media_file() has_all_infos_for_extracting_the_creation_date 1').to.be.false
 				assert(hash, 'should have hash')

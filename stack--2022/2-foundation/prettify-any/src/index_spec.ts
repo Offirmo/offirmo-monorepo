@@ -1,5 +1,5 @@
 import * as util from 'node:util'
-import getꓽterminal_size from 'term-size'
+import getꓽterminal_size from 'terminal-size'
 
 import chalk from 'chalk'
 import { render as prettyjson } from 'prettyjson'

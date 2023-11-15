@@ -39,7 +39,7 @@ variables prefixed with `_` hints at internal/local use / not exported `_updateê
 
 Counter example:
 ```
-import terminal_size from 'term-size'
+import terminal_size from 'terminal-size'
 terminal_size.columns // error it's a function = unclean name
 
 
