@@ -1,7 +1,7 @@
 import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
-import { Basename, Immutable, IETFLanguageType, CssColor } from '@offirmo-private/ts-types'
+import { Basename, Immutable, IETFLanguageType, CssColor‿str } from '@offirmo-private/ts-types'
 import {
 	capitalize,
 	coerce_to_ascii,
@@ -131,15 +131,24 @@ function getꓽtitleⵧappⵧshort(spec: Immutable<WebsiteEntryPointSpec>): stri
 	return getꓽtitleⵧapp(spec)
 }
 
-function getꓽcolorⵧforeground(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
+function _getꓽdescription(spec: Immutable<WebsiteEntryPointSpec>): string {
+	assert(!!spec.description)
+	return normalize_unicode(spec.description).trim()
+}
+
+function getꓽdescriptionⵧpage(spec: Immutable<WebsiteEntryPointSpec>): string {
+	return _getꓽdescription(spec)
+}
+
+function getꓽcolorⵧforeground(spec: Immutable<WebsiteEntryPointSpec>): CssColor‿str {
 	return spec.colorⵧforeground ?? 'black'
 }
 
-function getꓽcolorⵧbackground(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
+function getꓽcolorⵧbackground(spec: Immutable<WebsiteEntryPointSpec>): CssColor‿str {
 	return spec.colorⵧbackground ?? 'white'
 }
 
-function getꓽcolorⵧtheme(spec: Immutable<WebsiteEntryPointSpec>): CssColor {
+function getꓽcolorⵧtheme(spec: Immutable<WebsiteEntryPointSpec>): CssColor‿str {
 	return spec.colorⵧtheme ?? getꓽcolorⵧbackground(spec)
 }
 
@@ -206,6 +215,8 @@ export {
 	getꓽtitleⵧsocial,
 	getꓽtitleⵧapp,
 	getꓽtitleⵧappⵧshort,
+
+	getꓽdescriptionⵧpage,
 
 	getꓽcolorⵧforeground,
 	getꓽcolorⵧbackground,

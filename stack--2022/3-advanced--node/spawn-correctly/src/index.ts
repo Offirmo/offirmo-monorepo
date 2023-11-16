@@ -85,10 +85,11 @@ async function spawnCorrectly<Result>({
 			stdout = stdout.trim()
 			stderr = stderr.trim()
 
-			// error message: having "got "err" event!" is not very informative
-			// we try to extract a better reason
+			// error message:
+			// having "got 'err' event!" is not very informative :-/
+			// we try to extract a better reason from the output
 			const errᐧmessage = (() => {
-
+				// in order of best message source
 				const output = stderr || stdout
 				if (output) {
 					const MAX_USEFUL_LINES =
@@ -102,7 +103,7 @@ async function spawnCorrectly<Result>({
 						if (line‿lc.includes('error') || line‿lc.includes('exception'))
 							return line
 
-						if (line‿lc.includes('not find'))
+						if (line‿lc.includes('not found'))
 							return 'Error: ' + line
 					}
 				}

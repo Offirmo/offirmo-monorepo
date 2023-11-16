@@ -11,7 +11,7 @@ export interface SocialUrl {
 		| 'artstation'
 		| 'github'
 		| 'instagram'
-		| 'product_hunt'
+		| 'producthunt'
 		| 'reddit'
 		| 'twitter'
 }
@@ -30,3 +30,15 @@ export type CssColor‿str = string
 /////////////////////////////////////////////////
 // JS
 export type JS‿str = string
+
+/////////////////////////////////////////////////
+// Aggreg
+export interface Contentⳇweb {
+	critical: {
+		css: Css‿str[]
+		js: JS‿str[]
+	},
+	html: Html‿str[]
+	css: Css‿str[]
+	js: JS‿str[]
+}

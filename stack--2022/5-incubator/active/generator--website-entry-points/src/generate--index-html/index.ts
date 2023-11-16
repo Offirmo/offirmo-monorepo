@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable, Html‿str } from '@offirmo-private/ts-types'
 import { normalize_unicode } from '@offirmo-private/normalize-string'
 
 import { EOL } from '../consts.js'
@@ -9,10 +9,13 @@ import {
 	getꓽlang,
 	getꓽtitleⵧpage,
 	getꓽtitleⵧsocial,
+	getꓽdescriptionⵧpage,
 	getꓽcolorⵧtheme,
 	getꓽcolorⵧbackground,
 	getꓽcolorⵧforeground,
-	usesꓽpull_to_refresh, needsꓽwebmanifest, getꓽbasenameⵧwebmanifest,
+	usesꓽpull_to_refresh,
+	needsꓽwebmanifest,
+	getꓽbasenameⵧwebmanifest,
 } from '../selectors.js'
 import { ifꓽdebug } from '../utils/debug.js'
 import { getꓽmetas } from './selectors.js'
@@ -53,8 +56,7 @@ function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): H
 
 	// https://www.smashingmagazine.com/2015/08/understanding-critical-css/
 	return `
-<style>
-	/* critical CSS */
+<style>/******* critical CSS *******/
 
 	:root {
 		--color--bg: ${getꓽcolorⵧbackground(spec)};
@@ -76,24 +78,21 @@ function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): H
 	}
 	}
 
-	${(spec.styles ?? [])
-		.map(style => {
-			switch (style) {
+	${(spec.content.critical.css ?? [])
+		.map(css‿str => {
+			switch (css‿str) {
 				case 'snippet:natural-box-layout':
 					/* apply a natural box layout model to all elements
 					 * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
 					 * https://github.com/mike-engel/a11y-css-reset/pull/12#issuecomment-516582884
 					 */
 					return _indent(`
-/* apply a natural box layout model to all elements
- * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://github.com/mike-engel/a11y-css-reset/pull/12#issuecomment-516582884
- */
 :root                  { box-sizing: border-box; }
 *, *::before, *::after { box-sizing: inherit; }
 					`)
 				default:
-					return style
+					assert(!css‿str.startsWith('snippet:'), `Unknown CSS snippet "${css‿str}"!`)
+					return css‿str
 			}
 		})
 		.map(s => s.trim())
@@ -105,27 +104,27 @@ function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): H
 function generateꓽhtml__head__script(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 
 	return `
-<script>
-	/* critical JS */
-	${(spec.scripts ?? [])
-		.map(script => {
-			switch (script) {
+<script>/////// critical JS ///////
+
+	${(spec.content.critical.js ?? [])
+		.map(js‿str => {
+			switch (js‿str) {
 				case 'snippet:normalize-trailing-slash': {
-					return String(snippetꓽnormalizeᝍtrailingᝍslash).replaceAll('    ', '	')
+					return String(snippetꓽnormalizeᝍtrailingᝍslash).replaceAll('    ', '	') // TODO improve re-indentation
 				}
 				default:
-					return script
+					assert(!js‿str.startsWith('snippet:'), `Unknown JS snippet "${js‿str}"!`)
+					return js‿str
 			}
 		})
 		.map(s => s.trim())
 		.map(s => {
 			assert(s.startsWith('function '), `All snippets should be a named fuction! (${s})}`)
-			return `;(${s})()`
+			return _indent(`;(${s})()`)
 		})
 		.join(EOL + EOL + '	')}
 </script>
 `.trim()
-
 }
 
 // TODO
@@ -179,6 +178,8 @@ function _generateꓽlinks(spec: Immutable<WebsiteEntryPointSpec>): { [rel: stri
 function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 	const metas = getꓽmetas(spec)
 	const links = _generateꓽlinks(spec)
+
+	// TODO escape all content for attributes!! https://www.liquid-technologies.com/Reference/Glossary/XML_EscapingData.html
 
 	return [
 		// should be first!
@@ -261,11 +262,23 @@ function generateꓽhtml__head(spec: Immutable<WebsiteEntryPointSpec>): HtmlStri
 
 function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 
-	return `
-<body class="">
-	<noscript>You need to enable JavaScript to run this app.</noscript>
-
-	${spec.html ?? `
+	const html_blocks: Html‿str[] = [
+		...spec.content.html,
+		...(spec.content.html.length === 0 ? [ 'snippet:auto-content' ] : []),
+	].map(html‿str => {
+		switch (html‿str) {
+			case 'snippet:auto-content':
+				return `
+<header>TODO header</header>
+<main id="root">
+		<h1>${ifꓽdebug(spec).prefixꓽwith(`[title--page]`, getꓽtitleⵧpage(spec))}</h1>
+	<article>
+		<p>${ifꓽdebug(spec).prefixꓽwith(`[descr--page]`, getꓽdescriptionⵧpage(spec))}</p>
+	</article>
+</main>
+<footer>TODO footer</footer>`.trim()
+			case 'snippet:react-root' :
+				return `
 <main id="root">
 	<!-- React will render here and replace this -->
 	<section style="
@@ -277,11 +290,20 @@ function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): HtmlStri
 		<h1>${ifꓽdebug(spec).prefixꓽwith(`[title--page]`, getꓽtitleⵧpage(spec))}</h1>
 		<em>Loading…</em>
 	</section>
-</main>`
-	}
+</main>`.trim()
+			default:
+				assert(!html‿str.startsWith('snippet:'), `Unknown HTML snippet "${html‿str}"!`)
+				return html‿str
+		}
+	})
 
+	return `
+<body class="">
+	<noscript>You need to enable JavaScript to run this app.</noscript>
+
+	${html_blocks.join('\n\n')}
 </body>
-	`.trim()
+`.trim()
 }
 
 /////////////////////////////////////////////////

@@ -10,7 +10,7 @@ describe(`@offirmo-private/spawn-correctly`, function() {
 
 	describe('error handling', function () {
 
-		function errorᐧshouldᐧhaveᐧextraᐧproperties(err: any, cause?: Error): asserts err is SpawnError {
+		function errorᐧshouldᐧhaveᐧexpectedᐧextraᐧproperties(err: any, cause?: Error): asserts err is SpawnError {
 			//console.log(err)
 
 			expect(err).to.have.ownProperty('stdout')
@@ -38,7 +38,7 @@ describe(`@offirmo-private/spawn-correctly`, function() {
 					})
 					throw new Error('should have failed!')
 				} catch (err) {
-					errorᐧshouldᐧhaveᐧextraᐧproperties(err)
+					errorᐧshouldᐧhaveᐧexpectedᐧextraᐧproperties(err)
 
 					expect(err.message).to.equal('spawn ./foo/bar/baz ENOENT')
 					expect(err.code).to.equal(-2) // properly propagated
@@ -60,7 +60,7 @@ describe(`@offirmo-private/spawn-correctly`, function() {
 					})
 					throw new Error('should have failed!')
 				} catch (err) {
-					errorᐧshouldᐧhaveᐧextraᐧproperties(err)
+					errorᐧshouldᐧhaveᐧexpectedᐧextraᐧproperties(err)
 
 					//console.log(err)
 					expect(err.message).to.equal('spawnCorrectly(): should have stdout!')
@@ -80,7 +80,7 @@ describe(`@offirmo-private/spawn-correctly`, function() {
 					})
 					throw new Error('should have failed!')
 				} catch (err) {
-					errorᐧshouldᐧhaveᐧextraᐧproperties(err)
+					errorᐧshouldᐧhaveᐧexpectedᐧextraᐧproperties(err)
 
 					expect(err.code).to.equal(1) // properly propagated
 					expect(err.signal).to.be.null // mutually exclusive
@@ -109,7 +109,7 @@ describe(`@offirmo-private/spawn-correctly`, function() {
 
 					throw new Error('should have failed!')
 				} catch (err) {
-					errorᐧshouldᐧhaveᐧextraᐧproperties(err)
+					errorᐧshouldᐧhaveᐧexpectedᐧextraᐧproperties(err)
 
 					//console.log(err)
 					expect(err.signal).to.equal('SIGINT') // properly propagated

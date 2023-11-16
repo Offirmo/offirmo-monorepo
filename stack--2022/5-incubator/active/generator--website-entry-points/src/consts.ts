@@ -13,7 +13,7 @@ const TAB = '	'
 
 // safest possible defaults
 // TODO move to selectors with ?? + assert criticals
-const DEFAULT_SPEC: Immutable<WebsiteEntryPointSpec> = {
+/*const DEFAULT_SPEC: Immutable<WebsiteEntryPointSpec> = {
 	env: env['NODE_ENV'] ?? 'dev',
 
 	basename: 'index',
@@ -35,7 +35,7 @@ const DEFAULT_SPEC: Immutable<WebsiteEntryPointSpec> = {
 	styles: [],
 
 	wantsꓽinstall: 'partial',
-}
+}*/
 
 /////////////////////////////////////////////////
 
@@ -43,5 +43,5 @@ export {
 	LIB,
 	EOL,
 	TAB,
-	DEFAULT_SPEC,
+	//DEFAULT_SPEC,
 }

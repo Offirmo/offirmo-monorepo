@@ -1,8 +1,22 @@
 import { Immutable } from '@offirmo-private/ts-types'
-import { ThingWithOnlinePresence, Emoji, Basename, CssColor, IETFLanguageType, PositiveIntegerInRange, RealInRange, Charset } from '@offirmo-private/ts-types'
-import { HtmlString } from './generate--index-html/types'
+import {
+	Author,
+	Basename,
+	Charset,
+	Contentⳇweb,
+	CssColor‿str,
+	Css‿str,
+	Descriptionⳇtitle,
+	Emoji,
+	IETFLanguageType,
+	JS‿str,
+	PositiveIntegerInRange,
+	RealInRange,
+	Thing,
+	ThingWithOnlinePresence,
+} from '@offirmo-private/ts-types'
+
 import { SVG } from './utils/svg'
-import { Contentⳇweb, Css‿str, Descriptionⳇtitle, JS‿str } from '@offirmo-private/ts-types/src'
 
 /////////////////////////////////////////////////
 
@@ -58,7 +72,7 @@ interface WebPage extends ThingWithOnlinePresence {
 	keywords?: string[]
 
 	content: Contentⳇweb
-
+/*
 	styles?: Array<
 		| 'snippet:natural-box-layout'
 		// TODO more
@@ -69,7 +83,7 @@ interface WebPage extends ThingWithOnlinePresence {
 		| 'snippet:normalize-trailing-slash'
 		// TODO google analytics etc.
 		| JS‿str
-	>,
+	>,*/
 }
 
 interface WebsiteEntryPointSpec extends WebPage {
@@ -85,9 +99,9 @@ interface WebsiteEntryPointSpec extends WebPage {
 	// from: https://web.dev/learn/pwa/web-app-manifest/#recommended_fields
 	//   Warning: Do not use transparency, CSS variables, gradient functions, or color functions with transparency (such as rgba())
 	//   as they are not supported by most browsers. You will get inconsistent results.
-	colorⵧbackground?: CssColor
-	colorⵧforeground?: CssColor
-	colorⵧtheme?: CssColor // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
+	colorⵧbackground?: CssColor‿str
+	colorⵧforeground?: CssColor‿str
+	colorⵧtheme?: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
 
 	/////// SOCIAL
 	titleⵧsocial?: string
@@ -129,4 +143,11 @@ export {
 
 	type WebsiteEntryPointSpec,
 	type EntryPoints,
+}
+
+// for convenience
+export {
+	type Author,
+	type Thing,
+	type ThingWithOnlinePresence,
 }

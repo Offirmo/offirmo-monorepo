@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable, CssColor, UrlString, IETFLanguageType } from '@offirmo-private/ts-types'
+import { Immutable, CssColor‿str, Url‿str, IETFLanguageType } from '@offirmo-private/ts-types'
 
 import { DisplayMode, DisplayOverrideMode, Category } from '../types.js'
 
@@ -11,7 +11,7 @@ import { DisplayMode, DisplayOverrideMode, Category } from '../types.js'
 
 // https://developer.mozilla.org/en-US/docs/Web/Manifest/icons
 interface Icon {
-	src: UrlString
+	src: Url‿str
 	type?: `image/${string}` // TODO dedicated type? https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
 	sizes: string // representing an array of sizes TODO one day better type?
 	purposes?: 'maskable' | 'monochrome' // ('any' is the default = absent)
@@ -22,20 +22,20 @@ interface WebManifest {
 	// cf. https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#required_manifest_members
 	name: string
 	icons: Icon[]
-	start_url: UrlString // https://developer.mozilla.org/en-US/docs/Web/Manifest/start_url // TODO auto add a query param!
+	start_url: Url‿str // https://developer.mozilla.org/en-US/docs/Web/Manifest/start_url // TODO auto add a query param!
 	display: Exclude<DisplayMode, 'browser'> // https://developer.mozilla.org/en-US/docs/Web/Manifest/display
 	                             // 'browser' would prevent the app from being installable cf. https://web.dev/articles/install-criteria
 
 	// critical for good experience
 	short_name: string
-	theme_color: CssColor // https://developer.mozilla.org/en-US/docs/Web/Manifest/theme_color
-	background_color: CssColor // https://developer.mozilla.org/en-US/docs/Web/Manifest/background_color
+	theme_color: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Manifest/theme_color
+	background_color: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Manifest/background_color
 	lang: IETFLanguageType // https://github.com/w3c/manifest/blob/gh-pages/explainer.md#internationalization-lang-and-dir
 	dir?: unknown // useful if not ltr https://github.com/w3c/manifest/blob/gh-pages/explainer.md#internationalization-lang-and-dir
 
 	// nice to have
 	id?: unknown // TODO https://developer.mozilla.org/en-US/docs/Web/Manifest/id  https://developer.chrome.com/articles/pwa-manifest-id/
-	scope?: UrlString // https://developer.mozilla.org/en-US/docs/Web/Manifest/scope
+	scope?: Url‿str // https://developer.mozilla.org/en-US/docs/Web/Manifest/scope
 	orientation?: // https://developer.mozilla.org/en-US/docs/Web/Manifest/orientation
 		// https://www.w3.org/TR/screen-orientation/#the-current-screen-orientation-type-and-angle
 		| 'any'

@@ -2,7 +2,7 @@
 // building blocks
 import { JSONObject } from './json.js'
 import { IETFLanguageType } from './international.js'
-import { Html‿str, Css‿str, JS‿str, Url‿str, SocialUrl } from './web.js'
+import { Html‿str, Url‿str, SocialUrl } from './web.js'
 
 /////////////////////////////////////////////////
 // building blocks
@@ -10,6 +10,9 @@ import { Html‿str, Css‿str, JS‿str, Url‿str, SocialUrl } from './web.js'
 export type Emoji = string
 
 export type SemVer = string // TODO better? https://semver.org/
+
+// TODO review
+/*
 
 // Tagged union types
 export interface Contentⳇplainᝍtext {
@@ -28,26 +31,15 @@ export interface Contentⳇhtml {
 	type: 'html'
 	content: Html‿str
 }
-export interface Contentⳇweb {
-	type: 'web'
-	content: {
-		critical: {
-			css: Css‿str[]
-			js: JS‿str[]
-		},
-		html: Html‿str[]
-		css: Css‿str[]
-		js: JS‿str[]
-	}
-}
 
 export type Content =
 	| string
 	| Contentⳇplainᝍtext
 	| Contentⳇmarkdown
 	| Contentⳇoffirmoᝍrichᝍtext
-	| Contentⳇhtml
-	| Contentⳇweb
+//	| Contentⳇhtml No, Html is more an end format, we only want generic ones
+//	| Contentⳇweb No, Content is often a building block to build a web page
+*/
 
 export type License‿SPDX = string // SPDX license expression syntax version 2.0 string https://spdx.org/licenses/
 
@@ -61,12 +53,17 @@ export interface Author extends WithOnlinePresence {
 	contact?: Url‿str
 }
 
+// https://en.wikipedia.org/wiki/Impressum
+export interface Impressum {
+	// Only for germany, TODO one day
+}
+
 /////////////////////////////////////////////////
 // Meta, tech-agnostic content
 
 export interface Thing {
 	lang?: IETFLanguageType
-	description: Content
+	description: string // must be simple, a paragraph at most
 	author: Author | undefined // undef = unknown :-(
 	license: License‿SPDX | undefined // undef = unknown :-(
 }
@@ -90,7 +87,7 @@ export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
 // Google Search Snippet = ?
 
 // the most important
-export type Descriptionⳇbite_sized = Content // TODO max length?? fits in a tweet?
+export type Descriptionⳇbite_sized = string // TODO max length?? fits in a tweet?
 
 // also very important
 export type Descriptionⳇtitle = string
@@ -118,10 +115,6 @@ export type AuthorⳇHtmlMeta = string
 export type TitleⳇHtmlMeta = string // https://developers.google.com/search/docs/appearance/title-link
 
 export type DescriptionⳇHtmlMeta = string
-
-export type CanonicalUrl = Url‿str
-
-export type Impressum = Contentⳇhtml // https://en.wikipedia.org/wiki/Impressum
 
 
 /////// package.json ///////

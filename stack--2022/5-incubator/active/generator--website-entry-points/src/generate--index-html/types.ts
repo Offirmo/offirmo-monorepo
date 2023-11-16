@@ -1,5 +1,5 @@
 import { Immutable } from '@offirmo-private/ts-types'
-import { PositiveIntegerInRange, RealInRange, Charset, CssColor, IETFLanguageType } from '@offirmo-private/ts-types'
+import { PositiveIntegerInRange, RealInRange, Charset, CssColor‿str, IETFLanguageType } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 // spec'ced types
@@ -132,7 +132,7 @@ interface HtmlMetas {
 
 		// https://www.w3.org/TR/appmanifest/#theme_color-member
 		// https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
-		'theme-color'?: CssColor
+		'theme-color'?: CssColor‿str
 
 		'color-scheme'?: unknown
 	}

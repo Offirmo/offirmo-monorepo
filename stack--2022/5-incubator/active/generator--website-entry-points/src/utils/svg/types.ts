@@ -1,6 +1,6 @@
 // https://developer.mozilla.org/en-US/docs/Web/SVG
 
-import { IETFLanguageType, UrlString, CssColor } from '@offirmo-private/ts-types'
+import { IETFLanguageType, Url‿str, CssColor‿str } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 
@@ -102,7 +102,7 @@ interface SVG extends SVGContainerElement {
 	}
 
 	xml_namespaces: {
-		[NamespaceId: string]: UrlString
+		[NamespaceId: string]: Url‿str
 	}
 
 	// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style
@@ -150,7 +150,7 @@ interface SVG extends SVGContainerElement {
 	// - good semantic
 	// - helps when composing
 	// - helps when rasterizing (cf. options of https://github.com/yisibl/resvg-js#nodejs-1)
-	background_color?: CssColor
+	background_color?: CssColor‿str
 
 	// in order
 	content: Array<SVGElement | string>

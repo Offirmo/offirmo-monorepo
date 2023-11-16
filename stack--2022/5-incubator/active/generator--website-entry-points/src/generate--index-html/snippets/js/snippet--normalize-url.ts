@@ -19,13 +19,13 @@
 export default function normalize_trailing_slash() {
 	const trailing_segment = location.pathname.split('/').slice(-1)[0] || ''
 	if (!trailing_segment) {
-		// ✔ the location ends with a trailing slash
+		// ✔ located by a folder, location ends with a trailing slash
 		return
 	}
 
 	const is_trailing_segment_a_html_file = trailing_segment.endsWith('.html') || trailing_segment.endsWith('.htm')
 	if (is_trailing_segment_a_html_file) {
-		// ✔ we are located by a file, no trailing slash
+		// ✔ located by a file, no trailing slash
 		return
 	}
 
