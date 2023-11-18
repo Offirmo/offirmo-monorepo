@@ -34,7 +34,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/print-error-to-terminal": "^0",
 		"@offirmo/practical-logger-browser": "^3",
-		"@offirmo/unit-test-toolbox": "^8",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2"
 	},

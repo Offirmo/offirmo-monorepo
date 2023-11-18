@@ -50,7 +50,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "^8",
+		"@offirmo/unit-test-toolbox": "^9",
 		"@size-limit/preset-small-lib": "^8",
 		"@types/icepick": "^2",
 		"icepick": "^2",

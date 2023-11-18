@@ -51,7 +51,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "^8",
+		"@offirmo/unit-test-toolbox": "^9",
 		"@size-limit/preset-small-lib": "^8",
 		"@types/json-stable-stringify": "^1",
 		"@types/murmurhash3js-revisited": "^3",

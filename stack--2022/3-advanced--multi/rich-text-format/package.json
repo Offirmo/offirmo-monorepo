@@ -43,7 +43,7 @@
 		"@offirmo-private/prettify-any": "^0",
 		"@offirmo-private/ts-types": "^0",
 		"@offirmo/practical-logger-browser": "^3",
-		"@offirmo/unit-test-toolbox": "^8",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tiny-invariant": "^1",
 		"tslib": "^2"

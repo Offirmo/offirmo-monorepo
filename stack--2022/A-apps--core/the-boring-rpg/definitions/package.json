@@ -47,7 +47,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/ts-types": "^0",
-		"@offirmo/unit-test-toolbox": "^8",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2"
 	}

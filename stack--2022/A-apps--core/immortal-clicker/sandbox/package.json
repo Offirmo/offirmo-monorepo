@@ -56,7 +56,7 @@
 		"@offirmo-private/prettify-any": "^0",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/state-migration-tester": "^0",
-		"@offirmo/unit-test-toolbox": "^8",
+		"@offirmo/unit-test-toolbox": "^9",
 		"icepick": "^2",
 		"npm-run-all": "^4",
 		"tslib": "^2"

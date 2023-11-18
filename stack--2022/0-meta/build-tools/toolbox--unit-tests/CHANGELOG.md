@@ -6,14 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-* [chore] moved in the monorepo
+* ...
+
+## [9.0.0] - 2023/11/18
+* [feat][breaking] bumped deps: mocha 10
+* [feat][breaking] bumped deps: sinon 17
 * [feat][breaking] added the `fail-zero` option to fail when having 0 tests
 * [feat][breaking] properly set the init file's extension to .cjs
-* [chore][breaking] bumped deps: mocha 10
-* [chore][breaking] bumped deps: sinon 15
-* [chore][breaking] moved the offirmo specific inits to another file, wrapped in try/catch so should be safe
-* [feat] properly ignore the global variables from the Offirmo specific setup (you most likely don't care)
-* ...
+* [chore] moved src in this monorepo
+* [chore][patch] moved some offirmo specific inits to another file (normal users will never see anything)
+* [feat][patch] properly ignore the global variables from the Offirmo specific setup (normal users will never see anything)
+* [doc] fix repo url
 
 ## v8.0.0
 2022/04/03
