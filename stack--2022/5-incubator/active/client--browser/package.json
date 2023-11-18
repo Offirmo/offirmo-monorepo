@@ -34,6 +34,7 @@
 		"xbuild": "npm-run-all clean refresh-build-variables refresh-loading-template build:parcel copy-extra copy-favicons-for-webmanifest ensure-size"
 	},
 	"devDependencies": {
+		"@offirmo-private/generator--website-entry-points": "^0",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/toolbox--parcel": "^0",
 		"@offirmo/unit-test-toolbox": "^8",
