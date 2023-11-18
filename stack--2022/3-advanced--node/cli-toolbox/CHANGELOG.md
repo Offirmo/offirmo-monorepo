@@ -6,8 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-* [feature] detects and reports a common mistake of using unsupported node <18 (I had it 2 times and investigated it 2 times 🤦)
 * ...
+
+## [3.0.1] - 2023-11-18
+* [chore] detects and reports a common mistake of using unsupported node <18 (I had it 2 times and investigated it 2 times 🤦)
+
 
 ## [3.0.0] - 2023-10-29
 * [chore][BREAKING] now targeting node 20 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
@@ -17,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [chore] reduced the number files published
 * [chore] bumped dependencies
 * [chore] moved code to a new repo
+
 
 ## [2.0.0] - 2020/10/22
 * [BREAKING] greatly reduced the number of embedded modules, restricted to the really most useful ones
