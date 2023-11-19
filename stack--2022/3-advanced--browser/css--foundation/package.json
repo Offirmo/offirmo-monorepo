@@ -20,7 +20,7 @@
 
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/toolbox--parcel": "^0",
+		"@offirmo-private/toolbox--parcel": "*",
 		"npm-run-all": "^4"
 	}
 }

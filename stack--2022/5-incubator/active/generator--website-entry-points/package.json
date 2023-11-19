@@ -8,14 +8,14 @@
 
 	"sideEffects": false,
 	"type": "module",
-
-	"bin": {
-		"generate-website-entry-points": "./bin/index.mjs"
+	"exports": {
+		".":  "./dist/src.es2022.esm/index.js"
 	},
 
 	"dependencies": {
 		"@offirmo-private/normalize-string": "^0",
 		"@offirmo-private/ts-types": "^0",
+		"@offirmo/cli-toolbox": "^3",
 		"@resvg/resvg-js": "^2",
 		"tiny-invariant": "^1",
 		"tslib": "^2"

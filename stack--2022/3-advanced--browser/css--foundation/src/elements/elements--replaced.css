@@ -1,20 +1,14 @@
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element
+ * typical: embed, iframe, img, video
+ * sometimes: audio, canvas, object, option
+ * NO: picture, svg,
  * they are a bit harder to style
  */
 
 /* https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design#responsive_images
- * embed ? iframe ?
  */
 img,
-picture,
 video {
 	max-width: 100%;
+	display: block; /* to remove the magic space https://www.joshwcomeau.com/css/understanding-layout-algorithms/#inline-magic-space-5 */
 }
-
-/* TODO display block to remove the magic space?
- * (not that simple)
- * img
- * video
- * canvas
- * svg?
- */

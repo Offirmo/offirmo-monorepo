@@ -53,7 +53,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/toolbox--parcel": "^0",
+		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@size-limit/preset-small-lib": "^8",
 		"npm-run-all": "^4"

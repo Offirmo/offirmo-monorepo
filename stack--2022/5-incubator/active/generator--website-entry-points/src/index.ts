@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable, AnyPath } from '@offirmo-private/ts-types'
 
 import { EntryPoints, WebsiteEntryPointSpec } from './types.js'
 
@@ -15,9 +15,13 @@ import generateꓽindexᐧhtml from './generate--index-html/index.js'
 import generateꓽwebmanifest from './generate--webmanifest/index.js'
 import { generateꓽfile as generateꓽicon_file } from './generate--icons/index.js'
 
+
+import * as path from 'node:path'
+import * as fs from '@offirmo/cli-toolbox/fs/extra'
+
 /////////////////////////////////////////////////
 
-function generateꓽwebsiteᝍentryᝍpoint(spec: Immutable<WebsiteEntryPointSpec>): EntryPoints {
+function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>): EntryPoints {
 	return {
 		[getꓽbasenameⵧindexᐧhtml(spec)]: generateꓽindexᐧhtml(spec),
 
@@ -35,8 +39,50 @@ function generateꓽwebsiteᝍentryᝍpoint(spec: Immutable<WebsiteEntryPointSpe
 
 /////////////////////////////////////////////////
 
-export default generateꓽwebsiteᝍentryᝍpoint
+async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>, dir: AnyPath): Promise<EntryPoints> {
+	const dirpath = dir.startsWith('/')
+		? dir
+		: path.join(process.cwd(), dir)
+	console.log(`📁 ${dirpath}`)
+	// TODO rm? too dangerous?
+
+	Object.keys(entries).sort().forEach(basename => {
+		console.log(`↳ 📄 ${basename}`)
+		//console.log(entries[basename])
+	})
+
+	return Promise.all(Object.keys(entries).map(basename => {
+			const filepath = path.join(dirpath, basename)
+			return fs.outputFile(
+					filepath,
+					entries[basename]!,
+					{
+						encoding: 'utf8',
+					}
+				)
+				.catch((err : any) => {
+					console.error(`Error while writing ${filepath}`, err)
+					throw err
+				})
+		}))
+		.then(() => entries)
+}
+
+/////////////////////////////////////////////////
+
+async function generateꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>, dir: AnyPath): Promise<EntryPoints> {
+	const entries = getꓽwebsiteᝍentryᝍpoints(spec)
+	return writeꓽwebsiteᝍentryᝍpoints(entries, dir)
+}
+
+/////////////////////////////////////////////////
+
+export default generateꓽwebsiteᝍentryᝍpoints
 
 export {
-	generateꓽwebsiteᝍentryᝍpoint,
+	getꓽwebsiteᝍentryᝍpoints,
+	writeꓽwebsiteᝍentryᝍpoints,
+	generateꓽwebsiteᝍentryᝍpoints,
 }
+export * from './types.js'
+export * as SVG from './utils/svg/index.js'

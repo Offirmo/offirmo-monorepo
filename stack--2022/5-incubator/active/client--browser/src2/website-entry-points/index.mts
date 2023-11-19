@@ -1,20 +1,13 @@
-import assert from 'tiny-invariant'
-import { Immutable, Author, Thing, ThingWithOnlinePresence } from '@offirmo-private/ts-types'
-import * as path from 'node:path'
-import * as util from 'node:util'
-import { fileURLToPath } from 'node:url'
-import * as fs from 'node:fs'
+#!/usr/bin/env ts-node
 
-import generateꓽwebsiteᝍentryᝍpoints from '../index.js'
-import * as SVG from '../utils/svg/index.js'
-import { createꓽfrom_emoji } from '../utils/svg/index.js'
-import { HtmlString } from '../generate--index-html/types'
-import { Category } from '../types'
+import { Author, Thing, ThingWithOnlinePresence } from '@offirmo-private/ts-types'
+import generateꓽwebsiteᝍentryᝍpoint from '@offirmo-private/generator--website-entry-points'
 
 /////////////////////////////////////////////////
 
-const EXAMPLEⵧWEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentryᝍpoints>[0] = (() => {
-	const AUTHOR: Author = {
+const WEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[0] = (() => {
+
+	const AUTHOR: Author = { // TODO externalize
 		name: 'Offirmo',
 		contact: 'offirmo.net@gmail.com',
 
@@ -51,13 +44,13 @@ const EXAMPLEⵧWEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentry
 		source: 'https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--2022/C-apps--clients/the-boring-rpg/client--browser',
 	}
 
-	const SPEC: Parameters<typeof generateꓽwebsiteᝍentryᝍpoints>[0] = {
+	const SPEC: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[0] = {
 		...THING_ONLINE,
 
 		preset: 'game',
 
 		title: 'The Boring RPG',
-		icon: SVG.createꓽfrom_emoji('⚔️'),
+		//icon: SVG.createꓽfrom_emoji('⚔️'),
 		keywords: [ 'game', 'incremental', 'fantasy', 'rpg', 'free', 'indie'],
 
 		content: {
@@ -92,13 +85,4 @@ const EXAMPLEⵧWEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentry
 
 /////////////////////////////////////////////////
 
-await generateꓽwebsiteᝍentryᝍpoints(
-	//EXAMPLEⵧSIMPLE_PAGE
-	EXAMPLEⵧWEBAPPⵧTBRPG2023
-	//EXAMPLEⵧEXPERIMENTⵧVIEWPORT
-	//ADVENTURERS_FANTASY_ILLUSTRATION
-	,
-	path.join(process.cwd(), 'dist', 'public')
-)
-
-/////////////////////////////////////////////////
+await generateꓽwebsiteᝍentryᝍpoint(WEBAPPⵧTBRPG2023, './src')

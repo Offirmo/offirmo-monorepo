@@ -6,6 +6,11 @@
 	"license": "Unlicense",
 	"private": true,
 
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+	},
+
 	"size-limit": [
 		{
 			"limit": "700kb",
@@ -19,6 +24,8 @@
 
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",
+
+		"refresh--entry-points": "npx tsx src2/website-entry-points/index.mts",
 
 		"refresh-loading-template": "offirmo-simple-upgradable-template-apply --template=../../../3-advanced--browser/iframe--loading/src/index.html --destination=./src/index.html",
 		"refresh-build-variables": "monoropo-script--update_build_variables --inputDir=../../../A-apps--core/the-boring-rpg/state",
@@ -34,9 +41,9 @@
 		"xbuild": "npm-run-all clean refresh-build-variables refresh-loading-template build:parcel copy-extra copy-favicons-for-webmanifest ensure-size"
 	},
 	"devDependencies": {
-		"@offirmo-private/generator--website-entry-points": "^0",
+		"@offirmo-private/generator--website-entry-points": "*",
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/toolbox--parcel": "^0",
+		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@size-limit/file": "^8",
 		"npm-run-all": "^4"
