@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable, Html‿str } from '@offirmo-private/ts-types'
+import { Immutable, Html‿str, JS‿str, Css‿str } from '@offirmo-private/ts-types'
 import { normalize_unicode } from '@offirmo-private/normalize-string'
 
 import { EOL } from '../consts.js'
@@ -297,11 +297,34 @@ function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): HtmlStri
 		}
 	})
 
+	const js_blocks: JS‿str[] = [
+		...spec.content.js,
+		...(spec.content.js.length === 0 ? [ 'snippet:auto-content' ] : []),
+	].map(js‿str => {
+		switch (true) {
+			case js‿str === 'snippet:auto-content':
+				return `
+console.log('Hello, world!')
+`.trim()
+			case (js‿str.endsWith('.js') || js‿str.endsWith('.jsx') || js‿str.endsWith('.ts') || js‿str.endsWith('.tsx')):
+				return `
+			import '${js‿str}'
+`.trim()
+			default:
+				assert(!js‿str.startsWith('snippet:'), `Unknown JS snippet "${js‿str}"!`)
+				return js‿str
+		}
+	})
+
 	return `
 <body class="">
 	<noscript>You need to enable JavaScript to run this app.</noscript>
 
 	${html_blocks.join('\n\n')}
+
+	<script type="module"> /////// NON critical JS ///////
+		${js_blocks.join('\n\n')}
+	</script>
 </body>
 `.trim()
 }

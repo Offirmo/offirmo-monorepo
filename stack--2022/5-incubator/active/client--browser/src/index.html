@@ -14,7 +14,7 @@
 		<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
 		<link rel="manifest" href="./index.webmanifest">
 	
-		<title>The Boring RPG</title>
+		<title>[title--page]The Boring RPG</title>
 	
 		<style>/******* critical CSS *******/
 		
@@ -63,13 +63,21 @@
 	<body class="">
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 	
-		<header>TODO header</header>
-	<main id="root">
-			<h1>The Boring RPG</h1>
-		<article>
-			<p>(Browser game) The simplest RPG ever! (indie game, free to play, no account needed)</p>
-		</article>
+		<main id="root">
+		<!-- React will render here and replace this -->
+		<section style="
+			text-align: center;
+			--width: 60ch;
+			max-width: var(--width);
+			margin: 0 max(1ch, (100vw - var(--width))/2);
+			">
+			<h1>[title--page]The Boring RPG</h1>
+			<em>Loading…</em>
+		</section>
 	</main>
-	<footer>TODO footer</footer>
+	
+		<script type="module"> /////// NON critical JS ///////
+			import './index.tsx'
+		</script>
 	</body>
 </html>

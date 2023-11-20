@@ -90,9 +90,9 @@ interface WebsiteEntryPointSpec extends WebPage {
 	// must be flat for easy defaulting
 	// optional '?:' = truly optional (can be easily derived)
 
-	/////// CONTENT
 	preset?: 'game' | 'landing--app' // TODO clarify
 
+	/////// POLISH
 	// https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors
 	// +++ https://css-tricks.com/meta-theme-color-and-trickery/
 	//   should not be too close to the "traffic light buttons"

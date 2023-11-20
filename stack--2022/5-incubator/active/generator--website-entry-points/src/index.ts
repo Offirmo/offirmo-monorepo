@@ -14,6 +14,9 @@ import {
 import generateꓽindexᐧhtml from './generate--index-html/index.js'
 import generateꓽwebmanifest from './generate--webmanifest/index.js'
 import { generateꓽfile as generateꓽicon_file } from './generate--icons/index.js'
+import generateꓽhumansᐧtxt from './generate--humans-txt/index.js'
+import generateꓽrobotsᐧtxt from './generate--robots-txt/index.js'
+import generateꓽsecurityᐧtxt from './generate--security-txt/index.js'
 
 
 import * as path from 'node:path'
@@ -34,6 +37,10 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>):
 		'icon.svg': generateꓽicon_file(spec),
 
 		...(needsꓽwebmanifest(spec) && { [getꓽbasenameⵧwebmanifest(spec)]: JSON.stringify(generateꓽwebmanifest(spec), undefined, '	')}),
+
+		'humans.txt': generateꓽhumansᐧtxt(spec),
+		'robots.txt': generateꓽrobotsᐧtxt(spec),
+		'.well-known/security.txt': generateꓽsecurityᐧtxt(spec),
 	}
 }
 

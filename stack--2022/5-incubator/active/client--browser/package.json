@@ -34,7 +34,7 @@
 		"copy-favicons-for-webmanifest": "mkdir -p dist/favicons && cp -rf dist/android-chrome-512x512.*.png dist/favicons/android-chrome-512x512.png",
 		"ensure-size": "size-limit",
 
-		"start:parcel": "PARCEL_AUTOINSTALL=false parcel src/index-2.html --out-dir .parcel --no-autoinstall --port 8080 --no-hmr",
+		"start:parcel": "PARCEL_AUTOINSTALL=false parcel src/index.html --no-autoinstall --port 8080",
 		"copy-extra--dev": "mkdir -p .parcel && cp -f src/index.html .parcel && cp -f src/build.json .parcel",
 		"dev": "npm-run-all clean refresh-build-variables refresh-loading-template --parallel start:parcel copy-extra--dev",
 

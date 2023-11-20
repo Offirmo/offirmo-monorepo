@@ -1,11 +1,12 @@
 #!/usr/bin/env ts-node
 
 import { Author, Thing, ThingWithOnlinePresence } from '@offirmo-private/ts-types'
-import generateꓽwebsiteᝍentryᝍpoint from '@offirmo-private/generator--website-entry-points'
+import generateꓽwebsiteᝍentryᝍpoint, { type WebPage, type WebsiteEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
+import { SVG } from '@offirmo-private/generator--website-entry-points/src/utils/svg'
 
 /////////////////////////////////////////////////
 
-const WEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[0] = (() => {
+const WEBAPPⵧTBRPG2023: WebsiteEntryPointSpec = (() => {
 
 	const AUTHOR: Author = { // TODO externalize
 		name: 'Offirmo',
@@ -44,10 +45,8 @@ const WEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[
 		source: 'https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--2022/C-apps--clients/the-boring-rpg/client--browser',
 	}
 
-	const SPEC: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[0] = {
+	const WEB_PAGE: WebPage = {
 		...THING_ONLINE,
-
-		preset: 'game',
 
 		title: 'The Boring RPG',
 		//icon: SVG.createꓽfrom_emoji('⚔️'),
@@ -62,10 +61,22 @@ const WEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[
 					'snippet:normalize-trailing-slash',
 				]
 			},
-			html: [],
-			css: [],
-			js: [],
+			html: [
+				'snippet:react-root',
+			],
+			css: [
+
+			],
+			js: [
+				'./index.tsx',
+			],
 		},
+	}
+
+	const SPEC: WebsiteEntryPointSpec = {
+		...WEB_PAGE,
+
+		preset: 'game',
 
 		// PWA
 		wantsꓽinstall: 'prompt',
@@ -78,6 +89,9 @@ const WEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[
 		colorⵧbackground: 'hsl(337, 16%, 28%)',
 		colorⵧforeground: 'hsl(42, 100%, 87%)',
 		colorⵧtheme:      'hsl(248,  9%, 17%)',
+
+		/////// META
+		isꓽdebug: true,
 	}
 
 	return SPEC

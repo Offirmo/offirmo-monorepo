@@ -21,6 +21,18 @@ function isꓽdebug(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 	return spec.isꓽdebug ?? false
 }
 
+function getꓽENV(spec: Immutable<WebsiteEntryPointSpec>): string {
+	return String((spec.env ?? process.env['NODE_ENV']) || 'development').toLowerCase()
+}
+
+function isꓽprod(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+	return getꓽENV(spec) === 'production' || getꓽENV(spec) === 'prod'
+}
+
+function isꓽpublic(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+	return spec.isꓽpublic ?? isꓽprod(spec)
+}
+
 function wantsꓽinstall(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 	if (typeof spec.wantsꓽinstall === 'string')
 		return true
@@ -194,6 +206,10 @@ function getꓽicon__basename(spec: Immutable<WebsiteEntryPointSpec>, size: numb
 
 export {
 	isꓽdebug,
+	getꓽENV,
+	isꓽprod,
+	isꓽpublic,
+
 	wantsꓽinstall,
 	isꓽuser_scalable,
 	hasꓽown_navigation,
