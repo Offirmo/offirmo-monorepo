@@ -1,16 +1,11 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { Category, EntryPoints, WebsiteEntryPointSpec } from '../types.js'
+import { EntryPoints, WebsiteEntryPointSpec } from '../types.js'
 import {
-	canꓽuse_window_controls_overlay,
-	hasꓽown_navigation,
-	getꓽbasenameⵧindexᐧhtml,
-	getꓽlang,
 	getꓽtitleⵧapp,
 	getꓽtitleⵧappⵧshort,
-	getꓽcolorⵧbackground,
-	getꓽcolorⵧtheme, supportsꓽscreensⵧwith_shape, getꓽicon__sizes, getꓽicon__path,
+	getꓽcolorⵧbackground, getꓽcolorⵧforeground,
 } from '../selectors.js'
 import { ifꓽdebug } from '../utils/debug.js'
 
@@ -45,6 +40,32 @@ export {
 function generate(spec: Immutable<WebsiteEntryPointSpec>): EntryPoints {
 	return {
 		'./app/consts.ts': `TODO`,
+		'./app/index.ts': `
+import { asap_but_out_of_immediate_execution } from '@offirmo-private/async-utils'
+import { VERSION, BUILD_DATE } from '../build.json'
+
+//import { CHANNEL } from './services/channel'
+
+/////////////////////////////////////////////////
+
+console.info(\`%c ${getꓽtitleⵧapp(spec)} %cv\${VERSION}%c\${BUILD_DATE}\`,
+	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: ${getꓽcolorⵧbackground(spec)}; color: ${getꓽcolorⵧforeground(spec)}; font-weight: bold;',
+	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey; color: black; font-weight: bold;',
+	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey; color: black;',
+)
+
+/////////////////////////////////////////////////
+
+asap_but_out_of_immediate_execution(async () => {
+	console.log('%c——————— end of immediate, synchronous, non-import code. ———————', "font-weight: bold;")
+
+	const inits = await import('./services/init/*.ts')
+	Object.keys(inits).sort().forEach(async (key) => {
+		const init_fn = (await inits[key]()).default
+		init_fn()
+	})
+})
+		`.trim(),
 
 		// service layer
 		// ~syncing view with external data sources

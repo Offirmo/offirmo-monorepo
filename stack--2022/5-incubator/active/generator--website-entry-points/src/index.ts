@@ -10,6 +10,7 @@ import {
 	getꓽbasenameⵧwebmanifest,
 	getꓽicon__sizes,
 	getꓽicon__path,
+	shouldꓽgenerateꓽsourcecode,
 } from './selectors.js'
 import generateꓽindexᐧhtml from './generate--index-html/index.js'
 import generateꓽwebmanifest from './generate--webmanifest/index.js'
@@ -39,7 +40,7 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>):
 
 		// APP
 		...(needsꓽwebmanifest(spec) && { [getꓽbasenameⵧwebmanifest(spec)]: JSON.stringify(generateꓽwebmanifest(spec), undefined, '	')}),
-		...(spec.sourcecode && generateꓽsource_code(spec)),
+		...(shouldꓽgenerateꓽsourcecode(spec) && generateꓽsource_code(spec)),
 
 		// MISC
 		'humans.txt': generateꓽhumansᐧtxt(spec),

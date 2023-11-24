@@ -1,17 +1,18 @@
 #!/bin/sh
 ':' //# https://sambal.org/?p=1014 ; exec /usr/bin/env node --experimental-import-meta-resolve "$0" "$@"
 
+/////////////////////////////////////////////////
 console.log('🧙️  Hello from update_build_variables.js!')
 
 import path from 'node:path'
+import { readFileSync, writeFileSync } from 'node:fs'
 
 import semver from 'semver'
 import assert from 'tiny-invariant'
 import { writeJsonFile } from 'write-json-file'
 import meow from 'meow'
-import * as fs from '../../../3-advanced--node/cli-toolbox/fs/extra/index.mjs'
 
-/////////////////////
+/////////////////////////////////////////////////
 
 const cli = meow('build', {
 	importMeta: import.meta,
@@ -31,7 +32,9 @@ const cli = meow('build', {
 	},
 })
 
+/////////////////////////////////////////////////
 
+// copied from @offirmo-private/timestamps
 // ex. 20181121_06h00
 function getꓽUTC_timestampⵧhuman_readable‿minutes(now = new Date()) {
 	const YYYY = now.getUTCFullYear()
@@ -43,17 +46,13 @@ function getꓽUTC_timestampⵧhuman_readable‿minutes(now = new Date()) {
 	return `${YYYY}${MM}${DD}_${hh}h${mm}`
 }
 
-/////////////////////
+/////////////////////////////////////////////////
 
-//console.log('🐈  meow', cli.flags)
-
-const PACKAGE_JSON_PATH = path.resolve(cli.flags.inputDir || process.cwd(), './package.json')
-const PKG_JSON = JSON.parse(fs.readFileSync(path.join(PACKAGE_JSON_PATH)))
+const PACKAGE_JSON_PATH = path.resolve(cli.flags.inputDir, './package.json')
+const PKG_JSON = JSON.parse(readFileSync(PACKAGE_JSON_PATH))
 let { version: VERSION, name: NAME } = PKG_JSON
 const BUILD_DATE = getꓽUTC_timestampⵧhuman_readable‿minutes()
 
-
-//console.log('🧙️  mode:', cli.flags.mode)
 console.log(`🧙️  Extracted variables for module ${NAME}:`, { VERSION, BUILD_DATE })
 
 VERSION = semver.clean(VERSION)
@@ -87,7 +86,7 @@ switch(cli.flags.mode || 'json') {
 	}
 	case 'ts': {
 		const target_path = path.resolve(cli.flags.outputDir || process.cwd(), './build.ts')
-		fs.writeFileSync(target_path, `
+		writeFileSync(target_path, `
 // THIS FILE IS AUTO GENERATED!
 export const VERSION: string = '${VERSION}'
 export const NUMERIC_VERSION: number = ${NUMERIC_VERSION} // for easy comparisons
@@ -98,7 +97,7 @@ export const BUILD_DATE: string = '${BUILD_DATE}'
 	}
 	case 'node': {
 		const target_path = path.resolve(cli.flags.outputDir || process.cwd(), './build.js')
-		fs.writeFileSync(target_path, `
+		writeFileSync(target_path, `
 // THIS FILE IS AUTO GENERATED!
 const VERSION = '${VERSION}'
 const NUMERIC_VERSION = ${NUMERIC_VERSION} // for easy comparisons
@@ -114,7 +113,7 @@ module.exports = { VERSION, NUMERIC_VERSION, BUILD_DATE }
 
 // always add a build badge as well
 // intended usage: https://shields.io/endpoint
-let target_path = path.resolve(cli.flags.outputDir || process.cwd(), './build_badge_version.json')
+let target_path = path.resolve(cli.flags.outputDir || process.cwd(), './build--badge--version.json')
 writeJsonFile(target_path, {
 	// Note: no undocumented properties are allowed!
 	// required:
@@ -125,7 +124,7 @@ writeJsonFile(target_path, {
 })
 console.log('🧙️  wrote:', target_path)
 
-target_path = path.resolve(cli.flags.outputDir || process.cwd(), './build_badge_time.json')
+target_path = path.resolve(cli.flags.outputDir || process.cwd(), './build--badge--time.json')
 writeJsonFile(target_path, {
 	// Note: no undocumented properties are allowed!
 	// required:

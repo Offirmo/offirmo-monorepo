@@ -210,6 +210,10 @@ function getꓽicon__path(spec: Immutable<WebsiteEntryPointSpec>, size: number |
 	return `favicons/${getꓽicon__basename(spec, size)}`
 }
 
+function shouldꓽgenerateꓽsourcecode(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+	return spec.sourcecode ?? false
+}
+
 // keywords: todo dedupe, add categories, lowercase, etc.
 
 /////////////////////////////////////////////////
@@ -251,4 +255,6 @@ export {
 
 	getꓽicon__sizes,
 	getꓽicon__path,
+
+	shouldꓽgenerateꓽsourcecode,
 }

@@ -16,6 +16,7 @@ import {
 	usesꓽpull_to_refresh,
 	needsꓽwebmanifest,
 	getꓽbasenameⵧwebmanifest,
+	shouldꓽgenerateꓽsourcecode,
 } from '../selectors.js'
 import { ifꓽdebug } from '../utils/debug.js'
 import { getꓽmetas } from './selectors.js'
@@ -285,9 +286,9 @@ function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): HtmlStri
 	].map(js‿str => {
 		switch (true) {
 			case js‿str === 'snippet:auto-content':
-				return `
-console.log('Hello, world!')
-`.trim()
+				return shouldꓽgenerateꓽsourcecode(spec)
+					? `import './app/index.ts'`
+					: `console.log('Hello, world!')`
 			case (js‿str.endsWith('.js') || js‿str.endsWith('.jsx') || js‿str.endsWith('.ts') || js‿str.endsWith('.tsx')):
 				return `
 			import '${js‿str}'

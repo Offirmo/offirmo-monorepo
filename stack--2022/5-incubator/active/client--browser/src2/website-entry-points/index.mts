@@ -65,10 +65,8 @@ const WEBAPPⵧTBRPG2023: WebsiteEntryPointSpec = (() => {
 				'snippet:react-root',
 			],
 			css: [
-
 			],
 			js: [
-				'./app/index.tsx',
 			],
 		},
 	}
@@ -89,6 +87,8 @@ const WEBAPPⵧTBRPG2023: WebsiteEntryPointSpec = (() => {
 		colorⵧbackground: 'hsl(337, 16%, 28%)',
 		colorⵧforeground: 'hsl(42, 100%, 87%)',
 		colorⵧtheme:      'hsl(248,  9%, 17%)',
+
+		sourcecode: true,
 
 		/////// META
 		isꓽdebug: true,
