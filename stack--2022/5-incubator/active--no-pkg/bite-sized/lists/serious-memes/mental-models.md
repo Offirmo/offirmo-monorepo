@@ -9,6 +9,7 @@ AAA TODO https://flinkliv.com/
 AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 affirmative action?
 agile "what the client wanted"
+alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
 availability Cascade: A self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.

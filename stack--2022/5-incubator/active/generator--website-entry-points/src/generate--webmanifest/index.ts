@@ -11,7 +11,7 @@ import {
 	getꓽtitleⵧapp,
 	getꓽtitleⵧappⵧshort,
 	getꓽcolorⵧbackground,
-	getꓽcolorⵧtheme, supportsꓽscreensⵧwith_shape, getꓽicon__sizes, getꓽicon__basename,
+	getꓽcolorⵧtheme, supportsꓽscreensⵧwith_shape, getꓽicon__sizes, getꓽicon__path,
 } from '../selectors.js'
 import { ifꓽdebug } from '../utils/debug.js'
 
@@ -20,7 +20,7 @@ import { ifꓽdebug } from '../utils/debug.js'
 function _generateꓽicons(spec: Immutable<WebsiteEntryPointSpec>): WebManifest['icons'] {
 	return getꓽicon__sizes(spec).reduce((acc, size) => {
 		acc.push({
-			src: `./${getꓽicon__basename(spec, size)}`,
+			src: `./${getꓽicon__path(spec, size)}`, // TODO review should we add ./ ?
 			type: `image/svg+xml`,
 			sizes: `${size}x${size}`
 		} as Icon)

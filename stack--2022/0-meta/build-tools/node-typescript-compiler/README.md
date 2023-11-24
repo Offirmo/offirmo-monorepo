@@ -140,4 +140,5 @@ However, that would take a lot of time and effort, and I'm afraid of API changes
 
 ## See also
 
-https://www.npmjs.com/package/ntypescript but they have poor doc and don't allow choosing the typescript version (ex. using the unstable "next")
+* https://www.npmjs.com/package/ntypescript but they have poor doc and don't allow choosing the typescript version (ex. using the unstable "next")
+* https://www.npmjs.com/package/@aivenio/tsc-output-parser parsing the output. must be brittle?

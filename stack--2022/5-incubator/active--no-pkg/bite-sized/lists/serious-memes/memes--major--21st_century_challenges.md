@@ -8,3 +8,4 @@ China
 big companies / balance of power / democracy
 trans
 metoo
+democracy but powerless

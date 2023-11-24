@@ -68,7 +68,7 @@ const WEBAPPⵧTBRPG2023: WebsiteEntryPointSpec = (() => {
 
 			],
 			js: [
-				'./index.tsx',
+				'./app/index.tsx',
 			],
 		},
 	}

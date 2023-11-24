@@ -2,16 +2,9 @@ import { Immutable } from '@offirmo-private/ts-types'
 import {
 	Author,
 	Basename,
-	Charset,
 	Contentⳇweb,
 	CssColor‿str,
-	Css‿str,
 	Descriptionⳇtitle,
-	Emoji,
-	IETFLanguageType,
-	JS‿str,
-	PositiveIntegerInRange,
-	RealInRange,
 	Thing,
 	ThingWithOnlinePresence,
 } from '@offirmo-private/ts-types'
@@ -56,57 +49,51 @@ type Category =
 
 // https://developer.mozilla.org/en-US/docs/Web/Manifest/display#values
 type DisplayMode =
-	| 'fullscreen' // All the available display area is used and no user agent chrome is shown.
-	| 'standalone' // The application will look and feel like a standalone application (...) but can include other UI elements such as a status bar.
-	| 'minimal-ui' // The application will look and feel like a standalone application, but will have a minimal set of UI elements for controlling navigation.
-	| 'browser'    // XXX this is the default, setting it explicitly can prevent the app from being installable! cf. https://web.dev/articles/install-criteria
+	| 'fullscreen' // All the available display area is used and no user agent chrome is shown
+	| 'standalone' // The application will look and feel like a standalone application (...) but can include other UI elements such as a status bar
+	| 'minimal-ui' // The application will look and feel like a standalone application, but will have a minimal set of UI elements for controlling navigation
+	| 'browser'    // (default) XXX setting this explicitly can prevent the app from being installable! cf. https://web.dev/articles/install-criteria
 
 // https://developer.mozilla.org/en-US/docs/Web/Manifest/display_override#values
-type DisplayOverrideMode = DisplayMode | 'window-controls-overlay'
-
-// TODO special interfaces for web page, Open Graph etc.
+type DisplayOverrideMode = DisplayMode | 'window-controls-overlay' // TODO refine, only exists for 'window-controls-overlay' AFAIK
 
 interface WebPage extends ThingWithOnlinePresence {
 	title: Descriptionⳇtitle
 	icon?: Immutable<SVG>
 	keywords?: string[]
 
+	// Known HTML snippets:
+	// Known CSS snippets:
+	// - snippet:natural-box-layout
+	// Known JS snippets:
+	// - snippet:normalize-trailing-slash
+	// - TODO google analytics etc.
 	content: Contentⳇweb
-/*
-	styles?: Array<
-		| 'snippet:natural-box-layout'
-		// TODO more
-		| Css‿str
-	>,
 
-	scripts?: Array<
-		| 'snippet:normalize-trailing-slash'
-		// TODO google analytics etc.
-		| JS‿str
-	>,*/
+	/////// SOCIAL
+	titleⵧsocial?: string
+	descriptionⵧsocial?: string
+	// TODO open graph
+
+
+	/////// POLISH
+	// https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors
+	// +++ https://css-tricks.com/meta-theme-color-and-trickery/
+	// - should not be too close to the "traffic light buttons"
+	// from: https://web.dev/learn/pwa/web-app-manifest/#recommended_fields
+	// - Warning: Do not use transparency, CSS variables, gradient functions, or color functions with transparency (such as rgba())
+	// - as they are not supported by most browsers. You will get inconsistent results.
+	colorⵧbackground?: CssColor‿str
+	colorⵧforeground?: CssColor‿str
+	colorⵧtheme?: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
 }
 
 interface WebsiteEntryPointSpec extends WebPage {
 	// must be flat for easy defaulting
 	// optional '?:' = truly optional (can be easily derived)
+	// TODO use zod? or tRPC?
 
 	preset?: 'game' | 'landing--app' // TODO clarify
-
-	/////// POLISH
-	// https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors
-	// +++ https://css-tricks.com/meta-theme-color-and-trickery/
-	//   should not be too close to the "traffic light buttons"
-	// from: https://web.dev/learn/pwa/web-app-manifest/#recommended_fields
-	//   Warning: Do not use transparency, CSS variables, gradient functions, or color functions with transparency (such as rgba())
-	//   as they are not supported by most browsers. You will get inconsistent results.
-	colorⵧbackground?: CssColor‿str
-	colorⵧforeground?: CssColor‿str
-	colorⵧtheme?: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
-
-	/////// SOCIAL
-	titleⵧsocial?: string
-	descriptionⵧsocial?: string
-
 
 	/////// PWA
 	app_categories?: Category[]
@@ -124,6 +111,9 @@ interface WebsiteEntryPointSpec extends WebPage {
 
 	// TODO one day themes
 
+	/////// SRC
+	sourcecode?: boolean
+
 	/////// META
 	basename?: Basename // without extension. default to "index"
 	env?: 'prod' | 'production' | string // default to env.NODE_ENV ?? dev
@@ -132,7 +122,7 @@ interface WebsiteEntryPointSpec extends WebPage {
 }
 
 interface EntryPoints {
-	[basename: string]: string,
+	[relpath: string]: string,
 }
 
 /////////////////////////////////////////////////

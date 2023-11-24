@@ -18,6 +18,7 @@
 		"fs-extra": "^11",
 		"meow": "^12",
 		"node-typescript-compiler": "*",
+		"semver": "^7",
 		"tiny-invariant": "^1",
 		"typescript": "^5",
 		"write-json-file": "^5"

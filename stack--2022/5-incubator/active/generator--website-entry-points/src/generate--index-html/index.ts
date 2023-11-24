@@ -105,7 +105,6 @@ function generateꓽhtml__head__script(spec: Immutable<WebsiteEntryPointSpec>): 
 
 	return `
 <script>/////// critical JS ///////
-
 	${(spec.content.critical.js ?? [])
 		.map(js‿str => {
 			switch (js‿str) {
@@ -125,23 +124,6 @@ function generateꓽhtml__head__script(spec: Immutable<WebsiteEntryPointSpec>): 
 		.join(EOL + EOL + '	')}
 </script>
 `.trim()
-}
-
-// TODO
-function generateꓽhtml__head__meta__twitter(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
-	// https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards
-
-	return [
-	].join(EOL).trim()
-}
-
-// TODO
-function generateꓽhtml__head__meta__opengraph(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
-	// https://ogp.me/
-
-	return [
-		//`<meta property="og:title" content="${getꓽtitleⵧsocial(spec)}"/>`,
-	].join(EOL).trim()
 }
 
 function _stringifyꓽmetaⵧviewport__content(viewport_spec: Immutable<HtmlMetaContentⳇViewport>): string {

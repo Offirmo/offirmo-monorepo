@@ -26,3 +26,6 @@ Layout differences:
 
 
 TODO look at https://wiki.csswg.org/ideas/mistakes
+
+
+TODO https://survey.devographics.com/en-US/survey/state-of-html/2023/yFuZtjtGXu0jQtnJNbota/finish

@@ -38,7 +38,6 @@
 		</style>
 	
 		<script>/////// critical JS ///////
-		
 				;(function normalize_trailing_slash() {
 				const trailing_segment = location.pathname.split('/').slice(-1)[0] || '';
 				if (!trailing_segment) {
@@ -77,7 +76,7 @@
 	</main>
 	
 		<script type="module"> /////// NON critical JS ///////
-			import './index.tsx'
+			import './app/index.tsx'
 		</script>
 	</body>
 </html>

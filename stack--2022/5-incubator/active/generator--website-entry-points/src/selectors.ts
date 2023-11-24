@@ -1,7 +1,7 @@
 import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
-import { Basename, Immutable, IETFLanguageType, CssColor‿str } from '@offirmo-private/ts-types'
+import { Basename, Immutable, IETFLanguageType, CssColor‿str, RelativePath } from '@offirmo-private/ts-types'
 import {
 	capitalize,
 	coerce_to_ascii,
@@ -13,6 +13,8 @@ import {
 } from '@offirmo-private/normalize-string'
 
 import { WebsiteEntryPointSpec } from './types.js'
+
+// Relpath should NOT feature ./ as it's up to the caller to decide if they want it or not
 
 /////////////////////////////////////////////////
 // always use safe defaults
@@ -164,11 +166,12 @@ function getꓽcolorⵧtheme(spec: Immutable<WebsiteEntryPointSpec>): CssColor�
 	return spec.colorⵧtheme ?? getꓽcolorⵧbackground(spec)
 }
 
+// TODO move to own file?
 function getꓽicon__sizes(spec: Immutable<WebsiteEntryPointSpec>): Uint32Array {
 	const sizes = new Set<number>()
 
 	// https://web.dev/learn/pwa/web-app-manifest/#icons
-	// If you need to pick only one icon size, it should be 512 by 512 pixels
+	// "If you need to pick only one icon size, it should be 512 by 512 pixels" (TODO date)
 	sizes.add(512)
 	// However, providing more sizes is recommended including…
 	// TODO one day customize per size
@@ -196,8 +199,15 @@ function getꓽicon__sizes(spec: Immutable<WebsiteEntryPointSpec>): Uint32Array 
 	return Uint32Array.from(sizes.values()).sort().reverse()
 }
 
-function getꓽicon__basename(spec: Immutable<WebsiteEntryPointSpec>, size: number): Basename {
-	return `icon-${size}.svg`
+function getꓽicon__basename(spec: Immutable<WebsiteEntryPointSpec>, size: number | null): Basename {
+	if (size === null)
+		return `icon.svg`
+
+	return `icon-${size}.svg` // TODO PNG!!
+}
+
+function getꓽicon__path(spec: Immutable<WebsiteEntryPointSpec>, size: number | null): RelativePath {
+	return `favicons/${getꓽicon__basename(spec, size)}`
 }
 
 // keywords: todo dedupe, add categories, lowercase, etc.
@@ -221,6 +231,7 @@ export {
 
 	needsꓽwebmanifest,
 
+	// TODO move to own file?
 	getꓽbasenameⵧindexᐧhtml,
 	getꓽbasenameⵧwebmanifest,
 
@@ -239,5 +250,5 @@ export {
 	getꓽcolorⵧtheme,
 
 	getꓽicon__sizes,
-	getꓽicon__basename,
+	getꓽicon__path,
 }

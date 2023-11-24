@@ -9,7 +9,7 @@ import {
 	getꓽbasenameⵧindexᐧhtml,
 	getꓽbasenameⵧwebmanifest,
 	getꓽicon__sizes,
-	getꓽicon__basename,
+	getꓽicon__path,
 } from './selectors.js'
 import generateꓽindexᐧhtml from './generate--index-html/index.js'
 import generateꓽwebmanifest from './generate--webmanifest/index.js'
@@ -17,7 +17,7 @@ import { generateꓽfile as generateꓽicon_file } from './generate--icons/index
 import generateꓽhumansᐧtxt from './generate--humans-txt/index.js'
 import generateꓽrobotsᐧtxt from './generate--robots-txt/index.js'
 import generateꓽsecurityᐧtxt from './generate--security-txt/index.js'
-
+import generateꓽsource_code from './generate--src/index.js'
 
 import * as path from 'node:path'
 import * as fs from '@offirmo/cli-toolbox/fs/extra'
@@ -26,18 +26,22 @@ import * as fs from '@offirmo/cli-toolbox/fs/extra'
 
 function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>): EntryPoints {
 	return {
+		// MAIN
 		[getꓽbasenameⵧindexᐧhtml(spec)]: generateꓽindexᐧhtml(spec),
 
+		// ICONS
 		...getꓽicon__sizes(spec).reduce((acc, size) => {
-				acc[getꓽicon__basename(spec, size)] = generateꓽicon_file(spec, size)
+				acc[getꓽicon__path(spec, size)] = generateꓽicon_file(spec, size)
 				return acc
 		}, {} as EntryPoints),
-
 		// size-less version
-		'icon.svg': generateꓽicon_file(spec),
+		[getꓽicon__path(spec, null)]: generateꓽicon_file(spec, null),
 
+		// APP
 		...(needsꓽwebmanifest(spec) && { [getꓽbasenameⵧwebmanifest(spec)]: JSON.stringify(generateꓽwebmanifest(spec), undefined, '	')}),
+		...(spec.sourcecode && generateꓽsource_code(spec)),
 
+		// MISC
 		'humans.txt': generateꓽhumansᐧtxt(spec),
 		'robots.txt': generateꓽrobotsᐧtxt(spec),
 		'.well-known/security.txt': generateꓽsecurityᐧtxt(spec),

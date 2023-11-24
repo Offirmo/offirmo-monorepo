@@ -23,10 +23,8 @@ import {  } from './types.js'
 /////////////////////////////////////////////////
 
 function create(): Immutable<> {
-function getꓽXYZ(): void {}
+function getꓽXYZⵧfoo‿v2(): void {}
 /*
-setꓽXYZ()
-insertꓽnode()
 assertꓽnode_is_xyz()
 isꓽStory‿v2(x: Immutable<any>): s is Story‿v2 {
 ↆfoo ⵧ fetch

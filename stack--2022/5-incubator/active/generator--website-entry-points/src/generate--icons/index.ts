@@ -12,7 +12,8 @@ function generateꓽsvg(spec: Immutable<WebsiteEntryPointSpec>): Immutable<SVG> 
 	return spec.icon ?? createꓽfrom_emoji('🔥')
 }
 
-function generateꓽfile(spec: Immutable<WebsiteEntryPointSpec>, size?: number): string {
+// null = size-less (true SVG)
+function generateꓽfile(spec: Immutable<WebsiteEntryPointSpec>, size: number | null): string {
 	return renderꓽsvg(
 		generateꓽsvg(spec),
 		{
