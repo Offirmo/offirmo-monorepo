@@ -1,5 +1,5 @@
 import { asap_but_out_of_immediate_execution } from '@offirmo-private/async-utils'
-import { VERSION, BUILD_DATE } from '../build.json'
+import { VERSION, BUILD_DATE } from '../build.ts'
 
 //import { CHANNEL } from './services/channel'
 

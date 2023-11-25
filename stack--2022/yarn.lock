@@ -834,13 +834,6 @@
     "@parcel/utils" "2.10.3"
     posthtml "^0.16.4"
 
-"@parcel/packager-ts@^2":
-  version "2.10.3"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@parcel/packager-ts/-/packager-ts-2.10.3.tgz#a4122522234dd61f0a401811957571611ebeed2e"
-  integrity sha512-15IQNe6H/zb1R6Ds8+hu+OLFFPW6QWYpPXlTuhaFDAr6ZHa6iCJIK8Lq+n6GnOhuFzS0GZX4N8YU8FjcXXJR9g==
-  dependencies:
-    "@parcel/plugin" "2.10.3"
-
 "@parcel/packager-wasm@2.10.3":
   version "2.10.3"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@parcel/packager-wasm/-/packager-wasm-2.10.3.tgz#30c7f0eac43717cd2f2ccdacd99731138696df0b"
@@ -848,17 +841,7 @@
   dependencies:
     "@parcel/plugin" "2.10.3"
 
-"@parcel/packager-xml@^2":
-  version "2.10.3"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@parcel/packager-xml/-/packager-xml-2.10.3.tgz#5b270fc924a9734b3fe16f5b4fcd44cb70c064b3"
-  integrity sha512-S8Z/odoBPn+/rWfZYDY773FLyVJIqt7i5aZye6YU2tJANUbdvszQWwzYgoRCKFhZSp9WUgT2FujwZM1/PZvrTg==
-  dependencies:
-    "@parcel/plugin" "2.10.3"
-    "@parcel/types" "2.10.3"
-    "@parcel/utils" "2.10.3"
-    "@xmldom/xmldom" "^0.7.9"
-
-"@parcel/plugin@2.10.3", "@parcel/plugin@^2.5.0":
+"@parcel/plugin@2.10.3", "@parcel/plugin@^2", "@parcel/plugin@^2.5.0":
   version "2.10.3"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@parcel/plugin/-/plugin-2.10.3.tgz#c8055dded9beee2c0269edfdb7acdfb7df64469b"
   integrity sha512-FgsfGKSdtSV1EcO2NWFCZaY14W0PnEEF8vZaRCTML3vKfUbilYs/biaqf5geFOu4DwRuCC8unOTqFy7dLwcK/A==
@@ -903,7 +886,7 @@
     chrome-trace-event "^1.0.3"
     nullthrows "^1.1.1"
 
-"@parcel/resolver-default@2.10.3":
+"@parcel/resolver-default@2.10.3", "@parcel/resolver-default@^2":
   version "2.10.3"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@parcel/resolver-default/-/resolver-default-2.10.3.tgz#df8dac49201d84934308a4e30142faa946786a76"
   integrity sha512-TQc1LwpvEKyF3CnU9ifHOKV2usFLVYmMAVAkxyKKGTbnJGEqBDQ0ITqTapA6bJLvZ6d2eUT7guqd4nrBEjeZpw==
@@ -1114,18 +1097,6 @@
     "@parcel/source-map" "^2.1.1"
     "@parcel/ts-utils" "2.10.3"
 
-"@parcel/transformer-typescript-types@^2":
-  version "2.10.3"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@parcel/transformer-typescript-types/-/transformer-typescript-types-2.10.3.tgz#faae42ee8a6063fe49561768eae17e2469e0e449"
-  integrity sha512-S4XFQAfJJhbpruTNvNVIzE9e+tyfUZ4wnVFhFXv/BeosEnlnve4YrAOzkaSP30RI+dsXHb/pt1QToaYaPMlPhg==
-  dependencies:
-    "@parcel/diagnostic" "2.10.3"
-    "@parcel/plugin" "2.10.3"
-    "@parcel/source-map" "^2.1.1"
-    "@parcel/ts-utils" "2.10.3"
-    "@parcel/utils" "2.10.3"
-    nullthrows "^1.1.1"
-
 "@parcel/transformer-webmanifest@^2":
   version "2.10.3"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@parcel/transformer-webmanifest/-/transformer-webmanifest-2.10.3.tgz#6a674004fb53de89073164b76c8892e86b0824ba"
@@ -1135,14 +1106,6 @@
     "@parcel/diagnostic" "2.10.3"
     "@parcel/plugin" "2.10.3"
     "@parcel/utils" "2.10.3"
-
-"@parcel/transformer-xml@^2":
-  version "2.10.3"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@parcel/transformer-xml/-/transformer-xml-2.10.3.tgz#898ff816e2bd89f0132198cb4cc2dc0e7d70ce15"
-  integrity sha512-wVknihWRwt0FZXIFa2GrC61JR60sGAzDxUj4HECSfaUyyKTx8b+cXw+kqrcN711FUt9dRl48gXf/ZVsoHrhdTg==
-  dependencies:
-    "@parcel/plugin" "2.10.3"
-    "@xmldom/xmldom" "^0.7.9"
 
 "@parcel/ts-utils@2.10.3":
   version "2.10.3"
@@ -1764,11 +1727,6 @@
   version "3.0.3"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/which/-/which-3.0.3.tgz#41142ed5a4743128f1bc0b69c46890f0453ddb89"
   integrity sha512-2C1+XoY0huExTbs8MQv1DuS5FS86+SEjdM9F/+GS61gg5Hqbtj8ZiDSx8MfWcyei907fIPbfPGCOrNUTnVHY1g==
-
-"@xmldom/xmldom@^0.7.9":
-  version "0.7.13"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@xmldom/xmldom/-/xmldom-0.7.13.tgz#ff34942667a4e19a9f4a0996a76814daac364cf3"
-  integrity sha512-lm2GW5PkosIzccsaZIz7tp8cPADSIlIHWDFTR1N0SzfinhhYgeIQjFMz4rYzanCScr3DqQLeomUDArp6MWKm+g==
 
 "@zeit/schemas@2.29.0":
   version "2.29.0"

@@ -6,5 +6,14 @@
 
 	"engines": {
 		"parcel": "2.x"
+	},
+
+	"dependencies": {
+		"@offirmo-private/parcel-resolver": "*",
+		"@parcel/config-default": "^2",
+		"@parcel/packager-raw-url": "^2",
+		"@parcel/resolver-glob": "^2",
+		"@parcel/transformer-typescript-tsc": "^2",
+		"@parcel/transformer-webmanifest": "^2"
 	}
 }

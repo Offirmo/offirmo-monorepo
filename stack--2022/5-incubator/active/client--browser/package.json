@@ -40,11 +40,11 @@
 		"clean": "monorepo-script--clean-package …dist …cache",
 
 		"refresh--entry-points": "npx tsx src2/website-entry-points/index.mts",
-		"refresh--build-variables": "monoropo-script--update_build_variables --inputDir=../../../A-apps--core/the-boring-rpg/state",
+		"refresh--build-variables": "monoropo-script--update_build_variables  --mode=ts  --inputDir=../../../A-apps--core/the-boring-rpg/state",
 
 		"start:parcel": "PARCEL_AUTOINSTALL=false parcel src/index.html --no-autoinstall --port 8080",
-		"copy-extra--dev": "mkdir -p .parcel && cp -f src/build.json .parcel",
-		"dev": "npm-run-all  clean  refresh--entry-points  --parallel start:parcel copy-extra--dev"
+		"xxcopy-extra--dev": "mkdir -p .parcel && cp -f src/build.json .parcel",
+		"dev": "npm-run-all  clean  refresh--build-variables  --parallel start:parcel"
 	},
 	"devDependencies": {
 		"@offirmo-private/generator--website-entry-points": "*",

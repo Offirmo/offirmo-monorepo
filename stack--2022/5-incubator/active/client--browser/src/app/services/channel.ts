@@ -1,23 +1,20 @@
-import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
-
-import {  } from './types.js'
+//import { is_loaded_from_cordova } from './cordova'
 
 /////////////////////////////////////////////////
 
-function create(): Immutable<> {
-function getꓽXYZⵧfoo‿v2(): void {}
-/*
-ↆfoo ⵧ fetch
-ೱfoo ⵧ promise
-ϟaꘌb
-notᝍbadₓasⳇwell‿noǃ
-bar𝝣fooǃfoo𖾚fooᐧbar
- */
+function is_prod() {
+	return window.location.hostname === 'www.online-adventur.es'
+//		|| is_loaded_from_cordova()
 }
+
+const CHANNEL = is_prod()
+	? 'prod'
+	: (window.location.hostname === 'offirmo-monorepo.netlify.com' || window.location.hostname === 'offirmo-monorepo.netlify.app')
+		? 'staging'
+		: 'dev'
 
 /////////////////////////////////////////////////
 
 export {
-
+	CHANNEL,
 }
