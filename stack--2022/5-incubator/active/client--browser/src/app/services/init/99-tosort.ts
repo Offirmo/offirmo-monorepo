@@ -3,11 +3,9 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 
+//import { decorate_SEC } from '@tbrpg/definitions'
+
 async function init(): Promise<void> {
-	console.log('Hello from init! (TODO)')
-
-
-
 	/*
 
 	import { set_xoff_flag } from '@offirmo-private/xoff'
@@ -49,6 +47,14 @@ async function init(): Promise<void> {
 	if (overrideHook('should_start_paused', false)) {
 		console.warn('🛠 GAME STARTING IN PAUSE MODE')
 	}
+
+
+
+
+//import { VERSION as ENGINE_VERSION, BUILD_DATE } from '@tbrpg/flux'
+//logger.verbose(`Hello from "${LIB}" v${ENGINE_VERSION} from ${BUILD_DATE}! Logger up with level = "${logger.getLevel()}" ✔`)
+
+
 	*/
 
 }

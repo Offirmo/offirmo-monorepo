@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/soft-execution-context-node",
+	"name": "@offirmo-private/soft-execution-context--node",
 	"description": "node-specific Software Execution Context",
 	"version": "0.0.2",
 	"author": "Offirmo <offirmo.net@gmail.com>",

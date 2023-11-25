@@ -21,7 +21,7 @@ lib_udaⵧnode = await import('@offirmo/universal-debug-api-node')
 
 try {
 	let lib_secⵧnode = await
-		import('@offirmo-private/soft-execution-context-node')
+		import('@offirmo-private/soft-execution-context--node')
 			.catch(err => import('../../../3-advanced--multi/soft-execution-context--node/src/index.mjs'))
 			.catch(err => {
 				if (process.env['OFFIRMO_GLOBAL_DEBUG_ENV_EXPECTED']) {
@@ -49,6 +49,6 @@ try {
 catch (err) {
 	// monorepo case where this module is not available / broken / not built yet
 	if (process.env['OFFIRMO_GLOBAL_DEBUG_ENV_EXPECTED']) {
-		console.warn(`${terminal_escapeꘌfgⵧred}([from @offirmo/unit-test-toolbox] @offirmo-private/soft-execution-context-node init skipped, require() failure)${terminal_escapeꘌreset}`, err)
+		console.warn(`${terminal_escapeꘌfgⵧred}([from @offirmo/unit-test-toolbox] @offirmo-private/soft-execution-context--node init skipped, require() failure)${terminal_escapeꘌreset}`, err)
 	}
 }

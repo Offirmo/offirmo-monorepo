@@ -15,7 +15,7 @@ ROOT_PROTOTYPE.setAnalyticsAndErrorDetails = function setAnalyticsAndErrorDetail
 	const SEC = this
 	return SEC
 		.setAnalyticsDetails(details)
-		.setErrorReportDetails(details)
+		.setErrorDetails(details)
 }
 
 /////////////////////

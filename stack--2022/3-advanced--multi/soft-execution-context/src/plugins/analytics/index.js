@@ -28,6 +28,12 @@ const PLUGIN = {
 
 			return SEC // for chaining
 		}
+		prototype.getAnalyticsDetails = function getAnalyticsDetails() {
+			const SEC = this
+			const plugin_state = SEC[INTERNAL_PROP].plugins[PLUGIN_ID]
+
+			return flattenToOwn(plugin_state.details)
+		}
 
 		prototype.fireAnalyticsEvent = function fireAnalyticsEvent(eventId, details = {}) {
 			const SEC = this
@@ -55,14 +61,6 @@ const PLUGIN = {
 
 			return SEC // for chaining
 		}
-
-		prototype.getAnalyticsDetails = function getAnalyticsDetails() {
-			const SEC = this
-			const plugin_state = SEC[INTERNAL_PROP].plugins[PLUGIN_ID]
-
-			return flattenToOwn(plugin_state.details)
-		}
-
 	},
 }
 

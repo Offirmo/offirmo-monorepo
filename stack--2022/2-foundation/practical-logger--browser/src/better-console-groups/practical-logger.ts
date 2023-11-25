@@ -63,7 +63,7 @@ interface Options {
 const DEBUG = false
 
 function install({ uncollapse_level = 'warn', lazy = true, original_console = console }: Options = {}): void {
-	if (DEBUG) console.log('install', { uncollapse_level, lazy })
+	if (DEBUG) console.log('better-console-groups install', { uncollapse_level, lazy })
 
 	const group_invocations: GroupInvocation[] = []
 	// in node, group() calls console.log()

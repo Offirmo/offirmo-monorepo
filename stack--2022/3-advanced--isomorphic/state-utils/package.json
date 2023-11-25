@@ -47,7 +47,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/soft-execution-context-node": "^0",
+		"@offirmo-private/soft-execution-context--node": "^0",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@offirmo/universal-debug-api-node": "^0",
 		"@types/icepick": "^2",

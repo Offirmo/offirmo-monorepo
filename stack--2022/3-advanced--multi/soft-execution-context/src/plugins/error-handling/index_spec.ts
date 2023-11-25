@@ -53,12 +53,12 @@ describe(`${LIB}`, function () {
 					_mocha_bug_clean_global()
 				})
 
-				describe('setErrorReportDetails()', function () {
+				describe('setErrorDetails()', function () {
 
 					it('should work', () => {
 						const err = getRootSEC()
 							.setLogicalStack({module: 'test'})
-							.setErrorReportDetails({
+							.setErrorDetails({
 								foo: 'bar'
 							})
 							.createError('foo', { gloups: 'gnokman'})

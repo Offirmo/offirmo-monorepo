@@ -89,7 +89,7 @@ export interface SoftExecutionContext<Injections = {}, AnalyticsDetails = {}, Er
 		& WithSEC<Injections, AnalyticsDetails, ErrorDetails>
 
 	// plugin: error handling
-	setErrorReportDetails: (p: Partial<ErrorDetails>)
+	setErrorDetails: (p: Partial<ErrorDetails>)
 		=> SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>
 
 	createError: (message: string, details: XXError['details']) => XXError

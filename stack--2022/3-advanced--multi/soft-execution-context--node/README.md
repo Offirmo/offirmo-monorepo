@@ -6,7 +6,7 @@ import {
    listenToUnhandledRejections,
    decorateWithDetectedEnv,
    getRootSEC,
-} from '@offirmo-private/soft-execution-context-node'
+} from '@offirmo-private/soft-execution-context--node'
 listenToUncaughtErrors()
 listenToUnhandledRejections()
 decorateWithDetectedEnv()

@@ -29,16 +29,16 @@ Current issue https://github.com/parcel-bundler/parcel/issues/7823#issuecomment-
 
 Doesn't work, bugs on unit tests and many other stuff.
 ```json
-	"validators": {
-		"*.{ts,tsx}": ["@parcel/validator-typescript"]
-	}
+"validators": {
+  "*.{ts,tsx}": ["@parcel/validator-typescript"]
+}
 ```
 
 Doesn't bring anything
 ```json
-	"transformers": {
-		"*.{ts,tsx}": [ "@parcel/transformer-typescript-tsc" ]
-	},
+"transformers": {
+  "*.{ts,tsx}": [ "@parcel/transformer-typescript-tsc" ]
+},
 ```
 
 ???

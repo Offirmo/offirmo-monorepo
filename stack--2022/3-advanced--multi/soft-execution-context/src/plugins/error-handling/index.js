@@ -56,7 +56,7 @@ const PLUGIN = {
 			return err
 		}
 
-		prototype.setErrorReportDetails = function setErrorReportDetails(details) {
+		prototype.setErrorDetails = function setErrorDetails(details) {
 			const SEC = this
 			let root_state = SEC[INTERNAL_PROP]
 
@@ -70,6 +70,13 @@ const PLUGIN = {
 			this[INTERNAL_PROP] = root_state
 
 			return SEC // for chaining
+		}
+		// this getter should normally not be used, errors are automatically decorated
+		prototype.getErrorDetails = function getErrorDetails() {
+			const SEC = this
+			const plugin_state = SEC[INTERNAL_PROP].plugins[PLUGIN_ID]
+
+			return flattenToOwn(plugin_state.details)
 		}
 
 		// useful if creating an error later from a saved SEC, ex. from a pipeline

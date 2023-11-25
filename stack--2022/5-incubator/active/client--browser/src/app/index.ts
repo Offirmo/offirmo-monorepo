@@ -16,9 +16,21 @@ console.info(`%c The Boring RPG %cv${VERSION}%c${BUILD_DATE}`,
 asap_but_out_of_immediate_execution(async () => {
 	console.log('%c——————— end of immediate, synchronous, non-import code. ———————', "font-weight: bold;")
 
-	const inits = await import('./services/init/*.ts')
-	Object.keys(inits).sort().forEach(async (key) => {
-		const init_fn = (await inits[key]()).default
-		init_fn()
-	})
+	const logger = (await import('./services/logger.ts')).default
+
+	// order is important! Timing is non-trivial!
+	const initⵧservices = await import('./services/init/*.ts')
+	await Object.keys(initⵧservices).sort().reduce(async (acc, key) => {
+		await acc
+		logger.group(`services/init/${key}`)
+			logger.trace(`services/init/${key}: import…`)
+			const init_fn = (await initⵧservices[key]()).default
+			logger.trace(`services/init/${key}: exec…`)
+			await init_fn()
+			logger.trace(`services/init/${key}: done✅`)
+		logger.groupEnd()
+	}, Promise.resolve())
 })
+
+// test of TS error
+const s: string = 5

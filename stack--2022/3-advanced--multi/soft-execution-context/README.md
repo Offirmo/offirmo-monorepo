@@ -164,3 +164,7 @@ flattenToOwn(object)
 _flattenSEC(SEC)
 _getSECStatePath(SEC)
 ```
+
+### Contributing
+
+Do NOT assume that there is an advanced logger! Only use the "console safe" ones

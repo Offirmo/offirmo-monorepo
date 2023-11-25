@@ -17,8 +17,10 @@ export const LEVEL_TO_CONSOLE_METHOD: Readonly<{ [k: string]: string }> = {
 
 	log:     'log',
 
+	// REMINDER
+	// console.debug() needs to be ENABLED in the dev tools to be visible!
 	debug:   'debug',
-	trace:   'debug',
+	trace:   'debug', // console.trace is NOT an output, do NOT use it
 	silly:   'debug',
 }
 

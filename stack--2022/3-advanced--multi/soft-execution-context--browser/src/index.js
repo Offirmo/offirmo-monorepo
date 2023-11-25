@@ -48,7 +48,7 @@ function listenToErrorEvents() {
 			//evt.preventDefault() // XXX should we?
 		})
 
-		logger.verbose('Root SEC is now listening to error events ✔')
+		logger.debug('Root SEC is now listening to error events ✔')
 	})
 }
 
@@ -74,7 +74,7 @@ function listenToUnhandledRejections() {
 			}, err)
 		})
 
-		logger.verbose('Root SEC is now listening to unhandled rejection events ✔')
+		logger.debug('Root SEC is now listening to unhandled rejection events ✔')
 	})
 }
 
@@ -102,7 +102,7 @@ function decorateWithDetectedEnv(SEC) {
 	}
 
 	SEC.setAnalyticsAndErrorDetails(details)
-	//xxx.logger.verbose('Root SEC is now decorated with env infos ✔', { Bowser: browser.getResult(), details: SEC.getAnalyticsDetails() })
+	//logger.debug('Root SEC is now decorated with env infos ✔', { Bowser: browser.getResult(), details: SEC.getAnalyticsDetails() })
 }
 
 
