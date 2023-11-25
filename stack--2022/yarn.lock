@@ -886,7 +886,7 @@
     chrome-trace-event "^1.0.3"
     nullthrows "^1.1.1"
 
-"@parcel/resolver-default@2.10.3", "@parcel/resolver-default@^2":
+"@parcel/resolver-default@2.10.3":
   version "2.10.3"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@parcel/resolver-default/-/resolver-default-2.10.3.tgz#df8dac49201d84934308a4e30142faa946786a76"
   integrity sha512-TQc1LwpvEKyF3CnU9ifHOKV2usFLVYmMAVAkxyKKGTbnJGEqBDQ0ITqTapA6bJLvZ6d2eUT7guqd4nrBEjeZpw==
@@ -1088,15 +1088,6 @@
     posthtml-render "^3.0.0"
     semver "^7.5.2"
 
-"@parcel/transformer-typescript-tsc@^2":
-  version "2.10.3"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@parcel/transformer-typescript-tsc/-/transformer-typescript-tsc-2.10.3.tgz#fd0ee53cb6bcbcf89cbe56505c5830444eecfb2d"
-  integrity sha512-JXUet/A27MT7ZOEzaq3S3Ht3pVCTrLaG7YOE2nmkWYbKj3JG8zT6Hl82UfIFacmycw8uE411twAYsKSS85CeYQ==
-  dependencies:
-    "@parcel/plugin" "2.10.3"
-    "@parcel/source-map" "^2.1.1"
-    "@parcel/ts-utils" "2.10.3"
-
 "@parcel/transformer-webmanifest@^2":
   version "2.10.3"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@parcel/transformer-webmanifest/-/transformer-webmanifest-2.10.3.tgz#6a674004fb53de89073164b76c8892e86b0824ba"
@@ -1106,13 +1097,6 @@
     "@parcel/diagnostic" "2.10.3"
     "@parcel/plugin" "2.10.3"
     "@parcel/utils" "2.10.3"
-
-"@parcel/ts-utils@2.10.3":
-  version "2.10.3"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@parcel/ts-utils/-/ts-utils-2.10.3.tgz#d9db52e72f2a8211fd9e56aa70e705a0c37fdea9"
-  integrity sha512-DkYs9C/BOY8pw7clzKltVY1biGcte3KAaq1u6KQkzLbPudjtl8fzk/SMRGKjYSm0gjqc/TiK87PwWWNQZtz8mw==
-  dependencies:
-    nullthrows "^1.1.1"
 
 "@parcel/types@2.10.3":
   version "2.10.3"

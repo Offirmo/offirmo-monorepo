@@ -1,0 +1,15 @@
+{
+	"name": "@offirmo-private/parcel-resolver",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+
+	"main": "src/index.mjs",
+	"engines": {
+		"parcel": "2.x"
+	},
+
+	"dependencies": {
+		"@parcel/plugin": "^2"
+	}
+}

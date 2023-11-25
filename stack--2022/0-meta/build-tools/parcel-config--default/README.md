@@ -15,8 +15,8 @@ Added so far:
 
 ### extra plugins
 
-Resolver
-* "@parcel/resolver-glob"
+* Globs: "@parcel/resolver-glob"
+* Typescript error checking: "@parcel/validator-typescript" https://parceljs.org/languages/typescript/#experimental-validator-plugin
 
 ### 3rd party plugins
 
@@ -27,23 +27,24 @@ Current issue https://github.com/parcel-bundler/parcel/issues/7823#issuecomment-
 
 ## tosort
 
-
-
-		"@parcel/packager-ts": "^2",
-		"@parcel/packager-xml": "^2",
-		"@parcel/resolver-glob": "^2",
-		"@parcel/transformer-typescript-tsc": "^2",
-		"@parcel/transformer-typescript-types": "^2",
-		"@parcel/transformer-xml": "^2",
-
-
-		"..."
-
-
-
-	"transformers": {
+Doesn't work, bugs on unit tests and many other stuff.
+```json
+	"validators": {
+		"*.{ts,tsx}": ["@parcel/validator-typescript"]
 	}
+```
 
+Doesn't bring anything
+```json
+	"transformers": {
+		"*.{ts,tsx}": [ "@parcel/transformer-typescript-tsc" ]
+	},
+```
 
-		"*.{ts,tsx}": ["@parcel/transformer-typescript-tsc"],
-		"*.{zip,tgz}": ["@parcel/transformer-raw"]
+???
+"@parcel/packager-ts": "^2",
+"@parcel/packager-xml": "^2",
+"@parcel/transformer-typescript-types": "^2",
+"@parcel/transformer-xml": "^2",
+
+"*.{zip,tgz}": ["@parcel/transformer-raw"]
