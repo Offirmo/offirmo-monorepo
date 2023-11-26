@@ -6,11 +6,6 @@
 "license": "Unlicense",
 "private": true,
 
-	"optionalDependencies": {
-		"@offirmo-private/xoff": "^0"
-	},
-	"dependencies": {
-	},
 
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",

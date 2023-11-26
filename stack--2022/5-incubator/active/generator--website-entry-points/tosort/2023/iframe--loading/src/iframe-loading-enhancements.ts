@@ -1,4 +1,4 @@
-import '@offirmo-private/xoff'
+//import '@offirmo-private/xoff'
 import './iframe-loading-enhancements.css'
 
 // TODO fake progress bar

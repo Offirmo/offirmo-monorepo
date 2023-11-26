@@ -15,7 +15,6 @@
 		"@offirmo-private/state-utils": "^0",
 		"@offirmo-private/timestamps": "^0",
 		"@offirmo-private/view-chat": "^0",
-		"@offirmo-private/xoff": "^0",
 		"@offirmo/deferred": "^4",
 		"@offirmo/universal-debug-api-browser": "^1",
 		"@oh-my-rpg/assets--cursors": "^0",

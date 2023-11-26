@@ -17,7 +17,6 @@
 		"@offirmo-private/state-utils": "^0",
 		"@offirmo-private/timestamps": "^0",
 		"@offirmo-private/ts-utils": "^0",
-		"@offirmo-private/xoff": "^0",
 		"@offirmo/globalthis-ponyfill": "^4",
 		"@offirmo/universal-debug-api-browser": "^1",
 		"@offirmo/universal-debug-api-placeholder": "^1",

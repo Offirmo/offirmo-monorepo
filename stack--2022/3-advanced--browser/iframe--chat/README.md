@@ -66,3 +66,7 @@ https://www.offirmo.net/offirmo-monorepo/3-advanced--browser/iframe--chat/src/si
 ></div>
 <script async src="//tlk.io/embed.js" type="text/javascript"></script>
 ```
+
+
+
+		"@offirmo-private/xoff": "^0"
