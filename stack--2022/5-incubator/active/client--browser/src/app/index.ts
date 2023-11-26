@@ -30,6 +30,19 @@ asap_but_out_of_immediate_execution(async () => {
 			logger.trace(`services/init/${key}: done✅`)
 		logger.groupEnd()
 	}, Promise.resolve())
+
+	// order is important! Timing is non-trivial!
+	const initⵧview = await import('./view/init/*.tsx')
+	await Object.keys(initⵧview).sort().reduce(async (acc, key) => {
+		await acc
+		logger.group(`view/init/${key}`)
+			logger.trace(`view/init/${key}: import…`)
+			const init_fn = (await initⵧview[key]()).default
+			logger.trace(`view/init/${key}: exec…`)
+			await init_fn()
+			logger.trace(`view/init/${key}: done✅`)
+		logger.groupEnd()
+	}, Promise.resolve())
 })
 
 // test of TS error

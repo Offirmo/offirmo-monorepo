@@ -12,7 +12,7 @@ const logger = getLogger({
 	suggestedLevel: 'silly',
 })
 
-console.log(`Logger up with level = "${logger.getLevel()}". Reminder to check your dev tools log level!`)
+console.log(`🗂 Logger up with level "${logger.getLevel()}". Reminder to check your dev tools log level!`)
 
 
 if (false) {
