@@ -22,12 +22,12 @@ asap_but_out_of_immediate_execution(async () => {
 	const initⵧservices = await import('./services/init/*.ts')
 	await Object.keys(initⵧservices).sort().reduce(async (acc, key) => {
 		await acc
-		logger.group(`services/init/${key}`)
-			logger.trace(`services/init/${key}: import…`)
+		logger.group(`services/init "${key}"`)
+			logger.trace(`services/init "${key}": import…`)
 			const init_fn = (await initⵧservices[key]()).default
-			logger.trace(`services/init/${key}: exec…`)
+			logger.trace(`services/init "${key}": exec…`)
 			await init_fn()
-			logger.trace(`services/init/${key}: done✅`)
+			logger.trace(`services/init "${key}": done✅`)
 		logger.groupEnd()
 	}, Promise.resolve())
 
@@ -35,15 +35,11 @@ asap_but_out_of_immediate_execution(async () => {
 	const initⵧview = await import('./view/init/*.tsx')
 	await Object.keys(initⵧview).sort().reduce(async (acc, key) => {
 		await acc
-		logger.group(`view/init/${key}`)
-			logger.trace(`view/init/${key}: import…`)
+		logger.group(`services/view "${key}"`)
+			logger.trace(`services/view "${key}": import…`)
 			const init_fn = (await initⵧview[key]()).default
-			logger.trace(`view/init/${key}: exec…`)
+			logger.trace(`services/view "${key}": exec…`)
 			await init_fn()
-			logger.trace(`view/init/${key}: done✅`)
+			logger.trace(`services/view "${key}": done✅`)
 		logger.groupEnd()
 	}, Promise.resolve())
-})
-
-// test of TS error
-const s: string = 5

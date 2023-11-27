@@ -5,7 +5,7 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"source": "src/index.css",
+	"source": "src/diagnostics/index.css",
 
 	"dependencies": {
 	},

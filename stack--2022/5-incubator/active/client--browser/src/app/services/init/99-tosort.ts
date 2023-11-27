@@ -1,11 +1,42 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
+import logger from '../logger'
 
 /////////////////////////////////////////////////
 
 //import { decorate_SEC } from '@tbrpg/definitions'
+import logger from '../logger.ts'
 
 async function init(): Promise<void> {
+
+
+	if (false) {
+		setTimeout(() => {
+			console.group('Testing log levels...')
+			;[
+				'fatal',
+				'emerg',
+				'alert',
+				'crit',
+				'error',
+				'warning',
+				'warn',
+				'notice',
+				'info',
+				'verbose',
+				'log',
+				'debug',
+				'trace',
+				'silly',
+			].forEach(level => {
+				//console.log(`logger demo with level "${level}":`)
+				logger[level](`logger demo with level "${level}"`, {level})
+			})
+			console.groupEnd()
+		}, 1000)
+	}
+
+
 	/*
 
 	import { set_xoff_flag } from '@offirmo-private/xoff'

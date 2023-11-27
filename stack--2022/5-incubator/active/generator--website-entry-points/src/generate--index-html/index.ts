@@ -300,7 +300,7 @@ function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): HtmlStri
 	})
 
 	return `
-<body class="">
+<body>
 	<noscript>You need to enable JavaScript to run this app.</noscript>
 
 	${html_blocks.join('\n\n')}

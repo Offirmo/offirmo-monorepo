@@ -3,13 +3,8 @@ import * as path from 'node:path'
 import assert from 'tiny-invariant'
 import { Basename, Immutable, IETFLanguageType, CssColor‿str, RelativePath } from '@offirmo-private/ts-types'
 import {
-	capitalize,
-	coerce_to_ascii,
 	normalize_unicode,
-	coerce_blanks_to_single_spaces,
-	coerce_delimiters_to_space,
 	coerce_to_safe_basenameⵧstrictest,
-
 } from '@offirmo-private/normalize-string'
 
 import { WebsiteEntryPointSpec } from './types.js'
@@ -145,6 +140,15 @@ function getꓽtitleⵧappⵧshort(spec: Immutable<WebsiteEntryPointSpec>): stri
 	return getꓽtitleⵧapp(spec)
 }
 
+function getꓽtitleⵧlib(spec: Immutable<WebsiteEntryPointSpec>): string {
+	const base = getꓽtitleⵧappⵧshort({
+		...spec,
+		lang: 'en'
+	})
+
+	return coerce_to_safe_basenameⵧstrictest(base)
+}
+
 function _getꓽdescription(spec: Immutable<WebsiteEntryPointSpec>): string {
 	assert(!!spec.description)
 	return normalize_unicode(spec.description).trim()
@@ -246,6 +250,7 @@ export {
 	getꓽtitleⵧsocial,
 	getꓽtitleⵧapp,
 	getꓽtitleⵧappⵧshort,
+	getꓽtitleⵧlib,
 
 	getꓽdescriptionⵧpage,
 

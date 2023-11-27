@@ -5,6 +5,7 @@ import { EntryPoints, WebsiteEntryPointSpec } from '../types.js'
 import {
 	getꓽtitleⵧapp,
 	getꓽtitleⵧappⵧshort,
+	getꓽtitleⵧlib,
 	getꓽcolorⵧbackground, getꓽcolorⵧforeground,
 } from '../selectors.js'
 import { ifꓽdebug } from '../utils/debug.js'
@@ -39,10 +40,20 @@ export {
 
 function generate(spec: Immutable<WebsiteEntryPointSpec>): EntryPoints {
 	return {
-		'./app/consts.ts': `TODO`,
+		'./app/consts.ts': `
+/////////////////////////////////////////////////
+
+const LIB = '${getꓽtitleⵧlib(spec)}'
+
+/////////////////////////////////////////////////
+
+export {
+	LIB,
+}
+`.trimStart(),
 		'./app/index.ts': `
 import { asap_but_out_of_immediate_execution } from '@offirmo-private/async-utils'
-import { VERSION, BUILD_DATE } from '../build.json'
+import { VERSION, BUILD_DATE } from '../build.ts'
 
 //import { CHANNEL } from './services/channel'
 
@@ -59,29 +70,69 @@ console.info(\`%c ${getꓽtitleⵧapp(spec)} %cv\${VERSION}%c\${BUILD_DATE}\`,
 asap_but_out_of_immediate_execution(async () => {
 	console.log('%c——————— end of immediate, synchronous, non-import code. ———————', "font-weight: bold;")
 
-	const inits = await import('./services/init/*.ts')
-	Object.keys(inits).sort().forEach(async (key) => {
-		const init_fn = (await inits[key]()).default
-		init_fn()
-	})
-})
-		`.trim(),
+	const logger = (await import('./services/logger.ts')).default
+
+	// order is important! Timing is non-trivial!
+	const initⵧservices = await import('./services/init/*.ts')
+	await Object.keys(initⵧservices).sort().reduce(async (acc, key) => {
+		await acc
+		logger.group(\`services/init "\${key}"\`)
+			logger.trace(\`services/init "\${key}": import…\`)
+			const init_fn = (await initⵧservices[key]()).default
+			logger.trace(\`services/init "\${key}": exec…\`)
+			await init_fn()
+			logger.trace(\`services/init "\${key}": done✅\`)
+		logger.groupEnd()
+	}, Promise.resolve())
+
+	// order is important! Timing is non-trivial!
+	const initⵧview = await import('./view/init/*.tsx')
+	await Object.keys(initⵧview).sort().reduce(async (acc, key) => {
+		await acc
+		logger.group(\`services/view "\${key}"\`)
+			logger.trace(\`services/view "\${key}": import…\`)
+			const init_fn = (await initⵧview[key]()).default
+			logger.trace(\`services/view "\${key}": exec…\`)
+			await init_fn()
+			logger.trace(\`services/view "\${key}": done✅\`)
+		logger.groupEnd()
+	}, Promise.resolve())
+`.trimStart(),
 
 		// service layer
 		// ~syncing view with external data sources
-		'./app/services/init/sec.ts': GENERIC_CODE_TEMPLATE,
-		'./app/services/init/errors.ts': GENERIC_CODE_TEMPLATE,
-		'./app/services/init/analytics.ts': GENERIC_CODE_TEMPLATE,
-		'./app/services/channel.ts': GENERIC_CODE_TEMPLATE,
-		'./app/services/logger.ts': GENERIC_CODE_TEMPLATE,
-		'./app/services/splash.ts': GENERIC_CODE_TEMPLATE,
+		'./app/services/init/01-sec.ts': GENERIC_CODE_TEMPLATE,
+		'./app/services/init/10-errors.ts': GENERIC_CODE_TEMPLATE,
+		'./app/services/init/20-analytics.ts': GENERIC_CODE_TEMPLATE,
 		'./app/services/auth.ts': GENERIC_CODE_TEMPLATE,
+		'./app/services/channel.ts': GENERIC_CODE_TEMPLATE,
+		'./app/services/loader.ts': GENERIC_CODE_TEMPLATE,
+		'./app/services/logger.ts': `
+import { getLogger } from '@offirmo/universal-debug-api-browser'
+
+import { LIB } from '../consts.ts'
+
+/////////////////////////////////////////////////
+
+const logger = getLogger({
+	name: LIB,
+	suggestedLevel: 'error',
+	//suggestedLevel: 'silly',
+})
+
+console.log(\`🗂 Logger up with level "\${logger.getLevel()}". Reminder to check your dev tools log level!\`)
+
+/////////////////////////////////////////////////
+
+export default logger
+`.trimStart(),
 
 		// controllers
 		// ~shared state and stateful logic
 		'./app/controllers/context.tsx': GENERIC_CODE_TEMPLATE,
 
 		// view
+		'./app/view/init/react.tsx': GENERIC_CODE_TEMPLATE,
 		'./app/view/index.tsx': GENERIC_CODE_TEMPLATE,
 	}
 }
