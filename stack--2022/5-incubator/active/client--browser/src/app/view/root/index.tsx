@@ -8,7 +8,7 @@ const StrictCheck = StrictMode
 export default function Root() {
 	return (
 		<StrictCheck>
-			<p>Hello, world!</p>
+			<p>Hello, react world!</p>
 		</StrictCheck>
 	)
 }

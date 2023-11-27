@@ -97,6 +97,7 @@ asap_but_out_of_immediate_execution(async () => {
 			logger.trace(\`services/view "\${key}": done✅\`)
 		logger.groupEnd()
 	}, Promise.resolve())
+})
 `.trimStart(),
 
 		// service layer

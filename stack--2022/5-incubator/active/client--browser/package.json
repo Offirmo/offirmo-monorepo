@@ -31,6 +31,8 @@
 		"@offirmo-private/timestamps": "^0",
 		"@offirmo/deferred": "^4",
 		"@offirmo/universal-debug-api-browser": "^1",
+		"@oh-my-rpg/assets--cursors": "^0",
+		"@oh-my-rpg/font--rpg--pixel": "^0",
 		"react": "^18",
 		"react-dom": "^18",
 		"tiny-invariant": "^1",

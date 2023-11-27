@@ -58,3 +58,120 @@
 		"dev": "npm-run-all clean refresh-build-variables refresh-loading-template --parallel start:parcel copy-extra--dev",
 
 		"xbuild": "npm-run-all clean refresh-build-variables refresh-loading-template build:parcel copy-extra copy-favicons-for-webmanifest ensure-size"
+
+
+
+
+
+* Icons: https://game-icons.net/
+* Image: img-parchment-xxl.jpg - MIT - https://github.com/stolksdorf/homebrewery
+* Image: https://opengameart.org/content/rpg-gui-construction-kit-v10
+* Misc: WoW - NOT FREE / TO REPLACE - https://github.com/Gethe/wow-ui-textures
+* Font: https://www.behance.net/gallery/64168335/Keletifree-font-(download-link)
+* colors: https://colorbrewer2.org/#type=qualitative&scheme=Set1&n=5
+
+Inspiration:
+* https://github.com/RonenNess/RPGUI
+* https://tachyons.io/
+* https://getflywheel.com/layout/css-svg-clipping-and-masking-techniques/
+
+
+Tools:
+* https://border-image.com/
+* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Border-image_generator
+
+Techniques
+* https://medium.com/@peedutuisk/lesser-known-css-quirks-oddities-and-advanced-tips-css-is-awesome-8ee3d16295bb
+* CSS variables
+  * https://css-tricks.com/theming-with-variables-globals-and-locals/
+  * https://simurai.com/blog/2018/04/01/contextual-styling
+  * https://github.com/giuseppeg/suitcss-toolkit/tree/example-app/examples/app#themes
+* https://youmightnotneedjs.com/
+
+Similar
+* https://bcrikko.github.io/NES.css/
+
+
+## Roadmap
+
+v1
+- [x] build over an image background
+- [ ] always display the game name
+- [ ] responsive - desktop
+  -- [ ] responsive - mobile: portrait only
+  -- [ ] responsive - mobile: controls close to fingers
+- [ ] nice
+- [ ] display char name (if room)
+- [ ] display some kind of status (if room)
+- [ ] has quick access to usual sub-apps
+- [ ] allow "annoucements"
+
+vNext maybe
+- [ ] level up interface
+- [ ] modal capabilities
+- [ ] has indirect access to any number of sub-apps, like a task switcher
+- [ ] cue at shortcuts
+- [ ] responsive - mobile: add landscape support
+- [ ] settings interface
+- [ ] low health / mana indicators
+- [ ] swappable themes to cue of class/faction/ambiance
+- [ ] display location
+
+
+TODO glow effect ?
+https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/
+
+https://nigelotoole.github.io/pixel-borders/
+
+
+
+		"@oh-my-rpg/assets--cursors": "^0"
+		"@oh-my-rpg/assets--background--artbreeder": "^0",
+
+
+notched buttons ? https://css-tricks.com/notched-boxes/
+
+scooped corners for discussion https://css-tricks.com/scooped-corners-in-2018/
+
+use that for text? https://github.com/pshihn/lumin
+
+
+			<svg class="svg-mask">
+				<defs>
+					<mask id="mask1" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+						<radialGradient id="grad" gradientUnits="objectBoundingBox" x2="0" y2="1">
+							<stop stop-color="white" stop-opacity="100" offset="0.5"/>
+							<stop stop-color="black" stop-opacity="0" offset="0.7"/>
+						</radialGradient>
+						<rect
+							style="opacity:1;stroke:none;paint-order:normal;filter:url(#filter1553)"
+							id="rect1443"
+							width="1"
+							height="1"
+							fill="url(#grad)"
+							x="0"
+							y="0" />
+					</mask>
+				</defs>
+			</svg>
+
+
+https://kamranahmed.info/driver
+https://v-play.net/game-resources/16-sites-featuring-free-game-graphics
+
+
+Inspiration:
+- https://www.dungeonsurvivor.com/
+- https://www.dungeonsurvivor.com/preregistration
+
+TODO inventory with https://github.com/drcmda/mauerwerk ?
+
+
+nice icons: https://www.unrealengine.com/marketplace/technology-and-skill-icons
+
+blob study https://codepen.io/shubniggurath/full/YBgGrw
+* fake 3D https://tympanus.net/codrops/2019/02/20/how-to-create-a-fake-3d-image-effect-with-webgl/
+  * https://www.producthunt.com/posts/dpth
+
+
+TODO https://floating-ui.com/

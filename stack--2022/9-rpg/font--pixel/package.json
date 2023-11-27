@@ -1,0 +1,8 @@
+{
+	"name": "@oh-my-rpg/font--rpg--pixel",
+	"version": "0.0.1",
+	"private": true,
+	"license": "Unlicense",
+
+	"source": "src/index.css"
+}
