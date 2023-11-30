@@ -13,30 +13,45 @@
 		<meta http-equiv="theme-color" content="hsl(248,  9%, 17%)">
 		<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
 		<link rel="manifest" href="./index.webmanifest">
-	
+
 		<title>[title--page]The Boring RPG</title>
-	
+
 		<style>/******* critical CSS *******/
-		
+
 			:root {
 				--color--bg: hsl(337, 16%, 28%);
 				--color--fg: hsl(42, 100%, 87%);
 				--font: -apple-system, ui-sans-serif, sans-serif;
-		
+
 				margin: 0;
 				padding: 0;
-		
+
 				color: var(--color--fg);
 				background-color: var(--color--bg);
 				font-family: var(--font);
-		
+
 				overscroll-behavior: none;
 			}
-		
+
 			:root                  { box-sizing: border-box; }
 			*, *::before, *::after { box-sizing: inherit; }
+
+			/* make this app use the full viewport */
+			html, body {
+				margin: 0;
+				padding: 0;
+				border: initial;
+			}
+			body {
+				position: absolute;
+				top: 0;
+				left: 0;
+				overflow: hidden;
+				width: 100lvw;
+				height: 100lvh;
+			}
 		</style>
-	
+
 		<script>/////// critical JS ///////
 				;(function normalize_trailing_slash() {
 				const trailing_segment = location.pathname.split('/').slice(-1)[0] || '';
@@ -61,20 +76,20 @@
 	</head>
 	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
-	
-		<main id="root">
-		<!-- React will render here and replace this -->
-		<section style="
-			text-align: center;
-			--width: 60ch;
-			max-width: var(--width);
-			margin: 0 max(1ch, (100vw - var(--width))/2);
-			">
-			<h1>[title--page]The Boring RPG</h1>
-			<em>Loading…</em>
-		</section>
-	</main>
-	
+
+		<main id="react-root" class="o⋄full-viewport">
+			<!-- React will render here and replace this -->
+			<section style="
+				text-align: center;
+				--width: 60ch;
+				max-width: var(--width);
+				margin: 0 max(1ch, (100vw - var(--width))/2);
+				">
+				<h1>[title--page]The Boring RPG</h1>
+				<em>Loading…</em>
+			</section>
+		</main>
+
 		<script type="module"> /////// NON critical JS ///////
 			import './app/index.ts'
 		</script>

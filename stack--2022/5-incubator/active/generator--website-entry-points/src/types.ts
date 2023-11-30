@@ -47,16 +47,6 @@ type Category =
 	| 'utilities'
 	| 'weather'
 
-// https://developer.mozilla.org/en-US/docs/Web/Manifest/display#values
-type DisplayMode =
-	| 'fullscreen' // All the available display area is used and no user agent chrome is shown
-	| 'standalone' // The application will look and feel like a standalone application (...) but can include other UI elements such as a status bar
-	| 'minimal-ui' // The application will look and feel like a standalone application, but will have a minimal set of UI elements for controlling navigation
-	| 'browser'    // (default) XXX setting this explicitly can prevent the app from being installable! cf. https://web.dev/articles/install-criteria
-
-// https://developer.mozilla.org/en-US/docs/Web/Manifest/display_override#values
-type DisplayOverrideMode = DisplayMode | 'window-controls-overlay' // TODO refine, only exists for 'window-controls-overlay' AFAIK
-
 interface WebPage extends ThingWithOnlinePresence {
 	title: Descriptionⳇtitle
 	icon?: Immutable<SVG>
@@ -129,7 +119,6 @@ interface EntryPoints {
 
 export {
 	type Category,
-	type DisplayMode, type DisplayOverrideMode,
 
 	type WebsiteEntryPointSpec,
 	type EntryPoints,

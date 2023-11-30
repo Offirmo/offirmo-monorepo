@@ -1,13 +1,25 @@
 import assert from 'tiny-invariant'
 import { Immutable, CssColor‿str, Url‿str, IETFLanguageType } from '@offirmo-private/ts-types'
 
-import { DisplayMode, DisplayOverrideMode, Category } from '../types.js'
+import { Category } from '../types.js'
 
 /////////////////////////////////////////////////
 // Home => https://github.com/w3c/manifest   https://www.w3.org/TR/manifest-app-info/
 // +++ https://web.dev/learn/pwa/web-app-manifest/
 // +++ https://developer.mozilla.org/en-US/docs/Web/Manifest
 // IMPORTANT https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#installation_from_an_app_store
+
+
+// https://developer.mozilla.org/en-US/docs/Web/Manifest/display#values
+type DisplayMode =
+	| 'fullscreen' // All the available display area is used and no user agent chrome is shown
+	| 'standalone' // The application will look and feel like a standalone application (...) but can include other UI elements such as a status bar
+	| 'minimal-ui' // The application will look and feel like a standalone application, but will have a minimal set of UI elements for controlling navigation
+	| 'browser'    // (default) XXX setting this explicitly can prevent the app from being installable! cf. https://web.dev/articles/install-criteria
+
+// https://developer.mozilla.org/en-US/docs/Web/Manifest/display_override#values
+type DisplayOverrideMode = DisplayMode | 'window-controls-overlay' // TODO refine, only exists for 'window-controls-overlay' AFAIK
+
 
 // https://developer.mozilla.org/en-US/docs/Web/Manifest/icons
 interface Icon {

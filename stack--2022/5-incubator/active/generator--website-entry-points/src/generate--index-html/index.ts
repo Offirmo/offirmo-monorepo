@@ -54,8 +54,58 @@ function _has_content(x: any, prop?: string): boolean {
 function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): HtmlString {
 	// TODO https://medium.com/@stephenbunch/how-to-make-a-scrollable-container-with-dynamic-height-using-flexbox-5914a26ae336
 	// TODO https://developer.chrome.com/blog/overscroll-behavior/
-
 	// https://www.smashingmagazine.com/2015/08/understanding-critical-css/
+
+	const css_specⵧcritical = [...spec.content.critical.css]
+	const needsꓽsnippetⵧfull_viewport = (spec.preset === 'game')
+	if (needsꓽsnippetⵧfull_viewport && !css_specⵧcritical.includes('snippet:full-viewport')) {
+		css_specⵧcritical.push('snippet:full-viewport')
+	}
+
+	const css_blocks = css_specⵧcritical.map(css‿str => {
+			switch (css‿str) {
+				case 'snippet:natural-box-layout':
+					/* apply a natural box layout model to all elements
+					 * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+					 * https://github.com/mike-engel/a11y-css-reset/pull/12#issuecomment-516582884
+					 */
+					return _indent(`
+:root                  { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+`)
+
+				case 'snippet:full-viewport':
+					// keep the top containers clean of anything but content
+					/* In order to get a true fullscreen when pinned on iPhone
+					 * - position must NOT be "fixed", or it strangely crops to the small viewport! (2023/11 iOs 16.6.1 iPhone 14) (absolute is ok)
+					 * - height MUST be 100lvh;
+					 *
+					 * If :root has 0 padding, margin & border, no need to explicitly position, BUT:
+					 * - if the first child has a margin, it collapses with the parent.
+					 * Thus it's safer to position.
+					 */
+					return _indent(`
+/* make this app use the full viewport */
+html, body {
+	margin: 0;
+	padding: 0;
+	border: initial;
+}
+body, .o⋄full-viewport {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100lvw;
+	height: 100lvh;
+}
+`)
+				default:
+					assert(!css‿str.startsWith('snippet:'), `Unknown CSS snippet "${css‿str}"!`)
+					return css‿str
+			}
+		})
+
 	return `
 <style>/******* critical CSS *******/
 
@@ -76,26 +126,10 @@ function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): H
 		usesꓽpull_to_refresh(spec)
 			? ''
 			: 'overscroll-behavior: none;'
-	}
+		}
 	}
 
-	${(spec.content.critical.css ?? [])
-		.map(css‿str => {
-			switch (css‿str) {
-				case 'snippet:natural-box-layout':
-					/* apply a natural box layout model to all elements
-					 * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
-					 * https://github.com/mike-engel/a11y-css-reset/pull/12#issuecomment-516582884
-					 */
-					return _indent(`
-:root                  { box-sizing: border-box; }
-*, *::before, *::after { box-sizing: inherit; }
-					`)
-				default:
-					assert(!css‿str.startsWith('snippet:'), `Unknown CSS snippet "${css‿str}"!`)
-					return css‿str
-			}
-		})
+	${css_blocks
 		.map(s => s.trim())
 		.join(EOL + EOL + '	')}
 </style>
@@ -262,18 +296,18 @@ function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): HtmlStri
 <footer>TODO footer</footer>`.trim()
 			case 'snippet:react-root' :
 				return `
-<main id="root">
-	<!-- React will render here and replace this -->
-	<section style="
-		text-align: center;
-		--width: 60ch;
-		max-width: var(--width);
-		margin: 0 max(1ch, (100vw - var(--width))/2);
-		">
-		<h1>${ifꓽdebug(spec).prefixꓽwith(`[title--page]`, getꓽtitleⵧpage(spec))}</h1>
-		<em>Loading…</em>
-	</section>
-</main>`.trim()
+<main id="react-root" class="o⋄full-viewport">
+		<!-- React will render here and replace this -->
+		<section style="
+			text-align: center;
+			--width: 60ch;
+			max-width: var(--width);
+			margin: 0 max(1ch, (100vw - var(--width))/2);
+			">
+			<h1>${ifꓽdebug(spec).prefixꓽwith(`[title--page]`, getꓽtitleⵧpage(spec))}</h1>
+			<em>Loading…</em>
+		</section>
+	</main>`.trim()
 			default:
 				assert(!html‿str.startsWith('snippet:'), `Unknown HTML snippet "${html‿str}"!`)
 				return html‿str

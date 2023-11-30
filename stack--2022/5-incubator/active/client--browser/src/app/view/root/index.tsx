@@ -1,5 +1,7 @@
 import { Fragment, StrictMode } from 'react'
 
+import('./index.css')
+
 /////////////////////////////////////////////////
 
 const StrictCheck = StrictMode

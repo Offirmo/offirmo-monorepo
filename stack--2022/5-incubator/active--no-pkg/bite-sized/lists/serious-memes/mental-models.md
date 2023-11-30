@@ -4,9 +4,48 @@
 5 Harsh Truths for Success from Linus Torvalds https://medium.com/codex/5-harsh-truths-from-linus-torvalds-406ab20cea02
 5 regrets of dying
 80/20 rule (Pareto)
-a wisdom for left may not be valid for right
 AAA TODO https://flinkliv.com/
 AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
+Copernican Principle: The more we learn about astronomy, the less it seems that earth is special. It’s a small part of the universe, and each human is a small part of the earth. We are all spinning through the solar system — nowhere near the beginning or end of time.
+Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
+Eisenhower's Urgent/Important https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
+English
+FOMO
+FUD
+Faustian Bargain: A man once sold his soul to a demon in exchange for knowledge. At first, it seemed like a smart trade. But the man lost in the long-run. Tragically, what the man lost was more valuable than what he earned. In short, he won the battle but lost the war.
+Gall’s Law: A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system.
+Goodhart’s Law: When a measure becomes a target, it ceases to be a good measure. One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
+Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
+Hock Principle: Simple, clear purpose and principles give rise to complex and intelligent behavior. Complex rules and regulations give rise to simple and stupid behavior.
+Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory
+Hormesis: A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
+Horseshoe Theory: Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
+IQ, it exists, it's measurable
+Johari window https://en.wikipedia.org/wiki/Johari_window
+MECE https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
+Maslow's pyramid
+McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
+Monty Hall Pb https://en.wikipedia.org/wiki/Monty_Hall_problem
+Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
+Overton Window: You can control thought without limiting speech. You can do it by defining the limits of acceptable thought while allowing for lively debate within these barriers. For example, Fox News and MSNBC set limits on what political thoughts they consider acceptable, but in the grand scheme of things, they’re both fairly conventional. The political spectrum stretches far beyond the ideas they entertain, but ideas outside their limits are shunned.
+Parkinson’s Law: Work expands to fill the time available. People don’t want to look like they’re lazy, so they find extra tasks to tackle, even if they’re trivial. If you have six months to complete a project, it will take six months to complete. Set deadlines accordingly.
+Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
+Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
+Pyramid Principle https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/
+RICE Reach Impact Confidence Estimate
+Russell Conjugation: Journalists often change the meaning of a sentence by replacing one word with a synonym that implies a different meaning. For example, the same person can support an estate tax but oppose a death tax — even though they are the same thing.
+SBI https://medium.com/pm101/the-situation-behavior-impact-feedback-framework-e20ce52c9357
+SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
+SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
+SCQA – Situation Complication Question Answer - A Framework For Defining Problems & Hypotheses https://strategyu.co/scqa-a-framework-for-defining-problems-hypotheses/
+SMART goal-setting framework
+SWOT
+T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
+THINK hack: Is it True? Helpful? Inspiring? Necessary? Kind?
+The Map Is Not the Territory: Reality will never match the elegance of theory. All models have inconsistencies, but some are still useful. Some maps are useful because they’re inaccurate. If you want to find an edge, look for what the map leaves out.
+The Medium Is the Message: We pay too much attention to what is being said. But the medium of communication is more impactful. For example, the Internet’s impact on humanity has a bigger influence than anything that’s said on the Internet.
+We must remember that entire societies can and often do follow the wrong path for a very long time https://news.vanderbilt.edu/2011/04/13/michael-burry-transcript/
+a wisdom for left may not be valid for right
 affirmative action?
 agile "what the client wanted"
 alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community
@@ -32,12 +71,10 @@ communication non violente
 competition is for Losers: Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
 confiance doit se gagner
 convexity: If you want to be lucky, look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
-Copernican Principle: The more we learn about astronomy, the less it seems that earth is special. It’s a small part of the universe, and each human is a small part of the earth. We are all spinning through the solar system — nowhere near the beginning or end of time.
 corporate slave (but also never achieving anything?)
 courses après le repas
 creativity begins at the edge: Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
 critical thinking +++  https://strategyu.co/critical-thinking/
-Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 differences: introvert/extrovert
 discernement -- technique de pile ou face
@@ -47,28 +84,21 @@ drive by
 due diligence
 effet projecteur
 effet rétroviseur
-Eisenhower's Urgent/Important https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
 elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
-English
 every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 excuses vs. solutions
 exiger seulement ce qu’on peut faire soi même
 false good idea
 fast reading
-Faustian Bargain: A man once sold his soul to a demon in exchange for knowledge. At first, it seemed like a smart trade. But the man lost in the long-run. Tragically, what the man lost was more valuable than what he earned. In short, he won the battle but lost the war.
 fire
-FOMO
-FUD
 fundamental attribution error https://en.wikipedia.org/wiki/Fundamental_attribution_error
-Gall’s Law: A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system.
 game theory
 game theory -- prisoner's dilemma https://www.bennorthrop.com/Home/Blog/2007_11_17_prisoners_dilemma.php
 giftedness and talent https://campbellms.typepad.com/files/gagne-a-differentiated-model-of-giftedness-and-talent-dmgt.pdf https://www.gigers.com/matthias/gifted/gagne_dmgt.html
 go-for-it Window: Large gaps between accelerating technologies and stagnating social norms create lucrative new business opportunities. But they are only available for a short time when people can capitalize on the difference between the real and perceived state of the world. For example, 2007 was the perfect time to launch the iPhone, but Google Glasses launched too early.
 good life questions https://radreads.co/10k-questions/
-Goodhart’s Law: When a measure becomes a target, it ceases to be a good measure. One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
 grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
 growth mindset
@@ -77,11 +107,6 @@ happiness is a skill
 happiness score https://www.ted.com/talks/dominic_price_what_s_your_happiness_score
 helicopter parent
 herbe toujours plus verte
-Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
-Hock Principle: Simple, clear purpose and principles give rise to complex and intelligent behavior. Complex rules and regulations give rise to simple and stupid behavior.
-Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory
-Hormesis: A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
-Horseshoe Theory: Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
 https://cobeats.com/folder/ryfTgPr9H
 ikigai
 impostor syndrome
@@ -93,7 +118,6 @@ invisible hand: Markets aggregate knowledge. Rising prices signal falling supply
 irredentism https://www.reddit.com/r/history/comments/sji919/is_there_a_term_for_this_phenomenon/
 it's not about lowering the bar, it's about helping more people reach it.
 jamais assez / 1st times
-Johari window https://en.wikipedia.org/wiki/Johari_window
 juger vs. évaluer
 keeping up with the jones
 law of Shitty Click-Through Rates: Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
@@ -104,28 +128,21 @@ leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 living the good life
 look for Things That Don’t Make Sense: The world always makes sense. But it can be confusing. When it is, your model of the world is wrong. So, things that don’t make sense are a learning opportunity. Big opportunities won’t make sense until it’s too late to profit from them.
 love = wanting the best
-Maslow's pyramid
-McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
-MECE https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
 mental Health: I am not my thoughts and rather than feeling like I needed to have control of every situation, that by surrendering that control, I will have more control over my life than I ever did before.
 mental models +++ TODO LIST  https://fs.blog/mental-models/
 method of learning +++ https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger
 mimetic Theory of Conflict: People who are similar are more likely to fight than people who are different. That’s why Civil Wars and family feuds create the worst conflicts. The closer two people are and the more equality between them, the greater the potential for conflict.
 mimetic Theory of Desire: Humans are like sheep. We don’t know what we want, so we imitate each other. Instead of creating our own desires, we desire the same things as other people. The entire advertising industry is built on this idea.
 mindset What to How https://strategyu.co/consulting-mindset-shifting-from-the-what-to-the-how/
-Monty Hall Pb https://en.wikipedia.org/wiki/Monty_Hall_problem
 naiveté: abus sexuels, mafia
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
 non-violence
-Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
 on peut toujours faire mieux
 opportunity Cost: By reading this tweet, you are choosing not to read something else. Everything we do is like this. Doing one thing requires giving up another. Whenever you explicitly choose to do one thing, you implicitly choose not to do another thing.
-Overton Window: You can control thought without limiting speech. You can do it by defining the limits of acceptable thought while allowing for lively debate within these barriers. For example, Fox News and MSNBC set limits on what political thoughts they consider acceptable, but in the grand scheme of things, they’re both fairly conventional. The political spectrum stretches far beyond the ideas they entertain, but ideas outside their limits are shunned.
 paradox of Abundance: The average quality of information is getting worse and worse. But the best stuff is getting better and better. Markets of abundance are simultaneously bad for the median consumer but good for conscious consumers.
 paradox of Consensus: Under ancient Jewish law, if a suspect was found guilty by every judge, they were deemed innocent. Too much agreement implied a systemic error in the judicial process. Unanimous agreement sometimes leads to bad decisions.
 paradox of Specificity: Focus isn’t as constraining as it seems. In the age of the Internet, when everybody has Google search and personalized social media feeds, differentiation is free marketing. The more specific your goal, the more opportunities you’ll create for yourself. Narrowing your aperture can expand your horizons.
 pardon pas oubli
-Parkinson’s Law: Work expands to fill the time available. People don’t want to look like they’re lazy, so they find extra tasks to tackle, even if they’re trivial. If you have six months to complete a project, it will take six months to complete. Set deadlines accordingly.
 passive aggressive
 pay it forward
 penny Problem Gap: Economists assume demand is linear, but people’s behavior totally changes once an action costs money. If the inventors of the Internet had known about it, spam wouldn’t be such a problem. If sending an email cost you $0.001, there’d be way less spam.
@@ -133,36 +150,28 @@ personal Knowledge Management https://fortelabs.co/blog/para/
 personal Monopoly: Corporations reward conformity, but the Internet rewards people who are unique. If you work in a creative field, strive to be the only person who does what you do. Find your own style, then run with it. Create intellectual real estate for yourself. The Internet rewards unique people. Find your unique combination of skills, interests, and personality traits. I call this a Personal Monopoly. Become the only person in the world who does what you do. Then, tell the world by sharing your knowledge.
 personal moral inventory https://domprice.me/personal-moral-inventory/
 picture the success
-Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
 praise in public (and private), criticize in private
 praise more than criticize
 praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism
 preference Falsification: People lie about their true opinions and conform to socially acceptable preferences instead. In private they’ll say one thing. In public, they’ll say another.
 pretty privilege -> karen
 priming
-Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
 prix au kilo
 procrastination
 productivity
 productivity vs. impact, value
 progress over perfection
+linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_relativity
 psychological safety
 put into words
-Pyramid Principle https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/
 question authority
 race to the bottom
 resource Curse: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources.
-RICE Reach Impact Confidence Estimate
 ring theory: - The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
 ring theory: - When you are talking to a person in a ring smaller than yours, someone closer to the center of the crisis, the goal is to help. Listening is often more helpful than talking. But if you're going to open your mouth, first ask yourself if what you are about to say is likely to provide comfort and support. If it isn't, don't say it. Don't, for example, give advice. People who are suffering from trauma don't need advice. They need comfort and support. So say, "I'm sorry," or, "This must really be hard for you," or, "Can I bring you a pot roast?" Don't say, "You should hear what happened to me," or, "Here's what I would do if I were you." And don't say, "This is really bringing me down."
 ring theory: https://en.wikipedia.org/wiki/Ring_theory_(psychology)
 robustness Principle: Be conservative in what you do, be liberal in what you accept from others. It’s a design guideline for software and a good rule for life: Hold yourself to a higher standard than you hold others to.
 root cause misattribution https://www.zeptonaut.com/posts/rocket-league-and-root-cause-misattribution/
-Russell Conjugation: Journalists often change the meaning of a sentence by replacing one word with a synonym that implies a different meaning. For example, the same person can support an estate tax but oppose a death tax — even though they are the same thing.
-SBI https://medium.com/pm101/the-situation-behavior-impact-feedback-framework-e20ce52c9357
-SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
-SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
-SCQA – Situation Complication Question Answer - A Framework For Defining Problems & Hypotheses https://strategyu.co/scqa-a-framework-for-defining-problems-hypotheses/
 second Law of Thermodynamics: The world tends towards disorder. That’s why your room becomes messier and messier over time. It’s also why an engine converts only ~35% of its energy into useful work. Time moves towards increasing one direction: increasing entropy.
 secrets are Hidden in Plain Sight:  Most people think of secrets as Easter eggs. They assume that if a secret is important, it’s necessarily going to be hard to find. The best ideas can come from things that are so well-known that they aren’t well-seen.
 self appreciation
@@ -172,7 +181,6 @@ sex ed
 sex ed -- "sex positive"
 short term / long term
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
-SMART goal-setting framework
 social pressure / free will
 soft skills https://softskills.audio/
 stakeholder
@@ -181,17 +189,12 @@ start with why
 stoicism -- Rudyard Kipling If-- https://en.wikipedia.org/wiki/If%E2%80%94
 survival of the fittest / fit enough
 survivorship bias https://en.wikipedia.org/wiki/Survivorship_bias
-SWOT
-T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
 table Selection: This idea comes from poker, where you’re advised to choose your opponents carefully. That means you shouldn’t compete against the best people. You don’t need to get good at doing difficult things if you get good at avoiding difficult things. If you want to win, pick an easy table and nail your execution.
 talent vs. Genius: Society is good at training talent but terrible at cultivating genius. Talented people are good at hitting targets others can’t hit, but geniuses find targets others can’t see. They are opposite modes of excellence. Talent is predictable, genius is unpredictable.
 tax -- lazy https://www.insurancewatch.com.au/lazy-tax-insurance.html
-The Map Is Not the Territory: Reality will never match the elegance of theory. All models have inconsistencies, but some are still useful. Some maps are useful because they’re inaccurate. If you want to find an edge, look for what the map leaves out.
-The Medium Is the Message: We pay too much attention to what is being said. But the medium of communication is more impactful. For example, the Internet’s impact on humanity has a bigger influence than anything that’s said on the Internet.
 the Wisdom of Paradox: Logic is the key to scientific truths, but paradoxes are the key to psychological ones. When it comes to the human condition, the deepest truths are often counter-intuitive. When you find two opposites that are both true, start exploring.
-theory of constraints https://www.tocinstitute.org/theory-of-constraints.html
 theory of Constraints: A system is only as strong as its weakest point. Focus on the bottleneck. Counterintuitively, if you break down the entire system and optimize each component individually, you’ll lower the effectiveness of the system. Optimize the entire system instead.
-THINK hack: Is it True? Helpful? Inspiring? Necessary? Kind?
+theory of constraints https://www.tocinstitute.org/theory-of-constraints.html
 time management
 tip of the iceberg
 tool: checklist
@@ -207,7 +210,6 @@ verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 via Negativa: When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 voleur volé
 wartime peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
-We must remember that entire societies can and often do follow the wrong path for a very long time https://news.vanderbilt.edu/2011/04/13/michael-burry-transcript/
 who moved my cheese?
 wisdom
 wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
