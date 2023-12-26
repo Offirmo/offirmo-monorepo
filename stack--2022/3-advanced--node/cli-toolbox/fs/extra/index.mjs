@@ -1,9 +1,9 @@
 export * from 'node:fs'
-//export * from 'fs-extra'
 export * from './ls/index.mjs'
 export * as json from './json/index.mjs'
 
 // strange but the `export *` doesn't re-export everything???
+//export * from 'fs-extra'
 import fse from 'fs-extra'
 const {
 	//Async

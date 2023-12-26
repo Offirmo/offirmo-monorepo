@@ -19,7 +19,7 @@
 
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/storypad": "^0",
+		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
 		"npm-run-all": "^4"
 	}

@@ -26,7 +26,12 @@ const coerce_to_ascii: StringNormalizer = s => s
 
 // https://devdocs.io/javascript/global_objects/string/normalize
 // https://withblue.ink/2019/03/11/why-you-need-to-normalize-unicode-strings.html
-const normalize_unicode: StringNormalizer = s => s.normalize(RECOMMENDED_UNICODE_NORMALIZATION)
+const normalize_unicode: StringNormalizer = s => {
+	s = s.normalize(RECOMMENDED_UNICODE_NORMALIZATION)
+	if ((s as any).toWellFormed)
+		s = (s as any).toWellFormed() // https://devdocs.io/javascript/global_objects/string/iswellformed
+	return s
+}
 
 // https://stackoverflow.com/a/1981366/587407
 const ANY_BLANK_REGEXP = /\s+/g
