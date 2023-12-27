@@ -4,6 +4,7 @@
 Unless it's more convenient for some reasons, this repo strives to adhere to those principles:
 
 * readability is the top desirable code property
+  * ["Code for the human, not the computer"](https://read.engineerscodex.com/p/7-simple-habits-of-the-top-1-of-engineers)
   * TypeScript https://www.typescriptlang.org/
 * problems broken down in manageable components = separation of concerns
 * immutability if possible
@@ -23,3 +24,9 @@ Unless it's more convenient for some reasons, this repo strives to adhere to tho
   * avoid using cloud-only services
 * avoid vendor lock-in
   * ex. auth, aws...
+  * wrap commonly used modules into a thin, semantic layer
+* ...
+
+Good reads
+* 2023 https://read.engineerscodex.com/p/7-simple-habits-of-the-top-1-of-engineers
+*

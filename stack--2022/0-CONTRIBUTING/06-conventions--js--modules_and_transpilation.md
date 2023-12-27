@@ -8,7 +8,7 @@ The public modules in this monorepo ase exposed as:
   - with sometimes a few stage 4 features when they are already widely supported https://github.com/tc39/ecma262
   - instructions [here](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) and [here](https://www.typescriptlang.org/docs/handbook/esm-node.html)
 - as a convenience, pre-built CJS for latest ES (https://node.green/)
-  supported by the oldest active LTS node (https://nodejs.org/en/about/releases/ or https://github.com/nodejs/Release)
+  supported by the oldest active LTS node (https://nodejs.org/en/about/previous-releases or https://github.com/nodejs/Release)
 - for modules in Typescript, trying to use the latest Typescript, best effort.
 - while webpack is not used in this repo(*), we acknowledge that it's widely used and thus aim to support its latest version
 
@@ -22,20 +22,45 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 ### PENDING updates
 - [ ] TODO remove all cjs since we can no longer generate it since Typescript 5.2
 - [ ] TODO DONE TS supports [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762) = update unit tests!
-- [ ] 🆙2023-10-24 oldest active LTS node 18 → 20  https://github.com/nodejs/release#release-schedule
-- [ ] 🆙2024-10-29 oldest active LTS node 20 → 22  https://github.com/nodejs/release#release-schedule
-- [ ] 🆙2025-10-28 oldest active LTS node 22 → 24  https://github.com/nodejs/release#release-schedule
+- [ ] 🆙 2024-10-29 oldest active LTS node 20 → 22  https://github.com/nodejs/release#release-schedule
+- [ ] 🆙 2025-10-28 oldest active LTS node 22 → 24  https://github.com/nodejs/release#release-schedule
 - [ ] mid 2024 [ES2024](https://en.wikipedia.org/wiki/ECMAScript_version_history)
 - [ ] TS supports importing .ts
 - [ ] TS supports exporting with explicit module infos
-- [ ] 🆙webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
+- [ ] 🆙 webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
+
+
+### update 2024-01-01
+Updated state:
+
+1. 🆕 Node runtime version
+* oldest active LTS node = [20](https://nodejs.org/en/about/previous-releases)
+* 🆕 most recent node supported by AWS lambda = [20](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)
+
+⭆ 🆕 latest supported node = 20 (if updated, search for "engines")
+
+2. ECMASCript version
+* latest ES = [ES2023](https://en.wikipedia.org/wiki/ECMAScript_version_history)
+* latest ES reasonably supported by this node LTS (latest minor) = [ES2023](https://node.green/#ES2023) (close to ES2024 though)
+* latest ES supported by TypeScript as a target = [2022](https://www.typescriptlang.org/tsconfig#target) [code](https://github.com/microsoft/TypeScript/blob/d027e9619fb8ca964df3885a536a67b5f813738b/src/server/protocol.ts#L3759)
+* latest ES supported by TypeScript as a lib = [2023](https://github.com/microsoft/TypeScript/tree/main/src/lib)
+* latest ES reasonably supported by browsers or polyfills = [ES2023](https://compat-table.github.io/compat-table/es2016plus/)
+* we no longer consider webpack (outdated tool, we no longer use it)
+
+⭆ latest convenient ES = 2023 (if changed, need search&replace in package.json, search for "es2022" and "update marker")
+
+3. ES module
+- we consider webpack outdated and are no longer taking into account its limitations
+- we consider the ecosystem advanced enough to move to full ESM https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-move-my-commonjs-project-to-esm
+
+⭆ latest convenient module = ES (module = 2022 in TypeScript)
 
 
 ### update 2023-10-24
 Updated state:
 
 1. Node runtime version
-  * 🆕oldest active LTS node = [20](https://nodejs.org/en/about/releases/)
+  * 🆕 oldest active LTS node = [20](https://nodejs.org/en/about/previous-releases)
   * most recent node supported by AWS lambda = [18](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)
 
 ⭆ latest supported node = 18 (if updated, search for "engines")
@@ -61,7 +86,7 @@ Updated state:
 Updated state:
 
 1. Node runtime version
-   * oldest active LTS node = [18](https://nodejs.org/en/about/releases/)
+   * oldest active LTS node = [18](https://nodejs.org/en/about/previous-releases)
    * 🆕most recent node supported by AWS lambda = [18](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)
 
 ⭆ latest supported node = 18
@@ -86,7 +111,7 @@ Updated state:
 ### update 2022-11-20
 Updated state:
 * latest ES = [ES2022](https://en.wikipedia.org/wiki/ECMAScript_version_history)
-* oldest active LTS node = [18](https://nodejs.org/en/about/releases/)
+* oldest active LTS node = [18](https://nodejs.org/en/about/previous-releases)
 * latest ES reasonably supported by this node LTS (latest minor) = [ES2023](https://node.green/#ES2022)
 * latest ES syntax supported by Webpack (= Acorn supports it + webpack bumped Acorn) = ES2021
   * latest webpack version = [5](https://webpack.js.org/)
@@ -105,7 +130,7 @@ Updated state:
 
 Updated state:
 * latest ES = [ES2021](https://en.wikipedia.org/wiki/ECMAScript#Versions)
-* oldest active LTS node = [16](https://nodejs.org/en/about/releases/)
+* oldest active LTS node = [16](https://nodejs.org/en/about/previous-releases)
 * latest ES reasonably supported by this node LTS (latest minor) = [ES2021](https://node.green/#ES2022)
 * latest ES syntax supported by Webpack (= Acorn supports it + webpack bumped Acorn) = ES2021
   * latest webpack version = [5](https://webpack.js.org/)
@@ -122,7 +147,7 @@ Check = no change
 
 Updated state:
 * latest ES = [ES2021](https://en.wikipedia.org/wiki/ECMAScript#Versions)
-* oldest active LTS node = [16](https://nodejs.org/en/about/releases/)
+* oldest active LTS node = [16](https://nodejs.org/en/about/previous-releases)
 * latest ES supported by this node LTS = [ES2021](https://node.green/#ES2022)
 * latest ES syntax supported by Webpack (= Acorn supports it + webpack bumped Acorn) = ES2021
   * latest webpack version = [5](https://webpack.js.org/)
@@ -145,7 +170,7 @@ Updated state:
 
 Updated state:
 * latest ES = [ES2021](https://en.wikipedia.org/wiki/ECMAScript#Versions)    ___⬅CHANGE___
-* oldest active LTS node = [16](https://nodejs.org/en/about/releases/)    ___⬅CHANGE___
+* oldest active LTS node = [16](https://nodejs.org/en/about/previous-releases)    ___⬅CHANGE___
 * latest ES supported by this node LTS = [ES2021](https://node.green/#ES2021)   ___⬅CHANGE___
 * latest ES syntax supported by Webpack (= Acorn supports it + webpack bumped Acorn) = ES2021   ___⬅CHANGE___
   * latest webpack version = [5](https://webpack.js.org/)
@@ -168,7 +193,7 @@ Updated state:
 
 Updated state:
 * latest ES = [ES2020](https://en.wikipedia.org/wiki/ECMAScript#Versions)
-* oldest active LTS node = [14](https://nodejs.org/en/about/releases/)    ___⬅CHANGE___
+* oldest active LTS node = [14](https://nodejs.org/en/about/previous-releases)    ___⬅CHANGE___
 * latest ES supported by this node LTS = [ES2020](https://node.green/#ES2019)   ___⬅CHANGE___
 * latest ES syntax supported by Webpack (= Acorn supports it + webpack bumped Acorn) = ES2020   ___⬅CHANGE___
   * latest webpack version = [5](https://webpack.js.org/)   ___⬅CHANGE___
@@ -188,7 +213,7 @@ Updated state:
 - 2020/06 ES2020 approved https://github.com/tc39/ecma262/releases/tag/es2020
 
 * latest ES = [ES2020](https://en.wikipedia.org/wiki/ECMAScript#Versions)
-* oldest active LTS node = [12](https://nodejs.org/en/about/releases/)
+* oldest active LTS node = [12](https://nodejs.org/en/about/previous-releases)
 * latest ES supported by this node LTS = [ES2019](https://node.green/#ES2019)
 * latest ES syntax supported by Webpack (= Acorn supports it + webpack bumped Acorn) = 2019
 * FYI compilers/polyfills https://kangax.github.io/compat-table/es2016plus/
@@ -198,14 +223,14 @@ Babel plugins
 
 ### update 2020-05-29
 Switching to supporting oldest node = 12
-since node 10 in maintenance mode since 2020-05-19 https://nodejs.org/en/about/releases/
+since node 10 in maintenance mode since 2020-05-19 https://nodejs.org/en/about/previous-releases
 * latest ES = [ES2019](https://en.wikipedia.org/wiki/ECMAScript#Versions)
-* oldest active LTS node = [12](https://nodejs.org/en/about/releases/)
+* oldest active LTS node = [12](https://nodejs.org/en/about/previous-releases)
 * latest ES supported by this node LTS = [ES2019](https://node.green/#ES2019)
 
 ### update 2019-07-27
 * latest ES = [ES2019](https://en.wikipedia.org/wiki/ECMAScript#Versions)
-* oldest active LTS node = [10](https://nodejs.org/en/about/releases/)
+* oldest active LTS node = [10](https://nodejs.org/en/about/previous-releases)
 * latest ES supported by this node LTS = [ES2018](https://node.green/#ES2018)
 
 

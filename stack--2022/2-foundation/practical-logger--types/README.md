@@ -79,3 +79,6 @@ Other loggers:
 
 ## Credits
 I had a look at bunyan's interface.
+
+
+TODO https://andydote.co.uk/2023/09/19/tracing-is-better/ log vs. trace

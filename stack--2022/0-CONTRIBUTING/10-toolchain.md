@@ -42,7 +42,7 @@ TODO evaluate lerna recent versions
 typescript
 
 TODO evaluate https://blog.logrocket.com/boost-your-productivity-with-typescript-project-references/
-TODO evaluate [self referencing in Typescript]()
+TODO evaluate [self referencing in Typescript](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762)
 
 
 
@@ -51,8 +51,6 @@ TODO evaluate [self referencing in Typescript]()
 https://parceljs.org/
 
 TODO evaluate vite
-TODO evaluate Rome https://rome.tools/#about-rome
-
 
 ## web
 https://parceljs.org/
@@ -98,6 +96,6 @@ TODO evaluate edge DB https://atlasgo.io/guides/sqlite/turso
 https://github.com/folke/ultra-runner
 
 ### workflow
-- https://www.npmjs.com/package/@atlaskit/build-releases
-- https://yarnpkg.com/features/release-workflow
-- changesets
+- TODO evaluate https://www.npmjs.com/package/@atlaskit/build-releases
+- TODO evaluate https://yarnpkg.com/features/release-workflow
+- TODO evaluate changesets

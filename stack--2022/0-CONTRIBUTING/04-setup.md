@@ -10,7 +10,6 @@ This set of command will build everything: (required as there are dependencies b
 nvm install
 npm i -g yarn # bolt only works when installed by yarn
 yarn global add bolt
-npx browserslist@latest --update-db # cf. https://github.com/browserslist/browserslist#browsers-data-updating
 bolt
 bolt build
 bolt test

@@ -138,7 +138,7 @@ lodash
 log
 loop
 loop - breaking out of
-LTS, maintenance LTS, active LTS https://nodejs.org/en/about/releases/
+LTS, maintenance LTS, active LTS https://nodejs.org/en/about/previous-releases
 magic number
 map
 MDN

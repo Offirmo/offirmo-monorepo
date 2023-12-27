@@ -1,9 +1,9 @@
 
 ## Usage (dev commands)
 
-### normal dev
+### normal module dev
 
-Now that all modules are built (required), you can move into an individual module:
+Now that all modules are built (required), you can move into an **individual** module:
 ```bash
 ## this will trigger watch build of the compatible cjs version, which works in all envs
 yarn dev
@@ -23,8 +23,6 @@ At the moment, there are dependency loops which require a refactoring I don't pl
 For ex. to make everything work again step by step!
 
 ```bash
-## automated: `bolt postinstall`
-
 bolt --only-fs "[0-9]-*/*" ws run build
 bolt --only-fs "[0-9]-*/*" ws run test
   bolt --only-fs "0-meta/build-tools/*" ws run build
@@ -91,7 +89,7 @@ onn
 bolt clean && rm -rf node_modules yarn.lock package-lock.json && bolt && yarn outdated     && bolt build
 bolt clean && rm -rf node_modules yarn.lock package-lock.json && bolt && bolt build
 ##yarn eslint:packages --fix
-npx update-browserslist-db@latest
+npx update-browserslist-db@latest # cf. https://github.com/browserslist/browserslist#browsers-data-updating
 npx yarn-deduplicate --list
 ```
 

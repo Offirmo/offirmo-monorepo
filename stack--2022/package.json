@@ -89,9 +89,7 @@
 		"@types/async": "^3",
 		"@types/chai": "^4",
 		"@types/chai-as-promised": "^7",
-		"@types/cli-progress": "^3",
 		"@types/cross-spawn": "^6",
-		"@types/fs-extra": "^11",
 		"@types/icepick": "^2",
 		"@types/json-stable-stringify": "^1",
 		"@types/mocha": "^10",
@@ -142,7 +140,6 @@
 		"nanoid": "^5",
 		"npm-run-all": "^4",
 		"parcel": "^2",
-		"parcel-resolver-typescript-esm": "^1",
 		"path-exists": "^5",
 		"pokemon": "^2",
 		"prettyjson": "^1",
@@ -168,7 +165,6 @@
 		"utimes": "^5"
 	},
 	"resolutions": {
-		"**/@babel/core": "^7",
 		"**/react": "^18",
 		"**/react-dom": "^18",
 		"**/react-refresh": "^0"

@@ -1,9 +1,9 @@
 
 ## Introduction
 
-Welcome to this repo, thanks for considering contributing!
+Welcome to this repo, thanks for contributing!
 
-This repo is a monorepo which aggregates most of my (Offirmo) personal projects, including:
+This monorepo aggregates most of my (Offirmo) personal projects, including:
 * npm modules
 * node tools
 * web apps
