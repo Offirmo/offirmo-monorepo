@@ -19,9 +19,9 @@ export async function compile(tscOptions, files, options) {
 	files = files || []
 	options = options || {}
 	options.verbose = Boolean(options.verbose)
-	let logger_state = create_logger_state(options.banner)
+	let logger__state = create_logger_state(options.banner)
 
-	if (options.verbose) logger_state = display_banner_if_1st_output(logger_state)
+	if (options.verbose) logger__state = display_banner_if_1st_output(logger__state)
 
 	return new Promise((resolve, reject) => {
 		let stdout = ''
@@ -49,12 +49,12 @@ export async function compile(tscOptions, files, options) {
 			err.reason = reason
 
 			if (options.verbose) {
-				logger_state = display_banner_if_1st_output(logger_state)
+				logger__state = display_banner_if_1st_output(logger__state)
 				console.error(`[${LIB}] ✖ Failure during tsc invocation: ${reason}`)
 				console.error(err)
 			}
 
-			logger_state = display_banner_if_1st_output(logger_state)
+			logger__state = display_banner_if_1st_output(logger__state)
 			err.message = `[${LIB}@dir:${path.parse(process.cwd()).base}] ${err.message}`
 			reject(err)
 			already_failed = true
@@ -73,39 +73,37 @@ export async function compile(tscOptions, files, options) {
 
 				return [ ...acc, `--${key}`, value ]
 			}, [])
-			const spawn_params = tsc_options_as_array.concat(files)
+			const spawn__params = tsc_options_as_array.concat(files)
 
 
 			// not returning due to complex "callback style" async code
 			find_tsc(function _display_banner_if_1st_output() {
-					logger_state = display_banner_if_1st_output(logger_state)
+					logger__state = display_banner_if_1st_output(logger__state)
 				})
 				.then(tsc_executable_absolute_path => {
 					if (options.verbose) console.log(`[${LIB}] ✔ found a typescript compiler at this location: "${tsc_executable_absolute_path}" aka. "${tildify(tsc_executable_absolute_path)}"`)
-					if (options.verbose) console.log(`[${LIB}] ► now spawning the compilation command: "${[tsc_executable_absolute_path, ...spawn_params].join(' ')}"...\n`)
+					if (options.verbose) console.log(`[${LIB}] ► now spawning the compilation command: "${[tsc_executable_absolute_path, ...spawn__params].join(' ')}"...\n`)
 
-					const spawn_options = {
-						env: process.env,
-					}
-					const spawn_instance = spawn(tsc_executable_absolute_path, spawn_params, spawn_options)
+					const spawn__options = {}
+					const spawn__instance = spawn(tsc_executable_absolute_path, spawn__params, spawn__options)
 
 					// listen to events
-					spawn_instance.on('error', err => {
+					spawn__instance.on('error', err => {
 						on_failure('got event "err"', err)
 					})
-					spawn_instance.on('disconnect', () => {
-						logger_state = display_banner_if_1st_output(logger_state)
+					spawn__instance.on('disconnect', () => {
+						logger__state = display_banner_if_1st_output(logger__state)
 						console.log(`[${LIB}] Spawn: got event "disconnect"`)
 					})
-					spawn_instance.on('exit', (code, signal) => {
+					spawn__instance.on('exit', (code, signal) => {
 						// when receiving "exit", io streams may still be open
 						// we do nothing, another event "close" will follow.
 						if (code !== 0) {
-							logger_state = display_banner_if_1st_output(logger_state)
+							logger__state = display_banner_if_1st_output(logger__state)
 							console.log(`[${LIB}] Spawn: got event "exit" with error code "${code}" & signal "${signal}"!`)
 						}
 					})
-					spawn_instance.on('close', (code, signal) => {
+					spawn__instance.on('close', (code, signal) => {
 						if (code === 0)
 							resolve(stdout)
 						else
@@ -113,17 +111,17 @@ export async function compile(tscOptions, files, options) {
 					})
 
 					// for debug purpose only
-					spawn_instance.stdin.on('data', data => {
-						logger_state = display_banner_if_1st_output(logger_state)
+					spawn__instance.stdin.on('data', data => {
+						logger__state = display_banner_if_1st_output(logger__state)
 						console.log(`[${LIB}] got stdin event "data": "${data}"`)
 					})
 					// mandatory for correct error detection
-					spawn_instance.stdin.on('error', err => {
+					spawn__instance.stdin.on('error', err => {
 						on_failure('got stdin event "error"', err)
 					})
 
-					spawn_instance.stdout.on('data', data => {
-						logger_state = display_banner_if_1st_output(logger_state)
+					spawn__instance.stdout.on('data', data => {
+						logger__state = display_banner_if_1st_output(logger__state)
 						String(data).split(EOL).forEach(line => {
 							if (!line.length) return // convenience for more compact output
 
@@ -138,17 +136,17 @@ export async function compile(tscOptions, files, options) {
 						stdout += data
 					})
 					// mandatory for correct error detection
-					spawn_instance.stdout.on('error', err => {
+					spawn__instance.stdout.on('error', err => {
 						on_failure('got stdout event "error"', err)
 					})
 
-					spawn_instance.stderr.on('data', data => {
-						logger_state = display_banner_if_1st_output(logger_state)
+					spawn__instance.stderr.on('data', data => {
+						logger__state = display_banner_if_1st_output(logger__state)
 						String(data).split(EOL).forEach(line => console.log(RADIX + '! ' + line))
 						stderr += data
 					})
 					// mandatory for correct error detection
-					spawn_instance.stderr.on('error', err => {
+					spawn__instance.stderr.on('error', err => {
 						on_failure('got stderr event "error"', err)
 					})
 				})

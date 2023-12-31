@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * TODO change the interface to use named params?
 * TODO add types through comments?
 * TODO typescript peer dep?
+* [chore] removed useless default spawn option
+* [chore] minor internal var renamings
 * ...
 
 
