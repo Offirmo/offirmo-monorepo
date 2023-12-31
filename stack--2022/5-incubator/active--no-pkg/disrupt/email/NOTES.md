@@ -16,3 +16,11 @@ https://www.theregister.com/2023/08/23/email_like_a_pro/
 
 "core platform service"
 https://www.theverge.com/2023/11/8/23951935/google-european-telcos-apple-imessage-digital-markets-act-core-platform-service-gatekeeper-lobbying
+
+https://tech.slashdot.org/story/23/11/27/2242201/meta-designed-platforms-to-get-children-addicted-court-documents-allege
+
+standards
+- RCS https://apple.slashdot.org/story/23/11/16/1812216/apple-to-add-rcs-support-to-iphone-next-year
+- keys
+
+https://tech.slashdot.org/story/23/11/16/141213/proton-mail-ceo-calls-new-address-verification-feature-blockchain-in-a-very-pure-form

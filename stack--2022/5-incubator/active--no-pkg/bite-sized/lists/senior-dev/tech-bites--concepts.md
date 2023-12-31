@@ -25,6 +25,7 @@ auto-scaling and load-shedding
 blocking
 By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
 cache
+caching -- S3 FIFO https://s3fifo.com/
 CAP ACID https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
 capability is an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
 CD https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
@@ -42,6 +43,7 @@ constructor
 context switch
 cost based rate limiting
 courbe d'expertise
+CPU https://cpu.land/
 cron https://onlineornot.com/the-complete-guide-to-cron-jobs
 crunch
 DACI Decision Making Framework “driver, approver, contributor, informed" https://www.atlassian.com/team-playbook/plays/daci
@@ -156,7 +158,8 @@ nommage des fonctions
 npm
 nyan cat
 object
-observability
+observability "is a measure of how well internal states of a system can be inferred from knowledge of its external outputs" https://andydote.co.uk/presentations/index.html
+observability -- opentelemetry https://opentelemetry.io/docs/concepts/observability-primer/
 OKR
 OOP
 optim des || et && effet de bord
@@ -178,7 +181,6 @@ rate-limiting
 rate-limiting -- cost based
 React
 reactive programming
-security -- OWASP top 10 https://owasp.org/www-project-top-ten/
 reactor pattern
 recursion
 register
@@ -190,6 +192,7 @@ rolling deploy
 scaling horizontal
 scope
 Scrum
+security -- OWASP top 10 https://owasp.org/www-project-top-ten/
 semaphore
 semver
 service

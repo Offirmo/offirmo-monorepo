@@ -84,6 +84,7 @@ interface WebsiteEntryPointSpec extends WebPage {
 	// TODO use zod? or tRPC?
 
 	preset?: 'game' | 'landing--app' // TODO clarify
+	// landing https://growth.design/case-studies/landing-page-ux-psychology
 
 	/////// PWA
 	app_categories?: Category[]
