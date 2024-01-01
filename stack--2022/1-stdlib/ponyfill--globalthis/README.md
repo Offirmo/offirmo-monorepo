@@ -38,7 +38,8 @@ This is a trivial TypeScript-compatible [`globalThis`](https://developer.mozilla
 * doesn't alter the environment ([ponyfill](https://ponyfill.com/))
 * compatible with node & browser
 
-TODO review as of 2023 is it still needed???
+**As of 2024, globalThis is widely supported in [browser and node.js](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis#browser_compatibility).**
+This module is likely not needed unless you're targeting IE or old node.js
 
 
 ## Usage
@@ -60,8 +61,8 @@ globalThis.bar = 42
 
 ## Rationale
 
-* `globalThis` is a [TC-39 proposal](https://github.com/tc39/proposal-global)
- which is [already supported by Firefox and Chrome](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis).
+* `globalThis` is a ~~[TC-39 proposal](https://github.com/tc39/proposal-global)
+ which is [already supported by Firefox and Chrome](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis)~~ standard feature.
 * There are existing ponyfills/polyfills [out there](https://github.com/ljharb/globalThis), but they didn't work for me:
   * mine is much simpler: a single TS file of 6 meaningful lines
   * I needed TypeScript
