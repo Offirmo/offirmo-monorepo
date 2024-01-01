@@ -2,13 +2,13 @@
 	"name": "offirmo-monorepo",
 	"description": "A monorepo for all my JavaScript / TypeScript personal projects. So convenient!",
 	"repository": "https://github.com/Offirmo/offirmo-monorepo",
-	"version": "2.5.0",
+	"version": "2.6.0",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 	"private": true,
 
 	"COMMENTS": {
-		"01": "dependencies: Netlify build only installs PROD dependencies, so make sure modules critical for scripts are included!"
+		"01": "dependencies: Netlify 'build' only installs PROD dependencies, so make sure modules critical for scripts are included!"
 	},
 
 	"heroku-run-build-script": false,
