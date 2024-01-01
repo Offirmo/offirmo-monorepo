@@ -17,6 +17,7 @@ NOTE: not much reason to publish this lib since it's supposed to be bundled
 * [chore] micro code style change
 * [chore][breaking] pre-builds now targeting node18/ES2022 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
 * [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
+* [doc] marked as maintained in 2024! Happy new year!
 * ...
 
 ## v3.1.0

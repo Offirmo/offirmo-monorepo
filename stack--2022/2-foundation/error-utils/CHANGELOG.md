@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [chore] supports typescript 4.8
 * [chore] bumped deps
 * [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
+* [doc] marked as maintained in 2024! Happy new year!
 * ...
 
 ## v0.0.1

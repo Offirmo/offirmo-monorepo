@@ -28,7 +28,7 @@
 		  src="https://img.shields.io/badge/license-public_domain-brightgreen.svg">
 	</a>
 	<img alt="maintenance status badge"
-	  src="https://img.shields.io/maintenance/yes/2023.svg">
+	  src="https://img.shields.io/maintenance/yes/2024.svg">
 </p>
 
 This is an **internal** module of [Offirmo’s practical logger](https://practical-logger-js.netlify.app/).
