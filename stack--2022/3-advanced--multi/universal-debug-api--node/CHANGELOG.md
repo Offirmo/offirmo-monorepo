@@ -14,6 +14,7 @@ NOTE: Reminder to increase REVISION when releasing!
 * [feat] fixed compatibility with the latest Typescript version (4.9)
 * [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
 * [doc] marked as maintained in 2024! Happy new year!
+* [chore] removed usage of a globalThis ponyfill, this feature is now widely supported
 * ...
 
 ## v0.2.0

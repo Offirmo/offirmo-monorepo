@@ -1,15 +1,13 @@
-import { getGlobalThis } from '@offirmo/globalthis-ponyfill'
 import { DebugApiRoot, DebugApi } from '@offirmo/universal-debug-api-interface'
 
 import createV1, { OWN_LOGGER_NAME } from './v1/index.js'
 
 
 // ensure the root is present
-const globalThis = getGlobalThis<any>()
 const _p = '_debug'
-globalThis[_p] ||= {}
+;(globalThis as any)[_p] ||= {}
 
-const root: DebugApiRoot = globalThis[_p]
+const root: DebugApiRoot = (globalThis as any)[_p]
 
 //////////// v1 ////////////
 
@@ -71,8 +69,6 @@ export {
 	exposeInternal,
 	overrideHook,
 	addDebugCommand,
-
-	globalThis, // for convenience
 
 	createV1, // special cases
 }

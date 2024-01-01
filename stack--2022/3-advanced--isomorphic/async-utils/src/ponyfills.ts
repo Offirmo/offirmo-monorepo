@@ -1,5 +1,4 @@
 import assert from 'tiny-invariant'
-import { getGlobalThis } from '@offirmo/globalthis-ponyfill'
 
 
 // XXX DO NOT USE
@@ -10,7 +9,7 @@ import { getGlobalThis } from '@offirmo/globalthis-ponyfill'
 // and before the event loop is allowed to continue.
 // It's possible to create an infinite loop if one were to recursively call process.nextTick()
 export const nextTick: (callback: Function, ...args: any[]) => void
-	= getGlobalThis<any>().process?.nextTick
+	= (globalThis as any).process?.nextTick
 	|| function nextTickPonyFill(callback: Function, ...args: any[]): void {
 		// closest possible effect in browser
 		queueMicrotask(() => callback(...args))
@@ -28,7 +27,7 @@ interface Immediate { // credits: node typings
 	_onImmediate: Function // to distinguish it from the Timeout class
 }
 export const setImmediate: (callback: (...args: any[]) => void, ...args: any[]) => Immediate
-	= (getGlobalThis<any>().setImmediate) // <any>: as of @type/node 11 setImmediate is not very well typed, my typing is better IMO
+	= (globalThis as any).setImmediate // <any>: as of @type/node 11 setImmediate is not very well typed, my typing is better IMO
 	|| function setImmediatePonyFill(callback: (...args: any[]) => void, ...args: any[]): any {
 		// closest possible effect. We should also provide clearImmediate()
 		return setTimeout(callback, 0, ...args)
@@ -48,7 +47,7 @@ export interface IdleDeadline {
 }
 export type IdleCallbackId = any
 export const requestIdleCallback: (callback: (info: IdleDeadline) => void, options?: { timeout?: number }) => IdleCallbackId
-	= getGlobalThis<any>().requestIdleCallback?.bind(getGlobalThis()) // yes, the bind is needed
+	= (globalThis as any).requestIdleCallback?.bind(globalThis) // yes, the bind is needed
 	|| function requestIdleCallbackPonyFill(callback: (info: IdleDeadline) => void, { timeout = DEFAULT_IDLE_DELAY_MS }: { timeout?: number } = {}): IdleCallbackId {
 		// inspired from https://developers.google.com/web/updates/2015/08/using-requestidlecallback#checking_for_requestidlecallback
 

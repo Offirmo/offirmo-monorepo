@@ -36,7 +36,6 @@
 	"peerDependencies": {
 	},
 	"dependencies": {
-		"@offirmo/globalthis-ponyfill": "^4",
 		"@offirmo/practical-logger-minimal-noop": "^3",
 		"@offirmo/universal-debug-api-interface": "^1"
 	},

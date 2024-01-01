@@ -29,7 +29,6 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo/globalthis-ponyfill": "^4",
 		"@offirmo/practical-logger-node": "^0",
 		"@offirmo/universal-debug-api-interface": "^1"
 	},
