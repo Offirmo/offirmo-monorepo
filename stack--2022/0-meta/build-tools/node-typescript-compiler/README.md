@@ -27,7 +27,7 @@
 </p>
 
 
-Exposes the TypesScript compiler (tsc) as a node.js module
+**Exposes the [TypesScript compiler (tsc)](https://www.typescriptlang.org/docs/handbook/compiler-options.html) as a node.js module**
 
 Allows you to invoke `tsc` from a node script.
 
@@ -36,12 +36,13 @@ from whenever it can be found, ideally a sibling `../node_modules/typescript` mo
 
 **Example use case:** I'm using this to build several variants of my modules = node / browser, calling `tsc` with slight modifications of `target` and `lib`.
 
-**Note to evaluators:** This module is solidly built (not a hack), it works in a straightforward and reliable way
-and will properly catch and report any possible error.
+**Note to evaluators:** This module is solidly built (not a hack),
+it works in a straightforward and reliable way (no usage of internals)
+and will catch and report all known error paths.
 Usage in production is thus possible.
 
 
-## installation
+## Installation
 
 **node-typescript-compiler** requires the **typescript module** as a sibling,
 not included so you can choose your version.
@@ -116,7 +117,7 @@ await tsc.compile({
 ### Usage notes
 
 This module should be fairly stable.
-Its behaviour is straightforward and all possible error cases should be caught.
+Its behaviour is straightforward and all possible error paths should be caught.
 
 This module will intelligently try to extract the error message from stdout/stderr if possible.
 
@@ -141,4 +142,4 @@ However, that would take a lot of time and effort, and I'm afraid of API changes
 ## See also
 
 * https://www.npmjs.com/package/ntypescript but they have poor doc and don't allow choosing the typescript version (ex. using the unstable "next")
-* https://www.npmjs.com/package/@aivenio/tsc-output-parser parsing the output. must be brittle?
+* https://www.npmjs.com/package/@aivenio/tsc-output-parser parsing the output. Maybe brittle?
