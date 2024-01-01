@@ -28,7 +28,7 @@
 		"fs-extra": "^11",
 		"load-json-file": "^7",
 		"log-symbols": "^6",
-		"meow": "^12",
+		"meow": "^13",
 		"write-json-file": "^5"
 	},
 

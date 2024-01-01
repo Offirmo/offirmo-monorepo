@@ -20,7 +20,7 @@
 		"@offirmo/universal-debug-api-node": "^0",
 		"async": "^3",
 		"cli-progress": "^3",
-		"exiftool-vendored": "^23",
+		"exiftool-vendored": "^24",
 		"fs-extra": "^11",
 		"geo-tz": "^7",
 		"hasha": "^6",

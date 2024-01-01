@@ -16,7 +16,7 @@
 		"@tsconfig/strictest": "^2",
 		"chalk": "^5",
 		"fs-extra": "^11",
-		"meow": "^12",
+		"meow": "^13",
 		"node-typescript-compiler": "*",
 		"semver": "^7",
 		"tiny-invariant": "^1",
