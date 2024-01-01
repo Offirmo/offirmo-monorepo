@@ -1,4 +1,32 @@
-# unit-test-toolbox
+
+<h1 align="center">
+	unit-test-toolbox<br>
+	<a href="https://www.offirmo.net/offirmo-monorepo/0-doc/modules-directory/index.html">
+		<img src="https://www.offirmo.net/offirmo-monorepo/public/offirmos_quality_seal.png" alt="Offirmo’s quality seal" width="333">
+	</a>
+</h1>
+
+<p align="center">
+	<a alt="npm package page"
+		href="https://www.npmjs.com/package/@offirmo/unit-test-toolbox">
+		<img alt="npm badge"
+			src="https://img.shields.io/npm/v/@offirmo/unit-test-toolbox.svg">
+	</a>
+	<a alt="dependencies analysis"
+		href="https://david-dm.org/offirmo/offirmo-monorepo?path=stack--2022%2F0-meta%2Fbuild-tools%2Ftoolbox--unit-tests">
+		<img alt="dependencies badge"
+			src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=stack--2022%2F0-meta%2Fbuild-tools%2Ftoolbox--unit-tests">
+	</a>
+	<a alt="license"
+		href="https://unlicense.org/">
+		<img alt="license badge"
+			src="https://img.shields.io/badge/license-public_domain-brightgreen.svg">
+	</a>
+		<img alt="maintenance status badge"
+			src="https://img.shields.io/maintenance/yes/2024.svg">
+</p>
+
+
 A convenient aggregation of quality npm modules to be used for writing unit tests.
 Just install this module and you get everything needed at once!
 
@@ -37,7 +65,7 @@ The proposed solution:
 
 **:+1: WITH @offirmo/unit-test-toolbox :+1: :sunglasses:**:
 1. install only one module `npm i -D @offirmo/unit-test-toolbox`
-1. write this npm task `"test": "mocha --config node_modules/@offirmo/unit-test-toolbox/mocharc.json node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs '<glob_to_my_tests/**/*spec.js>'"`
+1. write this npm task `"test": "mocha --config node_modules/@offirmo/unit-test-toolbox/mocharc.json node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs '<glob_to_my_tests/**/*spec.js>'"`
 1. keep just @offirmo/unit-test-toolbox up-to-date
 
 

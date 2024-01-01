@@ -46,7 +46,7 @@
 
 		"p1": "node ./dist/src.es2022.esm/test01/index.js",
 
-		"xxtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.cjs 'dist/src.es2022.esm/**/*spec.js'"
+		"xxtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2022.esm/**/*spec.js'"
 
 	},
 
