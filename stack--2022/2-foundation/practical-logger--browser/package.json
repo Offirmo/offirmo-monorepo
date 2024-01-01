@@ -55,7 +55,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@size-limit/preset-small-lib": "^8",
+		"@size-limit/preset-small-lib": "^11",
 		"npm-run-all": "^4"
 	},
 

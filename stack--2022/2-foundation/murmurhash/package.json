@@ -52,11 +52,11 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@size-limit/preset-small-lib": "^8",
+		"@size-limit/preset-small-lib": "^11",
 		"@types/json-stable-stringify": "^1",
 		"@types/murmurhash3js-revisited": "^3",
 		"npm-run-all": "^4",
-		"size-limit": "^8",
+		"size-limit": "^11",
 		"tslib": "^2"
 	}
 }
