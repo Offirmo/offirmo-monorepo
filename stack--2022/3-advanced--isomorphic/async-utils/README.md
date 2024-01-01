@@ -51,3 +51,7 @@ import { elapsed_time_ms, end_of_current_event_loop, next_idle, all_planned_idle
 
 await end_of_current_event_loop()
 ```
+
+
+Notes:
+* https://github.com/astoilkov/main-thread-scheduling is not semantic and not isomorphic

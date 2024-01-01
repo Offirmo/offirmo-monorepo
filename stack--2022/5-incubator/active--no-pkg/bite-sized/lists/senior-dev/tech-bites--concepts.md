@@ -202,6 +202,7 @@ shaving the yak
 shim vs polyfill vs ponyfill
 shrinkwrap
 single source of truth
+Site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
 SLI Service Level Indicator A measurement of how reliable or performant a Capability is. Example: “time it takes to create a ticket”
 SLO Service Level Objective (proactive) A target set on the SLI. Failing to hit the target == unhappy customer! Example: “Jira ticket created in less than 1s”
 SME

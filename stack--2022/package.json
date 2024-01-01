@@ -7,10 +7,6 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"COMMENTS": {
-		"01": "dependencies: Netlify 'build' only installs PROD dependencies, so make sure modules critical for scripts are included!"
-	},
-
 	"heroku-run-build-script": false,
 
 	"engines": {
@@ -163,10 +159,5 @@
 		"typescript": "^5",
 		"typescript-string-enums": "^1",
 		"utimes": "^5"
-	},
-	"resolutions": {
-		"**/react": "^18",
-		"**/react-dom": "^18",
-		"**/react-refresh": "^0"
 	}
 }
