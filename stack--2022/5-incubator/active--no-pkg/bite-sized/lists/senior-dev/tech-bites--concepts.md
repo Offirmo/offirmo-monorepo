@@ -83,6 +83,7 @@ framework -- "a new framework every day"
 function
 function 1st-class object
 functional programming
+GAFAM Google, Amazon, Facebook, Apple, Microsoft
 garbage collector
 git
 global variable
@@ -167,10 +168,12 @@ ownership
 Pair-programming
 perf as a feature
 perfs
+personal data
 pipeline express success / error / next / send
-pitch avec Amazon, Google, Facebook, Twitter
 pointer
 polyfill
+privacy - collect and use someone's info respectfully
+privacy - regulations AND expectations
 promises
 prototypes
 proxy
