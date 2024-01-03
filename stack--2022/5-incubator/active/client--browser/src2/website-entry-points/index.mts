@@ -26,12 +26,12 @@ const WEBAPPⵧTBRPG2023: WebsiteEntryPointSpec = (() => {
 
 	const THING: Thing = {
 		lang: 'en',
-		description: '(Browser game) The simplest RPG ever! (indie game, free to play, no account needed)',
+		description: '[Browser game] The simplest RPG ever! (indie game, free to play, no account needed)',
 		author: AUTHOR,
 		license: 'UNLICENSED', // the source is open but the game itself is not
 	}
 
-	const THING_ONLINE: ThingWithOnlinePresence = {
+	const THINGⵧONLINE: ThingWithOnlinePresence = {
 		...THING,
 
 		urlⵧcanonical: 'https://www.online-adventur.es/apps/the-boring-rpg/',
@@ -40,13 +40,13 @@ const WEBAPPⵧTBRPG2023: WebsiteEntryPointSpec = (() => {
 			// TODO more
 		],
 
-		version: '0.69.1',
+		version: '0.69.1', // TODO auto-link?
 		changelog: 'https://github.com/Offirmo/offirmo-monorepo/blob/main/stack--2022/C-apps--clients/the-boring-rpg/client--browser/CHANGELOG.md',
 		source: 'https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--2022/C-apps--clients/the-boring-rpg/client--browser',
 	}
 
 	const WEB_PAGE: WebPage = {
-		...THING_ONLINE,
+		...THINGⵧONLINE,
 
 		title: 'The Boring RPG',
 		//icon: SVG.createꓽfrom_emoji('⚔️'),
@@ -84,7 +84,7 @@ const WEBAPPⵧTBRPG2023: WebsiteEntryPointSpec = (() => {
 		usesꓽpull_to_refresh: false,
 
 		// Polish
-		colorⵧbackground: 'hsl(337, 16%, 28%)',
+		colorⵧbackground: 'hsl(337, 16%, 28%)', // TODO type
 		colorⵧforeground: 'hsl(42, 100%, 87%)',
 		colorⵧtheme:      'hsl(248,  9%, 17%)',
 

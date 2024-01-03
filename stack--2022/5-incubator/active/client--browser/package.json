@@ -16,8 +16,12 @@
 		"refresh--build-variables": "monoropo-script--update_build_variables  --mode=ts  --inputDir=../../../A-apps--core/the-boring-rpg/state",
 
 		"start:parcel": "PARCEL_AUTOINSTALL=false parcel src/index.html --no-autoinstall --port 8080",
-		"xxcopy-extra--dev": "mkdir -p .parcel && cp -f src/build.json .parcel",
-		"dev": "npm-run-all  clean  refresh--build-variables  --parallel start:parcel"
+		"dev": "npm-run-all  clean  refresh--build-variables  --parallel start:parcel",
+
+		"build:parcel": "PARCEL_AUTOINSTALL=false parcel build src/index.html --no-autoinstall",
+		"copy-extra": "cp -f src/*.txt dist",
+		"xxxensure-size": "size-limit",
+		"build": "npm-run-all  clean  refresh--build-variables  build:parcel  copy-extra"
 	},
 
 	"size-limit": [
