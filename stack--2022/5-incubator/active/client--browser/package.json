@@ -9,19 +9,23 @@
 	"sideEffects": false,
 	"type": "module",
 
+	"source": "src/index.html",
+
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",
 
 		"refresh--entry-points": "npx tsx src2/website-entry-points/index.mts",
 		"refresh--build-variables": "monoropo-script--update_build_variables  --mode=ts  --inputDir=../../../A-apps--core/the-boring-rpg/state",
 
-		"start:parcel": "PARCEL_AUTOINSTALL=false parcel src/index.html --no-autoinstall --port 8080",
+		"start:parcel": "parcel serve src/index.html --port 8080  --lazy",
+		"start:vite":     "vite src/           --port 8080",
 		"dev": "npm-run-all  clean  refresh--build-variables  --parallel start:parcel",
 
-		"build:parcel": "PARCEL_AUTOINSTALL=false parcel build src/index.html --no-autoinstall",
+		"build:parcel": "parcel build src/index.html --public-url ./  --no-cache",
+		"build:vite":     "vite build src/           --base       ./",
 		"copy-extra": "cp -f src/*.txt dist",
 		"xxxensure-size": "size-limit",
-		"build": "npm-run-all  clean  refresh--build-variables  build:parcel  copy-extra"
+		"build": "npm-run-all  clean  refresh--build-variables  build:parcel"
 	},
 
 	"size-limit": [
@@ -57,6 +61,7 @@
 		"@offirmo-private/generator--website-entry-points": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/toolbox--parcel": "*",
+		"@offirmo-private/toolbox--vite": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@size-limit/file": "^11",
 		"npm-run-all": "^4"

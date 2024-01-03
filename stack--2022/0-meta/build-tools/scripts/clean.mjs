@@ -19,9 +19,10 @@ const cli = meow('clean', {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const PKG_PATH = process.cwd()
-
 const PKG_JSON = JSON.parse(await fs.readFile(path.join(PKG_PATH, 'package.json')))
 const PKG_NAME = PKG_JSON.name
+
+const MONOREPO_ROOT_PATH = path.join(__dirname, '../../..')
 
 /////////////////////
 
@@ -42,7 +43,7 @@ Promise.all(cli.input
 					fs.remove(path.join(PKG_PATH, 'node_modules/.cache')),
 					fs.remove(path.join(PKG_PATH, '.parcel')), // parcel 1
 					fs.remove(path.join(PKG_PATH, '.parcel-cache')), // parcel 2
-					fs.remove(path.join(__dirname, '../../../.parcel-cache')), // parcel 2 shared cache which causes heaps of troubles in monorepos
+					fs.remove(path.join(MONOREPO_ROOT_PATH, '.parcel-cache')), // parcel 2 shared cache which causes heaps of troubles in monorepos
 				])
 
 			default:

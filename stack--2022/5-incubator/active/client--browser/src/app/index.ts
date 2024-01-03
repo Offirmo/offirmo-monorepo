@@ -1,6 +1,7 @@
 import { asap_but_out_of_immediate_execution } from '@offirmo-private/async-utils'
 import { VERSION, BUILD_DATE } from '../build.ts'
 
+//import importꓽglob from './utils/import-glob.ts'
 //import { CHANNEL } from './services/channel'
 
 /////////////////////////////////////////////////
@@ -12,6 +13,8 @@ console.info(`%c The Boring RPG %cv${VERSION}%c${BUILD_DATE}`,
 )
 
 /////////////////////////////////////////////////
+
+// .meta.glob
 
 asap_but_out_of_immediate_execution(async () => {
 	console.log('%c——————— end of immediate, synchronous, non-import code. ———————', "font-weight: bold;")

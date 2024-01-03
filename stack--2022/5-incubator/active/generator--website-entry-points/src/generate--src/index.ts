@@ -38,6 +38,14 @@ export {
 }
 `.trim()
 
+
+// 50% building / 50% marketing
+// security / safety
+// reliability what could go wrong? I would I know
+// features
+
+
+
 function generate(spec: Immutable<WebsiteEntryPointSpec>): EntryPoints {
 	return {
 		'./app/consts.ts': `

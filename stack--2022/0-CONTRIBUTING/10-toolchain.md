@@ -47,15 +47,15 @@ TODO evaluate [self referencing in Typescript](https://www.typescriptlang.org/do
 
 
 
-## bundler / compiler
+## web bundler / compiler
 https://parceljs.org/
 
-TODO evaluate vite
+White not Vite?
+* evaluated 2024/01 Vite 5 ~works but not as good as Parcel:
+* CSS resolver can't resolve from packages (like npm:)
+* needs a "main" in package.json
+* has a "root" preventing from serving files upper in the monorepo
 
-## web
-https://parceljs.org/
-
-TODO evaluate vite
 
 
 ## environment manager

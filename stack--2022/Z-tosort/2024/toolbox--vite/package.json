@@ -1,0 +1,25 @@
+{
+	"name": "@offirmo-private/toolbox--vite",
+	"version": "0.0.1",
+	"description": "An aggregation of npm modules related to the vite frontend tool",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+
+	"engines": {
+		"npm": ">=3"
+	},
+
+	"sideEffects": true,
+
+	"dependencies": {
+		"@vitejs/plugin-react": "^4",
+		"vite": "^5",
+		"vite-plugin-checker": "latest"
+	},
+	"optionalDependencies": {
+	},
+
+	"scripts": {
+		"test": "echo \"* @offirmo/toolbox--xyz: no need for unit tests for this kind of repo (meta)\""
+	}
+}
