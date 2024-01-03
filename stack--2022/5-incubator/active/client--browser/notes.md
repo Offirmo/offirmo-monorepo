@@ -1,4 +1,16 @@
 
+```bash
+inc1
+inc2
+yarn clean
+yarn refresh--entry-points
+yarn refresh--build-variables
+```
+
+
+
+
+
 		"@offirmo-private/async-utils": "^0",
 		"@offirmo-private/ensure-device-uuid-browser": "^0",
 		"@offirmo-private/favicon-notifications": "^0",

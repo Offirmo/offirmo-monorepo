@@ -4,6 +4,7 @@
 1st practice what you preach
 5 Harsh Truths for Success from Linus Torvalds https://medium.com/codex/5-harsh-truths-from-linus-torvalds-406ab20cea02
 5 regrets of dying
+6 What’s (brand) = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
 80/20 rule (Pareto)
 a wisdom for left may not be valid for right
 AAA TODO https://flinkliv.com/
@@ -38,7 +39,6 @@ corporate slave (but also never achieving anything?)
 courses après le repas
 creativity begins at the edge: Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
 critical thinking +++  https://strategyu.co/critical-thinking/
-critical thinking https://strategyu.co/critical-thinking/
 Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 differences: introvert/extrovert
@@ -47,6 +47,7 @@ don't expect perfection -> trigger self-consciousness = counter-productive
 doublespeak: People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
 drive by
 due diligence
+Effective altruism
 effet projecteur
 effet rétroviseur
 Eisenhower's Urgent/Important https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
@@ -156,6 +157,7 @@ put into words
 Pyramid Principle https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/
 question authority
 race to the bottom
+Reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
 resource Curse: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources.
 RICE Reach Impact Confidence Estimate
 ring theory: - The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.

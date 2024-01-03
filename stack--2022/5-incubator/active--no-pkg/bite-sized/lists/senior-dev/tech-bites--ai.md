@@ -1,12 +1,14 @@
 AI - Artificial intelligence = intentionally vague term
 AI 50 2023 https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
 AI winter
-BLOOM = BigScience Large Open-science Open-access Multilingual Language Model =
+bias
+BLOOM = BigScience Large Open-science Open-access Multilingual Language Model = deprecated former big model
 chatbots = the reason why AI exploded in 2023
-dataset
+dataset  https://www.fatml.org/media/documents/datasheets_for_datasets.pdf
 developer vs sociotechnic vs project organizer
 diffusers
 embeddings
+fine-tuning
 generative AI
 GLUE language understanding benchmark
 GPT
@@ -15,10 +17,13 @@ Hugging Face = "the GitHub of machine learning" = the collaboration platform for
 huggingface.co "space"
 inference
 langchain
+latency
 LLMs - large language models
 ML - machine learning https://en.wikipedia.org/wiki/Machine_learning
+moat - We have no moat https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
 models https://huggingface.co/docs/hub/models = some sort of neural network / brain
 NLP Natural Language Processing
+SageMaker (AWS)
 sociotechnic = skilled at analyzing the interaction of technology and society long-term: lawyers, ethicists, sociologists, or rights advocates
 Stable Diffusion
 super alignment
@@ -40,4 +45,7 @@ Transfer learning = a technique where a model is first pre-trained on a data-ric
 Transformer model
 transformers "a new type of NLP model that demolished the reading comprehension abilities of both humans and the best AI incumbent at the time"
 Turing test
-We have no moat https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
+attention
+agents
+superintelligence
+singularity

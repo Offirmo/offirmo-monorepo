@@ -22,6 +22,7 @@ asynchrone
 atomic
 authentication
 auto-scaling and load-shedding
+BDD - Behavior-Driven Development https://cucumber.io/school/   Discovery -> Formulation -> Automation
 blocking
 By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
 cache
@@ -166,6 +167,7 @@ OOP
 optim des || et && effet de bord
 ownership
 Pair-programming
+PD Personal Data
 perf as a feature
 perfs
 personal data
@@ -230,6 +232,7 @@ tree walk
 tuckman model
 typecast
 types
+UGC User Generated Content
 uptime
 use boring technology
 use strict

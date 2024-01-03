@@ -15,6 +15,7 @@
 		"@offirmo-private/parcel-config--default": "*",
 		"@parcel/config-default": "^2",
 		"@parcel/core": "^2",
+		"@parcel/reporter-bundle-analyzer": "^2",
 		"parcel": "^2",
 		"process": "^0"
 	},
