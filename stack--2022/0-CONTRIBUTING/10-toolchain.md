@@ -50,9 +50,16 @@ TODO evaluate [self referencing in Typescript](https://www.typescriptlang.org/do
 ## web bundler / compiler
 https://parceljs.org/
 
+Why Parcel?
+* simplest, does everything
+* BUT 2024 "@parcel/package-manager: ES module dependencies are experimental.
+* BUT 2024 many bugs: import from html, ts resolver (mitigated)
+
+
 White not Vite?
 * evaluated 2024/01 Vite 5 ~works but not as good as Parcel:
-* CSS resolver can't resolve from packages (like npm:)
+* rollup (embedded) has trouble with default exports https://stackoverflow.com/questions/58246998/mixing-default-and-named-exports-with-rollup
+* CSS resolver can't resolve from packages npm:xyz
 * needs a "main" in package.json
 * has a "root" preventing from serving files upper in the monorepo
 

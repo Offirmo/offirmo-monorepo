@@ -20,6 +20,8 @@ Inventory
 
 Level of wealthiness
 
+https://jaredhecht.com/2023/11/16/decisive-and-courageous/
+
 
 Base
 - barn

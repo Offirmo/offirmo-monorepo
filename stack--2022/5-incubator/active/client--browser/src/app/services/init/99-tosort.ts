@@ -9,7 +9,6 @@ import logger from '../logger.ts'
 
 async function init(): Promise<void> {
 
-
 	if (false) {
 		setTimeout(() => {
 			console.group('Testing log levels...')

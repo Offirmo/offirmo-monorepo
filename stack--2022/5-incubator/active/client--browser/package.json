@@ -17,11 +17,11 @@
 		"refresh--entry-points": "npx tsx src2/website-entry-points/index.mts",
 		"refresh--build-variables": "monoropo-script--update_build_variables  --mode=ts  --inputDir=../../../A-apps--core/the-boring-rpg/state",
 
-		"start:parcel": "parcel serve src/index.html --port 8080  --lazy",
+		"start:parcel": "parcel serve src/index.html --port 8080  --lazy  --no-autoinstall",
 		"start:vite":     "vite src/           --port 8080",
 		"dev": "npm-run-all  clean  refresh--build-variables  --parallel start:parcel",
 
-		"build:parcel": "parcel build src/index.html --public-url ./  --no-cache",
+		"build:parcel": "parcel build src/index.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
 		"build:vite":     "vite build src/           --base       ./",
 		"copy-extra": "cp -f src/*.txt dist",
 		"xxxensure-size": "size-limit",
@@ -61,7 +61,6 @@
 		"@offirmo-private/generator--website-entry-points": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/toolbox--parcel": "*",
-		"@offirmo-private/toolbox--vite": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@size-limit/file": "^11",
 		"npm-run-all": "^4"

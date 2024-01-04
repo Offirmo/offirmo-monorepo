@@ -69,3 +69,6 @@ https://developer.chrome.com/docs/multidevice/webview/
 
 ## Payment!!
 TODO https://developer.mozilla.org/en-US/docs/Web/API/Payment_Handler_API
+
+## URLs
+https://blog.jim-nielsen.com/2023/examples-of-great-urls/
