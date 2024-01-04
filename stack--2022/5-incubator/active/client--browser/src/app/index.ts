@@ -1,4 +1,6 @@
 import { asap_but_out_of_immediate_execution } from '@offirmo-private/async-utils'
+import assert from 'tiny-invariant'
+
 import { VERSION, BUILD_DATE } from '../build.ts'
 
 //import { CHANNEL } from './services/channel'
@@ -15,13 +17,13 @@ console.info(`%c The Boring RPG %cv${VERSION}%c${BUILD_DATE}`,
 
 import logger from './services/logger.ts'
 import initsⵧservices from './services/init/*.ts'
-import initsⵧview from './view/init/*.ts'
+import initsⵧview from './view/init/*.tsx'
 
 asap_but_out_of_immediate_execution(async () => {
 	console.log('%c——————— end of immediate, synchronous, non-import code. ———————', "font-weight: bold;")
-	//console.log({ initsⵧservices,	initsⵧview })
 
 	// order is important! Timing is non-trivial!
+	assert(Object.keys(initsⵧservices).length > 0, 'no services/init found!')
 	await Object.keys(initsⵧservices).sort().reduce(async (acc, key) => {
 		await acc
 		logger.group(`services/init "${key}"`)
@@ -33,6 +35,7 @@ asap_but_out_of_immediate_execution(async () => {
 	}, Promise.resolve())
 
 	// order is important! Timing is non-trivial!
+	assert(Object.keys(initsⵧview).length > 0, 'no view/init found!')
 	await Object.keys(initsⵧview).sort().reduce(async (acc, key) => {
 		await acc
 		logger.group(`services/view "${key}"`)

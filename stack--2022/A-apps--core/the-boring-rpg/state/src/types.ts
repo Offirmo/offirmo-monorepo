@@ -98,8 +98,10 @@ interface State extends BaseRootState<UState, TState> {
 export {
 	GainType,
 	type Adventure,
+
 	type UState,
 	type TState,
+
 	type State,
 }
 

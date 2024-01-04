@@ -7,7 +7,7 @@ function getꓽSEC(parent?: TBRSoftExecutionContext): TBRSoftExecutionContext {
 	return decorate_SEC(
 		(parent || getRootSEC())
 			.createChild()
-			.setLogicalStack({module: LIB})
+			.setLogicalStack({ module: LIB })
 			.setAnalyticsAndErrorDetails({
 				sub_product: LIB,
 			})
