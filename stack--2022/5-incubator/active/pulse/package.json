@@ -1,0 +1,18 @@
+{
+	"name": "@offirmo-private/pulse",
+	"description": "Subscribe to a periodic pulse",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"source": "src/index.ts",
+
+	"dependencies": {
+		"@offirmo-private/async-utils": "^0",
+		"@offirmo-private/timestamps": "^0",
+		"@offirmo-private/ts-types": "^0",
+		"memoize-one": "^6",
+		"tiny-invariant": "^1"
+	}
+}

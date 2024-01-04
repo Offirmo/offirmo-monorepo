@@ -12,14 +12,14 @@ import { LIB, DEBUG, DEFAULT_MAX_FPS } from './consts'
 ////////////////////////////////////
 
 function _get_updated_cache(state: Immutable<State>): State['_cache'] {
-	const MIN_PERIOD_MS = Math.trunc(1000. / state.max_fps)
+	const MIN_PERIOD‿MS = Math.trunc(1000. / state.max_fps)
 
 	return {
 		min_period_ms: Math.max(
-			MIN_PERIOD_MS,
+			MIN_PERIOD‿MS,
 			Math.min(
 				Infinity,
-				...Object.keys(state.subscriptions).map(id => state.subscriptions[id].options.ideal_period_ms)
+				...Object.keys(state.subscriptions).map(id => state.subscriptions[id].options.ideal_period‿ms)
 			)
 		),
 	}
@@ -41,8 +41,8 @@ export function create(): Immutable<State> {
 
 		// for debug
 		pulse_count: 0,
-		tms_last_activity: 0,
-		tms_last_activity_check: 0,
+		last_activity‿tms: 0,
+		last_activity_check‿tms: 0,
 	}
 }
 
@@ -73,7 +73,7 @@ export function subscribe_to_pulse(state: Immutable<State>, id: string, callback
 }
 
 export function unsubscribe_from_pulse(state: Immutable<State>, id: string): Immutable<State> {
-	assert(state.subscriptions[id], `unsubscribe_from_pulse(): id "${id}" should already exist!`)
+	assert(state.subscriptions[id], `unsubscribe_from_pulse(): id "${id}" should exist!`)
 
 	const s = {
 		...state.subscriptions,
@@ -100,24 +100,24 @@ export function unsubscribe_from_pulse(state: Immutable<State>, id: string): Imm
 
 export function consider_pulse(state: Immutable<State>, browser_state: {
 	is_connected_to_a_network: boolean
-	is_page_visible: boolean
+	is_ui_visible: boolean
 }, now_tms: number, debug_id: string): Immutable<State> {
 	// TODO if (window.oᐧextra?.flagꓽis_paused) return
 
-	const { tms_last_activity } = state
-	const elapsed_since_last_activity_ms = now_tms - tms_last_activity
+	const { last_activity‿tms } = state
+	const elapsed_since_last_activity_ms = now_tms - last_activity‿tms
 	state = {
 		...state,
-		tms_last_activity: now_tms,
+		last_activity‿tms: now_tms,
 		pulse_count: state.pulse_count + 1,
 	}
 
 	if (DEBUG) state.logger.groupEnd()
-	if (DEBUG) state.logger.group(`——————— [${LIB}] candidate pulse #${state.pulse_count} / ${tms_last_activity} → ${now_tms} (+${ (elapsed_since_last_activity_ms / 1000.).toFixed(3) }s) [${debug_id}] ———————`)
+	if (DEBUG) state.logger.group(`——————— [${LIB}] candidate pulse #${state.pulse_count} / ${last_activity‿tms} → ${now_tms} (+${ (elapsed_since_last_activity_ms / 1000.).toFixed(3) }s) [${debug_id}] ———————`)
 	if (DEBUG) state.logger.log({ browser_state })
 	if (DEBUG) asap_but_out_of_current_event_loop(state.logger.groupEnd)
 
-	const elapsed_since_last_check_ms = now_tms - state.tms_last_activity_check
+	const elapsed_since_last_check_ms = now_tms - state.last_activity_check‿tms
 	const has_enough_time_passed = elapsed_since_last_check_ms >= state._cache.min_period_ms
 	if (!has_enough_time_passed) {
 		if (DEBUG) console.log(`(not enough time has passed: ${elapsed_since_last_check_ms} < ${state._cache.min_period_ms})`)
@@ -125,7 +125,7 @@ export function consider_pulse(state: Immutable<State>, browser_state: {
 	else {
 		state = {
 			...state,
-			tms_last_activity_check: now_tms - now_tms % state._cache.min_period_ms
+			last_activity_check‿tms: now_tms - now_tms % state._cache.min_period_ms
 		}
 		let has_subscription_mutations = false // so far
 
@@ -138,15 +138,15 @@ export function consider_pulse(state: Immutable<State>, browser_state: {
 				...state.subscriptions[id]
 			}
 
-			if (options.visual && !browser_state.is_page_visible)
+			if (options.visual && !browser_state.is_ui_visible)
 				return
 			if (options.cloud && !browser_state.is_connected_to_a_network)
 				return
 
 			const elapsed_since_last_ms = now_tms - last_call_tms
-			const rem = now_tms % options.ideal_period_ms
+			const rem = now_tms % options.ideal_period‿ms
 
-			const has_enough_time_passed = elapsed_since_last_ms >= options.ideal_period_ms
+			const has_enough_time_passed = elapsed_since_last_ms >= options.ideal_period‿ms
 
 			if (DEBUG) console.log(`checking subscription "${id}"…`, { options, last_call_tms, now_tms, elapsed_since_last_ms, rem, has_enough_time_passed })
 
