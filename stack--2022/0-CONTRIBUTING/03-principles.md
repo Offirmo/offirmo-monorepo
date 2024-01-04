@@ -6,8 +6,11 @@ Unless it's more convenient for some reasons, this repo strives to adhere to tho
 * readability is the top desirable code property
   * ["Code for the human, not the computer"](https://read.engineerscodex.com/p/7-simple-habits-of-the-top-1-of-engineers)
   * TypeScript https://www.typescriptlang.org/
+* single source of truth
+  * flux architecture
 * problems broken down in manageable components = separation of concerns
 * immutability if possible
+* functional programming
 * command / query separation
 * compatible with event sourcing (for offline first with server replay when back online)
 * mobile first

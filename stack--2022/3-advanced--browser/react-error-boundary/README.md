@@ -16,7 +16,7 @@ import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
 
 WARNING !!!!
-[React error boundaries](https://fb.me/react-error-boundaries) are NOT really behaving like a try/catch.
+[React error boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary) are NOT really behaving like a try/catch.
 You MAY have to use an intermediate component to really catch errors. Ex.
 
 ```jsx
@@ -29,7 +29,7 @@ import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
 // Will work:
 <ErrorBoundary name={'foo'}>
-	{dangerousFunctionThatThrow.bind(null, x)}
+	{dangerousFunctionThatThrow.bind(null, x)} // ErrorBoundary will detect that the child is a function and call it inside a try/catch
 </ErrorBoundary>
 
 or

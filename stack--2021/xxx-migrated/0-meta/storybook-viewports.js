@@ -1,3 +1,5 @@
+// Note: https://viewports.fyi
+
 // https://storybook.js.org/docs/react/essentials/viewport
 
 const KNOWN_PHONES = {

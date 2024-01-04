@@ -101,6 +101,7 @@
 		"async": "^3",
 		"bowser": "^2",
 		"boxen": "^7",
+		"browserslist": "^4",
 		"chai": "^5",
 		"chai-as-promised": "^7",
 		"chai-fetch-mock": "^3",

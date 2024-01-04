@@ -10,9 +10,9 @@ import { DEMO_MONSTER_01 } from '@tbrpg/logic-monsters'
 
 /////////////////////
 
-import { State, Adventure } from './types.js'
-import { cleanup } from './migrations/index.js'
-import { getꓽSEC } from './services/sec.js'
+import { State, Adventure } from '../types.js'
+import { cleanup } from '../migrations/index.js'
+import { getꓽSEC } from '../services/sec.js'
 
 /////////////////////
 

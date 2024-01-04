@@ -2,10 +2,11 @@
 
 import { expect } from 'chai'
 
-import { LIB } from './consts.js'
-import { getꓽSEC } from './services/sec.js'
-import { DEMO_STATE } from './examples.js'
-import { migrate_to_latest } from './migrations/index.js'
+import { LIB } from '../consts.js'
+import { getꓽSEC } from '../services/sec.js'
+import { migrate_to_latest } from '../migrations/index.js'
+
+import { DEMO_STATE } from './index.js'
 
 /////////////////////
 
