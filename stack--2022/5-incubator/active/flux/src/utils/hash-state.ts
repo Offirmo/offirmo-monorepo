@@ -1,6 +1,6 @@
-import { hashꓽobjectⵧmurmur128 } from '@offirmo-private/murmurhash'
 import { Immutable } from '@offirmo-private/ts-types'
+import MurmurHash from '@offirmo-private/murmurhash'
 
 export function hashꓽstate(state: Immutable<Object>): string {
-	return hashꓽobjectⵧmurmur128(state)
+	return 'mm:' + MurmurHash.v3.x64ⵧ128.hashꓽobject(state)
 }

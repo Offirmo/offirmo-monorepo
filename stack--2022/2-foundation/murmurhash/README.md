@@ -3,37 +3,18 @@
 # THIS HASH ALGO IS ***NON-CRYPTOGRAPHIC***!!
 ## Usage
 
-### Node
 
-```js
-const create = require('@offirmo-private/murmurhash')
-const { TextEncoder } = require('util')
+```ts
+import { injectꓽtext_encoder } from '@offirmo-private/murmurhash'
 
-let Murmur = create(TextEncoder)
-const result = Murmur.v3.x64.hash_string_to_128(str)
-                             hash_object_to_128(x)
-```
+import { TextEncoder } from 'node:util' // node.js only
+injectꓽtext_encoder(TextEncoder) // node & browser
 
-### Browser
 
-```js
-import create from '@offirmo-private/murmurhash'
+import MurmurHash from '@offirmo-private/murmurhash'
 
-let Murmur = create(TextEncoder)
-const result = Murmur.v3.x64.hash_string_to_128(str)
-                             hash_object_to_128(x)
-```
-
-### Common
-
-```js
-import { inject_text_encoder } from '@offirmo-private/murmurhash'
-
-inject_text_encoder(TextEncoder)
-
-let Murmur = create()
-const result = Murmur.v3.x64.hash_string_to_128(str)
-                             hash_object_to_128(x)
+const result = MurmurHash.v3.x64ⵧ128.hashꓽstring(str)
+                                     hashꓽobject(x)
 ```
 
 

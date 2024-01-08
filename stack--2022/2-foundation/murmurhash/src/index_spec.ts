@@ -1,7 +1,7 @@
 import { TextEncoder } from 'node:util'
 import { expect } from 'chai'
 
-import create from './index.js'
+import MurmurHash from './index.js'
 
 
 describe('@offirmo-private/murmurhash', function() {
@@ -10,7 +10,7 @@ describe('@offirmo-private/murmurhash', function() {
 
 		describe('x64', function() {
 
-			describe('hash_string_to_128()', function() {
+			describe('hashꓽstringⵧ128()', function() {
 
 				// https://cimi.io/murmurhash3js-revisited/
 				const TEST_CASES = {
@@ -23,9 +23,7 @@ describe('@offirmo-private/murmurhash', function() {
 				Object.entries(TEST_CASES).forEach(([str, expected_hash], index) => {
 
 					it(`should work - #${index}`, () => {
-						const Murmur = create(TextEncoder)
-
-						const result = Murmur.v3.x64.hash_string_to_128(str)
+						const result = MurmurHash.v3.x64ⵧ128.hashꓽstring(str, TextEncoder)
 						expect(result).to.be.a('string')
 						expect(result).to.have.lengthOf(32)
 						expect(result).to.equal(expected_hash)
@@ -33,26 +31,22 @@ describe('@offirmo-private/murmurhash', function() {
 				})
 			})
 
-			describe('hash_object_to_128()', function() {
+			describe('hashꓽobjectⵧ128()', function() {
 
 				it('should work', () => {
-					const Murmur = create(TextEncoder)
-
-					const result = Murmur.v3.x64.hash_object_to_128({foo: 'bar'})
+					const result = MurmurHash.v3.x64ⵧ128.hashꓽobject({foo: 'bar'}, TextEncoder)
 					expect(result).to.be.a('string')
 					expect(result).to.have.lengthOf(32)
 					expect(result).to.equal('7e22688c5fd1e9b5dd3bed16d829db6a') // self seen
 				})
 
 				it('should be stable', () => {
-					const Murmur = create(TextEncoder)
-
-					const result1 = Murmur.v3.x64.hash_object_to_128({foo: 42, bar: 'baz'})
+					const result1 = MurmurHash.v3.x64ⵧ128.hashꓽobject({foo: 42, bar: 'baz'}, TextEncoder)
 					expect(result1).to.be.a('string')
 					expect(result1).to.have.lengthOf(32)
 					expect(result1).to.equal('ba719d7f1749a82c0f13b573fc79a49d') // self seen
 
-					const result2 = Murmur.v3.x64.hash_object_to_128({bar: 'baz', foo: 42})
+					const result2 = MurmurHash.v3.x64ⵧ128.hashꓽobject({bar: 'baz', foo: 42}, TextEncoder)
 					expect(result2).to.be.a('string')
 					expect(result2).to.have.lengthOf(32)
 					expect(result2).to.equal('ba719d7f1749a82c0f13b573fc79a49d') // self seen
