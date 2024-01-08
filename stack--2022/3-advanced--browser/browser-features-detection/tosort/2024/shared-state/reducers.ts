@@ -58,6 +58,7 @@ export function log_anything(state: Immutable<State>, log_line: string): Immutab
 	}
 	return _log(state, log_line)
 }
+
 /*
 export function on_visibility_change(state: Immutable<State>): Immutable<State> {
 	state = {
@@ -107,4 +108,3 @@ export function report_data_synced_with_the_cloud(state: Immutable<State>, id: s
 		revision: state.revision + 1,
 	}
 }
-

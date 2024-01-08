@@ -7,7 +7,6 @@
 	"private": true,
 
 	"sideEffects": true,
-	"exports": "./src/index.js",
 	"source": "src/index.js",
 
 	"dependencies": {

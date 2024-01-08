@@ -1,16 +1,7 @@
 # features-detection-browser
 
-## rationale
+MUST be semantic!!
 
-### has_any_hover()
-
-Tooltips are a nice addition but don't play well with touch, especially on iOs.
-
-### uses_tab() TODO
-
-### has_onscreen_keyboard() (XXX TODO)
-
-Those sliding keyboards may hide the input fields if not taken into account
 
 
 ## references
