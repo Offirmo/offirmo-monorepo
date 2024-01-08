@@ -118,7 +118,7 @@
 		"eslint-plugin-mocha": "^10",
 		"exiftool-vendored": "^24",
 		"fraction.js": "^4",
-		"geo-tz": "^7",
+		"geo-tz": "^8",
 		"hasha": "^6",
 		"howler": "^2",
 		"icepick": "^2",

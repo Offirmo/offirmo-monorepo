@@ -1,5 +1,11 @@
 
-## Casing
+
+## Files
+
+
+## Code
+
+### case
 In order to maximize readability, this repo uses snake_case:
 ```
 function square_root(x: number): number { ...
@@ -15,10 +21,10 @@ Exception: since CamelCase is commonly used in JS,
 we use Camelcase for the external API of **public modules** (= published to npm).
 
 
-## naming
+### naming
 In order to maximize readability, a few naming conventions:
 
-### BEM-inspired
+#### BEM-inspired
 Block / Element / Modifier
 https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
 

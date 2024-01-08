@@ -42,7 +42,7 @@ async function init(): Promise<void> {
 	import { overrideHook } from '@offirmo/universal-debug-api-browser'
 	import get_loader from '@offirmo-private/iframe--loading'
 
-	import { inject_text_encoder } from '@tbrpg/flux'
+	import { injectꓽtext_encoder } from '@tbrpg/flux'
 
 	import init_analytics from './services/analytics'
 	import init_analytics_ga4 from './services/analytics-ga4'
@@ -66,7 +66,7 @@ async function init(): Promise<void> {
 		],
 	})
 
-	inject_text_encoder(TextEncoder)
+	injectꓽtext_encoder(TextEncoder)
 	init_cordova()
 	init_analytics()
 	init_analytics_ga4()

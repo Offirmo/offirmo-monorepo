@@ -22,7 +22,7 @@
 		"cli-progress": "^3",
 		"exiftool-vendored": "^24",
 		"fs-extra": "^11",
-		"geo-tz": "^7",
+		"geo-tz": "^8",
 		"hasha": "^6",
 		"json-stable-stringify": "^1",
 		"lodash": "^4",

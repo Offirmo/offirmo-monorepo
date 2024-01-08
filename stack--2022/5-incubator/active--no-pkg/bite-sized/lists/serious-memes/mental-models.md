@@ -53,6 +53,7 @@ effet rétroviseur
 Eisenhower's Urgent/Important https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
 elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
+emotionally secure https://www.cnbc.com/2024/01/03/harvard-psychologist-if-you-answer-yes-to-any-of-these-questions-youre-more-emotionally-secure-than-most-people.html
 English
 every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
