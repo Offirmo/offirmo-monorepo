@@ -1,9 +1,11 @@
 import { XError, XXError } from './types.js'
 
+/////////////////////////////////////////////////
+
 // order is important!
 // it may be used for display by other libs
 
-export const STRICT_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
+const STRICT_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
 	// standard fields
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/prototype
 	'name', // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/name
@@ -12,7 +14,7 @@ export const STRICT_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
 	        // see also https://devblogs.microsoft.com/typescript/announcing-typescript-4-8/#lib-d-ts-updates
 ])
 
-export const QUASI_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
+const QUASI_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
 	// first inherit from previous
 	...STRICT_STANDARD_ERROR_FIELDS,
 
@@ -25,7 +27,7 @@ export const QUASI_STANDARD_ERROR_FIELDS = new Set<keyof XError>([
 	'suppressed',
 ])
 
-export const COMMON_ERROR_FIELDS = new Set<keyof XError>([
+const COMMON_ERROR_FIELDS = new Set<keyof XError>([
 	// first inherit from previous
 	...QUASI_STANDARD_ERROR_FIELDS,
 
@@ -44,7 +46,7 @@ export const COMMON_ERROR_FIELDS = new Set<keyof XError>([
 
 // TODO node has a lot of other fields https://nodejs.org/api/errors.html
 
-export const COMMON_ERROR_FIELDS_EXTENDED = new Set<keyof XXError>([
+const COMMON_ERROR_FIELDS_EXTENDED = new Set<keyof XXError>([
 	// first inherit from previous
 	...COMMON_ERROR_FIELDS,
 
@@ -56,3 +58,12 @@ export const COMMON_ERROR_FIELDS_EXTENDED = new Set<keyof XXError>([
 	// - triage field?
 	// - timestamp?
 ])
+
+/////////////////////////////////////////////////
+
+export {
+	STRICT_STANDARD_ERROR_FIELDS,
+	QUASI_STANDARD_ERROR_FIELDS,
+	COMMON_ERROR_FIELDS,
+	COMMON_ERROR_FIELDS_EXTENDED,
+}

@@ -1,40 +1,11 @@
-import { XXError } from './types.js'
+import { XXError, isꓽError } from './types.js'
 import { COMMON_ERROR_FIELDS_EXTENDED } from './fields.js'
 
+/////////////////////////////////////////////////
+
 const DEBUG = false
-const WARN = true
-const _demo_error = new Error('[Test!]')
+const WARN_NON_ERROR_THROWN = true
 
-export function hasErrorShape(err_like: any) {
-	if (typeof err_like?.message !== 'string' || !err_like?.message) {
-		DEBUG && console.error('hasErrorShape() BAD message', {
-			type: typeof err_like?.message,
-			expected_type: typeof _demo_error?.message,
-			err_like,
-		})
-		return false
-	}
-
-	if (typeof err_like?.name !== 'string' || !err_like?.name) {
-		DEBUG && console.error('hasErrorShape() BAD name', {
-			type: typeof err_like?.name,
-			expected_type: typeof _demo_error?.name,
-			err_like,
-		})
-		return false
-	}
-
-	if (typeof err_like?.stack !== 'string') {
-		DEBUG && console.error('hasErrorShape() BAD stack', {
-			type: typeof err_like?.stack,
-			expected_type: typeof _demo_error?.stack,
-			err_like,
-		})
-		return false
-	}
-
-	return true
-}
 
 // Normalize any thrown object into a true, normal error.
 // NOTE: will *always* recreate the error. TODO evaluate if possible to improve?
@@ -45,17 +16,17 @@ export function hasErrorShape(err_like: any) {
 // - seen: frozen
 // - seen: non-enumerable props
 // So we want to ensure a true, safe, writable error object.
-export function normalizeError(err_like: Readonly<Partial<Error>> | unknown = undefined as unknown, { alwaysRecreate = false }: { alwaysRecreate?: boolean } = {}): XXError {
-	const has_minimal_error_shape = hasErrorShape(err_like)
+function normalizeError(err_like: Readonly<Partial<Error>> | unknown = undefined as unknown, { alwaysRecreate = false }: { alwaysRecreate?: boolean } = {}): XXError {
+	const hasꓽminimal_error_shape = isꓽError(err_like)
 
 	// TODO should we normalize "cause" as well?
 
-	if (has_minimal_error_shape && !alwaysRecreate) {
+	if (hasꓽminimal_error_shape && !alwaysRecreate) {
 		// shortcut for most of the time
 		return err_like as any
 	}
-	if (!has_minimal_error_shape) {
-		WARN && console.warn(`WARNING: normalizeError() saw a non-Error thing thrown!`, { err_like })
+	if (!hasꓽminimal_error_shape) {
+		WARN_NON_ERROR_THROWN && console.warn(`WARNING: normalizeError() saw a non-Error thing thrown!`, { err_like })
 	}
 
 	if (err_like === undefined || err_like === null) {
@@ -73,7 +44,7 @@ export function normalizeError(err_like: Readonly<Partial<Error>> | unknown = un
 	}
 
 	try {
-		const should_recreate = alwaysRecreate || !has_minimal_error_shape
+		const should_recreate = alwaysRecreate || !hasꓽminimal_error_shape
 
 		const true_err: XXError = should_recreate
 			? (() => {
@@ -89,7 +60,7 @@ export function normalizeError(err_like: Readonly<Partial<Error>> | unknown = un
 						const wanted_constructor = (current_prototype?.constructor?.name?.endsWith('Error')) ? current_prototype.constructor : Error
 						// https://stackoverflow.com/questions/1606797/use-of-apply-with-new-operator-is-this-possible
 						const candidate: XXError = new (Function.prototype.bind.call(wanted_constructor, null, message))
-						if (!hasErrorShape(candidate)) throw new Error('[re-created but still !has_minimal_error_shape: will be caught below]')
+						if (!isꓽError(candidate)) throw new Error('[re-created but still !hasꓽminimal_error_shape: will be caught below]')
 
 						return candidate
 					}
@@ -133,8 +104,14 @@ export function normalizeError(err_like: Readonly<Partial<Error>> | unknown = un
 	}
 	catch (_err) {
 		DEBUG && console.error('NE2', _err)
-		WARN && console.warn(`WARNING: normalizeError() saw a dangerous thing thrown!`, { err_like })
+		WARN_NON_ERROR_THROWN && console.warn(`WARNING: normalizeError() saw a dangerous thing thrown!`, { err_like })
 		// if we're here, that means that err_like is *very* fancy, better not probe out further.
 		return new Error(`[non-error: <fancy object> thrown!]`) as any
 	}
+}
+
+/////////////////////////////////////////////////
+
+export {
+	normalizeError,
 }

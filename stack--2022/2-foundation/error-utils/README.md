@@ -141,6 +141,6 @@ catch (_err) {
 
 
 ## See also
-* https://github.com/jshttp/http-errors
+* TODO look into https://github.com/jshttp/http-errors
 * TODO look into https://www.stacktracejs.com/
 * TODO look into https://github.com/ehmicky/modern-errors
