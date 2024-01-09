@@ -87,6 +87,7 @@ Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s
 Hormesis: A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
 Horseshoe Theory: Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
 https://cobeats.com/folder/ryfTgPr9H
+ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/ https://strategyu.co/pyramid-principle-part-2-communicate-top-down/
 ikigai
 impostor syndrome
 infotainment
@@ -119,7 +120,7 @@ mental models +++ TODO LIST  https://fs.blog/mental-models/
 method of learning +++ https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger
 mimetic Theory of Conflict: People who are similar are more likely to fight than people who are different. That’s why Civil Wars and family feuds create the worst conflicts. The closer two people are and the more equality between them, the greater the potential for conflict.
 mimetic Theory of Desire: Humans are like sheep. We don’t know what we want, so we imitate each other. Instead of creating our own desires, we desire the same things as other people. The entire advertising industry is built on this idea.
-mindset What to How https://strategyu.co/consulting-mindset-shifting-from-the-what-to-the-how/
+mindset -- "What vs How" (see What vs how)
 Monty Hall Pb https://en.wikipedia.org/wiki/Monty_Hall_problem
 naiveté: abus sexuels, mafia
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
@@ -149,13 +150,13 @@ pretty privilege -> karen
 priming
 Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
 prix au kilo
+problem solving -- structured https://strategyu.co/mckinsey-structured-problem-solving-secrets/
 procrastination
 productivity
 productivity vs. impact, value
 progress over perfection
 psychological safety
 put into words
-Pyramid Principle https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/
 question authority
 race to the bottom
 Reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
@@ -187,8 +188,6 @@ stakeholder
 start with the most risky / complicated
 start with why
 stoicism -- Rudyard Kipling If-- https://en.wikipedia.org/wiki/If%E2%80%94
-structure your ideas "Pyramid Principle" https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/ https://strategyu.co/pyramid-principle-part-2-communicate-top-down/
-structured problem solving https://strategyu.co/mckinsey-structured-problem-solving-secrets/
 survival of the fittest / fit enough
 survivorship bias https://en.wikipedia.org/wiki/Survivorship_bias
 SWOT

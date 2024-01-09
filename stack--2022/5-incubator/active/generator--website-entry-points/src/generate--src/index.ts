@@ -110,9 +110,11 @@ asap_but_out_of_immediate_execution(async () => {
 
 		// service layer
 		// ~syncing view with external data sources
-		'./app/services/init/01-sec.ts': GENERIC_CODE_TEMPLATE,
+		'./app/services/init/01-security.ts': GENERIC_CODE_TEMPLATE,
+		'./app/services/init/02-sec.ts': GENERIC_CODE_TEMPLATE,
 		'./app/services/init/10-errors.ts': GENERIC_CODE_TEMPLATE,
-		'./app/services/init/20-analytics.ts': GENERIC_CODE_TEMPLATE,
+		'./app/services/init/20-tracing.ts': GENERIC_CODE_TEMPLATE,
+		'./app/services/init/30-analytics.ts': GENERIC_CODE_TEMPLATE,
 		'./app/services/auth.ts': GENERIC_CODE_TEMPLATE,
 		'./app/services/channel.ts': GENERIC_CODE_TEMPLATE,
 		'./app/services/loader.ts': GENERIC_CODE_TEMPLATE,
