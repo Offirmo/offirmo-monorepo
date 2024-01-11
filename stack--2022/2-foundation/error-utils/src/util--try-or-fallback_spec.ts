@@ -20,7 +20,7 @@ describe(`@offirmo/error-utils`, () => {
 		it('should return the fallback if not ok', () => {
 			expect(
 				try_or_fallback({
-					getter: () => {if (true) throw _demo_error; return 42},
+					getter: () => {if (true as any) throw _demo_error; return 42},
 					fallback_result: -1,
 				})
 			).to.equal(-1)
@@ -30,7 +30,7 @@ describe(`@offirmo/error-utils`, () => {
 			let seen: any = undefined
 			expect(
 				try_or_fallback({
-					getter: () => {if (true) throw _demo_error; return 42},
+					getter: () => {if (true as any) throw _demo_error; return 42},
 					fallback_result: -1,
 					onꓽerror: (err) => seen = err
 				})

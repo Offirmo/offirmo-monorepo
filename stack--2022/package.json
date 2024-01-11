@@ -123,7 +123,6 @@
 		"howler": "^2",
 		"icepick": "^2",
 		"indent-string": "^5",
-		"json-stable-stringify": "^1",
 		"jsondiffpatch": "^0.6",
 		"load-json-file": "^7",
 		"lodash": "^4",
