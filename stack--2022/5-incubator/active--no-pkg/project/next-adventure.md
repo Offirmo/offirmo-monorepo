@@ -22,7 +22,7 @@ new adventure
         ⇱ C++
         ⇱ Rust
         ⇱ Python
-      ⇱ Certifications
+      ⇱ Certifications? https://www.infoworld.com/article/3709508/do-programming-certifications-still-matter.html
         Jira
 CSS
 Google

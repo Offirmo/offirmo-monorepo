@@ -16,6 +16,7 @@ amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
 availability Cascade: A self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
 baker’s dozen: The key to good hospitality is to delight your guests with an unexpected gift. If you run a hotel, leave a chocolate on the bed. If you run a bakery, give your customers one extra bagel. If you write a tweetstorm, share an extra idea.
+Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 base rate: The average outcome for an event over time. They’re like batting averages for life, and they work best with big sample sizes. For example, if you’re starting a business, avoid the restaurant business where margins are low and competition is high.
 be prepared
 bee browsing
@@ -103,6 +104,7 @@ Johari window https://en.wikipedia.org/wiki/Johari_window
 juger vs. évaluer
 keeping up with the jones
 law of Shitty Click-Through Rates: Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
+le premier jour du reste de sa vie
 leader must never ask sth they couldn't do
 leadership is for everyone
 learning machines "I constantly see people rise in life who are not the smartest, sometimes not even the most diligent, but they are learning machines" (Munger https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger)
@@ -148,6 +150,7 @@ praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism
 preference Falsification: People lie about their true opinions and conform to socially acceptable preferences instead. In private they’ll say one thing. In public, they’ll say another.
 pretty privilege -> karen
 priming
+principal-agent problem https://en.wikipedia.org/wiki/Principal–agent_problem
 Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
 prix au kilo
 problem solving -- structured https://strategyu.co/mckinsey-structured-problem-solving-secrets/
@@ -219,6 +222,7 @@ voleur volé
 wartime peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 We must remember that entire societies can and often do follow the wrong path for a very long time https://news.vanderbilt.edu/2011/04/13/michael-burry-transcript/
 what vs how = OPPOSITE of school +++ https://strategyu.co/consulting-mindset-shifting-from-the-what-to-the-how/
+What would you do if you weren't afraid? - Spencer Johnson
 who moved my cheese?
 wisdom
 wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
