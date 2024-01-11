@@ -63,7 +63,7 @@ describe(`${LIB} -- examples`, function() {
 	describe('DEMO_STATE', function () {
 
 		it('should be stable and up to date', () => {
-			const migrated = migrateꓽto_latest(getꓽSEC(), DEMO_STATE)
+			const migrated = migrateⵧto_latest(getꓽSEC(), DEMO_STATE)
 			expect(migrated).to.equal(DEMO_STATE)
 		})
 	})

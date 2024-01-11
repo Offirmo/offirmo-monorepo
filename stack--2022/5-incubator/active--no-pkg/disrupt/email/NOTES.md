@@ -24,3 +24,6 @@ standards
 - keys
 
 https://tech.slashdot.org/story/23/11/16/141213/proton-mail-ceo-calls-new-address-verification-feature-blockchain-in-a-very-pure-form
+
+
+https://posthog.com/blog/slack-closure "Messages quickly disappear from the chat history, it is disconnected from our main support flow, and useful solutions aren't searchable on our site or via Google."

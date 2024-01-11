@@ -20,4 +20,7 @@
 
 ## Spec
 
-Should be compatible with React's [useReducer](https://react.dev/reference/react/useReducer)
+Should be compatible with
+* React's [useSyncExternalStore](https://react.dev/reference/react/useSyncExternalStore)
+* React's suspense [use]()
+* and indirectly with [useReducer](https://react.dev/reference/react/useReducer)

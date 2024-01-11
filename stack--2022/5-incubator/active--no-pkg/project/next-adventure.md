@@ -29,3 +29,7 @@ Google
     ⇱ train for interview
       ⇱ screening
       ⇱ system design https://www.swequiz.com/#pricing  https://designsystems.surf
+
+
+https://posthog.com/handbook/people/compensation
+https://github.blog/2024-01-08-github-certifications-are-generally-available/
