@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import * as icepick from 'icepick'
 import { Immutable, Mutable, ImmutabilityEnforcer } from '@offirmo-private/ts-types'
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import {
 	BaseUState,
@@ -9,6 +9,8 @@ import {
 	BaseRootState,
 	UTBundle,
 	BaseAction,
+	ActionⳇReconcile,
+	GenericActionType,
 } from './types.js'
 import {
 	AnyBaseState,
@@ -24,17 +26,17 @@ import {
 	getꓽrevisionⵧloose,
 } from './selectors.js'
 
+/////////////////////////////////////////////////
 
-export const enforceꓽimmutable: ImmutabilityEnforcer = <T>(state: T | Immutable<T>): Immutable<T> => icepick.freeze<T>(state as T) as Immutable<T>
+const enforceꓽimmutable: ImmutabilityEnforcer = <T>(state: T | Immutable<T>): Immutable<T> => icepick.freeze<T>(state as T) as Immutable<T>
 //const enforceꓽimmutable: ImmutabilityEnforcer = (state: T): Immutable<T> => state
 //const enforceꓽimmutable: ImmutabilityEnforcer = <T>(state: T): Immutable<T> => deep_freeze<T>(state)
-export {
-	type Immutable,
-	type ImmutabilityEnforcer
-} from '@offirmo-private/ts-types' // for convenience
 
-export function getꓽmutable_copy<I>(state: I): Mutable<I> {
-	return icepick.thaw<Mutable<I>>(state as any)
+function getꓽmutable_copy<T>(state: T): Mutable<T> {
+	return icepick.thaw<Mutable<T>>(state as any)
+}
+function cast_toꓽimmutable<T>(state: T): Immutable<T> {
+	return state as Immutable<T>
 }
 
 // Use this in case you reduced a child state (optionally updating the timestamp as well) but are unsure whether this reducer caused the child state to change or not.
@@ -43,7 +45,7 @@ export function getꓽmutable_copy<I>(state: I): Mutable<I> {
 // - it's possible that an "update to now" was invoked, it's ok to ignore that if that's the only change
 // - this fn will intentionally NOT go deeper than 1st level, each state is responsible for its children!
 // - this fn will intentionally NOT handle time changes, this should be done separately at the end! (separate update_to_now call)
-export function complete_or_cancel_eager_mutation_propagating_possible_child_mutation<
+function complete_or_cancel_eager_mutation_propagating_possible_child_mutation<
 	BU extends BaseUState,
 	BT extends BaseTState,
 	BR extends BaseRootState<BU, BT>,
@@ -154,7 +156,7 @@ export function complete_or_cancel_eager_mutation_propagating_possible_child_mut
 
 // check if the state is still in the revision we expect
 // ex. for an action, check it's still valid, ex. object already sold?
-export function are_ustate_revision_requirements_met<S extends BaseRootState>(state: Immutable<S>, requirements: { [k: string]: number } = {}): boolean {
+function are_ustate_revision_requirements_met<S extends BaseRootState>(state: Immutable<S>, requirements: { [k: string]: number } = {}): boolean {
 	for(const k in requirements) {
 		assert((state as AnyRootState).u_state[k], `are_ustate_revision_requirements_met(): sub state not found: "${k}"!`)
 		const current_revision = ((state as AnyRootState).u_state[k]! as any).revision
@@ -165,6 +167,8 @@ export function are_ustate_revision_requirements_met<S extends BaseRootState>(st
 	return true
 }
 
+// ???
+/*
 export function finalize_action_if_needed<State, Action extends BaseAction>(action: Immutable<Action>, state?: Immutable<State>): Immutable<Action> {
 	if (action.time <= 0) {
 		action = {
@@ -196,3 +200,52 @@ export function finalize_action_if_needed<State, Action extends BaseAction>(acti
 
 	return action
 }
+*/
+
+
+function createꓽBaseAction(type: string, time: TimestampUTCMs = getꓽUTC_timestamp‿ms()): BaseAction {
+	return {
+		type,
+		time,
+		expected_revisions: {},
+	}
+}
+
+function createꓽaction<SomeAction extends BaseAction>(
+	{type, ...attributes}: Omit<SomeAction, 'time' | 'expected_revisions'> & { expected_revisions?: SomeAction['expected_revisions']},
+	time: TimestampUTCMs = getꓽUTC_timestamp‿ms(),
+): SomeAction {
+	return {
+		...createꓽBaseAction(type, time),
+		...attributes,
+	} as SomeAction
+}
+
+function createꓽActionⳇReconcile<State> (state: Immutable<State>, time: TimestampUTCMs = getꓽUTC_timestamp‿ms()): ActionⳇReconcile<State> {
+	return createꓽaction<ActionⳇReconcile<State>>( {
+		type: GenericActionType.stdꓽreconcile,
+		state,
+	}, time)
+}
+
+/////////////////////////////////////////////////
+
+
+export {
+	enforceꓽimmutable,
+	getꓽmutable_copy,
+	cast_toꓽimmutable,
+
+	complete_or_cancel_eager_mutation_propagating_possible_child_mutation,
+	are_ustate_revision_requirements_met,
+
+	createꓽBaseAction,
+	createꓽaction,
+	createꓽActionⳇReconcile,
+}
+
+// for convenience
+export {
+	type Immutable,
+	type ImmutabilityEnforcer
+} from '@offirmo-private/ts-types'

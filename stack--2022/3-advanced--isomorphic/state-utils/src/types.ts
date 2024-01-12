@@ -1,3 +1,4 @@
+import { Enum } from 'typescript-string-enums'
 import { Immutable } from '@offirmo-private/ts-types'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
@@ -76,14 +77,33 @@ export type AnyOffirmoState<
 /////////////////////////////////////////////////
 // reducer
 
-export interface BaseAction<Type = string> {
-	type: Type
+export interface BaseAction {
+	type: string
 	time: TimestampUTCMs
 	expected_revisions: {
 		[k:string]: number
 	}
 }
 
+// standard action types, to be optionally handled by a reducer
+// tslint:disable-next-line: variable-name
+export const GenericActionType = Enum(
+	'stdꓽupdate_to_now', // generic TState update
+
+	'stdꓽreconcile',      // reconcile current state with another candidate state
+	                     // - the passed state MAY or MAY NOT be newer (persistence, cloud, service worker push, etc.)
+	                     // - there must be an existing state (! from init)
+	                     // - an automatic implementation is easy ("most invested wins").
+	                     //   but a State may want to override it with a more clever one, see CRDT
+)
+export type GenericActionType = Enum<typeof GenericActionType> // eslint-disable-line no-redeclare
+
+export interface ActionⳇReconcile<State> extends BaseAction {
+	type: typeof GenericActionType.stdꓽreconcile
+	state: Immutable<State>,
+}
+
+// MUST be compatible with https://react.dev/reference/react/useReducer
 export interface ActionReducer<State, Action extends BaseAction> {
 	(state: Immutable<State>, action: Immutable<Action>): Immutable<State>
 }

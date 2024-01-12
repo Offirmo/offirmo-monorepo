@@ -12,8 +12,13 @@ import {
 	complete_or_cancel_eager_mutation_propagating_possible_child_mutation,
 	are_ustate_revision_requirements_met,
 	enforceꓽimmutable,
+
+	createꓽBaseAction,
+	createꓽaction,
+	createꓽActionⳇReconcile,
 } from './utils.js'
 
+/////////////////////////////////////////////////
 
 describe(`${LIB} - utils`, function() {
 
@@ -230,6 +235,22 @@ describe(`${LIB} - utils`, function() {
 		it('should throw if non-matched requirement', () => {
 			expect(() => are_ustate_revision_requirements_met(DEMO_ROOT_STATE, { 'subB': 42 }))
 				.to.throw('sub state not found')
+		})
+	})
+
+	describe('action creators', function() {
+
+		describe('createꓽActionⳇReconcile()', function() {
+
+			it('should work', () => {
+				const action = createꓽActionⳇReconcile(DEMO_ROOT_STATE)
+				expect(action).to.deep.equal({
+					type: 'stdꓽreconcile',
+					time: action.time,
+					expected_revisions: {},
+					state: DEMO_ROOT_STATE,
+				})
+			})
 		})
 	})
 })
