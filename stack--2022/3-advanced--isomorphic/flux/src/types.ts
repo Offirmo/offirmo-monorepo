@@ -2,10 +2,12 @@ import { Immutable } from '@offirmo-private/ts-types'
 import {
 	AnyOffirmoState,
 	BaseAction,
+	ActionⳇReconcile,
 } from '@offirmo-private/state-utils'
 
 /////////////////////////////////////////////////
 
+// Note: we add ActionⳇReconcile<State> to the allowed actions bc a default implementation is provided
 
 // https://facebookarchive.github.io/flux/docs/flux-utils#stores
 // IMPORTANT a store may have a persistence mechanism (ex. local storage)
@@ -16,7 +18,7 @@ import {
 interface Store<State extends AnyOffirmoState, Action extends BaseAction> {
 	/////// core architectural features
 	onꓽdispatch(
-		action: Immutable<Action>,
+		action: Immutable<Action | ActionⳇReconcile<State>>,
 		eventual_state_hint?: Immutable<State>, // if present, means this store is a "replica" which may not want to recompute
 	): void
 
@@ -34,20 +36,20 @@ interface Store<State extends AnyOffirmoState, Action extends BaseAction> {
 	/////// pragmatic features not in the architecture
 
 	// init
-	// - should be called only once, on an un-initialised store (BUT tolerate being re-inited with own value)
 	// - this can't be an action (since no previous state)
-	// - this is not mandatory if the store is a replica, thanks to "eventual_state_hint"
+	// - should be called only once, on an un-initialised store
+	//   - stores MUST tolerate being re-inited with identical value, due to "echo"
 	init(state: Immutable<State>): void
 
-
-	subscribe_toꓽconcurrent?: (callback: (concurrent_state: Immutable<State>) => void, debug_id?: string): () => void
+	// TODO one day cloud stores
+	subscribe_toꓽdistributed_updates?: (callback: (concurrent_state: Immutable<State>) => void, debug_id?: string) => () => void
 }
 
 
 // https://facebookarchive.github.io/flux/docs/dispatcher
 interface Dispatcher<State extends AnyOffirmoState, Action extends BaseAction> {
 	// core features
-	dispatch(action: Immutable<Action>): void,
+	dispatch(action: Immutable<Action | ActionⳇReconcile<State>>): void,
 
 	// NO! done on creation, not dynamically
 	//registerꓽstore(s: Store<State, Action>, debug_id?: string): void
@@ -74,7 +76,7 @@ interface Flux<State extends AnyOffirmoState, Action extends BaseAction> {
 	subscribe(callback: () => void, debug_id?: string): () => void
 
 
-	dispatch(action: Immutable<Action>): void
+	dispatch(action: Immutable<Action | ActionⳇReconcile<State>>): void
 
 	// TODO promise for suspend??
 

@@ -7,8 +7,11 @@ import { Immutable } from '@offirmo-private/ts-types'
 import { SoftExecutionContext } from '@offirmo-private/soft-execution-context'
 import {
 	AnyOffirmoState,
-	FullMigrateToLatestFn,
-	BaseAction, ActionReducer,
+	BaseAction,
+	createꓽActionⳇReconcile,
+	cast_toꓽimmutable,
+	getꓽrevision,
+	getꓽschema_version,
 } from '@offirmo-private/state-utils'
 
 /*
@@ -26,6 +29,7 @@ import {
 
 import { LIB } from '../consts.js'
 import { getꓽSEC } from '../services/sec.js'
+import { Store, Dispatcher, Flux } from '../types.js'
 
 /*
 import { create as create_dispatcher } from './dispatcher'
@@ -41,25 +45,37 @@ const EMITTER_EVT = 'change'
 interface CreateParams<State extends AnyOffirmoState, Action extends BaseAction> {
 	SEC?: SoftExecutionContext
 
+	storesⵧordered: Array<Store<State, Action>>
+
+	// needed in case no existing
+	create: (SEC: SoftExecutionContext) => Immutable<State>
+
+	// safety to detect non-migrated states
 	SCHEMA_VERSION: number
-	migrateⵧto_latest: FullMigrateToLatestFn<State>
+
+	//migrateⵧto_latest: FullMigrateToLatestFn<State>
+	//reduceꓽaction: ActionReducer<State, Action>
+
 
 	// TODO ordered stores list!
 
 	//local_storage: Storage
 	//storage_key_radix: string
 
-	//create: (SEC: SoftExecutionContext) => Immutable<State>
 	//post_create?: (state: Immutable<State>) => Immutable<State>
 	//updateꓽto_now?: (state: Immutable<State>) => Immutable<State>
-	reduceꓽaction: ActionReducer<State, Action>
 }
 function createꓽinstance<State extends AnyOffirmoState, Action extends BaseAction>({
 	SEC = getꓽSEC(),
 
+	storesⵧordered,
+
+	create,
+
 	SCHEMA_VERSION,
-	migrateⵧto_latest,
-	reduceꓽaction,
+	//migrateⵧto_latest,
+	//reduceꓽaction,
+
 
 	/*
 	                                                                          storage_key_radix,
@@ -67,7 +83,7 @@ function createꓽinstance<State extends AnyOffirmoState, Action extends BaseAct
 	post_create = (state: Immutable<State>) => state,
 	update_to_now = (state: Immutable<State>) => state,
 	reduce_action,*/
-}: CreateParams<State, Action>) {
+}: CreateParams<State, Action>): Flux<State, Action> {
 	return SEC.xTry('creating flux instance', ({SEC, logger}) => {
 		logger.trace(`[${LIB}].createꓽinstance()…`)
 
@@ -76,38 +92,77 @@ function createꓽinstance<State extends AnyOffirmoState, Action extends BaseAct
 		/////////////////////////////////////////////////
 		logger.trace(`[${LIB}] linking the flux architecture = dispatcher and stores…`)
 
+		const [ storeⵧmain, ...storeⵧreplicas ] = storesⵧordered
+		assert(storeⵧmain, `[${LIB}] At least one store should be provided!`)
 
 		//const _dispatcher = createꓽdispatcher(SEC, SCHEMA_VERSION)
 
 		/////////////////////////////////////////////////
-/*
-		try {
-			// arguably this is not 100% flux
-			// but this should be good enough
-			const recovered_state: any = persistent_store.get()
-			assert(!!recovered_state, '(for local catch, see below)')
-			logger.trace(`[${LIB}] restoring the state from the content of persistent store… (incl. update to now)`)
-			// TODO should we really update to now?
-			_dispatcher.set(update_to_now(recovered_state))
-		}
-		catch (err) {
-			const new_state = post_create(create(SEC))
-			logger.verbose(`[${LIB}] Clean savegame created from scratch.`)
-			_dispatcher.set(new_state)
-		}
-		logger.silly(`[${LIB}] state initialised:`, in_memory_store.get())
-*/
-		////////////////////////////////////
-/*
-		in_memory_store.subscribe('flux', () => {
-			emitter.emit(EMITTER_EVT, `[in-mem]`)
-		})
+		;(function init() {
+			// by any chance, has any store already synchronously un-persisted itself?
+			// ex. local storage
+			// ex. cloud storage serialized by SSR
+			let initial_value_candidates_ordered = storesⵧordered
+				.map(store => {
+					try {
+						return store.get()
+					}
+					catch {
+						return undefined
+					}
+				})
+				.filter(state => !!state)
 
-		emitter.emit(EMITTER_EVT, 'init')
-*/
+			if (initial_value_candidates_ordered.length === 0) {
+				logger.verbose(`[${LIB}] initial state: no sync persistence → creating from scratch… 🆕`)
+			}
+			else {
+				logger.trace(`[${LIB}] initial state: 💾 restoring from ${initial_value_candidates_ordered.length} persistent store(s)…`)
+			}
+
+			const [
+				initial_valueⵧfirst = create(SEC), // if no sync candidate, start over
+				...initial_valueⵧother
+			] = initial_value_candidates_ordered
+
+			initial_value_candidates_ordered.forEach((state, index) => {
+				// reminder: stores are responsible for migrating their candidate
+				const schema_version = getꓽschema_version(state!)
+				assert(schema_version === SCHEMA_VERSION, `[${LIB}] candidate state #${index} schema version mismatch!`)
+			})
+
+			storeⵧmain.init(initial_valueⵧfirst)
+			initial_valueⵧother.forEach(competing_initial_state => {
+				storeⵧmain.onꓽdispatch(
+					cast_toꓽimmutable(
+						createꓽActionⳇReconcile<State>(competing_initial_state!)
+					)
+				)
+			})
+
+			// pass to other stores
+			// use case: after a long offline session,
+			// the cloud stores need to be passed the current valuable local state!
+			storeⵧreplicas.forEach(store => {
+				// note that some stores may have to tolerate an "echo" = being re-init'ed with their own state
+				store.init(storeⵧmain.get())
+			})
+
+			// if there are any async un-persist from stores, they'll have to go through the dispatcher
+			storesⵧordered.forEach(store => {
+				if (store.subscribe_toꓽdistributed_updates) {
+					throw new Error('NIMP!')
+				}
+			})
+		})()
+
+		logger.silly(`[${LIB}] state initialised:`, storeⵧmain.get())
+
+		// NO "post create", it's up to the flux creator to call that if needed
 		////////////////////////////////////
 
 		function dispatch(action: Immutable<Action>) {
+			throw new Error('NIMP!')
 			/*if (action.type !== 'update_to_now') console.groupEnd()
 
 			;(console.groupCollapsed as any)(`——————— ⚡ action dispatched: "${action.type}" ⚡ ———————`)
@@ -121,16 +176,10 @@ function createꓽinstance<State extends AnyOffirmoState, Action extends BaseAct
 		}
 
 		return {
-			//get: in_memory_store.get,
-			//dispatch,
-			/*subscribe(id: string, fn: () => void): () => void {
-				const unbind = emitter.on(EMITTER_EVT, (src: string) => {
-					const revision = get_revision_loose(in_memory_store.get())
-					console.log(`🌀 model change #${revision} reported to subscriber "${id}" (source: ${src})`)
-					fn()
-				})
-				return unbind
-			},*/
+			get: storeⵧmain.get,
+			subscribe: storeⵧmain.subscribe,
+
+			dispatch,
 
 			/*
 				// currently used by the savegame editor
@@ -144,7 +193,7 @@ function createꓽinstance<State extends AnyOffirmoState, Action extends BaseAct
 			_libs: {
 				'@tbrpg/state': TBRPGState,
 			},*/
-		} as any
+		}
 	})
 }
 

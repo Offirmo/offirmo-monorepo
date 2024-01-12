@@ -20,6 +20,8 @@
 
 ## Spec
 
+MUST be monotonic, see https://en.wikipedia.org/wiki/Eventual_consistency
+
 Should be compatible with
 * React's [useSyncExternalStore](https://react.dev/reference/react/useSyncExternalStore)
 * React's suspense [use]()

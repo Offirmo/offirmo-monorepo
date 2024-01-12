@@ -14,41 +14,46 @@ import { Store } from '../../types'
 
 /////////////////////////////////////////////////
 
-const EMITTER_EVT = 'change'
+const EMITTER_EVT = '⚡️change'
 
 function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extends BaseAction>(
 	SEC: SoftExecutionContext,
 	reduceꓽaction: (state: Immutable<State>, action: Immutable<Action>) => Immutable<State>,
+	debug_id?: string
 ): Store<State, Action> {
-	const LIB = `🔵 store--in-mem`
+	const LIB = [
+		`🔵 store--in-mem`,
+		debug_id,
+	].filter(Boolean).join('ⳇ')
 
 	return SEC.xTry(`creating ${LIB}…`, ({ logger }) => {
 		logger.trace(`[${LIB}].create()…`)
 
 		let state: Immutable<State> | undefined = undefined
 
-		const emitter = new EventEmitter<{ [EMITTER_EVT]: undefined }>()
+		const emitter = new EventEmitter<{ [EMITTER_EVT]: undefined }>({
+			debug: {
+				name: 'storeⵧin_memory'
+			}
+		})
 
 		/////////////////////////////////////////////////
 
-		function set(new_state: Immutable<State>): void {
-			const has_valuable_difference = !state || fluid_select(new_state).has_valuable_difference_with(state)
-			logger.trace(`[${LIB}].set()`, {
-				new_state: getꓽbaseⵧloose(new_state),
-				existing_state: getꓽbaseⵧloose(state as any),
-				has_valuable_difference,
-			})
+		function init(stateⵧnew: Immutable<State>): void {
+			if (state) {
+				// we are already initialized, this is a bug
+				if (stateⵧnew === state) {
+					// init from ourselves, tolerated
+					// do nothing
+					return
+				}
 
-			if (!state) {
-				logger.trace(`[${LIB}].set(): init ✔`)
-			}
-			else if (!has_valuable_difference) {
-				logger.trace(`[${LIB}].set(): no valuable change ✔`)
-				return
+				throw new Error(`[${LIB}].init(): already initialized!`)
 			}
 
-			state = new_state
+			state = stateⵧnew
 			emitter.emit(EMITTER_EVT)
+			logger.trace(`[${LIB}].set(): init ✔`)
 		}
 
 		function get(): Immutable<State> {
@@ -61,14 +66,32 @@ function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extend
 			logger.trace(`[${LIB}] ⚡ action dispatched: ${action.type}`, {
 				eventual_state_hint: getꓽbaseⵧloose(eventual_state_hint as any),
 			})
+
 			assert(state || eventual_state_hint, `[${LIB}].on_dispatch(): should be provided a hint or a previous state`)
 			assert(!eventual_state_hint, `[${LIB}].on_dispatch(): (upper level architectural invariant) hint not expected in this store`)
 
-			const previous_state = state
+			/*
+			const has_valuable_difference = !state || fluid_select(new_state).has_valuable_difference_with(state)
+			logger.trace(`[${LIB}].set()`, {
+				new_state: getꓽbaseⵧloose(new_state),
+				existing_state: getꓽbaseⵧloose(state as any),
+				has_valuable_difference,
+			})
+
+			if (!state) {
+			} // XXX if not init, should it be used??? TODO check semantic!!!
+			else if (!has_valuable_difference) {
+				logger.trace(`[${LIB}].set(): no valuable change ✔`)
+				return
+			}
+
+
+			 */
+			const stateⵧprevious = state
 			state = eventual_state_hint || reduceꓽaction(state!, action)
-			const has_valuable_difference = state !== previous_state
+			const has_valuable_difference = state !== stateⵧprevious
 			logger.trace(`[${LIB}] ⚡ action dispatched & reduced:`, {
-				current_rev: getꓽrevisionⵧloose(previous_state as any),
+				current_rev: getꓽrevisionⵧloose(stateⵧprevious as any),
 				new_rev: getꓽrevisionⵧloose(state as any),
 				has_valuable_difference,
 			})
@@ -79,21 +102,16 @@ function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extend
 			emitter.emit(EMITTER_EVT)
 		}
 
-		function subscribe(debug_id: string, listener: () => void): () => void {
+		function subscribe(listener: () => void, debug_id?: string): () => void {
 			emitter.on(EMITTER_EVT, listener)
 			return () => emitter.off(EMITTER_EVT, listener)
-		}
-
-		async function getꓽpersisted() {
-			return undefined // no persistence, this is a volatile store
 		}
 
 		return {
 			get,
 			onꓽdispatch,
 			subscribe,
-			_set: set,
-			_getꓽpersisted: getꓽpersisted,
+			init,
 		}
 	})
 }

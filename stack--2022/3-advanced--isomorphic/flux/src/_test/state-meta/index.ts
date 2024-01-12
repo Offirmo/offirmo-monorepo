@@ -6,6 +6,7 @@ import {
 	Immutable,
 	BaseAction,
 	ActionReducer,
+	ActionⳇReconcile,
 } from '@offirmo-private/state-utils'
 
 import {
@@ -27,7 +28,7 @@ interface ActionⳇOnLoggedInRefresh extends BaseAction {
 	roles?: string[]
 }
 
-type Action = ActionⳇStartSession | ActionⳇOnLoggedInRefresh
+type Action = ActionⳇStartSession | ActionⳇOnLoggedInRefresh | ActionⳇReconcile<State>
 
 
 //const reduceꓽaction: ActionReducer<State, Action> = (state: Immutable<State>, action: Immutable<Action>): Immutable<State> => {
