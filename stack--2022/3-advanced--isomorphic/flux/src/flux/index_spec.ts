@@ -7,7 +7,7 @@ import { getꓽSEC } from '../services/sec.js'
 import create from './index.js'
 import createꓽstoreⵧin_memory from '../stores/in-memory/index.js'
 
-import * as DemoStateLib from '../_test/state-meta/index.js'
+import * as DemoStateLib from '../_test/state-demo/index.js'
 
 /////////////////////////////////////////////////
 
@@ -29,7 +29,7 @@ describe(`${LIB}`, function() {
 
 			const flux_instance = create<DemoStateLib.State, DemoStateLib.Action>({
 				SCHEMA_VERSION: DemoStateLib.SCHEMA_VERSION,
-				//migrateⵧto_latest: DemoStateLib.migrateⵧto_latest,
+				//migrate_toꓽlatest: DemoStateLib.migrate_toꓽlatest,
 				//reduceꓽaction: DemoStateLib.reduceꓽaction,
 				storesⵧordered: [storeⵧin_mem, storeⵧlocal_storage],
 				create: DemoStateLib.create,
@@ -77,7 +77,7 @@ describe(`${LIB}`, function() {
 
 					const flux_instance = create<DemoStateLib.State, DemoStateLib.Action>({
 						SCHEMA_VERSION: DemoStateLib.SCHEMA_VERSION,
-						//migrateⵧto_latest: DemoStateLib.migrateⵧto_latest,
+						//migrate_toꓽlatest: DemoStateLib.migrate_toꓽlatest,
 						//reduceꓽaction: DemoStateLib.reduceꓽaction,
 						storesⵧordered: [storeⵧmain, storeⵧsecondaryⵧa, storeⵧsecondaryⵧb],
 						create: DemoStateLib.create,
@@ -95,7 +95,7 @@ describe(`${LIB}`, function() {
 
 				it('should detect incorrect older states')
 
-				it.only('should merge conflicting candidates -- auto algorithm', () => {
+				it('should merge conflicting candidates -- auto algorithm', () => {
 
 					// usually the in-memory store, has no persistence
 					const storeⵧmain = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>(
@@ -125,7 +125,7 @@ describe(`${LIB}`, function() {
 
 					const flux_instance = create<DemoStateLib.State, DemoStateLib.Action>({
 						SCHEMA_VERSION: DemoStateLib.SCHEMA_VERSION,
-						//migrateⵧto_latest: DemoStateLib.migrateⵧto_latest,
+						//migrate_toꓽlatest: DemoStateLib.migrate_toꓽlatest,
 						//reduceꓽaction: DemoStateLib.reduceꓽaction,
 						storesⵧordered: [storeⵧmain, storeⵧsecondaryⵧa, storeⵧsecondaryⵧb],
 						create: DemoStateLib.create,

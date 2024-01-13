@@ -68,7 +68,10 @@ function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extend
 			})
 
 			assert(state || eventual_state_hint, `[${LIB}].on_dispatch(): should be provided a hint or a previous state`)
-			assert(!eventual_state_hint, `[${LIB}].on_dispatch(): (upper level architectural invariant) hint not expected in this store`)
+
+			if (eventual_state_hint) {
+				logger.warn(`[${LIB}].on_dispatch(): (upper level architectural invariant) hint normally not expected for this store`)
+			}
 
 			/*
 			const has_valuable_difference = !state || fluid_select(new_state).has_valuable_difference_with(state)
