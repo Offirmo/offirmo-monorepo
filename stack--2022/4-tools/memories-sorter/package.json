@@ -12,9 +12,9 @@
 		"@offirmo-private/json-stable-stringify": "^0",
 		"@offirmo-private/normalize-string": "^0",
 		"@offirmo-private/prettify-any": "^0",
-		"@offirmo-private/soft-execution-context": "^0",
-		"@offirmo-private/state-utils": "^0",
-		"@offirmo-private/timestamps": "^0",
+		"@offirmo-private/soft-execution-context": "*",
+		"@offirmo-private/state-utils": "*",
+		"@offirmo-private/timestamps": "*",
 		"@offirmo/cli-toolbox": "^3",
 		"@offirmo/error-utils": "^0",
 		"@offirmo/practical-logger-core": "^3",
@@ -55,8 +55,8 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/state-migration-tester": "^0",
-		"@offirmo-private/ts-types": "^0",
+		"@offirmo-private/state-migration-tester": "*",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/async": "^3",
 		"npm-run-all": "^4"

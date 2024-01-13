@@ -19,11 +19,11 @@
 	"source": "src/index.ts",
 
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "^0",
+		"@offirmo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/state-utils": "^0",
+		"@offirmo-private/state-utils": "*",
 		"@tbrpg/definitions": "^0",
 		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
@@ -42,8 +42,8 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/state-migration-tester": "^0",
-		"@offirmo-private/ts-types": "^0",
+		"@offirmo-private/state-migration-tester": "*",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2"

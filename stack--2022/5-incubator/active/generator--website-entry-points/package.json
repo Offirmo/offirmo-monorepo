@@ -14,7 +14,7 @@
 
 	"dependencies": {
 		"@offirmo-private/normalize-string": "^0",
-		"@offirmo-private/ts-types": "^0",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo/cli-toolbox": "^3",
 		"@resvg/resvg-js": "^2",
 		"tiny-invariant": "^1",

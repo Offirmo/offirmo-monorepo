@@ -23,7 +23,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/state-utils": "^0",
+		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/unicode-data": "^0",
 		"@offirmo/random": "^3",
 		"@tbrpg/definitions": "^0",
@@ -45,7 +45,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "^0",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2"

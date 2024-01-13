@@ -10,8 +10,8 @@
 
 	"dependencies": {
 		"@offirmo-private/async-utils": "^0",
-		"@offirmo-private/timestamps": "^0",
-		"@offirmo-private/ts-types": "^0",
+		"@offirmo-private/timestamps": "*",
+		"@offirmo-private/ts-types": "*",
 		"memoize-one": "^6",
 		"tiny-invariant": "^1"
 	}

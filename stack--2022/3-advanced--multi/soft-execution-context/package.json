@@ -24,7 +24,7 @@
 	},
 	"dependencies": {
 		"@offirmo-private/promise-try": "^0",
-		"@offirmo-private/timestamps": "^0",
+		"@offirmo-private/timestamps": "*",
 		"@offirmo/error-utils": "^0",
 		"emittery": "^1"
 	},

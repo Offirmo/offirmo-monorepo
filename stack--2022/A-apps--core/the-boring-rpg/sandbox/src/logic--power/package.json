@@ -23,7 +23,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/ts-types": "^0",
+		"@offirmo-private/ts-types": "*",
 		"@tbrpg/definitions": "^0",
 		"@tbrpg/state--character": "^0",
 		"@tbrpg/state--inventory": "^0",

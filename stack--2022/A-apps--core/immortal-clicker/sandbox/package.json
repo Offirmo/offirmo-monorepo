@@ -17,15 +17,15 @@
 	"typings": "dist/src.es2022.esm/index.d.ts",
 
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "^0",
+		"@offirmo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
 		"@offirmo-private/rich-text-format": "^0",
-		"@offirmo-private/state-utils": "^0",
-		"@offirmo-private/timestamps": "^0",
-		"@offirmo-private/ts-types": "^0",
-		"@offirmo-private/uuid": "^0",
+		"@offirmo-private/state-utils": "*",
+		"@offirmo-private/timestamps": "*",
+		"@offirmo-private/ts-types": "*",
+		"@offirmo-private/uuid": "*",
 		"@offirmo/random": "^3",
 		"@offirmo/universal-debug-api-placeholder": "^1",
 		"@oh-my-rpg/state-codes": "^0",
@@ -55,7 +55,7 @@
 		"@offirmo-private/normalize-string": "^0",
 		"@offirmo-private/prettify-any": "^0",
 		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/state-migration-tester": "^0",
+		"@offirmo-private/state-migration-tester": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"icepick": "^2",
 		"npm-run-all": "^4",

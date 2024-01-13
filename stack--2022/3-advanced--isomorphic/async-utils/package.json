@@ -20,11 +20,11 @@
 	"source": "src/index.ts",
 
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "^0",
+		"@offirmo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/timestamps": "^0",
+		"@offirmo-private/timestamps": "*",
 		"tiny-invariant": "^1"
 	},
 
@@ -41,7 +41,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/soft-execution-context--node": "^0",
+		"@offirmo-private/soft-execution-context--node": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@offirmo/universal-debug-api-node": "^0",
 		"npm-run-all": "^4",

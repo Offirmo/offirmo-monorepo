@@ -22,7 +22,7 @@
 	"peerDependencies": {
 	},
 	"dependencies": {
-		"@offirmo-private/ts-types": "^0",
+		"@offirmo-private/ts-types": "*",
 		"typescript-string-enums": "^1"
 	},
 

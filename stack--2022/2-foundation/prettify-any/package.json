@@ -23,7 +23,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/ts-types": "^0",
+		"@offirmo-private/ts-types": "*",
 		"indent-string": "^5",
 		"terminal-size": "^4",
 		"tiny-invariant": "^1"

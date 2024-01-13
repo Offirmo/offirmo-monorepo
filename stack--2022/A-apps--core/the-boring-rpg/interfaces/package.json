@@ -23,9 +23,9 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/timestamps": "^0",
-		"@offirmo-private/uuid": "^0",
-		"@tbrpg/state": "^0",
+		"@offirmo-private/timestamps": "*",
+		"@offirmo-private/uuid": "*",
+		"@tbrpg/state": "*",
 		"@tbrpg/state--character": "^0",
 		"typescript-string-enums": "^1"
 	},
@@ -41,7 +41,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "^0",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2"

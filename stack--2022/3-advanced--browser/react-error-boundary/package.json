@@ -10,7 +10,7 @@
 	"sideEffects": false,
 
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "^0",
+		"@offirmo-private/soft-execution-context": "*",
 		"prop-types": "^15",
 		"react": "^18"
 	},
