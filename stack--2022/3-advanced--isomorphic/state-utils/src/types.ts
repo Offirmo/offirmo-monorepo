@@ -1,6 +1,7 @@
 import { Enum } from 'typescript-string-enums'
 import { Immutable } from '@offirmo-private/ts-types'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
+import { XXError } from '@offirmo/error-utils'
 
 /////////////////////////////////////////////////
 // building blocks
@@ -95,12 +96,21 @@ export const GenericActionType = Enum(
 	                     // - there must be an existing state (! from init)
 	                     // - an automatic implementation is easy ("most invested wins").
 	                     //   but a State may want to override it with a more clever one, see CRDT
+
+	'stdꓽerror',         // generic serious error
+	                    // for serious abnormal errors harming user experience, ex. data loss, security
+	                    // It's up to the reducer to handle it properly (message etc.)
 )
 export type GenericActionType = Enum<typeof GenericActionType> // eslint-disable-line no-redeclare
 
 export interface ActionⳇReconcile<State> extends BaseAction {
 	type: typeof GenericActionType.stdꓽreconcile
 	state: Immutable<State>,
+}
+
+export interface ActionⳇError<State> extends BaseAction {
+	type: typeof GenericActionType.stdꓽerror
+	error: XXError,
 }
 
 // MUST be compatible with https://react.dev/reference/react/useReducer

@@ -15,17 +15,17 @@ describe(`${LIB}`, function() {
 
 	describe('Flux', function () {
 		function getꓽdemo() {
-			const storeⵧin_mem = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>(
-				getꓽSEC(),
-				DemoStateLib.reduceꓽaction,
-				//'in-mem'
-			)
+			const storeⵧin_mem = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
+				SEC: getꓽSEC(),
+				reduceꓽaction: DemoStateLib.reduceꓽaction,
+				//debug_id: 'in-mem',
+			})
 
-			const storeⵧlocal_storage = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>(
-				getꓽSEC(),
-				DemoStateLib.reduceꓽaction,
-				'fake LS'
-			)
+			const storeⵧlocal_storage = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
+				SEC: getꓽSEC(),
+				reduceꓽaction: DemoStateLib.reduceꓽaction,
+				debug_id: 'fake LS',
+			})
 
 			const flux_instance = create<DemoStateLib.State, DemoStateLib.Action>({
 				SCHEMA_VERSION: DemoStateLib.SCHEMA_VERSION,
@@ -54,26 +54,26 @@ describe(`${LIB}`, function() {
 				it('should successfully restore and propagate the state if any', () => {
 
 					// usually the in-memory store, has no persistence
-					const storeⵧmain = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>(
-						getꓽSEC(),
-						DemoStateLib.reduceꓽaction,
-						'main'
-					)
+					const storeⵧmain = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
+						SEC: getꓽSEC(),
+						reduceꓽaction: DemoStateLib.reduceꓽaction,
+						debug_id: 'main',
+					})
 
 					// usually a LS store, has sync persistence
-					const storeⵧsecondaryⵧa = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>(
-						getꓽSEC(),
-						DemoStateLib.reduceꓽaction,
-						'2A'
-					)
+					const storeⵧsecondaryⵧa = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
+						SEC: getꓽSEC(),
+						reduceꓽaction: DemoStateLib.reduceꓽaction,
+						debug_id: '2A',
+					})
 					storeⵧsecondaryⵧa.init(DemoStateLib.DEMO_STATE)
 
 					// usually a cloud store, not implemented
-					const storeⵧsecondaryⵧb = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>(
-						getꓽSEC(),
-						DemoStateLib.reduceꓽaction,
-						'2B'
-					)
+					const storeⵧsecondaryⵧb = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
+						SEC: getꓽSEC(),
+						reduceꓽaction: DemoStateLib.reduceꓽaction,
+						debug_id: '2B',
+					})
 
 					const flux_instance = create<DemoStateLib.State, DemoStateLib.Action>({
 						SCHEMA_VERSION: DemoStateLib.SCHEMA_VERSION,
@@ -98,26 +98,26 @@ describe(`${LIB}`, function() {
 				it('should merge conflicting candidates -- auto algorithm', () => {
 
 					// usually the in-memory store, has no persistence
-					const storeⵧmain = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>(
-						getꓽSEC(),
-						DemoStateLib.reduceꓽaction,
-						'main'
-					)
+					const storeⵧmain = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
+						SEC: getꓽSEC(),
+						reduceꓽaction: DemoStateLib.reduceꓽaction,
+						debug_id: 'main',
+					})
 
 					// usually a LS store, has sync persistence
-					const storeⵧsecondaryⵧa = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>(
-						getꓽSEC(),
-						DemoStateLib.reduceꓽaction,
-						'2A'
-					)
+					const storeⵧsecondaryⵧa = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
+						SEC: getꓽSEC(),
+						reduceꓽaction: DemoStateLib.reduceꓽaction,
+						debug_id: '2A',
+					})
 					storeⵧsecondaryⵧa.init(DemoStateLib.DEMO_STATE)
 
 					// usually a cloud store, not implemented
-					const storeⵧsecondaryⵧb = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>(
-						getꓽSEC(),
-						DemoStateLib.reduceꓽaction,
-						'2B'
-					)
+					const storeⵧsecondaryⵧb = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
+						SEC: getꓽSEC(),
+						reduceꓽaction: DemoStateLib.reduceꓽaction,
+						debug_id: '2B',
+					})
 					storeⵧsecondaryⵧb.init({
 						...DemoStateLib.DEMO_STATE,
 						revision: 9999, // much higher

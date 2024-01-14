@@ -6,13 +6,13 @@ details {
 	padding-inline-start: 1.4rem; /* for the content */
 }
 details summary {
-	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
+	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/#aa-the-css-reset-fix */
 	cursor: pointer;
 
 	margin-inline-start: -1rem; /* xxx rem */
 }
 details summary > * {
-	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
+	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/#aa-the-css-reset-fix */
 	display: inline;
 }
 details[open] {

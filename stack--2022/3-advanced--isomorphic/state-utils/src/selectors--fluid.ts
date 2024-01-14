@@ -42,7 +42,7 @@ export function fluid_select(stateA: Immutable<AnyOffirmoState>) {
 			// NO!
 			// We don't compare schema versions straight away
 			// if the user used an outdated+offline client for a while (high revision)
-			// we may rather want an outdated-but-migratable format
+			// we may rather want an outdated-but-migrate-able format
 			//assert(schema_version__A === schema_version__B, `has_higher_investment_than() expects same schema versions`)
 
 			const revision__A = getꓽrevisionⵧloose(stateA)
@@ -57,7 +57,7 @@ export function fluid_select(stateA: Immutable<AnyOffirmoState>) {
 				return activity_tms__A > activity_tms__B
 
 			// no change in the semantic INVESTMENT fields
-			// we fallback to the other semantic fields
+			// we fall back to the other semantic fields
 			const schema_version__B = getꓽschema_versionⵧloose(stateB)
 			if (schema_version__A !== schema_version__B)
 				return schema_version__A > schema_version__B

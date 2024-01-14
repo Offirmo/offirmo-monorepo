@@ -16,11 +16,16 @@ import { Store } from '../../types'
 
 const EMITTER_EVT = '⚡️change'
 
-function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extends BaseAction>(
+interface CreateParams<State, Action> {
 	SEC: SoftExecutionContext,
 	reduceꓽaction: (state: Immutable<State>, action: Immutable<Action>) => Immutable<State>,
 	debug_id?: string
-): Store<State, Action> {
+}
+function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extends BaseAction>({
+	SEC,
+	reduceꓽaction,
+	debug_id,
+}: CreateParams<State, Action>): Store<State, Action> {
 	const LIB = [
 		`🔵 store--in-mem`,
 		debug_id,
@@ -29,13 +34,28 @@ function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extend
 	return SEC.xTry(`creating ${LIB}…`, ({ logger }) => {
 		logger.trace(`[${LIB}].create()…`)
 
+		/////////////////////////////////////////////////
+
 		let state: Immutable<State> | undefined = undefined
+
+		function get(): Immutable<State> {
+			assert(state, `[${LIB}].get(): should be initialized!`)
+
+			return state
+		}
+
+		/////////////////////////////////////////////////
 
 		const emitter = new EventEmitter<{ [EMITTER_EVT]: undefined }>({
 			debug: {
 				name: 'storeⵧin_memory'
 			}
 		})
+
+		function subscribe(listener: () => void, debug_id?: string): () => void {
+			emitter.on(EMITTER_EVT, listener)
+			return () => emitter.off(EMITTER_EVT, listener)
+		}
 
 		/////////////////////////////////////////////////
 
@@ -48,26 +68,25 @@ function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extend
 					return
 				}
 
+				logger.error(`[${LIB}].init(): already initialized!`, {
+					...fluid_select(state).get_debug_infos_about_comparison_with(stateⵧnew, 'current', 'new'),
+				})
 				throw new Error(`[${LIB}].init(): already initialized!`)
 			}
 
 			state = stateⵧnew
 			emitter.emit(EMITTER_EVT)
-			logger.trace(`[${LIB}].set(): init ✔`)
+			logger.trace(`[${LIB}].set(): init ✔`, getꓽbaseⵧloose(state))
 		}
 
-		function get(): Immutable<State> {
-			assert(state, `[${LIB}].get(): should be initialized!`)
-
-			return state
-		}
+		/////////////////////////////////////////////////
 
 		function onꓽdispatch(action: Immutable<Action>, eventual_state_hint?: Immutable<State>): void {
 			logger.trace(`[${LIB}] ⚡ action dispatched: ${action.type}`, {
-				eventual_state_hint: getꓽbaseⵧloose(eventual_state_hint as any),
+				eventual_state_hint: eventual_state_hint ? getꓽbaseⵧloose(eventual_state_hint as any) : eventual_state_hint,
 			})
 
-			assert(state || eventual_state_hint, `[${LIB}].on_dispatch(): should be provided a hint or a previous state`)
+			assert(state || eventual_state_hint, `[${LIB}].on_dispatch(): should have a previous state or be provided a hint!`)
 
 			if (eventual_state_hint) {
 				logger.warn(`[${LIB}].on_dispatch(): (upper level architectural invariant) hint normally not expected for this store`)
@@ -92,7 +111,7 @@ function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extend
 			 */
 			const stateⵧprevious = state
 			state = eventual_state_hint || reduceꓽaction(state!, action)
-			const has_valuable_difference = state !== stateⵧprevious
+			const has_valuable_difference = state !== stateⵧprevious // TODO review
 			logger.trace(`[${LIB}] ⚡ action dispatched & reduced:`, {
 				current_rev: getꓽrevisionⵧloose(stateⵧprevious as any),
 				new_rev: getꓽrevisionⵧloose(state as any),
@@ -105,10 +124,7 @@ function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extend
 			emitter.emit(EMITTER_EVT)
 		}
 
-		function subscribe(listener: () => void, debug_id?: string): () => void {
-			emitter.on(EMITTER_EVT, listener)
-			return () => emitter.off(EMITTER_EVT, listener)
-		}
+		/////////////////////////////////////////////////
 
 		return {
 			get,

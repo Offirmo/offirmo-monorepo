@@ -101,8 +101,8 @@ function itᐧshouldᐧbeᐧaᐧstandardᐧstore(create: () => DemoStore): void 
 
 		})
 
-		if (create().subscribe_toꓽdistributed_updates) {
-			describe(`subscribe_toꓽdistributed_updates()`, function() {
+		if (create().setꓽdispatcher) {
+			describe(`setꓽdispatcher()`, function() {
 
 				it('should work', () => {
 					throw new Error('NIMP!')

@@ -41,8 +41,11 @@ interface Store<State extends AnyOffirmoState, Action extends BaseAction> {
 	//   - stores MUST tolerate being re-inited with identical value, due to "echo"
 	init(state: Immutable<State>): void
 
-	// TODO one day cloud stores
-	subscribe_toꓽdistributed_updates?: (callback: (concurrent_state: Immutable<State>) => void, debug_id?: string) => () => void
+	// Some stores are a bit "more clever" (ex. cloud async stores)
+	// and may want to sent actions,
+	// ex. on push from server.
+	// if this method is defined, it should be called while wiring the flux setup
+	setꓽdispatcher?(dispatcher: Dispatcher<State, Action>): void
 }
 
 
@@ -51,7 +54,7 @@ interface Dispatcher<State extends AnyOffirmoState, Action extends BaseAction> {
 	// core features
 	dispatch(action: Immutable<Action | ActionⳇReconcile<State>>): void,
 
-	// NO! done on creation, not dynamically
+	// NO! done on dispatcher creation, not dynamically
 	//registerꓽstore(s: Store<State, Action>, debug_id?: string): void
 
 	// XXX to review
@@ -75,10 +78,10 @@ interface Flux<State extends AnyOffirmoState, Action extends BaseAction> {
 	// see Store interface
 	subscribe(callback: () => void, debug_id?: string): () => void
 
-
+	// see despatcher interface
 	dispatch(action: Immutable<Action | ActionⳇReconcile<State>>): void
 
-	// TODO promise for suspend??
+	// TODO promise for suspense?
 
 	// reset?
 

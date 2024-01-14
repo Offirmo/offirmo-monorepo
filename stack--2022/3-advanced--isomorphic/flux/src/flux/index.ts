@@ -53,7 +53,7 @@ interface CreateParams<State extends AnyOffirmoState, Action extends BaseAction>
 	// safety to detect non-migrated states
 	SCHEMA_VERSION: number
 
-	//migrateⵧto_latest: FullMigrateToLatestFn<State>
+	//migrate_toꓽlatest: FullMigrateToLatestFn<State>
 	//reduceꓽaction: ActionReducer<State, Action>
 
 
@@ -73,7 +73,7 @@ function createꓽinstance<State extends AnyOffirmoState, Action extends BaseAct
 	create,
 
 	SCHEMA_VERSION,
-	//migrateⵧto_latest,
+	//migrate_toꓽlatest,
 	//reduceꓽaction,
 
 
@@ -95,7 +95,12 @@ function createꓽinstance<State extends AnyOffirmoState, Action extends BaseAct
 		const [ storeⵧmain, ...storeⵧreplicas ] = storesⵧordered
 		assert(storeⵧmain, `[${LIB}] At least one store should be provided!`)
 
-		//const _dispatcher = createꓽdispatcher(SEC, SCHEMA_VERSION)
+		/*const _dispatcher = createꓽdispatcher(SEC, SCHEMA_VERSION)
+		storesⵧordered.forEach(store => {
+			if (store.setꓽdispatcher) {
+				store.setꓽdispatcher(_dispatcher)
+			}
+		})*/
 
 		/////////////////////////////////////////////////
 		;(function init() {
@@ -144,26 +149,23 @@ function createꓽinstance<State extends AnyOffirmoState, Action extends BaseAct
 			// use case: after a long offline session,
 			// the cloud stores need to be passed the current valuable local state!
 			storeⵧreplicas.forEach(store => {
-				// note that some stores may have to tolerate an "echo" = being re-init'ed with their own state
+				// note that stores have to tolerate an "echo" = being re-init'ed with their own state
 				store.init(storeⵧmain.get())
-			})
-
-			// if there are any async un-persist from stores, they'll have to go through the dispatcher
-			storesⵧordered.forEach(store => {
-				if (store.subscribe_toꓽdistributed_updates) {
-					throw new Error('NIMP!')
-				}
 			})
 		})()
 
 		logger.silly(`[${LIB}] state initialised:`, storeⵧmain.get())
 
 		// NO "post create", it's up to the flux creator to call that if needed
+		// TODO should we update to now? or up to the caller?
+
 		////////////////////////////////////
 
 		function dispatch(action: Immutable<Action>) {
 			throw new Error('NIMP!')
 			/*if (action.type !== 'update_to_now') console.groupEnd()
+
+			assert(get_schema_version_loose(some_state) === SCHEMA_VERSION, `_enqueue_in_bkp_pipeline(): schema version === ${SCHEMA_VERSION} (current)!`)
 
 			;(console.groupCollapsed as any)(`——————— ⚡ action dispatched: "${action.type}" ⚡ ———————`)
 			schedule_when_idle_but_not_too_far(console.groupEnd)

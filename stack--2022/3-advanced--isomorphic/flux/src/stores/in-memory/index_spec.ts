@@ -11,29 +11,30 @@ import { itᐧshouldᐧbeᐧaᐧstandardᐧstore } from '../_spec.js'
 
 describe(`${LIB}`, function() {
 
-	describe.only('Store -- in-memory', function () {
+	describe('Store -- in-memory', function () {
+		function reduceꓽaction(state: any, action: any): any {
+			return {
+				...state,
+				revision: state.revision + 1,
+			}
+		}
 
 		describe('creation', function() {
 
 			it('should work', () => {
-				const store = create(
-					getꓽSEC(),
-					(state, action) => state
-				)
+				const store = create({
+					SEC: getꓽSEC(),
+					reduceꓽaction,
+				})
 			})
 		})
 
 		describe('store interface', function() {
 
-			itᐧshouldᐧbeᐧaᐧstandardᐧstore(() => create(
-				getꓽSEC(),
-				(state, action) => {
-					return {
-						...state,
-						revision: state.revision + 1,
-					}
-				}
-			))
+			itᐧshouldᐧbeᐧaᐧstandardᐧstore(() => create({
+				SEC: getꓽSEC(),
+				reduceꓽaction,
+			}))
 		})
 	})
 })
