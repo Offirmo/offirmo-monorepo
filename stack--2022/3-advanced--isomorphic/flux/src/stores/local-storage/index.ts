@@ -25,10 +25,11 @@ import { SoftExecutionContext } from '../../services/sec.js'
 // ex. the-boring-rpg.savegame
 export function get_storage_key(radix: string = 'store') {
 	return {
-		bkp_main:        `${radix}`,
-		bkp_minor:       `${radix}-bkp`,
-		bkp_major_old:   `${radix}-bkp-m1`,
-		bkp_major_older: `${radix}-bkp-m2`,
+		bkp_main:        `${radix}`,          // current, up-to-date, live, version
+		bkp_minor:       `${radix}-bkp`,      // recent, not too old, version (!= revision)
+		// TODO add "previous active day" ?
+		bkp_major_old:   `${radix}-bkp-m1`,   // 1 schema version older. Critical in case the migration code has an issue
+		bkp_major_older: `${radix}-bkp-m2`,   // 2 schema versions older
 	}
 }
 
@@ -76,7 +77,8 @@ interface CreateParams<State, Action> {
 	reduceꓽaction: (state: Immutable<State>, action: Immutable<Action>) => Immutable<State>
 	SCHEMA_VERSION: number
 	migrate_toꓽlatest: FullMigrateToLatestFn<State>
-	storage_keys_radix?: string
+	storage_keys_radix?: string // this is mandatory if the same domain serves several apps and users. The key should be prefixed by the app name + maybe a container (ex. savegame slot) etc.
+	                            // TODO extra app name from SEC?
 	debug_id?: string
 }
 function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action extends BaseAction>({
@@ -97,6 +99,9 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 
 		/////////////////////////////////////////////////
 
+		// we keep an in-mem copy bc
+		// 1. we're savvy about writing to disk (synchronous, takes cycles)
+		// 2. the storage may not work
 		let state: Immutable<State> | undefined = undefined
 
 		function get(): Immutable<State> {
@@ -191,6 +196,7 @@ const has_valuable_difference = !state || fluid_select(new_state).has_valuable_d
 		const STORAGE_KEYS = get_storage_key(storage_keys_radix)
 		logger.verbose(`[${LIB}] FYI storage keys = "${Object.values(STORAGE_KEYS).join(', ')}"`)
 
+		// synchronous read
 		let bkp__current: Immutable<State> | undefined = cast_toꓽimmutable(_safe_read_parse_and_validate_from_storage<State>(storage, STORAGE_KEYS.bkp_main, _onꓽerror))
 		let bkp__recent: Immutable<State> | undefined = cast_toꓽimmutable(_safe_read_parse_and_validate_from_storage<State>(storage, STORAGE_KEYS.bkp_minor, _onꓽerror))
 		let bkp__older: Array<Readonly<JSONObject>> = [
@@ -337,7 +343,7 @@ const has_valuable_difference = !state || fluid_select(new_state).has_valuable_d
 		catch (err) {
 			_onꓽerror(err)
 		}
-*/
+
 		/////////////////////////////////////////////////
 
 

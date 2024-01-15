@@ -18,12 +18,12 @@
 	"typings": "dist/src.es2022.esm/index.d.ts",
 
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "^0",
+		"@offirmo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/state-utils": "^0",
-		"@offirmo-private/timestamps": "^0",
+		"@offirmo-private/state-utils": "*",
+		"@offirmo-private/timestamps": "*",
 		"@tbrpg/definitions": "^0",
 		"fraction.js": "^4",
 		"memoize-one": "^6",
@@ -45,8 +45,8 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/prettify-any": "^0",
 		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/state-migration-tester": "^0",
-		"@offirmo-private/ts-types": "^0",
+		"@offirmo-private/state-migration-tester": "*",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2"

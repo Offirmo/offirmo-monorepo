@@ -20,6 +20,7 @@ asymc / design pattern réacteur
 async/sync
 asynchrone
 atomic
+audit trail - what happened, when, who made the request and how?
 authentication
 auto-scaling and load-shedding
 BDD - Behavior-Driven Development https://cucumber.io/school/   Discovery -> Formulation -> Automation
@@ -154,6 +155,7 @@ migrations
 mocha / chai
 monde du web ?
 monitoring
+monitoring = observing systems, collecting metrics, evaluating those metrics over time, and then using them to make decisions or take actions
 MVC
 namespace
 nommage des fonctions

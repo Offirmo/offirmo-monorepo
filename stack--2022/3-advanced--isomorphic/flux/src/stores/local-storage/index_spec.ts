@@ -58,6 +58,12 @@ describe.only(`${LIB}`, function() {
 				describe('from', function() {
 
 					it('should synchronously un-persist on creation')
+
+					// XXX what should we do?
+					// no current bkp BUT older backups??
+					// what if the user accidentally uses an old code?
+					// what if a backup has higher investment?
+
 				})
 			})
 		})
