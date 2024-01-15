@@ -40,19 +40,6 @@ export function s_max(a: SemanticDifference, b: SemanticDifference): SemanticDif
 	return SemanticDifference.none
 }
 
-// used only in tests
-const _get_advanced_json_differ = memoize_one(() => {
-	const advanced_json_differ = jsondiffpatch.create({
-		// method used to match objects when diffing arrays
-		// by default === operator is used
-		objectHash: (obj: any) => JSON.stringify(obj), // TODO use stable stringify?
-	})
-
-	return advanced_json_differ
-})
-export function getꓽjson_difference(a: Immutable<any>, b: Immutable<any>): JSONObject {
-	return _get_advanced_json_differ().diff(a, b) as any // hide the proprietary return type, not needed for now
-}
 
 
 // TODO improve unclear semantics

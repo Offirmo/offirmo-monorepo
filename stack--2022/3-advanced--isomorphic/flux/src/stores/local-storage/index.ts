@@ -4,6 +4,7 @@ import EventEmitter from 'emittery'
 import { try_or_fallback } from '@offirmo/error-utils'
 import stringifyⵧstable from '@offirmo-private/json-stable-stringify'
 import { Immutable, Storage, JSONObject } from '@offirmo-private/ts-types'
+import { getꓽcompareFn } from '@offirmo-private/ts-utils'
 import {
 	AnyOffirmoState,
 	BaseAction,
@@ -18,6 +19,7 @@ import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils
 
 import { Store, Dispatcher } from '../../types'
 import { SoftExecutionContext } from '../../services/sec.js'
+import { schedule_when_idle_but_within_human_perception } from '@offirmo-private/async-utils/src'
 
 
 /////////////////////////////////////////////////
@@ -86,6 +88,7 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 	storage,
 	storage_keys_radix,
 	reduceꓽaction,
+	migrate_toꓽlatest,
 	SCHEMA_VERSION,
 	debug_id,
 }: CreateParams<State, Action>): Store<State, Action> {
@@ -139,26 +142,6 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 			_enqueue_in_bkp_pipeline(state)
 				.catch(_onꓽerror)
 			logger.trace(`[${LIB}].set(): init ✔`)
-
-			/*
-const has_valuable_difference = !state || fluid_select(new_state).has_valuable_difference_with(state)
-			logger.trace(`[${LIB}].set()`, {
-				new_state: getꓽbaseⵧloose(new_state),
-				existing_state: getꓽbaseⵧloose(state as any),
-				has_valuable_difference,
-			})
-
-			if (!state) {
-				logger.trace(`[${LIB}].set(): init ✔`)
-			}
-			else if (new_state === state) {
-				logger.warn(`[${LIB}].set(): echo ?`)
-				return
-			}
-			else if (!has_valuable_difference) {
-				logger.trace(`[${LIB}].set(): no semantic change ✔`)
-				return
-			}*/
 		}
 
 		/////////////////////////////////////////////////
@@ -192,19 +175,32 @@ const has_valuable_difference = !state || fluid_select(new_state).has_valuable_d
 		}
 
 		/////////////////////////////////////////////////
-		// bkp pipeline
+		// persisted + bkp pipeline
+		// WARNING the bkp pipeline (~autosave) is an INTERNAL safety against bugs, esp. schema migration.
+		// This is NOT a user feature!
+		// There is no UI to recover from the old backups, it'll have to be manual (fiddling with local storage)
+		// The logic here should ONLY un-persist the recent state, NOT try to salvage the older backups.
+		// (bc the user may have intentionally reseted their current state and don't want outdated stuff)
+
 		const STORAGE_KEYS = get_storage_key(storage_keys_radix)
 		logger.verbose(`[${LIB}] FYI storage keys = "${Object.values(STORAGE_KEYS).join(', ')}"`)
 
-		// synchronous read
-		let bkp__current: Immutable<State> | undefined = cast_toꓽimmutable(_safe_read_parse_and_validate_from_storage<State>(storage, STORAGE_KEYS.bkp_main, _onꓽerror))
-		let bkp__recent: Immutable<State> | undefined = cast_toꓽimmutable(_safe_read_parse_and_validate_from_storage<State>(storage, STORAGE_KEYS.bkp_minor, _onꓽerror))
-		let bkp__older: Array<Readonly<JSONObject>> = [
-			_safe_read_parse_and_validate_from_storage<any>(storage, STORAGE_KEYS.bkp_major_old, _onꓽerror),
-			_safe_read_parse_and_validate_from_storage<any>(storage, STORAGE_KEYS.bkp_major_older, _onꓽerror),
-		].filter(s => !!s)
-		let recovered_states_unmigrated_ordered_oldest_first: any[] = []
-		let restored_migrated: Immutable<State> | undefined = undefined
+		// NOTE that those variables are BACKUPS, not states (yet)
+		let bkp__current: Immutable<State> | undefined = (() => {
+			logger.verbose(`[${LIB}] attempting to restore the persisted state…`)
+			const raw = _safe_read_parse_and_validate_from_storage<State>(storage, STORAGE_KEYS.bkp_main, _onꓽerror)
+			if (!raw)
+				return undefined
+
+			const unmigrated_schema_version = getꓽschema_versionⵧloose(raw)
+			assert(unmigrated_schema_version <= SCHEMA_VERSION, `[${LIB}] the active persisted state should have a lower or equal schema version than the current code!`)
+
+			return migrate_toꓽlatest(SEC, raw)
+		})()
+		// older internal safety backups
+		// for perf reason we don't read them now
+		let bkp__recent: Immutable<State> | undefined = undefined
+		let bkp__older: Array<Readonly<JSONObject>> = []
 
 		// TODO should allow any minor overwrite, in case manual revert
 		async function _enqueue_in_bkp_pipeline(some_state: Immutable<State>): Promise<void> {
@@ -212,7 +208,7 @@ const has_valuable_difference = !state || fluid_select(new_state).has_valuable_d
 				candidate: getꓽbaseⵧloose(some_state as any),
 				current: getꓽbaseⵧloose(state as any),
 				bkp__current: getꓽbaseⵧloose(bkp__current as any),
-				//'legacy.length': recovered_states_unmigrated_ordered_oldest_first.length,
+				//'legacy.length': recovered_backups_unmigrated_ordered_oldest_first.length,
 				//some_state,
 			})
 
@@ -241,10 +237,10 @@ const has_valuable_difference = !state || fluid_select(new_state).has_valuable_d
 					bkp__recent = undefined
 				}
 			}
-			if (recovered_states_unmigrated_ordered_oldest_first.length)
+			if (recovered_backups_unmigrated_ordered_oldest_first.length)
 				logger.trace(`[${LIB}] _enqueue_in_bkp_pipeline(): this is the first valuable change, moving restored states along the major bkp pipeline…`)
-			while(recovered_states_unmigrated_ordered_oldest_first.length) {
-				const some_legacy_state = recovered_states_unmigrated_ordered_oldest_first.shift()
+			while(recovered_backups_unmigrated_ordered_oldest_first.length) {
+				const some_legacy_state = recovered_backups_unmigrated_ordered_oldest_first.shift()
 				if (getꓽschema_versionⵧloose(some_legacy_state) < SCHEMA_VERSION)
 					promises.push(_enqueue_in_major_bkp_pipeline(some_legacy_state))
 			}
@@ -256,7 +252,7 @@ const has_valuable_difference = !state || fluid_select(new_state).has_valuable_d
 			const most_recent_previous_major_version = bkp__older[0] as any
 			logger.trace(`[${LIB}] _enqueue_in_major_bkp_pipeline()`, {
 				...fluid_select(legacy_state).get_debug_infos_about_comparison_with(most_recent_previous_major_version, 'enqueued', 'most_recent_major'),
-				current_major_bkp_pipeline: JSON.parse(JSON.stringify(bkp__older))
+				current_major_bkp_pipeline: structuredClone(bkp__older)
 			})
 
 			assert(
@@ -285,64 +281,86 @@ const has_valuable_difference = !state || fluid_select(new_state).has_valuable_d
 		}
 
 		/////////////////////////////////////////////////
-		// recover from bkp (we handle potentially sparse bkp pipeline)
+		// recover old internal safety bkps (we handle potentially sparse bkp pipeline)
+		// no need to do it sync (blocking)
+		// but need to be done ideally before we start dispatching
+		//let recovered_backups_unmigrated_ordered_oldest_first: any[] = []
+		//let restored_migrated: Immutable<State> | undefined = undefined
+		schedule_when_idle_but_within_human_perception(() => {
+			try {
+				logger.verbose(`[${LIB}] attempting to restore the INTERNAL safety auto-backup…`)
 
-		try {
-			logger.verbose(`[${LIB}] attempting to restore…`)
+				let bkp__recent: Immutable<State> | undefined = cast_toꓽimmutable(_safe_read_parse_and_validate_from_storage<State>(storage, STORAGE_KEYS.bkp_minor, _onꓽerror))
+				let bkp__older: Array<Readonly<JSONObject>> = [
+					_safe_read_parse_and_validate_from_storage<any>(storage, STORAGE_KEYS.bkp_major_old, _onꓽerror),
+					_safe_read_parse_and_validate_from_storage<any>(storage, STORAGE_KEYS.bkp_major_older, _onꓽerror),
+				].filter(s => !!s)
+				let recovered_backups_unmigrated_ordered_oldest_first: any[] = []
+				let restored_migrated: Immutable<State> | undefined = undefined
 
-			// XXX this code block is tricky, beware sync/async
 
-			// read and store everything needed in memory
-			recovered_states_unmigrated_ordered_oldest_first = [
+				// XXX this code block is tricky, beware sync/async
+
+				// read and store everything needed in memory
+				recovered_backups_unmigrated_ordered_oldest_first = [
 					...bkp__older,
 					bkp__current || bkp__recent,
 				]
-				.filter(s => !!s)
-				.sort(UNCLEAR_compare) XXX
-			bkp__older = [] // reset since we hold the backups in the var above now
+					.filter(s => !!s)
+					.sort(getꓽcompareFn<any>(getꓽschema_versionⵧloose))
+				bkp__older = [] // reset since we hold the backups in the var above now
 
-			if (recovered_states_unmigrated_ordered_oldest_first.length)
-				logger.trace(`[${LIB}] found ${recovered_states_unmigrated_ordered_oldest_first.length} past backups:`, {
-					recovered_states_unmigrated_ordered_most_recent_first: JSON.parse(JSON.stringify(recovered_states_unmigrated_ordered_oldest_first)),
+				if (recovered_backups_unmigrated_ordered_oldest_first.length === 0) {
+					// we didn't recover anything
+					// most likely a brand-new session
+					return
+				}
+
+				xxx
+				logger.trace(`[${LIB}] found ${recovered_backups_unmigrated_ordered_oldest_first.length} past backups:`, {
+					recovered_states_unmigrated_ordered_most_recent_first: structuredClone(recovered_backups_unmigrated_ordered_oldest_first),
 					...(bkp__current && { main: bkp__current }),
 					...(bkp__recent && { minor: bkp__recent }),
 					...(bkp__older[0] && { major_1: bkp__older[0]}),
 					...(bkp__older[1] && { major_2: bkp__older[1]}),
 				})
 
-			const most_recent_unmigrated_bkp = recovered_states_unmigrated_ordered_oldest_first.slice(-1)[0]
+				const bkpⵧmost_recentⵧunmigrated = recovered_backups_unmigrated_ordered_oldest_first.slice(-1)[0]
 
-			if (!most_recent_unmigrated_bkp) {
-				logger.trace(`[${LIB}] found NO candidate state to be restored.`)
-			}
-			else {
-				logger.trace(`[${LIB}] found candidate state to be restored`, getꓽbaseⵧloose(most_recent_unmigrated_bkp))
-				logger.trace(`[${LIB}] automigrating and restoring this candidate state…`)
+				if (!bkpⵧmost_recentⵧunmigrated) {
+					logger.trace(`[${LIB}] found NO candidate state to be restored.`)
+				}
+				else {
+					logger.trace(`[${LIB}] found candidate state to be restored`, getꓽbaseⵧloose(bkpⵧmost_recentⵧunmigrated))
+					logger.trace(`[${LIB}] automigrating and restoring this candidate state…`)
 
-				// memorize it for later
-				restored_migrated = migrateꓽto_latest(SEC,
-					// deep clone in case the migration is not immutable (seen!)
-					JSON.parse(JSON.stringify(
-						most_recent_unmigrated_bkp
-					))
-				)
+					// rare case of a user using old code on a more recent data
+					assert(getꓽschema_versionⵧloose(bkpⵧmost_recentⵧunmigrated) <= SCHEMA_VERSION, `[${LIB}] found a backup with a higher schema version than the current code!`)
 
-				// immediate sync restoration
-				set(restored_migrated)
+					// memorize it for later
+					restored_migrated = migrate_toꓽlatest(SEC,
+						// deep clone in case the migration is not immutable (seen!)
+						structuredClone(bkpⵧmost_recentⵧunmigrated)
+					)
 
-				if (dispatcher) {
-					// NO DISPATCH ON RESTORATION!
-					// - We can't do it SYNC because all the stores may not be plugged in yet
-					// - We can't do it ASYNC because dependents would need to wait with sth like a promise
-					// Eventually, we let the caller (plugging stores to dispatcher) do it.
-					//logger.trace(`[${LIB}] forwarding the restored state to the dispatcher…`)
-					//dispatcher.dispatch(create_action__set(restored_migrated!))
+					// immediate sync restoration
+					set(restored_migrated)
+
+					if (dispatcher) {
+						// NO DISPATCH ON RESTORATION!
+						// - We can't do it SYNC because all the stores may not be plugged in yet
+						// - We can't do it ASYNC because dependents would need to wait with sth like a promise
+						// Eventually, we let the caller (plugging stores to dispatcher) do it.
+						//logger.trace(`[${LIB}] forwarding the restored state to the dispatcher…`)
+						//dispatcher.dispatch(create_action__set(restored_migrated!))
+					}
 				}
 			}
-		}
-		catch (err) {
-			_onꓽerror(err)
-		}
+			catch (err) {
+				_onꓽerror(err)
+			}
+		})
+
 
 		/////////////////////////////////////////////////
 

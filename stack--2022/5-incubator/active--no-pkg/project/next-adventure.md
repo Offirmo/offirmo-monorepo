@@ -4,6 +4,7 @@ new adventure
 ⇱ find remote / relocate / good job?
   ⇱ interview
     GAFAM
+      https://foobar.withgoogle.com/
     Slack
     Cloudflare
     ⇱ apply for jobs + https://www.cnbc.com/2024/01/01/dont-forget-this-crucial-step-after-you-apply-for-a-job-says-recruiter.html

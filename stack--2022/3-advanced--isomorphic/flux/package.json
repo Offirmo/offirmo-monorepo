@@ -28,6 +28,7 @@
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/ts-types": "*",
+		"@offirmo-private/ts-utils": "*",
 		"emittery": "^1",
 		"tiny-invariant": "^1"
 	},

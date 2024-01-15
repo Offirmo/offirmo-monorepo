@@ -15,7 +15,7 @@ import {
 	s_max,
 	UNCLEAR_get_difference,
 	UNCLEAR_compare,
-} from './comparators.js'
+} from './comparators--unclear.js'
 import {
 	BaseRootState,
 	BaseState,

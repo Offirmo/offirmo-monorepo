@@ -30,10 +30,10 @@ cache
 caching -- S3 FIFO https://s3fifo.com/
 CAP ACID https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
 capability is an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
-CD https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
+CD Continuous Delivery https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
 changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 changelogs -- conventional https://github.com/conventional-changelog
-CI https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
+CI Continuous Integration  https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
 comment
 comments -- conventional

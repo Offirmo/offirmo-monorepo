@@ -17,10 +17,10 @@ Good articles:
 
 > A task is any JavaScript code which is scheduled to be run by the standard mechanisms
 > such as initially starting to run a program, an event callback being run, or an interval or timeout being fired.
->These all get scheduled on the task queue.
+> These all get scheduled on the task queue.
 
 > each time a task exits, the event loop checks to see if the task is returning control to other JavaScript code.
-> If not, it runs all of the microtasks in the microtask queue.
+> If not, it runs all the microtasks in the microtask queue.
 > The microtask queue is, then, processed multiple times per iteration of the event loop, including after handling events and other callbacks.
 > If a microtask adds more microtasks to the queue by calling queueMicrotask(),
 > those newly-added microtasks execute before the next task is run.

@@ -59,6 +59,7 @@ research directions -- Weak-to-strong generalization: Humans will be weak superv
 RLHF reinforcement learning from human feedback
 SageMaker (AWS)
 singularity
+vector database https://weaviate.io/
 SMoE "sparse mixture of experts" model
 sociotechnic = skilled at analyzing the interaction of technology and society long-term: lawyers, ethicists, sociologists, or rights advocates
 Stable Diffusion

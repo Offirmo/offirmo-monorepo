@@ -4,7 +4,7 @@ import { LIB } from './consts.js'
 
 import {
 	fluid_select
-} from './selectors--fluid.js'
+} from './comparators--fluid.js'
 
 import {
 	DEMO_USTATE,
