@@ -7,6 +7,7 @@ import { createꓽstoreⵧlocal_storage } from './index.js'
 
 import { itᐧshouldᐧbeᐧaᐧstandardᐧstore } from '../_spec.js'
 import { createꓽstorageⵧin_mem } from '../../_test/in-mem-storage.js'
+import * as DemoStateLib from '../../_test/state-demo'
 
 /////////////////////////////////////////////////
 
@@ -22,6 +23,7 @@ describe.only(`${LIB}`, function() {
 		function create() {
 			return createꓽstoreⵧlocal_storage({
 				SEC: getꓽSEC(),
+				SCHEMA_VERSION: 1,
 				storage: createꓽstorageⵧin_mem(),
 				reduceꓽaction,
 				migrate_toꓽlatest: (state: any) => state,
@@ -37,7 +39,13 @@ describe.only(`${LIB}`, function() {
 
 		describe('standard store interface', function() {
 
-			itᐧshouldᐧbeᐧaᐧstandardᐧstore(create)
+			itᐧshouldᐧbeᐧaᐧstandardᐧstore((DemoStateLib) => createꓽstoreⵧlocal_storage({
+					SEC: getꓽSEC(),
+					storage: createꓽstorageⵧin_mem(),
+					SCHEMA_VERSION: DemoStateLib.SCHEMA_VERSION,
+					reduceꓽaction: DemoStateLib.reduceꓽaction,
+					migrate_toꓽlatest: DemoStateLib.migrate_toꓽlatest,
+				}))
 		})
 
 		describe('specific feature', function() {

@@ -1,3 +1,5 @@
+import { createꓽaction } from '@offirmo-private/state-utils'
+
 export * from './src/index.js'
 
 /////////////////////////////////////////////////
@@ -13,6 +15,7 @@ import {
 	State,
 	on_start_session,
 	on_logged_in_refresh,
+	DEMO_STATE,
 } from './src/index.js'
 
 /////////////////////////////////////////////////
@@ -43,6 +46,11 @@ const reduceꓽaction: ActionReducer<State, Action> = (state, action) => {
 	}
 }
 
+const DEMO_ACTION: ActionⳇStartSession = createꓽaction<ActionⳇStartSession>({
+	type: 'start_session',
+	is_web_diversity_supporter: !DEMO_STATE.is_web_diversity_supporter,
+})
+
 /////////////////////////////////////////////////
 
 export {
@@ -50,4 +58,6 @@ export {
 	type ActionⳇOnLoggedInRefresh,
 	type Action,
 	reduceꓽaction,
+
+	DEMO_ACTION,
 }

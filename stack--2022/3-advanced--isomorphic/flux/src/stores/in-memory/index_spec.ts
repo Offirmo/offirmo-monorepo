@@ -6,6 +6,7 @@ import { getꓽSEC } from '../../services/sec.js'
 import create from './index.js'
 
 import { itᐧshouldᐧbeᐧaᐧstandardᐧstore } from '../_spec.js'
+import * as DemoStateLib from '../../_test/state-demo'
 
 /////////////////////////////////////////////////
 
@@ -31,9 +32,9 @@ describe(`${LIB}`, function() {
 
 		describe('store interface', function() {
 
-			itᐧshouldᐧbeᐧaᐧstandardᐧstore(() => create({
+			itᐧshouldᐧbeᐧaᐧstandardᐧstore((DemoStateLib) => create({
 				SEC: getꓽSEC(),
-				reduceꓽaction,
+				reduceꓽaction: DemoStateLib.reduceꓽaction,
 			}))
 		})
 	})

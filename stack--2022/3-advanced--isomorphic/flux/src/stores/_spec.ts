@@ -10,11 +10,11 @@ import * as DemoStateLib from '../_test/state-demo/index.js'
 
 type DemoStore = Store<DemoStateLib.State, DemoStateLib.Action>
 
-function itᐧshouldᐧbeᐧaᐧstandardᐧstore(create: () => DemoStore): void {
+function itᐧshouldᐧbeᐧaᐧstandardᐧstore(create: (_: typeof DemoStateLib) => DemoStore): void {
 	describe(`[generic Store tests]`, function() {
 		let store: DemoStore = undefined as any
 		beforeEach(() => {
-			store = create()
+			store = create(DemoStateLib)
 		})
 
 		describe(`get()`, function() {
@@ -42,15 +42,15 @@ function itᐧshouldᐧbeᐧaᐧstandardᐧstore(create: () => DemoStore): void 
 
 				it('should return what was last set -- dispatch -- reduced', () => {
 					store.init(DemoStateLib.DEMO_STATE)
-					store.onꓽdispatch({} as any)
+					store.onꓽdispatch(DemoStateLib.DEMO_ACTION)
 					const new_state = store.get()
-					expect(new_state).to.not.equal(DemoStateLib.DEMO_STATE)
-					expect(store.get()).to.equal(new_state)
+					expect(new_state).not.to.equal(DemoStateLib.DEMO_STATE)
+					expect(store.get()).to.equal(new_state) // stability
 				})
 
 				it('should return what was last set -- dispatch -- hinted', () => {
 					const storeMain = store
-					const storeRepl = create()
+					const storeRepl = create(DemoStateLib)
 					storeMain.init(DemoStateLib.DEMO_STATE)
 					storeRepl.init(storeMain.get())
 
@@ -101,7 +101,7 @@ function itᐧshouldᐧbeᐧaᐧstandardᐧstore(create: () => DemoStore): void 
 
 		})
 
-		if (create().setꓽdispatcher) {
+		if (create(DemoStateLib).setꓽdispatcher) {
 			describe(`setꓽdispatcher()`, function() {
 
 				it('should work', () => {
