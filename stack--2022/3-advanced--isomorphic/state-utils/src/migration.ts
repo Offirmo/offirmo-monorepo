@@ -9,7 +9,7 @@ import {
 	AnyBaseTState,
 	AnyRootState,
 } from './types--internal.js'
-import { isꓽRootState, has_versioned_schema, isꓽBaseState, isꓽUTBundle } from './type-guards.js'
+import { isꓽRootState, hasꓽversioned_schema, isꓽBaseState, isꓽUTBundle } from './type-guards.js'
 import { getꓽschema_versionⵧloose, getꓽbaseⵧloose } from './selectors.js'
 
 
@@ -66,14 +66,14 @@ export type SubStatesMigrationFns = { [key: string]: GenericMigrationFn }
 
 const _get_state_summary = getꓽbaseⵧloose
 
-export function generic_migrate_to_latest<State extends AnyOffirmoState>({
+export function migrate_toꓽlatestⵧgeneric<State extends AnyOffirmoState>({
 	SEC,
 
 	LIB,
 	SCHEMA_VERSION,
 	legacy_state,
 	hints,
-	sub_states_migrate_to_latest, // no default to force thinking
+	sub_states_migrate_toꓽlatest, // no default to force thinking
 	cleanup = (SEC, state, hints) => state,
 	pipeline,
 }: {
@@ -82,14 +82,14 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 	SCHEMA_VERSION: number
 	legacy_state: Immutable<any>
 	hints: Immutable<any>
-	sub_states_migrate_to_latest: SubStatesMigrationFns
+	sub_states_migrate_toꓽlatest: SubStatesMigrationFns
 	cleanup?: CleanupStep<State>
 	pipeline: Immutable<[
 		LastMigrationStep<State>,
 		...MigrationStep[],
 	]>
 }): Immutable<State> {
-	return SEC.xTry('migrate_to_latest', ({SEC, logger}) => {
+	return SEC.xTry('migrate_toꓽlatest', ({SEC, logger}) => {
 		const existing_version = getꓽschema_versionⵧloose(legacy_state as any)
 		console.groupCollapsed(`migration of schema ${ LIB } from v${ existing_version } to v${ SCHEMA_VERSION }`)
 
@@ -166,13 +166,13 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 
 		// migrate sub-reducers if any...
 		if (isꓽUTBundle(state)) {
-			state = _migrate_sub_states__bundle(SEC, state, sub_states_migrate_to_latest, hints) as unknown as Immutable<State>
+			state = _migrate_sub_states__bundle(SEC, state, sub_states_migrate_toꓽlatest, hints) as unknown as Immutable<State>
 		}
 		else if (isꓽRootState(state)) {
-			state = _migrate_sub_states__root<BaseRootState>(SEC, state, sub_states_migrate_to_latest, hints) as unknown as Immutable<State>
+			state = _migrate_sub_states__root<BaseRootState>(SEC, state, sub_states_migrate_toꓽlatest, hints) as unknown as Immutable<State>
 		}
 		else if (isꓽBaseState(state)) {
-			state = _migrate_sub_states__base<BaseState>(SEC, state as any, sub_states_migrate_to_latest, hints) as unknown as Immutable<State>
+			state = _migrate_sub_states__base<BaseState>(SEC, state as any, sub_states_migrate_toꓽlatest, hints) as unknown as Immutable<State>
 		}
 		else {
 			assert(false, 'should be a recognized AnyOffirmoState!')
@@ -189,26 +189,26 @@ export function generic_migrate_to_latest<State extends AnyOffirmoState>({
 function _migrate_sub_states__bundle(
 	SEC: SoftExecutionContext,
 	state: Immutable<UTBundle<AnyBaseUState, AnyBaseTState>>,
-	sub_states_migrate_to_latest: SubStatesMigrationFns,
+	sub_states_migrate_toꓽlatest: SubStatesMigrationFns,
 	hints: Immutable<any>,
 ): Immutable<UTBundle<AnyBaseUState, AnyBaseTState>> {
 	let has_change = false
 	let [ u_state, t_state ] = state
 
-	const unmigrated_sub_states = new Set<string>([...Object.keys(sub_states_migrate_to_latest)])
+	const unmigrated_sub_states = new Set<string>([...Object.keys(sub_states_migrate_toꓽlatest)])
 	const sub_states_found = new Set<string>()
 	const sub_u_states_found = new Set<string>()
 	const sub_t_states_found = new Set<string>()
 
 	// using base state in case of a legacy state
 	for (let key in u_state) {
-		if (has_versioned_schema(u_state[key])) {
+		if (hasꓽversioned_schema(u_state[key])) {
 			sub_states_found.add(key)
 			sub_u_states_found.add(key)
 		}
 	}
 	for (let key in t_state) {
-		if (has_versioned_schema(t_state[key])) {
+		if (hasꓽversioned_schema(t_state[key])) {
 			sub_states_found.add(key)
 			sub_t_states_found.add(key)
 		}
@@ -224,7 +224,7 @@ function _migrate_sub_states__bundle(
 
 	const sub_states_migrated = new Set<string>()
 	sub_states_found.forEach(key => {
-		const migrate_sub_to_latest = sub_states_migrate_to_latest[key]
+		const migrate_sub_to_latest = sub_states_migrate_toꓽlatest[key]
 		if (!migrate_sub_to_latest)
 			throw new Error(`Found sub-state "${key}" but no migration fn was provided!`)
 
@@ -308,7 +308,7 @@ function _migrate_sub_states__bundle(
 function _migrate_sub_states__root<State extends BaseRootState = AnyRootState>(
 	SEC: SoftExecutionContext,
 	state: Immutable<State>,
-	sub_states_migrate_to_latest: SubStatesMigrationFns,
+	sub_states_migrate_toꓽlatest: SubStatesMigrationFns,
 	hints: Immutable<any>,
 ): Immutable<State> {
 	const { u_state: previous_u_state, t_state: previous_t_state } = state as AnyRootState
@@ -317,7 +317,7 @@ function _migrate_sub_states__root<State extends BaseRootState = AnyRootState>(
 	const migrated_bundle = _migrate_sub_states__bundle(
 		SEC,
 		previous_state_as_bundle,
-		sub_states_migrate_to_latest,
+		sub_states_migrate_toꓽlatest,
 		hints,
 	)
 
@@ -334,14 +334,14 @@ function _migrate_sub_states__root<State extends BaseRootState = AnyRootState>(
 function _migrate_sub_states__base<State extends BaseState>(
 	SEC: SoftExecutionContext,
 	state: Immutable<State>,
-	sub_states_migrate_to_latest: SubStatesMigrationFns,
+	sub_states_migrate_toꓽlatest: SubStatesMigrationFns,
 	hints: Immutable<any>,
 ): Immutable<State> {
 	//let has_change = false
 	const legacy_state = state as AnyBaseState
 
-	for (let key in sub_states_migrate_to_latest) {
-		if (has_versioned_schema(legacy_state[key])) {
+	for (let key in sub_states_migrate_toꓽlatest) {
+		if (hasꓽversioned_schema(legacy_state[key])) {
 			throw new Error('_migrate_sub_states__base() NIMP!')
 		}
 	}

@@ -17,7 +17,7 @@ import {
 
 describe(`${LIB} - FLUID selectors`, function() {
 
-	describe('has_higher_investment_than()', function() {
+	describe('hasꓽhigher_investment_than()', function() {
 
 		context('on semantic equality', function() {
 
@@ -27,8 +27,8 @@ describe(`${LIB} - FLUID selectors`, function() {
 				const candidate = {
 					...DEMO_ROOT_STATE,
 				}
-				expect(fluid_select(candidate).has_higher_investment_than(existing)).to.be.true
-				expect(fluid_select(existing).has_higher_investment_than(candidate)).to.be.true
+				expect(fluid_select(candidate).hasꓽhigher_investment_than(existing)).to.be.true
+				expect(fluid_select(existing).hasꓽhigher_investment_than(candidate)).to.be.true
 			})
 		})
 
@@ -44,8 +44,8 @@ describe(`${LIB} - FLUID selectors`, function() {
 						revision: DEMO_ROOT_STATE.u_state.revision + 1,
 					},
 				}
-				expect(fluid_select(candidate).has_higher_investment_than(existing)).to.be.true
-				expect(fluid_select(existing).has_higher_investment_than(candidate)).to.be.false
+				expect(fluid_select(candidate).hasꓽhigher_investment_than(existing)).to.be.true
+				expect(fluid_select(existing).hasꓽhigher_investment_than(candidate)).to.be.false
 			})
 		})
 
@@ -58,8 +58,8 @@ describe(`${LIB} - FLUID selectors`, function() {
 					...DEMO_ROOT_STATE,
 					last_user_investment_tms: DEMO_ROOT_STATE.last_user_investment_tms + 10,
 				}
-				expect(fluid_select(candidate).has_higher_investment_than(existing)).to.be.true
-				expect(fluid_select(existing).has_higher_investment_than(candidate)).to.be.false
+				expect(fluid_select(candidate).hasꓽhigher_investment_than(existing)).to.be.true
+				expect(fluid_select(existing).hasꓽhigher_investment_than(candidate)).to.be.false
 			})
 		})
 
@@ -81,13 +81,13 @@ describe(`${LIB} - FLUID selectors`, function() {
 						//revision: DEMO_ROOT_STATE.t_state.revision + 1,
 					},
 				}
-				expect(fluid_select(candidate).has_higher_investment_than(existing)).to.be.true
-				expect(fluid_select(existing).has_higher_investment_than(candidate)).to.be.false
+				expect(fluid_select(candidate).hasꓽhigher_investment_than(existing)).to.be.true
+				expect(fluid_select(existing).hasꓽhigher_investment_than(candidate)).to.be.false
 			})
 		})
 	})
 
-	describe('has_valuable_difference_with', function() {
+	describe('hasꓽvaluable_difference_with', function() {
 
 
 	})

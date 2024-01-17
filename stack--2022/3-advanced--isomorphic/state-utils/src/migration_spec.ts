@@ -7,7 +7,7 @@ import { LIB } from './consts.js'
 import {
 	LastMigrationStep,
 	MigrationStep,
-	generic_migrate_to_latest,
+	migrate_toꓽlatestⵧgeneric,
 } from './migration.js'
 
 import {
@@ -26,7 +26,7 @@ describe(`${LIB} - migration`, function() {
 	const LIB = '@offirmo-private/state-utils--UNIT-TEST'
 	TEST_SEC.setLogicalStack({module: LIB})
 
-	describe('generic_migrate_to_latest()', function() {
+	describe('migrate_toꓽlatestⵧgeneric()', function() {
 
 		describe('on base state', function() {
 			const SCHEMA_VERSION = SCHEMA_VERSION_A
@@ -79,15 +79,15 @@ describe(`${LIB} - migration`, function() {
 				return state
 			}
 
-			function migrate_to_latest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}, ): State {
-				return generic_migrate_to_latest({
+			function migrate_toꓽlatest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}, ): State {
+				return migrate_toꓽlatestⵧgeneric({
 					SEC,
 
 					LIB,
 					SCHEMA_VERSION,
 					legacy_state,
 					hints,
-					sub_states_migrate_to_latest: {},
+					sub_states_migrate_toꓽlatest: {},
 
 					pipeline: [
 						migrate_to_2,
@@ -97,29 +97,29 @@ describe(`${LIB} - migration`, function() {
 			}
 
 			it('should work in nominal case 0 -> 2', () => {
-				expect(migrate_to_latest(TEST_SEC, DEMO_STATE_v0, HINTS)).to.deep.equal(DEMO_STATE_v2)
+				expect(migrate_toꓽlatest(TEST_SEC, DEMO_STATE_v0, HINTS)).to.deep.equal(DEMO_STATE_v2)
 			})
 
 			it('should work in nominal case 1 -> 2', () => {
-				expect(migrate_to_latest(TEST_SEC, DEMO_STATE_v1, HINTS)).to.deep.equal(DEMO_STATE_v2)
+				expect(migrate_toꓽlatest(TEST_SEC, DEMO_STATE_v1, HINTS)).to.deep.equal(DEMO_STATE_v2)
 			})
 
 			it('should work in nominal case 2 -> 2', () => {
-				//expect(migrate_to_latest(TEST_SEC, DEMO_STATE_v2, HINTS)).to.deep.equal(DEMO_STATE_v2)
+				//expect(migrate_toꓽlatest(TEST_SEC, DEMO_STATE_v2, HINTS)).to.deep.equal(DEMO_STATE_v2)
 				// identity if already good version
-				expect(migrate_to_latest(TEST_SEC, DEMO_STATE_v2, HINTS)).to.equal(DEMO_STATE_v2)
+				expect(migrate_toꓽlatest(TEST_SEC, DEMO_STATE_v2, HINTS)).to.equal(DEMO_STATE_v2)
 			})
 
 			it('should throw on end of pipeline (too old version)', () => {
-				function migrate_to_latest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}, ): State {
-					return generic_migrate_to_latest({
+				function migrate_toꓽlatest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}, ): State {
+					return migrate_toꓽlatestⵧgeneric({
 						SEC,
 
 						LIB,
 						SCHEMA_VERSION,
 						legacy_state: DEMO_STATE_v0,
 						hints,
-						sub_states_migrate_to_latest: {},
+						sub_states_migrate_toꓽlatest: {},
 
 						pipeline: [
 							migrate_to_2,
@@ -128,7 +128,7 @@ describe(`${LIB} - migration`, function() {
 					})
 				}
 
-				expect(() => migrate_to_latest(TEST_SEC, DEMO_STATE_v0)).to.throw('migration')
+				expect(() => migrate_toꓽlatest(TEST_SEC, DEMO_STATE_v0)).to.throw('migration')
 			})
 		})
 

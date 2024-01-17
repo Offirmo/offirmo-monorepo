@@ -19,7 +19,7 @@ import {
 	isꓽWithRevision,
 	isꓽWithTimestamp,
 	isꓽWithLastUserInvestmentTimestamp,
-	has_versioned_schema,
+	hasꓽversioned_schema,
 	is_revisioned,
 	is_time_stamped,
 	isꓽRootState,
@@ -66,13 +66,13 @@ export function getꓽschema_versionⵧloose<
 	BR extends BaseRootState,
 >(s: Immutable<V> | Immutable<AnyOffirmoState>): number {
 
-	if (has_versioned_schema(s))
+	if (hasꓽversioned_schema(s))
 		return getꓽschema_version(s as Immutable<V>)
 
 	// specific fallbacks
 	if (Array.isArray(s)) {
 		const maybe_legacy_bundle = s as any[]
-		if (has_versioned_schema(maybe_legacy_bundle[0])) {
+		if (hasꓽversioned_schema(maybe_legacy_bundle[0])) {
 			return getꓽschema_version(maybe_legacy_bundle[0])
 		}
 	}

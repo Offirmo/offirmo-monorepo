@@ -7,6 +7,7 @@ import {
 	getꓽrevisionⵧloose,
 	fluid_select,
 	getꓽbaseⵧloose,
+	isꓽvalid_offirmo_state_object,
 } from '@offirmo-private/state-utils'
 
 import { SoftExecutionContext } from '../../services/sec.js'
@@ -69,7 +70,7 @@ function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extend
 				}
 
 				logger.error(`[${LIB}].init(): already initialized!`, {
-					...fluid_select(state).get_debug_infos_about_comparison_with(stateⵧnew, 'current', 'new'),
+					...fluid_select(state).getꓽdebug_infos_about_comparison_with(stateⵧnew, 'current', 'new'),
 				})
 				throw new Error(`[${LIB}].init(): already initialized!`)
 			}
@@ -92,34 +93,21 @@ function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extend
 				logger.warn(`[${LIB}].on_dispatch(): (upper level architectural invariant) hint normally not expected for this store`)
 			}
 
-			/*
-			const has_valuable_difference = !state || fluid_select(new_state).has_valuable_difference_with(state)
-			logger.trace(`[${LIB}].set()`, {
-				new_state: getꓽbaseⵧloose(new_state),
-				existing_state: getꓽbaseⵧloose(state as any),
-				has_valuable_difference,
-			})
-
-			if (!state) {
-			} // XXX if not init, should it be used??? TODO check semantic!!!
-			else if (!has_valuable_difference) {
-				logger.trace(`[${LIB}].set(): no valuable change ✔`)
+			const stateⵧprevious = state
+			const stateⵧcandidate = eventual_state_hint || reduceꓽaction(state!, action)
+			if (stateⵧcandidate === stateⵧprevious) {
+				// no change, that happens, an action can result in a no-op
+				logger.trace(`[${LIB}].onꓽdispatch(): no change ✔`)
 				return
 			}
+			// sanity check
+			assert(isꓽvalid_offirmo_state_object(stateⵧcandidate), `[${LIB}].onꓽdispatch(): new state should be a valid state object!`)
+			state = stateⵧcandidate
 
-
-			 */
-			const stateⵧprevious = state
-			state = eventual_state_hint || reduceꓽaction(state!, action)
-			const has_valuable_difference = state !== stateⵧprevious // TODO review
 			logger.trace(`[${LIB}] ⚡ action dispatched & reduced:`, {
 				current_rev: getꓽrevisionⵧloose(stateⵧprevious as any),
 				new_rev: getꓽrevisionⵧloose(state as any),
-				has_valuable_difference,
 			})
-			if (!has_valuable_difference) {
-				return
-			}
 
 			emitter.emit(EMITTER_EVT)
 		}

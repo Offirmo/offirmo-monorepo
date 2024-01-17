@@ -8,6 +8,8 @@ import {
 	isꓽTState,
 	isꓽRootState,
 	isꓽUTBundle,
+
+	isꓽvalid_offirmo_state_object,
 } from './type-guards.js'
 
 import {
@@ -99,6 +101,25 @@ describe(`${LIB} - type guards`, function() {
 
 		it('should work on matching: TRUE', () => {
 			expect(isꓽUTBundle([ DEMO_ROOT_STATE.u_state, DEMO_ROOT_STATE.t_state ])).to.be.true
+		})
+	})
+
+	describe('isꓽvalid_offirmo_state_object()', function() {
+		it('should work on non matching: FALSE', () => {
+			expect(isꓽvalid_offirmo_state_object(undefined)).to.be.false
+			expect(isꓽvalid_offirmo_state_object(null)).to.be.false
+			expect(isꓽvalid_offirmo_state_object(0)).to.be.false
+			expect(isꓽvalid_offirmo_state_object([])).to.be.false
+			expect(isꓽvalid_offirmo_state_object({})).to.be.false
+			expect(isꓽvalid_offirmo_state_object(new Error('Test!'))).to.be.false
+			expect(isꓽvalid_offirmo_state_object([ DEMO_ROOT_STATE.u_state, DEMO_ROOT_STATE.t_state ])).to.be.true // bc not object
+
+		})
+
+		it('should work on matching: TRUE', () => {
+			expect(isꓽvalid_offirmo_state_object(DEMO_ROOT_STATE.t_state)).to.be.true
+			expect(isꓽvalid_offirmo_state_object(DEMO_ROOT_STATE.u_state)).to.be.true
+			expect(isꓽvalid_offirmo_state_object(DEMO_ROOT_STATE)).to.be.true
 		})
 	})
 })
