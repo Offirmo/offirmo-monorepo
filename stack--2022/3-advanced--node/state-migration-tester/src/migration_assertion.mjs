@@ -17,7 +17,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 	migration_hints_for_chaining = undefined, // if not explicitly provided or disabled, will try to read from a file
 	SCHEMA_VERSION,
 	LATEST_EXPECTED_DATA,
-	migrate_to_latest,
+	migrate_toꓽlatest,
 	relative_dir_path,
 	import_meta_url,
 	advanced_diff_json = undefined,
@@ -82,7 +82,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 
 			it('should throw with a meaningful error', () => {
 				function load() {
-					migrate_to_latest({schema_version: 99999})
+					migrate_toꓽlatest({schema_version: 99999})
 				}
 
 				expect(load).to.throw('ore recent version')
@@ -94,7 +94,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 			it('should return the state without change', () => {
 				try {
 					expect(getꓽschema_version(LATEST_EXPECTED_DATA), 'schema version').to.equal(SCHEMA_VERSION) // make sure our tests are up-to-date
-					const migrated_data = migrate_to_latest(LATEST_EXPECTED_DATA)
+					const migrated_data = migrate_toꓽlatest(LATEST_EXPECTED_DATA)
 					expect(migrated_data, 'deep no change').to.deep.equal(LATEST_EXPECTED_DATA)
 					expect(migrated_data, 'immutability').to.equal(LATEST_EXPECTED_DATA)
 				}
@@ -118,7 +118,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 				return false // unit tests above will catch this
 
 			const LATEST_EXPECTED_DATA_migrated_diff = get_json_diff(
-				migrate_to_latest(cloneDeep(LATEST_EXPECTED_DATA)),
+				migrate_toꓽlatest(cloneDeep(LATEST_EXPECTED_DATA)),
 				LATEST_EXPECTED_DATA,
 			)
 			if (LATEST_EXPECTED_DATA_migrated_diff) {
@@ -232,7 +232,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 
 				it('should migrate it to the latest version', () => {
 					try {
-						const migrated_data = migrate_to_latest(LEGACY_DATA, migration_hints_for_chaining)
+						const migrated_data = migrate_toꓽlatest(LEGACY_DATA, migration_hints_for_chaining)
 
 						// JSON diff / patch is slightly more powerful,
 						// here configured to ignore uuids if valids

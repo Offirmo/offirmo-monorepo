@@ -15,8 +15,8 @@ const MIGRATION_HINTS_FOR_TESTS = enforceꓽimmutable<any>({
 
 /////////////////////
 
-function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): State {
-	return getꓽSEC(SEC).xTry('migrate_to_latest', ({SEC, logger}) => {
+function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): State {
+	return getꓽSEC(SEC).xTry('migrate_toꓽlatest', ({SEC, logger}) => {
 		const existing_version = legacy_state?.schema_version || 0
 		SEC.setAnalyticsAndErrorDetails({
 			version_from: existing_version,
@@ -59,7 +59,7 @@ function migrate_to_2(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>,
 //////////////////////////////////////////////////////////////////////
 
 export {
-	migrate_to_latest,
+	migrate_toꓽlatest,
 	MIGRATION_HINTS_FOR_TESTS,
 }
 

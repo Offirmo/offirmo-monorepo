@@ -13,7 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 describe(`${LIB} - example usage`, function() {
 	const SCHEMA_VERSION = 3
 
-	function migrate_to_latest(state) {
+	function migrate_toꓽlatest(state) {
 		if (state.schema_version > SCHEMA_VERSION)
 			throw new Error('More recent version!')
 		if (((state || {}).schema_version || 0) < SCHEMA_VERSION) {
@@ -33,7 +33,7 @@ describe(`${LIB} - example usage`, function() {
 			//can_update_snapshots: true, // uncomment when updating
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA,
-			migrate_to_latest,
+			migrate_toꓽlatest,
 			import_meta_url: import.meta.url, // for resolving the path below
 relative_dir_path: './migrations_of_blank_state_specs',
 			describe, context, it, expect,
@@ -48,7 +48,7 @@ relative_dir_path: './migrations_of_blank_state_specs',
 			//can_update_snapshots: true, // uncomment when updating
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA,
-			migrate_to_latest,
+			migrate_toꓽlatest,
 			import_meta_url: import.meta.url, // for resolving the path below
 relative_dir_path: './migrations_of_active_state_specs',
 			describe, context, it, expect,

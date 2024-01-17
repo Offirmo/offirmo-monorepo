@@ -191,7 +191,7 @@ export function on_note_file_found(state: Immutable<State>, raw_data: any): Immu
 	logger.trace(`${LIB} on_notes_found(…)`, { base: getꓽbaseⵧloose(raw_data) })
 	logger.verbose(`${LIB} found previous notes, processing them…`)
 
-	const recovered_data = Notes.migrate_to_latest(raw_data)
+	const recovered_data = Notes.migrate_toꓽlatest(raw_data)
 
 	return {
 		...state,

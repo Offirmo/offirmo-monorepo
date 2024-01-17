@@ -5,7 +5,7 @@ import {
 	enforceꓽimmutable,
 	LastMigrationStep,
 	MigrationStep,
-	generic_migrate_to_latest,
+	migrate_toꓽlatestⵧgeneric,
 } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
@@ -23,14 +23,14 @@ const MIGRATION_HINTS_FOR_TESTS = enforceꓽimmutable<any>({
 
 type StateForMigration = State
 
-function migrate_to_latest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<StateForMigration> {
-	return generic_migrate_to_latest<StateForMigration>({
+function migrate_toꓽlatest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<StateForMigration> {
+	return migrate_toꓽlatestⵧgeneric<StateForMigration>({
 		SEC: SEC as any,
 		LIB,
 		SCHEMA_VERSION,
 		legacy_state,
 		hints,
-		sub_states_migrate_to_latest: {},
+		sub_states_migrate_toꓽlatest: {},
 		pipeline: [
 			_migrate_to_Xx,
 		]
@@ -46,7 +46,7 @@ const _migrate_to_Xx: LastMigrationStep<StateForMigration, any> = (SEC, legacy_s
 /////////////////////
 
 export {
-	migrate_to_latest,
+	migrate_toꓽlatest,
 	MIGRATION_HINTS_FOR_TESTS,
 }
 

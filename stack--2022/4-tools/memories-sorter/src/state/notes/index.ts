@@ -21,7 +21,7 @@ import { getꓽhistorical_fs_reliability } from '../file/sub/neighbor-hints/inde
 import { getꓽSEC } from '../../services/sec.js'
 
 export { type State } from './types.js'
-import { migrate_to_latest as _migrate_to_latest } from './migrations.js'
+import { migrate_toꓽlatest as _migrate_toꓽlatest } from './migrations.js'
 import { getꓽfile_basename_extension‿normalized } from '../../services/name_parser.js'
 import { getꓽparams, Params } from '../../params.js'
 
@@ -82,8 +82,8 @@ export function create(debug_id: string, notes_to_copy?: Immutable<State>): Stat
 	return state
 }
 
-export function migrate_to_latest(prev: any): Immutable<State> {
-	return _migrate_to_latest(getꓽSEC(), prev)
+export function migrate_toꓽlatest(prev: any): Immutable<State> {
+	return _migrate_toꓽlatest(getꓽSEC(), prev)
 }
 
 export function on_previous_notes_found(state: Immutable<State>, previous_state: Immutable<State>, PARAMS: Immutable<Params> = getꓽparams()): Immutable<State> {

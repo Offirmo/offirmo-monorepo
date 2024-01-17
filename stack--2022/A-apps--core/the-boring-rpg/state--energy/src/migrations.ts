@@ -1,5 +1,5 @@
 import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
-import { LastMigrationStep, MigrationStep, generic_migrate_to_latest } from '@offirmo-private/state-utils'
+import { LastMigrationStep, MigrationStep, migrate_toꓽlatestⵧgeneric } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { UState, TState } from './types.js'
@@ -14,15 +14,15 @@ const MIGRATION_HINTS_FOR_TESTS: any = enforceꓽimmutable<any>({
 
 type StateForMigration = [UState, TState]
 
-function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any> = {}): Immutable<StateForMigration> {
-	return generic_migrate_to_latest<StateForMigration>({
+function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any> = {}): Immutable<StateForMigration> {
+	return migrate_toꓽlatestⵧgeneric<StateForMigration>({
 		SEC: SEC as any,
 
 		LIB,
 		SCHEMA_VERSION,
 		legacy_state,
 		hints,
-		sub_states_migrate_to_latest: {},
+		sub_states_migrate_toꓽlatest: {},
 
 		pipeline: [
 			migrate_to_4x,
@@ -61,6 +61,6 @@ const migrate_to_3: MigrationStep<[any, any], [any, any]> = () => {
 /////////////////////
 
 export {
-	migrate_to_latest,
+	migrate_toꓽlatest,
 	MIGRATION_HINTS_FOR_TESTS,
 }

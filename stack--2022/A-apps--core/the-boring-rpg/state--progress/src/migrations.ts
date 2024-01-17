@@ -1,4 +1,4 @@
-import { enforceꓽimmutable, LastMigrationStep, MigrationStep, generic_migrate_to_latest } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable, LastMigrationStep, MigrationStep, migrate_toꓽlatestⵧgeneric } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { State } from './types.js'
@@ -13,14 +13,14 @@ export const MIGRATION_HINTS_FOR_TESTS: any = enforceꓽimmutable({
 /////////////////////
 
 type StateForMigration = State
-export function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any> = {}): StateForMigration {
-	return generic_migrate_to_latest({
+export function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any> = {}): StateForMigration {
+	return migrate_toꓽlatestⵧgeneric({
 		SEC: SEC as any,
 		LIB,
 		SCHEMA_VERSION,
 		legacy_state,
 		hints,
-		sub_states_migrate_to_latest: {},
+		sub_states_migrate_toꓽlatest: {},
 		pipeline: [
 			migrate_to_3x,
 			migrate_to_2,

@@ -5,7 +5,7 @@ import {
 	MigrationStep,
 	SubStatesMigrationFns,
 	CleanupStep,
-	generic_migrate_to_latest,
+	migrate_toꓽlatestⵧgeneric,
 } from '@offirmo-private/state-utils'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
@@ -35,29 +35,29 @@ import { getꓽengine } from '@offirmo/random'
 /////////////////////
 
 const SUB_STATES_MIGRATIONS: SubStatesMigrationFns = {
-	avatar:     CharacterState.migrate_to_latest,
-	codes:      CodesState.migrate_to_latest,
-	energy:     EnergyState.migrate_to_latest,
-	engagement: EngagementState.migrate_to_latest,
-	inventory:  InventoryState.migrate_to_latest,
-	meta:       MetaState.migrate_to_latest,
-	prng:       PRNGState.migrate_to_latest,
-	progress:   ProgressState.migrate_to_latest,
-	wallet:     WalletState.migrate_to_latest,
+	avatar:     CharacterState.migrate_toꓽlatest,
+	codes:      CodesState.migrate_toꓽlatest,
+	energy:     EnergyState.migrate_toꓽlatest,
+	engagement: EngagementState.migrate_toꓽlatest,
+	inventory:  InventoryState.migrate_toꓽlatest,
+	meta:       MetaState.migrate_toꓽlatest,
+	prng:       PRNGState.migrate_toꓽlatest,
+	progress:   ProgressState.migrate_toꓽlatest,
+	wallet:     WalletState.migrate_toꓽlatest,
 }
 
-export function migrate_to_latest(SEC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<State> {
+export function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<State> {
 	let state = legacy_state as Immutable<State> // for starter
 
 	try {
-		state = generic_migrate_to_latest({
+		state = migrate_toꓽlatestⵧgeneric({
 			SEC: SEC as any,
 
 			LIB,
 			SCHEMA_VERSION,
 			legacy_state,
 			hints,
-			sub_states_migrate_to_latest: SUB_STATES_MIGRATIONS,
+			sub_states_migrate_toꓽlatest: SUB_STATES_MIGRATIONS,
 			cleanup,
 			pipeline: [
 				migrate_to_16x,
@@ -133,7 +133,7 @@ const migrate_to_16x: LastMigrationStep<State, any> = (SEC, legacy_state, hints,
 		u_state: {
 			...state.u_state,
 			prng: {
-				...PRNGState.migrate_to_latest(SEC, state.u_state.prng) as any,
+				...PRNGState.migrate_toꓽlatest(SEC, state.u_state.prng) as any,
 			}
 		},
 	}
