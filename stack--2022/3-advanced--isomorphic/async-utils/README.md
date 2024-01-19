@@ -1,5 +1,17 @@
 
 
+Userspace tasks often have varying degrees of importance (related to user experience)
+but the Platform lacks a unified API to schedule prioritized work.
+
+Also it's not semantic.
+
+What we want (semantic)
+- dezalgo
+- critical but out of the main thread (when loading a webpage for ex.)
+- 3 levels of priority: user-blocking, user-visible, and background https://chromestatus.com/feature/6031161734201344
+-
+
+Current primitives (not semantic):
 1. sync
 1. async
    1. next tick
@@ -9,6 +21,9 @@
    1. requestAnimationFrame  ~1/60s
    1. set timeout n
    1. requestIdleCallback https://caniuse.com/requestidlecallback
+   1. (experimental) scheduler.postTask() https://devdocs.io/dom/scheduler/posttask
+      * https://blog.chromium.org/2021/08/chrome-94-beta-webcodecs-webgpu.html
+      * https://www.chromestatus.com/feature/6031161734201344)
 
 Good articles:
 * https://github.com/YuzuJS/setImmediate

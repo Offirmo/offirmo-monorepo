@@ -20,11 +20,9 @@
 	"source": "src/index.ts",
 
 	"peerDependencies": {
-		"@offirmo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/timestamps": "*",
 		"tiny-invariant": "^1"
 	},
 

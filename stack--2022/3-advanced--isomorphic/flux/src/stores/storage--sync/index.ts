@@ -28,7 +28,7 @@ import { SoftExecutionContext } from '../../services/sec.js'
 /////////////////////////////////////////////////
 
 // ex. the-boring-rpg.savegame
-export function get_storage_key(radix: string = 'store') {
+function getꓽstorage_keys(radix: string) {
 	return {
 		bkpⵧmain:        `${radix}`,          // current, up-to-date, live, version
 		// TODO add safety double-write?
@@ -65,9 +65,8 @@ export function _safe_read_parse_and_validate_from_storage<State>(
 				return fallback_result
 
 			// sanity check
-			// NOTE base/root was reworked over time, can be valid while not passing those type guards
-			// TODO remove this line or make it optional?
-			//assert(isꓽvalid_offirmo_state_object(json), `[${LIB}] _safe_read_parse_and_validate_from_storage(): should be a valid state object!`)
+			// NOTE: very old backups may not pass those type guards
+			assert(isꓽvalid_offirmo_state_object(json), `_safe_read_parse_and_validate_from_storage(${key}): should be a valid state object!`)
 
 			return json as any as State
 		},
@@ -85,8 +84,8 @@ interface CreateParams<State, Action> {
 	reduceꓽaction: (state: Immutable<State>, action: Immutable<Action>) => Immutable<State>
 	SCHEMA_VERSION: number
 	migrate_toꓽlatest: FullMigrateToLatestFn<State>
-	storage_keys_radix?: string // this is mandatory if the same domain serves several apps and users. The key should be prefixed by the app name + maybe a container (ex. savegame slot) etc.
-	                            // TODO extra app name from SEC?
+	storage_keys_radix: string // this is mandatory if the same domain serves several apps and users. The key should be prefixed by the app name + maybe a container (ex. savegame slot) etc.
+	                           // TODO extra app name from SEC?
 	debug_id?: string
 }
 function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action extends BaseAction>({
@@ -106,7 +105,7 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 	return SEC.xTry(`creating ${LIB}…`, ({SEC, logger}) => {
 		logger.trace(`[${LIB}].create()…`)
 
-		const STORAGE_KEYS = get_storage_key(storage_keys_radix)
+		const STORAGE_KEYS = getꓽstorage_keys(storage_keys_radix)
 		logger.verbose(`[${LIB}] FYI storage keys = "${Object.values(STORAGE_KEYS).join(', ')}"`)
 
 		/////////////////////////////////////////////////
@@ -347,6 +346,10 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 
 			return migrate_toꓽlatest(SEC, raw)
 		})()
+		if (bkpⵧcurrent) {
+			console.assert(!state)
+			state = bkpⵧcurrent
+		}
 		// extra save for safety ~ "swap file" https://vi.stackexchange.com/questions/177/what-is-the-purpose-of-swap-files
 		// we don't need them straight away, so for perf reason let's delay their init
 		let bkpⵧrecent: Immutable<State> | undefined = undefined
@@ -446,6 +449,7 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 /////////////////////////////////////////////////
 
 export {
+	getꓽstorage_keys,
 	createꓽstoreⵧlocal_storage,
 }
 export default createꓽstoreⵧlocal_storage
