@@ -15,7 +15,7 @@ import {
 } from '@offirmo-private/state-utils'
 
 /*
-import { Immutable, Storage } from '@offirmo-private/ts-types'
+import { Immutable, StorageⳇSync } from '@offirmo-private/ts-types'
 import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 
 import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
@@ -59,7 +59,7 @@ interface CreateParams<State extends AnyOffirmoState, Action extends BaseAction>
 
 	// TODO ordered stores list!
 
-	//local_storage: Storage
+	//local_storage: StorageⳇSync
 	//storage_key_radix: string
 
 	//post_create?: (state: Immutable<State>) => Immutable<State>

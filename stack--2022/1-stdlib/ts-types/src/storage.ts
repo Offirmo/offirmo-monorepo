@@ -3,8 +3,7 @@
 
 // isomorphic local storage
 // copied from TS libs
-// TODO should be SyncStorage ?
-export interface Storage {
+export interface StorageⳇSync {
 	readonly length: number
 	clear(): void
 	getItem(key: string): string | null

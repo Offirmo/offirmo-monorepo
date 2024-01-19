@@ -3,7 +3,7 @@ import assert from 'tiny-invariant'
 import EventEmitter from 'emittery'
 import { try_or_fallback } from '@offirmo/error-utils'
 import stringifyⵧstable from '@offirmo-private/json-stable-stringify'
-import { Immutable, Storage, JSONObject } from '@offirmo-private/ts-types'
+import { Immutable, StorageⳇSync, JSONObject } from '@offirmo-private/ts-types'
 import { getꓽcompareFn } from '@offirmo-private/ts-utils'
 import {
 	AnyOffirmoState,
@@ -28,6 +28,7 @@ import { SoftExecutionContext } from '../../services/sec.js'
 /////////////////////////////////////////////////
 
 // ex. the-boring-rpg.savegame
+// TODO some kind of slot? Or should it be by the caller?
 function getꓽstorage_keys(radix: string) {
 	return {
 		bkpⵧmain:        `${radix}`,          // current, up-to-date, live, version
@@ -42,7 +43,7 @@ function getꓽstorage_keys(radix: string) {
 /////////////////////////////////////////////////
 
 export function _safe_read_parse_and_validate_from_storage<State>(
-	storage: Storage,
+	storage: StorageⳇSync,
 	key: string,
 	onꓽerror: (err: unknown) => void,
 ): State | undefined {
@@ -80,7 +81,7 @@ const EMITTER_EVT = '⚡️change'
 
 interface CreateParams<State, Action> {
 	SEC: SoftExecutionContext
-	storage: Storage
+	storage: StorageⳇSync
 	reduceꓽaction: (state: Immutable<State>, action: Immutable<Action>) => Immutable<State>
 	SCHEMA_VERSION: number
 	migrate_toꓽlatest: FullMigrateToLatestFn<State>

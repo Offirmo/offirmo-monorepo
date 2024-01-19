@@ -26,7 +26,7 @@
 	"dependencies": {
 		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo/error-utils": "*",
+		"@offirmo/error-utils": "^0",
 		"dequal": "^2",
 		"icepick": "^2",
 		"jsondiffpatch": "^0.6",

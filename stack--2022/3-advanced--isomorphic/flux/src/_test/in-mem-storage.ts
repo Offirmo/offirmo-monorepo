@@ -1,4 +1,4 @@
-import { Storage, HashOf } from '@offirmo-private/ts-types'
+import { StorageⳇSync, HashOf } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 
@@ -31,7 +31,7 @@ class StorageInMem {
 }
 
 
-function createꓽstorageⵧin_mem(): Storage {
+function createꓽstorageⵧin_mem(): StorageⳇSync {
 	return new StorageInMem()
 }
 
