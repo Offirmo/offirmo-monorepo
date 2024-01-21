@@ -1,4 +1,5 @@
 import { expect } from 'chai'
+import { elapsed_time_ms } from '@offirmo-private/async-utils'
 
 import { LIB } from '../../consts.js'
 import { getꓽSEC } from '../../services/sec.js'
@@ -66,16 +67,39 @@ describe.only(`${LIB}`, function() {
 
 					describe('to', function() {
 
-						it('should persist meaningful changes', () => {
+						it('should persist meaningful changes -- init', async () => {
+							// pre expectations
+							expect(storage.getItem(getꓽstorage_keys(KEY_RADIX).bkpⵧmain)).to.be.null
 
+							const store = create()
+							store.init(DemoStateLib.DEMO_STATE)
+
+							expect(store.get()).to.equal(DemoStateLib.DEMO_STATE)
+
+							await elapsed_time_ms(40)
+							expect(JSON.parse(storage.getItem(getꓽstorage_keys(KEY_RADIX).bkpⵧmain)!)).to.deep.equal(store.get())
+						})
+
+						it.only('should persist meaningful changes -- reduce', async () => {
+							// pre expectations
+							expect(storage.getItem(getꓽstorage_keys(KEY_RADIX).bkpⵧmain)).to.be.null
+
+							const store = create()
+							store.init(DemoStateLib.DEMO_STATE)
+							expect(store.get()).to.equal(DemoStateLib.DEMO_STATE)
+
+							store.onꓽdispatch(DemoStateLib.DEMO_ACTION)
+							expect(store.get()).not.to.equal(DemoStateLib.DEMO_STATE)
+
+							await elapsed_time_ms(40)
+							expect(JSON.parse(storage.getItem(getꓽstorage_keys(KEY_RADIX).bkpⵧmain)!)).to.deep.equal(store.get())
 						})
 
 						it('should not persist useless changes')
 
-						it('should have a safety against bugs -- reducer')
 					})
 
-					describe.only('from', function() {
+					describe('from', function() {
 
 						it('should synchronously un-persist on creation', () => {
 							storage.setItem(getꓽstorage_keys(KEY_RADIX).bkpⵧmain, JSON.stringify(DemoStateLib.DEMO_STATE))
@@ -95,7 +119,7 @@ describe.only(`${LIB}`, function() {
 								schema_version: DemoStateLib.SCHEMA_VERSION + 1,
 							}
 							storage.setItem(getꓽstorage_keys(KEY_RADIX).bkpⵧmain, JSON.stringify(newer_state))
-							const store = create()
+							expect(() => create()).to.throw('version')
 						})
 
 						// XXX what should we do?

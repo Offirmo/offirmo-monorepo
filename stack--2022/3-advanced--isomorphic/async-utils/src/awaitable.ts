@@ -6,7 +6,7 @@ import {
 /////////////////////////////////////////////////
 
 async function next_microtask(): Promise<void> {
-	await Promise.resolve() // promise resolution is in microtasks
+	return Promise.resolve() // promise resolution is in microtasks
 
 	// XXX should it be return Promise.resolve().then(() => {}) ??
 	// XXX or even await "anything" ??

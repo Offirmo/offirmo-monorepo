@@ -1,6 +1,6 @@
 {
-	"name": "@offirmo-private/state--graph",
-	"description": "graph data structure",
+	"name": "@offirmo-private/data-structures",
+	"description": "various data structure",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
@@ -32,7 +32,7 @@
 		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
 
 		"dev": "run-s clean _build:dev:watch",
-		"xxtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2022.esm/**/*spec.js'",
+		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2022.esm/**/*spec.js'",
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {

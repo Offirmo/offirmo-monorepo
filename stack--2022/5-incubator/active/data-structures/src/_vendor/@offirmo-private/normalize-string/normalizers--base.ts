@@ -5,13 +5,7 @@ import { combine_normalizers, default_to } from './normalize.js'
 
 const RECOMMENDED_UNICODE_NORMALIZATION = 'NFC' // https://www.win.tue.nl/~aeb/linux/uc/nfc_vs_nfd.html
 
-const default_to_empty = default_to('')
-
 const ensure_string: StringNormalizer = s => String(s)
-
-const capitalize: StringNormalizer = s => s.length === 0
-	? s
-	: s[0].toUpperCase() + s.slice(1)
 
 const to_lower_case: StringNormalizer = s => s.toLowerCase()
 const to_upper_case: StringNormalizer = s => s.toUpperCase()
@@ -37,50 +31,6 @@ const normalize_unicode: StringNormalizer = s => {
 const ANY_BLANK_REGEXP = /\s+/g
 const coerce_blanks_to_single_spaces: StringNormalizer = s => s.replace(ANY_BLANK_REGEXP, ' ')
 
-// https://stackoverflow.com/a/19313707/587407
-const ANY_DELIMITER_REGEXP = new RegExp('[-+()*/:? _\.ⵧ]', 'g')
-const coerce_delimiters_to_space: StringNormalizer = s => s.replace(ANY_DELIMITER_REGEXP, ' ')
-
-const convert_spaces_to_camel_case: StringNormalizer = s =>
-		s.split(' ')
-		.filter(s => !!s)
-		.map(capitalize)
-		.join('')
-
-const convert_spaces_to_snake_case: StringNormalizer = s =>
-		s.split(' ')
-		.filter(s => !!s)
-		.join('-')
-
-// for user names, player names...
-const coerce_to_safe_nickname = combine_normalizers(
-	coerce_to_ascii, // no unicode allowed
-	to_lower_case,
-	coerce_delimiters_to_space,
-	trim,
-	coerce_blanks_to_single_spaces,
-	convert_spaces_to_camel_case,
-)
-
-const coerce_to_redeemable_code = combine_normalizers(
-	coerce_to_ascii,
-	to_upper_case,
-	coerce_delimiters_to_space,
-	trim,
-	coerce_blanks_to_single_spaces,
-	convert_spaces_to_camel_case,
-)
-
-// for files safe from unicode, spaces & case sensitivity
-const coerce_to_safe_basenameⵧstrictest = combine_normalizers(
-	normalize_unicode,
-	coerce_to_ascii,
-	to_lower_case,
-	coerce_delimiters_to_space,
-	trim,
-	coerce_blanks_to_single_spaces,
-	convert_spaces_to_snake_case,
-)
 
 const normalize_textⵧsentence: StringNormalizer = combine_normalizers(
 	normalize_unicode,
@@ -88,29 +38,19 @@ const normalize_textⵧsentence: StringNormalizer = combine_normalizers(
 	trim,
 )
 
-
 /////////////////////////////////////////////////
 
 export {
 	RECOMMENDED_UNICODE_NORMALIZATION,
-	default_to_empty,
+
 	ensure_string,
-	capitalize,
+
 	to_lower_case,
 	to_upper_case,
 	trim,
 	coerce_to_ascii,
 	normalize_unicode,
-
 	coerce_blanks_to_single_spaces,
-	coerce_delimiters_to_space,
-	convert_spaces_to_camel_case,
-	convert_spaces_to_snake_case,
-
-	coerce_to_safe_nickname,
-	coerce_to_redeemable_code,
-
-	coerce_to_safe_basenameⵧstrictest,
 
 	normalize_textⵧsentence,
 }

@@ -24,3 +24,5 @@ https://www.google.com/search/howsearchworks/how-search-works/detecting-spam/
 
 https://openfga.dev/
 https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/
+
+https://thewokesalaryman.substack.com/p/why-scammers-love-to-target-people in Singapore

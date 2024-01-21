@@ -18,7 +18,6 @@ import {
 } from '@offirmo-private/state-utils'
 import {
 	schedule_when_idle_but_not_too_far,
-	schedule_when_idle_but_within_human_perception,
 } from '@offirmo-private/async-utils'
 
 import { Store, Dispatcher } from '../../types'
@@ -163,7 +162,7 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 
 		function _storeꓽkey_valueⵧsync(key: string, json: any): void {
 			const value = stringifyⵧstable(json)! // can't be undef, we have checks
-			logger.trace(`[${LIB}] 💾 writing "${key}"…`, getꓽbaseⵧloose(json))
+			logger.trace(`[${LIB}] 💾 writing "${key}"…`, { base: getꓽbaseⵧloose(json)})
 			storage.setItem(key, value)
 			logger.trace(`[${LIB}] 💾 written "${key}" ✔`, {
 				snapshot: JSON.parse(value)
@@ -198,10 +197,14 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 
 		// "fire and forget" method for saving older versions the state
 		// no pre-requisites, should take care of anything and decide what to do
-		async function _enqueue_in_schema_version_bkp_pipeline(legacy_state: Immutable<any> | 'init'): Promise<void> {
+		async function _enqueue_in_schema_version_bkp_pipeline(legacy_state: Immutable<any> | undefined | 'init'): Promise<void> {
+			if (!legacy_state)
+				return
+
 			if (legacy_state === 'init') {
 				assert(!areꓽold_bkps_salvaged, 'areꓽold_bkps_salvaged')
 				areꓽold_bkps_salvaged = true
+				logger.verbose(`[${LIB}] ↳ salvaged ${bkpⵧolder.length} backups.`)
 			}
 			else {
 				const schema_version = getꓽschema_versionⵧloose(legacy_state)
@@ -338,6 +341,7 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 			if (!raw) {
 				// should we try to restore the "recent" one?
 				// TODO find a use case where it would make sense
+				logger.verbose(`[${LIB}] ↳ nothing found.`)
 				return undefined
 			}
 
@@ -345,7 +349,9 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 			assert(unmigrated_schema_version <= SCHEMA_VERSION, `[${LIB}] the active persisted state should have a lower or equal schema version than the current code!`)
 			_enqueue_in_schema_version_bkp_pipeline(raw) // important to do this BEFORE migration
 
-			return migrate_toꓽlatest(SEC, raw)
+			const state = migrate_toꓽlatest(SEC, raw)
+			logger.verbose(`[${LIB}] ↳ successfully restored a persisted state ✅`)
+			return state
 		})()
 		if (bkpⵧcurrent) {
 			console.assert(!state)
@@ -390,7 +396,7 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 			logger.verbose(`[${LIB}] attempting to restore the EXTRA persisted state…`)
 			const raw = _safe_read_parse_and_validate_from_storage<State>(storage, STORAGE_KEYS.bkpⵧminor, _onꓽerror)
 			if (!raw) {
-				// nothing to do
+				logger.verbose(`[${LIB}] ↳ nothing found.`)
 				return undefined
 			}
 
@@ -398,6 +404,7 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 			assert(unmigrated_schema_version <= SCHEMA_VERSION, `[${LIB}] the active persisted state should have a lower or equal schema version than the current code!`)
 
 			// in case it's an old schema version
+			logger.verbose(`[${LIB}] ↳ found something. nothing to do.`)
 			_enqueue_in_schema_version_bkp_pipeline(raw)
 
 			// no need to do/write anything.
