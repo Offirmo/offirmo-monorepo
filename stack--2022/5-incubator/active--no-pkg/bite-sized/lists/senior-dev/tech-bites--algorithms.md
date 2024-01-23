@@ -5,7 +5,7 @@ hashing -- Extendible hashing, Consistent hashing https://en.wikipedia.org/wiki/
 Luleå algorithm https://en.wikipedia.org/wiki/Lule%C3%A5_algorithm
 reflexive
 sort
+sort -- alphadev https://www.nature.com/articles/s41586-023-06004-9
 sort -- burstsort
 sort -- radix sort O(nw) https://en.wikipedia.org/wiki/Radix_sort
 transitive
-sort -- alphadev https://www.nature.com/articles/s41586-023-06004-9

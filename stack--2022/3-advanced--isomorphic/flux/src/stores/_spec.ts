@@ -70,6 +70,9 @@ function itᐧshouldᐧbeᐧaᐧstandardᐧstore(create: (_: typeof DemoStateLib
 					store.init(DemoStateLib.DEMO_STATE)
 					expect(store.get()).to.equal(DemoStateLib.DEMO_STATE)
 				})
+
+				it('should have a safety against bugs') xxx
+
 			})
 
 			context('when already initialised', function () {
@@ -98,6 +101,9 @@ function itᐧshouldᐧbeᐧaᐧstandardᐧstore(create: (_: typeof DemoStateLib
 
 		describe(`onꓽdispatch()`, function() {
 
+			it('should accept a hint') xxx
+
+			it('should have a safety against bugs') xxx
 
 		})
 
