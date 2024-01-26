@@ -14,6 +14,7 @@ new adventure
         ⇱ https://www.cnbc.com/2023/09/28/do-these-3-things-on-linkedin-and-be-head-and-shoulders-above-others.html
         ⇱ https://www.cnbc.com/2023/11/20/dont-forget-to-put-promotions-on-linkedin-says-ex-google-recruiter.html
       ⇱ update portfolio / brand
+        ⇱ know compensation (od)
       ⇱ update skills
         ⇱ AI
         ⇱ Prompting
@@ -23,6 +24,8 @@ new adventure
         ⇱ C++
         ⇱ Rust
         ⇱ Python
+          ⇱ Cloud
+            ⇱ AWS Cloud Practitioner Essentials 61%
       ⇱ Certifications? https://www.infoworld.com/article/3709508/do-programming-certifications-still-matter.html
         Jira
 CSS

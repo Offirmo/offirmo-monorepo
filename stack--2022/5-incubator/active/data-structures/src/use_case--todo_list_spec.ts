@@ -157,6 +157,28 @@ describe(`${LIB}`, function() {
 				out = upsertꓽnode(out, 'new job',       { parent: 'new adventure' ,payload: createꓽpayload() })
 				out = upsertꓽnode(out, 'new place',     { parent: 'new adventure' ,payload: createꓽpayload() })
 
+const test = `
+☐ All Illustrations have dark mode!
+	⇱☐ contractor work
+		⇱ ☐ top missing dark illus identified
+			⇱ ☐ all already done dark illus in the repo
+	⇱ ☐ all front-end code use the new Illustration component
+		⇱ ☐ ENGHEALTH campaign
+			⇱ ☐ way to escape the campaign
+			⇱ ☑ playbook up to date
+			⇱ ☐ instructions page
+			⇱ ☐ ENGHEALTH rule
+				⇱ ☐ AFM fixed
+			⇱ ☐ ENGHEALTH comms
+			⇱ ☐ all known Jira illus in illustrations
+			⇱ ☐ svgo passed (to prevent VR regressions)
+			⇱ ☐ VR allow new defaults
+				so that new VR tests are correct / updated
+		⇱ ☐ AkEmptyState
+		⇱ ☐ KSS
+
+`
+
 /*
 				parse(`
 new adventure
