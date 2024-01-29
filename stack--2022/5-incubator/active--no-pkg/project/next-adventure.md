@@ -15,6 +15,7 @@ new adventure
         ⇱ https://www.cnbc.com/2023/11/20/dont-forget-to-put-promotions-on-linkedin-says-ex-google-recruiter.html
       ⇱ update portfolio / brand
         ⇱ know compensation (od)
+          https://www.levels.fyi/
       ⇱ update skills
         ⇱ AI
         ⇱ Prompting
@@ -33,7 +34,10 @@ Google
     ⇱ train for interview
       ⇱ screening
       ⇱ system design https://www.swequiz.com/#pricing  https://designsystems.surf
-
+OpenAi
+https://openai.com/careers/search?l=san-francisco%252C-california%252C-united-states
 
 https://posthog.com/handbook/people/compensation
 https://github.blog/2024-01-08-github-certifications-are-generally-available/
+
+https://www.adept.ai/careers self description

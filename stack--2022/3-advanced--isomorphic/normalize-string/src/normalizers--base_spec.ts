@@ -1,7 +1,8 @@
 import { expect } from 'chai'
 
 import { StringNormalizer } from './types.js'
-import { convert_spaces_to_snake_case, NORMALIZERS } from './normalizers.js'
+import * as NORMALIZERS from './normalizers--base.js'
+import { coerce_to_tokens, normalize_textⵧsentence } from './normalizers--base.js'
 
 
 describe('normalize-string - base normalizers', function() {
@@ -115,6 +116,15 @@ describe('normalize-string - base normalizers', function() {
 			'**lord_MOK** ': 'LordMok',
 		},
 
+		coerce_to_tokens: {
+			'': '',
+			' ': '',
+			'A': 'a',
+			'BoReD ': 'bored',
+			'ALPH-Art': 'alph art',
+			' continued from ': 'continued from'
+		},
+
 		coerce_to_redeemable_code: {
 			'': '',
 			' ': '',
@@ -130,11 +140,18 @@ describe('normalize-string - base normalizers', function() {
 			'Côte et Ciel': 'cote-et-ciel',
 			' lord  MOK ': 'lord-mok',
 			'**lord_MOK** ': 'lord-mok',
+		},
+
+		normalize_textⵧsentence: {
+			'': '',
+			' ': '',
+			'A': 'A',
+			' hello  my best-friend, how are you? ': 'hello my best-friend, how are you?'
 		}
 	}
 
 	Object.keys(TEST_CASES).forEach(key => {
-		const normalizer: StringNormalizer = NORMALIZERS[key]
+		const normalizer: StringNormalizer = (NORMALIZERS as any)[key]
 		if (!normalizer)
 			throw new Error(`Wrong test case for unknown normalizer "${key}"!`)
 
@@ -154,6 +171,9 @@ describe('normalize-string - base normalizers', function() {
 
 	TEST_CASES['normalizeꓽemailⵧsafe'] = TEST_CASES['normalizeꓽemailⵧreasonable'] = TEST_CASES['normalizeꓽemailⵧfull'] = true
 	Object.keys(NORMALIZERS).forEach(key => {
+		if (key === 'RECOMMENDED_UNICODE_NORMALIZATION')
+			return
+
 		if (!TEST_CASES[key])
 			throw new Error(`(internal check) Missing test cases for normalizer "${key}"!`)
 	})

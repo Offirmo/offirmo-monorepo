@@ -21,6 +21,12 @@ Exploration
 - get money
 - buy new stuff!
 
+Fast travel
+* https://thesportsrush.com/gaming-news-dragons-dogma-2-starfield-fast-travel-change-rpg-experience/
+* https://kotaku.com/dragons-dogma-2-hideaki-itsuno-fast-travel-boring-1851188719
+* https://www.mmorpg.com/news/fast-travel-is-for-boring-games-says-dragons-dogma-2-director-2000130211
+
+
 ### map
 
 
@@ -123,3 +129,4 @@ see also https://www.businessinsider.com/guides/streaming/what-is-x-ray-on-prime
 
 https://www.reddit.com/r/DoesAnybodyElse/comments/118u5vc/dae_like_early_stages_of_games_more_and_because/
 https://en.wikipedia.org/wiki/Dog_breed#Basal_breeds
+https://www.gamesradar.com/diablo-4-players-rail-against-season-3-as-a-great-step-backwards-with-boring-traps-and-a-useless-companion/

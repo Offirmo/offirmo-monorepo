@@ -63,6 +63,7 @@ exiger seulement ce qu’on peut faire soi même
 false good idea
 fast reading
 Faustian Bargain: A man once sold his soul to a demon in exchange for knowledge. At first, it seemed like a smart trade. But the man lost in the long-run. Tragically, what the man lost was more valuable than what he earned. In short, he won the battle but lost the war.
+femme/homme enfat https://www.wengood.com/fr/developpement-personnel/se-connaitre/art-femme-enfant
 fire
 FOMO
 FUD
@@ -89,11 +90,11 @@ Hormesis: A low dose of something can have the opposite effect of a high dose. A
 Horseshoe Theory: Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
 https://cobeats.com/folder/ryfTgPr9H
 ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/ https://strategyu.co/pyramid-principle-part-2-communicate-top-down/
+if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
 ikigai
 impostor syndrome
 infotainment
 ingroup/outgroup
-if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
 intrinsic/extrinsic motivation https://www.swyx.io/js-tooling
 inversion: Avoiding stupidity is easier than trying to be brilliant. Instead of asking, “How can I help my company?” you should ask, “What’s hurting my company the most and how can I avoid it?” Identify obvious failure points, and steer clear of them.
 invisible hand: Markets aggregate knowledge. Rising prices signal falling supply or increased demand, which incentivizes an increase in production. The opposite is true for falling prices. Prices are a signal wrapped in an incentive.
@@ -195,6 +196,7 @@ stoicism -- Rudyard Kipling If-- https://en.wikipedia.org/wiki/If%E2%80%94
 survival of the fittest / fit enough
 survivorship bias https://en.wikipedia.org/wiki/Survivorship_bias
 SWOT
+syndrome féé clochette https://www.psychologies.com/Couple/Seduction/Rencontres/Articles-et-Dossiers/Syndrome-de-la-fee-Clochette-ces-femmes-insatisfaites-et-en-manque-d-affection
 T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
 table Selection: This idea comes from poker, where you’re advised to choose your opponents carefully. That means you shouldn’t compete against the best people. You don’t need to get good at doing difficult things if you get good at avoiding difficult things. If you want to win, pick an easy table and nail your execution.
 talent vs. Genius: Society is good at training talent but terrible at cultivating genius. Talented people are good at hitting targets others can’t hit, but geniuses find targets others can’t see. They are opposite modes of excellence. Talent is predictable, genius is unpredictable.

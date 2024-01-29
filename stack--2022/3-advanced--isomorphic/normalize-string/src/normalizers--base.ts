@@ -63,17 +63,17 @@ const coerce_to_safe_nickname = combine_normalizers(
 	convert_spaces_to_camel_case,
 )
 
-const coerce_to_quasi_code = combine_normalizers(
+const coerce_to_tokens = combine_normalizers(
 	coerce_to_ascii,
 	to_lower_case,
 	coerce_delimiters_to_space,
 	trim,
 	coerce_blanks_to_single_spaces,
-	convert_spaces_to_camel_case,
 )
 
 const coerce_to_redeemable_code = combine_normalizers(
-	coerce_to_quasi_code,
+	coerce_to_tokens,
+	convert_spaces_to_camel_case,
 	to_upper_case,
 )
 
@@ -114,7 +114,7 @@ export {
 	convert_spaces_to_snake_case,
 
 	coerce_to_safe_nickname,
-	coerce_to_quasi_code,
+	coerce_to_tokens,
 	coerce_to_redeemable_code,
 
 	coerce_to_safe_basenameⵧstrictest,

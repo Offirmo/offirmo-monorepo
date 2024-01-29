@@ -27,3 +27,6 @@ https://tech.slashdot.org/story/23/11/16/141213/proton-mail-ceo-calls-new-addres
 
 
 https://posthog.com/blog/slack-closure "Messages quickly disappear from the chat history, it is disconnected from our main support flow, and useful solutions aren't searchable on our site or via Google."
+
+
+https://ia.acs.org.au/content/ia/article/2023/forced-email-migrations--distressing--to-older-australians.html
