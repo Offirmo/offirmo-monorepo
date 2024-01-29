@@ -23,7 +23,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/normalize-string": "^0",
+		"@offirmo-private/normalize-string": "*",
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
 		"tiny-invariant": "^1",

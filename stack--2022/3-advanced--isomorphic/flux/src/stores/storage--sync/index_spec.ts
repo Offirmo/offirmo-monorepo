@@ -15,7 +15,7 @@ import * as DemoStateLib from '../../_test/state-demo/index.js'
 
 /////////////////////////////////////////////////
 
-describe.only(`${LIB}`, function() {
+describe(`${LIB}`, function() {
 
 	describe('Store -- local storage', function () {
 		const KEY_RADIX = 'fooapp'
@@ -80,7 +80,7 @@ describe.only(`${LIB}`, function() {
 							expect(JSON.parse(storage.getItem(getꓽstorage_keys(KEY_RADIX).bkpⵧmain)!)).to.deep.equal(store.get())
 						})
 
-						it.only('should persist meaningful changes -- reduce', async () => {
+						it('should persist meaningful changes -- reduce', async () => {
 							// pre expectations
 							expect(storage.getItem(getꓽstorage_keys(KEY_RADIX).bkpⵧmain)).to.be.null
 
@@ -133,8 +133,6 @@ describe.only(`${LIB}`, function() {
 				describe('old layer', function() {
 
 				})
-
-
 			})
 		})
 	})

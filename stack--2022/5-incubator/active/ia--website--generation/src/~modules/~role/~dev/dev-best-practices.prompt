@@ -1,0 +1,3 @@
+
+Use as few third party dependencies and tools as possible. Only use stable/LTS versions of dependencies and tools.
+Use the most widely used libraries an tools, that are well tested, well documented, actively maintained, have a large community and don't have security issues.

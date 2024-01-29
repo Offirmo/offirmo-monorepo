@@ -34,6 +34,7 @@ const normalize_unicode: StringNormalizer = s => {
 }
 
 // https://stackoverflow.com/a/1981366/587407
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes#types
 const ANY_BLANK_REGEXP = /\s+/g
 const coerce_blanks_to_single_spaces: StringNormalizer = s => s.replace(ANY_BLANK_REGEXP, ' ')
 

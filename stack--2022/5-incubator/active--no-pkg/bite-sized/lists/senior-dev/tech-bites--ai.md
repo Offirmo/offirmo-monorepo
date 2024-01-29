@@ -35,9 +35,13 @@ HHH helpful, honest, and harmless
 Hugging Face = "the GitHub of machine learning" = the collaboration platform for the machine learning community https://www.techtarget.com/whatis/definition/Hugging-Face
 huggingface.co "space"
 inference
+inference = what happens when we prompt
+JAX
 langchain = a framework for developing applications powered by language models https://python.langchain.com/docs/get_started/introduction
 latency
 learning -- Transfer learning = a technique where a model is first pre-trained on a data-rich task before being fine-tuned on a downstream task
+LLM -- "Language Model for Dialogue Applications" (LaMDA) 137B model from Google AI
+LLM -- "Pathways Language Model" (PaLM) 540B model from Google AI
 LLMs - large language models
 ML - machine learning https://en.wikipedia.org/wiki/Machine_learning ~"subfield of AI that describes AI using data and algorithms without a programmer explicitly specifying the solution path through program code"
 moat - We have no moat https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
@@ -49,7 +53,11 @@ NLP Natural Language Processing
 NN Neural Networks "computer architecture inspired by the human brain"
 parameter (NN)
 parameter -- hyperparameter = values provided to the model from the outside to make adjustments that can influence the learning process and its performance, among other things
+Pathways = broader AU architecture underpinning PaLM
+Pathways Autoregressive Text-to-Image model (Parti), is an autoregressive text-to-image generation model that achieves high-fidelity photorealistic image generation and supports content-rich synthesis involving complex compositions and world knowledge.
+player -- Google AI https://ai.google/
 pretraining
+Pytorch
 RAG retrieval-augmented generation
 ReAct flow
 research directions -- honesty, chain-of-thought faithfulness, adversarial robustness, evals and testbeds...
@@ -77,6 +85,7 @@ tasks -- vision -- Video Classification
 tasks -- vision -- Zero-Shot Image Classification
 tasks -- vision -- Zero-Shot Object Detection
 temperature
+TensorFlow
 tokenization https://platform.openai.com/tokenizer vs https://github.com/huggingface/tokenizers
 tokens https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them
 training (NN) -- Overfitting
@@ -86,7 +95,8 @@ training (NN) -- transfer learning = see fine-tuning
 training (NN) -- unsupervised learning
 training (NN) = iterative process in which data is passed to a neural network + parameters of the neural network are adjusted to achieve an optimal solution for the given problem. a dataset is required
 Trainium
-transformers "a new type of NLP model that demolished the reading comprehension abilities of both humans and the best AI incumbent at the time"
+transformers "a new type of NLP model that demolished the reading comprehension abilities of both humans and the best AI incumbent at the time" ~pattern recognition techniques
 Turing test
+vector -- difference with embedding??
 vector database https://weaviate.io/
 vector database https://www.pinecone.io

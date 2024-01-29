@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		#anim01 {
+			width: 188px; /* Width of one frame */
+			height: 203px; /* Height of one frame */
+
+			background-image: url(black_skinny_hamster--row.png);
+			background-position: 0 0;
+			animation-timing-function: steps(5);
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			animation-name: row;
+		}
+
+		@keyframes row {
+			from { background-position:   0  0; }
+			to   { background-position: 125% 0; }
+		}
+	</style>
+</head>
+<body>
+	<div id="anim01"></div>
+</body>
+</html>

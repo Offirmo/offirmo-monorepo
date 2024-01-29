@@ -71,8 +71,9 @@ function itᐧshouldᐧbeᐧaᐧstandardᐧstore(create: (_: typeof DemoStateLib
 					expect(store.get()).to.equal(DemoStateLib.DEMO_STATE)
 				})
 
-				it('should have a safety against bugs') xxx
-
+				it('should have a safety against bugs', () => {
+					expect(() => store.init({} as any)).to.throw('invalid state')
+				})
 			})
 
 			context('when already initialised', function () {
@@ -101,10 +102,19 @@ function itᐧshouldᐧbeᐧaᐧstandardᐧstore(create: (_: typeof DemoStateLib
 
 		describe(`onꓽdispatch()`, function() {
 
-			it('should accept a hint') xxx
+			it('should accept a hint', () => {
+				const hinted_state = {
+					...DemoStateLib.DEMO_STATE,
+				}
+				store.init(DemoStateLib.DEMO_STATE)
+				store.onꓽdispatch(DemoStateLib.DEMO_ACTION, hinted_state)
+				expect(store.get()).to.equal(hinted_state)
+			})
 
-			it('should have a safety against bugs') xxx
-
+			it('should have a safety against bugs', () => {
+				store.init(DemoStateLib.DEMO_STATE)
+				expect(() => store.onꓽdispatch(DemoStateLib.DEMO_ACTION, {} as any)).to.throw('invalid action')
+			})
 		})
 
 		if (create(DemoStateLib).setꓽdispatcher) {

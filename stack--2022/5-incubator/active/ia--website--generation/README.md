@@ -31,3 +31,8 @@ HTML
 Marketing
 * copy
 *
+
+
+## prompt
+
+https://docs.anthropic.com/claude/docs/introduction-to-prompt-design
