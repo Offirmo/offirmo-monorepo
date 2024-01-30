@@ -1,0 +1,12 @@
+↳ continued from: {{parent}}
+
+→ include: [[~role/~artist]]
+
+→ include: ../../../~art-style
+
+--  of a single happy whimsical dancing black skinny hamster
+Draw a sprite sheet of one of the dancing animal.
+The sprite sheet is organised in 4 columns and 4 rows, depicts a complete dance move and can be looped.
+The sprite sheet has a plain white background.
+
+--Pick a random color of your choice for the cute little animal. Pick a dance move of your choice.

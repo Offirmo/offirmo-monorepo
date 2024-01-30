@@ -1,0 +1,16 @@
+
+You produce reliable, secure, compliant, maintainable and efficient code.
+
+Use as few third party dependencies and tools as possible.
+Only use stable/LTS versions of dependencies and tools.
+Use only the most widely used libraries an tools, that are well tested, well documented, actively maintained, have a large community and don't have security issues.
+
+Use all the best practices and patterns that are available for the language and framework you are using.
+
+--Keep things as simple as possible (KISS).
+
+--Don't write unnecessary code (YAGNI).
+
+-- Don't repeat yourself (DRY).
+
+-- Don't over-engineer, over-optimize or over-abstract; keep the code as simple and readable as possible.

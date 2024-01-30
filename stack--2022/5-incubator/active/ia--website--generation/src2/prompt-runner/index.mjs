@@ -13,6 +13,8 @@ import { coerce_blanks_to_single_spaces } from '@offirmo-private/normalize-strin
 const EXT = '.prompt'
 const DEBUG = true
 
+// "from" is optional
+// "from" is the FILE path of the file that is including the prompt
 function resolveꓽprompt(any_path_or_keyword, from‿abspath) {
 	any_path_or_keyword = any_path_or_keyword.trim()
 	DEBUG && console.log(`resolveꓽprompt(${any_path_or_keyword})…`)
@@ -23,9 +25,15 @@ function resolveꓽprompt(any_path_or_keyword, from‿abspath) {
 			return any_path_or_keyword
 		}
 
+		if (any_path_or_keyword.endsWith('.md')) {
+			throw new Error('Please fix your file name! Not markdown!')
+		}
+
+		// if no from‿abspath, means it's the first file = should have matched the lines above
+		assert(!!from‿abspath, `resolveꓽprompt() called without from‿abspath!`)
 		switch(any_path_or_keyword) {
 			case '{{parent}}':
-				if (path.basename(from‿abspath, EXT) === 'root')
+				if (from‿abspath && path.basename(from‿abspath, EXT) === 'root')
 					return null // no more parent, we're at the root
 
 				return (() => {
@@ -89,6 +97,22 @@ function resolveꓽprompt(any_path_or_keyword, from‿abspath) {
 						if (err.code !== 'ENOENT')
 							throw err
 
+						// maybe it's a file without extension?
+						if (!module_name.endsWith(EXT) && !module_name.endsWith(path.sep)) {
+							let candidate_abspath = path.resolve(modules_dir, '~modules', module_name + EXT)
+
+							try {
+								fs.readFileSync(candidate_abspath, 'utf8')
+								return candidate_abspath
+							}
+							catch (err) {
+								if (err.code !== 'ENOENT')
+									throw err
+
+								//swallow
+							}
+						}
+
 						// swallow
 					}
 				}
@@ -101,53 +125,69 @@ function resolveꓽprompt(any_path_or_keyword, from‿abspath) {
 		}
 
 		// not a keyword, could be a path or file
+		let candidate = any_path_or_keyword
+		if (!candidate.startsWith(path.sep)) {
+			// this is clearly a relative path
+			// we want to resolve it from the current "from"
+			// so we need to resolve it now
+			candidate = path.resolve(path.dirname(from‿abspath), candidate)
+		}
 		try {
-			fs.readFileSync(any_path_or_keyword, 'utf8')
+			fs.readFileSync(candidate, 'utf8')
+			return candidate
 		}
 		catch (err) {
-			if (err.code === 'EISDIR')
-				return path.resolve(any_path_or_keyword, `main` + EXT)
+			switch (err.code) {
+				case 'EISDIR': {
+					candidate = path.resolve(candidate, `main` + EXT)
+					break
+				}
+				case 'ENOENT': {
+					if (candidate.endsWith(EXT)) {
+						console.error(candidate)
+						throw err
+					}
 
-			return any_path_or_keyword + EXT
+					candidate = candidate + EXT
+					break
+				}
+
+				default:
+					throw err
+			}
+
+			fs.readFileSync(candidate, 'utf8')
+			return candidate
 		}
 	})()
 
-	const file‿abspath = file‿path ? path.resolve(path.dirname(from‿abspath), file‿path) : file‿path
+	if (file‿path === undefined)
+		return undefined
+
+	const file‿abspath = from‿abspath ? path.resolve(path.dirname(from‿abspath), file‿path) : file‿path
 
 	if (file‿abspath !== any_path_or_keyword) {
 		DEBUG && console.log('  resolved to:', file‿path)
 	}
-	if (!!file‿abspath) {
-		assert(path.extname(file‿abspath) === EXT)
-	}
+	assert(path.extname(file‿abspath) === EXT, `resolveꓽprompt() resolved to a non-prompt file!`)
 
 	return file‿abspath
 }
 
 
 // TODO move "from" to here?
-function loadꓽprompt(file‿abspath) {
-	let promptⵧsystem = ''
-	let promptⵧbase = ''
-	DEBUG && console.group(`loadꓽprompt(${file‿abspath})…`)
+function loadꓽprompt(any_path_or_keyword, from‿abspath) {
+	DEBUG && console.group(`loadꓽprompt(${any_path_or_keyword})…`)
 
-	function setꓽpromptⵧsystem(line) {
-		assert(!promptⵧsystem)
-		promptⵧsystem = line
-	}
-
+	const file‿abspath = resolveꓽprompt(any_path_or_keyword, from‿abspath)
 	const content = file‿abspath ? fs.readFileSync(file‿abspath, 'utf8') : ''
 	const linesⵧraw = content.trim().split(os.EOL)
-	const lines = linesⵧraw
+	let lines = linesⵧraw
 		.map(normalize_unicode)
 		.map(coerce_blanks_to_single_spaces)
 		.map(l => l.trim())
-		.map(line => {
+		.map((line) => {
 			switch(true) {
-				case (line.startsWith('--')): {
-					// comment
-					return undefined
-				}
 
 				case (line.startsWith('↳')): {
 					line = line.slice('↳'.length).trim()
@@ -155,11 +195,8 @@ function loadꓽprompt(file‿abspath) {
 					switch(keyword) {
 						case 'continued from': {
 							const target = line.split(':')[1].trim()
-							const target‿abspath = resolveꓽprompt(target, file‿abspath)
-							const [ps, pb] = loadꓽprompt(target‿abspath)
-							DEBUG && console.log({ps, pb})
-							if (ps) setꓽpromptⵧsystem(ps)
-							return pb.join(os.EOL)
+							const lines_from_target = loadꓽprompt(target, file‿abspath)
+							return lines_from_target.join(os.EOL)
 						}
 						default:
 							throw new Error(`↳ keyword "${keyword}" unknown!`)
@@ -173,34 +210,56 @@ function loadꓽprompt(file‿abspath) {
 					switch(keyword) {
 						case 'include': {
 							const target = line.split(':')[1].trim()
-							const target‿abspath = resolveꓽprompt(target, file‿abspath)
-							const [ps, pb] = loadꓽprompt(target‿abspath)
-							DEBUG && console.log({ps, pb})
-							if (ps) setꓽpromptⵧsystem(ps)
-							return pb.join(os.EOL)
+							const lines_from_target = loadꓽprompt(target, file‿abspath)
+							return lines_from_target.join(os.EOL)
 						}
 						default:
 							throw new Error(`→ keyword "${keyword}" unknown!`)
 					}
 				}
 
-				case (line.startsWith('👤')): {
-					setꓽpromptⵧsystem(line.slice('👤'.length).trim())
-					return undefined
-				}
-
-
-
 				default:
 					return line
 			}
 		})
 
-	promptⵧbase = lines.join(os.EOL).split(os.EOL)
-	//console.log(lines)
+	lines = lines.join(os.EOL).trim().split(os.EOL) // flatten
+	DEBUG && console.log(`loadꓽprompt(…) loaded:`, lines)
 	DEBUG && console.groupEnd()
 
-	return [ promptⵧsystem, promptⵧbase ]
+	if (!from‿abspath) {
+		// top level
+		// do final processing
+		lines = lines.reduce((acc, line, i, arr) => {
+			if (line.startsWith('--')) {
+				// comment, remove it
+				return acc
+			}
+
+			if (line === '') {
+				/*const has_eol_before = arr?.[i-1] === ''
+				const has_eol_after = arr?.[i+1] === ''
+				if (has_eol_before || has_eol_after) {
+					// too many consecutive eol
+					return acc
+				}
+				if (!has_eol_before && !has_eol_after) {
+					// not enough consecutive eol
+					return acc
+				}*/
+				// keep it, with a twist
+				//line = '[EOL]'
+			}
+
+			acc.push(line)
+
+			return acc
+		}, [])
+
+		//lines = lines.join('').split('[EOL]')
+	}
+
+	return lines
 }
 
 /////////////////////////////////////////////////
@@ -217,18 +276,20 @@ function main() {
 	console.log('------------------------------------------')
 	console.log('Hello from Offirmo’s Prompt Runner...')
 	console.log('------------------------------------------')
-	console.log()
+	console.log(path.sep)
 
-	let [ promptⵧsystem, promptⵧbase ] = loadꓽprompt(path.resolve(__filename, params.shift()))
-	DEBUG && console.log({ promptⵧsystem, promptⵧbase })
+	let promptⵧraw = loadꓽprompt(path.resolve(__filename, params.shift()))
+	DEBUG && console.log({ promptⵧraw })
 
-	promptⵧsystem ||= 'You’re a helpful assistant'
+	const promptⵧsystem = 'You’re a helpful assistant'
+	const promptⵧbase = promptⵧraw.join(os.EOL)
+	//const promptⵧbase = promptⵧraw.join('"' + os.EOL + '"')
 
 	console.log(`------- PROMPT BEGIN -------`)
-	//console.log(`------- 👤 System prompt -------`)
+	console.log(`------- 👤 System prompt -------`)
 	console.log(promptⵧsystem)
-	//console.log(`------- Question -------`)
-	console.log(promptⵧbase.join(os.EOL))
+	console.log(`------- 💬 Question -------`)
+	console.log(promptⵧbase)
 	console.log(`------- PROMPT END -------`)
 
 	// TODO tokenize and give a cost estimate?

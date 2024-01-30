@@ -1,0 +1,22 @@
+↳ continued from: {{parent}}
+
+→ include: [[~role/~dev/web-dev]]
+
+
+Write a simple, generic, dependency-free webcomponent that display an animation from a sprite sheet.
+The component should take as parameters:
+- the sprite sheet url
+- the width & height of the sprite sheet
+- the number of rows in the sprite sheet
+- the number of columns in the sprite sheet
+- the fps of the animation, with a default of 4fps
+
+The web component name is `sprite-sheet-animation`.
+
+Write only the web component.
+
+Add a comment above the web component with an example usage.
+
+Output ONLY A SINGLE JAVASCRIPT FILE, named index.js.
+
+If you have important precision about using the code, write it at the top of the file as a comment.

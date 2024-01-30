@@ -1,6 +1,15 @@
 ↳ continued from: {{parent}}
 
-The product we're building is a viral web property,
+The product we're building is a viral web page,
 a major web phenomenon that people will love and share for decades.
 
--- It features cute, whimsical, friendly little creatures.
+We are recreating a modern version of the viral old "hampsterdance" page.
+Of course we're not naming our page with this name.
+Also we're not copying, we're creating a new page with a similar inspiration.
+
+It's a simple page featuring many cute, whimsical, friendly little hamsters dancing together.
+
+-- TODO move into a "need to know"
+-- The animals are animated and dancing happily. They are multiple rows of animals dancing all with various colors and sizes.
+-- The page is very simple, without any heavy interface.
+-- The page is very creative, colorful, and fun.

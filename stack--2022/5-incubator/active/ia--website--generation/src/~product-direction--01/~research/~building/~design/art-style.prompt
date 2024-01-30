@@ -1,4 +1,8 @@
-↳ continued from: {{parents}}
-→ include: ~role/~designer
+↳ continued from: {{parent}}
+→ include: [[~role/~designer]]
 
-Q: suggest an art style for our app
+Suggest an art style that would fit our webpage.
+
+draw some concepts of such a page in this art styles.
+
+Describe the art style in the answer.

@@ -12,6 +12,14 @@ Pros
 - faster iteration
 - traductions!
 
+Learnings
+* generating all at once? No, A dev would not write everything, would piece pieces together
+* also some specialization would mean a dev would "defer" for some areas and just import them
+* Need to pass less context or the AI gets confused by irrelevant details :-/
+* on the other hend, the AI is accidentally creative and can bring new ideas, ex. rainbow changing color hamsters
+* DOUBLE prompting = 1) chatgpt 2) passing to DALLE
+* unstable naming
+
 Still no reproducible outputs https://cookbook.openai.com/examples/reproducible_outputs_with_the_seed_parameter
 
 tools able to "repair" an imperfect generation?
