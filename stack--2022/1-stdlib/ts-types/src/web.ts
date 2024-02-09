@@ -3,11 +3,14 @@
 
 /////////////////////////////////////////////////
 
+export type Email‿str = string // TODO spec?
+
 export type Url‿str = string // TODO new Url spec
-export interface SocialUrl {
+
+export interface SocialNetworkLink {
 	url: Url‿str // mandatory
 	handle?: string // ex @Offirmo, u/Offirmo
-	network: // helps parsing
+	network: // helps to parse. Not optional bc I can add if missing
 		| 'artstation'
 		| 'github'
 		| 'instagram'

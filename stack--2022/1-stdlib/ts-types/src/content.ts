@@ -2,7 +2,7 @@
 // building blocks
 import { JSONObject } from './json.js'
 import { IETFLanguageType } from './international.js'
-import { Html‿str, Url‿str, SocialUrl } from './web.js'
+import { Email‿str, Url‿str, SocialNetworkLink } from './web.js'
 
 /////////////////////////////////////////////////
 // building blocks
@@ -41,16 +41,20 @@ export type Content =
 //	| Contentⳇweb No, Content is often a building block to build a web page
 */
 
-export type License‿SPDX = string // SPDX license expression syntax version 2.0 string https://spdx.org/licenses/
+// SPDX license expression syntax version 2.0 string
+// https://spdx.org/licenses/
+// https://spdx.dev/learn/handling-license-info/
+export type SoftwareLicense‿SPDX = string
 
 export interface WithOnlinePresence {
 	urlⵧcanonical: Url‿str
-	urlsⵧsocial?: SocialUrl[]
+	urlsⵧsocial?: SocialNetworkLink[]
 }
 
 export interface Author extends WithOnlinePresence {
 	name: string
-	contact?: Url‿str
+	email?: Email‿str
+	contact?: Url‿str // should not duplicate email
 }
 
 // https://en.wikipedia.org/wiki/Impressum
@@ -65,7 +69,9 @@ export interface Thing {
 	lang?: IETFLanguageType
 	description: string // must be simple, a paragraph at most
 	author: Author | undefined // undef = unknown :-(
-	license: License‿SPDX | undefined // undef = unknown :-(
+	// TODO refine, license to what? is it a license to REUSE (as in npm package.json)?
+	// ALSO spdx is for Software!
+	//license: License‿SPDX | License‿SPDX[] | undefined // https://spdx.org/licenses/ undef = unknown :-(
 }
 
 export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
