@@ -1,0 +1,111 @@
+Use seed 88669988.
+
+You're a key member of a high-performing team in a professional environment.
+
+Our team is a pioneer in the era of internet-based entertainment:
+We are using the power of the internet to create and share joy, happiness and fun!
+
+If you help our team succeed, you'll get fame, social status and millions of $$$.
+
+The product we're building is a viral web page,
+a major web phenomenon that people will love and share for decades.
+
+We are recreating a modern version of the viral old "hampsterdance" page.
+Of course we're not naming our page with this name.
+Also we're not copying, we're creating a new think only drawing inspiration.
+
+It's a simple page featuring many cute, whimsical, friendly little animals dancing together.
+
+
+You're a genius web developer.
+
+You produce reliable, secure, compliant, maintainable and efficient code.
+
+Use as few third party dependencies and tools as possible.
+Only use stable/LTS versions of dependencies and tools.
+Use only the most widely used libraries an tools, that are well tested, well documented, actively maintained, have a large community and don't have security issues.
+
+Use all the best practices and patterns that are available for the language and framework you are using.
+
+
+
+
+
+
+Write a semantic, well-structured, state-of-the-art html page displaying rows of dancing animals and playing a music in loop.
+
+In the code, the dancing animals are instantiated by an invocation of a web component called "animated-sprite-sheet" and taking the parameters: asset-url, sheetWidth, sheetHeight, rows, columns.
+
+Select a suitable font from google font and use it.
+
+To comply with laws, the website should also have a discreet footer with legal mentions, about, imprimat etc.
+
+The page need to be SEO friendly and have all the needed items to be shareable on social media. Add all the things needed.
+ChatGPT
+Given your requirements for a modern, viral webpage inspired by the concept of the "hampsterdance," I'll outline how to create a semantic, well-structured HTML page that features dancing animals with music. We'll incorporate best practices for web development, focusing on performance, accessibility, and SEO friendliness. This example will leverage minimal third-party dependencies, focusing on stability and security.
+
+HTML Structure
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dancing Animals Extravaganza</title>
+    <meta name="description" content="Join the fun with our Dancing Animals Extravaganza! A joyful web phenomenon bringing happiness and fun through whimsical, friendly animals dancing to the beat.">
+    <meta property="og:title" content="Dancing Animals Extravaganza">
+    <meta property="og:description" content="A viral sensation! Discover whimsical, dancing animals and share the joy.">
+    <meta property="og:image" content="path_to_your_social_media_preview_image.jpg">
+    <meta property="og:url" content="http://www.yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .footer {
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="dancing-animals">
+    <!-- Example instantiation of a dancing animal -->
+    <animated-sprite-sheet asset-url="path_to_animal_sprite.png" sheetWidth="1024" sheetHeight="1024" rows="4" columns="4"></animated-sprite-sheet>
+</div>
+
+<audio loop autoplay>
+    <source src="path_to_your_music_file.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<footer class="footer">
+    © 2024 Dancing Animals Extravaganza | <a href="#">About</a> | <a href="#">Legal Mentions</a> | <a href="#">Privacy Policy</a>
+</footer>
+
+<script src="path_to_your_web_component_definition.js"></script>
+<script>
+    // Initialization script for animated-sprite-sheet components if needed
+</script>
+
+</body>
+</html>
+Key Points
+Font Usage: We've selected "Roboto" from Google Fonts for its readability and modern appearance.
+SEO and Social Media: Meta tags are included for SEO and social media sharing, ensuring the page is discoverable and shareable.
+Web Component: The animated-sprite-sheet component needs to be defined in a separate JavaScript file, where you define its behavior and how it handles the provided attributes (e.g., asset-url, sheetWidth, etc.).
+Legal Footer: A footer is included for legal mentions, privacy policy, and about links, adhering to compliance requirements.
+Minimal Dependencies: This example relies on standard HTML, CSS, and minimal JavaScript for the web component, adhering to the requirement for minimal third-party dependencies.
+Best Practices
+Performance: Ensure images and audio are optimized for the web to reduce loading times.
+Accessibility: Use semantic HTML and ensure the site is navigable via keyboard. Also, provide alternative texts for images and accessible content for all users.
+Security: Use HTTPS for your website, and ensure any third-party libraries are up-to-date and secure.
+Maintainability: Keep your code well-documented and structured, making it easy to update and maintain.
+This blueprint provides a strong foundation for your viral webpage project, aligning with modern web development best practices while drawing inspiration from a classic internet phenomenon.

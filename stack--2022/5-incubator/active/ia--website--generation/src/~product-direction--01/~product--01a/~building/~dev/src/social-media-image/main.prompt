@@ -1,0 +1,12 @@
+↳ continued from: {{parent}}
+
+→ include: [[~role/~artist]]
+
+Draw a social media preview image.
+
+A social media cover should be 1200x628px
+and obviously you must NOT write "social media preview" on it!!
+
+Subtly hint at AI.
+
+→ include: ../../../../../~art-style

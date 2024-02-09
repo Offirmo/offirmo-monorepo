@@ -3,7 +3,9 @@
 → include: [[~role/~dev/web-dev]]
 
 
-Write a semantic, well-structured, state-of-the-art html page displaying rows of animated gifs and playing a music in loop
+Write a semantic, well-structured, state-of-the-art html page displaying rows of dancing animals and playing a music in loop.
+
+In the code, the dancing animals are instantiated by an invocation of a web component called "animated-sprite-sheet" and taking the parameters: asset-url, sheetWidth, sheetHeight, rows, columns.
 
 Select a suitable font from google font and use it.
 
