@@ -4,7 +4,7 @@
 	"repository": "https://github.com/Offirmo/offirmo-monorepo",
 	"version": "2.5.0",
 	"author": "Offirmo <offirmo.net@gmail.com>",
-	"license": "Unlicense",
+	"license": "(Unlicense AND MIT)",
 	"private": true,
 
 	"heroku-run-build-script": false,
