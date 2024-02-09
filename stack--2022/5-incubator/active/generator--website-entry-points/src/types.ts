@@ -83,7 +83,7 @@ interface WebsiteEntryPointSpec extends WebPage {
 	// optional '?:' = truly optional (can be easily derived)
 	// TODO use zod? or tRPC?
 
-	preset?: 'game' | 'landing--app' // TODO clarify
+	preset?: 'game' | 'landing--app' | 'blog' // TODO clarify
 	// landing https://growth.design/case-studies/landing-page-ux-psychology
 
 	/////// PWA
@@ -103,7 +103,7 @@ interface WebsiteEntryPointSpec extends WebPage {
 	// TODO one day themes
 
 	/////// SRC
-	sourcecode?: boolean
+	sourcecode?: boolean // ???
 
 	/////// META
 	basename?: Basename // without extension. default to "index"

@@ -37,6 +37,9 @@ export type JS‿str = string
 /////////////////////////////////////////////////
 // Aggreg
 export interface Contentⳇweb {
+	// XXX TODO semantic!!!!
+
+
 	critical: {
 		css: Css‿str[]
 		js: JS‿str[]

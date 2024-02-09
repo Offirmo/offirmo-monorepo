@@ -75,6 +75,8 @@ export interface Thing {
 }
 
 export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
+
+	// XXX only applies to Software!
 	version?: SemVer
 	changelog?: Url‿str
 	source?: Url‿str // if relevant
