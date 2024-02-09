@@ -50,3 +50,7 @@ no expertise needed -> expertise needed
       1. "general-purpose languages" (powerful but: complex, ankward, tied to their ecosysytems)
          * js etc.
 1. binary
+
+Opportunities:
+- vaguely structured markdown
+- snowflake config

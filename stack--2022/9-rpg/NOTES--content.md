@@ -1,5 +1,6 @@
 
 
+
 ## villains!
 
 * https://illimitablemen.com/2013/12/28/understanding-psychopathy/
@@ -1146,3 +1147,5 @@ https://universe.eveonline.com/scientific-articles
 https://worldbuilding.stackexchange.com/questions/243687/what-sort-of-strategies-would-a-medieval-military-use-against-a-fantasy-giant
 
 https://lifehacker.com/how-much-garden-you-would-need-to-100-survive-on-1848829190
+
+https://worldbuilding.stackexchange.com/questions/253516/how-strong-would-a-realistically-evolved-orc-be

@@ -140,6 +140,7 @@
 		"parcel": "^2",
 		"path-exists": "^5",
 		"pokemon": "^2",
+		"prettier": "^3",
 		"prettyjson": "^1",
 		"process": "^0",
 		"prop-types": "^15",

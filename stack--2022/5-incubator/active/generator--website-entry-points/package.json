@@ -17,6 +17,7 @@
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/cli-toolbox": "^3",
 		"@resvg/resvg-js": "^2",
+		"prettier": "^3",
 		"tiny-invariant": "^1",
 		"tslib": "^2"
 	},
@@ -34,6 +35,7 @@
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
+		"@offirmo-private/marketing": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",

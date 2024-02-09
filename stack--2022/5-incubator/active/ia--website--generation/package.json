@@ -13,7 +13,6 @@
 		"openai": "^4"
 	},
 	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/normalize-string": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
