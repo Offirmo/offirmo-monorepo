@@ -20,3 +20,33 @@ markdown header
 
 length of text / intro
 https://www.researchgate.net/publication/324329159_How_Constraints_Affect_Content_The_Case_of_Twitter%27s_Switch_from_140_to_280_Characters
+
+
+
+
+## hierarchy of file formats
+
+human-readable -> machine-readable
+no expertise needed -> expertise needed
+"expressivity" (reduce duplication)
+'+++ https://pkl-lang.org/blog/introducing-pkl.html
+'+++ https://medium.com/kurtosis-tech/pkl-and-the-goldilocks-problem-of-configuration-languages-dc36621e102a
+
+1. text
+   1. unstructured
+   1. semi-structured = text with some markup, permissive, no "syntax error"
+      * markdown https://daringfireball.net/projects/markdown/
+      * stricter markdown http://commonmark.org/
+      * html
+   1. structured = code
+      1. "static languages"
+         * json https://www.json.org/
+         * YAML
+         * property lists
+      1. "hybrid/blend"
+         * pkl https://pkl-lang.org/index.html
+         * dhall https://dhall-lang.org/
+      1. DSL
+      1. "general-purpose languages" (powerful but: complex, ankward, tied to their ecosysytems)
+         * js etc.
+1. binary

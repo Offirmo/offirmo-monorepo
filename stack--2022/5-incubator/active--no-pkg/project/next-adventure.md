@@ -31,6 +31,8 @@ new adventure
         Jira
 CSS
 Google
+    xooglers
+    https://docs.google.com/document/d/13wFFC7vIdB2hkxdyT0dSiGgkZTXCDDBeW_GBPqy9Jy0/
     ⇱ train for interview
       ⇱ screening
       ⇱ system design https://www.swequiz.com/#pricing  https://designsystems.surf

@@ -58,6 +58,8 @@ import {
 
 /////////////////////////////////////////////////
 
+function expectㆍfileㆍstatesㆍdeepㆍequal(s1: Immutable<State>, s2: Immutable<State>, should_log = true): void {}
+
 describe(`${LIB} -- examples`, function() {
 
 	describe('DEMO_STATE', function () {

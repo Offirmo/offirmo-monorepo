@@ -244,3 +244,4 @@ web assembly (asm.js)
 WET https://overreacted.io/the-wet-codebase/
 X considered harmful
 YAGINTF - yet another guideline I need to follow?
+YAGNI -- Too general too soon https://frontendatscale.com/issues/15/

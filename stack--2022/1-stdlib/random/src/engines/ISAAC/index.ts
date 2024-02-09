@@ -17,9 +17,7 @@ function _add(x: Int32, y: Int32): Int32 {
 }
 
 function _get_random_seed(): Seed {
-	// @ts-expect-error
-	if (globalThis?.crypto?.getRandomValues) {
-		// @ts-expect-error
+	if (globalThis.crypto?.getRandomValues) {
 		return [...globalThis.crypto.getRandomValues(new Int32Array(SIZE)).values()]
 	}
 
@@ -31,6 +29,7 @@ function getꓽRNGⵧISAAC32(options: {
 	// DO NOT USE THOSE OPTIONS
 	// THEY ARE PROVIDED FOR UNIT TESTS ONLY
 	// seed:
+	// - [provided]     = the best 👍
 	// - [not provided] = init'ed from Math.random() not the best, better than nothing, cf. discussion https://github.com/rubycon/isaac.js/issues/2
 	// - undefined      = seeding happens, using the "internal/spec default" seed (FOR UNIT TESTS ONLY)
 	// - null           = no seed, no seeding at all (FOR UNIT TESTS ONLY)
