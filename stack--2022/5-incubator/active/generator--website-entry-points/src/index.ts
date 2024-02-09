@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable, AnyPath } from '@offirmo-private/ts-types'
+import { Immutable, AbsolutePath } from '@offirmo-private/ts-types'
 
 import { EntryPoints, WebsiteEntryPointSpec } from './types.js'
 
@@ -51,11 +51,11 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>):
 
 /////////////////////////////////////////////////
 
-async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>, dir: AnyPath): Promise<EntryPoints> {
-	const dirpath = dir.startsWith('/')
-		? dir
-		: path.join(process.cwd(), dir)
-	console.log(`📁 ${dirpath}`)
+// dir must be absolute bc. from where would we resolve it?
+async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>, targetDir: AbsolutePath): Promise<EntryPoints> {
+	targetDir = path.normalize(targetDir)
+	assert(path.isAbsolute(targetDir), `dir must be absolute, got "${targetDir}"`)
+	console.log(`📁 ${targetDir}`)
 	// TODO rm? too dangerous?
 
 	Object.keys(entries).sort().forEach(basename => {
@@ -64,7 +64,7 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 	})
 
 	return Promise.all(Object.keys(entries).map(basename => {
-			const filepath = path.join(dirpath, basename)
+			const filepath = path.join(targetDir, basename)
 			return fs.outputFile(
 					filepath,
 					entries[basename]!,
@@ -82,9 +82,9 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 
 /////////////////////////////////////////////////
 
-async function generateꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>, dir: AnyPath): Promise<EntryPoints> {
+async function generateꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>, targetDir: AbsolutePath): Promise<EntryPoints> {
 	const entries = getꓽwebsiteᝍentryᝍpoints(spec)
-	return writeꓽwebsiteᝍentryᝍpoints(entries, dir)
+	return writeꓽwebsiteᝍentryᝍpoints(entries, targetDir)
 }
 
 /////////////////////////////////////////////////

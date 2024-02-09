@@ -28,7 +28,8 @@
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
 		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
 
-		"demo": "node ./dist/src.es2022.esm/demo/index.js",
+		"xxdemo": "node ./dist/src.es2022.esm/demo/index.js",
+		"demo": "npx tsx doc/demo--blog/index.mts",
 
 		"dev": "run-s clean _build:dev:watch",
 		"xxtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2022.esm/**/*spec.js'",

@@ -34,7 +34,7 @@ const EXAMPLEⵧWEBAPPⵧTBRPG2023: Parameters<typeof generateꓽwebsiteᝍentry
 		lang: 'en',
 		description: '(Browser game) The simplest RPG ever! (indie game, free to play, no account needed)',
 		author: AUTHOR,
-		license: 'UNLICENSED', // the source is open but the game itself is not
+		//license: 'UNLICENSED', // the source is open but the game itself is not
 	}
 
 	const THING_ONLINE: ThingWithOnlinePresence = {
