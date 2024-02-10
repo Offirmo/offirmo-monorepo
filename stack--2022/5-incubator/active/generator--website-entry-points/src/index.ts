@@ -1,4 +1,5 @@
 import assert from 'tiny-invariant'
+import * as Prettier from 'prettier'
 import { Immutable, AbsolutePath } from '@offirmo-private/ts-types'
 
 import { EntryPoints, WebsiteEntryPointSpec } from './types.js'
@@ -51,6 +52,17 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>):
 
 /////////////////////////////////////////////////
 
+const PRETTIER_OPTIONS = {
+	printWidth: 120,
+	tabWidth: 3,
+	useTabs: true,
+	semi: false,
+	singleQuote: true, jsxSingleQuote: true,
+	quoteProps: 'consistent',
+	arrowParens: 'avoid',
+
+} satisfies Partial<Prettier.RequiredOptions>
+
 // dir must be absolute bc. from where would we resolve it?
 async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>, targetDir: AbsolutePath): Promise<EntryPoints> {
 	targetDir = path.normalize(targetDir)
@@ -63,17 +75,39 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 		//console.log(entries[basename])
 	})
 
-	return Promise.all(Object.keys(entries).map(basename => {
-			const filepath = path.join(targetDir, basename)
+	return Promise.all(Object.keys(entries).map(async (basename) => {
+			const file__path = path.join(targetDir, basename)
+			let file__content = entries[basename]!
+
+			switch (path.extname(file__path)) {
+				case '.html':
+					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: "html" })
+					break
+				case '.css':
+					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: "css" })
+					break
+				case '.json':
+					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: "json" })
+					break
+				case '.ts':
+					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: "typescript" })
+					break
+				case '.js':
+					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: "acorn" })
+					break
+				default:
+					break
+			}
+
 			return fs.outputFile(
-					filepath,
-					entries[basename]!,
+					file__path,
+					file__content,
 					{
 						encoding: 'utf8',
 					}
 				)
 				.catch((err : any) => {
-					console.error(`Error while writing ${filepath}`, err)
+					console.error(`Error while writing ${file__path}`, err)
 					throw err
 				})
 		}))
@@ -84,6 +118,7 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 
 async function generateꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>, targetDir: AbsolutePath): Promise<EntryPoints> {
 	const entries = getꓽwebsiteᝍentryᝍpoints(spec)
+
 	return writeꓽwebsiteᝍentryᝍpoints(entries, targetDir)
 }
 
