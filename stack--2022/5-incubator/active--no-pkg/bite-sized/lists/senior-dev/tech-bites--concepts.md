@@ -1,3 +1,4 @@
+
 +++ https://martinfowler.com/
 +++ https://www.hackterms.com/about/all
 12 factors https://12factor.net/
@@ -5,31 +6,28 @@
 97 Things Every Programmer Should Know
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 Agile
-algorithm -- BPE / Byte pair encoding https://github.com/openai/tiktoken
-algorithm -- CRDT
 allocation
 annotation
 anomaly detection
 APIs web
-appli web ?
-Applis web
+appli web
 apply / call / bind
 arguments
 assembly
-asymc / design pattern réacteur
+async / design pattern réacteur
 async/sync
 asynchrone
 atomic
 audit trail - what happened, when, who made the request and how?
 authentication
-auto-scaling and load-shedding
 BDD - Behavior-Driven Development https://cucumber.io/school/   Discovery -> Formulation -> Automation
 blocking
 By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
 cache
+cache -- stampede https://en.wikipedia.org/wiki/Cache_stampede
 caching -- S3 FIFO https://s3fifo.com/
 CAP ACID https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
-capability is an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
+capability = an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
 CD Continuous Delivery https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
 changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 changelogs -- conventional https://github.com/conventional-changelog
@@ -55,15 +53,14 @@ DDOS - self https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causi
 debugger
 debugging
 defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actually-healthy-5flj
+demos
 dependencies
 dependency hell https://en.wikipedia.org/wiki/Dependency_hell
 devex
-devops
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 double authent
 DRY don't repeat yourself
 dry run
-démos
 effacement d'une liste pendant qu'on la parcourt
 egress
 emscripten
@@ -95,17 +92,12 @@ handle
 hoisting des vars de boucle for et switch
 hooks
 hotfix
-http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
 http://devdocs.io/
-http://developer.telerik.com/featured/a-guide-to-javascript-engines-for-idiots/
-http://meta.programmers.stackexchange.com/questions/6166/open-letter-to-students-with-homework-problems?cb=1
+http://meta.programmers.stackexchange.com/questions/6166/open-letter-to-students-with-homework-problems
 http://nodeschool.io/#workshoppers
 http://rethinkdb.com/blog/node-4/
-http://stackoverflow.com/questions/17106681/parseint-vs-unary-plus-when-to-use-which/17106702#17106702
 http://www.letudiant.fr/palmares/palmares-des-ecoles-d-ingenieurs/ouverture-internationale-2.html
 http://www.playkeepout.com/
-http://www.toptal.com/javascript/interview-questions
-https://en.wikipedia.org/wiki/Cache_stampede
 https://en.wikipedia.org/wiki/Conway%27s_law
 https://en.wikipedia.org/wiki/Cross-cutting_concern
 https://en.wikipedia.org/wiki/Design_smell
@@ -117,7 +109,6 @@ https://en.wikipedia.org/wiki/Reference_class_forecasting
 https://en.wikipedia.org/wiki/Robustness_principle
 https://github.com/anvaka/npmrank/blob/master/sample/dependencies.md
 https://itnext.io/deployment-maturity-levels-feab55c20d04
-https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
 https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
 https://www.atlassian.com/team-playbook/plays/elevator-pitch
 https://xyproblem.info/
@@ -127,8 +118,13 @@ immutability
 Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
 io.js
 Joel test
-jQuery
-js equality
+JS equality
+JS http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
+JS http://developer.telerik.com/featured/a-guide-to-javascript-engines-for-idiots/
+JS http://stackoverflow.com/questions/17106681/parseint-vs-unary-plus-when-to-use-which/17106702#17106702
+JS http://www.toptal.com/javascript/interview-questions
+JS https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
+JS jQuery
 JSON
 jump/goto
 kebab-case vs snake etc
@@ -154,7 +150,6 @@ microcode
 migrations
 mocha / chai
 monde du web ?
-monitoring
 monitoring = observing systems, collecting metrics, evaluating those metrics over time, and then using them to make decisions or take actions
 MVC
 namespace
@@ -168,16 +163,16 @@ OKR
 OOP
 optim des || et && effet de bord
 ownership
-Pair-programming
+pair-programming
 PD Personal Data
-perf as a feature
-perfs
+perf
+perf -- as a feature
 personal data
 pipeline express success / error / next / send
 pointer
 polyfill
 privacy - collect and use someone's info respectfully
-privacy - regulations AND expectations
+privacy - regulations/compliance AND expectations
 promises
 prototypes
 proxy
@@ -194,12 +189,14 @@ register
 release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-10-insider-program-from-rings-to-release-channels/
 revisions
 RFC https://rfc.fyi/
+Roles and Role-Based Access Control (RBAC)
 rollback
 rolling deploy
 scaling horizontal
 scope
 Scrum
 security -- OWASP top 10 https://owasp.org/www-project-top-ten/
+security -- principle of least privilege
 semaphore
 semver
 service
@@ -222,6 +219,7 @@ Sustainable Architectural Decisions https://adr.github.io/
 system call
 TDD
 TDZ
+team -- Tuckman model "Forming, Storming, Norming, and Performing"
 tech debt -- Accidental - e.g. bugs due to human error that unknowingly increases the cost of future work.
 tech debt -- Deliberate  - e.g. optimising for short term delivery, knowing it increases the cost of future work.
 tech debt -- Incidental  - e.g. organic changes in complexity over time that increases the cost of future work.
@@ -231,7 +229,6 @@ transpiler
 transpiling
 tree
 tree walk
-tuckman model
 typecast
 types
 UGC User Generated Content

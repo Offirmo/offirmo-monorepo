@@ -27,6 +27,8 @@ new adventure
         ⇱ Python
           ⇱ Cloud
             ⇱ AWS Cloud Practitioner Essentials 61%
+              promo code: AWSRETAKE24
+            ⇱ https://aws.amazon.com/certification/certified-developer-associate/
       ⇱ Certifications? https://www.infoworld.com/article/3709508/do-programming-certifications-still-matter.html
         Jira
 CSS

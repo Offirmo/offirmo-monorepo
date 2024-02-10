@@ -36,6 +36,7 @@ no expertise needed -> expertise needed
    1. unstructured
    1. semi-structured = text with some markup, permissive, no "syntax error"
       * markdown https://daringfireball.net/projects/markdown/
+        * mixed with YAML front matter https://jekyllrb.com/docs/front-matter/
       * stricter markdown http://commonmark.org/
       * html
    1. structured = code
