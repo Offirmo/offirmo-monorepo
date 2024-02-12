@@ -40,7 +40,6 @@ Nothing Happens Until You Start → Iterate → Mix It Up (Chapter 31 - Tickle T
 
 https://web.dev/patterns/layout/
 
-https://regexlearn.com/
 
 https://programmingisterrible.com/post/139222674273/how-to-write-disposable-code-in-large-systems
 
@@ -70,7 +69,6 @@ repo of bite-sized programming concepts
 * https://github.com/labs42io/clean-code-typescript
 
 
-https://martinfowler.com/
 
 programming book:
 https://twitter.com/dan_abramov/status/1190762799338790913

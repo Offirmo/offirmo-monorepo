@@ -1,7 +1,7 @@
 #!/usr/bin/env ts-node
 
 import { Author, Thing, ThingWithOnlinePresence } from '@offirmo-private/ts-types'
-import generateꓽwebsiteᝍentryᝍpoint, { type WebPage, type WebsiteEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
+import generateꓽwebsiteᝍentryᝍpoints, { type WebPage, type WebsiteEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
 import { SVG } from '@offirmo-private/generator--website-entry-points/src/utils/svg'
 
 /////////////////////////////////////////////////
@@ -99,4 +99,4 @@ const WEBAPPⵧTBRPG2023: WebsiteEntryPointSpec = (() => {
 
 /////////////////////////////////////////////////
 
-await generateꓽwebsiteᝍentryᝍpoint(WEBAPPⵧTBRPG2023, './src')
+await generateꓽwebsiteᝍentryᝍpoints(WEBAPPⵧTBRPG2023, './src')

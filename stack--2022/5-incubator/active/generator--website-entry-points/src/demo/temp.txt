@@ -1,12 +1,12 @@
 
-const EXAMPLEⵧSIMPLE_PAGE: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[0] = {
+const EXAMPLEⵧSIMPLE_PAGE: Parameters<typeof generateꓽwebsiteᝍentryᝍpoints>[0] = {
 	title: 'The Boring RPG',
 	icon: SVG.createꓽfrom_emoji('📜'),
 	scripts: [ 'snippet:normalize-trailing-slash' ],
 }
 
 
-const EXAMPLEⵧEXPERIMENTⵧVIEWPORT: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[0] = {
+const EXAMPLEⵧEXPERIMENTⵧVIEWPORT: Parameters<typeof generateꓽwebsiteᝍentryᝍpoints>[0] = {
 	isꓽdebug: true,
 
 	wantsꓽinstall: 'partial',
@@ -194,7 +194,7 @@ const EXAMPLEⵧEXPERIMENTⵧVIEWPORT: Parameters<typeof generateꓽwebsiteᝍen
 	`
 }
 
-const ADVENTURERS_FANTASY_ILLUSTRATION: Parameters<typeof generateꓽwebsiteᝍentryᝍpoint>[0] = {
+const ADVENTURERS_FANTASY_ILLUSTRATION: Parameters<typeof generateꓽwebsiteᝍentryᝍpoints>[0] = {
 	isꓽdebug: true, // TODO false
 	env: 'prod',
 	//preset: TODO?

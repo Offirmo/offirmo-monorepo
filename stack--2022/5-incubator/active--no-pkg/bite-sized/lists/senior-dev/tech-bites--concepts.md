@@ -185,6 +185,7 @@ React
 reactive programming
 reactor pattern
 recursion
+regex https://regexlearn.com/
 register
 release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-10-insider-program-from-rings-to-release-channels/
 revisions
@@ -237,6 +238,7 @@ use boring technology
 use strict
 vaporware
 variables pointeur / natives
+virtual private cloud (VPC)
 web assembly (asm.js)
 WET https://overreacted.io/the-wet-codebase/
 X considered harmful

@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
 
 import { Author, Thing, ThingWithOnlinePresence } from '@offirmo-private/ts-types'
-import generateꓽwebsiteᝍentryᝍpoint, { type WebPage, type WebsiteEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
+import generateꓽwebsiteᝍentryᝍpoints, { type WebPage, type WebsiteEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
 import * as SVG from '../../src/utils/svg/index.js'
 
 import { AUTHOR } from '@offirmo-private/marketing'
@@ -65,4 +65,4 @@ const SPEC: WebsiteEntryPointSpec = {
 /////////////////////////////////////////////////
 
 
-await generateꓽwebsiteᝍentryᝍpoint(SPEC, path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'dist'))
+await generateꓽwebsiteᝍentryᝍpoints(SPEC, path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'dist'))
