@@ -7,6 +7,7 @@
 	"main": "index.js",
 
 	"scripts": {
+		"demo--assets": "parcel serve src/~product-direction--01/~product--01a/~building/~dev/src/ui/animated-cute-thing/demo.html --port 8080  --lazy  --no-autoinstall",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
@@ -14,6 +15,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/normalize-string": "*",
+		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2"

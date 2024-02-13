@@ -4,22 +4,6 @@
 
 /////////////////////////////////////////////////
 
-/*
-interface SpriteSheetDefinition {
-	// asset
-	url‿str: string
-	width: number
-	height: number
-	padding: [number, number, number, number]
-
-	// spritesheet
-	rows: number
-	cols: number
-	frameRate: number
-	row_spacing: number
-	col_spacing: number
-}*/
-
 const BASELINE_RATIO = 0.9
 
 function getꓽspriteCount(def) {
@@ -27,8 +11,14 @@ function getꓽspriteCount(def) {
 }
 
 function getꓽframeSize(def) {
-	const usedWidth = def.width - def.padding[1] - def.padding[3] - def.col_spacing * (def.cols - 1)
-	const usedHeight = def.height - def.padding[0] - def.padding[2] - def.row_spacing * (def.rows - 1)
+	const usedWidth = def.width
+		- (def.padding?.[1] ?? 0)
+		- (def.padding?.[3] ?? 0)
+		- (def.col_spacing ?? 0) * (def.cols - 1)
+	const usedHeight = def.height
+		- (def.padding?.[0] ?? 0)
+		- (def.padding?.[2] ?? 0)
+		- (def.row_spacing ?? 0) * (def.rows - 1)
 	return {
 		width: Math.floor(usedWidth / def.cols),
 		height: Math.floor(usedHeight / def.rows),
@@ -43,15 +33,15 @@ function getꓽBgPositionCoordinatesForSprite(def, frameIndex) {
 
 	return {
 		x:
-			+ def.padding[3]
+			+ (def.padding?.[3] ?? 0)
 			+ currentColumn * frameSize.width
-			+ currentColumn * def.col_spacing
-			+ (def.adjustments.col[currentColumn]?.d ?? 0),
+			+ currentColumn * (def.col_spacing ?? 0)
+			+ (def.adjustments?.col?.[currentColumn]?.d ?? 0),
 		y:
-			+ def.padding[0]
+			+ (def.padding?.[0] ?? 0)
 			+ currentRow * frameSize.height
-			+ currentRow * def.row_spacing
-			+ (def.adjustments.row[currentRow]?.d ?? 0)
+			+ currentRow * (def.row_spacing ?? 0)
+			+ (def.adjustments?.row?.[currentRow]?.d ?? 0)
 		,
 		...frameSize,
 	}
@@ -81,70 +71,24 @@ function setꓽcontainer_style(element, def) {
 class AnimatedSpriteSheet extends HTMLElement {
 
 	connectedCallback() {
-		const def/*: SpriteSheetDefinition*/ = {
-			url‿str: this.getAttribute('asset-url'),
-			width: -1,
-			height: -1,
+		const raw = {
+			def: this.getAttribute('definition'),
+			url: this.getAttribute('asset-url'),
 			rows: parseInt(this.getAttribute('rows'), 10),
 			cols: parseInt(this.getAttribute('columns'), 10),
-			frameRate: 7,
+		}
 
-			// adjust this first
-			padding: [ 15, 25, 28, 15 ], /*[
-				parseInt(this.getAttribute('padding-top'), 10),
-				parseInt(this.getAttribute('padding-right'), 10),
-				parseInt(this.getAttribute('padding-bottom'), 10),
-				parseInt(this.getAttribute('padding-left'), 10),
-			],*/
-			// then this
-			row_spacing: 20,
-			col_spacing: 15,
-			// then this
-			adjustments: {
-				row: {
-					0: {
-						d: -2,
-					},
-					1: {
-						d: -10,
-					},
-					2: {
-						d: -18,
-					},
-					3: {
-						d: -12,
-					},
-					4: {
-						d: -4,
-					},
-					5: {
-						d: -2,
-					},
-				},
-				col: {
-					0: {
-						d: -7,
-					},
-					1: {
-						d: -6,
-					},
-					2: {
-						d: -7,
-					},
-					3: {
-						d: -7,
-					},
-					4: {
-						d: 0,
-					},
-					5: {
-						d: 2,
-					},
-					6: {
-						d: 0,
-					},
-				},
-			}
+		const def/*: SpriteSheetDefinition*/ = {
+			// defaults
+			width: -1,
+			height: -1,
+			frameRate: 3,
+			// only expose the basic props as params
+			...(raw.url && { url‿str: raw.url }),
+			...(raw.rows && { rows: raw.rows }),
+			...(raw.cols && { cols: raw.cols }),
+			// if you want more details, use "def" attribute
+			...(raw.def && JSON.parse(raw_def)),
 		}
 		this.debug = Boolean(this.getAttribute('debug'))
 
@@ -161,7 +105,6 @@ class AnimatedSpriteSheet extends HTMLElement {
 			//console.log('Image loaded!', { width, height })
 			def.width = width
 			def.height = height
-
 
 			if (this.debug) {
 				const frameCount = getꓽspriteCount(def)

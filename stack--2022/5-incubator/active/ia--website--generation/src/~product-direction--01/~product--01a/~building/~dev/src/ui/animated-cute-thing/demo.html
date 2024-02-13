@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script src="../common/wc-animated-sprite-sheet/index.js"></script>
+<script type="module">
+	import * as sprite_sheets from './assets/**/index.ts';
+
+	//console.log(sprite_sheets);
+
+	function walk_wildcard_import(wimport, parent_path = '.', accumulator = {}) {
+		Object.entries(wimport).forEach(([path_segment, obj]) => {
+			const is_module = Object.hasOwn(obj, '__esModule')
+			const path = `${parent_path}/${path_segment}`
+			if (is_module) {
+				accumulator[path] = obj
+			} else {
+				walk_wildcard_import(obj, path, accumulator)
+			}
+		})
+		return accumulator
+	}
+	const entries = walk_wildcard_import(sprite_sheets, './assets')
+	console.log(entries)
+
+	let id = undefined
+	Object.entries(entries).forEach(([path, module]) => {
+		id = id ?? path
+		if (id !== path) {
+			return
+		}
+		console.log(path, module)
+
+		const def = module.DEF
+		const sheet = document.createElement('animated-sprite-sheet')
+		sheet.setAttribute('asset-url', def.url‿str)
+		sheet.setAttribute('rows', def.rows)
+		sheet.setAttribute('columns', def.cols)
+		sheet.setAttribute('debug', true)
+		document.body.appendChild(sheet)
+	})
+</script>
+</body>
+</html>
