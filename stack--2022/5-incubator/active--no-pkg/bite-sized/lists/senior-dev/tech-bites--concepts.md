@@ -65,6 +65,8 @@ effacement d'une liste pendant qu'on la parcourt
 egress
 emscripten
 encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube.com/watch?v=RXJKdh1KZ0w
+error -- handling = exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
+error = failure = inability of a function to return a valid result, instead producing an error object describing the reason for the failure https://boostorg.github.io/leaf/#tutorial
 event loop
 executive
 exposer des variables
@@ -211,6 +213,11 @@ Site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
 SLI Service Level Indicator A measurement of how reliable or performant a Capability is. Example: “time it takes to create a ticket”
 SLO Service Level Objective (proactive) A target set on the SLI. Failing to hit the target == unhappy customer! Example: “Jira ticket created in less than 1s”
 SME
+SOLID (OOP) -- 1 Single responsibility principle (SRP) https://en.wikipedia.org/wiki/Single_responsibility_principle
+SOLID (OOP) -- 2 Open–closed principle (OCP) https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
+SOLID (OOP) -- 3 Liskov substitution principle https://en.wikipedia.org/wiki/Liskov_substitution_principle
+SOLID (OOP) -- 4 Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
+SOLID (OOP) -- 5 principle https://en.wikipedia.org/wiki/Dependency_inversion_principle
 spec js
 stack overflow
 state
