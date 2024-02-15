@@ -26,22 +26,55 @@
 	const entries = walk_wildcard_import(sprite_sheets, './assets')
 	console.log(entries)
 
-	let id = undefined
-	Object.entries(entries).forEach(([path, module]) => {
+	const raw_id = new URLSearchParams(window.location.search).get('id')
+	let id = raw_id ? decodeURI(raw_id) : undefined
+	if (['null', 'undefined'].includes(id)) {
+		id = undefined
+	}
+	console.log({id})
+	let found = false
+	Object.entries(entries).forEach(([path, module], i, a) => {
 		id = id ?? path
 		if (id !== path) {
 			return
 		}
+		found = true
 		console.log(path, module)
 
 		const def = module.DEF
-		const sheet = document.createElement('animated-sprite-sheet')
-		sheet.setAttribute('asset-url', def.url‿str)
-		sheet.setAttribute('rows', def.rows)
-		sheet.setAttribute('columns', def.cols)
-		sheet.setAttribute('debug', true)
-		document.body.appendChild(sheet)
+		const sheetⵧdebug = document.createElement('animated-sprite-sheet')
+		sheetⵧdebug.setAttribute('asset-url', def.url‿str)
+		sheetⵧdebug.setAttribute('rows', def.rows)
+		sheetⵧdebug.setAttribute('columns', def.cols)
+		sheetⵧdebug.setAttribute('definition', JSON.stringify(def))
+		sheetⵧdebug.setAttribute('debug', true)
+		document.body.appendChild(sheetⵧdebug)
+
+		const p = document.createElement('h1')
+		p.innerText = `${i+1}/${a.length}: ${path}`
+		document.body.appendChild(p)
+
+		const button = document.createElement('button')
+		button.innerText = 'Next'
+		button.onclick = () => {
+			const next = a[(i + 1) % a.length]
+			console.log({next})
+			//window.location.href = `?id=${encodeURI(next)}`
+		}
+		document.body.appendChild(button)
+
+		const sheetⵧfinal = document.createElement('animated-sprite-sheet')
+		sheetⵧfinal.setAttribute('asset-url', def.url‿str)
+		sheetⵧfinal.setAttribute('rows', def.rows)
+		sheetⵧfinal.setAttribute('columns', def.cols)
+		sheetⵧfinal.setAttribute('definition', JSON.stringify(def))
+		document.body.appendChild(sheetⵧfinal)
 	})
+
+	if (!found) {
+		throw new Error('NOT FOUND!')
+	}
+
 </script>
 </body>
 </html>

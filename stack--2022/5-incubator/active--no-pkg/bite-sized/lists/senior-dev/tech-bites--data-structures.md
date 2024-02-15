@@ -1,3 +1,4 @@
+-- List of terms relating to algorithms and data structures https://en.wikipedia.org/wiki/List_of_terms_relating_to_algorithms_and_data_structures
 array -- associative = store (key, value) https://en.wikipedia.org/wiki/Associative_array = map, dict
 deterministic acyclic finite state automaton (DAFSA)
 dictionary = associative array = map = symbol table

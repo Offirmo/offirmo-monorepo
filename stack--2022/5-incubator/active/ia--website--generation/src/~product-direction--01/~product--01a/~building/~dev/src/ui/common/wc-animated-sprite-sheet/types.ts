@@ -16,15 +16,15 @@ interface SpriteSheetDefinition {
 
 	adjustments: {
 		row: {
-			[row_index: number]: { dx?: number }
+			[row_index: number]: { dy?: number }
 		},
 		col: {
-			[col_index: number]: { dy?: number }
+			[col_index: number]: { dx?: number }
 		},
 		frame: {
 			[frame_index: number]: { skip?: true }
 		},
-	}
+	},
 }
 
 /////////////////////////////////////////////////

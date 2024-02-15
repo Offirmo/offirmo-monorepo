@@ -4,6 +4,7 @@
 
 /////////////////////////////////////////////////
 
+const LIB = 'animated-sprite-sheet'
 const BASELINE_RATIO = 0.9
 
 function getꓽspriteCount(def) {
@@ -36,12 +37,12 @@ function getꓽBgPositionCoordinatesForSprite(def, frameIndex) {
 			+ (def.padding?.[3] ?? 0)
 			+ currentColumn * frameSize.width
 			+ currentColumn * (def.col_spacing ?? 0)
-			+ (def.adjustments?.col?.[currentColumn]?.d ?? 0),
+			+ (def.adjustments?.col?.[currentColumn]?.dx ?? 0),
 		y:
 			+ (def.padding?.[0] ?? 0)
 			+ currentRow * frameSize.height
 			+ currentRow * (def.row_spacing ?? 0)
-			+ (def.adjustments?.row?.[currentRow]?.d ?? 0)
+			+ (def.adjustments?.row?.[currentRow]?.dy ?? 0)
 		,
 		...frameSize,
 	}
@@ -88,9 +89,11 @@ class AnimatedSpriteSheet extends HTMLElement {
 			...(raw.rows && { rows: raw.rows }),
 			...(raw.cols && { cols: raw.cols }),
 			// if you want more details, use "def" attribute
-			...(raw.def && JSON.parse(raw_def)),
+			...(raw.def && JSON.parse(raw.def)),
 		}
 		this.debug = Boolean(this.getAttribute('debug'))
+
+		// TODO implement name
 
 		new Promise(resolve => {
 			const img = new Image()
@@ -105,6 +108,8 @@ class AnimatedSpriteSheet extends HTMLElement {
 			//console.log('Image loaded!', { width, height })
 			def.width = width
 			def.height = height
+
+			console.log(`${LIB} loaded:`, def)
 
 			if (this.debug) {
 				const frameCount = getꓽspriteCount(def)
@@ -212,35 +217,6 @@ class AnimatedSpriteSheet extends HTMLElement {
 		}, 1000. / def.frameRate)
 	}
 }
-
-/*
-class AnimatedSpriteSheet extends HTMLElement {
-	connectedCallback() {
-		const spriteUrl = this.getAttribute('asset-url');
-		const sheetWidth = parseInt(this.getAttribute('asset-width'), 10);
-		const sheetHeight = parseInt(this.getAttribute('asset-height'), 10);
-		const rows = parseInt(this.getAttribute('rows'), 10);
-		const columns = parseInt(this.getAttribute('columns'), 10);
-		const frameRate = this.getAttribute('frame-rate-fps') ? parseInt(this.getAttribute('frame-rate-fps'), 10) : 3;
-		this.debug = Boolean(this.getAttribute('debug'))
-
-		const frameWidth = sheetWidth / columns;
-		const frameHeight = sheetHeight / rows;
-
-		setStyle(this, frameWidth, frameHeight, spriteUrl, sheetWidth, sheetHeight);
-
-		if (this.debug) {
-			const frameCount = rows * columns;
-
-			this.style.position = 'relative'
-		}
-		else {
-			this.animateSprite(rows, columns, frameWidth, frameHeight, frameRate);
-		}
-	}
-
-
-}*/
 
 /////////////////////////////////////////////////
 

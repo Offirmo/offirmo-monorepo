@@ -4,12 +4,67 @@
 12 factors https://12factor.net/
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 97 Things Every Programmer Should Know
-abstraction https://www.merrickchristensen.com/articles/abstraction/
+APIs web
 Agile
+BDD - Behavior-Driven Development https://cucumber.io/school/   Discovery -> Formulation -> Automation
+By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
+CAP ACID https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
+CD Continuous Delivery https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
+CI Continuous Integration  https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
+CPU https://cpu.land/
+Connascence https://en.wikipedia.org/wiki/Connascence
+DACI Decision Making Framework “driver, approver, contributor, informed" https://www.atlassian.com/team-playbook/plays/daci
+DDOS
+DDOS - self https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
+DRY don't repeat yourself
+DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
+GAFAM Google, Amazon, Facebook, Apple, Microsoft
+IIFE
+Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
+JS equality
+JS http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
+JS http://developer.telerik.com/featured/a-guide-to-javascript-engines-for-idiots/
+JS http://stackoverflow.com/questions/17106681/parseint-vs-unary-plus-when-to-use-which/17106702#17106702
+JS http://www.toptal.com/javascript/interview-questions
+JS https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
+JS jQuery
+JSON
+Joel test
+KISS
+KTLO
+LTS, maintenance LTS, active LTS https://nodejs.org/en/about/previous-releases
+MDN
+MVC
+OKR
+OOP
+PD Personal Data
+RAM
+RFC https://rfc.fyi/
+React
+Roles and Role-Based Access Control (RBAC)
+SLI Service Level Indicator A measurement of how reliable or performant a Capability is. Example: “time it takes to create a ticket”
+SLO Service Level Objective (proactive) A target set on the SLI. Failing to hit the target == unhappy customer! Example: “Jira ticket created in less than 1s”
+SME
+SOLID (OOP) -- 1 Single responsibility principle (SRP) https://en.wikipedia.org/wiki/Single_responsibility_principle
+SOLID (OOP) -- 2 Open–closed principle (OCP) https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
+SOLID (OOP) -- 3 Liskov substitution principle https://en.wikipedia.org/wiki/Liskov_substitution_principle
+SOLID (OOP) -- 4 Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
+SOLID (OOP) -- 5 principle https://en.wikipedia.org/wiki/Dependency_inversion_principle
+Scrum
+Service Proxy Egress authentication
+Site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
+Sustainable Architectural Decisions https://adr.github.io/
+TDD
+TDZ
+UGC User Generated Content
+WET https://overreacted.io/the-wet-codebase/
+X considered harmful
+YAGINTF - yet another guideline I need to follow?
+YAGNI -- Too general too soon https://frontendatscale.com/issues/15/
+abstraction https://www.merrickchristensen.com/articles/abstraction/
 allocation
 annotation
 anomaly detection
-APIs web
 appli web
 apply / call / bind
 arguments
@@ -20,36 +75,26 @@ asynchrone
 atomic
 audit trail - what happened, when, who made the request and how?
 authentication
-BDD - Behavior-Driven Development https://cucumber.io/school/   Discovery -> Formulation -> Automation
 blocking
-By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
 cache
 cache -- stampede https://en.wikipedia.org/wiki/Cache_stampede
 caching -- S3 FIFO https://s3fifo.com/
-CAP ACID https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
 capability = an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
-CD Continuous Delivery https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
 changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 changelogs -- conventional https://github.com/conventional-changelog
-CI Continuous Integration  https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
 comment
 comments -- conventional
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
 compile to js
 compiler
-Connascence https://en.wikipedia.org/wiki/Connascence
 constructor
 context switch
 cost based rate limiting
 courbe d'expertise
-CPU https://cpu.land/
 cron https://onlineornot.com/the-complete-guide-to-cron-jobs
 crunch
-DACI Decision Making Framework “driver, approver, contributor, informed" https://www.atlassian.com/team-playbook/plays/daci
 database
-DDOS
-DDOS - self https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
 debugger
 debugging
 defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actually-healthy-5flj
@@ -57,15 +102,16 @@ demos
 dependencies
 dependency hell https://en.wikipedia.org/wiki/Dependency_hell
 devex
-DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 double authent
-DRY don't repeat yourself
 dry run
 effacement d'une liste pendant qu'on la parcourt
 egress
 emscripten
 encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube.com/watch?v=RXJKdh1KZ0w
+error -- domain error = out of the specification, ex. sqrt(-x) https://cplusplus.com/reference/stdexcept/domain_error/
 error -- handling = exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
+error -- logic error = errors in the internal logical of the program, such as violation of logical preconditions or class invariants https://cplusplus.com/reference/stdexcept/logic_error/
+error -- runtime error = errors that can only be detected during runtime https://cplusplus.com/reference/stdexcept/runtime_error/
 error = failure = inability of a function to return a valid result, instead producing an error object describing the reason for the failure https://boostorg.github.io/leaf/#tutorial
 event loop
 executive
@@ -84,7 +130,6 @@ framework -- "a new framework every day"
 function
 function 1st-class object
 functional programming
-GAFAM Google, Amazon, Facebook, Apple, Microsoft
 garbage collector
 git
 global variable
@@ -115,23 +160,10 @@ https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-
 https://www.atlassian.com/team-playbook/plays/elevator-pitch
 https://xyproblem.info/
 héritage prototypal, héritage en diamant
-IIFE
 immutability
-Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
 io.js
-Joel test
-JS equality
-JS http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
-JS http://developer.telerik.com/featured/a-guide-to-javascript-engines-for-idiots/
-JS http://stackoverflow.com/questions/17106681/parseint-vs-unary-plus-when-to-use-which/17106702#17106702
-JS http://www.toptal.com/javascript/interview-questions
-JS https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
-JS jQuery
-JSON
 jump/goto
 kebab-case vs snake etc
-KISS
-KTLO
 language interprété types simples / types par référence
 language trends
 lazy-loading
@@ -141,10 +173,8 @@ lodash
 log
 loop
 loop - breaking out of
-LTS, maintenance LTS, active LTS https://nodejs.org/en/about/previous-releases
 magic number
 map
-MDN
 memory -- heap
 memory -- stack
 message passing
@@ -153,7 +183,6 @@ migrations
 mocha / chai
 monde du web ?
 monitoring = observing systems, collecting metrics, evaluating those metrics over time, and then using them to make decisions or take actions
-MVC
 namespace
 nommage des fonctions
 npm
@@ -161,12 +190,9 @@ nyan cat
 object
 observability "is a measure of how well internal states of a system can be inferred from knowledge of its external outputs" https://andydote.co.uk/presentations/index.html
 observability -- opentelemetry https://opentelemetry.io/docs/concepts/observability-primer/
-OKR
-OOP
 optim des || et && effet de bord
 ownership
 pair-programming
-PD Personal Data
 perf
 perf -- as a feature
 personal data
@@ -179,11 +205,9 @@ promises
 prototypes
 proxy
 queue
-RAM
 ratcheting https://robertgreiner.com/continuous-code-improvement-using-ratcheting/ https://leaddev.com/building-better-software/introducing-quality-ratchets-tool-managing-complex-systems
 rate-limiting
 rate-limiting -- cost based
-React
 reactive programming
 reactor pattern
 recursion
@@ -191,42 +215,26 @@ regex https://regexlearn.com/
 register
 release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-10-insider-program-from-rings-to-release-channels/
 revisions
-RFC https://rfc.fyi/
-Roles and Role-Based Access Control (RBAC)
 rollback
 rolling deploy
 scaling horizontal
 scope
-Scrum
 security -- OWASP top 10 https://owasp.org/www-project-top-ten/
 security -- principle of least privilege
 semaphore
 semver
 service
 service availability
-Service Proxy Egress authentication
 shaving the yak
 shim vs polyfill vs ponyfill
 shrinkwrap
 single source of truth
-Site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
-SLI Service Level Indicator A measurement of how reliable or performant a Capability is. Example: “time it takes to create a ticket”
-SLO Service Level Objective (proactive) A target set on the SLI. Failing to hit the target == unhappy customer! Example: “Jira ticket created in less than 1s”
-SME
-SOLID (OOP) -- 1 Single responsibility principle (SRP) https://en.wikipedia.org/wiki/Single_responsibility_principle
-SOLID (OOP) -- 2 Open–closed principle (OCP) https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
-SOLID (OOP) -- 3 Liskov substitution principle https://en.wikipedia.org/wiki/Liskov_substitution_principle
-SOLID (OOP) -- 4 Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
-SOLID (OOP) -- 5 principle https://en.wikipedia.org/wiki/Dependency_inversion_principle
 spec js
 stack overflow
 state
 state management
 streams
-Sustainable Architectural Decisions https://adr.github.io/
 system call
-TDD
-TDZ
 team -- Tuckman model "Forming, Storming, Norming, and Performing"
 tech debt -- Accidental - e.g. bugs due to human error that unknowingly increases the cost of future work.
 tech debt -- Deliberate  - e.g. optimising for short term delivery, knowing it increases the cost of future work.
@@ -239,7 +247,6 @@ tree
 tree walk
 typecast
 types
-UGC User Generated Content
 uptime
 use boring technology
 use strict
@@ -247,7 +254,3 @@ vaporware
 variables pointeur / natives
 virtual private cloud (VPC)
 web assembly (asm.js)
-WET https://overreacted.io/the-wet-codebase/
-X considered harmful
-YAGINTF - yet another guideline I need to follow?
-YAGNI -- Too general too soon https://frontendatscale.com/issues/15/
