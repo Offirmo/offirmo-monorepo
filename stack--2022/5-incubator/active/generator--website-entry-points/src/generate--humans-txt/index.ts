@@ -5,7 +5,7 @@ import { WebsiteEntryPointSpec } from '../types.js'
 import {
 	getꓽauthor__name,
 	getꓽauthor__intro,
-	getꓽcontactⵧgeneric,
+	getꓽcontactⵧhuman,
 } from '../selectors.js'
 
 /////////////////////////////////////////////////
@@ -18,7 +18,7 @@ function generate(spec: Immutable<WebsiteEntryPointSpec>): string {
 ## Author
 Hi, I'm ${getꓽauthor__name(spec)}, ${getꓽauthor__intro(spec) || 'creator'}.
 
-If you need to get in touch: ${getꓽcontactⵧgeneric(spec)}.
+If you need to get in touch: ${getꓽcontactⵧhuman(spec)}.
 
 ## Credits
 

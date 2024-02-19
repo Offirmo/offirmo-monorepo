@@ -1,6 +1,7 @@
 import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
+import { Enum } from 'typescript-string-enums'
 import { Basename, Immutable, IETFLanguageType, CssColor‿str, Url‿str, RelativePath } from '@offirmo-private/ts-types'
 
 import {
@@ -14,6 +15,7 @@ import { FeatureSnippets, WebsiteEntryPointSpec } from './types.js'
 // always use safe defaults
 
 /////////////////////////////////////////////////
+// meta
 
 function isꓽdebug(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 	return spec.isꓽdebug ?? false
@@ -31,7 +33,12 @@ function isꓽpublic(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 	return spec.isꓽpublic ?? isꓽprod(spec)
 }
 
+function shouldꓽgenerateꓽsourcecode(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+	return spec.sourcecode ?? false
+}
+
 /////////////////////////////////////////////////
+// features
 
 function wantsꓽinstall(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 	if (typeof spec.wantsꓽinstall === 'string')
@@ -90,7 +97,10 @@ function getꓽfeatures(spec: Immutable<WebsiteEntryPointSpec>): FeatureSnippets
 	if (spec.preset === 'game')
 		features.add('cssⳇviewport--full' as FeatureSnippets)
 
-	return Array.from(features)
+	return Array.from(features).filter(f => {
+		assert(Enum.isType(FeatureSnippets, f), `Unknown feature "${f}"!`)
+		return true;
+	})
 }
 
 /////////////////////////////////////////////////
@@ -104,13 +114,16 @@ function getꓽauthor__intro(spec: Immutable<WebsiteEntryPointSpec>): string | u
 	return spec.author.intro
 }
 
-function getꓽcontactⵧgeneric(spec: Immutable<WebsiteEntryPointSpec>): Url‿str {
-	const url = spec.contact || spec.author?.contact
+function _getꓽcontact(spec: Immutable<WebsiteEntryPointSpec>): Url‿str {
+	const url = spec.contact || spec.author?.contact || (spec.author?.email && `mailto:${spec.author.email}`)
 	assert(url, 'should have at last a point of contact!')
 	return url
 }
+function getꓽcontactⵧhuman(spec: Immutable<WebsiteEntryPointSpec>): Url‿str {
+	return _getꓽcontact(spec)
+}
 function getꓽcontactⵧsecurity(spec: Immutable<WebsiteEntryPointSpec>): Url‿str {
-	return spec.contactⵧsecurity || getꓽcontactⵧgeneric(spec)
+	return spec.contactⵧsecurity || _getꓽcontact(spec)
 }
 
 /////////////////////////////////////////////////
@@ -243,10 +256,6 @@ function getꓽicon__path(spec: Immutable<WebsiteEntryPointSpec>, size: number |
 	return `favicons/${getꓽicon__basename(spec, size)}`
 }
 
-function shouldꓽgenerateꓽsourcecode(spec: Immutable<WebsiteEntryPointSpec>): boolean {
-	return spec.sourcecode ?? false
-}
-
 // keywords: todo dedupe, add categories, lowercase, etc.
 
 /////////////////////////////////////////////////
@@ -270,7 +279,7 @@ export {
 
 	getꓽauthor__name,
 	getꓽauthor__intro,
-	getꓽcontactⵧgeneric,
+	getꓽcontactⵧhuman,
 	getꓽcontactⵧsecurity,
 
 	// TODO move to own file?

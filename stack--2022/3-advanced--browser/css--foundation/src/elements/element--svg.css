@@ -7,23 +7,33 @@
 /* Necessary to select only SVG <a> elements, and not also HTML's
  */
 @namespace svg url(http://www.w3.org/2000/svg);
-/* TODO nest */
 /* TODO follow the HTML <a> style */
 
-svg|a:link,
-svg|a:visited {
-	cursor: pointer;
+svg|a {
+	/* copy of html <a> style */
+	color: var(--o⋄color⁚fg--link, var(--o⋄color⁚fg--link--default));
+	&:visited {
+		color: var(--o⋄color⁚fg--link--visited, var(--o⋄color⁚fg--link--visited--default));
+	}
+	&:hover,
+	&:active {
+		color: var(--o⋄color⁚fg--activity-outline, var(--o⋄color⁚fg--activity-outline--default));
+	}
+
+	/* SVG specific additional styles */
+	&:link,
+	&:visited {
+		cursor: pointer;
+	}
+	&, & text {
+		fill: var(--o⋄color⁚fg--link, var(--o⋄color⁚fg--link--default)); /* Even for text, SVG uses fill over color */
+		text-decoration: underline;
+	}
+	&:hover,
+	&:active {
+		outline: dotted 1px var(--o⋄color⁚fg--activity-outline, var(--o⋄color⁚fg--activity-outline--default));
+	}
 }
 
-svg|a text,
-text svg|a {
-	fill: blue; /* Even for text, SVG uses fill over color */
-	text-decoration: underline;
-}
-
-svg|a:hover,
-svg|a:active {
-	outline: dotted 1px blue;
-}
 
 /* TODO display block? */

@@ -24,7 +24,9 @@ const THINGⵧONLINE: ThingWithOnlinePresence = {
 
 	urlⵧcanonical: AUTHOR.urlⵧcanonical,
 	urlsⵧsocial: AUTHOR.urlsⵧsocial,
+	// contact will be inherited from author
 }
+//contact: 'https://github.com/Offirmo/offirmo-monorepo/issues',
 
 /////////////////////////////////////////////////
 // Ok now we're a web page
@@ -35,24 +37,18 @@ const WEB_PAGE: WebPage = {
 	icon: SVG.createꓽfrom_emoji('👨‍💻'),
 	keywords: [ 'engineer', 'software', 'fullstack', 'developer', 'open-source', 'indie'],
 
-	// XXX TODO semantic
-	content: {
-		critical: {
-			css: [
-				'snippet:natural-box-layout',
-			],
-			js: [
-				'snippet:normalize-trailing-slash',
-			]
-		},
-		html: [
-			//'snippet:react-root',
-		],
-		css: [
-		],
-		js: [
-		],
-	},
+	features: [
+		'cssⳇbox-layout--natural',
+		'normalize-url-trailing-slash',
+		'cssⳇfoundation--offirmo',
+		//'cssⳇframework--offirmo',
+		//'page-loader--offirmo',
+	],
+
+	// Polish
+	colorⵧbackground: 'hsl(337, 16%, 28%)',
+	colorⵧforeground: 'hsl(42, 100%, 87%)',
+	colorⵧtheme:      'hsl(248,  9%, 17%)',
 }
 
 /////////////////////////////////////////////////
@@ -65,4 +61,4 @@ const SPEC: WebsiteEntryPointSpec = {
 /////////////////////////////////////////////////
 
 
-await generateꓽwebsiteᝍentryᝍpoints(SPEC, path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'dist'))
+await generateꓽwebsiteᝍentryᝍpoints(SPEC, path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'), {rm: false,})

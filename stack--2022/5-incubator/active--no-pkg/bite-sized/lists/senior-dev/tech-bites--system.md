@@ -20,7 +20,7 @@ DevOps
 finops
 flux architecture
 ingress egress
-ingress/egress = “the act of entering,” “the right of entering,” or “the means of entering
+ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
 kubernetes
 latency
 load balancer
@@ -50,7 +50,7 @@ Sustainable Architectural Decisions https://adr.github.io/
 tracing
 VPN
 well architected -- pillar -- cost optimization = avoiding unnecessary costs -- consumption model, analyzing and attributing expenditure, and using managed services to reduce the cost of ownership.
-well architected -- pillar -- operational excellence = running and monitoring systems to deliver business value -- erforming operations as code, annotating documentation, anticipating failure, and frequently making small, reversible changes.
+well architected -- pillar -- operational excellence = running and monitoring systems to deliver business value -- performing operations as code, annotating documentation, anticipating failure, and frequently making small, reversible changes.
 well architected -- pillar -- performance efficiency = using IT and computing resources efficiently and maintain this efficiency -- using serverless architectures, and designing systems to be able to go global in minutes
 well architected -- pillar -- reliability = consistently and correctly perform intended functions, Recover from infrastructure or service disruptions, Dynamically acquire computing resources to meet demand, Mitigate disruptions such as misconfigurations or transient network issues -- includes testing recovery procedures, scaling horizontally to increase aggregate system availability, and automatically recovering from failure.
 well architected -- pillar -- security = protecting information, systems, and assets while delivering business value through risk assessments and mitigation strategies -- Automate security best practices when possible, Apply security at all layers, Protect data in transit and at rest.

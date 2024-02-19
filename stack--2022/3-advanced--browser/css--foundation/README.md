@@ -31,10 +31,11 @@ By default, this stylesheet will activate a page like "mother fucking website".
 ```
 alternatively:
 ```css
-@import 'TODO';
+@import 'npm:@offirmo-private/css--foundation';
 ```
 
 ### customization
+TODO features a simple design system
 
 ```css
 :root {

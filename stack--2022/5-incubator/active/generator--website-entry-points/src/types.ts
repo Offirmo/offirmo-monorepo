@@ -1,3 +1,4 @@
+import { Enum } from 'typescript-string-enums'
 import { Immutable } from '@offirmo-private/ts-types'
 import {
 	Author,
@@ -72,16 +73,20 @@ interface WebPage extends ThingWithOnlinePresence {
 	colorⵧtheme?: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
 }
 
-type FeatureSnippets =
-	| 'cssⳇbox-layout--natural'
-	| 'cssⳇviewport--full'
-	| 'cssⳇfoundation--offirmo'
-	| 'cssⳇframework--offirmo'
-	| 'htmlⳇreact-root'
-	| 'normalize-url-trailing-slash'
-	| 'page-loader--offirmo'
-	| 'analytics--google'
-	| 'site-verification--google'
+// tslint:disable-next-line: variable-name
+export const FeatureSnippets = Enum(
+	'cssⳇbox-layout--natural',
+	'cssⳇviewport--full',
+	'cssⳇfoundation--offirmo',
+	'cssⳇframework--offirmo',
+	'htmlⳇreact-root',
+	'normalize-url-trailing-slash',
+	// TODO implement:
+	'page-loader--offirmo',
+	'analytics--google',
+	'site-verification--google',
+)
+export type FeatureSnippets = Enum<typeof FeatureSnippets> // eslint-disable-line no-redeclare
 
 interface WebsiteEntryPointSpec extends WebPage {
 	// must be flat for easy defaulting
@@ -126,7 +131,6 @@ interface EntryPoints {
 
 export {
 	type Category,
-	type FeatureSnippets,
 	type WebsiteEntryPointSpec,
 	type EntryPoints,
 }

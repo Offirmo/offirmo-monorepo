@@ -28,7 +28,7 @@ By default, this stylesheet will activate a page like "mother fucking website".
 ```
 alternatively:
 ```css
-@import 'TODO';
+@import '@offirmo-private/css--framework';
 ```
 
 ### Full-page app

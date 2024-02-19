@@ -1,6 +1,15 @@
+/*! @offirmo-private/css--foundation v0.0.1 | Unlicense | github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/css--foundation */
+
 @import 'npm:@offirmo-private/css--reset';
 
-@import 'elements/index.css';
-@import 'media-specific/index.css';
-@import 'misc/index.css';
-@import 'root/index.css';
+@import 'consts/consts--colors--defaults.css'      layer(offirmo--foundation);
+@import 'consts/consts--font-families--system.css' layer(offirmo--foundation);
+
+@import 'tokens/tokens--font-families.css'         layer(offirmo--foundation);
+@import 'tokens/tokens--sizes.css'                 layer(offirmo--foundation);
+/* TODO tokens color TODO may want lower layer? */
+
+@import 'elements/index.css'                       layer(offirmo--foundation);
+@import 'media-specific/index.css'                 layer(offirmo--foundation);
+@import 'misc/index.css'                           layer(offirmo--foundation);
+@import 'root/index.css'                           layer(offirmo--foundation);

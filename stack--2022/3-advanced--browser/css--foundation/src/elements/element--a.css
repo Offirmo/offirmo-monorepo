@@ -1,7 +1,6 @@
 /* Order is important
  * https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links
  */
-/* TODO nest */
 
 a {
 	/* a color are being overwritten by the default style.
@@ -11,24 +10,22 @@ a {
 
 	/* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
 	touch-action: manipulation;
-}
 
+	&:link {
+	}
 
-a:link {
-}
+	&:visited {
+		color: var(--o⋄color⁚fg--link--visited, var(--o⋄color⁚fg--link--visited--default));
+	}
 
-a:visited {
-	color: var(--o⋄color⁚fg--link--visited, var(--o⋄color⁚fg--link--visited--default));
-}
+	&:focus {
+	}
 
-a:focus {
-
-}
-
-a:hover,
-a:active {
-	/* There is no hover indicator on links.
-	 * Adding one is a no-brainer.
-	 */
-	color: var(--o⋄color⁚fg--activity-outline, var(--o⋄color⁚fg--activity-outline--default));
+	&:hover,
+	&:active {
+		/* There is no hover indicator on links.
+		 * Adding one is a no-brainer.
+		 */
+		color: var(--o⋄color⁚fg--activity-outline, var(--o⋄color⁚fg--activity-outline--default));
+	}
 }

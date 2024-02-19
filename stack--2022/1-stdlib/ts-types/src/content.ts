@@ -101,6 +101,7 @@ export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
 	source?: Url‿str // if relevant
 	contact?: Url‿str // if not provided, default to author's
 	contactⵧsecurity?: Url‿str // if not provided, default to contact
+	contactⵧsupport?: Url‿str // if not provided, default to contact
 }
 
 

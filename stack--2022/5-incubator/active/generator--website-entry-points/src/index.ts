@@ -116,8 +116,14 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 
 /////////////////////////////////////////////////
 
-async function generateꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>, targetDir: AbsolutePath): Promise<EntryPoints> {
+async function generateꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>, targetDir: AbsolutePath, options: {
+	rm?: boolean,
+} = {}): Promise<EntryPoints> {
 	const entries = getꓽwebsiteᝍentryᝍpoints(spec)
+
+	if (options.rm) {
+		await fs.remove(targetDir);
+	}
 
 	return writeꓽwebsiteᝍentryᝍpoints(entries, targetDir)
 }
