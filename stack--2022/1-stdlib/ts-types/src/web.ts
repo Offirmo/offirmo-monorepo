@@ -39,12 +39,11 @@ export type JS‿str = string
 export interface Contentⳇweb {
 	// XXX TODO semantic!!!!
 
-
-	critical: {
-		css: Css‿str[]
-		js: JS‿str[]
+	critical?: {
+		css?: Css‿str[]
+		js?: JS‿str[]
 	},
-	html: Html‿str[]
-	css: Css‿str[]
-	js: JS‿str[]
+	html?: Html‿str[]
+	css?: Css‿str[]
+	js?: JS‿str[]
 }

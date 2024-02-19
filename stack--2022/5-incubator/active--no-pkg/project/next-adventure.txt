@@ -7,6 +7,9 @@ new adventure
       https://foobar.withgoogle.com/
     Slack
     Cloudflare
+    ⇱ nego salaire
+      vest mid-May :-/
+
     ⇱ apply for jobs + https://www.cnbc.com/2024/01/01/dont-forget-this-crucial-step-after-you-apply-for-a-job-says-recruiter.html
       ⇱ find target jobs / companies https://remoteok.com/
       ⇱ update CV
@@ -18,20 +21,21 @@ new adventure
           https://www.levels.fyi/
       ⇱ update skills
         ⇱ AI
-        ⇱ Prompting
+          ⇱ Prompting
         ⇱ Cucumber https://school.cucumber.io/courses/take/bdd-with-cucumber-javascript/lessons/11261249-introduction-to-bdd
         ⇱ Web
+          ⇱ CSS
         ⇱ Perf
         ⇱ C++
         ⇱ Rust
         ⇱ Python
           ⇱ Cloud
-            ⇱ AWS Cloud Practitioner Essentials 61%
+            ⇱ AWS Cloud Practitioner Essentials 100%
               promo code: AWSRETAKE24
             ⇱ https://aws.amazon.com/certification/certified-developer-associate/
       ⇱ Certifications? https://www.infoworld.com/article/3709508/do-programming-certifications-still-matter.html
         Jira
-CSS
+
 Google
     xooglers
     https://docs.google.com/document/d/13wFFC7vIdB2hkxdyT0dSiGgkZTXCDDBeW_GBPqy9Jy0/

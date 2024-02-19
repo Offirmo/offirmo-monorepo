@@ -8,7 +8,6 @@ import * as fs from 'node:fs'
 import generateꓽwebsiteᝍentryᝍpoints from '../index.js'
 import * as SVG from '../utils/svg/index.js'
 import { createꓽfrom_emoji } from '../utils/svg/index.js'
-import { HtmlString } from '../generate--index-html/types'
 import { Category } from '../types'
 
 /////////////////////////////////////////////////

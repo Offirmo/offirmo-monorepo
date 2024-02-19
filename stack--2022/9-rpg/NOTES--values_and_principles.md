@@ -33,3 +33,7 @@ When you feel like quitting, just remember why you started.
 You are free to be whomever you wish to be.
 Heroes can come from anywhere. Even a simple act of kindness will reassure someone the world is still good.
 One cannot choose how life begins but one can forge the courage to write the chapter ahead.
+
+
+
+https://chess.stackexchange.com/questions/43034/what-makes-some-players-so-good

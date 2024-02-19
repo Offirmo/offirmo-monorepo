@@ -11,6 +11,24 @@ export type Emoji = string
 
 export type SemVer = string // TODO better? https://semver.org/
 
+//
+// Content length?
+// single line = 50-75 ch https://baymard.com/blog/line-length-readability
+// SMS = 160 ch
+// Tweet (original) = 140 ch (SMS - margin)
+// Tweet (now) = 280 ch
+//       ref https://blog.twitter.com/en_us/topics/product/2017/Giving-you-more-characters-to-express-yourself
+//           https://blog.twitter.com/engineering/en_us/topics/insights/2017/Our-Discovery-of-Cramming
+// Google Search Snippet = ?
+
+// the most important
+export type Descriptionⳇbite_sized = string // TODO max length?? fits in a tweet?
+
+// also very important
+export type Descriptionⳇtitle = string
+
+
+
 // TODO review
 /*
 
@@ -53,6 +71,7 @@ export interface WithOnlinePresence {
 
 export interface Author extends WithOnlinePresence {
 	name: string
+	intro?: string // very short intro. TODO refine
 	email?: Email‿str
 	contact?: Url‿str // should not duplicate email
 }
@@ -84,21 +103,7 @@ export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
 	contactⵧsecurity?: Url‿str // if not provided, default to contact
 }
 
-//
-// Content length?
-// single line = 50-75 ch https://baymard.com/blog/line-length-readability
-// SMS = 160 ch
-// Tweet (original) = 140 ch (SMS - margin)
-// Tweet (now) = 280 ch
-//       ref https://blog.twitter.com/en_us/topics/product/2017/Giving-you-more-characters-to-express-yourself
-//           https://blog.twitter.com/engineering/en_us/topics/insights/2017/Our-Discovery-of-Cramming
-// Google Search Snippet = ?
 
-// the most important
-export type Descriptionⳇbite_sized = string // TODO max length?? fits in a tweet?
-
-// also very important
-export type Descriptionⳇtitle = string
 
 // see also
 // https://en.wikipedia.org/wiki/Elevator_pitch

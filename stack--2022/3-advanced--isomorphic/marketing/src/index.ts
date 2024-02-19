@@ -15,6 +15,7 @@ const SOCIAL_LINKⵧTWITTER: SocialNetworkLink     = { network: 'twitter',     h
 
 const AUTHOR: Author = {
 	name: 'Offirmo',
+	intro: 'software engineer, open-source developer & creator',
 	email: EMAIL,
 	//contact: `mailto:${EMAIL}`,
 

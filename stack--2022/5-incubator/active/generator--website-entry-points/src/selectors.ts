@@ -1,18 +1,19 @@
 import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
-import { Basename, Immutable, IETFLanguageType, CssColor‿str, RelativePath } from '@offirmo-private/ts-types'
+import { Basename, Immutable, IETFLanguageType, CssColor‿str, Url‿str, RelativePath } from '@offirmo-private/ts-types'
+
 import {
 	normalize_unicode,
 	coerce_to_safe_basenameⵧstrictest,
 } from '@offirmo-private/normalize-string'
 
-import { WebsiteEntryPointSpec } from './types.js'
+import { FeatureSnippets, WebsiteEntryPointSpec } from './types.js'
 
 // Relpath should NOT feature ./ as it's up to the caller to decide if they want it or not
+// always use safe defaults
 
 /////////////////////////////////////////////////
-// always use safe defaults
 
 function isꓽdebug(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 	return spec.isꓽdebug ?? false
@@ -29,6 +30,8 @@ function isꓽprod(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 function isꓽpublic(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 	return spec.isꓽpublic ?? isꓽprod(spec)
 }
+
+/////////////////////////////////////////////////
 
 function wantsꓽinstall(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 	if (typeof spec.wantsꓽinstall === 'string')
@@ -81,6 +84,88 @@ function prefersꓽorientation(spec: Immutable<WebsiteEntryPointSpec>): boolean 
 	return false
 }
 
+function getꓽfeatures(spec: Immutable<WebsiteEntryPointSpec>): FeatureSnippets[] {
+	const features = new Set<FeatureSnippets>(spec.features ?? [])
+
+	if (spec.preset === 'game')
+		features.add('cssⳇviewport--full' as FeatureSnippets)
+
+	return Array.from(features)
+}
+
+/////////////////////////////////////////////////
+
+function getꓽauthor__name(spec: Immutable<WebsiteEntryPointSpec>): string {
+	assert(spec.author, `should have an author`)
+	return spec.author.name
+}
+function getꓽauthor__intro(spec: Immutable<WebsiteEntryPointSpec>): string | undefined {
+	assert(spec.author, `should have an author`)
+	return spec.author.intro
+}
+
+function getꓽcontactⵧgeneric(spec: Immutable<WebsiteEntryPointSpec>): Url‿str {
+	const url = spec.contact || spec.author?.contact
+	assert(url, 'should have at last a point of contact!')
+	return url
+}
+function getꓽcontactⵧsecurity(spec: Immutable<WebsiteEntryPointSpec>): Url‿str {
+	return spec.contactⵧsecurity || getꓽcontactⵧgeneric(spec)
+}
+
+/////////////////////////////////////////////////
+// content
+
+function getꓽlang(spec: Immutable<WebsiteEntryPointSpec>): IETFLanguageType {
+	if (!spec.lang)
+		return 'en'
+
+	// TODO check format
+	return normalize_unicode(spec.lang).toLowerCase()
+}
+
+function getꓽcharset(spec: Immutable<WebsiteEntryPointSpec>): IETFLanguageType {
+	return 'utf-8'
+}
+
+function _getꓽtitle(spec: Immutable<WebsiteEntryPointSpec>): string {
+	assert(!!spec.title)
+	return normalize_unicode(spec.title).trim()
+}
+function getꓽtitleⵧpage(spec: Immutable<WebsiteEntryPointSpec>): string {
+	return _getꓽtitle(spec)
+}
+function getꓽtitleⵧsocial(spec: Immutable<WebsiteEntryPointSpec>): string {
+	return !!spec.titleⵧsocial
+		? normalize_unicode(spec.titleⵧsocial).trim()
+		: _getꓽtitle(spec)
+}
+function getꓽtitleⵧapp(spec: Immutable<WebsiteEntryPointSpec>): string {
+	return !!spec.titleⵧapp
+		? normalize_unicode(spec.titleⵧapp).trim()
+		: _getꓽtitle(spec)
+}
+function getꓽtitleⵧappⵧshort(spec: Immutable<WebsiteEntryPointSpec>): string {
+	// TODO
+	return getꓽtitleⵧapp(spec)
+}
+function getꓽtitleⵧlib(spec: Immutable<WebsiteEntryPointSpec>): string {
+	const base = getꓽtitleⵧappⵧshort({
+		...spec,
+		lang: 'en'
+	})
+
+	return coerce_to_safe_basenameⵧstrictest(base)
+}
+
+function _getꓽdescription(spec: Immutable<WebsiteEntryPointSpec>): string {
+	assert(!!spec.description)
+	return normalize_unicode(spec.description).trim()
+}
+function getꓽdescriptionⵧpage(spec: Immutable<WebsiteEntryPointSpec>): string {
+	return _getꓽdescription(spec)
+}
+
 /////////////////////////////////////////////////
 
 function _getꓽbasename_without_extension(spec: Immutable<WebsiteEntryPointSpec>): Basename {
@@ -100,62 +185,6 @@ function getꓽbasenameⵧindexᐧhtml(spec: Immutable<WebsiteEntryPointSpec>): 
 function getꓽbasenameⵧwebmanifest(spec: Immutable<WebsiteEntryPointSpec>): Basename {
 	// the recommended extension is .webmanifest https://web.dev/learn/pwa/web-app-manifest/
 	return `${_getꓽbasename_without_extension(spec)}.webmanifest`
-}
-
-function getꓽlang(spec: Immutable<WebsiteEntryPointSpec>): IETFLanguageType {
-	if (!spec.lang)
-		return 'en'
-
-	// TODO check format
-	return normalize_unicode(spec.lang).toLowerCase()
-}
-
-function getꓽcharset(spec: Immutable<WebsiteEntryPointSpec>): IETFLanguageType {
-	return 'utf-8'
-}
-
-function _getꓽtitle(spec: Immutable<WebsiteEntryPointSpec>): string {
-	assert(!!spec.title)
-	return normalize_unicode(spec.title).trim()
-}
-
-function getꓽtitleⵧpage(spec: Immutable<WebsiteEntryPointSpec>): string {
-	return _getꓽtitle(spec)
-}
-
-function getꓽtitleⵧsocial(spec: Immutable<WebsiteEntryPointSpec>): string {
-	return !!spec.titleⵧsocial
-		? normalize_unicode(spec.titleⵧsocial).trim()
-		: _getꓽtitle(spec)
-}
-
-function getꓽtitleⵧapp(spec: Immutable<WebsiteEntryPointSpec>): string {
-	return !!spec.titleⵧapp
-		? normalize_unicode(spec.titleⵧapp).trim()
-		: _getꓽtitle(spec)
-}
-
-function getꓽtitleⵧappⵧshort(spec: Immutable<WebsiteEntryPointSpec>): string {
-	// TODO
-	return getꓽtitleⵧapp(spec)
-}
-
-function getꓽtitleⵧlib(spec: Immutable<WebsiteEntryPointSpec>): string {
-	const base = getꓽtitleⵧappⵧshort({
-		...spec,
-		lang: 'en'
-	})
-
-	return coerce_to_safe_basenameⵧstrictest(base)
-}
-
-function _getꓽdescription(spec: Immutable<WebsiteEntryPointSpec>): string {
-	assert(!!spec.description)
-	return normalize_unicode(spec.description).trim()
-}
-
-function getꓽdescriptionⵧpage(spec: Immutable<WebsiteEntryPointSpec>): string {
-	return _getꓽdescription(spec)
 }
 
 function getꓽcolorⵧforeground(spec: Immutable<WebsiteEntryPointSpec>): CssColor‿str {
@@ -232,12 +261,17 @@ export {
 	isꓽuser_scalable,
 	hasꓽown_navigation,
 	prefersꓽorientation,
-
 	supportsꓽscreensⵧwith_shape,
 	canꓽuse_window_controls_overlay,
 	usesꓽpull_to_refresh,
+	getꓽfeatures,
 
 	needsꓽwebmanifest,
+
+	getꓽauthor__name,
+	getꓽauthor__intro,
+	getꓽcontactⵧgeneric,
+	getꓽcontactⵧsecurity,
 
 	// TODO move to own file?
 	getꓽbasenameⵧindexᐧhtml,

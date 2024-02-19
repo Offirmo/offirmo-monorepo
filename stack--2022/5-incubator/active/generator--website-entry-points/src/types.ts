@@ -52,12 +52,6 @@ interface WebPage extends ThingWithOnlinePresence {
 	icon?: Immutable<SVG>
 	keywords?: string[]
 
-	// Known HTML snippets:
-	// Known CSS snippets:
-	// - snippet:natural-box-layout
-	// Known JS snippets:
-	// - snippet:normalize-trailing-slash
-	// - TODO google analytics etc.
 	content: Contentⳇweb
 
 	/////// SOCIAL
@@ -78,6 +72,17 @@ interface WebPage extends ThingWithOnlinePresence {
 	colorⵧtheme?: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
 }
 
+type FeatureSnippets =
+	| 'cssⳇbox-layout--natural'
+	| 'cssⳇviewport--full'
+	| 'cssⳇfoundation--offirmo'
+	| 'cssⳇframework--offirmo'
+	| 'htmlⳇreact-root'
+	| 'normalize-url-trailing-slash'
+	| 'page-loader--offirmo'
+	| 'analytics--google'
+	| 'site-verification--google'
+
 interface WebsiteEntryPointSpec extends WebPage {
 	// must be flat for easy defaulting
 	// optional '?:' = truly optional (can be easily derived)
@@ -87,7 +92,7 @@ interface WebsiteEntryPointSpec extends WebPage {
 	// landing https://growth.design/case-studies/landing-page-ux-psychology
 
 	/////// PWA
-	app_categories?: Category[]
+	app_categories?: Category[] // ??
 	wantsꓽinstall?:
 		| false     // won't provide much benefit, no need to advertise it
 		| 'partial' // not enough to be automatically "prompted to install" so we may want to advertise it in JS
@@ -103,7 +108,8 @@ interface WebsiteEntryPointSpec extends WebPage {
 	// TODO one day themes
 
 	/////// SRC
-	sourcecode?: boolean // ???
+	sourcecode?: boolean // TODO clarify generate TS source code
+	features?: Array<FeatureSnippets>
 
 	/////// META
 	basename?: Basename // without extension. default to "index"
@@ -120,7 +126,7 @@ interface EntryPoints {
 
 export {
 	type Category,
-
+	type FeatureSnippets,
 	type WebsiteEntryPointSpec,
 	type EntryPoints,
 }

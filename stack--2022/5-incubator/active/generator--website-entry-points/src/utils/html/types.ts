@@ -115,7 +115,7 @@ interface HtmlMetas {
 		description?: unknown
 		generator: string
 
-		// 2009 google doesn't use ithttps://developers.google.com/search/blog/2009/09/google-does-not-use-keywords-meta-tag
+		// 2009 google doesn't use it thttps://developers.google.com/search/blog/2009/09/google-does-not-use-keywords-meta-tag
 		// because it was abused by spammers
 		// but that doesn't mean other search engine don't?
 		// (don't spend too much time on it)
@@ -150,14 +150,8 @@ interface HtmlMetas {
 
 /////////////////////////////////////////////////
 
-type HtmlString = string
-
-/////////////////////////////////////////////////
-
 export {
 	type HtmlMetaContentⳇContentSecurityPolicy,
 	type HtmlMetaContentⳇViewport,
 	type HtmlMetas,
-
-	type HtmlString,
 }
