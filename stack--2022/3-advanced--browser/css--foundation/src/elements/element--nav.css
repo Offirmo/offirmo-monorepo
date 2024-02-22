@@ -1,15 +1,17 @@
 
 /* Assume list in a nav is an horizontal list
  */
-nav > :is(ol, ul) {
-	/* cancel the default list display
-	 */
-	list-style-type: none;
-	padding-inline-start: 0;
+nav {
+	&:is(ol, ul) {
+		/* cancel the default list display
+		 */
+		list-style-type: none;
+		padding-inline-start: 0;
 
-	/* switch to row flex
-	 */
-	display: flex;
-	flex-direction: row;
-	gap: 2em;
+		/* switch to row flex
+		 */
+		display: flex;
+		flex-direction: row;
+		gap: 2em;
+	}
 }

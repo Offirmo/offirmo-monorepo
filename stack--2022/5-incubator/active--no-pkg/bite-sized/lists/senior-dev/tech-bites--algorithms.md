@@ -12,9 +12,11 @@ LLM output generation -- sampling = search algorithm used to generate output seq
 Luleå algorithm https://en.wikipedia.org/wiki/Lule%C3%A5_algorithm
 reflexive
 S3FIFO https://blog.jasony.me/system/cache/2023/08/01/s3fifo
-sort https://en.wikipedia.org/wiki/Sorting_algorithm
 sort -- alphadev https://www.nature.com/articles/s41586-023-06004-9
 sort -- burstsort
 sort -- radix sort O(nw) https://en.wikipedia.org/wiki/Radix_sort
+sort https://en.wikipedia.org/wiki/Sorting_algorithm
+Trabb Pardo-Knuth (TPK) https://en.wikipedia.org/wiki/TPK_algorithm
 transitive
-tree rotation https://en.wikipedia.org/wiki/Tree_rotation
+tree -- check if balanced
+tree -- rotation https://en.wikipedia.org/wiki/Tree_rotation

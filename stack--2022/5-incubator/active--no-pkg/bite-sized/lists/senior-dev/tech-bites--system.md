@@ -8,6 +8,9 @@ AWS Shield
 AWS WAF
 blue/green deployment
 caching
+CAP Theorem -- Availability = Every request receives a (non-error) response, without the guarantee that it contains the most recent write.
+CAP Theorem -- Consistency = Every read receives the most recent write or an error
+CAP Theorem -- Partition tolerance = The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.
 CDN ex. CloudFront
 cloud native
 compliance
@@ -41,10 +44,11 @@ perspective -- tech -- platform (cloud!)
 perspective -- tech -- security
 regions
 retire, retain, rehost, re-platform, repurchase, refactor/re-architect
-scaling
-scaling -- horizontally
-scaling -- vertically
+scaling -- horizontally = more machines
+scaling -- vertically = more power
+scaling ~ elasticity
 security
+serverless
 state
 Sustainable Architectural Decisions https://adr.github.io/
 tracing

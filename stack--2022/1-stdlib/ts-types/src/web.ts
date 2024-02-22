@@ -37,13 +37,14 @@ export type JS‿str = string
 /////////////////////////////////////////////////
 // Aggreg
 export interface Contentⳇweb {
-	// XXX TODO semantic??
+	// flat to make it easier to extend
+	html?:         Html‿str[]
+	cssⵧcritical?: Css‿str[]
+	css?:          Css‿str[]
+	js?:           JS‿str[]
+	jsⵧcritical?:  JS‿str[]
 
-	critical?: {
-		css?: Css‿str[]
-		js?: JS‿str[]
-	},
-	html?: Html‿str[]
-	css?: Css‿str[]
-	js?: JS‿str[]
+	// TODO semantic (how??)
+	// TODO meta?
+	// TODO social?
 }

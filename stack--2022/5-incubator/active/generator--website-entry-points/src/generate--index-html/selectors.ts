@@ -27,7 +27,7 @@ function _getꓽmetasⵧviewport(spec: Immutable<WebsiteEntryPointSpec>): HtmlMe
 		'initial-scale': 1,
 
 		// scalability
-		// - either we explicitely don't want it
+		// - either we explicitly don't want it
 		// - or/and we support orientation change and if we don't lock the scale, the viewport doesn't fit on orientation change (cf. https://stackoverflow.com/a/12114397)
 		// hence we're not afraid to lock user scaling
 		...((!prefersꓽorientation(spec) || !isꓽuser_scalable(spec)) && {

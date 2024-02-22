@@ -94,17 +94,18 @@ export interface Thing {
 }
 
 export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
-
-	// XXX only applies to Software!
-	version?: SemVer
-	changelog?: Url‿str
-	source?: Url‿str // if relevant
 	contact?: Url‿str // if not provided, default to author's
 	contactⵧsecurity?: Url‿str // if not provided, default to contact
 	contactⵧsupport?: Url‿str // if not provided, default to contact
+
+	// XXX only applies to Software! TODO review
+	version?: SemVer
+	changelog?: Url‿str
+	source?: Url‿str // if relevant
+
+
+
 }
-
-
 
 // see also
 // https://en.wikipedia.org/wiki/Elevator_pitch
@@ -114,9 +115,6 @@ export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
 
 /////////////////////////////////////////////////
 // generic content
-
-
-
 
 /////////////////////////////////////////////////
 // tech specific content
