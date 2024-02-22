@@ -1,6 +1,52 @@
 
 
-## Files
+## File system arborescence
+
+- `view`
+  - strict hierarchical model: a component can only access sub-components, not siblings or parents
+- `services`
+  - data provider and manipulation
+- `controllers`
+  - Every time there is a need to share some state or stateful logic between different parts of the application it should be extracted into a component that we call a "controller".
+  - Important: major purpose of the controller is to share state or stateful logic only, not to sync the state with remote data. For that purpose we have a concept of a "service"
+
+
+### Package structure
+Every package should ideally have exactly the same structure:
+
+/docs (optional) - detailed docs for the package, that render integration examples and props API
+/src - contains all the source code for this package, including unit tests
+/src0 (optional) contains unusual / special case elements that are used to GENERATE the src folder. Ex. design notes, state-of-the-art reviews...
+/dist (optional) - contains the built version of the package, if it is a library
+package.json - just a normal package.json
+README.md - lightweight docs for this package
+CONTRIBUTING.md
+
+
+### /src structure
+As mentioned above, the src folder should contain all the source code of a package
+
+We follow a FOLDER based approach, where each component is in a named folder which contains standard-named files.
+This is bc source files usually have "related" files, ex:
+/my-component/
+↳ consts.ts const USED IN SEVERAL FILES (no need to put here if only used in one file, declare it closest to its use)
+↳ index.tsx
+↳ types.ts
+↳ index.css
+↳ reducers, selectors...
+↳ __spec.tsx (unit tests)
+↳ __fixtures__ for unit tests
+↳ __snapshots__ for unit tests
+↳ examples.tsx for storybook
+
+All the "components/parts" are organized in such a structure:
+- `index.ts(x)` = the root, entry point
+- `utils/` small utilities that could eventually be sent into a separate package
+- ... (to clarify)
+- `embedded-deps/`
+- `controllers/` ??? components that are responsible for shared state management concerns and other stateful logic??
+- `services/` (optional) data providers? remote state?
+- `view/` ui?
 
 
 ## Code
