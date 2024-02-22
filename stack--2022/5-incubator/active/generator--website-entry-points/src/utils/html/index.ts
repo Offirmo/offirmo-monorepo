@@ -1,63 +1,32 @@
 // Reminder: code will be prettified, no need to indent or format it.
 // put the comments in the code, it's up to the consumer to optimize or not
 
+
 import assert from 'tiny-invariant'
 import { Immutable, Html‿str, JS‿str, Css‿str } from '@offirmo-private/ts-types'
 import { normalize_unicode } from '@offirmo-private/normalize-string'
 
-import { EOL } from '../consts.js'
-import { WebsiteEntryPointSpec, FeatureSnippets } from '../types.js'
-import { HtmlMetaContentⳇViewport, HtmlMetas } from './types.js'
+import { EOL } from '../../consts.js'
+import hasꓽcontent from '../has-content.js'
+import { HtmlMetaContentⳇViewport, HtmlMetas, HtmlDocumentSpec, FeatureSnippets } from './types.js'
 import {
 	getꓽlang,
-	getꓽtitleⵧpage,
-	getꓽtitleⵧsocial,
-	getꓽdescriptionⵧpage,
-	getꓽcolorⵧtheme,
-	getꓽcolorⵧbackground,
-	getꓽcolorⵧforeground,
-	usesꓽpull_to_refresh,
-	needsꓽwebmanifest,
-	getꓽbasenameⵧwebmanifest,
-	shouldꓽgenerateꓽsourcecode,
-	getꓽfeatures,
 } from '../selectors.js'
-import { ifꓽdebug } from '../utils/debug.js'
-import { getꓽmetas } from './selectors.js'
+
 import snippetꓽcssⳇcssⳇboxᝍlayoutⵧnatural from './snippets/css/box-layout--natural.js'
 import snippetꓽcssⳇviewportⵧfull from './snippets/css/viewport--full.js'
 import snippetꓽjsⳇnormalizeᝍtrailingᝍslash from './snippets/js/snippet--normalize-url.js'
 import snippetꓽhtmlⳇcontentⵧauto from './snippets/html/content--auto.js'
 import snippetꓽhtmlⳇreact_root from './snippets/html/react-root'
 
-import {
-	generateꓽinline as generateꓽfavicon__iconⵧinline,
-} from '../generate--icons/index.js'
-
 /////////////////////////////////////////////////
 
-function _hasꓽcontent(x: any, prop?: string): boolean {
-	if (!!prop)
-		x = x[prop]
-
-	switch (true) {
-		case !x: // null, undef, empty string, 0
-			return false
-		case Array.isArray(x):
-			return x.length > 0
-		case typeof x === 'number':
-			return !isNaN(x) && x !== 0.
-		default:
-			return Object.keys(x).length > 0
-	}
-}
-
-function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
+function generateꓽhtml__head__style(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 	// TODO https://medium.com/@stephenbunch/how-to-make-a-scrollable-container-with-dynamic-height-using-flexbox-5914a26ae336
 	// TODO https://developer.chrome.com/blog/overscroll-behavior/
 
 	const css_blocks: Css‿str[] = [
-			...(spec.content?.critical?.css || []),
+			...(spec.cssⵧcritical || []),
 			...getꓽfeatures(spec).reduce((acc, feature_id: FeatureSnippets) => {
 				switch (feature_id) {
 					case 'cssⳇbox-layout--natural':
@@ -110,10 +79,10 @@ overscroll-behavior: none;`
 `
 }
 
-function generateꓽhtml__head__script(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
+function generateꓽhtml__head__script(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 
 	const JS_blocks: JS‿str[] = [
-		...(spec.content?.critical?.js || []),
+		...(spec.jsⵧcritical || []),
 		...getꓽfeatures(spec).reduce((acc, feature_id: FeatureSnippets) => {
 			let snippet: JS‿str | undefined;
 			switch (feature_id) {
@@ -142,13 +111,13 @@ function generateꓽhtml__head__script(spec: Immutable<WebsiteEntryPointSpec>): 
 function _stringifyꓽmetaⵧviewport__content(viewport_spec: Immutable<HtmlMetaContentⳇViewport>): string {
 	return Object.entries(viewport_spec)
 		.map(([key, value]) => {
-			assert(_hasꓽcontent(value), `viewport entry "${key}" should not be empty: "${value}"!`)
+			assert(hasꓽcontent(value), `viewport entry "${key}" should not be empty: "${value}"!`)
 			return `${key}=${value}`
 		})
 		.join(',')
 }
 
-function _generateꓽlinks(spec: Immutable<WebsiteEntryPointSpec>): { [rel: string]: string } {
+function _generateꓽlinks(spec: Immutable<HtmlDocumentSpec>): { [rel: string]: string } {
 	const favicon_candidate = generateꓽfavicon__iconⵧinline(spec)
 	const shouldꓽinline_favicon = !favicon_candidate.includes('"') && favicon_candidate.length < 256 // arbitrary number
 
@@ -170,7 +139,7 @@ function _generateꓽlinks(spec: Immutable<WebsiteEntryPointSpec>): { [rel: stri
 	}
 }
 
-function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
+function generateꓽhtml__head__meta(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 	const metas = getꓽmetas(spec)
 	const links = _generateꓽlinks(spec)
 
@@ -182,7 +151,7 @@ function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Ht
 		`<meta charset="${metas.charset}" />`,
 
 		...Object.keys(metas.document)
-			.filter(name => _hasꓽcontent(metas.document, name))
+			.filter(name => hasꓽcontent(metas.document, name))
 			.sort()
 			.map(name => {
 				// @ts-ignore
@@ -199,7 +168,7 @@ function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Ht
 			}),
 
 		...Object.keys(metas.pragmas)
-			.filter(httpᝍequiv => _hasꓽcontent(metas.pragmas, httpᝍequiv))
+			.filter(httpᝍequiv => hasꓽcontent(metas.pragmas, httpᝍequiv))
 			.sort()
 			.map(httpᝍequiv => {
 				// @ts-ignore
@@ -214,7 +183,7 @@ function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Ht
 			}),
 
 		...Object.keys(metas.properties)
-			.filter(property => _hasꓽcontent(metas.properties, property))
+			.filter(property => hasꓽcontent(metas.properties, property))
 			.sort()
 			.map(property => {
 				// @ts-ignore
@@ -229,7 +198,7 @@ function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Ht
 			}),
 
 		...Object.keys(links)
-			.filter(rel => _hasꓽcontent(links, rel))
+			.filter(rel => hasꓽcontent(links, rel))
 			.sort()
 			.map(rel => {
 				// @ts-ignore
@@ -240,7 +209,7 @@ function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Ht
 		].join(EOL)
 }
 
-function generateꓽhtml__head(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
+function generateꓽhtml__head(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 	// https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
 	return `
 <head>
@@ -255,11 +224,11 @@ function generateꓽhtml__head(spec: Immutable<WebsiteEntryPointSpec>): Html‿s
 `
 }
 
-function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
+function generateꓽhtml__body(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 
 	// TODO extract HTML from files? ./esm/parser-html.mjsxxx
 	const html_blocks: Html‿str[] = [
-		...(spec.content?.html || []),
+		...(spec.html || []),
 		...getꓽfeatures(spec).reduce((acc, feature_id: FeatureSnippets) => {
 			switch (feature_id) {
 				case 'htmlⳇreact-root':
@@ -275,7 +244,7 @@ function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): Html‿s
 
 	// TODO review import from js?
 	const css_blocks: Css‿str[] = [
-		...(spec.content?.critical?.css || []),
+		...(spec.css || []),
 		...getꓽfeatures(spec).reduce((acc, feature_id: FeatureSnippets) => {
 			switch (feature_id) {
 				case 'cssⳇfoundation--offirmo':
@@ -293,7 +262,7 @@ function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): Html‿s
 	]
 
 	const js_blocks: JS‿str[] = [
-		...(spec.content?.js || []),
+		...(spec.js || []),
 		...getꓽfeatures(spec).reduce((acc, feature_id: FeatureSnippets) => {
 			let snippet: JS‿str | undefined;
 			switch (feature_id) {
@@ -346,7 +315,7 @@ return `
 
 /////////////////////////////////////////////////
 
-function generate(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
+function generate(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 
 	const result: Html‿str = [
 		'<!DOCTYPE html>',

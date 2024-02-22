@@ -1,5 +1,6 @@
+import { Enum } from 'typescript-string-enums'
 import { Immutable } from '@offirmo-private/ts-types'
-import { PositiveIntegerInRange, RealInRange, Charset, CssColor‿str, IETFLanguageType } from '@offirmo-private/ts-types'
+import { PositiveIntegerInRange, RealInRange, Charset, CssColor‿str, IETFLanguageType, Contentⳇweb } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 // spec'ced types
@@ -150,8 +151,31 @@ interface HtmlMetas {
 
 /////////////////////////////////////////////////
 
+// tslint:disable-next-line: variable-name
+export const FeatureSnippets = Enum(
+	'cssⳇbox-layout--natural',
+	'cssⳇviewport--full',
+	'cssⳇfoundation--offirmo',
+	'cssⳇframework--offirmo',
+	'htmlⳇreact-root',
+	'normalize-url-trailing-slash',
+	// TODO implement:
+	'page-loader--offirmo',
+	'analytics--google',
+	'site-verification--google',
+)
+export type FeatureSnippets = Enum<typeof FeatureSnippets> // eslint-disable-line no-redeclare
+
+interface HtmlDocumentSpec extends Contentⳇweb {
+	Metas: HtmlMetas,
+}
+
+/////////////////////////////////////////////////
+
 export {
 	type HtmlMetaContentⳇContentSecurityPolicy,
 	type HtmlMetaContentⳇViewport,
 	type HtmlMetas,
+
+	type HtmlDocumentSpec,
 }

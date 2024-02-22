@@ -34,6 +34,7 @@ You are free to be whomever you wish to be.
 Heroes can come from anywhere. Even a simple act of kindness will reassure someone the world is still good.
 One cannot choose how life begins but one can forge the courage to write the chapter ahead.
 
+"The greatest test of courage on earth is to bear defeat without losing heart." -- Robert Green Ingersoll
 
 
 https://chess.stackexchange.com/questions/43034/what-makes-some-players-so-good
