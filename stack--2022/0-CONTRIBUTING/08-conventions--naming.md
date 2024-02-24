@@ -43,6 +43,7 @@ All the "components/parts" are organized in such a structure:
 - `index.ts(x)` = the root, entry point
 - `utils/` small utilities that could eventually be sent into a separate package
 - ... (to clarify)
+- `tosort/YYYY` temp to park files we may want to salvage / refer to. MUST have a year so that we know when it's time to part ;)
 - `embedded-deps/`
 - `controllers/` ??? components that are responsible for shared state management concerns and other stateful logic??
 - `services/` (optional) data providers? remote state?
