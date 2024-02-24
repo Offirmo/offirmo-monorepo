@@ -5,7 +5,11 @@ import {
 } from '@offirmo-private/normalize-string'
 
 import * as ThingSelectors from './thing.js'
-import * as WithOnlinePresenceSelectors from './with-online-presence.js'
+
+/////////////////////////////////////////////////
+// ThingWithOnlinePresence extends Thing, WithOnlinePresence
+export * from './thing.js'
+export * from './with-online-presence.js'
 
 /////////////////////////////////////////////////
 
@@ -23,10 +27,6 @@ function getꓽcontactⵧhuman(thing: Immutable<ThingWithOnlinePresence>): Url�
 function getꓽcontactⵧsecurity(thing: Immutable<ThingWithOnlinePresence>): Url‿str {
 	return thing.contactⵧsecurity || _getꓽcontact(thing)
 }
-
-/*
-	contactⵧsupport?: Url‿str // if not provided, default to contact
- */
 
 /////////////////////////////////////////////////
 

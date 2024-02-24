@@ -94,7 +94,8 @@ export interface Thing {
 }
 
 export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
-	contact?: Url‿str // if not provided, default to author's
+
+	contact?: Url‿str // if not provided, default to author's Ideally should be a "contact center" https://docs.aws.amazon.com/connect/latest/adminguide/connect-concepts.html
 	contactⵧsecurity?: Url‿str // if not provided, default to contact
 	contactⵧsupport?: Url‿str // if not provided, default to contact
 
@@ -102,9 +103,6 @@ export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
 	version?: SemVer
 	changelog?: Url‿str
 	source?: Url‿str // if relevant
-
-
-
 }
 
 // see also
@@ -112,22 +110,12 @@ export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
 // https://en.wikipedia.org/wiki/Mission_statement
 // https://en.wikipedia.org/wiki/Vision_statement
 
-
 /////////////////////////////////////////////////
 // generic content
 
 /////////////////////////////////////////////////
 // tech specific content
 // TODO one day: twitter text, Slack's block kit...
-
-/////// WEB = the most important ///////
-
-export type AuthorⳇHtmlMeta = string
-
-export type TitleⳇHtmlMeta = string // https://developers.google.com/search/docs/appearance/title-link
-
-export type DescriptionⳇHtmlMeta = string
-
 
 /////// package.json ///////
 // author

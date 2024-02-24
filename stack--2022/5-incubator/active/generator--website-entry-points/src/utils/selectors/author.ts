@@ -5,7 +5,9 @@ import {
 	normalizeꓽemailⵧsafe,
 } from '@offirmo-private/normalize-string'
 
-import * as WithOnlinePresenceSelectors from './with-online-presence.js'
+/////////////////////////////////////////////////
+// Author extends WithOnlinePresence
+export * from './with-online-presence.js'
 
 /////////////////////////////////////////////////
 

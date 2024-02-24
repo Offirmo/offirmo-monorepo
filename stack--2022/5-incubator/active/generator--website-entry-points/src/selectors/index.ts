@@ -2,14 +2,15 @@ import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
-import { Basename, Immutable, IETFLanguageType, CssColor‿str, Url‿str, RelativePath } from '@offirmo-private/ts-types'
+import { Basename, Immutable, IETFLanguageType, CssColor‿str, RelativePath } from '@offirmo-private/ts-types'
 
 import {
 	normalize_unicode,
 	coerce_to_safe_basenameⵧstrictest,
 } from '@offirmo-private/normalize-string'
 
-import { FeatureSnippets, WebsiteEntryPointSpec } from './types.js'
+import { WebsiteEntryPointSpec } from '../types.js'
+import { FeatureSnippets } from '../utils/html/types.js'
 
 // Relpath should NOT feature ./ as it's up to the caller to decide if they want it or not
 // always use safe defaults
@@ -104,50 +105,8 @@ function getꓽfeatures(spec: Immutable<WebsiteEntryPointSpec>): FeatureSnippets
 }
 
 /////////////////////////////////////////////////
-
-function getꓽauthor__name(spec: Immutable<WebsiteEntryPointSpec>): string {
-	assert(spec.author, `should have an author`)
-	return spec.author.name
-}
-function getꓽauthor__intro(spec: Immutable<WebsiteEntryPointSpec>): string | undefined {
-	assert(spec.author, `should have an author`)
-	return spec.author.intro
-}
-
-function _getꓽcontact(spec: Immutable<WebsiteEntryPointSpec>): Url‿str {
-	const url = spec.contact || spec.author?.contact || (spec.author?.email && `mailto:${spec.author.email}`)
-	assert(url, 'should have at last a point of contact!')
-	return url
-}
-function getꓽcontactⵧhuman(spec: Immutable<WebsiteEntryPointSpec>): Url‿str {
-	return _getꓽcontact(spec)
-}
-function getꓽcontactⵧsecurity(spec: Immutable<WebsiteEntryPointSpec>): Url‿str {
-	return spec.contactⵧsecurity || _getꓽcontact(spec)
-}
-
-/////////////////////////////////////////////////
 // content
 
-function getꓽlang(spec: Immutable<WebsiteEntryPointSpec>): IETFLanguageType {
-	if (!spec.lang)
-		return 'en'
-
-	// TODO check format
-	return normalize_unicode(spec.lang).toLowerCase()
-}
-
-function getꓽcharset(spec: Immutable<WebsiteEntryPointSpec>): IETFLanguageType {
-	return 'utf-8'
-}
-
-function _getꓽtitle(spec: Immutable<WebsiteEntryPointSpec>): string {
-	assert(!!spec.title)
-	return normalize_unicode(spec.title).trim()
-}
-function getꓽtitleⵧpage(spec: Immutable<WebsiteEntryPointSpec>): string {
-	return _getꓽtitle(spec)
-}
 function getꓽtitleⵧsocial(spec: Immutable<WebsiteEntryPointSpec>): string {
 	return !!spec.titleⵧsocial
 		? normalize_unicode(spec.titleⵧsocial).trim()
@@ -171,10 +130,6 @@ function getꓽtitleⵧlib(spec: Immutable<WebsiteEntryPointSpec>): string {
 	return coerce_to_safe_basenameⵧstrictest(base)
 }
 
-function _getꓽdescription(spec: Immutable<WebsiteEntryPointSpec>): string {
-	assert(!!spec.description)
-	return normalize_unicode(spec.description).trim()
-}
 function getꓽdescriptionⵧpage(spec: Immutable<WebsiteEntryPointSpec>): string {
 	return _getꓽdescription(spec)
 }
@@ -276,17 +231,17 @@ export {
 	getꓽfeatures,
 
 	needsꓽwebmanifest,
-
+/*
 	getꓽauthor__name,
 	getꓽauthor__intro,
 	getꓽcontactⵧhuman,
 	getꓽcontactⵧsecurity,
-
+*/
 	// TODO move to own file?
 	getꓽbasenameⵧindexᐧhtml,
 	getꓽbasenameⵧwebmanifest,
 
-	getꓽlang,
+	//getꓽlang,
 	getꓽcharset,
 
 	getꓽtitleⵧpage,

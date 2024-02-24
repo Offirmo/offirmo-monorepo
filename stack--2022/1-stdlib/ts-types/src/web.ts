@@ -3,6 +3,8 @@
 
 /////////////////////////////////////////////////
 
+import { IETFLanguageType } from './international'
+
 export type Email‿str = string // TODO spec?
 
 export type Url‿str = string // TODO new Url spec
@@ -38,6 +40,8 @@ export type JS‿str = string
 // Aggreg
 export interface Contentⳇweb {
 	// flat to make it easier to extend
+	lang?: IETFLanguageType
+	title?: string
 	html?:         Html‿str[]
 	cssⵧcritical?: Css‿str[]
 	css?:          Css‿str[]
@@ -48,3 +52,13 @@ export interface Contentⳇweb {
 	// TODO meta?
 	// TODO social?
 }
+
+
+/////// WEB = the most important ///////
+/*
+export type AuthorⳇHtmlMeta = string
+
+export type TitleⳇHtmlMeta = string // https://developers.google.com/search/docs/appearance/title-link
+
+export type DescriptionⳇHtmlMeta = string
+*/
