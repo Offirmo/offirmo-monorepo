@@ -150,17 +150,19 @@ function getꓽbasenameⵧindexᐧhtml(spec: Immutable<WebsiteEntryPointSpec>): 
 	return `${_getꓽbasename_without_extension(spec)}.html`
 }
 
+function getꓽbasenameⵧcontactᐧhtml(spec: Immutable<WebsiteEntryPointSpec>): Basename {
+	return `contact.html`
+}
+function getꓽbasenameⵧerrorᐧhtml(spec: Immutable<WebsiteEntryPointSpec>): Basename {
+	return `error.html`
+}
+function getꓽbasenameⵧaboutᐧhtml(spec: Immutable<WebsiteEntryPointSpec>): Basename {
+	return `about.html`
+}
+
 function getꓽbasenameⵧwebmanifest(spec: Immutable<WebsiteEntryPointSpec>): Basename {
 	// the recommended extension is .webmanifest https://web.dev/learn/pwa/web-app-manifest/
 	return `${_getꓽbasename_without_extension(spec)}.webmanifest`
-}
-
-function getꓽcolorⵧforeground(spec: Immutable<WebsiteEntryPointSpec>): CssColor‿str {
-	return spec.colorⵧforeground ?? 'black'
-}
-
-function getꓽcolorⵧbackground(spec: Immutable<WebsiteEntryPointSpec>): CssColor‿str {
-	return spec.colorⵧbackground ?? 'white'
 }
 
 function getꓽcolorⵧtheme(spec: Immutable<WebsiteEntryPointSpec>): CssColor‿str {
@@ -231,20 +233,13 @@ export {
 	getꓽfeatures,
 
 	needsꓽwebmanifest,
-/*
-	getꓽauthor__name,
-	getꓽauthor__intro,
-	getꓽcontactⵧhuman,
-	getꓽcontactⵧsecurity,
-*/
 	// TODO move to own file?
 	getꓽbasenameⵧindexᐧhtml,
+	getꓽbasenameⵧcontactᐧhtml,
+	getꓽbasenameⵧerrorᐧhtml,
+	getꓽbasenameⵧaboutᐧhtml,
 	getꓽbasenameⵧwebmanifest,
 
-	//getꓽlang,
-	getꓽcharset,
-
-	getꓽtitleⵧpage,
 	getꓽtitleⵧsocial,
 	getꓽtitleⵧapp,
 	getꓽtitleⵧappⵧshort,
@@ -252,8 +247,6 @@ export {
 
 	getꓽdescriptionⵧpage,
 
-	getꓽcolorⵧforeground,
-	getꓽcolorⵧbackground,
 	getꓽcolorⵧtheme,
 
 	getꓽicon__sizes,

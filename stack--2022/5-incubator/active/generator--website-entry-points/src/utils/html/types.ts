@@ -167,7 +167,7 @@ export const FeatureSnippets = Enum(
 export type FeatureSnippets = Enum<typeof FeatureSnippets> // eslint-disable-line no-redeclare
 
 interface HtmlDocumentSpec extends Contentⳇweb {
-	Metas: HtmlMetas
+	metas: HtmlMetas
 
 	features?: Array<FeatureSnippets>
 }

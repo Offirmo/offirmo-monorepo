@@ -21,6 +21,16 @@ import {
 	getꓽjsⵧcritical,
 } from '../selectors/web-content'
 
+
+function getꓽcolorⵧforeground(spec: Immutable<WebsiteEntryPointSpec>): CssColor‿str {
+	return spec.colorⵧforeground ?? 'black'
+}
+
+function getꓽcolorⵧbackground(spec: Immutable<WebsiteEntryPointSpec>): CssColor‿str {
+	return spec.colorⵧbackground ?? 'white'
+}
+
+
 /////////////////////////////////////////////////
 // HtmlDocumentSpec
 

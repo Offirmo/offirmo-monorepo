@@ -8,12 +8,20 @@ import {
 	needsꓽwebmanifest,
 
 	getꓽbasenameⵧindexᐧhtml,
+	getꓽbasenameⵧaboutᐧhtml,
+	getꓽbasenameⵧcontactᐧhtml,
+	getꓽbasenameⵧerrorᐧhtml,
 	getꓽbasenameⵧwebmanifest,
 	getꓽicon__sizes,
 	getꓽicon__path,
 	shouldꓽgenerateꓽsourcecode,
-} from './selectors.js'
-import generateꓽindexᐧhtml from './generate--index-html/index.js'
+} from './selectors/index.js'
+import {
+	generateꓽindexᐧhtml,
+	generateꓽaboutᐧhtml,
+	generateꓽcontactᐧhtml,
+	generateꓽerrorᐧhtml,
+} from './generate--html/index.js'
 import generateꓽwebmanifest from './generate--webmanifest/index.js'
 import { generateꓽfile as generateꓽicon_file } from './generate--icons/index.js'
 import generateꓽhumansᐧtxt from './generate--humans-txt/index.js'
@@ -30,6 +38,9 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>):
 	return {
 		// MAIN
 		[getꓽbasenameⵧindexᐧhtml(spec)]: generateꓽindexᐧhtml(spec),
+		[getꓽbasenameⵧaboutᐧhtml(spec)]: generateꓽaboutᐧhtml(spec),
+		[getꓽbasenameⵧcontactᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
+		[getꓽbasenameⵧerrorᐧhtml(spec)]: generateꓽerrorᐧhtml(spec),
 
 		// ICONS
 		...getꓽicon__sizes(spec).reduce((acc, size) => {

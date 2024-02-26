@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
+import { Immutable, IETFLanguageType, Contentⳇweb } from '@offirmo-private/ts-types'
 
 import { WebsiteEntryPointSpec } from '../types.js'
 import { LIB } from '../consts.js'
@@ -13,8 +13,7 @@ import {
 	wantsꓽinstall,
 } from '../selectors.js'
 import { ifꓽdebug } from '../utils/debug.js'
-import { HtmlMetaContentⳇContentSecurityPolicy, HtmlMetaContentⳇViewport, HtmlMetas } from './types.js'
-
+import { FeatureSnippets, HtmlMetas, HtmlMetaContentⳇViewport, HtmlDocumentSpec } from '../utils/html'
 
 /////////////////////////////////////////////////
 
@@ -92,6 +91,21 @@ function getꓽmetas(spec: Immutable<WebsiteEntryPointSpec>): HtmlMetas {
 
 /////////////////////////////////////////////////
 
+function getꓽcontentⵧweb(spec: Immutable<WebsiteEntryPointSpec>): Contentⳇweb {
+	const result: Contentⳇweb = {
+
+	}
+}
+
+function getꓽhtml_doc_spec(spec: Immutable<WebsiteEntryPointSpec>): HtmlDocumentSpec {
+	const result: HtmlDocumentSpec = {
+		metas: getꓽmetas(spec),
+		features: getꓽfeatures(spec),
+	}
+}
+
+/////////////////////////////////////////////////
+
 export {
-	getꓽmetas,
+	getꓽhtml_doc_spec,
 }
