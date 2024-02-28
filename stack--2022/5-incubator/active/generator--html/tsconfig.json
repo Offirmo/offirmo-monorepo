@@ -1,0 +1,10 @@
+{
+	"extends": "../../../0-meta/tsconfig.json",
+	"compilerOptions": {
+		"lib": [ "DOM", "ES2023" ]
+	},
+	"include": [
+		"../../../0-typings-custom/**/*.ts",
+		"src/**/*.ts"
+	]
+}

@@ -168,7 +168,6 @@ export type FeatureSnippets = Enum<typeof FeatureSnippets> // eslint-disable-lin
 
 interface HtmlDocumentSpec extends Contentⳇweb {
 	metas: HtmlMetas
-
 	features?: Array<FeatureSnippets>
 }
 
