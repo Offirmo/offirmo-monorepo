@@ -4,11 +4,9 @@ import { IETFLanguageType, Url‿str, CssColor‿str } from '@offirmo-private/ts
 
 /////////////////////////////////////////////////
 
-
 type SVGViewBox = [ xmin: number, ymin: number, width: number, height: number]
 
-// TODO refine
-type SVGId = string
+type SVGId = string // TODO refine
 
 /////////////////////////////////////////////////
 

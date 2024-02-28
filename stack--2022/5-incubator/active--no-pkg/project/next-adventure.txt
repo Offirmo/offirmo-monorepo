@@ -9,7 +9,6 @@ new adventure
     Cloudflare
     ⇱ nego salaire
       vest mid-May :-/
-
     ⇱ apply for jobs + https://www.cnbc.com/2024/01/01/dont-forget-this-crucial-step-after-you-apply-for-a-job-says-recruiter.html
       ⇱ find target jobs / companies https://remoteok.com/
       ⇱ update CV
@@ -41,7 +40,8 @@ Google
     https://docs.google.com/document/d/13wFFC7vIdB2hkxdyT0dSiGgkZTXCDDBeW_GBPqy9Jy0/
     ⇱ train for interview
       ⇱ screening
-      ⇱ system design https://www.swequiz.com/#pricing  https://designsystems.surf
+      ⇱ system design https://www.swequiz.com/#pricing
+
 OpenAi
 https://openai.com/careers/search?l=san-francisco%252C-california%252C-united-states
 
