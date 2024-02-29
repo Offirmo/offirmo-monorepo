@@ -3,9 +3,9 @@
 
 import { IETFLanguageType } from '@offirmo-private/ts-types'
 
-import { Html‿str } from '../html/index.js'
-import { Css‿str } from '../css/index.js'
-import { JS‿str } from '../js/index.js'
+import { Html‿str } from '../10-html/index.js'
+import { Css‿str } from '../20-css/index.js'
+import { JS‿str } from '../30-js/index.js'
 
 /////////////////////////////////////////////////
 

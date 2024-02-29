@@ -22,6 +22,7 @@
 	"peerDependencies": {
 	},
 	"dependencies": {
+		"@offirmo-private/normalize-string": "*",
 		"@offirmo-private/ts-types": "*"
 	},
 
