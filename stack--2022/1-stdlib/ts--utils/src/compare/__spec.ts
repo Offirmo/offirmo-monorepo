@@ -2,11 +2,11 @@ import { expect } from 'chai'
 
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { compare } from './compare.js'
+import { compare } from './index.js'
 
+/////////////////////////////////////////////////
 
 describe('@offirmo-private/ts-utils', function () {
-
 
 	describe('compare', function () {
 

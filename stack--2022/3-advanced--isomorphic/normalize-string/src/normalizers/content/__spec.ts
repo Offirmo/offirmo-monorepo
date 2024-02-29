@@ -10,7 +10,7 @@ describe(`${LIB} -- base`, function() {
 
 	const TEST_CASES: any = {
 
-		normalize_textⵧsentence: {
+		normalizeꓽtextⵧsentence: {
 			'': '',
 			' ': '',
 			'A': 'A',

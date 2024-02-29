@@ -1,6 +1,7 @@
 import assert from 'tiny-invariant'
 import { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
 import {
+	normalizeꓽIETFLanguageType,
 	normalize_unicode,
 } from '@offirmo-private/normalize-string'
 
@@ -11,11 +12,7 @@ import { Thing } from './types.js'
 /////////////////////////////////////////////////
 
 function getꓽlang(thing: Immutable<Thing>): IETFLanguageType {
-	if (!thing.lang)
-		return 'en'
-
-	// TODO check format
-	return normalize_unicode(thing.lang).toLowerCase().trim()
+	return normalizeꓽIETFLanguageType(thing.lang ?? '')
 }
 
 function getꓽdescription(thing: Immutable<Thing>): string {

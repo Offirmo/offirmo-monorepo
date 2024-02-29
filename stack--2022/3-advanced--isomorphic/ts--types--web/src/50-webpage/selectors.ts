@@ -1,7 +1,8 @@
 import assert from 'tiny-invariant'
 import { Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
 import {
-	normalize_unicode,
+	normalizeꓽIETFLanguageType,
+	normalizeꓽtextⵧsentence,
 } from '@offirmo-private/normalize-string'
 
 import { Html‿str } from '../10-html/index.js'
@@ -28,11 +29,7 @@ function getꓽjs(spec: Immutable<Contentⳇweb>): Immutable<JS‿str[]> {
 }
 
 function getꓽlang(spec: Immutable<Contentⳇweb>): IETFLanguageType {
-	if (!spec.lang)
-		return 'en'
-
-	// TODO check format
-	return normalize_unicode(spec.lang).toLowerCase().trim()
+	return normalizeꓽIETFLanguageType(spec.lang ?? '')
 }
 
 function getꓽcharset(spec: Immutable<Contentⳇweb>): Charset {
@@ -40,8 +37,7 @@ function getꓽcharset(spec: Immutable<Contentⳇweb>): Charset {
 }
 
 function getꓽtitle(spec: Immutable<Contentⳇweb>): string {
-	assert(!!spec.title)
-	return normalize_unicode(spec.title).trim()
+	return normalizeꓽtextⵧsentence(spec.title ?? '')
 }
 
 /////////////////////////////////////////////////

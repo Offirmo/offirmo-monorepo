@@ -28,6 +28,7 @@ describe(`${LIB} -- misc`, function() {
 		},
 
 		normalizeꓽIETFLanguageType: {
+			'': 'en',
 			'en': 'en',
 			'EN': 'en',
 			'en-US': 'en-us',

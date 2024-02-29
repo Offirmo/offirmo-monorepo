@@ -1,5 +1,5 @@
 
-import { combine_normalizers } from '../../normalize.js'
+import { combine_normalizers, default_to } from '../../normalize.js'
 import {
 	coerce_blanks_to_single_spaces,
 	coerce_delimiters_to_space,
@@ -30,6 +30,7 @@ const normalizeꓽIETFLanguageType = combine_normalizers(
 	coerce_delimiters_to_space,
 	trim,
 	convert_spaces_to_kebab_case,
+	default_to('en'),
 	// that's all we can do, it's complicated https://en.wikipedia.org/wiki/IETF_language_tag
 )
 

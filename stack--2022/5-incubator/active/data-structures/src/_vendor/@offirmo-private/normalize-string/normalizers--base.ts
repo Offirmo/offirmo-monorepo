@@ -32,7 +32,7 @@ const ANY_BLANK_REGEXP = /\s+/g
 const coerce_blanks_to_single_spaces: StringNormalizer = s => s.replace(ANY_BLANK_REGEXP, ' ')
 
 
-const normalize_textⵧsentence: StringNormalizer = combine_normalizers(
+const normalizeꓽtextⵧsentence: StringNormalizer = combine_normalizers(
 	normalize_unicode,
 	coerce_blanks_to_single_spaces,
 	trim,
@@ -52,5 +52,5 @@ export {
 	normalize_unicode,
 	coerce_blanks_to_single_spaces,
 
-	normalize_textⵧsentence,
+	normalizeꓽtextⵧsentence,
 }

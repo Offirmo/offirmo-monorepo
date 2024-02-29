@@ -9,7 +9,7 @@ import {
 
 /////////////////////////////////////////////////
 
-const normalize_textⵧsentence: StringNormalizer = combine_normalizers(
+const normalizeꓽtextⵧsentence: StringNormalizer = combine_normalizers(
 	normalize_unicode,
 	coerce_blanks_to_single_spaces,
 	trim,
@@ -18,5 +18,5 @@ const normalize_textⵧsentence: StringNormalizer = combine_normalizers(
 /////////////////////////////////////////////////
 
 export {
-	normalize_textⵧsentence,
+	normalizeꓽtextⵧsentence,
 }

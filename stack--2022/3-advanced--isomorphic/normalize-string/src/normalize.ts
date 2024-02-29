@@ -14,5 +14,5 @@ export function normalize(s: string, ...normalizers: StringNormalizer[]): string
 }
 
 export function default_to(def = ''): StringNormalizer {
-	return (s: string): string => s ? s : ''
+	return (s: string): string => s || def
 }
