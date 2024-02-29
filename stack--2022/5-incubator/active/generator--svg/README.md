@@ -1,23 +1,14 @@
 
 
-index.html are a mess:
-- security
-- huge list of meta
-  - including social ones (with lots of repetition!)
-  - favicons
-- critical CSS
-- preload
-- 3rd party scripts
-- webmanifest with repetition: titles, favicons...
+SVG generator
 
-And above all it's hard to properly comment!
-
-I need a tool.
+use cases
+* generate a simple emoji SVG
+* anotate SVG with debug infos
+* convert SVGs to binary formats for favicon, icons, social pics, etc.
 
 
-NOT IN SCOPE
-* minification = not this tool's job
-* SSR = maybe one day? but ideally we want full static on CDN
-
-
-TODO evaluate https://posthog.com
+TODO one day
+* (nice to have) prettify https://github.com/prettier/plugin-xml
+* render to bin 		"@resvg/resvg-js": "^2",
+* advanced manipulation svgjson

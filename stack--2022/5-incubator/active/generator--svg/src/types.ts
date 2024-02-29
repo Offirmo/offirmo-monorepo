@@ -1,34 +1,17 @@
 // https://developer.mozilla.org/en-US/docs/Web/SVG
 
-import { IETFLanguageType, Url‿str, CssColor‿str } from '@offirmo-private/ts-types'
+import { IETFLanguageType } from '@offirmo-private/ts-types'
+import { Url‿str, CssColor‿str } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
+
+type Svg‿str = string
 
 type SVGViewBox = [ xmin: number, ymin: number, width: number, height: number]
 
 type SVGId = string // TODO refine
 
 /////////////////////////////////////////////////
-
-// https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
-type FontFamilyGenericName =
-	| 'serif'
-	| 'sans-serif'
-	| 'monospace'
-	| 'cursive'
-	| 'fantasy'
-	| 'system-ui'
-	| 'ui-serif'
-	| 'ui-sans-serif'
-	| 'ui-monospace'
-	| 'ui-rounded'
-	| 'emoji'
-	| 'math'
-	| 'fangsong'
-
-interface Withꓽfontᝍfamily {
-	'font-family': Array<string | FontFamilyGenericName>
-}
 
 // TODO better https://developer.mozilla.org/en-US/docs/Web/SVG/Content_type#length
 type LengthUnit = 'px' | 'em'
@@ -61,16 +44,11 @@ interface SVGGraphicElement extends SVGElement {
 }
 
 
-// TODO text with lang
 
-// TODO full "link" type with referrer etc.
-interface Link {
 
-}
 
 // TODO one can nest SVG elements!
 // https://www.sarasoueidan.com/blog/mimic-relative-positioning-in-svg/
-
 
 interface SVG extends SVGContainerElement {
 	/////////////////////////////////////////////////
@@ -133,7 +111,7 @@ interface SVG extends SVGContainerElement {
 
 	// reusable links
 	links: {
-		[id: string]: Link
+		[id: string]: never // TODO
 	}
 
 	// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter
@@ -166,6 +144,8 @@ interface SVG extends SVGContainerElement {
 /////////////////////////////////////////////////
 
 export {
+	type Svg‿str,
+
 	type SVGViewBox,
 	type SVGId,
 

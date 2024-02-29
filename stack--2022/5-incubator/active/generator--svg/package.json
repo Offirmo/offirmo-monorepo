@@ -13,11 +13,8 @@
 	},
 
 	"dependencies": {
-		"@offirmo-private/normalize-string": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo/cli-toolbox": "^3",
-		"@resvg/resvg-js": "^2",
-		"prettier": "^3",
+		"@offirmo-private/ts-types-web": "*",
 		"tiny-invariant": "^1",
 		"tslib": "^2"
 	},
@@ -28,12 +25,8 @@
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
 		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
 
-		"demo1": "npx tsx doc/demo--personal-blog/index.mts",
-		"demo2": "parcel serve doc/demo--personal-blog/src/index.html --port 8080  --lazy  --no-autoinstall",
-		"demo3": "parcel build doc/demo--personal-blog/src/index.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
-
 		"dev": "run-s clean _build:dev:watch",
-		"xxtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2022.esm/**/*spec.js'",
+		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2022.esm/**/*spec.js'",
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
