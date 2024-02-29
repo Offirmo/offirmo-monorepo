@@ -22,7 +22,7 @@
 	"peerDependencies": {
 	},
 	"dependencies": {
-		"@offirmo-private/ts-types": "*"
+		"@offirmo-private/ts-types-web": "*"
 	},
 
 	"scripts": {

@@ -155,6 +155,8 @@ export const FeatureSnippets = Enum(
 export type FeatureSnippets = Enum<typeof FeatureSnippets> // eslint-disable-line no-redeclare
 
 interface HtmlDocumentSpec {
+	lang?: IETFLanguageType
+
 	content: Contentⳇweb
 
 	links?: Links

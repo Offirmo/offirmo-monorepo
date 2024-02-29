@@ -14,7 +14,6 @@ export interface Contentⳇweb {
 
 	/////////////////////
 	// semantic (as much as we can)
-	lang?: IETFLanguageType
 
 	title?: string
 

@@ -4,6 +4,7 @@ import { hasꓽcontent } from '@offirmo-private/ts-utils'
 import { Css‿str, Html‿str, JS‿str } from '@offirmo-private/ts-types-web'
 import * as Selectors from '@offirmo-private/ts-types-web'
 import {
+	normalizeꓽIETFLanguageType,
 	normalize_unicode,
 } from '@offirmo-private/normalize-string'
 
@@ -24,7 +25,7 @@ import snippetꓽjsⳇnormalizeᝍtrailingᝍslash from './snippets/js/snippet--
 // Contentⳇweb
 
 function getꓽlang(spec: Immutable<HtmlDocumentSpec>): IETFLanguageType {
-	return Selectors.getꓽlang(spec.content)
+	return normalizeꓽIETFLanguageType(spec.lang ?? '')
 }
 function getꓽcharset(spec: Immutable<HtmlDocumentSpec>): Charset {
 	return 'utf-8'
@@ -148,7 +149,7 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 	}
 
 	if (Selectors.getꓽjs(content_with_features_expanded).length === 0) {
-		content_with_features_expanded.js = [ `console.log('Hello, world!')` ]
+		//content_with_features_expanded.js = [ `console.log('Hello, world!')` ]
 	}
 	else {
 		content_with_features_expanded.html = [ `<noscript>You need to enable JavaScript to run this app.</noscript>`, ...Selectors.getꓽhtml(content_with_features_expanded) ]
@@ -168,19 +169,25 @@ const EOL = '\n'
 const CRITICAL_CSS_LINK = `https://www.smashingmagazine.com/2015/08/understanding-critical-css/`
 
 function _getꓽhtml__head__style‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+	const blocks = getꓽcssⵧcritical(spec)
+	if (!hasꓽcontent(blocks)) return ''
+
 	return `
 <!-- critical CSS ${CRITICAL_CSS_LINK} -->
 <style>
-	${getꓽcssⵧcritical(spec).join(EOL)}
+	${blocks.join(EOL)}
 </style>
 `
 }
 
 function _getꓽhtml__head__js‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+	const blocks = getꓽjsⵧcritical(spec)
+	if (!hasꓽcontent(blocks)) return ''
+
 	return `
 <!-- critical JS -->
 <script>
-	${getꓽjsⵧcritical(spec).join(EOL)}
+	${blocks.join(EOL)}
 </script>
 `
 }
@@ -281,19 +288,25 @@ function _getꓽhtml__head‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str 
 /////////////////////////////////////////////////
 
 function _getꓽhtml__body__style‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+	const blocks = getꓽcss(spec)
+	if (!hasꓽcontent(blocks)) return ''
+
 	return `
 <!-- NON-critical styles ${CRITICAL_CSS_LINK} -->
 <style>
-	${getꓽcss(spec).join(EOL)}
+	${blocks.join(EOL)}
 </style>
 `
 }
 
 function _getꓽhtml__body__js‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+	const blocks = getꓽjs(spec)
+	if (!hasꓽcontent(blocks)) return ''
+
 	return `
 <!-- NON-critical JS -->
 <script type="module">
-	${getꓽjs(spec).join(EOL)}
+	${blocks.join(EOL)}
 </script>
 `
 }

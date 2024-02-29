@@ -28,13 +28,13 @@ function getꓽjs(spec: Immutable<Contentⳇweb>): Immutable<JS‿str[]> {
 	return spec.js || []
 }
 
-function getꓽlang(spec: Immutable<Contentⳇweb>): IETFLanguageType {
+/*function getꓽlang(spec: Immutable<Contentⳇweb>): IETFLanguageType {
 	return normalizeꓽIETFLanguageType(spec.lang ?? '')
 }
 
 function getꓽcharset(spec: Immutable<Contentⳇweb>): Charset {
 	return 'utf-8'
-}
+}*/
 
 function getꓽtitle(spec: Immutable<Contentⳇweb>): string {
 	return normalizeꓽtextⵧsentence(spec.title ?? '')
@@ -49,7 +49,7 @@ export {
 	getꓽjsⵧcritical,
 	getꓽjs,
 
-	getꓽlang,
-	getꓽcharset,
+	//getꓽlang,
+	//getꓽcharset,
 	getꓽtitle,
 }
