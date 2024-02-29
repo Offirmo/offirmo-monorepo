@@ -1,10 +1,8 @@
 +++ https://martinfowler.com/
 +++ https://www.hackterms.com/about/all
 12 factors https://12factor.net/
-3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 97 Things Every Programmer Should Know
 abstraction https://www.merrickchristensen.com/articles/abstraction/
-Agile
 allocation
 annotation
 anomaly detection
@@ -13,19 +11,16 @@ appli web
 apply / call / bind
 arguments
 assembly
-async / design pattern réacteur
-async/sync
-asynchrone
+async -- design pattern -- reactor pattern
+async -- sync By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
 atomic
 audit trail - what happened, when, who made the request and how?
 authentication
 BDD - Behavior-Driven Development https://cucumber.io/school/   Discovery -> Formulation -> Automation
 blocking
-By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
 cache
 cache -- stampede https://en.wikipedia.org/wiki/Cache_stampede
 caching -- S3 FIFO https://s3fifo.com/
-CAP ACID https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
 capability = an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
 CD Continuous Delivery https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
 changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
@@ -37,18 +32,18 @@ comments -- conventional
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
 compile to js
 compiler
-Connascence https://en.wikipedia.org/wiki/Connascence
+connascence https://en.wikipedia.org/wiki/Connascence
 constructor
 context switch
+Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
 cost based rate limiting
 courbe d'expertise
 CPU https://cpu.land/
 cron https://onlineornot.com/the-complete-guide-to-cron-jobs
 crunch
-DACI Decision Making Framework “driver, approver, contributor, informed" https://www.atlassian.com/team-playbook/plays/daci
 database
 DDOS
-DDOS - self https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
+DDOS -- self https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
 debugger
 debugging
 defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actually-healthy-5flj
@@ -102,7 +97,6 @@ http://nodeschool.io/#workshoppers
 http://rethinkdb.com/blog/node-4/
 http://www.letudiant.fr/palmares/palmares-des-ecoles-d-ingenieurs/ouverture-internationale-2.html
 http://www.playkeepout.com/
-https://en.wikipedia.org/wiki/Conway%27s_law
 https://en.wikipedia.org/wiki/Cross-cutting_concern
 https://en.wikipedia.org/wiki/Design_smell
 https://en.wikipedia.org/wiki/God_object
@@ -120,7 +114,6 @@ héritage prototypal, héritage en diamant
 IIFE
 immutability
 Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
-io.js
 Joel test
 JS equality
 JS http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
@@ -162,7 +155,7 @@ npm
 nyan cat
 object
 observability "is a measure of how well internal states of a system can be inferred from knowledge of its external outputs" https://andydote.co.uk/presentations/index.html
-observability -- opentelemetry https://opentelemetry.io/docs/concepts/observability-primer/
+observability -- openTelemetry https://opentelemetry.io/docs/concepts/observability-primer/
 OKR
 OOP
 optim des || et && effet de bord
@@ -187,14 +180,13 @@ rate-limiting
 rate-limiting -- cost based
 React
 reactive programming
-reactor pattern
 recursion
 regex https://regexlearn.com/
 register
 release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-10-insider-program-from-rings-to-release-channels/
 revisions
 RFC https://rfc.fyi/
-Roles and Role-Based Access Control (RBAC)
+Role-Based Access Control (RBAC)
 rollback
 rolling deploy
 scaling horizontal
@@ -220,7 +212,7 @@ SOLID (OOP) -- 2 Open–closed principle (OCP) https://en.wikipedia.org/wiki/Ope
 SOLID (OOP) -- 3 Liskov substitution principle https://en.wikipedia.org/wiki/Liskov_substitution_principle
 SOLID (OOP) -- 4 Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
 SOLID (OOP) -- 5 principle https://en.wikipedia.org/wiki/Dependency_inversion_principle
-spec js
+spec
 stack overflow
 state
 state management

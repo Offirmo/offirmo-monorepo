@@ -1,4 +1,6 @@
+3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 access control
+ACID
 audit
 audit trail
 auth
@@ -8,6 +10,7 @@ AWS Shield
 AWS WAF
 blue/green deployment
 caching
+CAP https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
 CAP Theorem -- Availability = Every request receives a (non-error) response, without the guarantee that it contains the most recent write.
 CAP Theorem -- Consistency = Every read receives the most recent write or an error
 CAP Theorem -- Partition tolerance = The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.

@@ -134,7 +134,6 @@ Trainium
 transformers "a new type of NLP model that demolished the reading comprehension abilities of both humans and the best AI incumbent at the time" ~pattern recognition techniques
 transformers (hugging face) = a magic python library that can auto-download models on demand https://github.com/huggingface/transformers BUT it's for research, not prod (no unified API for ex.)
 Turing test
-Turing Test
 vector -- difference with embedding??
 vector database
 vector database https://weaviate.io/

@@ -1,11 +1,16 @@
 -- List of terms relating to algorithms and data structures https://en.wikipedia.org/wiki/List_of_terms_relating_to_algorithms_and_data_structures
 array -- associative = store (key, value) https://en.wikipedia.org/wiki/Associative_array = map, dict
+array -- dynamic = https://en.wikipedia.org/wiki/Dynamic_array
 deterministic acyclic finite state automaton (DAFSA)
 dictionary = associative array = map = symbol table
+gap buffer = https://en.wikipedia.org/wiki/Gap_buffer
 hash table
 heap
 map
+piece table https://en.wikipedia.org/wiki/Piece_table
+rope https://en.wikipedia.org/wiki/Rope_(data_structure)
 search = retrieve efficiently from a set https://en.wikipedia.org/wiki/Search_data_structure
+skip list https://en.wikipedia.org/wiki/Skip_list
 tree -- B-Tree https://en.wikipedia.org/wiki/B-tree
 tree -- https://en.wikipedia.org/wiki/Tree_(data_structure)
 tree -- node -- internal
@@ -20,6 +25,6 @@ tree -- search tree -- trie -- radix (compressed trie) - patricia = radix with r
 tree -- search tree -- trie -- radix (compressed trie) https://en.wikipedia.org/wiki/Radix_tree
 tree -- search tree -- trie -- suffix tree
 tree -- search tree -- trie https://en.wikipedia.org/wiki/Trie
-tree -- traversal https://en.wikipedia.org/wiki/Tree_traversal
-skip list https://en.wikipedia.org/wiki/Skip_list
 tree -- splay
+tree -- traversal https://en.wikipedia.org/wiki/Tree_traversal
+zipper https://en.wikipedia.org/wiki/Zipper_(data_structure)

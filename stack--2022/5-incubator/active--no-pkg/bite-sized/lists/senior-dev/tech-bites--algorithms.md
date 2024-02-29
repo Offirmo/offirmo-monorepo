@@ -23,6 +23,7 @@ dynamic = ex. For an initial set of N numbers, dynamically maintain the maximal 
 greedy https://en.wikipedia.org/wiki/Greedy_algorithm
 hashing -- Extendible hashing, Consistent hashing https://en.wikipedia.org/wiki/Consistent_hashing
 heuristic https://en.wikipedia.org/wiki/Heuristic_(computer_science)
+Huffman coding https://en.wikipedia.org/wiki/Huffman_coding
 LLM -- temperature scaling
 LLM output generation -- beam search = search algorithm used to generate output sequences from a model during inference https://ai-guide.future.mozilla.org/content/llms-101/
 LLM output generation -- nucleus sampling aka. top-P sampling
@@ -46,6 +47,7 @@ search -- unary
 sort -- alphadev https://www.nature.com/articles/s41586-023-06004-9
 sort -- burstsort
 sort -- radix sort O(nw) https://en.wikipedia.org/wiki/Radix_sort
+sort -- topological = a graph traversal in which each node is visited only after all its dependencies are visited. (need DAG) https://en.wikipedia.org/wiki/Topological_sorting
 sort https://en.wikipedia.org/wiki/Sorting_algorithm
 Trabb Pardo-Knuth (TPK) https://en.wikipedia.org/wiki/TPK_algorithm
 transitive
