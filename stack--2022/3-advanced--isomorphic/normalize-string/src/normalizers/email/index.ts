@@ -1,32 +1,34 @@
-import { combine_normalizers } from './normalize.js'
-import { normalize_unicode } from './normalizers--base.js'
+import { combine_normalizers } from '../../normalize.js'
+import {
+	normalize_unicode,
+	remove_all_spaces,
+} from '../base/index.js'
 
 ////////////////////////////////////
 // general infos: https://github.com/Offirmo-team/wiki/wiki/courriel
 // credits to TODO ???
 
 
-
 ////////////////////////////////////
 // fragments
 
 // inspired by the spec of https://github.com/johno/normalize-email
-function remove_plus_fragment_from_local_part(email: string): string {
+function _remove_plus_fragment_from_local_part(email: string): string {
 	const [ local_part, domain ] = email.split('@')
 
 	return [ local_part.split('+')[0], domain ].join('@')
 }
-function remove_dots_from_local_part(email: string): string {
+function _remove_dots_from_local_part(email: string): string {
 	const [ local_part, domain ] = email.split('@')
 
 	return [ local_part.split('.').join(''), domain ].join('@')
 }
-function lowercase_domain(email: string): string {
+function _lowercase_domain(email: string): string {
 	const [ local_part, domain = '' ] = email.split('@')
 
 	return [ local_part, domain.toLowerCase() ].join('@')
 }
-function normalize_domain(email: string): string {
+function _normalize_domain(email: string): string {
 	let [ local_part, domain = '' ] = email.split('@')
 
 	domain = domain.toLowerCase()
@@ -63,24 +65,24 @@ const RULES: { [domain: string]: EmailHandlingRules } = {
 	},
 }
 
-function remove_plus_fragment_from_local_part_if_insensitive(email: string): string {
+function _remove_plus_fragment_from_local_part_if_insensitive(email: string): string {
 	const [ local_part, domain ] = email.split('@')
-	//console.log('remove_plus_fragment_from_local_part_if_insensitive', domain, RULES[domain])
+	//console.log('_remove_plus_fragment_from_local_part_if_insensitive', domain, RULES[domain])
 
 	if (RULES[domain]?.plus_fragment_sensitive === false)
-		return remove_plus_fragment_from_local_part(email)
+		return _remove_plus_fragment_from_local_part(email)
 
 	return email
 }
-function remove_dots_from_local_part_if_insensitive(email: string): string {
+function _remove_dots_from_local_part_if_insensitive(email: string): string {
 	const [ local_part, domain ] = email.split('@')
 
 	if (RULES[domain]?.dots_sensitive === false)
-		return remove_dots_from_local_part(email)
+		return _remove_dots_from_local_part(email)
 
 	return email
 }
-function lowercase_local_part_if_insensitive(email: string): string {
+function _lowercase_local_part_if_insensitive(email: string): string {
 	const [ local_part, domain ] = email.split('@')
 
 	if (!RULES[domain]?.local_part_case_sensitive) // default to true
@@ -92,12 +94,7 @@ function lowercase_local_part_if_insensitive(email: string): string {
 /////////////////////
 // extras from me
 
-// useful to fix autocomplete after typing "."
-function remove_all_spaces(email: string): string {
-	return email.split(' ').join('')
-}
-
-function validate_email_structure(possible_email: string): string {
+function _validate_email_structure(possible_email: string): string {
 	const [ before, after, ...rest] = possible_email.split('@')
 	//console.log({before, after, rest, ta: typeof after})
 
@@ -123,27 +120,27 @@ function validate_email_structure(possible_email: string): string {
 const normalizeꓽemailⵧsafe = combine_normalizers(
 	normalize_unicode,
 	remove_all_spaces,
-	validate_email_structure,
-	lowercase_domain,
+	_validate_email_structure,
+	_lowercase_domain,
 )
 
 const normalizeꓽemailⵧreasonable = combine_normalizers(
 	normalize_unicode,
 	remove_all_spaces,
-	validate_email_structure,
-	normalize_domain,
-	remove_plus_fragment_from_local_part_if_insensitive,
-	lowercase_local_part_if_insensitive,
+	_validate_email_structure,
+	_normalize_domain,
+	_remove_plus_fragment_from_local_part_if_insensitive,
+	_lowercase_local_part_if_insensitive,
 )
 
 const normalizeꓽemailⵧfull = combine_normalizers(
 	normalize_unicode,
 	remove_all_spaces,
-	validate_email_structure,
-	normalize_domain,
-	remove_plus_fragment_from_local_part_if_insensitive,
-	remove_dots_from_local_part_if_insensitive,
-	lowercase_local_part_if_insensitive,
+	_validate_email_structure,
+	_normalize_domain,
+	_remove_plus_fragment_from_local_part_if_insensitive,
+	_remove_dots_from_local_part_if_insensitive,
+	_lowercase_local_part_if_insensitive,
 )
 
 /////////////////////////////////////////////////

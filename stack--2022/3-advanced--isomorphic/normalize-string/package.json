@@ -19,6 +19,7 @@
 	"source": "src/index.ts",
 
 	"dependencies": {
+		"@offirmo-private/ts-types": "*"
 	},
 
 	"scripts": {

@@ -1,15 +1,16 @@
 import { expect } from 'chai'
 
-import { StringNormalizer } from './types.js'
-import * as NORMALIZERS from './normalizers--base.js'
-import { coerce_to_tokens, normalize_textⵧsentence } from './normalizers--base.js'
+import { LIB } from '../../consts.js'
+import { StringNormalizer } from '../../types.js'
+import * as NORMALIZERS from './index.js'
 
+/////////////////////////////////////////////////
 
-describe('normalize-string - base normalizers', function() {
+describe(`${LIB} -- base`, function() {
 
 	const TEST_CASES: any = {
 
-		default_to_empty: {
+		default_toꓽempty: {
 			'': '',
 			// TODO dedicated tests
 		},
@@ -54,7 +55,7 @@ describe('normalize-string - base normalizers', function() {
 			' 	a 	': 'a',
 		},
 
-		coerce_to_ascii: {
+		coerce_toꓽascii: {
 			'': '',
 			' ': ' ',
 			'a': 'a',
@@ -80,6 +81,16 @@ describe('normalize-string - base normalizers', function() {
 			'Lord	Mok': 'Lord Mok',
 		},
 
+		remove_all_spaces: {
+			'': '',
+			' ': '',
+			'  ': '',
+			'	': '	',
+			'  a  b  ': 'ab',
+			'	 		': '			',
+			'foo bar ': 'foobar',
+		},
+
 		coerce_delimiters_to_space: {
 			'': '',
 			' ': ' ',
@@ -99,55 +110,13 @@ describe('normalize-string - base normalizers', function() {
 			'lord Mok': 'LordMok',
 		},
 
-		convert_spaces_to_snake_case: {
+		convert_spaces_to_kebab_case: {
 			'': '',
 			' ': '',
 			'a': 'a',
 			'Côte et Ciel': 'Côte-et-Ciel',
 			'lord Mok': 'lord-Mok',
 		},
-
-		coerce_to_safe_nickname: {
-			'': '',
-			' ': '',
-			'a': 'A',
-			'Côte et Ciel': 'CoteEtCiel',
-			' lord  MOK ': 'LordMok',
-			'**lord_MOK** ': 'LordMok',
-		},
-
-		coerce_to_tokens: {
-			'': '',
-			' ': '',
-			'A': 'a',
-			'BoReD ': 'bored',
-			'ALPH-Art': 'alph art',
-			' continued from ': 'continued from'
-		},
-
-		coerce_to_redeemable_code: {
-			'': '',
-			' ': '',
-			'a': 'A',
-			'bored ': 'BORED',
-			'ALPH-Art': 'ALPHART',
-		},
-
-		coerce_to_safe_basenameⵧstrictest: {
-			'A': 'a',
-			'.A-': 'a',
-			'.a--b..c': 'a-b-c',
-			'Côte et Ciel': 'cote-et-ciel',
-			' lord  MOK ': 'lord-mok',
-			'**lord_MOK** ': 'lord-mok',
-		},
-
-		normalize_textⵧsentence: {
-			'': '',
-			' ': '',
-			'A': 'A',
-			' hello  my best-friend, how are you? ': 'hello my best-friend, how are you?'
-		}
 	}
 
 	Object.keys(TEST_CASES).forEach(key => {
@@ -169,7 +138,6 @@ describe('normalize-string - base normalizers', function() {
 		})
 	})
 
-	TEST_CASES['normalizeꓽemailⵧsafe'] = TEST_CASES['normalizeꓽemailⵧreasonable'] = TEST_CASES['normalizeꓽemailⵧfull'] = true
 	Object.keys(NORMALIZERS).forEach(key => {
 		if (key === 'RECOMMENDED_UNICODE_NORMALIZATION')
 			return
