@@ -1,15 +1,15 @@
-import { Immutable, Html‿str } from '@offirmo-private/ts-types'
+import { Immutable } from '@offirmo-private/ts-types'
+import { Html‿str } from '@offirmo-private/ts-types-web'
 
 import {
 	getꓽtitleⵧpage,
-} from '../../../selectors.js'
-import { ifꓽdebug } from '../../../utils/debug.js'
+} from '../../selectors.js'
 
-import { WebsiteEntryPointSpec } from '../../../types'
+import { HtmlDocumentSpec } from '../../types.js'
 
 /////////////////////////////////////////////////
 
-function generate(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
+function generate(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 	return `
 <main id="react-root" class="o⋄full-viewport">
 		<!-- React will render here and replace this -->
@@ -19,7 +19,7 @@ function generate(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
 			max-width: var(--width);
 			margin: 0 max(1ch, (100vw - var(--width))/2);
 			">
-			<h1>${ifꓽdebug(spec).prefixꓽwith(`[title--page]`, getꓽtitleⵧpage(spec))}</h1>
+			<h1>${getꓽtitleⵧpage(spec)}</h1>
 			<em>Loading…</em>
 		</section>
 	</main>

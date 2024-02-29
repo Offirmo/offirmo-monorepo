@@ -1,29 +1,15 @@
 import { Enum } from 'typescript-string-enums'
-import { Immutable } from '@offirmo-private/ts-types'
-import { PositiveIntegerInRange, RealInRange, Charset, CssColor‿str, IETFLanguageType, Contentⳇweb } from '@offirmo-private/ts-types'
+import { PositiveIntegerInRange, RealInRange, Charset, IETFLanguageType } from '@offirmo-private/ts-types'
+import { CssColor‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
-// spec'ced types
-
-// 1. already defined in Typescript "dom" lib
-// CSSNumericType
-// CSSStyleSheetInit
-// FontFaceDescriptors
-// FontFaceSet
-// FontFaceSource
-// FullscreenOptions
-// ImportMeta
-// PaymentCurrencyAmount
-// PropertyDefinition
-// SecurityPolicyViolationEventDisposition
-// ShadowRootInit
 
 // 2. manual definitions
 
 // intro https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
 interface HtmlMetaContentⳇContentSecurityPolicy {
-	// TODO
+	// TODO one day
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag
@@ -52,8 +38,10 @@ interface HtmlMetaContentⳇViewport {
 	// DEPRECATED cf. [Time to remove the shrink-to-fit=no band aid?](https://www.scottohara.me/blog/2018/12/11/shrink-to-fit.html)
 	// listed for reference only
 	'shrink-to-fit'?: 'no',
-
 }
+
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link
+interface Links { [rel: string]: string }
 
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name
@@ -116,7 +104,7 @@ interface HtmlMetas {
 		description?: unknown
 		generator: string
 
-		// 2009 google doesn't use it thttps://developers.google.com/search/blog/2009/09/google-does-not-use-keywords-meta-tag
+		// 2009 google doesn't use it https://developers.google.com/search/blog/2009/09/google-does-not-use-keywords-meta-tag
 		// because it was abused by spammers
 		// but that doesn't mean other search engine don't?
 		// (don't spend too much time on it)
@@ -166,14 +154,19 @@ export const FeatureSnippets = Enum(
 )
 export type FeatureSnippets = Enum<typeof FeatureSnippets> // eslint-disable-line no-redeclare
 
-interface HtmlDocumentSpec extends Contentⳇweb {
-	metas: HtmlMetas
+interface HtmlDocumentSpec {
+	content: Contentⳇweb
+
+	links?: Links
+	metas?: Partial<HtmlMetas>
 	features?: Array<FeatureSnippets>
 }
 
 /////////////////////////////////////////////////
 
 export {
+	type Links,
+
 	type HtmlMetaContentⳇContentSecurityPolicy,
 	type HtmlMetaContentⳇViewport,
 	type HtmlMetas,

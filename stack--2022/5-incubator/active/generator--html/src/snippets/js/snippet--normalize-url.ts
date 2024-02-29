@@ -1,7 +1,4 @@
 
-
-
-
 // how to redirect: https://love2dev.com/blog/ways-to-use-javascript-redirect-to-another-page/
 // +be careful to not lose any part of the URL: origin + pathname + search + hash
 
