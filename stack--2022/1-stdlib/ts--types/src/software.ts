@@ -11,3 +11,9 @@ export type SoftwareLicense‿SPDX = string
 //version?: SemVer
 //changelog?: Url‿str
 //source?: Url‿str // if relevant
+
+
+
+// TODO refine, license to what? is it a license to REUSE (as in npm package.json)?
+// ALSO spdx is for Software!
+//license: License‿SPDX | License‿SPDX[] | undefined // https://spdx.org/licenses/ undef = unknown :-(

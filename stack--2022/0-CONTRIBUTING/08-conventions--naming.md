@@ -46,6 +46,7 @@ All the "components/parts" are organized in such a structure:
 - `tosort/YYYY` temp to park files we may want to salvage / refer to. MUST have a year so that we know when it's time to part ;)
 - `embedded-deps/`
 - `controllers/` ??? components that are responsible for shared state management concerns and other stateful logic??
+  - see also https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)#Controller
 - `services/` (optional) data providers? remote state?
 - `view/` ui?
 

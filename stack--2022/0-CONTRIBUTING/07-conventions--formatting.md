@@ -17,6 +17,7 @@ not implemented yet as long as I'm the sole contributor
 ```ts
 /* PROMPT
  */
+
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 

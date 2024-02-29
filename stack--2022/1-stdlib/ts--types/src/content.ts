@@ -12,13 +12,7 @@ export type Email‿str = string
 export interface SocialNetworkLink {
 	url: Url‿str // mandatory
 	handle?: string // ex @Offirmo, u/Offirmo
-	network: // helps to parse. Not optional bc I can add if missing
-		| 'artstation'
-		| 'github'
-		| 'instagram'
-		| 'producthunt'
-		| 'reddit'
-		| 'twitter'
+	network: string // helps to parse
 }
 
 export interface WithOnlinePresence {
@@ -40,9 +34,6 @@ export interface Thing {
 	lang?: IETFLanguageType
 	description: string // must be simple, a paragraph at most
 	author: Author | undefined // undef = unknown :-(
-	// TODO refine, license to what? is it a license to REUSE (as in npm package.json)?
-	// ALSO spdx is for Software!
-	//license: License‿SPDX | License‿SPDX[] | undefined // https://spdx.org/licenses/ undef = unknown :-(
 }
 
 export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {

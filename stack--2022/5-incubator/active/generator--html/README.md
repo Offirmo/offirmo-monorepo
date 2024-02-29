@@ -1,6 +1,6 @@
 
 
-index.html are a mess:
+html files became a mix of concerns:
 - security
 - huge list of meta
   - including social ones (with lots of repetition!)
@@ -14,10 +14,6 @@ And above all it's hard to properly comment!
 
 I need a tool.
 
-
 NOT IN SCOPE
 * minification = not this tool's job
 * SSR = maybe one day? but ideally we want full static on CDN
-
-
-TODO evaluate https://posthog.com
