@@ -1,0 +1,43 @@
+{
+	"name": "@offirmo-private/ts-types-web",
+	"description": "TypeScript base types definitions for Web data",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/src.es2022.esm/index.js",
+			"require": "./dist/src.es2022.cjs/index.js"
+		}
+	},
+	"module": "dist/src.es2022.esm/index.js",
+	"main": "dist/src.es2022.cjs/index.js",
+	"typings": "dist/src.es2022.esm/index.d.ts",
+	"source": "src/index.ts",
+
+	"peerDependencies": {
+	},
+	"dependencies": {
+		"@offirmo-private/ts-types": "*"
+	},
+
+	"scripts": {
+		"clean": "monorepo-script--clean-package …dist",
+
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"_build:prod": "monorepo-script--build-typescript-package",
+
+		"dev": "run-s clean _build:dev:watch",
+		"test": "echo @offirmo-private/ts-types: no dynamic tests, this package only decare types.",
+		"build": "run-s  clean _build:prod"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4"
+	}
+}
