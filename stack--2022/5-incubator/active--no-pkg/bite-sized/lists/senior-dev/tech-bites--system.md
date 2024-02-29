@@ -1,10 +1,15 @@
+-- https://github.com/donnemartin/system-design-primer
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 access control
-ACID
+ACID -- 1 Atomicity "all or nothing"
+ACID -- 2 Consistency "valid state"
+ACID -- 3 Isolation "independent transactions"
+ACID -- 4 Durability "once committed, always committed"
+ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
 audit
 audit trail
 auth
-auto-scaling and load-shedding
+auto-scaling
 availability zone
 AWS Shield
 AWS WAF
@@ -23,10 +28,14 @@ cron
 database
 DDOS (incl. self)
 DevOps
+event streaming https://kafka.apache.org/intro
+event-driven architecture = uses events to trigger and communicate between decoupled services, common with microservices
+fanout
 finops
 flux architecture
 ingress egress
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
+kafka = pub/sub + store + process
 kubernetes
 latency
 load balancer
@@ -48,6 +57,7 @@ perspective -- tech -- security
 regions
 retire, retain, rehost, re-platform, repurchase, refactor/re-architect
 scaling -- horizontally = more machines
+scaling -- load-shedding
 scaling -- vertically = more power
 scaling ~ elasticity
 security

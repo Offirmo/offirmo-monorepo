@@ -1,3 +1,4 @@
++++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
 +++ https://martinfowler.com/
 +++ https://www.hackterms.com/about/all
 12 factors https://12factor.net/
@@ -16,6 +17,7 @@ async -- sync By synchronous we mean a function that calls its callback on the s
 atomic
 audit trail - what happened, when, who made the request and how?
 authentication
+Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 BDD - Behavior-Driven Development https://cucumber.io/school/   Discovery -> Formulation -> Automation
 blocking
 cache
@@ -27,6 +29,8 @@ changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 changelogs -- conventional https://github.com/conventional-changelog
 CI Continuous Integration  https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
+command query responsibility segregation (CQRS)
+command query separation (CQS)
 comment
 comments -- conventional
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
@@ -39,9 +43,12 @@ Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
 cost based rate limiting
 courbe d'expertise
 CPU https://cpu.land/
+create, read, update and delete (CRUD)
 cron https://onlineornot.com/the-complete-guide-to-cron-jobs
 crunch
+currying https://en.wikipedia.org/wiki/Currying
 database
+database -- normalization
 DDOS
 DDOS -- self https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
 debugger
@@ -52,9 +59,11 @@ dependencies
 dependency hell https://en.wikipedia.org/wiki/Dependency_hell
 devex
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
+do what I mean (DWIM) computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
 double authent
 DRY don't repeat yourself
 dry run
+DSL Domain Specific Language
 effacement d'une liste pendant qu'on la parcourt
 egress
 emscripten
@@ -79,6 +88,8 @@ flushing
 flux architecture
 framework -- "a new framework every day"
 function
+function -- first-class function
+function -- Higher-order function
 function 1st-class object
 functional programming
 GAFAM Google, Amazon, Facebook, Apple, Microsoft
@@ -87,6 +98,17 @@ git
 global variable
 go
 graph
+GRASP (object-oriented design) = General Responsibility Assignment Software Patterns = nine fundamental principles in object design and responsibility assignment https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)
+GRASP -- 1 Information expert = Assign responsibility to the class that has the information needed to fulfill it
+GRASP -- 2 Creator = Who creates object A? In general, Assign class B the responsibility to create object A if one, or preferably more, of the following apply...
+GRASP -- 3 Controller = A controller object is a non-user interface object responsible for receiving or handling a system event
+GRASP -- 4 Indirection = Assign the responsibility to an intermediate object to mediate between other components or services so that they are not directly coupled
+GRASP -- 5 Low coupling = lower dependency between the classes, change in one class having a lower impact on other classes, higher reuse potential
+GRASP -- 6 High cohesion = keep objects appropriately focused, manageable and understandable
+GRASP -- 7 Polymorphism = responsibility for defining the variation of behaviors based on type is assigned to the type for which this variation happens
+GRASP -- 8 Protected variations = Identify points of predicted variation or instability; assign responsibilities to create a stable interface around them
+GRASP -- 9 Pure fabrication =
+GRASP -- see also: SOLID
 handle
 hoisting des vars de boucle for et switch
 hooks
@@ -111,9 +133,17 @@ https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-
 https://www.atlassian.com/team-playbook/plays/elevator-pitch
 https://xyproblem.info/
 héritage prototypal, héritage en diamant
+IDEALS -- 1 Interface segregation
+IDEALS -- 2 Deployability (is on you)
+IDEALS -- 3 Event-driven
+IDEALS -- 4 Availability over consistency
+IDEALS -- 5 Loose coupling
+IDEALS -- 6 Single responsibility
+IDEALS principles for microservice design
+If it ain't broke, don't fix it
 IIFE
 immutability
-Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
+Interface segregation principle = instead of a class interface with all possible methods clients might need, there should be separate interfaces catering to the specific needs of each type of client https://en.wikipedia.org/wiki/Interface_segregation_principle
 Joel test
 JS equality
 JS http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
@@ -143,6 +173,7 @@ MDN
 memory -- heap
 memory -- stack
 message passing
+message passing https://en.wikipedia.org/wiki/Message_passing
 microcode
 migrations
 mocha / chai
@@ -170,6 +201,15 @@ pointer
 polyfill
 privacy - collect and use someone's info respectfully
 privacy - regulations/compliance AND expectations
+programming -- application
+programming -- systems https://en.wikipedia.org/wiki/Systems_programming
+programming language -- Rust https://www.rust-lang.org/
+programming language -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
+programming paradigm -- declarative programming
+programming paradigm -- functional programming
+programming paradigm -- imperative programming
+programming paradigm -- object oriented
+programming paradigm -- reactive
 promises
 prototypes
 proxy
@@ -189,7 +229,7 @@ RFC https://rfc.fyi/
 Role-Based Access Control (RBAC)
 rollback
 rolling deploy
-scaling horizontal
+scatter/gather (datastreams)
 scope
 Scrum
 security -- OWASP top 10 https://owasp.org/www-project-top-ten/
@@ -203,28 +243,29 @@ shaving the yak
 shim vs polyfill vs ponyfill
 shrinkwrap
 single source of truth
+single source of truth (SSOT)
 Site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
 SLI Service Level Indicator A measurement of how reliable or performant a Capability is. Example: “time it takes to create a ticket”
 SLO Service Level Objective (proactive) A target set on the SLI. Failing to hit the target == unhappy customer! Example: “Jira ticket created in less than 1s”
 SME
-SOLID (OOP) -- 1 Single responsibility principle (SRP) https://en.wikipedia.org/wiki/Single_responsibility_principle
-SOLID (OOP) -- 2 Open–closed principle (OCP) https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
-SOLID (OOP) -- 3 Liskov substitution principle https://en.wikipedia.org/wiki/Liskov_substitution_principle
-SOLID (OOP) -- 4 Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
-SOLID (OOP) -- 5 principle https://en.wikipedia.org/wiki/Dependency_inversion_principle
+SOLID -- 1 Single responsibility principle (SRP) https://en.wikipedia.org/wiki/Single_responsibility_principle
+SOLID -- 2 Open–closed principle (OCP) https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
+SOLID -- 3 Liskov substitution principle https://en.wikipedia.org/wiki/Liskov_substitution_principle
+SOLID -- 4 Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
+SOLID -- 5 principle https://en.wikipedia.org/wiki/Dependency_inversion_principle
 spec
 stack overflow
 state
 state management
 streams
+superapp
 Sustainable Architectural Decisions https://adr.github.io/
 system call
 TDD
 TDZ
-team -- Tuckman model "Forming, Storming, Norming, and Performing"
 tech debt -- Accidental - e.g. bugs due to human error that unknowingly increases the cost of future work.
-tech debt -- Deliberate  - e.g. optimising for short term delivery, knowing it increases the cost of future work.
-tech debt -- Incidental  - e.g. organic changes in complexity over time that increases the cost of future work.
+tech debt -- Deliberate - e.g. optimising for short term delivery, knowing it increases the cost of future work.
+tech debt -- Incidental - e.g. organic changes in complexity over time that increases the cost of future work.
 this
 thread
 transpiler
@@ -233,15 +274,15 @@ tree
 tree walk
 typecast
 types
-UGC User Generated Content
 uptime
 use boring technology
 use strict
+User Generated Content (UGC)
 vaporware
-variables pointeur / natives
+variables pointer / natives
 virtual private cloud (VPC)
 web assembly (asm.js)
 WET https://overreacted.io/the-wet-codebase/
 X considered harmful
-YAGINTF - yet another guideline I need to follow?
-YAGNI -- Too general too soon https://frontendatscale.com/issues/15/
+yet another guideline I need to follow (YAGINTF)
+you aren't gonna need it (YAGNI) -- Too general too soon https://frontendatscale.com/issues/15/

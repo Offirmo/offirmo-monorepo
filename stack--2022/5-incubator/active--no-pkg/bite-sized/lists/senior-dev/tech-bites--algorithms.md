@@ -21,6 +21,8 @@ CRDT
 Day–Stout–Warren = amortized binary tree balancing https://en.wikipedia.org/wiki/Day%E2%80%93Stout%E2%80%93Warren_algorithm
 dynamic = ex. For an initial set of N numbers, dynamically maintain the maximal one when insertion and deletions are allowed.
 greedy https://en.wikipedia.org/wiki/Greedy_algorithm
+hashing
+hashing -- consistent hashing
 hashing -- Extendible hashing, Consistent hashing https://en.wikipedia.org/wiki/Consistent_hashing
 heuristic https://en.wikipedia.org/wiki/Heuristic_(computer_science)
 Huffman coding https://en.wikipedia.org/wiki/Huffman_coding
