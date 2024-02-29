@@ -1,16 +1,68 @@
-/////////////////////////////////////////////////
-// building blocks
-import { JSONObject } from './json.js'
+
 import { IETFLanguageType } from './international.js'
-import { Email‿str, Url‿str, SocialNetworkLink } from './web.js'
 
 /////////////////////////////////////////////////
 // building blocks
 
+// TODO refine
 export type Emoji = string
+export type Url‿str = string
+export type Email‿str = string
 
-export type SemVer = string // TODO better? https://semver.org/
+export interface SocialNetworkLink {
+	url: Url‿str // mandatory
+	handle?: string // ex @Offirmo, u/Offirmo
+	network: // helps to parse. Not optional bc I can add if missing
+		| 'artstation'
+		| 'github'
+		| 'instagram'
+		| 'producthunt'
+		| 'reddit'
+		| 'twitter'
+}
 
+export interface WithOnlinePresence {
+	urlⵧcanonical: Url‿str
+	urlsⵧsocial?: SocialNetworkLink[]
+}
+
+export interface Author extends WithOnlinePresence {
+	name: string
+	intro?: string // very short intro. TODO refine
+	email?: Email‿str
+	contact?: Url‿str // should not duplicate email
+}
+
+/////////////////////////////////////////////////
+// Meta, tech-agnostic content
+
+export interface Thing {
+	lang?: IETFLanguageType
+	description: string // must be simple, a paragraph at most
+	author: Author | undefined // undef = unknown :-(
+	// TODO refine, license to what? is it a license to REUSE (as in npm package.json)?
+	// ALSO spdx is for Software!
+	//license: License‿SPDX | License‿SPDX[] | undefined // https://spdx.org/licenses/ undef = unknown :-(
+}
+
+export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
+
+	contact?: Url‿str // if not provided, default to author's Ideally should be a "contact center" https://docs.aws.amazon.com/connect/latest/adminguide/connect-concepts.html
+	contactⵧsecurity?: Url‿str // if not provided, default to contact
+	contactⵧsupport?: Url‿str // if not provided, default to contact
+
+}
+
+/////////////////////////////////////////////////
+// generic content
+
+// TODO text with lang
+
+// TODO review
+// see also
+// https://en.wikipedia.org/wiki/Elevator_pitch
+// https://en.wikipedia.org/wiki/Mission_statement
+// https://en.wikipedia.org/wiki/Vision_statement
 //
 // Content length?
 // single line = 50-75 ch https://baymard.com/blog/line-length-readability
@@ -20,18 +72,11 @@ export type SemVer = string // TODO better? https://semver.org/
 //       ref https://blog.twitter.com/en_us/topics/product/2017/Giving-you-more-characters-to-express-yourself
 //           https://blog.twitter.com/engineering/en_us/topics/insights/2017/Our-Discovery-of-Cramming
 // Google Search Snippet = ?
-
 // the most important
-export type Descriptionⳇbite_sized = string // TODO max length?? fits in a tweet?
-
+//export type Descriptionⳇbite_sized = string // TODO max length?? fits in a tweet?
 // also very important
-export type Descriptionⳇtitle = string
-
-
-
-// TODO review
+//export type Descriptionⳇtitle = string
 /*
-
 // Tagged union types
 export interface Contentⳇplainᝍtext {
 	type: 'plain-txt'
@@ -59,59 +104,6 @@ export type Content =
 //	| Contentⳇweb No, Content is often a building block to build a web page
 */
 
-// SPDX license expression syntax version 2.0 string
-// https://spdx.org/licenses/
-// https://spdx.dev/learn/handling-license-info/
-export type SoftwareLicense‿SPDX = string
-
-export interface WithOnlinePresence {
-	urlⵧcanonical: Url‿str
-	urlsⵧsocial?: SocialNetworkLink[]
-}
-
-export interface Author extends WithOnlinePresence {
-	name: string
-	intro?: string // very short intro. TODO refine
-	email?: Email‿str
-	contact?: Url‿str // should not duplicate email
-}
-
-// https://en.wikipedia.org/wiki/Impressum
-export interface Impressum {
-	// Only for germany, TODO one day
-}
-
-/////////////////////////////////////////////////
-// Meta, tech-agnostic content
-
-export interface Thing {
-	lang?: IETFLanguageType
-	description: string // must be simple, a paragraph at most
-	author: Author | undefined // undef = unknown :-(
-	// TODO refine, license to what? is it a license to REUSE (as in npm package.json)?
-	// ALSO spdx is for Software!
-	//license: License‿SPDX | License‿SPDX[] | undefined // https://spdx.org/licenses/ undef = unknown :-(
-}
-
-export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
-
-	contact?: Url‿str // if not provided, default to author's Ideally should be a "contact center" https://docs.aws.amazon.com/connect/latest/adminguide/connect-concepts.html
-	contactⵧsecurity?: Url‿str // if not provided, default to contact
-	contactⵧsupport?: Url‿str // if not provided, default to contact
-
-	// XXX only applies to Software! TODO review
-	version?: SemVer
-	changelog?: Url‿str
-	source?: Url‿str // if relevant
-}
-
-// see also
-// https://en.wikipedia.org/wiki/Elevator_pitch
-// https://en.wikipedia.org/wiki/Mission_statement
-// https://en.wikipedia.org/wiki/Vision_statement
-
-/////////////////////////////////////////////////
-// generic content
 
 /////////////////////////////////////////////////
 // tech specific content
@@ -121,8 +113,6 @@ export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
 // author
 // description
 // version
-
-
 
 // Google search
 // NO! Useless, we have no control over this...
