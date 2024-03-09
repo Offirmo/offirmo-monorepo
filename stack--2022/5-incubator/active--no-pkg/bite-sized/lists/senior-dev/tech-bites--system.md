@@ -36,7 +36,7 @@ flux architecture
 ingress egress
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
 kafka = pub/sub + store + process
-kubernetes
+kubernetes TODO
 latency
 load balancer
 load balancer -- google sth
@@ -72,3 +72,7 @@ well architected -- pillar -- performance efficiency = using IT and computing re
 well architected -- pillar -- reliability = consistently and correctly perform intended functions, Recover from infrastructure or service disruptions, Dynamically acquire computing resources to meet demand, Mitigate disruptions such as misconfigurations or transient network issues -- includes testing recovery procedures, scaling horizontally to increase aggregate system availability, and automatically recovering from failure.
 well architected -- pillar -- security = protecting information, systems, and assets while delivering business value through risk assessments and mitigation strategies -- Automate security best practices when possible, Apply security at all layers, Protect data in transit and at rest.
 well architected -- pillar -- sustainability = minimizing the environmental impact of your technology -- Understand your impact, Establish sustainability goals, Maximize utilization, Anticipate and adopt new, more efficient hardware and software offerings, Use managed services, Reduce the downstream impact of your cloud workloads
+XXX Practiced popular system design problems like designing a URL shortening service, Pastebin, Instagram, Dropbox, Facebook Messenger, Twitter, YouTube/Netflix, Typeahead Suggestion, API Rate Limiter, Twitter Search.
+XXX Practiced system design for some Google products, including Google Search, YouTube, Google Photo Sharing and Storage, Google Docs, Google Drive.
+XXX Read a few research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
+XXX Revised system design concepts such as CAP and PACELC theroem, SQL vs No-SQL, Types of No-SQL databases and their applications, Consistent Hashing, Bloom Filters, Load Balancers, Horizontal Scaling, Caching, Database Partitioning/Sharding, Indexes, Rate Limiting, Distributed Queues, Request Deduplication.

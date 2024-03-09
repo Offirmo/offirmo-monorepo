@@ -1,3 +1,4 @@
+Adhoc questions on the application of Array, Stack, Queue, HashMap, TreeMap
 algorithmic paradigm -- Backtracking
 algorithmic paradigm -- Branch and bound
 algorithmic paradigm -- Brute-force search
@@ -8,6 +9,7 @@ algorithmic paradigm -- Prune and search
 algorithmic paradigm -- Recursion
 algorithmic paradigm = https://en.wikipedia.org/wiki/Algorithmic_paradigm
 antisymetric
+Binary Search: Lower bound, Upper bound, Questions where binary search is not the obvious choice
 BPE / Byte pair encoding https://github.com/openai/tiktoken
 Cache-oblivious https://en.wikipedia.org/wiki/Cache-oblivious_algorithm
 Communication-avoiding https://en.wikipedia.org/wiki/Communication-avoiding_algorithm
@@ -19,11 +21,22 @@ computational complexity -- Query time = time required to answer a query;
 computational complexity -- Space = the amount of memory space required to store the data structure;
 CRDT
 Day–Stout–Warren = amortized binary tree balancing https://en.wikipedia.org/wiki/Day%E2%80%93Stout%E2%80%93Warren_algorithm
+Disjoint set union
 dynamic = ex. For an initial set of N numbers, dynamically maintain the maximal one when insertion and deletions are allowed.
+dynamic programming
+graph -- BFS https://en.wikipedia.org/wiki/Breadth-first_search
+graph -- DFS
+graph -- shortest path
+graph -- shortest path -- A*
+graph -- shortest path -- Djikstra https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+graph -- Topological sort
 greedy https://en.wikipedia.org/wiki/Greedy_algorithm
 hashing
 hashing -- consistent hashing
 hashing -- Extendible hashing, Consistent hashing https://en.wikipedia.org/wiki/Consistent_hashing
+heap -- median in a stream
+heap -- sliding window maximum
+heap -- top k elements
 heuristic https://en.wikipedia.org/wiki/Heuristic_(computer_science)
 Huffman coding https://en.wikipedia.org/wiki/Huffman_coding
 LLM -- temperature scaling
@@ -31,6 +44,13 @@ LLM output generation -- beam search = search algorithm used to generate output 
 LLM output generation -- nucleus sampling aka. top-P sampling
 LLM output generation -- sampling = search algorithm used to generate output sequences from a model during inference https://ai-guide.future.mozilla.org/content/llms-101/
 Luleå algorithm https://en.wikipedia.org/wiki/Lule%C3%A5_algorithm
+Markov Chains -- absorbing -- standard form
+Markov Chains -- absorbing = only if absorbing state(s) and non-absorbing state(s) can end up in absorbing state(s)
+Markov Chains -- absorbing state https://www.youtube.com/watch?v=bTeKu7WdbT8
+Markov Chains -- limiting matrix
+Markov Chains -- stationary distribution
+Markov Chains -- transition matrix
+Markov Chains https://www.youtube.com/watch?v=JHwyHIz6a8A
 NP = Class of computational decision problems for which any given yes-solution can be verified as a solution in polynomial time by a deterministic Turing machine (or solvable by a non-deterministic Turing machine in polynomial time).
 NP-complete = Class of decision problems which contains the hardest problems in NP. Each NP-complete problem has to be in NP.
 NP-easy = At most as hard as NP, but not necessarily in NP.
@@ -46,12 +66,17 @@ search -- interpolation https://en.wikipedia.org/wiki/Interpolation_search
 search -- linear O(n) = the worst
 search -- ternary https://en.wikipedia.org/wiki/Ternary_search
 search -- unary
+Sliding window and 2 pointers based questions
 sort -- alphadev https://www.nature.com/articles/s41586-023-06004-9
 sort -- burstsort
 sort -- radix sort O(nw) https://en.wikipedia.org/wiki/Radix_sort
 sort -- topological = a graph traversal in which each node is visited only after all its dependencies are visited. (need DAG) https://en.wikipedia.org/wiki/Topological_sorting
 sort https://en.wikipedia.org/wiki/Sorting_algorithm
+strings: KMP, String sorting
 Trabb Pardo-Knuth (TPK) https://en.wikipedia.org/wiki/TPK_algorithm
 transitive
 tree -- check if balanced
 tree -- rotation https://en.wikipedia.org/wiki/Tree_rotation
+tree -- search
+tree -- trie -- prefix search
+tree -- trie -- word search with counts

@@ -1,6 +1,7 @@
 +++ 2023 https://9elements.com/blog/ai-glossary/
 +++ https://platform.openai.com/docs/introduction/key-concepts
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
+??? https://github.com/SkalskiP/courses crème de la crème of AI courses
 Agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
 agents -- principals
 agents = you provide a goal, They'll generate a task list and get to work https://zapier.com/blog/ai-agent/
@@ -28,6 +29,7 @@ chatbots = the reason why AI exploded in 2023
 citation accuracy
 common sense https://commonsense.run/
 context
+control vector https://vgel.me/posts/representation-engineering/
 ControlNet = a type of model for controlling image diffusion models by conditioning the model with an additional input image https://huggingface.co/docs/diffusers/using-diffusers/controlnet https://github.com/lllyasviel/ControlNet
 cross encoder https://www.sbert.net/examples/applications/cross-encoder/README.html
 dataset  https://www.fatml.org/media/documents/datasheets_for_datasets.pdf
@@ -131,6 +133,7 @@ training (NN) -- transfer learning = see fine-tuning
 training (NN) -- unsupervised learning
 training (NN) = iterative process in which data is passed to a neural network + parameters of the neural network are adjusted to achieve an optimal solution for the given problem. a dataset is required
 Trainium
+transfer learning
 transformers "a new type of NLP model that demolished the reading comprehension abilities of both humans and the best AI incumbent at the time" ~pattern recognition techniques
 transformers (hugging face) = a magic python library that can auto-download models on demand https://github.com/huggingface/transformers BUT it's for research, not prod (no unified API for ex.)
 Turing test

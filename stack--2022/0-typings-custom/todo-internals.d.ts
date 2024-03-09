@@ -11,3 +11,5 @@ declare module '@offirmo-private/rich-text-format--to-terminal'
 declare module '@offirmo-private/react-error-boundary'
 declare module '@offirmo-private/soft-execution-context--node'
 */
+
+// TODO? https://www.mattstobbs.com/object-keys-typescript/

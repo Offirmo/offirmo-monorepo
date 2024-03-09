@@ -26,3 +26,9 @@ https://openfga.dev/
 https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/
 
 https://thewokesalaryman.substack.com/p/why-scammers-love-to-target-people in Singapore
+
+
+Scams
+https://www.scamwatch.gov.au/about-us
+https://www.accc.gov.au/national-anti-scam-centre/advisory-board-for-the-anti-scam-centre
+https://www.scamwatch.gov.au/research-and-resources/the-little-black-book-of-scams

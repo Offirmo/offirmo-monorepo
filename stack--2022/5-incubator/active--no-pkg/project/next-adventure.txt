@@ -42,6 +42,10 @@ Google
       ⇱ screening
       ⇱ system design https://www.swequiz.com/#pricing
 
+Meta
+  https://medium.com/@rohitverma_87831/my-interview-experience-at-meta-ad7eb22dd220
+
+
 OpenAi
 https://openai.com/careers/search?l=san-francisco%252C-california%252C-united-states
 
@@ -54,3 +58,10 @@ https://javarevisited.blogspot.com/2018/02/10-courses-to-prepare-for-programming
 
 [] design patterns
 [] Rust
+[] https://kube.academy/courses/getting-started
+
+https://algo.monster/
+https://interviewing.io/
+https://medium.com/@andreimargeloiu/the-definitive-guide-to-the-coding-interview-2704d166664c
+
+what projects you have worked on before and which was the most impressive one

@@ -1151,3 +1151,5 @@ https://lifehacker.com/how-much-garden-you-would-need-to-100-survive-on-18488291
 https://worldbuilding.stackexchange.com/questions/253516/how-strong-would-a-realistically-evolved-orc-be
 
 Dans les jeux de pouvoir, il y a deux règles quand on s'en empare: virer les responsables sous celui qu'on remplace pour y amener sa clique, ses sbires, et détruire tous les projets en cours qui ne paraissent pas absolument essentiels et rémunérateurs.
+
+https://worldbuilding.stackexchange.com/questions/254509/valid-reason-for-not-having-plate-armor-in-early-medieval-low-magic-fantasy-set

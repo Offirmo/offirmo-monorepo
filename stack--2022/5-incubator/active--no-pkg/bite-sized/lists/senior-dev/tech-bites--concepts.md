@@ -40,6 +40,7 @@ connascence https://en.wikipedia.org/wiki/Connascence
 constructor
 context switch
 Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
+correlation
 cost based rate limiting
 courbe d'expertise
 CPU https://cpu.land/
@@ -242,6 +243,7 @@ Service Proxy Egress authentication
 shaving the yak
 shim vs polyfill vs ponyfill
 shrinkwrap
+simple average
 single source of truth
 single source of truth (SSOT)
 Site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
@@ -255,8 +257,10 @@ SOLID -- 4 Interface segregation principle https://en.wikipedia.org/wiki/Interfa
 SOLID -- 5 principle https://en.wikipedia.org/wiki/Dependency_inversion_principle
 spec
 stack overflow
+standard deviation
 state
 state management
+stats https://www.youtube.com/playlist?list=PLltdM60MtzxNwhL4sg7swFFlUlH7EEy7H []
 streams
 superapp
 Sustainable Architectural Decisions https://adr.github.io/

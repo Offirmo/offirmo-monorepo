@@ -27,3 +27,6 @@ export type FontFamilyGenericName =
 export interface Withꓽfontᝍfamily {
 	'font-family': Array<string | FontFamilyGenericName>
 }
+
+
+// https://github.com/atlassian-labs/compiled/blob/a01bb381dcc22a976b0825853fa7856c3dbc5b63/packages/react/src/types.ts

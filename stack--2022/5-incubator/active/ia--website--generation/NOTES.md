@@ -42,3 +42,6 @@ model to evaluate a model?
 should NOT require a manual re-verification of everything on re-generation
 
 have another AI review the code / output?
+
+
+https://www.abc.net.au/news/2022-12-29/the-risk-of-pet-hamsters-and-gerbils-in-australia/101812034

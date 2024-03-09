@@ -4,6 +4,7 @@ array -- dynamic = https://en.wikipedia.org/wiki/Dynamic_array
 deterministic acyclic finite state automaton (DAFSA)
 dictionary = associative array = map = symbol table
 gap buffer = https://en.wikipedia.org/wiki/Gap_buffer
+graph -- in-degree and out-degree ?
 hash table
 heap
 map

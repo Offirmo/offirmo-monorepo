@@ -11,6 +11,8 @@ export default function normalize_trailing_slash() {
 	 * https://searchfacts.com/url-trailing-slash/
 	 * https://ahrefs.com/blog/trailing-slash/
 	 *
+	 * Could we use <base> instead? Pb. is when the content is served on different domains: dev, staging, prod...
+	 *
 	 * SO we decide to ensure folders have a trailing slash
 	 * ex. /foo/bar/index.html => ✔ no change
 	 * ex. /foo/bar/           => ✔ no change
