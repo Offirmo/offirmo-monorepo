@@ -12,3 +12,11 @@ td {
 tbody tr:nth-child(odd) {
 	background-color: var(--o⋄color⁚bg--highlight--1); /* Todo token */
 }
+thead {
+	/* https: //btxx.org/posts/Please_Make_Your_Table_Headings_Sticky/ */
+	position: sticky;
+	top: 0;
+}
+
+/* TODO https: //btxx.org/posts/tables/
+ */

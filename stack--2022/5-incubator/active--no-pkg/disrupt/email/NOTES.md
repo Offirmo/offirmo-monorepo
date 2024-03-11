@@ -30,3 +30,6 @@ https://posthog.com/blog/slack-closure "Messages quickly disappear from the chat
 
 
 https://ia.acs.org.au/content/ia/article/2023/forced-email-migrations--distressing--to-older-australians.html
+
+
+https://openrss.org/blog/how-google-helped-destroy-adoption-of-rss-feeds

@@ -65,6 +65,7 @@ fast reading
 Faustian Bargain: A man once sold his soul to a demon in exchange for knowledge. At first, it seemed like a smart trade. But the man lost in the long-run. Tragically, what the man lost was more valuable than what he earned. In short, he won the battle but lost the war.
 femme/homme enfat https://www.wengood.com/fr/developpement-personnel/se-connaitre/art-femme-enfant
 fire
+first-principles thinker
 FOMO
 FUD
 fundamental attribution error https://en.wikipedia.org/wiki/Fundamental_attribution_error
@@ -166,6 +167,7 @@ put into words
 question authority
 race to the bottom
 Reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
+rebound effect https://blog.jim-nielsen.com/2024/notes-on-making-software-by-peter-van-hardenberg/
 resource Curse: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources.
 RICE Reach Impact Confidence Estimate
 ring theory: - The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
@@ -216,6 +218,7 @@ tool: spreadsheet
 tool: trello
 top-down/bottom-up
 tradeoffs / can't have everything
+Tree Decision Rights Model http://www.cio.com/article/2386119/careers-staffing/how-it-leaders-can-empower-teams-to-become-decision-makers.html
 trolley problem https://neal.fun/absurd-trolley-problems/
 trust is earned
 trust takes years to earn and seconds to lose / Trust is built slowly, and lost quickly
