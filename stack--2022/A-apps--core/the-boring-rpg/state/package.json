@@ -49,7 +49,7 @@
 	},
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",
-		"refresh-build-variables": "monoropo-script--update_build_variables --mode=ts",
+		"refresh-build-variables": "monoropo-script--update-build-variables --mode=ts",
 
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
 		"_build:prod": "monorepo-script--build-typescript-package --module=esm",

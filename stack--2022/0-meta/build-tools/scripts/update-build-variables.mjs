@@ -2,7 +2,7 @@
 ':' //# https://sambal.org/?p=1014 ; exec /usr/bin/env node --experimental-import-meta-resolve "$0" "$@"
 
 /////////////////////////////////////////////////
-console.log('🧙️  Hello from update_build_variables.js!')
+console.log('🧙️  Hello from update-build-variables.js!')
 
 import path from 'node:path'
 import { readFileSync, writeFileSync } from 'node:fs'

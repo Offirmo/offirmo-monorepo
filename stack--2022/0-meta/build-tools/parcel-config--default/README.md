@@ -3,6 +3,7 @@
 ## Concepts
 https://parceljs.org/plugin-system/configuration/#shared-configuration
 
+
 ## Plugins
 
 ### core plugins
@@ -24,10 +25,9 @@ Current issue https://github.com/parcel-bundler/parcel/issues/7823#issuecomment-
 * tried "parcel-resolver-typescript-esm", but it's not working https://www.npmjs.com/package/parcel-resolver-typescript-esm
 
 
-
 ## tosort
 
-Doesn't work, bugs on unit tests and many other stuff.
+Doesn't work, bugs on unit tests and many other places.
 ```json
 "validators": {
   "*.{ts,tsx}": ["@parcel/validator-typescript"]

@@ -9,7 +9,7 @@
 		"monorepo-script--build-typescript-package": "./build-typescript.mjs",
 		"monorepo-script--clean-package": "./clean.mjs",
 		"monorepo-script--monorepo-utils": "./monorepo-utils.mjs",
-		"monoropo-script--update_build_variables": "./update_build_variables.mjs"
+		"monoropo-script--update-build-variables": "./update-build-variables.mjs"
 	},
 
 	"dependencies": {

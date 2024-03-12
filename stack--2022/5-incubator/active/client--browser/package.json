@@ -15,7 +15,7 @@
 		"clean": "monorepo-script--clean-package …dist …cache",
 
 		"refresh--entry-points": "npx tsx src2/website-entry-points/index.mts",
-		"refresh--build-variables": "monoropo-script--update_build_variables  --mode=ts  --inputDir=../../../A-apps--core/the-boring-rpg/state",
+		"refresh--build-variables": "monoropo-script--update-build-variables  --mode=ts  --inputDir=../../../A-apps--core/the-boring-rpg/state",
 
 		"start:parcel": "parcel serve src/index.html --port 8080  --lazy  --no-autoinstall",
 		"start:vite":     "vite src/           --port 8080",

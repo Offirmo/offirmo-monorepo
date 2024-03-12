@@ -139,7 +139,7 @@
 		"openai": "^4",
 		"parcel": "^2",
 		"path-exists": "^5",
-		"pokemon": "^2",
+		"pokemon": "^3",
 		"prettier": "^3",
 		"prettyjson": "^1",
 		"process": "^0",

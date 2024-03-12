@@ -39,7 +39,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"loud-rejection": "^2",
-		"pokemon": "^2",
+		"pokemon": "^3",
 		"sum-up": "^3"
 	},
 

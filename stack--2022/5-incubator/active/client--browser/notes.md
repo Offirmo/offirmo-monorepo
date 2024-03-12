@@ -59,7 +59,7 @@ yarn refresh--build-variables
 
 
 		"refresh-loading-template": "offirmo-simple-upgradable-template-apply --template=../../../3-advanced--browser/iframe--loading/src/index.html --destination=./src/index.html",
-		"refresh-build-variables": "monoropo-script--update_build_variables --inputDir=../../../A-apps--core/the-boring-rpg/state",
+		"refresh-build-variables": "monoropo-script--update-build-variables --inputDir=../../../A-apps--core/the-boring-rpg/state",
 		"build:parcel": "parcel build --no-minify src/*.html --public-url ./",
 		"copy-extra": "cp -f src/*.json src/google*.html src/for-open-graph.jpg dist",
 		"copy-favicons-for-webmanifest": "mkdir -p dist/favicons && cp -rf dist/android-chrome-512x512.*.png dist/favicons/android-chrome-512x512.png",
