@@ -84,6 +84,11 @@ organizations
 PACELC theorem = extension of CAP https://en.wikipedia.org/wiki/PACELC_theorem
 paper https://research.google/pubs/large-scale-cluster-management-at-google-with-borg/
 paper https://research.google/pubs/the-google-file-system/
+paper https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf
+paper https://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf
+paper https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf
+paper https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf
+paper https://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf
 performance
 permissions
 perspective -- non-tech -- business = creates business model that integrates IT strategy

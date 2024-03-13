@@ -11,6 +11,7 @@ APIs web
 appli web
 apply / call / bind
 arguments
+Effect<Success, Error, Requirements> https://effect.website/docs/guides/essentials/the-effect-type
 assembly
 async -- design pattern -- reactor pattern
 async -- sync By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
@@ -99,7 +100,6 @@ git
 global variable
 go
 graph
-GRASP (object-oriented design) = General Responsibility Assignment Software Patterns = nine fundamental principles in object design and responsibility assignment https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)
 GRASP -- 1 Information expert = Assign responsibility to the class that has the information needed to fulfill it
 GRASP -- 2 Creator = Who creates object A? In general, Assign class B the responsibility to create object A if one, or preferably more, of the following apply...
 GRASP -- 3 Controller = A controller object is a non-user interface object responsible for receiving or handling a system event
@@ -110,7 +110,9 @@ GRASP -- 7 Polymorphism = responsibility for defining the variation of behaviors
 GRASP -- 8 Protected variations = Identify points of predicted variation or instability; assign responsibilities to create a stable interface around them
 GRASP -- 9 Pure fabrication =
 GRASP -- see also: SOLID
+GRASP (object-oriented design) = General Responsibility Assignment Software Patterns = nine fundamental principles in object design and responsibility assignment https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)
 handle
+héritage prototypal, héritage en diamant
 hoisting des vars de boucle for et switch
 hooks
 hotfix
@@ -133,7 +135,6 @@ https://itnext.io/deployment-maturity-levels-feab55c20d04
 https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
 https://www.atlassian.com/team-playbook/plays/elevator-pitch
 https://xyproblem.info/
-héritage prototypal, héritage en diamant
 IDEALS -- 1 Interface segregation
 IDEALS -- 2 Deployability (is on you)
 IDEALS -- 3 Event-driven
@@ -176,6 +177,7 @@ memory -- stack
 message passing
 message passing https://en.wikipedia.org/wiki/Message_passing
 microcode
+microprocessor https://firstmicroprocessor.com/
 migrations
 mocha / chai
 monde du web ?
@@ -186,8 +188,8 @@ nommage des fonctions
 npm
 nyan cat
 object
-observability "is a measure of how well internal states of a system can be inferred from knowledge of its external outputs" https://andydote.co.uk/presentations/index.html
 observability -- openTelemetry https://opentelemetry.io/docs/concepts/observability-primer/
+observability "is a measure of how well internal states of a system can be inferred from knowledge of its external outputs" https://andydote.co.uk/presentations/index.html
 OKR
 OOP
 optim des || et && effet de bord

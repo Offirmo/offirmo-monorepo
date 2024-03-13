@@ -12,3 +12,7 @@ export * from './40-email/index.js'
 export * from './50-webpage/index.js'
 
 export * from './90-semantic/index.js'
+
+export function getꓽcharset() {
+	return 'utf-8'
+}

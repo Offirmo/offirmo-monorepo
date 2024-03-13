@@ -8,6 +8,7 @@ graph -- in-degree and out-degree ?
 hash table
 heap
 map
+complexity chart https://flexiple.com/algorithms/big-o-notation-cheat-sheet
 piece table https://en.wikipedia.org/wiki/Piece_table
 rope https://en.wikipedia.org/wiki/Rope_(data_structure)
 search = retrieve efficiently from a set https://en.wikipedia.org/wiki/Search_data_structure
