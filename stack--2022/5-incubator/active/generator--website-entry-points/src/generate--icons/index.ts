@@ -1,19 +1,19 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
+import { renderꓽsvg, createꓽfrom_emoji, SVG } from '@offirmo-private/generator--svg';
 
-import { WebsiteEntryPointSpec } from '../types.js'
+import { WebPropertyEntryPointSpec } from '../types.js'
 
-import { renderꓽsvg, createꓽfrom_emoji, SVG } from '../utils/svg/index.js'
 
 /////////////////////////////////////////////////
 
 // TODO get
-function generateꓽsvg(spec: Immutable<WebsiteEntryPointSpec>): Immutable<SVG> {
+function generateꓽsvg(spec: Immutable<WebPropertyEntryPointSpec>): Immutable<SVG> {
 	return spec.icon ?? createꓽfrom_emoji('🔥')
 }
 
 // null = size-less (true SVG)
-function generateꓽfile(spec: Immutable<WebsiteEntryPointSpec>, size: number | null): string {
+function generateꓽfile(spec: Immutable<WebPropertyEntryPointSpec>, size: number | null): string {
 	return renderꓽsvg(
 		generateꓽsvg(spec),
 		{
@@ -26,7 +26,7 @@ function generateꓽfile(spec: Immutable<WebsiteEntryPointSpec>, size: number | 
 	)
 }
 
-function generateꓽinline(spec: Immutable<WebsiteEntryPointSpec>): string {
+function generateꓽinline(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	return renderꓽsvg(generateꓽsvg(spec), {
 			wantsꓽcompact: true,
 		},

@@ -1,14 +1,14 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { WebsiteEntryPointSpec } from '../types.js'
+import { WebPropertyEntryPointSpec } from '../types.js'
 import {
 	isꓽpublic
-} from '../selectors.js'
+} from '../selectors/index.js'
 
 /////////////////////////////////////////////////
 
-function generate(spec: Immutable<WebsiteEntryPointSpec>): string {
+function generate(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	// TODO only allowed from the top!!
 	// TODO Sitemap: http://www.example.com/sitemap.xml
 

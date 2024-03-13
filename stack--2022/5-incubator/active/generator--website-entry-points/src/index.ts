@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import * as Prettier from 'prettier'
 import { Immutable, AbsolutePath } from '@offirmo-private/ts-types'
 
-import { EntryPoints, WebsiteEntryPointSpec } from './types.js'
+import { EntryPoints, WebPropertyEntryPointSpec } from './types.js'
 
 import {
 	needsꓽwebmanifest,
@@ -34,7 +34,7 @@ import * as fs from '@offirmo/cli-toolbox/fs/extra'
 
 /////////////////////////////////////////////////
 
-function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>): EntryPoints {
+function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
 	return {
 		// MAIN
 		[getꓽbasenameⵧindexᐧhtml(spec)]: generateꓽindexᐧhtml(spec),
@@ -44,8 +44,8 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>):
 
 		// ICONS
 		...getꓽicon__sizes(spec).reduce((acc, size) => {
-				acc[getꓽicon__path(spec, size)] = generateꓽicon_file(spec, size)
-				return acc
+			acc[getꓽicon__path(spec, size)] = generateꓽicon_file(spec, size)
+			return acc
 		}, {} as EntryPoints),
 		// size-less version
 		[getꓽicon__path(spec, null)]: generateꓽicon_file(spec, null),
@@ -62,6 +62,7 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>):
 }
 
 /////////////////////////////////////////////////
+// write to file
 
 const PRETTIER_OPTIONS = {
 	printWidth: 120,
@@ -127,7 +128,7 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 
 /////////////////////////////////////////////////
 
-async function generateꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebsiteEntryPointSpec>, targetDir: AbsolutePath, options: {
+async function generateꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpec>, targetDir: AbsolutePath, options: {
 	rm?: boolean,
 } = {}): Promise<EntryPoints> {
 	const entries = getꓽwebsiteᝍentryᝍpoints(spec)
@@ -149,4 +150,3 @@ export {
 	generateꓽwebsiteᝍentryᝍpoints,
 }
 export * from './types.js'
-export * as SVG from './utils/svg/index.js'

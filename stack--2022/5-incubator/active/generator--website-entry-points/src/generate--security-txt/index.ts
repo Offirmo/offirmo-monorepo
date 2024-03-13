@@ -1,14 +1,14 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { WebsiteEntryPointSpec } from '../types.js'
+import { WebPropertyEntryPointSpec } from '../types.js'
 import {
 	getꓽcontactⵧsecurity,
-} from '../selectors.js'
+} from '../selectors/index.js'
 
 /////////////////////////////////////////////////
 
-function generate(spec: Immutable<WebsiteEntryPointSpec>): string {
+function generate(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	return `
 # https://securitytxt.org/
 

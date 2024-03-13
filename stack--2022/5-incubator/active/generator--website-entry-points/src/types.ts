@@ -1,15 +1,24 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import {
+	Immutable,
+	Emoji,
+	Basename,
+	/*
+	Author,
+	Contentⳇweb,
+	CssColor‿str,
+	Descriptionⳇtitle,
+	Thing,
+	ThingWithOnlinePresence,*/
+} from '@offirmo-private/ts-types'
 import {
 	Author,
-	Basename,
 	Contentⳇweb,
 	CssColor‿str,
 	Descriptionⳇtitle,
 	Thing,
 	ThingWithOnlinePresence,
-} from '@offirmo-private/ts-types'
-
-import { SVG } from './utils/svg'
+} from '@offirmo-private/ts-types-web';
+import type { SVG } from "@offirmo-private/generator--svg";
 
 /////////////////////////////////////////////////
 
@@ -47,18 +56,18 @@ type Category =
 	| 'utilities'
 	| 'weather'
 
-interface WebPage extends ThingWithOnlinePresence {
-	title: Descriptionⳇtitle
-	icon?: Immutable<SVG>
-	keywords?: string[]
+interface WebProperty extends ThingWithOnlinePresence {
+	title: Descriptionⳇtitle;
+	icon?: Emoji | Immutable<SVG>;
+	keywords?: string[];
 
-	content: Contentⳇweb
+	content: Contentⳇweb;
 
 	/////// SOCIAL
-	titleⵧsocial?: string
-	descriptionⵧsocial?: string
 	// TODO full open graph type
-
+	// TODO move to dedicated type
+	//titleⵧsocial?: string;
+	//descriptionⵧsocial?: string;
 
 	/////// POLISH
 	// https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors
@@ -67,20 +76,23 @@ interface WebPage extends ThingWithOnlinePresence {
 	// from: https://web.dev/learn/pwa/web-app-manifest/#recommended_fields
 	// - Warning: Do not use transparency, CSS variables, gradient functions, or color functions with transparency (such as rgba())
 	// - as they are not supported by most browsers. You will get inconsistent results.
-	colorⵧbackground?: CssColor‿str
-	colorⵧforeground?: CssColor‿str
-	colorⵧtheme?: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
+	colorⵧbackground?: CssColor‿str;
+	colorⵧforeground?: CssColor‿str;
+	colorⵧtheme?: CssColor‿str; // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
+	// TODO one day themes
 }
 
 
-
-interface WebsiteEntryPointSpec extends WebPage {
+interface WebPropertyEntryPointSpec extends WebProperty {
 	// must be flat for easy defaulting
 	// optional '?:' = truly optional (can be easily derived)
 	// TODO use zod? or tRPC?
 
-	preset?: 'game' | 'landing--app' | 'blog' // TODO clarify
-	// landing https://growth.design/case-studies/landing-page-ux-psychology
+	preset?:
+		| 'game' // webapp, uses full screen, no nav nor browser controls
+		| 'blog' // content oriented
+ 		| 'landing' // "rebound" page trying to promote the real content with a CTA: buy, install app... https://growth.design/case-studies/landing-page-ux-psychology
+		// TODO more on-demand
 
 	/////// PWA
 	app_categories?: Category[] // ??
@@ -96,11 +108,9 @@ interface WebsiteEntryPointSpec extends WebPage {
 	canꓽuse_window_controls_overlay?: boolean
 	usesꓽpull_to_refresh?: boolean
 
-	// TODO one day themes
 
 	/////// SRC
-	sourcecode?: boolean // TODO clarify generate TS source code
-	features?: Array<FeatureSnippets>
+	sourcecode?: boolean // TODO clarify generate JS/TS source code
 
 	/////// META
 	basename?: Basename // without extension. default to "index"
@@ -117,7 +127,7 @@ interface EntryPoints {
 
 export {
 	type Category,
-	type WebsiteEntryPointSpec,
+	type WebPropertyEntryPointSpec as WebPropertyEntryPointSpec,
 	type EntryPoints,
 }
 

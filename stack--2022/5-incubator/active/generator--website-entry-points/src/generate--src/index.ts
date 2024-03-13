@@ -1,13 +1,14 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { EntryPoints, WebsiteEntryPointSpec } from '../types.js'
+import { EntryPoints, WebPropertyEntryPointSpec } from '../types.js'
 import {
 	getꓽtitleⵧapp,
 	getꓽtitleⵧappⵧshort,
 	getꓽtitleⵧlib,
-	getꓽcolorⵧbackground, getꓽcolorⵧforeground,
-} from '../selectors.js'
+	getꓽcolorⵧbackground,
+	getꓽcolorⵧforeground,
+} from '../selectors/index.js'
 import { ifꓽdebug } from '../utils/debug.js'
 
 /////////////////////////////////////////////////
@@ -46,7 +47,7 @@ export {
 
 
 
-function generate(spec: Immutable<WebsiteEntryPointSpec>): EntryPoints {
+function generate(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
 	return {
 		'./app/consts.ts': `
 /////////////////////////////////////////////////

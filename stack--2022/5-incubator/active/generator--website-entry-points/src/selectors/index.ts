@@ -2,46 +2,56 @@ import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
-import { Basename, Immutable, IETFLanguageType, CssColor‿str, RelativePath } from '@offirmo-private/ts-types'
+import { Basename, Immutable, RelativePath } from '@offirmo-private/ts-types'
+import { CssColor‿str } from '@offirmo-private/ts-types-web'
+import { FeatureSnippets } from '@offirmo-private/generator--html'
 
-import {
-	normalize_unicode,
-	coerce_to_safe_basenameⵧstrictest,
-} from '@offirmo-private/normalize-string'
+import { normalize_unicode, coerce_toꓽsafe_basenameⵧstrictest } from '@offirmo-private/normalize-string'
 
-import { WebsiteEntryPointSpec } from '../types.js'
-import { FeatureSnippets } from '../utils/html/types.js'
+import { WebPropertyEntryPointSpec } from '../types.js'
 
 // Relpath should NOT feature ./ as it's up to the caller to decide if they want it or not
 // always use safe defaults
 
 /////////////////////////////////////////////////
+// re-export some
+export {
+	getꓽlang,
+	getꓽcharset,
+	getꓽauthor__name,
+	getꓽauthor__intro,
+	getꓽcontactⵧhuman,
+	getꓽcontactⵧsecurity,
+
+} from '@offirmo-private/ts-types-web';
+
+/////////////////////////////////////////////////
 // meta
 
-function isꓽdebug(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+function isꓽdebug(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	return spec.isꓽdebug ?? false
 }
 
-function getꓽENV(spec: Immutable<WebsiteEntryPointSpec>): string {
+function getꓽENV(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	return String((spec.env ?? process.env['NODE_ENV']) || 'development').toLowerCase()
 }
 
-function isꓽprod(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+function isꓽprod(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	return getꓽENV(spec) === 'production' || getꓽENV(spec) === 'prod'
 }
 
-function isꓽpublic(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+function isꓽpublic(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	return spec.isꓽpublic ?? isꓽprod(spec)
 }
 
-function shouldꓽgenerateꓽsourcecode(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+function shouldꓽgenerateꓽsourcecode(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	return spec.sourcecode ?? false
 }
 
 /////////////////////////////////////////////////
 // features
 
-function wantsꓽinstall(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+function wantsꓽinstall(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	if (typeof spec.wantsꓽinstall === 'string')
 		return true
 
@@ -56,7 +66,7 @@ function wantsꓽinstall(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 	return false
 }
 
-function hasꓽown_navigation(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+function hasꓽown_navigation(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	if (typeof spec.hasꓽown_navigation === 'boolean')
 		return spec.hasꓽown_navigation
 
@@ -66,111 +76,99 @@ function hasꓽown_navigation(spec: Immutable<WebsiteEntryPointSpec>): boolean {
 	return false
 }
 
-function isꓽuser_scalable(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+function isꓽuser_scalable(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	// TODO improve, incorrect
 	return hasꓽown_navigation(spec)
 }
 
-function needsꓽwebmanifest(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+function needsꓽwebmanifest(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	return wantsꓽinstall(spec)
 }
 
-function supportsꓽscreensⵧwith_shape(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+function supportsꓽscreensⵧwith_shape(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	return spec.supportsꓽscreensⵧwith_shape ?? false
 }
 
-function canꓽuse_window_controls_overlay(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+function canꓽuse_window_controls_overlay(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	return spec.canꓽuse_window_controls_overlay ?? false
 }
 
-function usesꓽpull_to_refresh(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+function usesꓽpull_to_refresh(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	return spec.usesꓽpull_to_refresh ?? true
 }
 
-function prefersꓽorientation(spec: Immutable<WebsiteEntryPointSpec>): boolean {
+function prefersꓽorientation(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	// TODO
 	return false
-}
-
-function getꓽfeatures(spec: Immutable<WebsiteEntryPointSpec>): FeatureSnippets[] {
-	const features = new Set<FeatureSnippets>(spec.features ?? [])
-
-	if (spec.preset === 'game')
-		features.add('cssⳇviewport--full' as FeatureSnippets)
-
-	return Array.from(features).filter(f => {
-		assert(Enum.isType(FeatureSnippets, f), `Unknown feature "${f}"!`)
-		return true;
-	})
 }
 
 /////////////////////////////////////////////////
 // content
 
-function getꓽtitleⵧsocial(spec: Immutable<WebsiteEntryPointSpec>): string {
+function getꓽtitleⵧsocial(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	return !!spec.titleⵧsocial
 		? normalize_unicode(spec.titleⵧsocial).trim()
 		: _getꓽtitle(spec)
 }
-function getꓽtitleⵧapp(spec: Immutable<WebsiteEntryPointSpec>): string {
+function getꓽtitleⵧapp(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	return !!spec.titleⵧapp
 		? normalize_unicode(spec.titleⵧapp).trim()
 		: _getꓽtitle(spec)
 }
-function getꓽtitleⵧappⵧshort(spec: Immutable<WebsiteEntryPointSpec>): string {
+function getꓽtitleⵧappⵧshort(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	// TODO
 	return getꓽtitleⵧapp(spec)
 }
-function getꓽtitleⵧlib(spec: Immutable<WebsiteEntryPointSpec>): string {
+function getꓽtitleⵧlib(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	const base = getꓽtitleⵧappⵧshort({
 		...spec,
 		lang: 'en'
 	})
 
-	return coerce_to_safe_basenameⵧstrictest(base)
+	return coerce_toꓽsafe_basenameⵧstrictest(base)
 }
 
-function getꓽdescriptionⵧpage(spec: Immutable<WebsiteEntryPointSpec>): string {
+function getꓽdescriptionⵧpage(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	return _getꓽdescription(spec)
 }
 
 /////////////////////////////////////////////////
 
-function _getꓽbasename_without_extension(spec: Immutable<WebsiteEntryPointSpec>): Basename {
+function _getꓽbasenameⵧwithout_extension(spec: Immutable<WebPropertyEntryPointSpec>): Basename {
 	if (!spec.basename)
 		return 'index'
 
 	assert(path.extname(spec.basename) === '')
-	const safe_version = coerce_to_safe_basenameⵧstrictest(spec.basename)
+	const safe_version = coerce_toꓽsafe_basenameⵧstrictest(spec.basename);
 	assert(spec.basename === safe_version, `basename "${spec.basename}" is unsafe, it should be "${safe_version}"!`)
 	return safe_version
 }
 
-function getꓽbasenameⵧindexᐧhtml(spec: Immutable<WebsiteEntryPointSpec>): Basename {
-	return `${_getꓽbasename_without_extension(spec)}.html`
+function getꓽbasenameⵧindexᐧhtml(spec: Immutable<WebPropertyEntryPointSpec>): Basename {
+	return `${_getꓽbasenameⵧwithout_extension(spec)}.html`
 }
 
-function getꓽbasenameⵧcontactᐧhtml(spec: Immutable<WebsiteEntryPointSpec>): Basename {
+function getꓽbasenameⵧcontactᐧhtml(spec: Immutable<WebPropertyEntryPointSpec>): Basename {
 	return `contact.html`
 }
-function getꓽbasenameⵧerrorᐧhtml(spec: Immutable<WebsiteEntryPointSpec>): Basename {
+function getꓽbasenameⵧerrorᐧhtml(spec: Immutable<WebPropertyEntryPointSpec>): Basename {
 	return `error.html`
 }
-function getꓽbasenameⵧaboutᐧhtml(spec: Immutable<WebsiteEntryPointSpec>): Basename {
+function getꓽbasenameⵧaboutᐧhtml(spec: Immutable<WebPropertyEntryPointSpec>): Basename {
 	return `about.html`
 }
 
-function getꓽbasenameⵧwebmanifest(spec: Immutable<WebsiteEntryPointSpec>): Basename {
+function getꓽbasenameⵧwebmanifest(spec: Immutable<WebPropertyEntryPointSpec>): Basename {
 	// the recommended extension is .webmanifest https://web.dev/learn/pwa/web-app-manifest/
-	return `${_getꓽbasename_without_extension(spec)}.webmanifest`
+	return `${_getꓽbasenameⵧwithout_extension(spec)}.webmanifest`
 }
 
-function getꓽcolorⵧtheme(spec: Immutable<WebsiteEntryPointSpec>): CssColor‿str {
+function getꓽcolorⵧtheme(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
 	return spec.colorⵧtheme ?? getꓽcolorⵧbackground(spec)
 }
 
 // TODO move to own file?
-function getꓽicon__sizes(spec: Immutable<WebsiteEntryPointSpec>): Uint32Array {
+function getꓽicon__sizes(spec: Immutable<WebPropertyEntryPointSpec>): Uint32Array {
 	const sizes = new Set<number>()
 
 	// https://web.dev/learn/pwa/web-app-manifest/#icons
@@ -202,14 +200,14 @@ function getꓽicon__sizes(spec: Immutable<WebsiteEntryPointSpec>): Uint32Array 
 	return Uint32Array.from(sizes.values()).sort().reverse()
 }
 
-function getꓽicon__basename(spec: Immutable<WebsiteEntryPointSpec>, size: number | null): Basename {
+function getꓽicon__basename(spec: Immutable<WebPropertyEntryPointSpec>, size: number | null): Basename {
 	if (size === null)
 		return `icon.svg`
 
 	return `icon-${size}.svg` // TODO PNG!!
 }
 
-function getꓽicon__path(spec: Immutable<WebsiteEntryPointSpec>, size: number | null): RelativePath {
+function getꓽicon__path(spec: Immutable<WebPropertyEntryPointSpec>, size: number | null): RelativePath {
 	return `favicons/${getꓽicon__basename(spec, size)}`
 }
 

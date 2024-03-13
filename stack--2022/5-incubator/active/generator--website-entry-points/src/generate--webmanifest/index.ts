@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { Category, EntryPoints, WebsiteEntryPointSpec } from '../types.js'
+import { Category, EntryPoints, WebPropertyEntryPointSpec } from '../types.js'
 import { Icon, WebManifest } from './types.js'
 import {
 	canꓽuse_window_controls_overlay,
@@ -12,12 +12,12 @@ import {
 	getꓽtitleⵧappⵧshort,
 	getꓽcolorⵧbackground,
 	getꓽcolorⵧtheme, supportsꓽscreensⵧwith_shape, getꓽicon__sizes, getꓽicon__path,
-} from '../selectors.js'
+} from '../selectors/index.js'
 import { ifꓽdebug } from '../utils/debug.js'
 
 /////////////////////////////////////////////////
 
-function _generateꓽicons(spec: Immutable<WebsiteEntryPointSpec>): WebManifest['icons'] {
+function _generateꓽicons(spec: Immutable<WebPropertyEntryPointSpec>): WebManifest['icons'] {
 	return getꓽicon__sizes(spec).reduce((acc, size) => {
 		acc.push({
 			src: `./${getꓽicon__path(spec, size)}`, // TODO review should we add ./ ?
@@ -28,7 +28,7 @@ function _generateꓽicons(spec: Immutable<WebsiteEntryPointSpec>): WebManifest[
 	}, [] as WebManifest['icons'])
 }
 
-function generate(spec: Immutable<WebsiteEntryPointSpec>): WebManifest {
+function generate(spec: Immutable<WebPropertyEntryPointSpec>): WebManifest {
 	const result: WebManifest = {
 		lang: getꓽlang(spec),
 

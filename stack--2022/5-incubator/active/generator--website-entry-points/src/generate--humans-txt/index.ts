@@ -1,16 +1,16 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { WebsiteEntryPointSpec } from '../types.js'
+import { WebPropertyEntryPointSpec } from '../types.js'
 import {
 	getꓽauthor__name,
 	getꓽauthor__intro,
 	getꓽcontactⵧhuman,
-} from '../selectors.js'
+} from '../selectors/index.js'
 
 /////////////////////////////////////////////////
 
-function generate(spec: Immutable<WebsiteEntryPointSpec>): string {
+function generate(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	// TODO credits system
 	return `
 # https://humanstxt.org/

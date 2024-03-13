@@ -1,7 +1,9 @@
 import assert from 'tiny-invariant'
-import { Immutable, IETFLanguageType, Contentⳇweb } from '@offirmo-private/ts-types'
+import { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
+import { Contentⳇweb } from '@offirmo-private/ts-types-web';
+import { FeatureSnippets, HtmlMetas, HtmlMetaContentⳇViewport, HtmlDocumentSpec } from '@offirmo-private/generator--html';
 
-import { WebsiteEntryPointSpec } from '../types.js'
+import { WebPropertyEntryPointSpec } from '../types.js'
 import { LIB } from '../consts.js'
 import {
 	prefersꓽorientation,
@@ -11,13 +13,23 @@ import {
 	isꓽuser_scalable,
 	supportsꓽscreensⵧwith_shape,
 	wantsꓽinstall,
-} from '../selectors.js'
+} from '../selectors/index.js'
 import { ifꓽdebug } from '../utils/debug.js'
-import { FeatureSnippets, HtmlMetas, HtmlMetaContentⳇViewport, HtmlDocumentSpec } from '../utils/html'
 
 /////////////////////////////////////////////////
 
-function _getꓽmetasⵧviewport(spec: Immutable<WebsiteEntryPointSpec>): HtmlMetaContentⳇViewport {
+
+/*
+function getꓽcolorⵧforeground(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
+	return spec.colorⵧforeground ?? 'black'
+}
+
+function getꓽcolorⵧbackground(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
+	return spec.colorⵧbackground ?? 'white'
+}
+*/
+
+function _getꓽmetasⵧviewport(spec: Immutable<WebPropertyEntryPointSpec>): HtmlMetaContentⳇViewport {
 	return {
 		// which site is not mobile friendly those day?
 		// and those who are not are obviously NOT using this tool ;)
@@ -41,7 +53,7 @@ function _getꓽmetasⵧviewport(spec: Immutable<WebsiteEntryPointSpec>): HtmlMe
 	}
 }
 
-function getꓽmetas(spec: Immutable<WebsiteEntryPointSpec>): HtmlMetas {
+function getꓽmetas(spec: Immutable<WebPropertyEntryPointSpec>): HtmlMetas {
 
 	const result: HtmlMetas = {
 		charset: getꓽcharset(spec),
@@ -91,17 +103,33 @@ function getꓽmetas(spec: Immutable<WebsiteEntryPointSpec>): HtmlMetas {
 
 /////////////////////////////////////////////////
 
-function getꓽcontentⵧweb(spec: Immutable<WebsiteEntryPointSpec>): Contentⳇweb {
-	const result: Contentⳇweb = {
+function getꓽfeatures(spec: Immutable<WebPropertyEntryPointSpec>): FeatureSnippets[] {
+	const features = new Set<FeatureSnippets>(spec.features ?? [])
 
-	}
+	if (spec.preset === 'game') features.add('cssⳇviewport--full' as FeatureSnippets)
+
+	return Array.from(features).filter(f => {
+		assert(Enum.isType(FeatureSnippets, f), `Unknown feature "${f}"!`)
+		return true
+	})
 }
 
-function getꓽhtml_doc_spec(spec: Immutable<WebsiteEntryPointSpec>): HtmlDocumentSpec {
+function getꓽcontentⵧweb(spec: Immutable<WebPropertyEntryPointSpec>): Contentⳇweb {
+	const result: Contentⳇweb = {
+		// TODO
+	}
+	return result
+}
+
+function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDocumentSpec {
 	const result: HtmlDocumentSpec = {
+		lang: getꓽlang(spec),
+		content: getꓽcontentⵧweb(spec),
+		//links:
 		metas: getꓽmetas(spec),
 		features: getꓽfeatures(spec),
 	}
+	return result
 }
 
 /////////////////////////////////////////////////

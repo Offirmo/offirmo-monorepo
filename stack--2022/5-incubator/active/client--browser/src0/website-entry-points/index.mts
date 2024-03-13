@@ -1,12 +1,12 @@
 #!/usr/bin/env ts-node
 
 import { Author, Thing, ThingWithOnlinePresence } from '@offirmo-private/ts-types'
-import generateꓽwebsiteᝍentryᝍpoints, { type WebPage, type WebsiteEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
+import generateꓽwebsiteᝍentryᝍpoints, { type WebPage, type WebPropertyEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
 import { SVG } from '@offirmo-private/generator--website-entry-points/src/utils/svg'
 
 /////////////////////////////////////////////////
 
-const WEBAPPⵧTBRPG2023: WebsiteEntryPointSpec = (() => {
+const WEBAPPⵧTBRPG2023: WebPropertyEntryPointSpec = (() => {
 
 	const AUTHOR: Author = { // TODO externalize
 		name: 'Offirmo',
@@ -71,7 +71,7 @@ const WEBAPPⵧTBRPG2023: WebsiteEntryPointSpec = (() => {
 		},
 	}
 
-	const SPEC: WebsiteEntryPointSpec = {
+	const SPEC: WebPropertyEntryPointSpec = {
 		...WEB_PAGE,
 
 		preset: 'game',

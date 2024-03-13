@@ -1,6 +1,33 @@
 
+	// TODO extract HTML from files? ./esm/parser-html.mjsxxx
+	// TODO review import from js?
 
-function generateꓽhtml__head__style(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
+	/* critical minimal design system */
+	:root {
+		--color--bg: ${getꓽcolorⵧbackground(spec)};
+		--color--fg: ${getꓽcolorⵧforeground(spec)};
+		--font: -apple-system, ui-sans-serif, sans-serif;
+
+		margin: 0;
+		padding: 0;
+
+		color: var(--color--fg);
+		background-color: var(--color--bg);
+		font-family: var(--font);
+
+		${usesꓽpull_to_refresh(spec)
+		? ''
+		: `/* https://www.the-koi.com/projects/how-to-disable-pull-to-refresh/ */
+overscroll-behavior: none;`
+	}
+
+
+
+
+	// TODO make that auto or configurable
+	css_blocks.unshift(`@layer reset, offirmo--reset, foundation, offirmo--foundation, framework;`)
+
+function generateꓽhtml__head__style(spec: Immutable<WebPropertyEntryPointSpec>): Html‿str {
 	// TODO https://medium.com/@stephenbunch/how-to-make-a-scrollable-container-with-dynamic-height-using-flexbox-5914a26ae336
 	// TODO https://developer.chrome.com/blog/overscroll-behavior/
 
@@ -58,7 +85,7 @@ overscroll-behavior: none;`
 `
 }
 
-function generateꓽhtml__head__script(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
+function generateꓽhtml__head__script(spec: Immutable<WebPropertyEntryPointSpec>): Html‿str {
 
 	const JS_blocks: JS‿str[] = [
 		...(spec.content?.critical?.js || []),
@@ -96,7 +123,7 @@ function _stringifyꓽmetaⵧviewport__content(viewport_spec: Immutable<HtmlMeta
 		.join(',')
 }
 
-function _generateꓽlinks(spec: Immutable<WebsiteEntryPointSpec>): { [rel: string]: string } {
+function _generateꓽlinks(spec: Immutable<WebPropertyEntryPointSpec>): { [rel: string]: string } {
 	const favicon_candidate = generateꓽfavicon__iconⵧinline(spec)
 	const shouldꓽinline_favicon = !favicon_candidate.includes('"') && favicon_candidate.length < 256 // arbitrary number
 
@@ -118,7 +145,7 @@ function _generateꓽlinks(spec: Immutable<WebsiteEntryPointSpec>): { [rel: stri
 	}
 }
 
-function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
+function generateꓽhtml__head__meta(spec: Immutable<WebPropertyEntryPointSpec>): Html‿str {
 	const metas = getꓽmetas(spec)
 	const links = _generateꓽlinks(spec)
 
@@ -188,7 +215,7 @@ function generateꓽhtml__head__meta(spec: Immutable<WebsiteEntryPointSpec>): Ht
 		].join(EOL)
 }
 
-function generateꓽhtml__head(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
+function generateꓽhtml__head(spec: Immutable<WebPropertyEntryPointSpec>): Html‿str {
 	// https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
 	return `
 <head>
@@ -203,7 +230,7 @@ function generateꓽhtml__head(spec: Immutable<WebsiteEntryPointSpec>): Html‿s
 `
 }
 
-function generateꓽhtml__body(spec: Immutable<WebsiteEntryPointSpec>): Html‿str {
+function generateꓽhtml__body(spec: Immutable<WebPropertyEntryPointSpec>): Html‿str {
 
 	// TODO extract HTML from files? ./esm/parser-html.mjsxxx
 	const html_blocks: Html‿str[] = [

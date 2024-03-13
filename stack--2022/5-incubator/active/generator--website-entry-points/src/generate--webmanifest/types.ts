@@ -1,5 +1,6 @@
 import assert from 'tiny-invariant'
-import { Immutable, CssColor‿str, Url‿str, IETFLanguageType } from '@offirmo-private/ts-types'
+import { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
+import { CssColor‿str, Url‿str, } from '@offirmo-private/ts-types-web'
 
 import { Category } from '../types.js'
 
