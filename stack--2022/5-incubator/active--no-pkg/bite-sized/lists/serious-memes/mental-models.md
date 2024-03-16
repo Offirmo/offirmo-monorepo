@@ -137,6 +137,8 @@ method of learning +++ https://jamesclear.com/great-speeches/2007-usc-law-school
 mimetic Theory of Conflict: People who are similar are more likely to fight than people who are different. That’s why Civil Wars and family feuds create the worst conflicts. The closer two people are and the more equality between them, the greater the potential for conflict.
 mimetic Theory of Desire: Humans are like sheep. We don’t know what we want, so we imitate each other. Instead of creating our own desires, we desire the same things as other people. The entire advertising industry is built on this idea.
 mindset -- "What vs How" (see What vs how)
+minorities -- silent majority = unspecified large group of people in a country or group who do not express their opinions publicly https://en.wikipedia.org/wiki/Silent_majority
+minorities -- vocal minority
 Monty Hall problem https://en.wikipedia.org/wiki/Monty_Hall_problem
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
 naiveté: abus sexuels, mafia
@@ -208,6 +210,7 @@ stakeholder
 start with the most risky / complicated
 start with why
 stoicism -- Rudyard Kipling If-- https://en.wikipedia.org/wiki/If%E2%80%94
+Sturgeon's law = "90% of everything is crap" https://en.wikipedia.org/wiki/Sturgeon%27s_law
 Sun Tsu’s three rules of warfare -- Only fight when there is a prize worth fighting for
 Sun Tsu’s three rules of warfare -- Only fight when there is no other way of achieving your goal
 Sun Tsu’s three rules of warfare -- Only fight when you know you will win: the best fight is an unfair fight

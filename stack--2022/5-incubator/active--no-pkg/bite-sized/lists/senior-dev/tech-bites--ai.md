@@ -1,7 +1,7 @@
+??? https://github.com/SkalskiP/courses crème de la crème of AI courses
 +++ 2023 https://9elements.com/blog/ai-glossary/
 +++ https://platform.openai.com/docs/introduction/key-concepts
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
-??? https://github.com/SkalskiP/courses crème de la crème of AI courses
 Agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
 agents -- principals
 agents = you provide a goal, They'll generate a task list and get to work https://zapier.com/blog/ai-agent/
@@ -71,15 +71,15 @@ LLM -- "Pathways Language Model" (PaLM) 540B model from Google AI
 LLMs - large language models
 ML - machine learning https://en.wikipedia.org/wiki/Machine_learning ~"subfield of AI that describes AI using data and algorithms without a programmer explicitly specifying the solution path through program code"
 moat - We have no moat https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
-model (NN) = sort of snapshot of a trained neural network / brain = NN (structure + parameters) https://huggingface.co/docs/hub/models
 model -- efficiency
 model -- Transformer model
+model (NN) = sort of snapshot of a trained neural network / brain = NN (structure + parameters) https://huggingface.co/docs/hub/models
 NLG Natural Language Generation
 NLP Natural Language Processing
 NN Neural Networks "computer architecture inspired by the human brain"
 OpenAI GPTs = custom versions of ChatGPT that you can create for a specific purpose with instructions, expanded knowledge, and custom capabilities
-parameter (NN)
 parameter -- hyperparameter = values provided to the model from the outside to make adjustments that can influence the learning process and its performance, among other things
+parameter (NN)
 Pathways = broader AU architecture underpinning PaLM
 Pathways Autoregressive Text-to-Image model (Parti), is an autoregressive text-to-image generation model that achieves high-fidelity photorealistic image generation and supports content-rich synthesis involving complex compositions and world knowledge.
 player -- Google AI https://ai.google/
@@ -87,9 +87,10 @@ player -- https://modal.com/blog/embedding-wikipedia
 player -- https://vectara.com/ = RAG
 player -- https://www.adept.ai/
 player -- Qdrant -- vector database https://qdrant.tech/blog/series-a-funding-round/
-pretraining
+pre-training
 Pytorch
 ReAct flow
+Representation Engineering = calculating a "control vector" that can be read from or added to model activations during inference to interpret or control the model's behavior https://vgel.me/posts/representation-engineering/
 research directions -- honesty, chain-of-thought faithfulness, adversarial robustness, evals and testbeds...
 research directions -- Interpretability: How can we understand model internals? And can we use this to e.g. build an AI lie detector?
 research directions -- Scalable oversight: How can we use AI systems to assist humans in evaluating the outputs of other AI systems on complex tasks?
