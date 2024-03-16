@@ -1,4 +1,5 @@
 import assert from 'tiny-invariant'
+import { Enum } from 'typescript-string-enums'
 import { Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
 import { hasꓽcontent } from '@offirmo-private/ts-utils'
 import { Css‿str, Html‿str, JS‿str } from '@offirmo-private/ts-types-web'
@@ -9,6 +10,7 @@ import {
 } from '@offirmo-private/normalize-string'
 
 import {
+	FeatureSnippets,
 	HtmlDocumentSpec,
 	HtmlMetas,
 	Links,
@@ -87,6 +89,15 @@ function getꓽlinks(spec: Immutable<HtmlDocumentSpec>): Immutable<Links> {
 
 
 /////////////////////////////////////////////////
+function getꓽfeatures(spec: Immutable<HtmlDocumentSpec>): FeatureSnippets[] {
+	const features = new Set<FeatureSnippets>(spec.features ?? [])
+
+	return Array.from(features).filter(f => {
+		assert(Enum.isType(FeatureSnippets, f), `Unknown feature "${f}"!`)
+		return true
+	})
+}
+
 // alt
 function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>): Immutable<HtmlDocumentSpec> {
 	const content_with_features_expanded = { ...spec.content }
@@ -344,6 +355,7 @@ function getꓽhtml‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 /////////////////////////////////////////////////
 
 export {
+	getꓽfeatures,
 	getꓽtitleⵧpage,
 	getꓽhtml‿str,
 }

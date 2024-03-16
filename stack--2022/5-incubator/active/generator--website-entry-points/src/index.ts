@@ -16,12 +16,11 @@ import {
 	getꓽicon__path,
 	shouldꓽgenerateꓽsourcecode,
 } from './selectors/index.js'
-import {
-	generateꓽindexᐧhtml,
-	generateꓽaboutᐧhtml,
-	generateꓽcontactᐧhtml,
-	generateꓽerrorᐧhtml,
-} from './generate--html/index.js'
+import generateꓽindexᐧhtml from './generate--index-html/index.js'
+import generateꓽaboutᐧhtml from './generate--about-html/index.js'
+import generateꓽcontactᐧhtml from './generate--contact-html/index.js'
+import generateꓽerrorᐧhtml from './generate--error-html/index.js'
+
 import generateꓽwebmanifest from './generate--webmanifest/index.js'
 import { generateꓽfile as generateꓽicon_file } from './generate--icons/index.js'
 import generateꓽhumansᐧtxt from './generate--humans-txt/index.js'

@@ -3,6 +3,7 @@ import * as path from 'node:path'
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 import { Basename, Immutable, RelativePath } from '@offirmo-private/ts-types'
+import { getꓽtitle as _getꓽtitle, getꓽdescription as _getꓽdescription } from '@offirmo-private/ts-types-web'
 import { CssColor‿str } from '@offirmo-private/ts-types-web'
 import { FeatureSnippets } from '@offirmo-private/generator--html'
 
@@ -102,13 +103,26 @@ function prefersꓽorientation(spec: Immutable<WebPropertyEntryPointSpec>): bool
 	return false
 }
 
+function getꓽfeatures(spec: Immutable<WebPropertyEntryPointSpec>): FeatureSnippets[] {
+	const features = new Set<FeatureSnippets>(spec.features ?? [])
+
+	if (spec.preset === 'game') features.add('cssⳇviewport--full' as FeatureSnippets)
+
+	return Array.from(features).filter(f => {
+		assert(Enum.isType(FeatureSnippets, f), `Unknown feature "${f}"!`)
+		return true
+	})
+}
+
 /////////////////////////////////////////////////
 // content
 
 function getꓽtitleⵧsocial(spec: Immutable<WebPropertyEntryPointSpec>): string {
-	return !!spec.titleⵧsocial
+	// TODO
+	return _getꓽtitle(spec)
+	/*return !!spec.titleⵧsocial
 		? normalize_unicode(spec.titleⵧsocial).trim()
-		: _getꓽtitle(spec)
+		: _getꓽtitle(spec) */
 }
 function getꓽtitleⵧapp(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	return !!spec.titleⵧapp
@@ -130,6 +144,21 @@ function getꓽtitleⵧlib(spec: Immutable<WebPropertyEntryPointSpec>): string {
 
 function getꓽdescriptionⵧpage(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	return _getꓽdescription(spec)
+}
+
+/////////////////////////////////////////////////
+// polish
+
+function getꓽcolorⵧforeground(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
+	return spec.colorⵧforeground ?? 'black'
+}
+
+function getꓽcolorⵧbackground(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
+	return spec.colorⵧbackground ?? 'white'
+}
+
+function getꓽcolorⵧtheme(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
+	return spec.colorⵧtheme ?? getꓽcolorⵧbackground(spec)
 }
 
 /////////////////////////////////////////////////
@@ -163,9 +192,6 @@ function getꓽbasenameⵧwebmanifest(spec: Immutable<WebPropertyEntryPointSpec>
 	return `${_getꓽbasenameⵧwithout_extension(spec)}.webmanifest`
 }
 
-function getꓽcolorⵧtheme(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
-	return spec.colorⵧtheme ?? getꓽcolorⵧbackground(spec)
-}
 
 // TODO move to own file?
 function getꓽicon__sizes(spec: Immutable<WebPropertyEntryPointSpec>): Uint32Array {
@@ -228,7 +254,6 @@ export {
 	supportsꓽscreensⵧwith_shape,
 	canꓽuse_window_controls_overlay,
 	usesꓽpull_to_refresh,
-	getꓽfeatures,
 
 	needsꓽwebmanifest,
 	// TODO move to own file?
@@ -238,6 +263,7 @@ export {
 	getꓽbasenameⵧaboutᐧhtml,
 	getꓽbasenameⵧwebmanifest,
 
+	getꓽfeatures,
 	getꓽtitleⵧsocial,
 	getꓽtitleⵧapp,
 	getꓽtitleⵧappⵧshort,
@@ -245,6 +271,8 @@ export {
 
 	getꓽdescriptionⵧpage,
 
+	getꓽcolorⵧforeground,
+	getꓽcolorⵧbackground,
 	getꓽcolorⵧtheme,
 
 	getꓽicon__sizes,

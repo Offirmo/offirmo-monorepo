@@ -11,7 +11,7 @@ import { SVG, Svg‿str } from './types.js'
 /////////////////////////////////////////////////
 
 // Note that we use single quotes for embeddability in head / css
-function renderⵧstr(svg: Immutable<SVG>, options: {
+function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 	width?: number, // default is auto
 	height?: number // default is auto
 	wantsꓽcompact?: boolean // if true, omit EOL, tabs and maybe pedantic stuff
@@ -45,5 +45,5 @@ function renderⵧstr(svg: Immutable<SVG>, options: {
 /////////////////////////////////////////////////
 
 export {
-	renderⵧstr,
+	getꓽsvg‿str,
 }

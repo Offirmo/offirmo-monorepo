@@ -2,9 +2,9 @@
 import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
 
-import { Author, Thing, ThingWithOnlinePresence } from '@offirmo-private/ts-types'
+import { Author, Thing, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
+import * as SVG from '@offirmo-private/generator--svg'
 import generateꓽwebsiteᝍentryᝍpoints, { type WebPage, type WebPropertyEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
-import * as SVG from '../../src/utils/svg/index.js'
 
 import { AUTHOR } from '@offirmo-private/marketing'
 

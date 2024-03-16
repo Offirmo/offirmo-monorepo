@@ -2,25 +2,20 @@ import {
 	Immutable,
 	Emoji,
 	Basename,
-	/*
-	Author,
-	Contentⳇweb,
-	CssColor‿str,
-	Descriptionⳇtitle,
-	Thing,
-	ThingWithOnlinePresence,*/
 } from '@offirmo-private/ts-types'
 import {
 	Author,
 	Contentⳇweb,
 	CssColor‿str,
-	Descriptionⳇtitle,
 	Thing,
 	ThingWithOnlinePresence,
-} from '@offirmo-private/ts-types-web';
-import type { SVG } from "@offirmo-private/generator--svg";
+} from '@offirmo-private/ts-types-web'
+import type { FeatureSnippets } from "@offirmo-private/generator--html"
+import type { SVG } from "@offirmo-private/generator--svg"
 
 /////////////////////////////////////////////////
+
+type Descriptionⳇtitle = string
 
 // https://github.com/w3c/manifest/wiki/Categories
 // https://developer.mozilla.org/en-US/docs/Web/Manifest/categories
@@ -57,11 +52,12 @@ type Category =
 	| 'weather'
 
 interface WebProperty extends ThingWithOnlinePresence {
-	title: Descriptionⳇtitle;
-	icon?: Emoji | Immutable<SVG>;
-	keywords?: string[];
+	title: Descriptionⳇtitle
+	icon?: Emoji | Immutable<SVG>
+	keywords?: string[]
 
-	content: Contentⳇweb;
+	content: Contentⳇweb
+	features?: Array<FeatureSnippets>
 
 	/////// SOCIAL
 	// TODO full open graph type
@@ -76,9 +72,9 @@ interface WebProperty extends ThingWithOnlinePresence {
 	// from: https://web.dev/learn/pwa/web-app-manifest/#recommended_fields
 	// - Warning: Do not use transparency, CSS variables, gradient functions, or color functions with transparency (such as rgba())
 	// - as they are not supported by most browsers. You will get inconsistent results.
-	colorⵧbackground?: CssColor‿str;
-	colorⵧforeground?: CssColor‿str;
-	colorⵧtheme?: CssColor‿str; // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
+	colorⵧbackground?: CssColor‿str
+	colorⵧforeground?: CssColor‿str
+	colorⵧtheme?: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
 	// TODO one day themes
 }
 
