@@ -12,9 +12,8 @@ import {	getꓽhtml_doc_spec } from './selectors.js'
 /////////////////////////////////////////////////
 
 function generate(spec: Immutable<WebPropertyEntryPointSpec>): Html‿str {
-	//const doc_spec = getꓽhtml_doc_spec(spec)
-	//const result = getꓽhtml‿str(doc_spec);
-	const result = 'TODO'
+	const doc_spec = getꓽhtml_doc_spec(spec)
+	const result = getꓽhtml‿str(doc_spec);
 
 	// TODO check IW10 <14k https://developers.google.com/speed/docs/insights/mobile#delivering-the-sub-one-second-rendering-experience
 	return normalize_unicode(result)

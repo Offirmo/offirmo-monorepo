@@ -116,7 +116,7 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 }
 
 interface EntryPoints {
-	[relpath: string]: string,
+	[relpath: string]: string | Buffer,
 }
 
 /////////////////////////////////////////////////

@@ -20,6 +20,7 @@ import generateꓽindexᐧhtml from './generate--index-html/index.js'
 import generateꓽaboutᐧhtml from './generate--about-html/index.js'
 import generateꓽcontactᐧhtml from './generate--contact-html/index.js'
 import generateꓽerrorᐧhtml from './generate--error-html/index.js'
+import generateꓽ404ᐧhtml from './generate--404-html/index.js'
 
 import generateꓽwebmanifest from './generate--webmanifest/index.js'
 import { generateꓽfile as generateꓽicon_file } from './generate--icons/index.js'
@@ -40,6 +41,7 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpe
 		[getꓽbasenameⵧaboutᐧhtml(spec)]: generateꓽaboutᐧhtml(spec),
 		[getꓽbasenameⵧcontactᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
 		[getꓽbasenameⵧerrorᐧhtml(spec)]: generateꓽerrorᐧhtml(spec),
+		'404.html': generateꓽ404ᐧhtml(spec),
 
 		// ICONS
 		...getꓽicon__sizes(spec).reduce((acc, size) => {
@@ -57,6 +59,8 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpe
 		'humans.txt': generateꓽhumansᐧtxt(spec),
 		'robots.txt': generateꓽrobotsᐧtxt(spec),
 		'.well-known/security.txt': generateꓽsecurityᐧtxt(spec),
+
+		// TODO .htaccess ?
 	}
 }
 
@@ -92,18 +96,23 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 
 			switch (path.extname(file__path)) {
 				case '.html':
+					assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
 					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: "html" })
 					break
 				case '.css':
+					assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
 					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: "css" })
 					break
 				case '.json':
+					assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
 					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: "json" })
 					break
 				case '.ts':
+					assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
 					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: "typescript" })
 					break
 				case '.js':
+					assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
 					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: "acorn" })
 					break
 				default:
@@ -114,7 +123,7 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 					file__path,
 					file__content,
 					{
-						encoding: 'utf8',
+						...(typeof file__content === 'string' && {encoding: 'utf8'}),
 					}
 				)
 				.catch((err : any) => {

@@ -230,7 +230,7 @@ function getꓽicon__basename(spec: Immutable<WebPropertyEntryPointSpec>, size: 
 	if (size === null)
 		return `icon.svg`
 
-	return `icon-${size}.svg` // TODO PNG!!
+	return `icon-${size}.png`
 }
 
 function getꓽicon__path(spec: Immutable<WebPropertyEntryPointSpec>, size: number | null): RelativePath {
