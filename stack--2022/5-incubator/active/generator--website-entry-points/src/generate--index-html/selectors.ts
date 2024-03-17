@@ -1,26 +1,19 @@
 import assert from 'tiny-invariant'
 import { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
-import { Contentⳇweb } from '@offirmo-private/ts-types-web';
+import { Contentⳇweb, Css‿str } from '@offirmo-private/ts-types-web';
 import {
 	FeatureSnippets,
 	HtmlMetas,
 	HtmlMetaContentⳇViewport,
 	HtmlDocumentSpec,
 	getꓽfeatures as _getꓽfeatures,
+	getꓽtitleⵧpage,
 } from '@offirmo-private/generator--html'
 
 import { WebPropertyEntryPointSpec } from '../types.js'
 import { LIB } from '../consts.js'
-import {
-	prefersꓽorientation,
-	getꓽfeatures,
-	getꓽlang,
-	getꓽcolorⵧtheme,
-	getꓽcharset,
-	isꓽuser_scalable,
-	supportsꓽscreensⵧwith_shape,
-	wantsꓽinstall,
-} from '../selectors/index.js'
+import { prefersꓽorientation, getꓽfeatures, getꓽlang, getꓽcolorⵧtheme, getꓽcharset, isꓽuser_scalable, supportsꓽscreensⵧwith_shape, wantsꓽinstall, usesꓽpull_to_refresh, getꓽcolorⵧbackground, getꓽcolorⵧforeground, needsꓽwebmanifest, getꓽbasenameⵧwebmanifest } from '../selectors/index.js'
+import { generateꓽinline as generateꓽfavicon__iconⵧinline } from '../generate--icons/index.js'
 import { ifꓽdebug } from '../utils/debug.js'
 
 /////////////////////////////////////////////////
@@ -37,9 +30,10 @@ function _getꓽmetasⵧviewport(spec: Immutable<WebPropertyEntryPointSpec>): Ht
 
 		// scalability
 		// - either we explicitly don't want it
-		// - or/and we support orientation change and if we don't lock the scale, the viewport doesn't fit on orientation change (cf. https://stackoverflow.com/a/12114397)
-		// hence we're not afraid to lock user scaling
-		...((!prefersꓽorientation(spec) || !isꓽuser_scalable(spec)) && {
+		// - or/and we support orientation change => we need to lock the scale
+		//   bc the viewport doesn't fit on orientation change (cf. https://stackoverflow.com/a/12114397)
+		//   TODO review this case!
+		...((!isꓽuser_scalable(spec) /*|| !prefersꓽorientation(spec)*/) && {
 			'user-scalable': 'no',
 			'minimum-scale': 1,
 			'maximum-scale': 1,
@@ -69,13 +63,15 @@ function getꓽmetas(spec: Immutable<WebPropertyEntryPointSpec>): HtmlMetas {
 					: 'black',
 			}),
 
-			'format-detection': 'telephone=no', // TODO
+			'format-detection': 'telephone=no', // TODO only if explicit?
 		},
 
 		// pragma directives, equivalent to http headers
 		// <meta http-equiv="<KEY>" content="<VALUE>" />
 		pragmas: {
-			'content-security-policy': {},
+			'content-security-policy': {
+				// TODO
+			},
 			'content-type': `text/html;charset=${getꓽcharset(spec)}`,
 			'content-language': getꓽlang(spec),
 
@@ -99,11 +95,76 @@ function getꓽmetas(spec: Immutable<WebPropertyEntryPointSpec>): HtmlMetas {
 	return result
 }
 
+function getꓽlinks(spec: Immutable<WebPropertyEntryPointSpec>): { [rel: string]: string } {
+	const favicon_candidate = generateꓽfavicon__iconⵧinline(spec)
+	const shouldꓽinline_favicon = !favicon_candidate.includes('"') && favicon_candidate.length < 256 // arbitrary number
+
+	return {
+		//canonical: `https://TODO`,
+
+		icon: shouldꓽinline_favicon
+			? `data:image/svg+xml;utf8,${favicon_candidate}`
+			: `./icon.svg`,
+
+		...(needsꓽwebmanifest(spec) && {
+
+			// tests
+			// 2023/10 iOs  relative ./xyz.webmanifest = works
+			// 2023/10 iOs  relative   xyz.webmanifest = works
+			// 2023/10 iOs  saw queries to <parent>/index.webmanifest ???
+			manifest: `./${getꓽbasenameⵧwebmanifest(spec)}`,
+		}),
+	}
+}
+
 /////////////////////////////////////////////////
 
+function getꓽcssⵧcritical(spec: Immutable<WebPropertyEntryPointSpec>): Css‿str[] {
+
+	return [
+	// TODO make that auto or configurable
+	`@layer reset, offirmo--reset, foundation, offirmo--foundation, framework;`,
+
+
+	// TODO use custom token names
+	`
+/* critical minimal design system */
+:root {
+	--color--bg: ${getꓽcolorⵧbackground(spec)};
+	--color--fg: ${getꓽcolorⵧforeground(spec)};
+	--font: -apple-system, ui-sans-serif, sans-serif;
+
+	margin: 0;
+	padding: 0;
+
+	color: var(--color--fg);
+	background-color: var(--color--bg);
+	font-family: var(--font);
+
+	${
+		usesꓽpull_to_refresh(spec)
+			? ''
+			: `/* https://www.the-koi.com/projects/how-to-disable-pull-to-refresh/ */
+	overscroll-behavior: none;`
+}
+	`
+]
+}
+
+
 function getꓽcontentⵧweb(spec: Immutable<WebPropertyEntryPointSpec>): Contentⳇweb {
+
+
+	// TODO extract HTML from files? ./esm/parser-html.mjsxxx
+	// TODO review import from js?
+
+
 	const result: Contentⳇweb = {
-		// TODO
+		title: getꓽtitleⵧpage(spec),
+
+		cssⵧcritical: getꓽcssⵧcritical(spec),
+
+		// TODO rest
 	}
 	return result
 }

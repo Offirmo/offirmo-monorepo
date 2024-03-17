@@ -1,7 +1,7 @@
 
 AI
 * https://chat.openai.com/
-* https://bard.google.com/chat
+* https://gemini.google.com/app
 *
 
 
@@ -45,3 +45,20 @@ have another AI review the code / output?
 
 
 https://www.abc.net.au/news/2022-12-29/the-risk-of-pet-hamsters-and-gerbils-in-australia/101812034
+
+
+
+
+https://en.wikipedia.org/wiki/Hampster_Dance
+https://ipfs.io/ipfs/QmV9faPGTwYDPfNJkdJbjsarSvAkECBs57EMa2oKvMnrsv/
+https://www.throwbacks.com/story-behind-the-hampsterdance/
+
+https://www.cbc.ca/arts/the-oral-history-of-the-hampsterdance-the-twisted-true-story-of-one-of-the-world-s-first-memes-1.4958325
+
+
+https://web.archive.org/web/19991128125537/http://www.geocities.com/Heartland/Bluffs/4157/hampdance.html
+https://web.archive.org/web/20081217135509/http://www.cnet.com/1990-11136_1-6268155-1.html
+
+https://en.wikipedia.org/wiki/Category:Viral_videos
+
+https://hampsterdance.com/lander

@@ -41,8 +41,6 @@ const WEB_PAGE: WebPage = {
 		'cssⳇbox-layout--natural',
 		'normalize-url-trailing-slash',
 		'cssⳇfoundation--offirmo',
-		//'cssⳇframework--offirmo',
-		//'page-loader--offirmo',
 	],
 
 	// Polish

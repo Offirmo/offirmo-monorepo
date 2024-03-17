@@ -67,6 +67,9 @@ function wantsꓽinstall(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	return false
 }
 
+/* Does this site have it's own nav? (ex. app, game)
+ * or does it needs the browser nav = back button?
+ */
 function hasꓽown_navigation(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	if (typeof spec.hasꓽown_navigation === 'boolean')
 		return spec.hasꓽown_navigation
@@ -78,8 +81,9 @@ function hasꓽown_navigation(spec: Immutable<WebPropertyEntryPointSpec>): boole
 }
 
 function isꓽuser_scalable(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
-	// TODO improve, incorrect
-	return hasꓽown_navigation(spec)
+	// by default, every site should be user-scalable
+	// it's a basic accessibility feature https://moritzgiessmann.de/accessibility-cheatsheet/
+	return !hasꓽown_navigation(spec)
 }
 
 function needsꓽwebmanifest(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
@@ -106,7 +110,13 @@ function prefersꓽorientation(spec: Immutable<WebPropertyEntryPointSpec>): bool
 function getꓽfeatures(spec: Immutable<WebPropertyEntryPointSpec>): FeatureSnippets[] {
 	const features = new Set<FeatureSnippets>(spec.features ?? [])
 
+
 	if (spec.preset === 'game') features.add('cssⳇviewport--full' as FeatureSnippets)
+
+		features.add('cssⳇbox-layout--natural')
+
+	if (!features.has('cssⳇfoundation--offirmo'))
+		features.add('cssⳇframework--offirmo')
 
 	return Array.from(features).filter(f => {
 		assert(Enum.isType(FeatureSnippets, f), `Unknown feature "${f}"!`)
