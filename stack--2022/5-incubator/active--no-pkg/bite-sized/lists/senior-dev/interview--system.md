@@ -4,6 +4,7 @@
   1. Priorized requirements
     1. usually a MVP
     1. think business: business model: what do we want from the user? (ex. attention, data…), virality (share, replies, comments), moat
+    1. what is our differentiator?
   1. # of users
   1. read/write ratio
   1. CAP choices

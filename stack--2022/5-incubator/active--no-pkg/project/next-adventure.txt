@@ -67,3 +67,10 @@ https://interviewing.io/
 https://medium.com/@andreimargeloiu/the-definitive-guide-to-the-coding-interview-2704d166664c
 
 what projects you have worked on before and which was the most impressive one
+
+SYD
+- Spotify?
+- AWS?
+- Canva?
+- Microsoft?
+- Apple?
