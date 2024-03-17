@@ -67,7 +67,7 @@ fast reading
 Faustian Bargain: A man once sold his soul to a demon in exchange for knowledge. At first, it seemed like a smart trade. But the man lost in the long-run. Tragically, what the man lost was more valuable than what he earned. In short, he won the battle but lost the war.
 fear of missing out (FOMO)
 fear, uncertainty, death (FUD)
-femme/homme enfat https://www.wengood.com/fr/developpement-personnel/se-connaitre/art-femme-enfant
+femme/homme enfant https://www.wengood.com/fr/developpement-personnel/se-connaitre/art-femme-enfant
 fire
 first practice what you preach
 first principles https://fs.blog/first-principles/
@@ -83,7 +83,7 @@ Goodhart’s Law = When a measure becomes a target, it ceases to be a good measu
 grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
 growth mindset
-hangry / before after lunch
+hangry = before lunch (vs. after)
 happiness is a skill
 happiness score https://www.ted.com/talks/dominic_price_what_s_your_happiness_score
 helicopter parent
@@ -253,4 +253,4 @@ What would you do if you weren't afraid? - Spencer Johnson
 who moved my cheese?
 wisdom
 wisdom -- a wisdom for left may not be valid for right
-wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
+[ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
