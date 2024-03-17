@@ -2,56 +2,76 @@
 
 new adventure
 ⇱ find remote / relocate / good job?
-  ⇱ interview
-    GAFAM
-      https://foobar.withgoogle.com/
-    Slack
-    Cloudflare
-    ⇱ nego salaire
-      vest mid-May :-/
-    ⇱ apply for jobs + https://www.cnbc.com/2024/01/01/dont-forget-this-crucial-step-after-you-apply-for-a-job-says-recruiter.html
-      ⇱ find target jobs / companies https://remoteok.com/
-      ⇱ update CV
-      ⇱ update LinkedIn
-        ⇱ https://www.cnbc.com/2023/09/28/do-these-3-things-on-linkedin-and-be-head-and-shoulders-above-others.html
-        ⇱ https://www.cnbc.com/2023/11/20/dont-forget-to-put-promotions-on-linkedin-says-ex-google-recruiter.html
-      ⇱ update portfolio / brand
-        ⇱ know compensation (od)
-          https://www.levels.fyi/
-      ⇱ update skills
-        ⇱ AI
-          ⇱ Prompting
-        ⇱ Cucumber https://school.cucumber.io/courses/take/bdd-with-cucumber-javascript/lessons/11261249-introduction-to-bdd
-        ⇱ Web
-          ⇱ CSS
-        ⇱ Perf
-        ⇱ C++
-        ⇱ Rust
-        ⇱ Python
-          ⇱ Cloud
-            ⇱ AWS Cloud Practitioner Essentials 100%
-              promo code: AWSRETAKE24
-            ⇱ https://aws.amazon.com/certification/certified-developer-associate/
-      ⇱ Certifications? https://www.infoworld.com/article/3709508/do-programming-certifications-still-matter.html
-        Jira
+⇱ interview
+	⇱ train for interview
+		⇱ screening
+		⇱ system design https://www.swequiz.com/#pricing
+	GAFAM
+		https://www.youtube.com/@crackfaang/playlists
+		https://www.youtube.com/@IGotAnOffer-Engineering
+		Google
+			https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
+			https://medium.com/@rohitverma_87831/decoding-googles-coding-interview-20b1f8fcaf66
+			https://foobar.withgoogle.com/
+		Apple
+
+		Amazon
+			https://medium.com/@rohitverma_87831/my-interview-experience-at-amazon-offer-sde-ii-6223edbd4fa3
+			https://www.amazon.jobs/content/en/how-we-hire/interviewing-at-amazon
+		Meta
+			https://medium.com/@rohitverma_87831/my-interview-experience-at-meta-ad7eb22dd220
+
+		Microsoft
+
+	Slack
+	Cloudflare
+	Spotify
+	Canva?
+	Netflix
+	OpenAi
+	https://openai.com/careers/search?l=san-francisco%252C-california%252C-united-states
+	Groq
+	Devin
+
+⇱ nego salaire
+	vest mid-May :-/
+	https://posthog.com/handbook/people/compensation
+	⇱ know compensation (od)
+	https://www.levels.fyi/
+⇱ apply for jobs + https://www.cnbc.com/2024/01/01/dont-forget-this-crucial-step-after-you-apply-for-a-job-says-recruiter.html
+⇱ find target jobs / companies https://remoteok.com/
+⇱ update CV
+	https://www.tealhq.com/?ref=leewoodrow
+	https://www.jobscan.co/
+	https://www.jobtestprep.com/icims-ats
+	https://premium.linkedin.com/content/premium/global/en_us/index/jobsearch/articles/the-easy-how-to-guide-for-formatting-resumes-for-applicant-tracking-systems
+	https://www.linkedin.com/pulse/how-beat-applicant-tracking-system-ats-lee/
+⇱ update LinkedIn
+	⇱ https://www.cnbc.com/2023/09/28/do-these-3-things-on-linkedin-and-be-head-and-shoulders-above-others.html
+	⇱ https://www.cnbc.com/2023/11/20/dont-forget-to-put-promotions-on-linkedin-says-ex-google-recruiter.html
+⇱ update portfolio / brand
+⇱ update skills
+	⇱ AI
+	⇱ Prompting
+	⇱ Cucumber https://school.cucumber.io/courses/take/bdd-with-cucumber-javascript/lessons/11261249-introduction-to-bdd
+	⇱ Web
+	⇱ CSS
+	⇱ Perf
+	⇱ C++
+	⇱ Rust
+	⇱ Python
+	⇱ Cloud
+	⇱ AWS Cloud Practitioner Essentials 100%
+	promo code: AWSRETAKE24
+	⇱ https://aws.amazon.com/certification/certified-developer-associate/
+	⇱ Certifications? https://www.infoworld.com/article/3709508/do-programming-certifications-still-matter.html
+	Jira
 
 Google
     xooglers
     https://docs.google.com/document/d/13wFFC7vIdB2hkxdyT0dSiGgkZTXCDDBeW_GBPqy9Jy0/
-    ⇱ train for interview
-      ⇱ screening
-      ⇱ system design https://www.swequiz.com/#pricing
 
-Meta
-  https://medium.com/@rohitverma_87831/my-interview-experience-at-meta-ad7eb22dd220
 
-Amazon
-  https://www.amazon.jobs/content/en/how-we-hire/interviewing-at-amazon
-
-OpenAi
-https://openai.com/careers/search?l=san-francisco%252C-california%252C-united-states
-
-https://posthog.com/handbook/people/compensation
 https://github.blog/2024-01-08-github-certifications-are-generally-available/
 
 https://www.adept.ai/careers self description
@@ -67,13 +87,3 @@ https://interviewing.io/
 https://medium.com/@andreimargeloiu/the-definitive-guide-to-the-coding-interview-2704d166664c
 
 what projects you have worked on before and which was the most impressive one
-
-SYD
-- Spotify?
-- AWS?
-- Canva?
-- Microsoft?
-- Apple?
-
-https://www.youtube.com/@crackfaang/playlists
-https://www.youtube.com/@IGotAnOffer-Engineering
