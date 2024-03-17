@@ -8,12 +8,39 @@ import * as NORMALIZERS from './index.js'
 
 describe(`${LIB} -- url`, function() {
 
-	const TEST_CASES: any = {
-
-		normalizeꓽurl: {
+	const TEST_CASES_BY_PROTOCOL: any = {
+		mailto: {
 			'mailto:a@b.c': 'mailto:a@b.c',
 			'mailto:a@b. C': 'mailto:a@b.c',
-			' https://www.foo.bar': 'https://www.foo.bar',
+		},
+
+		httpₓ: {
+			'https://www.foo.bar?foo=42#1234': 'https://www.foo.bar/?foo=42#1234',
+			' http: //www. foo. bar': 'https://www.foo.bar/',
+			' https: //www. foo.bar ': 'https://www.foo.bar/',
+
+			'https://www.foo.bar/index.html': 'https://www.foo.bar/index.html',
+			'https://www.foo.bar/baz': 'https://www.foo.bar/baz',
+
+			'https://www.foo.bar?&b=2&a=1': 'https://www.foo.bar/?a=1&b=2',
+		},
+
+		undefined: {
+			// recognized as an email
+			'a@b.c': 'mailto:a@b.c',
+			'A@b. c': 'mailto:a@b.c',
+		},
+	}
+
+	const TEST_CASES: any = {
+		normalizeꓽurl: {
+			...TEST_CASES_BY_PROTOCOL.mailto,
+			...TEST_CASES_BY_PROTOCOL.httpₓ,
+			...TEST_CASES_BY_PROTOCOL.undefined,
+		},
+
+		normalizeꓽurlⵧhttpₓ: {
+			...TEST_CASES_BY_PROTOCOL.httpₓ,
 		},
 	}
 	Object.keys(NORMALIZERS).forEach(key => {

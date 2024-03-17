@@ -37,7 +37,7 @@ function getꓽcharset(spec: Immutable<Contentⳇweb>): Charset {
 }*/
 
 function getꓽtitle(spec: Immutable<Contentⳇweb>): string {
-	return normalizeꓽtextⵧsentence(spec.title ?? '')
+	return normalizeꓽtextⵧsentence(spec.title ?? 'Index')
 }
 
 /////////////////////////////////////////////////
@@ -51,5 +51,6 @@ export {
 
 	//getꓽlang,
 	//getꓽcharset,
+
 	getꓽtitle,
 }

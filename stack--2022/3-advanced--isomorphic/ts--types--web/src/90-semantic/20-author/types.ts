@@ -11,5 +11,5 @@ export interface Author extends WithOnlinePresence {
 	name: string
 	intro?: string // very short intro. TODO refine
 	email?: Email‿str
-	contact?: Url‿str // should not duplicate email
+	contact?: Url‿str // should NOT duplicate email
 }

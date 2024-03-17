@@ -3,6 +3,7 @@ import { Author, Url‿str, Immutable } from '@offirmo-private/ts-types'
 import {
 	normalize_unicode,
 	normalizeꓽemailⵧsafe,
+	normalizeꓽurl,
 } from '@offirmo-private/normalize-string'
 
 /////////////////////////////////////////////////
@@ -18,7 +19,7 @@ function getꓽname(author: Immutable<Author>): string {
 function getꓽintro(author: Immutable<Author>): string | undefined {
 	return author.intro
 		? normalize_unicode(author.intro).trim()
-		: undefined
+		: `${getꓽname(author)}, author.`
 }
 
 function getꓽemail(author: Immutable<Author>): Url‿str | undefined {
@@ -29,11 +30,11 @@ function getꓽemail(author: Immutable<Author>): Url‿str | undefined {
 
 function getꓽcontact(author: Immutable<Author>): Url‿str | undefined {
 	if (author.contact)
-		return author.contact
+		return normalizeꓽurl(author.contact)
 
 	const email = getꓽemail(author)
 	if (email)
-		return `mailto:${email}`
+		return normalizeꓽurl(`mailto:${email}`)
 
 	return undefined
 }

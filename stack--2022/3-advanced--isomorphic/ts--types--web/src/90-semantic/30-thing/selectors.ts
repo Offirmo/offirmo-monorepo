@@ -16,7 +16,7 @@ function getꓽlang(thing: Immutable<Thing>): IETFLanguageType {
 }
 
 function getꓽdescription(thing: Immutable<Thing>): string {
-	assert(!!thing.description)
+	assert(thing.description, `should have a description`)
 	return normalize_unicode(thing.description).trim()
 }
 
@@ -31,7 +31,7 @@ function getꓽauthor__intro(thing: Immutable<Thing>): string | undefined {
 }
 function getꓽauthor__contact(thing: Immutable<Thing>): string | undefined {
 	return thing.author
-		? AuthorSelectors.getꓽintro(thing.author)
+		? AuthorSelectors.getꓽcontact(thing.author)
 		: undefined
 }
 

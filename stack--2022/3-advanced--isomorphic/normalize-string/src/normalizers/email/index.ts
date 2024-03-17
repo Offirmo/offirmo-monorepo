@@ -110,6 +110,15 @@ function _validate_email_structure(possible_email: string): string {
 	return possible_email
 }
 
+function hasꓽemail_structure(possible_email: string): boolean {
+	try {
+		_validate_email_structure(possible_email)
+		return true
+	} catch {
+		return false
+	}
+}
+
 ////////////////////////////////////
 // We need different levels of normalization
 // for ex. using "+" foo+test@gmail.com is not known and very likely to be an attempt to double register
@@ -146,6 +155,8 @@ const normalizeꓽemailⵧfull = combine_normalizers(
 /////////////////////////////////////////////////
 
 export {
+	hasꓽemail_structure, // useful
+
 	normalizeꓽemailⵧsafe,
 	normalizeꓽemailⵧreasonable,
 	normalizeꓽemailⵧfull,

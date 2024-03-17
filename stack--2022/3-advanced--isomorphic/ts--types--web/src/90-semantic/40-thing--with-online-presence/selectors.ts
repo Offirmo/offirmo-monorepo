@@ -1,5 +1,6 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
+import { normalize_unicode, normalizeꓽemailⵧsafe, normalizeꓽurl } from '@offirmo-private/normalize-string'
 
 import { Url‿str } from '../../01-links/index.js'
 import * as ThingSelectors from '../30-thing/selectors.js'
@@ -15,6 +16,9 @@ export * from '../30-thing/selectors.js'
 
 // should not be called "naked", this is a fallback for a semantic contact need
 function _getꓽcontact(thing: Immutable<ThingWithOnlinePresence>): Url‿str {
+	if (thing.contact)
+		return normalizeꓽurl(thing.contact)
+
 	const url = thing.contact || ThingSelectors.getꓽauthor__contact(thing)
 	assert(url, 'Thing: should have at last a point of contact!')
 	return url
@@ -25,12 +29,15 @@ function getꓽcontactⵧhuman(thing: Immutable<ThingWithOnlinePresence>): Url�
 }
 
 function getꓽcontactⵧsecurity(thing: Immutable<ThingWithOnlinePresence>): Url‿str {
-	return thing.contactⵧsecurity || _getꓽcontact(thing)
+	return thing.contactⵧsecurity
+		? normalizeꓽurl(thing.contactⵧsecurity)
+		: _getꓽcontact(thing)
+}
+
+function getꓽcontactⵧsupport(thing: Immutable<ThingWithOnlinePresence>): Url‿str {
+	return thing.contactⵧsupport ? normalizeꓽurl(thing.contactⵧsupport) : _getꓽcontact(thing)
 }
 
 /////////////////////////////////////////////////
 
-export {
-	getꓽcontactⵧhuman,
-	getꓽcontactⵧsecurity,
-}
+export { getꓽcontactⵧhuman, getꓽcontactⵧsecurity, getꓽcontactⵧsupport,}
