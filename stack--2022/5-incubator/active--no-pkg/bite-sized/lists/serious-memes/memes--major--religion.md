@@ -13,9 +13,9 @@ Human sacrifice
 Jacques Fesch
 le sacré
 Lourdes
-mercy
 médaille -- miraculeuse
 médaille -- st Benoit
+mercy
 Natural Religiosity
 prayer -- extension of selfishness: santa's list, promise to be good, implore, negotiate, plead
 Russian Pilgrim

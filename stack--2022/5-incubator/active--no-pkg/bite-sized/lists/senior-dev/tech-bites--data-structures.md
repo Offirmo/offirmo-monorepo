@@ -1,6 +1,7 @@
 -- List of terms relating to algorithms and data structures https://en.wikipedia.org/wiki/List_of_terms_relating_to_algorithms_and_data_structures
 array -- associative = store (key, value) https://en.wikipedia.org/wiki/Associative_array = map, dict
 array -- dynamic = https://en.wikipedia.org/wiki/Dynamic_array
+complexity chart https://flexiple.com/algorithms/big-o-notation-cheat-sheet
 deterministic acyclic finite state automaton (DAFSA)
 dictionary = associative array = map = symbol table
 gap buffer = https://en.wikipedia.org/wiki/Gap_buffer
@@ -8,7 +9,6 @@ graph -- in-degree and out-degree ?
 hash table
 heap
 map
-complexity chart https://flexiple.com/algorithms/big-o-notation-cheat-sheet
 piece table https://en.wikipedia.org/wiki/Piece_table
 rope https://en.wikipedia.org/wiki/Rope_(data_structure)
 search = retrieve efficiently from a set https://en.wikipedia.org/wiki/Search_data_structure

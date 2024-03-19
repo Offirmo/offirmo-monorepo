@@ -1,4 +1,5 @@
--- https://github.com/donnemartin/system-design-primer
++++ https://github.com/donnemartin/system-design-primer
++++ https://lethain.com/distributed-systems-vocabulary/
 [ ] kubernetes
 [ ] paper https://research.google/pubs/large-scale-cluster-management-at-google-with-borg/
 [ ] paper https://research.google/pubs/the-google-file-system/
@@ -8,6 +9,9 @@
 [ ] paper https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf
 [ ] paper https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf
 [ ] research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
+1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
+1% rule -- lurk, lurker
+1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
 12 factors https://12factor.net/
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 access control
@@ -16,6 +20,10 @@ ACID -- 2 Consistency "valid state"
 ACID -- 3 Isolation "independent transactions"
 ACID -- 4 Durability "once committed, always committed"
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
+API-First = Built with APIs from the ground up. All functionality is exposed through an API
+architecture -- JamStack
+architecture -- LAMP
+architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) https://machalliance.org/mach-technology
 audit
 audit trail
 auth
@@ -24,6 +32,8 @@ availability
 availability zone
 AWS Shield
 AWS WAF
+Backends For Frontends -- composable https://bff-patterns.com/
+Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 bloom Filters
 blue/green deployment
 caching
@@ -38,7 +48,7 @@ cascading failures -- exponential backoff + jitter +
 CDN ex. CloudFront
 change management
 chaos monkey
-cloud native
+cloud native = leverages the full capabilities of the cloud, beyond storage and hosting, including elastic scaling of highly available resources. Functionality is updated automatically no manual effort required
 compliance
 compute
 confidentiality
@@ -51,12 +61,13 @@ database -- No-SQL and their applications
 database -- partitioning/Sharding
 database -- SQL
 DDOS (incl. self)
-design -- 01b requirements -> including CAP
 design -- 01b clarifying questions
-design -- 02b top-down exploration, service discovery
+design -- 01b requirements -> including CAP
 design -- 02b breakdown in list of MICRO services: stateless/stateful? scalability?
+design -- 02b top-down exploration, service discovery
 design -- 02c scalability = sharding method?
 design -- 03 high level diagram (HLD)
+destructive engineering = kill and get strong in response
 DevOps
 distributed queues
 efficiency
@@ -65,11 +76,9 @@ event streaming https://kafka.apache.org/intro
 event-driven architecture = uses events to trigger and communicate between decoupled services, common with microservices
 fanout
 finops
-1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
-1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
-1% rule -- lurk, lurker
 flux architecture
 graceful degradation
+headless = Front-end presentation is completely decoupled from back-end logic. Designed to be channel, programming language, and framework agnostic
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
 ingress egress
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
@@ -79,6 +88,7 @@ interview -- popular problems = designing a URL shortening service, Pastebin, In
 interview -- popular problems = Google products: Google Search, YouTube, Google Photo Sharing and Storage, Google Docs, Google Drive...
 interview -- popular problems = Meta products: facebook, marketplace, instagram, whatsapp...
 kafka = pub/sub + store + process
+lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
 latency
 latency = the time that passes between an action and the resulting response
 load balancer

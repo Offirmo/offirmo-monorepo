@@ -25,3 +25,14 @@
 
 
 https://www.atlassian.com/company/careers/resources/interviewing/how-to-nail-your-engineering-interview
+
+
+
+https://dev.to/thawkin3/what-i-look-for-when-hiring-senior-software-engineers-4a6j
+1. Ability to communicate clearly with technical and non-technical people
+2. Attention to detail
+3. Emotional intelligence and maturity
+4. Humility
+5. High standards for engineering excellence
+6. Expert in their domain
+7. Passion for learning

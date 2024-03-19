@@ -2,6 +2,7 @@
 “The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.
 [ ] AAA TODO https://flinkliv.com/
 [ ] AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
+[ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 1 or 2 way door
 5 Harsh Truths for Success from Linus Torvalds https://medium.com/codex/5-harsh-truths-from-linus-torvalds-406ab20cea02
 5 regrets of dying
@@ -253,4 +254,3 @@ What would you do if you weren't afraid? - Spencer Johnson
 who moved my cheese?
 wisdom
 wisdom -- a wisdom for left may not be valid for right
-[ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5

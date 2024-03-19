@@ -1,7 +1,6 @@
 family
-golden rule
-golden rule
 génération spontanée
+golden rule
 hammurabi
 https://en.wikipedia.org/wiki/Baby_farming
 https://en.wikipedia.org/wiki/Makuria

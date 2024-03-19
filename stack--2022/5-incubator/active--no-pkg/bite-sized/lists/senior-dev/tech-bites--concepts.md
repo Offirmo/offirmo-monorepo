@@ -1,6 +1,8 @@
 +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
++++ https://explorer.globe.engineer/
 +++ https://martinfowler.com/
 +++ https://www.hackterms.com/about/all
++++ https://www.linfo.org/main_index.html
 12 factors https://12factor.net/
 97 Things Every Programmer Should Know
 abstraction https://www.merrickchristensen.com/articles/abstraction/
@@ -11,7 +13,6 @@ APIs web
 appli web
 apply / call / bind
 arguments
-Effect<Success, Error, Requirements> https://effect.website/docs/guides/essentials/the-effect-type
 assembly
 async -- design pattern -- reactor pattern
 async -- sync By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
@@ -41,6 +42,9 @@ connascence https://en.wikipedia.org/wiki/Connascence
 constructor
 context switch
 Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
+core web vital -- First Input Delay (FID) DEPRECATED https://web.dev/articles/fid
+core web vital -- Interaction to Next Paint (INP) https://web.dev/articles/inp
+corporate politic https://www.breakingpoint.tech/p/where-do-corporate-politics-come
 correlation
 cost based rate limiting
 courbe d'expertise
@@ -67,6 +71,7 @@ DRY don't repeat yourself
 dry run
 DSL Domain Specific Language
 effacement d'une liste pendant qu'on la parcourt
+Effect<Success, Error, Requirements> https://effect.website/docs/guides/essentials/the-effect-type
 egress
 emscripten
 encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube.com/watch?v=RXJKdh1KZ0w
@@ -76,6 +81,8 @@ error -- logic error = errors in the internal logical of the program, such as vi
 error -- runtime error = errors that can only be detected during runtime https://cplusplus.com/reference/stdexcept/runtime_error/
 error = failure = inability of a function to return a valid result, instead producing an error object describing the reason for the failure https://boostorg.github.io/leaf/#tutorial
 event loop
+exec summary https://lethain.com/present-to-executives/
+execution model https://en.wikipedia.org/wiki/Execution_model
 executive
 exposer des variables
 express, middlewares
@@ -83,6 +90,7 @@ feedback loop -- speed needed
 fifo
 file read
 file write
+finished software https://josem.co/the-beauty-of-finished-software/
 finops
 flatmap
 flow state: deep concentration, enjoyment, and a sense of progress
@@ -182,6 +190,7 @@ migrations
 mocha / chai
 monde du web ?
 monitoring = observing systems, collecting metrics, evaluating those metrics over time, and then using them to make decisions or take actions
+monolith "monolith is hard. Over time it has become poorly structured, containing many different, sometimes competing conventions. These conventions and “styles” sprawl throughout the monolith and make it difficult to understand what is going on. Because structures are built with different conventions, to work in the monolith safely, you have to examine everything to make sure you understand this instance of this pattern. It’s not safe to assume anything. This, combined with the lack of boundaries in the monolith means that every change incurs a huge cost in examination and understanding before it can be safely implemented. This skews developer performance to tenure - the longer you have been staring at the code, the more you have wrapped your head around and the faster you can go (mostly). New developers should not be worried about the time it takes to be effective in the monolith - it's the monolith’s fault, not yours."
 MVC
 namespace
 nommage des fonctions
@@ -208,6 +217,7 @@ programming -- application
 programming -- systems https://en.wikipedia.org/wiki/Systems_programming
 programming language -- Rust https://www.rust-lang.org/
 programming language -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
+programming model https://en.wikipedia.org/wiki/Programming_model
 programming paradigm -- declarative programming
 programming paradigm -- functional programming
 programming paradigm -- imperative programming
@@ -232,6 +242,8 @@ RFC https://rfc.fyi/
 Role-Based Access Control (RBAC)
 rollback
 rolling deploy
+rule of composition https://www.linfo.org/rule_of_composition.html
+rule of silence https://www.linfo.org/rule_of_silence.html
 scatter/gather (datastreams)
 scope
 Scrum
@@ -272,10 +284,12 @@ TDZ
 tech debt -- Accidental - e.g. bugs due to human error that unknowingly increases the cost of future work.
 tech debt -- Deliberate - e.g. optimising for short term delivery, knowing it increases the cost of future work.
 tech debt -- Incidental - e.g. organic changes in complexity over time that increases the cost of future work.
+the room https://lethain.com/getting-in-the-room/
 this
 thread
-transpiler
-transpiling
+tracing -- distributed https://zipkin.io/
+tracing https://andydote.co.uk/2023/09/19/tracing-is-better/
+transpilation / transpiler / transpiling
 tree
 tree walk
 typecast

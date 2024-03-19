@@ -1,8 +1,8 @@
-+++ https://www.geeksforgeeks.org/courses/data-structures-and-algorithms-in-javascript
 [ ] adhoc questions on the application of Array, Stack, Queue, HashMap, TreeMap
 [ ] analysis of algorithms -- https://www.geeksforgeeks.org/design-and-analysis-of-algorithms/
 [ ] count bits
 [ ] gcd -- greatest common divisor
++++ https://www.geeksforgeeks.org/courses/data-structures-and-algorithms-in-javascript
 algorithmic paradigm -- Backtracking
 algorithmic paradigm -- Branch and bound
 algorithmic paradigm -- Brute-force search
@@ -26,7 +26,6 @@ analysis of algorithms -- big Oe -- O(n^3) = cubic
 analysis of algorithms -- big Of -- O(2^n) = exponential
 analysis of algorithms -- big Og -- O(n!) = factorial
 antisymetric
-consensus -- raft https://en.wikipedia.org/wiki/Raft_(algorithm)  https://raft.github.io/
 backtracking
 Best, Average and Worst Cases
 binary search: Lower bound, Upper bound, Questions where binary search is not the obvious choice
@@ -41,6 +40,7 @@ computational complexity -- Insertion time = time required for the update of the
 computational complexity -- Other = operations specific to the problem in question
 computational complexity -- Query time = time required to answer a query;
 computational complexity -- Space = the amount of memory space required to store the data structure;
+consensus -- raft https://en.wikipedia.org/wiki/Raft_(algorithm)  https://raft.github.io/
 CRDT
 Day–Stout–Warren = amortized binary tree balancing https://en.wikipedia.org/wiki/Day%E2%80%93Stout%E2%80%93Warren_algorithm
 deque = double-ended queue
@@ -71,6 +71,7 @@ LLM output generation -- beam search = search algorithm used to generate output 
 LLM output generation -- nucleus sampling aka. top-P sampling
 LLM output generation -- sampling = search algorithm used to generate output sequences from a model during inference https://ai-guide.future.mozilla.org/content/llms-101/
 Luleå algorithm https://en.wikipedia.org/wiki/Lule%C3%A5_algorithm
+MapReduce https://en.wikipedia.org/wiki/MapReduce
 Markov Chains -- absorbing -- standard form
 Markov Chains -- absorbing = only if absorbing state(s) and non-absorbing state(s) can end up in absorbing state(s)
 Markov Chains -- absorbing state https://www.youtube.com/watch?v=bTeKu7WdbT8
@@ -78,14 +79,17 @@ Markov Chains -- limiting matrix
 Markov Chains -- stationary distribution
 Markov Chains -- transition matrix
 Markov Chains https://www.youtube.com/watch?v=JHwyHIz6a8A
-NP = Class of computational decision problems for which any given yes-solution can be verified as a solution in polynomial time by a deterministic Turing machine (or solvable by a non-deterministic Turing machine in polynomial time).
-NP-complete = Class of decision problems which contains the hardest problems in NP. Each NP-complete problem has to be in NP.
-NP-easy = At most as hard as NP, but not necessarily in NP.
-NP-equivalent = Decision problems that are both NP-hard and NP-easy, but not necessarily in NP.
-NP-hard = Class of problems which are at least as hard as the hardest problems in NP. Problems that are NP-hard do not have to be elements of NP; indeed, they may not even be decidable.
-NP-hardness https://en.wikipedia.org/wiki/NP-hardness
-NP-intermediate = If P and NP are different, then there exist decision problems in the region of NP that fall between P and the NP-complete problems. (If P and NP are the same class, then NP-intermediate problems do not exist because in this case every NP-complete problem would fall in P, and by definition, every problem in NP can be reduced to an NP-complete problem.)
+negamax https://en.wikipedia.org/wiki/Negamax
 Order of Growth
+P versus NP -- NP = "nondeterministic polynomial time" = quickly checkable (polynomially) = Class of computational decision problems for which any given yes-solution can be verified as a solution in polynomial time by a deterministic Turing machine (or solvable by a non-deterministic Turing machine in polynomial time)
+P versus NP -- NP-complete = Class of decision problems which contains the hardest problems in NP. Each NP-complete problem has to be in NP. A fast solution to any one of the NP could be used to build a quick solution to any other problem in NP https://en.wikipedia.org/wiki/NP-complete
+P versus NP -- NP-easy = At most as hard as NP, but not necessarily in NP.
+P versus NP -- NP-equivalent = Decision problems that are both NP-hard and NP-easy, but not necessarily in NP.
+P versus NP -- NP-hard = Class of problems which are at least as hard as the hardest problems in NP. Problems that are NP-hard do not have to be elements of NP; indeed, they may not even be decidable.
+P versus NP -- NP-hardness https://en.wikipedia.org/wiki/NP-hardness
+P versus NP -- NP-intermediate = If P and NP are different, then there exist decision problems in the region of NP that fall between P and the NP-complete problems. (If P and NP are the same class, then NP-intermediate problems do not exist because in this case every NP-complete problem would fall in P, and by definition, every problem in NP can be reduced to an NP-complete problem.)
+P versus NP -- P = easily solvable (Polynomial time)
+P versus NP https://en.wikipedia.org/wiki/P_versus_NP_problem
 recursion -- tail
 recursion -- tail call elimination
 reflexive

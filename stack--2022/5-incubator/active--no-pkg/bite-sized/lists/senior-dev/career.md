@@ -55,3 +55,12 @@ Net worth 8 million (single income family)
 
 ---
 "director ceiling" https://www.reddit.com/r/ProductManagement/comments/10ldwq7/how_to_make_the_jump_from_senior_to_director_at_a/
+
+
+
+
+https://boz.com/articles/be-kind
+
+https://careercutler.substack.com/p/continuous-growth-in-tech-50-resources
+
+https://roughlywritten.substack.com/p/random-thoughts-15-years-into-software

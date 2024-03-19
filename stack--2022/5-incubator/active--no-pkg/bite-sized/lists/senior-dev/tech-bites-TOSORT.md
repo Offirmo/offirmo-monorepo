@@ -27,7 +27,6 @@ how to job craft
 how to break out of a mental rut
 https://hbr.org/2019/09/to-coach-junior-employees-start-with-4-conversations
 
-https://adr.github.io/ Sustainable Architectural Decisions
 
 https://blockprotocol.org/
 
@@ -46,7 +45,6 @@ https://programmingisterrible.com/post/139222674273/how-to-write-disposable-code
 
 https://itnext.io/deployment-maturity-levels-feab55c20d04
 
-https://xyproblem.info/
 
 
 Well done sourcing the mental models from your readers ;)
@@ -65,7 +63,7 @@ privacy:
 compétition https://www.booklets.io/b/creativity-inc-by-ed-catmull-booklets
 
 repo of bite-sized programming concepts
-* https://lethain.com/distributed-systems-vocabulary/
+*
 * https://github.com/labs42io/clean-code-typescript
 
 
@@ -144,7 +142,6 @@ https://www.reddit.com/r/spacex/comments/gxb7j1/we_are_the_spacex_software_team_
 
 https://webpack.js.org/glossary/
 
-https://www.jimcollins.com/article_topics/articles/BHAG.html
 
 generics https://developers.slashdot.org/story/20/06/20/0045210/has-the-time-finally-come-for-generics-in-golang
 
