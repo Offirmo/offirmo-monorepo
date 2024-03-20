@@ -1,6 +1,8 @@
+## new adventure
 
 
-new adventure
+
+
 ⇱ find remote / relocate / good job?
 ⇱ interview
 	⇱ train for interview
@@ -12,45 +14,66 @@ new adventure
 		https://www.youtube.com/@crackfaang/playlists
 		https://www.youtube.com/@IGotAnOffer-Engineering
 		Google
+			[x] https://www.google.com/about/careers/applications/
+			Locations: https://www.google.com/about/careers/applications/locations/
+				Global HQ = Mountain View
+				Sunnyvale
 			https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
 			https://medium.com/@rohitverma_87831/decoding-googles-coding-interview-20b1f8fcaf66
 			https://foobar.withgoogle.com/
 		Apple
-
+			[x] https://jobs.apple.com/
 		Meta
+			[x] https://www.metacareers.com/
 			https://medium.com/@rohitverma_87831/my-interview-experience-at-meta-ad7eb22dd220
 		Amazon
 			https://medium.com/@rohitverma_87831/my-interview-experience-at-amazon-offer-sde-ii-6223edbd4fa3
 			https://www.amazon.jobs/content/en/how-we-hire/interviewing-at-amazon
 		Microsoft
+			https://jobs.careers.microsoft.com/
+
 	2nd tier
+		nvidia https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite  https://www.nvidia.com/en-us/about-nvidia/careers/
 		Slack
 		Cloudflare
 		Spotify
 		Canva
 		Netflix
+	others
+		https://www.bolt.com/careers "Building the future of commerce"
+
 		OpenAi
 			https://openai.com/careers/search?l=san-francisco%252C-california%252C-united-states
 		Groq
-		Devin?
+		https://www.cognition-labs.com/introducing-devin
+	
+	Top
+		https://fortune.com/ranking/best-companies/
+		https://www.linkedin.com/pulse/top-companies-2023-25-best-workplaces-grow-your/
+		https://www.linkedin.com/pulse/top-companies-2023-50-best-workplaces-grow-your-career-us/
+		https://people.com/human-interest-people-100-companies-that-care-7749999
+		https://www.greatplacetowork.com/best-workplaces/technology/2023
 
 ⇱ nego salaire
 	vest mid-May :-/
 	https://posthog.com/handbook/people/compensation
 	⇱ know compensation (od)
-	https://www.levels.fyi/
+	service: https://www.levels.fyi/services/
 ⇱ apply for jobs + https://www.cnbc.com/2024/01/01/dont-forget-this-crucial-step-after-you-apply-for-a-job-says-recruiter.html
 ⇱ find target jobs / companies https://remoteok.com/
 ⇱ update CV
+	[ ] https://www.linkedin.com/feed/update/urn:li:activity:7175614204291297280/
 	https://www.tealhq.com/?ref=leewoodrow
-	https://www.jobscan.co/
+	https://www.jobscan.co/ scanner de CV
 	https://www.jobtestprep.com/icims-ats
 	https://premium.linkedin.com/content/premium/global/en_us/index/jobsearch/articles/the-easy-how-to-guide-for-formatting-resumes-for-applicant-tracking-systems
 	https://www.linkedin.com/pulse/how-beat-applicant-tracking-system-ats-lee/
 ⇱ update LinkedIn
+	[ ] edit Top 50 skills!
 	⇱ https://www.cnbc.com/2023/09/28/do-these-3-things-on-linkedin-and-be-head-and-shoulders-above-others.html
 	⇱ https://www.cnbc.com/2023/11/20/dont-forget-to-put-promotions-on-linkedin-says-ex-google-recruiter.html
 ⇱ update portfolio / brand
+	https://www.offirmo.net/
 ⇱ update skills
 	⇱ AI
 	⇱ Prompting
@@ -84,3 +107,8 @@ https://interviewing.io/
 https://medium.com/@andreimargeloiu/the-definitive-guide-to-the-coding-interview-2704d166664c
 
 what projects you have worked on before and which was the most impressive one
+
+
+SkillsEdit(Skills)
+Agile Methodologies,  AngularJS,  async.js,  Bash,  C,  C++,  Coaching & Mentoring,  Continuous Integration,  Continuous Integration,  CSS,  Design Patterns,  DevOps,  Développement de logiciel,  Front-end Development,  Functional Programming,  Git,  GitHub,  High Availability,  High Performance Computing,  HTML 5,  JavaScript,  Jenkins,  Jira,  jQuery,  Linux,  Management,  Multithreading,  Node.js,  Object-oriented Design,  OOP,  PostgreSQL,  Puppet,  Python,  React.js,  Redis,  Redux,  Representational State Transfer (REST),  require.js,  REST APIs,  Ruby,  Selenium,  Shell Scripting,  Software Development,  Software Engineering,  Software Security,  Team Management,  TypeScript,  Unix,  Web Development,  WordPress
+
