@@ -24,16 +24,9 @@
 ## TOSORT
 
 https://realfavicongenerator.net/
+https://github.com/RealFaviconGenerator/cli-real-favicon
 https://github.com/RealFaviconGenerator/rfg-api
 
 https://piccalil.li/quick-tip/add-inline-svg-directly-in-your-css/
 
 https://github.com/audreyfeldroy/favicon-cheat-sheet
-
-
-
-
-
-
-
-TODO PNG https://github.com/yisibl/resvg-js

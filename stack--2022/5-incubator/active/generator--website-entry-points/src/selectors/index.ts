@@ -270,7 +270,11 @@ function getꓽicon__basename(spec: Immutable<WebPropertyEntryPointSpec>, size: 
 }
 
 function getꓽicon__path(spec: Immutable<WebPropertyEntryPointSpec>, size: number | null): RelativePath {
-	return `icons/${getꓽicon__basename(spec, size)}`
+	const basename = getꓽicon__basename(spec, size)
+	const path = [ basename ]
+	if (basename !== 'favicon.ico')
+		path.unshift('icons')
+	return path.join('/')
 }
 
 // keywords: todo dedupe, add categories, lowercase, etc.

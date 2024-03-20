@@ -4,11 +4,15 @@ import { LIB } from '../../../consts.js'
 
 import { getꓽwebsiteᝍentryᝍpoints } from '../../../index.js'
 
-import { SPEC } from '../../__fixtures/specs--blog--personal.js'
+import { SPEC as _SPEC } from '../../__fixtures/specs--blog--personal.js'
 
 /////////////////////////////////////////////////
 
-describe(`${LIB} -- hosting -- Cloudflare`, function() {
+describe(`${LIB} -- hosting -- Cloudflare Pages`, function() {
+	const SPEC = {
+		..._SPEC,
+		host: 'cloudflare-pages',
+	}
 
 	describe('404 Not Found', function () {
 

@@ -4,8 +4,14 @@ import * as path from 'node:path'
 
 import generateꓽwebsiteᝍentryᝍpoints from '@offirmo-private/generator--website-entry-points'
 
-import { SPEC } from '@offirmo-private/generator--website-entry-points/src/__specs/__fixtures/specs--blog--personal.js'
+import { SPEC } from '../../src/__specs/__fixtures/specs--blog--personal.js'
 
 /////////////////////////////////////////////////
 
-await generateꓽwebsiteᝍentryᝍpoints(SPEC, path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'), {rm: false,})
+await generateꓽwebsiteᝍentryᝍpoints({
+		...SPEC,
+		host: 'cloudflare-pages',
+	},
+	path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'),
+	{rm: true},
+)

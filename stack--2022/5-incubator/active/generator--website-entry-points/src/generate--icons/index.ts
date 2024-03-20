@@ -33,13 +33,17 @@ function generateꓽfile(spec: Immutable<WebPropertyEntryPointSpec>, size: numbe
 	if (size === null)
 		return svg
 
+	if (size === 16) {
+		// TODO .ico
+	}
+
 	// render to png
 	//console.log(svg)
 	const resvg__opts = {
 		font: {
 			// emojis are not working, reported
 			/*
-			fontFiles: ['/Users/yjutard/work/tmp/Noto_Color_Emoji/NotoColorEmoji-Regular.ttf'],
+			fontFiles: ['/Users/xyz/work/tmp/Noto_Color_Emoji/NotoColorEmoji-Regular.ttf'],
 			loadSystemFonts: false, // It will be faster to disable loading system fonts.
 			defaultFontFamily: 'Noto Color Emoji',
 			*/
