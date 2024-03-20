@@ -29,15 +29,17 @@ As mentioned above, the src folder should contain all the source code of a packa
 We follow a FOLDER based approach, where each component is in a named folder which contains standard-named files.
 This is bc source files usually have "related" files, ex:
 /my-component/
-↳ consts.ts const USED IN SEVERAL FILES (no need to put here if only used in one file, declare it closest to its use)
-↳ index.tsx
-↳ types.ts
-↳ index.css
-↳ reducers, selectors...
+↳ __fixtures for unit tests
+↳ __snapshots for unit tests https://jestjs.io/docs/snapshot-testing
 ↳ __spec.tsx (unit tests)
-↳ __fixtures__ for unit tests
-↳ __snapshots__ for unit tests
-↳ examples.tsx for storybook
+↳ __specs for unit tests (when grouped)
+↳ ??? examples.tsx for storybook
+↳ ~~generation for codegen / LLM
+↳ consts.ts const USED IN SEVERAL FILES (no need to put here if only used in one file, declare it closest to its use)
+↳ index.css
+↳ index.tsx
+↳ reducers, selectors...
+↳ types.ts
 
 All the "components/parts" are organized in such a structure:
 - `index.ts(x)` = the root, entry point

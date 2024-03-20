@@ -7,7 +7,14 @@
 ⇱ interview
 	⇱ train for interview
 		⇱ screening
+		⇱ coding
+			https://leetcode.com/
+				https://leetcode.com/list/du693s/
+				https://leetcode.com/studyplan/top-interview-150/
+			https://www.hackerrank.com/interview/preparation-kits/one-week-preparation-kit/
+			Meta
 		⇱ system design https://www.swequiz.com/#pricing
+			[ ] https://www.swequiz.com/quizzes
 		⇱ values
 			⇱ career stories https://docs.google.com/document/d/15hJNRT_RJDG170Zcov5D96_BRq15rrnYobnZlCsXtwc/
 	GAFAM
@@ -46,7 +53,7 @@
 			https://openai.com/careers/search?l=san-francisco%252C-california%252C-united-states
 		Groq
 		https://www.cognition-labs.com/introducing-devin
-	
+
 	Top
 		https://fortune.com/ranking/best-companies/
 		https://www.linkedin.com/pulse/top-companies-2023-25-best-workplaces-grow-your/
@@ -111,4 +118,3 @@ what projects you have worked on before and which was the most impressive one
 
 SkillsEdit(Skills)
 Agile Methodologies,  AngularJS,  async.js,  Bash,  C,  C++,  Coaching & Mentoring,  Continuous Integration,  Continuous Integration,  CSS,  Design Patterns,  DevOps,  Développement de logiciel,  Front-end Development,  Functional Programming,  Git,  GitHub,  High Availability,  High Performance Computing,  HTML 5,  JavaScript,  Jenkins,  Jira,  jQuery,  Linux,  Management,  Multithreading,  Node.js,  Object-oriented Design,  OOP,  PostgreSQL,  Puppet,  Python,  React.js,  Redis,  Redux,  Representational State Transfer (REST),  require.js,  REST APIs,  Ruby,  Selenium,  Shell Scripting,  Software Development,  Software Engineering,  Software Security,  Team Management,  TypeScript,  Unix,  Web Development,  WordPress
-

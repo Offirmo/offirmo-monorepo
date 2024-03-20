@@ -1,6 +1,5 @@
 
 
-https://news.nab.com.au/news/pay-id-scam/
 https://www.linkedin.com/help/linkedin/answer/a1359065
 
 Alternate Forms of Phishing - Smishing, Vishing & Whaling
@@ -22,21 +21,36 @@ https://digital-defense.io/
 1.  Compliance: All transaction and continuous engagements with customers, suppliers, partners and MP vendors are checked for regulatory compliance with applicable sanctions and export controls.
 
 
-https://www.google.com/search/howsearchworks/how-search-works/detecting-spam/
 
 https://openfga.dev/
 https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/
 
-https://thewokesalaryman.substack.com/p/why-scammers-love-to-target-people in Singapore
+
+## spam
+https://www.google.com/search/howsearchworks/how-search-works/detecting-spam/
 
 
-Scams
-https://www.scamwatch.gov.au/about-us
-https://www.accc.gov.au/national-anti-scam-centre/advisory-board-for-the-anti-scam-centre
-https://www.scamwatch.gov.au/research-and-resources/the-little-black-book-of-scams
-
+## privacy breach
 https://www.abc.net.au/news/2023-05-18/data-breaches-your-identity-interactive/102175688
 
 
-Badges
+
+## Scams
+https://www.scamwatch.gov.au/about-us
+https://www.accc.gov.au/national-anti-scam-centre/advisory-board-for-the-anti-scam-centre
+https://www.scamwatch.gov.au/research-and-resources/the-little-black-book-of-scams
+https://thewokesalaryman.substack.com/p/why-scammers-love-to-target-people in Singapore
+https://news.nab.com.au/news/pay-id-scam/
+
+
+## Badges
 https://www.linkedin.com/help/linkedin/answer/a1359065/
+
+
+
+## Auth
+https://en.wikipedia.org/wiki/Mozilla_Persona
+
+
+## reputation
+https://datatracker.ietf.org/doc/html/rfc7072 "A Reputation Query Protocol"
