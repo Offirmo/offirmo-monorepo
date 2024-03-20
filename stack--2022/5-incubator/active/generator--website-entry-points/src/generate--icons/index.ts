@@ -37,9 +37,13 @@ function generateꓽfile(spec: Immutable<WebPropertyEntryPointSpec>, size: numbe
 	//console.log(svg)
 	const resvg__opts = {
 		font: {
+			// emojis are not working, reported
+			/*
 			fontFiles: ['/Users/yjutard/work/tmp/Noto_Color_Emoji/NotoColorEmoji-Regular.ttf'],
 			loadSystemFonts: false, // It will be faster to disable loading system fonts.
 			defaultFontFamily: 'Noto Color Emoji',
+			*/
+			//defaultFontFamily: 'Apple Color Emoji',
 		},
 	}
 	const resvg = new Resvg(svg, resvg__opts)

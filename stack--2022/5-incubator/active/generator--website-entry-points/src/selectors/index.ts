@@ -3,11 +3,11 @@ import * as path from 'node:path'
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 import { Basename, Immutable, RelativePath } from '@offirmo-private/ts-types'
-import { getꓽtitle as _getꓽtitle, getꓽdescription as _getꓽdescription } from '@offirmo-private/ts-types-web'
+import { getꓽtitle as Contentⳇwebᐧgetꓽtitle, getꓽdescription as _getꓽdescription } from '@offirmo-private/ts-types-web'
 import { CssColor‿str } from '@offirmo-private/ts-types-web'
 import { FeatureSnippets } from '@offirmo-private/generator--html'
 
-import { normalize_unicode, coerce_toꓽsafe_basenameⵧstrictest } from '@offirmo-private/normalize-string'
+import { normalize_unicode, coerce_toꓽsafe_basenameⵧstrictest, normalizeꓽtextⵧsentence } from '@offirmo-private/normalize-string'
 
 import { WebPropertyEntryPointSpec } from '../types.js'
 
@@ -127,6 +127,21 @@ function getꓽfeatures(spec: Immutable<WebPropertyEntryPointSpec>): FeatureSnip
 /////////////////////////////////////////////////
 // content
 
+function _getꓽtitle(spec: Immutable<WebPropertyEntryPointSpec>): string {
+	const candidate_own = normalizeꓽtextⵧsentence(spec.title ?? '')
+	if (candidate_own)
+		return candidate_own
+
+	const candidate_content = Contentⳇwebᐧgetꓽtitle(spec.content)
+	if (candidate_content)
+		return candidate_content
+
+	throw new Error(`Sorry, we need a title, I can't infer one!`)
+}
+
+function getꓽtitleⵧpage(spec: Immutable<WebPropertyEntryPointSpec>): string {
+	return _getꓽtitle(spec)
+}
 function getꓽtitleⵧsocial(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	// TODO
 	return _getꓽtitle(spec)
@@ -244,7 +259,7 @@ function getꓽicon__basename(spec: Immutable<WebPropertyEntryPointSpec>, size: 
 }
 
 function getꓽicon__path(spec: Immutable<WebPropertyEntryPointSpec>, size: number | null): RelativePath {
-	return `favicons/${getꓽicon__basename(spec, size)}`
+	return `icons/${getꓽicon__basename(spec, size)}`
 }
 
 // keywords: todo dedupe, add categories, lowercase, etc.
@@ -274,6 +289,7 @@ export {
 	getꓽbasenameⵧwebmanifest,
 
 	getꓽfeatures,
+	getꓽtitleⵧpage,
 	getꓽtitleⵧsocial,
 	getꓽtitleⵧapp,
 	getꓽtitleⵧappⵧshort,

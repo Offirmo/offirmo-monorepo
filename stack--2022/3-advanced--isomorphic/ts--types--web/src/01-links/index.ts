@@ -31,3 +31,7 @@ export interface SocialNetworkLink extends SimplerSocialNetworkLink {
 export interface Link {
 
 }
+
+
+// https://en.wikipedia.org/wiki/Wikipedia:Bare_URLs
+// https://en.wikipedia.org/wiki/Wikipedia:Link_rot

@@ -33,7 +33,7 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDo
 
 		content: {
 			...base.content,
-			title: base.content.title + ' - about',
+			title: base.content.title + ' - About',
 			js: [],
 			html: [
 				`<h1>About ${base.content.title}</h1>`,

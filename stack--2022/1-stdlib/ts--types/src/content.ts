@@ -34,6 +34,7 @@ export interface Thing {
 	lang?: IETFLanguageType
 	description: string // must be simple, a paragraph at most
 	author: Author | undefined // undef = unknown :-(
+	since‿y?: number // for copyright notice
 }
 
 export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {

@@ -36,8 +36,9 @@ function getꓽcharset(spec: Immutable<Contentⳇweb>): Charset {
 	return 'utf-8'
 }*/
 
-function getꓽtitle(spec: Immutable<Contentⳇweb>): string {
-	return normalizeꓽtextⵧsentence(spec.title ?? 'Index')
+function getꓽtitle(spec: Immutable<Contentⳇweb>): string | undefined {
+	const candidate = normalizeꓽtextⵧsentence(spec.title ?? '')
+	return candidate ? candidate : undefined
 }
 
 /////////////////////////////////////////////////

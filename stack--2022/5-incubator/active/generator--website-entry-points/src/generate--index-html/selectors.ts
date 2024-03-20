@@ -7,12 +7,11 @@ import {
 	HtmlMetaContentⳇViewport,
 	HtmlDocumentSpec,
 	getꓽfeatures as _getꓽfeatures,
-	getꓽtitleⵧpage,
 } from '@offirmo-private/generator--html'
 
 import { WebPropertyEntryPointSpec } from '../types.js'
 import { LIB } from '../consts.js'
-import { prefersꓽorientation, getꓽfeatures, getꓽlang, getꓽcolorⵧtheme, getꓽcharset, isꓽuser_scalable, supportsꓽscreensⵧwith_shape, wantsꓽinstall, usesꓽpull_to_refresh, getꓽcolorⵧbackground, getꓽcolorⵧforeground, needsꓽwebmanifest, getꓽbasenameⵧwebmanifest } from '../selectors/index.js'
+import { getꓽtitleⵧpage, prefersꓽorientation, getꓽfeatures, getꓽlang, getꓽcolorⵧtheme, getꓽcharset, isꓽuser_scalable, supportsꓽscreensⵧwith_shape, wantsꓽinstall, usesꓽpull_to_refresh, getꓽcolorⵧbackground, getꓽcolorⵧforeground, needsꓽwebmanifest, getꓽbasenameⵧwebmanifest } from '../selectors/index.js'
 import { generateꓽinline as generateꓽfavicon__iconⵧinline } from '../generate--icons/index.js'
 import { ifꓽdebug } from '../utils/debug.js'
 
@@ -153,11 +152,8 @@ function getꓽcssⵧcritical(spec: Immutable<WebPropertyEntryPointSpec>): Css�
 
 
 function getꓽcontentⵧweb(spec: Immutable<WebPropertyEntryPointSpec>): Contentⳇweb {
-
-
 	// TODO extract HTML from files? ./esm/parser-html.mjsxxx
 	// TODO review import from js?
-
 
 	const result: Contentⳇweb = {
 		title: getꓽtitleⵧpage(spec),

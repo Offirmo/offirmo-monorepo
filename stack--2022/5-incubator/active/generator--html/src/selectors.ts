@@ -49,7 +49,7 @@ function getꓽjs(spec: Immutable<HtmlDocumentSpec>): Immutable<JS‿str[]> {
 	return Selectors.getꓽjs(spec.content)
 }
 
-function getꓽtitleⵧpage(spec: Immutable<HtmlDocumentSpec>): string {
+function getꓽtitleⵧpage(spec: Immutable<HtmlDocumentSpec>): string | undefined {
 	return Selectors.getꓽtitle(spec.content)
 }
 

@@ -11,36 +11,25 @@ import { JS‿str } from '../30-js/index.js'
 
 export interface Contentⳇweb {
 	// flat to make it easier to extend
+	// semantic as much as we can
 
-	/////////////////////
-	// semantic (as much as we can)
+	// content (structure)
+	html?: Html‿str[]
+	title?: string // technically redundant, could be inferred from the html
 
-	title?: string
-
-	// should be as semantic as possible
-	html?:         Html‿str[]
-
-	/////////////////////
-	// presentation
-
+	// presentation (formatting, layout)
 	// ideally optional if html is semantic
-	css?:          Css‿str[]
+	css?: Css‿str[]
+	cssⵧcritical?: Css‿str[]
 
-	/////////////////////
-	// advanced
-
+	// dynamic behavior or progressive enhancements
 	// ideally, for augmentation only
-	js?:           JS‿str[]
+	js?: JS‿str[]
+	jsⵧcritical?: JS‿str[]
 
 	/////////////////////
 	// meta
 
 	// TODO meta?
 	// TODO social?
-
-	/////////////////////
-	// technical
-	// implementation dependent
-	cssⵧcritical?: Css‿str[]
-	jsⵧcritical?:  JS‿str[]
 }
