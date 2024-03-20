@@ -9,6 +9,8 @@ abstraction https://www.merrickchristensen.com/articles/abstraction/
 allocation
 annotation
 anomaly detection
+Application Programming Interface (API) = defines interactions that allows two applications to talk to each other
+API Economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
 APIs web
 appli web
 apply / call / bind

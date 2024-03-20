@@ -1,5 +1,3 @@
-+++ https://github.com/donnemartin/system-design-primer
-+++ https://lethain.com/distributed-systems-vocabulary/
 [ ] kubernetes
 [ ] paper https://research.google/pubs/large-scale-cluster-management-at-google-with-borg/
 [ ] paper https://research.google/pubs/the-google-file-system/
@@ -9,6 +7,8 @@
 [ ] paper https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf
 [ ] paper https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf
 [ ] research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
++++ https://github.com/donnemartin/system-design-primer
++++ https://lethain.com/distributed-systems-vocabulary/
 1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
 1% rule -- lurk, lurker
 1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
@@ -21,7 +21,7 @@ ACID -- 3 Isolation "independent transactions"
 ACID -- 4 Durability "once committed, always committed"
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
 API-First = Built with APIs from the ground up. All functionality is exposed through an API
-architecture -- JamStack
+architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
 architecture -- LAMP
 architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) https://machalliance.org/mach-technology
 audit
@@ -45,7 +45,6 @@ CAP Theorem -> see also PACELC theorem
 capacity planning
 cascading failures
 cascading failures -- exponential backoff + jitter +
-CDN ex. CloudFront
 change management
 chaos monkey
 cloud native = leverages the full capabilities of the cloud, beyond storage and hosting, including elastic scaling of highly available resources. Functionality is updated automatically no manual effort required
@@ -54,6 +53,7 @@ compute
 confidentiality
 consistent Hashing
 containers
+Content Delivery Network (CDN) ex. CloudFront
 cron
 database
 database -- indexes
@@ -78,7 +78,7 @@ fanout
 finops
 flux architecture
 graceful degradation
-headless = Front-end presentation is completely decoupled from back-end logic. Designed to be channel, programming language, and framework agnostic
+headless = Front-end presentation is completely decoupled from back-end logic/CMS. Designed to be channel, programming language, and framework agnostic https://jamstack.org/glossary/headless-technology/
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
 ingress egress
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
