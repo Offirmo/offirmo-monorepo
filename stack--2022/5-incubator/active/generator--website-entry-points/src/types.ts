@@ -87,15 +87,18 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	preset?:
 		| 'game' // webapp, uses full screen, no nav nor browser controls
 		| 'blog' // content oriented
- 		| 'landing' // "rebound" page trying to promote the real content with a CTA: buy, install app... https://growth.design/case-studies/landing-page-ux-psychology
-		// TODO more on-demand
+		| 'landing' // "rebound" page trying to promote the real content with a CTA: buy, install app... https://growth.design/case-studies/landing-page-ux-psychology
+	// TODO more on-demand
+
+	/////// SPA
+	isꓽcatching_all_routes?: boolean // if true, we may NOT want a 404.html, ex. https://developers.cloudflare.com/pages/configuration/serving-pages/#single-page-application-spa-rendering
 
 	/////// PWA
 	app_categories?: Category[] // ??
 	wantsꓽinstall?:
-		| false     // won't provide much benefit, no need to advertise it
+		| false // won't provide much benefit, no need to advertise it
 		| 'partial' // not enough to be automatically "prompted to install" so we may want to advertise it in JS
-		| 'prompt'  // full to the point the browser is expected to prompt https://web.dev/articles/install-criteria
+		| 'prompt' // full to the point the browser is expected to prompt https://web.dev/articles/install-criteria
 		| 'redirect' // we want to redirect to an app store TODO clarify
 	titleⵧapp?: Descriptionⳇtitle
 	descriptionⵧapp?: string
@@ -104,12 +107,16 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	canꓽuse_window_controls_overlay?: boolean
 	usesꓽpull_to_refresh?: boolean
 
-
 	/////// SRC
 	sourcecode?: boolean // TODO clarify generate JS/TS source code
 
 	/////// META
-	host?: 'github-pages' | 'cloudflare-pages' | 'netlify' | 'cloudfront' | 'other'
+	host?:
+		| 'github-pages' // https://pages.github.com/  https://docs.github.com/en/pages
+		| 'cloudflare-pages'
+		| 'netlify'
+		| 'cloudfront'
+		| 'other'
 	basename?: Basename // without extension. default to "index"
 	env?: 'prod' | 'production' | string // default to env.NODE_ENV ?? dev
 	isꓽpublic?: boolean // default: true if prod, false else
@@ -124,7 +131,8 @@ interface EntryPoints {
 
 export {
 	type Category,
-	type WebPropertyEntryPointSpec as WebPropertyEntryPointSpec,
+	type WebProperty,
+	type WebPropertyEntryPointSpec,
 	type EntryPoints,
 }
 

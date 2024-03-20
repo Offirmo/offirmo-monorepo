@@ -38,11 +38,13 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpe
 	return {
 		// MAIN
 		[getꓽbasenameⵧindexᐧhtml(spec)]: generateꓽindexᐧhtml(spec),
-		[getꓽbasenameⵧaboutᐧhtml(spec)]: generateꓽaboutᐧhtml(spec),
-		[getꓽbasenameⵧcontactᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
-		// TODO not all of them if not needed
-		[getꓽbasenameⵧerrorᐧhtml(spec)]: generateꓽerrorᐧhtml(spec),
-		'404.html': generateꓽ404ᐧhtml(spec),
+		...(!spec.isꓽcatching_all_routes && {
+			[getꓽbasenameⵧaboutᐧhtml(spec)]: generateꓽaboutᐧhtml(spec),
+			[getꓽbasenameⵧcontactᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
+			// TODO not all of them if not needed?
+			[getꓽbasenameⵧerrorᐧhtml(spec)]: generateꓽerrorᐧhtml(spec),
+			'404.html': generateꓽ404ᐧhtml(spec),
+		}),
 
 		// ICONS
 		...getꓽicon__sizes(spec).reduce((acc, size) => {
@@ -53,14 +55,35 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpe
 		[getꓽicon__path(spec, null)]: generateꓽicon_file(spec, null),
 
 		// APP
-		...(needsꓽwebmanifest(spec) && { [getꓽbasenameⵧwebmanifest(spec)]: JSON.stringify(generateꓽwebmanifest(spec), undefined, '	')}),
+		...(needsꓽwebmanifest(spec) && { [getꓽbasenameⵧwebmanifest(spec)]: JSON.stringify(generateꓽwebmanifest(spec), undefined, '	') }),
 		...(shouldꓽgenerateꓽsourcecode(spec) && generateꓽsource_code(spec)),
 
 		// MISC
 		'humans.txt': generateꓽhumansᐧtxt(spec),
 		'robots.txt': generateꓽrobotsᐧtxt(spec),
-		'.well-known/security.txt': generateꓽsecurityᐧtxt(spec),
+		// TODO? https://en.wikipedia.org/wiki/Ads.txt
 
+		// Well-known https://en.wikipedia.org/wiki/Well-known_URI
+		'.well-known/security.txt': generateꓽsecurityᐧtxt(spec),
+		...(spec.host === 'cloudflare-pages' && {
+			_headers: '## https://developers.cloudflare.com/pages/configuration/headers/',
+			_redirects: '## https://developers.cloudflare.com/pages/configuration/redirects/',
+			'functions/hello-world.js': `// https://developers.cloudflare.com/pages/functions/get-started/#create-a-function
+export function onRequest(context) {
+return new Response("Hello, world!")
+}
+`,
+		}),
+		...(spec.host === 'github-pages' && {
+			'.nojekyll': `From GitHub Staff, 2016/11/04
+
+If you're not using Jekyll, you can add a .nojekyll file to the root of your repository to disable Jekyll from building your site. Once you do that, your site should build correctly.
+
+---
+Reason: GitHub build auto-converts the markdown files and don't serve them.
+Ref: https://github.com/blog/572-bypassing-jekyll-on-github-pages
+`,
+		}),
 		// TODO .htaccess ?
 	}
 }

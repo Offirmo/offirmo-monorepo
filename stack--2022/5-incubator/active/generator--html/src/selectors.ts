@@ -20,7 +20,7 @@ import {
 
 import snippetꓽcssⳇboxᝍlayoutⵧnatural from './snippets/css/box-layout--natural.js'
 import snippetꓽcssⳇviewportⵧfull from './snippets/css/viewport--full.js'
-import snippetꓽhtmlⳇreact_root from './snippets/html/react-root'
+import snippetꓽhtmlⳇreact_root from './snippets/html/react-root.js'
 import snippetꓽjsⳇnormalizeᝍtrailingᝍslash from './snippets/js/snippet--normalize-url.js'
 
 /////////////////////////////////////////////////
