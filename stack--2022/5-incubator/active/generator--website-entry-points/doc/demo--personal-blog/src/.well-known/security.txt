@@ -1,7 +1,7 @@
 # https://securitytxt.org/
 
 Please report any security issue or danger to the community to:
-- mailto:offirmo.net@gmail.com
+- https://github.com/Offirmo/offirmo.github.io/issues
 
 Thanks for your contribution!
 

@@ -7,20 +7,35 @@
 		<!-- https://github.com/h5bp/html5-boilerplate/blob/main/docs/html.md#the-order-of-the-title-and-meta-tags -->
 		<meta charset="utf-8" />
 		<meta name="format-detection" content="telephone=no" />
-		<meta
-			name="viewport"
-			content="width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1,viewport-fit=contain"
-		/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=contain" />
 		<meta http-equiv="content-language" content="en" />
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<meta http-equiv="generator" content="@offirmo/generator--website-entry-points" />
 		<meta http-equiv="theme-color" content="hsl(248,  9%, 17%)" />
 
-		<title>undefined - about</title>
+		<title>Offirmo - Fullstack Developer - About</title>
+
+		<!-- critical CSS https://www.smashingmagazine.com/2015/08/understanding-critical-css/ -->
+		<style>
+				@layer reset, offirmo--reset, foundation, offirmo--foundation, framework;
+
+			/* critical minimal design system */
+			:root {
+				--color--bg: hsl(337, 16%, 28%);
+				--color--fg: hsl(42, 100%, 87%);
+				--font: -apple-system, ui-sans-serif, sans-serif;
+
+				margin: 0;
+				padding: 0;
+
+				color: var(--color--fg);
+				background-color: var(--color--bg);
+				font-family: var(--font);
+		</style>
 	</head>
 
 	<body>
-		<h1>About undefined</h1>
+		<h1>About Offirmo - Fullstack Developer</h1>
 		<p>TODO...</p>
 
 		<!-- NON-critical styles https://www.smashingmagazine.com/2015/08/understanding-critical-css/ -->
