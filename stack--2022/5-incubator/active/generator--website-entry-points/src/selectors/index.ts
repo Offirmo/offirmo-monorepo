@@ -220,6 +220,8 @@ function getꓽbasenameⵧwebmanifest(spec: Immutable<WebPropertyEntryPointSpec>
 
 // TODO move to own file?
 function getꓽicon__sizes(spec: Immutable<WebPropertyEntryPointSpec>): Uint32Array {
+	// TODO if no PWA, no need for big ones!
+
 	const sizes = new Set<number>()
 
 	// https://web.dev/learn/pwa/web-app-manifest/#icons

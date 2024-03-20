@@ -1,4 +1,5 @@
 [ ] kubernetes
+[ ] paper "Adding new protocols to the cloud native ecosystem" https://docs.google.com/document/d/13wFFC7vIdB2hkxdyT0dSiGgkZTXCDDBeW_GBPqy9Jy0/edit
 [ ] paper https://research.google/pubs/large-scale-cluster-management-at-google-with-borg/
 [ ] paper https://research.google/pubs/the-google-file-system/
 [ ] paper https://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf

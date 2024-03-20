@@ -6,6 +6,8 @@ new adventure
 	⇱ train for interview
 		⇱ screening
 		⇱ system design https://www.swequiz.com/#pricing
+		⇱ values
+			⇱ career stories https://docs.google.com/document/d/15hJNRT_RJDG170Zcov5D96_BRq15rrnYobnZlCsXtwc/
 	GAFAM
 		https://www.youtube.com/@crackfaang/playlists
 		https://www.youtube.com/@IGotAnOffer-Engineering
@@ -15,23 +17,22 @@ new adventure
 			https://foobar.withgoogle.com/
 		Apple
 
+		Meta
+			https://medium.com/@rohitverma_87831/my-interview-experience-at-meta-ad7eb22dd220
 		Amazon
 			https://medium.com/@rohitverma_87831/my-interview-experience-at-amazon-offer-sde-ii-6223edbd4fa3
 			https://www.amazon.jobs/content/en/how-we-hire/interviewing-at-amazon
-		Meta
-			https://medium.com/@rohitverma_87831/my-interview-experience-at-meta-ad7eb22dd220
-
 		Microsoft
-
-	Slack
-	Cloudflare
-	Spotify
-	Canva?
-	Netflix
-	OpenAi
-	https://openai.com/careers/search?l=san-francisco%252C-california%252C-united-states
-	Groq
-	Devin
+	2nd tier
+		Slack
+		Cloudflare
+		Spotify
+		Canva
+		Netflix
+		OpenAi
+			https://openai.com/careers/search?l=san-francisco%252C-california%252C-united-states
+		Groq
+		Devin?
 
 ⇱ nego salaire
 	vest mid-May :-/
@@ -66,10 +67,6 @@ new adventure
 	⇱ https://aws.amazon.com/certification/certified-developer-associate/
 	⇱ Certifications? https://www.infoworld.com/article/3709508/do-programming-certifications-still-matter.html
 	Jira
-
-Google
-    xooglers
-    https://docs.google.com/document/d/13wFFC7vIdB2hkxdyT0dSiGgkZTXCDDBeW_GBPqy9Jy0/
 
 
 https://github.blog/2024-01-08-github-certifications-are-generally-available/

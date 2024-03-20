@@ -109,6 +109,7 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	sourcecode?: boolean // TODO clarify generate JS/TS source code
 
 	/////// META
+	host?: 'github-pages' | 'cloudflare-pages' | 'netlify' | 'cloudfront' | 'other'
 	basename?: Basename // without extension. default to "index"
 	env?: 'prod' | 'production' | string // default to env.NODE_ENV ?? dev
 	isꓽpublic?: boolean // default: true if prod, false else
