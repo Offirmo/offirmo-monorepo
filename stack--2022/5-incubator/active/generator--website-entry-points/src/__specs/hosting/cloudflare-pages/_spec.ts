@@ -9,15 +9,13 @@ import { SPEC as _SPEC } from '../../__fixtures/specs--blog--personal.js'
 /////////////////////////////////////////////////
 
 describe(`${LIB} -- hosting -- Cloudflare Pages`, function() {
-	const SPEC = {
+	const SPEC: typeof _SPEC = {
 		..._SPEC,
 		host: 'cloudflare-pages',
 	}
 
 	describe('404 Not Found', function () {
-
 		context('when NOT a SPA', function () {
-
 			it('should be handled through a 404.html', () => {
 				// https://developers.cloudflare.com/pages/configuration/serving-pages/#not-found-behavior
 				const entry_points = getꓽwebsiteᝍentryᝍpoints(SPEC)
@@ -28,19 +26,32 @@ describe(`${LIB} -- hosting -- Cloudflare Pages`, function() {
 		context('when a SPA', function () {
 			it('should NOT have a 404.html', () => {
 				// https://developers.cloudflare.com/pages/configuration/serving-pages/#single-page-application-spa-rendering
-				const entry_points = getꓽwebsiteᝍentryᝍpoints(
-					{
-						...SPEC,
-						isꓽcatching_all_routes: true,
-					}
-				)
+				const entry_points = getꓽwebsiteᝍentryᝍpoints({
+					...SPEC,
+					isꓽcatching_all_routes: true,
+				})
 				expect(entry_points).not.to.have.property('404.html')
 			})
 		})
+	})
 
+	describe('config', function () {
+		it('should have _headers', () => {
+			// https://developers.cloudflare.com/pages/configuration/headers/
+			const entry_points = getꓽwebsiteᝍentryᝍpoints(SPEC)
+			expect(entry_points).to.have.property('_headers')
+		})
+
+		it('should have _redirects', () => {
+			// https://developers.cloudflare.com/pages/configuration/redirects/
+			const entry_points = getꓽwebsiteᝍentryᝍpoints(SPEC)
+			expect(entry_points).to.have.property('_redirects')
+		})
 	})
 
 	//describe('server functions')
 
 	//describe('edge workers')
+	// NO! Functions ARE workers, packaged with a better devx
+	// https://developers.cloudflare.com/pages/how-to/refactor-a-worker-to-pages-functions/
 })

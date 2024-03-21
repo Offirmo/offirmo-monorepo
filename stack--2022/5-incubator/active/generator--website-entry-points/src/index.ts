@@ -1,6 +1,7 @@
 import assert from 'tiny-invariant'
 import * as Prettier from 'prettier'
 import { Immutable, AbsolutePath } from '@offirmo-private/ts-types'
+import { getꓽISO8601ⵧsimplified‿days } from '@offirmo-private/timestamps'
 
 import { EntryPoints, WebPropertyEntryPointSpec } from './types.js'
 
@@ -35,15 +36,19 @@ import * as fs from '@offirmo/cli-toolbox/fs/extra'
 /////////////////////////////////////////////////
 
 function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
+	const needsꓽerrorᐧhtml = !spec.isꓽcatching_all_routes && (!spec.host || spec.host === 'cloudfront')
+	const needsꓽ404ᐧhtml = !spec.isꓽcatching_all_routes && (!spec.host || !needsꓽerrorᐧhtml)
 	return {
 		// MAIN
 		[getꓽbasenameⵧindexᐧhtml(spec)]: generateꓽindexᐧhtml(spec),
+
+		// complementary pages
 		...(!spec.isꓽcatching_all_routes && {
 			[getꓽbasenameⵧaboutᐧhtml(spec)]: generateꓽaboutᐧhtml(spec),
 			[getꓽbasenameⵧcontactᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
-			// TODO not all of them if not needed?
-			[getꓽbasenameⵧerrorᐧhtml(spec)]: generateꓽerrorᐧhtml(spec),
-			'404.html': generateꓽ404ᐧhtml(spec),
+
+			...(needsꓽerrorᐧhtml && { [getꓽbasenameⵧerrorᐧhtml(spec)]: generateꓽerrorᐧhtml(spec) }),
+			...(needsꓽ404ᐧhtml && { '404.html': generateꓽ404ᐧhtml(spec) }),
 		}),
 
 		// ICONS
@@ -85,6 +90,9 @@ Ref: https://github.com/blog/572-bypassing-jekyll-on-github-pages
 `,
 		}),
 		// TODO .htaccess ?
+
+		// meta
+		'~~gen/spec.json': JSON.stringify(spec, undefined, '	'),
 	}
 }
 

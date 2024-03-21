@@ -4,11 +4,15 @@ import { LIB } from '../../../consts.js'
 
 import { getꓽwebsiteᝍentryᝍpoints } from '../../../index.js'
 
-import { SPEC } from '../../__fixtures/specs--blog--personal.js'
+import { SPEC as _SPEC } from '../../__fixtures/specs--blog--personal.js'
 
 /////////////////////////////////////////////////
 
 describe(`${LIB} -- hosting -- GitHub Pages`, function() {
+	const SPEC: typeof _SPEC = {
+		..._SPEC,
+		host: 'github-pages',
+	}
 
 	describe('404 Not Found', function () {
 
