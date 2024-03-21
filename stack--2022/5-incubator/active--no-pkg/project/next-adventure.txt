@@ -51,6 +51,7 @@
 
 		OpenAi
 			https://openai.com/careers/search?l=san-francisco%252C-california%252C-united-states
+			https://agentydragon.com/posts/2023-01-11-how-i-got-to-openai.html
 		Groq
 		https://www.cognition-labs.com/introducing-devin
 

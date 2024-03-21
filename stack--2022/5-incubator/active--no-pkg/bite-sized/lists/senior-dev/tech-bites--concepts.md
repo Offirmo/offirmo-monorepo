@@ -9,10 +9,10 @@ abstraction https://www.merrickchristensen.com/articles/abstraction/
 allocation
 annotation
 anomaly detection
-Application Programming Interface (API) = defines interactions that allows two applications to talk to each other
 API Economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
 APIs web
 appli web
+Application Programming Interface (API) = defines interactions that allows two applications to talk to each other
 apply / call / bind
 arguments
 assembly
@@ -240,6 +240,7 @@ regex https://regexlearn.com/
 register
 release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-10-insider-program-from-rings-to-release-channels/
 revisions
+rewrite https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22
 RFC https://rfc.fyi/
 Role-Based Access Control (RBAC)
 rollback
