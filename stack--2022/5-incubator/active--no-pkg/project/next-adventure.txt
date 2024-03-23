@@ -41,6 +41,7 @@
 
 	2nd tier
 		nvidia https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite  https://www.nvidia.com/en-us/about-nvidia/careers/
+		OpenAI https://openai.com/careers/search?c=applied-ai-engineering&l=san-francisco%252C-ca
 		Slack
 		Cloudflare https://www.cloudflare.com/careers/
 		Spotify
@@ -48,7 +49,6 @@
 		Netflix
 	others
 		https://www.bolt.com/careers "Building the future of commerce"
-
 		OpenAi
 			https://openai.com/careers/search?l=san-francisco%252C-california%252C-united-states
 			https://agentydragon.com/posts/2023-01-11-how-i-got-to-openai.html
