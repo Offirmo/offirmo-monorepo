@@ -1,5 +1,8 @@
-import { Author, Thing, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
+import * as path from 'node:path'
+import { fileURLToPath } from 'node:url'
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+import { Author, Thing, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
 import { AUTHOR } from '@offirmo-private/marketing'
 
 import { type WebProperty, type WebPropertyEntryPointSpec } from '../..'
@@ -17,13 +20,13 @@ WebPropertyEntryPointSpec
 
 const THING: Thing = {
 	lang: 'en',
-	description: 'Offirmo’s personal blog about tech, software and gamedev…',
+	description: 'The Boring RPG',
 	author: AUTHOR,
 	since‿y: 2016,
 }
 
 const ONLINE_PRESENCE: WithOnlinePresence = {
-	urlⵧcanonical: AUTHOR.urlⵧcanonical,
+	urlⵧcanonical: 'https://www.online-adventur.es/apps/the-boring-rpg/',
 	...(AUTHOR.urlsⵧsocial && {urlsⵧsocial: AUTHOR.urlsⵧsocial}),
 }
 
@@ -34,27 +37,23 @@ const THINGⵧONLINE: ThingWithOnlinePresence = {
 	...THING,
 	...ONLINE_PRESENCE,
 
-	contact: 'https://github.com/Offirmo/offirmo.github.io/issues',
+	contact: 'https://github.com/Offirmo/offirmo-monorepo/issues',
 }
 
 /////////////////////////////////////////////////
 // Ok now we're having a website
 
-
 const WEBSITE: WebProperty = {
 	...THINGⵧONLINE,
 
-	title: 'Offirmo - Fullstack Developer',
-	icon: { emoji: '👨‍💻' },
-	keywords: [ 'engineer', 'software', 'fullstack', 'developer', 'open-source', 'indie'],
-	content: {
-		// TODO
+	title: 'The Boring RPG',
+	icon: {
+		emoji: '🎲',
+		svg: path.join(__dirname, './icon--rpg.svg'),
 	},
-	features: [
-		'cssⳇbox-layout--natural',
-		'normalize-url-trailing-slash',
-		'cssⳇfoundation--offirmo',
-	],
+	keywords: [],
+	content: {},
+	features: ['cssⳇbox-layout--natural', 'normalize-url-trailing-slash', 'cssⳇfoundation--offirmo'],
 
 	/////// SOCIAL
 	// TODO
@@ -62,17 +61,16 @@ const WEBSITE: WebProperty = {
 	/////// POLISH
 	colorⵧbackground: 'hsl(337, 16%, 28%)',
 	colorⵧforeground: 'hsl(42, 100%, 87%)',
-	colorⵧtheme:      'hsl(248,  9%, 17%)',
+	colorⵧtheme: 'hsl(248,  9%, 17%)',
 }
 
 /////////////////////////////////////////////////
 const SPEC: WebPropertyEntryPointSpec = {
 	...WEBSITE,
 
-	preset: 'blog',
+	preset: 'game',
 
 	/////// PWA
-	// (not a PWA)
 
 	/////// SRC
 	// TODO refine

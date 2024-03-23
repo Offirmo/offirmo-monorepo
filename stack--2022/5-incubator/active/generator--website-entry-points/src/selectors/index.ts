@@ -2,10 +2,11 @@ import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
-import { Basename, Immutable, RelativePath } from '@offirmo-private/ts-types'
+import { AnyPath, Basename, Emoji, Immutable, RelativePath } from '@offirmo-private/ts-types'
 import { getꓽtitle as Contentⳇwebᐧgetꓽtitle, getꓽdescription as _getꓽdescription } from '@offirmo-private/ts-types-web'
 import { CssColor‿str } from '@offirmo-private/ts-types-web'
 import { FeatureSnippets } from '@offirmo-private/generator--html'
+import type { SVG } from '@offirmo-private/generator--svg'
 
 import { normalize_unicode, coerce_toꓽsafe_basenameⵧstrictest, normalizeꓽtextⵧsentence } from '@offirmo-private/normalize-string'
 
@@ -217,43 +218,99 @@ function getꓽbasenameⵧwebmanifest(spec: Immutable<WebPropertyEntryPointSpec>
 	return `${_getꓽbasenameⵧwithout_extension(spec)}.webmanifest`
 }
 
+function getꓽiconⵧemoji(spec: Immutable<WebPropertyEntryPointSpec>): Emoji {
+	// TODO generate default from preset or other hints?
+	return spec.icon?.emoji ?? '🌍'
+}
+
+// get a REAL svg if any is provided, undef else
+function getꓽiconⵧsvg(spec: Immutable<WebPropertyEntryPointSpec>): Immutable<SVG> | undefined {
+	const svg_value = spec.icon?.svg
+
+	if (!svg_value)
+		return undefined
+
+	if (typeof svg_value === 'string') {
+		// it's a path, we need to load
+		throw new Error('NIMP!')
+	}
+
+	return spec.icon.svg as any
+}
+
+function getꓽiconsⵧpng(spec: Immutable<WebPropertyEntryPointSpec>): Map<number, AnyPath> {
+	const map = new Map<number, AnyPath>()
+	const pngs_value = spec.icon?.pngs
+
+	if (pngs_value) {
+		const sizes = Object.keys(pngs_value).map(Number).sort()
+		sizes.forEach(size => {
+			map.set(size, pngs_value[size]!)
+		})
+	}
+
+	return map
+}
 
 // TODO move to own file?
 function getꓽicon__sizes(spec: Immutable<WebPropertyEntryPointSpec>): Uint32Array {
 	const sizes = new Set<number>()
 
+	// Absolutely required: favicon
 	// The optimal size for favicons is 16x16 pixels.
 	// That’s how they appear in browser tabs, address bars, and bookmark lists.
 	// https://blog.hubspot.com/website/what-is-a-favicon#size
 	sizes.add(16)
 
-	// if no PWA, no need for big ones
-	if (wantsꓽinstall(spec)) {
+	const available_pngs = getꓽiconsⵧpng(spec)
+	let max_known_size = 0
+	// if we have pngs, add them...
+	for (const size of available_pngs.keys()) {
+		sizes.add(size)
+		max_known_size = Math.max(max_known_size, size)
+	}
+
+	// only PWA need big ones
+	if (!wantsꓽinstall(spec)) {
+		// generate a slightly bigger one in case the website ends up pinned
+		// even if we don't want to install, we still want to look good
+		sizes.add(192)
+	}
+	else {
+		// OK we're a PWA
+		// we need nice big icons
+		// however hosts will usually naturally pick the closest size so no need to overdo it
+
 		// https://web.dev/learn/pwa/web-app-manifest/#icons
 		// "If you need to pick only one icon size, it should be 512 by 512 pixels" (TODO date)
-		sizes.add(512)
-		// However, providing more sizes is recommended including…
-		// TODO one day customize per size
-		sizes.add(1024)
-		sizes.add(384)
-		sizes.add(192)
+		if (max_known_size === 0) {
+			// no PNG at all!
+			// force at least a big one, to be generated from the SVG or emoji
+			sizes.add(512)
+			max_known_size = Math.max(max_known_size, 512)
+		}
 
-		// iOs
-		// https://developer.apple.com/design/human-interface-guidelines/app-icons#iOS-iPadOS-app-icon-sizes
-		// "You need to provide a large version of your app icon, measuring 1024x1024"
-		sizes.add(1024)
-		// You can let the system automatically scale down your large app icon to produce all other sizes,
-		// or — if you want to customize the appearance of the icon at specific sizes — you can supply multiple versions.
-		// (TODO one day customize per size, for now it's always the same icon)
+		// However, providing more sizes is recommended…
+		if (getꓽiconⵧsvg(spec)) {
+			// we have a SVG so we can generate any size!
 
-		// macOs
-		// https://developer.apple.com/design/human-interface-guidelines/app-icons#macOS-app-icon-sizes
-		// create a 1024x1024 px version of your macOS app icon
-		sizes.add(1024)
-		// In addition, you also need to supply the icon in the following sizes...
-		// (TODO one day customize per size)
+			// iOs
+			// https://developer.apple.com/design/human-interface-guidelines/app-icons#iOS-iPadOS-app-icon-sizes
+			// "You need to provide a large version of your app icon, measuring 1024x1024"
+			sizes.add(1024)
+			// You can let the system automatically scale down your large app icon to produce all other sizes,
+			// or — if you want to customize the appearance of the icon at specific sizes — you can supply multiple versions.
+			// (TODO one day customize per size, for now it's always the same icon)
 
-		// TODO add other stores / oses specifications
+			// macOs
+			// https://developer.apple.com/design/human-interface-guidelines/app-icons#macOS-app-icon-sizes
+			// create a 1024x1024 px version of your macOS app icon
+			sizes.add(1024)
+			// In addition, you also need to supply the icon in the following sizes...
+			// (TODO one day customize per size)
+
+			// TODO add other stores / oses specifications
+		}
 	}
 
 	return Uint32Array.from(sizes.values()).sort().reverse()
@@ -311,6 +368,10 @@ export {
 	getꓽtitleⵧlib,
 
 	getꓽdescriptionⵧpage,
+
+	getꓽiconⵧemoji,
+	getꓽiconⵧsvg,
+	getꓽiconsⵧpng,
 
 	getꓽcolorⵧforeground,
 	getꓽcolorⵧbackground,

@@ -42,7 +42,7 @@
 	2nd tier
 		nvidia https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite  https://www.nvidia.com/en-us/about-nvidia/careers/
 		Slack
-		Cloudflare
+		Cloudflare https://www.cloudflare.com/careers/
 		Spotify
 		Canva
 		Netflix

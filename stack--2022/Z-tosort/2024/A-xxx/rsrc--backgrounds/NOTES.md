@@ -3,6 +3,12 @@
 
 ## Free
 
+## TODO collab?
+
+https://www.threads.net/@digitalrevvi +++
+https://www.threads.net/@witch_meguru
+https://www.threads.net/@movlog_ai
+
 ## TODO Buy?
 
 ### Commission

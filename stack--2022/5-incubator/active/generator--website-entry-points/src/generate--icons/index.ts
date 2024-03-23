@@ -2,41 +2,29 @@ import assert from 'tiny-invariant'
 import { Resvg } from '@resvg/resvg-js'
 
 import { Immutable } from '@offirmo-private/ts-types'
-import { getꓽsvg‿str, createꓽfrom_emoji, SVG } from '@offirmo-private/generator--svg'
+import { getꓽsvg‿str, createꓽfrom_emoji, SVG, Svg‿str } from '@offirmo-private/generator--svg'
 
 import { WebPropertyEntryPointSpec } from '../types.js'
+import { getꓽiconⵧemoji, getꓽiconⵧsvg, getꓽiconsⵧpng } from '../selectors/index.js'
 
 
 /////////////////////////////////////////////////
 
-// TODO get
-function generateꓽsvg(spec: Immutable<WebPropertyEntryPointSpec>): Immutable<SVG> {
-	if (!spec.icon)
-		return createꓽfrom_emoji('🔥')
-
-	if (typeof spec.icon === 'string') {
-		return createꓽfrom_emoji(spec.icon)
-	}
-
-	return spec.icon
-}
-
 // null = size-less (true SVG)
-function generateꓽfile(spec: Immutable<WebPropertyEntryPointSpec>, size: number | null): string | Buffer {
-	const svg = getꓽsvg‿str(generateꓽsvg(spec), {
-			...(size && { // needed for png gen
-				width: size,
-				height: size,
-			}),
-		})
-
-	if (size === null)
-		return svg
+function generateꓽfile(spec: Immutable<WebPropertyEntryPointSpec>, size: number | null): Svg‿str | Buffer {
+	return 'TODO'
+	/*
+	if (size === null) {
+		const svg = getꓽsvg(spec)
+		return svg && getꓽsvg‿str(svg)
+	}
 
 	if (size === 16) {
 		// TODO .ico
+		throw new Error('NIMP!')
 	}
 
+	const pngⵧbiggest_or_equal = getꓽpng_icon_pathⵧclosest_to_size(spec)
 	// render to png
 	//console.log(svg)
 	const resvg__opts = {
@@ -48,16 +36,16 @@ function generateꓽfile(spec: Immutable<WebPropertyEntryPointSpec>, size: numbe
 			defaultFontFamily: 'Noto Color Emoji',
 			*/
 			//defaultFontFamily: 'Apple Color Emoji',
-		},
+		/*},
 	}
 	const resvg = new Resvg(svg, resvg__opts)
 	const renderedImage = resvg.render()
 	//console.info('Output PNG Size  :', `${renderedImage.width} x ${renderedImage.height}`)
-	return renderedImage.asPng()
+	return renderedImage.asPng()*/
 }
 
 function generateꓽinline(spec: Immutable<WebPropertyEntryPointSpec>): string {
-	return getꓽsvg‿str(generateꓽsvg(spec), {
+	return getꓽsvg‿str(createꓽfrom_emoji(getꓽiconⵧemoji(spec)), {
 		wantsꓽcompact: true,
 	})
 }
@@ -65,7 +53,7 @@ function generateꓽinline(spec: Immutable<WebPropertyEntryPointSpec>): string {
 /////////////////////////////////////////////////
 
 export {
-	generateꓽsvg,
+	//generateꓽsvg,
 	generateꓽfile,
 	generateꓽinline,
 }

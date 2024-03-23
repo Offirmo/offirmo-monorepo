@@ -29,7 +29,7 @@ export function getꓽUTC_timestampⵧhuman_readable‿days(now: Readonly<Date> 
 }
 
 // ex. 20181121_06h00
-export type HumanReadableTimestampUTCMinutes = string
+export type HumanReadableTimestampUTCMinutes = string //`${HumanReadableTimestampUTCDays}_${string}h${string}`
 export function getꓽUTC_timestampⵧhuman_readable‿minutes(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCMinutes {
 	const hh = String(now.getUTCHours()).padStart(2, '0')
 	const mm = String(now.getUTCMinutes()).padStart(2, '0')
@@ -38,7 +38,7 @@ export function getꓽUTC_timestampⵧhuman_readable‿minutes(now: Readonly<Dat
 }
 
 // ex. 20190608_04h23m15
-export type HumanReadableTimestampUTCSeconds = string
+export type HumanReadableTimestampUTCSeconds = string //`${HumanReadableTimestampUTCMinutes}m${string}`
 export function getꓽUTC_timestampⵧhuman_readable‿seconds(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCSeconds {
 	const ss = String(now.getUTCSeconds()).padStart(2, '0')
 
@@ -47,7 +47,7 @@ export function getꓽUTC_timestampⵧhuman_readable‿seconds(now: Readonly<Dat
 
 // ex.      20181121_06h00m45s632
 // formerly 20181121_06h00+45.632
-export type HumanReadableTimestampUTCMs = string
+export type HumanReadableTimestampUTCMs = string //`${HumanReadableTimestampUTCSeconds}s${string}`
 export function getꓽUTC_timestampⵧhuman_readable‿ms(now: Readonly<Date> = new Date()): HumanReadableTimestampUTCMs {
 	const mmm = String(now.getUTCMilliseconds()).padStart(3, '0')
 

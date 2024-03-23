@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import { Immutable, Emoji } from '@offirmo-private/ts-types'
 import { CssColor‿str } from '@offirmo-private/ts-types-web'
 
-import { SVG, SVGElement, SVGId, SVGViewBox } from './types.js'
+import { SVG, SVGElement, SVGId, SVGViewBox, Svg‿str } from './types.js'
 
 /////////////////////////////////////////////////
 
@@ -70,6 +70,10 @@ function createꓽfrom_emoji(emoji: Emoji): Immutable<SVG> {
 	svg = addꓽcontent(svg, `<text y='.9em' font-size='90'>${emoji}</text>`)
 
 	return svg
+}
+
+function createꓽfrom_file(raw: Svg‿str): Immutable<SVG> {
+	throw new Error('NIMP!')
 }
 
 /////////////////////////////////////////////////

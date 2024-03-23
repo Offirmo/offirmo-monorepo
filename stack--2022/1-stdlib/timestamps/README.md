@@ -54,4 +54,4 @@ getꓽISO8601ⵧsimplified‿days()
 TODO valid in URLs ?
 TODO valid in filenames ?
 TODO https://devdocs.io/javascript/global_objects/date/parse
-TODO stricter return types using TS format
+TODO stricter return types using TS format? (value??)

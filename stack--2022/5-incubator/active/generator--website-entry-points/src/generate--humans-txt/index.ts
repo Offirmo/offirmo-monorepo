@@ -21,7 +21,7 @@ Hi, I'm ${getꓽauthor__name(spec)}, ${getꓽauthor__intro(spec) || 'creator'}.
 If you need to get in touch: ${getꓽcontactⵧhuman(spec)}.
 
 ## Credits
-
+(TODO one day)
 `.trimStart()
 }
 

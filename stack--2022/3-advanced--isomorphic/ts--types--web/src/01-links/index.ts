@@ -35,3 +35,4 @@ export interface Link {
 
 // https://en.wikipedia.org/wiki/Wikipedia:Bare_URLs
 // https://en.wikipedia.org/wiki/Wikipedia:Link_rot
+// TODO https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007899

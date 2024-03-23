@@ -57,6 +57,7 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpe
 			return acc
 		}, {} as EntryPoints),
 		// size-less version
+		xxx if SVG
 		[getꓽicon__path(spec, null)]: generateꓽicon_file(spec, null),
 
 		// APP

@@ -16,7 +16,6 @@ Please report any security issue or danger to the community to:
 - ${getꓽcontactⵧsecurity(spec)}
 
 Thanks for your contribution!
-
 `.trimStart()
 }
 

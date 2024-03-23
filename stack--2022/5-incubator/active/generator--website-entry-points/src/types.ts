@@ -1,8 +1,4 @@
-import {
-	Immutable,
-	Emoji,
-	Basename,
-} from '@offirmo-private/ts-types'
+import { Emoji, Basename, AnyPath} from '@offirmo-private/ts-types'
 import {
 	Author,
 	Contentⳇweb,
@@ -51,9 +47,17 @@ type Category =
 	| 'utilities'
 	| 'weather'
 
+interface IconSet {
+	emoji?: Emoji // will be used as favicon if present
+	svg?: SVG | AnyPath
+	pngs?: {
+		[resolution: string]: AnyPath
+	}
+}
+
 interface WebProperty extends ThingWithOnlinePresence {
 	title: Descriptionⳇtitle
-	icon?: Emoji | Immutable<SVG>
+	icon?: IconSet
 	keywords?: string[]
 
 	content: Contentⳇweb
@@ -131,6 +135,7 @@ interface EntryPoints {
 
 export {
 	type Category,
+	type IconSet,
 	type WebProperty,
 	type WebPropertyEntryPointSpec,
 	type EntryPoints,
