@@ -24,6 +24,7 @@ brand -- 6 what's? = what we stand for, what we believe in, what people we seek 
 busy work https://en.wikipedia.org/wiki/Busy_work
 buy nice or buy twice
 can't satisfy others
+needs / wants https://en.wikipedia.org/wiki/Need
 capitalism -- W. H. Mallock -- is justified because it permits the most talented members of society to use the less talented for the sake of maximizing efficiency. Labor, for him, was an inert mass that was useless unless those with managerial and entrepreneurial talent set them to work. Hence, wealth is created, not by labor, but by the knowledge and ability of those who control labor. Maximization of corporate profits means in this case that the most entrepreneurial, innovative and inventive segment of society has used labor and resources to create wealth. In Mallock's view labor, by itself, creates nothing; it's not the wrench that puts the machine together, but the genius who invented it.
 Charlie Munger 3 basic rules -- Don’t sell anything you wouldn’t buy yourself
 Charlie Munger 3 basic rules -- Don’t work for anyone you don’t respect and admire

@@ -5,6 +5,7 @@ TODO sitelinks? https://developers.google.com/search/docs/appearance/sitelinks
 TODO https://developer.mozilla.org/en-US/docs/Web/Manifest#splash_screens
 TODO https://github.com/h5bp/html5-boilerplate#quick-start
 TODO real example https://www.domain.com.au/guides/the-ultimate-guide-to-renovating-your-home-982295/
+TODO https://developers.google.com/digital-asset-links/v1/getting-started
 
 
 ## fitting inside the box

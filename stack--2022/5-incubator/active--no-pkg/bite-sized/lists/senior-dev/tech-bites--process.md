@@ -40,3 +40,5 @@ team -- performance -- four key metrics -- Time to Restore Service = How long it
 team -- performance -- four key metrics https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance
 team -- Tuckman model "Forming, Storming, Norming, and Performing"
 X alarm fire
+moonshots "sheer audacity of the challenge inspired motivation and passion in a way that a smaller goal never could" = https://x.company/moonshot/
+path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
