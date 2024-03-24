@@ -15,10 +15,12 @@ Embrace, Extend, and Extinguish
 Jobs to be Done (JTBD) https://en.wikipedia.org/wiki/Jobs-to-be-done_theory
 Kanban https://en.wikipedia.org/wiki/Kanban_(development)
 MLP
+moonshots "sheer audacity of the challenge inspired motivation and passion in a way that a smaller goal never could" = https://x.company/moonshot/
 MVP
 north star
 nudges = PRs nudges for speed https://dl.acm.org/doi/abs/10.1145/3544791
 OKR
+path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
 PKI
 planning -- Goals, Ideas, Step-Projects, and Tasks (GIST) https://www.productplan.com/glossary/gist-planning/
 platform engineering
@@ -40,5 +42,3 @@ team -- performance -- four key metrics -- Time to Restore Service = How long it
 team -- performance -- four key metrics https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance
 team -- Tuckman model "Forming, Storming, Norming, and Performing"
 X alarm fire
-moonshots "sheer audacity of the challenge inspired motivation and passion in a way that a smaller goal never could" = https://x.company/moonshot/
-path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"

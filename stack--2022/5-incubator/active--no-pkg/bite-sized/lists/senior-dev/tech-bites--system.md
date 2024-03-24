@@ -81,6 +81,7 @@ flux architecture
 graceful degradation
 headless = Front-end presentation is completely decoupled from back-end logic/CMS. Designed to be channel, programming language, and framework agnostic https://jamstack.org/glossary/headless-technology/
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
+infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-code-tools
 ingress egress
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
 Integrity
@@ -106,6 +107,7 @@ mitigations: code rollback, data rollback, degrade, upsize, blocklist, drain, qu
 monitoring
 monitoring "Understanding what is happening in your environment is key to maintaining efficient, secure, and compliant applications"
 network ACL
+nicro-frontend https://micro-frontends.org/ https://the-tractor.store/
 non-abstract large system design (NALSD) = iterative process for designing, assessing, and evaluating distributed systems
 numbers everyone should know https://static.googleusercontent.com/media/sre.google/en//static/pdf/rule-of-thumb-latency-numbers-letter.pdf
 observability

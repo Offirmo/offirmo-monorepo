@@ -70,13 +70,15 @@
 ⇱ apply for jobs + https://www.cnbc.com/2024/01/01/dont-forget-this-crucial-step-after-you-apply-for-a-job-says-recruiter.html
 ⇱ find target jobs / companies https://remoteok.com/
 ⇱ update CV
+	[ ] https://x-team.com/blog/ultimate-software-engineer-resume/
 	[ ] https://www.linkedin.com/feed/update/urn:li:activity:7175614204291297280/
 	https://www.tealhq.com/?ref=leewoodrow
-	https://www.jobscan.co/ scanner de CV
+	[x] https://www.jobscan.co/ scanner de CV
 	https://www.jobtestprep.com/icims-ats
 	https://premium.linkedin.com/content/premium/global/en_us/index/jobsearch/articles/the-easy-how-to-guide-for-formatting-resumes-for-applicant-tracking-systems
 	https://www.linkedin.com/pulse/how-beat-applicant-tracking-system-ats-lee/
 ⇱ update LinkedIn
+	[ ] https://x-team.com/blog/ultimate-linkedin-guide-for-engineers/
 	[ ] edit Top 50 skills!
 	⇱ https://www.cnbc.com/2023/09/28/do-these-3-things-on-linkedin-and-be-head-and-shoulders-above-others.html
 	⇱ https://www.cnbc.com/2023/11/20/dont-forget-to-put-promotions-on-linkedin-says-ex-google-recruiter.html

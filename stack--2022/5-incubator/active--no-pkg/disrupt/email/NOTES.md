@@ -33,3 +33,8 @@ https://ia.acs.org.au/content/ia/article/2023/forced-email-migrations--distressi
 
 
 https://openrss.org/blog/how-google-helped-destroy-adoption-of-rss-feeds
+
+
+https://en.wikipedia.org/wiki/Newton_(software)
+
+https://reallygoodemails.com/
