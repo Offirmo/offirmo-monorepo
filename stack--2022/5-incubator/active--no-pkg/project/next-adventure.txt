@@ -12,7 +12,7 @@
 				https://leetcode.com/list/du693s/
 				https://leetcode.com/studyplan/top-interview-150/
 			https://www.hackerrank.com/interview/preparation-kits/one-week-preparation-kit/
-			Meta
+			[ ] Meta https://www.metacareers.com/profile/preparation_hub
 		⇱ system design https://www.swequiz.com/#pricing
 			[ ] https://www.swequiz.com/quizzes
 		⇱ values
@@ -72,6 +72,8 @@
 ⇱ update CV
 	[ ] https://x-team.com/blog/ultimate-software-engineer-resume/
 	[ ] https://www.linkedin.com/feed/update/urn:li:activity:7175614204291297280/
+	[ ] https://www.google.com/about/careers/applications/videos/google-resume-tips-and-advice/
+	[ ] skills from Google
 	https://www.tealhq.com/?ref=leewoodrow
 	[x] https://www.jobscan.co/ scanner de CV
 	https://www.jobtestprep.com/icims-ats

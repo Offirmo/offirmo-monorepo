@@ -1,0 +1,43 @@
+{
+	"name": "@offirmo-private/credits",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
+	"private": true,
+
+	"sideEffects": true,
+	"type": "module",
+	"source": "src/aggregator/index.ts",
+	"exports": {
+		".": {
+			"import": "./dist/src.es2022.esm/index.js"
+		},
+		"./MapleLeaf68": "./src/MapleLeaf68/index.ts"
+	},
+
+	"dependencies": {
+		"@offirmo-private/ts-types-web": "*",
+		"@offirmo-private/ts-types": "*",
+		"tiny-invariant": "^1"
+	},
+
+
+	"scripts": {
+		"clean": "monorepo-script--clean-package …dist",
+
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
+		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
+
+		"demo1": "npx tsx doc/demo--personal-blog/index.mts",
+
+		"dev": "run-s clean _build:dev:watch",
+		"xxtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2022.esm/**/*spec.js'",
+		"build": "run-s  clean _build:prod"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2"
+	}
+}

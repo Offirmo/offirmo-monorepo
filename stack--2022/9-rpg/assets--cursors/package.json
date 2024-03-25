@@ -1,9 +1,31 @@
 {
 	"name": "@oh-my-rpg/assets--cursors",
-	"version": "0.0.1",
-	"private": true,
 	"description": "Graphical assets for an RPG UI: cursors",
+	"version": "0.0.1",
 	"license": "Unlicense",
+	"private": true,
 
-	"dependencies": {}
+	"sideEffects": true,
+	"type": "module",
+
+	"dependencies": {
+		"@offirmo-private/credits": "*"
+	},
+
+	"scripts": {
+		"clean": "monorepo-script--clean-package …dist",
+
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
+		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
+
+		"dev": "run-s clean _build:dev:watch",
+		"xtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2022.esm/**/*spec.js'",
+		"build": "run-s  clean _build:prod"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2"
+	}
 }

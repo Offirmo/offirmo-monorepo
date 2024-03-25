@@ -126,6 +126,7 @@ perspective -- tech -- platform (cloud!)
 perspective -- tech -- security
 polyglot persistence https://en.wikipedia.org/wiki/Polyglot_persistence
 post-mortem
+protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https://stackoverflow.com/questions/731233/activemq-or-rabbitmq-or-zeromq-or https://news.ycombinator.com/item?id=9634801
 rate limiting
 regions
 request deduplication
