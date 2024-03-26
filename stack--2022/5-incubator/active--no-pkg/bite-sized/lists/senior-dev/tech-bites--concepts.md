@@ -100,15 +100,15 @@ flushing
 flux architecture
 framework -- "a new framework every day"
 function
+function -- 1st-class object
 function -- first-class function
 function -- Higher-order function
-function 1st-class object
 functional programming
-GAFAM Google, Amazon, Facebook, Apple, Microsoft
 garbage collector
 git
 global variable
 go
+Google, Amazon, Facebook, Apple, Microsoft (GAFAM)
 graph
 GRASP -- 1 Information expert = Assign responsibility to the class that has the information needed to fulfill it
 GRASP -- 2 Creator = Who creates object A? In general, Assign class B the responsibility to create object A if one, or preferably more, of the following apply...
@@ -242,6 +242,7 @@ release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-1
 revisions
 rewrite https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22
 RFC https://rfc.fyi/
+robustness principle (beware bad effects)
 Role-Based Access Control (RBAC)
 rollback
 rolling deploy
@@ -254,9 +255,6 @@ security -- OWASP top 10 https://owasp.org/www-project-top-ten/
 security -- principle of least privilege
 semaphore
 semver
-service
-service availability
-Service Proxy Egress authentication
 shaving the yak
 shim vs polyfill vs ponyfill
 shrinkwrap
@@ -297,6 +295,11 @@ tree
 tree walk
 typecast
 types
+Unix philosophy -- 01 Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features"
+Unix philosophy -- 02 Expect the output of every program to become the input to another, as yet unknown, program. Don't clutter output with extraneous information. Avoid stringently columnar or binary input formats; Don't insist on interactive input
+Unix philosophy -- 03 Design and build software, even operating systems, to be tried early, ideally within weeks. Don't hesitate to throw away the clumsy parts and rebuild them
+Unix philosophy -- 04 Use tools in preference to unskilled help to lighten a programming task, even if you have to detour to build the tools and expect to throw some of them out after you've finished using them
+Unix philosophy (OUTDATED -> use JSON ;)) https://en.wikipedia.org/wiki/Unix_philosophy
 uptime
 use boring technology
 use strict

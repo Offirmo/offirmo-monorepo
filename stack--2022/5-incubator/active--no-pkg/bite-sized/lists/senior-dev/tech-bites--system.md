@@ -137,11 +137,14 @@ scaling -- vertically = more power
 scaling ~ elasticity
 security
 serverless
+service
+service availability
 service level objectives (SLO) https://sre.google/resources/practices-and-processes/art-of-slos/ https://sre.google/resources/
 service monitoring -- Error budget = starts at 1 - SLO and declines as the actual performance misses the SLO
 service monitoring -- Service-level indicator (SLI) = a measurement of performance
 service monitoring -- Service-level objective (SLO) = a statement of desired performance
 service monitoring https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring
+Service Proxy Egress authentication
 site reliability engineering (SRE) "treat operations as if it’s a software problem" https://sre.google/
 SRE -- learning 01 -- The riskiness of a mitigation should scale with the severity of the outage
 SRE -- learning 02 -- Recovery mechanisms should be fully tested before an emergency
