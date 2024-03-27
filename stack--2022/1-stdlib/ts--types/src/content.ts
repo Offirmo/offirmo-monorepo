@@ -12,12 +12,12 @@ export type Email‿str = string
 export interface SocialNetworkLink {
 	url: Url‿str // mandatory
 	handle?: string // ex @Offirmo, u/Offirmo
-	network: string // helps to parse
+	network: string // helps to parse, helps to replace
 }
 
 export interface WithOnlinePresence {
 	urlⵧcanonical: Url‿str
-	urlsⵧsocial?: SocialNetworkLink[]
+	urlsⵧsocial?: SocialNetworkLink[] // array because it conveys the Author's preference, earlier = preferred
 }
 
 export interface Author extends WithOnlinePresence {

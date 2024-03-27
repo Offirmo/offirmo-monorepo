@@ -2,7 +2,7 @@ import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-import { Author, Thing, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
+import { Author, Thing, SocialNetworkLink, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
 import { AUTHOR } from '@offirmo-private/marketing'
 
 import { type WebProperty, type WebPropertyEntryPointSpec } from '../..'
@@ -25,9 +25,12 @@ const THING: Thing = {
 	since‿y: 2016,
 }
 
+const SOCIAL_LINKⵧREDDIT: SocialNetworkLink = { network: 'reddit', handle: 'r/boringrpg', url: 'https://www.reddit.com/r/boringrpg/' } satisfies SocialNetworkLink
 const ONLINE_PRESENCE: WithOnlinePresence = {
 	urlⵧcanonical: 'https://www.online-adventur.es/apps/the-boring-rpg/',
-	...(AUTHOR.urlsⵧsocial && {urlsⵧsocial: AUTHOR.urlsⵧsocial}),
+	urlsⵧsocial: [
+		SOCIAL_LINKⵧREDDIT
+	]
 }
 
 /////////////////////////////////////////////////
@@ -48,7 +51,7 @@ const WEBSITE: WebProperty = {
 
 	title: 'The Boring RPG',
 	icon: {
-		emoji: '🎲',
+		emoji: '⚔️',
 		svg: path.join(__dirname, './icon--rpg.svg'),
 	},
 	keywords: [],

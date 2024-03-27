@@ -7,32 +7,42 @@ import type {
 
 /////////////////////////////////////////////////
 
-export type Url‿str = SimplerUrl‿str
+type Url‿str = SimplerUrl‿str
 // protocol
 
+////////////
 
-export type SocialNetwork =
+type SocialNetworkId =
 	| 'artstation'
 	| 'github'
 	| 'instagram'
 	| 'producthunt'
 	| 'reddit'
-	| 'twitter'
+	| 'twitter' // we keep "twitter" as an internal id, "X" is too generic
 
-export interface SocialNetworkLink extends SimplerSocialNetworkLink {
+interface SocialNetworkLink extends SimplerSocialNetworkLink {
 	url: Url‿str // mandatory
 	handle?: string // ex @Offirmo, u/Offirmo
-	network: SocialNetwork // helps to parse. Not optional bc I can add if missing
+	network: SocialNetworkId // helps to parse. Not optional bc I can add if missing
 }
+
+////////////
 
 // TODO new Url spec
-
-// TODO full "link" type with referrer etc.
-export interface Link {
-
-}
-
-
 // https://en.wikipedia.org/wiki/Wikipedia:Bare_URLs
 // https://en.wikipedia.org/wiki/Wikipedia:Link_rot
 // TODO https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007899
+// TODO full "link" type with referrer etc.
+interface Link {
+
+}
+
+/////////////////////////////////////////////////
+
+export {
+	type Url‿str,
+	type SocialNetworkId,
+	type SocialNetworkLink,
+
+	type Link,
+}

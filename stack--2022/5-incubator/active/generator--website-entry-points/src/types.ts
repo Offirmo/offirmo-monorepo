@@ -111,14 +111,14 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	canꓽuse_window_controls_overlay?: boolean
 	usesꓽpull_to_refresh?: boolean
 
-	/////// SRC
+	/////// JS SRC
 	sourcecode?: boolean // TODO clarify generate JS/TS source code
 
 	/////// META
 	host?:
 		| 'github-pages' // https://pages.github.com/  https://docs.github.com/en/pages
 		| 'cloudflare-pages'
-		| 'netlify'
+		| 'netlify' // https://old.reddit.com/r/webdev/comments/1b14bty/netlify_just_sent_me_a_104k_bill_for_a_simple/
 		| 'cloudfront'
 		| 'other'
 	basename?: Basename // without extension. default to "index"

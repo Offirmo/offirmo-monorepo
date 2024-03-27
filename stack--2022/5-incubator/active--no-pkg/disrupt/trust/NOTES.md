@@ -54,3 +54,8 @@ https://en.wikipedia.org/wiki/Mozilla_Persona
 
 ## reputation
 https://datatracker.ietf.org/doc/html/rfc7072 "A Reputation Query Protocol"
+
+
+## bots
+https://www.reddit.com/r/SaaS/comments/zre6dm/is_product_hunt_for_indie_makers_who_play_fair/
+https://www.producthunt.com/discussions/is-anyone-monitoring-all-the-fake-accounts-voting-here
