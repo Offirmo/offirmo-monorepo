@@ -13,9 +13,10 @@ import {
 	getꓽbasenameⵧcontactᐧhtml,
 	getꓽbasenameⵧerrorᐧhtml,
 	getꓽbasenameⵧwebmanifest,
+	getꓽiconⵧsvg,
 	getꓽicon__sizes,
 	getꓽicon__path,
-	shouldꓽgenerateꓽsourcecode,
+	shouldꓽgenerateꓽjscode,
 } from './selectors/index.js'
 import generateꓽindexᐧhtml from './generate--index-html/index.js'
 import generateꓽaboutᐧhtml from './generate--about-html/index.js'
@@ -52,17 +53,19 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpe
 		}),
 
 		// ICONS
+		// size-less version (SVG) if possible
+		...(getꓽiconⵧsvg(spec) && { [getꓽicon__path(spec, null)]: generateꓽicon_file(spec, null) }),
+		// fixed size versions (PNG)
 		...getꓽicon__sizes(spec).reduce((acc, size) => {
 			acc[getꓽicon__path(spec, size)] = generateꓽicon_file(spec, size)
 			return acc
 		}, {} as EntryPoints),
-		// size-less version
-		xxx if SVG
-		[getꓽicon__path(spec, null)]: generateꓽicon_file(spec, null),
 
-		// APP
+		// PWA
 		...(needsꓽwebmanifest(spec) && { [getꓽbasenameⵧwebmanifest(spec)]: JSON.stringify(generateꓽwebmanifest(spec), undefined, '	') }),
-		...(shouldꓽgenerateꓽsourcecode(spec) && generateꓽsource_code(spec)),
+
+		// JS SRC
+		...(shouldꓽgenerateꓽjscode(spec) && generateꓽsource_code(spec)),
 
 		// MISC
 		'humans.txt': generateꓽhumansᐧtxt(spec),

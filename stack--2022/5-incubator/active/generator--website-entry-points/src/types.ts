@@ -112,7 +112,7 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	usesꓽpull_to_refresh?: boolean
 
 	/////// JS SRC
-	sourcecode?: boolean // TODO clarify generate JS/TS source code
+	generatesꓽjsⵧscaffold?: 'offirmo--react' // TODO clarify generate JS/TS source code
 
 	/////// META
 	host?:

@@ -4,6 +4,7 @@ https://www.linkedin.com/help/linkedin/answer/a1359065
 
 Alternate Forms of Phishing - Smishing, Vishing & Whaling
 
+https://www.schneier.com/blog/archives/2023/12/ai-and-trust.html
 
 https://digital-defense.io/
 
@@ -29,6 +30,11 @@ https://research.google/pubs/zanzibar-googles-consistent-global-authorization-sy
 ## spam
 https://www.google.com/search/howsearchworks/how-search-works/detecting-spam/
 
+https://en.m.wikipedia.org/wiki/Email_spam
+https://en.m.wikipedia.org/wiki/History_of_email_spam
+
+https://en.m.wikipedia.org/wiki/Email_marketing
+
 
 ## privacy breach
 https://www.abc.net.au/news/2023-05-18/data-breaches-your-identity-interactive/102175688
@@ -42,6 +48,7 @@ https://www.scamwatch.gov.au/research-and-resources/the-little-black-book-of-sca
 https://thewokesalaryman.substack.com/p/why-scammers-love-to-target-people in Singapore
 https://news.nab.com.au/news/pay-id-scam/
 
+https://www.nab.com.au/about-us/security/online-safety-tips/phone-phishing "How to spot scam phone calls"
 
 ## Badges
 https://www.linkedin.com/help/linkedin/answer/a1359065/
@@ -55,6 +62,7 @@ https://en.wikipedia.org/wiki/Mozilla_Persona
 ## reputation
 https://datatracker.ietf.org/doc/html/rfc7072 "A Reputation Query Protocol"
 
+D U N S https://www.dnb.com/duns/get-a-duns.html
 
 ## bots
 https://www.reddit.com/r/SaaS/comments/zre6dm/is_product_hunt_for_indie_makers_who_play_fair/

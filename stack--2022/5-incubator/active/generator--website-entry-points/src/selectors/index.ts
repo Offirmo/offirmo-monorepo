@@ -46,8 +46,10 @@ function isꓽpublic(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
 	return spec.isꓽpublic ?? isꓽprod(spec)
 }
 
-function shouldꓽgenerateꓽsourcecode(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
-	return spec.sourcecode ?? false
+function shouldꓽgenerateꓽjscode(spec: Immutable<WebPropertyEntryPointSpec>): boolean {
+	return spec.generatesꓽjsⵧscaffold
+		? true
+		: false
 }
 
 /////////////////////////////////////////////////
@@ -232,7 +234,8 @@ function getꓽiconⵧsvg(spec: Immutable<WebPropertyEntryPointSpec>): Immutable
 
 	if (typeof svg_value === 'string') {
 		// it's a path, we need to load
-		throw new Error('NIMP!')
+		console.warn('TODO load SVG from path', svg_value)
+		return undefined
 	}
 
 	return spec.icon.svg as any
@@ -380,5 +383,5 @@ export {
 	getꓽicon__sizes,
 	getꓽicon__path,
 
-	shouldꓽgenerateꓽsourcecode,
+	shouldꓽgenerateꓽjscode,
 }

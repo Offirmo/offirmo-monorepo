@@ -38,3 +38,9 @@ https://openrss.org/blog/how-google-helped-destroy-adoption-of-rss-feeds
 https://en.wikipedia.org/wiki/Newton_(software)
 
 https://reallygoodemails.com/
+
+https://en.m.wikipedia.org/wiki/Mail
+https://en.m.wikipedia.org/wiki/Universal_Postal_Union
+https://en.m.wikipedia.org/wiki/.post
+
+experience https://productidentity.co/p/3-telegram-the-mysterious-messenger
