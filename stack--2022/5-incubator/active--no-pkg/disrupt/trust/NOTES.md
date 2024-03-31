@@ -47,7 +47,7 @@ https://www.accc.gov.au/national-anti-scam-centre/advisory-board-for-the-anti-sc
 https://www.scamwatch.gov.au/research-and-resources/the-little-black-book-of-scams
 https://thewokesalaryman.substack.com/p/why-scammers-love-to-target-people in Singapore
 https://news.nab.com.au/news/pay-id-scam/
-
+https://ia.acs.org.au/content/ia/article/2024/government-takes-next-steps-against-sms-scammers.html
 https://www.nab.com.au/about-us/security/online-safety-tips/phone-phishing "How to spot scam phone calls"
 
 ## Badges
@@ -67,3 +67,10 @@ D U N S https://www.dnb.com/duns/get-a-duns.html
 ## bots
 https://www.reddit.com/r/SaaS/comments/zre6dm/is_product_hunt_for_indie_makers_who_play_fair/
 https://www.producthunt.com/discussions/is-anyone-monitoring-all-the-fake-accounts-voting-here
+
+
+## trust databases
+
+https://github.com/mitchellkrogza/Phishing.Database/
+https://github.com/Ultimate-Hosts-Blacklist
+https://github.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites

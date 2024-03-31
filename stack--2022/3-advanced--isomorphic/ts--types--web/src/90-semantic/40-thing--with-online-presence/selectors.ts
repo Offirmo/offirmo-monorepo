@@ -24,8 +24,9 @@ function _getꓽcontact(thing: Immutable<ThingWithOnlinePresence>): Url‿str {
 	return url
 }
 
+// this is for contacting the HUMAN
 function getꓽcontactⵧhuman(thing: Immutable<ThingWithOnlinePresence>): Url‿str {
-	return _getꓽcontact(thing)
+	return ThingSelectors.getꓽauthor__contact(thing) ?? _getꓽcontact(thing)
 }
 
 function getꓽcontactⵧsecurity(thing: Immutable<ThingWithOnlinePresence>): Url‿str {
