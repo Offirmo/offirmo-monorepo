@@ -9,8 +9,8 @@ import {
 	getꓽfeatures as _getꓽfeatures,
 } from '@offirmo-private/generator--html'
 
-import { WebPropertyEntryPointSpec } from '../types.js'
-import { LIB } from '../consts.js'
+import { WebPropertyEntryPointSpec } from '../../types.js'
+import { LIB } from '../../consts.js'
 import {
 	prefersꓽorientation,
 	getꓽfeatures,
@@ -20,9 +20,9 @@ import {
 	isꓽuser_scalable,
 	supportsꓽscreensⵧwith_shape,
 	wantsꓽinstall,
-} from '../selectors/index.js'
-import { ifꓽdebug } from '../utils/debug.js'
-import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../generate--index-html/selectors.js'
+} from '../../selectors/index.js'
+import { ifꓽdebug } from '../../utils/debug.js'
+import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../index-html/selectors.js'
 
 /////////////////////////////////////////////////
 
@@ -33,13 +33,12 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDo
 
 		content: {
 			...base.content,
-			title: 'Error',
+			title: 'Contact',
 			js: [],
 			html: [
-				`<h1>Error</h1>`,
-				`<p>An error happened.</p>`,
-			]
-		}
+				`<h1>Contact</h1>`,
+				`<p>TODO...</p>`],
+		},
 	}
 	return result
 }

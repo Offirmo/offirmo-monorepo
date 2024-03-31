@@ -4,14 +4,15 @@ import { Resvg } from '@resvg/resvg-js'
 import { Immutable } from '@offirmo-private/ts-types'
 import { getꓽsvg‿str, createꓽfrom_emoji, SVG, Svg‿str } from '@offirmo-private/generator--svg'
 
-import { WebPropertyEntryPointSpec } from '../types.js'
-import { getꓽiconⵧemoji, getꓽiconⵧsvg, getꓽiconsⵧpng } from '../selectors/index.js'
+import { WebPropertyEntryPointSpec, EntryPoints } from '../types.js'
+import { getꓽicon__sizes, getꓽiconⵧemoji, getꓽiconⵧsvg, getꓽicon__path } from '../selectors/index.js'
 
 
 /////////////////////////////////////////////////
 
 // null = size-less (true SVG)
 function generateꓽfile(spec: Immutable<WebPropertyEntryPointSpec>, size: number | null): Svg‿str | Buffer {
+	console.warn(`TODO generate PNG icon!`, { size })
 	return 'TODO'
 	/*
 	if (size === null) {
@@ -52,8 +53,25 @@ function generateꓽinline(spec: Immutable<WebPropertyEntryPointSpec>): string {
 
 /////////////////////////////////////////////////
 
+function generateꓽfixed_sizes(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
+	return getꓽicon__sizes(spec).reduce((acc, size) => {
+			acc[getꓽicon__path(spec, size)] = generateꓽfile(spec, size)
+			return acc
+		}, {} as EntryPoints)
+}
+
+function generate(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
+	return {
+		// size-less version (SVG) if possible
+		...(getꓽiconⵧsvg(spec) && { [getꓽicon__path(spec, null)]: generateꓽfile(spec, null) }),
+
+		...generateꓽfixed_sizes(spec),
+	}
+}
+
+/////////////////////////////////////////////////
+
+export default generate
 export {
-	//generateꓽsvg,
-	generateꓽfile,
 	generateꓽinline,
 }
