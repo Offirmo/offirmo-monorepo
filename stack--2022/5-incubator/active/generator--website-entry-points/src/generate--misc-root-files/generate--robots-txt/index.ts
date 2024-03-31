@@ -1,10 +1,10 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { WebPropertyEntryPointSpec } from '../types.js'
+import { WebPropertyEntryPointSpec } from '../../types.js'
 import {
 	isꓽpublic
-} from '../selectors/index.js'
+} from '../../selectors/index.js'
 
 /////////////////////////////////////////////////
 

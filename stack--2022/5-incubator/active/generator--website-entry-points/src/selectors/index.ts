@@ -24,7 +24,6 @@ export {
 	getꓽauthor__intro,
 	getꓽcontactⵧhuman,
 	getꓽcontactⵧsecurity,
-
 } from '@offirmo-private/ts-types-web';
 
 /////////////////////////////////////////////////
@@ -113,10 +112,10 @@ function prefersꓽorientation(spec: Immutable<WebPropertyEntryPointSpec>): bool
 function getꓽfeatures(spec: Immutable<WebPropertyEntryPointSpec>): FeatureSnippets[] {
 	const features = new Set<FeatureSnippets>(spec.features ?? [])
 
+	if (spec.preset === 'game')
+		features.add('cssⳇviewport--full' as FeatureSnippets)
 
-	if (spec.preset === 'game') features.add('cssⳇviewport--full' as FeatureSnippets)
-
-		features.add('cssⳇbox-layout--natural')
+	features.add('cssⳇbox-layout--natural')
 
 	if (!features.has('cssⳇfoundation--offirmo'))
 		features.add('cssⳇframework--offirmo')

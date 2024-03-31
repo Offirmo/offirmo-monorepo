@@ -38,6 +38,8 @@
 		"demo1b": "parcel serve doc/demo--personal-blog/src/*.html --port 8080  --lazy  --no-autoinstall",
 		"demo1c": "parcel build doc/demo--personal-blog/src/*.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
 
+		"demo2a": "npx tsx doc/demo--pwa--tbrpg/index.mts",
+
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {

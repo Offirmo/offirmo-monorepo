@@ -3,19 +3,17 @@ import * as fs from '@offirmo/cli-toolbox/fs/extra'
 import assert from 'tiny-invariant'
 import * as Prettier from 'prettier'
 import { Immutable, AbsolutePath } from '@offirmo-private/ts-types'
-import { getꓽISO8601ⵧsimplified‿days } from '@offirmo-private/timestamps'
 
 import { EntryPoints, WebPropertyEntryPointSpec } from './types.js'
 
-import { needsꓽwebmanifest, getꓽbasenameⵧwebmanifest, getꓽiconⵧsvg, getꓽicon__sizes, getꓽicon__path, shouldꓽgenerateꓽjscode } from './selectors/index.js'
+import { needsꓽwebmanifest, getꓽbasenameⵧwebmanifest, shouldꓽgenerateꓽjscode } from './selectors/index.js'
 
 import generateꓽhtml from './generate--html/index.js'
-import generateꓽwebmanifest from './generate--webmanifest/index.js'
 import generateꓽicons from './generate--icons/index.js'
-import generateꓽhumansᐧtxt from './generate--humans-txt/index.js'
-import generateꓽrobotsᐧtxt from './generate--robots-txt/index.js'
-import generateꓽwell_known from './generate--well-known/index.js'
+import generateꓽmisc_root_files from './generate--misc-root-files/index.js'
 import generateꓽsource_code from './generate--src/index.js'
+import generateꓽwebmanifest from './generate--webmanifest/index.js'
+import generateꓽwell_known from './generate--well-known/index.js'
 
 /////////////////////////////////////////////////
 
@@ -24,29 +22,13 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpe
 		...generateꓽhtml(spec),
 		...generateꓽicons(spec),
 		...generateꓽwell_known(spec),
+		...generateꓽmisc_root_files(spec),
 
 		// PWA
 		...(needsꓽwebmanifest(spec) && { [getꓽbasenameⵧwebmanifest(spec)]: JSON.stringify(generateꓽwebmanifest(spec), undefined, '	') }),
 
 		// JS SRC
 		...(shouldꓽgenerateꓽjscode(spec) && generateꓽsource_code(spec)),
-
-		// MISC
-		'humans.txt': generateꓽhumansᐧtxt(spec),
-		'robots.txt': generateꓽrobotsᐧtxt(spec),
-		// TODO? https://en.wikipedia.org/wiki/Ads.txt
-
-		...(spec.host === 'github-pages' && {
-			'.nojekyll': `From GitHub Staff, 2016/11/04
-
-If you're not using Jekyll, you can add a .nojekyll file to the root of your repository to disable Jekyll from building your site. Once you do that, your site should build correctly.
-
----
-Reason: GitHub build auto-converts the markdown files and don't serve them.
-Ref: https://github.com/blog/572-bypassing-jekyll-on-github-pages
-`,
-		}),
-		// TODO .htaccess ?
 
 		// meta
 		'~~gen/spec.json': JSON.stringify(spec, undefined, '	'),

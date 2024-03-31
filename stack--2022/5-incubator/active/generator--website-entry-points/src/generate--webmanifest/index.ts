@@ -18,11 +18,29 @@ import { ifꓽdebug } from '../utils/debug.js'
 /////////////////////////////////////////////////
 
 function _generateꓽicons(spec: Immutable<WebPropertyEntryPointSpec>): WebManifest['icons'] {
+	// TODO should we add a size-less SVG? Is there any platform that would use it?
 	return getꓽicon__sizes(spec).reduce((acc, size) => {
+		const icon_path = getꓽicon__path(spec, size)
+		let type = `image/svg+xml`
+		switch(true) {
+			case icon_path.endsWith('.ico'): {
+				// no need in the manifest
+				return acc
+			}
+			case icon_path.endsWith('.svg'):
+				type = `image/svg+xml`
+				break
+			case icon_path.endsWith('.png'):
+				type = `image/png`
+				break
+			default:
+				throw new Error(`Generating Webmanifest, unknown icon format! ${icon_path}`)
+		}
+
 		acc.push({
-			src: `./${getꓽicon__path(spec, size)}`, // TODO review should we add ./ ?
-			type: `image/svg+xml`,
-			sizes: `${size}x${size}`
+			src: `./${icon_path}`, // TODO review should we add ./ ?
+			type,
+			...(size && {sizes: `${size}x${size}`}),
 		} as Icon)
 		return acc
 	}, [] as WebManifest['icons'])

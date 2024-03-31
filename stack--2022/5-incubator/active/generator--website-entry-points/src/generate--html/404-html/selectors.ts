@@ -1,27 +1,15 @@
 import assert from 'tiny-invariant'
-import { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
+import { Immutable } from '@offirmo-private/ts-types'
 import { Contentⳇweb } from '@offirmo-private/ts-types-web';
 import {
 	FeatureSnippets,
-	HtmlMetas,
-	HtmlMetaContentⳇViewport,
 	HtmlDocumentSpec,
-	getꓽfeatures as _getꓽfeatures,
 } from '@offirmo-private/generator--html'
 
 import { WebPropertyEntryPointSpec } from '../../types.js'
-import { LIB } from '../../consts.js'
 import {
-	prefersꓽorientation,
 	getꓽfeatures,
-	getꓽlang,
-	getꓽcolorⵧtheme,
-	getꓽcharset,
-	isꓽuser_scalable,
-	supportsꓽscreensⵧwith_shape,
-	wantsꓽinstall,
 } from '../../selectors/index.js'
-import { ifꓽdebug } from '../../utils/debug.js'
 import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../index-html/selectors.js'
 
 /////////////////////////////////////////////////
@@ -31,6 +19,11 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDo
 	const result: HtmlDocumentSpec = {
 		...base,
 
+		features: (base.features ?? [])
+			.filter(f => f !== 'htmlⳇreact-root')
+			.filter(f => f !== 'normalize-url-trailing-slash') // we don't want extra redirects! It could be the cause of the 404 itself.
+			.filter(f => f !== 'cssⳇviewport--full' && f !== 'page-loader--offirmo'), // no fancies
+
 		content: {
 			...base.content,
 			title: '404 Not Found',
@@ -38,7 +31,7 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDo
 			html: [
 				`<h1>404 Not Found</h1>`,
 				`<p>Sorry, the page you were looking for doesn't exist.</p>`,
-			]
+			],
 		}
 	}
 	return result

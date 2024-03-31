@@ -31,6 +31,9 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDo
 	const result: HtmlDocumentSpec = {
 		...base,
 
+		features: (base.features ?? [])
+			.filter(f => f !== 'htmlⳇreact-root')
+			.filter(f => f !== 'cssⳇviewport--full' && f !== 'page-loader--offirmo'), // no fancies
 		content: {
 			...base.content,
 			title: 'Contact',

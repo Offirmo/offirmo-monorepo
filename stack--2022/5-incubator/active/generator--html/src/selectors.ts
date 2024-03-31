@@ -33,19 +33,19 @@ function getꓽcharset(spec: Immutable<HtmlDocumentSpec>): Charset {
 	return 'utf-8'
 }
 
-function getꓽhtml(spec: Immutable<HtmlDocumentSpec>): Immutable<Html‿str[]> {
+function getꓽcontent_blocksⵧhtml(spec: Immutable<HtmlDocumentSpec>): Immutable<Html‿str[]> {
 	return Selectors.getꓽhtml(spec.content)
 }
-function getꓽcssⵧcritical(spec: Immutable<HtmlDocumentSpec>): Immutable<Css‿str[]> {
+function getꓽcontent_blocksⵧcssⵧcritical(spec: Immutable<HtmlDocumentSpec>): Immutable<Css‿str[]> {
 	return Selectors.getꓽcssⵧcritical(spec.content)
 }
-function getꓽcss(spec: Immutable<HtmlDocumentSpec>): Immutable<Css‿str[]> {
+function getꓽcontent_blocksⵧcss(spec: Immutable<HtmlDocumentSpec>): Immutable<Css‿str[]> {
 	return Selectors.getꓽcss(spec.content)
 }
-function getꓽjsⵧcritical(spec: Immutable<HtmlDocumentSpec>): Immutable<JS‿str[]> {
+function getꓽcontent_blocksⵧjsⵧcritical(spec: Immutable<HtmlDocumentSpec>): Immutable<JS‿str[]> {
 	return Selectors.getꓽjsⵧcritical(spec.content)
 }
-function getꓽjs(spec: Immutable<HtmlDocumentSpec>): Immutable<JS‿str[]> {
+function getꓽcontent_blocksⵧjs(spec: Immutable<HtmlDocumentSpec>): Immutable<JS‿str[]> {
 	return Selectors.getꓽjs(spec.content)
 }
 
@@ -87,7 +87,6 @@ function getꓽlinks(spec: Immutable<HtmlDocumentSpec>): Immutable<Links> {
 	return spec.links || {}
 }
 
-
 /////////////////////////////////////////////////
 function getꓽfeatures(spec: Immutable<HtmlDocumentSpec>): FeatureSnippets[] {
 	const features = new Set<FeatureSnippets>(spec.features ?? [])
@@ -102,15 +101,14 @@ function getꓽfeatures(spec: Immutable<HtmlDocumentSpec>): FeatureSnippets[] {
 function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>): Immutable<HtmlDocumentSpec> {
 	const content_with_features_expanded = { ...spec.content }
 
-	const { features = [] } = spec
+	const features = getꓽfeatures(spec)
 
 	features.forEach(feature_id => {
-
 		switch (feature_id) {
 			case 'analytics--google':
 			case 'site-verification--google':
 			case 'page-loader--offirmo':
-				console.warn(`TODO implement feature: ${feature_id}!`)
+				console.warn(`[HTML gen] TODO implement feature: ${feature_id}!`)
 				break
 
 			case 'cssⳇbox-layout--natural':
@@ -159,8 +157,9 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 ` ]
 	}
 
-	if (Selectors.getꓽjs(content_with_features_expanded).length === 0) {
+	if (Selectors.getꓽjs(content_with_features_expanded).length === 0 && !features.includes('htmlⳇreact-root')) {
 		//content_with_features_expanded.js = [ `console.log('Hello, world!')` ]
+		// TODO slightly better hello?
 	}
 	else {
 		content_with_features_expanded.html = [ `<noscript>You need to enable JavaScript to run this app.</noscript>`, ...Selectors.getꓽhtml(content_with_features_expanded) ]
@@ -180,24 +179,22 @@ const EOL = '\n'
 const CRITICAL_CSS_LINK = `https://www.smashingmagazine.com/2015/08/understanding-critical-css/`
 
 function _getꓽhtml__head__style‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
-	const blocks = getꓽcssⵧcritical(spec)
+	const blocks = getꓽcontent_blocksⵧcssⵧcritical(spec)
 	if (!hasꓽcontent(blocks)) return ''
 
 	return `
-<!-- critical CSS ${CRITICAL_CSS_LINK} -->
-<style>
+<style> /******* critical CSS ${CRITICAL_CSS_LINK} */
 	${blocks.join(EOL)}
 </style>
 `
 }
 
 function _getꓽhtml__head__js‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
-	const blocks = getꓽjsⵧcritical(spec)
+	const blocks = getꓽcontent_blocksⵧjsⵧcritical(spec)
 	if (!hasꓽcontent(blocks)) return ''
 
 	return `
-<!-- critical JS -->
-<script>
+<script> /////// critical JS ///////
 	${blocks.join(EOL)}
 </script>
 `
@@ -299,19 +296,18 @@ function _getꓽhtml__head‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str 
 /////////////////////////////////////////////////
 
 function _getꓽhtml__body__style‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
-	const blocks = getꓽcss(spec)
+	const blocks = getꓽcontent_blocksⵧcss(spec)
 	if (!hasꓽcontent(blocks)) return ''
 
 	return `
-<!-- NON-critical styles ${CRITICAL_CSS_LINK} -->
-<style>
+<style> /******* NON-critical styles ${CRITICAL_CSS_LINK} */
 	${blocks.join(EOL)}
 </style>
 `
 }
 
 function _getꓽhtml__body__js‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
-	const blocks = getꓽjs(spec)
+	const blocks = getꓽcontent_blocksⵧjs(spec)
 	if (!hasꓽcontent(blocks)) return ''
 
 	return `
@@ -323,12 +319,9 @@ function _getꓽhtml__body__js‿str(spec: Immutable<HtmlDocumentSpec>): Html‿
 }
 
 function _getꓽhtml__body‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
-	spec = getꓽspecⵧwith_features_expanded(spec)
-
-
 	return `
 <body>
-	${getꓽhtml(spec).join(EOL)}
+	${getꓽcontent_blocksⵧhtml(spec).join(EOL)}
 	${_getꓽhtml__body__style‿str(spec)}
 	${_getꓽhtml__body__js‿str(spec)}
 </body>
@@ -338,6 +331,8 @@ function _getꓽhtml__body‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str 
 /////////////////////////////////////////////////
 
 function getꓽhtml‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+	spec = getꓽspecⵧwith_features_expanded(spec)
+
 	const result: Html‿str = `
 <!DOCTYPE html>
 <!-- AUTOMATICALLY GENERATED, DO NOT EDIT MANUALLY! -->
