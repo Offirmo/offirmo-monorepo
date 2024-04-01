@@ -13,6 +13,7 @@ import {
 } from '../selectors/index.js'
 
 import generateꓽindexᐧhtml from './index-html/index.js'
+import { getꓽhtml_doc_spec } from './index-html/selectors.js'
 import generateꓽaboutᐧhtml from './about-html/index.js'
 import generateꓽcontactᐧhtml from './contact-html/index.js'
 import generateꓽerrorᐧhtml from './error-html/index.js'
@@ -49,6 +50,7 @@ function generate(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
 
 	return {
 		[getꓽbasenameⵧindexᐧhtml(spec)]: generateꓽindexᐧhtml(spec),
+		'~~gen/spec.html.json': JSON.stringify(getꓽhtml_doc_spec(spec), undefined, '	'),
 
 		...generateꓽcomplimentary(spec),
 	}

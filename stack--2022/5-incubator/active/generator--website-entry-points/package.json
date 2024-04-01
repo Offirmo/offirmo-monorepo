@@ -9,8 +9,13 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".":  "./dist/src.es2022.esm/index.js"
+		".":  "./dist/src.es2022.esm/index.js",
+		"./tbrpg":  "./dist/src.es2022.esm/__specs/__fixtures/specs--game--tbrpg.js"
 	},
+	"module": "dist/src.es2022.esm/index.js",
+	"main": "dist/src.es2022.cjs/index.js",
+	"typings": "dist/src.es2022.esm/index.d.ts",
+	"source": "src/index.ts",
 
 	"dependencies": {
 		"@offirmo-private/generator--html": "*",

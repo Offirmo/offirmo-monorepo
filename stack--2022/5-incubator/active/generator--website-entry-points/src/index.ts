@@ -31,7 +31,7 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpe
 		...(shouldꓽgenerateꓽjscode(spec) && generateꓽsource_code(spec)),
 
 		// meta
-		'~~gen/spec.json': JSON.stringify(spec, undefined, '	').replace(process.env['HOME'] ?? '$HOME', '~'),
+		'~~gen/spec.json': JSON.stringify(spec, undefined, '	'),
 	}
 }
 
@@ -92,6 +92,10 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 				default:
 					break
 			}
+
+			// privacy
+			if (typeof file__content === 'string')
+				file__content = file__content.replace(process.env['HOME'] ?? '$HOME', '~')
 
 			return fs
 				.outputFile(file__path, file__content, {

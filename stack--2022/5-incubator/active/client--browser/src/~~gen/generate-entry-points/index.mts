@@ -4,7 +4,7 @@ import * as path from 'node:path'
 
 import generateꓽwebsiteᝍentryᝍpoints, { type WebPropertyEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
 
-import { SPEC as _SPEC } from '@offirmo-private/generator--website-entry-points/__specs/__fixtures/specs--game--tbrpg.js'
+import { SPEC as _SPEC } from '@offirmo-private/generator--website-entry-points/tbrpg'
 
 /////////////////////////////////////////////////
 
@@ -13,7 +13,7 @@ const SPEC: WebPropertyEntryPointSpec = {
 	host: 'netlify',
 	content: {
 		..._SPEC.content,
-		js: [ ..._SPEC.content.js, `import '../index.ts'`]
+		js: [ ...(_SPEC.content.js ?? []), `import '../index.ts'`]
 	}
 }
 
