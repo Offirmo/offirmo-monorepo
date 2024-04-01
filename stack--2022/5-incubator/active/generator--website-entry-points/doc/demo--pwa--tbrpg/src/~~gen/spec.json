@@ -74,5 +74,6 @@
 	"usesꓽpull_to_refresh": false,
 	"isꓽpublic": false,
 	"isꓽdebug": true,
-	"host": "netlify"
+	"host": "netlify",
+	"generatesꓽjsⵧscaffold": "offirmo--react"
 }

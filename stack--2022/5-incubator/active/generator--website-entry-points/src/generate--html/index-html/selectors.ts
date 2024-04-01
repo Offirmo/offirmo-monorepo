@@ -1,17 +1,28 @@
 import assert from 'tiny-invariant'
-import { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
-import { Contentⳇweb, Css‿str, Html‿str } from '@offirmo-private/ts-types-web';
+import { Immutable } from '@offirmo-private/ts-types'
+import { Contentⳇweb, Css‿str, Html‿str, JS‿str } from '@offirmo-private/ts-types-web';
 import {
-	FeatureSnippets,
 	HtmlMetas,
 	HtmlMetaContentⳇViewport,
 	HtmlDocumentSpec,
-	getꓽfeatures as _getꓽfeatures,
 } from '@offirmo-private/generator--html'
 
 import { WebPropertyEntryPointSpec } from '../../types.js'
 import { LIB } from '../../consts.js'
-import { getꓽtitleⵧpage, prefersꓽorientation, getꓽfeatures, getꓽlang, getꓽcolorⵧtheme, getꓽcharset, isꓽuser_scalable, supportsꓽscreensⵧwith_shape, wantsꓽinstall, usesꓽpull_to_refresh, getꓽcolorⵧbackground, getꓽcolorⵧforeground, needsꓽwebmanifest, getꓽbasenameⵧwebmanifest } from '../../selectors/index.js'
+import {
+	getꓽtitleⵧpage,
+	getꓽfeatures,
+	getꓽlang,
+	getꓽcolorⵧtheme,
+	getꓽcharset,
+	isꓽuser_scalable,
+	supportsꓽscreensⵧwith_shape,
+	wantsꓽinstall,
+	usesꓽpull_to_refresh,
+	getꓽcolorⵧbackground, getꓽcolorⵧforeground,
+	needsꓽwebmanifest, getꓽbasenameⵧwebmanifest,
+	shouldꓽgenerateꓽjscode
+} from '../../selectors/index.js'
 import { generateꓽinline as generateꓽfavicon__iconⵧinline } from '../../generate--icons/index.js'
 import { ifꓽdebug } from '../../utils/debug.js'
 
@@ -116,42 +127,61 @@ function getꓽlinks(spec: Immutable<WebPropertyEntryPointSpec>): { [rel: string
 
 /////////////////////////////////////////////////
 
+const TOKEN__COLOR__BG = '--o⋄color⁚bg--main' //'color--bg'
+const TOKEN__COLOR__FG = '--o⋄color⁚fg--main' //color--fg'
+const TOKEN__FONT__SYSTEMⵧSANS = '--o⋄font-family--system--sans'
+
 function getꓽcssⵧcritical(spec: Immutable<WebPropertyEntryPointSpec>): Css‿str[] {
+	const result: Css‿str[] = []
 
-	return [
 	// TODO make that auto or configurable
-	`@layer reset, offirmo--reset, foundation, offirmo--foundation, framework;`,
-	// TODO xml namespace
+	result.push(`/* define layers order, needs to be 1st CSS */
+@layer reset, foundation, framework;
+`)
 
-	// TODO use custom token names
-	`
-/* critical minimal design system */
+	result.push(`/* Necessary to style SVG inner elements. Required to be defined at the very beginning of the CSS */
+@namespace svg url(http://www.w3.org/2000/svg);
+`)
+
+	// TODO check if the system font stack works on major OS/browser
+	result.push(`/* critical minimal design system */
 :root {
-	--color--bg: ${getꓽcolorⵧbackground(spec)};
-	--color--fg: ${getꓽcolorⵧforeground(spec)};
-	--font: -apple-system, ui-sans-serif, sans-serif;
+	/* FG+BG colors are the basics of identity */
+	${TOKEN__COLOR__BG}: ${getꓽcolorⵧbackground(spec)};
+	${TOKEN__COLOR__FG}: ${getꓽcolorⵧforeground(spec)};
+	/* https://systemfontstack.com/ simplified */
+	${TOKEN__FONT__SYSTEMⵧSANS}: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 
 	margin: 0;
 	padding: 0;
 
-	color: var(--color--fg);
-	background-color: var(--color--bg);
-	font-family: var(--font);
+	color: var(${TOKEN__COLOR__FG});
+	background-color: var(${TOKEN__COLOR__BG});
+	font-family: var(${TOKEN__FONT__SYSTEMⵧSANS});
 
-	${
-		usesꓽpull_to_refresh(spec)
-			? ''
-			: `/* https://www.the-koi.com/projects/how-to-disable-pull-to-refresh/ */
+	${usesꓽpull_to_refresh(spec)
+		? ''
+		: `/* https://www.the-koi.com/projects/how-to-disable-pull-to-refresh/ */
 	overscroll-behavior: none;`
-}
-	`
-]
+	}
+`)
+
+	return result
 }
 
-function getꓽhtml(spec: Immutable<WebPropertyEntryPointSpec>): Html‿str[] {
+function getꓽcontentⵧweb__html(spec: Immutable<WebPropertyEntryPointSpec>): Html‿str[] {
 	return [
 		// TODO
 	]
+}
+
+function getꓽcontentⵧweb__js(spec: Immutable<WebPropertyEntryPointSpec>): JS‿str[] {
+	const result: JS‿str[] = []
+
+	if (shouldꓽgenerateꓽjscode(spec))
+		result.push(`import './app/index.js'`)
+
+	return result
 }
 
 function getꓽcontentⵧweb(spec: Immutable<WebPropertyEntryPointSpec>): Contentⳇweb {
@@ -159,9 +189,10 @@ function getꓽcontentⵧweb(spec: Immutable<WebPropertyEntryPointSpec>): Conten
 	// TODO review import from js?
 
 	const result: Contentⳇweb = {
-		html: getꓽhtml(spec),
+		html: getꓽcontentⵧweb__html(spec),
 		title: getꓽtitleⵧpage(spec),
 
+		js: getꓽcontentⵧweb__js(spec),
 		cssⵧcritical: getꓽcssⵧcritical(spec),
 	}
 	return result

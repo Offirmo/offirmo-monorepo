@@ -11,6 +11,7 @@ import { SPEC } from '../../src/__specs/__fixtures/specs--game--tbrpg.js'
 await generateꓽwebsiteᝍentryᝍpoints({
 		...SPEC,
 		host: 'netlify',
+		generatesꓽjsⵧscaffold: 'offirmo--react',
 	},
 	path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'),
 	{rm: true},
