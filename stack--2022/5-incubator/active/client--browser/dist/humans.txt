@@ -1,7 +1,9 @@
 # https://humanstxt.org/
 
-Hi, I'm Offirmo, a software engineer, open-source developer & creator.
+## Author
+Hi, I'm Offirmo, software engineer, open-source developer & creator.
 
-If you need to get in touch: https://github.com/Offirmo/offirmo-monorepo/issues
+If you need to get in touch: mailto:offirmo.net@gmail.com.
 
-
+## Credits
+(TODO one day)

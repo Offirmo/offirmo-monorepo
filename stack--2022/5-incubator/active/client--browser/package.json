@@ -23,7 +23,7 @@
 
 		"build:parcel": "parcel build src/entry-points/*.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
 		"build:vite":     "vite build src/           --base       ./",
-		"copy-extra": "cp -f src/*.txt dist",
+		"copy-extra": "cp -R -f src/entry-points/.well-known src/entry-points/_* src/entry-points/*.json src/entry-points/favicon.ico src/entry-points/*.txt   dist",
 		"xxxensure-size": "size-limit",
 		"build": "npm-run-all  clean  refresh--build-variables  build:parcel"
 	},
