@@ -116,7 +116,7 @@
 		"emittery": "^1",
 		"eslint-plugin-chai-expect": "^3",
 		"eslint-plugin-mocha": "^10",
-		"exiftool-vendored": "^24",
+		"exiftool-vendored": "^25",
 		"fraction.js": "^4",
 		"geo-tz": "^8",
 		"hasha": "^6",

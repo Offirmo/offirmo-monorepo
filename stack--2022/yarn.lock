@@ -1050,10 +1050,10 @@
     "@parcel/utils" "2.12.0"
     nullthrows "^1.1.1"
 
-"@photostructure/tz-lookup@^9.0.2":
-  version "9.0.2"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@photostructure/tz-lookup/-/tz-lookup-9.0.2.tgz#3b03dbedc305c872d9f7b99f78c386f8ba986197"
-  integrity sha512-H8+tTt7ilJNkFyb+QgPnLEGUjQzGwiMb9n7lwRZNBgSKL3VZs9AkjI1E//FcwPjNafwAH932U92+xTqJiF3Bbw==
+"@photostructure/tz-lookup@^10.0.0":
+  version "10.0.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@photostructure/tz-lookup/-/tz-lookup-10.0.0.tgz#f3d25a59b11f3075bac88a458628aad6df8b9ed5"
+  integrity sha512-8ZAjoj/irCuvUlyEinQ/HB6A8hP3bD1dgTOZvfl1b9nAwqniutFDHOQRcGM6Crea68bOwPj010f0Z4KkmuLHEA==
 
 "@pnpm/config.env-replace@^1.1.0":
   version "1.1.0"
@@ -1088,83 +1088,83 @@
   dependencies:
     dequal "^2.0.3"
 
-"@resvg/resvg-js-android-arm-eabi@2.6.1":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-android-arm-eabi/-/resvg-js-android-arm-eabi-2.6.1.tgz#4d6f17ab66658710165cd7f4e2171241f6f4595f"
-  integrity sha512-oXmXUUqTzinvXwkVBDdNKocAeF1zLGJYasTNRmoqF3gyOm04qRYT1On0m6oK2jbTiUAOUTqi0ZSizcecnwcSDA==
+"@resvg/resvg-js-android-arm-eabi@2.6.2":
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-android-arm-eabi/-/resvg-js-android-arm-eabi-2.6.2.tgz#e761e0b688127db64879f455178c92468a9aeabe"
+  integrity sha512-FrJibrAk6v29eabIPgcTUMPXiEz8ssrAk7TXxsiZzww9UTQ1Z5KAbFJs+Z0Ez+VZTYgnE5IQJqBcoSiMebtPHA==
 
-"@resvg/resvg-js-android-arm64@2.6.1":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-android-arm64/-/resvg-js-android-arm64-2.6.1.tgz#fe793dcb9b03af1260797c8153b7a9fad420077f"
-  integrity sha512-vcCZoBx8s/3/+t6nDd9fB/LL70I4B2YmgDT7uP6wyqVCUPniNeLR9VYIuvpMHw6oVyL5Mpt8F2YXV1zQE2X2hw==
+"@resvg/resvg-js-android-arm64@2.6.2":
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-android-arm64/-/resvg-js-android-arm64-2.6.2.tgz#b8cb564d7f6b3f37d9b43129f5dc5fe171e249e4"
+  integrity sha512-VcOKezEhm2VqzXpcIJoITuvUS/fcjIw5NA/w3tjzWyzmvoCdd+QXIqy3FBGulWdClvp4g+IfUemigrkLThSjAQ==
 
-"@resvg/resvg-js-darwin-arm64@2.6.1":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-darwin-arm64/-/resvg-js-darwin-arm64-2.6.1.tgz#a96cc2e40da1a9922022d68a75e93233b58f09f9"
-  integrity sha512-uO0WvEQqQlAL8u7nI7k1yL5wSsZYU2YCSsN1hAhr1LjyvmWmyC09xUEdWPUVVT1nL2YK4Ueh0LR+pxOT3QlCng==
+"@resvg/resvg-js-darwin-arm64@2.6.2":
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-darwin-arm64/-/resvg-js-darwin-arm64-2.6.2.tgz#49bd3faeda5c49f53302d970e6e79d006de18e7d"
+  integrity sha512-nmok2LnAd6nLUKI16aEB9ydMC6Lidiiq2m1nEBDR1LaaP7FGs4AJ90qDraxX+CWlVuRlvNjyYJTNv8qFjtL9+A==
 
-"@resvg/resvg-js-darwin-x64@2.6.1":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-darwin-x64/-/resvg-js-darwin-x64-2.6.1.tgz#e90f1c999e8c10c4a9be205717484456687c560e"
-  integrity sha512-aW15HMQSk85GPHE4gsc56G0Fqi2IGVkDfPWEWHEyDBpCZ17RKweAwg5V3ioz9aGX1nmhjQa9tJ2xgVwX+sqIjw==
+"@resvg/resvg-js-darwin-x64@2.6.2":
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-darwin-x64/-/resvg-js-darwin-x64-2.6.2.tgz#e1344173aa27bfb4d880ab576d1acf1c1648faca"
+  integrity sha512-GInyZLjgWDfsVT6+SHxQVRwNzV0AuA1uqGsOAW+0th56J7Nh6bHHKXHBWzUrihxMetcFDmQMAX1tZ1fZDYSRsw==
 
-"@resvg/resvg-js-linux-arm-gnueabihf@2.6.1":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-linux-arm-gnueabihf/-/resvg-js-linux-arm-gnueabihf-2.6.1.tgz#f600fce988a6dfeb573d164f3991a5d190cb8e16"
-  integrity sha512-7vpBFzCMONnRzK0uCBT5h+Dmsa8dWsoLFqB6xgutNfKkldjuCOiLNe0tT7hneGF8tw5H+W6hX/VLx2ktDwsS4Q==
+"@resvg/resvg-js-linux-arm-gnueabihf@2.6.2":
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-linux-arm-gnueabihf/-/resvg-js-linux-arm-gnueabihf-2.6.2.tgz#34c445eba45efd68f6130b2ab426d76a7424253d"
+  integrity sha512-YIV3u/R9zJbpqTTNwTZM5/ocWetDKGsro0SWp70eGEM9eV2MerWyBRZnQIgzU3YBnSBQ1RcxRZvY/UxwESfZIw==
 
-"@resvg/resvg-js-linux-arm64-gnu@2.6.1":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-linux-arm64-gnu/-/resvg-js-linux-arm64-gnu-2.6.1.tgz#871b023e03d645ca95a077dcd5ee6909d11c6c3d"
-  integrity sha512-+Gi3OIOJFFiCdm72AsDa7KPnkogitLQ6yfF1O/J25adUrlWjvKAM9+8b5sTI9waeLERZHNJpIVESpdIxI2/5sQ==
+"@resvg/resvg-js-linux-arm64-gnu@2.6.2":
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-linux-arm64-gnu/-/resvg-js-linux-arm64-gnu-2.6.2.tgz#30da47087dd8153182198b94fe9f8d994890dae5"
+  integrity sha512-zc2BlJSim7YR4FZDQ8OUoJg5holYzdiYMeobb9pJuGDidGL9KZUv7SbiD4E8oZogtYY42UZEap7dqkkYuA91pg==
 
-"@resvg/resvg-js-linux-arm64-musl@2.6.1":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-linux-arm64-musl/-/resvg-js-linux-arm64-musl-2.6.1.tgz#bc657676c3f0d602718f7df0e2a9825fefff714b"
-  integrity sha512-lnRGWG/LwpX6UsV1neHAavPnek3WlCnGMdBZ/7JbpamK5VmtDZmsV2esOFpME6pKnWL40UX4WjPsCBtKkhMUMA==
+"@resvg/resvg-js-linux-arm64-musl@2.6.2":
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-linux-arm64-musl/-/resvg-js-linux-arm64-musl-2.6.2.tgz#5d75b8ff5c83103729c1ca3779987302753c50d4"
+  integrity sha512-3h3dLPWNgSsD4lQBJPb4f+kvdOSJHa5PjTYVsWHxLUzH4IFTJUAnmuWpw4KqyQ3NA5QCyhw4TWgxk3jRkQxEKg==
 
-"@resvg/resvg-js-linux-x64-gnu@2.6.1":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-linux-x64-gnu/-/resvg-js-linux-x64-gnu-2.6.1.tgz#79207115ae2edeaedc6906e0c78043866f345b7b"
-  integrity sha512-2S1N7fHl5480AUrUtxsfjFOh3t8NQ2qKavROZRDKWJqFXBrNOUsirDa33LtpFGDkFW18SjP/FCs1xfHLzzz43g==
+"@resvg/resvg-js-linux-x64-gnu@2.6.2":
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-linux-x64-gnu/-/resvg-js-linux-x64-gnu-2.6.2.tgz#411abedfaee5edc57cbb7701736cecba522e26f3"
+  integrity sha512-IVUe+ckIerA7xMZ50duAZzwf1U7khQe2E0QpUxu5MBJNao5RqC0zwV/Zm965vw6D3gGFUl7j4m+oJjubBVoftw==
 
-"@resvg/resvg-js-linux-x64-musl@2.6.1":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-linux-x64-musl/-/resvg-js-linux-x64-musl-2.6.1.tgz#dfed291a7530e4779d4f674395cf50ececdf8a72"
-  integrity sha512-G5GMmpvFiyclkp44eVPVWnN2lhLx9eMIcxGnBFWjnpI3TxrjBt7aVic2N8CsZ0vt2rrnJkQI0IKjUQQIi138Hw==
+"@resvg/resvg-js-linux-x64-musl@2.6.2":
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-linux-x64-musl/-/resvg-js-linux-x64-musl-2.6.2.tgz#fe4984038f0372f279e3ff570b72934dd7eb2a5c"
+  integrity sha512-UOf83vqTzoYQO9SZ0fPl2ZIFtNIz/Rr/y+7X8XRX1ZnBYsQ/tTb+cj9TE+KHOdmlTFBxhYzVkP2lRByCzqi4jQ==
 
-"@resvg/resvg-js-win32-arm64-msvc@2.6.1":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-win32-arm64-msvc/-/resvg-js-win32-arm64-msvc-2.6.1.tgz#d0f5a5153cc7ca5c3b1fadfb60d53a1514d950b1"
-  integrity sha512-m9TBMrGs2tML0oz14D/x40tPedqCgNFy/DH7/z/bvnP9bH59fivaInmHTjd8oSFfGRZ/DasXMFcAL+LS1+hfSQ==
+"@resvg/resvg-js-win32-arm64-msvc@2.6.2":
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-win32-arm64-msvc/-/resvg-js-win32-arm64-msvc-2.6.2.tgz#d3a053cf7ff687087a2106330c0fdaae706254d1"
+  integrity sha512-7C/RSgCa+7vqZ7qAbItfiaAWhyRSoD4l4BQAbVDqRRsRgY+S+hgS3in0Rxr7IorKUpGE69X48q6/nOAuTJQxeQ==
 
-"@resvg/resvg-js-win32-ia32-msvc@2.6.1":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-win32-ia32-msvc/-/resvg-js-win32-ia32-msvc-2.6.1.tgz#65d5433c14915cb0934230b991e303f2f0dde6d8"
-  integrity sha512-Ma+MJXesViT0A7JqTobsB9DOCO0AkfmLxsgkvxq0IiWkpU9Z4Gp+RkDsFQbMhJwVXaz7b8L6y+EIvf95iCbJQw==
+"@resvg/resvg-js-win32-ia32-msvc@2.6.2":
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-win32-ia32-msvc/-/resvg-js-win32-ia32-msvc-2.6.2.tgz#7cdda1ce29ef7209e28191d917fa5bef0624a4ad"
+  integrity sha512-har4aPAlvjnLcil40AC77YDIk6loMawuJwFINEM7n0pZviwMkMvjb2W5ZirsNOZY4aDbo5tLx0wNMREp5Brk+w==
 
-"@resvg/resvg-js-win32-x64-msvc@2.6.1":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-win32-x64-msvc/-/resvg-js-win32-x64-msvc-2.6.1.tgz#8f6d7fba07c5f6a0f4eec8c3cc6680c61929a2ab"
-  integrity sha512-mWIlgEuFWBrlldCbhLPvG4tt0r0D1RZ8eR2+zxTtQ15d/lbVjwnGpw2l1noV3zhV5S6mAVzoZeQ1emoov63Y/A==
+"@resvg/resvg-js-win32-x64-msvc@2.6.2":
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js-win32-x64-msvc/-/resvg-js-win32-x64-msvc-2.6.2.tgz#cb0ad04525d65f3def4c8d346157a57976d5b388"
+  integrity sha512-ZXtYhtUr5SSaBrUDq7DiyjOFJqBVL/dOBN7N/qmi/pO0IgiWW/f/ue3nbvu9joWE5aAKDoIzy/CxsY0suwGosQ==
 
 "@resvg/resvg-js@^2":
-  version "2.6.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js/-/resvg-js-2.6.1.tgz#401535f60640d3e4e4e135023632e03aacb1c878"
-  integrity sha512-CVGUWPvgr3b96+PooncXCsvu93CMwfEoueqIxIJr9AuUA8OaIPcZjOgFhas62fcHRdWMmxQqF1Rp+89bQsj/RA==
+  version "2.6.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@resvg/resvg-js/-/resvg-js-2.6.2.tgz#3e92a907d88d879256c585347c5b21a7f3bb5b46"
+  integrity sha512-xBaJish5OeGmniDj9cW5PRa/PtmuVU3ziqrbr5xJj901ZDN4TosrVaNZpEiLZAxdfnhAe7uQ7QFWfjPe9d9K2Q==
   optionalDependencies:
-    "@resvg/resvg-js-android-arm-eabi" "2.6.1"
-    "@resvg/resvg-js-android-arm64" "2.6.1"
-    "@resvg/resvg-js-darwin-arm64" "2.6.1"
-    "@resvg/resvg-js-darwin-x64" "2.6.1"
-    "@resvg/resvg-js-linux-arm-gnueabihf" "2.6.1"
-    "@resvg/resvg-js-linux-arm64-gnu" "2.6.1"
-    "@resvg/resvg-js-linux-arm64-musl" "2.6.1"
-    "@resvg/resvg-js-linux-x64-gnu" "2.6.1"
-    "@resvg/resvg-js-linux-x64-musl" "2.6.1"
-    "@resvg/resvg-js-win32-arm64-msvc" "2.6.1"
-    "@resvg/resvg-js-win32-ia32-msvc" "2.6.1"
-    "@resvg/resvg-js-win32-x64-msvc" "2.6.1"
+    "@resvg/resvg-js-android-arm-eabi" "2.6.2"
+    "@resvg/resvg-js-android-arm64" "2.6.2"
+    "@resvg/resvg-js-darwin-arm64" "2.6.2"
+    "@resvg/resvg-js-darwin-x64" "2.6.2"
+    "@resvg/resvg-js-linux-arm-gnueabihf" "2.6.2"
+    "@resvg/resvg-js-linux-arm64-gnu" "2.6.2"
+    "@resvg/resvg-js-linux-arm64-musl" "2.6.2"
+    "@resvg/resvg-js-linux-x64-gnu" "2.6.2"
+    "@resvg/resvg-js-linux-x64-musl" "2.6.2"
+    "@resvg/resvg-js-win32-arm64-msvc" "2.6.2"
+    "@resvg/resvg-js-win32-ia32-msvc" "2.6.2"
+    "@resvg/resvg-js-win32-x64-msvc" "2.6.2"
 
 "@sindresorhus/is@^5.2.0":
   version "5.6.0"
@@ -1315,9 +1315,9 @@
   integrity sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==
 
 "@swc/helpers@^0.5.0":
-  version "0.5.7"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/helpers/-/helpers-0.5.7.tgz#36c05f61b412abcff3616ecc8634623bcc7c9618"
-  integrity sha512-BVvNZhx362+l2tSwSuyEUV4h7+jk9raNdoTSdLfwTshXJSaGmYKluGRJznziCI3KX02Z19DdsQrdfrpXAU3Hfg==
+  version "0.5.8"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/helpers/-/helpers-0.5.8.tgz#65d56b1961487fd99795ffd8c68edb7a591571fb"
+  integrity sha512-lruDGw3pnfM3wmZHeW7JuhkGQaJjPyiKjxeGhdmfoOT53Ic9qb5JLDNaK2HUdl1zLDeX28H221UvKjfdvSLVMg==
   dependencies:
     tslib "^2.4.0"
 
@@ -1346,9 +1346,9 @@
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
 "@tsconfig/node10@^1.0.7":
-  version "1.0.10"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@tsconfig/node10/-/node10-1.0.10.tgz#b7ebd3adfa7750628d100594f6726b054d2c33b2"
-  integrity sha512-PiaIWIoPvO6qm6t114ropMCagj6YAF24j9OkCA2mJDXFnlionEwhsBCJ8yek4aib575BI3OkART/90WsgHgLWw==
+  version "1.0.11"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@tsconfig/node10/-/node10-1.0.11.tgz#6ee46400685f130e278128c7b38b7e031ff5b2f2"
+  integrity sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==
 
 "@tsconfig/node12@^1.0.7":
   version "1.0.11"
@@ -1366,9 +1366,9 @@
   integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
 
 "@tsconfig/strictest@^2":
-  version "2.0.4"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@tsconfig/strictest/-/strictest-2.0.4.tgz#8287de7019ce202a03de7e1c27ee3f652c526a06"
-  integrity sha512-/VKO/oufDOvAE48KGzZOEXFBKtR3PnGlb4cJoRtw3Ax5tYwaWnaNgyTJDviIbvjlnn82WMfTNvhegFkj5Xt2UA==
+  version "2.0.5"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@tsconfig/strictest/-/strictest-2.0.5.tgz#2cbc67f207ba87fdec2a84ad79b1708cf4edd93b"
+  integrity sha512-ec4tjL2Rr0pkZ5hww65c+EEPYwxOi4Ryv+0MtjeaSQRJyq322Q27eOQiFbuNgw2hpL4hB1/W/HBGk3VKS43osg==
 
 "@turf/boolean-point-in-polygon@^6.5.0":
   version "6.5.0"
@@ -1478,16 +1478,16 @@
     form-data "^4.0.0"
 
 "@types/node@*":
-  version "20.11.30"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/node/-/node-20.11.30.tgz#9c33467fc23167a347e73834f788f4b9f399d66f"
-  integrity sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==
+  version "20.12.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/node/-/node-20.12.2.tgz#9facdd11102f38b21b4ebedd9d7999663343d72e"
+  integrity sha512-zQ0NYO87hyN6Xrclcqp7f8ZbXNbRfoGWNcMvHTPQp9UUrwI0mI7XBz+cu7/W6/VClYo2g63B0cjull/srU7LgQ==
   dependencies:
     undici-types "~5.26.4"
 
 "@types/node@^18.11.18", "@types/node@^18.16.3":
-  version "18.19.26"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/node/-/node-18.19.26.tgz#18991279d0a0e53675285e8cf4a0823766349729"
-  integrity sha512-+wiMJsIwLOYCvUqSdKTrfkS8mpTp+MPINe6+Np4TAGFWWRWiBQ5kSq9nZGCSPkzx9mvT+uEukzpX4MOSCydcvw==
+  version "18.19.28"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/node/-/node-18.19.28.tgz#c64a2c992c8ebbf61100a4570e4eebc1934ae030"
+  integrity sha512-J5cOGD9n4x3YGgVuaND6khm5x07MMdAKkRyXnjVR6KFhLMNh2yONGiP7Z+4+tBOt5mK+GvDTiacTOVGGpqiecw==
   dependencies:
     undici-types "~5.26.4"
 
@@ -1530,18 +1530,12 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@>=16.9.11":
-  version "18.2.71"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/react/-/react-18.2.71.tgz#77c3b97b02014bf351b21b684f80273a3a343f96"
-  integrity sha512-PxEsB9OjmQeYGffoWnYAd/r5FiJuUw2niFQHPc2v2idwh8wGPkkYzOHuinNJJY6NZqfoTCiOIizDOz38gYNsyw==
+  version "18.2.73"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/react/-/react-18.2.73.tgz#0579548ad122660d99e00499d22e33b81e73ed94"
+  integrity sha512-XcGdod0Jjv84HOC7N5ziY3x+qL0AfmubvKOZ9hJjJ2yd5EE+KYjWhdOjt387e9HPheHkdggF9atTifMRtyAaRA==
   dependencies:
     "@types/prop-types" "*"
-    "@types/scheduler" "*"
     csstype "^3.0.2"
-
-"@types/scheduler@*":
-  version "0.23.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/scheduler/-/scheduler-0.23.0.tgz#0a6655b3e2708eaabca00b7372fafd7a792a7b09"
-  integrity sha512-YIoDCTH3Af6XM5VuwGG/QL/CJqga1Zm3NkU3HZ4ZHK2fRMPYP1VczsTUqtsf43PH/iJNVlPHAo2oWX7BSdB2Hw==
 
 "@types/semver@^6.0.1":
   version "6.2.7"
@@ -1800,11 +1794,6 @@ balanced-match@^1.0.0:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
-base-64@^0.1.0:
-  version "0.1.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/base-64/-/base-64-0.1.0.tgz#780a99c84e7d600260361511c4877613bf24f6bb"
-  integrity sha512-Y5gU45svrR5tI2Vt/X9GPd3L0HNIKzGu202EjxrXMpuc2V2CiKgemAbUUsqYmZJvPtCXoUKjNZwBJzsNScUbXA==
-
 base-x@^3.0.8:
   version "3.0.9"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/base-x/-/base-x-3.0.9.tgz#6349aaabb58526332de9f60995e548a53fe21320"
@@ -1962,9 +1951,9 @@ camelcase@^7.0.0, camelcase@^7.0.1:
   integrity sha512-xlx1yCK2Oc1APsPXDL2LdlNP6+uu8OCDdhOBSVT279M/S+y75O30C2VuD8T2ogdePBBl7PfPF4504tnLgX3zfw==
 
 caniuse-lite@^1.0.30001587:
-  version "1.0.30001600"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/caniuse-lite/-/caniuse-lite-1.0.30001600.tgz#93a3ee17a35aa6a9f0c6ef1b2ab49507d1ab9079"
-  integrity sha512-+2S9/2JFhYmYaDpZvo0lKkfvuKIglrx68MwOBqMGHhQsNkLjB5xtc/TGoEPs+MxjSyN/72qer2g97nzR641mOQ==
+  version "1.0.30001603"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/caniuse-lite/-/caniuse-lite-1.0.30001603.tgz#605046a5bdc95ba4a92496d67e062522dce43381"
+  integrity sha512-iL2iSS0eDILMb9n5yKQoTBim9jMZ0Yrk8g0N9K7UzYyWnfIKzXBZD5ngpM37ZcL/cv0Mli8XtVMRYMQAfFpi5Q==
 
 chai-as-promised@^7:
   version "7.1.1"
@@ -2034,11 +2023,6 @@ chalk@^5, chalk@^5.0.1, chalk@^5.2.0, chalk@^5.3.0:
   version "5.3.0"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/chalk/-/chalk-5.3.0.tgz#67c20a7ebef70e7f3970a01f90fa210cb6860385"
   integrity sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==
-
-charenc@0.0.2:
-  version "0.0.2"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
-  integrity sha512-yrLQ/yVUFXkzg7EDQsPieE/53+0RlaWTs+wBrvW36cyilJ2SaDWfl4Yj7MtLTXleV9uEKefbAGUPv2/iWSooRA==
 
 check-error@^1.0.2:
   version "1.0.3"
@@ -2301,11 +2285,6 @@ cross-spawn@^7, cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-crypt@0.0.2:
-  version "0.0.2"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/crypt/-/crypt-0.0.2.tgz#88d7ff7ec0dfb86f713dc87bbb42d044d3e6c41b"
-  integrity sha512-mCxBlsHFYh9C+HVpiEacem8FEBnMXgU9gy4zmNC+SXAZNB/1idgp/aulFJ4FgCi7GPEVbfyng092GqL2k2rmow==
-
 css-select@^4.1.3:
   version "4.3.0"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/css-select/-/css-select-4.3.0.tgz#db7129b2846662fd8628cfc496abb2b59e41529b"
@@ -2502,14 +2481,6 @@ diff@^5.1.0:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/diff/-/diff-5.2.0.tgz#26ded047cd1179b78b9537d5ef725503ce1ae531"
   integrity sha512-uIFDxqpRZGZ6ThOk84hEfqWoHx2devRFvpTZcTHur85vImfaxUbTW9Ryh4CpCuDnToOP1CEtXKIgytHBPVff5A==
 
-digest-fetch@^1.3.0:
-  version "1.3.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/digest-fetch/-/digest-fetch-1.3.0.tgz#898e69264d00012a23cf26e8a3e40320143fc661"
-  integrity sha512-CGJuv6iKNM7QyZlM2T3sPAdZWd/p9zQiRNS9G+9COUCwzWFTs0Xp8NF5iePx7wtvhDykReiRRrSeNb4oMmB8lA==
-  dependencies:
-    base-64 "^0.1.0"
-    md5 "^2.3.0"
-
 dir-glob@^3.0.1:
   version "3.0.1"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/dir-glob/-/dir-glob-3.0.1.tgz#56dbf73d992a4a93ba1584f4534063fd2e41717f"
@@ -2576,9 +2547,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.668:
-  version "1.4.717"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/electron-to-chromium/-/electron-to-chromium-1.4.717.tgz#99db370cae8cd090d5b01f8748e9ad369924d0f8"
-  integrity sha512-6Fmg8QkkumNOwuZ/5mIbMU9WI3H2fmn5ajcVya64I5Yr5CcNmO7vcLt0Y7c96DCiMO5/9G+4sI2r6eEvdg1F7A==
+  version "1.4.723"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/electron-to-chromium/-/electron-to-chromium-1.4.723.tgz#827da30c96b316684d352c3d81430029df01bb8e"
+  integrity sha512-rxFVtrMGMFROr4qqU6n95rUi9IlfIm+lIAt+hOToy/9r6CDv0XiEcQdC3VP71y1pE5CFTzKV0RvxOGYCPWWHPw==
 
 emittery@^1:
   version "1.0.3"
@@ -2613,9 +2584,9 @@ error-ex@^1.3.1:
     is-arrayish "^0.2.1"
 
 es-abstract@^1.22.1, es-abstract@^1.22.3, es-abstract@^1.23.0, es-abstract@^1.23.2:
-  version "1.23.2"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/es-abstract/-/es-abstract-1.23.2.tgz#693312f3940f967b8dd3eebacb590b01712622e0"
-  integrity sha512-60s3Xv2T2p1ICykc7c+DNDPLDMm9t4QxCOUU0K9JxiLjM3C1zB9YVdN7tjxrFd4+AkZ8CdX1ovUga4P2+1e+/w==
+  version "1.23.3"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/es-abstract/-/es-abstract-1.23.3.tgz#8f0c5a35cd215312573c5a27c87dfd6c881a0aa0"
+  integrity sha512-e+HfNH61Bj1X9/jLc5v1owaLYuHdeHHSQlkhCBiTK8rBvKaULl/beGMxwrMXjpYrv4pz22BlY570vVePA2ho4A==
   dependencies:
     array-buffer-byte-length "^1.0.1"
     arraybuffer.prototype.slice "^1.0.3"
@@ -2656,11 +2627,11 @@ es-abstract@^1.22.1, es-abstract@^1.22.3, es-abstract@^1.23.0, es-abstract@^1.23
     safe-regex-test "^1.0.3"
     string.prototype.trim "^1.2.9"
     string.prototype.trimend "^1.0.8"
-    string.prototype.trimstart "^1.0.7"
+    string.prototype.trimstart "^1.0.8"
     typed-array-buffer "^1.0.2"
     typed-array-byte-length "^1.0.1"
     typed-array-byte-offset "^1.0.2"
-    typed-array-length "^1.0.5"
+    typed-array-length "^1.0.6"
     unbox-primitive "^1.0.2"
     which-typed-array "^1.1.15"
 
@@ -2809,29 +2780,29 @@ execa@^5.1.1:
     signal-exit "^3.0.3"
     strip-final-newline "^2.0.0"
 
-exiftool-vendored.exe@12.78.0:
-  version "12.78.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/exiftool-vendored.exe/-/exiftool-vendored.exe-12.78.0.tgz#2f588ea8853e590808d24c4cf6fd22a6cfb4d730"
-  integrity sha512-eMN7L67sb89xi8sN7INPg19uwa1KibG2oOyGcfOvB47h+1hzmGgivVu/SZIMeOToVIbLRwUl+AFwLYSTNXsJEg==
+exiftool-vendored.exe@12.80.0:
+  version "12.80.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/exiftool-vendored.exe/-/exiftool-vendored.exe-12.80.0.tgz#ea9c1b9433b5badfa48d283182656c6afad8c6a6"
+  integrity sha512-n4xm5yjYKuIWK0zSE1LwC4JL5KdeGTVcvGdq9+XRpFdRZTrwy7SlBxWi2vSXpfu/S72ZJXsBjPI/T43Yc3wD4g==
 
-exiftool-vendored.pl@12.78.0:
-  version "12.78.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/exiftool-vendored.pl/-/exiftool-vendored.pl-12.78.0.tgz#4da139ba59bf927c6128cd133b6e5a0d5e4bde4d"
-  integrity sha512-K8j9NgxRpTFskFuXEl0AGsc692yYyThe4i3SXgx7xc0fu/vwD2c7tRGljkEtvaweYnMmfrF4DhCpuTu0aux6sg==
+exiftool-vendored.pl@12.80.0:
+  version "12.80.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/exiftool-vendored.pl/-/exiftool-vendored.pl-12.80.0.tgz#9751aed0307594ca235eb95306acb3055e664c98"
+  integrity sha512-ixKZuQT67yDdPlQOfmJQjhxEgAo5YKfAKqpalZInutMj8fhwOmGkL+MlTwKvzWjExU9sfAFfobmiatFCI8mfKQ==
 
-exiftool-vendored@^24:
-  version "24.6.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/exiftool-vendored/-/exiftool-vendored-24.6.0.tgz#4bed486b807fdaa21e7f99d5ddb75495057140c2"
-  integrity sha512-jGjsoeYmR9VUrlZn0j1wcxMVi5y8C7A4FAa4vm3/l7ThT8d0f+jRcBqtdjaf+P5Ds/F4OgUq+ee/fRVhLy2DrA==
+exiftool-vendored@^25:
+  version "25.1.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/exiftool-vendored/-/exiftool-vendored-25.1.0.tgz#92c4af34d4878f009678f0729bee227c848a0ec1"
+  integrity sha512-ZKOe56FNqPWK3yfNFuxHvxjIw6MZh4Za4n+Jv5YfF5BWAzas95oOSEXSJ/+JS1tuuiEW33Upk+zAiOuGNk9jtg==
   dependencies:
-    "@photostructure/tz-lookup" "^9.0.2"
+    "@photostructure/tz-lookup" "^10.0.0"
     "@types/luxon" "^3.4.2"
     batch-cluster "^13.0.0"
     he "^1.2.0"
     luxon "^3.4.4"
   optionalDependencies:
-    exiftool-vendored.exe "12.78.0"
-    exiftool-vendored.pl "12.78.0"
+    exiftool-vendored.exe "12.80.0"
+    exiftool-vendored.pl "12.80.0"
 
 fast-deep-equal@^3.1.1:
   version "3.1.3"
@@ -3013,9 +2984,9 @@ functions-have-names@^1.2.3:
   integrity sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==
 
 fx@*:
-  version "33.0.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/fx/-/fx-33.0.0.tgz#1b24260c5cfa08e03abfc034065fd95ab9873493"
-  integrity sha512-uW/UAi9G04+o7dD/RyIH7mP9Cyf12TdiaWQ19QbvnxkKQ2yiffXiZMz65zqbWMstLd2vwla++G9lMabG3nXxYQ==
+  version "34.0.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/fx/-/fx-34.0.0.tgz#4eeba7b931e445b1876b2ce577cf437b65d2e503"
+  integrity sha512-/fZih3/WLsrtlaj2mahjWxAmyuikmcl3D5kKPqLtFmEilLsy9wp0+/vEmfvYXXhwJc+ajtCFDCf+yttXmPMHSQ==
 
 gauge@^3.0.0:
   version "3.0.2"
@@ -3438,11 +3409,6 @@ is-boolean-object@^1.1.0:
   dependencies:
     call-bind "^1.0.2"
     has-tostringtag "^1.0.0"
-
-is-buffer@~1.1.6:
-  version "1.1.6"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
-  integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
 
 is-callable@^1.1.3, is-callable@^1.1.4, is-callable@^1.2.7:
   version "1.2.7"
@@ -3930,15 +3896,6 @@ map-stream@~0.1.0:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/map-stream/-/map-stream-0.1.0.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194"
   integrity sha512-CkYQrPYZfWnu/DAmVCpTSX/xHpKZ80eKh2lAkyA6AJTef6bW+6JpbQZN5rofum7da+SyN1bi5ctTm+lTfcCW3g==
 
-md5@^2.3.0:
-  version "2.3.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/md5/-/md5-2.3.0.tgz#c3da9a6aae3a30b46b7b0c349b87b110dc3bda4f"
-  integrity sha512-T1GITYmFaKuO91vxyoQMFETst+O71VUPEU3ze5GNzDm0OWdP8v1ziTaAEPUr/3kLsY3Sftgz242A1SetQiDL7g==
-  dependencies:
-    charenc "0.0.2"
-    crypt "0.0.2"
-    is-buffer "~1.1.6"
-
 mdn-data@2.0.14:
   version "2.0.14"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/mdn-data/-/mdn-data-2.0.14.tgz#7113fc4281917d63ce29b43446f701e68c25ba50"
@@ -4073,9 +4030,9 @@ mkdirp@^1.0.3:
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
 mocha@^10:
-  version "10.3.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/mocha/-/mocha-10.3.0.tgz#0e185c49e6dccf582035c05fa91084a4ff6e3fe9"
-  integrity sha512-uF2XJs+7xSLsrmIvn37i/wnc91nw7XjOQB8ccyx5aEgdnohr7n+rEiZP23WkCYHjilR6+EboEnbq/ZQDz4LSbg==
+  version "10.4.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/mocha/-/mocha-10.4.0.tgz#ed03db96ee9cfc6d20c56f8e2af07b961dbae261"
+  integrity sha512-eqhGB8JKapEYcC4ytX/xrzKforgEc3j1pGlAXVy3eRwrtAy5/nIfT1SvgGzfN0XZZxeLq0aQWkOUAmqIJiv+bA==
   dependencies:
     ansi-colors "4.1.1"
     browser-stdout "1.3.1"
@@ -4346,15 +4303,14 @@ onetime@^5.1.2:
     mimic-fn "^2.1.0"
 
 openai@^4:
-  version "4.29.2"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/openai/-/openai-4.29.2.tgz#45e83cb49dbd052626637b267c749785a24f411c"
-  integrity sha512-cPkT6zjEcE4qU5OW/SoDDuXEsdOLrXlAORhzmaguj5xZSPlgKvLhi27sFWhLKj07Y6WKNWxcwIbzm512FzTBNQ==
+  version "4.32.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/openai/-/openai-4.32.0.tgz#6feaf9fca691979857594517801c4025b4dcb74d"
+  integrity sha512-TXmBSej7RoQ4GWgKw1Waopx6QRroWlwaLH+PkxCTN45nKNEPFcGUV7VSWQCB/DwWMQVRLSNUAH4BqFYnSCEgkQ==
   dependencies:
     "@types/node" "^18.11.18"
     "@types/node-fetch" "^2.6.4"
     abort-controller "^3.0.0"
     agentkeepalive "^4.2.1"
-    digest-fetch "^1.3.0"
     form-data-encoder "1.7.2"
     formdata-node "^4.3.2"
     node-fetch "^2.6.7"
@@ -5329,7 +5285,7 @@ string.prototype.trimend@^1.0.8:
     define-properties "^1.2.1"
     es-object-atoms "^1.0.0"
 
-string.prototype.trimstart@^1.0.7:
+string.prototype.trimstart@^1.0.8:
   version "1.0.8"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/string.prototype.trimstart/-/string.prototype.trimstart-1.0.8.tgz#7ee834dda8c7c17eff3118472bb35bfedaa34dde"
   integrity sha512-UXSH262CSZY1tfu3G3Secr6uGLCFVPMhIqHjlgCUtCCcgihYc/xKs9djMTMUOb2j1mVSeU8EU6NWc/iQKU6Gfg==
@@ -5561,7 +5517,7 @@ typed-array-byte-offset@^1.0.2:
     has-proto "^1.0.3"
     is-typed-array "^1.1.13"
 
-typed-array-length@^1.0.5:
+typed-array-length@^1.0.6:
   version "1.0.6"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/typed-array-length/-/typed-array-length-1.0.6.tgz#57155207c76e64a3457482dfdc1c9d1d3c4c73a3"
   integrity sha512-/OxDN6OtAk5KBpGb28T+HZc2M+ADtvRxXrKKbUwtsLgdoxgX13hyy7ek6bFRl5+aBs2yZzB0c4CnQfAtVypW/g==

@@ -6,7 +6,6 @@
 	"private": true,
 
 	"sideEffects": true,
-	"type": "module",
 
 	"dependencies": {
 		"@offirmo-private/credits": "*"
