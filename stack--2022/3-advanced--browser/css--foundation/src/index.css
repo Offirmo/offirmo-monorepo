@@ -1,5 +1,3 @@
-/*! @offirmo-private/css--foundation v0.0.1 | Unlicense | github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/css--foundation */
-
 @import 'npm:@offirmo-private/css--reset';
 
 @import 'consts/consts--colors--defaults.css'      layer(offirmo--foundation);

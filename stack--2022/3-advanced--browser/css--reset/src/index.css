@@ -1,5 +1,3 @@
-/*! @offirmo-private/css--reset v0.0.1 | Unlicense | github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/css--reset */
-
 @import './browser--chrome/index.css'   layer(offirmo--reset);
 @import './browser--firefox/index.css'  layer(offirmo--reset);
 @import './browser--safari/index.css'   layer(offirmo--reset);

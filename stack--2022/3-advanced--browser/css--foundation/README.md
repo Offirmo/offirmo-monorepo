@@ -69,3 +69,5 @@ TODO solve that with layers! (when supported in parcel)
 TODO +++ https://atlassian.design/foundations/typography
 
 TODO     width: fit-content; on all? https://courses.joshwcomeau.com/css-for-js/01-rendering-logic-1/09-flow-layout
+
+/*! @offirmo-private/css--foundation v0.0.1 | Unlicense | github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/css--foundation */
