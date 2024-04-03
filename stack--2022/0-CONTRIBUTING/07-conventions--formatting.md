@@ -30,14 +30,16 @@ function getꓽXYZⵧfoo‿v2(): void {}
 /*
 assertꓽnode_is_xyz()
 isꓽStory‿v2(x: Immutable<any>): s is Story‿v2 {
-ↆfoo ⵧ fetch
-ೱfoo ⵧ promise
-ϟbestↆofꓺaꘌb
-notᝍbadₓasⳇwell‿noǃ
-bar𝝣fooǃfooꓽfoo𖾚foo
+ↆasyncⵧfetch
+ೱasyncⵧpromise
+ϟevent
+ǃerror
+aꓺbꘌc
+notᝍbadₓasⳇwell‿no
+fooǃfooꓽfoo𖾚foo
 fooꜛbarꜜfoo
-fooⵧbar
 ꓽfooᐧfoo
+TODO matching (formerly 𝝣)
  */
 }
 

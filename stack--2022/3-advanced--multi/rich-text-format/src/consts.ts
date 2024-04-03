@@ -2,7 +2,7 @@ const LIB = '@offirmo-private/rich-text-format'
 
 const SCHEMA_VERSION: number = 1
 
-const NODE_TYPE_𝝣_DISPLAY_MODE: Readonly<{ [k: string]: 'inline' | 'block' }> = {
+const NODE_TYPE_to_DISPLAY_MODE: Readonly<{ [k: string]: 'inline' | 'block' }> = {
 
 	// classic inlines
 	'fragmentⵧinline': 'inline',
@@ -29,5 +29,5 @@ const NODE_TYPE_𝝣_DISPLAY_MODE: Readonly<{ [k: string]: 'inline' | 'block' }>
 export {
 	LIB,
 	SCHEMA_VERSION,
-	NODE_TYPE_𝝣_DISPLAY_MODE,
+	NODE_TYPE_to_DISPLAY_MODE,
 }

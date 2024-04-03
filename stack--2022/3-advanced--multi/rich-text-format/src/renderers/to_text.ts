@@ -1,5 +1,5 @@
 import { Node, CheckedNode } from '../types.js'
-import { NODE_TYPE_𝝣_DISPLAY_MODE } from '../consts.js'
+import { NODE_TYPE_to_DISPLAY_MODE } from '../consts.js'
 import {
 	BaseRenderingOptions,
 	OnConcatenateStringParams,
@@ -157,7 +157,7 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 		}
 	}
 
-	if (NODE_TYPE_𝝣_DISPLAY_MODE[$node.$type] === 'block') {
+	if (NODE_TYPE_to_DISPLAY_MODE[$node.$type] === 'block') {
 		state.starts_with_block = true
 		state.ends_with_block = true
 	}

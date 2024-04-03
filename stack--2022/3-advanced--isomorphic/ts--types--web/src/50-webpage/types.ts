@@ -1,4 +1,5 @@
-/* PROMPT
+/* A data structure specifying a webpage.
+ * Given such a structure, we should be able to generate a corresponding html file.
  */
 
 import { IETFLanguageType } from '@offirmo-private/ts-types'
@@ -9,6 +10,9 @@ import { JS‿str } from '../30-js/index.js'
 
 /////////////////////////////////////////////////
 
+// See also HtmlDocumentSpec
+// this version can be seen as "simplified", focusing purely on content
+// TODO clarify
 export interface Contentⳇweb {
 	// flat to make it easier to extend
 	// semantic as much as we can
@@ -28,8 +32,6 @@ export interface Contentⳇweb {
 	jsⵧcritical?: JS‿str[]
 
 	/////////////////////
-	// meta
-
-	// TODO meta?
+	// TODO meta or not considered content??
 	// TODO social?
 }

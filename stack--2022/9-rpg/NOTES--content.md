@@ -60,6 +60,8 @@ https://theconversation.com/gary-mckee-what-it-takes-to-run-a-marathon-a-day-for
 https://womensagenda.com.au/latest/erchana-murray-is-running-one-marathon-daily-for-150-consecutive-days-to-run-length-of-australia/
 
 
+animal domestication https://en.wikipedia.org/wiki/Anna_Karenina_principle#Failed_domestication
+
 Wiseman’s book focuses on bringing out individuals’ inner potential, hopes, and motivation to improve the self
 
 
