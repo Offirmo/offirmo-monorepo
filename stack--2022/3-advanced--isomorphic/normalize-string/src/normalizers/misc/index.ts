@@ -24,13 +24,14 @@ const coerce_toꓽredeemable_code = combine_normalizers(
 	to_upper_case,
 )
 
+const LANGⵧDEFAULT = 'en'
 const normalizeꓽIETFLanguageType = combine_normalizers(
 	coerce_toꓽascii,
 	to_lower_case,
 	coerce_delimiters_to_space,
 	trim,
 	convert_spaces_to_kebab_case,
-	default_to('en'),
+	default_to(LANGⵧDEFAULT),
 	// that's all we can do, it's complicated https://en.wikipedia.org/wiki/IETF_language_tag
 )
 
@@ -39,5 +40,6 @@ const normalizeꓽIETFLanguageType = combine_normalizers(
 export {
 	coerce_toꓽtokens,
 	coerce_toꓽredeemable_code,
+	LANGⵧDEFAULT,
 	normalizeꓽIETFLanguageType,
 }

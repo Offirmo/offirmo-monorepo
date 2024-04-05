@@ -20,8 +20,8 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDo
 		...base,
 
 		features: (base.features ?? [])
-			.filter(f => f !== 'htmlⳇreact-root')
-			.filter(f => f !== 'normalize-url-trailing-slash') // we don't want extra redirects! It could be the cause of the 404 itself.
+			.filter(f => f !== 'htmlⳇreact-root') // we'll provide content
+			.filter(f => f !== 'normalize-url-trailing-slash') // we don't want extra redirects! It could be the cause of this 404!
 			.filter(f => f !== 'cssⳇviewport--full' && f !== 'page-loader--offirmo'), // no fancies
 
 		content: {

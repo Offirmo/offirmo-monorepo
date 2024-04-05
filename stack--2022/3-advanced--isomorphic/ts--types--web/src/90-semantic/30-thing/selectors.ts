@@ -1,7 +1,6 @@
 import assert from 'tiny-invariant'
-import { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
+import { Immutable } from '@offirmo-private/ts-types'
 import {
-	normalizeꓽIETFLanguageType,
 	normalize_unicode,
 } from '@offirmo-private/normalize-string'
 
@@ -10,10 +9,6 @@ import * as AuthorSelectors from '../20-author/selectors.js'
 import { Thing } from './types.js'
 
 /////////////////////////////////////////////////
-
-function getꓽlang(thing: Immutable<Thing>): IETFLanguageType {
-	return normalizeꓽIETFLanguageType(thing.lang ?? '')
-}
 
 function getꓽdescription(thing: Immutable<Thing>): string {
 	assert(thing.description, `should have a description`)
@@ -38,7 +33,6 @@ function getꓽauthor__contact(thing: Immutable<Thing>): string | undefined {
 /////////////////////////////////////////////////
 
 export {
-	getꓽlang,
 	getꓽdescription,
 	getꓽauthor__name,
 	getꓽauthor__intro,

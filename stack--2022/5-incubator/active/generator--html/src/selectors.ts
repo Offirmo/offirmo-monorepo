@@ -5,7 +5,6 @@ import { hasꓽcontent } from '@offirmo-private/ts-utils'
 import { Css‿str, Html‿str, JS‿str } from '@offirmo-private/ts-types-web'
 import * as Selectors from '@offirmo-private/ts-types-web'
 import {
-	normalizeꓽIETFLanguageType,
 	normalize_unicode,
 } from '@offirmo-private/normalize-string'
 
@@ -27,17 +26,17 @@ import snippetꓽjsⳇnormalizeᝍtrailingᝍslash from './snippets/js/snippet--
 // Contentⳇweb
 
 function getꓽlang(spec: Immutable<HtmlDocumentSpec>): IETFLanguageType {
-	return normalizeꓽIETFLanguageType(spec.lang ?? '')
+	return Selectors.getꓽlang(spec.content)
 }
 function getꓽcharset(spec: Immutable<HtmlDocumentSpec>): Charset {
-	return 'utf-8'
+	return Selectors.getꓽcharset(spec.content)
 }
 
 function getꓽcontent_blocksⵧhtml(spec: Immutable<HtmlDocumentSpec>): Immutable<Html‿str[]> {
 	return Selectors.getꓽhtml(spec.content)
 }
 function getꓽcontent_blocksⵧcssⵧcritical(spec: Immutable<HtmlDocumentSpec>): Immutable<Css‿str[]> {
-	return Selectors.getꓽcssⵧcritical(spec.content)
+	return Selectors.getꓽcssⵧcritical(spec.content, { includesꓽtop: true })
 }
 function getꓽcontent_blocksⵧcss(spec: Immutable<HtmlDocumentSpec>): Immutable<Css‿str[]> {
 	return Selectors.getꓽcss(spec.content)

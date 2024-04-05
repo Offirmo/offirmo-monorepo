@@ -1,9 +1,8 @@
 /* A data structure specifying a webpage.
  * Given such a structure, we should be able to generate a corresponding html file.
  */
-
-import { IETFLanguageType } from '@offirmo-private/ts-types'
-
+import { WithCharset, WithLang, WithTitle } from '../00-base/index.js'
+import { Url‿str } from '../01-links/index.js'
 import { Html‿str } from '../10-html/index.js'
 import { Css‿str } from '../20-css/index.js'
 import { JS‿str } from '../30-js/index.js'
@@ -11,27 +10,39 @@ import { JS‿str } from '../30-js/index.js'
 /////////////////////////////////////////////////
 
 // See also HtmlDocumentSpec
-// this version can be seen as "simplified", focusing purely on content
-// TODO clarify
-export interface Contentⳇweb {
+// this version can be seen as "simplified", focusing purely on content?
+// TODO clarify cf. other type HtmlDocumentSpec
+export interface Contentⳇweb extends WithCharset, WithLang, WithTitle {
 	// flat to make it easier to extend
 	// semantic as much as we can
 
 	// content (structure)
+	// inherited: lang
+	// inherited: charset
+	// inherited: title // technically redundant, could be inferred from the html
 	html?: Html‿str[]
-	title?: string // technically redundant, could be inferred from the html
 
 	// presentation (formatting, layout)
 	// ideally optional if html is semantic
 	css?: Css‿str[]
+	// technicalities. Ideally we'd be semantic and not want this
+	// or could this be aggregated from the plain css through a more advanced type?
+	// TOREVIEW later
+	cssⵧtop__layers?: string[] // should be declared once and first, hence special treatment
+	cssⵧtop__namespaces?: { // should be declared first, hence special treatment
+		[name: string]: Url‿str
+	}
 	cssⵧcritical?: Css‿str[]
 
 	// dynamic behavior or progressive enhancements
 	// ideally, for augmentation only
 	js?: JS‿str[]
+	// technicalities. Ideally we'd be semantic and not want this
+	// or could this be aggregated from the plain css through a more advanced type?
 	jsⵧcritical?: JS‿str[]
 
 	/////////////////////
-	// TODO meta or not considered content??
+	// TODO meta
+	// or not considered content??
 	// TODO social?
 }

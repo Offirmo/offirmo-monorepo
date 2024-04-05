@@ -140,7 +140,6 @@ function _getꓽtitle(spec: Immutable<WebPropertyEntryPointSpec>): string {
 
 	throw new Error(`Sorry, we need a title, I can't infer one!`)
 }
-
 function getꓽtitleⵧpage(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	return _getꓽtitle(spec)
 }

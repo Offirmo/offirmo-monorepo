@@ -116,11 +116,8 @@
 				}
 				// ✖ we are located by a folder without a trailing slash.
 				// Redirect to the version with slash
-				const locationᐧpathnameⵧfixed = location.pathname + '/';
-				location.replace(location.origin
-					+ locationᐧpathnameⵧfixed
-					+ location.search
-					+ location.hash);
+				const locationᐧpathnameⵧfixed = location.pathname + '/'
+				location.replace(location.origin + locationᐧpathnameⵧfixed + location.search + location.hash)
 			})()
 		</script>
 	</head>

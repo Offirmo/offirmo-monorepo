@@ -5,7 +5,15 @@
 
 export type Css‿str = string
 export type CssColor‿str = string
-
+/* TODO more complicated CSS type? Let's see if needed
+export interface Css {
+	isꓽcritical?: true
+	layer(s)
+	namespace(s)
+	license(s)
+	content: Css‿str || Css ??? (tree?)
+}
+*/
 
 // https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
 export type FontFamilyGenericName =

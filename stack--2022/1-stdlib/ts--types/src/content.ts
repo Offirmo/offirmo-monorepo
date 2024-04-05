@@ -3,8 +3,8 @@ import { IETFLanguageType } from './international.js'
 
 /////////////////////////////////////////////////
 // building blocks
+// REFINED in @offirmo-private/ts-types-web
 
-// TODO refine
 export type Emoji = string
 export type Url‿str = string
 export type Email‿str = string
@@ -32,24 +32,32 @@ export interface Author extends WithOnlinePresence {
 
 export interface Thing {
 	lang?: IETFLanguageType
+	title?: string
 	description: string // must be simple, a paragraph at most
 	author: Author | undefined // undef = unknown :-(
 	since‿y?: number // for copyright notice
 }
 
 export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
-
 	contact?: Url‿str // if not provided, default to author's Ideally should be a "contact center" https://docs.aws.amazon.com/connect/latest/adminguide/connect-concepts.html
 	contactⵧsecurity?: Url‿str // if not provided, default to contact
 	contactⵧsupport?: Url‿str // if not provided, default to contact
-
 }
 
 /////////////////////////////////////////////////
 // generic content
 
-// TODO text with lang
+// TODO text with lang?
 
+/*
+Say the ONE thing you want people to know.
+Put the most important info first.
+Shrink paragraphs.
+Always use action verbs.
+Use more emojis. They capture attention. 🛎️
+Tell your story to a friend . Then write what you said.
+No unnecessary words or context. “Just say it. Then stop.”
+*/
 // TODO review
 // see also
 // https://en.wikipedia.org/wiki/Elevator_pitch
