@@ -26,17 +26,17 @@ interface CraftTree<Payload = Rsrc> extends Graph<Payload, undefined, Options> {
 	// there are plenty of ways to store a graph
 	// we decide to recursively link the nodes,
 	// to make debugging easier
-	root: Node<Payload> | undefined
+	root: CraftNode | undefined
 
 	// also store nodes by uid for convenience
 	// (ex. checking uid uniqueness)
 	nodesⵧby_uid: {
-		[uid: NodeUId]: Node<Payload>
+		[uid: NodeUId]: CraftNode
 	}
 }
 
 interface CraftNode<Payload = Rsrc> extends Node<Payload> {
-
+	children: CraftNode[]
 }
 
 function createꓽnode(rsrcⵧraw: Immutable<Partial<Rsrc>>): CraftNode {
@@ -44,6 +44,7 @@ function createꓽnode(rsrcⵧraw: Immutable<Partial<Rsrc>>): CraftNode {
 	return {
 		uid: payload.descr,
 		payload,
+		children: []
 	}
 }
 
@@ -58,27 +59,89 @@ function create(options: Options = {}): CraftTree {
 
 function insertꓽnode(tree: CraftTree, rsrc: Partial<Rsrc>): CraftNode {
 	const node = createꓽnode(rsrc)
-	const { uid } = node
-	assert(!tree.nodesⵧby_uid[uid])
-	return {
-		...tree,
-
-
+	let { uid } = node
+	if (node.payload.type === 'material') {
+		uid = `material#${tree.generator_ofꓽUId}`
+		tree.generator_ofꓽUId++
 	}
+	assert(!tree.nodesⵧby_uid[uid], `non-unique uid "${uid}"!`)
+
+	// in-place mod, never mind...
+	tree.root = tree.root ?? node
+	tree.nodesⵧby_uid = {
+		...tree.nodesⵧby_uid,
+		[uid]: node,
+	}
+
+	return node
 }
 
 function insertꓽlink(tree: CraftTree, node_to: CraftNode, node_from: CraftNode): CraftTree {
+	node_from.children.push(node_to)
+
+	if (tree.root === node_to) {
+		tree.root = node_from
+	}
+
 	return tree
 }
 
-function getꓽroot(tree: Immutable<CraftTree>): CraftNode | undefined {
+function getꓽroot(tree: Immutable<CraftTree>): Immutable<CraftNode> | undefined {
 	return tree.root
 }
 
 /////////////////////////////////////////////////
 
-function getꓽrepresentationⵧlines(g: Immutable<CraftTree>): string[] {
-	return []
+type StringTree = Array<string | StringTree>
+
+function getꓽrepresentationⵧlinesⵧpayload(rsrc: Rsrc, depth = 0): string[] {
+	const result = []
+
+	const { type, descr, quantity } = rsrc
+	result.push(`${type}: ${descr}`)
+
+	return result
+}
+
+function _getꓽrepresentationⵧlines(node: Immutable<CraftNode>, prefix: string = '', depth = 0): string[] {
+	const result = getꓽrepresentationⵧlinesⵧpayload(node.payload).map(l => prefix + l)
+
+	const { children } = node
+	children.forEach((child, index) => {
+		const r = _getꓽrepresentationⵧlines(child, '', depth + 1)
+		const is_last_child = index === children.length - 1
+		result.push(...r.map((l, i) => {
+			const is_first_line = index === 0
+			if (is_first_line) {
+				if (is_last_child) {
+					return '└ ' + l
+				}
+				else {
+					return '├ ' + l
+				}
+			}
+
+			if (is_last_child) {
+				return '  ' + l
+			}
+			else {
+				return '│ ' + l
+			}
+		}))
+	})
+
+	return result
+}
+
+function getꓽrepresentationⵧlines(tree: Immutable<CraftTree>): string[] {
+	if (!tree.root) {
+		return [ '[empty tree' ]
+	}
+
+	// TODO check orphans?
+	// TODO check cycles?
+
+	return _getꓽrepresentationⵧlines(tree.root)
 }
 
 /////////////////////////////////////////////////
@@ -86,6 +149,11 @@ function getꓽrepresentationⵧlines(g: Immutable<CraftTree>): string[] {
 describe(`${LIB} -- example -- craft (mochi cake)`, function() {
 
 	it('should work', () => {
-		const { graph, nodes } = createꓽgraphⵧmochi_cake<CraftTree, CraftNode>(create, insertꓽnode, insertꓽlink)
+		const { graph, rsrc } = createꓽgraphⵧmochi_cake<CraftTree, CraftNode>(create, insertꓽnode, insertꓽlink)
+		console.log(graph)
+		//console.log(rsrc)
+		getꓽrepresentationⵧlines(graph).forEach(line => {
+			console.log(line)
+		})
 	})
 })

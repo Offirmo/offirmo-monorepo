@@ -23,9 +23,10 @@ interface Rsrc {
 	}
 }
 
+// todo validate and normalize?
 function getꓽfull_fledged(rsrcⵧraw: Immutable<Partial<Rsrc>>): Rsrc {
-	assert(rsrcⵧraw.type)
-	assert(rsrcⵧraw.descr)
+	assert(rsrcⵧraw.type, `missing type in ${JSON.stringify(rsrcⵧraw)}`)
+	assert(rsrcⵧraw.descr, `missing descr in ${JSON.stringify(rsrcⵧraw)}`)
 	const result: Rsrc = {
 		type: rsrcⵧraw.type,
 		descr: rsrcⵧraw.descr,
@@ -45,8 +46,14 @@ function createꓽgraphⵧmochi_cake<Graph = any, Node = any>(
 	create: () => Graph,
 	insertꓽnode: (graph: Graph, rsrc: Partial<Rsrc>) => Node,
 	insertꓽlink: (graph: Graph, node_to: Node, node_from: Node) => Graph,
-): { graph: Graph, nodes: Node[] } {
-	let nodes: any[] = []
+): { graph: Graph, rsrc: Rsrc[] } {
+	let rsrc: any[] = []
+	let _insertꓽnode = insertꓽnode
+	insertꓽnode = (graph, rsrcⵧraw) => {
+		const new_node = _insertꓽnode(graph, rsrcⵧraw)
+		rsrc.push(getꓽfull_fledged(rsrcⵧraw))
+		return new_node
+	}
 
 	const graph = (() => {
 		const graph = create()
@@ -230,7 +237,7 @@ function createꓽgraphⵧmochi_cake<Graph = any, Node = any>(
 
 		const cooked_batter = insertꓽnode(graph, {
 			type: 'intermediateᝍstep',
-			descr: 'cooled cake',
+			descr: 'just cooked cake',
 			process: 'Bake cake until a tester inserted into the center comes out clean and cake is risen and springy with a firm golden brown crust, 45–55 minutes (the smaller your pan, the longer it will take).',
 		})
 		insertꓽlink(graph, oven, cooked_batter)
@@ -239,7 +246,7 @@ function createꓽgraphⵧmochi_cake<Graph = any, Node = any>(
 
 		const cooled_cooked_batter = insertꓽnode(graph, {
 			type: 'intermediateᝍstep',
-			descr: 'cooled cake',
+			descr: 'cooled cooked cake',
 			process: 'Let cool in pan on a wire rack',
 		})
 		insertꓽlink(graph, cooked_batter, cooled_cooked_batter)
@@ -320,6 +327,7 @@ function createꓽgraphⵧmochi_cake<Graph = any, Node = any>(
 
 			const sauce = insertꓽnode(graph, {
 				type: 'intermediateᝍstep',
+				descr: 'sauce',
 				process: 'Immediately vigorously whisk the caramel in the cream mixture until combined',
 			})
 			insertꓽlink(graph, cream_mixture, sauce)
@@ -340,7 +348,7 @@ function createꓽgraphⵧmochi_cake<Graph = any, Node = any>(
 
 	return {
 		graph,
-		nodes,
+		rsrc,
 	}
 }
 
