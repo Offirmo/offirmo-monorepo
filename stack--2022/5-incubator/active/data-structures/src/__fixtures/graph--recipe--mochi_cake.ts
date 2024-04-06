@@ -1,26 +1,52 @@
-import { expect } from 'chai'
+/* Use case of graphs: a "craft"
+ * parameters
+ * - directed
+ * - acyclic
+ * use cases:
+ * - get aggregated list of ingredients
+ * - get aggregated list of tools
+ * - print recipe as a tree
+ */
 
-import { LIB } from '../consts.js'
-
-import {
-  ...
-} from './index.js'
+import assert from '../00vendor/tiny-invariant/index.js'
+import { Immutable } from '../00vendor/@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
-
 
 interface Rsrc {
 	type: 'material' | 'tool' | 'intermediateᝍstep'
 	descr: string
-	process?: string
-	quantity?: {
+	process?: string // annotation
+	quantity: {
 		value: number
-		unit: string
+		unit?: string // no unit = number of
 	}
 }
 
+function getꓽfull_fledged(rsrcⵧraw: Immutable<Partial<Rsrc>>): Rsrc {
+	assert(rsrcⵧraw.type)
+	assert(rsrcⵧraw.descr)
+	const result: Rsrc = {
+		type: rsrcⵧraw.type,
+		descr: rsrcⵧraw.descr,
+		...(rsrcⵧraw.process && { process: rsrcⵧraw.process }),
+		quantity: {
+			value: rsrcⵧraw.quantity?.value ?? 1,
+			...(rsrcⵧraw.quantity?.unit && { unit: rsrcⵧraw.quantity.unit }),
+		},
+	}
 
-function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
+	return result
+}
+
+/////////////////////////////////////////////////
+
+function createꓽgraphⵧmochi_cake<Graph = any, Node = any>(
+	create: () => Graph,
+	insertꓽnode: (graph: Graph, rsrc: Partial<Rsrc>) => Node,
+	insertꓽlink: (graph: Graph, node_to: Node, node_from: Node) => Graph,
+): { graph: Graph, nodes: Node[] } {
+	let nodes: any[] = []
 
 	const graph = (() => {
 		const graph = create()
@@ -94,7 +120,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 			const dry_batter = (() => {
 				const glutinous_rice_flour = insertꓽnode(graph, {
 					type: 'material',
-					name: 'glutinous rice flour',
+					descr: 'glutinous rice flour',
 					quantity: {
 						value: 250,
 						unit: 'g'
@@ -102,7 +128,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 				})
 				const baking_powder = insertꓽnode(graph, {
 					type: 'material',
-					name: 'baking powder',
+					descr: 'baking powder',
 					quantity: {
 						value: 1,
 						unit: 'tsp'
@@ -110,7 +136,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 				})
 				const salt = insertꓽnode(graph, {
 					type: 'material',
-					name: 'salt',
+					descr: 'salt',
 					quantity: {
 						value: 0.5,
 						unit: 'tsp'
@@ -132,7 +158,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 				const emulsion = (() => {
 					const butter = insertꓽnode(graph, {
 						type: 'material',
-						name: 'butter',
+						descr: 'butter',
 						quantity: {
 							value: 115,
 							unit: 'g'
@@ -141,7 +167,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 					// TODO melted butter
 					const eggs = insertꓽnode(graph, {
 						type: 'material',
-						name: 'large egg',
+						descr: 'large egg',
 						quantity: {
 							value: 2,
 						}
@@ -158,7 +184,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 
 				const milk = insertꓽnode(graph, {
 					type: 'material',
-					name: 'whole milk',
+					descr: 'whole milk',
 					quantity: {
 						value: 1,
 						unit: 'cup' // ~245g
@@ -166,7 +192,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 				})
 				const vanilla = insertꓽnode(graph, {
 					type: 'material',
-					name: 'concentrated vanilla extract',
+					descr: 'concentrated vanilla extract',
 					quantity: {
 						value: 0.5,
 						unit: 'tsp'
@@ -174,7 +200,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 				})
 				const cream = insertꓽnode(graph, {
 					type: 'material',
-					name: 'heavy cream',
+					descr: 'heavy cream',
 					quantity: {
 						value: 130,
 						unit: 'g'
@@ -219,11 +245,10 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 		insertꓽlink(graph, cooked_batter, cooled_cooked_batter)
 
 		const sauce = (() => {
-
 			const cream_mixture = (() => {
 				const black_sesame_powder_40g = insertꓽnode(graph, {
 					type: 'material',
-					name: 'black sesame powder',
+					descr: 'black sesame powder',
 					quantity: {
 						value: 40,
 						unit: 'g'
@@ -231,7 +256,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 				})
 				const heavy_cream_5tbsp = insertꓽnode(graph, {
 					type: 'material',
-					name: 'heavy cream',
+					descr: 'heavy cream',
 					quantity: {
 						value: 5,
 						unit: 'tbsp'
@@ -239,7 +264,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 				})
 				const salt = insertꓽnode(graph, {
 					type: 'material',
-					name: 'salt',
+					descr: 'salt',
 					quantity: {
 						value: 0.5,
 						unit: 'tsp'
@@ -260,7 +285,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 			const caramel = (() => {
 				const cream_of_tartar = insertꓽnode(graph, {
 					type: 'material',
-					name: 'cream of tartar',
+					descr: 'cream of tartar',
 					quantity: {
 						value: 1,
 						unit: 'pinch' // 1/8tsp
@@ -268,7 +293,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 				})
 				const sugar_115g = insertꓽnode(graph, {
 					type: 'material',
-					name: 'sugar',
+					descr: 'sugar',
 					quantity: {
 						value: 115,
 						unit: 'g'
@@ -276,7 +301,7 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 				})
 				const water = insertꓽnode(graph, {
 					type: 'material',
-					name: 'water',
+					descr: 'water',
 					quantity: {
 						value: 3,
 						unit: 'tbsp'
@@ -310,24 +335,32 @@ function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
 		insertꓽlink(graph, cooled_cooked_batter, cake)
 		insertꓽlink(graph, sauce, cake)
 
+		return graph
+	})()
 
-
-
-
-
-
-
-
-
-
-
-	// get list of ingredients
-	// get list of tools
+	return {
+		graph,
+		nodes,
+	}
 }
 
+/////////////////////////////////////////////////
+
+
+
+//function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
+
+/////////////////////////////////////////////////
+/*
 describe(`${LIB} -- example: recipe`, function() {
 
 	it('should work', () => {
 
 	})
-})
+})*/
+
+export {
+	type Rsrc,
+	getꓽfull_fledged,
+	createꓽgraphⵧmochi_cake,
+}

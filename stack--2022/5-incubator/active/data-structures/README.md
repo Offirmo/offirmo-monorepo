@@ -1,12 +1,17 @@
 
 For personal usage but also for learning/practice purpose
 
+THERE ARE TONS OF POSSIBLE APIs FOR GRAPHS
+
+HENCE THIS LIB STARTS WITH ACTUAL USE CASES:
+- file tree
+- craft recipe
+- todo list with dependencies
+
 
 ## Concepts
 
 * Abstract Data Types https://en.wikipedia.org/wiki/Abstract_data_type
-
-
 
 * https://en.wikipedia.org/wiki/Data_structure
 

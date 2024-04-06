@@ -1,3 +1,3 @@
 import { LIB as _LIB } from '../../consts.js'
 
-export const LIB = `${_LIB}/graph`
+export const LIB = `${_LIB}/tree`

@@ -1,4 +1,4 @@
-import { Immutable } from '../../../_vendor/@offirmo-private/ts-types/index.js'
+import { Immutable } from '../_vendor/@offirmo-private/ts-types/index.js'
 
 /////////////////////////////////////////////////
 
