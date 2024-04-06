@@ -7,6 +7,12 @@ Because I desperately need that for personal projects.
 
 WORK IN PROGRESS, COMPLETELY EXPERIMENTAL FOR NOW
 
+2024/04 Turns out it's already a thing in telemetry:
+- "A Context is an object that contains the information for the sending and receiving service (or execution unit) to correlate one signal with another." https://opentelemetry.io/docs/concepts/context-propagation/
+- Propagation is the mechanism that moves context between services and processes.
+
+Also "WorkContext" store data that is needed for the lifetime of a request, but should be discarded when the request exits. The usage of the data can span thread boundaries, for example, by using a Future or parallel streams.
+
 MVP v2 - 2018/05
 
 TODO remove full logger

@@ -1,3 +1,10 @@
++++ https://github.com/donnemartin/system-design-primer
++++ https://lethain.com/distributed-systems-vocabulary/
+1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
+1% rule -- lurk, lurker
+1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
+12 factors https://12factor.net/
+3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 [ ] kubernetes
 [ ] paper "Adding new protocols to the cloud native ecosystem" https://docs.google.com/document/d/13wFFC7vIdB2hkxdyT0dSiGgkZTXCDDBeW_GBPqy9Jy0/edit
 [ ] paper https://research.google/pubs/large-scale-cluster-management-at-google-with-borg/
@@ -8,13 +15,6 @@
 [ ] paper https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf
 [ ] paper https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf
 [ ] research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
-+++ https://github.com/donnemartin/system-design-primer
-+++ https://lethain.com/distributed-systems-vocabulary/
-1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
-1% rule -- lurk, lurker
-1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
-12 factors https://12factor.net/
-3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 access control
 ACID -- 1 Atomicity "all or nothing"
 ACID -- 2 Consistency "valid state"
@@ -33,8 +33,8 @@ availability
 availability zone
 AWS Shield
 AWS WAF
-Backends For Frontends -- composable https://bff-patterns.com/
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
+Backends For Frontends -- composable https://bff-patterns.com/
 bloom Filters
 blue/green deployment
 caching
@@ -111,6 +111,11 @@ nicro-frontend https://micro-frontends.org/ https://the-tractor.store/
 non-abstract large system design (NALSD) = iterative process for designing, assessing, and evaluating distributed systems
 numbers everyone should know https://static.googleusercontent.com/media/sre.google/en//static/pdf/rule-of-thumb-latency-numbers-letter.pdf
 observability
+observability -- logs -- data model https://opentelemetry.io/docs/specs/otel/logs/data-model/
+observability -- logs = logs. Unfortunately, logs aren’t extremely useful for tracking code execution, as they typically lack contextual information, such as where they were called from. They become far more useful when they are included as part of a span, or when they are correlated with a trace and a span. Need to be stored and searchable. beware of costs!
+observability -- telemetry
+observability = a measure of how well internal states of a system can be inferred from knowledge of its external outputs https://andydote.co.uk/presentations/index.html
+observability https://opentelemetry.io/docs/concepts/observability-primer/
 ops -- toil
 orchestrator -- kubernetes
 organizational reliability continuum = absent -> reactive -> proactive -> strategic -> visionary / there is a significant cost associated with moving from one phase to another and a cost to remain very high on this curve. In our experience, being proactive is a healthy level to target and is ideal for most products https://cloud.google.com/blog/products/devops-sre/the-five-phases-of-organizational-reliability
@@ -163,8 +168,27 @@ SRE -- The Four Golden Signals -- Latency, Traffic, Errors, Saturation(utilisati
 state
 stateless -- Prefer simple, stateless services where possible
 Sustainable Architectural Decisions https://adr.github.io/
+telemetry -- logs https://opentelemetry.io/docs/concepts/observability-primer/#logs
+telemetry -- maps = Relationship information between time spans can be used to produce maps for services
+telemetry -- metrics -- application-based vs time-based
+telemetry -- metrics -- Metrics Semantic Conventions https://opentelemetry.io/docs/specs/semconv/general/metrics/
+telemetry -- metrics = Time spans can be aggregated by their attributes to produce metrics.
+telemetry -- openTelemetry https://opentelemetry.io/docs/concepts/observability-primer/
+telemetry -- signals = system outputs that describe the underlying activity of the operating system and applications running on a platform. A signal can be something you want to measure at a specific point in time, like temperature or memory usage, or an event that goes through the components of your distributed system that you’d like to trace. You can group different signals together to observe the inner workings of the same piece of technology under different angles. https://opentelemetry.io/docs/concepts/signals/
+telemetry -- span -- events = events can happen during a time span
+telemetry -- span -- hierarchy = root span (ex. edge) > local root span (ex. service) > span
+telemetry -- span -- time span = a measure of how long an operation took in a service. Time spans contain information about the operations they represent. 
+telemetry -- span = a unit of work or operation. tracks specific operations that a request makes, painting a picture of what happened during the time in which that operation was executed  https://opentelemetry.io/docs/concepts/observability-primer/#spans
+telemetry -- trace -- context = need to be passed around (traceId, spanId, traceFlags) trace id = non-zero 128-bit, span id = 64 bits, traceFlags = 8bits
+telemetry -- trace -- disconnected = Failure to pass the current context to child threads/operations/services can lead to disconnected traces
+telemetry -- trace -- distributed = records the paths taken by requests (made by an application or end-user) as they propagate through multi-service architectures, like microservice and serverless applications.
+telemetry -- trace -- id -- zipkin https://github.com/openzipkin/b3-propagation
+telemetry -- trace -- id = very important to be consistent and could be aggregated!
+telemetry -- trace -- Trace Semantic Conventions https://opentelemetry.io/docs/specs/semconv/general/trace/
+telemetry -- trace = collection of time spans and their relationships to each other. A trace represents a transaction within a service or across services
+telemetry -- tracing = the practice of capturing traces
+telemetry -- very important for distributed perf problems! (on big customers, what takes time?)
 Time to Detection (TTD)
-tracing
 utilisation = How “full” or “busy” is the service?
 VPN
 well architected -- pillar -- cost optimization = avoiding unnecessary costs -- consumption model, analyzing and attributing expenditure, and using managed services to reduce the cost of ownership.

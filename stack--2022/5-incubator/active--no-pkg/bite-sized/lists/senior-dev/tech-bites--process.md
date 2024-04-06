@@ -13,6 +13,11 @@ decision making -- 01 LDR “lightweight decision record” = for 2 way doors, l
 decision making -- 02 RFC “request for comments” = the first - in some cases the only - formal step in agreeing on a proposal. should only ever contain a single option with the intention to receive comments and additional insights. Does not require an explicit approver, although it does require a general consensus. It is expected that the correct stakeholders are included on the page with a reasonable timeframe to provide their inputs.
 decision making -- 03 DACI “driver, approver, contributor, informed" = will contain multiple solutions to be discussed and one chosen. expensive process both as it requires significant time and mental investment. required for higher impact decisions or when a consensus cannot be found from an RFC document https://www.atlassian.com/team-playbook/plays/daci
 Directly Responsible Individual (DRI) individuals who own and drive outcomes for specific parts of the business funnel, making decisions, collaborating across functions, and escalating when necessary. They are accountable for developing and evolving the thesis on how to drive their assigned metrics, and represent the funnel in business rhythms like OKRs and WBRs
+documentation -- CEDAR -- 01 Clear = How easy was it to read? Does the document contain ambiguity?
+documentation -- CEDAR -- 02 Effective = How useful is it? Does the document help readers achieve objectives?
+documentation -- CEDAR -- 03 Discoverable = How can someone find it? Is the document findable when needed?
+documentation -- CEDAR -- 04 Appealing = How interesting is it? Does the document use visual aids?
+documentation -- CEDAR -- 05 Relevant = How applicable is it? Is the document trustworthy (maintained and up-to-date)?
 documentation -- divio system -- 01 Tutorials = learning-oriented, practical steps
 documentation -- divio system -- 02 How-to guides = task-oriented, practical steps
 documentation -- divio system -- 03 Technical references = information-oriented, theoretical knowledge

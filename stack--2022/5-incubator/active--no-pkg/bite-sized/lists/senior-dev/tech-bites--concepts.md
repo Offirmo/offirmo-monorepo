@@ -43,6 +43,7 @@ compiler
 connascence https://en.wikipedia.org/wiki/Connascence
 constructor
 context switch
+context switching
 Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
 core web vital -- First Input Delay (FID) DEPRECATED https://web.dev/articles/fid
 core web vital -- Interaction to Next Paint (INP) https://web.dev/articles/inp
@@ -110,6 +111,7 @@ global variable
 go
 Google, Amazon, Facebook, Apple, Microsoft (GAFAM)
 graph
+GRASP (object-oriented design) = General Responsibility Assignment Software Patterns = nine fundamental principles in object design and responsibility assignment https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)
 GRASP -- 1 Information expert = Assign responsibility to the class that has the information needed to fulfill it
 GRASP -- 2 Creator = Who creates object A? In general, Assign class B the responsibility to create object A if one, or preferably more, of the following apply...
 GRASP -- 3 Controller = A controller object is a non-user interface object responsible for receiving or handling a system event
@@ -120,9 +122,7 @@ GRASP -- 7 Polymorphism = responsibility for defining the variation of behaviors
 GRASP -- 8 Protected variations = Identify points of predicted variation or instability; assign responsibilities to create a stable interface around them
 GRASP -- 9 Pure fabrication =
 GRASP -- see also: SOLID
-GRASP (object-oriented design) = General Responsibility Assignment Software Patterns = nine fundamental principles in object design and responsibility assignment https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)
 handle
-héritage prototypal, héritage en diamant
 hoisting des vars de boucle for et switch
 hooks
 hotfix
@@ -145,6 +145,7 @@ https://itnext.io/deployment-maturity-levels-feab55c20d04
 https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
 https://www.atlassian.com/team-playbook/plays/elevator-pitch
 https://xyproblem.info/
+héritage prototypal, héritage en diamant
 IDEALS -- 1 Interface segregation
 IDEALS -- 2 Deployability (is on you)
 IDEALS -- 3 Event-driven
@@ -199,9 +200,6 @@ nommage des fonctions
 npm
 nyan cat
 object
-observability -- openTelemetry https://opentelemetry.io/docs/concepts/observability-primer/
-observability "is a measure of how well internal states of a system can be inferred from knowledge of its external outputs" https://andydote.co.uk/presentations/index.html
-OKR
 OOP
 optim des || et && effet de bord
 ownership
@@ -276,6 +274,7 @@ standard deviation
 state
 state management
 stats https://www.youtube.com/playlist?list=PLltdM60MtzxNwhL4sg7swFFlUlH7EEy7H []
+Stick to boring architecture for as long as possible https://addyosmani.com/blog/boring-architecture/
 streams
 superapp
 Sustainable Architectural Decisions https://adr.github.io/
@@ -288,6 +287,7 @@ tech debt -- Incidental - e.g. organic changes in complexity over time that incr
 the room https://lethain.com/getting-in-the-room/
 this
 thread
+tool sprawl
 tracing -- distributed https://zipkin.io/
 tracing https://andydote.co.uk/2023/09/19/tracing-is-better/
 transpilation / transpiler / transpiling
@@ -295,11 +295,11 @@ tree
 tree walk
 typecast
 types
+Unix philosophy (OUTDATED -> use JSON ;)) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- 01 Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features"
 Unix philosophy -- 02 Expect the output of every program to become the input to another, as yet unknown, program. Don't clutter output with extraneous information. Avoid stringently columnar or binary input formats; Don't insist on interactive input
 Unix philosophy -- 03 Design and build software, even operating systems, to be tried early, ideally within weeks. Don't hesitate to throw away the clumsy parts and rebuild them
 Unix philosophy -- 04 Use tools in preference to unskilled help to lighten a programming task, even if you have to detour to build the tools and expect to throw some of them out after you've finished using them
-Unix philosophy (OUTDATED -> use JSON ;)) https://en.wikipedia.org/wiki/Unix_philosophy
 uptime
 use boring technology
 use strict
