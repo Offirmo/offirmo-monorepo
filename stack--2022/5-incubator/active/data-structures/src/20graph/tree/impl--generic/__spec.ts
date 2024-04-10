@@ -97,21 +97,47 @@ type StringTree = Array<string | StringTree>
 function getꓽrepresentationⵧlinesⵧpayload(rsrc: Rsrc, depth = 0): string[] {
 	const result = []
 
-	const { type, descr, quantity } = rsrc
-	result.push(`${type}: ${descr}`)
+	const { type, descr,  quantity } = rsrc
+
+	if (depth === 0) {
+		result.push(`〖${descr}〗`)
+	}
+
+	switch (type) {
+		case 'material':
+			result.push(`⊙ ${type}: ${descr} (${quantity.value}${quantity.unit ?? 'x'})`)
+			break
+
+		case 'tool':
+			result.push(`⚒ ${descr}`)
+			break
+
+		case 'intermediateᝍstep': {
+			if (rsrc.process) {
+				result.push(`⊕ ${rsrc.process} => ⟢${descr}⟣`)
+			}
+			else {
+				result.push(`⊕ ${descr}`)
+			}
+			break
+		}
+
+		default:
+			throw new Error(`unknown type "${type}"!`)
+	}
 
 	return result
 }
 
 function _getꓽrepresentationⵧlines(node: Immutable<CraftNode>, prefix: string = '', depth = 0): string[] {
-	const result = getꓽrepresentationⵧlinesⵧpayload(node.payload).map(l => prefix + l)
+	const result = getꓽrepresentationⵧlinesⵧpayload(node.payload, depth).map(l => prefix + l)
 
 	const { children } = node
 	children.forEach((child, index) => {
 		const r = _getꓽrepresentationⵧlines(child, '', depth + 1)
 		const is_last_child = index === children.length - 1
 		result.push(...r.map((l, i) => {
-			const is_first_line = index === 0
+			const is_first_line = i === 0
 			if (is_first_line) {
 				if (is_last_child) {
 					return '└ ' + l
@@ -146,6 +172,26 @@ function getꓽrepresentationⵧlines(tree: Immutable<CraftTree>): string[] {
 
 /////////////////////////////////////////////////
 
+function aggregate_materials(tree: Immutable<CraftTree>): Rsrc[] {
+	const materials = Object.values(tree.nodesⵧby_uid).map(node -> node.payload).reduce((acc, rsrc) => {
+		if (rsrc.type === 'material') {
+			if (!acc[rsrc.descr]) {
+				acc[rsrc.descr] = node.payload
+			}
+			else {
+				// add up
+			}
+		}
+
+		return acc
+	}, {})
+
+	return materials
+}
+
+
+/////////////////////////////////////////////////
+
 describe(`${LIB} -- example -- craft (mochi cake)`, function() {
 
 	it('should work', () => {
@@ -155,5 +201,7 @@ describe(`${LIB} -- example -- craft (mochi cake)`, function() {
 		getꓽrepresentationⵧlines(graph).forEach(line => {
 			console.log(line)
 		})
+
+		console.log(aggregate_materials(graph))
 	})
 })

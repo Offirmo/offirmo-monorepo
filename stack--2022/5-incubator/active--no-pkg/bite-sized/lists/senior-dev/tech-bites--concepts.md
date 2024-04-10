@@ -10,8 +10,7 @@ allocation
 annotation
 anomaly detection
 API Economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
-APIs web
-appli web
+
 Application Programming Interface (API) = defines interactions that allows two applications to talk to each other
 apply / call / bind
 arguments
@@ -45,8 +44,6 @@ constructor
 context switch
 context switching
 Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
-core web vital -- First Input Delay (FID) DEPRECATED https://web.dev/articles/fid
-core web vital -- Interaction to Next Paint (INP) https://web.dev/articles/inp
 corporate politic https://www.breakingpoint.tech/p/where-do-corporate-politics-come
 correlation
 cost based rate limiting
@@ -68,12 +65,11 @@ dependencies
 dependency hell https://en.wikipedia.org/wiki/Dependency_hell
 devex
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
-do what I mean (DWIM) computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
+do what I mean (DWIM) = computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
 double authent
 DRY don't repeat yourself
 dry run
-DSL Domain Specific Language
-effacement d'une liste pendant qu'on la parcourt
+Domain Specific Language (DSL)
 Effect<Success, Error, Requirements> https://effect.website/docs/guides/essentials/the-effect-type
 egress
 emscripten
@@ -84,7 +80,6 @@ error -- logic error = errors in the internal logical of the program, such as vi
 error -- runtime error = errors that can only be detected during runtime https://cplusplus.com/reference/stdexcept/runtime_error/
 error = failure = inability of a function to return a valid result, instead producing an error object describing the reason for the failure https://boostorg.github.io/leaf/#tutorial
 event loop
-exec summary https://lethain.com/present-to-executives/
 execution model https://en.wikipedia.org/wiki/Execution_model
 executive
 exposer des variables

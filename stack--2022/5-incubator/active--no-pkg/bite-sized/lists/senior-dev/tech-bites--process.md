@@ -8,6 +8,7 @@ comms "the loop" 03 -- Common vocabulary over common tooling = Whether we know i
 comms "the loop" 04 -- Show that you’re paying attention = We spend too much time on status reports for them not to be read
 comms -- project -- "the loop" https://www.atlassian.com/loop/
 Conway's law
+exec summary https://lethain.com/present-to-executives/
 Critical User Journeys (CUJ)
 decision making -- 01 LDR “lightweight decision record” = for 2 way doors, lightweight decisions that have already been made and should be recorded. Should reference the slack threads, pages, comments, and tasks where the decision was made.
 decision making -- 02 RFC “request for comments” = the first - in some cases the only - formal step in agreeing on a proposal. should only ever contain a single option with the intention to receive comments and additional insights. Does not require an explicit approver, although it does require a general consensus. It is expected that the correct stakeholders are included on the page with a reasonable timeframe to provide their inputs.

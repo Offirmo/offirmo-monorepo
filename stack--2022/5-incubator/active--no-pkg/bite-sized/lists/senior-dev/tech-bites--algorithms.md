@@ -119,3 +119,4 @@ tree -- rotation https://en.wikipedia.org/wiki/Tree_rotation
 tree -- search
 tree -- trie -- prefix search
 tree -- trie -- word search with counts
+effacement d'une liste pendant qu'on la parcourt
