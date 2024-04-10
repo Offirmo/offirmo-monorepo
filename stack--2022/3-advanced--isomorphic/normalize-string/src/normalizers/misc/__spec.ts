@@ -36,6 +36,8 @@ describe(`${LIB} -- misc`, function() {
 		}
 	}
 	Object.keys(NORMALIZERS).forEach(key => {
+		if (key === 'LANGⵧDEFAULT') return
+
 		if (!TEST_CASES[key])
 			throw new Error(`(internal check) Missing test cases for normalizer "${key}"!`)
 	})

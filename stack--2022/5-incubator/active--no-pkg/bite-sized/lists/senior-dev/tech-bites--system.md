@@ -100,9 +100,14 @@ load shedding
 Mean Time Between Failures (MTBF)
 mean time to resolution/repair (MTTR) https://www.dataset.com/blog/mean-time-to-repair/
 message queue ex. AWS SQS
+messaging -- queueing -- dead letter queue (DLQ) https://en.wikipedia.org/wiki/Dead_letter_queue
+messaging -- queueing -- RabbitMQ
+messaging -- queueing https://en.wikipedia.org/wiki/Message_queue
+messaging https://www.enterpriseintegrationpatterns.com/patterns/messaging/
 metrics layer -- 01 system = CPU, memory, disk...
 metrics layer -- 02 application = queues, timing (DB calls), flow, cache hit rate...
 metrics layer -- 03 business = usage and core actions
+middleware https://en.wikipedia.org/wiki/Middleware_(distributed_applications)
 mitigations: code rollback, data rollback, degrade, upsize, blocklist, drain, quarantine https://www.oreilly.com/content/generic-mitigations/
 monitoring
 monitoring "Understanding what is happening in your environment is key to maintaining efficient, secure, and compliant applications"
@@ -177,7 +182,7 @@ telemetry -- openTelemetry https://opentelemetry.io/docs/concepts/observability-
 telemetry -- signals = system outputs that describe the underlying activity of the operating system and applications running on a platform. A signal can be something you want to measure at a specific point in time, like temperature or memory usage, or an event that goes through the components of your distributed system that you’d like to trace. You can group different signals together to observe the inner workings of the same piece of technology under different angles. https://opentelemetry.io/docs/concepts/signals/
 telemetry -- span -- events = events can happen during a time span
 telemetry -- span -- hierarchy = root span (ex. edge) > local root span (ex. service) > span
-telemetry -- span -- time span = a measure of how long an operation took in a service. Time spans contain information about the operations they represent. 
+telemetry -- span -- time span = a measure of how long an operation took in a service. Time spans contain information about the operations they represent.
 telemetry -- span = a unit of work or operation. tracks specific operations that a request makes, painting a picture of what happened during the time in which that operation was executed  https://opentelemetry.io/docs/concepts/observability-primer/#spans
 telemetry -- trace -- context = need to be passed around (traceId, spanId, traceFlags) trace id = non-zero 128-bit, span id = 64 bits, traceFlags = 8bits
 telemetry -- trace -- disconnected = Failure to pass the current context to child threads/operations/services can lead to disconnected traces

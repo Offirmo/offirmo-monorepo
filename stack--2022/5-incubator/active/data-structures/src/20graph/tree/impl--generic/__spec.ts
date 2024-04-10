@@ -173,20 +173,21 @@ function getꓽrepresentationⵧlines(tree: Immutable<CraftTree>): string[] {
 /////////////////////////////////////////////////
 
 function aggregate_materials(tree: Immutable<CraftTree>): Rsrc[] {
-	const materials = Object.values(tree.nodesⵧby_uid).map(node -> node.payload).reduce((acc, rsrc) => {
+	const materials = Object.values(tree.nodesⵧby_uid).map(node => node.payload).reduce((acc, rsrc) => {
 		if (rsrc.type === 'material') {
 			if (!acc[rsrc.descr]) {
-				acc[rsrc.descr] = node.payload
+				acc[rsrc.descr] = rsrc
 			}
 			else {
 				// add up
+				throw new Error(`NIMP!`)
 			}
 		}
 
 		return acc
-	}, {})
+	}, {} as { [descr: string]: Immutable<Rsrc> })
 
-	return materials
+	return Object.values(materials)
 }
 
 
