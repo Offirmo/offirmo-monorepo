@@ -67,7 +67,7 @@
 		"serve": "^14",
 		"tiny-invariant": "^1",
 		"write-json-file": "^5",
-		"zx": "^7"
+		"zx": "^8"
 	},
 	"devDependencies": {
 		"@parcel/config-default": "^2",
