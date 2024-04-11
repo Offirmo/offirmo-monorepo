@@ -123,3 +123,12 @@ what projects you have worked on before and which was the most impressive one
 
 SkillsEdit(Skills)
 Agile Methodologies,  AngularJS,  async.js,  Bash,  C,  C++,  Coaching & Mentoring,  Continuous Integration,  Continuous Integration,  CSS,  Design Patterns,  DevOps,  Développement de logiciel,  Front-end Development,  Functional Programming,  Git,  GitHub,  High Availability,  High Performance Computing,  HTML 5,  JavaScript,  Jenkins,  Jira,  jQuery,  Linux,  Management,  Multithreading,  Node.js,  Object-oriented Design,  OOP,  PostgreSQL,  Puppet,  Python,  React.js,  Redis,  Redux,  Representational State Transfer (REST),  require.js,  REST APIs,  Ruby,  Selenium,  Shell Scripting,  Software Development,  Software Engineering,  Software Security,  Team Management,  TypeScript,  Unix,  Web Development,  WordPress
+
+
+
+Specialites
+- lent mais haute qualite
+- enfants et partenaire a soutenir
+- not English native
+- social skills moyens
+- un peu en retard

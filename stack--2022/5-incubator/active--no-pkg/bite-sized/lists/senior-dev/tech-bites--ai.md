@@ -2,6 +2,7 @@
 +++ https://platform.openai.com/docs/introduction/key-concepts
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
 ??? https://github.com/SkalskiP/courses crème de la crème of AI courses
+A::B Prompting Challenge: $10k to prove me wrong! https://twitter.com/VictorTaelin/status/1776677635491344744 https://twitter.com/headinthebox/status/1777016124141650254
 Agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
 agents -- principals
 agents = you provide a goal, They'll generate a task list and get to work https://zapier.com/blog/ai-agent/
@@ -108,6 +109,7 @@ pre-training
 processing -- GPU = Graphics Processing Units
 processing -- GPU vs TPU vs LPU https://medium.com/@harishramkumar/comparing-gpu-vs-tpu-vs-lpu-the-battle-of-ai-processors-2cf4548c4a62
 processing -- LPU = Language Processing Units
+processing -- Meta Training and Inference Accelerator (MTIA) https://ai.meta.com/blog/next-generation-meta-training-inference-accelerator-AI-MTIA/
 processing -- TPU = Tensor Processing Units
 prompting -- ROC = [Role] + [Output] + [Context], ex. You are an engineering manager, how many story points do you think this will be and why? [context] https://community.atlassian.com/t5/Jira-Software-articles/Be-an-AI-Rockstar-Prompts-in-Jira-Software/ba-p/2636811
 Pytorch

@@ -35,6 +35,13 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpe
 	}
 }
 
+// for unit testing
+function __getꓽwebsiteᝍentryᝍpoints__specs(spec: Immutable<WebPropertyEntryPointSpec>): {
+	[relpath: string]: any // TODO better type
+} {
+	throw new Error('NIMP!')
+}
+
 /////////////////////////////////////////////////
 // write to file
 
@@ -131,5 +138,9 @@ async function generateꓽwebsiteᝍentryᝍpoints(
 
 export default generateꓽwebsiteᝍentryᝍpoints
 
-export { getꓽwebsiteᝍentryᝍpoints, writeꓽwebsiteᝍentryᝍpoints, generateꓽwebsiteᝍentryᝍpoints }
+export {
+	getꓽwebsiteᝍentryᝍpoints,
+	writeꓽwebsiteᝍentryᝍpoints,
+	generateꓽwebsiteᝍentryᝍpoints,
+}
 export * from './types.js'

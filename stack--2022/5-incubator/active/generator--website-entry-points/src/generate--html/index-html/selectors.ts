@@ -1,6 +1,7 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 import { Contentⳇweb, Css‿str, Html‿str, JS‿str } from '@offirmo-private/ts-types-web';
+import * as ContentⳇwebᐧSelectors from '@offirmo-private/ts-types-web';
 import {
 	HtmlMetas,
 	HtmlMetaContentⳇViewport,
@@ -56,7 +57,7 @@ function _getꓽmetasⵧviewport(spec: Immutable<WebPropertyEntryPointSpec>): Ht
 function getꓽmetas(spec: Immutable<WebPropertyEntryPointSpec>): HtmlMetas {
 
 	const result: HtmlMetas = {
-		charset: getꓽcharset(spec),
+		charset: getꓽcharset(spec.content),
 
 		// document-level metadata
 		// <meta name="<KEY>" content="<VALUE>">
@@ -80,8 +81,8 @@ function getꓽmetas(spec: Immutable<WebPropertyEntryPointSpec>): HtmlMetas {
 			'content-security-policy': {
 				// TODO
 			},
-			'content-type': `text/html;charset=${getꓽcharset(spec)}`,
-			'content-language': getꓽlang(spec),
+			'content-type': `text/html;charset=${getꓽcharset(spec.content)}`,
+			'content-language': getꓽlang(spec.content),
 
 			//description: unknown
 			generator: LIB,
@@ -94,7 +95,6 @@ function getꓽmetas(spec: Immutable<WebPropertyEntryPointSpec>): HtmlMetas {
 		// <meta property="<KEY>" content="<VALUE>"/>
 		properties: {
 			//TODO Open Graph & co
-
 		},
 
 		itemprops: {},
@@ -131,20 +131,20 @@ const TOKEN__COLOR__BG = '--o⋄color⁚bg--main' //'color--bg'
 const TOKEN__COLOR__FG = '--o⋄color⁚fg--main' //color--fg'
 const TOKEN__FONT__SYSTEMⵧSANS = '--o⋄font-family--system--sans'
 
-function getꓽcssⵧcritical(spec: Immutable<WebPropertyEntryPointSpec>): Css‿str[] {
-	const result: Css‿str[] = []
+function getꓽcontentⵧinitial(spec: Immutable<WebPropertyEntryPointSpec>): Immutable<Contentⳇweb> {
+	return spec.content
+}
 
-	// TODO make that auto or configurable
-	result.push(`/* define layers order, needs to be 1st CSS */
-@layer reset, foundation, framework;
-`)
-
-	result.push(`/* Necessary to style SVG inner elements. Required to be defined at the very beginning of the CSS */
-@namespace svg url(http://www.w3.org/2000/svg);
-`)
+function getꓽcontentⵧweb__css(spec: Immutable<WebPropertyEntryPointSpec>): Pick<Contentⳇweb, 'css' | 'cssⵧtop__layers' | 'cssⵧtop__namespaces' | 'cssⵧcritical'> {
+	const result: ReturnType<typeof getꓽcontentⵧweb__css> = {
+		css: [ ...ContentⳇwebᐧSelectors.getꓽcss(spec) ],
+		cssⵧtop__layers: [ ...ContentⳇwebᐧSelectors.getꓽcssⵧtop__layers(spec) ],
+		cssⵧtop__namespaces: { ...ContentⳇwebᐧSelectors.getꓽcssⵧtop__namespaces(spec) },
+		cssⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽcssⵧcritical(spec) ],
+	}
 
 	// TODO check if the system font stack works on major OS/browser
-	result.push(`/* critical minimal design system */
+	result.cssⵧcritical!.unshift(`/* critical minimal design system */
 :root {
 	/* FG+BG colors are the basics of identity */
 	${TOKEN__COLOR__BG}: ${getꓽcolorⵧbackground(spec)};
@@ -169,38 +169,42 @@ function getꓽcssⵧcritical(spec: Immutable<WebPropertyEntryPointSpec>): Css�
 	return result
 }
 
-function getꓽcontentⵧweb__html(spec: Immutable<WebPropertyEntryPointSpec>): Html‿str[] {
-	return [
-		// TODO
-	]
+function getꓽcontentⵧweb__html(spec: Immutable<WebPropertyEntryPointSpec>): Pick<Contentⳇweb, 'html'> {
+	// TODO extract HTML from files? ./esm/parser-html.mjsxxx
+	return {
+		html: [ ...(getꓽcontentⵧinitial(spec).html ?? [])],
+	}
 }
 
-function getꓽcontentⵧweb__js(spec: Immutable<WebPropertyEntryPointSpec>): JS‿str[] {
-	const result: JS‿str[] = []
+function getꓽcontentⵧweb__js(spec: Immutable<WebPropertyEntryPointSpec>): Pick<Contentⳇweb, 'js' | 'jsⵧcritical'> {
+	const result = {
+		js: [ ...ContentⳇwebᐧSelectors.getꓽjs(spec) ],
+		jsⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽjsⵧcritical(spec) ],
+	}
 
 	if (shouldꓽgenerateꓽjscode(spec))
-		result.push(`import './app/index.js'`)
+		result.js.push(`import './app/index.js'`)
 
 	return result
 }
 
 function getꓽcontentⵧweb(spec: Immutable<WebPropertyEntryPointSpec>): Contentⳇweb {
-	// TODO extract HTML from files? ./esm/parser-html.mjsxxx
-	// TODO review import from js?
 
 	const result: Contentⳇweb = {
-		html: getꓽcontentⵧweb__html(spec),
-		title: getꓽtitleⵧpage(spec),
+		...(structuredClone(getꓽcontentⵧinitial(spec)) as Contentⳇweb), // remove immutability
+		title: ifꓽdebug(spec).prefixꓽwith('[title--page]', getꓽtitleⵧpage(spec)), // always override
 
-		js: getꓽcontentⵧweb__js(spec),
-		cssⵧcritical: getꓽcssⵧcritical(spec),
+		...getꓽcontentⵧweb__html(spec),
+		...getꓽcontentⵧweb__js(spec),
+		...getꓽcontentⵧweb__css(spec),
 	}
 	return result
 }
 
+/////////////////////////////////////////////////
+
 function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDocumentSpec {
 	const result: HtmlDocumentSpec = {
-		lang: getꓽlang(spec),
 		content: getꓽcontentⵧweb(spec),
 		links: getꓽlinks(spec),
 		metas: getꓽmetas(spec),

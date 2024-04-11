@@ -6,3 +6,5 @@ earliest -- 05 marketable product = packaged?
 earliest -- 06 "app store"able product
 earliest -- 07 "pro" product? scalable? (entitlements, billing, compliance...)
 earliest https://every.to/p/the-most-advanced-yet-acceptable-products-win
+try/test/graduate
+Most Advanced Yet Acceptable (MAYA) UX concept

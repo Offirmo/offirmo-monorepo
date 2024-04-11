@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 import { Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
 import { hasꓽcontent } from '@offirmo-private/ts-utils'
-import { Css‿str, Html‿str, JS‿str } from '@offirmo-private/ts-types-web'
+import { Css‿str, Html‿str, JS‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
 import * as Selectors from '@offirmo-private/ts-types-web'
 import {
 	normalize_unicode,
@@ -48,8 +48,8 @@ function getꓽcontent_blocksⵧjs(spec: Immutable<HtmlDocumentSpec>): Immutable
 	return Selectors.getꓽjs(spec.content)
 }
 
-function getꓽtitleⵧpage(spec: Immutable<HtmlDocumentSpec>): string | undefined {
-	return Selectors.getꓽtitle(spec.content)
+function getꓽtitleⵧpage(spec: Immutable<HtmlDocumentSpec>, fallback = 'Index'): string{
+	return Selectors.getꓽtitle(spec.content) ?? fallback
 }
 
 /////////////////////////////////////////////////
@@ -98,53 +98,71 @@ function getꓽfeatures(spec: Immutable<HtmlDocumentSpec>): FeatureSnippets[] {
 
 // alt
 function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>): Immutable<HtmlDocumentSpec> {
-	const content_with_features_expanded = { ...spec.content }
+	const content = ((): Contentⳇweb => {
+		const content_expanded = structuredClone(spec) as Contentⳇweb
+		content_expanded.cssⵧtop__layers ??= []
 
-	const features = getꓽfeatures(spec)
+		function _add_layer_if_needed(layer: string) {
+			if (content_expanded.cssⵧtop__layers!.includes(layer)) return
 
-	features.forEach(feature_id => {
-		switch (feature_id) {
-			case 'analytics--google':
-			case 'site-verification--google':
-			case 'page-loader--offirmo':
-				console.warn(`[HTML gen] TODO implement feature: ${feature_id}!`)
-				break
-
-			case 'cssⳇbox-layout--natural':
-				content_with_features_expanded.cssⵧcritical = [ ...Selectors.getꓽcssⵧcritical(content_with_features_expanded), snippetꓽcssⳇboxᝍlayoutⵧnatural ]
-				break
-
-			case 'cssⳇviewport--full':
-				content_with_features_expanded.cssⵧcritical = [ ...Selectors.getꓽcssⵧcritical(content_with_features_expanded), snippetꓽcssⳇviewportⵧfull ]
-				break
-
-			case 'normalize-url-trailing-slash': {
-				let snippet = String(snippetꓽjsⳇnormalizeᝍtrailingᝍslash)
-				assert(snippet.startsWith('function '), `A critical JS snippet should be a named function! (${snippet})}`)
-				snippet = `;(${snippet})()`
-				content_with_features_expanded.jsⵧcritical = [ ...Selectors.getꓽjsⵧcritical(content_with_features_expanded), snippet ]
-				break
-			}
-			case 'htmlⳇreact-root':
-				content_with_features_expanded.html = [ ...Selectors.getꓽhtml(content_with_features_expanded), snippetꓽhtmlⳇreact_root(spec) ]
-				break
-
-			case 'cssⳇfoundation--offirmo':
-				content_with_features_expanded.css = [ ...Selectors.getꓽcss(content_with_features_expanded), `@import 'npm:@offirmo-private/css--foundation' layer(foundation);` ]
-				break
-
-			case 'cssⳇframework--offirmo':
-				content_with_features_expanded.css = [ ...Selectors.getꓽcss(content_with_features_expanded), `@import 'npm:@offirmo-private/css--framework'  layer(framework);` ]
-				break
-
-			default:
-				throw new Error(`Unknown feature: ${feature_id}!`)
+			content_expanded.cssⵧtop__layers!.push(layer)
 		}
 
-	})
+		const features = getꓽfeatures(spec)
 
-	if (Selectors.getꓽhtml(content_with_features_expanded).length === 0) {
-		content_with_features_expanded.html = [ `
+		// check for mistakes
+		if (features.includes('cssⳇfoundation--offirmo') && features.includes('cssⳇframework--offirmo')) {
+			// framework includes foundation
+			throw new Error(`Feature conflict: 'cssⳇfoundation--offirmo' and 'cssⳇframework--offirmo' are redundant!`)
+		}
+
+		features.forEach(feature_id => {
+			switch (feature_id) {
+				case 'analytics--google':
+				case 'site-verification--google':
+				case 'page-loader--offirmo':
+					console.warn(`[HTML gen] TODO implement feature: ${feature_id}!`)
+					break
+
+				case 'cssⳇbox-layout--natural':
+					content_expanded.cssⵧcritical = [...Selectors.getꓽcssⵧcritical(content_expanded), snippetꓽcssⳇboxᝍlayoutⵧnatural]
+					break
+
+				case 'cssⳇviewport--full':
+					content_expanded.cssⵧcritical = [...Selectors.getꓽcssⵧcritical(content_expanded), snippetꓽcssⳇviewportⵧfull]
+					break
+
+				case 'normalize-url-trailing-slash': {
+					let snippet = String(snippetꓽjsⳇnormalizeᝍtrailingᝍslash)
+					// TODO extract to a function
+					assert(snippet.startsWith('function '), `A critical JS snippet should be a named function! (${snippet})}`)
+					snippet = `;(${snippet})()`
+					content_expanded.jsⵧcritical = [...Selectors.getꓽjsⵧcritical(content_expanded), snippet]
+					break
+				}
+				case 'htmlⳇreact-root':
+					content_expanded.html = [...Selectors.getꓽhtml(content_expanded), snippetꓽhtmlⳇreact_root(spec)]
+					break
+
+				case 'cssⳇfoundation--offirmo':
+					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@offirmo-private/css--foundation' layer(foundation);`]
+					_add_layer_if_needed('offirmo--foundation')
+					break
+
+				case 'cssⳇframework--offirmo':
+					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@offirmo-private/css--framework'  layer(framework);`]
+					_add_layer_if_needed('offirmo--foundation') // bc included
+					_add_layer_if_needed('offirmo--framework')
+					break
+
+				default:
+					throw new Error(`Unknown feature: ${feature_id}!`)
+			}
+		})
+
+		if (Selectors.getꓽhtml(content_expanded).length === 0) {
+			content_expanded.html = [
+				`
 <header>TODO header</header>
 <main id="root">
 	<h1>${getꓽtitleⵧpage(spec)}</h1>
@@ -153,20 +171,24 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 	</article>
 </main>
 <footer>TODO footer</footer>
-` ]
-	}
+		`,
+			]
+		}
 
-	if (Selectors.getꓽjs(content_with_features_expanded).length === 0 && !features.includes('htmlⳇreact-root')) {
-		//content_with_features_expanded.js = [ `console.log('Hello, world!')` ]
-		// TODO slightly better hello?
-	}
-	else {
-		content_with_features_expanded.html = [ `<noscript>You need to enable JavaScript to run this app.</noscript>`, ...Selectors.getꓽhtml(content_with_features_expanded) ]
-	}
+		const hasJS = Selectors.getꓽjs(content_expanded).length > 0 || features.includes('htmlⳇreact-root')
+		if (hasJS) {
+			content_expanded.html = [`<noscript>You need to enable JavaScript to run this app.</noscript>`, ...Selectors.getꓽhtml(content_expanded)]
+		} else {
+			//content_with_features_expanded.js = [ `console.log('Hello, world!')` ]
+			// TODO something?
+		}
+
+		return content_expanded
+	})()
 
 	return {
 		...spec,
-		content: content_with_features_expanded,
+		content,
 	}
 }
 
