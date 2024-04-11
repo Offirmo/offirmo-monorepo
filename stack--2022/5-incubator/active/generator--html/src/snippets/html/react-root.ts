@@ -19,7 +19,7 @@ function generate(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 			max-width: var(--width);
 			margin: 0 max(1ch, (100vw - var(--width))/2);
 			">
-			<h1>${getꓽtitleⵧpage(spec)}</h1>
+			<h1>${getꓽtitleⵧpage(spec, 'Loading…')}</h1>
 			<em>Loading…</em>
 		</section>
 	</main>

@@ -49,7 +49,7 @@ function getꓽcontent_blocksⵧjs(spec: Immutable<HtmlDocumentSpec>): Immutable
 }
 
 function getꓽtitleⵧpage(spec: Immutable<HtmlDocumentSpec>, fallback = 'Index'): string{
-	return Selectors.getꓽtitle(spec.content) ?? fallback
+	return Selectors.getꓽtitle(spec.content) || fallback
 }
 
 /////////////////////////////////////////////////
@@ -99,7 +99,7 @@ function getꓽfeatures(spec: Immutable<HtmlDocumentSpec>): FeatureSnippets[] {
 // alt
 function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>): Immutable<HtmlDocumentSpec> {
 	const content = ((): Contentⳇweb => {
-		const content_expanded = structuredClone(spec) as Contentⳇweb
+		const content_expanded = structuredClone(spec.content) as Contentⳇweb
 		content_expanded.cssⵧtop__layers ??= []
 
 		function _add_layer_if_needed(layer: string) {
