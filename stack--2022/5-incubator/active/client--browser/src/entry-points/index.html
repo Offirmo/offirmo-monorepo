@@ -27,12 +27,12 @@
 
 		<style>
 			 /******* critical CSS https://www.smashingmagazine.com/2015/08/understanding-critical-css/ */
-				/* define layers order, needs to be 1st CSS */
-			@layer reset, foundation, framework;
 
 			/* Necessary to style SVG inner elements. Required to be defined at the very beginning of the CSS */
 			@namespace svg url(http://www.w3.org/2000/svg);
 
+				/* define layers order, needs to be a the top to properly enforce the intended order */
+			@layer offirmo--foundation;
 			/* critical minimal design system */
 			:root {
 				/* FG+BG colors are the basics of identity */
@@ -135,7 +135,7 @@
 					margin: 0 max(1ch, (100vw - var(--width))/2);
 				"
 			>
-				<h1>The Boring RPG</h1>
+				<h1>[title--page]The Boring RPG</h1>
 				<em>Loading…</em>
 			</section>
 		</main>

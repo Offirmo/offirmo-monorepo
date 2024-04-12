@@ -19,31 +19,79 @@
 
 		<title>Contact</title>
 
-		<!-- critical CSS https://www.smashingmagazine.com/2015/08/understanding-critical-css/ -->
 		<style>
-				@layer reset, offirmo--reset, foundation, offirmo--foundation, framework;
-
+			 /******* critical CSS https://www.smashingmagazine.com/2015/08/understanding-critical-css/ */
+				/* define layers order, needs to be a the top to properly enforce the intended order */
+			@layer offirmo--foundation;
 			/* critical minimal design system */
 			:root {
-				--color--bg: hsl(337, 16%, 28%);
-				--color--fg: hsl(42, 100%, 87%);
-				--font: -apple-system, ui-sans-serif, sans-serif;
+				/* FG+BG colors are the basics of identity */
+				--o⋄color⁚bg--main: hsl(337, 16%, 28%);
+				--o⋄color⁚fg--main: hsl(42, 100%, 87%);
+				/* https://systemfontstack.com/ simplified */
+				--o⋄font-family--system--sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 
 				margin: 0;
 				padding: 0;
 
-				color: var(--color--fg);
-				background-color: var(--color--bg);
-				font-family: var(--font);
+				color: var(--o⋄color⁚fg--main);
+				background-color: var(--o⋄color⁚bg--main);
+				font-family: var(--o⋄font-family--system--sans);
+
+
+
+
+			/* apply a natural box layout model to all elements
+			 * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+			 * https://github.com/mike-engel/a11y-css-reset/pull/12#issuecomment-516582884
+			 */
+			:root                  { box-sizing: border-box; }
+			*, *::before, *::after { box-sizing: inherit; }
 		</style>
+
+		<script>
+			/////// critical JS ///////
+			;(function normalize_trailing_slash() {
+				/* IF the current path doesn't end with a trailing slash, this may be an issue
+				 * ex if we're located by our parent folder (implicit file, a lot of servers automatically do that)
+				 *    foo/bar/index.html   served as  /foo/bar (no trailing slash)
+				 * It messes with relative paths!
+				 * ex. (continued) link rel=site.webmanifest = /foo/site.webmanifest
+				 * https://searchfacts.com/url-trailing-slash/
+				 * https://ahrefs.com/blog/trailing-slash/
+				 *
+				 * Could we use <base> instead? Pb. is when the content is served on different domains: dev, staging, prod...
+				 *
+				 * SO we decide to ensure folders have a trailing slash
+				 * ex. /foo/bar/index.html => ✔ no change
+				 * ex. /foo/bar/           => ✔ no change
+				 * ex. /foo/bar            => ✖ REDIRECT foo/bar/
+				 */
+				const trailing_segment = location.pathname.split('/').slice(-1)[0] || ''
+				if (!trailing_segment) {
+					// ✔ located by a folder, location ends with a trailing slash
+					return
+				}
+				const is_trailing_segment_a_html_file =
+					trailing_segment.endsWith('.html') || trailing_segment.endsWith('.htm')
+				if (is_trailing_segment_a_html_file) {
+					// ✔ located by a file, no trailing slash
+					return
+				}
+				// ✖ we are located by a folder without a trailing slash.
+				// Redirect to the version with slash
+				const locationᐧpathnameⵧfixed = location.pathname + '/'
+				location.replace(location.origin + locationᐧpathnameⵧfixed + location.search + location.hash)
+			})()
+		</script>
 	</head>
 
 	<body>
 		<h1>Contact</h1>
 		<p>TODO...</p>
 
-		<!-- NON-critical styles https://www.smashingmagazine.com/2015/08/understanding-critical-css/ -->
 		<style>
+			/******* NON-critical styles https://www.smashingmagazine.com/2015/08/understanding-critical-css/ */
 			@import 'npm:@offirmo-private/css--foundation' layer(foundation);
 		</style>
 	</body>

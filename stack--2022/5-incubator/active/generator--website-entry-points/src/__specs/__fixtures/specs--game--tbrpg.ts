@@ -71,10 +71,10 @@ const WEBSITE: WebProperty = {
 		'cssⳇbox-layout--natural',
 		'cssⳇviewport--full',
 		'normalize-url-trailing-slash',
-		'cssⳇfoundation--offirmo', // 'cssⳇframework--offirmo',
+		'cssⳇframework--offirmo',
 		'htmlⳇreact-root',
-		//'page-loader--offirmo',
-		//'analytics--google',
+		'page-loader--offirmo',
+		'analytics--google',
 		//'site-verification--google',
 	],
 

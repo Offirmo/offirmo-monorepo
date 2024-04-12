@@ -1,9 +1,10 @@
 {
-	"lang": "en",
 	"content": {
-		"html": [],
-		"title": "The Boring RPG",
 		"js": [],
+		"title": "[title--page]The Boring RPG",
+		"html": [],
+		"jsⵧcritical": [],
+		"css": [],
 		"cssⵧcritical": [
 			"/* define layers order, needs to be 1st CSS */\n@layer reset, foundation, framework;\n",
 			"/* Necessary to style SVG inner elements. Required to be defined at the very beginning of the CSS */\n@namespace svg url(http://www.w3.org/2000/svg);\n",
