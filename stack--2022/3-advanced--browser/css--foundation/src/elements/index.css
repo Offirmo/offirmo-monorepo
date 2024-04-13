@@ -1,5 +1,6 @@
 
 @import 'element--a.css';
+@import 'element--blockquote.css';
 @import 'element--body.css';
 @import 'element--dl.css';
 @import 'element--figure.css';
@@ -10,7 +11,7 @@
 @import 'element--p.css';
 @import 'element--pre.css';
 @import 'element--strong.css';
-/*@import 'element--svg.css'; Parcel issue https://github.com/parcel-bundler/parcel/issues/9534 */
+@import 'element--svg.css';
 @import 'element--textarea.css';
 
 @import 'elements--code.css';

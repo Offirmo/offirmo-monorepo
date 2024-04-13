@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 import { Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
 import { hasꓽcontent } from '@offirmo-private/ts-utils'
-import { Css‿str, Html‿str, JS‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
+import { Url‿str, Css‿str, Html‿str, JS‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
 import * as Selectors from '@offirmo-private/ts-types-web'
 import {
 	normalize_unicode,
@@ -100,12 +100,26 @@ function getꓽfeatures(spec: Immutable<HtmlDocumentSpec>): FeatureSnippets[] {
 function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>): Immutable<HtmlDocumentSpec> {
 	const content = ((): Contentⳇweb => {
 		const content_expanded = structuredClone(spec.content) as Contentⳇweb
-		content_expanded.cssⵧtop__layers ??= []
 
-		function _add_layer_if_needed(layer: string) {
+		function _add_layer_if_not_present(layer: string) {
+			content_expanded.cssⵧtop__layers ??= []
+
 			if (content_expanded.cssⵧtop__layers!.includes(layer)) return
 
 			content_expanded.cssⵧtop__layers!.push(layer)
+		}
+
+		function _ensure_namespace(name: string, url: Url‿str) {
+			content_expanded.cssⵧtop__namespaces ??= {}
+
+			if (content_expanded.cssⵧtop__namespaces[name]) {
+				if (content_expanded.cssⵧtop__namespaces[name] === url) return
+
+				assert(content_expanded.cssⵧtop__namespaces[name] === url, `Namespace conflict: "${name}" already defined with a different URL!`)
+			}
+			else {
+				content_expanded.cssⵧtop__namespaces[name] = url
+			}
 		}
 
 		const features = getꓽfeatures(spec)
@@ -146,13 +160,17 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 
 				case 'cssⳇfoundation--offirmo':
 					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@offirmo-private/css--foundation' layer(foundation);`]
-					_add_layer_if_needed('offirmo--foundation')
+					_add_layer_if_not_present('offirmo--foundation')
+					_ensure_namespace('svg', 'http://www.w3.org/2000/svg')
 					break
 
 				case 'cssⳇframework--offirmo':
 					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@offirmo-private/css--framework'  layer(framework);`]
-					_add_layer_if_needed('offirmo--foundation') // bc included
-					_add_layer_if_needed('offirmo--framework')
+					// framework includes foundation
+					_add_layer_if_not_present('offirmo--foundation') // bc included
+					_ensure_namespace('svg', 'http://www.w3.org/2000/svg')
+
+					_add_layer_if_not_present('offirmo--framework')
 					break
 
 				default:
@@ -332,8 +350,7 @@ function _getꓽhtml__body__js‿str(spec: Immutable<HtmlDocumentSpec>): Html‿
 	if (!hasꓽcontent(blocks)) return ''
 
 	return `
-<!-- NON-critical JS -->
-<script type="module">
+<script type="module"> /* NON-critical JS */
 	${blocks.join(EOL)}
 </script>
 `

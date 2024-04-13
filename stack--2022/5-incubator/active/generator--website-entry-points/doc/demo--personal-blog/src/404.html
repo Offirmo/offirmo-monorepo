@@ -21,7 +21,9 @@
 
 		<style>
 			 /******* critical CSS https://www.smashingmagazine.com/2015/08/understanding-critical-css/ */
-				/* define layers order, needs to be a the top to properly enforce the intended order */
+				/* define namespaces for usage in following CSS, needs to be at the top https://github.com/parcel-bundler/parcel/issues/9534 */
+			@namespace svg url(http://www.w3.org/2000/svg);
+			/* define layers order, needs to be a the top to properly enforce the intended order */
 			@layer offirmo--foundation;
 			/* critical minimal design system */
 			:root {

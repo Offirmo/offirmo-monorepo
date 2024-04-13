@@ -13,12 +13,12 @@ const SPEC: WebPropertyEntryPointSpec = {
 	host: 'netlify',
 	content: {
 		..._SPEC.content,
-		js: [ ...(_SPEC.content.js ?? []), `import '../index.ts'`]
+		js: [ ...(_SPEC.content.js ?? []), `import '../app/index.ts'`]
 	}
 }
 
 await generateꓽwebsiteᝍentryᝍpoints(
 	SPEC,
 	path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../entry-points'),
-	//{rm: true},
+	{rm: true},
 )

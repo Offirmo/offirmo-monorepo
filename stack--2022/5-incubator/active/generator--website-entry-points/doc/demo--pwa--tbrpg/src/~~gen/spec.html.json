@@ -45,7 +45,9 @@
 		"cssⳇbox-layout--natural",
 		"cssⳇviewport--full",
 		"normalize-url-trailing-slash",
-		"cssⳇfoundation--offirmo",
-		"htmlⳇreact-root"
+		"cssⳇframework--offirmo",
+		"htmlⳇreact-root",
+		"page-loader--offirmo",
+		"analytics--google"
 	]
 }

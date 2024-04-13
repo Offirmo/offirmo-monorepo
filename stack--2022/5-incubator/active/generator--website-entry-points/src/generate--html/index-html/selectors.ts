@@ -137,10 +137,10 @@ function getꓽcontentⵧinitial(spec: Immutable<WebPropertyEntryPointSpec>): Im
 
 function getꓽcontentⵧweb__css(spec: Immutable<WebPropertyEntryPointSpec>): Pick<Contentⳇweb, 'css' | 'cssⵧtop__layers' | 'cssⵧtop__namespaces' | 'cssⵧcritical'> {
 	const result: ReturnType<typeof getꓽcontentⵧweb__css> = {
-		css: [ ...ContentⳇwebᐧSelectors.getꓽcss(spec) ],
-		cssⵧtop__layers: [ ...ContentⳇwebᐧSelectors.getꓽcssⵧtop__layers(spec) ],
-		cssⵧtop__namespaces: { ...ContentⳇwebᐧSelectors.getꓽcssⵧtop__namespaces(spec) },
-		cssⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽcssⵧcritical(spec) ],
+		css: [ ...ContentⳇwebᐧSelectors.getꓽcss(spec.content) ],
+		cssⵧtop__layers: [ ...ContentⳇwebᐧSelectors.getꓽcssⵧtop__layers(spec.content) ],
+		cssⵧtop__namespaces: { ...ContentⳇwebᐧSelectors.getꓽcssⵧtop__namespaces(spec.content) },
+		cssⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽcssⵧcritical(spec.content) ],
 	}
 
 	// TODO check if the system font stack works on major OS/browser
@@ -178,8 +178,8 @@ function getꓽcontentⵧweb__html(spec: Immutable<WebPropertyEntryPointSpec>): 
 
 function getꓽcontentⵧweb__js(spec: Immutable<WebPropertyEntryPointSpec>): Pick<Contentⳇweb, 'js' | 'jsⵧcritical'> {
 	const result = {
-		js: [ ...ContentⳇwebᐧSelectors.getꓽjs(spec) ],
-		jsⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽjsⵧcritical(spec) ],
+		js: [ ...ContentⳇwebᐧSelectors.getꓽjs(spec.content) ],
+		jsⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽjsⵧcritical(spec.content) ],
 	}
 
 	if (shouldꓽgenerateꓽjscode(spec))

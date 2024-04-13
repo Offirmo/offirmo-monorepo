@@ -60,8 +60,10 @@
 		"cssⳇbox-layout--natural",
 		"cssⳇviewport--full",
 		"normalize-url-trailing-slash",
-		"cssⳇfoundation--offirmo",
-		"htmlⳇreact-root"
+		"cssⳇframework--offirmo",
+		"htmlⳇreact-root",
+		"page-loader--offirmo",
+		"analytics--google"
 	],
 	"colorⵧbackground": "hsl(337, 16%, 28%)",
 	"colorⵧforeground": "hsl(42, 100%, 87%)",

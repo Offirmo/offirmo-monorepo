@@ -5,8 +5,11 @@
  */
 
 /* Necessary to select only SVG <a> elements, and not also HTML's
- */
+ * Commented due to Parcel issue https://github.com/parcel-bundler/parcel/issues/9534
+ * need to be manually inserted at the top of the final CSS or top of critical CSS
 @namespace svg url(http://www.w3.org/2000/svg);
+ */
+
 /* TODO follow the HTML <a> style */
 
 svg|a {

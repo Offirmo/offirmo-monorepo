@@ -50,7 +50,7 @@ function generate(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
 
 	return {
 		[getꓽbasenameⵧindexᐧhtml(spec)]: generateꓽindexᐧhtml(spec),
-		'~~gen/spec.html.json': JSON.stringify(getꓽhtml_doc_spec(spec), undefined, '	'),
+		'~~gen/logs/spec.html.json': JSON.stringify(getꓽhtml_doc_spec(spec), undefined, '	'),
 
 		...generateꓽcomplimentary(spec),
 	}

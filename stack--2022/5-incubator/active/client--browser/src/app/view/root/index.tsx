@@ -20,7 +20,7 @@ export default function Root() {
 		<StrictCheck>
 			<Profiler id="root" onRender={on_render}>
 				<ErrorBoundary name="root">
-					<p>Hello, react world!</p>
+					<p>Hello, React!</p>
 				</ErrorBoundary>
 			</Profiler>
 		</StrictCheck>
