@@ -30,7 +30,7 @@
 				/* define namespaces for usage in following CSS, needs to be at the top https://github.com/parcel-bundler/parcel/issues/9534 */
 			@namespace svg url(http://www.w3.org/2000/svg);
 			/* define layers order, needs to be a the top to properly enforce the intended order */
-			@layer offirmo--foundation, offirmo--framework;
+			@layer offirmo--reset, offirmo--foundation, offirmo--framework;
 			/* critical minimal design system */
 			:root {
 				/* FG+BG colors are the basics of identity */
@@ -65,7 +65,7 @@
 
 		<style>
 			/******* NON-critical styles https://www.smashingmagazine.com/2015/08/understanding-critical-css/ */
-			@import 'npm:@offirmo-private/css--framework' layer(framework);
+			@import 'npm:@offirmo-private/css--framework';
 		</style>
 	</body>
 </html>

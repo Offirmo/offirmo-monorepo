@@ -53,8 +53,6 @@ TODO features a simple design system
 }
 ```
 
-TODO favicon unicode https://piccalil.li/quick-tip/add-inline-svg-directly-in-your-css/
-
 
 ## Contribution
 
@@ -63,7 +61,7 @@ styles using tokens MUST NOT import them, or it make it hard to override the tok
 
 It's up to the caller to import the tokens
 
-TODO solve that with layers! (when supported in parcel)
+TODO solve that with layers!
 
 
 TODO +++ https://atlassian.design/foundations/typography

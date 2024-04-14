@@ -5,7 +5,7 @@ import { schedule_when_idle_but_within_human_perception } from '@offirmo-private
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
 import { LIB } from '../../consts.ts'
-import Root from '../root'
+import App from '../app'
 
 /////////////////////////////////////////////////
 
@@ -21,7 +21,7 @@ async function init(): Promise<void> {
 		root.render(
 			<StrictCheck>
 				<ErrorBoundary name={`${LIB}ᐧroot`}>
-					<Root />
+					<App />
 				</ErrorBoundary>
 			</StrictCheck>
 		)

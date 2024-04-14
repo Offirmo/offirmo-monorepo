@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////
 
 async function init(): Promise<void> {
-	import('@offirmo-private/css--framework')
+	//import('@offirmo-private/css--framework') already imported through entry point
 	import('@offirmo-private/css--utils')
 
 	window.document.documentElement.dataset['oTheme'] = 'dark--colorhunt212'

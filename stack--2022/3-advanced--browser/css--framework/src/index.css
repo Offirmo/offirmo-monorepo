@@ -6,4 +6,12 @@
 
 @import 'npm:@offirmo-private/css--foundation';
 
-@import 'atomic/index.css';
+@import 'tokens/index.css' layer(offirmo--framework);
+
+@import 'atomic/index.css' layer(offirmo--framework);
+
+@layer offirmo--framework {
+	.offirmo--layer--debug {
+		color: lawngreen;
+	}
+}

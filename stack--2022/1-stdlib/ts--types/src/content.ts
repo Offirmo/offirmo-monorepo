@@ -32,7 +32,7 @@ export interface Author extends WithOnlinePresence {
 
 export interface Thing {
 	lang?: IETFLanguageType
-	title?: string
+	title?: string // Ex. "The Boring RPG" or "La Joconde"
 	description: string // must be simple, a paragraph at most
 	author: Author | undefined // undef = unknown :-(
 	since‿y?: number // for copyright notice

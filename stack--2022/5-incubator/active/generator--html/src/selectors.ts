@@ -159,14 +159,16 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 					break
 
 				case 'cssⳇfoundation--offirmo':
-					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@offirmo-private/css--foundation' layer(foundation);`]
+					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@offirmo-private/css--foundation';`]
+					_add_layer_if_not_present('offirmo--reset')
 					_add_layer_if_not_present('offirmo--foundation')
 					_ensure_namespace('svg', 'http://www.w3.org/2000/svg')
 					break
 
 				case 'cssⳇframework--offirmo':
-					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@offirmo-private/css--framework'  layer(framework);`]
+					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@offirmo-private/css--framework';`]
 					// framework includes foundation
+					_add_layer_if_not_present('offirmo--reset')
 					_add_layer_if_not_present('offirmo--foundation') // bc included
 					_ensure_namespace('svg', 'http://www.w3.org/2000/svg')
 

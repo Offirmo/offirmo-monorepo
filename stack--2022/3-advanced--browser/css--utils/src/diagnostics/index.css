@@ -62,7 +62,7 @@ th:not([scope=col], [scope=row])
 }
 
 /* Declared but empty Attributes */
-*[alt=""],
+/* *[alt=""], NO! empty alt is a perfectly expected accessibility feature */
 *[class=""],
 *[href=""],
 *[id=""],
