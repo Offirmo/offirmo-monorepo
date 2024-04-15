@@ -1,0 +1,60 @@
+
+.o⋄widthꘌ100pc {
+	width: 100%;
+}
+.o⋄heightꘌ100pc {
+	height: 100%;
+}
+
+
+
+/** fully occupy the viewport, even on non-rectangular "inset" screens
+ */
+.o⋄full-viewport {
+	width: 100svw;
+	height: 100svh;
+	max-width: unset; /* revert a common technique of limiting width to ~60ch */
+
+	/* In order to get a true fullscreen when pinned on iPhone
+	 * - position must NOT be "fixed", or it strangely crops to the small viewport! (2023/11 iOs 16.6.1 iPhone 14)
+	 *   - absolute is ok
+	 * - height MUST be 100lvh;
+	 *
+	 * If :root has 0 padding, margin & border, no need to explicitly position, BUT:
+	 * - if the first child has a margin, it collapses with the parent!
+	 * Thus it's safer to position.
+	 */
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	/* usually what we want when going full screen */
+	overflow: hidden;
+}
+
+.o⋄usable-viewport {
+	position: absolute;
+	top: var(--safe-area-inset-top);
+	right: var(--safe-area-inset-right);
+	bottom: var(--safe-area-inset-bottom);
+	left: var(--safe-area-inset-left);
+}
+
+/* "A safer way to vertically fill the viewport"
+ * deprecated, mentioning for historical reasons
+ * https://piccalil.li/quick-tip/safe-viewport-height/
+ */
+
+
+
+
+.o⋄fill-parent {
+	/* this well known centering technique https://stackoverflow.com/a/22760896/587407
+	 * is the one that adds the fewer requirements on the consumer:
+	 * It only requires the parent to be "positioned" (for ex. position: relative)
+	 */
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+}

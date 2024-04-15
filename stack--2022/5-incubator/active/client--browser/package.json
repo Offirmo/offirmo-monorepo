@@ -21,6 +21,7 @@
 		"start:parcel": "parcel serve src/entry-points/index.html --port 8080  --lazy  --no-autoinstall",
 		"start:vite":     "vite src/           --port 8080",
 		"dev": "npm-run-all  clean  refresh--build-variables  --parallel start:parcel",
+		"dev--pub": "ngrok http 8080 --domain=national-rat-supreme.ngrok-free.app",
 
 		"build:parcel": "parcel build src/entry-points/*.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
 		"build:vite":     "vite build src/           --base       ./",

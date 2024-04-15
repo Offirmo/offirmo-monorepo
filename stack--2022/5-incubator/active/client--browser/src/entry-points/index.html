@@ -26,8 +26,8 @@
 		<title>[title--page]The Boring RPG</title>
 
 		<style>
-			 /******* critical CSS https://www.smashingmagazine.com/2015/08/understanding-critical-css/ */
-				/* define namespaces for usage in following CSS, needs to be at the top https://github.com/parcel-bundler/parcel/issues/9534 */
+			/******* critical CSS https://www.smashingmagazine.com/2015/08/understanding-critical-css/ */
+			/* define namespaces for usage in following CSS, needs to be at the top https://github.com/parcel-bundler/parcel/issues/9534 */
 			@namespace svg url(http://www.w3.org/2000/svg);
 			/* define layers order, needs to be a the top to properly enforce the intended order */
 			@layer offirmo--reset, offirmo--foundation, offirmo--framework;
@@ -37,7 +37,8 @@
 				--o⋄color⁚bg--main: hsl(337, 16%, 28%);
 				--o⋄color⁚fg--main: hsl(42, 100%, 87%);
 				/* https://systemfontstack.com/ simplified */
-				--o⋄font-family--system--sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+				--o⋄font-family--system--sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+					Roboto, Arial, sans-serif;
 
 				margin: 0;
 				padding: 0;
@@ -48,38 +49,46 @@
 
 				/* https://www.the-koi.com/projects/how-to-disable-pull-to-refresh/ */
 				overscroll-behavior: none;
-
+			}
 
 			/* apply a natural box layout model to all elements
-			 * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
-			 * https://github.com/mike-engel/a11y-css-reset/pull/12#issuecomment-516582884
-			 */
-			:root                  { box-sizing: border-box; }
-			*, *::before, *::after { box-sizing: inherit; }
-
+ * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://github.com/mike-engel/a11y-css-reset/pull/12#issuecomment-516582884
+ */
+			:root {
+				box-sizing: border-box;
+			}
+			*,
+			*::before,
+			*::after {
+				box-sizing: inherit;
+			}
 
 			/* make this app use the full viewport */
-			html, body {
+			html,
+			body {
 				margin: 0;
 				padding: 0;
 				border: initial;
 			}
-			body, .o⋄full-viewport {
-			/* In order to get a true fullscreen when pinned on iPhone
-			 * - position must NOT be "fixed", or it strangely crops to the small viewport! (2023/11 iOs 16.6.1 iPhone 14)
-			 *   - absolute is ok
-			 * - height MUST be 100lvh;
-			 *
-			 * If :root has 0 padding, margin & border, no need to explicitly position, BUT:
-			 * - if the first child has a margin, it collapses with the parent!
-			 * Thus it's safer to position.
-			 */
+			body,
+			.o⋄full-viewport {
+				/* In order to get a true fullscreen when pinned on iPhone
+ * - position must NOT be "fixed", or it strangely crops to the small viewport! (2023/11 iOs 16.6.1 iPhone 14)
+ *   - absolute is ok
+ * - height MUST be 100lvh;
+ *
+ * If :root has 0 padding, margin & border, no need to explicitly position, BUT:
+ * - if the first child has a margin, it collapses with the parent!
+ * Thus it's safer to position.
+ */
 				position: absolute;
 				top: 0;
 				left: 0;
 				overflow: hidden;
-				width: 100lvw;
-				height: 100lvh;
+				width: 100vw;
+				height: 100vh;
+				max-width: initial; /* revert common technique of limiting width to ~60ch*/
 			}
 		</style>
 

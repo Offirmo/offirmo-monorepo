@@ -1,3 +1,6 @@
+/** atomic in this file should ultimately move to a semantic dedicated file
+ */
+
 
 .o⋄text-alignꘌcenter {
 	text-align: center;
@@ -18,17 +21,29 @@
 }
 */
 
-.o⋄widthꘌ100pc {
-	width: 100%;
-}
-.o⋄heightꘌ100pc {
-	height: 100%;
-}
-
+/** Supposedly makes tap faster on iOs
+ * TODO review if still valid as of today?
+ * https://webkit.org/blog/5610/more-responsive-tapping-on-ios/
+ */
 .o⋄fast-tap {
-	touch-action: manipulation; /* https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
+	touch-action: manipulation;
 }
 
 
 /* TODO tabular nums https://piccalil.li/quick-tip/control-changing-numbers-with-font-variant-numeric/
  */
+
+
+/** remove most of the styles.
+ * ex. when using a semantic "button" with an image yet we don't want any button appearing
+ * credit: https://stackoverflow.com/a/64039751/587407
+ */
+.o⋄unstyled {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}

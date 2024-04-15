@@ -1,5 +1,6 @@
 @import 'atomic--borders.css';
 @import 'atomic--color.css';
+@import 'atomic--dimension.css';
 @import 'atomic--flex.css';
 @import 'atomic--font-family--fast-and-good-enough.css';
 @import 'atomic--font-family--system.css';

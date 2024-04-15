@@ -54,7 +54,7 @@ th:not([scope=col], [scope=row])
 /************ EMPTY ************/
 
 /* Empty Elements */
-*:empty:not(canvas):not(iframe):not(img):not(input):not(hr):not(textarea):not(td):not([data-dashlanecreated="true"])
+*:empty:not(canvas):not(iframe):not(img):not(input):not(hr):not(textarea):not(td):not([data-dashlanecreated="true"]):not(div.debug)
 {
 	/* padding needed to better outline empty = usually 0-sized */
 	padding: 1.5em;
@@ -176,8 +176,8 @@ html:not([lang]) body /* lang is important for some CSS features to work, ex. "h
 
 iframe:not([sandbox]),
 /* non secure http */
-*[href^="http:"],
-*[src^="http:"],
+*[href^="xxhttp:"],
+*[src^="xxhttp:"],
 a[target=_blank]:not([rel^=noreferrer]):not([rel^=noopener]) /* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#security_and_privacy */
 {
 	outline: 5px dashed var(--o⋄color⁚diagnostics--security) !important;

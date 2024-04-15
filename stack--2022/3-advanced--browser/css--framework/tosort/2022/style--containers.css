@@ -25,11 +25,6 @@
 	padding: .7em; /* looks good by default. Use o⋄paddingꘌnone else */
 }
 
-.o⋄body⁚full-viewport {
-	max-width: unset;
-	width: 100%; /* avoid lower than max if possible */
-}
-
 .o⋄input-container {
 	display: flex;
 	flex-direction: row;

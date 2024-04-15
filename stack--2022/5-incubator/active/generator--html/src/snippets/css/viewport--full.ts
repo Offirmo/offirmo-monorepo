@@ -26,6 +26,7 @@ body, .o⋄full-viewport {
 	overflow: hidden;
 	width: 100lvw;
 	height: 100lvh;
+	max-width: initial; /* revert common technique of limiting width to ~60ch*/
 }
 `
 

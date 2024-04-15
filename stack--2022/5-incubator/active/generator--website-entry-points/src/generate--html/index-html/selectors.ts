@@ -164,7 +164,7 @@ function getꓽcontentⵧweb__css(spec: Immutable<WebPropertyEntryPointSpec>): P
 		: `/* https://www.the-koi.com/projects/how-to-disable-pull-to-refresh/ */
 	overscroll-behavior: none;`
 	}
-`)
+}`)
 
 	return result
 }
