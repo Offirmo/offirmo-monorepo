@@ -48,6 +48,10 @@ function getꓽcontent_blocksⵧjs(spec: Immutable<HtmlDocumentSpec>): Immutable
 	return Selectors.getꓽjs(spec.content)
 }
 
+function getꓽcontent_html__element__classes(spec: Immutable<HtmlDocumentSpec>, element_name: string): Immutable<string[]> {
+	return spec.content?.htmlⵧelements__classes?.[element_name] ?? []
+}
+
 function getꓽtitleⵧpage(spec: Immutable<HtmlDocumentSpec>, fallback = 'Index'): string{
 	return Selectors.getꓽtitle(spec.content) || fallback
 }
@@ -122,12 +126,25 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 			}
 		}
 
+		function _add_element_class_if_not_present(element: string, class_name: string) {
+			content_expanded.htmlⵧelements__classes ??= {}
+			content_expanded.htmlⵧelements__classes[element] ??= []
+
+			if (content_expanded.htmlⵧelements__classes[element]!.includes(class_name)) return
+
+			content_expanded.htmlⵧelements__classes[element]!.push(class_name)
+		}
+
 		const features = getꓽfeatures(spec)
 
 		// check for mistakes
 		if (features.includes('cssⳇfoundation--offirmo') && features.includes('cssⳇframework--offirmo')) {
 			// framework includes foundation
 			throw new Error(`Feature conflict: 'cssⳇfoundation--offirmo' and 'cssⳇframework--offirmo' are redundant!`)
+		}
+
+		if (features.includes('cssⳇviewport--full')) {
+			_add_layer_if_not_present('temp-while-loading')
 		}
 
 		features.forEach(feature_id => {
@@ -144,6 +161,7 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 
 				case 'cssⳇviewport--full':
 					content_expanded.cssⵧcritical = [...Selectors.getꓽcssⵧcritical(content_expanded), snippetꓽcssⳇviewportⵧfull]
+					_add_element_class_if_not_present('body', 'o⋄full-viewport')
 					break
 
 				case 'normalize-url-trailing-slash': {
@@ -155,7 +173,11 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 					break
 				}
 				case 'htmlⳇreact-root':
+					if (features.includes('cssⳇviewport--full')) {
+						_add_element_class_if_not_present('main', 'o⋄full-viewport') // not doing anything for now but for clarity
+					}
 					content_expanded.html = [...Selectors.getꓽhtml(content_expanded), snippetꓽhtmlⳇreact_root(spec)]
+
 					break
 
 				case 'cssⳇfoundation--offirmo':
@@ -359,8 +381,10 @@ function _getꓽhtml__body__js‿str(spec: Immutable<HtmlDocumentSpec>): Html‿
 }
 
 function _getꓽhtml__body‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+	const classes = getꓽcontent_html__element__classes(spec, 'body')
+
 	return `
-<body>
+<body ${classes.length ? (`class="${classes.join(' ')}"`) : ''}>
 	${getꓽcontent_blocksⵧhtml(spec).join(EOL)}
 	${_getꓽhtml__body__style‿str(spec)}
 	${_getꓽhtml__body__js‿str(spec)}
@@ -372,13 +396,14 @@ function _getꓽhtml__body‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str 
 
 function getꓽhtml‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 	spec = getꓽspecⵧwith_features_expanded(spec)
+	const classes = getꓽcontent_html__element__classes(spec, 'html')
 
 	const result: Html‿str = `
 <!DOCTYPE html>
 <!-- AUTOMATICALLY GENERATED, DO NOT EDIT MANUALLY! -->
 
 <!-- maximum language hints to prevent Chrome from incorrectly suggesting a translation -->
-<html lang="${getꓽlang(spec)}" xml:lang="${getꓽlang(spec)}">
+<html lang="${getꓽlang(spec)}" xml:lang="${getꓽlang(spec)}" ${classes.length ? (`class="${classes.join(' ')}"`) : ''}>
 	${_getꓽhtml__head‿str(spec)}
 	${_getꓽhtml__body‿str(spec)}
 </html>`
@@ -393,4 +418,5 @@ export {
 	getꓽfeatures,
 	getꓽtitleⵧpage,
 	getꓽhtml‿str,
+	getꓽcontent_html__element__classes,
 }

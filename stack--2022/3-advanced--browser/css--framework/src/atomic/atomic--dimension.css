@@ -7,13 +7,32 @@
 }
 
 
-
 /** fully occupy the viewport, even on non-rectangular "inset" screens
+ * PREREQUISITE top containers must be clean of anything but content (no margin, no padding, no border)
  */
+:root:has(.o⋄full-viewport),
+body:has(.o⋄full-viewport) {
+	margin: 0;
+	padding: 0;
+	border: initial;
+}
 .o⋄full-viewport {
-	width: 100svw;
-	height: 100svh;
-	max-width: unset; /* revert a common technique of limiting width to ~60ch */
+	max-width: unset; /* first disable a common technique of limiting width to ~60ch that may have been applied by some other CSS */
+
+	/* What unit should we use?
+	 * -  %       🙅 NO we don't want relative, we want absolutes
+	 * -  vw,  vh 🙅 NO because of mobile iOs, this is the reason dv, sv and lv where created. full story: https://nicolas-hoizey.com/articles/2015/02/18/viewport-height-is-taller-than-the-visible-part-of-the-document-in-some-mobile-browsers/
+	 * let's review the advance ones:
+	 * - svw, svh 🙅 NO we want the FULL = biggest viewport possible, not the small one
+	 * - dvw, dvh ❓ yes IN THEORY
+	 *               👍 works in Safari mobile, UA stays visible = not perfect (we could use more screen) however there is no strange scroll ✅
+	 *               👎 Does NOT but NOT when we pin the app to the home screen with no UA interface :-( (seen 2024/04 iOs 17.4.1 iPhone 14)
+	 * - lvw, lvh ❓ no IN THEORY
+	 *               👎 on Safari Mobile, this causes a scrollbar to appear on start when UA visible, then on scroll the UA disappear and we're left with a horrible state (seen 2024/04 iOs 17.4.1 iPhone 14) TODO could we recover from that with a programmatic scroll?
+	 *               👍 works on pinned app with no UA
+	 */
+	width: 100dvw;
+	height: 100dvh;
 
 	/* In order to get a true fullscreen when pinned on iPhone
 	 * - position must NOT be "fixed", or it strangely crops to the small viewport! (2023/11 iOs 16.6.1 iPhone 14)
@@ -32,6 +51,7 @@
 	overflow: hidden;
 }
 
+/* XXX this is relative to a parent!! */
 .o⋄usable-viewport {
 	position: absolute;
 	top: var(--safe-area-inset-top);
@@ -40,8 +60,9 @@
 	left: var(--safe-area-inset-left);
 }
 
-/* "A safer way to vertically fill the viewport"
- * deprecated, mentioning for historical reasons
+
+/* DEPRECATED "A safer way to vertically fill the viewport"
+ * mentioning for historical reasons
  * https://piccalil.li/quick-tip/safe-viewport-height/
  */
 

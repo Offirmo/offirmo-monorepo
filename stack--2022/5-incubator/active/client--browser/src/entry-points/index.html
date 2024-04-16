@@ -30,7 +30,7 @@
 			/* define namespaces for usage in following CSS, needs to be at the top https://github.com/parcel-bundler/parcel/issues/9534 */
 			@namespace svg url(http://www.w3.org/2000/svg);
 			/* define layers order, needs to be a the top to properly enforce the intended order */
-			@layer offirmo--reset, offirmo--foundation, offirmo--framework;
+			@layer temp-while-loading, offirmo--reset, offirmo--foundation, offirmo--framework;
 			/* critical minimal design system */
 			:root {
 				/* FG+BG colors are the basics of identity */
@@ -64,31 +64,27 @@
 				box-sizing: inherit;
 			}
 
-			/* make this app use the full viewport */
-			html,
+			/* make this app use exactly the full viewport.
+ * This is VERY TRICKY CSS,
+ * and it also requires a bit of JS in some situations.
+ * see full explanation: https://github.com/Offirmo/offirmo-monorepo/blob/main/stack--2022/3-advanced--browser/css--framework/src/atomic/atomic--dimension.css
+ */
+			:root,
 			body {
 				margin: 0;
 				padding: 0;
 				border: initial;
 			}
-			body,
-			.o⋄full-viewport {
-				/* In order to get a true fullscreen when pinned on iPhone
- * - position must NOT be "fixed", or it strangely crops to the small viewport! (2023/11 iOs 16.6.1 iPhone 14)
- *   - absolute is ok
- * - height MUST be 100lvh;
- *
- * If :root has 0 padding, margin & border, no need to explicitly position, BUT:
- * - if the first child has a margin, it collapses with the parent!
- * Thus it's safer to position.
- */
-				position: absolute;
-				top: 0;
-				left: 0;
-				overflow: hidden;
-				width: 100vw;
-				height: 100vh;
-				max-width: initial; /* revert common technique of limiting width to ~60ch*/
+			@layer temp-while-loading {
+				o⋄full-viewport {
+					position: absolute;
+					top: 0;
+					left: 0;
+					overflow: hidden;
+					width: 100lvw;
+					height: 100lvh;
+					max-width: initial;
+				}
 			}
 		</style>
 
@@ -129,7 +125,18 @@
 		</script>
 	</head>
 
-	<body>
+	<body class="o⋄full-viewport">
+	<div key="100lv" class="debug" style="
+	     border: dashed 5px red;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100lvw;
+	height: 100lvh;
+	pointerEvents: none;
+	background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	"></div>
+
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 
 		<main id="react-root" class="o⋄full-viewport">

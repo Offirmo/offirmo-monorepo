@@ -21,6 +21,12 @@ export interface Contentⳇweb extends WithCharset, WithLang, WithTitle {
 	// inherited: charset
 	// inherited: title // technically redundant, could be inferred from the html
 	html?: Html‿str[]
+	// technicalities. Ideally we'd be semantic and not want this
+	htmlⵧelements__classes?: {
+		// ex. 'body': ['class1', 'class2']
+		// normally only UNIQUE elements should appear: html, body, main, header, footer...
+		[element: string]: string[],
+	}
 
 	// presentation (formatting, layout)
 	// ideally optional if html is semantic

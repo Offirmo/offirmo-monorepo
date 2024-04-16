@@ -114,8 +114,6 @@ function AppShell({ children }) {
 			<Settings/>
 			<Login/>
 
-			<div className={'o⋄usable-viewport debug'} style={{ border: 'dashed 2px yellow', pointerEvents: 'none' }}>{'&nbsp'}</div>
-
 			<FakeInset />
 		</div>
 	)
