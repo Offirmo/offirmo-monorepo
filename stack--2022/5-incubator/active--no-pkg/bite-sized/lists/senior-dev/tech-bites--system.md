@@ -1,5 +1,5 @@
-+++ https://github.com/donnemartin/system-design-primer
-+++ https://lethain.com/distributed-systems-vocabulary/
+[ ] +++ https://github.com/donnemartin/system-design-primer
+[ ] +++ https://lethain.com/distributed-systems-vocabulary/
 1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
 1% rule -- lurk, lurker
 1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
@@ -46,6 +46,7 @@ CAP Theorem -> see also PACELC theorem
 capacity planning
 cascading failures
 cascading failures -- exponential backoff + jitter +
+gracefun degradation = ex. of batteries in flashlight
 change management
 chaos monkey
 cloud native = leverages the full capabilities of the cloud, beyond storage and hosting, including elastic scaling of highly available resources. Functionality is updated automatically no manual effort required
@@ -111,9 +112,12 @@ middleware https://en.wikipedia.org/wiki/Middleware_(distributed_applications)
 mitigations: code rollback, data rollback, degrade, upsize, blocklist, drain, quarantine https://www.oreilly.com/content/generic-mitigations/
 monitoring
 monitoring "Understanding what is happening in your environment is key to maintaining efficient, secure, and compliant applications"
+NALSD -- https://sre.google/classroom/distributed-pubsub/
+NALSD -- https://sre.google/classroom/imageserver/
 network ACL
 nicro-frontend https://micro-frontends.org/ https://the-tractor.store/
 non-abstract large system design (NALSD) = iterative process for designing, assessing, and evaluating distributed systems
+non-abstract large systems design (NALSD) https://sre.google/workbook/non-abstract-design/
 numbers everyone should know https://static.googleusercontent.com/media/sre.google/en//static/pdf/rule-of-thumb-latency-numbers-letter.pdf
 observability
 observability -- logs -- data model https://opentelemetry.io/docs/specs/otel/logs/data-model/
@@ -137,6 +141,7 @@ perspective -- tech -- security
 polyglot persistence https://en.wikipedia.org/wiki/Polyglot_persistence
 post-mortem
 protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https://stackoverflow.com/questions/731233/activemq-or-rabbitmq-or-zeromq-or https://news.ycombinator.com/item?id=9634801
+PubSub = Publish-Subscribe 
 rate limiting
 regions
 request deduplication

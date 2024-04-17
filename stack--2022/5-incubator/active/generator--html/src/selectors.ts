@@ -161,7 +161,6 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 
 				case 'cssⳇviewport--full':
 					content_expanded.cssⵧcritical = [...Selectors.getꓽcssⵧcritical(content_expanded), snippetꓽcssⳇviewportⵧfull]
-					_add_element_class_if_not_present('body', 'o⋄full-viewport')
 					break
 
 				case 'normalize-url-trailing-slash': {
@@ -173,9 +172,6 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 					break
 				}
 				case 'htmlⳇreact-root':
-					if (features.includes('cssⳇviewport--full')) {
-						_add_element_class_if_not_present('main', 'o⋄full-viewport') // not doing anything for now but for clarity
-					}
 					content_expanded.html = [...Selectors.getꓽhtml(content_expanded), snippetꓽhtmlⳇreact_root(spec)]
 
 					break

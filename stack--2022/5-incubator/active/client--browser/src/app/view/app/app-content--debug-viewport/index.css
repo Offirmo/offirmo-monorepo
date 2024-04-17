@@ -1,0 +1,49 @@
+
+.fullviewport {
+	isolation: isolate;
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+}
+.fullviewport.large {
+	width: 100lvw;
+	height: 100lvh;
+	border-style: solid;
+	border-width: 20px;
+	text-align: left;
+}
+.fullviewport.dynamic {
+	text-align: center;
+	width: 100dvw;
+	height: 100dvh;
+	border-style: dotted;
+	border-width: 20px;
+}
+.fullviewport.small {
+	text-align: right;
+	width: 100svw;
+	height: 100svh;
+	border-width: 10px;
+}
+
+.with-clear-borders {
+	--color--border: rgba(255, 255, 255, 0.3);
+	border: dashed 2lvmin var(--color--border);
+	border-boundary: display; /* https://drafts.csswg.org/css-round-display/#border-boundary-property */
+	shape-inside: display; /* https://drafts.csswg.org/css-round-display/#shape-inside-property */
+}
+
+.safe-inset {
+	--color--border: rgba(255, 0, 0, 0.5);
+	border-top:    solid var(--safe-area-inset-top)    var(--color--border);
+	border-right:  solid var(--safe-area-inset-right)  var(--color--border);
+	border-bottom: solid var(--safe-area-inset-bottom) var(--color--border);
+	border-left:   solid var(--safe-area-inset-left)   var(--color--border);
+
+	color: var(--color--border);
+	text-align: right;
+}

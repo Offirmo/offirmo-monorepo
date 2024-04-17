@@ -13,8 +13,6 @@ import { HtmlDocumentSpec } from '../../types.js'
 
 function generate(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 	const classes = [...getꓽcontent_html__element__classes(spec, 'main')]
-	if (getꓽfeatures(spec).includes('cssⳇviewport--full') && !classes.includes('o⋄full-viewport'))
-		classes.push('o⋄full-viewport')
 
 	return `
 <main id="react-root" ${classes.length ? (`class="${classes.join(' ')}"`) : ''}>

@@ -8,10 +8,9 @@
 
 
 /** fully occupy the viewport, even on non-rectangular "inset" screens
- * PREREQUISITE top containers must be clean of anything but content (no margin, no padding, no border)
+ * PREREQUISITE parent containers must be clean of anything but content (no margin, no padding, no border)
  */
-:root:has(.o⋄full-viewport),
-body:has(.o⋄full-viewport) {
+*:has(.o⋄full-viewport) {
 	margin: 0;
 	padding: 0;
 	border: initial;
@@ -51,12 +50,23 @@ body:has(.o⋄full-viewport) {
 	overflow: hidden;
 }
 
-/* XXX this is relative to a parent!! */
+
+/* Safe area without any inset or title bar
+ * XXX position absolute requires containing block (= parent) to be absolute or full
+ * so need a parent full viewport!
+ */
 .o⋄usable-viewport {
 	position: absolute;
-	top: var(--safe-area-inset-top);
+
+	/* Top: this assume that the title bar (if any) is on top
+	 * Can it not be the case??
+	 */
+	top: calc(var(--safe-area-inset-top) + var(--titlebar-area-y) + var(--titlebar-area-height));
+
 	right: var(--safe-area-inset-right);
+
 	bottom: var(--safe-area-inset-bottom);
+
 	left: var(--safe-area-inset-left);
 }
 

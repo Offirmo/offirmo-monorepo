@@ -66,16 +66,14 @@
 
 			/* make this app use exactly the full viewport.
  * This is VERY TRICKY CSS,
- * and it also requires a bit of JS in some situations.
  * see full explanation: https://github.com/Offirmo/offirmo-monorepo/blob/main/stack--2022/3-advanced--browser/css--framework/src/atomic/atomic--dimension.css
  */
-			:root,
-			body {
-				margin: 0;
-				padding: 0;
-				border: initial;
-			}
 			@layer temp-while-loading {
+				*:has(.o⋄full-viewport) {
+					margin: 0;
+					padding: 0;
+					border: initial;
+				}
 				o⋄full-viewport {
 					position: absolute;
 					top: 0;
@@ -125,21 +123,10 @@
 		</script>
 	</head>
 
-	<body class="o⋄full-viewport">
-	<div key="100lv" class="debug" style="
-	     border: dashed 5px red;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100lvw;
-	height: 100lvh;
-	pointerEvents: none;
-	background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-	"></div>
-
+	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 
-		<main id="react-root" class="o⋄full-viewport">
+		<main id="react-root">
 			<!-- React will render here and replace this -->
 			<section
 				style="

@@ -107,14 +107,13 @@ class ErrorBoundary extends React.Component {
 }
 ErrorBoundary.propTypes = {
 	name: PropTypes.string.isRequired,
-	onMount: PropTypes.func,
+	onMount: PropTypes.func, // usage??
 	onError: PropTypes.func,
-	logger: PropTypes.any,
 }
 ErrorBoundary.defaultProps = {
 	onMount: () => {},
 	onError: () => {},
-	logger: console,
+	// TODO report link customization
 }
 
 export default ErrorBoundary

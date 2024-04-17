@@ -6,6 +6,11 @@
 	 *
 	 * https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/window-controls-overlay#use-css-environment-variables-to-stay-clear-of-the-overlay
 	 * https://developer.mozilla.org/en-US/docs/Web/API/Window_Controls_Overlay_API
+	 *
+	 * How to test?
+	 * 1. be a web app with manifest: display_override": ["window-controls-overlay"]
+	 * 2. Pin your app to the desktop in Chrome https://travisbogard.medium.com/5-taps-to-turn-any-web-app-into-a-mac-app-with-chrome-28913aa0fa17
+	 * 3. click the little arrow to enable the titlebar usage
 	 */
 	--titlebar-area-x:       env(titlebar-area-x,       0px);
 	--titlebar-area-y:       env(titlebar-area-y,       0px);

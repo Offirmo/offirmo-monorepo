@@ -3,7 +3,7 @@
 @import 'consts/consts--colors--defaults.css'      layer(offirmo--foundation);
 @import 'consts/consts--font-families--system.css' layer(offirmo--foundation);
 
-/* TODO colors */
+@import 'tokens/tokens--colors.css'                layer(offirmo--foundation);
 @import 'tokens/tokens--font-families.css'         layer(offirmo--foundation);
 @import 'tokens/tokens--sizes.css'                 layer(offirmo--foundation);
 

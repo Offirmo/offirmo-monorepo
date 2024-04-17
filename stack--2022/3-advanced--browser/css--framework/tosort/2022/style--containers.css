@@ -36,19 +36,7 @@
 
 
 
-.o⋄error-report {
-	font-size: xx-small;
-	font-family: monospace;
-	color: var(--o⋄color⁚fg--error);
-	/*background-color: rgba(0, 0, 0, .3); /* TODO */
-	background-color: var(--o⋄color⁚bg--main--backdrop);
-	margin: auto;
-	z-index: 100000; /* just in case TODO check */
-}
-.o⋄error-report > pre, .o⋄error-report > samp {
-	white-space: pre-wrap;
-	text-align: initial;
-}
+
 
 
 .o⋄box {

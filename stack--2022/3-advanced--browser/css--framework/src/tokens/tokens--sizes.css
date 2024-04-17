@@ -13,5 +13,6 @@
 	--o⋄icon-size--tree: 20px;
 	--o⋄icon-size--functional: 16px;
 
-	--o⋄touch-margin-from-screen-border: 8px; /* recommended value? */
+	--o⋄margin-from-screen-border--visual: 4px; /* recommended value? */
+	--o⋄margin-from-screen-border--touch: 8px; /* recommended value? */
 }

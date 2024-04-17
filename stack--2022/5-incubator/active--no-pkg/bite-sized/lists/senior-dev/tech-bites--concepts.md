@@ -1,3 +1,4 @@
+
 +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
 +++ https://explorer.globe.engineer/
 +++ https://martinfowler.com/
@@ -10,7 +11,6 @@ allocation
 annotation
 anomaly detection
 API Economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
-
 Application Programming Interface (API) = defines interactions that allows two applications to talk to each other
 apply / call / bind
 arguments
@@ -63,13 +63,14 @@ defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actu
 demos
 dependencies
 dependency hell https://en.wikipedia.org/wiki/Dependency_hell
+design patterns -- strangler https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/
 devex
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 do what I mean (DWIM) = computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
+Domain Specific Language (DSL)
 double authent
 DRY don't repeat yourself
 dry run
-Domain Specific Language (DSL)
 Effect<Success, Error, Requirements> https://effect.website/docs/guides/essentials/the-effect-type
 egress
 emscripten
@@ -235,7 +236,7 @@ release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-1
 revisions
 rewrite https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22
 RFC https://rfc.fyi/
-robustness principle (beware bad effects)
+robustness principle (beware bad effects) https://en.wikipedia.org/wiki/Robustness_principle 
 Role-Based Access Control (RBAC)
 rollback
 rolling deploy
@@ -291,10 +292,11 @@ tree walk
 typecast
 types
 Unix philosophy (OUTDATED -> use JSON ;)) https://en.wikipedia.org/wiki/Unix_philosophy
-Unix philosophy -- 01 Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features"
-Unix philosophy -- 02 Expect the output of every program to become the input to another, as yet unknown, program. Don't clutter output with extraneous information. Avoid stringently columnar or binary input formats; Don't insist on interactive input
-Unix philosophy -- 03 Design and build software, even operating systems, to be tried early, ideally within weeks. Don't hesitate to throw away the clumsy parts and rebuild them
-Unix philosophy -- 04 Use tools in preference to unskilled help to lighten a programming task, even if you have to detour to build the tools and expect to throw some of them out after you've finished using them
+Unix philosophy -- (much more) https://en.wikipedia.org/wiki/Unix_philosophy
+Unix philosophy -- A.01 Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features"
+Unix philosophy -- A.02 Expect the output of every program to become the input to another, as yet unknown, program. Don't clutter output with extraneous information. Avoid stringently columnar or binary input formats; Don't insist on interactive input
+Unix philosophy -- A.03 Design and build software, even operating systems, to be tried early, ideally within weeks. Don't hesitate to throw away the clumsy parts and rebuild them
+Unix philosophy -- A.04 Use tools in preference to unskilled help to lighten a programming task, even if you have to detour to build the tools and expect to throw some of them out after you've finished using them
 uptime
 use boring technology
 use strict
