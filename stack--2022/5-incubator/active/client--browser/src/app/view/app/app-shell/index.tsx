@@ -22,10 +22,12 @@ import Settings from './settings'
  * Since we're at it, we want to interweave debug infos: version, build, UUID...
  */
 function Signature() {
+	console.log('render Signature')
 	let styles: React.CSSProperties = {
 		// default = mobile first's ideal position
-		top: 'calc(var(--safe-area-inset-top))',
-		right: 'calc(var(--safe-area-inset-right))',
+		top: 'calc(var(--safe-area-inset-top) + var(--o⋄margin-from-screen-border--visual))',
+		left: 'calc(var(--safe-area-inset-left) + var(--o⋄margin-from-screen-border--visual))',
+		fontSize: 'var(--o⋄icon-size--chrome)',
 	}
 
 	const { hasꓽtitle_bar_area } = useViewportGeometry()
@@ -48,7 +50,7 @@ function Signature() {
 			lineHeight: '1em',
 			...styles,
 		}}>
-			<span>{/* TODO icon */ title /* TODO link to "about" */ /* TODO "by Offirmo" ? */}</span>
+			<span className={'o⋄text-readable-on-any-background'}>{/* TODO icon */ title /* TODO link to "about" */ /* TODO "by Offirmo" ? */}</span>
 			<small className={'o⋄fontꘌsystem--mono'}>v{version} {build_time}</small>
 			{/* TODO social links like Elvenar? */}
 		</div>
@@ -80,14 +82,14 @@ function FakeInset() {
 	)
 
 	return (
-		<div key="fakeInset" className={'o⋄full-viewport debug'} style={{ pointerEvents: 'none' }}>
+		<div key="fakeInset" className={'o⋄full-viewport'} style={{ pointerEvents: 'none' }}>
 
-			<div className={'debug'} style={{
+			<div key='notch' className={'debug'} style={{
 				pointerEvents: 'auto', position: 'absolute',
 				top: 0, left: '30%', width: '40%', height: HEIGTH, backgroundColor: 'black', textAlign: 'center', color: 'rgba(255, 255, 255, .2)' }}>
 			</div>
 
-			<div className={'debug'} style={{
+			<div key='bottom' className={'debug'} style={{
 				pointerEvents: 'auto', position: 'absolute',
 				bottom: '10px',
 				left: '30%', width: '40%',
@@ -97,28 +99,28 @@ function FakeInset() {
 			}}>
 			</div>
 
-			<div className={'debug'} style={{
+			<div key='corner--tl' className={'debug'} style={{
 				pointerEvents: 'auto', position: 'absolute', top: 0, left: 0, width: CORNER, height: CORNER,
 				borderTopLeftRadius: CORNER,
 				backgroundColor: 'transparent',
 				boxShadow: `-${CORNER} -${CORNER} 0 ${CORNER} black`,
 			}}/>
 
-			<div className={'debug'} style={{
+			<div key='corner--tr' className={'debug'} style={{
 				pointerEvents: 'auto', position: 'absolute', top: 0, right: 0, width: CORNER, height: CORNER,
 				borderTopRightRadius: CORNER,
 				backgroundColor: 'transparent',
 				boxShadow: `${CORNER} -${CORNER} 0 ${CORNER} black`,
 			}}/>
 
-			<div className={'debug'} style={{
+			<div key='corner--bl' className={'debug'} style={{
 				pointerEvents: 'auto', position: 'absolute', bottom: 0, left: 0, width: CORNER, height: CORNER,
 				borderBottomLeftRadius: CORNER,
 				backgroundColor: 'transparent',
 				boxShadow: `-${CORNER} ${CORNER} 0 ${CORNER} black`,
 			}}/>
 
-			<div className={'debug'} style={{
+			<div key='corner--br' className={'debug'} style={{
 				pointerEvents: 'auto', position: 'absolute', bottom: 0, right: 0, width: CORNER, height: CORNER,
 				borderBottomRightRadius: CORNER,
 				backgroundColor: 'transparent',
@@ -143,7 +145,7 @@ function AppShell({ children }) {
 				<Settings/>
 			</div>,
 
-			<FakeInset />,
+			<FakeInset key='fakeInset'/>,
 	])
 }
 

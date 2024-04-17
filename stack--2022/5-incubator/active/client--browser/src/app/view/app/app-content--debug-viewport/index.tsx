@@ -90,7 +90,7 @@ function DebugViewportReport() {
 			{Boolean(window.scrollY) && <pre key="scrollY">scrollY = {window.scrollY}</pre>}
 			{Boolean(window.scrollX) && <pre key="scrollX">scrollX = {window.scrollX}</pre>}
 			{navigator.windowControlsOverlay?.visible && <pre key="wcov">windowControlsOverlay.visible = {String(navigator.windowControlsOverlay?.visible)}</pre>}
-			{debug_msgs.map((msg, i) => <pre key={i}>{msg}</pre>)}
+			{debug_msgs.map((msg, i) => <pre key={`msg#${i}`}>{msg}</pre>)}
 		</div>)
 }
 

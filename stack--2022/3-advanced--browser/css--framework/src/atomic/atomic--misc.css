@@ -41,9 +41,41 @@
 .o⋄unstyled {
 	background: none;
 	color: inherit;
+	outline: inherit;
+
 	border: none;
 	padding: 0;
+	margin: 0;
+
 	font: inherit;
 	cursor: pointer;
-	outline: inherit;
+}
+
+/******* Typography *******/
+.o⋄text-readable-on-any-background {
+	/* not recommended but supported...
+	https://webkit.org/blog/85/introducing-text-stroke/
+	https://css-tricks.com/almanac/properties/t/text-stroke/
+	https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-stroke
+	 */
+	/*-webkit-text-stroke: 1.5px #db3333; /* TODO relative + vars */
+/*
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: rgba(0, 0, 0, 1);
+	*/
+
+	text-shadow: black 0px 0px 10px;
+	/*
+
+	--color: var(--o⋄color⁚bg--main--backdrop);
+
+	text-shadow:
+		1px  1px 0 var(--color),
+		1px -1px 0 var(--color),
+		-1px  1px 0 var(--color),
+		-1px -1px 0 var(--color),
+		1px  0px 0 var(--color),
+		0px  1px 0 var(--color),
+		-1px  0px 0 var(--color),
+		0px -1px 0 var(--color);*/
 }

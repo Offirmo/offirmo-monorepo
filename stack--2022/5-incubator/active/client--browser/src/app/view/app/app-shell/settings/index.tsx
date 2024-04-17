@@ -4,6 +4,7 @@ import 'react'
 
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
+import useViewportGeometry from '../../../../to-export-to-own-package/use-viewport-geometry'
 import IconUrl from './icon2.png'
 
 /////////////////////////////////////////////////
@@ -13,14 +14,17 @@ function on_click() {
 }
 
 function Settings() {
+	console.log('render Settings')
 	let styles: React.CSSProperties = {
 		// default, mobile first ideal position
 		top: 'calc(var(--safe-area-inset-top) + var(--o⋄margin-from-screen-border--touch))',
 		right: 'calc(var(--safe-area-inset-right) + var(--o⋄margin-from-screen-border--touch))',
+		height: 'var(--o⋄min-target-size)',
+		width: 'var(--o⋄min-target-size)',
 	}
 
-	const has_titlebar_area = true; // TODO dynamic with hook
-	if (has_titlebar_area) {
+	const { hasꓽtitle_bar_area} = useViewportGeometry()
+	if (hasꓽtitle_bar_area) {
 		// We want to use the title bar of course!
 		styles = {
 			top: 'calc(var(--titlebar-area-y))',
@@ -31,7 +35,6 @@ function Settings() {
 	}
 	else {
 		// we need to put that out of the user's way...
-
 	}
 
 	return (
@@ -39,7 +42,6 @@ function Settings() {
 			position: 'absolute',
 			minHeight: 'var(--o⋄min-target-size)',
 			minWidth: 'var(--o⋄min-target-size)',
-			maxHeight: 'var(--o⋄min-target-size)',
 			...styles,
 		}} onClick={on_click}>
 			<img src={IconUrl} className={'black-icon-to-color--fg'} alt="" style={{

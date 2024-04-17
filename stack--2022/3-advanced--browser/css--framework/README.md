@@ -114,10 +114,6 @@ There are also variables:
 
 **[More advanced demo](https://codepen.io/Offirmo/pen/zjavzJ)** TODO BROKEN
 
-#### full height page working on mobile browser
-You can't use height: 100vh on Chrome mobile or the url bar will get in the way.
-Solution: use a cascade of `class="o⋄top-container"` (optionally starting at `html` and `body`)
-
 #### containers debug
 ```html
 <style type="text/css">
