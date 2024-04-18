@@ -90,7 +90,8 @@ ML - machine learning https://en.wikipedia.org/wiki/Machine_learning ~"subfield 
 moat - We have no moat https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
 model (NN) = sort of snapshot of a trained neural network / brain = NN (structure + parameters) https://huggingface.co/docs/hub/models
 model -- efficiency
-model -- Transformer model
+model -- foundational = a big one pre-trained on vast resources
+model -- transformer model
 NLG Natural Language Generation
 NLP Natural Language Processing
 NN Neural Networks "computer architecture inspired by the human brain"

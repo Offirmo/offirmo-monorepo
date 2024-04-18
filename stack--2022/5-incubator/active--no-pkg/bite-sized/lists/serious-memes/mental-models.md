@@ -51,6 +51,7 @@ creativity -- begins at the edge: Change starts away from the spotlight. Then, i
 critical thinking +++  https://strategyu.co/critical-thinking/
 Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
+democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
 dependability https://posthog.com/founders/first-ops-hire
 differences: introvert/extrovert
 discernement -- technique de pile ou face
