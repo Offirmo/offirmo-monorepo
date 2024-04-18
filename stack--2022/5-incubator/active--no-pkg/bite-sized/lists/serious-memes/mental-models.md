@@ -1,16 +1,18 @@
++++ https://thewokesalaryman.com/
 -- https://fs.blog/mental-models/
 -- tool https://explorer.globe.engineer/
-“The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.
+1 or 2 way door
+12 steps
+5 Harsh Truths for Success from Linus Torvalds https://medium.com/codex/5-harsh-truths-from-linus-torvalds-406ab20cea02
+5 regrets of dying
+80/20 rule (Pareto)
 [ ] AAA TODO https://flinkliv.com/
 [ ] AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 [ ] https://amir.rachum.com/mental-models/
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
-1 or 2 way door
-5 Harsh Truths for Success from Linus Torvalds https://medium.com/codex/5-harsh-truths-from-linus-torvalds-406ab20cea02
-5 regrets of dying
-80/20 rule (Pareto)
 affirmative action?
 agile "what the client wanted"
+alcohol https://podcastnotes.org/huberman-lab/episode-86-what-alcohol-does-to-your-body-brain-health-huberman-lab/  https://www.soberonadrunkplanet.com/
 alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
@@ -64,7 +66,6 @@ elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
 emotionally secure https://www.cnbc.com/2024/01/03/harvard-psychologist-if-you-answer-yes-to-any-of-these-questions-youre-more-emotionally-secure-than-most-people.html
 English
-être heureux n'est pas nécessairement confortable
 every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 excuses vs. solutions
@@ -74,6 +75,7 @@ Faustian Bargain: A man once sold his soul to a demon in exchange for knowledge.
 fear of missing out (FOMO)
 fear, uncertainty, death (FUD)
 femme/homme enfant https://www.wengood.com/fr/developpement-personnel/se-connaitre/art-femme-enfant
+Financial Independence Retire Early (FIRE) https://www.reddit.com/r/financialindependence/
 fire
 first practice what you preach
 first principles https://fs.blog/first-principles/
@@ -89,7 +91,7 @@ good life questions https://radreads.co/10k-questions/
 Goodhart’s Law = When a measure becomes a target, it ceases to be a good measure. One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
 grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
-growth mindset
+growth mindset  https://www.khanacademy.org/college-careers-more/learnstorm-growth-mindset-activities-us/high-school-activities/activity-1-the-truth-about-your-brain-hs-02/a/the-truth-about-your-brain-part-1-3  https://www.youtube.com/watch?v=-71zdXCMU6A
 hangry = before lunch (vs. after)
 happiness is a skill
 happiness score https://www.ted.com/talks/dominic_price_what_s_your_happiness_score
@@ -110,6 +112,7 @@ infotainment
 ingroup/outgroup
 intrinsic/extrinsic motivation https://www.swyx.io/js-tooling
 inversion: Avoiding stupidity is easier than trying to be brilliant. Instead of asking, “How can I help my company?” you should ask, “What’s hurting my company the most and how can I avoid it?” Identify obvious failure points, and steer clear of them.
+investing 
 invisible hand: Markets aggregate knowledge. Rising prices signal falling supply or increased demand, which incentivizes an increase in production. The opposite is true for falling prices. Prices are a signal wrapped in an incentive.
 IQ -- it exists, it's measurable
 irredentism https://www.reddit.com/r/history/comments/sji919/is_there_a_term_for_this_phenomenon/
@@ -129,11 +132,12 @@ leadership -- know when to fight
 leadership -- must never ask sth they couldn't do
 leadership -- timeless lessons https://www.linkedin.com/pulse/back-future-timeless-lessons-leadership-jo-owen
 learning machines "I constantly see people rise in life who are not the smartest, sometimes not even the most diligent, but they are learning machines" (Munger https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger)
-leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 legibility: We are blind to what we cannot measure. Not everything that counts can be measured, and not everything that can be measured counts. But people manage what they can measure, so society repeats the same mistakes.
+leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 life isn't fair https://www.linkedin.com/pulse/lifell-kill-ya-allen-white
 linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_relativity
 living the good life
+Logical Problem of Evil https://christianity.stackexchange.com/questions/100110/what-are-christian-responses-to-the-logical-problem-of-evil
 look for Things That Don’t Make Sense: The world always makes sense. But it can be confusing. When it is, your model of the world is wrong. So, things that don’t make sense are a learning opportunity. Big opportunities won’t make sense until it’s too late to profit from them.
 love = wanting the best
 Maslow's pyramid
@@ -168,11 +172,13 @@ pattern / antipattern
 pay it forward
 penny Problem Gap: Economists assume demand is linear, but people’s behavior totally changes once an action costs money. If the inventors of the Internet had known about it, spam wouldn’t be such a problem. If sending an email cost you $0.001, there’d be way less spam.
 Perfect is the enemy of good https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good
+personal finance https://thewokesalaryman.substack.com/p/10-finance-revelations
 personal Knowledge Management https://fortelabs.co/blog/para/
 personal Monopoly: Corporations reward conformity, but the Internet rewards people who are unique. If you work in a creative field, strive to be the only person who does what you do. Find your own style, then run with it. Create intellectual real estate for yourself. The Internet rewards unique people. Find your unique combination of skills, interests, and personality traits. I call this a Personal Monopoly. Become the only person in the world who does what you do. Then, tell the world by sharing your knowledge.
 personal moral inventory https://domprice.me/personal-moral-inventory/
 picture the success
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
+porn
 praise in public (and private), criticize in private
 praise more than criticize
 praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism
@@ -206,6 +212,7 @@ SBI https://medium.com/pm101/the-situation-behavior-impact-feedback-framework-e2
 SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
 SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
 schadenfreude = happy ppl misfortune
+scientism
 second Law of Thermodynamics: The world tends towards disorder. That’s why your room becomes messier and messier over time. It’s also why an engine converts only ~35% of its energy into useful work. Time moves towards increasing one direction: increasing entropy.
 secrets are Hidden in Plain Sight:  Most people think of secrets as Easter eggs. They assume that if a secret is important, it’s necessarily going to be hard to find. The best ideas can come from things that are so well-known that they aren’t well-seen.
 self appreciation
@@ -257,6 +264,8 @@ trust -- confiance doit se gagner
 trust -- is earned
 trust -- takes years to earn and seconds to lose / Trust is built slowly, and lost quickly
 trust -- trust, but verify
+truth -- fully convinced vs probably https://christianity.stackexchange.com/questions/92352/believing-that-christianity-is-probably-true-vs-being-fully-convinced-that-ch
+truth -- verificationism https://christianity.stackexchange.com/a/89891
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 via Negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 voleur volé
@@ -267,3 +276,5 @@ What would you do if you weren't afraid? - Spencer Johnson
 who moved my cheese?
 wisdom
 wisdom -- a wisdom for left may not be valid for right
+être heureux n'est pas nécessairement confortable
+“The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.

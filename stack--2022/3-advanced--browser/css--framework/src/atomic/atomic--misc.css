@@ -64,11 +64,11 @@
 	-webkit-text-stroke-color: rgba(0, 0, 0, 1);
 	*/
 
-	text-shadow: black 0px 0px 10px;
+	/* TODO dynamic color */
+	/*--color: var(--o⋄color⁚bg--main--backdrop);*/
+	--color: black;
+	text-shadow: var(--color) 0px 0px 10px;
 	/*
-
-	--color: var(--o⋄color⁚bg--main--backdrop);
-
 	text-shadow:
 		1px  1px 0 var(--color),
 		1px -1px 0 var(--color),
@@ -78,4 +78,8 @@
 		0px  1px 0 var(--color),
 		-1px  0px 0 var(--color),
 		0px -1px 0 var(--color);*/
+}
+
+.o⋄img-visible-on-any-background {
+	filter: var(--o⋄filter⁚img-visible-on-any-background);
 }

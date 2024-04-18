@@ -67,6 +67,9 @@ function _validate_url_structure(possible_url: string): string {
 	const url‿obj = new URL(possible_url)
 	url‿obj.searchParams.sort()
 
+	// TODO check forbidden domains
+	// https://www.rfc-editor.org/rfc/rfc2606.html#section-2
+
 	return (url‿obj.origin == 'null' ? url‿obj.protocol : url‿obj.origin) + url‿obj.pathname + url‿obj.search + url‿obj.hash
 }
 

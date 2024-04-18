@@ -1,10 +1,11 @@
-[ ] +++ https://github.com/donnemartin/system-design-primer
-[ ] +++ https://lethain.com/distributed-systems-vocabulary/
 1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
 1% rule -- lurk, lurker
 1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
 12 factors https://12factor.net/
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
+[ ] +++ https://github.com/donnemartin/system-design-primer
+[ ] +++ https://lethain.com/distributed-systems-vocabulary/
+[ ] architecture https://engineering.fb.com/2020/08/17/production-engineering/async/
 [ ] kubernetes
 [ ] paper "Adding new protocols to the cloud native ecosystem" https://docs.google.com/document/d/13wFFC7vIdB2hkxdyT0dSiGgkZTXCDDBeW_GBPqy9Jy0/edit
 [ ] paper https://research.google/pubs/large-scale-cluster-management-at-google-with-borg/
@@ -14,6 +15,7 @@
 [ ] paper https://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf
 [ ] paper https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf
 [ ] paper https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf
+[ ] real case https://deno.com/blog/how-we-built-jsr
 [ ] research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
 access control
 ACID -- 1 Atomicity "all or nothing"
@@ -37,6 +39,7 @@ Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 Backends For Frontends -- composable https://bff-patterns.com/
 bloom Filters
 blue/green deployment
+cache -- counter cache https://thoughtbot.com/blog/what-is-counter-cache
 caching
 CAP https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
 CAP Theorem -- Availability = Every request receives a (non-error) response, without the guarantee that it contains the most recent write
@@ -46,7 +49,6 @@ CAP Theorem -> see also PACELC theorem
 capacity planning
 cascading failures
 cascading failures -- exponential backoff + jitter +
-gracefun degradation = ex. of batteries in flashlight
 change management
 chaos monkey
 cloud native = leverages the full capabilities of the cloud, beyond storage and hosting, including elastic scaling of highly available resources. Functionality is updated automatically no manual effort required
@@ -55,10 +57,13 @@ compute
 confidentiality
 consistent Hashing
 containers
+containers -- images -- golden = pre-configured and optimised container images that serve as standardised and reusable foundations for building other images (apps, services...)
+containers -- images -- Red Hat Universal Base Image (UBI) = minimal, freely redistributable base image for containerised applications, providing a consistent foundation with essential packages from Red Hat Enterprise Linux (RHEL) to build and deploy reliable and secure containers https://developers.redhat.com/products/rhel/ubi
 Content Delivery Network (CDN) ex. CloudFront
 cron
 database
 database -- indexes
+database -- N+1 query problem = naive, inefficient query https://thoughtbot.com/blog/what-is-counter-cache
 database -- No-SQL and their applications
 database -- partitioning/Sharding
 database -- SQL
@@ -79,7 +84,7 @@ event-driven architecture = uses events to trigger and communicate between decou
 fanout
 finops
 flux architecture
-graceful degradation
+graceful degradation = ex. of batteries in flashlight
 headless = Front-end presentation is completely decoupled from back-end logic/CMS. Designed to be channel, programming language, and framework agnostic https://jamstack.org/glossary/headless-technology/
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
 infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-code-tools

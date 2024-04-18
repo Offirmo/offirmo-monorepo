@@ -5,16 +5,21 @@ import 'react'
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
 import useViewportGeometry from '../../../../to-export-to-own-package/use-viewport-geometry'
-import IconUrl from './icon2.png'
+import SettingsIconUrl from './icon2.png'
+import HelpIconUrl from './noun-question-1157126.svg'
 
 /////////////////////////////////////////////////
 
-function on_click() {
+function on_clickⵧsettings() {
 	alert('TODO settings')
+}
+function on_clickⵧhelp() {
+	alert('TODO help')
 }
 
 function Settings() {
 	console.log('render Settings')
+
 	let styles: React.CSSProperties = {
 		// default, mobile first ideal position
 		top: 'calc(var(--safe-area-inset-top) + var(--o⋄margin-from-screen-border--touch))',
@@ -37,21 +42,40 @@ function Settings() {
 		// we need to put that out of the user's way...
 	}
 
-	return (
-		<button key="settings" className={'o⋄unstyled'} style={{
+	return (<>
+		<div className='o⋄flex--directionꘌcolumn' style={{
 			position: 'absolute',
-			minHeight: 'var(--o⋄min-target-size)',
-			minWidth: 'var(--o⋄min-target-size)',
+			direction: 'rtl',
 			...styles,
-		}} onClick={on_click}>
-			<img src={IconUrl} className={'black-icon-to-color--fg'} alt="" style={{
-				backgroundColor: 'transparent',
-				width: 'var(--o⋄icon-size--chrome)',
-				height: 'var(--o⋄icon-size--chrome)',
-				margin: 'auto',
-			}}/>
-		</button>
-	)
+		}}>
+			<button key="settings" onClick={on_clickⵧsettings} className={'o⋄unstyled'} style={{
+				minHeight: 'var(--o⋄min-target-size)',
+				minWidth: 'var(--o⋄min-target-size)',
+			}}>
+				<img src={SettingsIconUrl} className='black-icon-to-color--fg o⋄img-visible-on-any-background' alt="" style={{
+					backgroundColor: 'transparent',
+					width: 'var(--o⋄icon-size--chrome)',
+					height: 'var(--o⋄icon-size--chrome)',
+					margin: 'auto',
+					filter: 'var(--o⋄filter⁚black-icon-to-color--fg) var(--o⋄filter⁚img-visible-on-any-background)',
+				}}/>
+			</button>
+
+			<button key="help" onClick={on_clickⵧhelp} className={'o⋄unstyled'} style={{
+				minHeight: 'var(--o⋄min-target-size)',
+				minWidth: 'var(--o⋄min-target-size)',
+			}}>
+				<img src={HelpIconUrl} className='black-icon-to-color--fg o⋄img-visible-on-any-background' alt="" style={{
+					backgroundColor: 'transparent',
+					width: 'calc(var(--o⋄icon-size--chrome) - 2px)',
+					height: 'calc(var(--o⋄icon-size--chrome) - 2px)',
+					margin: 'auto',
+					filter: 'var(--o⋄filter⁚black-icon-to-color--fg) var(--o⋄filter⁚img-visible-on-any-background)',
+				}}/>
+			</button>
+		</div>
+
+	</>)
 }
 
 /////////////////////////////////////////////////
