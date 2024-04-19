@@ -6,5 +6,6 @@ earliest -- 05 marketable product = packaged?
 earliest -- 06 "app store"able product
 earliest -- 07 "pro" product? scalable? (entitlements, billing, compliance...)
 earliest https://every.to/p/the-most-advanced-yet-acceptable-products-win
-try/test/graduate
 Most Advanced Yet Acceptable (MAYA) UX concept
+Next Larger Context = always design a thing by considering it in its next larger context — a chair in a room, a room in a house, a house in a city... https://skamille.medium.com/the-next-larger-context-3970afaa8fb2
+try/test/graduate

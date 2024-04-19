@@ -6,7 +6,10 @@
 [ ] +++ https://github.com/donnemartin/system-design-primer
 [ ] +++ https://lethain.com/distributed-systems-vocabulary/
 [ ] architecture https://engineering.fb.com/2020/08/17/production-engineering/async/
+[ ] https://carloarg02.medium.com/how-i-scaled-amazons-load-generator-to-run-on-1000s-of-machines-4ca8f53812cf
+[ ] https://www.infoq.com/news/2024/01/discord-midjourney-performance/
 [ ] kubernetes
+[ ] microservice -- design -- https://www.salesforce.com/blog/microservice-design-principles/
 [ ] paper "Adding new protocols to the cloud native ecosystem" https://docs.google.com/document/d/13wFFC7vIdB2hkxdyT0dSiGgkZTXCDDBeW_GBPqy9Jy0/edit
 [ ] paper https://research.google/pubs/large-scale-cluster-management-at-google-with-borg/
 [ ] paper https://research.google/pubs/the-google-file-system/
@@ -23,6 +26,7 @@ ACID -- 2 Consistency "valid state"
 ACID -- 3 Isolation "independent transactions"
 ACID -- 4 Durability "once committed, always committed"
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
+API gateway
 API-First = Built with APIs from the ground up. All functionality is exposed through an API
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
 architecture -- LAMP
@@ -41,6 +45,7 @@ bloom Filters
 blue/green deployment
 cache -- counter cache https://thoughtbot.com/blog/what-is-counter-cache
 caching
+canary releasing
 CAP https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
 CAP Theorem -- Availability = Every request receives a (non-error) response, without the guarantee that it contains the most recent write
 CAP Theorem -- Consistency = Every read receives the most recent write or an error
@@ -61,12 +66,14 @@ containers -- images -- golden = pre-configured and optimised container images t
 containers -- images -- Red Hat Universal Base Image (UBI) = minimal, freely redistributable base image for containerised applications, providing a consistent foundation with essential packages from Red Hat Enterprise Linux (RHEL) to build and deploy reliable and secure containers https://developers.redhat.com/products/rhel/ubi
 Content Delivery Network (CDN) ex. CloudFront
 cron
+data retrieval
 database
 database -- indexes
 database -- N+1 query problem = naive, inefficient query https://thoughtbot.com/blog/what-is-counter-cache
 database -- No-SQL and their applications
 database -- partitioning/Sharding
 database -- SQL
+Database per Microservice
 DDOS (incl. self)
 design -- 01b clarifying questions
 design -- 01b requirements -> including CAP
@@ -81,11 +88,13 @@ efficiency
 emergency response
 event streaming https://kafka.apache.org/intro
 event-driven architecture = uses events to trigger and communicate between decoupled services, common with microservices
+Externalized configuration
 fanout
 finops
 flux architecture
 graceful degradation = ex. of batteries in flashlight
 headless = Front-end presentation is completely decoupled from back-end logic/CMS. Designed to be channel, programming language, and framework agnostic https://jamstack.org/glossary/headless-technology/
+hypermedia
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
 infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-code-tools
 ingress egress
@@ -103,6 +112,7 @@ load balancer
 load balancer -- google sth
 load balancer -- scope, ex. region "AWS ELB Elastic Load Balancer"
 load shedding
+Log consolidation
 Mean Time Between Failures (MTBF)
 mean time to resolution/repair (MTTR) https://www.dataset.com/blog/mean-time-to-repair/
 message queue ex. AWS SQS
@@ -113,6 +123,13 @@ messaging https://www.enterpriseintegrationpatterns.com/patterns/messaging/
 metrics layer -- 01 system = CPU, memory, disk...
 metrics layer -- 02 application = queues, timing (DB calls), flow, cache hit rate...
 metrics layer -- 03 business = usage and core actions
+microservice -- design -- IDEALS -- 01 Interface segregation = 
+microservice -- design -- IDEALS -- 02 Deployability (is on you) = 
+microservice -- design -- IDEALS -- 03 Event-driven = event-driven microservices are more likely to meet the scalability and performance requirements
+microservice -- design -- IDEALS -- 04 Availability over consistency = see CAP theorem
+microservice -- design -- IDEALS -- 05 Loose coupling = facade, adapter, wrapper
+microservice -- design -- IDEALS -- 06 Single responsibility =
+microservice -- design -- IDEALS https://www.infoq.com/articles/microservices-design-ideals/  https://www.lokajittikayatray.com/post/the-ideals-principles-every-microservice-developer-should-know  https://www.avenga.com/magazine/microservice-architecture/
 middleware https://en.wikipedia.org/wiki/Middleware_(distributed_applications)
 mitigations: code rollback, data rollback, degrade, upsize, blocklist, drain, quarantine https://www.oreilly.com/content/generic-mitigations/
 monitoring
@@ -158,8 +175,10 @@ scaling ~ elasticity
 security
 serverless
 service
+service = software functionality https://en.wikipedia.org/wiki/Service_(systems_architecture)
 service availability
 service level objectives (SLO) https://sre.google/resources/practices-and-processes/art-of-slos/ https://sre.google/resources/
+Service mesh
 service monitoring -- Error budget = starts at 1 - SLO and declines as the actual performance misses the SLO
 service monitoring -- Service-level indicator (SLI) = a measurement of performance
 service monitoring -- Service-level objective (SLO) = a statement of desired performance

@@ -76,6 +76,9 @@ mechanics -- fog of war
 mechanics -- gacha (meh)
 mechanics -- housing
 mechanics -- inventory, inventory management
+mechanics -- invocation
+mechanics -- mount, flying mount
+mechanics -- pet
 mechanics -- phrase
 mechanics -- psychological attacks
 mechanics -- puzzles
