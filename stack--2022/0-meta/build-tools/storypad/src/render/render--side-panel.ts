@@ -1,14 +1,15 @@
-import { Immutable } from '../deps/immutable'
+import { Immutable } from '../deps/@offirmo-private/ts-types/immutable'
 import { isꓽStoryEntry, isꓽStoryFolder, State, StoryId } from '../state/types'
 import { MAIN_IFRAME_QUERYPARAMS } from '../consts'
-import { getꓽcurrent_url__cleaned } from '../services/env'
+import { getꓽcurrent_urlⵧcleaned } from '../services/env'
+import { getꓽstoryⵧcurrent } from '../state/selectors'
 
-function getꓽmain_iframe_url(state: Immutable<State>, explicit_id: StoryId = state.current_story‿id): string {
+function getꓽmain_iframe_url(state: Immutable<State>, explicit_id: StoryId = getꓽstoryⵧcurrent(state)): string {
 	const sp = new URLSearchParams({
 		[MAIN_IFRAME_QUERYPARAMS.story_id]: explicit_id,
 	})
 
-	return getꓽcurrent_url__cleaned() + '?' + sp.toString()
+	return getꓽcurrent_urlⵧcleaned() + '?' + sp.toString()
 }
 
 
@@ -52,7 +53,7 @@ function _append_folder(state, parent_elt, tree, path) {
 function _append_leaf(state, parent_elt, story, path) {
 	let li_elt = document.createElement('li')
 	const key = path.slice(-1)[0]
-	li_elt.innerHTML = `<a href="${get_main_iframe_url(state, story.id)}">${key}</a>`
+	li_elt.innerHTML = `<a href="${getꓽmain_iframe_url(state, story.id)}">${key}</a>`
 	parent_elt.appendChild(li_elt)
 }
 

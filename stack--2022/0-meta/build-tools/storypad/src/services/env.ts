@@ -1,4 +1,4 @@
-export function getꓽcurrent_url__cleaned(): string {
+export function getꓽcurrent_urlⵧcleaned(): string {
 	const location = document.location
 	return location.origin + location.pathname
 }

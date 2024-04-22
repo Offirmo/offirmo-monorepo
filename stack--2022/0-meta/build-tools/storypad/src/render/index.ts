@@ -1,29 +1,30 @@
-import { Immutable } from '../deps/immutable'
+import { Immutable } from '../deps/@offirmo-private/ts-types/immutable'
 
 import { State, StoryId } from '../state/types'
 
 import { renderⵧstory } from './render--story'
 import { renderⵧside_panel } from './render--side-panel'
 import { LS_KEYS, MAIN_IFRAME_QUERYPARAMS } from '../consts'
-import { getꓽcurrent_url__cleaned } from '../services/env'
+import { getꓽcurrent_urlⵧcleaned } from '../services/env'
+import { getꓽstoryⵧcurrent } from '../state/selectors'
 
 
-function getꓽmain_iframe_url(state: Immutable<State>, explicit_id: StoryId = state.current_story‿id): string {
+function getꓽmain_iframe_url(state: Immutable<State>, explicit_id: StoryId = getꓽstoryⵧcurrent(state)): string {
 	const sp = new URLSearchParams({
 		[MAIN_IFRAME_QUERYPARAMS.story_id]: explicit_id,
 	})
 
-	return getꓽcurrent_url__cleaned() + '?' + sp.toString()
+	return getꓽcurrent_urlⵧcleaned() + '?' + sp.toString()
 }
 
+type Url‿str = string
 
 function render(state: Immutable<State>) {
 	console.log('render()', { state })
 
 	if ( window.location !== window.parent.location ) {
 		// we're in an iframe -> it's the story
-		renderⵧstory(state)
-		return
+		return renderⵧstory(state)
 	}
 
 	// TODO better logic
@@ -39,15 +40,15 @@ function render(state: Immutable<State>) {
 
 	document.body.appendChild(iframe_elt)
 
-
 	document.body.addEventListener('click', function(e) {
-		if (e.target?.href) {
+		const href: Url‿str = (e as any).target?.href // TODO type properly
+		if (href) {
 			e.preventDefault()
 
-			iframe_elt.src = e.target.href
+			iframe_elt.src = href
 
 			try {
-				localStorage.setItem(LS_KEYS.current_story_id, (new URL(e.target.href)).searchParams.get(MAIN_IFRAME_QUERYPARAMS.story_id))
+				localStorage.setItem(LS_KEYS.current_story_id, (new URL(href)).searchParams.get(MAIN_IFRAME_QUERYPARAMS.story_id))
 			}
 			catch { /* ignore */}
 		}

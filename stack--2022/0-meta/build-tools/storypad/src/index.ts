@@ -1,13 +1,13 @@
 import assert from 'tiny-invariant'
-import { Immutable } from './deps/immutable'
+import { Immutable } from './deps/@offirmo-private/ts-types/immutable'
 
 import { UserConfig } from './types.js'
 import { LS_KEYS, MAIN_IFRAME_QUERYPARAMS } from './consts'
 
 import {
 	create,
-	set_config,
-	register_storiesⵧfrom_glob,
+	setꓽconfig,
+	registerꓽstoriesⵧfrom_glob,
 	enrich_state_from_local_storage,
 	enrich_state_from_query_parameters,
 	enrich_state_from_env,
@@ -16,15 +16,15 @@ import { render } from './render'
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export function start_storypad(stories_glob: Immutable<any>, config?: Immutable<UserConfig>) {
+export function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable<UserConfig>) {
 	console.group(`Starting storypad…`)
 	console.log('config =', config)
 	console.log('glob =', stories_glob)
 
 	let state = create()
-	state = set_config(state, config)
+	state = setꓽconfig(state, config)
 
-	state = register_storiesⵧfrom_glob(state, stories_glob)
+	state = registerꓽstoriesⵧfrom_glob(state, stories_glob)
 
 	state = enrich_state_from_local_storage(state)
 	state = enrich_state_from_query_parameters(state)
@@ -36,6 +36,6 @@ export function start_storypad(stories_glob: Immutable<any>, config?: Immutable<
 		render(state)
 	}, 1)
 }
-export default start_storypad
+export default startꓽstorypad
 
 ////////////////////////////////////////////////////////////////////////////////////

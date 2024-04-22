@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '../deps/immutable'
-import { createꓽgraphⵧfile_system } from '../deps/@offirmo-private/state--graph.js'
+import { Immutable } from '../deps/@offirmo-private/ts-types/immutable'
+//import { createꓽgraphⵧfile_system } from '../deps/@offirmo-private/state--graph.js'
 
 import {
 	UserConfig,
@@ -16,15 +16,15 @@ import {
 	StoryFolder,
 } from './types'
 
-
+/////////////////////////////////////////////////
 
 const SEP = 'Ⳇ'
 const SEP_FOR_IDS = ':'
 const ROOT_ID = '╣ROOT╠'
 
 ////////////////////////////////////////////////////////////////////////////////////
-
-export function create(): Immutable<State> {
+// init
+function create(): Immutable<State> {
 	return {
 		config: {
 			root_title: 'Stories',
@@ -32,23 +32,12 @@ export function create(): Immutable<State> {
 		},
 		stories_by_id: {},
 		folders_by_id: {},
-		current_story‿id: undefined,
-		graph: createꓽgraphⵧfile_system(),
+		current_story‿uid: undefined,
+		//graph: createꓽgraphⵧfile_system(),
 	}
 }
 
-export function set_current_story(state: Immutable<State>, story_id: StoryId): Immutable<State> {
-	state = {
-		...state,
-		current_story‿id: story_id,
-	}
-
-	state = folderⵧexpand(state, state.current_story‿id!)
-
-	return state
-}
-
-export function set_config(state: Immutable<State>, config: Immutable<UserConfig> | undefined): Immutable<State> {
+function setꓽconfig(state: Immutable<State>, config: Immutable<UserConfig> | undefined): Immutable<State> {
 	return {
 		...state,
 		config: {
@@ -58,39 +47,42 @@ export function set_config(state: Immutable<State>, config: Immutable<UserConfig
 	}
 }
 
-export function register_story(state: Immutable<State>, story: StoryEntry): Immutable<State> {
-	state = {
+/////////////////////////////////////////////////
+// setup
+
+export function registerꓽstory(state: Immutable<State>, story: StoryEntry): Immutable<State> {
+	/*state = {
 		graph:
-	}
-	assert(!state.stories_by_id[story.id], `story should not already exist! "${story.id}"`)
+	}*/
+	assert(!state.stories_by_id[story.uid], `story should not already exist! "${story.uid}"`)
 	return {
 		...state,
 		stories_by_id: {
 			...state.stories_by_id,
-			[story.id]: story,
+			[story.uid]: story,
 		},
-		current_story‿id: state.current_story‿id || story.id,
+		current_story‿uid: state.current_story‿uid || story.uid,
 	}
 }
 
-export function register_folder(state: Immutable<State>, folder: StoryFolder): Immutable<State> {
-	assert(!state.folders_by_id[folder.id], `folder should not already exist! "${folder.id}"`)
+export function registerꓽfolder(state: Immutable<State>, folder: StoryFolder): Immutable<State> {
+	assert(!state.folders_by_id[folder.uid], `folder should not already exist! "${folder.uid}"`)
 	return {
 		...state,
 		folders_by_id: {
 			...state.folders_by_id,
-			[folder.id]: folder,
+			[folder.uid]: folder,
 		},
 	}
 }
 
 const DEBUGⵧglob_parsing = true
 
-export function register_storiesⵧfrom_glob(state: Immutable<State>, stories_glob: Immutable<Glob>): Immutable<State> {
-	DEBUGⵧglob_parsing && console.group(`register_storiesⵧfrom_glob()`)
+export function registerꓽstoriesⵧfrom_glob(state: Immutable<State>, stories_glob: Immutable<Glob>): Immutable<State> {
+	DEBUGⵧglob_parsing && console.group(`registerꓽstoriesⵧfrom_glob()`)
 	DEBUGⵧglob_parsing && console.log(stories_glob)
 
-	state = _register_storiesⵧfrom_glob(state, stories_glob, [])
+	state = _registerꓽstoriesⵧfrom_glob(state, stories_glob, [])
 
 	// now that we registered the stories, create their corresponding folders
 	const all_folder_ids = new Set<string>()
@@ -131,7 +123,7 @@ export function register_storiesⵧfrom_glob(state: Immutable<State>, stories_gl
 				is_expanded: true, // by default, all open!
 				children: {},
 			}
-			state = register_folder(state, child)
+			state = registerꓽfolder(state, child)
 			parent.children[last_segment] = child
 		})
 		console.log(state.folders_by_id)
@@ -148,11 +140,7 @@ export function register_storiesⵧfrom_glob(state: Immutable<State>, stories_gl
 
 //function _mkdirp(state: Immutable<State>, path: string[]): Immutable<State> {
 
-
-
 /*
-
-
 	// MODIFICATION IN PLACE TODO improve
 	let root_folder = state.folders_by_id[ROOT_ID]! as StoryFolder
 
@@ -173,8 +161,9 @@ export function register_storiesⵧfrom_glob(state: Immutable<State>, stories_gl
  */
 
 
-function _register_storiesⵧfrom_glob(state: Immutable<State>, stories_glob: Glob, parent_path: string[] = []): Immutable<State> {
-	DEBUGⵧglob_parsing && console.group(`_register_stories_from_glob(${parent_path.join(SEP)})`)
+function _registerꓽstoriesⵧfrom_glob(state: Immutable<State>, stories_glob: Glob, parent_path: string[] = []): Immutable<State> {
+	DEBUGⵧglob_parsing && console.group(`_registerꓽstories_from_glob(${parent_path.join(SEP)})`)
+
 	Object.keys(stories_glob).forEach(key => {
 		const blob = stories_glob[key]
 		if (!blob) {
@@ -182,10 +171,10 @@ function _register_storiesⵧfrom_glob(state: Immutable<State>, stories_glob: Gl
 		}
 
 		if (isꓽModule(blob)) {
-			state = _register_storiesⵧfrom_module(state, blob, [ ...parent_path, key ])
+			state = _registerꓽstoriesⵧfrom_module(state, blob, [ ...parent_path, key ])
 		}
 		else {
-			state = _register_storiesⵧfrom_glob(state, blob, [ ...parent_path, key ])
+			state = _registerꓽstoriesⵧfrom_glob(state, blob, [ ...parent_path, key ])
 		}
 	})
 
@@ -193,8 +182,8 @@ function _register_storiesⵧfrom_glob(state: Immutable<State>, stories_glob: Gl
 
 	return state
 }
-function _register_storiesⵧfrom_module(state: Immutable<State>, story_module: Module, parent_path: string[] = []): Immutable<State> {
-	DEBUGⵧglob_parsing && console.groupCollapsed(`_register_stories_from_module(${parent_path.join(SEP)}.[js/ts/...])`)
+function _registerꓽstoriesⵧfrom_module(state: Immutable<State>, story_module: Module, parent_path: string[] = []): Immutable<State> {
+	DEBUGⵧglob_parsing && console.groupCollapsed(`_registerꓽstories_from_module(${parent_path.join(SEP)}.[js/ts/...])`)
 
 	const module = story_module.ts
 
@@ -214,7 +203,7 @@ function _register_storiesⵧfrom_module(state: Immutable<State>, story_module: 
 		}
 		DEBUGⵧglob_parsing && console.log(`new story entry: ${id}`, story_entry)
 		assert(isꓽStoryEntry(story_entry), `freshly created ${id} is not a story entry??`)
-		state = register_story(state, story_entry)
+		state = registerꓽstory(state, story_entry)
 	})
 
 	DEBUGⵧglob_parsing && console.groupEnd()
@@ -228,7 +217,7 @@ export function enrich_state_from_local_storage(state: Immutable<State>): Immuta
 	try {
 		const id = localStorage.getItem(LS_KEYS.current_story_id)
 		if (id)
-			state = set_current_story(state, id)
+			state = setꓽcurrent_story(state, id)
 	}
 	catch { /* ignore *}*/
 	return {
@@ -237,7 +226,7 @@ export function enrich_state_from_local_storage(state: Immutable<State>): Immuta
 }
 
 export function enrich_state_from_query_parameters(state: Immutable<State>): Immutable<State> {
-
+	// TODO
 	return {
 		...state,
 	}
@@ -246,12 +235,26 @@ export function enrich_state_from_query_parameters(state: Immutable<State>): Imm
 export function enrich_state_from_env(state: Immutable<State>): Immutable<State> {
 	// TODO ex. if small window, don't show the UI etc.
 
-	if (state.current_story‿id) {
-		state = folderⵧexpand(state, state.current_story‿id)
+	if (state.current_story‿uid) {
+		state = folderⵧexpand(state, state.current_story‿uid)
 	}
 
 	return state
 }
+
+/////////////////////////////////////////////////
+
+export function setꓽcurrent_story(state: Immutable<State>, story_id: StoryId): Immutable<State> {
+	state = {
+		...state,
+		current_story‿uid: story_id,
+	}
+
+	state = folderⵧexpand(state, state.current_story‿uid!)
+
+	return state
+}
+
 
 // id can be story or folder, don't mind
 export function folderⵧexpand(state: Immutable<State>, id: StoryId): Immutable<State> {
@@ -276,4 +279,11 @@ export function folderⵧexpand(state: Immutable<State>, id: StoryId): Immutable
 	} while(path.length)
 
 	return state
+}
+
+/////////////////////////////////////////////////
+
+export {
+	create,
+	setꓽconfig,
 }

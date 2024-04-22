@@ -1,13 +1,14 @@
-import { FileSystem } from '../deps/@offirmo-private/state--graph.js'
+//import { FileSystem } from '../deps/@offirmo-private/state--graph.js'
 import {
 	UserConfig,
 	Story, isꓽStory,
 	Meta,
 } from '../types'
 
+/////////////////////////////////////////////////
+
 export type StoryId = string
 export type FolderId = string
-
 
 export interface StoryEntry {
 	uid: StoryId
@@ -41,7 +42,7 @@ export interface State {
 		[k: FolderId]: StoryFolder,
 	}
 
-	current_story‿id: StoryId | undefined
+	current_story‿uid: StoryId | undefined
 
-	graph: FileSystem
+	//graph: FileSystem
 }

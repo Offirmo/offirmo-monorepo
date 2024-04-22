@@ -9,12 +9,26 @@
 	"source": "src/index.ts",
 
 	"dependencies": {
-		"@storybook/csf": "^0",
 		"tiny-invariant": "^1"
 	},
 	"optionalDependencies": {
 	},
 
 	"scripts": {
+		"clean--cache": "monorepo-script--clean-package …cache",
+		"clean--dist": "monorepo-script--clean-package …dist",
+
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"dev": "run-s clean--dist _build:dev:watch",
+
+		"_start:parcel": "parcel serve doc/demo/storypad.html --port 8080  --lazy  --no-autoinstall",
+		"demo": "npm-run-all  clean--cache  _start:parcel"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/toolbox--parcel": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2"
 	}
 }
