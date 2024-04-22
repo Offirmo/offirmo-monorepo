@@ -17,7 +17,7 @@ samp {
 	 * cf. https://stackoverflow.com/questions/38781089/font-family-monospace-monospace
 	 * (see var definition)
 	 */
-	font-family: var(--o⋄font-family--code, ui-monospace, monospace, monospace);
+	font-family: var(--o⋄font-family--code);
 
 	/* Now re-enable the font resizing with proper css
 	 * (we tweak the value)

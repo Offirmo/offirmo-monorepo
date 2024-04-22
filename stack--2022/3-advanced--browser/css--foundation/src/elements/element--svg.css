@@ -1,40 +1,30 @@
-
-/* As SVG does not provide a default visual style for links,
- * it's considered best practice to add some
- * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a#example
- */
-
-/* Necessary to select only SVG <a> elements, and not also HTML's
+/* Necessary to select only SVGelements, and not also HTML's
  * Commented due to Parcel issue https://github.com/parcel-bundler/parcel/issues/9534
  * need to be manually inserted at the top of the final CSS or top of critical CSS
 @namespace svg url(http://www.w3.org/2000/svg);
  */
 
-/* TODO follow the HTML <a> style */
 
+/* As SVG does not provide a default visual style for links,
+ * it's considered best practice to add some
+ * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a#example
+ *
+ * @see elements--a.css
+ */
 svg|a {
-	/* copy of html <a> style */
-	color: var(--o⋄color⁚fg--link, var(--o⋄color⁚fg--link--default));
-	&:visited {
-		color: var(--o⋄color⁚fg--link--visited, var(--o⋄color⁚fg--link--visited--default));
-	}
-	&:hover,
-	&:active {
-		color: var(--o⋄color⁚fg--activity-outline, var(--o⋄color⁚fg--activity-outline--default));
-	}
-
 	/* SVG specific additional styles */
 	&:link,
 	&:visited {
 		cursor: pointer;
 	}
+
 	&, & text {
-		fill: var(--o⋄color⁚fg--link, var(--o⋄color⁚fg--link--default)); /* Even for text, SVG uses fill over color */
+		fill: var(--o⋄color⁚fg--link); /* Even for text, SVG uses fill over color */
 		text-decoration: underline;
 	}
 	&:hover,
 	&:active {
-		outline: dotted 1px var(--o⋄color⁚fg--activity-outline, var(--o⋄color⁚fg--activity-outline--default));
+		outline: dotted var(--o⋄border--thickness) var(--o⋄color⁚fg--activity-outline); /* TODO px */
 	}
 }
 

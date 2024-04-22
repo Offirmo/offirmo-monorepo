@@ -1,3 +1,4 @@
+6 Reasons Users Hate Your New Feature https://www.slicedbreaddesign.com/blog/6-reasons-users-hate-your-new-feature
 earliest -- 01 feedbackable product (EFP)
 earliest -- 02 testable product = first release that customers can actually do something with
 earliest -- 03 usable product = first release that early adopters will actually use, willingly

@@ -8,8 +8,8 @@
  * - print recipe as a tree
  */
 
-import assert from '../00vendor/tiny-invariant/index.js'
-import { Immutable } from '../00vendor/@offirmo-private/ts-types'
+import assert from 'tiny-invariant'
+import { Immutable } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 

@@ -1,20 +1,16 @@
 @import 'npm:@offirmo-private/css--reset';
 
-@import 'consts/consts--colors--defaults.css'      layer(offirmo--foundation);
-@import 'consts/consts--font-families--system.css' layer(offirmo--foundation);
-
-@import 'tokens/tokens--colors.css'                layer(offirmo--foundation);
-@import 'tokens/tokens--font-families.css'         layer(offirmo--foundation);
-@import 'tokens/tokens--sizes.css'                 layer(offirmo--foundation);
+@import 'vars--const/index.css'                    layer(offirmo--foundation);
+@import 'vars--tokens/index.css'                   layer(offirmo--foundation);
 
 @import 'elements/index.css'                       layer(offirmo--foundation);
 
 @import 'media-specific/index.css'                 layer(offirmo--foundation);
 
-@import 'misc/index.css'                           layer(offirmo--foundation);
-
 @import 'root/index.css'                           layer(offirmo--foundation);
 
+/* debug to check the correct layer stacking
+ */
 @layer offirmo--foundation {
 	.offirmo--layer--debug {
 		color: blue;

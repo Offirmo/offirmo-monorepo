@@ -1,5 +1,3 @@
-@import '../consts/consts--font-families--system.css';
-
 :root {
 	/* semantic aliases */
 	--o⋄font-family--fast_and_good_enough: var(--o⋄font-family--system--sans);

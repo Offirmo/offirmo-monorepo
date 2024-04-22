@@ -14,11 +14,11 @@
 @import 'element--svg.css';
 @import 'element--textarea.css';
 
-@import 'elements--code.css';
 @import 'elements--details.css';
 @import 'elements--h123456.css';
 @import 'elements--inputs.css';
 @import 'elements--lists.css';
+@import 'elements--monospaced.css';
 @import 'elements--replaced.css';
 @import 'elements--tables.css';
 

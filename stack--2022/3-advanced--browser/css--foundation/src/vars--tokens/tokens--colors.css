@@ -1,0 +1,78 @@
+/* TODO delete this file
+ * TODO use relative colors https://caniuse.com/?search=relative%20color   https://developer.chrome.com/blog/css-relative-color-syntax/
+ */
+
+/* This package is a "foundation",
+ * it allows some limited customization
+ * but advanced dynamic theming is better done either:
+ * - as a full override
+ * - in a dedicated package = offirmo/css-framework
+ */
+:root {
+	/* A very easy way to add personality to your site is to start with a "brand" color
+	 * (ex. facebook and twitter have their special "blue" color)
+	 * and decline it into the other colors.
+	 * It's quite easy to do arithmetic with hsl https://hslpicker.com/
+	 */
+	--o⋄color⁚brand__h: 217; /* default browser blue */
+	--o⋄color⁚brand__s: 99%;
+	--o⋄color⁚brand__l: 65%;
+
+	/* foreground color = "primary content" = text, icons etc.
+	 * we want black or quasi black
+	*/
+	--o⋄color⁚fg--main__h: var(--o⋄color⁚brand__h);
+	--o⋄color⁚fg--main__s: 100%;
+	--o⋄color⁚fg--main__l: 0%; /* 0 = full black, ~5% = slightly not full black to allow a hint of a tint */
+	--o⋄color⁚fg--main: hsl(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l));
+
+	/* background color
+	 * we want white or quasi white
+	 */
+	--o⋄color⁚bg--main__h: var(--o⋄color⁚brand__h);
+	--o⋄color⁚bg--main__s: 100%;
+	--o⋄color⁚bg--main__l: 100%; /* 100 = full white, the best bg, ~90% =  slightly not white to allow a hint of a tint */
+	--o⋄color⁚bg--main: hsl(var(--o⋄color⁚bg--main__h), var(--o⋄color⁚bg--main__s), var(--o⋄color⁚bg--main__l));
+
+	/* Slightly stronger color for headers and <strong>.
+	 * As suggested by https://jgthms.com/web-design-in-4-minutes/#color-contrast "Color & contrast"
+	 * "nice to have", can be equal to the main color without any problem.
+	 */
+	--o⋄color⁚fg--strong: hsl(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), clamp(0%, calc(var(--o⋄color⁚fg--main__l) - 10%), 20%));
+
+	/* An "accent color" is an easy way to add "that dash of visual flair to your UI"
+	 * cf. https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886 §6
+	 * It's also an easy way to style inputs.
+	 * Note: because browsers will do auto-contrast, we need to use a light accent on light mode and vice versa
+	 */
+	--o⋄color⁚fg--accent: hsl(var(--o⋄color⁚brand__h), var(--o⋄color⁚brand__s), 65%);
+
+	/* Links
+	 * @see ../elements/elements--a.css
+	 */
+	--o⋄color⁚fg--link:          var(--o⋄color⁚fg--link--default);
+	--o⋄color⁚fg--link--visited: var(--o⋄color⁚fg--link--visited--default);
+
+	/* Outline color for elements being interacted with,
+	 * ex. buttons being pressed, links being pressed/hovered.
+	 * Also used as focus ring color (if enabled).
+	 */
+	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
+
+	/* Variation of background color for code.
+	 * This is a very common pattern.
+	 * We use S = 0~5% to make a gray (desaturate) then lower the luminosity
+	 */
+	--o⋄color⁚bg--code: hsl(var(--o⋄color⁚bg--main__h), 0%, clamp(90%, calc(var(--o⋄color⁚bg--main__l) - 7%), 100%));
+
+	--o⋄color⁚bg--highlight--1: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .1); /* bg color visible on normal bg, ex. for buttons */
+	--o⋄color⁚bg--highlight--2: hsla(var(--o⋄color⁚fg--main__h), var(--o⋄color⁚fg--main__s), var(--o⋄color⁚fg--main__l), .3); /* alt, ex. for hovered/clicked buttons */
+}
+
+
+/*
+--o⋄color⁚fg--ancillary , rgba(0, 0, 0, .33)
+
+--o⋄color⁚bg--highlight--1
+--o⋄color⁚bg--highlight--2
+ */

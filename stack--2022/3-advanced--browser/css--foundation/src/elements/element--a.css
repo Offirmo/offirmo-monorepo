@@ -1,12 +1,30 @@
 /* Order is important
  * https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links
+ *
+ * doing it right is important: https://blog.mozilla.org/en/internet-culture/deep-dives/why-are-hyperlinks-blue/
+  - Optimal text accessibility with the background color and surrounding text.
+    Your design decisions shouldn’t be the reason a user can’t access content on a page.
+  - Interactive states should always be styled in your stylesheets.
+    Examples include: touch, visited, hover, active and focus. TODO
+  - Links and buttons should be large enough to tap or click.
+    You can’t be sure how people are interacting with your content on devices
+    by using styluses, fingers, mice or trackpads.
+    It’s your job to make sure your links are easy to navigate and have enough space around them.
+  - Always make sure that a hyperlink stands out from the rest of the surrounding content.
+    Sometimes that means you need an underline, or a background color,
+    or maybe just maybe, you need the color blue.
+ * Also
+  - should be able to tell an already clicked link https://mashable.com/article/google-black-links
+ * Also: As SVG does not provide a default visual style for links,
+ * it's considered best practice to add some
+ * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a#example
  */
 
-a {
+a, svg|a { /* TODO is svg|a needed? */
 	/* a color are being overwritten by the default style.
 	 * make it specific and inheritable
 	 */
-	color: var(--o⋄color⁚fg--link, var(--o⋄color⁚fg--link--default));
+	color: var(--o⋄color⁚fg--link);
 
 	/* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
 	touch-action: manipulation;
@@ -15,7 +33,7 @@ a {
 	}
 
 	&:visited {
-		color: var(--o⋄color⁚fg--link--visited, var(--o⋄color⁚fg--link--visited--default));
+		color: var(--o⋄color⁚fg--link--visited);
 	}
 
 	&:focus {
@@ -26,6 +44,6 @@ a {
 		/* There is no hover indicator on links.
 		 * Adding one is a no-brainer.
 		 */
-		color: var(--o⋄color⁚fg--activity-outline, var(--o⋄color⁚fg--activity-outline--default));
+		color: var(--o⋄color⁚fg--activity-outline);
 	}
 }

@@ -1,10 +1,10 @@
-/* Nicer HR
- * possible ideas: https://css-tricks.com/examples/hrs/
+/* TODO possible ideas: https://css-tricks.com/examples/hrs/
  */
+
 hr {
 	/* simple one TODO review*/
 	width: 100%;
 	border: none;
-	border-top: var(--o⋄border--thickness, .07rem) solid;
-	background-color: var(--o⋄color⁚fg--ancillary, rgba(0, 0, 0, .33));
+	border-top: var(--o⋄border--thickness) solid;
+	background-color: var(--o⋄color⁚fg--ancillary);
 }

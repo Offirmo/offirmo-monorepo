@@ -35,6 +35,7 @@ iframe
 iframe -- fenced
 iframe -- sandbox
 iframe -- seamless
+components https://www.componentdriven.org/
 JS -- exports https://webpack.js.org/guides/package-exports/
 perf metrics -- "9 must known" https://twitter.com/alexxubyte/status/1769748487317651962
 perf metrics -- core web vitals -- 01 Largest Contentful Paint (LCP) = loading performance. LCP must occur within 2.5 seconds of when the page first starts loading 

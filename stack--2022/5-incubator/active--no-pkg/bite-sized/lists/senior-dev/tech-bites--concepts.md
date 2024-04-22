@@ -52,9 +52,10 @@ create, read, update and delete (CRUD)
 cron https://onlineornot.com/the-complete-guide-to-cron-jobs
 crunch
 currying https://en.wikipedia.org/wiki/Currying
-database
-database -- normalization
+databases
 databases -- joins https://justinjaffray.com/joins-13-ways/
+databases -- normalization
+databases -- sharding https://www.mongodb.com/docs/manual/sharding/
 DDOS
 DDOS -- self https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
 debugger
@@ -107,6 +108,7 @@ global variable
 go
 Google, Amazon, Facebook, Apple, Microsoft (GAFAM)
 graph
+GRASP (object-oriented design) = General Responsibility Assignment Software Patterns = nine fundamental principles in object design and responsibility assignment https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)
 GRASP -- 1 Information expert = Assign responsibility to the class that has the information needed to fulfill it
 GRASP -- 2 Creator = Who creates object A? In general, Assign class B the responsibility to create object A if one, or preferably more, of the following apply...
 GRASP -- 3 Controller = A controller object is a non-user interface object responsible for receiving or handling a system event
@@ -117,9 +119,7 @@ GRASP -- 7 Polymorphism = responsibility for defining the variation of behaviors
 GRASP -- 8 Protected variations = Identify points of predicted variation or instability; assign responsibilities to create a stable interface around them
 GRASP -- 9 Pure fabrication =
 GRASP -- see also: SOLID
-GRASP (object-oriented design) = General Responsibility Assignment Software Patterns = nine fundamental principles in object design and responsibility assignment https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)
 handle
-héritage prototypal, héritage en diamant
 hoisting des vars de boucle for et switch
 hooks
 hotfix
@@ -142,6 +142,7 @@ https://itnext.io/deployment-maturity-levels-feab55c20d04
 https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
 https://www.atlassian.com/team-playbook/plays/elevator-pitch
 https://xyproblem.info/
+héritage prototypal, héritage en diamant
 IDEALS -- 1 Interface segregation
 IDEALS -- 2 Deployability (is on you)
 IDEALS -- 3 Event-driven
@@ -292,12 +293,12 @@ tree
 tree walk
 typecast
 types
+Unix philosophy (OUTDATED -> use JSON ;)) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- (much more) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- A.01 Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features"
 Unix philosophy -- A.02 Expect the output of every program to become the input to another, as yet unknown, program. Don't clutter output with extraneous information. Avoid stringently columnar or binary input formats; Don't insist on interactive input
 Unix philosophy -- A.03 Design and build software, even operating systems, to be tried early, ideally within weeks. Don't hesitate to throw away the clumsy parts and rebuild them
 Unix philosophy -- A.04 Use tools in preference to unskilled help to lighten a programming task, even if you have to detour to build the tools and expect to throw some of them out after you've finished using them
-Unix philosophy (OUTDATED -> use JSON ;)) https://en.wikipedia.org/wiki/Unix_philosophy
 uptime
 use boring technology
 use strict

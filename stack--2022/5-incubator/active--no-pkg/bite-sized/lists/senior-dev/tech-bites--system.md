@@ -7,7 +7,10 @@
 [ ] +++ https://lethain.com/distributed-systems-vocabulary/
 [ ] architecture https://engineering.fb.com/2020/08/17/production-engineering/async/
 [ ] https://carloarg02.medium.com/how-i-scaled-amazons-load-generator-to-run-on-1000s-of-machines-4ca8f53812cf
+[ ] https://medium.com/@sureshpodeti/system-design-twitter-a98e7d134634
+[ ] https://newsletter.pragmaticengineer.com/p/building-the-threads-app
 [ ] https://www.infoq.com/news/2024/01/discord-midjourney-performance/
+[ ] https://www.youtube.com/watch?v=paTtLhZFsGE
 [ ] kubernetes
 [ ] microservice -- design -- https://www.salesforce.com/blog/microservice-design-principles/
 [ ] paper "Adding new protocols to the cloud native ecosystem" https://docs.google.com/document/d/13wFFC7vIdB2hkxdyT0dSiGgkZTXCDDBeW_GBPqy9Jy0/edit
@@ -28,6 +31,7 @@ ACID -- 4 Durability "once committed, always committed"
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
 API gateway
 API-First = Built with APIs from the ground up. All functionality is exposed through an API
+architecture -- entitlement (vs. billing) = a customer’s access to a specific feature or product, within a given plan +++https://arnon.dk/why-you-should-separate-your-billing-from-entitlement/
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
 architecture -- LAMP
 architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) https://machalliance.org/mach-technology
@@ -56,6 +60,7 @@ cascading failures
 cascading failures -- exponential backoff + jitter +
 change management
 chaos monkey
+client side API gateway "egress" TODO
 cloud native = leverages the full capabilities of the cloud, beyond storage and hosting, including elastic scaling of highly available resources. Functionality is updated automatically no manual effort required
 compliance
 compute
@@ -83,13 +88,29 @@ design -- 02c scalability = sharding method?
 design -- 03 high level diagram (HLD)
 destructive engineering = kill and get strong in response
 DevOps
+distributed computing -- fallacies -- 1 The network is reliable
+distributed computing -- fallacies -- 2 Latency is zero
+distributed computing -- fallacies -- 3 Bandwidth is infinite
+distributed computing -- fallacies -- 4 The network is secure
+distributed computing -- fallacies -- 5 Topology doesn't change
+distributed computing -- fallacies -- 6 There is one administrator
+distributed computing -- fallacies -- 7 Transport cost is zero
+distributed computing -- fallacies -- 8 The network is homogeneous
+distributed computing -- fallacies https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
 distributed queues
 efficiency
 emergency response
 event streaming https://kafka.apache.org/intro
 event-driven architecture = uses events to trigger and communicate between decoupled services, common with microservices
 Externalized configuration
-fanout
+failure modes -- arbitrary
+failure modes -- crash = no longer responding (= full omission)
+failure modes -- omission = never send a response OR never receive a request (= timing = infinite late)
+failure modes -- response
+failure modes -- timing (perf) = outside the expected time interval (usually = too slow BUT rare cases of too fast, following an upgrade for ex.)
+failure modes https://medium.com/baseds/modes-of-failure-part-1-6687504bfed6
+fan-out https://www.pubnub.com/guides/what-is-fan-out-software/
+fault tolerance +++https://medium.com/baseds/ready-and-available-distributed-systems-161023aca378
 finops
 flux architecture
 graceful degradation = ex. of batteries in flashlight
@@ -106,10 +127,11 @@ interview -- popular problems = Google products: Google Search, YouTube, Google 
 interview -- popular problems = Meta products: facebook, marketplace, instagram, whatsapp...
 kafka = pub/sub + store + process
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
-latency
 latency = the time that passes between an action and the resulting response
+latency https://www.a10networks.com/glossary/osi-network-model-and-types-of-load-balancers/
 load balancer
 load balancer -- google sth
+load balancer -- L4 vs L7 https://www.a10networks.com/glossary/how-do-layer-4-and-layer-7-load-balancing-differ/  https://www.nginx.com/resources/glossary/layer-4-load-balancing/
 load balancer -- scope, ex. region "AWS ELB Elastic Load Balancer"
 load shedding
 Log consolidation
@@ -137,6 +159,24 @@ monitoring "Understanding what is happening in your environment is key to mainta
 NALSD -- https://sre.google/classroom/distributed-pubsub/
 NALSD -- https://sre.google/classroom/imageserver/
 network ACL
+network model -- OSI -- Layer 1 = The physical layer, as with TCP/IP, provides the physical connection to the network and defines the electrical and physical characteristics
+network model -- OSI -- Layer 2 = The datalink layer conceptually creates a point-to-point connection between network endpoints and receives and sends data to and from the network layer
+network model -- OSI -- Layer 2+1 = TCP/IP model -- layer "link"
+network model -- OSI -- Layer 3 = TCP/IP model -- layer "internet"
+network model -- OSI -- Layer 3 = TCP/IP model -- layer "transport"
+network model -- OSI -- Layer 3 = The network layer is responsible for routing data between network endpoints
+network model -- OSI -- Layer 4 = The transport layer ensures delivery and quality-of-service functions
+network model -- OSI -- Layer 5 = The session layer creates, maintains, and terminates sessions between network endpoints
+network model -- OSI -- Layer 6 = The presentation layer converts data streams into formats that can be handled by the lower layers and can also compress/decompress and encrypt/decrypt data
+network model -- OSI -- Layer 7 = The application layer provides access to the services provided by the lower layers
+network model -- OSI -- Layer 7+6+5 = TCP/IP model -- layer "application"
+network model -- OSI https://www.a10networks.com/glossary/osi-network-model-and-types-of-load-balancers/
+network model -- TCP/IP -- 1 = application (HTTP, SSH...)
+network model -- TCP/IP -- 2 = transport (TCP/UDP)
+network model -- TCP/IP -- 3 = internet (IP)
+network model -- TCP/IP -- 4 = link (MAC)
+network model -- TCP/IP -- 4 = physical
+network model -- TCP/IP https://www.geeksforgeeks.org/tcp-ip-model/
 nicro-frontend https://micro-frontends.org/ https://the-tractor.store/
 non-abstract large system design (NALSD) = iterative process for designing, assessing, and evaluating distributed systems
 non-abstract large systems design (NALSD) https://sre.google/workbook/non-abstract-design/
@@ -202,6 +242,11 @@ SRE -- The Four Golden Signals -- Latency, Traffic, Errors, Saturation(utilisati
 state
 stateless -- Prefer simple, stateless services where possible
 Sustainable Architectural Decisions https://adr.github.io/
+system properties -- 01 available = end user can access it and it works as expected https://medium.com/baseds/ready-and-available-distributed-systems-161023aca378
+system properties -- 02 highly available = no scheduled/unscheduled maintenance, no downtime, no data loss
+system properties -- 03 fault tolerant = can even handle hardware failure (expensive to implement)
+system properties -- distributed https://courses.cs.washington.edu/courses/cse490h/07wi/readings/IntroductionToDistributedSystems.pdf
+system properties -- ready
 telemetry -- logs https://opentelemetry.io/docs/concepts/observability-primer/#logs
 telemetry -- maps = Relationship information between time spans can be used to produce maps for services
 telemetry -- metrics -- application-based vs time-based

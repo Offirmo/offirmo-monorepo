@@ -57,15 +57,12 @@ TODO features a simple design system
 ## Contribution
 
 ### tokens
-styles using tokens MUST NOT import them, or it make it hard to override the tokens!
 
-It's up to the caller to import the tokens
+* allow overrides!
+* solved with layers
 
-TODO solve that with layers!
-
+### TODO
 
 TODO +++ https://atlassian.design/foundations/typography
 
 TODO     width: fit-content; on all? https://courses.joshwcomeau.com/css-for-js/01-rendering-logic-1/09-flow-layout
-
-/*! @offirmo-private/css--foundation v0.0.1 | Unlicense | github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/css--foundation */

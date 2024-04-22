@@ -1,20 +1,21 @@
 /* TODO better align */
 
-/* nicer collapsibles */
+/* nicer collapsibles
+ */
 details {
-	border: dashed var(--o⋄border--thickness, .07rem);
+	border: dashed var(--o⋄border--thickness);
 	padding-inline-start: 1.4rem; /* for the content */
 }
 details summary {
 	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/#aa-the-css-reset-fix */
 	cursor: pointer;
 
-	margin-inline-start: -1rem; /* xxx rem */
+	margin-inline-start: -1rem; /* TODO xxx rem */
 }
 details summary > * {
 	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/#aa-the-css-reset-fix */
 	display: inline;
 }
 details[open] {
-	border-color: var(--o⋄color⁚fg--main, black);
+	border-color: var(--o⋄color⁚fg--main);
 }
