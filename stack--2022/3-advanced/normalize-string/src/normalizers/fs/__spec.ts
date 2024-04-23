@@ -3,6 +3,7 @@ import { expect } from 'chai'
 import { LIB } from '../../consts.js'
 import { StringNormalizer } from '../../types.js'
 import * as NORMALIZERS from './index.js'
+import { normalizeꓽpath } from './index.js'
 
 /////////////////////////////////////////////////
 
@@ -18,6 +19,14 @@ describe(`${LIB} -- basename`, function() {
 			' lord  MOK ': 'lord-mok',
 			'**lord_MOK** ': 'lord-mok',
 		},
+
+		normalizeꓽpath: {
+			'/' : '',
+			'': '', // no change
+			'/foo/bar/': 'foo/bar',
+			'foo/bar': 'foo/bar', // no change
+			'/foo/bar/baz.gif': 'foo/bar/baz.gif',
+		}
 	}
 
 	Object.keys(TEST_CASES).forEach(key => {
