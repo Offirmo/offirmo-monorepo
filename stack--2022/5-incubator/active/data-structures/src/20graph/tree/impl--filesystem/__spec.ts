@@ -12,59 +12,82 @@ import {
 	getꓽfull_fledged,
 	createꓽgraphⵧmochi_cake,
 } from '../../../__fixtures/graph--recipe--mochi_cake.js'
+import { WithOptions } from '../../../10common/types'
+import { RelativePath } from '../../../__fixtures/graph--filesystem'
 
 
 /////////////////////////////////////////////////
 
 interface Options {
+	SEP: '\\',
 }
 
-
-interface CraftTree<Payload = Rsrc> extends Graph<Payload, undefined, Options> {
-	generator_ofꓽUId: number
-
+interface FoldersFilesTree<FilePayload, FolderPayload> {
 	// there are plenty of ways to store a graph
-	// we decide to recursively link the nodes,
-	// to make debugging easier
-	root: CraftNode | undefined
+	// we decide to recursively link FoldersFilesTree
+	// - to make debugging easier
+	// - to make recursion easier
+	// - to make dir moves easier
 
-	// also store nodes by uid for convenience
-	// (ex. checking uid uniqueness)
-	nodesⵧby_uid: {
-		[uid: NodeUId]: CraftNode
+	// no need for UID since the path is the UID
+
+	root: FoldersFilesTreeRoot<FilePayload, FolderPayload> // to share options
+	parent: FoldersFilesTree<FilePayload, FolderPayload> | null // to be able to regen the full path (null if root)
+
+	payload: FolderPayload | FilePayload | undefined // undefined for root
+
+	childrenⵧfolders: {
+		[basename: string]: FoldersFilesTree<FilePayload, FolderPayload>
+	}
+
+	childrenⵧfiles: {
+		[basename: string]: FoldersFilesTree<FilePayload, FolderPayload>
 	}
 }
 
-interface CraftNode<Payload = Rsrc> extends Node<Payload> {
-	children: CraftNode[]
+interface FoldersFilesTreeRoot<FilePayload = {}, FolderPayload = FilePayload> extends FoldersFilesTree<FilePayload, FolderPayload>, WithOptions<Options> {
+	options: Options
+	parent: null
 }
 
-function createꓽnode(rsrcⵧraw: Immutable<Partial<Rsrc>>): CraftNode {
-	const payload = getꓽfull_fledged(rsrcⵧraw)
+function _createꓽnode<FilePayload, FolderPayload>(
+	root: FoldersFilesTreeRoot<FilePayload, FolderPayload>,
+	parent: FoldersFilesTree<FilePayload, FolderPayload>['parent'],
+	payload: FoldersFilesTree<FilePayload, FolderPayload>['payload'],
+): FoldersFilesTree<FilePayload, FolderPayload> {
 	return {
-		uid: payload.descr,
+		root,
+		parent,
 		payload,
-		children: []
+		childrenⵧfolders: {},
+		childrenⵧfiles: {},
 	}
 }
 
-function create(options: Options = {}): CraftTree {
-	return {
+function create<FilePayload = {}, FolderPayload = FilePayload>(options: Options = { SEP: '\\'}): FoldersFilesTreeRoot<FilePayload, FolderPayload> {
+	const underlying_FFT = _createꓽnode(null as any, null, undefined)
+	const result: FoldersFilesTreeRoot<FilePayload, FolderPayload> = {
+		...underlying_FFT,
 		options,
-		generator_ofꓽUId: 0,
-		root: undefined,
-		nodesⵧby_uid: {},
 	}
+	result.root = result
+	return result
 }
 
-function insertꓽnode(tree: CraftTree, rsrc: Partial<Rsrc>): CraftNode {
-	const node = createꓽnode(rsrc)
+function insertꓽnode<FilePayload, FolderPayload>(tree: FoldersFilesTree<FilePayload, FolderPayload>, path: RelativePath): RelativePath {
+	path = no
+
+	const node = _createꓽnode(
+tree.root,
+		tree,
+		undefined,
+	)
+
 	let { uid } = node
 	if (node.payload.type === 'material') {
 		uid = `material#${tree.generator_ofꓽUId}`
 		tree.generator_ofꓽUId++
 	}
-	assert(!tree.nodesⵧby_uid[uid], `non-unique uid "${uid}"!`)
 
 	// in-place mod, never mind...
 	tree.root = tree.root ?? node
@@ -76,7 +99,7 @@ function insertꓽnode(tree: CraftTree, rsrc: Partial<Rsrc>): CraftNode {
 	return node
 }
 
-function insertꓽlink(tree: CraftTree, node_to: CraftNode, node_from: CraftNode): CraftTree {
+function insertꓽlink(tree: FoldersFilesTree, node_to: CraftNode, node_from: CraftNode): FoldersFilesTree {
 	node_from.children.push(node_to)
 
 	if (tree.root === node_to) {
@@ -86,7 +109,7 @@ function insertꓽlink(tree: CraftTree, node_to: CraftNode, node_from: CraftNode
 	return tree
 }
 
-function getꓽroot(tree: Immutable<CraftTree>): Immutable<CraftNode> | undefined {
+function getꓽroot(tree: Immutable<FoldersFilesTree>): Immutable<CraftNode> | undefined {
 	return tree.root
 }
 
@@ -159,7 +182,7 @@ function _getꓽrepresentationⵧlines(node: Immutable<CraftNode>, prefix: strin
 	return result
 }
 
-function getꓽrepresentationⵧlines(tree: Immutable<CraftTree>): string[] {
+function getꓽrepresentationⵧlines(tree: Immutable<FoldersFilesTree>): string[] {
 	if (!tree.root) {
 		return [ '[empty tree' ]
 	}
@@ -172,7 +195,7 @@ function getꓽrepresentationⵧlines(tree: Immutable<CraftTree>): string[] {
 
 /////////////////////////////////////////////////
 
-function aggregate_materials(tree: Immutable<CraftTree>): Rsrc[] {
+function aggregate_materials(tree: Immutable<FoldersFilesTree>): Rsrc[] {
 	const materials = Object.values(tree.nodesⵧby_uid).map(node => node.payload).reduce((acc, rsrc) => {
 		if (rsrc.type === 'material') {
 			if (!acc[rsrc.descr]) {
@@ -190,12 +213,13 @@ function aggregate_materials(tree: Immutable<CraftTree>): Rsrc[] {
 	return Object.values(materials)
 }
 
+
 /////////////////////////////////////////////////
 
 describe(`${LIB} -- example -- craft (mochi cake)`, function() {
 
 	it('should work', () => {
-		const { graph, rsrc } = createꓽgraphⵧmochi_cake<CraftTree, CraftNode>(create, insertꓽnode, insertꓽlink)
+		const { graph, rsrc } = createꓽgraphⵧmochi_cake<FoldersFilesTree, CraftNode>(create, insertꓽnode, insertꓽlink)
 		console.log(graph)
 		//console.log(rsrc)
 		getꓽrepresentationⵧlines(graph).forEach(line => {
