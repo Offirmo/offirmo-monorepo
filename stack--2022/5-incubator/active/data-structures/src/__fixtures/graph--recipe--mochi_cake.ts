@@ -354,19 +354,6 @@ function createꓽgraphⵧmochi_cake<Graph = any, Node = any>(
 
 /////////////////////////////////////////////////
 
-
-
-//function expectㆍrecipe_to_work(create, insertꓽnode, insertꓽlink): void {
-
-/////////////////////////////////////////////////
-/*
-describe(`${LIB} -- example: recipe`, function() {
-
-	it('should work', () => {
-
-	})
-})*/
-
 export {
 	type Rsrc,
 	getꓽfull_fledged,

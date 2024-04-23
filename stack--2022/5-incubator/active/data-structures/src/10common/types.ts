@@ -1,3 +1,4 @@
+
 export interface WithOptions<Options> {
 	options: Options
 }

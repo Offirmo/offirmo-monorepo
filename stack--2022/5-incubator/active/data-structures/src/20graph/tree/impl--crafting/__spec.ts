@@ -1,6 +1,6 @@
 import { expect } from 'chai'
-import { Immutable } from '../../../00vendor/@offirmo-private/ts-types'
-import assert from '../../../00vendor/tiny-invariant/index.js'
+import { Immutable } from '@offirmo-private/ts-types'
+import assert from 'tiny-invariant'
 
 import { LIB } from '../consts.js'
 import {

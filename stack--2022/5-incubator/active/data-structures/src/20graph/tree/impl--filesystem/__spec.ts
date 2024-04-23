@@ -1,28 +1,18 @@
 import { expect } from 'chai'
-import { Immutable } from '../../../00vendor/@offirmo-private/ts-types'
-import assert from '../../../00vendor/tiny-invariant/index.js'
+import assert from 'tiny-invariant'
+import { Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from '../consts.js'
-import {
-	Graph,
-	Node, NodeUId,
-} from '../../types.js'
-import {
-	Rsrc,
-	getꓽfull_fledged,
-	createꓽgraphⵧmochi_cake,
-} from '../../../__fixtures/graph--recipe--mochi_cake.js'
-import { WithOptions } from '../../../10common/types'
+import { WithOptions, WithPayload } from '../../../10common/types'
 import { RelativePath } from '../../../__fixtures/graph--filesystem'
-
 
 /////////////////////////////////////////////////
 
 interface Options {
-	SEP: '\\',
+	SEP: '/',
 }
 
-interface FoldersFilesTree<FilePayload, FolderPayload> {
+interface FoldersFilesTree<FilePayload, FolderPayload> extends WithPayload<FolderPayload | FilePayload> {
 	// there are plenty of ways to store a graph
 	// we decide to recursively link FoldersFilesTree
 	// - to make debugging easier
@@ -33,8 +23,6 @@ interface FoldersFilesTree<FilePayload, FolderPayload> {
 
 	root: FoldersFilesTreeRoot<FilePayload, FolderPayload> // to share options
 	parent: FoldersFilesTree<FilePayload, FolderPayload> | null // to be able to regen the full path (null if root)
-
-	payload: FolderPayload | FilePayload | undefined // undefined for root
 
 	childrenⵧfolders: {
 		[basename: string]: FoldersFilesTree<FilePayload, FolderPayload>
@@ -64,10 +52,11 @@ function _createꓽnode<FilePayload, FolderPayload>(
 	}
 }
 
-function create<FilePayload = {}, FolderPayload = FilePayload>(options: Options = { SEP: '\\'}): FoldersFilesTreeRoot<FilePayload, FolderPayload> {
-	const underlying_FFT = _createꓽnode(null as any, null, undefined)
+function create<FilePayload = {}, FolderPayload = FilePayload>(root_payload: FolderPayload, options: Options = { SEP: '/'}): FoldersFilesTreeRoot<FilePayload, FolderPayload> {
+	const underlying_FFT = _createꓽnode<FilePayload, FolderPayload>(null as any, null, root_payload)
 	const result: FoldersFilesTreeRoot<FilePayload, FolderPayload> = {
 		...underlying_FFT,
+		parent: null,
 		options,
 	}
 	result.root = result
@@ -75,7 +64,7 @@ function create<FilePayload = {}, FolderPayload = FilePayload>(options: Options 
 }
 
 function insertꓽnode<FilePayload, FolderPayload>(tree: FoldersFilesTree<FilePayload, FolderPayload>, path: RelativePath): RelativePath {
-	path = no
+	path =
 
 	const node = _createꓽnode(
 tree.root,
