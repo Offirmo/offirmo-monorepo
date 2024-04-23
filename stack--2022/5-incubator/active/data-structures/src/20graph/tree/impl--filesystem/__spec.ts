@@ -1,10 +1,12 @@
 import { expect } from 'chai'
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
+import { normalizeꓽpath } from '@offirmo-private/normalize-string'
 
 import { LIB } from '../consts.js'
-import { WithOptions, WithPayload } from '../../../10common/types'
-import { RelativePath } from '../../../__fixtures/graph--filesystem'
+import { WithOptions, WithPayload } from '../../../10common/types.js'
+import { RelativePath, createꓽgraphⵧfilesystem } from '../../../__fixtures/graph--filesystem.js'
+import { TreeForRL, getꓽrepresentationⵧlines } from '../selectors--representation--lines.js'
 
 /////////////////////////////////////////////////
 
@@ -63,158 +65,47 @@ function create<FilePayload = {}, FolderPayload = FilePayload>(root_payload: Fol
 	return result
 }
 
-function insertꓽnode<FilePayload, FolderPayload>(tree: FoldersFilesTree<FilePayload, FolderPayload>, path: RelativePath): RelativePath {
-	path =
+function insertꓽfile<FilePayload, FolderPayload>(tree: FoldersFilesTree<FilePayload, FolderPayload>, path: RelativePath): RelativePath {
+	path = normalizeꓽpath(path, 'file')
 
-	const node = _createꓽnode(
-tree.root,
-		tree,
-		undefined,
-	)
-
-	let { uid } = node
-	if (node.payload.type === 'material') {
-		uid = `material#${tree.generator_ofꓽUId}`
-		tree.generator_ofꓽUId++
-	}
-
-	// in-place mod, never mind...
-	tree.root = tree.root ?? node
-	tree.nodesⵧby_uid = {
-		...tree.nodesⵧby_uid,
-		[uid]: node,
-	}
-
-	return node
+	throw new Error('TODO')
 }
 
-function insertꓽlink(tree: FoldersFilesTree, node_to: CraftNode, node_from: CraftNode): FoldersFilesTree {
-	node_from.children.push(node_to)
+function upsertꓽfolder<FilePayload, FolderPayload>(tree: FoldersFilesTree<FilePayload, FolderPayload>, path: RelativePath): RelativePath {
+	path = normalizeꓽpath(path, 'folder')
 
-	if (tree.root === node_to) {
-		tree.root = node_from
-	}
-
-	return tree
-}
-
-function getꓽroot(tree: Immutable<FoldersFilesTree>): Immutable<CraftNode> | undefined {
-	return tree.root
+	throw new Error('TODO')
 }
 
 /////////////////////////////////////////////////
 
-type StringTree = Array<string | StringTree>
-
-function getꓽrepresentationⵧlinesⵧpayload(rsrc: Rsrc, depth = 0): string[] {
-	const result = []
-
-	const { type, descr,  quantity } = rsrc
-
-	if (depth === 0) {
-		result.push(`〖${descr}〗`)
-	}
-
-	switch (type) {
-		case 'material':
-			result.push(`⊙ ${type}: ${descr} (${quantity.value}${quantity.unit ?? 'x'})`)
-			break
-
-		case 'tool':
-			result.push(`⚒ ${descr}`)
-			break
-
-		case 'intermediateᝍstep': {
-			if (rsrc.process) {
-				result.push(`⊕ ${rsrc.process} => ⟢${descr}⟣`)
-			}
-			else {
-				result.push(`⊕ ${descr}`)
-			}
-			break
-		}
-
-		default:
-			throw new Error(`unknown type "${type}"!`)
-	}
-
-	return result
-}
-
-function _getꓽrepresentationⵧlines(node: Immutable<CraftNode>, prefix: string = '', depth = 0): string[] {
-	const result = getꓽrepresentationⵧlinesⵧpayload(node.payload, depth).map(l => prefix + l)
-
-	const { children } = node
-	children.forEach((child, index) => {
-		const r = _getꓽrepresentationⵧlines(child, '', depth + 1)
-		const is_last_child = index === children.length - 1
-		result.push(...r.map((l, i) => {
-			const is_first_line = i === 0
-			if (is_first_line) {
-				if (is_last_child) {
-					return '└ ' + l
-				}
-				else {
-					return '├ ' + l
-				}
-			}
-
-			if (is_last_child) {
-				return '  ' + l
-			}
-			else {
-				return '│ ' + l
-			}
-		}))
-	})
-
-	return result
-}
-
-function getꓽrepresentationⵧlines(tree: Immutable<FoldersFilesTree>): string[] {
-	if (!tree.root) {
-		return [ '[empty tree' ]
-	}
-
-	// TODO check orphans?
-	// TODO check cycles?
-
-	return _getꓽrepresentationⵧlines(tree.root)
-}
-
-/////////////////////////////////////////////////
-
-function aggregate_materials(tree: Immutable<FoldersFilesTree>): Rsrc[] {
-	const materials = Object.values(tree.nodesⵧby_uid).map(node => node.payload).reduce((acc, rsrc) => {
-		if (rsrc.type === 'material') {
-			if (!acc[rsrc.descr]) {
-				acc[rsrc.descr] = rsrc
-			}
-			else {
-				// add up
-				throw new Error(`NIMP!`)
-			}
-		}
-
-		return acc
-	}, {} as { [descr: string]: Immutable<Rsrc> })
-
-	return Object.values(materials)
-}
+describe(`${LIB} -- example -- file system`, function() {
 
 
-/////////////////////////////////////////////////
-
-describe(`${LIB} -- example -- craft (mochi cake)`, function() {
-
-	it('should work', () => {
-		const { graph, rsrc } = createꓽgraphⵧmochi_cake<FoldersFilesTree, CraftNode>(create, insertꓽnode, insertꓽlink)
+	it.only('should work', () => {
+		const { graph, ...rest } = createꓽgraphⵧfilesystem<FoldersFilesTreeRoot>(
+			function _create() {
+				return create({})
+			},
+			insertꓽfile,
+			upsertꓽfolder,
+		)
 		console.log(graph)
-		//console.log(rsrc)
-		getꓽrepresentationⵧlines(graph).forEach(line => {
+		console.log(rest)
+
+		const tree_for_rl: TreeForRL = {
+			isꓽroot() {
+				return true
+			},
+			getꓽrepresentationⵧlines(depth: number) {
+				return [ 'root' ]
+			},
+			getꓽchildren() {
+				return []
+			}
+		}
+		getꓽrepresentationⵧlines(tree_for_rl).forEach(line => {
 			console.log(line)
 		})
-
-		console.log(aggregate_materials(graph))
 	})
 })
