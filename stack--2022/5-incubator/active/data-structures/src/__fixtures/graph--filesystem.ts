@@ -13,7 +13,7 @@
  */
 
 import assert from 'tiny-invariant'
-import { Immutable, Basename, RelativePath } from '@offirmo-private/ts-types'
+import { RelativePath } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 
@@ -35,7 +35,7 @@ function createꓽgraphⵧfilesystem<Graph = any>(
 		const graph = create()
 
 		insertꓽfile(graph, 'foo/bar/baz.xyz')
-		insertꓽfile(graph, 'foo/glop.xyz')
+		insertꓽfile(graph, 'foo/gloups.xyz')
 		upsertꓽfolder(graph, 'foo/bar/gnokman/')
 
 		return graph
@@ -54,8 +54,5 @@ function createꓽgraphⵧfilesystem<Graph = any>(
 
 
 export {
-	type Basename,
-	type RelativePath,
-
 	createꓽgraphⵧfilesystem,
 }

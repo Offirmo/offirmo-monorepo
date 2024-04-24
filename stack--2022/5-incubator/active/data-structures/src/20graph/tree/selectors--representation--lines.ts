@@ -9,11 +9,10 @@ import { Immutable } from '@offirmo-private/ts-types'
 interface TreeForRL {
 	isꓽroot(): boolean
 	getꓽrepresentationⵧlines(depth: number): string[]
-	getꓽchildren(): TreeForRL[]
+	getꓽchildren(): Immutable<TreeForRL[]>
 }
 
 /////////////////////////////////////////////////
-
 
 function _getꓽrepresentationⵧlines(node: Immutable<TreeForRL>, prefix: string = '', depth = 0): string[] {
 	const result = node.getꓽrepresentationⵧlines(depth).map(l => prefix + l)
@@ -45,9 +44,9 @@ function _getꓽrepresentationⵧlines(node: Immutable<TreeForRL>, prefix: strin
 	return result
 }
 
-function getꓽrepresentationⵧlines(tree: Immutable<TreeForRL>): string[] {
+function getꓽrepresentationⵧlinesⵧgeneric(tree: Immutable<TreeForRL>): string[] {
 	if (tree.getꓽchildren().length === 0) {
-		return [ '[empty tree' ]
+		return [ '[empty tree]' ]
 	}
 
 	// TODO check orphans
@@ -60,5 +59,5 @@ function getꓽrepresentationⵧlines(tree: Immutable<TreeForRL>): string[] {
 
 export {
 	type TreeForRL,
-	getꓽrepresentationⵧlines,
+	getꓽrepresentationⵧlinesⵧgeneric,
 }

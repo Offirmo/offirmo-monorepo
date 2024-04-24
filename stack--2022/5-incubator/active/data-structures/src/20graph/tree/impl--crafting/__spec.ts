@@ -92,8 +92,6 @@ function getꓽroot(tree: Immutable<CraftTree>): Immutable<CraftNode> | undefine
 
 /////////////////////////////////////////////////
 
-type StringTree = Array<string | StringTree>
-
 function getꓽrepresentationⵧlinesⵧpayload(rsrc: Rsrc, depth = 0): string[] {
 	const result = []
 
@@ -196,12 +194,13 @@ describe(`${LIB} -- example -- craft (mochi cake)`, function() {
 
 	it('should work', () => {
 		const { graph, rsrc } = createꓽgraphⵧmochi_cake<CraftTree, CraftNode>(create, insertꓽnode, insertꓽlink)
-		console.log(graph)
+		//console.log(graph)
 		//console.log(rsrc)
+
 		getꓽrepresentationⵧlines(graph).forEach(line => {
 			console.log(line)
 		})
 
-		console.log(aggregate_materials(graph))
+		//console.log(aggregate_materials(graph))
 	})
 })
