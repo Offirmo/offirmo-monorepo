@@ -1,4 +1,4 @@
-//import { FileSystem } from '../deps/@offirmo-private/state--graph.js'
+import { FileSystemNode } from '@offirmo-private/data-structures'
 import {
 	UserConfig,
 	Story, isꓽStory,
@@ -44,5 +44,5 @@ export interface State {
 
 	current_story‿uid: StoryId | undefined
 
-	//graph: FileSystem
+	tree: FileSystemNode<StoryEntry, StoryFolder>
 }

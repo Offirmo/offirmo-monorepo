@@ -2,7 +2,7 @@
  */
 
 import assert from 'tiny-invariant'
-import { Immutable } from '../deps/@offirmo-private/ts-types/immutable'
+import { Immutable } from '@offirmo-private/ts-types'
 
 import {
 	State,
@@ -11,7 +11,6 @@ import {
 	isꓽStoryEntry,
 } from './types'
 import { MAIN_IFRAME_QUERYPARAMS } from '../consts'
-import { getꓽcurrent_urlⵧcleaned } from '../services/env'
 
 /////////////////////////////////////////////////
 
@@ -26,7 +25,8 @@ function getꓽstoryⵧby_id(state: Immutable<State>, id: StoryId): Immutable<St
 }
 
 function getꓽas_query_parameters(state: Immutable<State>): URLSearchParams {
-	const sp = new URLSearchParams()
+	throw new Error('not implemented')
+	/*const sp = new URLSearchParams()
 
 	// current story
 	sp.set(MAIN_IFRAME_QUERYPARAMS.story_id, getꓽstoryⵧcurrent(state))
@@ -34,7 +34,7 @@ function getꓽas_query_parameters(state: Immutable<State>): URLSearchParams {
 	// tree expand/collapse state
 	// (current story parents are obviously expanded)
 
-
+*/
 }
 
 /////////////////////////////////////////////////

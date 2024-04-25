@@ -1,4 +1,4 @@
-import { Immutable } from '../deps/@offirmo-private/ts-types/immutable'
+import { Immutable } from '@offirmo-private/ts-types'
 import { isꓽStoryEntry, isꓽStoryFolder, State, StoryId } from '../state/types'
 import { MAIN_IFRAME_QUERYPARAMS } from '../consts'
 import { getꓽcurrent_urlⵧcleaned } from '../services/env'

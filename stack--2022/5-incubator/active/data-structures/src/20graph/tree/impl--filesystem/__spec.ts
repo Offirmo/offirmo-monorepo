@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import { LIB } from '../consts.js'
 import { createꓽgraphⵧfilesystem } from '../../../__fixtures/graph--filesystem.js'
 
-import { FoldersFilesTree, create, insertꓽfile, upsertꓽfolder, getꓽrepresentationⵧlines } from './index.js'
+import { FileSystemNode, createꓽfilesystem, insertꓽfile, upsertꓽfolder, getꓽrepresentationⵧlines } from './index.js'
 
 /////////////////////////////////////////////////
 
@@ -12,8 +12,8 @@ describe(`${LIB} -- file system`, function() {
 	describe('example', function() {
 
 		it('should work', () => {
-			const { graph, ...rest } = createꓽgraphⵧfilesystem<FoldersFilesTree<undefined, undefined>>(
-				create,
+			const { graph, ...rest } = createꓽgraphⵧfilesystem<FileSystemNode<undefined, undefined>>(
+				createꓽfilesystem,
 				insertꓽfile,
 				upsertꓽfolder,
 			)
@@ -41,7 +41,7 @@ describe(`${LIB} -- file system`, function() {
 		context('when the tree is empty', function() {
 
 			it('should work', () => {
-				const tree = create()
+				const tree = createꓽfilesystem()
 				const lines = getꓽrepresentationⵧlines(tree)
 				expect(lines).to.deep.equal([ '[empty tree]' ])
 			})

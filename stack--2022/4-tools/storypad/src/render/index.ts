@@ -1,7 +1,7 @@
-import { Immutable } from '../deps/@offirmo-private/ts-types/immutable'
+import { Immutable } from '@offirmo-private/ts-types'
 
 import { State, StoryId } from '../state/types'
-
+/*
 import { renderⵧstory } from './render--story'
 import { renderⵧside_panel } from './render--side-panel'
 import { LS_KEYS, MAIN_IFRAME_QUERYPARAMS } from '../consts'
@@ -18,10 +18,12 @@ function getꓽmain_iframe_url(state: Immutable<State>, explicit_id: StoryId = g
 }
 
 type Url‿str = string
-
+*/
 function render(state: Immutable<State>) {
 	console.log('render()', { state })
 
+	return 'TODO'
+	/*
 	if ( window.location !== window.parent.location ) {
 		// we're in an iframe -> it's the story
 		return renderⵧstory(state)
@@ -50,9 +52,12 @@ function render(state: Immutable<State>) {
 			try {
 				localStorage.setItem(LS_KEYS.current_story_id, (new URL(href)).searchParams.get(MAIN_IFRAME_QUERYPARAMS.story_id))
 			}
-			catch { /* ignore */}
+			catch {
+			// ignore
+			}
 		}
 	})
+	 */
 }
 
 export {

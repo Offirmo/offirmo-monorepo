@@ -6,18 +6,18 @@ import { Immutable, RelativePath } from '@offirmo-private/ts-types'
 import { normalizeꓽpath } from '@offirmo-private/normalize-string'
 
 import { TreeForRL, getꓽrepresentationⵧlinesⵧgeneric } from '../selectors--representation--lines.js'
-import { FoldersFilesTree } from './types.js'
+import { FileSystemNode } from './types.js'
 
 /////////////////////////////////////////////////
 
-function getꓽparent__path<FilePayload, FolderPayload>(tree: FoldersFilesTree<FilePayload, FolderPayload>): RelativePath {
+function getꓽparent__path<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>): RelativePath {
 	let segments: string[] = []
 	const { options } = tree.root
 
 	throw new Error(`getꓽparent__path() not implemented yet!`)
 }
 
-function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FoldersFilesTree<FilePayload, FolderPayload>, path: RelativePath): FoldersFilesTree<FilePayload, FolderPayload> {
+function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNode<FilePayload, FolderPayload> {
 	path = normalizeꓽpath(path)
 	const { options } = tree.root
 	const segments = path.split(options.SEP)
@@ -38,11 +38,11 @@ function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FoldersFilesTree
 /////////////////////////////////////////////////
 
 class CTreeForRL<FilePayload, FolderPayload> implements TreeForRL {
-	underlying_node: Immutable<FoldersFilesTree<FilePayload, FolderPayload>>
+	underlying_node: Immutable<FileSystemNode<FilePayload, FolderPayload>>
 	segment: string
 	type: 'folder' | 'file'
 
-	constructor(underlying_node: Immutable<FoldersFilesTree<FilePayload, FolderPayload>>, segment: string, type: 'folder' | 'file') {
+	constructor(underlying_node: Immutable<FileSystemNode<FilePayload, FolderPayload>>, segment: string, type: 'folder' | 'file') {
 		this.underlying_node = underlying_node
 		this.segment = segment
 		this.type = type
@@ -66,7 +66,7 @@ class CTreeForRL<FilePayload, FolderPayload> implements TreeForRL {
 	}
 }
 
-function getꓽrepresentationⵧlines<FilePayload, FolderPayload>(tree: Immutable<FoldersFilesTree<FilePayload, FolderPayload>>, getꓽpayload__representationⵧlines: (p: Immutable<FilePayload | FolderPayload | undefined>) => string[] = () => []): string[] {
+function getꓽrepresentationⵧlines<FilePayload, FolderPayload>(tree: Immutable<FileSystemNode<FilePayload, FolderPayload>>, getꓽpayload__representationⵧlines: (p: Immutable<FilePayload | FolderPayload | undefined>) => string[] = () => []): string[] {
 	return getꓽrepresentationⵧlinesⵧgeneric(new CTreeForRL(tree, '', 'folder'))
 }
 

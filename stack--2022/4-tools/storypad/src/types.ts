@@ -1,6 +1,8 @@
+import { Html‿str } from '@offirmo-private/ts-types-web'
 
-export type HtmlAsString = string
-export type StoryOutput = HtmlAsString // TODO extend return type
+/////////////////////////////////////////////////
+
+export type StoryOutput = Html‿str // TODO extend return type
 
 /////////////////////////////////////////////////
 // Component story format CSF

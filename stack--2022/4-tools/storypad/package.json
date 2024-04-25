@@ -9,6 +9,8 @@
 	"source": "src/index.ts",
 
 	"dependencies": {
+		"@offirmo-private/data-structures": "*",
+		"@offirmo-private/ts-types-web": "*",
 		"tiny-invariant": "^1"
 	},
 	"optionalDependencies": {
@@ -30,5 +32,8 @@
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2"
+	},
+	"alias": {
+		"@storybook/test": "./src/compat/@storybook/test.ts"
 	}
 }

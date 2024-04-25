@@ -9,12 +9,12 @@ import { WithOptions, WithPayload } from '../../../10common/types'
 /////////////////////////////////////////////////
 
 
-interface Options {
+interface FileSystemOptions {
 	SEP: '/',
 }
 
 // undefined payload allowed since we can insert multiple folders for convenience
-interface FoldersFilesTree<FilePayload, FolderPayload, Payload = FilePayload | FolderPayload | undefined> extends WithPayload<Payload> {
+interface FileSystemNode<FilePayload, FolderPayload, Payload = FilePayload | FolderPayload | undefined> extends WithPayload<Payload> {
 	// there are plenty of ways to store a graph
 	// we decide to recursively link FoldersFilesTree
 	// - to make debugging easier
@@ -23,38 +23,39 @@ interface FoldersFilesTree<FilePayload, FolderPayload, Payload = FilePayload | F
 
 	// no need for UID since the path is the UID
 
-	root: FoldersFilesTreeRoot<FilePayload, FolderPayload> // to share options
-	parent: FoldersFilesTree<FilePayload, FolderPayload> | null // to be able to regen the full path (null if root)
+	root: FileSystemRoot<FilePayload, FolderPayload> // to share options
+	parent: FileSystemNode<FilePayload, FolderPayload> | null // to be able to regen the full path (null if root)
 
 	childrenⵧfolders: {
-		[basename: string]: FoldersFilesTree<FilePayload, FolderPayload>
+		[basename: string]: FileSystemNode<FilePayload, FolderPayload>
 	}
 
 	childrenⵧfiles: {
-		[basename: string]: FoldersFilesTree<FilePayload, FolderPayload>
+		[basename: string]: FileSystemNode<FilePayload, FolderPayload>
 	}
 }
 
-interface FoldersFilesTreeRoot<FilePayload, FolderPayload> extends FoldersFilesTree<FilePayload, FolderPayload>, WithOptions<Options> {
-	options: Options
+interface FileSystemRoot<FilePayload, FolderPayload> extends FileSystemNode<FilePayload, FolderPayload>, WithOptions<FileSystemOptions> {
+	options: FileSystemOptions
 	parent: null
 }
 
 // convenience aggregate type
+// TODO clarify
 interface Aggregated<FilePayload, FolderPayload> {
 	basename: Basename
 	type: 'file' | 'folder'
 	pathⵧfrom_root: RelativePath // inc. basename
 
-	node: FoldersFilesTree<FilePayload, FolderPayload>
+	node: FileSystemNode<FilePayload, FolderPayload>
 }
 
 /////////////////////////////////////////////////
 
 export {
-	type Options,
-	type FoldersFilesTree,
-	type FoldersFilesTreeRoot,
+	type FileSystemOptions,
+	type FileSystemNode,
+	type FileSystemRoot,
 
 	type Aggregated,
 }

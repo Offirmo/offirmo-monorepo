@@ -1,8 +1,7 @@
 import assert from 'tiny-invariant'
-import { Immutable } from './deps/@offirmo-private/ts-types/immutable'
+import { Immutable } from '@offirmo-private/ts-types'
 
 import { UserConfig } from './types.js'
-import { LS_KEYS, MAIN_IFRAME_QUERYPARAMS } from './consts'
 
 import {
 	create,
