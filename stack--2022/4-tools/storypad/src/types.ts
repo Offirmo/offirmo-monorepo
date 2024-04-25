@@ -29,14 +29,14 @@ export interface Meta {
 /* named export = a story = an OBJECT for v3
  */
 export interface Story‿v3 {
-	render: () => StoryOutput
+	//render: () => StoryOutput NO! CAN be a React component, can be in Meta...
 
 	name?: never
 	parameters?: never
 	decorators?: Decorator[]
 }
 export function isꓽStory‿v3(s: any): s is Story‿v3 {
-	return (typeof s?.render === 'function')
+	return !isꓽStory‿v2(s)
 }
 
 /* named export = a story = a FUNCTION for v2
@@ -71,26 +71,27 @@ export interface UserConfig {
 }
 
 /////////////////////////////////////////////////
+// globbing
 
-export interface Module‿Parcelv2 {
-	ts: {
-		[k: string]: Story
-	}
+// Parcel
+type Module‿Parcelv2 = {
+	js?: { [k: string]: unknown }
+	jsx?: { [k: string]: unknown }
+	ts?: { [k: string]: unknown }
+	tsx?: { [k: string]: unknown }
 }
-export function isꓽModule‿Parcelv2(x: any): x is Module‿Parcelv2 {
-	return Object.hasOwn(x, 'ts') && x?.ts.__esModule === true
+function isꓽModule‿Parcelv2(x: any): x is Module‿Parcelv2 {
+	return ['js', 'jsx', 'ts', 'tsx'].some(ext => {
+		return Object.hasOwn(x, ext) && x?.[ext]?.__esModule === true
+	})
 }
 
+interface Glob‿Parcelv2 {
+	[k: string]: Glob‿Parcelv2 | Module‿Parcelv2
+}
+
+// generic
 export type Module = Module‿Parcelv2
-export function isꓽModule(x: any): x is Module {
-	return isꓽModule‿Parcelv2(x)
-}
-
-interface Leave‿Parcelv2 {
-	[k: string]: Leave‿Parcelv2 | Module‿Parcelv2
-}
-export interface Glob‿Parcelv2 {
-	[k: string]: Leave‿Parcelv2
-}
-
+export function isꓽModule(x: any): x is Module { return isꓽModule‿Parcelv2(x)}
 export type Glob = Glob‿Parcelv2
+export function isꓽGlob(x: any): x is Glob { return !isꓽModule(x)}

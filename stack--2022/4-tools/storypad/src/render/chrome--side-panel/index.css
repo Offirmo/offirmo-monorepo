@@ -51,10 +51,10 @@ details > * {
  * also https://css-tricks.com/quick-reminder-that-details-summary-is-the-easiest-way-ever-to-make-an-accordion/
  */
 details > summary {
-	list-style-image: url(./icon--tree--expand.svg);
+	list-style-image: url(./assets/icon--tree--expand.svg);
 }
 details[open] > summary {
-	list-style-image: url(./icon--tree--collapse.svg);
+	list-style-image: url(./assets/icon--tree--collapse.svg);
 }
 
 details {

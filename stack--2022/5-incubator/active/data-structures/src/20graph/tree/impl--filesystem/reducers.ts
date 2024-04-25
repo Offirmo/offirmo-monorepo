@@ -35,7 +35,7 @@ function createꓽfilesystem<FilePayload = {}, FolderPayload = FilePayload>(opti
 	return result
 }
 
-function insertꓽfile<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): RelativePath {
+function insertꓽfile<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath, payload?: FilePayload | undefined): RelativePath {
 	path = normalizeꓽpath(path, 'file')
 	const { options } = tree.root
 	const segments = path.split(options.SEP)
@@ -54,7 +54,7 @@ function insertꓽfile<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayl
 	assert(!parent.childrenⵧfolders[basename], `insertꓽfile() should not overwrite an existing folder!`)
 	assert(!parent.childrenⵧfiles[basename], `insertꓽfile() should not overwrite an existing file!`)
 
-	const file_node = _createꓽnode<FilePayload, FolderPayload>(tree.root, parent, undefined)
+	const file_node = _createꓽnode<FilePayload, FolderPayload>(tree.root, parent, payload)
 	parent.childrenⵧfiles[basename] = file_node
 
 	return path

@@ -1,26 +1,28 @@
 import { Immutable } from '@offirmo-private/ts-types'
-import { isꓽStoryEntry, isꓽStoryFolder, State, StoryId } from '../state/types'
-import { MAIN_IFRAME_QUERYPARAMS } from '../consts'
-import { getꓽcurrent_urlⵧcleaned } from '../services/env'
-import { getꓽstoryⵧcurrent } from '../state/selectors'
+import { isꓽStoryEntry, isꓽStoryFolder, State, StoryId } from '../../state/types'
+import { MAIN_IFRAME_QUERYPARAMS } from '../../consts'
+//import { getꓽcurrent_urlⵧcleaned } from '../services/env'
+//import { getꓽstoryⵧcurrent } from '../state/selectors'
 
+/*
 function getꓽmain_iframe_url(state: Immutable<State>, explicit_id: StoryId = getꓽstoryⵧcurrent(state)): string {
 	const sp = new URLSearchParams({
 		[MAIN_IFRAME_QUERYPARAMS.story_id]: explicit_id,
 	})
 
 	return getꓽcurrent_urlⵧcleaned() + '?' + sp.toString()
-}
+}*/
 
 
 function renderⵧside_panel(state: Immutable<State>) {
+	// @ts-expect-error bundler stuff
 	import('./index.css')
 
-	_append_folder(state, document.body, state.story_tree, [])
+	//_append_folder(state, document.body, state.story_tree, [])
 }
 
 
-
+/*
 function _append_folder(state, parent_elt, tree, path) {
 	//console.log('_append_folder()', { parent_elt, tree, path, })
 	let details_elt = document.createElement('details')
@@ -56,7 +58,7 @@ function _append_leaf(state, parent_elt, story, path) {
 	li_elt.innerHTML = `<a href="${getꓽmain_iframe_url(state, story.id)}">${key}</a>`
 	parent_elt.appendChild(li_elt)
 }
-
+*/
 export {
 	renderⵧside_panel
 }

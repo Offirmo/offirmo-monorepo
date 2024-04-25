@@ -1,14 +1,14 @@
 
 <script type="module">
-	import * as stories_storybook_v8 from './example-stories-storybook-v8/**/*.stories.@(js|jsx|ts|tsx|mdx)'
+	import * as stories from './**/*.stories.@(js|jsx|ts|tsx|mdx)'
 
 	import nearest_pkg from '~/package.json'
 
 	import startꓽstorypad from '@offirmo-private/storypad'
 
-	const stories = {
+	/*const stories = {
 		'storybook-v8': stories_storybook_v8,
-	}
+	}*/
 	startꓽstorypad(stories, {
 		root_title: nearest_pkg?.name,
 		decorators: [

@@ -1,15 +1,15 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable, Url‿str } from '@offirmo-private/ts-types'
 
 import { State, StoryId } from '../state/types'
-/*
-import { renderⵧstory } from './render--story'
-import { renderⵧside_panel } from './render--side-panel'
+
+import { renderⵧstory } from './story/index.js'
+import { renderⵧside_panel } from './chrome--side-panel/index.js'
 import { LS_KEYS, MAIN_IFRAME_QUERYPARAMS } from '../consts'
 import { getꓽcurrent_urlⵧcleaned } from '../services/env'
-import { getꓽstoryⵧcurrent } from '../state/selectors'
+import { getꓽstoryⵧcurrent‿uid } from '../state/selectors'
 
 
-function getꓽmain_iframe_url(state: Immutable<State>, explicit_id: StoryId = getꓽstoryⵧcurrent(state)): string {
+function getꓽmain_iframe_url(state: Immutable<State>, explicit_id: StoryId = getꓽstoryⵧcurrent‿uid(state)): string {
 	const sp = new URLSearchParams({
 		[MAIN_IFRAME_QUERYPARAMS.story_id]: explicit_id,
 	})
@@ -17,13 +17,9 @@ function getꓽmain_iframe_url(state: Immutable<State>, explicit_id: StoryId = g
 	return getꓽcurrent_urlⵧcleaned() + '?' + sp.toString()
 }
 
-type Url‿str = string
-*/
 function render(state: Immutable<State>) {
 	console.log('render()', { state })
 
-	return 'TODO'
-	/*
 	if ( window.location !== window.parent.location ) {
 		// we're in an iframe -> it's the story
 		return renderⵧstory(state)
@@ -49,15 +45,14 @@ function render(state: Immutable<State>) {
 
 			iframe_elt.src = href
 
-			try {
+			/*try {
 				localStorage.setItem(LS_KEYS.current_story_id, (new URL(href)).searchParams.get(MAIN_IFRAME_QUERYPARAMS.story_id))
 			}
 			catch {
 			// ignore
-			}
+			}*/
 		}
 	})
-	 */
 }
 
 export {

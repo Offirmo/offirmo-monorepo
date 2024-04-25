@@ -10,7 +10,7 @@ import {
 	enrich_state_from_local_storage,
 	enrich_state_from_query_parameters,
 	enrich_state_from_env,
-} from './state/reducers'
+} from './state'
 import { render } from './render'
 
 ////////////////////////////////////////////////////////////////////////////////////

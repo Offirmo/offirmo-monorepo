@@ -34,7 +34,7 @@ export function isꓽStoryFolder(x: any): x is StoryFolder {
 export interface State {
 	config: UserConfig
 
-	stories_by_id: {
+	stories_by_uid: {
 		[k: StoryId]: StoryEntry,
 	}
 
