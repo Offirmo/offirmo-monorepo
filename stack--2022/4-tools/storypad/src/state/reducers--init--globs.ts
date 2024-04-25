@@ -32,38 +32,38 @@ function registerꓽstoriesⵧfrom_glob(state: Immutable<State>, stories_glob: I
 
 	/*
 	// now that we registered the stories, create their corresponding folders
-	const all_folder_ids = new Set<string>()
+	const all_folder_uids = new Set<string>()
 	let max_depth = 0
-	Object.keys(state.stories_by_uid).forEach(story_id => {
-		const parent_id = story_id.split(SEP_FOR_UID).slice(0, -1).join(SEP_FOR_UID)
-		max_depth = Math.max(max_depth, parent_id.split(SEP_FOR_UID).length)
-		all_folder_ids.add(parent_id)
+	Object.keys(state.stories_by_uid).forEach(story_uid => {
+		const parent_uid = story_uid.split(SEP_FOR_UID).slice(0, -1).join(SEP_FOR_UID)
+		max_depth = Math.max(max_depth, parent_uid.split(SEP_FOR_UID).length)
+		all_folder_uids.add(parent_uid)
 	})
-	console.log(all_folder_ids, max_depth)
+	console.log(all_folder_uids, max_depth)
 	for(let depth: number = 1; depth <= max_depth; ++depth) {
 		console.group(`creating folders of depth ${depth}…`)
 
-		const all_folder_ids_of_this_depth = new Set<string>()
-		Array.from(all_folder_ids.values())
+		const all_folder_uids_of_this_depth = new Set<string>()
+		Array.from(all_folder_uids.values())
 			.map(id => id.split(SEP_FOR_UID))
 			.filter(path => path.length >= depth)
 			.map(path => path
 				.slice(0, depth)
 				.join(SEP_FOR_UID)
 			)
-			.forEach(id => all_folder_ids_of_this_depth.add(id))
+			.forEach(id => all_folder_uids_of_this_depth.add(id))
 
-		console.log(all_folder_ids_of_this_depth)
-		all_folder_ids_of_this_depth.forEach(id => {
+		console.log(all_folder_uids_of_this_depth)
+		all_folder_uids_of_this_depth.forEach(id => {
 			const path = id.split(SEP_FOR_UID)
 			const last_segment = path.pop()!
-			const parent_id = path.join(SEP_FOR_UID) || ROOT_ID
+			const parent_uid = path.join(SEP_FOR_UID) || ROOT_ID
 			console.log({
 				id,
-				parent_id,
+				parent_uid,
 				last_segment,
 			})
-			const parent = state.folders_by_id[parent_id] as StoryFolder
+			const parent = state.folders_by_uid[parent_uid] as StoryFolder
 			assert(parent, 'parent should already exist')
 			const child = {
 				id,
@@ -73,7 +73,7 @@ function registerꓽstoriesⵧfrom_glob(state: Immutable<State>, stories_glob: I
 			state = registerꓽfolder(state, child)
 			parent.children[last_segment] = child
 		})
-		console.log(state.folders_by_id)
+		console.log(state.folders_by_uid)
 		console.groupEnd()
 	}
 
@@ -88,10 +88,10 @@ function registerꓽstoriesⵧfrom_glob(state: Immutable<State>, stories_glob: I
 
 /*
 	// MODIFICATION IN PLACE TODO improve
-	let root_folder = state.folders_by_id[ROOT_ID]! as StoryFolder
+	let root_folder = state.folders_by_uid[ROOT_ID]! as StoryFolder
 
-	Object.keys(state.stories_by_uid).forEach(story_id => {
-		const segments = story_id.split(SEP_FOR_UID)
+	Object.keys(state.stories_by_uid).forEach(story_uid => {
+		const segments = story_uid.split(SEP_FOR_UID)
 		let parent = root_folder
 		segments.slice(0, -1).forEach(segment => {
 			let child = parent.children[segment] || (() => {
@@ -102,7 +102,7 @@ function registerꓽstoriesⵧfrom_glob(state: Immutable<State>, stories_glob: I
 
 			parent = child
 		})
-		parent.children[segments.slice(-1)[0]] = state.stories_by_uid[story_id]
+		parent.children[segments.slice(-1)[0]] = state.stories_by_uid[story_uid]
 	})
  */
 

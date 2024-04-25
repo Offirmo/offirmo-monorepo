@@ -18,7 +18,7 @@ function getꓽstoryⵧcurrent‿uid(state: Immutable<State>): StoryId | '[NO-KN
 	return state.current_story‿uid ?? '[NO-KNOWN-STORIES]'
 }
 
-function getꓽstoryⵧby_id(state: Immutable<State>, id: StoryId): Immutable<StoryEntry> {
+function getꓽstoryⵧby_uid(state: Immutable<State>, id: StoryId): Immutable<StoryEntry> {
 	const result = state.stories_by_uid[id]
 	assert(isꓽStoryEntry(result))
 	return result
@@ -29,7 +29,7 @@ function getꓽas_query_parameters(state: Immutable<State>): URLSearchParams {
 	/*const sp = new URLSearchParams()
 
 	// current story
-	sp.set(MAIN_IFRAME_QUERYPARAMS.story_id, getꓽstoryⵧcurrent(state))
+	sp.set(MAIN_IFRAME_QUERYPARAMS.story_uid, getꓽstoryⵧcurrent(state))
 
 	// tree expand/collapse state
 	// (current story parents are obviously expanded)
@@ -41,6 +41,6 @@ function getꓽas_query_parameters(state: Immutable<State>): URLSearchParams {
 
 export {
 	getꓽstoryⵧcurrent‿uid,
-	getꓽstoryⵧby_id,
+	getꓽstoryⵧby_uid,
 	//getꓽas_query_parameters,
 }

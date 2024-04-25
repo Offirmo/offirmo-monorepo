@@ -7,35 +7,41 @@ import { Basename, RelativePath } from '@offirmo-private/ts-types'
 import { WithOptions, WithPayload } from '../../../10common/types'
 
 /////////////////////////////////////////////////
-
+// There are plenty of ways to store a graph.
+// We decide to recursively link File System Nodes
+// - to make debugging easier
+// - to make recursion easier
+// - to make dir moves easier
+// Also no need for UID since the path is the UID
+// We could not differentiate file/folder, but
+// - it strengthens the typing
+// - it avoid having to differentiate File & Folder payloads
 
 interface FileSystemOptions {
 	SEP: '/',
 }
 
-// undefined payload allowed since we can insert multiple folders for convenience
-interface FileSystemNode<FilePayload, FolderPayload, Payload = FilePayload | FolderPayload | undefined> extends WithPayload<Payload> {
-	// there are plenty of ways to store a graph
-	// we decide to recursively link FoldersFilesTree
-	// - to make debugging easier
-	// - to make recursion easier
-	// - to make dir moves easier
-
-	// no need for UID since the path is the UID
-
+interface FileSystemNodeⳇFile<FilePayload, FolderPayload> extends WithPayload<FilePayload> {
 	root: FileSystemRoot<FilePayload, FolderPayload> // to share options
-	parent: FileSystemNode<FilePayload, FolderPayload> | null // to be able to regen the full path (null if root)
-
-	childrenⵧfolders: {
-		[basename: string]: FileSystemNode<FilePayload, FolderPayload>
-	}
-
-	childrenⵧfiles: {
-		[basename: string]: FileSystemNode<FilePayload, FolderPayload>
-	}
+	parent: FileSystemNodeⳇFolder<FilePayload, FolderPayload> | null // to be able to regen the full path (null if root)
 }
 
-interface FileSystemRoot<FilePayload, FolderPayload> extends FileSystemNode<FilePayload, FolderPayload>, WithOptions<FileSystemOptions> {
+// undefined payload allowed since we can insert multiple folders at once for convenience
+interface FileSystemNodeⳇFolder<FilePayload, FolderPayload> extends WithPayload<FolderPayload | undefined> {
+	root: FileSystemRoot<FilePayload, FolderPayload> // to share options
+	parent: FileSystemNodeⳇFolder<FilePayload, FolderPayload> | null // to be able to regen the full path (null if root)
+
+	// separating the children by type is very convenient
+	childrenⵧfolders: { [basename: string]: FileSystemNodeⳇFolder<FilePayload, FolderPayload> }
+	childrenⵧfiles:   { [basename: string]: FileSystemNodeⳇFile<FilePayload, FolderPayload> }
+}
+function isꓽFileSystemNodeⳇFolder<FilePayload, FolderPayload>(x: any): x is FileSystemNodeⳇFolder<FilePayload, FolderPayload> {
+	return x && x.childrenⵧfolders && x.childrenⵧfiles
+}
+
+type FileSystemNode<FilePayload, FolderPayload> = FileSystemNodeⳇFile<FilePayload, FolderPayload> | FileSystemNodeⳇFolder<FilePayload, FolderPayload>
+
+interface FileSystemRoot<FilePayload, FolderPayload> extends FileSystemNodeⳇFolder<FilePayload, FolderPayload>, WithOptions<FileSystemOptions> {
 	options: FileSystemOptions
 	parent: null
 }
@@ -54,6 +60,8 @@ interface Aggregated<FilePayload, FolderPayload> {
 
 export {
 	type FileSystemOptions,
+	type FileSystemNodeⳇFile,
+	type FileSystemNodeⳇFolder, isꓽFileSystemNodeⳇFolder,
 	type FileSystemNode,
 	type FileSystemRoot,
 

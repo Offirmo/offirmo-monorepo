@@ -1,9 +1,10 @@
 import { expect } from 'chai'
+import { RelativePath } from '@offirmo-private/ts-types'
 
 import { LIB } from '../consts.js'
 import { createꓽgraphⵧfilesystem } from '../../../__fixtures/graph--filesystem.js'
 
-import { FileSystemNode, createꓽfilesystem, insertꓽfile, upsertꓽfolder, getꓽrepresentationⵧlines } from './index.js'
+import { FileSystemNodeⳇFolder, createꓽfilesystem, insertꓽfile, upsertꓽfolder, getꓽrepresentationⵧlines } from './index.js'
 
 /////////////////////////////////////////////////
 
@@ -12,9 +13,10 @@ describe(`${LIB} -- file system`, function() {
 	describe('example', function() {
 
 		it('should work', () => {
-			const { graph, ...rest } = createꓽgraphⵧfilesystem<FileSystemNode<undefined, undefined>>(
+			type Graph = FileSystemNodeⳇFolder<undefined, undefined>
+			const { graph, ...rest } = createꓽgraphⵧfilesystem<Graph>(
 				createꓽfilesystem,
-				insertꓽfile,
+				(g: Graph, path: RelativePath) => insertꓽfile(g, path, undefined),
 				upsertꓽfolder,
 			)
 			//console.log(graph)

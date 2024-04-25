@@ -3,7 +3,7 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 import { MAIN_IFRAME_QUERYPARAMS } from '../../consts'
 import { isꓽStory‿v3, isꓽStory‿v2 } from '../../types'
-import { State, getꓽstoryⵧcurrent‿uid, getꓽstoryⵧby_id } from '../../state'
+import { State, getꓽstoryⵧcurrent‿uid, getꓽstoryⵧby_uid } from '../../state'
 
 /////////////////////////////////////////////////
 
@@ -11,15 +11,15 @@ function renderⵧstory(state: Immutable<State>) {
 	const urlSearchParams = (new URL(window.location.href)).searchParams
 
 	setTimeout(() => {
-		const story_id = getꓽstoryⵧcurrent‿uid(state) //urlSearchParams.get(MAIN_IFRAME_QUERYPARAMS.story_id)
-		if (!story_id || story_id === 'undefined' || story_id === '[NO-KNOWN-STORIES]') {
+		const story_uid = getꓽstoryⵧcurrent‿uid(state) //urlSearchParams.get(MAIN_IFRAME_QUERYPARAMS.story_uid)
+		if (!story_uid || story_uid === 'undefined' || story_uid === '[NO-KNOWN-STORIES]') {
 			document.body.innerText = `(no stories found)`
 			return
 		}
 
-		document.body.innerText = `Loading story "${story_id}"…`
+		document.body.innerText = `Loading story "${story_uid}"…`
 
-		const story = getꓽstoryⵧby_id(state, story_id)
+		const story = getꓽstoryⵧby_uid(state, story_uid)
 		try {
 			let content = ''
 			switch(true) {
@@ -51,7 +51,7 @@ function renderⵧstory(state: Immutable<State>) {
 		}
 		catch (err) {
 			console.error(err)
-			document.body.innerText = `Error loading story "${story_id}"! ${String(err)}`
+			document.body.innerText = `Error loading story "${story_uid}"! ${String(err)}`
 		}
 	}, 1)
 }

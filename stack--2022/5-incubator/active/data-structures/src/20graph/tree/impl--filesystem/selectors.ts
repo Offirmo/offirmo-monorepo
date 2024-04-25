@@ -6,13 +6,13 @@ import { Immutable, RelativePath } from '@offirmo-private/ts-types'
 import { normalizeꓽpath } from '@offirmo-private/normalize-string'
 
 import { TreeForRL, getꓽrepresentationⵧlinesⵧgeneric } from '../selectors--representation--lines.js'
-import { FileSystemNode } from './types.js'
+import { FileSystemNode, isꓽFileSystemNodeⳇFolder, FileSystemNodeⳇFolder } from './types.js'
 
 /////////////////////////////////////////////////
 
-function getꓽparent__path<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>): RelativePath {
+function getꓽparent__path<FilePayload, FolderPayload>(node: FileSystemNode<FilePayload, FolderPayload>): RelativePath {
 	let segments: string[] = []
-	const { options } = tree.root
+	const { options } = node.root
 
 	throw new Error(`getꓽparent__path() not implemented yet!`)
 }
@@ -22,27 +22,34 @@ function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FileSystemNode<F
 	const { options } = tree.root
 	const segments = path.split(options.SEP)
 
-	let temp_path: string[] = []
 	return segments.reduce((acc, segment) => {
-		if (acc.childrenⵧfolders[segment]) {
-			return acc.childrenⵧfolders[segment]!
-		}
+		if (isꓽFileSystemNodeⳇFolder(acc)) {
+			if (acc.childrenⵧfolders[segment]) {
+				return acc.childrenⵧfolders[segment]!
+			}
 
-		if (acc.childrenⵧfiles[segment]) {
-			return acc.childrenⵧfiles[segment]!
+			if (acc.childrenⵧfiles[segment]) {
+				return acc.childrenⵧfiles[segment]!
+			}
 		}
 
 		throw new Error(`getꓽnode() could not find "${segment}" in "${getꓽparent__path(acc)}"!`)
 	}, tree)
 }
+function getꓽnodeⵧby_pathⵧensure_folder<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNodeⳇFolder<FilePayload, FolderPayload> {
+	const node = getꓽnodeⵧby_path(tree, path)
+	assert(isꓽFileSystemNodeⳇFolder(node), `not a folder node!`)
+	return node
+}
+
 /////////////////////////////////////////////////
 
 class CTreeForRL<FilePayload, FolderPayload> implements TreeForRL {
-	underlying_node: Immutable<FileSystemNode<FilePayload, FolderPayload>>
+	underlying_node: FileSystemNode<FilePayload, FolderPayload>
 	segment: string
 	type: 'folder' | 'file'
 
-	constructor(underlying_node: Immutable<FileSystemNode<FilePayload, FolderPayload>>, segment: string, type: 'folder' | 'file') {
+	constructor(underlying_node: FileSystemNode<FilePayload, FolderPayload>, segment: string, type: 'folder' | 'file') {
 		this.underlying_node = underlying_node
 		this.segment = segment
 		this.type = type
@@ -59,10 +66,15 @@ class CTreeForRL<FilePayload, FolderPayload> implements TreeForRL {
 	}
 
 	getꓽchildren() {
-		return [
-			...Object.keys(this.underlying_node.childrenⵧfolders).sort().map(segment => new CTreeForRL(this.underlying_node.childrenⵧfolders[segment]!, segment, 'folder')),
-			...Object.keys(this.underlying_node.childrenⵧfiles).sort().map(segment => new CTreeForRL(this.underlying_node.childrenⵧfiles[segment]!, segment, 'file')),
-		]
+		if (isꓽFileSystemNodeⳇFolder(this.underlying_node)) {
+			const folder = this.underlying_node as FileSystemNodeⳇFolder<FilePayload, FolderPayload>
+			return [
+				...Object.keys(folder.childrenⵧfolders).sort().map(segment => new CTreeForRL(folder.childrenⵧfolders[segment]!, segment, 'folder')),
+				...Object.keys(folder.childrenⵧfiles).sort().map(segment => new CTreeForRL(folder.childrenⵧfiles[segment]!, segment, 'file')),
+			]
+		}
+
+		return []
 	}
 }
 
@@ -73,6 +85,7 @@ function getꓽrepresentationⵧlines<FilePayload, FolderPayload>(tree: Immutabl
 /////////////////////////////////////////////////
 
 export {
-	getꓽnodeⵧby_path,
+	getꓽnodeⵧby_path, getꓽnodeⵧby_pathⵧensure_folder,
+
 	getꓽrepresentationⵧlines,
 }

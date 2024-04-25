@@ -5,16 +5,21 @@ import assert from 'tiny-invariant'
 import { RelativePath } from '@offirmo-private/ts-types'
 import { normalizeꓽpath } from '@offirmo-private/normalize-string'
 
-import { FileSystemNode, FileSystemRoot, FileSystemOptions } from './types.js'
-import { getꓽnodeⵧby_path } from './selectors.js'
+import {
+	FileSystemNodeⳇFile,
+	FileSystemNodeⳇFolder,
+	FileSystemRoot,
+	FileSystemOptions,
+} from './types.js'
+import { getꓽnodeⵧby_path, getꓽnodeⵧby_pathⵧensure_folder } from './selectors.js'
 
 /////////////////////////////////////////////////
 
-function _createꓽnode<FilePayload, FolderPayload>(
-	root: FileSystemNode<FilePayload, FolderPayload>['root'],
-	parent: FileSystemNode<FilePayload, FolderPayload>['parent'],
-	payload: FileSystemNode<FilePayload, FolderPayload>['payload'],
-): FileSystemNode<FilePayload, FolderPayload> {
+function _createꓽnodeⵧFolder<FilePayload, FolderPayload>(
+	root: FileSystemNodeⳇFolder<FilePayload, FolderPayload>['root'],
+	parent: FileSystemNodeⳇFolder<FilePayload, FolderPayload>['parent'],
+	payload: FileSystemNodeⳇFolder<FilePayload, FolderPayload>['payload'],
+): FileSystemNodeⳇFolder<FilePayload, FolderPayload> {
 	return {
 		root,
 		parent,
@@ -24,8 +29,22 @@ function _createꓽnode<FilePayload, FolderPayload>(
 	}
 }
 
-function createꓽfilesystem<FilePayload = {}, FolderPayload = FilePayload>(options: FileSystemOptions = { SEP: '/'}): FileSystemNode<FilePayload, FolderPayload> {
-	const underlying_FFT = _createꓽnode<FilePayload, FolderPayload>(null as any, null, undefined)
+function _createꓽnodeⵧFile<FilePayload, FolderPayload>(
+	root: FileSystemNodeⳇFile<FilePayload, FolderPayload>['root'],
+	parent: FileSystemNodeⳇFile<FilePayload, FolderPayload>['parent'],
+	payload: FileSystemNodeⳇFile<FilePayload, FolderPayload>['payload'],
+): FileSystemNodeⳇFile<FilePayload, FolderPayload> {
+	return {
+		root,
+		parent,
+		payload,
+	}
+}
+
+// yes, we do NOT return a "Root" type here
+// to enforce the concept that file system nodes are relative and can be sliced at will
+function createꓽfilesystem<FilePayload = undefined, FolderPayload = FilePayload>(options: FileSystemOptions = { SEP: '/'}): FileSystemNodeⳇFolder<FilePayload, FolderPayload> {
+	const underlying_FFT = _createꓽnodeⵧFolder<FilePayload, FolderPayload>(null as any, null, undefined)
 	const result: FileSystemRoot<FilePayload, FolderPayload> = {
 		...underlying_FFT,
 		parent: null,
@@ -35,32 +54,32 @@ function createꓽfilesystem<FilePayload = {}, FolderPayload = FilePayload>(opti
 	return result
 }
 
-function insertꓽfile<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath, payload?: FilePayload | undefined): RelativePath {
+function insertꓽfile<FilePayload, FolderPayload>(tree: FileSystemNodeⳇFolder<FilePayload, FolderPayload>, path: RelativePath, payload: FilePayload): RelativePath {
 	path = normalizeꓽpath(path, 'file')
 	const { options } = tree.root
 	const segments = path.split(options.SEP)
 	assert(segments.length > 0, `insertꓽfile() should provide at least a basename!`)
 	const basename = segments.pop()!
 	const folders = segments
-	const parent: FileSystemNode<FilePayload, FolderPayload> = (() => {
+	const parent: FileSystemNodeⳇFolder<FilePayload, FolderPayload> = (() => {
 		if (folders.length === 0) {
 			return tree
 		}
 		else {
 			const folder_path = upsertꓽfolder<FilePayload, FolderPayload>(tree, folders.join(options.SEP))
-			return getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree, folder_path)
+			return getꓽnodeⵧby_pathⵧensure_folder<FilePayload, FolderPayload>(tree, folder_path)
 		}
 	})()
 	assert(!parent.childrenⵧfolders[basename], `insertꓽfile() should not overwrite an existing folder!`)
 	assert(!parent.childrenⵧfiles[basename], `insertꓽfile() should not overwrite an existing file!`)
 
-	const file_node = _createꓽnode<FilePayload, FolderPayload>(tree.root, parent, payload)
+	const file_node = _createꓽnodeⵧFile<FilePayload, FolderPayload>(tree.root, parent, payload)
 	parent.childrenⵧfiles[basename] = file_node
 
 	return path
 }
 
-function upsertꓽfolder<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): RelativePath {
+function upsertꓽfolder<FilePayload, FolderPayload>(tree: FileSystemNodeⳇFolder<FilePayload, FolderPayload>, path: RelativePath): RelativePath {
 	path = normalizeꓽpath(path, 'folder')
 	const { options } = tree.root
 	const segments = path.split(options.SEP)
@@ -70,7 +89,7 @@ function upsertꓽfolder<FilePayload, FolderPayload>(tree: FileSystemNode<FilePa
 	segments.forEach(basename => {
 		assert(!parent.childrenⵧfiles[basename], `upsertꓽfolder() should not overwrite an existing file!`)
 		if (!parent.childrenⵧfolders[basename]) {
-			const folder_node = _createꓽnode<FilePayload, FolderPayload>(tree.root, parent, undefined)
+			const folder_node = _createꓽnodeⵧFolder<FilePayload, FolderPayload>(tree.root, parent, undefined)
 			parent.childrenⵧfolders[basename] = folder_node
 		}
 		parent = parent.childrenⵧfolders[basename]!

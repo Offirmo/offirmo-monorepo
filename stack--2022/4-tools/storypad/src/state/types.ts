@@ -1,4 +1,4 @@
-import { FileSystemNode } from '@offirmo-private/data-structures'
+import { FileSystemNodeⳇFolder } from '@offirmo-private/data-structures'
 import {
 	UserConfig,
 	Story, isꓽStory,
@@ -38,11 +38,11 @@ export interface State {
 		[k: StoryId]: StoryEntry,
 	}
 
-	folders_by_id: {
+	folders_by_uid: {
 		[k: FolderId]: StoryFolder,
 	}
 
 	current_story‿uid: StoryId | undefined
 
-	tree: FileSystemNode<StoryEntry, StoryFolder>
+	tree: FileSystemNodeⳇFolder<StoryEntry, StoryFolder>
 }

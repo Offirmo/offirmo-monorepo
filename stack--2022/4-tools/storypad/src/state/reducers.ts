@@ -22,7 +22,7 @@ function create(): Immutable<State> {
 			decorators: [],
 		},
 		stories_by_uid: {},
-		folders_by_id: {},
+		folders_by_uid: {},
 		current_story‿uid: undefined,
 		tree: createꓽfilesystem<StoryEntry, StoryFolder>(),
 	}
@@ -57,11 +57,11 @@ export function registerꓽstory(state: Immutable<State>, story: StoryEntry, pat
 }
 
 export function registerꓽfolder(state: Immutable<State>, folder: StoryFolder): Immutable<State> {
-	assert(!state.folders_by_id[folder.uid], `folder should not already exist! "${folder.uid}"`)
+	assert(!state.folders_by_uid[folder.uid], `folder should not already exist! "${folder.uid}"`)
 	return {
 		...state,
-		folders_by_id: {
-			...state.folders_by_id,
+		folders_by_uid: {
+			...state.folders_by_uid,
 			[folder.uid]: folder,
 		},
 	}
@@ -71,7 +71,7 @@ export function enrich_state_from_local_storage(state: Immutable<State>): Immuta
 	console.log('TODO enrich_state_from_local_storage')
 	/*
 	try {
-		const id = localStorage.getItem(LS_KEYS.current_story_id)
+		const id = localStorage.getItem(LS_KEYS.current_story_uid)
 		if (id)
 			state = setꓽcurrent_story(state, id)
 	}
@@ -101,10 +101,10 @@ export function enrich_state_from_env(state: Immutable<State>): Immutable<State>
 
 /////////////////////////////////////////////////
 
-export function setꓽcurrent_story(state: Immutable<State>, story_id: StoryId): Immutable<State> {
+export function setꓽcurrent_story(state: Immutable<State>, story_uid: StoryId): Immutable<State> {
 	state = {
 		...state,
-		current_story‿uid: story_id,
+		current_story‿uid: story_uid,
 	}
 
 	state = folderⵧexpand(state, state.current_story‿uid!)
@@ -121,7 +121,7 @@ export function folderⵧexpand(state: Immutable<State>, id: StoryId): Immutable
 	const path = id.split(SEP_FOR_IDS)
 
 	// in-place mutation SORRY TODO fix?
-	let folder: StoryFolder = state.folders_by_id[ROOT_ID]! as any
+	let folder: StoryFolder = state.folders_by_uid[ROOT_ID]! as any
 	do {
 		console.log('expanding', { path: structuredClone(path), folder })
 
