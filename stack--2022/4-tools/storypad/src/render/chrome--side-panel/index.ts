@@ -4,7 +4,7 @@
 import assert from 'tiny-invariant'
 import { Immutable, Basename } from '@offirmo-private/ts-types'
 
-import { MAIN_IFRAME_QUERYPARAMS } from '../../consts'
+import { LIB, MAIN_IFRAME_QUERYPARAMS } from '../../consts'
 import { StoryEntry, isꓽStoryEntry, StoryFolder, isꓽStoryFolder, State, StoryId } from '../../state/types'
 import { getꓽcurrent_urlⵧcleaned } from '../../services/env'
 
@@ -12,6 +12,7 @@ import { getꓽcurrent_urlⵧcleaned } from '../../services/env'
 
 
 function renderⵧside_panel(state: Immutable<State>) {
+	console.group(`[${LIB}] renderⵧside_panel()`)
 	// @ts-expect-error bundler stuff
 	import('./index.css')
 
@@ -19,7 +20,7 @@ function renderⵧside_panel(state: Immutable<State>) {
 }
 
 function _append_folder(state: Immutable<State>, parent_elt: HTMLElement, tree: Immutable<State>['tree'], path: Basename[]) {
-	console.log('_append_folder()', { parent_elt, tree, path, })
+	console.group('_append_folder()', path)
 	let details_elt = document.createElement('details')
 	const payload: StoryFolder = (tree.payload as any) ?? {
 		uid: path.join('/'),
@@ -41,6 +42,7 @@ function _append_folder(state: Immutable<State>, parent_elt: HTMLElement, tree: 
 
 	parent_elt.appendChild(details_elt)
 	//details_elt.classList.add('gridⵧsquare')
+	console.groupEnd()
 }
 
 

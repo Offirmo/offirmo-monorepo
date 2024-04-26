@@ -110,6 +110,7 @@ body {
 body > details:first-child {
 	overflow-y: scroll;
 	resize: horizontal;
+	width: 250px; /* good initial width */
 }
 
 iframe#storypad⋄iframe {

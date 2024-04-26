@@ -91,6 +91,7 @@
 		"@types/mocha": "^10",
 		"@types/murmurhash3js-revisited": "^3",
 		"@types/prettyjson": "^0",
+		"@types/react-dom": "^18",
 		"@types/react-swipeable-views": "^0",
 		"@types/react-swipeable-views-core": "^0",
 		"@types/react-swipeable-views-utils": "^0",

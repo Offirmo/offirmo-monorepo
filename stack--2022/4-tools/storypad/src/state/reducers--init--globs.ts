@@ -25,8 +25,7 @@ const ROOT_ID = '╣ROOT╠'
 const DEBUGⵧglob_parsing = true
 
 function registerꓽstoriesⵧfrom_glob(state: Immutable<State>, stories_glob: Immutable<Glob>): Immutable<State> {
-	DEBUGⵧglob_parsing && console.group(`registerꓽstoriesⵧfrom_glob()`)
-	DEBUGⵧglob_parsing && console.log(stories_glob)
+	DEBUGⵧglob_parsing && console.groupCollapsed(`registerꓽstoriesⵧfrom_glob()`)
 
 	state = _registerꓽstoriesⵧfrom_glob_or_module(state, stories_glob, [])
 
@@ -108,6 +107,7 @@ function registerꓽstoriesⵧfrom_glob(state: Immutable<State>, stories_glob: I
 
 function _registerꓽstoriesⵧfrom_glob_or_module(state: Immutable<State>, stories_glob: Immutable<Glob>, parent_path: string[] = []): Immutable<State> {
 	DEBUGⵧglob_parsing && console.group(`_registerꓽstoriesⵧfrom_glob_or_module(${parent_path.join(SEP)})`)
+	DEBUGⵧglob_parsing && console.log('glob=', stories_glob)
 
 	Object.keys(stories_glob).forEach(key => {
 		const blob = stories_glob[key]
@@ -133,7 +133,7 @@ function _registerꓽstoriesⵧfrom_glob_or_module(state: Immutable<State>, stor
 }
 function _registerꓽstoriesⵧfrom_module(state: Immutable<State>, story_module: Immutable<Module>, parent_path: string[] = []): Immutable<State> {
 	DEBUGⵧglob_parsing && console.group(`_registerꓽstories_from_module(${parent_path.join(SEP)}.[js/ts/...])`)
-	console.log(story_module)
+	console.log('module=', story_module)
 
 	// TODO pick whatever has js or ts in it
 	const exports = story_module.js || story_module.jsx || story_module.ts || story_module.tsx

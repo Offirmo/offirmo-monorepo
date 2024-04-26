@@ -1489,6 +1489,13 @@
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/prop-types/-/prop-types-15.7.12.tgz#12bb1e2be27293c1406acb6af1c3f3a1481d98c6"
   integrity sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==
 
+"@types/react-dom@^18":
+  version "18.3.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/react-dom/-/react-dom-18.3.0.tgz#0cbc818755d87066ab6ca74fbedb2547d74a82b0"
+  integrity sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-swipeable-views-core@^0":
   version "0.13.3"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/react-swipeable-views-core/-/react-swipeable-views-core-0.13.3.tgz#be3f366315259a8bf6be1ca9bd7530c716388383"

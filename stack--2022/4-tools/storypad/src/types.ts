@@ -3,6 +3,7 @@ import { Html‿str } from '@offirmo-private/ts-types-web'
 /////////////////////////////////////////////////
 
 export type StoryOutput = Html‿str // TODO extend return type
+export type StoryComponent = unknown
 
 /////////////////////////////////////////////////
 // Component story format CSF
@@ -29,7 +30,9 @@ export interface Meta {
 /* named export = a story = an OBJECT for v3
  */
 export interface Story‿v3 {
-	//render: () => StoryOutput NO! CAN be a React component, can be in Meta...
+	render?: () => StoryOutput
+	component?: StoryComponent
+	// can have neither, extending "meta" or even being empty!
 
 	name?: never
 	parameters?: never

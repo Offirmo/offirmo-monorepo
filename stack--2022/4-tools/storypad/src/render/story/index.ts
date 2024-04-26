@@ -7,53 +7,46 @@ import { State, getꓽstoryⵧcurrent‿uid, getꓽstoryⵧby_uid } from '../../
 
 /////////////////////////////////////////////////
 
-function renderⵧstory(state: Immutable<State>) {
+async function renderⵧstory(state: Immutable<State>) {
+	document.body.innerText = `Loading story…`
+
+	try {
+		await _renderⵧstory(state)
+	} catch (err) {
+		console.error(err)
+		document.body.innerText = `Error loading story! (see console)`
+	}
+}
+
+async function _renderⵧstory(state: Immutable<State>) {
 	const urlSearchParams = (new URL(window.location.href)).searchParams
 
-	setTimeout(() => {
-		const story_uid = getꓽstoryⵧcurrent‿uid(state) //urlSearchParams.get(MAIN_IFRAME_QUERYPARAMS.story_uid)
-		if (!story_uid || story_uid === 'undefined' || story_uid === '[NO-KNOWN-STORIES]') {
-			document.body.innerText = `(no stories found)`
-			return
+	const story_uid = getꓽstoryⵧcurrent‿uid(state) //urlSearchParams.get(MAIN_IFRAME_QUERYPARAMS.story_uid)
+	if (!story_uid || story_uid === 'undefined' || story_uid === '[NO-KNOWN-STORIES]') {
+		document.body.innerText = `(no stories found)`
+		return
+	}
+
+	document.body.innerText = `Loading story "${story_uid}"…`
+
+	const storyEntry = getꓽstoryⵧby_uid(state, story_uid)
+
+	switch(true) {
+		case isꓽStory‿v3(storyEntry.story): {
+			const render_v3 = (await import('./v3')).default
+			render_v3(storyEntry)
+			break
 		}
 
-		document.body.innerText = `Loading story "${story_uid}"…`
+		/*
+		case isꓽStory‿v2(storyEntry): {
+			content = storyEntry()
+			break
+		}*/
 
-		const story = getꓽstoryⵧby_uid(state, story_uid)
-		try {
-			let content = ''
-			switch(true) {
-				case isꓽStory‿v3(story): {
-					throw new Error('v3 render Not implemented!')
-					//content = story.render()
-					break
-				}
-				case isꓽStory‿v2(story): {
-					content = story()
-					break
-				}
-				default:
-					throw new Error(`Unsupported story format!`)
-			}
-
-			const decorators = story.story.decorators === null
-				? [] // allow resetting decorators
-				:[
-					...state.config.decorators,
-					...(story.meta?.decorators || []),
-					...(story.story.decorators || []),
-				].reverse()
-			decorators.forEach(decorator => {
-				throw new Error('Decorators not implemented!')
-				//content = decorator(content)
-			})
-			document.body.innerHTML = content
-		}
-		catch (err) {
-			console.error(err)
-			document.body.innerText = `Error loading story "${story_uid}"! ${String(err)}`
-		}
-	}, 1)
+		default:
+			throw new Error(`Unsupported story format! (yet!)`)
+	}
 }
 
 /////////////////////////////////////////////////

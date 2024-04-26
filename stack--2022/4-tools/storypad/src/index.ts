@@ -12,11 +12,14 @@ import {
 	enrich_state_from_env,
 } from './state'
 import { render } from './render'
+import { renderⵧstory } from './render/story'
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable<UserConfig>) {
-	console.group(`Starting storypad…`)
+	const is_iframe = ( window.location !== window.parent.location )
+
+	console.groupCollapsed(`Starting storypad… [${is_iframe ? 'SUB frame' : 'TOP frame'}]`)
 	console.log('config =', config)
 	console.log('glob =', stories_glob)
 
@@ -29,6 +32,7 @@ export function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutabl
 	state = enrich_state_from_query_parameters(state)
 	state = enrich_state_from_env(state)
 
+	console.log('final state =', state)
 	console.groupEnd()
 
 	setTimeout(() => {
