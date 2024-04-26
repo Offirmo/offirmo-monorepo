@@ -31,6 +31,26 @@ ACID -- 4 Durability "once committed, always committed"
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
 API gateway
 API-First = Built with APIs from the ground up. All functionality is exposed through an API
+app -- a11y
+app -- API -- common design
+app -- API -- pagination
+app -- API -- resilience
+app -- architecture: LAMP / JAMStack / SSR...
+app -- auth
+app -- BFFE / GraphQL / REST
+app -- collaboration: which model? XXX TODO
+app -- components https://www.componentdriven.org/
+app -- constraints: mobile first ? offline first ? low latency ? criticity ?
+app -- i18n
+app -- navigation
+app -- performance
+app -- reliability
+app -- router
+app -- scalability: where will it scroll? perf?
+app -- security
+app -- session
+app -- state
+app -- state -- structure
 architecture -- entitlement (vs. billing) = a customer’s access to a specific feature or product, within a given plan +++https://arnon.dk/why-you-should-separate-your-billing-from-entitlement/
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
 architecture -- LAMP
