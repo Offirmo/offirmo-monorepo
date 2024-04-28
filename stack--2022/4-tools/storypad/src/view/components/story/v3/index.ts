@@ -20,7 +20,10 @@ async function render(entry: Immutable<StoryEntry>) {
 
 	switch (true) {
 		case story.render !== undefined: {
-			const rendered = story.render()
+			const rendered = story.render({
+				...meta.args,
+				...story.args,
+			})
 			document.body.innerText = rendered
 			break
 		}

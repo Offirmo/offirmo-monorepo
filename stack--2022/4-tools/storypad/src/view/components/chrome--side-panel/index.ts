@@ -24,7 +24,7 @@ function _append_folder(state: Immutable<State>, parent_elt: HTMLElement, tree: 
 	let details_elt = document.createElement('details')
 	const payload: StoryFolder = (tree.payload as any) ?? {
 		uid: path.join('/'),
-		is_expanded: false,
+		is_expanded: true, // TODO auto expand etc.
 	}
 	details_elt.open = payload.is_expanded
 	details_elt.innerHTML = `

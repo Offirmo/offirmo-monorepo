@@ -3,6 +3,7 @@
 	import startꓽstorypad from '@offirmo-private/storypad'
 	import nearest_pkg from '~/package.json'
 
+	// important to load async so that the stories don't pollute the global scope too early (ex. before SEC)
 	//import stories from './**/*.stories.@(js|jsx|ts|tsx|mdx)'
 	const stories = import('./**/*.stories.@(js|jsx|ts|tsx|mdx)')
 	console.log('BOOTSTRAP stories', stories)
@@ -13,8 +14,7 @@
 		},
 		{
 			root_title: nearest_pkg?.name,
-			decorators: [
-			]
+			//decorators: []
 		}
 	)
 </script>

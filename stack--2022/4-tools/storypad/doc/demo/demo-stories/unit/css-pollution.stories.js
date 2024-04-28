@@ -1,5 +1,5 @@
 
-console.log('FOO loaded!');
+import './css-pollution.css'
 
 export const Foo = {
 	render: () => 'FOO!'

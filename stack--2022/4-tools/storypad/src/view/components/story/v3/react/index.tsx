@@ -31,9 +31,14 @@ async function render(Component: any, story: Immutable<Story‿v3>, meta: Immuta
 	const use_strict = true
 	const StrictWrapper = use_strict ? StrictMode : Fragment
 
+	const props = {
+		...meta.args,
+		...story.args,
+	}
+
 	root.render(
 	<StrictWrapper>
-			<Component />
+			<Component {...props} />
 		</StrictWrapper>
 	);
 	console.groupEnd()

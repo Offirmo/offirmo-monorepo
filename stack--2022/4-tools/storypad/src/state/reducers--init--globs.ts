@@ -70,10 +70,23 @@ async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Imm
 
 	const exports = await (async () => {
 		// TODO one day "on demand" resolution
-		if (typeof exports_sync_or_async === 'function')
-			return await exports_sync_or_async()
-		else
-			return exports_sync_or_async
+		if (typeof exports_sync_or_async === 'function') {
+			try {
+				return await exports_sync_or_async()
+			}
+			catch (err) {
+				return {
+					'!ERROR!': {
+						render() {
+							console.error(`Error while loading the story "${parent_path.join(SEP)}"!`, err)
+							return `Error while loading story! (see console)`
+						}
+					}
+				}
+			}
+		}
+
+		return exports_sync_or_async
 	})()
 
 	const { default: meta, ...stories } = exports
