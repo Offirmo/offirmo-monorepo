@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
+import { LIB } from '../../consts.js'
 import {
-	LIB,
 	SoftExecutionContext,
 	getRootSEC,
 	_test_only__reset_root_SEC,

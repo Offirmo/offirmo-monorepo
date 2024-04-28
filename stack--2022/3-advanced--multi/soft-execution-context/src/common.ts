@@ -1,16 +1,12 @@
-/* global NODE_ENV process */
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import { SoftExecutionContext } from './types.js'
 
+/////////////////////////////////////////////////
+
 function decorateWithDetectedEnv(SEC: SoftExecutionContext<any>) {
 	const ENV = (() => {
 		try {
-			/*
-			if (typeof NODE_ENV === 'string')
-				return NODE_ENV
-			 */
-
 			if (typeof process !== 'undefined' && typeof process.env.NODE_ENV === 'string')
 				return process.env.NODE_ENV
 		}
@@ -41,6 +37,7 @@ function decorateWithDetectedEnv(SEC: SoftExecutionContext<any>) {
 	})
 }
 
+/////////////////////////////////////////////////
 
 export {
 	decorateWithDetectedEnv,

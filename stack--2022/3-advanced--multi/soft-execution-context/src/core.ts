@@ -5,6 +5,8 @@ import * as State from './state.js'
 import { PLUGINS } from './plugins/index.js'
 import { decorateWithDetectedEnv } from './common.js'
 
+/////////////////////////////////////////////////
+
 ROOT_PROTOTYPE.createChild = function createChild(args: any) {
 	return _createSEC({
 		...args,
@@ -16,13 +18,15 @@ PLUGINS.forEach(PLUGIN => {
 	PLUGIN.augment(ROOT_PROTOTYPE)
 })
 
+/////////////////////////////////////////////////
+
 function isSEC(SEC: any): SEC is SoftExecutionContext {
 	return (SEC && SEC[INTERNAL_PROP])
 }
 
 // this function should normally NOT be called directly
 // use getRootSEC() or make a getLibSEC()
-function _createSEC<Injections = {}, AnalyticsDetails = {}, ErrorDetails = {}>(args: any = {}): SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails> {
+function _createSEC<Injections, AnalyticsDetails, ErrorDetails>(args: any = {}): SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails> {
 	/////// PARAMS ///////
 
 	if (args.parent && !isSEC(args.parent))
@@ -66,8 +70,9 @@ function _createSEC<Injections = {}, AnalyticsDetails = {}, ErrorDetails = {}>(a
 	return SEC
 }
 
+/////////////////////////////////////////////////
+
 export {
-	LIB,
 	isSEC,
 	_createSEC,
 }

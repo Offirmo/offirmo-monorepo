@@ -1,5 +1,4 @@
 import { SoftExecutionContext } from './types.js'
-import { LIB } from './consts.js'
 import { _createSEC } from './core.js'
 
 /////////////////////

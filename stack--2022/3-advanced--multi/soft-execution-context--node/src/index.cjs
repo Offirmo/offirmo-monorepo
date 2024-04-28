@@ -12,11 +12,7 @@ function listenToUncaughtErrors() {
 		.setLogicalStack({operation: '(node/uncaught)'})
 
 	process.on('uncaughtException', err => {
-		SEC._handleError({
-			SEC,
-			debugId: 'node/uncaught',
-			shouldRethrow: false,
-		}, err)
+		SEC.handleError(err, 'node/uncaught')
 	})
 }
 
@@ -27,11 +23,7 @@ function listenToUnhandledRejections() {
 		.setLogicalStack({operation: '(node/unhandled rejection)'})
 
 	process.on('unhandledRejection', err => {
-		SEC._handleError({
-			SEC,
-			debugId: 'node/unhandled rejection',
-			shouldRethrow: false,
-		}, err)
+		SEC.handleError(err, 'node/unhandled rejection')
 	})
 }
 

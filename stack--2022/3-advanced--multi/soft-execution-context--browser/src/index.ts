@@ -1,8 +1,10 @@
-import Bowser from 'bowser'
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import * as Bowser from 'bowser'
+import { BaseInjections, SoftExecutionContext, getRootSEC } from '@offirmo-private/soft-execution-context'
 //import ensureDeviceUUID from '@offirmo-private/ensure-device-uuid-browser'
+
 import { LS_KEYS } from './consts.js'
 
+/////////////////////////////////////////////////
 
 // XXX redundant, next one is better (?rly)
 // https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror
@@ -14,7 +16,7 @@ function listenToErrors() {
 		console.log('DEBUG', arguments)
 		err = err || new Error(`Error "${msg}" from "${url}", line ${line}!`)
 
-		SEC._handleError({
+		SEC.handleError(...{
 			SEC,
 			debugId: 'browser/onError',
 			shouldRethrow: false,
@@ -25,7 +27,7 @@ function listenToErrors() {
 }
 */
 
-function listenToErrorEvents() {
+function listenToErrorEvents(): void {
 	const SEC = getRootSEC()
 		.createChild()
 		.setLogicalStack({operation: '(browser/on error event)'})
@@ -39,11 +41,7 @@ function listenToErrorEvents() {
 				? new Error('Unreadable error from another origin!')
 				: evt.error || new Error(`Error "${evt.message}" from "${evt.filename}", line ${evt.lineno}.${evt.colno}!`)
 
-			SEC._handleError({
-				SEC,
-				debugId: 'browser/onError',
-				shouldRethrow: false,
-			}, err)
+			SEC.handleError(err, 'browser/onError')
 
 			//evt.preventDefault() // XXX should we?
 		})
@@ -53,7 +51,7 @@ function listenToErrorEvents() {
 }
 
 
-function listenToUnhandledRejections() {
+function listenToUnhandledRejections(): void {
 	const SEC = getRootSEC()
 		.createChild()
 		.setLogicalStack({operation: '(browser/unhandled rejection)'})
@@ -67,31 +65,34 @@ function listenToUnhandledRejections() {
 			//console.log(evt.reason)
 			const err = evt.reason || new Error('Error: uncaught promise rejection!')
 
-			SEC._handleError({
-				SEC,
-				debugId: 'browser/unhandled rejection',
-				shouldRethrow: false,
-			}, err)
+			SEC.handleError(err, 'browser/unhandled rejection')
 		})
 
 		logger.debug('Root SEC is now listening to unhandled rejection events ✔')
 	})
 }
 
+interface BrowserDetails {
+	OS_NAME: string
+	OS_RELEASE: string
+	BROWSER_NAME: string
+	BROWSER_VERSION: string
+	DEVICE_TYPE: string
+}
 
-function decorateWithDetectedEnv(SEC) {
+function decorateWithDetectedEnv<Injections, AnalyticsDetails, ErrorDetails>(SEC: SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>): void {
 	SEC = SEC || getRootSEC()
 
-	const IS_DEV_MODE = localStorage.getItem(LS_KEYS.dev_mode) === 'true'
-	const IS_VERBOSE = localStorage.getItem(LS_KEYS.verbose) === 'true'
+	const injections: Partial<BaseInjections> = {
+		IS_DEV_MODE: localStorage.getItem(LS_KEYS.dev_mode) === 'true',
+		IS_VERBOSE: localStorage.getItem(LS_KEYS.verbose) === 'true',
+	}
 
-	SEC.injectDependencies({
-		IS_DEV_MODE,
-		IS_VERBOSE,
-	})
+	// @ts-expect-error  TODO understand and fix error
+	SEC.injectDependencies(injections)
 
 	const browser = Bowser.getParser(window.navigator.userAgent)
-	const details = {
+	const details: BrowserDetails = {
 		//DEVICE_UUID: ensureDeviceUUID(), TODO reevaluate the need
 		// TODO normalize browser/os detection!
 		OS_NAME: browser.getOSName(),
@@ -101,10 +102,12 @@ function decorateWithDetectedEnv(SEC) {
 		DEVICE_TYPE: browser.getPlatformType(),
 	}
 
+	// @ts-expect-error  TODO type properly
 	SEC.setAnalyticsAndErrorDetails(details)
 	//logger.debug('Root SEC is now decorated with env infos ✔', { Bowser: browser.getResult(), details: SEC.getAnalyticsDetails() })
 }
 
+/////////////////////////////////////////////////
 
 export * from '@offirmo-private/soft-execution-context'
 export {

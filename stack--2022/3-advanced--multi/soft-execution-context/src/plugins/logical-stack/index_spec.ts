@@ -1,8 +1,8 @@
 import { expect } from 'chai'
 import { error_to_string, displayError } from '@offirmo-private/print-error-to-terminal'
 
+import { LIB } from '../../consts.js'
 import {
-	LIB,
 	SoftExecutionContext,
 	getRootSEC,
 	_test_only__reset_root_SEC,

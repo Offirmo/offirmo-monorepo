@@ -1,5 +1,5 @@
 
-const PREFIX = 'XOF'
+const PREFIX = 'XOF' // TODO review
 
 const LS_KEYS = {
 	dev_mode: `${PREFIX}.dev_mode`,

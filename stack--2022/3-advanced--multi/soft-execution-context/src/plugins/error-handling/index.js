@@ -17,24 +17,24 @@ function _clean_temp(err) {
 	return err
 }
 
+function _handleError({SEC, debugId = '?', shouldRethrow = true}, err) {
+	_create_catcher({
+		debugId,
+		decorators: [
+			err => normalizeError(err, { alwaysRecreate: true }),
+			err => SEC._decorateErrorWithLogicalStack(err),
+			err => SEC._decorateErrorWithDetails(err),
+		],
+		onError: shouldRethrow
+			? null
+			: err => SEC.emitter.emit('final-error', { SEC, err: _clean_temp(err) }),
+	})(err)
+}
+
 const PLUGIN = {
 	id: PLUGIN_ID,
 	state: State,
 	augment: prototype => {
-
-		prototype._handleError = function handleError({SEC, debugId = '?', shouldRethrow = true}, err) {
-			_create_catcher({
-				debugId,
-				decorators: [
-					err => normalizeError(err, { alwaysRecreate: true }),
-					err => SEC._decorateErrorWithLogicalStack(err),
-					err => SEC._decorateErrorWithDetails(err),
-				],
-				onError: shouldRethrow
-					? null
-					: err => SEC.emitter.emit('final-error', { SEC, err: _clean_temp(err) }),
-			})(err)
-		}
 
 		prototype._decorateErrorWithDetails = function _decorateErrorWithDetails(err) {
 			const SEC = this
@@ -91,11 +91,11 @@ const PLUGIN = {
 		}
 
 		// for termination promises
-		prototype.handleError = function handleError(err) {
+		prototype.handleError = function handleError(err, debugId) {
 			const SEC = this
-			SEC._handleError({
+			_handleError({
 				SEC,
-				debugId: 'handleError',
+				debugId,
 				shouldRethrow: false,
 			}, err)
 		}
@@ -112,7 +112,7 @@ const PLUGIN = {
 				return fn(params)
 			}
 			catch (err) {
-				SEC._handleError({
+				_handleError({
 					SEC,
 					debugId: 'xTry',
 					shouldRethrow: true,
@@ -132,7 +132,7 @@ const PLUGIN = {
 				return fn(params)
 			}
 			catch (err) {
-				SEC._handleError({
+				_handleError({
 					SEC,
 					debugId: 'xTryCatch',
 					shouldRethrow: false,
@@ -150,7 +150,7 @@ const PLUGIN = {
 
 			return (new Promise(resolver_fn.bind(undefined, params)))
 				.catch(err => {
-					SEC._handleError({
+					_handleError({
 						SEC,
 						debugId: 'xPromise',
 						shouldRethrow: true,
@@ -168,7 +168,7 @@ const PLUGIN = {
 
 			return promiseTry(() => fn(params))
 				.catch(err => {
-					SEC._handleError({
+					_handleError({
 						SEC,
 						debugId: 'xPromiseTry',
 						shouldRethrow: true,

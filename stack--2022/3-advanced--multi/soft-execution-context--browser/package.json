@@ -7,8 +7,9 @@
 	"private": true,
 
 	"type": "module",
-	"module": "src/index.js",
-	"source": "src/index.js",
+	"module": "src/index.ts",
+	"source": "src/index.ts",
+	"typings": "src/index.ts",
 	"sideEffects": true,
 
 	"peerDependencies": {
