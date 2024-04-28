@@ -2,7 +2,10 @@
 <script type="module">
 	import startꓽstorypad from '@offirmo-private/storypad'
 	import nearest_pkg from '~/package.json'
-	import * as stories from './**/*.stories.@(js|jsx|ts|tsx|mdx)'
+
+	//import stories from './**/*.stories.@(js|jsx|ts|tsx|mdx)'
+	const stories = import('./**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	console.log('BOOTSTRAP stories', stories)
 
 	startꓽstorypad(
 		{

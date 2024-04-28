@@ -1,9 +1,8 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { MAIN_IFRAME_QUERYPARAMS } from '../../consts'
-import { isꓽStory‿v3, isꓽStory‿v2 } from '../../types'
-import { State, getꓽstoryⵧcurrent‿uid, getꓽstoryⵧby_uid } from '../../state'
+import { isꓽStory‿v3 } from '../../../types/csf/v3'
+import { State, getꓽstoryⵧcurrent‿uid, getꓽstoryⵧby_uid } from '../../../state'
 
 /////////////////////////////////////////////////
 

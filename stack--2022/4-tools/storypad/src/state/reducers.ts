@@ -3,8 +3,8 @@ import { Immutable, RelativePath } from '@offirmo-private/ts-types'
 import { FileSystemNode, createꓽfilesystem, insertꓽfile } from '@offirmo-private/data-structures'
 
 import {
-	UserConfig,
-} from '../types'
+	Config,
+} from '../types/config'
 
 import {
 	StoryId,
@@ -15,7 +15,7 @@ import {
 
 ////////////////////////////////////////////////////////////////////////////////////
 // init
-function create(): Immutable<State> {
+function create(): State {
 	return {
 		config: {
 			root_title: 'Stories',
@@ -28,12 +28,12 @@ function create(): Immutable<State> {
 	}
 }
 
-function setꓽconfig(state: Immutable<State>, config: Immutable<UserConfig> | undefined): Immutable<State> {
+function setꓽconfig(state: State, config: Immutable<Config> | undefined): State {
 	return {
 		...state,
 		config: {
 			...state.config,
-			...config,
+			...structuredClone<Config>(config as any),
 		},
 	}
 }
@@ -41,7 +41,7 @@ function setꓽconfig(state: Immutable<State>, config: Immutable<UserConfig> | u
 /////////////////////////////////////////////////
 // setup
 
-export function registerꓽstory(state: Immutable<State>, story: StoryEntry, path: RelativePath): Immutable<State> {
+export function registerꓽstory(state: State, story: StoryEntry, path: RelativePath): State {
 	assert(!state.stories_by_uid[story.uid], `story should not already exist! "${story.uid}"`)
 
 	insertꓽfile(state.tree, path, story)
@@ -56,7 +56,7 @@ export function registerꓽstory(state: Immutable<State>, story: StoryEntry, pat
 	}
 }
 
-export function registerꓽfolder(state: Immutable<State>, folder: StoryFolder): Immutable<State> {
+export function registerꓽfolder(state: State, folder: StoryFolder): State {
 	assert(!state.folders_by_uid[folder.uid], `folder should not already exist! "${folder.uid}"`)
 	return {
 		...state,
@@ -67,7 +67,7 @@ export function registerꓽfolder(state: Immutable<State>, folder: StoryFolder):
 	}
 }
 
-export function enrich_state_from_local_storage(state: Immutable<State>): Immutable<State> {
+export function enrich_state_from_local_storage(state: State): State {
 	console.log('TODO enrich_state_from_local_storage')
 	/*
 	try {
@@ -81,14 +81,14 @@ export function enrich_state_from_local_storage(state: Immutable<State>): Immuta
 	}
 }
 
-export function enrich_state_from_query_parameters(state: Immutable<State>): Immutable<State> {
+export function enrich_state_from_query_parameters(state: State): State {
 	console.log('TODO enrich_state_from_query_parameters')
 	return {
 		...state,
 	}
 }
 
-export function enrich_state_from_env(state: Immutable<State>): Immutable<State> {
+export function enrich_state_from_env(state: State): State {
 	console.log('TODO enrich_state_from_env')
 	// TODO ex. if small window, don't show the UI etc.
 
@@ -101,7 +101,7 @@ export function enrich_state_from_env(state: Immutable<State>): Immutable<State>
 
 /////////////////////////////////////////////////
 
-export function setꓽcurrent_story(state: Immutable<State>, story_uid: StoryId): Immutable<State> {
+export function setꓽcurrent_story(state: State, story_uid: StoryId): State {
 	state = {
 		...state,
 		current_story‿uid: story_uid,
@@ -115,7 +115,7 @@ export function setꓽcurrent_story(state: Immutable<State>, story_uid: StoryId)
 
 // expand the tree all the way to the target
 // id can be story or folder, don't mind
-export function folderⵧexpand(state: Immutable<State>, id: StoryId): Immutable<State> {
+export function folderⵧexpand(state: State, id: StoryId): State {
 	throw new Error('TODO folderⵧexpand')
 	/*
 	const path = id.split(SEP_FOR_IDS)

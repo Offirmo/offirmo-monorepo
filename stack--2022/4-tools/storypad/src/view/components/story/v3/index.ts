@@ -1,9 +1,9 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
-import { Story‿v3, Meta, StoryComponent } from '../../../types'
-import { StoryEntry } from '../../../state'
-import { LIB } from '../../../consts'
+import { Story‿v3, Meta‿v3, StoryComponent‿v3 } from '../../../../types/csf/v3'
+import { StoryEntry } from '../../../../state'
+import { LIB } from '../../../../consts'
 
 /////////////////////////////////////////////////
 console.log('Loading the CSF v3 renderer...')
@@ -11,8 +11,8 @@ console.log('Loading the CSF v3 renderer...')
 async function render(entry: Immutable<StoryEntry>) {
 	console.group(`[${LIB}] Rendering a CSF v3 story…`)
 	console.log('StoryEntry=', entry)
-	const story: Immutable<Story‿v3> = entry.story
-	const { uid, meta = {} as Meta } = entry
+	const story: Immutable<Story‿v3> = entry.story as any
+	const { uid, meta = {} as Meta‿v3 } = entry
 	console.log({
 		story,
 		meta,
@@ -58,7 +58,7 @@ async function render(entry: Immutable<StoryEntry>) {
 	console.groupEnd()
 }
 
-async function _renderⵧcomponent(component: Immutable<StoryComponent>, story: Immutable<Story‿v3>, meta: Immutable<Meta>) {
+async function _renderⵧcomponent(component: Immutable<StoryComponent‿v3>, story: Immutable<Story‿v3>, meta: Immutable<Meta‿v3>) {
 	console.log({Component: component})
 
 	const isReact = (typeof component === 'function') && Object.hasOwn(component, 'propTypes')

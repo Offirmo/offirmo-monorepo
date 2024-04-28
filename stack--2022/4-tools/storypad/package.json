@@ -9,11 +9,21 @@
 	"source": "src/index.ts",
 
 	"dependencies": {
+		"@offirmo-private/async-utils": "^0",
+		"@offirmo-private/css--framework": "^0",
+		"@offirmo-private/css--utils": "^0",
 		"@offirmo-private/data-structures": "*",
+		"@offirmo-private/features-detection-browser": "^0",
+		"@offirmo-private/poll-window-variable": "^0",
+		"@offirmo-private/soft-execution-context": "*",
+		"@offirmo-private/soft-execution-context--browser": "^0",
 		"@offirmo-private/ts-types-web": "*",
-		"tiny-invariant": "^1"
+		"@offirmo/universal-debug-api-browser": "^1",
+		"tiny-invariant": "^1",
+		"tslib": "^2"
 	},
 	"optionalDependencies": {
+		"react": "^18",
 		"react-dom": "^18"
 	},
 

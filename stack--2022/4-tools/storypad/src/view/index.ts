@@ -2,8 +2,8 @@ import { Immutable, Url‿str } from '@offirmo-private/ts-types'
 
 import { State, StoryId } from '../state/types'
 
-import { renderⵧstory } from './story/index.js'
-import { renderⵧside_panel } from './chrome--side-panel/index.js'
+import { renderⵧstory } from './components/story/index.js'
+import { renderⵧside_panel } from './components/chrome--side-panel/index.js'
 import { LIB, LS_KEYS, MAIN_IFRAME_QUERYPARAMS } from '../consts'
 import { getꓽcurrent_urlⵧcleaned } from '../services/env'
 import { getꓽstoryⵧcurrent‿uid } from '../state/selectors'

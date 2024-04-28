@@ -1,18 +1,17 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
-import { createꓽfilesystem } from '@offirmo-private/data-structures'
 
 import {
 	Glob, isꓽGlob,
 	Module, isꓽModule,
-	Meta,
-} from '../types'
+} from '../types/glob'
 
 import {
 	StoryEntry, isꓽStoryEntry,
 	State,
 } from './types'
 import { registerꓽstory } from './reducers'
+import logger from '../services/logger.ts'
 
 /////////////////////////////////////////////////
 
@@ -24,120 +23,58 @@ const ROOT_ID = '╣ROOT╠'
 
 const DEBUGⵧglob_parsing = true
 
-function registerꓽstoriesⵧfrom_glob(state: Immutable<State>, stories_glob: Immutable<Glob>): Immutable<State> {
+async function registerꓽstoriesⵧfrom_glob(state: State, stories_glob: Immutable<Glob>): Promise<State> {
 	DEBUGⵧglob_parsing && console.groupCollapsed(`registerꓽstoriesⵧfrom_glob()`)
 
-	state = _registerꓽstoriesⵧfrom_glob_or_module(state, stories_glob, [])
-
-	/*
-	// now that we registered the stories, create their corresponding folders
-	const all_folder_uids = new Set<string>()
-	let max_depth = 0
-	Object.keys(state.stories_by_uid).forEach(story_uid => {
-		const parent_uid = story_uid.split(SEP_FOR_UID).slice(0, -1).join(SEP_FOR_UID)
-		max_depth = Math.max(max_depth, parent_uid.split(SEP_FOR_UID).length)
-		all_folder_uids.add(parent_uid)
-	})
-	console.log(all_folder_uids, max_depth)
-	for(let depth: number = 1; depth <= max_depth; ++depth) {
-		console.group(`creating folders of depth ${depth}…`)
-
-		const all_folder_uids_of_this_depth = new Set<string>()
-		Array.from(all_folder_uids.values())
-			.map(id => id.split(SEP_FOR_UID))
-			.filter(path => path.length >= depth)
-			.map(path => path
-				.slice(0, depth)
-				.join(SEP_FOR_UID)
-			)
-			.forEach(id => all_folder_uids_of_this_depth.add(id))
-
-		console.log(all_folder_uids_of_this_depth)
-		all_folder_uids_of_this_depth.forEach(id => {
-			const path = id.split(SEP_FOR_UID)
-			const last_segment = path.pop()!
-			const parent_uid = path.join(SEP_FOR_UID) || ROOT_ID
-			console.log({
-				id,
-				parent_uid,
-				last_segment,
-			})
-			const parent = state.folders_by_uid[parent_uid] as StoryFolder
-			assert(parent, 'parent should already exist')
-			const child = {
-				id,
-				is_expanded: true, // by default, all open!
-				children: {},
-			}
-			state = registerꓽfolder(state, child)
-			parent.children[last_segment] = child
-		})
-		console.log(state.folders_by_uid)
-		console.groupEnd()
-	}
-
-	console.log(state)*/
+	state = await _registerꓽstoriesⵧfrom_glob_or_module(state, stories_glob, [])
 
 	DEBUGⵧglob_parsing && console.groupEnd()
 
 	return state
 }
 
-//function _mkdirp(state: Immutable<State>, path: string[]): Immutable<State> {
-
-/*
-	// MODIFICATION IN PLACE TODO improve
-	let root_folder = state.folders_by_uid[ROOT_ID]! as StoryFolder
-
-	Object.keys(state.stories_by_uid).forEach(story_uid => {
-		const segments = story_uid.split(SEP_FOR_UID)
-		let parent = root_folder
-		segments.slice(0, -1).forEach(segment => {
-			let child = parent.children[segment] || (() => {
-				const child =
-				parent.children[segment] = child
-				return child
-			})
-
-			parent = child
-		})
-		parent.children[segments.slice(-1)[0]] = state.stories_by_uid[story_uid]
-	})
- */
-
-function _registerꓽstoriesⵧfrom_glob_or_module(state: Immutable<State>, stories_glob: Immutable<Glob>, parent_path: string[] = []): Immutable<State> {
+async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_glob: Immutable<Glob>, parent_path: string[] = []): Promise<State> {
 	DEBUGⵧglob_parsing && console.group(`_registerꓽstoriesⵧfrom_glob_or_module(${parent_path.join(SEP)})`)
 	DEBUGⵧglob_parsing && console.log('glob=', stories_glob)
 
-	Object.keys(stories_glob).forEach(key => {
-		const blob = stories_glob[key]
+	await Object.keys(stories_glob).sort().reduce(async (acc, key) => {
+		await acc
 
+		const blob = stories_glob[key]
 		switch (true) {
 			case isꓽModule(blob):
-				state = _registerꓽstoriesⵧfrom_module(state, blob, [ ...parent_path, key ])
+				state = await _registerꓽstoriesⵧfrom_module(state, blob, [ ...parent_path, key ])
 				break
 
 			case isꓽGlob(blob):
-				state = _registerꓽstoriesⵧfrom_glob_or_module(state, blob, [ ...parent_path, key ])
+				state = await _registerꓽstoriesⵧfrom_glob_or_module(state, blob, [ ...parent_path, key ])
 				break
 
 			default:
 				console.error({key, blob})
 				throw new Error(`Unsupported blob field!`)
 		}
-	})
+	}, Promise.resolve())
 
 	DEBUGⵧglob_parsing && console.groupEnd()
 
 	return state
 }
-function _registerꓽstoriesⵧfrom_module(state: Immutable<State>, story_module: Immutable<Module>, parent_path: string[] = []): Immutable<State> {
+async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Immutable<Module>, parent_path: string[] = []): Promise<State> {
 	DEBUGⵧglob_parsing && console.group(`_registerꓽstories_from_module(${parent_path.join(SEP)}.[js/ts/...])`)
 	console.log('module=', story_module)
 
 	// TODO pick whatever has js or ts in it
-	const exports = story_module.js || story_module.jsx || story_module.ts || story_module.tsx
-	assert(exports, `ESModule unrecognized extension! (TODO implement)`)
+	const exports_sync_or_async = story_module.js || story_module.jsx || story_module.ts || story_module.tsx
+	assert(exports_sync_or_async, `ESModule unrecognized extension! (TODO implement)`)
+
+	const exports = await (async () => {
+		// TODO one day "on demand" resolution
+		if (typeof exports_sync_or_async === 'function')
+			return await exports_sync_or_async()
+		else
+			return exports_sync_or_async
+	})()
 
 	const { default: meta, ...stories } = exports
 

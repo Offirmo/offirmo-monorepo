@@ -1,9 +1,9 @@
 import { FileSystemNodeⳇFolder } from '@offirmo-private/data-structures'
+import {	Config } from '../types/config'
 import {
-	UserConfig,
 	Story, isꓽStory,
 	Meta,
-} from '../types'
+} from '../types/csf'
 
 /////////////////////////////////////////////////
 
@@ -32,7 +32,7 @@ export function isꓽStoryFolder(x: any): x is StoryFolder {
 
 
 export interface State {
-	config: UserConfig
+	config: Config
 
 	stories_by_uid: {
 		[k: StoryId]: StoryEntry,
