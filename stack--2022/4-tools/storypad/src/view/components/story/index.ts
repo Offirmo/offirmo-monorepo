@@ -2,54 +2,53 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { isꓽStory‿v3 } from '../../../types/csf/v3'
-import { State, getꓽstoryⵧcurrent‿uid, getꓽstoryⵧby_uid } from '../../../state'
+import { getꓽstoryⵧcurrent } from '../../../flux/selectors'
 
 /////////////////////////////////////////////////
 
-async function renderⵧstory(state: Immutable<State>) {
-	document.body.innerText = `Loading story…`
-
+async function render(container: HTMLElement = document.body) {
+	container.innerText = `Loading story…`
 	try {
-		await _renderⵧstory(state)
+		await _renderⵧstory(container)
 	} catch (err) {
 		console.error(err)
-		document.body.innerText = `Error loading story! (see console)`
+		container.innerText = `Error loading story! (see dev console)`
 	}
 }
 
-async function _renderⵧstory(state: Immutable<State>) {
-	const urlSearchParams = (new URL(window.location.href)).searchParams
+async function _renderⵧstory(container: HTMLElement) {
+	container.innerText = `Loading current story…`
 
-	const story_uid = getꓽstoryⵧcurrent‿uid(state) //urlSearchParams.get(MAIN_IFRAME_QUERYPARAMS.story_uid)
-	if (!story_uid || story_uid === 'undefined' || story_uid === '[NO-KNOWN-STORIES]') {
-		document.body.innerText = `(no stories found)`
-		return
-	}
-
-	document.body.innerText = `Loading story "${story_uid}"…`
-
-	const storyEntry = getꓽstoryⵧby_uid(state, story_uid)
-
-	switch(true) {
-		case isꓽStory‿v3(storyEntry.story): {
-			const render_v3 = (await import('./v3')).default
-			render_v3(storyEntry)
-			break
+	try {
+		const storyEntry = getꓽstoryⵧcurrent()
+		if (!storyEntry) {
+			container.innerText = `no stories found! Please add some or review your setup!`
+			return
 		}
 
-		/*
-		case isꓽStory‿v2(storyEntry): {
-			content = storyEntry()
-			break
-		}*/
+		switch(true) {
+			case isꓽStory‿v3(storyEntry.story): {
+				const render_v3 = (await import('./v3')).default
+				render_v3(storyEntry)
+				break
+			}
 
-		default:
-			throw new Error(`Unsupported story format! (yet!)`)
+			/*
+			case isꓽStory‿v2(storyEntry): {
+				content = storyEntry()
+				break
+			}*/
+
+			default:
+				throw new Error(`Unsupported story format! (yet!)`)
+		}
+	}
+	catch (err) {
+		console.error(err)
+		container.innerText = `Error loading story! (see dev console)`
 	}
 }
 
 /////////////////////////////////////////////////
 
-export {
-	renderⵧstory,
-}
+export default render

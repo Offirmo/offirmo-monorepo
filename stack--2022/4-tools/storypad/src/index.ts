@@ -23,17 +23,8 @@ import logger from './services/logger.ts'
 // @ts-expect-error bundler advanced feature
 import initsⵧservices from './services/init/*.ts'
 
-
-import {
-	create,
-	setꓽconfig,
-	registerꓽstoriesⵧfrom_glob,
-	enrich_state_from_local_storage,
-	enrich_state_from_query_parameters,
-	enrich_state_from_env,
-} from './state'
-
-import { render } from './view'
+import { init as initꓽflux } from './flux/dispatcher'
+import render from './view'
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -46,8 +37,7 @@ export function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutabl
 		console.log('config =', config)
 		console.log('glob =', stories_glob)
 
-
-
+		// 1. services
 		// order is important! Timing is non-trivial!
 		assert(Object.keys(initsⵧservices).length > 0, 'no services/init found!')
 		await Object.keys(initsⵧservices).sort().reduce(async (acc, key) => {
@@ -60,33 +50,16 @@ export function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutabl
 			logger.groupEnd()
 		}, Promise.resolve())
 
+		// 2. flux
+		await initꓽflux(stories_glob, config)
 
+		// 3. view
+		render()
 
-		let state = create()
-		state = setꓽconfig(state, config)
-
-		state = await registerꓽstoriesⵧfrom_glob(state, stories_glob)
-
-		state = enrich_state_from_local_storage(state)
-		state = enrich_state_from_query_parameters(state)
-		state = enrich_state_from_env(state)
-
-		console.log('final state =', state)
-
-
-
-		setTimeout(() => {
-			render(state)
-		}, 1)
 		console.groupEnd()
-
-
 	})
-
-
-
-
 }
-export default startꓽstorypad
 
 ////////////////////////////////////////////////////////////////////////////////////
+
+export default startꓽstorypad

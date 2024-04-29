@@ -1,4 +1,4 @@
-/* PROMPT
+/* render a CSF v3 Story
  */
 import * as React from 'react'
 import { Immutable } from '@offirmo-private/ts-types'
@@ -8,6 +8,7 @@ import { Meta‿v3, Story‿v3 } from '../../../../../types/csf/v3'
 
 /////////////////////////////////////////////////
 
+// TODO container
 async function render(Component: any, story: Immutable<Story‿v3>, meta: Immutable<Meta‿v3>) {
 	console.group(`[${LIB}] Rendering a React component…`)
 
@@ -36,6 +37,7 @@ async function render(Component: any, story: Immutable<Story‿v3>, meta: Immuta
 		...story.args,
 	}
 
+	// TODO error boundary
 	root.render(
 	<StrictWrapper>
 			<Component {...props} />

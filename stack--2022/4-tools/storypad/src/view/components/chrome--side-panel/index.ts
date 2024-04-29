@@ -4,40 +4,50 @@
 import assert from 'tiny-invariant'
 import { Immutable, Basename } from '@offirmo-private/ts-types'
 
-import { LIB, MAIN_IFRAME_QUERYPARAMS } from '../../../consts'
-import { StoryEntry, isꓽStoryEntry, StoryFolder, isꓽStoryFolder, State, StoryId } from '../../../state/types'
-import { getꓽcurrent_urlⵧcleaned } from '../../../services/env'
+import { LIB } from '../../../consts'
+import { StoryEntry, StoryFolder, State } from '../../../flux/types'
+import { getꓽtree_root, getꓽconfig, getꓽmain_frame_url, isꓽexpandedⵧinitially } from '../../../flux/selectors'
 
 /////////////////////////////////////////////////
 
 
-function renderⵧside_panel(state: Immutable<State>) {
+function render() {
 	console.group(`[${LIB}] renderⵧside_panel()`)
+
 	// @ts-expect-error bundler stuff
 	import('./index.css')
 
-	_append_folder(state, document.body, state.tree, [])
+	_append_folder(document.body, getꓽtree_root(), [])
+
+	console.groupEnd()
 }
 
-function _append_folder(state: Immutable<State>, parent_elt: HTMLElement, tree: Immutable<State>['tree'], path: Basename[]) {
+function _append_folder(parent_elt: HTMLElement, treenode: Immutable<State>['tree'], path: Basename[]) {
 	console.group('_append_folder()', path)
 	let details_elt = document.createElement('details')
-	const payload: StoryFolder = (tree.payload as any) ?? {
+
+	// TODO common code!
+	const payload: StoryFolder = (treenode.payload as any) ?? {
 		uid: path.join('/'),
-		is_expanded: true, // TODO auto expand etc.
+		isꓽexpandedⵧinitially: true, // TODO
 	}
-	details_elt.open = payload.is_expanded
+	payload.isꓽexpandedⵧinitially = isꓽexpandedⵧinitially(payload.uid)
+
+	const config = getꓽconfig()
+
+	// TODO uid
+	details_elt.open = payload.isꓽexpandedⵧinitially
 	details_elt.innerHTML = `
-	<summary>${path.slice(-1)[0] || state.config.root_title}</summary>
+	<summary>${path.slice(-1)[0] || config.root_title}</summary>
 	`
-	Object.keys(tree.childrenⵧfolders).forEach(key => {
-		_append_folder(state, details_elt, tree.childrenⵧfolders[key]!, [...path, key])
+	Object.keys(treenode.childrenⵧfolders).forEach(key => {
+		_append_folder(details_elt, treenode.childrenⵧfolders[key]!, [...path, key])
 	})
 
 	let ol_elt = document.createElement('ol')
 	details_elt.appendChild(ol_elt)
-	Object.keys(tree.childrenⵧfiles).forEach(key => {
-		_append_leaf(state, ol_elt, tree.childrenⵧfiles[key]!.payload, [...path, key])
+	Object.keys(treenode.childrenⵧfiles).forEach(key => {
+		_append_leaf( ol_elt, treenode.childrenⵧfiles[key]!.payload, [...path, key])
 	})
 
 	parent_elt.appendChild(details_elt)
@@ -45,24 +55,14 @@ function _append_folder(state: Immutable<State>, parent_elt: HTMLElement, tree: 
 	console.groupEnd()
 }
 
-
-function _append_leaf(state: Immutable<State>, parent_elt: HTMLElement, story: Immutable<StoryEntry>, path: Basename[]) {
+function _append_leaf(parent_elt: HTMLElement, story: Immutable<StoryEntry>, path: Basename[]) {
 	let li_elt = document.createElement('li')
 	const key = path.slice(-1)[0]
-	li_elt.innerHTML = `<a href="${getꓽmain_iframe_url(state, story.uid)}">${key}</a>`
+	// TODO uid
+	li_elt.innerHTML = `<a href="${getꓽmain_frame_url(story.uid)}">${key}</a>`
 	parent_elt.appendChild(li_elt)
-}
-
-function getꓽmain_iframe_url(state: Immutable<State>, story_uid: StoryId): string {
-	const sp = new URLSearchParams({
-		[MAIN_IFRAME_QUERYPARAMS.story_uid]: story_uid,
-	})
-
-	return getꓽcurrent_urlⵧcleaned() + '?' + sp.toString()
 }
 
 /////////////////////////////////////////////////
 
-export {
-	renderⵧside_panel
-}
+export default render

@@ -4,14 +4,17 @@ import { FileSystemNode, createꓽfilesystem, insertꓽfile } from '@offirmo-pri
 
 import {
 	Config,
-} from '../types/config'
+} from '../../types/config'
 
 import {
-	StoryId,
+	StoryUId,
 	StoryEntry, isꓽStoryEntry,
 	State,
 	StoryFolder,
 } from './types'
+import {
+	getꓽstoryⵧby_uid
+} from './selectors'
 
 ////////////////////////////////////////////////////////////////////////////////////
 // init
@@ -21,9 +24,10 @@ function create(): State {
 			root_title: 'Stories',
 			decorators: [],
 		},
-		stories_by_uid: {},
-		folders_by_uid: {},
-		current_story‿uid: undefined,
+		//stories_by_uid: {},
+		//folders_by_uid: {},
+		last_explicitly_activated_story‿uid: undefined,
+		first_encountered_story‿uid: undefined,
 		tree: createꓽfilesystem<StoryEntry, StoryFolder>(),
 	}
 }
@@ -41,33 +45,36 @@ function setꓽconfig(state: State, config: Immutable<Config> | undefined): Stat
 /////////////////////////////////////////////////
 // setup
 
-export function registerꓽstory(state: State, story: StoryEntry, path: RelativePath): State {
-	assert(!state.stories_by_uid[story.uid], `story should not already exist! "${story.uid}"`)
-
-	insertꓽfile(state.tree, path, story)
+function registerꓽstory(state: State, story: StoryEntry, path: RelativePath): State {
+	const uid = insertꓽfile(state.tree, path, story)
+	assert(uid === story.uid, `uid should be as expected! "${story.uid}" vs. "${uid}"`)
 
 	return {
 		...state,
-		stories_by_uid: {
+		first_encountered_story‿uid: state.first_encountered_story‿uid || uid,
+		/*stories_by_uid: {
 			...state.stories_by_uid,
-			[story.uid]: story,
-		},
-		current_story‿uid: state.current_story‿uid || story.uid,
+			[uid]: {
+				...story,
+				uid,
+			},
+		},*/
 	}
 }
 
-export function registerꓽfolder(state: State, folder: StoryFolder): State {
-	assert(!state.folders_by_uid[folder.uid], `folder should not already exist! "${folder.uid}"`)
+/* not needed, folder are inferred from stories path
+function registerꓽfolder(state: State, folder: StoryFolder, path: RelativePath): State {
+	const uid = upsertꓽfolder(state.tree, path, folder)
 	return {
 		...state,
 		folders_by_uid: {
 			...state.folders_by_uid,
-			[folder.uid]: folder,
+			[uid]: folder,
 		},
 	}
-}
+}*/
 
-export function enrich_state_from_local_storage(state: State): State {
+function enrich_state_from_local_storage(state: State): State {
 	console.log('TODO enrich_state_from_local_storage')
 	/*
 	try {
@@ -81,14 +88,14 @@ export function enrich_state_from_local_storage(state: State): State {
 	}
 }
 
-export function enrich_state_from_query_parameters(state: State): State {
+function enrich_state_from_query_parameters(state: State): State {
 	console.log('TODO enrich_state_from_query_parameters')
 	return {
 		...state,
 	}
 }
 
-export function enrich_state_from_env(state: State): State {
+function enrich_state_from_env(state: State): State {
 	console.log('TODO enrich_state_from_env')
 	// TODO ex. if small window, don't show the UI etc.
 
@@ -101,13 +108,14 @@ export function enrich_state_from_env(state: State): State {
 
 /////////////////////////////////////////////////
 
-export function setꓽcurrent_story(state: State, story_uid: StoryId): State {
+function activateꓽstory(state: State, uid: StoryUId): State {
+	//assert(getꓽstoryⵧby_uid(state, uid), `story should exist! "${uid}"`)
 	state = {
 		...state,
-		current_story‿uid: story_uid,
+		last_explicitly_activated_story‿uid: uid,
 	}
 
-	state = folderⵧexpand(state, state.current_story‿uid!)
+	state = folderⵧexpand(state, uid)
 
 	return state
 }
@@ -115,7 +123,7 @@ export function setꓽcurrent_story(state: State, story_uid: StoryId): State {
 
 // expand the tree all the way to the target
 // id can be story or folder, don't mind
-export function folderⵧexpand(state: State, id: StoryId): State {
+function folderⵧexpand(state: State, uid: StoryUId): State {
 	throw new Error('TODO folderⵧexpand')
 	/*
 	const path = id.split(SEP_FOR_IDS)
@@ -132,8 +140,8 @@ export function folderⵧexpand(state: State, id: StoryId): State {
 			assert(path.length === 0, 'last segment is story')
 		}
 		else {
-			assert(Object.hasOwn(folder, 'is_expanded'))
-			folder.is_expanded = true
+			assert(Object.hasOwn(folder, 'isꓽexpandedⵧinitially'))
+			folder.isꓽexpandedⵧinitially = true
 		}
 	} while(path.length)
 
@@ -145,4 +153,8 @@ export function folderⵧexpand(state: State, id: StoryId): State {
 export {
 	create,
 	setꓽconfig,
+	registerꓽstory,
+	//registerꓽfolder,
+
+	activateꓽstory,
 }

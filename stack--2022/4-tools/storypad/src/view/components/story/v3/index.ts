@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { Story‿v3, Meta‿v3, StoryComponent‿v3 } from '../../../../types/csf/v3'
-import { StoryEntry } from '../../../../state'
+import { StoryEntry } from '../../../../flux/types.ts'
 import { LIB } from '../../../../consts'
 
 /////////////////////////////////////////////////

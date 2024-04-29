@@ -1,17 +1,17 @@
 import { FileSystemNodeⳇFolder } from '@offirmo-private/data-structures'
-import {	Config } from '../types/config'
+import {	Config } from '../../types/config'
 import {
 	Story, isꓽStory,
 	Meta,
-} from '../types/csf'
+} from '../../types/csf'
 
 /////////////////////////////////////////////////
 
-export type StoryId = string
-export type FolderId = string
+export type StoryUId = string
+export type FolderUId = string
 
 export interface StoryEntry {
-	uid: StoryId
+	uid: StoryUId // for convenience when passing the payload around
 
 	story: Story
 
@@ -22,27 +22,24 @@ export function isꓽStoryEntry(x: any): x is StoryEntry {
 }
 
 export interface StoryFolder {
-	uid: FolderId
+	uid: FolderUId // for convenience when passing the payload around
 
-	is_expanded: boolean
+	isꓽexpandedⵧinitially: boolean
 }
 export function isꓽStoryFolder(x: any): x is StoryFolder {
 	return !isꓽStoryEntry(x) // simple for now ;)
 }
 
+/////////////////////////////////////////////////
 
 export interface State {
 	config: Config
-
-	stories_by_uid: {
-		[k: StoryId]: StoryEntry,
-	}
-
-	folders_by_uid: {
-		[k: FolderId]: StoryFolder,
-	}
-
-	current_story‿uid: StoryId | undefined
+/*
+	stories_by_uid: { [k: StoryUId]:  StoryEntry }
+	folders_by_uid: { [k: FolderUId]: StoryFolder }
+*/
+	last_explicitly_activated_story‿uid: StoryUId | undefined
+	first_encountered_story‿uid: StoryUId | undefined
 
 	tree: FileSystemNodeⳇFolder<StoryEntry, StoryFolder>
 }

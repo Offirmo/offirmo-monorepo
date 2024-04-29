@@ -1,45 +1,36 @@
-import { Immutable, Url‿str } from '@offirmo-private/ts-types'
+/* PROMPT
+ */
 
-import { State, StoryId } from '../state/types'
+import assert from 'tiny-invariant'
+import { Url‿str } from '@offirmo-private/ts-types'
 
-import { renderⵧstory } from './components/story/index.js'
-import { renderⵧside_panel } from './components/chrome--side-panel/index.js'
-import { LIB, LS_KEYS, MAIN_IFRAME_QUERYPARAMS } from '../consts'
-import { getꓽcurrent_urlⵧcleaned } from '../services/env'
-import { getꓽstoryⵧcurrent‿uid } from '../state/selectors'
+import { LIB } from '../consts'
+import renderⵧstory from './components/story/index.js'
+import renderⵧside_panel from './components/chrome--side-panel/index.js'
 
+import { getꓽstory_frame_url } from '../flux/selectors'
+import { activateꓽstory } from '../flux/dispatcher'
 
-function getꓽmain_iframe_url(state: Immutable<State>, explicit_uid: StoryId = getꓽstoryⵧcurrent‿uid(state)): string {
-	const sp = new URLSearchParams({
-		[MAIN_IFRAME_QUERYPARAMS.story_uid]: explicit_uid,
-	})
+/////////////////////////////////////////////////
 
-	return getꓽcurrent_urlⵧcleaned() + '?' + sp.toString()
-}
-
-async function render(state: Immutable<State>): Promise<void> {
+async function render(): Promise<void> {
 	const is_iframe = ( window.location !== window.parent.location )
 
 	console.group(`[${LIB}] render() [${is_iframe ? 'SUB frame' : 'TOP frame'}]`)
-	console.log('state=', state)
 
 	// TODO allow QParams to render only the story, add borders, etc.
 
 	if (is_iframe) {
 		// we're in an iframe -> we're the story
-		return renderⵧstory(state)
+		return renderⵧstory()
 	}
 
 	// we're the top frame
-	// render the full UI: controls + story
-	renderⵧside_panel(state)
-
-	// now add an iframe loading the story
-	const iframe_elt = document.createElement('iframe')
-	iframe_elt.src = getꓽmain_iframe_url(state)
-	iframe_elt.id = 'storypad⋄iframe'
-	console.log({iframe_elt})
-	document.body.appendChild(iframe_elt)
+	// render the full UI:
+	// 1. side panel
+	renderⵧside_panel()
+	// 2. story screen
+	const { iframe_elt } = renderⵧstory_area()
 
 	// navigation
 	document.body.addEventListener('click', function(e) {
@@ -49,20 +40,28 @@ async function render(state: Immutable<State>): Promise<void> {
 
 			console.log('———————————— NAVIGATION ————————————')
 
+			activateꓽstory() // TODO!
 			iframe_elt.src = href
-
-			/*try {
-				localStorage.setItem(LS_KEYS.current_story_uid, (new URL(href)).searchParams.get(MAIN_IFRAME_QUERYPARAMS.story_uid))
-			}
-			catch {
-			// ignore
-			}*/
 		}
 	})
 
 	console.groupEnd()
 }
 
-export {
-	render,
+function renderⵧstory_area() {
+	// TODO top nav
+	return renderⵧstory_frame()
 }
+
+function renderⵧstory_frame() {
+	const iframe_elt = document.createElement('iframe')
+	iframe_elt.src = getꓽstory_frame_url()
+	iframe_elt.id = 'storypad⋄iframe'
+	console.log({iframe_elt})
+	document.body.appendChild(iframe_elt)
+	return { iframe_elt }
+}
+
+/////////////////////////////////////////////////
+
+export default render

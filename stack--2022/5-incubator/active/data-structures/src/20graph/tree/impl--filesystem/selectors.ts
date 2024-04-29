@@ -6,7 +6,11 @@ import { Immutable, RelativePath } from '@offirmo-private/ts-types'
 import { normalizeꓽpath } from '@offirmo-private/normalize-string'
 
 import { TreeForRL, getꓽrepresentationⵧlinesⵧgeneric } from '../selectors--representation--lines.js'
-import { FileSystemNode, isꓽFileSystemNodeⳇFolder, FileSystemNodeⳇFolder } from './types.js'
+import {
+	FileSystemNode,
+	FileSystemNodeⳇFolder, isꓽFileSystemNodeⳇFolder,
+	FileSystemNodeⳇFile, isꓽFileSystemNodeⳇFile,
+} from './types.js'
 
 /////////////////////////////////////////////////
 
@@ -17,6 +21,8 @@ function getꓽparent__path<FilePayload, FolderPayload>(node: FileSystemNode<Fil
 	throw new Error(`getꓽparent__path() not implemented yet!`)
 }
 
+function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNode<FilePayload, FolderPayload>
+function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: Immutable<FileSystemNode<FilePayload, FolderPayload>>, path: RelativePath): Immutable<FileSystemNode<FilePayload, FolderPayload>>
 function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNode<FilePayload, FolderPayload> {
 	path = normalizeꓽpath(path)
 	const { options } = tree.root
@@ -36,9 +42,20 @@ function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FileSystemNode<F
 		throw new Error(`getꓽnode() could not find "${segment}" in "${getꓽparent__path(acc)}"!`)
 	}, tree)
 }
+
+function getꓽnodeⵧby_pathⵧensure_folder<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNodeⳇFolder<FilePayload, FolderPayload>
+function getꓽnodeⵧby_pathⵧensure_folder<FilePayload, FolderPayload>(tree: Immutable<FileSystemNode<FilePayload, FolderPayload>>, path: RelativePath): Immutable<FileSystemNodeⳇFolder<FilePayload, FolderPayload>>
 function getꓽnodeⵧby_pathⵧensure_folder<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNodeⳇFolder<FilePayload, FolderPayload> {
 	const node = getꓽnodeⵧby_path(tree, path)
-	assert(isꓽFileSystemNodeⳇFolder(node), `not a folder node!`)
+	assert(isꓽFileSystemNodeⳇFolder(node), `expected a folder node!`)
+	return node
+}
+
+function getꓽnodeⵧby_pathⵧensure_file<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNodeⳇFile<FilePayload, FolderPayload>
+function getꓽnodeⵧby_pathⵧensure_file<FilePayload, FolderPayload>(tree: Immutable<FileSystemNode<FilePayload, FolderPayload>>, path: RelativePath): Immutable<FileSystemNodeⳇFile<FilePayload, FolderPayload>>
+function getꓽnodeⵧby_pathⵧensure_file<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNodeⳇFile<FilePayload, FolderPayload> {
+	const node = getꓽnodeⵧby_path(tree, path)
+	assert(isꓽFileSystemNodeⳇFile(node), `expected a file node!`)
 	return node
 }
 
@@ -85,7 +102,7 @@ function getꓽrepresentationⵧlines<FilePayload, FolderPayload>(tree: Immutabl
 /////////////////////////////////////////////////
 
 export {
-	getꓽnodeⵧby_path, getꓽnodeⵧby_pathⵧensure_folder,
+	getꓽnodeⵧby_path, getꓽnodeⵧby_pathⵧensure_folder, getꓽnodeⵧby_pathⵧensure_file,
 
 	getꓽrepresentationⵧlines,
 }

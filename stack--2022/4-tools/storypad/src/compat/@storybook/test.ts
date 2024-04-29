@@ -1,5 +1,12 @@
+
+let fn_count = 0
 export function fn() {
-	console.warn('TODO $storybook/test { fn }')
+	let id = fn_count++
+	let calls = 0
+	return () => {
+		calls++
+		console.log(`fn() #${id} call #${calls}!`)
+	}
 }
 
 export function within() {

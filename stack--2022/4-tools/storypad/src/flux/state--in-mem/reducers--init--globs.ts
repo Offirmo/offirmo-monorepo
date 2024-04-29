@@ -2,28 +2,25 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
 import {
-	Glob, isꓽGlob,
-	Module, isꓽModule,
-} from '../types/glob'
+	ImportGlob, isꓽImportGlob,
+	ImportModule, isꓽImportModule,
+} from '../../types/glob'
 
 import {
 	StoryEntry, isꓽStoryEntry,
 	State,
 } from './types'
 import { registerꓽstory } from './reducers'
-import logger from '../services/logger.ts'
 
 /////////////////////////////////////////////////
 
 const SEP = '/' // Ⳇ
-const SEP_FOR_UID = 'Ⳇ' // :
-const ROOT_ID = '╣ROOT╠'
 
 /////////////////////////////////////////////////
 
 const DEBUGⵧglob_parsing = true
 
-async function registerꓽstoriesⵧfrom_glob(state: State, stories_glob: Immutable<Glob>): Promise<State> {
+async function registerꓽstoriesⵧfrom_glob(state: State, stories_glob: Immutable<ImportGlob>): Promise<State> {
 	DEBUGⵧglob_parsing && console.groupCollapsed(`registerꓽstoriesⵧfrom_glob()`)
 
 	state = await _registerꓽstoriesⵧfrom_glob_or_module(state, stories_glob, [])
@@ -33,7 +30,7 @@ async function registerꓽstoriesⵧfrom_glob(state: State, stories_glob: Immuta
 	return state
 }
 
-async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_glob: Immutable<Glob>, parent_path: string[] = []): Promise<State> {
+async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_glob: Immutable<ImportGlob>, parent_path: string[] = []): Promise<State> {
 	DEBUGⵧglob_parsing && console.group(`_registerꓽstoriesⵧfrom_glob_or_module(${parent_path.join(SEP)})`)
 	DEBUGⵧglob_parsing && console.log('glob=', stories_glob)
 
@@ -42,11 +39,11 @@ async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_g
 
 		const blob = stories_glob[key]
 		switch (true) {
-			case isꓽModule(blob):
+			case isꓽImportModule(blob):
 				state = await _registerꓽstoriesⵧfrom_module(state, blob, [ ...parent_path, key ])
 				break
 
-			case isꓽGlob(blob):
+			case isꓽImportGlob(blob):
 				state = await _registerꓽstoriesⵧfrom_glob_or_module(state, blob, [ ...parent_path, key ])
 				break
 
@@ -60,11 +57,10 @@ async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_g
 
 	return state
 }
-async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Immutable<Module>, parent_path: string[] = []): Promise<State> {
+async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Immutable<ImportModule>, parent_path: string[] = []): Promise<State> {
 	DEBUGⵧglob_parsing && console.group(`_registerꓽstories_from_module(${parent_path.join(SEP)}.[js/ts/...])`)
 	console.log('module=', story_module)
 
-	// TODO pick whatever has js or ts in it
 	const exports_sync_or_async = story_module.js || story_module.jsx || story_module.ts || story_module.tsx
 	assert(exports_sync_or_async, `ESModule unrecognized extension! (TODO implement)`)
 
@@ -94,9 +90,9 @@ async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Imm
 	Object.keys(stories).forEach(story_key => {
 		DEBUGⵧglob_parsing && console.log(`Found story: key "${story_key}"`)
 
-		assert(![...parent_path, story_key].some(p => p.includes(SEP) || p.includes(SEP_FOR_UID)), `Story path contains a forbidden character!`) // TODO one day improve
+		assert(![...parent_path, story_key].some(p => p.includes(SEP)), `Story path contains a forbidden character!`) // TODO one day improve
 
-		const uid = [...parent_path, story_key].join(SEP_FOR_UID)
+		const uid = [...parent_path, story_key].join(SEP)
 
 		const story_entry: StoryEntry = {
 			uid,
