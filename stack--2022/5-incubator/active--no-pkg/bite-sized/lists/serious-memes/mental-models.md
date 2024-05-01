@@ -71,6 +71,7 @@ English
 every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 excuses vs. solutions
+fake it till you make it -- Of course, it’s not really “fake it till you make it.” It’s just “fake it.”
 false good idea
 fast reading
 Faustian Bargain: A man once sold his soul to a demon in exchange for knowledge. At first, it seemed like a smart trade. But the man lost in the long-run. Tragically, what the man lost was more valuable than what he earned. In short, he won the battle but lost the war.
@@ -95,6 +96,7 @@ grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
 growth mindset  https://www.khanacademy.org/college-careers-more/learnstorm-growth-mindset-activities-us/high-school-activities/activity-1-the-truth-about-your-brain-hs-02/a/the-truth-about-your-brain-part-1-3  https://www.youtube.com/watch?v=-71zdXCMU6A
 hangry = before lunch (vs. after)
+happiness -- être heureux n'est pas nécessairement confortable
 happiness is a skill
 happiness score https://www.ted.com/talks/dominic_price_what_s_your_happiness_score
 helicopter parent
@@ -137,6 +139,7 @@ learning machines "I constantly see people rise in life who are not the smartest
 legibility: We are blind to what we cannot measure. Not everything that counts can be measured, and not everything that can be measured counts. But people manage what they can measure, so society repeats the same mistakes.
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 life isn't fair https://www.linkedin.com/pulse/lifell-kill-ya-allen-white
+lifestyle
 linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_relativity
 living the good life
 Logical Problem of Evil https://christianity.stackexchange.com/questions/100110/what-are-christian-responses-to-the-logical-problem-of-evil
@@ -232,7 +235,7 @@ soft skills https://softskills.audio/
 stakeholder
 start with the most risky / complicated
 start with why
-stoicism -- Rudyard Kipling If-- https://en.wikipedia.org/wiki/If%E2%80%94
+stoicism -- Rudyard Kipling "If" https://en.wikipedia.org/wiki/If%E2%80%94
 Sturgeon's law = "90% of everything is crap" https://en.wikipedia.org/wiki/Sturgeon%27s_law
 Sun Tsu’s three rules of warfare -- Only fight when there is a prize worth fighting for
 Sun Tsu’s three rules of warfare -- Only fight when there is no other way of achieving your goal
@@ -240,21 +243,22 @@ Sun Tsu’s three rules of warfare -- Only fight when you know you will win: the
 survival of the fittest / fit enough
 survivorship bias https://en.wikipedia.org/wiki/Survivorship_bias
 SWOT
-syndrome féé clochette https://www.psychologies.com/Couple/Seduction/Rencontres/Articles-et-Dossiers/Syndrome-de-la-fee-Clochette-ces-femmes-insatisfaites-et-en-manque-d-affection
+syndrome fée clochette https://www.psychologies.com/Couple/Seduction/Rencontres/Articles-et-Dossiers/Syndrome-de-la-fee-Clochette-ces-femmes-insatisfaites-et-en-manque-d-affection
 T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
-table Selection: This idea comes from poker, where you’re advised to choose your opponents carefully. That means you shouldn’t compete against the best people. You don’t need to get good at doing difficult things if you get good at avoiding difficult things. If you want to win, pick an easy table and nail your execution.
-talent vs. Genius: Society is good at training talent but terrible at cultivating genius. Talented people are good at hitting targets others can’t hit, but geniuses find targets others can’t see. They are opposite modes of excellence. Talent is predictable, genius is unpredictable.
+table selection = This idea comes from poker, where you’re advised to choose your opponents carefully. That means you shouldn’t compete against the best people. You don’t need to get good at doing difficult things if you get good at avoiding difficult things. If you want to win, pick an easy table and nail your execution.
+talent vs. Genius = Society is good at training talent but terrible at cultivating genius. Talented people are good at hitting targets others can’t hit, but geniuses find targets others can’t see. They are opposite modes of excellence. Talent is predictable, genius is unpredictable.
 tax -- lazy https://www.insurancewatch.com.au/lazy-tax-insurance.html
-The Map Is Not the Territory: Reality will never match the elegance of theory. All models have inconsistencies, but some are still useful. Some maps are useful because they’re inaccurate. If you want to find an edge, look for what the map leaves out.
-The Medium Is the Message: We pay too much attention to what is being said. But the medium of communication is more impactful. For example, the Internet’s impact on humanity has a bigger influence than anything that’s said on the Internet.
+The Map Is Not the Territory = Reality will never match the elegance of theory. All models have inconsistencies, but some are still useful. Some maps are useful because they’re inaccurate. If you want to find an edge, look for what the map leaves out.
+The Medium Is the Message = We pay too much attention to what is being said. But the medium of communication is more impactful. For example, the Internet’s impact on humanity has a bigger influence than anything that’s said on the Internet.
 The noisy door gets the oil https://9gag.com/gag/aGEgp07
-the Wisdom of Paradox: Logic is the key to scientific truths, but paradoxes are the key to psychological ones. When it comes to the human condition, the deepest truths are often counter-intuitive. When you find two opposites that are both true, start exploring.
+The product is crap, so sell yourself
+the Wisdom of Paradox = Logic is the key to scientific truths, but paradoxes are the key to psychological ones. When it comes to the human condition, the deepest truths are often counter-intuitive. When you find two opposites that are both true, start exploring.
+theory of Constraints = A system is only as strong as its weakest point. Focus on the bottleneck. Counterintuitively, if you break down the entire system and optimize each component individually, you’ll lower the effectiveness of the system. Optimize the entire system instead.
 theory of constraints https://www.tocinstitute.org/theory-of-constraints.html
-theory of Constraints: A system is only as strong as its weakest point. Focus on the bottleneck. Counterintuitively, if you break down the entire system and optimize each component individually, you’ll lower the effectiveness of the system. Optimize the entire system instead.
-THINK hack: Is it True? Helpful? Inspiring? Necessary? Kind?
+THINK hack = Is it True? Helpful? Inspiring? Necessary? Kind?
 time management
 tip of the iceberg
-toold -- checklists
+tools -- checklists
 tools -- spreadsheet
 tools -- trello
 top-down/bottom-up
@@ -262,7 +266,6 @@ tradeoffs / can't have everything
 Tree Decision Rights Model http://www.cio.com/article/2386119/careers-staffing/how-it-leaders-can-empower-teams-to-become-decision-makers.html
 trilemma https://en.wikipedia.org/wiki/Trilemma
 trolley problem https://neal.fun/absurd-trolley-problems/
-trust -- confiance doit se gagner
 trust -- is earned
 trust -- takes years to earn and seconds to lose / Trust is built slowly, and lost quickly
 trust -- trust, but verify
@@ -278,5 +281,3 @@ What would you do if you weren't afraid? - Spencer Johnson
 who moved my cheese?
 wisdom
 wisdom -- a wisdom for left may not be valid for right
-être heureux n'est pas nécessairement confortable
-“The product is crap, so sell yourself” is probably the most important thing I learned as an adult. That, and “fake it till you make it.” Of course, it’s not really “fake it till you make it.” It’s just “fake it.” That’s an important lesson, too.

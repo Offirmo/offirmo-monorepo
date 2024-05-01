@@ -65,7 +65,8 @@ interface HtmlMetas {
 			| 'black-translucent'; // the status bar is black and translucent → the web content is displayed on the entire screen, partially obscured by the status bar
 		'format-detection'?: 'telephone=no';
 
-		// "robots" https://developers.google.com/search/docs/crawling-indexing/block-indexing
+		// TODO "robots" https://developers.google.com/search/docs/crawling-indexing/block-indexing
+		//<meta name="robots" content="noindex" />
 	};
 
 	// pragma directives, equivalent to http headers
