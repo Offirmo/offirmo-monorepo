@@ -5,9 +5,9 @@ import assert from 'tiny-invariant'
 import { Url‿str } from '@offirmo-private/ts-types'
 
 import { QUERYPARAMS } from './consts'
-import { StoryUId, RenderMode } from '../types'
+import { StoryUId, RenderMode, isꓽrender_mode } from '../types'
 import { getꓽstoryⵧexplicitely_requested‿uid } from '../selectors'
-import { serializeꓽstory_uid } from './serialization'
+import { serializeꓽstory_uid, unserializeꓽstory_uid } from './serialization'
 
 
 /////////////////////////////////////////////////
@@ -41,7 +41,26 @@ function getꓽstory_frame_url(uid?: StoryUId): Url‿str {
 }
 
 function getꓽexplicit_render_mode(): RenderMode | undefined {
-	// TODO
+	const url‿obj = (new URL(window.location.href))
+
+	const candidate = url‿obj.searchParams.get(QUERYPARAMS.render_mode)
+	if (isꓽrender_mode(candidate))
+		return candidate
+
+	return undefined
+}
+
+function getꓽexplicit_story_uid(): StoryUId | undefined {
+	const url‿obj = (new URL(window.location.href))
+
+	let candidate = unserializeꓽstory_uid(url‿obj.searchParams.get(QUERYPARAMS.story_path))
+	if (candidate)
+		return candidate
+
+	candidate = unserializeꓽstory_uid(url‿obj.searchParams.get(QUERYPARAMS.story_uid))
+	if (candidate)
+		return candidate
+
 	return undefined
 }
 
@@ -51,4 +70,5 @@ export {
 	getꓽmain_frame_url,
 	getꓽstory_frame_url,
 	getꓽexplicit_render_mode,
+	getꓽexplicit_story_uid,
 }

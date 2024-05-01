@@ -29,8 +29,7 @@ async function init(stories_glob: Immutable<ImportGlob>, config?: Immutable<Conf
 function activateꓽstory(uid: InMemState.StoryUId) {
 	state = InMemState.activateꓽstory(state, uid)
 
-
-	throw new Error('NIMP propagate on activateꓽstory() !')
+	//throw new Error('NIMP propagate on activateꓽstory() !')
 	/*try {
 		localStorage.setItem(LS_KEYS.current_story_uid, (new URL(href)).searchParams.get(MAIN_IFRAME_QUERYPARAMS.story_uid))
 	}

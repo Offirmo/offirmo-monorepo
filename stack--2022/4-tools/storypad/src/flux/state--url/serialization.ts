@@ -19,7 +19,7 @@ function serializeꓽstory_uid(uid: StoryUId): string {
 	].join('--')
 }
 
-function unserializeꓽstory_uid(serialized_uid: string | undefined): StoryUId | undefined {
+function unserializeꓽstory_uid(serialized_uid: string | undefined | null): StoryUId | undefined {
 	if (!serialized_uid)
 		return undefined
 

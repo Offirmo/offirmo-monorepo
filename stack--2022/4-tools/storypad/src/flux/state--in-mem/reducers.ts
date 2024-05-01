@@ -121,7 +121,7 @@ function activateꓽstory(state: State, uid: StoryUId): State {
 // expand the tree all the way to the target
 // id can be story or folder, don't mind
 function folderⵧexpand(state: State, uid: StoryUId): State {
-	throw new Error('TODO folderⵧexpand')
+	console.warn('TODO folderⵧexpand')
 	/*
 	const path = id.split(SEP_FOR_IDS)
 
@@ -143,6 +143,7 @@ function folderⵧexpand(state: State, uid: StoryUId): State {
 	} while(path.length)
 
 	return state*/
+	return state
 }
 
 /////////////////////////////////////////////////

@@ -64,7 +64,7 @@ async function render(entry: Immutable<StoryEntry>) {
 async function _renderⵧcomponent(component: Immutable<StoryComponent‿v3>, story: Immutable<Story‿v3>, meta: Immutable<Meta‿v3>) {
 	console.log({Component: component})
 
-	const isReact = (typeof component === 'function') && Object.hasOwn(component, 'propTypes')
+	const isReact = (typeof component === 'function')
 
 	switch (true) {
 		case isReact: {

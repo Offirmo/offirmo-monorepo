@@ -49,10 +49,17 @@ function getꓽrender_mode(): RenderMode {
 }
 
 // for rendering the story
+// must only return "undef" if NO stories. Else should pick the 1st one.
 function getꓽstoryⵧcurrent(): Immutable<StoryEntry> | undefined {
-	// TODO improve!!!
-	// TODO fetch from QParams!
 	const state = _getꓽstateⵧin_mem()
+
+	const candidate_uid = UrlStateSelectors.getꓽexplicit_story_uid()
+	if (candidate_uid) {
+		const candidate = InMemStateSelectors.getꓽstoryⵧby_uid(state, candidate_uid)
+		if (candidate)
+			return candidate
+	}
+
 	return InMemStateSelectors.getꓽstoryⵧcurrent(state)
 }
 

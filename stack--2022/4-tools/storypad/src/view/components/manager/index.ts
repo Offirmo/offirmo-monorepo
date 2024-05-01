@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import { Url‿str } from '@offirmo-private/ts-types'
 
-import { getꓽstory_frame_url, getꓽstoryⵧcurrent } from '../../../flux/selectors'
+import { getꓽstory_frame_url } from '../../../flux/selectors'
 import { activateꓽstory } from '../../../flux/dispatcher.ts'
 
 import renderⵧside_panel from './side-panel'
@@ -19,15 +19,17 @@ async function render(container: HTMLElement = document.body) {
 
 	// navigation
 	document.body.addEventListener('click', function(e) {
-		const href: Url‿str = (e as any).target?.href // TODO type properly
+		const target = (e as any).target
+		const href: Url‿str = target?.href // TODO type properly
 		if (href) {
 			e.preventDefault()
 
 			console.log('———————————— NAVIGATION ————————————')
+			const story_uid = target.getAttribute('id')
+			console.log({target, story_uid, href})
 
-			throw new Error('NIMP handle navigation properly !')
-			//activateꓽstory() // TODO!
-			//iframe_elt.src = href
+			activateꓽstory(story_uid)
+			iframe_elt.src = href
 		}
 	})
 }

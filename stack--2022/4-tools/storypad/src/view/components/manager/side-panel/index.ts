@@ -35,7 +35,7 @@ function _append_folder(parent_elt: HTMLElement, treenode: Immutable<State>['tre
 
 	const config = getꓽconfig()
 
-	// TODO uid
+	details_elt.dataset['folderUid'] = payload.uid
 	details_elt.open = payload.isꓽexpandedⵧinitially
 	details_elt.innerHTML = `
 	<summary>${path.slice(-1)[0] || config.root_title}</summary>
@@ -58,8 +58,8 @@ function _append_folder(parent_elt: HTMLElement, treenode: Immutable<State>['tre
 function _append_leaf(parent_elt: HTMLElement, story: Immutable<StoryEntry>, path: Basename[]) {
 	let li_elt = document.createElement('li')
 	const key = path.slice(-1)[0]
-	// TODO uid
-	li_elt.innerHTML = `<a href="${getꓽmain_frame_url(story.uid)}">${key}</a>`
+	li_elt.dataset['storyUid'] = story.uid
+	li_elt.innerHTML = `<a id="${story.uid}" href="${getꓽmain_frame_url(story.uid)}">${key}</a>`
 	parent_elt.appendChild(li_elt)
 }
 
