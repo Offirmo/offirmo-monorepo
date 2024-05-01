@@ -8,13 +8,10 @@ import {
 
 import {
 	StoryUId,
-	StoryEntry, isꓽStoryEntry,
+	StoryEntry,
 	State,
 	StoryFolder,
 } from './types'
-import {
-	getꓽstoryⵧby_uid
-} from './selectors'
 
 ////////////////////////////////////////////////////////////////////////////////////
 // init

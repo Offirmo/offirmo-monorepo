@@ -4,9 +4,9 @@
 import assert from 'tiny-invariant'
 import { Immutable, Basename } from '@offirmo-private/ts-types'
 
-import { LIB } from '../../../consts'
-import { StoryEntry, StoryFolder, State } from '../../../flux/types'
-import { getꓽtree_root, getꓽconfig, getꓽmain_frame_url, isꓽexpandedⵧinitially } from '../../../flux/selectors'
+import { LIB } from '../../../../consts'
+import { StoryEntry, StoryFolder, State } from '../../../../flux/types'
+import { getꓽtree_root, getꓽconfig, getꓽmain_frame_url, isꓽexpandedⵧinitially } from '../../../../flux/selectors'
 
 /////////////////////////////////////////////////
 

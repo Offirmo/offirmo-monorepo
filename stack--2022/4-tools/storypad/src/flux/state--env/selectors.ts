@@ -1,0 +1,14 @@
+/* PROMPT
+ */
+
+/////////////////////////////////////////////////
+
+function isꓽiframe():boolean {
+	return window.location !== window.parent.location
+}
+
+/////////////////////////////////////////////////
+
+export {
+	isꓽiframe,
+}
