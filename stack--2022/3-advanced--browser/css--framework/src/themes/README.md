@@ -15,5 +15,6 @@ FYI rainbow vs spectrum https://en.wikipedia.org/wiki/Rainbow
 
 TODO convert to LCH when supported ? https://caniuse.com/css-lch-lab
 TODO https://draculatheme.com/pro
-TODO https://iterm2colorschemes.com/
-TODO use @csope? https://developer.chrome.com/docs/css-ui/at-scope
+TODO https://vscodethemes.com/
+TODO https://iterm2colorschemes.com/ (not RGB, hard to convert)
+TODO use @scope? https://developer.chrome.com/docs/css-ui/at-scope
