@@ -18,6 +18,3 @@ export const QUERYPARAMS = {
 
 	// globals=theme:dark
 }
-
-//const SEP_FOR_UID = 'Ⳇ' // :
-//const ROOT_ID = '╣ROOT╠'

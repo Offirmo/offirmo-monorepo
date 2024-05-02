@@ -1,17 +1,10 @@
 import assert from 'tiny-invariant'
 import { Immutable, RelativePath } from '@offirmo-private/ts-types'
-import { FileSystemNode, createꓽfilesystem, insertꓽfile } from '@offirmo-private/data-structures'
+import { createꓽfilesystem, insertꓽfile } from '@offirmo-private/data-structures'
 
-import {
-	Config,
-} from '../../types/config'
-
-import {
-	StoryUId,
-	StoryEntry,
-	State,
-	StoryFolder,
-} from './types'
+import { Config } from '../../types/config'
+import { StoryUId, StoryEntry, StoryFolder } from '../types'
+import { State } from './types'
 
 ////////////////////////////////////////////////////////////////////////////////////
 // init
@@ -21,9 +14,6 @@ function create(): State {
 			root_title: 'Stories',
 			decorators: [],
 		},
-		//stories_by_uid: {},
-		//folders_by_uid: {},
-		last_explicitly_activated_story‿uid: undefined,
 		first_encountered_story‿uid: undefined,
 		tree: createꓽfilesystem<StoryEntry, StoryFolder>(),
 	}
@@ -49,23 +39,17 @@ function registerꓽstory(state: State, story: StoryEntry, path: RelativePath): 
 	return {
 		...state,
 		first_encountered_story‿uid: state.first_encountered_story‿uid || uid,
-		/*stories_by_uid: {
-			...state.stories_by_uid,
-			[uid]: {
-				...story,
-				uid,
-			},
-		},*/
 	}
 }
 
 /////////////////////////////////////////////////
 
-function activateꓽstory(state: State, uid: StoryUId): State {
+// TODO clarify
+function requestꓽstory(state: State, uid: StoryUId): State {
 	//assert(getꓽstoryⵧby_uid(state, uid), `story should exist! "${uid}"`)
 	state = {
 		...state,
-		last_explicitly_activated_story‿uid: uid,
+		//last_explicitly_activated_story‿uid: uid,
 	}
 
 	state = folderⵧexpand(state, uid)
@@ -78,27 +62,6 @@ function activateꓽstory(state: State, uid: StoryUId): State {
 // id can be story or folder, don't mind
 function folderⵧexpand(state: State, uid: StoryUId): State {
 	console.warn('TODO folderⵧexpand')
-	/*
-	const path = id.split(SEP_FOR_IDS)
-
-	// in-place mutation SORRY TODO fix?
-	let folder: StoryFolder = state.folders_by_uid[ROOT_ID]! as any
-	do {
-		console.log('expanding', { path: structuredClone(path), folder })
-
-		const segment = path.shift()!
-		folder = folder.children[segment]! as StoryFolder
-		assert(folder, 'next segment is present')
-		if (isꓽStoryEntry(folder)) {
-			assert(path.length === 0, 'last segment is story')
-		}
-		else {
-			assert(Object.hasOwn(folder, 'isꓽexpandedⵧinitially'))
-			folder.isꓽexpandedⵧinitially = true
-		}
-	} while(path.length)
-
-	return state*/
 	return state
 }
 
@@ -108,7 +71,6 @@ export {
 	create,
 	setꓽconfig,
 	registerꓽstory,
-	//registerꓽfolder,
 
-	activateꓽstory,
+	requestꓽstory,
 }

@@ -33,11 +33,12 @@ export function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutabl
 
 	asap_but_out_of_immediate_execution(async () => {
 		const is_iframe = ( window.location !== window.parent.location )
-		console.groupCollapsed(`Starting storypad… [${is_iframe ? 'SUB frame' : 'TOP frame'}]`)
+		console.group(`Starting storypad… [${is_iframe ? 'SUB frame' : 'TOP frame'}]`)
 		console.log('config =', config)
 		console.log('glob =', stories_glob)
 
 		// 1. services
+		console.groupCollapsed(`Services init...`)
 		// order is important! Timing is non-trivial!
 		assert(Object.keys(initsⵧservices).length > 0, 'no services/init found!')
 		await Object.keys(initsⵧservices).sort().reduce(async (acc, key) => {
@@ -49,6 +50,7 @@ export function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutabl
 			logger.trace(`services/init "${key}": done ✅`)
 			logger.groupEnd()
 		}, Promise.resolve())
+		console.groupEnd()
 
 		// 2. flux
 		await initꓽflux(stories_glob, config)

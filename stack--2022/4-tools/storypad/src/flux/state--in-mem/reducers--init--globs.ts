@@ -6,15 +6,13 @@ import {
 	ImportModule, isꓽImportModule,
 } from '../../types/glob'
 
-import {
-	StoryEntry, isꓽStoryEntry,
-	State,
-} from './types'
+import { StoryEntry, isꓽStoryEntry } from '../types'
+import { State } from './types'
 import { registerꓽstory } from './reducers'
 
 /////////////////////////////////////////////////
 
-const SEP = '/' // Ⳇ
+const SEP = '/'
 
 /////////////////////////////////////////////////
 

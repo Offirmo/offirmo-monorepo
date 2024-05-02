@@ -6,7 +6,6 @@ import { Url‿str } from '@offirmo-private/ts-types'
 
 import { QUERYPARAMS } from './consts'
 import { StoryUId, RenderMode, isꓽrender_mode } from '../types'
-import { getꓽstoryⵧexplicitely_requested‿uid } from '../selectors'
 import { serializeꓽstory_uid, unserializeꓽstory_uid } from './serialization'
 
 
@@ -19,7 +18,7 @@ function _getꓽcurrent_urlⵧup_to_pathname(): string {
 
 /** return the normalized, state-enriched URL loading this storypad with the given activated story + misc
  */
-function getꓽmain_frame_url(uid = getꓽstoryⵧexplicitely_requested‿uid()): Url‿str {
+function getꓽmain_frame_url(uid?: StoryUId): Url‿str {
 	const sp = new URLSearchParams()
 	if (uid) {
 		sp.set(QUERYPARAMS.story_path, serializeꓽstory_uid(uid))
@@ -31,17 +30,10 @@ function getꓽmain_frame_url(uid = getꓽstoryⵧexplicitely_requested‿uid())
 
 function getꓽstory_frame_url(uid?: StoryUId): Url‿str {
 	return getꓽmain_frame_url(uid) // no difference for now
-/*
-	function getꓽmain_iframe_url(state: Immutable<State>, explicit_uid: StoryUId = getꓽstoryⵧcurrent‿uid(state)): string {
-	const sp = new URLSearchParams({
-		[QUERYPARAMS.story_uid]: explicit_uid,
-	})
-
-	return getꓽcurrent_urlⵧcleaned() + '?' + sp.toString()*/
 }
 
 function getꓽexplicit_render_mode(): RenderMode | undefined {
-	const url‿obj = (new URL(window.location.href))
+	const url‿obj = new URL(window.location.href)
 
 	const candidate = url‿obj.searchParams.get(QUERYPARAMS.render_mode)
 	if (isꓽrender_mode(candidate))
@@ -51,13 +43,17 @@ function getꓽexplicit_render_mode(): RenderMode | undefined {
 }
 
 function getꓽexplicit_story_uid(): StoryUId | undefined {
-	const url‿obj = (new URL(window.location.href))
+	const url‿obj = new URL(window.location.href)
 
-	let candidate = unserializeꓽstory_uid(url‿obj.searchParams.get(QUERYPARAMS.story_path))
+	let candidate_raw = url‿obj.searchParams.get(QUERYPARAMS.story_path)
+	console.log('candidate_raw', candidate_raw)
+	let candidate = unserializeꓽstory_uid(candidate_raw)
 	if (candidate)
 		return candidate
 
-	candidate = unserializeꓽstory_uid(url‿obj.searchParams.get(QUERYPARAMS.story_uid))
+	candidate_raw = url‿obj.searchParams.get(QUERYPARAMS.story_uid)
+	console.log('candidate_raw', candidate_raw)
+	candidate = unserializeꓽstory_uid(candidate_raw)
 	if (candidate)
 		return candidate
 

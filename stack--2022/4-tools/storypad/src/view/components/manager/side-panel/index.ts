@@ -5,7 +5,7 @@ import assert from 'tiny-invariant'
 import { Immutable, Basename } from '@offirmo-private/ts-types'
 
 import { LIB } from '../../../../consts'
-import { StoryEntry, StoryFolder, State } from '../../../../flux/types'
+import { StoryEntry, StoryFolder, StoryTree } from '../../../../flux/types'
 import { getꓽtree_root, getꓽconfig, getꓽmain_frame_url, isꓽexpandedⵧinitially } from '../../../../flux/selectors'
 
 /////////////////////////////////////////////////
@@ -22,7 +22,7 @@ function render() {
 	console.groupEnd()
 }
 
-function _append_folder(parent_elt: HTMLElement, treenode: Immutable<State>['tree'], path: Basename[]) {
+function _append_folder(parent_elt: HTMLElement, treenode: Immutable<StoryTree>, path: Basename[]) {
 	console.group('_append_folder()', path)
 	let details_elt = document.createElement('details')
 

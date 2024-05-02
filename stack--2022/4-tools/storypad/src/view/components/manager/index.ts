@@ -1,11 +1,10 @@
 import assert from 'tiny-invariant'
 import { Url‿str } from '@offirmo-private/ts-types'
 
-import { getꓽstory_frame_url } from '../../../flux/selectors'
+import { getꓽstory_frame_url, getꓽstoryⵧcurrent } from '../../../flux/selectors'
 import { requestꓽstory } from '../../../flux/dispatcher.ts'
 
 import renderⵧside_panel from './side-panel'
-import renderꓽroot from '../../index.ts'
 
 /////////////////////////////////////////////////
 
@@ -43,7 +42,8 @@ function _renderⵧstory_area() {
 
 function _renderⵧstory_frame() {
 	const iframe_elt = document.createElement('iframe')
-	iframe_elt.src = getꓽstory_frame_url()
+	const current_story = getꓽstoryⵧcurrent()
+	iframe_elt.src = getꓽstory_frame_url(current_story?.uid)
 	iframe_elt.id = 'storypad⋄iframe'
 	console.log({iframe_elt})
 	document.body.appendChild(iframe_elt)

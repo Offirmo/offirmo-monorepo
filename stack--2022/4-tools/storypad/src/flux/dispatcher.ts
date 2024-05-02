@@ -6,44 +6,37 @@ import { Immutable } from '@offirmo-private/ts-types'
 
 import { ImportGlob } from '../types/glob'
 import { Config } from '../types/config'
+import { StoryUId} from './types'
 import * as InMemState from './state--in-mem'
+import * as UrlState from './state--url'
 
 /////////////////////////////////////////////////
 
-let state: InMemState.State = null as any
+let stateⵧin_mem: InMemState.State = InMemState.create()
 
 async function init(stories_glob: Immutable<ImportGlob>, config?: Immutable<Config>): Promise<void> {
-	state = InMemState.create()
+	console.group('Flux init...')
+	stateⵧin_mem = InMemState.setꓽconfig(stateⵧin_mem, config)
+	stateⵧin_mem = await InMemState.registerꓽstoriesⵧfrom_glob(stateⵧin_mem, stories_glob)
 
-	state = InMemState.setꓽconfig(state, config)
+	UrlState.init()
 
-	state = await InMemState.registerꓽstoriesⵧfrom_glob(state, stories_glob)
+	// other states don't need an init
 
-	//state = enrich_state_from_local_storage(state)
-	//state = enrich_state_from_query_parameters(state)
-	//state = enrich_state_from_env(state)
-
-	console.log('final state =', state)
+	console.log('final stateⵧin_mem =', stateⵧin_mem)
+	console.groupEnd()
 }
 
 // explicit request on user's click
-function requestꓽstory(uid: InMemState.StoryUId) {
-	state = InMemState.activateꓽstory(state, uid)
-	// TODO propagate to url state!
-
-	//throw new Error('NIMP propagate on activateꓽstory() !')
-	/*try {
-		localStorage.setItem(LS_KEYS.current_story_uid, (new URL(href)).searchParams.get(MAIN_IFRAME_QUERYPARAMS.story_uid))
-	}
-	catch {
-	// ignore
-	}*/
+function requestꓽstory(uid: StoryUId) {
+	stateⵧin_mem = InMemState.requestꓽstory(stateⵧin_mem, uid)
+	UrlState.requestꓽstory(uid)
 }
 
 // DO NOT USE, only for the flux selectors
 function _getꓽstateⵧin_mem(): Immutable<InMemState.State> {
-	assert(state, `init() must be called first!`)
-	return state
+	assert(stateⵧin_mem, `init() must be called first!`)
+	return stateⵧin_mem
 }
 
 /////////////////////////////////////////////////
