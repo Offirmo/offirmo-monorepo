@@ -26,8 +26,10 @@ async function init(stories_glob: Immutable<ImportGlob>, config?: Immutable<Conf
 	console.log('final state =', state)
 }
 
-function activateꓽstory(uid: InMemState.StoryUId) {
+// explicit request on user's click
+function requestꓽstory(uid: InMemState.StoryUId) {
 	state = InMemState.activateꓽstory(state, uid)
+	// TODO propagate to url state!
 
 	//throw new Error('NIMP propagate on activateꓽstory() !')
 	/*try {
@@ -38,7 +40,7 @@ function activateꓽstory(uid: InMemState.StoryUId) {
 	}*/
 }
 
-
+// DO NOT USE, only for the flux selectors
 function _getꓽstateⵧin_mem(): Immutable<InMemState.State> {
 	assert(state, `init() must be called first!`)
 	return state
@@ -49,7 +51,7 @@ function _getꓽstateⵧin_mem(): Immutable<InMemState.State> {
 export {
 	init,
 
-	activateꓽstory,
+	requestꓽstory,
 
 	// only for selectors
 	_getꓽstateⵧin_mem,

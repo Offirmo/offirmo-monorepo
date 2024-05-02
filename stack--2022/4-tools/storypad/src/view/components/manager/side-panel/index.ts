@@ -29,7 +29,7 @@ function _append_folder(parent_elt: HTMLElement, treenode: Immutable<State>['tre
 	// TODO common code!
 	const payload: StoryFolder = (treenode.payload as any) ?? {
 		uid: path.join('/'),
-		isꓽexpandedⵧinitially: true, // TODO
+		isꓽexpandedⵧinitially: true,
 	}
 	payload.isꓽexpandedⵧinitially = isꓽexpandedⵧinitially(payload.uid)
 

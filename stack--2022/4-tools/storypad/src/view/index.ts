@@ -9,7 +9,7 @@ import renderⵧmanager from './components/manager'
 
 /////////////////////////////////////////////////
 
-async function render(): Promise<void> {
+async function renderꓽroot(): Promise<void> {
 	const is_iframe = ( window.location !== window.parent.location )
 
 	console.group(`[${LIB}] ROOT RENDER [${is_iframe ? 'SUB frame' : 'TOP frame'}]`)
@@ -33,4 +33,4 @@ async function render(): Promise<void> {
 
 /////////////////////////////////////////////////
 
-export default render
+export default renderꓽroot

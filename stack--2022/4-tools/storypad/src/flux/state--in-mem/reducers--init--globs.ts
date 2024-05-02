@@ -37,7 +37,9 @@ async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_g
 	await Object.keys(stories_glob).sort().reduce(async (acc, key) => {
 		await acc
 
-		const blob = stories_glob[key]
+		// if dynamic import, can be a promise in the process of being resolved
+		const blob = await Promise.resolve(stories_glob[key])
+
 		switch (true) {
 			case isꓽImportModule(blob):
 				state = await _registerꓽstoriesⵧfrom_module(state, blob, [ ...parent_path, key ])
@@ -57,15 +59,16 @@ async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_g
 
 	return state
 }
+
 async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Immutable<ImportModule>, parent_path: string[] = []): Promise<State> {
 	DEBUGⵧglob_parsing && console.group(`_registerꓽstories_from_module(${parent_path.join(SEP)}.[js/ts/...])`)
 	console.log('module=', story_module)
 
 	const exports_sync_or_async = story_module.js || story_module.jsx || story_module.ts || story_module.tsx
-	assert(exports_sync_or_async, `ESModule unrecognized extension! (TODO implement)`)
+	assert(exports_sync_or_async, `ESModule unrecognized extension! (Please implement)`)
 
 	const exports = await (async () => {
-		// TODO one day "on demand" resolution
+		// TODO "on demand" resolution to avoid pollution
 		if (typeof exports_sync_or_async === 'function') {
 			try {
 				return await exports_sync_or_async()

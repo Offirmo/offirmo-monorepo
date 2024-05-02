@@ -59,50 +59,6 @@ function registerꓽstory(state: State, story: StoryEntry, path: RelativePath): 
 	}
 }
 
-/* not needed, folder are inferred from stories path
-function registerꓽfolder(state: State, folder: StoryFolder, path: RelativePath): State {
-	const uid = upsertꓽfolder(state.tree, path, folder)
-	return {
-		...state,
-		folders_by_uid: {
-			...state.folders_by_uid,
-			[uid]: folder,
-		},
-	}
-}*/
-
-function enrich_state_from_local_storage(state: State): State {
-	console.log('TODO enrich_state_from_local_storage')
-	/*
-	try {
-		const id = localStorage.getItem(LS_KEYS.current_story_uid)
-		if (id)
-			state = setꓽcurrent_story(state, id)
-	}
-	catch { /* ignore *}*/
-	return {
-		...state,
-	}
-}
-
-function enrich_state_from_query_parameters(state: State): State {
-	console.log('TODO enrich_state_from_query_parameters')
-	return {
-		...state,
-	}
-}
-
-function enrich_state_from_env(state: State): State {
-	console.log('TODO enrich_state_from_env')
-	// TODO ex. if small window, don't show the UI etc.
-
-	/*if (state.current_story‿uid) {
-		state = folderⵧexpand(state, state.current_story‿uid)
-	}*/
-
-	return state
-}
-
 /////////////////////////////////////////////////
 
 function activateꓽstory(state: State, uid: StoryUId): State {

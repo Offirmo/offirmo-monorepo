@@ -12,6 +12,7 @@ import { State, FolderUId, StoryEntry, StoryUId, RenderMode } from './types'
 import * as InMemStateSelectors from './state--in-mem/selectors'
 import * as EnvStateSelectors from './state--env/selectors'
 import * as UrlStateSelectors from './state--url/selectors'
+import { RenderParams } from '../types/csf/common'
 
 /////////////////////////////////////////////////
 
@@ -27,7 +28,7 @@ function getꓽconfig(): Immutable<Config> {
 
 // initial tree render
 function isꓽexpandedⵧinitially(uid: FolderUId): boolean {
-	return true // TODO more complex one day
+	return true // TODO more complex depending on available viewport
 	/*const state = getꓽstate()
 	const folder = state.folders_by_uid[uid]
 	*/
@@ -72,6 +73,13 @@ function getꓽstoryⵧexplicitely_requested‿uid(): StoryUId | undefined {
 const getꓽmain_frame_url = UrlStateSelectors.getꓽmain_frame_url
 const getꓽstory_frame_url = UrlStateSelectors.getꓽstory_frame_url
 
+function getꓽRenderParamsⵧglobal<StoryType>(): RenderParams<StoryType> {
+	return {
+		// TODO args from config
+		// TODO args from QParams
+	}
+}
+
 /////////////////////////////////////////////////
 
 export {
@@ -83,6 +91,7 @@ export {
 	getꓽrender_mode,
 	getꓽstoryⵧcurrent,
 	getꓽstoryⵧexplicitely_requested‿uid,
+	getꓽRenderParamsⵧglobal,
 
 	getꓽmain_frame_url,
 	getꓽstory_frame_url,

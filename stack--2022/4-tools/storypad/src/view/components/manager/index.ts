@@ -2,13 +2,14 @@ import assert from 'tiny-invariant'
 import { Url‿str } from '@offirmo-private/ts-types'
 
 import { getꓽstory_frame_url } from '../../../flux/selectors'
-import { activateꓽstory } from '../../../flux/dispatcher.ts'
+import { requestꓽstory } from '../../../flux/dispatcher.ts'
 
 import renderⵧside_panel from './side-panel'
+import renderꓽroot from '../../index.ts'
 
 /////////////////////////////////////////////////
 
-async function render(container: HTMLElement = document.body) {
+async function renderꓽmanager(container: HTMLElement = document.body) {
 
 	// we're the top frame
 	// render the full UI:
@@ -20,7 +21,7 @@ async function render(container: HTMLElement = document.body) {
 	// navigation
 	document.body.addEventListener('click', function(e) {
 		const target = (e as any).target
-		const href: Url‿str = target?.href // TODO type properly
+		const href: Url‿str = target?.href
 		if (href) {
 			e.preventDefault()
 
@@ -28,7 +29,7 @@ async function render(container: HTMLElement = document.body) {
 			const story_uid = target.getAttribute('id')
 			console.log({target, story_uid, href})
 
-			activateꓽstory(story_uid)
+			requestꓽstory(story_uid)
 			iframe_elt.src = href
 		}
 	})
@@ -52,4 +53,4 @@ function _renderⵧstory_frame() {
 
 /////////////////////////////////////////////////
 
-export default render
+export default renderꓽmanager
