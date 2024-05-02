@@ -11,8 +11,14 @@ import { State } from './types'
 /////////////////////////////////////////////////
 
 function getꓽstoryⵧby_uid(state: Immutable<State>, uid: StoryUId): Immutable<StoryEntry> | undefined {
-	const node = getꓽnodeⵧby_pathⵧensure_file<StoryEntry, StoryFolder>(state.tree, uid)
-	return node.payload
+	try {
+		const node = getꓽnodeⵧby_pathⵧensure_file<StoryEntry, StoryFolder>(state.tree, uid)
+		return node.payload
+	}
+	catch (err) {
+		// not found
+		return undefined
+	}
 }
 
 // if no explicit story is requested,

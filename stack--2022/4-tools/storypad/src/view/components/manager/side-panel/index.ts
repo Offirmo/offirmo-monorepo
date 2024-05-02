@@ -6,7 +6,7 @@ import { Immutable, Basename } from '@offirmo-private/ts-types'
 
 import { LIB } from '../../../../consts'
 import { StoryEntry, StoryFolder, StoryTree } from '../../../../flux/types'
-import { getꓽtree_root, getꓽconfig, getꓽmain_frame_url, isꓽexpandedⵧinitially } from '../../../../flux/selectors'
+import { getꓽtree_root, getꓽconfig, getꓽmain_frame_url, isꓽexpandedⵧinitially, getꓽstoryⵧcurrent } from '../../../../flux/selectors'
 
 /////////////////////////////////////////////////
 
@@ -59,7 +59,8 @@ function _append_leaf(parent_elt: HTMLElement, story: Immutable<StoryEntry>, pat
 	let li_elt = document.createElement('li')
 	const key = path.slice(-1)[0]
 	li_elt.dataset['storyUid'] = story.uid
-	li_elt.innerHTML = `<a id="${story.uid}" href="${getꓽmain_frame_url(story.uid)}">${key}</a>`
+	const current_story‿uid = getꓽstoryⵧcurrent()?.uid
+	li_elt.innerHTML = `<a id="${story.uid}" class="${story.uid === current_story‿uid ? 'current' : ''}" href="${getꓽmain_frame_url(story.uid)}">${key}</a>`
 	parent_elt.appendChild(li_elt)
 }
 

@@ -34,7 +34,7 @@ a {
 }
 
 details > ol {
-	list-style-type: none;
+	/*list-style-type: none;*/
 	padding-inline-start: 0;
 }
 
@@ -76,8 +76,17 @@ details summary {
 details > ol {
 	/* finally we align the details content (after the summary) with the summary text
 	 */
-	--summary-offset: calc( 0.5 * (var(--icon-width) - var(--line-width)) + 0.5ch);
+	/*--summary-offset: calc( 0.5 * (var(--icon-width) - var(--line-width)) + 0.5ch);*/
+	--summary-offset: 0;
 	margin-left: calc( -1 * var(--indentation-width) + var(--summary-offset));
+
+	/* remove unnecessary padding */
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+details a.current {
+	background-color: yellow;
 }
 
 
@@ -101,6 +110,7 @@ body {
 	font-size: 12px;
 	font-stretch: ultra-condensed;
 
+	width: 100vw;
 	max-width: 100%;
 
 	display: flex;

@@ -16,9 +16,10 @@ import {
 
 function getꓽparent__path<FilePayload, FolderPayload>(node: FileSystemNode<FilePayload, FolderPayload>): RelativePath {
 	let segments: string[] = []
+
 	const { options } = node.root
 
-	throw new Error(`getꓽparent__path() not implemented yet!`)
+	return "TODO getꓽparent__path()"
 }
 
 function getꓽnodeⵧby_path<FilePayload, FolderPayload>(tree: FileSystemNode<FilePayload, FolderPayload>, path: RelativePath): FileSystemNode<FilePayload, FolderPayload>
