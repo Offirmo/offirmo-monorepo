@@ -36,10 +36,15 @@ function registerꓽstory(state: State, story: StoryEntry, path: RelativePath): 
 	const uid = insertꓽfile(state.tree, path, story)
 	assert(uid === story.uid, `uid should be as expected! "${story.uid}" vs. "${uid}"`)
 
-	return {
-		...state,
-		first_encountered_story‿uid: state.first_encountered_story‿uid || uid,
+	if (!state.first_encountered_story‿uid) {
+		state = {
+			...state,
+			first_encountered_story‿uid: state.first_encountered_story‿uid || uid,
+		}
+		state = folderⵧexpand(state, uid)
 	}
+
+	return state
 }
 
 /////////////////////////////////////////////////
@@ -51,8 +56,6 @@ function requestꓽstory(state: State, uid: StoryUId): State {
 		...state,
 		//last_explicitly_activated_story‿uid: uid,
 	}
-
-	state = folderⵧexpand(state, uid)
 
 	return state
 }

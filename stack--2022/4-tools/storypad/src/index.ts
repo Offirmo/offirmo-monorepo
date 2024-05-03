@@ -7,7 +7,7 @@ import { Config } from './types/config'
 
 /////////////////////////////////////////////////
 
-console.info(`%c ${LIB} %cv${'CSFv3'}%c${'HTML/React'}`,
+console.info(`%c ${LIB} %c${'CSFv3'}%c${'HTML/React'}`,
 	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: hsl(337, 16%, 28%); color: hsl(42, 100%, 87%); font-weight: bold;',
 	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey; color: black; font-weight: bold;',
 	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey; color: black;',
@@ -33,7 +33,7 @@ export function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutabl
 
 	asap_but_out_of_immediate_execution(async () => {
 		const is_iframe = ( window.location !== window.parent.location )
-		console.group(`Starting storypad… [${is_iframe ? 'SUB frame' : 'TOP frame'}]`)
+		console.group(`Starting storypad… [${is_iframe ? 'SUB frame' : 'TOP frame'}]`, window.location.href)
 		console.log('config =', config)
 		console.log('glob =', stories_glob)
 

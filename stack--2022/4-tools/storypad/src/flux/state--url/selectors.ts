@@ -46,13 +46,13 @@ function getꓽexplicit_story_uid(): StoryUId | undefined {
 	const url‿obj = new URL(window.location.href)
 
 	let candidate_raw = url‿obj.searchParams.get(QUERYPARAMS.story_path)
-	console.log('candidate_raw', candidate_raw)
+	//console.log('candidate_raw', candidate_raw)
 	let candidate = unserializeꓽstory_uid(candidate_raw)
 	if (candidate)
 		return candidate
 
 	candidate_raw = url‿obj.searchParams.get(QUERYPARAMS.story_uid)
-	console.log('candidate_raw', candidate_raw)
+	//console.log('candidate_raw', candidate_raw)
 	candidate = unserializeꓽstory_uid(candidate_raw)
 	if (candidate)
 		return candidate
