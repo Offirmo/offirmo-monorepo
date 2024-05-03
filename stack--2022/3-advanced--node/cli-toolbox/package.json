@@ -20,7 +20,7 @@
 	},
 
 	"dependencies": {
-		"ansi-escapes": "^6",
+		"ansi-escapes": "^7",
 		"boxen": "^7",
 		"chalk": "^5",
 		"cli-columns": "^4",

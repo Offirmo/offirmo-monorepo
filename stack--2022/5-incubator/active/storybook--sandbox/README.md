@@ -13,7 +13,7 @@
 		"@offirmo-private/rich-text-format": "^0",
 		"@offirmo-private/rich-text-format--to-react": "^0",
 		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/soft-execution-context--browser": "^0",
+		"@offirmo-private/soft-execution-context--browser": "*",
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/ts-utils": "^0",
