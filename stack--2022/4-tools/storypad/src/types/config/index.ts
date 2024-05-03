@@ -1,10 +1,13 @@
 
-import { Decorator } from '../csf'
+import { RenderParams } from '../csf'
 
 /////////////////////////////////////////////////
 
-export interface Config<StoryType = any> {
-	root_title: string
+// note: extending RenderParams is non-standard
+export interface Config<StoryType = any> extends RenderParams<StoryType> {
+	// https://storybook.js.org/docs/configure#configure-your-storybook-project
+	addons?: never
 
-	decorators: Decorator<StoryType>[]
+	// my extensions
+	root_title: string
 }

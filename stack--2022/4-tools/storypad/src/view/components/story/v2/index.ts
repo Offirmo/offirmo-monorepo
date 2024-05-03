@@ -50,27 +50,20 @@ async function _renderⵧaggregated_story(render_params: Immutable<RenderParams<
 			default:
 				throw new Error(`CSF v2: Unrecognized story "component" format!`)
 		}
+
+		if (render_params.decorators!.length) {
+			throw new Error('Decorators not implemented!')
+		}
 	}
 
 	if (render) {
-		const rendered = render(render_params.args!)
+		const decorated_render = render_params.decorators!.reduce((acc, decorator) => {
+			assert(typeof decorator === 'function', 'Decorator must be a function!')
+			assert(typeof acc === 'function', 'Decorator must be applied to a function!')
+			return decorator(acc as any)
+		}, render)
+		const rendered = decorated_render(render_params.args!)
 		document.body.innerHTML = rendered
-	}
-
-	if (render_params.decorators!.length) {
-		throw new Error('Decorators not implemented!')
-		/*
-		const decorators = storyEntry.storyEntry.decorators === null
-			? [] // allow resetting decorators
-			:[
-				...state.config.decorators,
-				...(storyEntry.meta?.decorators || []),
-				...(storyEntry.storyEntry.decorators || []),
-			].reverse()
-		decorators.forEach(decorator => {
-			throw new Error('Decorators not implemented!')
-			//content = decorator(content)
-		})*/
 	}
 }
 

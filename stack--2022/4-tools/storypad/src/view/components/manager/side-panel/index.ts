@@ -59,9 +59,14 @@ function _append_leaf(parent_elt: HTMLElement, story: Immutable<StoryEntry>, pat
 	let li_elt = document.createElement('li')
 	const key = path.slice(-1)[0]
 	li_elt.dataset['storyUid'] = story.uid
-	const current_story‿uid = getꓽstoryⵧcurrent()?.uid
-	li_elt.innerHTML = `<a id="${story.uid}" class="${story.uid === current_story‿uid ? 'current' : ''}" href="${getꓽmain_frame_url(story.uid)}">${key}</a>`
+	li_elt.innerHTML = `<a id="${story.uid}" href="${getꓽmain_frame_url(story.uid)}">${key}</a>`
 	parent_elt.appendChild(li_elt)
+	const current_story‿uid = getꓽstoryⵧcurrent()?.uid
+	if (story.uid === current_story‿uid) {
+		setTimeout(() => {
+			document.getElementById(story.uid)!.focus();
+		})
+	}
 }
 
 /////////////////////////////////////////////////

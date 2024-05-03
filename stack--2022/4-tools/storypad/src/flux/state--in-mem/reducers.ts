@@ -24,7 +24,7 @@ function setꓽconfig(state: State, config: Immutable<Config> | undefined): Stat
 		...state,
 		config: {
 			...state.config,
-			...structuredClone<Config>(config as any),
+			...config as any, // break the Immutable, but we promise not to touch it!
 		},
 	}
 }

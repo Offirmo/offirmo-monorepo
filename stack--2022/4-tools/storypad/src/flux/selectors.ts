@@ -69,9 +69,18 @@ const getꓽstory_frame_url = UrlStateSelectors.getꓽstory_frame_url
 
 function getꓽRenderParamsⵧglobal<StoryType>(): RenderParams<StoryType> {
 	return {
-		// TODO args from config
-		// TODO args from QParams
-	}
+			parameters: {
+				...getꓽconfig().parameters,
+				// TODO from QParams
+			},
+			args: {
+				...getꓽconfig().args,
+				// TODO from QParams
+			},
+			decorators: [
+				...(getꓽconfig().decorators || []),
+			]
+		}
 }
 
 /////////////////////////////////////////////////

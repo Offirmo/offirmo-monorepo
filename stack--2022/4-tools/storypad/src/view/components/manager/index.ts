@@ -33,7 +33,6 @@ async function renderꓽmanager(container: HTMLElement = document.body) {
 			console.log({target, story_uid, href})
 
 			const previous_story‿uid = getꓽstoryⵧcurrent()!.uid!
-			document.getElementById(previous_story‿uid)?.classList.remove('current')
 
 			requestꓽstory(story_uid)
 			iframe_elt.src = href
