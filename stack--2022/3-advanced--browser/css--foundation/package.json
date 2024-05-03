@@ -12,10 +12,13 @@
 	},
 
 	"scripts": {
-		"clean": "monorepo-script--clean-package …dist …cache",
+		"clean--cache": "monorepo-script--clean-package …cache",
+		"clean--dist": "monorepo-script--clean-package …dist",
 
-		"_parcel:serve": "parcel serve --log-level verbose  'doc/demo/*.html' --port 3020 --no-autoinstall",
-		"dev": "npm-run-all clean --parallel _parcel:serve"
+		"_start:parcel:storypad": "parcel serve doc/storypad/index.html --port 8080  --lazy  --no-autoinstall",
+		"_start:parcel:demo": "parcel serve --log-level verbose  'doc/demo/*.html' --port 3020 --no-autoinstall",
+
+		"dev": "npm-run-all clean--cache --parallel _start:parcel:storypad"
 	},
 
 	"devDependencies": {

@@ -1,4 +1,4 @@
-export function First() {
+export function Original() {
 	return `
 <header>
 	<h1>This is a motherfucking website.</h1>
