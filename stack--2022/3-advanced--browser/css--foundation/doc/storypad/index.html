@@ -5,7 +5,7 @@
 
 	// important to load async so that the stories don't pollute the global scope too early (ex. before SEC)
 	//import stories from './**/*.stories.@(js|jsx|ts|tsx|mdx)'
-	const storiesⵧshared = import('@offirmo-private/storypad/src/shared/stories/html/**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	const storiesⵧshared = import('@offirmo-private/storypad/src/shared/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)')
 	const stories = import('../../src/**/*.stories.@(js|jsx|ts|tsx|mdx)')
 	console.log('BOOTSTRAP stories', {
 		stories,
@@ -15,7 +15,7 @@
 	startꓽstorypad(
 		{
 			own: stories,
-			html: storiesⵧshared,
+			shared: storiesⵧshared,
 		},
 		{
 			root_title: nearest_pkg?.name,

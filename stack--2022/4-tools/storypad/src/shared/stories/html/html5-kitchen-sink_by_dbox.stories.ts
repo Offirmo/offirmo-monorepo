@@ -15,6 +15,7 @@ export function Header() {
 export function Footer() {
 	return `
 <footer role="contentinfo">
+	<p>This section serves as the <code>footer</code>.</p>
 	<p>Find this document on <a href="https://github.com/dbox/html5-kitchen-sink">GitHub</a>.</p>
 </footer>
 `
@@ -86,7 +87,6 @@ export function Sections() {
 		Content spec.</a></p>
 	</footer>
 </section>
-
 `
 }
 
@@ -134,263 +134,278 @@ export function Phrasing() {
 		<p>See the <a target="_blank" href="https://www.w3.org/TR/html5/dom.html#phrasing-content">Phrasing Content spec.</a></p>
 	</footer>
 </section>
-
 `
 }
 
-export function Palpable() {
+export function PalpableⵧIntro() {
 	return `
-<section id="palpable">
-	<header>
-		<h3><a href="#palpable">#</a> Palpable Content</h3>
-		<p>Elements <code>a</code>, <code>address</code>, <code>blockquote</code>,
-		<code>button</code>, <code>details</code>, <code>dl</code>, <code>fieldset</code>,
-		<code>figure</code>, <code>form</code>, <code>input</code>, <code>label</code>,
-		<code>map</code>, <code>ol</code>, <code>output</code>, <code>pre</code>,
-		<code>select</code>, <code>table</code>, <code>textarea</code>,
-		<code>ul</code>, and others make up the <em>palpable content</em> category.
-		</p>
-	</header>
+<header>
+	<h3><a href="#palpable">#</a> Palpable Content</h3>
+	<p>Elements <code>a</code>, <code>address</code>, <code>blockquote</code>,
+	<code>button</code>, <code>details</code>, <code>dl</code>, <code>fieldset</code>,
+	<code>figure</code>, <code>form</code>, <code>input</code>, <code>label</code>,
+	<code>map</code>, <code>ol</code>, <code>output</code>, <code>pre</code>,
+	<code>select</code>, <code>table</code>, <code>textarea</code>,
+	<code>ul</code>, and others make up the <em>palpable content</em> category.
+	</p>
+</header>
+`
+}
 
-	<p><code>a</code>: <a href="http://example.com">Example</a>.</p>
-	<p><code>address</code>:</p>
-	<address>1 Infinite Loop<br>
-	Cupertino, CA 95014<br>
-	United States
-	</address>
-	<p><code>blockquote</code>:</p>
-	<blockquote>
-		<p>I quickly explained that many big jobs involve few hazards</p>
-	</blockquote>
-	<blockquote>
-		<p>This is a mult-line blockquote with a cite reference. People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to
-		pick carefully. I’m actually as proud of the things we haven’t done as the things I have done. Innovation is saying no to 1,000 things.</p>
-		<footer>Steve Jobs, <cite>Apple Worldwide Developers’ Conference, 1997</cite></footer>
-	</blockquote>
-	<p><code>details</code> and <code>summary</code>:</p>
-	<details>
-		<summary>Copying... <progress max="375505392" value="97543282"></progress> 25%
-		</summary>
-		<dl>
-			<dt>Transfer rate:</dt>
-			<dd>452KB/s</dd>
-			<dt>Duration:</dt>
-			<dd>01:16:27</dd>
-			<dt>Color profile:</dt>
-			<dd>SD (6-1-6)</dd>
-			<dt>Dimensions:</dt>
-			<dd>320×240</dd>
-		</dl>
-	</details>
-	<p><code>dl</code>:</p>
+export function Palpableⵧmisc() {
+	return `
+<p><code>a</code>: <a href="http://example.com">Example</a>.</p>
+<p><code>address</code>:</p>
+<address>1 Infinite Loop<br>
+Cupertino, CA 95014<br>
+United States
+</address>
+<p><code>blockquote</code>:</p>
+<blockquote>
+	<p>I quickly explained that many big jobs involve few hazards</p>
+</blockquote>
+<blockquote>
+	<p>This is a mult-line blockquote with a cite reference. People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to
+	pick carefully. I’m actually as proud of the things we haven’t done as the things I have done. Innovation is saying no to 1,000 things.</p>
+	<footer>Steve Jobs, <cite>Apple Worldwide Developers’ Conference, 1997</cite></footer>
+</blockquote>
+<p><code>details</code> and <code>summary</code>:</p>
+<details>
+	<summary>Copying... <progress max="375505392" value="97543282"></progress> 25%
+	</summary>
 	<dl>
-		<dt>Definition List Title</dt>
-		<dd>Definition list division.</dd>
-		<dt>Kitchen Sink</dt>
-		<dd>Used in expressions to describe work in which all conceivable (and some inconceivable) sources have been mined. In this case, a bunch of markup.</dd>
-		<dt>aside</dt>
-		<dd>Defines content aside from the page content</dd>
-		<dt>blockquote</dt>
-		<dd>Defines a section that is quoted from another source</dd>
+		<dt>Transfer rate:</dt>
+		<dd>452KB/s</dd>
+		<dt>Duration:</dt>
+		<dd>01:16:27</dd>
+		<dt>Color profile:</dt>
+		<dd>SD (6-1-6)</dd>
+		<dt>Dimensions:</dt>
+		<dd>320×240</dd>
 	</dl>
-	<p><code>figure</code>:</p>
+</details>
+<p><code>dl</code>:</p>
+<dl>
+	<dt>Definition List Title</dt>
+	<dd>Definition list division.</dd>
+	<dt>Kitchen Sink</dt>
+	<dd>Used in expressions to describe work in which all conceivable (and some inconceivable) sources have been mined. In this case, a bunch of markup.</dd>
+	<dt>aside</dt>
+	<dd>Defines content aside from the page content</dd>
+	<dt>blockquote</dt>
+	<dd>Defines a section that is quoted from another source</dd>
+</dl>
+<p><code>figure</code>:</p>
 
-	<figure>
-		<img src="https://www.fillmurray.com/402/295">
-		<figcaption>Figure 1: A picture of Bill Murray from <a href="https://www.fillmurray.com/">fillmurray.com</a>
-		</figcaption>
-	</figure>
+<figure>
+	<img src="https://www.fillmurray.com/402/295">
+	<figcaption>Figure 1: A picture of Bill Murray from <a href="https://www.fillmurray.com/">fillmurray.com</a>
+	</figcaption>
+</figure>
+`
+}
 
-	<br><br>
+export function Palpableⵧforms() {
+	return `
+<h4 id="forms"><a href="#forms">#</a> Forms</h4>
+<hr>
 
-	<h4 id="forms"><a href="#forms">#</a> Forms</h4>
-	<hr>
-
-	<form>
+<form>
 	<p>
-	<label for="example-input-email">Email address</label>
-	<input type="email" id="example-input-email">
+		<label for="example-input-email">Email address</label>
+		<input type="email" id="example-input-email">
 	</p>
 	<p>
-	<label for="example-input-number">Number</label>
-	<input type="number" id="example-input-number">
+		<label for="example-input-number">Number</label>
+		<input type="number" id="example-input-number">
 	</p>
 	<p>
-	<label for="example-input-password">Password</label>
-	<input type="password" id="example-input-password">
+		<label for="example-input-password">Password</label>
+		<input type="password" id="example-input-password">
 	</p>
 	<p>
-	<label for="example-input-search">Search</label>
-	<input type="search" id="example-input-search">
+		<label for="example-input-search">Search</label>
+		<input type="search" id="example-input-search">
 	</p>
 	<p>
-	<label for="example-input-tel">Telephone number</label>
-	<input type="tel" id="example-input-tel">
+		<label for="example-input-tel">Telephone number</label>
+		<input type="tel" id="example-input-tel">
 	</p>
 	<p>
-	<label for="example-input-text">Text</label>
-	<input type="text" id="example-input-text">
+		<label for="example-input-text">Text</label>
+		<input type="text" id="example-input-text">
 	</p>
 	<p>
-	<label for="example-input-readonly">Read-only</label>
-	<input type="text" readonly value="Can't touch this!">
+		<label for="example-input-readonly">Read-only</label>
+		<input type="text" readonly value="Can't touch this!">
 	</p>
 	<p>
-	<label for="example-input-disabled">Disabled</label>
-	<input type="text" disabled value="Not available">
+		<label for="example-input-disabled">Disabled</label>
+		<input type="text" disabled value="Not available">
 	</p>
 	<p>
-	<label for="example-input-url">URL</label>
-	<input type="url" id="example-input-url">
+		<label for="example-input-url">URL</label>
+		<input type="url" id="example-input-url">
 	</p>
 	<p>
-	<label for="example-input-color">Color</label>
-	<input type="color" id="example-input-color">
+		<label for="example-input-color">Color</label>
+		<input type="color" id="example-input-color">
 	</p>
 	<p>
-	<label for="example-input-date">Date</label>
-	<input type="date" id="example-input-date">
+		<label for="example-input-date">Date</label>
+		<input type="date" id="example-input-date">
 	</p>
 	<p>
-	<label for="example-input-date-time">Date / Time</label>
-	<input type="datetime" id="example-input-date-time">
+		<label for="example-input-date-time">Date / Time</label>
+		<input type="datetime" id="example-input-date-time">
 	</p>
 	<p>
-	<label for="example-input-date-time-local">Date / Time local</label>
-	<input type="datetime-local" id="example-input-date-time-local">
+		<label for="example-input-date-time-local">Date / Time local</label>
+		<input type="datetime-local" id="example-input-date-time-local">
 	</p>
 	<p>
-	<label for="example-input-month">Month</label>
-	<input type="month" id="example-input-month">
+		<label for="example-input-month">Month</label>
+		<input type="month" id="example-input-month">
 	</p>
 	<p>
-	<label for="example-input-week">Week</label>
-	<input type="week" id="example-input-week">
+		<label for="example-input-week">Week</label>
+		<input type="week" id="example-input-week">
 	</p>
 	<p>
-	<label for="example-input-time">Time</label>
-	<input type="time" id="example-input-time">
+		<label for="example-input-time">Time</label>
+		<input type="time" id="example-input-time">
 	</p>
 	<p>
-	<label for="example-input-file">File input</label>
-	<input type="file" id="example-input-file">
+		<label for="example-input-file">File input</label>
+		<input type="file" id="example-input-file">
 	</p>
 	<p>
-	<label for="example-input-range">Range input</label>
-	<input type="range" id="example-input-range" min="1" max="4" value="3">
+		<label for="example-input-range">Range input</label>
+		<input type="range" id="example-input-range" min="1" max="4" value="3">
 	</p>
 	<p>
-	<label for="example-select1">Select</label>
-	<select id="example-select1">
-	<option>1</option>
-	<option>2</option>
-	<option>3</option>
-	<option>4</option>
-	<option>5</option>
-	</select>
+		<label for="example-select1">Select</label>
+		<select id="example-select1">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
 	</p>
 	<p>
-	<label for="example-select1a">Select with size</label>
-	<select id="example-select1a" size="2">
-	<option>1</option>
-	<option>2</option>
-	<option>3</option>
-	<option>4</option>
-	<option>5</option>
-	</select>
+		<label for="example-select1a">Select with size</label>
+		<select id="example-select1a" size="2">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
 	</p>
 	<p>
-	<label for="example-select2">Multiple select</label>
-	<select multiple id="example-select2">
-	<option>1</option>
-	<option>2</option>
-	<option>3</option>
-	<option>4</option>
-	<option>5</option>
-	</select>
+		<label for="example-select2">Multiple select</label>
+		<select multiple id="example-select2">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
 	</p>
 	<p>
-	<label for="example-optgroup">Select with optgroup: Favorite Car</label>
-	<select id="example-optgroup">
-	<optgroup label="Swedish Cars">
-	<option>Volvo</option>
-	<option>Saab</option>
-	</optgroup>
-	<optgroup label="German Cars">
-	<option>Mercedes</option>
-	<option>Audi</option>
-	</optgroup>
-	</select>
+		<label for="example-optgroup">Select with optgroup: Favorite Car</label>
+		<select id="example-optgroup">
+			<optgroup label="Swedish Cars">
+				<option>Volvo</option>
+				<option>Saab</option>
+			</optgroup>
+			<optgroup label="German Cars">
+				<option>Mercedes</option>
+				<option>Audi</option>
+			</optgroup>
+		</select>
 	</p>
 	<p>
-	<label for="example-optgroup2">Select with optgroup and size:Favorite Dish</label>
-	<select id="example-optgroup2" size="2">
-	<optgroup label="Vegetarian">
-	<option>Green Salad</option>
-	<option>French Fries</option>
-	</optgroup>
-	<optgroup label="Carnivorous">
-	<option>Big Mac</option>
-	<option>Roast Beef</option>
-	</optgroup>
-	</select>
+		<label for="example-optgroup2">Select with optgroup and size:Favorite Dish</label>
+		<select id="example-optgroup2" size="2">
+			<optgroup label="Vegetarian">
+				<option>Green Salad</option>
+				<option>French Fries</option>
+			</optgroup>
+			<optgroup label="Carnivorous">
+				<option>Big Mac</option>
+				<option>Roast Beef</option>
+			</optgroup>
+		</select>
 	</p>
 	<p>
-	<label for="example-optgroup3">Multiple select with optgroup: Public transport</label>
-	<select id="example-optgroup3" multiple>
-	<optgroup label="Ground">
-	<option>Train</option>
-	<option>Bus</option>
-	</optgroup>
-	<optgroup label="Water">
-	<option>Ship</option>
-	<option>Submarine</option>
-	</optgroup>
-	<optgroup label="Air">
-	<option>Plane</option>
-	<option>Balloon</option>
-	</optgroup>
-	</select>
+		<label for="example-optgroup3">Multiple select with optgroup: Public transport</label>
+		<select id="example-optgroup3" multiple>
+			<optgroup label="Ground">
+				<option>Train</option>
+				<option>Bus</option>
+			</optgroup>
+			<optgroup label="Water">
+				<option>Ship</option>
+				<option>Submarine</option>
+			</optgroup>
+			<optgroup label="Air">
+				<option>Plane</option>
+				<option>Balloon</option>
+			</optgroup>
+		</select>
 	</p>
 	<p>
-	<label for="example-textarea">Textarea</label>
-	<textarea id="example-textarea" rows="3"></textarea>
+		<label for="example-textarea">Textarea</label>
+		<textarea id="example-textarea" rows="3"></textarea>
 	</p>
 	<fieldset>
-	<legend>I am legend</legend>
-	<div>
-	<input type="radio" name="option-radio" id="option-radio1" value="option1" checked>
-	<label for="option-radio1">Option one is this and that&mdash;be sure to include why it's great</label>
-	</div>
-	<div>
-	<input type="radio" name="option-radio" id="option-radio2" value="option2">
-	<label>Option two can be something else and selecting it will deselect option one</label>
-	</div>
-	<div>
-	<input type="radio" name="option-radio" id="option-radio3" value="option3" disabled>
-	<label>Option three is disabled</label>
-	</div>
+		<legend>I am legend</legend>
+		<div>
+			<input type="radio" name="option-radio" id="option-radio1" value="option1" checked>
+			<label for="option-radio1">Option one is this and that&mdash;be sure to include why it's great</label>
+		</div>
+		<div>
+			<input type="radio" name="option-radio" id="option-radio2" value="option2">
+			<label>Option two can be something else and selecting it will deselect option one</label>
+		</div>
+		<div>
+			<input type="radio" name="option-radio" id="option-radio3" value="option3" disabled>
+			<label>Option three is disabled</label>
+		</div>
 	</fieldset>
 	<fieldset>
-	<legend>I am also legend</legend>
-	<input type="checkbox" id="checkbox1">
-	<label for="checkbox1">Check me out</label>
-	<input type="checkbox" id="checkbox2">
-	<label for="checkbox2">and/or check me out</label>
+		<legend>I am also legend</legend>
+		<input type="checkbox" id="checkbox1">
+		<label for="checkbox1">Check me out</label>
+		<input type="checkbox" id="checkbox2">
+		<label for="checkbox2">and/or check me out</label>
 	</fieldset>
 	<p>
-	<button type="button" name="button">Button</button>
-	<input type="button" name="input" value="Input Button">
-	<input type="submit" name="submit" value="Input Submit">
-	<button type="submit" name="submit2">Submit</button>
-	<input type="reset" name="reset" value="Input Reset">
-	<button type="reset" name="reset2">Reset</button>
-	<button disabled>Cancel</button>
+		<button type="button" name="button">Button</button>
+		<input type="button" name="input" value="Input Button">
+		<input type="submit" name="submit" value="Input Submit">
+		<button type="submit" name="submit2">Submit</button>
+		<input type="reset" name="reset" value="Input Reset">
+		<button type="reset" name="reset2">Reset</button>
+		<button disabled>Cancel</button>
 	</p>
-	</form>
+</form>
 
-	<p><code>ul</code> and <code>ol</code>:</p>
-	<ul>
+<p><code>output</code>:</p>
+<form onsubmit="return false" oninput="o.value= a.valueAsNumber + b.valueAsNumber">
+	<input name=a type=number step=any> +
+	<input name=b type=number step=any> =
+	<output name=o for="a b"></output>
+</form>
+`
+}
+
+export function Palpableⵧlists() {
+	return `
+<p><code>ul</code> and <code>ol</code>:</p>
+<ul>
 	<li>Unordered List item one
 	<ul>
 	<li>Nested list item
@@ -409,9 +424,9 @@ export function Palpable() {
 	<li>List item two</li>
 	<li>List item three</li>
 	<li>List item four</li>
-	</ul>
+</ul>
 
-	<ol>
+<ol>
 	<li>List item one
 	<ol>
 	<li>List item one
@@ -430,17 +445,14 @@ export function Palpable() {
 	<li>List item two</li>
 	<li>List item three</li>
 	<li>List item four</li>
-	</ol>
+</ol>
+`
+}
 
-	<p><code>output</code>:</p>
-	<form onsubmit="return false" oninput="o.value= a.valueAsNumber + b.valueAsNumber">
-	<input name=a type=number step=any> +
-	<input name=b type=number step=any> =
-	<output name=o for="a b"></output>
-	</form>
-
-	<p><code>pre</code>:</p>
-	<pre>
+export function Palpableⵧpre() {
+	return `
+<p><code>pre</code>:</p>
+<pre>
 	pre {
 		display: block;
 		padding: 7px;
@@ -452,120 +464,148 @@ export function Palpable() {
 		font-family: Menlo, Monaco;
 		line-height: 160%;
 	}</pre>
-	<pre><samp>You are in an open field west of a big white house with a boarded
-	front door.
-	There is a small mailbox here.
+<pre><samp>You are in an open field west of a big white house with a boarded
+front door.
+There is a small mailbox here.
 
-	></samp> <kbd>open mailbox</kbd>
+></samp> <kbd>open mailbox</kbd>
 
-	<samp>Opening the mailbox reveals:
-	A leaflet.
+<samp>Opening the mailbox reveals:
+A leaflet.
 
-	></samp></pre><br><br>
-	<h4 id="tables"><a href="#tables">#</a> Tables</h4>
+></samp></pre>
+`
+}
 
-	<hr>
+export function Palpableⵧtables() {
+	return `
+<h4 id="tables"><a href="#tables">#</a> Tables</h4>
 
-	<table>
-		<caption>Tables can have captions now.</caption>
-		<tbody>
-			<tr>
-				<th>Person</th>
-				<th>Number</th>
-				<th>Third Column</th>
-			</tr>
-			<tr>
-				<td>Someone Lastname</td>
-				<td>900</td>
-				<td>Nullam quis risus eget urna mollis ornare vel eu leo.</td>
-			</tr>
-			<tr>
-				<td><a href="#">Person Name</a></td>
-				<td>1200</td>
-				<td>Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.</td>
-			</tr>
-			<tr>
-				<td>Another Person</td>
-				<td>1500</td>
-				<td>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit.</td>
-			</tr>
-			<tr>
-				<td>Last One</td>
-				<td>2800</td>
-				<td>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</td>
-			</tr>
-		</tbody>
-	</table>
+<hr>
 
-	<p id="table-summary">In the following table, characteristics are given in the second column, with the negative side in the left column and the positive side in the right column.</p>
-	<table aria-describedby="table-summary">
-		<caption>Characteristics with positive and negative sides</caption>
-		<thead>
-			<tr>
-				<th id="n">Negative</th>
-				<th>Characteristic</th>
-				<th id="p">Positive</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td headers="n r1">Sad</td>
-				<th id="r1">Mood</th>
-				<td headers="p r1">Happy</td>
-			</tr>
-			<tr>
-				<td headers="n r2">Failing</td>
-				<th id="r2">Grade</th>
-				<td headers="p r2">Passing</td>
-			</tr>
-		</tbody>
-	</table>
+<table>
+	<caption>Tables can have captions now.</caption>
+	<tbody>
+		<tr>
+			<th>Person</th>
+			<th>Number</th>
+			<th>Third Column</th>
+		</tr>
+		<tr>
+			<td>Someone Lastname</td>
+			<td>900</td>
+			<td>Nullam quis risus eget urna mollis ornare vel eu leo.</td>
+		</tr>
+		<tr>
+			<td><a href="#">Person Name</a></td>
+			<td>1200</td>
+			<td>Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.</td>
+		</tr>
+		<tr>
+			<td>Another Person</td>
+			<td>1500</td>
+			<td>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit.</td>
+		</tr>
+		<tr>
+			<td>Last One</td>
+			<td>2800</td>
+			<td>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</td>
+		</tr>
+	</tbody>
+</table>
 
-	<table>
-		<caption>Complex table with a <code>thead</code>, multiple <code>tbody</code> elements, and a <code>tfoot</code>.</caption>
+<hr>
 
-		<thead>
-			<tr>
-				<th></th>
-				<th>2008</th>
-				<th>2007</th>
-				<th>2006</th>
-			</tr>
-		</thead>
+<p id="table-summary">In the following table, characteristics are given in the second column, with the negative side in the left column and the positive side in the right column.</p>
+<table aria-describedby="table-summary">
+	<caption>Characteristics with positive and negative sides</caption>
+	<thead>
+		<tr>
+			<th id="n">Negative</th>
+			<th>Characteristic</th>
+			<th id="p">Positive</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td headers="n r1">Sad</td>
+			<th id="r1">Mood</th>
+			<td headers="p r1">Happy</td>
+		</tr>
+		<tr>
+			<td headers="n r2">Failing</td>
+			<th id="r2">Grade</th>
+			<td headers="p r2">Passing</td>
+		</tr>
+	</tbody>
+</table>
 
-		<tbody>
-			<tr>
-				<th>Net sales</th>
-				<td>$32,479</td>
-				<td>$24,006</td>
-				<td>$19,315</td>
-			</tr>
-			<tr>
-				<th>Cost of sales</th>
-				<td>21,334</td>
-				<td>15,852</td>
-				<td>13,717</td>
-			</tr>
-		</tbody>
+<hr>
 
-		<tbody>
-			<tr>
-				<th>Gross margin</th>
-				<td>$11,145</td>
-				<td>$8,154</td>
-				<td>$5,598</td>
-			</tr>
-		</tbody>
+<table>
+	<caption>Complex table with a <code>thead</code>, multiple <code>tbody</code> elements, and a <code>tfoot</code>.</caption>
 
-		<tfoot>
-			<tr>
-				<th>Gross margin percentage</th>
-				<td>34.3%</td>
-				<td>34.0%</td>
-				<td>29.0%</td>
-			</tr>
-		</tfoot>
-	</table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>2008</th>
+			<th>2007</th>
+			<th>2006</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr>
+			<th>Net sales</th>
+			<td>$32,479</td>
+			<td>$24,006</td>
+			<td>$19,315</td>
+		</tr>
+		<tr>
+			<th>Cost of sales</th>
+			<td>21,334</td>
+			<td>15,852</td>
+			<td>13,717</td>
+		</tr>
+	</tbody>
+
+	<tbody>
+		<tr>
+			<th>Gross margin</th>
+			<td>$11,145</td>
+			<td>$8,154</td>
+			<td>$5,598</td>
+		</tr>
+	</tbody>
+
+	<tfoot>
+		<tr>
+			<th>Gross margin percentage</th>
+			<td>34.3%</td>
+			<td>34.0%</td>
+			<td>29.0%</td>
+		</tr>
+	</tfoot>
+</table>
+`
+}
+
+export function Palpable() {
+	return `
+<section id="palpable">
+	${PalpableⵧIntro()}
+
+	${Palpableⵧmisc()}
+
+	<br><br>
+
+	${Palpableⵧforms()}
+
+	${Palpableⵧlists()}
+
+	${Palpableⵧpre()}
+
+	${Palpableⵧtables()}
 
 	<footer>
 		<p>See the <a target="_blank" href="https://www.w3.org/TR/html5/dom.html#palpable-content">Palpable

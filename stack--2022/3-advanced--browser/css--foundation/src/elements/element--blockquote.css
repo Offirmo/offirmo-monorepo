@@ -1,9 +1,13 @@
 /** https://www.stefanjudis.com/today-i-learned/how-to-use-language-dependent-quotes-in-css/
+ * (improved)
  */
 
-blockquote::before {
+blockquote > p:first-of-type::before {
 	content: open-quote;
 }
-blockquote::after {
+blockquote > p:last-of-type::after {
 	content: close-quote;
+}
+blockquote > p {
+	display: inline-block;
 }
