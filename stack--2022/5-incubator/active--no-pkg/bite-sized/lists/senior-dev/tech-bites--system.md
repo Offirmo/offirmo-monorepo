@@ -119,6 +119,8 @@ distributed computing -- fallacies -- 8 The network is homogeneous
 distributed computing -- fallacies https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
 distributed queues
 efficiency
+edge
+edge "So, @vercel reverted all edge rendering back to Node.js" https://twitter.com/leeerob/status/1780705942734331983
 emergency response
 event streaming https://kafka.apache.org/intro
 event-driven architecture = uses events to trigger and communicate between decoupled services, common with microservices

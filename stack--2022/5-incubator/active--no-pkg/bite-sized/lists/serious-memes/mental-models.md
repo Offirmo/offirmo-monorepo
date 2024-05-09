@@ -155,6 +155,7 @@ mimetic Theory of Desire: Humans are like sheep. We don’t know what we want, s
 mindset -- "What vs How" (see What vs how)
 minorities -- silent majority = unspecified large group of people in a country or group who do not express their opinions publicly https://en.wikipedia.org/wiki/Silent_majority
 minorities -- vocal minority
+monkey ladder experiment https://factschology.com/factschology-articles-podcast/monkey-ladder-experiment-truth
 Monty Hall problem https://en.wikipedia.org/wiki/Monty_Hall_problem
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
 naiveté: abus sexuels, mafia
@@ -225,6 +226,7 @@ self centered vs. take into account others (cf. woke salaryman)
 self love
 sex ed
 sex ed -- "sex positive"
+ship of theseus https://en.m.wikipedia.org/wiki/Ship_of_Theseus
 short term / long term
 Situation Complication Question Answer (SCQA) = A Framework For Defining Problems & Hypotheses https://strategyu.co/scqa-a-framework-for-defining-problems-hypotheses/
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw

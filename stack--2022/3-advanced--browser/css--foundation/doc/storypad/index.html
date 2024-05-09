@@ -14,14 +14,23 @@
 
 	startꓽstorypad(
 		{
-			own: stories,
-			shared: storiesⵧshared,
+			'sharedᐧdemos': storiesⵧshared,
+			'framework-specificᐧdemos': stories,
 		},
 		{
 			root_title: nearest_pkg?.name,
 			decorators: [
 				(story) => {
 					import('npm:@offirmo-private/css--foundation')
+					return story
+				},
+				(story) => {
+					import('npm:@offirmo-private/css--foundation/src/xoptional/color-theme--light.css')
+					document.documentElement.style.setProperty('--o⋄color⁚brand__h',
+						//'0', // red
+						//'120', // green
+						'240', // blue
+					)
 					return story
 				}
 			]

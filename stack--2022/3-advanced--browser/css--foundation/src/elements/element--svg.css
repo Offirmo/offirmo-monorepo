@@ -10,8 +10,40 @@
  * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a#example
  *
  * @see elements--a.css
+ *
+ * WARNING This svg|a selector works ONLY if the svg namespace is defined!!
  */
 svg|a {
+	/************ COPY/PASTE from elements--a.css BEGINS */
+	/* copy/paste in case of accidentally breaking "a" if namespace is not defined */
+
+	/* a color are being overwritten by the default style.
+	 * make it specific and inheritable
+	 */
+	color: var(--o⋄color⁚fg--link);
+
+	/* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
+	touch-action: manipulation;
+
+	&:link {
+	}
+
+	&:visited {
+		color: var(--o⋄color⁚fg--link--visited);
+	}
+
+	&:focus {
+	}
+
+	&:hover,
+	&:active {
+		/* There is no hover indicator on links.
+		 * Adding one is a no-brainer.
+		 */
+		color: var(--o⋄color⁚fg--activity-outline);
+	}
+	/************ COPY/PASTE from elements--a.css ENDS */
+
 	/* SVG specific additional styles */
 	&:link,
 	&:visited {
@@ -27,6 +59,5 @@ svg|a {
 		outline: dotted var(--o⋄border--thickness) var(--o⋄color⁚fg--activity-outline); /* TODO px */
 	}
 }
-
 
 /* TODO display block? */

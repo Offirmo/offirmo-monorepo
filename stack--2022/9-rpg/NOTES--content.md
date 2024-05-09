@@ -64,6 +64,8 @@ animal domestication https://en.wikipedia.org/wiki/Anna_Karenina_principle#Faile
 
 Wiseman’s book focuses on bringing out individuals’ inner potential, hopes, and motivation to improve the self
 
+https://en.wikipedia.org/wiki/King_asleep_in_mountain
+
 
 ideas for bad guys:
 - epstein

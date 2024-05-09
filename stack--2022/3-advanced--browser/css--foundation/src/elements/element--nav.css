@@ -1,6 +1,6 @@
+
 /* Assume list in a nav is an horizontal list
  */
-
 nav {
 
 	&:is(ol, ul) {

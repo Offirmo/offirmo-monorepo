@@ -28,6 +28,9 @@ async function renderꓽroot(): Promise<void> {
 			throw new Error(`Unknown render mode!`)
 	}
 
+	// @ts-expect-error bundler stuff
+	import('./index.css')
+
 	console.groupEnd()
 }
 

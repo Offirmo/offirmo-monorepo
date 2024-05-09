@@ -15,12 +15,9 @@
     or maybe just maybe, you need the color blue.
  * Also
   - should be able to tell an already clicked link https://mashable.com/article/google-black-links
- * Also: As SVG does not provide a default visual style for links,
- * it's considered best practice to add some
- * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a#example
  */
 
-a, svg|a { /* TODO is svg|a needed? */
+a {
 	/* a color are being overwritten by the default style.
 	 * make it specific and inheritable
 	 */
