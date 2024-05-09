@@ -6,13 +6,13 @@ import {
 	ImportModule, isꓽImportModule,
 } from '../../types/glob'
 
+import { SEPⵧSEGMENTS, SEPⵧSTORY } from '../../consts'
 import { StoryEntry, isꓽStoryEntry } from '../types'
 import { State } from './types'
 import { registerꓽstory } from './reducers'
 
 /////////////////////////////////////////////////
 
-const SEP = '/'
 
 /////////////////////////////////////////////////
 
@@ -29,11 +29,15 @@ async function registerꓽstoriesⵧfrom_glob(state: State, stories_glob: Immuta
 }
 
 async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_glob: Immutable<ImportGlob>, parent_path: string[] = []): Promise<State> {
-	DEBUGⵧglob_parsing && console.group(`_registerꓽstoriesⵧfrom_glob_or_module(${parent_path.join(SEP)})`)
+	DEBUGⵧglob_parsing && console.group(`_registerꓽstoriesⵧfrom_glob_or_module(${parent_path.join(SEPⵧSEGMENTS)})`)
 	DEBUGⵧglob_parsing && console.log('glob=', stories_glob)
 
-	await Object.keys(stories_glob).sort().reduce(async (acc, key) => {
+	// note: we intentionally don't sort to keep the intended order (fs order should happen naturally anyway)
+	await Object.keys(stories_glob).reduce(async (acc, key) => {
 		await acc
+
+		assert(!key.includes(SEPⵧSEGMENTS), `Key contains a forbidden character! (SEP)`)
+		assert(!key.includes(' '), `Key contains a forbidden character! (space)`)
 
 		// if dynamic import, can be a promise in the process of being resolved
 		const blob = await Promise.resolve(stories_glob[key])
@@ -59,7 +63,7 @@ async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_g
 }
 
 async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Immutable<ImportModule>, parent_path: string[] = []): Promise<State> {
-	DEBUGⵧglob_parsing && console.group(`_registerꓽstories_from_module(${parent_path.join(SEP)}.[js/ts/...])`)
+	DEBUGⵧglob_parsing && console.group(`_registerꓽstories_from_module(${parent_path.join(SEPⵧSEGMENTS)}.[js/ts/...])`)
 	console.log('module=', story_module)
 
 	const exports_sync_or_async = story_module.js || story_module.jsx || story_module.ts || story_module.tsx
@@ -75,7 +79,7 @@ async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Imm
 				return {
 					'!ERROR!': {
 						render() {
-							console.error(`Error while loading the story "${parent_path.join(SEP)}"!`, err)
+							console.error(`Error while loading the story "${parent_path.join(SEPⵧSEGMENTS)}"!`, err)
 							return `Error while loading story! (see console)`
 						}
 					}
@@ -91,9 +95,10 @@ async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Imm
 	Object.keys(stories).forEach(story_key => {
 		DEBUGⵧglob_parsing && console.log(`Found story: key "${story_key}"`)
 
-		assert(![...parent_path, story_key].some(p => p.includes(SEP)), `Story path contains a forbidden character!`) // TODO one day improve
+		assert(!story_key.includes(SEPⵧSTORY), `Story key contains a forbidden character! (story sep)`)
+		assert(![...parent_path, story_key].some(p => p.includes(SEPⵧSEGMENTS)), `Story path contains a forbidden character!`) // TODO one day improve
 
-		const uid = [...parent_path, story_key].join(SEP)
+		const uid = [...parent_path, story_key].join(SEPⵧSEGMENTS)
 
 		const story_entry: StoryEntry = {
 			uid,
@@ -102,7 +107,7 @@ async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Imm
 		}
 		DEBUGⵧglob_parsing && console.log(`new story entry: ${uid}`, story_entry)
 		assert(isꓽStoryEntry(story_entry), `freshly created ${uid} is not a story entry??`)
-		state = registerꓽstory(state, story_entry, [...parent_path, story_key].join(SEP))
+		state = registerꓽstory(state, story_entry, [...parent_path, story_key].join(SEPⵧSEGMENTS))
 	})
 
 	DEBUGⵧglob_parsing && console.groupEnd()

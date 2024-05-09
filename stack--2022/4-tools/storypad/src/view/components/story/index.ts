@@ -24,6 +24,9 @@ async function _renderⵧstory(container: HTMLElement) {
 		return
 	}
 
+	// @ts-expect-error bundler stuff
+	import('./index.css')
+
 	console.log('Rendering story:', storyEntry)
 	switch(true) {
 		case isꓽStory‿v3(storyEntry.story): {
@@ -41,6 +44,11 @@ async function _renderⵧstory(container: HTMLElement) {
 		default:
 			throw new Error(`Unsupported story format! (yet!)`)
 	}
+
+	const path_elt = document.createElement('div')
+	path_elt.setAttribute('id', 'path');
+	path_elt.innerText = storyEntry.uid
+	document.body.appendChild(path_elt)
 }
 
 /////////////////////////////////////////////////

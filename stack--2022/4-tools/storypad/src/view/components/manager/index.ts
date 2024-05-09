@@ -62,7 +62,7 @@ function _renderⵧstory_frame() {
 	const current_story = getꓽstoryⵧcurrent()
 	iframe_elt.src = getꓽstory_frame_url(current_story?.uid)
 	iframe_elt.id = 'storypad⋄iframe'
-	console.log({iframe_elt})
+	//console.log({iframe_elt})
 	document.body.appendChild(iframe_elt)
 	return { iframe_elt }
 }

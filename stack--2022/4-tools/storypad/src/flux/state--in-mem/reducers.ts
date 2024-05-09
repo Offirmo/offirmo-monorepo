@@ -41,7 +41,6 @@ function registerꓽstory(state: State, story: StoryEntry, path: RelativePath): 
 			...state,
 			first_encountered_story‿uid: state.first_encountered_story‿uid || uid,
 		}
-		state = folderⵧexpand(state, uid)
 	}
 
 	return state

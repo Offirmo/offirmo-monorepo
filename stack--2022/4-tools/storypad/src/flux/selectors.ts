@@ -5,7 +5,7 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
 import { Config } from '../types/config'
-import { _getꓽstateⵧin_mem } from './dispatcher'
+import { _getꓽstateⵧin_mem } from './in-mem-state-ref.ts'
 
 import { FolderUId, StoryEntry, RenderMode, StoryTree } from './types'
 

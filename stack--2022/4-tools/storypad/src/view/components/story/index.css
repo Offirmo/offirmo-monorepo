@@ -1,0 +1,10 @@
+#path {
+	position: fixed;
+	bottom: 1em;
+	left: 1em;
+	background-color: rgba(0, 0, 0, .5);
+	color: white;
+	border-radius: 1em;
+	padding: 0 1em;
+	font-family: monospace;
+}

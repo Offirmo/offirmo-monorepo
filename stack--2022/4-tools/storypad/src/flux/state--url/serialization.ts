@@ -3,20 +3,21 @@
 
 import assert from 'tiny-invariant'
 import { StoryUId } from '../types'
+import { SEPⵧSEGMENTS, SEPⵧSTORY } from '../../consts'
 
 /////////////////////////////////////////////////
 
 function serializeꓽstory_uid(uid: StoryUId): string {
-	const segments = uid.split('/')
+	const segments = uid.split(SEPⵧSEGMENTS)
 	const story_name = segments.pop()
 	assert(story_name, `serializeꓽstory_uid() expecting a final story basename! "${uid}"`)
 	assert(segments.length > 0, `serializeꓽstory_uid() expecting path segments! "${uid}"`)
 	// follow Storybook
 	// ex. seen =/story/section-header--default
 	return [
-		segments.join('/'),
+		segments.join(SEPⵧSEGMENTS),
 		story_name,
-	].join('--')
+	].join(SEPⵧSTORY)
 }
 
 function unserializeꓽstory_uid(serialized_uid: string | undefined | null): StoryUId | undefined {
@@ -24,7 +25,9 @@ function unserializeꓽstory_uid(serialized_uid: string | undefined | null): Sto
 		return undefined
 
 	try {
-		const [ joined_segments, story_name ] = serialized_uid.split('--')
+		const split = serialized_uid.split(SEPⵧSTORY)
+		const story_name = split.pop()
+		const joined_segments = split.join(SEPⵧSTORY)
 		assert(story_name, `unserializeꓽstory_uid() expecting a final story basename! "${serialized_uid}"`)
 		assert(joined_segments, `unserializeꓽstory_uid() expecting segments! "${serialized_uid}"`)
 
@@ -32,9 +35,9 @@ function unserializeꓽstory_uid(serialized_uid: string | undefined | null): Sto
 		assert(segments.length > 0, `unserializeꓽstory_uid() expecting path segments! "${serialized_uid}"`)
 
 		return [
-			segments.join('/'),
+			segments.join(SEPⵧSEGMENTS),
 			story_name,
-		].join('/')
+		].join(SEPⵧSEGMENTS)
 	}
 	catch (err: unknown) {
 		// QParams = user input, notoriously unsafe
