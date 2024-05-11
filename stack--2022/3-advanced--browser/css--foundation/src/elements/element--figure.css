@@ -1,4 +1,9 @@
 
 figure {
-	text-align: center;
+	text-align: center; /* in case the user is not using <figcaption> */
+
+	img {
+		/* center the image inside the figure */
+		margin: auto;
+	}
 }

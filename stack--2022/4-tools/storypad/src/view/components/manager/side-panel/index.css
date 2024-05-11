@@ -47,6 +47,7 @@ details > * {
 }
 
 /* Open/close markers
+ * REMINDER it doesn't work on Safari
  * credits to https://codepen.io/ninjabryan/pen/vRdgbO
  * also https://css-tricks.com/quick-reminder-that-details-summary-is-the-easiest-way-ever-to-make-an-accordion/
  */

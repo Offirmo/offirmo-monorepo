@@ -24,6 +24,7 @@ documentation -- divio system -- 03 Technical references = information-oriented,
 documentation -- divio system -- 04 Explanations (or discussions) = understanding-oriented, theoretical knowledge
 documentation -- divio system = https://documentation.divio.com/  https://nick.groenen.me/posts/the-4-types-of-technical-documentation/
 Embrace, Extend, and Extinguish
+Every piece of business finance I could come up with after 10 years as a CFO https://twitter.com/KurtisHanni/status/1560986912613072899
 exec summary https://lethain.com/present-to-executives/
 Headline driven development (Amazon) https://www.spakhm.com/headline-development
 Jobs to be Done (JTBD) https://en.wikipedia.org/wiki/Jobs-to-be-done_theory

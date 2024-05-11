@@ -46,6 +46,11 @@
 	 */
 	--o⋄color⁚bg--code: hsl(0, 0%, 93%);
 
+	/* An alternative background color
+	 * Should be very close to the normal one.
+	 * Used when we want a slight change of background, ex.
+	 * - striped table rows
+	 */
 	--o⋄color⁚bg--highlight--1: hsla(0, 100%, 0%, .1); /* bg color visible on normal bg, ex. for buttons */
 	--o⋄color⁚bg--highlight--2: hsla(0, 100%, 0%, .3); /* alt, ex. for hovered/clicked buttons */
 }

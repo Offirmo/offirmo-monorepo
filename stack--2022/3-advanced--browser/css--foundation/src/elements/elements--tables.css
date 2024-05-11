@@ -4,18 +4,21 @@ table {
 	table-layout: fixed;
 	border-collapse: collapse;
 }
+
 td {
-	text-align: center;
+	/* text-align: center; NO! looks good in some situation, not in others */
 
 	/* https://piccalil.li/blog/control-changing-numbers-with-font-variant-numeric/
 	 * could be a good idea... TODO REVIEW
 	 */
 	font-variant-numeric: tabular-nums;
 }
+
 /* zebra striping */
 tbody tr:nth-child(odd) {
 	background-color: var(--o⋄color⁚bg--highlight--1);
 }
+
 thead {
 	/* https: //btxx.org/posts/Please_Make_Your_Table_Headings_Sticky/ */
 	position: sticky;
