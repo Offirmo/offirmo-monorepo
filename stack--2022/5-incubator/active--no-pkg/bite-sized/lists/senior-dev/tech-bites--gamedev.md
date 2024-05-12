@@ -27,6 +27,7 @@ easter egg
 easter egg -- Konami Code
 emergent gameplay
 end game, post game
+Environmental Storytelling = arranging a careful selection of the objects available in a game world so that they suggest a story to the player who sees them https://www.gamedeveloper.com/design/environmental-storytelling
 fun
 fun & cool -- "a theory of fun for game design"
 fun & cool -- "I see who are the villains" (LOTRO)
@@ -101,6 +102,7 @@ NPC
 offline first
 open world
 overworld / underworld
+overworld https://en.wikipedia.org/wiki/Overworld
 pacifist run
 party
 permadeath
@@ -126,6 +128,7 @@ rush
 sandbox
 softlock
 survival
+theorycraft https://en.wikipedia.org/wiki/Theorycraft
 titles
 total party kill (TPK)
 transmog

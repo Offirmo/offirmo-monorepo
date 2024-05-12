@@ -27,9 +27,12 @@ https://digital-defense.io/
 
 
 
+spam / slom / slop https://simonwillison.net/2024/May/8/slop/
+
 https://openfga.dev/
 https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/
 
+https://en.wikipedia.org/wiki/Trust_anchor
 
 ## spam
 https://www.google.com/search/howsearchworks/how-search-works/detecting-spam/

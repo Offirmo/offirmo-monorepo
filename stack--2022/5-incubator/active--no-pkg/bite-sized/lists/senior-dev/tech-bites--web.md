@@ -1,3 +1,5 @@
+
++++ https://developer.mozilla.org/en-US/curriculum/
 APIs web
 appli web
 architecture -- Islands
@@ -6,6 +8,12 @@ architecture -- LAMP (outdated)
 architecture -- SSR
 CDN
 Chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
+client/server -- multi-tier architecture -- 01 presentation
+client/server -- multi-tier architecture -- 02 application
+client/server -- multi-tier architecture -- 03 business
+client/server -- multi-tier architecture -- 04 data access
+client/server -- multi-tier architecture https://en.wikipedia.org/wiki/Multitier_architecture
+components https://www.componentdriven.org/
 CSS -- atomic
 CSS -- cascade https://2019.wattenberger.com/blog/css-cascade
 CSS -- color -- formats = hex, rgb(), hsl(), lch() https://www.joshwcomeau.com/css/color-formats/
@@ -14,7 +22,7 @@ CSS -- containing block
 CSS -- fixed -- https://meyerweb.com/eric/thoughts/2011/09/12/un-fixing-fixed-elements-with-css-transforms/
 CSS -- isolate
 CSS -- layers
-CSS -- layers 
+CSS -- layers
 CSS -- margin -- negative https://www.quirksmode.org/blog/archives/2020/02/negative_margin.html
 CSS -- Media Queries https://courses.joshwcomeau.com/css-for-js/00-recap/03-media-queries
 CSS -- methodologies -- BEM
@@ -31,12 +39,15 @@ devices -- support
 HTML -- concepts
 HTML -- elements
 HTML -- tags
+htmx https://htmx.org/
 iframe
 iframe -- fenced
 iframe -- sandbox
 iframe -- seamless
-components https://www.componentdriven.org/
+interop https://developer.mozilla.org/en-US/blog/interop2023-mdn-doc-updates/
 JS -- exports https://webpack.js.org/guides/package-exports/
+MDN
+MDN curriculum https://developer.mozilla.org/en-US/curriculum/
 perf metrics -- "9 must known" https://twitter.com/alexxubyte/status/1769748487317651962
 perf metrics -- core web vitals -- 01 Largest Contentful Paint (LCP) = loading performance. LCP must occur within 2.5 seconds of when the page first starts loading 
 perf metrics -- core web vitals -- 02 Interaction to Next Paint (INP) = interactivity. To provide a good user experience, pages must have a INP of 200 milliseconds or less.
@@ -55,6 +66,7 @@ perf metrics -- Time to First Byte (TTFB) = time taken by the browser to receive
 PWA https://whatpwacando.today/
 react
 react -- hooks
+testing https://www.testingjavascript.com/
 UI -- Application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
 UI -- aria https://www.w3.org/WAI/ARIA/apg/
 UI -- contrast ratio https://www.siegemedia.com/contrast-ratio

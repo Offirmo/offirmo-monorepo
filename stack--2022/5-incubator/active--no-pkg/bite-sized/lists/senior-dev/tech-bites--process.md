@@ -1,3 +1,5 @@
+
+
 Agile
 Architectural Decision Records (ADRs) https://adr.github.io/
 Big Hairy Audacious Goals (BHAG) https://www.jimcollins.com/article_topics/articles/BHAG.html
@@ -23,7 +25,6 @@ documentation -- divio system -- 02 How-to guides = task-oriented, practical ste
 documentation -- divio system -- 03 Technical references = information-oriented, theoretical knowledge
 documentation -- divio system -- 04 Explanations (or discussions) = understanding-oriented, theoretical knowledge
 documentation -- divio system = https://documentation.divio.com/  https://nick.groenen.me/posts/the-4-types-of-technical-documentation/
-Embrace, Extend, and Extinguish
 Every piece of business finance I could come up with after 10 years as a CFO https://twitter.com/KurtisHanni/status/1560986912613072899
 exec summary https://lethain.com/present-to-executives/
 Headline driven development (Amazon) https://www.spakhm.com/headline-development
@@ -35,7 +36,6 @@ MVP
 north star
 nudges = PRs nudges for speed https://dl.acm.org/doi/abs/10.1145/3544791
 OKR
-path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
 PKI
 planning -- Goals, Ideas, Step-Projects, and Tasks (GIST) https://www.productplan.com/glossary/gist-planning/
 platform engineering

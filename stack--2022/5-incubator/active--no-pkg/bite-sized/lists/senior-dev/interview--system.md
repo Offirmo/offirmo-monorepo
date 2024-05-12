@@ -1,3 +1,6 @@
++++ https://levelup.gitconnected.com/7-best-software-design-course-for-programmers-and-developers-da3e18e9135
+
+RESHADED method
 
 
 1. requirements

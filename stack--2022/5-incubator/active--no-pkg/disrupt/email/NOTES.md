@@ -13,6 +13,7 @@ unified inbox https://www.theverge.com/2023/8/9/23824562/slack-redesign-app-dms-
 https://www.nylas.com/products/email-api/
 https://www.theregister.com/2023/08/23/email_like_a_pro/
 
+confidential emails https://support.google.com/mail/answer/7674059
 
 "core platform service"
 https://www.theverge.com/2023/11/8/23951935/google-european-telcos-apple-imessage-digital-markets-act-core-platform-service-gatekeeper-lobbying
@@ -50,3 +51,5 @@ experience https://productidentity.co/p/3-telegram-the-mysterious-messenger
 
 
 gmail https://www.thenationalnews.com/future/technology/2024/04/01/gmails-20th-anniversary-technologys-best-april-fools-prank-yet/
+
+https://matduggan.com/why-cant-my-mom-email-me/

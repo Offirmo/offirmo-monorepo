@@ -118,9 +118,9 @@ distributed computing -- fallacies -- 7 Transport cost is zero
 distributed computing -- fallacies -- 8 The network is homogeneous
 distributed computing -- fallacies https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
 distributed queues
-efficiency
 edge
 edge "So, @vercel reverted all edge rendering back to Node.js" https://twitter.com/leeerob/status/1780705942734331983
+efficiency
 emergency response
 event streaming https://kafka.apache.org/intro
 event-driven architecture = uses events to trigger and communicate between decoupled services, common with microservices
@@ -209,6 +209,7 @@ observability -- logs = logs. Unfortunately, logs aren’t extremely useful for 
 observability -- telemetry
 observability = a measure of how well internal states of a system can be inferred from knowledge of its external outputs https://andydote.co.uk/presentations/index.html
 observability https://opentelemetry.io/docs/concepts/observability-primer/
+on-prem requirements
 ops -- toil
 orchestrator -- kubernetes
 organizational reliability continuum = absent -> reactive -> proactive -> strategic -> visionary / there is a significant cost associated with moving from one phase to another and a cost to remain very high on this curve. In our experience, being proactive is a healthy level to target and is ideal for most products https://cloud.google.com/blog/products/devops-sre/the-five-phases-of-organizational-reliability
@@ -216,6 +217,7 @@ organizations
 PACELC theorem = extension of CAP https://en.wikipedia.org/wiki/PACELC_theorem
 performance
 permissions
+Personal data service (PDS) = user's central point of control for their personal information https://en.wikipedia.org/wiki/Personal_data_service
 perspective -- non-tech -- business = creates business model that integrates IT strategy
 perspective -- non-tech -- governance = identify and implement best practices for IT governance and support business processes with technology
 perspective -- non-tech -- people

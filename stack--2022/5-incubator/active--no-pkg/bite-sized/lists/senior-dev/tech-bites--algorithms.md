@@ -1,8 +1,8 @@
++++ https://www.geeksforgeeks.org/courses/data-structures-and-algorithms-in-javascript
 [ ] adhoc questions on the application of Array, Stack, Queue, HashMap, TreeMap
 [ ] analysis of algorithms -- https://www.geeksforgeeks.org/design-and-analysis-of-algorithms/
 [ ] count bits
 [ ] gcd -- greatest common divisor
-+++ https://www.geeksforgeeks.org/courses/data-structures-and-algorithms-in-javascript
 algorithmic paradigm -- Backtracking
 algorithmic paradigm -- Branch and bound
 algorithmic paradigm -- Brute-force search
@@ -48,6 +48,7 @@ Disjoint set union
 Disjoint set union
 dynamic = ex. For an initial set of N numbers, dynamically maintain the maximal one when insertion and deletions are allowed.
 dynamic programming
+effacement d'une liste pendant qu'on la parcourt
 graph -- BFS https://en.wikipedia.org/wiki/Breadth-first_search
 graph -- DFS
 graph -- shortest path
@@ -70,6 +71,7 @@ LLM -- temperature scaling
 LLM output generation -- beam search = search algorithm used to generate output sequences from a model during inference https://ai-guide.future.mozilla.org/content/llms-101/
 LLM output generation -- nucleus sampling aka. top-P sampling
 LLM output generation -- sampling = search algorithm used to generate output sequences from a model during inference https://ai-guide.future.mozilla.org/content/llms-101/
+loop invariant https://en.wikipedia.org/wiki/Loop_invariant
 Luleå algorithm https://en.wikipedia.org/wiki/Lule%C3%A5_algorithm
 MapReduce https://en.wikipedia.org/wiki/MapReduce
 Markov Chains -- absorbing -- standard form
@@ -119,4 +121,3 @@ tree -- rotation https://en.wikipedia.org/wiki/Tree_rotation
 tree -- search
 tree -- trie -- prefix search
 tree -- trie -- word search with counts
-effacement d'une liste pendant qu'on la parcourt

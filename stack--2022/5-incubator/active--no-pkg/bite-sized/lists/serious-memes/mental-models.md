@@ -3,6 +3,7 @@
 -- tool https://explorer.globe.engineer/
 1 or 2 way door
 12 steps
+3 hardest things to say -- I was wrong, I need help, I love you -> also 10 https://kristyna.co/mindful-entrepreneurship/10-hardest-things-for-people-to-say
 5 Harsh Truths for Success from Linus Torvalds https://medium.com/codex/5-harsh-truths-from-linus-torvalds-406ab20cea02
 5 regrets of dying
 80/20 rule (Pareto)
@@ -257,6 +258,7 @@ The product is crap, so sell yourself
 the Wisdom of Paradox = Logic is the key to scientific truths, but paradoxes are the key to psychological ones. When it comes to the human condition, the deepest truths are often counter-intuitive. When you find two opposites that are both true, start exploring.
 theory of Constraints = A system is only as strong as its weakest point. Focus on the bottleneck. Counterintuitively, if you break down the entire system and optimize each component individually, you’ll lower the effectiveness of the system. Optimize the entire system instead.
 theory of constraints https://www.tocinstitute.org/theory-of-constraints.html
+things learned from Medicine / Dentistry https://zenfamily.dental/csLearnDental.php
 THINK hack = Is it True? Helpful? Inspiring? Necessary? Kind?
 time management
 tip of the iceberg

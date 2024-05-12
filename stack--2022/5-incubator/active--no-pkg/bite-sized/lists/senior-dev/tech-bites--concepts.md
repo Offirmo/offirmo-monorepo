@@ -31,6 +31,8 @@ changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 changelogs -- conventional https://github.com/conventional-changelog
 CI Continuous Integration  https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
+client/server -- multi-tier architecture 
+cohesion = degree to which the elements inside a module belong together https://en.wikipedia.org/wiki/Cohesion_(computer_science)
 command query responsibility segregation (CQRS)
 command query separation (CQS)
 comment
@@ -46,6 +48,7 @@ Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
 corporate politic https://www.breakingpoint.tech/p/where-do-corporate-politics-come
 correlation
 cost based rate limiting
+coupling -- loose https://en.wikipedia.org/wiki/Loose_coupling
 courbe d'expertise
 CPU https://cpu.land/
 create, read, update and delete (CRUD)
@@ -64,12 +67,19 @@ defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actu
 demos
 dependencies
 dependency hell https://en.wikipedia.org/wiki/Dependency_hell
+design pattern
+design pattern --
+design pattern --
+design pattern --
+design pattern -- behavioral -- command = command, receiver, invoker and client https://en.wikipedia.org/wiki/Command_pattern
+design pattern -- facade https://en.wikipedia.org/wiki/Facade_pattern
 design patterns -- strangler https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/
 devex
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 DevOps Research and Assessment (DORA) = how we should develop our software right and what numbers we should show to our managers to make them happy https://medium.com/booking-com-development/a-step-by-step-guide-on-how-not-to-implement-dora-metrics-85081f0d4484
 do what I mean (DWIM) = computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
 Domain Specific Language (DSL)
+Domain-driven design https://en.wikipedia.org/wiki/Domain-driven_design
 double authent
 DRY don't repeat yourself
 dry run
@@ -103,6 +113,8 @@ function -- 1st-class object
 function -- first-class function
 function -- Higher-order function
 functional programming
+GAFAM -- "megacap companies"
+GAFAM -- Amazon https://www.vanityfair.com/news/story/inside-amazon-business-practices
 garbage collector
 git
 global variable
@@ -170,6 +182,9 @@ KISS
 KTLO
 language interprété types simples / types par référence
 language trends
+languages -- weekend https://stackoverflow.blog/2017/02/07/what-programming-languages-weekends/
+layer -- abstraction
+layers -- shearing
 lazy-loading
 linked list
 linting
@@ -199,6 +214,7 @@ npm
 nyan cat
 object
 OOP
+OOP -- layer https://en.wikipedia.org/wiki/Layer_(object-oriented_design)
 optim des || et && effet de bord
 overengineering https://blog.matt-rickard.com/p/stop-overengineering
 ownership
@@ -210,6 +226,7 @@ personal data
 pipeline express success / error / next / send
 pointer
 polyfill
+polymorphism https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
 privacy - collect and use someone's info respectfully
 privacy - regulations/compliance AND expectations
 programming -- application
@@ -247,6 +264,8 @@ rule of composition https://www.linfo.org/rule_of_composition.html
 rule of silence https://www.linfo.org/rule_of_silence.html
 scatter/gather (datastreams)
 scope
+script
+Scripts should be written using the project main language https://joaomagfreitas.link/scripts-should-be-written-using-the-project-main-language/
 Scrum
 security -- OWASP top 10 https://owasp.org/www-project-top-ten/
 security -- principle of least privilege
@@ -256,6 +275,7 @@ shaving the yak
 shim vs polyfill vs ponyfill
 shrinkwrap
 simple average
+single source of truth
 single source of truth
 single source of truth (SSOT)
 Site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser

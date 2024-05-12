@@ -36,6 +36,7 @@ chatbots = the reason why AI exploded in 2023
 citation accuracy
 common sense https://commonsense.run/
 context
+Contextual Language Models (CLMs) Contextual.ai
 control vector https://vgel.me/posts/representation-engineering/
 ControlNet = a type of model for controlling image diffusion models by conditioning the model with an additional input image https://huggingface.co/docs/diffusers/using-diffusers/controlnet https://github.com/lllyasviel/ControlNet
 cross encoder https://www.sbert.net/examples/applications/cross-encoder/README.html
@@ -50,12 +51,14 @@ embeddings = raw underlying representation of a concept preserving aspects of it
 fine-tuning
 function calling (bad name) = connect large language models to external tools https://cloud.google.com/vertex-ai/docs/generative-ai/multimodal/function-calling https://platform.openai.com/docs/guides/function-calling
 generative AI
+generative AI gold rush
 GLUE language understanding benchmark
 GPT "Generative Pre-trained Transformer" = understand language (natural & formal)
 Grounded Generation = see RAG
 Hallucination "Vectara's Hallucination Evaluation Model"
 Hallucination Leaderboard https://github.com/vectara/hallucination-leaderboard
 hallucinations "King Renoit" https://zapier.com/blog/ai-hallucinations/
+helpful, harmless and honest
 HHH helpful, honest, and harmless
 Hierarchical Navigable Small World (HNSW)
 HNSW search algorithm
@@ -73,6 +76,7 @@ issues -- Inaccuracy (answer quality)
 issues -- Language = not English
 issues -- privacy, control
 JAX
+knowledge cutoff
 langchain = a framework for developing applications powered by language models https://python.langchain.com/docs/get_started/introduction
 latency
 laziness = cases where the model doesn’t complete a task https://openai.com/blog/new-embedding-models-and-api-updates
@@ -114,6 +118,8 @@ processing -- Meta Training and Inference Accelerator (MTIA) https://ai.meta.com
 processing -- TPU = Tensor Processing Units
 prompting -- ROC = [Role] + [Output] + [Context], ex. You are an engineering manager, how many story points do you think this will be and why? [context] https://community.atlassian.com/t5/Jira-Software-articles/Be-an-AI-Rockstar-Prompts-in-Jira-Software/ba-p/2636811
 Pytorch
+RAG 2.0 https://medium.com/towards-artificial-intelligence/rag-2-0-finally-getting-rag-right-f74d0194a720
+rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-to-stay-competitive-hits-tech.html
 ReAct flow
 Representation Engineering = calculating a "control vector" that can be read from or added to model activations during inference to interpret or control the model's behavior https://vgel.me/posts/representation-engineering/
 research directions -- honesty, chain-of-thought faithfulness, adversarial robustness, evals and testbeds...
@@ -125,6 +131,10 @@ RLHF reinforcement learning from human feedback
 SageMaker (AWS)
 Searle's Chinese Room https://plato.stanford.edu/entries/chinese-room/
 singularity
+sleeper agents (security) https://www.anthropic.com/research/probes-catch-sleeper-agents
+sleeper agents -- defection probes https://www.anthropic.com/research/probes-catch-sleeper-agents
+slop = unwanted AI generated content https://simonwillison.net/2024/May/8/slop/
+Snowflake Arctic https://www.snowflake.com/blog/arctic-open-efficient-foundation-language-models-snowflake/
 sociotechnic = skilled at analyzing the interaction of technology and society long-term: lawyers, ethicists, sociologists, or rights advocates
 Stable Diffusion
 superintelligence "AI vastly smarter than humans" https://openai.com/research/weak-to-strong-generalization
