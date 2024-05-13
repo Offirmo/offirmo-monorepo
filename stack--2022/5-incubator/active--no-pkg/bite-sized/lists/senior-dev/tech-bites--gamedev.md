@@ -106,6 +106,7 @@ overworld https://en.wikipedia.org/wiki/Overworld
 pacifist run
 party
 permadeath
+permanently missable content
 procedural generation
 progression system
 progression system -- power creep (to avoid)

@@ -3666,7 +3666,7 @@ lightningcss-win32-x64-msvc@1.24.1:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.24.1.tgz#bd6b562d902e0f92904ac3754c722d9e63e00480"
   integrity sha512-joEupPjYJ7PjZtDsS5lzALtlAudAbgIBMGJPNeFe5HfdmJXFd13ECmEM+5rXNxYVMRHua2w8132R6ab5Z6K9Ow==
 
-lightningcss@^1.22.1:
+lightningcss@^1, lightningcss@^1.22.1:
   version "1.24.1"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss/-/lightningcss-1.24.1.tgz#8b86a5ee6e6ae9e035ff92892bd047b8d687581e"
   integrity sha512-kUpHOLiH5GB0ERSv4pxqlL0RYKnOXtgGtVe7shDGfhS0AZ4D1ouKFYAcLcZhql8aMspDNzaUCumGHZ78tb2fTg==

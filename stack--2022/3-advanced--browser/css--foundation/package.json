@@ -18,13 +18,16 @@
 		"_start:parcel:storypad": "parcel serve doc/storypad/index.html --port 8080  --lazy  --no-autoinstall",
 		"_start:parcel:demo": "parcel serve --log-level verbose  'doc/demo/*.html' --port 3020 --no-autoinstall",
 
-		"dev": "npm-run-all clean--cache --parallel _start:parcel:storypad"
+		"dev": "npm-run-all clean--cache --parallel _start:parcel:storypad",
+
+		"build": "node ./src/~~gen/bundle.mjs"
 	},
 
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
+		"lightningcss": "^1",
 		"npm-run-all": "^4"
 	}
 }

@@ -140,9 +140,8 @@ headless = Front-end presentation is completely decoupled from back-end logic/CM
 hypermedia
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
 infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-code-tools
-ingress egress
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
-Integrity
+integrity
 interview -- manage time: reqts + estimation - 5 min, HLD - 20 min, deep dive - 15 min, roundup - 5 min
 interview -- popular problems = designing a URL shortening service, Pastebin, Instagram, Dropbox, Facebook Messenger, Twitter, YouTube/Netflix, Typeahead Suggestion, API Rate Limiter, Twitter Search...
 interview -- popular problems = Google products: Google Search, YouTube, Google Photo Sharing and Storage, Google Docs, Google Drive...
@@ -199,7 +198,7 @@ network model -- TCP/IP -- 3 = internet (IP)
 network model -- TCP/IP -- 4 = link (MAC)
 network model -- TCP/IP -- 4 = physical
 network model -- TCP/IP https://www.geeksforgeeks.org/tcp-ip-model/
-nicro-frontend https://micro-frontends.org/ https://the-tractor.store/
+micro-frontend https://micro-frontends.org/ https://the-tractor.store/
 non-abstract large system design (NALSD) = iterative process for designing, assessing, and evaluating distributed systems
 non-abstract large systems design (NALSD) https://sre.google/workbook/non-abstract-design/
 numbers everyone should know https://static.googleusercontent.com/media/sre.google/en//static/pdf/rule-of-thumb-latency-numbers-letter.pdf
