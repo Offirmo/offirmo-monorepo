@@ -1,6 +1,5 @@
 
-
-export function All() {
+export function AllTogether() {
 	return [
 		NeverVisited(),
 		AlreadyVisited(),

@@ -1,4 +1,4 @@
-import { All as Anchors } from '@offirmo-private/storypad/src/shared/stories/html/elements/a.stories'
+import { AllTogether as Anchors } from '@offirmo-private/storypad/src/shared/stories/html/elements/a.stories'
 
 ////////////////////////////////////////////////////////////////////////////////////
 
