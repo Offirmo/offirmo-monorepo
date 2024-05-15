@@ -1,5 +1,5 @@
 import { Thing, WithOnlinePresence, ThingWithOnlinePresence, registerꓽasset_usageⵧload } from '@offirmo-private/credits'
-import AUTHOR from "@offirmo-private/credits/src/MapleLeaf68/index.ts"
+import AUTHOR from "@offirmo-private/credits/src/authors/MapleLeaf68/index.ts"
 
 import './style.css'
 

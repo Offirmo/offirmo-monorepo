@@ -1,1 +1,1 @@
-export * from '@offirmo-private/storypad/src/shared/stories/html/elements/a.stories.ts'
+export * from '@offirmo-private/storypad/src/__shared/stories/html/elements/a.stories.ts'

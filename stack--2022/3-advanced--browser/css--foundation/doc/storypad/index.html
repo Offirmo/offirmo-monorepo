@@ -1,13 +1,16 @@
 
 <script type="module">
 	import startꓽstorypad from '@offirmo-private/storypad'
+	import decoratorⵧdiagnostics from '@offirmo-private/storypad/src/__shared/decorators/diagnostics'
 	import nearest_pkg from '~/package.json'
+
+	const DEBUG = false
 
 	// important to load async so that the stories don't pollute the global scope too early (ex. before SEC)
 	//import stories from './**/*.stories.@(js|jsx|ts|tsx|mdx)'
-	const storiesⵧshared = import('@offirmo-private/storypad/src/shared/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	const storiesⵧshared = import('@offirmo-private/storypad/src/__shared/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)')
 	const stories = import('../../src/**/*.stories.@(js|jsx|ts|tsx|mdx)')
-	console.log('BOOTSTRAP stories', {
+	if (DEBUG) console.log('BOOTSTRAP stories', {
 		stories,
 		storiesⵧshared,
 	})
@@ -26,14 +29,17 @@
 				},
 				(story) => {
 					import('npm:@offirmo-private/css--foundation/src/xoptional/color-theme--light.css')
-					document.documentElement.style.setProperty('--o⋄color⁚brand__h',
-						'0', // red
+					const brand__hue =
+						undefined
+						//'0', // red
 						//'54', // yellow
 						//'120', // green
 						//'240', // blue
-					)
+					if (brand__hue)
+						document.documentElement.style.setProperty('--o⋄color⁚brand__h', brand__hue)
 					return story
-				}
+				},
+				decoratorⵧdiagnostics
 			]
 		}
 	)

@@ -3,7 +3,7 @@
  */
 nav {
 
-	&:is(ol, ul) {
+	:is(ol, ul) {
 		/* cancel the default list display
 		 */
 		list-style-type: none;

@@ -1,5 +1,5 @@
 /* Code allowing to register an asset usage,
- * so that we can credits the creators
+ * so that we can credit the creators
  * and display an attribution in-app for certain major assets.
  */
 
@@ -90,7 +90,7 @@ function registerꓽasset_usageⵧstart(asset: Immutable<Thing>): void {
 // "fire and forget"
 // call is optional
 function registerꓽasset_usageⵧend(asset: Immutable<Thing>): void {
-	// useful? TODO if useful
+	// TODO useful?
 }
 
 // return all currently registered assets

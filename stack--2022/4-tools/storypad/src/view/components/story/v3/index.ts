@@ -6,7 +6,6 @@ import { Story‿v3, Meta‿v3 } from '../../../../types/csf/v3'
 import { StoryEntry } from '../../../../flux/types.ts'
 import { LIB } from '../../../../consts'
 import { getꓽRenderParamsⵧglobal } from '../../../../flux/selectors.ts'
-import { Story‿v2 } from '../../../../types/csf/v2'
 
 /////////////////////////////////////////////////
 console.log('Loading the CSF v3 renderer...')

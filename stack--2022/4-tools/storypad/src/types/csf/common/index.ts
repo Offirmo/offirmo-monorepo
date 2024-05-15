@@ -7,17 +7,45 @@ export type GenericStory = unknown
 export type GenericStoryOutput = Html‿str // TODO extend return type
 export type GenericStoryComponent = any // TODO type better
 
-// https://storybook.js.org/docs/writing-stories/decorators
-export interface Decorator<StoryType = GenericStory> {
-	(story: StoryType): StoryType
-}
-
+/////////////////////////////////////////////////
+// https://storybook.js.org/docs/writing-stories/args
+// https://storybook.js.org/docs/writing-stories#using-args
 
 export type GenericArg = any // TODO type better
 
 export interface GenericArgs {
 	[key: string]: GenericArg
 }
+
+// TODO argTypes
+// Storybook's argTypes allow you to customize and fine-tune your stories args
+
+/////////////////////////////////////////////////
+// https://storybook.js.org/docs/api/parameters
+
+export interface Parameters {
+	// https://storybook.js.org/docs/api/parameters#available-parameters
+	// TODO layout: 'centered' | 'fullscreen' | 'padded' // Default: 'padded'
+	//pageLayout = 'page' (or 'page-mobile'
+}
+
+/////////////////////////////////////////////////
+// https://storybook.js.org/docs/writing-stories/decorators
+
+// https://storybook.js.org/docs/writing-stories/decorators#context-for-mocking
+export interface StoryContext {
+	args: GenericArgs
+	//argTypes: unknown
+	//globals: unknown
+	//hooks: unknown
+	//parameters: unknown
+	//viewMode: unknown
+}
+export interface Decorator<StoryType = GenericStory> {
+	(story: StoryType, context: StoryContext): StoryType
+}
+
+/////////////////////////////////////////////////
 
 /** Basic params present possible on all stories and meta
  */
@@ -26,12 +54,8 @@ export interface RenderParams<StoryType = GenericStory> {
 	component?: GenericStoryComponent
 	render?: (args: GenericArgs) => GenericStoryOutput
 
-	// https://storybook.js.org/docs/api/parameters#available-parameters
-	parameters?: {
-		// TODO layout: 'centered' | 'fullscreen' | 'padded' // Default: 'padded'
-	} | undefined
+	parameters?: Parameters | undefined
 
-	// https://storybook.js.org/docs/writing-stories#using-args
 	args?: GenericArgs
 
 	decorators?: Decorator<StoryType>[]

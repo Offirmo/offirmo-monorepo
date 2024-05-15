@@ -1,20 +1,25 @@
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote
 
-
+/////////////////////////////////////////////////
+// aggreg
 
 export function AllTogether() {
-	return [
-		ErrorⳇEmpty(),
-		ErrorⳇNoCitation(),
-		Errorⳇinsecure(),
-		ErrorⳇBadStructure(),
-		OneParaNoFooter(),
-		OneParaWithFooter(),
-		OneParaWithFooterⵧNonEnglish(),
-		SeveralParaWithFooter(),
-		InAFigure(),
-	].join('<hr/>')
+	const stories = {
+		ErrorⳇEmpty,
+		ErrorⳇNoCite,
+		Errorⳇinsecure,
+		ErrorⳇBadStructure,
+		OneParaNoFooter,
+		OneParaWithFooter,
+		OneParaWithFooterⵧNonEnglish,
+		SeveralParaWithFooter,
+		InAFigure,
+	}
+	return Object.keys(stories).map(key => `<code>${key}</code>` + (stories as any)[key]()).join(`<hr/>`)
 }
+
+/////////////////////////////////////////////////
+// mistakes/errors (first)
 
 export function ErrorⳇEmpty() {
 	return `
@@ -23,7 +28,7 @@ export function ErrorⳇEmpty() {
 	`
 }
 
-export function ErrorⳇNoCitation() {
+export function ErrorⳇNoCite() {
 	return `
 <blockquote>
 	<p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
@@ -49,6 +54,9 @@ export function ErrorⳇBadStructure() {
 	`
 }
 
+/////////////////////////////////////////////////
+// ok
+
 export function OneParaNoFooter() {
 	return `
 <blockquote>
@@ -70,7 +78,7 @@ export function OneParaWithFooterⵧNonEnglish() {
 	return `
 <blockquote lang="fr" cite="https://citations.ouest-france.fr/citation-pierre-corneille/aux-ames-bien-nees-valeur-102458.html">
 	<p>Aux âmes bien nées, la valeur n'attend point le nombre des années.</p>
-	<footer>—Pierre Corneille, <cite>Le Cid</cite></footer>
+	<footer>— Pierre Corneille, <cite>Le Cid</cite></footer>
 </blockquote>
 	`
 }
@@ -79,14 +87,14 @@ export function SeveralParaWithFooter() {
 	return `
 <blockquote cite="https://en.wikipedia.org/wiki/If%E2%80%94">
 	<p>If you can talk with crowds and keep your virtue,<br>
-    Or walk with Kings—nor lose the common touch,</p>
-<p>If neither foes nor loving friends can hurt you,<br>
-    If all men count with you, but none too much;</p>
-<p>If you can fill the unforgiving minute<br>
-    With sixty seconds’ worth of distance run,</p>
-<p>Yours is the Earth and everything that’s in it,<br>
-    And—which is more—you’ll be a Man, my son!</p>
-</p>
+	    Or walk with Kings—nor lose the common touch,</p>
+	<p>If neither foes nor loving friends can hurt you,<br>
+	    If all men count with you, but none too much;</p>
+	<p>If you can fill the unforgiving minute<br>
+	    With sixty seconds’ worth of distance run,</p>
+	<p>Yours is the Earth and everything that’s in it,<br>
+	    And —which is more— you’ll be a Man, my son!</p>
+
 	<footer>Rudyard Kipling, <cite>If—</cite></footer>
 </blockquote>
 	`

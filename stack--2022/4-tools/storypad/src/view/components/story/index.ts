@@ -29,15 +29,16 @@ async function _renderⵧstory(container: HTMLElement) {
 
 	console.log('Rendering story:', storyEntry)
 	switch(true) {
-		case isꓽStory‿v3(storyEntry.story): {
-			const render_v3 = (await import('./v3')).default
-			render_v3(storyEntry)
-			break
-		}
 
 		case isꓽStory‿v2(storyEntry.story): {
 			const render_v2 = (await import('./v2')).default
-			render_v2(storyEntry)
+			await render_v2(storyEntry)
+			break
+		}
+
+		case isꓽStory‿v3(storyEntry.story): {
+			const render_v3 = (await import('./v3')).default
+			await render_v3(storyEntry)
 			break
 		}
 

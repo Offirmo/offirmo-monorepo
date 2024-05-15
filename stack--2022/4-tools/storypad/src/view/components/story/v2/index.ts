@@ -5,8 +5,7 @@ import { Story‿v2, Meta‿v2 } from '../../../../types/csf/v2'
 import { StoryEntry } from '../../../../flux/types.ts'
 import { LIB } from '../../../../consts'
 import { getꓽRenderParamsⵧglobal } from '../../../../flux/selectors'
-import { aggregateꓽRenderParams, GenericStoryComponent, RenderParams } from '../../../../types/csf'
-import { Meta‿v3, Story‿v3 } from '../../../../types/csf/v3'
+import { aggregateꓽRenderParams, RenderParams, StoryContext } from '../../../../types/csf'
 
 /////////////////////////////////////////////////
 console.log('Loading the CSF v2 renderer...')
@@ -60,7 +59,10 @@ async function _renderⵧaggregated_story(render_params: Immutable<RenderParams<
 		const decorated_render = render_params.decorators!.reduce((acc, decorator) => {
 			assert(typeof decorator === 'function', 'Decorator must be a function!')
 			assert(typeof acc === 'function', 'Decorator must be applied to a function!')
-			return decorator(acc as any)
+			const context: StoryContext = {
+				args: render_params.args!
+			}
+			return decorator(acc as any, context)
 		}, render)
 		const rendered = decorated_render(render_params.args!)
 		document.body.innerHTML = rendered
