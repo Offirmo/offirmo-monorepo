@@ -21,7 +21,7 @@
 [ ] Cités perdues
 [ ] Loups
 [ ] Ours
-[ ] Tigre à dents de sabre
+[ ] megafaune Tigre à dents de sabre
 [ ] Animaux éteints bison mammouth
 [ ] Survival level
 [ ] Forest of illusions
@@ -30,4 +30,4 @@
 [ ] Ents
 [ ] Cristaux = spell slots, better = stronger
 [ ] Cores
-[ ]
+[ ] apex predators https://www.science-et-vie.com/nature-et-environnement/animaux/super-predateur-vs-predateur-quest-ce-qui-les-differencie-125095.html

@@ -1,9 +1,4 @@
-
-Terminal
-
-Color Scheme
-
-Programming font
-https://www.programmingfonts.org/
-
-Code editor
+code editor
+color scheme
+programming font https://www.programmingfonts.org/
+terminal

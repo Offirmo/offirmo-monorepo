@@ -1,5 +1,3 @@
-
-
 Agile
 Architectural Decision Records (ADRs) https://adr.github.io/
 Big Hairy Audacious Goals (BHAG) https://www.jimcollins.com/article_topics/articles/BHAG.html
@@ -8,8 +6,8 @@ comms "the loop" 01 -- Open up your work in progress = Avoid after-the-fact advi
 comms "the loop" 02 -- Curate, don’t automate = Information overload does not have to paralyze your project. Get and give just the right amount of data and details so your stakeholders stay in the loop and your work gets noticed.
 comms "the loop" 03 -- Common vocabulary over common tooling = Whether we know it or not, every time we communicate we make comprehension and speed trade-offs
 comms "the loop" 04 -- Show that you’re paying attention = We spend too much time on status reports for them not to be read
-comms -- project -- "the loop" https://www.atlassian.com/loop/
-Conway's law
+comms "the loop" https://www.atlassian.com/loop/
+Conway's law = soft archi maps teams
 Critical User Journeys (CUJ)
 decision making -- 01 LDR “lightweight decision record” = for 2 way doors, lightweight decisions that have already been made and should be recorded. Should reference the slack threads, pages, comments, and tasks where the decision was made.
 decision making -- 02 RFC “request for comments” = the first - in some cases the only - formal step in agreeing on a proposal. should only ever contain a single option with the intention to receive comments and additional insights. Does not require an explicit approver, although it does require a general consensus. It is expected that the correct stakeholders are included on the page with a reasonable timeframe to provide their inputs.
@@ -33,6 +31,7 @@ Kanban https://en.wikipedia.org/wiki/Kanban_(development)
 MLP
 moonshots "sheer audacity of the challenge inspired motivation and passion in a way that a smaller goal never could" = https://x.company/moonshot/
 MVP
+merge queues https://engineering.shopify.com/blogs/engineering/successfully-merging-work-1000-developers
 north star
 nudges = PRs nudges for speed https://dl.acm.org/doi/abs/10.1145/3544791
 OKR

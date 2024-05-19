@@ -7,6 +7,9 @@ Senior Dev tips!
 * journalists
 
 
+
+
+
 ~~~~~~~~~~~~~~~~~~~~ TOSORT ~~~~~~~~~~~~~~~~~~~~~~
 
 http://regex.info/blog/2006-09-15/247
@@ -75,7 +78,6 @@ http://www.crackingthecodinginterview.com/
 
 
 
-merge queues https://engineering.shopify.com/blogs/engineering/successfully-merging-work-1000-developers
 
 https://cloud.google.com/blog/products/gcp/sre-fundamentals-slis-slas-and-slos
 

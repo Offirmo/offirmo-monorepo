@@ -1,7 +1,4 @@
-+++ https://levelup.gitconnected.com/7-best-software-design-course-for-programmers-and-developers-da3e18e9135
-
-RESHADED method
-
+[ ] +++ 7 best courses https://levelup.gitconnected.com/7-best-software-design-course-for-programmers-and-developers-da3e18e9135
 
 1. requirements
   1. Priorized requirements
@@ -25,6 +22,17 @@ RESHADED method
   1. API server
 
 
+
+
+RESHADED method https://levelup.gitconnected.com/7-best-software-design-course-for-programmers-and-developers-da3e18e9135
+1. Requirements
+2. Estimations
+3. Storage schema
+4. High level design
+5. APIs
+6. Detailed design
+7. Evaluation
+8. Distinctive component/features
 
 
 https://www.atlassian.com/company/careers/resources/interviewing/how-to-nail-your-engineering-interview

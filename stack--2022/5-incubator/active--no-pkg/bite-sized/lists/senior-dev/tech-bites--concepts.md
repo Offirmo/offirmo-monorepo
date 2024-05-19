@@ -3,6 +3,7 @@
 +++ https://martinfowler.com/
 +++ https://www.hackterms.com/about/all
 +++ https://www.linfo.org/main_index.html
+[ ] https://zknill.io/posts/every-programmer-should-know/
 12 factors https://12factor.net/
 97 Things Every Programmer Should Know
 abstraction https://www.merrickchristensen.com/articles/abstraction/
@@ -35,8 +36,9 @@ client/server -- multi-tier architecture
 cohesion = degree to which the elements inside a module belong together https://en.wikipedia.org/wiki/Cohesion_(computer_science)
 command query responsibility segregation (CQRS)
 command query separation (CQS)
-comment
+comments
 comments -- conventional
+commits
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
 compile to js
 compiler
@@ -67,12 +69,12 @@ defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actu
 demos
 dependencies
 dependency hell https://en.wikipedia.org/wiki/Dependency_hell
-design pattern
-design pattern --
-design pattern --
-design pattern --
-design pattern -- behavioral -- command = command, receiver, invoker and client https://en.wikipedia.org/wiki/Command_pattern
-design pattern -- facade https://en.wikipedia.org/wiki/Facade_pattern
+design patterns
+design patterns --
+design patterns --
+design patterns --
+design patterns -- behavioral -- command = command, receiver, invoker and client https://en.wikipedia.org/wiki/Command_pattern
+design patterns -- facade https://en.wikipedia.org/wiki/Facade_pattern
 design patterns -- strangler https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/
 devex
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
@@ -111,7 +113,7 @@ framework -- "a new framework every day"
 function
 function -- 1st-class object
 function -- first-class function
-function -- Higher-order function
+function -- higher-order function
 functional programming
 GAFAM -- "megacap companies"
 GAFAM -- Amazon https://www.vanityfair.com/news/story/inside-amazon-business-practices
@@ -162,7 +164,7 @@ IDEALS -- 3 Event-driven
 IDEALS -- 4 Availability over consistency
 IDEALS -- 5 Loose coupling
 IDEALS -- 6 Single responsibility
-IDEALS principles for microservice design
+IDEALS = principles for microservice design
 If it ain't broke, don't fix it
 IIFE
 immutability

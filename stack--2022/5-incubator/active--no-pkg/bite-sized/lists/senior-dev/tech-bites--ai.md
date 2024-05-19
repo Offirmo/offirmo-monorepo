@@ -2,6 +2,9 @@
 +++ https://platform.openai.com/docs/introduction/key-concepts
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
 ??? https://github.com/SkalskiP/courses crème de la crème of AI courses
+[ ] https://aleteia.org/tag/artificial-intelligence/
+[ ] https://www.perspectiveapi.com/
+[ ] https://www.sbert.net/
 A::B Prompting Challenge: $10k to prove me wrong! https://twitter.com/VictorTaelin/status/1776677635491344744 https://twitter.com/headinthebox/status/1777016124141650254
 Agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
 agents -- principals
@@ -60,11 +63,7 @@ Hallucination Leaderboard https://github.com/vectara/hallucination-leaderboard
 hallucinations "King Renoit" https://zapier.com/blog/ai-hallucinations/
 helpful, harmless and honest
 HHH helpful, honest, and harmless
-Hierarchical Navigable Small World (HNSW)
-HNSW search algorithm
-https://aleteia.org/tag/artificial-intelligence/
-https://www.perspectiveapi.com/
-https://www.sbert.net/
+Hierarchical Navigable Small World (HNSW) = graph for vector search https://www.pinecone.io/learn/series/faiss/hnsw/
 Hugging Face = "the GitHub of machine learning" = the collaboration platform for the machine learning community https://www.techtarget.com/whatis/definition/Hugging-Face
 huggingface.co "space"
 in-context learning = ~long prompt / many shots https://www.anthropic.com/research/many-shot-jailbreaking
@@ -109,7 +108,6 @@ player -- Google AI https://ai.google/
 player -- https://modal.com/blog/embedding-wikipedia
 player -- https://vectara.com/ = RAG
 player -- https://www.adept.ai/
-player -- Qdrant -- vector database https://qdrant.tech/blog/series-a-funding-round/
 pre-training
 processing -- GPU = Graphics Processing Units
 processing -- GPU vs TPU vs LPU https://medium.com/@harishramkumar/comparing-gpu-vs-tpu-vs-lpu-the-battle-of-ai-processors-2cf4548c4a62
@@ -174,6 +172,7 @@ transformers (hugging face) = a magic python library that can auto-download mode
 Turing test
 vector -- difference with embedding??
 vector database
-vector database https://weaviate.io/
-vector database https://www.pinecone.io
+vector database -- https://weaviate.io/
+vector database -- https://www.pinecone.io
+vector database -- Qdrant https://qdrant.tech/blog/series-a-funding-round/
 weak-to-strong generalization https://openai.com/research/weak-to-strong-generalization

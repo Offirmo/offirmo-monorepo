@@ -65,6 +65,7 @@ AWS Shield
 AWS WAF
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 Backends For Frontends -- composable https://bff-patterns.com/
+Backends For Frontends -- tradeoffs https://zknill.io/posts/backend-for-the-frontend/
 bloom Filters
 blue/green deployment
 cache -- counter cache https://thoughtbot.com/blog/what-is-counter-cache
@@ -135,10 +136,14 @@ fan-out https://www.pubnub.com/guides/what-is-fan-out-software/
 fault tolerance +++https://medium.com/baseds/ready-and-available-distributed-systems-161023aca378
 finops
 flux architecture
+full stack trade offs https://zknill.io/posts/backend-for-the-frontend/
+Google - Site Reliability Engineering
 graceful degradation = ex. of batteries in flashlight
 headless = Front-end presentation is completely decoupled from back-end logic/CMS. Designed to be channel, programming language, and framework agnostic https://jamstack.org/glossary/headless-technology/
 hypermedia
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
+incidents
+Incidents -- rate (i.e. # of HOTs and # repeat incidents)
 infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-code-tools
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
 integrity
@@ -155,9 +160,10 @@ load balancer -- google sth
 load balancer -- L4 vs L7 https://www.a10networks.com/glossary/how-do-layer-4-and-layer-7-load-balancing-differ/  https://www.nginx.com/resources/glossary/layer-4-load-balancing/
 load balancer -- scope, ex. region "AWS ELB Elastic Load Balancer"
 load shedding
-Log consolidation
+log consolidation
 Mean Time Between Failures (MTBF)
-mean time to resolution/repair (MTTR) https://www.dataset.com/blog/mean-time-to-repair/
+Mean Time To Detection (MTTD)
+Mean Time To Resolution/repair/recover  (MTTR) https://www.dataset.com/blog/mean-time-to-repair/
 message queue ex. AWS SQS
 messaging -- queueing -- dead letter queue (DLQ) https://en.wikipedia.org/wiki/Dead_letter_queue
 messaging -- queueing -- RabbitMQ
@@ -166,6 +172,7 @@ messaging https://www.enterpriseintegrationpatterns.com/patterns/messaging/
 metrics layer -- 01 system = CPU, memory, disk...
 metrics layer -- 02 application = queues, timing (DB calls), flow, cache hit rate...
 metrics layer -- 03 business = usage and core actions
+micro-frontend https://micro-frontends.org/ https://the-tractor.store/
 microservice -- design -- IDEALS -- 01 Interface segregation = 
 microservice -- design -- IDEALS -- 02 Deployability (is on you) = 
 microservice -- design -- IDEALS -- 03 Event-driven = event-driven microservices are more likely to meet the scalability and performance requirements
@@ -177,8 +184,6 @@ middleware https://en.wikipedia.org/wiki/Middleware_(distributed_applications)
 mitigations: code rollback, data rollback, degrade, upsize, blocklist, drain, quarantine https://www.oreilly.com/content/generic-mitigations/
 monitoring
 monitoring "Understanding what is happening in your environment is key to maintaining efficient, secure, and compliant applications"
-NALSD -- https://sre.google/classroom/distributed-pubsub/
-NALSD -- https://sre.google/classroom/imageserver/
 network ACL
 network model -- OSI -- Layer 1 = The physical layer, as with TCP/IP, provides the physical connection to the network and defines the electrical and physical characteristics
 network model -- OSI -- Layer 2 = The datalink layer conceptually creates a point-to-point connection between network endpoints and receives and sends data to and from the network layer
@@ -198,8 +203,10 @@ network model -- TCP/IP -- 3 = internet (IP)
 network model -- TCP/IP -- 4 = link (MAC)
 network model -- TCP/IP -- 4 = physical
 network model -- TCP/IP https://www.geeksforgeeks.org/tcp-ip-model/
-micro-frontend https://micro-frontends.org/ https://the-tractor.store/
+Non-Abstract Large System Design
 non-abstract large system design (NALSD) = iterative process for designing, assessing, and evaluating distributed systems
+non-abstract large system design (NALSD) https://sre.google/classroom/distributed-pubsub/
+non-abstract large system design (NALSD) https://sre.google/classroom/imageserver/
 non-abstract large systems design (NALSD) https://sre.google/workbook/non-abstract-design/
 numbers everyone should know https://static.googleusercontent.com/media/sre.google/en//static/pdf/rule-of-thumb-latency-numbers-letter.pdf
 observability
@@ -209,6 +216,10 @@ observability -- telemetry
 observability = a measure of how well internal states of a system can be inferred from knowledge of its external outputs https://andydote.co.uk/presentations/index.html
 observability https://opentelemetry.io/docs/concepts/observability-primer/
 on-prem requirements
+operations (ops)
+operations -- metrics -- incident rate
+operations -- metrics -- MTTD
+operations -- metrics -- MTTR
 ops -- toil
 orchestrator -- kubernetes
 organizational reliability continuum = absent -> reactive -> proactive -> strategic -> visionary / there is a significant cost associated with moving from one phase to another and a cost to remain very high on this curve. In our experience, being proactive is a healthy level to target and is ideal for most products https://cloud.google.com/blog/products/devops-sre/the-five-phases-of-organizational-reliability
@@ -265,6 +276,7 @@ SRE -- The Four Golden Signals -- Latency, Traffic, Errors, Saturation(utilisati
 state
 stateless -- Prefer simple, stateless services where possible
 Sustainable Architectural Decisions https://adr.github.io/
+System design is a mine-field of difficult tradeoffs
 system properties -- 01 available = end user can access it and it works as expected https://medium.com/baseds/ready-and-available-distributed-systems-161023aca378
 system properties -- 02 highly available = no scheduled/unscheduled maintenance, no downtime, no data loss
 system properties -- 03 fault tolerant = can even handle hardware failure (expensive to implement)

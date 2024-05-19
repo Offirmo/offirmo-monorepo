@@ -59,6 +59,10 @@ Cinq conseils pour discerner
 https://theconversation.com/gary-mckee-what-it-takes-to-run-a-marathon-a-day-for-a-year-197184
 https://womensagenda.com.au/latest/erchana-murray-is-running-one-marathon-daily-for-150-consecutive-days-to-run-length-of-australia/
 
+library
+https://en.wikipedia.org/wiki/Mundaneum
+https://en.wikipedia.org/wiki/Commonplace_book
+
 
 animal domestication https://en.wikipedia.org/wiki/Anna_Karenina_principle#Failed_domestication
 

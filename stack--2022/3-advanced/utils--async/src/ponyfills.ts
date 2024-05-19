@@ -2,13 +2,15 @@ import assert from 'tiny-invariant'
 
 /////////////////////////////////////////////////
 
-// XXX DO NOT USE
-// XXX queueMicrotask() SHOULD ALWAYS BE PREFERRED
-// node only so far, semantic changed in >=0.9.1
-// adds callback to the "next tick queue".
+// XXX DO NOT USE XXX
+// - queueMicrotask() SHOULD ALWAYS BE PREFERRED
+// - node only so far, semantic changed in >=0.9.1
+//
+// Adds callback to the "next tick queue".
 // This queue is fully drained after the current operation on the JavaScript stack runs to completion
 // and before the event loop is allowed to continue.
 // It's possible to create an infinite loop if one were to recursively call process.nextTick()
+/** @deprecated Use queueMicrotask() instead */
 const nextTick: (callback: Function, ...args: any[]) => void
 	= (globalThis as any).process?.nextTick
 	|| function nextTickPonyFill(callback: Function, ...args: any[]): void {

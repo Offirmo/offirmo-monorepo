@@ -1,4 +1,4 @@
-
+[ ] +++ https://dev.to/anze_kop1tar/acronyms-you-should-know-when-going-to-a-job-interview-369l
 +++ https://developer.mozilla.org/en-US/curriculum/
 APIs web
 appli web
@@ -14,6 +14,12 @@ client/server -- multi-tier architecture -- 03 business
 client/server -- multi-tier architecture -- 04 data access
 client/server -- multi-tier architecture https://en.wikipedia.org/wiki/Multitier_architecture
 components https://www.componentdriven.org/
+collaborative experiences https://zknill.io/posts/collaboration-no-crdts/
+realtime updates https://zknill.io/posts/how-to-adopt-realtime/
+realtime -- patterns -- Poke/pull
+realtime -- patterns -- Push state
+realtime -- patterns -- Push biz events
+realtime -- patterns -- Push state diff
 CSS -- atomic
 CSS -- cascade https://2019.wattenberger.com/blog/css-cascade
 CSS -- color -- formats = hex, rgb(), hsl(), lch() https://www.joshwcomeau.com/css/color-formats/
@@ -80,6 +86,6 @@ UX -- Above the fold = is the area of a webpage that fits in a browser window wi
 UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb
 UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb 
 viewport
-viewport --  Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
+viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
 viewport -- large, small, dynamic
 viewport -- visual

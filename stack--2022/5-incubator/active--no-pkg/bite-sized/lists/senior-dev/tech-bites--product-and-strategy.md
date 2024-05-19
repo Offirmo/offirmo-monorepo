@@ -25,7 +25,7 @@ lock-in
 moat https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
 Most Advanced Yet Acceptable (MAYA) UX concept
 network effect
-Next Larger Context = always design a thing by considering it in its next larger context — a chair in a room, a room in a house, a house in a city... https://skamille.medium.com/the-next-larger-context-3970afaa8fb2
+Next Larger Context = always design a thing by considering it in its next larger context — a chair in a room, a room in a house, a house in a city... https://skamille.medium.com/the-next-larger-context-3970afaa8fb2 (see also shearing layers)
 no one was ever fired for using...
 path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
 principle -- end-to-end principle = fundamental principle of the Internet in which the role of a network is to reliably deliver data from willing senders to willing receivers

@@ -2,15 +2,15 @@
 [ ] adhoc questions on the application of Array, Stack, Queue, HashMap, TreeMap
 [ ] analysis of algorithms -- https://www.geeksforgeeks.org/design-and-analysis-of-algorithms/
 [ ] count bits
-[ ] gcd -- greatest common divisor
-algorithmic paradigm -- Backtracking
-algorithmic paradigm -- Branch and bound
-algorithmic paradigm -- Brute-force search
-algorithmic paradigm -- Divide and conquer
-algorithmic paradigm -- Dynamic programming
-algorithmic paradigm -- Greedy algorithm
-algorithmic paradigm -- Prune and search
-algorithmic paradigm -- Recursion
+[ ] Elements of Programming Interviews (EPI) book https://elementsofprogramminginterviews.com/2017/11/27/2017-11-27-buying-epi/
+algorithmic paradigm -- backtracking
+algorithmic paradigm -- branch and bound
+algorithmic paradigm -- brute-force search
+algorithmic paradigm -- divide and conquer
+algorithmic paradigm -- dynamic programming
+algorithmic paradigm -- greedy algorithm
+algorithmic paradigm -- prune and search
+algorithmic paradigm -- recursion
 algorithmic paradigm = https://en.wikipedia.org/wiki/Algorithmic_paradigm
 analysis of algorithms -- big O -- analysis 01 = Figure out what the input is and what n represents.
 analysis of algorithms -- big O -- analysis 02 = Express the maximum number of operations, the algorithm performs in terms of n
@@ -25,12 +25,12 @@ analysis of algorithms -- big Od -- O(n^2) = squared / quadratic
 analysis of algorithms -- big Oe -- O(n^3) = cubic
 analysis of algorithms -- big Of -- O(2^n) = exponential
 analysis of algorithms -- big Og -- O(n!) = factorial
-antisymetric
+antisymmetric
 backtracking
 Best, Average and Worst Cases
 binary search: Lower bound, Upper bound, Questions where binary search is not the obvious choice
 BPE / Byte pair encoding https://github.com/openai/tiktoken
-Cache-oblivious https://en.wikipedia.org/wiki/Cache-oblivious_algorithm
+cache-oblivious https://en.wikipedia.org/wiki/Cache-oblivious_algorithm
 Chocolate Distribution Problem
 Communication-avoiding https://en.wikipedia.org/wiki/Communication-avoiding_algorithm
 complexity chart https://flexiple.com/algorithms/big-o-notation-cheat-sheet
@@ -41,11 +41,10 @@ computational complexity -- Other = operations specific to the problem in questi
 computational complexity -- Query time = time required to answer a query;
 computational complexity -- Space = the amount of memory space required to store the data structure;
 consensus -- raft https://en.wikipedia.org/wiki/Raft_(algorithm)  https://raft.github.io/
-CRDT
+Conflict Free Replicated Data type (CRDT)
 Day–Stout–Warren = amortized binary tree balancing https://en.wikipedia.org/wiki/Day%E2%80%93Stout%E2%80%93Warren_algorithm
 deque = double-ended queue
-Disjoint set union
-Disjoint set union
+disjoint set union
 dynamic = ex. For an initial set of N numbers, dynamically maintain the maximal one when insertion and deletions are allowed.
 dynamic programming
 effacement d'une liste pendant qu'on la parcourt
@@ -55,15 +54,16 @@ graph -- shortest path
 graph -- shortest path -- A*
 graph -- shortest path -- Djikstra https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 graph -- traversal -- topological sorting https://en.wikipedia.org/wiki/Topological_sorting
+greatest common divisor (GCD)
 greedy https://en.wikipedia.org/wiki/Greedy_algorithm
 hashing
-hashing -- consistent hashing
-hashing -- Extendible hashing, Consistent hashing https://en.wikipedia.org/wiki/Consistent_hashing
-hcf
+hashing -- consistent hashing https://en.wikipedia.org/wiki/Consistent_hashing
+hashing -- extendible hashing https://en.wikipedia.org/wiki/Extendible_hashing
 heap -- median in a stream
 heap -- sliding window maximum
 heap -- top k elements
 heuristic https://en.wikipedia.org/wiki/Heuristic_(computer_science)
+Highest common factor (HCF) = greatest common divisor
 Huffman coding https://en.wikipedia.org/wiki/Huffman_coding
 Josephus Problem
 list -- floyd's cycle detection
@@ -102,7 +102,7 @@ search -- interpolation https://en.wikipedia.org/wiki/Interpolation_search
 search -- linear O(n) = the worst
 search -- ternary https://en.wikipedia.org/wiki/Ternary_search
 search -- unary
-Sliding window and 2 pointers based questions
+sliding window and 2 pointers based questions
 sort -- alphadev https://www.nature.com/articles/s41586-023-06004-9
 sort -- bubble
 sort -- burstsort
@@ -112,9 +112,10 @@ sort -- radix sort O(nw) https://en.wikipedia.org/wiki/Radix_sort
 sort -- topological = a graph traversal in which each node is visited only after all its dependencies are visited. (need DAG) https://en.wikipedia.org/wiki/Topological_sorting
 sort https://en.wikipedia.org/wiki/Sorting_algorithm
 string -- pattern searching
-strings: KMP, String sorting
+string -- sorting
+string -- word searching -- Knuth–Morris–Pratt algorithm (KMP) https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
 Tower of Hanoi
-Trabb Pardo-Knuth (TPK) https://en.wikipedia.org/wiki/TPK_algorithm
+Trabb Pardo-Knuth (TPK) = demo program https://en.wikipedia.org/wiki/TPK_algorithm
 transitive
 tree -- check if balanced
 tree -- rotation https://en.wikipedia.org/wiki/Tree_rotation
