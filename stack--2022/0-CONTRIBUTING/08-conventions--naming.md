@@ -78,7 +78,7 @@ In order to maximize readability, a few naming conventions:
 Block / Element / Modifier
 https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
 
-* sub-element: `SEC__root` `SEC__leaf`
+* sub-element: `SXC__root` `SXC__leaf`
   * TODO or use dot?
 * modifier/variant `getꓽtimestamp--human_readable`
 

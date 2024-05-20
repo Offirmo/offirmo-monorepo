@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 * XXX DO NOT PUBLISH BEFORE RESOLVING THE PRIVATE DEP (temporary, work in progress)
-* TODO fix the "maximum call stack exceeded" when printing a SEC
+* TODO fix the "maximum call stack exceeded" when printing a SXC
 * TODO pretty+intelligently print the details
 * [feat] improved the log line spacing (suppressed a redundant one)
 * [doc] ++

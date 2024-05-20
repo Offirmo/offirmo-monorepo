@@ -36,7 +36,7 @@ try {
 		listenToUncaughtErrors,
 		listenToUnhandledRejections,
 		decorateWithDetectedEnv,
-		getRootSEC,
+		getRootSXC,
 	} = lib_secⵧnode
 
 	listenToUncaughtErrors()
@@ -44,7 +44,7 @@ try {
 	decorateWithDetectedEnv()
 
 	const { getLogger } = lib_udaⵧnode
-	getRootSEC().injectDependencies({ logger: getLogger({ name: 'UTT', suggestedLevel: 'silly' }) })
+	getRootSXC().injectDependencies({ logger: getLogger({ name: 'UTT', suggestedLevel: 'silly' }) })
 }
 catch (err) {
 	// monorepo case where this module is not available / broken / not built yet

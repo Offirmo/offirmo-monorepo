@@ -1,13 +1,13 @@
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@offirmo-private/soft-execution-context'
 
 const LIB = 'ErrorBoundary'
 
-function getꓽSEC(parent) {
-	return (parent || getRootSEC())
+function getꓽSXC(parent) {
+	return (parent || getRootSXC())
 		.createChild()
 		.setLogicalStack({module: LIB})
 }
 
 export {
-	getꓽSEC,
+	getꓽSXC,
 }

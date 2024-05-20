@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import assert from 'tiny-invariant'
 import { asap_but_not_synchronous } from '@offirmo-private/async-utils'
 
-import { getꓽSEC } from './sec.js'
+import { getꓽSXC } from './sec.js'
 import { render_any } from './render-any.jsx'
 
 
@@ -17,9 +17,9 @@ class ErrorBoundary extends React.Component {
 	constructor(props) {
 		super(props)
 
-		const {name, SEC} = props
+		const {name, SXC} = props
 		assert(name, 'ErrorBoundary must have a name!!!')
-		this.SEC = getꓽSEC(SEC).createChild()
+		this.SXC = getꓽSXC(SXC).createChild()
 			.setLogicalStack({module: `EB:${name}`})
 			.setAnalyticsAndErrorDetails({
 				error_boundary: name,
@@ -38,7 +38,7 @@ class ErrorBoundary extends React.Component {
 	componentDidCatch = (error, errorInfo) => {
 		const {name} = this.props
 
-		this.SEC.xTryCatch(`handling error boundary "${name}"`, ({SEC, logger}) => {
+		this.SXC.xTryCatch(`handling error boundary "${name}"`, ({SXC, logger}) => {
 
 			if (this.mounted) {
 				// Catch errors in any components below and re-render with error message
@@ -54,7 +54,7 @@ class ErrorBoundary extends React.Component {
 				errorInfo,
 				isMounted: this.mounted,
 			})
-			SEC.fireAnalyticsEvent('react.error-boundary.triggered', {
+			SXC.fireAnalyticsEvent('react.error-boundary.triggered', {
 				err: error,
 				isMounted: this.mounted,
 			})

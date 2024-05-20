@@ -80,7 +80,7 @@ describe(`@offirmo/error-utils`, () => {
 						foo: 42,
 					},
 					_temp: {
-						SEC: {},
+						SXC: {},
 						statePath: 'TEST_STATE_PATH',
 					},
 
@@ -105,7 +105,7 @@ describe(`@offirmo/error-utils`, () => {
 						logicalStack: 'TST_LOGICAL_STACK',
 					},
 					_temp: {
-						SEC: {},
+						SXC: {},
 						statePath: 'TEST_STATE_PATH',
 					},
 				}
