@@ -4,7 +4,7 @@ import logger from '../logger'
 
 /////////////////////////////////////////////////
 
-//import { decorate_SEC } from '@tbrpg/definitions'
+//import { decorate_SXC } from '@tbrpg/definitions'
 import logger from '../logger.ts'
 
 async function init(): Promise<void> {
@@ -47,14 +47,14 @@ async function init(): Promise<void> {
 	import init_analytics from './services/analytics'
 	import init_analytics_ga4 from './services/analytics-ga4'
 	import init_cordova from './services/cordova'
-	import init_SEC from './services/sec'
+	import init_SXC from './services/sec'
 	import init_netlify from './services/user_account'
 	import Root from './components/root'
 
 	import './index-2.css'
 	import '@oh-my-rpg/assets--cursors/src/style.css'
 
-	init_SEC()
+	init_SXC()
 
 	get_loader().configure({
 		bg_color: 'rgb(84, 61, 70)',

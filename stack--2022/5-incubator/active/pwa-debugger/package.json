@@ -1,0 +1,66 @@
+{
+	"name": "@offirmo-private/viewport-debugger",
+	"description": "a tool for PWA",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"sideEffects": false,
+	"type": "module",
+
+	"source": "src/index.html",
+
+	"scripts": {
+		"clean": "monorepo-script--clean-package …dist …cache",
+
+		"_refresh--entry-points": "npx tsx src/~~gen/generate-entry-points/index.mts",
+		"refresh--build-variables": "monoropo-script--update-build-variables  --mode=ts  --outputDir=./src/entry-points",
+		"refresh--entry-points": "npm-run-all  _refresh--entry-points refresh--build-variables",
+
+		"start:parcel": "parcel serve src/entry-points/index.html --port 8080  --lazy  --no-autoinstall",
+		"dev": "npm-run-all  clean  refresh--build-variables  --parallel start:parcel",
+		"dev--pub": "ngrok http 8080 --domain=national-rat-supreme.ngrok-free.app",
+
+		"build:parcel": "parcel build src/entry-points/*.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
+		"copy-extra": "cp -R -f src/entry-points/.well-known src/entry-points/_* src/entry-points/*.json src/entry-points/favicon.ico src/entry-points/*.txt   dist",
+		"xxxensure-size": "size-limit",
+		"build": "npm-run-all  clean  refresh--build-variables  build:parcel"
+	},
+
+	"size-limit": [
+		{
+			"limit": "100kb",
+			"path": "dist/index.js"
+		}
+	],
+
+	"dependencies": {
+		"@offirmo-private/async-utils": "^0",
+		"@offirmo-private/css--foundation": "^0",
+		"@offirmo-private/css--utils": "^0",
+		"@offirmo-private/features-detection-browser": "*",
+		"@offirmo-private/poll-window-variable": "^0",
+		"@offirmo-private/react-error-boundary": "^0",
+		"@offirmo-private/rich-text-format": "^0",
+		"@offirmo-private/rich-text-format--to-react": "^0",
+		"@offirmo-private/soft-execution-context": "*",
+		"@offirmo-private/soft-execution-context--browser": "*",
+		"@offirmo-private/state-utils": "*",
+		"@offirmo-private/timestamps": "*",
+		"@offirmo/deferred": "^4",
+		"@offirmo/universal-debug-api-browser": "^1",
+		"react": "^18",
+		"react-dom": "^18",
+		"tiny-invariant": "^1",
+		"tslib": "^2"
+	},
+	"devDependencies": {
+		"@offirmo-private/generator--website-entry-points": "*",
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/toolbox--parcel": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@size-limit/file": "^11",
+		"npm-run-all": "^4"
+	}
+}

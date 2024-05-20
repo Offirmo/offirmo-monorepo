@@ -1,4 +1,4 @@
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@offirmo-private/soft-execution-context'
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
 
@@ -7,17 +7,17 @@ import { Immutable } from '@offirmo-private/ts-types'
 async function init(): Promise<void> {
 	// TODO one day select new analytics provider
 
-	const rootSEC = getRootSEC()
+	const rootSXC = getRootSXC()
 
-	rootSEC.emitter.on('analytics', function onAnalytics({SEC, eventId, details}) {
+	rootSXC.emitter.on('analytics', function onAnalytics({SXC, eventId, details}) {
 		// TODO analytics
 		console.groupCollapsed(`⚡  [TODO] Analytics! ⚡  ${eventId}`)
 		console.table('details', details)
 		console.groupEnd()
 	})
 
-	rootSEC.xTry('init:analytics', ({logger, SEC}) => {
-		logger.debug('Root SEC is now decorated with analytics details ✔', SEC.getAnalyticsDetails())
+	rootSXC.xTry('init:analytics', ({logger, SXC}) => {
+		logger.debug('Root SXC is now decorated with analytics details ✔', SXC.getAnalyticsDetails())
 	})
 }
 

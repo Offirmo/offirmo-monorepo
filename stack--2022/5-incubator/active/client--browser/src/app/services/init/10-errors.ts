@@ -1,4 +1,4 @@
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@offirmo-private/soft-execution-context'
 import {
 	listenToErrorEvents,
 	listenToUnhandledRejections,
@@ -11,14 +11,14 @@ import { CHANNEL } from '../channel.ts'
 const STYLES = 'padding: .5em; background-color: red; color: white; font-weight: bold;'
 
 async function init(): Promise<void> {
-	const rootSEC = getRootSEC()
+	const rootSXC = getRootSXC()
 
-	rootSEC.emitter.on('final-error', function onFinalError({SEC, err}) {
+	rootSXC.emitter.on('final-error', function onFinalError({SXC, err}) {
 		try {
 			// this code must be super extra safe!!!
 			// don't even use the advanced logger!
 
-			console.group('%cSEC "final-error" event!', STYLES)
+			console.group('%cSXC "final-error" event!', STYLES)
 
 			/*
 			// ignore some
@@ -28,7 +28,7 @@ async function init(): Promise<void> {
 			}*/
 
 			if (CHANNEL === 'dev') {
-				console.error('%c↑ error! (no report since dev)', STYLES, {SEC, err})
+				console.error('%c↑ error! (no report since dev)', STYLES, {SXC, err})
 				return
 			}
 
@@ -40,7 +40,7 @@ async function init(): Promise<void> {
 			console.groupEnd()
 		}
 		catch(err) {
-			console.log(`%c RECURSIVE CRASH!!! SEC ERROR HANDLING CAN ABSOLUTELY NOT CRASH!!! FIX THIS!!!`,
+			console.log(`%c RECURSIVE CRASH!!! SXC ERROR HANDLING CAN ABSOLUTELY NOT CRASH!!! FIX THIS!!!`,
 				STYLES,
 			)
 			console.log(err)
@@ -50,8 +50,8 @@ async function init(): Promise<void> {
 	listenToErrorEvents()
 	listenToUnhandledRejections()
 
-	rootSEC.xTry('init:SEC', ({logger, SEC}) => {
-		logger.debug('Root SEC is now decorated with error details ✔', SEC.getErrorDetails())
+	rootSXC.xTry('init:SXC', ({logger, SXC}) => {
+		logger.debug('Root SXC is now decorated with error details ✔', SXC.getErrorDetails())
 	})
 }
 
