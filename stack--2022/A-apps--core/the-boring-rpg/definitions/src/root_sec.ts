@@ -13,13 +13,13 @@ type TBRSoftExecutionContext = SoftExecutionContext<TBRInjections>
 
 /////////////////////
 
-function decorate_SEC(SEC: TBRSoftExecutionContext): TBRSoftExecutionContext {
-	SEC.setAnalyticsAndErrorDetails({
+function decorate_SXC(SXC: TBRSoftExecutionContext): TBRSoftExecutionContext {
+	SXC.setAnalyticsAndErrorDetails({
 		product: PRODUCT, // TODO LIB?
 		// TODO add more details
 	})
 
-	return SEC // for chaining
+	return SXC // for chaining
 }
 
 /////////////////////
@@ -27,5 +27,5 @@ function decorate_SEC(SEC: TBRSoftExecutionContext): TBRSoftExecutionContext {
 export {
 	type TBRInjections,
 	type TBRSoftExecutionContext,
-	decorate_SEC,
+	decorate_SXC,
 }

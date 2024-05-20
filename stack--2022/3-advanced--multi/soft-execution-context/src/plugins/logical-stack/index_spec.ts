@@ -4,18 +4,18 @@ import { error_to_string, displayError } from '@offirmo-private/print-error-to-t
 import { LIB } from '../../consts.js'
 import {
 	SoftExecutionContext,
-	getRootSEC,
-	_test_only__reset_root_SEC,
+	getRootSXC,
+	_test_only__reset_root_SXC,
 } from '../../index.js'
 
 
 describe(`${LIB}`, function () {
 	function _mocha_bug_clean_global() {
 		// https://github.com/mochajs/mocha/issues/4954
-		_test_only__reset_root_SEC()
+		_test_only__reset_root_SXC()
 	}
-	before(_test_only__reset_root_SEC)
-	afterEach(_test_only__reset_root_SEC)
+	before(_test_only__reset_root_SXC)
+	afterEach(_test_only__reset_root_SXC)
 
 
 	describe('plugins', function () {
@@ -25,16 +25,16 @@ describe(`${LIB}`, function () {
 			describe('usage -- direct', function () {
 
 				it('should work -- default', () => {
-					getRootSEC().xTry('level1', ({SEC: SEC1, ENV}) => {
+					getRootSXC().xTry('level1', ({SXC: SXC1, ENV}) => {
 
-						SEC1.xTry('level2', ({SEC: SEC2}) => {
+						SXC1.xTry('level2', ({SXC: SXC2}) => {
 							// we don't mind having "undefined", it prompts the user to properly configure the lib
-							expect(SEC2.getLogicalStack()).to.equal('›level1›level2')
-							expect(SEC2.getShortLogicalStack()).to.equal('undefined…level2')
-							expect(SEC1.getLogicalStack()).to.equal('›level1')
-							expect(SEC1.getShortLogicalStack()).to.equal('undefined…level1')
-							expect(getRootSEC().getLogicalStack()).to.equal('')
-							expect(getRootSEC().getShortLogicalStack()).to.equal('undefined…undefined')
+							expect(SXC2.getLogicalStack()).to.equal('›level1›level2')
+							expect(SXC2.getShortLogicalStack()).to.equal('undefined…level2')
+							expect(SXC1.getLogicalStack()).to.equal('›level1')
+							expect(SXC1.getShortLogicalStack()).to.equal('undefined…level1')
+							expect(getRootSXC().getLogicalStack()).to.equal('')
+							expect(getRootSXC().getShortLogicalStack()).to.equal('undefined…undefined')
 						})
 					})
 
@@ -42,19 +42,19 @@ describe(`${LIB}`, function () {
 				})
 
 				it('should work -- config', () => {
-					getRootSEC().setLogicalStack({
+					getRootSXC().setLogicalStack({
 						module: 'app'
 					})
-					getRootSEC().xTry('level1', ({SEC: SEC1, ENV}) => {
+					getRootSXC().xTry('level1', ({SXC: SXC1, ENV}) => {
 
-						SEC1.xTry('level2', ({SEC: SEC2}) => {
+						SXC1.xTry('level2', ({SXC: SXC2}) => {
 
-							expect(SEC2.getLogicalStack()).to.equal('app›level1›level2')
-							expect(SEC2.getShortLogicalStack()).to.equal('app…level2')
-							expect(SEC1.getLogicalStack()).to.equal('app›level1')
-							expect(SEC1.getShortLogicalStack()).to.equal('app…level1')
-							expect(getRootSEC().getLogicalStack()).to.equal('app')
-							expect(getRootSEC().getShortLogicalStack()).to.equal('app…undefined')
+							expect(SXC2.getLogicalStack()).to.equal('app›level1›level2')
+							expect(SXC2.getShortLogicalStack()).to.equal('app…level2')
+							expect(SXC1.getLogicalStack()).to.equal('app›level1')
+							expect(SXC1.getShortLogicalStack()).to.equal('app…level1')
+							expect(getRootSXC().getLogicalStack()).to.equal('app')
+							expect(getRootSXC().getShortLogicalStack()).to.equal('app…undefined')
 						})
 					})
 
@@ -64,35 +64,35 @@ describe(`${LIB}`, function () {
 
 			describe('usage -- in a lib', function() {
 				const LIB = 'FOO'
-				function getꓽSEC(parent?: SoftExecutionContext): SoftExecutionContext {
+				function getꓽSXC(parent?: SoftExecutionContext): SoftExecutionContext {
 					// TODO memoize ? (if !parent)
-					return (parent || getRootSEC())
+					return (parent || getRootSXC())
 						.createChild()
 						.setLogicalStack({module: LIB}) // <-- THIS
 				}
-				function hello(target: string, {SEC} = {} as { SEC?: SoftExecutionContext}): string {
-					return getꓽSEC(SEC).xTry('hello', ({SEC, ENV, logger}) => {
+				function hello(target: string, {SXC} = {} as { SXC?: SoftExecutionContext}): string {
+					return getꓽSXC(SXC).xTry('hello', ({SXC, ENV, logger}) => {
 
-						expect(SEC.getShortLogicalStack()).to.equal('FOO…hello') // always
-						expect(SEC.getLogicalStack().startsWith('FOO›')).to.be.true
-						expect(SEC.getLogicalStack().endsWith('›hello')).to.be.true
-						const err = (SEC as any)._decorateErrorWithLogicalStack(new Error('TEST'))
+						expect(SXC.getShortLogicalStack()).to.equal('FOO…hello') // always
+						expect(SXC.getLogicalStack().startsWith('FOO›')).to.be.true
+						expect(SXC.getLogicalStack().endsWith('›hello')).to.be.true
+						const err = (SXC as any)._decorateErrorWithLogicalStack(new Error('TEST'))
 						expect(err.message.startsWith('FOO…hello: ')).to.be.true // always
 
-						//logger.info('[This is a log entry]', {SEC, ENV})
-						return `Hello, ${target}! (from ${SEC.getLogicalStack()})`
+						//logger.info('[This is a log entry]', {SXC, ENV})
+						return `Hello, ${target}! (from ${SXC.getLogicalStack()})`
 					})
 				}
-				function polite_hello(target: string, {SEC} = {} as { SEC?: SoftExecutionContext}): string {
-					return getꓽSEC(SEC).xTry('add_honorifics', ({SEC, ENV, logger}) => {
+				function polite_hello(target: string, {SXC} = {} as { SXC?: SoftExecutionContext}): string {
+					return getꓽSXC(SXC).xTry('add_honorifics', ({SXC, ENV, logger}) => {
 
-						return hello(`Mx. ${target}`, {SEC})
+						return hello(`Mx. ${target}`, {SXC})
 					})
 				}
-				function great_politely(target: string, {SEC} = {} as { SEC?: SoftExecutionContext}) {
-					getꓽSEC(SEC).xTry('great', ({SEC, ENV, logger}) => {
+				function great_politely(target: string, {SXC} = {} as { SXC?: SoftExecutionContext}) {
+					getꓽSXC(SXC).xTry('great', ({SXC, ENV, logger}) => {
 
-						const s = polite_hello(target, {SEC})
+						const s = polite_hello(target, {SXC})
 						expect(s).to.equal('Hello, Mx. Offirmo! (from FOO›great›add_honorifics›hello)')
 					})
 				}
@@ -123,11 +123,11 @@ describe(`${LIB}`, function () {
 				context('on a new error', function () {
 
 					it('should work', () => {
-						getRootSEC().setLogicalStack({module: 'foo'})
+						getRootSXC().setLogicalStack({module: 'foo'})
 
-						getRootSEC().xTry('bar', ({SEC}) => {
+						getRootSXC().xTry('bar', ({SXC}) => {
 							const raw_error = new TypeError('TEST!')
-							const err = (SEC as any)._decorateErrorWithLogicalStack(raw_error)
+							const err = (SXC as any)._decorateErrorWithLogicalStack(raw_error)
 							//displayError(err)
 							//console.error(err.stack)
 							expect(err).to.equal(raw_error) // yes, this internal
@@ -139,11 +139,11 @@ describe(`${LIB}`, function () {
 					})
 
 					it('should change both the message and the stacktrace to avoid confusion', () => {
-						getRootSEC().setLogicalStack({module: 'foo'})
+						getRootSXC().setLogicalStack({module: 'foo'})
 
-						getRootSEC().xTry('bar', ({SEC}) => {
+						getRootSXC().xTry('bar', ({SXC}) => {
 							const raw_error = new TypeError('TEST!')
-							const err = (SEC as any)._decorateErrorWithLogicalStack(raw_error)
+							const err = (SXC as any)._decorateErrorWithLogicalStack(raw_error)
 							expect(err.message).to.equal('foo…bar: TEST!')
 							expect(err.stack.startsWith('TypeError: foo…bar: TEST!')).to.be.true
 						})
@@ -158,12 +158,12 @@ describe(`${LIB}`, function () {
 						let raw_error: any = null
 						let err_from_l2: any = null
 						let err_from_l1: any = null
-						getRootSEC().setLogicalStack({module: 'test'})
+						getRootSXC().setLogicalStack({module: 'test'})
 						try {
-							getRootSEC().xTry('level1', ({SEC: SEC1, ENV}) => {
+							getRootSXC().xTry('level1', ({SXC: SXC1, ENV}) => {
 
 								try {
-									SEC1.xTry('level2', ({SEC: SEC2}) => {
+									SXC1.xTry('level2', ({SXC: SXC2}) => {
 										raw_error = new TypeError('Test!')
 										throw raw_error
 									})

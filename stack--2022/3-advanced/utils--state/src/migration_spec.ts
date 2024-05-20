@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { Immutable } from '@offirmo-private/ts-types'
-import { SoftExecutionContext, getRootSEC } from '@offirmo-private/soft-execution-context'
+import { SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
 
 import { LIB } from './consts.js'
 
@@ -22,9 +22,9 @@ import {
 
 
 describe(`${LIB} - migration`, function() {
-	const TEST_SEC = getRootSEC()
+	const TEST_SXC = getRootSXC()
 	const LIB = '@offirmo-private/state-utils--UNIT-TEST'
-	TEST_SEC.setLogicalStack({module: LIB})
+	TEST_SXC.setLogicalStack({module: LIB})
 
 	describe('migrate_toꓽlatestⵧgeneric()', function() {
 
@@ -46,9 +46,9 @@ describe(`${LIB} - migration`, function() {
 				// subA: {}
 			}
 
-			const migrate_to_2: LastMigrationStep<State> = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+			const migrate_to_2: LastMigrationStep<State> = (SXC, legacy_state, hints, previous, legacy_schema_version) => {
 				if (legacy_schema_version < 1)
-					legacy_state = previous(SEC, legacy_state, hints)
+					legacy_state = previous(SXC, legacy_state, hints)
 
 				let state: State = {
 					...legacy_state as any,
@@ -64,9 +64,9 @@ describe(`${LIB} - migration`, function() {
 				return state
 			}
 
-			const migrate_to_1: MigrationStep = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+			const migrate_to_1: MigrationStep = (SXC, legacy_state, hints, previous, legacy_schema_version) => {
 				if (legacy_schema_version < 0)
-					legacy_state = previous(SEC, legacy_state, hints)
+					legacy_state = previous(SXC, legacy_state, hints)
 
 				let state: State = {
 					...legacy_state as any,
@@ -79,9 +79,9 @@ describe(`${LIB} - migration`, function() {
 				return state
 			}
 
-			function migrate_toꓽlatest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}, ): State {
+			function migrate_toꓽlatest(SXC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}, ): State {
 				return migrate_toꓽlatestⵧgeneric({
-					SEC,
+					SXC,
 
 					LIB,
 					SCHEMA_VERSION,
@@ -97,23 +97,23 @@ describe(`${LIB} - migration`, function() {
 			}
 
 			it('should work in nominal case 0 -> 2', () => {
-				expect(migrate_toꓽlatest(TEST_SEC, DEMO_STATE_v0, HINTS)).to.deep.equal(DEMO_STATE_v2)
+				expect(migrate_toꓽlatest(TEST_SXC, DEMO_STATE_v0, HINTS)).to.deep.equal(DEMO_STATE_v2)
 			})
 
 			it('should work in nominal case 1 -> 2', () => {
-				expect(migrate_toꓽlatest(TEST_SEC, DEMO_STATE_v1, HINTS)).to.deep.equal(DEMO_STATE_v2)
+				expect(migrate_toꓽlatest(TEST_SXC, DEMO_STATE_v1, HINTS)).to.deep.equal(DEMO_STATE_v2)
 			})
 
 			it('should work in nominal case 2 -> 2', () => {
-				//expect(migrate_toꓽlatest(TEST_SEC, DEMO_STATE_v2, HINTS)).to.deep.equal(DEMO_STATE_v2)
+				//expect(migrate_toꓽlatest(TEST_SXC, DEMO_STATE_v2, HINTS)).to.deep.equal(DEMO_STATE_v2)
 				// identity if already good version
-				expect(migrate_toꓽlatest(TEST_SEC, DEMO_STATE_v2, HINTS)).to.equal(DEMO_STATE_v2)
+				expect(migrate_toꓽlatest(TEST_SXC, DEMO_STATE_v2, HINTS)).to.equal(DEMO_STATE_v2)
 			})
 
 			it('should throw on end of pipeline (too old version)', () => {
-				function migrate_toꓽlatest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}, ): State {
+				function migrate_toꓽlatest(SXC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}, ): State {
 					return migrate_toꓽlatestⵧgeneric({
-						SEC,
+						SXC,
 
 						LIB,
 						SCHEMA_VERSION,
@@ -128,7 +128,7 @@ describe(`${LIB} - migration`, function() {
 					})
 				}
 
-				expect(() => migrate_toꓽlatest(TEST_SEC, DEMO_STATE_v0)).to.throw('migration')
+				expect(() => migrate_toꓽlatest(TEST_SXC, DEMO_STATE_v0)).to.throw('migration')
 			})
 		})
 

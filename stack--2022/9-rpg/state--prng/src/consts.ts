@@ -2,7 +2,7 @@ const LIB = '@oh-my-rpg/state-prng'
 
 const SCHEMA_VERSION: number = 4
 
-// TODO move in SEC
+// TODO move in SXC
 const DEBUG = true
 
 /////////////////////////////////////////////////

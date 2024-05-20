@@ -1,5 +1,6 @@
-[ ] +++ https://dev.to/anze_kop1tar/acronyms-you-should-know-when-going-to-a-job-interview-369l
 +++ https://developer.mozilla.org/en-US/curriculum/
+[ ] +++ https://dev.to/anze_kop1tar/acronyms-you-should-know-when-going-to-a-job-interview-369l
+[ ] TODO shearing layers https://en.wikipedia.org/wiki/Shearing_layers
 APIs web
 appli web
 architecture -- Islands
@@ -13,13 +14,8 @@ client/server -- multi-tier architecture -- 02 application
 client/server -- multi-tier architecture -- 03 business
 client/server -- multi-tier architecture -- 04 data access
 client/server -- multi-tier architecture https://en.wikipedia.org/wiki/Multitier_architecture
-components https://www.componentdriven.org/
 collaborative experiences https://zknill.io/posts/collaboration-no-crdts/
-realtime updates https://zknill.io/posts/how-to-adopt-realtime/
-realtime -- patterns -- Poke/pull
-realtime -- patterns -- Push state
-realtime -- patterns -- Push biz events
-realtime -- patterns -- Push state diff
+components https://www.componentdriven.org/
 CSS -- atomic
 CSS -- cascade https://2019.wattenberger.com/blog/css-cascade
 CSS -- color -- formats = hex, rgb(), hsl(), lch() https://www.joshwcomeau.com/css/color-formats/
@@ -72,6 +68,11 @@ perf metrics -- Time to First Byte (TTFB) = time taken by the browser to receive
 PWA https://whatpwacando.today/
 react
 react -- hooks
+realtime -- patterns -- Poke/pull
+realtime -- patterns -- Push biz events
+realtime -- patterns -- Push state
+realtime -- patterns -- Push state diff
+realtime updates https://zknill.io/posts/how-to-adopt-realtime/
 testing https://www.testingjavascript.com/
 UI -- Application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
 UI -- aria https://www.w3.org/WAI/ARIA/apg/
@@ -86,6 +87,6 @@ UX -- Above the fold = is the area of a webpage that fits in a browser window wi
 UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb
 UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb 
 viewport
-viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
 viewport -- large, small, dynamic
 viewport -- visual
+viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport

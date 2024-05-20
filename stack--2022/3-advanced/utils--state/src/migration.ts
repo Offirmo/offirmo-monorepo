@@ -17,7 +17,7 @@ import { getꓽschema_versionⵧloose, getꓽbaseⵧloose } from './selectors.js
 
 // the overall goal
 export type FullMigrateToLatestFn<State> = (
-	SEC: SoftExecutionContext,
+	SXC: SoftExecutionContext,
 	legacy_state: Immutable<any>,
 	hints?: Immutable<any>,
 ) => Immutable<State> // output must be immutable as well since we may return the input unchanged
@@ -33,7 +33,7 @@ const LIBS: Libs = {
 // Basic interface of a migration fn
 // for ex. able to migrate 1 version, v(n-1) -> v(n)
 export type GenericMigrationFn<State = any, OlderState = any> = (
-	SEC: SoftExecutionContext<any, any, any>,
+	SXC: SoftExecutionContext<any, any, any>,
 	legacy_state: Immutable<OlderState>,
 	hints: Immutable<any>,
 ) => Immutable<State> // must be immutable as well since we may return the input unchanged
@@ -42,7 +42,7 @@ export type GenericMigrationFn<State = any, OlderState = any> = (
 // Slightly more complex fn able to call a previous migration if the legacy state is not at a desired input level
 // should be able to handle v(0) -> v(n)
 export type MigrationStep<State = any, OlderState = any> = (
-	SEC: SoftExecutionContext<any, any, any>,
+	SXC: SoftExecutionContext<any, any, any>,
 	legacy_state: Immutable<OlderState>,
 	hints: Immutable<any>,
 	previous: GenericMigrationFn<OlderState>,
@@ -55,7 +55,7 @@ export type LastMigrationStep<State, OlderState = any> = MigrationStep<State, Ol
 
 
 export type CleanupStep<State> = (
-	SEC: SoftExecutionContext<any, any, any>,
+	SXC: SoftExecutionContext<any, any, any>,
 	state: Immutable<State>,
 	hints: Immutable<any>,
 ) => Immutable<State>
@@ -67,17 +67,17 @@ export type SubStatesMigrationFns = { [key: string]: GenericMigrationFn }
 const _get_state_summary = getꓽbaseⵧloose
 
 export function migrate_toꓽlatestⵧgeneric<State extends AnyOffirmoState>({
-	SEC,
+	SXC,
 
 	LIB,
 	SCHEMA_VERSION,
 	legacy_state,
 	hints,
 	sub_states_migrate_toꓽlatest, // no default to force thinking
-	cleanup = (SEC, state, hints) => state,
+	cleanup = (SXC, state, hints) => state,
 	pipeline,
 }: {
-	SEC: SoftExecutionContext
+	SXC: SoftExecutionContext
 	LIB: string
 	SCHEMA_VERSION: number
 	legacy_state: Immutable<any>
@@ -89,13 +89,13 @@ export function migrate_toꓽlatestⵧgeneric<State extends AnyOffirmoState>({
 		...MigrationStep[],
 	]>
 }): Immutable<State> {
-	return SEC.xTry('migrate_toꓽlatest', ({SEC, logger}) => {
+	return SXC.xTry('migrate_toꓽlatest', ({SXC, logger}) => {
 		const existing_version = getꓽschema_versionⵧloose(legacy_state as any)
 		console.groupCollapsed(`migration of schema ${ LIB } from v${ existing_version } to v${ SCHEMA_VERSION }`)
 
-		const RSEC = SEC
-		RSEC.setLogicalStack({ module: LIB })
-		RSEC.setAnalyticsAndErrorDetails({
+		const RSXC = SXC
+		RSXC.setLogicalStack({ module: LIB })
+		RSXC.setAnalyticsAndErrorDetails({
 			version_from: existing_version,
 			version_to: SCHEMA_VERSION,
 		})
@@ -107,13 +107,13 @@ export function migrate_toꓽlatestⵧgeneric<State extends AnyOffirmoState>({
 
 		if (existing_version < SCHEMA_VERSION) {
 			logger.info(`attempting to migrate schema of ${LIB} from v${existing_version} to v${SCHEMA_VERSION}…`)
-			RSEC.fireAnalyticsEvent('schema_migration.began')
+			RSXC.fireAnalyticsEvent('schema_migration.began')
 
 			/* recursive wrapper around the migration steps adding traces and try/catch
 			 */
 			function _recursively_migrate_down_the_pipeline(
 				index: number,
-				SEC: SoftExecutionContext,
+				SXC: SoftExecutionContext,
 				legacy_state: Immutable<any>,
 				hints: Immutable<any>,
 			): Immutable<any> {
@@ -122,7 +122,7 @@ export function migrate_toꓽlatestⵧgeneric<State extends AnyOffirmoState>({
 					? 'not-found'
 					: migrate_step?.name || 'unknown'
 
-				return RSEC.xTry('migration step:' + current_step_name, ({ SEC }) => {
+				return RSXC.xTry('migration step:' + current_step_name, ({ SXC }) => {
 					if (index >= pipeline.length) {
 						throw new Error(`No known migration for updating a v${getꓽschema_versionⵧloose(legacy_state)}!`)
 					}
@@ -133,7 +133,7 @@ export function migrate_toꓽlatestⵧgeneric<State extends AnyOffirmoState>({
 						_get_state_summary(legacy_state)
 					)
 					const state = migrate_step(
-						SEC,
+						SXC,
 						legacy_state,
 						hints,
 						_recursively_migrate_down_the_pipeline.bind(null, index + 1),
@@ -150,35 +150,35 @@ export function migrate_toꓽlatestⵧgeneric<State extends AnyOffirmoState>({
 
 			// launch the migration chain
 			try {
-				state = _recursively_migrate_down_the_pipeline(0, RSEC, state, hints) as Immutable<State>
+				state = _recursively_migrate_down_the_pipeline(0, RSXC, state, hints) as Immutable<State>
 			}
 			catch (err) {
 				logger.error(`failed to migrate schema of ${LIB} from v${existing_version} to v${SCHEMA_VERSION}!`)
-				RSEC.fireAnalyticsEvent('schema_migration.failed')
+				RSXC.fireAnalyticsEvent('schema_migration.failed')
 				throw err
 			}
 
 			logger.info(`${LIB}: schema migration successful.`,
 				_get_state_summary(state)
 			)
-			RSEC.fireAnalyticsEvent('schema_migration.ended')
+			RSXC.fireAnalyticsEvent('schema_migration.ended')
 		}
 
 		// migrate sub-reducers if any...
 		if (isꓽUTBundle(state)) {
-			state = _migrate_sub_states__bundle(SEC, state, sub_states_migrate_toꓽlatest, hints) as unknown as Immutable<State>
+			state = _migrate_sub_states__bundle(SXC, state, sub_states_migrate_toꓽlatest, hints) as unknown as Immutable<State>
 		}
 		else if (isꓽRootState(state)) {
-			state = _migrate_sub_states__root<BaseRootState>(SEC, state, sub_states_migrate_toꓽlatest, hints) as unknown as Immutable<State>
+			state = _migrate_sub_states__root<BaseRootState>(SXC, state, sub_states_migrate_toꓽlatest, hints) as unknown as Immutable<State>
 		}
 		else if (isꓽBaseState(state)) {
-			state = _migrate_sub_states__base<BaseState>(SEC, state as any, sub_states_migrate_toꓽlatest, hints) as unknown as Immutable<State>
+			state = _migrate_sub_states__base<BaseState>(SXC, state as any, sub_states_migrate_toꓽlatest, hints) as unknown as Immutable<State>
 		}
 		else {
 			assert(false, 'should be a recognized AnyOffirmoState!')
 		}
 
-		state = cleanup(SEC, state, hints)
+		state = cleanup(SXC, state, hints)
 
 		console.groupEnd()
 
@@ -187,7 +187,7 @@ export function migrate_toꓽlatestⵧgeneric<State extends AnyOffirmoState>({
 }
 
 function _migrate_sub_states__bundle(
-	SEC: SoftExecutionContext,
+	SXC: SoftExecutionContext,
 	state: Immutable<UTBundle<AnyBaseUState, AnyBaseTState>>,
 	sub_states_migrate_toꓽlatest: SubStatesMigrationFns,
 	hints: Immutable<any>,
@@ -234,7 +234,7 @@ function _migrate_sub_states__bundle(
 		let new_sub_ustate = previous_sub_ustate
 		let new_sub_tstate = previous_sub_tstate
 
-		SEC.xTry(`migration of sub-state "${key}"`, ({SEC, logger}) => {
+		SXC.xTry(`migration of sub-state "${key}"`, ({SXC, logger}) => {
 
 			if (sub_u_states_found.has(key) && sub_t_states_found.has(key)) {
 				// combo
@@ -243,7 +243,7 @@ function _migrate_sub_states__bundle(
 					_get_state_summary(legacy_sub_state as any)
 				)
 				;[new_sub_ustate, new_sub_tstate] = migrate_sub_to_latest(
-					SEC,
+					SXC,
 					legacy_sub_state,
 					sub_hints,
 				)
@@ -253,7 +253,7 @@ function _migrate_sub_states__bundle(
 					_get_state_summary(previous_sub_ustate)
 				)
 				new_sub_ustate = migrate_sub_to_latest(
-					SEC,
+					SXC,
 					previous_sub_ustate,
 					sub_hints,
 				)
@@ -263,7 +263,7 @@ function _migrate_sub_states__bundle(
 					_get_state_summary(previous_sub_tstate)
 				)
 				new_sub_tstate = migrate_sub_to_latest(
-					SEC,
+					SXC,
 					previous_sub_tstate,
 					sub_hints,
 				)
@@ -306,7 +306,7 @@ function _migrate_sub_states__bundle(
 }
 
 function _migrate_sub_states__root<State extends BaseRootState = AnyRootState>(
-	SEC: SoftExecutionContext,
+	SXC: SoftExecutionContext,
 	state: Immutable<State>,
 	sub_states_migrate_toꓽlatest: SubStatesMigrationFns,
 	hints: Immutable<any>,
@@ -315,7 +315,7 @@ function _migrate_sub_states__root<State extends BaseRootState = AnyRootState>(
 
 	const previous_state_as_bundle: UTBundle<AnyBaseUState, AnyBaseTState> = [ previous_u_state, previous_t_state ]
 	const migrated_bundle = _migrate_sub_states__bundle(
-		SEC,
+		SXC,
 		previous_state_as_bundle,
 		sub_states_migrate_toꓽlatest,
 		hints,
@@ -332,7 +332,7 @@ function _migrate_sub_states__root<State extends BaseRootState = AnyRootState>(
 }
 
 function _migrate_sub_states__base<State extends BaseState>(
-	SEC: SoftExecutionContext,
+	SXC: SoftExecutionContext,
 	state: Immutable<State>,
 	sub_states_migrate_toꓽlatest: SubStatesMigrationFns,
 	hints: Immutable<any>,

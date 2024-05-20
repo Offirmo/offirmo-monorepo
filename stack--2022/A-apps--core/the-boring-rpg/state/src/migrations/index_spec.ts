@@ -15,7 +15,7 @@ import * as MetaState from '@oh-my-rpg/state-meta'
 
 import { LIB, SCHEMA_VERSION } from '../consts.js'
 import { migrate_toꓽlatest } from './index.js'
-import { getꓽSEC } from '../services/sec.js'
+import { getꓽSXC } from '../services/sec.js'
 
 import { create } from '../index.js'
 import { DEMO_STATE } from '../examples/index.js'
@@ -30,11 +30,11 @@ describe(`${LIB} - schema migration`, function() {
 			//can_update_snapshots: true, // uncomment when updating
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA: () => {
-				const new_state = enforceꓽimmutable<any>(create(getꓽSEC()))
+				const new_state = enforceꓽimmutable<any>(create(getꓽSXC()))
 				//dumpꓽanyⵧprettified('fresh state', new_state)
 				return new_state
 			},
-			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSEC()),
+			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSXC()),
 			import_meta_url: import.meta.url, // for resolving the path below
 			relative_dir_path: '../../../src/migrations/migrations_of_blank_state_specs',
 			describe, context, it, expect,
@@ -66,7 +66,7 @@ describe(`${LIB} - schema migration`, function() {
 			migration_hints_for_chaining: MIGRATION_HINTS_FOR_DEMO_STATE,
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA: DEMO_STATE,
-			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSEC()),
+			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSXC()),
 			import_meta_url: import.meta.url, // for resolving the path below
 			relative_dir_path: '../../../src/migrations/migrations_of_active_state_specs',
 			describe, context, it, expect,
@@ -202,7 +202,7 @@ describe(`${LIB} - schema migration`, function() {
 				'meaningful_interaction_count': 12,
 			}
 
-			const new_state = migrate_toꓽlatest(getꓽSEC(), old_state)
+			const new_state = migrate_toꓽlatest(getꓽSXC(), old_state)
 
 			// this state is too old
 			// we just check that it resets without crashing
@@ -477,7 +477,7 @@ describe(`${LIB} - schema migration`, function() {
 				'meaningful_interaction_count': 485,
 			}
 
-			const new_state = migrate_toꓽlatest(getꓽSEC(), old_state)
+			const new_state = migrate_toꓽlatest(getꓽSXC(), old_state)
 			expect(new_state.u_state.progress.statistics.good_play_count).to.equal(429)
 			expect(new_state.u_state.progress.statistics.bad_play_count).to.equal(433 - 429)
 		})

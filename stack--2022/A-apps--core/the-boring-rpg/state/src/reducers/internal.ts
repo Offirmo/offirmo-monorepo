@@ -33,7 +33,7 @@ import {
 	is_inventory_full,
 } from '../selectors/index.js'
 
-import { getꓽSEC } from '../services/sec.js'
+import { getꓽSXC } from '../services/sec.js'
 
 import {STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC} from './create.js'
 
@@ -93,7 +93,7 @@ function _receive_stat_increase(state: Immutable<State>, stat: CharacterAttribut
 		...state,
 		u_state: {
 			...state.u_state,
-			avatar: increase_stat(getꓽSEC(), state.u_state.avatar, stat, amount),
+			avatar: increase_stat(getꓽSXC(), state.u_state.avatar, stat, amount),
 		},
 	}
 }

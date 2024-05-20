@@ -25,7 +25,7 @@ import * as MetaState from '@oh-my-rpg/state-meta'
 
 import { LIB } from '../consts.js'
 import { State } from '../types.js'
-import { getꓽSEC } from '../services/sec.js'
+import { getꓽSXC } from '../services/sec.js'
 import { getꓽavailable_classes } from '../selectors/index.js'
 
 import { _refresh_achievements } from './achievements/index.js'
@@ -125,7 +125,7 @@ function rename_avatar(previous_state: Immutable<State>, new_name: string, now_m
 
 		u_state: {
 			...state.u_state,
-			avatar: rename(getꓽSEC(), state.u_state.avatar, new_name),
+			avatar: rename(getꓽSXC(), state.u_state.avatar, new_name),
 			revision: previous_state.u_state.revision + 1,
 		},
 	}
@@ -144,7 +144,7 @@ function change_avatar_class(previous_state: Immutable<State>, new_class: Charac
 
 		u_state: {
 			...state.u_state,
-			avatar: switch_class(getꓽSEC(), state.u_state.avatar, new_class),
+			avatar: switch_class(getꓽSXC(), state.u_state.avatar, new_class),
 			revision: previous_state.u_state.revision + 1,
 		},
 	}

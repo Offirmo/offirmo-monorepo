@@ -213,7 +213,7 @@ function _getꓽhistorical_neighbor_hints_with_no_redundancy(state: Immutable<St
 	return historical_hints
 }
 
-// this extra SECONDARY "on_info_read..." happens on consolidation, requires ALL files to have all the PRIMARY loaded
+// this extra SXCONDARY "on_info_read..." happens on consolidation, requires ALL files to have all the PRIMARY loaded
 export function on_info_read__current_neighbors_primary_hints(
 	state: Immutable<State>,
 	neighbor_hints: Immutable<NeighborHints>,

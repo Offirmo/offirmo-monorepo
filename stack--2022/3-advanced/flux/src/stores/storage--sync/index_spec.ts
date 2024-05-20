@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import { elapsed_time_ms } from '@offirmo-private/async-utils'
 
 import { LIB } from '../../consts.js'
-import { getꓽSEC } from '../../services/sec.js'
+import { getꓽSXC } from '../../services/sec.js'
 
 import {
 	createꓽstoreⵧlocal_storage,
@@ -26,7 +26,7 @@ describe(`${LIB}`, function() {
 
 		function create() {
 			return createꓽstoreⵧlocal_storage({
-				SEC: getꓽSEC(),
+				SXC: getꓽSXC(),
 				SCHEMA_VERSION: DemoStateLib.SCHEMA_VERSION,
 				storage,
 				storage_keys_radix: KEY_RADIX,
@@ -50,7 +50,7 @@ describe(`${LIB}`, function() {
 		describe('standard store interface', function() {
 
 			itᐧshouldᐧbeᐧaᐧstandardᐧstore((DemoStateLib) => createꓽstoreⵧlocal_storage({
-					SEC: getꓽSEC(),
+					SXC: getꓽSXC(),
 					storage: createꓽstorageⵧin_mem(),
 					storage_keys_radix: 'foo',
 					SCHEMA_VERSION: DemoStateLib.SCHEMA_VERSION,

@@ -1,7 +1,7 @@
 
 const LIB = 'soft-execution-context'
 
-const INTERNAL_PROP = '_SEC'
+const INTERNAL_PROP = '_SXC'
 
 /////////////////////////////////////////////////
 

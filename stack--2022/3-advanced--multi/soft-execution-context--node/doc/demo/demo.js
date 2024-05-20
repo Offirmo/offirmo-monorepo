@@ -5,7 +5,7 @@
 /* eslint-disable no-unused-vars */
 
 const { createLogger } = require('@offirmo/practical-logger-node')
-const { getRootSEC } = require('@offirmo-private/soft-execution-context')
+const { getRootSXC } = require('@offirmo-private/soft-execution-context')
 
 const {
 	listenToUncaughtErrors,
@@ -14,7 +14,7 @@ const {
 } = require('../..')
 const good_lib  = require('./good_lib.js')
 
-const APP = 'SEC_NODE_DEMO'
+const APP = 'SXC_NODE_DEMO'
 
 const logger = createLogger({
 	name: APP,
@@ -24,7 +24,7 @@ const logger = createLogger({
 logger.notice(`Hello from ${APP}...`)
 
 
-const SEC = getRootSEC()
+const SXC = getRootSXC()
 	.setLogicalStack({
 		module: APP,
 	})
@@ -32,18 +32,18 @@ const SEC = getRootSEC()
 		logger,
 	})
 
-SEC.emitter.on('final-error', function onError({SEC, err}) {
+SXC.emitter.on('final-error', function onError({SXC, err}) {
 	logger.log('that', {err})
 
 	// or direct to reporter
-	SEC.fireAnalyticsEvent('error', {
+	SXC.fireAnalyticsEvent('error', {
 		...err.details,
 		message: err.message,
 	})
 })
 
 
-SEC.emitter.on('analytics', function onError({SEC, eventId, details}) {
+SXC.emitter.on('analytics', function onError({SXC, eventId, details}) {
 	console.groupCollapsed(`⚡  Analytics! ⚡  ${eventId}`)
 	console.log('details', details)
 	console.groupEnd()
@@ -54,13 +54,13 @@ listenToUnhandledRejections()
 decorateWithDetectedEnv()
 
 // Top uses tryCatch
-SEC.xTryCatch('starting', ({SEC, logger}) => {
-	const good_lib_inst = good_lib.create({SEC})
-	SEC.xTry('calling good lib', () => good_lib_inst.foo_sync({x: 1}))
+SXC.xTryCatch('starting', ({SXC, logger}) => {
+	const good_lib_inst = good_lib.create({SXC})
+	SXC.xTry('calling good lib', () => good_lib_inst.foo_sync({x: 1}))
 
 	//throw new Error('Ha ha')
 
-	SEC.xPromiseTry('crashing in a promise', () => {
+	SXC.xPromiseTry('crashing in a promise', () => {
 		throw new Error('Ho ho')
 	})
 })

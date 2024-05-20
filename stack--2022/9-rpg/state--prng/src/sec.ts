@@ -1,13 +1,13 @@
 import assert from 'tiny-invariant'
-import { SoftExecutionContext, getRootSEC } from '@offirmo-private/soft-execution-context'
+import { SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
 import { Logger } from '@offirmo/practical-logger-types'
 
 import { LIB } from './consts.js'
 
 /////////////////////////////////////////////////
 
-function getꓽSEC(parent?: SoftExecutionContext): SoftExecutionContext {
-	return (parent || getRootSEC())
+function getꓽSXC(parent?: SoftExecutionContext): SoftExecutionContext {
+	return (parent || getRootSXC())
 		.createChild()
 		.setLogicalStack({ module: LIB })
 		.setAnalyticsAndErrorDetails({
@@ -15,9 +15,9 @@ function getꓽSEC(parent?: SoftExecutionContext): SoftExecutionContext {
 		})
 }
 
-function getꓽlogger(SEC: SoftExecutionContext = getꓽSEC()): Logger {
-	const { logger } = SEC.getInjectedDependencies()
-	assert(logger.addCommonDetails, `${LIB}: expecting a SEC-injected Offirmo Practical Logger!`)
+function getꓽlogger(SXC: SoftExecutionContext = getꓽSXC()): Logger {
+	const { logger } = SXC.getInjectedDependencies()
+	assert(logger.addCommonDetails, `${LIB}: expecting a SXC-injected Offirmo Practical Logger!`)
 	return logger
 }
 
@@ -25,6 +25,6 @@ function getꓽlogger(SEC: SoftExecutionContext = getꓽSEC()): Logger {
 
 export {
 	type SoftExecutionContext, // for convenience
-	getꓽSEC,
+	getꓽSXC,
 	getꓽlogger,
 }

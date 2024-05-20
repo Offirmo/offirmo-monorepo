@@ -1,22 +1,22 @@
 /* eslint-disable no-unused-vars */
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@offirmo-private/soft-execution-context'
 
 const LIB = 'GOOD_LIB'
 
-function getꓽSEC(parent) {
-	return (parent || getRootSEC())
+function getꓽSXC(parent) {
+	return (parent || getRootSXC())
 		.createChild()
 		.setLogicalStack({module: LIB})
 }
 
 let instance_count = 0
 
-function create({SEC} = {}) {
+function create({SXC} = {}) {
 	instance_count++
-	SEC = getꓽSEC(SEC)
+	SXC = getꓽSXC(SXC)
 
 	// TODO add an id?
-	return SEC.xTryCatch(`instantiating#${instance_count}`, ({logger, ENV}) => {
+	return SXC.xTryCatch(`instantiating#${instance_count}`, ({logger, ENV}) => {
 		// test
 		/*
 		;[
@@ -38,7 +38,7 @@ function create({SEC} = {}) {
 */
 
 		function foo_sync({x} = {}) {
-			SEC.xTry(foo_sync.name, () => {
+			SXC.xTry(foo_sync.name, () => {
 				if (!x) {
 					throw new Error('Missing arg x!') // msg will/should be auto-prefixed :-)
 				}
@@ -48,7 +48,7 @@ function create({SEC} = {}) {
 		}
 
 		async function foo_async() {
-			return SEC.xPromiseTry(foo_async.name, ({logger}) => {
+			return SXC.xPromiseTry(foo_async.name, ({logger}) => {
 				logger.log('attempting to do X...')
 				return new Promise((resolve, reject) => {
 					setTimeout(() => reject(new Error('failed to do X in time!')), 100) // msg will/should be auto-prefixed :-)

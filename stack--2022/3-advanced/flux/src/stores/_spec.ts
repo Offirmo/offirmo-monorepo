@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { LIB } from '../consts.js'
-import { getꓽSEC } from '../services/sec.js'
+import { getꓽSXC } from '../services/sec.js'
 import { Store } from '../types'
 
 import * as DemoStateLib from '../_test/state-demo/index.js'

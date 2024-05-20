@@ -29,7 +29,7 @@ TODO All states (and logic) having...
 * ☑ readonly<>
 * ☐ immu
 * ☐ enforce_immu
-* ☐ SEC
+* ☐ SXC
 * ☐ revision
 * ☐ examples
 * ☐ split ustate / tstate / zstate

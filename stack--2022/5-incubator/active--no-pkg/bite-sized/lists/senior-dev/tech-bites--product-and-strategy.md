@@ -1,4 +1,6 @@
 6 Reasons Users Hate Your New Feature https://www.slicedbreaddesign.com/blog/6-reasons-users-hate-your-new-feature
+active users -- daily (DAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
+active users -- monthly (MAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
 average revenue per user (ARPU)
 churn
 earliest -- 01 feedback-able product (EFP)

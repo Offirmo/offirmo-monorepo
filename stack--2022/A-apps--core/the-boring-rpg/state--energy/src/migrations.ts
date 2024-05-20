@@ -14,9 +14,9 @@ const MIGRATION_HINTS_FOR_TESTS: any = enforceꓽimmutable<any>({
 
 type StateForMigration = [UState, TState]
 
-function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any> = {}): Immutable<StateForMigration> {
+function migrate_toꓽlatest(SXC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any> = {}): Immutable<StateForMigration> {
 	return migrate_toꓽlatestⵧgeneric<StateForMigration>({
-		SEC: SEC as any,
+		SXC: SXC as any,
 
 		LIB,
 		SCHEMA_VERSION,
@@ -33,10 +33,10 @@ function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: Readonl
 
 /////////////////////
 
-const migrate_to_4x: LastMigrationStep<StateForMigration, [any, any]> = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+const migrate_to_4x: LastMigrationStep<StateForMigration, [any, any]> = (SXC, legacy_state, hints, previous, legacy_schema_version) => {
 	//console.log('hello from migrate_to_4x', legacy_state, hints, previous, legacy_schema_version)
 	if (legacy_schema_version < 3)
-		legacy_state = previous(SEC, legacy_state, hints)
+		legacy_state = previous(SXC, legacy_state, hints)
 
 	let [ u_state, t_state ] = legacy_state
 	u_state = {

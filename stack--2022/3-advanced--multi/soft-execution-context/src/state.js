@@ -8,7 +8,7 @@ function create(parent_state) {
 		sid: instance_count++, // not really useful yet, but helps debug
 		parent: parent_state || null,
 		plugins: {},
-		cache: {}, // per-SEC cache for complex computations
+		cache: {}, // per-SXC cache for complex computations
 	}
 }
 

@@ -1,35 +1,35 @@
 import os from 'node:os'
 
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@offirmo-private/soft-execution-context'
 
 /////////////////////
 
 // TODO protect from double install
 
 function listenToUncaughtErrors() {
-	const SEC = getRootSEC()
+	const SXC = getRootSXC()
 		.createChild()
 		.setLogicalStack({operation: '(node/uncaught)'})
 
 	process.on('uncaughtException', err => {
-		SEC.handleError(err, 'node/uncaught')
+		SXC.handleError(err, 'node/uncaught')
 	})
 }
 
 
 function listenToUnhandledRejections() {
-	const SEC = getRootSEC()
+	const SXC = getRootSXC()
 		.createChild()
 		.setLogicalStack({operation: '(node/unhandled rejection)'})
 
 	process.on('unhandledRejection', err => {
-		SEC.handleError(err, 'node/unhandled rejection')
+		SXC.handleError(err, 'node/unhandled rejection')
 	})
 }
 
 
 function decorateWithDetectedEnv() {
-	const SEC = getRootSEC()
+	const SXC = getRootSXC()
 
 	// TODO normalize browser/os detection
 	const details = {
@@ -39,12 +39,12 @@ function decorateWithDetectedEnv() {
 		os_type: os.type(),
 	}
 
-	SEC.setAnalyticsAndErrorDetails(details)
+	SXC.setAnalyticsAndErrorDetails(details)
 }
 
 // for unit tests only, for convenience
 function _force_set_level_of_uda_default_logger(suggestedLevel) {
-	let logger = getRootSEC().getInjectedDependencies().logger // can be console or UDA
+	let logger = getRootSXC().getInjectedDependencies().logger // can be console or UDA
 	if (!logger.setLevel) {
 		try {
 			try {
@@ -55,7 +55,7 @@ function _force_set_level_of_uda_default_logger(suggestedLevel) {
 				//const { getLogger } = require('../../universal-debug-api-node')
 				//logger = getLogger({ suggestedLevel })
 			}
-			getRootSEC().injectDependencies({ logger })
+			getRootSXC().injectDependencies({ logger })
 		} catch {}
 	}
 

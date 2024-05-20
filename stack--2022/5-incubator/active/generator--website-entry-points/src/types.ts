@@ -101,8 +101,8 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	app_categories?: Category[] // ??
 	wantsꓽinstall?:
 		| false // won't provide much benefit, no need to advertise it
-		| 'partial' // not enough to be automatically "prompted to install" so we may want to advertise it in JS
-		| 'prompt' // full to the point the browser is expected to prompt https://web.dev/articles/install-criteria
+		| 'partial' // not capable enough to be eligible for "prompt to install" so we may want to advertise it in JS
+		| 'prompt' // fully capable to the point the browser is expected to prompt https://web.dev/articles/install-criteria
 		| 'redirect' // we want to redirect to an app store TODO clarify
 	titleⵧapp?: Descriptionⳇtitle
 	descriptionⵧapp?: string

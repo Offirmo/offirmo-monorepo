@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { createLogger } from '@offirmo/practical-logger-browser'
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC } from '@offirmo-private/soft-execution-context'
 
 import {
 	listenToErrorEvents,
@@ -9,7 +9,7 @@ import {
 } from '../src/index.js'
 import * as good_lib from './good_lib.js'
 
-const APP = 'SEC_BROWSER_DEMO'
+const APP = 'SXC_BROWSER_DEMO'
 
 const logger = createLogger({
 	name: APP,
@@ -19,7 +19,7 @@ const logger = createLogger({
 logger.notice(`Hello from ${APP}...`)
 
 
-const SEC = getRootSEC()
+const SXC = getRootSXC()
 	.setLogicalStack({
 		module: APP,
 	})
@@ -27,7 +27,7 @@ const SEC = getRootSEC()
 		logger,
 	})
 
-SEC.emitter.on('final-error', function onError({SEC, err}) {
+SXC.emitter.on('final-error', function onError({SXC, err}) {
 	const styles = {
 		error: 'color: red; font-weight: bold',
 	}
@@ -38,14 +38,14 @@ SEC.emitter.on('final-error', function onError({SEC, err}) {
 	console.log(err)
 	console.groupEnd()
 
-	SEC.fireAnalyticsEvent('error', {
+	SXC.fireAnalyticsEvent('error', {
 		...err.details,
 		message: err.message,
 	})
 })
 
 
-SEC.emitter.on('analytics', function onError({SEC, eventId, details}) {
+SXC.emitter.on('analytics', function onError({SXC, eventId, details}) {
 	console.groupCollapsed(`⚡ Analytics! ⚡ "${eventId}"`)
 	console.log(`eventId: "${eventId}"`)
 	console.log('details', details)
@@ -57,13 +57,13 @@ listenToUnhandledRejections()
 decorateWithDetectedEnv()
 
 // Top uses tryCatch
-SEC.xTry('starting', ({SEC, logger}) => {
-	const good_lib_inst = good_lib.create({SEC})
-	SEC.xTry('calling good lib', () => good_lib_inst.foo_sync({x: 1}))
+SXC.xTry('starting', ({SXC, logger}) => {
+	const good_lib_inst = good_lib.create({SXC})
+	SXC.xTry('calling good lib', () => good_lib_inst.foo_sync({x: 1}))
 
 	throw new Error('Ha ha')
 /*
-	SEC.xPromiseTry('crashing in a promise', () => {
+	SXC.xPromiseTry('crashing in a promise', () => {
 		throw new Error('Ho ho')
 	})*/
 })

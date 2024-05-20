@@ -9,7 +9,7 @@ import {
 	LOGICAL_STACK_SEPARATOR_NON_ADJACENT,
 } from './consts.js'
 import * as State from './state.js'
-import { _getSECStatePath } from '../../utils.js'
+import { _getSXCStatePath } from '../../utils.js'
 
 const PLUGIN_ID = 'logical_stack'
 
@@ -55,8 +55,8 @@ const PLUGIN = {
 	augment: prototype => {
 
 		prototype.setLogicalStack = function setLogicalStack({module, operation}) {
-			const SEC = this
-			let root_state = SEC[INTERNAL_PROP]
+			const SXC = this
+			let root_state = SXC[INTERNAL_PROP]
 
 			root_state = TopState.reduce_plugin(root_state, PLUGIN_ID, state => {
 				if (module)
@@ -67,16 +67,16 @@ const PLUGIN = {
 				return state
 			})
 
-			SEC[INTERNAL_PROP] = root_state
+			SXC[INTERNAL_PROP] = root_state
 
-			return SEC
+			return SXC
 		}
 
 		prototype.getLogicalStack = function getLogicalStack() {
-			const SEC = this
+			const SXC = this
 
 			return _reduceStatePathToLogicalStack(
-				_getSECStatePath(SEC),
+				_getSXCStatePath(SXC),
 			)
 		}
 
@@ -93,16 +93,16 @@ const PLUGIN = {
 		// internal only
 		// expects an already normalized error (through @offirmo/error-utils)
 		prototype._decorateErrorWithLogicalStack = function _decorateErrorWithLogicalStack(err) {
-			const SEC = this
+			const SXC = this
 
 			err._temp = err._temp || {}
 			err.details = err.details || {}
 
 			const logicalStack = {
-				full: SEC.getLogicalStack(),
+				full: SXC.getLogicalStack(),
 			}
 
-			if (err._temp.SEC) {
+			if (err._temp.SXC) {
 				// OK this error is already decorated.
 				// Thus the message is also already decorated, don't touch it.
 
@@ -111,10 +111,10 @@ const PLUGIN = {
 					// ok, logical stack already chained, nothing to add
 				}
 				else {
-					// SEC chain has branched, reconcile paths
+					// SXC chain has branched, reconcile paths
 					// OK maybe overkill...
 					const other_path = err._temp.statePath
-					const current_path = _getSECStatePath(SEC)
+					const current_path = _getSXCStatePath(SXC)
 
 					// find common path
 					let last_common_index = 0
@@ -136,14 +136,14 @@ const PLUGIN = {
 				}
 			}
 			else {
-				err._temp.SEC = SEC
-				err._temp.statePath = _getSECStatePath(SEC)
+				err._temp.SXC = SXC
+				err._temp.statePath = _getSXCStatePath(SXC)
 
-				logicalStack.short = SEC.getShortLogicalStack()
+				logicalStack.short = SXC.getShortLogicalStack()
 				if (err.message.startsWith(logicalStack.short)) {
 					// can that happen??? It's a bug!
 					/* eslint-disable no-console */
-					console.warn('UNEXPECTED SEC non-decorated error already prefixed??')
+					console.warn('UNEXPECTED SXC non-decorated error already prefixed??')
 					/* eslint-enable no-console */
 				}
 				else {

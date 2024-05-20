@@ -1,6 +1,6 @@
 import {
 	decorateWithDetectedEnv,
-	getRootSEC,
+	getRootSXC,
 } from '@offirmo-private/soft-execution-context--browser'
 
 import { LIB } from '../../consts.ts'
@@ -9,23 +9,23 @@ import logger from '../logger.ts'
 /////////////////////////////////////////////////
 
 async function init(): Promise<void> {
-	const rootSEC = getRootSEC()
+	const rootSXC = getRootSXC()
 
-	decorateWithDetectedEnv(rootSEC)
+	decorateWithDetectedEnv(rootSXC)
 
-	rootSEC.setLogicalStack({ module: LIB })
+	rootSXC.setLogicalStack({ module: LIB })
 
-	rootSEC.injectDependencies({
+	rootSXC.injectDependencies({
 		logger,
 	})
 
-	rootSEC.setAnalyticsAndErrorDetails({
+	rootSXC.setAnalyticsAndErrorDetails({
 	})
 
-	rootSEC.xTry('init:SEC', ({logger, SEC}) => {
-		logger.debug('Root Soft Execution Context initialized.', rootSEC)
-		logger.debug('Root SEC is now decorated with a logger ✔')
-		logger.debug('Root SEC is now decorated with env infos ✔', SEC.getAnalyticsDetails())
+	rootSXC.xTry('init:SXC', ({logger, SXC}) => {
+		logger.debug('Root Soft Execution Context initialized.', rootSXC)
+		logger.debug('Root SXC is now decorated with a logger ✔')
+		logger.debug('Root SXC is now decorated with env infos ✔', SXC.getAnalyticsDetails())
 	})
 }
 

@@ -19,7 +19,7 @@ TODO remove full logger
 
 ## Introduction
 
-Note: "Soft Execution Context" is abbreviated SEC everywhere.
+Note: "Soft Execution Context" is abbreviated SXC everywhere.
 
 Objectives:
 * isomorphic, for node and browser
@@ -44,13 +44,13 @@ BE DEFENSIVE !!!
 
 #### Hierarchy
 
-Each SEC is linked to a parent, forming a graph.
+Each SXC is linked to a parent, forming a graph.
 
-Thus, a SEC is usually created from a parent with `parentSEC.createChild()`.
+Thus, a SXC is usually created from a parent with `parentSXC.createChild()`.
 
-There is always a unique (singleton) top SEC. It is lazily created on call of `getRootSEC()`.
+There is always a unique (singleton) top SXC. It is lazily created on call of `getRootSXC()`.
 
-However, this root SEC can be customized like any other SEC.
+However, this root SXC can be customized like any other SXC.
 
 
 ### requisites
@@ -60,47 +60,47 @@ babel-polyfill may be needed? TODO check
 
 ```js
 
-SEC.injectDependencies({
+SXC.injectDependencies({
 	foo: 42,
 })
-const { ENV, SEC, logger, foo } = SEC.getInjectedDependencies()
+const { ENV, SXC, logger, foo } = SXC.getInjectedDependencies()
 
 /// SYNCHRONOUS
 // won't catch
-SEC.xTry(operation, ({SEC, logger}) => {
+SXC.xTry(operation, ({SXC, logger}) => {
 	...
 })
 // !! will auto-catch, be careful!! (ex. used at top level)
-SEC.xTryCatch(...)
+SXC.xTryCatch(...)
 
 
 /// ASYNCHRONOUS
 // classic Promise.try
-return await SEC.xPromiseTry(operation, async ({SEC, logger}) => {
+return await SXC.xPromiseTry(operation, async ({SXC, logger}) => {
 	...
 })
 // !! will auto-catch, be careful!!
-SEC.xPromiseCatch(operation, promise)
-SEC.xPromiseTryCatch(...)
+SXC.xPromiseCatch(operation, promise)
+SXC.xPromiseTryCatch(...)
 
 
 
-SEC.setLogicalStack({
+SXC.setLogicalStack({
 	module: LIB,
 	operation: ...
 })
 
-SEC.getLogicalStack()
-SEC.getShortLogicalStack()
+SXC.getLogicalStack()
+SXC.getShortLogicalStack()
 
-SEC.emitter.emit('analytics', { SEC, eventId, details })
+SXC.emitter.emit('analytics', { SXC, eventId, details })
 ```
 
 ### Injections
 
 | value                   | Injected | Analytics | Error context | notes |
 |-------------------------|----------|-----------|---------------|------------- |
-| `SEC`                   | yes✅    | -         | -             | the current Software Execution Context |
+| `SXC`                   | yes✅    | -         | -             | the current Software Execution Context |
 | `logger`                | yes✅     | -         | -             | default to console |
 | `NODE_ENV`              | yes✅     | -         | -             | intended usage: if "development", may activate extra error checks, extra error reporting (cf. React) Mirror of NODE_ENV at evaluation time, defaulting to `'development'` if not set. `'production'` or `development` |
 | `ENV`                   | yes✅     | yes✅      | yes✅       | less connoted alias of `NODE_ENV` 😉 |
@@ -118,12 +118,12 @@ SEC.emitter.emit('analytics', { SEC, eventId, details })
 
 ### Event emitter
 
-All SEC are sharing a common event emitter. Please do NOT abuse!
+All SXC are sharing a common event emitter. Please do NOT abuse!
 
-DO NOT EMIT SEC events, it's usually not what you want to do.
+DO NOT EMIT SXC events, it's usually not what you want to do.
 
 Events:
-- `final-error`: an error than no SEC can handle or mitigate (usually a crash).
+- `final-error`: an error than no SXC can handle or mitigate (usually a crash).
   This event should be listened to by final reporters, like Sentry,
   or to display a crash report.
 
@@ -156,19 +156,19 @@ Events:
 			}
 		},
 	},
-	cache: { // per-SEC cache for complex computations
+	cache: { // per-SXC cache for complex computations
 	},
 }
 
 ```
 
 ```js
-SEC._decorateErrorWithDetails(err)
-SEC._decorateErrorWithLogicalStack(err)
+SXC._decorateErrorWithDetails(err)
+SXC._decorateErrorWithLogicalStack(err)
 
 flattenToOwn(object)
-_flattenSEC(SEC)
-_getSECStatePath(SEC)
+_flattenSXC(SXC)
+_getSXCStatePath(SXC)
 ```
 
 ### Contributing

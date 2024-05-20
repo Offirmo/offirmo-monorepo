@@ -4,7 +4,7 @@ import { SoftExecutionContext } from './types.js'
 
 /////////////////////////////////////////////////
 
-function decorateWithDetectedEnv(SEC: SoftExecutionContext<any>) {
+function decorateWithDetectedEnv(SXC: SoftExecutionContext<any>) {
 	const ENV = (() => {
 		try {
 			if (typeof process !== 'undefined' && typeof process.env.NODE_ENV === 'string')
@@ -22,7 +22,7 @@ function decorateWithDetectedEnv(SEC: SoftExecutionContext<any>) {
 	const CHANNEL = 'dev'
 	const SESSION_START_TIME_MS = getꓽUTC_timestamp‿ms()
 
-	SEC.injectDependencies({
+	SXC.injectDependencies({
 		ENV,
 		'NODE_ENV': ENV, // yes, intentional 1) ENV = NODE_ENV 2) default value
 		IS_DEV_MODE,
@@ -31,7 +31,7 @@ function decorateWithDetectedEnv(SEC: SoftExecutionContext<any>) {
 		SESSION_START_TIME_MS,
 	})
 
-	SEC.setAnalyticsAndErrorDetails({
+	SXC.setAnalyticsAndErrorDetails({
 		ENV,
 		CHANNEL,
 	})

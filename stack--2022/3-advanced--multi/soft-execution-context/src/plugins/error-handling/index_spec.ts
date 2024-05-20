@@ -4,18 +4,18 @@ import { displayError } from '@offirmo-private/print-error-to-terminal'
 import { LIB } from '../../consts.js'
 import {
 	SoftExecutionContext,
-	getRootSEC,
-	_test_only__reset_root_SEC,
+	getRootSXC,
+	_test_only__reset_root_SXC,
 } from '../../index.js'
 
 
 describe(`${LIB}`, function () {
 	function _mocha_bug_clean_global() {
 		// https://github.com/mochajs/mocha/issues/4954
-		_test_only__reset_root_SEC()
+		_test_only__reset_root_SXC()
 	}
-	before(_test_only__reset_root_SEC)
-	afterEach(_test_only__reset_root_SEC)
+	before(_test_only__reset_root_SXC)
+	afterEach(_test_only__reset_root_SXC)
 
 
 	describe('plugins', function () {
@@ -25,9 +25,9 @@ describe(`${LIB}`, function () {
 			describe('details storage and retrieval', function() {
 
 				it('should provide default details', () => {
-					getRootSEC().setLogicalStack({module: 'test'})
+					getRootSXC().setLogicalStack({module: 'test'})
 					try {
-						getRootSEC().xTry('test', () => {
+						getRootSXC().xTry('test', () => {
 							const raw_error = new Error('Test error!')
 							throw raw_error
 						})
@@ -56,7 +56,7 @@ describe(`${LIB}`, function () {
 				describe('setErrorDetails()', function () {
 
 					it('should work', () => {
-						const err = getRootSEC()
+						const err = getRootSXC()
 							.setLogicalStack({module: 'test'})
 							.setErrorDetails({
 								foo: 'bar'
@@ -73,7 +73,7 @@ describe(`${LIB}`, function () {
 				describe('setAnalyticsAndErrorDetails()', function () {
 
 					it('should work', () => {
-						const err = getRootSEC()
+						const err = getRootSXC()
 							.setLogicalStack({module: 'test'})
 							.setAnalyticsAndErrorDetails({
 								foo: 'bar'

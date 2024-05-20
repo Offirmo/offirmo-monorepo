@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { LIB } from '../consts.js'
-import { getꓽSEC } from '../services/sec.js'
+import { getꓽSXC } from '../services/sec.js'
 
 
 import create from './index.js'
@@ -16,13 +16,13 @@ describe(`${LIB}`, function() {
 	describe('Flux', function () {
 		function getꓽdemo() {
 			const storeⵧin_mem = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
-				SEC: getꓽSEC(),
+				SXC: getꓽSXC(),
 				reduceꓽaction: DemoStateLib.reduceꓽaction,
 				//debug_id: 'in-mem',
 			})
 
 			const storeⵧlocal_storage = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
-				SEC: getꓽSEC(),
+				SXC: getꓽSXC(),
 				reduceꓽaction: DemoStateLib.reduceꓽaction,
 				debug_id: 'fake LS',
 			})
@@ -55,14 +55,14 @@ describe(`${LIB}`, function() {
 
 					// usually the in-memory store, has no persistence
 					const storeⵧmain = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
-						SEC: getꓽSEC(),
+						SXC: getꓽSXC(),
 						reduceꓽaction: DemoStateLib.reduceꓽaction,
 						debug_id: 'main',
 					})
 
 					// usually a LS store, has sync persistence
 					const storeⵧsecondaryⵧa = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
-						SEC: getꓽSEC(),
+						SXC: getꓽSXC(),
 						reduceꓽaction: DemoStateLib.reduceꓽaction,
 						debug_id: '2A',
 					})
@@ -70,7 +70,7 @@ describe(`${LIB}`, function() {
 
 					// usually a cloud store, not implemented
 					const storeⵧsecondaryⵧb = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
-						SEC: getꓽSEC(),
+						SXC: getꓽSXC(),
 						reduceꓽaction: DemoStateLib.reduceꓽaction,
 						debug_id: '2B',
 					})
@@ -99,14 +99,14 @@ describe(`${LIB}`, function() {
 
 					// usually the in-memory store, has no persistence
 					const storeⵧmain = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
-						SEC: getꓽSEC(),
+						SXC: getꓽSXC(),
 						reduceꓽaction: DemoStateLib.reduceꓽaction,
 						debug_id: 'main',
 					})
 
 					// usually a LS store, has sync persistence
 					const storeⵧsecondaryⵧa = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
-						SEC: getꓽSEC(),
+						SXC: getꓽSXC(),
 						reduceꓽaction: DemoStateLib.reduceꓽaction,
 						debug_id: '2A',
 					})
@@ -114,7 +114,7 @@ describe(`${LIB}`, function() {
 
 					// usually a cloud store, not implemented
 					const storeⵧsecondaryⵧb = createꓽstoreⵧin_memory<DemoStateLib.State, DemoStateLib.Action>({
-						SEC: getꓽSEC(),
+						SXC: getꓽSXC(),
 						reduceꓽaction: DemoStateLib.reduceꓽaction,
 						debug_id: '2B',
 					})

@@ -9,12 +9,12 @@ import { SCHEMA_VERSION } from './consts.js'
 import { Item, State } from './types.js'
 import { compare_items_by_slot_then_strength } from './compare.js'
 import { is_full, getꓽitem_in_slot } from './selectors.js'
-import { TBRSoftExecutionContext, getꓽSEC } from './sec.js'
+import { TBRSoftExecutionContext, getꓽSXC } from './sec.js'
 
 /////////////////////
 
-function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
-	return getꓽSEC(SEC).xTry('rename', () => {
+function create(SXC?: TBRSoftExecutionContext): Immutable<State> {
+	return getꓽSXC(SXC).xTry('rename', () => {
 		return enforceꓽimmutable<State>({
 			schema_version: SCHEMA_VERSION,
 			revision: 0,

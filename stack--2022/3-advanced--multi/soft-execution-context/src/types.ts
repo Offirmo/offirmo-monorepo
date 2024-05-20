@@ -26,27 +26,27 @@ export interface BaseErrorDetails {
 	CHANNEL: string
 }
 
-export interface WithSEC<Injections, AnalyticsDetails, ErrorDetails> {
-	SEC: SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>
+export interface WithSXC<Injections, AnalyticsDetails, ErrorDetails> {
+	SXC: SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>
 }
 
 export interface EventDataMap<Injections, AnalyticsDetails, ErrorDetails> {
 	'analytics':
 		Injections
 		& BaseInjections
-		& WithSEC<Injections, AnalyticsDetails, ErrorDetails>
+		& WithSXC<Injections, AnalyticsDetails, ErrorDetails>
 		& { eventId: string, details: any }
 	'final-error':
 		Injections
 		& BaseInjections
-		& WithSEC<Injections, AnalyticsDetails, ErrorDetails>
+		& WithSXC<Injections, AnalyticsDetails, ErrorDetails>
 		& { err: XXError }
 }
 
 export type OperationParams<Injections, AnalyticsDetails, ErrorDetails> =
 	Injections
 		& BaseInjections
-		& WithSEC<Injections, AnalyticsDetails, ErrorDetails>
+		& WithSXC<Injections, AnalyticsDetails, ErrorDetails>
 
 export type Operation<T, Injections, AnalyticsDetails, ErrorDetails> =
 	(params: OperationParams<Injections, AnalyticsDetails, ErrorDetails>) => T
@@ -69,13 +69,13 @@ export interface SoftExecutionContext<
 	injectDependencies: (p: Partial<
 		Injections
 		& BaseInjections
-		& WithSEC<Injections, AnalyticsDetails, ErrorDetails>
+		& WithSXC<Injections, AnalyticsDetails, ErrorDetails>
 	>)
 		=> SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>
 	getInjectedDependencies: () =>
 		Injections
 		& BaseInjections
-		& WithSEC<Injections, AnalyticsDetails, ErrorDetails>
+		& WithSXC<Injections, AnalyticsDetails, ErrorDetails>
 
 	/////////////////////
 	// plugin: logical stack
@@ -113,7 +113,7 @@ export interface SoftExecutionContext<
 	xNewPromise: <T>(operation: string, fn: (
 		p: Injections
 			& BaseInjections
-			& WithSEC<Injections, AnalyticsDetails, ErrorDetails>,
+			& WithSXC<Injections, AnalyticsDetails, ErrorDetails>,
 		_resolve: (value?: T | PromiseLike<T>) => void,
 		_reject: (reason?: any) => void,
 	) => void) => Promise<T>

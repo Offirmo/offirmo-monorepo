@@ -23,9 +23,9 @@ const MIGRATION_HINTS_FOR_TESTS = enforceꓽimmutable<any>({
 
 type StateForMigration = State
 
-function migrate_toꓽlatest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<StateForMigration> {
+function migrate_toꓽlatest(SXC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<StateForMigration> {
 	return migrate_toꓽlatestⵧgeneric<StateForMigration>({
-		SEC: SEC as any,
+		SXC: SXC as any,
 		LIB,
 		SCHEMA_VERSION,
 		legacy_state,
@@ -40,10 +40,10 @@ function migrate_toꓽlatest(SEC: SoftExecutionContext, legacy_state: Immutable<
 
 /////////////////////
 
-const _migrate_to_3x: LastMigrationStep<StateForMigration, any> = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+const _migrate_to_3x: LastMigrationStep<StateForMigration, any> = (SXC, legacy_state, hints, previous, legacy_schema_version) => {
 	//console.log('hello from _migrate_to_3', legacy_state, hints, legacy_schema_version)
 	if (legacy_schema_version < 2)
-		legacy_state = previous(SEC, legacy_state, hints)
+		legacy_state = previous(SXC, legacy_state, hints)
 
 	let state: any = {
 		...legacy_state,

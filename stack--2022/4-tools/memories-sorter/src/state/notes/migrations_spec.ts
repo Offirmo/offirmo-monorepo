@@ -10,7 +10,7 @@ import { itㆍshouldㆍmigrateㆍcorrectly } from '@offirmo-private/state-migrat
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { migrate_toꓽlatest, MIGRATION_HINTS_FOR_TESTS } from './migrations.js'
 import { DEMO_STATE } from './examples.js'
-import { getꓽSEC } from '../../services/sec.js'
+import { getꓽSXC } from '../../services/sec.js'
 import { create } from './index.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -31,7 +31,7 @@ describe(`${LIB} - migration`, function() {
 			//can_update_snapshots: true, // uncomment temporarily to update the snapshots
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA: () => enforceꓽimmutable<any>(create('test')),
-			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSEC()),
+			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSXC()),
 			import_meta_url: import.meta.url, // for resolving the path below
 relative_dir_path: '../../../../src/state/notes/migrations_of_blank_state_specs',
 			describe, context, it, expect,
@@ -46,7 +46,7 @@ relative_dir_path: '../../../../src/state/notes/migrations_of_blank_state_specs'
 			migration_hints_for_chaining: MIGRATION_HINTS_FOR_TESTS,
 			SCHEMA_VERSION,
 			LATEST_EXPECTED_DATA: DEMO_STATE,
-			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSEC()),
+			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSXC()),
 			import_meta_url: import.meta.url, // for resolving the path below
 relative_dir_path: '../../../../src/state/notes/migrations_of_active_state_specs',
 			describe, context, it, expect,

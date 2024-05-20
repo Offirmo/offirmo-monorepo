@@ -12,7 +12,7 @@ import { DEMO_MONSTER_01 } from '@tbrpg/logic-monsters'
 
 import { State, Adventure } from '../types.js'
 import { cleanup } from '../migrations/index.js'
-import { getꓽSEC } from '../services/sec.js'
+import { getꓽSXC } from '../services/sec.js'
 
 /////////////////////
 
@@ -114,7 +114,7 @@ const DEMO_ADVENTURE_04: Immutable<Adventure> = enforceꓽimmutable<Adventure>({
 
 // can't build an example from disconnected sample states.
 // taken from a real savegame:
-const DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>(cleanup(getꓽSEC(), {
+const DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>(cleanup(getꓽSXC(), {
 	ⵙapp_id: 'tbrpg',
 	'schema_version': 16,
 	last_user_investment_tms: 1598854698575,
@@ -631,7 +631,7 @@ const DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>(cleanup(getꓽSE
 	},
 }, {}))
 
-/*const FAKE_DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>(cleanup(getꓽSEC(), {
+/*const FAKE_DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>(cleanup(getꓽSXC(), {
 	schema_version: SCHEMA_VERSION,
 	last_user_investment_tms: TEST_TIMESTAMP_MS,
 

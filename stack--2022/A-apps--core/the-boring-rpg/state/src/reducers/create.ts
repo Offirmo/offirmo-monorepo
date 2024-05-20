@@ -25,7 +25,7 @@ import { Armor, create as create_armor } from '@tbrpg/logic-armors'
 /////////////////////
 
 import { SCHEMA_VERSION } from '../consts.js'
-import { TBRSoftExecutionContext, getꓽSEC } from '../services/sec.js'
+import { TBRSoftExecutionContext, getꓽSXC } from '../services/sec.js'
 import { State } from '../types.js'
 import { EngagementKey } from '../data/engagement/index.js'
 import {
@@ -53,8 +53,8 @@ const STARTING_ARMOR_SPEC: Immutable<Partial<Armor>> = {
 	base_strength: 1,
 }
 
-function create(SEC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable<State> {
-	return getꓽSEC(SEC).xTry('create', () => {
+function create(SXC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable<State> {
+	return getꓽSXC(SXC).xTry('create', () => {
 		const [ u_state_energy, t_state_energy ] = EnergyState.create()
 		const now = new Date()
 		//console.log('creation', now)
@@ -68,14 +68,14 @@ function create(SEC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable
 				schema_version: SCHEMA_VERSION,
 				revision: 0,
 
-				avatar: CharacterState.create(SEC),
-				inventory: InventoryState.create(SEC),
+				avatar: CharacterState.create(SXC),
+				inventory: InventoryState.create(SXC),
 				wallet: WalletState.add_amount(WalletState.create(), WalletState.Currency.coin, 1), // don't start empty so that a loss can happen
 				prng: PRNGState.create(seed),
 				energy: u_state_energy,
-				engagement: EngagementState.create(SEC),
-				codes: CodesState.create(SEC),
-				progress: ProgressState.create(SEC),
+				engagement: EngagementState.create(SXC),
+				codes: CodesState.create(SXC),
+				progress: ProgressState.create(SXC),
 				meta: MetaState.create(),
 
 				last_adventure: null,

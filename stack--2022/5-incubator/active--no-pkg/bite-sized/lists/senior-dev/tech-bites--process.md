@@ -25,13 +25,14 @@ documentation -- divio system -- 04 Explanations (or discussions) = understandin
 documentation -- divio system = https://documentation.divio.com/  https://nick.groenen.me/posts/the-4-types-of-technical-documentation/
 Every piece of business finance I could come up with after 10 years as a CFO https://twitter.com/KurtisHanni/status/1560986912613072899
 exec summary https://lethain.com/present-to-executives/
+full service ownership https://nick.groenen.me/notes/full-service-ownership/#full-service-ownership
 Headline driven development (Amazon) https://www.spakhm.com/headline-development
 Jobs to be Done (JTBD) https://en.wikipedia.org/wiki/Jobs-to-be-done_theory
 Kanban https://en.wikipedia.org/wiki/Kanban_(development)
-MLP
-moonshots "sheer audacity of the challenge inspired motivation and passion in a way that a smaller goal never could" = https://x.company/moonshot/
-MVP
 merge queues https://engineering.shopify.com/blogs/engineering/successfully-merging-work-1000-developers
+MLP
+moonshots = "sheer audacity of the challenge inspired motivation and passion in a way that a smaller goal never could" https://x.company/moonshot/
+MVP
 north star
 nudges = PRs nudges for speed https://dl.acm.org/doi/abs/10.1145/3544791
 OKR
@@ -50,7 +51,7 @@ progressive deployment strategy -- 03 Rollout percentages = Progressively roll o
 progressive deployment strategy -- 04 Stage interval = Allow at least 10 minutes interval between each stage during progressive rollout to production environment so that it is long enough for alerts to trigger
 progressive deployment strategy -- 06 old stack retention time = Retain the old stack for at least 60 minutes as a reliable fallback option, so that we can promptly restore service if something goes wrong with the new version shortly after deployment
 progressive deployment strategy for controlled rollouts
-RACI matrix = project role and responsibility assignment chart that maps out every task, milestone, or key decision involved in completing a project and assigns which roles are Responsible, Accountable, Consulted or Informed
+RACI matrix = project role and responsibility assignment chart that maps out every task, milestone, or key decision to: Responsible, Accountable, Consulted or Informed
 rewrites https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22
 role and responsibility
 Safe Release Management (SRM) minimizing the customer impact from change-related incidents

@@ -46,12 +46,12 @@ const SUB_STATES_MIGRATIONS: SubStatesMigrationFns = {
 	wallet:     WalletState.migrate_toꓽlatest,
 }
 
-export function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<State> {
+export function migrate_toꓽlatest(SXC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<State> {
 	let state = legacy_state as Immutable<State> // for starter
 
 	try {
 		state = migrate_toꓽlatestⵧgeneric({
-			SEC: SEC as any,
+			SXC: SXC as any,
 
 			LIB,
 			SCHEMA_VERSION,
@@ -78,9 +78,9 @@ export function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: 
 		}
 
 		// attempt to salvage
-		SEC.getInjectedDependencies().logger.error(`${LIB}: failed migrating schema, reseting and salvaging!`, {err})
+		SXC.getInjectedDependencies().logger.error(`${LIB}: failed migrating schema, reseting and salvaging!`, {err})
 		state = reset_and_salvage(legacy_state)
-		SEC.fireAnalyticsEvent('schema_migration.salvaged', { step: 'main' })
+		SXC.fireAnalyticsEvent('schema_migration.salvaged', { step: 'main' })
 	}
 
 	return state
@@ -88,7 +88,7 @@ export function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: 
 
 /////////////////////
 
-export const cleanup: CleanupStep<State> = (SEC, state, hints) => {
+export const cleanup: CleanupStep<State> = (SXC, state, hints) => {
 
 	// HACK
 	// new achievements may appear thanks to new content !== migration
@@ -117,9 +117,9 @@ export const cleanup: CleanupStep<State> = (SEC, state, hints) => {
 	return state
 }
 
-const migrate_to_16x: LastMigrationStep<State, any> = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+const migrate_to_16x: LastMigrationStep<State, any> = (SXC, legacy_state, hints, previous, legacy_schema_version) => {
 	if (legacy_schema_version < 15)
-		legacy_state = previous(SEC, legacy_state, hints)
+		legacy_state = previous(SXC, legacy_state, hints)
 
 	// XXX reminder that this step runs BEFORE the sub-state migrations
 	let state: State = legacy_state
@@ -133,7 +133,7 @@ const migrate_to_16x: LastMigrationStep<State, any> = (SEC, legacy_state, hints,
 		u_state: {
 			...state.u_state,
 			prng: {
-				...PRNGState.migrate_toꓽlatest(SEC, state.u_state.prng) as any,
+				...PRNGState.migrate_toꓽlatest(SXC, state.u_state.prng) as any,
 			}
 		},
 	}
@@ -158,9 +158,9 @@ const migrate_to_16x: LastMigrationStep<State, any> = (SEC, legacy_state, hints,
 	return state
 }
 
-const migrate_to_15: MigrationStep = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+const migrate_to_15: MigrationStep = (SXC, legacy_state, hints, previous, legacy_schema_version) => {
 	if (legacy_schema_version < 14)
-		legacy_state = previous(SEC, legacy_state, hints)
+		legacy_state = previous(SXC, legacy_state, hints)
 
 	// minor migration: cleanup uuid field
 	const { last_user_action_tms, creation_date: creation_date_hrtmin, uuid, ...rest__u_state } = legacy_state.u_state
@@ -219,9 +219,9 @@ const migrate_to_15: MigrationStep = (SEC, legacy_state, hints, previous, legacy
 	return state
 }
 
-const migrate_to_14: MigrationStep = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+const migrate_to_14: MigrationStep = (SXC, legacy_state, hints, previous, legacy_schema_version) => {
 	if (legacy_schema_version < 13)
-		legacy_state = previous(SEC, legacy_state, hints)
+		legacy_state = previous(SXC, legacy_state, hints)
 
 	let state = legacy_state as any // for starter
 
@@ -259,9 +259,9 @@ const migrate_to_14: MigrationStep = (SEC, legacy_state, hints, previous, legacy
 	return state
 }
 
-const migrate_to_13: MigrationStep = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+const migrate_to_13: MigrationStep = (SXC, legacy_state, hints, previous, legacy_schema_version) => {
 	if (legacy_schema_version < 12)
-		legacy_state = previous(SEC, legacy_state, hints)
+		legacy_state = previous(SXC, legacy_state, hints)
 
 	let state = legacy_state as any // for starter
 
@@ -300,6 +300,6 @@ const migrate_to_13: MigrationStep = (SEC, legacy_state, hints, previous, legacy
 	return state
 }
 
-const migrate_to_12: MigrationStep = (SEC, legacy_state, hints, previous, legacy_schema_version) => {
+const migrate_to_12: MigrationStep = (SXC, legacy_state, hints, previous, legacy_schema_version) => {
 	throw new Error('Outdated schema (pre-beta), won’t migrate, would take too much time and schema is still unstable!')
 }

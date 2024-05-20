@@ -14,8 +14,8 @@ const PLUGIN = {
 	augment: prototype => {
 
 		prototype.setAnalyticsDetails = function setAnalyticsDetails(details) {
-			const SEC = this
-			let root_state = SEC[INTERNAL_PROP]
+			const SXC = this
+			let root_state = SXC[INTERNAL_PROP]
 
 			root_state = TopState.reduce_plugin(root_state, PLUGIN_ID, plugin_state => {
 				Object.entries(details).forEach(([key, value]) => {
@@ -26,40 +26,40 @@ const PLUGIN = {
 
 			this[INTERNAL_PROP] = root_state
 
-			return SEC // for chaining
+			return SXC // for chaining
 		}
 		prototype.getAnalyticsDetails = function getAnalyticsDetails() {
-			const SEC = this
-			const plugin_state = SEC[INTERNAL_PROP].plugins[PLUGIN_ID]
+			const SXC = this
+			const plugin_state = SXC[INTERNAL_PROP].plugins[PLUGIN_ID]
 
 			return flattenToOwn(plugin_state.details)
 		}
 
 		prototype.fireAnalyticsEvent = function fireAnalyticsEvent(eventId, details = {}) {
-			const SEC = this
+			const SXC = this
 			const now = getꓽUTC_timestamp‿ms()
-			const root_state = SEC[INTERNAL_PROP]
+			const root_state = SXC[INTERNAL_PROP]
 
 			if (!eventId)
 				throw new Error('Incorrect eventId!')
 
-			const { ENV } = SEC.getInjectedDependencies()
+			const { ENV } = SXC.getInjectedDependencies()
 
 			const autoDetails = {
 				ENV,
 				TIME: now,
 				SESSION_DURATION_MS: now - root_state.plugins[ID_DI].context.SESSION_START_TIME_MS,
 			}
-			const userDetails = SEC.getAnalyticsDetails()
+			const userDetails = SXC.getAnalyticsDetails()
 			details = {
 				...autoDetails,
 				...userDetails,
 				...details,
 			}
 
-			SEC.emitter.emit('analytics', { SEC, eventId, details })
+			SXC.emitter.emit('analytics', { SXC, eventId, details })
 
-			return SEC // for chaining
+			return SXC // for chaining
 		}
 	},
 }

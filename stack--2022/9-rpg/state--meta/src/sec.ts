@@ -1,9 +1,9 @@
-import { SoftExecutionContext, getRootSEC } from '@offirmo-private/soft-execution-context'
+import { SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
 
 import { LIB } from './consts.js'
 
-function getꓽSEC(parent?: SoftExecutionContext): SoftExecutionContext {
-	return (parent || getRootSEC())
+function getꓽSXC(parent?: SoftExecutionContext): SoftExecutionContext {
+	return (parent || getRootSXC())
 		.createChild()
 		.setLogicalStack({module: LIB})
 		.setAnalyticsAndErrorDetails({
@@ -13,5 +13,5 @@ function getꓽSEC(parent?: SoftExecutionContext): SoftExecutionContext {
 
 export {
 	type SoftExecutionContext,
-	getꓽSEC,
+	getꓽSXC,
 }

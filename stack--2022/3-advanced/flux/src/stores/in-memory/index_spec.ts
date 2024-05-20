@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { LIB } from '../../consts.js'
-import { getꓽSEC } from '../../services/sec.js'
+import { getꓽSXC } from '../../services/sec.js'
 
 import create from './index.js'
 
@@ -24,7 +24,7 @@ describe(`${LIB}`, function() {
 
 			it('should work', () => {
 				const store = create({
-					SEC: getꓽSEC(),
+					SXC: getꓽSXC(),
 					reduceꓽaction,
 				})
 			})
@@ -33,7 +33,7 @@ describe(`${LIB}`, function() {
 		describe('store interface', function() {
 
 			itᐧshouldᐧbeᐧaᐧstandardᐧstore((DemoStateLib) => create({
-				SEC: getꓽSEC(),
+				SXC: getꓽSXC(),
 				reduceꓽaction: DemoStateLib.reduceꓽaction,
 			}))
 		})

@@ -23,9 +23,9 @@ const MIGRATION_HINTS_FOR_TESTS = enforceꓽimmutable<any>({
 
 type StateForMigration = State
 
-function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<StateForMigration> {
+function migrate_toꓽlatest(SXC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<StateForMigration> {
 	return migrate_toꓽlatestⵧgeneric<StateForMigration>({
-		SEC: SEC as any,
+		SXC: SXC as any,
 		LIB,
 		SCHEMA_VERSION,
 		legacy_state,
@@ -39,7 +39,7 @@ function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: Immutab
 
 /////////////////////
 
-const _migrate_to_X: LastMigrationStep<StateForMigration, any> = (SEC, legacy_state, hints, next, legacy_schema_version) => {
+const _migrate_to_X: LastMigrationStep<StateForMigration, any> = (SXC, legacy_state, hints, next, legacy_schema_version) => {
 	throw new Error('Schema is too old (pre-beta), can’t migrate!')
 }
 

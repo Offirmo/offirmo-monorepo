@@ -3,18 +3,18 @@ import { expect } from 'chai'
 import { LIB } from '../../consts.js'
 import {
 	SoftExecutionContext,
-	getRootSEC,
-	_test_only__reset_root_SEC,
+	getRootSXC,
+	_test_only__reset_root_SXC,
 } from '../../index.js'
 
 
 describe(`${LIB}`, function () {
 	function _mocha_bug_clean_global() {
 		// https://github.com/mochajs/mocha/issues/4954
-		_test_only__reset_root_SEC()
+		_test_only__reset_root_SXC()
 	}
-	before(_test_only__reset_root_SEC)
-	afterEach(_test_only__reset_root_SEC)
+	before(_test_only__reset_root_SXC)
+	afterEach(_test_only__reset_root_SXC)
 
 
 	describe('plugins', function () {
@@ -26,9 +26,9 @@ describe(`${LIB}`, function () {
 				describe('default injections', function () {
 
 					it('should feature the default injections -- root', () => {
-						const injections = getRootSEC().getInjectedDependencies()
+						const injections = getRootSXC().getInjectedDependencies()
 						expect(injections).to.have.all.keys(
-							'SEC',
+							'SXC',
 							'ENV',
 							'NODE_ENV',
 							'IS_DEV_MODE',
@@ -37,7 +37,7 @@ describe(`${LIB}`, function () {
 							'SESSION_START_TIME_MS',
 							'logger',
 						)
-						expect(injections).to.have.ownProperty('SEC', getRootSEC())
+						expect(injections).to.have.ownProperty('SXC', getRootSXC())
 						expect(injections).to.have.ownProperty('logger')
 						expect(injections).to.have.ownProperty('ENV', 'development')
 						expect(injections).to.have.ownProperty('NODE_ENV', 'development')
@@ -51,8 +51,8 @@ describe(`${LIB}`, function () {
 					})
 
 					it('should feature the core injections + allow easy access -- leaf', () => {
-						getRootSEC().xTry('test', ({
-							                           SEC,
+						getRootSXC().xTry('test', ({
+							                           SXC,
 							                           logger,
 							                           ENV,
 							                           NODE_ENV,
@@ -61,9 +61,9 @@ describe(`${LIB}`, function () {
 							                           CHANNEL,
 							                           SESSION_START_TIME_MS,
 						                           }) => {
-							const injections = SEC.getInjectedDependencies()
+							const injections = SXC.getInjectedDependencies()
 							expect(injections).to.have.all.keys(
-								'SEC',
+								'SXC',
 								'ENV',
 								'NODE_ENV',
 								'IS_DEV_MODE',
@@ -72,7 +72,7 @@ describe(`${LIB}`, function () {
 								'SESSION_START_TIME_MS',
 								'logger',
 							)
-							expect(injections).to.have.ownProperty('SEC', SEC)
+							expect(injections).to.have.ownProperty('SXC', SXC)
 							expect(injections).to.have.ownProperty('logger', logger)
 							expect(injections).to.have.ownProperty('ENV', ENV)
 							expect(injections).to.have.ownProperty('NODE_ENV', NODE_ENV)
@@ -86,21 +86,21 @@ describe(`${LIB}`, function () {
 					})
 
 					it('should allow overrides', () => {
-						getRootSEC().injectDependencies({
+						getRootSXC().injectDependencies({
 							IS_DEV_MODE: true,
 							CHANNEL: 'staging'
 						})
 
-						expect(getRootSEC().getInjectedDependencies()).to.have.ownProperty('IS_DEV_MODE', true)
-						expect(getRootSEC().getInjectedDependencies()).to.have.ownProperty('CHANNEL', 'staging')
+						expect(getRootSXC().getInjectedDependencies()).to.have.ownProperty('IS_DEV_MODE', true)
+						expect(getRootSXC().getInjectedDependencies()).to.have.ownProperty('CHANNEL', 'staging')
 
-						getRootSEC().xTry('test', ({
-							                           SEC,
+						getRootSXC().xTry('test', ({
+							                           SXC,
 							                           IS_DEV_MODE,
 							                           CHANNEL,
 						                           }) => {
-							const injections = SEC.getInjectedDependencies()
-							expect(injections).to.have.ownProperty('SEC', SEC)
+							const injections = SXC.getInjectedDependencies()
+							expect(injections).to.have.ownProperty('SXC', SXC)
 							expect(injections).to.have.ownProperty('IS_DEV_MODE', IS_DEV_MODE)
 							expect(injections).to.have.ownProperty('CHANNEL', CHANNEL)
 							expect(IS_DEV_MODE).to.be.true
@@ -120,11 +120,11 @@ describe(`${LIB}`, function () {
 					interface Injections {
 						name: string,
 					}
-					type SEC = SoftExecutionContext<Injections>
+					type SXC = SoftExecutionContext<Injections>
 
 					it('should work and properly override at all levels', () => {
-						const SECⵧroot = getRootSEC<Injections>()
-						expect(SECⵧroot.getInjectedDependencies().name).to.be.undefined
+						const SXCⵧroot = getRootSXC<Injections>()
+						expect(SXCⵧroot.getInjectedDependencies().name).to.be.undefined
 
 						// already tested in 'usage in a lib'
 
@@ -138,8 +138,8 @@ describe(`${LIB}`, function () {
 				interface Injections {
 					name: string,
 				}
-				type SEC = SoftExecutionContext<Injections>
-				function getꓽSEC(parent: SEC = getRootSEC()): SEC {
+				type SXC = SoftExecutionContext<Injections>
+				function getꓽSXC(parent: SXC = getRootSXC()): SXC {
 					// TODO memoize ? (if !parent)
 					return parent
 						.createChild()
@@ -147,8 +147,8 @@ describe(`${LIB}`, function () {
 							name: parent.getInjectedDependencies().name || 'root',
 						})
 				}
-				function hello({SEC} = {} as { SEC?: SEC}): string {
-					return getꓽSEC(SEC).xTry('hello', ({SEC, ENV, logger, name}) => {
+				function hello({SXC} = {} as { SXC?: SXC}): string {
+					return getꓽSXC(SXC).xTry('hello', ({SXC, ENV, logger, name}) => {
 						return `Hello, ${name}!`
 					})
 				}
@@ -161,7 +161,7 @@ describe(`${LIB}`, function () {
 				})
 
 				it('should work - 1 level(s), override', () => {
-					getRootSEC<Injections>().injectDependencies({
+					getRootSXC<Injections>().injectDependencies({
 						name: 'Offirmo',
 					})
 
@@ -172,25 +172,25 @@ describe(`${LIB}`, function () {
 				})
 
 				it('should work - multi level(s), default + override', () => {
-					getRootSEC<Injections>().xTry('level1', ({SEC: SEC1, ENV, name}) => {
+					getRootSXC<Injections>().xTry('level1', ({SXC: SXC1, ENV, name}) => {
 						expect(name).to.be.undefined
-						expect(hello({SEC: SEC1})).to.equal('Hello, root!')
+						expect(hello({SXC: SXC1})).to.equal('Hello, root!')
 
-						SEC1.injectDependencies({
+						SXC1.injectDependencies({
 							name: 'Alice'
 						})
-						expect(hello({SEC: SEC1})).to.equal('Hello, Alice!')
+						expect(hello({SXC: SXC1})).to.equal('Hello, Alice!')
 						expect(hello()).to.equal('Hello, root!')
 
-						SEC1.xTry('level2', ({SEC: SEC2, name}) => {
+						SXC1.xTry('level2', ({SXC: SXC2, name}) => {
 							expect(name).to.equal('Alice')
-							expect(hello({SEC: SEC2})).to.equal('Hello, Alice!')
+							expect(hello({SXC: SXC2})).to.equal('Hello, Alice!')
 
-							SEC2.injectDependencies({
+							SXC2.injectDependencies({
 								name: 'Bob'
 							})
-							expect(hello({SEC: SEC2})).to.equal('Hello, Bob!')
-							expect(hello({SEC: SEC1})).to.equal('Hello, Alice!')
+							expect(hello({SXC: SXC2})).to.equal('Hello, Bob!')
+							expect(hello({SXC: SXC1})).to.equal('Hello, Alice!')
 							expect(hello()).to.equal('Hello, root!')
 						})
 					})

@@ -13,12 +13,12 @@ import {
 
 import { is_code_redeemable } from './selectors.js'
 
-import { SoftExecutionContext, getꓽSEC } from './sec.js'
+import { SoftExecutionContext, getꓽSXC } from './sec.js'
 
 /////////////////////
 
-function create(SEC?: SoftExecutionContext): Immutable<State> {
-	return getꓽSEC(SEC).xTry('create', () => {
+function create(SXC?: SoftExecutionContext): Immutable<State> {
+	return getꓽSXC(SXC).xTry('create', () => {
 		return enforceꓽimmutable<State>({
 			schema_version: SCHEMA_VERSION,
 			revision: 0,
@@ -31,7 +31,7 @@ function create(SEC?: SoftExecutionContext): Immutable<State> {
 /////////////////////
 
 function attempt_to_redeem_code<T>(state: Immutable<State>, code_spec: Immutable<CodeSpec<T>>, infos: Immutable<T>): Immutable<State> {
-	return getꓽSEC().xTry('redeem_code', (): Immutable<State> => {
+	return getꓽSXC().xTry('redeem_code', (): Immutable<State> => {
 		if (!is_code_redeemable(state, code_spec, infos))
 			throw new Error('This code is either non-existing or non redeemable at the moment!')
 

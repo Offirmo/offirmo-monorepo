@@ -18,7 +18,7 @@ import {
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { State } from './types.js'
 import { getꓽhistorical_fs_reliability } from '../file/sub/neighbor-hints/index.js'
-import { getꓽSEC } from '../../services/sec.js'
+import { getꓽSXC } from '../../services/sec.js'
 
 export { type State } from './types.js'
 import { migrate_toꓽlatest as _migrate_toꓽlatest } from './migrations.js'
@@ -83,7 +83,7 @@ export function create(debug_id: string, notes_to_copy?: Immutable<State>): Stat
 }
 
 export function migrate_toꓽlatest(prev: any): Immutable<State> {
-	return _migrate_toꓽlatest(getꓽSEC(), prev)
+	return _migrate_toꓽlatest(getꓽSXC(), prev)
 }
 
 export function on_previous_notes_found(state: Immutable<State>, previous_state: Immutable<State>, PARAMS: Immutable<Params> = getꓽparams()): Immutable<State> {

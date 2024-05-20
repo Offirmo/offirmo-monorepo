@@ -23,9 +23,9 @@ const MIGRATION_HINTS_FOR_TESTS = enforceꓽimmutable<any>({
 
 type StateForMigration = State
 
-function migrate_toꓽlatest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<StateForMigration> {
+function migrate_toꓽlatest(SXC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<StateForMigration> {
 	return migrate_toꓽlatestⵧgeneric<StateForMigration>({
-		SEC: SEC as any,
+		SXC: SXC as any,
 		LIB,
 		SCHEMA_VERSION,
 		legacy_state,
@@ -39,7 +39,7 @@ function migrate_toꓽlatest(SEC: SoftExecutionContext, legacy_state: Immutable<
 
 /////////////////////
 
-const _migrate_to_Xx: LastMigrationStep<StateForMigration, any> = (SEC, legacy_state, hints, next, legacy_schema_version) => {
+const _migrate_to_Xx: LastMigrationStep<StateForMigration, any> = (SXC, legacy_state, hints, next, legacy_schema_version) => {
 	throw new Error('Schema is too old can’t migrate!')
 }
 

@@ -1,5 +1,5 @@
 import * as Bowser from 'bowser'
-import { BaseInjections, SoftExecutionContext, getRootSEC } from '@offirmo-private/soft-execution-context'
+import { BaseInjections, SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
 //import ensureDeviceUUID from '@offirmo-private/ensure-device-uuid-browser'
 
 import { LS_KEYS } from './consts.js'
@@ -10,14 +10,14 @@ import { LS_KEYS } from './consts.js'
 // https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror
 /*
 function listenToErrors() {
-	const SEC = getRootSEC()
+	const SXC = getRootSXC()
 
 	window.onerror = function (msg, url, line, colno, err) {
 		console.log('DEBUG', arguments)
 		err = err || new Error(`Error "${msg}" from "${url}", line ${line}!`)
 
-		SEC.handleError(...{
-			SEC,
+		SXC.handleError(...{
+			SXC,
 			debugId: 'browser/onError',
 			shouldRethrow: false,
 		}, err)
@@ -28,47 +28,47 @@ function listenToErrors() {
 */
 
 function listenToErrorEvents(): void {
-	const SEC = getRootSEC()
+	const SXC = getRootSXC()
 		.createChild()
 		.setLogicalStack({operation: '(browser/on error event)'})
 
-	SEC.xTry('SEC/browser/listenToErrorEvents', ({logger}) => {
+	SXC.xTry('SXC/browser/listenToErrorEvents', ({logger}) => {
 
 		window.addEventListener('error', function(evt) {
 			// https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent
-			//console.log('DEBUG SEC browser debug: error event', arguments)
+			//console.log('DEBUG SXC browser debug: error event', arguments)
 			const err = (evt && evt.message === 'Script error.')
 				? new Error('Unreadable error from another origin!')
 				: evt.error || new Error(`Error "${evt.message}" from "${evt.filename}", line ${evt.lineno}.${evt.colno}!`)
 
-			SEC.handleError(err, 'browser/onError')
+			SXC.handleError(err, 'browser/onError')
 
 			//evt.preventDefault() // XXX should we?
 		})
 
-		logger.debug('Root SEC is now listening to error events ✔')
+		logger.debug('Root SXC is now listening to error events ✔')
 	})
 }
 
 
 function listenToUnhandledRejections(): void {
-	const SEC = getRootSEC()
+	const SXC = getRootSXC()
 		.createChild()
 		.setLogicalStack({operation: '(browser/unhandled rejection)'})
 
-	SEC.xTry('SEC/browser/listenToUnhandledRejections', ({logger}) => {
+	SXC.xTry('SXC/browser/listenToUnhandledRejections', ({logger}) => {
 
 		//window.onunhandledrejection = function(evt) {
 		window.addEventListener('unhandledrejection', function(evt) {
 			// https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent
-			//console.log('DEBUG SEC browser debug: onunhandledrejection', arguments)
+			//console.log('DEBUG SXC browser debug: onunhandledrejection', arguments)
 			//console.log(evt.reason)
 			const err = evt.reason || new Error('Error: uncaught promise rejection!')
 
-			SEC.handleError(err, 'browser/unhandled rejection')
+			SXC.handleError(err, 'browser/unhandled rejection')
 		})
 
-		logger.debug('Root SEC is now listening to unhandled rejection events ✔')
+		logger.debug('Root SXC is now listening to unhandled rejection events ✔')
 	})
 }
 
@@ -80,8 +80,8 @@ interface BrowserDetails {
 	DEVICE_TYPE: string
 }
 
-function decorateWithDetectedEnv<Injections, AnalyticsDetails, ErrorDetails>(SEC: SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>): void {
-	SEC = SEC || getRootSEC()
+function decorateWithDetectedEnv<Injections, AnalyticsDetails, ErrorDetails>(SXC: SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>): void {
+	SXC = SXC || getRootSXC()
 
 	const injections: Partial<BaseInjections> = {
 		IS_DEV_MODE: localStorage.getItem(LS_KEYS.dev_mode) === 'true',
@@ -89,7 +89,7 @@ function decorateWithDetectedEnv<Injections, AnalyticsDetails, ErrorDetails>(SEC
 	}
 
 	// @ts-expect-error  TODO understand and fix error
-	SEC.injectDependencies(injections)
+	SXC.injectDependencies(injections)
 
 	const browser = Bowser.getParser(window.navigator.userAgent)
 	const details: BrowserDetails = {
@@ -103,8 +103,8 @@ function decorateWithDetectedEnv<Injections, AnalyticsDetails, ErrorDetails>(SEC
 	}
 
 	// @ts-expect-error  TODO type properly
-	SEC.setAnalyticsAndErrorDetails(details)
-	//logger.debug('Root SEC is now decorated with env infos ✔', { Bowser: browser.getResult(), details: SEC.getAnalyticsDetails() })
+	SXC.setAnalyticsAndErrorDetails(details)
+	//logger.debug('Root SXC is now decorated with env infos ✔', { Bowser: browser.getResult(), details: SXC.getAnalyticsDetails() })
 }
 
 /////////////////////////////////////////////////

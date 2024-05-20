@@ -17,17 +17,17 @@ function _clean_temp(err) {
 	return err
 }
 
-function _handleError({SEC, debugId = '?', shouldRethrow = true}, err) {
+function _handleError({SXC, debugId = '?', shouldRethrow = true}, err) {
 	_create_catcher({
 		debugId,
 		decorators: [
 			err => normalizeError(err, { alwaysRecreate: true }),
-			err => SEC._decorateErrorWithLogicalStack(err),
-			err => SEC._decorateErrorWithDetails(err),
+			err => SXC._decorateErrorWithLogicalStack(err),
+			err => SXC._decorateErrorWithDetails(err),
 		],
 		onError: shouldRethrow
 			? null
-			: err => SEC.emitter.emit('final-error', { SEC, err: _clean_temp(err) }),
+			: err => SXC.emitter.emit('final-error', { SXC, err: _clean_temp(err) }),
 	})(err)
 }
 
@@ -37,8 +37,8 @@ const PLUGIN = {
 	augment: prototype => {
 
 		prototype._decorateErrorWithDetails = function _decorateErrorWithDetails(err) {
-			const SEC = this
-			const state = SEC[INTERNAL_PROP]
+			const SXC = this
+			const state = SXC[INTERNAL_PROP]
 			const now = getꓽUTC_timestamp‿ms()
 
 			const autoDetails = {
@@ -57,8 +57,8 @@ const PLUGIN = {
 		}
 
 		prototype.setErrorDetails = function setErrorDetails(details) {
-			const SEC = this
-			let root_state = SEC[INTERNAL_PROP]
+			const SXC = this
+			let root_state = SXC[INTERNAL_PROP]
 
 			root_state = TopState.reduce_plugin(root_state, PLUGIN_ID, plugin_state => {
 				Object.entries(details).forEach(([key, value]) => {
@@ -69,32 +69,32 @@ const PLUGIN = {
 
 			this[INTERNAL_PROP] = root_state
 
-			return SEC // for chaining
+			return SXC // for chaining
 		}
 		// this getter should normally not be used, errors are automatically decorated
 		prototype.getErrorDetails = function getErrorDetails() {
-			const SEC = this
-			const plugin_state = SEC[INTERNAL_PROP].plugins[PLUGIN_ID]
+			const SXC = this
+			const plugin_state = SXC[INTERNAL_PROP].plugins[PLUGIN_ID]
 
 			return flattenToOwn(plugin_state.details)
 		}
 
-		// useful if creating an error later from a saved SEC, ex. from a pipeline
+		// useful if creating an error later from a saved SXC, ex. from a pipeline
 		prototype.createError = function createError(message, details = {}) {
-			const SEC = this
+			const SXC = this
 			const err = _createError(message, details)
 			err.framesToPop = (err.framesToPop || 0) + 1
 
-			return SEC._decorateErrorWithLogicalStack(
-				SEC._decorateErrorWithDetails(err)
+			return SXC._decorateErrorWithLogicalStack(
+				SXC._decorateErrorWithDetails(err)
 			)
 		}
 
 		// for termination promises
 		prototype.handleError = function handleError(err, debugId) {
-			const SEC = this
+			const SXC = this
 			_handleError({
-				SEC,
+				SXC,
 				debugId,
 				shouldRethrow: false,
 			}, err)
@@ -102,18 +102,18 @@ const PLUGIN = {
 
 		prototype.xTry = function xTry(operation, fn) {
 			console.assert(!!operation)
-			const SEC = this
+			const SXC = this
 				.createChild()
 				.setLogicalStack({operation})
 
-			const params = SEC[INTERNAL_PROP].plugins[ID_DI].context
+			const params = SXC[INTERNAL_PROP].plugins[ID_DI].context
 
 			try {
 				return fn(params)
 			}
 			catch (err) {
 				_handleError({
-					SEC,
+					SXC,
 					debugId: 'xTry',
 					shouldRethrow: true,
 				}, err)
@@ -122,18 +122,18 @@ const PLUGIN = {
 
 		prototype.xTryCatch = function xTryCatch(operation, fn) {
 			console.assert(!!operation)
-			const SEC = this
+			const SXC = this
 				.createChild()
 				.setLogicalStack({operation})
 
-			const params = SEC[INTERNAL_PROP].plugins[ID_DI].context
+			const params = SXC[INTERNAL_PROP].plugins[ID_DI].context
 
 			try {
 				return fn(params)
 			}
 			catch (err) {
 				_handleError({
-					SEC,
+					SXC,
 					debugId: 'xTryCatch',
 					shouldRethrow: false,
 				}, err)
@@ -142,16 +142,16 @@ const PLUGIN = {
 
 		prototype.xNewPromise = function xPromise(operation, resolver_fn) {
 			console.assert(!!operation)
-			const SEC = this
+			const SXC = this
 				.createChild()
 				.setLogicalStack({operation})
 
-			const params = SEC[INTERNAL_PROP].plugins[ID_DI].context
+			const params = SXC[INTERNAL_PROP].plugins[ID_DI].context
 
 			return (new Promise(resolver_fn.bind(undefined, params)))
 				.catch(err => {
 					_handleError({
-						SEC,
+						SXC,
 						debugId: 'xPromise',
 						shouldRethrow: true,
 					}, err)
@@ -160,16 +160,16 @@ const PLUGIN = {
 
 		prototype.xPromiseTry = function xPromiseTry(operation, fn) {
 			console.assert(!!operation)
-			const SEC = this
+			const SXC = this
 				.createChild()
 				.setLogicalStack({operation})
 
-			const params = SEC[INTERNAL_PROP].plugins[ID_DI].context
+			const params = SXC[INTERNAL_PROP].plugins[ID_DI].context
 
 			return promiseTry(() => fn(params))
 				.catch(err => {
 					_handleError({
-						SEC,
+						SXC,
 						debugId: 'xPromiseTry',
 						shouldRethrow: true,
 					}, err)

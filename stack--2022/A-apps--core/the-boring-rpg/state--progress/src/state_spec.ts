@@ -9,7 +9,7 @@ import {
 	on_played,
 	on_achieved,
 } from './index.js'
-import { getꓽSEC } from './sec.js'
+import { getꓽSXC } from './sec.js'
 
 
 describe(`${LIB} - state`, function() {
@@ -26,7 +26,7 @@ describe(`${LIB} - state`, function() {
 	describe('🆕  create()', function() {
 
 		it('should have correct defaults', function() {
-			const state = create(getꓽSEC())
+			const state = create(getꓽSXC())
 
 			expect(state.statistics.creation_date_hrtday).to.have.lengthOf(8)
 			expect(state.statistics.last_visited_timestamp_hrtday).to.have.lengthOf(8)
@@ -66,7 +66,7 @@ describe(`${LIB} - state`, function() {
 		context('bad', function() {
 
 			it('should correct updates relevant values', function() {
-				let state = create(getꓽSEC())
+				let state = create(getꓽSXC())
 
 				state = on_played(state, {
 					good: false,
@@ -106,7 +106,7 @@ describe(`${LIB} - state`, function() {
 		context('good', function() {
 
 			it('should correct updates relevant values', function() {
-				let state = create(getꓽSEC())
+				let state = create(getꓽSXC())
 
 				state = on_played(state, {
 					good: true,
@@ -185,7 +185,7 @@ describe(`${LIB} - state`, function() {
 	describe('on_achieved', function() {
 
 		it('should correct updates relevant values', function() {
-			let state = create(getꓽSEC())
+			let state = create(getꓽSXC())
 
 			state = on_achieved(state, 'foo', AchievementStatus.revealed)
 

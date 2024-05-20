@@ -59,7 +59,7 @@ earliest -- 07 "pro" product? scalable? (entitlements, billing, compliance...)
 egress
 
 logger
-SEC
+SXC
 error
 analytics
 

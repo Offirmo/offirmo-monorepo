@@ -79,17 +79,17 @@ export function _safe_read_parse_and_validate_from_storage<State>(
 const EMITTER_EVT = '⚡️change'
 
 interface CreateParams<State, Action> {
-	SEC: SoftExecutionContext
+	SXC: SoftExecutionContext
 	storage: StorageⳇSync
 	reduceꓽaction: (state: Immutable<State>, action: Immutable<Action>) => Immutable<State>
 	SCHEMA_VERSION: number
 	migrate_toꓽlatest: FullMigrateToLatestFn<State>
 	storage_keys_radix: string // this is mandatory if the same domain serves several apps and users. The key should be prefixed by the app name + maybe a container (ex. savegame slot) etc.
-	                           // TODO extra app name from SEC?
+	                           // TODO extra app name from SXC?
 	debug_id?: string
 }
 function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action extends BaseAction>({
-	SEC,
+	SXC,
 	storage,
 	storage_keys_radix,
 	reduceꓽaction,
@@ -102,7 +102,7 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 		debug_id,
 	].filter(Boolean).join('ⳇ')
 
-	return SEC.xTry(`creating ${LIB}…`, ({SEC, logger}) => {
+	return SXC.xTry(`creating ${LIB}…`, ({SXC, logger}) => {
 		logger.trace(`[${LIB}].create()…`)
 
 		const STORAGE_KEYS = getꓽstorage_keys(storage_keys_radix)
@@ -285,7 +285,7 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 					assert(getꓽschema_versionⵧloose(bkpⵧmost_recentⵧunmigrated) <= SCHEMA_VERSION, `[${LIB}] found a backup with a higher schema version than the current code!`)
 
 					// memorize it for later
-					restored_migrated = migrate_toꓽlatest(SEC,
+					restored_migrated = migrate_toꓽlatest(SXC,
 						// deep clone in case the migration is not immutable (seen!)
 						structuredClone(bkpⵧmost_recentⵧunmigrated)
 					)
@@ -334,7 +334,7 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 		// - it's a "pipeline" bc we're doing extra saves for safety, though there is no UI to restore it
 
 		// NOTE that those variables are BACKUPS, not states
-		// TODO use a SEC?
+		// TODO use a SXC?
 		let bkpⵧcurrent: Immutable<State> | undefined = (function unpersist_bkp() {
 			logger.verbose(`[${LIB}] attempting to restore the persisted state…`)
 			const raw = _safe_read_parse_and_validate_from_storage<State>(storage, STORAGE_KEYS.bkpⵧmain, _onꓽerror)
@@ -349,7 +349,7 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 			assert(unmigrated_schema_version <= SCHEMA_VERSION, `[${LIB}] the active persisted state should have a lower or equal schema version than the current code!`)
 			_enqueue_in_schema_version_bkp_pipeline(raw) // important to do this BEFORE migration
 
-			const state = migrate_toꓽlatest(SEC, raw)
+			const state = migrate_toꓽlatest(SXC, raw)
 			logger.verbose(`[${LIB}] ↳ successfully restored a persisted state ✅`)
 			return state
 		})()

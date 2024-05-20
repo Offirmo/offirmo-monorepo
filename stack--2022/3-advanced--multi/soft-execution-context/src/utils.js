@@ -15,26 +15,26 @@ function flattenToOwn(object) {
 }
 
 // needed for various tree traversal algorithms
-function _getSECStatePath(SEC) {
-	if (!SEC[INTERNAL_PROP].cache.statePath) {
+function _getSXCStatePath(SXC) {
+	if (!SXC[INTERNAL_PROP].cache.statePath) {
 		const path = []
-		let state = SEC[INTERNAL_PROP]
+		let state = SXC[INTERNAL_PROP]
 
 		while (state) {
 			path.unshift(state)
 			state = state.parent
 		}
 
-		SEC[INTERNAL_PROP].cache.statePath = path
+		SXC[INTERNAL_PROP].cache.statePath = path
 	}
 
-	return SEC[INTERNAL_PROP].cache.statePath
+	return SXC[INTERNAL_PROP].cache.statePath
 }
 
 // for debug
-function _flattenSEC(SEC) {
+function _flattenSXC(SXC) {
 	const plugins = {
-		...SEC[INTERNAL_PROP].plugins,
+		...SXC[INTERNAL_PROP].plugins,
 	}
 
 	plugins.analytics.details = flattenToOwn(
@@ -58,6 +58,6 @@ function _flattenSEC(SEC) {
 
 export {
 	flattenToOwn,
-	_getSECStatePath,
-	_flattenSEC,
+	_getSXCStatePath,
+	_flattenSXC,
 }

@@ -8,7 +8,7 @@ import { decorateWithDetectedEnv } from './common.js'
 /////////////////////////////////////////////////
 
 ROOT_PROTOTYPE.createChild = function createChild(args: any) {
-	return _createSEC({
+	return _createSXC({
 		...args,
 		parent: this,
 	})
@@ -20,21 +20,21 @@ PLUGINS.forEach(PLUGIN => {
 
 /////////////////////////////////////////////////
 
-function isSEC(SEC: any): SEC is SoftExecutionContext {
-	return (SEC && SEC[INTERNAL_PROP])
+function isSXC(SXC: any): SXC is SoftExecutionContext {
+	return (SXC && SXC[INTERNAL_PROP])
 }
 
 // this function should normally NOT be called directly
-// use getRootSEC() or make a getLibSEC()
-function _createSEC<Injections, AnalyticsDetails, ErrorDetails>(args: any = {}): SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails> {
+// use getRootSXC() or make a getLibSXC()
+function _createSXC<Injections, AnalyticsDetails, ErrorDetails>(args: any = {}): SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails> {
 	/////// PARAMS ///////
 
-	if (args.parent && !isSEC(args.parent))
-		throw new Error(`${LIB}›createSEC() argument error: parent must be a valid SEC!`)
+	if (args.parent && !isSXC(args.parent))
+		throw new Error(`${LIB}›createSXC() argument error: parent must be a valid SXC!`)
 
 	let unhandled_args = Object.keys(args)
 
-	const SEC = Object.create(ROOT_PROTOTYPE)
+	const SXC = Object.create(ROOT_PROTOTYPE)
 
 	/////// STATE ///////
 	const parent_state = args.parent ? args.parent[INTERNAL_PROP] : undefined
@@ -45,34 +45,34 @@ function _createSEC<Injections, AnalyticsDetails, ErrorDetails>(args: any = {}):
 		state = State.activate_plugin(state, PLUGIN)
 	})
 
-	SEC[INTERNAL_PROP] = state
+	SXC[INTERNAL_PROP] = state
 
 	// auto injections
 	if (!args.parent) {
-		SEC.injectDependencies({
+		SXC.injectDependencies({
 			logger: console, // use universal debug API? NO because the placeholder = NOOP = would cause no logs visible by default
 		})
 
-		decorateWithDetectedEnv(SEC)
+		decorateWithDetectedEnv(SXC)
 	}
-	SEC.injectDependencies({ SEC })
+	SXC.injectDependencies({ SXC })
 
-	//console.log('createSEC', SEC, args.parent)
+	//console.log('createSXC', SXC, args.parent)
 
-	// Here we could send an event on the SEC bus. No usage for now.
+	// Here we could send an event on the SXC bus. No usage for now.
 	// Here we could have lifecycle methods. No usage for now.
 
 	if (unhandled_args.length)
-		throw new Error(`${LIB}›createSEC() argument error: unknown args: [${unhandled_args.join(',')}]!`)
+		throw new Error(`${LIB}›createSXC() argument error: unknown args: [${unhandled_args.join(',')}]!`)
 
 	/////////////////////
 
-	return SEC
+	return SXC
 }
 
 /////////////////////////////////////////////////
 
 export {
-	isSEC,
-	_createSEC,
+	isSXC,
+	_createSXC,
 }

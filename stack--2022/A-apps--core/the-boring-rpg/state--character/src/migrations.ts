@@ -4,7 +4,7 @@ import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 import { State } from './types.js'
-import { TBRSoftExecutionContext, getꓽSEC } from './sec.js'
+import { TBRSoftExecutionContext, getꓽSXC } from './sec.js'
 
 //////////////////////////////////////////////////////////////////////
 
@@ -15,10 +15,10 @@ const MIGRATION_HINTS_FOR_TESTS = enforceꓽimmutable<any>({
 
 /////////////////////
 
-function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): State {
-	return getꓽSEC(SEC).xTry('migrate_toꓽlatest', ({SEC, logger}) => {
+function migrate_toꓽlatest(SXC: TBRSoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): State {
+	return getꓽSXC(SXC).xTry('migrate_toꓽlatest', ({SXC, logger}) => {
 		const existing_version = legacy_state?.schema_version || 0
-		SEC.setAnalyticsAndErrorDetails({
+		SXC.setAnalyticsAndErrorDetails({
 			version_from: existing_version,
 			version_to: SCHEMA_VERSION,
 		})
@@ -30,18 +30,18 @@ function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: Immutab
 
 		if (existing_version < SCHEMA_VERSION) {
 			logger.warn(`${LIB}: attempting to migrate schema from v${existing_version} to v${SCHEMA_VERSION}…`)
-			SEC.fireAnalyticsEvent('schema_migration.began')
+			SXC.fireAnalyticsEvent('schema_migration.began')
 
 			try {
-				state = migrate_to_2(SEC, legacy_state, hints)
+				state = migrate_to_2(SXC, legacy_state, hints)
 			}
 			catch (err) {
-				SEC.fireAnalyticsEvent('schema_migration.failed')
+				SXC.fireAnalyticsEvent('schema_migration.failed')
 				throw err
 			}
 
 			logger.info(`${LIB}: schema migration successful.`)
-			SEC.fireAnalyticsEvent('schema_migration.ended')
+			SXC.fireAnalyticsEvent('schema_migration.ended')
 		}
 
 		// migrate sub-reducers if any...
@@ -52,7 +52,7 @@ function migrate_toꓽlatest(SEC: TBRSoftExecutionContext, legacy_state: Immutab
 
 /////////////////////
 
-function migrate_to_2(SEC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any>): State {
+function migrate_to_2(SXC: TBRSoftExecutionContext, legacy_state: Readonly<any>, hints: Readonly<any>): State {
 	throw new Error('Schema is too old (pre-beta), can’t migrate!')
 }
 

@@ -28,7 +28,7 @@ import {
 */
 
 import { LIB } from '../consts.js'
-import { getꓽSEC } from '../services/sec.js'
+import { getꓽSXC } from '../services/sec.js'
 import { Store, Dispatcher, Flux } from '../types.js'
 
 /*
@@ -43,12 +43,12 @@ const EMITTER_EVT = 'change'
 
 // TODO improve logging (too verbose)
 interface CreateParams<State extends AnyOffirmoState, Action extends BaseAction> {
-	SEC?: SoftExecutionContext
+	SXC?: SoftExecutionContext
 
 	storesⵧordered: Array<Store<State, Action>>
 
 	// needed in case no existing
-	create: (SEC: SoftExecutionContext) => Immutable<State>
+	create: (SXC: SoftExecutionContext) => Immutable<State>
 
 	// safety to detect non-migrated states
 	SCHEMA_VERSION: number
@@ -66,7 +66,7 @@ interface CreateParams<State extends AnyOffirmoState, Action extends BaseAction>
 	//updateꓽto_now?: (state: Immutable<State>) => Immutable<State>
 }
 function createꓽinstance<State extends AnyOffirmoState, Action extends BaseAction>({
-	SEC = getꓽSEC(),
+	SXC = getꓽSXC(),
 
 	storesⵧordered,
 
@@ -84,7 +84,7 @@ function createꓽinstance<State extends AnyOffirmoState, Action extends BaseAct
 	update_to_now = (state: Immutable<State>) => state,
 	reduce_action,*/
 }: CreateParams<State, Action>): Flux<State, Action> {
-	return SEC.xTry('creating flux instance', ({SEC, logger}) => {
+	return SXC.xTry('creating flux instance', ({SXC, logger}) => {
 		logger.trace(`[${LIB}].createꓽinstance()…`)
 
 		const emitter = new EventEmitter<{ [EMITTER_EVT]: string }>()
@@ -95,7 +95,7 @@ function createꓽinstance<State extends AnyOffirmoState, Action extends BaseAct
 		const [ storeⵧmain, ...storeⵧreplicas ] = storesⵧordered
 		assert(storeⵧmain, `[${LIB}] At least one store should be provided!`)
 
-		/*const _dispatcher = createꓽdispatcher(SEC, SCHEMA_VERSION)
+		/*const _dispatcher = createꓽdispatcher(SXC, SCHEMA_VERSION)
 		storesⵧordered.forEach(store => {
 			if (store.setꓽdispatcher) {
 				store.setꓽdispatcher(_dispatcher)
@@ -126,7 +126,7 @@ function createꓽinstance<State extends AnyOffirmoState, Action extends BaseAct
 			}
 
 			const [
-				initial_valueⵧfirst = create(SEC), // if no sync candidate, start over
+				initial_valueⵧfirst = create(SXC), // if no sync candidate, start over
 				...initial_valueⵧother
 			] = initial_value_candidates_ordered
 

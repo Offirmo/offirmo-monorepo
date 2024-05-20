@@ -1,11 +1,11 @@
-import { getRootSEC } from '@offirmo-private/soft-execution-context'
-import { TBRSoftExecutionContext, decorate_SEC } from '@tbrpg/definitions'
+import { getRootSXC } from '@offirmo-private/soft-execution-context'
+import { TBRSoftExecutionContext, decorate_SXC } from '@tbrpg/definitions'
 
 import { LIB } from '../consts.js'
 
-function getꓽSEC(parent?: TBRSoftExecutionContext): TBRSoftExecutionContext {
-	return decorate_SEC(
-		(parent || getRootSEC())
+function getꓽSXC(parent?: TBRSoftExecutionContext): TBRSoftExecutionContext {
+	return decorate_SXC(
+		(parent || getRootSXC())
 			.createChild()
 			.setLogicalStack({ module: LIB })
 			.setAnalyticsAndErrorDetails({
@@ -16,5 +16,5 @@ function getꓽSEC(parent?: TBRSoftExecutionContext): TBRSoftExecutionContext {
 
 export {
 	type TBRSoftExecutionContext,
-	getꓽSEC,
+	getꓽSXC,
 }

@@ -4,34 +4,34 @@ import boxify from '@offirmo/cli-toolbox/string/boxify'
 import PKG_JSON from '../package.json' assert { type: 'json' }
 
 console.log(boxify(`
-const { getRootSEC } = require('${stylizeString.bold(PKG_JSON.name)}')
+const { getRootSXC } = require('${stylizeString.bold(PKG_JSON.name)}')
 
-const SEC = getRootSEC()
-SEC.setLogicalStack({
+const SXC = getRootSXC()
+SXC.setLogicalStack({
 	module: APP,
 })
-SEC.injectDependencies({
+SXC.injectDependencies({
 	logger: console,
 })
-SEC.setAnalyticsDetails({
-SEC.setAnalyticsAndErrorDetails({
+SXC.setAnalyticsDetails({
+SXC.setAnalyticsAndErrorDetails({
 	v: '2.3',
 })
-SEC.emitter.on('final-error', function onError({err}) {
+SXC.emitter.on('final-error', function onError({err}) {
 	logger.fatal('error!', {err})
 })
-SEC.emitter.on('analytics', function onAnalyticsEvent({eventId, details}) {
+SXC.emitter.on('analytics', function onAnalyticsEvent({eventId, details}) {
 	...
 })
 
-const { ENV } = SEC.getInjectedDependencies()
-SEC.listenToUncaughtErrors()
-SEC.listenToUnhandledRejections()
+const { ENV } = SXC.getInjectedDependencies()
+SXC.listenToUncaughtErrors()
+SXC.listenToUnhandledRejections()
 logger.trace('Soft Execution Context initialized.')
 
-SEC.xTryCatch('starting', ({SEC, logger, ENV}) => {
+SXC.xTryCatch('starting', ({SXC, logger, ENV}) => {
 	logger.trace({ENV})
-	SEC.fireAnalyticsEvent(eventId, details)
+	SXC.fireAnalyticsEvent(eventId, details)
 	...
 })
 
@@ -46,11 +46,11 @@ xPromiseTryCatch,
 ////////
 
 console.log(boxify(`
-import { getRootSEC } from '${stylizeString.bold(PKG_JSON.name)}'
+import { getRootSXC } from '${stylizeString.bold(PKG_JSON.name)}'
 
 const LIB = 'FOO'
 
-function getꓽSEC(parent: SEC = getRootSEC()): SEC {
+function getꓽSXC(parent: SXC = getRootSXC()): SXC {
 	// TODO memoize ? (if !parent)
 	return parent
 		.createChild()
@@ -60,8 +60,8 @@ function getꓽSEC(parent: SEC = getRootSEC()): SEC {
 	})
 }
 
-function hello(target, {SEC} = {}) {
-	getꓽSEC(SEC).xTry('hello', ({SEC, logger}) => {
+function hello(target, {SXC} = {}) {
+	getꓽSXC(SXC).xTry('hello', ({SXC, logger}) => {
 		...
 	})
 }

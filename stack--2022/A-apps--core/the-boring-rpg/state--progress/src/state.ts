@@ -16,12 +16,12 @@ import {
 
 import { getꓽlast_known_achievement_status } from './selectors.js'
 
-import { TBRSoftExecutionContext, getꓽSEC } from './sec.js'
+import { TBRSoftExecutionContext, getꓽSXC } from './sec.js'
 
 /////////////////////
 
-function create(SEC?: TBRSoftExecutionContext): Immutable<State> {
-	return getꓽSEC(SEC).xTry('create', () => {
+function create(SXC?: TBRSoftExecutionContext): Immutable<State> {
+	return getꓽSXC(SXC).xTry('create', () => {
 		const now_hrtday = getꓽUTC_timestampⵧhuman_readable‿days()
 		return enforceꓽimmutable<State>({
 			schema_version: SCHEMA_VERSION,

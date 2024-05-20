@@ -18,12 +18,12 @@ import { Store } from '../../types'
 const EMITTER_EVT = '⚡️change'
 
 interface CreateParams<State, Action> {
-	SEC: SoftExecutionContext,
+	SXC: SoftExecutionContext,
 	reduceꓽaction: (state: Immutable<State>, action: Immutable<Action>) => Immutable<State>,
 	debug_id?: string
 }
 function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extends BaseAction>({
-	SEC,
+	SXC,
 	reduceꓽaction,
 	debug_id,
 }: CreateParams<State, Action>): Store<State, Action> {
@@ -32,7 +32,7 @@ function createꓽstoreⵧin_memory<State extends AnyOffirmoState, Action extend
 		debug_id,
 	].filter(Boolean).join('ⳇ')
 
-	return SEC.xTry(`creating ${LIB}…`, ({ logger }) => {
+	return SXC.xTry(`creating ${LIB}…`, ({ logger }) => {
 		logger.trace(`[${LIB}].create()…`)
 
 		/////////////////////////////////////////////////

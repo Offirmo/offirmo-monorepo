@@ -1,5 +1,5 @@
-Authentication
-Authorisation
+authentication
+authorisation
 Content security policy (CSP) https://web.dev/articles/csp
 Cross Site Scripting (XSS) -- defense = escaping
 Cross Site Scripting (XSS) = attack where a user is able to exploit weaknesses in a web application to inject arbitrary scripts that execute on the browsers of victim users.  This code executes from the origin of the vulnerable domain. https://portswigger.net/web-security/cross-site-scripting
@@ -24,6 +24,7 @@ list -- allow list = operate on a deny by default policy, where anything that ha
 list -- deny list -- WARNING not sufficient to provide strong validation. They can be often bypassed very easily and should rather be used as part of defence in depth mechanisms  i.e. they should be used in conjunction with other validation mechanisms like allow lists, Regex checks etc.
 list -- deny list = opposite of allowlist. It operates on an allow by default policy where everything is permitted except for the cases that a user has specified.
 Malicious File Upload
+network ACL
 Open / Unvalidated Redirects
 OS Command Injection = attacker is able to inject and execute malicious code within a command that is passed to an application's operating system shell
 salting https://en.wikipedia.org/wiki/Salt_(cryptography)

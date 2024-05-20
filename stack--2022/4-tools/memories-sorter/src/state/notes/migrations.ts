@@ -20,9 +20,9 @@ export const MIGRATION_HINTS_FOR_TESTS: any = enforceꓽimmutable<any>({
 
 type StateForMigration = State
 
-export function migrate_toꓽlatest(SEC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<StateForMigration> {
+export function migrate_toꓽlatest(SXC: SoftExecutionContext, legacy_state: Immutable<any>, hints: Immutable<any> = {}): Immutable<StateForMigration> {
 	return migrate_toꓽlatestⵧgeneric<StateForMigration>({
-		SEC: SEC as any,
+		SXC: SXC as any,
 		LIB,
 		SCHEMA_VERSION,
 		legacy_state,
@@ -37,10 +37,10 @@ export function migrate_toꓽlatest(SEC: SoftExecutionContext, legacy_state: Imm
 
 /////////////////////
 
-const migrate_to_2x: LastMigrationStep<StateForMigration, any> = (SEC, legacy_state, hints, next, legacy_schema_version) => {
+const migrate_to_2x: LastMigrationStep<StateForMigration, any> = (SXC, legacy_state, hints, next, legacy_schema_version) => {
 	//console.log('hello from migrate_to_3x', legacy_state, hints, legacy_schema_version)
 	if (legacy_schema_version < 1)
-		legacy_state = next(SEC, legacy_state, hints)
+		legacy_state = next(SXC, legacy_state, hints)
 
 	assert(
 		Object.keys(legacy_state).sort().join(',')
@@ -158,7 +158,7 @@ const migrate_to_2x: LastMigrationStep<StateForMigration, any> = (SEC, legacy_st
 	return state
 }
 
-const migrate_to_1: MigrationStep<StateForMigration, any> = (SEC, legacy_state, hints, next, legacy_schema_version) => {
+const migrate_to_1: MigrationStep<StateForMigration, any> = (SXC, legacy_state, hints, next, legacy_schema_version) => {
 	throw new Error('migrate_to_1 NIMP!')
 }
 

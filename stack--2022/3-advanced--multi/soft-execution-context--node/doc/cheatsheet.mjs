@@ -5,7 +5,7 @@ import PKG_JSON from '../package.json' assert { type: 'json' }
 
 console.log(boxify(`
 const { createLogger } = require('@offirmo/practical-logger-node')
-const { getRootSEC } = require('@offirmo-private/soft-execution-context')
+const { getRootSXC } = require('@offirmo-private/soft-execution-context')
 const {
 	listenToUncaughtErrors,
 	listenToUnhandledRejections,
@@ -19,20 +19,20 @@ const logger = createLogger({
 	suggestedLevel: 'silly',
 })
 
-const SEC = getRootSEC()
+const SXC = getRootSXC()
 	.setLogicalStack({ module: APP })
 	.injectDependencies({ logger })
 
-SEC.emitter.on('final-error', function onError({logger, err}) {
+SXC.emitter.on('final-error', function onError({logger, err}) {
 	logger.fatal('error!', {err})
 })
 
-SEC.emitter.on('analytics', function onError({SEC, eventId, details}) { … })
+SXC.emitter.on('analytics', function onError({SXC, eventId, details}) { … })
 
 listenToUncaughtErrors()
 listenToUnhandledRejections()
 decorateWithDetectedEnv()
 
 // Top uses tryCatch
-SEC.xTryCatch('starting', ({SEC, logger}) => { ...
+SXC.xTryCatch('starting', ({SXC, logger}) => { ...
 `.trim()))

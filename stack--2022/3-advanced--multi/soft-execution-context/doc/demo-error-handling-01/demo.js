@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { createLogger } from '@offirmo/practical-logger-browser'
 
-import {getRootSEC} from '../../src/index.js'
+import {getRootSXC} from '../../src/index.js'
 import * as good_lib from './good_lib.js'
 
-const APP = 'SEC_DEMO_01'
+const APP = 'SXC_DEMO_01'
 
 const logger = createLogger({
 	name: APP,
@@ -14,25 +14,25 @@ const logger = createLogger({
 logger.log(`Hello from ${APP}...`)
 
 
-const SEC = getRootSEC()
-SEC.setLogicalStack({
+const SXC = getRootSXC()
+SXC.setLogicalStack({
 	module: APP,
 })
-SEC.injectDependencies({
+SXC.injectDependencies({
 	logger,
 })
-SEC.emitter.on('final-error', function onError({SEC, err}) {
+SXC.emitter.on('final-error', function onError({SXC, err}) {
 	logger.fatal('Crashed!', {err})
 })
 
 /* TODOOO
-SEC.listenToUncaughtErrors()
-SEC.listenToUnhandledRejections()
+SXC.listenToUncaughtErrors()
+SXC.listenToUnhandledRejections()
 */
 
 // Top uses tryCatch
-SEC.xTryCatch('starting', ({SEC, logger}) => {
-	logger.log(SEC.getLogicalStack())
+SXC.xTryCatch('starting', ({SXC, logger}) => {
+	logger.log(SXC.getLogicalStack())
 
 	// sync, immediate
 	//throw new Error('Foo')
@@ -40,23 +40,23 @@ SEC.xTryCatch('starting', ({SEC, logger}) => {
 	// sync, in libs
 	/*
 	const bad_lib = require('./bad_lib')
-	SEC.xTry('calling bad lib', () => bad_lib.foo_sync())
+	SXC.xTry('calling bad lib', () => bad_lib.foo_sync())
 	*/
 
-	const good_lib_inst = good_lib.create({SEC})
-	SEC.xTry('calling good lib', () => good_lib_inst.foo_sync())
+	const good_lib_inst = good_lib.create({SXC})
+	SXC.xTry('calling good lib', () => good_lib_inst.foo_sync())
 
 	/*
 	const intercepting_lib = require('./intercepting_lib')
-	SEC.xTry('calling intercepting lib', () => intercepting_lib.foo_sync())
+	SXC.xTry('calling intercepting lib', () => intercepting_lib.foo_sync())
 	*/
 
 	logger.log('--- this should not be called !! ---')
 
-	//const good_lib_inst = require('./good_lib_inst').create({SEC})
+	//const good_lib_inst = require('./good_lib_inst').create({SXC})
 
-	//return SEC.xPromiseResolve('calling bad lib', bad_lib.foo_async())
+	//return SXC.xPromiseResolve('calling bad lib', bad_lib.foo_async())
 	//return intercepting_lib.foo_async()
-	//return SEC.xPromiseTry('calling intercepting lib', () => intercepting_lib.foo_async())
+	//return SXC.xPromiseTry('calling intercepting lib', () => intercepting_lib.foo_async())
 	//return good_lib_inst.foo_async().then(() => logger.log('--- this should not be called !! ---'))
 })
