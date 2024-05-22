@@ -3,9 +3,9 @@
 +++ https://martinfowler.com/
 +++ https://www.hackterms.com/about/all
 +++ https://www.linfo.org/main_index.html
-[ ] https://zknill.io/posts/every-programmer-should-know/
 12 factors https://12factor.net/
 97 Things Every Programmer Should Know
+[ ] https://zknill.io/posts/every-programmer-should-know/
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 allocation
 annotation
@@ -167,6 +167,7 @@ IDEALS -- 6 Single responsibility
 IDEALS = principles for microservice design
 If it ain't broke, don't fix it
 IIFE
+naming https://ntietz.com/blog/when-to-use-cute-names-or-descriptive-names/
 immutability
 Interface segregation principle = instead of a class interface with all possible methods clients might need, there should be separate interfaces catering to the specific needs of each type of client https://en.wikipedia.org/wiki/Interface_segregation_principle
 Joel test
@@ -305,6 +306,7 @@ TDZ
 tech debt -- Accidental - e.g. bugs due to human error that unknowingly increases the cost of future work.
 tech debt -- Deliberate - e.g. optimising for short term delivery, knowing it increases the cost of future work.
 tech debt -- Incidental - e.g. organic changes in complexity over time that increases the cost of future work.
+temporary solutions https://80.lv/articles/this-30-year-old-windows-feature-was-created-as-a-temporary-solution/
 the room https://lethain.com/getting-in-the-room/
 this
 thread

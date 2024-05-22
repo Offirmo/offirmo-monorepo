@@ -19,9 +19,8 @@ function generate(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 		<!-- React will render here and replace this -->
 		<section style="
 			text-align: center;
-			--width: 60ch;
-			max-width: var(--width);
-			margin: 0 max(1ch, (100vw - var(--width))/2);
+			max-width: 60ch;
+			margin: 0 auto;
 			">
 			<h1>${getꓽtitleⵧpage(spec, 'Loading…')}</h1>
 			<em>Loading…</em>

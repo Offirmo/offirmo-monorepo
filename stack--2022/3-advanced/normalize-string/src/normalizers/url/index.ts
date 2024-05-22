@@ -10,6 +10,14 @@ import { normalizeꓽemailⵧreasonable, hasꓽemail_structure } from '../email/
 // https://en.wikipedia.org/wiki/URL
 
 function _normalizeⵧschemeꘌhttpₓ(url: string): string {
+	try {
+		// TODO one day URL.canParse
+		new URL(url)
+	}
+	catch(e) {
+		throw new Error(`Invalid URL!`)
+	}
+
 	let [scheme, ...rest] = url.split(':')
 	scheme = scheme.toLowerCase()
 

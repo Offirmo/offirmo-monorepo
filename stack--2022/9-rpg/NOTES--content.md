@@ -88,6 +88,7 @@ https://www.personalityresearch.org/bigfive.html
 
 She learned that you should never try to intimidate people into telling you the truth. They’ll just put up their guard. Instead, watch for signs of unsuitable nervousness and anxiety, and any pretense of a lack of interest in your questions. The more you talk, the less you’ll learn about the other person – including his or her deceptions. Listen instead. If what the person says sounds rehearsed, you may not be getting the truth. Active listening is the best way to tell truths from lies.
 
+https://en.wikipedia.org/wiki/Miskito_people#Miskito_Gods
 
 ## universes
 

@@ -24,6 +24,7 @@ Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 base rate: The average outcome for an event over time. They’re like batting averages for life, and they work best with big sample sizes. For example, if you’re starting a business, avoid the restaurant business where margins are low and competition is high.
 be prepared
 bee browsing
+broken window theory
 bike-shed Effect: A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
 bonne et mauvaises cartes
 brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand

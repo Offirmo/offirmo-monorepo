@@ -1,5 +1,7 @@
 +++ https://developer.mozilla.org/en-US/curriculum/
 [ ] +++ https://dev.to/anze_kop1tar/acronyms-you-should-know-when-going-to-a-job-interview-369l
+[ ] security https://portswigger.net/web-security/all-topics
+[ ] security https://xsleaks.dev/
 [ ] TODO shearing layers https://en.wikipedia.org/wiki/Shearing_layers
 APIs web
 appli web
@@ -73,15 +75,18 @@ realtime -- patterns -- Push biz events
 realtime -- patterns -- Push state
 realtime -- patterns -- Push state diff
 realtime updates https://zknill.io/posts/how-to-adopt-realtime/
+security -- clickjacking https://portswigger.net/web-security/clickjacking
+security -- cross-site leaks https://xsleaks.dev/
 testing https://www.testingjavascript.com/
 UI -- Application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
 UI -- aria https://www.w3.org/WAI/ARIA/apg/
+UI -- chrome
 UI -- contrast ratio https://www.siegemedia.com/contrast-ratio
-UI -- game -- HUD https://en.wikipedia.org/wiki/HUD_(video_games)
-UI -- game https://news.blizzard.com/en-us/world-of-warcraft/23837944/get-into-the-grid-of-things-with-the-updated-ui-and-hud
+UI -- HUD
 UI -- modals -- sheets = ~semi-modal https://en.wikipedia.org/wiki/Modal_window#Modal_sheets_in_Mac_OS_X
 UI -- modals https://en.wikipedia.org/wiki/Modal_window
 UI -- modes https://en.wikipedia.org/wiki/User_interface#Modalities_and_modes
+UI -- views
 User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#large-viewport
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
 UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb

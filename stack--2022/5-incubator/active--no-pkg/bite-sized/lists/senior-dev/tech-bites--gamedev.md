@@ -136,8 +136,10 @@ transmog
 turtling
 twinking
 UI -- HUD
+UI -- HUD https://en.wikipedia.org/wiki/HUD_(video_games)
 UI -- minimap
 UI -- radar
+UI https://news.blizzard.com/en-us/world-of-warcraft/23837944/get-into-the-grid-of-things-with-the-updated-ui-and-hud
 UX -- title screen
 woodwalking
 zone

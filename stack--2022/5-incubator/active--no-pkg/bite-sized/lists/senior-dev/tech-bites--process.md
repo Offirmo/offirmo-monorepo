@@ -25,8 +25,10 @@ documentation -- divio system -- 04 Explanations (or discussions) = understandin
 documentation -- divio system = https://documentation.divio.com/  https://nick.groenen.me/posts/the-4-types-of-technical-documentation/
 Every piece of business finance I could come up with after 10 years as a CFO https://twitter.com/KurtisHanni/status/1560986912613072899
 exec summary https://lethain.com/present-to-executives/
+fix broken windows https://frontendatscale.com/issues/22/
 full service ownership https://nick.groenen.me/notes/full-service-ownership/#full-service-ownership
 Headline driven development (Amazon) https://www.spakhm.com/headline-development
+How Might We? (HMW) = technique used to frame design challenges by formulating questions that focus on the desired outcome, are broad, and are phrased positively to encourage creativity and generate ideas
 Jobs to be Done (JTBD) https://en.wikipedia.org/wiki/Jobs-to-be-done_theory
 Kanban https://en.wikipedia.org/wiki/Kanban_(development)
 merge queues https://engineering.shopify.com/blogs/engineering/successfully-merging-work-1000-developers
