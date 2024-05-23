@@ -11,8 +11,8 @@ import { getRootSXC } from '@offirmo-private/soft-execution-context'
 /////////////////////////////////////////////////
 
 // add immediate security actions here
+// TODO should happen synchronously inside the HTML!
 function initⵧimmediate(): void {
-	// TODO should happen synchronously inside the HTML!
 	console.log('%cEnforcing app security…', 'font-style: oblique;')
 	// protect against prototype pollution
 	// is that really useful?
@@ -22,23 +22,26 @@ function initⵧimmediate(): void {
 	// TODO strip global scope and APIs
 }
 
-
 // add logs or later security actions here
 async function initⵧdeferred() {
 	getRootSXC().xTry('init:SXC', ({ logger }) => {
 		// ensure we have a CSP
 		const allowsꓽunsafe_evals = (() => {
 			// https://stackoverflow.com/a/27399739/587407
-			try { new Function(''); return true }
-			catch (e) { return false }
+			try {
+				new Function('')
+				return true
+			} catch (e) {
+				return false
+			}
 		})()
-		if(allowsꓽunsafe_evals) {
+		if (allowsꓽunsafe_evals) {
 			// this is the first thing a CSP disables...
 			logger.error('Content Security Policy is missing! Consider this app unsafe!')
 		}
 
 		const isꓽiframe = window.self !== window.top
-		if(isꓽiframe) {
+		if (isꓽiframe) {
 			// strictly speaking the web is composable and there is nothing wrong with being an iframe
 			// however there are a few attacks...
 			// https://web.dev/articles/security-headers#xfo

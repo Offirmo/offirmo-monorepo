@@ -1,8 +1,6 @@
 import { getRootSXC } from '@offirmo-private/soft-execution-context'
 import { listenToErrorEvents, listenToUnhandledRejections } from '@offirmo-private/soft-execution-context--browser'
 
-import { CHANNEL } from '../services/channel.ts'
-
 /////////////////////////////////////////////////
 
 const STYLES = 'padding: .5em; background-color: red; color: white; font-weight: bold;'
