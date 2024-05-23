@@ -60,8 +60,8 @@ interface HtmlMetas {
 		// https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
 		'apple-mobile-web-app-capable'?: 'yes';
 		'apple-mobile-web-app-status-bar-style'?: // see also https://medium.com/appscope/changing-the-ios-status-bar-of-your-progressive-web-app-9fc8fbe8e6ab
-		| 'default' // the status bar appears normal                     → the web content is displayed below the status bar
-			| 'black' // the status bar has a black background               →  the web content is displayed below the status bar
+			| 'default' // the status bar appears normal                      → the web content is displayed below the status bar
+			| 'black' // the status bar has a black background                →  the web content is displayed below the status bar
 			| 'black-translucent'; // the status bar is black and translucent → the web content is displayed on the entire screen, partially obscured by the status bar
 		'format-detection'?: 'telephone=no';
 
@@ -106,6 +106,7 @@ interface HtmlMetas {
 		// (don't spend too much time on it)
 		keywords: string[];
 
+		// TODO https://www.wearediagram.com/blog/seo-for-https-sites-should-you-implement-the-meta-referrer-tag
 		referrer?: 'no-referrer' | 'origin' | 'no-referrer-when-downgrade' | 'origin-when-cross-origin' | 'same-origin' | 'strict-origin' | 'strict-origin-when-cross-origin' | 'unsafe-URL';
 
 		// https://www.w3.org/TR/appmanifest/#theme_color-member
@@ -134,8 +135,11 @@ export const FeatureSnippets = Enum(
 	'cssⳇviewport--full',
 	'cssⳇfoundation--offirmo',
 	'cssⳇframework--offirmo',
+
 	'htmlⳇreact-root',
+
 	'normalize-url-trailing-slash',
+
 	// TODO implement:
 	'page-loader--offirmo',
 	'analytics--google',

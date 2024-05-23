@@ -84,6 +84,3 @@ function generate(spec: Immutable<WebPropertyEntryPointSpec>): WebManifest {
 /////////////////////////////////////////////////
 
 export default generate
-export {
-	generate,
-}

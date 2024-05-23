@@ -62,60 +62,116 @@ function genꓽCODE_TEMPLATEⵧSERVICESⳇCHANNEL(spec: Immutable<WebPropertyEnt
 	const URLⵧCANONICAL‿url= new URL(URLⵧCANONICAL‿str)
 
 	return `
-//import { is_loaded_from_cordova } from './cordova' TODO
 
-import { LIB } from '../consts.ts'
+/////////////////////////////////////////////////
 
 const URLⵧCANONICAL = '${spec.urlⵧcanonical}'
 
 /////////////////////////////////////////////////
 
-function isꓽprod() {
+// prod = full security and reliability
+// staging = close to prod, usually only difference is the data storage = different from prod
+// dev = anything else
+const CHANNEL = ((): 'prod' | 'staging' | 'dev' => {
+
+	// first weed out obvious dev cases
+	if (!window.isSecureContext)                  return 'dev'
+	if (window.location.protocol !== 'https:')    return 'dev'
+	if (window.location.port)                     return 'dev'
+
+	// then detect common "local" dev setups
+	const isꓽlocalhost = ['localhost', 'example', 'test', 'invalid'].some(domain => window.location.hostname.endsWith(domain)) // https://en.wikipedia.org/wiki/.localhost
+	if (isꓽlocalhost)                              return 'dev'
+	const isꓽtunneledⵧngrok = ['.ngrok-free.app', '.ngrok-free.dev', '.ngrok.app', '.ngrok.dev'].some(domain => window.location.hostname.endsWith(domain)) // https://ngrok.com/blog-post/new-ngrok-domains
+	if (isꓽtunneledⵧngrok)                        return 'dev'
+	const isꓽtunneledⵧcloudflare = ['.cfargotunnel.com'].some(domain => window.location.hostname.endsWith(domain)) // https://developers.cloudflare.com/cloudflare-one/faq/cloudflare-tunnels-faq/
+	if (isꓽtunneledⵧcloudflare)                   return 'dev'
+
+	// then detect common "hosted" locations, which mean staging
+	if (window.location.hostname.endsWith('.netlify.app'))    return 'staging'
+	if (window.location.hostname.endsWith('.github.io'))      return 'staging'
+	if (window.location.hostname.endsWith('.pages.dev'))      return 'staging' // cloudflare
+	if (window.location.hostname.endsWith('.cloudfront.net')) return 'staging' // AWS
+
+	// finally, does it match the expected canonical URL?
 	const URLⵧCANONICAL‿obj = new URL(URLⵧCANONICAL)
+	if (window.location.hostname === URLⵧCANONICAL‿obj.hostname) return 'prod'
 
-	if (window.location.protocol !== 'https:')
-		return false
+	// TODO cordova
+	// TODO itch.io
 
-	if (window.location.port)
-		return false
-
-	if (window.location.hostname !== URLⵧCANONICAL‿obj.hostname)
-		return false
-
-	//is_loaded_from_cordova() TODO
-	return true
-}
-
-function isꓽstaging() {
-	if (window.location.protocol !== 'https:')
-		return false
-
-	if (window.location.port)
-		return false
-
-	// TODO add more
-	if (window.location.hostname.endsWith('netlify.app'))
-		return true
-
-	return false
-}
-
-const CHANNEL = isꓽprod()
-	? 'prod'
-	: isꓽstaging()
-		? 'staging'
-		: 'dev'
+	// everything else is unknown = unsafe
+	return 'dev'
+})()
 
 /////////////////////////////////////////////////
 
-export {
-	CHANNEL,
-}
+export { CHANNEL }
 `.trim()
 }
 
+const CODE_TEMPLATEⳇINITⳇSECURITY = `
+/** Immediate security initializations.
+ * This code will be executed immediately when the app starts.
+ *
+ * We can't ensure full security, but we can try to mitigate some risks.
+ * https://owasp.org/www-project-top-ten/
+ * - We assume our own code can be compromised (ex. supply chain)
+ * - We assume the opener of our page may have injected some js https://krausefx.com//blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
+ */
+import { getRootSXC } from '@offirmo-private/soft-execution-context'
+
+/////////////////////////////////////////////////
+
+// add immediate security actions here
+// TODO should happen synchronously inside the HTML!
+function initⵧimmediate(): void {
+	console.log('%cEnforcing app security…', 'font-style: oblique;')
+	// protect against prototype pollution
+	// is that really useful?
+	// https://www.synopsys.com/blogs/software-security/javascript-security-best-practices.html#6
+	Object.freeze(Object.prototype)
+
+	// TODO strip global scope and APIs
+}
+
+
+// add logs or later security actions here
+async function initⵧdeferred() {
+	getRootSXC().xTry('init:SXC', ({ logger }) => {
+		// ensure we have a CSP
+		const allowsꓽunsafe_evals = (() => {
+			// https://stackoverflow.com/a/27399739/587407
+			try { new Function(''); return true }
+			catch (e) { return false }
+		})()
+		if(allowsꓽunsafe_evals) {
+			// this is the first thing a CSP disables...
+			logger.error('Content Security Policy is missing! Consider this app unsafe!')
+		}
+
+		const isꓽiframe = window.self !== window.top
+		if(isꓽiframe) {
+			// strictly speaking the web is composable and there is nothing wrong with being an iframe
+			// however there are a few attacks...
+			// https://web.dev/articles/security-headers#xfo
+			logger.warn('Running in an iframe, be cautious!!')
+			// since we don't have any iframe-specific feature, let's cut off the connection
+			window.parent = window
+			window.top = window
+		}
+	})
+}
+
+/////////////////////////////////////////////////
+
+initⵧimmediate()
+
+export default initⵧdeferred
+`.trim()
+
 const CODE_TEMPLATEⳇINITⳇLOGGER = `
-import logger from '../logger.ts'
+import logger from '../services/logger.ts'
 
 /////////////////////////////////////////////////
 
@@ -131,10 +187,10 @@ export default init
 const CODE_TEMPLATEⳇINITⳇSXC = `
 import { getRootSXC, decorateWithDetectedEnv } from '@offirmo-private/soft-execution-context--browser'
 
-import { LIB } from '../../consts.ts'
-import { VERSION } from '../../../build.ts'
-import { CHANNEL } from '../channel.ts'
-import logger from '../logger.ts'
+import { LIB } from '../consts.ts'
+import { VERSION } from '../../entry-points/build.ts'
+import { CHANNEL } from '../services/channel.ts'
+import logger from '../services/logger.ts'
 
 /////////////////////////////////////////////////
 
@@ -156,10 +212,10 @@ async function init(): Promise<void> {
 		CHANNEL,
 	})
 
-	rootSXC.xTry('init:SXC', ({logger, SXC}) => {
-		logger.debug('Root Soft Execution Context initialized.', rootSXC)
-		logger.debug('Root SXC is now decorated with a logger ✔')
-		logger.debug('Root SXC is now decorated with env infos ✔', SXC.getAnalyticsDetails())
+	rootSXC.xTry('init:SXC', ({ logger, SXC }) => {
+		logger.debug('┌ Root SXC is now decorated with a logger ✔')
+		logger.debug('├ Root SXC is now decorated with env infos ✔', SXC.getAnalyticsDetails())
+		logger.debug('└► Root Soft Execution Context initialized ✔', rootSXC)
 	})
 
 	const { ENV } = rootSXC.getInjectedDependencies()
@@ -176,8 +232,6 @@ export default init
 const CODE_TEMPLATEⳇINITⳇERRORS = `
 import { getRootSXC } from '@offirmo-private/soft-execution-context'
 import {	listenToErrorEvents, listenToUnhandledRejections } from '@offirmo-private/soft-execution-context--browser'
-
-import { CHANNEL } from '../channel.ts'
 
 /////////////////////////////////////////////////
 
@@ -225,8 +279,6 @@ export default init
 const CODE_TEMPLATEⳇINITⳇGENERIC = `
 import { getRootSXC } from '@offirmo-private/soft-execution-context'
 
-import { CHANNEL } from '../services/channel.ts'
-
 /////////////////////////////////////////////////
 
 async function init(): Promise<void> {
@@ -248,15 +300,17 @@ function generate(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
 		'./app/index.ts': `
 import { asap_but_out_of_immediate_execution, forArray } from '@offirmo-private/async-utils'
 import { VERSION, BUILD_DATE } from '../entry-points/build.ts'
+import './init/00-security.ts' // as early as possible, side effects expected
 
 import { CHANNEL } from './services/channel'
 
 /////////////////////////////////////////////////
 
-console.info(\`%c ${getꓽtitleⵧapp(spec)} %cv\${VERSION}%c\${BUILD_DATE}\`,
+console.info(\`%cWelcome to %c${getꓽtitleⵧapp(spec)} %cv\${VERSION}%c\${BUILD_DATE}\`,
+	'font-weight: bold;',
 	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: ${getꓽcolorⵧbackground(spec)}; color: ${getꓽcolorⵧforeground(spec)}; font-weight: bold;',
-	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey; color: black; font-weight: bold;',
-	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey; color: black;',
+	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey;                           color: black;                              font-weight: bold;',
+	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey;                           color: black;',
 )
 
 /////////////////////////////////////////////////
@@ -267,16 +321,16 @@ asap_but_out_of_immediate_execution(async () => {
 	const logger = (await import('./services/logger.ts')).default
 
 	// order is important! Timing is non-trivial!
-	const init = await import('./init/*.ts')
-	await forArray(Object.keys(init).sort()).executeSequentially((key) => {
+	const inits = await import('./init/*.ts')
+	await forArray(Object.keys(inits).sort()).executeSequentially(async (key) => {
 		logger.group(\`init/"\${key}"\`)
 			logger.trace(\`init/"\${key}": import…\`)
-			const init_fn = (await init[key]()).default
+			const init_fn = (await inits[key]()).default
 			logger.trace(\`init/"\${key}": exec…\`)
 			await init_fn()
 			logger.trace(\`init/"\${key}": done ✅\`)
 		logger.groupEnd()
-	}, Promise.resolve())
+	})
 })
 `.trimStart(),
 
@@ -296,8 +350,8 @@ asap_but_out_of_immediate_execution(async () => {
 		'./app/view/index.tsx': CODE_TEMPLATEⵧGENERIC,
 
 		// init
-		'./app/init/00-logger.ts':    CODE_TEMPLATEⳇINITⳇLOGGER,
-		'./app/init/01-security.ts':  CODE_TEMPLATEⳇINITⳇGENERIC,
+		'./app/init/00-security.ts':  CODE_TEMPLATEⳇINITⳇSECURITY,
+		'./app/init/01-logger.ts':    CODE_TEMPLATEⳇINITⳇLOGGER,
 		'./app/init/02-sxc.ts':       CODE_TEMPLATEⳇINITⳇSXC,
 		'./app/init/03-errors.ts':    CODE_TEMPLATEⳇINITⳇERRORS,
 		'./app/init/10-loader.tsx':   CODE_TEMPLATEⳇINITⳇGENERIC,
@@ -311,6 +365,3 @@ asap_but_out_of_immediate_execution(async () => {
 /////////////////////////////////////////////////
 
 export default generate
-export {
-	generate,
-}

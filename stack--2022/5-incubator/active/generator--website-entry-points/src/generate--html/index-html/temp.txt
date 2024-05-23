@@ -204,10 +204,6 @@ function generateꓽhtml__body(spec: Immutable<WebPropertyEntryPointSpec>): Html
 		html_blocks.push(snippetꓽhtmlⳇcontentⵧauto(spec))
 	}
 
-	if (shouldꓽgenerateꓽsourcecode(spec)) {
-		js_blocks.push(`import './app/index.ts'`)
-	}
-
 	if (js_blocks.length === 0) {
 		js_blocks.push(`console.log('Hello, world!')`)
 	}

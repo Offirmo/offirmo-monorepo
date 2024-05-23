@@ -95,3 +95,4 @@ viewport
 viewport -- large, small, dynamic
 viewport -- visual
 viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
+Web Application Firewall (WAF)
