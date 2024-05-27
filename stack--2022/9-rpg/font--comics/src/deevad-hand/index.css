@@ -1,0 +1,26 @@
+
+/*********************/
+
+@font-face {
+	font-family: 'DeevadHand';
+	src: url('regular.ttf');
+}
+@font-face {
+	font-family: 'DeevadHand';
+	src: url('bold.ttf');
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'DeevadHand';
+	src: url('italic.ttf');
+	font-style: italic;
+}
+
+/*********************/
+
+.omr⋄font⁚DeevadHand {
+	font-family: 'DeevadHand', sans-serif;
+	font-synthesis: style small-caps weight position;
+}
+
+/*********************/
