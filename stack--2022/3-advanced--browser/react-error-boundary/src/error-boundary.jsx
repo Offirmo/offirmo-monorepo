@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import assert from 'tiny-invariant'
 import { asap_but_not_synchronous } from '@offirmo-private/async-utils'
 
-import { getꓽSXC } from './sec.js'
+import { getꓽSXC } from './sxc.js'
 import { render_any } from './render-any.jsx'
 
 
@@ -27,7 +27,6 @@ class ErrorBoundary extends React.Component {
 	}
 
 	componentDidMount() {
-		this.props.onMount(this.componentDidCatch)
 	}
 
 	componentWillUnmount() {
@@ -36,7 +35,7 @@ class ErrorBoundary extends React.Component {
 
 	// as a member var to be able to pass it around
 	componentDidCatch = (error, errorInfo) => {
-		const {name} = this.props
+		const { name } = this.props
 
 		this.SXC.xTryCatch(`handling error boundary "${name}"`, ({SXC, logger}) => {
 
@@ -107,11 +106,9 @@ class ErrorBoundary extends React.Component {
 }
 ErrorBoundary.propTypes = {
 	name: PropTypes.string.isRequired,
-	onMount: PropTypes.func, // usage??
 	onError: PropTypes.func,
 }
 ErrorBoundary.defaultProps = {
-	onMount: () => {},
 	onError: () => {},
 	// TODO report link customization
 }

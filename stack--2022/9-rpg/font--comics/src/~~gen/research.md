@@ -17,10 +17,9 @@ For ex. the font can change for spell casting, for the villain...
 
 > With 21st century improvements in print quality and the move towards screen readers, upper and lowercase fonts have become a practical option for lettering comic books.
 > 
-> Lowercase letters can provide a softer, friendlier, more approachable look that some find easier to read.
-> 
-> https://www.comicbookfonts.com/Upper-and-Lowercase-Word-Balloon-Fonts-s/1816.htm
+> Lowercase letters can provide a softer, friendlier, more approachable look that some find easier to read. ([comicbookfonts.com](https://www.comicbookfonts.com/Upper-and-Lowercase-Word-Balloon-Fonts-s/1816.htm))
 
+> font choices should always complement the artwork ([blambot tip#14](https://blambot.com/en-au/pages/lettering-tips#gallery-14))
 
 ## Concepts
 
@@ -28,7 +27,8 @@ lettering
 - +++ https://blambot.com/en-au/pages/lettering-tips
 - ++ https://makingcomics.com/2014/06/17/type-crimes-will-get-sent-weekend-hobbyist-jail/
 - https://www.creativecomicart.com/comic-lettering.html
-- i vs I, D vs O
+- i vs I https://blambot.com/en-au/pages/lettering-tips#gallery-1
+- D vs O
 - panel art
 - panel placement
 - symbol & sound effects

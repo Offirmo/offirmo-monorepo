@@ -40,6 +40,8 @@ CSS -- z-index
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
 DDoS
 devices -- support
+fonts
+fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
 HTML -- concepts
 HTML -- elements
 HTML -- tags
