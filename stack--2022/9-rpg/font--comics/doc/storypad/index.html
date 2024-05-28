@@ -13,10 +13,11 @@
 		{
 			root_title: nearest_pkg?.name,
 			decorators: [
-				/*(story) => {
+				(story) => {
 					import('npm:@offirmo-private/css--foundation')
+					import('npm:@offirmo-private/css--foundation/src/xoptional/body--full-width.css')
 					return story
-				},*/
+				},
 				/*(story) => {
 					import('npm:@offirmo-private/css--foundation/src/xoptional/color-theme--light.css')
 					const brand__hue =

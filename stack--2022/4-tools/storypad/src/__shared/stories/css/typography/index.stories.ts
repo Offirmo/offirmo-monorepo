@@ -3,25 +3,52 @@ import { PANGRAM } from './consts.ts'
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export function Demoꓽfontᝍweight() {
+function demo_style({property, values, reference = 'sans-serif', demo_text = PANGRAM}: {
+	property: string,
+	values: string[],
+	reference?: FontFamilyGenericName | null,
+	demo_text?: string,
+}) {
 	return `
-<ul>
-	${[
-		// semantic first
-		'lighter',
-		'normal ',
-		'bold',
-		'bolder ',
-		// numerical
-		'1', '100', '200', '300', '400', '500', '600', '700', '800', '900', '1000',
-		].map(fw => `
-	<li>
-		<code style="font-weight: ${fw}; font-family: monospace;">font-weight:${fw}</code>: <span style="font-weight: ${fw};">${PANGRAM}</span>
-	</li>
-`).join('')}
-</ul>
-</>
-`
+<p>
+<table>
+	<thead>
+		<tr>
+			<th><code>${property}</code></th>
+			<th style="font-family: monospace">demo</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>[reference]</code></td>
+			<td><span style="font-family: ${reference};">${demo_text}</span></td>
+		</tr>
+		${values.map(value => `
+			<tr>
+				<td><code>${value}</code></td>
+				<td><span style="${property}:${value};">${demo_text}</span></td>
+			</tr>
+		`).join('')}
+	</tbody>
+</table>
+</p>
+	`
+}
+
+export function Demoꓽfontᝍweight() {
+	return demo_style({
+		property: 'font-weight',
+		values: [
+			// semantic first
+			'lighter',
+			'normal ',
+			'bold',
+			'bolder ',
+			// numerical
+			'1', '100', '200', '300', '400', '500', '600', '700', '800', '900', '1000',
+		]
+
+	})
 }
 
 export function DemoꓽHTML_Elements() {
@@ -35,37 +62,67 @@ export function DemoꓽHTML_Elements() {
 }
 
 export function Demoꓽfontᝍstyle() {
-	return `
-<ul>
-	${[
-		'normal  ', 'italic  ', 'oblique', 'oblique 45deg',
-	].map(fs => `
-	<li>
-		<code>font-style:${fs}</code>: <span style="font-style: ${fs};">${PANGRAM}</span>
-	</li>
-`).join('')}
-</ul>
-</>
-`
+	return demo_style({
+		property: 'font-style',
+		values: [
+			'normal  ',
+			'italic  ',
+			'oblique',
+			'oblique 45deg',
+		]
+	})
 }
 
 export function Demoꓽfontᝍvariantᝍcaps() {
-	return `
-<ul>
-	${[
-		'normal', 'small-caps', 'all-small-caps', 'petite-caps', 'all-petite-caps', 'unicase', 'titling-caps',
-	].map(fvc => `
-	<li>
-		<code>font-variant-caps:${fvc}</code>: <span style="font-variant-caps: ${fvc};">${PANGRAM}</span>
-	</li>
-`).join('')}
-</ul>
-</>
-`
+	return demo_style({
+		property: 'font-variant-caps',
+		values: [
+			'normal', 'small-caps', 'all-small-caps', 'petite-caps', 'all-petite-caps', 'unicase', 'titling-caps',
+		]
+	})
+}
+
+// need variable font!
+export function Demoꓽfontᝍstretch() {
+	return demo_style({
+		property: 'font-stretch',
+		values: [
+			// https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch
+			'normal',
+			'ultra-condensed',
+			'extra-condensed',
+			'condensed',
+			'semi-condensed',
+			'semi-expanded',
+			'expanded',
+			'extra-expanded',
+			'ultra-expanded',
+		]
+	})
+}
+
+export function Demoꓽfontᝍvariantᝍnumeric() {
+	return demo_style({
+		property: 'font-variant-numeric',
+		values: [
+			'normal',
+			'ordinal',
+			'slashed-zero',
+			'lining-nums',
+			'oldstyle-nums',
+			'proportional-nums',
+			'tabular-nums',
+			'diagonal-fractions',
+			'stacked-fractions',
+			'oldstyle-nums stacked-fractions',
+		],
+		demo_text: '01234567890  3.14  3/4  1st, 1er, 1a'
+	})
 }
 
 export function Demoꓽchallenges() {
 	return `
+Typographic challenges:
 <ul>
 	<li><code>I vs i</code>: I like it!</li>
 	<li><code>D vs O</code>: odd dog, ODD DOG</li>
@@ -75,35 +132,17 @@ export function Demoꓽchallenges() {
 `
 }
 
-// TODO caps and small caps
-
 /*
-font-stretch: normal;
-font-stretch: ultra-condensed;
-font-stretch: extra-condensed;
-font-stretch: condensed;
-font-stretch: semi-condensed;
-font-stretch: semi-expanded;
-font-stretch: expanded;
-font-stretch: extra-expanded;
-font-stretch: ultra-expanded;
-*/
-
-/*
-font-variant-caps:
- */
-
-/*
-font-variant-numeric: normal;
-font-variant-numeric: ordinal;
-font-variant-numeric: slashed-zero;
-font-variant-numeric: lining-nums; /* <numeric-figure-values>
-font-variant-numeric: oldstyle-nums; /* <numeric-figure-values>
-font-variant-numeric: proportional-nums; /* <numeric-spacing-values>
-font-variant-numeric: tabular-nums; /* <numeric-spacing-values>
-font-variant-numeric: diagonal-fractions; /* <numeric-fraction-values>
-font-variant-numeric: stacked-fractions; /* <numeric-fraction-values>
-font-variant-numeric: oldstyle-nums stacked-fractions;
+'normal;
+'ordinal;
+'slashed-zero;
+'lining-nums; /* <numeric-figure-values>
+'oldstyle-nums; /* <numeric-figure-values>
+'proportional-nums; /* <numeric-spacing-values>
+'tabular-nums; /* <numeric-spacing-values>
+'diagonal-fractions; /* <numeric-fraction-values>
+'stacked-fractions; /* <numeric-fraction-values>
+'oldstyle-nums stacked-fractions;
  */
 
 export function DemoꓽAll(reference: FontFamilyGenericName | null = 'sans-serif') {
@@ -113,6 +152,8 @@ ${Demoꓽfontᝍweight()}
 ${DemoꓽHTML_Elements()}
 ${Demoꓽfontᝍstyle()}
 ${Demoꓽfontᝍvariantᝍcaps()}
+${Demoꓽfontᝍstretch()}
+${Demoꓽfontᝍvariantᝍnumeric()}
 ${Demoꓽchallenges()}
 `
 }

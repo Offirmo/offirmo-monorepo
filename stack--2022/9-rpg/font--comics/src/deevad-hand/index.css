@@ -18,9 +18,14 @@
 
 /*********************/
 
+.omr⋄font⁚DeevadHand--raw {
+	font-family: 'DeevadHand', sans-serif;
+}
+
 .omr⋄font⁚DeevadHand {
 	font-family: 'DeevadHand', sans-serif;
 	font-synthesis: style small-caps weight position;
+	/* font-variant-numeric */
 }
 
 /*********************/
