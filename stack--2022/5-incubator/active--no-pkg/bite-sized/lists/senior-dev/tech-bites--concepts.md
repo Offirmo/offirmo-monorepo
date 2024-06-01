@@ -1,10 +1,10 @@
+12 factors https://12factor.net/
+97 Things Every Programmer Should Know
 [ ] +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
 [ ] +++ https://explorer.globe.engineer/
 [ ] +++ https://martinfowler.com/
 [ ] +++ https://www.hackterms.com/about/all
 [ ] +++ https://www.linfo.org/main_index.html
-12 factors https://12factor.net/
-97 Things Every Programmer Should Know
 [ ] https://zknill.io/posts/every-programmer-should-know/
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 allocation
@@ -23,6 +23,7 @@ authentication
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 BDD - Behavior-Driven Development https://cucumber.io/school/   Discovery -> Formulation -> Automation
 blocking
+bug -- mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html
 cache
 cache -- stampede https://en.wikipedia.org/wiki/Cache_stampede
 caching -- S3 FIFO https://s3fifo.com/
@@ -37,7 +38,6 @@ cohesion = degree to which the elements inside a module belong together https://
 command query responsibility segregation (CQRS)
 command query separation (CQS)
 comments
-language -- Bend = massively parallel, high-level programming language https://github.com/HigherOrderCO/Bend 
 comments -- conventional
 commits
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
@@ -45,12 +45,11 @@ compile to js
 compiler
 connascence https://en.wikipedia.org/wiki/Connascence
 constructor
-continuous integration
-continuous delivery
-continuous deployment
 context switch
 context switching
-mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html
+continuous delivery
+continuous deployment
+continuous integration
 Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
 corporate politic https://www.breakingpoint.tech/p/where-do-corporate-politics-come
 correlation
@@ -75,9 +74,6 @@ demos
 dependencies
 dependency hell https://en.wikipedia.org/wiki/Dependency_hell
 design patterns
-design patterns --
-design patterns --
-design patterns --
 design patterns -- behavioral -- command = command, receiver, invoker and client https://en.wikipedia.org/wiki/Command_pattern
 design patterns -- facade https://en.wikipedia.org/wiki/Facade_pattern
 design patterns -- strangler https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/
@@ -90,6 +86,7 @@ Domain-driven design https://en.wikipedia.org/wiki/Domain-driven_design
 double authent
 DRY don't repeat yourself
 dry run
+durable execution = development paradigm that preserves complete application state so that upon host or software failure it can seamlessly migrate execution to another machine https://stackoverflow.blog/2024/05/28/an-open-source-development-paradigm/
 Effect<Success, Error, Requirements> https://effect.website/docs/guides/essentials/the-effect-type
 egress
 emscripten
@@ -186,6 +183,7 @@ jump/goto
 kebab-case vs snake etc
 KISS
 KTLO
+language -- Bend = massively parallel, high-level programming language https://github.com/HigherOrderCO/Bend 
 language -- go
 language interprété types simples / types par référence
 language trends

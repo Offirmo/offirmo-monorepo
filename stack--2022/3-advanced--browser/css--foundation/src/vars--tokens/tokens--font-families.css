@@ -2,6 +2,5 @@
 	/* semantic aliases */
 	--o⋄font-family--fast_and_good_enough: var(--o⋄font-family--system--sans);
 	--o⋄font-family--main:                 var(--o⋄font-family--fast_and_good_enough);
-	--o⋄font-family--important:            var(--o⋄font-family--main);
 	--o⋄font-family--code:                 var(--o⋄font-family--system--mono);
 }

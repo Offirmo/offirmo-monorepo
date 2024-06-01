@@ -5,7 +5,9 @@
 
 	const DEBUG = false
 
-	// important to load async so that the stories don't pollute the global scope too early (ex. before SXC)
+	// important to load async so that
+	// - the stories don't pollute the global scope too early (ex. before SXC)
+	// - we can catch individual modules not loading
 	const stories = import('../../src/**/*.stories.@(js|jsx|ts|tsx|mdx)')
 
 	startꓽstorypad(

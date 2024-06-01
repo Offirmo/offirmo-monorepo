@@ -4,6 +4,10 @@
 @font-face {
 	font-family: 'TEST';
 	src: url('Ames-Regular.otf');
+	size-adjust: 75%;
+	xxascent-override: 105%;
+	xxdescent-override: 25%;
+	xxline-gap-override: 0%;
 }
 
 /*
@@ -27,6 +31,7 @@
 
 .omr⋄font⁚TEST {
 	font-family: 'TEST', sans-serif;
+	line-height: 1;
 }
 
 /*********************/

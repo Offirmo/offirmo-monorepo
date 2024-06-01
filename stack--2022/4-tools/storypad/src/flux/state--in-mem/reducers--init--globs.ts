@@ -33,7 +33,7 @@ async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_g
 	DEBUGⵧglob_parsing && console.log('glob=', stories_glob)
 
 	// note: we intentionally don't sort to keep the intended order (fs order should happen naturally anyway)
-	await Object.keys(stories_glob).reduce(async (acc, key) => {
+	await Object.keys(stories_glob).sort().reduce(async (acc, key) => {
 		await acc
 
 		assert(!key.includes(SEPⵧSEGMENTS), `Key contains a forbidden character! (SEP)`)
@@ -42,13 +42,17 @@ async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_g
 		// if dynamic import, can be a promise in the process of being resolved
 		const blob = await Promise.resolve(stories_glob[key])
 
+		const subpath = [...parent_path, key ]
+
 		switch (true) {
 			case isꓽImportModule(blob):
-				state = await _registerꓽstoriesⵧfrom_module(state, blob, [ ...parent_path, key ])
+				if (key === 'index')
+					subpath.pop() // useless
+				state = await _registerꓽstoriesⵧfrom_module(state, blob, subpath)
 				break
 
 			case isꓽImportGlob(blob):
-				state = await _registerꓽstoriesⵧfrom_glob_or_module(state, blob, [ ...parent_path, key ])
+				state = await _registerꓽstoriesⵧfrom_glob_or_module(state, blob, subpath)
 				break
 
 			default:
@@ -76,12 +80,11 @@ async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Imm
 				return await exports_sync_or_async()
 			}
 			catch (err) {
+				console.error(`Error while loading the story "${parent_path.join(SEPⵧSEGMENTS)}"!`, err)
 				return {
-					'!ERROR!': {
-						render() {
-							console.error(`Error while loading the story "${parent_path.join(SEPⵧSEGMENTS)}"!`, err)
-							return `Error while loading story! (see console)`
-						}
+					'!ERROR!': () => {
+						console.error(`Error while loading the story "${parent_path.join(SEPⵧSEGMENTS)}"!`, err)
+						return `Error while loading stories from "${parent_path.join(SEPⵧSEGMENTS)}"! (see console)`
 					}
 				}
 			}

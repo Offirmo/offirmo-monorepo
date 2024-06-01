@@ -1,7 +1,6 @@
 
 :is(h1, h2, h3, h4, h5, h6) {
 	color: var(--o⋄color⁚fg--strong);
-	font-family: var(--o⋄font-family--important);
 
 	/* smaller margins than the default stylesheet */
 	margin-block-start: 0.5em;

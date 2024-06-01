@@ -1,24 +1,18 @@
+import { Normalization as _Norm, DemoꓽAll } from '@offirmo-private/storypad/src/__shared/stories/css/typography/index.stories.ts'
+import { All } from '../__shared/use-cases.stories'
 
 import './index.css'
 
-import { Normalization as _Norm, DemoꓽAll } from '@offirmo-private/storypad/src/__shared/stories/css/typography/index.stories.ts'
 
-export function Demoⵧraw() {
+export function FontDemoⵧraw() {
 	return `
 <div class="omr⋄font⁚DeevadHand--raw">
 ${DemoꓽAll()}
 </div>
 	`
 }
-export function DemoⵧCalibrated() {
-	return `
-<div class="omr⋄font⁚DeevadHand">
-${DemoꓽAll()}
-</div>
-	`
-}
 
-export function Normalization() {
+export function Calibration() {
 	return `
 <div class="omr⋄font⁚DeevadHand">
 ${_Norm()}
@@ -26,11 +20,19 @@ ${_Norm()}
 	`
 }
 
-
-export function Calibration() {
+export function FontDemoⵧCalibrated() {
 	return `
 <div class="omr⋄font⁚DeevadHand">
-TODO
+${DemoꓽAll()}
+</div>
+	`
+}
+
+
+export function UseCases() {
+	return `
+<div class="omr⋄font⁚DeevadHand">
+${All()}
 </div>
 	`
 }

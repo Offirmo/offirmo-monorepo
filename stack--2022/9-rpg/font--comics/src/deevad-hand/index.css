@@ -43,6 +43,9 @@
 
 .omr⋄font⁚DeevadHand {
 	font-family: 'DeevadHand', sans-serif;
+	--o⋄font-family--main: 'DeevadHand', sans-serif;
+	line-height: 1; /* comic fonts are to be used in small ballons + don't have ascend/descend, hence look better lh1, cf. Blambot tip #7 */
+	font-stretch: 150%;
 	/*font-synthesis: style small-caps weight position;*/
 	/* font-variant-numeric */
 }

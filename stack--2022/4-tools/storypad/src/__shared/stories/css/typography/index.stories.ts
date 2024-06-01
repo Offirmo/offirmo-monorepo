@@ -7,16 +7,17 @@ const DEFAULT_REFERENCE_FONT_FAMILY: FontFamilyGenericName = 'sans-serif'
 
 // https://web.dev/articles/css-size-adjust#calibrating_fonts
 // https://deploy-preview-15--upbeat-shirley-608546.netlify.app/perfect-ish-font-fallback/
+// https://codepen.io/Offirmo/pen/rNgjdEb
 export function Normalization(reference: FontFamilyGenericName | null = DEFAULT_REFERENCE_FONT_FAMILY) {
 
-	const ALIGN = `<span><span class="size-reference2"></span><span class="size-reference"></span>àBçfg67<span class="size-reference"></span><span class="size-reference2"></span>
+	const FONT_SIZING_DEMO = `<span><span class="size-reference2"></span><span class="size-reference"></span>${CALIBRATION_SUBSET}<span class="size-reference"></span><span class="size-reference2"></span>
 				</span>`
 
 	const TEST_CASES = [
-		`<div style="background-color: #e8cccccc; font-size: 24px;">${ALPHABET}</div>`,
-		`<div style="background-color: rgba(204,206,232,0.8); font-size: 64px; text-decoration: underline overline line-through; text-decoration-thickness: 1px; text-decoration-color: red;"> ${CALIBRATION_SUBSET}</div>`,
-		`<div style="background-color: #e8cccccc; font-size: 64px; text-decoration: underline overline line-through; text-decoration-thickness: 1px; text-decoration-color: red;">${REF_SIZE(64)}${CALIBRATION_SUBSET}${REF_SIZE(64)}</div>`,
-		`<div style="background-color: #e8cccccc; font-size: 16px; text-decoration: underline overline line-through; text-decoration-thickness: 1px; text-decoration-color: red;">${REF_SIZE(16)}${CALIBRATION_SUBSET}${REF_SIZE(16)}</div>`,
+		FONT_SIZING_DEMO,
+		FONT_SIZING_DEMO,
+		`<button><span>${CALIBRATION_SUBSET}</span></button>`,
+		ALPHABET,
 	]
 
 	return `
@@ -69,9 +70,11 @@ table {
 		}
 
 		td:nth-child(1) {
+			text-align: right;
 			--ffamily: ${reference};
 		}
 		td:nth-child(2) {
+			text-align: left;
 		}
 	}
 

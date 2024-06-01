@@ -30,14 +30,17 @@ async function renderCSFV3(entry: Immutable<StoryEntry>) {
 	console.log('render_params=', render_params)
 
 	switch (true) {
-		/*case story.render !== undefined: {
+		case story.render !== undefined: {
+			document.body.innerText = '[CSF v3: TODO re-implement "render()"]'
+			/*
 			const rendered = story.render({
 				...meta.args,
 				...story.args,
 			})
 			document.body.innerText = rendered
+			 */
 			break
-		}*/
+		}
 
 		case story.component !== undefined: {
 			_renderⵧcomponent(story.component, story, meta)
