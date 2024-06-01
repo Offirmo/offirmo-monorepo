@@ -1,0 +1,17 @@
+- CSV
+0047a,ffd70,cc000,00000,fffff
+
+- With #
+#0047AB,#FFD700,#CC0000,#000000,#FFFFFF
+
+- JSON Array
+["0047a","ffd70","cc000","00000","fffff"]
+
+- JSON Object
+{
+ "Cobalt": "#0047ab",
+ "Gold": "#ffd700",
+ "Guardsman Red": "#cc0000",
+ "Black": "#000000",
+ "White": "#ffffff"
+}

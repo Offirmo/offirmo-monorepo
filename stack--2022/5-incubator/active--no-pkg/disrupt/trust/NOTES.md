@@ -32,6 +32,8 @@ spam / slom / slop https://simonwillison.net/2024/May/8/slop/
 https://openfga.dev/
 https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/
 
+https://www.sigstore.dev/how-it-works
+
 https://en.wikipedia.org/wiki/Trust_anchor
 
 ## spam

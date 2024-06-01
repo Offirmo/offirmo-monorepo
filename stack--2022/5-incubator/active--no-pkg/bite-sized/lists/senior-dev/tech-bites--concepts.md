@@ -1,8 +1,8 @@
-+++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
-+++ https://explorer.globe.engineer/
-+++ https://martinfowler.com/
-+++ https://www.hackterms.com/about/all
-+++ https://www.linfo.org/main_index.html
+[ ] +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
+[ ] +++ https://explorer.globe.engineer/
+[ ] +++ https://martinfowler.com/
+[ ] +++ https://www.hackterms.com/about/all
+[ ] +++ https://www.linfo.org/main_index.html
 12 factors https://12factor.net/
 97 Things Every Programmer Should Know
 [ ] https://zknill.io/posts/every-programmer-should-know/
@@ -16,7 +16,7 @@ apply / call / bind
 arguments
 assembly
 async -- design pattern -- reactor pattern
-async -- sync By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
+async -- sync = By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
 atomic
 audit trail - what happened, when, who made the request and how?
 authentication
@@ -37,6 +37,7 @@ cohesion = degree to which the elements inside a module belong together https://
 command query responsibility segregation (CQRS)
 command query separation (CQS)
 comments
+language -- Bend = massively parallel, high-level programming language https://github.com/HigherOrderCO/Bend 
 comments -- conventional
 commits
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
@@ -44,8 +45,12 @@ compile to js
 compiler
 connascence https://en.wikipedia.org/wiki/Connascence
 constructor
+continuous integration
+continuous delivery
+continuous deployment
 context switch
 context switching
+mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html
 Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
 corporate politic https://www.breakingpoint.tech/p/where-do-corporate-politics-come
 correlation
@@ -120,7 +125,6 @@ GAFAM -- Amazon https://www.vanityfair.com/news/story/inside-amazon-business-pra
 garbage collector
 git
 global variable
-go
 Google, Amazon, Facebook, Apple, Microsoft (GAFAM)
 graph
 GRASP (object-oriented design) = General Responsibility Assignment Software Patterns = nine fundamental principles in object design and responsibility assignment https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)
@@ -167,7 +171,6 @@ IDEALS -- 6 Single responsibility
 IDEALS = principles for microservice design
 If it ain't broke, don't fix it
 IIFE
-naming https://ntietz.com/blog/when-to-use-cute-names-or-descriptive-names/
 immutability
 Interface segregation principle = instead of a class interface with all possible methods clients might need, there should be separate interfaces catering to the specific needs of each type of client https://en.wikipedia.org/wiki/Interface_segregation_principle
 Joel test
@@ -183,6 +186,7 @@ jump/goto
 kebab-case vs snake etc
 KISS
 KTLO
+language -- go
 language interprété types simples / types par référence
 language trends
 languages -- weekend https://stackoverflow.blog/2017/02/07/what-programming-languages-weekends/
@@ -191,6 +195,8 @@ layers -- shearing
 lazy-loading
 linked list
 linting
+locality
+locality -- conflict locality = reducing conflicts on close changes, ex. enforcing trailing commas, sorting...
 lodash
 log
 loop
@@ -212,6 +218,7 @@ monitoring = observing systems, collecting metrics, evaluating those metrics ove
 monolith = over time become poorly structured, containing many different, sometimes competing conventions. These conventions and “styles” sprawl throughout the monolith and make it difficult to understand what is going on. Because structures are built with different conventions, to work in the monolith safely, you have to examine everything to make sure you understand this instance of this pattern. It’s not safe to assume anything. This, combined with the lack of boundaries in the monolith means that every change incurs a huge cost in examination and understanding before it can be safely implemented. This skews developer performance to tenure - the longer you have been staring at the code, the more you have wrapped your head around and the faster you can go (mostly). New developers should not be worried about the time it takes to be effective in the monolith - it's the monolith’s fault, not yours."
 MVC
 namespace
+naming https://ntietz.com/blog/when-to-use-cute-names-or-descriptive-names/
 nommage des fonctions
 npm
 nyan cat
@@ -278,8 +285,6 @@ shaving the yak
 shim vs polyfill vs ponyfill
 shrinkwrap
 simple average
-single source of truth
-single source of truth
 single source of truth (SSOT)
 Site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
 SLI Service Level Indicator A measurement of how reliable or performant a Capability is. Example: “time it takes to create a ticket”
@@ -318,6 +323,7 @@ tree
 tree walk
 typecast
 types
+types -- slow types https://jsr.io/docs/about-slow-types (also in Swift: The compiler is unable to type-check this expression in reasonable time)
 Unix philosophy (OUTDATED -> use JSON ;)) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- (much more) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- A.01 Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features"

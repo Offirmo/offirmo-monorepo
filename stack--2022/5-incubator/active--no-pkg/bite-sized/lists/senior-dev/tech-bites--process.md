@@ -28,6 +28,9 @@ exec summary https://lethain.com/present-to-executives/
 fix broken windows https://frontendatscale.com/issues/22/
 full service ownership https://nick.groenen.me/notes/full-service-ownership/#full-service-ownership
 Headline driven development (Amazon) https://www.spakhm.com/headline-development
+hiring -- flexibility
+hiring -- paper ceiling https://www.tearthepaperceiling.org/
+hiring -- Skilled Through Alternative Routes (STAR)
 How Might We? (HMW) = technique used to frame design challenges by formulating questions that focus on the desired outcome, are broad, and are phrased positively to encourage creativity and generate ideas
 Jobs to be Done (JTBD) https://en.wikipedia.org/wiki/Jobs-to-be-done_theory
 Kanban https://en.wikipedia.org/wiki/Kanban_(development)
@@ -70,4 +73,24 @@ team -- performance -- four key metrics -- Lead Time for Changes = The amount of
 team -- performance -- four key metrics -- Time to Restore Service = How long it takes an organization to recover from a failure in production
 team -- performance -- four key metrics https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance
 team -- Tuckman model "Forming, Storming, Norming, and Performing"
-X alarm fire
+X alarm fire -- "alarm" conditions = Inability to obtain a proper balance between reliability and delivery
+X alarm fire -- "alarm" conditions = Not meeting SLOs
+X alarm fire -- "alarm" conditions = Practices that lead to re-work in production
+X alarm fire -- "alarm" conditions = Semi constant stream of incidents, either with a similar root cause or a similar pattern of being unable to get on top of your PIR actions to address an incident before a new one occurs
+X alarm fire -- "alarm" conditions = Unable to keep up scale concerns as load on your service grows
+X alarm fire -- 1 Alarm Fire -- decider = Dev Manager / Team Lead
+X alarm fire -- 1 Alarm Fire -- involved = A handful of staff
+X alarm fire -- 1 Alarm Fire -- response = Some delivery work should be stopped such that the team can correct what problems exist. Priorities of the existing iteration should be adjusted to focus on these problems - we need to unblock these immediate concerns for our customers and staff.
+X alarm fire -- 2 Alarm Fire -- decider = Dev Manager
+X alarm fire -- 2 Alarm Fire -- involved = Whole team
+X alarm fire -- 2 Alarm Fire -- response = Most delivery work should stop to focus on correcting the outcome that isn’t being met, and preventing future occurrences.
+X alarm fire -- 3 Alarm Fire -- decider = Senior Dev Manager / Head of department
+X alarm fire -- 3 Alarm Fire -- involved = Whole department
+X alarm fire -- 3 Alarm Fire -- response = Almost all delivery work stops in order to focus on correcting the outcomes, and preventing future regression of these outcomes.
+X alarm fire -- 4 Alarm Fire -- decider = Head of Engineering
+X alarm fire -- 4 Alarm Fire -- involved = Whole Product
+X alarm fire -- 4 Alarm Fire -- response = TBD
+X alarm fire -- 5 Alarm Fire -- decider = CTO
+X alarm fire -- 5 Alarm Fire -- involved = All of Engineering
+X alarm fire -- 5 Alarm Fire -- response = everything stops
+X alarm fire = https://en.wikipedia.org/wiki/Multiple-alarm_fire

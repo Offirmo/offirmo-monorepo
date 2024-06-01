@@ -63,6 +63,7 @@ availability
 availability zone
 AWS Shield
 AWS WAF
+back-off and retry mechanisms
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 Backends For Frontends -- composable https://bff-patterns.com/
 Backends For Frontends -- tradeoffs https://zknill.io/posts/backend-for-the-frontend/
@@ -142,6 +143,11 @@ graceful degradation = ex. of batteries in flashlight
 headless = Front-end presentation is completely decoupled from back-end logic/CMS. Designed to be channel, programming language, and framework agnostic https://jamstack.org/glossary/headless-technology/
 hypermedia
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
+incident values -- 01 Detect = knows before our customers do. A balanced service includes enough monitoring and alerting to detect incidents before our customers do. The best monitoring alerts us to problems before they even become incidents.
+incident values -- 05 Improve = Never have the same incident twice
+incident values -- 04 Learn = Always Blameless. Incidents are part of running services. We improve services by holding teams accountable, not by apportioning blame.
+incident values -- 03 Recover = Shit happens, clean it up quickly. Our customers don't care why their service is down, only that we restore service as quickly as possible. Never hesitate in getting an incident resolved quickly so that we can minimise impact to our customers.
+incident values -- 02 Respond = Escalate, escalate, escalate. Nobody will mind getting woken up for an incident that it turns out they aren't needed for. But they will mind if they don't get woken up for an incident when they should have been. We won't always have all the answers, so "don't hesitate to escalate".
 incidents
 Incidents -- rate (i.e. # of HOTs and # repeat incidents)
 infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-code-tools
@@ -152,6 +158,7 @@ interview -- popular problems = designing a URL shortening service, Pastebin, In
 interview -- popular problems = Google products: Google Search, YouTube, Google Photo Sharing and Storage, Google Docs, Google Drive...
 interview -- popular problems = Meta products: facebook, marketplace, instagram, whatsapp...
 kafka = pub/sub + store + process
+search -- https://vespa.ai/ (NO OpenSearch)
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
 latency = the time that passes between an action and the resulting response
 latency https://www.a10networks.com/glossary/osi-network-model-and-types-of-load-balancers/
@@ -225,6 +232,7 @@ orchestrator -- kubernetes
 organizational reliability continuum = absent -> reactive -> proactive -> strategic -> visionary / there is a significant cost associated with moving from one phase to another and a cost to remain very high on this curve. In our experience, being proactive is a healthy level to target and is ideal for most products https://cloud.google.com/blog/products/devops-sre/the-five-phases-of-organizational-reliability
 organizations
 PACELC theorem = extension of CAP https://en.wikipedia.org/wiki/PACELC_theorem
+peak hours, off-peak hours
 performance
 permissions
 Personal data service (PDS) = user's central point of control for their personal information https://en.wikipedia.org/wiki/Personal_data_service

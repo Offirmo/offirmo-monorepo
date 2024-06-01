@@ -1,10 +1,41 @@
 
 :root {
+
+	/******* better defaults *******/
+
 	/* font sans serif = #1 most important styling according to https://jgthms.com/web-design-in-4-minutes/#font-family
 	 * "system sans" font from https://systemfontstack.com/ (copied 2022/05)
 	 * TODO review? https://distrowatch.com/dwres.php?resource=major
 	 */
 	font-family: var(--o⋄font-family--fast_and_good_enough);
+
+	/* #3 most important styling according to https://jgthms.com/web-design-in-4-minutes/#spacing
+	 * 1.5 is recommended by accessibility https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html
+	 */
+	line-height: 1.5;
+
+	/* do NOT change the root font-size as it's used as a default zoom by accessibility users cf. https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/
+	*/
+
+	/* Help discriminate 0 and O if the font supports it.
+	 * Not mathematically correct but...
+	 */
+	font-variant-numeric: slashed-zero;
+
+	text-decoration-thickness: var(--o⋄border--thickness);
+
+
+	/******* modern standards *******/
+
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
+	 */
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+
+
+
+	/******* font smoothing/rendering *******/
 
 	/*
 	 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/
@@ -28,7 +59,6 @@
 	 *    (subpixel is mushy on low-dpi but no much better on high dpi)
 	 */
 	-webkit-font-smoothing: antialiased;
-
 	/* Firefox only, macOs only
 	 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/
 	 *  see also https://wp-mix.com/font-smoothing-chrome-firefox/)
@@ -36,19 +66,9 @@
 	 * -> grayscale is always better ✅
 	 */
 	-moz-osx-font-smoothing: grayscale;
-
 	/* See also
 	 * https://szafranek.net/blog/2009/02/22/font-smoothing-explained/
 	 */
-
-	line-height: 1.5; /* #3 most important styling according to https://jgthms.com/web-design-in-4-minutes/#spacing */
-	/* 1.5 is recommended by accessibility https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html */
-	/* do NOT change the root font-size as it's used as a default zoom by accessibility users cf. https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/ */
-
-	/* Help discriminate 0 and O if the font supports it.
-	 * https://piccalil.li/quick-tip/control-changing-numbers-with-font-variant-numeric/
-	 */
-	font-variant-numeric: slashed-zero;
 }
 
 /* TODO

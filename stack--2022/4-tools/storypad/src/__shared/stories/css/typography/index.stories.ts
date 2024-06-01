@@ -1,9 +1,128 @@
 import { FontFamilyGenericName } from '@offirmo-private/ts-types-web'
-import { PANGRAM } from './consts.ts'
+import { PANGRAM, ALPHABET, CALIBRATION_SUBSET } from './consts.ts'
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-function demo_style({property, values, reference = 'sans-serif', demo_text = PANGRAM}: {
+const DEFAULT_REFERENCE_FONT_FAMILY: FontFamilyGenericName = 'sans-serif'
+
+// https://web.dev/articles/css-size-adjust#calibrating_fonts
+// https://deploy-preview-15--upbeat-shirley-608546.netlify.app/perfect-ish-font-fallback/
+export function Normalization(reference: FontFamilyGenericName | null = DEFAULT_REFERENCE_FONT_FAMILY) {
+
+	const ALIGN = `<span><span class="size-reference2"></span><span class="size-reference"></span>àBçfg67<span class="size-reference"></span><span class="size-reference2"></span>
+				</span>`
+
+	const TEST_CASES = [
+		`<div style="background-color: #e8cccccc; font-size: 24px;">${ALPHABET}</div>`,
+		`<div style="background-color: rgba(204,206,232,0.8); font-size: 64px; text-decoration: underline overline line-through; text-decoration-thickness: 1px; text-decoration-color: red;"> ${CALIBRATION_SUBSET}</div>`,
+		`<div style="background-color: #e8cccccc; font-size: 64px; text-decoration: underline overline line-through; text-decoration-thickness: 1px; text-decoration-color: red;">${REF_SIZE(64)}${CALIBRATION_SUBSET}${REF_SIZE(64)}</div>`,
+		`<div style="background-color: #e8cccccc; font-size: 16px; text-decoration: underline overline line-through; text-decoration-thickness: 1px; text-decoration-color: red;">${REF_SIZE(16)}${CALIBRATION_SUBSET}${REF_SIZE(16)}</div>`,
+	]
+
+	return `
+<style>
+
+:root {
+	font-size: 16px;
+	line-height: 1.5;
+
+	box-sizing: border-box;
+
+	/* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
+	 */
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+
+	text-rendering: geometricPrecision;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	/* test */
+	text-underline-offset: initial;
+}
+
+table {
+	table-layout: fixed;
+	border-collapse: collapse;
+
+	* {
+		font-size: var(--size);
+		font-family: var(--ffamily);
+		margin: 0;
+		padding: 0;
+	}
+
+	span {
+		text-decoration: underline overline line-through;
+		text-decoration-thickness: 1px;
+		text-decoration-color: red;
+		background-color: #e8cccccc;
+		white-space: nowrap;
+	}
+
+	tr {
+		td {
+			background-color: #cccee8cc;
+			text-align: center;
+			border: 1px solid black;
+		}
+
+		td:nth-child(1) {
+			--ffamily: ${reference};
+		}
+		td:nth-child(2) {
+		}
+	}
+
+	tr:nth-child(2) {
+		--size: 64px;
+	}
+	tr:nth-child(3) {
+		--size: 30px;
+	}
+	tr:nth-child(4) {
+		--size: 30px;
+	}
+}
+
+button {
+	border-radius: var(--size);
+	padding: 0 1ch;
+	border: solid 1px;
+	background-color: grey;
+}
+
+.size-reference {
+	display: inline-block;
+	height: var(--size);
+	width: 0.5ch;
+	background-color: lightcoral;
+	vertical-align: middle;
+}
+.size-reference2 {
+	display: inline-block;
+	height: calc(var(--size) / 2);
+	width: 0.5ch;
+	background-color: lightcoral;
+	vertical-align: middle;
+}
+</style>
+<table>
+	<tr>
+		<td>
+			reference
+		</td>
+		<td>
+			font to normalize
+		</td>
+	</tr>
+	${TEST_CASES.map(test_case => `<tr><td>${test_case}</td><td>${test_case}</td></tr>`).join('')}
+</table>
+	`
+}
+
+function demo_style({property, values, reference = DEFAULT_REFERENCE_FONT_FAMILY, demo_text = PANGRAM}: {
 	property: string,
 	values: string[],
 	reference?: FontFamilyGenericName | null,
@@ -35,6 +154,38 @@ function demo_style({property, values, reference = 'sans-serif', demo_text = PAN
 	`
 }
 
+export function Demoꓽfontᝍsize() {
+	return demo_style({
+		property: 'font-size',
+		values: [
+			'xx-small',
+			'x-small',
+			'small',
+			'medium',
+			'large',
+			'x-large',
+			'xx-large',
+			'xxx-large',
+			'smaller',
+			'initial',
+			'larger',
+			'12px',
+		],
+	})
+}
+
+export function Demoꓽfontᝍstyle() {
+	return demo_style({
+		property: 'font-style',
+		values: [
+			'normal  ',
+			'italic  ',
+			'oblique',
+			'oblique 45deg',
+		]
+	})
+}
+
 export function Demoꓽfontᝍweight() {
 	return demo_style({
 		property: 'font-weight',
@@ -61,18 +212,24 @@ export function DemoꓽHTML_Elements() {
 `
 }
 
-export function Demoꓽfontᝍstyle() {
+// text-decoration
+// letter-spacing
+// line-height
+
+// http://stackoverflow.com/questions/2438122/font-variantsmall-caps-vs-text-transformcapitalize
+export function Demoꓽtextᝍtransform() {
 	return demo_style({
-		property: 'font-style',
+		property: 'text-transform',
 		values: [
-			'normal  ',
-			'italic  ',
-			'oblique',
-			'oblique 45deg',
-		]
+			'none',
+			'capitalize',
+			'lowercase',
+			'uppercase',
+		],
 	})
 }
 
+// http://stackoverflow.com/questions/2438122/font-variantsmall-caps-vs-text-transformcapitalize
 export function Demoꓽfontᝍvariantᝍcaps() {
 	return demo_style({
 		property: 'font-variant-caps',
@@ -120,6 +277,8 @@ export function Demoꓽfontᝍvariantᝍnumeric() {
 	})
 }
 
+
+// https://medium.engineering/typography-is-impossible-5872b0c7f891
 export function Demoꓽchallenges() {
 	return `
 Typographic challenges:
@@ -127,6 +286,8 @@ Typographic challenges:
 	<li><code>I vs i</code>: I like it!</li>
 	<li><code>D vs O</code>: odd dog, ODD DOG</li>
 	<li><code>kerning</code>: Yay! I can stay! YAY...</li>
+	<li>italicized descenders: <div style="background-color: #e8cccccc"><span style="font-style: italic;">yay!</span></div></li>
+	<li></li>
 </ul>
 </>
 `
@@ -145,15 +306,17 @@ Typographic challenges:
 'oldstyle-nums stacked-fractions;
  */
 
-export function DemoꓽAll(reference: FontFamilyGenericName | null = 'sans-serif') {
+export function DemoꓽAll(reference: FontFamilyGenericName | null = DEFAULT_REFERENCE_FONT_FAMILY) {
 	return `
 ${reference ? `<div style="font-family: ${reference}"><code>Reference: "${reference}"</code>: ${PANGRAM}</div>` : ''}
+${Demoꓽfontᝍsize()}
+${Demoꓽfontᝍstyle()}
 ${Demoꓽfontᝍweight()}
 ${DemoꓽHTML_Elements()}
-${Demoꓽfontᝍstyle()}
+${Demoꓽtextᝍtransform()}
+${Demoꓽchallenges()}
 ${Demoꓽfontᝍvariantᝍcaps()}
 ${Demoꓽfontᝍstretch()}
 ${Demoꓽfontᝍvariantᝍnumeric()}
-${Demoꓽchallenges()}
 `
 }

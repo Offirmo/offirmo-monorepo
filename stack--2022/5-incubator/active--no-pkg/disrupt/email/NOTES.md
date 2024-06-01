@@ -53,3 +53,6 @@ experience https://productidentity.co/p/3-telegram-the-mysterious-messenger
 gmail https://www.thenationalnews.com/future/technology/2024/04/01/gmails-20th-anniversary-technologys-best-april-fools-prank-yet/
 
 https://matduggan.com/why-cant-my-mom-email-me/
+
+
+https://money.stackexchange.com/questions/71586/im-being-set-up-for-an-internet-scam-but-how-will-it-work-and-how-can-i-avoid?rq=1

@@ -24,10 +24,10 @@ Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 base rate: The average outcome for an event over time. They’re like batting averages for life, and they work best with big sample sizes. For example, if you’re starting a business, avoid the restaurant business where margins are low and competition is high.
 be prepared
 bee browsing
-broken window theory
 bike-shed Effect: A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
 bonne et mauvaises cartes
 brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
+broken window theory
 busy work https://en.wikipedia.org/wiki/Busy_work
 buy nice or buy twice
 can't satisfy others
@@ -206,6 +206,7 @@ psychological safety
 put into words
 question authority
 race to the bottom
+Re-thinking established patterns
 Reach Impact Confidence Estimate (RICE)
 Reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
 rebound effect https://blog.jim-nielsen.com/2024/notes-on-making-software-by-peter-van-hardenberg/
@@ -269,6 +270,7 @@ tools -- trello
 top-down/bottom-up
 tradeoffs / can't have everything
 Tree Decision Rights Model http://www.cio.com/article/2386119/careers-staffing/how-it-leaders-can-empower-teams-to-become-decision-makers.html
+trichotomy https://en.wikipedia.org/wiki/Trichotomy_(philosophy)
 trilemma https://en.wikipedia.org/wiki/Trilemma
 trolley problem https://neal.fun/absurd-trolley-problems/
 trust -- is earned
@@ -276,6 +278,7 @@ trust -- takes years to earn and seconds to lose / Trust is built slowly, and lo
 trust -- trust, but verify
 truth -- fully convinced vs probably https://christianity.stackexchange.com/questions/92352/believing-that-christianity-is-probably-true-vs-being-fully-convinced-that-ch
 truth -- verificationism https://christianity.stackexchange.com/a/89891
+unlearn
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 via Negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 voleur volé

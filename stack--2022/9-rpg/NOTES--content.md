@@ -56,6 +56,10 @@ Cinq conseils pour discerner
 5. Repérer les PN ne suffit pas, il faut aussi et d’abord prendre soin des nombreuses victimes dans l’entourage.
 
 
+https://en.wikipedia.org/wiki/Jack_Northrop
+
+https://en.wikipedia.org/wiki/Hollow_Earth
+
 https://theconversation.com/gary-mckee-what-it-takes-to-run-a-marathon-a-day-for-a-year-197184
 https://womensagenda.com.au/latest/erchana-murray-is-running-one-marathon-daily-for-150-consecutive-days-to-run-length-of-australia/
 
@@ -87,6 +91,8 @@ https://www.personalityresearch.org/bigfive.html
 
 
 She learned that you should never try to intimidate people into telling you the truth. They’ll just put up their guard. Instead, watch for signs of unsuitable nervousness and anxiety, and any pretense of a lack of interest in your questions. The more you talk, the less you’ll learn about the other person – including his or her deceptions. Listen instead. If what the person says sounds rehearsed, you may not be getting the truth. Active listening is the best way to tell truths from lies.
+
+https://en.wikipedia.org/wiki/Trichotomy_(philosophy)
 
 https://en.wikipedia.org/wiki/Miskito_people#Miskito_Gods
 

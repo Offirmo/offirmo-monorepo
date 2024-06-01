@@ -29,9 +29,9 @@ How?
 
 7. Flee (saying you are not a good fit) as soon as you know the manager is not amenable to such stuff.
 
-7a. Flee could be an internal transfer, or external
-
-7b. Shortest tenure in a team was 2 months; I have changed teams internally  3 times (tenures of 2 months, 5 months, 7 months).
+  7a. Flee could be an internal transfer, or external
+  
+  7b. Shortest tenure in a team was 2 months; I have changed teams internally  3 times (tenures of 2 months, 5 months, 7 months).
 
 8. Consciously take up work that helps colleagues. I spend 3-4 hours every week helping  colleagues.
 
@@ -42,7 +42,10 @@ Btw: I learnt all this from my first manager (RIP, he was from the Midwest, who 
 
 Why I am posting this?
 
-I see a lot of really stupid managers (micromanagers) who are hell bent on “extracting” the maximum work out of their reports, while working for multi billion dollar monopolies. It’s almost like these guys have no common sense and try to one up their peer Eng leaders. Frequently they are not working on the most impactful work but do tedious stuff. Take it easy folks. Focus on the value you provide but if you are providing a lot of value, make sure you extract some benefit for your teams.
+I see a lot of really stupid managers (micromanagers) who are hell bent on “extracting” the maximum work out of their reports, while working for multi billion dollar monopolies.
+It’s almost like these guys have no common sense and try to one up their peer Eng leaders.
+Frequently they are not working on the most impactful work but do tedious stuff. Take it easy folks.
+Focus on the value you provide but if you are providing a lot of value, make sure you extract some benefit for your teams.
 
 New btw, is my own company that I use to manage my rental properties.
 
@@ -64,3 +67,14 @@ https://boz.com/articles/be-kind
 https://careercutler.substack.com/p/continuous-growth-in-tech-50-resources
 
 https://roughlywritten.substack.com/p/random-thoughts-15-years-into-software
+
+
+- Memorable
+- telling a story
+
+Interview questions:
+- current challenges? Current objectives/KR?
+- What are you looking for? greatness in this role?
+- career? What's next?
+- Where is the team?
+- Finance? Zone?

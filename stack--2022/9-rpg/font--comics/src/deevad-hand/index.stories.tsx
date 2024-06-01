@@ -1,7 +1,7 @@
 
 import './index.css'
 
-import { DemoꓽAll } from '@offirmo-private/storypad/src/__shared/stories/css/typography/index.stories.ts'
+import { Normalization as _Norm, DemoꓽAll } from '@offirmo-private/storypad/src/__shared/stories/css/typography/index.stories.ts'
 
 export function Demoⵧraw() {
 	return `
@@ -10,20 +10,27 @@ ${DemoꓽAll()}
 </div>
 	`
 }
-
-export function Calibration() {
+export function DemoⵧCalibrated() {
 	return `
 <div class="omr⋄font⁚DeevadHand">
-TODO
+${DemoꓽAll()}
+</div>
+	`
+}
+
+export function Normalization() {
+	return `
+<div class="omr⋄font⁚DeevadHand">
+${_Norm()}
 </div>
 	`
 }
 
 
-export function Demo() {
+export function Calibration() {
 	return `
 <div class="omr⋄font⁚DeevadHand">
-${DemoꓽAll()}
+TODO
 </div>
 	`
 }

@@ -2,9 +2,34 @@
 /*********************/
 
 @font-face {
-	font-family: 'DeevadHand';
+	font-family: 'DeevadHand--Raw';
 	src: url('regular.ttf');
 }
+@font-face {
+	font-family: 'DeevadHand--Raw';
+	src: url('bold.ttf');
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'DeevadHand--Raw';
+	src: url('italic.ttf');
+	font-style: italic;
+}
+
+.omr⋄font⁚DeevadHand--raw {
+	font-family: 'DeevadHand--Raw', sans-serif;
+}
+
+/*********************/
+
+@font-face {
+	font-family: 'DeevadHand';
+	src: url('regular.ttf');
+	size-adjust: 92%;
+	ascent-override: 87%;
+	descent-override: 20%;
+	line-gap-override: 0%;
+}/*
 @font-face {
 	font-family: 'DeevadHand';
 	src: url('bold.ttf');
@@ -14,17 +39,11 @@
 	font-family: 'DeevadHand';
 	src: url('italic.ttf');
 	font-style: italic;
-}
-
-/*********************/
-
-.omr⋄font⁚DeevadHand--raw {
-	font-family: 'DeevadHand', sans-serif;
-}
+}*/
 
 .omr⋄font⁚DeevadHand {
 	font-family: 'DeevadHand', sans-serif;
-	font-synthesis: style small-caps weight position;
+	/*font-synthesis: style small-caps weight position;*/
 	/* font-variant-numeric */
 }
 

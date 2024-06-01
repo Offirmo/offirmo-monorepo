@@ -38,6 +38,7 @@ CSS -- stacking context https://github.com/andreadev-it/stacking-contexts-inspec
 CSS -- transforms
 CSS -- z-index
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
+data fetching https://martinfowler.com/articles/data-fetch-spa.html
 DDoS
 devices -- support
 fonts
@@ -79,6 +80,8 @@ realtime -- patterns -- Push state diff
 realtime updates https://zknill.io/posts/how-to-adopt-realtime/
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
+security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
+testing -- Netflix's SafeTest https://www.infoq.com/news/2024/02/netflix-safetest-front-end-test/
 testing https://www.testingjavascript.com/
 UI -- Application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
 UI -- aria https://www.w3.org/WAI/ARIA/apg/

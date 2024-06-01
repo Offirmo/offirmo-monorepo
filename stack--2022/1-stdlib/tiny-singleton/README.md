@@ -77,3 +77,6 @@ get_db_client('127.0.0.1')
 get_db_client('1.2.3.4') // XXX This will return the same as above!! No new instance creation.
 get_db_client().write('hello').then(...)
 ```
+
+
+TODO review https://github.com/alexreardon/limit-once
