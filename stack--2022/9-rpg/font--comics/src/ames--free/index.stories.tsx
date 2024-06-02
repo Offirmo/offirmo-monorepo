@@ -3,10 +3,11 @@ import { All } from '../__shared/use-cases.stories'
 
 import './index.css'
 
+const KLASS = 'omr⋄font⁚Ames--free'
 
 export function FontDemoⵧraw() {
 	return `
-<div class="omr⋄font⁚TEST">
+<div class="${KLASS}--raw">
 ${DemoꓽAll()}
 </div>
 	`
@@ -14,7 +15,7 @@ ${DemoꓽAll()}
 
 export function Calibration() {
 	return `
-<div class="omr⋄font⁚TEST">
+<div class="${KLASS}">
 ${_Norm()}
 </div>
 	`
@@ -22,7 +23,7 @@ ${_Norm()}
 
 export function FontDemoⵧCalibrated() {
 	return `
-<div class="omr⋄font⁚TEST">
+<div class="${KLASS}">
 ${DemoꓽAll()}
 </div>
 	`
@@ -31,7 +32,7 @@ ${DemoꓽAll()}
 
 export function UseCases() {
 	return `
-<div class="omr⋄font⁚TEST">
+<div class="${KLASS}">
 ${All()}
 </div>
 	`

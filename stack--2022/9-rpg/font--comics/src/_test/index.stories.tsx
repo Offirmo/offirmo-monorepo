@@ -3,7 +3,7 @@ import { All } from '../__shared/use-cases.stories'
 
 import './index.css'
 
-const KLASS = 'omr⋄font⁚DeevadHand'
+const KLASS = 'omr⋄font⁚TEST'
 
 export function FontDemoⵧraw() {
 	return `
