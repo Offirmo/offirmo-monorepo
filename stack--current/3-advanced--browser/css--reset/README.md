@@ -83,4 +83,4 @@ Ideas
 * TODO https://bedrocss.austingil.com/
 
 
-[canonical link](https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--browser/css--reset#readme)
+[canonical link](https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/3-advanced--browser/css--reset#readme)

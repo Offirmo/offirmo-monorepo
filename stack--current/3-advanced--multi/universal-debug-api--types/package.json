@@ -59,13 +59,13 @@
 		"dist",
 		"src"
 	],
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--multi/universal-debug-api-interface",
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/3-advanced--multi/universal-debug-api-interface",
 	"keywords": [
 		"logger",
 		"debug",
 		"typescript"
 	],
-	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/3-advanced--multi/universal-debug-api-interface",
+	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/3-advanced--multi/universal-debug-api-interface",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
 	}

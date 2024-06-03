@@ -13,9 +13,9 @@
 		  src="https://img.shields.io/npm/v/@offirmo/error-utils.svg">
 	</a>
 	<a alt="dependencies analysis"
-	  href="https://david-dm.org/offirmo/offirmo-monorepo?path=stack--2022%2F2-foundation%2Ferror-utils">
+	  href="https://david-dm.org/offirmo/offirmo-monorepo?path=stack--current%2F2-foundation%2Ferror-utils">
 		<img alt="dependencies badge"
-		  src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=stack--2022%2F2-foundation%2Ferror-utils">
+		  src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=stack--current%2F2-foundation%2Ferror-utils">
 	</a>
 	<a alt="bundle size evaluation"
 	  href="https://bundlephobia.com/result?p=@offirmo/error-utils">

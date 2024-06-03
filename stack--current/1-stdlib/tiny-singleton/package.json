@@ -60,12 +60,12 @@
 		"dist",
 		"src"
 	],
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/1-stdlib/tiny-singleton",
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/1-stdlib/tiny-singleton",
 	"keywords": [
 		"singleton",
 		"typescript"
 	],
-	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/1-stdlib/tiny-singleton",
+	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/1-stdlib/tiny-singleton",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
 	}

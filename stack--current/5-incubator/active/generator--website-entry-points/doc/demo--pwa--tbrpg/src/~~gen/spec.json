@@ -52,7 +52,7 @@
 	"title": "The Boring RPG",
 	"icon": {
 		"emoji": "⚔️",
-		"svg": "~/work/src/off/offirmo-monorepo/stack--2022/5-incubator/active/generator--website-entry-points/src/__specs/__fixtures/icon--rpg.svg"
+		"svg": "~/work/src/off/offirmo-monorepo/stack--current/5-incubator/active/generator--website-entry-points/src/__specs/__fixtures/icon--rpg.svg"
 	},
 	"keywords": ["game", "incremental", "fantasy", "rpg", "free", "indie"],
 	"content": {},

@@ -40,8 +40,8 @@ const ONLINE_PRESENCE: WithOnlinePresence = {
 /*
 license: 'UNLICENSED', // the source is open but the game itself is not
 version: '0.69.1',
-changelog: 'https://github.com/Offirmo/offirmo-monorepo/blob/main/stack--2022/C-apps--clients/the-boring-rpg/client--browser/CHANGELOG.md',
-source: 'https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--2022/C-apps--clients/the-boring-rpg/client--browser',
+changelog: 'https://github.com/Offirmo/offirmo-monorepo/blob/main/stack--current/C-apps--clients/the-boring-rpg/client--browser/CHANGELOG.md',
+source: 'https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/C-apps--clients/the-boring-rpg/client--browser',
  */
 
 /////////////////////////////////////////////////

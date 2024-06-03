@@ -110,13 +110,13 @@ console.log('recursive', files)
 output:
 ```
 full path [
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/_doc',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/_tosort',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/framework',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/fs',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/node_modules',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/stdout',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/string'
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/_doc',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/_tosort',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/framework',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/fs',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/node_modules',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/stdout',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/string'
 ]
 short path [
   '_doc',
@@ -128,14 +128,14 @@ short path [
   'string'
 ]
 full path [
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/.npmrc',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/.tabset',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/CHANGELOG.md',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/LICENSE',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/NOTES.md',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/README.md',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/index.js',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/package.json'
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/.npmrc',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/.tabset',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/CHANGELOG.md',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/LICENSE',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/NOTES.md',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/README.md',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/index.js',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/package.json'
 ]
 short path [
   '.npmrc',
@@ -148,12 +148,12 @@ short path [
   'package.json'
 ]
 recursive [
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/fs/extra/index.cjs',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/fs/extra/index.mjs',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/fs/extra/json/index.cjs',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/fs/extra/json/index.mjs',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/fs/extra/ls/index.cjs',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node/cli-toolbox/fs/extra/ls/index.mjs'
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/fs/extra/index.cjs',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/fs/extra/index.mjs',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/fs/extra/json/index.cjs',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/fs/extra/json/index.mjs',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/fs/extra/ls/index.cjs',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/fs/extra/ls/index.mjs'
 ]
 ```
 

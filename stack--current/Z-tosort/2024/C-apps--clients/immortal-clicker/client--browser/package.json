@@ -34,5 +34,5 @@
 		"npm-run-all": "^4",
 		"parcel": "^2"
 	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/C-apps--clients/immortal-clicker/client--browser"
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/C-apps--clients/immortal-clicker/client--browser"
 }

@@ -59,13 +59,13 @@
 		"dist",
 		"src"
 	],
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/1-stdlib/globalthis-ponyfill",
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/1-stdlib/globalthis-ponyfill",
 	"keywords": [
 		"globalThis",
 		"ponyfill",
 		"typescript"
 	],
-	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/1-stdlib/globalthis-ponyfill",
+	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/1-stdlib/globalthis-ponyfill",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
 	}

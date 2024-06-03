@@ -64,12 +64,12 @@
 		"dist",
 		"src"
 	],
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/2-foundation/practical-logger-node",
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/2-foundation/practical-logger-node",
 	"keywords": [
 		"logger",
 		"typescript"
 	],
-	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/2-foundation/practical-logger-node",
+	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/2-foundation/practical-logger-node",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
 	}

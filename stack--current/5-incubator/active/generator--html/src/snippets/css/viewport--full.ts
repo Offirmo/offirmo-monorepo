@@ -8,7 +8,7 @@ import { Css‿str } from '@offirmo-private/ts-types-web'
 const CSS: Css‿str = `
 /* make this app use exactly the full viewport.
  * This is VERY TRICKY CSS,
- * see full explanation: https://github.com/Offirmo/offirmo-monorepo/blob/main/stack--2022/3-advanced--browser/css--framework/src/atomic/atomic--dimension.css
+ * see full explanation: https://github.com/Offirmo/offirmo-monorepo/blob/main/stack--current/3-advanced--browser/css--framework/src/atomic/atomic--dimension.css
  */
 @layer temp-while-loading {
 	*:has(.o⋄full-viewport) {

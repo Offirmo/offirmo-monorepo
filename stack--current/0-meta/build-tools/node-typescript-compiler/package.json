@@ -37,8 +37,8 @@
 		"hello",
 		"typescript"
 	],
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/0-meta/build-tools/node-typescript-compiler",
-	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2022/4-tools/node-typescript-compiler",
+	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/0-meta/build-tools/node-typescript-compiler",
+	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/4-tools/node-typescript-compiler",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
 	}

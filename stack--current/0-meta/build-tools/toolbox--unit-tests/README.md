@@ -13,9 +13,9 @@
 			src="https://img.shields.io/npm/v/@offirmo/unit-test-toolbox.svg">
 	</a>
 	<a alt="dependencies analysis"
-		href="https://david-dm.org/offirmo/offirmo-monorepo?path=stack--2022%2F0-meta%2Fbuild-tools%2Ftoolbox--unit-tests">
+		href="https://david-dm.org/offirmo/offirmo-monorepo?path=stack--current%2F0-meta%2Fbuild-tools%2Ftoolbox--unit-tests">
 		<img alt="dependencies badge"
-			src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=stack--2022%2F0-meta%2Fbuild-tools%2Ftoolbox--unit-tests">
+			src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=stack--current%2F0-meta%2Fbuild-tools%2Ftoolbox--unit-tests">
 	</a>
 	<a alt="license"
 		href="https://unlicense.org/">

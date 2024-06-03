@@ -18,7 +18,7 @@ This repo is published on [Github Pages](https://www.offirmo.net/offirmo-monorep
 
 
 ## Contributing
-See [CONTRIBUTING/README.md](./stack--2022/0-CONTRIBUTING/01-intro.md)
+See [CONTRIBUTING/README.md](./stack--current/0-CONTRIBUTING/01-intro.md)
 
 
 ## License

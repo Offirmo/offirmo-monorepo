@@ -13,9 +13,9 @@
 			src="https://img.shields.io/npm/v/node-typescript-compiler.svg">
 	</a>
 	<a alt="dependencies analysis"
-		href="https://david-dm.org/offirmo/offirmo-monorepo?path=stack--2022%2F0-meta%2Fbuild-tools%2Fnode-typescript-compiler">
+		href="https://david-dm.org/offirmo/offirmo-monorepo?path=stack--current%2F0-meta%2Fbuild-tools%2Fnode-typescript-compiler">
 		<img alt="dependencies badge"
-			src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=stack--2022%2F0-meta%2Fbuild-tools%2Fnode-typescript-compiler">
+			src="https://img.shields.io/david/offirmo/offirmo-monorepo.svg?path=stack--current%2F0-meta%2Fbuild-tools%2Fnode-typescript-compiler">
 	</a>
 	<a alt="license"
 		href="https://unlicense.org/">
