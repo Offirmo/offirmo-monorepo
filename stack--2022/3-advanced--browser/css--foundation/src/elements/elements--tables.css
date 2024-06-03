@@ -16,6 +16,7 @@ td {
 
 /* zebra striping */
 tbody tr:nth-child(odd) {
+	/* TODO opacity instead */
 	background-color: var(--o⋄color⁚bg--highlight--1);
 }
 

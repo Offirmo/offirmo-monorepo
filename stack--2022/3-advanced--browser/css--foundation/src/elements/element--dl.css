@@ -1,2 +1,7 @@
-/* TODO https://piccalil.li/quick-tip/dl-grid/
+/* https://piccalil.li/quick-tip/dl-grid/
+ * XXX TO CHECK
  */
+dl {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+}
