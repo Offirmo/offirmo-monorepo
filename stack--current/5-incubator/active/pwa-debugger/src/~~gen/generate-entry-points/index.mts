@@ -35,7 +35,7 @@ const THING: Thing = {
 	since‿y: 2024,
 }
 const ONLINE_PRESENCE: WithOnlinePresence = {
-	urlⵧcanonical: 'https://www.online-adventur.es/apps/the-boring-rpg/',
+	urlⵧcanonical: 'https://www.online-adventur.es/apps/the-boring-rpg/', // TODO
 	urlsⵧsocial: [
 		// TODO
 	]

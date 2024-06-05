@@ -2,8 +2,6 @@ import { asap_but_out_of_immediate_execution, forArray } from '@offirmo-private/
 import { VERSION, BUILD_DATE } from '../entry-points/build.ts'
 import './init/00-security.ts' // as early as possible, side effects expected
 
-import { CHANNEL } from './services/channel'
-
 /////////////////////////////////////////////////
 
 console.info(
@@ -22,11 +20,14 @@ asap_but_out_of_immediate_execution(async () => {
 	const logger = (await import('./services/logger.ts')).default
 
 	// order is important! Timing is non-trivial!
-	const inits = await import('./init/*.ts')
+	const inits = await import('./init/*.(js|ts|jsx|tsx)')
+	console.log('inits:', inits)
 	await forArray(Object.keys(inits).sort()).executeSequentially(async key => {
 		logger.group(`init/"${key}"`)
 		logger.trace(`init/"${key}": import…`)
-		const init_fn = (await inits[key]()).default
+		const require = inits[key].js || inits[key].ts || inits[key].jsx || inits[key].tsx
+		const exports = await require()
+		const init_fn = exports.default
 		logger.trace(`init/"${key}": exec…`)
 		await init_fn()
 		logger.trace(`init/"${key}": done ✅`)

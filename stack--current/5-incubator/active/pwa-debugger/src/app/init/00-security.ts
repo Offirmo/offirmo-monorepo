@@ -20,6 +20,7 @@ function initⵧimmediate(): void {
 	Object.freeze(Object.prototype)
 
 	// TODO strip global scope and APIs
+	// TODO detect unwanted DOM manipulations
 }
 
 // add logs or later security actions here

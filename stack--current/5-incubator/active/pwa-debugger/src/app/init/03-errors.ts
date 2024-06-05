@@ -8,7 +8,7 @@ const STYLES = 'padding: .5em; background-color: red; color: white; font-weight:
 async function init(): Promise<void> {
 	const rootSXC = getRootSXC()
 
-	rootSXC.emitter.on('final-error', function onFinalError({ SXC, err }) {
+	rootSXC.emitter.on('final-error', function onFinalError({ SXC, err, CHANNEL }) {
 		try {
 			// this code must be super extra safe!!!
 			// don't even use the advanced logger!

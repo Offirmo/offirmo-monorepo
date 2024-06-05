@@ -1,3 +1,4 @@
+
 6 Reasons Users Hate Your New Feature https://www.slicedbreaddesign.com/blog/6-reasons-users-hate-your-new-feature
 [ ] personal MBA
 active users -- daily (DAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
@@ -43,6 +44,17 @@ network effect
 Next Larger Context = always design a thing by considering it in its next larger context — a chair in a room, a room in a house, a house in a city... https://skamille.medium.com/the-next-larger-context-3970afaa8fb2 (see also shearing layers)
 no one was ever fired for using...
 path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
+pitch -- 01 Why the world needs this now
+pitch -- 02 Our approach, team, and why we win
+pitch -- 03 How big this could get. Napkin math
+pitch -- 04 Demo of app. Review beta feedback and metrics
+pitch -- 05 How will we monetize
+pitch -- 06 What do we need money for now
+pitch -- extra -- How much money do you want? How will you spend it in the coming year?
+pitch -- extra -- references
+pitch -- extra -- YC application https://docs.google.com/document/d/1lkRIGrssL5W3DbrFTE-PoY8KctN1dtCBWg_Yuoq8RT4/edit#heading=h.b76a5v3s4kuy
+pitch -- extra -- “what we don’t know” or “what assumptions we’ve made that need to be true” (to make it more rounded and less pitchy. Maybe that’s why I’ve never got an investor! Ha)
+pitch -- Q -- If you get no investments what alternatives do you have in mind
 pricing
 pricing strategy
 principle -- end-to-end principle = fundamental principle of the Internet in which the role of a network is to reliably deliver data from willing senders to willing receivers
@@ -64,4 +76,4 @@ target
 try/test/graduate
 User Experience Research (UXR) https://medium.com/getting-started-in-user-experience-and-design
 vendor lock-in
-what got us here won't get us there...
+what got us here won't get us there…
