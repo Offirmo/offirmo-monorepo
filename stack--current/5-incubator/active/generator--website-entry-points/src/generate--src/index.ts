@@ -133,6 +133,7 @@ function initⵧimmediate(): void {
 	Object.freeze(Object.prototype)
 
 	// TODO strip global scope and APIs
+	// TODO detect unwanted DOM manipulations
 }
 
 
@@ -240,7 +241,7 @@ const STYLES = 'padding: .5em; background-color: red; color: white; font-weight:
 async function init(): Promise<void> {
 	const rootSXC = getRootSXC()
 
-	rootSXC.emitter.on('final-error', function onFinalError({SXC, err}) {
+	rootSXC.emitter.on('final-error', function onFinalError({SXC, err, CHANNEL}) {
 		try {
 			// this code must be super extra safe!!!
 			// don't even use the advanced logger!
@@ -276,7 +277,47 @@ async function init(): Promise<void> {
 export default init
 `.trim()
 
-const CODE_TEMPLATEⳇINITⳇGENERIC = `
+const CODE_TEMPLATEⳇINITⳇVIEWⵧREACT = `
+import { Fragment, StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+
+import { getRootSXC } from '@offirmo-private/soft-execution-context'
+import { schedule_when_idle_but_within_human_perception } from '@offirmo-private/async-utils'
+import ErrorBoundary from '@offirmo-private/react-error-boundary'
+
+import { LIB } from '../consts.ts'
+
+//import App from '../app'
+
+/////////////////////////////////////////////////
+
+const StrictCheck = StrictMode
+//const StrictCheck = Fragment
+
+/////////////////////////////////////////////////
+
+async function init(): Promise<void> {
+	schedule_when_idle_but_within_human_perception(() => {
+		console.log('🔄 starting view with react…')
+		getRootSXC().xTry('view', ({ logger, SXC }) => {
+			const root = createRoot(document.getElementById('react-root'))
+			root.render(
+				<StrictCheck>
+					<ErrorBoundary name={\`\${LIB}ᐧroot\`} SXC={SXC}>
+						Hello, world!
+					</ErrorBoundary>
+				</StrictCheck>
+			)
+		})
+	})
+}
+
+/////////////////////////////////////////////////
+
+export default init
+`.trim()
+
+const CODE_TEMPLATEⳇINITⳇGENERIC = (feat: string) => `
 import { getRootSXC } from '@offirmo-private/soft-execution-context'
 
 /////////////////////////////////////////////////
@@ -285,7 +326,7 @@ async function init(): Promise<void> {
 	const rootSXC = getRootSXC()
 
 	rootSXC.xTry('init', ({logger, SXC}) => {
-
+		console.log('TODO ${feat}')
 	})
 }
 
@@ -301,8 +342,6 @@ function generate(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
 import { asap_but_out_of_immediate_execution, forArray } from '@offirmo-private/async-utils'
 import { VERSION, BUILD_DATE } from '../entry-points/build.ts'
 import './init/00-security.ts' // as early as possible, side effects expected
-
-import { CHANNEL } from './services/channel'
 
 /////////////////////////////////////////////////
 
@@ -321,12 +360,13 @@ asap_but_out_of_immediate_execution(async () => {
 	const logger = (await import('./services/logger.ts')).default
 
 	// order is important! Timing is non-trivial!
-	const inits = await import('./init/*.ts')
+	const inits = await import('./init/*.(js|ts|jsx|tsx)')
 	await forArray(Object.keys(inits).sort()).executeSequentially(async (key) => {
 		logger.group(\`init/"\${key}"\`)
-			logger.trace(\`init/"\${key}": import…\`)
-			const init_fn = (await inits[key]()).default
-			logger.trace(\`init/"\${key}": exec…\`)
+			logger.trace(\`init/"\${key}"…\`)
+			const require = inits[key].js || inits[key].ts || inits[key].jsx || inits[key].tsx
+			const exports = await (require().catch(() => require())) // allow 1x retry
+			const init_fn = exports.default
 			await init_fn()
 			logger.trace(\`init/"\${key}": done ✅\`)
 		logger.groupEnd()
@@ -354,11 +394,11 @@ asap_but_out_of_immediate_execution(async () => {
 		'./app/init/01-logger.ts':    CODE_TEMPLATEⳇINITⳇLOGGER,
 		'./app/init/02-sxc.ts':       CODE_TEMPLATEⳇINITⳇSXC,
 		'./app/init/03-errors.ts':    CODE_TEMPLATEⳇINITⳇERRORS,
-		'./app/init/10-loader.tsx':   CODE_TEMPLATEⳇINITⳇGENERIC,
-		'./app/init/11-flux.tsx':     CODE_TEMPLATEⳇINITⳇGENERIC,
-		'./app/init/12-view.tsx':     CODE_TEMPLATEⳇINITⳇGENERIC,
-		'./app/init/20-auth.ts':      CODE_TEMPLATEⳇINITⳇGENERIC,
-		'./app/init/30-analytics.ts': CODE_TEMPLATEⳇINITⳇGENERIC,
+		'./app/init/10-loader.tsx':   CODE_TEMPLATEⳇINITⳇGENERIC('loader'),
+		'./app/init/11-flux.tsx':     CODE_TEMPLATEⳇINITⳇGENERIC('flux'),
+		'./app/init/12-view.tsx':     CODE_TEMPLATEⳇINITⳇGENERIC('view'),
+		'./app/init/20-auth.ts':      CODE_TEMPLATEⳇINITⳇGENERIC('auth'),
+		'./app/init/30-analytics.ts': CODE_TEMPLATEⳇINITⳇGENERIC('analytics'),
 	}
 }
 

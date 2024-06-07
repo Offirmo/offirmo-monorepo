@@ -38,7 +38,7 @@ const COMMON_ERROR_FIELDS = new Set<keyof XError>([
 	// standard in Firefox only for AggregateError:
 	'errors', // https://devdocs.io/javascript/global_objects/aggregateerror
 
-	// non standard but widely used:
+	// non-standard but widely used:
 	'statusCode', // express, https://gist.github.com/zcaceres/2854ef613751563a3b506fabce4501fd
 	'shouldRedirect', // express, https://gist.github.com/zcaceres/2854ef613751563a3b506fabce4501fd
 	'framesToPop', // see facebook https://github.com/facebook/flux/blob/2.0.2/src/invariant.js

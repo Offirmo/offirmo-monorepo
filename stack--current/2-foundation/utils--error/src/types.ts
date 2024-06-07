@@ -38,12 +38,12 @@ interface XXError extends XError {
 }
 
 const DEBUG = false
-const _DEMO_ERROR = new Error('[Test!]')
+const DEMO_ERROR = new Error('[Test!]')
 function isꓽError(err_like: any): err_like is XXError {
 	if (typeof err_like?.message !== 'string' || !err_like?.message) {
 		DEBUG && console.error('hasErrorShape() BAD message', {
 			type: typeof err_like?.message,
-			expected_type: typeof _DEMO_ERROR?.message,
+			expected_type: typeof DEMO_ERROR?.message,
 			err_like,
 		})
 		return false
@@ -52,7 +52,7 @@ function isꓽError(err_like: any): err_like is XXError {
 	if (typeof err_like?.name !== 'string' || !err_like?.name) {
 		DEBUG && console.error('hasErrorShape() BAD name', {
 			type: typeof err_like?.name,
-			expected_type: typeof _DEMO_ERROR?.name,
+			expected_type: typeof DEMO_ERROR?.name,
 			err_like,
 		})
 		return false
@@ -61,7 +61,7 @@ function isꓽError(err_like: any): err_like is XXError {
 	if (typeof err_like?.stack !== 'string') {
 		DEBUG && console.error('hasErrorShape() BAD stack', {
 			type: typeof err_like?.stack,
-			expected_type: typeof _DEMO_ERROR?.stack,
+			expected_type: typeof DEMO_ERROR?.stack,
 			err_like,
 		})
 		return false

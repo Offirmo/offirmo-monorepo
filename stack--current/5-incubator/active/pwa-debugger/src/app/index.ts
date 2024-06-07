@@ -24,11 +24,10 @@ asap_but_out_of_immediate_execution(async () => {
 	console.log('inits:', inits)
 	await forArray(Object.keys(inits).sort()).executeSequentially(async key => {
 		logger.group(`init/"${key}"`)
-		logger.trace(`init/"${key}": import…`)
+		logger.trace(`init/"${key}"…`)
 		const require = inits[key].js || inits[key].ts || inits[key].jsx || inits[key].tsx
-		const exports = await require()
+		const exports = await (require().catch(() => require())) // allow 1x retry
 		const init_fn = exports.default
-		logger.trace(`init/"${key}": exec…`)
 		await init_fn()
 		logger.trace(`init/"${key}": done ✅`)
 		logger.groupEnd()

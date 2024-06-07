@@ -77,3 +77,7 @@ The Progression Treadmill (thoughts on a potential problem in progression fantas
 
 https://www.reddit.com/r/ProgressionFantasy/comments/thz50q/feats_and_informed_power_another_essay_about/
 Feats and Informed Power (another essay about progression fantasy)
+
+
+skills
+https://dev.to/kathryngrayson/understanding-the-hierarchy-of-competence-8mb
