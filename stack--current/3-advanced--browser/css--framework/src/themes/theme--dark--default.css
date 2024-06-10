@@ -1,12 +1,13 @@
 /* Traditional dark theme
  */
-@import 'npm:@offirmo-private/css--foundation/src/consts/consts--colors--defaults.css';
+@import 'npm:@offirmo-private/css--foundation/src/vars--const/consts--colors--defaults.css';
 @import '../consts/consts--colors--boz.css';
 @import '../consts/consts--colors--modifiers.css';
 
 @import 'theme--common.css';
 
-/* TODO https://blog.superhuman.com/how-to-design-delightful-dark-themes-7b3da644ff1f
+/*
+ * TODO https://blog.superhuman.com/how-to-design-delightful-dark-themes-7b3da644ff1f
  */
 [data-o-theme="dark--default"] {
 	--o⋄color⁚fg--main: white;

@@ -396,7 +396,7 @@ asap_but_out_of_immediate_execution(async () => {
 		'./app/init/03-errors.ts':    CODE_TEMPLATEⳇINITⳇERRORS,
 		'./app/init/10-loader.tsx':   CODE_TEMPLATEⳇINITⳇGENERIC('loader'),
 		'./app/init/11-flux.tsx':     CODE_TEMPLATEⳇINITⳇGENERIC('flux'),
-		'./app/init/12-view.tsx':     CODE_TEMPLATEⳇINITⳇGENERIC('view'),
+		'./app/init/12-view.tsx':     CODE_TEMPLATEⳇINITⳇVIEWⵧREACT,
 		'./app/init/20-auth.ts':      CODE_TEMPLATEⳇINITⳇGENERIC('auth'),
 		'./app/init/30-analytics.ts': CODE_TEMPLATEⳇINITⳇGENERIC('analytics'),
 	}

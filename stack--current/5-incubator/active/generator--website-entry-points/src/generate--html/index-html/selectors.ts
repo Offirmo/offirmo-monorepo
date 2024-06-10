@@ -182,7 +182,7 @@ function getꓽcontentⵧweb__js(spec: Immutable<WebPropertyEntryPointSpec>): Pi
 		jsⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽjsⵧcritical(spec.content) ],
 	}
 
-	if (shouldꓽgenerateꓽjscode(spec))
+	if (shouldꓽgenerateꓽjscode(spec) && !spec.content?.js?.some(x => x.includes('app/index')))
 		result.js.push(`import './app/index.js'`)
 
 	return result

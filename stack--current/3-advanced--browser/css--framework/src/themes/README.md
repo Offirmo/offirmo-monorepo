@@ -18,3 +18,4 @@ TODO https://draculatheme.com/pro
 TODO https://vscodethemes.com/
 TODO https://iterm2colorschemes.com/ (not RGB, hard to convert)
 TODO use @scope? https://developer.chrome.com/docs/css-ui/at-scope
+https://developer.chrome.com/blog/css-relative-color-syntax/

@@ -71,15 +71,16 @@ const WEBSITE: WebProperty = {
 		'htmlⳇreact-root',
 		'analytics--google',
 		//'site-verification--google',
+		//TODO old browser check
 	],
 
 	/////// SOCIAL
 	// TODO
 
 	/////// POLISH
-	colorⵧbackground: 'hsl(337, 16%, 28%)',
-	colorⵧforeground: 'hsl(42, 100%, 87%)',
-	colorⵧtheme:      'hsl(248,  9%, 17%)',
+	colorⵧbackground: '#0047ab',
+	colorⵧforeground: 'white',
+	colorⵧtheme:      '#0047ab',
 }
 
 /////////////////////////////////////////////////
