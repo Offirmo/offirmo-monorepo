@@ -1597,6 +1597,11 @@ acorn@^8.4.1:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/acorn/-/acorn-8.11.3.tgz#71e0b14e13a4ec160724b38fb7b0f233b1b81d7a"
   integrity sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==
 
+actual@^0.4:
+  version "0.4.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/actual/-/actual-0.4.0.tgz#2fc10ba427bf20cf15c71c63dde250687336a8c4"
+  integrity sha512-QGbt5LSttkO1olATzHd5Ti32/Z01ySEbuH3DtlJyLfaykeG+nJupRnIrc7c3CobQP2YZj5ixx370FjeoQLX6qw==
+
 agent-base@6:
   version "6.0.2"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/agent-base/-/agent-base-6.0.2.tgz#49fff58577cfee3f37176feab4c22e00f86d7f77"

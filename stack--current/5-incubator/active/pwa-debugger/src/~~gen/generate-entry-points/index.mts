@@ -67,7 +67,7 @@ const WEBSITE: WebProperty = {
 		'cssⳇbox-layout--natural',
 		'cssⳇviewport--full',
 		'normalize-url-trailing-slash',
-		'cssⳇfoundation--offirmo',
+		'cssⳇframework--offirmo',
 		'htmlⳇreact-root',
 		'analytics--google',
 		//'site-verification--google',

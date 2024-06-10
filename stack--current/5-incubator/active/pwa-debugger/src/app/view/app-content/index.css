@@ -1,0 +1,20 @@
+
+.with-clear-borders {
+	--color--border: rgba(255, 255, 255, 0.3);
+	border: dashed 2lvmin var(--color--border);
+	border-boundary: display; /* https://drafts.csswg.org/css-round-display/#border-boundary-property */
+	shape-inside: display; /* https://drafts.csswg.org/css-round-display/#shape-inside-property */
+}
+
+#content {
+	display: grid;
+	place-items: center;
+
+	pre {
+		margin: 0;
+	}
+}
+
+#viewport {
+	font-size: 20lvmin;
+}

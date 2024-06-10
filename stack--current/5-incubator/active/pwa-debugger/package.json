@@ -25,7 +25,7 @@
 		"build:parcel": "parcel build src/entry-points/*.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
 		"copy-extra": "cp -R -f src/entry-points/.well-known src/entry-points/_* src/entry-points/*.json src/entry-points/favicon.ico src/entry-points/*.txt   dist",
 		"xxxensure-size": "size-limit",
-		"build": "npm-run-all  clean  refresh--build-variables  build:parcel"
+		"build": "npm-run-all  clean  refresh--build-variables  build:parcel  copy-extra"
 	},
 
 	"size-limit": [
@@ -50,6 +50,7 @@
 		"@offirmo-private/timestamps": "*",
 		"@offirmo/deferred": "^4",
 		"@offirmo/universal-debug-api-browser": "^1",
+		"actual": "^0.4",
 		"react": "^18",
 		"react-dom": "^18",
 		"tiny-invariant": "^1",

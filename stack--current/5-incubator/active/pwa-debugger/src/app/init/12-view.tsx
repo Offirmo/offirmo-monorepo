@@ -7,7 +7,7 @@ import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
 import { LIB } from '../consts.ts'
 
-//import App from '../app'
+import Root from '../view'
 
 /////////////////////////////////////////////////
 
@@ -17,16 +17,14 @@ const StrictCheck = StrictMode
 /////////////////////////////////////////////////
 
 async function init(): Promise<void> {
-	const rootSXC = getRootSXC()
-
 	schedule_when_idle_but_within_human_perception(() => {
 		console.log('🔄 starting view with react…')
-		rootSXC.xTry('view', ({logger, SXC}) => {
+		getRootSXC().xTry('view', ({ logger, SXC }) => {
 			const root = createRoot(document.getElementById('react-root'))
 			root.render(
 				<StrictCheck>
 					<ErrorBoundary name={`${LIB}ᐧroot`} SXC={SXC}>
-						Hello, world!
+						<Root />
 					</ErrorBoundary>
 				</StrictCheck>
 			)
