@@ -1,4 +1,5 @@
 import 'react'
+import '@offirmo-private/css--framework'
 
 import './index.css'
 import AppShell from './app-shell'

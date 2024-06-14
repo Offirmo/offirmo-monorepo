@@ -55,7 +55,7 @@ function generate(spec: Immutable<WebPropertyEntryPointSpec>): WebManifest {
 			getꓽtitleⵧapp(spec)
 		),
 		icons: _generateꓽicons(spec),
-		start_url: `./${getꓽbasenameⵧindexᐧhtml(spec)}?ref=webmanifest`, // TODO review query params
+		start_url: `./${getꓽbasenameⵧindexᐧhtml(spec)}?ref=webmanifest`,
 
 		// enhancements
 		display: hasꓽown_navigation(spec)

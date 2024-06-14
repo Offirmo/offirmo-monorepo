@@ -5,7 +5,8 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"source": "src/index.css",
+	"exports": "./src/index.ts",
+	"source": "src/index.ts",
 
 	"dependencies": {
 		"@offirmo-private/css--foundation": "^0"

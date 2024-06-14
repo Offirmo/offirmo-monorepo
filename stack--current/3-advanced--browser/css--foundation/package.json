@@ -8,7 +8,10 @@
 	"source": "src/index.css",
 
 	"dependencies": {
-		"@offirmo-private/css--reset": "^0"
+		"@offirmo-private/css--reset": "*"
+	},
+	"optionalDependencies": {
+		"@offirmo-private/style-once": "*"
 	},
 
 	"scripts": {

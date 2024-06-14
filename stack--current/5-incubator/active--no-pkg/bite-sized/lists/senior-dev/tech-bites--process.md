@@ -2,6 +2,12 @@ Agile
 Architectural Decision Records (ADRs) https://adr.github.io/
 Big Hairy Audacious Goals (BHAG) https://www.jimcollins.com/article_topics/articles/BHAG.html
 big rocks
+brainstorming -- Whole Product Game -- Circle 1: Generic Product – the fundamental “thing” that you are marketing
+brainstorming -- Whole Product Game -- Circle 2: Expected Product – the minimal conditions customers expect from your product
+brainstorming -- Whole Product Game -- Circle 3: Augmented Product – aspects of your product that go beyond customer expectations
+brainstorming -- Whole Product Game -- Circle 4: Potential Product – what could be done to your product to attract and keep customers
+brainstorming -- Whole Product Game https://www.figma.com/community/file/1197107722202544166/gamestorming-whole-product-game-workshop
+brainstorming https://gamestorming.com/
 comms "the loop" 01 -- Open up your work in progress = Avoid after-the-fact advice by sharing your work-in-progress for feedback early and often
 comms "the loop" 02 -- Curate, don’t automate = Information overload does not have to paralyze your project. Get and give just the right amount of data and details so your stakeholders stay in the loop and your work gets noticed.
 comms "the loop" 03 -- Common vocabulary over common tooling = Whether we know it or not, every time we communicate we make comprehension and speed trade-offs
