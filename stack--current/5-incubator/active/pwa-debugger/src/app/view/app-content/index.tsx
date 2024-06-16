@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import actual from 'actual'
 
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
@@ -8,6 +8,11 @@ import './index.css'
 
 /////////////////////////////////////////////////
 
+const { format } = new Intl.NumberFormat('en', {
+	style: 'decimal',
+	maximumFractionDigits: 2,
+	minimumFractionDigits: 0,
+})
 
 const CSS_ENV_VARS = [
 	// PREREQUISITE those vars are defined from env() in @offirmo-private/css--framework
@@ -38,8 +43,8 @@ const CSS_ENV_VARS = [
 const CSS_RANGE_FEATURES = [
 
 
-	{ feature: 'device-width',        unit: 'px', unit‿h: '', default: undefined},
-	{ feature: 'device-height',       unit: 'px', unit‿h: '', default: undefined},
+	//{ feature: 'device-width',        unit: 'px', unit‿h: '', default: undefined},
+	//{ feature: 'device-height',       unit: 'px', unit‿h: '', default: undefined},
 	{ feature: 'device-aspect-ratio', unit: undefined, unit‿h: '', default: undefined},
 
 	{ feature: 'color',        unit: undefined, unit‿h: 'bits', default: undefined},
@@ -47,8 +52,8 @@ const CSS_RANGE_FEATURES = [
 	{ feature: 'color-index',  unit: undefined, unit‿h: '', default: undefined},
 	{ feature: 'monochrome', unit: undefined, unit‿h: '', default: undefined},
 
-	{ feature: 'width', unit: 'px', unit‿h: '', default: undefined},
-	{ feature: 'height', unit: 'px', unit‿h: '', default: undefined},
+	//{ feature: 'width', unit: 'px', unit‿h: '', default: undefined},
+	//{ feature: 'height', unit: 'px', unit‿h: '', default: undefined},
 	{ feature: 'aspect-ratio', unit: undefined, unit‿h: '', default: undefined},
 
 	{ feature: 'orientation', unit: undefined, unit‿h: '', default: undefined},
@@ -121,7 +126,9 @@ function DebugViewportReport() {
 			{
 				CSS_RANGE_FEATURES.map(spec => {
 					const value = actual(spec.feature, spec.unit)
-					return <pre key={'actual-' + spec.feature}>{spec.feature} = {value}{spec.unit‿h || spec.unit}</pre>
+					return value === 0
+						? null
+						: <pre key={'actual-' + spec.feature}>{spec.feature} = {value}{spec.unit‿h || spec.unit}</pre>
 				})
 			}
 
@@ -134,13 +141,47 @@ function DebugViewportReport() {
 
 
 function App() {
-	console.log(actual)
+	const [ tick, setꓽtick ] = useState(0)
+	console.log('<App> render…', tick)
+	const full_vp‿ref = useRef(null);
+
+	useEffect(() => {
+		const t = setTimeout(() => {
+			setꓽtick(tick + 1)
+		}, 1000)
+		return () => {
+			clearTimeout(t)
+		}
+	}, [tick]);
+
 	return (
-		<div id="content" key="FVPcontainer" className={'o⋄full-viewport with-clear-borders'} style={{ isolation: 'isolate' }}>
-			<h2 id="viewport">{actual('width', 'px')}x{actual('height', 'px')}</h2>
+		<div ref={full_vp‿ref} id="content" key="FVPcontainer" className={'o⋄full-viewport with-clear-borders'} style={{ isolation: 'isolate' }}>
+			<h2>
+				<span className="key">[@media/device]</span>
+				<span className="value">{actual('device-width', 'px')}x{actual('device-height', 'px')}</span>
+			</h2>
+			<h2>
+				<span className="key">[outer]</span>
+				<span className="value">{window.outerWidth}x{window.outerHeight}</span>
+			</h2>
+			<h2>
+				<span className="key">[inner]</span>
+				<span className="value">{window.innerWidth}x{window.innerHeight}</span>
+			</h2>
+			<h2>
+				<span className="key">[@media]</span>
+				<span className="value">{actual('width', 'px')}x{actual('height', 'px')}</span>
+			</h2>
+			<h2>
+				<span className="key">[measured]</span>
+				<span className="value">{format(full_vp‿ref?.current?.getBoundingClientRect()?.width || 0)}x{format(full_vp‿ref?.current?.getBoundingClientRect()?.height || 0)}</span>
+			</h2>
+			{window?.fullScreen && <h3>Full screen?</h3>}
+			{null & <DebugViewportReport/>}
 		</div>
 	)
 }
+
 //			<DebugViewportReport />
 
 /////////////////////////////////////////////////

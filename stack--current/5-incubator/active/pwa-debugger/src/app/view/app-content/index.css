@@ -1,7 +1,7 @@
 
 .with-clear-borders {
 	--color--border: rgba(255, 255, 255, 0.3);
-	border: dashed 2lvmin var(--color--border);
+	border: dashed 12px var(--color--border); /* vertical border with lvmin does not appear on Safari mobile */
 	border-boundary: display; /* https://drafts.csswg.org/css-round-display/#border-boundary-property */
 	shape-inside: display; /* https://drafts.csswg.org/css-round-display/#shape-inside-property */
 }
@@ -13,8 +13,15 @@
 	pre {
 		margin: 0;
 	}
-}
 
-#viewport {
-	font-size: 20lvmin;
+	h1, h2, h3 {
+		line-height: normal;
+	}
+
+	.key {
+		font-size: 2lvmin;
+	}
+	.value {
+		font-size: 10lvmin;
+	}
 }

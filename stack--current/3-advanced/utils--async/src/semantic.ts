@@ -63,6 +63,10 @@ function asap_but_out_of_current_event_loop<T>(callback: Callback<T>): Promise<T
 	return asap_but_out_of_immediate_execution(callback)
 }
 
+// TODO double requestAnimationFrame
+// https://github.com/ryanve/draf
+//function asap_after_animation_starts_properly()
+
 /////////////////////////////////////////////////
 
 // https://blog.izs.me/2013/08/designing-apis-for-asynchrony
