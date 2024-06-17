@@ -11,7 +11,7 @@
 	"start_url": "./index.html?ref=webmanifest",
 	"display": "fullscreen",
 	"short_name": "[wm.s]PWA debugger",
-	"theme_color": "#0047ab",
+	"theme_color": "#003278",
 	"background_color": "#0047ab",
 	"display_override": [
 		"window-controls-overlay"

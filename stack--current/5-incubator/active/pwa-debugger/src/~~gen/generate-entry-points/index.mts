@@ -80,7 +80,7 @@ const WEBSITE: WebProperty = {
 	/////// POLISH
 	colorⵧbackground: '#0047ab',
 	colorⵧforeground: 'white',
-	colorⵧtheme:      '#0047ab',
+	colorⵧtheme:      '#003278', // darker
 }
 
 /////////////////////////////////////////////////
