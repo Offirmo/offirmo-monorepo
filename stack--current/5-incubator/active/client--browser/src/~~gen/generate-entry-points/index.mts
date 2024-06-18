@@ -11,6 +11,9 @@ import { SPEC as _SPEC } from '@offirmo-private/generator--website-entry-points/
 const SPEC: WebPropertyEntryPointSpec = {
 	..._SPEC,
 	host: 'netlify',
+
+	/////// JS SRC
+	generatesꓽjsⵧscaffold: 'offirmo--react',
 	content: {
 		..._SPEC.content,
 		js: [ ...(_SPEC.content.js ?? []), `import '../app/index.ts'`]

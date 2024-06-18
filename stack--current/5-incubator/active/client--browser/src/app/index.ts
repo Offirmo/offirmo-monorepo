@@ -1,48 +1,34 @@
-import { asap_but_out_of_immediate_execution } from '@offirmo-private/async-utils'
-import assert from 'tiny-invariant'
-
-import { VERSION, BUILD_DATE } from '../build.ts'
-
-//import { CHANNEL } from './services/channel'
+import { asap_but_out_of_immediate_execution, forArray } from '@offirmo-private/async-utils'
+import { VERSION, BUILD_DATE } from '../entry-points/build.ts'
+import './init/00-security.ts' // as early as possible, side effects expected
 
 /////////////////////////////////////////////////
 
-console.info(`%c The Boring RPG %cv${VERSION}%c${BUILD_DATE}`,
+console.info(
+	`%cWelcome to %cThe Boring RPG %cv${VERSION}%c${BUILD_DATE}`,
+	'font-weight: bold;',
 	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: hsl(337, 16%, 28%); color: hsl(42, 100%, 87%); font-weight: bold;',
-	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey; color: black; font-weight: bold;',
-	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey; color: black;',
+	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey;                           color: black;                              font-weight: bold;',
+	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey;                           color: black;',
 )
 
 /////////////////////////////////////////////////
 
-import logger from './services/logger.ts'
-import initsⵧservices from './services/init/*.ts'
-import initsⵧview from './view/init/*.tsx'
-
 asap_but_out_of_immediate_execution(async () => {
-	console.log('%c——————— end of immediate, synchronous, non-import code. ———————', "font-weight: bold;")
+	console.log('%c——————— end of immediate, synchronous, non-import code. ———————', 'font-weight: bold;')
+
+	const logger = (await import('./services/logger.ts')).default
 
 	// order is important! Timing is non-trivial!
-	assert(Object.keys(initsⵧservices).length > 0, 'no services/init found!')
-	await Object.keys(initsⵧservices).sort().reduce(async (acc, key) => {
-		await acc
-		logger.group(`services/init "${key}"`)
-			const init_fn = initsⵧservices[key].default
-			logger.trace(`services/init "${key}": exec…`)
-			await init_fn()
-			logger.trace(`services/init "${key}": done ✅`)
+	const inits = await import('./init/*.(js|ts|jsx|tsx)')
+	await forArray(Object.keys(inits).sort()).executeSequentially(async key => {
+		logger.group(`init/"${key}"`)
+		logger.trace(`init/"${key}"…`)
+		const require = inits[key].js || inits[key].ts || inits[key].jsx || inits[key].tsx
+		const exports = await require().catch(() => require()) // allow 1x retry
+		const init_fn = exports.default
+		await init_fn()
+		logger.trace(`init/"${key}": done ✅`)
 		logger.groupEnd()
-	}, Promise.resolve())
-
-	// order is important! Timing is non-trivial!
-	assert(Object.keys(initsⵧview).length > 0, 'no view/init found!')
-	await Object.keys(initsⵧview).sort().reduce(async (acc, key) => {
-		await acc
-		logger.group(`services/view "${key}"`)
-			const init_fn = initsⵧview[key].default
-			logger.trace(`services/view "${key}": exec…`)
-			await init_fn()
-			logger.trace(`services/view "${key}": done ✅`)
-		logger.groupEnd()
-	}, Promise.resolve())
+	})
 })

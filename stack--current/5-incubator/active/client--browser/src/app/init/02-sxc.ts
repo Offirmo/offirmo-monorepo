@@ -1,12 +1,9 @@
-import {
-	decorateWithDetectedEnv,
-	getRootSXC,
-} from '@offirmo-private/soft-execution-context--browser'
+import { getRootSXC, decorateWithDetectedEnv } from '@offirmo-private/soft-execution-context--browser'
 
-import { LIB } from '../../consts.ts'
-import { VERSION } from '../../../build.ts'
-import { CHANNEL } from '../channel.ts'
-import logger from '../logger.ts'
+import { LIB } from '../consts.ts'
+import { VERSION } from '../../entry-points/build.ts'
+import { CHANNEL } from '../services/channel.ts'
+import logger from '../services/logger.ts'
 
 /////////////////////////////////////////////////
 
@@ -28,10 +25,10 @@ async function init(): Promise<void> {
 		CHANNEL,
 	})
 
-	rootSXC.xTry('init:SXC', ({logger, SXC}) => {
-		logger.debug('Root Soft Execution Context initialized.', rootSXC)
-		logger.debug('Root SXC is now decorated with a logger ✔')
-		logger.debug('Root SXC is now decorated with env infos ✔', SXC.getAnalyticsDetails())
+	rootSXC.xTry('init:SXC', ({ logger, SXC }) => {
+		logger.debug('┌ Root SXC is now decorated with a logger ✔')
+		logger.debug('├ Root SXC is now decorated with env infos ✔', SXC.getAnalyticsDetails())
+		logger.debug('└► Root Soft Execution Context initialized ✔', rootSXC)
 	})
 
 	const { ENV } = rootSXC.getInjectedDependencies()

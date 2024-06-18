@@ -6,7 +6,7 @@ import { Immutable } from '@offirmo-private/ts-types'
 /////////////////////////////////////////////////
 
 function some_stuff(): Immutable<string> {
-	/*function getꓽXYZⵧfoo‿v2(): void {}
+/*function getꓽXYZⵧfoo‿v2(): void {}
 ↆfoo ⵧ fetch
 ೱfoo ⵧ promise
 ϟaꘌb

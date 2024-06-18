@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
-import { DebugViewportReport } from '../app-content--debug-viewport'
 
 /////////////////////////////////////////////////
 

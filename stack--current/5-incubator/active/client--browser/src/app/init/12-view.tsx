@@ -1,10 +1,12 @@
 import { Fragment, StrictMode } from 'react'
-import { createRoot } from 'react-dom/client';
+import { createRoot } from 'react-dom/client'
 
+import { getRootSXC } from '@offirmo-private/soft-execution-context'
 import { schedule_when_idle_but_within_human_perception } from '@offirmo-private/async-utils'
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
-import { LIB } from '../../consts.ts'
+import { LIB } from '../consts.ts'
+
 import App from '../app'
 
 /////////////////////////////////////////////////
@@ -16,15 +18,17 @@ const StrictCheck = StrictMode
 
 async function init(): Promise<void> {
 	schedule_when_idle_but_within_human_perception(() => {
-		console.log('🔄 starting react…')
-		const root = createRoot(document.getElementById('react-root'))
-		root.render(
-			<StrictCheck>
-				<ErrorBoundary name={`${LIB}ᐧroot`}>
-					<App />
-				</ErrorBoundary>
-			</StrictCheck>
-		)
+		console.log('🔄 starting view with react…')
+		getRootSXC().xTry('view', ({ logger, SXC }) => {
+			const root = createRoot(document.getElementById('react-root'))
+			root.render(
+				<StrictCheck>
+					<ErrorBoundary name={`${LIB}ᐧroot`} SXC={SXC}>
+						<App />
+					</ErrorBoundary>
+				</StrictCheck>
+			)
+		})
 	})
 }
 
