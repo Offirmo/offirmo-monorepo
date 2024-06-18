@@ -5,7 +5,9 @@
 [ ] +++ https://martinfowler.com/
 [ ] +++ https://www.hackterms.com/about/all
 [ ] +++ https://www.linfo.org/main_index.html
+[ ] awesome falsehoods https://github.com/kdeldycke/awesome-falsehood
 [ ] https://zknill.io/posts/every-programmer-should-know/
+[ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 allocation
 annotation
@@ -28,6 +30,7 @@ cache
 cache -- stampede https://en.wikipedia.org/wiki/Cache_stampede
 caching -- S3 FIFO https://s3fifo.com/
 capability = an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
+career -- small business programmer https://smallbusinessprogramming.com/how-to-be-a-wildly-successful-small-business-programmer/
 CD Continuous Delivery https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
 changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 changelogs -- conventional https://github.com/conventional-changelog
@@ -43,6 +46,7 @@ commits
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
 compile to js
 compiler
+compilers -- stanford course http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=Compilers
 connascence https://en.wikipedia.org/wiki/Connascence
 constructor
 context switch

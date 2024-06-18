@@ -41,6 +41,7 @@ metrics -- total addressable market (TAM)
 moat https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
 Most Advanced Yet Acceptable (MAYA) UX concept
 network effect
+never-ending feature party https://corgibytes.com/blog/2018/01/02/neverending-feature-party/
 Next Larger Context = always design a thing by considering it in its next larger context — a chair in a room, a room in a house, a house in a city... https://skamille.medium.com/the-next-larger-context-3970afaa8fb2 (see also shearing layers)
 no one was ever fired for using...
 path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
@@ -66,6 +67,7 @@ product market fit -- Arc archetype -- Hair on Fire = solve a problem that’s a
 product market fit -- Arc archetype -- Hard Fact = pain point universally accepted as a hard fact of life, and see that it’s merely a hard problem that your product solves
 real-world context https://contextsdk.com/insights#product
 red ocean vs blue ocean https://www.blueoceanstrategy.com/tools/red-ocean-vs-blue-ocean-strategy/
+side projects -- outside of job https://www.reddit.com/r/SideProject/comments/1br62xb/building_side_projects_outside_fulltime_job/
 strategy -- 01 "where we play"
 strategy -- 02 "how we win"
 strategy https://stratechery.com/
