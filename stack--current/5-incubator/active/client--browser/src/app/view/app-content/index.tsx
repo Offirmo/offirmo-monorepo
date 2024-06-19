@@ -55,7 +55,6 @@ function Main() {
 		<div key="main" style={{}}>
 			<h1>Main</h1>
 			<p>TODO elements depending on current mode, ex. HUD, minimap...</p>
-			<DebugViewportReport />
 			<form>
 				<input type="text"/>
 			</form>

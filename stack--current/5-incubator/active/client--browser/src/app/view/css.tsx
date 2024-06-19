@@ -1,8 +1,11 @@
+import { once } from 'limit-once';
 
 /////////////////////////////////////////////////
 
-async function init(): Promise<void> {
-	//import('@offirmo-private/css--framework') already imported through entry point
+const init = once(async function loadꓽcss(): Promise<void> {
+	console.log('loading css...')
+
+	//import('@offirmo-private/css--framework') NO already imported through entry point
 	import('@offirmo-private/css--utils')
 
 	window.document.documentElement.dataset['oTheme'] = 'dark--colorhunt212'
@@ -13,7 +16,7 @@ async function init(): Promise<void> {
 
 	window.document.documentElement.classList.add('omr⋄font⁚rpg--pixel')
 	import('@oh-my-rpg/font--rpg--pixel')
-}
+})
 
 /////////////////////////////////////////////////
 

@@ -4,7 +4,7 @@ import 'react'
 
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
-import useViewportGeometry from '../../../../to-export-to-own-package/use-viewport-geometry'
+//import useViewportGeometry from '../../../../to-export-to-own-package/use-viewport-geometry'
 import SettingsIconUrl from './icon2.png'
 import HelpIconUrl from './noun-question-1157126.svg'
 
@@ -28,7 +28,7 @@ function Settings() {
 		width: 'var(--o⋄min-target-size)',
 	}
 
-	const { hasꓽtitle_bar_area} = useViewportGeometry()
+	/*const { hasꓽtitle_bar_area} = useViewportGeometry()
 	if (hasꓽtitle_bar_area) {
 		// We want to use the title bar of course!
 		styles = {
@@ -40,7 +40,7 @@ function Settings() {
 	}
 	else {
 		// we need to put that out of the user's way...
-	}
+	}*/
 
 	return (<>
 		<div className='o⋄flex--directionꘌcolumn' style={{

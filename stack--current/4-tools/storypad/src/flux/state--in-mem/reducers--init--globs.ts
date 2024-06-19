@@ -95,6 +95,7 @@ async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Imm
 
 	const { default: meta, ...stories } = exports
 
+	// TODO remove duplicates by value
 	Object.keys(stories).forEach(story_key => {
 		DEBUGⵧglob_parsing && console.log(`Found story: key "${story_key}"`)
 

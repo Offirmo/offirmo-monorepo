@@ -126,6 +126,7 @@
 		"indent-string": "^5",
 		"jsondiffpatch": "^0.6",
 		"lightningcss": "^1",
+		"limit-once": "^0.15",
 		"load-json-file": "^7",
 		"lodash": "^4",
 		"lodash-es": "^4",

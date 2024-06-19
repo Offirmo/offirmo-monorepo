@@ -32,6 +32,8 @@ Appelé l’industrie criminelle à la plus grande croissance au monde, le trafi
 
 https://en.wikipedia.org/wiki/Putting-out_system
 
+https://en.wikipedia.org/wiki/Nine_Worthies
+
 https://www.famillechretienne.fr/6603/article/manipulateurs-pervers-narcissiques-comment-les-reconnaitre
 * certitude d'être exceptionnel
 * indifférence à la souffrance d'autrui

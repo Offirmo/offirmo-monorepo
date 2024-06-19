@@ -7,10 +7,9 @@ import 'react'
 
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
-import useViewportGeometry from '../../../to-export-to-own-package/use-viewport-geometry'
-import { title } from '../../../../entry-points/~~gen/logs/spec.json'
-import { message as version } from '../../../../entry-points/build--badge--version.json'
-import { message as build_time } from '../../../../entry-points/build--badge--time.json'
+import { title } from '../../../entry-points/~~gen/logs/spec.json'
+import { message as version } from '../../../entry-points/build--badge--version.json'
+import { message as build_time } from '../../../entry-points/build--badge--time.json'
 
 import Settings from './settings'
 
@@ -30,6 +29,7 @@ function Signature() {
 		fontSize: 'var(--o⋄icon-size--chrome)',
 	}
 
+	/*
 	const { hasꓽtitle_bar_area } = useViewportGeometry()
 	if (hasꓽtitle_bar_area) {
 		// We want to use it of course!
@@ -42,7 +42,7 @@ function Signature() {
 	else {
 		// we need to put that out of the user's way...
 		// TODO desktop / mobile
-	}
+	}*/
 
 	return (
 		<div key="signature" style={{

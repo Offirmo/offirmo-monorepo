@@ -3700,6 +3700,11 @@ lilconfig@^3.1.1:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/lilconfig/-/lilconfig-3.1.1.tgz#9d8a246fa753106cfc205fd2d77042faca56e5e3"
   integrity sha512-O18pf7nyvHTckunPWCV1XUNXU1piu01y2b7ATJ0ppkUkk8ocqVWBrYjJBCwHDjD/ZWcfyrA0P4gKhzWGi5EINQ==
 
+limit-once@^0.15:
+  version "0.15.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/limit-once/-/limit-once-0.15.0.tgz#4e14d792b0d326c742d499b6fd556f0a3362fa43"
+  integrity sha512-yLWEHkx4eiUORHHiPH9Pfb8xfIICCpb/qMD9QL1aq4H+SgpY8+nyANESP71RvvYhwv8iG61+vLLztJSksknZ8g==
+
 lines-and-columns@^1.1.6:
   version "1.2.4"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/lines-and-columns/-/lines-and-columns-1.2.4.tgz#eca284f75d2965079309dc0ad9255abb2ebc1632"

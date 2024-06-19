@@ -7,7 +7,7 @@ import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
 import { LIB } from '../consts.ts'
 
-import App from '../app'
+import Root from '../view'
 
 /////////////////////////////////////////////////
 
@@ -24,7 +24,7 @@ async function init(): Promise<void> {
 			root.render(
 				<StrictCheck>
 					<ErrorBoundary name={`${LIB}ᐧroot`} SXC={SXC}>
-						<App />
+						<Root />
 					</ErrorBoundary>
 				</StrictCheck>
 			)
