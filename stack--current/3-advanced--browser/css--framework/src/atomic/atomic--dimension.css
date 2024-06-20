@@ -80,13 +80,19 @@
  * mentioning for historical reasons
  * https://piccalil.li/quick-tip/safe-viewport-height/
  */
-/*.o⋄fill-parent {
+
+
+/* Helps a children to size itself to its parent
+ * particularly useful for images
+ * REQUIRES parent to be "positioned" (for ex. position: relative)
+ */
+.o⋄fill-parent {
 	/* this well known centering technique https://stackoverflow.com/a/22760896/587407
 	 * is the one that adds the fewer requirements on the consumer:
 	 * It only requires the parent to be "positioned" (for ex. position: relative)
 	 */
-/*	position: absolute;
+	position: absolute;
 	inset: 0;
 	width: 100%;
 	height: 100%;
-}*/
+}

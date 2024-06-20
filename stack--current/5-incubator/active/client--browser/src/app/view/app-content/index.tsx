@@ -1,29 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
-/////////////////////////////////////////////////
+import Immersion from './immersion'
 
-function Immersion() {
-	return (
-		<div key="100lv_bg" className={'debug'} style={{
-			position: 'absolute',
-			top: 0,
-			left: 0,
-			border: 'none',
-			width: '100lvw',
-			height: '100lvh',
-			background: 'linear-gradient(145deg, rgba(255,237,65,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)',
-		}}>
-			<div style={{
-				position: 'relative',
-				width: '300px',
-				height: '100px',
-				margin: 'auto',
-			}}>TODO Immersion</div>
-		</div>
-	)
-}
+/////////////////////////////////////////////////
 
 function HUD() {
 	// TODO dynamic / as needed?
@@ -66,7 +47,7 @@ function Main() {
 function App() {
 	return (
 		<div key="FVPcontainer" className={'o⋄full-viewport'} style={{ isolation: 'isolate' }}>
-			<Immersion/>
+			<Immersion />
 
 			<div key="usableViewport" className={'o⋄usable-viewport'} style={{
 				border: 'dashed 2px lightgreen',

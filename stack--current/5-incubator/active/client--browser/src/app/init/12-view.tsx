@@ -7,6 +7,8 @@ import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
 import { LIB } from '../consts.ts'
 
+import { ೱᐧpage_loaded } from '../../to-export-to-own-package/viewport-utils'
+
 import Root from '../view'
 
 /////////////////////////////////////////////////
@@ -17,6 +19,7 @@ const StrictCheck = StrictMode
 /////////////////////////////////////////////////
 
 async function init(): Promise<void> {
+	await ೱᐧpage_loaded
 	schedule_when_idle_but_within_human_perception(() => {
 		console.log('🔄 starting view with react…')
 		getRootSXC().xTry('view', ({ logger, SXC }) => {
