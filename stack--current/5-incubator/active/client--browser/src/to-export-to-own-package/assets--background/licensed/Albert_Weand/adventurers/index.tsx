@@ -15,8 +15,8 @@ const BG: Background = {
 	url: asset‿url.href,
 	width: 1920,
 	height: 1080,
-	alignment‿pct: { x: 38, y: 1 },
-	alignmentⵧalt‿pct: { x: 87, y: 99 },
+	focusesⵧhorizontal: [ .38, .87 ],
+	focusesⵧvertical: [ .01, .99 ],
 }
 
 /////////////////////////////////////////////////

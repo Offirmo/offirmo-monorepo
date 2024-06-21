@@ -10,7 +10,7 @@ export type PositiveInteger = number
 
 export type PositiveIntegerInRange<min = number, max = number> = number
 
-export type Percentage = number
+export type Percentage = number // between 0 and 1
 
 export type Real = number
 export type RealInRange<min = number, max = number> = number

@@ -23,9 +23,10 @@ asap_but_out_of_immediate_execution(async () => {
 	const inits = await import('./init/*.(js|ts|jsx|tsx)')
 	await forArray(Object.keys(inits).sort()).executeSequentially(async key => {
 		logger.group(`init/"${key}"`)
-		logger.trace(`init/"${key}"…`)
+		logger.trace(`init/"${key}": loading…`)
 		const require = inits[key].js || inits[key].ts || inits[key].jsx || inits[key].tsx
 		const exports = await require().catch(() => require()) // allow 1x retry
+		logger.trace(`init/"${key}": loaded, now executing…`)
 		const init_fn = exports.default
 		await init_fn()
 		logger.trace(`init/"${key}": done ✅`)

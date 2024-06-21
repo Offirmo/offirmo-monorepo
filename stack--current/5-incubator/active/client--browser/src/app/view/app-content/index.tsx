@@ -48,7 +48,7 @@ function Main() {
 function App() {
 	return (
 		<div key="FVPcontainer" className={'o⋄full-viewport'} style={{ isolation: 'isolate' }}>
-			<Immersion bg={BG} alt_alignment={true}/>
+			<Immersion bg={BG} alt_alignment={false}/>
 
 			<div key="usableViewport" className={'o⋄usable-viewport'} style={{
 				border: 'dashed 2px lightgreen',

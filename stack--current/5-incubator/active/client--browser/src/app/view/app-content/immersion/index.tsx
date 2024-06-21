@@ -1,7 +1,8 @@
 import { useEffect, useState, useRef } from 'react'
 
-import { Immutable } from '@offirmo-private/ts-types'
+import { Immutable, PositiveInteger } from '@offirmo-private/ts-types'
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
+import { getꓽrandom, getꓽengine } from '@offirmo/random'
 
 import { Background } from '../../../../to-export-to-own-package/assets--background/types.ts'
 
@@ -15,10 +16,11 @@ const { format: formatForSize } = new Intl.NumberFormat('en', {
 })
 
 const DEBUG = true
+const rng_engine = getꓽengine.good_enough()
 
 interface Props {
 	bg: Immutable<Background>,
-	alt_alignment?: boolean | 'random'
+	alt_alignment?: boolean | PositiveInteger | 'random'
 	width?: number
 	height?: number
 }
@@ -39,8 +41,7 @@ function Immersion(props: Props) {
 	} = isꓽexplicitly_sized
 		? props
 		: (ref?.getBoundingClientRect() || {})
-	console.log(`Immersion`, { width, height })
-
+	console.log(`Immersion render()`, { width, height })
 
 	const viewBox‿arr = (() => {
 		// TODO reproduce the algorithm of bg position...
@@ -51,25 +52,24 @@ function Immersion(props: Props) {
 		const view_ratio = width / height
 		const is_wider = bg_ratio > view_ratio
 
-		const alignment‿pct = (() => {
-			if (!bg.alignmentⵧalt‿pct)
-				return bg.alignment‿pct
-
-			switch (props.alt_alignment) {
-				case true:
-					return bg.alignmentⵧalt‿pct
-				case 'random':
-					return Math.random() < 0.5 ? bg.alignment‿pct : bg.alignmentⵧalt‿pct
-				default:
-					return bg.alignment‿pct
-			}
-		})()
-
 		if (is_wider) {
 			const vp_width = bg.height * view_ratio
 			const max_x = bg.width - vp_width
+			const focus: number = (() => {
+				const candidates = bg.focusesⵧhorizontal
+
+				if (candidates.length === 1)
+					return candidates[0]!
+
+				switch (props.alt_alignment) {
+					case 'random':
+						return getꓽrandom.picker.of(candidates)(rng_engine)
+					default:
+						return candidates[Number(props.alt_alignment)]!
+				}
+			})()
 			return [
-				max_x * Math.min(100, Math.max(0, alignment‿pct.x)) / 100.,
+				max_x * Math.min(100, Math.max(0, focus)),
 				0,
 				vp_width,
 				bg.height,
@@ -78,9 +78,22 @@ function Immersion(props: Props) {
 
 		const vp_height = bg.width / view_ratio
 		const max_y = bg.height - vp_height
+		const focus: number = (() => {
+			const candidates = bg.focusesⵧvertical
+
+			if (candidates.length === 1)
+				return candidates[0]!
+
+			switch (props.alt_alignment) {
+				case 'random':
+					return getꓽrandom.picker.of(candidates)(rng_engine)
+				default:
+					return candidates[Number(props.alt_alignment)]!
+			}
+		})()
 		return [
 			0,
-			max_y * Math.min(100, Math.max(0, alignment‿pct.y)) / 100.,
+			max_y * Math.min(100, Math.max(0, focus)),
 			bg.width,
 			vp_height,
 		]
