@@ -19,10 +19,11 @@ const StrictCheck = StrictMode
 /////////////////////////////////////////////////
 
 async function init(): Promise<void> {
-	await ೱᐧpage_loaded
-	schedule_when_idle_but_within_human_perception(() => {
-		console.log('🔄 starting view with react…')
-		getRootSXC().xTry('view', ({ logger, SXC }) => {
+	getRootSXC().xTry('view', async ({ logger, SXC }) => {
+		console.log('🔄 scheduling React start later…')
+		await ೱᐧpage_loaded
+		await schedule_when_idle_but_within_human_perception(() => {
+			console.log('🔄 now starting view with react…')
 			const root = createRoot(document.getElementById('react-root'))
 			root.render(
 				<StrictCheck>

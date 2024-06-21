@@ -1,4 +1,4 @@
-import { Thing, WithOnlinePresence, ThingWithOnlinePresence, registerꓽasset_usageⵧload } from '@offirmo-private/credits'
+import { Thing, WithOnlinePresence, ThingWithOnlinePresence, Asset, registerꓽasset_usageⵧload } from '@offirmo-private/credits'
 import AUTHOR from "@offirmo-private/credits/src/authors/MapleLeaf68/index.ts"
 
 import './style.css'
@@ -15,5 +15,9 @@ const THINGⵧONLINE: ThingWithOnlinePresence = {
 	...THING,
 	...ONLINE_PRESENCE,
 }
+const ASSET: Asset = {
+	...THINGⵧONLINE,
+	type: 'cursor',
+}
 
-registerꓽasset_usageⵧload(THINGⵧONLINE)
+registerꓽasset_usageⵧload(ASSET)

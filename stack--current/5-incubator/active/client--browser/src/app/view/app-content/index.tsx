@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react'
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
 import Immersion from './immersion'
+import BG from '../../../to-export-to-own-package/assets--background/licensed/Albert_Weand/adventurers/index.tsx'
 
 /////////////////////////////////////////////////
 
@@ -47,7 +48,7 @@ function Main() {
 function App() {
 	return (
 		<div key="FVPcontainer" className={'o⋄full-viewport'} style={{ isolation: 'isolate' }}>
-			<Immersion />
+			<Immersion bg={BG} alt_alignment={true}/>
 
 			<div key="usableViewport" className={'o⋄usable-viewport'} style={{
 				border: 'dashed 2px lightgreen',

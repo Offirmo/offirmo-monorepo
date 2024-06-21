@@ -16,6 +16,7 @@ type Url‿str = SimplerUrl‿str
 
 type SocialNetworkId =
 	| 'artstation'
+	| 'facebook'
 	| 'github'
 	| 'instagram'
 	| 'producthunt'

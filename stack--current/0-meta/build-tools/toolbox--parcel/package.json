@@ -18,7 +18,8 @@
 		"@parcel/core": "^2",
 		"@parcel/reporter-bundle-analyzer": "^2",
 		"parcel": "^2",
-		"process": "^0"
+		"process": "^0",
+		"sharp": "^0.31"
 	},
 	"optionalDependencies": {
 	},

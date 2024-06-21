@@ -88,6 +88,8 @@
 
 		<script>
 			/////// critical JS ///////
+			console.log(`🏁 document.readyState now = ${document.readyState}`)
+			document.onreadystatechange = () => console.log(`🏁 document.readyState now = ${document.readyState}`)
 			;(function normalize_trailing_slash() {
 				/* IF the current path doesn't end with a trailing slash, this may be an issue
 				 * ex if we're located by our parent folder (implicit file, a lot of servers automatically do that)

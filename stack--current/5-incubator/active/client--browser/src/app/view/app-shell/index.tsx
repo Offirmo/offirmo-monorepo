@@ -12,6 +12,7 @@ import { message as version } from '../../../entry-points/build--badge--version.
 import { message as build_time } from '../../../entry-points/build--badge--time.json'
 
 import Settings from './settings'
+import FakeInset from '../../../to-export-to-own-package/react-fake-inset/index.tsx'
 
 /////////////////////////////////////////////////
 
@@ -70,6 +71,9 @@ function AppShell({ children }) {
 				<Signature/>
 				<Settings/>
 			</div>,
+
+			// special
+			<FakeInset key='fake-inset'/>
 	])
 }
 
