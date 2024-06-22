@@ -27,8 +27,9 @@ const STORE: AssetStore = {
 // called by the asset file itself on load,
 // whether it’s used or not
 function registerꓽasset_usageⵧload(asset: Immutable<Asset>): void {
-	console.log(`🖼️ featuring a "${asset.type}" asset: ${asset.description}`)
+	console.log(`🖼️ now featuring a "${asset.type}" asset: ${asset.description}`)
 
+	// TODO unique id
 	// TODO improve duplicate detection?
 	if (STORE.assetsⵧall.has(asset)) {
 		console.warn(`🖼️ "${asset.type}" asset: ${asset.description} multiple load??`)

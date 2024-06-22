@@ -102,7 +102,7 @@ function Immersion(props: Props) {
 
 	// https://alistapart.com/article/practical-svg/
 	return (
-		<svg className={isꓽexplicitly_sized ? '' : 'o⋄fill-parent'}
+		<svg debug-id="<Immersion>" className={isꓽexplicitly_sized ? '' : 'o⋄fill-parent'}
 		     width={width} height={height}
 		     preserveAspectRatio="xMidYMid slice"
 		     ref={new_ref => setRef(new_ref)}

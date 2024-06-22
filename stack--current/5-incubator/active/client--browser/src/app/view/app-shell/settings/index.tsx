@@ -43,7 +43,7 @@ function Settings() {
 	}*/
 
 	return (<>
-		<div className='o⋄flex--directionꘌcolumn' style={{
+		<div debug-id="<Settings>" className='o⋄flex--directionꘌcolumn' style={{
 			position: 'absolute',
 			direction: 'rtl',
 			...styles,

@@ -140,10 +140,10 @@ export const FeatureSnippets = Enum(
 
 	'normalize-url-trailing-slash',
 
-	// TODO implement:
-	'page-loader--offirmo',
-	'analytics--google',
-	'site-verification--google',
+	// TODO 'page-loader--offirmo',
+	// TODO 'analytics--google',
+	// TODO 'site-verification--google',
+	// TODO https://browser-update.org/
 )
 export type FeatureSnippets = Enum<typeof FeatureSnippets> // eslint-disable-line no-redeclare
 

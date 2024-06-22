@@ -1,40 +1,74 @@
-/**
+/** IF NOT PRESENT Add fake inset to the viewport to simulate a notch and/or a bottom bar
+ * useful for TESTING, should not happen in prod!
  */
-import 'react'
+import { useState } from 'react'
 
 
 /////////////////////////////////////////////////
 
-const HEIGTH = '25px'
+const HEIGHT = '25px'
 const CORNER = '40px'
-const already_has_inset = true // TODO url hash
+let globalⳇhasꓽinitial_inset: boolean | undefined = undefined
 function FakeInset() {
-	console.log(`<FakeInset> render...`)
+	const NAME = "<FakeInset>"
+	const [ hasꓽinitial_inset, setꓽhasꓽinitial_inset ] = useState<boolean | undefined>(globalⳇhasꓽinitial_inset)
+	console.log(`${NAME} render...`, {
+		globalⳇhasꓽinitial_inset,
+		hasꓽinitial_inset,
+	})
 
-	if (already_has_inset)
-		return null;
-
-	/*if (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--safe-area-inset-top')) > 0) {
-		// there is already an inset
+	if (document.readyState !== 'complete') {
+		// viewport sizing is not always available before the page is loaded
 		return null
-	}*/
+	}
 
-	// force inset
-	document.documentElement.style.setProperty(
-		'--safe-area-inset-top',
-		'47px', // iphone 14
-	)
-	document.documentElement.style.setProperty(
-		'--safe-area-inset-bottom',
-		'34px', // iPhone 14
-	)
+	const computed_styles = getComputedStyle(document.documentElement)
+	const currentInsetTop = computed_styles.getPropertyValue('--safe-area-inset-top')
+	if (String(currentInsetTop) === '') {
+		// we need Offirmo CSS framework to be loaded
+		return null
+	}
+
+	if (globalⳇhasꓽinitial_inset === undefined) {
+		// first execution of this!
+		console.log(`${NAME} render... 1st exec! Detecting initial inset...`)
+
+		// the variable is set, we can now check if we naturally have an inset
+		globalⳇhasꓽinitial_inset = currentInsetTop !== '0px'
+			|| computed_styles.getPropertyValue('--safe-area-inset-bottom') !== '0px'
+			|| computed_styles.getPropertyValue('--safe-area-inset-left') !== '0px'
+			|| computed_styles.getPropertyValue('--safe-area-inset-right') !== '0px'
+
+		if (globalⳇhasꓽinitial_inset) {
+			console.log(`${NAME} render... inset already present.`)
+		}
+		else {
+			console.log(`${NAME} render... faking an inset!`)
+
+			// TODO better fake one depending on the device orientation
+			document.documentElement.style.setProperty(
+				'--safe-area-inset-top',
+				'47px', // iphone 14
+			)
+			document.documentElement.style.setProperty(
+				'--safe-area-inset-bottom',
+				'34px', // iPhone 14
+			)
+		}
+		setꓽhasꓽinitial_inset(globalⳇhasꓽinitial_inset)
+	}
+
+	if (globalⳇhasꓽinitial_inset) {
+		// nothing to do
+		return null
+	}
 
 	return (
-		<div key="fakeInset" className={'o⋄full-viewport'} style={{ pointerEvents: 'none' }}>
+		<div debug-id={NAME} key={NAME} className={'o⋄full-viewport'} style={{ pointerEvents: 'none' }}>
 
 			<div key='notch' className={'debug'} style={{
 				pointerEvents: 'auto', position: 'absolute',
-				top: 0, left: '30%', width: '40%', height: HEIGTH, backgroundColor: 'black', textAlign: 'center', color: 'rgba(255, 255, 255, .2)' }}>
+				top: 0, left: '30%', width: '40%', height: HEIGHT, backgroundColor: 'black', textAlign: 'center', color: 'rgba(255, 255, 255, .2)' }}>
 			</div>
 
 			<div key='bottom' className={'debug'} style={{

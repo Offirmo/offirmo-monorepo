@@ -18,7 +18,7 @@ function HUD() {
 	// TODO timer
 	// TODO progression: experience
 	return (
-		<div key="HUD" style={{}}>
+		<div debug-id="<HUD>" key="HUD" style={{}}>
 			TODO HUD
 		</div>
 	)
@@ -26,7 +26,7 @@ function HUD() {
 
 function Navigation() {
 	return (
-		<div key="nav" style={{}}>
+		<div debug-id="<Navigation>" key="nav" style={{}}>
 			TODO Mode Navigation
 		</div>
 	)
@@ -34,7 +34,7 @@ function Navigation() {
 
 function Main() {
 	return (
-		<div key="main" style={{}}>
+		<div debug-id="<Main>" key="main" style={{}}>
 			<h1>Main</h1>
 			<p>TODO elements depending on current mode, ex. HUD, minimap...</p>
 			<form>
@@ -47,10 +47,10 @@ function Main() {
 
 function App() {
 	return (
-		<div key="FVPcontainer" className={'o⋄full-viewport'} style={{ isolation: 'isolate' }}>
+		<div debug-id="<App>" key="content-container" className={'o⋄full-viewport'} style={{ isolation: 'isolate' }}>
 			<Immersion bg={BG} alt_alignment={false}/>
 
-			<div key="usableViewport" className={'o⋄usable-viewport'} style={{
+			<div id="<App>__usable_viewport" key="usable_viewport" className={'o⋄usable-viewport'} style={{
 				border: 'dashed 2px lightgreen',
 			}}>
 				<HUD/>

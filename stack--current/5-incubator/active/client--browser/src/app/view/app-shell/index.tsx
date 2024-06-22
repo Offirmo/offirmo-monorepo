@@ -46,7 +46,7 @@ function Signature() {
 	}*/
 
 	return (
-		<div key="signature" style={{
+		<div debug-id="<Signature>" key="signature" style={{
 			position: 'absolute',
 			lineHeight: '1em',
 			...styles,
@@ -60,14 +60,14 @@ function Signature() {
 
 function AppShell({ children }) {
 	return ([
-			<div key='app-shell__children' style={{ isolation: 'isolate' }}>
+			<div debug-id="<AppShell>__children" key='app-shell__children' style={{ isolation: 'isolate' }}>
 				<ErrorBoundary name={'app-shell__children'}>
 					{children}
 				</ErrorBoundary>
 			</div>,
 
 			// last to be always on top
-			<div key='app-shell__chrome' style={{ isolation: 'isolate' }}>
+			<div debug-id='<AppShell>__chrome' key='app-shell__chrome' style={{ isolation: 'isolate' }}>
 				<Signature/>
 				<Settings/>
 			</div>,
