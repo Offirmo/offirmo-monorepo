@@ -7,21 +7,14 @@ import 'react'
 
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
-import { title } from '../../../entry-points/~~gen/logs/spec.json'
-import { message as version } from '../../../entry-points/build--badge--version.json'
-import { message as build_time } from '../../../entry-points/build--badge--time.json'
 
-import Settings from './settings'
+import Meta from './meta/index.tsx'
 import FakeInset from '../../../to-export-to-own-package/react-fake-inset/index.tsx'
 
 /////////////////////////////////////////////////
 
-/** For marketing reasons, we want the "Game signature" (= game name) to be visible at all times.
- * So that it appears in all screenshots and videos
- * + brand awareness.
- * Since we're at it, we want to interweave debug infos: version, build, UUID...
- */
-function Signature() {
+
+function SignatureX() {
 	console.log('render Signature')
 	let styles: React.CSSProperties = {
 		// default = mobile first's ideal position
@@ -45,17 +38,7 @@ function Signature() {
 		// TODO desktop / mobile
 	}*/
 
-	return (
-		<div debug-id="<Signature>" key="signature" style={{
-			position: 'absolute',
-			lineHeight: '1em',
-			...styles,
-		}}>
-			<span className={'o⋄text-readable-on-any-background'}>{/* TODO icon */ title /* TODO link to "about" */ /* TODO "by Offirmo" ? */}</span>
-			<small className={'o⋄fontꘌsystem--mono'}>v{version} {build_time}</small>
-			{/* TODO social links like Elvenar? */}
-		</div>
-	)
+	return null
 }
 
 function AppShell({ children }) {
@@ -68,8 +51,7 @@ function AppShell({ children }) {
 
 			// last to be always on top
 			<div debug-id='<AppShell>__chrome' key='app-shell__chrome' style={{ isolation: 'isolate' }}>
-				<Signature/>
-				<Settings/>
+				<Meta />
 			</div>,
 
 			// special

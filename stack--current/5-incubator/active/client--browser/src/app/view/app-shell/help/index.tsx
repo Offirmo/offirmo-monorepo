@@ -1,27 +1,29 @@
+/** Help button
+ */
 import 'react'
 
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
-import SettingsIconUrl from './icon2.png'
+import HelpIconUrl from './noun-question-1157126.svg'
 
 /////////////////////////////////////////////////
 
 function on_click() {
-	alert('TODO settings')
+	alert('TODO help')
 }
 
-function Settings() {
-	const NAME = '<Settings>'
+function Help() {
+	const NAME = '<Help>'
 
 	return (
 		<button debug-id={NAME} key={NAME} onClick={on_click} className={'o⋄unstyled'} style={{
 			minHeight: 'var(--o⋄min-target-size)',
 			minWidth: 'var(--o⋄min-target-size)',
 		}}>
-			<img src={SettingsIconUrl} className='black-icon-to-color--fg o⋄img-visible-on-any-background' alt="" style={{
+			<img src={HelpIconUrl} className='black-icon-to-color--fg o⋄img-visible-on-any-background' alt="" style={{
 				backgroundColor: 'transparent',
-				width: 'var(--o⋄icon-size--chrome)',
-				height: 'var(--o⋄icon-size--chrome)',
+				width: 'calc(var(--o⋄icon-size--chrome) - 2px)',
+				height: 'calc(var(--o⋄icon-size--chrome) - 2px)',
 				margin: 'auto',
 				filter: 'var(--o⋄filter⁚black-icon-to-color--fg) var(--o⋄filter⁚img-visible-on-any-background)',
 			}}/>
@@ -31,4 +33,4 @@ function Settings() {
 
 /////////////////////////////////////////////////
 
-export default Settings
+export default Help

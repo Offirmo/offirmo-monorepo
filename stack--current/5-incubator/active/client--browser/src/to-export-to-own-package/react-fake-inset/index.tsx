@@ -6,15 +6,25 @@ import { useState } from 'react'
 
 /////////////////////////////////////////////////
 
-const HEIGHT = '25px'
-const CORNER = '40px'
-let globalⳇhasꓽinitial_inset: boolean | undefined = undefined
+const CORNER‿px = 40
+const CORNER = `${CORNER‿px}px`
+const NOTCH_HEIGHT = `${CORNER‿px * .9}px`
+const NOTCH_BORDER_RADIUS = `${CORNER‿px * .9 * .75}px`
+let globalⳇhasꓽinset: boolean | undefined = undefined
+let globalⳇhasꓽfold: boolean | undefined = undefined
+let globalⳇhasꓽtitlebar: boolean | undefined = undefined
+let globalⳇhasꓽscreen_geometry: boolean | undefined = undefined // geometry bc. can have insets OR fold OR titlebar
+const DEBUG = false
+
 function FakeInset() {
 	const NAME = "<FakeInset>"
-	const [ hasꓽinitial_inset, setꓽhasꓽinitial_inset ] = useState<boolean | undefined>(globalⳇhasꓽinitial_inset)
-	console.log(`${NAME} render...`, {
-		globalⳇhasꓽinitial_inset,
-		hasꓽinitial_inset,
+	const [ hasꓽscreen_geometry, setꓽhasꓽscreen_geometry ] = useState<boolean | undefined>(globalⳇhasꓽscreen_geometry)
+	DEBUG && console.log(`${NAME} render...`, {
+		globalⳇhasꓽinset,
+		globalⳇhasꓽfold,
+		globalⳇhasꓽtitlebar,
+		globalⳇhasꓽscreen_geometry,
+		hasꓽscreen_geometry,
 	})
 
 	if (document.readyState !== 'complete') {
@@ -29,21 +39,45 @@ function FakeInset() {
 		return null
 	}
 
-	if (globalⳇhasꓽinitial_inset === undefined) {
+	if (globalⳇhasꓽscreen_geometry === undefined) {
 		// first execution of this!
-		console.log(`${NAME} render... 1st exec! Detecting initial inset...`)
+		DEBUG && console.log(`${NAME} render... 1st exec! Detecting initial screen geometry...`, {
+			it: computed_styles.getPropertyValue('--safe-area-inset-top').trim(),
+			ft: computed_styles.getPropertyValue('--fold-top').trim(),
+			tx: computed_styles.getPropertyValue('--titlebar-area-x').trim(),
+		})
 
 		// the variable is set, we can now check if we naturally have an inset
-		globalⳇhasꓽinitial_inset = currentInsetTop !== '0px'
-			|| computed_styles.getPropertyValue('--safe-area-inset-bottom') !== '0px'
-			|| computed_styles.getPropertyValue('--safe-area-inset-left') !== '0px'
-			|| computed_styles.getPropertyValue('--safe-area-inset-right') !== '0px'
+		globalⳇhasꓽinset = computed_styles.getPropertyValue('--safe-area-inset-top').trim() !== '0px'
+			|| computed_styles.getPropertyValue('--safe-area-inset-bottom').trim() !== '0px'
+			|| computed_styles.getPropertyValue('--safe-area-inset-left').trim() !== '0px'
+			|| computed_styles.getPropertyValue('--safe-area-inset-right').trim() !== '0px'
 
-		if (globalⳇhasꓽinitial_inset) {
-			console.log(`${NAME} render... inset already present.`)
+		globalⳇhasꓽfold = computed_styles.getPropertyValue('--fold-top').trim() !== '0px'
+			|| computed_styles.getPropertyValue('--fold-bottom').trim() !== '0px'
+			|| computed_styles.getPropertyValue('--fold-left').trim() !== '0px'
+			|| computed_styles.getPropertyValue('--fold-right').trim() !== '0px'
+
+		globalⳇhasꓽtitlebar = computed_styles.getPropertyValue('--titlebar-area-x').trim() !== '0px'
+			|| computed_styles.getPropertyValue('--titlebar-area-y').trim() !== '0px'
+			|| computed_styles.getPropertyValue('--titlebar-area-width').trim() !== '0px'
+			|| computed_styles.getPropertyValue('--titlebar-area-height').trim() !== '0px'
+
+		globalⳇhasꓽscreen_geometry = globalⳇhasꓽinset
+			|| globalⳇhasꓽfold
+			|| globalⳇhasꓽtitlebar // means it's intentionally desktop with titlebar activated = we don't want to fake an inset
+
+		DEBUG && console.log(`${NAME} detected:`, {
+			globalⳇhasꓽinset,
+			globalⳇhasꓽfold,
+			globalⳇhasꓽtitlebar,
+		})
+
+		if (globalⳇhasꓽscreen_geometry) {
+			console.log(`🖼️ ${NAME}: screen already has funny geometry, not faking inset.`)
 		}
 		else {
-			console.log(`${NAME} render... faking an inset!`)
+			console.log(`🖼️ ${NAME}: plain screen detected: faking an inset!`)
 
 			// TODO better fake one depending on the device orientation
 			document.documentElement.style.setProperty(
@@ -55,10 +89,10 @@ function FakeInset() {
 				'34px', // iPhone 14
 			)
 		}
-		setꓽhasꓽinitial_inset(globalⳇhasꓽinitial_inset)
+		setꓽhasꓽscreen_geometry(globalⳇhasꓽscreen_geometry)
 	}
 
-	if (globalⳇhasꓽinitial_inset) {
+	if (globalⳇhasꓽscreen_geometry) {
 		// nothing to do
 		return null
 	}
@@ -68,7 +102,10 @@ function FakeInset() {
 
 			<div key='notch' className={'debug'} style={{
 				pointerEvents: 'auto', position: 'absolute',
-				top: 0, left: '30%', width: '40%', height: HEIGHT, backgroundColor: 'black', textAlign: 'center', color: 'rgba(255, 255, 255, .2)' }}>
+				top: 0, left: '30%', width: '40%', height: NOTCH_HEIGHT,
+				backgroundColor: 'black', textAlign: 'center', color: 'rgba(255, 255, 255, .2)',
+				borderRadius: `0 0 ${NOTCH_BORDER_RADIUS} ${NOTCH_BORDER_RADIUS}`,
+			}}>
 			</div>
 
 			<div key='bottom' className={'debug'} style={{

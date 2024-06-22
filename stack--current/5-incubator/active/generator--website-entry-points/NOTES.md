@@ -12,7 +12,6 @@ TODO https://developers.google.com/digital-asset-links/v1/getting-started
 
 * TODO "pinned tab" (safari ios)
 * TODO preview from gmail
-*
 
 ## breaking out of the box
 
@@ -46,6 +45,7 @@ TODO on rotate, should resize the viewport (TODO test iOs)
 
 ## PWA
 - TODO https://web.dev/learn/pwa/app-design
+- TODO https://www.pwabuilder.com/
 
 ### advocacy
 - 2023 https://www.computerworld.com/article/3688575/why-is-apple-making-big-improvements-to-web-apps-for-iphone.html

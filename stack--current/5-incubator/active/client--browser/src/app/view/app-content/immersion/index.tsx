@@ -15,7 +15,7 @@ const { format: formatForSize } = new Intl.NumberFormat('en', {
 	useGrouping: false,
 })
 
-const DEBUG = true
+const DEBUG = false
 const rng_engine = getꓽengine.good_enough()
 
 interface Props {
@@ -25,6 +25,7 @@ interface Props {
 	height?: number
 }
 function Immersion(props: Props) {
+	const NAME = '<Immersion>'
 	const [ref, setRef] = useState<ReturnType<typeof useRef>>();
 
 	if (document.readyState !== 'complete') {
@@ -41,7 +42,7 @@ function Immersion(props: Props) {
 	} = isꓽexplicitly_sized
 		? props
 		: (ref?.getBoundingClientRect() || {})
-	console.log(`Immersion render()`, { width, height })
+	console.log(`${NAME} render()`, { width, height })
 
 	const viewBox‿arr = (() => {
 		// TODO reproduce the algorithm of bg position...
@@ -102,7 +103,7 @@ function Immersion(props: Props) {
 
 	// https://alistapart.com/article/practical-svg/
 	return (
-		<svg debug-id="<Immersion>" className={isꓽexplicitly_sized ? '' : 'o⋄fill-parent'}
+		<svg debug-id={NAME} key={NAME} className={isꓽexplicitly_sized ? '' : 'o⋄fill-parent'}
 		     width={width} height={height}
 		     preserveAspectRatio="xMidYMid slice"
 		     ref={new_ref => setRef(new_ref)}
@@ -113,9 +114,9 @@ function Immersion(props: Props) {
 			{DEBUG && <>
 				<line x1="0" y1="0" x2={bg.width} y2={bg.height} stroke="red"/>
 				<line x1={bg.width} y1="0" x2="0" y2={bg.height} stroke="red"/>
-				</>}
+				<line x1={viewBox‿arr[0]} y1={viewBox‿arr[1]} x2={viewBox‿arr[0] + viewBox‿arr[2]} y2={viewBox‿arr[1] + viewBox‿arr[3]} stroke="green"/>
+			</>}
 
-			<line x1={viewBox‿arr[0]} y1={viewBox‿arr[1]} x2={viewBox‿arr[0] + viewBox‿arr[2]} y2={viewBox‿arr[1] + viewBox‿arr[3]} stroke="green"/>
 		</svg>
 	)
 }

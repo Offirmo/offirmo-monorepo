@@ -27,12 +27,12 @@
 	--o⋄full-viewport__width: 100dvw;
 	--o⋄full-viewport__height: 100dvh;
 }
-*:has(.o⋄full-viewport) {
+*:has(.o⋄full-viewport), *:has(.o⋄usable-viewport) {
 	margin: 0;
 	padding: 0;
 	border: initial;
 }
-.o⋄full-viewport {
+.o⋄full-viewport, *:has(.o⋄usable-viewport) {
 	max-width: unset; /* first disable a common technique of limiting width to ~60ch that may have been applied by some other CSS */
 
 	width: var(--o⋄full-viewport__width);

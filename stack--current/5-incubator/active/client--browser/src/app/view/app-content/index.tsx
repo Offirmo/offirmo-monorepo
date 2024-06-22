@@ -46,8 +46,15 @@ function Main() {
 }
 
 function App() {
+	const NAME = '<App>'
+	const [ref, setRef] = useState<ReturnType<typeof useRef>>()
+
+	const { width, height } = (ref?.getBoundingClientRect() || {})
+
 	return (
-		<div debug-id="<App>" key="content-container" className={'o⋄full-viewport'} style={{ isolation: 'isolate' }}>
+		<div debug-id={NAME} key="content-container" style={{ isolation: 'isolate' }}
+		     ref={new_ref => setRef(new_ref)}>
+
 			<Immersion bg={BG} alt_alignment={false}/>
 
 			<div id="<App>__usable_viewport" key="usable_viewport" className={'o⋄usable-viewport'} style={{
