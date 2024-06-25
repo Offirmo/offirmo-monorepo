@@ -10,9 +10,8 @@
 	"source": "src/aggregator/index.ts",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2022.esm/index.js"
-		},
-		"./MapleLeaf68": "./src/MapleLeaf68/index.ts"
+			"import": "./dist/src.es2022.esm/aggregator/index.js"
+		}
 	},
 
 	"dependencies": {

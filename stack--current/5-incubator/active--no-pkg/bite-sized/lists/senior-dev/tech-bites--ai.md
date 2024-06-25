@@ -21,8 +21,11 @@ alignment -- super alignment =  https://openai.com/blog/introducing-superalignme
 alignment =  making AI do what its users want it to do (and nothing more) see also "paper clip"
 annotation https://www.peopleforai.com/ https://www.isahit.com/
 API -- Gemini https://ai.google.dev/docs/gemini_api_overview
+applied -- 2024/06 Slack Enzyme to RTL https://slack.engineering/balancing-old-tricks-with-new-feats-ai-powered-conversion-from-enzyme-to-react-testing-library-at-slack/
 assistant = entities capable of performing tasks for users. assistants operate based on the instructions in a context window + tools https://platform.openai.com/docs/introduction/assistants
 attention
+machine learning feature = ‘feature’, in this context might be something like ‘number of times UserA has viewed Issue123 in the last week', which may be a useful signal to a machine learning model
+machine learning feature store = ex. Tecton https://docs.tecton.ai/docs/introduction
 attention -- flash attention = ???
 BERT
 bias

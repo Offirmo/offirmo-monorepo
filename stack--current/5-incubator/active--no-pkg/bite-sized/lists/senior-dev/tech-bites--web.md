@@ -1,5 +1,6 @@
 +++ https://courses.joshwcomeau.com/
 +++ https://developer.mozilla.org/en-US/curriculum/
++++ https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3 + https://medium.com/@cramforce/designing-even-larger-applications-460ee029012d
 [ ] +++ https://dev.to/anze_kop1tar/acronyms-you-should-know-when-going-to-a-job-interview-369l
 [ ] security https://portswigger.net/web-security/all-topics
 [ ] security https://xsleaks.dev/
