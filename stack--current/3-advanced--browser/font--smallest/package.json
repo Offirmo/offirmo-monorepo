@@ -1,0 +1,28 @@
+{
+	"name": "@offirmo-private/font--smallest",
+	"version": "0.0.1",
+	"license": "Unlicense",
+	"private": true,
+
+	"sideEffects": true,
+
+	"dependencies": {
+		"@offirmo-private/credits": "*"
+	},
+
+	"scripts": {
+		"clean": "monorepo-script--clean-package  …cache …dist",
+
+		"_start:parcel:storypad": "parcel serve doc/storypad/index.html --port 8080  --lazy  --no-autoinstall",
+
+		"dev": "npm-run-all clean --parallel _start:parcel:storypad"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/storypad": "*",
+		"@offirmo-private/toolbox--parcel": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2"
+	}
+}

@@ -1,0 +1,40 @@
+
+<script type="module">
+	import startꓽstorypad from '@offirmo-private/storypad'
+	import nearest_pkg from '~/package.json'
+
+	const DEBUG = false
+
+	// important to load async so that
+	// - the stories don't pollute the global scope too early (ex. before SXC)
+	// - we can catch individual modules not loading
+	const stories = import('../../src/**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	// if this doesn't work, reminder to COPY THE PARCEL CONFIG
+
+	startꓽstorypad(
+		stories,
+		{
+			root_title: nearest_pkg?.name,
+			decorators: [
+				(story) => {
+					import('npm:@offirmo-private/css--foundation')
+					import('npm:@offirmo-private/css--foundation/src/xoptional/body--full-width.css')
+					return story
+				},
+				/*(story) => {
+					import('npm:@offirmo-private/css--foundation/src/xoptional/color-theme--light.css')
+					const brand__hue =
+						undefined
+						//'0', // red
+						//'54', // yellow
+						//'120', // green
+						//'240', // blue
+					if (brand__hue)
+						document.documentElement.style.setProperty('--o⋄color⁚brand__h', brand__hue)
+					return story
+				},
+				decoratorⵧdiagnostics*/
+			]
+		}
+	)
+</script>

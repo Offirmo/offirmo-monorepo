@@ -69,6 +69,7 @@ function getꓽassetsⵧrecents(n = 12): Immutable<Array<Immutable<Asset>>> {
 /////////////////////////////////////////////////
 
 export * from './types.ts'
+import { Url‿str } from '@offirmo-private/ts-types-web'
 export {
 	registerꓽasset_usageⵧload,
 	registerꓽasset_usageⵧstart,
