@@ -16,7 +16,10 @@ const SPEC: WebPropertyEntryPointSpec = {
 	generatesꓽjsⵧscaffold: 'offirmo--react',
 	content: {
 		..._SPEC.content,
-		js: [ ...(_SPEC.content.js ?? []), `import '../app/index.ts'`]
+		js: [
+			...(_SPEC.content.js ?? []),
+			`import '../app/index.ts'`
+		]
 	}
 }
 

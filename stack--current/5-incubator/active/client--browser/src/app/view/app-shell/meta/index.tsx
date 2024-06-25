@@ -17,6 +17,7 @@ function Meta() {
 		// default, mobile first ideal position
 		top: 'calc(var(--safe-area-inset-top) + var(--o⋄margin-from-screen-border--touch))',
 		right: 'calc(var(--safe-area-inset-right) + var(--o⋄margin-from-screen-border--touch))',
+		borderRadius: 'calc(var(--o⋄min-target-size) * .5)',
 		//maxWidth: ''
 	}
 

@@ -55,10 +55,10 @@ function App() {
 		<div debug-id={NAME} key="content-container" style={{ isolation: 'isolate' }}
 		     ref={new_ref => setRef(new_ref)}>
 
-			<Immersion bg={BG} alt_alignment={false}/>
+			<Immersion bg={BG} alt_alignment={false} width={width} height={height} />
 
 			<div id="<App>__usable_viewport" key="usable_viewport" className={'o⋄usable-viewport'} style={{
-				border: 'dashed 2px lightgreen',
+				border: 'dashed 1px lightgreen',
 			}}>
 				<HUD/>
 				<Navigation/>
