@@ -1,9 +1,7 @@
 import { Normalization as _Norm, DemoꓽAll } from '@offirmo-private/storypad/src/__shared/stories/css/typography/index.stories.ts'
 import { All } from '../__shared/use-cases.stories'
 
-import './index.tsx'
-
-const KLASS = 'omr⋄font⁚CG-pixel--4x5'
+import { CSS_CLASS as KLASS } from './index.tsx'
 
 export function UseCases() {
 	return `

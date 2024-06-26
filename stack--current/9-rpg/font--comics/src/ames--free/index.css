@@ -23,9 +23,9 @@
 }
 
 .omr⋄font⁚Ames--Free {
-	font-family: 'Ames--Free', sans-serif;
 	--o⋄font-family--main: 'Ames--Free', sans-serif;
-	line-height: 1; /* comic fonts are to be used in small ballons + don't have ascend/descend, hence look better lh1, cf. Blambot tip #7 */
+	font-family: var(--o⋄font-family--main);
+	line-height: 1; /* comic fonts are to be used in small balloons + don't have ascend/descend, hence look better lh1, cf. Blambot tip #7 */
 	/*font-stretch: 150%;*/
 	/*letter-spacing: .02em;*/
 	/*font-synthesis: style small-caps weight position;*/

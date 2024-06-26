@@ -4,10 +4,8 @@
 	/******* better defaults *******/
 
 	/* font sans serif = #1 most important styling according to https://jgthms.com/web-design-in-4-minutes/#font-family
-	 * "system sans" font from https://systemfontstack.com/ (copied 2022/05)
-	 * TODO review? https://distrowatch.com/dwres.php?resource=major
 	 */
-	font-family: var(--o⋄font-family--fast_and_good_enough);
+	font-family: var(--o⋄font-family--main);
 
 	/* #3 most important styling according to https://jgthms.com/web-design-in-4-minutes/#spacing
 	 * 1.5 is recommended by accessibility https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html
