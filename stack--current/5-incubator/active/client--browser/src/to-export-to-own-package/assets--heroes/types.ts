@@ -1,20 +1,16 @@
-import { Percentage } from '@offirmo-private/ts-types'
 import { Url‿str } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 
-interface Background {
+interface HeroIllustration {
 	url: Url‿str
 	width: number
 	height: number
-	focusesⵧhorizontal: Percentage[]
-	focusesⵧvertical: Percentage[]
-
-	// link to asset?
+	avatar__viewport: [ x: number, y: number, width: number, height: number]
 }
 
 /////////////////////////////////////////////////
 
 export {
-	type Background,
+	type HeroIllustration,
 }

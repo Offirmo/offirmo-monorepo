@@ -5,6 +5,7 @@
 	"private": true,
 
 	"sideEffects": true,
+	"source": "./src/index.tsx",
 
 	"dependencies": {
 		"@offirmo-private/credits": "*"

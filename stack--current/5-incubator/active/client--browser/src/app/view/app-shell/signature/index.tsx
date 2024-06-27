@@ -5,6 +5,8 @@
  */
 import 'react'
 
+import { CSS_CLASS as SMALL_FONT_CLASS } from '@offirmo-private/font--smallest'
+
 import { title } from '../../../../entry-points/~~gen/logs/spec.json'
 import { message as version } from '../../../../entry-points/build--badge--version.json'
 import { message as build_time } from '../../../../entry-points/build--badge--time.json'
@@ -27,7 +29,7 @@ function Signature() {
 				lineHeight: '1em',
 			}}>
 				<span className={'o⋄text-readable-on-any-background'}>{/* TODO icon */ title /* TODO link to "about" */ /* TODO "by Offirmo" ? */}</span>
-				<small className={'o⋄fontꘌsystem--mono'}>v{version} {build_time}</small>
+				<small className={SMALL_FONT_CLASS}>v{version} {build_time}</small>
 				{/* TODO social links like Elvenar? */}
 			</div>
 		</button>

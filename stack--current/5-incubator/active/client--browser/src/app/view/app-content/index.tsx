@@ -5,6 +5,9 @@ import ErrorBoundary from '@offirmo-private/react-error-boundary'
 import Immersion from './immersion'
 import BG from '../../../to-export-to-own-package/assets--background/licensed/Albert_Weand/adventurers/index.tsx'
 
+import FramePlayer from './frame--player'
+import HERO_ILLU from '../../../to-export-to-own-package/assets--heroes/licensed/offirmo/female-001/index.tsx'
+
 /////////////////////////////////////////////////
 
 function HUD() {
@@ -60,6 +63,7 @@ function App() {
 			<div id="<App>__usable_viewport" key="usable_viewport" className={'o⋄usable-viewport'} style={{
 				border: 'dashed 1px lightgreen',
 			}}>
+				<FramePlayer hero_illu={HERO_ILLU} width={300} height={100} />
 				<HUD/>
 				<Navigation/>
 				<Main/>

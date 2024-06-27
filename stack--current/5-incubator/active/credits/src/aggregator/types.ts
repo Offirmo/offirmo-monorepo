@@ -54,7 +54,7 @@ const THINGⵧONLINE: ThingWithOnlinePresence = {
 interface Asset extends Thing {
 	// to help with searching/displaying assets when giving credits
 	type:
-		| 'background' | 'icon' | 'cursor'
+		| 'background' | 'icon' | 'cursor' | 'illustration'
 		| 'sound' | 'music'
 		| 'font'
 		| 'code'
