@@ -37,6 +37,7 @@ changelogs -- conventional https://github.com/conventional-changelog
 CI Continuous Integration  https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
 client/server -- multi-tier architecture 
+code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 cohesion = degree to which the elements inside a module belong together https://en.wikipedia.org/wiki/Cohesion_(computer_science)
 command query responsibility segregation (CQRS)
 command query separation (CQS)
@@ -73,10 +74,12 @@ DDOS
 DDOS -- self https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
 debugger
 debugging
+defensive programming = Always think about what can go wrong, what will happen on invalid input, and what might fail, which will help you catch many bugs before they happen https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actually-healthy-5flj
 demos
 dependencies
 dependency hell https://en.wikipedia.org/wiki/Dependency_hell
+dependency injection = passing parameters. no need for complex lib
 design patterns
 design patterns -- behavioral -- command = command, receiver, invoker and client https://en.wikipedia.org/wiki/Command_pattern
 design patterns -- facade https://en.wikipedia.org/wiki/Facade_pattern
@@ -105,6 +108,8 @@ execution model https://en.wikipedia.org/wiki/Execution_model
 executive
 exposer des variables
 express, middlewares
+external-facing APIs = are where "design up front" and consideration about future use cases really matters. Changing APIs is a pain for us and for our users, and creating backwards incompatibility is horrible (although sometimes impossible to avoid). https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
+fail fast = Check input and fail on nonsensical input or invalid state as early as possible, preferably with an exception or error response that will make the exact problem clear to your caller https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 feedback loop -- speed needed
 fifo
 file read
@@ -286,6 +291,7 @@ semver
 shaving the yak
 shim vs polyfill vs ponyfill
 shrinkwrap
+side-effect free
 simple average
 single source of truth (SSOT)
 Site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
@@ -302,6 +308,7 @@ stack overflow
 standard deviation
 state
 state management
+stateless
 stats https://www.youtube.com/playlist?list=PLltdM60MtzxNwhL4sg7swFFlUlH7EEy7H []
 Stick to boring architecture for as long as possible https://addyosmani.com/blog/boring-architecture/
 streams

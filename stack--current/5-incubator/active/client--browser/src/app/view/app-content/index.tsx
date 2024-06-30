@@ -63,7 +63,12 @@ function App() {
 			<div id="<App>__usable_viewport" key="usable_viewport" className={'o⋄usable-viewport'} style={{
 				border: 'dashed 1px lightgreen',
 			}}>
-				<FramePlayer hero_illu={HERO_ILLU} width={300} height={100} />
+				<FramePlayer  width={300} height={100}
+					name="Mary Sue"
+					resume="Necromancer L38"
+					hero_illu={HERO_ILLU}
+					on_click={() }
+				/>
 				<HUD/>
 				<Navigation/>
 				<Main/>

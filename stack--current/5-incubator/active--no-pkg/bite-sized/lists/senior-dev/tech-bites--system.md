@@ -144,10 +144,10 @@ headless = Front-end presentation is completely decoupled from back-end logic/CM
 hypermedia
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
 incident values -- 01 Detect = knows before our customers do. A balanced service includes enough monitoring and alerting to detect incidents before our customers do. The best monitoring alerts us to problems before they even become incidents.
-incident values -- 05 Improve = Never have the same incident twice
-incident values -- 04 Learn = Always Blameless. Incidents are part of running services. We improve services by holding teams accountable, not by apportioning blame.
-incident values -- 03 Recover = Shit happens, clean it up quickly. Our customers don't care why their service is down, only that we restore service as quickly as possible. Never hesitate in getting an incident resolved quickly so that we can minimise impact to our customers.
 incident values -- 02 Respond = Escalate, escalate, escalate. Nobody will mind getting woken up for an incident that it turns out they aren't needed for. But they will mind if they don't get woken up for an incident when they should have been. We won't always have all the answers, so "don't hesitate to escalate".
+incident values -- 03 Recover = Shit happens, clean it up quickly. Our customers don't care why their service is down, only that we restore service as quickly as possible. Never hesitate in getting an incident resolved quickly so that we can minimise impact to our customers.
+incident values -- 04 Learn = Always Blameless. Incidents are part of running services. We improve services by holding teams accountable, not by apportioning blame.
+incident values -- 05 Improve = Never have the same incident twice
 incidents
 Incidents -- rate (i.e. # of HOTs and # repeat incidents)
 infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-code-tools
@@ -158,7 +158,6 @@ interview -- popular problems = designing a URL shortening service, Pastebin, In
 interview -- popular problems = Google products: Google Search, YouTube, Google Photo Sharing and Storage, Google Docs, Google Drive...
 interview -- popular problems = Meta products: facebook, marketplace, instagram, whatsapp...
 kafka = pub/sub + store + process
-search -- https://vespa.ai/ (NO OpenSearch)
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
 latency = the time that passes between an action and the resulting response
 latency https://www.a10networks.com/glossary/osi-network-model-and-types-of-load-balancers/
@@ -244,6 +243,7 @@ perspective -- tech -- platform (cloud!)
 perspective -- tech -- security
 polyglot persistence https://en.wikipedia.org/wiki/Polyglot_persistence
 post-mortem
+private cloud = https://threadreaderapp.com/thread/1800291897245835616.html
 protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https://stackoverflow.com/questions/731233/activemq-or-rabbitmq-or-zeromq-or https://news.ycombinator.com/item?id=9634801
 PubSub = Publish-Subscribe 
 rate limiting
@@ -254,6 +254,7 @@ scaling -- horizontally = more machines
 scaling -- load-shedding
 scaling -- vertically = more power
 scaling ~ elasticity
+search -- https://vespa.ai/ (NO OpenSearch)
 security
 serverless
 service
