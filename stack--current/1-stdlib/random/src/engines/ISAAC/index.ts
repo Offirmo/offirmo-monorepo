@@ -64,7 +64,8 @@ function getꓽRNGⵧISAAC32(options: {
 			// but since the algorithm uses the current "result" as a seed,
 			// it makes sense to init the "result" array with what is provided as a seed
 			for(let i = 0; i < seed.length; i++) {
-				results[i % SIZE] += seed[i]!
+				//  @ts-expect-error TS2532: Object is possibly 'undefined'
+				results[i % SIZE] += seed[i]
 			}
 		}
 
@@ -182,7 +183,8 @@ function getꓽRNGⵧISAAC32(options: {
 			break
 	}
 
-	const engine = {
+	const engine: PRNGEngine = {
+		// @ts-expect-error TS2322: Type '{ is_prng(): boolean; get_Int32(): number; }' is not assignable to type 'RNGEngine'
 		is_prng() { return true },
 		get_Int32() {
 			return _next()

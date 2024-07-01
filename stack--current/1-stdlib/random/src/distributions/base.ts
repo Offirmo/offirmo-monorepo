@@ -6,7 +6,7 @@ import { RandomValueGenerator } from './types.js'
 
 /////// generators
 
-// 32bits = standard unit of RNG by common RNG (Mersenne, ISAAC...
+// 32bits = standard unit of RNG by common RNGs (Mersenne, ISAAC…)
 // [-0x80000000, 0x7fffffff]
 function _randomly_generateꓽintegerⵧInt32(engine: Immutable<RNGEngine>): ReturnType<RandomValueGenerator<Int32>> {
 	return engine.get_Int32()

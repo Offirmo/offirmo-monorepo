@@ -19,7 +19,7 @@
 		"@types/sinon": "^17",
 		"@types/sinon-chai": "^3",
 		"chai": "^5",
-		"chai-as-promised": "^7",
+		"chai-as-promised": "^8",
 		"chai-moment": "^0.1",
 		"chai-subset": "^1",
 		"eslint-plugin-chai-expect": "^3",

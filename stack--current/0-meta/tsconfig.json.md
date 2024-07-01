@@ -47,7 +47,7 @@ Example of errors:
 * `moduleResolution` https://www.typescriptlang.org/docs/handbook/module-resolution.html
   * UNCLEAR allowed values
   * AFAIU particularly affects node.js apps
-  * CURRENTLY 2023/09 a total mess since 5.2!!! https://devblogs.microsoft.com/typescript/announcing-typescript-5-2/#breaking-changes-and-correctness-fixes
+  * CURRENTLY (2023/09) a total mess since 5.2!!! https://devblogs.microsoft.com/typescript/announcing-typescript-5-2/#breaking-changes-and-correctness-fixes
   * CURRENTLY set to "bundler", let's see what happens...
 
 Compatibility:
@@ -55,7 +55,7 @@ Compatibility:
   * AFAIU doesn't add any code, it's just type checking (cf. official doc)
   * IDEALLY we want it to `false`:
     * better detect non-ESM code ✔️
-  * CURRENTLY set intentionally to `false` by default since we switched all to pure ESM, ad-hoc relaxing in specific module as needed
+  * CURRENTLY intentionally set to `false` by default since we switched all to pure ESM, ad-hoc relaxing in specific module as needed
 * `esModuleInterop` https://www.typescriptlang.org/tsconfig#esModuleInterop
   * AFAIU makes the generated code use helper functions
   * IDEALLY we want it to `false`:
