@@ -1,5 +1,7 @@
 
 
+https://www.abc.net.au/news/2024-06-11/inside-the-scam-factory-pig-butchering-and-cyberscams/103937064
+
 https://www.atlassian.com/trust
 
 https://www.nab.com.au/mobile/application-content/understanding-email-and-invoice-scams

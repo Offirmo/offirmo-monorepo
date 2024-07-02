@@ -34,8 +34,8 @@ bolt --only-fs "[0-4]-*/*" ws run test
   bolt --only-fs "1-stdlib/*" ws run ensure-size
   bolt --only-fs "2-foundation/*" ws run build
   bolt --only-fs "2-foundation/*" ws run test
-  bolt --only-fs "3-advanced--*/*" ws run build
-  bolt --only-fs "3-advanced--*/*" ws run test
+  bolt --only-fs "3-advance*/*" ws run build
+  bolt --only-fs "3-advance*/*" ws run test
     bolt --only-fs "3-advanced/*" ws run build
     bolt --only-fs "3-advanced/*" ws run test
     bolt --only-fs "3-advanced--multi/*" ws run build

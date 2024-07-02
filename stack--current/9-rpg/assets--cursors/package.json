@@ -17,9 +17,9 @@
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
 		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
 
-		"dev": "run-s clean _build:dev:watch",
+		"xdev": "run-s clean _build:dev:watch",
 		"xtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2022.esm/**/*spec.js'",
-		"build": "run-s  clean _build:prod"
+		"xbuild": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
