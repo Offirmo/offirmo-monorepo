@@ -58,8 +58,9 @@ function Avatar(props: {name: string,
 	const SIZE = 145
 	const MID = 72
 	const CARTOUCHE_HEIGHT = SIZE / 6
-	const AVATAR_RADIUS = SIZE * 0.45
-	const [nameRef, setNameRef] = useState<ReturnType<typeof useRef>>();
+	const AVATAR_RADIUS = SIZE * 0.49
+	const FOO = 4
+	const [nameRef, setNameRef] = useState<undefined | SVGTextElement>();
 
 	const {
 		hero_illu,
@@ -67,15 +68,24 @@ function Avatar(props: {name: string,
 		...svg_props,
 	} = props
 
+	const name_text_bbox = nameRef?.getBBox({stroke: true}) || {}
+	console.log(`${NAME} nameRef bbox`, name_text_bbox)
 	let {
-		width: name_text__width = SIZE,
+		x: name_text__x = 72,
+		y: name_text__y = SIZE - CARTOUCHE_HEIGHT,
+		width: name_text__width = CARTOUCHE_HEIGHT,
 		height: name_text__height = CARTOUCHE_HEIGHT,
-	} = nameRef?.getBBox() || {}
-	const name_cartouche__width = Math.min(SIZE, name_text__width + CARTOUCHE_HEIGHT)
-	const name_cartouche__height = CARTOUCHE_HEIGHT
-	const name_font_size_adjustment = name.length > 10 ? 0.6 : 0.8
+	} = name_text_bbox
+	const name_cartouche__width = Math.min(
+		SIZE * 0.9, // for optical reason, we don't want the name cartouche to take the full size
+		name_text__width + FOO * 2
+	)
+	const name_cartouche__height = name_text__height + FOO * 2
+	const name_font_size_adjustment = name.length > 12 ? 0.6 : 0.8
 
 	console.log(`${NAME} nameRef rect`, )
+
+	// TODO resize Observer on text
 
 	return (
 		<svg id={NAME} key={NAME} viewBox={`0 0 ${SIZE} ${SIZE}`} {...svg_props}>
@@ -93,9 +103,14 @@ function Avatar(props: {name: string,
 			<circle key="avatar-illu" cx={MID} cy={MID} r={AVATAR_RADIUS} fill="url(#avatar)"/>
 			<circle key="avatar-contour" cx={MID} cy={MID} r={AVATAR_RADIUS} fill="url('#myGradient')" stroke="currentColor" strokeWidth="2px"/>
 
-			<rect x={MID - name_cartouche__width/2} y={SIZE - name_cartouche__height} width={name_cartouche__width} height={name_cartouche__height} fill="var(--o⋄color⁚bg--main)" stroke="currentColor" strokeWidth="2px" rx={10}/>
-			<text ref={new_ref => setNameRef(new_ref)}
-			      textAnchor="middle" x={72} y={SIZE - name_text__height * 0.4} fill="currentColor" style={{fontSize: `${CARTOUCHE_HEIGHT * name_font_size_adjustment}px`, backgroundColor: 'var(--o⋄color⁚bg--main)'}}>{name}</text>
+			<rect x={MID - name_cartouche__width/2} y={name_text__y - FOO} width={name_cartouche__width} height={name_cartouche__height} fill="var(--o⋄color⁚bg--main)" stroke="currentColor" strokeWidth="2px" rx={10}/>
+
+			{/* text below is the anchor of its cartouche, it should be fixed */}
+			<text ref={new_ref => { if (new_ref) setNameRef(new_ref) }}
+			      textAnchor="middle" alignmentBaseline="baseline" dominantBaseline="auto"
+			      x={72} y={ /* TODO clarify what this y refers to ??? */ SIZE - CARTOUCHE_HEIGHT * name_font_size_adjustment + FOO + 2}
+			      fill="currentColor" style={{fontSize: `${CARTOUCHE_HEIGHT * name_font_size_adjustment}px`, backgroundColor: 'var(--o⋄color⁚bg--main)'}}
+			>{name}</text>
 		</svg>
 	) // TODO text vertical alignment on Y
 }

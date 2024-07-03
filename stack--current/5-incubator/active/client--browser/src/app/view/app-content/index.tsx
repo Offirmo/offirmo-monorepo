@@ -50,6 +50,7 @@ function Main() {
 
 const TEST_NAME_LONG = 'Hubert Blaine Wolfeschlegelsteinhausenbergerdorff Sr.'
 const TEST_NAME_SHORT = 'Hubert Blaine'
+const TEST_NAME_XSHORT = 'Perte'
 
 function App() {
 	const NAME = '<App>'
