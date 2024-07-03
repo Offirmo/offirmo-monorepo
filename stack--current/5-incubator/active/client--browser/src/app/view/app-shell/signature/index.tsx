@@ -24,6 +24,7 @@ function Signature() {
 		<button debug-id={NAME} key={NAME} onClick={on_click} className={'o⋄unstyled'} style={{
 			minHeight: 'var(--o⋄min-target-size)',
 			minWidth: 'var(--o⋄min-target-size)',
+			cursor: 'help',
 		}}>
 			<div style={{
 				lineHeight: '1em',

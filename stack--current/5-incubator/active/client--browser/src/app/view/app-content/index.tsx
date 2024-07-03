@@ -5,7 +5,7 @@ import ErrorBoundary from '@offirmo-private/react-error-boundary'
 import Immersion from './immersion'
 import BG from '../../../to-export-to-own-package/assets--background/licensed/Albert_Weand/adventurers/index.tsx'
 
-import FramePlayer from './frame--player'
+import PlayerFrame from './frame--player'
 import HERO_ILLU from '../../../to-export-to-own-package/assets--heroes/licensed/offirmo/female-001/index.tsx'
 
 /////////////////////////////////////////////////
@@ -48,11 +48,14 @@ function Main() {
 	)
 }
 
+const TEST_NAME_LONG = 'Hubert Blaine Wolfeschlegelsteinhausenbergerdorff Sr.'
+const TEST_NAME_SHORT = 'Hubert Blaine'
+
 function App() {
 	const NAME = '<App>'
 	const [ref, setRef] = useState<ReturnType<typeof useRef>>()
 
-	const { width, height } = (ref?.getBoundingClientRect() || {})
+	const { width, height } = ref?.getBoundingClientRect() || {}
 
 	return (
 		<div debug-id={NAME} key="content-container" style={{ isolation: 'isolate' }}
@@ -63,11 +66,11 @@ function App() {
 			<div id="<App>__usable_viewport" key="usable_viewport" className={'o⋄usable-viewport'} style={{
 				border: 'dashed 1px lightgreen',
 			}}>
-				<FramePlayer  width={300} height={100}
-					name="Mary Sue"
+				<PlayerFrame  width={300} height={100}
+					name={TEST_NAME_SHORT}
 					resume="Necromancer L38"
 					hero_illu={HERO_ILLU}
-					on_click={() }
+					on_click={() => alert('TODO character sheet!')}
 				/>
 				<HUD/>
 				<Navigation/>

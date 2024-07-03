@@ -54,7 +54,7 @@ th:not([scope=col], [scope=row])
 /************ EMPTY ************/
 
 /* Empty Elements */
-*:empty:not(canvas):not(iframe):not(img):not(input):not(hr):not(textarea):not(td):not([data-dashlanecreated="true"]):not(div.debug)
+*:empty:not(canvas):not(iframe):not(img):not(input):not(hr):not(textarea):not(td):not([data-dashlanecreated="true"]):not(div.debug):not(svg|*)
 {
 	/* padding needed to better outline empty = usually 0-sized */
 	padding: 1.5em;
@@ -128,7 +128,7 @@ input[type="datetime"] /* https://developer.mozilla.org/en-US/docs/Web/HTML/Elem
 *[alink], *[link], *[vlink], *[text],
 *[align], *[valign],
 *[hspace], *[vspace],
-*[size], *[height]:not(img):not(svg), *[width]:not(img):not(svg),
+*[size], *[height]:not(img):not(svg):not(svg|*), *[width]:not(img):not(svg):not(svg|*),
 ul[type],
 ol[type],
 li[type],
