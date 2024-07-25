@@ -40,13 +40,14 @@ computational complexity -- Insertion time = time required for the update of the
 computational complexity -- Other = operations specific to the problem in question
 computational complexity -- Query time = time required to answer a query;
 computational complexity -- Space = the amount of memory space required to store the data structure;
-consensus -- raft https://en.wikipedia.org/wiki/Raft_(algorithm)  https://raft.github.io/
 Conflict Free Replicated Data type (CRDT)
+consensus -- raft https://en.wikipedia.org/wiki/Raft_(algorithm)  https://raft.github.io/
 Day–Stout–Warren = amortized binary tree balancing https://en.wikipedia.org/wiki/Day%E2%80%93Stout%E2%80%93Warren_algorithm
 deque = double-ended queue
 disjoint set union
 dynamic = ex. For an initial set of N numbers, dynamically maintain the maximal one when insertion and deletions are allowed.
 dynamic programming
+EdgeRank = Facebook’s News Feed Algorithm https://buffer.com/resources/understanding-facebook-news-feed-algorithm/
 effacement d'une liste pendant qu'on la parcourt
 graph -- BFS https://en.wikipedia.org/wiki/Breadth-first_search
 graph -- DFS

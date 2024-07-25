@@ -95,6 +95,10 @@ Content Delivery Network (CDN) ex. CloudFront
 cron
 data retrieval
 database
+Hadoop https://en.wikipedia.org/wiki/Apache_Hadoop
+database -- Bigtable -- HBase = open source Bigtable-like for Hadoop https://en.wikipedia.org/wiki/Apache_HBase
+database -- Bigtable -- Cassandra = open source Bigtable-like
+database -- Bigtable = wide-column and key-value NoSQL database https://en.wikipedia.org/wiki/Bigtable
 database -- indexes
 database -- N+1 query problem = naive, inefficient query https://thoughtbot.com/blog/what-is-counter-cache
 database -- No-SQL and their applications

@@ -47,3 +47,12 @@ https://dev.to/thawkin3/what-i-look-for-when-hiring-senior-software-engineers-4a
 5. High standards for engineering excellence
 6. Expert in their domain
 7. Passion for learning
+
+
+[ ] https://www.geeksforgeeks.org/system-design-interview-bootcamp-guide/
+[ ] https://www.hiredintech.com/
+[ ] https://www.enjoyalgorithms.com/blog/design-twitter
+[ ] https://www.youtube.com/@IGotAnOffer-Engineering
+[ ] https://www.tryexponent.com/questions?type=system-design&src=nav
+[ ] https://www.youtube.com/watch?v=xbgzl2maQUU  Algorithms You Should Know Before System Design Interviews 
+[ ] https://bytebytego.com/courses/system-design-interview/design-a-chat-system

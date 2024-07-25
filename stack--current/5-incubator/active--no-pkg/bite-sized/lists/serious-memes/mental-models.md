@@ -18,6 +18,7 @@ alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_co
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
+autocracy https://en.wikipedia.org/wiki/Autocracy
 availability Cascade: A self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
 baker’s dozen: The key to good hospitality is to delight your guests with an unexpected gift. If you run a hotel, leave a chocolate on the bed. If you run a bakery, give your customers one extra bagel. If you write a tweetstorm, share an extra idea.
 Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
@@ -25,6 +26,7 @@ base rate: The average outcome for an event over time. They’re like batting av
 be prepared
 bee browsing
 bike-shed Effect: A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
+biographies -- Profiles in Courage https://en.wikipedia.org/wiki/Profiles_in_Courage
 bonne et mauvaises cartes
 brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
 broken window theory
@@ -62,7 +64,7 @@ don't expect perfection -> trigger self-consciousness = counter-productive
 doublespeak: People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
 drive by
 due diligence
-Effective altruism
+effective altruism
 effet projecteur
 effet rétroviseur
 Eisenhower's Urgent/Important https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
@@ -106,6 +108,7 @@ herbe toujours plus verte
 Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
 Hock Principle: Simple, clear purpose and principles give rise to complex and intelligent behavior. Complex rules and regulations give rise to simple and stupid behavior.
 Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory
+Holodomor https://en.wikipedia.org/wiki/Holodomor
 Hormesis: A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
 Horseshoe Theory: Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
 https://cobeats.com/folder/ryfTgPr9H
@@ -147,6 +150,7 @@ living the good life
 Logical Problem of Evil https://christianity.stackexchange.com/questions/100110/what-are-christian-responses-to-the-logical-problem-of-evil
 look for Things That Don’t Make Sense: The world always makes sense. But it can be confusing. When it is, your model of the world is wrong. So, things that don’t make sense are a learning opportunity. Big opportunities won’t make sense until it’s too late to profit from them.
 love = wanting the best
+making one's luck
 Maslow's pyramid
 McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
 mental Health: I am not my thoughts and rather than feeling like I needed to have control of every situation, that by surrendering that control, I will have more control over my life than I ever did before.
@@ -169,6 +173,7 @@ Occam’s Razor: If there are multiple explanations for why something happened a
 on peut toujours faire mieux
 opportunity Cost: By reading this tweet, you are choosing not to read something else. Everything we do is like this. Doing one thing requires giving up another. Whenever you explicitly choose to do one thing, you implicitly choose not to do another thing.
 optimism = "keep only the one who say it’s possible" https://posthog.com/founders/first-ops-hire
+other people’s problems / pick your battles
 Overton Window: You can control thought without limiting speech. You can do it by defining the limits of acceptable thought while allowing for lively debate within these barriers. For example, Fox News and MSNBC set limits on what political thoughts they consider acceptable, but in the grand scheme of things, they’re both fairly conventional. The political spectrum stretches far beyond the ideas they entertain, but ideas outside their limits are shunned.
 paradox of Abundance: The average quality of information is getting worse and worse. But the best stuff is getting better and better. Markets of abundance are simultaneously bad for the median consumer but good for conscious consumers.
 paradox of Consensus: Under ancient Jewish law, if a suspect was found guilty by every judge, they were deemed innocent. Too much agreement implied a systemic error in the judicial process. Unanimous agreement sometimes leads to bad decisions.
@@ -203,6 +208,7 @@ productivity -- GSD Capture Everything, Clarify, Organize, Review, Engage https:
 productivity vs. impact, value
 progress over perfection
 psychological safety
+Pulitzer prize -- biographies https://en.wikipedia.org/wiki/Pulitzer_Prize_for_Biography
 put into words
 question authority
 race to the bottom
@@ -210,6 +216,8 @@ Re-thinking established patterns
 Reach Impact Confidence Estimate (RICE)
 Reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
 rebound effect https://blog.jim-nielsen.com/2024/notes-on-making-software-by-peter-van-hardenberg/
+resource curse -- Dutch disease https://en.wikipedia.org/wiki/Dutch_disease
+resource curse = the paradox of plenty https://en.wikipedia.org/wiki/Resource_curse
 resource Curse: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources.
 ring theory -- 01 The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
 ring theory -- 02 When you are talking to a person in a ring smaller than yours, someone closer to the center of the crisis, the goal is to help. Listening is often more helpful than talking. But if you're going to open your mouth, first ask yourself if what you are about to say is likely to provide comfort and support. If it isn't, don't say it. Don't, for example, give advice. People who are suffering from trauma don't need advice. They need comfort and support. So say, "I'm sorry," or, "This must really be hard for you," or, "Can I bring you a pot roast?" Don't say, "You should hear what happened to me," or, "Here's what I would do if I were you." And don't say, "This is really bringing me down."
@@ -224,13 +232,17 @@ schadenfreude = happy ppl misfortune
 scientism
 second Law of Thermodynamics: The world tends towards disorder. That’s why your room becomes messier and messier over time. It’s also why an engine converts only ~35% of its energy into useful work. Time moves towards increasing one direction: increasing entropy.
 secrets are Hidden in Plain Sight:  Most people think of secrets as Easter eggs. They assume that if a secret is important, it’s necessarily going to be hard to find. The best ideas can come from things that are so well-known that they aren’t well-seen.
+selectorate theory https://en.wikipedia.org/wiki/Selectorate_theory
 self appreciation
 self centered vs. take into account others (cf. woke salaryman)
 self love
+self-righteousness
 sex ed
 sex ed -- "sex positive"
 ship of theseus https://en.m.wikipedia.org/wiki/Ship_of_Theseus
 short term / long term
+signalling -- theory https://en.wikipedia.org/wiki/Signalling_theory
+signalling -- virtue https://en.wikipedia.org/wiki/Virtue_signalling
 Situation Complication Question Answer (SCQA) = A Framework For Defining Problems & Hypotheses https://strategyu.co/scqa-a-framework-for-defining-problems-hypotheses/
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 SMART goal-setting framework
@@ -282,6 +294,7 @@ unlearn
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 via Negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 voleur volé
+wabi-sabi https://en.wikipedia.org/wiki/Wabi-sabi
 wartime/peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 We must remember that entire societies can and often do follow the wrong path for a very long time https://news.vanderbilt.edu/2011/04/13/michael-burry-transcript/
 what vs how = OPPOSITE of school +++ https://strategyu.co/consulting-mindset-shifting-from-the-what-to-the-how/
@@ -289,3 +302,4 @@ What would you do if you weren't afraid? - Spencer Johnson
 who moved my cheese?
 wisdom
 wisdom -- a wisdom for left may not be valid for right
+you can bring a horse to water...

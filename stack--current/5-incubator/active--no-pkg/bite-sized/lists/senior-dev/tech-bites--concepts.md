@@ -6,6 +6,8 @@
 [ ] +++ https://www.hackterms.com/about/all
 [ ] +++ https://www.linfo.org/main_index.html
 [ ] awesome falsehoods https://github.com/kdeldycke/awesome-falsehood
+[ ] https://github.com/kilimchoi/engineering-blogs
+[ ] https://www.managingtheunmanageable.net/morerulesofthumb.html
 [ ] https://zknill.io/posts/every-programmer-should-know/
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
 abstraction https://www.merrickchristensen.com/articles/abstraction/

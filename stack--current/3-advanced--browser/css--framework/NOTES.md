@@ -19,3 +19,5 @@ Fonts:
 TODO learn https://ishadeed.com/article/photoshop-web-css/
 
 TODO https://www.teamten.com/lawrence/programming/checkboxes/
+
+TODO https://web.dev/articles/one-line-layouts

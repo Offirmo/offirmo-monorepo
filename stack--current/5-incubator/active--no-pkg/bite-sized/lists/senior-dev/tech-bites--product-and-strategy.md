@@ -1,5 +1,6 @@
 
 6 Reasons Users Hate Your New Feature https://www.slicedbreaddesign.com/blog/6-reasons-users-hate-your-new-feature
+[ ] https://skamille.medium.com/
 [ ] personal MBA
 active users -- daily (DAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
 active users -- monthly (MAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
@@ -21,15 +22,25 @@ enshittification = first, they are good to their users; then they abuse their us
 failures -- inVision -- https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 feature creep
 financing cycle https://en.wikipedia.org/wiki/Seed_money
+first-mover advantage -- handicap of a head start https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_start
+first-mover advantage -- second mover advantage / "fast followers" / "free riders" https://en.wikipedia.org/wiki/First-mover_advantage#Second-mover_advantage
+first-mover advantage https://en.wikipedia.org/wiki/First-mover_advantage
 funnel
 Go-To-Market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
 illegal practices -- monopoly
+boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
+boring -- technology https://mcfunley.com/choose-boring-technology
+boring -- culture 
 illegal practices -- payola https://en.wikipedia.org/wiki/Payola
 illegal practices -- predatory pricing
 illegal practices -- price fixing -- Jedi Blue https://en.wikipedia.org/wiki/Jedi_Blue
 illegal practices -- price gouging
 illegal practices -- price skimming
 incentives -- perverse incentive https://en.wikipedia.org/wiki/Perverse_incentive
+incumbent inertia -- locked into a specific set of fixed assets
+incumbent inertia -- organizationally inflexible
+incumbent inertia -- reluctant to cannibalize existing product lines
+incumbent inertia https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_start#Incumbent_inertia
 jobs to be done
 land grab
 lock-in
@@ -68,6 +79,7 @@ product market fit -- Arc archetype -- Hair on Fire = solve a problem that’s a
 product market fit -- Arc archetype -- Hard Fact = pain point universally accepted as a hard fact of life, and see that it’s merely a hard problem that your product solves
 real-world context https://contextsdk.com/insights#product
 red ocean vs blue ocean https://www.blueoceanstrategy.com/tools/red-ocean-vs-blue-ocean-strategy/
+satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing
 side projects -- outside of job https://www.reddit.com/r/SideProject/comments/1br62xb/building_side_projects_outside_fulltime_job/
 strategy -- 01 "where we play"
 strategy -- 02 "how we win"
@@ -80,3 +92,4 @@ try/test/graduate
 User Experience Research (UXR) https://medium.com/getting-started-in-user-experience-and-design
 vendor lock-in
 what got us here won't get us there…
+worse is better = there is a point where less functionality ("worse") is a preferable option ("better") in terms of practicality and usability. Software that is limited, but simple to use, may be more appealing to the user and market than the reverse https://en.wikipedia.org/wiki/Worse_is_better

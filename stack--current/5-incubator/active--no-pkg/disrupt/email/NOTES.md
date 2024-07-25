@@ -56,3 +56,6 @@ https://matduggan.com/why-cant-my-mom-email-me/
 
 
 https://money.stackexchange.com/questions/71586/im-being-set-up-for-an-internet-scam-but-how-will-it-work-and-how-can-i-avoid?rq=1
+
+
+templates https://squirrelly.js.org/

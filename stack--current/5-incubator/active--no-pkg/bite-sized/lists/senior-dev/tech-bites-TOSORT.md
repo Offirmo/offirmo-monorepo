@@ -12,6 +12,9 @@ Senior Dev tips!
 
 ~~~~~~~~~~~~~~~~~~~~ TOSORT ~~~~~~~~~~~~~~~~~~~~~~
 
+[ ] https://www.hiredintech.com/soft-skills/common-questions/before-the-interview/
+
+
 http://regex.info/blog/2006-09-15/247
 
 
