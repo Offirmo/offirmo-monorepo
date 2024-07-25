@@ -10,7 +10,7 @@
 	"source": "src/aggregator/index.ts",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2022.esm/aggregator/index.js"
+			"import": "./dist/src.es2023.esm/aggregator/index.js"
 		}
 	},
 
@@ -30,7 +30,7 @@
 		"demo1": "npx tsx doc/demo--personal-blog/index.mts",
 
 		"dev": "run-s clean _build:dev:watch",
-		"xxtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2022.esm/**/*spec.js'",
+		"xxtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2023.esm/**/*spec.js'",
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {

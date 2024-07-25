@@ -30,7 +30,7 @@ try {
 				return null
 			})
 
-	lib_udaⵧnode = lib_udaⵧnode || await import('../../../3-advanced--multi/universal-debug-api-node/dist/src.es2022.esm/index.js')
+	lib_udaⵧnode = lib_udaⵧnode || await import('../../../3-advanced--multi/universal-debug-api-node/dist/src.es2023.esm/index.js')
 
 	const {
 		listenToUncaughtErrors,

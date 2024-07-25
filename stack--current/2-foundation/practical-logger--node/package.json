@@ -9,19 +9,19 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2022.esm/index.js",
-			"require": "./dist/src.es2022.cjs/index.js"
+			"import": "./dist/src.es2023.esm/index.js",
+			"require": "./dist/src.es2023.cjs/index.js"
 		}
 	},
-	"module": "dist/src.es2022.esm/index.js",
-	"main": "dist/src.es2022.cjs/index.js",
-	"typings": "dist/src.es2022.esm/index.d.ts",
+	"module": "dist/src.es2023.esm/index.js",
+	"main": "dist/src.es2023.cjs/index.js",
+	"typings": "dist/src.es2023.esm/index.d.ts",
 	"source": "src/index.ts",
 
 	"size-limit": [
 		{
 			"limit": "10kb",
-			"path": "dist/src.es2022.cjs/index.js"
+			"path": "dist/src.es2023.cjs/index.js"
 		}
 	],
 
@@ -40,7 +40,7 @@
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",
 
-		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2022.esm/**/*spec.js'",
+		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2023.esm/**/*spec.js'",
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
 		"_build:prod": "monorepo-script--build-typescript-package",
 		"ensure-size": "size-limit",

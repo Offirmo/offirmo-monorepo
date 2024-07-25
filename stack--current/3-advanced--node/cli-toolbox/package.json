@@ -21,7 +21,7 @@
 
 	"dependencies": {
 		"ansi-escapes": "^7",
-		"boxen": "^7",
+		"boxen": "^8",
 		"chalk": "^5",
 		"cli-columns": "^4",
 		"columnify": "^1",

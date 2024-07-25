@@ -10,11 +10,11 @@
 	"source": "src/index.ts",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2022.esm/index.js"
+			"import": "./dist/src.es2023.esm/index.js"
 		}
 	},
-	"module": "dist/src.es2022.esm/index.js",
-	"typings": "dist/src.es2022.esm/index.d.ts",
+	"module": "dist/src.es2023.esm/index.js",
+	"typings": "dist/src.es2023.esm/index.d.ts",
 
 	"peerDependencies": {
 		"@offirmo-private/soft-execution-context": "*",
@@ -36,7 +36,7 @@
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
 		"dev": "run-s clean _build:dev:watch",
 
-		"demo": "node ./dist/src.es2022.esm/demo/index.js"
+		"demo": "node ./dist/src.es2023.esm/demo/index.js"
 	},
 
 	"devDependencies": {

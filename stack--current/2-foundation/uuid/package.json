@@ -10,23 +10,23 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2022.esm/index.js",
-			"require": "./dist/src.es2022.cjs/index.js"
+			"import": "./dist/src.es2023.esm/index.js",
+			"require": "./dist/src.es2023.cjs/index.js"
 		}
 	},
-	"module": "dist/src.es2022.esm/index.js",
-	"main": "dist/src.es2022.cjs/index.js",
-	"typings": "dist/src.es2022.esm/index.d.ts",
+	"module": "dist/src.es2023.esm/index.js",
+	"main": "dist/src.es2023.cjs/index.js",
+	"typings": "dist/src.es2023.esm/index.d.ts",
 	"source": "src/index.ts",
 
 	"size-limit": [
 		{
 			"limit": "250b",
-			"path": "dist/src.es2022.esm/index.js"
+			"path": "dist/src.es2023.esm/index.js"
 		},
 		{
 			"limit": "250b",
-			"path": "dist/src.es2022.cjs/index.js"
+			"path": "dist/src.es2023.cjs/index.js"
 		}
 	],
 
@@ -46,7 +46,7 @@
 		"ensure-size": "size-limit",
 
 		"dev": "run-s clean _build:dev:watch",
-		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2022.esm/**/*spec.js'",
+		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2023.esm/**/*spec.js'",
 		"build": "run-s  clean _build:prod",
 
 		"cheatsheet": "node doc/cheatsheet.js"
