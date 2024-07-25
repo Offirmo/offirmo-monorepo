@@ -26,7 +26,7 @@ CONTRIBUTING.md
 ### /src structure
 As mentioned above, the src folder should contain all the source code of a package
 
-We follow a FOLDER based approach, where each component is in a named folder which contains standard-named files.
+We follow a **FOLDER based approach**, where each component is in a named folder which contains standard-named files.
 This is bc source files usually have "related" files, ex:
 /my-component/
 ↳ __fixtures for unit tests

@@ -5,6 +5,8 @@ AI
 *
 
 
+See
+* https://githubnext.com/projects/speclang/
 
 Use the power of AI WITH experienced developers who are the real DRI
 Pros

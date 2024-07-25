@@ -43,6 +43,8 @@ CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_start
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
 DDoS
 devices -- support
+features -- "infantile level" https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
+features -- scale = Search, sort, diffs, authorship tracking, comments, permissions (user management), sharing security, SSO, integrations... https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
 HTML -- concepts

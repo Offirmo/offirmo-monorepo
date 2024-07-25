@@ -64,6 +64,9 @@ White not Vite?
 * has a "root" preventing from serving files upper in the monorepo
 
 
+## linting
+
+TODO re-evaluate ESLint https://eslint.org/blog/2024/07/whats-coming-next-for-eslint/
 
 ## environment manager
 

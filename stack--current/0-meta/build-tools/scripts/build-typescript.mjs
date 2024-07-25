@@ -32,7 +32,7 @@ const cli = meow('build', {
 
 /////////////////////
 
-// [Last updated 2023/10](update marker)
+// [Last updated 2024/07](update marker)
 // note: we could object to this info being duplicated here from tsconfig
 // but it's better semantic (hard to comment in tsconfig)
 const LATEST_ESⵧSUPPORTED_BY_TYPESCRIPTⵧIN_LIB = 'ES2023' // = "max ES we can use"
