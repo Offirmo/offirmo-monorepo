@@ -51,6 +51,7 @@ HTML -- concepts
 HTML -- elements
 HTML -- tags
 htmx https://htmx.org/
+hypermedia
 iframe
 iframe -- fenced
 iframe -- sandbox
@@ -82,6 +83,12 @@ realtime -- patterns -- Push biz events
 realtime -- patterns -- Push state
 realtime -- patterns -- Push state diff
 realtime updates https://zknill.io/posts/how-to-adopt-realtime/
+rendering strategy -- client-side rendering (CSR) = give customers ingredients to prepare themselves
+rendering strategy -- incremental static re-generation = refire cold plates
+rendering strategy -- partial pre-rendering 
+rendering strategy -- server-side rendering (SSR) = cook dishes as orders come in
+rendering strategy -- static rendering = pre-cook everything
+rendering strategy https://vercel.com/blog/how-to-choose-the-best-rendering-strategy-for-your-app
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser

@@ -12,6 +12,7 @@
 [ ] https://amir.rachum.com/mental-models/
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 affirmative action?
+agency
 agile "what the client wanted"
 alcohol https://podcastnotes.org/huberman-lab/episode-86-what-alcohol-does-to-your-body-brain-health-huberman-lab/  https://www.soberonadrunkplanet.com/
 alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community
@@ -106,6 +107,7 @@ happiness score https://www.ted.com/talks/dominic_price_what_s_your_happiness_sc
 helicopter parent
 herbe toujours plus verte
 Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
+high/low functioning human
 Hock Principle: Simple, clear purpose and principles give rise to complex and intelligent behavior. Complex rules and regulations give rise to simple and stupid behavior.
 Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory
 Holodomor https://en.wikipedia.org/wiki/Holodomor
@@ -117,6 +119,14 @@ ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-
 if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
 ikigai
 impostor syndrome
+influence operations
+influence operations -- breakout scale -- 01 one platform, no breakout
+influence operations -- breakout scale -- 02 one platform, breakout OR many platforms, no breakout
+influence operations -- breakout scale -- 03 multiple platforms, multiple breakouts
+influence operations -- breakout scale -- 04 cross-medium breakout
+influence operations -- breakout scale -- 05 celebrity amplification
+influence operations -- breakout scale -- 06 policy response OR call for violence
+influence operations -- breakout scale https://www.brookings.edu/articles/the-breakout-scale-measuring-the-impact-of-influence-operations/
 infotainment
 ingroup/outgroup
 intrinsic/extrinsic motivation https://www.swyx.io/js-tooling
@@ -185,6 +195,8 @@ pattern / antipattern
 pay it forward
 penny Problem Gap: Economists assume demand is linear, but people’s behavior totally changes once an action costs money. If the inventors of the Internet had known about it, spam wouldn’t be such a problem. If sending an email cost you $0.001, there’d be way less spam.
 Perfect is the enemy of good https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good
+personal finance -- FIRE
+personal finance -- HENRY
 personal finance https://thewokesalaryman.substack.com/p/10-finance-revelations
 personal Knowledge Management https://fortelabs.co/blog/para/
 personal Monopoly: Corporations reward conformity, but the Internet rewards people who are unique. If you work in a creative field, strive to be the only person who does what you do. Find your own style, then run with it. Create intellectual real estate for yourself. The Internet rewards unique people. Find your unique combination of skills, interests, and personality traits. I call this a Personal Monopoly. Become the only person in the world who does what you do. Then, tell the world by sharing your knowledge.
@@ -192,6 +204,7 @@ personal moral inventory https://domprice.me/personal-moral-inventory/
 picture the success
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
 porn
+practice first what you teach
 praise in public (and private), criticize in private
 praise more than criticize
 praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism

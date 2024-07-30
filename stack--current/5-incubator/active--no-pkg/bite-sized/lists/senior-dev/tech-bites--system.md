@@ -95,9 +95,10 @@ Content Delivery Network (CDN) ex. CloudFront
 cron
 data retrieval
 database
-Hadoop https://en.wikipedia.org/wiki/Apache_Hadoop
-database -- Bigtable -- HBase = open source Bigtable-like for Hadoop https://en.wikipedia.org/wiki/Apache_HBase
+database -- hierarchical, relational...
+database -- google sheets https://www.jacobparis.com/content/submit-form-google-sheet https://thenewstack.io/how-to-use-google-sheets-as-a-database-with-react-and-ssr/
 database -- Bigtable -- Cassandra = open source Bigtable-like
+database -- Bigtable -- HBase = open source Bigtable-like for Hadoop https://en.wikipedia.org/wiki/Apache_HBase
 database -- Bigtable = wide-column and key-value NoSQL database https://en.wikipedia.org/wiki/Bigtable
 database -- indexes
 database -- N+1 query problem = naive, inefficient query https://thoughtbot.com/blog/what-is-counter-cache
@@ -144,6 +145,7 @@ flux architecture
 full stack trade offs https://zknill.io/posts/backend-for-the-frontend/
 Google - Site Reliability Engineering
 graceful degradation = ex. of batteries in flashlight
+Hadoop https://en.wikipedia.org/wiki/Apache_Hadoop
 headless = Front-end presentation is completely decoupled from back-end logic/CMS. Designed to be channel, programming language, and framework agnostic https://jamstack.org/glossary/headless-technology/
 hypermedia
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
@@ -153,7 +155,8 @@ incident values -- 03 Recover = Shit happens, clean it up quickly. Our customers
 incident values -- 04 Learn = Always Blameless. Incidents are part of running services. We improve services by holding teams accountable, not by apportioning blame.
 incident values -- 05 Improve = Never have the same incident twice
 incidents
-Incidents -- rate (i.e. # of HOTs and # repeat incidents)
+incidents -- rate (i.e. # of HOTs and # repeat incidents)
+information retrieval
 infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-code-tools
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
 integrity

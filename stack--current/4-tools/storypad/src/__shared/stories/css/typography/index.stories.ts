@@ -5,6 +5,8 @@ import { PANGRAM, ALPHABET, CALIBRATION_SUBSET } from './consts.ts'
 
 const DEFAULT_REFERENCE_FONT_FAMILY: FontFamilyGenericName = 'sans-serif'
 
+// TODO https://web.dev/blog/font-size-adjust
+
 // https://web.dev/articles/css-size-adjust#calibrating_fonts
 // https://deploy-preview-15--upbeat-shirley-608546.netlify.app/perfect-ish-font-fallback/
 // https://codepen.io/Offirmo/pen/rNgjdEb
