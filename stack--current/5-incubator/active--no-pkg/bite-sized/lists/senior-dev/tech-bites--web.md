@@ -94,6 +94,9 @@ security -- cross-site leaks https://xsleaks.dev/
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
 testing -- Netflix's SafeTest https://www.infoq.com/news/2024/02/netflix-safetest-front-end-test/
 testing https://www.testingjavascript.com/
+typology -- dead simple site https://deadsimplesites.com/
+typology -- landing site
+typology -- naked site
 UI -- Application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
 UI -- aria https://www.w3.org/WAI/ARIA/apg/
 UI -- chrome

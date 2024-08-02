@@ -112,6 +112,10 @@ https://en.m.wikipedia.org/wiki/History_of_PDF
 https://en.m.wikipedia.org/wiki/PostScript
 https://en.m.wikipedia.org/wiki/Page_description_language (printer)
 
+## RCS
+
+https://en.wikipedia.org/wiki/Rich_Communication_Services
+
 ## new semantic format?
 
 https://en.m.wikipedia.org/wiki/Open_file_format
@@ -126,3 +130,7 @@ need to embed binary files:
 * https://en.m.wikipedia.org/wiki/Media_type
 * https://en.m.wikipedia.org/wiki/Uniform_Type_Identifier
 * https://en.m.wikipedia.org/wiki/Data_URI_scheme
+
+
+Books
+https://dz4k.com/2024/new-hypermedia-systems/

@@ -32,6 +32,8 @@ Appelé l’industrie criminelle à la plus grande croissance au monde, le trafi
 
 https://en.wikipedia.org/wiki/Putting-out_system
 
+https://worldbuilding.stackexchange.com/questions/259488/how-to-turn-a-desert-into-a-fertile-farmland-with-engineering
+
 https://en.wikipedia.org/wiki/Nine_Worthies
 
 https://www.famillechretienne.fr/6603/article/manipulateurs-pervers-narcissiques-comment-les-reconnaitre

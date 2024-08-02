@@ -48,13 +48,6 @@ https://web.dev/patterns/layout/
 
 https://programmingisterrible.com/post/139222674273/how-to-write-disposable-code-in-large-systems
 
-
-https://itnext.io/deployment-maturity-levels-feab55c20d04
-
-
-
-Well done sourcing the mental models from your readers ;)
-
 P3 should be learning how to engineer high quality software
 P4 should be doing the lion’s share of engineering
 P5 should be leading your team’s execution on engineering

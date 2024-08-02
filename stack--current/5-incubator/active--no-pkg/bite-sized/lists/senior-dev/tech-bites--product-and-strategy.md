@@ -7,6 +7,9 @@ active users -- monthly (MAU) https://www.socialmediatoday.com/news/look-compara
 aha moment
 Annual Recurring Revenue (ARR)
 average revenue per user (ARPU)
+boring -- culture 
+boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
+boring -- technology https://mcfunley.com/choose-boring-technology
 churn
 customer segmentation = Strategic, Enterprise, Mid-Market, SMB
 earliest -- 01 feedback-able product (EFP)
@@ -19,6 +22,7 @@ earliest -- 07 "pro" product? scalable? (entitlements, billing, compliance...)
 earliest https://every.to/p/the-most-advanced-yet-acceptable-products-win
 Embrace, Extend, and Extinguish https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish
 enshittification = first, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die. https://en.wikipedia.org/wiki/Enshittification
+executive presence
 failures -- inVision -- https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 feature creep
 financing cycle https://en.wikipedia.org/wiki/Seed_money
@@ -28,9 +32,6 @@ first-mover advantage https://en.wikipedia.org/wiki/First-mover_advantage
 funnel
 Go-To-Market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
 illegal practices -- monopoly
-boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
-boring -- technology https://mcfunley.com/choose-boring-technology
-boring -- culture 
 illegal practices -- payola https://en.wikipedia.org/wiki/Payola
 illegal practices -- predatory pricing
 illegal practices -- price fixing -- Jedi Blue https://en.wikipedia.org/wiki/Jedi_Blue
@@ -80,7 +81,10 @@ product market fit -- Arc archetype -- Hard Fact = pain point universally accept
 real-world context https://contextsdk.com/insights#product
 red ocean vs blue ocean https://www.blueoceanstrategy.com/tools/red-ocean-vs-blue-ocean-strategy/
 satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing
+second product -- When and How https://caseyaccidental.com/second-products/
+second product -- syndrome https://www.hubspot.com/startups/resources/second-product-tips-for-success
 side projects -- outside of job https://www.reddit.com/r/SideProject/comments/1br62xb/building_side_projects_outside_fulltime_job/
+startups should avoid being held hostage by the preferences of their early user base if it deviates from the broader market, ex. social feed or reels
 strategy -- 01 "where we play"
 strategy -- 02 "how we win"
 strategy https://stratechery.com/
@@ -91,5 +95,6 @@ target
 try/test/graduate
 User Experience Research (UXR) https://medium.com/getting-started-in-user-experience-and-design
 vendor lock-in
+wartime vs peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 what got us here won't get us there…
 worse is better = there is a point where less functionality ("worse") is a preferable option ("better") in terms of practicality and usability. Software that is limited, but simple to use, may be more appealing to the user and market than the reverse https://en.wikipedia.org/wiki/Worse_is_better

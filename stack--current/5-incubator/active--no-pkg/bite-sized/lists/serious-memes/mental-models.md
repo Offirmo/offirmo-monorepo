@@ -1,6 +1,7 @@
 +++ https://thewokesalaryman.com/
 -- https://fs.blog/mental-models/
 -- tool https://explorer.globe.engineer/
+0-sum game
 1 or 2 way door
 12 steps
 3 hardest things to say -- I was wrong, I need help, I love you -> also 10 https://kristyna.co/mindful-entrepreneurship/10-hardest-things-for-people-to-say
@@ -20,7 +21,7 @@ amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
 autocracy https://en.wikipedia.org/wiki/Autocracy
-availability Cascade: A self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
+availability cascade: A self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
 baker’s dozen: The key to good hospitality is to delight your guests with an unexpected gift. If you run a hotel, leave a chocolate on the bed. If you run a bakery, give your customers one extra bagel. If you write a tweetstorm, share an extra idea.
 Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 base rate: The average outcome for an event over time. They’re like batting averages for life, and they work best with big sample sizes. For example, if you’re starting a business, avoid the restaurant business where margins are low and competition is high.
@@ -28,7 +29,7 @@ be prepared
 bee browsing
 bike-shed Effect: A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
 biographies -- Profiles in Courage https://en.wikipedia.org/wiki/Profiles_in_Courage
-bonne et mauvaises cartes
+bonnes et mauvaises cartes
 brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
 broken window theory
 busy work https://en.wikipedia.org/wiki/Busy_work
@@ -148,6 +149,7 @@ leadership -- exiger seulement ce qu’on peut faire soi même
 leadership -- is about how you are, not just what you do
 leadership -- is for everyone
 leadership -- know when to fight
+leadership -- leader - leader -- context-rich environment / information management
 leadership -- must never ask sth they couldn't do
 leadership -- timeless lessons https://www.linkedin.com/pulse/back-future-timeless-lessons-leadership-jo-owen
 learning machines "I constantly see people rise in life who are not the smartest, sometimes not even the most diligent, but they are learning machines" (Munger https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger)
@@ -178,6 +180,7 @@ naiveté: abus sexuels, mafia
 needs / wants https://en.wikipedia.org/wiki/Need
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
 non-violence
+normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-securite-la-normalisation-de-la-deviance-suite
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
 on peut toujours faire mieux
@@ -189,6 +192,8 @@ paradox of Abundance: The average quality of information is getting worse and wo
 paradox of Consensus: Under ancient Jewish law, if a suspect was found guilty by every judge, they were deemed innocent. Too much agreement implied a systemic error in the judicial process. Unanimous agreement sometimes leads to bad decisions.
 paradox of Specificity: Focus isn’t as constraining as it seems. In the age of the Internet, when everybody has Google search and personalized social media feeds, differentiation is free marketing. The more specific your goal, the more opportunities you’ll create for yourself. Narrowing your aperture can expand your horizons.
 pardon pas oubli
+Pareto
+Pareto efficiency
 Parkinson’s Law: Work expands to fill the time available. People don’t want to look like they’re lazy, so they find extra tasks to tackle, even if they’re trivial. If you have six months to complete a project, it will take six months to complete. Set deadlines accordingly.
 passive aggressive
 pattern / antipattern
@@ -225,7 +230,7 @@ Pulitzer prize -- biographies https://en.wikipedia.org/wiki/Pulitzer_Prize_for_B
 put into words
 question authority
 race to the bottom
-Re-thinking established patterns
+re-thinking established patterns
 Reach Impact Confidence Estimate (RICE)
 Reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
 rebound effect https://blog.jim-nielsen.com/2024/notes-on-making-software-by-peter-van-hardenberg/
@@ -262,6 +267,7 @@ SMART goal-setting framework
 social debt = friends, family, and strangers who feel entitled to ask, beg, and steal https://collabfund.com/blog/rich-and-anonymous/
 social pressure / free will
 soft skills https://softskills.audio/
+staggered contour trenches
 stakeholder
 start with the most risky / complicated
 start with why
@@ -283,7 +289,7 @@ The Medium Is the Message = We pay too much attention to what is being said. But
 The noisy door gets the oil https://9gag.com/gag/aGEgp07
 The product is crap, so sell yourself
 the Wisdom of Paradox = Logic is the key to scientific truths, but paradoxes are the key to psychological ones. When it comes to the human condition, the deepest truths are often counter-intuitive. When you find two opposites that are both true, start exploring.
-theory of Constraints = A system is only as strong as its weakest point. Focus on the bottleneck. Counterintuitively, if you break down the entire system and optimize each component individually, you’ll lower the effectiveness of the system. Optimize the entire system instead.
+theory of constraints = A system is only as strong as its weakest point. Focus on the bottleneck. Counterintuitively, if you break down the entire system and optimize each component individually, you’ll lower the effectiveness of the system. Optimize the entire system instead.
 theory of constraints https://www.tocinstitute.org/theory-of-constraints.html
 things learned from Medicine / Dentistry https://zenfamily.dental/csLearnDental.php
 THINK hack = Is it True? Helpful? Inspiring? Necessary? Kind?

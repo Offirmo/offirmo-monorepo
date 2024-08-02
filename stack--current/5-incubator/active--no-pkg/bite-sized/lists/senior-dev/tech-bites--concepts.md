@@ -64,6 +64,7 @@ cost based rate limiting
 coupling -- loose https://en.wikipedia.org/wiki/Loose_coupling
 courbe d'expertise
 CPU https://cpu.land/
+CRDT / automerge / local first https://automerge.org/
 create, read, update and delete (CRUD)
 cron https://onlineornot.com/the-complete-guide-to-cron-jobs
 crunch
@@ -82,6 +83,7 @@ demos
 dependencies
 dependency hell https://en.wikipedia.org/wiki/Dependency_hell
 dependency injection = passing parameters. no need for complex lib
+deployment maturity levels https://itnext.io/deployment-maturity-levels-feab55c20d04
 design patterns
 design patterns -- behavioral -- command = command, receiver, invoker and client https://en.wikipedia.org/wiki/Command_pattern
 design patterns -- facade https://en.wikipedia.org/wiki/Facade_pattern
@@ -92,7 +94,7 @@ DevOps Research and Assessment (DORA) = how we should develop our software right
 do what I mean (DWIM) = computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
 Domain Specific Language (DSL)
 Domain-driven design https://en.wikipedia.org/wiki/Domain-driven_design
-double authent
+double auth
 DRY don't repeat yourself
 dry run
 durable execution = development paradigm that preserves complete application state so that upon host or software failure it can seamlessly migrate execution to another machine https://stackoverflow.blog/2024/05/28/an-open-source-development-paradigm/
@@ -122,7 +124,7 @@ flatmap
 flow state: deep concentration, enjoyment, and a sense of progress
 flushing
 flux architecture
-framework -- "a new framework every day"
+framework -- "a new framework a day"
 function
 function -- 1st-class object
 function -- first-class function
@@ -165,7 +167,6 @@ https://en.wikipedia.org/wiki/Not_invented_here
 https://en.wikipedia.org/wiki/Reference_class_forecasting
 https://en.wikipedia.org/wiki/Robustness_principle
 https://github.com/anvaka/npmrank/blob/master/sample/dependencies.md
-https://itnext.io/deployment-maturity-levels-feab55c20d04
 https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
 https://www.atlassian.com/team-playbook/plays/elevator-pitch
 https://xyproblem.info/
@@ -239,6 +240,7 @@ overengineering https://blog.matt-rickard.com/p/stop-overengineering
 ownership
 pair-programming
 PD Personal Data
+peer review, green build = condition to merge a code change
 perf
 perf -- as a feature
 personal data
@@ -294,6 +296,7 @@ shaving the yak
 shim vs polyfill vs ponyfill
 shrinkwrap
 side-effect free
+significant change
 simple average
 single source of truth (SSOT)
 Site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
