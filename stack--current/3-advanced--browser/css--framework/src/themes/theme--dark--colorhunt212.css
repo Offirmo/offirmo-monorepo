@@ -5,7 +5,7 @@
 
 @import 'theme--common.css';
 
-[data-o-theme="dark--colorhunt212"] {
+[data-o-theme="dark--colorhunt212"] { /* data-o-theme="dark--colorhunt212" */
 
 	--o⋄color⁚fg--main: var(--o⋄color⁚co212__beige);
 	xx--o⋄color⁚fg--strong: var(--o⋄color⁚fg--main);

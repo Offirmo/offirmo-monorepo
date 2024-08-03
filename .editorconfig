@@ -26,7 +26,7 @@ indent_size = 2
 trim_trailing_whitespace = false
 
 
-## non standard
+## non standard EditorConfig entries
 ## https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
 [*]
 indent_brace_style = K&R

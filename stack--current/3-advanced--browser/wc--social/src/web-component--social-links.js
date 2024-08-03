@@ -1,4 +1,4 @@
-// v0.0.2 2022/01/31
+// v0.9.0 2024/08/03
 
 ////////////////////////////////////
 
@@ -13,7 +13,8 @@ const DEBUG = false
 ////////////////////////////////////
 // "Social network" data
 // icons: https://icongr.am/
-// - https://icongr.am/fontawesome   https://fontawesome.com/v6.0/icons?m=free&s=brands%2Cregular
+// - https://icongr.am/simple        = brand icons https://simpleicons.org/
+// - https://icongr.am/fontawesome   https://fontawesome.com/icons
 // - https://icongr.am/material      https://mui.com/components/material-icons/
 
 const SOCIAL_NETWORKS_INFO = {
@@ -38,7 +39,11 @@ const SOCIAL_NETWORKS_INFO = {
 		official_name: 'e-mail',
 		official_color‿hex: '#34A853',
 		official_color_to_be_used_as: 'bg',
-		icongram: { pack_id: 'fontawesome', icon_id: 'at' },
+		icongram: {
+			pack_id: 'fontawesome',
+			icon_id: 'envelope',
+			//icon_id: 'at',
+		},
 		get_url: (handle, network_id) => {
 			let email = handle
 				.replace('(at)', '@')
@@ -101,6 +106,14 @@ const SOCIAL_NETWORKS_INFO = {
 		official_color_to_be_used_as: 'bg',
 		icongram: { pack_id: 'simple', icon_id: 'itchio' },
 		get_url: (handle, network_id) => `https://${handle.toLowerCase()}.itch.io/`, // https://offirmo.itch.io/
+	},
+	'linkedin': {
+		// https://brand.linkedin.com/policies
+		official_name: 'LinkedIn',
+		official_color‿hex: '#1e66c2',
+		official_color_to_be_used_as: 'bg',
+		icongram: { pack_id: 'simple', icon_id: 'linkedin' },
+		get_url: (handle, network_id) => `https://www.linkedin.com/in/${handle.toLowerCase()}/`,
 	},
 	'product hunt': {
 		// #DA552F
@@ -216,7 +229,8 @@ function _get_icongram_url({
 ////////////////////////////////////
 // misc utils
 
-function _clean_handle(raw_handle) {
+// without @
+function _normalize_handle(raw_handle) {
 	raw_handle ??= ''
 	let result = raw_handle.trim()
 
@@ -276,12 +290,10 @@ function _schedule_and_debounce({callback, getter, setter}) {
 
 customElements.define('offirmoⳆsocial-links', class SocialNav extends HTMLElement {
 
-	static get observedAttributes() {
-		return [ 'handle', 'theme' ]
-	}
+	static get observedAttributes() { return [ 'handle', 'theme' ] }
 
 	get_debug_id() {
-		return `${this.tagName}ⵧ${this.getAttribute('is')}`
+		return `${this.tagName}ⵧ${this.getAttribute('is')}ⵧ${this.getAttribute('handle')}`
 	}
 
 	constructor() {
@@ -295,7 +307,7 @@ customElements.define('offirmoⳆsocial-links', class SocialNav extends HTMLElem
 	.offirmoⳆsocial-links * { box-sizing: inherit; }
 
 	.offirmoⳆsocial-links {
-		/* Vars programmatically set:
+		/* FYI those vars will be programmatically set:
 		--offirmoⳆsocial-links∙handle: // from the "handle" property
 		--offirmoⳆsocial-links∙theme: '${THEMES.default}'; // from the "theme" property
 		--offirmoⳆsocial-links∙color--fg // from current color
@@ -309,6 +321,7 @@ customElements.define('offirmoⳆsocial-links', class SocialNav extends HTMLElem
 		display: inline-flex;
 		flex-direction: row;
 		vertical-align: middle;
+		gap: .5em;
 	}
 	.offirmoⳆsocial-links li + li  {
 		/* margin-left customization could go here */
@@ -373,7 +386,7 @@ customElements.define('offirmoⳆsocial-links', class SocialNav extends HTMLElem
 		if (DEBUG) console.groupEnd()
 	}
 
-	/*
+	/* useful only for debug
 	connectedCallback() {
 		if (DEBUG) console.log(`[${this.tagName}ⵧ${this.getAttribute('is')}].connectedCallback():`, { _this: this })
 	}
@@ -395,12 +408,10 @@ customElements.define('offirmoⳆsocial-links', class SocialNav extends HTMLElem
 
 customElements.define('offirmoⳆsocial-link', class SocialLink extends HTMLAnchorElement {
 
-	static get observedAttributes() {
-		return [ 'href', 'network', 'handle' ]
-	}
+	static get observedAttributes() { return [ 'href', 'network', 'handle' ] }
 
 	get_debug_id() {
-		return `${this.tagName}ⵧ${this.getAttribute('is')}`
+		return `${this.tagName}ⵧ${this.getAttribute('is')}ⵧ${this.getAttribute('network') || this.getAttribute('href')?.slice(8, 28)}`
 	}
 
 	constructor() {
@@ -446,13 +457,12 @@ customElements.define('offirmoⳆsocial-link', class SocialLink extends HTMLAnch
 		const href = this.getAttribute('href')
 		if (href) {
 			// href has priority if valid
-			let url
 			try {
-				url = new URL(href)
+				const url = new URL(href)
 				const candidate_network_id = Object.keys(SOCIAL_NETWORKS_INFO)
 					.filter(k => k !== 'website')
 					.find(network_id => {
-						let network_sample_url = new URL(SOCIAL_NETWORKS_INFO[network_id].get_url('foo', network_id))
+						const network_sample_url = new URL(SOCIAL_NETWORKS_INFO[network_id].get_url('foo', network_id))
 						return url.protocol === network_sample_url.protocol && url.hostname === network_sample_url.hostname
 					})
 				if (candidate_network_id) {
@@ -492,31 +502,53 @@ customElements.define('offirmoⳆsocial-link', class SocialLink extends HTMLAnch
 	}
 
 	get_generic_handle() {
-		let handle = _clean_handle(this.getAttribute('handle'))
+		let handle = _normalize_handle(this.getAttribute('handle'))
 
 		if (!handle) {
+			// TODO review, handle is for building the href, so why bother?
 			// extract from URL if available and useful
 			if (this.href && this.href.toLowerCase().trim().startsWith('mailto:'))
-				handle = _clean_handle(this.href.toLowerCase().trim().slice(7))
+				handle = _normalize_handle(this.href.toLowerCase().trim().slice(7))
+			// TODO more extractions? useful?
 		}
 
 		if (!handle) {
 			// try to inherit from parent
-			handle = _clean_handle(getComputedStyle(this).getPropertyValue('--offirmoⳆsocial-links∙handle'))
+			handle = _normalize_handle(getComputedStyle(this).getPropertyValue('--offirmoⳆsocial-links∙handle'))
 		}
 
-		if (!handle)
-			throw new Error(`[${this.get_debug_id()}]: can't find handle!`)
+		if (!handle) {
+			// not necessarily an issue bc
+			// a user may not have secured the same handle across social networks,
+			// hence may be using an explicit href
+			return undefined
+		}
 
 		return handle
 	}
 
 	get_expected_href(network_id = this.get_network_id()) {
-		if (network_id === 'website')
-			return this.href
+		const explicit_href = this.getAttribute('href')
 
-		const handle = this.get_generic_handle()
-		return _get_network_info(network_id).get_url(handle, network_id)
+		if (network_id === 'website')
+			return explicit_href
+
+		// if possible, we regenerate the href from the handle
+		// since some network may evolve their URL scheme
+		try {
+			const handle = this.get_generic_handle()
+			if (handle)
+				return _get_network_info(network_id).get_url(handle, network_id)
+		}
+		catch (err) {
+			console.warn(`[${this.get_debug_id()}]: get_expected_href() error!`, err)
+		}
+
+		// we couldn't generate an href
+		// this is not necessarily an issue since the user may have provided an explicit href
+		console.info(`[${this.get_debug_id()}]: get_expected_href(): couldn't generate, but not necessarily an issue.`, this)
+
+		return undefined
 	}
 
 	_render() {
@@ -548,20 +580,36 @@ customElements.define('offirmoⳆsocial-link', class SocialLink extends HTMLAnch
 		this.rel = this.rel || 'noopener,external'
 		// beware of infinite loops!
 		if (this.href) {
-			// replacing href can cause an infinite loop!
+			// href is an input, so replacing href can cause an infinite loop!
 			if (this.href === expected_href) {
 				// all good!
 			}
+			else if (!expected_href) {
+				// normal
+			}
 			else {
+				// conflict!
 				// the only accepted case is email obfuscation and this should only happen once
 				if (this.href.startsWith('mailto:')) {
 					if (DEBUG) console.log('de-obfuscating email', { href: this.href, expected_href })
 					this.href = expected_href
 				}
+				else {
+					// warn, but explicit has priority
+					console.warn(` href conflict!`, {
+						existing: this.getAttribute('href'),
+						expected: expected_href,
+					})
+				}
 			}
 		}
 		else {
-			this.href = expected_href
+			if (!expected_href) {
+				console.error(`[${this.get_debug_id()}]: no href could be found nor generated!`, this)
+			}
+			else {
+				this.href = expected_href
+			}
 		}
 
 		if (theme === THEMES.colorful) {

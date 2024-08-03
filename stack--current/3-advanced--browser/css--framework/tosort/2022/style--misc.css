@@ -5,6 +5,6 @@
  */
 .o⋄character-as-icon { /* TODO clarify. Emojis or more? */
 	color: transparent;
-	text-shadow: 0 0 var(--o⋄color⁚fg--main);
+	text-shadow: 0 0;
 	vertical-align: text-top; /* visually better, this is not text */
 }

@@ -19,6 +19,7 @@ type SocialNetworkId =
 	| 'facebook'
 	| 'github'
 	| 'instagram'
+	| 'linkedin'
 	| 'producthunt'
 	| 'reddit'
 	| 'twitter' // we keep "twitter" as an internal id, "X" is too generic

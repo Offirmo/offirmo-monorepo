@@ -1,5 +1,7 @@
 # Monitoring of the stuff controlled by this monorepo
-Last updated XX/XX/XXX
+
+Last updated 2024/08/01
+
 
 ## 3rd party statuses
 * https://www.status-ovhcloud.com/

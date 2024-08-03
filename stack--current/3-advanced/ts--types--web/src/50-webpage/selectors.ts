@@ -43,7 +43,7 @@ function getꓽcssⵧtop(spec: Immutable<Contentⳇweb>): Css‿str[] {
 	const layer: Css‿str[] = getꓽcssⵧtop__layers(spec).length === 0
 		? []
 		: [
-			`/* define layers order, needs to be a the top to properly enforce the intended order */`,
+			`/* define layers order, needs to be at the top to properly enforce the intended order */`,
 			`@layer ${getꓽcssⵧtop__layers(spec).join(', ')};`
 		]
 

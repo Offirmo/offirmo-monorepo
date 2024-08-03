@@ -1,8 +1,10 @@
-
-/* Assume list in a nav is an horizontal list
+/** https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
  */
+
 nav {
 
+	/* Assume lists in a nav are meant to be horizontal
+	 */
 	:is(ol, ul) {
 		/* cancel the default list display
 		 */

@@ -20,7 +20,7 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDo
 		...base,
 
 		features: (base.features ?? [])
-			.filter(f => f !== 'htmlⳇreact-root') // we'll provide content
+			.filter(f => f !== 'htmlⳇreact-root') // no need, we'll provide content
 			.filter(f => f !== 'normalize-url-trailing-slash') // we don't want extra redirects! It could be the cause of this 404!
 			.filter(f => f !== 'cssⳇviewport--full' && f !== 'page-loader--offirmo'), // no fancies
 
@@ -29,8 +29,16 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDo
 			title: '404 Not Found',
 			js: [],
 			html: [
-				`<h1>404 Not Found</h1>`,
-				`<p>Sorry, the page you were looking for doesn't exist.</p>`,
+				`
+<h1>404 Not Found</h1>
+<p>Sorry, the page you were looking for doesn't exist.</p>
+<nav>
+	<ul>
+		<li><a href="/">Go home</a></li>
+		<li><button onclick="history.back()">Navigate back</button></li>
+	</ul>
+</nav>
+				`
 			],
 		}
 	}

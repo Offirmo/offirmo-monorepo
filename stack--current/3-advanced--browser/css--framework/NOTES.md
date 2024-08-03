@@ -24,3 +24,5 @@ TODO https://web.dev/articles/one-line-layouts
 TODO https://tonsky.me/blog/centering/
 TODO https://ishadeed.com/article/css-cap-unit/
 TODO https://ishadeed.com/article/the-gap/
+
+maybe? https://ryanve.dev/sharp.css/

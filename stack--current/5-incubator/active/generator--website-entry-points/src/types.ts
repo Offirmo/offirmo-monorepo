@@ -142,8 +142,4 @@ export {
 }
 
 // for convenience
-export {
-	type Author,
-	type Thing,
-	type ThingWithOnlinePresence,
-}
+export * from '@offirmo-private/ts-types-web'

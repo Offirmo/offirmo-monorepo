@@ -6,3 +6,7 @@
 
 	/* TODO scrollbar */
 }
+
+[data-o-theme|="dark-"] {
+	font-weight: 500; /* optical adjustment for dark themes TODO use a var multiplier?? */
+}
