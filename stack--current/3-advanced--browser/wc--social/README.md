@@ -1,8 +1,11 @@
 
 
-## Usage
+A social media icons web component.
+- progressive enhancement, will work even without JS
+- assume a dev set it up, may throw on incorrect settings
 
-Themes: subtle, colorful
+
+## Usage
 
 https://codepen.io/Offirmo/pen/vYeobzP
 
@@ -10,6 +13,13 @@ https://codepen.io/Offirmo/pen/vYeobzP
 
 ## Customization
 
+Themes: subtle, colorful
 
-
-## Credits
+```css
+.offirmoⳆsocial-links--mod .offirmoⳆsocial-link∙icon-container {
+  border-radius: 0.2em;
+}
+.offirmoⳆsocial-links ol, .offirmoⳆsocial-links ul {
+  gap: 0;
+}
+```

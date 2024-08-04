@@ -180,11 +180,9 @@ function _get_network_info(network_id) {
 	return SOCIAL_NETWORKS_INFO[network_id] ?? SOCIAL_NETWORKS_INFO['unknown']
 }
 
-
 ////////////////////////////////////
 // icongram utils
 // https://icongr.am/
-// -
 
 function _get_icongram_params({ network_infos, theme, size‿px, color‿hex }) {
 	let params = {
@@ -287,7 +285,6 @@ function _schedule_and_debounce({callback, getter, setter}) {
 
 ////////////////////////////////////
 
-
 customElements.define('offirmoⳆsocial-links', class SocialNav extends HTMLElement {
 
 	static get observedAttributes() { return [ 'handle', 'theme' ] }
@@ -322,9 +319,6 @@ customElements.define('offirmoⳆsocial-links', class SocialNav extends HTMLElem
 		flex-direction: row;
 		vertical-align: middle;
 		gap: .5em;
-	}
-	.offirmoⳆsocial-links li + li  {
-		/* margin-left customization could go here */
 	}
 
 	.offirmoⳆsocial-link {
@@ -411,7 +405,7 @@ customElements.define('offirmoⳆsocial-link', class SocialLink extends HTMLAnch
 	static get observedAttributes() { return [ 'href', 'network', 'handle' ] }
 
 	get_debug_id() {
-		return `${this.tagName}ⵧ${this.getAttribute('is')}ⵧ${this.getAttribute('network') || this.getAttribute('href')?.slice(8, 28)}`
+		return `${this.tagName}ⵧ${this.getAttribute('is')}ⵧ${this.getAttribute('network') || this.getAttribute('href')?.slice(7, 28)}`
 	}
 
 	constructor() {
@@ -621,6 +615,7 @@ customElements.define('offirmoⳆsocial-link', class SocialLink extends HTMLAnch
 			)
 		}
 
+		// TODO improve alt with CTA
 		this.innerHTML = `
 <div class="offirmoⳆsocial-link∙icon-container">
 	<img src="${_get_icongram_url(icongram_params)}"
