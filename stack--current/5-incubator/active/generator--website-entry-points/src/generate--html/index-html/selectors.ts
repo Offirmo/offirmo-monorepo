@@ -189,7 +189,6 @@ function getꓽcontentⵧweb__js(spec: Immutable<WebPropertyEntryPointSpec>): Pi
 }
 
 function getꓽcontentⵧweb(spec: Immutable<WebPropertyEntryPointSpec>): Contentⳇweb {
-
 	const result: Contentⳇweb = {
 		...(structuredClone(getꓽcontentⵧinitial(spec)) as Contentⳇweb), // remove immutability
 		title: ifꓽdebug(spec).prefixꓽwith('[title--page]', getꓽtitleⵧpage(spec)), // always override

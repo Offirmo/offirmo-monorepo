@@ -30,7 +30,7 @@ export interface Contentⳇweb extends
 	// if standalone page, root = <html>
 	// but could also be any container if embedded.
 	// ex. 'body': ['.class1', 'data-o-theme="dark--default"']
-	html__root__attributes?: [ `.${string}` | `data-${string}="${string}"` ]
+	html__root__attributes?: Array<`.${string}` | `data-${string}="${string}"`>
 
 	// presentation (formatting, layout)
 	// ideally optional if html is semantic / or just an import of a default stylesheet

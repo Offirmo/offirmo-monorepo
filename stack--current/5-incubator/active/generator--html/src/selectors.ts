@@ -36,10 +36,39 @@ function getꓽcontent_blocksⵧhtml(spec: Immutable<HtmlDocumentSpec>): Immutab
 	return Selectors.getꓽhtml(spec.content)
 }
 function getꓽcontent_blocksⵧcssⵧcritical(spec: Immutable<HtmlDocumentSpec>): Immutable<Css‿str[]> {
-	return Selectors.getꓽcssⵧcritical(spec.content, { includesꓽtop: true })
+	// CSS has requirements on order:
+	// 1. namespaces
+	// 2. layers
+	// 3. imports
+	// 4. everything else
+	const namespaces: Css‿str[] = Object.entries(Selectors.getꓽcssⵧtop__namespaces(spec.content)).length === 0
+		? []
+		: [
+			`/* define namespaces for usage in following CSS, needs to be at the top https://github.com/parcel-bundler/parcel/issues/9534 */`,
+			...Object.entries(Selectors.getꓽcssⵧtop__namespaces(spec.content)).map(([name, url]) => `@namespace ${name} url(${url});`),
+		]
+	const layer: Css‿str[] = Selectors.getꓽcssⵧtop__layers(spec.content).length === 0
+		? []
+		: [
+			`/* define layers order, needs to be at the top to properly enforce the intended order */`,
+			`@layer ${Selectors.getꓽcssⵧtop__layers(spec.content).join(', ')};`
+		]
+	const imports = Selectors.getꓽcssⵧcritical(spec.content).filter(s => s.startsWith('@import'))
+	const rest = Selectors.getꓽcssⵧcritical(spec.content).filter(s => !s.startsWith('@import'))
+	return [
+		...namespaces,
+		...layer,
+		...imports,
+		...rest,
+	]
 }
 function getꓽcontent_blocksⵧcss(spec: Immutable<HtmlDocumentSpec>): Immutable<Css‿str[]> {
-	return Selectors.getꓽcss(spec.content)
+	const imports = Selectors.getꓽcss(spec.content).filter(s => s.startsWith('@import'))
+	const rest = Selectors.getꓽcss(spec.content).filter(s => !s.startsWith('@import'))
+	return [
+		...imports,
+		...rest,
+	]
 }
 function getꓽcontent_blocksⵧjsⵧcritical(spec: Immutable<HtmlDocumentSpec>): Immutable<JS‿str[]> {
 	return Selectors.getꓽjsⵧcritical(spec.content)
@@ -48,8 +77,8 @@ function getꓽcontent_blocksⵧjs(spec: Immutable<HtmlDocumentSpec>): Immutable
 	return Selectors.getꓽjs(spec.content)
 }
 
-function getꓽcontent_html__root__attributes(spec: Immutable<HtmlDocumentSpec>): Immutable<string[]> {
-	return spec.content?.html__root__attributes ?? []
+function getꓽcontent_html__root__attributes(spec: Immutable<HtmlDocumentSpec>): Immutable<NonNullable<Contentⳇweb['html__root__attributes']>> {
+	return Selectors.getꓽhtml__root__attributes(spec.content)
 }
 
 function getꓽtitleⵧpage(spec: Immutable<HtmlDocumentSpec>, fallback = 'Index'): string{
@@ -105,7 +134,7 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 	const content = ((): Contentⳇweb => {
 		const content_expanded = structuredClone(spec.content) as Contentⳇweb
 
-		function _add_layer_if_not_present(layer: string) {
+		function _enqueue_layer_if_not_present(layer: string) {
 			content_expanded.cssⵧtop__layers ??= []
 
 			if (content_expanded.cssⵧtop__layers!.includes(layer)) return
@@ -135,7 +164,7 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 		}
 
 		if (features.includes('cssⳇviewport--full')) {
-			_add_layer_if_not_present('temp-while-loading')
+			_enqueue_layer_if_not_present('temp-while-loading')
 		}
 
 		features.forEach(feature_id => {
@@ -147,11 +176,17 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 					break
 
 				case 'cssⳇbox-layout--natural':
-					content_expanded.cssⵧcritical = [...Selectors.getꓽcssⵧcritical(content_expanded), snippetꓽcssⳇboxᝍlayoutⵧnatural]
+					content_expanded.cssⵧcritical = [
+						snippetꓽcssⳇboxᝍlayoutⵧnatural,
+						...Selectors.getꓽcssⵧcritical(content_expanded),
+					]
 					break
 
 				case 'cssⳇviewport--full':
-					content_expanded.cssⵧcritical = [...Selectors.getꓽcssⵧcritical(content_expanded), snippetꓽcssⳇviewportⵧfull]
+					content_expanded.cssⵧcritical = [
+						snippetꓽcssⳇviewportⵧfull,
+						...Selectors.getꓽcssⵧcritical(content_expanded),
+					]
 					break
 
 				case 'normalize-url-trailing-slash': {
@@ -159,29 +194,35 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 					// TODO extract to a function
 					assert(snippet.startsWith('function '), `A critical JS snippet should be a named function! (${snippet})}`)
 					snippet = `;(${snippet})()`
-					content_expanded.jsⵧcritical = [...Selectors.getꓽjsⵧcritical(content_expanded), snippet]
+					content_expanded.jsⵧcritical = [
+						snippet,
+						...Selectors.getꓽjsⵧcritical(content_expanded),
+					]
 					break
 				}
 				case 'htmlⳇreact-root':
-					content_expanded.html = [...Selectors.getꓽhtml(content_expanded), snippetꓽhtmlⳇreact_root(spec)]
+					content_expanded.html = [
+						snippetꓽhtmlⳇreact_root(spec),
+						...Selectors.getꓽhtml(content_expanded),
+					]
 
 					break
 
 				case 'cssⳇfoundation--offirmo':
 					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@offirmo-private/css--foundation';`]
-					_add_layer_if_not_present('offirmo--reset')
-					_add_layer_if_not_present('offirmo--foundation')
+					// reminder: foundation includes reset
+					_enqueue_layer_if_not_present('offirmo--reset')
+					_enqueue_layer_if_not_present('offirmo--foundation')
 					_ensure_namespace('svg', 'http://www.w3.org/2000/svg')
 					break
 
 				case 'cssⳇframework--offirmo':
 					content_expanded.css = [...Selectors.getꓽcss(content_expanded), `@import 'npm:@offirmo-private/css--framework';`]
-					// framework includes foundation
-					_add_layer_if_not_present('offirmo--reset')
-					_add_layer_if_not_present('offirmo--foundation') // bc included
+					// reminder: framework includes foundation which includes reset
+					_enqueue_layer_if_not_present('offirmo--reset')
+					_enqueue_layer_if_not_present('offirmo--foundation') // bc included in framework
+					_enqueue_layer_if_not_present('offirmo--framework')
 					_ensure_namespace('svg', 'http://www.w3.org/2000/svg')
-
-					_add_layer_if_not_present('offirmo--framework')
 					break
 
 				default:
@@ -191,8 +232,13 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 
 		if (Selectors.getꓽhtml(content_expanded).length === 0) {
 			content_expanded.html = [
+				// TODO better
 				`
-<header>TODO header</header>
+<header>
+	<ul>
+		<li><a href="/">Home</a></li>
+	</ul>
+</header>
 <main id="root">
 	<h1>${getꓽtitleⵧpage(spec)}</h1>
 	<article>
@@ -350,7 +396,7 @@ function _getꓽhtml__body__style‿str(spec: Immutable<HtmlDocumentSpec>): Html
 	if (!hasꓽcontent(blocks)) return ''
 
 	return `
-<style> /******* NON-critical styles ${CRITICAL_CSS_LINK} */
+<style> /* NON-critical styles ${CRITICAL_CSS_LINK} */
 	${blocks.join(EOL)}
 </style>
 `
@@ -381,7 +427,7 @@ function _getꓽhtml__body‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str 
 
 function getꓽhtml‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 	spec = getꓽspecⵧwith_features_expanded(spec)
-	const root__attributes = getꓽcontent_html__root__attributes(spec).toSorted()
+	const root__attributes = getꓽcontent_html__root__attributes(spec)
 	const classes = root__attributes.filter(a => a.startsWith('.')).map(a => a.slice(1))
 	const data_attributes = root__attributes.filter(a => a.startsWith('data-'))
 
