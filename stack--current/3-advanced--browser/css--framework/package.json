@@ -20,7 +20,7 @@
 	},
 
 	"devDependencies": {
-		"@offirmo-private/css--utils": "^0",
+		"@offirmo-private/css--utils": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",

@@ -1,0 +1,3 @@
+{
+	"extends": "@offirmo-private/parcel-config--default"
+}

@@ -10,7 +10,7 @@ import { DEMO_MONSTER_01 } from '@tbrpg/logic-monsters'
 
 /////////////////////
 
-import { State, Adventure } from '../types.js'
+import { State, ResolvedAdventure } from '../types.js'
 import { cleanup } from '../migrations/index.js'
 import { getꓽSXC } from '../services/sec.js'
 
@@ -20,7 +20,7 @@ import { getꓽSXC } from '../services/sec.js'
 
 // a full-featured, non-trivial demo state
 // with dev gain
-const DEMO_ADVENTURE_01: Immutable<Adventure> = enforceꓽimmutable<Adventure>({
+const DEMO_ADVENTURE_01: Immutable<ResolvedAdventure> = enforceꓽimmutable<ResolvedAdventure>({
 	hid: 'fight_lost_any',
 	uuid: 'uu1~example~adventure~01',
 	good: true,
@@ -43,7 +43,7 @@ const DEMO_ADVENTURE_01: Immutable<Adventure> = enforceꓽimmutable<Adventure>({
 	},
 })
 // with coin gain
-const DEMO_ADVENTURE_02: Immutable<Adventure> = enforceꓽimmutable<Adventure>({
+const DEMO_ADVENTURE_02: Immutable<ResolvedAdventure> = enforceꓽimmutable<ResolvedAdventure>({
 	hid: 'dying_man',
 	uuid: 'uu1~example~adventure~02',
 	good: true,
@@ -66,7 +66,7 @@ const DEMO_ADVENTURE_02: Immutable<Adventure> = enforceꓽimmutable<Adventure>({
 	},
 })
 // with loot gain
-const DEMO_ADVENTURE_03: Immutable<Adventure> = enforceꓽimmutable<Adventure>({
+const DEMO_ADVENTURE_03: Immutable<ResolvedAdventure> = enforceꓽimmutable<ResolvedAdventure>({
 	hid: 'rare_goods_seller',
 	uuid: 'uu1~example~adventure~03',
 	good: true,
@@ -89,7 +89,7 @@ const DEMO_ADVENTURE_03: Immutable<Adventure> = enforceꓽimmutable<Adventure>({
 	},
 })
 // with weapon enhancement gain
-const DEMO_ADVENTURE_04: Immutable<Adventure> = enforceꓽimmutable<Adventure>({
+const DEMO_ADVENTURE_04: Immutable<ResolvedAdventure> = enforceꓽimmutable<ResolvedAdventure>({
 	hid: 'princess',
 	uuid: 'uu1~example~adventure~04',
 	good: true,

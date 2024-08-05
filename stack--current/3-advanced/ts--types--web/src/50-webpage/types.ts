@@ -12,14 +12,18 @@ import { JS‿str } from '../30-js/index.js'
 // See also HtmlDocumentSpec
 // this version can be seen as "simplified", focusing purely on content?
 // TODO clarify cf. other type HtmlDocumentSpec
-export interface Contentⳇweb extends WithCharset, WithLang, WithTitle {
+export interface Contentⳇweb extends
+	WithCharset,
+	WithLang,
+	WithTitle
+{
 	// flat to make it easier to extend
 	// semantic as much as we can
 
 	// content (structure)
 	// inherited: lang
 	// inherited: charset
-	// inherited: title // technically redundant, could be inferred from the html
+	// inherited: title // could be considered redundant: could be inferred from the content (LLM?)
 	html?: Html‿str[]
 	// technicalities. Ideally we'd be semantic and not want this
 	htmlⵧelements__classes?: {
@@ -29,11 +33,10 @@ export interface Contentⳇweb extends WithCharset, WithLang, WithTitle {
 	}
 
 	// presentation (formatting, layout)
-	// ideally optional if html is semantic
+	// ideally optional if html is semantic / or just an import of a default stylesheet
 	css?: Css‿str[]
 	// technicalities. Ideally we'd be semantic and not want this
 	// or could this be aggregated from the plain css through a more advanced type?
-	// TOREVIEW later
 	cssⵧtop__layers?: string[] // should be declared once and first, hence special treatment
 	cssⵧtop__namespaces?: { // should be declared first, hence special treatment
 		[name: string]: Url‿str
@@ -44,7 +47,6 @@ export interface Contentⳇweb extends WithCharset, WithLang, WithTitle {
 	// ideally, for augmentation only
 	js?: JS‿str[]
 	// technicalities. Ideally we'd be semantic and not want this
-	// or could this be aggregated from the plain css through a more advanced type?
 	jsⵧcritical?: JS‿str[]
 
 	/////////////////////

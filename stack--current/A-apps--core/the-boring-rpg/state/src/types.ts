@@ -46,7 +46,7 @@ const GainType = Enum(
 type GainType = Enum<typeof GainType> // eslint-disable-line no-redeclare
 
 
-interface Adventure {
+interface ResolvedAdventure {
 	readonly uuid: UUID
 	hid: string
 	good: boolean
@@ -82,7 +82,7 @@ interface UState extends BaseUState {
 	progress: ProgressState
 	wallet: WalletState
 
-	last_adventure: Adventure | null
+	last_adventure: ResolvedAdventure | null
 }
 
 interface TState extends BaseTState {
@@ -97,7 +97,7 @@ interface State extends BaseRootState<UState, TState> {
 
 export {
 	GainType,
-	type Adventure,
+	type ResolvedAdventure,
 
 	type UState,
 	type TState,

@@ -39,8 +39,8 @@
 
 	"dependencies": {
 		"@offirmo-private/async-utils": "^0",
-		"@offirmo-private/css--framework": "^0",
-		"@offirmo-private/css--utils": "^0",
+		"@offirmo-private/css--framework": "*",
+		"@offirmo-private/css--utils": "*",
 		"@offirmo-private/features-detection-browser": "*",
 		"@offirmo-private/poll-window-variable": "^0",
 		"@offirmo-private/react-error-boundary": "^0",

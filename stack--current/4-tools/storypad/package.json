@@ -10,8 +10,8 @@
 
 	"dependencies": {
 		"@offirmo-private/async-utils": "^0",
-		"@offirmo-private/css--framework": "^0",
-		"@offirmo-private/css--utils": "^0",
+		"@offirmo-private/css--framework": "*",
+		"@offirmo-private/css--utils": "*",
 		"@offirmo-private/data-structures": "*",
 		"@offirmo-private/features-detection-browser": "*",
 		"@offirmo-private/soft-execution-context": "*",

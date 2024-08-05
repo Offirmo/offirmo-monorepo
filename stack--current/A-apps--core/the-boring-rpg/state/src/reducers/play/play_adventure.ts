@@ -58,7 +58,7 @@ import {
 
 import {
 	State,
-	Adventure,
+	ResolvedAdventure,
 } from '../../types.js'
 
 import { LIB } from '../../consts.js'
@@ -160,7 +160,7 @@ function instantiate_adventure_archetype(
 	character: Immutable<CharacterState>,
 	inventory: Immutable<InventoryState.State>,
 	wallet: Immutable<WalletState.State>,
-): Adventure {
+): ResolvedAdventure {
 	const {hid, good, type, outcome} = aa
 	const should_gain: OutcomeArchetype = {
 		...outcome,
