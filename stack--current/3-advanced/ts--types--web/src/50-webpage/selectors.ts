@@ -1,5 +1,6 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/ts-types'
+import { normalizeꓽarrayⵧof_strings } from '@offirmo-private/normalize-string'
 
 import { Html‿str } from '../10-html/index.js'
 import { Css‿str } from '../20-css/index.js'
@@ -7,9 +8,10 @@ import { JS‿str } from '../30-js/index.js'
 import type { Contentⳇweb } from './types.js'
 
 /////////////////////////////////////////////////
+// accessors
 
 function getꓽhtml(spec: Immutable<Contentⳇweb>): Immutable<Html‿str[]> {
-	return spec.html || []
+	return normalizeꓽarrayⵧof_strings(spec.html)
 }
 function getꓽcss(spec: Immutable<Contentⳇweb>): Immutable<Css‿str[]> {
 	return spec.css || []

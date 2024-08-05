@@ -2,9 +2,7 @@ import { Immutable } from '@offirmo-private/ts-types'
 import { Html‿str } from '@offirmo-private/ts-types-web'
 
 import {
-	getꓽfeatures,
 	getꓽtitleⵧpage,
-	getꓽcontent_html__element__classes,
 } from '../../selectors.js'
 
 import { HtmlDocumentSpec } from '../../types.js'
@@ -12,10 +10,8 @@ import { HtmlDocumentSpec } from '../../types.js'
 /////////////////////////////////////////////////
 
 function generate(spec: Immutable<HtmlDocumentSpec>): Html‿str {
-	const classes = [...getꓽcontent_html__element__classes(spec, 'main')]
-
 	return `
-<main id="react-root" ${classes.length ? (`class="${classes.join(' ')}"`) : ''}>
+<main id="react-root">
 		<!-- React will render here and replace this -->
 		<section style="
 			text-align: center;

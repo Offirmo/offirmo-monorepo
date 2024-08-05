@@ -48,8 +48,8 @@ function getꓽcontent_blocksⵧjs(spec: Immutable<HtmlDocumentSpec>): Immutable
 	return Selectors.getꓽjs(spec.content)
 }
 
-function getꓽcontent_html__element__classes(spec: Immutable<HtmlDocumentSpec>, element_name: string): Immutable<string[]> {
-	return spec.content?.htmlⵧelements__classes?.[element_name] ?? []
+function getꓽcontent_html__root__attributes(spec: Immutable<HtmlDocumentSpec>): Immutable<string[]> {
+	return spec.content?.html__root__attributes ?? []
 }
 
 function getꓽtitleⵧpage(spec: Immutable<HtmlDocumentSpec>, fallback = 'Index'): string{
@@ -124,15 +124,6 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 			else {
 				content_expanded.cssⵧtop__namespaces[name] = url
 			}
-		}
-
-		function _add_element_class_if_not_present(element: string, class_name: string) {
-			content_expanded.htmlⵧelements__classes ??= {}
-			content_expanded.htmlⵧelements__classes[element] ??= []
-
-			if (content_expanded.htmlⵧelements__classes[element]!.includes(class_name)) return
-
-			content_expanded.htmlⵧelements__classes[element]!.push(class_name)
 		}
 
 		const features = getꓽfeatures(spec)
@@ -377,10 +368,8 @@ function _getꓽhtml__body__js‿str(spec: Immutable<HtmlDocumentSpec>): Html‿
 }
 
 function _getꓽhtml__body‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
-	const classes = getꓽcontent_html__element__classes(spec, 'body')
-
 	return `
-<body ${classes.length ? (`class="${classes.join(' ')}"`) : ''}>
+<body>
 	${getꓽcontent_blocksⵧhtml(spec).join(EOL)}
 	${_getꓽhtml__body__style‿str(spec)}
 	${_getꓽhtml__body__js‿str(spec)}
@@ -392,14 +381,16 @@ function _getꓽhtml__body‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str 
 
 function getꓽhtml‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
 	spec = getꓽspecⵧwith_features_expanded(spec)
-	const classes = getꓽcontent_html__element__classes(spec, 'html')
+	const root__attributes = getꓽcontent_html__root__attributes(spec).toSorted()
+	const classes = root__attributes.filter(a => a.startsWith('.')).map(a => a.slice(1))
+	const data_attributes = root__attributes.filter(a => a.startsWith('data-'))
 
 	const result: Html‿str = `
 <!DOCTYPE html>
 <!-- AUTOMATICALLY GENERATED, DO NOT EDIT MANUALLY! -->
 
 <!-- maximum language hints to prevent Chrome from incorrectly suggesting a translation -->
-<html lang="${getꓽlang(spec)}" xml:lang="${getꓽlang(spec)}" ${classes.length ? (`class="${classes.join(' ')}"`) : ''}>
+<html lang="${getꓽlang(spec)}" xml:lang="${getꓽlang(spec)}" ${classes.length ? (`class="${classes.join(' ')}"`) : ''} ${data_attributes.join(' ')}>
 	${_getꓽhtml__head‿str(spec)}
 	${_getꓽhtml__body‿str(spec)}
 </html>`
@@ -414,5 +405,5 @@ export {
 	getꓽfeatures,
 	getꓽtitleⵧpage,
 	getꓽhtml‿str,
-	getꓽcontent_html__element__classes,
+	getꓽcontent_html__root__attributes,
 }

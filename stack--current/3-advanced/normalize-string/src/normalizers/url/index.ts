@@ -1,5 +1,5 @@
 
-import { combine_normalizers } from '../../normalize.js'
+import { combineꓽnormalizers } from '../../normalize.js'
 import {
 	normalize_unicode,
 	remove_all_spaces,
@@ -24,7 +24,7 @@ function _normalizeⵧschemeꘌhttpₓ(url: string): string {
 	if (scheme === 'http') {
 		// upgrade to https
 		// YES I know it can break the link
-		// but this upgrade it good more often than not
+		// but this upgrade is good more often than not
 		scheme = 'https'
 	}
 
@@ -81,7 +81,7 @@ function _validate_url_structure(possible_url: string): string {
 	return (url‿obj.origin == 'null' ? url‿obj.protocol : url‿obj.origin) + url‿obj.pathname + url‿obj.search + url‿obj.hash
 }
 
-const normalizeꓽurl = combine_normalizers(
+const normalizeꓽurl = combineꓽnormalizers(
 	normalize_unicode,
 	remove_all_spaces, // yes in theory we could encode them, but a space is more likely a typo, ex. mobile adding a " " after a .
 	_normalize_per_scheme,
@@ -89,7 +89,7 @@ const normalizeꓽurl = combine_normalizers(
 	// TODO normalize URI encoding?
 )
 
-const normalizeꓽurlⵧhttpₓ = combine_normalizers(
+const normalizeꓽurlⵧhttpₓ = combineꓽnormalizers(
 	normalizeꓽurl,
 	_normalizeⵧschemeꘌhttpₓ,
 )

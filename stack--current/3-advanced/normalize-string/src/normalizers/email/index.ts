@@ -1,4 +1,4 @@
-import { combine_normalizers } from '../../normalize.js'
+import { combineꓽnormalizers } from '../../normalize.js'
 import {
 	normalize_unicode,
 	remove_all_spaces,
@@ -126,14 +126,14 @@ function hasꓽemail_structure(possible_email: string): boolean {
 // normalizing too hard prevents us from using gravatar
 // ex. offirmo.net@gmail.com is not matching gravatar offirmonet@gmail.com
 
-const normalizeꓽemailⵧsafe = combine_normalizers(
+const normalizeꓽemailⵧsafe = combineꓽnormalizers(
 	normalize_unicode,
 	remove_all_spaces,
 	_validate_email_structure,
 	_lowercase_domain,
 )
 
-const normalizeꓽemailⵧreasonable = combine_normalizers(
+const normalizeꓽemailⵧreasonable = combineꓽnormalizers(
 	normalize_unicode,
 	remove_all_spaces,
 	_validate_email_structure,
@@ -142,7 +142,7 @@ const normalizeꓽemailⵧreasonable = combine_normalizers(
 	_lowercase_local_part_if_insensitive,
 )
 
-const normalizeꓽemailⵧfull = combine_normalizers(
+const normalizeꓽemailⵧfull = combineꓽnormalizers(
 	normalize_unicode,
 	remove_all_spaces,
 	_validate_email_structure,

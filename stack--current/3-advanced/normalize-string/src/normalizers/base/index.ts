@@ -1,11 +1,10 @@
 import { StringNormalizer } from '../../types.js'
-import { default_to } from '../../normalize.js'
 
 /////////////////////////////////////////////////
 
-const default_toꓽempty = default_to('')
-
-const ensure_string: StringNormalizer = s => String(s)
+// nullish => empty string
+// other => String()'ed
+function ensure_string(s: any): string { return String(s ?? '') }
 
 /////////////////////////////////////////////////
 
@@ -38,7 +37,6 @@ const to_upper_case: StringNormalizer = s => s.toUpperCase()
 // https://devdocs.io/javascript/global_objects/string/trim
 const trim: StringNormalizer = s => s.trim()
 
-
 /////////////////////////////////////////////////
 
 // https://stackoverflow.com/a/1981366/587407
@@ -70,7 +68,6 @@ const convert_spaces_to_kebab_case: StringNormalizer = s =>
 /////////////////////////////////////////////////
 
 export {
-	default_toꓽempty,
 	ensure_string,
 
 	coerce_toꓽascii,
@@ -82,7 +79,6 @@ export {
 	to_upper_case,
 
 	trim,
-
 
 	coerce_blanks_to_single_spaces,
 	remove_all_spaces,

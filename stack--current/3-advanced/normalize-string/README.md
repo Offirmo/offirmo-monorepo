@@ -7,7 +7,6 @@ TODO publish on npm?
 import { NORMALIZERS } from '@offirmo-private/normalize-string'
 
 NORMALIZERS.coerce_to_redeemable_code(s)
-NORMALIZERS.default_toꓽempty(s)
 NORMALIZERS.ensure_string(s)
 NORMALIZERS.capitalize(s)
 NORMALIZERS.to_lower_case(s)

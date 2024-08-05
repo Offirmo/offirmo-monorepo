@@ -1,7 +1,7 @@
 /* PROMPT
  */
 
-import { combine_normalizers } from '../../normalize.js'
+import { combineꓽnormalizers } from '../../normalize.js'
 import {
 	coerce_blanks_to_single_spaces,
 	coerce_delimiters_to_space,
@@ -13,7 +13,7 @@ import {
 /////////////////////////////////////////////////
 
 // for files safe from unicode, spaces & case sensitivity
-const coerce_toꓽsafe_basenameⵧstrictest = combine_normalizers(
+const coerce_toꓽsafe_basenameⵧstrictest = combineꓽnormalizers(
 	coerce_toꓽascii,
 	to_lower_case,
 	coerce_delimiters_to_space,

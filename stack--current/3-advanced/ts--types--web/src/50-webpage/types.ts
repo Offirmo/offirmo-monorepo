@@ -25,19 +25,19 @@ export interface Contentⳇweb extends
 	// inherited: charset
 	// inherited: title // could be considered redundant: could be inferred from the content (LLM?)
 	html?: Html‿str[]
-	// technicalities. Ideally we'd be semantic and not want this
-	htmlⵧelements__classes?: {
-		// ex. 'body': ['class1', 'class2']
-		// normally only UNIQUE elements should appear: html, body, main, header, footer...
-		[element: string]: string[],
-	}
+	// technicalities. Ideally we'd be fully semantic and not need this
+	// allow to add classes and data-x to the root element.
+	// if standalone page, root = <html>
+	// but could also be any container if embedded.
+	// ex. 'body': ['.class1', 'data-o-theme="dark--default"']
+	html__root__attributes?: [ `.${string}` | `data-${string}="${string}"` ]
 
 	// presentation (formatting, layout)
 	// ideally optional if html is semantic / or just an import of a default stylesheet
 	css?: Css‿str[]
 	// technicalities. Ideally we'd be semantic and not want this
 	// or could this be aggregated from the plain css through a more advanced type?
-	cssⵧtop__layers?: string[] // should be declared once and first, hence special treatment
+	cssⵧtop__layers?: string[] // should be declared once and first, hence special treatment to avoid duplicates/conflicts
 	cssⵧtop__namespaces?: { // should be declared first, hence special treatment
 		[name: string]: Url‿str
 	}

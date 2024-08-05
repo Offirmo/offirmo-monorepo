@@ -3,6 +3,7 @@ import { expect } from 'chai'
 import { LIB } from '../../consts.js'
 import { StringNormalizer } from '../../types.js'
 import * as NORMALIZERS from './index.js'
+import { ensure_string } from './index.js'
 
 /////////////////////////////////////////////////
 
@@ -10,14 +11,10 @@ describe(`${LIB} -- base`, function() {
 
 	const TEST_CASES: any = {
 
-		default_toꓽempty: {
-			'': '',
-			// TODO dedicated tests
-		},
-
 		ensure_string: {
-			'': '',
-			// TODO dedicated tests
+			'foo ': 'foo ', // no change if string
+			'': '', // same
+			// see dedicated tests for non-string inputs
 		},
 
 		capitalize: {
@@ -118,6 +115,18 @@ describe(`${LIB} -- base`, function() {
 			'lord Mok': 'lord-Mok',
 		},
 	}
+
+	// special
+	describe('ensure_string', function() {
+		expect(ensure_string('foo ')).to.equal('foo ')
+		expect(ensure_string('')).to.equal('')
+		expect(ensure_string(undefined)).to.equal('')
+		expect(ensure_string(null)).to.equal('')
+		expect(ensure_string(true)).to.equal('true')
+		expect(ensure_string(false)).to.equal('false')
+		expect(ensure_string(0)).to.equal('0')
+	})
+
 
 	Object.keys(TEST_CASES).forEach(key => {
 		const normalizer: StringNormalizer = (NORMALIZERS as any)[key]

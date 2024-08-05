@@ -1,16 +1,16 @@
 
-import { combine_normalizers, default_to } from '../../normalize.js'
+import { combineꓽnormalizers, default_to } from '../../normalize.js'
 import {
 	coerce_blanks_to_single_spaces,
 	coerce_delimiters_to_space,
-	coerce_toꓽascii, convert_spaces_to_camel_case, convert_spaces_to_kebab_case,
+	coerce_toꓽascii, convert_spaces_to_camel_case, convert_spaces_to_kebab_case, ensure_string,
 	to_lower_case, to_upper_case,
 	trim,
 } from '../base/index.js'
 
 /////////////////////////////////////////////////
 
-const coerce_toꓽtokens = combine_normalizers(
+const coerce_toꓽtokens = combineꓽnormalizers(
 	coerce_toꓽascii,
 	to_lower_case,
 	coerce_delimiters_to_space,
@@ -18,14 +18,15 @@ const coerce_toꓽtokens = combine_normalizers(
 	coerce_blanks_to_single_spaces,
 )
 
-const coerce_toꓽredeemable_code = combine_normalizers(
+const coerce_toꓽredeemable_code = combineꓽnormalizers(
 	coerce_toꓽtokens,
 	convert_spaces_to_camel_case,
 	to_upper_case,
 )
 
 const LANGⵧDEFAULT = 'en'
-const normalizeꓽIETFLanguageType = combine_normalizers(
+const normalizeꓽIETFLanguageType = combineꓽnormalizers(
+	ensure_string,
 	coerce_toꓽascii,
 	to_lower_case,
 	coerce_delimiters_to_space,

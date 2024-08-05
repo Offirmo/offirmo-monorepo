@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 
 import assert from 'tiny-invariant'
-import { normalize, NORMALIZERS, combine_normalizers } from '@offirmo-private/normalize-string'
+import { normalize, NORMALIZERS, combineꓽnormalizers } from '@offirmo-private/normalize-string'
 
 
 // https://github.com/dundalek/latinize/blob/master/latinize.js
@@ -921,7 +921,7 @@ function latinize(str) {
 	}
 }
 
-const normalizeⵧstandard = combine_normalizers(
+const normalizeⵧstandard = combineꓽnormalizers(
 	NORMALIZERS.trim,
 	NORMALIZERS.normalize_unicode,
 	NORMALIZERS.to_lower_case,
@@ -929,7 +929,7 @@ const normalizeⵧstandard = combine_normalizers(
 	NORMALIZERS.normalize_unicode,
 )
 
-const normalizeⵧname_part = combine_normalizers(
+const normalizeⵧname_part = combineꓽnormalizers(
 	normalizeⵧstandard,
 	NORMALIZERS.capitalize,
 )

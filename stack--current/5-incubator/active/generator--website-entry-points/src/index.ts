@@ -75,29 +75,35 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 			const file__path = path.join(targetDir, basename)
 			let file__content = entries[basename]!
 
-			switch (path.extname(file__path)) {
-				case '.html':
-					assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
-					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'html' })
-					break
-				case '.css':
-					assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
-					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'css' })
-					break
-				case '.json':
-					assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
-					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'json' })
-					break
-				case '.ts':
-					assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
-					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'typescript' })
-					break
-				case '.js':
-					assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
-					file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'acorn' })
-					break
-				default:
-					break
+			try {
+				switch (path.extname(file__path)) {
+					case '.html':
+						assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
+						file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'html' })
+						break
+					case '.css':
+						assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
+						file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'css' })
+						break
+					case '.json':
+						assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
+						file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'json' })
+						break
+					case '.ts':
+						assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
+						file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'typescript' })
+						break
+					case '.js':
+						assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
+						file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'acorn' })
+						break
+					default:
+						break
+				}
+			} catch (prettier_err) {
+				console.warn(`Error while formatting ${file__path}`, prettier_err)
+				console.error("------\ncontent:\n", file__content, '\n------')
+				// swallow the error, write the un-minified content for analysis
 			}
 
 			// privacy
