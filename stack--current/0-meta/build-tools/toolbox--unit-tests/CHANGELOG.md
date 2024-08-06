@@ -7,9 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 * [feat][breaking] bumped deps: chai 5 (now pure ESM), only supports node >= 18
-  * this require switching to mocha-chai-init-node.mjs in the invocation
+  * this requires switching to mocha-chai-init-node.mjs in the invocation
 * [feat][breaking] advertise node requirement in package.json "engines"
 * [feat][breaking] bumped deps: sinon 18
+* [feat][breaking] bumped deps: sinon-chai 4 https://github.com/chaijs/sinon-chai/releases/tag/4.0.0
 * ...
 
 ## [9.0.0] - 2023/11/18

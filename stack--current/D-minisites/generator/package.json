@@ -14,10 +14,11 @@
 
 		"copy-extra": "mkdir -p dist && cp -R -f -v src/entry-points/   dist",
 		"build:parcel": "parcel build src/entry-points/*.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
-		"build": "npm-run-all  clean  copy-extra  build:parcel"
+		"xbuild": "npm-run-all  clean  copy-extra  build:parcel"
 	},
 
 	"dependencies": {
+		"@offirmo-private/css--foundation": "*",
 		"@offirmo-private/css--framework": "*",
 		"@offirmo-private/css--utils": "*",
 		"@offirmo-private/iframe--social": "*",
@@ -30,6 +31,7 @@
 	"devDependencies": {
 		"@offirmo-private/generator--website-entry-points": "*",
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/parcel-config--default": "*",
 		"@offirmo-private/toolbox--parcel": "*",
 		"npm-run-all": "^4"
 	}

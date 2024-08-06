@@ -54,7 +54,6 @@ const SOCIAL_NETWORKS_INFO = {
 		},
 	},
 
-
 	// (alphabetical sort)
 	'artstation': {
 		official_name: 'ArtStation', // https://www.artstation.com/about
@@ -639,5 +638,6 @@ customElements.define('offirmoⳆsocial-link', class SocialLink extends HTMLAnch
 ////////////////////////////////////
 
 export {
+	SOCIAL_NETWORKS_INFO,
 	THEMES,
 }

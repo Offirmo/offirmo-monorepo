@@ -29,7 +29,7 @@
 		"load-json-file": "^7",
 		"log-symbols": "^6",
 		"meow": "^13",
-		"write-json-file": "^5"
+		"write-json-file": "^6"
 	},
 
 	"scripts": {

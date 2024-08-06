@@ -67,7 +67,7 @@
 		"meow": "^13",
 		"serve": "^14",
 		"tiny-invariant": "^1",
-		"write-json-file": "^5",
+		"write-json-file": "^6",
 		"zx": "^8"
 	},
 	"devDependencies": {
@@ -156,7 +156,7 @@
 		"semver": "^7",
 		"sharp": "^0.31",
 		"sinon": "^18",
-		"sinon-chai": "^3",
+		"sinon-chai": "^4",
 		"size-limit": "^11",
 		"strip-ansi": "^7",
 		"sum-up": "^3",

@@ -26,7 +26,7 @@
 		"eslint-plugin-mocha": "^10",
 		"mocha": "^10",
 		"sinon": "^18",
-		"sinon-chai": "^3"
+		"sinon-chai": "^4"
 	},
 	"optionalDependencies": {
 		"@offirmo/universal-debug-api-node": "^0",
