@@ -45,7 +45,6 @@ interface Links { [rel: string]: string }
 
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name
-// TODO more from huge list https://wiki.whatwg.org/wiki/MetaExtensions
 interface HtmlMetas {
 	// <meta charset="utf-8" />
 	charset: Charset;
@@ -125,6 +124,8 @@ interface HtmlMetas {
 	itemprops: {
 		// TODO one day
 	};
+
+	// TODO one day: more from huge list https://wiki.whatwg.org/wiki/MetaExtensions
 }
 
 /////////////////////////////////////////////////
@@ -143,7 +144,8 @@ export const FeatureSnippets = Enum(
 	'page-loader--offirmo',
 	'analytics--google',
 	'site-verification--google',
-	// TODO https://browser-update.org/
+	// TODO one day: https://browser-update.org/
+	// TODO auto "Adobe-style" intro?
 )
 export type FeatureSnippets = Enum<typeof FeatureSnippets> // eslint-disable-line no-redeclare
 

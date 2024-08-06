@@ -149,4 +149,9 @@ export {
 	writeꓽwebsiteᝍentryᝍpoints,
 	generateꓽwebsiteᝍentryᝍpoints,
 }
+export * from './utils/gravatar.js'
+
 export * from './types.js'
+
+// for convenience
+export * from '@offirmo-private/ts-types-web'

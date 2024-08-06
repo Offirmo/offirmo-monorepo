@@ -79,6 +79,8 @@ interface WebProperty extends ThingWithOnlinePresence {
 	colorⵧbackground?: CssColor‿str
 	colorⵧforeground?: CssColor‿str
 	colorⵧtheme?: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
+	// XXX if customizing colors, very likely you'll need to tweak the link colors as well!
+	// TODO recognize a dark theme and include the theme file if offirmo framework
 	// TODO one day themes
 }
 
@@ -140,6 +142,3 @@ export {
 	type WebPropertyEntryPointSpec,
 	type EntryPoints,
 }
-
-// for convenience
-export * from '@offirmo-private/ts-types-web'

@@ -9,11 +9,11 @@
 
 		"refresh--entry-points": "npx tsx src/~~gen/generate-entry-points/index.mts",
 
-		"start:parcel": "parcel serve src/entry-points/index.html --port 8080  --lazy  --no-autoinstall",
+		"start:parcel": "parcel serve src/entry-points/*.html --port 8080  --lazy  --no-autoinstall",
 		"dev": "npm-run-all  clean  --parallel start:parcel",
 
-		"build:parcel": "parcel build src/entry-points/*.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
 		"copy-extra": "mkdir -p dist && cp -R -f -v src/entry-points/   dist",
+		"build:parcel": "parcel build src/entry-points/*.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
 		"build": "npm-run-all  clean  copy-extra  build:parcel"
 	},
 

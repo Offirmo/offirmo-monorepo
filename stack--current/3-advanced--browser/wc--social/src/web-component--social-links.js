@@ -1,4 +1,4 @@
-// v0.9.0 2024/08/03
+// v1.0.0 2024/08/05
 
 ////////////////////////////////////
 
@@ -538,9 +538,9 @@ customElements.define('offirmoⳆsocial-link', class SocialLink extends HTMLAnch
 			console.warn(`[${this.get_debug_id()}]: get_expected_href() error!`, err)
 		}
 
-		// we couldn't generate an href
+		// we couldn't generate a href
 		// this is not necessarily an issue since the user may have provided an explicit href
-		console.info(`[${this.get_debug_id()}]: get_expected_href(): couldn't generate, but not necessarily an issue.`, this)
+		if (DEBUG) console.info(`[${this.get_debug_id()}]: get_expected_href(): couldn't generate, but not necessarily an issue.`, this)
 
 		return undefined
 	}

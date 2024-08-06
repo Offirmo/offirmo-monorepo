@@ -232,7 +232,7 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 
 		if (Selectors.getꓽhtml(content_expanded).length === 0) {
 			content_expanded.html = [
-				// TODO better
+				// TODO better, using infos from author
 				`
 <header>
 	<ul>
@@ -255,7 +255,6 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 			content_expanded.html = [`<noscript>You need to enable JavaScript to run this app.</noscript>`, ...Selectors.getꓽhtml(content_expanded)]
 		} else {
 			//content_with_features_expanded.js = [ `console.log('Hello, world!')` ]
-			// TODO something?
 		}
 
 		return content_expanded
