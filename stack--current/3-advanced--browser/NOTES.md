@@ -23,3 +23,6 @@ TODO semantic fonts
 - etc.
 
 TODO font--hyperlegible  https://en.wikipedia.org/wiki/Atkinson_Hyperlegible
+
+
+TODO use @scope? https://developer.chrome.com/docs/css-ui/at-scope 2024/08 no FF

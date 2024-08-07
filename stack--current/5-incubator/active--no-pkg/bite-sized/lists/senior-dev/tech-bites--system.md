@@ -95,11 +95,11 @@ Content Delivery Network (CDN) ex. CloudFront
 cron
 data retrieval
 database
-database -- hierarchical, relational...
-database -- google sheets https://www.jacobparis.com/content/submit-form-google-sheet https://thenewstack.io/how-to-use-google-sheets-as-a-database-with-react-and-ssr/
 database -- Bigtable -- Cassandra = open source Bigtable-like
 database -- Bigtable -- HBase = open source Bigtable-like for Hadoop https://en.wikipedia.org/wiki/Apache_HBase
 database -- Bigtable = wide-column and key-value NoSQL database https://en.wikipedia.org/wiki/Bigtable
+database -- google sheets https://www.jacobparis.com/content/submit-form-google-sheet https://thenewstack.io/how-to-use-google-sheets-as-a-database-with-react-and-ssr/
+database -- hierarchical, relational...
 database -- indexes
 database -- N+1 query problem = naive, inefficient query https://thoughtbot.com/blog/what-is-counter-cache
 database -- No-SQL and their applications
@@ -193,6 +193,9 @@ microservice -- design -- IDEALS -- 04 Availability over consistency = see CAP t
 microservice -- design -- IDEALS -- 05 Loose coupling = facade, adapter, wrapper
 microservice -- design -- IDEALS -- 06 Single responsibility =
 microservice -- design -- IDEALS https://www.infoq.com/articles/microservices-design-ideals/  https://www.lokajittikayatray.com/post/the-ideals-principles-every-microservice-developer-should-know  https://www.avenga.com/magazine/microservice-architecture/
+microservice -- downsides -- data recovery = need recovery in 100s of service 
+microservice -- downsides -- proliferation of environments (dev, staging, prod, Fedramp, Isolated Cloud...)
+microservice -- service sprawl
 middleware https://en.wikipedia.org/wiki/Middleware_(distributed_applications)
 mitigations: code rollback, data rollback, degrade, upsize, blocklist, drain, quarantine https://www.oreilly.com/content/generic-mitigations/
 monitoring

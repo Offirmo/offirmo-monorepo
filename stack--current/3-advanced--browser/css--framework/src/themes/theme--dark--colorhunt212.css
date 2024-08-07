@@ -3,8 +3,6 @@
 @import '../consts/consts--colors--colorhunt--212.css';
 @import '../consts/consts--colors--modifiers.css';
 
-@import 'theme--common.css';
-
 [data-o-theme="dark--colorhunt212"] { /* data-o-theme="dark--colorhunt212" */
 
 	--o⋄color⁚fg--main: var(--o⋄color⁚co212__beige);

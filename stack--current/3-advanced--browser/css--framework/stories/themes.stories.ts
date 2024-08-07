@@ -68,8 +68,6 @@ function _theme_demo(theme: string) {
 }
 
 function _decorator_add_all_themes(story) {
-	import('../src/themes/theme--light--default.css')
-	import('../src/themes/theme--dark--default.css')
 	import('../src/themes/theme--dark--colorhunt212.css')
 	return story
 }

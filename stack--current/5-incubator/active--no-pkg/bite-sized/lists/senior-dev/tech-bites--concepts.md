@@ -11,6 +11,7 @@
 [ ] https://zknill.io/posts/every-programmer-should-know/
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
 abstraction https://www.merrickchristensen.com/articles/abstraction/
+actually portable executables https://justine.lol/ape.html
 allocation
 annotation
 anomaly detection

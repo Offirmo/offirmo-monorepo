@@ -1,0 +1,89 @@
+/* Reminder: we inherit from all files in @offirmo foundation */
+@import '../consts/consts--colors--boz.css';
+@import '../consts/consts--colors--modifiers.css';
+
+
+[data-o-theme] {
+	/* needed!
+	 * We need to override color var usages in :root {} (especially in @offirmo/foundation tokens-colors.css)
+	 * To allow local overrides of the styles down in the DOM
+	 */
+	color: var(--o⋄color⁚fg--main);
+	background-color: var(--o⋄color⁚bg--main);
+	--o⋄color⁚fg--strong: var(--o⋄color⁚fg--main);
+	accent-color: var(--o⋄color⁚fg--accent);
+
+	scrollbar-color: var(--o⋄color⁚bg--highlight--1) var(--o⋄color⁚bg--main); /* <scrollbar color> <scrollbar track color> */
+}
+
+/* Traditional, most efficient theme
+ */
+:root:not([data-o-theme]), /* this theme is the default when no specific theme is set */
+[data-o-theme^=light] {
+	--o⋄color⁚fg--main: black;
+	--o⋄color⁚fg--secondary: var(--o⋄color⁚darker--66);
+	--o⋄color⁚fg--ancillary: var(--o⋄color⁚darker--33);
+
+	--o⋄color⁚fg--accent:           var(--o⋄color⁚fg--accent--default);
+	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
+	--o⋄color⁚bg--main: white;
+	--o⋄color⁚bg--code: hsl(0, 0%, 90%);
+
+	/* leave links to their default colors */
+	--o⋄color⁚fg--link:          var(--o⋄color⁚fg--link--default);
+	--o⋄color⁚fg--link--visited: var(--o⋄color⁚fg--link--visited--default);
+
+	--o⋄color⁚fg--error:       rgb(242, 47, 70);
+	--o⋄color⁚fg--warning: var(--o⋄color⁚boz__yellow);
+	--o⋄color⁚fg--info:    var(--o⋄color⁚boz__blue);
+	--o⋄color⁚fg--success: var(--o⋄color⁚boz__green);
+}
+
+/*
+    --o⋄color⁚fg--main: #000;
+    --o⋄color⁚bg--main: #fff;
+    --o⋄color⁚fg--strong: var(--o⋄color⁚fg--main);
+    --o⋄color⁚fg--accent: var(--o⋄color⁚fg--accent--default);
+    --o⋄color⁚fg--link: var(--o⋄color⁚fg--link--default);
+    --o⋄color⁚fg--link--visited: var(--o⋄color⁚fg--link--visited--default);
+    --o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
+    --o⋄color⁚bg--code: #ededed;
+    --o⋄color⁚bg--highlight--1: #0000001a;
+    --o⋄color⁚bg--highlight--2: #0000004d;
+    --o⋄font-family--fast_and_good_enough: var(--o⋄font-family--system--sans);
+    --o⋄font-family--main: var(--o⋄font-family--fast_and_good_enough);
+    --o⋄font-family--code: var(--o⋄font-family--system--mono);
+    --o⋄border--thickness: .07rem;
+ */
+
+/* Traditional dark theme
+ * TODO https://blog.superhuman.com/how-to-design-delightful-dark-themes-7b3da644ff1f
+ */
+[data-o-theme^=dark] { /*  data-o-theme="dark--default" */
+	--o⋄color⁚fg--main: white;
+	--o⋄color⁚fg--secondary: var(--o⋄color⁚lighter--66);
+	--o⋄color⁚fg--ancillary: var(--o⋄color⁚lighter--33);
+
+	--o⋄color⁚fg--accent:           var(--o⋄color⁚fg--accent--default);
+	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
+	--o⋄color⁚bg--main: black;
+	--o⋄color⁚bg--code: hsl(0, 0%, 25%);
+
+	/* IMPORTANT if customizing the fg color,
+	 * it usually renders better to set fg--link = fg--main
+	 */
+	--o⋄color⁚fg--link:          hsl(215, 100%, 67%);
+	--o⋄color⁚fg--link--visited: hsl(287, 100%, 67%); /* split complementary of link */
+
+	--o⋄color⁚fg--error:       red;
+	--o⋄color⁚fg--warning: var(--o⋄color⁚boz__yellow);
+	--o⋄color⁚fg--info:    var(--o⋄color⁚boz__blue);
+	--o⋄color⁚fg--success: var(--o⋄color⁚boz__green);
+}
+
+
+[data-o-theme^=dark] {
+	/* optical adjustment for dark themes TODO use a var multiplier?? */
+	font-weight: 500;
+	--o⋄border--thickness: .09rem;
+}

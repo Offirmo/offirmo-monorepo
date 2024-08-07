@@ -1,5 +1,3 @@
-@import '../tokens/tokens--sizes.css';
-@import '../themes/colors-from-theme.css';
 
 .o⋄border⁚default {
 	border: solid var(--o⋄border--thickness) var(--o⋄color⁚fg--main);

@@ -143,7 +143,7 @@ function getꓽcontentⵧweb__css(spec: Immutable<WebPropertyEntryPointSpec>): P
 		cssⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽcssⵧcritical(spec.content) ],
 	}
 
-	// TODO check if the system font stack works on major OS/browser
+	// TODO check if this system font stack works on major OS/browser
 	result.cssⵧcritical!.unshift(`/* critical minimal design system */
 :root {
 	/* FG+BG colors are the basics of identity */

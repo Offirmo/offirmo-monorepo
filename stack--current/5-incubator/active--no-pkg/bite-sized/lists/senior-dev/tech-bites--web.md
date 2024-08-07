@@ -52,6 +52,7 @@ HTML -- elements
 HTML -- tags
 htmx https://htmx.org/
 hypermedia
+i18e Ecosystem Performance = Cleanup, Speedup, Levelup. One Package at a time. https://e18e.dev/
 iframe
 iframe -- fenced
 iframe -- sandbox
