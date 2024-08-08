@@ -1,7 +1,8 @@
 
 :root {
-	/*color = #4 most important styling according to https://jgthms.com/web-design-in-4-minutes/#color-contrast
-	* ALSO setting bgcolor on html has an impact: body bg color no longer bleeds on the whole viewport
+	/* color = #4 most important styling according to https://jgthms.com/web-design-in-4-minutes/#color-contrast
+	 * IMPORTANT setting bgcolor on html has an impact: body bg color no longer bleeds on the whole viewport
+	 * WARNING setting on :root makes it use the var set at root, may need re-set down the DOM (see @offirmo framework theming)
 	 */
 	color: var(--o⋄color⁚fg--main);
 	background-color: var(--o⋄color⁚bg--main);

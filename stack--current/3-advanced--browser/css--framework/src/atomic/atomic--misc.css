@@ -1,7 +1,6 @@
 /** atomic in this file should ultimately move to a semantic dedicated file
  */
 
-
 .o⋄text-alignꘌcenter {
 	text-align: center;
 }
@@ -82,4 +81,12 @@
 
 .o⋄img-visible-on-any-background {
 	filter: var(--o⋄filter⁚img-visible-on-any-background);
+}
+
+
+/* special "inline" button */
+button.o⋄button--inline {
+	--o⋄border--thickness__button: 0; /* override own CSS var for this typeof button */
+	padding: .1em .3em; /* TODO semantic */
+	border-radius: .35em;
 }

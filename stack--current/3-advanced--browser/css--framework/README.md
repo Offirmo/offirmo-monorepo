@@ -19,7 +19,7 @@ Inspiration:
 
 ## Usage
 
-### automatic (reset)
+### automatic defaults (reset + foundation)
 By default, this stylesheet will activate a page like "mother fucking website".
 ```html
 
@@ -28,85 +28,118 @@ By default, this stylesheet will activate a page like "mother fucking website".
 ```
 alternatively:
 ```css
-@import '@offirmo-private/css--framework';
+@import 'npm:@offirmo-private/css--framework';
 ```
 
-### Full-page app
-There is a special class to unset the defaults:
-```html
-<html class="o⋄top-container">
-	<body class="o⋄top-container o⋄body⁚full-viewport" data-o-theme="dark--default">
-		…
+### On-demand
+Activated through classes: (ideally as semantic as possible)
+
+```
+o⋄error-report
+
+
+o⋄border⁚default
+o⋄border-colorꘌancillary
+
+
+o⋄colorꘌmain
+o⋄colorꘌsecondary
+o⋄colorꘌancillary
+
+o⋄colorꘌerror
+o⋄colorꘌwarning
+o⋄colorꘌinfo
+o⋄colorꘌsuccess TODO failure 
+
+o⋄bg-colorꘌbackdrop
+
+
+o⋄widthꘌ100pc
+o⋄heightꘌ100pc
+
+o⋄full-viewport` WARNING will style all the chain of parents!
+o⋄usable-viewport
+
+o⋄fill-parent
+
+
+o⋄flex--directionꘌrow // TODO semantic!
+o⋄flex--directionꘌcolumn
+o⋄flex--centered-content
+
+o⋄flex-element--nogrow
+o⋄flex-element--grow
+o⋄flex-element--no-squish
+
+
+o⋄fontꘌfast-and-good-enough
+o⋄fontꘌsystem--sans
+o⋄fontꘌsystem--serif
+o⋄fontꘌsystem--mono
+
+
+o⋄text-alignꘌcenter
+o⋄marginꘌnone
+o⋄overflow-yꘌauto
+o⋄fast-tap
+o⋄unstyled
+o⋄text-readable-on-any-background
+o⋄img-visible-on-any-background
+
+
+o⋄paddingꘌnone
+o⋄paddingꘌsmall
+o⋄paddingꘌmedium
+
+
+o⋄positionꘌabsolute
+o⋄positionꘌrelative
+o⋄positionꘌfixed
+
+
+o⋄rotated⁚45deg
+o⋄rotated⁚90deg
+o⋄rotated⁚180deg
+o⋄rotated⁚270deg
 ```
 
-### Manual
-Activated through classes:
+### Customization
 
-* Semantic classes (like`o⋄something`):
-  * `o⋄top-container`
-  * `o⋄centered-article`
-  * `o⋄error-report`
-  * `o⋄box`
-  * `o⋄text-noselect`
-  * `o⋄nav-list`
-  * `o⋄button--inline`
-  * `o⋄plain-list`
-
-* Technical classes (like`o⋄key⁚value`):
-  * `o⋄fontꘌfast-and-good-enough`
-  * `o⋄fontꘌsystem`
-  * `o⋄fontꘌroboto`
-  * `o⋄fontꘌroboto-condensed`
-  * `o⋄fontꘌroboto-mono`
-
-  * `o⋄colorꘌmain`
-  * `o⋄colorꘌsecondary`
-  * `o⋄colorꘌancillary`
-
-  * `o⋄paddingꘌnone`
-  * `o⋄paddingꘌsmall`
-  * `o⋄paddingꘌmedium`
-  * `o⋄marginꘌnone`
-
-  * `o⋄flex--directionꘌrow`
-  * `o⋄flex--directionꘌcolumn`
-  * `o⋄flex--centered-content`
-  * `o⋄flex-element--nogrow`
-  * `o⋄flex-element--grow`
-
-  * `o⋄text-alignꘌcenter`
-  * `o⋄overflow-yꘌauto`
-  * `o⋄heightꘌ100pc`
-
-  * `.o⋄border⁚default`
-
-  * `o⋄character-as-icon`
-  * `o⋄rotated⁚45deg`
-  * `o⋄rotated⁚90deg`
-  * `o⋄rotated⁚180deg`
-  * `o⋄rotated⁚270deg`
-
+```
 * data selectors
-  * `data-o-theme="dark--default"` (light--default being the default)
-  * `data-o-theme="dark--colorhunt212"`
+data-o-theme="dark" (light is the default, no need to specify)
+data-o-theme="dark--colorhunt212"
 
-There are also variables:
-* theme colors
-  * `--o⋄color⁚bg--main`
-  * `--o⋄color⁚bg--main--backdrop`
-  * `--o⋄color⁚bg--highlight--1`
-  * `--o⋄color⁚bg--highlight--2`
-  * `--o⋄color⁚fg--main`
-  * `--o⋄color⁚fg--secondary`
-  * `--o⋄color⁚fg--ancillary`
-  * `--o⋄color⁚fg--activity-outline`
-* modifier colors (but better use the theme colors!)
-  * `--o⋄color⁚darker--10`
-  * `--o⋄color⁚darker--20`
-  * `--o⋄color⁚darker--90`
-  * `--o⋄color⁚lighter--10`
-  * `--o⋄color⁚lighter--20`
-  * `--o⋄color⁚lighter--90`
+
+COLORS inherited from foundation
+--o⋄color⁚fg--main
+--o⋄color⁚fg--strong
+--o⋄color⁚fg--ancillary
+--o⋄color⁚fg--accent
+--o⋄color⁚fg--activity-outline
+--o⋄color⁚bg--main
+--o⋄color⁚bg--code
+--o⋄color⁚bg--highlight--1
+--o⋄color⁚bg--highlight--2
+--o⋄color⁚fg--link
+--o⋄color⁚fg--link--visited
+--o⋄font-family--fast_and_good_enough
+--o⋄font-family--main
+--o⋄font-family--code
+--o⋄border--thickness
+--o⋄content-recommended-width
+
+EXTRA colors
+--o⋄color⁚fg--secondary
+--o⋄color⁚fg--error
+--o⋄color⁚fg--warning
+--o⋄color⁚fg--info
+--o⋄color⁚fg--success
+
+--o⋄color⁚bg--main--backdrop ???
+
+--o⋄filter⁚img-visible-on-any-background
+```
 
 
 
@@ -116,6 +149,7 @@ There are also variables:
 
 #### containers debug
 ```html
+XXX OUTDATED
 <style type="text/css">
 	.o⋄top-container { border-width: 1px; }
 </style>
@@ -142,3 +176,6 @@ VAI LENGTHENER 'ꘌ'
 TODO review units +
 TODO review scalability
 TODO review font size
+TODO layout https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/
+TODO layout https://css-tricks.com/the-holy-grail-layout-with-css-grid/
+TODO evaluat shapes https://css-tricks.com/the-shapes-of-css/

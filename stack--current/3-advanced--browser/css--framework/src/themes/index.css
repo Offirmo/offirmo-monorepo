@@ -5,8 +5,9 @@
 
 [data-o-theme] {
 	/* needed!
-	 * We need to override color var usages in :root {} (especially in @offirmo/foundation tokens-colors.css)
+	 * We need to re-set the var usages initially set in :root {} (including from @offirmo/foundation tokens-colors.css)
 	 * To allow local overrides of the styles down in the DOM
+	 * TODO review, is it normal? better solution? * color inherit?
 	 */
 	color: var(--o⋄color⁚fg--main);
 	background-color: var(--o⋄color⁚bg--main);
@@ -16,20 +17,47 @@
 	scrollbar-color: var(--o⋄color⁚bg--highlight--1) var(--o⋄color⁚bg--main); /* <scrollbar color> <scrollbar track color> */
 }
 
+
 /* Traditional, most efficient theme
  */
 :root:not([data-o-theme]), /* this theme is the default when no specific theme is set */
 [data-o-theme^=light] {
 	--o⋄color⁚fg--main: black;
+	/* Weaker color for secondary content,
+	 * ex. date an article was published
+	 * as suggested by https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886
+	 * Note that we use transparency to adapt to any background (cf. same link)
+	 */
 	--o⋄color⁚fg--secondary: var(--o⋄color⁚darker--66);
+	/* a color for ancillary content,
+	 * ex. ex. copyright notice in a footer
+	 * as suggested by https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886
+	 * Note that we use transparency to adapt to any background (cf. same link)
+	 */
 	--o⋄color⁚fg--ancillary: var(--o⋄color⁚darker--33);
 
-	--o⋄color⁚fg--accent:           var(--o⋄color⁚fg--accent--default);
-	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
 	--o⋄color⁚bg--main: white;
 	--o⋄color⁚bg--code: hsl(0, 0%, 90%);
+	--o⋄color⁚bg--main--backdrop: var(--o⋄color⁚darker--90); /* a bg for popups and similar, should sufficiently hide the content below */
+	--o⋄color⁚bg--highlight--1: var(--o⋄color⁚darker--10); /* alternate bg color visible on normal bg, ex. for buttons */
+	--o⋄color⁚bg--highlight--2: var(--o⋄color⁚darker--33); /* alt, ex. for hovered/clicked buttons */
 
-	/* leave links to their default colors */
+	/* An "accent color" is an easy way to add "that dash of visual flair to your UI"
+	 * cf. https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886 §6
+	 * It's also an easy way to style inputs.
+	 * Note: because browsers will do auto-contrast, we need to use a light accent on light mode and vice versa
+	 */
+	--o⋄color⁚fg--accent:           var(--o⋄color⁚fg--accent--default);
+	/* Outline color for elements being interacted with,
+	 * ex. buttons being pressed, links being pressed/hovered.
+	 * Also used as focus ring color (if enabled).
+	 */
+	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
+
+	/* leave links to their default colors
+	 * UNLESS if customizing the fg color,
+	 * it usually renders better to set fg--link = fg--main
+	 */
 	--o⋄color⁚fg--link:          var(--o⋄color⁚fg--link--default);
 	--o⋄color⁚fg--link--visited: var(--o⋄color⁚fg--link--visited--default);
 
@@ -37,26 +65,14 @@
 	--o⋄color⁚fg--warning: var(--o⋄color⁚boz__yellow);
 	--o⋄color⁚fg--info:    var(--o⋄color⁚boz__blue);
 	--o⋄color⁚fg--success: var(--o⋄color⁚boz__green);
+
+	/* TODO re-find the article  computed with https://codepen.io/Offirmo/pen/jORpKox
+	--o⋄filter⁚img-visible-on-any-background*/
 }
 
-/*
-    --o⋄color⁚fg--main: #000;
-    --o⋄color⁚bg--main: #fff;
-    --o⋄color⁚fg--strong: var(--o⋄color⁚fg--main);
-    --o⋄color⁚fg--accent: var(--o⋄color⁚fg--accent--default);
-    --o⋄color⁚fg--link: var(--o⋄color⁚fg--link--default);
-    --o⋄color⁚fg--link--visited: var(--o⋄color⁚fg--link--visited--default);
-    --o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
-    --o⋄color⁚bg--code: #ededed;
-    --o⋄color⁚bg--highlight--1: #0000001a;
-    --o⋄color⁚bg--highlight--2: #0000004d;
-    --o⋄font-family--fast_and_good_enough: var(--o⋄font-family--system--sans);
-    --o⋄font-family--main: var(--o⋄font-family--fast_and_good_enough);
-    --o⋄font-family--code: var(--o⋄font-family--system--mono);
-    --o⋄border--thickness: .07rem;
- */
 
 /* Traditional dark theme
+ * REMINDER dark themes are supposed to be less contrasted!
  * TODO https://blog.superhuman.com/how-to-design-delightful-dark-themes-7b3da644ff1f
  */
 [data-o-theme^=dark] { /*  data-o-theme="dark--default" */
@@ -64,26 +80,31 @@
 	--o⋄color⁚fg--secondary: var(--o⋄color⁚lighter--66);
 	--o⋄color⁚fg--ancillary: var(--o⋄color⁚lighter--33);
 
-	--o⋄color⁚fg--accent:           var(--o⋄color⁚fg--accent--default);
-	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
 	--o⋄color⁚bg--main: black;
 	--o⋄color⁚bg--code: hsl(0, 0%, 25%);
+	--o⋄color⁚bg--main--backdrop: var(--o⋄color⁚lighter--66);
+	--o⋄color⁚bg--highlight--1: var(--o⋄color⁚lighter--20);
+	--o⋄color⁚bg--highlight--2: var(--o⋄color⁚lighter--33);
 
-	/* IMPORTANT if customizing the fg color,
-	 * it usually renders better to set fg--link = fg--main
-	 */
+	--o⋄color⁚fg--accent:           var(--o⋄color⁚fg--accent--default);
+	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
+
 	--o⋄color⁚fg--link:          hsl(215, 100%, 67%);
 	--o⋄color⁚fg--link--visited: hsl(287, 100%, 67%); /* split complementary of link */
 
+	/* TODO improve */
 	--o⋄color⁚fg--error:       red;
 	--o⋄color⁚fg--warning: var(--o⋄color⁚boz__yellow);
 	--o⋄color⁚fg--info:    var(--o⋄color⁚boz__blue);
 	--o⋄color⁚fg--success: var(--o⋄color⁚boz__green);
+
+	/* TODO
+--o⋄filter⁚img-visible-on-any-background*/
 }
 
 
 [data-o-theme^=dark] {
 	/* optical adjustment for dark themes TODO use a var multiplier?? */
-	font-weight: 500;
-	--o⋄border--thickness: .09rem;
+	font-weight: 500; /* Note that not all fonts may have a 500 weight, most will display same as 400=normal */
+	--o⋄border--thickness: .09rem; /* TODO test */
 }

@@ -806,7 +806,7 @@ export function Containers() {
 
 export function DemoꓽApp() {
 	return `
-		<div class="o⋄top-container">
+		<div>
 
 			<header class="o⋄border⁚default">
 				[header]
@@ -1048,7 +1048,7 @@ export function Diagnostics() {
 
 export function Debug() {
 	return `
-<Wrapper class="o⋄top-container">
+<Wrapper>
 	<h1>${LIB} - CSS micro framework</h1>
 
 	<p>

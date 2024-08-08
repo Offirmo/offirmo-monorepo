@@ -606,7 +606,7 @@ function ColorsAsCSSVariablesTable({radixes, caption}: { radixes: string[], capt
 	})
 	// Table of colors defined as CSS variables
 	return `
-		<table style="border: 1px solid var(--o⋄color⁚fg--main);">
+		<table style="border: var(--o⋄border--thickness) solid var(--o⋄color⁚fg--main);">
 			<caption>⬇${ caption }⬇</caption>
 			<thead>
 				<tr>

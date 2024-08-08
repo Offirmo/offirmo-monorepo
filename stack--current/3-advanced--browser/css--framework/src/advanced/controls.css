@@ -39,7 +39,7 @@ button {
 	border: solid calc(var(--border--thickness) * 2) var(--o⋄color⁚fg--main);
 
 	background-color: var(--o⋄color⁚bg--highlight--1);
-	color: var(--o⋄color⁚fg--main);
+	color: inherit;
 	text-decoration: none;
 	text-align: center;
 

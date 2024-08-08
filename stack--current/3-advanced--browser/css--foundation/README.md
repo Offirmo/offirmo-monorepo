@@ -26,8 +26,7 @@ Inspiration:
 ### automatic (reset)
 By default, this stylesheet will activate a page like "mother fucking website".
 ```html
-	<link rel="stylesheet" type="text/css"
-			href="TODO"/>
+ <link rel="stylesheet" type="text/css" href="TODO"/>
 ```
 alternatively:
 ```css
@@ -35,24 +34,31 @@ alternatively:
 ```
 
 ### customization
-TODO features a simple design system
+see "tokens"
 
-```css
-:root {
-	--o⋄color⁚fg--main: black;
-	--o⋄color⁚fg--strong: var(--o⋄color⁚fg--main);
-	--o⋄color⁚fg--secondary: 0.66;
-	--o⋄color⁚fg--ancillary: 0.33;
-	--o⋄color⁚fg--accent: (default blue);
-	--o⋄color⁚fg--activity-outline: (default another blue);
-	--o⋄color⁚bg--main: white;
-	--o⋄color⁚bg--code: ;
-
-	--o⋄color⁚fg--link:          hsl(240, 100%, 50%);
-	--o⋄color⁚fg--link--visited: hsl(271, 68%, 32%);
-}
 ```
+--o⋄color⁚fg--main
+--o⋄color⁚fg--strong          = <Hx> and <strong> (nice to have, usually defaulted to fg--main) 
+--o⋄color⁚fg--ancillary       = ex. hr  (ancillary bc. we may have a "secondary/dim" and this one is even dim'er)
 
+--o⋄color⁚fg--accent                 = accent color, used by forms (default blue)
+--o⋄color⁚fg--activity-outline       = outline color, used by focus indicator (default another blue)
+
+--o⋄color⁚bg--main
+--o⋄color⁚bg--code            = usually some grey close to bg
+--o⋄color⁚bg--highlight--1    bg color visible on normal bg, ex. for buttons */
+--o⋄color⁚bg--highlight--2    alt, ex. for hovered/clicked buttons */
+
+--o⋄color⁚fg--link
+--o⋄color⁚fg--link--visited
+
+--o⋄font-family--fast_and_good_enough
+--o⋄font-family--main
+--o⋄font-family--code
+
+--o⋄border--thickness
+--o⋄content-recommended-width
+```
 
 ## Contribution
 

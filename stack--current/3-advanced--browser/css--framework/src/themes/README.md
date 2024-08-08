@@ -1,8 +1,8 @@
 
-## theming
+# theming
 
 
-### Usage
+## Usage
 
 Use a data attribute:
 ```html
@@ -11,6 +11,22 @@ Use a data attribute:
 ```
 
 If no data attribute, light theme is active.
+
+### Brand customization
+
+TODO !!! doesn't work ATM
+
+TODO automatically derive some colors? https://developer.chrome.com/blog/css-relative-color-syntax/
+
+### custom theme
+
+* extra themes should start with `light--` or `dark--`
+* extra themes should not need to redefine all colors, since several should be the same as the default
+
+
+## Contributing
+
+FYI colors: rainbow vs spectrum https://en.wikipedia.org/wiki/Rainbow#Number_of_colours_in_a_spectrum_or_a_rainbow
 
 ### default themes
 
@@ -22,20 +38,12 @@ Color selection
 * - https://bestmotherfucking.website/ is using true white/black
 * - Github is using rgb(36, 41, 47)
 
-### additional themes
-
-* extra themes should start with `light--` or `dark--`
-* extra themes should not need to redefine all colors, since several should be the same as the default
-
+### TODO additional themes?
 
 TODO https://draculatheme.com/pro
 TODO https://vscodethemes.com/
 TODO https://iterm2colorschemes.com/ (not RGB, hard to convert)
 
-FYI colors: rainbow vs spectrum https://en.wikipedia.org/wiki/Rainbow#Number_of_colours_in_a_spectrum_or_a_rainbow
-
-
-## TODO
+### TODO
 
 TODO convert to LCH when supported ? https://caniuse.com/css-lch-lab
-TODO automaticall derive some colors? https://developer.chrome.com/blog/css-relative-color-syntax/

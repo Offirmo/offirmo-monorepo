@@ -17,24 +17,18 @@ function _AAlreadyVisited() {
 
 function _demo_content(theme: string = '[no theme = default]', is_alternate: boolean = false) {
 	return `
-		<section data-o-theme="${theme}" ${is_alternate?'class="o⋄paddingꘌmedium"':''}>
+		<section data-o-theme="${theme}" ${is_alternate?'class="o⋄paddingꘌmedium o⋄border⁚default "':''}>
+			<small><pre><code>data-o-theme="${theme}"</code></pre></small>
 			<h1>${LIB}</h1>
 			<h2>Theme preview</h2>
 
 			<p>
-				<pre><code>data-o-theme="${theme}"</code></pre>
-			</p>
-
-			<p>
-				What I’m saying is that it’s so, so simple to make sites easier to read!
-			</p>
-
-			<p>
-				<strong>emphasized text</strong>
-				normal text
-				<span class="o⋄colorꘌsecondary">secondary text</span>
-				<span class="o⋄colorꘌancillary">ancillary text</span>
-				<small>small text</small>
+				Content is key!
+				<strong>strong</strong>
+				normal
+				<span class="o⋄colorꘌsecondary">secondary</span>
+				<span class="o⋄colorꘌancillary">ancillary</span>
+				<small>small</small>
 			</p>
 
 			<p>
@@ -47,23 +41,31 @@ function _demo_content(theme: string = '[no theme = default]', is_alternate: boo
 				<span class="o⋄colorꘌwarning">warning</span>
 				<span class="o⋄colorꘌinfo">info</span>
 				<span class="o⋄colorꘌsuccess">success</span>
+				<code>code</code>
+				<span class="o⋄error-report">error report</span>
 			</p>
 
 			<form>
-			<input type="checkbox" checked>test accent
-</form>
+				<input type="checkbox" checked>test accent</input>
+				<button class="o⋄button--inline">Button inline</button>
+				<button>Button</button>
+			</form>
 		</section>
 	`
 }
 
 function _theme_demo(theme: string) {
-	const alternate_theme = theme?.startsWith('dark')
-		? 'light--default'
-		: 'dark--default'
+	const alternate_themes: string[] = []
+	if (theme && theme !== 'light') alternate_themes.push('light')
+	if (theme !== 'dark') alternate_themes.push('dark')
+	if (theme !== 'dark--colorhunt212') alternate_themes.push('dark--colorhunt212')
 
 	return `
 		${_demo_content(theme)}
-		${_demo_content(alternate_theme, is_alternate = true)}
+		${alternate_themes
+			.map(alternate_theme => _demo_content(alternate_theme, is_alternate = true))
+			.join('')
+		}
 	`
 }
 
@@ -79,23 +81,23 @@ function _decorator_select_theme(theme) {
 	}
 }
 
-export function NoThemeNoLoad() {
+export function NoThemesLoadedNoThemeSet() {
 	return _theme_demo()
 }
-NoThemeNoLoad.decorators = [
+NoThemesLoadedNoThemeSet.decorators = [
 ]
 
-export function NoTheme() {
+export function AllThemesLoadedNoThemeSet() {
 	return _theme_demo()
 }
-NoTheme.decorators = [
+AllThemesLoadedNoThemeSet.decorators = [
 	_decorator_add_all_themes,
 ]
 
-export function NoThemeCustomized() {
+export function AllThemesLoadedNoThemeSetCustomized() {
 	return _theme_demo()
 }
-NoThemeCustomized.decorators = [
+AllThemesLoadedNoThemeSetCustomized.decorators = [
 	_decorator_add_all_themes,
 	(story) => {
 
@@ -125,34 +127,36 @@ NoThemeCustomized.decorators = [
 ]
 
 
-export function LightDefault() {
-	return _theme_demo('light--default')
+export function AllThemesLoadedThemeSetLight() {
+	return _theme_demo('light')
 }
-LightDefault.decorators = [
+AllThemesLoadedThemeSetLight.decorators = [
+	_decorator_add_all_themes,
+	_decorator_select_theme('light'),
+]
+
+export function AllThemesLoadedThemeSetLightCustomized() {
+	return 'TODO'
+	//return _theme_demo('light')
+}
+AllThemesLoadedThemeSetLightCustomized.decorators = [
 	_decorator_add_all_themes,
 	_decorator_select_theme('light--default'),
 ]
 
-export function LightCustomized() {
-	return _theme_demo('light--default')
+export function AllThemesLoadedThemeSetDark() {
+	return _theme_demo('dark')
 }
-LightCustomized.decorators = [
+AllThemesLoadedThemeSetDark.decorators = [
 	_decorator_add_all_themes,
-	_decorator_select_theme('light--default'),
+	_decorator_select_theme('dark'),
 ]
 
-export function DarkDefault() {
-	return _theme_demo('dark--default')
+export function AllThemesLoadedThemeSetDarkCustom() {
+	return 'TODO'
+	//return _theme_demo('dark--default')
 }
-DarkDefault.decorators = [
-	_decorator_add_all_themes,
-	_decorator_select_theme('dark--default'),
-]
-
-export function DarkCustom() {
-	return _theme_demo('dark--default')
-}
-DarkCustom.decorators = [
+AllThemesLoadedThemeSetDarkCustom.decorators = [
 	_decorator_add_all_themes,
 	_decorator_select_theme('dark--default'),
 	(story) => {
@@ -164,10 +168,10 @@ DarkCustom.decorators = [
 	}
 ]
 
-export function DarkColorhunt212() {
+export function AllThemesLoadedThemeSetDarkColorhunt212() {
 	return _theme_demo('dark--colorhunt212')
 }
-DarkColorhunt212.decorators = [
+AllThemesLoadedThemeSetDarkColorhunt212.decorators = [
 	_decorator_add_all_themes,
 	_decorator_select_theme('dark--colorhunt212'),
 ]
