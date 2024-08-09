@@ -35,6 +35,18 @@ caching -- S3 FIFO https://s3fifo.com/
 capability = an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
 career -- small business programmer https://smallbusinessprogramming.com/how-to-be-a-wildly-successful-small-business-programmer/
 CD Continuous Delivery https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
+change -- category -- C1 = removing a product
+change -- category -- C2 = Widespread change requiring high customer effort
+change -- category -- C3 = Localised change requiring high customer/ecosystem effort
+change -- category -- C4 = Change requiring low customer/ecosystem effort
+change -- category -- C5 = Change requiring no customer/ecosystem effort
+change -- release tracks https://support.atlassian.com/organization-administration/docs/manage-product-release-tracks/
+change -- support readiness
+change -- type -- Experiment – temporary change intended to be visible to a small cohort of customers
+change -- type -- Technical only – invisible to customers
+change -- type -- User-facing – permanent change that users will notice
+change = what causes most of the failures
+change management
 changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 changelogs -- conventional https://github.com/conventional-changelog
 CI Continuous Integration  https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery

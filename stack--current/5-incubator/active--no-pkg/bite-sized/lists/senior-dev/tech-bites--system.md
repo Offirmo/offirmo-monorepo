@@ -71,6 +71,9 @@ bloom Filters
 blue/green deployment
 cache -- counter cache https://thoughtbot.com/blog/what-is-counter-cache
 caching
+caching -- stale-while-revalidate https://www.mnot.net/blog/2007/12/12/stale
+caching -- stale-if-error
+caching -- invalidation/control
 canary releasing
 CAP https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
 CAP Theorem -- Availability = Every request receives a (non-error) response, without the guarantee that it contains the most recent write
@@ -80,7 +83,7 @@ CAP Theorem -> see also PACELC theorem
 capacity planning
 cascading failures
 cascading failures -- exponential backoff + jitter +
-change management
+
 chaos monkey
 client side API gateway "egress" TODO
 cloud native = leverages the full capabilities of the cloud, beyond storage and hosting, including elastic scaling of highly available resources. Functionality is updated automatically no manual effort required
@@ -258,6 +261,9 @@ protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https:/
 PubSub = Publish-Subscribe 
 rate limiting
 regions
+change -- release tracks -- bundled = will get all of the features that were released to Preview Release Track during the previous months
+change -- release tracks -- continuous = see new features when they are released.
+change -- release tracks -- preview = will receive all updates released to Continuous Track in the last month.
 request deduplication
 retire, retain, rehost, re-platform, repurchase, refactor/re-architect
 scaling -- horizontally = more machines
