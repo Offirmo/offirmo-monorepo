@@ -29,7 +29,7 @@ export interface Contentⳇweb extends
 	// allow to add classes and data-x to the root element.
 	// if standalone page, root = <html>
 	// but could also be any container if embedded.
-	// ex. 'body': ['.class1', 'data-o-theme="dark--default"']
+	// ex. 'body': ['.class1', 'data-o-theme="dark"']
 	html__root__attributes?: Array<`.${string}` | `data-${string}="${string}"`>
 
 	// presentation (formatting, layout)

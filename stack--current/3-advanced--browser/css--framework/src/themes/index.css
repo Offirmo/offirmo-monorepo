@@ -75,7 +75,7 @@
  * REMINDER dark themes are supposed to be less contrasted!
  * TODO https://blog.superhuman.com/how-to-design-delightful-dark-themes-7b3da644ff1f
  */
-[data-o-theme^=dark] { /*  data-o-theme="dark--default" */
+[data-o-theme^=dark] { /*  data-o-theme="dark*" */
 	--o⋄color⁚fg--main: white;
 	--o⋄color⁚fg--secondary: var(--o⋄color⁚lighter--66);
 	--o⋄color⁚fg--ancillary: var(--o⋄color⁚lighter--33);

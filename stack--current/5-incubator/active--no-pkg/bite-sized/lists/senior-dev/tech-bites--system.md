@@ -1,3 +1,4 @@
+
 1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
 1% rule -- lurk, lurker
 1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
@@ -71,9 +72,9 @@ bloom Filters
 blue/green deployment
 cache -- counter cache https://thoughtbot.com/blog/what-is-counter-cache
 caching
-caching -- stale-while-revalidate https://www.mnot.net/blog/2007/12/12/stale
-caching -- stale-if-error
 caching -- invalidation/control
+caching -- stale-if-error
+caching -- stale-while-revalidate https://www.mnot.net/blog/2007/12/12/stale
 canary releasing
 CAP https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
 CAP Theorem -- Availability = Every request receives a (non-error) response, without the guarantee that it contains the most recent write
@@ -83,7 +84,9 @@ CAP Theorem -> see also PACELC theorem
 capacity planning
 cascading failures
 cascading failures -- exponential backoff + jitter +
-
+change -- release tracks -- bundled = will get all of the features that were released to Preview Release Track during the previous months
+change -- release tracks -- continuous = see new features when they are released.
+change -- release tracks -- preview = will receive all updates released to Continuous Track in the last month.
 chaos monkey
 client side API gateway "egress" TODO
 cloud native = leverages the full capabilities of the cloud, beyond storage and hosting, including elastic scaling of highly available resources. Functionality is updated automatically no manual effort required
@@ -96,6 +99,7 @@ containers -- images -- golden = pre-configured and optimised container images t
 containers -- images -- Red Hat Universal Base Image (UBI) = minimal, freely redistributable base image for containerised applications, providing a consistent foundation with essential packages from Red Hat Enterprise Linux (RHEL) to build and deploy reliable and secure containers https://developers.redhat.com/products/rhel/ubi
 Content Delivery Network (CDN) ex. CloudFront
 cron
+CRUD Create, Read, Update, Delete In SQL, the four related commands are: INSERT (for Create), SELECT (for Read), UPDATE (for Update), and DELETE (for Delete).
 data retrieval
 database
 database -- Bigtable -- Cassandra = open source Bigtable-like
@@ -259,11 +263,8 @@ post-mortem
 private cloud = https://threadreaderapp.com/thread/1800291897245835616.html
 protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https://stackoverflow.com/questions/731233/activemq-or-rabbitmq-or-zeromq-or https://news.ycombinator.com/item?id=9634801
 PubSub = Publish-Subscribe 
-rate limiting
+rate limiting = control the rate of requests sent or received by a network interface (DoS, scraping) https://en.wikipedia.org/wiki/Rate_limiting
 regions
-change -- release tracks -- bundled = will get all of the features that were released to Preview Release Track during the previous months
-change -- release tracks -- continuous = see new features when they are released.
-change -- release tracks -- preview = will receive all updates released to Continuous Track in the last month.
 request deduplication
 retire, retain, rehost, re-platform, repurchase, refactor/re-architect
 scaling -- horizontally = more machines

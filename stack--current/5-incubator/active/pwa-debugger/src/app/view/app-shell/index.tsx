@@ -8,7 +8,7 @@ import ErrorBoundary from '@offirmo-private/react-error-boundary'
 
 function AppShell({ children }) {
 	return ([
-			<div key='app-shell__children' data-o-theme="dark--default" style={{ isolation: 'isolate' }}>
+			<div key='app-shell__children' data-o-theme="dark" style={{ isolation: 'isolate' }}>
 				<ErrorBoundary name={'app-shell__children'}>
 					{children}
 				</ErrorBoundary>

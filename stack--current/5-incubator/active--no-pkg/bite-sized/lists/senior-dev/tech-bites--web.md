@@ -5,13 +5,17 @@
 [ ] security https://portswigger.net/web-security/all-topics
 [ ] security https://xsleaks.dev/
 [ ] TODO shearing layers https://en.wikipedia.org/wiki/Shearing_layers
+AJAX (Asynchronous JavaScript And XML) = LEGACY interactive web apps now fetch + json
 APIs web
 appli web
 architecture -- Islands
 architecture -- JAMStack = [JavaScript, APIs, Markup] as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
-architecture -- LAMP (outdated)
-architecture -- SSR
+architecture -- LAMP (outdated) Linux, Apache, MySQL, PHP/Python/Perl
+architecture -- SSR, ISR, CSR, PPR (see 'rendering')
+architecture -- MEAN (MongoDB, Express.js, Angular, Node.js)
+ARIA (Accessible Rich Internet Applications)
 CDN
+AMP (Accelerated Mobile Pages)
 Chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
 client/server -- multi-tier architecture -- 01 presentation
 client/server -- multi-tier architecture -- 02 application
@@ -20,47 +24,59 @@ client/server -- multi-tier architecture -- 04 data access
 client/server -- multi-tier architecture https://en.wikipedia.org/wiki/Multitier_architecture
 collaborative experiences https://zknill.io/posts/collaboration-no-crdts/
 components https://www.componentdriven.org/
-CSS -- atomic
+CORS (Cross-Origin Resource Sharing)
+CSS -- atomic = small, single-purpose classes with names based on visual function https://css-tricks.com/lets-define-exactly-atomic-css/
 CSS -- cascade https://2019.wattenberger.com/blog/css-cascade
 CSS -- color -- formats = hex, rgb(), hsl(), lch() https://www.joshwcomeau.com/css/color-formats/
 CSS -- Combinators https://courses.joshwcomeau.com/css-for-js/00-recap/04.03-combinators
 CSS -- containing block
 CSS -- fixed -- https://meyerweb.com/eric/thoughts/2011/09/12/un-fixing-fixed-elements-with-css-transforms/
+CSS -- geometric properties = affect the layout `width , height , top , left`
+CSS -- immutable = classes are never to be modified, thus producing highly dependable results
 CSS -- isolate
 CSS -- layers
-CSS -- layers
+CSS -- layout -- layout, paint and composite
+CSS -- layout -- reflow
 CSS -- margin -- negative https://www.quirksmode.org/blog/archives/2020/02/negative_margin.html
 CSS -- Media Queries https://courses.joshwcomeau.com/css-for-js/00-recap/03-media-queries
 CSS -- methodologies -- BEM
 CSS -- nesting
+CSS -- perf -- avoid modifying the layout (geometric properties)
 CSS -- Pseudo-classes :xyz https://courses.joshwcomeau.com/css-for-js/00-recap/04.01-pseudo-classes
 CSS -- Pseudo-elements ::xyz  https://courses.joshwcomeau.com/css-for-js/00-recap/04.02-pseudo-elements
 CSS -- rule = selector + property + value + unit https://courses.joshwcomeau.com/css-for-js/00-recap/02-anatomy
+CSS -- selectors -- descendant combinator -- expensive (perf) https://medium.com/@devdevcharlie/things-nobody-ever-taught-me-about-css-5d16be8d5d0e
+CSS -- selectors -- descendant combinator `ul li {`
 CSS -- stacking context https://github.com/andreadev-it/stacking-contexts-inspector
 CSS -- transforms
+CSS -- triggers https://csstriggers.com/
 CSS -- z-index
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
 DDoS
 devices -- support
-features -- "infantile level" https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
-features -- scale = Search, sort, diffs, authorship tracking, comments, permissions (user management), sharing security, SSO, integrations... https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
+ECMAScript - European Computer Manufacturers Association Script (ES)
 fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
+FORC Fear of Removing CSS https://x-team.com/blog/forc-fear-of-removing-css
 HTML -- concepts
 HTML -- elements
 HTML -- tags
 htmx https://htmx.org/
 hypermedia
+hypertext
 i18e Ecosystem Performance = Cleanup, Speedup, Levelup. One Package at a time. https://e18e.dev/
 iframe
 iframe -- fenced
 iframe -- sandbox
 iframe -- seamless
+IIFE (Immediately-Invoked Function Expression)
 interop https://developer.mozilla.org/en-US/blog/interop2023-mdn-doc-updates/
 JS -- exports https://webpack.js.org/guides/package-exports/
+JSON - Javascript Object Notation
 MDN
 MDN curriculum https://developer.mozilla.org/en-US/curriculum/
+MIME - Multipurpose Internet Mail Extensions
 perf metrics -- "9 must known" https://twitter.com/alexxubyte/status/1769748487317651962
 perf metrics -- core web vitals -- 01 Largest Contentful Paint (LCP) = loading performance. LCP must occur within 2.5 seconds of when the page first starts loading 
 perf metrics -- core web vitals -- 02 Interaction to Next Paint (INP) = interactivity. To provide a good user experience, pages must have a INP of 200 milliseconds or less.
@@ -110,7 +126,6 @@ UI -- views
 User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#large-viewport
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
 UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb
-UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb 
 viewport
 viewport -- large, small, dynamic
 viewport -- visual

@@ -49,7 +49,7 @@ describe(`Web types -- webpage`, function() {
 				title: 'The Boring RPG',
 
 				html: [ `<p>hello, World!</p>` ],
-				html__root__attributes: [ `.class1`, `.class1`, `data-o-theme="dark--default"` ],
+				html__root__attributes: [ `.class1`, `.class1`, `data-o-theme="dark"` ],
 
 				css: [ `body { padding: 1em; }` ],
 				cssⵧtop__namespaces: { 'svg': 'http://www.w3.org/2000/svg' },
@@ -63,7 +63,7 @@ describe(`Web types -- webpage`, function() {
 			expect(getꓽcharset(spec)).to.deep.equal('utf-8')
 
 			expect(getꓽhtml(spec)).to.deep.equal(["<p>hello, World!</p>"])
-			expect(getꓽhtml__root__attributes(spec)).to.deep.equal([ `.class1`, `data-o-theme="dark--default"` ])
+			expect(getꓽhtml__root__attributes(spec)).to.deep.equal([ `.class1`, `data-o-theme="dark"` ])
 
 			expect(getꓽcss(spec)).to.deep.equal(["body { padding: 1em; }"])
 			expect(getꓽcssⵧtop__layers(spec)).to.deep.equal(['reset', 'base'])
