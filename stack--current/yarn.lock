@@ -1400,6 +1400,11 @@
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/chai/-/chai-4.3.17.tgz#9195f9d242f2ac3b429908864b6b871a8f73f489"
   integrity sha512-zmZ21EWzR71B4Sscphjief5djsLre50M6lI622OSySTmn9DB3j+C3kWroHfBQWXbOBwbgg/M8CG/hUxDLIloow==
 
+"@types/chroma-js@^2":
+  version "2.4.4"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/chroma-js/-/chroma-js-2.4.4.tgz#254dddff54568ff8e5d0dcdb071871a458fdfd31"
+  integrity sha512-/DTccpHTaKomqussrn+ciEvfW4k6NAHzNzs/sts1TCqg333qNxOhy8TNIoQCmbGG3Tl8KdEhkGAssb1n3mTXiQ==
+
 "@types/cross-spawn@^6":
   version "6.0.6"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/cross-spawn/-/cross-spawn-6.0.6.tgz#0163d0b79a6f85409e0decb8dcca17147f81fd22"
@@ -2074,6 +2079,11 @@ chownr@^2.0.0:
   version "2.0.0"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
+
+chroma-js@^2:
+  version "2.6.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/chroma-js/-/chroma-js-2.6.0.tgz#578743dd359698a75067a19fa5571dec54d0b70b"
+  integrity sha512-BLHvCB9s8Z1EV4ethr6xnkl/P2YRFOGqfgvuMG/MyCbZPrTA+NeiByY6XvgF0zP4/2deU2CXnWyMa3zu1LqQ3A==
 
 chrome-trace-event@^1.0.2, chrome-trace-event@^1.0.3:
   version "1.0.4"
@@ -3748,10 +3758,10 @@ lilconfig@^3.1.1:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/lilconfig/-/lilconfig-3.1.2.tgz#e4a7c3cb549e3a606c8dcc32e5ae1005e62c05cb"
   integrity sha512-eop+wDAvpItUys0FWkHIKeC9ybYrTGbU41U5K7+bttZZeohvnY7M9dZ5kB21GNWiFT2q1OoPTvncPCgSOVO5ow==
 
-limit-once@^0.15:
-  version "0.15.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/limit-once/-/limit-once-0.15.0.tgz#4e14d792b0d326c742d499b6fd556f0a3362fa43"
-  integrity sha512-yLWEHkx4eiUORHHiPH9Pfb8xfIICCpb/qMD9QL1aq4H+SgpY8+nyANESP71RvvYhwv8iG61+vLLztJSksknZ8g==
+limit-once@^0.16:
+  version "0.16.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/limit-once/-/limit-once-0.16.0.tgz#8d48b4258be3c72fe185f52f96c3d87eb41fbbc2"
+  integrity sha512-kWbh5A3d+q7qpOyJ9GLHW68yjO21WiBZw1Ian+I+Eo08m/g6+4Q1TXqrjBTeYZrcoM31eoFN/yaOz/RBVF0WgA==
 
 lines-and-columns@^1.1.6:
   version "1.2.4"

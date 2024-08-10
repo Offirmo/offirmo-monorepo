@@ -25,6 +25,7 @@
 		"@offirmo-private/ts-types-web": "*",
 		"@offirmo/cli-toolbox": "^3",
 		"@resvg/resvg-js": "^2",
+		"chroma-js": "^2",
 		"prettier": "^3",
 		"tiny-invariant": "^1",
 		"tslib": "^2"

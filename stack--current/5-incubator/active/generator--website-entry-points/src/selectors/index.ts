@@ -2,6 +2,8 @@ import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
+const chroma = ((await import('chroma-js')) as any).default as chroma.ChromaStatic // has ESM issues 2024/08
+
 import { AnyPath, Basename, Emoji, Immutable, RelativePath } from '@offirmo-private/ts-types'
 import { getꓽtitle as Contentⳇwebᐧgetꓽtitle, getꓽdescription as _getꓽdescription } from '@offirmo-private/ts-types-web'
 import { CssColor‿str } from '@offirmo-private/ts-types-web'
@@ -176,15 +178,21 @@ function getꓽdescriptionⵧpage(spec: Immutable<WebPropertyEntryPointSpec>): s
 // polish
 
 function getꓽcolorⵧforeground(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
-	return spec.colorⵧforeground ?? 'black'
+	const candidate = spec.colorⵧforeground ?? 'black'
+	assert(chroma.valid(candidate), `Invalid fg color "${candidate}"!`)
+	return chroma(candidate).name()
 }
 
 function getꓽcolorⵧbackground(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
-	return spec.colorⵧbackground ?? 'white'
+	const candidate = spec.colorⵧbackground ?? 'white'
+	assert(chroma.valid(candidate), `Invalid bg color "${candidate}"!`)
+	return chroma(candidate).name()
 }
 
 function getꓽcolorⵧtheme(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
-	return spec.colorⵧtheme ?? getꓽcolorⵧbackground(spec)
+	const candidate = spec.colorⵧtheme ?? getꓽcolorⵧbackground(spec)
+	assert(chroma.valid(candidate), `Invalid theme color "${candidate}"!`)
+	return chroma(candidate).name()
 }
 
 /////////////////////////////////////////////////

@@ -1,4 +1,6 @@
 import assert from 'tiny-invariant'
+const chroma = ((await import('chroma-js')) as any).default as chroma.ChromaStatic // has ESM issues 2024/08
+
 import { Immutable } from '@offirmo-private/ts-types'
 import { Contentⳇweb, Css‿str, Html‿str, JS‿str } from '@offirmo-private/ts-types-web';
 import * as ContentⳇwebᐧSelectors from '@offirmo-private/ts-types-web';
@@ -143,12 +145,16 @@ function getꓽcontentⵧweb__css(spec: Immutable<WebPropertyEntryPointSpec>): P
 		cssⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽcssⵧcritical(spec.content) ],
 	}
 
+	const colorⵧbackground = getꓽcolorⵧbackground(spec)
+	const colorⵧforeground = getꓽcolorⵧforeground(spec)
+	assert(chroma.contrast(colorⵧbackground, colorⵧforeground), `fg/bg contrast should be > 4.5:1!`)
+
 	// TODO check if this system font stack works on major OS/browser
 	result.cssⵧcritical!.unshift(`/* critical minimal design system */
 :root {
 	/* FG+BG colors are the basics of identity */
-	${TOKEN__COLOR__BG}: ${getꓽcolorⵧbackground(spec)};
-	${TOKEN__COLOR__FG}: ${getꓽcolorⵧforeground(spec)};
+	${TOKEN__COLOR__BG}: ${colorⵧbackground};
+	${TOKEN__COLOR__FG}: ${colorⵧforeground};
 	/* https://systemfontstack.com/ simplified */
 	${TOKEN__FONT__SYSTEMⵧSANS}: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 
@@ -164,16 +170,46 @@ function getꓽcontentⵧweb__css(spec: Immutable<WebPropertyEntryPointSpec>): P
 		: `/* https://www.the-koi.com/projects/how-to-disable-pull-to-refresh/ */
 	overscroll-behavior: none;`
 	}
+
+	if (
 }`)
 
 	return result
 }
 
-function getꓽcontentⵧweb__html(spec: Immutable<WebPropertyEntryPointSpec>): Pick<Contentⳇweb, 'html'> {
-	// TODO extract HTML from files? ./esm/parser-html.mjsxxx
-	return {
-		html: [ ...(getꓽcontentⵧinitial(spec).html ?? [])],
+function getꓽcontentⵧweb__html(spec: Immutable<WebPropertyEntryPointSpec>): Pick<Contentⳇweb, 'html' | 'html__root__attributes'> {
+	// TODO add feature to pass HTML through paths?
+	const result = {
+		html: [ ...ContentⳇwebᐧSelectors.getꓽhtml(getꓽcontentⵧinitial(spec))],
+		html__root__attributes: [ ...ContentⳇwebᐧSelectors.getꓽhtml__root__attributes(getꓽcontentⵧinitial(spec))],
 	}
+
+	const colorⵧforeground = getꓽcolorⵧforeground(spec)
+	const is_dark_theme = chroma(colorⵧforeground).luminance() > 0.5
+
+	const features = new Set(getꓽfeatures(spec))
+	if (features.has('cssⳇframework--offirmo')) {
+		const has_theme = result.html__root__attributes.some(x => x.startsWith('data-o-theme='))
+		if (is_dark_theme) {
+			if (!has_theme) {
+				result.html__root__attributes.push('data-o-theme="dark"')
+			}
+		}
+	}
+
+	/* can't find how to detect a color
+	if (features.has('cssⳇframework--offirmo') || features.has('cssⳇfoundation--offirmo')) {
+		const chromatic = chroma(colorⵧforeground).get('oklch.c')
+		console.log({
+			colorⵧforeground,
+			oklch: chroma(colorⵧforeground).oklch(),
+			chromatic,
+		})
+		// black = 0, white = 1
+		assert(false, `foreground color should be saturated enough "${colorⵧforeground}": ${chromatic}!`)
+	}*/
+
+	return result
 }
 
 function getꓽcontentⵧweb__js(spec: Immutable<WebPropertyEntryPointSpec>): Pick<Contentⳇweb, 'js' | 'jsⵧcritical'> {
