@@ -26,7 +26,6 @@ analysis of algorithms -- big Oe -- O(n^3) = cubic
 analysis of algorithms -- big Of -- O(2^n) = exponential
 analysis of algorithms -- big Og -- O(n!) = factorial
 antisymmetric
-backtracking
 Best, Average and Worst Cases
 binary search: Lower bound, Upper bound, Questions where binary search is not the obvious choice
 BPE / Byte pair encoding https://github.com/openai/tiktoken
@@ -118,8 +117,3 @@ string -- word searching -- Knuth–Morris–Pratt algorithm (KMP) https://en.wi
 Tower of Hanoi
 Trabb Pardo-Knuth (TPK) = demo program https://en.wikipedia.org/wiki/TPK_algorithm
 transitive
-tree -- check if balanced
-tree -- rotation https://en.wikipedia.org/wiki/Tree_rotation
-tree -- search
-tree -- trie -- prefix search
-tree -- trie -- word search with counts

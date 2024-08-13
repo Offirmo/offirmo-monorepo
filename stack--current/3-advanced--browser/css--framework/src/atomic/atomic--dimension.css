@@ -12,8 +12,8 @@
  */
 :root {
 	/* What unit should we use?
-	 * -  %       🙅 NO we don't want relative, we want absolutes
-	 * -  vw,  vh 🙅 NO because of mobile iOs, this is the reason dv, sv and lv where created. full story: https://nicolas-hoizey.com/articles/2015/02/18/viewport-height-is-taller-than-the-visible-part-of-the-document-in-some-mobile-browsers/
+	 * -  %       🙅 NO, we don't want relative, we want absolutes
+	 * -  vw,  vh 🙅 NO, because of mobile iOs. This is the reason dv, sv and lv where created. full story: https://nicolas-hoizey.com/articles/2015/02/18/viewport-height-is-taller-than-the-visible-part-of-the-document-in-some-mobile-browsers/
 	 * let's review the advance ones:
 	 * - svw, svh 🙅 NO we want the FULL = biggest viewport possible, not the small one
 	 * - dvw, dvh ❓ yes IN THEORY
@@ -22,7 +22,7 @@
 	 * - lvw, lvh ❓ no IN THEORY
 	 *               👎 on Safari Mobile, this causes a scrollbar to appear on start when UA visible, then on scroll the UA disappear and we're left with a horrible state (seen 2024/04 iOs 17.4.1 iPhone 14) TODO could we recover from that with a programmatic scroll?
 	 *               👍 works on pinned app with no UA
-	 * 🤦so we settle on the "safest" = dvh, considering "pinned" is the rarest case. We'll use a bit of JS to tweak in this case.
+	 * 🤦so we settle on the "safest" = dvh, considering "pinned" is the rarest case. We'll use a bit of JS to tweak in this case. (see sibling .tsx file)
 	 */
 	--o⋄full-viewport__width: 100dvw;
 	--o⋄full-viewport__height: 100dvh;

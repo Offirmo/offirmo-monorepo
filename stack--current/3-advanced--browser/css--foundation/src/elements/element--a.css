@@ -23,6 +23,8 @@ a {
 	 */
 	color: var(--o⋄color⁚fg--link);
 
+	text-decoration-thickness: var(--o⋄border--thickness);
+
 	/* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
 	touch-action: manipulation;
 

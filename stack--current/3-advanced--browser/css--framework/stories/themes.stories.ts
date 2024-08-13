@@ -16,6 +16,7 @@ function _AAlreadyVisited() {
 }
 
 function _demo_content(theme: string = '[no theme = default]', is_alternate: boolean = false) {
+	// xx undef
 	return `
 		<section data-o-theme="${theme}" ${is_alternate?'class="o⋄paddingꘌmedium o⋄border⁚default "':''}>
 			<small><pre><code>data-o-theme="${theme}"</code></pre></small>
@@ -47,8 +48,8 @@ function _demo_content(theme: string = '[no theme = default]', is_alternate: boo
 
 			<form>
 				<input type="checkbox" checked>test accent</input>
-				<button class="o⋄button--inline">Button inline</button>
-				<button>Button</button>
+				<button type="button" class="o⋄button--inline">Button inline</button>
+				<button type="button">Button normal</button>
 			</form>
 		</section>
 	`
@@ -95,7 +96,7 @@ AllThemesLoadedNoThemeSet.decorators = [
 ]
 
 export function AllThemesLoadedNoThemeSetCustomized() {
-	return _theme_demo()
+	return _theme_demo() // see customization in decorator below
 }
 AllThemesLoadedNoThemeSetCustomized.decorators = [
 	_decorator_add_all_themes,
@@ -135,15 +136,6 @@ AllThemesLoadedThemeSetLight.decorators = [
 	_decorator_select_theme('light'),
 ]
 
-export function AllThemesLoadedThemeSetLightCustomized() {
-	return 'TODO'
-	//return _theme_demo('light')
-}
-AllThemesLoadedThemeSetLightCustomized.decorators = [
-	_decorator_add_all_themes,
-	_decorator_select_theme('light--default'),
-]
-
 export function AllThemesLoadedThemeSetDark() {
 	return _theme_demo('dark')
 }
@@ -154,11 +146,11 @@ AllThemesLoadedThemeSetDark.decorators = [
 
 export function AllThemesLoadedThemeSetDarkCustom() {
 	return 'TODO'
-	//return _theme_demo('dark--default')
+	//return _theme_demo('dark')
 }
 AllThemesLoadedThemeSetDarkCustom.decorators = [
 	_decorator_add_all_themes,
-	_decorator_select_theme('dark--default'),
+	_decorator_select_theme('dark'),
 	(story) => {
 		const style = document.createElement('style')
 		style.textContent = `

@@ -7,9 +7,9 @@ Use only the most widely used libraries an tools, that are well tested, well doc
 
 Use all the best practices and patterns that are available for the language and framework you are using.
 
---Keep things as simple as possible (KISS).
+-- Keep things as simple as possible (KISS).
 
---Don't write unnecessary code (YAGNI).
+-- Don't write unnecessary code (YAGNI).
 
 -- Don't repeat yourself (DRY).
 

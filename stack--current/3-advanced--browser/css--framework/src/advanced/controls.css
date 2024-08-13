@@ -15,7 +15,6 @@ body.user-is-tabbing *:focus {
 	outline: 5px auto var(--o⋄color⁚fg--activity-outline);
 }
 
-/* TODO style more controls http://filamentgroup.github.io/select-css/demo/ */
 
 
 /************ buttons ************
@@ -52,9 +51,8 @@ button:hover {
 }
 button:active {
 	background-color: var(--o⋄color⁚bg--highlight--2);
-	border-color: var(--o⋄color⁚fg--activity-outline);
+	border-color: var(--o⋄color⁚fg--activity-outline); /* reminder: button may not have a border, cf. "inline button" */
 }
-
 
 /************ progress ************/
 
@@ -90,3 +88,11 @@ progress::-ms-fill {
 	background-color: var(--o⋄color⁚progress-bar);
 	border: 0;
 }
+
+
+
+/* TODO style more controls? http://filamentgroup.github.io/select-css/demo/ */
+
+
+/* https://www.bram.us/2022/06/28/styling-selects-youve-got-options/
+ */

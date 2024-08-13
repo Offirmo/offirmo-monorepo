@@ -53,7 +53,7 @@ CD (continuous delivery)
 CD (Continuous Delivery) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
 CD (continuous deployment)
 change -- category -- C1 = removing a product
-change -- category -- C2 = Widespread change requiring high customer effort
+change -- category -- C2 = Widespread change requiring high customer/ecosystem effort
 change -- category -- C3 = Localised change requiring high customer/ecosystem effort
 change -- category -- C4 = Change requiring low customer/ecosystem effort
 change -- category -- C5 = Change requiring no customer/ecosystem effort

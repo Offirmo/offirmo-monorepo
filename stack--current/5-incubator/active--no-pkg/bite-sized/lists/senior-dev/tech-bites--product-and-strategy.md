@@ -25,8 +25,8 @@ enshittification = first, they are good to their users; then they abuse their us
 executive presence
 failures -- inVision -- https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 features -- "infantile level" https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
-features -- scale = Search, sort, diffs, authorship tracking, comments, permissions (user management), sharing security, SSO, integrations... https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 features -- creep
+features -- scale = Search, sort, diffs, authorship tracking, comments, permissions (user management), sharing security, SSO, integrations... https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 financing cycle https://en.wikipedia.org/wiki/Seed_money
 first-mover advantage -- handicap of a head start https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_start
 first-mover advantage -- second mover advantage / "fast followers" / "free riders" https://en.wikipedia.org/wiki/First-mover_advantage#Second-mover_advantage
@@ -82,9 +82,11 @@ product market fit -- Arc archetype -- Hair on Fire = solve a problem that’s a
 product market fit -- Arc archetype -- Hard Fact = pain point universally accepted as a hard fact of life, and see that it’s merely a hard problem that your product solves
 real-world context https://contextsdk.com/insights#product
 red ocean vs blue ocean https://www.blueoceanstrategy.com/tools/red-ocean-vs-blue-ocean-strategy/
+reputation management
+reputation management -- REPCOM
 satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing
-second product -- When and How https://caseyaccidental.com/second-products/
 second product -- syndrome https://www.hubspot.com/startups/resources/second-product-tips-for-success
+second product -- When and How https://caseyaccidental.com/second-products/
 side projects -- outside of job https://www.reddit.com/r/SideProject/comments/1br62xb/building_side_projects_outside_fulltime_job/
 startups should avoid being held hostage by the preferences of their early user base if it deviates from the broader market, ex. social feed or reels
 strategy -- 01 "where we play"
