@@ -2,7 +2,9 @@
 	font-size: xx-small;
 	font-family: monospace;
 	color: var(--o⋄color⁚fg--error);
-	background-color: var(--o⋄color⁚bg--main--backdrop);
+	background-color: var(--o⋄color⁚darker--66);
+	border: 2px dashed var(--o⋄color⁚fg--error);
+	padding: .3em;
 	margin: auto;
 	z-index: 100000; /* just in case TODO check */
 }

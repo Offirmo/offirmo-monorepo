@@ -10,4 +10,5 @@
 .o⋄colorꘌsuccess { color: var(--o⋄color⁚fg--success); }
 
 
+.o⋄bg-colorꘌmain     { background-color: var(--o⋄color⁚bg--main); }
 .o⋄bg-colorꘌbackdrop { background-color: var(--o⋄color⁚bg--main--backdrop); }

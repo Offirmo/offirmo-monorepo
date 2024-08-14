@@ -8,9 +8,7 @@
 
 @import 'tokens/index.css' layer(offirmo--framework);
 @import 'themes/index.css' layer(offirmo--framework);
-
 @import 'advanced/index.css' layer(offirmo--framework);
-
 @import 'atomic/index.css' layer(offirmo--framework);
 
 @layer offirmo--framework {

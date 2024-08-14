@@ -15,7 +15,7 @@
 	 */
 	--o⋄color⁚bg--main: hsl(0, 100%, 100%);
 
-	/* Slightly stronger color for headers and <strong>.
+	/* OPTIONAL A dedicated color for headers and <strong>.
 	 * As suggested by https://jgthms.com/web-design-in-4-minutes/#color-contrast "Color & contrast"
 	 * "nice to have", can be equal to the main color without any problem.
 	 */
@@ -34,9 +34,10 @@
 	--o⋄color⁚fg--link:          var(--o⋄color⁚fg--link--default);
 	--o⋄color⁚fg--link--visited: var(--o⋄color⁚fg--link--visited--default);
 
-	/* Outline color for elements being interacted with,
+	/* Outline color for interactive elements being interacted with,
 	 * ex. buttons being pressed, links being pressed/hovered.
 	 * Also used as focus ring color (if enabled).
+	 * Ideally should be a color that contrasts well enough with the FOREground ex. for temporary controls bgcolor.
 	 */
 	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
 

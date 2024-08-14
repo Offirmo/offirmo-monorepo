@@ -5,6 +5,7 @@
 	"license": "Unlicense",
 	"private": true,
 
+	"sideEffects": true,
 	"source": "src/index.css",
 
 	"dependencies": {

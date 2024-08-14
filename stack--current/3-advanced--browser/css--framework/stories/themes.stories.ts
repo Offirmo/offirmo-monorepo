@@ -15,13 +15,12 @@ function _AAlreadyVisited() {
 	return `<a href="${location.origin + location.pathname + location.search}">link -- already visited</a>`
 }
 
-function _demo_content(theme: string = '[no theme = default]', is_alternate: boolean = false) {
+function _demo_content(theme: string | null = null, is_alternate: boolean = false) {
 	// xx undef
 	return `
-		<section data-o-theme="${theme}" ${is_alternate?'class="o⋄paddingꘌmedium o⋄border⁚default "':''}>
-			<small><pre><code>data-o-theme="${theme}"</code></pre></small>
+		<section data-o-theme="${theme}" ${is_alternate?'class="o⋄paddingꘌmedium o⋄border⁚default "':''} style="position: relative;">
 			<h1>${LIB}</h1>
-			<h2>Theme preview</h2>
+			<h2>Theme preview: ${theme}</h2>
 
 			<p>
 				Content is key!
@@ -42,8 +41,8 @@ function _demo_content(theme: string = '[no theme = default]', is_alternate: boo
 				<span class="o⋄colorꘌwarning">warning</span>
 				<span class="o⋄colorꘌinfo">info</span>
 				<span class="o⋄colorꘌsuccess">success</span>
-				<code>code</code>
-				<span class="o⋄error-report">error report</span>
+				<code>code: data-o-theme="${theme}"</code>
+
 			</p>
 
 			<form>
@@ -51,6 +50,14 @@ function _demo_content(theme: string = '[no theme = default]', is_alternate: boo
 				<button type="button" class="o⋄button--inline">Button inline</button>
 				<button type="button">Button normal</button>
 			</form>
+			<div class="o⋄backdrop" style="position: absolute; top: 0; bottom: 60%; right: 0; left: 50%;">
+				<div class="o⋄bg-colorꘌmain" style="position: absolute; top: 20%; bottom: 20%; right: 20%; left: 20%;">
+					<span>Display against a backdrop. This could be a modal.</span>
+				</div>
+			</div>
+			<div class="o⋄error-report" style="position: absolute; top: 80%; bottom: 1em; right: 1em; left: 50%;">
+			<span>error report, should be decently readable but no big deal, it's mainly for devs.</span>
+			</div>
 		</section>
 	`
 }

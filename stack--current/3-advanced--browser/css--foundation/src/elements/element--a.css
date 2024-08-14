@@ -38,11 +38,13 @@ a {
 	&:focus {
 	}
 
-	&:hover,
-	&:active {
+	&:hover {
 		/* There is no hover indicator on links.
 		 * Adding one is a no-brainer.
 		 */
+		background-color: var(--o⋄color⁚bg--highlight--1);
+	}
+	&:active {
 		color: var(--o⋄color⁚fg--activity-outline);
 	}
 }

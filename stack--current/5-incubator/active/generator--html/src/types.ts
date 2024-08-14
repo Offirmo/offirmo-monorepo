@@ -130,6 +130,7 @@ interface HtmlMetas {
 
 /////////////////////////////////////////////////
 
+// TODO should they be here?
 // tslint:disable-next-line: variable-name
 export const FeatureSnippets = Enum(
 	'cssⳇbox-layout--natural',
@@ -146,6 +147,7 @@ export const FeatureSnippets = Enum(
 	'site-verification--google',
 	// TODO one day: https://browser-update.org/
 	// TODO auto "Adobe-style" intro?
+	// TODO one day https://github.com/tholman/github-corners
 )
 export type FeatureSnippets = Enum<typeof FeatureSnippets> // eslint-disable-line no-redeclare
 

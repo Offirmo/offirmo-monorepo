@@ -1,7 +1,1 @@
-/** TODO https://dbushell.com/2024/03/10/css-button-styles-you-might-not-know/
- * Also HIGHLY recommended to round, seen study 55% more clicks
- */
-
-button {
-	border-radius: .7em;
-}
+/* see elements--controls.css */

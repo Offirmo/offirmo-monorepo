@@ -10,6 +10,7 @@
 }
 /* 2) and for keyboard users, override everything with
  *    a classic ring when focused on any element
+ TODO dynamic width
  */
 body.user-is-tabbing *:focus {
 	outline: 5px auto var(--o⋄color⁚fg--activity-outline);
@@ -20,38 +21,35 @@ body.user-is-tabbing *:focus {
 /************ buttons ************
  * https://css-tricks.com/overriding-default-button-styles/
  * https://fvsch.com/code/styling-buttons/
- */
-
-
-/* Simple styling derived from "button 8" from
- * https://fdossena.com/?p=html5cool/buttons/i.frag
+ * TODO https://dbushell.com/2024/03/10/css-button-styles-you-might-not-know/
+ * TODO https://fdossena.com/?p=html5cool/buttons/i.frag
  */
 button {
 	touch-action: manipulation; /* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
 
-	--border--thickness: var(--o⋄border--thickness__button, var(--o⋄border--thickness));
+	border-style: solid; /* important, not the default */
+	border-color: var(--o⋄color⁚fg--main);
+	--border--thickness: var(--o⋄border--thickness__button, calc(var(--o⋄border--thickness) * 2)); /* to allow overrides, ex. inline button */
+	border-width: var(--border--thickness);
+	border-radius: .7em; /* HIGHLY recommended to round, seen some study saying 55% more clicks */
+
+	background-color: var(--o⋄color⁚bg--highlight--1);
 
 	/* TODO fit-content ? https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content */
 	display: inline-block;
 	padding: .3em 2.1em;
 	margin: .1em; /* TODO remove and move to a container? https://mxstbr.com/thoughts/margin */
-	border: solid calc(var(--border--thickness) * 2) var(--o⋄color⁚fg--main);
 
-	background-color: var(--o⋄color⁚bg--highlight--1);
 	color: inherit;
 	text-decoration: none;
 	text-align: center;
-
-	/* stripe.com
-	box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08); */
 }
 button:hover {
 	background-color: var(--o⋄color⁚bg--highlight--2);
-	/*box-shadow: 0 0 .3em 0 var(--o⋄color⁚bg--main--backdrop);*/
 }
 button:active {
-	background-color: var(--o⋄color⁚bg--highlight--2);
-	border-color: var(--o⋄color⁚fg--activity-outline); /* reminder: button may not have a border, cf. "inline button" */
+	background-color: var(--o⋄color⁚fg--activity-outline);
+	/* reminder: button may not have a border, cf. "inline button" */
 }
 
 /************ progress ************/
