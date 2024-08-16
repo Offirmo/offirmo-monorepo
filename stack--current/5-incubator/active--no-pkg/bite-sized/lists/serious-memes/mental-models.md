@@ -114,6 +114,7 @@ Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s
 Holodomor https://en.wikipedia.org/wiki/Holodomor
 Hormesis: A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
 Horseshoe Theory: Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
+https://36questionsinlove.com/
 https://cobeats.com/folder/ryfTgPr9H
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
 ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/ https://strategyu.co/pyramid-principle-part-2-communicate-top-down/

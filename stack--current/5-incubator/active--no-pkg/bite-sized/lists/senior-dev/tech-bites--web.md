@@ -6,16 +6,17 @@
 [ ] security https://xsleaks.dev/
 [ ] TODO shearing layers https://en.wikipedia.org/wiki/Shearing_layers
 AJAX (Asynchronous JavaScript And XML) = LEGACY interactive web apps now fetch + json
+AMP (Accelerated Mobile Pages)
 APIs web
 appli web
 architecture -- Islands
 architecture -- JAMStack = [JavaScript, APIs, Markup] as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
 architecture -- LAMP (outdated) Linux, Apache, MySQL, PHP/Python/Perl
-architecture -- SSR, ISR, CSR, PPR (see 'rendering')
 architecture -- MEAN (MongoDB, Express.js, Angular, Node.js)
+architecture -- SSR, ISR, CSR, PPR (see 'rendering')
 ARIA (Accessible Rich Internet Applications)
+Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 CDN
-AMP (Accelerated Mobile Pages)
 Chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
 client/server -- multi-tier architecture -- 01 presentation
 client/server -- multi-tier architecture -- 02 application

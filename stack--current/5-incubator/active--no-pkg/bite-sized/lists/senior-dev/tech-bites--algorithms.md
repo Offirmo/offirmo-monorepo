@@ -65,6 +65,7 @@ heap -- top k elements
 heuristic https://en.wikipedia.org/wiki/Heuristic_(computer_science)
 Highest common factor (HCF) = greatest common divisor
 Huffman coding https://en.wikipedia.org/wiki/Huffman_coding
+idempotent = operation can run multiple times without changing the result
 Josephus Problem
 list -- floyd's cycle detection
 LLM -- temperature scaling

@@ -1,12 +1,12 @@
-
 1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
 1% rule -- lurk, lurker
 1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
-12 factors https://12factor.net/
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 [ ] +++ https://github.com/donnemartin/system-design-primer
 [ ] +++ https://lethain.com/distributed-systems-vocabulary/
 [ ] architecture https://engineering.fb.com/2020/08/17/production-engineering/async/
+[ ] concepts https://dgraph.io/docs/design-concepts/
+[ ] great articles https://dgraph.io/blog/
 [ ] https://carloarg02.medium.com/how-i-scaled-amazons-load-generator-to-run-on-1000s-of-machines-4ca8f53812cf
 [ ] https://medium.com/@sureshpodeti/system-design-twitter-a98e7d134634
 [ ] https://newsletter.pragmaticengineer.com/p/building-the-threads-app
@@ -52,6 +52,19 @@ app -- security
 app -- session
 app -- state
 app -- state -- structure
+architecture -- 12 factors -- 01 Codebase =  One codebase tracked in revision control, many deploys
+architecture -- 12 factors -- 02 Dependencies = Explicitly declare and isolate dependencies
+architecture -- 12 factors -- 03 Config = Store config in the environment
+architecture -- 12 factors -- 04 Backing services = Treat backing services as attached resources
+architecture -- 12 factors -- 05 Build, release, run = Strictly separate build and run stages
+architecture -- 12 factors -- 06 Processes = Execute the app as one or more stateless processes
+architecture -- 12 factors -- 07 Port binding = Export services via port binding
+architecture -- 12 factors -- 08 Concurrency = Scale out via the process model
+architecture -- 12 factors -- 09 Disposability = Maximize robustness with fast startup and graceful shutdown
+architecture -- 12 factors -- 10 Dev/prod parity = Keep development, staging, and production as similar as possible
+architecture -- 12 factors -- 11 Logs = Treat logs as event streams
+architecture -- 12 factors -- 12 Admin processes = Run admin/management tasks as one-off processes
+architecture -- 12 factors https://12factor.net/
 architecture -- entitlement (vs. billing) = a customer’s access to a specific feature or product, within a given plan +++https://arnon.dk/why-you-should-separate-your-billing-from-entitlement/
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
 architecture -- LAMP
@@ -64,10 +77,16 @@ availability
 availability zone
 AWS Shield
 AWS WAF
+back of the envelope
 back-off and retry mechanisms
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 Backends For Frontends -- composable https://bff-patterns.com/
 Backends For Frontends -- tradeoffs https://zknill.io/posts/backend-for-the-frontend/
+backing service = any service the app consumes over the network as part of its normal operation https://12factor.net/backing-services
+BASE -- 1BA Basically available = the system does guarantee availability, in terms of the CAP theorem.
+BASE -- 2S Soft state = state of the system may change over time, even without input. This is because of the eventual consistency model.
+BASE -- 3E Eventual consistency = the system will become consistent over time, given that the system doesn't receive input during that time.
+BASE =properties of certain databases, usually NoSQL databases. A BASE system gives up on consistency in CAP. opposite of ACID
 bloom Filters
 blue/green deployment
 cache -- counter cache https://thoughtbot.com/blog/what-is-counter-cache
@@ -101,18 +120,40 @@ Content Delivery Network (CDN) ex. CloudFront
 cron
 CRUD Create, Read, Update, Delete In SQL, the four related commands are: INSERT (for Create), SELECT (for Read), UPDATE (for Update), and DELETE (for Delete).
 data retrieval
-database
+data store -- data type -- CLOB (character large object) value can be up to 2,147,483,647 characters long. A CLOB is used to store unicode character-based data, such as large documents in any character set. https://docs.oracle.com/javadb/10.10.1.2/ref/rrefclob.html
+data store -- data type -- JSON, BSON
+data store -- database -- Graph = Neo4J, 
+data store -- database -- NoSQL = unstructured or semi-structured, less of everything SQL
+data store -- database -- SQL / relational = structured, schema, relationships, transactions
+data store -- database = specialised, for data not binary, relationships, querying, indexing, transactions https://dgraph.io/blog/post/data-store-vs-database/
+data store -- file system -- Google File System (GFS)
+data store -- file system -- Hadoop Distributed File System (HDFS)
+data store -- file system -- local / distributed
+data store -- file system = for binary, hierarchical (tree)
+data store -- google sheets https://www.jacobparis.com/content/submit-form-google-sheet https://thenewstack.io/how-to-use-google-sheets-as-a-database-with-react-and-ssr/
+data store -- KV store
+data store -- KV store -- Memcached
+data store -- KV store -- Redis
+data store -- object store -- S3
+data store -- object store = flat structure of objects + uid + metadata
 database -- Bigtable -- Cassandra = open source Bigtable-like
 database -- Bigtable -- HBase = open source Bigtable-like for Hadoop https://en.wikipedia.org/wiki/Apache_HBase
 database -- Bigtable = wide-column and key-value NoSQL database https://en.wikipedia.org/wiki/Bigtable
-database -- google sheets https://www.jacobparis.com/content/submit-form-google-sheet https://thenewstack.io/how-to-use-google-sheets-as-a-database-with-react-and-ssr/
-database -- hierarchical, relational...
+database -- enormalization = improving the performance of the database by adding redundant data
 database -- indexes
-database -- N+1 query problem = naive, inefficient query https://thoughtbot.com/blog/what-is-counter-cache
-database -- No-SQL and their applications
-database -- partitioning/Sharding
-database -- SQL
-Database per Microservice
+database -- N+1 query problem = cascade, naive, inefficient query https://guides.rubyonrails.org/active_record_querying.html#n-1-queries-problem https://thoughtbot.com/blog/what-is-counter-cache
+database -- NoSQL -- Cassandra
+database -- NoSQL -- MongoDB
+database -- partitioning -- multiple DBs or tables
+database -- partitioning vs sharding vs replication
+database -- primary, foreign key
+database -- RDBMS (Relational database management system
+database -- replica = copy for redundancy or/and perf -- read replica
+database -- sharding -- by key, range, directory https://dgraph.io/blog/post/sharding-database/
+database -- sharding -- uneven distribution
+database -- sharding https://dgraph.io/blog/post/sharding-database/
+database -- SQL (Structured Query Language))
+database -- SQL vs NoSQL - NoSQL = less features, more perf (trade offs, debatable)
 DDOS (incl. self)
 design -- 01b clarifying questions
 design -- 01b requirements -> including CAP
@@ -200,7 +241,7 @@ microservice -- design -- IDEALS -- 04 Availability over consistency = see CAP t
 microservice -- design -- IDEALS -- 05 Loose coupling = facade, adapter, wrapper
 microservice -- design -- IDEALS -- 06 Single responsibility =
 microservice -- design -- IDEALS https://www.infoq.com/articles/microservices-design-ideals/  https://www.lokajittikayatray.com/post/the-ideals-principles-every-microservice-developer-should-know  https://www.avenga.com/magazine/microservice-architecture/
-microservice -- downsides -- data recovery = need recovery in 100s of service 
+microservice -- downsides -- data recovery = need recovery in 100s of service (database per microservice)
 microservice -- downsides -- proliferation of environments (dev, staging, prod, Fedramp, Isolated Cloud...)
 microservice -- service sprawl
 middleware https://en.wikipedia.org/wiki/Middleware_(distributed_applications)

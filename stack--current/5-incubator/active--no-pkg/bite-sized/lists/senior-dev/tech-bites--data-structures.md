@@ -1,4 +1,4 @@
--- List of terms relating to algorithms and data structures https://en.wikipedia.org/wiki/List_of_terms_relating_to_algorithms_and_data_structures
+[ ] List of terms relating to algorithms and data structures https://en.wikipedia.org/wiki/List_of_terms_relating_to_algorithms_and_data_structures
 array -- associative = store (key, value) https://en.wikipedia.org/wiki/Associative_array = map, dict
 array -- dynamic -- gap buffer = allows efficient insertion and deletion operations clustered near the same location (ex. text editors) https://en.wikipedia.org/wiki/Gap_buffer
 array -- dynamic = mutable https://en.wikipedia.org/wiki/Dynamic_array

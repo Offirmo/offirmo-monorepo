@@ -39,7 +39,6 @@ authentication
 B2B (Business to Business)
 B2C (Business to Customer)
 B2G (Business to Government)
-Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 BDD (Behavior-Driven Development) https://cucumber.io/school/   Discovery -> Formulation -> Automation
 blocking
 bug -- mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html

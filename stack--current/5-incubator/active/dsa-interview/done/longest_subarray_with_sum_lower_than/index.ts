@@ -4,7 +4,7 @@ import * as util from 'node:util'
 
 /////////////////////////////////////////////////
 
-function find_longest_subarray_with_sum_lower_than(a: number[], k: number): number[] {
+function find_longest_subarray_with_sum_lower_than__v0(a: number[], k: number): number[] {
 	const sum = a.reduce((a, n) => a + n, 0)
 	if (sum <= k)
 		return a
@@ -14,10 +14,33 @@ function find_longest_subarray_with_sum_lower_than(a: number[], k: number): numb
 	return (left.length > right.length) ? left : right
 }
 
+function find_longest_subarray_with_sum_lower_than__v1(a: number[], k: number): number[] {
+	for (let l = a.length; l >=0; --l) {
+		for (let start = 0; start <= a.length - l; ++start) {
+			const candidate = a.slice(start, start + l)
+			const sum = candidate.reduce((a, n) => a + n, 0)
+			if (sum <= k)
+				return candidate
+		}
+	}
+	return []
+}
+
+function find_longest_subarray_with_sum_lower_than(a: number[], k: number): number[] {
+	for (let l = a.length; l >=0; --l) {
+		for (let start = 0; start <= a.length - l; ++start) {
+			const candidate = a.slice(start, start + l)
+			const sum = candidate.reduce((a, n) => a + n, 0)
+			if (sum <= k)
+				return candidate
+		}
+	}
+	return []
+}
+
 /////////////////////////////////////////////////
 
 describe('subarray finder', () => {
-
 	function test_case<F extends (...args: any) => any>(...args: [ ...Parameters<F>, ReturnType<F> ]): void {
 		const expected = args.pop()
 
