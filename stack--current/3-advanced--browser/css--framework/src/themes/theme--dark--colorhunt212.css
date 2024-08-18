@@ -7,17 +7,17 @@
 
 	--o⋄color⁚fg--main: var(--o⋄color⁚co212__beige);
 
-	--o⋄color⁚fg--secondary: hsla(42, 100%, 87%, 0.66);
+	--o⋄color⁚fg--secondary: hsla(42, 100%, 87%, 0.66); /* TODO color functions */
 	--o⋄color⁚fg--ancillary: hsla(42, 100%, 87%, 0.33);
 
-	--o⋄color⁚fg--accent: var(--o⋄color⁚co212__beige);
-	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚co212__blue);
+	--o⋄color⁚accent: var(--o⋄color⁚co212__beige);
+	--o⋄color⁚activity-outline: var(--o⋄color⁚co212__blue);
 	--o⋄color⁚bg--main: var(--o⋄color⁚co212__brown);
 	--o⋄color⁚bg--code: #75636a;
 
 	/* "app" mode, we don't emphasize links */
 	--o⋄color⁚fg--link:          var(--o⋄color⁚co212__beige);
-	--o⋄color⁚fg--link--visited: var(--o⋄color⁚co212__beige);
+	--o⋄color⁚fg--link--visited: var(--o⋄color⁚co212__beige); /* TODO alt */
 
 	/* no need to redefine
 	--o⋄color⁚fg--error: red;

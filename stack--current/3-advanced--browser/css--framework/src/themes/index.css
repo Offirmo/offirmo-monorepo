@@ -2,7 +2,7 @@
 @import '../consts/consts--colors--boz.css';
 @import '../consts/consts--colors--modifiers.css';
 
-/* NOTE error-report
+/* NOTE about o⋄error-report
  * This is special:
  * - we want high readability so, so we force a default mode
  * - we select *dark* mode to hint at dev (but could have selected light as well, no big deal)
@@ -13,12 +13,10 @@
 	 * We need to re-set the var usages initially set in :root {} (including from @offirmo/foundation tokens-colors.css)
 	 * To allow local overrides of the styles down in the DOM
 	 */
-	color: var(--o⋄color⁚fg--main);
-	background-color: var(--o⋄color⁚bg--main);
-	--o⋄color⁚fg--strong: var(--o⋄color⁚fg--main);
-	accent-color: var(--o⋄color⁚fg--accent);
-
-	scrollbar-color: var(--o⋄color⁚bg--highlight--1) var(--o⋄color⁚bg--main); /* <scrollbar color> <scrollbar track color> */
+	color:                var(--o⋄color⁚fg--main);
+	background-color:     var(--o⋄color⁚bg--main);
+	accent-color:         var(--o⋄color⁚accent);
+	scrollbar-color:      var(--o⋄color⁚bg--highlight--1) var(--o⋄color⁚bg--main); /* <scrollbar color> <scrollbar track color> */
 }
 
 
@@ -32,13 +30,18 @@
 	 * as suggested by https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886
 	 * Note that we use transparency to adapt to any background (cf. same link)
 	 */
-	--o⋄color⁚fg--secondary: var(--o⋄color⁚darker--66);
+	--o⋄color⁚fg--secondary: oklch(from var(--o⋄color⁚fg--main) l c h / 66%);
 	/* a color for ancillary content,
 	 * ex. ex. copyright notice in a footer
 	 * as suggested by https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886
 	 * Note that we use transparency to adapt to any background (cf. same link)
 	 */
-	--o⋄color⁚fg--ancillary: var(--o⋄color⁚darker--33);
+	--o⋄color⁚fg--ancillary: oklch(from var(--o⋄color⁚fg--main) l c h / 33%);
+	/* OPTIONAL A dedicated color for headers and <strong>.
+	 * As suggested by https://jgthms.com/web-design-in-4-minutes/#color-contrast "Color & contrast"
+	 * "nice to have", can be equal to the main color without any problem.
+	 */
+	--o⋄color⁚fg--strong: var(--o⋄color⁚fg--main);
 
 	--o⋄color⁚bg--main: white;
 	--o⋄color⁚bg--code: hsl(0, 0%, 90%);
@@ -48,19 +51,23 @@
 
 	/* An "accent color" is an easy way to add "that dash of visual flair to your UI"
 	 * cf. https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886 §6
+	 * full details https://css-tricks.com/almanac/properties/a/accent-color/
 	 * It's also an easy way to style inputs.
-	 * Note: because browsers will do auto-contrast, we need to use a light accent on light mode and vice versa
+	 * Note: this is neither a fg nor bg color.
+	 * Note: browsers will do auto-contrast https://css-tricks.com/almanac/properties/a/accent-color/
 	 */
-	--o⋄color⁚fg--accent:           var(--o⋄color⁚fg--accent--default);
+	--o⋄color⁚accent:           var(--o⋄color⁚accent--default);
 	/* Outline color for elements being interacted with,
 	 * ex. buttons being pressed, links being pressed/hovered.
 	 * Also used as focus ring color (if enabled).
+	 * Note: this is neither a fg nor bg color, let's aim for mid-way between dark and light
+	 it is supposed to be temporary so it's ok if the contrast is not great
 	 */
-	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
+	--o⋄color⁚activity-outline: var(--o⋄color⁚activity-outline--default);
 
-	/* leave links to their default colors
+	/* Ideally leave links to their default colors
 	 * UNLESS if customizing the fg color,
-	 * it usually renders better to set fg--link = fg--main
+	 * If custom, it usually renders better to set fg--link = fg--main
 	 */
 	--o⋄color⁚fg--link:          var(--o⋄color⁚fg--link--default);
 	--o⋄color⁚fg--link--visited: var(--o⋄color⁚fg--link--visited--default);
@@ -82,8 +89,9 @@
  */
 [data-o-theme^=dark], .o⋄error-report { /*  data-o-theme="dark*" */
 	--o⋄color⁚fg--main: white;
-	--o⋄color⁚fg--secondary: var(--o⋄color⁚lighter--66);
-	--o⋄color⁚fg--ancillary: var(--o⋄color⁚lighter--33);
+	--o⋄color⁚fg--secondary: oklch(from var(--o⋄color⁚fg--main) l c h / 66%);
+	--o⋄color⁚fg--ancillary: oklch(from var(--o⋄color⁚fg--main) l c h / 33%);
+	--o⋄color⁚fg--strong: var(--o⋄color⁚fg--main);
 
 	--o⋄color⁚bg--main: black;
 	--o⋄color⁚bg--code: hsl(0, 0%, 25%);
@@ -91,8 +99,8 @@
 	--o⋄color⁚bg--highlight--1: var(--o⋄color⁚lighter--20);
 	--o⋄color⁚bg--highlight--2: var(--o⋄color⁚lighter--33);
 
-	--o⋄color⁚fg--accent:           var(--o⋄color⁚fg--accent--default);
-	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
+	--o⋄color⁚accent:           var(--o⋄color⁚accent--default);
+	--o⋄color⁚activity-outline: var(--o⋄color⁚activity-outline--default);
 
 	--o⋄color⁚fg--link:          hsl(215, 100%, 67%);
 	--o⋄color⁚fg--link--visited: hsl(287, 100%, 67%); /* split complementary of link */

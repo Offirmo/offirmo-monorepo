@@ -1,5 +1,6 @@
 
 <script type="module">
+	import * as storiesⵧshared from '@offirmo-private/storypad/src/__shared/stories/html/*.stories.@(js|jsx|ts|tsx|mdx)'
 	import * as stories_reset from '../../../css--reset/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)'
 	import * as stories_foundation from '../../../css--foundation/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)'
 	import * as stories_framework from '../../../css--framework/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)'
@@ -10,6 +11,7 @@
 	import start_storypad from '@offirmo-private/storypad'
 
 	const stories = {
+		html: storiesⵧshared,
 		reset: stories_reset,
 		foundation: stories_foundation,
 		framework: stories_framework,

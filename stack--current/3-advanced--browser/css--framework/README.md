@@ -115,8 +115,8 @@ COLORS inherited from foundation
 --o⋄color⁚fg--main
 --o⋄color⁚fg--strong
 --o⋄color⁚fg--ancillary
---o⋄color⁚fg--accent
---o⋄color⁚fg--activity-outline
+--o⋄color⁚accent
+--o⋄color⁚activity-outline
 --o⋄color⁚bg--main
 --o⋄color⁚bg--code
 --o⋄color⁚bg--highlight--1

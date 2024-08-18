@@ -6,6 +6,7 @@ export function Intro() {
 	return `
 		<main>
 			<h1>${LIB}</h1>
+			<h2>Intro</h2>
 
 			<p>
 				What I’m saying is that it’s so, so simple to make sites easier to read. Websites are broken by default,
@@ -516,8 +517,26 @@ export function Fonts() {
 export function Emojis() {
 	return `
 <main>
-	<p>
-		TODO!!!
+	<p>emoji 13.1
+		https://emojipedia.org/emoji-13.1/
+
+		😮‍💨 Face Exhaling
+		😵‍💫 Face with Spiral Eyes
+		😶‍🌫️ Face in Clouds
+		❤️‍🔥 Heart on Fire
+		❤️‍🩹 Mending Heart
+		🧔‍♀️ Woman: Beard
+		🧔🏻‍♀️ Woman: Light Skin Tone, Beard
+		🧔🏼‍♀️ Woman: Medium-Light Skin Tone, Beard
+		🧔🏽‍♀️ Woman: Medium Skin Tone, Beard
+		🧔🏾‍♀️ Woman: Medium-Dark Skin Tone, Beard
+		🧔🏿‍♀️ Woman: Dark Skin Tone, Beard
+		🧔‍♂️ Man: Beard
+		🧔🏻‍♂️ Man: Light Skin Tone, Beard
+		🧔🏼‍♂️ Man: Medium-Light Skin Tone, Beard
+		🧔🏽‍♂️ Man: Medium Skin Tone, Beard
+		🧔🏾‍♂️ Man: Medium-Dark Skin Tone, Beard
+		🧔🏿‍♂️ Man: Dark Skin Tone, Beard
 	</p>
 </main>
 		`
@@ -557,6 +576,108 @@ Nicer scrollbars by default
 
 export function DemoꓽCommonMistakes() {
 	return `
+<h2>Empties</h2>
+<ol>
+	<li>empty line item, comment-only line item, and space-only line item follow:</li>
+	<li></li>
+	<li>{/* can't HTML comment from JSX*/}</li>
+	<li> </li>
+	<li>empty span [ <span></span> ], and a break [ <br/> ]</li>
+	<li>empty div follows: [<div></div>]</li>
+	<li>see also first cell of following table</li>
+</ol>
+
+
+<h2>Images</h2>
+
+<table summary="Testing image attribute based diagnostic styling" id="imgtest">
+	<thead>
+	<tr>
+		<th></th>
+		<th scope="col">no alt</th>
+		<th scope="col">empty alt</th>
+		<th scope="col">filled alt</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th scope="row">no title</th>
+		<td><img src="https://placekitten.com/64/64" /></td>
+		<td><img src="https://placekitten.com/64/64" alt="" /></td>
+		<td><img src="https://placekitten.com/64/64" alt="blah" /></td>
+	</tr>
+	<tr>
+		<th scope="row">empty title</th>
+		<td><img src="https://placekitten.com/64/64" title="" /></td>
+		<td><img src="https://placekitten.com/64/64" title="" alt="" /></td>
+		<td><img src="https://placekitten.com/64/64" title="" alt="blah" /></td>
+	</tr>
+	<tr>
+		<th scope="row">filled title</th>
+		<td><img src="https://placekitten.com/64/64" title="blah" /></td>
+		<td><img src="https://placekitten.com/64/64" title="blah" alt="" /></td>
+		<td><img src="https://placekitten.com/64/64" title="blah" alt="blah" /></td>
+	</tr>
+	</tbody>
+</table>
+
+
+<h2>Tables</h2>
+
+<table>
+	<tr>
+		<th>A</th>
+		<th>B</th>
+	</tr>
+	<tr>
+		<th>C</th>
+		<td>1</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<th scope>A</th>
+		<th scope="">B</th>
+	</tr>
+	<tr>
+		<th scope="diag">C</th>
+		<td>1</td>
+	</tr>
+</table>
+
+<table summary="">
+	<tr>
+		<th scope="col">A</th>
+		<th scope="col">B</th>
+	</tr>
+	<tr>
+		<th scope="row">C</th>
+		<td>1</td>
+	</tr>
+</table>
+
+
+<h2>Links</h2>
+
+<ol>
+	<li><a href="none">fillblah</a> (no title, filled href)</li>
+	<li><a href="none" title="">fillblah</a> (empty title, filled href)</li>
+	<li><a href="none" title="blah">fillblah</a> (filled title, filled href)</li>
+	<li><a href="#">blah#</a> (no title, '#' href)</li>
+	<li><a href="#" title="">blah#</a> (empty title, '#' href)</li>
+	<li><a href="#" title="blah">blah#</a> (filled title, '#' href)</li>
+	<li><a href="">blah</a> (no title, blank href)</li>
+	<li><a href="" title="">blah</a> (empty title, blank href)</li>
+	<li><a href="" title="blah">blah</a> (filled title, blank href)</li>
+</ol>
+
+<hr />
+<img src='http://placekitten.com/200/300'/>
+<a href='http://placekitten.com/'>a nice site in HTTP</a>
+<iframe src='http://placekitten.com/'/>
+<a href="#">Home</a>
+
 <h2>Empties</h2>
 <ol>
 	<li>empty line item, comment-only line item, and space-only line item follow:</li>

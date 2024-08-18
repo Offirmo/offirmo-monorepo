@@ -8,5 +8,5 @@
 	 * It's also an easy way to style inputs.
 	 * Note: because browsers will do auto-contrast, we need to use a light accent on light mode and vice versa
 	 */
-	accent-color: var(--o⋄color⁚fg--accent);
+	accent-color: var(--o⋄color⁚accent);
 }

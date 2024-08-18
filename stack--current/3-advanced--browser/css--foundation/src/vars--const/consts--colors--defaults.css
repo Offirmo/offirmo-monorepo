@@ -7,6 +7,6 @@
 	--o⋄color⁚fg--link--default: hsl(240, 100%, 50%);
 	--o⋄color⁚fg--link--visited--default: hsl(271, 68%, 32%);
 
-	--o⋄color⁚fg--activity-outline--default: hsl(217, 99%, 65%);
-	--o⋄color⁚fg--accent--default: hsl(212, 100%, 50%);
+	--o⋄color⁚activity-outline--default: hsl(217, 99%, 65%);
+	--o⋄color⁚accent--default: hsl(212, 100%, 50%);
 }

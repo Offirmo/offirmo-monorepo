@@ -26,7 +26,7 @@
 	 * It's also an easy way to style inputs.
 	 * Note: because browsers will do auto-contrast, we need to use a light accent on light mode and vice versa
 	 */
-	--o⋄color⁚fg--accent: var(--o⋄color⁚fg--accent--default);
+	--o⋄color⁚accent: var(--o⋄color⁚accent--default);
 
 	/* Links
 	 * @see ../elements/elements--a.css
@@ -34,12 +34,13 @@
 	--o⋄color⁚fg--link:          var(--o⋄color⁚fg--link--default);
 	--o⋄color⁚fg--link--visited: var(--o⋄color⁚fg--link--visited--default);
 
-	/* Outline color for interactive elements being interacted with,
+	/* Outline color for outlining interactive elements being interacted with,
 	 * ex. buttons being pressed, links being pressed/hovered.
 	 * Also used as focus ring color (if enabled).
-	 * Ideally should be a color that contrasts well enough with the FOREground ex. for temporary controls bgcolor.
+	 * Ideally should be a color that contrasts well enough with the FOREground (ex. used as temp bgcolor on controls)
+	 * but should also be acceptable as a fg = clicked links
 	 */
-	--o⋄color⁚fg--activity-outline: var(--o⋄color⁚fg--activity-outline--default);
+	--o⋄color⁚activity-outline: var(--o⋄color⁚activity-outline--default);
 
 	/* Variation of background color for code.
 	 * This is a very common pattern.
@@ -47,11 +48,14 @@
 	 */
 	--o⋄color⁚bg--code: hsl(0, 0%, 93%);
 
-	/* An alternative background color
+	/* Alternative background colors when we want to highlight something on the normal bg
 	 * Should be very close to the normal one.
 	 * Used when we want a slight change of background, ex.
 	 * - striped table rows
+	 * - button colors
+	 * We need a second one to further highlight, ex. hovered button should be even further highlighted
+	 * (click will have "activity-outline")
 	 */
-	--o⋄color⁚bg--highlight--1: hsla(0, 100%, 0%, .1); /* bg color visible on normal bg, ex. for buttons */
-	--o⋄color⁚bg--highlight--2: hsla(0, 100%, 0%, .3); /* alt, ex. for hovered/clicked buttons */
+	--o⋄color⁚bg--highlight--1: hsla(0, 100%, 0%, .1);
+	--o⋄color⁚bg--highlight--2: hsla(0, 100%, 0%, .3);
 }

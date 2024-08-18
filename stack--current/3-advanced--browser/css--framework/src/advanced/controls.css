@@ -13,7 +13,7 @@
  TODO dynamic width
  */
 body.user-is-tabbing *:focus {
-	outline: 5px auto var(--o⋄color⁚fg--activity-outline);
+	outline: 5px auto var(--o⋄color⁚activity-outline);
 }
 
 
@@ -48,7 +48,7 @@ button:hover {
 	background-color: var(--o⋄color⁚bg--highlight--2);
 }
 button:active {
-	background-color: var(--o⋄color⁚fg--activity-outline);
+	background-color: var(--o⋄color⁚activity-outline);
 	/* reminder: button may not have a border, cf. "inline button" */
 }
 

@@ -17,7 +17,7 @@
   - should be able to tell an already clicked link https://mashable.com/article/google-black-links
  */
 
-a {
+a, svg|a { /* we also style the embedded SVG links at the same time, see ./element--svg.css */
 	/* a color are being overwritten by the default style.
 	 * make it specific and inheritable
 	 */
@@ -45,6 +45,6 @@ a {
 		background-color: var(--o⋄color⁚bg--highlight--1);
 	}
 	&:active {
-		color: var(--o⋄color⁚fg--activity-outline);
+		color: var(--o⋄color⁚activity-outline);
 	}
 }

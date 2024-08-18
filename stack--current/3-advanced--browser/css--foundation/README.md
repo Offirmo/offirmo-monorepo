@@ -41,8 +41,8 @@ see "tokens"
 --o⋄color⁚fg--strong          = <Hx> and <strong> (nice to have, usually defaulted to fg--main) 
 --o⋄color⁚fg--ancillary       = ex. hr  (ancillary bc. we may have a "secondary/dim" and this one is even dim'er)
 
---o⋄color⁚fg--accent                 = accent color, used by forms (default blue)
---o⋄color⁚fg--activity-outline       = outline color, used by focus indicator (default another blue)
+--o⋄color⁚accent                 = accent color, used by forms (default blue)
+--o⋄color⁚activity-outline       = outline color, used by focus indicator (default another blue)
 
 --o⋄color⁚bg--main
 --o⋄color⁚bg--code            = usually some grey close to bg
