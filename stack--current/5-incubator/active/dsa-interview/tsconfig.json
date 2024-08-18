@@ -1,6 +1,7 @@
 {
 	"extends": "../../../0-meta/tsconfig.json",
 	"compilerOptions": {
+		"allowUnusedLabels": true
 	},
 	"include": [
 		"../../../0-typings-custom/**/*.ts",

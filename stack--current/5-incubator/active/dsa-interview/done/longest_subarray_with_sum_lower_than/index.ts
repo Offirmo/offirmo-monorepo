@@ -4,6 +4,7 @@ import * as util from 'node:util'
 
 /////////////////////////////////////////////////
 
+// Big O = recursive with branch = 2x branches, n depth = O(2^n)
 function find_longest_subarray_with_sum_lower_than__v0(a: number[], k: number): number[] {
 	const sum = a.reduce((a, n) => a + n, 0)
 	if (sum <= k)
@@ -14,6 +15,7 @@ function find_longest_subarray_with_sum_lower_than__v0(a: number[], k: number): 
 	return (left.length > right.length) ? left : right
 }
 
+// Big O = 3 loops (incl. reduce) = bit lower than O(n^3)
 function find_longest_subarray_with_sum_lower_than__v1(a: number[], k: number): number[] {
 	for (let l = a.length; l >=0; --l) {
 		for (let start = 0; start <= a.length - l; ++start) {
@@ -26,6 +28,7 @@ function find_longest_subarray_with_sum_lower_than__v1(a: number[], k: number): 
 	return []
 }
 
+// TODO better
 function find_longest_subarray_with_sum_lower_than(a: number[], k: number): number[] {
 	for (let l = a.length; l >=0; --l) {
 		for (let start = 0; start <= a.length - l; ++start) {
@@ -60,4 +63,5 @@ describe('subarray finder', () => {
 	test_case([ 1, 1, 1, -1 ], 2, [ 1, 1, 1, -1 ])
 	test_case([ 10, 1, 1, 10 ], 2, 0, [ 1, 1 ])
 	test_case([ 10, 1, 10, 1, 1, 10 ], 2, [ 1, 1 ])
+	// TODO add micro-bench
 })

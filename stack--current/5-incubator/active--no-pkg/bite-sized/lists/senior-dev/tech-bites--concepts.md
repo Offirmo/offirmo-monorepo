@@ -283,19 +283,18 @@ not invented here https://en.wikipedia.org/wiki/Not_invented_here
 npm
 nyan cat
 object
-OOP -- fake strengths -- abstraction
+OOP -- fake strengths -- abstraction -> any interface
 OOP -- fake strengths -- code re-use
 OOP -- fake strengths -- Dependency inversion principle
 OOP -- fake strengths -- design benefits
 OOP -- fake strengths -- encapsulation = Once an Object is created, knowledge of its implementation is not necessary for its use + Objects have the ability to hide certain parts of themselves from programmers. This prevents programmers from tampering with values they shouldn’t. Additionally, the object controls how one interacts with it, preventing other kinds of errors. For example, a programmer (or another program) cannot set the width of a window to -400.
-OOP -- fake strengths -- inheritance
+OOP -- fake strengths -- inheritance -> use composition instead
 OOP -- fake strengths -- Interface segregation principle
 OOP -- fake strengths -- Open/closed principle
 OOP -- fake strengths -- polymorphism
-OOP -- fake strengths -- polymorphism
 OOP -- fake strengths -- Single responsibility principle
 OOP -- fake strengths -- software maintenance
-OOP -- fake strengths -- Static type checking
+OOP -- fake strengths -- Static type checking -> not related to OOP
 OOP -- fake strengths https://medium.com/@jacobfriedman/object-oriented-programming-is-an-expensive-disaster-which-must-end-2cbf3ea4f89d
 OOP -- layer https://en.wikipedia.org/wiki/Layer_(object-oriented_design)
 OOP -- problems -- cross cutting concerns, diamond

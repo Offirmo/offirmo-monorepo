@@ -10,6 +10,7 @@ hash table
 heap
 map
 piece table https://en.wikipedia.org/wiki/Piece_table
+recursive data structures (structural recursion) = ex. linked list https://en.wikipedia.org/wiki/Recursion_(computer_science)#Recursive_data_structures_(structural_recursion)
 rope -- SumTree = concurrency-friendly B-tree structure to represent text, from zed https://zed.dev/blog/zed-decoded-rope-sumtree
 rope https://en.wikipedia.org/wiki/Rope_(data_structure)
 search = retrieve efficiently from a set https://en.wikipedia.org/wiki/Search_data_structure

@@ -1,6 +1,6 @@
 +++ https://www.geeksforgeeks.org/courses/data-structures-and-algorithms-in-javascript
 [ ] adhoc questions on the application of Array, Stack, Queue, HashMap, TreeMap
-[ ] analysis of algorithms -- https://www.geeksforgeeks.org/design-and-analysis-of-algorithms/
+[ ] algorithms -- analysis -- https://www.geeksforgeeks.org/design-and-analysis-of-algorithms/
 [ ] count bits
 [ ] Elements of Programming Interviews (EPI) book https://elementsofprogramminginterviews.com/2017/11/27/2017-11-27-buying-epi/
 algorithmic paradigm -- backtracking
@@ -12,19 +12,32 @@ algorithmic paradigm -- greedy algorithm
 algorithmic paradigm -- prune and search
 algorithmic paradigm -- recursion
 algorithmic paradigm = https://en.wikipedia.org/wiki/Algorithmic_paradigm
-analysis of algorithms -- big O -- analysis 01 = Figure out what the input is and what n represents.
-analysis of algorithms -- big O -- analysis 02 = Express the maximum number of operations, the algorithm performs in terms of n
-analysis of algorithms -- big O -- analysis 03 = Eliminate all excluding the highest order terms
-analysis of algorithms -- big O -- analysis 04 = Remove all the constant factors
-analysis of algorithms -- big O -- analysis https://www.geeksforgeeks.org/analysis-algorithms-big-o-analysis/
-analysis of algorithms -- big O / asymptotic notation https://en.wikipedia.org/wiki/Big_O_notation#Infinite_asymptotics
-analysis of algorithms -- big Oa -- O(1) = constant
-analysis of algorithms -- big Ob -- O(n) = linear
-analysis of algorithms -- big Oc -- O(log n) = logarithm
-analysis of algorithms -- big Od -- O(n^2) = squared / quadratic
-analysis of algorithms -- big Oe -- O(n^3) = cubic
-analysis of algorithms -- big Of -- O(2^n) = exponential
-analysis of algorithms -- big Og -- O(n!) = factorial
+algorithms -- analysis -- best case, worst case, expected case
+algorithms -- analysis -- big -- academy -- O = upper bound = "algo it at least as fast as"
+algorithms -- analysis -- big -- academy -- Θ (theta) = O and Ω = tighter bounds, ex. Θ(N) means both O(N) and Ω(N)
+algorithms -- analysis -- big -- academy -- Ω (omega) = lower bound = "algo is no faster than"
+algorithms -- analysis -- big -- amortized time, ex. auto-growing array that takes time once in a while = compute limits
+algorithms -- analysis -- big -- combining = add if sequence, multiply if "for each, do work" 
+algorithms -- analysis -- big -- identifying N
+algorithms -- analysis -- big -- industry -- O = no constant (ex. O(2N)), only the dominant (ex. O(N²+N))
+algorithms -- analysis -- big -- industry -- O = ~Θ = tightest
+algorithms -- analysis -- big -- warning, O(1) is not necessarily better than O(N), ex. transfer by plane. There is a point where O(1) will be faster for a big N, but may be high
+algorithms -- analysis -- big O -- analysis 01 = Figure out what the input is and what n represents.
+algorithms -- analysis -- big O -- analysis 02 = Express the maximum number of operations, the algorithm performs in terms of n
+algorithms -- analysis -- big O -- analysis 03 = Eliminate all excluding the highest order terms
+algorithms -- analysis -- big O -- analysis 04 = Remove all the constant factors
+algorithms -- analysis -- big O -- cheatsheet https://www.bigocheatsheet.com/
+algorithms -- analysis -- big O -- intro https://builtin.com/software-engineering-perspectives/nlogn https://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/ https://www.geeksforgeeks.org/analysis-algorithms-big-o-analysis/
+algorithms -- analysis -- big O / asymptotic notation https://en.wikipedia.org/wiki/Big_O_notation#Infinite_asymptotics
+algorithms -- analysis -- big Oa -- O(1) = constant
+algorithms -- analysis -- big Ob -- O(log n) = logarithm
+algorithms -- analysis -- big Oc -- O(n) = linear
+algorithms -- analysis -- big Od -- O(n^2) = squared / quadratic
+algorithms -- analysis -- big Oe -- O(n^3) = cubic
+algorithms -- analysis -- big Oe -- O(n^x) = polynomial
+algorithms -- analysis -- big Of -- O(2^n) O(x^n) = exponential
+algorithms -- analysis -- big Og -- O(n!) = factorial
+algorithms -- analysis -- time vs space = big space can be inefficient (processor cache)
 antisymmetric
 Best, Average and Worst Cases
 binary search: Lower bound, Upper bound, Questions where binary search is not the obvious choice
@@ -73,6 +86,9 @@ LLM output generation -- beam search = search algorithm used to generate output 
 LLM output generation -- nucleus sampling aka. top-P sampling
 LLM output generation -- sampling = search algorithm used to generate output sequences from a model during inference https://ai-guide.future.mozilla.org/content/llms-101/
 loop invariant https://en.wikipedia.org/wiki/Loop_invariant
+loop variant -- bound function = 0..N
+loop variant -- does it terminate? no infinite descending chain
+loop variant = function on state space that monotonically decrease ~= loop being iterated on https://en.wikipedia.org/wiki/Loop_variant
 Luleå algorithm https://en.wikipedia.org/wiki/Lule%C3%A5_algorithm
 MapReduce https://en.wikipedia.org/wiki/MapReduce
 Markov Chains -- absorbing -- standard form
@@ -93,8 +109,12 @@ P versus NP -- NP-hardness https://en.wikipedia.org/wiki/NP-hardness
 P versus NP -- NP-intermediate = If P and NP are different, then there exist decision problems in the region of NP that fall between P and the NP-complete problems. (If P and NP are the same class, then NP-intermediate problems do not exist because in this case every NP-complete problem would fall in P, and by definition, every problem in NP can be reduced to an NP-complete problem.)
 P versus NP -- P = easily solvable (Polynomial time)
 P versus NP https://en.wikipedia.org/wiki/P_versus_NP_problem
-recursion -- tail
-recursion -- tail call elimination
+recursion -- indirect/mutual = direct = calls itself, indirect = family f calls g calls f etc.
+recursion -- single/multiple = single = classic, multiple = ex. Fibonacci badly implemented
+recursion -- structure = wrapper (top, prepare the actual recursion) + short-circuit (check for base case) + (optional, optimization) hybrid algo depending on data, since recursion is often inefficient on small data
+recursion -- tail / tail-end = optimizable recursion
+recursion -- tail call elimination = see tail call optimization
+recursion https://en.wikipedia.org/wiki/Recursion_(computer_science)
 reflexive
 S3FIFO https://blog.jasony.me/system/cache/2023/08/01/s3fifo
 search -- binary O(log n) = half-interval, logarithmic, binary chop, dichotomic https://en.wikipedia.org/wiki/Binary_search_algorithm
@@ -115,6 +135,11 @@ sort https://en.wikipedia.org/wiki/Sorting_algorithm
 string -- pattern searching
 string -- sorting
 string -- word searching -- Knuth–Morris–Pratt algorithm (KMP) https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
-Tower of Hanoi
+tail call optimization -- support = the language/interpreter/compiler has to support it!
+tail call optimization = allow saving stack space when doing recursion by only doing a call as the last ("tail") action https://stackoverflow.com/questions/310974/what-is-tail-call-optimization
+termination
+termination -- proving
+tower of Hanoi
 Trabb Pardo-Knuth (TPK) = demo program https://en.wikipedia.org/wiki/TPK_algorithm
 transitive
+traveling salesman -- https://en.wikipedia.org/wiki/Held%E2%80%93Karp_algorithm
