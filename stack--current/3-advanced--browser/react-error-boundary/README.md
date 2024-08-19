@@ -50,3 +50,4 @@ const View = ({x}) => (
 
 
 TODO read https://www.developerway.com/posts/how-to-handle-errors-in-react
+TODO review other https://github.com/bvaughn/react-error-boundary/blob/master/src/ErrorBoundary.ts
