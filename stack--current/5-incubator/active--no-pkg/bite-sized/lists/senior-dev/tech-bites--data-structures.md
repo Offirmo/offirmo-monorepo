@@ -18,6 +18,7 @@ skip list https://en.wikipedia.org/wiki/Skip_list
 tree -- B-Tree https://en.wikipedia.org/wiki/B-tree
 tree -- check if balanced
 tree -- https://en.wikipedia.org/wiki/Tree_(data_structure)
+tree -- Merkle = hierarchical data structure that facilitates efficient verification of large datasets
 tree -- node -- internal
 tree -- node -- leaf
 tree -- node -- root

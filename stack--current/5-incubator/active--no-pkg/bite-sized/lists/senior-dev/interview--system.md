@@ -35,6 +35,28 @@ RESHADED method https://levelup.gitconnected.com/7-best-software-design-course-f
 8. Distinctive component/features
 
 
+
+High-level design (HLD) aka. macro level designing.
+1. System architecture
+2. Database design
+3. Brief description of systems, services, platforms, and relationships among modules.
+
+
+
+
+Real design:
+1. Understand the requirements: Before you begin designing the system, you need to understand the requirements. This involves talking to stakeholders and users, reviewing existing documentation, and analyzing the business processes that the system will support.
+2. Define the system architecture: Once you have a clear understanding of the requirements, you can begin defining the system architecture. This involves identifying the major components of the system and the interfaces between them.
+3. Choose the technology stack: Based on the requirements and the system architecture, you can select the technology stack. This includes choosing the programming language, database, frameworks, and libraries that will be used to implement the system.
+4. Design the modules: Next, you need to design the modules that will make up the system. This involves defining the functions that each module will perform and the data that it will manipulate.
+5. Plan for scalability: As you design the system, you need to consider how it will scale. This involves identifying potential bottlenecks and designing the system to handle increased loads.
+6. Consider security and privacy: Security and privacy should be a key consideration in system design, as mentioned later in this System Design Interview Bootcamp. This involves identifying potential security threats and designing the system to mitigate them.
+7. Test and validate: Once the system design is complete, you need to test and validate it. This involves creating test cases and scenarios that simulate real-world usage and verifying that the system meets the requirements.
+
+
+
+
+
 https://www.atlassian.com/company/careers/resources/interviewing/how-to-nail-your-engineering-interview
 
 

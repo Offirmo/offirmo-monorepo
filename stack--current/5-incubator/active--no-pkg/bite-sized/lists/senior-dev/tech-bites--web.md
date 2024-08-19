@@ -54,8 +54,8 @@ CSS -- triggers https://csstriggers.com/
 CSS -- z-index
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
-DDoS
 devices -- support
+DNS = distributed database for IP address translation
 ECMAScript - European Computer Manufacturers Association Script (ES)
 fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts

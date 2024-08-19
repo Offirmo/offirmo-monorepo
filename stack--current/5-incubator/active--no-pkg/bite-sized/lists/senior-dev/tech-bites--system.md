@@ -25,10 +25,10 @@
 [ ] real case https://deno.com/blog/how-we-built-jsr
 [ ] research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
 access control
-ACID -- 1 Atomicity "all or nothing"
-ACID -- 2 Consistency "valid state"
-ACID -- 3 Isolation "independent transactions"
-ACID -- 4 Durability "once committed, always committed"
+ACID -- 1 Atomicity = transactions are "all or nothing"
+ACID -- 2 Consistency = integrity constraints: "valid state" before+after a transaction
+ACID -- 3 Isolation = "independent transactions"
+ACID -- 4 Durability = transaction resistance to system failures "once committed, always committed"
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
 API gateway
 API-First = Built with APIs from the ground up. All functionality is exposed through an API
@@ -71,7 +71,8 @@ architecture -- LAMP
 architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) https://machalliance.org/mach-technology
 audit
 audit trail
-auth
+authentication
+authorization
 auto-scaling
 availability
 availability zone
@@ -83,15 +84,17 @@ Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 Backends For Frontends -- composable https://bff-patterns.com/
 Backends For Frontends -- tradeoffs https://zknill.io/posts/backend-for-the-frontend/
 backing service = any service the app consumes over the network as part of its normal operation https://12factor.net/backing-services
+backup
 BASE -- 1BA Basically available = the system does guarantee availability, in terms of the CAP theorem.
 BASE -- 2S Soft state = state of the system may change over time, even without input. This is because of the eventual consistency model.
 BASE -- 3E Eventual consistency = the system will become consistent over time, given that the system doesn't receive input during that time.
 BASE =properties of certain databases, usually NoSQL databases. A BASE system gives up on consistency in CAP. opposite of ACID
 bloom Filters
 blue/green deployment
+cache
 cache -- counter cache https://thoughtbot.com/blog/what-is-counter-cache
-caching
-caching -- invalidation/control
+cache -- eviction = Time-Based Eviction, Count-Based Eviction, Query Result Eviction, Cache Region Clearing
+cache -- invalidation/control
 caching -- stale-if-error
 caching -- stale-while-revalidate https://www.mnot.net/blog/2007/12/12/stale
 canary releasing
@@ -117,8 +120,10 @@ containers
 containers -- images -- golden = pre-configured and optimised container images that serve as standardised and reusable foundations for building other images (apps, services...)
 containers -- images -- Red Hat Universal Base Image (UBI) = minimal, freely redistributable base image for containerised applications, providing a consistent foundation with essential packages from Red Hat Enterprise Linux (RHEL) to build and deploy reliable and secure containers https://developers.redhat.com/products/rhel/ubi
 Content Delivery Network (CDN) ex. CloudFront
+coordination -- quorum, leader election
 cron
 CRUD Create, Read, Update, Delete In SQL, the four related commands are: INSERT (for Create), SELECT (for Read), UPDATE (for Update), and DELETE (for Delete).
+data loss
 data retrieval
 data store -- data type -- CLOB (character large object) value can be up to 2,147,483,647 characters long. A CLOB is used to store unicode character-based data, such as large documents in any character set. https://docs.oracle.com/javadb/10.10.1.2/ref/rrefclob.html
 data store -- data type -- JSON, BSON
@@ -173,17 +178,31 @@ distributed computing -- fallacies -- 7 Transport cost is zero
 distributed computing -- fallacies -- 8 The network is homogeneous
 distributed computing -- fallacies https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
 distributed queues
+distributed system -- characteristics -- Concurrency: It is naturally present in Distributed Systems, that deal with the same activity or functionality that can be performed by separate users who are in remote locations. Every local system has its independent Operating Systems and Resources.
+distributed system -- characteristics -- Fault tolerance: It cares about the reliability of the system if there is a failure in Hardware or Software, the system continues to operate properly without degrading the performance the system.
+distributed system -- characteristics -- Heterogeneity: Networks, computer hardware, operating systems, programming languages, and developer implementations can all vary and differ among dispersed system components.
+distributed system -- characteristics -- Openness: It is concerned with Extensions and improvements in the system
+distributed system -- characteristics -- Resource Sharing: It is the ability to use any Hardware, Software, or Data anywhere in the System.
+distributed system -- characteristics -- Scalability: It increases the scale of the system as a number of processors communicate with more users by accommodating to improve the responsiveness of the system.
+distributed system -- characteristics -- Transparency: It hides the complexity of the Distributed Systems to the Users and Application programs as there should be privacy in every system.
+distributed system -- failures -- Communication medium failure = happens once a web site cannot communicate with another operational site within the network. it’s typically caused by the failure of the shift nodes and/or the links of the human activity system.
+distributed system -- failures -- Method failure = the distributed system is generally halted and unable to perform the execution. Sometimes it leads to ending up the execution resulting in an associate incorrect outcome. Method failure causes the system state to deviate from specifications, and also method might fail to progress.
+distributed system -- failures -- Secondary storage device failure = occurred once the keep information can’t be accessed. This failure is sometimes caused by parity error, head crash, or dirt particles settled on the medium.
+distributed system -- failures -- System failure = the processor associated with the distributed system fails to perform the execution. This is caused by computer code errors and hardware issues. Hardware issues may involve CPU/memory/bus failure. This is assumed that whenever the system stops its execution due to some fault then the interior state is lost.
 edge
 edge "So, @vercel reverted all edge rendering back to Node.js" https://twitter.com/leeerob/status/1780705942734331983
 efficiency
 emergency response
+encryption
+encryption -- at rest
 event streaming https://kafka.apache.org/intro
 event-driven architecture = uses events to trigger and communicate between decoupled services, common with microservices
 Externalized configuration
-failure modes -- arbitrary
+failure -- hardware
+failure modes -- arbitrary = server produce arbitrary response at arbitrary times
 failure modes -- crash = no longer responding (= full omission)
 failure modes -- omission = never send a response OR never receive a request (= timing = infinite late)
-failure modes -- response
+failure modes -- response = response is flawed. value could be off or transmitted using the inappropriate control flow
 failure modes -- timing (perf) = outside the expected time interval (usually = too slow BUT rare cases of too fast, following an upgrade for ex.)
 failure modes https://medium.com/baseds/modes-of-failure-part-1-6687504bfed6
 fan-out https://www.pubnub.com/guides/what-is-fan-out-software/
@@ -225,7 +244,7 @@ log consolidation
 Mean Time Between Failures (MTBF)
 Mean Time To Detection (MTTD)
 Mean Time To Resolution/repair/recover  (MTTR) https://www.dataset.com/blog/mean-time-to-repair/
-message queue ex. AWS SQS
+message queue = temporary storage and routing system for messages exchanged between different components. ex. AWS SQS, Kafka (real time)
 messaging -- queueing -- dead letter queue (DLQ) https://en.wikipedia.org/wiki/Dead_letter_queue
 messaging -- queueing -- RabbitMQ
 messaging -- queueing https://en.wikipedia.org/wiki/Message_queue
@@ -244,6 +263,7 @@ microservice -- design -- IDEALS https://www.infoq.com/articles/microservices-de
 microservice -- downsides -- data recovery = need recovery in 100s of service (database per microservice)
 microservice -- downsides -- proliferation of environments (dev, staging, prod, Fedramp, Isolated Cloud...)
 microservice -- service sprawl
+microservice = small, loosely coupled distributed. solution to the scalability, independently deployability, and innovation challenges
 middleware https://en.wikipedia.org/wiki/Middleware_(distributed_applications)
 mitigations: code rollback, data rollback, degrade, upsize, blocklist, drain, quarantine https://www.oreilly.com/content/generic-mitigations/
 monitoring
@@ -271,7 +291,7 @@ Non-Abstract Large System Design
 non-abstract large system design (NALSD) = iterative process for designing, assessing, and evaluating distributed systems
 non-abstract large system design (NALSD) https://sre.google/classroom/distributed-pubsub/
 non-abstract large system design (NALSD) https://sre.google/classroom/imageserver/
-non-abstract large systems design (NALSD) https://sre.google/workbook/non-abstract-design/
+non-abstract large system design (NALSD) https://sre.google/workbook/non-abstract-design/
 numbers everyone should know https://static.googleusercontent.com/media/sre.google/en//static/pdf/rule-of-thumb-latency-numbers-letter.pdf
 observability
 observability -- logs -- data model https://opentelemetry.io/docs/specs/otel/logs/data-model/
@@ -303,10 +323,25 @@ polyglot persistence https://en.wikipedia.org/wiki/Polyglot_persistence
 post-mortem
 private cloud = https://threadreaderapp.com/thread/1800291897245835616.html
 protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https://stackoverflow.com/questions/731233/activemq-or-rabbitmq-or-zeromq-or https://news.ycombinator.com/item?id=9634801
+proxy server = intermediaries between client and servers. improve performance by caching, provide security by filtering incoming traffic, enable load balancing for efficient distribution of requests
 PubSub = Publish-Subscribe 
 rate limiting = control the rate of requests sent or received by a network interface (DoS, scraping) https://en.wikipedia.org/wiki/Rate_limiting
 regions
+replication = improving availability, distribute the load, and enhance fault tolerance
 request deduplication
+requirements -- functional/behavioral = end user's basic facilities that the system should offer
+requirements -- non-functional -- Flexibility
+requirements -- non-functional -- Maintainability
+requirements -- non-functional -- Performance
+requirements -- non-functional -- Portability
+requirements -- non-functional -- Reliability
+requirements -- non-functional -- Reusability
+requirements -- non-functional -- Scalability
+requirements -- non-functional -- Security
+requirements -- non-functional/non-behavioral  = quality constraints that the system must satisfy
+resilience
+REST = architectural style, stateless client-server communication model
+RESTful = systems which adhere to a set of constraints to achieve simplicity, scalability, and uniformity.
 retire, retain, rehost, re-platform, repurchase, refactor/re-architect
 scaling -- horizontally = more machines
 scaling -- load-shedding
@@ -325,6 +360,7 @@ service monitoring -- Service-level indicator (SLI) = a measurement of performan
 service monitoring -- Service-level objective (SLO) = a statement of desired performance
 service monitoring https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring
 Service Proxy Egress authentication
+single point of failure = avoidable with redundancy
 site reliability engineering (SRE) "treat operations as if it’s a software problem" https://sre.google/
 SRE -- learning 01 -- The riskiness of a mitigation should scale with the severity of the outage
 SRE -- learning 02 -- Recovery mechanisms should be fully tested before an emergency
@@ -341,7 +377,9 @@ SRE -- learnings https://sre.google/resources/practices-and-processes/twenty-yea
 SRE -- product focused = "prioritizes the product, not the service" https://sre.google/resources/practices-and-processes/product-focused-reliability-for-sre/
 SRE -- The Four Golden Signals -- Latency, Traffic, Errors, Saturation(utilisation)
 state
+stateful
 stateless -- Prefer simple, stateless services where possible
+stream processing = computing paradigm that involves the continuous processing of data streams in real-time (vs. batch). crucial in scenarios where low-latency, real-time insights, and immediate actions on data are essential
 Sustainable Architectural Decisions https://adr.github.io/
 System design is a mine-field of difficult tradeoffs
 system properties -- 01 available = end user can access it and it works as expected https://medium.com/baseds/ready-and-available-distributed-systems-161023aca378
@@ -349,6 +387,7 @@ system properties -- 02 highly available = no scheduled/unscheduled maintenance,
 system properties -- 03 fault tolerant = can even handle hardware failure (expensive to implement)
 system properties -- distributed https://courses.cs.washington.edu/courses/cse490h/07wi/readings/IntroductionToDistributedSystems.pdf
 system properties -- ready
+take-over
 telemetry -- logs https://opentelemetry.io/docs/concepts/observability-primer/#logs
 telemetry -- maps = Relationship information between time spans can be used to produce maps for services
 telemetry -- metrics -- application-based vs time-based
@@ -369,6 +408,7 @@ telemetry -- trace -- Trace Semantic Conventions https://opentelemetry.io/docs/s
 telemetry -- trace = collection of time spans and their relationships to each other. A trace represents a transaction within a service or across services
 telemetry -- tracing = the practice of capturing traces
 telemetry -- very important for distributed perf problems! (on big customers, what takes time?)
+third-party risk management
 Time to Detection (TTD)
 utilisation = How “full” or “busy” is the service?
 VPN

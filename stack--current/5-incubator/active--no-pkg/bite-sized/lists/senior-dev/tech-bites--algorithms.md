@@ -41,8 +41,10 @@ algorithms -- analysis -- time vs space = big space can be inefficient (processo
 antisymmetric
 Best, Average and Worst Cases
 binary search: Lower bound, Upper bound, Questions where binary search is not the obvious choice
+bloom filter = space-efficient probabilistic data structure used to test whether a given element is a member of a set. Achieves this by using multiple hash functions to map elements to a bit array https://www.geeksforgeeks.org/bloom-filters-introduction-and-python-implementation/
 BPE / Byte pair encoding https://github.com/openai/tiktoken
 cache-oblivious https://en.wikipedia.org/wiki/Cache-oblivious_algorithm
+checksum
 Chocolate Distribution Problem
 Communication-avoiding https://en.wikipedia.org/wiki/Communication-avoiding_algorithm
 complexity chart https://flexiple.com/algorithms/big-o-notation-cheat-sheet
