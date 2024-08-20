@@ -28,6 +28,7 @@ easter egg -- Konami Code
 emergent gameplay
 end game, post game
 Environmental Storytelling = arranging a careful selection of the objects available in a game world so that they suggest a story to the player who sees them https://www.gamedeveloper.com/design/environmental-storytelling
+foley = sound effect https://en.wikipedia.org/wiki/Foley_(filmmaking)
 fun
 fun & cool -- "a theory of fun for game design"
 fun & cool -- "I see who are the villains" (LOTRO)
@@ -38,6 +39,7 @@ fun & cool -- isekai
 fun & cool -- learning real things
 fun & cool -- realising everything we already know
 fun & cool -- true heroism
+fun -- a theory of fun for game design https://www.theoryoffun.com/
 gating
 genre
 genre -- action = emphasizing hand–eye coordination, reflexes, timing, and other physical skills. It includes fighting games, shooters, and platformers
@@ -107,6 +109,11 @@ pacifist run
 party
 permadeath
 permanently missable content
+player taxonomy -- Bartle -- ♠ Explorers
+player taxonomy -- Bartle -- ♣ Killers
+player taxonomy -- Bartle -- ♥ Socializers
+player taxonomy -- Bartle -- ♦ Achievers
+player taxonomy -- Bartle https://en.wikipedia.org/wiki/Bartle_taxonomy_of_player_types
 procedural generation
 progression system
 progression system -- power creep (to avoid)
@@ -128,6 +135,7 @@ replay value -- speedrunning
 rush
 sandbox
 softlock
+soundscape
 survival
 theorycraft https://en.wikipedia.org/wiki/Theorycraft
 titles

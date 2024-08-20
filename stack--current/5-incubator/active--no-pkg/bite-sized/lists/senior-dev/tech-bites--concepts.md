@@ -264,6 +264,7 @@ LTS, maintenance LTS, active LTS https://nodejs.org/en/about/previous-releases
 magic number
 map
 MDN
+Cupertino effect = bad spell checking Cupertino effect
 memory -- heap
 memory -- stack
 message passing https://en.wikipedia.org/wiki/Message_passing
@@ -288,7 +289,7 @@ OOP -- fake strengths -- code re-use
 OOP -- fake strengths -- Dependency inversion principle
 OOP -- fake strengths -- design benefits
 OOP -- fake strengths -- encapsulation = Once an Object is created, knowledge of its implementation is not necessary for its use + Objects have the ability to hide certain parts of themselves from programmers. This prevents programmers from tampering with values they shouldn’t. Additionally, the object controls how one interacts with it, preventing other kinds of errors. For example, a programmer (or another program) cannot set the width of a window to -400.
-OOP -- fake strengths -- inheritance -> use composition instead
+OOP -- fake strengths -- inheritance -> use composition instead https://r.je/you-do-not-need-inheritance-oop
 OOP -- fake strengths -- Interface segregation principle
 OOP -- fake strengths -- Open/closed principle
 OOP -- fake strengths -- polymorphism

@@ -633,6 +633,8 @@ Women are taught to use certain phrases to please men and potentially score a fu
     So: Sou nan da! — Really? I see! Is that so?
 
 
+https://en.wikipedia.org/wiki/Impossible_color
+
 jungle kid
 
 bride rescued from caravan, doesn't know to whom she was to be married

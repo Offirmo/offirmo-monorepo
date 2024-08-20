@@ -47,6 +47,9 @@ incumbent inertia https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_st
 jobs to be done
 land grab
 lock-in
+M&A
+M&A -- Apple 
+M&A -- killer zone = https://www.trendingtopics.eu/tech-talent-the-intricate-mechanisms-behind-apples-startup-killer-zone/
 magic moment -> habit moment
 metrics -- 40 something
 metrics -- funnel

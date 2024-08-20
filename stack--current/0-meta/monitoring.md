@@ -2,6 +2,9 @@
 
 Last updated 2024/08/01
 
+https://docs.google.com/spreadsheets/d/1vhWj4YWXYb5NtMbiQwKcO_wVN2o8NjSoEPRzU_yq7zc/
+
+
 backing services
 
 ## 3rd party statuses

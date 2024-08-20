@@ -6,10 +6,11 @@ import { Bench } from 'tinybench'
 
 /////////////////////////////////////////////////
 
+
 /////////////////////////////////////////////////
 
-function foo(x: never): never {
-	throw new Error(`NIMP!`)
+function foo(s: never): never {
+	throw new Error('TODO!')
 }
 
 /////////////////////////////////////////////////
@@ -17,7 +18,7 @@ function foo(x: never): never {
 describe('exercise', () => {
 
 	const FUT = foo
-	function testꓽcase(...args: [ ...Parameters<typeof FUT>, ReturnType<typeof FUT> ]) {
+	function test_case(...args: [ ...Parameters<typeof FUT>, ReturnType<typeof FUT> ]) {
 		const resultⵧexpected = args.pop()
 		const params: Parameters<typeof FUT> = args as any
 
@@ -30,9 +31,13 @@ describe('exercise', () => {
 		})
 	}
 
-	testꓽcase(`z`, [])
+	test_case([
+		'romane',
+		'romanus',
+		'romulus',
+	], 'rom')
 
-
+	
 	/*it.skip('should be fast', async() => {
 		// https://github.com/tinylibs/tinybench
 		console.log('Benchmarking…')
@@ -43,6 +48,6 @@ describe('exercise', () => {
 
 		await bench.warmup(); // make results more reliable, ref: https://github.com/tinylibs/tinybench/pull/50
 		await bench.run();
-		console.tree(bench.tree());
+		console.table(bench.table());
 	})*/
 })
