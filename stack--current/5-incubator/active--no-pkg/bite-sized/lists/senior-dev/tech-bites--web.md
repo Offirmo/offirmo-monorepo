@@ -78,6 +78,10 @@ JSON - Javascript Object Notation
 MDN
 MDN curriculum https://developer.mozilla.org/en-US/curriculum/
 MIME - Multipurpose Internet Mail Extensions
+monitoring -- labs = made by a lab, ex. camera
+monitoring -- Real user monitoring (RUM) = passive monitoring technology that records all user interaction with a website or client interacting with a server or cloud-based application (vs. lab) https://en.wikipedia.org/wiki/Real_user_monitoring
+monitoring -- synthetic = own test bot https://en.wikipedia.org/wiki/Synthetic_monitoring
+perf -- content jump = https://css-tricks.com/content-jumping-avoid/
 perf metrics -- "9 must known" https://twitter.com/alexxubyte/status/1769748487317651962
 perf metrics -- core web vitals -- 01 Largest Contentful Paint (LCP) = loading performance. LCP must occur within 2.5 seconds of when the page first starts loading 
 perf metrics -- core web vitals -- 02 Interaction to Next Paint (INP) = interactivity. To provide a good user experience, pages must have a INP of 200 milliseconds or less.
@@ -85,14 +89,17 @@ perf metrics -- core web vitals -- 03 Cumulative Layout Shift (CLS) = visual sta
 perf metrics -- core web vitals -- First Input Delay (FID) DEPRECATED https://web.dev/articles/fid
 perf metrics -- core web vitals https://web.dev/articles/vitals  https://web.dev/explore/learn-core-web-vitals
 perf metrics -- DOMContentLoaded (DCL) = time it takes for the full HTML code of a webpage to be loaded. The faster this happens, the faster users can see useful functionality. doesn’t include loading CSS and other assets
-perf metrics -- First Contentful Paint (FCP) = time at which content first begins to be “painted” by the browser. It can be a text, image, or even background color.
+perf metrics -- First Contentful Paint (FCP) = time at which content first begins to be “painted” by the browser. It can be a text, image, or even background color. timestamp of the first render frame with visible content
+perf metrics -- Largest Contentful Paint (LCP) = timestamp of the render frame which introduced the largest visible block-level element
 perf metrics -- Load Time = time taken by the web browser to download and display the webpage. measured in milliseconds
 perf metrics -- Page Size = total file size of all content and assets that appear on the page. Over the last several years, the page size of websites has been growing constantly
 perf metrics -- Render Blocking Resources: Some resources block other parts of the page from being loaded. It’s important to track the number of such resources. The more render-blocking resources a webpage has, the greater the delay for the browser to load the page.
 perf metrics -- Request Count = number of HTTP requests a browser has to make to fully load the page. The lower this count, the faster a website will feel to the user
 perf metrics -- Round Trip Time (RTT) = amount of time a round trip takes. A round trip constitutes a request traveling from the browser to the origin server and the response from the server going to the browser. Reducing RTT is one of the key approaches to improving a website’s performance.
 perf metrics -- Time to above-the-fold load
-perf metrics -- Time to First Byte (TTFB) = time taken by the browser to receive the first byte of data from the web server. TTFB is crucial because it indicates the general ability of the server to handle traffic
+perf metrics -- Time to First Byte (TTFB) = from the browser, time taken to receive the first byte of data from the web server. TTFB is crucial because it indicates the general ability of the server to handle traffic
+perf metrics -- Time to Interactive (TTI) = time at which the page becomes consistently responsive to user input. This is a less well-defined milestone, but is sometimes calculated as the point when the CPU and network both become idle
+perf metrics -- Time to Visually Complete (TTVC) = time of the last visible paint event. Nothing on the user’s screen should change without user input https://dropbox.tech/frontend/measuring-ttvc-web-performance-metric-open-source-library
 PWA https://whatpwacando.today/
 react
 react -- hooks

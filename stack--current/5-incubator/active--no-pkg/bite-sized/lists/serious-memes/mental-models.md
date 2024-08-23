@@ -12,10 +12,15 @@
 [ ] AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 [ ] https://amir.rachum.com/mental-models/
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
+acceptance
+advocacy
 affirmative action?
 agency
 agile "what the client wanted"
 alcohol https://podcastnotes.org/huberman-lab/episode-86-what-alcohol-does-to-your-body-brain-health-huberman-lab/  https://www.soberonadrunkplanet.com/
+ally -- barriers = Diffusion of Responsibility, Lack of Awareness or Skills, Fear of Retaliation, Fear of Causing Disruption or Embarrassment
+ally -- howto = Be Present, Provide Options, Know Your Role, follow/beware laws/policies
+ally = s/o who actively seeks to bridge differences, stand for fairness or harmony, and encourage equal opportunities for others in the workplace through thoughtful and respectful communication
 alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
@@ -32,6 +37,8 @@ biographies -- Profiles in Courage https://en.wikipedia.org/wiki/Profiles_in_Cou
 bonnes et mauvaises cartes
 brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
 broken window theory
+bullying = Lack of consideration and empathy for those without power, Disrespectful behavior that is overt or subtle (in public or behind closed doors), Verbal aggression, sarcasm, or psychological manipulation. Unreasonable or constantly changing directives and deadlines. Singling out individuals. “Mobbing,” in which a group of people gang up on an individual
+bullying = repeated pattern of offensive, intimidating, or hostile behavior(s) or language, often by a strong or other person of authority. Bullying creates a toxic atmosphere for everyone, but may be accepted by many as “part of the workplace culture”
 busy work https://en.wikipedia.org/wiki/Busy_work
 buy nice or buy twice
 can't satisfy others
@@ -62,6 +69,7 @@ democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
 dependability https://posthog.com/founders/first-ops-hire
 differences: introvert/extrovert
 discernement -- technique de pile ou face
+disrespect = lack of consideration or regard for others’ privacy, physical or emotional space, viewpoints, or belongings. Intimidation, aggressive behavior, “the silent treatment”. Thoughtless or arrogant behavior, like using profanity when someone objects to it.
 don't expect perfection -> trigger self-consciousness = counter-productive
 doublespeak: People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
 drive by
@@ -74,9 +82,11 @@ elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
 emotionally secure https://www.cnbc.com/2024/01/03/harvard-psychologist-if-you-answer-yes-to-any-of-these-questions-youre-more-emotionally-secure-than-most-people.html
 English
+equity
 every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 excuses vs. solutions
+fairness
 fake it till you make it -- Of course, it’s not really “fake it till you make it.” It’s just “fake it.”
 false good idea
 fast reading
@@ -105,6 +115,12 @@ hangry = before lunch (vs. after)
 happiness -- être heureux n'est pas nécessairement confortable
 happiness is a skill
 happiness score https://www.ted.com/talks/dominic_price_what_s_your_happiness_score
+harassment -- behaviors -- intrusive = such as unwanted touching or sexual attention
+harassment -- behaviors -- Jokes, pranks, and written or graphic material intended to demean
+harassment -- behaviors -- subtle = repeated, unwelcome, low-grade flirtation, or overt behaviors, like a racial slur.
+harassment -- gravity = A single incident can be harassment when it’s severe, like a physical threat or an assault
+harassment -- sexual = when based on a person’s sex or gender, or involves unwanted sexual behaviors. Also supervisor or anyone else in power asking for sexual favors in exchange for a job-related benefit (hiring, promotion, bonus, etc.)
+harassment = repeated pattern, or a particularly egregious instance, of offensive, intimidating, or hostile conduct. includes words and/or behavior(s) usually focused on someone’s personal characteristics—such as their race, religion, national origin, sex, age, or disability
 helicopter parent
 herbe toujours plus verte
 Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
@@ -117,10 +133,12 @@ Horseshoe Theory: Extreme opposites tend to look the same. For example, a far-ri
 https://36questionsinlove.com/
 https://cobeats.com/folder/ryfTgPr9H
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
+human trafficking
 ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/ https://strategyu.co/pyramid-principle-part-2-communicate-top-down/
 if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
 ikigai
 impostor syndrome
+inclusiveness = extend the opportunity for everyone to contribute
 influence operations
 influence operations -- breakout scale -- 01 one platform, no breakout
 influence operations -- breakout scale -- 02 one platform, breakout OR many platforms, no breakout
@@ -169,6 +187,7 @@ McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
 mental Health: I am not my thoughts and rather than feeling like I needed to have control of every situation, that by surrendering that control, I will have more control over my life than I ever did before.
 mental models +++ TODO LIST  https://fs.blog/mental-models/
 method of learning +++ https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger
+microaggressions
 mimetic Theory of Conflict: People who are similar are more likely to fight than people who are different. That’s why Civil Wars and family feuds create the worst conflicts. The closer two people are and the more equality between them, the greater the potential for conflict.
 mimetic Theory of Desire: Humans are like sheep. We don’t know what we want, so we imitate each other. Instead of creating our own desires, we desire the same things as other people. The entire advertising industry is built on this idea.
 mindset -- "What vs How" (see What vs how)
@@ -207,6 +226,7 @@ personal finance https://thewokesalaryman.substack.com/p/10-finance-revelations
 personal Knowledge Management https://fortelabs.co/blog/para/
 personal Monopoly: Corporations reward conformity, but the Internet rewards people who are unique. If you work in a creative field, strive to be the only person who does what you do. Find your own style, then run with it. Create intellectual real estate for yourself. The Internet rewards unique people. Find your unique combination of skills, interests, and personality traits. I call this a Personal Monopoly. Become the only person in the world who does what you do. Then, tell the world by sharing your knowledge.
 personal moral inventory https://domprice.me/personal-moral-inventory/
+perverse incentive https://en.wikipedia.org/wiki/Perverse_incentive
 picture the success
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
 porn
@@ -214,6 +234,7 @@ practice first what you teach
 praise in public (and private), criticize in private
 praise more than criticize
 praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism
+preach the water but drink wine / faites ce que je dis mais pas ce que je fais
 preference Falsification: People lie about their true opinions and conform to socially acceptable preferences instead. In private they’ll say one thing. In public, they’ll say another.
 pretty privilege -> karen
 priming
@@ -235,9 +256,12 @@ re-thinking established patterns
 Reach Impact Confidence Estimate (RICE)
 Reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
 rebound effect https://blog.jim-nielsen.com/2024/notes-on-making-software-by-peter-van-hardenberg/
+recruiting others to support you in addressing issue
 resource curse -- Dutch disease https://en.wikipedia.org/wiki/Dutch_disease
 resource curse = the paradox of plenty https://en.wikipedia.org/wiki/Resource_curse
 resource Curse: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources.
+respect
+rest and vest https://news.ycombinator.com/item?id=14943146
 ring theory -- 01 The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
 ring theory -- 02 When you are talking to a person in a ring smaller than yours, someone closer to the center of the crisis, the goal is to help. Listening is often more helpful than talking. But if you're going to open your mouth, first ask yourself if what you are about to say is likely to provide comfort and support. If it isn't, don't say it. Don't, for example, give advice. People who are suffering from trauma don't need advice. They need comfort and support. So say, "I'm sorry," or, "This must really be hard for you," or, "Can I bring you a pot roast?" Don't say, "You should hear what happened to me," or, "Here's what I would do if I were you." And don't say, "This is really bringing me down."
 ring theory https://en.wikipedia.org/wiki/Ring_theory_(psychology)
@@ -262,6 +286,8 @@ ship of theseus https://en.m.wikipedia.org/wiki/Ship_of_Theseus
 short term / long term
 signalling -- theory https://en.wikipedia.org/wiki/Signalling_theory
 signalling -- virtue https://en.wikipedia.org/wiki/Virtue_signalling
+significance https://www.explainxkcd.com/wiki/index.php/882:_Significant
+silent majority
 Situation Complication Question Answer (SCQA) = A Framework For Defining Problems & Hypotheses https://strategyu.co/scqa-a-framework-for-defining-problems-hypotheses/
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 SMART goal-setting framework
@@ -277,6 +303,7 @@ Sturgeon's law = "90% of everything is crap" https://en.wikipedia.org/wiki/Sturg
 Sun Tsu’s three rules of warfare -- Only fight when there is a prize worth fighting for
 Sun Tsu’s three rules of warfare -- Only fight when there is no other way of achieving your goal
 Sun Tsu’s three rules of warfare -- Only fight when you know you will win: the best fight is an unfair fight
+support
 survival of the fittest / fit enough
 survivorship bias https://en.wikipedia.org/wiki/Survivorship_bias
 SWOT

@@ -31,3 +31,6 @@
 [ ] Cristaux = spell slots, better = stronger
 [ ] Cores
 [ ] apex predators https://www.science-et-vie.com/nature-et-environnement/animaux/super-predateur-vs-predateur-quest-ce-qui-les-differencie-125095.html
+
+
+huge icebergs https://www.bbc.com/news/articles/cd168081wxvo

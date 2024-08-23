@@ -126,10 +126,11 @@ CRUD Create, Read, Update, Delete In SQL, the four related commands are: INSERT 
 data loss
 data retrieval
 data store -- data type -- CLOB (character large object) value can be up to 2,147,483,647 characters long. A CLOB is used to store unicode character-based data, such as large documents in any character set. https://docs.oracle.com/javadb/10.10.1.2/ref/rrefclob.html
-data store -- data type -- JSON, BSON
+data store -- data type -- JSON, BSON = BSON supposed to be more efficient in space but at the same time also wants to improve traversal by storing extra data, so not always better. depends on the data. 
 data store -- database -- Graph = Neo4J, 
 data store -- database -- NoSQL = unstructured or semi-structured, less of everything SQL
-data store -- database -- SQL / relational = structured, schema, relationships, transactions
+data store -- database -- relational -- Codd's 12 rules https://en.wikipedia.org/wiki/Codd%27s_12_rules
+data store -- database -- relational/SQL = structured, schema, relationships, transactions
 data store -- database = specialised, for data not binary, relationships, querying, indexing, transactions https://dgraph.io/blog/post/data-store-vs-database/
 data store -- file system -- Google File System (GFS)
 data store -- file system -- Hadoop Distributed File System (HDFS)

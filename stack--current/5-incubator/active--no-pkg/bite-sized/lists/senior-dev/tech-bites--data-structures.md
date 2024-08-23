@@ -29,8 +29,8 @@ tree -- search tree -- binary -- AVL
 tree -- search tree -- binary -- read/black
 tree -- search tree -- quadtree = variant of a Tree in which each node has zero or four children, useful for spatial indexing https://medium.com/@waleoyediran/spatial-indexing-with-quadtrees-b998ae49336
 tree -- search tree -- trie -- bitwise
-tree -- search tree -- trie -- radix (compressed trie) - patricia = radix with radix = 2
-tree -- search tree -- trie -- radix (compressed trie) https://en.wikipedia.org/wiki/Radix_tree
+tree -- search tree -- trie -- radix -- patricia = radix with radix = 2
+tree -- search tree -- trie -- radix = compressed trie https://en.wikipedia.org/wiki/Radix_tree
 tree -- search tree -- trie -- suffix tree
 tree -- search tree -- trie -- word search with counts
 tree -- search tree -- trie/digital tree/prefix tree = k-ary, can replace a hash table https://en.wikipedia.org/wiki/Trie

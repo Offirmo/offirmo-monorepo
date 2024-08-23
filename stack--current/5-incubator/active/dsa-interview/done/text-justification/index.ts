@@ -6,115 +6,122 @@ import { Bench } from 'tinybench'
 
 /////////////////////////////////////////////////
 
-class TreeNode {
-	val: number
-	left: TreeNode | null
-	right: TreeNode | null
-	constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
-		this.val = (val===undefined ? 0 : val)
-		this.left = (left===undefined ? null : left)
-		this.right = (right===undefined ? null : right)
-	}
-}
-
 /////////////////////////////////////////////////
-// https://leetcode.com/problems/binary-tree-maximum-path-sum/
+// https://leetcode.com/problems/text-justification
 
-// Complexity: O(N)
-function _maxPathSum(node: TreeNode | null): { connected: number, disconnected: number } {
-	if (!node)
-		return { connected: Number.NEGATIVE_INFINITY, disconnected: Number.NEGATIVE_INFINITY }
+// Complexity: time = O(N), space =
+function fullJustify_v0(words: string[], maxWidth: number): string[] {
+	const lines: string[][] = []
 
-	const left_sum = _maxPathSum(node.left)
-	const right_sum = _maxPathSum(node.right)
-
-	const connected = Math.max(
-		node.val,
-		node.val + left_sum.connected,
-		node.val + right_sum.connected,
-	)
-
-	const disconnected = Math.max(
-		left_sum.disconnected,
-		right_sum.disconnected,
-		left_sum.connected + node.val + right_sum.connected,
-		connected,
-	)
-
-	return { connected, disconnected }
-}
-
-function maxPathSum(root: TreeNode | null): number {
-	const { connected, disconnected } = _maxPathSum(root)
-	return Math.max(connected, disconnected)
-}
-
-/////////////////////////////////////////////////
-
-function unserialize_to_tree(treeAsArray: Array<number | null>): TreeNode | null {
-	const final_tree_depth = Math.ceil(Math.log2(treeAsArray.length + 1))
-	const val = treeAsArray.shift()!
-	if (val === null || val === undefined)
-		return null
-
-	const root = new TreeNode(val)
-
-	if (final_tree_depth === 1)
-		return root
-
-	const sub_tree_left = []
-	const sub_tree_right = []
-	for (let depth = 1; depth < final_tree_depth; ++depth) {
-		const elem_count = 2 ** depth
-		for (let i = 0; i < elem_count; ++i) {
-			if (i < elem_count/2)
-				sub_tree_left.push(treeAsArray.shift()!)
-			else
-				sub_tree_right.push(treeAsArray.shift()!)
+	const remaining_words = [ ...words]
+	while (remaining_words.length) {
+		const current_line: string[] = []
+		let remaining_width = maxWidth
+		while (remaining_words.length && remaining_width >= (remaining_words[0]!.length + (current_line.length ? 1 : 0))) {
+			remaining_width -= current_line.length ? 1 : 0 // minimum separator of 1sp
+			current_line.push(remaining_words.shift()!)
+			remaining_width -= current_line.at(-1)!.length
 		}
+		lines.push(current_line)
 	}
-	root.left = unserialize_to_tree(sub_tree_left)
-	root.right = unserialize_to_tree(sub_tree_right)
 
-	return root
+	const result = lines.map((words, i) => {
+		let remaining_space_to_spread_between_words = maxWidth - words.reduce((acc, w) => acc + w.length, 0)
+		let result = words.shift()!
+		while (words.length) {
+			const is_last_line = i === lines.length - 1
+			const sep = is_last_line
+				? ' '
+				: ''.padEnd(Math.ceil(remaining_space_to_spread_between_words / words.length))
+			result += sep
+			remaining_space_to_spread_between_words -= sep.length
+			result += words.shift()!
+		}
+		result = result.padEnd(maxWidth)
+
+		return result
+	})
+
+	return result
 }
 
-function maxPathSumFromUnserialized(treeAsArray: Array<number | null>): number {
-	const tree = unserialize_to_tree(treeAsArray)
+function fullJustify(words: string[], maxWidth: number): string[] {
+	const lines: string[][] = []
+	const remaining_space_to_spread_between_words_by_line: number[] = []
+	const remaining_words = [ ...words]
+	while (remaining_words.length) {
+		const current_line: string[] = []
+		let remaining_space = maxWidth
+		while (remaining_words.length && remaining_space >= (remaining_words[0]!.length + (current_line.length ? 1 : 0))) {
+			remaining_space -= current_line.length ? 1 : 0
+			current_line.push(remaining_words.shift()!)
+			remaining_space -= current_line.at(-1)!.length
+		}
+		lines.push(current_line)
+		remaining_space_to_spread_between_words_by_line.push(remaining_space + current_line.length - 1)
+	}
 
-	return maxPathSum(tree)
+	return lines
+		.map((words, i) => {
+			const is_last_line = i === lines.length - 1
+			if (is_last_line)
+				return words.join(' ')
+
+			let result = words.shift()!
+			let remaining_space_to_spread_between_words = remaining_space_to_spread_between_words_by_line[i]!
+			while (words.length) {
+				const sep = is_last_line
+					? ' '
+					: ''.padEnd(Math.ceil(remaining_space_to_spread_between_words / words.length))
+				result += sep
+				remaining_space_to_spread_between_words -= sep.length
+				result += words.shift()!
+			}
+			return result
+		})
+		.map(line => line.padEnd(maxWidth))
 }
-
-
 
 /////////////////////////////////////////////////
 
 describe('exercise', () => {
 
-	const FUT = maxPathSumFromUnserialized
-	function test_case(...args: [ ...Parameters<typeof FUT>, ReturnType<typeof FUT> ]) {
-		const result__expected: ReturnType<typeof FUT> = args.pop() as any
+	const FUT = fullJustify
+	function testꓽcase(...args: [ ...Parameters<typeof FUT>, ReturnType<typeof FUT> ]) {
+		const resultⵧexpected = args.pop()
 		const params: Parameters<typeof FUT> = args as any
 
-		return it(`should work -- ${util.inspect(params)} => ${util.inspect(result__expected)}`, (t) => {
-			const result__actual = FUT(...params)
-
+		return it(`should work -- ${util.inspect(params)} => ${util.inspect(resultⵧexpected)}`, (t) => {
+			const resultⵧactual = FUT(...params)
 			assert.deepEqual(
-				result__actual,
-				result__expected,
+				resultⵧactual,
+				resultⵧexpected,
 			)
 		})
 	}
 
-	test_case([1], 1)
-	test_case([1,2,3], 6)
-	test_case([-10,9,20,null,null,15,7], 42)
-	test_case([-3], -3)
-	test_case([-10, 11, 11], 12)
-	test_case([1,-2,-3,1,3,-2,null,-1], 3)
-	test_case([5,4,8,11,null,13,4,7,2,null,null,null,1], 49)
+	testꓽcase(["justification."], 16, [
+		"justification.  "
+	])
+	testꓽcase(["This", "is", "an", "example", "of", "text", "justification."], 16, [
+		"This    is    an",
+		"example  of text",
+		"justification.  "
+	])
+	testꓽcase(["What","must","be","acknowledgment","shall","be"], 16, [
+		"What   must   be",
+		"acknowledgment  ",
+		"shall be        "
+	])
+	testꓽcase(["Science","is","what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do"], 20, [
+		"Science  is  what we",
+		"understand      well",
+		"enough to explain to",
+		"a  computer.  Art is",
+		"everything  else  we",
+		"do                  "
+	])
 
-	/*
 	it('should be fast', async() => {
 		// https://github.com/tinylibs/tinybench
 		console.log('Benchmarking…')
@@ -127,5 +134,5 @@ describe('exercise', () => {
 		await bench.warmup() // make results more reliable, ref: https://github.com/tinylibs/tinybench/pull/50
 		await bench.run()
 		console.table(bench.table())
-	})*/
+	})
 })

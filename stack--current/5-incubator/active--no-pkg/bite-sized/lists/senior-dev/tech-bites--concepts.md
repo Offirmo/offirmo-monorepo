@@ -116,6 +116,7 @@ cron https://onlineornot.com/the-complete-guide-to-cron-jobs
 cross cutting concerns = aspects of a program that affect several modules without the possibility of being encapsulated in any of them https://en.wikipedia.org/wiki/Cross-cutting_concern
 CRUD (create, read, update and delete)
 crunch
+Cupertino effect = bad spell checking Cupertino effect
 currying https://en.wikipedia.org/wiki/Currying
 databases
 databases -- joins https://justinjaffray.com/joins-13-ways/
@@ -264,7 +265,6 @@ LTS, maintenance LTS, active LTS https://nodejs.org/en/about/previous-releases
 magic number
 map
 MDN
-Cupertino effect = bad spell checking Cupertino effect
 memory -- heap
 memory -- stack
 message passing https://en.wikipedia.org/wiki/Message_passing
@@ -317,6 +317,7 @@ pointer
 polyfill
 polyfill -- shim vs polyfill vs ponyfill
 polymorphism https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
+practices -- best vs. standard
 privacy -- collect and use someone's info respectfully
 privacy -- regulations/compliance AND expectations
 programming -- application

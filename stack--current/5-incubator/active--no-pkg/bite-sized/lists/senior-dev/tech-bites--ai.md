@@ -24,8 +24,6 @@ API -- Gemini https://ai.google.dev/docs/gemini_api_overview
 applied -- 2024/06 Slack Enzyme to RTL https://slack.engineering/balancing-old-tricks-with-new-feats-ai-powered-conversion-from-enzyme-to-react-testing-library-at-slack/
 assistant = entities capable of performing tasks for users. assistants operate based on the instructions in a context window + tools https://platform.openai.com/docs/introduction/assistants
 attention
-machine learning feature = ‘feature’, in this context might be something like ‘number of times UserA has viewed Issue123 in the last week', which may be a useful signal to a machine learning model
-machine learning feature store = ex. Tecton https://docs.tecton.ai/docs/introduction
 attention -- flash attention = ???
 BERT
 bias
@@ -90,6 +88,8 @@ lib -- Transformers https://github.com/huggingface/transformers  https://hugging
 LLM -- "Language Model for Dialogue Applications" (LaMDA) 137B model from Google AI
 LLM -- "Pathways Language Model" (PaLM) 540B model from Google AI
 LLMs - large language models
+machine learning feature = ‘feature’, in this context might be something like ‘number of times UserA has viewed Issue123 in the last week', which may be a useful signal to a machine learning model
+machine learning feature store = ex. Tecton https://docs.tecton.ai/docs/introduction
 Mixture of Experts (MoE) = combining models https://huggingface.co/blog/moe
 Mixture of Experts -- "sparse mixture of experts" (SMoE)
 ML - machine learning https://en.wikipedia.org/wiki/Machine_learning ~"subfield of AI that describes AI using data and algorithms without a programmer explicitly specifying the solution path through program code"
@@ -117,6 +117,8 @@ processing -- GPU vs TPU vs LPU https://medium.com/@harishramkumar/comparing-gpu
 processing -- LPU = Language Processing Units
 processing -- Meta Training and Inference Accelerator (MTIA) https://ai.meta.com/blog/next-generation-meta-training-inference-accelerator-AI-MTIA/
 processing -- TPU = Tensor Processing Units
+prompt -- generation https://www.anthropic.com/news/evaluate-prompts
+prompt -- optimization https://app.hamming.ai/prompt-optimizer
 prompting -- ROC = [Role] + [Output] + [Context], ex. You are an engineering manager, how many story points do you think this will be and why? [context] https://community.atlassian.com/t5/Jira-Software-articles/Be-an-AI-Rockstar-Prompts-in-Jira-Software/ba-p/2636811
 Pytorch
 RAG 2.0 https://medium.com/towards-artificial-intelligence/rag-2-0-finally-getting-rag-right-f74d0194a720
@@ -132,6 +134,7 @@ RLHF reinforcement learning from human feedback
 SageMaker (AWS)
 Searle's Chinese Room https://plato.stanford.edu/entries/chinese-room/
 singularity
+skilled pragmatist https://cutlefish.substack.com/p/tbm-271-the-biggest-untapped-opportunity
 sleeper agents (security) https://www.anthropic.com/research/probes-catch-sleeper-agents
 sleeper agents -- defection probes https://www.anthropic.com/research/probes-catch-sleeper-agents
 slop = unwanted AI generated content https://simonwillison.net/2024/May/8/slop/

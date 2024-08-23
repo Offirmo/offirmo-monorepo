@@ -47,5 +47,9 @@ JSM https://www.atlassian.com/software/jira/service-management
 Overall team
 
 
+## critical concepts
+
 array filtering
 - projects starred, but not archived, pagination
+
+Promise
