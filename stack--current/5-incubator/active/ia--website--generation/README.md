@@ -1,5 +1,13 @@
 
 
+
+
+
+
+/////////////////////////////
+
+
+
 > ## REMINDER: The whole point is to USE AI to get VALUE.
 > ### AI should bring value by:
 > - producing mind-blowing, creative outputs
@@ -34,5 +42,3 @@ Marketing
 
 
 ## prompt
-
-https://docs.anthropic.com/claude/docs/introduction-to-prompt-design

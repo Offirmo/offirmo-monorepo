@@ -1,8 +1,11 @@
+
 +++ https://www.geeksforgeeks.org/courses/data-structures-and-algorithms-in-javascript
 [ ] adhoc questions on the application of Array, Stack, Queue, HashMap, TreeMap
 [ ] algorithms -- analysis -- https://www.geeksforgeeks.org/design-and-analysis-of-algorithms/
 [ ] count bits
 [ ] Elements of Programming Interviews (EPI) book https://elementsofprogramminginterviews.com/2017/11/27/2017-11-27-buying-epi/
+algorithm -- efficiency = property of an algorithm which relates to the amount of computational resources used by the algorithm https://en.wikipedia.org/wiki/Algorithmic_efficiency
+algorithm = finite sequence of mathematically rigorous instructions, typically used to solve a class of specific problems or to perform a computation https://en.wikipedia.org/wiki/Algorithm
 algorithmic paradigm -- backtracking
 algorithmic paradigm -- branch and bound
 algorithmic paradigm -- brute-force search
@@ -39,6 +42,7 @@ algorithms -- analysis -- big Of -- O(2^n) O(x^n) = exponential
 algorithms -- analysis -- big Og -- O(n!) = factorial
 algorithms -- analysis -- time vs space = big space can be inefficient (processor cache)
 antisymmetric
+approximation algorithms = efficient algorithms that find approximate solutions to optimization problems (in particular NP-hard problems) with provable guarantees on the distance of the returned solution to the optimal one https://en.wikipedia.org/wiki/Approximation_algorithm
 Best, Average and Worst Cases
 binary search: Lower bound, Upper bound, Questions where binary search is not the obvious choice
 bloom filter = space-efficient probabilistic data structure used to test whether a given element is a member of a set. Achieves this by using multiple hash functions to map elements to a bit array https://www.geeksforgeeks.org/bloom-filters-introduction-and-python-implementation/
@@ -47,6 +51,7 @@ cache-oblivious https://en.wikipedia.org/wiki/Cache-oblivious_algorithm
 checksum
 Chocolate Distribution Problem
 Communication-avoiding https://en.wikipedia.org/wiki/Communication-avoiding_algorithm
+complexity chart https://flexiple.com/algorithms/big-o-notation-cheat-sheet
 complexity chart https://flexiple.com/algorithms/big-o-notation-cheat-sheet
 computational complexity -- Deletion time = time required for the update of the data structure when an input element is deleted;
 computational complexity -- Initialization time = time required for the initial construction of the data structure;
@@ -63,13 +68,15 @@ dynamic = ex. For an initial set of N numbers, dynamically maintain the maximal 
 dynamic programming
 EdgeRank = Facebook’s News Feed Algorithm https://buffer.com/resources/understanding-facebook-news-feed-algorithm/
 effacement d'une liste pendant qu'on la parcourt
+finite-state machine
 graph -- BFS https://en.wikipedia.org/wiki/Breadth-first_search
 graph -- DFS
 graph -- shortest path
 graph -- shortest path -- A*
 graph -- shortest path -- Djikstra https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 graph -- traversal -- topological sorting https://en.wikipedia.org/wiki/Topological_sorting
-greatest common divisor (GCD)
+greatest common divisor (GCD) -- https://en.wikipedia.org/wiki/Euclidean_algorithm
+greatest common divisor (GCD) https://en.wikipedia.org/wiki/Greatest_common_divisor
 greedy https://en.wikipedia.org/wiki/Greedy_algorithm
 hashing
 hashing -- consistent hashing https://en.wikipedia.org/wiki/Consistent_hashing
@@ -81,6 +88,7 @@ heuristic https://en.wikipedia.org/wiki/Heuristic_(computer_science)
 Highest common factor (HCF) = greatest common divisor
 Huffman coding https://en.wikipedia.org/wiki/Huffman_coding
 idempotent = operation can run multiple times without changing the result
+identity function
 Josephus Problem
 list -- floyd's cycle detection
 LLM -- temperature scaling
@@ -101,6 +109,8 @@ Markov Chains -- stationary distribution
 Markov Chains -- transition matrix
 Markov Chains https://www.youtube.com/watch?v=JHwyHIz6a8A
 negamax https://en.wikipedia.org/wiki/Negamax
+operation -- binary = combining 2 operands/elements
+operation -- unary
 Order of Growth
 P versus NP -- NP = "nondeterministic polynomial time" = quickly checkable (polynomially) = Class of computational decision problems for which any given yes-solution can be verified as a solution in polynomial time by a deterministic Turing machine (or solvable by a non-deterministic Turing machine in polynomial time)
 P versus NP -- NP-complete = Class of decision problems which contains the hardest problems in NP. Each NP-complete problem has to be in NP. A fast solution to any one of the NP could be used to build a quick solution to any other problem in NP https://en.wikipedia.org/wiki/NP-complete
@@ -134,6 +144,7 @@ sort -- quick
 sort -- radix sort O(nw) https://en.wikipedia.org/wiki/Radix_sort
 sort -- topological = a graph traversal in which each node is visited only after all its dependencies are visited. (need DAG) https://en.wikipedia.org/wiki/Topological_sorting
 sort https://en.wikipedia.org/wiki/Sorting_algorithm
+string -- Approximate string matching = matching despite insertion, deletion, substitution or transposition https://en.wikipedia.org/wiki/Approximate_string_matching
 string -- pattern searching
 string -- sorting
 string -- word searching -- Knuth–Morris–Pratt algorithm (KMP) https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm

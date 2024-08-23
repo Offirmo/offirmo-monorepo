@@ -117,9 +117,10 @@ processing -- GPU vs TPU vs LPU https://medium.com/@harishramkumar/comparing-gpu
 processing -- LPU = Language Processing Units
 processing -- Meta Training and Inference Accelerator (MTIA) https://ai.meta.com/blog/next-generation-meta-training-inference-accelerator-AI-MTIA/
 processing -- TPU = Tensor Processing Units
+prompt -- design https://docs.anthropic.com/claude/docs/introduction-to-prompt-design
 prompt -- generation https://www.anthropic.com/news/evaluate-prompts
 prompt -- optimization https://app.hamming.ai/prompt-optimizer
-prompting -- ROC = [Role] + [Output] + [Context], ex. You are an engineering manager, how many story points do you think this will be and why? [context] https://community.atlassian.com/t5/Jira-Software-articles/Be-an-AI-Rockstar-Prompts-in-Jira-Software/ba-p/2636811
+prompt -- ROC = [Role] + [Output] + [Context], ex. You are an engineering manager, how many story points do you think this will be and why? https://community.atlassian.com/t5/Jira-Software-articles/Be-an-AI-Rockstar-Prompts-in-Jira-Software/ba-p/2636811
 Pytorch
 RAG 2.0 https://medium.com/towards-artificial-intelligence/rag-2-0-finally-getting-rag-right-f74d0194a720
 rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-to-stay-competitive-hits-tech.html

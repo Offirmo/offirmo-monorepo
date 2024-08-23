@@ -160,6 +160,7 @@ error -- type -- domain error = out of the specification, ex. sqrt(-x) https://c
 error -- type -- logic error = errors in the internal logical of the program, such as violation of logical preconditions or class invariants https://cplusplus.com/reference/stdexcept/logic_error/
 error -- type -- runtime error = errors that can only be detected during runtime https://cplusplus.com/reference/stdexcept/runtime_error/
 error = failure = inability of a function to return a valid result, instead producing an error object describing the reason for the failure https://boostorg.github.io/leaf/#tutorial
+ETL “extract, transform, load” = the three interdependent processes of data integration used to pull data from one database and move it to another
 event loop
 execution model https://en.wikipedia.org/wiki/Execution_model
 executive
@@ -222,6 +223,7 @@ IIFE
 immutability
 inheritance -- diamond
 inheritance -- prototypal
+inheritance -- substitutability = an object (such as a class) may be replaced by a sub-object (such as a class that extends the first class) without breaking the program
 inner-platform effect https://en.wikipedia.org/wiki/Inner-platform_effect
 Interface segregation principle = instead of a class interface with all possible methods clients might need, there should be separate interfaces catering to the specific needs of each type of client https://en.wikipedia.org/wiki/Interface_segregation_principle
 Joel test
@@ -418,9 +420,19 @@ tracing https://andydote.co.uk/2023/09/19/tracing-is-better/
 transpilation / transpiler / transpiling
 tree
 tree -- walk
+type -- signature (type annotation) = defines the inputs and outputs of a function, subroutine or method
 typecast
 types
+types -- Liskov substitution principle (L of SOLID) https://en.wikipedia.org/wiki/Liskov_substitution_principle
 types -- slow types https://jsr.io/docs/about-slow-types (also in Swift: The compiler is unable to type-check this expression in reasonable time)
+types -- subtyping -- circle/ellipse or square/rectangle problem "hierarchical taxonomies are difficult to make universal" https://en.wikipedia.org/wiki/Circle%E2%80%93ellipse_problem
+types -- subtyping -- contravariance
+types -- subtyping -- covariance
+types -- subtyping -- invariants = cannot be weakened in the subtype
+types -- subtyping -- polymorphism
+types -- subtyping -- postconditions = cannot be weakened in the subtype
+types -- subtyping -- preconditions = cannot be strengthened in the subtype
+types -- subtyping https://en.wikipedia.org/wiki/Liskov_substitution_principle
 Unix philosophy (OUTDATED -> use JSON ;)) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- (much more) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- A.01 Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features"
