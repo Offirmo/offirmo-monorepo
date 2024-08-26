@@ -14,13 +14,13 @@ architecture -- JAMStack = "JavaScript, APIs, Markup" as much HTML as possible i
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
 architecture -- LAMP (outdated) Linux, Apache, MySQL, PHP/Python/Perl
 architecture -- MEAN "MongoDB, Express.js, Angular, Node.js"
-architecture -- SSR, ISR, CSR, PPR (see 'rendering')
 architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) https://machalliance.org/mach-technology
+architecture -- SSR, ISR, CSR, PPR (see 'rendering')
 ARIA "Accessible Rich Internet Applications" https://www.w3.org/WAI/ARIA/apg/
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 bot detection
 CDN
-Chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
+chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
 client/server -- multi-tier architecture -- 01 presentation
 client/server -- multi-tier architecture -- 02 application
 client/server -- multi-tier architecture -- 03 business
@@ -118,6 +118,11 @@ rendering strategy -- partial pre-rendering
 rendering strategy -- server-side rendering (SSR) = cook dishes as orders come in
 rendering strategy -- static rendering = pre-cook everything
 rendering strategy https://vercel.com/blog/how-to-choose-the-best-rendering-strategy-for-your-app
+response times -- 0.1s = about the limit for having the user feel that the system is reacting instantaneously, meaning that no special feedback is necessary except to display the result.
+response times -- 1.0s = about the limit for the user's flow of thought to stay uninterrupted, even though the user will notice the delay. Normally, no special feedback is necessary during delays of more than 0.1 but less than 1.0 second, but the user does lose the feeling of operating directly on the data.
+response times -- 10s = about the limit for keeping the user's attention focused on the dialogue. For longer delays, users will want to perform other tasks while waiting for the computer to finish, so they should be given feedback indicating when the computer expects to be done. Feedback during the delay is especially important if the response time is likely to be highly variable, since users will then not know what to expect.
+response times -- computers can be too fast! https://www.nngroup.com/articles/too-fast-ux/
+response times https://www.nngroup.com/articles/response-times-3-important-limits/
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
@@ -144,3 +149,4 @@ viewport -- visual
 viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
 Web Application Firewall (WAF)
 WebDriver BiDi https://developer.chrome.com/blog/firefox-support-in-puppeteer-with-webdriver-bidi
+Wep pages UX design -- concepts https://www.nngroup.com/courses/web-page-design/

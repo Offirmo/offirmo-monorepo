@@ -164,7 +164,6 @@
 		"sum-up": "^3",
 		"terminal-size": "^4",
 		"tildify": "^3",
-		"tinybench": "^2",
 		"ts-node": "^10",
 		"tslib": "^2",
 		"typescript": "^5",
