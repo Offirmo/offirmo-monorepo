@@ -10,7 +10,7 @@ const OPERATIONS_ORDERED = [ '^', '*', '-' ] as const
 type Operator = typeof OPERATIONS_ORDERED[number]
 
 type Operand = Node | number | string | null
-type VarMap = Map<string, number | Node>
+type VarMap = Map<string, number>
 
 /////////////////////////////////////////////////
 
