@@ -5,6 +5,7 @@
 [ ] +++ https://github.com/donnemartin/system-design-primer
 [ ] +++ https://lethain.com/distributed-systems-vocabulary/
 [ ] architecture https://engineering.fb.com/2020/08/17/production-engineering/async/
+[ ] client side API gateway "egress" TODO
 [ ] concepts https://dgraph.io/docs/design-concepts/
 [ ] great articles https://dgraph.io/blog/
 [ ] https://carloarg02.medium.com/how-i-scaled-amazons-load-generator-to-run-on-1000s-of-machines-4ca8f53812cf
@@ -26,7 +27,7 @@
 [ ] research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
 access control
 ACID -- 1 Atomicity = transactions are "all or nothing"
-ACID -- 2 Consistency = integrity constraints: "valid state" before+after a transaction
+ACID -- 2 Consistency = integrity constraints: "valid state" before AND after a transaction
 ACID -- 3 Isolation = "independent transactions"
 ACID -- 4 Durability = transaction resistance to system failures "once committed, always committed"
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
@@ -39,7 +40,7 @@ app -- API -- resilience
 app -- architecture: LAMP / JAMStack / SSR...
 app -- auth
 app -- BFFE / GraphQL / REST
-app -- collaboration: which model? XXX TODO
+app -- collaboration: which model? https://zknill.io/posts/collaboration-no-crdts/
 app -- components https://www.componentdriven.org/
 app -- constraints: mobile first ? offline first ? low latency ? criticity ?
 app -- i18n
@@ -65,10 +66,7 @@ architecture -- 12 factors -- 10 Dev/prod parity = Keep development, staging, an
 architecture -- 12 factors -- 11 Logs = Treat logs as event streams
 architecture -- 12 factors -- 12 Admin processes = Run admin/management tasks as one-off processes
 architecture -- 12 factors https://12factor.net/
-architecture -- entitlement (vs. billing) = a customer’s access to a specific feature or product, within a given plan +++https://arnon.dk/why-you-should-separate-your-billing-from-entitlement/
-architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
-architecture -- LAMP
-architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) https://machalliance.org/mach-technology
+architecture -- entitlement (vs. billing) = a customer’s access to a specific feature or product, within a given plan https://arnon.dk/why-you-should-separate-your-billing-from-entitlement/
 audit
 audit trail
 authentication
@@ -85,11 +83,10 @@ Backends For Frontends -- composable https://bff-patterns.com/
 Backends For Frontends -- tradeoffs https://zknill.io/posts/backend-for-the-frontend/
 backing service = any service the app consumes over the network as part of its normal operation https://12factor.net/backing-services
 backup
-BASE -- 1BA Basically available = the system does guarantee availability, in terms of the CAP theorem.
-BASE -- 2S Soft state = state of the system may change over time, even without input. This is because of the eventual consistency model.
-BASE -- 3E Eventual consistency = the system will become consistent over time, given that the system doesn't receive input during that time.
-BASE =properties of certain databases, usually NoSQL databases. A BASE system gives up on consistency in CAP. opposite of ACID
-bloom Filters
+BASE -- 1. BA = Basically available = the system does guarantee availability, in terms of the CAP theorem.
+BASE -- 2. S = Soft state = state of the system may change over time, even without input. This is because of the eventual consistency model.
+BASE -- 3. E = Eventual consistency = the system will become consistent over time, given that the system doesn't receive input during that time.
+BASE = properties of certain databases, usually NoSQL databases. A BASE system gives up on consistency in CAP. opposite of ACID
 blue/green deployment
 cache
 cache -- counter cache https://thoughtbot.com/blog/what-is-counter-cache
@@ -99,18 +96,17 @@ caching -- stale-if-error
 caching -- stale-while-revalidate https://www.mnot.net/blog/2007/12/12/stale
 canary releasing
 CAP https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/
-CAP Theorem -- Availability = Every request receives a (non-error) response, without the guarantee that it contains the most recent write
-CAP Theorem -- Consistency = Every read receives the most recent write or an error
-CAP Theorem -- Partition tolerance = The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes
+CAP Theorem -- 1. Consistency = Every read receives the most recent write or an error
+CAP Theorem -- 2. Availability = Every request receives a (non-error) response, without the guarantee that it contains the most recent write
+CAP Theorem -- 3. Partition tolerance = The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes
 CAP Theorem -> see also PACELC theorem
 capacity planning
 cascading failures
 cascading failures -- exponential backoff + jitter +
-change -- release tracks -- bundled = will get all of the features that were released to Preview Release Track during the previous months
-change -- release tracks -- continuous = see new features when they are released.
-change -- release tracks -- preview = will receive all updates released to Continuous Track in the last month.
+change -- release tracks -- bundled = will get all of the features that were released to Preview Release Track during the previous months (pro tier)
+change -- release tracks -- continuous = see new features when they are released (free tier)
+change -- release tracks -- preview = will receive all updates released to Continuous Track in the last month (sandbox for admis)
 chaos monkey
-client side API gateway "egress" TODO
 cloud native = leverages the full capabilities of the cloud, beyond storage and hosting, including elastic scaling of highly available resources. Functionality is updated automatically no manual effort required
 compliance
 compute
@@ -122,7 +118,7 @@ containers -- images -- Red Hat Universal Base Image (UBI) = minimal, freely red
 Content Delivery Network (CDN) ex. CloudFront
 coordination -- quorum, leader election
 cron
-CRUD Create, Read, Update, Delete In SQL, the four related commands are: INSERT (for Create), SELECT (for Read), UPDATE (for Update), and DELETE (for Delete).
+CRUD "Create, Read, Update, Delete" = In SQL, the four related commands are: INSERT (for Create), SELECT (for Read), UPDATE (for Update), and DELETE (for Delete).
 data loss
 data retrieval
 data store -- data type -- CLOB (character large object) value can be up to 2,147,483,647 characters long. A CLOB is used to store unicode character-based data, such as large documents in any character set. https://docs.oracle.com/javadb/10.10.1.2/ref/rrefclob.html
@@ -145,7 +141,7 @@ data store -- object store = flat structure of objects + uid + metadata
 database -- Bigtable -- Cassandra = open source Bigtable-like
 database -- Bigtable -- HBase = open source Bigtable-like for Hadoop https://en.wikipedia.org/wiki/Apache_HBase
 database -- Bigtable = wide-column and key-value NoSQL database https://en.wikipedia.org/wiki/Bigtable
-database -- enormalization = improving the performance of the database by adding redundant data
+database -- denormalization = improving the performance of the database by adding redundant data
 database -- indexes
 database -- N+1 query problem = cascade, naive, inefficient query https://guides.rubyonrails.org/active_record_querying.html#n-1-queries-problem https://thoughtbot.com/blog/what-is-counter-cache
 database -- NoSQL -- Cassandra
@@ -179,13 +175,13 @@ distributed computing -- fallacies -- 7 Transport cost is zero
 distributed computing -- fallacies -- 8 The network is homogeneous
 distributed computing -- fallacies https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
 distributed queues
-distributed system -- characteristics -- Concurrency: It is naturally present in Distributed Systems, that deal with the same activity or functionality that can be performed by separate users who are in remote locations. Every local system has its independent Operating Systems and Resources.
-distributed system -- characteristics -- Fault tolerance: It cares about the reliability of the system if there is a failure in Hardware or Software, the system continues to operate properly without degrading the performance the system.
-distributed system -- characteristics -- Heterogeneity: Networks, computer hardware, operating systems, programming languages, and developer implementations can all vary and differ among dispersed system components.
-distributed system -- characteristics -- Openness: It is concerned with Extensions and improvements in the system
-distributed system -- characteristics -- Resource Sharing: It is the ability to use any Hardware, Software, or Data anywhere in the System.
+distributed system -- characteristics -- Concurrency = naturally present in Distributed Systems, same activity or functionality performed by separate users who are in remote locations
+distributed system -- characteristics -- Fault tolerance = reliability = the system, if there is a failure in Hardware or Software, continues to operate properly without degrading the performance the system
+distributed system -- characteristics -- Heterogeneity = Networks, computer hardware, operating systems, programming languages, and developer implementations can all vary and differ among dispersed system components.
+distributed system -- characteristics -- Openness = possible extensions and improvements in the system
+distributed system -- characteristics -- Resource Sharing = ability to use any Hardware, Software, or Data anywhere in the System.
 distributed system -- characteristics -- Scalability: It increases the scale of the system as a number of processors communicate with more users by accommodating to improve the responsiveness of the system.
-distributed system -- characteristics -- Transparency: It hides the complexity of the Distributed Systems to the Users and Application programs as there should be privacy in every system.
+distributed system -- characteristics -- Transparency = hides the complexity of the Distributed Systems to the Users and Application programs as there should be privacy in every system.
 distributed system -- failures -- Communication medium failure = happens once a web site cannot communicate with another operational site within the network. it’s typically caused by the failure of the shift nodes and/or the links of the human activity system.
 distributed system -- failures -- Method failure = the distributed system is generally halted and unable to perform the execution. Sometimes it leads to ending up the execution resulting in an associate incorrect outcome. Method failure causes the system state to deviate from specifications, and also method might fail to progress.
 distributed system -- failures -- Secondary storage device failure = occurred once the keep information can’t be accessed. This failure is sometimes caused by parity error, head crash, or dirt particles settled on the medium.
@@ -228,10 +224,6 @@ information retrieval
 infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-code-tools
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
 integrity
-interview -- manage time: reqts + estimation - 5 min, HLD - 20 min, deep dive - 15 min, roundup - 5 min
-interview -- popular problems = designing a URL shortening service, Pastebin, Instagram, Dropbox, Facebook Messenger, Twitter, YouTube/Netflix, Typeahead Suggestion, API Rate Limiter, Twitter Search...
-interview -- popular problems = Google products: Google Search, YouTube, Google Photo Sharing and Storage, Google Docs, Google Drive...
-interview -- popular problems = Meta products: facebook, marketplace, instagram, whatsapp...
 kafka = pub/sub + store + process
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
 latency = the time that passes between an action and the resulting response
@@ -363,20 +355,20 @@ service monitoring https://cloud.google.com/stackdriver/docs/solutions/slo-monit
 Service Proxy Egress authentication
 single point of failure = avoidable with redundancy
 site reliability engineering (SRE) "treat operations as if it’s a software problem" https://sre.google/
-SRE -- learning 01 -- The riskiness of a mitigation should scale with the severity of the outage
-SRE -- learning 02 -- Recovery mechanisms should be fully tested before an emergency
-SRE -- learning 03 -- Canary all changes
-SRE -- learning 04 -- Have a "Big Red Button"
-SRE -- learning 05 -- Unit tests alone are not enough - integration testing is also needed
-SRE -- learning 06 -- COMMUNICATION CHANNELS! AND BACKUP CHANNELS!! AND BACKUPS FOR THOSE BACKUP CHANNELS!!!
-SRE -- learning 07 -- Intentionally degrade performance modes
-SRE -- learning 08 -- Test for Disaster resilience
-SRE -- learning 09 -- Automate your mitigations
-SRE -- learning 10 -- Reduce the time between rollouts, to decrease the likelihood of the rollout going wrong
-SRE -- learning 11 - A single global hardware version is a single point of failure
+SRE -- learning 01 = The riskiness of a mitigation should scale with the severity of the outage
+SRE -- learning 02 = Recovery mechanisms should be fully tested before an emergency
+SRE -- learning 03 = Canary all changes
+SRE -- learning 04 = Have a "Big Red Button"
+SRE -- learning 05 = Unit tests alone are not enough - integration testing is also needed
+SRE -- learning 06 = COMMUNICATION CHANNELS! AND BACKUP CHANNELS!! AND BACKUPS FOR THOSE BACKUP CHANNELS!!!
+SRE -- learning 07 = Intentionally degrade performance modes
+SRE -- learning 08 = Test for Disaster resilience
+SRE -- learning 09 = Automate your mitigations
+SRE -- learning 10 = Reduce the time between rollouts, to decrease the likelihood of the rollout going wrong
+SRE -- learning 11 = A single global hardware version is a single point of failure
 SRE -- learnings https://sre.google/resources/practices-and-processes/twenty-years-of-sre-lessons-learned/
 SRE -- product focused = "prioritizes the product, not the service" https://sre.google/resources/practices-and-processes/product-focused-reliability-for-sre/
-SRE -- The Four Golden Signals -- Latency, Traffic, Errors, Saturation(utilisation)
+SRE -- The Four Golden Signals = Latency, Traffic, Errors, Saturation(utilisation)
 state
 stateful
 stateless -- Prefer simple, stateless services where possible

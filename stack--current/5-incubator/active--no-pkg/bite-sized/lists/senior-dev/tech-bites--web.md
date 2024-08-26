@@ -9,13 +9,16 @@ AJAX (Asynchronous JavaScript And XML) = LEGACY interactive web apps now fetch +
 AMP (Accelerated Mobile Pages)
 APIs web
 appli web
-architecture -- Islands
-architecture -- JAMStack = [JavaScript, APIs, Markup] as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
+architecture -- islands
+architecture -- JAMStack = "JavaScript, APIs, Markup" as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
+architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
 architecture -- LAMP (outdated) Linux, Apache, MySQL, PHP/Python/Perl
-architecture -- MEAN (MongoDB, Express.js, Angular, Node.js)
+architecture -- MEAN "MongoDB, Express.js, Angular, Node.js"
 architecture -- SSR, ISR, CSR, PPR (see 'rendering')
-ARIA (Accessible Rich Internet Applications)
+architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) https://machalliance.org/mach-technology
+ARIA "Accessible Rich Internet Applications" https://www.w3.org/WAI/ARIA/apg/
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
+bot detection
 CDN
 Chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
 client/server -- multi-tier architecture -- 01 presentation
@@ -32,10 +35,9 @@ CSS -- color -- formats = hex, rgb(), hsl(), lch() https://www.joshwcomeau.com/c
 CSS -- Combinators https://courses.joshwcomeau.com/css-for-js/00-recap/04.03-combinators
 CSS -- containing block
 CSS -- fixed -- https://meyerweb.com/eric/thoughts/2011/09/12/un-fixing-fixed-elements-with-css-transforms/
-CSS -- geometric properties = affect the layout `width , height , top , left`
+CSS -- geometric properties = affect the layout = width height top left
 CSS -- immutable = classes are never to be modified, thus producing highly dependable results
 CSS -- isolate
-CSS -- triggers https://csstriggers.com/
 CSS -- layers
 CSS -- layout -- layout, paint and composite
 CSS -- layout -- reflow
@@ -60,7 +62,7 @@ DNS = distributed database for IP address translation
 ECMAScript - European Computer Manufacturers Association Script (ES)
 fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
-FORC Fear of Removing CSS https://x-team.com/blog/forc-fear-of-removing-css
+FORC "Fear of Removing CSS" = https://x-team.com/blog/forc-fear-of-removing-css
 HTML -- concepts
 HTML -- elements
 HTML -- tags
@@ -101,6 +103,7 @@ perf metrics -- Time to above-the-fold load
 perf metrics -- Time to First Byte (TTFB) = from the browser, time taken to receive the first byte of data from the web server. TTFB is crucial because it indicates the general ability of the server to handle traffic
 perf metrics -- Time to Interactive (TTI) = time at which the page becomes consistently responsive to user input. This is a less well-defined milestone, but is sometimes calculated as the point when the CPU and network both become idle
 perf metrics -- Time to Visually Complete (TTVC) = time of the last visible paint event. Nothing on the user’s screen should change without user input https://dropbox.tech/frontend/measuring-ttvc-web-performance-metric-open-source-library
+puppeteer
 PWA https://whatpwacando.today/
 react
 react -- hooks
@@ -111,7 +114,7 @@ realtime -- patterns -- Push state diff
 realtime updates https://zknill.io/posts/how-to-adopt-realtime/
 rendering strategy -- client-side rendering (CSR) = give customers ingredients to prepare themselves
 rendering strategy -- incremental static re-generation = refire cold plates
-rendering strategy -- partial pre-rendering 
+rendering strategy -- partial pre-rendering
 rendering strategy -- server-side rendering (SSR) = cook dishes as orders come in
 rendering strategy -- static rendering = pre-cook everything
 rendering strategy https://vercel.com/blog/how-to-choose-the-best-rendering-strategy-for-your-app
@@ -124,7 +127,7 @@ typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
 typology -- naked site
 UI -- Application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
-UI -- aria https://www.w3.org/WAI/ARIA/apg/
+UI -- aria
 UI -- chrome
 UI -- contrast ratio https://www.siegemedia.com/contrast-ratio
 UI -- HUD
@@ -136,7 +139,8 @@ User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dyn
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
 UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb
 viewport
-viewport -- large, small, dynamic
+viewport -- small <= dynamic <= large
 viewport -- visual
 viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
 Web Application Firewall (WAF)
+WebDriver BiDi https://developer.chrome.com/blog/firefox-support-in-puppeteer-with-webdriver-bidi

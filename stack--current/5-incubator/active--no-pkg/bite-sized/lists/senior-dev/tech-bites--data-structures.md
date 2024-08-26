@@ -7,8 +7,8 @@ ADT -- collection -- associative -- set
 ADT -- collection -- associative -- tree https://en.wikipedia.org/wiki/Tree_(data_structure)
 ADT -- collection -- linear -- list aka. sequence = ordered, same element can appear several times
 ADT -- collection -- linear -- queue -- double-ended https://en.wikipedia.org/wiki/Double-ended_queue
-ADT -- collection -- linear -- queue -- priority queue = "VIP waiting line" items have priority https://en.wikipedia.org/wiki/Priority_queue
 ADT -- collection -- linear -- queue -- priority queue -- double-ended priority queue
+ADT -- collection -- linear -- queue -- priority queue = "VIP waiting line" items have priority https://en.wikipedia.org/wiki/Priority_queue
 ADT -- collection -- linear -- queue = "waiting line" FIFO with front and back https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
 ADT -- collection -- linear -- stack = "stack of plates" LIFO push, pop, peek/top (and length/empty) https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
 ADT -- collection = several items used the same https://en.wikipedia.org/wiki/Collection_(abstract_data_type)
@@ -17,11 +17,10 @@ ADT -- map
 ADT -- multimap
 ADT -- string
 ADT -- underlying primitives = array, linked lists, binary search trees, hash tables, heap
-dictionary problem = how to efficiently implement an associative array? https://en.wikipedia.org/wiki/Associative_array
-array -- lookup table (LUT) = replace runtime computation, ex. table of logs (or rainbow table). If "universe" of keys is too big for mem, hash table is better
 array -- associative = store (key, value) = map, dict https://en.wikipedia.org/wiki/Associative_array
 array -- dynamic -- gap buffer = allows efficient insertion and deletion operations clustered near the same location (ex. text editors) https://en.wikipedia.org/wiki/Gap_buffer
 array -- dynamic = mutable https://en.wikipedia.org/wiki/Dynamic_array
+array -- lookup table (LUT) = replace runtime computation, ex. table of logs (or rainbow table). If "universe" of keys is too big for mem, hash table is better
 AST "abstract syntax tree" = data structure used in computer science to represent the structure of a program or code snippet https://en.wikipedia.org/wiki/Abstract_syntax_tree
 bloom filter = space-efficient probabilistic data structure that is used to test whether an element is a member of a set. False positive matches are possible, but false negatives are not https://en.wikipedia.org/wiki/Bloom_filter
 data structure -- probabilistic = insertion uses randomness, ex. skip list https://en.wikipedia.org/wiki/Category:Probabilistic_data_structures
@@ -31,6 +30,7 @@ data structures -- plain old (POD)
 data structures -- recursive (structural recursion) = ex. linked list https://en.wikipedia.org/wiki/Recursion_(computer_science)#Recursive_data_structures_(structural_recursion)
 deterministic acyclic finite state automaton (DAFSA)
 dictionary = associative array = map = symbol table
+dictionary problem = how to efficiently implement an associative array? https://en.wikipedia.org/wiki/Associative_array
 DSA categories -- leetcode -- 01 array / string
 DSA categories -- leetcode -- 02 two pointers
 DSA categories -- leetcode -- 03 Sliding windows

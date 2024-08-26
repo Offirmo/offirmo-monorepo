@@ -23,6 +23,11 @@
 
 
 
+interview -- manage time: reqts + estimation - 5 min, HLD - 20 min, deep dive - 15 min, roundup - 5 min
+interview -- popular problems = designing a URL shortening service, Pastebin, Instagram, Dropbox, Facebook Messenger, Twitter, YouTube/Netflix, Typeahead Suggestion, API Rate Limiter, Twitter Search...
+interview -- popular problems = Google products: Google Search, YouTube, Google Photo Sharing and Storage, Google Docs, Google Drive...
+interview -- popular problems = Meta products: facebook, marketplace, instagram, whatsapp...
+
 
 RESHADED method https://levelup.gitconnected.com/7-best-software-design-course-for-programmers-and-developers-da3e18e9135
 1. Requirements
