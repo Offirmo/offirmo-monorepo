@@ -26,6 +26,7 @@ Relaxed:
 * `"noUnusedLocals": false,` intentionally set to false. This is not a correctness risk and my editor already outlines unused vars.
                              It's convenient to over-import and this options makes it a chore to clean unused imports all the time.
 
+`"downlevelIteration"` is desirable, together with "importHelpers" https://www.typescriptlang.org/tsconfig/#downlevelIteration
 ### modules
 
 Very complicated!

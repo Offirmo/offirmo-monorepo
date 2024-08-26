@@ -209,6 +209,11 @@ hooks
 hotfix
 hypermedia
 hypertext
+IAM "identity and access management"
+IAM -- CIAM "Customer Identity and Access Management" = a type of identity and access management (IAM) that integrates authentication and authorization into customer-facing applications
+IAM -- CIAM -- 01 Improves customer registration and login experiences while reducing the risk of account takeover (a rampant problem in the consumer space because of password reuse)
+IAM -- CIAM -- 02 Offers customized and branded experiences for consumers, businesses, and enterprise customers
+IAM -- CIAM -- 03 Provides a scalable solution that can support hundreds of millions of customers
 IDE (Integrated Development Environment)
 IDEALS
 IDEALS -- 1 Interface segregation

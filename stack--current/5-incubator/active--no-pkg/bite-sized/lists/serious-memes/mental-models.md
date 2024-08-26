@@ -200,6 +200,7 @@ naiveté: abus sexuels, mafia
 needs / wants https://en.wikipedia.org/wiki/Need
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
 non-violence
+science accepts ideas only when they fit into the then-current state of the science https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy#Similar_concepts
 normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-securite-la-normalisation-de-la-deviance-suite
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
@@ -298,6 +299,7 @@ staggered contour trenches
 stakeholder
 start with the most risky / complicated
 start with why
+Stigler's law of eponymy = inventor = the one who bring to attention, not the discoverer https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy
 stoicism -- Rudyard Kipling "If" https://en.wikipedia.org/wiki/If%E2%80%94
 Sturgeon's law = "90% of everything is crap" https://en.wikipedia.org/wiki/Sturgeon%27s_law
 Sun Tsu’s three rules of warfare -- Only fight when there is a prize worth fighting for

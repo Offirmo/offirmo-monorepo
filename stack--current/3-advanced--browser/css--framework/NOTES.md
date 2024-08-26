@@ -28,3 +28,5 @@ TODO https://ishadeed.com/article/the-gap/
 maybe? https://ryanve.dev/sharp.css/
 
 TODO similar https://dev.to/lowlighter/make-naked-websites-look-great-with-matchacss-4ng7
+
+TODO https://smolcss.dev/

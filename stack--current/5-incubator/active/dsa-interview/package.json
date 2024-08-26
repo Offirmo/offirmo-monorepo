@@ -15,9 +15,9 @@
 	},
 
 	"dependencies": {
-		"tinybench": "^2"
+		"tinybench": "^2",
+		"tslib": "^2"
 	},
-
 
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",
@@ -25,12 +25,11 @@
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
 
 		"dev": "run-s clean _build:dev:watch",
-		"xxtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2023.esm/**/*spec.js'"
+		"test": "node ./dist/src.es2023.esm/index.js"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"npm-run-all": "^4",
-		"tslib": "^2"
+		"npm-run-all": "^4"
 	}
 }

@@ -114,6 +114,7 @@ player taxonomy -- Bartle -- ♣ Killers
 player taxonomy -- Bartle -- ♥ Socializers
 player taxonomy -- Bartle -- ♦ Achievers
 player taxonomy -- Bartle https://en.wikipedia.org/wiki/Bartle_taxonomy_of_player_types
+PR-generated worlds =  emergence, self-organization https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 procedural generation
 progression system
 progression system -- power creep (to avoid)

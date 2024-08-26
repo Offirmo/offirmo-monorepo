@@ -35,6 +35,7 @@ CSS -- fixed -- https://meyerweb.com/eric/thoughts/2011/09/12/un-fixing-fixed-el
 CSS -- geometric properties = affect the layout `width , height , top , left`
 CSS -- immutable = classes are never to be modified, thus producing highly dependable results
 CSS -- isolate
+CSS -- triggers https://csstriggers.com/
 CSS -- layers
 CSS -- layout -- layout, paint and composite
 CSS -- layout -- reflow

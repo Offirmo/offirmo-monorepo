@@ -1,21 +1,25 @@
 [x] List of terms relating to algorithms and data structures https://en.wikipedia.org/wiki/List_of_terms_relating_to_algorithms_and_data_structures
 ADT "abstract data type" = mathematical model for data types, defined by its behavior (semantics) from the point of view of a user of the data, for ex. can "create, compare, copy" https://en.wikipedia.org/wiki/Abstract_data_type
-ADT -- Collection
-ADT -- Container
-ADT -- Double-ended priority queue
-ADT -- Double-ended queue https://en.wikipedia.org/wiki/Double-ended_queue
-ADT -- Graph
-ADT -- List
-ADT -- Map
-ADT -- Multimap
-ADT -- Multiset
-ADT -- Priority queue
-ADT -- Queue https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
-ADT -- Set
-ADT -- Stack
-ADT -- String
-ADT -- Tree
-array -- associative = store (key, value) https://en.wikipedia.org/wiki/Associative_array = map, dict
+ADT -- collection -- associative -- associative array
+ADT -- collection -- associative -- graph
+ADT -- collection -- associative -- multiset
+ADT -- collection -- associative -- set
+ADT -- collection -- associative -- tree https://en.wikipedia.org/wiki/Tree_(data_structure)
+ADT -- collection -- linear -- list aka. sequence = ordered, same element can appear several times
+ADT -- collection -- linear -- queue -- double-ended https://en.wikipedia.org/wiki/Double-ended_queue
+ADT -- collection -- linear -- queue -- priority queue = "VIP waiting line" items have priority https://en.wikipedia.org/wiki/Priority_queue
+ADT -- collection -- linear -- queue -- priority queue -- double-ended priority queue
+ADT -- collection -- linear -- queue = "waiting line" FIFO with front and back https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
+ADT -- collection -- linear -- stack = "stack of plates" LIFO push, pop, peek/top (and length/empty) https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
+ADT -- collection = several items used the same https://en.wikipedia.org/wiki/Collection_(abstract_data_type)
+ADT -- container = several items with specific access rules https://en.wikipedia.org/wiki/Container_(abstract_data_type)
+ADT -- map
+ADT -- multimap
+ADT -- string
+ADT -- underlying primitives = array, linked lists, binary search trees, hash tables, heap
+dictionary problem = how to efficiently implement an associative array? https://en.wikipedia.org/wiki/Associative_array
+array -- lookup table (LUT) = replace runtime computation, ex. table of logs (or rainbow table). If "universe" of keys is too big for mem, hash table is better
+array -- associative = store (key, value) = map, dict https://en.wikipedia.org/wiki/Associative_array
 array -- dynamic -- gap buffer = allows efficient insertion and deletion operations clustered near the same location (ex. text editors) https://en.wikipedia.org/wiki/Gap_buffer
 array -- dynamic = mutable https://en.wikipedia.org/wiki/Dynamic_array
 AST "abstract syntax tree" = data structure used in computer science to represent the structure of a program or code snippet https://en.wikipedia.org/wiki/Abstract_syntax_tree
@@ -42,7 +46,7 @@ DSA categories -- leetcode -- 12 graph general
 DSA categories -- leetcode -- 13 Graph BFS
 DSA categories -- leetcode -- 14 Trie
 DSA categories -- leetcode -- 15 Backtracking
-DSA categories -- leetcode -- 16 Divide & conguer
+DSA categories -- leetcode -- 16 Divide & conquer
 DSA categories -- leetcode -- 17 Kadane's algorithm
 DSA categories -- leetcode -- 18 Binary Search
 DSA categories -- leetcode -- 19 Heap

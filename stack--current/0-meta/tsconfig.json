@@ -20,7 +20,7 @@
 		"strictNullChecks": true,
 		"strictPropertyInitialization": true,
 		"useUnknownInCatchVariables": true,
-
+		"downlevelIteration": true,
 
 		"allowUmdGlobalAccess": false,
 		"module": "ES2022",
