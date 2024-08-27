@@ -4,7 +4,7 @@
 		"noPropertyAccessFromIndexSignature": false
 	},
 	"include": [
-		"../../../0-typings-custom/**/*.ts",
+		"../../../0-meta/typescript-custom-typings/*.d.ts",
 		"src/**/*.ts"
 	]
 }

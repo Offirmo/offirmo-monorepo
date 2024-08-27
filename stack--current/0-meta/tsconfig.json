@@ -70,7 +70,7 @@
 		"skipLibCheck": true
 	},
 	"include": [
-		"./0-typings-custom/**/*.ts",
-		"@total-typescript/ts-reset"
+		"don't bother, this is NOT inherited!",
+		"ref: https://www.typescriptlang.org/tsconfig/#extends"
 	]
 }
