@@ -21,6 +21,7 @@ Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 bot detection
 CDN
 chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
+Chrome is not the standard https://v4.chriskrycho.com/2017/chrome-is-not-the-standard.html
 client/server -- multi-tier architecture -- 01 presentation
 client/server -- multi-tier architecture -- 02 application
 client/server -- multi-tier architecture -- 03 business
@@ -62,6 +63,7 @@ DNS = distributed database for IP address translation
 ECMAScript - European Computer Manufacturers Association Script (ES)
 fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
+fonts -- Font Friday https://pimpmytype.com/fontfriday/
 FORC "Fear of Removing CSS" = https://x-team.com/blog/forc-fear-of-removing-css
 HTML -- concepts
 HTML -- elements
@@ -76,6 +78,7 @@ iframe -- sandbox
 iframe -- seamless
 IIFE (Immediately-Invoked Function Expression)
 interop https://developer.mozilla.org/en-US/blog/interop2023-mdn-doc-updates/
+JS -- book -- Exploring JavaScript (ES2024 Edition) https://exploringjs.com/js/book/index.html
 JS -- exports https://webpack.js.org/guides/package-exports/
 JSON - Javascript Object Notation
 MDN
@@ -84,6 +87,7 @@ MIME - Multipurpose Internet Mail Extensions
 monitoring -- labs = made by a lab, ex. camera
 monitoring -- Real user monitoring (RUM) = passive monitoring technology that records all user interaction with a website or client interacting with a server or cloud-based application (vs. lab) https://en.wikipedia.org/wiki/Real_user_monitoring
 monitoring -- synthetic = own test bot https://en.wikipedia.org/wiki/Synthetic_monitoring
+organic vs inorganic concept = coming from a real user or a bot/AI or app etc.
 perf -- content jump = https://css-tricks.com/content-jumping-avoid/
 perf metrics -- "9 must known" https://twitter.com/alexxubyte/status/1769748487317651962
 perf metrics -- core web vitals -- 01 Largest Contentful Paint (LCP) = loading performance. LCP must occur within 2.5 seconds of when the page first starts loading 
@@ -104,7 +108,7 @@ perf metrics -- Time to First Byte (TTFB) = from the browser, time taken to rece
 perf metrics -- Time to Interactive (TTI) = time at which the page becomes consistently responsive to user input. This is a less well-defined milestone, but is sometimes calculated as the point when the CPU and network both become idle
 perf metrics -- Time to Visually Complete (TTVC) = time of the last visible paint event. Nothing on the user’s screen should change without user input https://dropbox.tech/frontend/measuring-ttvc-web-performance-metric-open-source-library
 puppeteer
-PWA https://whatpwacando.today/
+PWA https://whatpwacando.today/ https://web.dev/learn/pwa
 react
 react -- hooks
 realtime -- patterns -- Poke/pull

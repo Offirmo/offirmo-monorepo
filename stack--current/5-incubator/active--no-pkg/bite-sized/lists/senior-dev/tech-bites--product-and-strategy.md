@@ -11,6 +11,7 @@ boring -- culture
 boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
 boring -- technology https://mcfunley.com/choose-boring-technology
 churn
+computers should adapt to users = not necessarily if the solution is good (ex. typing on a keyboard, Palm Graffiti) https://www.creativitypost.com/technology/the_memory_prediction_framework_of_intelligence_and_the_subject_of_creativi
 customer segmentation = Strategic, Enterprise, Mid-Market, SMB
 earliest -- 01 feedback-able product (EFP)
 earliest -- 02 testable product = first release that customers can actually do something with
@@ -53,6 +54,7 @@ M&A -- killer zone = https://www.trendingtopics.eu/tech-talent-the-intricate-mec
 magic moment -> habit moment
 metrics -- 40 something
 metrics -- funnel
+metrics -- Monthly Core User (MCU) = a user who do core actions at least X times in the last 28 days
 metrics -- retention
 metrics -- serviceable addressable market (SAM) = TAM we can reasonably reach
 metrics -- total addressable market (TAM)

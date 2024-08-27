@@ -11,6 +11,7 @@
 [ ] AAA TODO https://flinkliv.com/
 [ ] AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 [ ] https://amir.rachum.com/mental-models/
+[ ] https://perell.com/essay/50-ideas-that-changed-my-life/
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 acceptance
 advocacy
@@ -200,7 +201,6 @@ naiveté: abus sexuels, mafia
 needs / wants https://en.wikipedia.org/wiki/Need
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
 non-violence
-science accepts ideas only when they fit into the then-current state of the science https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy#Similar_concepts
 normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-securite-la-normalisation-de-la-deviance-suite
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
@@ -225,6 +225,7 @@ personal finance -- FIRE
 personal finance -- HENRY
 personal finance https://thewokesalaryman.substack.com/p/10-finance-revelations
 personal Knowledge Management https://fortelabs.co/blog/para/
+personal knowledge base https://en.wikipedia.org/wiki/Personal_knowledge_base
 personal Monopoly: Corporations reward conformity, but the Internet rewards people who are unique. If you work in a creative field, strive to be the only person who does what you do. Find your own style, then run with it. Create intellectual real estate for yourself. The Internet rewards unique people. Find your unique combination of skills, interests, and personality traits. I call this a Personal Monopoly. Become the only person in the world who does what you do. Then, tell the world by sharing your knowledge.
 personal moral inventory https://domprice.me/personal-moral-inventory/
 perverse incentive https://en.wikipedia.org/wiki/Perverse_incentive
@@ -250,6 +251,7 @@ productivity vs. impact, value
 progress over perfection
 psychological safety
 Pulitzer prize -- biographies https://en.wikipedia.org/wiki/Pulitzer_Prize_for_Biography
+purchasing "messy middle" https://www.thinkwithgoogle.com/intl/en-emea/consumer-insights/consumer-journey/navigating-purchase-behavior-and-decision-making/
 put into words
 question authority
 race to the bottom
@@ -273,6 +275,7 @@ SBI https://medium.com/pm101/the-situation-behavior-impact-feedback-framework-e2
 SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
 SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
 schadenfreude = happy ppl misfortune
+science accepts ideas only when they fit into the then-current state of the science https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy#Similar_concepts
 scientism
 second Law of Thermodynamics: The world tends towards disorder. That’s why your room becomes messier and messier over time. It’s also why an engine converts only ~35% of its energy into useful work. Time moves towards increasing one direction: increasing entropy.
 secrets are Hidden in Plain Sight:  Most people think of secrets as Easter eggs. They assume that if a secret is important, it’s necessarily going to be hard to find. The best ideas can come from things that are so well-known that they aren’t well-seen.
@@ -343,6 +346,7 @@ unlearn
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 via Negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 voleur volé
+volume hiring
 wabi-sabi https://en.wikipedia.org/wiki/Wabi-sabi
 wartime/peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 We must remember that entire societies can and often do follow the wrong path for a very long time https://news.vanderbilt.edu/2011/04/13/michael-burry-transcript/

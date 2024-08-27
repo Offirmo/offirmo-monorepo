@@ -56,6 +56,9 @@ Net worth 8 million (single income family)
 
 
 
+impressive personal page https://maximeheckel.com/
+
+
 ---
 "director ceiling" https://www.reddit.com/r/ProductManagement/comments/10ldwq7/how_to_make_the_jump_from_senior_to_director_at_a/
 

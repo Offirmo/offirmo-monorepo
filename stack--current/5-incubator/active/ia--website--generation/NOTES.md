@@ -2,7 +2,7 @@
 AI
 * https://chat.openai.com/
 * https://gemini.google.com/app
-*
+* https://suno.com/
 
 
 See

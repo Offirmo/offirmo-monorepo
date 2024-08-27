@@ -313,6 +313,8 @@ ORM (Object-Relational Mapping)
 overengineering https://blog.matt-rickard.com/p/stop-overengineering
 ownership
 pair-programming
+pattern -- matching = checking a given sequence of tokens for the presence of the constituents of some pattern. In contrast to pattern recognition, the match usually has to be exact: "either it will or will not be a match." The patterns generally have the form of either sequences or tree structures. Uses of pattern matching include outputting the locations (if any) of a pattern within a token sequence, to output some component of the matched pattern, and to substitute the matching pattern with some other token sequence (i.e., search and replace).
+pattern -- recognition = same but not exact match
 PD Personal Data
 peer review, green build = condition to merge a code change
 perf
