@@ -56,6 +56,9 @@ Net worth 8 million (single income family)
 
 
 
+https://theindieweb.com/github-has-added-profiles-here-are-the-most-creative-ones-so-far/
+
+
 impressive personal page https://maximeheckel.com/
 
 resume https://levelup.gitconnected.com/the-resume-that-got-a-software-engineer-a-300-000-job-at-google-8c5a1ecff40f

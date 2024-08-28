@@ -1,10 +1,11 @@
 12 factors https://12factor.net/
-97 Things Every Programmer Should Know
 [ ] +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
 [ ] +++ https://explorer.globe.engineer/
 [ ] +++ https://martinfowler.com/
 [ ] +++ https://www.hackterms.com/about/all
 [ ] +++ https://www.linfo.org/main_index.html
+[ ] 165 things https://news.slashdot.org/story/17/03/19/2323250/oreilly-site-lists-165-things-every-programmer-should-know
+[ ] 97 Things Every Programmer Should Know http://programmer.97things.oreilly.com/wiki/index.php/Contributions_Appearing_in_the_Book
 [ ] awesome falsehoods https://github.com/kdeldycke/awesome-falsehood
 [ ] http://meta.programmers.stackexchange.com/questions/6166/open-letter-to-students-with-homework-problems
 [ ] http://nodeschool.io/#workshoppers
@@ -14,6 +15,7 @@
 [ ] https://en.wikipedia.org/wiki/Reference_class_forecasting
 [ ] https://github.com/anvaka/npmrank/blob/master/sample/dependencies.md
 [ ] https://github.com/kilimchoi/engineering-blogs
+[ ] https://matklad.github.io/2023/08/06/fantastic-learning-resources.html
 [ ] https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
 [ ] https://www.atlassian.com/team-playbook/plays/elevator-pitch
 [ ] https://www.managingtheunmanageable.net/morerulesofthumb.html
@@ -368,8 +370,24 @@ script
 Scripts -- should be written using the project main language https://joaomagfreitas.link/scripts-should-be-written-using-the-project-main-language/
 scrum
 SDK (Software Development Kit)
+security -- Adhere to the principle of least privilege
+security -- Be aware of buffer overflows and how to protect against them
+security -- Compartmentalize - so your system is not all or nothing
+security -- Don't write your own crypto
+security -- guidelines -- CGI security https://www.cgisecurity.com/owasp/html/ch04.html
+security -- guidelines -- S/O https://stackoverflow.com/questions/2794016/what-should-every-programmer-know-about-security
+security -- Hiding secrets is hard - and secrets hidden in code won't stay secret for long
+security -- Keep it simple - complexity increases the likelihood of security holes
+security -- Keep your attack surface to a minimum
+security -- Make sure you fail securely
+security -- Never trust any input!
 security -- OWASP top 10 https://owasp.org/www-project-top-ten/
+security -- Plan for security from the start - it's not something you can bolt on at the end
 security -- principle of least privilege
+security -- Use defence in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
+security -- Use threat modelling
+security -- Using crypto doesn't mean you're secure (attackers will look for a weaker link)
+security -- Validate input from all untrusted sources - use whitelists not blacklists
 semaphore
 semver
 SHA (Secure Hash Algorithm)

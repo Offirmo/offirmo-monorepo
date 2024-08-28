@@ -9,6 +9,7 @@ AJAX (Asynchronous JavaScript And XML) = LEGACY interactive web apps now fetch +
 AMP (Accelerated Mobile Pages)
 APIs web
 appli web
+Application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
 architecture -- islands
 architecture -- JAMStack = "JavaScript, APIs, Markup" as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
@@ -29,6 +30,7 @@ client/server -- multi-tier architecture -- 04 data access
 client/server -- multi-tier architecture https://en.wikipedia.org/wiki/Multitier_architecture
 collaborative experiences https://zknill.io/posts/collaboration-no-crdts/
 components https://www.componentdriven.org/
+Contrast ratio https://www.siegemedia.com/contrast-ratio
 CORS (Cross-Origin Resource Sharing)
 CSS -- atomic = small, single-purpose classes with names based on visual function https://css-tricks.com/lets-define-exactly-atomic-css/
 CSS -- cascade https://2019.wattenberger.com/blog/css-cascade
@@ -107,7 +109,9 @@ perf metrics -- Time to above-the-fold load
 perf metrics -- Time to First Byte (TTFB) = from the browser, time taken to receive the first byte of data from the web server. TTFB is crucial because it indicates the general ability of the server to handle traffic
 perf metrics -- Time to Interactive (TTI) = time at which the page becomes consistently responsive to user input. This is a less well-defined milestone, but is sometimes calculated as the point when the CPU and network both become idle
 perf metrics -- Time to Visually Complete (TTVC) = time of the last visible paint event. Nothing on the user’s screen should change without user input https://dropbox.tech/frontend/measuring-ttvc-web-performance-metric-open-source-library
-puppeteer
+puppeteer -- firefox https://hacks.mozilla.org/2024/08/puppeteer-support-for-firefox/
+puppeteer -- vs Selenium, Playwright, Cypress https://www.testim.io/blog/puppeteer-selenium-playwright-cypress-how-to-choose/
+puppeteer https://pptr.dev/
 PWA https://whatpwacando.today/ https://web.dev/learn/pwa
 react
 react -- hooks
@@ -135,10 +139,6 @@ testing https://www.testingjavascript.com/
 typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
 typology -- naked site
-UI -- Application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
-UI -- aria
-UI -- chrome
-UI -- contrast ratio https://www.siegemedia.com/contrast-ratio
 UI -- HUD
 UI -- modals -- sheets = ~semi-modal https://en.wikipedia.org/wiki/Modal_window#Modal_sheets_in_Mac_OS_X
 UI -- modals https://en.wikipedia.org/wiki/Modal_window

@@ -1,3 +1,4 @@
+[ ] https://adrianmejia.com/how-you-can-change-the-world-learning-data-structures-algorithms-free-online-course-tutorial/
 [x] List of terms relating to algorithms and data structures https://en.wikipedia.org/wiki/List_of_terms_relating_to_algorithms_and_data_structures
 ADT "abstract data type" = mathematical model for data types, defined by its behavior (semantics) from the point of view of a user of the data, for ex. can "create, compare, copy" https://en.wikipedia.org/wiki/Abstract_data_type
 ADT -- collection -- associative -- associative array

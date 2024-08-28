@@ -27,6 +27,13 @@ easter egg
 easter egg -- Konami Code
 emergent gameplay
 end game, post game
+endgame -- GW2 -- Achievements and Community — which can take the form of socializing through Guilds or pursuing achievements and titles
+endgame -- GW2 -- Combat-based content — subdivided into open world and instanced PvE content, Structured PvP game mode, and World versus World mode.
+endgame -- GW2 -- Cosmetic-based endgame — unlocking dyes, gear skins, mount skins, glider skins, or legendary equipment with its unique features and visual effects.
+endgame -- GW2 -- Progression-based content — improving equipment, training masteries, unlocking elite specializations, mounts etc.
+endgame -- GW2 -- Story and exploration-based content — playing new story chapters found in expansions and Living World episodes or doing map completion.
+endgame -- GW2 = https://wiki.guildwars2.com/wiki/Endgame
+endgame https://wiki.guildwars2.com/wiki/Endgame
 Environmental Storytelling = arranging a careful selection of the objects available in a game world so that they suggest a story to the player who sees them https://www.gamedeveloper.com/design/environmental-storytelling
 foley = sound effect https://en.wikipedia.org/wiki/Foley_(filmmaking)
 fun
@@ -92,6 +99,7 @@ mechanics -- ultimate
 mechanics -- wanted level
 mechanics -- wave
 minmax
+MMO -- elements https://www.reddit.com/r/MMORPG/comments/1ezjdeo/if_you_could_transfer_any_element_from_your/
 monetization -- continue
 monetization -- dolphin, whale
 monetization -- freemium, shareware
@@ -116,6 +124,12 @@ player taxonomy -- Bartle -- ♦ Achievers
 player taxonomy -- Bartle https://en.wikipedia.org/wiki/Bartle_taxonomy_of_player_types
 PR-generated worlds =  emergence, self-organization https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 procedural generation
+progression -- horizontal = Recruit > Soldier (max level) > Learn to wield guns (expac 1) > Learn to wield swords (expac 2) > Learn to do magic stuff (expac 3) > and so on
+progression -- horizontal = you don't get more powerful. You get more flexibility, more options, more utility, more mobility, new non-combat features. Every expansion adds new stuff and new ways to improve your character/account, it's just (mostly) not stuff that increases your raw numbers in combat.
+progression -- vertical = "You're not great, your gear is great"
+progression -- vertical = Recruit > Soldier > Soldier wielding Gun > Soldier wielding bigger guns > Soldier wielding bigger bigger guns (because somehow ambient mobs continue to get stronger lmao)
+progression -- vertical = the world is getting smaller
+progression -- vertical vs. horizontal = WoW vs GW2 https://www.reddit.com/r/Guildwars2/comments/10wiwfq/can_someone_explain_horizontal_progression/
 progression system
 progression system -- power creep (to avoid)
 progression system -- power spike
