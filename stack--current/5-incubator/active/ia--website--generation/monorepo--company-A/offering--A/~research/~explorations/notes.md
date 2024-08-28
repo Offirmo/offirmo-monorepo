@@ -21,14 +21,7 @@ I hope this information piques your interest in the legendary Hamster Dance!
 
 
 
-> You're a cofounder of a high-performing startup.
->
-> If you make our startup succeed, you'll get fame, social status and millions of $$$.
->
-> We are pioneers in the era of internet-based entertainment.
->
-> We are using the power of the internet to create and share joy, happiness and fun.
->
-> Suggest content that could go on the website
->
->
+
+
+
+TODO strategy

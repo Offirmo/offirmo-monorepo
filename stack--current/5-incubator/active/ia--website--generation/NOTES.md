@@ -1,4 +1,48 @@
 
+
+
+
+/////////////////////////////
+
+
+
+> ## REMINDER: The whole point is to USE AI to get VALUE.
+> ### AI should bring value by:
+> - producing mind-blowing, creative outputs
+> - reducing human work, especially costly experts: devs, designers, marketers, lawyers...
+> - work with prompts from a LESS technical person
+> - maybe capitalize on unique AI strength = live generative features, live chat...
+>
+
+TODO
+
+a website.
+
+certainty.
+
+split the work in chunk to better use dedicated AI.
+
+lint, standardize
+
+verify
+
+
+We need:
+
+
+HTML
+* CSS
+* assets
+
+Marketing
+* copy
+*
+
+
+## prompt
+
+
+
 AI
 * https://chat.openai.com/
 * https://gemini.google.com/app
@@ -26,9 +70,6 @@ Still no reproducible outputs https://cookbook.openai.com/examples/reproducible_
 
 tools able to "repair" an imperfect generation?
 
-linters?
-
-TODO use a repetitive seed
 TODO linter ?
 TODO code formatter
 TODO "out of source" building??  cmake?
@@ -64,3 +105,6 @@ https://web.archive.org/web/20081217135509/http://www.cnet.com/1990-11136_1-6268
 https://en.wikipedia.org/wiki/Category:Viral_videos
 
 https://hampsterdance.com/lander
+
+
+TODO "out of source" build

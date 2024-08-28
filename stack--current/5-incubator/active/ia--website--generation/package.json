@@ -14,6 +14,7 @@
 		"openai": "^4"
 	},
 	"devDependencies": {
+		"@offirmo-private/generator--website-entry-points": "*",
 		"@offirmo-private/normalize-string": "*",
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
