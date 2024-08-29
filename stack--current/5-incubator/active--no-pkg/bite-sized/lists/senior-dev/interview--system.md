@@ -41,6 +41,10 @@ RESHADED method https://levelup.gitconnected.com/7-best-software-design-course-f
 
 
 
+load? rps?
+write or read heavy?
+
+
 High-level design (HLD) aka. macro level designing.
 1. System architecture
 2. Database design
@@ -58,6 +62,9 @@ Real design:
 6. Consider security and privacy: Security and privacy should be a key consideration in system design, as mentioned later in this System Design Interview Bootcamp. This involves identifying potential security threats and designing the system to mitigate them.
 7. Test and validate: Once the system design is complete, you need to test and validate it. This involves creating test cases and scenarios that simulate real-world usage and verifying that the system meets the requirements.
 
+
+
+mastering system design interviews requires understanding key principles like scalability, performance, reliability, data management, and security. Practice with common questions on distributed systems, load balancers, databases, caching, and microservices is crucial. Familiarity with trade-offs and best practices, combined with regular practice and feedback, will enhance your performance and confidence in these interviews.
 
 
 

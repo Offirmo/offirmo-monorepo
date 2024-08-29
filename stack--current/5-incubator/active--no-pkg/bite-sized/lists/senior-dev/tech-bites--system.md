@@ -82,6 +82,7 @@ Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 Backends For Frontends -- composable https://bff-patterns.com/
 Backends For Frontends -- tradeoffs https://zknill.io/posts/backend-for-the-frontend/
 backing service = any service the app consumes over the network as part of its normal operation https://12factor.net/backing-services
+backpressure
 backup
 BASE -- 1. BA = Basically available = the system does guarantee availability, in terms of the CAP theorem.
 BASE -- 2. S = Soft state = state of the system may change over time, even without input. This is because of the eventual consistency model.
@@ -107,6 +108,8 @@ change -- release tracks -- bundled = will get all of the features that were rel
 change -- release tracks -- continuous = see new features when they are released (free tier)
 change -- release tracks -- preview = will receive all updates released to Continuous Track in the last month (sandbox for admis)
 chaos monkey
+churn -- subscription -- involuntary or delinquent churn = missed payments causing an automated cancellation
+churn -- subscription -- voluntary = subscriber actively cancelling their subscription
 cloud native = leverages the full capabilities of the cloud, beyond storage and hosting, including elastic scaling of highly available resources. Functionality is updated automatically no manual effort required
 compliance
 compute
@@ -119,6 +122,10 @@ Content Delivery Network (CDN) ex. CloudFront
 coordination -- quorum, leader election
 cron
 CRUD "Create, Read, Update, Delete" = In SQL, the four related commands are: INSERT (for Create), SELECT (for Read), UPDATE (for Update), and DELETE (for Delete).
+data -- 0. raw need to be processed, OLAP, OLTP https://www.snowflake.com/guides/olap-vs-oltp/
+data -- 1. analytics = useful
+data -- 2. predictive = forecast and predict from data
+data -- 3. prescriptive = recommend actions based on data
 data loss
 data retrieval
 data store -- data type -- CLOB (character large object) value can be up to 2,147,483,647 characters long. A CLOB is used to store unicode character-based data, such as large documents in any character set. https://docs.oracle.com/javadb/10.10.1.2/ref/rrefclob.html
@@ -174,6 +181,7 @@ distributed computing -- fallacies -- 6 There is one administrator
 distributed computing -- fallacies -- 7 Transport cost is zero
 distributed computing -- fallacies -- 8 The network is homogeneous
 distributed computing -- fallacies https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
+distributed lock -- Google Chubby https://static.googleusercontent.com/media/research.google.com/en//archive/chubby-osdi06.pdf
 distributed queues
 distributed system -- characteristics -- Concurrency = naturally present in Distributed Systems, same activity or functionality performed by separate users who are in remote locations
 distributed system -- characteristics -- Fault tolerance = reliability = the system, if there is a failure in Hardware or Software, continues to operate properly without degrading the performance the system
@@ -229,6 +237,7 @@ lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith
 latency = the time that passes between an action and the resulting response
 latency https://www.a10networks.com/glossary/osi-network-model-and-types-of-load-balancers/
 load balancer
+load balancer -- affinity = grouping related in the same server, when desirable
 load balancer -- google sth
 load balancer -- L4 vs L7 https://www.a10networks.com/glossary/how-do-layer-4-and-layer-7-load-balancing-differ/  https://www.nginx.com/resources/glossary/layer-4-load-balancing/
 load balancer -- scope, ex. region "AWS ELB Elastic Load Balancer"
@@ -318,7 +327,18 @@ private cloud = https://threadreaderapp.com/thread/1800291897245835616.html
 protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https://stackoverflow.com/questions/731233/activemq-or-rabbitmq-or-zeromq-or https://news.ycombinator.com/item?id=9634801
 proxy server = intermediaries between client and servers. improve performance by caching, provide security by filtering incoming traffic, enable load balancing for efficient distribution of requests
 PubSub = Publish-Subscribe 
+push -- long polling, server-side events (SSE), and WebSockets
+push vs pull
 rate limiting = control the rate of requests sent or received by a network interface (DoS, scraping) https://en.wikipedia.org/wiki/Rate_limiting
+real-time -- hard real-time = a system is said to be hard real-time if it must meet strict timing constraints
+real-time -- protocols -- 01 Session Traversal Utilities for NAT (STUN) - Used to establish a direct UDP connection between two clients.
+real-time -- protocols -- 02 Traversal Using Relay around NAT (TURN) - Used to establish a relayed UDP or TCP connection between two clients. Here, the traffic must be relayed through the TURN server to bypass restrictive firewall rules, and the preference is UDP over TCP because TCP's guaranteed ordered delivery of packets implies overhead that is undesirable for real-time communications.
+real-time -- protocols -- 03 Secure Traversal Using Relay around NAT (TURNS) Used to establish a relayed TCP/TLS connection between two clients. Here, the traffic must be relayed through the TURN server and through a TLS socket to bypass extremely restrictive firewall rules.
+real-time -- protocols -- 04 Interactive Connectivity Establishment (ICE) is a standard for using STUN and TURN to establish connectivity between two endpoints. ICE takes all of the complexity implied in the discussion above, and coordinates the management of STUN, TURN, and TURNS
+real-time -- protocols -- STUN, TURN, and ICE https://developer.liveswitch.io/liveswitch-server/guides/what-are-stun-turn-and-ice.html
+real-time -- soft real-time = a system is said to be soft real-time if it can tolerate some delays in the processing of data
+real-time application -- goals = high throughput, low latency communication between various clients that MAY be behind NATs or firewalls
+redeployment = can impact the service due to rebalancing etc. causing latency, connexions loss, etc.
 regions
 replication = improving availability, distribute the load, and enhance fault tolerance
 request deduplication
@@ -402,9 +422,17 @@ telemetry -- trace = collection of time spans and their relationships to each ot
 telemetry -- tracing = the practice of capturing traces
 telemetry -- very important for distributed perf problems! (on big customers, what takes time?)
 third-party risk management
+time -- leap second
+time -- leap second -- leap smear https://googleblog.blogspot.com/2011/09/time-technology-and-leaping-seconds.html
+time = difficult yet important for distributed https://unix4lyfe.org/time/
 Time to Detection (TTD)
 utilisation = How “full” or “busy” is the service?
 VPN
+WebRTC
+WebSockets
+WebSockets -- gateway
+WebSockets -- gateway -- multiplexing & demultiplexing https://www.canva.dev/blog/engineering/enabling-real-time-collaboration-with-rsocket/
+WebSockets -- RSocket https://rsocket.io/
 well architected -- pillar -- cost optimization = avoiding unnecessary costs -- consumption model, analyzing and attributing expenditure, and using managed services to reduce the cost of ownership.
 well architected -- pillar -- operational excellence = running and monitoring systems to deliver business value -- performing operations as code, annotating documentation, anticipating failure, and frequently making small, reversible changes.
 well architected -- pillar -- performance efficiency = using IT and computing resources efficiently and maintain this efficiency -- using serverless architectures, and designing systems to be able to go global in minutes
