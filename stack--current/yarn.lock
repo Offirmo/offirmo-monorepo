@@ -1230,74 +1230,74 @@
     "@size-limit/file" "11.1.4"
     size-limit "11.1.4"
 
-"@swc/core-darwin-arm64@1.7.18":
-  version "1.7.18"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-darwin-arm64/-/core-darwin-arm64-1.7.18.tgz#4035e98ea38b2fb5f709b2c7d3d709627dba511e"
-  integrity sha512-MwLc5U+VGPMZm8MjlFBjEB2wyT1EK0NNJ3tn+ps9fmxdFP+PL8EpMiY1O1F2t1ydy2OzBtZz81sycjM9RieFBg==
+"@swc/core-darwin-arm64@1.7.21":
+  version "1.7.21"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-darwin-arm64/-/core-darwin-arm64-1.7.21.tgz#51df5abc3f0f4c82d2a97bd1d012315b69a225db"
+  integrity sha512-hh5uOZ7jWF66z2TRMhhXtWMQkssuPCSIZPy9VHf5KvZ46cX+5UeECDthchYklEVZQyy4Qr6oxfh4qff/5spoMA==
 
-"@swc/core-darwin-x64@1.7.18":
-  version "1.7.18"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-darwin-x64/-/core-darwin-x64-1.7.18.tgz#8e907ed0e87d60b53e6aba54e172933f9db62d26"
-  integrity sha512-IkukOQUw7/14VkHp446OkYGCZEHqZg9pTmTdBawlUyz2JwZMSn2VodCl7aFSdGCsU4Cwni8zKA8CCgkCCAELhw==
+"@swc/core-darwin-x64@1.7.21":
+  version "1.7.21"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-darwin-x64/-/core-darwin-x64-1.7.21.tgz#dc334a8dfa29a67e4697cfbd223842e77a553c48"
+  integrity sha512-lTsPquqSierQ6jWiWM7NnYXXZGk9zx3NGkPLHjPbcH5BmyiauX0CC/YJYJx7YmS2InRLyALlGmidHkaF4JY28A==
 
-"@swc/core-linux-arm-gnueabihf@1.7.18":
-  version "1.7.18"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.7.18.tgz#0534355885e83e8321e2461db2fc01dda7353033"
-  integrity sha512-ATnb6jJaBeXCqrTUawWdoOy7eP9SCI7UMcfXlYIMxX4otKKspLPAEuGA5RaNxlCcj9ObyO0J3YGbtZ6hhD2pjg==
+"@swc/core-linux-arm-gnueabihf@1.7.21":
+  version "1.7.21"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.7.21.tgz#04fa126e379aa6e710b5ac6f346b02b8e30faa16"
+  integrity sha512-AgSd0fnSzAqCvWpzzZCq75z62JVGUkkXEOpfdi99jj/tryPy38KdXJtkVWJmufPXlRHokGTBitalk33WDJwsbA==
 
-"@swc/core-linux-arm64-gnu@1.7.18":
-  version "1.7.18"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.7.18.tgz#99877ae47c9803977c42fe632db04cc10d47a7e9"
-  integrity sha512-poHtH7zL7lEp9K2inY90lGHJABWxURAOgWNeZqrcR5+jwIe7q5KBisysH09Zf/JNF9+6iNns+U0xgWTNJzBuGA==
+"@swc/core-linux-arm64-gnu@1.7.21":
+  version "1.7.21"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.7.21.tgz#012495884d29170c85671314d2040655b7af951c"
+  integrity sha512-l+jw6RQ4Y43/8dIst0c73uQE+W3kCWrCFqMqC/xIuE/iqHOnvYK6YbA1ffOct2dImkHzNiKuoehGqtQAc6cNaQ==
 
-"@swc/core-linux-arm64-musl@1.7.18":
-  version "1.7.18"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.7.18.tgz#f41c31598d7ef9ffbf06c3994b7d59085abc01ab"
-  integrity sha512-qnNI1WmcOV7Wz1ZDyK6WrOlzLvJ01rnni8ec950mMHWkLRMP53QvCvhF3S+7gFplWBwWJTOOPPUqJp/PlSxWyQ==
+"@swc/core-linux-arm64-musl@1.7.21":
+  version "1.7.21"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.7.21.tgz#69e7487ca3d438a593f3359271c7e7abe4b63abc"
+  integrity sha512-29KKZXrTo/c9F1JFL9WsNvCa6UCdIVhHP5EfuYhlKbn5/YmSsNFkuHdUtZFEd5U4+jiShXDmgGCtLW2d08LIwg==
 
-"@swc/core-linux-x64-gnu@1.7.18":
-  version "1.7.18"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.7.18.tgz#95575b46f3f8fab89bbed51f75eab980c136b0b0"
-  integrity sha512-x9SCqCLzwtlqtD5At3I1a7Gco+EuXnzrJGoucmkpeQohshHuwa+cskqsXO6u1Dz0jXJEuHbBZB9va1wYYfjgFg==
+"@swc/core-linux-x64-gnu@1.7.21":
+  version "1.7.21"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.7.21.tgz#b702103410cff10b72ccc441040f45b41b828cc4"
+  integrity sha512-HsP3JwddvQj5HvnjmOr+Bd5plEm6ccpfP5wUlm3hywzvdVkj+yR29bmD7UwpV/1zCQ60Ry35a7mXhKI6HQxFgw==
 
-"@swc/core-linux-x64-musl@1.7.18":
-  version "1.7.18"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.7.18.tgz#5a31f97d05b65e0b2993d00b6ffff8b7f7cd3557"
-  integrity sha512-qtj8iOpMMgKjzxTv+islmEY0JBsbd93nka0gzcTTmGZxKtL5jSUsYQvkxwNPZr5M9NU1fgaR3n1vE6lFmtY0IQ==
+"@swc/core-linux-x64-musl@1.7.21":
+  version "1.7.21"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.7.21.tgz#e6598cedc13c8538ada09a5b60dfbc6717e3588b"
+  integrity sha512-hYKLVeUTHqvFK628DFJEwxoX6p42T3HaQ4QjNtf3oKhiJWFh9iTRUrN/oCB5YI3R9WMkFkKh+99gZ/Dd0T5lsg==
 
-"@swc/core-win32-arm64-msvc@1.7.18":
-  version "1.7.18"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.7.18.tgz#6b227e1f67d9c5ed429177ae7962212029da9087"
-  integrity sha512-ltX/Ol9+Qu4SXmISCeuwVgAjSa8nzHTymknpozzVMgjXUoZMoz6lcynfKL1nCh5XLgqh0XNHUKLti5YFF8LrrA==
+"@swc/core-win32-arm64-msvc@1.7.21":
+  version "1.7.21"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.7.21.tgz#7d3d14fce61046e60dc5bf705b34c9b8d3df844c"
+  integrity sha512-qyWAKW10aMBe6iUqeZ7NAJIswjfggVTUpDINpQGUJhz+pR71YZDidXgZXpaDB84YyDB2JAlRqd1YrLkl7CMiIw==
 
-"@swc/core-win32-ia32-msvc@1.7.18":
-  version "1.7.18"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.7.18.tgz#510868ae0a255581acd66d0d52e6a732290902f6"
-  integrity sha512-RgTcFP3wgyxnQbTCJrlgBJmgpeTXo8t807GU9GxApAXfpLZJ3swJ2GgFUmIJVdLWyffSHF5BEkF3FmF6mtH5AQ==
+"@swc/core-win32-ia32-msvc@1.7.21":
+  version "1.7.21"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.7.21.tgz#4317d0737c982c88ff30c07c95ccc8f6621455ca"
+  integrity sha512-cy61wS3wgH5mEwBiQ5w6/FnQrchBDAdPsSh0dKSzNmI+4K8hDxS8uzdBycWqJXO0cc+mA77SIlwZC3hP3Kum2g==
 
-"@swc/core-win32-x64-msvc@1.7.18":
-  version "1.7.18"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.7.18.tgz#381a04740f7662eb1c3d306184dafd0e2cf9da38"
-  integrity sha512-XbZ0wAgzR757+DhQcnv60Y/bK9yuWPhDNRQVFFQVRsowvK3+c6EblyfUSytIidpXgyYFzlprq/9A9ZlO/wvDWw==
+"@swc/core-win32-x64-msvc@1.7.21":
+  version "1.7.21"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.7.21.tgz#3d6f97dfbc4f1741be769b83c1329fb1dbf7d8ec"
+  integrity sha512-/rexGItJURNJOdae+a48M+loT74nsEU+PyRRVAkZMKNRtLoYFAr0cpDlS5FodIgGunp/nqM0bst4H2w6Y05IKA==
 
 "@swc/core@^1.3.36":
-  version "1.7.18"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core/-/core-1.7.18.tgz#d45b26d8feef244d1ea43b4732b3ae46bf96a22e"
-  integrity sha512-qL9v5N5S38ijmqiQRvCFUUx2vmxWT/JJ2rswElnyaHkOHuVoAFhBB90Ywj4RKjh3R0zOjhEcemENTyF3q3G6WQ==
+  version "1.7.21"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core/-/core-1.7.21.tgz#88aa8ce9747f508804c016ebfe38436682dca378"
+  integrity sha512-7/cN0SZ+y2V6e0hsDD8koGR0QVh7Jl3r756bwaHLLSN+kReoUb/yVcLsA8iTn90JLME3DkQK4CPjxDCQiyMXNg==
   dependencies:
     "@swc/counter" "^0.1.3"
     "@swc/types" "^0.1.12"
   optionalDependencies:
-    "@swc/core-darwin-arm64" "1.7.18"
-    "@swc/core-darwin-x64" "1.7.18"
-    "@swc/core-linux-arm-gnueabihf" "1.7.18"
-    "@swc/core-linux-arm64-gnu" "1.7.18"
-    "@swc/core-linux-arm64-musl" "1.7.18"
-    "@swc/core-linux-x64-gnu" "1.7.18"
-    "@swc/core-linux-x64-musl" "1.7.18"
-    "@swc/core-win32-arm64-msvc" "1.7.18"
-    "@swc/core-win32-ia32-msvc" "1.7.18"
-    "@swc/core-win32-x64-msvc" "1.7.18"
+    "@swc/core-darwin-arm64" "1.7.21"
+    "@swc/core-darwin-x64" "1.7.21"
+    "@swc/core-linux-arm-gnueabihf" "1.7.21"
+    "@swc/core-linux-arm64-gnu" "1.7.21"
+    "@swc/core-linux-arm64-musl" "1.7.21"
+    "@swc/core-linux-x64-gnu" "1.7.21"
+    "@swc/core-linux-x64-musl" "1.7.21"
+    "@swc/core-win32-arm64-msvc" "1.7.21"
+    "@swc/core-win32-ia32-msvc" "1.7.21"
+    "@swc/core-win32-x64-msvc" "1.7.21"
 
 "@swc/counter@^0.1.3":
   version "0.1.3"
@@ -1393,9 +1393,9 @@
     "@types/chai" "*"
 
 "@types/chai@*", "@types/chai@^4":
-  version "4.3.18"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/chai/-/chai-4.3.18.tgz#dd6a46c9796b0435c13f85e8d44c8ea8e37fa2c1"
-  integrity sha512-2UfJzigyNa8kYTKn7o4hNMPphkxtu4WTJyobK3m4FBpyj7EK5xgtPcOtxLm7Dznk/Qxr0QXn+gQbkg7mCZKdfg==
+  version "4.3.19"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/chai/-/chai-4.3.19.tgz#14519f437361d41e84102ed3fbc922ddace3e228"
+  integrity sha512-2hHHvQBVE2FiSK4eN0Br6snX9MtolHaTo/batnLjlGRhoQzlCL61iVpxoqO7SfFyOw+P/pwv+0zNHzKoGWz9Cw==
 
 "@types/chroma-js@^2":
   version "2.4.4"
@@ -1468,16 +1468,16 @@
     form-data "^4.0.0"
 
 "@types/node@*", "@types/node@>=20":
-  version "22.5.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/node/-/node-22.5.0.tgz#10f01fe9465166b4cab72e75f60d8b99d019f958"
-  integrity sha512-DkFrJOe+rfdHTqqMg0bSNlGlQ85hSoh2TPzZyhHsXnMtligRWpxUySiyw8FY14ITt24HVCiQPWxS3KO/QlGmWg==
+  version "22.5.1"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/node/-/node-22.5.1.tgz#de01dce265f6b99ed32b295962045d10b5b99560"
+  integrity sha512-KkHsxej0j9IW1KKOOAA/XBA0z08UFSrRQHErzEfA3Vgq57eXIMYboIlHJuYIfd+lwCQjtKqUu3UnmKbtUc9yRw==
   dependencies:
     undici-types "~6.19.2"
 
 "@types/node@^18.11.18":
-  version "18.19.46"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/node/-/node-18.19.46.tgz#51801396c01153e0626e36f43386e83bc768b072"
-  integrity sha512-vnRgMS7W6cKa1/0G3/DTtQYpVrZ8c0Xm6UkLaVFrb9jtcVC3okokW09Ki1Qdrj9ISokszD69nY4WDLRlvHlhAA==
+  version "18.19.47"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/node/-/node-18.19.47.tgz#18076201ad7dd3445046df6ce9ead5fe5abd9387"
+  integrity sha512-1f7dB3BL/bpd9tnDJrrHb66Y+cVrhxSOTGorRNdHwYTUlTay3HuTDPKo9a/4vX9pMQkhYBcAbL4jQdNlhCFP9A==
   dependencies:
     undici-types "~5.26.4"
 
@@ -4277,9 +4277,9 @@ onetime@^5.1.2:
     mimic-fn "^2.1.0"
 
 openai@^4:
-  version "4.56.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/openai/-/openai-4.56.0.tgz#07d3982544cabd5781127288a8dfcceb7319a4cf"
-  integrity sha512-zcag97+3bG890MNNa0DQD9dGmmTWL8unJdNkulZzWRXrl+QeD+YkBI4H58rJcwErxqGK6a0jVPZ4ReJjhDGcmw==
+  version "4.56.1"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/openai/-/openai-4.56.1.tgz#fc2160964d4c88a45b8f14dd6003ab7b09398eb3"
+  integrity sha512-XMsxdjrWBYgbP6EsDIwbhkQEgeyL2C41te/QrJm8kdfho22exhTUJ/cFJSmCTToam/RSOC1BlOylHvD6i/bmsA==
   dependencies:
     "@types/node" "^18.11.18"
     "@types/node-fetch" "^2.6.4"
@@ -5492,9 +5492,9 @@ type-fest@^2.13.0:
   integrity sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==
 
 type-fest@^4.21.0, type-fest@^4.7.1:
-  version "4.25.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/type-fest/-/type-fest-4.25.0.tgz#b190374f969631866889bbdb01ece17ca424ee60"
-  integrity sha512-bRkIGlXsnGBRBQRAY56UXBm//9qH4bmJfFvq83gSz41N282df+fjy8ofcEgc1sM8geNt5cl6mC2g9Fht1cs8Aw==
+  version "4.26.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/type-fest/-/type-fest-4.26.0.tgz#703f263af10c093cd6277d079e26b9e17d517c4b"
+  integrity sha512-OduNjVJsFbifKb57UqZ2EMP1i4u64Xwow3NYXUtBbD4vIwJdQd4+xl8YDou1dlm4DVrtwT/7Ky8z8WyCULVfxw==
 
 typed-array-buffer@^1.0.2:
   version "1.0.2"
@@ -5886,9 +5886,9 @@ yoctocolors@^2.1.1:
   integrity sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==
 
 zx@^8:
-  version "8.1.4"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/zx/-/zx-8.1.4.tgz#19bcd543fab34d01d7d4174a314b33cde9115a17"
-  integrity sha512-QFDYYpnzdpRiJ3dL2102Cw26FpXpWshW4QLTGxiYfIcwdAqg084jRCkK/kuP/NOSkxOjydRwNFG81qzA5r1a6w==
+  version "8.1.5"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/zx/-/zx-8.1.5.tgz#c51de2f9be06b85fe89dd688e6ba2664dd3e1204"
+  integrity sha512-gvmiYPvDDEz2Gcc37x7pJkipTKcFIE18q9QlSI1p5qoPDtoSn3jmGuWD0eEb7HuxEH5aDD7N/RVgH8BqSxbKzA==
   optionalDependencies:
     "@types/fs-extra" ">=11"
     "@types/node" ">=20"

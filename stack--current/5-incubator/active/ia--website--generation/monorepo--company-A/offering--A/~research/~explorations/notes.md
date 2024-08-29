@@ -18,10 +18,3 @@ The song used in the Hamster Dance was originally written and performed by Roger
 The website won numerous awards, including the "Webby Award" for humor.
 The Hamster Dance was parodied by many celebrities, including Madonna and Will Smith.
 I hope this information piques your interest in the legendary Hamster Dance!
-
-
-
-
-
-
-TODO strategy

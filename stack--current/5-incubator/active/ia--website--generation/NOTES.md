@@ -2,17 +2,21 @@
 
 
 
-/////////////////////////////
+naming convention:
+- `-folder` = strictly formatted folder (deep) which respects a standardized schema and can be linted
+- `~folder` = "messy" human content (deep), not expected to be parsed. Automated tools should stop when encountering such a segment.
+- `folder` = intermediate, main contain any of the other
 
 
 
-> ## REMINDER: The whole point is to USE AI to get VALUE.
-> ### AI should bring value by:
-> - producing mind-blowing, creative outputs
-> - reducing human work, especially costly experts: devs, designers, marketers, lawyers...
-> - work with prompts from a LESS technical person
-> - maybe capitalize on unique AI strength = live generative features, live chat...
->
+## REMINDER: The whole point is to USE AI to get VALUE.
+### AI should bring value by:
+- producing mind-blowing, creative outputs
+- reducing human work, especially costly experts: devs, designers, marketers, lawyers...
+- work with prompts from a LESS technical person
+- maybe capitalize on unique AI strength = live generative features, live chat...
+
+
 
 TODO
 
