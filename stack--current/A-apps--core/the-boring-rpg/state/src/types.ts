@@ -11,18 +11,18 @@ import { Weapon } from '@tbrpg/logic-weapons'
 import { Armor } from '@tbrpg/logic-armors'
 import { Monster } from '@tbrpg/logic-monsters'
 
-import { State as CharacterState } from '@tbrpg/state--character'
-import { State as InventoryState } from '@tbrpg/state--inventory'
-import { State as WalletState } from '@tbrpg/state-wallet'
-import { State as PRNGState } from '@oh-my-rpg/state-prng'
+import { type State as CharacterState } from '@tbrpg/state--character'
+import { type State as InventoryState } from '@tbrpg/state--inventory'
+import { type State as WalletState } from '@tbrpg/state-wallet'
+import { type State as PRNGState } from '@oh-my-rpg/state-prng'
 import {
 	UState as EnergyUState,
 	TState as EnergyTState,
 } from '@tbrpg/state-energy'
-import { State as EngagementState } from '@oh-my-rpg/state-engagement'
-import { State as CodesState } from '@oh-my-rpg/state-codes'
-import { State as ProgressState } from '@tbrpg/state--progress'
-import { State as MetaState } from '@oh-my-rpg/state-meta'
+import { type State as EngagementState } from '@oh-my-rpg/state-engagement'
+import { type State as CodesState } from '@oh-my-rpg/state-codes'
+import { type State as ProgressState } from '@tbrpg/state--progress'
+import { type State as MetaState } from '@oh-my-rpg/state-meta'
 
 /////////////////////
 

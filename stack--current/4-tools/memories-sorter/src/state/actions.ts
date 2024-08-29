@@ -1,11 +1,11 @@
 
 import { Enum } from 'typescript-string-enums'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import { RelativePath } from '../types.js'
 import { FolderId } from './folder/index.js'
 import { FileId } from './file/index.js'
-import { State as NotesState } from './notes/index.js'
+import { type State as NotesState } from './notes/index.js'
 
 /////////////////////
 

@@ -2,7 +2,7 @@
  */
 
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import { Config } from '../types/config'
 import { _getꓽstateⵧin_mem } from './in-mem-state-ref.ts'

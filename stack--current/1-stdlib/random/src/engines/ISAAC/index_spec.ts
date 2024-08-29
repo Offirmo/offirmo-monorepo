@@ -2,7 +2,7 @@ import { expect } from 'chai'
 
 import { getꓽRNGⵧISAAC32 } from './index.js'
 import { itᐧshouldᐧbeᐧaᐧvalidᐧengine } from '../_test_helpers.js'
-import { Int32 } from '../../types.js'
+import { type Int32 } from '../../types.js'
 
 /////////////////////////////////////////////////
 

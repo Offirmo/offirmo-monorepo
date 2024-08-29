@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 
-import { Immutable, PositiveInteger } from '@offirmo-private/ts-types'
+import { type Immutable, PositiveInteger } from '@offirmo-private/ts-types'
 import ErrorBoundary from '@offirmo-private/react-error-boundary'
 import { getꓽrandom, getꓽengine } from '@offirmo/random'
 

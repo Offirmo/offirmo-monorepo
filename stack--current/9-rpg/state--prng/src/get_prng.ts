@@ -1,9 +1,9 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/state-utils'
+import { type Immutable } from '@offirmo-private/state-utils'
 import { getꓽengine, PRNGEngine } from '@offirmo/random'
 
 import { LIB } from './consts.js'
-import { State } from './types.js'
+import { type State } from './types.js'
 import { getꓽlogger } from './sec.js'
 
 /////////////////////////////////////////////////

@@ -5,7 +5,7 @@ import {
 	getꓽUTC_timestampⵧhuman_readable‿days,
 	getꓽUTC_timestampⵧhuman_readable‿minutes,
 } from '@offirmo-private/timestamps'
-import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
 

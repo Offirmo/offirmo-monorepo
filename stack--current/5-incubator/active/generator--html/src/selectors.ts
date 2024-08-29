@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
-import { Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
+import { type Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
 import { hasꓽcontent } from '@offirmo-private/ts-utils'
 import { Url‿str, Css‿str, Html‿str, JS‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
 import * as Selectors from '@offirmo-private/ts-types-web'

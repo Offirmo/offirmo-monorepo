@@ -1,12 +1,12 @@
 /////////////////////
 
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/state-utils'
+import { type Immutable } from '@offirmo-private/state-utils'
 import { Seed, getꓽengine, PRNGEngine, PRNGState } from '@offirmo/random'
 import { generate_uuid } from '@offirmo-private/uuid'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
-import { State } from './types.js'
+import { type State } from './types.js'
 import { getꓽlogger } from './sec.js'
 
 /////////////////////

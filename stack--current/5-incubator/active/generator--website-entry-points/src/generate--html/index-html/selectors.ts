@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 const chroma = ((await import('chroma-js')) as any).default as chroma.ChromaStatic // has ESM issues 2024/08
 
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { Contentⳇweb, Css‿str, Html‿str, JS‿str } from '@offirmo-private/ts-types-web';
 import * as ContentⳇwebᐧSelectors from '@offirmo-private/ts-types-web';
 import {

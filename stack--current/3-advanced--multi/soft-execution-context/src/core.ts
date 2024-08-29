@@ -1,5 +1,5 @@
 import { LIB, INTERNAL_PROP } from './consts.js'
-import { SoftExecutionContext } from './types.js'
+import { type SoftExecutionContext } from './types.js'
 import { ROOT_PROTOTYPE } from './root-prototype.js'
 import * as State from './state.js'
 import { PLUGINS } from './plugins/index.js'

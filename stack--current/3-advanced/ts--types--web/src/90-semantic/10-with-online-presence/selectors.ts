@@ -1,4 +1,4 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { normalizeꓽurlⵧhttpₓ } from '@offirmo-private/normalize-string'
 
 import { Url‿str } from '../../01-links/index.js'

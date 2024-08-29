@@ -1,6 +1,6 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
-import { State as CharacterState, CharacterAttribute, CHARACTER_ATTRIBUTES_SORTED } from '@tbrpg/state--character'
+import { type State as CharacterState, CharacterAttribute, CHARACTER_ATTRIBUTES_SORTED } from '@tbrpg/state--character'
 
 
 function render_avatar(state: Immutable<CharacterState>): RichText.Document {

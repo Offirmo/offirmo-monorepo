@@ -1,7 +1,7 @@
 /* render a CSF v3 Story
  */
 import * as React from 'react'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from '../../../../../consts'
 import { Meta‿v3, Story‿v3 } from '../../../../../types/csf/v3'

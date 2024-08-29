@@ -1,4 +1,4 @@
-import { SoftExecutionContext } from './types.js'
+import { type SoftExecutionContext } from './types.js'
 import { _createSXC } from './core.js'
 
 /////////////////////

@@ -2,7 +2,7 @@
 
 import { getꓽUTC_timestamp‿ms, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 import assert from 'tiny-invariant'
-import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 /////////////////////
 
@@ -26,7 +26,7 @@ import { Armor, create as create_armor } from '@tbrpg/logic-armors'
 
 import { SCHEMA_VERSION } from '../consts.js'
 import { TBRSoftExecutionContext, getꓽSXC } from '../services/sec.js'
-import { State } from '../types.js'
+import { type State } from '../types.js'
 import { EngagementKey } from '../data/engagement/index.js'
 import {
 	_update_to_now,

@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import {
 	ImportGlob, isꓽImportGlob,
@@ -8,7 +8,7 @@ import {
 
 import { SEPⵧSEGMENTS, SEPⵧSTORY } from '../../consts'
 import { StoryEntry, isꓽStoryEntry } from '../types'
-import { State } from './types'
+import { type State } from './types'
 import { registerꓽstory } from './reducers'
 
 /////////////////////////////////////////////////

@@ -11,8 +11,8 @@ import { generate_uuid } from '@offirmo-private/uuid'
 import { PRNGState } from '@offirmo/random'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
-import { State } from './types.js'
-import { SoftExecutionContext } from './sec.js'
+import { type State } from './types.js'
+import { type SoftExecutionContext } from './sec.js'
 
 //////////////////////////////////////////////////////////////////////
 

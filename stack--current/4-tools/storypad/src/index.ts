@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { asap_but_out_of_immediate_execution } from '@offirmo-private/async-utils'
 
 import { LIB } from './consts'

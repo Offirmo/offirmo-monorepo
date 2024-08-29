@@ -1,6 +1,6 @@
 /////////////////////
 
-import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 /////////////////////
 
@@ -10,7 +10,7 @@ import { DEMO_MONSTER_01 } from '@tbrpg/logic-monsters'
 
 /////////////////////
 
-import { State, ResolvedAdventure } from '../types.js'
+import { type State, ResolvedAdventure } from '../types.js'
 import { cleanup } from '../migrations/index.js'
 import { getꓽSXC } from '../services/sec.js'
 

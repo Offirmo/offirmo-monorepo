@@ -2,7 +2,7 @@
 // put the comments in the code, it's up to the consumer to optimize or not
 
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { Html‿str } from '@offirmo-private/ts-types-web';
 import { normalize_unicode } from '@offirmo-private/normalize-string'
 import { getꓽhtml‿str } from '@offirmo-private/generator--html'

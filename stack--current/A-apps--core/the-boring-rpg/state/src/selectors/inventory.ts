@@ -1,5 +1,5 @@
 import { UUID } from '@offirmo-private/uuid'
-import { Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@offirmo-private/ts-types'
 
 import { InventorySlot, Element } from '@tbrpg/definitions'
 import { is_full } from '@tbrpg/state--inventory'

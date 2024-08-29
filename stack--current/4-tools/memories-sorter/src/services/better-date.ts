@@ -10,7 +10,7 @@ import { strict as node_assert } from 'node:assert'
 
 import assert from 'tiny-invariant'
 import { ExifDateTime } from 'exiftool-vendored'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
 import { getꓽjson_difference } from '@offirmo-private/state-utils'
 

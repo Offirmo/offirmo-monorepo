@@ -1,2 +1,2 @@
 // TODO one day
-import { Int32, RNGEngine } from '../types.js'
+import { type Int32, RNGEngine } from '../types.js'

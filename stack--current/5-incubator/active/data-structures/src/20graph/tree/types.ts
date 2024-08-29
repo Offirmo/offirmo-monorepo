@@ -1,7 +1,7 @@
 /* GENERIC types for a generic tree
  * Those types should NOT assume any particular implementation.
  */
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { Node, Graph } from '../types.js'
 
 /////////////////////////////////////////////////

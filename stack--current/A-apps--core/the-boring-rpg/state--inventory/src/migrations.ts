@@ -9,7 +9,7 @@ import {
 } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
-import { State } from './types.js'
+import { type State } from './types.js'
 import { TBRSoftExecutionContext } from './sec.js'
 
 //////////////////////////////////////////////////////////////////////

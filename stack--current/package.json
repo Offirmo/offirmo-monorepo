@@ -56,10 +56,13 @@
 			"D-minisites/*"
 		]
 	},
-
 	"manypkg": {
 		"defaultBranch": "main"
 	},
+	"@parcel/resolver-default": {
+		"packageExports": true
+	},
+
 	"dependencies": {
 		"@manypkg/cli": "^0.21",
 		"chalk": "^5",

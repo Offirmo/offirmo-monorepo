@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import { compare } from './index.js'
 

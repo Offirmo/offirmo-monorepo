@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import { normalizeError } from '@offirmo/error-utils'
 import { exiftool, Tags, ExifDateTime } from 'exiftool-vendored'
-import { Immutable, HashOf } from '@offirmo-private/ts-types'
+import { type Immutable, HashOf } from '@offirmo-private/ts-types'
 import micro_memoize from 'micro-memoize'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 

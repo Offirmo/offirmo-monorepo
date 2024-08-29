@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import { isꓽStory‿v3 } from '../../../types/csf/v3'
 import { isꓽStory‿v2 } from '../../../types/csf/v2'

@@ -1,4 +1,4 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import { Book, BookCover, BookUId } from '../../../library/book/types.js'
 import { BookResolver, BookResolverEntry } from '../../../library/book--resolver/index.js'

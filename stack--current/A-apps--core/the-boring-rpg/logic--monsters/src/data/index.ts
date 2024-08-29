@@ -2,7 +2,7 @@ import {
 	UnicodeCharDetails,
 	UNICODE_CHARS,
 } from '@offirmo-private/unicode-data'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 interface RawMonsterEntry {
 	name: string

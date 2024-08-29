@@ -8,7 +8,7 @@ import {
 	getꓽhuman_readable_timestamp_auto,
 } from '../../services/better-date.js'
 
-import { State } from './types.js'
+import { type State } from './types.js'
 import {
 	create,
 	on_fs_exploration_done,

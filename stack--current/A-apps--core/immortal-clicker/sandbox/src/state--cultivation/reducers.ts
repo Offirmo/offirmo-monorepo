@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
-import { State } from './types.js'
+import { type State } from './types.js'
 import { Sect } from '../generator--sect/src/index.js'
 
 function createꓽstate(): State {

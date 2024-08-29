@@ -1,6 +1,6 @@
 /////////////////////
 
-import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 
 import { SCHEMA_VERSION } from './consts.js'
@@ -13,7 +13,7 @@ import {
 
 import { is_code_redeemable } from './selectors.js'
 
-import { SoftExecutionContext, getꓽSXC } from './sec.js'
+import { type SoftExecutionContext, getꓽSXC } from './sec.js'
 
 /////////////////////
 

@@ -1,6 +1,6 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
-import { State, AchievementStatus } from './types.js'
+import { type State, AchievementStatus } from './types.js'
 
 
 /////////////////////

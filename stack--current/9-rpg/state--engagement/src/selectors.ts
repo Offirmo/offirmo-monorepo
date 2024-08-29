@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////
 
-import { Immutable } from '@offirmo-private/ts-types'
-import { State, EngagementType, PendingEngagement } from './types.js'
+import { type Immutable } from '@offirmo-private/ts-types'
+import { type State, EngagementType, PendingEngagement } from './types.js'
 
 //////////////////////////////////////////////////////////////////////
 

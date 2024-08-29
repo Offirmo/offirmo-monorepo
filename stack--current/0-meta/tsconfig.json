@@ -1,6 +1,7 @@
 {
 	"compileOnSave": false,
 	"compilerOptions": {
+
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
 		"alwaysStrict": true,
@@ -20,16 +21,19 @@
 		"strictNullChecks": true,
 		"strictPropertyInitialization": true,
 		"useUnknownInCatchVariables": true,
-		"downlevelIteration": true,
+
 
 		"allowUmdGlobalAccess": false,
 		"module": "ES2022",
 		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
+		"resolvePackageJsonExports": true,
+		"resolvePackageJsonImports": true,
 
 
 		"declaration": true,
 		"declarationMap": true,
+		"downlevelIteration": true,
 		"importHelpers": true,
 		"newLine": "lf",
 		"noEmitHelpers": true,
@@ -45,6 +49,7 @@
 		"forceConsistentCasingInFileNames": true,
 		"isolatedModules": true,
 		"preserveSymlinks": false,
+		"verbatimModuleSyntax": false,
 
 
 		"emitDecoratorMetadata": false,

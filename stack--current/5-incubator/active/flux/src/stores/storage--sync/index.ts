@@ -3,7 +3,7 @@ import assert from 'tiny-invariant'
 import EventEmitter from 'emittery'
 import { try_or_fallback } from '@offirmo/error-utils'
 import stringifyⵧstable from '@offirmo-private/json-stable-stringify'
-import { Immutable, StorageⳇSync, JSONObject } from '@offirmo-private/ts-types'
+import { type Immutable, StorageⳇSync, JSONObject } from '@offirmo-private/ts-types'
 import { getꓽcompareFn } from '@offirmo-private/ts-utils'
 import {
 	AnyOffirmoState,
@@ -21,7 +21,7 @@ import {
 } from '@offirmo-private/async-utils'
 
 import { Store, Dispatcher } from '../../types'
-import { SoftExecutionContext } from '../../services/sec.js'
+import { type SoftExecutionContext } from '../../services/sec.js'
 
 
 /////////////////////////////////////////////////

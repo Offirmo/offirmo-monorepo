@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
+import { type Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
 import {
 	normalizeꓽIETFLanguageType,
 	normalizeꓽtextⵧsentence,

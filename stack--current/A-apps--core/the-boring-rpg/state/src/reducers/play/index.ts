@@ -1,6 +1,6 @@
 /////////////////////
 
-import { Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@offirmo-private/ts-types'
 import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
 
@@ -11,7 +11,7 @@ import * as ProgressState from '@tbrpg/state--progress'
 
 /////////////////////
 
-import { State } from '../../types.js'
+import { type State } from '../../types.js'
 
 import { will_next_play_be_good_at } from '../../selectors/index.js'
 import { _update_to_now } from '../internal.js'

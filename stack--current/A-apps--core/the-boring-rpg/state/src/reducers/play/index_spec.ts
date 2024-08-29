@@ -15,7 +15,7 @@ import {
 } from '@tbrpg/state-wallet'
 
 import { LIB } from '../../consts.js'
-import { State} from '../../types.js'
+import { type State} from '../../types.js'
 import {
 	getꓽavailable_energy‿float,
 } from '../../selectors/index.js'

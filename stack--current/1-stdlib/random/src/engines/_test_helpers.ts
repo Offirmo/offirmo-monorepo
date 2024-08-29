@@ -1,8 +1,8 @@
 import { expect } from 'chai'
 
 import { ROUNDS_COUNT } from '../_test_helpers.js'
-import { RNGEngine, Int32, PRNGEngine, PRNGState } from '../types.js'
-import { Immutable } from '../embedded-deps/types/index.js'
+import { type RNGEngine, Int32, PRNGEngine, PRNGState } from '../types.js'
+import { type Immutable } from '../embedded-deps/types/index.js'
 import { assert } from '../embedded-deps/assert/index.js'
 
 /////////////////////////////////////////////////

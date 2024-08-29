@@ -8,7 +8,7 @@ import {
 import { getꓽRNGⵧISAAC32 } from './engines/ISAAC/index.js'
 import { getꓽRNGⵧMathᐧrandom } from './engines/MathRandom/index.js'
 import { PRNGEngine, PRNGState } from './types.js'
-import { Immutable } from './embedded-deps/types/index.js'
+import { type Immutable } from './embedded-deps/types/index.js'
 
 /////////////////////////////////////////////////
 

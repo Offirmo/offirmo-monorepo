@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { getRootSXC } from '@offirmo-private/soft-execution-context'
 import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'
 

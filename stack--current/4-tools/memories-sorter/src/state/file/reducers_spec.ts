@@ -1,7 +1,7 @@
 import path from 'path'
 import { expect } from 'chai'
 
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { LIB } from '../../consts.js'

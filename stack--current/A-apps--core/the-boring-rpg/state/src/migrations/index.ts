@@ -20,7 +20,7 @@ import * as ProgressState from '@tbrpg/state--progress'
 import * as MetaState from '@oh-my-rpg/state-meta'
 
 import { LIB, SCHEMA_VERSION } from '../consts.js'
-import { State } from '../types.js'
+import { type State } from '../types.js'
 import { TBRSoftExecutionContext } from '../services/sec.js'
 import { _refresh_achievements } from '../reducers/achievements/index.js'
 import { reset_and_salvage } from './salvage.js'

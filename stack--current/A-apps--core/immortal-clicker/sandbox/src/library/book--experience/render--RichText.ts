@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import { BookCover } from '../book/types.js'

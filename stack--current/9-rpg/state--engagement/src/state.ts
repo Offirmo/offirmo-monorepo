@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////
 
 import assert from 'tiny-invariant'
-import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { SCHEMA_VERSION } from './consts.js'
 
@@ -11,7 +11,7 @@ import {
 	State,
 } from './types.js'
 
-import { SoftExecutionContext, getꓽSXC } from './sec.js'
+import { type SoftExecutionContext, getꓽSXC } from './sec.js'
 
 //////////////////////////////////////////////////////////////////////
 

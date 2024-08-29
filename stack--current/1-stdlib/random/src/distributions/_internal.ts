@@ -1,6 +1,6 @@
-import { Immutable } from '../embedded-deps/types/index.js'
-import { RNGEngine } from '../types.js'
-import { RandomValueGenerator } from './types.js'
+import { type Immutable } from '../embedded-deps/types/index.js'
+import { type RNGEngine } from '../types.js'
+import { type RandomValueGenerator } from './types.js'
 
 /////////////////////////////////////////////////
 

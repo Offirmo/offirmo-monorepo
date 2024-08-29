@@ -1,8 +1,8 @@
 /////////////////////
 
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
-import { State } from './types.js'
+import { type State } from './types.js'
 import { LIB } from './consts.js'
 
 /////////////////////

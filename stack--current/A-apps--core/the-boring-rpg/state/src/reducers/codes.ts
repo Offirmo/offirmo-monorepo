@@ -1,6 +1,6 @@
 /////////////////////
 
-import { Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@offirmo-private/ts-types'
 import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
 
@@ -19,7 +19,7 @@ import { create as create_armor } from '@tbrpg/logic-armors'
 
 /////////////////////
 
-import { State } from '../types.js'
+import { type State } from '../types.js'
 import { EngagementKey } from '../data/engagement/index.js'
 import { CODE_SPECS_BY_KEY } from '../data/codes.js'
 

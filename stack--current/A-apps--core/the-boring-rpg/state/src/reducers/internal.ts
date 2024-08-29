@@ -1,6 +1,6 @@
 /////////////////////
 
-import { Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@offirmo-private/ts-types'
 import { UUID } from '@offirmo-private/uuid'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
@@ -26,7 +26,7 @@ import * as InventoryState from '@tbrpg/state--inventory'
 
 /////////////////////
 
-import { State } from '../types.js'
+import { type State } from '../types.js'
 
 import {
 	appraise_item_value,

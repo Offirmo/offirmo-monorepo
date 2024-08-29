@@ -1,9 +1,9 @@
 //////////////////////////////////////////////////////////////////////
 
-import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
-import { State } from './types.js'
+import { type State } from './types.js'
 import { TBRSoftExecutionContext, getꓽSXC } from './sec.js'
 
 //////////////////////////////////////////////////////////////////////

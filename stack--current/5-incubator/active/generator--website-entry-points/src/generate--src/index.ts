@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import { EntryPoints, WebPropertyEntryPointSpec } from '../types.js'
 import {
@@ -15,7 +15,7 @@ import { ifꓽdebug } from '../utils/debug.js'
 
 const CODE_TEMPLATEⵧGENERIC = `
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 //import {  } from './types.js'
 

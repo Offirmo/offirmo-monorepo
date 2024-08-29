@@ -1,6 +1,6 @@
-import { Int32, PRNGEngine, PRNGState, Seed } from '../../types.js'
+import { type Int32, PRNGEngine, PRNGState, Seed } from '../../types.js'
 import { assert } from '../../embedded-deps/assert/index.js'
-import { Immutable, PositiveInteger } from '../../embedded-deps/types/index.js'
+import { type Immutable, PositiveInteger } from '../../embedded-deps/types/index.js'
 import { getꓽseed‿Int32Array } from '../../utils.js'
 
 /////////////////////////////////////////////////

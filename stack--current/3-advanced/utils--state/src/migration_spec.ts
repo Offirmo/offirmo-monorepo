@@ -1,6 +1,6 @@
 import { expect } from 'chai'
-import { Immutable } from '@offirmo-private/ts-types'
-import { SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
+import { type Immutable } from '@offirmo-private/ts-types'
+import { type SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
 
 import { LIB } from './consts.js'
 

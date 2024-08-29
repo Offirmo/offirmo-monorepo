@@ -1,7 +1,7 @@
 /////////////////////
 
 import { UUID } from '@offirmo-private/uuid'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import { InventorySlot } from '@tbrpg/definitions'
 import { Armor } from '@tbrpg/logic-armors'

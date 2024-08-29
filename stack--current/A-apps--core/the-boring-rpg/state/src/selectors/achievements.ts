@@ -1,5 +1,5 @@
 import { ElementType } from '@tbrpg/definitions'
-import { Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@offirmo-private/ts-types'
 
 import {
 	getꓽlast_known_achievement_status,

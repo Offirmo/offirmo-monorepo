@@ -2,7 +2,7 @@ import path from 'path'
 
 import assert from 'tiny-invariant'
 import stylize_string from 'chalk'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { prettifyꓽjson } from '@offirmo-private/prettify-any'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 

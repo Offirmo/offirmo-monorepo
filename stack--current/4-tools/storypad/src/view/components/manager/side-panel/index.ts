@@ -2,7 +2,7 @@
  */
 
 import assert from 'tiny-invariant'
-import { Immutable, Basename } from '@offirmo-private/ts-types'
+import { type Immutable, Basename } from '@offirmo-private/ts-types'
 
 import { LIB, SEPⵧSEGMENTS } from '../../../../consts'
 import { StoryEntry, StoryFolder, StoryTree } from '../../../../flux/types'

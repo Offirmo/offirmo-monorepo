@@ -2,7 +2,7 @@
 // PRNG = Pseudorandom Number Generator https://en.wikipedia.org/wiki/Pseudorandom_number_generator
 
 
-import { Immutable, PositiveInteger } from './embedded-deps/types/index.js'
+import { type Immutable, PositiveInteger } from './embedded-deps/types/index.js'
 
 /////////////////////////////////////////////////
 

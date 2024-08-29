@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
-import { State, prettifyꓽjson, getꓽoptionsⵧfull } from '@offirmo-private/prettify-any'
+import { type State, prettifyꓽjson, getꓽoptionsⵧfull } from '@offirmo-private/prettify-any'
 import { isꓽWithSchemaVersion } from '@offirmo-private/state-utils'
 import { getꓽUTC_timestampⵧhuman_readable‿ms } from '@offirmo-private/timestamps'
 

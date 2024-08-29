@@ -2,7 +2,7 @@ import path from 'path'
 
 import assert from 'tiny-invariant'
 import { Tags } from 'exiftool-vendored'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { getꓽbaseⵧloose } from '@offirmo-private/state-utils'
 
 import { AbsolutePath, RelativePath, SimpleYYYYMMDD } from '../../types.js'

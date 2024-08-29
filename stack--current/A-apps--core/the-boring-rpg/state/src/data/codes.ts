@@ -1,10 +1,10 @@
 import assert from 'tiny-invariant'
-import { Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@offirmo-private/ts-types'
 import { getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 
 import { CodeSpec, normalize_code, State as ProgressState } from '@oh-my-rpg/state-codes'
 
-import { State } from '../types.js'
+import { type State } from '../types.js'
 import {
 	is_alpha,
 	is_registered_alpha_player,

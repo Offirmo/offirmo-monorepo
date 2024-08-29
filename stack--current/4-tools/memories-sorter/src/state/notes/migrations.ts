@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 import {
 	LastMigrationStep,
 	MigrationStep,
@@ -7,8 +7,8 @@ import {
 } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
-import { State } from './types.js'
-import { SoftExecutionContext } from '../../services/sec.js'
+import { type State } from './types.js'
+import { type SoftExecutionContext } from '../../services/sec.js'
 import { PersistedNotes as FileNotes } from '../file/index.js'
 
 // some hints may be needed to migrate to demo state

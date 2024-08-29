@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { getꓽrandom, RNGEngine } from '@offirmo/random'
 
 import { LASTNAMES_ORDERED_BY_RARITY } from './data--auto-generated/lastnames--sinosplice.js'

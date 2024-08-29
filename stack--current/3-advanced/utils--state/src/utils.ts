@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import * as icepick from 'icepick'
-import { Immutable, Mutable, ImmutabilityEnforcer } from '@offirmo-private/ts-types'
+import { type Immutable, Mutable, ImmutabilityEnforcer } from '@offirmo-private/ts-types'
 import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import {

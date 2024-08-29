@@ -2,7 +2,7 @@
 
 import { Enum } from 'typescript-string-enums'
 
-import { Immutable, JSONObject, JSON } from '@offirmo-private/ts-types'
+import { type Immutable, JSONObject, JSON } from '@offirmo-private/ts-types'
 import { getꓽschema_versionⵧloose } from '@offirmo-private/state-utils'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
@@ -10,7 +10,7 @@ import { CharacterClass } from '@tbrpg/state--character'
 import * as EngagementState from '@oh-my-rpg/state-engagement'
 
 import { LIB } from '../consts.js'
-import { State } from '../types.js'
+import { type State } from '../types.js'
 import { getꓽlogger } from '../services/logger.js'
 import {
 	create,

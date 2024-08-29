@@ -1,11 +1,11 @@
 import { strict as node_assert } from 'node:assert'
 
 import { normalizeError } from '@offirmo/error-utils'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { getꓽjson_difference } from '@offirmo-private/state-utils'
 
 import '../../__test_shared/mocha_spec.js'
-import { State } from './types.js'
+import { type State } from './types.js'
 
 
 export function expectㆍfileㆍstatesㆍdeepㆍequal(s1: Immutable<State>, s2: Immutable<State>, should_log = true): void {

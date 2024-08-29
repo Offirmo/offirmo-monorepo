@@ -1,4 +1,4 @@
-import { Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@offirmo-private/ts-types'
 
 import {
 	AchievementDefinition,
@@ -11,7 +11,7 @@ import {
 	EngagementType,
 } from '@oh-my-rpg/state-engagement'
 
-import { State, UState } from '../../types.js'
+import { type State, UState } from '../../types.js'
 
 import ACHIEVEMENT_DEFINITIONS from '../../data/achievements.js'
 import {EngagementKey} from '../../data/engagement/index.js'

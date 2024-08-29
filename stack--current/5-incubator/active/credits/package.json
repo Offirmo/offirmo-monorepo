@@ -8,11 +8,6 @@
 	"sideEffects": true,
 	"type": "module",
 	"source": "src/aggregator/index.ts",
-	"exports": {
-		".": {
-			"import": "./dist/src.es2023.esm/aggregator/index.js"
-		}
-	},
 
 	"dependencies": {
 		"@offirmo-private/ts-types-web": "*",

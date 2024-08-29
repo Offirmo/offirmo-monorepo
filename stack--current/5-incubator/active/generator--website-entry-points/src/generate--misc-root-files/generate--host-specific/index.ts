@@ -2,7 +2,7 @@
 // put the comments in the code, it's up to the consumer to optimize or not
 
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { getꓽISO8601ⵧsimplified‿days } from '@offirmo-private/timestamps'
 
 import { WebPropertyEntryPointSpec, EntryPoints } from '../../types.js'

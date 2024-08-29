@@ -1,7 +1,11 @@
 
 
+
 ## Concepts
+
 https://parceljs.org/plugin-system/configuration/#shared-configuration
+
+IMPORTANT: some of the config HAS to be in package.json, also in the monorepo ROOT, not the immediate package 🤦‍♂️
 
 
 ## Plugins
@@ -23,6 +27,13 @@ Added so far:
 
 Current issue https://github.com/parcel-bundler/parcel/issues/7823#issuecomment-1826123439
 * tried "parcel-resolver-typescript-esm", but it's not working https://www.npmjs.com/package/parcel-resolver-typescript-esm
+
+
+## Config
+
+Added support for exports https://parceljs.org/features/dependency-resolution/#package-exports
+
+
 
 
 ## tosort

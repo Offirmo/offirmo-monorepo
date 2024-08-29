@@ -2,7 +2,7 @@ import util from 'util'
 import path from 'path'
 import fs from 'fs'
 
-import { Immutable, Mutable } from '@offirmo-private/ts-types'
+import { type Immutable, Mutable } from '@offirmo-private/ts-types'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { expect } from 'chai'
 import assert from 'tiny-invariant'

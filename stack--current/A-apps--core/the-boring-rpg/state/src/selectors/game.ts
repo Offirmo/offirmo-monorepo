@@ -1,12 +1,12 @@
 import { Enum } from 'typescript-string-enums'
-import { Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@offirmo-private/ts-types'
 
 import { CharacterClass } from '@tbrpg/state--character'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
 /////////////////////
 
-import { State, UState } from '../types.js'
+import { type State, UState } from '../types.js'
 import { getꓽavailable_energy‿float } from './energy.js'
 import { _update_to_now } from '../reducers/internal.js'
 

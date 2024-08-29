@@ -1,6 +1,6 @@
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
-import { SoftExecutionContext } from './types.js'
+import { type SoftExecutionContext } from './types.js'
 
 /////////////////////////////////////////////////
 

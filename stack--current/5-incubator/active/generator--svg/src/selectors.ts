@@ -3,7 +3,7 @@
 // TODO able to inject width & height
 
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import { EOL, TAB } from './consts.js'
 import { SVG, Svg‿str } from './types.js'

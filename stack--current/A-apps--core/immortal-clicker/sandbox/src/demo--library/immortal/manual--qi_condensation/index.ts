@@ -1,6 +1,6 @@
 // this file should be very small, not loading all the content
 
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import assert from 'tiny-invariant'
 
 import { Book, BookCover, BookUId } from '../../../library/book/types.js'

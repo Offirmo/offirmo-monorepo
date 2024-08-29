@@ -1,7 +1,7 @@
-import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { getꓽUTC_timestampⵧhuman_readable‿days, TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
 
-import { State, AchievementStatus } from './types.js'
+import { type State, AchievementStatus } from './types.js'
 
 /////////////////////
 

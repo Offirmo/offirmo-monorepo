@@ -6,7 +6,7 @@
 	"private": true,
 
 	"sideEffects": true,
-	"exports": "./src/index.tsx",
+	"#exports": "./src/index.tsx",
 	"source": "src/index.tsx",
 
 	"dependencies": {

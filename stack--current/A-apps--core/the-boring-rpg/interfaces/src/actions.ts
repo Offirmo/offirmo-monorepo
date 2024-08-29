@@ -1,9 +1,9 @@
 import { Enum } from 'typescript-string-enums'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import { UUID } from '@offirmo-private/uuid'
 import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
-import { State } from '@tbrpg/state'
+import { type State } from '@tbrpg/state'
 import { CharacterClass } from '@tbrpg/state--character'
 
 /////////////////////

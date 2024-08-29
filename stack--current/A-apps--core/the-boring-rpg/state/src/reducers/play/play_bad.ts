@@ -1,7 +1,7 @@
 /////////////////////
 
-import { Immutable} from '@offirmo-private/ts-types'
-import { RNGEngine } from '@offirmo/random'
+import { type Immutable} from '@offirmo-private/ts-types'
+import { type RNGEngine } from '@offirmo/random'
 
 /////////////////////
 
@@ -25,7 +25,7 @@ import {
 /////////////////////
 
 import { LIB } from '../../consts.js'
-import { State, UState } from '../../types.js'
+import { type State, UState } from '../../types.js'
 import { _play_adventure } from './play_adventure.js'
 
 /////////////////////

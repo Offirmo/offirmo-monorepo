@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
+import { type Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
 import { Contentⳇweb } from '@offirmo-private/ts-types-web';
 import {
 	FeatureSnippets,

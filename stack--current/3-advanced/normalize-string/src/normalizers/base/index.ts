@@ -1,4 +1,4 @@
-import { StringNormalizer } from '../../types.js'
+import { type StringNormalizer } from '../../types.js'
 
 /////////////////////////////////////////////////
 

@@ -1,4 +1,4 @@
-import { Immutable} from '@offirmo-private/ts-types'
+import { type Immutable} from '@offirmo-private/ts-types'
 
 import { ItemQuality, InventorySlot, ITEM_QUALITIES_TO_INT, ITEM_SLOTS } from '@tbrpg/definitions'
 import { appraise_sell_value, appraise_power } from '@tbrpg/logic--shop'

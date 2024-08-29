@@ -1,7 +1,7 @@
 /////////////////////
 
 import { UUID } from '@offirmo-private/uuid'
-import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { InventorySlot } from '@tbrpg/definitions'
 
 

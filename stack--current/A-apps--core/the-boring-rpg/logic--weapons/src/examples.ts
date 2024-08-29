@@ -1,6 +1,6 @@
 /////////////////////
 
-import { Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
+import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { getꓽengine, getꓽrandom, RNGEngine } from '@offirmo/random'
 
 import {

@@ -33,7 +33,7 @@ import {
 	getꓽembedded_timezone,
 	getꓽhuman_readable_timestamp_auto,
 } from './better-date.js'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 /////////////////////
 

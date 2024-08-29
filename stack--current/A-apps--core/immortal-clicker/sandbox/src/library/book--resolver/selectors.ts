@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import { BookUId, Book, BookCover, BookPageReference } from '../book/types.js'
 import { BookResolversIndex } from './types.js'

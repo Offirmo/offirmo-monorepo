@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { getꓽmutable_copy } from '@offirmo-private/state-utils'
 import stylize_string from 'chalk'
@@ -16,7 +16,7 @@ import {
 } from '../file/index.js'
 
 import { LIB, SCHEMA_VERSION } from './consts.js'
-import { State } from './types.js'
+import { type State } from './types.js'
 import { getꓽhistorical_fs_reliability } from '../file/sub/neighbor-hints/index.js'
 import { getꓽSXC } from '../../services/sec.js'
 

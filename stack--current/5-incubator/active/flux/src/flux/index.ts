@@ -3,8 +3,8 @@
 import assert from 'tiny-invariant'
 import EventEmitter from 'emittery'
 
-import { Immutable } from '@offirmo-private/ts-types'
-import { SoftExecutionContext } from '@offirmo-private/soft-execution-context'
+import { type Immutable } from '@offirmo-private/ts-types'
+import { type SoftExecutionContext } from '@offirmo-private/soft-execution-context'
 import {
 	AnyOffirmoState,
 	BaseAction,
@@ -15,7 +15,7 @@ import {
 } from '@offirmo-private/state-utils'
 
 /*
-import { Immutable, StorageⳇSync } from '@offirmo-private/ts-types'
+import { type Immutable, StorageⳇSync } from '@offirmo-private/ts-types'
 import { get_UTC_timestamp_ms } from '@offirmo-private/timestamps'
 
 import { schedule_when_idle_but_not_too_far } from '@offirmo-private/async-utils'

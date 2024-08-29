@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import path from 'path'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 
 import { getꓽtest_single_file_DB_state_generator } from '../../__test_shared/utils.js'
 import { LIB } from '../../consts.js'

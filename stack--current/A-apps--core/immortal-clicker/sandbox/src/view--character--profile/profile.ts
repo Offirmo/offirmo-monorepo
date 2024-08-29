@@ -1,4 +1,4 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 /*

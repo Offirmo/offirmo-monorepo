@@ -1,7 +1,7 @@
 /* PROMPT
  */
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import { type Immutable } from '@offirmo-private/ts-types'
 import Deferred from '@offirmo/deferred'
 
 /////////////////////////////////////////////////
