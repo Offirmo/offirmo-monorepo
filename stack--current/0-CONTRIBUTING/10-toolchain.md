@@ -63,6 +63,8 @@ White not Vite?
 * needs a "main" in package.json
 * has a "root" preventing from serving files upper in the monorepo
 
+TODO evaluate Rpack
+
 
 ## linting
 

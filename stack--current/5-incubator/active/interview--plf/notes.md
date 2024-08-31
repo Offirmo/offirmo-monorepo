@@ -1,19 +1,4 @@
-{
-	"name": "@offirmo-private/interview--web",
-	"version": "0.0.1",
-	"private": true,
 
-	"sideEffects": false,
-	"type": "module",
-	"source": "src/index.html",
-
-	"scripts": {
-		"clean": "monorepo-script--clean-package …dist …cache",
-
-		"start:parcel": "parcel serve src/entry-points/index.html --port 8080  --lazy  --no-autoinstall",
-		"dev": "npm-run-all  clean  refresh--build-variables  --parallel start:parcel",
-		"dev--pub": "ngrok http 8080 --domain=national-rat-supreme.ngrok-free.app"
-	},
 
 	"dependencies": {
 		"@offirmo-private/css--framework": "*",

@@ -1,0 +1,17 @@
+{
+	"extends": "../../../0-meta/tsconfig.json",
+
+	"compilerOptions": {
+		"noEmit": true,
+
+		"lib": [ "ES2023", "DOM" ],
+
+		"allowJs": true,
+		"checkJs": true
+	},
+
+	"include": [
+		"../../../0-typings-custom/**/*.ts",
+		"src/**/*.mjs"
+	]
+}

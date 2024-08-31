@@ -1,0 +1,30 @@
+{
+	"name": "@offirmo-private/interview--plf",
+	"version": "0.0.1",
+	"private": true,
+
+	"sideEffects": false,
+	"type": "module",
+	"source": "src/index.html",
+
+	"dependencies": {
+		"tslib": "^2"
+	},
+
+	"scripts": {
+		"clean": "monorepo-script--clean-package …dist …cache",
+
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
+
+		"start:parcel": "parcel serve src/index.html --port 8080  --lazy  --no-autoinstall",
+
+		"dev0": "run-s clean _build:dev:watch",
+		"dev1": "npm-run-all  clean  start:parcel",
+		"dev--pub": "ngrok http 8080 --domain=national-rat-supreme.ngrok-free.app"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/toolbox--parcel": "*",
+		"npm-run-all": "^4"
+	}
+}
