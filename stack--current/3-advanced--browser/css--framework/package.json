@@ -17,7 +17,9 @@
 		"clean": "monorepo-script--clean-package …dist …cache",
 
 		"_parcel:serve": "parcel serve --log-level verbose  'doc/demo/*.html' --port 3030 --no-autoinstall",
-		"dev": "npm-run-all clean --parallel _parcel:serve"
+		"dev": "npm-run-all clean --parallel _parcel:serve",
+
+		"build": "node ./src/~~gen/bundle.mjs"
 	},
 
 	"devDependencies": {
@@ -25,6 +27,8 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
+		"@offirmo/cli-toolbox": "*",
+		"lightningcss": "^1",
 		"npm-run-all": "^4"
 	}
 }

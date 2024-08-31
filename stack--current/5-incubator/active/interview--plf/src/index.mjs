@@ -1,9 +1,7 @@
-console.log('Hi from js')
+import _main from './chrome-ai/index.mjs';
 
+export default function main() {
+	console.log('Hi from js')
 
-function foo(n) {
-	console.log('foo', n)
+	_main()
 }
-
-
-foo()

@@ -1,6 +1,7 @@
 
 
 	"dependencies": {
+		"@offirmo-private/css--foundation": "*",
 		"@offirmo-private/css--framework": "*",
 		"@offirmo-private/css--utils": "*",
 		"@offirmo-private/react-error-boundary": "^0",
