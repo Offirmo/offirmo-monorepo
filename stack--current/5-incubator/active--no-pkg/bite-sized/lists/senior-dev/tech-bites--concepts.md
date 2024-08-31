@@ -124,6 +124,7 @@ databases
 databases -- joins https://justinjaffray.com/joins-13-ways/
 databases -- normalization
 databases -- sharding https://www.mongodb.com/docs/manual/sharding/
+databases -- sharding -- middleware -- gizzard (legacy) = sharding middleware https://github.com/twitter-archive/gizzard
 DBMS (Database Management System)
 DDD (Domain-Driven Design) https://en.wikipedia.org/wiki/Domain-driven_design
 DDOS
@@ -430,7 +431,7 @@ temporary solutions https://80.lv/articles/this-30-year-old-windows-feature-was-
 test -- test double -- 01 dummy = objects are passed around but never actually used. Usually they are just used to fill parameter lists
 test -- test double -- 02 fake = have working implementations, but usually take some shortcut which makes them not suitable for production (an in memory database is a good example)
 test -- test double -- 03 stub = provide canned answers to calls made during the test, usually not responding at all to anything outside what's programmed in for the test.
-test -- test double -- 04 spy = tubs that also record some information based on how they were called. One form of this might be an email service that records how many messages it was sent.
+test -- test double -- 04 spy = stubs that also record some information based on how they were called. One form of this might be an email service that records how many messages it was sent.
 test -- test double -- 05 mock = objects pre-programmed with expectations which form a specification of the calls they are expected to receive.
 test -- test double = dummy, fake, stub, spy, mock - Every class or object created is a fake. It is a mock if you assert against it. Otherwise it is a stub. https://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub
 test -- test double https://martinfowler.com/articles/mocksArentStubs.html

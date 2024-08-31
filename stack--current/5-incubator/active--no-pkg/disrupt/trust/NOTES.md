@@ -15,6 +15,11 @@ https://www.schneier.com/blog/archives/2023/12/ai-and-trust.html
 https://digital-defense.io/
 
 
+https://www.abc.net.au/news/2024-07-31/inheritance-scam-victim-calls-for-banking-reform/104167178
+
+https://slashdot.org/story/24/08/02/2022212/japan-mandates-app-to-ensure-national-id-cards-arent-forged
+
+
 10 Commitments
 1. Customers can trust our Data Center Products; all dependencies are kept updated and vulnerabilities are resolved within SLO
 1. There are no standing permissions and all access to Production systems is granted and verified when required for a legitimate business purpose

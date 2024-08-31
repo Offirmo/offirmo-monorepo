@@ -1,4 +1,6 @@
 [ ] +++ 7 best courses https://levelup.gitconnected.com/7-best-software-design-course-for-programmers-and-developers-da3e18e9135
+[ ] huge list of concepts https://github.com/ByteByteGoHq/system-design-101 (shared by recruiter)
+
 
 1. requirements
   1. Priorized requirements

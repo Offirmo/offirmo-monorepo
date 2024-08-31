@@ -10,6 +10,14 @@ https://github.com/bubkoo/html-to-image
 
 unified inbox https://www.theverge.com/2023/8/9/23824562/slack-redesign-app-dms-activity-later
 
+
+Fluent (dead)
+- https://techcrunch.com/2012/05/31/first-impressions-on-fluent-the-startup-promising-the-future-of-email/?guccounter=1
+- https://techcrunch.com/2012/08/08/heres-what-happened-at-fluent/?guccounter=1
+- https://www.forbes.com/profile/cameron-adams/
+- https://www.youtube.com/watch?v=Z07MnBf9QNY
+- 
+
 https://www.nylas.com/products/email-api/
 https://www.theregister.com/2023/08/23/email_like_a_pro/
 

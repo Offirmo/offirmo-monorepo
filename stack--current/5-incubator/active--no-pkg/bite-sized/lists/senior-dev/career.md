@@ -56,6 +56,10 @@ Net worth 8 million (single income family)
 
 
 
+Resume
+https://www.canva.com/newsroom/news/new-job-canva/
+
+
 https://theindieweb.com/github-has-added-profiles-here-are-the-most-creative-ones-so-far/
 
 

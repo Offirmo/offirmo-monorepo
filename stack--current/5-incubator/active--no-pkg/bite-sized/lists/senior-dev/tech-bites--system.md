@@ -151,7 +151,7 @@ database -- Bigtable = wide-column and key-value NoSQL database https://en.wikip
 database -- denormalization = improving the performance of the database by adding redundant data
 database -- indexes
 database -- N+1 query problem = cascade, naive, inefficient query https://guides.rubyonrails.org/active_record_querying.html#n-1-queries-problem https://thoughtbot.com/blog/what-is-counter-cache
-database -- NoSQL -- Cassandra
+database -- NoSQL -- Cassandra https://cassandra.apache.org/_/index.html
 database -- NoSQL -- MongoDB
 database -- partitioning -- multiple DBs or tables
 database -- partitioning vs sharding vs replication
@@ -375,6 +375,7 @@ service monitoring https://cloud.google.com/stackdriver/docs/solutions/slo-monit
 Service Proxy Egress authentication
 single point of failure = avoidable with redundancy
 site reliability engineering (SRE) "treat operations as if it’s a software problem" https://sre.google/
+snowflake (Twitter) = distributed k-sorted uuid generator https://blog.x.com/engineering/en_us/a/2010/announcing-snowflake
 SRE -- learning 01 = The riskiness of a mitigation should scale with the severity of the outage
 SRE -- learning 02 = Recovery mechanisms should be fully tested before an emergency
 SRE -- learning 03 = Canary all changes

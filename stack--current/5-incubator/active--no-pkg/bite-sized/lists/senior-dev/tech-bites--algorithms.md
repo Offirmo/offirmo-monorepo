@@ -141,6 +141,7 @@ sort -- bubble
 sort -- burstsort
 sort -- merge
 sort -- quick
+sorting -- k-sorting = roughly sorting https://cir.nii.ac.jp/crid/1050564287846744704
 sort -- radix sort O(nw) https://en.wikipedia.org/wiki/Radix_sort
 sort -- topological = a graph traversal in which each node is visited only after all its dependencies are visited. (need DAG) https://en.wikipedia.org/wiki/Topological_sorting
 sort https://en.wikipedia.org/wiki/Sorting_algorithm

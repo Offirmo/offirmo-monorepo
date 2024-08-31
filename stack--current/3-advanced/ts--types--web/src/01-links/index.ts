@@ -19,9 +19,12 @@ type SocialNetworkId =
 	| 'facebook'
 	| 'github'
 	| 'instagram'
+	| 'itch.io' // https://itch.io/profile/xyz
 	| 'linkedin'
 	| 'producthunt'
 	| 'reddit'
+	| 'twitch'
+	| 'ko-fi' // https://ko-fi.com/xyz
 	| 'twitter' // we keep "twitter" as an internal id, "X" is too generic
 
 interface SocialNetworkLink extends SimplerSocialNetworkLink {

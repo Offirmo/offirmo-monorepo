@@ -7,7 +7,9 @@
 		"lib": [ "ES2023", "DOM" ],
 
 		"allowJs": true,
-		"checkJs": true
+		"checkJs": true,
+
+		"noImplicitAny": false
 	},
 
 	"include": [
