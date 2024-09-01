@@ -12,20 +12,28 @@ import { getꓽicon__sizes, getꓽiconⵧemoji, getꓽiconⵧsvg, getꓽicon__pa
 
 // null = size-less (true SVG)
 function generateꓽfile(spec: Immutable<WebPropertyEntryPointSpec>, size: number | null): Svg‿str | Buffer {
-	console.warn(`TODO generate PNG icon!`, { size })
-	return 'TODO'
+	// we need resvg update to support emojis
+	// we need SVG loading support
+	// etc. etc.
+	throw new Error(`NIMP!`)
 	/*
 	if (size === null) {
-		const svg = getꓽsvg(spec)
+		const svg = getꓽiconⵧsvg(spec)
 		return svg && getꓽsvg‿str(svg)
 	}
 
 	if (size === 16) {
 		// TODO .ico
+		console.warn(`TODO generate .ico file!`, { size })
 		throw new Error('NIMP!')
 	}
 
+	console.warn(`TODO generate icon file!`, { size })
+	//throw new Error('TODO REVIEW!')
+	return 'TODO'
+	/*
 	const pngⵧbiggest_or_equal = getꓽpng_icon_pathⵧclosest_to_size(spec)
+
 	// render to png
 	//console.log(svg)
 	const resvg__opts = {
@@ -54,10 +62,13 @@ function generateꓽinline(spec: Immutable<WebPropertyEntryPointSpec>): string {
 /////////////////////////////////////////////////
 
 function generateꓽfixed_sizes(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
+	console.warn(`TODO generate fixed size icon files!`, getꓽicon__sizes(spec))
+	return {}
+	/*
 	return getꓽicon__sizes(spec).reduce((acc, size) => {
 			acc[getꓽicon__path(spec, size)] = generateꓽfile(spec, size)
 			return acc
-		}, {} as EntryPoints)
+		}, {} as EntryPoints)*/
 }
 
 function generate(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {

@@ -13,7 +13,9 @@
 
 Demo https://chrome.dev/web-ai-demos/prompt-api-playground/
 
-Explainer https://github.com/explainers-by-googlers/prompt-api/
+Explainers
+* prompt API https://github.com/explainers-by-googlers/prompt-api/
+* Web Translation and Language Detection APIs https://github.com/WICG/translation-api
 
 Concepts:
 * Origin trials
@@ -26,3 +28,9 @@ Install
 1. download chrome://components/
 1. download live
 1. test https://chrome.dev/web-ai-demos/prompt-api-playground/
+
+
+
+
+#### prompt exploration
+https://chrome.dev/web-ai-demos/prompt-api-playground/

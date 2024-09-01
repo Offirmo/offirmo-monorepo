@@ -1,5 +1,6 @@
 
 
+
 async function demo__assistant() {
 	const session = await ai.assistant.create({
 			monitor(m) {
@@ -15,6 +16,30 @@ async function demo__assistant() {
 }
 
 
+async function demo__8ball() {
+	const session = await ai.assistant.create({
+			systemPrompt: "You're a magic 8 ball. You reply to questions by an affirmative, a negative or a non-committal.",
+		}
+	)
+
+	const stream = session.promptStreaming("Should I do it?");
+	/*
+	for await (const chunk of stream) {
+		console.log(chunk);
+	}*/
+	let result = '';
+	let previousLength = 0;
+	for await (const chunk of stream) {
+		const newContent = chunk.slice(previousLength);
+		console.log(newContent);
+		previousLength = chunk.length;
+		result += newContent;
+	}
+	//console.log(result);
+
+}
+
+
 export default async function main() {
 	let innerHTML = ''
 
@@ -22,6 +47,7 @@ export default async function main() {
 		console.group('AI detection')
 		if (!globalThis.ai) {
 			const err = new Error(`AI feature not available! Please follow https://docs.google.com/document/d/1VG8HIyz361zGduWgNG7R_R8Xkv0OOJ8b5C9QKeCjU0c/edit#heading=h.witohboigk0o`)
+			throw err
 		}
 		innerHTML += `<ol><li><code><small>[globalThis.]</small>ai</code> API detected ✅</li>`
 		console.log({ai})
@@ -48,8 +74,11 @@ export default async function main() {
 			innerHTML += `<li>demo:`
 			switch (sub_api) {
 				case 'assistant':
+					innerHTML += ` <a target="_blank" href="https://chrome.dev/web-ai-demos/prompt-api-playground/">chrome.dev↗</a>`
+					break
+				/*case 'assistant':
 					innerHTML += `<div id="demo__${sub_api}"><marquee>…</marquee></div>`
-					demo__assistant()
+					/*demo__assistant()
 						.then(result => {
 							const elt = document.getElementById(`demo__${sub_api}`)
 							elt.innerHTML = result
@@ -59,6 +88,7 @@ export default async function main() {
 							const elt = document.getElementById(`demo__${sub_api}`)
 							elt.innerHTML = `<strong>Error: ${err?.message}</strong>`
 						})
+					*/
 					break
 				default:
 					innerHTML += ` (no demo for this API)`
@@ -70,6 +100,7 @@ export default async function main() {
 			console.groupEnd()
 		}
 		innerHTML += `</ul></li>`
+		demo__8ball()
 	}
 	catch (err) {
 		console.error(err, {err})
@@ -79,5 +110,6 @@ export default async function main() {
 		const div = document.createElement('div')
 		div.innerHTML = innerHTML
 		document.body.appendChild(div)
+		console.groupEnd()
 	}
 }
