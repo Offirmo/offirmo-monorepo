@@ -1,5 +1,11 @@
 
 
+
+https://devdocs.io/dom/webotp_api
+https://devdocs.io/dom/credential_management_api
+
+
+
 https://www.abc.net.au/news/2024-06-11/inside-the-scam-factory-pig-butchering-and-cyberscams/103937064
 
 https://www.atlassian.com/trust

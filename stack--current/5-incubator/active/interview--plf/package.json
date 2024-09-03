@@ -16,11 +16,12 @@
 
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
 
-		"serve:parcel": "parcel serve src/index.html --port 8080  --lazy  --no-autoinstall",
 		"serve:serve": "serve --listen 8080 --debug",
+		"serve:parcel": "parcel serve src/index.html --port 8080  --lazy  --no-autoinstall",
 
 		"dev0": "run-s clean _build:dev:watch",
-		"dev1": "npm-run-all  clean  start:parcel",
+		"dev1": "npm-run-all  clean  serve:serve",
+		"dev2": "npm-run-all  clean  start:parcel",
 		"dev--pub": "ngrok http 8080 --domain=national-rat-supreme.ngrok-free.app",
 
 		"test": "node --test ./src/"

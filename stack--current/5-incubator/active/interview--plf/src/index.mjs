@@ -2,8 +2,8 @@ import {
 	title,
 	html,
 	main as _main,
-} from './chrome-ai--8ball/index.mjs';
-//import _main from './chrome-ai--discovery/index.mjs';
+//} from './chrome-ai--8ball/index.mjs';
+} from './chrome-ai--discovery/index.mjs';
 
 export default function main() {
 	console.log('Hi from js')

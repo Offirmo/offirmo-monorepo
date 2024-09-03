@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xml:lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="content-language" content="en" />
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link
+			rel="icon"
+			href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎱</text></svg>"
+		/>
+
+		<title>AI Magic 8 ball</title>
+
+		<style>
+			@layer offirmo--reset, offirmo--foundation, offirmo--framework;
+			@import "offirmo-framework.css";
+			@import "index.css";
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<h1>🎱AI Magic 8 ball</h1>
+			<section id="question">
+				<form class="o⋄flex--directionꘌcolumn">
+					<strong>(optional) Please type your question:</strong>
+					<textarea id="question" rows="3">Does they like me?</textarea>
+					<button id="ask"><span style="padding: 0 1em; border-radius: .7em; background-color: white">Ask the magic 8-ball</span></button>
+				</form>
+			</section>
+
+			<section id="answer" style="
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1em;
+				">
+				<strong>Answer:</strong>
+				<p style="grid-column: 1;" class="o⋄flex--directionꘌcolumn">Traditional: 🎱
+					<textarea id="response-noai" rows="1"></textarea>
+				</p>
+				<p style="grid-column: 2;" class="o⋄flex--directionꘌcolumn">
+					AI: ✨🎱✨
+					<textarea id="response-ai" rows="10"></textarea>
+				</p>
+			</section>
+		</main>
+		<script type="module">
+			import main from './js/magic8ball/index.js'
+			console.log('Hi from html')
+			main()
+		</script>
+	</body>
+</html>

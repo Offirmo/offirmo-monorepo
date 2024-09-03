@@ -2,6 +2,10 @@
 +++ https://developer.mozilla.org/en-US/curriculum/
 +++ https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3 + https://medium.com/@cramforce/designing-even-larger-applications-460ee029012d
 [ ] +++ https://dev.to/anze_kop1tar/acronyms-you-should-know-when-going-to-a-job-interview-369l
+[ ] advanced architecture -- Background Synchronization API
+[ ] advanced architecture -- https://devdocs.io/dom/content_index_api
+[ ] advanced architecture -- navigator.sendBeacon() for backup
+[ ] advanced architecture -- Web Periodic Background Synchronization API https://devdocs.io/dom/web_periodic_background_synchronization_api
 [ ] security https://portswigger.net/web-security/all-topics
 [ ] security https://xsleaks.dev/
 [ ] TODO shearing layers https://en.wikipedia.org/wiki/Shearing_layers
@@ -19,6 +23,7 @@ architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) htt
 architecture -- SSR, ISR, CSR, PPR (see 'rendering')
 ARIA "Accessible Rich Internet Applications" https://www.w3.org/WAI/ARIA/apg/
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
+bleed
 bot detection
 CDN
 chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
@@ -61,7 +66,25 @@ CSS -- z-index
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
 devices -- support
+dialog
 DNS = distributed database for IP address translation
+Document = The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. It provides functionality globally to the document, like how to obtain the page's URL and create new elements in the document.
+DOM -- CSSOM "CSS Object Model" = part of the DOM
+DOM -- Nodes -- 01 Elements = like <p> or <div>.
+DOM -- Nodes -- 02 Attributes -- data-* https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*
+DOM -- Nodes -- 02 Attributes -- global https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
+DOM -- Nodes -- 02 Attributes -- item* = WHATWG HTML Microdata feature https://html.spec.whatwg.org/multipage/microdata.html#microdata
+DOM -- Nodes -- 02 Attributes = attribute of an element https://devdocs.io/dom/attr
+DOM -- Nodes -- 03 Text = text between elements (lot of white space) https://devdocs.io/dom/text
+DOM -- Nodes -- 04 CDATA = <!CDATA[[ … ]]> https://devdocs.io/dom/cdatasection
+DOM -- Nodes -- 05, 06 (not in the list) https://devdocs.io/dom/node/nodetype
+DOM -- Nodes -- 07 Processing Instruction = <?xml-stylesheet … ?>
+DOM -- Nodes -- 08 Comments = <!-- … -->
+DOM -- Nodes -- 09 Document
+DOM -- Nodes -- 10 Document Type = <!DOCTYPE html>
+DOM -- Nodes -- 11 Fragment
+DOM -- Nodes -- types =  ELEMENT, ATTRIBUTE, TEXT, CDATA, PROCESSING_INSTRUCTION, COMMENT, DOCUMENT, DOCUMENT_TYPE https://devdocs.io/dom/node/nodetype 
+DOM tree = Nodes = text, elements, attributes, comments... includes elements such as <body> and <table>, among many others. 
 ECMAScript - European Computer Manufacturers Association Script (ES)
 fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
@@ -109,6 +132,7 @@ perf metrics -- Time to above-the-fold load
 perf metrics -- Time to First Byte (TTFB) = from the browser, time taken to receive the first byte of data from the web server. TTFB is crucial because it indicates the general ability of the server to handle traffic
 perf metrics -- Time to Interactive (TTI) = time at which the page becomes consistently responsive to user input. This is a less well-defined milestone, but is sometimes calculated as the point when the CPU and network both become idle
 perf metrics -- Time to Visually Complete (TTVC) = time of the last visible paint event. Nothing on the user’s screen should change without user input https://dropbox.tech/frontend/measuring-ttvc-web-performance-metric-open-source-library
+popover https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
 puppeteer -- firefox https://hacks.mozilla.org/2024/08/puppeteer-support-for-firefox/
 puppeteer -- vs Selenium, Playwright, Cypress https://www.testim.io/blog/puppeteer-selenium-playwright-cypress-how-to-choose/
 puppeteer https://pptr.dev/
@@ -152,5 +176,13 @@ viewport -- small <= dynamic <= large
 viewport -- visual
 viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
 Web Application Firewall (WAF)
+web components -- custom elements
+web components -- is
+web components -- shadow DOM
+web components -- templates
+web components -- templates -- slots https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/slot
+web components https://developer.mozilla.org/en-US/docs/Web/API/Web_components
 WebDriver BiDi https://developer.chrome.com/blog/firefox-support-in-puppeteer-with-webdriver-bidi
+WebGPU / WebGL = https://devdocs.io/dom/webgpu_api
+WebXR / WebVR = VR / AR 
 Wep pages UX design -- concepts https://www.nngroup.com/courses/web-page-design/

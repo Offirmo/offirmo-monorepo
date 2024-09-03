@@ -123,8 +123,8 @@ currying https://en.wikipedia.org/wiki/Currying
 databases
 databases -- joins https://justinjaffray.com/joins-13-ways/
 databases -- normalization
-databases -- sharding https://www.mongodb.com/docs/manual/sharding/
 databases -- sharding -- middleware -- gizzard (legacy) = sharding middleware https://github.com/twitter-archive/gizzard
+databases -- sharding https://www.mongodb.com/docs/manual/sharding/
 DBMS (Database Management System)
 DDD (Domain-Driven Design) https://en.wikipedia.org/wiki/Domain-driven_design
 DDOS
@@ -475,7 +475,9 @@ variables pointer / natives
 virtual private cloud (VPC)
 web assembly (asm.js)
 X considered harmful
+XML
 XML (Extensible Markup Language)
+XSLT
 XSS (Cross-site scripting)
 YAGNI (you aren't gonna need it) -- Too general too soon https://frontendatscale.com/issues/15/
 yet another guideline I need to follow (YAGINTF)

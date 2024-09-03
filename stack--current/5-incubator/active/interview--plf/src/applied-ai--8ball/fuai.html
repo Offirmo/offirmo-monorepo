@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" xml:lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="content-language" content="en" />
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link
+			rel="icon"
+			href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>"
+		/>
+
+		<title>Free LLM AAI ✨</title>
+
+		<style>
+			@layer offirmo--reset, offirmo--foundation, offirmo--framework;
+			@import "offirmo-framework.css";
+			@import "index.css";
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<h1>✨ Free & Unfettered LLM AI ✨</h1>
+			<section id="prompt">
+				<form class="o⋄flex--directionꘌcolumn">
+					<strong>(optional) System prompt:</strong>
+					<textarea rows="3">You're a helpful assistant.</textarea>
+					<small>tokens: TODO</small>
+					<strong>(optional) Please type your question:</strong>
+					<textarea rows="3">How many r are there in "strawberry"?</textarea>
+					<small>tokens: TODO</small>
+					<button>Prompt</button>
+				</form>
+			</section>
+
+			<section id="results" style="
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1em;
+				">
+
+				<div>
+					<strong>Answer:</strong>
+					<ul>
+						<li><small>temperature: TODO</small></li>
+						<li><small>topK: TODO</small></li>
+						<li><small>tokens: x/max (y left)</small></li>
+						<li>result:<br><code><pre>TODO</pre></code></li>
+					</ul>
+				</div>
+			</section>
+		</main>
+		<script type="module">
+			import main from './js/fuai/index.js'
+			console.log('Hi from html')
+			main()
+		</script>
+	</body>
+</html>

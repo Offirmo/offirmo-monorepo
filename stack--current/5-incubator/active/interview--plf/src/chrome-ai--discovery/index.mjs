@@ -1,4 +1,7 @@
 
+export const title = 'Chrome AI discovery'
+
+export const html = `TODO`
 
 
 async function demo__assistant() {
@@ -40,7 +43,7 @@ async function demo__8ball() {
 }
 
 
-export default async function main() {
+export async function main() {
 	let innerHTML = ''
 
 	try {

@@ -12,6 +12,8 @@ bords https://css-tricks.com/flip-invert-and-reverse/
 
 svg https://fffuel.co/ffflux/
 
+vibration https://devdocs.io/dom/vibration_api
+
 https://github.com/munrocket/parallax-effect
 
 - interactive maps https://github.com/dphilipson/graphs-and-paths

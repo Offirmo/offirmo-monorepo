@@ -11,6 +11,11 @@ https://github.com/bubkoo/html-to-image
 unified inbox https://www.theverge.com/2023/8/9/23824562/slack-redesign-app-dms-activity-later
 
 
+
+https://devdocs.io/dom/contactaddress
+Universal Postal Union website's Addressing S42 standard
+https://devdocs.io/dom/contactsmanager
+
 Fluent (dead)
 - https://techcrunch.com/2012/05/31/first-impressions-on-fluent-the-startup-promising-the-future-of-email/?guccounter=1
 - https://techcrunch.com/2012/08/08/heres-what-happened-at-fluent/?guccounter=1
