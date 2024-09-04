@@ -7,6 +7,8 @@ A social media icons web component.
 
 ## Usage
 
+WARNING example does not work on Safari! TODO fix
+
 https://codepen.io/Offirmo/pen/vYeobzP
 
 

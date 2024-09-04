@@ -41,6 +41,7 @@ authentication
 B2B (Business to Business)
 B2C (Business to Customer)
 B2G (Business to Government)
+bad API = make assumptions about what you are trying to do, but then break when those assumptions are not exactly right, ex. AppCache
 BDD (Behavior-Driven Development) https://cucumber.io/school/   Discovery -> Formulation -> Automation
 blocking
 bug -- mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html
@@ -70,6 +71,7 @@ changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 CI (Continuous Integration) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
 client/server -- multi-tier architecture 
+close / destroy / terminate / dispose / release / free / delete / destruct / finalize / teardown / cleanup / shutdown / stop / end / abort / cancel / halt / kill / exit / quit / unload / dispose...
 code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 cohesion = degree to which the elements inside a module belong together https://en.wikipedia.org/wiki/Cohesion_(computer_science)
 command query separation (CQS)

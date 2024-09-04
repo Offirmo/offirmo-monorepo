@@ -11,6 +11,7 @@
 [ ] TODO shearing layers https://en.wikipedia.org/wiki/Shearing_layers
 AJAX (Asynchronous JavaScript And XML) = LEGACY interactive web apps now fetch + json
 AMP (Accelerated Mobile Pages)
+animations -- API https://devdocs.io/dom/web_animations_api
 APIs web
 appli web
 Application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
@@ -25,6 +26,7 @@ ARIA "Accessible Rich Internet Applications" https://www.w3.org/WAI/ARIA/apg/
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 bleed
 bot detection
+browsing contexts = such as several windows, iframes or even workers
 CDN
 chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
 Chrome is not the standard https://v4.chriskrycho.com/2017/chrome-is-not-the-standard.html
@@ -105,6 +107,7 @@ IIFE (Immediately-Invoked Function Expression)
 interop https://developer.mozilla.org/en-US/blog/interop2023-mdn-doc-updates/
 JS -- book -- Exploring JavaScript (ES2024 Edition) https://exploringjs.com/js/book/index.html
 JS -- exports https://webpack.js.org/guides/package-exports/
+JS -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
 JSON - Javascript Object Notation
 MDN
 MDN curriculum https://developer.mozilla.org/en-US/curriculum/
@@ -182,7 +185,11 @@ web components -- shadow DOM
 web components -- templates
 web components -- templates -- slots https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/slot
 web components https://developer.mozilla.org/en-US/docs/Web/API/Web_components
+web workers -- dedicated = utilized by a single script https://devdocs.io/dom/worker
+web workers -- service = proxy https://devdocs.io/dom/service_worker_api
+web workers -- shared = can be utilized by multiple scripts running in different windows, IFrames, etc., as long as they are in the same domain as the worker https://devdocs.io/dom/sharedworker
 WebDriver BiDi https://developer.chrome.com/blog/firefox-support-in-puppeteer-with-webdriver-bidi
 WebGPU / WebGL = https://devdocs.io/dom/webgpu_api
 WebXR / WebVR = VR / AR 
 Wep pages UX design -- concepts https://www.nngroup.com/courses/web-page-design/
+XSS -- injection sinks https://devdocs.io/dom/trusted_types_api
