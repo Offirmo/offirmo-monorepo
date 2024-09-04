@@ -235,6 +235,8 @@ inheritance -- diamond
 inheritance -- prototypal
 inheritance -- substitutability = an object (such as a class) may be replaced by a sub-object (such as a class that extends the first class) without breaking the program
 inner-platform effect https://en.wikipedia.org/wiki/Inner-platform_effect
+interface
+interface -- abstract = no implementation, only to be extended (OOP)
 Interface segregation principle = instead of a class interface with all possible methods clients might need, there should be separate interfaces catering to the specific needs of each type of client https://en.wikipedia.org/wiki/Interface_segregation_principle
 Joel test
 JS equality

@@ -2,6 +2,7 @@
 
 /////////////////////////////////////////////////
 
+// https://gemini.google.com/share/a4665036f4b9
 type LLMTemperature = number
 type LLMTopK = number
 type LLMTokenCount = number

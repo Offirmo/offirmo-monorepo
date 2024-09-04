@@ -175,6 +175,7 @@ User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dyn
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
 UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb
 viewport
+temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
 viewport -- small <= dynamic <= large
 viewport -- visual
 viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
@@ -183,6 +184,7 @@ web components -- custom elements
 web components -- is
 web components -- shadow DOM
 web components -- templates
+web components -- "autonomous" = no extends, no "is", must inherit from HTMLElement
 web components -- templates -- slots https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/slot
 web components https://developer.mozilla.org/en-US/docs/Web/API/Web_components
 web workers -- dedicated = utilized by a single script https://devdocs.io/dom/worker

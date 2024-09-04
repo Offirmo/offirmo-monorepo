@@ -1,6 +1,6 @@
 # https://securitytxt.org/
 
 Please report any security issue or danger to the community to:
-- https://github.com/Yvem/applied-ai--8ball/issues
+- https://github.com/Yvem/applied-ai--2024/issues
 
 Thanks for your contribution!

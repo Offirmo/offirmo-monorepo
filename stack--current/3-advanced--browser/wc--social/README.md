@@ -7,7 +7,7 @@ A social media icons web component.
 
 ## Usage
 
-WARNING example does not work on Safari! TODO fix
+WARNING example does not work on Safari! TODO fix https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/is
 
 https://codepen.io/Offirmo/pen/vYeobzP
 

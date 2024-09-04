@@ -35,7 +35,7 @@ export default async function main() {
 	}
 
 	elt_button_ask.onclick = on_click_ask
-	on_click_ask()
+	//on_click_ask()
 }
 
 function get_random_standard_8ball_answer() {
