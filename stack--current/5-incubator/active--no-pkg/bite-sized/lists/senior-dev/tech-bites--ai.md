@@ -5,6 +5,7 @@
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://www.perspectiveapi.com/
 [ ] https://www.sbert.net/
+[ ] People + AI Guidebook https://pair.withgoogle.com/guidebook/patterns
 A::B Prompting Challenge: $10k to prove me wrong! https://twitter.com/VictorTaelin/status/1776677635491344744 https://twitter.com/headinthebox/status/1777016124141650254
 Agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
 agents -- principals
@@ -117,7 +118,8 @@ processing -- GPU vs TPU vs LPU https://medium.com/@harishramkumar/comparing-gpu
 processing -- LPU = Language Processing Units
 processing -- Meta Training and Inference Accelerator (MTIA) https://ai.meta.com/blog/next-generation-meta-training-inference-accelerator-AI-MTIA/
 processing -- TPU = Tensor Processing Units
-prompt -- design https://docs.anthropic.com/claude/docs/introduction-to-prompt-design
+prompt -- design -- anthropic https://docs.anthropic.com/claude/docs/introduction-to-prompt-design
+prompt -- design -- google https://ai.google.dev/gemini-api/docs/prompting-strategies?hl=en
 prompt -- generation https://www.anthropic.com/news/evaluate-prompts
 prompt -- optimization https://app.hamming.ai/prompt-optimizer
 prompt -- ROC = [Role] + [Output] + [Context], ex. You are an engineering manager, how many story points do you think this will be and why? https://community.atlassian.com/t5/Jira-Software-articles/Be-an-AI-Rockstar-Prompts-in-Jira-Software/ba-p/2636811

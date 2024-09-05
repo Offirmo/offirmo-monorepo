@@ -69,8 +69,9 @@ architecture -- 12 factors https://12factor.net/
 architecture -- entitlement (vs. billing) = a customer’s access to a specific feature or product, within a given plan https://arnon.dk/why-you-should-separate-your-billing-from-entitlement/
 audit
 audit trail
-authentication
-authorization
+authentication (authn) = making sure that a person or device is who (or what) they claim to be
+authentication vs authorization https://www.cloudflare.com/en-gb/learning/access-management/authn-vs-authz/
+authorization (authz) = determines what an authenticated user can see and do
 auto-scaling
 availability
 availability zone
@@ -128,6 +129,7 @@ data -- 2. predictive = forecast and predict from data
 data -- 3. prescriptive = recommend actions based on data
 data loss
 data retrieval
+data store -- data type -- BLOB (Binary Large Object) https://stackoverflow.com/questions/211895/storing-documents-as-blobs-in-a-database-any-disadvantages
 data store -- data type -- CLOB (character large object) value can be up to 2,147,483,647 characters long. A CLOB is used to store unicode character-based data, such as large documents in any character set. https://docs.oracle.com/javadb/10.10.1.2/ref/rrefclob.html
 data store -- data type -- JSON, BSON = BSON supposed to be more efficient in space but at the same time also wants to improve traversal by storing extra data, so not always better. depends on the data. 
 data store -- database -- Graph = Neo4J, 
@@ -195,7 +197,7 @@ distributed system -- failures -- Method failure = the distributed system is gen
 distributed system -- failures -- Secondary storage device failure = occurred once the keep information can’t be accessed. This failure is sometimes caused by parity error, head crash, or dirt particles settled on the medium.
 distributed system -- failures -- System failure = the processor associated with the distributed system fails to perform the execution. This is caused by computer code errors and hardware issues. Hardware issues may involve CPU/memory/bus failure. This is assumed that whenever the system stops its execution due to some fault then the interior state is lost.
 edge
-edge "So, @vercel reverted all edge rendering back to Node.js" https://twitter.com/leeerob/status/1780705942734331983
+edge -- "So, @vercel reverted all edge rendering back to Node.js" https://twitter.com/leeerob/status/1780705942734331983
 efficiency
 emergency response
 encryption
@@ -236,6 +238,8 @@ kafka = pub/sub + store + process
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
 latency = the time that passes between an action and the resulting response
 latency https://www.a10networks.com/glossary/osi-network-model-and-types-of-load-balancers/
+limiting -- content limiting = ex. only X Gb of storage
+limiting -- rate limiting = control the rate of requests sent or received by a network interface (DoS, scraping) https://en.wikipedia.org/wiki/Rate_limiting
 load balancer
 load balancer -- affinity = grouping related in the same server, when desirable
 load balancer -- google sth
@@ -308,7 +312,6 @@ operations -- metrics -- MTTD
 operations -- metrics -- MTTR
 ops -- toil
 orchestrator -- kubernetes
-organizational reliability continuum = absent -> reactive -> proactive -> strategic -> visionary / there is a significant cost associated with moving from one phase to another and a cost to remain very high on this curve. In our experience, being proactive is a healthy level to target and is ideal for most products https://cloud.google.com/blog/products/devops-sre/the-five-phases-of-organizational-reliability
 organizations
 PACELC theorem = extension of CAP https://en.wikipedia.org/wiki/PACELC_theorem
 peak hours, off-peak hours
@@ -329,7 +332,6 @@ proxy server = intermediaries between client and servers. improve performance by
 PubSub = Publish-Subscribe 
 push -- long polling, server-side events (SSE), and WebSockets
 push vs pull
-rate limiting = control the rate of requests sent or received by a network interface (DoS, scraping) https://en.wikipedia.org/wiki/Rate_limiting
 real-time -- hard real-time = a system is said to be hard real-time if it must meet strict timing constraints
 real-time -- protocols -- 01 Session Traversal Utilities for NAT (STUN) - Used to establish a direct UDP connection between two clients.
 real-time -- protocols -- 02 Traversal Using Relay around NAT (TURN) - Used to establish a relayed UDP or TCP connection between two clients. Here, the traffic must be relayed through the TURN server to bypass restrictive firewall rules, and the preference is UDP over TCP because TCP's guaranteed ordered delivery of packets implies overhead that is undesirable for real-time communications.
@@ -340,6 +342,7 @@ real-time -- soft real-time = a system is said to be soft real-time if it can to
 real-time application -- goals = high throughput, low latency communication between various clients that MAY be behind NATs or firewalls
 redeployment = can impact the service due to rebalancing etc. causing latency, connexions loss, etc.
 regions
+reliability -- organizational reliability continuum = absent -> reactive -> proactive -> strategic -> visionary / there is a significant cost associated with moving from one phase to another and a cost to remain very high on this curve. In our experience, being proactive is a healthy level to target and is ideal for most products https://cloud.google.com/blog/products/devops-sre/the-five-phases-of-organizational-reliability
 replication = improving availability, distribute the load, and enhance fault tolerance
 request deduplication
 requirements -- functional/behavioral = end user's basic facilities that the system should offer

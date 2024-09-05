@@ -23,6 +23,8 @@ LOOK FOR A PATTERN OF...
 * Singling out individuals
 * “Mobbing” in which a group of people gang up on an individual
 
+
+elves https://en.wikipedia.org/wiki/Directional_selection
 Maria is under pressure to finish a project. She has a strong personality and always puts her work first. She is easily angered when details are missed and struggles to productively handle other people’s mistakes. She is ambitious, eager to be promoted, and values team members who have been around the longest, as they have the most experience. She is wary of new people—not knowing whether she can rely on them makes her very nervous.
 
 villains https://www.news.com.au/entertainment/books-magazines/books/mary-trump-book-review-donald-trumps-father-fred-painted-as-the-true-villain/news-story/eb590b4237ffd5f7db207ff9d5e79ae0

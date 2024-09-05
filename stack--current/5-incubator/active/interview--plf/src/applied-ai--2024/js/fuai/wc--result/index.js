@@ -7,13 +7,16 @@ customElements.define('ai-prompt-result', class Component extends HTMLElement {
 	static _DEBUG = true
 	_DEBUG = Component._DEBUG
 
+
+	static capabilities = {}
+	static _ೱcapabilities = undefined
+
 	static _id_generator = 0
 	_id = Component._id_generator++
 
 	err = null
 	session = undefined
 	//signal = new AbortSignal() // TODO improve
-	capabilities = {}
 
 	static get observedAttributes() { return [ 'temperature', 'topK' ] }
 
@@ -32,14 +35,15 @@ customElements.define('ai-prompt-result', class Component extends HTMLElement {
 		// also NOT supposed to read attributes, since createElement(...) may be in progress
 		// In general, work should be deferred to connectedCallback as much as possible
 		// https://stackoverflow.com/a/43837330
+		Component._ೱcapabilities ||=
 		ai.assistant.capabilities().then(capabilities => {
-			this.capabilities = capabilities
+			Component.capabilities = capabilities
 			console.log('capabilities:', capabilities)
 		})
 	}
 
 	get temperature() {
-		const default_value = this.capabilities.defaultTemperature || 0.8
+		const default_value = Component.capabilities.defaultTemperature || 0.8
 
 		const raw = (this.getAttribute('temperature') || '').trim()
 		let candidate = Number(raw)
@@ -51,8 +55,8 @@ customElements.define('ai-prompt-result', class Component extends HTMLElement {
 	}
 
 	get topK() {
-		const default_value = this.capabilities.defaultTopK || 3
-		const max_value = this.capabilities.maxTopK || 128
+		const default_value = Component.capabilities.defaultTopK || 3
+		const max_value = Component.capabilities.maxTopK || 128
 
 		const raw = (this.getAttribute('topK') || '').trim()
 		let candidate = Number(raw)
@@ -65,23 +69,28 @@ customElements.define('ai-prompt-result', class Component extends HTMLElement {
 		return candidate
 	}
 
-	async prompt({systemPrompt, prompt}) {
+	async prompt({systemPrompt, prompt, signal}) {
+		if (this._DEBUG) console.log(`[${this.get_debug_id()}].prompt()]:`, {
+			'this': this
+		})
+
+		this.response = '(thinking...)'
+		this._render()
 
 		const session = this.session = await (() => {
 			if (this.session) {
-				//signal.
 				this.session.destroy()
 			}
 
 			return ai.assistant.create({
-				//signal: this.signal,
+				signal,
 				systemPrompt,
 				topK: this.topK,
 				temperature: this.temperature,
 			})
 		})()
 
-		session.prompt(prompt)
+		session.prompt(prompt, { signal })
 			.then(response => {
 				this.response = response
 				this._render()
@@ -127,6 +136,7 @@ customElements.define('ai-prompt-result', class Component extends HTMLElement {
 				return '#A1BFFF'
 			})()
 			this.style.backgroundColor = bgcolor
+			this.style.padding = '.5em'
 
 			this.innerHTML = `
 				<strong>Answer:</strong>
@@ -134,7 +144,7 @@ customElements.define('ai-prompt-result', class Component extends HTMLElement {
 					<li><small>temperature: ${temperature}</small></li>
 					<li><small>topK: ${this.topK}</small></li>
 					<li><small>tokens: x/max (y left)</small></li>
-					<li>result:<br><pre><code>${this.response || '(pending...)'}</code></pre></li>
+					<li>result:<br><pre style="position: relative; left: -1em;"><code style="display: block; text-wrap: auto; width: 40ch; max-height: 15em; overflow-y: auto;">${this.response || '(waiting for prompt...)'}</code></pre></li>
 				</ul>
 				`
 		})

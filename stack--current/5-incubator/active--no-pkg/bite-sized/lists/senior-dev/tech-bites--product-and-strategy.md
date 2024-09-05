@@ -1,4 +1,3 @@
-
 6 Reasons Users Hate Your New Feature https://www.slicedbreaddesign.com/blog/6-reasons-users-hate-your-new-feature
 [ ] https://skamille.medium.com/
 [ ] personal MBA
@@ -52,6 +51,7 @@ M&A
 M&A -- Apple 
 M&A -- killer zone = https://www.trendingtopics.eu/tech-talent-the-intricate-mechanisms-behind-apples-startup-killer-zone/
 magic moment -> habit moment
+marketing -- case studies
 metrics -- 40 something
 metrics -- funnel
 metrics -- Monthly Core User (MCU) = a user who do core actions at least X times in the last 28 days

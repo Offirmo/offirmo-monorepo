@@ -84,6 +84,7 @@ https://roughlywritten.substack.com/p/random-thoughts-15-years-into-software
 - Memorable
 - telling a story
 
+
 Interview questions:
 - current challenges? Current objectives/KR?
 - What are you looking for? greatness in this role?

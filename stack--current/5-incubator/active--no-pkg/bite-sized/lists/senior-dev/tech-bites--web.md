@@ -24,7 +24,6 @@ architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) htt
 architecture -- SSR, ISR, CSR, PPR (see 'rendering')
 ARIA "Accessible Rich Internet Applications" https://www.w3.org/WAI/ARIA/apg/
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
-bleed
 bot detection
 browsing contexts = such as several windows, iframes or even workers
 CDN
@@ -61,6 +60,7 @@ CSS -- Pseudo-elements ::xyz  https://courses.joshwcomeau.com/css-for-js/00-reca
 CSS -- rule = selector + property + value + unit https://courses.joshwcomeau.com/css-for-js/00-recap/02-anatomy
 CSS -- selectors -- descendant combinator -- expensive (perf) https://medium.com/@devdevcharlie/things-nobody-ever-taught-me-about-css-5d16be8d5d0e
 CSS -- selectors -- descendant combinator `ul li {`
+CSS -- specificity
 CSS -- stacking context https://github.com/andreadev-it/stacking-contexts-inspector
 CSS -- transforms
 CSS -- triggers https://csstriggers.com/
@@ -109,6 +109,7 @@ JS -- book -- Exploring JavaScript (ES2024 Edition) https://exploringjs.com/js/b
 JS -- exports https://webpack.js.org/guides/package-exports/
 JS -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
 JSON - Javascript Object Notation
+layout composer https://github.com/namecheap/ilc
 MDN
 MDN curriculum https://developer.mozilla.org/en-US/curriculum/
 MIME - Multipurpose Internet Mail Extensions
@@ -135,7 +136,6 @@ perf metrics -- Time to above-the-fold load
 perf metrics -- Time to First Byte (TTFB) = from the browser, time taken to receive the first byte of data from the web server. TTFB is crucial because it indicates the general ability of the server to handle traffic
 perf metrics -- Time to Interactive (TTI) = time at which the page becomes consistently responsive to user input. This is a less well-defined milestone, but is sometimes calculated as the point when the CPU and network both become idle
 perf metrics -- Time to Visually Complete (TTVC) = time of the last visible paint event. Nothing on the user’s screen should change without user input https://dropbox.tech/frontend/measuring-ttvc-web-performance-metric-open-source-library
-popover https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
 puppeteer -- firefox https://hacks.mozilla.org/2024/08/puppeteer-support-for-firefox/
 puppeteer -- vs Selenium, Playwright, Cypress https://www.testim.io/blog/puppeteer-selenium-playwright-cypress-how-to-choose/
 puppeteer https://pptr.dev/
@@ -161,30 +161,35 @@ response times https://www.nngroup.com/articles/response-times-3-important-limit
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
+SSR good explanation https://single-spa.js.org/docs/ssr-overview/
+temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
 testing -- Netflix's SafeTest https://www.infoq.com/news/2024/02/netflix-safetest-front-end-test/
 testing https://www.testingjavascript.com/
 typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
 typology -- naked site
+ui -- bleed
 UI -- HUD
 UI -- modals -- sheets = ~semi-modal https://en.wikipedia.org/wiki/Modal_window#Modal_sheets_in_Mac_OS_X
 UI -- modals https://en.wikipedia.org/wiki/Modal_window
 UI -- modes https://en.wikipedia.org/wiki/User_interface#Modalities_and_modes
+ui -- popover https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
 UI -- views
 User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#large-viewport
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
 UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb
 viewport
-temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
 viewport -- small <= dynamic <= large
 viewport -- visual
 viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
 Web Application Firewall (WAF)
+web capabilities -- fugu https://www.chromium.org/teams/web-capabilities-fugu/
+web components -- "autonomous" = no extends, no "is", must inherit from HTMLElement
 web components -- custom elements
 web components -- is
+web components -- publish https://www.webcomponents.org/publish
 web components -- shadow DOM
 web components -- templates
-web components -- "autonomous" = no extends, no "is", must inherit from HTMLElement
 web components -- templates -- slots https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/slot
 web components https://developer.mozilla.org/en-US/docs/Web/API/Web_components
 web workers -- dedicated = utilized by a single script https://devdocs.io/dom/worker

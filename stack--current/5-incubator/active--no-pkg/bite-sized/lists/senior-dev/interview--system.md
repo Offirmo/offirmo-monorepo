@@ -1,6 +1,6 @@
 [ ] +++ 7 best courses https://levelup.gitconnected.com/7-best-software-design-course-for-programmers-and-developers-da3e18e9135
 [ ] huge list of concepts https://github.com/ByteByteGoHq/system-design-101 (shared by recruiter)
-
+[ ] estimations
 
 1. requirements
   1. Priorized requirements
@@ -34,7 +34,7 @@ interview -- popular problems = Meta products: facebook, marketplace, instagram,
 RESHADED method https://levelup.gitconnected.com/7-best-software-design-course-for-programmers-and-developers-da3e18e9135
 1. Requirements
 2. Estimations
-3. Storage schema
+3. Storage schema (ER diagram https://creately.com/diagram/example/i94utgp32/er-diagrams-for-a-retail-store)
 4. High level design
 5. APIs
 6. Detailed design
