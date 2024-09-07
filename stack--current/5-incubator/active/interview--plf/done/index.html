@@ -2,10 +2,11 @@
 
 <style>
 	@layer temp-while-loading, offirmo--reset, offirmo--foundation, offirmo--framework;
+	@namespace svg url(http://www.w3.org/2000/svg);
+
 	/*@import "offirmo-foundation.css";*/
 	@import "offirmo-framework.css";
 	@import "index.css";
-	@namespace svg url(http://www.w3.org/2000/svg);
 
 	:root {
 		--o⋄color⁚bg--main: white;
@@ -25,7 +26,7 @@
 <h1>Loading...</h1>
 
 <script type="module">
-	import main from './index.mjs'
+	import main from './index.js'
 
 	console.log('Hi from html')
 

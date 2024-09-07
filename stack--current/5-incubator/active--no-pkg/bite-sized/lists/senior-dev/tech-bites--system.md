@@ -374,6 +374,7 @@ Service mesh
 service monitoring -- Error budget = starts at 1 - SLO and declines as the actual performance misses the SLO
 service monitoring -- Service-level indicator (SLI) = a measurement of performance
 service monitoring -- Service-level objective (SLO) = a statement of desired performance
+service monitoring -- Service-level agreement (SLA) = refund!!
 service monitoring https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring
 Service Proxy Egress authentication
 single point of failure = avoidable with redundancy

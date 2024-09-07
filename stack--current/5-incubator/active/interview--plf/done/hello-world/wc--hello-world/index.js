@@ -1,20 +1,21 @@
 
-customElements.define('no-ai', class Component extends HTMLElement {
+customElements.define('hello-world', class Component extends HTMLElement {
 	static _DEBUG = true
 	_DEBUG = Component._DEBUG
 
 	static _id_generator = 0
 	_id = Component._id_generator++
-
-	static get observedAttributes() { return [ 'apis' ] }
-
 	get_debug_id() {
-		const segments = [
-			`⟨${this.localName}${this.getAttribute('is') ? `--${this.getAttribute('is')}` : ''}⟩`,
-			`#${this._id}`,
-		]
-		return segments.join('')
+		let html = this.localName
+		let is = this.getAttribute('is')
+		if (is) html += `--${is}`
+
+		return `⟨${html}⟩#${this._id}`
 	}
+
+	err = null
+
+	static get observedAttributes() { return [ 'target' ] }
 
 	constructor() {
 		super()
@@ -27,15 +28,36 @@ customElements.define('no-ai', class Component extends HTMLElement {
 		// https://stackoverflow.com/a/43837330
 	}
 
+	_pendingRender = false
+	_render() {
+		if (this._pendingRender) return
+
+		if (this._DEBUG) console.log(`[${this.get_debug_id()}]._render()]:`, {
+			'this': this
+		})
+
+		setTimeout(() => {
+			this._pendingRender = false
+
+			if (this.err) {
+				this.replaceChildren(new Text(`[ERROR! ${this.err.message}]`))
+				return
+			}
+
+			this.replaceChildren(
+				new Text(`[Web Component ${this.get_debug_id()} loading...]`),
+			)
+		})
+		this._pendingRender = true
+	}
+
 	// called each time the element is added to the document. The specification recommends that, as far as possible, developers should implement custom element setup in this callback rather than the constructor.
 	// WARNING https://dev.to/dannyengelman/web-component-developers-do-not-connect-with-the-connectedcallback-yet-4jo7
 	connectedCallback() {
 		if (this._DEBUG) console.log(`[${this.get_debug_id()}].connectedCallback()]:`, {
 			'this': this
 		})
-		setTimeout(() => {
-			this.innerHTML = `[${this.get_debug_id()}: Not Implemented ]`
-		})
+		this._render()
 	}
 	// called each time the element is removed from the document.
 	disconnectedCallback() {
@@ -54,6 +76,6 @@ customElements.define('no-ai', class Component extends HTMLElement {
 			'this': this,
 			name, old_value, new_value,
 		})
+		this._render()
 	}
-
-});
+})

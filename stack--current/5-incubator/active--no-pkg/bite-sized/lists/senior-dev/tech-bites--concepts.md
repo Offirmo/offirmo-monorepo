@@ -85,9 +85,9 @@ compiler -- stanford course http://openclassroom.stanford.edu/MainFolder/CourseP
 concurrency -- ABA problem
 concurrency -- atomic
 concurrency -- atomic -- operations -- compare-and-swap (CAS) = an atomic instruction used in multithreading to achieve synchronization https://en.wikipedia.org/wiki/Compare-and-swap
-concurrency -- atomic -- operations-- fetch-and-add (FAA) = an atomic instruction used in multithreading to achieve synchronization https://en.wikipedia.org/wiki/Fetch-and-add
-concurrency -- atomic -- operations-- load-link/store-conditional (LL/SC) = an atomic instruction used in multithreading to achieve synchronization https://en.wikipedia.org/wiki/Load-link/store-conditional
-concurrency -- atomic -- operations-- test-and-set (TAS) = an atomic instruction used in multithreading to achieve synchronization https://en.wikipedia.org/wiki/Test-and-set
+concurrency -- atomic -- operations -- fetch-and-add (FAA) = an atomic instruction used in multithreading to achieve synchronization https://en.wikipedia.org/wiki/Fetch-and-add
+concurrency -- atomic -- operations -- load-link/store-conditional (LL/SC) = an atomic instruction used in multithreading to achieve synchronization https://en.wikipedia.org/wiki/Load-link/store-conditional
+concurrency -- atomic -- operations -- test-and-set (TAS) = an atomic instruction used in multithreading to achieve synchronization https://en.wikipedia.org/wiki/Test-and-set
 concurrency -- atomic -- operationsRead–modify–write https://en.wikipedia.org/wiki/Read%E2%80%93modify%E2%80%93write
 concurrency -- critical sections
 concurrency -- fiber
@@ -118,7 +118,7 @@ CQRS (command query responsibility segregation)
 CRDT / automerge / local first https://automerge.org/
 cron https://onlineornot.com/the-complete-guide-to-cron-jobs
 cross cutting concerns = aspects of a program that affect several modules without the possibility of being encapsulated in any of them https://en.wikipedia.org/wiki/Cross-cutting_concern
-CRUD (create, read, update and delete)
+CRUD "create, read, update and delete"
 crunch
 Cupertino effect = bad spell checking Cupertino effect
 currying https://en.wikipedia.org/wiki/Currying

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<style>
+	@import "index.css";
+
+	.clock {
+		--radius: 300px;
+		--unit: calc(var(--radius) / 100);
+		border: solid;
+
+		width: calc(var(--radius) * 2);
+		height: calc(var(--radius) * 2);
+		background-color: beige;
+		border: solid var(--unit) black;
+		border-radius: 50%;
+		position: relative;
+
+
+		font-variant-numeric: tabular-nums;
+
+		.center {
+			position: absolute;
+			top: calc(var(--radius) - 1px);
+			left: calc(var(--radius) - 1px);
+			background-color: red;
+			width: 2px;
+			height: 2px;
+		}
+
+		.hand {
+			--height: calc(var(--unit) * 1);
+			height: var(--height);
+			border-radius: var(--height);
+
+			position: absolute;
+			top: calc(var(--radius) - var(--height)/2);
+			left: calc(var(--radius) - var(--height)/2);
+			transform-origin: calc(var(--height)/2) calc(var(--height)/2) 0;
+
+			--angle: 0deg;
+			transform: rotate(calc(var(--angle, 0) - 90deg));
+			background-color: black;
+
+			&.hours {
+				--height: calc(var(--unit) * 3);
+				width: calc(var(--radius) * .5);
+				background-color: #00B7FF;
+			}
+
+			&.minutes {
+				--height: calc(var(--unit) * 2);
+				width: calc(var(--radius) * .7);
+				background-color: #038dc4;
+			}
+
+			&.seconds {
+				--height: calc(var(--unit) * 1);
+				width: calc(var(--radius) * .9);
+				background-color: #015070;
+			}
+		}
+	}
+</style>
+
+<h1>Analog Clock</h1>
+
+<div class="clock">
+	<div class="hand seconds"></div>
+	<div class="hand minutes"></div>
+	<div class="hand hours"></div>
+	<div class="center"></div>
+</div>
+
+<script type="module">
+	import './index.js'
+</script>
