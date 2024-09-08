@@ -2,6 +2,8 @@ console.log('Hi from js')
 
 /////////////////////////////////////////////////
 
+const REQUIRED_ALIGNED_FOR_WIN = 3
+
 let state = {}
 
 const REDUCERS = {
@@ -17,12 +19,11 @@ const REDUCERS = {
 				[2, 2, 'X'],
 				[0, 2, 'O'],
 			],
-			//cells_to_c: new Map(),
-			//board: new Array(height),
+			winning_streak: null,
 		}
 	},
 	add_move(state, { x, y }) {
-		const move = [ x, y, state.player ]
+		const move = [ x, y, state.player, false ]
 		state = {
 			...state,
 			moves: [
@@ -34,13 +35,64 @@ const REDUCERS = {
 
 		// is it a winning move?
 		const current_player_moves = state.moves.filter(m => m[2] === move[2])
+		if (current_player_moves.length >= REQUIRED_ALIGNED_FOR_WIN) {
+			const diag_streak = [[x, y]]
+			const horz_streak = [[x, y]]
+			const vert_streak = [[x, y]]
 
+			const board = current_player_moves.reduce((board, move) => {
+				const [x, y] = move
+				board[x] ||= []
+				board[x][y] = true
+				return board
+			}, [])
+
+			function is_owner(x, y) {
+				if (x < 0 || y < 0) return false
+				return board?.[x]?.[y] ?? false
+			}
+
+			for (let dx = -1; dx <= 1; ++dx) {
+				for (let dy = -1; dy <= 1; ++dy) {
+					if (dx === 0 && dy === 0) continue
+
+					let distance = 0
+					do {
+						distance++
+						const neighbour_coords = [ x + dx * distance, y + dy * distance ]
+						if (!is_owner(...neighbour_coords))
+							break
+
+						if (dx === 0) {
+							vert_streak.push(neighbour_coords)
+						}
+						else if(dy === 0) {
+							horz_streak.push(neighbour_coords)
+						}
+						else {
+							diag_streak.push(neighbour_coords)
+						}
+					} while (true)
+				}
+			}
+
+			const winning_streak = [diag_streak, horz_streak, vert_streak].find(streak => streak.length >= REQUIRED_ALIGNED_FOR_WIN)
+			if (winning_streak) {
+				console.log('WINNER DETECTED!', winning_streak)
+				state = {
+					...state,
+					winning_streak,
+				}
+			}
+		}
+
+		return state
 	}
 }
 
 const SELECTORS = {
 	has_winner(state) {
-		return false
+		return !!state.winning_streak
 	}
 }
 
@@ -48,6 +100,7 @@ const SELECTORS = {
 
 function render() {
 	const legend_elt = document.querySelector('.tic-tac-toe > p')
+
 	switch (true) {
 		case state.err:
 			legend_elt.innerText = `[ERROR] ` + String(state.err.message)
@@ -68,6 +121,15 @@ function render() {
 		console.log(cell)
 		cell.innerText = player
 		cell.dataset['owner'] = player
+	}
+
+	if (state.winning_streak) {
+		for (let coords of state.winning_streak) {
+			const [ x, y ] = coords
+			const selector = `.cell[data-x="${x}"][data-y="${y}"]`
+			const cell = document.querySelector(selector)
+			cell.style.border =  "solid 2px black"
+		}
 	}
 }
 
