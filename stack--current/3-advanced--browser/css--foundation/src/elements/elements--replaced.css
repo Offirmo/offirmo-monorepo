@@ -9,6 +9,6 @@
  */
 img,
 video {
-	max-width: 100%;
-	display: block; /* to remove the magic space https://www.joshwcomeau.com/css/understanding-layout-algorithms/#inline-magic-space-5 */
+	max-width: 100%; /* to avoid "blowout" on very big img cf. https://css-tricks.com/preventing-a-grid-blowout/ */
+	display: block; /* to remove the "magic space" https://www.joshwcomeau.com/css/understanding-layout-algorithms/#inline-magic-space-5 */
 }

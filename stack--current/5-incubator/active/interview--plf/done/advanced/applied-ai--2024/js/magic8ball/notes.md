@@ -54,3 +54,10 @@ You generate affirmative encouragements.
 
 #### credits
 inspired by https://codepen.io/finnhvman/pen/wrLPJz
+
+
+
+See also
+https://magic-8ball.com/blog/
+
+https://www.mentalfloss.com/article/67702/brief-history-magic-8-ball

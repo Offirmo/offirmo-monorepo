@@ -122,6 +122,7 @@ harassment -- behaviors -- subtle = repeated, unwelcome, low-grade flirtation, o
 harassment -- gravity = A single incident can be harassment when it’s severe, like a physical threat or an assault
 harassment -- sexual = when based on a person’s sex or gender, or involves unwanted sexual behaviors. Also supervisor or anyone else in power asking for sexual favors in exchange for a job-related benefit (hiring, promotion, bonus, etc.)
 harassment = repeated pattern, or a particularly egregious instance, of offensive, intimidating, or hostile conduct. includes words and/or behavior(s) usually focused on someone’s personal characteristics—such as their race, religion, national origin, sex, age, or disability
+hawks and doves https://seldo.com/posts/the_case_for_frameworks
 helicopter parent
 herbe toujours plus verte
 Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
@@ -224,8 +225,8 @@ Perfect is the enemy of good https://en.wikipedia.org/wiki/Perfect_is_the_enemy_
 personal finance -- FIRE
 personal finance -- HENRY
 personal finance https://thewokesalaryman.substack.com/p/10-finance-revelations
-personal Knowledge Management https://fortelabs.co/blog/para/
 personal knowledge base https://en.wikipedia.org/wiki/Personal_knowledge_base
+personal Knowledge Management https://fortelabs.co/blog/para/
 personal Monopoly: Corporations reward conformity, but the Internet rewards people who are unique. If you work in a creative field, strive to be the only person who does what you do. Find your own style, then run with it. Create intellectual real estate for yourself. The Internet rewards unique people. Find your unique combination of skills, interests, and personality traits. I call this a Personal Monopoly. Become the only person in the world who does what you do. Then, tell the world by sharing your knowledge.
 personal moral inventory https://domprice.me/personal-moral-inventory/
 perverse incentive https://en.wikipedia.org/wiki/Perverse_incentive

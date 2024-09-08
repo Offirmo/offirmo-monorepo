@@ -43,18 +43,37 @@ CSS -- cascade https://2019.wattenberger.com/blog/css-cascade
 CSS -- color -- formats = hex, rgb(), hsl(), lch() https://www.joshwcomeau.com/css/color-formats/
 CSS -- Combinators https://courses.joshwcomeau.com/css-for-js/00-recap/04.03-combinators
 CSS -- containing block
+CSS -- directions = block (vertical) and inline (horizontal)
 CSS -- fixed -- https://meyerweb.com/eric/thoughts/2011/09/12/un-fixing-fixed-elements-with-css-transforms/
 CSS -- geometric properties = affect the layout = width height top left
+CSS -- grid -- blowout https://css-tricks.com/preventing-a-grid-blowout/
+CSS -- grid -- fraction (fr) = the fr unit distributes extra space. fr-based columns are flexible, and so the column won't shrink below its minimum content size, even if that means breaking the proportions
+CSS -- grid -- gap ~~grid-gap~~
+CSS -- grid -- implicit = default, wants to fill the available space
+CSS -- grid -- minmax https://developer.mozilla.org/en-US/docs/Web/CSS/minmax
+CSS -- grid https://www.joshwcomeau.com/css/interactive-guide-to-grid/ https://courses.joshwcomeau.com/css-for-js/07-css-grid/
 CSS -- immutable = classes are never to be modified, thus producing highly dependable results
 CSS -- isolate
 CSS -- layers
 CSS -- layout -- layout, paint and composite
 CSS -- layout -- reflow
+CSS -- layout modes --
+CSS -- layout modes --
+CSS -- layout modes --
+CSS -- layout modes -- flex
+CSS -- layout modes -- flow -- block = fill whole horizontal space (unless `width: fit-content`)
+CSS -- layout modes -- flow -- inline = treated as typography, not sizable!, can line-wrap, whitespace between elements have magic space
+CSS -- layout modes -- flow -- inline-block = bit like block, but no longer wrap!
+CSS -- layout modes -- flow = block + inline
+CSS -- layout modes -- grid https://css-tricks.com/snippets/css/complete-guide-grid/
+CSS -- layout modes -- positioned = static, relative https://courses.joshwcomeau.com/css-for-js/02-rendering-logic-2/01-positioning
+CSS -- margin -- collapse
 CSS -- margin -- negative https://www.quirksmode.org/blog/archives/2020/02/negative_margin.html
 CSS -- Media Queries https://courses.joshwcomeau.com/css-for-js/00-recap/03-media-queries
 CSS -- methodologies -- BEM
 CSS -- nesting
 CSS -- perf -- avoid modifying the layout (geometric properties)
+CSS -- properties -- inheritance (or not)
 CSS -- Pseudo-classes :xyz https://courses.joshwcomeau.com/css-for-js/00-recap/04.01-pseudo-classes
 CSS -- Pseudo-elements ::xyz  https://courses.joshwcomeau.com/css-for-js/00-recap/04.02-pseudo-elements
 CSS -- rule = selector + property + value + unit https://courses.joshwcomeau.com/css-for-js/00-recap/02-anatomy
@@ -64,6 +83,7 @@ CSS -- specificity
 CSS -- stacking context https://github.com/andreadev-it/stacking-contexts-inspector
 CSS -- transforms
 CSS -- triggers https://csstriggers.com/
+CSS -- width = auto, fit-content, min-content https://courses.joshwcomeau.com/css-for-js/01-rendering-logic-1/10-widths
 CSS -- z-index
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
@@ -170,6 +190,7 @@ typology -- landing site
 typology -- naked site
 ui -- bleed
 UI -- HUD
+ui -- masonry (layout)
 UI -- modals -- sheets = ~semi-modal https://en.wikipedia.org/wiki/Modal_window#Modal_sheets_in_Mac_OS_X
 UI -- modals https://en.wikipedia.org/wiki/Modal_window
 UI -- modes https://en.wikipedia.org/wiki/User_interface#Modalities_and_modes
@@ -182,6 +203,7 @@ viewport
 viewport -- small <= dynamic <= large
 viewport -- visual
 viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
+virtualization = an advanced technique that uses JS to remove DOM nodes not currently on-screen
 Web Application Firewall (WAF)
 web capabilities -- fugu https://www.chromium.org/teams/web-capabilities-fugu/
 web components -- "autonomous" = no extends, no "is", must inherit from HTMLElement

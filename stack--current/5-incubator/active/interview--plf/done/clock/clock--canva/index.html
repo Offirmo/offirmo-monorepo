@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<style>
+	@import "index.css";
+
+
+	.clock {
+		--radius: 300px;
+		--unit: calc(var(--radius) / 100);
+
+		display: block;
+		width: calc(var(--radius) * 2);
+		height: calc(var(--radius) * 2);
+
+		background-color: beige;
+		border: solid var(--unit) black;
+		border-radius: 50%;
+		position: relative;
+
+		cursor: wait;
+		font-variant-numeric: tabular-nums;
+	}
+
+</style>
+
+<h1>Analog Clock -- canvas</h1>
+
+<canvas class="clock" width="600" height="600">
+	A clock telling the time
+</canvas>
+
+<script type="module">
+	import './index.js'
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<style>
+	@import "index.css";
+
+	.calculator {
+		display: flex;
+		flex-direction: column;
+
+		form {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: .5em;
+
+			.operator {
+				background-color: orange;
+			}
+			.control {
+				color: white;
+				background-color: dimgrey;
+			}
+		}
+
+		.output {
+			background-color: darkgrey;
+			font-variant-numeric: tabular-nums;
+			padding: .2em;
+			text-align: right;
+		}
+	}
+</style>
+
+<h1>Calculator</h1>
+
+<div class="calculator">
+	<form>
+		<button type="button" class="control" data-cmd="clear">AC</button>
+
+		<button type="button" class="digit" data-input="0">0</button>
+		<button type="button" class="digit" data-input="1">1</button>
+		<button type="button" class="digit" data-input="2">2</button>
+		<button type="button" class="digit" data-input="3">3</button>
+		<button type="button" class="digit" data-input="4">4</button>
+		<button type="button" class="digit" data-input="5">5</button>
+		<button type="button" class="digit" data-input="6">6</button>
+		<button type="button" class="digit" data-input="7">7</button>
+		<button type="button" class="digit" data-input="8">8</button>
+		<button type="button" class="digit" data-input="9">9</button>
+		<button type="button"               data-input=".">.</button>
+
+		<button type="button" class="operator" data-input="+">+</button>
+		<button type="button" class="operator" data-input="-">-</button>
+		<button type="button" class="operator" data-input="*">x</button>
+		<button type="button" class="operator" data-input="/">/</button>
+
+		<button type="button" class="control" data-cmd="evaluate">=</button>
+	</form>
+
+	<section>
+		<p class="output">0</p>
+	</section>
+</div>
+
+<script type="module">
+	import './index.js'
+</script>
