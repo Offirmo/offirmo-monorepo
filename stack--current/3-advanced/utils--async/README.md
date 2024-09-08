@@ -1,7 +1,11 @@
 
 
-Userspace tasks often have varying degrees of importance (related to user experience)
-but the Platform lacks a unified API to schedule prioritized work.
+NEW 2024/09 [Scheduling APIs](https://chromestatus.com/feature/6031161734201344)
+> Userspace tasks often have varying degrees of importance (related to user experience),
+> but the Platform lacks a unified API to schedule prioritized work.
+> The postTask API allows developers to schedule tasks (javascript callbacks)
+> with a native browser scheduler at 3 levels of priority: user-blocking, user-visible, and background.
+> It also exposes a TaskController, which can be used to dynamically cancel tasks and change their priority.
 
 Also it's not semantic.
 

@@ -123,6 +123,8 @@ import { getRootSXC } from '@offirmo-private/soft-execution-context'
 
 /////////////////////////////////////////////////
 
+// TODO listen to securitypolicyviolation
+
 // add immediate security actions here
 // TODO should happen synchronously inside the HTML!
 function initⵧimmediate(): void {

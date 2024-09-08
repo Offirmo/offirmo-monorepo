@@ -108,6 +108,7 @@ DOM -- Nodes -- 11 Fragment
 DOM -- Nodes -- types =  ELEMENT, ATTRIBUTE, TEXT, CDATA, PROCESSING_INSTRUCTION, COMMENT, DOCUMENT, DOCUMENT_TYPE https://devdocs.io/dom/node/nodetype 
 DOM tree = Nodes = text, elements, attributes, comments... includes elements such as <body> and <table>, among many others. 
 ECMAScript - European Computer Manufacturers Association Script (ES)
+events -- event delegation
 fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
 fonts -- Font Friday https://pimpmytype.com/fontfriday/
@@ -173,6 +174,8 @@ rendering strategy -- partial pre-rendering
 rendering strategy -- server-side rendering (SSR) = cook dishes as orders come in
 rendering strategy -- static rendering = pre-cook everything
 rendering strategy https://vercel.com/blog/how-to-choose-the-best-rendering-strategy-for-your-app
+requestAnimationFrame
+requestAnimationFrame -- double = https://github.com/ryanve/draf
 response times -- 0.1s = about the limit for having the user feel that the system is reacting instantaneously, meaning that no special feedback is necessary except to display the result.
 response times -- 1.0s = about the limit for the user's flow of thought to stay uninterrupted, even though the user will notice the delay. Normally, no special feedback is necessary during delays of more than 0.1 but less than 1.0 second, but the user does lose the feeling of operating directly on the data.
 response times -- 10s = about the limit for keeping the user's attention focused on the dialogue. For longer delays, users will want to perform other tasks while waiting for the computer to finish, so they should be given feedback indicating when the computer expects to be done. Feedback during the delay is especially important if the response time is likely to be highly variable, since users will then not know what to expect.
@@ -189,6 +192,7 @@ typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
 typology -- naked site
 ui -- bleed
+UI -- event -- blur, hover, focus, click, auxclick, double click
 UI -- HUD
 ui -- masonry (layout)
 UI -- modals -- sheets = ~semi-modal https://en.wikipedia.org/wiki/Modal_window#Modal_sheets_in_Mac_OS_X
