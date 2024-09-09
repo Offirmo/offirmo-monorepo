@@ -8,6 +8,8 @@ import Deferred from '@offirmo/deferred'
 // page loaded
 // some viewport stuff is not fully resolved until page loaded
 
+// XXX TODO review semantic
+// XXX TODO review DOMContentLoaded vs load
 const ೱᐧpage_loaded = new Deferred<void>()
 
 if (document.readyState === "complete") {
@@ -15,7 +17,7 @@ if (document.readyState === "complete") {
 	ೱᐧpage_loaded.resolve()
 }
 else {
-	window.addEventListener("load", (event) => {
+	window.addEventListener('DOMContentLoaded', (event) => {
 		//console.log("ೱpage_loaded page load event", event);
 		ೱᐧpage_loaded.resolve()
 	});

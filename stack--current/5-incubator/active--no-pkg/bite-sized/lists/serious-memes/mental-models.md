@@ -1,6 +1,7 @@
 +++ https://thewokesalaryman.com/
 -- https://fs.blog/mental-models/
 -- tool https://explorer.globe.engineer/
++++ evolution
 0-sum game
 1 or 2 way door
 12 steps
@@ -86,6 +87,7 @@ English
 equity
 every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
+evolution https://en.wikipedia.org/wiki/Evolutionary_game_theory
 excuses vs. solutions
 fairness
 fake it till you make it -- Of course, it’s not really “fake it till you make it.” It’s just “fake it.”

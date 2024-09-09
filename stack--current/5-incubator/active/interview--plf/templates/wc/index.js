@@ -28,18 +28,16 @@ customElements.define('hello-world', class Component extends HTMLElement {
 		// https://stackoverflow.com/a/43837330
 	}
 
-	_hasRenderPending = false
-	_scheduleRender() {
-		if (this._hasRenderPending) return
-		if (!this._isConnected) return
+	_pendingRender = false
+	_render() {
+		if (this._pendingRender) return
+
+		if (this._DEBUG) console.log(`[${this.get_debug_id()}]._render()]:`, {
+			'this': this
+		})
 
 		setTimeout(() => {
-			this._hasRenderPending = false
-			if (!this._isConnected) return
-
-			if (this._DEBUG) console.log(`[${this.get_debug_id()}] render!]:`, {
-				'this': this
-			})
+			this._pendingRender = false
 
 			if (this.err) {
 				this.replaceChildren(new Text(`[ERROR! ${this.err.message}]`))
@@ -47,28 +45,25 @@ customElements.define('hello-world', class Component extends HTMLElement {
 			}
 
 			this.replaceChildren(
-				new Text(`Hello, ${this.getAttribute('target')?.normalize('NFC')?.trim()}!`),
+				new Text(`[Web Component ${this.get_debug_id()} loading...]`),
 			)
 		})
-		this._hasRenderPending = true
+		this._pendingRender = true
 	}
 
 	// called each time the element is added to the document. The specification recommends that, as far as possible, developers should implement custom element setup in this callback rather than the constructor.
 	// WARNING https://dev.to/dannyengelman/web-component-developers-do-not-connect-with-the-connectedcallback-yet-4jo7
-	_isConnected = false
 	connectedCallback() {
 		if (this._DEBUG) console.log(`[${this.get_debug_id()}].connectedCallback()]:`, {
 			'this': this
 		})
-		this._isConnected = true
-		this._scheduleRender()
+		this._render()
 	}
 	// called each time the element is removed from the document.
 	disconnectedCallback() {
 		if (this._DEBUG) console.log(`[${this.get_debug_id()}].disconnectedCallback()]:`, {
 			'this': this
 		})
-		this._isConnected = false
 	}
 	// called each time the element is moved to a new document.
 	adoptedCallback() {
@@ -81,6 +76,6 @@ customElements.define('hello-world', class Component extends HTMLElement {
 			'this': this,
 			name, old_value, new_value,
 		})
-		this._scheduleRender()
+		this._render()
 	}
 })

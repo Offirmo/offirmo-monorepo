@@ -326,6 +326,7 @@ PD Personal Data
 peer review, green build = condition to merge a code change
 perf
 perf -- as a feature
+perf -- only pay for what you need
 personal data
 PHP (recursive acronym for PHP: Hypertext Preprocessor)
 pipeline express: success / error / next / send
