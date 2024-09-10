@@ -12,24 +12,7 @@
 /**************************************************/
 
 :root {
-	font-family: sans-serif;
 
-	--color-fg: black;
-	--color-bg: white;
-}
-
-:root, [data-theme] {
-	color: var(--color-fg);
-	background-color: var(--color-bg);
-}
-
-
-@media (prefers-color-scheme: dark) {
-	.theme-a.adaptive {
-		background: #753;
-		color: #dcb;
-		outline: 5px dashed #000;
-	}
 }
 
 /**************************************************/
