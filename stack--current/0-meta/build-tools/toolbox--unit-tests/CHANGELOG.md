@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [feat][breaking] advertise node requirement in package.json "engines"
 * [feat][breaking] bumped deps: sinon 18
 * [feat][breaking] bumped deps: sinon-chai 4 https://github.com/chaijs/sinon-chai/releases/tag/4.0.0
+* bumped deps: @types/chai-as-promised 8
 * ...
 
 ## [9.0.0] - 2023/11/18

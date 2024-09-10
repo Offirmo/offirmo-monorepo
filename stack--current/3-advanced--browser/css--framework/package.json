@@ -27,7 +27,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
-		"@offirmo/cli-toolbox": "*",
+		"@offirmo/cli-toolbox": "^3",
 		"lightningcss": "^1",
 		"npm-run-all": "^4"
 	}
