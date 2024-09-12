@@ -27,7 +27,7 @@ let { code, map } = await bundleAsync({
 		read(filePath) {
 			//console.log(`Reading "${filePath}"`)
 			if (filePath.endsWith(`npm:@offirmo-private/css--reset`))
-				return ''
+				return '' // TODO one day. Not critical.
 
 			return fs.readFileSync(filePath, 'utf8');
 		},

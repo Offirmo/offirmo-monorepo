@@ -184,6 +184,8 @@ distributed computing -- fallacies -- 7 Transport cost is zero
 distributed computing -- fallacies -- 8 The network is homogeneous
 distributed computing -- fallacies https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
 distributed lock -- Google Chubby https://static.googleusercontent.com/media/research.google.com/en//archive/chubby-osdi06.pdf
+distributed lock -- redis https://redis.io/docs/latest/develop/use/patterns/distributed-locks/
+distributed lock = https://www.linkedin.com/advice/0/what-some-common-distributed-locking-patterns
 distributed queues
 distributed system -- characteristics -- Concurrency = naturally present in Distributed Systems, same activity or functionality performed by separate users who are in remote locations
 distributed system -- characteristics -- Fault tolerance = reliability = the system, if there is a failure in Hardware or Software, continues to operate properly without degrading the performance the system
@@ -221,6 +223,7 @@ Google - Site Reliability Engineering
 graceful degradation = ex. of batteries in flashlight
 Hadoop https://en.wikipedia.org/wiki/Apache_Hadoop
 headless = Front-end presentation is completely decoupled from back-end logic/CMS. Designed to be channel, programming language, and framework agnostic https://jamstack.org/glossary/headless-technology/
+heavy hitters = very popular content, celebrities
 hypermedia
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
 incident values -- 01 Detect = knows before our customers do. A balanced service includes enough monitoring and alerting to detect incidents before our customers do. The best monitoring alerts us to problems before they even become incidents.
@@ -372,9 +375,9 @@ service availability
 service level objectives (SLO) https://sre.google/resources/practices-and-processes/art-of-slos/ https://sre.google/resources/
 Service mesh
 service monitoring -- Error budget = starts at 1 - SLO and declines as the actual performance misses the SLO
+service monitoring -- Service-level agreement (SLA) = refund!!
 service monitoring -- Service-level indicator (SLI) = a measurement of performance
 service monitoring -- Service-level objective (SLO) = a statement of desired performance
-service monitoring -- Service-level agreement (SLA) = refund!!
 service monitoring https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring
 Service Proxy Egress authentication
 single point of failure = avoidable with redundancy
@@ -431,6 +434,10 @@ time -- leap second
 time -- leap second -- leap smear https://googleblog.blogspot.com/2011/09/time-technology-and-leaping-seconds.html
 time = difficult yet important for distributed https://unix4lyfe.org/time/
 Time to Detection (TTD)
+user management -- Domain Enabled Signup
+user management -- request, invitation
+user management = +++ https://workos.com/blog/the-developers-guide-to-user-management/
+user management = broader process of managing user accounts, profiles, and access privileges. It determines what a user is authorized to do or access within the system, after they have been authenticated
 utilisation = How “full” or “busy” is the service?
 VPN
 WebRTC

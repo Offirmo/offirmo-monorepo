@@ -14,7 +14,7 @@ const filenameⵧinput = path.join(__dirname, '../index.css')
 const filenameⵧoutput = path.join(__dirname, '../../public/index.css')
 
 /////////////////////////////////////////////////
-const DEBUG = true
+const DEBUG = false
 
 console.log('BUNDLING')
 console.log({filenameⵧinput, filenameⵧoutput})

@@ -25,6 +25,7 @@ enshittification = first, they are good to their users; then they abuse their us
 executive presence
 failures -- inVision -- https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 features -- "infantile level" https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
+features -- collaboration https://zknill.io/posts/collaboration-no-crdts/
 features -- creep
 features -- scale = Search, sort, diffs, authorship tracking, comments, permissions (user management), sharing security, SSO, integrations... https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 financing cycle https://en.wikipedia.org/wiki/Seed_money
