@@ -1,3 +1,5 @@
+antisèche https://www.canva.com/design/DAGP4YNJNFs/TbP7YeN_XLFzgmk3iZCvXQ/edit
+
 [ ] +++ 7 best courses https://levelup.gitconnected.com/7-best-software-design-course-for-programmers-and-developers-da3e18e9135
 [ ] huge list of concepts https://github.com/ByteByteGoHq/system-design-101 (shared by recruiter)
 [ ] estimations

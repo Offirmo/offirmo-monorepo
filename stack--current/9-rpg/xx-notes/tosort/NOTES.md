@@ -6,6 +6,9 @@ https://knowyourmeme.com/memes/thelegend27
 https://elijahmanor.com/blog/format-js-numbers
 
 
+http://www.mythencyclopedia.com/
+
+
 
 +++++ Éléments de RPG classique:
 https://www.pcgamer.com/wow-classic-guide-tips/

@@ -6,9 +6,7 @@
 
 ## Intro
 
-My RPG framework, comprised of:
-* composable building blocks
-* final RPG implementations (using the blocks)
+My RPG framework, composable building blocks
 
 Code is isomorphic, targeting node & browser. This is achieved by being text based with progressive augmentations:
 1. pure text
@@ -20,28 +18,3 @@ Code is isomorphic, targeting node & browser. This is achieved by being text bas
 
 ## Usage
 Compose and profit !
-
-
-## TODO
-* TODO analytics
-
-TODO All states (and logic) having...
-* ☑ readonly<>
-* ☐ immu
-* ☐ enforce_immu
-* ☐ SXC
-* ☐ revision
-* ☐ examples
-* ☐ split ustate / tstate / zstate
-* ☐ migration
-* ☐ accessors
-
-
-## Credits
-See package.json.
-
-Extra:
-- UI inspired by https://ronenness.github.io/RPGUI/
-
-
-http://www.mythencyclopedia.com/

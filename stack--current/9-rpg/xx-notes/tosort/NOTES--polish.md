@@ -110,8 +110,6 @@ transitions https://tympanus.net/Development/webGLImageTransitions/index.html
 
 lumière https://jaredforsyth.com/veoluz/gallery/
 
-procedural mountains https://codepen.io/kylewetton/pen/oNvEXYM
-
 dweets https://frankforce.com/?p=7160#shattered
 
 potions https://codepen.io/chrisgannon/pen/WNNJqXz
@@ -121,10 +119,6 @@ Icons:
 - https://thenounproject.com/gegebe/collection/common-rpg-icons/
 - https://github.com/fangpenlin/avataaars
 
-fontes
-- https://www.behance.net/gallery/67861589/Sangha-Kali-typeface-(free)
-https://www.behance.net/gallery/55668517/Arcanista-Free-Font
-https://www.behance.net/gallery/55249019/BIT-Free-Pixel-Typeface
 
 Map
 - Grid https://codepen.io/oliviale/pen/moLrBq
@@ -136,9 +130,6 @@ div {
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
 }
-
-Charts
-- https://github.com/Ajaxy/lovely-chart
 
 Effects
 - https://tympanus.net/codrops/2019/08/20/react-slider-with-parallax-hover-effects/
@@ -159,11 +150,3 @@ https://game-icons.net/ +++ SVG game icons
 https://codepen.io/giana/pen/qmKNeE +++ superb shimmering effect
 
 https://www.openprocessing.org/ +++ superb graphic effects
-
-https://quickdraw.withgoogle.com/ doodles crayon
-
-https://www.kickstarter.com/projects/worldspinner/portrait-workshop
-
-https://playruneterra.com/en-us/
-
-https://www.deviantart.com/yliade/gallery/all

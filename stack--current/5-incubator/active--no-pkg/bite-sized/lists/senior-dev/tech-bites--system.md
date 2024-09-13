@@ -73,6 +73,7 @@ authentication (authn) = making sure that a person or device is who (or what) th
 authentication vs authorization https://www.cloudflare.com/en-gb/learning/access-management/authn-vs-authz/
 authorization (authz) = determines what an authenticated user can see and do
 auto-scaling
+autocorrection https://www.canva.dev/blog/engineering/building-a-data-driven-autocorrection-system/
 availability
 availability zone
 AWS Shield
@@ -343,6 +344,7 @@ real-time -- protocols -- 04 Interactive Connectivity Establishment (ICE) is a s
 real-time -- protocols -- STUN, TURN, and ICE https://developer.liveswitch.io/liveswitch-server/guides/what-are-stun-turn-and-ice.html
 real-time -- soft real-time = a system is said to be soft real-time if it can tolerate some delays in the processing of data
 real-time application -- goals = high throughput, low latency communication between various clients that MAY be behind NATs or firewalls
+recommender systems https://www.canva.dev/blog/engineering/recommender-systems-when-they-fail-who-are-you-gonna-call/
 redeployment = can impact the service due to rebalancing etc. causing latency, connexions loss, etc.
 regions
 reliability -- organizational reliability continuum = absent -> reactive -> proactive -> strategic -> visionary / there is a significant cost associated with moving from one phase to another and a cost to remain very high on this curve. In our experience, being proactive is a healthy level to target and is ideal for most products https://cloud.google.com/blog/products/devops-sre/the-five-phases-of-organizational-reliability

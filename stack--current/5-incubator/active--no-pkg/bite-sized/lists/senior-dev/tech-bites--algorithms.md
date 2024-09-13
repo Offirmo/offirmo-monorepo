@@ -141,10 +141,10 @@ sort -- bubble
 sort -- burstsort
 sort -- merge
 sort -- quick
-sorting -- k-sorting = roughly sorting https://cir.nii.ac.jp/crid/1050564287846744704
 sort -- radix sort O(nw) https://en.wikipedia.org/wiki/Radix_sort
 sort -- topological = a graph traversal in which each node is visited only after all its dependencies are visited. (need DAG) https://en.wikipedia.org/wiki/Topological_sorting
 sort https://en.wikipedia.org/wiki/Sorting_algorithm
+sorting -- k-sorting = roughly sorting https://cir.nii.ac.jp/crid/1050564287846744704
 string -- Approximate string matching = matching despite insertion, deletion, substitution or transposition https://en.wikipedia.org/wiki/Approximate_string_matching
 string -- pattern searching
 string -- sorting
@@ -157,3 +157,4 @@ tower of Hanoi
 Trabb Pardo-Knuth (TPK) = demo program https://en.wikipedia.org/wiki/TPK_algorithm
 transitive
 traveling salesman -- https://en.wikipedia.org/wiki/Held%E2%80%93Karp_algorithm
+Zstandard = a fast compression algorithm, providing high compression ratios. It also offers a special mode for small data, called dictionary compression https://facebook.github.io/zstd/
