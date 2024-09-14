@@ -1173,44 +1173,30 @@
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@sindresorhus/is/-/is-5.6.0.tgz#41dd6093d34652cddb5d5bdeee04eafc33826668"
   integrity sha512-TV7t8GKYaJWsn00tFDqBw8+Uqmr8A0fRU1tvTQhyZzGv0sJCGRQL3JGMI3ucuKo3XIZdUP+Lx7/gh2t3lewy7g==
 
-"@sinonjs/commons@^2.0.0":
-  version "2.0.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@sinonjs/commons/-/commons-2.0.0.tgz#fd4ca5b063554307e8327b4564bd56d3b73924a3"
-  integrity sha512-uLa0j859mMrg2slwQYdO/AkrOfmH+X6LTVmNTS9CqexuE2IvVORIkSpJLqePAbEnKJ77aMmCwr1NUZ57120Xcg==
-  dependencies:
-    type-detect "4.0.8"
-
-"@sinonjs/commons@^3.0.0", "@sinonjs/commons@^3.0.1":
+"@sinonjs/commons@^3.0.1":
   version "3.0.1"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@sinonjs/commons/-/commons-3.0.1.tgz#1029357e44ca901a615585f6d27738dbc89084cd"
   integrity sha512-K3mCHKQ9sVh8o1C9cxkwxaOmXoAMlDxC1mYyHrjqOWEcBjYr76t96zL2zlj5dUGZ3HSw240X1qgH3Mjf1yJWpQ==
   dependencies:
     type-detect "4.0.8"
 
-"@sinonjs/fake-timers@11.2.2":
-  version "11.2.2"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@sinonjs/fake-timers/-/fake-timers-11.2.2.tgz#50063cc3574f4a27bd8453180a04171c85cc9699"
-  integrity sha512-G2piCSxQ7oWOxwGSAyFHfPIsyeJGXYtc6mFbnFA+kRXkiEnTl8c/8jul2S329iFBnDI9HGoeWWAZvuvOkZccgw==
-  dependencies:
-    "@sinonjs/commons" "^3.0.0"
-
-"@sinonjs/fake-timers@^11.2.2":
-  version "11.3.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@sinonjs/fake-timers/-/fake-timers-11.3.1.tgz#51d6e8d83ca261ff02c0ab0e68e9db23d5cd5999"
-  integrity sha512-EVJO7nW5M/F5Tur0Rf2z/QoMo+1Ia963RiMtapiQrEWvY0iBUvADo8Beegwjpnle5BHkyHuoxSTW3jF43H1XRA==
+"@sinonjs/fake-timers@13.0.1", "@sinonjs/fake-timers@^13.0.1":
+  version "13.0.1"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@sinonjs/fake-timers/-/fake-timers-13.0.1.tgz#7724d20630f0d306c706fdf36d0a29c8dbd525d0"
+  integrity sha512-ZEbLYOvZQHccQJzbg2E5r+/Mdjb6BMdjToL4r8WwUw0VTjTnyY3gCnwLeiovcXI3/Uo25exmqmiwsjL/eE/rSg==
   dependencies:
     "@sinonjs/commons" "^3.0.1"
 
-"@sinonjs/samsam@^8.0.0":
-  version "8.0.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@sinonjs/samsam/-/samsam-8.0.0.tgz#0d488c91efb3fa1442e26abea81759dfc8b5ac60"
-  integrity sha512-Bp8KUVlLp8ibJZrnvq2foVhP0IVX2CIprMJPK0vqGqgrDa0OHVKeZyBykqskkrdxV6yKBPmGasO8LVjAKR3Gew==
+"@sinonjs/samsam@^8.0.1":
+  version "8.0.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@sinonjs/samsam/-/samsam-8.0.2.tgz#e4386bf668ff36c95949e55a38dc5f5892fc2689"
+  integrity sha512-v46t/fwnhejRSFTGqbpn9u+LQ9xJDse10gNnPgAcxgdoCDMXj/G2asWAC/8Qs+BAZDicX+MNZouXT1A7c83kVw==
   dependencies:
-    "@sinonjs/commons" "^2.0.0"
+    "@sinonjs/commons" "^3.0.1"
     lodash.get "^4.4.2"
-    type-detect "^4.0.8"
+    type-detect "^4.1.0"
 
-"@sinonjs/text-encoding@^0.7.2":
+"@sinonjs/text-encoding@^0.7.3":
   version "0.7.3"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/@sinonjs/text-encoding/-/text-encoding-0.7.3.tgz#282046f03e886e352b2d5f5da5eb755e01457f3f"
   integrity sha512-DE427ROAphMQzU4ENbliGYrBSYPXF+TtLg9S8vzeA+OF4ZKzoDdzfL8sxuMUGS/lgRhM6j1URSk9ghf7Xo1tyA==
@@ -1237,74 +1223,74 @@
     "@size-limit/file" "11.1.5"
     size-limit "11.1.5"
 
-"@swc/core-darwin-arm64@1.7.24":
-  version "1.7.24"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-darwin-arm64/-/core-darwin-arm64-1.7.24.tgz#a2de30805965baa4e0d915472cf7009c091c7ce1"
-  integrity sha512-s0k09qAcsoa8jIncwgRRd43VApYqXu28R4OmICtDffV4S01HtsRLRarXsMuLutoZk3tbxqitep+A8MPBuqNgdg==
+"@swc/core-darwin-arm64@1.7.26":
+  version "1.7.26"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-darwin-arm64/-/core-darwin-arm64-1.7.26.tgz#5f4096c00e71771ca1b18c824f0c92a052c70760"
+  integrity sha512-FF3CRYTg6a7ZVW4yT9mesxoVVZTrcSWtmZhxKCYJX9brH4CS/7PRPjAKNk6kzWgWuRoglP7hkjQcd6EpMcZEAw==
 
-"@swc/core-darwin-x64@1.7.24":
-  version "1.7.24"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-darwin-x64/-/core-darwin-x64-1.7.24.tgz#855a20f6140908cc07ea6ccf8f65929d7d8af4c2"
-  integrity sha512-1dlsulJ/fiOoJoJyQgaCewIEaZ7Sh6aJN4r5Uhl4lIZuNWa27XOb28A3K29/6HDO9JML3IJrvXPnl5o0vxDQuQ==
+"@swc/core-darwin-x64@1.7.26":
+  version "1.7.26"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-darwin-x64/-/core-darwin-x64-1.7.26.tgz#867b7a4f094e6b64201090ca5fcbf3da7d0f3e22"
+  integrity sha512-az3cibZdsay2HNKmc4bjf62QVukuiMRh5sfM5kHR/JMTrLyS6vSw7Ihs3UTkZjUxkLTT8ro54LI6sV6sUQUbLQ==
 
-"@swc/core-linux-arm-gnueabihf@1.7.24":
-  version "1.7.24"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.7.24.tgz#895887705323cd29f86f4056b4c8906fcb9071b9"
-  integrity sha512-2ft1NmxyvHCu5CY4r2rNVybPqZtJaxpRSzvCcPlVjN/2D5Q3QgM5kBoo1t+0RCFfk4TS2V0KWJhtqKz0CNX62Q==
+"@swc/core-linux-arm-gnueabihf@1.7.26":
+  version "1.7.26"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.7.26.tgz#35bb43894def296d92aaa2cc9372d48042f37777"
+  integrity sha512-VYPFVJDO5zT5U3RpCdHE5v1gz4mmR8BfHecUZTmD2v1JeFY6fv9KArJUpjrHEEsjK/ucXkQFmJ0jaiWXmpOV9Q==
 
-"@swc/core-linux-arm64-gnu@1.7.24":
-  version "1.7.24"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.7.24.tgz#e76145b6e29ba1e22143a2f67407039c42f82105"
-  integrity sha512-v/Z8I9tUUNkNHKa1Sw4r1Q7Wp66ezbRhe6xMIxvPNKVJQFaMOsRpe0t8T5qbk5sV2hJGOCKpQynSpZqQXLcJDQ==
+"@swc/core-linux-arm64-gnu@1.7.26":
+  version "1.7.26"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.7.26.tgz#8e2321cc4ec84cbfed8f8e16ff1ed7b854450443"
+  integrity sha512-YKevOV7abpjcAzXrhsl+W48Z9mZvgoVs2eP5nY+uoMAdP2b3GxC0Df1Co0I90o2lkzO4jYBpTMcZlmUXLdXn+Q==
 
-"@swc/core-linux-arm64-musl@1.7.24":
-  version "1.7.24"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.7.24.tgz#b4e042ae4f949ed5d5b4cad65aacbf39ec222948"
-  integrity sha512-0jJx0IcajcyOXaJsx1jXy86lYVrbupyy2VUj/OiJux/ic4oBJLjfL+WOuc8T8/hZj2p6X0X4jvfSCqWSuic4kA==
+"@swc/core-linux-arm64-musl@1.7.26":
+  version "1.7.26"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.7.26.tgz#b1c16e4b23ffa9ff19973eda6ffee35d2a7de7b0"
+  integrity sha512-3w8iZICMkQQON0uIcvz7+Q1MPOW6hJ4O5ETjA0LSP/tuKqx30hIniCGOgPDnv3UTMruLUnQbtBwVCZTBKR3Rkg==
 
-"@swc/core-linux-x64-gnu@1.7.24":
-  version "1.7.24"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.7.24.tgz#b5b619aa7b73cbe6348e01fb982e093c97bbbaf6"
-  integrity sha512-2+3aKQpSGjVnWKDTKUPuJzitQlTQrGorg+PVFMRkv6l+RcNCHZQNe/8VYpMhyBhxDMb3LUlbp7776FRevcruxg==
+"@swc/core-linux-x64-gnu@1.7.26":
+  version "1.7.26"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.7.26.tgz#388e2cc13a010cd28787aead2cecf31eb491836d"
+  integrity sha512-c+pp9Zkk2lqb06bNGkR2Looxrs7FtGDMA4/aHjZcCqATgp348hOKH5WPvNLBl+yPrISuWjbKDVn3NgAvfvpH4w==
 
-"@swc/core-linux-x64-musl@1.7.24":
-  version "1.7.24"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.7.24.tgz#7c026225df4763b220061d69802a3e5fe9a2285a"
-  integrity sha512-PMQ6SkCtMoj0Ks77DiishpEmIuHpYjFLDuVOzzJCzGeGoii0yRP5lKy/VeglFYLPqJzmhK9BHlpVehVf/8ZpvA==
+"@swc/core-linux-x64-musl@1.7.26":
+  version "1.7.26"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.7.26.tgz#51e0ff30981f26d7a5b97a7a7b5b291bad050d1a"
+  integrity sha512-PgtyfHBF6xG87dUSSdTJHwZ3/8vWZfNIXQV2GlwEpslrOkGqy+WaiiyE7Of7z9AvDILfBBBcJvJ/r8u980wAfQ==
 
-"@swc/core-win32-arm64-msvc@1.7.24":
-  version "1.7.24"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.7.24.tgz#0cc829761f92343d9bdeeb0262a67c8d088b704d"
-  integrity sha512-SNdCa4DtGXNWrPVHqctVUxgEVZVETuqERpqF50KFHO0Bvf5V/m1IJ4hFr2BxXlrzgnIW4t1Dpi6YOJbcGbEmnA==
+"@swc/core-win32-arm64-msvc@1.7.26":
+  version "1.7.26"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.7.26.tgz#a7fdcc4074c34ee6a026506b594d00323383c11f"
+  integrity sha512-9TNXPIJqFynlAOrRD6tUQjMq7KApSklK3R/tXgIxc7Qx+lWu8hlDQ/kVPLpU7PWvMMwC/3hKBW+p5f+Tms1hmA==
 
-"@swc/core-win32-ia32-msvc@1.7.24":
-  version "1.7.24"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.7.24.tgz#7d6cb2aaa0f4203ec1090f607223d0dbabc66459"
-  integrity sha512-5p3olHqwibMfrVFg2yVuSIPh9HArDYYlJXNZ9JKqeZk23A19J1pl9MuPmXDw+sxsiPfYJ/nUedIGeUHPF/+EDw==
+"@swc/core-win32-ia32-msvc@1.7.26":
+  version "1.7.26"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.7.26.tgz#ae7be6dde798eebee2000b8fd84e01a439b5bd6a"
+  integrity sha512-9YngxNcG3177GYdsTum4V98Re+TlCeJEP4kEwEg9EagT5s3YejYdKwVAkAsJszzkXuyRDdnHUpYbTrPG6FiXrQ==
 
-"@swc/core-win32-x64-msvc@1.7.24":
-  version "1.7.24"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.7.24.tgz#dd8f7688f2f1404566fc252d4f45bf1f84426a3d"
-  integrity sha512-gRyPIxDznS8d2ClfmWbytjp2d48bij6swHnDLWhukNuOvXdQkEmaIzjEsionFG/zhcFLnz8zKfTvjEjInAMzxg==
+"@swc/core-win32-x64-msvc@1.7.26":
+  version "1.7.26"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.7.26.tgz#310d607004d7319085a4dec20c0c38c3405cc05b"
+  integrity sha512-VR+hzg9XqucgLjXxA13MtV5O3C0bK0ywtLIBw/+a+O+Oc6mxFWHtdUeXDbIi5AiPbn0fjgVJMqYnyjGyyX8u0w==
 
 "@swc/core@^1.3.36":
-  version "1.7.24"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core/-/core-1.7.24.tgz#f2a9f8ec44169d5bce374c0a4b59fde5bcc73bc1"
-  integrity sha512-FzJaai6z6DYdICAY1UKNN5pzTn296ksK2zzEjjaXlpZtoMkGktWT0ttS7hbdBCPGhLOu5Q9TA2zdPejKUFjgig==
+  version "1.7.26"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@swc/core/-/core-1.7.26.tgz#beda9b82063fcec7b56c958804a4d175aecf9a9d"
+  integrity sha512-f5uYFf+TmMQyYIoxkn/evWhNGuUzC730dFwAKGwBVHHVoPyak1/GvJUm6i1SKl+2Hrj9oN0i3WSoWWZ4pgI8lw==
   dependencies:
     "@swc/counter" "^0.1.3"
     "@swc/types" "^0.1.12"
   optionalDependencies:
-    "@swc/core-darwin-arm64" "1.7.24"
-    "@swc/core-darwin-x64" "1.7.24"
-    "@swc/core-linux-arm-gnueabihf" "1.7.24"
-    "@swc/core-linux-arm64-gnu" "1.7.24"
-    "@swc/core-linux-arm64-musl" "1.7.24"
-    "@swc/core-linux-x64-gnu" "1.7.24"
-    "@swc/core-linux-x64-musl" "1.7.24"
-    "@swc/core-win32-arm64-msvc" "1.7.24"
-    "@swc/core-win32-ia32-msvc" "1.7.24"
-    "@swc/core-win32-x64-msvc" "1.7.24"
+    "@swc/core-darwin-arm64" "1.7.26"
+    "@swc/core-darwin-x64" "1.7.26"
+    "@swc/core-linux-arm-gnueabihf" "1.7.26"
+    "@swc/core-linux-arm64-gnu" "1.7.26"
+    "@swc/core-linux-arm64-musl" "1.7.26"
+    "@swc/core-linux-x64-gnu" "1.7.26"
+    "@swc/core-linux-x64-musl" "1.7.26"
+    "@swc/core-win32-arm64-msvc" "1.7.26"
+    "@swc/core-win32-ia32-msvc" "1.7.26"
+    "@swc/core-win32-x64-msvc" "1.7.26"
 
 "@swc/counter@^0.1.3":
   version "0.1.3"
@@ -1470,9 +1456,9 @@
   integrity sha512-TifLZlFudklWlMBfhubvgqTXRzLDI5pCbGa4P8a3wPyUQSW+1xQ5eDsreP9DWHX3tjq1ke96uYG/nwundroWcA==
 
 "@types/mocha@^10":
-  version "10.0.7"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/mocha/-/mocha-10.0.7.tgz#4c620090f28ca7f905a94b706f74dc5b57b44f2f"
-  integrity sha512-GN8yJ1mNTcFcah/wKEFIJckJx9iJLoMSzWcfRRuxz/Jk+U6KQNnml+etbtxFK8lPjzOw3zp4Ha/kjSst9fsHYw==
+  version "10.0.8"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/@types/mocha/-/mocha-10.0.8.tgz#a7eff5816e070c3b4d803f1d3cd780c4e42934a1"
+  integrity sha512-HfMcUmy9hTMJh66VNcmeC9iVErIZJli2bszuXc6julh5YGuRb/W5OnkHjwLNYdFlMis0sY3If5SEAp+PktdJjw==
 
 "@types/murmurhash3js-revisited@^3":
   version "3.0.3"
@@ -2511,6 +2497,11 @@ diff@^5.2.0:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/diff/-/diff-5.2.0.tgz#26ded047cd1179b78b9537d5ef725503ce1ae531"
   integrity sha512-uIFDxqpRZGZ6ThOk84hEfqWoHx2devRFvpTZcTHur85vImfaxUbTW9Ryh4CpCuDnToOP1CEtXKIgytHBPVff5A==
 
+diff@^7.0.0:
+  version "7.0.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/diff/-/diff-7.0.0.tgz#3fb34d387cd76d803f6eebea67b921dab0182a9a"
+  integrity sha512-PJWHUb1RFevKCwaFA9RlG5tCd+FO5iRh9A8HEtkmBH2Li03iJriB6m6JIN4rGz3K3JLawI7/veA1xzRKP6ISBw==
+
 dom-helpers@^5.2.0:
   version "5.2.1"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/dom-helpers/-/dom-helpers-5.2.1.tgz#d9400536b2bf8225ad98fe052e029451ac40e902"
@@ -2565,9 +2556,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.5.4:
-  version "1.5.19"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/electron-to-chromium/-/electron-to-chromium-1.5.19.tgz#aeaa0a076f3f0f0e8db2c57fd10158508f00725a"
-  integrity sha512-kpLJJi3zxTR1U828P+LIUDZ5ohixyo68/IcYOHLqnbTPr/wdgn4i1ECvmALN9E16JPA6cvCG5UG79gVwVdEK5w==
+  version "1.5.21"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/electron-to-chromium/-/electron-to-chromium-1.5.21.tgz#f331794ee99045f2b2d73bc1d2dc654a13c462ee"
+  integrity sha512-+rBAerCpQvFSPyAO677i5gJuWGO2WFsoujENdcMzsrpP7Ebcc3pmpERgU8CV4fFF10a5haP4ivnFQ/AmLICBVg==
 
 emittery@^1:
   version "1.0.3"
@@ -3658,73 +3649,73 @@ kind-of@^6.0.2:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-lightningcss-darwin-arm64@1.26.0:
-  version "1.26.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-darwin-arm64/-/lightningcss-darwin-arm64-1.26.0.tgz#1fda92d523dd1ef2fc8042d17153a5ded2de4726"
-  integrity sha512-n4TIvHO1NY1ondKFYpL2ZX0bcC2y6yjXMD6JfyizgR8BCFNEeArINDzEaeqlfX9bXz73Bpz/Ow0nu+1qiDrBKg==
+lightningcss-darwin-arm64@1.27.0:
+  version "1.27.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-darwin-arm64/-/lightningcss-darwin-arm64-1.27.0.tgz#565bd610533941cba648a70e105987578d82f996"
+  integrity sha512-Gl/lqIXY+d+ySmMbgDf0pgaWSqrWYxVHoc88q+Vhf2YNzZ8DwoRzGt5NZDVqqIW5ScpSnmmjcgXP87Dn2ylSSQ==
 
-lightningcss-darwin-x64@1.26.0:
-  version "1.26.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-darwin-x64/-/lightningcss-darwin-x64-1.26.0.tgz#eb311b9aa661948c6e92971f499afcaf453d2235"
-  integrity sha512-Rf9HuHIDi1R6/zgBkJh25SiJHF+dm9axUZW/0UoYCW1/8HV0gMI0blARhH4z+REmWiU1yYT/KyNF3h7tHyRXUg==
+lightningcss-darwin-x64@1.27.0:
+  version "1.27.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-darwin-x64/-/lightningcss-darwin-x64-1.27.0.tgz#c906a267237b1c7fe08bff6c5ac032c099bc9482"
+  integrity sha512-0+mZa54IlcNAoQS9E0+niovhyjjQWEMrwW0p2sSdLRhLDc8LMQ/b67z7+B5q4VmjYCMSfnFi3djAAQFIDuj/Tg==
 
-lightningcss-freebsd-x64@1.26.0:
-  version "1.26.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-freebsd-x64/-/lightningcss-freebsd-x64-1.26.0.tgz#85d01defc5b2d9af3cba1d5d2f253d356c8cdc56"
-  integrity sha512-C/io7POAxp6sZxFSVGezjajMlCKQ8KSwISLLGRq8xLQpQMokYrUoqYEwmIX8mLmF6C/CZPk0gFmRSzd8biWM0g==
+lightningcss-freebsd-x64@1.27.0:
+  version "1.27.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-freebsd-x64/-/lightningcss-freebsd-x64-1.27.0.tgz#a7c3c4d6ee18dffeb8fa69f14f8f9267f7dc0c34"
+  integrity sha512-n1sEf85fePoU2aDN2PzYjoI8gbBqnmLGEhKq7q0DKLj0UTVmOTwDC7PtLcy/zFxzASTSBlVQYJUhwIStQMIpRA==
 
-lightningcss-linux-arm-gnueabihf@1.26.0:
-  version "1.26.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-linux-arm-gnueabihf/-/lightningcss-linux-arm-gnueabihf-1.26.0.tgz#c14fe3aaf152b0318367030734d3e08fdf6add86"
-  integrity sha512-Aag9kqXqkyPSW+dXMgyWk66C984Nay2pY8Nws+67gHlDzV3cWh7TvFlzuaTaVFMVqdDTzN484LSK3u39zFBnzg==
+lightningcss-linux-arm-gnueabihf@1.27.0:
+  version "1.27.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-linux-arm-gnueabihf/-/lightningcss-linux-arm-gnueabihf-1.27.0.tgz#c7c16432a571ec877bf734fe500e4a43d48c2814"
+  integrity sha512-MUMRmtdRkOkd5z3h986HOuNBD1c2lq2BSQA1Jg88d9I7bmPGx08bwGcnB75dvr17CwxjxD6XPi3Qh8ArmKFqCA==
 
-lightningcss-linux-arm64-gnu@1.26.0:
-  version "1.26.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-linux-arm64-gnu/-/lightningcss-linux-arm64-gnu-1.26.0.tgz#3b2d8cae1f112bf3ae26ea81eccc02efb81b5f09"
-  integrity sha512-iJmZM7fUyVjH+POtdiCtExG+67TtPUTer7K/5A8DIfmPfrmeGvzfRyBltGhQz13Wi15K1lf2cPYoRaRh6vcwNA==
+lightningcss-linux-arm64-gnu@1.27.0:
+  version "1.27.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-linux-arm64-gnu/-/lightningcss-linux-arm64-gnu-1.27.0.tgz#cfd9e18df1cd65131da286ddacfa3aee6862a752"
+  integrity sha512-cPsxo1QEWq2sfKkSq2Bq5feQDHdUEwgtA9KaB27J5AX22+l4l0ptgjMZZtYtUnteBofjee+0oW1wQ1guv04a7A==
 
-lightningcss-linux-arm64-musl@1.26.0:
-  version "1.26.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-linux-arm64-musl/-/lightningcss-linux-arm64-musl-1.26.0.tgz#df309b1acafbded280171db44eb615f2d26e2cab"
-  integrity sha512-XxoEL++tTkyuvu+wq/QS8bwyTXZv2y5XYCMcWL45b8XwkiS8eEEEej9BkMGSRwxa5J4K+LDeIhLrS23CpQyfig==
+lightningcss-linux-arm64-musl@1.27.0:
+  version "1.27.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-linux-arm64-musl/-/lightningcss-linux-arm64-musl-1.27.0.tgz#6682ff6b9165acef9a6796bd9127a8e1247bb0ed"
+  integrity sha512-rCGBm2ax7kQ9pBSeITfCW9XSVF69VX+fm5DIpvDZQl4NnQoMQyRwhZQm9pd59m8leZ1IesRqWk2v/DntMo26lg==
 
-lightningcss-linux-x64-gnu@1.26.0:
-  version "1.26.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.26.0.tgz#29a82a15d463298bd263686d4c23243ba8824d3d"
-  integrity sha512-1dkTfZQAYLj8MUSkd6L/+TWTG8V6Kfrzfa0T1fSlXCXQHrt1HC1/UepXHtKHDt/9yFwyoeayivxXAsApVxn6zA==
+lightningcss-linux-x64-gnu@1.27.0:
+  version "1.27.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.27.0.tgz#714221212ad184ddfe974bbb7dbe9300dfde4bc0"
+  integrity sha512-Dk/jovSI7qqhJDiUibvaikNKI2x6kWPN79AQiD/E/KeQWMjdGe9kw51RAgoWFDi0coP4jinaH14Nrt/J8z3U4A==
 
-lightningcss-linux-x64-musl@1.26.0:
-  version "1.26.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.26.0.tgz#831cf950d824e88d6e00f3fc2f33ef6f50850004"
-  integrity sha512-yX3Rk9m00JGCUzuUhFEojY+jf/6zHs3XU8S8Vk+FRbnr4St7cjyMXdNjuA2LjiT8e7j8xHRCH8hyZ4H/btRE4A==
+lightningcss-linux-x64-musl@1.27.0:
+  version "1.27.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.27.0.tgz#247958daf622a030a6dc2285afa16b7184bdf21e"
+  integrity sha512-QKjTxXm8A9s6v9Tg3Fk0gscCQA1t/HMoF7Woy1u68wCk5kS4fR+q3vXa1p3++REW784cRAtkYKrPy6JKibrEZA==
 
-lightningcss-win32-arm64-msvc@1.26.0:
-  version "1.26.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-win32-arm64-msvc/-/lightningcss-win32-arm64-msvc-1.26.0.tgz#77790f68891e01a520df1a97dc669b0f5546ac3c"
-  integrity sha512-X/597/cFnCogy9VItj/+7Tgu5VLbAtDF7KZDPdSw0MaL6FL940th1y3HiOzFIlziVvAtbo0RB3NAae1Oofr+Tw==
+lightningcss-win32-arm64-msvc@1.27.0:
+  version "1.27.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-win32-arm64-msvc/-/lightningcss-win32-arm64-msvc-1.27.0.tgz#64cfe473c264ef5dc275a4d57a516d77fcac6bc9"
+  integrity sha512-/wXegPS1hnhkeG4OXQKEMQeJd48RDC3qdh+OA8pCuOPCyvnm/yEayrJdJVqzBsqpy1aJklRCVxscpFur80o6iQ==
 
-lightningcss-win32-x64-msvc@1.26.0:
-  version "1.26.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.26.0.tgz#ff69764eceada846eab0d721d653518d5ba8049b"
-  integrity sha512-pYS3EyGP3JRhfqEFYmfFDiZ9/pVNfy8jVIYtrx9TVNusVyDK3gpW1w/rbvroQ4bDJi7grdUtyrYU6V2xkY/bBw==
+lightningcss-win32-x64-msvc@1.27.0:
+  version "1.27.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.27.0.tgz#237d0dc87d9cdc9cf82536bcbc07426fa9f3f422"
+  integrity sha512-/OJLj94Zm/waZShL8nB5jsNj3CfNATLCTyFxZyouilfTmSoLDX7VlVAmhPHoZWVFp4vdmoiEbPEYC8HID3m6yw==
 
 lightningcss@^1, lightningcss@^1.22.1:
-  version "1.26.0"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss/-/lightningcss-1.26.0.tgz#ca2ff6ebabb044c6e49e57f9491a6f85db03b256"
-  integrity sha512-a/XZ5hdgifrofQJUArr5AiJjx26SwMam3SJUSMjgebZbESZ96i+6Qsl8tLi0kaUsdMzBWXh9sN1Oe6hp2/dkQw==
+  version "1.27.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/lightningcss/-/lightningcss-1.27.0.tgz#d4608e63044343836dd9769f6c8b5d607867649a"
+  integrity sha512-8f7aNmS1+etYSLHht0fQApPc2kNO8qGRutifN5rVIc6Xo6ABsEbqOr758UwI7ALVbTt4x1fllKt0PYgzD9S3yQ==
   dependencies:
     detect-libc "^1.0.3"
   optionalDependencies:
-    lightningcss-darwin-arm64 "1.26.0"
-    lightningcss-darwin-x64 "1.26.0"
-    lightningcss-freebsd-x64 "1.26.0"
-    lightningcss-linux-arm-gnueabihf "1.26.0"
-    lightningcss-linux-arm64-gnu "1.26.0"
-    lightningcss-linux-arm64-musl "1.26.0"
-    lightningcss-linux-x64-gnu "1.26.0"
-    lightningcss-linux-x64-musl "1.26.0"
-    lightningcss-win32-arm64-msvc "1.26.0"
-    lightningcss-win32-x64-msvc "1.26.0"
+    lightningcss-darwin-arm64 "1.27.0"
+    lightningcss-darwin-x64 "1.27.0"
+    lightningcss-freebsd-x64 "1.27.0"
+    lightningcss-linux-arm-gnueabihf "1.27.0"
+    lightningcss-linux-arm64-gnu "1.27.0"
+    lightningcss-linux-arm64-musl "1.27.0"
+    lightningcss-linux-x64-gnu "1.27.0"
+    lightningcss-linux-x64-musl "1.27.0"
+    lightningcss-win32-arm64-msvc "1.27.0"
+    lightningcss-win32-x64-msvc "1.27.0"
 
 lilconfig@^3.1.2:
   version "3.1.2"
@@ -4101,14 +4092,14 @@ nice-try@^1.0.4:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
-nise@^6.0.0:
-  version "6.0.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/nise/-/nise-6.0.1.tgz#582a347929828924d9e4e9c93f7549800cd0912c"
-  integrity sha512-DAyWGPQEuJVlL2eqKw6gdZKT+E/jo/ZrjEUDAslJLluCz81nWy+KSYybNp3KFm887Yvp7hv12jSM82ld8BmLxg==
+nise@^6.1.0:
+  version "6.1.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/nise/-/nise-6.1.0.tgz#468a5ea20a114e4ec4ddd18175c18a513bd2ce07"
+  integrity sha512-CmZZZxyoEFoA/GkIyd1EjzRw4WWOpsaIpJ9xSS4Ymi8UEXA81Ml9uk8VVi4nisuRKyqM6rHHXZSDkrtuL+K4uA==
   dependencies:
-    "@sinonjs/commons" "^3.0.0"
-    "@sinonjs/fake-timers" "^11.2.2"
-    "@sinonjs/text-encoding" "^0.7.2"
+    "@sinonjs/commons" "^3.0.1"
+    "@sinonjs/fake-timers" "^13.0.1"
+    "@sinonjs/text-encoding" "^0.7.3"
     just-extend "^6.2.0"
     path-to-regexp "^8.1.0"
 
@@ -4286,9 +4277,9 @@ onetime@^5.1.2:
     mimic-fn "^2.1.0"
 
 openai@^4:
-  version "4.58.2"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/openai/-/openai-4.58.2.tgz#e45a41fe91eb626b8f07afb522c27016f58aab58"
-  integrity sha512-hIalypYELt7/PcryFpz4Gi1z/8ZDzukWyOhr+jKM6L/GVE+t4NseaENXKt+OxnkkIm/1R2EkdGxgnHrZ0kB5bQ==
+  version "4.60.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/openai/-/openai-4.60.0.tgz#4970354b7dfebd92b72aefd205212d3611eb7248"
+  integrity sha512-U/wNmrUPdfsvU1GrKRP5mY5YHR3ev6vtdfNID6Sauz+oquWD8r+cXPL1xiUlYniosPKajy33muVHhGS/9/t6KA==
   dependencies:
     "@types/node" "^18.11.18"
     "@types/node-fetch" "^2.6.4"
@@ -4613,9 +4604,9 @@ pseudomap@^1.0.2:
   integrity sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==
 
 pump@^3.0.0:
-  version "3.0.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/pump/-/pump-3.0.1.tgz#cf711a61348b26a05ad8ce598e50d7e0ea03d398"
-  integrity sha512-2ynnAmUu45oUSq51AQbeugLkMSKaz8FqVpZ6ykTqzOVkzXe8u/ezkGsYrFJqKZx+D9cVxoDrSbR7CeAwxFa5cQ==
+  version "3.0.2"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/pump/-/pump-3.0.2.tgz#836f3edd6bc2ee599256c924ffe0d88573ddcbf8"
+  integrity sha512-tUPXtzlGM8FE3P0ZL6DVs/3P58k9nk8/jZeQCurTJylQA8qFYzHFfhBJkuqyE0FifOsQ0uKWekiZ5g8wtr28cw==
   dependencies:
     end-of-stream "^1.1.0"
     once "^1.3.1"
@@ -5139,17 +5130,17 @@ sinon-chai@^4:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/sinon-chai/-/sinon-chai-4.0.0.tgz#77d59d9f4a833f0d3a88249b4637acc72656fdfa"
   integrity sha512-cWqO7O2I4XfJDWyWElAQ9D/dtdh5Mo0RHndsfiiYyjWnlPzBJdIvjCVURO4EjyYaC3BjV+ISNXCfTXPXTEIEWA==
 
-sinon@^18:
-  version "18.0.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/sinon/-/sinon-18.0.1.tgz#464334cdfea2cddc5eda9a4ea7e2e3f0c7a91c5e"
-  integrity sha512-a2N2TDY1uGviajJ6r4D1CyRAkzE9NNVlYOV1wX5xQDuAk0ONgzgRl0EjCQuRCPxOwp13ghsMwt9Gdldujs39qw==
+sinon@^19:
+  version "19.0.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/sinon/-/sinon-19.0.0.tgz#c75f049da690bfb4d1fcd8b8d6e24de55d208722"
+  integrity sha512-YwPCB6NgZDam4hsEWe0mzTNbtKWFUtnpMSSQR+CmhWtVCkMqynwl9d7AjmfE7pPlGCXkHSi80mPHy70RTsAijg==
   dependencies:
     "@sinonjs/commons" "^3.0.1"
-    "@sinonjs/fake-timers" "11.2.2"
-    "@sinonjs/samsam" "^8.0.0"
-    diff "^5.2.0"
-    nise "^6.0.0"
-    supports-color "^7"
+    "@sinonjs/fake-timers" "13.0.1"
+    "@sinonjs/samsam" "^8.0.1"
+    diff "^7.0.0"
+    nise "^6.1.0"
+    supports-color "^7.2.0"
 
 size-limit@11.1.5, size-limit@^11:
   version "11.1.5"
@@ -5351,7 +5342,7 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
-supports-color@^7, supports-color@^7.1.0:
+supports-color@^7.1.0, supports-color@^7.2.0:
   version "7.2.0"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/supports-color/-/supports-color-7.2.0.tgz#1b7dcdcb32b8138801b3e478ba6a51caa89648da"
   integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
@@ -5502,7 +5493,7 @@ type-detect@4.0.8:
   resolved "https://packages.atlassian.com/api/npm/npm-remote/type-detect/-/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
   integrity sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==
 
-type-detect@^4.0.8:
+type-detect@^4.1.0:
   version "4.1.0"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/type-detect/-/type-detect-4.1.0.tgz#deb2453e8f08dcae7ae98c626b13dddb0155906c"
   integrity sha512-Acylog8/luQ8L7il+geoSxhEkazvkslg7PSNKOX59mbB9cOveP5aq9h74Y7YU8yDpJwetzQQrfIwtf4Wp4LKcw==
@@ -5907,9 +5898,9 @@ yoctocolors@^2.1.1:
   integrity sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==
 
 zx@^8:
-  version "8.1.5"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/zx/-/zx-8.1.5.tgz#c51de2f9be06b85fe89dd688e6ba2664dd3e1204"
-  integrity sha512-gvmiYPvDDEz2Gcc37x7pJkipTKcFIE18q9QlSI1p5qoPDtoSn3jmGuWD0eEb7HuxEH5aDD7N/RVgH8BqSxbKzA==
+  version "8.1.6"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/zx/-/zx-8.1.6.tgz#e0f1c7a38a55729541c22fbab233d0cd60d3a3f4"
+  integrity sha512-SYAriWG+i2CFqMOJcF8QayI8wprlMYQsrmP6tFD7rSPnDLcImNSW7n/8crOYvNVrB2EFgz8LAQk23U1+Y7WrKA==
   optionalDependencies:
     "@types/fs-extra" ">=11"
     "@types/node" ">=20"
