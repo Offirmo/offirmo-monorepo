@@ -30,10 +30,9 @@
 		"resolvePackageJsonExports": true,
 		"resolvePackageJsonImports": true,
 
-
 		"declaration": true,
 		"declarationMap": true,
-		"downlevelIteration": true,
+		"downlevelIteration": false,
 		"importHelpers": true,
 		"newLine": "lf",
 		"noEmitHelpers": true,

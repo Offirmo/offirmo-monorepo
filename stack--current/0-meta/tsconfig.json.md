@@ -37,8 +37,6 @@ latest version is 5.5 https://www.typescriptlang.org/docs/handbook/release-notes
 
 ### 2022/03/21
 
-
-
 ## content
 https://www.typescriptlang.org/tsconfig/
 
@@ -85,6 +83,15 @@ Example of errors:
 
 * `downlevelIteration` seems to be desirable, together with "importHelpers" https://www.typescriptlang.org/tsconfig/#downlevelIteration
   * https://stackoverflow.com/questions/53441292/why-downleveliteration-is-not-on-by-default
+  * HOWEVER the typescript playground present it as "Emit more compliant, but verbose and less performant JavaScript for iteration"
+* `importHelpers` https://www.typescriptlang.org/tsconfig#importHelpers
+  * according to TS playground "Allow importing helper functions from tslib once per project, instead of including them per-file."
+  * AFAIU it's about avoiding duplication of helper functions
+  * IDEALLY we want it to `true`:
+    * smaller output ✔️
+    * better performance ✔️
+    * EXCEPT if publishing a very small package, could be better to have no deps
+  * CURRENTLY set to true by default
 
 ### Interop
 
