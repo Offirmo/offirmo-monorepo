@@ -12,7 +12,7 @@ import { UState } from '../types.js'
 
 import ACHIEVEMENT_DEFINITIONS from '../data/achievements.js'
 
-/////////////////////
+/////////////////////////////////////////////////
 
 function getꓽachievement_snapshot(u_state: Immutable<UState>, definition: Immutable<AchievementDefinition<UState>>): AchievementSnapshot {
 	const { session_uuid, name, icon, description, lore, getꓽcompletion_rate } = definition
@@ -57,7 +57,7 @@ function getꓽachievements_completion(u_state: Immutable<UState>): [number, num
 	return [unlocked_ach_count, snapshot.length]
 }
 
-/////////////////////
+/////////////////////////////////////////////////
 
 export {
 	getꓽachievement_snapshot,

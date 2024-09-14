@@ -5,7 +5,7 @@ import { BaseUState } from '@offirmo-private/state-utils'
 /////////////////////
 
 interface State extends BaseUState {
-	slot_id: number
+	slot_id: number // TODO rework
 
 	is_web_diversity_supporter: boolean
 

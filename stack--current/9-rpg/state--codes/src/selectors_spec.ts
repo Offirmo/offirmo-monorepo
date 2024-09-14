@@ -9,7 +9,7 @@ import {
 	attempt_to_redeem_code,
 } from './index.js'
 
-import { CodesConditions, CODESPECS_BY_KEY } from './test/index.js'
+import { CodesConditions, CODESPECS_BY_KEY } from './__fixtures/index.js'
 
 /////////////////////
 
