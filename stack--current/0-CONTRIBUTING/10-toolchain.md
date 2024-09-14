@@ -12,7 +12,7 @@ Why not npm?
 
 TODO use yarn v4!!
 TODO use corepack (2023/10 impossible to set up with yarn v1, too bleeding edge)
-
+TODO evaluate https://github.com/pnpm/pnpm
 
 ## monorepo
 
@@ -63,12 +63,13 @@ White not Vite?
 * needs a "main" in package.json
 * has a "root" preventing from serving files upper in the monorepo
 
-TODO evaluate Rpack
+TODO evaluate Rpack https://rspack.dev/
 
 
 ## linting
 
 TODO re-evaluate ESLint https://eslint.org/blog/2024/07/whats-coming-next-for-eslint/
+TODO https://biomejs.dev/
 
 ## environment manager
 
@@ -124,7 +125,10 @@ TODO evaluate https://github.com/golang-migrate/migrate
 
 ## Misc / new
 
+https://github.com/capricorn86/happy-dom
+
 TODO evaluate edge DB https://atlasgo.io/guides/sqlite/turso
+TODO evaluate neon db https://clerk.com/blog/automate-neon-schema-changes-with-drizzle-and-github-actions
 
 https://github.com/folke/ultra-runner
 
@@ -132,3 +136,4 @@ https://github.com/folke/ultra-runner
 - TODO evaluate https://www.npmjs.com/package/@atlaskit/build-releases
 - TODO evaluate https://yarnpkg.com/features/release-workflow
 - TODO evaluate changesets
+  https://www.totaltypescript.com/how-to-create-an-npm-package

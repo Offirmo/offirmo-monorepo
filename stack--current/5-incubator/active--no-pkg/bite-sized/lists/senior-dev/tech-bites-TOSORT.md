@@ -12,6 +12,14 @@ Senior Dev tips!
 
 ~~~~~~~~~~~~~~~~~~~~ TOSORT ~~~~~~~~~~~~~~~~~~~~~~
 
+
+monolith refactoring
+1. Move code into a good module structure, unpicking code and dependencies along the way
+1. Understand the domain and build good and scalable abstractions in the form of new APIs which are backed directly by the database (no managers, etc.)
+1. Replace usage of the old mess with the new APIs, validate consistency, etc.
+
+
+
 [ ] https://www.hiredintech.com/soft-skills/common-questions/before-the-interview/
 
 

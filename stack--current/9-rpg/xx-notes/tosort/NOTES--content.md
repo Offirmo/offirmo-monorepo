@@ -34,7 +34,6 @@ Appelé l’industrie criminelle à la plus grande croissance au monde, le trafi
 
 https://en.wikipedia.org/wiki/Putting-out_system
 
-https://worldbuilding.stackexchange.com/questions/259488/how-to-turn-a-desert-into-a-fertile-farmland-with-engineering
 
 https://en.wikipedia.org/wiki/Nine_Worthies
 
@@ -74,7 +73,6 @@ https://en.wikipedia.org/wiki/Mundaneum
 https://en.wikipedia.org/wiki/Commonplace_book
 
 
-animal domestication https://en.wikipedia.org/wiki/Anna_Karenina_principle#Failed_domestication
 
 Wiseman’s book focuses on bringing out individuals’ inner potential, hopes, and motivation to improve the self
 

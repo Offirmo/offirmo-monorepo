@@ -56,3 +56,5 @@ Discovered later: https://consumerreviewer.org/best-photo-backup-devices/
 
 
 2023 https://getaround.tech/exif-data-manipulation-javascript/
+
+https://jimp-dev.github.io/jimp/

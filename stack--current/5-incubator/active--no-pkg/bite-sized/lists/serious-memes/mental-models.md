@@ -1,7 +1,7 @@
++++ evolution
 +++ https://thewokesalaryman.com/
 -- https://fs.blog/mental-models/
 -- tool https://explorer.globe.engineer/
-+++ evolution
 0-sum game
 1 or 2 way door
 12 steps
@@ -13,6 +13,7 @@
 [ ] AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 [ ] https://amir.rachum.com/mental-models/
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
+[ ] https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 acceptance
 advocacy
@@ -221,6 +222,7 @@ Pareto efficiency
 Parkinson’s Law: Work expands to fill the time available. People don’t want to look like they’re lazy, so they find extra tasks to tackle, even if they’re trivial. If you have six months to complete a project, it will take six months to complete. Set deadlines accordingly.
 passive aggressive
 pattern / antipattern
+paved path = "The paved path" refers to a methodology where the next step to take is evident
 pay it forward
 penny Problem Gap: Economists assume demand is linear, but people’s behavior totally changes once an action costs money. If the inventors of the Internet had known about it, spam wouldn’t be such a problem. If sending an email cost you $0.001, there’d be way less spam.
 Perfect is the enemy of good https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good

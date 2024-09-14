@@ -14,6 +14,8 @@ REMINDER: the build script relax a few rules in dev mode (--watch), see `build-t
 * "What is a tsconfig.json" https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
 * "reference" https://www.typescriptlang.org/tsconfig
 * VERY IMPORTANT https://www.typescriptlang.org/docs/handbook/module-resolution.html
+* list of "bases" https://github.com/tsconfig/bases
+* ? https://www.totaltypescript.com/tsconfig-cheat-sheet
 
 
 ## changelog
@@ -22,7 +24,8 @@ REMINDER: the build script relax a few rules in dev mode (--watch), see `build-t
 
 ### TODO
 
-5.6 https://devblogs.microsoft.com/typescript/announcing-typescript-5-6-beta/
+* 5.6 https://devblogs.microsoft.com/typescript/announcing-typescript-5-6/
+* use  "typeRoots": ["node_modules/@types", "typings"] instead of replicating the reference to types?
 
 
 ### 2024/08/29

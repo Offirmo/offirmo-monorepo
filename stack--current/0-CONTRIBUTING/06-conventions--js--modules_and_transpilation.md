@@ -29,6 +29,9 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 - [ ] TS supports importing .ts
 - [ ] TS supports exporting with explicit module infos
 
+ES reasonably supported https://philipwalton.com/articles/the-state-of-es5-on-the-web/
+new target env: workerd https://blog.cloudflare.com/more-npm-packages-on-cloudflare-workers-combining-polyfills-and-native-code/
+
 
 ### update 2024-07-25
 Updated state:

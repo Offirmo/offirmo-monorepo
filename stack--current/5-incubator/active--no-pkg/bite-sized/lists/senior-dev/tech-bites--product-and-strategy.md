@@ -46,6 +46,7 @@ incumbent inertia -- organizationally inflexible
 incumbent inertia -- reluctant to cannibalize existing product lines
 incumbent inertia https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_start#Incumbent_inertia
 jobs to be done
+knowledge creating company https://hbr.org/2007/07/the-knowledge-creating-company
 land grab
 lock-in
 M&A

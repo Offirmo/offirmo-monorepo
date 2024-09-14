@@ -115,6 +115,7 @@ fonts -- Font Friday https://pimpmytype.com/fontfriday/
 FORC "Fear of Removing CSS" = https://x-team.com/blog/forc-fear-of-removing-css
 HTML -- concepts
 HTML -- elements
+html -- metadata https://github.com/wikimedia/html-metadata
 HTML -- tags
 htmx https://htmx.org/
 hypermedia
@@ -126,11 +127,13 @@ iframe -- sandbox
 iframe -- seamless
 IIFE (Immediately-Invoked Function Expression)
 interop https://developer.mozilla.org/en-US/blog/interop2023-mdn-doc-updates/
+js -- AbortController https://betterstack.com/community/guides/scaling-nodejs/understanding-abortcontroller/
 JS -- book -- Exploring JavaScript (ES2024 Edition) https://exploringjs.com/js/book/index.html
 JS -- exports https://webpack.js.org/guides/package-exports/
 JS -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
 JSON - Javascript Object Notation
 layout composer https://github.com/namecheap/ilc
+lib -- react -- v19 https://vercel.com/blog/whats-new-in-react-19
 MDN
 MDN curriculum https://developer.mozilla.org/en-US/curriculum/
 MIME - Multipurpose Internet Mail Extensions
@@ -176,6 +179,7 @@ rendering strategy -- static rendering = pre-cook everything
 rendering strategy https://vercel.com/blog/how-to-choose-the-best-rendering-strategy-for-your-app
 requestAnimationFrame
 requestAnimationFrame -- double = https://github.com/ryanve/draf
+Resource Description Framework (RDF) = a language for representing information about resources in the World Wide Web https://www.w3.org/TR/rdf-primer/
 response times -- 0.1s = about the limit for having the user feel that the system is reacting instantaneously, meaning that no special feedback is necessary except to display the result.
 response times -- 1.0s = about the limit for the user's flow of thought to stay uninterrupted, even though the user will notice the delay. Normally, no special feedback is necessary during delays of more than 0.1 but less than 1.0 second, but the user does lose the feeling of operating directly on the data.
 response times -- 10s = about the limit for keeping the user's attention focused on the dialogue. For longer delays, users will want to perform other tasks while waiting for the computer to finish, so they should be given feedback indicating when the computer expects to be done. Feedback during the delay is especially important if the response time is likely to be highly variable, since users will then not know what to expect.
@@ -186,8 +190,10 @@ security -- cross-site leaks https://xsleaks.dev/
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
 SSR good explanation https://single-spa.js.org/docs/ssr-overview/
 temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
+testing -- component https://storybook.js.org/blog/component-testing/
 testing -- Netflix's SafeTest https://www.infoq.com/news/2024/02/netflix-safetest-front-end-test/
 testing https://www.testingjavascript.com/
+the web contract = Everyone who publishes on the Web knows that their content can be copied and used by anyone for any purpose. This has always been a risk of providing content on the Web. https://meiert.com/en/blog/the-web-contract/
 typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
 typology -- naked site

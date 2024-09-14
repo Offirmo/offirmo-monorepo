@@ -2,6 +2,7 @@ git "so you have a mess" http://justinhileman.info/article/git-pretty/full/
 How to efficiently help someone with a problem https://xyproblem.info/
 HR is not your friend https://www.inc-aus.com/jt-odonnell/what-20-somethings-need-to-know-about-complaining-to-hr.html
 https://buttondown.email/hillelwayne/archive/advice-for-new-software-devs-whove-read-all-those/
+https://craft.faire.com/traits-of-a-fairely-awesome-engineer-75e91a9a6739
 https://dnastacio.medium.com/hierarchy-of-career-priorities-c18768d32598
 https://stackoverflow.blog/2019/08/07/what-every-developer-should-learn-early-on/
 https://wiki.theory.org/YourLanguageSucks

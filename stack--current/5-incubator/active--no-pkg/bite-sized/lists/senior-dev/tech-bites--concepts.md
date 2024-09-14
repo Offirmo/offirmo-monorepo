@@ -108,6 +108,7 @@ concurrency -- wait-free, lock free
 connascence https://en.wikipedia.org/wiki/Connascence
 constructor
 context switch
+convention over configuration
 Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
 corporate politic https://www.breakingpoint.tech/p/where-do-corporate-politics-come
 correlation
@@ -335,10 +336,12 @@ polyfill
 polyfill -- shim vs polyfill vs ponyfill
 polymorphism https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
 practices -- best vs. standard
+principle of least surprise / principle of least astonishment https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 privacy -- collect and use someone's info respectfully
 privacy -- regulations/compliance AND expectations
 programming -- application
 programming -- systems https://en.wikipedia.org/wiki/Systems_programming
+programming languages -- top -- 2024 https://spectrum.ieee.org/top-programming-languages-2024
 programming model https://en.wikipedia.org/wiki/Programming_model
 programming paradigm -- declarative programming
 programming paradigm -- functional programming
@@ -378,6 +381,7 @@ scrum
 SDK (Software Development Kit)
 security -- Adhere to the principle of least privilege
 security -- Be aware of buffer overflows and how to protect against them
+security -- CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-benchmarks
 security -- Compartmentalize - so your system is not all or nothing
 security -- Don't write your own crypto
 security -- guidelines -- CGI security https://www.cgisecurity.com/owasp/html/ch04.html
@@ -433,6 +437,8 @@ tech debt -- accidental - e.g. bugs due to human error that unknowingly increase
 tech debt -- deliberate - e.g. optimising for short term delivery, knowing it increases the cost of future work.
 tech debt -- incidental - e.g. organic changes in complexity over time that increases the cost of future work.
 temporary solutions https://80.lv/articles/this-30-year-old-windows-feature-was-created-as-a-temporary-solution/
+test -- fixtures
+test -- mutation testing https://sentry.engineering/blog/js-mutation-testing-our-sdks 
 test -- test double -- 01 dummy = objects are passed around but never actually used. Usually they are just used to fill parameter lists
 test -- test double -- 02 fake = have working implementations, but usually take some shortcut which makes them not suitable for production (an in memory database is a good example)
 test -- test double -- 03 stub = provide canned answers to calls made during the test, usually not responding at all to anything outside what's programmed in for the test.
@@ -443,7 +449,7 @@ test -- test double https://martinfowler.com/articles/mocksArentStubs.html
 the room https://lethain.com/getting-in-the-room/
 this
 thread
-TLS (Transport Layer Security)
+TLS "Transport Layer Security"
 tool -- http://devdocs.io/
 tool -- sprawl
 tracing -- distributed https://zipkin.io/
