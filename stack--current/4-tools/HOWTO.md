@@ -4,6 +4,7 @@
 1. Import in "Photos"
     1. WAIT for the cleanup to be finished!!!
 1. Duplicates
+    clean
 1. Media Types -- Screenshots
    1. export UNMODIFIED originals
       IN A FOLDER (to check progress)
