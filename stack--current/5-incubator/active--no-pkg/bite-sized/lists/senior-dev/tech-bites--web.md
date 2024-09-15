@@ -17,6 +17,7 @@ appli web
 Application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
 architecture -- islands
 architecture -- JAMStack = "JavaScript, APIs, Markup" as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
+WinterCG "Web-interoperable Runtimes Community Group" https://wintercg.org/
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
 architecture -- LAMP (outdated) Linux, Apache, MySQL, PHP/Python/Perl
 architecture -- MEAN "MongoDB, Express.js, Angular, Node.js"
@@ -105,8 +106,8 @@ DOM -- Nodes -- 08 Comments = <!-- … -->
 DOM -- Nodes -- 09 Document
 DOM -- Nodes -- 10 Document Type = <!DOCTYPE html>
 DOM -- Nodes -- 11 Fragment
-DOM -- Nodes -- types =  ELEMENT, ATTRIBUTE, TEXT, CDATA, PROCESSING_INSTRUCTION, COMMENT, DOCUMENT, DOCUMENT_TYPE https://devdocs.io/dom/node/nodetype 
-DOM tree = Nodes = text, elements, attributes, comments... includes elements such as <body> and <table>, among many others. 
+DOM -- Nodes -- types =  ELEMENT, ATTRIBUTE, TEXT, CDATA, PROCESSING_INSTRUCTION, COMMENT, DOCUMENT, DOCUMENT_TYPE https://devdocs.io/dom/node/nodetype
+DOM tree = Nodes = text, elements, attributes, comments... includes elements such as <body> and <table>, among many others.
 ECMAScript - European Computer Manufacturers Association Script (ES)
 events -- event delegation
 fonts
@@ -143,7 +144,7 @@ monitoring -- synthetic = own test bot https://en.wikipedia.org/wiki/Synthetic_m
 organic vs inorganic concept = coming from a real user or a bot/AI or app etc.
 perf -- content jump = https://css-tricks.com/content-jumping-avoid/
 perf metrics -- "9 must known" https://twitter.com/alexxubyte/status/1769748487317651962
-perf metrics -- core web vitals -- 01 Largest Contentful Paint (LCP) = loading performance. LCP must occur within 2.5 seconds of when the page first starts loading 
+perf metrics -- core web vitals -- 01 Largest Contentful Paint (LCP) = loading performance. LCP must occur within 2.5 seconds of when the page first starts loading
 perf metrics -- core web vitals -- 02 Interaction to Next Paint (INP) = interactivity. To provide a good user experience, pages must have a INP of 200 milliseconds or less.
 perf metrics -- core web vitals -- 03 Cumulative Layout Shift (CLS) = visual stability. To provide a good user experience, must should maintain a CLS of 0.1. or less.
 perf metrics -- core web vitals -- First Input Delay (FID) DEPRECATED https://web.dev/articles/fid
@@ -229,6 +230,6 @@ web workers -- service = proxy https://devdocs.io/dom/service_worker_api
 web workers -- shared = can be utilized by multiple scripts running in different windows, IFrames, etc., as long as they are in the same domain as the worker https://devdocs.io/dom/sharedworker
 WebDriver BiDi https://developer.chrome.com/blog/firefox-support-in-puppeteer-with-webdriver-bidi
 WebGPU / WebGL = https://devdocs.io/dom/webgpu_api
-WebXR / WebVR = VR / AR 
+WebXR / WebVR = VR / AR
 Wep pages UX design -- concepts https://www.nngroup.com/courses/web-page-design/
 XSS -- injection sinks https://devdocs.io/dom/trusted_types_api

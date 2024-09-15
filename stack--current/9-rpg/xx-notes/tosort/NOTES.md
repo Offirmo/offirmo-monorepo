@@ -7,7 +7,7 @@ https://elijahmanor.com/blog/format-js-numbers
 
 
 http://www.mythencyclopedia.com/
-
+https://forgottenrealms.fandom.com/wiki/Cosmology
 
 
 +++++ Éléments de RPG classique:

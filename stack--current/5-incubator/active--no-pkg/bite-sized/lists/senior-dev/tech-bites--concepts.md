@@ -20,6 +20,7 @@
 [ ] https://www.atlassian.com/team-playbook/plays/elevator-pitch
 [ ] https://www.managingtheunmanageable.net/morerulesofthumb.html
 [ ] https://zknill.io/posts/every-programmer-should-know/
+[ ] https://www.developing.dev/p/5-books-every-software-engineer-should
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 access control -- Role-Based (RBAC)
@@ -70,7 +71,7 @@ changelog -- conventional https://github.com/conventional-changelog
 changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 CI (Continuous Integration) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
-client/server -- multi-tier architecture 
+client/server -- multi-tier architecture
 close / destroy / terminate / dispose / release / free / delete / destruct / finalize / teardown / cleanup / shutdown / stop / end / abort / cancel / halt / kill / exit / quit / unload / dispose...
 code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 cohesion = degree to which the elements inside a module belong together https://en.wikipedia.org/wiki/Cohesion_(computer_science)
@@ -253,7 +254,7 @@ jump/goto
 kebab-case vs snake etc
 KISS
 KTLO
-language -- Bend = massively parallel, high-level programming language https://github.com/HigherOrderCO/Bend 
+language -- Bend = massively parallel, high-level programming language https://github.com/HigherOrderCO/Bend
 language -- go
 language -- Rust https://www.rust-lang.org/
 language -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
@@ -438,7 +439,7 @@ tech debt -- deliberate - e.g. optimising for short term delivery, knowing it in
 tech debt -- incidental - e.g. organic changes in complexity over time that increases the cost of future work.
 temporary solutions https://80.lv/articles/this-30-year-old-windows-feature-was-created-as-a-temporary-solution/
 test -- fixtures
-test -- mutation testing https://sentry.engineering/blog/js-mutation-testing-our-sdks 
+test -- mutation testing https://sentry.engineering/blog/js-mutation-testing-our-sdks
 test -- test double -- 01 dummy = objects are passed around but never actually used. Usually they are just used to fill parameter lists
 test -- test double -- 02 fake = have working implementations, but usually take some shortcut which makes them not suitable for production (an in memory database is a good example)
 test -- test double -- 03 stub = provide canned answers to calls made during the test, usually not responding at all to anything outside what's programmed in for the test.

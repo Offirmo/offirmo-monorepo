@@ -5,6 +5,8 @@ Good, email sucks shit. It's clunky, antiquated, prone to abuse, and a massive t
 Nathan Cooley Aug 2022
 
 
+https://relay.firefox.com/
+
 https://html2canvas.hertzen.com/features/
 https://github.com/bubkoo/html-to-image
 
@@ -21,7 +23,7 @@ Fluent (dead)
 - https://techcrunch.com/2012/08/08/heres-what-happened-at-fluent/?guccounter=1
 - https://www.forbes.com/profile/cameron-adams/
 - https://www.youtube.com/watch?v=Z07MnBf9QNY
-- 
+-
 
 https://www.nylas.com/products/email-api/
 https://www.theregister.com/2023/08/23/email_like_a_pro/

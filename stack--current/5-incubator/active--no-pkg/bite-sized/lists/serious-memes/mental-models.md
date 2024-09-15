@@ -2,6 +2,7 @@
 +++ https://thewokesalaryman.com/
 -- https://fs.blog/mental-models/
 -- tool https://explorer.globe.engineer/
+[ ] https://boz.com/
 0-sum game
 1 or 2 way door
 12 steps
@@ -17,6 +18,17 @@
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 acceptance
 advocacy
+communication -- plainspoken https://boz.com/articles/be-plainspoken https://debliu.substack.com/p/the-importance-of-being-plainspoken
+communication -- ELI5 https://boz.com/articles/eli5
+communication -- breaking bad news https://boz.com/articles/bad-news
+intellectual honesty = willingness to see and admit the truth, even if it goes against your argument, supports the argument of “the other side,” or proves you wrong. Even if it bruises your ego. https://newsletter.weskao.com/p/intellectual-honesty
+intellectual honesty -- “It’s not possible” vs “I wasn’t able to do it” vs “I don’t want to do it.”
+intellectual honesty -- 1 Is this true?
+intellectual honesty -- 2 What evidence do I have for and against this?
+intellectual honesty -- 3 Am I telling myself a certain narrative to avoid facing a truth I don’t like?
+intellectual honesty -- 4 How might I recognize the truth in a neutral, objective way?
+intellectual honesty -- FLOATER "Falsifiable, Logic, Objective, Alternative explanations, Tentative conclusion, Evidence, Replicate" = method for evaluating claims
+intellectual honesty -- FLOATER -- If someone claims they saw a unicorn, ask yourself: Is it Falsifiable? Were there any Logic fallacies? Are they being Objective? Are there Alternative explanations? Is this a Tentative conclusion? Is the Evidence reliable? Can you Replicate the results?
 affirmative action?
 agency
 agile "what the client wanted"
@@ -156,7 +168,7 @@ infotainment
 ingroup/outgroup
 intrinsic/extrinsic motivation https://www.swyx.io/js-tooling
 inversion: Avoiding stupidity is easier than trying to be brilliant. Instead of asking, “How can I help my company?” you should ask, “What’s hurting my company the most and how can I avoid it?” Identify obvious failure points, and steer clear of them.
-investing 
+investing
 invisible hand: Markets aggregate knowledge. Rising prices signal falling supply or increased demand, which incentivizes an increase in production. The opposite is true for falling prices. Prices are a signal wrapped in an incentive.
 IQ -- it exists, it's measurable
 irredentism https://www.reddit.com/r/history/comments/sji919/is_there_a_term_for_this_phenomenon/
