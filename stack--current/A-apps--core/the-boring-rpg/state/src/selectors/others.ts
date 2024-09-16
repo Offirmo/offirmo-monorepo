@@ -12,7 +12,7 @@ import {
 	PendingEngagement,
 	getꓽoldest_queuedⵧflow,
 	getꓽoldest_queuedⵧnon_flow,
-} from '@oh-my-rpg/state-engagement'
+} from '@oh-my-rpg/state--engagement'
 import { AchievementSnapshot } from '@tbrpg/state--progress'
 
 /////////////////////

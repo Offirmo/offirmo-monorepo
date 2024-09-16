@@ -5,14 +5,14 @@ import { type RNGEngine } from '@offirmo/random'
 
 /////////////////////
 
-import * as PRNGState from '@oh-my-rpg/state-prng'
-import * as WalletState from '@tbrpg/state-wallet'
+import * as PRNGState from '@oh-my-rpg/state--prng'
+import * as WalletState from '@tbrpg/state--wallet'
 
 import {
 	getꓽprng,
 	register_recently_used,
 	regenerate_until_not_recently_encountered,
-} from '@oh-my-rpg/state-prng'
+} from '@oh-my-rpg/state--prng'
 
 import {
 	AdventureType,
@@ -21,7 +21,7 @@ import {
 	getꓽarchetype,
 	pick_random_good_archetype,
 	pick_random_bad_archetype,
-} from '@tbrpg/logic-adventures'
+} from '@tbrpg/logic--adventures'
 
 /////////////////////
 

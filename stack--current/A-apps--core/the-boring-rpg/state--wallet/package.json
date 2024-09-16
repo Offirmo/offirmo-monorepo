@@ -1,5 +1,5 @@
 {
-	"name": "@tbrpg/state-wallet",
+	"name": "@tbrpg/state--wallet",
 	"description": "evolving cash wallet state and reducer",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",

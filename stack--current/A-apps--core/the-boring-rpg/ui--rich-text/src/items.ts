@@ -1,7 +1,7 @@
 import { type Immutable } from '@offirmo-private/ts-types'
 import { ItemQuality, InventorySlot, Item } from '@tbrpg/definitions'
-import { Armor } from '@tbrpg/logic-armors'
-import { Weapon } from '@tbrpg/logic-weapons'
+import { Armor } from '@tbrpg/logic--armors'
+import { Weapon } from '@tbrpg/logic--weapons'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import { render_armor_short, render_armor_detailed } from './items--armor.js'

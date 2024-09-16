@@ -2,10 +2,10 @@ import { expect } from 'chai'
 
 import {
 	generate_random_demo_armor,
-} from '@tbrpg/logic-armors'
+} from '@tbrpg/logic--armors'
 import {
 	generate_random_demo_weapon,
-} from '@tbrpg/logic-weapons'
+} from '@tbrpg/logic--weapons'
 
 import { LIB } from './consts.js'
 import {

@@ -1,4 +1,4 @@
-const LIB = '@oh-my-rpg/state-codes'
+const LIB = '@oh-my-rpg/state--codes'
 
 const SCHEMA_VERSION: number = 1
 

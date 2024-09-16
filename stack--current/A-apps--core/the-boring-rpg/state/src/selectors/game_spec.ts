@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
-import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
+import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 
 import { LIB } from '../consts.js'
 import {create, State} from '../index.js'

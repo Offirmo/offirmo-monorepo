@@ -1,6 +1,6 @@
 ////////////////////////////////////
 
-const LIB = '@tbrpg/logic-armors'
+const LIB = '@tbrpg/logic--armors'
 
 //const SCHEMA_VERSION: number = 2
 

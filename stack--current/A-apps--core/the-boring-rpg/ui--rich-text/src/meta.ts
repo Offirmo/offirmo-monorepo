@@ -1,6 +1,6 @@
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { type State } from '@oh-my-rpg/state-meta'
+import { type State } from '@oh-my-rpg/state--meta'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 

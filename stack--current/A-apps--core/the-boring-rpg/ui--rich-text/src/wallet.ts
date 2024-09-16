@@ -1,5 +1,5 @@
 import { type Immutable } from '@offirmo-private/ts-types'
-import { type State as WalletState, ALL_CURRENCIES, Currency, get_currency_amount } from '@tbrpg/state-wallet'
+import { type State as WalletState, ALL_CURRENCIES, Currency, get_currency_amount } from '@tbrpg/state--wallet'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 

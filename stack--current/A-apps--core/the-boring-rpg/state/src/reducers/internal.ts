@@ -6,22 +6,22 @@ import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
 /////////////////////
 
-import * as EngagementState from '@oh-my-rpg/state-engagement'
+import * as EngagementState from '@oh-my-rpg/state--engagement'
 
 import { InventorySlot, Item, ItemQuality } from '@tbrpg/definitions'
 
-import { Weapon } from '@tbrpg/logic-weapons'
-import * as WeaponLib from '@tbrpg/logic-weapons'
-import { Armor } from '@tbrpg/logic-armors'
-import * as ArmorLib from '@tbrpg/logic-armors'
+import { Weapon } from '@tbrpg/logic--weapons'
+import * as WeaponLib from '@tbrpg/logic--weapons'
+import { Armor } from '@tbrpg/logic--armors'
+import * as ArmorLib from '@tbrpg/logic--armors'
 import { appraise_power_normalized } from '@tbrpg/logic--shop'
 import {
 	CharacterAttribute,
 	increase_stat,
 } from '@tbrpg/state--character'
-import { Currency } from '@tbrpg/state-wallet'
-import * as EnergyState from '@tbrpg/state-energy'
-import * as WalletState from '@tbrpg/state-wallet'
+import { Currency } from '@tbrpg/state--wallet'
+import * as EnergyState from '@tbrpg/state--energy'
+import * as WalletState from '@tbrpg/state--wallet'
 import * as InventoryState from '@tbrpg/state--inventory'
 
 /////////////////////

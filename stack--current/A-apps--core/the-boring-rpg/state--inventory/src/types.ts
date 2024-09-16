@@ -1,8 +1,8 @@
 import { BaseUState } from '@offirmo-private/state-utils'
 
 import { Item, InventorySlot } from '@tbrpg/definitions'
-import { Armor } from '@tbrpg/logic-armors'
-import { Weapon } from '@tbrpg/logic-weapons'
+import { Armor } from '@tbrpg/logic--armors'
+import { Weapon } from '@tbrpg/logic--weapons'
 
 /////////////////////
 

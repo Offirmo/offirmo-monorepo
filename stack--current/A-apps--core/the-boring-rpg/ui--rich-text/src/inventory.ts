@@ -12,7 +12,7 @@ import {
 	getꓽitem_in_slot,
 } from '@tbrpg/state--inventory'
 
-import { type State as WalletState } from '@tbrpg/state-wallet'
+import { type State as WalletState } from '@tbrpg/state--wallet'
 import * as RichText from '@offirmo-private/rich-text-format'
 import { appraise_power } from '@tbrpg/logic--shop'
 

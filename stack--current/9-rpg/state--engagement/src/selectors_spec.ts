@@ -10,7 +10,7 @@ import { getꓽSXC } from './sec.js'
 
 //////////////////////////////////////////////////////////////////////
 
-describe('@oh-my-rpg/state-codes - selectors', function() {
+describe('@oh-my-rpg/state--codes - selectors', function() {
 
 
 })

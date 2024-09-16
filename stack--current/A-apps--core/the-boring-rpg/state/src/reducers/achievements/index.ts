@@ -9,7 +9,7 @@ import {
 import {
 	enqueue as enqueueEngagement,
 	EngagementType,
-} from '@oh-my-rpg/state-engagement'
+} from '@oh-my-rpg/state--engagement'
 
 import { type State, UState } from '../../types.js'
 

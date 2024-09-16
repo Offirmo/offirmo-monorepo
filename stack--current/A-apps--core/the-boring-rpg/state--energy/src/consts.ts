@@ -1,4 +1,4 @@
-const LIB = '@tbrpg/state-energy'
+const LIB = '@tbrpg/state--energy'
 
 const SCHEMA_VERSION: number = 4
 

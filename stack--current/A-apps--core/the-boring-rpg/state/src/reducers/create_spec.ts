@@ -1,11 +1,11 @@
 import { expect } from 'chai'
 
-import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
+import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 import {
 	get_unequipped_item_count,
 	get_equipped_item_count,
 } from '@tbrpg/state--inventory'
-import { DEFAULT_SEED } from '@oh-my-rpg/state-prng'
+import { DEFAULT_SEED } from '@oh-my-rpg/state--prng'
 
 import { LIB, SCHEMA_VERSION } from '../consts.js'
 import { create, reseed } from './index.js'

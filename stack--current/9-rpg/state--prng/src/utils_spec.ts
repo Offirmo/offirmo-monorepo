@@ -15,7 +15,7 @@ import {
 
 /////////////////////////////////////////////////
 
-describe('@oh-my-rpg/state-prng - utils', function() {
+describe('@oh-my-rpg/state--prng - utils', function() {
 	beforeEach(xxx_internal_reset_prng_cache)
 
 	/* TODO review this feature

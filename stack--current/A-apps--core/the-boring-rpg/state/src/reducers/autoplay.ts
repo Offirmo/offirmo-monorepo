@@ -8,7 +8,7 @@ import { getꓽrevision, complete_or_cancel_eager_mutation_propagating_possible_
 /////////////////////
 
 import * as CharacterState from '@tbrpg/state--character'
-import * as EnergyState from '@tbrpg/state-energy'
+import * as EnergyState from '@tbrpg/state--energy'
 
 import {
 	CharacterClass,

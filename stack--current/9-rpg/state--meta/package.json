@@ -1,5 +1,5 @@
 {
-	"name": "@oh-my-rpg/state-meta",
+	"name": "@oh-my-rpg/state--meta",
 	"description": "evolving players's meta-informations state and reducer",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",

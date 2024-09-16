@@ -3,8 +3,8 @@ import { type Immutable } from '@offirmo-private/ts-types'
 import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { PRNGEngine, getꓽrandom } from '@offirmo/random'
 
-import * as PRNGState from '@oh-my-rpg/state-prng'
-import * as EngagementState from '@oh-my-rpg/state-engagement'
+import * as PRNGState from '@oh-my-rpg/state--prng'
+import * as EngagementState from '@oh-my-rpg/state--engagement'
 
 import { type State } from './types.js'
 import { get_randomꓽnuclear_family, NuclearFamily } from '../generator--family--nuclear/index.js'

@@ -4,8 +4,8 @@ import {
 	BaseRootState,
 } from '@offirmo-private/state-utils'
 
-import * as PRNGState from '@oh-my-rpg/state-prng'
-import * as EngagementState from '@oh-my-rpg/state-engagement'
+import * as PRNGState from '@oh-my-rpg/state--prng'
+import * as EngagementState from '@oh-my-rpg/state--engagement'
 
 import * as CultivationState from '../state--cultivation/index.js'
 

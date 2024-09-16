@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import { type Immutable} from '@offirmo-private/ts-types'
 import { getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 
-import { CodeSpec, normalize_code, State as ProgressState } from '@oh-my-rpg/state-codes'
+import { CodeSpec, normalize_code, State as ProgressState } from '@oh-my-rpg/state--codes'
 
 import { type State } from '../types.js'
 import {

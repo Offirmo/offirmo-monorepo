@@ -1,4 +1,4 @@
-const LIB = '@tbrpg/state-wallet'
+const LIB = '@tbrpg/state--wallet'
 
 const SCHEMA_VERSION: number = 1
 

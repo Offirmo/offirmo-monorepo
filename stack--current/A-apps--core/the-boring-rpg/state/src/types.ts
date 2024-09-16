@@ -68,21 +68,24 @@ interface ResolvedAdventure {
 		improvementⵧarmor: boolean,
 	}
 }
-
-/////////////////////
+/////////////////////////////////////////////////
 
 interface UState extends BaseUState {
+	// core
 	avatar: CharacterState
-	codes: CodesState
 	energy: EnergyUState,
-	engagement: EngagementState
 	inventory: InventoryState
-	meta: MetaState
-	prng: PRNGState
 	progress: ProgressState
 	wallet: WalletState
-
 	last_adventure: ResolvedAdventure | null
+
+	// technical
+	prng: PRNGState
+	engagement: EngagementState
+
+	// meta = growth etc.
+	meta: MetaState
+	codes: CodesState
 }
 
 interface TState extends BaseTState {
@@ -93,7 +96,7 @@ interface State extends BaseRootState<UState, TState> {
 	schema_version: number // yes it's redundant but very convenient for debugging in the console
 }
 
-/////////////////////
+/////////////////////////////////////////////////
 
 export {
 	GainType,

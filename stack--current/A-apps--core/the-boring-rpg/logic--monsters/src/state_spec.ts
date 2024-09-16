@@ -28,7 +28,7 @@ function _assert_shape(monster: Readonly<Monster>) {
 }
 
 
-describe('@tbrpg/logic-monsters - state', function() {
+describe('@tbrpg/logic--monsters - state', function() {
 
 	describe('create()', function () {
 

@@ -6,7 +6,7 @@ import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation }
 
 /////////////////////
 
-import * as EnergyState from '@tbrpg/state-energy'
+import * as EnergyState from '@tbrpg/state--energy'
 import * as ProgressState from '@tbrpg/state--progress'
 
 /////////////////////

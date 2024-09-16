@@ -9,12 +9,12 @@ import {
 import {
 	Armor,
 	compare_armors_by_potential,
-} from '@tbrpg/logic-armors'
+} from '@tbrpg/logic--armors'
 
 import {
 	Weapon,
 	compare_weapons_by_potential,
-} from '@tbrpg/logic-weapons'
+} from '@tbrpg/logic--weapons'
 
 import {
 	LIB,

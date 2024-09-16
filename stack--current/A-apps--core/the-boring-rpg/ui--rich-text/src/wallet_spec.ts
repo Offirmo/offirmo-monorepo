@@ -7,7 +7,7 @@ import {
 	DEMO_STATE,
 	create as create_wallet,
 	add_amount,
-} from '@tbrpg/state-wallet'
+} from '@tbrpg/state--wallet'
 
 import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 

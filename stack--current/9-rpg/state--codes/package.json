@@ -1,5 +1,5 @@
 {
-	"name": "@oh-my-rpg/state-codes",
+	"name": "@oh-my-rpg/state--codes",
 	"description": "cheat/reward codes state and reducer",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",

@@ -1,8 +1,5 @@
-/////////////////////
-
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
-/////////////////////
 
 import { DEMO_WEAPON_1, Weapon } from '@tbrpg/logic-weapons'
 import { Armor } from '@tbrpg/logic-armors'
@@ -14,8 +11,7 @@ import { type State, ResolvedAdventure } from '../types.js'
 import { cleanup } from '../migrations/index.js'
 import { getꓽSXC } from '../services/sec.js'
 
-/////////////////////
-
+/////////////////////////////////////////////////
 // needed to test migrations, both here and in composing parents
 
 // a full-featured, non-trivial demo state
@@ -662,7 +658,7 @@ const DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>(cleanup(getꓽSX
 	},
 }, {}))*/
 
-/////////////////////
+/////////////////////////////////////////////////
 
 export {
 	DEMO_ADVENTURE_01,
@@ -671,5 +667,3 @@ export {
 	DEMO_ADVENTURE_04,
 	DEMO_STATE,
 }
-
-/////////////////////

@@ -16,13 +16,13 @@ import {
 } from '@tbrpg/state--character'
 
 import * as InventoryState from '@tbrpg/state--inventory'
-import * as WalletState from '@tbrpg/state-wallet'
-import * as PRNGState from '@oh-my-rpg/state-prng'
+import * as WalletState from '@tbrpg/state--wallet'
+import * as PRNGState from '@oh-my-rpg/state--prng'
 import {
 	getꓽprng,
 	register_recently_used,
 	regenerate_until_not_recently_encountered,
-} from '@oh-my-rpg/state-prng'
+} from '@oh-my-rpg/state--prng'
 
 import {
 	Weapon,
@@ -31,18 +31,18 @@ import {
 	MAX_ENHANCEMENT_LEVEL as MAX_WEAPON_ENHANCEMENT_LEVEL,
 	is_at_max_enhancement as is_weapon_at_max_enhancement,
 	DEMO_WEAPON_1,
-} from '@tbrpg/logic-weapons'
+} from '@tbrpg/logic--weapons'
 import {
 	Armor,
 	create as create_armor,
 	enhance as enhance_armor,
 	MAX_ENHANCEMENT_LEVEL as MAX_ARMOR_ENHANCEMENT_LEVEL,
-} from '@tbrpg/logic-armors'
+} from '@tbrpg/logic--armors'
 
 import {
 	create as create_monster,
 	DEMO_MONSTER_01,
-} from '@tbrpg/logic-monsters'
+} from '@tbrpg/logic--monsters'
 
 import {
 	CoinsGain,
@@ -54,7 +54,7 @@ import {
 	pick_random_good_archetype,
 	pick_random_bad_archetype,
 	generate_random_coin_gain_or_loss,
-} from '@tbrpg/logic-adventures'
+} from '@tbrpg/logic--adventures'
 
 import {
 	State,

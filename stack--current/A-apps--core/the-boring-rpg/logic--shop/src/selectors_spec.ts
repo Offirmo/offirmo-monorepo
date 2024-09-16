@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
-import { DEMO_ARMOR_1 } from '@tbrpg/logic-armors'
-import { DEMO_WEAPON_1 } from '@tbrpg/logic-weapons'
+import { DEMO_ARMOR_1 } from '@tbrpg/logic--armors'
+import { DEMO_WEAPON_1 } from '@tbrpg/logic--weapons'
 
 import { appraise_sell_value } from './index.js'
 

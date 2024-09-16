@@ -2,7 +2,7 @@ import { expect } from 'chai'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { generate_random_demo_armor, DEMO_ARMOR_1, DEMO_ARMOR_2 } from '@tbrpg/logic-armors'
+import { generate_random_demo_armor, DEMO_ARMOR_1, DEMO_ARMOR_2 } from '@tbrpg/logic--armors'
 
 import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 

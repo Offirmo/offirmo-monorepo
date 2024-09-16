@@ -8,19 +8,19 @@ import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-util
 
 import { ItemQuality } from '@tbrpg/definitions'
 
-import * as CodesState from '@oh-my-rpg/state-codes'
-import * as EngagementState from '@oh-my-rpg/state-engagement'
-import * as MetaState from '@oh-my-rpg/state-meta'
-import * as PRNGState from '@oh-my-rpg/state-prng'
+import * as CodesState from '@oh-my-rpg/state--codes'
+import * as EngagementState from '@oh-my-rpg/state--engagement'
+import * as MetaState from '@oh-my-rpg/state--meta'
+import * as PRNGState from '@oh-my-rpg/state--prng'
 
 import * as CharacterState from '@tbrpg/state--character'
-import * as EnergyState from '@tbrpg/state-energy'
+import * as EnergyState from '@tbrpg/state--energy'
 import * as InventoryState from '@tbrpg/state--inventory'
 import * as ProgressState from '@tbrpg/state--progress'
-import * as WalletState from '@tbrpg/state-wallet'
+import * as WalletState from '@tbrpg/state--wallet'
 
-import { Weapon, create as create_weapon } from '@tbrpg/logic-weapons'
-import { Armor, create as create_armor } from '@tbrpg/logic-armors'
+import { Weapon, create as create_weapon } from '@tbrpg/logic--weapons'
+import { Armor, create as create_armor } from '@tbrpg/logic--armors'
 
 /////////////////////
 

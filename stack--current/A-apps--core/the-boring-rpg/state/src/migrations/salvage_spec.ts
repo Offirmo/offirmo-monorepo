@@ -1,6 +1,6 @@
 import {expect} from 'chai'
 
-import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
+import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { LIB } from '../consts.js'

@@ -6,12 +6,12 @@ import {
 	Weapon,
 	create as create_weapon,
 	get_medium_damage,
-} from '@tbrpg/logic-weapons'
+} from '@tbrpg/logic--weapons'
 import {
 	Armor,
 	create as create_armor,
 	get_medium_damage_reduction,
-} from '@tbrpg/logic-armors'
+} from '@tbrpg/logic--armors'
 
 /////////////////////
 

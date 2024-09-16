@@ -6,16 +6,16 @@ import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation }
 
 /////////////////////
 
-import * as EnergyState from '@tbrpg/state-energy'
-import * as EngagementState from '@oh-my-rpg/state-engagement'
-import * as PRNGState from '@oh-my-rpg/state-prng'
-import * as CodesState from '@oh-my-rpg/state-codes'
+import * as EnergyState from '@tbrpg/state--energy'
+import * as EngagementState from '@oh-my-rpg/state--engagement'
+import * as PRNGState from '@oh-my-rpg/state--prng'
+import * as CodesState from '@oh-my-rpg/state--codes'
 import * as ProgressState from '@tbrpg/state--progress'
 
 import { ItemQuality } from '@tbrpg/definitions'
-import { getꓽprng } from '@oh-my-rpg/state-prng'
-import { create as create_weapon } from '@tbrpg/logic-weapons'
-import { create as create_armor } from '@tbrpg/logic-armors'
+import { getꓽprng } from '@oh-my-rpg/state--prng'
+import { create as create_weapon } from '@tbrpg/logic--weapons'
+import { create as create_armor } from '@tbrpg/logic--armors'
 
 /////////////////////
 

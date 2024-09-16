@@ -1,8 +1,8 @@
 import { expect } from 'chai'
 import * as icepick from 'icepick'
 
-import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
-import { ALL_ADVENTURE_ARCHETYPES } from '@tbrpg/logic-adventures'
+import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
+import { ALL_ADVENTURE_ARCHETYPES } from '@tbrpg/logic--adventures'
 import {
 	InventorySlot,
 	get_unequipped_item_count,
@@ -12,7 +12,7 @@ import {
 import {
 	Currency,
 	get_currency_amount,
-} from '@tbrpg/state-wallet'
+} from '@tbrpg/state--wallet'
 
 import { LIB } from '../../consts.js'
 import { type State} from '../../types.js'

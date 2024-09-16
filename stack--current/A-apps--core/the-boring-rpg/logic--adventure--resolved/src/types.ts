@@ -2,9 +2,9 @@ import { Enum } from 'typescript-string-enums'
 
 import { UUID } from '@offirmo-private/uuid'
 
-import { Weapon } from '@tbrpg/logic-weapons'
-import { Armor } from '@tbrpg/logic-armors'
-import { Monster } from '@tbrpg/logic-monsters'
+import { Weapon } from '@tbrpg/logic--weapons'
+import { Armor } from '@tbrpg/logic--armors'
+import { Monster } from '@tbrpg/logic--monsters'
 
 /////////////////////////////////////////////////
 

@@ -1,5 +1,5 @@
 {
-	"name": "@oh-my-rpg/state-prng",
+	"name": "@oh-my-rpg/state--prng",
 	"description": "evolving serializable pseudo random generator state and reducer",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",

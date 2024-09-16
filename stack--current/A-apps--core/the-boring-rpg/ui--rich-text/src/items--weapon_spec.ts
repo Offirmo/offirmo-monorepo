@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import * as RichText from '@offirmo-private/rich-text-format'
 import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 
-import { generate_random_demo_weapon, DEMO_WEAPON_1, DEMO_WEAPON_2 } from '@tbrpg/logic-weapons'
+import { generate_random_demo_weapon, DEMO_WEAPON_1, DEMO_WEAPON_2 } from '@tbrpg/logic--weapons'
 
 import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 

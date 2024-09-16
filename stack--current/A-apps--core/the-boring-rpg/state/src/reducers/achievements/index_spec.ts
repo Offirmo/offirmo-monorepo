@@ -2,7 +2,7 @@ import { Enum } from 'typescript-string-enums'
 import { expect } from 'chai'
 
 import { AchievementStatus, AchievementDefinition } from '@tbrpg/state--progress'
-import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
+import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 
 import { LIB } from '../../consts.js'
 import { type State, UState } from '../../types.js'

@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import * as EngagementState from '@oh-my-rpg/state-engagement'
+import * as EngagementState from '@oh-my-rpg/state--engagement'
 
 import { type State } from './types.js'
 

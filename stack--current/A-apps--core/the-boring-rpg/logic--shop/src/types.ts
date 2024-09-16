@@ -1,7 +1,7 @@
 import { Enum } from 'typescript-string-enums'
 
-import { Weapon } from '@tbrpg/logic-weapons'
-import { Armor } from '@tbrpg/logic-armors'
+import { Weapon } from '@tbrpg/logic--weapons'
+import { Armor } from '@tbrpg/logic--armors'
 
 /////////////////////
 

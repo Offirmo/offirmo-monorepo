@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { generate_random_demo_monster } from '@tbrpg/logic-monsters'
+import { generate_random_demo_monster } from '@tbrpg/logic--monsters'
 import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 import {

@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////
 
-const LIB = '@oh-my-rpg/state-engagement'
+const LIB = '@oh-my-rpg/state--engagement'
 
 const SCHEMA_VERSION: number = 1
 

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state-prng'
+import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 
 import { LIB } from '../consts.js'
 import { create } from '../index.js'

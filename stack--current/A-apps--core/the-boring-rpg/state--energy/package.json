@@ -1,5 +1,5 @@
 {
-	"name": "@tbrpg/state-energy",
+	"name": "@tbrpg/state--energy",
 	"description": "replenishing, discrete energy bar like Candy Crush",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
