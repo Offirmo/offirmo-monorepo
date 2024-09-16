@@ -73,3 +73,13 @@ TODO https://developer.mozilla.org/en-US/docs/Web/API/Payment_Handler_API
 
 ## URLs
 https://blog.jim-nielsen.com/2023/examples-of-great-urls/
+
+
+
+Something went wrong
+Try reloading the page, then check our Statuspage for any current outages. If there are no relevant outages, create a support request so we can help you out.
+
+If you create a request, include the following so we can help you as fast as possible:
+
+Error type: 500 - Internal server error
+Log reference: xxx-yyy-zzz

@@ -1,6 +1,7 @@
 import { expect } from 'chai'
 import { Enum } from 'typescript-string-enums'
 
+import { LIB } from '../consts.js'
 import { CoinsGain } from '../types.js'
 import {
 	RawAdventureArchetypeEntry,
@@ -9,13 +10,14 @@ import {
 } from './index.js'
 import { OFFIRMO_BLAND_REPARTITION_ADJUSTMENT } from './i18n_en.js'
 
+/////////////////////////////////////////////////
 
 const DISTRIB_ADJUSTMENT_ENTRIES_HIDS: string[] = [
-	...Object.keys(OFFIRMO_BLAND_REPARTITION_ADJUSTMENT),
-	'cookies_grandmas',
+	...Object.keys(OFFIRMO_BLAND_REPARTITION_ADJUSTMENT), // mine
+	'cookies_grandmas', // existing
 ]
 
-describe('@tbrpg/logic-adventures - data:', function () {
+describe(`${LIB} -- data`, function () {
 	const _: any = i18n_messages['en']
 	const ARCHETYPES: { [key: string]: RawAdventureArchetypeEntry } = {}
 	ENTRIES.forEach(entry => ARCHETYPES[entry.hid] = entry)
@@ -51,7 +53,7 @@ describe('@tbrpg/logic-adventures - data:', function () {
 		})
 	})
 
-	describe('stats', function() {
+	describe('[distribution]', function() {
 		const ENTRIES_GOOD = ENTRIES.filter(entry => entry.good)
 		const SORTED_EXPECTED_OUTCOMES = [
 			'level',
@@ -78,8 +80,6 @@ describe('@tbrpg/logic-adventures - data:', function () {
 			'token',
 			...Enum.values(CoinsGain).filter(v => v!= 'none').map(v => 'coin:' + v),
 		]
-
-
 
 		it('brags about the number of stories', () => {
 			console.log('Good entries: # ' + ENTRIES_GOOD.length)

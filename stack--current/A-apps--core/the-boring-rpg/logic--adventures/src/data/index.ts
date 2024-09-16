@@ -225,7 +225,7 @@ const ENTRIES: Readonly<RawAdventureArchetypeEntry>[] = [
 	{ good: true, type: story, hid: 'best_defense_is_offense',      outcome: { improvementⵧarmor_or_weapon:true }},
 	{ good: true, type: story, hid: 'defense_is_also_important',    outcome: { improvementⵧarmor:true }},
 
-	// those stories are not hinting a a specific attribute,
+	// those stories are not hinting at a specific attribute,
 	// thus can be used for adjusting distribution.
 	// (if aligned, use 'random_attribute')
 	{ good: true, type: story, hid: 'cookies_grandmas',             outcome: { agility:true }},
