@@ -7,7 +7,7 @@ import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation }
 /////////////////////
 
 import * as EnergyState from '@tbrpg/state--energy'
-import * as ProgressState from '@tbrpg/state--progress'
+import * as AchievementsState from '@tbrpg/state--achievements'
 
 /////////////////////
 
@@ -92,7 +92,7 @@ function play(previous_state: Immutable<State>, now_ms: TimestampUTCMs = getꓽU
 		u_state: {
 			...u_state,
 			revision: state.u_state.revision + 1,
-			progress: ProgressState.on_played(u_state.progress, {
+			progress: AchievementsState.on_played(u_state.progress, {
 				good: is_good_play,
 				adventure_key: u_state.last_adventure!.hid,
 				encountered_monster_key: u_state.last_adventure!.encounter

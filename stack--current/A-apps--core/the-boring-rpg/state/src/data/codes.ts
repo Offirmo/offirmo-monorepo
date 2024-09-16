@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import { type Immutable} from '@offirmo-private/ts-types'
 import { getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 
-import { CodeSpec, normalize_code, State as ProgressState } from '@oh-my-rpg/state--codes'
+import { CodeSpec, normalize_code, State as CodesState } from '@oh-my-rpg/state--codes'
 
 import { type State } from '../types.js'
 import {
@@ -54,16 +54,16 @@ const POWER_CODES: Immutable<{ [key: string]: Immutable<Partial<CodeSpec<State>>
 
 	BORED: {
 		redeem_limit: null,
-		is_redeemable: (state: Immutable<State>, progress_state: Immutable<ProgressState>) => {
+		is_redeemable: (state: Immutable<State>, codes_state: Immutable<CodesState>) => {
 			const has_energy_depleted = getꓽavailable_energy‿float(state.t_state) < 1.
 			if (!has_energy_depleted)
 				return false
 
-			if (!progress_state.redeemed_codes['BORED'])
+			if (!codes_state.redeemed_codes['BORED'])
 				return true
 
 			const now_minutes = getꓽUTC_timestampⵧhuman_readable‿minutes()
-			const last_redeem_date_minutes = progress_state.redeemed_codes['BORED']!.last_redeem_date_minutes
+			const last_redeem_date_minutes = codes_state.redeemed_codes['BORED']!.last_redeem_date_minutes
 			const is_same_day = now_minutes.slice(0, 8) === last_redeem_date_minutes.slice(0, 8)
 			return !is_same_day
 		},

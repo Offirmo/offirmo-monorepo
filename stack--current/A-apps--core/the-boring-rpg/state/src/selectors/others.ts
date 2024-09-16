@@ -13,7 +13,7 @@ import {
 	getꓽoldest_queuedⵧflow,
 	getꓽoldest_queuedⵧnon_flow,
 } from '@oh-my-rpg/state--engagement'
-import { AchievementSnapshot } from '@tbrpg/state--progress'
+import { AchievementSnapshot } from '@tbrpg/state--achievements'
 
 /////////////////////
 

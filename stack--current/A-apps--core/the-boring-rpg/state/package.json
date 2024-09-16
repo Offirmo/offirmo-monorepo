@@ -41,7 +41,7 @@
 		"@tbrpg/logic--weapons": "^0",
 		"@tbrpg/state--character": "^0",
 		"@tbrpg/state--inventory": "^0",
-		"@tbrpg/state--progress": "^0",
+		"@tbrpg/state--achievements": "^0",
 		"@tbrpg/state--energy": "^0",
 		"@tbrpg/state--wallet": "^0",
 		"tiny-invariant": "^1",

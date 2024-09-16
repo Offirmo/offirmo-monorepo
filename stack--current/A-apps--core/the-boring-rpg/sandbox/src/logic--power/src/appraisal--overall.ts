@@ -2,7 +2,7 @@ import { type Immutable } from '@offirmo-private/ts-types'
 
 import * as Character from '@tbrpg/state--character'
 import * as Inventory from '@tbrpg/state--inventory'
-import * as Progress from '@tbrpg/state--progress'
+import * as Progress from '@tbrpg/state--achievements'
 
 import { Power } from './types.js'
 import { appraise_powerⵧequipment } from './appraisal--equipment.js'

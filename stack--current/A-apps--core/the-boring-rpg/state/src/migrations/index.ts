@@ -16,7 +16,7 @@ import * as PRNGState from '@oh-my-rpg/state--prng'
 import * as EnergyState from '@tbrpg/state--energy'
 import * as EngagementState from '@oh-my-rpg/state--engagement'
 import * as CodesState from '@oh-my-rpg/state--codes'
-import * as ProgressState from '@tbrpg/state--progress'
+import * as AchievementsState from '@tbrpg/state--achievements'
 import * as MetaState from '@oh-my-rpg/state--meta'
 
 import { LIB, SCHEMA_VERSION } from '../consts.js'
@@ -42,7 +42,7 @@ const SUB_STATES_MIGRATIONS: SubStatesMigrationFns = {
 	inventory:  InventoryState.migrate_toꓽlatest,
 	meta:       MetaState.migrate_toꓽlatest,
 	prng:       PRNGState.migrate_toꓽlatest,
-	progress:   ProgressState.migrate_toꓽlatest,
+	progress:   AchievementsState.migrate_toꓽlatest,
 	wallet:     WalletState.migrate_toꓽlatest,
 }
 

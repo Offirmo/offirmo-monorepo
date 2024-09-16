@@ -2,7 +2,7 @@ import { type Immutable } from '@offirmo-private/ts-types'
 import {
 	AchievementStatus,
 	AchievementSnapshot,
-} from '@tbrpg/state--progress'
+} from '@tbrpg/state--achievements'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 

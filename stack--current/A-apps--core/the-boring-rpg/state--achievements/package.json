@@ -1,5 +1,5 @@
 {
-	"name": "@tbrpg/state--progress",
+	"name": "@tbrpg/state--achievements",
 	"description": "flags, unlocks and extra statistics state and reducer",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",

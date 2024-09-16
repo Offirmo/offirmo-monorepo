@@ -16,7 +16,7 @@ import * as PRNGState from '@oh-my-rpg/state--prng'
 import * as CharacterState from '@tbrpg/state--character'
 import * as EnergyState from '@tbrpg/state--energy'
 import * as InventoryState from '@tbrpg/state--inventory'
-import * as ProgressState from '@tbrpg/state--progress'
+import * as AchievementsState from '@tbrpg/state--achievements'
 import * as WalletState from '@tbrpg/state--wallet'
 
 import { Weapon, create as create_weapon } from '@tbrpg/logic--weapons'
@@ -75,7 +75,7 @@ function create(SXC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable
 				energy: u_state_energy,
 				engagement: EngagementState.create(SXC),
 				codes: CodesState.create(SXC),
-				progress: ProgressState.create(SXC),
+				progress: AchievementsState.create(SXC),
 				meta: MetaState.create(),
 
 				last_adventure: null,

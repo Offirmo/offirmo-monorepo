@@ -6,7 +6,7 @@ import {
 	AchievementDefinition,
 	AchievementStatus,
 	AchievementSnapshot,
-} from '@tbrpg/state--progress'
+} from '@tbrpg/state--achievements'
 
 import { UState } from '../types.js'
 

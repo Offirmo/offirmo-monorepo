@@ -10,7 +10,7 @@ import * as EnergyState from '@tbrpg/state--energy'
 import * as EngagementState from '@oh-my-rpg/state--engagement'
 import * as PRNGState from '@oh-my-rpg/state--prng'
 import * as CodesState from '@oh-my-rpg/state--codes'
-import * as ProgressState from '@tbrpg/state--progress'
+import * as AchievementsState from '@tbrpg/state--achievements'
 
 import { ItemQuality } from '@tbrpg/definitions'
 import { getꓽprng } from '@oh-my-rpg/state--prng'
@@ -144,12 +144,12 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 				// complicated, but will auto-re-gain this achievement
 				u_state = {
 					...u_state,
-					//					progress: ProgressState.on_achieved(u_state.progress, 'TEST', ProgressState.AchievementStatus.revealed)
+					//					progress: AchievementsState.on_achieved(u_state.progress, 'TEST', AchievementsState.AchievementStatus.revealed)
 					progress: {
 						...u_state.progress,
 						achievements: {
 							...u_state.progress.achievements,
-							'TEST': ProgressState.AchievementStatus.revealed,
+							'TEST': AchievementsState.AchievementStatus.revealed,
 						},
 					},
 				}
@@ -198,7 +198,7 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 				t_state = state.t_state
 				u_state = {
 					...u_state,
-					progress: ProgressState.on_achieved(u_state.progress, 'Reborn!', ProgressState.AchievementStatus.unlocked),
+					progress: AchievementsState.on_achieved(u_state.progress, 'Reborn!', AchievementsState.AchievementStatus.unlocked),
 				}
 				break
 			case 'REBORN':
@@ -208,7 +208,7 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 				t_state = state.t_state
 				u_state = {
 					...u_state,
-					progress: ProgressState.on_achieved(u_state.progress, 'Reborn!', ProgressState.AchievementStatus.unlocked),
+					progress: AchievementsState.on_achieved(u_state.progress, 'Reborn!', AchievementsState.AchievementStatus.unlocked),
 				}
 				break
 

@@ -57,7 +57,7 @@ interface State extends BaseUState {
 	// hence the need for storing the previous state.
 	// Theoretically we COULD detect a change without that,
 	// EXCEPT for newly introduced achievements, so this is needed.
-	// TODO rename as "last_known_achievement_status" ?
+	// TODO rename as "last_known_achievement_status" ? or "snapshot"
 	achievements: { [key: string]: AchievementStatus }
 
 	// TODO externalize?

@@ -2,7 +2,7 @@ import { type Immutable} from '@offirmo-private/ts-types'
 
 import { ItemQuality, InventorySlot, ITEM_QUALITIES_TO_INT, ITEM_SLOTS } from '@tbrpg/definitions'
 import { appraise_sell_value, appraise_power } from '@tbrpg/logic--shop'
-import { AchievementStatus, AchievementDefinition } from '@tbrpg/state--progress'
+import { AchievementStatus, AchievementDefinition } from '@tbrpg/state--achievements'
 import { CharacterClass, DEFAULT_AVATAR_NAME } from '@tbrpg/state--character'
 import { getꓽitem_in_slot } from '@tbrpg/state--inventory'
 import { Weapon, matches as matches_weapon } from '@tbrpg/logic--weapons'

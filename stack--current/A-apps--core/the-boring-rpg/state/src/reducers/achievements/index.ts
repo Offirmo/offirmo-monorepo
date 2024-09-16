@@ -5,7 +5,7 @@ import {
 	AchievementStatus,
 	on_achieved,
 	getꓽlast_known_achievement_status,
-} from '@tbrpg/state--progress'
+} from '@tbrpg/state--achievements'
 import {
 	enqueue as enqueueEngagement,
 	EngagementType,

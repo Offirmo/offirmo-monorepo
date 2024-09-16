@@ -113,7 +113,7 @@ function on_played(previous_state: Immutable<State>, details: PlayedDetails): Im
 			[active_class]: 0,
 			...stats.good_play_count_by_active_class,
 		}
-		stats.good_play_count_by_active_class[active_class]++
+		stats.good_play_count_by_active_class[active_class]!++
 		if (adventure_key.startsWith('fight_won_')) {
 			stats.fight_won_count++
 		}
@@ -128,7 +128,7 @@ function on_played(previous_state: Immutable<State>, details: PlayedDetails): Im
 			[active_class]: 0,
 			...stats.bad_play_count_by_active_class,
 		}
-		stats.bad_play_count_by_active_class[active_class]++
+		stats.bad_play_count_by_active_class[active_class]!++
 	}
 
 	if (encountered_monster_key && !stats.encountered_monsters[encountered_monster_key]) {

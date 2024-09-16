@@ -10,7 +10,7 @@ import * as PRNGState from '@oh-my-rpg/state--prng'
 import * as EnergyState from '@tbrpg/state--energy'
 import * as EngagementState from '@oh-my-rpg/state--engagement'
 import * as CodesState from '@oh-my-rpg/state--codes'
-import * as ProgressState from '@tbrpg/state--progress'
+import * as AchievementsState from '@tbrpg/state--achievements'
 import * as MetaState from '@oh-my-rpg/state--meta'
 
 import { LIB, SCHEMA_VERSION } from '../consts.js'
@@ -56,7 +56,7 @@ describe(`${LIB} - schema migration`, function() {
 			energy: EnergyState.MIGRATION_HINTS_FOR_TESTS,
 			engagement: EngagementState.MIGRATION_HINTS_FOR_TESTS,
 			codes: CodesState.MIGRATION_HINTS_FOR_TESTS,
-			progress: ProgressState.MIGRATION_HINTS_FOR_TESTS,
+			progress: AchievementsState.MIGRATION_HINTS_FOR_TESTS,
 			meta: MetaState.MIGRATION_HINTS_FOR_TESTS,
 		})
 

@@ -1,4 +1,4 @@
-const LIB = '@tbrpg/state--progress'
+const LIB = '@tbrpg/state--achievements'
 
 const SCHEMA_VERSION: number = 3
 
