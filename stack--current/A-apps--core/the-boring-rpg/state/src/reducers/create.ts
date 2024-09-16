@@ -73,8 +73,8 @@ function create(SXC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable
 				wallet: WalletState.add_amount(WalletState.create(), WalletState.Currency.coin, 1), // don't start empty so that a loss can happen
 				prng: PRNGState.create(seed),
 				energy: u_state_energy,
-				engagement: EngagementState.create(SXC),
-				codes: CodesState.create(SXC),
+				engagement: EngagementState.create(SXC as any),
+				codes: CodesState.create(SXC as any),
 				progress: AchievementsState.create(SXC),
 				meta: MetaState.create(),
 

@@ -1,26 +1,27 @@
 import { expect } from 'chai'
 import strip_terminal_escape_codes from 'strip-ansi'
 
+import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 import { ALL_GOOD_ADVENTURE_ARCHETYPES, ALL_BAD_ADVENTURE_ARCHETYPES } from '@tbrpg/logic--adventures'
 import {
 	create,
 	play,
+} from '@tbrpg/state'
+import {
 	DEMO_ADVENTURE_01,
 	DEMO_ADVENTURE_02,
 	DEMO_ADVENTURE_03,
 	DEMO_ADVENTURE_04,
-} from '@tbrpg/state'
+} from '@tbrpg/logic--adventure--resolved'
 
-import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
-
-import { render_adventure } from './index.js'
+import { renderꓽresolved_adventure } from './index.js'
 
 
 describe('🔠  view to @offirmo-private/rich-text-format - adventure', function() {
 
 	it('should render properly - with gain of skills', () => {
-		const $doc = render_adventure(DEMO_ADVENTURE_01)
+		const $doc = renderꓽresolved_adventure(DEMO_ADVENTURE_01)
 		//console.log(prettifyꓽjson($doc))
 
 		const str = strip_terminal_escape_codes(rich_text_to_terminal($doc))
@@ -34,7 +35,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 	})
 
 	it('should render properly - with gain of coins', () => {
-		const $doc = render_adventure(DEMO_ADVENTURE_02)
+		const $doc = renderꓽresolved_adventure(DEMO_ADVENTURE_02)
 		//console.log(prettifyꓽjson($doc))
 
 		const str = strip_terminal_escape_codes(rich_text_to_terminal($doc))
@@ -46,7 +47,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 	})
 
 	it('should render properly - with gain of item(s)', () => {
-		const $doc = render_adventure(DEMO_ADVENTURE_03)
+		const $doc = renderꓽresolved_adventure(DEMO_ADVENTURE_03)
 		//console.log(prettifyꓽjson($doc))
 
 		const str = strip_terminal_escape_codes(rich_text_to_terminal($doc))
@@ -57,7 +58,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 	})
 
 	it('should render properly - with gain of item improvement', () => {
-		const $doc = render_adventure(DEMO_ADVENTURE_04)
+		const $doc = renderꓽresolved_adventure(DEMO_ADVENTURE_04)
 		//console.log(prettifyꓽjson($doc))
 
 		const str = strip_terminal_escape_codes(rich_text_to_terminal($doc))
@@ -74,11 +75,11 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 		ALL_GOOD_ADVENTURE_ARCHETYPES
 			.forEach(({hid, good}, index) => {
 				describe(`✅  adventure #${index} "${hid}"`, function() {
-					it('should be playable', () => {
+					it('should be render-able', () => {
 						let state = create()
 						state = play(state, undefined, hid)
 
-						const $doc = render_adventure(state.u_state.last_adventure!)
+						const $doc = renderꓽresolved_adventure(state.u_state.last_adventure!)
 						//console.log(prettifyꓽjson($doc))
 
 						// should just not throw
@@ -91,7 +92,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 		ALL_BAD_ADVENTURE_ARCHETYPES
 			.forEach(({hid, good}, index) => {
 				describe(`❎  adventure #${index} "${hid}"`, function() {
-					it('should be playable', () => {
+					it('should be render-able', () => {
 						let state = create()
 
 						state = play(state)
@@ -104,11 +105,12 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 
 						state = play(state, undefined, hid)
 
-						const $doc = render_adventure(state.u_state.last_adventure!)
+						const $doc = renderꓽresolved_adventure(state.u_state.last_adventure!)
 						//console.log(prettifyꓽjson($doc))
+
+						// should just not throw
 						const str = rich_text_to_terminal($doc)
 						//console.log(str)
-						// should just not throw
 					})
 				})
 			})

@@ -1,9 +1,9 @@
 import { type Immutable } from '@offirmo-private/ts-types'
-import { InventorySlot, ITEM_SLOTS } from '@tbrpg/definitions'
-import { CHARACTER_ATTRIBUTES, CharacterAttribute } from '@tbrpg/state--character'
+import { type InventorySlot, ITEM_SLOTS } from '@tbrpg/definitions'
+import { CHARACTER_ATTRIBUTES, type CharacterAttribute } from '@tbrpg/state--character'
 import { i18n_messages as I18N_ADVENTURES } from '@tbrpg/logic--adventures'
-import { Adventure } from '@tbrpg/state'
-import { ALL_CURRENCIES, Currency, get_currency_amount } from '@tbrpg/state--wallet'
+import { type ResolvedAdventure } from '@tbrpg/logic--adventure--resolved'
+import { ALL_CURRENCIES, type Currency } from '@tbrpg/state--wallet'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 
@@ -14,7 +14,7 @@ import { RenderItemOptions } from './types.js'
 import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.js'
 
 
-function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItemOptions> = DEFAULT_RENDER_ITEM_OPTIONS): RichText.Document {
+function renderꓽresolved_adventure(a: Immutable<ResolvedAdventure>, options: Immutable<RenderItemOptions> = DEFAULT_RENDER_ITEM_OPTIONS): RichText.Document {
 	const gains: any = a.gains // alias for typing
 
 	// in this special function, we'll be:
@@ -132,9 +132,9 @@ function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItem
 	const active_adventure_outcomes = Object.keys(gains).filter(prop => !!gains[prop])
 	const unhandled_adventure_outcomes = active_adventure_outcomes.filter(prop => !handled_adventure_outcomes_so_far.has(prop))
 	if (unhandled_adventure_outcomes.length) {
-		console.error(`render_adventure(): *UN*handled outcome properties: "${unhandled_adventure_outcomes}"!`)
-		console.info(`render_adventure(): handled outcome properties: "${Array.from(handled_adventure_outcomes_so_far.values())}"`)
-		throw new Error('render_adventure(): unhandled outcome properties!')
+		console.error(`renderꓽresolved_adventure(): *UN*handled outcome properties: "${unhandled_adventure_outcomes}"!`)
+		console.info(`renderꓽresolved_adventure(): handled outcome properties: "${Array.from(handled_adventure_outcomes_so_far.values())}"`)
+		throw new Error('renderꓽresolved_adventure(): unhandled outcome properties!')
 	}
 
 	/////// Final wrap-up //////
@@ -159,5 +159,5 @@ function render_adventure(a: Immutable<Adventure>, options: Immutable<RenderItem
 
 
 export {
-	render_adventure,
+	renderꓽresolved_adventure,
 }
