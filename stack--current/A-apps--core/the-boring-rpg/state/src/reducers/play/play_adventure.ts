@@ -6,11 +6,10 @@ import { Enum } from 'typescript-string-enums'
 import { generate_uuid } from '@offirmo-private/uuid'
 import { getꓽrandom, RNGEngine } from '@offirmo/random'
 
-import { InventorySlot } from '@tbrpg/definitions'
+import { type ResolvedAdventure } from '@tbrpg/logic--adventure--resolved'
 
 import {
 	CharacterAttribute,
-	CHARACTER_ATTRIBUTES,
 	CharacterClass,
 	State as CharacterState,
 } from '@tbrpg/state--character'
@@ -18,48 +17,28 @@ import {
 import * as InventoryState from '@tbrpg/state--inventory'
 import * as WalletState from '@tbrpg/state--wallet'
 import * as PRNGState from '@oh-my-rpg/state--prng'
-import {
-	getꓽprng,
-	register_recently_used,
-	regenerate_until_not_recently_encountered,
-} from '@oh-my-rpg/state--prng'
+import { getꓽprng } from '@oh-my-rpg/state--prng'
 
 import {
-	Weapon,
 	create as create_weapon,
-	enhance as enhance_weapon,
-	MAX_ENHANCEMENT_LEVEL as MAX_WEAPON_ENHANCEMENT_LEVEL,
 	is_at_max_enhancement as is_weapon_at_max_enhancement,
-	DEMO_WEAPON_1,
 } from '@tbrpg/logic--weapons'
 import {
-	Armor,
 	create as create_armor,
-	enhance as enhance_armor,
-	MAX_ENHANCEMENT_LEVEL as MAX_ARMOR_ENHANCEMENT_LEVEL,
 } from '@tbrpg/logic--armors'
 
 import {
 	create as create_monster,
-	DEMO_MONSTER_01,
 } from '@tbrpg/logic--monsters'
 
 import {
-	CoinsGain,
 	OutcomeArchetype,
 	AdventureType,
 	AdventureArchetype,
-
-	getꓽarchetype,
-	pick_random_good_archetype,
-	pick_random_bad_archetype,
 	generate_random_coin_gain_or_loss,
 } from '@tbrpg/logic--adventures'
 
-import {
-	State,
-	ResolvedAdventure,
-} from '../../types.js'
+import { State } from '../../types.js'
 
 import { LIB } from '../../consts.js'
 

@@ -17,7 +17,6 @@ interface State extends BaseUState {
 	}
 }
 
-
 /////////////////////////////////////////////////
 
 export {

@@ -1,5 +1,3 @@
-/////////////////////
-
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 

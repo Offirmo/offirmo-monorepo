@@ -2,7 +2,7 @@ import { type Immutable } from '@offirmo-private/ts-types'
 import { HumanReadableTimestampUTCMinutes } from '@offirmo-private/timestamps'
 import { BaseUState } from '@offirmo-private/state-utils'
 
-/////////////////////
+/////////////////////////////////////////////////
 
 interface CodeSpec<T> {
 	code: string // also serves as unique key
@@ -12,21 +12,22 @@ interface CodeSpec<T> {
 }
 
 interface CodeRedemption {
+	// TODO rename to redemption?
 	redeem_count: number
 	last_redeem_date_minutes: HumanReadableTimestampUTCMinutes
 }
+
 /////////////////////
 
 interface State extends BaseUState {
 	redeemed_codes: { [key: string]: CodeRedemption }
 }
 
-/////////////////////
+/////////////////////////////////////////////////
 
 export {
 	type CodeSpec,
 	type CodeRedemption,
+
 	type State,
 }
-
-/////////////////////

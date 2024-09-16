@@ -1,5 +1,3 @@
-import { Enum } from 'typescript-string-enums'
-
 import { BaseUState } from '@offirmo-private/state-utils'
 
 /////////////////////
@@ -18,5 +16,3 @@ interface State extends BaseUState {
 export {
 	type State,
 }
-
-/////////////////////

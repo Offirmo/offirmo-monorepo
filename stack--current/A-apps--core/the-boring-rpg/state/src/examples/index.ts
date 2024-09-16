@@ -1,13 +1,9 @@
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
+import { Weapon } from '@tbrpg/logic--weapons'
+import { Armor } from '@tbrpg/logic--armors'
 
-import { DEMO_WEAPON_1, Weapon } from '@tbrpg/logic-weapons'
-import { Armor } from '@tbrpg/logic-armors'
-import { DEMO_MONSTER_01 } from '@tbrpg/logic-monsters'
-
-/////////////////////
-
-import { type State, ResolvedAdventure } from '../types.js'
+import { type State } from '../types.js'
 import { cleanup } from '../migrations/index.js'
 import { getꓽSXC } from '../services/sec.js'
 
@@ -15,99 +11,6 @@ import { getꓽSXC } from '../services/sec.js'
 // needed to test migrations, both here and in composing parents
 
 // a full-featured, non-trivial demo state
-// with dev gain
-const DEMO_ADVENTURE_01: Immutable<ResolvedAdventure> = enforceꓽimmutable<ResolvedAdventure>({
-	hid: 'fight_lost_any',
-	uuid: 'uu1~example~adventure~01',
-	good: true,
-	encounter: DEMO_MONSTER_01,
-	gains: {
-		level: 0,
-		health: 0,
-		mana: 0,
-		strength: 0,
-		agility: 0,
-		charisma: 0,
-		wisdom: 0,
-		luck: 1,
-		coin: 0,
-		token: 0,
-		armor: null,
-		weapon: null,
-		improvementⵧarmor: false,
-		improvementⵧweapon: false,
-	},
-})
-// with coin gain
-const DEMO_ADVENTURE_02: Immutable<ResolvedAdventure> = enforceꓽimmutable<ResolvedAdventure>({
-	hid: 'dying_man',
-	uuid: 'uu1~example~adventure~02',
-	good: true,
-	encounter: null,
-	gains: {
-		level: 0,
-		health: 0,
-		mana: 0,
-		strength: 0,
-		agility: 0,
-		charisma: 0,
-		wisdom: 0,
-		luck: 0,
-		coin: 1234,
-		token: 0,
-		weapon: null,
-		armor: null,
-		improvementⵧweapon: false,
-		improvementⵧarmor: false,
-	},
-})
-// with loot gain
-const DEMO_ADVENTURE_03: Immutable<ResolvedAdventure> = enforceꓽimmutable<ResolvedAdventure>({
-	hid: 'rare_goods_seller',
-	uuid: 'uu1~example~adventure~03',
-	good: true,
-	encounter: null,
-	gains: {
-		level: 0,
-		health: 0,
-		mana: 0,
-		strength: 0,
-		agility: 0,
-		charisma: 0,
-		wisdom: 0,
-		luck: 0,
-		coin: 0,
-		token: 0,
-		weapon: DEMO_WEAPON_1,
-		armor: null,
-		improvementⵧweapon: false,
-		improvementⵧarmor: false,
-	},
-})
-// with weapon enhancement gain
-const DEMO_ADVENTURE_04: Immutable<ResolvedAdventure> = enforceꓽimmutable<ResolvedAdventure>({
-	hid: 'princess',
-	uuid: 'uu1~example~adventure~04',
-	good: true,
-	encounter: null,
-	gains: {
-		level: 0,
-		health: 0,
-		mana: 0,
-		strength: 0,
-		agility: 0,
-		charisma: 0,
-		wisdom: 0,
-		luck: 0,
-		coin: 123,
-		token: 0,
-		weapon: null,
-		armor: null,
-		improvementⵧweapon: false,
-		improvementⵧarmor: true,
-	},
-})
-
 // can't build an example from disconnected sample states.
 // taken from a real savegame:
 const DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>(cleanup(getꓽSXC(), {
@@ -625,45 +528,10 @@ const DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>(cleanup(getꓽSX
 		},
 		'wallet': { 'coin_count': 669470, 'revision': 336, 'schema_version': 1, 'token_count': 44 },
 	},
-}, {}))
-
-/*const FAKE_DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>(cleanup(getꓽSXC(), {
-	schema_version: SCHEMA_VERSION,
-	last_user_investment_tms: TEST_TIMESTAMP_MS,
-
-	u_state: {
-		schema_version: SCHEMA_VERSION,
-		revision: 203,
-
-		creation_date: getꓽUTC_timestampⵧhuman_readable‿minutes(new Date(TEST_TIMESTAMP_MS)),
-
-		avatar: Character.DEMO_STATE,
-		inventory: Inventory.DEMO_STATE,
-		wallet: Wallet.DEMO_STATE,
-		prng: PRNG.DEMO_STATE,
-		energy: Energy.DEMO_U_STATE,
-		engagement: Engagement.acknowledge_all_seen(Engagement.DEMO_STATE),
-		codes: Codes.DEMO_STATE,
-		progress: Progress.DEMO_STATE,
-		meta: MetaState.DEMO_STATE,
-		last_adventure: DEMO_ADVENTURE_01,
-	},
-
-	t_state: {
-		schema_version: SCHEMA_VERSION,
-		revision: 1,
-		timestamp_ms: TEST_TIMESTAMP_MS,
-
-		energy: Energy.DEMO_T_STATE,
-	},
-}, {}))*/
+} satisfies State, {}))
 
 /////////////////////////////////////////////////
 
 export {
-	DEMO_ADVENTURE_01,
-	DEMO_ADVENTURE_02,
-	DEMO_ADVENTURE_03,
-	DEMO_ADVENTURE_04,
 	DEMO_STATE,
 }
