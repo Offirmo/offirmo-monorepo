@@ -20,7 +20,7 @@ Current primitives (not semantic):
 1. async
    1. next tick
    1. microtask
-   1. setImmediate https://developer.mozilla.org/en-US/docs/Web/API/window/setImmediate https://github.com/YuzuJS/setImmediate
+   1. setImmediate https://developer.mozilla.org/en-US/docs/Web/API/window/setImmediate https://github.com/YuzuJS/setImmediate https://www.trevorlasn.com/blog/setimmediate-vs-settimeout-in-javascript
    1. set timeout 0
    1. requestAnimationFrame  ~1/60s
    1. set timeout n

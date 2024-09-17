@@ -6,6 +6,7 @@
 [ ] advanced architecture -- https://devdocs.io/dom/content_index_api
 [ ] advanced architecture -- navigator.sendBeacon() for backup
 [ ] advanced architecture -- Web Periodic Background Synchronization API https://devdocs.io/dom/web_periodic_background_synchronization_api
+[ ] design https://www.youtube.com/@phoebeyutbt/videos
 [ ] security https://portswigger.net/web-security/all-topics
 [ ] security https://xsleaks.dev/
 [ ] TODO shearing layers https://en.wikipedia.org/wiki/Shearing_layers
@@ -17,7 +18,6 @@ appli web
 Application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
 architecture -- islands
 architecture -- JAMStack = "JavaScript, APIs, Markup" as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
-WinterCG "Web-interoperable Runtimes Community Group" https://wintercg.org/
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
 architecture -- LAMP (outdated) Linux, Apache, MySQL, PHP/Python/Perl
 architecture -- MEAN "MongoDB, Express.js, Angular, Node.js"
@@ -25,6 +25,7 @@ architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) htt
 architecture -- SSR, ISR, CSR, PPR (see 'rendering')
 ARIA "Accessible Rich Internet Applications" https://www.w3.org/WAI/ARIA/apg/
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
+blocking render https://csswizardry.com/2024/08/blocking-render-why-whould-you-do-that/
 bot detection
 browsing contexts = such as several windows, iframes or even workers
 CDN
@@ -141,6 +142,7 @@ MIME - Multipurpose Internet Mail Extensions
 monitoring -- labs = made by a lab, ex. camera
 monitoring -- Real user monitoring (RUM) = passive monitoring technology that records all user interaction with a website or client interacting with a server or cloud-based application (vs. lab) https://en.wikipedia.org/wiki/Real_user_monitoring
 monitoring -- synthetic = own test bot https://en.wikipedia.org/wiki/Synthetic_monitoring
+node -- tenant isolation = node is single thread, hence issues with security, esp. AWS lambda! solutions: workerd?
 organic vs inorganic concept = coming from a real user or a bot/AI or app etc.
 perf -- content jump = https://css-tricks.com/content-jumping-avoid/
 perf metrics -- "9 must known" https://twitter.com/alexxubyte/status/1769748487317651962
@@ -225,6 +227,7 @@ web components -- shadow DOM
 web components -- templates
 web components -- templates -- slots https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/slot
 web components https://developer.mozilla.org/en-US/docs/Web/API/Web_components
+web design https://www.webdesignmuseum.org/
 web workers -- dedicated = utilized by a single script https://devdocs.io/dom/worker
 web workers -- service = proxy https://devdocs.io/dom/service_worker_api
 web workers -- shared = can be utilized by multiple scripts running in different windows, IFrames, etc., as long as they are in the same domain as the worker https://devdocs.io/dom/sharedworker
@@ -232,4 +235,5 @@ WebDriver BiDi https://developer.chrome.com/blog/firefox-support-in-puppeteer-wi
 WebGPU / WebGL = https://devdocs.io/dom/webgpu_api
 WebXR / WebVR = VR / AR
 Wep pages UX design -- concepts https://www.nngroup.com/courses/web-page-design/
+WinterCG "Web-interoperable Runtimes Community Group" https://wintercg.org/
 XSS -- injection sinks https://devdocs.io/dom/trusted_types_api

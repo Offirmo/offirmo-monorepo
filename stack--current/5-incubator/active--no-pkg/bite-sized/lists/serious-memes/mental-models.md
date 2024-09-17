@@ -1,8 +1,8 @@
+"natural order of things in society" established by the dominant ideology
 +++ evolution
 +++ https://thewokesalaryman.com/
 -- https://fs.blog/mental-models/
 -- tool https://explorer.globe.engineer/
-[ ] https://boz.com/
 0-sum game
 1 or 2 way door
 12 steps
@@ -13,22 +13,13 @@
 [ ] AAA TODO https://flinkliv.com/
 [ ] AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 [ ] https://amir.rachum.com/mental-models/
+[ ] https://boz.com/
+[ ] https://en.wikipedia.org/wiki/Power_(social_and_political)
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
 [ ] https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 acceptance
 advocacy
-communication -- plainspoken https://boz.com/articles/be-plainspoken https://debliu.substack.com/p/the-importance-of-being-plainspoken
-communication -- ELI5 https://boz.com/articles/eli5
-communication -- breaking bad news https://boz.com/articles/bad-news
-intellectual honesty = willingness to see and admit the truth, even if it goes against your argument, supports the argument of “the other side,” or proves you wrong. Even if it bruises your ego. https://newsletter.weskao.com/p/intellectual-honesty
-intellectual honesty -- “It’s not possible” vs “I wasn’t able to do it” vs “I don’t want to do it.”
-intellectual honesty -- 1 Is this true?
-intellectual honesty -- 2 What evidence do I have for and against this?
-intellectual honesty -- 3 Am I telling myself a certain narrative to avoid facing a truth I don’t like?
-intellectual honesty -- 4 How might I recognize the truth in a neutral, objective way?
-intellectual honesty -- FLOATER "Falsifiable, Logic, Objective, Alternative explanations, Tentative conclusion, Evidence, Replicate" = method for evaluating claims
-intellectual honesty -- FLOATER -- If someone claims they saw a unicorn, ask yourself: Is it Falsifiable? Were there any Logic fallacies? Are they being Objective? Are there Alternative explanations? Is this a Tentative conclusion? Is the Evidence reliable? Can you Replicate the results?
 affirmative action?
 agency
 agile "what the client wanted"
@@ -68,6 +59,10 @@ collaboration issue -- Compromise, where the estimates contain only "lowest comm
 collaboration issue -- Gridlock, where many different interests slow the analytic process
 collaboration issue -- Groupthink, where opposing views are subconsciously discouraged
 comfort zone
+common sense
+communication -- breaking bad news https://boz.com/articles/bad-news
+communication -- ELI5 https://boz.com/articles/eli5
+communication -- plainspoken https://boz.com/articles/be-plainspoken https://debliu.substack.com/p/the-importance-of-being-plainspoken
 communication non violente
 competition is for Losers: Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
 convexity: If you want to be lucky, look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
@@ -77,6 +72,10 @@ cost of a thing = the amount of life which is required to be exchanged for it, i
 courses après le repas
 creativity -- begins at the edge: Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
 critical thinking +++  https://strategyu.co/critical-thinking/
+cultural hegemony https://en.wikipedia.org/wiki/Cultural_hegemony https://en.wikipedia.org/wiki/Power_(social_and_political)#Cultural_hegemony
+culture -- differences -- https://www.youtube.com/watch?v=vi8pyS076a8
+culture -- Hofstede’s Dimensions http://www.na-businesspress.com/ajm/bergieleb_web12_1_.pdf
+culture -- taijin kyofusho = specific type of social anxiety, occurring primarily in Japanese culture, is called taijin kyofusho. Taijin kyofusho is characterized by an intense fear that one's body parts or functions displease, embarrass or are offensive to others. https://pubmed.ncbi.nlm.nih.gov/21911434/
 Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
@@ -166,6 +165,14 @@ influence operations -- breakout scale -- 06 policy response OR call for violenc
 influence operations -- breakout scale https://www.brookings.edu/articles/the-breakout-scale-measuring-the-impact-of-influence-operations/
 infotainment
 ingroup/outgroup
+intellectual honesty -- 1 Is this true?
+intellectual honesty -- 2 What evidence do I have for and against this?
+intellectual honesty -- 3 Am I telling myself a certain narrative to avoid facing a truth I don’t like?
+intellectual honesty -- 4 How might I recognize the truth in a neutral, objective way?
+intellectual honesty -- FLOATER "Falsifiable, Logic, Objective, Alternative explanations, Tentative conclusion, Evidence, Replicate" = method for evaluating claims
+intellectual honesty -- FLOATER -- If someone claims they saw a unicorn, ask yourself: Is it Falsifiable? Were there any Logic fallacies? Are they being Objective? Are there Alternative explanations? Is this a Tentative conclusion? Is the Evidence reliable? Can you Replicate the results?
+intellectual honesty -- “It’s not possible” vs “I wasn’t able to do it” vs “I don’t want to do it.”
+intellectual honesty = willingness to see and admit the truth, even if it goes against your argument, supports the argument of “the other side,” or proves you wrong. Even if it bruises your ego. https://newsletter.weskao.com/p/intellectual-honesty
 intrinsic/extrinsic motivation https://www.swyx.io/js-tooling
 inversion: Avoiding stupidity is easier than trying to be brilliant. Instead of asking, “How can I help my company?” you should ask, “What’s hurting my company the most and how can I avoid it?” Identify obvious failure points, and steer clear of them.
 investing
@@ -199,6 +206,7 @@ Logical Problem of Evil https://christianity.stackexchange.com/questions/100110/
 look for Things That Don’t Make Sense: The world always makes sense. But it can be confusing. When it is, your model of the world is wrong. So, things that don’t make sense are a learning opportunity. Big opportunities won’t make sense until it’s too late to profit from them.
 love = wanting the best
 making one's luck
+marxist philosophy
 Maslow's pyramid
 McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
 mental Health: I am not my thoughts and rather than feeling like I needed to have control of every situation, that by surrendering that control, I will have more control over my life than I ever did before.
@@ -249,6 +257,8 @@ perverse incentive https://en.wikipedia.org/wiki/Perverse_incentive
 picture the success
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
 porn
+power -- French and Raven five bases of power = reward, coercion, legitimate, expert, referent, informational https://en.wikipedia.org/wiki/French_and_Raven%27s_bases_of_power
+power https://en.wikipedia.org/wiki/Power_(social_and_political)
 practice first what you teach
 praise in public (and private), criticize in private
 praise more than criticize

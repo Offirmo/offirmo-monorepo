@@ -1,5 +1,3 @@
-import { Enum } from 'typescript-string-enums'
-
 import {
 	BaseUState,
 	BaseTState,

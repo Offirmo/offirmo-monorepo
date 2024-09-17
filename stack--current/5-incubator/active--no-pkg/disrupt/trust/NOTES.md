@@ -5,6 +5,9 @@ https://devdocs.io/dom/webotp_api
 https://devdocs.io/dom/credential_management_api
 
 
+https://en.wikipedia.org/wiki/Elsagate
+
+
 https://devdocs.io/dom/reporting_api
 
 

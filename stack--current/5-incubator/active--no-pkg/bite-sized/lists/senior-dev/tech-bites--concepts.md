@@ -18,9 +18,9 @@
 [ ] https://matklad.github.io/2023/08/06/fantastic-learning-resources.html
 [ ] https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
 [ ] https://www.atlassian.com/team-playbook/plays/elevator-pitch
+[ ] https://www.developing.dev/p/5-books-every-software-engineer-should
 [ ] https://www.managingtheunmanageable.net/morerulesofthumb.html
 [ ] https://zknill.io/posts/every-programmer-should-know/
-[ ] https://www.developing.dev/p/5-books-every-software-engineer-should
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 access control -- Role-Based (RBAC)
@@ -83,6 +83,8 @@ commits -- conventional  https://www.conventionalcommits.org/  https://gist.gith
 compile to js
 compiler
 compiler -- stanford course http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=Compilers
+compute
+compute -- hosted compute
 concurrency -- ABA problem
 concurrency -- atomic
 concurrency -- atomic -- operations -- compare-and-swap (CAS) = an atomic instruction used in multithreading to achieve synchronization https://en.wikipedia.org/wiki/Compare-and-swap
@@ -161,6 +163,7 @@ Effect<Success, Error, Requirements> https://effect.website/docs/guides/essentia
 egress/ingress
 emscripten
 encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube.com/watch?v=RXJKdh1KZ0w
+entitlements -- non-standard offerings or commercial terms to meet their needs through high touch sales motions. High touch Sales teams work closely with our customers to understand their solution needs and buying preferences like Multi-year billed annual, ELAs, Ramp discounts. There is a significant volume of customers and revenue from such deals
 error -- handling -- fail fast = Check input and fail on nonsensical input or invalid state as early as possible, preferably with an exception or error response that will make the exact problem clear to your caller https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 error -- handling = exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
 error -- type -- domain error = out of the specification, ex. sqrt(-x) https://cplusplus.com/reference/stdexcept/domain_error/
@@ -336,6 +339,7 @@ pointer
 polyfill
 polyfill -- shim vs polyfill vs ponyfill
 polymorphism https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
+postgres -- job queue https://github.com/timgit/pg-boss
 practices -- best vs. standard
 principle of least surprise / principle of least astonishment https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 privacy -- collect and use someone's info respectfully
@@ -438,6 +442,8 @@ tech debt -- accidental - e.g. bugs due to human error that unknowingly increase
 tech debt -- deliberate - e.g. optimising for short term delivery, knowing it increases the cost of future work.
 tech debt -- incidental - e.g. organic changes in complexity over time that increases the cost of future work.
 temporary solutions https://80.lv/articles/this-30-year-old-windows-feature-was-created-as-a-temporary-solution/
+tenant -- isolation -- sandboxing / isolates / individual processes / individual VMs / individual containers
+tenant -- multi-tenant
 test -- fixtures
 test -- mutation testing https://sentry.engineering/blog/js-mutation-testing-our-sdks
 test -- test double -- 01 dummy = objects are passed around but never actually used. Usually they are just used to fill parameter lists
@@ -477,6 +483,7 @@ Unix philosophy -- A.01 Make each program do one thing well. To do a new job, bu
 Unix philosophy -- A.02 Expect the output of every program to become the input to another, as yet unknown, program. Don't clutter output with extraneous information. Avoid stringently columnar or binary input formats; Don't insist on interactive input
 Unix philosophy -- A.03 Design and build software, even operating systems, to be tried early, ideally within weeks. Don't hesitate to throw away the clumsy parts and rebuild them
 Unix philosophy -- A.04 Use tools in preference to unskilled help to lighten a programming task, even if you have to detour to build the tools and expect to throw some of them out after you've finished using them
+untrusted code
 uptime / downtime
 use boring technology
 use strict

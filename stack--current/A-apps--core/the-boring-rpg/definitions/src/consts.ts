@@ -1,5 +1,5 @@
 /////////////////////
-
+import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 
 import { ItemQuality, InventorySlot } from './types.js'
@@ -22,6 +22,7 @@ export const ITEM_QUALITIES_TO_INT: Readonly<{ [k: string]: number }> = {
 	[ItemQuality.legendary]:  2,
 	[ItemQuality.artifact]:   1,
 }
+assert(Object.keys(ITEM_QUALITIES_TO_INT).length === ITEM_QUALITIES.length, `ITEM_QUALITIES_TO_INT should be up to date!`)
 
 ///////
 
@@ -32,6 +33,7 @@ export const ITEM_SLOTS_TO_INT: Readonly<{ [k: string]: number }> = {
 	[InventorySlot.weapon]: 1,
 	[InventorySlot.armor]: 2,
 }
+assert(Object.keys(ITEM_SLOTS_TO_INT).length === ITEM_SLOTS.length, `ITEM_SLOTS_TO_INT should be up to date!`)
 
 ///////
 
