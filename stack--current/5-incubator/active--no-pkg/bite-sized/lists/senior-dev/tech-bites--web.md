@@ -7,6 +7,7 @@
 [ ] advanced architecture -- navigator.sendBeacon() for backup
 [ ] advanced architecture -- Web Periodic Background Synchronization API https://devdocs.io/dom/web_periodic_background_synchronization_api
 [ ] design https://www.youtube.com/@phoebeyutbt/videos
+[ ] https://csswizardry.com/archive/
 [ ] security https://portswigger.net/web-security/all-topics
 [ ] security https://xsleaks.dev/
 [ ] TODO shearing layers https://en.wikipedia.org/wiki/Shearing_layers
@@ -25,9 +26,15 @@ architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) htt
 architecture -- SSR, ISR, CSR, PPR (see 'rendering')
 ARIA "Accessible Rich Internet Applications" https://www.w3.org/WAI/ARIA/apg/
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
+blocking -- css -- Stylesheets are render blocking
+blocking -- fetching -> parsing -> rendering https://csswizardry.com/2024/08/blocking-render-why-whould-you-do-that/
+blocking -- inline = still blocking but not as bad
+blocking -- js -- scripts are parse blocking
+blocking -- not = async, defer, and type=module
 blocking render https://csswizardry.com/2024/08/blocking-render-why-whould-you-do-that/
 bot detection
 browsing contexts = such as several windows, iframes or even workers
+cache https://csswizardry.com/2024/08/cache-grab-how-much-are-you-leaving-on-the-table/
 CDN
 chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
 Chrome is not the standard https://v4.chriskrycho.com/2017/chrome-is-not-the-standard.html
@@ -111,6 +118,9 @@ DOM -- Nodes -- types =  ELEMENT, ATTRIBUTE, TEXT, CDATA, PROCESSING_INSTRUCTION
 DOM tree = Nodes = text, elements, attributes, comments... includes elements such as <body> and <table>, among many others.
 ECMAScript - European Computer Manufacturers Association Script (ES)
 events -- event delegation
+flash of -- fallback font (FOFT)
+flash of -- Undefined Custom Elements (FOUCE) https://www.abeautifulsite.net/posts/flash-of-undefined-custom-elements/
+flash of -- unstyled content (FOUC) https://dev.to/lyqht/what-the-fouc-is-happening-flash-of-unstyled-content-413j
 fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
 fonts -- Font Friday https://pimpmytype.com/fontfriday/
@@ -197,6 +207,7 @@ testing -- component https://storybook.js.org/blog/component-testing/
 testing -- Netflix's SafeTest https://www.infoq.com/news/2024/02/netflix-safetest-front-end-test/
 testing https://www.testingjavascript.com/
 the web contract = Everyone who publishes on the Web knows that their content can be copied and used by anyone for any purpose. This has always been a risk of providing content on the Web. https://meiert.com/en/blog/the-web-contract/
+Three Cs: 🤝 Concatenate, 🗜️ Compress, 🗳️ Cache https://csswizardry.com/2023/10/the-three-c-concatenate-compress-cache/
 typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
 typology -- naked site

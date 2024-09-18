@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
-import { NORMALIZERS } from '@offirmo-private/normalize-string'
+import * as NORMALIZERS from '@offirmo-private/normalize-string'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import {

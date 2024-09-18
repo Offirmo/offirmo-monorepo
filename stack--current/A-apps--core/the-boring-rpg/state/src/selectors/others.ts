@@ -53,7 +53,7 @@ function find_element(u_state: Immutable<UState>, uuid: UUID): Immutable<Element
 }
 
 // TODO code duplication
-function getꓽoldest_pending_flow_engagement(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: PendingEngagement } | null {
+function getꓽoldest_pending_engagementⵧflow(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: PendingEngagement } | null {
 	const pe = getꓽoldest_queuedⵧflow(u_state.engagement)
 	if (!pe)
 		return null
@@ -64,7 +64,7 @@ function getꓽoldest_pending_flow_engagement(u_state: Immutable<UState>): { uid
 		pe,
 	}
 }
-function getꓽoldest_pending_non_flow_engagement(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: PendingEngagement } | null {
+function getꓽoldest_pending_engagementⵧnon_flow(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: PendingEngagement } | null {
 	const pe = getꓽoldest_queuedⵧnon_flow(u_state.engagement)
 	if (!pe)
 		return null
@@ -82,6 +82,6 @@ function getꓽoldest_pending_non_flow_engagement(u_state: Immutable<UState>): {
 export {
 	find_element,
 	appraise_player_power,
-	getꓽoldest_pending_flow_engagement,
-	getꓽoldest_pending_non_flow_engagement,
+	getꓽoldest_pending_engagementⵧflow,
+	getꓽoldest_pending_engagementⵧnon_flow,
 }

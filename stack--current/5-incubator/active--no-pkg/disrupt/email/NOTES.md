@@ -13,6 +13,8 @@ https://github.com/bubkoo/html-to-image
 unified inbox https://www.theverge.com/2023/8/9/23824562/slack-redesign-app-dms-activity-later
 
 
+components https://resend.com/blog/react-email-3
+
 
 https://devdocs.io/dom/contactaddress
 Universal Postal Union website's Addressing S42 standard

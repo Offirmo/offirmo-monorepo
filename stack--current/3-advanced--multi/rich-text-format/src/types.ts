@@ -40,6 +40,9 @@ type CheckedNode = {
 	// hints for renderers. May or may not be used.
 	$hints: {
 		[k: string]: any
+		// TODO clarify, maybe make type-safe
+		// known:
+		// key, uuid, href, bullets_style, possible_emoji
 	}
 }
 

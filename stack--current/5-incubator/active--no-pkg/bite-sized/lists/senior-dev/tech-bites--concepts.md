@@ -124,6 +124,7 @@ cron https://onlineornot.com/the-complete-guide-to-cron-jobs
 cross cutting concerns = aspects of a program that affect several modules without the possibility of being encapsulated in any of them https://en.wikipedia.org/wiki/Cross-cutting_concern
 CRUD "create, read, update and delete"
 crunch
+culture -- low/high context https://journals.sagepub.com/doi/10.1177/0146167212455828
 Cupertino effect = bad spell checking Cupertino effect
 currying https://en.wikipedia.org/wiki/Currying
 databases

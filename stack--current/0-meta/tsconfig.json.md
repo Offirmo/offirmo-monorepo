@@ -26,6 +26,8 @@ REMINDER: the build script relax a few rules in dev mode (--watch), see `build-t
 
 * 5.6 https://devblogs.microsoft.com/typescript/announcing-typescript-5-6/
 * DOESNT WORK use  "typeRoots": ["node_modules/@types", "typings"] instead of replicating the reference to types?
+* added nouncheckedsideeffectimports https://devblogs.microsoft.com/typescript/announcing-typescript-5-6/#the---nouncheckedsideeffectimports-option
+* 
 
 ### 2024/08/29
 

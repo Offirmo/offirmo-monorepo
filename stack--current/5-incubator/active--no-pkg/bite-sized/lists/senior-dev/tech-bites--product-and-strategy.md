@@ -109,3 +109,4 @@ vendor lock-in
 wartime vs peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 what got us here won't get us there…
 worse is better = there is a point where less functionality ("worse") is a preferable option ("better") in terms of practicality and usability. Software that is limited, but simple to use, may be more appealing to the user and market than the reverse https://en.wikipedia.org/wiki/Worse_is_better
+You can develop the best strategy in the world, but if it isn’t producing the desired results, it’s time to reassess. "It’s not that we aren’t doing as well as we could, but it’s not the best strategy we could be doing to win." https://worldofwarcraft.blizzard.com/en-us/news/21952451/midgame-moves-adapt-survive-and-thrive

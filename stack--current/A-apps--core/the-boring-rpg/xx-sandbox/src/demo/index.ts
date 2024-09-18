@@ -1,12 +1,20 @@
-import * as State from '@tbrpg/state'
-import * as RRT from '@tbrpg/ui--rich-text'
+import chalk from 'chalk'
+
+import { injectꓽlibꓽchalk, prettifyꓽjson } from '@offirmo-private/prettify-any'
 import * as RichText from '@offirmo-private/rich-text-format'
 import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+
+import * as State from '@tbrpg/state'
+import * as RRT from '@tbrpg/ui--rich-text'
 
 import '../services/misc.js'
 
 import { renderꓽstateⵧprettified_text } from '../view/offirmo-state/generic--to-text.js'
 import { renderꓽstateⵧrich_text } from '../view/offirmo-state/generic--to-rich-text.js'
+
+/////////////////////////////////////////////////
+
+injectꓽlibꓽchalk(chalk)
 
 /////////////////////////////////////////////////
 
@@ -22,43 +30,55 @@ state = State.play(state)
 //function change_avatar_class(previous_state: Immutable<State>, new_class: CharacterClass, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms())
 
 
-//console.log('/////////////////////////////////////////////////')
-//console.log(state)
+/*
+console.log('/////////////////////////////////////////////////')
+console.log(state)
+*/
 
-//console.log('/////////////////////////////////////////////////')
-//console.log(prettifyꓽjson(state))
+/*
+console.log('/////////////////////////////////////////////////')
+console.log(prettifyꓽjson(state))
+*/
 
-//console.log('/////////////////////////////////////////////////')
-//console.log(renderꓽstateⵧprettified_text(state))
+/*
+console.log('/////////////////////////////////////////////////')
+console.log(renderꓽstateⵧprettified_text(state))
+*/
+
+/*
+console.log('/////////////////////////////////////////////////')
+const $doc = renderꓽstateⵧrich_text(state, {})
+console.log(to_terminal($doc))
+*/
 
 console.log('/////////////////////////////////////////////////')
-const $doc = renderꓽstateⵧrich_text(state, {
-})
+// always first
+const $doc = State.getꓽrecap(state.u_state)
 console.log(to_terminal($doc))
 
 console.log('/////////////////////////////////////////////////')
-console.log(to_terminal(State.getꓽrecap(state.u_state)))
+// achievements
+
+while (State.getꓽoldest_pending_engagementⵧflow(state.u_state)) {
+	const pef = State.getꓽoldest_pending_engagementⵧflow(state.u_state)!
+	console.log('[PEF]', to_terminal(pef.$doc))
+	state = State.acknowledge_engagement_msg_seen(state, pef.uid)
+}
+
+while (State.getꓽoldest_pending_engagementⵧnon_flow(state.u_state)) {
+	const penf = State.getꓽoldest_pending_engagementⵧnon_flow(state.u_state)!
+	console.log('[PENF]', to_terminal(penf.$doc))
+	state = State.acknowledge_engagement_msg_seen(state, penf.uid)
+}
 
 console.log('/////////////////////////////////////////////////')
+// TODO should be part of recap?
 if (State.is_inventory_full(state.u_state)) {
-	console.warn('Inventory is full!')
+	console.warn('[special message] Inventory is full!')
 }
-;((pef) => {
-	if (!pef)
-		return
-	console.log(to_terminal(pef.$doc))
-	state = State.acknowledge_engagement_msg_seen(state, pef.uid)
-})(State.getꓽoldest_pending_flow_engagement(state.u_state))
-;((penf) => {
-	if (!penf)
-		return
-	console.log(to_terminal(penf.$doc))
-	state = State.acknowledge_engagement_msg_seen(state, penf.uid)
-})(State.getꓽoldest_pending_non_flow_engagement(state.u_state))
 if(State.getꓽavailable_energy‿float(state.t_state) >= 1) {
-	console.log('You can play now!')
+	console.log('[special message] You can play now!')
 }
-// TODO achievements
 
 console.log('/////////////////////////////////////////////////')
 console.log('Actions:', RichText.renderⵧto_actions($doc))
