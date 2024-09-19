@@ -31,6 +31,9 @@ Choix de classe = choix de self- buff
 
 
 
+https://baldursgate3.wiki.fextralife.com/Equipment+Features
+
+
 Magie
 
 Self buff inconscient

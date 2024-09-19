@@ -46,6 +46,7 @@ bee browsing
 bike-shed Effect: A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
 biographies -- Profiles in Courage https://en.wikipedia.org/wiki/Profiles_in_Courage
 bonnes et mauvaises cartes
+brain rot https://en.wikipedia.org/wiki/Brain_rot
 brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
 broken window theory
 bullying = Lack of consideration and empathy for those without power, Disrespectful behavior that is overt or subtle (in public or behind closed doors), Verbal aggression, sarcasm, or psychological manipulation. Unreasonable or constantly changing directives and deadlines. Singling out individuals. “Mobbing,” in which a group of people gang up on an individual
@@ -271,12 +272,14 @@ praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism
 preach the water but drink wine / faites ce que je dis mais pas ce que je fais
 preference Falsification: People lie about their true opinions and conform to socially acceptable preferences instead. In private they’ll say one thing. In public, they’ll say another.
 pretty privilege -> karen
+primals https://myprimals.com https://templetonreligiontrust.org/explore/discovering-peoples-primal-world-beliefs/
 priming
 principal-agent problem https://en.wikipedia.org/wiki/Principal–agent_problem
 Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
 prix au kilo
 problem solving -- structured https://strategyu.co/mckinsey-structured-problem-solving-secrets/
 procrastination
+low culture https://en.wikipedia.org/wiki/Low_culture
 productivity
 productivity -- GSD Capture Everything, Clarify, Organize, Review, Engage https://todoist.com/productivity-methods/getting-things-done
 productivity vs. impact, value
@@ -293,8 +296,7 @@ Reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
 rebound effect https://blog.jim-nielsen.com/2024/notes-on-making-software-by-peter-van-hardenberg/
 recruiting others to support you in addressing issue
 resource curse -- Dutch disease https://en.wikipedia.org/wiki/Dutch_disease
-resource curse = the paradox of plenty https://en.wikipedia.org/wiki/Resource_curse
-resource Curse: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources.
+resource Curse = the paradox of plenty: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources https://en.wikipedia.org/wiki/Resource_curse
 respect
 rest and vest https://news.ycombinator.com/item?id=14943146
 ring theory -- 01 The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.

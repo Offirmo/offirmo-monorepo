@@ -9,3 +9,7 @@
 
 https://prompthero.com
 course https://prompthero.com/academy/prompt-engineering-course
+
+
+
+https://docs.ell.so/

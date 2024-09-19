@@ -56,22 +56,20 @@ Net worth 8 million (single income family)
 
 
 
-Resume
-https://www.canva.com/newsroom/news/new-job-canva/
+
+https://www.techinterviewhandbook.org/understanding-compensation/
 
 
-https://theindieweb.com/github-has-added-profiles-here-are-the-most-creative-ones-so-far/
+https://charity.wtf/2019/01/04/engineering-management-the-pendulum-or-the-ladder/
 
 
-impressive personal page https://maximeheckel.com/
-
-resume https://levelup.gitconnected.com/the-resume-that-got-a-software-engineer-a-300-000-job-at-google-8c5a1ecff40f
-
-
----
 "director ceiling" https://www.reddit.com/r/ProductManagement/comments/10ldwq7/how_to_make_the_jump_from_senior_to_director_at_a/
 
 
+startups
+https://www.joinprospect.com/blog/which-stage-startup
+https://www.danhock.co/p/how-to-choose-a-startup
+equity in startups https://gist.github.com/yossorion/4965df74fd6da6cdc280ec57e83a202d
 
 
 https://boz.com/articles/be-kind
@@ -81,13 +79,4 @@ https://careercutler.substack.com/p/continuous-growth-in-tech-50-resources
 https://roughlywritten.substack.com/p/random-thoughts-15-years-into-software
 
 
-- Memorable
-- telling a story
-
-
-Interview questions:
-- current challenges? Current objectives/KR?
-- What are you looking for? greatness in this role?
-- career? What's next?
-- Where is the team?
-- Finance? Zone?
+https://remote.com/jobs

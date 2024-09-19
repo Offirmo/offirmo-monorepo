@@ -45,6 +45,9 @@ RESHADED method https://levelup.gitconnected.com/7-best-software-design-course-f
 
 
 
+https://newsletter.techleadmentor.com/p/stop-parroting-youtube-solutions
+
+
 load? rps?
 write or read heavy?
 

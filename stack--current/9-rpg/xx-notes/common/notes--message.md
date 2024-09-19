@@ -7,7 +7,9 @@ Principles I want to use in my RPG(s)
 - everyone is a teacher
 - no grinding
 - no ads or micro-transactions
--
+
+
+Highest rating on all primals https://myprimals.com/
 
 
 

@@ -6,6 +6,10 @@ https://en.wikipedia.org/wiki/Boiling_frog
 https://en.wikipedia.org/wiki/The_Scorpion_and_the_Frog
 
 
+primals https://myprimals.com
+
+
+
 Violations of human dignity:
 
 The list of violations

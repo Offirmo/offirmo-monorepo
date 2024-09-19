@@ -1,5 +1,6 @@
 +++ https://en.wikipedia.org/wiki/Glossary_of_video_game_terms
 [ ] Magic the gathering -- https://magic.wizards.com/en/news/making-magic/state-of-design-2024
+[ ] https://bottomfeeder.substack.com/
 AAA
 AI
 autosave

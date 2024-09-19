@@ -1,3 +1,4 @@
+[ ] questions https://h5bp.org/Front-end-Developer-Interview-Questions/questions/general-questions/
 apply / call / bind
 promises
 super vs super() = super(...args) only in constructor https://devdocs.io/javascript/operators/super
