@@ -14,9 +14,10 @@ export const ActionType = Enum(
 	'sell_item',
 	'rename_avatar',
 	'change_avatar_class',
+
 	'redeem_code',
 
-	'start_game',
+	're_seed',
 	'on_start_session',
 	'on_logged_in_refresh',
 	'acknowledge_engagement_msg_seen',
@@ -38,8 +39,8 @@ export interface BaseAction {
 	}
 }
 
-export interface ActionStartGame extends BaseAction {
-	type: typeof ActionType.start_game
+export interface ActionReSeed extends BaseAction {
+	type: typeof ActionType.re_seed
 	seed: number
 }
 
@@ -48,7 +49,7 @@ export interface ActionStartSession extends BaseAction {
 	is_web_diversity_supporter: boolean
 }
 
-export interface ActionUpdateLoggedInInfos extends BaseAction {
+export interface ActionRefreshLoggedInInfos extends BaseAction {
 	type: typeof ActionType.on_logged_in_refresh
 	is_logged_in: boolean
 	roles: string[]
@@ -107,9 +108,9 @@ export interface ActionHack extends BaseAction {
 }
 
 export type Action =
-	| ActionStartGame
+	| ActionReSeed
 	| ActionStartSession
-	| ActionUpdateLoggedInInfos
+	| ActionRefreshLoggedInInfos
 	| ActionPlay
 	| ActionEquipItem
 	| ActionSellItem

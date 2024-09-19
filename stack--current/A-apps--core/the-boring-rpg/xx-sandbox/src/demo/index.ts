@@ -22,7 +22,6 @@ let state = State.create()
 // TODO reseed
 state = State.on_start_session(state, true)
 state = State.update_to_now(state)
-state = State.play(state)
 
 //function equip_item(previous_state: Immutable<State>, uuid: UUID, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms())
 //function sell_item(previous_state: Immutable<State>, uuid: UUID, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms())
@@ -51,34 +50,39 @@ const $doc = renderꓽstateⵧrich_text(state, {})
 console.log(to_terminal($doc))
 */
 
-console.log('/////////////////////////////////////////////////')
-// always first
-const $doc = State.getꓽrecap(state.u_state)
-console.log(to_terminal($doc))
+function loop() {
+	console.log('/////////////////////////////////////////////////')
+	// always first
+	const $doc = State.getꓽrecap(state.u_state) // TODO clarify recap/mode
+	console.log(to_terminal($doc))
 
-console.log('/////////////////////////////////////////////////')
-// achievements
+	console.log('/////////////////////////////////////////////////')
+	// achievements are sent through engagement
+	while (State.getꓽoldest_pending_engagementⵧflow(state.u_state)) {
+		const pef = State.getꓽoldest_pending_engagementⵧflow(state.u_state)!
+		console.log('[PEF]', to_terminal(pef.$doc))
+		state = State.acknowledge_engagement_msg_seen(state, pef.uid)
+	}
 
-while (State.getꓽoldest_pending_engagementⵧflow(state.u_state)) {
-	const pef = State.getꓽoldest_pending_engagementⵧflow(state.u_state)!
-	console.log('[PEF]', to_terminal(pef.$doc))
-	state = State.acknowledge_engagement_msg_seen(state, pef.uid)
+	while (State.getꓽoldest_pending_engagementⵧnon_flow(state.u_state)) {
+		const penf = State.getꓽoldest_pending_engagementⵧnon_flow(state.u_state)!
+		console.log('[PENF]', to_terminal(penf.$doc))
+		state = State.acknowledge_engagement_msg_seen(state, penf.uid)
+	}
+
+	console.log('/////////////////////////////////////////////////')
+	// TODO should be part of recap?
+	if (State.is_inventory_full(state.u_state)) {
+		console.warn('[special message] Inventory is full!')
+	}
+	if(State.getꓽavailable_energy‿float(state.t_state) >= 1) {
+		console.log('[special message] You can play now!')
+	}
+
+	console.log('/////////////////////////////////////////////////')
+	console.log('Actions:', RichText.renderⵧto_actions($doc))
 }
 
-while (State.getꓽoldest_pending_engagementⵧnon_flow(state.u_state)) {
-	const penf = State.getꓽoldest_pending_engagementⵧnon_flow(state.u_state)!
-	console.log('[PENF]', to_terminal(penf.$doc))
-	state = State.acknowledge_engagement_msg_seen(state, penf.uid)
-}
-
-console.log('/////////////////////////////////////////////////')
-// TODO should be part of recap?
-if (State.is_inventory_full(state.u_state)) {
-	console.warn('[special message] Inventory is full!')
-}
-if(State.getꓽavailable_energy‿float(state.t_state) >= 1) {
-	console.log('[special message] You can play now!')
-}
-
-console.log('/////////////////////////////////////////////////')
-console.log('Actions:', RichText.renderⵧto_actions($doc))
+loop()
+state = State.play(state)
+loop()

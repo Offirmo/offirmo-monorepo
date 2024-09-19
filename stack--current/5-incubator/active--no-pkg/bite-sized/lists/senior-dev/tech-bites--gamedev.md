@@ -1,4 +1,5 @@
 +++ https://en.wikipedia.org/wiki/Glossary_of_video_game_terms
+[ ] Magic the gathering -- https://magic.wizards.com/en/news/making-magic/state-of-design-2024
 AAA
 AI
 autosave
@@ -31,7 +32,7 @@ endgame -- GW2 -- Achievements and Community — which can take the form of soci
 endgame -- GW2 -- Combat-based content — subdivided into open world and instanced PvE content, Structured PvP game mode, and World versus World mode.
 endgame -- GW2 -- Cosmetic-based endgame — unlocking dyes, gear skins, mount skins, glider skins, or legendary equipment with its unique features and visual effects.
 endgame -- GW2 -- Progression-based content — improving equipment, training masteries, unlocking elite specializations, mounts etc.
-endgame -- GW2 -- Story and exploration-based content — playing new story chapters found in expansions and Living World episodes or doing map completion.
+endgame -- GW2 -- Story and exploration-based content — playing new story chapterss found in expansions and Living World episodes or doing map completion.
 endgame -- GW2 = https://wiki.guildwars2.com/wiki/Endgame
 endgame https://wiki.guildwars2.com/wiki/Endgame
 Environmental Storytelling = arranging a careful selection of the objects available in a game world so that they suggest a story to the player who sees them https://www.gamedeveloper.com/design/environmental-storytelling
@@ -61,6 +62,16 @@ goals -- meta -- leaderboards
 goals -- meta -- unlockables
 goals -- quests
 goals -- quests -- side, main
+graphics -- 2.5D -- dimetric = https://www.reddit.com/r/gamedev/comments/9fm7ej/why_is_everyone_mentioning_isometric_when_they/
+graphics -- 2.5D -- isometric = https://en.wikipedia.org/wiki/Isometric_video_game_graphics complicated https://www.reddit.com/r/gamedev/comments/4q63dj/what_are_the_pros_and_cons_of_isometric_graphics/
+graphics -- 2.5D -- top-down / oblique
+graphics -- 2.5D -- z-sorting issue
+graphics -- 2.5D https://en.wikipedia.org/wiki/2.5D
+graphics -- 2D -- elevation
+graphics -- 2D -- plan
+graphics -- 3D -- perspective (true 3D)
+graphics -- projections https://en.wikipedia.org/wiki/Axonometric_projection https://en.wikipedia.org/wiki/Axonometric_projection#/media/File:Graphical_projection_comparison.png
+graphics https://en.wikipedia.org/wiki/Video_game_graphics
 idle
 mechanics
 mechanics -- aggro, tank, taunt
@@ -122,6 +133,10 @@ player taxonomy -- Bartle -- ♣ Killers
 player taxonomy -- Bartle -- ♥ Socializers
 player taxonomy -- Bartle -- ♦ Achievers
 player taxonomy -- Bartle https://en.wikipedia.org/wiki/Bartle_taxonomy_of_player_types
+player taxonomy -- Magic -- Johnny = wants to express something. Combo, Offbeat, Deck artists. “Look at me world! Look at me!”
+player taxonomy -- Magic -- Spike = wants to prove something, primarily how good he is. Innovators, Tuners, Analysts. SPIKE GETS HIS GREATEST JOY FROM PROVING SOMETHING BY WINNING
+player taxonomy -- Magic -- Timmy = wants to experience something. plays because he enjoys the feeling he gets when he plays. Power, Social, Diversity, Adrenalin gamers. THE ENTIRE REASON TO PLAY IS HAVING A GOOD TIME
+player taxonomy -- Magic https://magic.wizards.com/en/news/making-magic/timmy-johnny-and-spike-revisited-2006-03-20
 PR-generated worlds =  emergence, self-organization https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 procedural generation
 progression -- horizontal = Recruit > Soldier (max level) > Learn to wield guns (expac 1) > Learn to wield swords (expac 2) > Learn to do magic stuff (expac 3) > and so on

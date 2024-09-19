@@ -94,6 +94,7 @@ CSS -- transforms
 CSS -- triggers https://csstriggers.com/
 CSS -- width = auto, fit-content, min-content https://courses.joshwcomeau.com/css-for-js/01-rendering-logic-1/10-widths
 CSS -- z-index
+CSS -- zoom https://www.oddbird.net/2024/07/09/zoomies/
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
 devices -- support
@@ -125,6 +126,8 @@ fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
 fonts -- Font Friday https://pimpmytype.com/fontfriday/
 FORC "Fear of Removing CSS" = https://x-team.com/blog/forc-fear-of-removing-css
+GraphQL
+GraphQL -- against https://bessey.dev/blog/2024/05/24/why-im-over-graphql/
 HTML -- concepts
 HTML -- elements
 html -- metadata https://github.com/wikimedia/html-metadata

@@ -14,6 +14,7 @@
 [ ] https://en.wikipedia.org/wiki/Hofstadter's_law
 [ ] https://en.wikipedia.org/wiki/Reference_class_forecasting
 [ ] https://github.com/anvaka/npmrank/blob/master/sample/dependencies.md
+[ ] https://github.com/charlax/professional-programming
 [ ] https://github.com/kilimchoi/engineering-blogs
 [ ] https://matklad.github.io/2023/08/06/fantastic-learning-resources.html
 [ ] https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308

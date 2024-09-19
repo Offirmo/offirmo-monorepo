@@ -52,7 +52,7 @@ function on_start_session(previous_state: Immutable<State>, is_web_diversity_sup
 		},
 	}
 
-	// TODO recap here ?
+	// TODO recap here as Engagement flow?
 
 	// new achievements may have appeared
 	// (new content = not the same as a migration)

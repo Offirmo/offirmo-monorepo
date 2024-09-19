@@ -7,6 +7,11 @@
 1 or 2 way door
 12 steps
 3 hardest things to say -- I was wrong, I need help, I love you -> also 10 https://kristyna.co/mindful-entrepreneurship/10-hardest-things-for-people-to-say
+3 Strikes and You're Out = Californian law https://lao.ca.gov/analysis_1995/3strikes.html
+3-strike pivot strategy -- Strike 1: Identify and try to address the issue directly
+3-strike pivot strategy -- Strike 2: Reassess and Seek Support to resolve the problem
+3-strike pivot strategy -- Strike 3: Make the Pivot
+3-strike pivot strategy = give 3 chances https://blog.gouravkhanijoe.com/p/3-strike-pivot-strategy-to-become
 5 Harsh Truths for Success from Linus Torvalds https://medium.com/codex/5-harsh-truths-from-linus-torvalds-406ab20cea02
 5 regrets of dying
 80/20 rule (Pareto)

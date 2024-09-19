@@ -25,6 +25,7 @@
 [ ] paper https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf
 [ ] real case https://deno.com/blog/how-we-built-jsr
 [ ] research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
+[ ] Software Engineering Advice from Building Large-Scale Distributed Systems
 access control
 ACID -- 1 Atomicity = transactions are "all or nothing"
 ACID -- 2 Consistency = integrity constraints: "valid state" before AND after a transaction
@@ -242,6 +243,8 @@ kafka = pub/sub + store + process
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
 latency = the time that passes between an action and the resulting response
 latency https://www.a10networks.com/glossary/osi-network-model-and-types-of-load-balancers/
+latency numbers -- frontend https://vercel.com/blog/latency-numbers-every-web-developer-should-know
+latency numbers https://brenocon.com/dean_perf.html
 limiting -- content limiting = ex. only X Gb of storage
 limiting -- rate limiting = control the rate of requests sent or received by a network interface (DoS, scraping) https://en.wikipedia.org/wiki/Rate_limiting
 load balancer
@@ -364,6 +367,7 @@ resilience
 REST = architectural style, stateless client-server communication model
 RESTful = systems which adhere to a set of constraints to achieve simplicity, scalability, and uniformity.
 retire, retain, rehost, re-platform, repurchase, refactor/re-architect
+routing -- hot/cold potato https://www.usenix.org/legacy/publications/library/proceedings/usenix02/full_papers/subramanian/subramanian_html/node28.html
 scaling -- horizontally = more machines
 scaling -- load-shedding
 scaling -- vertically = more power
