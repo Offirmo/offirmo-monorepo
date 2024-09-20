@@ -22,6 +22,21 @@ earliest -- 07 "pro" product? scalable? (entitlements, billing, compliance...)
 earliest https://every.to/p/the-most-advanced-yet-acceptable-products-win
 Embrace, Extend, and Extinguish https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish
 enshittification = first, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die. https://en.wikipedia.org/wiki/Enshittification
+enterprise -- access control
+enterprise -- billing
+enterprise -- comments
+enterprise -- comments -- resolve
+enterprise -- comments -- threaded
+enterprise -- compliance
+enterprise -- cross-orgs (shared channels) 
+enterprise -- data residency
+enterprise -- drafts
+enterprise -- personal workspace = to use the feature for themselves
+enterprise -- security
+enterprise -- similar
+enterprise -- SSO
+enterprise -- templates
+enterprise -- user management
 executive presence
 failures -- inVision -- https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 features -- "infantile level" https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
@@ -50,11 +65,6 @@ knowledge creating company https://hbr.org/2007/07/the-knowledge-creating-compan
 land grab
 lock-in
 M&A
-enterprise -- cross-orgs (shared channels) 
-enterprise -- security
-enterprise -- SSO
-enterprise -- user management
-enterprise -- data residency
 M&A -- Apple 
 M&A -- killer zone = https://www.trendingtopics.eu/tech-talent-the-intricate-mechanisms-behind-apples-startup-killer-zone/
 magic moment -> habit moment

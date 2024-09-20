@@ -82,6 +82,7 @@ cultural hegemony https://en.wikipedia.org/wiki/Cultural_hegemony https://en.wik
 culture -- differences -- https://www.youtube.com/watch?v=vi8pyS076a8
 culture -- Hofstede’s Dimensions http://www.na-businesspress.com/ajm/bergieleb_web12_1_.pdf
 culture -- taijin kyofusho = specific type of social anxiety, occurring primarily in Japanese culture, is called taijin kyofusho. Taijin kyofusho is characterized by an intense fear that one's body parts or functions displease, embarrass or are offensive to others. https://pubmed.ncbi.nlm.nih.gov/21911434/
+curse of knowledge https://en.wikipedia.org/wiki/Curse_of_knowledge
 Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
@@ -120,6 +121,7 @@ fire
 first practice what you preach
 first principles https://fs.blog/first-principles/
 first-principles thinker
+frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
 fulfillment https://longform.asmartbear.com/fulfillment/
 fundamental attribution error https://en.wikipedia.org/wiki/Fundamental_attribution_error
 Gall’s Law: A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system.
@@ -211,6 +213,7 @@ living the good life
 Logical Problem of Evil https://christianity.stackexchange.com/questions/100110/what-are-christian-responses-to-the-logical-problem-of-evil
 look for Things That Don’t Make Sense: The world always makes sense. But it can be confusing. When it is, your model of the world is wrong. So, things that don’t make sense are a learning opportunity. Big opportunities won’t make sense until it’s too late to profit from them.
 love = wanting the best
+low culture https://en.wikipedia.org/wiki/Low_culture
 making one's luck
 marxist philosophy
 Maslow's pyramid
@@ -260,6 +263,7 @@ personal Knowledge Management https://fortelabs.co/blog/para/
 personal Monopoly: Corporations reward conformity, but the Internet rewards people who are unique. If you work in a creative field, strive to be the only person who does what you do. Find your own style, then run with it. Create intellectual real estate for yourself. The Internet rewards unique people. Find your unique combination of skills, interests, and personality traits. I call this a Personal Monopoly. Become the only person in the world who does what you do. Then, tell the world by sharing your knowledge.
 personal moral inventory https://domprice.me/personal-moral-inventory/
 perverse incentive https://en.wikipedia.org/wiki/Perverse_incentive
+Peter principle = people in a hierarchy tend to rise to "a level of respective incompetence" https://en.wikipedia.org/wiki/Peter_principle
 picture the success
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
 porn
@@ -279,7 +283,6 @@ Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
 prix au kilo
 problem solving -- structured https://strategyu.co/mckinsey-structured-problem-solving-secrets/
 procrastination
-low culture https://en.wikipedia.org/wiki/Low_culture
 productivity
 productivity -- GSD Capture Everything, Clarify, Organize, Review, Engage https://todoist.com/productivity-methods/getting-things-done
 productivity vs. impact, value

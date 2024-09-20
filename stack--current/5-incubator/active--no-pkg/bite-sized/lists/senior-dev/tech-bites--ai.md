@@ -16,12 +16,14 @@ AI - Artificial intelligence = intentionally vague term / "solving tasks or prob
 AI -- weak AI = task specific
 AI 50 2023 https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
 AI Driven Organisations (AIDO)
+AI gateway = convenient self-service integration point for internal teams who want to utilise turnkey AI APIs, proxy for the external and internal AI offerings + additional set of capabilities that empower usage and tracking of AI functionalities at an enterprise level.
 AI winter
 alignment -- generic = conform to predefined values, usually ethical or social values, Truthfulness, Harmlessness, Helpfulness
 alignment -- super alignment =  https://openai.com/blog/introducing-superalignment  https://openai.com/blog/superalignment-fast-grants
 alignment =  making AI do what its users want it to do (and nothing more) see also "paper clip"
 annotation https://www.peopleforai.com/ https://www.isahit.com/
 API -- Gemini https://ai.google.dev/docs/gemini_api_overview
+applications -- legacy code https://martinfowler.com/articles/legacy-modernization-gen-ai.html
 applied -- 2024/06 Slack Enzyme to RTL https://slack.engineering/balancing-old-tricks-with-new-feats-ai-powered-conversion-from-enzyme-to-react-testing-library-at-slack/
 assistant = entities capable of performing tasks for users. assistants operate based on the instructions in a context window + tools https://platform.openai.com/docs/introduction/assistants
 attention
@@ -127,6 +129,7 @@ Pytorch
 RAG 2.0 https://medium.com/towards-artificial-intelligence/rag-2-0-finally-getting-rag-right-f74d0194a720
 rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-to-stay-competitive-hits-tech.html
 ReAct flow
+reasoning trace https://arstechnica.com/information-technology/2024/09/openai-threatens-bans-for-probing-new-ai-models-reasoning-process/
 Representation Engineering = calculating a "control vector" that can be read from or added to model activations during inference to interpret or control the model's behavior https://vgel.me/posts/representation-engineering/
 research directions -- honesty, chain-of-thought faithfulness, adversarial robustness, evals and testbeds...
 research directions -- Interpretability: How can we understand model internals? And can we use this to e.g. build an AI lie detector?

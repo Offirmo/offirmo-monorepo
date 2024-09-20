@@ -73,17 +73,19 @@ function loop() {
 }
 
 /////////////////////////////////////////////////
-
+/*
 loop()
 state = State.play(state)
 loop()
-
+*/
 /////////////////////////////////////////////////
 // https://github.com/kevinswiber/siren
 
 interface Link {
 	rel: string // https://www.iana.org/assignments/link-relations/link-relations.xhtml TODO array?
+
 	cta: string
+	href: string
 }
 
 interface Response {
@@ -97,7 +99,7 @@ interface Response {
 		// self must be present
 
 
-		[key: string]: Link
+		[rel: string]: Link
 	}
 }
 

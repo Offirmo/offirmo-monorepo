@@ -6,6 +6,7 @@
 [ ] advanced architecture -- https://devdocs.io/dom/content_index_api
 [ ] advanced architecture -- navigator.sendBeacon() for backup
 [ ] advanced architecture -- Web Periodic Background Synchronization API https://devdocs.io/dom/web_periodic_background_synchronization_api
+[ ] CSS https://ishadeed.com/articles/
 [ ] design https://www.youtube.com/@phoebeyutbt/videos
 [ ] https://csswizardry.com/archive/
 [ ] security https://portswigger.net/web-security/all-topics
@@ -47,8 +48,8 @@ collaborative experiences https://zknill.io/posts/collaboration-no-crdts/
 components https://www.componentdriven.org/
 Contrast ratio https://www.siegemedia.com/contrast-ratio
 CORS (Cross-Origin Resource Sharing)
-CSS -- breakpoints https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
 CSS -- atomic = small, single-purpose classes with names based on visual function https://css-tricks.com/lets-define-exactly-atomic-css/
+CSS -- breakpoints https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
 CSS -- cascade https://2019.wattenberger.com/blog/css-cascade
 CSS -- color -- formats = hex, rgb(), hsl(), lch() https://www.joshwcomeau.com/css/color-formats/
 CSS -- Combinators https://courses.joshwcomeau.com/css-for-js/00-recap/04.03-combinators
@@ -82,6 +83,7 @@ CSS -- margin -- negative https://www.quirksmode.org/blog/archives/2020/02/negat
 CSS -- Media Queries https://courses.joshwcomeau.com/css-for-js/00-recap/03-media-queries
 CSS -- methodologies -- BEM
 CSS -- nesting
+CSS -- overflow https://www.bram.us/2024/02/14/scroll-driven-animations-you-want-overflow-clip-not-overflow-hidden/ https://frontendmasters.com/blog/single-directionally-allowed-overflow/
 CSS -- perf -- avoid modifying the layout (geometric properties)
 CSS -- properties -- inheritance (or not)
 CSS -- Pseudo-classes :xyz https://courses.joshwcomeau.com/css-for-js/00-recap/04.01-pseudo-classes
@@ -92,12 +94,13 @@ CSS -- selectors -- descendant combinator `ul li {`
 CSS -- specificity
 CSS -- stacking context https://github.com/andreadev-it/stacking-contexts-inspector
 CSS -- transforms
-CSS -- triggers https://csstriggers.com/
+CSS -- triggers https://csstriggers.com/ https://css-triggers.com/
 CSS -- width = auto, fit-content, min-content https://courses.joshwcomeau.com/css-for-js/01-rendering-logic-1/10-widths
 CSS -- z-index
 CSS -- zoom https://www.oddbird.net/2024/07/09/zoomies/
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
+design -- guides https://owickstrom.github.io/the-monospace-web/
 devices -- support
 dialog
 DNS = distributed database for IP address translation
@@ -149,6 +152,7 @@ JS -- exports https://webpack.js.org/guides/package-exports/
 JS -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
 JSON - Javascript Object Notation
 layout composer https://github.com/namecheap/ilc
+lazy loading -- preloading https://www.differentshelf.com/lazy-loading-isnt-just-lazy-its-late-the-web-deserves-faster/
 lib -- react -- v19 https://vercel.com/blog/whats-new-in-react-19
 MDN
 MDN curriculum https://developer.mozilla.org/en-US/curriculum/

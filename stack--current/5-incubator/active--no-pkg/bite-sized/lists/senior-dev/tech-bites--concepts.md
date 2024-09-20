@@ -21,15 +21,14 @@
 [ ] https://www.atlassian.com/team-playbook/plays/elevator-pitch
 [ ] https://www.developing.dev/p/5-books-every-software-engineer-should
 [ ] https://www.managingtheunmanageable.net/morerulesofthumb.html
+[ ] https://www.tedinski.com/archive/
 [ ] https://zknill.io/posts/every-programmer-should-know/
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
-[ ] https://www.tedinski.com/archive/
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 access control -- Role-Based (RBAC)
 actually portable executables https://justine.lol/ape.html
 allocation
 annotation
-orthogonality https://en.wikipedia.org/wiki/Orthogonality_(programming)
 anomaly detection
 API (Application Programming Interface) = interface (set of subroutine definitions, protocols, and tools) for exposing a software feature, defines interactions that allows two applications to talk to each other
 API -- economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
@@ -48,6 +47,7 @@ B2G (Business to Government)
 bad API = make assumptions about what you are trying to do, but then break when those assumptions are not exactly right, ex. AppCache
 BDD (Behavior-Driven Development) https://cucumber.io/school/   Discovery -> Formulation -> Automation
 blocking
+bro culture in tech https://www.smh.com.au/technology/australias-tech-darling-atlassian-in-sexism-row-20140605-zryjd.html
 bug -- mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html
 C10k problem https://en.wikipedia.org/wiki/C10k_problem
 cache
@@ -326,6 +326,7 @@ OOP -- problems -- encourages promiscuous sharing of mutable state
 OOP -- problems -- side effects
 optim des || et && effet de bord
 ORM (Object-Relational Mapping)
+orthogonality https://en.wikipedia.org/wiki/Orthogonality_(programming)
 overengineering https://blog.matt-rickard.com/p/stop-overengineering
 ownership
 pair-programming
@@ -422,14 +423,13 @@ SLO (Service Level Objective) = (proactive) A target set on the SLI. Failing to 
 SME Subject Matter Expert
 SOAP (Simple Object Access Protocol)
 SOLID
-SOLID -- critique https://www.tedinski.com/2019/04/02/solid-critique.html
 SOLID -- 1 Single responsibility principle (SRP) https://en.wikipedia.org/wiki/Single_responsibility_principle
 SOLID -- 2 Open–closed principle (OCP) https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
 SOLID -- 3 Liskov substitution principle https://en.wikipedia.org/wiki/Liskov_substitution_principle
 SOLID -- 4 Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
 SOLID -- 5 principle https://en.wikipedia.org/wiki/Dependency_inversion_principle
+SOLID -- critique https://www.tedinski.com/2019/04/02/solid-critique.html
 spec
-system boundaries = a publicly exposed interface that third-party developers are going to use. It’s the inability to make breaking changes because you have external users to support that really defines a boundary. As a result, you have to pay special attention to get the design of a system boundary right—it’s not easy to make changes in the future. Boundaries are more important than other parts of our programs that we can refactor at will. https://www.tedinski.com/2018/02/06/system-boundaries.html
 SSH (Secure Shell)
 stack overflow
 standard deviation
@@ -441,6 +441,7 @@ Stick to boring architecture for as long as possible https://addyosmani.com/blog
 streams
 superapp
 Sustainable Architectural Decisions https://adr.github.io/
+system boundaries = a publicly exposed interface that third-party developers are going to use. It’s the inability to make breaking changes because you have external users to support that really defines a boundary. As a result, you have to pay special attention to get the design of a system boundary right—it’s not easy to make changes in the future. Boundaries are more important than other parts of our programs that we can refactor at will. https://www.tedinski.com/2018/02/06/system-boundaries.html
 system call
 TDD
 TDZ
