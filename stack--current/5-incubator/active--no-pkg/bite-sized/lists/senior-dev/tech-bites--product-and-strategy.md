@@ -50,6 +50,11 @@ knowledge creating company https://hbr.org/2007/07/the-knowledge-creating-compan
 land grab
 lock-in
 M&A
+enterprise -- cross-orgs (shared channels) 
+enterprise -- security
+enterprise -- SSO
+enterprise -- user management
+enterprise -- data residency
 M&A -- Apple 
 M&A -- killer zone = https://www.trendingtopics.eu/tech-talent-the-intricate-mechanisms-behind-apples-startup-killer-zone/
 magic moment -> habit moment

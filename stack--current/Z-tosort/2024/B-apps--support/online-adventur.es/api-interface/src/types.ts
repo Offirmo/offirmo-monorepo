@@ -24,6 +24,7 @@ export interface OAResponse<T> {
 	}
 
 	// pagination?
+	// HATEOAS?
 }
 
 

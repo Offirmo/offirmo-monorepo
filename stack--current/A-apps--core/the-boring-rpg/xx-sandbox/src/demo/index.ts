@@ -9,13 +9,6 @@ import * as RRT from '@tbrpg/ui--rich-text'
 
 import '../services/misc.js'
 
-import { renderꓽstateⵧprettified_text } from '../view/offirmo-state/generic--to-text.js'
-import { renderꓽstateⵧrich_text } from '../view/offirmo-state/generic--to-rich-text.js'
-
-/////////////////////////////////////////////////
-
-injectꓽlibꓽchalk(chalk)
-
 /////////////////////////////////////////////////
 
 let state = State.create()
@@ -23,32 +16,28 @@ let state = State.create()
 state = State.on_start_session(state, true)
 state = State.update_to_now(state)
 
-//function equip_item(previous_state: Immutable<State>, uuid: UUID, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms())
-//function sell_item(previous_state: Immutable<State>, uuid: UUID, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms())
-//function rename_avatar(previous_state: Immutable<State>, new_name: string, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms())
-//function change_avatar_class(previous_state: Immutable<State>, new_class: CharacterClass, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms())
-
-
+/////////////////////////////////////////////////
 /*
 console.log('/////////////////////////////////////////////////')
 console.log(state)
 */
-
 /*
 console.log('/////////////////////////////////////////////////')
+import { prettifyꓽjson } from '@offirmo-private/prettify-any'
 console.log(prettifyꓽjson(state))
 */
-
 /*
 console.log('/////////////////////////////////////////////////')
+import { renderꓽstateⵧprettified_text } from '../view/offirmo-state/generic--to-text.js'
 console.log(renderꓽstateⵧprettified_text(state))
 */
-
 /*
 console.log('/////////////////////////////////////////////////')
+import { renderꓽstateⵧrich_text } from '../view/offirmo-state/generic--to-rich-text.js'
 const $doc = renderꓽstateⵧrich_text(state, {})
 console.log(to_terminal($doc))
 */
+/////////////////////////////////////////////////
 
 function loop() {
 	console.log('/////////////////////////////////////////////////')
@@ -83,6 +72,44 @@ function loop() {
 	console.log('Actions:', RichText.renderⵧto_actions($doc))
 }
 
+/////////////////////////////////////////////////
+
 loop()
 state = State.play(state)
 loop()
+
+/////////////////////////////////////////////////
+// https://github.com/kevinswiber/siren
+
+interface Link {
+	rel: string // https://www.iana.org/assignments/link-relations/link-relations.xhtml TODO array?
+	cta: string
+}
+
+interface Response {
+	data: {
+
+		$doc: RichText.Document
+
+	}
+
+	links: {
+		// self must be present
+
+
+		[key: string]: Link
+	}
+}
+
+
+function HATEOASᐧGETꓽⳇmodeⳇ() {
+
+}
+
+function HATEOASᐧGET(link: string = '/'): Response {
+
+	switch (link) {
+		default:
+			throw new Error(`Unknown resource "${link}"!`)
+	}
+}

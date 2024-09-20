@@ -47,6 +47,7 @@ collaborative experiences https://zknill.io/posts/collaboration-no-crdts/
 components https://www.componentdriven.org/
 Contrast ratio https://www.siegemedia.com/contrast-ratio
 CORS (Cross-Origin Resource Sharing)
+CSS -- breakpoints https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
 CSS -- atomic = small, single-purpose classes with names based on visual function https://css-tricks.com/lets-define-exactly-atomic-css/
 CSS -- cascade https://2019.wattenberger.com/blog/css-cascade
 CSS -- color -- formats = hex, rgb(), hsl(), lch() https://www.joshwcomeau.com/css/color-formats/

@@ -23,11 +23,13 @@
 [ ] https://www.managingtheunmanageable.net/morerulesofthumb.html
 [ ] https://zknill.io/posts/every-programmer-should-know/
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
+[ ] https://www.tedinski.com/archive/
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 access control -- Role-Based (RBAC)
 actually portable executables https://justine.lol/ape.html
 allocation
 annotation
+orthogonality https://en.wikipedia.org/wiki/Orthogonality_(programming)
 anomaly detection
 API (Application Programming Interface) = interface (set of subroutine definitions, protocols, and tools) for exposing a software feature, defines interactions that allows two applications to talk to each other
 API -- economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
@@ -420,12 +422,14 @@ SLO (Service Level Objective) = (proactive) A target set on the SLI. Failing to 
 SME Subject Matter Expert
 SOAP (Simple Object Access Protocol)
 SOLID
+SOLID -- critique https://www.tedinski.com/2019/04/02/solid-critique.html
 SOLID -- 1 Single responsibility principle (SRP) https://en.wikipedia.org/wiki/Single_responsibility_principle
 SOLID -- 2 Open–closed principle (OCP) https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
 SOLID -- 3 Liskov substitution principle https://en.wikipedia.org/wiki/Liskov_substitution_principle
 SOLID -- 4 Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
 SOLID -- 5 principle https://en.wikipedia.org/wiki/Dependency_inversion_principle
 spec
+system boundaries = a publicly exposed interface that third-party developers are going to use. It’s the inability to make breaking changes because you have external users to support that really defines a boundary. As a result, you have to pay special attention to get the design of a system boundary right—it’s not easy to make changes in the future. Boundaries are more important than other parts of our programs that we can refactor at will. https://www.tedinski.com/2018/02/06/system-boundaries.html
 SSH (Secure Shell)
 stack overflow
 standard deviation
