@@ -99,6 +99,7 @@ CSS -- width = auto, fit-content, min-content https://courses.joshwcomeau.com/cs
 CSS -- z-index
 CSS -- zoom https://www.oddbird.net/2024/07/09/zoomies/
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
+dark patterns https://www.uxtigers.com/post/dark-design
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
 design -- guides https://owickstrom.github.io/the-monospace-web/
 devices -- support
@@ -134,9 +135,11 @@ GraphQL
 GraphQL -- against https://bessey.dev/blog/2024/05/24/why-im-over-graphql/
 HTML -- concepts
 HTML -- elements
+html -- first https://html-first.com/
 html -- metadata https://github.com/wikimedia/html-metadata
 HTML -- tags
 htmx https://htmx.org/
+hypercard https://hypercard.org
 hypermedia
 hypertext
 i18e Ecosystem Performance = Cleanup, Speedup, Levelup. One Package at a time. https://e18e.dev/
@@ -209,6 +212,7 @@ response times https://www.nngroup.com/articles/response-times-3-important-limit
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
+spirit -- view source affordance https://htmx.org/essays/right-click-view-source/
 SSR good explanation https://single-spa.js.org/docs/ssr-overview/
 temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
 testing -- component https://storybook.js.org/blog/component-testing/

@@ -11,6 +11,7 @@
 [ ] https://carloarg02.medium.com/how-i-scaled-amazons-load-generator-to-run-on-1000s-of-machines-4ca8f53812cf
 [ ] https://medium.com/@sureshpodeti/system-design-twitter-a98e7d134634
 [ ] https://newsletter.pragmaticengineer.com/p/building-the-threads-app
+[ ] https://slack.engineering/scaling-datastores-at-slack-with-vitess/
 [ ] https://www.infoq.com/news/2024/01/discord-midjourney-performance/
 [ ] https://www.youtube.com/watch?v=paTtLhZFsGE
 [ ] kubernetes
@@ -26,7 +27,6 @@
 [ ] real case https://deno.com/blog/how-we-built-jsr
 [ ] research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
 [ ] Software Engineering Advice from Building Large-Scale Distributed Systems
-[ ] https://slack.engineering/scaling-datastores-at-slack-with-vitess/
 access control
 ACID -- 1 Atomicity = transactions are "all or nothing"
 ACID -- 2 Consistency = integrity constraints: "valid state" before AND after a transaction
@@ -118,6 +118,7 @@ cloud native = leverages the full capabilities of the cloud, beyond storage and 
 compliance
 compute
 confidentiality
+config -- drift https://score.dev/
 consistent Hashing
 containers
 containers -- images -- golden = pre-configured and optimised container images that serve as standardised and reusable foundations for building other images (apps, services...)
@@ -458,3 +459,4 @@ well architected -- pillar -- performance efficiency = using IT and computing re
 well architected -- pillar -- reliability = consistently and correctly perform intended functions, Recover from infrastructure or service disruptions, Dynamically acquire computing resources to meet demand, Mitigate disruptions such as misconfigurations or transient network issues -- includes testing recovery procedures, scaling horizontally to increase aggregate system availability, and automatically recovering from failure.
 well architected -- pillar -- security = protecting information, systems, and assets while delivering business value through risk assessments and mitigation strategies -- Automate security best practices when possible, Apply security at all layers, Protect data in transit and at rest.
 well architected -- pillar -- sustainability = minimizing the environmental impact of your technology -- Understand your impact, Establish sustainability goals, Maximize utilization, Anticipate and adopt new, more efficient hardware and software offerings, Use managed services, Reduce the downstream impact of your cloud workloads
+workload https://score.dev/

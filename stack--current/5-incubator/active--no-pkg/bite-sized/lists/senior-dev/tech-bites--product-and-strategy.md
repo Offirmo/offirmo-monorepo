@@ -32,6 +32,7 @@ enterprise -- cross-orgs (shared channels)
 enterprise -- data residency
 enterprise -- drafts
 enterprise -- personal workspace = to use the feature for themselves
+enterprise -- regulated industries
 enterprise -- security
 enterprise -- similar
 enterprise -- SSO

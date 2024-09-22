@@ -74,6 +74,7 @@ changelog -- conventional https://github.com/conventional-changelog
 changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 CI (Continuous Integration) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
+clever code considered harmful https://www.joshwcomeau.com/career/clever-code-considered-harmful/
 client/server -- multi-tier architecture
 close / destroy / terminate / dispose / release / free / delete / destruct / finalize / teardown / cleanup / shutdown / stop / end / abort / cancel / halt / kill / exit / quit / unload / dispose...
 code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing

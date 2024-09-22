@@ -20,6 +20,7 @@
 [ ] https://amir.rachum.com/mental-models/
 [ ] https://boz.com/
 [ ] https://en.wikipedia.org/wiki/Power_(social_and_political)
+[ ] https://paulgraham.com/faq.html
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
 [ ] https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
@@ -279,6 +280,7 @@ pretty privilege -> karen
 primals https://myprimals.com https://templetonreligiontrust.org/explore/discovering-peoples-primal-world-beliefs/
 priming
 principal-agent problem https://en.wikipedia.org/wiki/Principal–agent_problem
+Principle of Least Power
 Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
 prix au kilo
 problem solving -- structured https://strategyu.co/mckinsey-structured-problem-solving-secrets/
@@ -380,6 +382,7 @@ trust -- trust, but verify
 truth -- fully convinced vs probably https://christianity.stackexchange.com/questions/92352/believing-that-christianity-is-probably-true-vs-being-fully-convinced-that-ch
 truth -- verificationism https://christianity.stackexchange.com/a/89891
 unlearn
+vanilla
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 via Negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 voleur volé

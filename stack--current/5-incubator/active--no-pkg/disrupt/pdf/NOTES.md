@@ -23,7 +23,7 @@ https://www.researchgate.net/publication/324329159_How_Constraints_Affect_Conten
 
 
 diagrams https://d2lang.com/
-
+https://viz-js.com/
 
 ## Need for a long-term semantic format
 
@@ -34,6 +34,8 @@ https://en.m.wikipedia.org/wiki/BBC_Domesday_Project
 
 https://www.canvasprotocol.org/
 
+
+https://www.notion.so/blog/data-model-behind-notion
 
 
 ## hierarchy of file formats

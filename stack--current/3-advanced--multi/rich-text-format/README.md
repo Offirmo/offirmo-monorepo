@@ -1,10 +1,24 @@
-A generic, platform independent rich text format.
 
-It's half-way between raw text and html. It has only 1 dimension.
+A generic, platform-independent, rich text format
 
-Can be rendered in ascii, html, react...
+The goal is to
+- be semantic
+- be render-able in both terminal and browser = ascii, html, react...
 
-See /demos/*
+This format is half-way between raw text and html, a bit similar to Markdown.
+
+It has only 1 dimension (flow) but hints can be added to render in a more fancy way if supported. Ex. a "ul/ol" hint.
+
+It has an underlying JSON structure. See `/demos/*`
+
+A notable difference with other document formats (Atlassian, Slack...) is that we don't have an array of children.
+Instead, a text with references to other nodes is used. Advantages:
+- a bit more readable
+- we can re-use nodes
+- we can over-supply nodes and not always use them
+Disadvantages
+- verbose for lists
+
 
 ```js
 import * as RichText from '@offirmo-private/rich-text-format'
@@ -24,7 +38,7 @@ console.log(RichText.renderⵧto_actions($doc))
 ```
 
 Inspiration:
-* "Atlassian Document Format" https://bitbucket.org/atlassian/adf-builder-javascript#readme
+* "Atlassian Document Format" https://developer.atlassian.com/cloud/jira/platform/apis/document/structure/
 
 Related, discovered after I made mine:
 * Slack's "block kit" https://api.slack.com/block-kit
@@ -35,3 +49,7 @@ Related, discovered after I made mine:
 Tosort
 * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl
 * https://formatjs.io/docs/core-concepts/icu-syntax/
+
+
+TODO add emoji support
+TODO add hypermedia as first class?

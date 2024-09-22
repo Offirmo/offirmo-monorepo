@@ -6,7 +6,8 @@ import { IETFLanguageType } from './international.js'
 // REFINED in @offirmo-private/ts-types-web
 
 export type Emoji = string
-export type Url‿str = string
+export type Uri‿str = string
+export type Url‿str = Uri‿str
 export type Email‿str = string
 
 export interface SocialNetworkLink {
