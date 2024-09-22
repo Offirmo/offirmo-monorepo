@@ -43,6 +43,7 @@ function loop() {
 	console.log('/////////////////////////////////////////////////')
 	// always first
 	const $doc = State.getꓽrecap(state.u_state) // TODO clarify recap/mode
+	console.log(prettifyꓽjson($doc))
 	console.log(to_terminal($doc))
 
 	console.log('/////////////////////////////////////////////////')
@@ -73,45 +74,7 @@ function loop() {
 }
 
 /////////////////////////////////////////////////
-/*
+
 loop()
 state = State.play(state)
 loop()
-*/
-/////////////////////////////////////////////////
-// https://github.com/kevinswiber/siren
-
-interface Link {
-	rel: string // https://www.iana.org/assignments/link-relations/link-relations.xhtml TODO array?
-
-	cta: string
-	href: string
-}
-
-interface Response {
-	data: {
-
-		$doc: RichText.Document
-
-	}
-
-	links: {
-		// self must be present
-
-
-		[rel: string]: Link
-	}
-}
-
-
-function HATEOASᐧGETꓽⳇmodeⳇ() {
-
-}
-
-function HATEOASᐧGET(link: string = '/'): Response {
-
-	switch (link) {
-		default:
-			throw new Error(`Unknown resource "${link}"!`)
-	}
-}
