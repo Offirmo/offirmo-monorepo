@@ -31,8 +31,15 @@ https://www.abc.net.au/news/2024-07-31/inheritance-scam-victim-calls-for-banking
 https://slashdot.org/story/24/08/02/2022212/japan-mandates-app-to-ensure-national-id-cards-arent-forged
 
 
+
+https://paulgraham.com/faq.html spam
+https://paulgraham.com/spamfaq.html
+https://paulgraham.com/ffbfaq.html
+
+blacklists https://paulgraham.com/spamhausblacklist.html
+
 10 Commitments
-1. Customers can trust our Data Center Products; all dependencies are kept updated and vulnerabilities are resolved within SLO
+1. Customers can trust our Products; all dependencies are kept updated and vulnerabilities are resolved within SLO
 1. There are no standing permissions and all access to Production systems is granted and verified when required for a legitimate business purpose
 1. For everything we ship, we’ve done what’s needed to ensure its integrity, we know where it came from and we are confident it will do what we expect
 1. Only Trusted devices can connect to high-tier services and they all meet COMPANY Security standards

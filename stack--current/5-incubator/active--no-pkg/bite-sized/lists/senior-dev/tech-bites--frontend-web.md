@@ -102,6 +102,9 @@ CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_start
 dark patterns https://www.uxtigers.com/post/dark-design
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
 design -- guides https://owickstrom.github.io/the-monospace-web/
+design quality -- 1 Intuitiveness vs complicated, overwhelming, cluttered, steep learning curve, significant cognitive load.
+design quality -- 2 Ease of Use: difficult to navigate and locate features, concerns about accessibility, efficiency, consistency, and readability
+design quality -- 3 outdated design aesthetic
 devices -- support
 dialog
 DNS = distributed database for IP address translation

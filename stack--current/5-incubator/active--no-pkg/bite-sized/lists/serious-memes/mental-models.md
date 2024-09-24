@@ -24,6 +24,7 @@
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
 [ ] https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
+accent -- miscommunication https://paulgraham.com/accents.html
 acceptance
 advocacy
 affirmative action?
@@ -108,6 +109,7 @@ equity
 every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 evolution https://en.wikipedia.org/wiki/Evolutionary_game_theory
+ex. of edited interview misleading https://paulgraham.com/wids.html
 excuses vs. solutions
 fairness
 fake it till you make it -- Of course, it’s not really “fake it till you make it.” It’s just “fake it.”

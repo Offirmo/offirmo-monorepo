@@ -46,7 +46,9 @@ B2C (Business to Customer)
 B2G (Business to Government)
 bad API = make assumptions about what you are trying to do, but then break when those assumptions are not exactly right, ex. AppCache
 BDD (Behavior-Driven Development) https://cucumber.io/school/   Discovery -> Formulation -> Automation
+big companies software = At big companies, software tends to be written by large and frequently changing teams of mediocre programmers https://paulgraham.com/noop.html
 blocking
+blocklist/blacklist -- https://paulgraham.com/spamhausblacklist.html
 bro culture in tech https://www.smh.com.au/technology/australias-tech-darling-atlassian-in-sexism-row-20140605-zryjd.html
 bug -- mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html
 C10k problem https://en.wikipedia.org/wiki/C10k_problem
@@ -308,6 +310,7 @@ not invented here https://en.wikipedia.org/wiki/Not_invented_here
 npm
 nyan cat
 object
+OOP -- against https://paulgraham.com/noop.html
 OOP -- fake strengths -- abstraction -> any interface
 OOP -- fake strengths -- code re-use
 OOP -- fake strengths -- Dependency inversion principle

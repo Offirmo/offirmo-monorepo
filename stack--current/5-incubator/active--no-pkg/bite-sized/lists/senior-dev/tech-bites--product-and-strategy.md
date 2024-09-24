@@ -9,8 +9,12 @@ average revenue per user (ARPU)
 boring -- culture 
 boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
 boring -- technology https://mcfunley.com/choose-boring-technology
+business as a by-product https://www.linkedin.com/posts/jason-fried_ive-always-thought-of-business-as-a-by-product-activity-7236805665627717632-_s96
 churn
 computers should adapt to users = not necessarily if the solution is good (ex. typing on a keyboard, Palm Graffiti) https://www.creativitypost.com/technology/the_memory_prediction_framework_of_intelligence_and_the_subject_of_creativi
+core actions
+core actions -- active users
+core mental models (of the product)
 customer segmentation = Strategic, Enterprise, Mid-Market, SMB
 earliest -- 01 feedback-able product (EFP)
 earliest -- 02 testable product = first release that customers can actually do something with
@@ -24,6 +28,7 @@ Embrace, Extend, and Extinguish https://en.wikipedia.org/wiki/Embrace,_extend,_a
 enshittification = first, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die. https://en.wikipedia.org/wiki/Enshittification
 enterprise -- access control
 enterprise -- billing
+enterprise -- change aversion
 enterprise -- comments
 enterprise -- comments -- resolve
 enterprise -- comments -- threaded
@@ -67,6 +72,7 @@ land grab
 lock-in
 M&A
 M&A -- Apple 
+M&A -- fb / insta https://www.linkedin.com/posts/olivermolander_technology-facebook-instagram-activity-7241726426826059776-IOE4
 M&A -- killer zone = https://www.trendingtopics.eu/tech-talent-the-intricate-mechanisms-behind-apples-startup-killer-zone/
 magic moment -> habit moment
 marketing -- case studies
