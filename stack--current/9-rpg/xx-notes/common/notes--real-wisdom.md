@@ -9,6 +9,7 @@ https://en.wikipedia.org/wiki/The_Scorpion_and_the_Frog
 primals https://myprimals.com
 
 
+TODO make wisdom words into achievements!
 
 Violations of human dignity:
 

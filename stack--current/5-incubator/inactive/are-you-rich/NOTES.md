@@ -1,4 +1,5 @@
-devicePixelRatio
+devicePixelRatio / pixel density
+P3 support
 have safe inset?
 Safari? Apple pay? iPhone (recent)
 location

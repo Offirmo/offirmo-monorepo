@@ -33,6 +33,7 @@ Why not rush? https://rushjs.io/
 Recent news
 * 2023 https://www.robinwieruch.de/web-development-trends/ ("Monorepos")
 
+TODO evaluate pnpm https://blog.logto.io/parcel-to-vite
 TODO evaluate turborepo
 TODO evaluate https://nx.dev/
 TODO evaluate lerna recent versions
@@ -63,6 +64,7 @@ White not Vite?
 * needs a "main" in package.json
 * has a "root" preventing from serving files upper in the monorepo
 
+TODO re-evaluate vite https://blog.logto.io/parcel-to-vite
 TODO evaluate Rpack https://rspack.dev/
 
 
