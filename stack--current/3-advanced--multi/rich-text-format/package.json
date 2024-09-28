@@ -40,7 +40,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/prettify-any": "^0",
+		"@offirmo-private/prettify-any": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/practical-logger-browser": "^3",
 		"@offirmo/unit-test-toolbox": "^9",

@@ -25,7 +25,7 @@ Missing features (worse than util.inspect)
 ## Usage
 
 ```ts
-// "@offirmo-private/prettify-any": "^0",
+// "@offirmo-private/prettify-any": "*",
 import chalk from 'chalk'
 import {
 	injectꓽlibꓽchalk,

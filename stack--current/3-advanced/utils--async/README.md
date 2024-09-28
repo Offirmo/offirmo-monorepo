@@ -57,7 +57,7 @@ TODO scheduler.postTask() ?
 
 
 ```
-"@offirmo-private/async-utils": "^0",
+"@offirmo-private/async-utils": "*",
 ```
 ```ts
 import { asap_but_not_synchronous, dezalgo } from '@offirmo-private/async-utils'

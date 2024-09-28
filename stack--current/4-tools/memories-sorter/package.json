@@ -9,9 +9,9 @@
 	"type": "module",
 
 	"dependencies": {
-		"@offirmo-private/json-stable-stringify": "^0",
+		"@offirmo-private/json-stable-stringify": "*",
 		"@offirmo-private/normalize-string": "*",
-		"@offirmo-private/prettify-any": "^0",
+		"@offirmo-private/prettify-any": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",

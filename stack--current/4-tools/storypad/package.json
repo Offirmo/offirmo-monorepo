@@ -9,7 +9,7 @@
 	"source": "src/index.ts",
 
 	"dependencies": {
-		"@offirmo-private/async-utils": "^0",
+		"@offirmo-private/async-utils": "*",
 		"@offirmo-private/css--framework": "*",
 		"@offirmo-private/css--utils": "*",
 		"@offirmo-private/data-structures": "*",

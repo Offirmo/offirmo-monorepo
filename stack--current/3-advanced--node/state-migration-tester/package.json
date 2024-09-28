@@ -11,7 +11,7 @@
 	"sideEffects": false,
 
 	"dependencies": {
-		"@offirmo-private/prettify-any": "^0",
+		"@offirmo-private/prettify-any": "*",
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
 		"@offirmo/cli-toolbox": "^3",

@@ -62,7 +62,7 @@
 
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/prettify-any": "^0",
+		"@offirmo-private/prettify-any": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/state-migration-tester": "*",
 		"@offirmo/unit-test-toolbox": "^9",
