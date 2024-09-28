@@ -1,11 +1,11 @@
 import readline from 'node:readline'
-const term_size = require('term-size')
-const strip_ansi = require('strip-ansi')
-const create_ora_spinner = require('ora')
-const Gauge = require('gauge')
+import term_size from 'term-size'
+import strip_ansi from 'strip-ansi'
+import create_ora_spinner from 'ora'
+import Gauge from 'gauge'
 
-const { to_prettified_str, stylize_string, indent_string, wrap_string } = require('./libs')
-import { get_shared_start } from './utils'
+import { to_prettified_str, stylize_string, indent_string, wrap_string } from './libs.js'
+import { get_shared_start } from './utils.js'
 
 
 const MANY_BOX_HORIZ = '────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────'
@@ -332,16 +332,16 @@ function create({DEBUG, shouldCenter}) {
 	function read_string(step) {
 		if (DEBUG) console.log(`↘ read_string(\n${to_prettified_str(step, { outline: true })}\n)`)
 		return new Promise(resolve => {
-			//rli.clearLine(process.stdout, 0)
-			rli.prompt()
+				//rli.clearLine(process.stdout, 0)
+				rli.prompt()
 
-			rli.question('', answer => {
-				rli.clearLine(process.stdout, 0)
-				answer = String(answer).trim()
-				if (DEBUG) console.log(`[You entered: "${answer}"]`)
-				resolve(answer)
+				rli.question('', answer => {
+					rli.clearLine(process.stdout, 0)
+					answer = String(answer).trim()
+					if (DEBUG) console.log(`[You entered: "${answer}"]`)
+					resolve(answer)
+				})
 			})
-		})
 			.then(answer => {
 				if (step.msgg_as_user)
 					return display_message({

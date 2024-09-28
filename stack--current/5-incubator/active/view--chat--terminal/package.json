@@ -24,7 +24,8 @@
 		"ora": "^8",
 		"p-progress": "^1",
 		"strip-ansi": "^7",
-		"term-size": "^4"
+		"term-size": "^4",
+		"indent-string": "^5"
 	},
 
 	"scripts": {

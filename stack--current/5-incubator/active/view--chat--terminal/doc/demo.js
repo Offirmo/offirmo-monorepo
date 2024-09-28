@@ -1,14 +1,13 @@
-import to_prettified_str from '@offirmo-private/prettify-any'
-
 import { create as create_chat } from '@offirmo-private/view--chat'
 
-import { create as create_tty_chat_ui } from '../src'
+import { create as create_tty_chat_ui } from '../src/index.js'
+import { to_prettified_str } from '../src/libs.js'
 
-import { get_next_step1 } from '../../view--chat/doc/demo'
+import { get_next_step1 } from '../../view--chat/doc/demo.js'
 
 /////////////////////////////////////////////////
 
-const DEBUG = false
+const DEBUG = true
 
 const no_ui = {
 	setup: async () => {},

@@ -1,18 +1,24 @@
-const to_prettified_str = require('@offirmo-private/prettify-any')
+import {
+	injectꓽlibꓽchalk,
+	prettifyꓽany as to_prettified_str,
+} from '@offirmo-private/prettify-any'
 
-const stylize_string = require('chalk')
+import indent_string from 'indent-string'
 
+import stylize_string from 'chalk'
+injectꓽlibꓽchalk(stylize_string)
 
 // https://github.com/AnAppAMonth/linewrap
-const linewrap = require('linewrap')
+import linewrap from 'linewrap'
 function wrap_string(s, size) {
 	return linewrap(size, {skipScheme: 'ansi-color'})(s)
 }
 
 ////////////
 
-module.exports = {
+export {
 	to_prettified_str,
 	stylize_string,
+	indent_string,
 	wrap_string,
 }

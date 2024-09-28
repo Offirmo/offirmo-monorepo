@@ -1,4 +1,4 @@
-import PromiseWithProgress from 'p-progress'
+import { PProgress as PromiseWithProgress } from 'p-progress'
 import is_promise from 'is-promise'
 
 /////////////////////////////////////////////////
