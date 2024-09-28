@@ -1,6 +1,4 @@
-'use strict'
-
-const i_will_handle_rejection_later = require('caught')
+import i_will_handle_rejection_later from 'caught'
 
 function* get_next_step1(skip_to_index = 0) {
 	const state = {
@@ -104,7 +102,7 @@ async function get_next_step2() {
 }
 */
 
-module.exports = {
+export {
 	get_next_step1,
 	//get_next_step2,
 }

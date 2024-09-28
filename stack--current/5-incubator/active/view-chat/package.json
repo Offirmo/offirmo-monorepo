@@ -21,13 +21,12 @@
 		"p-progress": "^1"
 	},
 
+	"scripts": {
+		"cheatsheet": "node doc/cheatsheet.js",
+		"demo": "echo please use an implementation, ex. node"
+	},
 	"devDependencies": {
 		"npm-run-all": "^4",
 		"tslib": "^2"
-	},
-	"scripts": {
-		"cheatsheet": "node doc/cheatsheet.js",
-		"demo": "node doc/demo.js"
-	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--2021/3-advanced--multi/view-chat"
+	}
 }

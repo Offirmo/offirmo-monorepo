@@ -1,9 +1,9 @@
-'use strict'
+import PromiseWithProgress from 'p-progress'
+import is_promise from 'is-promise'
 
-const PromiseWithProgress = require('p-progress')
-const is_promise = require('is-promise')
+/////////////////////////////////////////////////
 
-const LIB = '@oh-my-rpg/view-chat'
+const LIB = '@offirmo-private/view--chat'
 
 function is_step_input(step) {
 	return step && step.type.startsWith('ask_')
@@ -232,9 +232,9 @@ function create({
 	}
 }
 
+/////////////////////////////////////////////////
 
-
-module.exports = {
+export {
 	PromiseWithProgress,
 	create,
 }
