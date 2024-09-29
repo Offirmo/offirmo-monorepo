@@ -1,11 +1,14 @@
-import { PProgress as PromiseWithProgress } from 'p-progress'
 import is_promise from 'is-promise'
+import { type Immutable } from '@offirmo-private/ts-types'
+
+import { LIB } from './consts.js'
+import { type Step } from './types.js'
+import { create_dummy_progress_promise } from './utils.js'
 
 /////////////////////////////////////////////////
 
-const LIB = '@offirmo-private/view--chat'
 
-function is_step_input(step) {
+function is_step_input(step: Immutable<Step>): boolean {
 	return step && step.type.startsWith('ask_')
 }
 
@@ -19,89 +22,6 @@ function create({
 }) {
 	if (DEBUG) console.log('↘ create()')
 
-	function create_dummy_progress_promise({DURATION_MS = 2000, PERIOD_MS = 100} = {}) {
-		return new PromiseWithProgress((resolve, reject, progress) => {
-			let count = 0
-			const auto_pulse = setInterval(() => {
-				count++
-				const completion_rate = 1. * (count * PERIOD_MS) / DURATION_MS
-				progress(completion_rate)
-
-				if (completion_rate >= 1) {
-					clearInterval(auto_pulse)
-					resolve()
-				}
-			}, PERIOD_MS)
-		})
-	}
-
-	function normalize_step(step) {
-		try {
-			if (step.type === 'ask_for_confirmation' && step !== STEP_CONFIRM)
-				step = Object.assign(
-					{},
-					STEP_CONFIRM,
-					step,
-				)
-
-			if (!step.msg_main)
-				throw new Error(`${LIB}: Step is missing main message!`)
-
-			if (!step.type) {
-				if (!step.choices)
-					throw new Error(`${LIB}: Step type is unknown and not inferrable!`)
-
-				step.type = 'ask_for_choice'
-			}
-
-			step = Object.assign(
-				{
-					validator: null,
-					choices: [],
-				},
-				step,
-			)
-
-			step.choices = step.choices.map(normalize_choice)
-
-			if (step.choices.length) {
-				const known_values = new Set()
-				step.choices.forEach((choice, index) => {
-					if (known_values.has(choice.value)) {
-						const err = new Error(`${LIB}: colliding choices with the same value!`)
-						err.details = {
-							choice,
-							value: choice.value,
-							index,
-						}
-						throw err
-					}
-					known_values.add(choice.value)
-				})
-			}
-
-
-			return step
-		}
-		catch (e) {
-			console.error(to_prettified_str(step))
-			throw e
-		}
-	}
-
-	function normalize_choice(choice) {
-		// TODO auto-id
-		try {
-			if (!choice.hasOwnProperty('value') || typeof choice.value === 'undefined')
-				throw new Error('Choice has no value!')
-			choice.msg_cta = choice.msg_cta || String(choice.value)
-			return choice
-		}
-		catch (e) {
-			console.error(to_prettified_str(choice))
-			throw e
-		}
-	}
 
 	async function ask_user(step) {
 		if (DEBUG) console.log('↘ ask_user(\n', to_prettified_str(step, {outline: true}), '\n)')
