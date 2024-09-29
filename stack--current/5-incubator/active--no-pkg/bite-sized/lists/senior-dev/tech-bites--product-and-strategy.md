@@ -56,8 +56,11 @@ first-mover advantage https://en.wikipedia.org/wiki/First-mover_advantage
 funnel
 Go-To-Market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
 growth +++ https://growth.design/
+growth -- cognitive load
 growth -- concepts https://growth.design/psychology
+growth -- friction
 growth -- labor perception / perceived labor https://growth.design/case-studies/labor-perception-bias
+growth -- onboarding -- fatigue
 illegal practices -- monopoly
 illegal practices -- payola https://en.wikipedia.org/wiki/Payola
 illegal practices -- predatory pricing

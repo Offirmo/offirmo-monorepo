@@ -1,10 +1,3 @@
-/////////////////////
-import { Enum } from 'typescript-string-enums'
-
-///////
-
-
-/////////////////////
 
 type ActionCallback = () => Promise<void>
 

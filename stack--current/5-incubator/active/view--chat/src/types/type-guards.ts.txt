@@ -1,0 +1,79 @@
+import { Step, StepType } from './types'
+
+
+function isꓽinput_step<ContentType>(step: Step<ContentType>): step is AskForConfirmationStep<ContentType> | InputStep<ContentType> {
+	switch(step?.type) {
+		case StepType.ask_for_confirmation:
+		case StepType.input:
+			return true
+		default:
+			return false
+	}
+}
+
+function normalizeꓽstep<ContentType>(step: Step<ContentType>): Required<Step<ContentType>> {
+	throw new Error(`NIMP!`)
+	/*
+	try {
+		if (step.type === 'ask_for_confirmation' && step !== STEP_CONFIRM)
+			step = Object.assign(
+				{},
+				STEP_CONFIRM,
+				step,
+			)
+
+		if (!step.msg_main)
+			throw new Error(`${LIB}: Step is missing main message!`)
+
+		if (!step.type) {
+			if (!step.choices)
+				throw new Error(`${LIB}: Step type is unknown and not inferrable!`)
+
+			step.type = 'ask_for_choice'
+		}
+
+		step = Object.assign(
+			{
+				validator: null,
+				choices: [],
+			},
+			step,
+		)
+
+		step.choices = step.choices.map(normalize_choice)
+
+		if (step.choices.length) {
+			const known_values = new Set()
+			step.choices.forEach((choice, index) => {
+				if (known_values.has(choice.value)) {
+					const err = new Error(`${LIB}: colliding choices with the same value!`)
+					err.details = {
+						choice,
+						value: choice.value,
+						index,
+					}
+					throw err
+				}
+				known_values.add(choice.value)
+			})
+		}
+
+
+		return step
+	*/
+}
+
+/*
+function normalize_choice(choice) {
+	// TODO auto-id
+	try {
+		if (!choice.hasOwnProperty('value') || typeof choice.value === 'undefined')
+			throw new Error('Choice has no value!')
+		choice.msg_cta = choice.msg_cta || String(choice.value)
+		return choice
+	}
+	catch (e) {
+		console.error(to_prettified_str(choice))
+		throw e
+	}
+}*/

@@ -103,7 +103,6 @@
 		"bowser": "^2",
 		"boxen": "^8",
 		"browserslist": "^4",
-		"caught": "^0.1",
 		"chai": "^5",
 		"chai-as-promised": "^8",
 		"chai-fetch-mock": "^3",

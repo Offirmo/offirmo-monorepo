@@ -16,14 +16,24 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"caught": "^0.1",
+		"@offirmo-private/ts-types": "*",
 		"is-promise": "^4",
-		"p-progress": "^1"
+		"p-progress": "^1",
+		"tiny-invariant": "^1",
+		"typescript-string-enums":"^1"
 	},
 
 	"scripts": {
-		"cheatsheet": "node doc/cheatsheet.js",
-		"demo": "echo please use an implementation, ex. node"
+		"clean": "monorepo-script--clean-package …dist",
+
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
+		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
+
+		"dev": "run-s clean _build:dev:watch",
+		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2023.esm/**/*spec.js'",
+		"build": "run-s  clean _build:prod",
+
+		"demo": "node ./dist/src.es2023.esm/loop/demo.js"
 	},
 	"devDependencies": {
 		"npm-run-all": "^4",
