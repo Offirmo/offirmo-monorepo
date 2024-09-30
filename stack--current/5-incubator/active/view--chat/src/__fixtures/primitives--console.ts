@@ -28,7 +28,7 @@ const CHAT_CONSOLE: ChatPrimitives<string> = {
 
 	display_task: ({
 		msg_before,
-		progress_promise,
+		promise,
 		msg_after,
 	}) => {
 		throw new Error(`NO UI display_task!`)

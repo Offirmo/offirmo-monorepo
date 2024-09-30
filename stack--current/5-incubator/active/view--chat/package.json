@@ -36,6 +36,7 @@
 		"demo": "node ./dist/src.es2023.esm/loop/demo.js"
 	},
 	"devDependencies": {
+		"@offirmo/deferred": "*",
 		"npm-run-all": "^4",
 		"tslib": "^2"
 	}

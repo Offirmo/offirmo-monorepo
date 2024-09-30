@@ -37,6 +37,7 @@ bot detection
 browsing contexts = such as several windows, iframes or even workers
 cache https://csswizardry.com/2024/08/cache-grab-how-much-are-you-leaving-on-the-table/
 CDN
+CDN -- quality = hot/cold potato routing https://vercel.com/blog/latency-numbers-every-web-developer-should-know
 chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
 Chrome is not the standard https://v4.chriskrycho.com/2017/chrome-is-not-the-standard.html
 client/server -- multi-tier architecture -- 01 presentation

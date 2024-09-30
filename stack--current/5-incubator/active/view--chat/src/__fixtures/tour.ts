@@ -1,14 +1,20 @@
 import { type Step, StepType } from '../types/types.js'
 import { type StepsGenerator } from '../loop/types.js'
+import Deferred from '@offirmo/deferred'
 
 export default function* get_next_step(skip_to_index: number = 0) {
+	console.log('get_next_step()', { skip_to_index })
+
 	const state = {
 		mode: 'main',
 		name: undefined,
 		city: undefined,
 	}
 
-	const STEPS: Array<Step> = [
+	const warmup_promise = new Deferred<void>()
+	setTimeout(() => warmup_promise.reject(new Error('Failed!')), 3000)
+
+	const STEPS: Array<Step<string>> = [
 
 		{
 			type: StepType.perceived_labor,
@@ -22,17 +28,18 @@ export default function* get_next_step(skip_to_index: number = 0) {
 			type: StepType.progress,
 
 			msg_before: 'Warming up...',
-			task_promise: (new Promise((resolve, reject) => setTimeout(() => reject(new Error('Demo step 2 rejection!')), 2000))),
+			promise: warmup_promise,
 			msg_after: success => success ? '✔ Ready!' : '❌ Warm up unsuccessful.',
 
 			callback: success => console.log(`[callback called: ${success}]`),
 		},
 
-		/*
 		{
-			type: 'simple_message',
-			msg_main: 'Welcome. I’ll have a few questions…',
+			type: StepType.simple_message,
+			msg: 'Welcome. I’ll have a few questions…',
 		},
+
+		/*
 		{
 			type: 'ask_for_string',
 			msg_main: 'What’s your name?',
@@ -48,15 +55,18 @@ export default function* get_next_step(skip_to_index: number = 0) {
 			msgg_acknowledge: value => `${value}, a fine city indeed!`,
 			callback: value => { state.city = value },
 		},
+		*/
+
 		{
-			type: 'simple_message',
-			msg_main: 'Please wait for a moment...',
+			type: StepType.simple_message,
+			msg: 'Please wait for a moment...',
 		},
 		{
-			type: 'progress',
+			type: StepType.perceived_labor,
+			msg_before: 'Calling server...',
 			duration_ms: 1000,
-			msg_main: 'Calling server...',
 		},
+		/*
 		{
 			msg_main: 'Please choose between 1 and 2?',
 			callback: value => { state.mode = value },
@@ -70,11 +80,11 @@ export default function* get_next_step(skip_to_index: number = 0) {
 					value: 2,
 				},
 			],
-		},
-		{
-			type: 'simple_message',
-			msg_main: 'Thanks, good bye.',
 		},*/
+		{
+			type: StepType.simple_message,
+			msg: 'Thanks, good bye.',
+		},
 	]
 
 	yield* STEPS.slice(skip_to_index)

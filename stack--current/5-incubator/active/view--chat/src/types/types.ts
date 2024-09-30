@@ -24,15 +24,15 @@ interface BaseStep {
 interface SimpleMessageStep<ContentType> extends BaseStep {
 	type: typeof StepType.simple_message
 
-	msg: ContentType
+	msg: ContentType | string
 }
 
 interface PerceivedLaborStep<ContentType> extends BaseStep {
 	type: typeof StepType.perceived_labor
 
-	msg_before?: ContentType
+	msg_before?: ContentType | string
 	duration_ms?: number
-	msg_after?: ContentType
+	msg_after?: ContentType | string
 
 	// callback?
 }
@@ -40,11 +40,11 @@ interface PerceivedLaborStep<ContentType> extends BaseStep {
 interface TaskProgressStep<ContentType, T = any> extends BaseStep {
 	type: typeof StepType.progress
 
-	msg_before?: ContentType
-	task_promise: Promise<T> | PromiseWithProgress<T>
-	msg_after?: (success: boolean, result: T | Error) => ContentType
+	msg_before?: ContentType | string
+	promise: Promise<T> | PromiseWithProgress<T>
+	msg_after?: (success: boolean, result: T | Error) => ContentType | string
 
-	callback: (success: boolean, result: T | Error) => void
+	callback?: (success: boolean, result: T | Error) => void
 }
 
 // TODO merge with input?
@@ -52,9 +52,9 @@ interface AskForConfirmationStep<ContentType> extends BaseStep {
 	type: typeof StepType.ask_for_confirmation
 
 	prompt?: string
-	msg_after?: (confirmation: boolean) => ContentType
+	msg_after?: (confirmation: boolean) => ContentType | string
 
-	callback: (confirmation: boolean) => void
+	callback?: (confirmation: boolean) => void
 }
 
 // TODO refine
@@ -63,16 +63,16 @@ interface AskForConfirmationStep<ContentType> extends BaseStep {
 interface InputStep<ContentType, T = string> extends BaseStep {
 	type: typeof StepType.input
 
-	prompt: ContentType
+	prompt: ContentType | string
 	normalizer?: (raw: T) => T
-	msg_as_user: (value: T) => ContentType
-	validators: Array<(value: T) => [ boolean, ContentType ]>
-	msg_acknowledge: (value: T) => ContentType
+	msg_as_user: (value: T) => ContentType | string
+	validators: Array<(value: T) => [ boolean, ContentType | string ]>
+	msg_acknowledge: (value: T) => ContentType | string
 
-	callback: (value: T) => void
+	callback?: (value: T) => void
 }
 
-type Step<ContentType = string> =
+type Step<ContentType> =
 	| SimpleMessageStep<ContentType>
 	| PerceivedLaborStep<ContentType>
 	| TaskProgressStep<ContentType>
@@ -82,6 +82,11 @@ type Step<ContentType = string> =
 /////////////////////////////////////////////////
 
 export {
+	type SimpleMessageStep,
+	type PerceivedLaborStep,
+	type TaskProgressStep,
+	type AskForConfirmationStep,
+	type InputStep,
 	type Step,
 
 	// for convenience

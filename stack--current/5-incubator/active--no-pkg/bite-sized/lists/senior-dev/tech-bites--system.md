@@ -245,6 +245,8 @@ kafka = pub/sub + store + process
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
 latency = the time that passes between an action and the resulting response
 latency https://www.a10networks.com/glossary/osi-network-model-and-types-of-load-balancers/
+latency numbers -- frontend -- duration of time perceived by humans as sluggish = 200ms. a reaction response slower than this value will be perceived as having to wait
+latency numbers -- frontend -- shortest duration of time perceived by humans as time having passed = 40-80ms. response below this duration means that your user will perceive the response as instant
 latency numbers -- frontend https://vercel.com/blog/latency-numbers-every-web-developer-should-know
 latency numbers https://brenocon.com/dean_perf.html
 limiting -- content limiting = ex. only X Gb of storage

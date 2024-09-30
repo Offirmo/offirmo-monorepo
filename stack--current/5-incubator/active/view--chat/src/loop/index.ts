@@ -2,81 +2,174 @@ import is_promise from 'is-promise'
 import { type Immutable } from '@offirmo-private/ts-types'
 
 import { type ChatPrimitives } from '../implementation/types.js'
-import { type Step } from '../types/index.js'
+import { type Step, StepType } from '../types/index.js'
 import { create_dummy_progress_promise } from '../utils/index.js'
 import { StepsGenerator } from './types.js'
 
 /////////////////////////////////////////////////
 
 interface Options<ContentType> {
-	DEBUG: boolean
 	gen_next_step: StepsGenerator<ContentType>
 	primitives: ChatPrimitives<ContentType>
-	//inter_msg_delay_ms: number
-	//after_input_delay_ms: number
-	//to_prettified_str: (x: any) => string
+
+	// TODO review! merge?
+	inter_msg_delay_ms?: number // standard time between steps
+	after_input_delay_ms?: number // time we should pretend to process the user input
+
+	DEBUG?: boolean
+	DEBUG_to_prettified_str?: (x: any) => any
 }
 
+const LIB = 'chat_loop'
+
+// TODO one day expose state for React
+// state = err | step | answer | progress...
+
 function create<ContentType>({
-	DEBUG,
 	gen_next_step,
 	primitives,
-	//inter_msg_delay_ms = 0,
-	//after_input_delay_ms = 0,
-	//to_prettified_str = x => x, // work with browser
+	inter_msg_delay_ms = 0,
+	after_input_delay_ms = 0, // TODO better defaults
+	DEBUG = false,
+	DEBUG_to_prettified_str = (x: any) => x, // work with browser
 }: Options<ContentType>) {
-	if (DEBUG) console.log('↘ chat_loop.create()')
+	if (DEBUG) console.log(`↘ ${LIB}.create()`)
 
 	async function start() {
-		if (DEBUG) console.log('↘ chat_loop.start()')
+		if (DEBUG) console.log(`↘ ${LIB}.start()`)
 
 		try {
 			await primitives.setup()
 
 			let should_exit = false
-			let last_step = undefined // just in case
-			let last_answer = undefined // just in case
+			let last_step = undefined
+			let last_answer = undefined
+
 			do {
 				const step_start_timestamp_ms = +new Date()
 				const raw_yielded_step = gen_next_step.next({last_step, last_answer})
-				console.log('raw_yielded_step', raw_yielded_step)
+				//console.log(`[${LIB}]`, { raw_yielded_step })
 
 				// TODO can be a promise?
 				const yielded_step: any = is_promise(raw_yielded_step)
 					? await primitives.spin_until_resolution(raw_yielded_step as any)
 					: raw_yielded_step
-				console.log('yielded_step', yielded_step)
+				//console.log(`[${LIB}]`, {yielded_step})
 
 				const { value: raw_step, done } = yielded_step
 				if (done) {
 					should_exit = true
 					continue
 				}
+				const step: Step<ContentType> = raw_step
 
-				console.log('about to execute step', raw_step)
-				throw new Error(`NIMP!`)
-
-				/*
-				const step = normalize_step(raw_step)
+				// TODO process the separation with the previous step
 				const elapsed_time_ms = (+new Date()) - step_start_timestamp_ms
+				/*
 				if (is_step_input(last_step)) {
 					// pretend to have processed the user answer
 					await primitives.pretend_to_think(Math.max(0, after_input_delay_ms - elapsed_time_ms))
 				}
-
-				last_answer = await execute_step(step)
-				last_step = step
 				*/
+
+				//console.log(`[${LIB}] about to execute step`, step)
+				const answer = await execute_step(step)
+
+				last_answer = answer
+				last_step = step
 			} while (!should_exit)
 		}
 		catch (err) {
-			if (DEBUG) console.error('chat_loop encountered error:', err)
+			if (DEBUG) console.error(`[${LIB}] encountered error:`, err)
 			throw err
 		}
 		finally {
 			await primitives.teardown()
 		}
 	}
+
+	async function execute_step(step: Step<ContentType>) {
+		if (DEBUG) console.log('↘ ${LIB}.execute_step(\n', DEBUG_to_prettified_str(step), '\n)')
+
+		//const step = normalize_step(raw_step)
+
+		switch (step.type) {
+			case StepType.simple_message:
+				await primitives.pretend_to_think({duration_ms: inter_msg_delay_ms})
+				await primitives.display_message({ msg: step.msg })
+				break
+
+			case StepType.perceived_labor:
+				await primitives.pretend_to_work({
+					msg_before: step.msg_before || 'Please wait…',
+					duration_ms: step.duration_ms || 1200, // 200ms = minimum time to be perceived as work
+					msg_after: step.msg_after || 'Done!',
+				})
+				break
+
+			case StepType.progress: {
+				let result: any = undefined
+				let error: Error | undefined = undefined
+
+				await primitives.display_task({
+						msg_before: step.msg_before || 'Processing…',
+						promise: step.promise,
+						msg_after: step.msg_after || ((success: boolean, result: any) => {
+							if (success)
+								return 'Done!'
+							else
+								return `Failed! ("${result?.message}")`
+						}),
+					})
+					.then(
+						(_res) => {
+							result = _res
+							return true
+						},
+						(_err) => {
+							error = _err as any // TODO one day coerce to error using error utils
+							return false
+						})
+					.then(success => {
+						if (step.callback)
+							step.callback(success, result || error)
+					})
+				break
+			}
+
+/*
+
+			case 'ask_for_confirmation':
+			case 'ask_for_string':
+			case 'ask_for_choice': {
+				await primitives.pretend_to_think(inter_msg_delay_ms)
+				const answer = await ask_user(step)
+
+				let reported = false
+				if (step.choices.length) {
+					const selected_choice = step.choices.find(choice => choice.value === answer)
+					if (selected_choice.callback) {
+						await selected_choice.callback(answer)
+						reported = true
+					}
+				}
+				if (!reported && step.callback) {
+					await step.callback(answer)
+					reported = true
+				}
+				if (!reported) {
+					const err = new Error('CNF reporting callback in ask for result!')
+					err.step = step
+					throw err
+				}
+				return answer
+			}*/
+			default:
+				throw new Error(`Unsupported step type: "${step.type}"!`)
+		}
+	}
+
+
 /*
 	async function ask_user(step) {
 		if (DEBUG) console.log('↘ ask_user(\n', to_prettified_str(step, {outline: true}), '\n)')
@@ -109,61 +202,8 @@ function create<ContentType>({
 
 		return answer
 	}
+*/
 
-	async function execute_step(step) {
-		if (DEBUG) console.log('↘ execute_step(\n', to_prettified_str(step, {outline: true}), '\n)')
-
-		switch (step.type) {
-			case 'simple_message':
-				await primitives.pretend_to_think(inter_msg_delay_ms)
-				await primitives.display_message({ msg: step.msg_main })
-				break
-
-			case 'progress':
-				await primitives.display_progress({
-					progress_promise: step.progress_promise
-							|| create_dummy_progress_promise({ DURATION_MS: step.duration_ms }),
-					msg: step.msg_main,
-					msgg_acknowledge: step.msgg_acknowledge,
-				})
-					.then(() => true, () => false)
-					.then(success => {
-						if (step.callback)
-							step.callback(success)
-					})
-				break
-
-			case 'ask_for_confirmation':
-			case 'ask_for_string':
-			case 'ask_for_choice': {
-				await primitives.pretend_to_think(inter_msg_delay_ms)
-				const answer = await ask_user(step)
-
-				let reported = false
-				if (step.choices.length) {
-					const selected_choice = step.choices.find(choice => choice.value === answer)
-					if (selected_choice.callback) {
-						await selected_choice.callback(answer)
-						reported = true
-					}
-				}
-				if (!reported && step.callback) {
-					await step.callback(answer)
-					reported = true
-				}
-				if (!reported) {
-					const err = new Error('CNF reporting callback in ask for result!')
-					err.step = step
-					throw err
-				}
-				return answer
-			}
-			default:
-				throw new Error(`Unsupported step type: "${step.type}"!`)
-		}
-	}
-
- */
 	return {
 		start,
 	}
