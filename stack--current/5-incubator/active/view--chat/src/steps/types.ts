@@ -15,7 +15,7 @@ export type StepType = Enum<typeof StepType> // eslint-disable-line no-redeclare
 
 /////////////////////////////////////////////////
 
-// TODO more async?? everything?
+// TODO more async?? callbacks? everything?
 
 interface BaseStep {
 	// TODO needed?
@@ -57,6 +57,7 @@ interface AskForConfirmationStep<ContentType> extends BaseStep {
 	callback?: (confirmation: boolean) => void
 }
 
+// inspired by <input> https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
 // TODO refine
 // TODO select between choices
 // TODO types
@@ -64,9 +65,11 @@ interface InputStep<ContentType, T = string> extends BaseStep {
 	type: typeof StepType.input
 
 	prompt: ContentType | string
-	normalizer?: (raw: T) => T
-	msg_as_user: (value: T) => ContentType | string
+	placeholder?: ContentType | string // may be useful in input, but primitive is free to ignore it https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#placeholder
+	default?: T
+	normalizer?: (raw: any) => T // raw is most likely string
 	validators: Array<(value: T) => [ boolean, ContentType | string ]>
+	msg_as_user: (value: T) => ContentType | string
 	msg_acknowledge: (value: T) => ContentType | string
 
 	callback?: (value: T) => void

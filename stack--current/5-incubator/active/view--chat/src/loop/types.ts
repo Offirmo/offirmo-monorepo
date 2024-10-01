@@ -1,5 +1,5 @@
 
-import { type Step } from '../types/index.js'
+import { type Step } from '../steps/index.js'
 
 /////////////////////////////////////////////////
 

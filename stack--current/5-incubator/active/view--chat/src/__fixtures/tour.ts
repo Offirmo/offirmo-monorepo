@@ -1,14 +1,17 @@
-import { type Step, StepType } from '../types/types.js'
-import { type StepsGenerator } from '../loop/types.js'
 import Deferred from '@offirmo/deferred'
+
+import { type Step, StepType } from '../steps/types.js'
+import { getꓽInputStepⵧnonEmptyString } from '../steps/bases.js'
+
+import { type StepsGenerator } from '../loop/types.js'
 
 export default function* get_next_step(skip_to_index: number = 0) {
 	console.log('get_next_step()', { skip_to_index })
 
 	const state = {
 		mode: 'main',
-		name: undefined,
-		city: undefined,
+		name: undefined as string | undefined,
+		city: undefined as string | undefined,
 	}
 
 	const warmup_promise = new Deferred<void>()
@@ -20,7 +23,7 @@ export default function* get_next_step(skip_to_index: number = 0) {
 			type: StepType.perceived_labor,
 
 			msg_before: 'Waking up...',
-			duration_ms: 2000,
+			duration_ms: 1000,
 			msg_after: 'Awoken!',
 		},
 
@@ -39,15 +42,17 @@ export default function* get_next_step(skip_to_index: number = 0) {
 			msg: 'Welcome. I’ll have a few questions…',
 		},
 
+		getꓽInputStepⵧnonEmptyString<string>({
+			prompt: 'What’s your name?',
+			msg_as_user: (value: string) => `My name is "${value}".`,
+			msg_acknowledge: (value: string) => `Thanks, ${value}!`,
+
+			callback: (value: string) => {
+				console.log(`[callback called: ${value}]`)
+				state.name = value
+			},
+		}),
 		/*
-		{
-			type: 'ask_for_string',
-			msg_main: 'What’s your name?',
-			//validator: null, // TODO
-			msgg_as_user: value => `My name is "${value}".`,
-			msgg_acknowledge: name => `Thanks for the answer, ${name}!`,
-			callback: value => { state.name = value },
-		},
 		{
 			type: 'ask_for_string',
 			msg_main: 'What city do you live in?',

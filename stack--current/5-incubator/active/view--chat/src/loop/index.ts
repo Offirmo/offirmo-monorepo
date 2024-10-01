@@ -1,8 +1,9 @@
 import is_promise from 'is-promise'
 import { type Immutable } from '@offirmo-private/ts-types'
+import {} from '@offirmo-private/normalize-string'
 
 import { type ChatPrimitives } from '../implementation/types.js'
-import { type Step, StepType } from '../types/index.js'
+import { type Step, StepType } from '../steps/index.js'
 import { create_dummy_progress_promise } from '../utils/index.js'
 import { StepsGenerator } from './types.js'
 
@@ -89,7 +90,7 @@ function create<ContentType>({
 	}
 
 	async function execute_step(step: Step<ContentType>) {
-		if (DEBUG) console.log('↘ ${LIB}.execute_step(\n', DEBUG_to_prettified_str(step), '\n)')
+		if (DEBUG) console.log('↘ ${LIB}.execute_step(', DEBUG_to_prettified_str(step), ')')
 
 		//const step = normalize_step(raw_step)
 
@@ -110,30 +111,30 @@ function create<ContentType>({
 			case StepType.progress: {
 				let result: any = undefined
 				let error: Error | undefined = undefined
+				let success = false
+				step.promise.then(
+					(_res) => {
+						success = true
+						result = _res
+					},
+					(_err) => {
+						success = false
+						error = _err as any // TODO one day coerce to error using error utils
+					})
 
 				await primitives.display_task({
 						msg_before: step.msg_before || 'Processing…',
 						promise: step.promise,
 						msg_after: step.msg_after || ((success: boolean, result: any) => {
 							if (success)
-								return 'Done!'
+								return '✔ Success'
 							else
-								return `Failed! ("${result?.message}")`
+								return `✖ Failed ("${result?.message}")`
 						}),
 					})
-					.then(
-						(_res) => {
-							result = _res
-							return true
-						},
-						(_err) => {
-							error = _err as any // TODO one day coerce to error using error utils
-							return false
-						})
-					.then(success => {
-						if (step.callback)
-							step.callback(success, result || error)
-					})
+
+				if (step.callback)
+					step.callback(success, result || error)
 				break
 			}
 
@@ -165,6 +166,7 @@ function create<ContentType>({
 				return answer
 			}*/
 			default:
+				console.error(`Unsupported step type: "${step.type}"!`, step)
 				throw new Error(`Unsupported step type: "${step.type}"!`)
 		}
 	}

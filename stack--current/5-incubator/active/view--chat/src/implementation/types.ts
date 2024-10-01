@@ -2,7 +2,7 @@ import { Enum } from 'typescript-string-enums'
 import { PProgress as PromiseWithProgress } from 'p-progress'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { type TaskProgressStep } from '../types/types.js'
+import { type TaskProgressStep } from '../steps/types.js'
 
 /////////////////////////////////////////////////
 
@@ -30,9 +30,9 @@ interface ChatPrimitives<ContentType> {
 	//read_answer(step) TODO clarify
 
 	display_task(p: {
-		msg_before: TaskProgressStep<ContentType>['msg_before'],
+		msg_before: ContentType | string,
 		promise: TaskProgressStep<ContentType>['promise'],
-		msg_after: TaskProgressStep<ContentType>['msg_after'],
+		msg_after: NonNullable<TaskProgressStep<ContentType>['msg_after']>,
 	}): Promise<void>
 
 	// while we wait for the next step.

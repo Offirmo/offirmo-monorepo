@@ -16,6 +16,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/normalize-string": "*",
 		"@offirmo-private/ts-types": "*",
 		"is-promise": "^4",
 		"p-progress": "^1",

@@ -4,7 +4,7 @@ import primitives from '../__fixtures/primitives--console.js'
 import { create } from './index.js'
 
 const chat = create({
-	DEBUG: true,
+	DEBUG: false,
 	gen_next_step: generator_func() as any,
 	primitives,
 })
