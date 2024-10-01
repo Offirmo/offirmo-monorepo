@@ -12,6 +12,7 @@
 [ ] security https://portswigger.net/web-security/all-topics
 [ ] security https://xsleaks.dev/
 [ ] TODO shearing layers https://en.wikipedia.org/wiki/Shearing_layers
+abort controller https://kettanaito.com/blog/dont-sleep-on-abort-controller
 AJAX (Asynchronous JavaScript And XML) = LEGACY interactive web apps now fetch + json
 AMP (Accelerated Mobile Pages)
 animations -- API https://devdocs.io/dom/web_animations_api

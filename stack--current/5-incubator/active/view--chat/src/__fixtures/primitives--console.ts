@@ -1,14 +1,18 @@
 /** trivial console-based chat primitives for testing
  * no need to be fancy.
  */
-import { type ChatPrimitives } from '../implementation/types.js'
+import * as readline from 'node:readline/promises'
+import { stdin as input, stdout as output } from 'node:process'
+const rl = readline.createInterface({ input, output })
+
+import { type ChatPrimitives, type InputParameters } from '../primitives/types.js'
+import type { InputStep } from '../steps'
+import { Parameters } from '@offirmo-private/storypad/src/types/csf'
 
 const DEBUG = false
 
 const CHAT_CONSOLE: ChatPrimitives<string> = {
-	setup: async () => {
-		DEBUG && console.log('[ChatPrimitives.setup()]')
-	},
+
 
 	display_message: async ({msg, choices}) => {
 		DEBUG && console.log('[ChatPrimitives.display_message()]')
@@ -39,8 +43,6 @@ const CHAT_CONSOLE: ChatPrimitives<string> = {
 		console.log('↳ ' + msg_after)
 	},
 
-	//read_answer: async () => { throw new Error('NO UI read_answer') },
-
 	display_task: async ({
 		msg_before,
 		promise,
@@ -63,6 +65,19 @@ const CHAT_CONSOLE: ChatPrimitives<string> = {
 		console.log('↳ ' + msg_after(success, result || error))
 	},
 
+	input: async <T>({
+		prompt,
+
+		// we ignore the rest in this primitive implementation
+		input_type,
+		default_value,
+		placeholder,
+		normalizer,
+		validators,
+	}: InputParameters<string, T>): Promise<string> => {
+		return rl.question(prompt + ' ')
+	},
+
 	spin_until_resolution: async ({promise}) => {
 		DEBUG && console.log('[ChatPrimitives.spin_until_resolution(...)]')
 
@@ -72,6 +87,9 @@ const CHAT_CONSOLE: ChatPrimitives<string> = {
 		return promise
 	},
 
+	setup: async () => {
+		DEBUG && console.log('[ChatPrimitives.setup()]')
+	},
 	teardown: async () => {
 		DEBUG && console.log('[ChatPrimitives.teardown()]')
 	},

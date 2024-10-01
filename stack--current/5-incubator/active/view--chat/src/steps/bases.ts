@@ -11,6 +11,7 @@ function getꓽInputStepⵧnonEmptyString<ContentType>(
 ): InputStep<ContentType, string> {
 	const step: InputStep<ContentType, string> = {
 		type: StepType.input,
+		input_type: 'text',
 
 		normalizer: (raw: any): string => {
 			let val = ensure_string(raw)

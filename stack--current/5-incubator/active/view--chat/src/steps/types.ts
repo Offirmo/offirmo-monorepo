@@ -5,11 +5,14 @@ import { type Immutable } from '@offirmo-private/ts-types'
 /////////////////////////////////////////////////
 
 export const StepType = Enum(
+	// output
 	'simple_message',
 	'perceived_labor',
-	'ask_for_confirmation',
 	'progress',
+
+	// input
 	'input',
+	'select',
 )
 export type StepType = Enum<typeof StepType> // eslint-disable-line no-redeclare
 
@@ -47,26 +50,16 @@ interface TaskProgressStep<ContentType, T = any> extends BaseStep {
 	callback?: (success: boolean, result: T | Error) => void
 }
 
-// TODO merge with input?
-interface AskForConfirmationStep<ContentType> extends BaseStep {
-	type: typeof StepType.ask_for_confirmation
-
-	prompt?: string
-	msg_after?: (confirmation: boolean) => ContentType | string
-
-	callback?: (confirmation: boolean) => void
-}
-
 // inspired by <input> https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
-// TODO refine
-// TODO select between choices
-// TODO types
 interface InputStep<ContentType, T = string> extends BaseStep {
 	type: typeof StepType.input
 
 	prompt: ContentType | string
+	input_type?: // hint to use for HTML input, primitive is free to use or ignore https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
+		| 'text'
+		| 'checkbox' // = confirmation
 	placeholder?: ContentType | string // may be useful in input, but primitive is free to ignore it https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#placeholder
-	default?: T
+	default_value?: T
 	normalizer?: (raw: any) => T // raw is most likely string
 	validators: Array<(value: T) => [ boolean, ContentType | string ]>
 	msg_as_user: (value: T) => ContentType | string
@@ -75,12 +68,34 @@ interface InputStep<ContentType, T = string> extends BaseStep {
 	callback?: (value: T) => void
 }
 
+// inspired by <select> https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
+interface SelectStep<ContentType, T = string> extends BaseStep {
+	type: typeof StepType.select
+
+	prompt?: ContentType | string
+	placeholder?: ContentType | string // may be useful in input, but primitive is free to ignore it https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#placeholder
+	default_value?: T
+	options: {
+		[key: string]: { // key will be used as display if none provided
+			value: T,
+			display?: ContentType | string
+			callback?: (value: T) => void // optional dedicated callback
+		}
+	}
+
+	msg_as_user: (value: T) => ContentType | string
+	msg_acknowledge: (value: T) => ContentType | string
+
+	callback?: (value: T) => void
+}
+
+
 type Step<ContentType> =
 	| SimpleMessageStep<ContentType>
 	| PerceivedLaborStep<ContentType>
 	| TaskProgressStep<ContentType>
-	| AskForConfirmationStep<ContentType>
 	| InputStep<ContentType>
+	| SelectStep<ContentType>
 
 /////////////////////////////////////////////////
 
@@ -88,8 +103,8 @@ export {
 	type SimpleMessageStep,
 	type PerceivedLaborStep,
 	type TaskProgressStep,
-	type AskForConfirmationStep,
 	type InputStep,
+	type SelectStep,
 	type Step,
 
 	// for convenience

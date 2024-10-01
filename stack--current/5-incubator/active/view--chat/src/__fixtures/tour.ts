@@ -15,7 +15,7 @@ export default function* get_next_step(skip_to_index: number = 0) {
 	}
 
 	const warmup_promise = new Deferred<void>()
-	setTimeout(() => warmup_promise.reject(new Error('Failed!')), 3000)
+	setTimeout(() => warmup_promise.reject(new Error('Failed!')), 1000)
 
 	const STEPS: Array<Step<string>> = [
 
@@ -23,16 +23,16 @@ export default function* get_next_step(skip_to_index: number = 0) {
 			type: StepType.perceived_labor,
 
 			msg_before: 'Waking up...',
-			duration_ms: 1000,
+			duration_ms: 500,
 			msg_after: 'Awoken!',
 		},
 
 		{
 			type: StepType.progress,
 
-			msg_before: 'Warming up...',
+			msg_before: 'Dialing home...',
 			promise: warmup_promise,
-			msg_after: success => success ? '✔ Ready!' : '❌ Warm up unsuccessful.',
+			msg_after: success => success ? '✔ Ready!' : '❌ Dial up unsuccessful.',
 
 			callback: success => console.log(`[callback called: ${success}]`),
 		},

@@ -2,7 +2,7 @@ import is_promise from 'is-promise'
 import { type Immutable } from '@offirmo-private/ts-types'
 import {} from '@offirmo-private/normalize-string'
 
-import { type ChatPrimitives } from '../implementation/types.js'
+import { type ChatPrimitives } from '../primitives/types.js'
 import { type Step, StepType } from '../steps/index.js'
 import { create_dummy_progress_promise } from '../utils/index.js'
 import { StepsGenerator } from './types.js'
@@ -67,6 +67,7 @@ function create<ContentType>({
 				// TODO process the separation with the previous step
 				const elapsed_time_ms = (+new Date()) - step_start_timestamp_ms
 				/*
+				await primitives.pretend_to_think(inter_msg_delay_ms)
 				if (is_step_input(last_step)) {
 					// pretend to have processed the user answer
 					await primitives.pretend_to_think(Math.max(0, after_input_delay_ms - elapsed_time_ms))
@@ -92,11 +93,12 @@ function create<ContentType>({
 	async function execute_step(step: Step<ContentType>) {
 		if (DEBUG) console.log('↘ ${LIB}.execute_step(', DEBUG_to_prettified_str(step), ')')
 
+
 		//const step = normalize_step(raw_step)
 
 		switch (step.type) {
+
 			case StepType.simple_message:
-				await primitives.pretend_to_think({duration_ms: inter_msg_delay_ms})
 				await primitives.display_message({ msg: step.msg })
 				break
 
@@ -138,12 +140,43 @@ function create<ContentType>({
 				break
 			}
 
+			case StepType.input: {
+				let answer: any = ''
+				let is_valid: boolean = false // so far
+
+				do {
+					// not printing the prompt as the underlying <input> is better suited to do it
+					const raw_answer = await primitives.input(step)
+					if (DEBUG) console.log(`↖ input(…) result =`, DEBUG_to_prettified_str(raw_answer))
+					answer = step.normalizer ? step.normalizer(raw_answer) : raw_answer
+					const validations = step.validators.map(validator => validator(answer))
+					is_valid = validations.every(([is_valid]) => is_valid)
+					if (!is_valid) {
+						const failed_validations = validations.filter(([is_valid]) => !is_valid)
+						await Promise.all(
+							failed_validations
+								.map(([_, msg]) => primitives.display_message({msg}))
+						)
+					}
+				} while (!is_valid)
+
+				let ೱcallback = Promise.resolve(step.callback?.(answer))
+				let ೱfeedback = primitives.display_message({
+						msg: step.msg_as_user?.(answer) || `My answer is: "${answer}".`,
+					})
+					.then(() => primitives.pretend_to_think({duration_ms: after_input_delay_ms}))
+					.then(() => primitives.display_message({
+						msg: step.msg_acknowledge?.(answer) || 'Got it.',
+					}))
+				await Promise.all([ೱcallback, ೱfeedback])
+
+				break
+			}
 /*
 
 			case 'ask_for_confirmation':
 			case 'ask_for_string':
 			case 'ask_for_choice': {
-				await primitives.pretend_to_think(inter_msg_delay_ms)
 				const answer = await ask_user(step)
 
 				let reported = false
