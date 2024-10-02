@@ -2,7 +2,7 @@ import { Enum } from 'typescript-string-enums'
 import { PProgress as PromiseWithProgress } from 'p-progress'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { type TaskProgressStep, type InputStep } from '../steps/types.js'
+import { type TaskProgressStep, type InputStep, type SelectStep, StepType } from '../steps/types.js'
 
 /////////////////////////////////////////////////
 
@@ -10,12 +10,26 @@ import { type TaskProgressStep, type InputStep } from '../steps/types.js'
 interface InputParameters<ContentType, T> {
 	// everything needed for an <input>
 	// primitive is free to ignore some params if not needed/supported
-	prompt: ContentType | string, // required to be displayed if present
+	prompt: ContentType | string,
 	input_type?: InputStep<ContentType, T>['input_type'],
 	default_value?: T,
 	placeholder?: ContentType | string,
 	normalizer?: (raw: any) => T // raw is most likely string,
 	validators: Array<(value: T) => [ boolean, ContentType | string ]>,
+}
+interface SelectParameters<ContentType, T> {
+	// everything needed for a <select>
+	// primitive is free to ignore some params if not needed/supported
+	prompt: ContentType | string
+	default_value?: T
+	options: {
+		// Choices should be displayed following key insertion order.
+		// key will be used as display if none provided.
+		[key: string]: {
+			value: T,
+			cta?: ContentType | string
+		}
+	}
 }
 
 // primitives should always accept string = common lowest denominator
@@ -26,7 +40,6 @@ interface ChatPrimitives<ContentType> {
 	// core primitives
 	display_message(p: {
 		msg: ContentType | string,
-		choices?: Array<ContentType | string>
 	}): Promise<void>
 
 	// a staple of chat interfaces
@@ -49,6 +62,8 @@ interface ChatPrimitives<ContentType> {
 	// caller must be ready to process the result
 	input<T>(p: InputParameters<ContentType, T>): Promise<T | string>
 
+	select<T>(p: SelectParameters<ContentType, T>): Promise<T>
+
 	// while we wait for the next step.
 	// wraps the promise, should return it
 	// TODO clarify
@@ -65,5 +80,7 @@ interface ChatPrimitives<ContentType> {
 
 export {
 	type InputParameters,
+	type SelectParameters,
+
 	type ChatPrimitives,
 }

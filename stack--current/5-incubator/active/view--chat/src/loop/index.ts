@@ -1,10 +1,9 @@
 import is_promise from 'is-promise'
 import { type Immutable } from '@offirmo-private/ts-types'
-import {} from '@offirmo-private/normalize-string'
+import assert from 'tiny-invariant'
 
 import { type ChatPrimitives } from '../primitives/types.js'
 import { type Step, StepType } from '../steps/index.js'
-import { create_dummy_progress_promise } from '../utils/index.js'
 import { StepsGenerator } from './types.js'
 
 /////////////////////////////////////////////////
@@ -172,6 +171,31 @@ function create<ContentType>({
 
 				break
 			}
+
+			case StepType.select: {
+				const keys = Object.keys(step.options)
+				assert(keys.length, 'Missing options in select step!')
+				if (step.default_value) {
+					assert(keys.some(key => step.options[key]!.value === step.default_value), 'Default value should be one of the options!')
+				}
+
+				const chosen_value = await primitives.select({
+					prompt: 'Please select an option:',
+					...step
+				})
+
+				let ೱcallback = Promise.resolve(step.callback?.(chosen_value))
+				let ೱfeedback = primitives.display_message({
+						msg: step.msg_as_user?.(chosen_value) || `My answer is: "${chosen_value}".`,
+					})
+					.then(() => primitives.pretend_to_think({duration_ms: after_input_delay_ms}))
+					.then(() => primitives.display_message({
+						msg: step.msg_acknowledge?.(chosen_value) || 'Got it.',
+					}))
+				await Promise.all([ೱcallback, ೱfeedback])
+
+				break
+			}
 /*
 
 			case 'ask_for_confirmation':
@@ -199,8 +223,8 @@ function create<ContentType>({
 				return answer
 			}*/
 			default:
-				console.error(`Unsupported step type: "${step.type}"!`, step)
-				throw new Error(`Unsupported step type: "${step.type}"!`)
+				console.error(`Unsupported step type: "${(step as any)?.type}"!`, step)
+				throw new Error(`Unsupported step type: "${(step as any)?.type}"!`)
 		}
 	}
 

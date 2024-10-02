@@ -1,9 +1,10 @@
 import Deferred from '@offirmo/deferred'
 
 import { type Step, StepType } from '../steps/types.js'
-import { getꓽInputStepⵧnonEmptyString } from '../steps/bases.js'
+import { getꓽInputStepⵧnonEmptyString, getꓽInputStepⵧconfirmation } from '../steps/bases.js'
 
 import { type StepsGenerator } from '../loop/types.js'
+
 
 export default function* get_next_step(skip_to_index: number = 0) {
 	console.log('get_next_step()', { skip_to_index })
@@ -27,12 +28,12 @@ export default function* get_next_step(skip_to_index: number = 0) {
 			msg_after: 'Awoken!',
 		},
 
-		{
+		/*{
 			type: StepType.progress,
 
 			msg_before: 'Dialing home...',
 			promise: warmup_promise,
-			msg_after: success => success ? '✔ Ready!' : '❌ Dial up unsuccessful.',
+			msg_after: success => success ? '✔ Ready!' : ' ✖ Dial up unsuccessful.',
 
 			callback: success => console.log(`[callback called: ${success}]`),
 		},
@@ -51,16 +52,11 @@ export default function* get_next_step(skip_to_index: number = 0) {
 				console.log(`[callback called: ${value}]`)
 				state.name = value
 			},
+		}),*/
+
+		getꓽInputStepⵧconfirmation<string>({
+			callback: confirmed => console.log(`[callback called: `, confirmed ? '✔ confirmed' : ' ✖ not confirmed'),
 		}),
-		/*
-		{
-			type: 'ask_for_string',
-			msg_main: 'What city do you live in?',
-			msgg_as_user: value => `I live in "${value}".`,
-			msgg_acknowledge: value => `${value}, a fine city indeed!`,
-			callback: value => { state.city = value },
-		},
-		*/
 
 		{
 			type: StepType.simple_message,
@@ -69,23 +65,8 @@ export default function* get_next_step(skip_to_index: number = 0) {
 		{
 			type: StepType.perceived_labor,
 			msg_before: 'Calling server...',
-			duration_ms: 1000,
+			duration_ms: 500,
 		},
-		/*
-		{
-			msg_main: 'Please choose between 1 and 2?',
-			callback: value => { state.mode = value },
-			choices: [
-				{
-					msg_cta: 'Choice 1',
-					value: 1,
-				},
-				{
-					msg_cta: 'Choice 2',
-					value: 2,
-				},
-			],
-		},*/
 		{
 			type: StepType.simple_message,
 			msg: 'Thanks, good bye.',

@@ -5,7 +5,7 @@ import * as readline from 'node:readline/promises'
 import { stdin as input, stdout as output } from 'node:process'
 const rl = readline.createInterface({ input, output })
 
-import { type ChatPrimitives, type InputParameters } from '../primitives/types.js'
+import { type ChatPrimitives, type InputParameters, type SelectParameters } from '../primitives/types.js'
 import type { InputStep } from '../steps'
 import { Parameters } from '@offirmo-private/storypad/src/types/csf'
 
@@ -14,13 +14,9 @@ const DEBUG = false
 const CHAT_CONSOLE: ChatPrimitives<string> = {
 
 
-	display_message: async ({msg, choices}) => {
-		DEBUG && console.log('[ChatPrimitives.display_message()]')
-
+	display_message: async ({msg}) => {
+		DEBUG && console.log('[ChatPrimitives.display_message(…)]')
 		console.log(msg)
-		if (choices) {
-			console.log('Choices:', choices)
-		}
 	},
 
 	pretend_to_think: async ({duration_ms}) => {
@@ -48,7 +44,7 @@ const CHAT_CONSOLE: ChatPrimitives<string> = {
 		promise,
 		msg_after,
 	}) => {
-		DEBUG && console.log('[ChatPrimitives.display_task(...)]')
+		DEBUG && console.log('[ChatPrimitives.display_task(…)]')
 
 		console.log(msg_before)
 		let result: any = undefined
@@ -67,15 +63,48 @@ const CHAT_CONSOLE: ChatPrimitives<string> = {
 
 	input: async <T>({
 		prompt,
-
-		// we ignore the rest in this primitive implementation
-		input_type,
-		default_value,
-		placeholder,
-		normalizer,
-		validators,
+		// we ignore the rest in this basic implementation
 	}: InputParameters<string, T>): Promise<string> => {
+		DEBUG && console.log('[ChatPrimitives.input(…)]')
 		return rl.question(prompt + ' ')
+	},
+
+	select: async <T>({
+		prompt,
+		default_value,
+		options,
+	}: SelectParameters<string, T>): Promise<T> => {
+		DEBUG && console.log('[ChatPrimitives.select(…)]')
+		const keys = Object.keys(options)
+
+
+		let is_valid = false
+		let answer: T = options[keys[0]!]!.value
+		do {
+			console.log(prompt)
+			keys.forEach((key, index) => {
+				const option = options[key]!
+				console.log(`- ${index + 1}. ${option.cta || key}`, option.value === default_value ? '(default)' : '')
+			})
+
+			const raw_input = await rl.question('Your choice? (enter a number) ')
+			console.log(`[ChatPrimitives.select(...): you said: "${raw_input}"`)
+			if (raw_input.trim() === '' && default_value !== undefined) {
+				answer = default_value
+				is_valid = true
+			}
+			else {
+				const choice = parseInt(raw_input.trim(), 10)
+				if (!Number.isInteger(choice) || choice < 1 || choice > keys.length) {
+					console.log('Invalid choice, please try again.')
+				}
+				else {
+					answer = options[keys[choice - 1]!]!.value
+					is_valid = true
+				}
+			}
+		} while (!is_valid)
+		return answer
 	},
 
 	spin_until_resolution: async ({promise}) => {
