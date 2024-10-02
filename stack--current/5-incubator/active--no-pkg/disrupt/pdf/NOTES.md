@@ -78,6 +78,9 @@ https://github.com/mkdoc/mkql Markdown Query Language
 reformat? https://www.npmjs.com/package/mdquery
 https://kramdown.gettalong.org/index.html (ruby lib) interesting
 CommonMark https://blog.codinghorror.com/standard-markdown-is-now-common-markdown/
+MDX https://www.joshwcomeau.com/blog/how-i-built-my-blog-v2/
+blocks https://blocks.md/
+
 
 ## counter-example of bad design
 
@@ -139,3 +142,5 @@ need to embed binary files:
 
 Books
 https://dz4k.com/2024/new-hypermedia-systems/
+
+html hard to parse https://dbushell.com/2024/10/01/html-parser-conundrum/

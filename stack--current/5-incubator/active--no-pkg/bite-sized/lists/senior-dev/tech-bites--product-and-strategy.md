@@ -131,6 +131,17 @@ switching barriers
 switching cost
 System of Work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams
 target
+top complaints -- actual case J. -- 01 Performance and Speed
+top complaints -- actual case J. -- 02 User Interface and Usability
+top complaints -- actual case J. -- 03 Onboarding and Adoption: Simplify the onboarding process to make it easy for non-technical users to adopt the product.
+top complaints -- actual case J. -- 04 Customization and Flexibility: Enable easier project setup with templates and pre-configured workflows. Expand customization options to include tailored templates, custom fields, views, dashboards and reports, and colour coding.
+top complaints -- actual case J. -- 05 Task and Project Management Enhancements: Improve features for task dependencies and tasks that need to be tracked against multiple teams/projects. Develop spreadsheet-like views with functionalities like copy/paste, formulas, and conditional formatting.
+top complaints -- actual case J. -- 06 Reporting and Visualization: Strengthen reporting and visualization features to provide clear, customizable dashboards, project summaries, and roadmaps that can be easily interpreted by teams and executives.
+top complaints -- actual case J. -- 07 Communication and Collaboration: Improve external collaboration features to facilitate working with partners and stakeholders who may not have full access to the product
+top complaints -- actual case J. -- 08 Integration and Automation: Enhance integration capabilities with popular related tools and platforms. Improve automation features to reduce manual repetitive tasks and streamline workflows.
+top complaints -- actual case J. -- 09 Blended Features and Cross-Platform Integration: Explore the possibility of blending features from the suite to offer a more holistic project management experience.
+top complaints -- actual case J. -- 10 Training and Support: Provide dedicated training resources and support tailored for targe teams, including guides on using the product for targeted tasks.
+top complaints -- actual case J. -- 11 Positioning and Value Proposition
 try/test/graduate
 User Experience Research (UXR) https://medium.com/getting-started-in-user-experience-and-design
 vendor lock-in

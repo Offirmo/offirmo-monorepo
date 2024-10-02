@@ -85,6 +85,11 @@ back-off and retry mechanisms
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 Backends For Frontends -- composable https://bff-patterns.com/
 Backends For Frontends -- tradeoffs https://zknill.io/posts/backend-for-the-frontend/
+background jobs -- durable functions = "durable" = workflow's ability to maintain state and logic through failures, retries, and pauses. A Durable Function guarantees a start-to-finish execution; once it's started, it will eventually complete its execution regardless of any unexpected issues. https://www.inngest.com/blog/durable-functions-a-visual-javascript-primer
+background jobs -- issues -- Inefficient Error Handling: While we can implement basic retry mechanisms, it's challenging to manage complex error handling and recovery scenarios.
+background jobs -- issues -- Lack of State Management: Background jobs typically don't maintain their state between executions. If a job fails midway, it often needs to start from the beginning, potentially leading to duplicate work or inconsistent results.
+background jobs -- issues -- Long-Running Processes: Background jobs are usually designed for relatively short-lived tasks. Managing processes that may run for hours or days becomes increasingly complex.
+background jobs -- issues -- Scalability Concerns: As the number of background jobs grows, it becomes increasingly challenging to manage their execution, monitor them, and handle errors.
 backing service = any service the app consumes over the network as part of its normal operation https://12factor.net/backing-services
 backpressure
 backup
@@ -343,6 +348,8 @@ proxy server = intermediaries between client and servers. improve performance by
 PubSub = Publish-Subscribe 
 push -- long polling, server-side events (SSE), and WebSockets
 push vs pull
+rate limiting -- headers https://bitbucket.org/blog/introducing-scaled-rate-limits-for-bitbucket-cloud-api
+rate limiting -- scaled = per number of seats https://bitbucket.org/blog/introducing-scaled-rate-limits-for-bitbucket-cloud-api
 real-time -- hard real-time = a system is said to be hard real-time if it must meet strict timing constraints
 real-time -- protocols -- 01 Session Traversal Utilities for NAT (STUN) - Used to establish a direct UDP connection between two clients.
 real-time -- protocols -- 02 Traversal Using Relay around NAT (TURN) - Used to establish a relayed UDP or TCP connection between two clients. Here, the traffic must be relayed through the TURN server to bypass restrictive firewall rules, and the preference is UDP over TCP because TCP's guaranteed ordered delivery of packets implies overhead that is undesirable for real-time communications.

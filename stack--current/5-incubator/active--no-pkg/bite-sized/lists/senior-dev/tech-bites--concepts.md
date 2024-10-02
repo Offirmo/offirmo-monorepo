@@ -240,7 +240,7 @@ IDEALS -- 4 Availability over consistency
 IDEALS -- 5 Loose coupling
 IDEALS -- 6 Single responsibility
 IDEALS = principles for microservice design
-If it ain't broke, don't fix it
+if it ain't broke, don't fix it
 IIFE
 immutability
 inheritance -- diamond
@@ -278,6 +278,7 @@ languages -- weekend https://stackoverflow.blog/2017/02/07/what-programming-lang
 layer -- abstraction
 layers -- shearing
 lazy-loading
+let's deploy to production https://www.youtube.com/watch?v=5p8wTOr8AbU
 LIFO
 linked list
 linting
@@ -306,6 +307,7 @@ monolith = over time become poorly structured, containing many different, someti
 MVC (Model View Controller)
 namespace
 naming https://ntietz.com/blog/when-to-use-cute-names-or-descriptive-names/
+node.js -- principles https://www.platformatichq.com/node-principles
 not invented here https://en.wikipedia.org/wiki/Not_invented_here
 npm
 nyan cat
@@ -394,6 +396,7 @@ Scripts -- should be written using the project main language https://joaomagfrei
 scrum
 SDK (Software Development Kit)
 security -- Adhere to the principle of least privilege
+security -- bad defaults -- firebase https://env.fail/posts/firewreck-1
 security -- Be aware of buffer overflows and how to protect against them
 security -- CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-benchmarks
 security -- Compartmentalize - so your system is not all or nothing
@@ -420,6 +423,7 @@ shrinkwrap
 side-effect free
 significant change
 simple average
+single executable application "SEA" -- node https://codesnip.sh/posts/building-standalone-nodejs-executables
 single source of truth
 site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
 SLI (Service Level Indicator) = a measurement of how reliable or performant a Capability is. Example: “time it takes to create a ticket”

@@ -2,6 +2,7 @@
 +++ https://developer.mozilla.org/en-US/curriculum/
 +++ https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3 + https://medium.com/@cramforce/designing-even-larger-applications-460ee029012d
 [ ] +++ https://dev.to/anze_kop1tar/acronyms-you-should-know-when-going-to-a-job-interview-369l
+[ ] 37signals suite https://stimulus.hotwired.dev/
 [ ] advanced architecture -- Background Synchronization API
 [ ] advanced architecture -- https://devdocs.io/dom/content_index_api
 [ ] advanced architecture -- navigator.sendBeacon() for backup
@@ -18,7 +19,7 @@ AMP (Accelerated Mobile Pages)
 animations -- API https://devdocs.io/dom/web_animations_api
 APIs web
 appli web
-Application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
+application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
 architecture -- islands
 architecture -- JAMStack = "JavaScript, APIs, Markup" as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
@@ -35,8 +36,10 @@ blocking -- js -- scripts are parse blocking
 blocking -- not = async, defer, and type=module
 blocking render https://csswizardry.com/2024/08/blocking-render-why-whould-you-do-that/
 bot detection
+browser compatibility data -- watch https://bcd-watch.igalia.com/
 browsing contexts = such as several windows, iframes or even workers
 cache https://csswizardry.com/2024/08/cache-grab-how-much-are-you-leaving-on-the-table/
+case study -- 2024/09 Josh Comeau's blog https://www.joshwcomeau.com/blog/how-i-built-my-blog-v2/
 CDN
 CDN -- quality = hot/cold potato routing https://vercel.com/blog/latency-numbers-every-web-developer-should-know
 chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
@@ -101,6 +104,7 @@ CSS -- width = auto, fit-content, min-content https://courses.joshwcomeau.com/cs
 CSS -- z-index
 CSS -- zoom https://www.oddbird.net/2024/07/09/zoomies/
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
+dark patterns -- hall of shame https://hallofshame.design/
 dark patterns https://www.uxtigers.com/post/dark-design
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
 design -- guides https://owickstrom.github.io/the-monospace-web/
@@ -128,6 +132,7 @@ DOM -- Nodes -- 11 Fragment
 DOM -- Nodes -- types =  ELEMENT, ATTRIBUTE, TEXT, CDATA, PROCESSING_INSTRUCTION, COMMENT, DOCUMENT, DOCUMENT_TYPE https://devdocs.io/dom/node/nodetype
 DOM tree = Nodes = text, elements, attributes, comments... includes elements such as <body> and <table>, among many others.
 ECMAScript - European Computer Manufacturers Association Script (ES)
+emojis https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
 events -- event delegation
 flash of -- fallback font (FOFT)
 flash of -- Undefined Custom Elements (FOUCE) https://www.abeautifulsite.net/posts/flash-of-undefined-custom-elements/
@@ -136,6 +141,8 @@ fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
 fonts -- Font Friday https://pimpmytype.com/fontfriday/
 FORC "Fear of Removing CSS" = https://x-team.com/blog/forc-fear-of-removing-css
+frontend treadmill -- working closer to the web platform with a lot less complex abstractions. We need to relearn what the web is capable of and go back to that.
+frontend treadmill https://polotek.net/posts/the-frontend-treadmill/
 GraphQL
 GraphQL -- against https://bessey.dev/blog/2024/05/24/why-im-over-graphql/
 HTML -- concepts
@@ -144,6 +151,7 @@ html -- first https://html-first.com/
 html -- metadata https://github.com/wikimedia/html-metadata
 HTML -- tags
 htmx https://htmx.org/
+http "happy eyeballs" https://www.checklyhq.com/blog/how-a-tcpdump-led-us-to-a-bug-in-nodes-ipv6-handli/
 hypercard https://hypercard.org
 hypermedia
 hypertext

@@ -31,6 +31,7 @@ attention -- flash attention = ???
 BERT
 bias
 BLOOM = "BigScience Large Open-science Open-access Multilingual Language Model" = deprecated former big model
+BM25 (Best Matching 25) = a ranking function that uses lexical matching to find precise word or phrase matches. It's particularly effective for queries that include unique identifiers or technical terms https://www.anthropic.com/news/contextual-retrieval
 BPE Byte Pair Encoding is a way of converting text into tokens
 canny edge (generative AI) https://en.wikipedia.org/wiki/Canny_edge_detector
 capability stack = interaction, generation, automation, recommendation, prediction, classification, recognition
@@ -62,9 +63,9 @@ generative AI gold rush
 GLUE language understanding benchmark
 GPT "Generative Pre-trained Transformer" = understand language (natural & formal)
 Grounded Generation = see RAG
-Hallucination "Vectara's Hallucination Evaluation Model"
-Hallucination Leaderboard https://github.com/vectara/hallucination-leaderboard
-hallucinations "King Renoit" https://zapier.com/blog/ai-hallucinations/
+hallucinations -- "King Renoit" https://zapier.com/blog/ai-hallucinations/
+hallucinations -- "Vectara's Hallucination Evaluation Model"
+hallucinations -- leaderboard https://github.com/vectara/hallucination-leaderboard
 helpful, harmless and honest
 HHH helpful, honest, and harmless
 Hierarchical Navigable Small World (HNSW) = graph for vector search https://www.pinecone.io/learn/series/faiss/hnsw/
@@ -130,6 +131,7 @@ RAG 2.0 https://medium.com/towards-artificial-intelligence/rag-2-0-finally-getti
 rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-to-stay-competitive-hits-tech.html
 ReAct flow
 reasoning trace https://arstechnica.com/information-technology/2024/09/openai-threatens-bans-for-probing-new-ai-models-reasoning-process/
+regulation -- European AI act https://www.reddit.com/r/ArtificialInteligence/comments/1fqmcds/i_worked_on_the_eus_artificial_intelligence_act/
 Representation Engineering = calculating a "control vector" that can be read from or added to model activations during inference to interpret or control the model's behavior https://vgel.me/posts/representation-engineering/
 research directions -- honesty, chain-of-thought faithfulness, adversarial robustness, evals and testbeds...
 research directions -- Interpretability: How can we understand model internals? And can we use this to e.g. build an AI lie detector?

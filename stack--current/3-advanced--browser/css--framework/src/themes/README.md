@@ -44,6 +44,8 @@ Color selection
 TODO https://draculatheme.com/pro
 TODO https://vscodethemes.com/
 TODO https://iterm2colorschemes.com/ (not RGB, hard to convert)
+TODO nice one https://piccalil.li/blog/a-guide-to-destructuring-in-javascript/
+TODO cool design https://voidzero.dev/posts/announcing-voidzero-inc
 
 ### TODO
 
