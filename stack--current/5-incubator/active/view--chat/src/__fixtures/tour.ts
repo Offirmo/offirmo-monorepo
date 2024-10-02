@@ -3,16 +3,13 @@ import Deferred from '@offirmo/deferred'
 import { type Step, StepType } from '../steps/types.js'
 import { getꓽInputStepⵧnonEmptyString, getꓽInputStepⵧconfirmation } from '../steps/bases.js'
 
-import { type StepsGenerator } from '../loop/types.js'
-
-
 export default function* get_next_step(skip_to_index: number = 0) {
 	console.log('get_next_step()', { skip_to_index })
 
 	const state = {
 		mode: 'main',
 		name: undefined as string | undefined,
-		city: undefined as string | undefined,
+		klass: undefined as string | undefined,
 	}
 
 	const warmup_promise = new Deferred<void>()
@@ -23,50 +20,53 @@ export default function* get_next_step(skip_to_index: number = 0) {
 		{
 			type: StepType.perceived_labor,
 
-			msg_before: 'Waking up...',
+			msg_before: '【Faking labor…】',
 			duration_ms: 500,
-			msg_after: 'Awoken!',
+			msg_after: 'Done!',
 		},
 
-		/*{
+		{
 			type: StepType.progress,
 
-			msg_before: 'Dialing home...',
+			msg_before: '【Displaying a task’s progress…】',
 			promise: warmup_promise,
-			msg_after: success => success ? '✔ Ready!' : ' ✖ Dial up unsuccessful.',
+			msg_after: success => success ? '✔ Task done' : ' ✖ Task failed',
 
-			callback: success => console.log(`[callback called: ${success}]`),
+			callback: success => console.log(`【callback called: ${success}】`),
 		},
 
 		{
 			type: StepType.simple_message,
-			msg: 'Welcome. I’ll have a few questions…',
+			msg: '【simple message】Welcome. I’ll have a few questions…',
+		},
+
+		{
+			type: StepType.select,
+			prompt: 'Choose your class!',
+			options: {
+				paladin: {},
+				druid: {},
+				summoner: {},
+			},
+			msg_as_user: (klass: string) => `I’m a ${klass}!`,
+			msg_acknowledge: (klass: string) => `You’ll make an amazing ${klass}!`,
 		},
 
 		getꓽInputStepⵧnonEmptyString<string>({
-			prompt: 'What’s your name?',
+			prompt: '【string input】What’s your name?',
 			msg_as_user: (value: string) => `My name is "${value}".`,
 			msg_acknowledge: (value: string) => `Thanks, ${value}!`,
 
 			callback: (value: string) => {
-				console.log(`[callback called: ${value}]`)
+				console.log(`【callback called: ${value}】`)
 				state.name = value
 			},
-		}),*/
-
-		getꓽInputStepⵧconfirmation<string>({
-			callback: confirmed => console.log(`[callback called: `, confirmed ? '✔ confirmed' : ' ✖ not confirmed'),
 		}),
 
-		{
-			type: StepType.simple_message,
-			msg: 'Please wait for a moment...',
-		},
-		{
-			type: StepType.perceived_labor,
-			msg_before: 'Calling server...',
-			duration_ms: 500,
-		},
+		getꓽInputStepⵧconfirmation<string>({
+			callback: confirmed => console.log(`【callback called: `, confirmed ? '✔ confirmed' : ' ✖ not confirmed', '】'),
+		}),
+
 		{
 			type: StepType.simple_message,
 			msg: 'Thanks, good bye.',

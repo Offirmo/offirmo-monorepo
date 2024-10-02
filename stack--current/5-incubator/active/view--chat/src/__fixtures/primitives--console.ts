@@ -79,12 +79,12 @@ const CHAT_CONSOLE: ChatPrimitives<string> = {
 
 
 		let is_valid = false
-		let answer: T = options[keys[0]!]!.value
+		let answer: T = options[keys[0]!]!.value ?? (keys[0] as any)
 		do {
 			console.log(prompt)
 			keys.forEach((key, index) => {
 				const option = options[key]!
-				console.log(`- ${index + 1}. ${option.cta || key}`, option.value === default_value ? '(default)' : '')
+				console.log(`- ${index + 1}. ${option.cta || key}`, (default_value !== undefined && option.value === default_value) ? '(default)' : '')
 			})
 
 			const raw_input = await rl.question('Your choice? (enter a number) ')
@@ -99,7 +99,7 @@ const CHAT_CONSOLE: ChatPrimitives<string> = {
 					console.log('Invalid choice, please try again.')
 				}
 				else {
-					answer = options[keys[choice - 1]!]!.value
+					answer = options[keys[choice - 1]!]!.value ?? (keys[choice - 1] as any)
 					is_valid = true
 				}
 			}

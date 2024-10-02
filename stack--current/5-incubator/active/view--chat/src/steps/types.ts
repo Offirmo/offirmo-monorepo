@@ -81,8 +81,8 @@ interface SelectStep<ContentType, T = any> extends BaseStep {
 		// Choices should be displayed following key insertion order.
 		// key will be used as display if none provided.
 		[key: string]: {
-			value: T,
-			cta?: ContentType | string
+			value?: T, // if no value, will return the key
+			cta?: ContentType | string // if no CTA, will use the key
 			callback?: (value: T) => void // optional dedicated callback
 		}
 	}

@@ -26,7 +26,7 @@ interface SelectParameters<ContentType, T> {
 		// Choices should be displayed following key insertion order.
 		// key will be used as display if none provided.
 		[key: string]: {
-			value: T,
+			value?: T,
 			cta?: ContentType | string
 		}
 	}
