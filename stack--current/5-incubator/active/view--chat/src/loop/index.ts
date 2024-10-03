@@ -3,8 +3,9 @@ import { type Immutable } from '@offirmo-private/ts-types'
 import assert from 'tiny-invariant'
 
 import { type ChatPrimitives } from '../primitives/types.js'
-import { type Step, StepType } from '../steps/index.js'
+import { type Step, StepType, type TaskProgressStep } from '../steps/index.js'
 import { StepsGenerator } from './types.js'
+import { create_dummy_progress_promise } from '../utils/index.js'
 
 /////////////////////////////////////////////////
 
@@ -13,7 +14,7 @@ interface Options<ContentType> {
 	primitives: ChatPrimitives<ContentType>
 
 	// TODO review! merge?
-	inter_msg_delay_ms?: number // standard time between steps
+	//inter_msg_delay_ms?: number // standard time between steps
 	after_input_delay_ms?: number // time we should pretend to process the user input
 
 	DEBUG?: boolean
@@ -28,7 +29,7 @@ const LIB = 'chat_loop'
 function create<ContentType>({
 	gen_next_step,
 	primitives,
-	inter_msg_delay_ms = 0,
+	//inter_msg_delay_ms = 0,
 	after_input_delay_ms = 0, // TODO better defaults
 	DEBUG = false,
 	DEBUG_to_prettified_str = (x: any) => x, // work with browser
@@ -101,13 +102,16 @@ function create<ContentType>({
 				await primitives.display_message({ msg: step.msg })
 				break
 
-			case StepType.perceived_labor:
-				await primitives.pretend_to_work({
-					msg_before: step.msg_before || 'Please wait…',
-					duration_ms: step.duration_ms || 1200, // 200ms = minimum time to be perceived as work
-					msg_after: step.msg_after || 'Done!',
-				})
-				break
+			case StepType.perceived_labor: {
+				// we pretend there is a task, so let's use a fake task
+				const task_step: TaskProgressStep<ContentType, void> = {
+					type: StepType.progress,
+					promise: create_dummy_progress_promise({
+						DURATION_MS: step.duration_ms || 1200, // 200ms = minimum time to be perceived as work
+					}),
+				}
+				return execute_step(task_step)
+			}
 
 			case StepType.progress: {
 				let result: any = undefined
@@ -273,3 +277,4 @@ function create<ContentType>({
 export {
 	create,
 }
+export * from './types.js'

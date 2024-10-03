@@ -1,3 +1,4 @@
+
 6 Reasons Users Hate Your New Feature https://www.slicedbreaddesign.com/blog/6-reasons-users-hate-your-new-feature
 [ ] https://skamille.medium.com/
 [ ] personal MBA
@@ -9,6 +10,7 @@ average revenue per user (ARPU)
 boring -- culture 
 boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
 boring -- technology https://mcfunley.com/choose-boring-technology
+brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
 business as a by-product https://www.linkedin.com/posts/jason-fried_ive-always-thought-of-business-as-a-by-product-activity-7236805665627717632-_s96
 churn
 computers should adapt to users = not necessarily if the solution is good (ex. typing on a keyboard, Palm Graffiti) https://www.creativitypost.com/technology/the_memory_prediction_framework_of_intelligence_and_the_subject_of_creativi

@@ -30,6 +30,7 @@ interface SimpleMessageStep<ContentType> extends BaseStep {
 	msg: ContentType | string
 }
 
+// TODO is it redundant with progress?
 interface PerceivedLaborStep<ContentType> extends BaseStep {
 	type: typeof StepType.perceived_labor
 

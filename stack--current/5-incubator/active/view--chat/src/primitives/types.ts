@@ -38,19 +38,12 @@ interface ChatPrimitives<ContentType> {
 
 	/////////////////////////////////////////////////
 	// core primitives
-	display_message(p: {
-		msg: ContentType | string,
-	}): Promise<void>
+
+	display_message(p: { msg: ContentType | string }): Promise<void>
 
 	// a staple of chat interfaces
 	// to be used between steps
-	pretend_to_think(p: {duration_ms: number}): Promise<void>
-
-	pretend_to_work(p: {
-		msg_before: ContentType | string,
-		duration_ms: number,
-		msg_after: ContentType | string,
-	}): Promise<void>
+	pretend_to_think(p: { duration_ms: number }): Promise<void>
 
 	display_task(p: {
 		msg_before: ContentType | string,

@@ -1,12 +1,12 @@
 import generator_func from '../__fixtures/tour.js'
-import primitives from '../__fixtures/primitives--console.js'
+import { ChatPrimitivesConsole } from '../__fixtures/primitives--console.js'
 
 import { create } from './index.js'
 
 const chat = create({
 	DEBUG: false,
 	gen_next_step: generator_func() as any,
-	primitives,
+	primitives: new ChatPrimitivesConsole(),
 })
 
 await chat.start()

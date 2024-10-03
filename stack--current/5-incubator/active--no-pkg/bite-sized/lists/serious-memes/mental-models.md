@@ -6,6 +6,7 @@
 0-sum game
 1 or 2 way door
 12 steps
+1st thought v.s 2nd thought
 3 hardest things to say -- I was wrong, I need help, I love you -> also 10 https://kristyna.co/mindful-entrepreneurship/10-hardest-things-for-people-to-say
 3 Strikes and You're Out = Californian law https://lao.ca.gov/analysis_1995/3strikes.html
 3-strike pivot strategy -- Strike 1: Identify and try to address the issue directly
@@ -45,11 +46,10 @@ Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 base rate: The average outcome for an event over time. They’re like batting averages for life, and they work best with big sample sizes. For example, if you’re starting a business, avoid the restaurant business where margins are low and competition is high.
 be prepared
 bee browsing
-bike-shed Effect: A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
+bike shed Effect: A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
 biographies -- Profiles in Courage https://en.wikipedia.org/wiki/Profiles_in_Courage
 bonnes et mauvaises cartes
 brain rot https://en.wikipedia.org/wiki/Brain_rot
-brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
 broken window theory
 bullying = Lack of consideration and empathy for those without power, Disrespectful behavior that is overt or subtle (in public or behind closed doors), Verbal aggression, sarcasm, or psychological manipulation. Unreasonable or constantly changing directives and deadlines. Singling out individuals. “Mobbing,” in which a group of people gang up on an individual
 bullying = repeated pattern of offensive, intimidating, or hostile behavior(s) or language, often by a strong or other person of authority. Bullying creates a toxic atmosphere for everyone, but may be accepted by many as “part of the workplace culture”
@@ -236,6 +236,7 @@ Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-m
 naiveté: abus sexuels, mafia
 needs / wants https://en.wikipedia.org/wiki/Need
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
+no conflict / safe conflict / extreme conflict
 non-violence
 normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-securite-la-normalisation-de-la-deviance-suite
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen
