@@ -4,13 +4,13 @@ import assert from 'tiny-invariant'
 
 import { type ChatPrimitives } from '../primitives/types.js'
 import { type Step, StepType, type TaskProgressStep } from '../steps/index.js'
-import { StepsGenerator } from './types.js'
+import { type StepIterator } from './types.js'
 import { create_dummy_progress_promise } from '../utils/index.js'
 
 /////////////////////////////////////////////////
 
 interface Options<ContentType> {
-	gen_next_step: StepsGenerator<ContentType>
+	gen_next_step: StepIterator<ContentType>
 	primitives: ChatPrimitives<ContentType>
 
 	// TODO review! merge?
@@ -35,6 +35,7 @@ function create<ContentType>({
 	DEBUG_to_prettified_str = (x: any) => x, // work with browser
 }: Options<ContentType>) {
 	if (DEBUG) console.log(`↘ ${LIB}.create()`)
+	let infinite_loop_limit = 10 // temp while proto
 
 	async function start() {
 		if (DEBUG) console.log(`↘ ${LIB}.start()`)
@@ -92,6 +93,10 @@ function create<ContentType>({
 
 	async function execute_step(step: Step<ContentType>) {
 		if (DEBUG) console.log('↘ ${LIB}.execute_step(', DEBUG_to_prettified_str(step), ')')
+		infinite_loop_limit--
+		if (infinite_loop_limit < 0) {
+			throw new Error('Too many steps, exiting to avoid infinite loop!')
+		}
 
 
 		//const step = normalize_step(raw_step)
@@ -100,6 +105,7 @@ function create<ContentType>({
 
 			case StepType.simple_message:
 				await primitives.display_message({ msg: step.msg })
+				step.callback?.()
 				break
 
 			case StepType.perceived_labor: {
@@ -138,8 +144,7 @@ function create<ContentType>({
 						}),
 					})
 
-				if (step.callback)
-					step.callback(success, result || error)
+				step.callback?.(success, result || error)
 				break
 			}
 

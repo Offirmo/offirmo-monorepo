@@ -21,13 +21,18 @@ export type StepType = Enum<typeof StepType> // eslint-disable-line no-redeclare
 // TODO more async?? callbacks? everything?
 
 interface BaseStep {
-	// TODO needed?
+
+	// always a callback after the step is done, even for a trivial one
+	// for ex. a notification system may want to mark a notif as "read" after it's been displayed
+	callback?: (...p: any[]) => void
 }
 
 interface SimpleMessageStep<ContentType> extends BaseStep {
 	type: typeof StepType.simple_message
 
 	msg: ContentType | string
+
+	callback?: () => void
 }
 
 // TODO is it redundant with progress?
@@ -38,7 +43,7 @@ interface PerceivedLaborStep<ContentType> extends BaseStep {
 	duration_ms?: number
 	msg_after?: ContentType | string
 
-	// callback?
+	callback?: () => void
 }
 
 interface TaskProgressStep<ContentType, T = any> extends BaseStep {

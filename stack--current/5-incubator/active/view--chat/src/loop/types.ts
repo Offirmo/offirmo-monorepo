@@ -3,24 +3,27 @@ import { type Step } from '../steps/index.js'
 
 /////////////////////////////////////////////////
 
-// what is yielded by the generator
-type StepsGeneratorYield<ContentType> = Step<ContentType>
+type TYield<ContentType> = Step<ContentType> | Promise<Step<ContentType>>
 
-// what is eventually returned by the generator
-type StepsGeneratorReturn<ContentType> = Step<ContentType> | Promise<Step<ContentType>>
+type TReturn<ContentType> = any
 
-// parameters of the generator.next() method
-type StepsGeneratorNext<ContentType> = unknown
+type TNext<ContentType> = {
+	last_step: Step<ContentType> | undefined,
+	last_answer: any | undefined,
+}
 
-// all together
-type StepsGenerator<ContentType> = Generator<
-	StepsGeneratorYield<ContentType>,
-	StepsGeneratorReturn<ContentType>,
-	StepsGeneratorNext<ContentType>
->
+type StepIterator<ContentType> = Iterator<TYield<ContentType>, TReturn<ContentType>, TNext<ContentType>>
 
 /////////////////////////////////////////////////
+// helper types for implementation
+type StepIteratorTNext<ContentType> = TNext<ContentType>
+type StepIteratorYieldResult<ContentType> = IteratorYieldResult<TYield<ContentType>>
+type StepIteratorReturnResult<ContentType> = IteratorReturnResult<TReturn<ContentType>>
 
 export {
-	type StepsGenerator,
+	type StepIteratorTNext,
+	type StepIteratorYieldResult,
+	type StepIteratorReturnResult,
+
+	type StepIterator,
 }
