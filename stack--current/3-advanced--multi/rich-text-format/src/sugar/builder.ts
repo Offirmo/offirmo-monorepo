@@ -169,6 +169,7 @@ function create($type: NodeType): Builder {
 		return pushRawNode(kv_node, options)
 	}
 
+	// TODO rename value() like lodash chain?
 	function done(): CheckedNode {
 		return $node
 	}

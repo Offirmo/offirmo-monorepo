@@ -70,8 +70,8 @@ type URI‿x = Uri‿str | SchemeSpecificURIPart
 
 type LinkRelation = string
 
-/** A more generic hyperlink than HTML's <a>
- * following hypermedia theory
+/** A more generic hyperlink than HTML's <a> following hypermedia theory
+ * see https://hypermedia.systems/
  */
 interface Hyperlink extends WithLang {
 	href: URI‿x
@@ -82,6 +82,7 @@ interface Hyperlink extends WithLang {
 	rel: LinkRelation[] // https://www.iana.org/assignments/link-relations/link-relations.xhtml
 
 	cta?: string // if present, replace / complement the anchor content
+	// TODO label?
 
 	target?: never // TODO clarify
 
@@ -99,6 +100,8 @@ interface Hyperlink extends WithLang {
 	// ping
 	// referrer policy
 	// attribution https://wicg.github.io/attribution-reporting-api/?sjid=5871821160398133867-AP#monkeypatch-attributionsrc
+
+	// reducer action?
 }
 
 /////////////////////////////////////////////////

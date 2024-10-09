@@ -53,6 +53,7 @@ function on_start_session(previous_state: Immutable<State>, is_web_diversity_sup
 	}
 
 	// TODO recap here as Engagement flow?
+	// NO because would cause a non-user initiated mutation, which would trigger a useless sync
 
 	// new achievements may have appeared
 	// (new content = not the same as a migration)

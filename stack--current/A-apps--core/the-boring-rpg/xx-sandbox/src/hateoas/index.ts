@@ -3,7 +3,6 @@ import { type Hyperlink } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import * as State from '@tbrpg/state'
-import * as RRT from '@tbrpg/ui--rich-text'
 
 import { prettifyꓽjson } from '../services/misc.js'
 
@@ -17,7 +16,7 @@ import {
 	type StepIteratorYieldResult,
 	type StepIteratorReturnResult,
 } from '@offirmo-private/view--chat'
-import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
+import { create_action, type ActionPlay } from '@tbrpg/interfaces'
 
 /////////////////////////////////////////////////
 // TODO async to pretend we're talking to a server (even if it's a worker)
@@ -41,18 +40,63 @@ class Game {
 
 /////////////////////////////////////////////////
 
-function HATEOASᐧGET(state: Immutable<State.State>, link: Hyperlink['href'] = ''): RichText.Document {
-	console.log(`HATEOASᐧGET("${link}")`)
+function HATEOASᐧGET(state: Immutable<State.State>, url: Hyperlink['href'] = ''): RichText.Document {
+	console.log(`↘ HATEOASᐧGET("${url}")`)
 
-//	const $doc = State.getꓽrecap(state.u_state) // TODO clarify recap/mode
+	// TODO URL normalization (one day)
 
+	let $builder = RichText.fragmentⵧblock()
 
-	switch (link) {
-		case '':
-			return State.getꓽrecap(state.u_state)
+		/*.pushNode(RichText.heading().pushText('Identity:').done(), {id: 'header'})
+		.pushNode(
+			RichText.listⵧunordered()
+				.pushKeyValue('name', $doc_name)
+				.pushKeyValue('class', $doc_class)
+				.done()
+		)
+		.done()*/
+
+	switch (url) {
+		case '': { // home
+			$builder = $builder.pushHeading('Currently adventuring…')
+
+			// NO recap of last adventure, it's a different route?
+			// TODO clarify
+
+			if (State.is_inventory_full(state.u_state)) {
+				$builder = $builder.pushNode(
+					RichText.strong().pushText('Your inventory is full!').done(),
+				)
+			}
+
+			if(State.getꓽavailable_energy‿float(state.t_state) >= 1) {
+				$builder = $builder.pushBlockFragment('You can play now!')
+			}
+			else {
+				$builder = $builder.pushBlockFragment('You can play again in ' + State.getꓽhuman_time_to_next_energy(state))
+			}
+
+			// actions!
+			// 1. we're home so links to other "modes/mechanics"
+			const modeⵧequipment: Hyperlink = {
+				href: '/equipment',
+				cta: 'Manage equipment',
+			}
+			$builder = $builder.addHints({
+
+			})
+			// 2. links related to the current mode
+			const actionⵧplay = create_action<ActionPlay>()
+
+			break
+		}
+
+		case '/adventure': // ??
 		default:
-			throw new Error(`Unknown resource "${link}"!`)
+			throw new Error(`Unknown resource locator "${url}"!`)
 	}
+
+	return $builder.done()
 }
 
 /////////////////////////////////////////////////
@@ -61,8 +105,10 @@ type ContentType = string | RichText.Document
 
 class GameChat implements StepIterator<ContentType> {
 	game: Game = new Game()
+	status: 'starting' | 'normal' = 'starting'
 	is_done: boolean = false
-	hypermedia: any = undefined
+	current_route = ''
+	non_interactive_steps_count = 0
 
 	constructor() {
 		this.game.on_start_session()
@@ -76,14 +122,32 @@ class GameChat implements StepIterator<ContentType> {
 			} satisfies StepIteratorReturnResult<ContentType>
 		}
 
+		const value = this.gen_next_step(p)
+		this.non_interactive_steps_count++
+		if (this.non_interactive_steps_count >= 5) {
+			console.error('SCHEDULING EXIT because too many non-interactive steps!')
+			this.is_done = true
+		}
+
 		return {
-			value: this.gen_next_step(p),
+			value,
 			done: false,
 		} satisfies StepIteratorYieldResult<ContentType>
 	}
 
 	gen_next_step({ last_step, last_answer }: StepIteratorTNext<ContentType>): Step<ContentType> {
 		const state = this.game.getꓽstate()
+
+		if (this.status === 'starting') {
+			this.status = 'normal'
+			// skip the "between actions" messages
+			const $doc = State.getꓽrecap(state.u_state) // TODO clarify recap/mode
+			const step: Step<ContentType> = {
+				type: StepType.simple_message,
+				msg: $doc,
+			}
+			return step
+		}
 
 		const pef = State.getꓽoldest_pending_engagementⵧflow(state.u_state)
 		if (pef) {
@@ -100,27 +164,35 @@ class GameChat implements StepIterator<ContentType> {
 
 		const penf = State.getꓽoldest_pending_engagementⵧnon_flow(state.u_state)
 		if (penf) {
-			//console.log('[PENF]', to_terminal(penf.$doc))
-			const step: Step<ContentType> = {
-				type: StepType.simple_message,
-				msg: penf.$doc,
-				callback: () => {
-					this.game.state = State.acknowledge_engagement_msg_seen(this.game.state, penf.uid)
+				//console.log('[PENF]', to_terminal(penf.$doc))
+				const step: Step<ContentType> = {
+					type: StepType.simple_message,
+					msg: penf.$doc,
+					callback: () => {
+						this.game.state = State.acknowledge_engagement_msg_seen(this.game.state, penf.uid)
+					}
 				}
+				return step
 			}
-			return step
+
+		const hypermedia = HATEOASᐧGET(state, this.current_route)
+
+		const step: Step<ContentType> = {
+			type: StepType.simple_message,
+			msg: hypermedia,
 		}
-		this.is_done = true
+
+		// TODO extract actions!
 
 		/*
-		console.log('/////////////////////////////////////////////////')
-		// TODO should be part of recap?
 		if (State.is_inventory_full(state.u_state)) {
 			console.warn('[special message] Inventory is full!')
 		}
 		if(State.getꓽavailable_energy‿float(state.t_state) >= 1) {
 			console.log('[special message] You can play now!')
 		}
+
+
 
 		console.log('/////////////////////////////////////////////////')
 		console.log('Actions:', RichText.renderⵧto_actions($doc))
@@ -133,14 +205,6 @@ class GameChat implements StepIterator<ContentType> {
 		console.log(prettifyꓽjson($doc))
 		//console.log(to_terminal($doc))
 		*/
-
-
-		const hypermedia = HATEOASᐧGET(state)
-
-		const step: Step<ContentType> = {
-			type: StepType.simple_message,
-			msg: hypermedia,
-		}
 
 		return step
 	}

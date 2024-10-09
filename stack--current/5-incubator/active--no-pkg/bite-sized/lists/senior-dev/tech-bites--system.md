@@ -33,6 +33,10 @@ ACID -- 2 Consistency = integrity constraints: "valid state" before AND after a 
 ACID -- 3 Isolation = "independent transactions"
 ACID -- 4 Durability = transaction resistance to system failures "once committed, always committed"
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
+API -- contracts
+API -- Diogo Lucas classification = far-team, near-team and inner-team. inner team = used within a team or between partner teams, near team = "Conway APIs" between teams that don't always communicate with each other, Far-team API = between teams that have low-bandwidth communications
+API -- hybrids = reconcile the need for a stable public API that will not constantly disrupt your carefully tended ecosystem with your team’s ability to move fast and (eventually) break stuff? cater for different requirements regarding security and SLAs or to radically different client natures? https://www.youtube.com/watch?v=eqy609JleoE
+API -- visibility = public/external > internal > team > private beta. Guidelines: Consider a public-by-default approach, even if you are starting at a lower level of access (helps dogfooding, new use cases. Treat your internal APIs as candidates for Public level access (bc happens quickly, sometimes for merging with a public one)
 API gateway
 API-First = Built with APIs from the ground up. All functionality is exposed through an API
 app -- a11y
@@ -332,6 +336,9 @@ organizations
 PACELC theorem = extension of CAP https://en.wikipedia.org/wiki/PACELC_theorem
 peak hours, off-peak hours
 performance
+periods -- deprecation notice
+periods -- maintenance
+periods -- warranty
 permissions
 Personal data service (PDS) = user's central point of control for their personal information https://en.wikipedia.org/wiki/Personal_data_service
 perspective -- non-tech -- business = creates business model that integrates IT strategy

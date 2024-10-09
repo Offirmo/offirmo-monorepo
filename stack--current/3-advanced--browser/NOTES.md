@@ -1,4 +1,17 @@
 
+
+
+
+
+## fonts
+
+Good combo used by A. to solve the "system" instability
+* standard = https://rsms.me/inter/
+* mono = https://www.jetbrains.com/lp/mono/
+
+
+
+## TOSORT
 Modern CSS
 * uses `:root` https://developer.mozilla.org/en-US/docs/Web/CSS/:root
 * ...
@@ -23,6 +36,9 @@ TODO semantic fonts
 - etc.
 
 TODO font--hyperlegible  https://en.wikipedia.org/wiki/Atkinson_Hyperlegible
+
+TODO font -- monospace https://monaspace.githubnext.com/ https://fonts.google.com/specimen/Space+Mono
+
 
 
 TODO use @scope? https://developer.chrome.com/docs/css-ui/at-scope 2024/08 no FF
