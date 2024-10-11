@@ -1,4 +1,17 @@
 
+
+## overall direction
+
+IC or management ?
+TL vs PM vs EM ?
+
+https://charity.wtf/2019/01/04/engineering-management-the-pendulum-or-the-ladder/
+
+"director ceiling" https://www.reddit.com/r/ProductManagement/comments/10ldwq7/how_to_make_the_jump_from_senior_to_director_at_a/
+
+
+------------------------------------------------------------------------------------------
+https://www.teamblind.com/post/Made-it-to-FAANG-Director-without-a-single-promotion-ever-NS2LaxE7
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
 
 I finally (recently) made it to FAANG Director  without ever being promoted in my entire career.
@@ -52,18 +65,106 @@ New btw, is my own company that I use to manage my rental properties.
 TC 1.1million
 Yoe 15
 Net worth 8 million (single income family)
+------------------------------------------------------------------------------------------
+
+
+## Day performance (minimum pre-requisite)
+
+
+### perf categories
+* demonstrable impact from main role
+  * ex. dev = code, PRs, tickets implemented, features shipped, bugs fixed
+* Engineering Excellence AKA “I do hard things”
+  * Code reviews that I’ve given that I’m proud of.
+* Direction = Technical decisions and proposals
+* Organizational Impact
+  * interviews
+  * mentoring
+
+
+### evidences / data signals
+* Take weekly notes!
+* Beware of recency bias! Polish your start & end of review period!
+
+1:1 notes
+
+Pull requests
+Jira tickets
+Documentation, Architectural diagrams and other artifacts
+
+Relevant Slack threads, e.g. debating a technical decision (links & screenshots)
+
+Projects you’ve both led and contributed to
+
+Mentorship and development 
+
+Positive feedback from others:
+    Kudos
+    Slack call-outs
+    Thanks in retro
+    Verbal shout-outs from your manager or key stakeholders, public or private
+
+Interviewing and recruiting successes/wins
+
+Leadership opportunities, directly connected to your technical efforts or otherwise (e.g., community efforts, team-building exercises, implementing team-wide processes, helping with new hires onboarding, share performance/self-development tools) 
+
+### self-assessment
+
+### individual goals
+
+See SMART goals (MModels)
+
+
+Descriptive action
+(what you plan to do and who you plan to do it with)
+
+Outcome you want to achieve
+(result)
+
+Specific success measure
+(metric)
+
+Due date
+(timeline)
+
+
+Also:
+- manager: 1. Build a shared understanding of expectations and goals from the outset
+- manager: 2. Distribute opportunities, support, and resources equitably
+- manager: 3. Hold yourself accountable for providing timely, fair, and actionable feedback.
+
+
+## progression
+
+
+> Promotion is this carrot that dangles in front of you. When you focus on it, you’d be miserable.
+> Always focus on actual work and scope. You’d be rewarded by jumping ship sooner than the next promo lands.
+
+
+P3 should be learning how to engineer high quality software
+P4 should be doing the lion’s share of engineering
+P5 should be leading your team’s execution on engineering
+P6 should be driving action in your teams, after identifying opportunities themselves
+
+
+## job change
+
+### offboarding
+* internal blog posts
+* networking
+* private files on own computers
+* CV blurbs, incl. numbers!! 
+
+
+### onboarding
+* meet everyone
+  * "what should I know?"
+  * "who should I meet?"
 
 
 
+## TOSORT
 
-
-https://www.techinterviewhandbook.org/understanding-compensation/
-
-
-https://charity.wtf/2019/01/04/engineering-management-the-pendulum-or-the-ladder/
-
-
-"director ceiling" https://www.reddit.com/r/ProductManagement/comments/10ldwq7/how_to_make_the_jump_from_senior_to_director_at_a/
 
 
 startups

@@ -29,6 +29,12 @@ REMINDER: the build script relax a few rules in dev mode (--watch), see `build-t
 * added nouncheckedsideeffectimports https://devblogs.microsoft.com/typescript/announcing-typescript-5-6/#the---nouncheckedsideeffectimports-option
 * 
 
+### PENDING 2024/10/11 5.7
+https://devblogs.microsoft.com/typescript/announcing-typescript-5-7-beta/
+
+path rewriting `allowImportingTsExtensions true 		"rewriteRelativeImportExtensions": true,`
+es2024 
+
 ### 2024/08/29
 
 big pass following some issues

@@ -3,6 +3,8 @@ antisèche https://docs.google.com/spreadsheets/d/1KBBw1IkffjMwoy6anErauYwmKkVMW
 
 funnel https://posthog.com/newsletter/how-to-get-job-startup
 
+https://www.techinterviewhandbook.org/understanding-compensation/
+
 
 https://www.techinterviewhandbook.org/
 

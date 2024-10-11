@@ -235,6 +235,7 @@ IAM -- CIAM "Customer Identity and Access Management" = a type of identity and a
 IAM -- CIAM -- 01 Improves customer registration and login experiences while reducing the risk of account takeover (a rampant problem in the consumer space because of password reuse)
 IAM -- CIAM -- 02 Offers customized and branded experiences for consumers, businesses, and enterprise customers
 IAM -- CIAM -- 03 Provides a scalable solution that can support hundreds of millions of customers
+IDE "You're not productive enough without a productive IDE"
 IDE (Integrated Development Environment)
 IDEALS
 IDEALS -- 1 Interface segregation
@@ -282,6 +283,7 @@ languages -- weekend https://stackoverflow.blog/2017/02/07/what-programming-lang
 layer -- abstraction
 layers -- shearing
 lazy-loading
+legacy code = code without good testing coverage that we don’t recall writing https://www.booktopia.com.au/working-effectively-with-legacy-code-michael-feathers/book/9780131177055.html
 let's deploy to production https://www.youtube.com/watch?v=5p8wTOr8AbU
 LIFO
 linked list
@@ -295,6 +297,7 @@ loop - breaking out of
 LTS, maintenance LTS, active LTS https://nodejs.org/en/about/previous-releases
 magic number
 map
+math https://math4devs.com/
 MDN
 memory -- heap
 memory -- stack
@@ -476,6 +479,7 @@ test -- test double https://martinfowler.com/articles/mocksArentStubs.html
 the room https://lethain.com/getting-in-the-room/
 this
 thread
+threads -- virtual https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html
 TLS "Transport Layer Security"
 tool -- http://devdocs.io/
 tool -- sprawl

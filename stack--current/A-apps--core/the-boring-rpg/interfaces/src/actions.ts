@@ -33,7 +33,7 @@ export type ActionType = Enum<typeof ActionType> // eslint-disable-line no-redec
 // TODO all those actions should be in the state package! (v2)
 export interface BaseAction {
 	//v: 1 // not sure needed
-	time: TimestampUTCMs
+	time?: TimestampUTCMs // not recommended! better inferred at dispatch! But can be useful for tests or replay.
 	expected_revisions: {
 		[k:string]: number
 	}
@@ -132,14 +132,14 @@ export function getꓽaction_types(): string[] {
 
 /////////////////////
 
-export function create_base_action(time: TimestampUTCMs = getꓽUTC_timestamp‿ms()): BaseAction {
+export function create_base_action(time?: TimestampUTCMs): BaseAction {
 	return {
-		time,
+		...(time && { time }), // only if provided
 		expected_revisions: {},
 	}
 }
 
-export function create_action<SomeAction extends BaseAction>(attributes: Omit<SomeAction, 'time'>, time: TimestampUTCMs = getꓽUTC_timestamp‿ms()): SomeAction {
+export function create_action<SomeAction extends BaseAction>(attributes: Omit<SomeAction, 'time'>, time?: TimestampUTCMs): SomeAction {
 	return {
 		...create_base_action(time),
 		...attributes,

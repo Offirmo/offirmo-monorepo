@@ -71,6 +71,8 @@ TODO evaluate Rpack https://rspack.dev/
 ## linting
 
 TODO re-evaluate ESLint https://eslint.org/blog/2024/07/whats-coming-next-for-eslint/
+     https://eslint.org/blog/2024/10/eslint-json-markdown-support/
+
 TODO https://biomejs.dev/
 
 ## environment manager
@@ -139,3 +141,6 @@ https://github.com/folke/ultra-runner
 - TODO evaluate https://yarnpkg.com/features/release-workflow
 - TODO evaluate changesets
   https://www.totaltypescript.com/how-to-create-an-npm-package
+
+
+TODO https://knip.dev/

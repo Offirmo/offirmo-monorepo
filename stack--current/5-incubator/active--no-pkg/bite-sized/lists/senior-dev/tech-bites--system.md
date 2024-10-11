@@ -9,6 +9,7 @@
 [ ] concepts https://dgraph.io/docs/design-concepts/
 [ ] great articles https://dgraph.io/blog/
 [ ] https://carloarg02.medium.com/how-i-scaled-amazons-load-generator-to-run-on-1000s-of-machines-4ca8f53812cf
+[ ] https://discord.com/blog/how-discord-stores-trillions-of-messages
 [ ] https://medium.com/@sureshpodeti/system-design-twitter-a98e7d134634
 [ ] https://newsletter.pragmaticengineer.com/p/building-the-threads-app
 [ ] https://slack.engineering/scaling-datastores-at-slack-with-vitess/
@@ -393,6 +394,11 @@ scaling ~ elasticity
 search -- https://vespa.ai/ (NO OpenSearch)
 security
 serverless
+serverless -- debugging sucks, but can be alleviated by fast dev-cycle and using unit tests/not including too much code in Lambda itself
+serverless -- Default architecture everyone arrives at seems to be: Lambda → SQS/SNS/Kinesis → Lambda
+serverless -- Deploy your app as one (all Lambdas as one, rather than each Lambda individually). Cloudformation helps (blue green deployments FTW)
+serverless -- Don’t break things down too small (dare I say microservices). Keep your lambdas and code grouped logically rather than striving for smallest unit of work
+serverless -- forces devs into working within limits - mainly memory and time per lambda function invocation. This then forces good habits around breaking down complex operations, which by default results in better resilience and scalability. E.g. we have to break down large rule executions into multiple executions per issue (instead of processing 1000s of issues in bulk)
 service
 service = software functionality https://en.wikipedia.org/wiki/Service_(systems_architecture)
 service availability

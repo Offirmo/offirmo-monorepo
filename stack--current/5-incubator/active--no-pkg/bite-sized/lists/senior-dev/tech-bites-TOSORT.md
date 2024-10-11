@@ -1,16 +1,47 @@
-Senior Dev tips!
-* individual contributor
-* TL vs PM vs PM vs EM
-* progress over perfection
-* submarine
-* better ask for forgiveness than for permission
-* journalists
+
+
+
+Pull Requests:
+- small = easier to review, less conflicts
+- clean separated commits = easier to review, easier to cherry-pick / move
+- if comments:
+  - rebasing = cleaner final result
+  - adding commits = easier to see what was amended
+- QA demo
+- book a slot to unblock!
+- a Reviewer has to Approve, Reject, Comment or Delegate. No bullshit.
+- first, get an approval from an internal reviewer, ensure green builds, then add your Shepherd / external
 
 
 
 
+    “Clean Craftsmanship”Medal by Robert C. Martin Code quality 
 
-~~~~~~~~~~~~~~~~~~~~ TOSORT ~~~~~~~~~~~~~~~~~~~~~~
+        Turned out to be EXCELLENT book. Definitely technical. Half of it forms the most comprehensive resource on TDD I’ve ever read. (I’m contemplating creating a separate category for Testing/TDD).
+
+    “Fundamentals of Software Architecture” by Ford, Richards Software architecture 
+
+        I think it’s a better, more useful, more comprehensive intro than Uncle Bob’s “Clean Architecture”. Does not have a ton of soul, but is not completely dry, either.
+
+    “Effective TypeScript” by Dan Vanderkam TypeScript 
+
+        Top 2, but still losses to “Programming TypeScript” IMHO, for most people.
+
+    “You Don’t Know JS Yet” by @getify JavaScript
+
+        Still reading this multi-book encyclopedia JavaScriptica grinning face with smiling eyes 
+
+    “Revising Prose”Medal by Richard A. Lanham Writing
+
+        Does one thing, and does it very well: improves your sentence structure.
+
+    “Dichotomy of Leadership” by Jocko Willink Leadership 
+
+        Standalone book, like the original “Extreme Ownership”, but adds more about balance & tradeoffs – and removes little, so you can read it as a standalone book.
+
+
+
+
 
 
 monolith refactoring
@@ -33,7 +64,8 @@ and then more importantly,
 https://ryanwarnock.me/blog/260222.html
 
 
-https://twitter.com/dan_abramov/status/1470613731071696896?lang=en
+
+https://twitter.com/dan_abramov/status/1470613731071696896
 
 how to build resilience
 how to influence others
@@ -56,10 +88,7 @@ https://web.dev/patterns/layout/
 
 https://programmingisterrible.com/post/139222674273/how-to-write-disposable-code-in-large-systems
 
-P3 should be learning how to engineer high quality software
-P4 should be doing the lion’s share of engineering
-P5 should be leading your team’s execution on engineering
-P6 should be driving action in your teams, after identifying opportunities themselves
+
 
 
 privacy:
@@ -70,7 +99,6 @@ privacy:
 compétition https://www.booklets.io/b/creativity-inc-by-ed-catmull-booklets
 
 repo of bite-sized programming concepts
-*
 * https://github.com/labs42io/clean-code-typescript
 
 

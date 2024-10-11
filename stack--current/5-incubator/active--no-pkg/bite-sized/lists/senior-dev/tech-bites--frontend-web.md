@@ -50,6 +50,9 @@ client/server -- multi-tier architecture -- 03 business
 client/server -- multi-tier architecture -- 04 data access
 client/server -- multi-tier architecture https://en.wikipedia.org/wiki/Multitier_architecture
 collaborative experiences https://zknill.io/posts/collaboration-no-crdts/
+design -- intuitiveness vs. confusing, cluttered, dense, not practical, lack of visual hierarchy
+design -- ease of use vs. clunky, all over the place, 
+design -- design aesthetic
 components https://www.componentdriven.org/
 Contrast ratio https://www.siegemedia.com/contrast-ratio
 CORS (Cross-Origin Resource Sharing)
@@ -106,6 +109,12 @@ CSS -- zoom https://www.oddbird.net/2024/07/09/zoomies/
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
 dark patterns -- hall of shame https://hallofshame.design/
 dark patterns https://www.uxtigers.com/post/dark-design
+data fetching -- 1 fetch on render
+data fetching -- 2 Fetch-Then-Render
+data fetching -- 3 Render-as-You-Fetch
+data fetching -- 3 Render-as-You-Fetch -- Relay EntryPoints https://github.com/relay-tools/typescript-relayjs-examples/issues/1
+data fetching -- preload-on-intent
+data fetching https://17.reactjs.org/docs/concurrent-mode-suspense.html#traditional-approaches-vs-suspense
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
 design -- guides https://owickstrom.github.io/the-monospace-web/
 design quality -- 1 Intuitiveness vs complicated, overwhelming, cluttered, steep learning curve, significant cognitive load.
@@ -131,6 +140,7 @@ DOM -- Nodes -- 10 Document Type = <!DOCTYPE html>
 DOM -- Nodes -- 11 Fragment
 DOM -- Nodes -- types =  ELEMENT, ATTRIBUTE, TEXT, CDATA, PROCESSING_INSTRUCTION, COMMENT, DOCUMENT, DOCUMENT_TYPE https://devdocs.io/dom/node/nodetype
 DOM tree = Nodes = text, elements, attributes, comments... includes elements such as <body> and <table>, among many others.
+ECMA -- 2024 https://socket.dev/blog/tc39-advances-10-ecmascript-proposals-key-features-to-watch
 ECMAScript - European Computer Manufacturers Association Script (ES)
 emojis https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
 events -- event delegation
@@ -157,6 +167,7 @@ hypermedia
 hypertext
 i18e Ecosystem Performance = Cleanup, Speedup, Levelup. One Package at a time. https://e18e.dev/
 iframe
+spirit -- browsing https://christianheilmann.com/2024/09/15/lets-bring-back-browsing/
 iframe -- fenced
 iframe -- sandbox
 iframe -- seamless
@@ -167,6 +178,7 @@ JS -- book -- Exploring JavaScript (ES2024 Edition) https://exploringjs.com/js/b
 JS -- exports https://webpack.js.org/guides/package-exports/
 JS -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
 JSON - Javascript Object Notation
+latency -- high latency environments https://csswizardry.com/2024/09/optimising-for-high-latency-environments/
 layout composer https://github.com/namecheap/ilc
 lazy loading -- preloading https://www.differentshelf.com/lazy-loading-isnt-just-lazy-its-late-the-web-deserves-faster/
 lib -- react -- v19 https://vercel.com/blog/whats-new-in-react-19
@@ -176,12 +188,13 @@ MIME - Multipurpose Internet Mail Extensions
 monitoring -- labs = made by a lab, ex. camera
 monitoring -- Real user monitoring (RUM) = passive monitoring technology that records all user interaction with a website or client interacting with a server or cloud-based application (vs. lab) https://en.wikipedia.org/wiki/Real_user_monitoring
 monitoring -- synthetic = own test bot https://en.wikipedia.org/wiki/Synthetic_monitoring
+native apps with JS https://v2.tauri.app/
 node -- tenant isolation = node is single thread, hence issues with security, esp. AWS lambda! solutions: workerd?
 organic vs inorganic concept = coming from a real user or a bot/AI or app etc.
 perf -- content jump = https://css-tricks.com/content-jumping-avoid/
 perf metrics -- "9 must known" https://twitter.com/alexxubyte/status/1769748487317651962
 perf metrics -- core web vitals -- 01 Largest Contentful Paint (LCP) = loading performance. LCP must occur within 2.5 seconds of when the page first starts loading
-perf metrics -- core web vitals -- 02 Interaction to Next Paint (INP) = interactivity. To provide a good user experience, pages must have a INP of 200 milliseconds or less.
+perf metrics -- core web vitals -- 02 Interaction to Next Paint (INP) = interactivity. To provide a good user experience, pages must have a INP of 200 milliseconds or less. https://www.debugbear.com/blog/inp-element-interactions
 perf metrics -- core web vitals -- 03 Cumulative Layout Shift (CLS) = visual stability. To provide a good user experience, must should maintain a CLS of 0.1. or less.
 perf metrics -- core web vitals -- First Input Delay (FID) DEPRECATED https://web.dev/articles/fid
 perf metrics -- core web vitals https://web.dev/articles/vitals  https://web.dev/explore/learn-core-web-vitals
@@ -248,6 +261,7 @@ UI -- views
 User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#large-viewport
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
 UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb
+vanilla https://plainvanillaweb.com/index.html
 viewport
 viewport -- small <= dynamic <= large
 viewport -- visual

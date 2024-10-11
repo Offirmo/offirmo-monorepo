@@ -15,6 +15,7 @@ unified inbox https://www.theverge.com/2023/8/9/23824562/slack-redesign-app-dms-
 
 components https://resend.com/blog/react-email-3
 
+notifications "enables message makers of all types to reach their users with relevant messaging delivered through compelling experiences"
 
 https://devdocs.io/dom/contactaddress
 Universal Postal Union website's Addressing S42 standard

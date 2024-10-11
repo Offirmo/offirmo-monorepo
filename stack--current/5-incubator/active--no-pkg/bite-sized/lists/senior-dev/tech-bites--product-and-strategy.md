@@ -1,4 +1,3 @@
-
 6 Reasons Users Hate Your New Feature https://www.slicedbreaddesign.com/blog/6-reasons-users-hate-your-new-feature
 [ ] https://skamille.medium.com/
 [ ] personal MBA
@@ -17,6 +16,9 @@ computers should adapt to users = not necessarily if the solution is good (ex. t
 core actions
 core actions -- active users
 core mental models (of the product)
+CSAT -- visual appeal
+CSAT -- hard to move
+CSAT
 customer segmentation = Strategic, Enterprise, Mid-Market, SMB
 earliest -- 01 feedback-able product (EFP)
 earliest -- 02 testable product = first release that customers can actually do something with
@@ -58,6 +60,7 @@ first-mover advantage https://en.wikipedia.org/wiki/First-mover_advantage
 funnel
 Go-To-Market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
 growth +++ https://growth.design/
+growth -- bundles
 growth -- cognitive load
 growth -- concepts https://growth.design/psychology
 growth -- friction

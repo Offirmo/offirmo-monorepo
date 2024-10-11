@@ -14,12 +14,19 @@
 3-strike pivot strategy -- Strike 3: Make the Pivot
 3-strike pivot strategy = give 3 chances https://blog.gouravkhanijoe.com/p/3-strike-pivot-strategy-to-become
 5 Harsh Truths for Success from Linus Torvalds https://medium.com/codex/5-harsh-truths-from-linus-torvalds-406ab20cea02
+5 mantras -- 1% better = You don’t need to change the world. Just make something — anything — 1% better, every day. Movement of the smallest rocks can cause the greatest landslides.
+5 mantras -- Don’t get stuck = when I feel stuck it is because I am being too stubborn to change, too egotistical to ask for help, or too tired to invite creativity into my thinking. There is rarely no way out.
+5 mantras -- Find joy in the journey = We give so much of our lives to our work, so we should put some effort into making it something that brings us joy. We probably find that joy in different places, but it’s important that we know what fuels us. Our work, and our lives, are better for it. 
+5 mantras -- Prototype the path = The only way through is to do. Hard problems get a hell of a lot easier when we get our hands dirty, equip our curiosity, and start trying things out.
+5 mantras -- You are enough = I don’t tell myself this often enough. I’d dare to say that you don’t either. But it’s a mantra that I repeat to myself often. 
+5 mantras = by Christopher Davis (burnout)
 5 regrets of dying
 80/20 rule (Pareto)
 [ ] AAA TODO https://flinkliv.com/
 [ ] AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 [ ] https://amir.rachum.com/mental-models/
 [ ] https://boz.com/
+[ ] https://en.wikipedia.org/wiki/Cognitive_bias
 [ ] https://en.wikipedia.org/wiki/Power_(social_and_political)
 [ ] https://paulgraham.com/faq.html
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
@@ -30,7 +37,7 @@ acceptance
 advocacy
 affirmative action?
 agency
-agile "what the client wanted"
+agile -- "what the client wanted"
 alcohol https://podcastnotes.org/huberman-lab/episode-86-what-alcohol-does-to-your-body-brain-health-huberman-lab/  https://www.soberonadrunkplanet.com/
 ally -- barriers = Diffusion of Responsibility, Lack of Awareness or Skills, Fear of Retaliation, Fear of Causing Disruption or Embarrassment
 ally -- howto = Be Present, Provide Options, Know Your Role, follow/beware laws/policies
@@ -46,6 +53,7 @@ Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 base rate: The average outcome for an event over time. They’re like batting averages for life, and they work best with big sample sizes. For example, if you’re starting a business, avoid the restaurant business where margins are low and competition is high.
 be prepared
 bee browsing
+better ask for forgiveness than for permission
 bike shed Effect: A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
 biographies -- Profiles in Courage https://en.wikipedia.org/wiki/Profiles_in_Courage
 bonnes et mauvaises cartes
@@ -63,6 +71,8 @@ Charlie Munger 3 basic rules -- Work only with people you enjoy
 Charlie Munger 3 basic rules https://www.cnbc.com/2023/11/29/charlie-munger-these-basic-career-rules-made-me-successful-in-life-with-warren-buffett-i-had-all-3.html
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
 cognitive bias
+cognitive bias -- recency https://en.wikipedia.org/wiki/Recency_bias
+cognitive bias https://en.wikipedia.org/wiki/Cognitive_bias
 collaboration issue -- Compromise, where the estimates contain only "lowest common denominator" language
 collaboration issue -- Gridlock, where many different interests slow the analytic process
 collaboration issue -- Groupthink, where opposing views are subconsciously discouraged
@@ -105,6 +115,7 @@ elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
 emotionally secure https://www.cnbc.com/2024/01/03/harvard-psychologist-if-you-answer-yes-to-any-of-these-questions-youre-more-emotionally-secure-than-most-people.html
 English
+equality vs equity https://medium.com/@CRA1G/the-evolution-of-an-accidental-meme-ddc4e139e0e4
 equity
 every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
@@ -132,6 +143,11 @@ game theory
 game theory -- prisoner's dilemma https://www.bennorthrop.com/Home/Blog/2007_11_17_prisoners_dilemma.php
 giftedness and talent https://campbellms.typepad.com/files/gagne-a-differentiated-model-of-giftedness-and-talent-dmgt.pdf https://www.gigers.com/matthias/gifted/gagne_dmgt.html
 go-for-it window = Large gaps between accelerating technologies and stagnating social norms create lucrative new business opportunities. But they are only available for a short time when people can capitalize on the difference between the real and perceived state of the world. For example, 2007 was the perfect time to launch the iPhone, but Google Glasses launched too early.
+goals -- S.M.A.R.T. -- 01 S (Specific) Make the goal specific to what you are trying to achieve. It should clearly define what you want to accomplish.
+goals -- S.M.A.R.T. -- 02 M (Measurable) Include measures and metrics where progress can be tracked and quantified.  For bigger goals, include milestones that are steps toward the bigger goal.
+goals -- S.M.A.R.T. -- 03 A (Aspirational yet Achievable) Write Individual Goals that are within your control and influence, but make them aspirational – push yourself (and us) to be bold and ambitious! Discuss with your manager on how to establish a healthy amount of "stretch" in your goals, while referencing your Growth Profile, so that it can lead to significant impact.
+goals -- S.M.A.R.T. -- 04 R (Relevant) Align the goal with your team’s mission, values, department/team OKRs, and strategic and business objectives. Clearly articulate the reason(s) for pursuing the goal and how this contributes to our short- and long-term objectives.
+goals -- S.M.A.R.T. -- 05 T (Time-bound) Create a specific end date for the goal. This instills a sense of urgency and helps you develop a work plan that prioritizes tasks leading up to the delivery date (e.g., one month, one quarter, or longer).
 good life questions https://radreads.co/10k-questions/
 Goodhart’s Law = When a measure becomes a target, it ceases to be a good measure. One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
 grit
@@ -162,6 +178,7 @@ https://cobeats.com/folder/ryfTgPr9H
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
 human trafficking
 ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/ https://strategyu.co/pyramid-principle-part-2-communicate-top-down/
+identity -- " I’d tied my identity and reputation to hard work"
 if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
 ikigai
 impostor syndrome
@@ -237,6 +254,7 @@ naiveté: abus sexuels, mafia
 needs / wants https://en.wikipedia.org/wiki/Need
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
 no conflict / safe conflict / extreme conflict
+Nobel https://www.nobelprize.org/all-nobel-prizes-2024/
 non-violence
 normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-securite-la-normalisation-de-la-deviance-suite
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen
@@ -291,6 +309,7 @@ procrastination
 productivity
 productivity -- GSD Capture Everything, Clarify, Organize, Review, Engage https://todoist.com/productivity-methods/getting-things-done
 productivity vs. impact, value
+progress over perfection
 progress over perfection
 psychological safety
 Pulitzer prize -- biographies https://en.wikipedia.org/wiki/Pulitzer_Prize_for_Biography
@@ -348,6 +367,7 @@ start with why
 Stigler's law of eponymy = inventor = the one who bring to attention, not the discoverer https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy
 stoicism -- Rudyard Kipling "If" https://en.wikipedia.org/wiki/If%E2%80%94
 Sturgeon's law = "90% of everything is crap" https://en.wikipedia.org/wiki/Sturgeon%27s_law
+submarine = hidden project until ready
 Sun Tsu’s three rules of warfare -- Only fight when there is a prize worth fighting for
 Sun Tsu’s three rules of warfare -- Only fight when there is no other way of achieving your goal
 Sun Tsu’s three rules of warfare -- Only fight when you know you will win: the best fight is an unfair fight
@@ -377,6 +397,7 @@ tools -- trello
 top-down/bottom-up
 tradeoffs / can't have everything
 Tree Decision Rights Model http://www.cio.com/article/2386119/careers-staffing/how-it-leaders-can-empower-teams-to-become-decision-makers.html
+tribal knowledge
 trichotomy https://en.wikipedia.org/wiki/Trichotomy_(philosophy)
 trilemma https://en.wikipedia.org/wiki/Trilemma
 trolley problem https://neal.fun/absurd-trolley-problems/
@@ -385,6 +406,7 @@ trust -- takes years to earn and seconds to lose / Trust is built slowly, and lo
 trust -- trust, but verify
 truth -- fully convinced vs probably https://christianity.stackexchange.com/questions/92352/believing-that-christianity-is-probably-true-vs-being-fully-convinced-that-ch
 truth -- verificationism https://christianity.stackexchange.com/a/89891
+tyranny of the urgent https://www.psychologytoday.com/us/blog/human-flourishing-101/202309/how-to-conquer-the-tyranny-of-the-urgent
 unlearn
 vanilla
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
