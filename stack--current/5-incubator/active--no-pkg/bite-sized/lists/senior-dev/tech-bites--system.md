@@ -4,18 +4,20 @@
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 [ ] +++ https://github.com/donnemartin/system-design-primer
 [ ] +++ https://lethain.com/distributed-systems-vocabulary/
+[ ] API guidelines https://github.com/microsoft/api-guidelines/blob/vNext/graph/Guidelines-deprecated.md
 [ ] architecture https://engineering.fb.com/2020/08/17/production-engineering/async/
 [ ] client side API gateway "egress" TODO
 [ ] concepts https://dgraph.io/docs/design-concepts/
 [ ] great articles https://dgraph.io/blog/
 [ ] https://carloarg02.medium.com/how-i-scaled-amazons-load-generator-to-run-on-1000s-of-machines-4ca8f53812cf
 [ ] https://discord.com/blog/how-discord-stores-trillions-of-messages
+[ ] https://github.com/microsoft/api-guidelines/blob/vNext/azure/ConsiderationsForServiceDesign.md
+[ ] https://htmx.org/essays/
 [ ] https://medium.com/@sureshpodeti/system-design-twitter-a98e7d134634
 [ ] https://newsletter.pragmaticengineer.com/p/building-the-threads-app
 [ ] https://slack.engineering/scaling-datastores-at-slack-with-vitess/
 [ ] https://www.infoq.com/news/2024/01/discord-midjourney-performance/
 [ ] https://www.youtube.com/watch?v=paTtLhZFsGE
-[ ] kubernetes
 [ ] microservice -- design -- https://www.salesforce.com/blog/microservice-design-principles/
 [ ] paper "Adding new protocols to the cloud native ecosystem" https://docs.google.com/document/d/13wFFC7vIdB2hkxdyT0dSiGgkZTXCDDBeW_GBPqy9Jy0/edit
 [ ] paper https://research.google/pubs/large-scale-cluster-management-at-google-with-borg/
@@ -37,6 +39,7 @@ ACID = a set of properties of database transactions intended to guarantee data v
 API -- contracts
 API -- Diogo Lucas classification = far-team, near-team and inner-team. inner team = used within a team or between partner teams, near team = "Conway APIs" between teams that don't always communicate with each other, Far-team API = between teams that have low-bandwidth communications
 API -- hybrids = reconcile the need for a stable public API that will not constantly disrupt your carefully tended ecosystem with your team’s ability to move fast and (eventually) break stuff? cater for different requirements regarding security and SLAs or to radically different client natures? https://www.youtube.com/watch?v=eqy609JleoE
+API -- REST -- POST https://www.tbray.org/ongoing/When/200x/2009/03/20/Rest-Casuistry
 API -- visibility = public/external > internal > team > private beta. Guidelines: Consider a public-by-default approach, even if you are starting at a lower level of access (helps dogfooding, new use cases. Treat your internal APIs as candidates for Public level access (bc happens quickly, sometimes for merging with a public one)
 API gateway
 API-First = Built with APIs from the ground up. All functionality is exposed through an API
@@ -252,6 +255,7 @@ infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-co
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
 integrity
 kafka = pub/sub + store + process
+kubernetes
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
 latency = the time that passes between an action and the resulting response
 latency https://www.a10networks.com/glossary/osi-network-model-and-types-of-load-balancers/

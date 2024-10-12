@@ -167,6 +167,7 @@ hawks and doves https://seldo.com/posts/the_case_for_frameworks
 helicopter parent
 herbe toujours plus verte
 Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
+high school "What You'll Wish You'd Known" https://paulgraham.com/hs.html
 high/low functioning human
 Hock Principle: Simple, clear purpose and principles give rise to complex and intelligent behavior. Complex rules and regulations give rise to simple and stupid behavior.
 Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory

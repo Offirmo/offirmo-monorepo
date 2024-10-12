@@ -61,7 +61,7 @@ interface SchemeSpecificURIPart {
 	/** (optional) the immediate parent in the cascade. Useful to resolve the full URI IF NEEDED
 	 * TODO clarify how to set a "encapsulating URI" for properly detecting and resolving relative URIs
 	 */
-	parent?: SchemeSpecificURIPart
+	//parent?: SchemeSpecificURIPart
 }
 
 type URI‿x = Uri‿str | SchemeSpecificURIPart

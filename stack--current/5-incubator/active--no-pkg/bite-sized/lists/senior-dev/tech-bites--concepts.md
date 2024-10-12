@@ -23,6 +23,7 @@
 [ ] https://www.managingtheunmanageable.net/morerulesofthumb.html
 [ ] https://www.tedinski.com/archive/
 [ ] https://zknill.io/posts/every-programmer-should-know/
+[ ] SWE at Google https://abseil.io/resources/swe-book/html/toc.html
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 access control -- Role-Based (RBAC)
@@ -89,6 +90,7 @@ commits -- conventional  https://www.conventionalcommits.org/  https://gist.gith
 compile to js
 compiler
 compiler -- stanford course http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=Compilers
+complexity budget https://htmx.org/essays/complexity-budget/
 compute
 compute -- hosted compute
 concurrency -- ABA problem
@@ -290,6 +292,7 @@ linked list
 linting
 locality
 locality -- conflict locality = reducing conflicts on close changes, ex. enforcing trailing commas, sorting...
+locality -- of behaviour "LoB" https://htmx.org/essays/locality-of-behaviour/
 lodash
 log
 loop
