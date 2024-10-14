@@ -12,6 +12,8 @@ https://devdocs.io/dom/reporting_api
 
 Assigned numbers / codes, issues with countries https://every.to/p/the-disappearance-of-an-internet-domain
 
++++ https://launch.blog/why-phishing-works/
+
 
 https://www.abc.net.au/news/2024-06-11/inside-the-scam-factory-pig-butchering-and-cyberscams/103937064
 

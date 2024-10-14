@@ -238,6 +238,7 @@ class GameChat implements StepIterator<ContentType> {
 
 		const hypermedia = HATEOASᐧGET(state, this.current_route)
 
+		// TODO this step or next one?
 		const step: Step<ContentType> = {
 			type: StepType.simple_message,
 			msg: hypermedia,
@@ -263,15 +264,21 @@ class GameChat implements StepIterator<ContentType> {
 		const actions_step: SelectStep<ContentType, RichText.Action> = {
 			type: StepType.select,
 			prompt: 'What do you want to do?',
-			options: {
-				yes: { value: true },
-				no: { value: false },
-			},
+			options: Object.fromEntries([
+				...actionsⵧreducers,
+				...actionsⵧlinks,
+			].map((v, i) => [
+				String(i).padStart(2, '0'),
+				{
+					cta: (v as any).cta || v.data.cta, // TODO function to extract CTA
+					value: v,
+				} ]))
 			/*msg_as_user: (action: RichText.Action) => confirm ? `Yes, I confirm.` : `No, I cancel.`,
 			msg_acknowledge: (action: RichText.Action) => confirm ? `Ok, let's proceed ✔` : `Let's cancel that ✖`,
 			...parts,
 			*/
 		}
+		return actions_step
 
 		/*
 		if (State.is_inventory_full(state.u_state)) {

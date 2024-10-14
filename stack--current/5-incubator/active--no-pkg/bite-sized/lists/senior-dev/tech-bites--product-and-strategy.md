@@ -16,9 +16,9 @@ computers should adapt to users = not necessarily if the solution is good (ex. t
 core actions
 core actions -- active users
 core mental models (of the product)
-CSAT -- visual appeal
-CSAT -- hard to move
 CSAT
+CSAT -- hard to move
+CSAT -- visual appeal
 customer segmentation = Strategic, Enterprise, Mid-Market, SMB
 earliest -- 01 feedback-able product (EFP)
 earliest -- 02 testable product = first release that customers can actually do something with
@@ -72,13 +72,15 @@ illegal practices -- predatory pricing
 illegal practices -- price fixing -- Jedi Blue https://en.wikipedia.org/wiki/Jedi_Blue
 illegal practices -- price gouging
 illegal practices -- price skimming
-incentives -- perverse incentive https://en.wikipedia.org/wiki/Perverse_incentive
+incentives -- perverse https://en.wikipedia.org/wiki/Perverse_incentive
 incumbent inertia -- locked into a specific set of fixed assets
 incumbent inertia -- organizationally inflexible
 incumbent inertia -- reluctant to cannibalize existing product lines
 incumbent inertia https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_start#Incumbent_inertia
 jobs to be done
 knowledge creating company https://hbr.org/2007/07/the-knowledge-creating-company
+KPI "Key Product Indicators"
+KPI -- examples https://kpiexamples.operately.com/
 land grab
 lock-in
 M&A
