@@ -111,6 +111,16 @@ function HATEOASᐧGET(state: Immutable<State.State>, url: Hyperlink['href'] = '
 	// TODO recursive routing!
 	// TODO "back"
 
+
+	/* TODO re-evaluate
+	if (State.is_inventory_full(state.u_state)) {
+		console.warn('[special message] Inventory is full!')
+	}
+	if(State.getꓽavailable_energy‿float(state.t_state) >= 1) {
+		console.log('[special message] You can play now!')
+	}
+	*/
+
 	switch (path) {
 		case '/': { // home
 			self.cta = 'Explore'
@@ -170,6 +180,7 @@ class GameChat implements StepIterator<ContentType> {
 	is_done: boolean = false
 	current_route = normalizeꓽurl('/').path
 	non_interactive_steps_count = 0
+	pending_actions: Array<Step<ContentType>> = [] // convenience to allow gen_next_step() to yield several steps at once. FIFO.
 
 	constructor() {
 		this.game.on_start_session()
@@ -197,6 +208,10 @@ class GameChat implements StepIterator<ContentType> {
 	}
 
 	gen_next_step({ last_step, last_answer }: StepIteratorTNext<ContentType>): Step<ContentType> {
+		if (this.pending_actions.length) {
+			return this.pending_actions.pop()!
+		}
+
 		const state = this.game.getꓽstate()
 
 		if (this.status === 'starting') {
@@ -238,17 +253,14 @@ class GameChat implements StepIterator<ContentType> {
 
 		const hypermedia = HATEOASᐧGET(state, this.current_route)
 
-		// TODO this step or next one?
-		const step: Step<ContentType> = {
+		const step_content: Step<ContentType> = {
 			type: StepType.simple_message,
 			msg: hypermedia,
 		}
+		this.pending_actions.push(step_content)
 
 		const actions = RichText.renderⵧto_actions(hypermedia)
-		if (!actions.length) {
-			// should never happen, we should always have home/root
-			throw new Error('No actions found!')
-		}
+		assert(actions.length > 0, `There should be actions in the latest hypermedia!`)
 
 		const actionsⵧreducers = actions.filter(a => a.type === 'action')
 		const actionsⵧlinks = actions
@@ -261,7 +273,7 @@ class GameChat implements StepIterator<ContentType> {
 		console.log(actionsⵧlinks)
 		assert((actionsⵧreducers.length + actionsⵧlinks.length) > 0, `We should have actions for continuing!`)
 
-		const actions_step: SelectStep<ContentType, RichText.Action> = {
+		const step_input: SelectStep<ContentType, RichText.Action> = {
 			type: StepType.select,
 			prompt: 'What do you want to do?',
 			options: Object.fromEntries([
@@ -270,30 +282,23 @@ class GameChat implements StepIterator<ContentType> {
 			].map((v, i) => [
 				String(i).padStart(2, '0'),
 				{
-					cta: (v as any).cta || v.data.cta, // TODO function to extract CTA
+					cta: (v as any).cta || v.data.cta, // TODO dedicated function to extract CTA
 					value: v,
-				} ]))
+				} ])),
+			callback(value) {
+				console.log('Callback!', args)
+				if (value.type === 'action') {
+
+				}
+
+				throw new Error(`NIMP!`)
+			},
 			/*msg_as_user: (action: RichText.Action) => confirm ? `Yes, I confirm.` : `No, I cancel.`,
 			msg_acknowledge: (action: RichText.Action) => confirm ? `Ok, let's proceed ✔` : `Let's cancel that ✖`,
 			...parts,
 			*/
 		}
-		return actions_step
-
-		/*
-		if (State.is_inventory_full(state.u_state)) {
-			console.warn('[special message] Inventory is full!')
-		}
-		if(State.getꓽavailable_energy‿float(state.t_state) >= 1) {
-			console.log('[special message] You can play now!')
-		}
-
-
-
-		console.log('/////////////////////////////////////////////////')
-		console.log('Actions:', RichText.renderⵧto_actions($doc))
-*/
-
+		this.pending_actions.push(step_input)
 
 		/*
 		let current_uri: Hyperlink['href'] = ''
@@ -302,7 +307,7 @@ class GameChat implements StepIterator<ContentType> {
 		//console.log(to_terminal($doc))
 		*/
 
-		return step
+		return this.pending_actions.pop()!
 	}
 
 	//return?(value?: TReturn): IteratorResult<T, TReturn>;

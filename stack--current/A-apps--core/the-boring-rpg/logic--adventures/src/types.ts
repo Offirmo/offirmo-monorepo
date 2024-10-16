@@ -23,10 +23,11 @@ const AdventureType = Enum(
 )
 type AdventureType = Enum<typeof AdventureType> // eslint-disable-line no-redeclare
 
+type AdventureHumanReadableID = string
 
 // TODO rewrite using an array of gains
 interface AdventureArchetype {
-	hid: string
+	hid: AdventureHumanReadableID
 	type: AdventureType
 	good: boolean
 	outcome: {
@@ -74,6 +75,7 @@ type OutcomeArchetype = AdventureArchetype['outcome']
 export {
 	CoinsGain,
 	AdventureType,
+	type AdventureHumanReadableID,
 	type AdventureArchetype,
 	type OutcomeArchetype,
 }

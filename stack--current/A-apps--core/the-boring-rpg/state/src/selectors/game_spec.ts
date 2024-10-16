@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
-import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 
@@ -45,21 +45,23 @@ describe(`${LIB} - selectors - game`, function() {
 	describe('will_next_play_be_good_at()', function() {
 
 		it('should return a correct boolean', () => {
-			let state = enforceꓽimmutable<State>(create())
+			const now_ms = TEST_TIMESTAMP_MS
+			let state = enforceꓽimmutable<State>(create(undefined, { now_ms }))
 
-			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp‿ms())).to.be.true
+			expect(will_next_play_be_good_at(state, now_ms)).to.be.true
 
-			state = _lose_all_energy(state)
-			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp‿ms())).to.be.false
+			state = _lose_all_energy(state, now_ms)
+			expect(will_next_play_be_good_at(state, now_ms)).to.be.false
 		})
 
-		it('should properly take into account the given time', () => {
-			let state = enforceꓽimmutable<State>(create())
+		it('should properly take into account the regen over time', () => {
+			const now_ms = TEST_TIMESTAMP_MS
+			let state = enforceꓽimmutable<State>(create(undefined, { now_ms }))
 
-			state = _lose_all_energy(state)
-			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp‿ms())).to.be.false
+			state = _lose_all_energy(state, now_ms)
+			expect(will_next_play_be_good_at(state, now_ms)).to.be.false
 
-			expect(will_next_play_be_good_at(state, getꓽUTC_timestamp‿ms() + 4 * 3600 * 1000)).to.be.true
+			expect(will_next_play_be_good_at(state, now_ms + 4 * 3600 * 1000)).to.be.true
 		})
 	})
 })

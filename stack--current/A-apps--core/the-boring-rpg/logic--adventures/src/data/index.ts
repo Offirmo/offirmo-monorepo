@@ -1,5 +1,6 @@
 import { I18nMessages } from '@offirmo-private/ts-types'
 
+import { type AdventureHumanReadableID } from '../types.js'
 import { messages as en } from './i18n_en.js'
 
 // TODO type better? (coins)
@@ -7,10 +8,9 @@ import { CoinsGain, OutcomeArchetype, AdventureType } from '../types.js'
 
 interface RawAdventureArchetypeEntry {
 	good: boolean
-	hid: string
+	hid: AdventureHumanReadableID
 	type: AdventureType
 	outcome: Partial<OutcomeArchetype>
-	isBeta?: boolean // TODO
 }
 
 const story = AdventureType.story
@@ -28,7 +28,7 @@ const ENTRIES: Readonly<RawAdventureArchetypeEntry>[] = [
 	{ good: false, type: story, hid: 'bad_e1', outcome: {}},
 	{ good: false, type: story, hid: 'bad_e2', outcome: {}},
 
-	{ good: true, type: fight, hid: 'fight_won_coins',        outcome: { coin:'gainꘌsmall' }},
+	{ good: true, type: fight, hid: 'fight_won_coins',        outcome: { coin:CoinsGain.gainꘌsmall }},
 	{ good: true, type: fight, hid: 'fight_won_loot',         outcome: { armor_or_weapon:true }},
 	{ good: true, type: fight, hid: 'fight_won_any',          outcome: { random_attribute:true }},
 	{ good: true, type: fight, hid: 'fight_observe',          outcome: { class_secondary_attribute:true }},
@@ -36,8 +36,8 @@ const ENTRIES: Readonly<RawAdventureArchetypeEntry>[] = [
 	{ good: true, type: fight, hid: 'fight_lost_shortcoming', outcome: { lowest_attribute:true }},
 
 	{ good: true, type: story, hid: 'bored_log',              outcome: { strength:true }},
-	{ good: true, type: story, hid: 'caravan_success',        outcome: { coin:'gainꘌsmall' }},
-	{ good: true, type: story, hid: 'dying_man',              outcome: { coin:'gainꘌmedium' }},
+	{ good: true, type: story, hid: 'caravan_success',        outcome: { coin:CoinsGain.gainꘌsmall }},
+	{ good: true, type: story, hid: 'dying_man',              outcome: { coin:CoinsGain.gainꘌmedium }},
 	{ good: true, type: story, hid: 'ate_bacon',              outcome: { level:true }},
 	{ good: true, type: story, hid: 'ate_zombie',             outcome: { mana:true }},
 	{ good: true, type: story, hid: 'refreshing_nap',         outcome: { health:true }},
@@ -46,42 +46,42 @@ const ENTRIES: Readonly<RawAdventureArchetypeEntry>[] = [
 	{ good: true, type: story, hid: 'nuclear_fusion_paper',   outcome: { wisdom:true }},
 	{ good: true, type: story, hid: 'found_green_mushroom',   outcome: { level:true }},
 
-	{ good: true, type: story, hid: 'eaten_by_a_grue',            outcome: { coin:'lossꘌsmall'}},
+	{ good: true, type: story, hid: 'eaten_by_a_grue',            outcome: { coin:CoinsGain.lossꘌsmall}},
 	{ good: true, type: story, hid: 'walk_in_mordor',             outcome: { agility:true }},
 	{ good: true, type: story, hid: 'jig',                        outcome: { agility:true }},
 	{ good: true, type: story, hid: 'good_end',                   outcome: { wisdom:true }},
 	{ good: true, type: story, hid: 'waterfall',                  outcome: { health:true }},
 	{ good: true, type: story, hid: 'meteor',                     outcome: { luck:true }},
-	{ good: true, type: story, hid: 'weird_duck',                 outcome: { coin:'gainꘌhuge'}},
+	{ good: true, type: story, hid: 'weird_duck',                 outcome: { coin:CoinsGain.gainꘌhuge}},
 	{ good: true, type: story, hid: 'last_quest',                 outcome: { level:true }},
 	{ good: true, type: story, hid: 'busking',                    outcome: { token: 1}},
 	{ good: true, type: story, hid: 'best_meal',                  outcome: { health:true }},
 	{ good: true, type: story, hid: 'witch_riddle',               outcome: { wisdom:true }},
 	{ good: true, type: story, hid: 'princess_castle',            outcome: { luck:true }},
-	{ good: true, type: story, hid: 'problem',                    outcome: { coin:'lossꘌsmall'}},
+	{ good: true, type: story, hid: 'problem',                    outcome: { coin:CoinsGain.lossꘌsmall}},
 	{ good: true, type: story, hid: 'foreign_language',           outcome: { charisma:true }},
 	{ good: true, type: story, hid: 'last_night',                 outcome: { luck:true }},
 	{ good: true, type: story, hid: 'chasm_leap',                 outcome: { agility:true }},
-	{ good: true, type: story, hid: 'luxurious_meal',             outcome: { coin:'lossꘌsmall'}},
-	{ good: true, type: story, hid: 'donate',                     outcome: { coin:'lossꘌsmall', token: 1}},
+	{ good: true, type: story, hid: 'luxurious_meal',             outcome: { coin:CoinsGain.lossꘌsmall}},
+	{ good: true, type: story, hid: 'donate',                     outcome: { coin:CoinsGain.lossꘌsmall, token: 1}},
 	{ good: true, type: story, hid: 'coffee',                     outcome: { wisdom:true }},
-	{ good: true, type: story, hid: 'socks',                      outcome: { coin:'lossꘌsmall'}},
-	{ good: true, type: story, hid: 'gold_nugget',                outcome: { coin:'gainꘌmedium'}},
-	{ good: true, type: story, hid: 'pileup',                     outcome: { coin:'lossꘌsmall'}},
-	{ good: true, type: story, hid: 'tavern',                     outcome: { coin:'lossꘌsmall'}},
+	{ good: true, type: story, hid: 'socks',                      outcome: { coin:CoinsGain.lossꘌsmall}},
+	{ good: true, type: story, hid: 'gold_nugget',                outcome: { coin:CoinsGain.gainꘌmedium}},
+	{ good: true, type: story, hid: 'pileup',                     outcome: { coin:CoinsGain.lossꘌsmall}},
+	{ good: true, type: story, hid: 'tavern',                     outcome: { coin:CoinsGain.lossꘌsmall}},
 	{ good: true, type: story, hid: 'magic_lamp',                 outcome: { luck:true }},
 	{ good: true, type: story, hid: 'rabbit_hole',                outcome: { wisdom:true }},
 	{ good: true, type: story, hid: 'cat_out_tree',               outcome: { agility:true }},
 	{ good: true, type: story, hid: 'green_food',                 outcome: { health:true }},
-	{ good: true, type: story, hid: 'wishing_well',               outcome: { coin:'lossꘌone'}},
-	{ good: true, type: story, hid: 'conscripted',                outcome: { coin:'gainꘌsmall'}},
-	{ good: true, type: story, hid: 'brigands',                   outcome: { coin:'lossꘌsmall'}},
-	{ good: true, type: story, hid: 'duke_rescue',                outcome: { coin:'gainꘌmedium'}},
-	{ good: true, type: story, hid: 'bribe',                      outcome: { coin:'lossꘌsmall'}},
-	{ good: true, type: story, hid: 'doctor',                     outcome: { coin:'lossꘌsmall'}},
-	{ good: true, type: story, hid: 'gazebo',                     outcome: { coin:'lossꘌsmall'}},
-	{ good: true, type: story, hid: 'sock_drawer',                outcome: { coin:'lossꘌsmall'}},
-	{ good: true, type: story, hid: 'flying_rat',                 outcome: { coin:'lossꘌsmall'}},
+	{ good: true, type: story, hid: 'wishing_well',               outcome: { coin:CoinsGain.lossꘌone}},
+	{ good: true, type: story, hid: 'conscripted',                outcome: { coin:CoinsGain.gainꘌsmall}},
+	{ good: true, type: story, hid: 'brigands',                   outcome: { coin:CoinsGain.lossꘌsmall}},
+	{ good: true, type: story, hid: 'duke_rescue',                outcome: { coin:CoinsGain.gainꘌmedium}},
+	{ good: true, type: story, hid: 'bribe',                      outcome: { coin:CoinsGain.lossꘌsmall}},
+	{ good: true, type: story, hid: 'doctor',                     outcome: { coin:CoinsGain.lossꘌsmall}},
+	{ good: true, type: story, hid: 'gazebo',                     outcome: { coin:CoinsGain.lossꘌsmall}},
+	{ good: true, type: story, hid: 'sock_drawer',                outcome: { coin:CoinsGain.lossꘌsmall}},
+	{ good: true, type: story, hid: 'flying_rat',                 outcome: { coin:CoinsGain.lossꘌsmall}},
 
 	{ good: true, type: story, hid: 'found_red_mushroom',     outcome: { health:true }},
 	{ good: true, type: story, hid: 'found_blue_mushroom',    outcome: { mana:true }},
@@ -92,37 +92,37 @@ const ENTRIES: Readonly<RawAdventureArchetypeEntry>[] = [
 	{ good: true, type: story, hid: 'found_rainbow_mushroom', outcome: { luck:true }},
 
 	{ good: true, type: story, hid: 'demon_king',                   outcome: { weapon:true }},
-	{ good: true, type: story, hid: 'false_lake',                   outcome: { coin:'gainꘌmedium', armor_or_weapon:true }},
+	{ good: true, type: story, hid: 'false_lake',                   outcome: { coin:CoinsGain.gainꘌmedium, armor_or_weapon:true }},
 	{ good: true, type: story, hid: 'soul_weapon_pet_zombie',       outcome: { health:true }},
 	{ good: true, type: story, hid: 'class_master_sharpest_weapon', outcome: { class_primary_attribute:true }},
 	{ good: true, type: story, hid: 'good_necromancer',             outcome: { agility:true }},
 	{ good: true, type: story, hid: 'talk_to_all_villagers',        outcome: { charisma:true }},
-	{ good: true, type: story, hid: 'fate_sword',                   outcome: { coin:'gainꘌsmall' }},
+	{ good: true, type: story, hid: 'fate_sword',                   outcome: { coin:CoinsGain.gainꘌsmall }},
 	{ good: true, type: story, hid: 'rematch',                      outcome: { level:true }},
 	{ good: true, type: story, hid: 'useless',                      outcome: { wisdom:true }},
 	{ good: true, type: story, hid: 'escort',                       outcome: { health:true }},
-	{ good: true, type: story, hid: 'rare_goods_seller',            outcome: { armor_or_weapon: true, coin:'lossꘌsmall' }},
+	{ good: true, type: story, hid: 'rare_goods_seller',            outcome: { armor_or_weapon: true, coin:CoinsGain.lossꘌsmall }},
 	{ good: true, type: story, hid: 'progress_loop',                outcome: { armor_or_weapon:true }},
-	{ good: true, type: story, hid: 'idiot_bandits',                outcome: { coin:'gainꘌmedium' }},
-	{ good: true, type: story, hid: 'princess',                     outcome: { coin:'gainꘌmedium', improvementⵧarmor_or_weapon:true }},
+	{ good: true, type: story, hid: 'idiot_bandits',                outcome: { coin:CoinsGain.gainꘌmedium }},
+	{ good: true, type: story, hid: 'princess',                     outcome: { coin:CoinsGain.gainꘌmedium, improvementⵧarmor_or_weapon:true }},
 	{ good: true, type: story, hid: 'bad_village',                  outcome: { mana:true }},
 	{ good: true, type: story, hid: 'so_many_potions',              outcome: { strength:true }},
 	{ good: true, type: story, hid: 'high_level_zone_1',            outcome: { class_primary_attribute:true }},
 	{ good: true, type: story, hid: 'high_level_zone_2',            outcome: { class_secondary_attribute:true }},
-	{ good: true, type: story, hid: 'side_quests',                  outcome: { coin:'gainꘌmedium'}},
+	{ good: true, type: story, hid: 'side_quests',                  outcome: { coin:CoinsGain.gainꘌmedium}},
 	{ good: true, type: story, hid: 'balrog',                       outcome: { level:true }},
 	{ good: true, type: story, hid: 'castle_summon',                outcome: { weapon:true }},
-	{ good: true, type: story, hid: 'unmatched_set',                outcome: { coin:'gainꘌbig'}},
+	{ good: true, type: story, hid: 'unmatched_set',                outcome: { coin:CoinsGain.gainꘌbig}},
 
 	{ good: true, type: story, hid: 'bards',                        outcome: { charisma:true }},
 	{ good: true, type: story, hid: 'elementals',                   outcome: { class_secondary_attribute:true }},
 	{ good: true, type: story, hid: 'fabric_of_reality',            outcome: { mana:true }},
-	{ good: true, type: story, hid: 'save_world_again',             outcome: { charisma: true,'coin':'gainꘌbig','armor_or_weapon':true }},
+	{ good: true, type: story, hid: 'save_world_again',             outcome: { charisma: true,'coin':CoinsGain.gainꘌbig,'armor_or_weapon':true }},
 	{ good: true, type: story, hid: 'clean_wizard_tower',           outcome: { mana:true }},
-	{ good: true, type: story, hid: 'explore_ruins',                outcome: { coin:'gainꘌmedium', armor_or_weapon :true }},
-	{ good: true, type: story, hid: 'inspect_sewers',               outcome: { class_secondary_attribute: true, coin:'gainꘌmedium'}},
-	{ good: true, type: story, hid: 'explore_catacombs',            outcome: { coin:'gainꘌmedium', armor_or_weapon:true }},
-	{ good: true, type: story, hid: 'bandits_punishment',           outcome: { coin:'gainꘌmedium'}},
+	{ good: true, type: story, hid: 'explore_ruins',                outcome: { coin:CoinsGain.gainꘌmedium, armor_or_weapon :true }},
+	{ good: true, type: story, hid: 'inspect_sewers',               outcome: { class_secondary_attribute: true, coin:CoinsGain.gainꘌmedium}},
+	{ good: true, type: story, hid: 'explore_catacombs',            outcome: { coin:CoinsGain.gainꘌmedium, armor_or_weapon:true }},
+	{ good: true, type: story, hid: 'bandits_punishment',           outcome: { coin:CoinsGain.gainꘌmedium}},
 
 	{ good: true, type: story, hid: 'evil_laugh',                   outcome: { charisma: true}},
 	{ good: true, type: story, hid: 'hero_smile',                   outcome: { charisma: true}},
@@ -138,13 +138,13 @@ const ENTRIES: Readonly<RawAdventureArchetypeEntry>[] = [
 	{ good: true, type: story, hid: 'visual_effect',                outcome: { improvementⵧarmor_or_weapon:true }},
 	{ good: true, type: story, hid: 'weapon_damage_type',           outcome: { improvementⵧweapon:true }},
 	{ good: true, type: story, hid: 'give_a_shield',                outcome: { armor:true }},
-	{ good: true, type: story, hid: 'treasure_in_pots',             outcome: { coin:'gainꘌsmall' }},
+	{ good: true, type: story, hid: 'treasure_in_pots',             outcome: { coin:CoinsGain.gainꘌsmall }},
 	{ good: true, type: story, hid: 'chicken_slayer',               outcome: { strength:true }},
 	{ good: true, type: story, hid: 'arrow_in_the_knee',            outcome: { wisdom:true }},
-	{ good: true, type: story, hid: 'sentients_killing',            outcome: { coin:'gainꘌsmall', class_primary_attribute:true }},
+	{ good: true, type: story, hid: 'sentients_killing',            outcome: { coin:CoinsGain.gainꘌsmall, class_primary_attribute:true }},
 	{ good: true, type: story, hid: 'colossal_cave',                outcome: { armor_or_weapon: true, class_primary_attribute:true }},
 	{ good: true, type: story, hid: 'colossal_cave_maze',           outcome: { armor_or_weapon:true }},
-	{ good: true, type: story, hid: 'gehennom',                     outcome: { coin:'gainꘌmedium', armor_or_weapon:true }},
+	{ good: true, type: story, hid: 'gehennom',                     outcome: { coin:CoinsGain.gainꘌmedium, armor_or_weapon:true }},
 	{ good: true, type: story, hid: 'exile_GIFTS',                  outcome: { improvementⵧweapon:true }},
 	{ good: true, type: story, hid: 'DQ_good_slime',                outcome: { class_primary_attribute:true }},
 	{ good: true, type: story, hid: 'socketed_item',                outcome: { improvementⵧarmor_or_weapon:true }},
@@ -161,22 +161,22 @@ const ENTRIES: Readonly<RawAdventureArchetypeEntry>[] = [
 	{ good: true, type: story, hid: 'sword_in_rock',                outcome: { weapon:true }},
 	{ good: true, type: story, hid: 'sword_in_a_lake',              outcome: { weapon:true }},
 	{ good: true, type: story, hid: 'lost_mine',                    outcome: { token: 1 }},
-	{ good: true, type: story, hid: 'vampire_castle',               outcome: { coin:'gainꘌmedium', armor_or_weapon:true }},
+	{ good: true, type: story, hid: 'vampire_castle',               outcome: { coin:CoinsGain.gainꘌmedium, armor_or_weapon:true }},
 	{ good: true, type: story, hid: 'mana_mana',                    outcome: { mana:true }},
 	{ good: true, type: story, hid: 'square_eggs',                  outcome: { luck:true }},
 
 	{ good: true, type: story, hid: 'foodie_friend',                outcome: { health:true }},
 	{ good: true, type: story, hid: 'chilies',                      outcome: { class_primary_attribute:true }},
-	{ good: true, type: story, hid: 'caravan_failure',              outcome: { coin:'gainꘌmedium', armor_or_weapon:true }},
+	{ good: true, type: story, hid: 'caravan_failure',              outcome: { coin:CoinsGain.gainꘌmedium, armor_or_weapon:true }},
 	{ good: true, type: story, hid: 'meet_old_wizard',              outcome: { wisdom:true }},
 	{ good: true, type: story, hid: 'always_keep_potions',          outcome: { health:true }},
 	{ good: true, type: story, hid: 'lost',                         outcome: { health:true }},
 	{ good: true, type: story, hid: 'grinding',                     outcome: { level:true }},
-	{ good: true, type: story, hid: 'keep_watch',                   outcome: { coin:'gainꘌsmall' }},
+	{ good: true, type: story, hid: 'keep_watch',                   outcome: { coin:CoinsGain.gainꘌsmall }},
 	{ good: true, type: story, hid: 'critters',                     outcome: { class_secondary_attribute:true }},
 	{ good: true, type: story, hid: 'class_grimoire',               outcome: { class_primary_attribute:true }},
 
-	{ good: true, type: story, hid: 'village_farmwork',             outcome: { coin:'gainꘌsmall', strength:true }},
+	{ good: true, type: story, hid: 'village_farmwork',             outcome: { coin:CoinsGain.gainꘌsmall, strength:true }},
 	{ good: true, type: story, hid: 'village_lost_kid',             outcome: { armor_or_weapon:true }},
 	{ good: true, type: story, hid: 'village_lost_father',          outcome: { class_primary_attribute:true }},
 	{ good: true, type: story, hid: 'village_nice_daughter',        outcome: { charisma:true }},
@@ -243,7 +243,7 @@ const ENTRIES: Readonly<RawAdventureArchetypeEntry>[] = [
 	{ good: true, type: story, hid: 'found_journal',                outcome: { health:true }},
 
 	// special
-	{ good: true, type: story, hid: 'found_coin',                   outcome: { coin:'gainꘌone' }},
+	{ good: true, type: story, hid: 'found_coin',                   outcome: { coin:CoinsGain.gainꘌone }},
 ]
 
 

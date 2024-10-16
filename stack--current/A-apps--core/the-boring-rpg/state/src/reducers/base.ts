@@ -36,17 +36,21 @@ import {
 
 /////////////////////
 
-function on_start_session(previous_state: Immutable<State>, is_web_diversity_supporter: boolean, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
+interface StartSessionParams {
+	now_ms?: TimestampUTCMs // will be inferred if not provided
+	is_web_diversity_supporter: boolean | undefined // if using a non-monopolistic browser, we reward
+}
+function on_start_session(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp‿ms(), is_web_diversity_supporter}: StartSessionParams): Immutable<State> {
 	// update energy (not sure needed but good safety)
 	let state = _update_to_now(previous_state, now_ms)
 
 	state = {
 		...state,
-		//last_user_investment_tms: now_ms, //No, this is NOT a valuable user action
+		//last_user_investment_tms: now_ms, // No, this is NOT a valuable user action
 		u_state: {
 			...state.u_state,
 
-			meta: MetaState.on_start_session(state.u_state.meta, is_web_diversity_supporter),
+			meta: MetaState.on_start_session(state.u_state.meta, is_web_diversity_supporter ?? false),
 
 			revision: previous_state.u_state.revision + 1,
 		},
@@ -67,7 +71,7 @@ function on_logged_in_refresh(previous_state: Immutable<State>, is_logged_in: bo
 
 	state = {
 		...state,
-		//last_user_investment_tms: now_ms, //No, this is NOT a valuable user action
+		//last_user_investment_tms: now_ms, // No, this is NOT a valuable user action
 		u_state: {
 			...state.u_state,
 			meta: MetaState.on_logged_in_refresh(state.u_state.meta, is_logged_in, roles),
@@ -86,7 +90,11 @@ function update_to_now(state: Immutable<State>, now_ms: TimestampUTCMs = getꓽU
 	return _update_to_now(state, now_ms)
 }
 
-function equip_item(previous_state: Immutable<State>, uuid: UUID, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
+interface EquipItemParams {
+	now_ms?: TimestampUTCMs // will be inferred if not provided
+	uuid: UUID
+}
+function equip_item(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp‿ms(), uuid }: EquipItemParams): Immutable<State> {
 	let state = previous_state
 	state = {
 		...state,
@@ -102,7 +110,11 @@ function equip_item(previous_state: Immutable<State>, uuid: UUID, now_ms: Timest
 	return _refresh_achievements(state)
 }
 
-function sell_item(previous_state: Immutable<State>, uuid: UUID, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
+interface SellItemParams {
+	now_ms?: TimestampUTCMs // will be inferred if not provided
+	uuid: UUID
+}
+function sell_item(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp‿ms(), uuid }: SellItemParams): Immutable<State> {
 	let state = previous_state
 	state = _sell_item(state, uuid)
 	state = {
@@ -173,11 +185,20 @@ function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, uid: 
 
 export {
 	acknowledge_engagement_msg_seen,
+
+	type StartSessionParams,
 	on_start_session,
+
 	on_logged_in_refresh,
 	update_to_now,
+
+	type EquipItemParams,
 	equip_item,
+
+	type SellItemParams,
 	sell_item,
+
 	rename_avatar,
+
 	change_avatar_class,
 }

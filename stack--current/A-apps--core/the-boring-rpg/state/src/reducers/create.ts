@@ -1,6 +1,7 @@
 /////////////////////
 
-import { getꓽUTC_timestamp‿ms, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
+import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+
 import assert from 'tiny-invariant'
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
@@ -53,16 +54,19 @@ const STARTING_ARMOR_SPEC: Immutable<Partial<Armor>> = {
 	base_strength: 1,
 }
 
-function create(SXC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable<State> {
+interface CreateParams {
+	now_ms?: TimestampUTCMs // will be inferred if not provided
+	seed?: PRNGState.Seed
+}
+function create(SXC?: TBRSoftExecutionContext, { now_ms = getꓽUTC_timestamp‿ms(), seed }: CreateParams = {}): Immutable<State> {
+	console.log('Create()', { now_ms, seed })
 	return getꓽSXC(SXC).xTry('create', () => {
-		const [ u_state_energy, t_state_energy ] = EnergyState.create()
-		const now = new Date()
-		//console.log('creation', now)
+		const [ u_state_energy, t_state_energy ] = EnergyState.create(0) // T-state doesn't need current timestamp, update_to_now() will take care of it
 
 		let state: Immutable<State> = {
 			ⵙapp_id: 'tbrpg',
 			schema_version: SCHEMA_VERSION,
-			last_user_investment_tms: getꓽUTC_timestamp‿ms(now),
+			last_user_investment_tms: now_ms,
 
 			u_state: {
 				schema_version: SCHEMA_VERSION,
@@ -93,11 +97,11 @@ function create(SXC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable
 
 		const starting_weapon = create_weapon(rng, STARTING_WEAPON_SPEC)
 		state = _receive_item(state, starting_weapon)
-		state = equip_item(state, starting_weapon.uuid)
+		state = equip_item(state, { now_ms, uuid: starting_weapon.uuid })
 
 		const starting_armor = create_armor(rng, STARTING_ARMOR_SPEC)
 		state = _receive_item(state, starting_armor)
-		state = equip_item(state, starting_armor.uuid)
+		state = equip_item(state, { now_ms, uuid: starting_armor.uuid })
 
 		state = _refresh_achievements(state) // there are some initial achievements
 		state = _ack_all_engagements(state) // reset engagements that may have been created by noisy initial achievements, distracting
@@ -130,16 +134,17 @@ function create(SXC?: TBRSoftExecutionContext, seed?: PRNGState.Seed): Immutable
 			},
 		}
 
-		// hurts the unit tests!
-		//state = _update_to_now(state, now_ms) // not sure needed but doesn't hurt
+		// No, hurts the unit tests!
+		//state = _update_to_now(state, now_ms)
 
 		return enforceꓽimmutable<State>(state)
 	})
 }
 
+// TODO review normally only useful for UTests
 function reseed(state: Immutable<State>, seed?: PRNGState.Seed): Immutable<State> {
 	if (seed) {
-		console.warn('TODO review manual seeding!') // unless UT we don't want a manual seed
+		console.warn('TODO review manual seeding!') // unless UT we normally don't want a manual seed
 		state = {
 			...state,
 			u_state: {
@@ -170,7 +175,9 @@ export {
 	STARTING_WEAPON_SPEC,
 	STARTING_ARMOR_SPEC,
 
+	type CreateParams,
 	create,
+
 	reseed,
 }
 

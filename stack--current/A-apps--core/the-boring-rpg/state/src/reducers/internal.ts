@@ -52,7 +52,7 @@ function compare_items_by_normalized_power(a: Immutable<Item>, b: Immutable<Item
 // - do not refresh achievements or update the T-state
 // - do not increment the root revision (this has to be done by the parent to avoid multiple increments)
 
-function _lose_all_energy(state: Immutable<State>): Immutable<State> {
+function _lose_all_energy(state: Immutable<State>, now_ms?: TimestampUTCMs): Immutable<State> {
 	return {
 		...state,
 		u_state: {
@@ -65,7 +65,7 @@ function _lose_all_energy(state: Immutable<State>): Immutable<State> {
 		},
 		t_state: {
 			...state.t_state,
-			energy: EnergyState.lose_all_energy([state.u_state.energy, state.t_state.energy]),
+			energy: EnergyState.lose_all_energy([state.u_state.energy, state.t_state.energy], now_ms),
 		},
 	}
 }

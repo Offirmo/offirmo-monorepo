@@ -36,6 +36,7 @@ import { reseed } from './create.js'
 /////////////////////
 
 function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
+	// tri-state needed for "complete_or_cancel_eager_mutation"
 	let previous_state: Immutable<State> | null = _state // allow null for special manipulation such as reset
 	let updated_state: Immutable<State> | null = _state // for now
 	let state: Immutable<State> = _state // for now
@@ -255,6 +256,7 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 	// enqueue the result
 	state = {
 		...state,
+
 		u_state: {
 			...state.u_state,
 			engagement: EngagementState.enqueue(state.u_state.engagement, {
@@ -266,8 +268,16 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 
 	state = _refresh_achievements(state)
 
-	if (previous_state)
+	if (previous_state) {
 		state = complete_or_cancel_eager_mutation_propagating_possible_child_mutation(previous_state, state, updated_state || undefined, `attempt_to_redeem_code(${code})`)
+	}
+
+	if (state !== previous_state) {
+		state = {
+			...state,
+			last_user_investment_tms: now_ms,
+		}
+	}
 
 	return state
 }

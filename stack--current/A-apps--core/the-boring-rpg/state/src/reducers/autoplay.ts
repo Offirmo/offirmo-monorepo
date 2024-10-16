@@ -74,11 +74,11 @@ function _autogroom(state: Immutable<State>, options: { DEBUG?: boolean } = {}):
 	// equip best gear
 	const better_weapon = find_better_unequipped_weapon(state.u_state)
 	if (better_weapon) {
-		state = equip_item(state, better_weapon.uuid)
+		state = equip_item(state, { uuid: better_weapon.uuid })
 	}
 	const better_armor = find_better_unequipped_armor(state.u_state)
 	if (better_armor) {
-		state = equip_item(state, better_armor.uuid)
+		state = equip_item(state, { uuid: better_armor.uuid })
 	}
 
 	// in case inventory full

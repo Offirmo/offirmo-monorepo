@@ -77,7 +77,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 				describe(`✅  adventure #${index} "${hid}"`, function() {
 					it('should be render-able', () => {
 						let state = create()
-						state = play(state, undefined, hid)
+						state = play(state, {explicit_adventure_archetype_hid: hid})
 
 						const $doc = renderꓽresolved_adventure(state.u_state.last_adventure!)
 						//console.log(prettifyꓽjson($doc))
@@ -103,7 +103,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 						state = play(state)
 						state = play(state)
 
-						state = play(state, undefined, hid)
+						state = play(state, {explicit_adventure_archetype_hid: hid})
 
 						const $doc = renderꓽresolved_adventure(state.u_state.last_adventure!)
 						//console.log(prettifyꓽjson($doc))

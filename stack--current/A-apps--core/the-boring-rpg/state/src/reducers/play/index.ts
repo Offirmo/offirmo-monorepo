@@ -8,6 +8,7 @@ import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation }
 
 import * as EnergyState from '@tbrpg/state--energy'
 import * as AchievementsState from '@tbrpg/state--achievements'
+import { type AdventureHumanReadableID } from '@tbrpg/logic--adventures'
 
 /////////////////////
 
@@ -21,10 +22,13 @@ import { _refresh_achievements } from '../achievements/index.js'
 
 /////////////////////
 
-// note: allows passing an explicit adventure archetype for testing
-function play(previous_state: Immutable<State>, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms(), explicit_adventure_archetype_hid?: string): Immutable<State> {
-	let updated_state = _update_to_now(previous_state, now_ms)
-	let state = updated_state
+interface PlayParams {
+	now_ms?: TimestampUTCMs // will be inferred if not provided
+	explicit_adventure_archetype_hid?: AdventureHumanReadableID // in case we want a specific adventure and not a random one, either for testing or for onboarding
+}
+function play(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp‿ms(), explicit_adventure_archetype_hid }: PlayParams = {}): Immutable<State> {
+	let up_to_date_state = _update_to_now(previous_state, now_ms)
+	let state = up_to_date_state
 
 	const is_good_play = will_next_play_be_good_at(state, now_ms)
 
@@ -35,7 +39,7 @@ function play(previous_state: Immutable<State>, now_ms: TimestampUTCMs = getꓽU
 			t_state: {
 				...state.t_state,
 				// punishment
-				energy: EnergyState.lose_all_energy([state.u_state.energy, state.t_state.energy]),
+				energy: EnergyState.lose_all_energy([state.u_state.energy, state.t_state.energy], now_ms),
 				revision: state.t_state.revision + 1,
 			},
 		}
@@ -112,6 +116,7 @@ function play(previous_state: Immutable<State>, now_ms: TimestampUTCMs = getꓽU
 /////////////////////
 
 export {
+	type PlayParams,
 	play,
 }
 

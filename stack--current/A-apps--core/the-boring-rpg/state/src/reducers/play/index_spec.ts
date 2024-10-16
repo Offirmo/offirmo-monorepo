@@ -125,7 +125,7 @@ describe(`${LIB} - reducer - play`, function() {
 
 					it('should sometime be a coin gain', () => {
 						let state = create()
-						state = play(state, undefined,'dying_man')
+						state = play(state, {explicit_adventure_archetype_hid: 'dying_man' })
 
 						// we got money
 						expect(get_currency_amount(state.u_state.wallet, Currency.coin)).to.be.above(0)
@@ -137,7 +137,7 @@ describe(`${LIB} - reducer - play`, function() {
 
 					it('should sometime be an item gain', () => {
 						let state = create()
-						state = play(state, undefined, 'rare_goods_seller')
+						state = play(state, {explicit_adventure_archetype_hid: 'rare_goods_seller'})
 
 						// check our 2 predefined items are still present and equipped
 						expect(get_equipped_item_count(state.u_state.inventory), 'equipped').to.equal(2)
@@ -154,13 +154,13 @@ describe(`${LIB} - reducer - play`, function() {
 						expect(state.u_state.inventory.slotted[InventorySlot.armor]).to.have.deep.property('enhancement_level', 0)
 						expect(state.u_state.inventory.slotted[InventorySlot.weapon]).to.have.deep.property('enhancement_level', 0)
 
-						state = play(state, undefined, 'princess')
+						state = play(state, {explicit_adventure_archetype_hid: 'princess'})
 
 						//console.log(state.u_state.inventory.slotted)
 						expect(state.u_state.inventory.slotted[InventorySlot.armor]).to.have.deep.property('enhancement_level', 1)
 						expect(state.u_state.inventory.slotted[InventorySlot.weapon]).to.have.deep.property('enhancement_level', 0)
 
-						state = play(state, undefined, 'exile_GIFTS')
+						state = play(state, {explicit_adventure_archetype_hid: 'exile_GIFTS'})
 
 						//console.log(state.u_state.inventory.slotted)
 						expect(state.u_state.inventory.slotted[InventorySlot.armor]).to.have.deep.property('enhancement_level', 1)
@@ -209,7 +209,7 @@ describe(`${LIB} - reducer - play`, function() {
 					if (!good)
 						state = _lose_all_energy(state)
 
-					state = play(state, undefined, hid)
+					state = play(state, {explicit_adventure_archetype_hid: hid})
 				})
 			})
 		})

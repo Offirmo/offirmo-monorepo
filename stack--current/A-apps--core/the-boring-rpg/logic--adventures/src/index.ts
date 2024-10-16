@@ -141,6 +141,7 @@ function generate_random_coin_gain_or_loss(rng: RNGEngine, {
 
 /////////////////////
 
+export * from './types.js'
 export {
 	i18n_messages,
 
@@ -148,11 +149,6 @@ export {
 	ALL_BAD_ADVENTURE_ARCHETYPES,
 	ALL_GOOD_ADVENTURE_ARCHETYPES,
 	GOOD_ADVENTURE_ARCHETYPES_BY_TYPE,
-
-	CoinsGain,
-	AdventureType,
-	type OutcomeArchetype,
-	type AdventureArchetype,
 
 	pick_random_good_archetype,
 	pick_random_bad_archetype,

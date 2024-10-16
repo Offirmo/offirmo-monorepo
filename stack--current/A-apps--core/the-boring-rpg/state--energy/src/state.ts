@@ -18,7 +18,9 @@ const DEBUG = false
 /////////////////////
 
 // TODO now should be set through sinon, no need
-function create(now_ms?: TimestampUTCMs): [ Readonly<UState>, Readonly<TState> ] {
+function create(
+	now_ms: TimestampUTCMs = 0 // 0 makes it easier for unit tests
+): [ Readonly<UState>, Readonly<TState> ] {
 	const u_state: UState = {
 		schema_version: SCHEMA_VERSION,
 		revision: 0,
@@ -31,7 +33,7 @@ function create(now_ms?: TimestampUTCMs): [ Readonly<UState>, Readonly<TState> ]
 		schema_version: SCHEMA_VERSION,
 		revision: 0,
 
-		timestamp_ms: now_ms || 0, // 0 makes it easier for unit tests
+		timestamp_ms: now_ms,
 		available_energy: {
 			n: u_state.max_energy,
 			d: 1,
@@ -205,7 +207,6 @@ function use_energy(
 // can be used as a punishment
 function lose_all_energy(
 	[ u_state, t_state ]: [ Readonly<UState>, Readonly<TState> ],
-	qty: number = 1,
 	now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms(),
 ): Readonly<TState> {
 	t_state = {

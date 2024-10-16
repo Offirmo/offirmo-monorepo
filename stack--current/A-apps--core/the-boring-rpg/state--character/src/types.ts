@@ -26,7 +26,7 @@ const CharacterAttribute = Enum(
 )
 type CharacterAttribute = Enum<typeof CharacterAttribute> // eslint-disable-line no-redeclare
 
-// I arbitrarily skip the classes I find uncool / unclear / better fit for a "job"
+// I arbitrarily skip the classes I find unclear / uncool / better fit as a "job"
 const CharacterClass = Enum(
 	// initial (also Korean game)
 	'novice',
@@ -47,7 +47,7 @@ const CharacterClass = Enum(
 	'wizard',
 	'darkness hunter', // better than blood
 
-	// additionals from WoW
+	// more from WoW
 	// https://worldofwarcraft.com/en-us/game/classes
 	'hunter',
 	'priest',
@@ -57,7 +57,7 @@ const CharacterClass = Enum(
 
 	// additionals, from GW2
 	// https://www.guildwars2.com/en/the-game/professions/
-	'engineer',
+	'engineer', // TODO job?
 	'thief',
 
 	// extra unofficial DnD
@@ -78,7 +78,6 @@ const CharacterClass = Enum(
 	// mangas
 	'sculptor',
 	'summoner',
-
 )
 type CharacterClass = Enum<typeof CharacterClass> // eslint-disable-line no-redeclare
 
