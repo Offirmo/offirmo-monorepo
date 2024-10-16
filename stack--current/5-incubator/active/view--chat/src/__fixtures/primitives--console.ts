@@ -1,5 +1,5 @@
-/** trivial console-based chat primitives for testing
- * no need to be fancy.
+/** trivial console-based chat primitives for quick testing
+ * NO need to be fancy!
  */
 import * as readline from 'node:readline/promises'
 import { stdin as input, stdout as output } from 'node:process'
@@ -105,13 +105,14 @@ export class ChatPrimitivesConsole<ContentType = string | RichText.Document> imp
 		return answer
 	}
 
-	async spin_until_resolution<T>({ promise }: { promise: Promise<T> }): Promise<T> {
+	async spin_until_resolution<T>(p: Promise<T>): Promise<T> {
 		DEBUG && console.log('[ChatPrimitives.spin_until_resolution(...)]')
 
-		console.log('[ChatPrimitives.spin_until_resolution()] begin…')
-		await promise
-		console.log('↳ end.')
-		return promise
+		//console.log('[ChatPrimitives.spin_until_resolution()] begin…')
+		console.log('...')
+		await p
+		//console.log('↳ end.')
+		return p
 	}
 
 	async setup() {

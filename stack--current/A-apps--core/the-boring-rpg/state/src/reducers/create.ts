@@ -56,10 +56,10 @@ const STARTING_ARMOR_SPEC: Immutable<Partial<Armor>> = {
 
 interface CreateParams {
 	now_ms?: TimestampUTCMs // will be inferred if not provided
-	seed?: PRNGState.Seed
+	seed?: PRNGState.Seed // will be auto-seeded if not provided
 }
 function create(SXC?: TBRSoftExecutionContext, { now_ms = getꓽUTC_timestamp‿ms(), seed }: CreateParams = {}): Immutable<State> {
-	console.log('Create()', { now_ms, seed })
+	//console.log('Create()', { now_ms, seed })
 	return getꓽSXC(SXC).xTry('create', () => {
 		const [ u_state_energy, t_state_energy ] = EnergyState.create(0) // T-state doesn't need current timestamp, update_to_now() will take care of it
 

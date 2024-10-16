@@ -60,7 +60,7 @@ interface ChatPrimitives<ContentType> {
 	// while we wait for the next step.
 	// wraps the promise, should return it
 	// TODO clarify
-	spin_until_resolution<T>(p: { promise: Promise<T> }): Promise<T>
+	spin_until_resolution<T>(p: Promise<T>): Promise<T>
 
 	/////////////////////////////////////////////////
 	// technical

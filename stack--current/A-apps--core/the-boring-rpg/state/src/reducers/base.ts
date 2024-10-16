@@ -38,15 +38,15 @@ import {
 
 interface StartSessionParams {
 	now_ms?: TimestampUTCMs // will be inferred if not provided
-	is_web_diversity_supporter: boolean | undefined // if using a non-monopolistic browser, we reward
+	is_web_diversity_supporter?: boolean | undefined // if using a non-monopolistic browser, we reward
 }
-function on_start_session(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp‿ms(), is_web_diversity_supporter}: StartSessionParams): Immutable<State> {
+function on_start_session(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp‿ms(), is_web_diversity_supporter}: StartSessionParams = {}): Immutable<State> {
 	// update energy (not sure needed but good safety)
 	let state = _update_to_now(previous_state, now_ms)
 
 	state = {
 		...state,
-		//last_user_investment_tms: now_ms, // No, this is NOT a valuable user action
+		//last_user_investment_tms: now_ms, // NO! this is NOT a valuable user action
 		u_state: {
 			...state.u_state,
 

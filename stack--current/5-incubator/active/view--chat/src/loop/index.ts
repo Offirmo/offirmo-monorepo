@@ -49,21 +49,18 @@ function create<ContentType>({
 
 			do {
 				const step_start_timestamp_ms = +new Date()
-				const raw_yielded_step = gen_next_step.next({last_step, last_answer})
-				//console.log(`[${LIB}]`, { raw_yielded_step })
-
-				// TODO can be a promise?
-				const yielded_step: any = is_promise(raw_yielded_step)
-					? await primitives.spin_until_resolution(raw_yielded_step as any)
-					: raw_yielded_step
-				//console.log(`[${LIB}]`, {yielded_step})
-
-				const { value: raw_step, done } = yielded_step
+				const raw_yielded = gen_next_step.next({last_step, last_answer})
+				//console.log(`[${LIB}]`, raw_yielded)
+				const { value: raw_yielded_step, done } = raw_yielded
 				if (done) {
 					should_exit = true
 					continue
 				}
-				const step: Step<ContentType> = raw_step
+
+				const step: Step<ContentType> = is_promise(raw_yielded_step)
+					? (await primitives.spin_until_resolution(raw_yielded_step))
+					: raw_yielded_step
+				//console.log(`[${LIB}]`, {yielded_step: step})
 
 				// TODO process the separation with the previous step
 				const elapsed_time_ms = (+new Date()) - step_start_timestamp_ms

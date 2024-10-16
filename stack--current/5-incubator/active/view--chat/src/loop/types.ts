@@ -5,7 +5,7 @@ import { type Step } from '../steps/index.js'
 
 type TYield<ContentType> = Step<ContentType> | Promise<Step<ContentType>>
 
-type TReturn<ContentType> = any
+type TReturn<ContentType> = unknown // no contract yet
 
 type TNext<ContentType> = {
 	last_step: Step<ContentType> | undefined,

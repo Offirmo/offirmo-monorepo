@@ -18,27 +18,7 @@ import {
 	type StepIteratorYieldResult,
 	type StepIteratorReturnResult,
 } from '@offirmo-private/view--chat'
-import { type Action, create_action, ActionType, type ActionPlay } from '@tbrpg/interfaces'
-
-/////////////////////////////////////////////////
-// TODO async to pretend we're talking to a server (even if it's a worker)
-
-class Game {
-	state: Immutable<State.State>
-
-	constructor() {
-		this.state = State.create()
-		// TODO reseed
-	}
-
-	on_start_session() {
-		this.state = State.on_start_session(this.state, true)
-	}
-
-	getꓽstate(): Immutable<State.State> {
-		return this.state
-	}
-}
+import { Game, create_action, ActionType, type ActionPlay } from '@tbrpg/interfaces'
 
 /////////////////////////////////////////////////
 
@@ -207,12 +187,12 @@ class GameChat implements StepIterator<ContentType> {
 		} satisfies StepIteratorYieldResult<ContentType>
 	}
 
-	gen_next_step({ last_step, last_answer }: StepIteratorTNext<ContentType>): Step<ContentType> {
+	async gen_next_step({ last_step, last_answer }: StepIteratorTNext<ContentType>): Promise<Step<ContentType>> {
 		if (this.pending_actions.length) {
 			return this.pending_actions.pop()!
 		}
 
-		const state = this.game.getꓽstate()
+		const state = await this.game.getꓽstate()
 
 		if (this.status === 'starting') {
 			this.status = 'normal'
@@ -286,9 +266,10 @@ class GameChat implements StepIterator<ContentType> {
 					value: v,
 				} ])),
 			callback(value) {
-				console.log('Callback!', args)
+				console.log('Callback!', { value })
 				if (value.type === 'action') {
-
+					// TODO reduce
+					throw new Error(`NIMP!`)
 				}
 
 				throw new Error(`NIMP!`)

@@ -12,8 +12,7 @@ import '../services/misc.js'
 /////////////////////////////////////////////////
 
 let state = State.create()
-// TODO reseed
-state = State.on_start_session(state, true)
+state = State.on_start_session(state)
 state = State.update_to_now(state)
 
 /////////////////////////////////////////////////
