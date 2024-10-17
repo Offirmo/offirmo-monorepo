@@ -26,6 +26,7 @@ interface HyperlinkAction extends BaseAction {
 interface EmbeddedReducerAction {
 	cta?: string // optional bc should ideally be derived from the action (esp. for i18n) BUT same action could have different CTA following the context (ex. equip best equipment)
 	data: any // the data of the action, could be anything
+	href?: URI‿x // optional URL to navigate to following the action
 }
 interface ReducerAction extends BaseAction, EmbeddedReducerAction {
 	type: 'action' // in the sense of reducer(action)

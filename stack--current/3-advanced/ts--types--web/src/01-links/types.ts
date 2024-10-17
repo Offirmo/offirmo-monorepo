@@ -9,26 +9,6 @@ import { WithLang } from '../00-base/index.js'
 type Uri‿str = string
 type Url‿str = Uri‿str
 
-////////////
-
-type SocialNetworkId =
-	| 'artstation'
-	| 'facebook'
-	| 'github'
-	| 'instagram'
-	| 'itch.io' // https://itch.io/profile/xyz
-	| 'linkedin'
-	| 'producthunt'
-	| 'reddit'
-	| 'twitch'
-	| 'ko-fi' // https://ko-fi.com/xyz
-	| 'twitter' // we keep "twitter" as an internal id, "X" is too generic
-
-interface SocialNetworkLink extends SimplerSocialNetworkLink {
-	url: Url‿str // mandatory
-	handle?: string // ex @Offirmo, u/Offirmo
-	network: SocialNetworkId // helps to parse. Not optional bc I can add if missing
-}
 
 ////////////
 
@@ -64,6 +44,7 @@ interface SchemeSpecificURIPart {
 	//parent?: SchemeSpecificURIPart
 }
 
+// "x" = "any [kind of format]"
 type URI‿x = Uri‿str | SchemeSpecificURIPart
 
 /////////////////////////////////////////////////
@@ -104,16 +85,38 @@ interface Hyperlink extends WithLang {
 	// reducer action?
 }
 
+////////////
+
+type SocialNetworkId =
+	| 'artstation'
+	| 'facebook'
+	| 'github'
+	| 'instagram'
+	| 'itch.io' // https://itch.io/profile/xyz
+	| 'linkedin'
+	| 'producthunt'
+	| 'reddit'
+	| 'twitch'
+	| 'ko-fi' // https://ko-fi.com/xyz
+	| 'twitter' // we keep "twitter" as an internal id, "X" is too generic
+
+interface SocialNetworkLink extends SimplerSocialNetworkLink {
+	url: Url‿str // mandatory
+	handle?: string // ex @Offirmo, u/Offirmo
+	network: SocialNetworkId // helps to parse. Not optional bc I can add if missing
+}
+
 /////////////////////////////////////////////////
 
 export {
+	type Uri‿str,
 	type Url‿str,
-
-	type SocialNetworkId,
-	type SocialNetworkLink,
 
 	type URI‿x,
 	type SchemeSpecificURIPart,
 	type LinkRelation,
 	type Hyperlink,
+
+	type SocialNetworkId,
+	type SocialNetworkLink,
 }

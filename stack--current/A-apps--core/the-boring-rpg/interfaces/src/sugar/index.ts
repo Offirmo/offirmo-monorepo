@@ -6,7 +6,7 @@ import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/times
 import * as State from '@tbrpg/state'
 import { CharacterClass } from '@tbrpg/state--character'
 
-import { type Action } from '../actions/index.js'
+import { type Action, ActionType } from '../actions/index.js'
 
 
 // systematically async to pretend we're talking to a "server" or any other async store
@@ -36,7 +36,9 @@ export class Game {
 		}
 
 		switch (action.type) {
-
+			case ActionType.play:
+				this.state = State.play(this.state, action)
+				break
 
 			default:
 				throw new Error(`NIMP!`)

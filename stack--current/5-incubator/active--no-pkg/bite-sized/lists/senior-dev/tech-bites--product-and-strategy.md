@@ -53,6 +53,7 @@ features -- "infantile level" https://www.linkedin.com/pulse/one-reason-why-invi
 features -- collaboration https://zknill.io/posts/collaboration-no-crdts/
 features -- creep
 features -- scale = Search, sort, diffs, authorship tracking, comments, permissions (user management), sharing security, SSO, integrations... https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
+FFP "First Full Purchase" = the moment customers finally decide it’s time to go from ‘just browsing’ to ‘fine, take my money already'
 financing cycle https://en.wikipedia.org/wiki/Seed_money
 first-mover advantage -- handicap of a head start https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_start
 first-mover advantage -- second mover advantage / "fast followers" / "free riders" https://en.wikipedia.org/wiki/First-mover_advantage#Second-mover_advantage

@@ -20,7 +20,14 @@ interface Builder {
 	addHints(hints: { [k: string]: any }): Builder
 
 	pushText(str: string): Builder
+
+	// nothing is added in content
+	// useful for
+	// 1. lists
+	// 2. manual stuff
 	pushRawNode(node: Node, options?: CommonOptions): Builder
+
+	// node ref is auto added into content
 	pushNode(node: Node, options?: CommonOptions): Builder
 
 	pushInlineFragment(str: string, options?: CommonOptions): Builder
@@ -104,10 +111,7 @@ function create($type: NodeType): Builder {
 		return pushNode(node, options)
 	}
 
-	// nothing is added in content
-	// useful for
-	// 1. lists
-	// 2. manual stuff
+
 	function pushRawNode(node: Node, options: CommonOptions = {}): Builder {
 		const id = options.id || ('000' + ++sub_id).slice(-4)
 		$node.$sub[id] = node
@@ -116,7 +120,6 @@ function create($type: NodeType): Builder {
 		return builder
 	}
 
-	// node ref is auto added into content
 	function pushNode(node: Node, options: CommonOptions = {}): Builder {
 		const id = options.id || ('000' + ++sub_id).slice(-4)
 		$node.$content += `⎨⎨${id}⎬⎬`

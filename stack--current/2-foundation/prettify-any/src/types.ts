@@ -58,6 +58,8 @@ interface State {
 	indent_levelⵧmax: number
 	isꓽjson: boolean
 
+	// TODO depth limit (useful for debug)
+
 	circular: WeakSet<object>
 }
 

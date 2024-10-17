@@ -41,10 +41,10 @@ export class ChatPrimitivesConsole<ContentType = string | RichText.Document> imp
 	}
 
 	async display_task({
-		                   msg_before,
-		                   promise,
-		                   msg_after,
-	                   }: Parameters<ChatPrimitives<ContentType>['display_task']>[0]) {
+		msg_before,
+		promise,
+		msg_after,
+	}: Parameters<ChatPrimitives<ContentType>['display_task']>[0]) {
 		DEBUG && console.log('[ChatPrimitives.display_task(…)]')
 
 		console.log(this.get_string_representation(msg_before))
@@ -63,18 +63,18 @@ export class ChatPrimitivesConsole<ContentType = string | RichText.Document> imp
 	}
 
 	async input<T>({
-		               prompt,
-		               // we ignore the rest in this basic implementation
-	               }: InputParameters<ContentType, T>): Promise<string> {
+		prompt,
+		// we ignore the rest in this basic implementation
+	}: InputParameters<ContentType, T>): Promise<string> {
 		DEBUG && console.log('[ChatPrimitives.input(…)]')
 		return this.rli.question(this.get_string_representation(prompt) + ' ')
 	}
 
 	async select<T>({
-		                prompt,
-		                default_value,
-		                options,
-	                }: SelectParameters<ContentType, T>): Promise<T> {
+		prompt,
+		default_value,
+		options,
+	}: SelectParameters<ContentType, T>): Promise<T> {
 		DEBUG && console.log('[ChatPrimitives.select(…)]')
 		const keys = Object.keys(options)
 
