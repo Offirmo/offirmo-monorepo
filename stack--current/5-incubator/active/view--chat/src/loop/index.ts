@@ -150,9 +150,11 @@ function create<ContentType>({
 				let is_valid: boolean = false // so far
 
 				do {
-					// not printing the prompt as the underlying <input> is better suited to do it
+					// not printing the prompt
+					// since the underlying input primitive is better suited to do it
 					const raw_answer = await primitives.input(step)
 					if (DEBUG) console.log(`↖ input(…) result =`, DEBUG_to_prettified_str(raw_answer))
+
 					answer = step.normalizer ? step.normalizer(raw_answer) : raw_answer
 					const validations = step.validators.map(validator => validator(answer))
 					is_valid = validations.every(([is_valid]) => is_valid)
@@ -166,13 +168,12 @@ function create<ContentType>({
 				} while (!is_valid)
 
 				let ೱcallback = Promise.resolve(step.callback?.(answer))
-				let ೱfeedback = primitives.display_message({
-						msg: step.msg_as_user?.(answer) || `My answer is: "${answer}".`,
-					})
+				let ೱfeedback = Promise.resolve(step.msg_as_user
+						&& primitives.display_message({ msg: step.msg_as_user(answer) })
+					)
 					.then(() => primitives.pretend_to_think({duration_ms: after_input_delay_ms}))
-					.then(() => primitives.display_message({
-						msg: step.msg_acknowledge?.(answer) || 'Got it.',
-					}))
+					.then(() => step.msg_acknowledge
+						&& primitives.display_message({ msg: step.msg_acknowledge(answer)}))
 				await Promise.all([ೱcallback, ೱfeedback])
 
 				break
@@ -191,13 +192,12 @@ function create<ContentType>({
 				})
 
 				let ೱcallback = Promise.resolve(step.callback?.(chosen_value))
-				let ೱfeedback = primitives.display_message({
-						msg: step.msg_as_user?.(chosen_value) || `My answer is: "${chosen_value}".`,
-					})
+				let ೱfeedback = Promise.resolve(step.msg_as_user
+						&& primitives.display_message({ msg: step.msg_as_user(chosen_value) })
+					)
 					.then(() => primitives.pretend_to_think({duration_ms: after_input_delay_ms}))
-					.then(() => primitives.display_message({
-						msg: step.msg_acknowledge?.(chosen_value) || 'Got it.',
-					}))
+					.then(() => step.msg_acknowledge
+						&& primitives.display_message({ msg: step.msg_acknowledge(chosen_value) }))
 				await Promise.all([ೱcallback, ೱfeedback])
 
 				break

@@ -8,11 +8,13 @@ import * as RichText from '@offirmo-private/rich-text-format'
 import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 import { type ChatPrimitives, type InputParameters, type SelectParameters } from '../primitives/types.js'
+import * as console from 'node:console'
 
 const DEBUG = false
 
 export class ChatPrimitivesConsole<ContentType = string | RichText.Document> implements ChatPrimitives<ContentType> {
 	rli = readline.createInterface({ input, output })
+	has_separation = false
 
 	constructor() {
 	}
@@ -29,15 +31,23 @@ export class ChatPrimitivesConsole<ContentType = string | RichText.Document> imp
 
 	async display_message({ msg }: Parameters<ChatPrimitives<ContentType>['display_message']>[0]) {
 		DEBUG && console.log('[ChatPrimitives.display_message(…)]')
+		if (!this.has_separation) {
+			console.log()
+		}
+
 		console.log(this.get_string_representation(msg))
+
+		this.has_separation = false
 	}
 
 	async pretend_to_think({ duration_ms }: Parameters<ChatPrimitives<ContentType>['pretend_to_think']>[0]) {
 		DEBUG && console.log('[ChatPrimitives.pretend_to_think(${duration_ms})]')
 
-		console.log('…')
+		console.log('[…thinking…]')
 		await new Promise(resolve => setTimeout(resolve, duration_ms))
-		console.log('↳ ✔')
+		//console.log('↳ ✔')
+
+		this.has_separation = true
 	}
 
 	async display_task({
@@ -60,6 +70,8 @@ export class ChatPrimitivesConsole<ContentType = string | RichText.Document> imp
 				return false
 			})
 		console.log('↳ ' + this.get_string_representation(msg_after(success, result || error)))
+
+		this.has_separation = false
 	}
 
 	async input<T>({
@@ -67,6 +79,9 @@ export class ChatPrimitivesConsole<ContentType = string | RichText.Document> imp
 		// we ignore the rest in this basic implementation
 	}: InputParameters<ContentType, T>): Promise<string> {
 		DEBUG && console.log('[ChatPrimitives.input(…)]')
+
+		this.has_separation = false
+
 		return this.rli.question(this.get_string_representation(prompt) + ' ')
 	}
 
@@ -102,6 +117,9 @@ export class ChatPrimitivesConsole<ContentType = string | RichText.Document> imp
 				}
 			}
 		} while (!is_valid)
+
+		this.has_separation = false
+
 		return answer
 	}
 
@@ -109,9 +127,12 @@ export class ChatPrimitivesConsole<ContentType = string | RichText.Document> imp
 		DEBUG && console.log('[ChatPrimitives.spin_until_resolution(...)]')
 
 		//console.log('[ChatPrimitives.spin_until_resolution()] begin…')
-		console.log('...')
+		//console.log('...')
 		await p
 		//console.log('↳ end.')
+
+		this.has_separation = false
+
 		return p
 	}
 

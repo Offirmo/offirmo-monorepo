@@ -23,7 +23,7 @@ import {
 
 /////////////////////////////////////////////////
 
-// TODO move into package
+// TODO move into dedicated package
 function normalizeꓽuri‿SSP(url: URI‿x): SchemeSpecificURIPart {
 	url ||= '/'
 
@@ -169,7 +169,7 @@ function HATEOASᐧGET(state: Immutable<AppState.State>, url: Hyperlink['href'] 
 			})
 			actions.push({
 				cta: 'Play!',
-				data: actionⵧplay,
+				payload: actionⵧplay,
 				href: '/last-adventure',
 			})
 
@@ -208,7 +208,7 @@ function HATEOASᐧGET(state: Immutable<AppState.State>, url: Hyperlink['href'] 
 		actions,
 	})
 
-	console.log(`↘ HATEOASᐧGET("${url}") returning ☑️`)
+	console.log(`↗ HATEOASᐧGET("${url}") returning ☑️`)
 	return $builder.done()
 }
 
@@ -216,15 +216,41 @@ function HATEOASᐧGET(state: Immutable<AppState.State>, url: Hyperlink['href'] 
 
 type ContentType = string | RichText.Document
 
-class ChatInterfaceForHypermediaApp implements StepIterator<ContentType> {
+interface HATEOASServer<ContentType, ActionType> {
+	// inspired by GET, POST, PUT, DELETE https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+	// also QUERY https://www.ietf.org/archive/id/draft-ietf-httpbis-safe-method-w-body-05.html
+	get(url: Hyperlink['href']): Promise<ContentType>
+	dispatch(action: ActionType): Promise<void> // TODO what return??
+}
+
+function getꓽCTA(action: RichText.Action): string {
+	switch (action.type) {
+		case 'action': {
+			if (action.cta)
+				return '⚡️' + action.cta
+
+			throw new Error('Missing CTA for action!')
+		}
+		case 'hyperlink': {
+			if (action.link.cta)
+				return '⇨ ' + action.link.cta
+
+			throw new Error('Missing CTA for hyperlink!')
+		}
+		default:
+			throw new Error(`NIMP action type "${(action as any)?.type}"!`)
+	}
+}
+
+class HypermediaBrowserWithChatInterface implements StepIterator<ContentType> {
 	// hypermedia
 	game: Game = new Game()
-	current_route: Uri‿str = normalizeꓽuri‿str('/')
+	current_route: Uri‿str = normalizeꓽuri‿str('/') // TODO one day history: back, home etc.
 
 	// chat interface
 	is_done: boolean = false
 	steps_count = 0
-	pending_steps: Array<Step<ContentType>> = [] // convenience to allow gen_next_step() to yield several steps at once. FIFO.
+	pending_steps: Array<Step<ContentType>> = [] // convenience to allow gen_next_step() to yield several steps at once. FIFO (unshift/pop)
 
 	// misc
 	status: 'starting' | 'normal' = 'starting'
@@ -234,7 +260,7 @@ class ChatInterfaceForHypermediaApp implements StepIterator<ContentType> {
 	}
 
 	navigate_to(uri: URI‿x) {
-		console.log(`Navigating to: "${uri}"...`)
+		console.log(`[⇨ Navigating to: "${uri}"…]`)
 		this.current_route = normalizeꓽuri‿str(uri)
 	}
 
@@ -255,23 +281,25 @@ class ChatInterfaceForHypermediaApp implements StepIterator<ContentType> {
 				done: false,
 			} satisfies StepIteratorYieldResult<ContentType>
 
-		console.log(`[next() now yielding...]`, result)
+		//console.log(`[next() now yielding...]`, result)
 		return result
 	}
 
 	async gen_next_step({ last_step, last_answer }: StepIteratorTNext<ContentType>): Promise<Step<ContentType>> {
-		console.log(`[GameChat.gen_next_step()...] async start...`)
+		//console.log(`[gen_next_step()...] async start...`)
+
 		if (this.pending_steps.length) {
-			console.log(`[GameChat.gen_next_step()] steps pending=`, this.pending_steps.length)
+			//console.log(`[gen_next_step()] steps pending=`, this.pending_steps.length)
 			const step = this.pending_steps.pop()!
-			console.log(`[GameChat.gen_next_step()] ...yielding from pending:`,
+			/*console.log(`[gen_next_step()] ...yielding from pending:`,
 				//prettifyꓽjson(step)
-			)
+			)*/
 			return step
 		}
 
 		const state = await this.game.getꓽstate()
 
+		// XXX TODO review ideally we want everything in the HATEOAS?
 		if (this.status === 'starting') {
 			this.status = 'normal'
 			// skip the "between actions" messages
@@ -280,13 +308,15 @@ class ChatInterfaceForHypermediaApp implements StepIterator<ContentType> {
 				type: StepType.simple_message,
 				msg: $doc,
 			}
-			console.log(`[GameChat.gen_next_step()] ...yielding from recap`)
+			console.log(`[gen_next_step()] ...yielding from recap XXX`)
 			return step
 		}
 
+		// XXX TODO review ideally we want everything in the HATEOAS?
 		const pef = AppState.getꓽoldest_pending_engagementⵧflow(state.u_state)
 		if (pef) {
 			//console.log('[PEF]', to_terminal(pef.$doc))
+			// TODO improve depending on the format!
 			const step: Step<ContentType> = {
 				type: StepType.simple_message,
 				msg: pef.$doc,
@@ -294,13 +324,15 @@ class ChatInterfaceForHypermediaApp implements StepIterator<ContentType> {
 					this.game.state = AppState.acknowledge_engagement_msg_seen(this.game.state, pef.uid)
 				}
 			}
-			console.log(`[GameChat.gen_next_step()] ...yielding from PEF`)
+			//console.log(`[gen_next_step()] ...yielding from PEF`)
 			return step
 		}
 
+		// XXX TODO review ideally we want everything in the HATEOAS?
 		const penf = AppState.getꓽoldest_pending_engagementⵧnon_flow(state.u_state)
 		if (penf) {
 			//console.log('[PENF]', to_terminal(penf.$doc))
+			// TODO improve depending on the format!
 			const step: Step<ContentType> = {
 					type: StepType.simple_message,
 					msg: penf.$doc,
@@ -308,7 +340,7 @@ class ChatInterfaceForHypermediaApp implements StepIterator<ContentType> {
 						this.game.state = AppState.acknowledge_engagement_msg_seen(this.game.state, penf.uid)
 					}
 				}
-			console.log(`[GameChat.gen_next_step()] ...yielding from PENF`)
+			//console.log(`[gen_next_step()] ...yielding from PENF`)
 			return step
 		}
 
@@ -321,11 +353,11 @@ class ChatInterfaceForHypermediaApp implements StepIterator<ContentType> {
 		const actionsⵧlinks = actions
 			.filter(a => a && a.type === 'hyperlink')
 			.filter((ha: RichText.HyperlinkAction)=> {
-				return !ha.data.rel.includes('self')
-					&& normalizeꓽuri‿SSP(ha.data.href).path !== this.current_route
+				return !ha.link.rel.includes('self')
+					&& normalizeꓽuri‿SSP(ha.link.href).path !== this.current_route
 			})
-		console.log('actionsⵧreducers=', actionsⵧreducers.length)
-		console.log('actionsⵧlinks=', actionsⵧlinks.length)
+		//console.log('actionsⵧreducers=', actionsⵧreducers.length)
+		//console.log('actionsⵧlinks=', actionsⵧlinks.length)
 		assert((actionsⵧreducers.length + actionsⵧlinks.length) > 0, `We should have actions for continuing!`)
 
 		const navigate_to = this.navigate_to.bind(this)
@@ -340,21 +372,21 @@ class ChatInterfaceForHypermediaApp implements StepIterator<ContentType> {
 			].map((v, i) => [
 				String(i).padStart(2, '0'),
 				{
-					cta: (v as any).cta || v.data.cta, // TODO dedicated function to extract CTA + add hint at action vs. link
+					cta: getꓽCTA(v),
 					value: v,
 				} ])),
 			callback(value) {
-				console.log('Callback!', prettifyꓽjson(value))
+				//console.log('Callback!', prettifyꓽjson(value))
 
 				switch (value.type) {
 					case 'action': {
-						dispatch(value.data)
+						dispatch(value.payload)
 						if (value.href)
 							navigate_to(value.href)
 						break
 					}
 					case 'hyperlink': {
-						navigate_to(value.data.href)
+						navigate_to(value.link.href)
 						break
 					}
 					default:
@@ -372,9 +404,9 @@ class ChatInterfaceForHypermediaApp implements StepIterator<ContentType> {
 			type: StepType.simple_message,
 			msg: hypermedia,
 		}
-		console.log(`[GameChat.gen_next_step()] ...yielding from hypermedia content:`,
+		/*console.log(`[gen_next_step()] ...yielding from hypermedia content:`,
 			//prettifyꓽjson(step_content)
-		)
+		)*/
 		return step_content
 	}
 
@@ -387,7 +419,7 @@ class ChatInterfaceForHypermediaApp implements StepIterator<ContentType> {
 
 const chat = create({
 	DEBUG: false,
-	gen_next_step: new ChatInterfaceForHypermediaApp(),
+	gen_next_step: new HypermediaBrowserWithChatInterface(),
 	primitives: new ChatPrimitivesConsole(),
 })
 

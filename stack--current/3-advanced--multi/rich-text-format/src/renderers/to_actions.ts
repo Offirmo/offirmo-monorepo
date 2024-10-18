@@ -20,14 +20,16 @@ interface BaseAction {
 
 interface HyperlinkAction extends BaseAction {
 	type: 'hyperlink'
-	data: Hyperlink
+	link: Hyperlink
 }
 
+// the data to embed as "hint"
 interface EmbeddedReducerAction {
 	cta?: string // optional bc should ideally be derived from the action (esp. for i18n) BUT same action could have different CTA following the context (ex. equip best equipment)
-	data: any // the data of the action, could be anything
+	payload: any // the data of the action, could be anything
 	href?: URI‿x // optional URL to navigate to following the action
 }
+// the final action yielded by this renderer
 interface ReducerAction extends BaseAction, EmbeddedReducerAction {
 	type: 'action' // in the sense of reducer(action)
 }
@@ -49,7 +51,7 @@ const DEFAULT_RENDERING_OPTIONSⵧToActions= Object.freeze<RenderingOptionsⵧTo
 			actions.push({
 				$node,
 				type: 'hyperlink',
-				data: {
+				link: {
 					// TODO default CTA from $node itself?
 					href: $node.$hints['href'], // TODO escaping for security? (This is debug, see React renderer which will do)
 					rel: [],
@@ -73,7 +75,7 @@ const DEFAULT_RENDERING_OPTIONSⵧToActions= Object.freeze<RenderingOptionsⵧTo
 				return {
 					$node,
 					type: 'hyperlink',
-					data: link,
+					link,
 				}
 			}))
 		}
