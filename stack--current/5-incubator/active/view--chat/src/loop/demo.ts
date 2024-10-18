@@ -1,7 +1,7 @@
 import generator_func_tour from '../__fixtures/tour.js'
 import InfiniteChatGenerator from '../__fixtures/infinite.js'
 
-import { ChatPrimitivesConsole } from '../__fixtures/primitives--console.js'
+import { ChatPrimitivesConsole } from '../__fixtures/primitives--terminal--vanilla.js'
 
 import { create } from './index.js'
 

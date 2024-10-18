@@ -1,4 +1,4 @@
-/** trivial console-based chat primitives for quick testing
+/** trivial terminal chat primitives for quick testing
  * NO need to be fancy!
  */
 import * as readline from 'node:readline/promises'

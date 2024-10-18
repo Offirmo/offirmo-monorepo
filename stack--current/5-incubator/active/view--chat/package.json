@@ -13,8 +13,8 @@
 		".": {
 			"import": "./dist/src.es2023.esm/index.js"
 		},
-		"./primitives-console-basic": {
-			"import": "./dist/src.es2023.esm/__fixtures/primitives--console.js"
+		"./primitives--terminal--vanilla": {
+			"import": "./dist/src.es2023.esm/__fixtures/primitives--terminal--vanilla.js"
 		}
 	},
 	"module": "dist/src.es2023.esm/index.js",

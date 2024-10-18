@@ -9,7 +9,7 @@ import { Game, create_action, ActionType, type ActionPlay } from '@tbrpg/interfa
 
 import { prettifyꓽjson } from '../services/misc.js'
 
-import { ChatPrimitivesConsole } from '@offirmo-private/view--chat/primitives-console-basic'
+import { ChatPrimitivesConsole } from '@offirmo-private/view--chat/primitives--terminal--vanilla'
 import {
 	create,
 	StepType,

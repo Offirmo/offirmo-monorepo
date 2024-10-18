@@ -25,7 +25,7 @@
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
 		"@tbrpg/definitions": "^0",
-		"fraction.js": "^4",
+		"fraction.js": "^5",
 		"memoize-one": "^6",
 		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
