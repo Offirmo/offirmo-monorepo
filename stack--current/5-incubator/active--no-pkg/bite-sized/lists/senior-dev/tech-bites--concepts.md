@@ -304,6 +304,7 @@ math https://math4devs.com/
 MDN
 memory -- heap
 memory -- stack
+merge queue
 message passing https://en.wikipedia.org/wiki/Message_passing
 MFA -- 2FA
 MFA -- double auth
@@ -400,6 +401,8 @@ rolling deploy
 rule of composition https://www.linfo.org/rule_of_composition.html
 rule of silence https://www.linfo.org/rule_of_silence.html
 scatter/gather (datastreams)
+schema
+schema explorer
 SCM (Source Control Managment)
 scope
 script
@@ -430,6 +433,7 @@ semaphore
 semver
 SHA (Secure Hash Algorithm)
 shaving the yak
+show me the code!
 shrinkwrap
 side-effect free
 significant change
@@ -494,6 +498,11 @@ tree -- walk
 type -- signature (type annotation) = defines the inputs and outputs of a function, subroutine or method
 typecast
 types
+types -- abstract (class) = base (or common def) not supposed to be used "as is" but extended
+types -- abstract vs. concrete = may not be relevant, ex. TypeScript, and "duck typing"
+types -- concrete type/class = vs abstract, the one supposed to be actually used
+types -- duck typing
+types -- interface = An interface decouples what needs to be implemented from how it is implemented
 types -- Liskov substitution principle (L of SOLID) https://en.wikipedia.org/wiki/Liskov_substitution_principle
 types -- slow types https://jsr.io/docs/about-slow-types (also in Swift: The compiler is unable to type-check this expression in reasonable time)
 types -- subtyping -- circle/ellipse or square/rectangle problem "hierarchical taxonomies are difficult to make universal" https://en.wikipedia.org/wiki/Circle%E2%80%93ellipse_problem

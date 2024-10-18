@@ -3,6 +3,7 @@
 [ ] personal MBA
 active users -- daily (DAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
 active users -- monthly (MAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
+adaptability = turn the challenges into opportunities
 aha moment
 Annual Recurring Revenue (ARR)
 average revenue per user (ARPU)
@@ -58,6 +59,7 @@ financing cycle https://en.wikipedia.org/wiki/Seed_money
 first-mover advantage -- handicap of a head start https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_start
 first-mover advantage -- second mover advantage / "fast followers" / "free riders" https://en.wikipedia.org/wiki/First-mover_advantage#Second-mover_advantage
 first-mover advantage https://en.wikipedia.org/wiki/First-mover_advantage
+flexible planning = scope changes and unexpected risks: adaptability is crucial 
 funnel
 Go-To-Market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
 growth +++ https://growth.design/
@@ -123,13 +125,17 @@ product market fit (PMF) https://www.sequoiacap.com/article/pmf-framework/
 product market fit -- Arc archetype -- Future Vision = enable a new reality through visionary innovation
 product market fit -- Arc archetype -- Hair on Fire = solve a problem that’s a clear, urgent need for customers
 product market fit -- Arc archetype -- Hard Fact = pain point universally accepted as a hard fact of life, and see that it’s merely a hard problem that your product solves
+quality vs speed = sacrificing code quality for speed leads to compounding issues later. balance speed with long-term sustainabidity
 real-world context https://contextsdk.com/insights#product
+realistic scheduling = overly optimistic deadlines lead to burnout and missed milestones. Always add a (secret?) buffer.
 red ocean vs blue ocean https://www.blueoceanstrategy.com/tools/red-ocean-vs-blue-ocean-strategy/
 reputation management
 reputation management -- REPCOM
+risk management = be proactive instead of reactive
 satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing
 second product -- syndrome https://www.hubspot.com/startups/resources/second-product-tips-for-success
 second product -- When and How https://caseyaccidental.com/second-products/
+shared vision = maintaining a shared vision across the board to help stay on course
 side projects -- outside of job https://www.reddit.com/r/SideProject/comments/1br62xb/building_side_projects_outside_fulltime_job/
 startups should avoid being held hostage by the preferences of their early user base if it deviates from the broader market, ex. social feed or reels
 strategy -- 01 "where we play"

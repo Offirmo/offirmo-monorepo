@@ -38,6 +38,9 @@ blocking render https://csswizardry.com/2024/08/blocking-render-why-whould-you-d
 bot detection
 browser compatibility data -- watch https://bcd-watch.igalia.com/
 browsing contexts = such as several windows, iframes or even workers
+button vs link -- Button = Use when you want to trigger an immediate action on the current page, for example, opening a modal, or playing a video.
+button vs link -- Link = Use when you want to navigate to a different page, or to a different part of the same page without causing any action to the current page. Used for basic navigation, mailto: links, phone numbers, or changing the URL path in some way.
+button vs link -- Link button = Use when you want to navigate to a different page or a different part of the same page, but maintain visual consistency with other buttons. Works like a link (for navigation), but looks like a button. Use to maintain consistent visual styles and semantic accuracy. Link button shares visual style with Button but shares behaviour & semantics with Link.
 cache https://csswizardry.com/2024/08/cache-grab-how-much-are-you-leaving-on-the-table/
 case study -- 2024/09 Josh Comeau's blog https://www.joshwcomeau.com/blog/how-i-built-my-blog-v2/
 CDN
@@ -50,10 +53,9 @@ client/server -- multi-tier architecture -- 03 business
 client/server -- multi-tier architecture -- 04 data access
 client/server -- multi-tier architecture https://en.wikipedia.org/wiki/Multitier_architecture
 collaborative experiences https://zknill.io/posts/collaboration-no-crdts/
-design -- intuitiveness vs. confusing, cluttered, dense, not practical, lack of visual hierarchy
-design -- ease of use vs. clunky, all over the place, 
-design -- design aesthetic
 components https://www.componentdriven.org/
+composition -- embed
+composition -- shared view
 Contrast ratio https://www.siegemedia.com/contrast-ratio
 CORS (Cross-Origin Resource Sharing)
 CSS -- atomic = small, single-purpose classes with names based on visual function https://css-tricks.com/lets-define-exactly-atomic-css/
@@ -107,6 +109,7 @@ CSS -- width = auto, fit-content, min-content https://courses.joshwcomeau.com/cs
 CSS -- z-index
 CSS -- zoom https://www.oddbird.net/2024/07/09/zoomies/
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
+CSS-in-JS
 dark patterns -- hall of shame https://hallofshame.design/
 dark patterns https://www.uxtigers.com/post/dark-design
 data fetching -- 1 fetch on render
@@ -116,7 +119,11 @@ data fetching -- 3 Render-as-You-Fetch -- Relay EntryPoints https://github.com/r
 data fetching -- preload-on-intent
 data fetching https://17.reactjs.org/docs/concurrent-mode-suspense.html#traditional-approaches-vs-suspense
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
+Data Layer Abstraction (DLA)
+design -- design aesthetic
+design -- ease of use vs. clunky, all over the place, 
 design -- guides https://owickstrom.github.io/the-monospace-web/
+design -- intuitiveness vs. confusing, cluttered, dense, not practical, lack of visual hierarchy
 design quality -- 1 Intuitiveness vs complicated, overwhelming, cluttered, steep learning curve, significant cognitive load.
 design quality -- 2 Ease of Use: difficult to navigate and locate features, concerns about accessibility, efficiency, consistency, and readability
 design quality -- 3 outdated design aesthetic
@@ -151,10 +158,16 @@ fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
 fonts -- Font Friday https://pimpmytype.com/fontfriday/
 FORC "Fear of Removing CSS" = https://x-team.com/blog/forc-fear-of-removing-css
+frontend cross-concerns = hosting, cache configuration, security headers, DDoS protection, progressive rollout...
+frontend routing
+frontend testing pyramid = unit < VR < Integ < E2E
+frontend testing pyramid confidence vs time / cost / flakiness
 frontend treadmill -- working closer to the web platform with a lot less complex abstractions. We need to relearn what the web is capable of and go back to that.
 frontend treadmill https://polotek.net/posts/the-frontend-treadmill/
 GraphQL
 GraphQL -- against https://bessey.dev/blog/2024/05/24/why-im-over-graphql/
+GraphQL -- relay
+GraphQL -- relay -- EntryPoints https://hello.atlassian.net/wiki/spaces/UAF/pages/1180782282
 HTML -- concepts
 HTML -- elements
 html -- first https://html-first.com/
@@ -166,8 +179,8 @@ hypercard https://hypercard.org
 hypermedia
 hypertext
 i18e Ecosystem Performance = Cleanup, Speedup, Levelup. One Package at a time. https://e18e.dev/
+i18n -- tab order
 iframe
-spirit -- browsing https://christianheilmann.com/2024/09/15/lets-bring-back-browsing/
 iframe -- fenced
 iframe -- sandbox
 iframe -- seamless
@@ -235,9 +248,17 @@ response times -- 1.0s = about the limit for the user's flow of thought to stay 
 response times -- 10s = about the limit for keeping the user's attention focused on the dialogue. For longer delays, users will want to perform other tasks while waiting for the computer to finish, so they should be given feedback indicating when the computer expects to be done. Feedback during the delay is especially important if the response time is likely to be highly variable, since users will then not know what to expect.
 response times -- computers can be too fast! https://www.nngroup.com/articles/too-fast-ux/
 response times https://www.nngroup.com/articles/response-times-3-important-limits/
+routing -- extension (lazy load)
+routing -- generic app = a fundamental aspect of web development that allows users to navigate through different pages or views within an application.
+routing -- hypermedia = resources returning representation + hyperlinks
+routing -- uri -- 1 path (incl path params)
+routing -- uri -- 2 query (incl query params)
+routing -- uri -- 3 fragment
+routing react-resource-router
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
+spirit -- browsing https://christianheilmann.com/2024/09/15/lets-bring-back-browsing/
 spirit -- view source affordance https://htmx.org/essays/right-click-view-source/
 SSR good explanation https://single-spa.js.org/docs/ssr-overview/
 temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
@@ -258,6 +279,7 @@ UI -- modals https://en.wikipedia.org/wiki/Modal_window
 UI -- modes https://en.wikipedia.org/wiki/User_interface#Modalities_and_modes
 ui -- popover https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
 UI -- views
+UI primitives = box, stack, table, grid, flex...
 User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#large-viewport
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
 UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb

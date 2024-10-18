@@ -181,3 +181,5 @@ https://roughlywritten.substack.com/p/random-thoughts-15-years-into-software
 
 
 https://remote.com/jobs
+
+staff engineer https://staffeng.com/

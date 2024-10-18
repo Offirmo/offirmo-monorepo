@@ -71,6 +71,7 @@ HHH helpful, honest, and harmless
 Hierarchical Navigable Small World (HNSW) = graph for vector search https://www.pinecone.io/learn/series/faiss/hnsw/
 Hugging Face = "the GitHub of machine learning" = the collaboration platform for the machine learning community https://www.techtarget.com/whatis/definition/Hugging-Face
 huggingface.co "space"
+illusion of understanding = hypothesis that LLMs don't actually perform formal reasoning and instead mimic it with probabilistic pattern-matching of the closest similar data seen in their vast training sets https://arstechnica.com/ai/2024/10/llms-cant-perform-genuine-logical-reasoning-apple-researchers-suggest/
 in-context learning = ~long prompt / many shots https://www.anthropic.com/research/many-shot-jailbreaking
 inference
 inference = what happens when we prompt

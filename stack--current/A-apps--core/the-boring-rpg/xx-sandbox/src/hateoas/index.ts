@@ -59,6 +59,8 @@ function normalizeꓽuri‿str(url: URI‿x): Uri‿str {
 	return result
 }
 
+// TODO define the routes in some sort of structure, not strings
+
 // https://htmx.org/essays/hateoas/
 // https://restfulapi.net/hateoas/
 function HATEOASᐧGET(state: Immutable<AppState.State>, url: Hyperlink['href'] = '/'): RichText.Document {
@@ -119,19 +121,37 @@ function HATEOASᐧGET(state: Immutable<AppState.State>, url: Hyperlink['href'] 
 	*/
 
 	switch (path) {
+		// @ts-expect-error
+		case '/last-adventure': {
+			if (!state.u_state.last_adventure) {
+				$builder = $builder.pushBlockFragment('You have yet to adventure! Select "play"!')
+			}
+			else {
+				//$builder = $builder.pushHeading('Encounter!!') NO, assuming some steps
+				$builder = $builder.pushNode(
+					AppRichText.renderꓽresolved_adventure(state.u_state.last_adventure)
+				)
+
+				// TODO offer to equip better item
+			}
+
+			// INTENTIONAL fallthrough to /
+			// (TODO code it better)
+		}
+
 		case '/': { // home
 			self.cta = 'Explore'
 
 			$builder = $builder.pushHeading('Currently adventuring…')
 
-			// NO recap of last adventure, it's a different route?
-			// TODO clarify
+			// NO recap of last adventure, it's a different route from when we play
 
 			if (AppState.is_inventory_full(state.u_state)) {
 				$builder = $builder.pushNode(
 					RichText.strong().pushText('Your inventory is full!').done(),
 				)
-				// TODO add action to sell items?
+				// TODO add action to sell worst items
+				// TODO is it a blocker for playing?
 			}
 
 			if(AppState.getꓽavailable_energy‿float(state.t_state) >= 1) {
@@ -150,7 +170,7 @@ function HATEOASᐧGET(state: Immutable<AppState.State>, url: Hyperlink['href'] 
 			actions.push({
 				cta: 'Play!',
 				data: actionⵧplay,
-				href: '/adventures/last',
+				href: '/last-adventure',
 			})
 
 			break
@@ -177,6 +197,7 @@ function HATEOASᐧGET(state: Immutable<AppState.State>, url: Hyperlink['href'] 
 
 			break
 		}
+
 
 		default:
 			throw new Error(`Unknown resource path "${path}"!`)

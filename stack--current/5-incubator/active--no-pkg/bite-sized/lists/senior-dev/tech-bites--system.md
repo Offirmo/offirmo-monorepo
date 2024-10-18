@@ -38,6 +38,7 @@ ACID -- 4 Durability = transaction resistance to system failures "once committed
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
 API -- contracts
 API -- Diogo Lucas classification = far-team, near-team and inner-team. inner team = used within a team or between partner teams, near team = "Conway APIs" between teams that don't always communicate with each other, Far-team API = between teams that have low-bandwidth communications
+API -- Don’t -- Build overly ‘flexible’ APIs that require client side logic and input manipulation (in the context of relay EntryPoints))
 API -- hybrids = reconcile the need for a stable public API that will not constantly disrupt your carefully tended ecosystem with your team’s ability to move fast and (eventually) break stuff? cater for different requirements regarding security and SLAs or to radically different client natures? https://www.youtube.com/watch?v=eqy609JleoE
 API -- REST -- POST https://www.tbray.org/ongoing/When/200x/2009/03/20/Rest-Casuistry
 API -- visibility = public/external > internal > team > private beta. Guidelines: Consider a public-by-default approach, even if you are starting at a lower level of access (helps dogfooding, new use cases. Treat your internal APIs as candidates for Public level access (bc happens quickly, sometimes for merging with a public one)
@@ -221,6 +222,7 @@ efficiency
 emergency response
 encryption
 encryption -- at rest
+Event Driven Architectures = publish/subscribe model whereby there is a publisher (or publishers) which sends out notifications that something happened and subscribers (hereafter referred to as consumers) who are interested in things that happened. Good decoupling but hard to track impact of changes.
 event streaming https://kafka.apache.org/intro
 event-driven architecture = uses events to trigger and communicate between decoupled services, common with microservices
 Externalized configuration
@@ -357,6 +359,13 @@ post-mortem
 private cloud = https://threadreaderapp.com/thread/1800291897245835616.html
 protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https://stackoverflow.com/questions/731233/activemq-or-rabbitmq-or-zeromq-or https://news.ycombinator.com/item?id=9634801
 proxy server = intermediaries between client and servers. improve performance by caching, provide security by filtering incoming traffic, enable load balancing for efficient distribution of requests
+pub/sub -- event -- identifier -- amqp convention https://www.rabbitmq.com/tutorials/amqp-concepts
+pub/sub -- event -- identifier = usually should help with topics, see "topics"
+pub/sub -- topics -- disembiguate = Ambiguity in the topic should be minimised as far as possible. The more ambiguous the topic, the more work the consumer has to do in order to interpret and the process/discard the event.
+pub/sub -- topics -- event/action = should indicate the event (action) that occurred: Was something created, updated, notified, shut down etc?
+pub/sub -- topics -- source? service? (disputable) or owner?
+pub/sub -- topics -- what = Events typically operate on something. I.e. a comment was created, a user was notified etc. The "what" should thus also form part of the topic.
+pub/sub -- topics = a way to shard a large event stream so that consumers don't have to listen to all events, greatly improving scalability. It does however raise the question of how topics are/should be defined.
 PubSub = Publish-Subscribe 
 push -- long polling, server-side events (SSE), and WebSockets
 push vs pull

@@ -34,6 +34,7 @@
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 accent -- miscommunication https://paulgraham.com/accents.html
 acceptance
+action -- deep dive & low-hanging fruits
 advocacy
 affirmative action?
 agency
@@ -65,6 +66,9 @@ busy work https://en.wikipedia.org/wiki/Busy_work
 buy nice or buy twice
 can't satisfy others
 capitalism -- W. H. Mallock -- is justified because it permits the most talented members of society to use the less talented for the sake of maximizing efficiency. Labor, for him, was an inert mass that was useless unless those with managerial and entrepreneurial talent set them to work. Hence, wealth is created, not by labor, but by the knowledge and ability of those who control labor. Maximization of corporate profits means in this case that the most entrepreneurial, innovative and inventive segment of society has used labor and resources to create wealth. In Mallock's view labor, by itself, creates nothing; it's not the wrench that puts the machine together, but the genius who invented it.
+change -- introduction -- 1 What are we doing?
+change -- introduction -- 2 Why are we doing it?
+change -- introduction -- 3 When are we making the change?
 Charlie Munger 3 basic rules -- Don’t sell anything you wouldn’t buy yourself
 Charlie Munger 3 basic rules -- Don’t work for anyone you don’t respect and admire
 Charlie Munger 3 basic rules -- Work only with people you enjoy
@@ -86,6 +90,7 @@ competition is for Losers: Avoid competition. Stop copying what everybody else i
 convexity: If you want to be lucky, look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
 Copernican Principle: The more we learn about astronomy, the less it seems that earth is special. It’s a small part of the universe, and each human is a small part of the earth. We are all spinning through the solar system — nowhere near the beginning or end of time.
 corporate slave (but also never achieving anything?)
+correlation is not causation
 cost of a thing = the amount of life which is required to be exchanged for it, immediately or in the long run
 courses après le repas
 creativity -- begins at the edge: Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
@@ -407,6 +412,7 @@ trust -- takes years to earn and seconds to lose / Trust is built slowly, and lo
 trust -- trust, but verify
 truth -- fully convinced vs probably https://christianity.stackexchange.com/questions/92352/believing-that-christianity-is-probably-true-vs-being-fully-convinced-that-ch
 truth -- verificationism https://christianity.stackexchange.com/a/89891
+Turning Feedback into Action
 tyranny of the urgent https://www.psychologytoday.com/us/blog/human-flourishing-101/202309/how-to-conquer-the-tyranny-of-the-urgent
 unlearn
 vanilla
