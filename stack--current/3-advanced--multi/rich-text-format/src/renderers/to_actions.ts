@@ -115,7 +115,11 @@ const callbacksⵧto_actions: Partial<WalkerCallbacks<State, RenderingOptionsⵧ
 	on_type,
 }
 
-function renderⵧto_actions($doc: Node, options: RenderingOptionsⵧToActions = DEFAULT_RENDERING_OPTIONSⵧToActions): Action[] {
+// accepting string as well for convenience (chat interface "string | AdvancedType")
+function renderⵧto_actions($doc: Node | string, options: RenderingOptionsⵧToActions = DEFAULT_RENDERING_OPTIONSⵧToActions): Action[] {
+	if (typeof $doc === 'string') {
+		return []
+	}
 	return walk<State, RenderingOptionsⵧToActions>($doc, callbacksⵧto_actions, options).actions
 }
 

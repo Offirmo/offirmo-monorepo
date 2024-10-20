@@ -18,7 +18,9 @@ export class Game {
 		this.state = State.create()
 	}
 
-	async getꓽstate(): Promise<Immutable<State.State>> {
+	// SYNC! we assume the state is already in memory
+	// there are other primitives to sync state
+	getꓽstateⵧlast_known(): Immutable<State.State> {
 		return this.state
 	}
 

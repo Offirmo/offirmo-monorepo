@@ -44,6 +44,7 @@ export class ChatPrimitivesConsole<ContentType = string | RichText.Document> imp
 		DEBUG && console.log('[ChatPrimitives.pretend_to_think(${duration_ms})]')
 
 		console.log('[…thinking…]')
+
 		await new Promise(resolve => setTimeout(resolve, duration_ms))
 		//console.log('↳ ✔')
 

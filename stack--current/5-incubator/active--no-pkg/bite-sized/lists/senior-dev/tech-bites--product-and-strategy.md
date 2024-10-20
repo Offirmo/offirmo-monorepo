@@ -91,7 +91,9 @@ M&A -- Apple
 M&A -- fb / insta https://www.linkedin.com/posts/olivermolander_technology-facebook-instagram-activity-7241726426826059776-IOE4
 M&A -- killer zone = https://www.trendingtopics.eu/tech-talent-the-intricate-mechanisms-behind-apples-startup-killer-zone/
 magic moment -> habit moment
+marketing -- "killer app"
 marketing -- case studies
+marketing -- case studies -- "flagship app" It's not that there wasn't a lot of interest in WPF, it's just there weren't any flagship apps showing off what it could do that previous frameworks couldn't. Even if Evernote had stayed with it, they still have a fairly simple client so a lot of people would simply shrug and say "I can do that in WinForms." They aren't wrong. https://www.reddit.com/r/csharp/comments/x0nu7h/comment/im9kesb/
 metrics -- 40 something
 metrics -- funnel
 metrics -- Monthly Core User (MCU) = a user who do core actions at least X times in the last 28 days

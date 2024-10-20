@@ -19,6 +19,10 @@ AMP (Accelerated Mobile Pages)
 animations -- API https://devdocs.io/dom/web_animations_api
 APIs web
 appli web
+application posture -- 1 sovereign = monopolizes the user's attention for long periods of time.
+application posture -- 2 transient = comes and goes, presenting a single, high-relief function with a tightly restricted set of accompanying controls. The program is called when needed, it appears and performs its job, then it quickly leaves, letting the user continue her more normal activity, usually a sovereign application.
+application posture -- 3 daemonic = background processes that require no direct user interaction.
+application posture -- 4 parasitic/auxiliary = similar to transient applications in providing a limited, focused set of functionality and occupy a small space, but they are shown persistently and can be used for a long period of time.
 application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
 architecture -- islands
 architecture -- JAMStack = "JavaScript, APIs, Markup" as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
@@ -271,18 +275,37 @@ typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
 typology -- naked site
 ui -- bleed
-UI -- event -- blur, hover, focus, click, auxclick, double click
+UI -- event -- blur, hover, focus, click, auxclick, double click...
+UI -- flow vs. float https://floating-ui.com/
 UI -- HUD
-ui -- masonry (layout)
+UI -- layout -- masonry
 UI -- modals -- sheets = ~semi-modal https://en.wikipedia.org/wiki/Modal_window#Modal_sheets_in_Mac_OS_X
 UI -- modals https://en.wikipedia.org/wiki/Modal_window
 UI -- modes https://en.wikipedia.org/wiki/User_interface#Modalities_and_modes
-ui -- popover https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
+UI -- popover https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
+UI -- primitives = box, stack, table, grid, flex...
+UI -- principle of least astonishment (POLA) = general principle in the design of all kinds of interfaces. It is based on the idea that human beings can only pay full attention to one thing at one time, leading to the conclusion that novelty should be minimized.
+UI -- properties -- Attentive = manage the user attention deciding when to interrupt the user, the kind of warnings, and the level of detail of the messages presented to the user.
+UI -- properties -- Intelligent = improve the efficiency, effectiveness, and naturalness of human–machine interaction by representing, reasoning, and acting on models of the user, domain, task, discourse, and media (e.g., graphics, natural language, gesture).
+UI -- properties -- Multi-screen = take advantage of multiple displays
+UI -- properties -- Natural-language = User types in a question and waits for a response. used for search engines and on webpages.
+UI -- properties -- Permission-driven = show or conceal menu options or functions depending on the user's level of permissions. The system is intended to improve the user experience by removing items that are unavailable to the user. A user who sees functions that are unavailable for use may become frustrated. It also provides an enhancement to security by hiding functional items from unauthorized persons.
 UI -- views
-UI primitives = box, stack, table, grid, flex...
+UI https://en.wikipedia.org/wiki/User_interface
 User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#large-viewport
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
-UX -- honeycomb = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb
+UX -- challenges -- information overload
+UX -- evaluation/review -- "User Experience Honeycomb" = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb
+UX -- properties https://en.wikipedia.org/wiki/User_interface#Types
+UX -- types -- Batch = non-interactive user interfaces, where the user specifies all the details of the batch job in advance to batch processing, and receives the output when all the processing is done. The computer does not prompt for further input after the processing has started.
+UX -- types -- Command line interfaces (CLIs) = provide input by typing a command string with the computer keyboard and respond by outputting text to the computer monitor. Used by programmers and system administrators, in engineering and scientific environments, and by technically advanced personal computer users.
+UX -- types -- Conversational interface agents = attempt to personify the computer interface in the form of an animated person, robot, or other character (such as Microsoft's Clippy the paperclip), and present interactions in a conversational form.
+UX -- types -- Conversational interfaces = enable users to command the computer with plain text English (e.g., via text messages, or chatbots) or voice commands, instead of graphic elements. These interfaces often emulate human-to-human conversations.
+UX -- types -- Direct manipulation interface = allow users to manipulate objects presented to them, using actions that correspond at least loosely to the physical world.
+UX -- types -- Hardware interfaces = physical, spatial interfaces found on products in the real world from toasters, to car dashboards, to airplane cockpits. They are generally a mixture of knobs, buttons, sliders, switches, and touchscreens.
+UX -- types -- Task-focused = address the information overload problem of the desktop metaphor by making tasks, not files, the primary unit of interaction.
+UX -- types -- Text-based user interfaces (TUIs) are user interfaces which interact via text. TUIs include command-line interfaces and text-based WIMP environments.
+UX -- types -- Zooming = information objects are represented at different levels of scale and detail, and where the user can change the scale of the viewed area in order to show more detail.
 vanilla https://plainvanillaweb.com/index.html
 viewport
 viewport -- small <= dynamic <= large
@@ -290,10 +313,10 @@ viewport -- visual
 viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
 virtualization = an advanced technique that uses JS to remove DOM nodes not currently on-screen
 Web Application Firewall (WAF)
-web capabilities -- fugu https://www.chromium.org/teams/web-capabilities-fugu/
+web capabilities -- fugu team https://www.chromium.org/teams/web-capabilities-fugu/
 web components -- "autonomous" = no extends, no "is", must inherit from HTMLElement
 web components -- custom elements
-web components -- is
+web components -- is XXX not supported on Safari!
 web components -- publish https://www.webcomponents.org/publish
 web components -- shadow DOM
 web components -- templates

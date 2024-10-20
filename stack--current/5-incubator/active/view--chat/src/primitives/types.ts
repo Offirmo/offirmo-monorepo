@@ -1,12 +1,10 @@
-import { Enum } from 'typescript-string-enums'
-import { PProgress as PromiseWithProgress } from 'p-progress'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { type TaskProgressStep, type InputStep, type SelectStep, StepType } from '../steps/types.js'
+import { type TaskProgressStep, type InputStep, type SelectStep } from '../steps/types.js'
 
 /////////////////////////////////////////////////
 
-// helper type
+// helper types, TypeScript need them when implementing :(
 interface InputParameters<ContentType, T> {
 	// everything needed for an <input>
 	// primitive is free to ignore some params if not needed/supported
@@ -59,7 +57,7 @@ interface ChatPrimitives<ContentType> {
 
 	// while we wait for the next step.
 	// wraps the promise, should return it
-	// TODO clarify
+	// TODO clarify should we pretend to think? or intelligently merge with a previous pretend_to_think if any?
 	spin_until_resolution<T>(p: Promise<T>): Promise<T>
 
 	/////////////////////////////////////////////////

@@ -58,7 +58,7 @@ function create<ContentType>({
 				}
 
 				const step: Step<ContentType> = is_promise(raw_yielded_step)
-					? (await primitives.spin_until_resolution(raw_yielded_step))
+					? (await primitives.spin_until_resolution(raw_yielded_step)) // TODO if previous step was pretent_to_think, we should continue?
 					: raw_yielded_step
 				//console.log(`[${LIB}]`, {yielded_step: step})
 

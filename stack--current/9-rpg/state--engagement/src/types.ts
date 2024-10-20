@@ -10,6 +10,7 @@ import { BaseUState } from '@offirmo-private/state-utils'
 // TODO make terminal compatible!
 const EngagementType = Enum(
 	'flow', // normal immediate feedback to user actions
+
 	'aside', // side message like an achievement
 	'warning', // side message with a higher priority XXX already included in level?
 	// 'full_transient', // full screen like a level up NO NOT SEMANTIC
