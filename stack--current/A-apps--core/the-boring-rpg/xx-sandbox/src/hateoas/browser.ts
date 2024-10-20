@@ -212,10 +212,8 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 							throw new Error(`NIMP action type "${(value as any)?.type}"!`)
 					}
 				},
-				/*msg_as_user: (action: RichText.Action) => confirm ? `Yes, I confirm.` : `No, I cancel.`,
-				msg_acknowledge: (action: RichText.Action) => confirm ? `Ok, let's proceed ✔` : `Let's cancel that ✖`,
-				...parts,
-				*/
+				msg_as_user: (action: RichText.Action) => `I select: ${getꓽCTA(action)}`,
+				//msg_acknowledge: (action: RichText.Action) => `You selected: ${getꓽCTA(action)}`,
 			}
 			this.pending_steps.unshift(step_input)
 		}

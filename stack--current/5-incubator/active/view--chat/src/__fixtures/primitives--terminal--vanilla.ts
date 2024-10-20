@@ -104,7 +104,7 @@ export class ChatPrimitivesConsole<ContentType = string | RichText.Document> imp
 			})
 
 			const raw_input = await this.rli.question('Your choice? (enter a number) ')
-			console.log(`[ChatPrimitives.select(...): you said: "${raw_input}"`)
+			//console.log(`[ChatPrimitives.select(...): you said: "${raw_input}"`)
 			if (raw_input.trim() === '' && default_value !== undefined) {
 				answer = default_value
 				is_valid = true

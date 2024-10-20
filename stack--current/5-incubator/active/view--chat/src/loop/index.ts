@@ -168,13 +168,13 @@ function create<ContentType>({
 					}
 				} while (!is_valid)
 
-				let ೱcallback = Promise.resolve(step.callback?.(answer))
 				let ೱfeedback = Promise.resolve(step.msg_as_user
 						&& primitives.display_message({ msg: step.msg_as_user(answer) })
 					)
 					.then(() => primitives.pretend_to_think({duration_ms: after_input_delay_ms}))
 					.then(() => step.msg_acknowledge
 						&& primitives.display_message({ msg: step.msg_acknowledge(answer)}))
+				let ೱcallback = Promise.resolve(step.callback?.(answer))
 				await Promise.all([ೱcallback, ೱfeedback])
 
 				break
@@ -193,13 +193,14 @@ function create<ContentType>({
 					...step
 				})
 
-				let ೱcallback = Promise.resolve(step.callback?.(chosen_value))
+				// TODO coalesce those callbacks!
 				let ೱfeedback = Promise.resolve(step.msg_as_user
 						&& primitives.display_message({ msg: step.msg_as_user(chosen_value) })
 					)
 					.then(() => primitives.pretend_to_think({duration_ms: after_input_delay_ms}))
 					.then(() => step.msg_acknowledge
 						&& primitives.display_message({ msg: step.msg_acknowledge(chosen_value) }))
+				let ೱcallback = Promise.resolve(step.callback?.(chosen_value))
 				await Promise.all([ೱcallback, ೱfeedback])
 
 				break
