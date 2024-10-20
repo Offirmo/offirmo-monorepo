@@ -39,7 +39,7 @@ function render_account_info(state: Immutable<Meta.State>, extra: Immutable<{[k:
 }*/
 
 const APP_NAME = '⚔️🛡  The Boring RPG, reborn! 👆🎲'
-const APP_PITCH = 'The simplest fantasy RPG ever.'
+const APP_PITCH = 'The simplest fantasy RPG ever!'
 function render_game_info(extra: Immutable<{[k: string]: string | number | undefined}> = {}): RichText.Document {
 	const meta_infos = {
 		'game version': VERSION,

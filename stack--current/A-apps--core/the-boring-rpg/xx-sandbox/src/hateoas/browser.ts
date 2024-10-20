@@ -40,6 +40,7 @@ import { AppHateoasServer } from './server'
 
 /////////////////////////////////////////////////
 
+const DEBUG = false
 
 /////////////////////////////////////////////////
 
@@ -53,28 +54,31 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 
 	// chat interface
 	pending_steps: Array<Step<ContentType>> = [] // convenience to allow gen_next_step() to yield several steps at once. FIFO (unshift/pop)
-	steps_count = 0 // safety
+	stepsᐧcount_for_avoiding_infinite_loops = 0
 
 	// misc
-	status: 'starting' | 'normal' | 'done' = 'starting'
+	status: 'starting' | 'nominal' | 'stopping' = 'starting'
+	pending_async: Array<Promise<void>> = []
 
 	constructor(server: HATEOASServer<ContentType, ActionType>) {
 		this.server = server
 	}
 
 	navigate_to(uri: URI‿x) {
-		console.log(`[⇨ Navigating to: "${uri}"…]`)
+		console.log(`\n[⇨ Navigating to: "${uri}"…]`)
+		console.log('------------------------------------------------------')
 		this.current_route = normalizeꓽuri‿str(uri)
 	}
 
 	next(p: StepIteratorTNext<ContentType>) {
-		this.steps_count++
-		if (this.steps_count >= 10) {
+		//console.log(`[next step?]`)
+		this.stepsᐧcount_for_avoiding_infinite_loops++
+		if (this.stepsᐧcount_for_avoiding_infinite_loops >= 10) {
 			console.error('SCHEDULING EXIT because too many steps!')
-			this.status = 'done'
+			this.status = 'stopping'
 		}
 
-		const result = (this.status === 'done')
+		const result = (this.status === 'stopping' && this.pending_steps.length === 0)
 			? {
 				value: undefined,
 				done: true,
@@ -92,7 +96,7 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 		//console.log(`[gen_next_step()...] async start...`)
 
 		// REMINDER: ideally we want everything in the HATEOAS
-		// this should not contain app-specific behaviour
+		// This is a BROWSER which should not contain app-specific behaviour
 
 		if (this.pending_steps.length) {
 			//console.log(`[gen_next_step()] steps pending=`, this.pending_steps.length)
@@ -103,39 +107,55 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 			return step
 		}
 
+		if (this.pending_async.length) {
+			//console.log(`[awaiting pending...]`)
+			await Promise.all(this.pending_async)
+			this.pending_async = []
+		}
 
 		const navigate_to = this.navigate_to.bind(this)
-		const dispatch = this.server.dispatch.bind(this.server)
+		const dispatch: HATEOASServer<ContentType, ActionType>['dispatch'] = (action, url) => {
+			const pending = this.server.dispatch(action, url)
+			this.pending_async.push(pending)
+			return pending
+		}
+		const reset_infinite_loop_prevention = () => {
+			this.stepsᐧcount_for_avoiding_infinite_loops = 0
+		}
 
-		if (this.status === 'starting') {
-			// skip the PEF & PENF messages
-			// to give a chance for some content
-			// (hopefully introducing the app)
-			// to be displayed first
-			this.status = 'normal'
-		}
-		else {
-			const pe = this.server.get_pending_engagement()
-			if (pe) {
-				const [$doc, actionⵧack] = pe
-				// TODO improve depending on the format!
-				const step: Step<ContentType> = {
-					type: StepType.simple_message,
-					msg: $doc,
-					callback: () => {
-						dispatch(actionⵧack)
-					}
-				}
-				//console.log(`[gen_next_step()] ...yielding from PEF`)
-				return step
+		switch(this.status) {
+			case 'starting': {
+				// skip the PEF & PENF messages
+				// to give a chance for some content
+				// (hopefully introducing the app)
+				// to be displayed first
+				this.status = 'nominal'
+				break
 			}
+			case 'nominal': {
+				const pe = this.server.get_next_pending_engagement(this.current_route)
+				if (pe) {
+					const [$doc, actionⵧack] = pe
+					// TODO improve depending on the format!
+					const step: Step<ContentType> = {
+						type: StepType.simple_message,
+						msg: $doc,
+						callback: () => dispatch(actionⵧack),
+					}
+					//console.log(`[gen_next_step()] ...yielding from PEF`)
+					return step
+				}
+				break
+			}
+			default:
+				throw new Error(`gen_next_step called in invalid status "${this.status}"!`)
 		}
+
+		console.log(`[Browsing: "${this.current_route}"]`)
 
 		const hypermedia = await this.server.get(this.current_route)
 
 		const actions = RichText.renderⵧto_actions(hypermedia)
-		assert(actions.length > 0, `There should be actions in the latest hypermedia!`)
-
 		const actionsⵧreducers = actions.filter(a => a.type === 'action')
 		const actionsⵧlinks = actions
 			.filter(a => a && a.type === 'hyperlink')
@@ -143,51 +163,71 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 				return !ha.link.rel.includes('self')
 					&& normalizeꓽuri‿SSP(ha.link.href).path !== this.current_route
 			})
-		//console.log('actionsⵧreducers=', actionsⵧreducers.length)
-		//console.log('actionsⵧlinks=', actionsⵧlinks.length)
-		assert((actionsⵧreducers.length + actionsⵧlinks.length) > 0, `We should have actions for continuing!`)
+		const continue_links = actionsⵧlinks.filter(a => a.link.rel.includes('continue-to'))
+		assert(continue_links.length <= 1, 'Should have 0 or 1 continue-to links.')
+		const actionⵧlinkⵧcontinue = continue_links[0]
+		const actionsⵧbrowser: Array<RichText.HyperlinkAction> = [
+			// TODO one day "back" (history)
+			// TODO one day "home" (/)
+		]
 
-
-		const step_input: SelectStep<ContentType, RichText.Action> = {
-			type: StepType.select,
-			prompt: 'What do you want to do?',
-			options: Object.fromEntries([
-				...actionsⵧreducers,
-				...actionsⵧlinks,
-			].map((v, i) => [
-				String(i).padStart(2, '0'),
-				{
-					cta: getꓽCTA(v),
-					value: v,
-				} ])),
-			callback(value) {
-				//console.log('Callback!', prettifyꓽjson(value))
-
-				switch (value.type) {
-					case 'action': {
-						dispatch(value.payload)
-						if (value.href)
-							navigate_to(value.href)
-						break
-					}
-					case 'hyperlink': {
-						navigate_to(value.link.href)
-						break
-					}
-					default:
-						throw new Error(`NIMP action type "${(value as any)?.type}"!`)
-				}
-			},
-			/*msg_as_user: (action: RichText.Action) => confirm ? `Yes, I confirm.` : `No, I cancel.`,
-			msg_acknowledge: (action: RichText.Action) => confirm ? `Ok, let's proceed ✔` : `Let's cancel that ✖`,
-			...parts,
-			*/
+		if((actionsⵧreducers.length + actionsⵧlinks.length) === 0) {
+			this.status = 'stopping'
+			const step: Step<ContentType> = {
+				type: StepType.simple_message,
+				msg: '[🖼️ No more actions available. Goodbye!]',
+			}
+			this.pending_steps.unshift(step)
 		}
-		this.pending_steps.unshift(step_input)
+		else if (!actionⵧlinkⵧcontinue) {
+			const step_input: SelectStep<ContentType, RichText.Action> = {
+				type: StepType.select,
+				prompt: 'What do you want to do?',
+				options: Object.fromEntries([
+					...actionsⵧreducers,
+					...actionsⵧlinks,
+					...actionsⵧbrowser,
+				].map((v, i) => [
+					String(i).padStart(2, '0'),
+					{
+						cta: getꓽCTA(v),
+						value: v,
+					} ])),
+				callback(value) {
+					//console.log('Callback!', prettifyꓽjson(value))
+					reset_infinite_loop_prevention()
+
+					switch (value.type) {
+						case 'action': {
+							dispatch(value.payload)
+							if (value.href)
+								navigate_to(value.href)
+							break
+						}
+						case 'hyperlink': {
+							navigate_to(value.link.href)
+							break
+						}
+						default:
+							throw new Error(`NIMP action type "${(value as any)?.type}"!`)
+					}
+				},
+				/*msg_as_user: (action: RichText.Action) => confirm ? `Yes, I confirm.` : `No, I cancel.`,
+				msg_acknowledge: (action: RichText.Action) => confirm ? `Ok, let's proceed ✔` : `Let's cancel that ✖`,
+				...parts,
+				*/
+			}
+			this.pending_steps.unshift(step_input)
+		}
 
 		const step_content: Step<ContentType> = {
 			type: StepType.simple_message,
 			msg: hypermedia,
+			callback: () => {
+				if (actionⵧlinkⵧcontinue) {
+					navigate_to(actionⵧlinkⵧcontinue.link.href)
+				}
+			},
 		}
 		/*console.log(`[gen_next_step()] ...yielding from hypermedia content:`,
 			//prettifyꓽjson(step_content)

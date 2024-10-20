@@ -89,7 +89,8 @@ interface HATEOASServer<
 	dispatch(action: Action, url?: Hyperlink['href']): Promise<void>
 
 	// important to separate resource representation from actions feedback
-	get_pending_engagement(): [HypermediaType, Action] | null
+	// sync bc we assume the browser awaits dispatches
+	get_next_pending_engagement(url?: Hyperlink['href']): [HypermediaType, Action] | null
 }
 
 /////////////////////////////////////////////////

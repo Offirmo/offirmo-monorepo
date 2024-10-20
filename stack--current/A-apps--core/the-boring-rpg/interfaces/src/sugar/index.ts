@@ -42,8 +42,12 @@ export class Game {
 				this.state = State.play(this.state, action)
 				break
 
+			case ActionType.acknowledge_engagement_msg_seen:
+				this.state = State.acknowledge_engagement_msg_seen(this.state, action.uid)
+				break
+
 			default:
-				throw new Error(`NIMP!`)
+				throw new Error(`NIMP sugar action "${action.type}" !`)
 		}
 	}
 }

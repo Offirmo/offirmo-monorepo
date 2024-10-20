@@ -23,6 +23,7 @@ export function getꓽengagement_message(pe: Immutable<PendingEngagement>): Rich
 				.pushText('!')
 				.done()
 
+		// TODO is this one really useful?? a good UI should not need it
 		case EngagementKey['tip--first_play']:
 			return RichText.fragmentⵧblock()
 				.pushStrong('Tip: ')

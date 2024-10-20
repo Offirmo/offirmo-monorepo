@@ -35,7 +35,7 @@ function create<ContentType>({
 	DEBUG_to_prettified_str = (x: any) => x, // work with browser
 }: Options<ContentType>) {
 	if (DEBUG) console.log(`↘ ${LIB}.create()`)
-	let infinite_loop_limit = 10 // temp while proto
+	let stepsᐧcount_for_avoiding_infinite_loops = 0
 
 	async function start() {
 		if (DEBUG) console.log(`↘ ${LIB}.start()`)
@@ -58,7 +58,7 @@ function create<ContentType>({
 				}
 
 				const step: Step<ContentType> = is_promise(raw_yielded_step)
-					? (await primitives.spin_until_resolution(raw_yielded_step)) // TODO if previous step was pretent_to_think, we should continue?
+					? (await primitives.spin_until_resolution(raw_yielded_step)) // TODO if previous step was pretend_to_think, we should continue?
 					: raw_yielded_step
 				//console.log(`[${LIB}]`, {yielded_step: step})
 
@@ -90,8 +90,8 @@ function create<ContentType>({
 
 	async function execute_step(step: Step<ContentType>) {
 		if (DEBUG) console.log('↘ ${LIB}.execute_step(', DEBUG_to_prettified_str(step), ')')
-		infinite_loop_limit--
-		if (infinite_loop_limit < 0) {
+		stepsᐧcount_for_avoiding_infinite_loops++
+		if (stepsᐧcount_for_avoiding_infinite_loops > 10) {
 			throw new Error('Too many steps, exiting to avoid infinite loop!')
 		}
 
@@ -146,6 +146,7 @@ function create<ContentType>({
 			}
 
 			case StepType.input: {
+				stepsᐧcount_for_avoiding_infinite_loops = 0 // all good, user can stop if they want
 				let answer: any = ''
 				let is_valid: boolean = false // so far
 
@@ -180,6 +181,7 @@ function create<ContentType>({
 			}
 
 			case StepType.select: {
+				stepsᐧcount_for_avoiding_infinite_loops = 0 // all good, user can stop if they want
 				const keys = Object.keys(step.options)
 				assert(keys.length, 'Missing options in select step!')
 				if (step.default_value) {
