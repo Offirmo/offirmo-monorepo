@@ -24,6 +24,7 @@
 	},
 	"dependencies": {
 		"@offirmo-private/rich-text-format": "^0",
+		"@tbrpg/state": "*",
 		"@oh-my-rpg/state--meta": "^0",
 		"@tbrpg/definitions": "^0",
 		"@tbrpg/logic--adventure--resolved": "*",
@@ -57,7 +58,6 @@
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@oh-my-rpg/state--prng": "^0",
-		"@tbrpg/state": "*",
 		"npm-run-all": "^4",
 		"strip-ansi": "^7",
 		"tslib": "^2"
