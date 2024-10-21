@@ -7,6 +7,7 @@ import { UState } from '../../types.js'
 function getꓽrecap(u_state: Immutable<UState>): RichText.Document {
 	const is_new_game = (u_state.progress.statistics.good_play_count === 0)
 	if (is_new_game) {
+		// TODO redo clearer!!!
 		return RichText.fragmentⵧinline()
 			.pushText('You are an ')
 			.pushStrong('otherworlder')
