@@ -15,12 +15,33 @@ Inventory
 * soul bags
 
 
+Equipment (tools)
+Tier 0  rock staff blunt bark shield
+Tier 0.5  rock+staff  rock lance   crude boy / crude armor
+Tier 1  bronze hammer/dagger/sword/shield
 
-+++ Body https://theconversation.com/gary-mckee-what-it-takes-to-run-a-marathon-a-day-for-a-year-197184
+
+stance
+auras
+skin auras (easier)
+
+soul / body / magic
+
+body
+↳ strength
+  ↳ estoc
+  ↳ taille
+↳ control
+  ↳ alterner / contrer / feinter
+  ↳ tactics
+↳ fear / intimidation
+↳ failure / success [critical]
+↳ counter-attack
+
+
 
 Level of wealthiness
 
-https://jaredhecht.com/2023/11/16/decisive-and-courageous/
 
 
 Base
@@ -70,14 +91,3 @@ relationship progression
 
 intimacy
 - 1st base -> 2nd -> 3rd
-
-
-https://www.reddit.com/r/ProgressionFantasy/comments/ff1i15/the_progression_treadmill_thoughts_on_a_potential/
-The Progression Treadmill (thoughts on a potential problem in progression fantasy)
-
-https://www.reddit.com/r/ProgressionFantasy/comments/thz50q/feats_and_informed_power_another_essay_about/
-Feats and Informed Power (another essay about progression fantasy)
-
-
-skills
-https://dev.to/kathryngrayson/understanding-the-hierarchy-of-competence-8mb

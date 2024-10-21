@@ -1,15 +1,15 @@
-/////////////////////
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 
 import { ItemQuality, InventorySlot } from './types.js'
 
-///////
+/////////////////////////////////////////////////
 
 export const PRODUCT = '@tbrpg'
+
 export const LIB = '@tbrpg/definitions'
 
-///////
+/////////////////////////////////////////////////
 
 export const ITEM_QUALITIES = Enum.keys(ItemQuality)
 
@@ -35,9 +35,7 @@ export const ITEM_SLOTS_TO_INT: Readonly<{ [k: string]: number }> = {
 }
 assert(Object.keys(ITEM_SLOTS_TO_INT).length === ITEM_SLOTS.length, `ITEM_SLOTS_TO_INT should be up to date!`)
 
-///////
+/////////////////////////////////////////////////
 
 export const MIN_LEVEL = 1
 export const MAX_LEVEL = 9999
-
-/////////////////////

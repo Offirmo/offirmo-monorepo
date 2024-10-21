@@ -1,10 +1,11 @@
 import { Enum } from 'typescript-string-enums'
 import { WithUUID } from '@offirmo-private/uuid'
 
-/////////////////////
+/////////////////////////////////////////////////
 
 // An element is everything which can be interacted with and/or has a rich tooltip
 // ex. item, place, achievement, title...
+// TODO Review with HATEOAS in mind
 
 const ElementType = Enum(
 	'item',
@@ -48,7 +49,7 @@ interface Item extends Element {
 	// TODO made by ?
 }
 
-/////////////////////
+/////////////////////////////////////////////////
 
 export {
 	ElementType,
@@ -58,5 +59,3 @@ export {
 	InventorySlot,
 	type Item,
 }
-
-/////////////////////

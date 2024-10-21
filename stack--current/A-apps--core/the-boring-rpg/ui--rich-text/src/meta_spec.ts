@@ -18,7 +18,7 @@ describe('🔠  view to @offirmo-private/rich-text-format - meta', function() {
 			//console.log(prettifyꓽjson($doc))
 			const str = rich_text_to_terminal($doc)
 			// should just not throw
-			console.log(str)
+			//console.log(str)
 		})
 	})
 })

@@ -91,6 +91,13 @@ M&A -- Apple
 M&A -- fb / insta https://www.linkedin.com/posts/olivermolander_technology-facebook-instagram-activity-7241726426826059776-IOE4
 M&A -- killer zone = https://www.trendingtopics.eu/tech-talent-the-intricate-mechanisms-behind-apples-startup-killer-zone/
 magic moment -> habit moment
+management maturity -- Level 0: Bliss
+management maturity -- Level 1: Fire Fighting
+management maturity -- Level 2: Global Baselines & Metrics
+management maturity -- Level 3: P75+, Site-specific Baselines & Metrics
+management maturity -- Level 4: Variance Control & Regression Prevention
+management maturity -- Level 5: Strategic Performance
+management maturity = high-management-maturity organisations https://infrequently.org/2022/05/performance-management-maturity/
 marketing -- "killer app"
 marketing -- case studies
 marketing -- case studies -- "flagship app" It's not that there wasn't a lot of interest in WPF, it's just there weren't any flagship apps showing off what it could do that previous frameworks couldn't. Even if Evernote had stayed with it, they still have a fairly simple client so a lot of people would simply shrug and say "I can do that in WinForms." They aren't wrong. https://www.reddit.com/r/csharp/comments/x0nu7h/comment/im9kesb/
