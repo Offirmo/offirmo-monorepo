@@ -3,22 +3,9 @@ import { Immutable } from '@offirmo-private/state-utils'
 import { type Hyperlink, type Uri‿str, type URI‿x, type SchemeSpecificURIPart } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import * as AppState from '@tbrpg/state'
-import * as AppRichText from '@tbrpg/ui--rich-text'
-import {
-	Game,
-	type Action,
-	create_action,
-	ActionType,
-	type ActionPlay,
-	type ActionAcknowledgeEngagementMsgSeen,
-} from '@tbrpg/interfaces'
+import { prettifyꓽjson } from '../../services/misc.js'
 
-import { prettifyꓽjson } from '../services/misc.js'
-
-import { ChatPrimitivesConsole } from '@offirmo-private/view--chat/primitives--terminal--vanilla'
 import {
-	create,
 	StepType,
 	type Step,
 	type SelectStep,
@@ -34,9 +21,7 @@ import {
 	normalizeꓽuri‿str,
 	getꓽCTA,
 	type HATEOASServer,
-} from './to-migrate.js'
-
-import { AppHateoasServer } from './server'
+} from '../to-migrate.js'
 
 /////////////////////////////////////////////////
 

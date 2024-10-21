@@ -1,0 +1,52 @@
+{
+	"name": "@tbrpg/hypermedia",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+
+	"sideEffects": false,
+	"type": "module",
+	"source": "src/index.ts",
+	"exports": {
+		".": {
+			"import": "./dist/src.es2023.esm/index.js"
+		}
+	},
+	"module": "dist/src.es2023.esm/index.js",
+	"typings": "dist/src.es2023.esm/index.d.ts",
+
+	"peerDependencies": {
+		"@offirmo-private/soft-execution-context": "*",
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@offirmo-private/rich-text-format": "^0",
+		"@offirmo-private/state-utils": "*",
+		"@offirmo-private/timestamps": "*",
+		"@offirmo-private/ts-types": "*",
+		"@offirmo-private/view--chat": "*",
+		"@tbrpg/state": "*",
+		"@tbrpg/ui--rich-text": "^0",
+		"tiny-invariant": "^1",
+		"typescript-string-enums": "^1"
+	},
+	"scripts": {
+		"clean": "monorepo-script--clean-package …dist",
+
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
+		"dev": "run-s clean _build:dev:watch",
+
+		"demo": "node ./dist/src.es2023.esm/demo/index.js",
+		"demoh": "node ./dist/src.es2023.esm/hateoas/index.js"
+	},
+
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/prettify-any": "*",
+		"@offirmo-private/soft-execution-context": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2"
+	}
+}

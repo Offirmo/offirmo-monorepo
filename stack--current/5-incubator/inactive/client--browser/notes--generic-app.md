@@ -9,7 +9,8 @@ Snowflake!!
 // features
 
 
-
+> ReferenceError: React is not defined
+Need `import React from "react"`
 
 
 ## Priorities
