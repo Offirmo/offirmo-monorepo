@@ -24,6 +24,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/normalize-string": "*",
 		"memoize-one": "^6",
 		"typescript-string-enums": "^1"
 	},

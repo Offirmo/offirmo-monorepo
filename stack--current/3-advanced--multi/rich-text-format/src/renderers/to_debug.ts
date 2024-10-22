@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 
 import {
-	CheckedNode,
-	Node,
+	type CheckedNode,
+	type Node,
 } from '../types.js'
 
 import {

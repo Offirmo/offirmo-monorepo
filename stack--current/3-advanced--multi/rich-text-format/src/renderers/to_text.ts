@@ -1,13 +1,13 @@
-import { Node, CheckedNode } from '../types.js'
+import { type Node, type CheckedNode } from '../types.js'
 import { NODE_TYPE_to_DISPLAY_MODE } from '../consts.js'
 import {
-	BaseRenderingOptions,
-	OnConcatenateStringParams,
-	OnConcatenateSubNodeParams,
-	OnNodeExitParams,
+	type BaseRenderingOptions,
+	type OnConcatenateStringParams,
+	type OnConcatenateSubNodeParams,
+	type OnNodeExitParams,
 	walk,
-	WalkerCallbacks,
-	WalkerReducer,
+	type WalkerCallbacks,
+	type WalkerReducer,
 } from '../walk.js'
 
 import { isꓽlink, isꓽlistⵧKV } from './common.js'

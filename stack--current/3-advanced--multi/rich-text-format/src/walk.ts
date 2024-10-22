@@ -2,7 +2,11 @@ import assert from 'tiny-invariant'
 
 import { LIB } from './consts.js'
 
-import { NodeType, CheckedNode, Node } from './types.js'
+import {
+	NodeType,
+	type CheckedNode,
+	type Node,
+} from './types.js'
 
 import { normalizeꓽnode } from './utils/normalize.js'
 

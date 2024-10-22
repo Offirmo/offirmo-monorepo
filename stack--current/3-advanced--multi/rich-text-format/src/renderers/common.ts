@@ -1,5 +1,5 @@
 import {
-	CheckedNode,
+	type CheckedNode,
 } from '../types.js'
 
 /////////////////////////////////////////////////

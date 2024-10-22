@@ -2,15 +2,15 @@ import { type URI‿x } from '@offirmo-private/ts-types-web'
 import { type Hyperlink } from '@offirmo-private/ts-types-web'
 
 import {
-	BaseRenderingOptions,
-	OnConcatenateStringParams,
-	OnConcatenateSubNodeParams,
-	OnTypeParams,
+	type BaseRenderingOptions,
+	type OnConcatenateStringParams,
+	type OnConcatenateSubNodeParams,
+	type OnTypeParams,
 	walk,
-	WalkerCallbacks,
-	WalkerReducer,
+	type WalkerCallbacks,
+	type WalkerReducer,
 } from '../walk.js'
-import { Node, CheckedNode, NodeLike } from '../types.js'
+import { type CheckedNode, type NodeLike } from '../types.js'
 
 /////////////////////////////////////////////////
 

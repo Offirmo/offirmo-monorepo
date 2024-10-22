@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from './consts.js'
-import { Node } from './types.js'
+import { type Node } from './types.js'
 
 /////////////////////////////////////////////////
 

@@ -1,14 +1,14 @@
 import memoize_one from 'memoize-one'
 import {
-	BaseRenderingOptions,
+	type BaseRenderingOptions,
 	NodeType,
-	OnConcatenateStringParams,
-	OnConcatenateSubNodeParams, OnNodeExitParams,
+	type OnConcatenateStringParams,
+	type OnConcatenateSubNodeParams, OnNodeExitParams,
 	walk,
-	WalkerCallbacks,
-	WalkerReducer,
+	type WalkerCallbacks,
+	type WalkerReducer,
 } from '../walk.js'
-import { CheckedNode, Node } from '../types.js'
+import { type CheckedNode, type Node } from '../types.js'
 
 import { isꓽlist, isꓽlink, isꓽlistⵧKV, isꓽlistⵧuuid } from './common.js'
 

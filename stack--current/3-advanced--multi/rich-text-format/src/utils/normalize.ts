@@ -1,16 +1,16 @@
 import assert from 'tiny-invariant'
-
+import { normalize_unicode } from '@offirmo-private/normalize-string'
 import { LIB, SCHEMA_VERSION } from '../consts.js'
 
 import {
 	NodeType,
-	CheckedNode,
-	Node,
+	type CheckedNode,
+	type Node,
 } from '../types.js'
 
 /////////////////////////////////////////////////
 
-function normalizeꓽnode($raw_node: Readonly<Node>): CheckedNode {
+function normalizeꓽnode<Hints>($raw_node: Readonly<Node<Hints>>, default_hints: Hints = {} as any): CheckedNode<Hints> {
 	assert(!!$raw_node, `normalize_node(): undefined or null!`)
 
 	const {
@@ -19,7 +19,7 @@ function normalizeꓽnode($raw_node: Readonly<Node>): CheckedNode {
 		$classes = [],
 		$content = '',
 		$sub = {},
-		$hints = {},
+		$hints = default_hints,
 		...rest
 	} = $raw_node
 	assert(Object.keys(rest).length === 0, `${LIB}: node contain extraneous keys! (${Object.keys(rest).join(',')})`)
@@ -30,11 +30,11 @@ function normalizeꓽnode($raw_node: Readonly<Node>): CheckedNode {
 
 	// TODO validation
 
-	const $node: CheckedNode = {
+	const $node: CheckedNode<Hints> = {
 		$v,
 		$type,
 		$classes,
-		$content,
+		$content: normalize_unicode($content),
 		$sub,
 		$hints,
 	}

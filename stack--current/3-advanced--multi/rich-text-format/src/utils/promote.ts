@@ -1,13 +1,13 @@
 import {
 	NodeType,
-	NodeLike,
-	Node,
+	type NodeLike,
+	type Node,
 } from '../types.js'
 import { assertꓽisꓽNode } from '../type-guards.js'
 
 /////////////////////////////////////////////////
 
-function promoteꓽto_node($raw: NodeLike): Node {
+function promoteꓽto_node<Hints>($raw: NodeLike<Hints>): Node<Hints> {
 	if (typeof $raw === 'number')
 		$raw = String($raw)
 
