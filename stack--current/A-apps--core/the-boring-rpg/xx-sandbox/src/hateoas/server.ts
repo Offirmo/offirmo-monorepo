@@ -19,11 +19,11 @@ import {
 
 import { prettifyꓽjson } from '../services/misc.js'
 
+import { type HATEOASServer } from '../to-export-to-own-package/hateoas/types.js'
 import {
 	DEFAULT_ROOT_URI,
 	normalizeꓽuri‿SSP,
 	normalizeꓽuri‿str,
-	type HATEOASServer,
 } from './to-migrate.js'
 
 /////////////////////////////////////////////////

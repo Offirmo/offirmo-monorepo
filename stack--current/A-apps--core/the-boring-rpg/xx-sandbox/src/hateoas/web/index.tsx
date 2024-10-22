@@ -8,7 +8,7 @@ import { LIB } from '@tbrpg/definitions'
 
 import { ೱᐧpage_loaded } from '../../to-export-to-own-package/page-loaded/index.tsx'
 
-import Root from './browser.tsx'
+import Root from './root.tsx'
 
 /////////////////////////////////////////////////
 

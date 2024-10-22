@@ -130,6 +130,7 @@ excuses vs. solutions
 fairness
 fake it till you make it -- Of course, it’s not really “fake it till you make it.” It’s just “fake it.”
 false good idea
+farm rice theory https://www.nature.com/articles/s41467-024-44770-w
 fast reading
 Faustian Bargain: A man once sold his soul to a demon in exchange for knowledge. At first, it seemed like a smart trade. But the man lost in the long-run. Tragically, what the man lost was more valuable than what he earned. In short, he won the battle but lost the war.
 fear of missing out (FOMO)

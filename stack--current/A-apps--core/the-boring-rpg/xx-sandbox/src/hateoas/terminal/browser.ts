@@ -15,12 +15,12 @@ import {
 	type StepIteratorReturnResult,
 } from '@offirmo-private/view--chat'
 
+import { type HATEOASServer } from '../../to-export-to-own-package/hateoas/types.js'
 import {
 	DEFAULT_ROOT_URI,
 	normalizeꓽuri‿SSP,
 	normalizeꓽuri‿str,
 	getꓽCTA,
-	type HATEOASServer,
 } from '../to-migrate.js'
 
 /////////////////////////////////////////////////
