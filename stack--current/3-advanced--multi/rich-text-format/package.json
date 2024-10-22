@@ -12,7 +12,8 @@
 		".": {
 			"import": "./dist/src.es2023.esm/index.js",
 			"require": "./dist/src.es2023.cjs/index.js"
-		}
+		},
+		"./styles.css": "./src/renderers/style.css"
 	},
 	"module": "dist/src.es2023.esm/index.js",
 	"main": "dist/src.es2023.cjs/index.js",

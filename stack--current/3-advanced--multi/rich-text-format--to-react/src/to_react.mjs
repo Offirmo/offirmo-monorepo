@@ -3,7 +3,7 @@ import * as React from 'react'
 import classNames from 'classnames'
 
 import { Enum, NodeType, walk, isꓽlist, isꓽlistⵧuuid, isꓽlistⵧKV } from '@offirmo-private/rich-text-format'
-import '@offirmo-private/rich-text-format/src/renderers/style.css'
+import 'npm:@offirmo-private/rich-text-format/styles.css'
 
 const LIB = 'rich_text_to_react'
 
@@ -212,7 +212,6 @@ const callbacks = {
 		return state
 	},
 }
-
 
 ////////////
 

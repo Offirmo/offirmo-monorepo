@@ -66,11 +66,46 @@ function getꓽCTA(action: Immutable<RichText.Action>): string {
 
 const DEFAULT_ROOT_URI: Uri‿str = normalizeꓽuri‿str('')
 
+function getꓽactionsⵧreducers(actions: Array<RichText.Action>): Array<RichText.ReducerAction> {
+	return actions.filter(a => a.type === 'action')
+}
+
+function getꓽactionsⵧlinks(actions: Array<RichText.Action>, {
+	excluding_relꘌself = false, excluding_pathꘌ,
+}: {
+	excluding_relꘌself?: boolean
+	excluding_pathꘌ?: SchemeSpecificURIPart['path']
+} = {}): Array<RichText.HyperlinkAction> {
+	return actions
+		.filter(a => a && a.type === 'hyperlink')
+		.filter((ha: RichText.HyperlinkAction)=> {
+			return excluding_relꘌself
+				? (!ha.link.rel.includes('self'))
+				: true
+		})
+		.filter((ha: RichText.HyperlinkAction)=> {
+			return excluding_pathꘌ
+				? normalizeꓽuri‿SSP(ha.link.href).path !== excluding_pathꘌ
+				: true
+		})
+}
+function getꓽactionⵧcontinue_to(actions: Array<RichText.Action>): RichText.HyperlinkAction | null {
+	const continue_links = getꓽactionsⵧlinks(actions)
+		.filter(a => a.link.rel.includes('continue-to'))
+	assert(continue_links.length <= 1, 'Should only have 0 or 1 continue-to links.')
+	return continue_links[0] ?? null
+}
+
 /////////////////////////////////////////////////
 
 export {
 	normalizeꓽuri‿SSP,
 	normalizeꓽuri‿str,
+
 	getꓽCTA,
+	getꓽactionsⵧreducers,
+	getꓽactionsⵧlinks,
+	getꓽactionⵧcontinue_to,
+
 	DEFAULT_ROOT_URI,
 }

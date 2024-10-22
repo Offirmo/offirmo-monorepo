@@ -10,7 +10,7 @@ import {
 	WalkerCallbacks,
 	WalkerReducer,
 } from '../walk.js'
-import { Node, CheckedNode } from '../types.js'
+import { Node, CheckedNode, NodeLike } from '../types.js'
 
 /////////////////////////////////////////////////
 
@@ -115,9 +115,8 @@ const callbacksⵧto_actions: Partial<WalkerCallbacks<State, RenderingOptionsⵧ
 	on_type,
 }
 
-// accepting string as well for convenience (chat interface "string | AdvancedType")
-function renderⵧto_actions($doc: Node | string, options: RenderingOptionsⵧToActions = DEFAULT_RENDERING_OPTIONSⵧToActions): Action[] {
-	if (typeof $doc === 'string') {
+function renderⵧto_actions($doc: NodeLike, options: RenderingOptionsⵧToActions = DEFAULT_RENDERING_OPTIONSⵧToActions): Action[] {
+	if (typeof $doc !== 'object') {
 		return []
 	}
 	return walk<State, RenderingOptionsⵧToActions>($doc, callbacksⵧto_actions, options).actions
