@@ -7,6 +7,8 @@ import {
 	type State,
 } from '../types.js'
 
+import { SCHEMA_VERSION } from '../consts.js'
+
 //////////////////////////////////////////////////////////////////////
 
 const DEMO_TEMPLATE: EngagementTemplate<string> = {
@@ -21,7 +23,7 @@ const DEMO_TEMPLATE: EngagementTemplate<string> = {
 // a full-featured, non-trivial demo state
 // useful for demos and unit tests
 const DEMO_STATE: Immutable<State<string>> = enforceꓽimmutable<State<string>>({
-	schema_version: 1,
+	schema_version: SCHEMA_VERSION,
 	revision: 42,
 
 	queue: [

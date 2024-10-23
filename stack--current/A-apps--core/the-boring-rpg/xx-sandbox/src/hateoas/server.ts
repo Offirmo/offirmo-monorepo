@@ -32,11 +32,13 @@ import {
 
 const DEBUG = false
 
-class AppHateoasServer implements HATEOASServer<RichText.Document, Action> {
+type HypermediaType = RichText.Document
+
+class AppHateoasServer implements HATEOASServer<HypermediaType, Action> {
 	app_sugar: Game = new Game()
 	pending_async: Array<Promise<void>> = []
 
-	async get(url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): Promise<RichText.Document> {
+	async get(url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): Promise<HypermediaType> {
 		DEBUG && console.group(`↘ HATEOASᐧget("${url}")`)
 
 		////////////
