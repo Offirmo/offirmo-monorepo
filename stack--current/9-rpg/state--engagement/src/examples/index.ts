@@ -3,26 +3,34 @@
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import {
-	EngagementType,
-	State,
-} from './types.js'
+	type EngagementTemplate,
+	type State,
+} from '../types.js'
 
 //////////////////////////////////////////////////////////////////////
 
+const DEMO_TEMPLATE: EngagementTemplate<string> = {
+	content: 'Hello, {{username}}!',
+
+	is_in_user_flow: true,
+	level: 'log',
+
+	auto_dismiss_delay_ms: 5000,
+}
+
 // a full-featured, non-trivial demo state
 // useful for demos and unit tests
-const DEMO_STATE: Immutable<State> = enforceꓽimmutable<State>({
+const DEMO_STATE: Immutable<State<string>> = enforceꓽimmutable<State<string>>({
 	schema_version: 1,
 	revision: 42,
 
 	queue: [
 		{
 			uid: 42,
-			engagement: {
-				key: 'hello_world--flow',
-				type: EngagementType.flow,
+			template: DEMO_TEMPLATE,
+			params: {
+				username: 'Offirmo',
 			},
-			params: {},
 		},
 	],
 })

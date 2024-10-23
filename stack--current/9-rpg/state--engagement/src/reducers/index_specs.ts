@@ -1,16 +1,14 @@
-//////////////////////////////////////////////////////////////////////
-
 import { expect } from 'chai'
 
-import { SCHEMA_VERSION } from './consts.js'
+import { LIB, SCHEMA_VERSION } from '../consts.js'
 import {
 	create,
 } from './index.js'
-import { getꓽSXC } from './sec.js'
+import { getꓽSXC } from '../sec.js'
 
 //////////////////////////////////////////////////////////////////////
 
-describe('@oh-my-rpg/state--engagement - state', function() {
+describe(`${LIB} - reducers`, function() {
 
 	describe('🆕  create()', function() {
 
@@ -24,4 +22,6 @@ describe('@oh-my-rpg/state--engagement - state', function() {
 			})
 		})
 	})
+
+	// TODO test other reducers
 })

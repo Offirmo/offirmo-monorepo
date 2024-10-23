@@ -2,7 +2,7 @@
 
 const LIB = '@oh-my-rpg/state--engagement'
 
-const SCHEMA_VERSION: number = 1
+const SCHEMA_VERSION: number = 2
 
 //////////////////////////////////////////////////////////////////////
 
