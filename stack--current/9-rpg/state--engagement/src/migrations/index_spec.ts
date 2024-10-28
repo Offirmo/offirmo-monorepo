@@ -7,7 +7,7 @@ import { itㆍshouldㆍmigrateㆍcorrectly } from '@offirmo-private/state-migrat
 import { LIB, SCHEMA_VERSION } from '../consts.js'
 import { migrate_toꓽlatest, MIGRATION_HINTS_FOR_TESTS } from './index.js'
 import { DEMO_STATE } from '../examples/index.js'
-import { getꓽSXC } from '../sec.js'
+import { getꓽSXC } from '../utils/sec.js'
 import { create } from '../reducers/index.js'
 
 //////////////////////////////////////////////////////////////////////
@@ -24,7 +24,7 @@ describe(`${LIB} - migration`, function() {
 			LATEST_EXPECTED_DATA: enforceꓽimmutable<any>(create()),
 			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSXC()),
 			import_meta_url: import.meta.url, // for resolving the path below
-			relative_dir_path: '../../../src/migrations_of_blank_state_specs',
+			relative_dir_path: '../../../src/migrations/migrations_of_blank_state_specs',
 			describe, context, it, expect,
 		})
 	})
@@ -40,7 +40,7 @@ describe(`${LIB} - migration`, function() {
 			LATEST_EXPECTED_DATA: DEMO_STATE,
 			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSXC()),
 			import_meta_url: import.meta.url, // for resolving the path below
-			relative_dir_path: '../../../src/migrations_of_active_state_specs',
+			relative_dir_path: '../../../src/migrations/migrations_of_active_state_specs',
 			describe, context, it, expect,
 		})
 	})

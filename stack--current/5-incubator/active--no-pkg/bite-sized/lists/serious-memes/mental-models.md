@@ -21,7 +21,7 @@
 5 mantras -- You are enough = I don’t tell myself this often enough. I’d dare to say that you don’t either. But it’s a mantra that I repeat to myself often. 
 5 mantras = by Christopher Davis (burnout)
 5 regrets of dying
-80/20 rule (Pareto)
+80/20 rule "Pareto"
 [ ] AAA TODO https://flinkliv.com/
 [ ] AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 [ ] https://amir.rachum.com/mental-models/
@@ -32,6 +32,7 @@
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
 [ ] https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
+a country is a farm
 accent -- miscommunication https://paulgraham.com/accents.html
 acceptance
 action -- deep dive & low-hanging fruits
@@ -55,6 +56,8 @@ base rate: The average outcome for an event over time. They’re like batting av
 be prepared
 bee browsing
 better ask for forgiveness than for permission
+biases -- attractiveness
+biases -- baby-face
 bike shed Effect: A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
 biographies -- Profiles in Courage https://en.wikipedia.org/wiki/Profiles_in_Courage
 bonnes et mauvaises cartes
@@ -77,6 +80,7 @@ circle of competence: Define the limits of your knowledge. Hint: the limits are 
 cognitive bias
 cognitive bias -- recency https://en.wikipedia.org/wiki/Recency_bias
 cognitive bias https://en.wikipedia.org/wiki/Cognitive_bias
+cognitive dissonance
 collaboration issue -- Compromise, where the estimates contain only "lowest common denominator" language
 collaboration issue -- Gridlock, where many different interests slow the analytic process
 collaboration issue -- Groupthink, where opposing views are subconsciously discouraged
@@ -87,6 +91,8 @@ communication -- ELI5 https://boz.com/articles/eli5
 communication -- plainspoken https://boz.com/articles/be-plainspoken https://debliu.substack.com/p/the-importance-of-being-plainspoken
 communication non violente
 competition is for Losers: Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
+conditioning -- classical
+conditioning -- operant
 convexity: If you want to be lucky, look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
 Copernican Principle: The more we learn about astronomy, the less it seems that earth is special. It’s a small part of the universe, and each human is a small part of the earth. We are all spinning through the solar system — nowhere near the beginning or end of time.
 corporate slave (but also never achieving anything?)

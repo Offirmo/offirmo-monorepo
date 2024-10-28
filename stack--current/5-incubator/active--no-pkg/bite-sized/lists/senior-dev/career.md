@@ -183,3 +183,5 @@ https://roughlywritten.substack.com/p/random-thoughts-15-years-into-software
 https://remote.com/jobs
 
 staff engineer https://staffeng.com/
+
+https://www.entrepreneur.com/business-news/meta-fires-400000-employee-over-25-uber-eats-meal-voucher/481473

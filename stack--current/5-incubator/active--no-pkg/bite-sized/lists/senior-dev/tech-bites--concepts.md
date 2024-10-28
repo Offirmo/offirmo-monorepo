@@ -1,4 +1,5 @@
 12 factors https://12factor.net/
+[ ] https://devpedia.pages.dev/
 [ ] +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
 [ ] +++ https://explorer.globe.engineer/
 [ ] +++ https://martinfowler.com/

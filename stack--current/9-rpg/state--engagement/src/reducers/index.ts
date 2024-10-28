@@ -10,7 +10,7 @@ import {
 	type State,
 } from '../types.js'
 
-import { type SoftExecutionContext, getꓽSXC } from '../sec.js'
+import { type SoftExecutionContext, getꓽSXC } from '../utils/sec.js'
 
 //////////////////////////////////////////////////////////////////////
 

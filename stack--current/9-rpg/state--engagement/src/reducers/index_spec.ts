@@ -4,7 +4,7 @@ import { LIB, SCHEMA_VERSION } from '../consts.js'
 import {
 	create,
 } from './index.js'
-import { getꓽSXC } from '../sec.js'
+import { getꓽSXC } from '../utils/sec.js'
 
 //////////////////////////////////////////////////////////////////////
 

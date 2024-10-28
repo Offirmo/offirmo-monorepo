@@ -6,7 +6,7 @@ import { LIB } from '../consts.js'
 import {
 	create,
 } from '../reducers/index.js'
-import { getꓽSXC } from '../sec.js'
+import { getꓽSXC } from '../utils/sec.js'
 
 //////////////////////////////////////////////////////////////////////
 

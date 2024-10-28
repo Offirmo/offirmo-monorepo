@@ -12,7 +12,6 @@ const EngagementKey = Enum(
 	'code_redemption--succeeded',
 	'achievement-unlocked',
 	'reborn',
-
 )
 type EngagementKey = Enum<typeof EngagementKey> // eslint-disable-line no-redeclare
 

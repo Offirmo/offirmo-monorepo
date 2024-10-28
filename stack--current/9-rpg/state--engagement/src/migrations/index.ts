@@ -10,7 +10,7 @@ import {
 
 import { LIB, SCHEMA_VERSION } from '../consts.js'
 import { type State } from '../types.js'
-import { type SoftExecutionContext } from '../sec.js'
+import { type SoftExecutionContext } from '../utils/sec.js'
 
 //////////////////////////////////////////////////////////////////////
 

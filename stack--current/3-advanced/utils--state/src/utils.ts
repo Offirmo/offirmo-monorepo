@@ -28,6 +28,7 @@ import {
 
 /////////////////////////////////////////////////
 
+// TODO dynamic switch, ex. for dev/prod
 const enforceꓽimmutable: ImmutabilityEnforcer = <T>(state: T | Immutable<T>): Immutable<T> => icepick.freeze<T>(state as T) as Immutable<T>
 //const enforceꓽimmutable: ImmutabilityEnforcer = (state: T): Immutable<T> => state
 //const enforceꓽimmutable: ImmutabilityEnforcer = <T>(state: T): Immutable<T> => deep_freeze<T>(state)

@@ -3,7 +3,7 @@
 import {expect} from 'chai'
 
 import {LIB} from '../consts.js'
-import {getꓽSXC} from '../sec.js'
+import {getꓽSXC} from '../utils/sec.js'
 import { DEMO_STATE } from './index.js'
 import { migrate_toꓽlatest } from '../migrations/index.js'
 
