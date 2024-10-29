@@ -57,7 +57,7 @@ type CheckedNode<Hints = BaseHints> = {
 
 type Node<Hints = BaseHints> = Partial<CheckedNode<Hints>>
 
-// trivial to promote to a Node
+// Node + stuff trivial to promote to a Node
 type NodeLike<Hints = BaseHints> = Node<Hints> | string | number
 
 ///////

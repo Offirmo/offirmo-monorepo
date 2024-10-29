@@ -9,16 +9,20 @@ import { SCHEMA_VERSION } from '../consts.js'
 
 //////////////////////////////////////////////////////////////////////
 
-const DEMO_TEMPLATEⵧHELLO_FLOW: EngagementTemplate<string> = {
-	content: 'Hello, {{username}}!',
+type DemoContentType = string
 
-	flow: 'side',
+// the most common case
+// can be re-used
+const DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL: EngagementTemplate<DemoContentType> = {
+	content: '[ENGT DEMO]Hello, World!',
+
+	flow: 'main',
 	role: 'assistant',
-	attention_needed: 'log',
+	attention_needed: 'normal',
 }
 
-const DEMO_TEMPLATEⵧPLAYⵧFAILURE: EngagementTemplate<string> = {
-	content: 'You played too soon!',
+const DEMO_TEMPLATEⵧPLAYⵧFAILURE: EngagementTemplate<DemoContentType> = {
+	content: '[ENGT DEMO]You failed!',
 
 	flow: 'main',
 	role: 'system',
@@ -32,8 +36,17 @@ const DEMO_TEMPLATEⵧPLAYⵧFAILURE: EngagementTemplate<string> = {
 	}
 }
 
-const DEMO_TEMPLATEⵧNON_FLOW: EngagementTemplate<string> = {
-	content: `You got an update! See what's new!`,
+// low importance
+const DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG: EngagementTemplate<DemoContentType> = {
+	content: '[ENGT DEMO]Hello, World!',
+
+	flow: 'side',
+	role: 'assistant',
+	attention_needed: 'log',
+}
+
+const DEMO_TEMPLATEⵧNON_FLOW: EngagementTemplate<DemoContentType> = {
+	content: `[ENGT DEMO]You got an update! See what's new!`,
 
 	flow: 'not',
 	role: 'assistant',
@@ -45,14 +58,14 @@ const DEMO_TEMPLATEⵧNON_FLOW: EngagementTemplate<string> = {
 
 // a full-featured, non-trivial demo state
 // useful for demos and unit tests
-const DEMO_STATE: Immutable<State<string>> = enforceꓽimmutable<State<string>>({
+const DEMO_STATE: Immutable<State<DemoContentType>> = enforceꓽimmutable<State<DemoContentType>>({
 	schema_version: SCHEMA_VERSION,
 	revision: 42,
 
 	queue: [
 		{
 			uid: 42,
-			template: DEMO_TEMPLATEⵧHELLO_FLOW,
+			template: DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG,
 			params: {
 				username: 'Offirmo',
 			},
@@ -63,8 +76,9 @@ const DEMO_STATE: Immutable<State<string>> = enforceꓽimmutable<State<string>>(
 /////////////////////
 
 export {
-	DEMO_TEMPLATEⵧHELLO_FLOW,
+	DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
 	DEMO_TEMPLATEⵧPLAYⵧFAILURE,
+	DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG,
 	DEMO_TEMPLATEⵧNON_FLOW,
 
 	DEMO_STATE,
