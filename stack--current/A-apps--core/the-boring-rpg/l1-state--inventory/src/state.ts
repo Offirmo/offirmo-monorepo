@@ -7,7 +7,7 @@ import { InventorySlot } from '@tbrpg/definitions'
 
 import { SCHEMA_VERSION } from './consts.js'
 import { Item, State } from './types.js'
-import { compare_items_by_slot_then_strength } from './compare.js'
+import { compareꓽitemsⵧby_slot_then_strength } from './compare.js'
 import { is_full, getꓽitem_in_slot } from './selectors.js'
 import { TBRSoftExecutionContext, getꓽSXC } from './sec.js'
 
@@ -35,7 +35,7 @@ function create(SXC?: TBRSoftExecutionContext): Immutable<State> {
 function _auto_sort(state: Immutable<State>): Immutable<State> {
 	return {
 		...state,
-		unslotted: [...state.unslotted].sort(compare_items_by_slot_then_strength)
+		unslotted: [...state.unslotted].sort(compareꓽitemsⵧby_slot_then_strength)
 	}
 }
 

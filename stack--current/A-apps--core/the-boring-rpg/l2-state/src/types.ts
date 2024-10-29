@@ -4,6 +4,7 @@ import {
 	BaseRootState,
 } from '@offirmo-private/state-utils'
 
+import { type HypermediaContentType } from '@tbrpg/definitions'
 import { type State as CharacterState } from '@tbrpg/state--character'
 import { type State as InventoryState } from '@tbrpg/state--inventory'
 import { type State as WalletState } from '@tbrpg/state--wallet'
@@ -31,7 +32,7 @@ interface UState extends BaseUState {
 
 	// technical
 	prng: PRNGState
-	engagement: EngagementState
+	engagement: EngagementState<HypermediaContentType>
 
 	// meta = growth etc.
 	meta: MetaState

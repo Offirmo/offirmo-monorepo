@@ -1,7 +1,15 @@
 import { Enum } from 'typescript-string-enums'
 import { WithUUID } from '@offirmo-private/uuid'
+import { type NodeLike } from '@offirmo-private/rich-text-format'
 
 /////////////////////////////////////////////////
+
+/** the hypermedia type we use all over the app
+ */
+type HypermediaContentType = NodeLike
+// TODO hints for progressive enhancement
+
+/////////////////////
 
 // An element is everything which can be interacted with and/or has a rich tooltip
 // ex. item, place, achievement, title...
@@ -52,6 +60,8 @@ interface Item extends Element {
 /////////////////////////////////////////////////
 
 export {
+	type HypermediaContentType,
+
 	ElementType,
 	type Element,
 

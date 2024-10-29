@@ -5,7 +5,7 @@ import {
 	Item,
 	ItemQuality,
 	InventorySlot,
-	create_item_base,
+	createꓽitemⵧbase,
 } from '@tbrpg/definitions'
 import { getꓽrandom, RNGEngine } from '@offirmo/random'
 
@@ -72,7 +72,7 @@ function pick_random_base_strength(rng: RNGEngine, quality: ItemQuality): number
 function create(rng: RNGEngine, hints: Immutable<Partial<Weapon>> = {}): Weapon {
 	// TODO add a check for hints to be in existing components
 
-	const base = create_item_base(InventorySlot.weapon, hints.quality || pick_random_quality(rng)) as Item & { slot: typeof InventorySlot.weapon }
+	const base = createꓽitemⵧbase(InventorySlot.weapon, hints.quality || pick_random_quality(rng)) as Item & { slot: typeof InventorySlot.weapon }
 
 	const temp: Weapon = {
 		...base,

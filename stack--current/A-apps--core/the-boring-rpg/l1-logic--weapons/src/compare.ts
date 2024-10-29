@@ -1,7 +1,7 @@
 /////////////////////
 
 import { type Immutable } from '@offirmo-private/ts-types'
-import { compare_items_by_quality } from '@tbrpg/definitions'
+import { compareꓽitemsⵧby_quality } from '@tbrpg/definitions'
 
 import { Weapon } from './types.js'
 import { getꓽultimate_medium_damage } from './selectors.js'
@@ -16,7 +16,7 @@ function compare_weapons_by_potential(a: Immutable<Weapon>, b: Immutable<Weapon>
 		return b_dmg - a_dmg
 
 	// fallback to other attributes
-	return compare_items_by_quality(a, b) || a.uuid.localeCompare(b.uuid)
+	return compareꓽitemsⵧby_quality(a, b) || a.uuid.localeCompare(b.uuid)
 }
 
 /////////////////////

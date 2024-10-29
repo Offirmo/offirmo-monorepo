@@ -1,10 +1,10 @@
 import { expect } from 'chai'
 
-/*
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 import * as RichText from '@offirmo-private/rich-text-format'
+import { EngagementType } from '@oh-my-rpg/state--engagement'
 
-import { LIB } from '../../../consts.js'
+import { LIB } from '../../consts.js'
 import {
 	//create,
 	EngagementKey,
@@ -34,6 +34,7 @@ describe(`${LIB} - engagement messages`, function() {
 		})
 	})
 
+	/*
 		context('when the user has already played', function() {
 
 			context('when the user has an unequipped better weapon', function() {
@@ -44,6 +45,5 @@ describe(`${LIB} - engagement messages`, function() {
 		context('when none of the above', function() {
 			it('should not suggest anything')
 		})
-	})
+	})*/
 })
-*/

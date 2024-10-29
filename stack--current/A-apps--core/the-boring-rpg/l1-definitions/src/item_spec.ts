@@ -3,25 +3,25 @@ import { expect } from 'chai'
 import { Item, InventorySlot, ItemQuality } from './types.js'
 import { LIB } from './consts.js'
 import {
-	create_item_base,
-	compare_items_by_slot,
-	compare_items_by_quality,
+	createꓽitemⵧbase,
+	compareꓽitemsⵧby_slot,
+	compareꓽitemsⵧby_quality,
 } from './item.js'
 
 
 describe(`${LIB} - item (utilities)`, function() {
 
-	describe('compare_items_by_slot', function() {
+	describe('compareꓽitemsⵧby_slot', function() {
 
 		it('should sort correctly', () => {
 			const list: Item[] = [
-				create_item_base(InventorySlot.weapon),
-				create_item_base(InventorySlot.armor),
-				create_item_base(InventorySlot.armor),
-				create_item_base(InventorySlot.weapon),
+				createꓽitemⵧbase(InventorySlot.weapon),
+				createꓽitemⵧbase(InventorySlot.armor),
+				createꓽitemⵧbase(InventorySlot.armor),
+				createꓽitemⵧbase(InventorySlot.weapon),
 			]
 			const [ w1, a1, a2, w2 ] = list
-			expect([...list].sort(compare_items_by_slot)).to.deep.equal([
+			expect([...list].sort(compareꓽitemsⵧby_slot)).to.deep.equal([
 				w1,
 				w2,
 				a1,
@@ -30,20 +30,20 @@ describe(`${LIB} - item (utilities)`, function() {
 		})
 	})
 
-	describe('compare_items_by_quality', function() {
+	describe('compareꓽitemsⵧby_quality', function() {
 
 		it('should sort correctly', () => {
 			const list: Item[] = [
-				create_item_base(InventorySlot.weapon, ItemQuality.artifact),
-				create_item_base(InventorySlot.weapon, ItemQuality.common),
-				create_item_base(InventorySlot.weapon, ItemQuality.uncommon),
-				create_item_base(InventorySlot.weapon, ItemQuality.legendary),
-				create_item_base(InventorySlot.weapon, ItemQuality.rare),
-				create_item_base(InventorySlot.weapon, ItemQuality.epic),
+				createꓽitemⵧbase(InventorySlot.weapon, ItemQuality.artifact),
+				createꓽitemⵧbase(InventorySlot.weapon, ItemQuality.common),
+				createꓽitemⵧbase(InventorySlot.weapon, ItemQuality.uncommon),
+				createꓽitemⵧbase(InventorySlot.weapon, ItemQuality.legendary),
+				createꓽitemⵧbase(InventorySlot.weapon, ItemQuality.rare),
+				createꓽitemⵧbase(InventorySlot.weapon, ItemQuality.epic),
 			]
 			const [ artifact, common, uncommon, legendary, rare, epic ] = list
 
-			expect([...list].sort(compare_items_by_quality)).to.deep.equal([
+			expect([...list].sort(compareꓽitemsⵧby_quality)).to.deep.equal([
 				artifact,
 				legendary,
 				epic,

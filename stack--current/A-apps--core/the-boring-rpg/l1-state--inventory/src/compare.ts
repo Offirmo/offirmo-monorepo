@@ -3,7 +3,7 @@
 import {
 	Item,
 	InventorySlot,
-	compare_items_by_slot,
+	compareꓽitemsⵧby_slot,
 } from '@tbrpg/definitions'
 
 import {
@@ -22,9 +22,9 @@ import {
 
 /////////////////////
 
-function compare_items_by_slot_then_strength(a: Readonly<Item>, b: Readonly<Item>): number {
+function compareꓽitemsⵧby_slot_then_strength(a: Readonly<Item>, b: Readonly<Item>): number {
 	if (a.slot !== b.slot)
-		return compare_items_by_slot(a, b)
+		return compareꓽitemsⵧby_slot(a, b)
 
 	switch (a.slot) {
 		case InventorySlot.armor: {
@@ -47,7 +47,7 @@ function compare_items_by_slot_then_strength(a: Readonly<Item>, b: Readonly<Item
 /////////////////////
 
 export {
-	compare_items_by_slot_then_strength,
+	compareꓽitemsⵧby_slot_then_strength,
 }
 
 /////////////////////

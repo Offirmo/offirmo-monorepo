@@ -165,7 +165,7 @@ function change_avatar_class(previous_state: Immutable<State>, new_class: Charac
 	return _refresh_achievements(state)
 }
 
-function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, uid: number, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
+function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, uids: number[], now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
 	let state = previous_state
 	state = {
 		...state,
@@ -173,7 +173,7 @@ function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, uid: 
 
 		u_state: {
 			...state.u_state,
-			engagement: EngagementState.acknowledge_seen(state.u_state.engagement, uid),
+			engagement: EngagementState.acknowledge_seen(state.u_state.engagement, uids),
 			revision: previous_state.u_state.revision + 1,
 		},
 	}
