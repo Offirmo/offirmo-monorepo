@@ -122,7 +122,7 @@ data fetching -- 1 fetch on render
 data fetching -- 2 Fetch-Then-Render
 data fetching -- 3 Render-as-You-Fetch
 data fetching -- 3 Render-as-You-Fetch -- Relay EntryPoints https://github.com/relay-tools/typescript-relayjs-examples/issues/1
-data fetching -- preload-on-intent
+data fetching -- extra: preload-on-intent
 data fetching https://17.reactjs.org/docs/concurrent-mode-suspense.html#traditional-approaches-vs-suspense
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
 Data Layer Abstraction (DLA)

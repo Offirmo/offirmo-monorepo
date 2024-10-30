@@ -162,7 +162,7 @@ function _ack_all_engagements(state: Immutable<State>): Immutable<State> {
 		...state,
 		u_state: {
 			...state.u_state,
-			engagement: EngagementState.acknowledge_all_seen(state.u_state.engagement),
+			engagement: EngagementState.acknowledge_seenⵧall(state.u_state.engagement),
 		},
 	}
 }

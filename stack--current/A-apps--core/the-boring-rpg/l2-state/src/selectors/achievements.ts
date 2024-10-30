@@ -48,7 +48,7 @@ function getꓽachievements_snapshot(u_state: Immutable<UState>): ReturnType<typ
 		.filter(as => as.status !== AchievementStatus.secret)
 }
 
-function getꓽachievements_completion(u_state: Immutable<UState>): [number, number] {
+function getꓽachievements__completion_rate(u_state: Immutable<UState>): [number, number] {
 	const snapshot = getꓽachievements_snapshot(u_state)
 	const unlocked_ach_count = snapshot
 		.filter(as => as.status === AchievementStatus.unlocked)
@@ -63,5 +63,5 @@ export {
 	getꓽachievement_snapshot,
 	getꓽachievement_snapshot_by_temporary_id,
 	getꓽachievements_snapshot,
-	getꓽachievements_completion,
+	getꓽachievements__completion_rate,
 }

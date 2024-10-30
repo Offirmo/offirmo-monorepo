@@ -28,9 +28,7 @@ import { Armor, create as create_armor } from '@tbrpg/logic--armors'
 import { SCHEMA_VERSION } from '../consts.js'
 import { TBRSoftExecutionContext, getꓽSXC } from '../services/sec.js'
 import { type State } from '../types.js'
-import { EngagementKey } from '../data/engagement/index.js'
 import {
-	_update_to_now,
 	_receive_item,
 	_ack_all_engagements,
 } from './internal.js'
@@ -104,9 +102,10 @@ function create(SXC?: TBRSoftExecutionContext, { now_ms = getꓽUTC_timestamp‿
 		state = equip_item(state, { now_ms, uuid: starting_armor.uuid })
 
 		state = _refresh_achievements(state) // there are some initial achievements
-		state = _ack_all_engagements(state) // reset engagements that may have been created by noisy initial achievements, distracting
+		state = _ack_all_engagements(state) // clear engagements that may have been created by noisy initial achievements, distracting
 
 		// now insert some relevant start engagements
+		/* TODO review if it's the right place! Or should it be inferred instead?
 		state = {
 			...state,
 			u_state: {
@@ -116,7 +115,7 @@ function create(SXC?: TBRSoftExecutionContext, { now_ms = getꓽUTC_timestamp‿
 					key: EngagementKey['tip--first_play'],
 				}),
 			},
-		}
+		}*/
 
 		assert(
 			state.u_state.prng.prng_state.call_count === 0,
