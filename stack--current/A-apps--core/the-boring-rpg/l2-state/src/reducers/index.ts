@@ -1,5 +1,5 @@
 export * from './autoplay.js'
 export * from './base.js'
-export * from './codes.js'
+export * from './codes/index.js'
 export * from './create.js'
 export * from './play/index.js'

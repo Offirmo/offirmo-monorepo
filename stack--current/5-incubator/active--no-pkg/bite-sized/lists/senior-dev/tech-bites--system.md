@@ -1,3 +1,4 @@
+
 1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
 1% rule -- lurk, lurker
 1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
@@ -30,17 +31,26 @@
 [ ] real case https://deno.com/blog/how-we-built-jsr
 [ ] research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
 [ ] Software Engineering Advice from Building Large-Scale Distributed Systems
-access control
 ACID -- 1 Atomicity = transactions are "all or nothing"
 ACID -- 2 Consistency = integrity constraints: "valid state" before AND after a transaction
 ACID -- 3 Isolation = "independent transactions"
 ACID -- 4 Durability = transaction resistance to system failures "once committed, always committed"
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
+API -- best practices -- 1 DO - help client's "render-as-you-fetch" by co-loading critical data. Do not defer too much logic on the front-end.
+API -- best practices -- 1 DON’T - Build overly ‘flexible’ APIs that require client side logic and input manipulation (in the context of relay EntryPoints))
+API -- best practices -- 2 Be pragmatic - if there are many types, consider using frontend renderers instead of an interface
+API -- best practices -- 2 DO - polymorphic types, ex. multiple "cards/calendar items/tasks" If possible, use a GraphQL interface to bridge over multiple types
+API -- best practices -- 2 DON’T Create new concrete types that represent existing objects.   It kills Relay
+API -- best practices -- 3 DO - Use GraphQL interfaces to make scenario created objects and business objects ‘look’ the same to the frontend
+API -- best practices -- 3 DON’T - Try and coerce objects that are different into the same GraphQL concrete type
+API -- constraints -- Relay EntryPoints = a loading mechanism that makes implementing the parallel loading pattern render-as-you-fetch simple, as it encapsulates information about an experience’s UI assets and its required GraphQL data into a single loadable resource. https://github.com/relay-tools/typescript-relayjs-examples/issues/1
 API -- contracts
 API -- Diogo Lucas classification = far-team, near-team and inner-team. inner team = used within a team or between partner teams, near team = "Conway APIs" between teams that don't always communicate with each other, Far-team API = between teams that have low-bandwidth communications
-API -- Don’t -- Build overly ‘flexible’ APIs that require client side logic and input manipulation (in the context of relay EntryPoints))
 API -- hybrids = reconcile the need for a stable public API that will not constantly disrupt your carefully tended ecosystem with your team’s ability to move fast and (eventually) break stuff? cater for different requirements regarding security and SLAs or to radically different client natures? https://www.youtube.com/watch?v=eqy609JleoE
 API -- REST -- POST https://www.tbray.org/ongoing/When/200x/2009/03/20/Rest-Casuistry
+API -- view -- scope -- types = "raw / user defined scope" ex. a user-entered filter, "natural object scope" = when the object is a natural container, "persisted scope" = saved filter / board / custom view
+API -- view -- scope = the limit of where to conduct a search for domain objects for display on a view
+API -- view = an API is a view on the resources, or is a certain resource mapping over the business objects
 API -- visibility = public/external > internal > team > private beta. Guidelines: Consider a public-by-default approach, even if you are starting at a lower level of access (helps dogfooding, new use cases. Treat your internal APIs as candidates for Public level access (bc happens quickly, sometimes for merging with a public one)
 API gateway
 API-First = Built with APIs from the ground up. All functionality is exposed through an API
@@ -87,6 +97,7 @@ auto-scaling
 autocorrection https://www.canva.dev/blog/engineering/building-a-data-driven-autocorrection-system/
 availability
 availability zone
+AWS -- accounts -- limitations https://www.atlassian.com/blog/atlassian-engineering/multi-account-strategy
 AWS Shield
 AWS WAF
 back of the envelope

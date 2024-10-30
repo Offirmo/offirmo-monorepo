@@ -1,20 +1,25 @@
 import { Enum } from 'typescript-string-enums'
 
-const EngagementKey = Enum(
-	'just-some-text',
-	'hello_world--flow',
-	'hello_world--aside',
-	'hello_world--warning',
-	'tip--first_play',
-	// TODO suggest changing name
-	// TODO suggest changing class
-	'code_redemption--failed',
-	'code_redemption--succeeded',
-	'achievement-unlocked',
+
+// TODO tips? Should they be here?-	'tip--first_play',
+// TODO suggest changing name
+// TODO suggest changing class
+
+// TODO inventory full
+// TODO suggest optimizing equipment
+
+const EngagementTemplateKey = Enum(
+
+	'code_redemptionⵧfailed',
+	'code_redemptionⵧsucceeded',
+
+	'achievement_unlocked',
+
+	// meta
 	'reborn',
 )
-type EngagementKey = Enum<typeof EngagementKey> // eslint-disable-line no-redeclare
+type EngagementTemplateKey = Enum<typeof EngagementTemplateKey> // eslint-disable-line no-redeclare
 
 export {
-	EngagementKey,
+	EngagementTemplateKey,
 }

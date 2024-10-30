@@ -1,5 +1,4 @@
 12 factors https://12factor.net/
-[ ] https://devpedia.pages.dev/
 [ ] +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
 [ ] +++ https://explorer.globe.engineer/
 [ ] +++ https://martinfowler.com/
@@ -12,6 +11,7 @@
 [ ] http://nodeschool.io/#workshoppers
 [ ] http://rethinkdb.com/blog/node-4/
 [ ] http://www.letudiant.fr/palmares/palmares-des-ecoles-d-ingenieurs/ouverture-internationale-2.html
+[ ] https://devpedia.pages.dev/
 [ ] https://en.wikipedia.org/wiki/Hofstadter's_law
 [ ] https://en.wikipedia.org/wiki/Reference_class_forecasting
 [ ] https://github.com/anvaka/npmrank/blob/master/sample/dependencies.md
@@ -27,16 +27,16 @@
 [ ] SWE at Google https://abseil.io/resources/swe-book/html/toc.html
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
 abstraction https://www.merrickchristensen.com/articles/abstraction/
+access control
 access control -- Role-Based (RBAC)
 actually portable executables https://justine.lol/ape.html
 allocation
 annotation
 anomaly detection
 API (Application Programming Interface) = interface (set of subroutine definitions, protocols, and tools) for exposing a software feature, defines interactions that allows two applications to talk to each other
+API -- easy to build one, hard to build the **right** one
 API -- economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
 API -- external-facing = are where "design up front" and consideration about future use cases really matters. Changing APIs is a pain for us and for our users, and creating backwards incompatibility is horrible (although sometimes impossible to avoid). https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
-apply / call / bind
-arguments
 assembly
 async -- design pattern -- reactor pattern
 async -- sync = By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers

@@ -8,13 +8,12 @@ import {
 } from '@tbrpg/state--achievements'
 import {
 	enqueue as enqueueEngagement,
-	EngagementType,
 } from '@oh-my-rpg/state--engagement'
 
 import { type State, UState } from '../../types.js'
 
 import ACHIEVEMENT_DEFINITIONS from '../../data/achievements.js'
-import {EngagementKey} from '../../data/engagement/index.js'
+import { EngagementTemplateKey, getꓽengagement_template } from '../../data/engagement/index.js'
 
 /////////////////////
 
@@ -37,17 +36,7 @@ function _refresh_achievements(state: Immutable<State>): Immutable<State> {
 
 		if (current_status === AchievementStatus.unlocked) {
 			// tell the user
-			engagement = enqueueEngagement(engagement,
-				{
-					type: EngagementType.aside,
-					key: EngagementKey['achievement-unlocked'],
-				},
-				{
-					semantic_level: 'success',
-					auto_dismiss_delay_ms: 7_000, // TODO magic number!!
-					icon,
-					name,
-				})
+			engagement = enqueueEngagement(engagement, getꓽengagement_template(EngagementTemplateKey.achievement_unlocked))
 		}
 	})
 

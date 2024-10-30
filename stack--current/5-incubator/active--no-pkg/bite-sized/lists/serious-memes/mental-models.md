@@ -111,6 +111,7 @@ demand curves slope down: The harder something is to do, the fewer people will d
 democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
 democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
 dependability https://posthog.com/founders/first-ops-hire
+deterrence
 differences: introvert/extrovert
 discernement -- technique de pile ou face
 disrespect = lack of consideration or regard for others’ privacy, physical or emotional space, viewpoints, or belongings. Intimidation, aggressive behavior, “the silent treatment”. Thoughtless or arrogant behavior, like using profanity when someone objects to it.
@@ -262,6 +263,7 @@ minorities -- silent majority = unspecified large group of people in a country o
 minorities -- vocal minority
 monkey ladder experiment https://factschology.com/factschology-articles-podcast/monkey-ladder-experiment-truth
 Monty Hall problem https://en.wikipedia.org/wiki/Monty_Hall_problem
+mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruction
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
 naiveté: abus sexuels, mafia
 needs / wants https://en.wikipedia.org/wiki/Need
@@ -428,6 +430,7 @@ via Negativa = When we have a problem, our natural instinct is to add a new habi
 voleur volé
 volume hiring
 wabi-sabi https://en.wikipedia.org/wiki/Wabi-sabi
+war https://en.wikipedia.org/wiki/War
 wartime/peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 We must remember that entire societies can and often do follow the wrong path for a very long time https://news.vanderbilt.edu/2011/04/13/michael-burry-transcript/
 what vs how = OPPOSITE of school +++ https://strategyu.co/consulting-mindset-shifting-from-the-what-to-the-how/

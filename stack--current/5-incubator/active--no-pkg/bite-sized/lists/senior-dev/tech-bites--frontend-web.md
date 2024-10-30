@@ -24,6 +24,7 @@ application posture -- 2 transient = comes and goes, presenting a single, high-r
 application posture -- 3 daemonic = background processes that require no direct user interaction.
 application posture -- 4 parasitic/auxiliary = similar to transient applications in providing a limited, focused set of functionality and occupy a small space, but they are shown persistently and can be used for a long period of time.
 application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
+apply / call / bind
 architecture -- islands
 architecture -- JAMStack = "JavaScript, APIs, Markup" as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
@@ -31,6 +32,7 @@ architecture -- LAMP (outdated) Linux, Apache, MySQL, PHP/Python/Perl
 architecture -- MEAN "MongoDB, Express.js, Angular, Node.js"
 architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) https://machalliance.org/mach-technology
 architecture -- SSR, ISR, CSR, PPR (see 'rendering')
+arguments
 ARIA "Accessible Rich Internet Applications" https://www.w3.org/WAI/ARIA/apg/
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 blocking -- css -- Stylesheets are render blocking
@@ -262,6 +264,8 @@ routing react-resource-router
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
+SPA https://www.matuzo.at/blog/2023/single-page-applications-criticism
+SPA vs MPA
 spirit -- browsing https://christianheilmann.com/2024/09/15/lets-bring-back-browsing/
 spirit -- view source affordance https://htmx.org/essays/right-click-view-source/
 SSR good explanation https://single-spa.js.org/docs/ssr-overview/
@@ -291,8 +295,6 @@ UI -- properties -- Multi-screen = take advantage of multiple displays
 UI -- properties -- Natural-language = User types in a question and waits for a response. used for search engines and on webpages.
 UI -- properties -- Permission-driven = show or conceal menu options or functions depending on the user's level of permissions. The system is intended to improve the user experience by removing items that are unavailable to the user. A user who sees functions that are unavailable for use may become frustrated. It also provides an enhancement to security by hiding functional items from unauthorized persons.
 UI -- views
-SPA vs MPA
-SPA https://www.matuzo.at/blog/2023/single-page-applications-criticism
 UI https://en.wikipedia.org/wiki/User_interface
 User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#large-viewport
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
