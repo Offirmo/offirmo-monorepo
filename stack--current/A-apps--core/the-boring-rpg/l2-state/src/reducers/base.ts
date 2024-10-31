@@ -15,10 +15,10 @@ import {
 	rename,
 	switch_class,
 } from '@tbrpg/state--character'
-
 import * as InventoryState from '@tbrpg/state--inventory'
 import * as EngagementState from '@oh-my-rpg/state--engagement'
 import * as MetaState from '@oh-my-rpg/state--meta'
+import { type PendingEngagementUId } from '@oh-my-rpg/state--engagement'
 
 
 /////////////////////
@@ -165,7 +165,11 @@ function change_avatar_class(previous_state: Immutable<State>, new_class: Charac
 	return _refresh_achievements(state)
 }
 
-function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, uids: number[], now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
+interface AcknowledgeEngagementMsgSeen {
+	now_ms?: TimestampUTCMs // will be inferred if not provided
+	uids: Immutable<Array<PendingEngagementUId>>
+}
+function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp‿ms(), uids }: AcknowledgeEngagementMsgSeen): Immutable<State> {
 	let state = previous_state
 	state = {
 		...state,
@@ -184,6 +188,7 @@ function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, uids:
 /////////////////////
 
 export {
+	type AcknowledgeEngagementMsgSeen,
 	acknowledge_engagement_msg_seen,
 
 	type StartSessionParams,

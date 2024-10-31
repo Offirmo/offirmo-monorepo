@@ -34,6 +34,7 @@ https://www.abc.net.au/news/2024-07-31/inheritance-scam-victim-calls-for-banking
 
 https://slashdot.org/story/24/08/02/2022212/japan-mandates-app-to-ensure-national-id-cards-arent-forged
 
+ORC ID https://info.orcid.org/researchers/
 
 
 https://paulgraham.com/faq.html spam

@@ -37,3 +37,6 @@ Interview questions:
 
 
 https://www.developerupdates.com/resources
+
+pep videos before interview https://playitfull.com/welcome-call-book1688550457783
+TED "you'll never fail an interview again" https://player.vimeo.com/video/850110876?share=copy?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0

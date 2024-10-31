@@ -2,8 +2,12 @@ import { Enum } from 'typescript-string-enums'
 import { type Immutable } from '@offirmo-private/ts-types'
 
 import { UUID } from '@offirmo-private/uuid'
-import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
-import { type State } from '@tbrpg/state'
+import { TimestampUTCMs } from '@offirmo-private/timestamps'
+import {
+	type State,
+	type StartSessionParams,
+	type AcknowledgeEngagementMsgSeen,
+} from '@tbrpg/state'
 import { CharacterClass } from '@tbrpg/state--character'
 
 /////////////////////
@@ -44,9 +48,8 @@ export interface ActionReSeed extends BaseAction {
 	seed: number
 }
 
-export interface ActionStartSession extends BaseAction {
+export interface ActionStartSession extends BaseAction, StartSessionParams {
 	type: typeof ActionType.on_start_session
-	is_web_diversity_supporter: boolean
 }
 
 export interface ActionRefreshLoggedInInfos extends BaseAction {
@@ -84,9 +87,8 @@ export interface ActionRedeemCode extends BaseAction {
 	code: string
 }
 
-export interface ActionAcknowledgeEngagementMsgSeen extends BaseAction {
+export interface ActionAcknowledgeEngagementMsgSeen extends BaseAction, AcknowledgeEngagementMsgSeen {
 	type: typeof ActionType.acknowledge_engagement_msg_seen
-	uid: number
 }
 
 export interface ActionUpdateToNow extends BaseAction {

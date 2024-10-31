@@ -73,6 +73,12 @@
 	bottom: var(--safe-area-inset-bottom);
 
 	left: var(--safe-area-inset-left);
+
+	/* Needed for both top + bottom and left + right to work
+	 * ex. when <table class="o⋄usable-viewport">
+	 */
+	width: 100%;
+	height: 100%;
 }
 
 

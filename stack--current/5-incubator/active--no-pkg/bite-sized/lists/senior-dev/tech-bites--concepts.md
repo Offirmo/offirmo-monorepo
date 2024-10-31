@@ -226,6 +226,7 @@ GRASP -- 7 Polymorphism = responsibility for defining the variation of behaviors
 GRASP -- 8 Protected variations = Identify points of predicted variation or instability; assign responsibilities to create a stable interface around them
 GRASP -- 9 Pure fabrication =
 GRASP -- see also: SOLID
+grug brain = complexity, readability https://grugbrain.dev/
 handle
 helping -- XY problem = wrongly asking about your attempted solution rather than your actual problem https://xyproblem.info/
 hoisting des vars de boucle for et switch
@@ -320,6 +321,7 @@ multi tenant -- isolation
 MVC (Model View Controller)
 namespace
 naming https://ntietz.com/blog/when-to-use-cute-names-or-descriptive-names/
+no silver bullet in engineering = we cannot expect ever to see two-fold gains every two years https://en.wikipedia.org/wiki/No_Silver_Bullet
 node.js -- principles https://www.platformatichq.com/node-principles
 not invented here https://en.wikipedia.org/wiki/Not_invented_here
 npm
@@ -539,6 +541,7 @@ vaporware
 variables pointer / natives
 virtual private cloud (VPC)
 web assembly (asm.js)
+Wirth's law = software systems grow faster in size and complexity than methods to handle complexity are invented. software is getting slower more rapidly than hardware is becoming faster. https://en.wikipedia.org/wiki/Wirth%27s_law
 X considered harmful
 XML
 XML (Extensible Markup Language)

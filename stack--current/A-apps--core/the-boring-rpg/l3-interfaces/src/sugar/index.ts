@@ -43,7 +43,7 @@ export class Game {
 				break
 
 			case ActionType.acknowledge_engagement_msg_seen:
-				this.state = State.acknowledge_engagement_msg_seen(this.state, action.uid)
+				this.state = State.acknowledge_engagement_msg_seen(this.state, action)
 				break
 
 			default:

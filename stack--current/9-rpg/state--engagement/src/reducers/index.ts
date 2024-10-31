@@ -51,8 +51,8 @@ function enqueue<TextFormat>(state: Immutable<State<TextFormat>>, template: Immu
 	}
 }
 
-function acknowledge_seen<TextFormat>(state: Immutable<State<TextFormat>>, uids: PendingEngagementUId[]): Immutable<State<TextFormat>> {
-	const uid_left_to_dequeue = new Set<PendingEngagementUId>(uids)
+function acknowledge_seen<TextFormat>(state: Immutable<State<TextFormat>>, uids: Immutable<Array<PendingEngagementUId>>): Immutable<State<TextFormat>> {
+	const uid_left_to_dequeue = new Set<PendingEngagementUId>(uids) // to dedupe + detect unknowns
 	state.queue.forEach(queued => {
 		uid_left_to_dequeue.delete(queued.uid)
 	})

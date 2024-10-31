@@ -4,6 +4,9 @@ A generic, platform-independent, rich text format
 The goal is to
 - be semantic
 - be render-able in both terminal and browser = ascii, html, react...
+- being able to be serialized and transferred across protocols
+- being usable as a Hypermedia representation for true REST
+- challenge JSON, markdown, HTML in some aspects
 
 This format is half-way between raw text and html, a bit similar to Markdown.
 
@@ -44,7 +47,7 @@ Related, discovered after I made mine:
 * Slack's "block kit" https://api.slack.com/block-kit
   * https://api.slack.com/tools/block-kit-builder
 * Twitter Text https://github.com/twitter/twitter-text
-
+* +++ Siren: a hypermedia specification for representing entities https://github.com/kevinswiber/siren
 
 Tosort
 * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl

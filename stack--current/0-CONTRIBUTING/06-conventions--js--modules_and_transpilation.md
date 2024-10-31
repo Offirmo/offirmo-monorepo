@@ -21,16 +21,17 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 
 ### PENDING updates
 - [ ] TODO remove all cjs since we can no longer generate it since Typescript 5.2
-- [ ] TODO DONE TS supports [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762) = update unit tests!
+- [ ] TODO TS has working support of [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762) = update unit tests!
 - [ ] 🆙 2024-10-29 oldest active LTS node 20 → 22  https://github.com/nodejs/release#release-schedule
 - [ ] 🆙 2025-10-28 oldest active LTS node 22 → 24  https://github.com/nodejs/release#release-schedule
 - [ ] 🆙 mid 2025 [ES2025](https://en.wikipedia.org/wiki/ECMAScript_version_history)
 - [ ] 🆙 webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
-- [ ] TS supports importing .ts
-- [ ] TS supports exporting with explicit module infos
+- [ ] TS supports importing .ts AND transpiles to .js
+- [ ] TS supports exporting with explicit module info .cjs .mjs
 
 ES reasonably supported https://philipwalton.com/articles/the-state-of-es5-on-the-web/
 new target env: workerd https://blog.cloudflare.com/more-npm-packages-on-cloudflare-workers-combining-polyfills-and-native-code/
+
 
 
 ### update 2024-07-25
