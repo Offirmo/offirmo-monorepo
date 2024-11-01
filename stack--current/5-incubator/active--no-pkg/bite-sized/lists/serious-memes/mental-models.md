@@ -6,7 +6,6 @@
 0-sum game
 1 or 2 way door
 12 steps
-frame challenge
 1st thought v.s 2nd thought
 3 hardest things to say -- I was wrong, I need help, I love you -> also 10 https://kristyna.co/mindful-entrepreneurship/10-hardest-things-for-people-to-say
 3 Strikes and You're Out = Californian law https://lao.ca.gov/analysis_1995/3strikes.html
@@ -149,6 +148,7 @@ fire
 first practice what you preach
 first principles https://fs.blog/first-principles/
 first-principles thinker
+frame challenge
 frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
 fulfillment https://longform.asmartbear.com/fulfillment/
 fundamental attribution error https://en.wikipedia.org/wiki/Fundamental_attribution_error

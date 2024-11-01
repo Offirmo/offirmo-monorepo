@@ -326,6 +326,7 @@ node.js -- principles https://www.platformatichq.com/node-principles
 not invented here https://en.wikipedia.org/wiki/Not_invented_here
 npm
 nyan cat
+o11y https://o11y.eu/blog/what-is-o11y/
 object
 OOP -- against https://paulgraham.com/noop.html
 OOP -- fake strengths -- abstraction -> any interface
