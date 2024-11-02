@@ -25,6 +25,12 @@ https://www.linkedin.com/help/linkedin/answer/a1359065
 
 Alternate Forms of Phishing - Smishing, Vishing & Whaling
 
+https://www.sbs.com.au/news/article/a-ring-a-mysterious-box-and-a-qr-code-the-scam-laura-never-saw-coming/pn83e0uux
+https://www.sbs.com.au/news/article/the-overseas-telemarketers-impersonating-an-australian-business/1qh8skc4a
+https://www.malwarebytes.com/blog/scams/2024/08/fake-canva-home-page-leads-to-browser-lock
+
+
+
 https://www.schneier.com/blog/archives/2023/12/ai-and-trust.html
 
 https://digital-defense.io/

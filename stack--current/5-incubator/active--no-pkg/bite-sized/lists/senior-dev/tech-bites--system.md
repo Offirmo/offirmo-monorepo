@@ -1,4 +1,3 @@
-
 1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
 1% rule -- lurk, lurker
 1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
@@ -286,6 +285,7 @@ load balancer -- L4 vs L7 https://www.a10networks.com/glossary/how-do-layer-4-an
 load balancer -- scope, ex. region "AWS ELB Elastic Load Balancer"
 load shedding
 log consolidation
+logging = the most basic form of application monitoring and is the first line of defense to identify incidents or bugs. It involves recording timestamped data of different applications or services at regular intervals. Since logs can get pretty complex (and massive) in distributed systems with many services, we typically use log levels to filter out important information from these logs. The most common levels are FATAL, ERROR, WARN, DEBUG, INFO, TRACE, and ALL. The amount of data logged on each log level also varies based on how critical it is to store that information for troubleshooting and auditing applications. Most logs are highly detailed with relative information about a particular microservice, function, or application. You’ll need to collate and analyze multiple log entries to understand how the application functions normally. And since logs are often unstructured, reading them from a text file on your server is not the best idea.
 Mean Time Between Failures (MTBF)
 Mean Time To Detection (MTTD)
 Mean Time To Resolution/repair/recover  (MTTR) https://www.dataset.com/blog/mean-time-to-repair/

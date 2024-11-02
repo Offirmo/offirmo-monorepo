@@ -9,7 +9,9 @@
 [ ] advanced architecture -- Web Periodic Background Synchronization API https://devdocs.io/dom/web_periodic_background_synchronization_api
 [ ] CSS https://ishadeed.com/articles/
 [ ] design https://www.youtube.com/@phoebeyutbt/videos
+[ ] https://browser.engineering/index.html
 [ ] https://csswizardry.com/archive/
+[ ] perf https://github.com/prettydiff/wisdom/blob/master/performance_frontend.md
 [ ] security https://portswigger.net/web-security/all-topics
 [ ] security https://xsleaks.dev/
 [ ] TODO shearing layers https://en.wikipedia.org/wiki/Shearing_layers
@@ -181,6 +183,7 @@ html -- metadata https://github.com/wikimedia/html-metadata
 HTML -- tags
 htmx https://htmx.org/
 http "happy eyeballs" https://www.checklyhq.com/blog/how-a-tcpdump-led-us-to-a-bug-in-nodes-ipv6-handli/
+HTTP -- QUERY = safe, idempotent request method that can carry request content https://www.ietf.org/archive/id/draft-ietf-httpbis-safe-method-w-body-05.html
 hypercard https://hypercard.org
 hypermedia
 hypertext
@@ -209,6 +212,7 @@ monitoring -- Real user monitoring (RUM) = passive monitoring technology that re
 monitoring -- synthetic = own test bot https://en.wikipedia.org/wiki/Synthetic_monitoring
 native apps with JS https://v2.tauri.app/
 node -- tenant isolation = node is single thread, hence issues with security, esp. AWS lambda! solutions: workerd?
+Open Web Advocacy https://open-web-advocacy.org/
 organic vs inorganic concept = coming from a real user or a bot/AI or app etc.
 perf -- content jump = https://css-tricks.com/content-jumping-avoid/
 perf metrics -- "9 must known" https://twitter.com/alexxubyte/status/1769748487317651962
@@ -229,6 +233,8 @@ perf metrics -- Time to above-the-fold load
 perf metrics -- Time to First Byte (TTFB) = from the browser, time taken to receive the first byte of data from the web server. TTFB is crucial because it indicates the general ability of the server to handle traffic
 perf metrics -- Time to Interactive (TTI) = time at which the page becomes consistently responsive to user input. This is a less well-defined milestone, but is sometimes calculated as the point when the CPU and network both become idle
 perf metrics -- Time to Visually Complete (TTVC) = time of the last visible paint event. Nothing on the user’s screen should change without user input https://dropbox.tech/frontend/measuring-ttvc-web-performance-metric-open-source-library
+progressive enhancement -- "next billion" They’ll mostly be running Android. They’ll have decent specs (1GB RAM, quad-core processors). They’ll have an evergreen browser and WebView (Android 5+). What they won’t have, however, is a reliable internet connection.
+progressive enhancement https://nolanlawson.com/2016/10/13/progressive-enhancement-isnt-dead-but-it-smells-funny/
 puppeteer -- firefox https://hacks.mozilla.org/2024/08/puppeteer-support-for-firefox/
 puppeteer -- vs Selenium, Playwright, Cypress https://www.testim.io/blog/puppeteer-selenium-playwright-cypress-how-to-choose/
 puppeteer https://pptr.dev/
@@ -267,13 +273,15 @@ security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-
 SPA https://www.matuzo.at/blog/2023/single-page-applications-criticism
 SPA vs MPA
 spirit -- browsing https://christianheilmann.com/2024/09/15/lets-bring-back-browsing/
+spirit -- the web contract = Everyone who publishes on the Web knows that their content can be copied and used by anyone for any purpose. This has always been a risk of providing content on the Web. https://meiert.com/en/blog/the-web-contract/
+spirit -- the web is a big tent
+spirit -- the web is for everyone
 spirit -- view source affordance https://htmx.org/essays/right-click-view-source/
 SSR good explanation https://single-spa.js.org/docs/ssr-overview/
 temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
 testing -- component https://storybook.js.org/blog/component-testing/
 testing -- Netflix's SafeTest https://www.infoq.com/news/2024/02/netflix-safetest-front-end-test/
 testing https://www.testingjavascript.com/
-the web contract = Everyone who publishes on the Web knows that their content can be copied and used by anyone for any purpose. This has always been a risk of providing content on the Web. https://meiert.com/en/blog/the-web-contract/
 Three Cs: 🤝 Concatenate, 🗜️ Compress, 🗳️ Cache https://csswizardry.com/2023/10/the-three-c-concatenate-compress-cache/
 typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
@@ -316,6 +324,7 @@ viewport -- small <= dynamic <= large
 viewport -- visual
 viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
 virtualization = an advanced technique that uses JS to remove DOM nodes not currently on-screen
+web app dev vs web site dev = so different now that they probably shouldn’t be called the same thing anymore
 Web Application Firewall (WAF)
 web capabilities -- fugu team https://www.chromium.org/teams/web-capabilities-fugu/
 web components -- "autonomous" = no extends, no "is", must inherit from HTMLElement

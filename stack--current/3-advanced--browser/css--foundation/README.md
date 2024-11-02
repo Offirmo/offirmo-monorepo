@@ -74,3 +74,5 @@ TODO +++ https://atlassian.design/foundations/typography
 TODO     width: fit-content; on all? https://courses.joshwcomeau.com/css-for-js/01-rendering-logic-1/09-flow-layout
 
 TODO review https://github.com/jenil/chota
+TODO review https://jakelazaroff.com/words/my-modern-css-reset/
+TODO review https://www.mcmaster.com/products/pipe-hangers/seismic-bracing-brackets~/mounting-location~angle-iron/

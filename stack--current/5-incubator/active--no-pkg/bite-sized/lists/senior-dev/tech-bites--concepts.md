@@ -11,11 +11,13 @@
 [ ] http://nodeschool.io/#workshoppers
 [ ] http://rethinkdb.com/blog/node-4/
 [ ] http://www.letudiant.fr/palmares/palmares-des-ecoles-d-ingenieurs/ouverture-internationale-2.html
+[ ] https://craftinginterpreters.com/
 [ ] https://devpedia.pages.dev/
 [ ] https://en.wikipedia.org/wiki/Hofstadter's_law
 [ ] https://en.wikipedia.org/wiki/Reference_class_forecasting
 [ ] https://github.com/anvaka/npmrank/blob/master/sample/dependencies.md
 [ ] https://github.com/charlax/professional-programming
+[ ] https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md
 [ ] https://github.com/kilimchoi/engineering-blogs
 [ ] https://matklad.github.io/2023/08/06/fantastic-learning-resources.html
 [ ] https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
@@ -24,6 +26,7 @@
 [ ] https://www.managingtheunmanageable.net/morerulesofthumb.html
 [ ] https://www.tedinski.com/archive/
 [ ] https://zknill.io/posts/every-programmer-should-know/
+[ ] patterns https://www.patterns.dev/
 [ ] SWE at Google https://abseil.io/resources/swe-book/html/toc.html
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
 abstraction https://www.merrickchristensen.com/articles/abstraction/

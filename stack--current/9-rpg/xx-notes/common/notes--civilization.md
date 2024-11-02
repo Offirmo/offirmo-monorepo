@@ -17,3 +17,6 @@ Puppet (State): This can either refer to a leader under full control of another 
 Protectorate: One of several ways to designate a colony. Rhodesia was a protectorate of the UK while much of central Africa were protectorates of France. In this case, the colonizing entity has full control of the Nation State
 
 Satellite (State): In this case, the satellites are separate nation states but they espouse the same method of governance as the one controlling them. Eastern Europe was in such a situation before the USSR collapsed.
+
+
+https://en.wikipedia.org/wiki/Three-sector_model

@@ -8,6 +8,8 @@
 12 steps
 1st thought v.s 2nd thought
 3 hardest things to say -- I was wrong, I need help, I love you -> also 10 https://kristyna.co/mindful-entrepreneurship/10-hardest-things-for-people-to-say
+3 sectors -- quarternary 
+3 sectors https://en.wikipedia.org/wiki/Three-sector_model
 3 Strikes and You're Out = Californian law https://lao.ca.gov/analysis_1995/3strikes.html
 3-strike pivot strategy -- Strike 1: Identify and try to address the issue directly
 3-strike pivot strategy -- Strike 2: Reassess and Seek Support to resolve the problem
@@ -52,6 +54,7 @@ autocracy https://en.wikipedia.org/wiki/Autocracy
 availability cascade: A self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
 baker’s dozen: The key to good hospitality is to delight your guests with an unexpected gift. If you run a hotel, leave a chocolate on the bed. If you run a bakery, give your customers one extra bagel. If you write a tweetstorm, share an extra idea.
 Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
+barbarians at the gate https://en.wikipedia.org/wiki/Barbarians_at_the_Gate
 base rate: The average outcome for an event over time. They’re like batting averages for life, and they work best with big sample sizes. For example, if you’re starting a business, avoid the restaurant business where margins are low and competition is high.
 be prepared
 bee browsing
@@ -140,6 +143,7 @@ false good idea
 farm rice theory https://www.nature.com/articles/s41467-024-44770-w
 fast reading
 Faustian Bargain: A man once sold his soul to a demon in exchange for knowledge. At first, it seemed like a smart trade. But the man lost in the long-run. Tragically, what the man lost was more valuable than what he earned. In short, he won the battle but lost the war.
+Fear Of Looking Dumb (FOLD)
 fear of missing out (FOMO)
 fear, uncertainty, death (FUD)
 femme/homme enfant https://www.wengood.com/fr/developpement-personnel/se-connaitre/art-femme-enfant
@@ -327,6 +331,8 @@ productivity -- GSD Capture Everything, Clarify, Organize, Review, Engage https:
 productivity vs. impact, value
 progress over perfection
 progress over perfection
+project management -- iron triangle = scope, time and people
+project management = boils down to one of two questions: When will it be done? Will it be done in time?
 psychological safety
 Pulitzer prize -- biographies https://en.wikipedia.org/wiki/Pulitzer_Prize_for_Biography
 purchasing "messy middle" https://www.thinkwithgoogle.com/intl/en-emea/consumer-insights/consumer-journey/navigating-purchase-behavior-and-decision-making/

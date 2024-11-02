@@ -84,7 +84,9 @@
 }
 
 
-/* special "inline" button */
+/* special "inline" button
+ * TODO auto detect? (maybe outside a form?)
+ */
 button.o⋄button--inline {
 	--o⋄border--thickness__button: 0; /* override own CSS var for this typeof button */
 	padding: .1em .3em; /* TODO semantic */
@@ -92,4 +94,10 @@ button.o⋄button--inline {
 	/* TODO outline when pressed */
 }
 
+
+/* TODO clarify
+.o⋄backdrop {
+	background-color: var(--o⋄color⁚bg--main--backdrop);
+	backdrop-filter: blur(10px);
 }
+*/

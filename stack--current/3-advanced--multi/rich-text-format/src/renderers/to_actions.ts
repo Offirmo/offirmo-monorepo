@@ -21,6 +21,8 @@ interface BaseAction {
 interface HyperlinkAction extends BaseAction {
 	type: 'hyperlink'
 	link: Hyperlink
+
+	// TODO meta data? Ex. redirect?
 }
 
 // the data to embed as "hint"
@@ -28,6 +30,9 @@ interface EmbeddedReducerAction {
 	cta?: string // optional bc should ideally be derived from the action (esp. for i18n) BUT same action could have different CTA following the context (ex. equip best equipment)
 	payload: any // the data of the action, could be anything
 	href?: URI‿x // optional URL to navigate to following the action
+	// TODO add UI options? ex. pretend to work?
+	// or an auto engagement? (see state--engagement)
+	// should it be embedded in the action or early-returned by the HATEOAS server?
 }
 // the final action yielded by this renderer
 interface ReducerAction extends BaseAction, EmbeddedReducerAction {

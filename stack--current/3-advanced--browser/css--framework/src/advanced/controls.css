@@ -32,7 +32,9 @@ button {
 	border-color: var(--o⋄color⁚fg--main);
 	--border--thickness: var(--o⋄border--thickness__button, calc(var(--o⋄border--thickness) * 2)); /* to allow overrides, ex. inline button */
 	border-width: var(--border--thickness);
-	border-radius: .7em; /* HIGHLY recommended to round, seen some study saying 55% more clicks */
+
+	/* HIGHLY recommended to round, seen some study saying 55% more clicks */
+	border-radius: 9999px; /* https://courses.joshwcomeau.com/css-for-js/09-little-big-details/02.02-circular-radius */
 
 	background-color: var(--o⋄color⁚bg--highlight--1);
 
