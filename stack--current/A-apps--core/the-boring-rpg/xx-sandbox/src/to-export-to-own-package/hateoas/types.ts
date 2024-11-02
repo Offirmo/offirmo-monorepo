@@ -6,6 +6,13 @@ import {
 
 /////////////////////////////////////////////////
 
+interface HATEOASEngagement<HypermediaType> {
+	type: 'flow' | 'non-flow'
+	$doc: HypermediaType
+	ack_action: any // TODO type better?
+	uid: string | number // OPAQUE unique id, useful for ex. for React keying. Should not be used for anything else.
+}
+
 interface HATEOASServer<
 	HypermediaType, // an advanced Hypermedia format able to contain links and actions
 	Action,
@@ -15,6 +22,9 @@ interface HATEOASServer<
 
 	// the base one, return a hypermedia representation with hyperlinks/actions
 	get(url: Hyperlink['href']): Promise<HypermediaType>
+
+	// TODO query? https://www.ietf.org/archive/id/draft-ietf-httpbis-safe-method-w-body-05.html
+
 
 	// dispatch an action
 	// url TBD
@@ -27,11 +37,12 @@ interface HATEOASServer<
 
 	// important to separate resource representation from actions feedback
 	// sync bc we assume the browser awaits dispatches
-	get_next_pending_engagement(url?: Hyperlink['href']): [HypermediaType, Action] | null
+	get_next_pending_engagement(url?: Hyperlink['href']): HATEOASEngagement<HypermediaType> | null
 }
 
 /////////////////////////////////////////////////
 
 export {
+	type HATEOASEngagement,
 	type HATEOASServer,
 }

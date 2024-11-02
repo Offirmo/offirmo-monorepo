@@ -120,7 +120,7 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 			case 'nominal': {
 				const pe = this.server.get_next_pending_engagement(this.current_route)
 				if (pe) {
-					const [$doc, actionⵧack] = pe
+					const { $doc, ack_action: actionⵧack } = pe
 					// TODO improve depending on the format!
 					const step: Step<ContentType> = {
 						type: StepType.simple_message,

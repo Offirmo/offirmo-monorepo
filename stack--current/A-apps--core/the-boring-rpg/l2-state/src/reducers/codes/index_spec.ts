@@ -3,19 +3,19 @@ import { expect } from 'chai'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
-import { LIB } from '../consts.js'
-import { EngagementKey } from '../data/engagement/index.js'
+import { LIB } from '../../consts.js'
+import { EngagementTemplateKey } from '../../data/engagement/index.js'
 import {
 	create,
 	reseed,
 	attempt_to_redeem_code,
-} from './index.js'
+} from '../index.js'
 
 import {
 	_lose_all_energy,
 	_ack_all_engagements,
-} from './internal.js'
-import {State} from '../types.js'
+} from '../internal.js'
+import { type State } from '../../types.js'
 
 describe(`${LIB} - reducer - codes`, function() {
 	beforeEach(() => xxx_internal_reset_prng_cache())
@@ -47,13 +47,13 @@ describe(`${LIB} - reducer - codes`, function() {
 				let state = initial_state
 				state = attempt_to_redeem_code(state, code)
 
-				expect(state.u_state.engagement.queue.length).to.be.above(0)
-				let notif = state.u_state.engagement.queue.slice(-1)[0]!
-				if (notif.engagement.key === EngagementKey['achievement-unlocked'])
-					notif = state.u_state.engagement.queue.slice(-2)[0]!
+				const notif = state.u_state.engagement.queue
+					.filter(e =>
+					e.template.enhancements?.key === EngagementTemplateKey.code_redemptionⵧsucceeded
+				)
 				//console.log(notif)
-				expect(notif).to.have.nested.property('engagement.type', 'flow')
-				expect(notif).to.have.nested.property('engagement.key', EngagementKey['code_redemption--succeeded'])
+				expect(notif.length).to.equal(1)
+				expect(notif).to.have.nested.property('template.flow', 'main')
 				expect(notif).to.have.nested.property('params.code', code)
 
 				// 2nd attempt, sometimes shows bugs
@@ -74,14 +74,19 @@ describe(`${LIB} - reducer - codes`, function() {
 			)
 
 			let state = initial_state
+			const CODE = 'alphatwink'
 			//console.log('attempt #1')
-			state = attempt_to_redeem_code(state, 'alphatwink')
+			state = attempt_to_redeem_code(state, CODE)
 			//console.log('attempt #2')
-			state = attempt_to_redeem_code(state, 'alphatwink')
-			const notif = state.u_state.engagement.queue.slice(-1)[0]
+			state = attempt_to_redeem_code(state, CODE)
+			const notif = state.u_state.engagement.queue
+				.filter(e =>
+					e.template.enhancements?.key === EngagementTemplateKey.code_redemptionⵧfailed
+				)
 			//console.log(notif)
-			expect(notif).to.have.nested.property('engagement.type', 'flow')
-			expect(notif).to.have.nested.property('engagement.key', EngagementKey['code_redemption--failed'])
+			expect(notif.length).to.equal(1)
+			expect(notif).to.have.nested.property('template.flow', 'main')
+			expect(notif).to.have.nested.property('params.code', CODE)
 		})
 	})
 
@@ -96,14 +101,17 @@ describe(`${LIB} - reducer - codes`, function() {
 			)
 
 			let state = initial_state
+			const CODE = 'irsetuisretuisrt'
 			state = attempt_to_redeem_code(state, 'irsetuisretuisrt')
 
-			expect(state.u_state.engagement.queue.length).to.be.above(0)
-			const notif = state.u_state.engagement.queue.slice(-1)[0]
+			const notif = state.u_state.engagement.queue
+				.filter(e =>
+					e.template.enhancements?.key === EngagementTemplateKey.code_redemptionⵧfailed
+				)
 			//console.log(notif)
-			expect(notif).to.have.nested.property('engagement.type', 'flow')
-			expect(notif).to.have.nested.property('engagement.key', EngagementKey['code_redemption--failed'])
-			//expect(notif).to.have.nested.property('params.code', code)
+			expect(notif.length).to.equal(1)
+			expect(notif).to.have.nested.property('template.flow', 'main')
+			expect(notif).to.have.nested.property('params.code', CODE)
 		})
 	})
 })

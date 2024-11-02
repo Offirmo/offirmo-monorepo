@@ -19,19 +19,19 @@ import { create as create_armor } from '@tbrpg/logic--armors'
 
 /////////////////////
 
-import { type State } from '../types.js'
-import { EngagementKey } from '../data/engagement/index.js'
-import { CODE_SPECS_BY_KEY } from '../data/codes.js'
+import { type State } from '../../types.js'
+import { EngagementTemplateKey, getꓽengagement_template } from '../../data/engagement/index.js'
+import { CODE_SPECS_BY_KEY } from '../../data/codes.js'
 
 import {
 	_update_to_now,
 	_receive_item,
 	_auto_make_room,
-} from './internal.js'
+} from '../internal.js'
 
-import { _refresh_achievements } from './achievements/index.js'
-import { reset_and_salvage } from '../migrations/salvage.js'
-import { reseed } from './create.js'
+import { _refresh_achievements } from '../achievements/index.js'
+import { reset_and_salvage } from '../../migrations/salvage.js'
+import { reseed } from '../create.js'
 
 /////////////////////
 
@@ -41,7 +41,7 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 	let updated_state: Immutable<State> | null = _state // for now
 	let state: Immutable<State> = _state // for now
 
-	let engagement_key: EngagementKey = EngagementKey['code_redemption--failed'] // so far
+	let engagement_key: EngagementTemplateKey = EngagementTemplateKey.code_redemptionⵧfailed // so far
 	const engagement_params: any = {}
 
 	code = CodesState.normalize_code(code)
@@ -62,7 +62,7 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 			},
 		}
 
-		engagement_key = EngagementKey['code_redemption--succeeded']
+		engagement_key = EngagementTemplateKey.code_redemptionⵧsucceeded
 		engagement_params.code = code
 
 		// spread them for convenience
@@ -70,126 +70,6 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 		let { u_state, t_state } = state
 
 		switch(code) {
-			case 'TESTNOTIFS':
-				u_state = {
-					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, {
-						type: EngagementState.EngagementType.flow,
-						key: EngagementKey['hello_world--flow'],
-					}, {
-						// TODO make flow have semantic levels as well!
-						name: 'flow from TESTNOTIFS',
-					}),
-				}
-				u_state = {
-					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, {
-						type: EngagementState.EngagementType.aside,
-						key: EngagementKey['hello_world--aside'],
-					}, {
-						name: 'aside default from TESTNOTIFS',
-					}),
-				}
-				u_state = {
-					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, {
-						type: EngagementState.EngagementType.aside,
-						key: EngagementKey['hello_world--aside'],
-					}, {
-						semantic_level: 'error',
-						name: 'aside error from TESTNOTIFS',
-					}),
-				}
-				u_state = {
-					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, {
-						type: EngagementState.EngagementType.aside,
-						key: EngagementKey['hello_world--aside'],
-					}, {
-						semantic_level: 'warning',
-						name: 'aside warning from TESTNOTIFS',
-					}),
-				}
-				u_state = {
-					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, {
-						type: EngagementState.EngagementType.aside,
-						key: EngagementKey['hello_world--aside'],
-					}, {
-						semantic_level: 'info',
-						name: 'aside info from TESTNOTIFS',
-					}),
-				}
-				u_state = {
-					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, {
-						type: EngagementState.EngagementType.aside,
-						key: EngagementKey['hello_world--aside'],
-					}, {
-						semantic_level: 'success',
-						name: 'aside success from TESTNOTIFS',
-					}),
-				}
-				u_state = {
-					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, {
-						type: EngagementState.EngagementType.warning,
-						key: EngagementKey['hello_world--warning'],
-					}, {
-						name: 'warning from TESTNOTIFS',
-					}),
-				}
-				break
-
-			case 'TESTACH':
-				// complicated, but will auto-re-gain this achievement
-				u_state = {
-					...u_state,
-					//					progress: AchievementsState.on_achieved(u_state.progress, 'TEST', AchievementsState.AchievementStatus.revealed)
-					progress: {
-						...u_state.progress,
-						achievements: {
-							...u_state.progress.achievements,
-							'TEST': AchievementsState.AchievementStatus.revealed,
-						},
-					},
-				}
-				break
-
-			case 'BORED': {
-				t_state = {
-					...t_state,
-					energy: EnergyState.restore_energy([u_state.energy, t_state.energy], 1.),
-				}
-				break
-			}
-
-			case 'XYZZY':
-				// https://www.plover.net/~davidw/sol/xyzzy.html
-				u_state = {
-					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, {
-						type: EngagementState.EngagementType.flow,
-						key: EngagementKey['just-some-text'],
-					}, {
-						// https://rickadams.org/adventure/d_hints/hint024.html
-						text: 'fee fie foe foo ;)',
-					}),
-				}
-				break
-
-			case 'PLUGH':
-				// https://www.plover.net/~davidw/sol/plugh.html
-				u_state = {
-					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, {
-						type: EngagementState.EngagementType.flow,
-						key: EngagementKey['just-some-text'],
-					}, {
-						text: 'A hollow voice says "Ahhhhhhh".', // TODO more
-					}),
-				}
-				break
 
 			case 'REBORNX':
 				previous_state = updated_state = null // since we completely recreate the state
@@ -241,6 +121,71 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 				break
 			}
 
+			//////////// TRIBUTES
+			case 'XYZZY': // https://www.plover.net/~davidw/sol/xyzzy.html
+				u_state = {
+					...u_state,
+					engagement: EngagementState.enqueue(u_state.engagement, {
+						...EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
+						// https://rickadams.org/adventure/d_hints/hint024.html
+						content: 'fee fie foe foo ;)',
+					}),
+				}
+				break
+			case 'PLUGH': // https://www.plover.net/~davidw/sol/plugh.html
+				u_state = {
+					...u_state,
+					engagement: EngagementState.enqueue(u_state.engagement, {
+						...EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
+						content: 'A hollow voice says "Ahhhhhhh".', // TODO more
+					}),
+				}
+				break
+
+
+			//////////// DEBUG
+			case 'TESTNOTIFS':
+				u_state = {
+					...u_state,
+					engagement: EngagementState.enqueue(u_state.engagement, EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL),
+				}
+				u_state = {
+					...u_state,
+					engagement: EngagementState.enqueue(u_state.engagement, EngagementState.DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG),
+				}
+				u_state = {
+					...u_state,
+					engagement: EngagementState.enqueue(u_state.engagement, EngagementState.DEMO_TEMPLATEⵧNON_FLOW),
+				}
+				u_state = {
+					...u_state,
+					engagement: EngagementState.enqueue(u_state.engagement, EngagementState.DEMO_TEMPLATEⵧPLAYⵧFAILURE),
+				}
+				break
+
+			case 'TESTACH':
+				// complicated, but will auto-re-gain this achievement
+				u_state = {
+					...u_state,
+					//					progress: AchievementsState.on_achieved(u_state.progress, 'TEST', AchievementsState.AchievementStatus.revealed)
+					progress: {
+						...u_state.progress,
+						achievements: {
+							...u_state.progress.achievements,
+							'TEST': AchievementsState.AchievementStatus.revealed,
+						},
+					},
+				}
+				break
+
+			case 'BORED': {
+				t_state = {
+					...t_state,
+					energy: EnergyState.restore_energy([u_state.energy, t_state.energy], 1.),
+				}
+				break
+			}
+
 			default:
 				throw new Error(`Internal error: code "${code}" not implemented!`)
 		}
@@ -259,10 +204,7 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 
 		u_state: {
 			...state.u_state,
-			engagement: EngagementState.enqueue(state.u_state.engagement, {
-				type: EngagementState.EngagementType.flow,
-				key: engagement_key,
-			}, engagement_params),
+			engagement: EngagementState.enqueue(state.u_state.engagement, getꓽengagement_template(engagement_key), engagement_params),
 		},
 	}
 

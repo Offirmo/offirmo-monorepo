@@ -19,7 +19,10 @@ import {
 
 import { prettifyꓽjson } from '../services/misc.js'
 
-import { type HATEOASServer } from '../to-export-to-own-package/hateoas/types.js'
+import {
+	type HATEOASEngagement,
+	type HATEOASServer,
+} from '../to-export-to-own-package/hateoas/types.js'
 import {
 	DEFAULT_ROOT_URI,
 	normalizeꓽuri‿SSP,
@@ -232,7 +235,7 @@ class AppHateoasServer implements HATEOASServer<HypermediaType, Action> {
 		return pending
 	}
 
-	get_next_pending_engagement(url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): [RichText.Document, Action] | null {
+	get_next_pending_engagement(url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): HATEOASEngagement<HypermediaType> | null {
 		if (url === DEFAULT_ROOT_URI || url === '/session') {
 			// not yet!
 			return null
@@ -246,24 +249,34 @@ class AppHateoasServer implements HATEOASServer<HypermediaType, Action> {
 		if (pef) {
 			DEBUG && console.log(`↘ HATEOASᐧget_next_pending_engagement("${url}")...`)
 			//console.log('[PEF]', to_terminal(pef.$doc))
-			const action_ack = create_action<ActionAcknowledgeEngagementMsgSeen>({
+			const ack_action = create_action<ActionAcknowledgeEngagementMsgSeen>({
 				type: ActionType.acknowledge_engagement_msg_seen,
 				expected_revisions: {},
 				uid: pef.uid,
 			})
-			return [ pef.$doc, action_ack ]
+			return {
+				type: 'flow',
+				$doc: pef.$doc,
+				ack_action,
+				uid: pef.uid,
+			}
 		}
 
 		const penf = AppState.getꓽoldest_pending_engagementⵧnon_flow(state.u_state)
 		if (penf) {
 			DEBUG && console.log(`↘ HATEOASᐧget_next_pending_engagement("${url}")...`)
 			//console.log('[PENF]', to_terminal(penf.$doc))
-			const action_ack = create_action<ActionAcknowledgeEngagementMsgSeen>({
+			const ack_action = create_action<ActionAcknowledgeEngagementMsgSeen>({
 				type: ActionType.acknowledge_engagement_msg_seen,
 				expected_revisions: {},
 				uid: penf.uid,
 			})
-			return [ penf.$doc, action_ack ]
+			return {
+				type: 'non-flow',
+				$doc: penf.$doc,
+				ack_action,
+				uid: penf.uid,
+			}
 		}
 
 		return null
