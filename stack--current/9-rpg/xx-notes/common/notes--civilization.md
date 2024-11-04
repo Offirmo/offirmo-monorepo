@@ -20,3 +20,11 @@ Satellite (State): In this case, the satellites are separate nation states but t
 
 
 https://en.wikipedia.org/wiki/Three-sector_model
+
+https://en.wikipedia.org/wiki/Grand_strategy
+
+https://en.wikipedia.org/wiki/Political_history_of_the_world
+
+https://en.wikipedia.org/wiki/Debtors%27_prison
+
+https://en.wikipedia.org/wiki/The_Memorial_of_Saint_Helena

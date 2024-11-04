@@ -3,6 +3,7 @@ import { type Immutable } from '@offirmo-private/ts-types'
 
 import { UUID } from '@offirmo-private/uuid'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
+import { type PendingEngagementUId } from '@oh-my-rpg/state--engagement'
 import {
 	type State,
 	type StartSessionParams,
@@ -34,11 +35,10 @@ export type ActionType = Enum<typeof ActionType> // eslint-disable-line no-redec
 
 /////////////////////
 
-// TODO all those actions should be in the state package! (v2)
 export interface BaseAction {
 	//v: 1 // not sure needed
 	now_ms?: TimestampUTCMs // not recommended! better inferred at dispatch! But can be useful for tests or replay.
-	expected_revisions: {
+	expected_revisions?: {
 		[k:string]: number
 	}
 }
@@ -89,6 +89,7 @@ export interface ActionRedeemCode extends BaseAction {
 
 export interface ActionAcknowledgeEngagementMsgSeen extends BaseAction, AcknowledgeEngagementMsgSeen {
 	type: typeof ActionType.acknowledge_engagement_msg_seen
+	uids: Array<PendingEngagementUId>
 }
 
 export interface ActionUpdateToNow extends BaseAction {

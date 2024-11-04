@@ -1,3 +1,5 @@
+import { type Immutable } from '@offirmo-private/ts-types'
+
 import {
 	NodeType,
 	type NodeLike,
@@ -22,8 +24,15 @@ function promoteꓽto_node<Hints>($raw: NodeLike<Hints>): Node<Hints> {
 	return $raw
 }
 
+function promoteꓽto_nodeⵧimmutable<Hints>(
+	$raw: Immutable<NodeLike<Hints>>
+): Immutable<Node<Hints>> {
+	return promoteꓽto_node($raw as any)
+}
+
 /////////////////////////////////////////////////
 
 export {
 	promoteꓽto_node,
+	promoteꓽto_nodeⵧimmutable,
 }

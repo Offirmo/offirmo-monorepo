@@ -122,6 +122,7 @@ don't expect perfection -> trigger self-consciousness = counter-productive
 doublespeak: People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
 drive by
 due diligence
+dysthymia https://en.wikipedia.org/wiki/Dysthymia
 effective altruism
 effet projecteur
 effet rétroviseur
