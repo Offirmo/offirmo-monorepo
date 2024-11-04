@@ -3,14 +3,30 @@ import { Immutable } from '@offirmo-private/state-utils'
 import {
 	type Hyperlink,
 } from '@offirmo-private/ts-types-web'
+import { type PendingEngagement } from '@oh-my-rpg/state--engagement'
 
 /////////////////////////////////////////////////
 
+/*
 interface HATEOASEngagement<HypermediaType> {
 	type: 'flow' | 'non-flow'
 	$doc: HypermediaType
 	ack_action: any // TODO type better?
 	uid: string | number // OPAQUE unique id, useful for ex. for React keying. Should not be used for anything else.
+}
+
+ */
+
+interface HATEOASPendingEngagement<HypermediaType, Action> {
+	content: HypermediaType // resolved
+	flow: PendingEngagement<HypermediaType>['flow']
+	role: PendingEngagement<HypermediaType>['role']
+	success?: boolean
+	attention_needed?: PendingEngagement<HypermediaType>['attention_needed']
+	enhancements?: PendingEngagement<HypermediaType>['enhancements']
+
+	ack_action?: Action // the action to dispatch to acknowledge this engagement
+	uid: PendingEngagement<HypermediaType>['uid'] // useful for tracking (ex. React key) + advanced mass acknowledgment
 }
 
 interface HATEOASServer<
@@ -37,12 +53,13 @@ interface HATEOASServer<
 
 	// important to separate resource representation from actions feedback
 	// sync bc we assume the browser awaits dispatches
-	get_next_pending_engagement(url?: Hyperlink['href']): HATEOASEngagement<HypermediaType> | null
+	// the consumer must sort out the engagements by flow and priority
+	get_pending_engagements(url?: Hyperlink['href']): Immutable<Array<HATEOASPendingEngagement<HypermediaType, Action>>>
 }
 
 /////////////////////////////////////////////////
 
 export {
-	type HATEOASEngagement,
+	type HATEOASPendingEngagement,
 	type HATEOASServer,
 }

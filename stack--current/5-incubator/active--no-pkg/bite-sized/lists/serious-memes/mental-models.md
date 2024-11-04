@@ -230,6 +230,7 @@ it's not about lowering the bar, it's about helping more people reach it.
 jamais assez / 1st times
 Johari window https://en.wikipedia.org/wiki/Johari_window
 juger vs. évaluer
+keep only the ones saying it's doable
 keeping up with the jones
 law of Shitty Click-Through Rates: Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
 le premier jour du reste de sa vie
@@ -272,6 +273,7 @@ mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruct
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
 naiveté: abus sexuels, mafia
 needs / wants https://en.wikipedia.org/wiki/Need
+Never interrupt someone doing what you said couldn't be done.
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
 no conflict / safe conflict / extreme conflict
 Nobel https://www.nobelprize.org/all-nobel-prizes-2024/

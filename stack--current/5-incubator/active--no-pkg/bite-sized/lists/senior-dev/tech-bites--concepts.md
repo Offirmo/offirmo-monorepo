@@ -70,6 +70,7 @@ change -- category -- C2 = Widespread change requiring high customer/ecosystem e
 change -- category -- C3 = Localised change requiring high customer/ecosystem effort
 change -- category -- C4 = Change requiring low customer/ecosystem effort
 change -- category -- C5 = Change requiring no customer/ecosystem effort
+change -- category -- dynamic categorization = gathered through tooling + PRs
 change -- management
 change -- release tracks https://support.atlassian.com/organization-administration/docs/manage-product-release-tracks/
 change -- support readiness

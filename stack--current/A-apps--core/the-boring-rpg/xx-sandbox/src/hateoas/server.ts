@@ -6,6 +6,7 @@ import { Immutable } from '@offirmo-private/state-utils'
 import { type Hyperlink, type Uri‿str, type URI‿x, type SchemeSpecificURIPart } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 
+import { type HypermediaContentType } from '@tbrpg/definitions'
 import * as AppState from '@tbrpg/state'
 import * as AppRichText from '@tbrpg/ui--rich-text'
 import {
@@ -20,7 +21,7 @@ import {
 import { prettifyꓽjson } from '../services/misc.js'
 
 import {
-	type HATEOASEngagement,
+	type HATEOASPendingEngagement,
 	type HATEOASServer,
 } from '../to-export-to-own-package/hateoas/types.js'
 import {
@@ -35,13 +36,12 @@ import {
 
 const DEBUG = false
 
-type HypermediaType = RichText.Document
 
-class AppHateoasServer implements HATEOASServer<HypermediaType, Action> {
+class AppHateoasServer implements HATEOASServer<HypermediaContentType, Action> {
 	app_sugar: Game = new Game()
 	pending_async: Array<Promise<void>> = []
 
-	async get(url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): Promise<HypermediaType> {
+	async get(url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): Promise<HypermediaContentType> {
 		DEBUG && console.group(`↘ HATEOASᐧget("${url}")`)
 
 		////////////
@@ -121,7 +121,7 @@ class AppHateoasServer implements HATEOASServer<HypermediaType, Action> {
 			}
 
 			case '/session': { // for recap
-				$builder = $builder.pushNode(AppState.getꓽrecap(state.u_state))
+				$builder = $builder.pushNode(AppRichText.getꓽrecap(state.u_state))
 
 				const hyperlinkꘌcontinue_to: Hyperlink = {
 					href: '/session/adventures/',

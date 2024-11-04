@@ -29,7 +29,7 @@ const DEBUG = false
 
 /////////////////////////////////////////////////
 
-type ContentType = string | RichText.Document
+type ContentType = RichText.NodeLike
 
 class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<ContentType> {
 	// hypermedia
