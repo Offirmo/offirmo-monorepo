@@ -3,7 +3,10 @@ import { Immutable } from '@offirmo-private/state-utils'
 import {
 	type Hyperlink,
 } from '@offirmo-private/ts-types-web'
-import { type PendingEngagement } from '@oh-my-rpg/state--engagement'
+import {
+	type PendingEngagement,
+	type EngagementTemplate,
+} from '@oh-my-rpg/state--engagement'
 
 /////////////////////////////////////////////////
 
@@ -17,16 +20,14 @@ interface HATEOASEngagement<HypermediaType> {
 
  */
 
-interface HATEOASPendingEngagement<HypermediaType, Action> {
+interface HATEOASPendingEngagement<HypermediaType, Action>
+	extends
+		Pick<EngagementTemplate<HypermediaType>, 'flow' | 'role' | 'success' | 'attention_needed' | 'enhancements'>,
+		Pick<PendingEngagement<HypermediaType>, 'uid'>
+{
 	content: HypermediaType // resolved
-	flow: PendingEngagement<HypermediaType>['flow']
-	role: PendingEngagement<HypermediaType>['role']
-	success?: boolean
-	attention_needed?: PendingEngagement<HypermediaType>['attention_needed']
-	enhancements?: PendingEngagement<HypermediaType>['enhancements']
 
 	ack_action?: Action // the action to dispatch to acknowledge this engagement
-	uid: PendingEngagement<HypermediaType>['uid'] // useful for tracking (ex. React key) + advanced mass acknowledgment
 }
 
 interface HATEOASServer<

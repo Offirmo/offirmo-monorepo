@@ -277,6 +277,7 @@ spirit -- the web contract = Everyone who publishes on the Web knows that their 
 spirit -- the web is a big tent
 spirit -- the web is for everyone
 spirit -- view source affordance https://htmx.org/essays/right-click-view-source/
+spirit https://info.cern.ch/hypertext/WWW/Summary.html
 SSR good explanation https://single-spa.js.org/docs/ssr-overview/
 temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
 testing -- component https://storybook.js.org/blog/component-testing/
@@ -287,6 +288,10 @@ typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
 typology -- naked site
 ui -- bleed
+UI -- block -- color
+UI -- block -- iconography
+UI -- block -- spacing
+UI -- block -- typography
 UI -- event -- blur, hover, focus, click, auxclick, double click...
 UI -- flow vs. float https://floating-ui.com/
 UI -- HUD

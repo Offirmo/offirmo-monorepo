@@ -275,6 +275,7 @@ JSON
 JSX – Javascript XML
 jump/goto
 kebab-case vs snake etc
+kill switch
 KISS
 KTLO
 language -- Bend = massively parallel, high-level programming language https://github.com/HigherOrderCO/Bend
@@ -296,6 +297,7 @@ let's deploy to production https://www.youtube.com/watch?v=5p8wTOr8AbU
 LIFO
 linked list
 linting
+linux -- eBPF https://ebpf.io/what-is-ebpf/
 locality
 locality -- conflict locality = reducing conflicts on close changes, ex. enforcing trailing commas, sorting...
 locality -- of behaviour "LoB" https://htmx.org/essays/locality-of-behaviour/
@@ -308,6 +310,7 @@ magic number
 map
 math https://math4devs.com/
 MDN
+media types https://www.iana.org/assignments/media-types/media-types.xhtml
 memory -- heap
 memory -- stack
 merge queue
@@ -505,6 +508,7 @@ this
 thread
 threads -- virtual https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html
 TLS "Transport Layer Security"
+tool -- grep -- ast-grep https://ast-grep.github.io/
 tool -- http://devdocs.io/
 tool -- sprawl
 tracing -- distributed https://zipkin.io/

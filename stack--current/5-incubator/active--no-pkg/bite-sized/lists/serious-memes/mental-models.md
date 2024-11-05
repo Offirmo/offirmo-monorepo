@@ -8,7 +8,7 @@
 12 steps
 1st thought v.s 2nd thought
 3 hardest things to say -- I was wrong, I need help, I love you -> also 10 https://kristyna.co/mindful-entrepreneurship/10-hardest-things-for-people-to-say
-3 sectors -- quarternary 
+3 sectors -- quarternary
 3 sectors https://en.wikipedia.org/wiki/Three-sector_model
 3 Strikes and You're Out = Californian law https://lao.ca.gov/analysis_1995/3strikes.html
 3-strike pivot strategy -- Strike 1: Identify and try to address the issue directly
@@ -268,6 +268,7 @@ mimetic Theory of Desire: Humans are like sheep. We don’t know what we want, s
 mindset -- "What vs How" (see What vs how)
 minorities -- silent majority = unspecified large group of people in a country or group who do not express their opinions publicly https://en.wikipedia.org/wiki/Silent_majority
 minorities -- vocal minority
+mondegreen https://thehabit.co/knowledge-is-power-france-is-bacon/
 monkey ladder experiment https://factschology.com/factschology-articles-podcast/monkey-ladder-experiment-truth
 Monty Hall problem https://en.wikipedia.org/wiki/Monty_Hall_problem
 mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruction

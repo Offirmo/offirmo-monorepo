@@ -24,6 +24,8 @@ docx https://docx.js.org/#/
 
 declaration vs. object model 
 
+https://en.wikipedia.org/wiki/Uniform_Type_Identifier
+
 
 length of text / intro
 https://www.researchgate.net/publication/324329159_How_Constraints_Affect_Content_The_Case_of_Twitter%27s_Switch_from_140_to_280_Characters

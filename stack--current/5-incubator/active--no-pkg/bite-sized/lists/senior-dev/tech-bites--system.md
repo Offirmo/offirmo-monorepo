@@ -46,7 +46,21 @@ API -- constraints -- Relay EntryPoints = a loading mechanism that makes impleme
 API -- contracts
 API -- Diogo Lucas classification = far-team, near-team and inner-team. inner team = used within a team or between partner teams, near team = "Conway APIs" between teams that don't always communicate with each other, Far-team API = between teams that have low-bandwidth communications
 API -- hybrids = reconcile the need for a stable public API that will not constantly disrupt your carefully tended ecosystem with your team’s ability to move fast and (eventually) break stuff? cater for different requirements regarding security and SLAs or to radically different client natures? https://www.youtube.com/watch?v=eqy609JleoE
+API -- REST (Representational State Transfer) = architectural style for distributed hypermedia systems https://restfulapi.net/
+API -- REST -- cookbook https://restcookbook.com/
+API -- REST -- founding paper https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
 API -- REST -- POST https://www.tbray.org/ongoing/When/200x/2009/03/20/Rest-Casuistry
+API -- REST -- principles == 1 Uniform Interface
+API -- REST -- principles == 2 Client-Server
+API -- REST -- principles == 3 Stateless
+API -- REST -- principles == 4 Cacheable
+API -- REST -- principles == 5 Layered System
+API -- REST -- critic https://mmikowski.github.io/the_lie/
+API -- REST -- JSON Pure https://mmikowski.github.io/json-pure/
+API -- REST -- principles == 6 Code on Demand (optional)
+API -- REST -- resource https://roy.gbiv.com/untangled/category/web-architecture/page/2
+API -- REST -- RESTful
+API -- REST -- TRUE REST = missing hypertext / "representation" https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven
 API -- Richardson Maturity Model https://martinfowler.com/articles/richardsonMaturityModel.html
 API -- view -- scope -- types = "raw / user defined scope" ex. a user-entered filter, "natural object scope" = when the object is a natural container, "persisted scope" = saved filter / board / custom view
 API -- view -- scope = the limit of where to conduct a search for domain objects for display on a view
@@ -412,6 +426,7 @@ REST = architectural style, stateless client-server communication model
 RESTful = systems which adhere to a set of constraints to achieve simplicity, scalability, and uniformity.
 retire, retain, rehost, re-platform, repurchase, refactor/re-architect
 routing -- hot/cold potato https://www.usenix.org/legacy/publications/library/proceedings/usenix02/full_papers/subramanian/subramanian_html/node28.html
+Roy Fielding's dissertation "Architectural Styles and the Design of Network-based Software Architectures" https://ics.uci.edu/~fielding/pubs/dissertation/top.htm
 scaling -- "internet scale", C10k, C10M problem  https://en.wikipedia.org/wiki/C10k_problem
 scaling -- horizontally = more machines
 scaling -- load-shedding
