@@ -29,6 +29,7 @@ import {
 	normalizeꓽuri‿SSP,
 	normalizeꓽuri‿str,
 } from './to-migrate.js'
+import { resolveꓽrich_text_pending_engagement } from '../to-export-to-own-package/hateoas/utils'
 
 /////////////////////////////////////////////////
 
@@ -235,51 +236,22 @@ class AppHateoasServer implements HATEOASServer<HypermediaContentType, Action> {
 		return pending
 	}
 
-	get_next_pending_engagement(url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): HATEOASEngagement<HypermediaType> | null {
+	get_pending_engagements(url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): Immutable<Array<HATEOASPendingEngagement<HypermediaContentType>>> {
 		if (url === DEFAULT_ROOT_URI || url === '/session') {
 			// not yet!
-			return null
+			return []
 		}
 
 		const state = this.app_sugar.getꓽstateⵧlast_known()
 
-		// very important to return flow first
-		// ex. when playing a game, there is a small cutscene simulating the action, yet we can already see the notifications from the result :facepalm:
-		const pef = AppState.getꓽoldest_pending_engagementⵧflow(state.u_state)
-		if (pef) {
-			DEBUG && console.log(`↘ HATEOASᐧget_next_pending_engagement("${url}")...`)
-			//console.log('[PEF]', to_terminal(pef.$doc))
-			const ack_action = create_action<ActionAcknowledgeEngagementMsgSeen>({
-				type: ActionType.acknowledge_engagement_msg_seen,
-				expected_revisions: {},
-				uid: pef.uid,
-			})
-			return {
-				type: 'flow',
-				$doc: pef.$doc,
-				ack_action,
-				uid: pef.uid,
-			}
-		}
-
-		const penf = AppState.getꓽoldest_pending_engagementⵧnon_flow(state.u_state)
-		if (penf) {
-			DEBUG && console.log(`↘ HATEOASᐧget_next_pending_engagement("${url}")...`)
-			//console.log('[PENF]', to_terminal(penf.$doc))
-			const ack_action = create_action<ActionAcknowledgeEngagementMsgSeen>({
-				type: ActionType.acknowledge_engagement_msg_seen,
-				expected_revisions: {},
-				uid: penf.uid,
-			})
-			return {
-				type: 'non-flow',
-				$doc: penf.$doc,
-				ack_action,
-				uid: penf.uid,
-			}
-		}
-
-		return null
+		return AppState.getꓽpending_engagements(state.u_state)
+			.map(pe => resolveꓽrich_text_pending_engagement(
+				pe,
+				(uid: number) => create_action<ActionAcknowledgeEngagementMsgSeen>({
+					type: ActionType.acknowledge_engagement_msg_seen,
+					uids: [ uid ],
+				}),
+			))
 	}
 }
 

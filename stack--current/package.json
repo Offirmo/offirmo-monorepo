@@ -46,6 +46,7 @@
 			"4-tools/*",
 			"5-incubator/active/*",
 			"9-rpg/*",
+			"A-apps--core/space-rpg/*",
 			"A-apps--core/the-boring-rpg/*",
 			"D-minisites/*"
 		]
@@ -128,6 +129,7 @@
 		"npm-run-all": "^4",
 		"p-progress": "^1",
 		"parcel": "^2",
+		"particles.js": "^2",
 		"path-exists": "^5",
 		"pokemon": "^3",
 		"prettier": "^3",

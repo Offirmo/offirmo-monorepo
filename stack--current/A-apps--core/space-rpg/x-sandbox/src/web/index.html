@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" data-o-theme="dark">
+<head>
+	<meta charset="UTF-8">
+	<title>Polish</title>
+	<style>
+		:root {
+			color-scheme: dark;
+		}
+	</style>
+</head>
+<body>
+
+<main id="react-root">
+	<!-- React will render here and replace this -->
+</main>
+
+<div id="starry-background" class="o⋄full-viewport" style="xbackground-color: black;"></div>
+
+<style>
+	/******* NON-critical styles https://www.smashingmagazine.com/2015/08/understanding-critical-css/ */
+	@import 'npm:@offirmo-private/css--framework';
+</style>
+
+<script type="module">
+	/* NON-critical JS */
+	import init from './index.tsx'
+	init()
+</script>
+
+</body>
+</html>

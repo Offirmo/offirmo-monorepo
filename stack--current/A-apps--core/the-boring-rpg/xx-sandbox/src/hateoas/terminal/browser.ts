@@ -118,8 +118,8 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 				break
 			}
 			case 'nominal': {
-				const pe = this.server.get_next_pending_engagement(this.current_route)
-				if (pe) {
+				const pes = this.server.get_pending_engagements(this.current_route)
+				this.pending_steps.unshift(...pes.map(pe => {
 					const { $doc, ack_action: actionⵧack } = pe
 					// TODO improve depending on the format!
 					const step: Step<ContentType> = {
@@ -129,6 +129,9 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 					}
 					//console.log(`[gen_next_step()] ...yielding from PEF`)
 					return step
+				}))
+				if (this.pending_steps.length) {
+					return this.pending_steps.pop()!
 				}
 				break
 			}
