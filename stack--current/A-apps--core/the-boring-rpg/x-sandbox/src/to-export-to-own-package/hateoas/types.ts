@@ -50,7 +50,7 @@ interface HATEOASServer<
 	// ex. crash or lost connexion and the player lose a very important story development.
 	// thus we'd rather use "engagement", see next method.
 	// TODO REVIEW we may want to return trivial, "can-be-lost" feedback, for ex. "ticket created" or "action acknowledged"
-	dispatch(action: Action, url?: Hyperlink['href']): Promise<void>
+	dispatch(action: Immutable<Action>, url?: Hyperlink['href']): Promise<void>
 
 	// important to separate resource representation from actions feedback
 	// sync bc we assume the browser awaits dispatches

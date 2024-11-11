@@ -2,7 +2,7 @@ import { LIB, SCHEMA_VERSION } from '../consts.js'
 
 import {
 	NodeType,
-	type BaseHints,
+	type Hints,
 	type CheckedNode,
 	type Node,
 	type Document,
@@ -16,39 +16,39 @@ interface CommonOptions {
 	classes?: string[]
 }
 
-interface Builder<Hints = BaseHints> {
-	addClass(...classes: string[]): Builder<Hints>
-	addHints(hints: Partial<Hints>): Builder<Hints>
+interface Builder {
+	addClass(...classes: string[]): Builder
+	addHints(hints: Partial<Hints>): Builder
 
-	pushText(str: string): Builder<Hints>
+	pushText(str: string): Builder
 
 	// nothing is added in content
 	// useful for
 	// 1. lists
 	// 2. manual stuff
-	pushRawNode(node: Node<Hints>, options?: CommonOptions): Builder<Hints>
+	pushRawNode(node: Node, options?: CommonOptions): Builder
 
 	// node ref is auto added into content
-	pushNode(node: Node<Hints>, options?: CommonOptions): Builder<Hints>
+	pushNode(node: Node, options?: CommonOptions): Builder
 
-	pushInlineFragment(str: string, options?: CommonOptions): Builder<Hints>
-	pushBlockFragment(str: string, options?: CommonOptions): Builder<Hints>
-	pushStrong(str: string, options?: CommonOptions): Builder<Hints>
-	pushWeak(str: string, options?: CommonOptions): Builder<Hints>
-	pushHeading(str: string, options?: CommonOptions): Builder<Hints>
-	pushHorizontalRule(): Builder<Hints>
-	pushLineBreak(): Builder<Hints>
+	pushInlineFragment(str: string, options?: CommonOptions): Builder
+	pushBlockFragment(str: string, options?: CommonOptions): Builder
+	pushStrong(str: string, options?: CommonOptions): Builder
+	pushWeak(str: string, options?: CommonOptions): Builder
+	pushHeading(str: string, options?: CommonOptions): Builder
+	pushHorizontalRule(): Builder
+	pushLineBreak(): Builder
 
-	pushKeyValue(key: Node<Hints> | string, value: Node<Hints> | string | number, options?: CommonOptions): Builder<Hints>
+	pushKeyValue(key: Node | string, value: Node | string | number, options?: CommonOptions): Builder
 
-	done(): CheckedNode<Hints>
+	done(): CheckedNode
 }
 
 /////////////////////////////////////////////////
 
-function create<Hints>($type: NodeType): Builder<Hints> {
+function create($type: NodeType): Builder {
 
-	const $node: CheckedNode<Hints> = {
+	const $node: CheckedNode = {
 		$v: SCHEMA_VERSION,
 		$type,
 		$classes: [],
@@ -57,7 +57,7 @@ function create<Hints>($type: NodeType): Builder<Hints> {
 		$hints: {} as any,
 	}
 
-	const builder: Builder<Hints> = {
+	const builder: Builder = {
 		addClass,
 		addHints,
 
@@ -80,12 +80,12 @@ function create<Hints>($type: NodeType): Builder<Hints> {
 
 	let sub_id = 0
 
-	function addClass(...classes: string[]): Builder<Hints> {
+	function addClass(...classes: string[]): Builder {
 		$node.$classes.push(...classes)
 		return builder
 	}
 
-	function addHints(hints: { [k: string]: any }): Builder<Hints> {
+	function addHints(hints: { [k: string]: any }): Builder {
 		$node.$hints = {
 			...$node.$hints,
 			...hints,
@@ -93,12 +93,12 @@ function create<Hints>($type: NodeType): Builder<Hints> {
 		return builder
 	}
 
-	function pushText(str: string): Builder<Hints> {
+	function pushText(str: string): Builder {
 		$node.$content += str
 		return builder
 	}
 
-	function _buildAndPush(builder: Builder<Hints>, str: string, options: CommonOptions = {}) {
+	function _buildAndPush(builder: Builder, str: string, options: CommonOptions = {}) {
 		options = {
 			classes: [],
 			...options,
@@ -113,7 +113,7 @@ function create<Hints>($type: NodeType): Builder<Hints> {
 	}
 
 
-	function pushRawNode(node: Node<Hints>, options: CommonOptions = {}): Builder<Hints> {
+	function pushRawNode(node: Node, options: CommonOptions = {}): Builder {
 		const id = options.id || ('000' + ++sub_id).slice(-4)
 		$node.$sub[id] = node
 		if (options.classes)
@@ -121,43 +121,43 @@ function create<Hints>($type: NodeType): Builder<Hints> {
 		return builder
 	}
 
-	function pushNode(node: Node<Hints>, options: CommonOptions = {}): Builder<Hints> {
+	function pushNode(node: Node, options: CommonOptions = {}): Builder {
 		const id = options.id || ('000' + ++sub_id).slice(-4)
 		$node.$content += `⎨⎨${id}⎬⎬`
 		return pushRawNode(node, { ...options, id })
 	}
 
-	function pushInlineFragment(str: string, options?: CommonOptions): Builder<Hints> {
+	function pushInlineFragment(str: string, options?: CommonOptions): Builder {
 		return _buildAndPush(fragmentⵧinline(), str, options)
 	}
 
-	function pushBlockFragment(str: string, options?: CommonOptions): Builder<Hints> {
+	function pushBlockFragment(str: string, options?: CommonOptions): Builder {
 		return _buildAndPush(fragmentⵧblock(), str, options)
 	}
 
-	function pushStrong(str: string, options?: CommonOptions): Builder<Hints> {
+	function pushStrong(str: string, options?: CommonOptions): Builder {
 		return _buildAndPush(strong(), str, options)
 	}
 
-	function pushWeak(str: string, options?: CommonOptions): Builder<Hints> {
+	function pushWeak(str: string, options?: CommonOptions): Builder {
 		return _buildAndPush(weak(), str, options)
 	}
 
-	function pushHeading(str: string, options?: CommonOptions): Builder<Hints> {
+	function pushHeading(str: string, options?: CommonOptions): Builder {
 		return _buildAndPush(heading(), str, options)
 	}
 
-	function pushHorizontalRule(): Builder<Hints> {
+	function pushHorizontalRule(): Builder {
 		$node.$content += '⎨⎨hr⎬⎬'
 		return builder
 	}
 
-	function pushLineBreak(): Builder<Hints> {
+	function pushLineBreak(): Builder {
 		$node.$content += '⎨⎨br⎬⎬'
 		return builder
 	}
 
-	function pushKeyValue(key: Node<Hints> | string, value: Node<Hints> | string | number, options: CommonOptions = {}): Builder<Hints> {
+	function pushKeyValue(key: Node | string, value: Node | string | number, options: CommonOptions = {}): Builder {
 		if ($node.$type !== NodeType.ol && $node.$type !== NodeType.ul)
 			throw new Error(`${LIB}: Key/value is intended to be used in a ol/ul only!`)
 
@@ -165,7 +165,7 @@ function create<Hints>($type: NodeType): Builder<Hints> {
 			classes: [],
 			...options,
 		}
-		const kv_node: Node<Hints> = key_value<Hints>(key, value)
+		const kv_node: Node = key_value(key, value)
 			.addClass(...options.classes!)
 			.done()
 		delete options.classes // TODO review
@@ -174,45 +174,45 @@ function create<Hints>($type: NodeType): Builder<Hints> {
 	}
 
 	// TODO rename value() like lodash chain?
-	function done(): CheckedNode<Hints> {
+	function done(): CheckedNode {
 		return $node
 	}
 
 	return builder
 }
 
-function fragmentⵧinline<Hints = BaseHints>(): Builder<Hints> {
+function fragmentⵧinline(): Builder {
 	return create(NodeType.fragmentⵧinline)
 }
-function fragmentⵧblock<Hints = BaseHints>(): Builder<Hints> {
+function fragmentⵧblock(): Builder {
 	return create(NodeType.fragmentⵧblock)
 }
 
-function heading<Hints = BaseHints>(): Builder<Hints> {
+function heading(): Builder {
 	return create(NodeType.heading)
 }
 
-function strong<Hints = BaseHints>(): Builder<Hints> {
+function strong(): Builder {
 	return create(NodeType.strong)
 }
 
-function weak<Hints = BaseHints>(): Builder<Hints> {
+function weak(): Builder {
 	return create(NodeType.weak)
 }
 
-function listⵧordered<Hints = BaseHints>(): Builder<Hints> {
+function listⵧordered(): Builder {
 	return create(NodeType.ol)
 }
-function listⵧunordered<Hints = BaseHints>(): Builder<Hints> {
+function listⵧunordered(): Builder {
 	return create(NodeType.ul)
 }
 
-function key_value<Hints = BaseHints>(key: Node<Hints> | string, value: Node<Hints> | string | number): Builder<Hints> {
-	const key_node: Node<Hints> = promoteꓽto_node<Hints>(key)
+function key_value(key: Node | string, value: Node | string | number): Builder {
+	const key_node: Node = promoteꓽto_node(key)
 
-	const value_node: Node<Hints> = promoteꓽto_node<Hints>(value)
+	const value_node: Node = promoteꓽto_node(value)
 
-	return fragmentⵧinline<Hints>()
+	return fragmentⵧinline()
 		.pushNode(key_node, { id: 'key' })
 		.pushText(': ')
 		.pushNode(value_node, { id: 'value' })

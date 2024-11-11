@@ -29,7 +29,7 @@ import {
 	normalizeꓽuri‿SSP,
 	normalizeꓽuri‿str,
 } from './to-migrate.js'
-import { resolveꓽrich_text_pending_engagement } from '../to-export-to-own-package/hateoas/utils'
+import { resolveꓽrich_text_pending_engagement } from '../to-export-to-own-package/hateoas/utils.js'
 
 /////////////////////////////////////////////////
 
@@ -236,7 +236,7 @@ class AppHateoasServer implements HATEOASServer<HypermediaContentType, Action> {
 		return pending
 	}
 
-	get_pending_engagements(url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): Immutable<Array<HATEOASPendingEngagement<HypermediaContentType>>> {
+	get_pending_engagements(url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): Immutable<Array<HATEOASPendingEngagement<HypermediaContentType, Action>>> {
 		if (url === DEFAULT_ROOT_URI || url === '/session') {
 			// not yet!
 			return []

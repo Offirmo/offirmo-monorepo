@@ -4,7 +4,6 @@ import { type Immutable } from '@offirmo-private/ts-types'
 import {
 	type NodeLike,
 	type Node,
-	type BaseHints,
 	promoteꓽto_nodeⵧimmutable,
 } from '@offirmo-private/rich-text-format'
 import {
@@ -16,11 +15,11 @@ import { type HATEOASPendingEngagement } from './types.js'
 
 /////////////////////////////////////////////////
 
-function resolveꓽrich_text_pending_engagement<Action, Hints = BaseHints>(
+function resolveꓽrich_text_pending_engagement<Action>(
 	pe: Immutable<PendingEngagement<NodeLike>>,
 	uid_to_ack: (uid: PendingEngagementUId) => Immutable<Action>,
-): Immutable<HATEOASPendingEngagement<Node<Hints>, Action>> {
-	const $doc = promoteꓽto_nodeⵧimmutable<Hints>(pe.template.content)
+): Immutable<HATEOASPendingEngagement<Node, Action>> {
+	const $doc = promoteꓽto_nodeⵧimmutable(pe.template.content)
 
 	return {
 		content: $doc,

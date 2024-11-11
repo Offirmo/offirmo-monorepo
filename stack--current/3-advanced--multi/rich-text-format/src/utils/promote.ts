@@ -9,7 +9,7 @@ import { assertꓽisꓽNode } from '../type-guards.js'
 
 /////////////////////////////////////////////////
 
-function promoteꓽto_node<Hints>($raw: NodeLike<Hints>): Node<Hints> {
+function promoteꓽto_node($raw: NodeLike): Node {
 	if (typeof $raw === 'number')
 		$raw = String($raw)
 
@@ -24,9 +24,9 @@ function promoteꓽto_node<Hints>($raw: NodeLike<Hints>): Node<Hints> {
 	return $raw
 }
 
-function promoteꓽto_nodeⵧimmutable<Hints>(
-	$raw: Immutable<NodeLike<Hints>>
-): Immutable<Node<Hints>> {
+function promoteꓽto_nodeⵧimmutable(
+	$raw: Immutable<NodeLike>
+): Immutable<Node> {
 	return promoteꓽto_node($raw as any)
 }
 

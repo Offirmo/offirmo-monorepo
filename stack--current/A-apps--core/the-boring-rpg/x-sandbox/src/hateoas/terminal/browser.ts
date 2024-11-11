@@ -110,7 +110,7 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 
 		switch(this.status) {
 			case 'starting': {
-				// skip the PEF & PENF messages
+				// skip the engagement messages
 				// to give a chance for some content
 				// (hopefully introducing the app)
 				// to be displayed first
@@ -120,17 +120,17 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 			case 'nominal': {
 				const pes = this.server.get_pending_engagements(this.current_route)
 				this.pending_steps.unshift(...pes.map(pe => {
-					const { $doc, ack_action: actionⵧack } = pe
+					const { content: $doc, ack_action: actionⵧack } = pe
 					// TODO improve depending on the format!
 					const step: Step<ContentType> = {
 						type: StepType.simple_message,
-						msg: $doc,
-						callback: () => dispatch(actionⵧack),
+						msg: $doc as any, // cast away the immutability. TODO one day improve
+						callback: () => actionⵧack && dispatch(actionⵧack),
 					}
-					//console.log(`[gen_next_step()] ...yielding from PEF`)
 					return step
 				}))
 				if (this.pending_steps.length) {
+					//console.log(`[gen_next_step()] ...yielding from enqueued post-PE`)
 					return this.pending_steps.pop()!
 				}
 				break

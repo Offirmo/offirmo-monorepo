@@ -29,7 +29,7 @@ type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 // hints for progressive enhancement
 // - for rendering, hints should be OPTIONAL and any renderer should be able to render decently without them
 // - for non-rendering (ex. hypermedia features) hints can be made mandatory
-interface BaseHints {
+interface Hints {
 	[k: string]: any
 
 	bullets_style?: 'none' // to remove bullets from lists
@@ -42,35 +42,35 @@ interface BaseHints {
 
 // using type instead of interface to prevent extra properties
 // (not supposed to extend this)
-type CheckedNode<Hints = BaseHints> = {
+type CheckedNode = {
 	$v: number // schema version
 	$type: NodeType
 	$classes: string[]
 	$content: string
 	// sub-nodes referenced in she content
 	$sub: {
-		[id: string]: Partial<CheckedNode<Hints>>
+		[id: string]: Partial<CheckedNode>
 	}
 	// hints for renderers. May or may not be used.
 	$hints: Hints
 }
 
-type Node<Hints = BaseHints> = Partial<CheckedNode<Hints>>
+type Node = Partial<CheckedNode>
 
 // Node + stuff trivial to promote to a Node
-type NodeLike<Hints = BaseHints> = Node<Hints> | string | number
+type NodeLike = Node | string | number
 
 ///////
 
 // aliases
-type Document<Hints = {[k: string]: any}> = Node<Hints>
+type Document<Hints = {[k: string]: any}> = Node
 
 /////////////////////////////////////////////////
 
 export {
 	NodeType,
 
-	type BaseHints,
+	type Hints,
 
 	type CheckedNode,
 	type Node,

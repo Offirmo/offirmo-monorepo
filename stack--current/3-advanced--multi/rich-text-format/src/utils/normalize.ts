@@ -4,13 +4,14 @@ import { LIB, SCHEMA_VERSION } from '../consts.js'
 
 import {
 	NodeType,
+	type Hints,
 	type CheckedNode,
 	type Node,
 } from '../types.js'
 
 /////////////////////////////////////////////////
 
-function normalizeꓽnode<Hints>($raw_node: Readonly<Node<Hints>>, default_hints: Hints = {} as any): CheckedNode<Hints> {
+function normalizeꓽnode($raw_node: Readonly<Node>, default_hints: Hints = {} as any): CheckedNode {
 	assert(!!$raw_node, `normalize_node(): undefined or null!`)
 
 	const {
@@ -30,7 +31,7 @@ function normalizeꓽnode<Hints>($raw_node: Readonly<Node<Hints>>, default_hints
 
 	// TODO validation
 
-	const $node: CheckedNode<Hints> = {
+	const $node: CheckedNode = {
 		$v,
 		$type,
 		$classes,
