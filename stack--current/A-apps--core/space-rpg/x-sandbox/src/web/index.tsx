@@ -63,9 +63,6 @@ async function init(): Promise<void> {
 				"random": true,
 				"anim": {
 					"enable": false,
-					"speed": 0,
-					"size_min": 0.1,
-					"sync": false
 				}
 			},
 			"line_linked": {
