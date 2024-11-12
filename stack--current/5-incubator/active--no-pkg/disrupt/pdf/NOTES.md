@@ -20,6 +20,9 @@ https://www.mathjax.org/
 
 markdown header
 
+https://hackernoon.com/28-stories-to-learn-about-markdown
+
+
 docx https://docx.js.org/#/
 
 declaration vs. object model 

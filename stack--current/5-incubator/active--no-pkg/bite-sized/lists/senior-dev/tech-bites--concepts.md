@@ -86,6 +86,8 @@ clever code considered harmful https://www.joshwcomeau.com/career/clever-code-co
 client/server -- multi-tier architecture
 close / destroy / terminate / dispose / release / free / delete / destruct / finalize / teardown / cleanup / shutdown / stop / end / abort / cancel / halt / kill / exit / quit / unload / dispose...
 code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
+code quality = the only definition of quality in code that makes any sense is our ability to change the code. If it's easy to change, it's high quality; if it's hard to change, it's not. 
+code quality https://blog.jim-nielsen.com/2024/easy-changes/
 cohesion = degree to which the elements inside a module belong together https://en.wikipedia.org/wiki/Cohesion_(computer_science)
 command query separation (CQS)
 comments
@@ -231,6 +233,7 @@ GRASP -- 8 Protected variations = Identify points of predicted variation or inst
 GRASP -- 9 Pure fabrication =
 GRASP -- see also: SOLID
 grug brain = complexity, readability https://grugbrain.dev/
+Grug Brained Developer = A layman's guide to thinking like the self-aware smol brained https://grugbrain.dev/
 handle
 helping -- XY problem = wrongly asking about your attempted solution rather than your actual problem https://xyproblem.info/
 hoisting des vars de boucle for et switch
@@ -263,6 +266,7 @@ inner-platform effect https://en.wikipedia.org/wiki/Inner-platform_effect
 interface
 interface -- abstract = no implementation, only to be extended (OOP)
 Interface segregation principle = instead of a class interface with all possible methods clients might need, there should be separate interfaces catering to the specific needs of each type of client https://en.wikipedia.org/wiki/Interface_segregation_principle
+interpreters = make your own programming language https://craftinginterpreters.com/
 Joel test
 JS equality
 JS http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
@@ -411,6 +415,7 @@ regex https://regexlearn.com/
 register
 release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-10-insider-program-from-rings-to-release-channels/
 REST (REpresentational State Transfer)
+REST HTTP = How to GET a Cup of Coffee https://www.infoq.com/articles/webber-rest-workflow/
 revisions
 rewrite https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22
 RFC (Request For Comments) https://rfc.fyi/
@@ -465,6 +470,7 @@ SLI (Service Level Indicator) = a measurement of how reliable or performant a Ca
 SLO (Service Level Objective) = (proactive) A target set on the SLI. Failing to hit the target == unhappy customer! Example: “Jira ticket created in less than 1s”
 SME Subject Matter Expert
 SOAP (Simple Object Access Protocol)
+software acceptance = How Is Technology Accepted? https://www.dreamsongs.com/Files/AcceptanceModels.pdf
 SOLID
 SOLID -- 1 Single responsibility principle (SRP) https://en.wikipedia.org/wiki/Single_responsibility_principle
 SOLID -- 2 Open–closed principle (OCP) https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
@@ -481,6 +487,7 @@ state -- management
 state -- stateless
 stats course https://www.youtube.com/playlist?list=PLltdM60MtzxNwhL4sg7swFFlUlH7EEy7H []
 Stick to boring architecture for as long as possible https://addyosmani.com/blog/boring-architecture/
+stories to help you grow as a software developer https://medium.com/@MediumStaff/list/stories-to-help-you-grow-as-a-software-developer-b1d913188c20
 streams
 superapp
 Sustainable Architectural Decisions https://adr.github.io/
@@ -551,6 +558,7 @@ variables pointer / natives
 virtual private cloud (VPC)
 web assembly (asm.js)
 Wirth's law = software systems grow faster in size and complexity than methods to handle complexity are invented. software is getting slower more rapidly than hardware is becoming faster. https://en.wikipedia.org/wiki/Wirth%27s_law
+worse is better https://www.dreamsongs.com/WorseIsBetter.html
 X considered harmful
 XML
 XML (Extensible Markup Language)

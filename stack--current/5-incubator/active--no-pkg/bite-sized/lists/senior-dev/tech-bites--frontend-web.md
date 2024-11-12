@@ -101,6 +101,7 @@ CSS -- margin -- negative https://www.quirksmode.org/blog/archives/2020/02/negat
 CSS -- Media Queries https://courses.joshwcomeau.com/css-for-js/00-recap/03-media-queries
 CSS -- methodologies -- BEM
 CSS -- nesting
+CSS -- optimization -- containment https://blogs.igalia.com/mrego/2019/01/11/an-introduction-to-css-containment/ https://developer.mozilla.org/en-US/docs/Web/CSS/contain https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Using_CSS_containment 
 CSS -- overflow https://www.bram.us/2024/02/14/scroll-driven-animations-you-want-overflow-clip-not-overflow-hidden/ https://frontendmasters.com/blog/single-directionally-allowed-overflow/
 CSS -- perf -- avoid modifying the layout (geometric properties)
 CSS -- properties -- inheritance (or not)
@@ -341,6 +342,7 @@ web components -- templates
 web components -- templates -- slots https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/slot
 web components https://developer.mozilla.org/en-US/docs/Web/API/Web_components
 web design https://www.webdesignmuseum.org/
+Web Linking (RFC 5988) https://datatracker.ietf.org/doc/html/rfc5988
 web workers -- dedicated = utilized by a single script https://devdocs.io/dom/worker
 web workers -- service = proxy https://devdocs.io/dom/service_worker_api
 web workers -- shared = can be utilized by multiple scripts running in different windows, IFrames, etc., as long as they are in the same domain as the worker https://devdocs.io/dom/sharedworker

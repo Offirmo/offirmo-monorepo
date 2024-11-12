@@ -3,19 +3,29 @@
 
 ## visual effects
 
-sky https://github.com/VincentGarreau/particles.js/
+sky https://github.com/VincentGarreau/particles.js/ (deprecated)
 https://codepen.io/Offirmo/pen/OJeGMRG
 
 hyperspace https://codepen.io/noahblon/pen/DpNRyR
 
-collection
-https://codepen.io/collection/DJRwWY
+collection https://codepen.io/collection/DJRwWY
+* flurry of stars nice bg https://codepen.io/tmrDevelops/pen/NNGvEv
+* black hole https://codepen.io/uiswarup/pen/ExGNQVY
 
-
-small solar system https://codepen.io/pavlovsk/pen/jOjKEJq
+small solar system
+* https://codepen.io/pavlovsk/pen/jOjKEJq
+* https://codepen.io/chriskirknielsen/pen/YzmxERE
+* https://codepen.io/tientq64/pen/OePgEg
+* https://codepen.io/sylvaingarnot/pen/RwvrbZK
+* 
 
 
 ## tosort
 
 
-https://typpo.github.io/spacekit/
+3D space viz https://typpo.github.io/spacekit/
+orbit CSS framework https://zumerlab.github.io/orbit-docs/
+https://particles.js.org/
+
+
+galaxy button https://codepen.io/jh3y/pen/eYPYKep
