@@ -11,7 +11,23 @@ import { EngagementTemplateKey } from './types.js'
 // TODO review good idea to centralize??
 export function getꓽengagement_template(key: EngagementTemplateKey): EngagementTemplate<HypermediaContentType> {
 	switch(key) {
+		case EngagementTemplateKey.achievement_unlocked: {
+			return {
+				content: RichText.fragmentⵧblock()
+					.pushStrong('🏆 Achievement unlocked:')
+					.pushLineBreak() // TODO review, display not great
+					.pushText(`“⎨⎨icon⎬⎬ ⎨⎨name⎬⎬“`)
+					.done(),
+				flow: 'side',
+				role: 'system',
+				attention_needed: 'log',
+				enhancements: {
+					key,
+				}
+			}
+		}
 		/*
+
 			case EngagementKey['just-some-text']:
 				return RichText.fragmentⵧblock()
 					.pushText(params.text)
@@ -44,24 +60,6 @@ export function getꓽengagement_template(key: EngagementTemplateKey): Engagemen
 				return RichText.fragmentⵧblock()
 					.pushWeak('Code successfully redeemed.')
 					.done()
-
-			case EngagementKey['achievement-unlocked']:
-				return RichText.fragmentⵧblock()
-					.pushStrong('🏆 Achievement unlocked:')
-					.pushLineBreak()
-					.pushText(`“${params.icon} ${params.name}“`)
-					.done()
-
-				{
-					type: EngagementType.aside,
-					key: EngagementKey['achievement-unlocked'],
-				},
-				{
-					semantic_level: 'success',
-					auto_dismiss_delay_ms: 7_000, // TODO magic number!!
-					icon,
-					name,
-				}
 
 			case EngagementKey['reborn']:
 				return RichText.fragmentⵧblock()

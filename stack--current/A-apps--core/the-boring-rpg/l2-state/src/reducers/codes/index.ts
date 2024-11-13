@@ -6,6 +6,7 @@ import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation }
 
 /////////////////////
 
+import { type HypermediaContentType } from '@tbrpg/definitions'
 import * as EnergyState from '@tbrpg/state--energy'
 import * as EngagementState from '@oh-my-rpg/state--engagement'
 import * as PRNGState from '@oh-my-rpg/state--prng'
@@ -39,10 +40,10 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 	// tri-state needed for "complete_or_cancel_eager_mutation"
 	let previous_state: Immutable<State> | null = _state // allow null for special manipulation such as reset
 	let updated_state: Immutable<State> | null = _state // for now
-	let state: Immutable<State> = _state // for now
+	let state: Immutable<State> = _state
 
 	let engagement_key: EngagementTemplateKey = EngagementTemplateKey.code_redemptionⵧfailed // so far
-	const engagement_params: any = {}
+	const engagement_params: NonNullable<EngagementState.PendingEngagement<HypermediaContentType>['params']> = {}
 
 	code = CodesState.normalize_code(code)
 	const code_spec = CODE_SPECS_BY_KEY[code]
@@ -125,20 +126,26 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 			case 'XYZZY': // https://www.plover.net/~davidw/sol/xyzzy.html
 				u_state = {
 					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, {
-						...EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
-						// https://rickadams.org/adventure/d_hints/hint024.html
-						content: 'fee fie foe foo ;)',
-					}),
+					engagement: EngagementState.enqueue(u_state.engagement,
+						{
+							...EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
+							// https://rickadams.org/adventure/d_hints/hint024.html
+							content: 'fee fie foe foo ;)',
+						},
+						{}
+					),
 				}
 				break
 			case 'PLUGH': // https://www.plover.net/~davidw/sol/plugh.html
 				u_state = {
 					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, {
-						...EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
-						content: 'A hollow voice says "Ahhhhhhh".', // TODO more
-					}),
+					engagement: EngagementState.enqueue(u_state.engagement,
+						{
+							...EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
+							content: 'A hollow voice says "Ahhhhhhh".', // TODO more
+						},
+						{},
+					),
 				}
 				break
 
@@ -147,19 +154,31 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 			case 'TESTNOTIFS':
 				u_state = {
 					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL),
+					engagement: EngagementState.enqueue(u_state.engagement,
+						EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
+						{},
+					),
 				}
 				u_state = {
 					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, EngagementState.DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG),
+					engagement: EngagementState.enqueue(u_state.engagement,
+						EngagementState.DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG,
+						{},
+					),
 				}
 				u_state = {
 					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, EngagementState.DEMO_TEMPLATEⵧNON_FLOW),
+					engagement: EngagementState.enqueue(u_state.engagement,
+						EngagementState.DEMO_TEMPLATEⵧNON_FLOW,
+						{},
+					),
 				}
 				u_state = {
 					...u_state,
-					engagement: EngagementState.enqueue(u_state.engagement, EngagementState.DEMO_TEMPLATEⵧPLAYⵧFAILURE),
+					engagement: EngagementState.enqueue(u_state.engagement,
+						EngagementState.DEMO_TEMPLATEⵧPLAYⵧFAILURE,
+						{},
+					),
 				}
 				break
 
@@ -204,7 +223,10 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 
 		u_state: {
 			...state.u_state,
-			engagement: EngagementState.enqueue(state.u_state.engagement, getꓽengagement_template(engagement_key), engagement_params),
+			engagement: EngagementState.enqueue(state.u_state.engagement,
+				getꓽengagement_template(engagement_key),
+				engagement_params
+			),
 		},
 	}
 

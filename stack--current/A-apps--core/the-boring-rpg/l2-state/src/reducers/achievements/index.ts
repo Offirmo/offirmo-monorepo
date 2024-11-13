@@ -36,7 +36,13 @@ function _refresh_achievements(state: Immutable<State>): Immutable<State> {
 
 		if (current_status === AchievementStatus.unlocked) {
 			// tell the user
-			engagement = enqueueEngagement(engagement, getꓽengagement_template(EngagementTemplateKey.achievement_unlocked))
+			engagement = enqueueEngagement(engagement,
+					getꓽengagement_template(EngagementTemplateKey.achievement_unlocked),
+					{
+						icon,
+						name,
+					},
+				)
 		}
 	})
 

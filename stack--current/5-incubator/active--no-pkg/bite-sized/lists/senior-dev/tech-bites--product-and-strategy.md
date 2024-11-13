@@ -125,6 +125,7 @@ pitch -- extra -- references
 pitch -- extra -- YC application https://docs.google.com/document/d/1lkRIGrssL5W3DbrFTE-PoY8KctN1dtCBWg_Yuoq8RT4/edit#heading=h.b76a5v3s4kuy
 pitch -- extra -- “what we don’t know” or “what assumptions we’ve made that need to be true” (to make it more rounded and less pitchy. Maybe that’s why I’ve never got an investor! Ha)
 pitch -- Q -- If you get no investments what alternatives do you have in mind
+policy -- internal -- no politics https://www.linkedin.com/posts/jason-fried_inevitably-around-major-elections-or-political-activity-7260061274544234496-tSB1
 pricing
 pricing strategy
 principle -- end-to-end principle = fundamental principle of the Internet in which the role of a network is to reliably deliver data from willing senders to willing receivers

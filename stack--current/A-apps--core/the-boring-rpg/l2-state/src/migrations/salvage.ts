@@ -117,7 +117,10 @@ function reset_and_salvage(legacy_state: Immutable<any>): Immutable<State> {
 		...state,
 		u_state: {
 			...state.u_state,
-			engagement: EngagementState.enqueue(state.u_state.engagement, getꓽengagement_template(EngagementTemplateKey.reborn)),
+			engagement: EngagementState.enqueue(state.u_state.engagement,
+				getꓽengagement_template(EngagementTemplateKey.reborn),
+				{}
+			),
 		},
 	}
 

@@ -348,6 +348,7 @@ Reach Impact Confidence Estimate (RICE)
 Reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
 rebound effect https://blog.jim-nielsen.com/2024/notes-on-making-software-by-peter-van-hardenberg/
 recruiting others to support you in addressing issue
+rent seeking https://en.wikipedia.org/wiki/Rent-seeking
 resource curse -- Dutch disease https://en.wikipedia.org/wiki/Dutch_disease
 resource Curse = the paradox of plenty: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources https://en.wikipedia.org/wiki/Resource_curse
 respect

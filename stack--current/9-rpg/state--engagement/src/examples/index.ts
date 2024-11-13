@@ -50,11 +50,22 @@ const DEMO_TEMPLATEⵧNON_FLOW: EngagementTemplate<DemoContentType> = {
 
 	flow: 'not',
 	role: 'assistant',
-	attention_needed: 'log',
-
-	auto_dismiss_delay_ms: 5000,
+	attention_needed: 'notice',
 }
 
+// real examples
+const DEMO_SPOILER: EngagementTemplate<DemoContentType> = {
+	content: 'Spoiler alert!',
+
+	flow: 'main',
+	role: 'system',
+	sequence: 'pre',
+	attention_needed: 'warning',
+
+	enhancements: {
+		background: 'blurⵧextreme',
+	},
+}
 
 // a full-featured, non-trivial demo state
 // useful for demos and unit tests

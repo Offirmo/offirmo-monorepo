@@ -27,7 +27,7 @@ function create<TextFormat>(SXC?: SoftExecutionContext): Immutable<State<TextFor
 
 /////////////////////
 
-function enqueue<TextFormat>(state: Immutable<State<TextFormat>>, template: Immutable<EngagementTemplate<TextFormat>>, params: Immutable<PendingEngagement<TextFormat>['params']> = {}): Immutable<State<TextFormat>> {
+function enqueue<TextFormat>(state: Immutable<State<TextFormat>>, template: Immutable<EngagementTemplate<TextFormat>>, params: Immutable<PendingEngagement<TextFormat>['params']>): Immutable<State<TextFormat>> {
 
 	// Avoid duplication? Possible bug? No, hard to detect, may have different params.
 	// ex. multiple level rises should be ok.
