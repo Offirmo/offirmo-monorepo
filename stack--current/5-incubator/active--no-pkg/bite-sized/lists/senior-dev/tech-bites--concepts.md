@@ -88,6 +88,7 @@ close / destroy / terminate / dispose / release / free / delete / destruct / fin
 code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 code quality = the only definition of quality in code that makes any sense is our ability to change the code. If it's easy to change, it's high quality; if it's hard to change, it's not. 
 code quality https://blog.jim-nielsen.com/2024/easy-changes/
+code review https://www.linkedin.com/posts/ajgreenwell_code-reviews-have-unwritten-laws-i-had-activity-7239611908914319360-_MHW/
 cohesion = degree to which the elements inside a module belong together https://en.wikipedia.org/wiki/Cohesion_(computer_science)
 command query separation (CQS)
 comments

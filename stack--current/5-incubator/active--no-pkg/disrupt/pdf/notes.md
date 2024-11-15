@@ -18,6 +18,8 @@ https://marked.js.org/
 
 https://www.mathjax.org/
 
+typography "provides typographic features used traditionally in ﬁne printing which remain unavailable to browser layout engines" https://typeset.lllllllllllllllll.com/
+
 markdown header
 
 https://hackernoon.com/28-stories-to-learn-about-markdown

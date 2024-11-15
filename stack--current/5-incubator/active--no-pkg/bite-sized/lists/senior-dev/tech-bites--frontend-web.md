@@ -7,6 +7,7 @@
 [ ] advanced architecture -- https://devdocs.io/dom/content_index_api
 [ ] advanced architecture -- navigator.sendBeacon() for backup
 [ ] advanced architecture -- Web Periodic Background Synchronization API https://devdocs.io/dom/web_periodic_background_synchronization_api
+[ ] book "Building Large Scale Web Apps" https://largeapps.dev/
 [ ] CSS https://ishadeed.com/articles/
 [ ] design https://www.youtube.com/@phoebeyutbt/videos
 [ ] https://browser.engineering/index.html

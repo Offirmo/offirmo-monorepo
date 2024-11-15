@@ -29,11 +29,14 @@ https://www.sbs.com.au/news/article/a-ring-a-mysterious-box-and-a-qr-code-the-sc
 https://www.sbs.com.au/news/article/the-overseas-telemarketers-impersonating-an-australian-business/1qh8skc4a
 https://www.malwarebytes.com/blog/scams/2024/08/fake-canva-home-page-leads-to-browser-lock
 
+Anti-scam laws to target banks https://www.linkedin.com/news/story/anti-scam-laws-to-target-banks-6151340/
 
 
 https://www.schneier.com/blog/archives/2023/12/ai-and-trust.html
 
 https://digital-defense.io/
+
+"Passwords have problems, but passkeys have more" https://world.hey.com/dhh/passwords-have-problems-but-passkeys-have-more-95285df9
 
 
 https://www.abc.net.au/news/2024-07-31/inheritance-scam-victim-calls-for-banking-reform/104167178
