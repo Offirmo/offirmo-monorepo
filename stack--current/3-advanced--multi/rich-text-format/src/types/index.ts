@@ -19,9 +19,12 @@ const NodeType = Enum(
 	'hr',
 	'emoji', // unfortunately, as of 2024, emojis are still very hard to handle properly, hence deserving a special node type (optional but recommended)
 	         // this node type represent a single emoji
+	         // https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
 
 	// special
-	'br', // do not abuse, use other semantic elements (heading, lists) as much as possible before this one
+	'br', // Useful for poems etc.
+	      // do not abuse, use other semantic elements (heading, lists) as much as possible before this one.
+	      // Also the client should be the one doing line breaks for long content
 
 	// internally used, don't use directly
 	'li',
@@ -35,6 +38,8 @@ interface Hints {
 	[k: string]: any
 
 	bullets_style?: 'none' // for ul, to remove or customize bullets
+
+	// TODO emoji API following https://github.com/jdecked/twemoji
 
 
 	// TODO clarify

@@ -101,3 +101,12 @@ button.o⋄button--inline {
 	backdrop-filter: blur(10px);
 }
 */
+
+/* emoji improvement https://github.com/jdecked/twemoji?tab=readme-ov-file#inline-styles
+img.emoji {
+   height: 1em;
+   width: 1em;
+   margin: 0 .05em 0 .1em;
+   vertical-align: -0.1em;
+}
+ */

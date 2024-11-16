@@ -21,6 +21,7 @@ interface Builder {
 	addHints(hints: Partial<Hints>): Builder
 
 	pushText(str: string): Builder
+	pushEmoji(e: string, options?: CommonOptions): Builder
 
 	// nothing is added in content
 	// useful for
@@ -33,6 +34,7 @@ interface Builder {
 
 	pushInlineFragment(str: string, options?: CommonOptions): Builder
 	pushBlockFragment(str: string, options?: CommonOptions): Builder
+
 	pushStrong(str: string, options?: CommonOptions): Builder
 	pushWeak(str: string, options?: CommonOptions): Builder
 	pushHeading(str: string, options?: CommonOptions): Builder
@@ -62,11 +64,14 @@ function create($type: NodeType): Builder {
 		addHints,
 
 		pushText,
+		pushEmoji,
+
 		pushRawNode,
 		pushNode,
 
 		pushInlineFragment,
 		pushBlockFragment,
+
 		pushStrong,
 		pushWeak,
 		pushHeading,
@@ -135,6 +140,12 @@ function create($type: NodeType): Builder {
 		return _buildAndPush(fragmentⵧblock(), str, options)
 	}
 
+	function pushEmoji(str: string, options?: CommonOptions): Builder {
+		// TODO extra emoji details
+		// TODO recognize emoji code
+		return _buildAndPush(emoji(), str, options)
+	}
+
 	function pushStrong(str: string, options?: CommonOptions): Builder {
 		return _buildAndPush(strong(), str, options)
 	}
@@ -200,6 +211,10 @@ function weak(): Builder {
 	return create(NodeType.weak)
 }
 
+function emoji(): Builder {
+	return create(NodeType.emoji)
+}
+
 function listⵧordered(): Builder {
 	return create(NodeType.ol)
 }
@@ -233,6 +248,7 @@ export {
 	heading,
 	strong,
 	weak,
+	emoji,
 	listⵧordered,
 	listⵧunordered,
 	key_value,

@@ -54,5 +54,10 @@ Tosort
 * https://formatjs.io/docs/core-concepts/icu-syntax/
 
 
-TODO add emoji support bc. https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
-TODO add hypermedia as first class? 
+TODO add hypermedia as first class?
+
+TODO one day add a linting feature:
+- lint types etc.
+- prevent a block in an inline
+- normalize strings
+- detect and normalize emojis

@@ -1,6 +1,8 @@
 console.log('Rich Text Format Demo')
 
+
 import * as RichText from '@offirmo-private/rich-text-format'
+
 
 import {
 	DOC_DEMO_BASE_TYPES,
@@ -11,6 +13,7 @@ import {
 	DOC_DEMO_RPG_03,
 	DOC_DEMO_INVENTORY,
 } from '@offirmo-private/rich-text-format/examples'
+
 
 import renderⵧto_terminal from '../../../rich-text-format--to-terminal/index.mjs'
 
@@ -34,6 +37,7 @@ demo({DOC_DEMO_RPG_01})
 demo({DOC_DEMO_RPG_02})
 demo({DOC_DEMO_RPG_03})
 demo({DOC_DEMO_INVENTORY})
+
 
 // TODO actions
 // TODO links

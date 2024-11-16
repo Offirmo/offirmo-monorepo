@@ -1,4 +1,4 @@
-import * as RichText from '..'
+import * as RichText from '../index.js'
 
 /////// parts ///////
 
@@ -127,9 +127,9 @@ const DOC_DEMO_BASE_TYPES: RichText.Document = {
 	$content: '⎨⎨fragment1⎬⎬⎨⎨fragment2⎬⎬',
 	$sub: {
 		fragment1: {
-			$type: 'fragmentⵧinline',
+			$type: 'fragmentⵧblock',
 			$classes: [],
-			$content: 'horizontal rule:⎨⎨hr⎬⎬Heading:⎨⎨heading⎬⎬Another heading:⎨⎨heading⎬⎬Some text:⎨⎨br⎬⎬⎨⎨text⎬⎬⎨⎨br⎬⎬⎨⎨strong⎬⎬⎨⎨br⎬⎬⎨⎨weak⎬⎬⎨⎨br⎬⎬⎨⎨em⎬⎬⎨⎨br⎬⎬Unordered list:⎨⎨ul⎬⎬Ordered list:⎨⎨ol⎬⎬More text.',
+			$content: 'horizontal rule:⎨⎨hr⎬⎬Heading:⎨⎨heading⎬⎬Another heading:⎨⎨heading⎬⎬Some text:⎨⎨br⎬⎬⎨⎨text⎬⎬⎨⎨br⎬⎬⎨⎨strong⎬⎬⎨⎨br⎬⎬⎨⎨weak⎬⎬⎨⎨br⎬⎬⎨⎨em⎬⎬⎨⎨br⎬⎬emoji:⎨⎨emoji⎬⎬⎨⎨br⎬⎬Unordered list:⎨⎨ul⎬⎬Ordered list:⎨⎨ol⎬⎬More text.',
 			$sub: {
 				heading: {
 					$type: 'heading',
@@ -150,6 +150,13 @@ const DOC_DEMO_BASE_TYPES: RichText.Document = {
 				em: {
 					$type: 'em',
 					$content: 'em(phasis)',
+				},
+				emoji: {
+					$type: 'emoji',
+					$content: '👍🏽', // thumbs up medium skin tone
+					$hints: {
+						// TODO
+					}
 				},
 				ul: {
 					$type: 'ul',
@@ -294,7 +301,7 @@ const DOC_DEMO_RPG_03 = RichText.fragmentⵧblock()
 	.pushText(''
 		+ 'Great sages prophetized your coming,⎨⎨br⎬⎬'
 		+ 'commoners are waiting for their hero⎨⎨br⎬⎬'
-		+ 'and kings are trembling from fear of change...⎨⎨br⎬⎬'
+		+ 'and kings are trembling from fear of change…⎨⎨br⎬⎬'
 		+ '…undoubtly, you’ll make a name in this world and fulfill your destiny!⎨⎨br⎬⎬',
 	)
 	.pushStrong('A great saga just started.')
