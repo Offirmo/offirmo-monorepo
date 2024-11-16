@@ -10,8 +10,8 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2023.esm/index.js",
-			"require": "./dist/src.es2023.cjs/index.js"
+			"import": "./dist/src.es2023.esm/index.js"
+		},
 		"./examples": {
 			"import": "./dist/src.es2023.esm/examples/index.js"
 		},
