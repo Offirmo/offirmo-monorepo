@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { LIB } from './consts.js'
-import { type Node } from './types.js'
+import { LIB } from '../consts.js'
+import { type Node } from './index.js'
 
 /////////////////////////////////////////////////
 
@@ -14,9 +14,9 @@ const EXPECTED_FIELDS = new Set<string>([
 	'$sub',
 	'$hints',
 ])
-function assertꓽisꓽNode(node: Immutable<any>): asserts node is Node {
+function assertꓽisꓽNode(candidate: Immutable<any>): asserts candidate is Node {
 	// "Node" is quite loose so we only expect at least 1 param
-	const keys = Object.keys(node)
+	const keys = Object.keys(candidate)
 	keys.forEach(k => {
 		assert(EXPECTED_FIELDS.has(k), `${LIB}: a Node should not contain extraneous fields! ("${k}")`)
 	})

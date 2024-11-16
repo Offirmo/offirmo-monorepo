@@ -29,9 +29,10 @@
 [ ] patterns https://www.patterns.dev/
 [ ] SWE at Google https://abseil.io/resources/swe-book/html/toc.html
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
+abort controller https://kettanaito.com/blog/dont-sleep-on-abort-controller
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 access control
-access control -- Role-Based (RBAC)
+access control -- role-based (RBAC)
 actually portable executables https://justine.lol/ape.html
 allocation
 annotation
@@ -169,8 +170,9 @@ design patterns
 design patterns -- behavioral -- command = command, receiver, invoker and client https://en.wikipedia.org/wiki/Command_pattern
 design patterns -- facade https://en.wikipedia.org/wiki/Facade_pattern
 design patterns -- strangler https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/
+design patterns -- visitor (not recommended, see grug)
 design smell https://en.wikipedia.org/wiki/Design_smell
-devex
+DevEx
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 DevOps Research and Assessment (DORA) = how we should develop our software right and what numbers we should show to our managers to make them happy https://medium.com/booking-com-development/a-step-by-step-guide-on-how-not-to-implement-dora-metrics-85081f0d4484
 DNS (Domain Name System)

@@ -6,7 +6,7 @@ import {
 	NodeType,
 	type CheckedNode,
 	type Node,
-} from './types.js'
+} from './types/index.js'
 
 import { normalizeꓽnode } from './utils/normalize.js'
 

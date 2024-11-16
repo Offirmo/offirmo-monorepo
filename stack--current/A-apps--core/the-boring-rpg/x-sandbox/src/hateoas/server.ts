@@ -37,7 +37,6 @@ import { resolveꓽrich_text_pending_engagement } from '../to-export-to-own-pack
 
 const DEBUG = false
 
-
 class AppHateoasServer implements HATEOASServer<HypermediaContentType, Action> {
 	app_sugar: Game = new Game()
 	pending_async: Array<Promise<void>> = []
@@ -57,7 +56,7 @@ class AppHateoasServer implements HATEOASServer<HypermediaContentType, Action> {
 			rel: ['self'],
 			cta: '…', // can be re-defined later
 		}
-		// const hyperlinkꘌhome: Hyperlink NO! Should be a feature of the browser!
+		// const hyperlinkꘌhome: Hyperlink // NO! Should be a feature of the browser!
 		const links: { [key: string]: Hyperlink } = {
 			self: hyperlinkꘌself,
 		}
@@ -122,6 +121,7 @@ class AppHateoasServer implements HATEOASServer<HypermediaContentType, Action> {
 			}
 
 			case '/session': { // for recap
+				// TODO review should be engagement instead?
 				$builder = $builder.pushNode(AppRichText.getꓽrecap(state.u_state))
 
 				const hyperlinkꘌcontinue_to: Hyperlink = {

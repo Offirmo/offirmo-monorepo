@@ -1,8 +1,8 @@
 import { expect } from 'chai'
 
-import { LIB } from './consts.js'
+import { LIB } from '../consts.js'
 
-import { isꓽNode } from './type-guards.js'
+import { isꓽNode } from './guards.js'
 
 /////////////////////////////////////////////////
 

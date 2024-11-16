@@ -10,7 +10,7 @@ import {
 	DOC_DEMO_RPG_02,
 	DOC_DEMO_RPG_03,
 	DOC_DEMO_INVENTORY,
-} from '../examples.mjs'
+} from '@offirmo-private/rich-text-format/examples'
 
 import renderⵧto_terminal from '../../../rich-text-format--to-terminal/index.mjs'
 

@@ -6,7 +6,7 @@ import {
 	type CheckedNode,
 	type Node,
 	type Document,
-} from '../types.js'
+} from '../types/index.js'
 import { promoteꓽto_node } from '../utils/promote.js'
 
 /////////////////////////////////////////////////

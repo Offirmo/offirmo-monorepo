@@ -1,14 +1,14 @@
-import * as RichText from '@offirmo-private/rich-text-format'
+import * as RichText from '..'
 
 /////// parts ///////
 
-const SUB_UL_ITEMS = {
+const SUB_UL_ITEMS: RichText.Document['$sub'] = {
 	'002': {$type: 'fragmentⵧinline', $content: 'ul #2'},
 	'001': {$type: 'fragmentⵧinline', $content: 'ul #1'},
 	'003': {$type: 'fragmentⵧinline', $content: 'ul #3'},
 }
 
-const SUB_UL_KEY_VALUE_PAIRS = {
+const SUB_UL_KEY_VALUE_PAIRS: RichText.Document['$sub'] = {
 	'001': {
 		$type: 'fragmentⵧinline',
 		$content: '⎨⎨key⎬⎬: ⎨⎨value⎬⎬',
@@ -47,7 +47,7 @@ const SUB_UL_KEY_VALUE_PAIRS = {
 	},
 }
 
-const DOC_WEAPON_01_NAME = {
+const DOC_WEAPON_01_NAME: RichText.Document = {
 	$classes: ['item--name', 'item--weapon--name'],
 	$content: '⎨⎨qualifier2|Capitalize⎬⎬ ⎨⎨qualifier1|Capitalize⎬⎬ ⎨⎨base|Capitalize⎬⎬',
 	$sub: {
@@ -66,7 +66,7 @@ const DOC_WEAPON_01_NAME = {
 	},
 }
 
-const DOC_WEAPON_01 = {
+const DOC_WEAPON_01: RichText.Document = {
 	$type: 'fragmentⵧinline',
 	$classes: ['item', 'item--weapon', 'item--quality--legendary'],
 	$content: '⎨⎨weapon_name⎬⎬ ⎨⎨enhancement⎬⎬',
@@ -83,7 +83,7 @@ const DOC_WEAPON_01 = {
 	},
 }
 
-const DOC_PLACE_01 = {
+const DOC_PLACE_01: RichText.Document = {
 	$type: 'fragmentⵧinline',
 	$classes: ['place'],
 	$content: 'the country of ⎨⎨name⎬⎬',
@@ -98,7 +98,7 @@ const DOC_PLACE_01 = {
 	},
 }
 
-const DOC_NPC_01 = {
+const DOC_NPC_01: RichText.Document = {
 	$type: 'fragmentⵧinline',
 	$classes: ['person', 'npc', 'monster--rank--boss'],
 	$content: 'John Smith',
@@ -111,7 +111,7 @@ const DOC_NPC_01 = {
 function render_item(i) {
 	return render_item_short(i)
 }*/
-const SUB_UL_ACTIONABLE_ITEMS = {
+const SUB_UL_ACTIONABLE_ITEMS: RichText.Document['$sub'] = {
 	'001': DOC_WEAPON_01,
 	/*'002': render_item(DEMO_WEAPON_1),
 	'003': render_item(DEMO_ARMOR_1),
@@ -121,7 +121,7 @@ const SUB_UL_ACTIONABLE_ITEMS = {
 
 /////// COMPLETE DOCS ///////
 
-const DOC_DEMO_BASE_TYPES = {
+const DOC_DEMO_BASE_TYPES: RichText.Document = {
 	$type: 'fragmentⵧinline',
 	$classes: [],
 	$content: '⎨⎨fragment1⎬⎬⎨⎨fragment2⎬⎬',
@@ -173,7 +173,7 @@ const DOC_DEMO_BASE_TYPES = {
 	},
 }
 
-const DOC_DEMO_ADVANCED_TYPES = {
+const DOC_DEMO_ADVANCED_TYPES: RichText.Document = {
 	$type: 'fragmentⵧinline',
 	$classes: [],
 	$content: '⎨⎨heading⎬⎬Key-value pairs:⎨⎨kvdefault⎬⎬Nested list:⎨⎨nested_list⎬⎬Actionable items:⎨⎨uuid_list⎬⎬Done.',
@@ -243,7 +243,7 @@ const DOC_DEMO_ADVANCED_TYPES = {
 	},
 }
 
-const DOC_DEMO_HINTS = {
+const DOC_DEMO_HINTS: RichText.Document = {
 	$type: 'fragmentⵧinline',
 	$classes: [],
 	$content: '⎨⎨heading⎬⎬link: ⎨⎨link⎬⎬⎨⎨br⎬⎬List with no bullets:⎨⎨list⎬⎬Done.',
@@ -269,7 +269,7 @@ const DOC_DEMO_HINTS = {
 	},
 }
 
-const DOC_DEMO_RPG_01 = {
+const DOC_DEMO_RPG_01: RichText.Document = {
 	$v: 1,
 	$type: 'fragmentⵧblock',
 	$content: 'You are in ⎨⎨place⎬⎬. You meet ⎨⎨npc⎬⎬.⎨⎨br⎬⎬He gives you a ⎨⎨item⎬⎬.⎨⎨hr⎬⎬',
@@ -280,7 +280,7 @@ const DOC_DEMO_RPG_01 = {
 	},
 }
 
-const DOC_DEMO_RPG_02 = {
+const DOC_DEMO_RPG_02: RichText.Document = {
 	$v: 1,
 	$type: 'ol',
 	$sub: {
@@ -299,10 +299,10 @@ const DOC_DEMO_RPG_03 = RichText.fragmentⵧblock()
 	)
 	.pushStrong('A great saga just started.')
 	.pushText('⎨⎨br⎬⎬loot:')
-	.pushNode(DOC_DEMO_RPG_02, 'loot')
+	.pushRawNode(DOC_DEMO_RPG_02, { id: 'loot' })
 	.done()
 
-const DOC_DEMO_INVENTORY = {
+const DOC_DEMO_INVENTORY: RichText.Document = {
 	'$v': 1,
 	'$type': 'fragmentⵧblock',
 	'$classes': [],

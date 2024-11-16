@@ -1,10 +1,10 @@
 import { expect } from 'chai'
 
-import { LIB } from './consts.js'
+import { LIB } from '../consts.js'
 
 import {
 	Node,
-} from './types.js'
+} from './index.js'
 
 /////////////////////////////////////////////////
 

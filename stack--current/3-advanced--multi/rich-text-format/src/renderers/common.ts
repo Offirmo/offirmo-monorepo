@@ -1,6 +1,6 @@
 import {
 	type CheckedNode,
-} from '../types.js'
+} from '../types/index.js'
 
 /////////////////////////////////////////////////
 

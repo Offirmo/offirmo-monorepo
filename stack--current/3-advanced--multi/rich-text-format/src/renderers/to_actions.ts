@@ -10,7 +10,7 @@ import {
 	type WalkerCallbacks,
 	type WalkerReducer,
 } from '../walk.js'
-import { type CheckedNode, type NodeLike } from '../types.js'
+import { type CheckedNode, type NodeLike } from '../types/index.js'
 
 /////////////////////////////////////////////////
 

@@ -7,7 +7,7 @@ import {
 	type Hints,
 	type CheckedNode,
 	type Node,
-} from '../types.js'
+} from '../types/index.js'
 
 /////////////////////////////////////////////////
 

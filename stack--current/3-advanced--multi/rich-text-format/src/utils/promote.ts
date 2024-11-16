@@ -4,8 +4,8 @@ import {
 	NodeType,
 	type NodeLike,
 	type Node,
-} from '../types.js'
-import { assertꓽisꓽNode } from '../type-guards.js'
+} from '../types/index.js'
+import { assertꓽisꓽNode } from '../types/guards.js'
 
 /////////////////////////////////////////////////
 
@@ -19,8 +19,9 @@ function promoteꓽto_node($raw: NodeLike): Node {
 			$content: $raw,
 		}
 
-	// it could be anything bc Node is very lax, better check
+	// it could be anything bc type Node is very lax, better check
 	assertꓽisꓽNode($raw)
+
 	return $raw
 }
 

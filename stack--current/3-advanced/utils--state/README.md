@@ -12,6 +12,8 @@ import {
 	BaseRootState,
 	complete_or_cancel_eager_mutation_propagating_possible_child_mutation,
 } from '@offirmo-private/state-utils'
+
+import { getꓽmutable_copy } from '@offirmo-private/state-utils'
 ```
 
 ## Concepts

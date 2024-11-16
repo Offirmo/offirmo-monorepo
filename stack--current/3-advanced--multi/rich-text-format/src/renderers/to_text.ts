@@ -1,4 +1,4 @@
-import { type Node, type CheckedNode } from '../types.js'
+import { type Node, type CheckedNode } from '../types/index.js'
 import { NODE_TYPE_to_DISPLAY_MODE } from '../consts.js'
 import {
 	type BaseRenderingOptions,

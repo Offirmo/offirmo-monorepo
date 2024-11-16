@@ -17,11 +17,13 @@ const NodeType = Enum(
 	'ol',
 	'ul',
 	'hr',
+	'emoji', // unfortunately, as of 2024, emojis are still very hard to handle properly, hence deserving a special node type (optional but recommended)
+	         // this node type represent a single emoji
 
 	// special
-	'br',
+	'br', // do not abuse, use other semantic elements (heading, lists) as much as possible before this one
 
-	// internally used, don't mind, don't use directly
+	// internally used, don't use directly
 	'li',
 )
 type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
@@ -32,7 +34,8 @@ type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 interface Hints {
 	[k: string]: any
 
-	bullets_style?: 'none' // to remove bullets from lists
+	bullets_style?: 'none' // for ul, to remove or customize bullets
+
 
 	// TODO clarify
 	// known:
