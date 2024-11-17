@@ -39,8 +39,10 @@ function _refresh_achievements(state: Immutable<State>): Immutable<State> {
 			engagement = enqueueEngagement(engagement,
 					getꓽengagement_template(EngagementTemplateKey.achievement_unlocked),
 					{
-						icon,
-						name,
+						$sub: {
+							icon,
+							name,
+						},
 					},
 				)
 		}

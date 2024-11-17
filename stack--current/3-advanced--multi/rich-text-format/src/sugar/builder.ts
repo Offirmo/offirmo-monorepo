@@ -27,12 +27,12 @@ interface Builder {
 	// node ref is auto added into content
 	pushNode(node: Node, options?: CommonOptions): Builder
 
-	// nothing is added in content
+	// NOTHING is added into content
 	// useful for
 	// 1. lists
 	// 2. manual stuff
-	pushRawNode(node: Node, options?: CommonOptions): Builder
-	pushRawNodes(nodes: { [id: string]: Node }): Builder // batch version
+	pushRawNode(node: CheckedNode['$sub'][string], options?: CommonOptions): Builder
+	pushRawNodes(nodes: CheckedNode['$sub']): Builder // batch version
 
 	pushInlineFragment(str: string, options?: CommonOptions): Builder
 	pushBlockFragment(str: string, options?: CommonOptions): Builder

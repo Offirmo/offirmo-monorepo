@@ -7,11 +7,9 @@ import * as RichText from '../index.js'
 /////////////////////////////////////////////////
 
 describe(`${LIB} -- renderers -- to text`, () => {
-	let rendering_options = RichText.DEFAULT_RENDERING_OPTIONSⵧToText
+	let rendering_options = {}
 	beforeEach(() => {
-		rendering_options = {
-			...RichText.DEFAULT_RENDERING_OPTIONSⵧToText,
-		}
+		rendering_options = {}
 	})
 
 	const $DEMOⵧSIMPLE = (() => {

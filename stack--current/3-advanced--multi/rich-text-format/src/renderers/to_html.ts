@@ -144,10 +144,18 @@ const callbacksⵧto_html: Partial<WalkerCallbacks<State, RenderingOptionsⵧToH
 	on_nodeⵧexit,
 }
 
-function renderⵧto_html($doc: Node, options: RenderingOptionsⵧToHtml = DEFAULT_RENDERING_OPTIONSⵧToHtml): string {
-	return '<div class="o⋄rich-text o⋄children-spacing⁚flow">\n	'
-		+ walk<State, RenderingOptionsⵧToHtml>($doc, callbacksⵧto_html, options).str
-		+ '\n</div>\n'
+function renderⵧto_html($doc: Node, options: Partial<RenderingOptionsⵧToHtml> = {}): string {
+	const full_options: RenderingOptionsⵧToHtml = {
+		...DEFAULT_RENDERING_OPTIONSⵧToHtml,
+		...options,
+	}
+
+	// TODO review classes
+	return `
+<div class="o⋄rich-text o⋄children-spacing⁚flow">
+	${walk<State, RenderingOptionsⵧToHtml>($doc, callbacksⵧto_html, full_options).str}
+</div>
+`
 }
 
 /////////////////////////////////////////////////

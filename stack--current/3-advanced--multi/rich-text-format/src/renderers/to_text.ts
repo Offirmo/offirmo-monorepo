@@ -241,13 +241,17 @@ const callbacksⵧto_text: Partial<WalkerCallbacks<State, RenderingOptionsⵧToT
 
 function renderⵧto_text(
 	$doc: Node,
-	options: RenderingOptionsⵧToText = DEFAULT_RENDERING_OPTIONSⵧToText,
+	options: Partial<RenderingOptionsⵧToText> = {},
 	callback_overrides: Partial<WalkerCallbacks<State, RenderingOptionsⵧToText>> = {},
 ): string {
+	const full_options: RenderingOptionsⵧToText = {
+		...DEFAULT_RENDERING_OPTIONSⵧToText,
+		...options,
+	}
 	return walk<State, RenderingOptionsⵧToText>($doc, {
 		...callbacksⵧto_text,
 		...callback_overrides,
-	}, options).str
+	}, full_options).str
 }
 
 /////////////////////////////////////////////////

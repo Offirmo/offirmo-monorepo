@@ -10,7 +10,6 @@ import {
 
 import { normalizeꓽnode } from '../utils/normalize.js'
 import { promoteꓽto_node } from '../utils/promote.js'
-import { Action, EmbeddedReducerAction, HyperlinkAction, ReducerAction, RenderingOptionsⵧToActions } from './to_actions'
 
 /////////////////////////////////////////////////
 // "walk" is the foundation on which all the renderer are based
@@ -268,8 +267,11 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 				return { $content: `{{??${sub_node_id}??}}` }
 			}
 
-			//console.error($node, { $content, sub_node_id })
-			throw new Error(`${LIB}: syntax error in content "${$content}", it's referencing an unknown sub-node "${sub_node_id}"!`)
+			if (true) {
+				console.error('shouldꓽrecover_from_unknown_sub_nodes FAILURE',)
+				console.error($node, { $content, sub_node_id })
+			}
+			throw new Error(`${LIB}: syntax error in content "${$content}", it's referencing an unknown sub-node "${sub_node_id}"! (recover mode = ${options.shouldꓽrecover_from_unknown_sub_nodes})`)
 		})())
 
 		let sub_state = _walk($sub_node, callbacks, options, {
@@ -437,17 +439,26 @@ function _walk<State, RenderingOptions extends BaseRenderingOptions>(
 function walk<State, RenderingOptions extends BaseRenderingOptions>(
 	$raw_node: Readonly<Node>,
 	raw_callbacks: Readonly<Partial<WalkerCallbacks<State, RenderingOptions>>>,
-	options: Readonly<RenderingOptions> = {} as any,
+	options: RenderingOptions, // this internal fn can't default unknown type, so we expect the caller to give us full options
 ) {
-	if (!Object.keys(raw_callbacks).every(k => k === 'resolve_unknown_subnode' || k.startsWith('on_')))
-		console.warn(`${LIB} Unexpected unrecognized callbacks, check the API!`)
+	assert(
+		Object.keys(raw_callbacks).every(k => k === 'resolve_unknown_subnode' || k.startsWith('on_')),
+		`${LIB}[walk]: custom callbacks should match the expected format, check the API!`
+	)
 
 	const callbacks: WalkerCallbacks<State, RenderingOptions> = {
 		..._getꓽcallbacksⵧdefault<State, RenderingOptions>(),
 		...raw_callbacks as any as WalkerCallbacks<State, RenderingOptions>,
 	}
 
+	assert(
+		// detect incorrectly built options (actual issue before rewrite in 2024)
+		options.shouldꓽrecover_from_unknown_sub_nodes !== undefined,
+		`${LIB}[walk]: options should be a fully initialized options object!`
+	)
+
 	const $root_node = normalizeꓽnode($raw_node)
+
 	return _walk($root_node, callbacks, options, {
 		$parent_node: null,
 		$id: 'root',

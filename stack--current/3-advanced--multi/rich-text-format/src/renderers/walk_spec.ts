@@ -5,16 +5,30 @@ import { LIB } from '../consts.js'
 /////////////////////////////////////////////////
 
 import * as RichText from '../index.js'
-import { walk, WalkerCallbacks } from './walk.js'
-import { BaseRenderingOptions, Node } from '../index.js'
+import {
+	walk,
+	type WalkerCallbacks,
+} from './walk.js'
+import {
+	type BaseRenderingOptions,
+	type Node,
+} from '../index.js'
 
 describe(`${LIB} -- renderers -- walker (internal)`, function () {
-
 	interface State {}
 	interface Options extends BaseRenderingOptions {}
 	const callbacks: Partial<WalkerCallbacks<State, Options>> = {
 		on_nodeⵧenter() { return {} as State },
 	}
+
+	let rendering_options: Options = {
+		shouldꓽrecover_from_unknown_sub_nodes: false,
+	}
+	beforeEach(() => {
+		rendering_options = {
+			shouldꓽrecover_from_unknown_sub_nodes: false,
+		}
+	})
 
 	describe('walking through all nodes in order', function () {
 
@@ -76,7 +90,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 				},
 			}
 
-			expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unknown sub-node')
+			expect(() => walk<State, Options>($doc, {...callbacks}, rendering_options)).to.throw('unknown sub-node')
 		})
 
 		it('should work -- handling missing -- auto recovery -- placeholder', () => {
@@ -160,7 +174,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 			const $doc = {
 				$content: '⎨⎨foo',
 			}
-			expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
+			expect(() => walk<State, Options>($doc, {...callbacks}, rendering_options)).to.throw('unmatched')
 		})
 		it('should detect unmatched ⎨⎨⎬⎬ -- ⎨⎨ 2', () => {
 			const $doc = {
@@ -169,7 +183,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 					'foo': {}
 				},
 			}
-			expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
+			expect(() => walk<State, Options>($doc, {...callbacks}, rendering_options)).to.throw('unmatched')
 		})
 
 		it('should detect unmatched ⎨⎨⎬⎬ -- ⎬⎬ 1', () => {
@@ -177,7 +191,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 			const $doc = {
 				$content: 'foo⎬⎬',
 			}
-			expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
+			expect(() => walk<State, Options>($doc, {...callbacks}, rendering_options)).to.throw('unmatched')
 		})
 		it('should detect unmatched ⎨⎨⎬⎬ -- ⎬⎬ 2a', () => {
 
@@ -187,7 +201,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 					'foo': {}
 				},
 			}
-			expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
+			expect(() => walk<State, Options>($doc, {...callbacks}, rendering_options)).to.throw('unmatched')
 		})
 		it('should detect unmatched ⎨⎨⎬⎬ -- ⎬⎬ 2b', () => {
 
@@ -197,7 +211,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 					'foo': {}
 				},
 			}
-			expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
+			expect(() => walk<State, Options>($doc, {...callbacks}, rendering_options)).to.throw('unmatched')
 		})
 
 		it('should detect reversed ⎨⎨⎬⎬', () => {
@@ -208,7 +222,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 					'foo': {}
 				},
 			}
-			expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unmatched')
+			expect(() => walk<State, Options>($doc, {...callbacks}, rendering_options)).to.throw('unmatched')
 		})
 	})
 })

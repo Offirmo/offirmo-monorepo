@@ -125,11 +125,15 @@ const callbacksⵧto_actions: Partial<WalkerCallbacks<State, RenderingOptionsⵧ
 	on_type,
 }
 
-function renderⵧto_actions($doc: NodeLike, options: RenderingOptionsⵧToActions = DEFAULT_RENDERING_OPTIONSⵧToActions): Action[] {
+function renderⵧto_actions($doc: NodeLike, options: Partial<RenderingOptionsⵧToActions> = {}): Action[] {
 	if (typeof $doc !== 'object') {
 		return []
 	}
-	return walk<State, RenderingOptionsⵧToActions>($doc, callbacksⵧto_actions, options).actions
+	const full_options: RenderingOptionsⵧToActions = {
+		...DEFAULT_RENDERING_OPTIONSⵧToActions,
+		...options,
+	}
+	return walk<State, RenderingOptionsⵧToActions>($doc, callbacksⵧto_actions, full_options).actions
 }
 
 /////////////////////////////////////////////////
