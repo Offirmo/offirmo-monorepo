@@ -71,7 +71,7 @@ type NodeLike = Node | string | number
 ///////
 
 // aliases
-type Document<Hints = {[k: string]: any}> = Node
+type Document = Node
 
 /////////////////////////////////////////////////
 

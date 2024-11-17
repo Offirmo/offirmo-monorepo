@@ -11,7 +11,7 @@ import {
 
 /////////////////////////////////////////////////
 
-function normalizeꓽnode($raw_node: Readonly<Node>, default_hints: Hints = {} as any): CheckedNode {
+function normalizeꓽnode($raw_node: Readonly<Node>, default_hints: Hints = {}): CheckedNode {
 	assert(!!$raw_node, `normalize_node(): undefined or null!`)
 
 	const {

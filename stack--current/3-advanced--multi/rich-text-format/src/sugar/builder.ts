@@ -5,9 +5,10 @@ import {
 	type Hints,
 	type CheckedNode,
 	type Node,
-	type Document,
+	type Document, NodeLike,
 } from '../types/index.js'
 import { promoteꓽto_node } from '../utils/promote.js'
+import { normalizeꓽnode } from '../utils/normalize.js'
 
 /////////////////////////////////////////////////
 
@@ -23,14 +24,15 @@ interface Builder {
 	pushText(str: string): Builder
 	pushEmoji(e: string, options?: CommonOptions): Builder
 
+	// node ref is auto added into content
+	pushNode(node: Node, options?: CommonOptions): Builder
+
 	// nothing is added in content
 	// useful for
 	// 1. lists
 	// 2. manual stuff
 	pushRawNode(node: Node, options?: CommonOptions): Builder
-
-	// node ref is auto added into content
-	pushNode(node: Node, options?: CommonOptions): Builder
+	pushRawNodes(nodes: { [id: string]: Node }): Builder // batch version
 
 	pushInlineFragment(str: string, options?: CommonOptions): Builder
 	pushBlockFragment(str: string, options?: CommonOptions): Builder
@@ -48,17 +50,7 @@ interface Builder {
 
 /////////////////////////////////////////////////
 
-function create($type: NodeType): Builder {
-
-	const $node: CheckedNode = {
-		$v: SCHEMA_VERSION,
-		$type,
-		$classes: [],
-		$content: '',
-		$sub: {},
-		$hints: {} as any,
-	}
-
+function _create($node: CheckedNode): Builder {
 	const builder: Builder = {
 		addClass,
 		addHints,
@@ -66,8 +58,9 @@ function create($type: NodeType): Builder {
 		pushText,
 		pushEmoji,
 
-		pushRawNode,
 		pushNode,
+		pushRawNode,
+		pushRawNodes,
 
 		pushInlineFragment,
 		pushBlockFragment,
@@ -90,7 +83,7 @@ function create($type: NodeType): Builder {
 		return builder
 	}
 
-	function addHints(hints: { [k: string]: any }): Builder {
+	function addHints(hints: Hints): Builder {
 		$node.$hints = {
 			...$node.$hints,
 			...hints,
@@ -119,10 +112,17 @@ function create($type: NodeType): Builder {
 
 
 	function pushRawNode(node: Node, options: CommonOptions = {}): Builder {
-		const id = options.id || ('000' + ++sub_id).slice(-4)
+		const id = options.id || String(++sub_id).padStart(4, '0')
 		$node.$sub[id] = node
 		if (options.classes)
 			$node.$classes.push(...options.classes)
+		return builder
+	}
+	function pushRawNodes(nodes: { [id: string]: Node }): Builder {
+		$node.$sub = {
+			...$node.$sub,
+			...nodes,
+		}
 		return builder
 	}
 
@@ -192,6 +192,28 @@ function create($type: NodeType): Builder {
 	return builder
 }
 
+function create($type: NodeType): Builder {
+
+	const $node: CheckedNode = {
+		$v: SCHEMA_VERSION,
+		$type,
+		$classes: [],
+		$content: '',
+		$sub: {},
+		$hints: {} as Hints,
+	}
+
+	return _create($node)
+}
+
+function createⵧfrom_content($raw: NodeLike): Builder {
+	return _create(
+		normalizeꓽnode(
+			promoteꓽto_node($raw)
+		)
+	)
+}
+
 function fragmentⵧinline(): Builder {
 	return create(NodeType.fragmentⵧinline)
 }
@@ -242,6 +264,7 @@ export {
 	type Builder,
 
 	create,
+	createⵧfrom_content,
 
 	fragmentⵧinline,
 	fragmentⵧblock,
