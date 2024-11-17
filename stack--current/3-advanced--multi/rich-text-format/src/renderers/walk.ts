@@ -9,6 +9,8 @@ import {
 } from '../types/index.js'
 
 import { normalizeꓽnode } from '../utils/normalize.js'
+import { promoteꓽto_node } from '../utils/promote.js'
+import { Action, EmbeddedReducerAction, HyperlinkAction, ReducerAction, RenderingOptionsⵧToActions } from './to_actions'
 
 /////////////////////////////////////////////////
 // "walk" is the foundation on which all the renderer are based
@@ -18,8 +20,18 @@ import { normalizeꓽnode } from '../utils/normalize.js'
 
 // common
 export interface BaseRenderingOptions {
-	shouldꓽrecover_from_unknown_sub_nodes: boolean
+	// what should happen if a sub-node could not be resolved?
+	// (final, after calling resolve_unknown_subnode())
+	shouldꓽrecover_from_unknown_sub_nodes:
+		| false // don't
+		| 'root' // allow looking at the root's sub-nodes, common use case is adding a few extraneous base sub-nodes at the root (beware of infinite loops)
+		| 'placeholder' // NOT RECOMMENDED replace with an ugly placeholder. Useful if we can't afford to fail.
+
 }
+
+const DEFAULT_RENDERING_OPTIONSⵧWalk= Object.freeze<BaseRenderingOptions>({
+	shouldꓽrecover_from_unknown_sub_nodes: 'root',
+})
 
 export interface BaseParams<State> {
 	state: State
@@ -165,6 +177,17 @@ interface InternalWalkState {
 	$parent_node: Readonly<CheckedNode> | null,
 	$id: string,
 	depth: number,
+
+	$root_node: Readonly<CheckedNode>, // for sub-node resolution "root" mode
+	/*
+		const context = parent_state
+		? Object.create(parent_state.context)
+		: Object.create(null) // NO auto-injections here, let's keep it simple. See core & common
+
+	return {
+		context,
+	}
+	 */
 }
 
 function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
@@ -172,6 +195,7 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 	callbacks: WalkerCallbacks<State, RenderingOptions>,
 	state: State,
 	depth: number,
+	$root_node: CheckedNode,
 	options: RenderingOptions,
 ) {
 	const { $content, $sub: $sub_nodes } = $node
@@ -207,7 +231,7 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 		const [ sub_node_id, ...$filters ] = split_end.shift()!.split('|')
 		assert(sub_node_id, `${LIB}: syntax error in content "${$content}", empty ⎨⎨⎬⎬!`)
 
-		let $sub_node = (function _resolve_sub_node_by_id(): Node {
+		let $sub_node = promoteꓽto_node((function _resolve_sub_node_by_id(): CheckedNode['$sub'][string] {
 			if (sub_node_id === 'br') {
 				assert(!$sub_nodes[sub_node_id], `${LIB}: error in content "${$content}", having a reserved subnode "${sub_node_id}"!`)
 				return SUB_NODE_BR
@@ -222,7 +246,11 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 				return $sub_nodes[sub_node_id]!
 			}
 
-			// sub node is missing, advance resolution:
+			// sub node is missing on the immediate node, advanced resolution:
+
+			if (options.shouldꓽrecover_from_unknown_sub_nodes === 'root' && $root_node.$sub[sub_node_id]) {
+				return $root_node.$sub[sub_node_id]!
+			}
 
 			const candidate_from_resolver = callbacks.resolve_unknown_subnode(
 				sub_node_id,
@@ -236,18 +264,19 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 			if (candidate_from_resolver)
 				return candidate_from_resolver
 
-			if (options.shouldꓽrecover_from_unknown_sub_nodes) {
+			if (options.shouldꓽrecover_from_unknown_sub_nodes === 'placeholder') {
 				return { $content: `{{??${sub_node_id}??}}` }
 			}
 
 			//console.error($node, { $content, sub_node_id })
 			throw new Error(`${LIB}: syntax error in content "${$content}", it's referencing an unknown sub-node "${sub_node_id}"!`)
-		})()
+		})())
 
 		let sub_state = _walk($sub_node, callbacks, options, {
 			$parent_node: $node,
 			$id: sub_node_id,
 			depth: depth + 1,
+			$root_node,
 		})
 
 		//console.log('[filters', $filters, '])
@@ -312,6 +341,7 @@ function _walk<State, RenderingOptions extends BaseRenderingOptions>(
 		$parent_node,
 		$id,
 		depth,
+		$root_node,
 	}: InternalWalkState,
 ) {
 	const $node = normalizeꓽnode($raw_node)
@@ -369,6 +399,7 @@ function _walk<State, RenderingOptions extends BaseRenderingOptions>(
 				$parent_node: $node,
 				depth: depth +1,
 				$id: key,
+				$root_node,
 			})
 			state = callbacks.on_concatenateⵧsub_node({
 				state,
@@ -381,7 +412,7 @@ function _walk<State, RenderingOptions extends BaseRenderingOptions>(
 		})
 	}
 	else
-		state = _walk_content($node, callbacks, state, depth, options)
+		state = _walk_content($node, callbacks, state, depth, $root_node, options)
 
 	state = $classes.reduce(
 		(state, $class) => callbacks.on_classⵧafter({ $class, state, $node, depth }, options),
@@ -416,7 +447,13 @@ function walk<State, RenderingOptions extends BaseRenderingOptions>(
 		...raw_callbacks as any as WalkerCallbacks<State, RenderingOptions>,
 	}
 
-	return _walk($raw_node, callbacks, options, { $parent_node: null, $id: 'root', depth: 0 })
+	const $root_node = normalizeꓽnode($raw_node)
+	return _walk($root_node, callbacks, options, {
+		$parent_node: null,
+		$id: 'root',
+		depth: 0,
+		$root_node,
+	})
 }
 /////////////////////////////////////////////////
 
@@ -426,5 +463,6 @@ export {
 	type Node,
 	type WalkerReducer,
 	type WalkerCallbacks,
+	DEFAULT_RENDERING_OPTIONSⵧWalk,
 	walk,
 }

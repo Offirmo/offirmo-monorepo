@@ -4,12 +4,14 @@ import {
 	type OnConcatenateStringParams,
 	type OnConcatenateSubNodeParams,
 	type OnNodeExitParams,
-	walk,
 	type WalkerCallbacks,
 	type WalkerReducer,
+	walk,
+	DEFAULT_RENDERING_OPTIONSⵧWalk,
 } from './walk.js'
 
 import { isꓽlink, isꓽlistⵧKV, NODE_TYPE_to_DISPLAY_MODE } from './common.js'
+import { promoteꓽto_node } from '../utils/promote.js'
 
 /////////////////////////////////////////////////
 
@@ -20,7 +22,7 @@ interface RenderingOptionsⵧToText extends BaseRenderingOptions {
 		| 'markdown'
 }
 const DEFAULT_RENDERING_OPTIONSⵧToText = Object.freeze<RenderingOptionsⵧToText>({
-	shouldꓽrecover_from_unknown_sub_nodes: false,
+	...DEFAULT_RENDERING_OPTIONSⵧWalk,
 	style: 'advanced',
 })
 
@@ -138,8 +140,8 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 				//console.log({li_node})
 				const kv_node = li_node.$sub.content! as CheckedNode
 
-				const key_node = kv_node.$sub.key!
-				const value_node = kv_node.$sub.value!
+				const key_node = promoteꓽto_node(kv_node.$sub.key!)
+				const value_node = promoteꓽto_node(kv_node.$sub.value!)
 
 				const key_text = renderⵧto_text(key_node)
 				const value_text = renderⵧto_text(value_node)

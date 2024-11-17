@@ -6,14 +6,19 @@ import {
 } from '../types/index.js'
 
 import {
-	WalkerCallbacks,
-	WalkerReducer,
-	OnRootExitParams,
-	OnNodeEnterParams,
-	OnNodeExitParams, OnConcatenateStringParams, OnConcatenateSubNodeParams, OnFilterParams,
-	OnClassParams,
-	OnTypeParams,
-	walk, BaseRenderingOptions,
+	type BaseRenderingOptions,
+	type WalkerCallbacks,
+	type WalkerReducer,
+	type OnRootExitParams,
+	type OnNodeEnterParams,
+	type OnNodeExitParams,
+	type OnConcatenateStringParams,
+	type OnConcatenateSubNodeParams,
+	type OnFilterParams,
+	type OnClassParams,
+	type OnTypeParams,
+	walk,
+	DEFAULT_RENDERING_OPTIONSⵧWalk,
 } from './walk.js'
 
 /////////////////////////////////////////////////
@@ -35,7 +40,7 @@ function debug_node_short($node: CheckedNode) {
 
 interface RenderingOptions extends BaseRenderingOptions {}
 const DEFAULT_RENDERING_OPTIONS= Object.freeze<RenderingOptions>({
-	shouldꓽrecover_from_unknown_sub_nodes: false,
+	...DEFAULT_RENDERING_OPTIONSⵧWalk,
 })
 
 type State = string

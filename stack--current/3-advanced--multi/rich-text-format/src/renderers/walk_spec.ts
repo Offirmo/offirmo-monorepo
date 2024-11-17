@@ -12,9 +12,6 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 
 	interface State {}
 	interface Options extends BaseRenderingOptions {}
-	const DEFAULT_OPTIONS: Options = {
-		shouldꓽrecover_from_unknown_sub_nodes: false,
-	}
 	const callbacks: Partial<WalkerCallbacks<State, Options>> = {
 		on_nodeⵧenter() { return {} as State },
 	}
@@ -82,7 +79,7 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 			expect(() => walk<State, Options>($doc, {...callbacks})).to.throw('unknown sub-node')
 		})
 
-		it('should work -- handling missing -- auto recovery', () => {
+		it('should work -- handling missing -- auto recovery -- placeholder', () => {
 			const $doc = {
 				$content: 'foo⎨⎨gꓽbar⎬⎬baz',
 				$sub: {
@@ -91,10 +88,28 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 			}
 
 			const str = RichText.renderⵧto_text($doc, {
-				shouldꓽrecover_from_unknown_sub_nodes: true,
+				shouldꓽrecover_from_unknown_sub_nodes: 'placeholder',
 				style: 'basic',
 			})
 			expect(str).to.equal('foo{{??gꓽbar??}}baz')
+		})
+
+		it('should work -- handling missing -- auto recovery -- root', () => {
+			const $doc = {
+				$content: '⎨⎨greeting⎬⎬',
+				$sub: {
+					username: 'John',
+					greeting: {
+						$content: 'Hello, ⎨⎨username⎬⎬!',
+					}
+				},
+			}
+
+			const str = RichText.renderⵧto_text($doc, {
+				shouldꓽrecover_from_unknown_sub_nodes: 'root',
+				style: 'basic',
+			})
+			expect(str).to.equal('Hello, John!')
 		})
 
 		it('should work -- handling missing -- resolver', () => {

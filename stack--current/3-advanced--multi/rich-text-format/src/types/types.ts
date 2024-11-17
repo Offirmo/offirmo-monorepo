@@ -58,8 +58,8 @@ type CheckedNode = {
 	$content: string
 	$sub: {
 		// sub-nodes MAYBE referenced in the content by their id
-		// (extraneous sub-nodes are allowed for convenience)
-		[id: string]: Partial<CheckedNode>
+		// Note: extraneous sub-nodes are allowed for convenience, excess will not be checked
+		[id: string]: NodeLike
 	}
 
 	// hints for renderers. May or may not be used.

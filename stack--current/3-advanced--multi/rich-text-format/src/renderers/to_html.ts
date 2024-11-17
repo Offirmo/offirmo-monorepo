@@ -3,10 +3,12 @@ import {
 	type BaseRenderingOptions,
 	NodeType,
 	type OnConcatenateStringParams,
-	type OnConcatenateSubNodeParams, OnNodeExitParams,
-	walk,
+	type OnConcatenateSubNodeParams,
+	type OnNodeExitParams,
 	type WalkerCallbacks,
 	type WalkerReducer,
+	walk,
+	DEFAULT_RENDERING_OPTIONSⵧWalk,
 } from './walk.js'
 import { type CheckedNode, type Node } from '../types/index.js'
 
@@ -21,7 +23,7 @@ const MANY_TABS = '																																							'
 
 interface RenderingOptionsⵧToHtml extends BaseRenderingOptions {}
 const DEFAULT_RENDERING_OPTIONSⵧToHtml= Object.freeze<RenderingOptionsⵧToHtml>({
-	shouldꓽrecover_from_unknown_sub_nodes: false,
+	...DEFAULT_RENDERING_OPTIONSⵧWalk,
 })
 
 type State = {

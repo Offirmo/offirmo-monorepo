@@ -40,15 +40,16 @@ function isꓽlistⵧKV($node: CheckedNode): boolean {
 		return false
 
 	return Object.values($node.$sub)
-		.every($node => $node.$content === '⎨⎨key⎬⎬: ⎨⎨value⎬⎬')
+		.every($node => ($node as any)?.$content === '⎨⎨key⎬⎬: ⎨⎨value⎬⎬')
 }
 
+// TODO what is that already?
 function isꓽlistⵧuuid($node: CheckedNode): boolean {
 	if (!isꓽlist($node))
 		return false
 
 	return Object.values($node.$sub)
-		.every($node => !!$node.$hints?.uuid)
+		.every($node => !!($node as any)?.$hints?.uuid)
 }
 
 /////////////////////////////////////////////////

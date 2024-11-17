@@ -6,9 +6,10 @@ import {
 	type OnConcatenateStringParams,
 	type OnConcatenateSubNodeParams,
 	type OnTypeParams,
-	walk,
 	type WalkerCallbacks,
 	type WalkerReducer,
+	walk,
+	DEFAULT_RENDERING_OPTIONSⵧWalk,
 } from './walk.js'
 import { type CheckedNode, type NodeLike } from '../types/index.js'
 
@@ -48,7 +49,7 @@ interface RenderingOptionsⵧToActions extends BaseRenderingOptions {
 }
 
 const DEFAULT_RENDERING_OPTIONSⵧToActions= Object.freeze<RenderingOptionsⵧToActions>({
-	shouldꓽrecover_from_unknown_sub_nodes: false,
+	...DEFAULT_RENDERING_OPTIONSⵧWalk,
 	getꓽactions: ($node: CheckedNode): Action[] => {
 		const actions: Action[] = []
 
