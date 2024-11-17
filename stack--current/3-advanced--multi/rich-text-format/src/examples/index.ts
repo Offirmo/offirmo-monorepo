@@ -122,8 +122,7 @@ const SUB_UL_ACTIONABLE_ITEMS: RichText.Document['$sub'] = {
 /////// COMPLETE DOCS ///////
 
 const DOC_DEMO_BASE_TYPES: RichText.Document = {
-	$type: 'fragmentⵧinline',
-	$classes: [],
+	$type: 'fragmentⵧblock',
 	$content: '⎨⎨fragment1⎬⎬⎨⎨fragment2⎬⎬',
 	$sub: {
 		fragment1: {

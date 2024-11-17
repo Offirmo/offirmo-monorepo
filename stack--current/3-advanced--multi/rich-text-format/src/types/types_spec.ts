@@ -4,7 +4,7 @@ import { LIB } from '../consts.js'
 
 import {
 	Node,
-} from './index.js'
+} from './types.js'
 
 /////////////////////////////////////////////////
 

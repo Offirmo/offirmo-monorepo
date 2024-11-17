@@ -7,7 +7,7 @@ import {
 	walk,
 	type WalkerCallbacks,
 	type WalkerReducer,
-} from '../walk.js'
+} from './walk.js'
 import { type CheckedNode, type Node } from '../types/index.js'
 
 import { isꓽlist, isꓽlink, isꓽlistⵧKV, isꓽlistⵧuuid } from './common.js'

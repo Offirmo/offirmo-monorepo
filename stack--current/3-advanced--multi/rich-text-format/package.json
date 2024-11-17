@@ -27,6 +27,7 @@
 	},
 	"dependencies": {
 		"@offirmo-private/normalize-string": "*",
+		"@offirmo-private/ts-types": "*",
 		"memoize-one": "^6",
 		"typescript-string-enums": "^1"
 	},
@@ -46,7 +47,6 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/prettify-any": "*",
-		"@offirmo-private/ts-types": "*",
 		"@offirmo/practical-logger-browser": "^3",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",

@@ -2,16 +2,16 @@ import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from '../consts.js'
-import { type Node } from './index.js'
+import { type Node } from './types.js'
 
 /////////////////////////////////////////////////
 
 const EXPECTED_FIELDS = new Set<string>([
 	'$v',
 	'$type',
-	'$classes',
 	'$content',
 	'$sub',
+	'$classes',
 	'$hints',
 ])
 function assertꓽisꓽNode(candidate: Immutable<any>): asserts candidate is Node {

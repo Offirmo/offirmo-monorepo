@@ -14,11 +14,9 @@ import {
 	OnClassParams,
 	OnTypeParams,
 	walk, BaseRenderingOptions,
-} from '../walk.js'
+} from './walk.js'
 
 /////////////////////////////////////////////////
-
-const MANY_SPACES = '                                                                                                '
 
 function indent(n: number) {
 	return '' // indentation is provided for free by console.group() / console.groupCollapsed()

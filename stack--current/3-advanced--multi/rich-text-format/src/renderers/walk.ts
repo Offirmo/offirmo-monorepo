@@ -1,14 +1,14 @@
 import assert from 'tiny-invariant'
 
-import { LIB } from './consts.js'
+import { LIB } from '../consts.js'
 
 import {
 	NodeType,
 	type CheckedNode,
 	type Node,
-} from './types/index.js'
+} from '../types/index.js'
 
-import { normalizeꓽnode } from './utils/normalize.js'
+import { normalizeꓽnode } from '../utils/normalize.js'
 
 /////////////////////////////////////////////////
 // "walk" is the foundation on which all the renderer are based
@@ -309,9 +309,9 @@ function walk<State, RenderingOptions extends BaseRenderingOptions>(
 		$id = 'root',
 		depth = 0,
 	}: {
-	$parent_node?: Readonly<CheckedNode> | undefined,
-	$id?: string,
-	depth?: number,
+		$parent_node?: Readonly<CheckedNode> | undefined,
+		$id?: string,
+		depth?: number,
 	} = {},
 ) {
 

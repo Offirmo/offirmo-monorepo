@@ -7,29 +7,31 @@ import {
 	type Hints,
 	type CheckedNode,
 	type Node,
-} from '../types/index.js'
+} from '../types/types.js'
 
 /////////////////////////////////////////////////
 
-function normalizeꓽnode($raw_node: Readonly<Node>, default_hints: Hints = {}): CheckedNode {
-	assert(!!$raw_node, `normalize_node(): undefined or null!`)
+/** normalize the given node (not deeply, only 1st level)
+ */
+function normalizeꓽnode($raw_node: Readonly<Node>): CheckedNode {
+	assert(!!$raw_node, `normalize_node(): param should be defined!`)
 
 	const {
-		$v = 1,
+		// extract fields
+		$v = 1, // assume oldest format (until we can recognize the version)
 		$type = NodeType.fragmentⵧinline,
-		$classes = [],
 		$content = '',
 		$sub = {},
-		$hints = default_hints,
+		$classes = [],
+		$hints = {},
 		...rest
 	} = $raw_node
 	assert(Object.keys(rest).length === 0, `${LIB}: node contain extraneous keys! (${Object.keys(rest).join(',')})`)
 
-	// TODO migration
 	if ($v !== SCHEMA_VERSION)
 		throw new Error(`${LIB}: unknown schema version "${$v}"!`)
 
-	// TODO validation
+	// validation: not our responsibility
 
 	const $node: CheckedNode = {
 		$v,

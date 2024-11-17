@@ -1,8 +1,31 @@
 import {
 	type CheckedNode,
-} from '../types/index.js'
+} from '../types/types.js'
 
 /////////////////////////////////////////////////
+
+const NODE_TYPE_to_DISPLAY_MODE: Readonly<{ [k: string]: 'inline' | 'block' }> = {
+
+	// classic inlines
+	'fragmentⵧinline': 'inline',
+	'strong':          'inline',
+	'weak':            'inline',
+	'em':              'inline',
+	'emoji':           'inline',
+
+	// classic blocks
+	'fragmentⵧblock':  'block',
+	'heading':         'block',
+	'hr':              'block',
+	'ol':              'block',
+	'ul':              'block',
+
+	// special
+	'br':              'inline',
+
+	// internally used, don't mind
+	'li':              'block',
+}
 
 function isꓽlink($node: CheckedNode): boolean {
 	return !!$node.$hints.href
@@ -31,6 +54,7 @@ function isꓽlistⵧuuid($node: CheckedNode): boolean {
 /////////////////////////////////////////////////
 
 export {
+	NODE_TYPE_to_DISPLAY_MODE,
 	isꓽlist,
 	isꓽlink,
 	isꓽlistⵧKV,

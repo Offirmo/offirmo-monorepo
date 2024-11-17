@@ -1,5 +1,4 @@
 import { type Node, type CheckedNode } from '../types/index.js'
-import { NODE_TYPE_to_DISPLAY_MODE } from '../consts.js'
 import {
 	type BaseRenderingOptions,
 	type OnConcatenateStringParams,
@@ -8,9 +7,9 @@ import {
 	walk,
 	type WalkerCallbacks,
 	type WalkerReducer,
-} from '../walk.js'
+} from './walk.js'
 
-import { isꓽlink, isꓽlistⵧKV } from './common.js'
+import { isꓽlink, isꓽlistⵧKV, NODE_TYPE_to_DISPLAY_MODE } from './common.js'
 
 /////////////////////////////////////////////////
 

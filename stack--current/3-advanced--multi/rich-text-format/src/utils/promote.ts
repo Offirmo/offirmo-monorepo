@@ -4,8 +4,8 @@ import {
 	NodeType,
 	type NodeLike,
 	type Node,
+	assertꓽisꓽNode
 } from '../types/index.js'
-import { assertꓽisꓽNode } from '../types/guards.js'
 
 /////////////////////////////////////////////////
 
