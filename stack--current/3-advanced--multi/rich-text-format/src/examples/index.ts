@@ -154,7 +154,7 @@ const DOC_DEMO_BASE_TYPES: RichText.Document = {
 					$type: 'emoji',
 					$content: '👍🏽', // thumbs up medium skin tone
 					$hints: {
-						// TODO
+						// TODO when emoji type is better specified
 					}
 				},
 				ul: {

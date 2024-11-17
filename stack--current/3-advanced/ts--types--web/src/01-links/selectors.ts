@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 
 
-import type { URI‿x, SchemeSpecificURIPart } from './types.js'
+import type { Uri‿x, SchemeSpecificURIPart } from './types.js'
 
 
 /////////////////////////////////////////////////
@@ -10,7 +10,7 @@ function getꓽscheme_specific_partⵧfrom_URLObject(url: URL): SchemeSpecificUR
 	throw new Error(`NIMP!`)
 }
 
-function getꓽscheme_specific_part(link: URI‿x): SchemeSpecificURIPart {
+function getꓽscheme_specific_part(link: Uri‿x): SchemeSpecificURIPart {
 	if (typeof link !== 'string')
 		return link
 

@@ -45,7 +45,7 @@ interface SchemeSpecificURIPart {
 }
 
 // "x" = "any [kind of format]"
-type URI‿x = Uri‿str | SchemeSpecificURIPart
+type Uri‿x = Uri‿str | SchemeSpecificURIPart
 
 /////////////////////////////////////////////////
 
@@ -55,7 +55,7 @@ type LinkRelation = string
  * see https://hypermedia.systems/
  */
 interface Hyperlink extends WithLang {
-	href: URI‿x
+	href: Uri‿x
 
 	/**
 	 * https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel
@@ -112,7 +112,7 @@ export {
 	type Uri‿str,
 	type Url‿str,
 
-	type URI‿x,
+	type Uri‿x,
 	type SchemeSpecificURIPart,
 	type LinkRelation,
 	type Hyperlink,

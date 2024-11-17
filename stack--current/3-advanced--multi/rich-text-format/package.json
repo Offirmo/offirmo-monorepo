@@ -28,6 +28,7 @@
 	"dependencies": {
 		"@offirmo-private/normalize-string": "*",
 		"@offirmo-private/ts-types": "*",
+		"@offirmo-private/ts-types-web": "*",
 		"memoize-one": "^6",
 		"typescript-string-enums": "^1"
 	},

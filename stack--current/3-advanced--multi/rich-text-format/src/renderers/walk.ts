@@ -65,7 +65,7 @@ export interface OnClassParams<State> extends BaseParams<State> {
 // TYPE
 export interface OnTypeParams<State> extends BaseParams<State> {
 	$type: NodeType
-	$parent_node: CheckedNode | undefined
+	$parent_node: CheckedNode | null
 }
 // unknown sub node resolver
 export interface UnknownSubNodeResolver<State, RenderingOptions> {
@@ -161,6 +161,11 @@ const SUB_NODE_HR: Node = Object.freeze<Node>({
 	$type: 'hr',
 })
 
+interface InternalWalkState {
+	$parent_node: Readonly<CheckedNode> | null,
+	$id: string,
+	depth: number,
+}
 
 function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 	$node: CheckedNode,
@@ -239,7 +244,7 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 			throw new Error(`${LIB}: syntax error in content "${$content}", it's referencing an unknown sub-node "${sub_node_id}"!`)
 		})()
 
-		let sub_state = walk($sub_node, callbacks, options, {
+		let sub_state = _walk($sub_node, callbacks, options, {
 			$parent_node: $node,
 			$id: sub_node_id,
 			depth: depth + 1,
@@ -299,22 +304,16 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 }
 
 
-function walk<State, RenderingOptions extends BaseRenderingOptions>(
+function _walk<State, RenderingOptions extends BaseRenderingOptions>(
 	$raw_node: Readonly<Node>,
-	raw_callbacks: Readonly<Partial<WalkerCallbacks<State, RenderingOptions>>>,
+	callbacks: Readonly<WalkerCallbacks<State, RenderingOptions>>,
 	options: Readonly<RenderingOptions> = {} as any,
-	// internal opts when recursing:
 	{
 		$parent_node,
-		$id = 'root',
-		depth = 0,
-	}: {
-		$parent_node?: Readonly<CheckedNode> | undefined,
-		$id?: string,
-		depth?: number,
-	} = {},
+		$id,
+		depth,
+	}: InternalWalkState,
 ) {
-
 	const $node = normalizeꓽnode($raw_node)
 	const {
 		$type,
@@ -322,22 +321,14 @@ function walk<State, RenderingOptions extends BaseRenderingOptions>(
 		$sub: $sub_nodes,
 	} = $node
 
-	// quick check
-	if (!Object.keys(raw_callbacks).every(k => k === 'resolve_unknown_subnode' || k.startsWith('on_')))
-		console.warn(`${LIB} Unexpected unrecognized callbacks, check the API!`)
-	let callbacks: WalkerCallbacks<State, RenderingOptions> = raw_callbacks as any as WalkerCallbacks<State, RenderingOptions>
 	const isRoot = !$parent_node
 	if (isRoot) {
-		callbacks = {
-			..._getꓽcallbacksⵧdefault<State, RenderingOptions>(),
-			...callbacks,
-		}
 		callbacks.on_rootⵧenter(options)
 	}
 
 	let state = callbacks.on_nodeⵧenter({ $node, $id, depth }, options)
 
-	// TODO class begin / start ?
+	// TODO one day if needed: class begin / start
 
 	state = $classes.reduce(
 		(state, $class) => callbacks.on_classⵧbefore({
@@ -374,7 +365,7 @@ function walk<State, RenderingOptions extends BaseRenderingOptions>(
 					content: $sub_nodes[key]!,
 				},
 			}
-			const sub_state = walk( $sub_node, callbacks, options, {
+			const sub_state = _walk( $sub_node, callbacks, options, {
 				$parent_node: $node,
 				depth: depth +1,
 				$id: key,
@@ -411,6 +402,22 @@ function walk<State, RenderingOptions extends BaseRenderingOptions>(
 	return state
 }
 
+
+function walk<State, RenderingOptions extends BaseRenderingOptions>(
+	$raw_node: Readonly<Node>,
+	raw_callbacks: Readonly<Partial<WalkerCallbacks<State, RenderingOptions>>>,
+	options: Readonly<RenderingOptions> = {} as any,
+) {
+	if (!Object.keys(raw_callbacks).every(k => k === 'resolve_unknown_subnode' || k.startsWith('on_')))
+		console.warn(`${LIB} Unexpected unrecognized callbacks, check the API!`)
+
+	const callbacks: WalkerCallbacks<State, RenderingOptions> = {
+		..._getꓽcallbacksⵧdefault<State, RenderingOptions>(),
+		...raw_callbacks as any as WalkerCallbacks<State, RenderingOptions>,
+	}
+
+	return _walk($raw_node, callbacks, options, { $parent_node: null, $id: 'root', depth: 0 })
+}
 /////////////////////////////////////////////////
 
 export {

@@ -4,14 +4,14 @@ import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/state-utils'
 import {
 	type Uri‿str,
-	type URI‿x,
+	type Uri‿x,
 	type SchemeSpecificURIPart,
 } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 
-function normalizeꓽuri‿SSP(url: Immutable<URI‿x>): SchemeSpecificURIPart {
+function normalizeꓽuri‿SSP(url: Immutable<Uri‿x>): SchemeSpecificURIPart {
 	url ||= '/'
 
 	if (typeof url === 'string') {
@@ -30,7 +30,7 @@ function normalizeꓽuri‿SSP(url: Immutable<URI‿x>): SchemeSpecificURIPart {
 
 	return url
 }
-function normalizeꓽuri‿str(url: Immutable<URI‿x>): Uri‿str {
+function normalizeꓽuri‿str(url: Immutable<Uri‿x>): Uri‿str {
 	const { path, query, fragment } = normalizeꓽuri‿SSP(url)
 
 	let result = path

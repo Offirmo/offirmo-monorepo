@@ -1,4 +1,4 @@
-import { type URI‿x } from '@offirmo-private/ts-types-web'
+import { type Uri‿x } from '@offirmo-private/ts-types-web'
 import { type Hyperlink } from '@offirmo-private/ts-types-web'
 
 import {
@@ -29,7 +29,7 @@ interface HyperlinkAction extends BaseAction {
 interface EmbeddedReducerAction {
 	cta?: string // optional bc should ideally be derived from the action (esp. for i18n) BUT same action could have different CTA following the context (ex. equip best equipment)
 	payload: any // the data of the action, could be anything
-	href?: URI‿x // optional URL to navigate to following the action
+	href?: Uri‿x // optional URL to navigate to following the action
 	// TODO add UI options? ex. pretend to work?
 	// or an auto engagement? (see state--engagement)
 	// should it be embedded in the action or early-returned by the HATEOAS server?
@@ -53,14 +53,18 @@ const DEFAULT_RENDERING_OPTIONSⵧToActions= Object.freeze<RenderingOptionsⵧTo
 		const actions: Action[] = []
 
 		if ($node.$hints['href']) {
+			const raw_link = $node.$hints['href']
+			const hyperlink: Hyperlink = Object.hasOwn(raw_link as any, 'href') // TODO type guard for Hyperlink
+				? (raw_link as Hyperlink)
+				: {
+					// TODO default CTA from $node itself?
+					href: raw_link as Uri‿x, // TODO escaping for security? (This is debug, see React renderer which will do)
+					rel: [],
+				}
 			actions.push({
 				$node,
 				type: 'hyperlink',
-				link: {
-					// TODO default CTA from $node itself?
-					href: $node.$hints['href'], // TODO escaping for security? (This is debug, see React renderer which will do)
-					rel: [],
-				},
+				link: hyperlink,
 			})
 		}
 

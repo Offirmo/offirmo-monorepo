@@ -3,7 +3,7 @@
 
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/state-utils'
-import { type Hyperlink, type Uri‿str, type URI‿x, type SchemeSpecificURIPart } from '@offirmo-private/ts-types-web'
+import { type Hyperlink, type Uri‿str, type Uri‿x, type SchemeSpecificURIPart } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import { type HypermediaContentType } from '@tbrpg/definitions'

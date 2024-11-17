@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/state-utils'
-import { type Hyperlink, type Uri‿str, type URI‿x, type SchemeSpecificURIPart } from '@offirmo-private/ts-types-web'
+import { type Hyperlink, type Uri‿str, type Uri‿x, type SchemeSpecificURIPart } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import { prettifyꓽjson } from '../../services/misc.js'
@@ -49,7 +49,7 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 		this.server = server
 	}
 
-	navigate_to(uri: URI‿x) {
+	navigate_to(uri: Uri‿x) {
 		console.log(`\n[⇨ Navigating to: "${uri}"…]`)
 		console.log('------------------------------------------------------')
 		this.current_route = normalizeꓽuri‿str(uri)

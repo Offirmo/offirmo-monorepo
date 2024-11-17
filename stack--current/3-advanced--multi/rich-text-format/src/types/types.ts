@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
-import { type Emoji, type Uri‿str } from '@offirmo-private/ts-types'
-
+import { type Emoji } from '@offirmo-private/ts-types'
+import { type Uri‿x, type Hyperlink } from '@offirmo-private/ts-types-web'
 /////////////////////////////////////////////////
 
 const NodeType = Enum(
@@ -10,7 +10,7 @@ const NodeType = Enum(
 	'fragmentⵧinline', // = span
 	'strong', // strong but less strong than heading. Ex. ansi.bold
 	'weak', // opposite of strong ;) Ex. ansi.dim
-	'em', // TODO semantic difference with strong? Alternate? (= italic)
+	'em', // TODO clarify semantic difference with strong: Alternate? (= italic)
 	'emoji', // OPTIONAL but useful to ensure a good rendering
 	         // as of 2024, emojis are still very hard to handle properly, hence deserving a special node type
 	         // this node type represent a single emoji
@@ -37,19 +37,15 @@ type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 // - for rendering, hints should be OPTIONAL and any renderer should be able to render decently without them
 // - for non-rendering (ex. hypermedia features) hints can be made mandatory
 interface Hints {
-	href?: Uri‿str // make this node a link to a specific resource
+	href?: Uri‿x | Hyperlink // make this node a link to a specific resource
 	bullets_style?: 'none' // for ul, to remove bullets (TODO ONE DAY also allow to customize?)
 	key?: string // for ex. to recognize a specific content (do not abuse! Reminder to keep everything text-compatible)
 	possible_emoji?: Emoji // this emoji can be used to represent/augment this node
+	//uuid?: string // for ex. to recognize a specific resource (TODO review, should send JSON tohether instead or use actions)
 
 	[k: string]: any
 
 	// TODO emoji API following https://github.com/jdecked/twemoji
-
-	// TODO Hypermedia as first class!
-
-	// TODO clarify
-	//uuid?: string // for ex. to recognize a specific resource
 }
 
 // using type instead of interface to prevent extra properties
