@@ -31,6 +31,7 @@
 [ ] research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
 [ ] Software Engineering Advice from Building Large-Scale Distributed Systems
 ACID -- 1 Atomicity = transactions are "all or nothing"
+Data Layer Abstraction(DLA)
 ACID -- 2 Consistency = integrity constraints: "valid state" before AND after a transaction
 ACID -- 3 Isolation = "independent transactions"
 ACID -- 4 Durability = transaction resistance to system failures "once committed, always committed"

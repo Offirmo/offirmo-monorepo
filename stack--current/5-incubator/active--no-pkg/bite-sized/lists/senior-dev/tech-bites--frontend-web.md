@@ -136,6 +136,8 @@ design -- intuitiveness vs. confusing, cluttered, dense, not practical, lack of 
 design quality -- 1 Intuitiveness vs complicated, overwhelming, cluttered, steep learning curve, significant cognitive load.
 design quality -- 2 Ease of Use: difficult to navigate and locate features, concerns about accessibility, efficiency, consistency, and readability
 design quality -- 3 outdated design aesthetic
+Design System -- vs. Web Pattern Library (WPL) = Built specifically for web, with the intention of helping makers publish pages with speed, scale, and consistency.
+Design System = foundational base for which all other user interfaces are built upon. DS built with the intention to make it easy for makers (designers and developers) to design, develop, and deliver UI at scale.
 devices -- support
 dialog
 DNS = distributed database for IP address translation
