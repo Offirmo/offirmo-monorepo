@@ -37,6 +37,7 @@
 This is seldom used but useful sometimes.
 
 TODO: switch to ES2024 `Promise.withResolvers` https://levelup.gitconnected.com/new-async-api-promise-withresolvers-simplifies-your-code-1355784fb435
+(need support in FF)
 
 **Be sure to review your options** before using the deferred pattern over a simple promise.
 

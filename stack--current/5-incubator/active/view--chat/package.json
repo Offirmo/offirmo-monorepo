@@ -39,13 +39,16 @@
 		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
 
 		"dev": "run-s clean _build:dev:watch",
-		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2023.esm/**/*spec.js'",
+		"xxtest": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2023.esm/**/*spec.js'",
 		"build": "run-s  clean _build:prod",
 
 		"demo": "node ./dist/src.es2023.esm/loop/demo.js"
 	},
 	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/deferred": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@size-limit/preset-small-lib": "^11",
 		"npm-run-all": "^4",
 		"tslib": "^2"
 	}

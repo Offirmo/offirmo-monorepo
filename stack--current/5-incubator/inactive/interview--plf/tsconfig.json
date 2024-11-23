@@ -4,7 +4,7 @@
 	"compilerOptions": {
 		"noEmit": true,
 
-		"lib": [ "ES2023", "DOM" ],
+		"lib": [ "DOM", "ES2024" ],
 
 		"allowJs": true,
 		"checkJs": true,

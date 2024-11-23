@@ -37,7 +37,7 @@
 		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
 
 		"dev": "run-s clean _build:dev:watch",
-		"test": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2023.esm/**/*spec.js'",
+		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2023.esm/**/*spec.js'",
 
 		"demo1a": "npx tsx doc/demo--personal-blog/index.mts",
 		"demo1b": "parcel serve doc/demo--personal-blog/src/*.html --port 8080  --lazy  --no-autoinstall",
