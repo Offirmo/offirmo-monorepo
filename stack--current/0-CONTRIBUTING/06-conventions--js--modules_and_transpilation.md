@@ -22,7 +22,6 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 ### PENDING updates
 - [ ] TODO remove all cjs since we can no longer generate it since Typescript 5.2
 - [ ] TODO TS has working support of [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762) = update unit tests!
-- [ ] 🆙 2024-10-29 oldest active LTS node 20 → 22  https://github.com/nodejs/release#release-schedule
 - [ ] 🆙 2025-10-28 oldest active LTS node 22 → 24  https://github.com/nodejs/release#release-schedule
 - [ ] 🆙 mid 2025 [ES2025](https://en.wikipedia.org/wiki/ECMAScript_version_history)
 - [ ] 🆙 webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
@@ -32,6 +31,32 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 ES reasonably supported https://philipwalton.com/articles/the-state-of-es5-on-the-web/
 new target env: workerd https://blog.cloudflare.com/more-npm-packages-on-cloudflare-workers-combining-polyfills-and-native-code/
 
+
+### update 2024-11-23
+Updated state:
+
+1. Node runtime version
+* 🆕 oldest active LTS node = [22](https://nodejs.org/en/about/previous-releases)
+* 🆕 most recent node supported by AWS lambda = [22](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)
+
+⭆ 🆕 latest supported node = 22 (if updated, search for "engines")
+
+2. ECMASCript version
+* latest ES = [ES2024](https://en.wikipedia.org/wiki/ECMAScript_version_history) + [latest spec](https://262.ecma-international.org/15.0/)
+* latest ES reasonably supported by this node LTS (latest minor) = [ES2024](https://node.green/#ES2024) (incomplete but close enough though)
+* latest ES supported by TypeScript as a target = [2023](https://www.typescriptlang.org/tsconfig#target) [code](https://github.com/microsoft/TypeScript/blob/main/src/server/protocol.ts#L3231)
+* latest ES supported by TypeScript as a lib = [2023](https://github.com/microsoft/TypeScript/tree/main/src/lib)
+  * NOTE both values above don't match the internal code!
+* latest ES reasonably supported by browsers or polyfills = [ES2024](https://compat-table.github.io/compat-table/es2016plus/)
+* we no longer consider webpack (outdated tool, we no longer use it)
+
+⭆ latest convenient ES = 2023 (if changed, need search&replace in package.json, search for "es2023" and "update marker")
+
+3. ES module
+- we consider webpack outdated and are no longer taking into account its limitations
+- we consider the ecosystem advanced enough to move to full ESM https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-move-my-commonjs-project-to-esm
+
+⭆ latest convenient module = ES (module = 2022 in TypeScript)
 
 
 ### update 2024-07-25
