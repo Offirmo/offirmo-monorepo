@@ -12,7 +12,6 @@
 		".":  "./dist/src.es2023.esm/index.js"
 	},
 	"module": "dist/src.es2023.esm/index.js",
-	"main": "dist/src.es2023.cjs/index.js",
 	"typings": "dist/src.es2023.esm/index.d.ts",
 	"source": "src/index.ts",
 
