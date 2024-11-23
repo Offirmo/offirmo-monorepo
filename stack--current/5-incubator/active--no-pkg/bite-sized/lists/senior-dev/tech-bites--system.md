@@ -31,7 +31,6 @@
 [ ] research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
 [ ] Software Engineering Advice from Building Large-Scale Distributed Systems
 ACID -- 1 Atomicity = transactions are "all or nothing"
-Data Layer Abstraction(DLA)
 ACID -- 2 Consistency = integrity constraints: "valid state" before AND after a transaction
 ACID -- 3 Isolation = "independent transactions"
 ACID -- 4 Durability = transaction resistance to system failures "once committed, always committed"
@@ -49,15 +48,15 @@ API -- Diogo Lucas classification = far-team, near-team and inner-team. inner te
 API -- hybrids = reconcile the need for a stable public API that will not constantly disrupt your carefully tended ecosystem with your team’s ability to move fast and (eventually) break stuff? cater for different requirements regarding security and SLAs or to radically different client natures? https://www.youtube.com/watch?v=eqy609JleoE
 API -- REST (Representational State Transfer) = architectural style for distributed hypermedia systems https://restfulapi.net/
 API -- REST -- cookbook https://restcookbook.com/
+API -- REST -- critic https://mmikowski.github.io/the_lie/
 API -- REST -- founding paper https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
+API -- REST -- JSON Pure https://mmikowski.github.io/json-pure/
 API -- REST -- POST https://www.tbray.org/ongoing/When/200x/2009/03/20/Rest-Casuistry
 API -- REST -- principles == 1 Uniform Interface
 API -- REST -- principles == 2 Client-Server
 API -- REST -- principles == 3 Stateless
 API -- REST -- principles == 4 Cacheable
 API -- REST -- principles == 5 Layered System
-API -- REST -- critic https://mmikowski.github.io/the_lie/
-API -- REST -- JSON Pure https://mmikowski.github.io/json-pure/
 API -- REST -- principles == 6 Code on Demand (optional)
 API -- REST -- resource https://roy.gbiv.com/untangled/category/web-architecture/page/2
 API -- REST -- RESTful
@@ -171,6 +170,7 @@ data -- 0. raw need to be processed, OLAP, OLTP https://www.snowflake.com/guides
 data -- 1. analytics = useful
 data -- 2. predictive = forecast and predict from data
 data -- 3. prescriptive = recommend actions based on data
+Data Layer Abstraction(DLA)
 data loss
 data retrieval
 data store -- data type -- BLOB (Binary Large Object) https://stackoverflow.com/questions/211895/storing-documents-as-blobs-in-a-database-any-disadvantages
@@ -216,6 +216,9 @@ design -- 02b breakdown in list of MICRO services: stateless/stateful? scalabili
 design -- 02b top-down exploration, service discovery
 design -- 02c scalability = sharding method?
 design -- 03 high level diagram (HLD)
+design -- high-level -- high-level design document (HLDD)
+design -- high-level https://en.wikipedia.org/wiki/High-level_design
+design -- low-level https://en.wikipedia.org/wiki/Low-level_design
 destructive engineering = kill and get strong in response
 DevOps
 distributed computing -- fallacies -- 1 The network is reliable

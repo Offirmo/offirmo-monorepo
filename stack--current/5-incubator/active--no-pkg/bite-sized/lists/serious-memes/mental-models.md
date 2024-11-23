@@ -295,6 +295,7 @@ pardon pas oubli
 Pareto
 Pareto efficiency
 Parkinson’s Law: Work expands to fill the time available. People don’t want to look like they’re lazy, so they find extra tasks to tackle, even if they’re trivial. If you have six months to complete a project, it will take six months to complete. Set deadlines accordingly.
+passing your legos
 passive aggressive
 pattern / antipattern
 paved path = "The paved path" refers to a methodology where the next step to take is evident

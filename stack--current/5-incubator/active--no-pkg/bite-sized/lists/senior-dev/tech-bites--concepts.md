@@ -177,6 +177,7 @@ DevOps https://www.browserstack.com/guide/difference-between-continuous-integrat
 DevOps Research and Assessment (DORA) = how we should develop our software right and what numbers we should show to our managers to make them happy https://medium.com/booking-com-development/a-step-by-step-guide-on-how-not-to-implement-dora-metrics-85081f0d4484
 DNS (Domain Name System)
 do what I mean (DWIM) = computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
+dogfooding = practice of a company using its own products or services internally as a way to test, evaluate, and improve them. Essentially, the company's employees become the primary users of their own products.
 DRY (don't repeat yourself)
 DRY -- WET (write everything twice) https://overreacted.io/the-wet-codebase/
 dry run
@@ -368,12 +369,23 @@ ownership
 pair-programming
 pattern -- matching = checking a given sequence of tokens for the presence of the constituents of some pattern. In contrast to pattern recognition, the match usually has to be exact: "either it will or will not be a match." The patterns generally have the form of either sequences or tree structures. Uses of pattern matching include outputting the locations (if any) of a pattern within a token sequence, to output some component of the matched pattern, and to substitute the matching pattern with some other token sequence (i.e., search and replace).
 pattern -- recognition = same but not exact match
-PD Personal Data
 peer review, green build = condition to merge a code change
 perf
 perf -- as a feature
 perf -- only pay for what you need
 personal data
+personal data (PD)
+personal data -- processing -- high-risk -- automated decision-making (e.g., rejecting employment based on automatic scoring)
+personal data -- processing -- high-risk -- children's data
+personal data -- processing -- high-risk -- enriching or matching data with a third party’s data sets
+personal data -- processing -- high-risk -- machine learning (unless it is a pre-approved use case)
+personal data -- processing -- high-risk -- monitoring of people/employees (e.g., CCTV footage or productivity metrics)
+personal data -- processing -- high-risk -- processing people’s data without their knowledge, consent or reasonable expectation (the person doesn’t know we have their data).
+personal data -- processing -- high-risk -- profiling (building a profile of a person based on different pieces of personal data, such as user behaviour)
+personal data -- processing -- high-risk -- retargeting (sharing with third parties for marketing / re-marketing purposes)
+personal data -- processing -- high-risk -- sensitive data
+personal data -- processing -- high-risk -- tracking precise user location (geolocation)
+personal data -- sensitive
 PHP (recursive acronym for PHP: Hypertext Preprocessor)
 pipeline express: success / error / next / send
 pointer
@@ -383,8 +395,16 @@ polymorphism https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
 postgres -- job queue https://github.com/timgit/pg-boss
 practices -- best vs. standard
 principle of least surprise / principle of least astonishment https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+privacy
 privacy -- collect and use someone's info respectfully
+privacy -- Data Retention and Deletion Policy
+privacy -- Privacy Impact Assessments (PIA)
 privacy -- regulations/compliance AND expectations
+privacy -- right of access
+privacy -- right to correct
+privacy -- right to delete
+privacy -- right to portability
+privacy -- right to restrict
 programming -- application
 programming -- systems https://en.wikipedia.org/wiki/Systems_programming
 programming languages -- top -- 2024 https://spectrum.ieee.org/top-programming-languages-2024
