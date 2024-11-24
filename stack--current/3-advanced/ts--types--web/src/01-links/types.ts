@@ -45,7 +45,9 @@ interface SchemeSpecificURIPart {
 }
 
 // "x" = "any [kind of format]"
-type Uri‿x = Uri‿str | SchemeSpecificURIPart
+type Uri‿x =
+	| Uri‿str
+	| SchemeSpecificURIPart
 
 /////////////////////////////////////////////////
 
@@ -85,6 +87,11 @@ interface Hyperlink extends WithLang {
 	// reducer action?
 }
 
+// "x" = "any [kind of format]"
+type Hyperlink‿x =
+	| Hyperlink
+	| Uri‿x
+
 ////////////
 
 type SocialNetworkId =
@@ -109,13 +116,13 @@ interface SocialNetworkLink extends SimplerSocialNetworkLink {
 /////////////////////////////////////////////////
 
 export {
-	type Uri‿str,
-	type Url‿str,
-
-	type Uri‿x,
+	type Uri‿str, type Url‿str,
 	type SchemeSpecificURIPart,
+	type Uri‿x,
+
 	type LinkRelation,
 	type Hyperlink,
+	type Hyperlink‿x,
 
 	type SocialNetworkId,
 	type SocialNetworkLink,
