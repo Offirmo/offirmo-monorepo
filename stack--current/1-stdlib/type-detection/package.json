@@ -1,10 +1,9 @@
 {
-	"name": "@offirmo-private/prettify-any",
-	"description": "Intelligently pretty-print a JS object (and by extension, JSON), on node or browser",
+	"name": "@offirmo-private/type-detection",
+	"description": "",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
-	"private": true,
 
 	"sideEffects": false,
 	"type": "module",
@@ -18,13 +17,9 @@
 	"source": "src/index.ts",
 
 	"peerDependencies": {
-		"tslib": "^2"
 	},
 	"dependencies": {
 		"@offirmo-private/ts-types": "*",
-		"@offirmo-private/type-detection": "*",
-		"indent-string": "^5",
-		"terminal-size": "^4",
 		"tiny-invariant": "^1"
 	},
 
@@ -35,16 +30,12 @@
 		"_build:prod": "monorepo-script--build-typescript-package",
 
 		"dev": "run-s clean _build:dev:watch",
-		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/**/*spec.js'",
+		"test": "mocha --bail --config ../../node_modules/@offirmo/unit-test-toolbox/mocharc.json --file ../../node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/**/*spec.js'",
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@types/prettyjson": "^0",
-		"chalk": "^5",
-		"npm-run-all": "^4",
-		"prettyjson": "^1",
-		"tslib": "^2"
+		"npm-run-all": "^4"
 	}
 }

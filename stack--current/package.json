@@ -59,7 +59,6 @@
 	},
 
 	"dependencies": {
-		"@manypkg/cli": "^0.22",
 		"chalk": "^5",
 		"fs-extra": "^11",
 		"meow": "^13",

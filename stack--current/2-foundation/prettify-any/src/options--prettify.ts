@@ -1,9 +1,14 @@
-import { PrettifyOptions, State } from './types.js'
+import * as process from 'node:process'
+
+import { isꓽnegative_zero } from '@offirmo-private/type-detection'
+
 import {
-	isꓽnegative_zero,
+	type PrettifyOptions,
+	type State,
+} from './types.js'
+import {
 	cmp,
 } from './utils.js'
-import * as process from 'node:process'
 
 /////////////////////////////////////////////////
 
