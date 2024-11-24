@@ -10,7 +10,7 @@
 	"source": "src/index.mts",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2023.esm/index.js"
+			"import": "./dist/src.es2024.esm/index.js"
 		}
 	},
 
@@ -25,7 +25,7 @@
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
 
 		"dev": "run-s clean _build:dev:watch",
-		"test": "node ./dist/src.es2023.esm/index.js"
+		"test": "node ./dist/src.es2024.esm/index.js"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

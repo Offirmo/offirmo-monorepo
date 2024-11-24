@@ -11,14 +11,14 @@
 	"source": "src/index.js",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2023.esm/index.js"
+			"import": "./dist/src.es2024.esm/index.js"
 		},
 		"./primitives--terminal--vanilla": {
-			"import": "./dist/src.es2023.esm/__fixtures/primitives--terminal--vanilla.js"
+			"import": "./dist/src.es2024.esm/__fixtures/primitives--terminal--vanilla.js"
 		}
 	},
-	"module": "dist/src.es2023.esm/index.js",
-	"typings": "dist/src.es2023.esm/index.d.ts",
+	"module": "dist/src.es2024.esm/index.js",
+	"typings": "dist/src.es2024.esm/index.d.ts",
 
 	"peerDependencies": {
 		"tslib": "^2"
@@ -39,10 +39,10 @@
 		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
 
 		"dev": "run-s clean _build:dev:watch",
-		"xxtest": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2023.esm/**/*spec.js'",
+		"xxtest": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/**/*spec.js'",
 		"build": "run-s  clean _build:prod",
 
-		"demo": "node ./dist/src.es2023.esm/loop/demo.js"
+		"demo": "node ./dist/src.es2024.esm/loop/demo.js"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

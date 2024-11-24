@@ -10,11 +10,11 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2023.esm/index.js"
+			"import": "./dist/src.es2024.esm/index.js"
 		}
 	},
-	"module": "dist/src.es2023.esm/index.js",
-	"typings": "dist/src.es2023.esm/index.d.ts",
+	"module": "dist/src.es2024.esm/index.js",
+	"typings": "dist/src.es2024.esm/index.d.ts",
 	"source": "src/index.ts",
 
 	"peerDependencies": {
@@ -26,7 +26,7 @@
 
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",
-		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2023.esm/**/*spec.js'",
+		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/**/*spec.js'",
 
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
 		"_build:prod": "monorepo-script--build-typescript-package",

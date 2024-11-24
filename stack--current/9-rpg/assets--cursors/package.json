@@ -18,7 +18,7 @@
 		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
 
 		"xdev": "run-s clean _build:dev:watch",
-		"xtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2023.esm/**/*spec.js'",
+		"xtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/**/*spec.js'",
 		"xbuild": "run-s  clean _build:prod"
 	},
 	"devDependencies": {

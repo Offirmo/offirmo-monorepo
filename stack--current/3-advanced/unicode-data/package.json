@@ -10,11 +10,11 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2023.esm/index.js"
+			"import": "./dist/src.es2024.esm/index.js"
 		}
 	},
-	"module": "dist/src.es2023.esm/index.js",
-	"typings": "dist/src.es2023.esm/index.d.ts",
+	"module": "dist/src.es2024.esm/index.js",
+	"typings": "dist/src.es2024.esm/index.d.ts",
 	"source": "src/index.ts",
 
 	"peerDependencies": {

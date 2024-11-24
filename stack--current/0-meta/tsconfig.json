@@ -55,8 +55,8 @@
 		"emitDecoratorMetadata": false,
 		"experimentalDecorators": false,
 		"jsx": "preserve",
-		"lib": [ "ES2023" ],
-		"target": "ES2023",
+		"lib": [ "ES2024" ],
+		"target": "ES2024",
 
 
 		"listEmittedFiles": false,

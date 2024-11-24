@@ -35,8 +35,8 @@ const cli = meow('build', {
 // [Last updated 2024/07](update marker)
 // note: we could object to this info being duplicated here from tsconfig
 // but it's better semantic (hard to comment in tsconfig)
-const LATEST_ESⵧSUPPORTED_BY_TYPESCRIPTⵧIN_LIB = 'ES2023' // = "max ES we can use"
-const LATEST_ESⵧSUPPORTED_BY_ENVꘌOLDEST_ACTIVE_NODE_LTS = 'ES2023' // should be <= LATEST_ESⵧSUPPORTED_BY_TYPESCRIPTⵧIN_LIB
+const LATEST_ESⵧSUPPORTED_BY_TYPESCRIPTⵧIN_LIB = 'ES2024' // = "max ES we can use"
+const LATEST_ESⵧSUPPORTED_BY_ENVꘌOLDEST_ACTIVE_NODE_LTS = 'ES2024' // should be <= LATEST_ESⵧSUPPORTED_BY_TYPESCRIPTⵧIN_LIB
 const LATEST_ES_MODULES = 'ES2022' // from https://www.typescriptlang.org/tsconfig#module
 // "NodeNext" is recommended by https://2ality.com/2021/06/typescript-esm-nodejs.html
 // BUT NO! "NodeNext" is an "intelligent" setting that also affects module resolution https://www.typescriptlang.org/tsconfig#node16nodenext-nightly-builds
