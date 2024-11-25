@@ -1,9 +1,6 @@
 https://rpg.stackexchange.com/questions/213637/what-traits-can-i-combine-to-make-a-long-lived-race-that-matures-at-the-human-no
 
 
-
-TOSORT
-
 https://archaeologyworlds.com/12000-year-old-massive-underground-tunnels/
 
 
