@@ -6,45 +6,14 @@ import {
 	type Uri‿str,
 	type Uri‿x,
 	type SchemeSpecificURIPart,
+	normalizeꓽuri‿str,
+	promote_toꓽscheme_specific_part,
 } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 
-function normalizeꓽuri‿SSP(url: Immutable<Uri‿x>): SchemeSpecificURIPart {
-	url ||= '/'
 
-	if (typeof url === 'string') {
-		const url‿obj = new URL(url, 'https://example.com')
-
-		const result: SchemeSpecificURIPart = {
-			path: url‿obj.pathname,
-
-			query: url‿obj.search,
-
-			...(url‿obj.hash && { fragment: url‿obj.hash }),
-		}
-
-		return result
-	}
-
-	return url
-}
-function normalizeꓽuri‿str(url: Immutable<Uri‿x>): Uri‿str {
-	const { path, query, fragment } = normalizeꓽuri‿SSP(url)
-
-	let result = path
-
-	if (query) {
-		result += '?' + query
-	}
-
-	if (fragment) {
-		result += '#' + fragment
-	}
-
-	return result
-}
 function getꓽCTA(action: Immutable<RichText.Action>): string {
 	switch (action.type) {
 		case 'action': {
@@ -85,7 +54,7 @@ function getꓽactionsⵧlinks(actions: Array<RichText.Action>, {
 		})
 		.filter((ha: RichText.HyperlinkAction)=> {
 			return excluding_pathꘌ
-				? normalizeꓽuri‿SSP(ha.link.href).path !== excluding_pathꘌ
+				? promote_toꓽscheme_specific_part(ha.link.href).path !== excluding_pathꘌ
 				: true
 		})
 }
@@ -99,9 +68,6 @@ function getꓽactionⵧcontinue_to(actions: Array<RichText.Action>): RichText.H
 /////////////////////////////////////////////////
 
 export {
-	normalizeꓽuri‿SSP,
-	normalizeꓽuri‿str,
-
 	getꓽCTA,
 	getꓽactionsⵧreducers,
 	getꓽactionsⵧlinks,

@@ -315,6 +315,7 @@ loop
 loop - breaking out of
 LTS, maintenance LTS, active LTS https://nodejs.org/en/about/previous-releases
 magic number
+manifest
 map
 math https://math4devs.com/
 MDN
@@ -543,6 +544,7 @@ tool -- http://devdocs.io/
 tool -- sprawl
 tracing -- distributed https://zipkin.io/
 tracing https://andydote.co.uk/2023/09/19/tracing-is-better/
+transparent functional reactive programming "TFRP" = MobX concept
 transpilation / transpiler / transpiling
 tree
 tree -- walk

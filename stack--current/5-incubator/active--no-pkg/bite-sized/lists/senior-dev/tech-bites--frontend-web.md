@@ -179,6 +179,7 @@ GraphQL
 GraphQL -- against https://bessey.dev/blog/2024/05/24/why-im-over-graphql/
 GraphQL -- relay
 GraphQL -- relay -- EntryPoints https://hello.atlassian.net/wiki/spaces/UAF/pages/1180782282
+hot module replacement "HMR" https://webpack.js.org/concepts/hot-module-replacement/
 HTML -- concepts
 HTML -- elements
 html -- first https://html-first.com/

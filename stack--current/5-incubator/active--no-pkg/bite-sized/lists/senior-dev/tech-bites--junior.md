@@ -1,3 +1,4 @@
++++ glue work + I'm good at what I spend time on https://www.noidea.dog/glue
 git "so you have a mess" http://justinhileman.info/article/git-pretty/full/
 How to efficiently help someone with a problem https://xyproblem.info/
 HR is not your friend https://www.inc-aus.com/jt-odonnell/what-20-somethings-need-to-know-about-complaining-to-hr.html
@@ -9,3 +10,5 @@ https://wiki.theory.org/YourLanguageSucks
 https://www.instagram.com/flinkliv_en/
 https://www.programmingfonts.org/
 The Absolute Minimum Every Software Developer Must Know About Unicode in 2023 (Still No Excuses!) https://tonsky.me/blog/unicode/
+the customer doesn't know what they want
+war mode / peace mode

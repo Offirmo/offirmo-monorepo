@@ -1,6 +1,13 @@
 import assert from 'tiny-invariant'
+
 import { Immutable } from '@offirmo-private/state-utils'
-import { type Hyperlink, type Uri‿str, type Uri‿x, type SchemeSpecificURIPart } from '@offirmo-private/ts-types-web'
+import {
+	type Uri‿str,
+	type Hyperlink‿x,
+	promote_toꓽhyperlink,
+	normalizeꓽuri‿str,
+	promote_toꓽscheme_specific_part,
+} from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import { prettifyꓽjson } from '../../services/misc.js'
@@ -18,8 +25,6 @@ import {
 import { type HATEOASServer } from '../../to-export-to-own-package/hateoas/types.js'
 import {
 	DEFAULT_ROOT_URI,
-	normalizeꓽuri‿SSP,
-	normalizeꓽuri‿str,
 	getꓽCTA,
 } from '../to-migrate.js'
 
@@ -49,10 +54,13 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 		this.server = server
 	}
 
-	navigate_to(uri: Uri‿x) {
-		console.log(`\n[⇨ Navigating to: "${uri}"…]`)
+	navigate_to(link: Hyperlink‿x) {
+		const hyperlink = promote_toꓽhyperlink(link)
+		const uri‿str = normalizeꓽuri‿str(hyperlink.href)
+
+		console.log(`\n[⇨ Navigating to: "${uri‿str}"…${hyperlink.rel.length ? (' (rel = ' + hyperlink.rel + ')') : ''}]`)
 		console.log('------------------------------------------------------')
-		this.current_route = normalizeꓽuri‿str(uri)
+		this.current_route = uri‿str
 	}
 
 	next(p: StepIteratorTNext<ContentType>) {
@@ -92,6 +100,7 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 			return step
 		}
 
+		// TODO review, we should be able to transition and pre-load steps while waiting
 		if (this.pending_async.length) {
 			//console.log(`[awaiting pending...]`)
 			await Promise.all(this.pending_async)
@@ -108,6 +117,7 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 			this.stepsᐧcount_for_avoiding_infinite_loops = 0
 		}
 
+		// XXX TO REWRITE
 		switch(this.status) {
 			case 'starting': {
 				// skip the engagement messages
@@ -141,6 +151,7 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 
 		console.log(`[Browsing: "${this.current_route}"]`)
 
+		// TODO loader and transitions
 		const hypermedia = await this.server.get(this.current_route)
 
 		const actions = RichText.renderⵧto_actions(hypermedia)
@@ -149,10 +160,10 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 			.filter(a => a && a.type === 'hyperlink')
 			.filter((ha: RichText.HyperlinkAction)=> {
 				return !ha.link.rel.includes('self')
-					&& normalizeꓽuri‿SSP(ha.link.href).path !== this.current_route
+					&& promote_toꓽscheme_specific_part(ha.link.href).path !== this.current_route
 			})
 		const continue_links = actionsⵧlinks.filter(a => a.link.rel.includes('continue-to'))
-		assert(continue_links.length <= 1, 'Should have 0 or 1 continue-to links.')
+		assert(continue_links.length <= 1, 'Should only have 0 or 1 continue-to links.')
 		const actionⵧlinkⵧcontinue = continue_links[0]
 		const actionsⵧbrowser: Array<RichText.HyperlinkAction> = [
 			// TODO one day "back" (history)
@@ -193,7 +204,7 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 							break
 						}
 						case 'hyperlink': {
-							navigate_to(value.link.href)
+							navigate_to(value.link)
 							break
 						}
 						default:
@@ -211,10 +222,11 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 			msg: hypermedia,
 			callback: () => {
 				if (actionⵧlinkⵧcontinue) {
-					navigate_to(actionⵧlinkⵧcontinue.link.href)
+					navigate_to(actionⵧlinkⵧcontinue.link)
 				}
 			},
 		}
+
 		/*console.log(`[gen_next_step()] ...yielding from hypermedia content:`,
 			//prettifyꓽjson(step_content)
 		)*/

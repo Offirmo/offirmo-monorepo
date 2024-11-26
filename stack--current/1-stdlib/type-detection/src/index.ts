@@ -14,7 +14,7 @@ import { type Immutable } from '@offirmo-private/ts-types'
 
 // use case: to avoid it!
 // https://2ality.com/2012/03/signedzero.html (outdated)
-function isꓽnegative_zero(x: number): boolean {
+function isꓽnegative_zero(x: number): x is -0 {
 	return Object.is(x, -0)
 }
 
@@ -25,7 +25,7 @@ function isꓽnegative_zero(x: number): boolean {
 }*/
 
 
-function isꓽarrayⵧempty(a: Immutable<Array<any>>): boolean {
+function isꓽarrayⵧempty(a: Immutable<Array<any>>): a is [] {
 	return Array.isArray(a) && a.length === 0
 }
 
@@ -33,7 +33,7 @@ function isꓽarrayⵧempty(a: Immutable<Array<any>>): boolean {
 // naming: difficult!!!
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals
 // also JSON "object is an unordered set of name/value pairs"
-function isꓽobjectⵧliteral(o: Immutable<object>): boolean {
+function isꓽobjectⵧliteral(o: Immutable<object>): o is object {
 	if (typeof o !== 'object')
 		return false
 
@@ -51,7 +51,7 @@ function isꓽobjectⵧliteral(o: Immutable<object>): boolean {
 }
 
 // use case: ??
-function isꓽcontainerⵧempty(c: Immutable<Array<any> | object>): boolean {
+function isꓽcontainerⵧempty(c: Immutable<Array<any> | object>): c is {} | [] {
 	if (typeof c !== 'object')
 		return false
 

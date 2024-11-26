@@ -3,7 +3,11 @@
 
 import assert from 'tiny-invariant'
 import { Immutable } from '@offirmo-private/state-utils'
-import { type Hyperlink, type Uri‿str, type Uri‿x, type SchemeSpecificURIPart } from '@offirmo-private/ts-types-web'
+import {
+	type Hyperlink,
+	promote_toꓽscheme_specific_part,
+	normalizeꓽuri‿str,
+} from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import { type HypermediaContentType } from '@tbrpg/definitions'
@@ -26,8 +30,6 @@ import {
 } from '../to-export-to-own-package/hateoas/types.js'
 import {
 	DEFAULT_ROOT_URI,
-	normalizeꓽuri‿SSP,
-	normalizeꓽuri‿str,
 } from './to-migrate.js'
 import { resolveꓽrich_text_pending_engagement } from '../to-export-to-own-package/hateoas/utils.js'
 
@@ -45,7 +47,7 @@ class AppHateoasServer implements HATEOASServer<HypermediaContentType, Action> {
 		DEBUG && console.group(`↘ HATEOASᐧget("${url}")`)
 
 		////////////
-		const { path, query, fragment } = normalizeꓽuri‿SSP(url)
+		const { path, query, fragment } = promote_toꓽscheme_specific_part(url)
 		DEBUG && console.log('after normalization:', { path, query, fragment })
 
 		////////////
