@@ -1,6 +1,8 @@
-import is_promise from 'is-promise'
+import {PProgress} from 'p-progress'
 import { type Immutable } from '@offirmo-private/ts-types'
 import assert from 'tiny-invariant'
+
+import { isꓽthenable } from '@offirmo-private/type-detection'
 
 import { type ChatPrimitives } from '../primitives/types.js'
 import { type Step, StepType, type TaskProgressStep } from '../steps/index.js'
@@ -57,8 +59,8 @@ function create<ContentType>({
 					continue
 				}
 
-				const step: Step<ContentType> = is_promise(raw_yielded_step)
-					? (await primitives.spin_until_resolution(raw_yielded_step)) // TODO if previous step was pretend_to_think, we should continue?
+				const step: Step<ContentType> = isꓽthenable(raw_yielded_step)
+					? (await primitives.spin_until_resolution(Promise.resolve(raw_yielded_step))) // TODO if previous step was pretend_to_think, we should continue?
 					: raw_yielded_step
 				//console.log(`[${LIB}]`, {yielded_step: step})
 
@@ -109,9 +111,9 @@ function create<ContentType>({
 				// we pretend there is a task, so let's use a fake task
 				const task_step: TaskProgressStep<ContentType, void> = {
 					type: StepType.progress,
-					promise: create_dummy_progress_promise({
+					promises: [ create_dummy_progress_promise({
 						DURATION_MS: step.duration_ms || 1200, // 200ms = minimum time to be perceived as work
-					}),
+					})],
 				}
 				return execute_step(task_step)
 			}
@@ -120,7 +122,7 @@ function create<ContentType>({
 				let result: any = undefined
 				let error: Error | undefined = undefined
 				let success = false
-				step.promise.then(
+				PProgress.all(step.promises).then(
 					(_res) => {
 						success = true
 						result = _res
@@ -132,7 +134,7 @@ function create<ContentType>({
 
 				await primitives.display_task({
 						msg_before: step.msg_before || 'Processing…',
-						promise: step.promise,
+						promises: step.promises,
 						msg_after: step.msg_after || ((success: boolean, result: any) => {
 							if (success)
 								return '✔ Success'

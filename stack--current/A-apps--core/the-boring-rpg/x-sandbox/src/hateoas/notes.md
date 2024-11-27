@@ -48,3 +48,8 @@ We want more.
   semantic_level?: 'error' | 'warning' | 'info' | 'success',
   * auto-dismiss?
   * ...
+
+
+recommended design?
+chain of resources with "continue-to" or actions/engagements?
+ex. TBRPG's play = action/engagement? or /aventure -> /adventure/last -> adventures?

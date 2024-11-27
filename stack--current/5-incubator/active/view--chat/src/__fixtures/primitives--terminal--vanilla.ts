@@ -4,6 +4,8 @@
 import * as readline from 'node:readline/promises'
 import { stdin as input, stdout as output } from 'node:process'
 
+import {PProgress} from 'p-progress'
+
 import * as RichText from '@offirmo-private/rich-text-format'
 import to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
@@ -53,7 +55,7 @@ export class ChatPrimitivesConsole<ContentType = string | RichText.Document> imp
 
 	async display_task({
 		msg_before,
-		promise,
+		promises,
 		msg_after,
 	}: Parameters<ChatPrimitives<ContentType>['display_task']>[0]) {
 		DEBUG && console.log('[ChatPrimitives.display_task(…)]')
@@ -61,7 +63,7 @@ export class ChatPrimitivesConsole<ContentType = string | RichText.Document> imp
 		console.log(this.get_string_representation(msg_before))
 		let result: any = undefined
 		let error: Error | undefined = undefined
-		const success = await promise.then(
+		const success = await PProgress.all(promises).then(
 			(_res) => {
 				result = _res
 				return true

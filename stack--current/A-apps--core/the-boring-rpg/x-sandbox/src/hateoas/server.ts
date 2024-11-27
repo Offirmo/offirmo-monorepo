@@ -37,6 +37,7 @@ import { resolveꓽrich_text_pending_engagement } from '../to-export-to-own-pack
 
 // TODO define the routes in some sort of structure, not strings
 
+const DEBUG_CALLS = true
 const DEBUG = false
 
 class AppHateoasServer implements HATEOASServer<HypermediaContentType, Action> {
@@ -44,7 +45,7 @@ class AppHateoasServer implements HATEOASServer<HypermediaContentType, Action> {
 	pending_async: Array<Promise<void>> = []
 
 	async get(url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): Promise<HypermediaContentType> {
-		DEBUG && console.group(`↘ HATEOASᐧget("${url}")`)
+		;(DEBUG || DEBUG_CALLS) && console.group(`↘ HATEOASᐧget("${url}")`)
 
 		////////////
 		const { path, query, fragment } = promote_toꓽscheme_specific_part(url)
@@ -226,19 +227,21 @@ class AppHateoasServer implements HATEOASServer<HypermediaContentType, Action> {
 		})
 
 		DEBUG && console.log(`↗ HATEOASᐧget("${url}") returning ☑️`)
-		DEBUG && console.groupEnd()
+		;(DEBUG || DEBUG_CALLS) && console.groupEnd()
 
 		return $builder.done()
 	}
 
 	async dispatch(action: Action, url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): Promise<void> {
-		DEBUG && console.log(`↘ HATEOASᐧdispatch("${url}", ${action.type})...`)
+		;(DEBUG || DEBUG_CALLS) && console.log(`↘ HATEOASᐧdispatch("${url}", ${action.type})...`)
 		const pending = this.app_sugar.dispatch(action)
 		this.pending_async.push(pending)
 		return pending
 	}
 
 	get_pending_engagements(url: Immutable<Hyperlink['href']> = DEFAULT_ROOT_URI): Immutable<Array<HATEOASPendingEngagement<HypermediaContentType, Action>>> {
+		;(DEBUG || DEBUG_CALLS) && console.log(`↘ HATEOASᐧget_pending_engagements("${url}")...`)
+
 		if (url === DEFAULT_ROOT_URI || url === '/session') {
 			// not yet!
 			return []

@@ -22,8 +22,17 @@ interface HATEOASEngagement<HypermediaType> {
 
 interface HATEOASPendingEngagement<HypermediaType, Action>
 	extends
-		Pick<EngagementTemplate<HypermediaType>, 'flow' | 'role' | 'success' | 'attention_needed' | 'enhancements'>,
-		Pick<PendingEngagement<HypermediaType>, 'uid'>
+		Pick<EngagementTemplate<HypermediaType>,
+				| 'flow'
+				| 'sequence'
+				| 'role'
+				| 'success'
+				| 'attention_needed'
+				| 'enhancements'
+			>,
+		Pick<PendingEngagement<HypermediaType>,
+				| 'uid'
+			>
 {
 	content: HypermediaType // resolved
 

@@ -45,7 +45,7 @@ interface ChatPrimitives<ContentType> {
 
 	display_task(p: {
 		msg_before: ContentType | string,
-		promise: TaskProgressStep<ContentType>['promise'],
+		promises: TaskProgressStep<ContentType>['promises'],
 		msg_after: NonNullable<TaskProgressStep<ContentType>['msg_after']>,
 	}): Promise<void>
 

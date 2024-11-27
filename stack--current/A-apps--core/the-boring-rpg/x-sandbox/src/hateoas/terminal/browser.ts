@@ -1,14 +1,17 @@
 import assert from 'tiny-invariant'
 
+import { getꓽcompareFnⵧby_string_key } from '@offirmo-private/ts-utils'
 import { Immutable } from '@offirmo-private/state-utils'
 import {
 	type Uri‿str,
+	type Hyperlink,
 	type Hyperlink‿x,
 	promote_toꓽhyperlink,
 	normalizeꓽuri‿str,
 	promote_toꓽscheme_specific_part,
 } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
+import { PendingEngagementUId } from '@oh-my-rpg/state--engagement'
 
 import { prettifyꓽjson } from '../../services/misc.js'
 
@@ -17,12 +20,14 @@ import {
 	type Step,
 	type SelectStep,
 	type StepIterator,
+	type TaskProgressStep,
 	type StepIteratorTNext,
 	type StepIteratorYieldResult,
 	type StepIteratorReturnResult,
 } from '@offirmo-private/view--chat'
 
-import { type HATEOASServer } from '../../to-export-to-own-package/hateoas/types.js'
+import {
+	HATEOASPendingEngagement, type HATEOASServer} from '../../to-export-to-own-package/hateoas/types.js'
 import {
 	DEFAULT_ROOT_URI,
 	getꓽCTA,
@@ -36,11 +41,17 @@ const DEBUG = false
 
 type ContentType = RichText.NodeLike
 
+type StepClientTemp = {
+	uid: PendingEngagementUId
+}
+
 class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<ContentType> {
 	// hypermedia
 	server: HATEOASServer<ContentType, ActionType>
 	current_route: Uri‿str = DEFAULT_ROOT_URI
-	// TODO one day history: back, home etc.
+	history: Array<Uri‿str> = []
+
+	// TODO one day back, home etc.
 
 	// chat interface
 	pending_steps: Array<Step<ContentType>> = [] // convenience to allow gen_next_step() to yield several steps at once. FIFO (unshift/pop)
@@ -54,15 +65,68 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 		this.server = server
 	}
 
+	/////////////////////////////////////////////////
+
 	navigate_to(link: Hyperlink‿x) {
 		const hyperlink = promote_toꓽhyperlink(link)
 		const uri‿str = normalizeꓽuri‿str(hyperlink.href)
 
-		console.log(`\n[⇨ Navigating to: "${uri‿str}"…${hyperlink.rel.length ? (' (rel = ' + hyperlink.rel + ')') : ''}]`)
+		console.log(`\n【⇨ Navigating to: "${uri‿str}"…${hyperlink.rel.length ? (' (rel = ' + hyperlink.rel + ')') : ''}】`)
 		console.log('------------------------------------------------------')
-		this.current_route = uri‿str
+
+		if (uri‿str !== this.current_route) {
+			this.history.unshift(this.current_route)
+			this.current_route = uri‿str
+		}
 	}
 
+	is_engagement_queued_in_pending_steps(pe: Immutable<HATEOASPendingEngagement<ContentType, ActionType>>): boolean {
+		return this.pending_steps.some(step => {
+			const client_infos: StepClientTemp | undefined = step._client_temp as any // TODO type validation
+			if (!client_infos)
+				return false
+
+			return client_infos.uid === pe.uid
+		})
+	}
+
+	dispatch(action: Immutable<ActionType>, url?: Hyperlink['href']): Promise<void> {
+		const pending = this.server.dispatch(action, url)
+		return this.register_pending_async(pending)
+	}
+
+	get_chat_step_from_engagement(pe: Immutable<HATEOASPendingEngagement<ContentType, ActionType>>): Step<ContentType> {
+		const { content: $doc, ack_action: actionⵧack, uid } = pe
+
+
+		const _client_temp: StepClientTemp = {
+			uid,
+		}
+
+		const BOUND_dispatch = this.dispatch.bind(this)
+
+		// TODO improve depending on the format!
+		const step: Step<ContentType> = {
+			type: StepType.simple_message,
+			msg: $doc as any, // cast away the immutability. TODO one day improve
+			callback: () => actionⵧack && BOUND_dispatch(actionⵧack),
+			_client_temp,
+		}
+
+		return step
+	}
+
+	async register_pending_async(pending: Promise<void>): Promise<void> {
+		this.pending_async.push(pending)
+
+		return pending
+			.finally(() => {
+				this.pending_async = this.pending_async.filter(p => p !== pending)
+			})
+	}
+
+	/////////////////////////////////////////////////
+	// iterator (chat interface)
 	next(p: StepIteratorTNext<ContentType>) {
 		//console.log(`[next step?]`)
 		this.stepsᐧcount_for_avoiding_infinite_loops++
@@ -88,8 +152,92 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 	async gen_next_step({ last_step, last_answer }: StepIteratorTNext<ContentType>): Promise<Step<ContentType>> {
 		//console.log(`[gen_next_step()...] async start...`)
 
-		// REMINDER: ideally we want everything in the HATEOAS
-		// This is a BROWSER which should not contain app-specific behaviour
+		// REMINDER: ideally we want everything in the HATEO**AS**
+		// This is a BROWSER which should contain
+		// as few app-specific behaviour as possible
+		const routeⵧprevious = this.history[0] || DEFAULT_ROOT_URI
+		const routeⵧcurrent = this.current_route
+		const pathⵧprevious = promote_toꓽscheme_specific_part(routeⵧprevious).path
+		const pathⵧcurrent = promote_toꓽscheme_specific_part(routeⵧcurrent).path
+
+		const isꓽintro = (() => {
+			// are we coming from a parent route?
+
+			if (this.history.length === 0)
+				return true // obviously
+
+			return pathⵧcurrent.startsWith(pathⵧprevious)
+		})()
+
+		// TODO clarify the concept = transition between what??
+		const isꓽtransition = (() => {
+			if (this.history.length === 0)
+				return false // obviously
+
+			if (isꓽintro)
+				return false // obviously
+
+			if (pathⵧcurrent === pathⵧprevious) {
+				// the difference must be in query or fragment
+				return false
+			}
+
+			// TODO clarify what a transition is!
+			// ex. should it depend on the path?
+			// are we coming from a sibling route?
+			return true
+		})()
+
+		assert(!(isꓽintro && isꓽtransition), `should never be both intro and transition!`)
+
+		// inspect pending engagements
+		const pending_engagements = this.server.get_pending_engagements(this.current_route)
+		const pending_engagementsⵧunprocessed = pending_engagements
+			.filter(pe =>
+				!this.is_engagement_queued_in_pending_steps(pe))
+
+		// critical ones
+		const pending_engagements__flowⵧmain = pending_engagementsⵧunprocessed.filter(pe => pe.flow === 'main')
+		if (pending_engagements__flowⵧmain.length) {
+			// those engagement are the MOST important, immediately queue them
+
+			// HOWEVER if flow=main
+			// there are subtleties on "sequence"
+
+			// TODO should we skip transition until actual browsing?
+			const relevant_engagements = pending_engagements__flowⵧmain
+				.filter(e => {
+					switch (e.sequence) {
+						case 'intro':
+							return isꓽintro
+						case 'transition':
+							return isꓽtransition
+						case 'pre':
+							return true
+						default:
+							return true
+					}
+				})
+				.toSorted(
+					getꓽcompareFnⵧby_string_key(e => e.sequence || '*', ['intro', 'transition', 'pre', '*'])
+				)
+
+			this.pending_steps.unshift(
+				...relevant_engagements
+					.map(this.get_chat_step_from_engagement, this)
+			)
+		}
+
+		// less critical ones
+		const pending_engagements__flowⵧnon_main =
+			pending_engagementsⵧunprocessed.filter(pe => pe.flow !== 'main')
+		this.pending_steps.unshift(
+			...pending_engagements__flowⵧnon_main
+				.toSorted(
+					getꓽcompareFnⵧby_string_key('flow', ['side', 'not'])
+				)
+				.map(this.get_chat_step_from_engagement, this)
+		)
 
 		if (this.pending_steps.length) {
 			//console.log(`[gen_next_step()] steps pending=`, this.pending_steps.length)
@@ -100,58 +248,29 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 			return step
 		}
 
+		// ok we have no more pending steps to display
+		// we need to get new data
+		// BUT first let's wait for pending running stuff (that may affect the data)
+		// TODO optimistic updates? OR it's the server responsibility?
+
 		// TODO review, we should be able to transition and pre-load steps while waiting
 		if (this.pending_async.length) {
-			//console.log(`[awaiting pending...]`)
-			await Promise.all(this.pending_async)
-			this.pending_async = []
+			// TODO loader?? transition?
+			return {
+				type: StepType.progress,
+				promises: this.pending_async
+			} as TaskProgressStep<ContentType>
 		}
 
-		const navigate_to = this.navigate_to.bind(this)
-		const dispatch: HATEOASServer<ContentType, ActionType>['dispatch'] = (action, url) => {
-			const pending = this.server.dispatch(action, url)
-			this.pending_async.push(pending)
-			return pending
-		}
+		const BOUND_navigate_to = this.navigate_to.bind(this)
+		const BOUND_dispatch = this.dispatch.bind(this)
 		const reset_infinite_loop_prevention = () => {
 			this.stepsᐧcount_for_avoiding_infinite_loops = 0
 		}
 
-		// XXX TO REWRITE
-		switch(this.status) {
-			case 'starting': {
-				// skip the engagement messages
-				// to give a chance for some content
-				// (hopefully introducing the app)
-				// to be displayed first
-				this.status = 'nominal'
-				break
-			}
-			case 'nominal': {
-				const pes = this.server.get_pending_engagements(this.current_route)
-				this.pending_steps.unshift(...pes.map(pe => {
-					const { content: $doc, ack_action: actionⵧack } = pe
-					// TODO improve depending on the format!
-					const step: Step<ContentType> = {
-						type: StepType.simple_message,
-						msg: $doc as any, // cast away the immutability. TODO one day improve
-						callback: () => actionⵧack && dispatch(actionⵧack),
-					}
-					return step
-				}))
-				if (this.pending_steps.length) {
-					//console.log(`[gen_next_step()] ...yielding from enqueued post-PE`)
-					return this.pending_steps.pop()!
-				}
-				break
-			}
-			default:
-				throw new Error(`gen_next_step called in invalid status "${this.status}"!`)
-		}
+		console.log(`【Browsing: "${this.current_route}"】`)
 
-		console.log(`[Browsing: "${this.current_route}"]`)
-
-		// TODO loader and transitions
+		// TODO loader and transitions here?
 		const hypermedia = await this.server.get(this.current_route)
 
 		const actions = RichText.renderⵧto_actions(hypermedia)
@@ -198,13 +317,13 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 
 					switch (value.type) {
 						case 'action': {
-							dispatch(value.payload)
+							BOUND_dispatch(value.payload)
 							if (value.href)
-								navigate_to(value.href)
+								BOUND_navigate_to(value.href)
 							break
 						}
 						case 'hyperlink': {
-							navigate_to(value.link)
+							BOUND_navigate_to(value.link)
 							break
 						}
 						default:
@@ -222,7 +341,7 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 			msg: hypermedia,
 			callback: () => {
 				if (actionⵧlinkⵧcontinue) {
-					navigate_to(actionⵧlinkⵧcontinue.link)
+					BOUND_navigate_to(actionⵧlinkⵧcontinue.link)
 				}
 			},
 		}

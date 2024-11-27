@@ -25,6 +25,11 @@ interface BaseStep {
 	// always a callback after the step is done, even for a trivial one
 	// for ex. a notification system may want to mark a notif as "read" after it's been displayed
 	callback?: (...p: any[]) => void
+
+	// private use area for the client
+	// for ex. the client may need to link this step to another system that generated it (uid)
+	// or may need to store some temp status data
+	_client_temp?: { [k:string]: any }
 }
 
 interface SimpleMessageStep<ContentType> extends BaseStep {
@@ -50,7 +55,7 @@ interface TaskProgressStep<ContentType, T = any> extends BaseStep {
 	type: typeof StepType.progress
 
 	msg_before?: ContentType | string
-	promise: Promise<T> | PromiseWithProgress<T>
+	promises: Array<Promise<T> | PromiseWithProgress<T>>
 	msg_after?: (success: boolean, result: T | Error) => ContentType | string
 
 	callback?: (success: boolean, result: T | Error) => void

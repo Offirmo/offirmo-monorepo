@@ -29,7 +29,7 @@ export default function* get_next_step(skip_to_index: number = 0) {
 			type: StepType.progress,
 
 			msg_before: '【Displaying a task’s progress…】',
-			promise: warmup_promise,
+			promises: [warmup_promise],
 			msg_after: success => success ? '✔ Task done' : ' ✖ Task failed',
 
 			callback: success => console.log(`【callback called: ${success}】`),

@@ -116,6 +116,7 @@ never-ending feature party https://corgibytes.com/blog/2018/01/02/neverending-fe
 Next Larger Context = always design a thing by considering it in its next larger context — a chair in a room, a room in a house, a house in a city... https://skamille.medium.com/the-next-larger-context-3970afaa8fb2 (see also shearing layers)
 no one was ever fired for using...
 path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
+personas -- data savvy vs data shy
 pitch -- 01 Why the world needs this now
 pitch -- 02 Our approach, team, and why we win
 pitch -- 03 How big this could get. Napkin math
@@ -152,6 +153,10 @@ reputation management
 reputation management -- REPCOM
 risk management = be proactive instead of reactive
 satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing
+scale frontiers - 01 Generous free product
+scale frontiers - 02 Affordable Paid Product
+scale frontiers - 03 Teams of all sizes
+scale frontiers - 04 Large Orgs
 second product -- syndrome https://www.hubspot.com/startups/resources/second-product-tips-for-success
 second product -- When and How https://caseyaccidental.com/second-products/
 shared vision = maintaining a shared vision across the board to help stay on course
@@ -159,6 +164,7 @@ side projects -- outside of job https://www.reddit.com/r/SideProject/comments/1b
 startups should avoid being held hostage by the preferences of their early user base if it deviates from the broader market, ex. social feed or reels
 strategy -- 01 "where we play"
 strategy -- 02 "how we win"
+strategy -- evergreen vs cyclic
 strategy https://stratechery.com/
 switching barriers
 switching cost

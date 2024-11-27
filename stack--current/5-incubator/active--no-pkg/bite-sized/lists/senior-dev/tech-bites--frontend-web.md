@@ -245,10 +245,10 @@ puppeteer https://pptr.dev/
 PWA https://whatpwacando.today/ https://web.dev/learn/pwa
 react
 react -- hooks
-realtime -- patterns -- Poke/pull
-realtime -- patterns -- Push biz events
-realtime -- patterns -- Push state
-realtime -- patterns -- Push state diff
+realtime -- patterns -- poke/pull
+realtime -- patterns -- push biz events
+realtime -- patterns -- push state
+realtime -- patterns -- push state diff
 realtime updates https://zknill.io/posts/how-to-adopt-realtime/
 rendering strategy -- client-side rendering (CSR) = give customers ingredients to prepare themselves
 rendering strategy -- incremental static re-generation = refire cold plates
