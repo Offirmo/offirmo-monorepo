@@ -37,7 +37,7 @@ import { resolveꓽrich_text_pending_engagement } from '../to-export-to-own-pack
 
 // TODO define the routes in some sort of structure, not strings
 
-const DEBUG_CALLS = true
+const DEBUG_CALLS = false
 const DEBUG = false
 
 class AppHateoasServer implements HATEOASServer<HypermediaContentType, Action> {
