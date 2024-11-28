@@ -311,11 +311,14 @@ UI -- properties -- Intelligent = improve the efficiency, effectiveness, and nat
 UI -- properties -- Multi-screen = take advantage of multiple displays
 UI -- properties -- Natural-language = User types in a question and waits for a response. used for search engines and on webpages.
 UI -- properties -- Permission-driven = show or conceal menu options or functions depending on the user's level of permissions. The system is intended to improve the user experience by removing items that are unavailable to the user. A user who sees functions that are unavailable for use may become frustrated. It also provides an enhancement to security by hiding functional items from unauthorized persons.
+UI -- transitions
 UI -- views
 UI https://en.wikipedia.org/wiki/User_interface
 User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#large-viewport
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
 UX -- challenges -- information overload
+UX -- delightful = "the app cares about my experience"
+UX -- delightful = easy to sell to stakeholders
 UX -- evaluation/review -- "User Experience Honeycomb" = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb
 UX -- properties https://en.wikipedia.org/wiki/User_interface#Types
 UX -- types -- Batch = non-interactive user interfaces, where the user specifies all the details of the batch job in advance to batch processing, and receives the output when all the processing is done. The computer does not prompt for further input after the processing has started.

@@ -8,3 +8,10 @@ great filter https://science.slashdot.org/story/24/04/14/0446244/ai-could-explai
 
 
 tool https://huggingface.co/spaces/finegrain/finegrain-object-cutter
+
+
+
+old-growth forest
+"forest death" (german)
+
+extraction

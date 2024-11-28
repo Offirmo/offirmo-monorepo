@@ -116,6 +116,9 @@ democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
 dependability https://posthog.com/founders/first-ops-hire
 deterrence
 differences: introvert/extrovert
+disability
+disability -- flag +++
+disability -- overcoming
 discernement -- technique de pile ou face
 disrespect = lack of consideration or regard for others’ privacy, physical or emotional space, viewpoints, or belongings. Intimidation, aggressive behavior, “the silent treatment”. Thoughtless or arrogant behavior, like using profanity when someone objects to it.
 don't expect perfection -> trigger self-consciousness = counter-productive
@@ -167,6 +170,7 @@ goals -- S.M.A.R.T. -- 02 M (Measurable) Include measures and metrics where prog
 goals -- S.M.A.R.T. -- 03 A (Aspirational yet Achievable) Write Individual Goals that are within your control and influence, but make them aspirational – push yourself (and us) to be bold and ambitious! Discuss with your manager on how to establish a healthy amount of "stretch" in your goals, while referencing your Growth Profile, so that it can lead to significant impact.
 goals -- S.M.A.R.T. -- 04 R (Relevant) Align the goal with your team’s mission, values, department/team OKRs, and strategic and business objectives. Clearly articulate the reason(s) for pursuing the goal and how this contributes to our short- and long-term objectives.
 goals -- S.M.A.R.T. -- 05 T (Time-bound) Create a specific end date for the goal. This instills a sense of urgency and helps you develop a work plan that prioritizes tasks leading up to the delivery date (e.g., one month, one quarter, or longer).
+goldilock zone / problem
 good life questions https://radreads.co/10k-questions/
 Goodhart’s Law = When a measure becomes a target, it ceases to be a good measure. One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
 grit

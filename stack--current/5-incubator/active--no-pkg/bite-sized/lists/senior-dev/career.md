@@ -9,6 +9,21 @@ https://charity.wtf/2019/01/04/engineering-management-the-pendulum-or-the-ladder
 
 "director ceiling" https://www.reddit.com/r/ProductManagement/comments/10ldwq7/how_to_make_the_jump_from_senior_to_director_at_a/
 
+junior - navigate the corporate world = strips
+
+"volume hiring" vs. stress + 1y to find a new job
+
+Personal MBA
+
+protect the discipline, don't work after hours
+
+employable = have choice, can quit
+
+hiring / economic cycles
+
+when hunted, take the opportunity
+
+
 
 ------------------------------------------------------------------------------------------
 https://www.teamblind.com/post/Made-it-to-FAANG-Director-without-a-single-promotion-ever-NS2LaxE7
