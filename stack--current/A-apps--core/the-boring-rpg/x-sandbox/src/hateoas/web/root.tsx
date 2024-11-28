@@ -1,6 +1,6 @@
 import React from "react"
 
-import { AppHateoasServer } from './server'
+import { AppHateoasServer } from './server.js'
 import { HypermediaBrowserWithWebInterface } from './browser'
 
 export default function Root() {
