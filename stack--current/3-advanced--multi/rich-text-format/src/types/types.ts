@@ -7,21 +7,22 @@ const NodeType = Enum(
 	// https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block
 
 	// display "inline"
-	'fragmentⵧinline', // = span
 	'strong', // strong but less strong than heading. Ex. ansi.bold
 	'weak', // opposite of strong ;) Ex. ansi.dim
 	'em', // TODO clarify semantic difference with strong: Alternate? (= italic)
-	'emoji', // OPTIONAL but useful to ensure a good rendering
-	         // as of 2024, emojis are still very hard to handle properly, hence deserving a special node type
-	         // this node type represent a single emoji
-	         // https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
+	'emoji', // OPTIONAL but useful to ensure a good rendering.
+	         // This node type represent a single emoji.
+	         // As of 2024, emojis are still very hard to handle properly
+	         // ref: https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
+	         // hence deserving the help of this special node type
+	'fragmentⵧinline', // = span
 
 	// display "block"
-	'fragmentⵧblock',  // = div
 	'heading',
 	'ol',
 	'ul',
 	'hr',
+	'fragmentⵧblock',  // = div
 
 	// special
 	'br', // Useful for poems etc.
@@ -40,12 +41,12 @@ interface Hints {
 	href?: Uri‿x | Hyperlink // make this node a link to a specific resource
 	bullets_style?: 'none' // for ul, to remove bullets (TODO ONE DAY also allow to customize?)
 	key?: string // for ex. to recognize a specific content (do not abuse! Reminder to keep everything text-compatible)
-	possible_emoji?: Emoji // this emoji can be used to represent/augment this node
 	//uuid?: string // for ex. to recognize a specific resource (TODO review, should send JSON tohether instead or use actions)
 
-	[k: string]: any
+	// emoji support: TODO one day, API following https://github.com/jdecked/twemoji
+	possible_emoji?: Emoji // this emoji can be used to represent/augment this node
 
-	// TODO emoji API following https://github.com/jdecked/twemoji
+	[k: string]: any
 }
 
 // using type instead of interface to prevent extra properties

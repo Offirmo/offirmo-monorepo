@@ -23,7 +23,8 @@ interface HyperlinkAction extends BaseAction {
 	type: 'hyperlink'
 	link: Hyperlink
 
-	// TODO meta data? Ex. redirect?
+	// TODO meta data?
+	// TODO identify use cases
 }
 
 // the data to embed as "hint"

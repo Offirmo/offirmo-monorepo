@@ -48,6 +48,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/prettify-any": "*",
+		"@offirmo-private/react-error-boundary": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",

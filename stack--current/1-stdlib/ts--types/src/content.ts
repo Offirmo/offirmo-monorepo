@@ -5,7 +5,7 @@ import { IETFLanguageType } from './international.js'
 // building blocks
 // REFINED in @offirmo-private/ts-types-web
 
-export type Emoji = string
+export type Emoji = string // TODO more advanced emoji API following https://github.com/jdecked/twemoji
 export type Uri‿str = string
 export type Url‿str = Uri‿str
 export type Email‿str = string

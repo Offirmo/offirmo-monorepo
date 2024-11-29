@@ -51,7 +51,13 @@ type Uri‿x =
 
 /////////////////////////////////////////////////
 
-type LinkRelation = string
+type LinkRelation =
+	| 'continue-to'
+	| 'home'
+	| 'back'
+	| 'self'
+	| string
+
 
 /** A more generic hyperlink than HTML's <a> following hypermedia theory
  * see https://hypermedia.systems/

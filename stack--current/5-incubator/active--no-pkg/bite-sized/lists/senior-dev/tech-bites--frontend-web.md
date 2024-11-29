@@ -299,7 +299,12 @@ UI -- block -- typography
 UI -- event -- blur, hover, focus, click, auxclick, double click...
 UI -- flow vs. float https://floating-ui.com/
 UI -- HUD
+UI -- layout -- 
+UI -- layout -- list -- details = with detailed preview on the side
+UI -- layout -- list -- simple
 UI -- layout -- masonry
+UI -- layout -- table
+UI -- layout -- tree
 UI -- modals -- sheets = ~semi-modal https://en.wikipedia.org/wiki/Modal_window#Modal_sheets_in_Mac_OS_X
 UI -- modals https://en.wikipedia.org/wiki/Modal_window
 UI -- modes https://en.wikipedia.org/wiki/User_interface#Modalities_and_modes
