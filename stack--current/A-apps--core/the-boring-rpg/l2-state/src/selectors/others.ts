@@ -54,7 +54,7 @@ function getꓽpending_engagements(u_state: Immutable<UState>): ReturnType<typeo
 
 // TODO code duplication
 /*
-function getꓽoldest_pending_engagementⵧflow(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: PendingEngagement } | null {
+function getꓽoldest_pending_engagementⵧflow(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: TrackedEngagement } | null {
 	const pe = getꓽoldest_queuedⵧflow(u_state.engagement)
 	if (!pe)
 		return null
@@ -65,7 +65,7 @@ function getꓽoldest_pending_engagementⵧflow(u_state: Immutable<UState>): { u
 		pe,
 	}
 }
-function getꓽoldest_pending_engagementⵧnon_flow(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: PendingEngagement } | null {
+function getꓽoldest_pending_engagementⵧnon_flow(u_state: Immutable<UState>): { uid: number, $doc: RichText.Document, pe: TrackedEngagement } | null {
 	const pe = getꓽoldest_queuedⵧnon_flow(u_state.engagement)
 	if (!pe)
 		return null

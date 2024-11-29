@@ -51,12 +51,24 @@ type Uri‿x =
 
 /////////////////////////////////////////////////
 
+// https://www.iana.org/assignments/link-relations/link-relations.xhtml
 type LinkRelation =
-	| 'continue-to'
 	| 'home'
 	| 'back'
-	| 'self'
-	| string
+	| 'self' // Conveys an identifier for the link's context.
+	| 'about'
+	| 'external' // Refers to a resource that is not part of the same site as the current context.
+	| 'item' // The target IRI points to a resource that is a member of the collection represented by the context IRI.
+	| 'nofollow' // Indicates that the context’s original author or publisher does not endorse the link target.
+	| 'noopener' // Indicates that any newly created top-level browsing context which results from following the link will not be an auxiliary browsing context. 	[HTML]
+	| 'noreferrer' // Indicates that no referrer information is to be leaked when following the link. 	[HTML]
+	| 'opener' // Indicates that any newly created top-level browsing context which results from following the link will be an auxiliary browsing context.
+	| 'section' // Refers to a section in a collection of resources.'
+	// TODO one day look into webmention, "Linkback" mechanism to the ones of Refback, Trackback, and Pingback
+	// special Offirmo HATEOAS
+	| 'continue-to' // automatically navigates to this resource once the current one is displayed
+	// ultimately, everything is valid
+	//| string
 
 
 /** A more generic hyperlink than HTML's <a> following hypermedia theory

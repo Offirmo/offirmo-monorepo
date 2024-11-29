@@ -1,7 +1,7 @@
 import { type Immutable} from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { type EngagementTemplate } from '@oh-my-rpg/state--engagement'
+import { type Engagement } from '@oh-my-rpg/state--engagement'
 import { type HypermediaContentType } from '@tbrpg/definitions'
 
 import { EngagementTemplateKey } from './types.js'
@@ -9,14 +9,14 @@ import { EngagementTemplateKey } from './types.js'
 /////////////////////////////////////////////////
 
 // TODO review good idea to centralize??
-export function getꓽengagement_template(key: EngagementTemplateKey): EngagementTemplate<HypermediaContentType> {
+export function getꓽengagement_template(key: EngagementTemplateKey): Engagement<HypermediaContentType> {
 	switch(key) {
 		case EngagementTemplateKey.achievement_unlocked: {
 			return {
-				content: RichText.fragmentⵧblock()
+				summary: RichText.fragmentⵧblock()
 					.pushStrong('🏆 Achievement unlocked:')
-					.pushLineBreak() // TODO review, display not great
-					.pushText(`“⎨⎨icon⎬⎬ ⎨⎨name⎬⎬“`)
+					//.pushLineBreak() // TODO review, display not great
+					.pushText(` “⎨⎨icon⎬⎬ ⎨⎨name⎬⎬“`)
 					.done(),
 				flow: 'side',
 				role: 'system',
@@ -61,16 +61,6 @@ export function getꓽengagement_template(key: EngagementTemplateKey): Engagemen
 					.pushWeak('Code successfully redeemed.')
 					.done()
 
-			case EngagementKey['reborn']:
-				return RichText.fragmentⵧblock()
-					.pushStrong('You got reborn')
-					.pushLineBreak()
-					.pushText('Sorry, I changed the data format 😰.')
-					.done()
-					{
-				type: EngagementState.EngagementType.warning,
-				key: EngagementKey['reborn'],
-			}
 	*/
 		default:
 			throw new Error(`Missing engagement message for "${key}"! (not implemented?)`)

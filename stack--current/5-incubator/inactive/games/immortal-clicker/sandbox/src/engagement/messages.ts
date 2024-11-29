@@ -1,11 +1,11 @@
 import { type Immutable} from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
-import { PendingEngagement } from '@oh-my-rpg/state--engagement'
+import { TrackedEngagement } from '@oh-my-rpg/state--engagement'
 import { EngagementKey } from './types.js'
 
 ////////////////////////////////////
 
-export function getꓽengagement_message(pe: Immutable<PendingEngagement>): RichText.Document {
+export function getꓽengagement_message(pe: Immutable<TrackedEngagement>): RichText.Document {
 	const { engagement: {key}, params} = pe
 
 	switch(key) {

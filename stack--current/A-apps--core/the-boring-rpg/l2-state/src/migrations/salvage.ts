@@ -1,6 +1,5 @@
-/////////////////////
-
 import { Enum } from 'typescript-string-enums'
+import * as RichText from '@offirmo-private/rich-text-format'
 
 import { type Immutable, JSONObject, JSON } from '@offirmo-private/ts-types'
 import { getꓽschema_versionⵧloose } from '@offirmo-private/state-utils'
@@ -19,10 +18,10 @@ import {
 	change_avatar_class,
 	_autoplay,
 } from '../reducers/index.js'
-import { getꓽengagement_template, EngagementTemplateKey } from '../data/engagement/index.js'
 
 /////////////////////
 
+// TODO externalise
 // https://github.com/burakcan/mb
 // Exception-free nested nullable attribute accessor
 const mb = (...p: string[]) =>
@@ -118,8 +117,16 @@ function reset_and_salvage(legacy_state: Immutable<any>): Immutable<State> {
 		u_state: {
 			...state.u_state,
 			engagement: EngagementState.enqueue(state.u_state.engagement,
-				getꓽengagement_template(EngagementTemplateKey.reborn),
-				{}
+				{
+					summary: RichText.fragmentⵧblock()
+						.pushStrong('You got reborn')
+						.pushLineBreak()
+						.pushText('Sorry, I changed the data format 😰.')
+						.done(),
+					flow: 'side',
+					role: 'assistant',
+					attention_needed: 'log',
+				}
 			),
 		},
 	}

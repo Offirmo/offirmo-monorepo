@@ -103,7 +103,7 @@ class HypermediaBrowserWithChatInterface<ActionType> implements StepIterator<Con
 	}
 
 	get_chat_step_from_engagement(pe: Immutable<HATEOASPendingEngagement<ContentType, ActionType>>): Step<ContentType> {
-		const { content: $doc, ack_action: actionⵧack, uid } = pe
+		const { summary: $doc, ack_action: actionⵧack, uid } = pe
 
 		const _this_browser = this
 

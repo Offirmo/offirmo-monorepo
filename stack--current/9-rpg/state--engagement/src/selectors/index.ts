@@ -2,22 +2,22 @@ import { type Immutable } from '@offirmo-private/ts-types'
 
 import {
 	type State,
-	type PendingEngagement,
+	type TrackedEngagement,
 } from '../types.js'
 
 //////////////////////////////////////////////////////////////////////
 
-function getꓽpending_engagements<TextFormat>(state: Immutable<State<TextFormat>>): Immutable<Array<PendingEngagement<TextFormat>>> {
+function getꓽpending_engagements<TextFormat>(state: Immutable<State<TextFormat>>): Immutable<Array<TrackedEngagement<TextFormat>>> {
 	return state.queue
 }
 
 /*
-function getꓽoldest_queuedⵧflow(state: Immutable<State>): Immutable<PendingEngagement> | undefined {
+function getꓽoldest_queuedⵧflow(state: Immutable<State>): Immutable<TrackedEngagement> | undefined {
 	return state.queue
 		.find(queued => queued.engagement.type === EngagementType.flow)
 }
 
-function getꓽoldest_queuedⵧnon_flow(state: Immutable<State>): Immutable<PendingEngagement> | undefined {
+function getꓽoldest_queuedⵧnon_flow(state: Immutable<State>): Immutable<TrackedEngagement> | undefined {
 	return state.queue
 		.find(queued => queued.engagement.type !== EngagementType.flow)
 }*/

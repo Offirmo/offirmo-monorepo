@@ -206,6 +206,9 @@ identity -- " I’d tied my identity and reputation to hard work"
 if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
 ikigai
 impostor syndrome
+incentive
+incentive -- perverse -- cobra effect
+incentive -- perverse https://en.wikipedia.org/wiki/Perverse_incentive
 inclusiveness = extend the opportunity for everyone to contribute
 influence operations
 influence operations -- breakout scale -- 01 one platform, no breakout
@@ -275,6 +278,7 @@ minorities -- vocal minority
 mondegreen https://thehabit.co/knowledge-is-power-france-is-bacon/
 monkey ladder experiment https://factschology.com/factschology-articles-podcast/monkey-ladder-experiment-truth
 Monty Hall problem https://en.wikipedia.org/wiki/Monty_Hall_problem
+moral hazard = Increases in the exposure to risk when insured, or when another bears the cost
 mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruction
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
 naiveté: abus sexuels, mafia
@@ -398,6 +402,7 @@ start with the most risky / complicated
 start with why
 Stigler's law of eponymy = inventor = the one who bring to attention, not the discoverer https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy
 stoicism -- Rudyard Kipling "If" https://en.wikipedia.org/wiki/If%E2%80%94
+Streisand effect = Increased awareness of information caused by efforts to suppress it
 Sturgeon's law = "90% of everything is crap" https://en.wikipedia.org/wiki/Sturgeon%27s_law
 submarine = hidden project until ready
 Sun Tsu’s three rules of warfare -- Only fight when there is a prize worth fighting for
@@ -428,6 +433,7 @@ tools -- spreadsheet
 tools -- trello
 top-down/bottom-up
 tradeoffs / can't have everything
+tragedy of the commons = Self-interests causing depletion of a shared resource
 Tree Decision Rights Model http://www.cio.com/article/2386119/careers-staffing/how-it-leaders-can-empower-teams-to-become-decision-makers.html
 tribal knowledge
 trichotomy https://en.wikipedia.org/wiki/Trichotomy_(philosophy)

@@ -53,3 +53,5 @@ We want more.
 recommended design?
 chain of resources with "continue-to" or actions/engagements?
 ex. TBRPG's play = action/engagement? or /aventure -> /adventure/last -> adventures?
+-> rsrc when we may want to go back to it (ex last adventure's result)
+-> engagement when disposable + we don't want to have it again if revisiting the rsrc

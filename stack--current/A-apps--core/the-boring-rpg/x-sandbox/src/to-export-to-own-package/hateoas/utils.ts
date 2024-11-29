@@ -9,7 +9,7 @@ import {
 	createⵧfrom_content,
 } from '@offirmo-private/rich-text-format'
 import {
-	type PendingEngagement,
+	type TrackedEngagement,
 	type PendingEngagementUId,
 } from '@oh-my-rpg/state--engagement'
 
@@ -18,7 +18,7 @@ import { type HATEOASPendingEngagement } from './types.js'
 /////////////////////////////////////////////////
 
 const EXPECTED_FIELDS = new Set(['$sub', '$hints'])
-function assertꓽparams__shape(params: PendingEngagement<NodeLike>['params']): Pick<CheckedNode, '$sub' | '$hints'> {
+function assertꓽparams__shape(params: TrackedEngagement<NodeLike>['params']): Pick<CheckedNode, '$sub' | '$hints'> {
 	const result: Pick<CheckedNode, '$sub' | '$hints'> = {
 		$sub: {},
 		$hints: {},
@@ -26,7 +26,7 @@ function assertꓽparams__shape(params: PendingEngagement<NodeLike>['params']): 
 
 	const keys = Object.keys(params)
 	keys.forEach(k => {
-		assert(EXPECTED_FIELDS.has(k), `a HATEOAS RichText PendingEngagement params should not contain extraneous fields! ("${k}")`)
+		assert(EXPECTED_FIELDS.has(k), `a HATEOAS RichText TrackedEngagement params should not contain extraneous fields! ("${k}")`)
 	})
 
 	result.$sub = {
@@ -40,7 +40,7 @@ function assertꓽparams__shape(params: PendingEngagement<NodeLike>['params']): 
 }
 
 function resolveꓽrich_text_pending_engagement<Action>(
-	pe: Immutable<PendingEngagement<NodeLike>>,
+	pe: Immutable<TrackedEngagement<NodeLike>>,
 	uid_to_ack: (uid: PendingEngagementUId) => Immutable<Action>,
 ): Immutable<HATEOASPendingEngagement<Node, Action>> {
 	const template__contentⵧmutable = getꓽmutable_copy(pe.template.content)
@@ -57,7 +57,7 @@ function resolveꓽrich_text_pending_engagement<Action>(
 	})*/
 
 	return {
-		content: builder.done(),
+		summary: builder.done(),
 		flow: pe.template.flow,
 		role: pe.template.role,
 		...(pe.template.success !== undefined && { success: pe.template.success }),

@@ -4,8 +4,8 @@ import {
 	type Hyperlink,
 } from '@offirmo-private/ts-types-web'
 import {
-	type PendingEngagement,
-	type EngagementTemplate,
+	type TrackedEngagement,
+	type Engagement,
 } from '@oh-my-rpg/state--engagement'
 
 /////////////////////////////////////////////////
@@ -20,23 +20,8 @@ interface HATEOASEngagement<HypermediaType> {
 
  */
 
-interface HATEOASPendingEngagement<HypermediaType, Action>
-	extends
-		Pick<EngagementTemplate<HypermediaType>,
-				| 'flow'
-				| 'sequence'
-				| 'role'
-				| 'success'
-				| 'attention_needed'
-				| 'enhancements'
-			>,
-		Pick<PendingEngagement<HypermediaType>,
-				| 'uid'
-			>
-{
-	content: HypermediaType // resolved
-
-	ack_action?: Action // the action to dispatch to acknowledge this engagement
+interface HATEOASPendingEngagement<HypermediaType, Action> extends TrackedEngagement<HypermediaType> {
+	ack_action?: Action // the action to dispatch to acknowledge this engagement, ex. record engagement as seen
 }
 
 interface HATEOASServer<

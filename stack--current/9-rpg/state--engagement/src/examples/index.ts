@@ -1,7 +1,7 @@
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import {
-	type EngagementTemplate,
+	type Engagement,
 	type State,
 } from '../types.js'
 
@@ -13,16 +13,16 @@ type DemoContentType = string
 
 // the most common case
 // can be re-used
-const DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL: EngagementTemplate<DemoContentType> = {
-	content: '[ENGT DEMO]Hello, World!',
+const DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL: Engagement<DemoContentType> = {
+	summary: '[ENGT DEMO]Hello, World!',
 
 	flow: 'main',
 	role: 'assistant',
 	attention_needed: 'normal',
 }
 
-const DEMO_TEMPLATEⵧPLAYⵧFAILURE: EngagementTemplate<DemoContentType> = {
-	content: '[ENGT DEMO]You failed!',
+const DEMO_TEMPLATEⵧPLAYⵧFAILURE: Engagement<DemoContentType> = {
+	summary: '[ENGT DEMO]You failed!',
 
 	flow: 'main',
 	role: 'system',
@@ -37,16 +37,16 @@ const DEMO_TEMPLATEⵧPLAYⵧFAILURE: EngagementTemplate<DemoContentType> = {
 }
 
 // low importance
-const DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG: EngagementTemplate<DemoContentType> = {
-	content: '[ENGT DEMO]Hello, World!',
+const DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG: Engagement<DemoContentType> = {
+	summary: '[ENGT DEMO]Hello, World!',
 
 	flow: 'side',
 	role: 'assistant',
 	attention_needed: 'log',
 }
 
-const DEMO_TEMPLATEⵧNON_FLOW: EngagementTemplate<DemoContentType> = {
-	content: `[ENGT DEMO]You got an update! See what's new!`,
+const DEMO_TEMPLATEⵧNON_FLOW: Engagement<DemoContentType> = {
+	summary: `[ENGT DEMO]You got an update! See what's new!`,
 
 	flow: 'not',
 	role: 'assistant',
@@ -54,8 +54,8 @@ const DEMO_TEMPLATEⵧNON_FLOW: EngagementTemplate<DemoContentType> = {
 }
 
 // real examples
-const DEMO_SPOILER: EngagementTemplate<DemoContentType> = {
-	content: 'Spoiler alert!',
+const DEMO_SPOILER: Engagement<DemoContentType> = {
+	summary: 'Spoiler alert!',
 
 	flow: 'main',
 	role: 'system',
@@ -75,11 +75,11 @@ const DEMO_STATE: Immutable<State<DemoContentType>> = enforceꓽimmutable<State<
 
 	queue: [
 		{
+			...DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG,
 			uid: 42,
-			template: DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG,
-			params: {
+			/*params: {
 				username: 'Offirmo',
-			},
+			},*/
 		},
 	],
 })

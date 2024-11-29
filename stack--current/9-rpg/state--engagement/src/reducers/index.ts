@@ -4,8 +4,8 @@ import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-util
 import { SCHEMA_VERSION } from '../consts.js'
 
 import {
-	type EngagementTemplate,
-	type PendingEngagement,
+	type Engagement,
+	type TrackedEngagement,
 	type PendingEngagementUId,
 	type State,
 } from '../types.js'
@@ -27,16 +27,14 @@ function create<TextFormat>(SXC?: SoftExecutionContext): Immutable<State<TextFor
 
 /////////////////////
 
-function enqueue<TextFormat>(state: Immutable<State<TextFormat>>, template: Immutable<EngagementTemplate<TextFormat>>, params: Immutable<PendingEngagement<TextFormat>['params']>): Immutable<State<TextFormat>> {
-
-	// Avoid duplication? Possible bug? No, hard to detect, may have different params.
-	// ex. multiple level rises should be ok.
+function enqueue<TextFormat>(state: Immutable<State<TextFormat>>, engagement: Immutable<Engagement<TextFormat>>): Immutable<State<TextFormat>> {
+	// Avoid duplication? Possible bug? hard to detect...
+	// ex. multiple consecutive level rises are ok
 	// ex. multiple new achievements
 
-	const pending: Immutable<PendingEngagement<TextFormat>> = {
+	const pending: Immutable<TrackedEngagement<TextFormat>> = {
+		...engagement,
 		uid: state.revision + 1,
-		template,
-		params,
 	}
 
 	return {
@@ -78,6 +76,8 @@ function acknowledge_seenⵧall<TextFormat>(state: Immutable<State<TextFormat>>)
 		revision: state.revision + 1,
 	}
 }
+
+// TODO one day: allow updates? ex. for permanent "intro" ones?
 
 //////////////////////////////////////////////////////////////////////
 

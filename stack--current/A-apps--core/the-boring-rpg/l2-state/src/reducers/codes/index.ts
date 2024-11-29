@@ -43,7 +43,7 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 	let state: Immutable<State> = _state
 
 	let engagement_key: EngagementTemplateKey = EngagementTemplateKey.code_redemptionⵧfailed // so far
-	const engagement_params: NonNullable<EngagementState.PendingEngagement<HypermediaContentType>['params']> = {}
+	const engagement_params: NonNullable<EngagementState.TrackedEngagement<HypermediaContentType>['params']> = {}
 
 	code = CodesState.normalize_code(code)
 	const code_spec = CODE_SPECS_BY_KEY[code]
@@ -130,9 +130,8 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 						{
 							...EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
 							// https://rickadams.org/adventure/d_hints/hint024.html
-							content: 'fee fie foe foo ;)',
+							summary: 'fee fie foe foo ;)',
 						},
-						{}
 					),
 				}
 				break
@@ -142,9 +141,8 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 					engagement: EngagementState.enqueue(u_state.engagement,
 						{
 							...EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
-							content: 'A hollow voice says "Ahhhhhhh".', // TODO more
+							summary: 'A hollow voice says "Ahhhhhhh".', // TODO more
 						},
-						{},
 					),
 				}
 				break
@@ -156,28 +154,24 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 					...u_state,
 					engagement: EngagementState.enqueue(u_state.engagement,
 						EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
-						{},
 					),
 				}
 				u_state = {
 					...u_state,
 					engagement: EngagementState.enqueue(u_state.engagement,
 						EngagementState.DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG,
-						{},
 					),
 				}
 				u_state = {
 					...u_state,
 					engagement: EngagementState.enqueue(u_state.engagement,
 						EngagementState.DEMO_TEMPLATEⵧNON_FLOW,
-						{},
 					),
 				}
 				u_state = {
 					...u_state,
 					engagement: EngagementState.enqueue(u_state.engagement,
 						EngagementState.DEMO_TEMPLATEⵧPLAYⵧFAILURE,
-						{},
 					),
 				}
 				break
