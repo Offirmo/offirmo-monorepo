@@ -24,11 +24,6 @@ function isꓽnegative_zero(x: number): x is -0 {
 	throw new Error('NIMP!')
 }*/
 
-
-function isꓽarrayⵧempty(a: Immutable<Array<any>>): a is [] {
-	return Array.isArray(a) && a.length === 0
-}
-
 // use case: for type guards
 // naming: difficult!!!
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals
@@ -50,19 +45,6 @@ function isꓽobjectⵧliteral(o: Immutable<object>): o is object {
 	return proto && proto.constructor === Object
 }
 
-// use case: ??
-function isꓽcontainerⵧempty(c: Immutable<Array<any> | object>): c is {} | [] {
-	if (typeof c !== 'object')
-		return false
-
-	if (Array.isArray(c))
-		return c.length === 0
-
-	if (!isꓽobjectⵧliteral(c))
-		return false
-
-	return isꓽarrayⵧempty(Object.keys(c))
-}
 
 // https://devdocs.io/javascript/global_objects/promise#thenables
 interface Thenable<T> {
@@ -83,8 +65,6 @@ function isꓽthenable<T>(p: Immutable<Thenable<T> | any>): p is Thenable<T> {
 export {
 	isꓽnegative_zero,
 	//isꓽprimitive_object_wrapper,
-	isꓽarrayⵧempty,
 	isꓽobjectⵧliteral,
-	isꓽcontainerⵧempty,
 	isꓽthenable,
 }

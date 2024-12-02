@@ -29,7 +29,7 @@
 		"_build:prod": "monorepo-script--build-typescript-package",
 
 		"dev": "run-s clean _build:dev:watch",
-		"test": "echo @offirmo-private/ts-types: no dynamic tests, this package only decare types.",
+		"test": "echo @offirmo-private/ts-types: no dynamic tests, this package only declare types.",
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {

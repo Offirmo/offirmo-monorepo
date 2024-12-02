@@ -7,6 +7,9 @@ export { Comparator } // for convenience
 export function compare(level_a: RelationshipLevel, comparator: Comparator, level_b: RelationshipLevel): boolean {
   return _compare<RelationshipLevel>(level_a, comparator, level_b, getꓽcorresponding_index)
 }
+
+import { isꓽarrayⵧempty } from '@offirmo-private/ts-utils'
+import { isꓽcontainerⵧempty } from '@offirmo-private/ts-utils'
 ```
 
 

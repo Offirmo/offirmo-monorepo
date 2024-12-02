@@ -21,6 +21,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/ts-types": "*",
+		"@offirmo-private/type-detection": "*",
 		"typescript-string-enums": "^1"
 	},
 
@@ -36,7 +38,6 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

@@ -1,5 +1,30 @@
+import { type Immutable } from '@offirmo-private/ts-types'
+import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
 
 /////////////////////////////////////////////////
+// Notes: Typescript
+// https://stackoverflow.com/questions/49464634/difference-between-object-and-object-in-typescript
+// {} = any (non-null/undefined) value with zero or more properties, Doesn't Mean object! https://github.com/microsoft/TypeScript/wiki/FAQ#primitives-are---and---doesnt-mean-object
+// object = values which have Object in their prototype chain https://github.com/microsoft/TypeScript/wiki/FAQ#primitives-are---and---doesnt-mean-object
+// Object = ??? accepts numbers??
+
+function isꓽarrayⵧempty(a: Immutable<Array<any>>): a is [] {
+	return Array.isArray(a) && (a.length === 0)
+}
+
+function isꓽobjectⵧliteralⵧempty(o: Immutable<object>): o is {} {
+	if (!isꓽobjectⵧliteral(o))
+		return false // safety against wrong dynamic types
+
+	return isꓽarrayⵧempty(Object.keys(o))
+}
+
+function isꓽcontainerⵧempty(c: Immutable<Array<any> | object>): c is {} | [] {
+	if (Array.isArray(c))
+		return isꓽarrayⵧempty(c)
+
+	return isꓽobjectⵧliteralⵧempty(c)
+}
 
 function hasꓽcontent(x: any, prop?: string): boolean {
 	if (!!prop)
@@ -8,17 +33,23 @@ function hasꓽcontent(x: any, prop?: string): boolean {
 	switch (true) {
 		case !x: // null, undef, empty string, 0
 			return false
-		case Array.isArray(x):
-			return x.length > 0
+
 		case typeof x === 'number':
-			return !isNaN(x) && x !== 0
+			return !isNaN(x) && (x !== 0)
+
+		case typeof x === 'string':
+			return x.length > 0
+
 		default:
-			return Object.keys(x).length > 0
+			return !isꓽcontainerⵧempty(x)
 	}
 }
 
 /////////////////////////////////////////////////
 
 export {
+	isꓽarrayⵧempty,
+	isꓽobjectⵧliteralⵧempty,
+	isꓽcontainerⵧempty,
 	hasꓽcontent,
 }
