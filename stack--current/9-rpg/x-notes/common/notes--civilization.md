@@ -28,3 +28,25 @@ https://en.wikipedia.org/wiki/Political_history_of_the_world
 https://en.wikipedia.org/wiki/Debtors%27_prison
 
 https://en.wikipedia.org/wiki/The_Memorial_of_Saint_Helena
+
+
+https://lawcha.org/2014/03/16/tony-benns-quotes-guardian-worth-reflection/ http://www.theguardian.com/politics/2014/mar/15/10-of-the-best-tony-benn-quotes-as-picked-by-our-readers
+What power have you got? Where did you get it from? In whose interests do you exercise it? To whom are you accountable? And how can we get rid of you?’ If you cannot get rid of the people who govern you, you do not live in a democratic system.”
+
+“A faith is something you die for, a doctrine is something you kill for. There is all the difference in the world.”
+
+“There is no moral difference between a stealth bomber and a suicide bomber. Both kill innocent people for political reasons.”
+
+“If we can find the money to kill people, we can find the money to help people.”
+
+“I think there are two ways in which people are controlled. First of all frighten people and secondly, demoralise them.”
+
+“Hope is the fuel of progress and fear is the prison in which you put yourself”
+
+“Making mistakes is how you learn.”
+
+“I now want more time to devote to politics and more freedom to do so”
+
+“The House of Lords is the British Outer Mongolia for retired politicians.”
+
+“We are not just here to manage capitalism but to change society and to define its finer values.”

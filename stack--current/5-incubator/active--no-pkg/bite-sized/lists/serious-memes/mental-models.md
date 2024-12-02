@@ -207,6 +207,15 @@ if you grow as a frog, you become a shinier, jump higher frog. But you need a ki
 ikigai
 impostor syndrome
 incentive
+power -- Tony Benn's' Five Questions About Power https://australianpolitics.com/democracy/five-questions-about-power/
+power -- Tony Benn's' Five Questions About Power -- 01 What power have you got?
+power -- Tony Benn's' Five Questions About Power -- 02 Where did you get it from?
+power -- Tony Benn's' Five Questions About Power -- 03 In whose interests do you use it?
+power -- Tony Benn's' Five Questions About Power -- 04 To whom are you accountable?
+power -- Tony Benn's' Five Questions About Power -- 05 How do we get rid of you?
+frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
+Brandolini's Law = The amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it
+Fingerprint for Success (F4S)
 incentive -- perverse -- cobra effect
 incentive -- perverse https://en.wikipedia.org/wiki/Perverse_incentive
 inclusiveness = extend the opportunity for everyone to contribute
@@ -273,6 +282,7 @@ microaggressions
 mimetic Theory of Conflict: People who are similar are more likely to fight than people who are different. That’s why Civil Wars and family feuds create the worst conflicts. The closer two people are and the more equality between them, the greater the potential for conflict.
 mimetic Theory of Desire: Humans are like sheep. We don’t know what we want, so we imitate each other. Instead of creating our own desires, we desire the same things as other people. The entire advertising industry is built on this idea.
 mindset -- "What vs How" (see What vs how)
+mindset -- mentality in front of adversity: victim, survivor, conqueror
 minorities -- silent majority = unspecified large group of people in a country or group who do not express their opinions publicly https://en.wikipedia.org/wiki/Silent_majority
 minorities -- vocal minority
 mondegreen https://thehabit.co/knowledge-is-power-france-is-bacon/

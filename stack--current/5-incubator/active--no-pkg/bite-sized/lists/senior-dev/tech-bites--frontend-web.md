@@ -28,6 +28,7 @@ application posture -- 4 parasitic/auxiliary = similar to transient applications
 application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
 apply / call / bind
 architecture -- islands
+architecture -- micro frontends
 architecture -- JAMStack = "JavaScript, APIs, Markup" as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
 architecture -- LAMP (outdated) Linux, Apache, MySQL, PHP/Python/Perl
@@ -237,7 +238,7 @@ perf metrics -- Time to above-the-fold load
 perf metrics -- Time to First Byte (TTFB) = from the browser, time taken to receive the first byte of data from the web server. TTFB is crucial because it indicates the general ability of the server to handle traffic
 perf metrics -- Time to Interactive (TTI) = time at which the page becomes consistently responsive to user input. This is a less well-defined milestone, but is sometimes calculated as the point when the CPU and network both become idle
 perf metrics -- Time to Visually Complete (TTVC) = time of the last visible paint event. Nothing on the user’s screen should change without user input https://dropbox.tech/frontend/measuring-ttvc-web-performance-metric-open-source-library
-progressive enhancement -- "next billion" They’ll mostly be running Android. They’ll have decent specs (1GB RAM, quad-core processors). They’ll have an evergreen browser and WebView (Android 5+). What they won’t have, however, is a reliable internet connection.
+progressive enhancement -- "next billion" = They’ll mostly be running Android. They’ll have decent specs (1GB RAM, quad-core processors). They’ll have an evergreen browser and WebView (Android 5+). What they won’t have, however, is a reliable internet connection.
 progressive enhancement https://nolanlawson.com/2016/10/13/progressive-enhancement-isnt-dead-but-it-smells-funny/
 puppeteer -- firefox https://hacks.mozilla.org/2024/08/puppeteer-support-for-firefox/
 puppeteer -- vs Selenium, Playwright, Cypress https://www.testim.io/blog/puppeteer-selenium-playwright-cypress-how-to-choose/
@@ -297,6 +298,7 @@ UI -- block -- iconography
 UI -- block -- spacing
 UI -- block -- typography
 UI -- event -- blur, hover, focus, click, auxclick, double click...
+UI -- floating action button (FAB) = the primary action of a screen in Material UI / Android https://m2.material.io/components/buttons-floating-action-button
 UI -- flow vs. float https://floating-ui.com/
 UI -- HUD
 UI -- layout -- 
@@ -316,6 +318,7 @@ UI -- properties -- Intelligent = improve the efficiency, effectiveness, and nat
 UI -- properties -- Multi-screen = take advantage of multiple displays
 UI -- properties -- Natural-language = User types in a question and waits for a response. used for search engines and on webpages.
 UI -- properties -- Permission-driven = show or conceal menu options or functions depending on the user's level of permissions. The system is intended to improve the user experience by removing items that are unavailable to the user. A user who sees functions that are unavailable for use may become frustrated. It also provides an enhancement to security by hiding functional items from unauthorized persons.
+UI -- proximal toolbar = a small toolbar appearing like a tooltip on an item when interacting with it
 UI -- transitions
 UI -- views
 UI https://en.wikipedia.org/wiki/User_interface

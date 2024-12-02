@@ -32,5 +32,6 @@
 [ ] Cores
 [ ] apex predators https://www.science-et-vie.com/nature-et-environnement/animaux/super-predateur-vs-predateur-quest-ce-qui-les-differencie-125095.html
 
+canadian shield https://en.wikipedia.org/wiki/Canadian_Shield
 
 huge icebergs https://www.bbc.com/news/articles/cd168081wxvo
