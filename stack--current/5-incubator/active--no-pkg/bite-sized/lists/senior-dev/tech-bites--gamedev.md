@@ -1,6 +1,6 @@
 +++ https://en.wikipedia.org/wiki/Glossary_of_video_game_terms
-[ ] Magic the gathering -- https://magic.wizards.com/en/news/making-magic/state-of-design-2024
 [ ] https://bottomfeeder.substack.com/
+[ ] Magic the gathering -- https://magic.wizards.com/en/news/making-magic/state-of-design-2024
 AAA
 AI
 autosave
@@ -180,5 +180,7 @@ UI -- minimap
 UI -- radar
 UI https://news.blizzard.com/en-us/world-of-warcraft/23837944/get-into-the-grid-of-things-with-the-updated-ui-and-hud
 UX -- title screen
+warp -- zone
+warp https://en.wikipedia.org/wiki/Warp_(video_games)
 woodwalking
 zone

@@ -7,6 +7,9 @@ sky https://github.com/VincentGarreau/particles.js/ (deprecated)
 https://codepen.io/Offirmo/pen/OJeGMRG
 
 hyperspace https://codepen.io/noahblon/pen/DpNRyR
+trails https://en.wikipedia.org/wiki/File:WarpTrails001.gif
+https://en.wikipedia.org/wiki/File:StarfieldSimulation004.gif
+
 
 collection https://codepen.io/collection/DJRwWY
 * flurry of stars nice bg https://codepen.io/tmrDevelops/pen/NNGvEv

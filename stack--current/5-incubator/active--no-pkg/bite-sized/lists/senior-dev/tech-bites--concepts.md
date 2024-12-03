@@ -367,6 +367,7 @@ ORM (Object-Relational Mapping)
 orthogonality https://en.wikipedia.org/wiki/Orthogonality_(programming)
 overengineering https://blog.matt-rickard.com/p/stop-overengineering
 ownership
+ownership -- if you build it, you own it
 pair-programming
 pattern -- matching = checking a given sequence of tokens for the presence of the constituents of some pattern. In contrast to pattern recognition, the match usually has to be exact: "either it will or will not be a match." The patterns generally have the form of either sequences or tree structures. Uses of pattern matching include outputting the locations (if any) of a pattern within a token sequence, to output some component of the matched pattern, and to substitute the matching pattern with some other token sequence (i.e., search and replace).
 pattern -- recognition = same but not exact match
@@ -495,6 +496,7 @@ SLO (Service Level Objective) = (proactive) A target set on the SLI. Failing to 
 SME Subject Matter Expert
 SOAP (Simple Object Access Protocol)
 software acceptance = How Is Technology Accepted? https://www.dreamsongs.com/Files/AcceptanceModels.pdf
+software crisis https://en.wikipedia.org/wiki/Software_crisis
 SOLID
 SOLID -- 1 Single responsibility principle (SRP) https://en.wikipedia.org/wiki/Single_responsibility_principle
 SOLID -- 2 Open–closed principle (OCP) https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle

@@ -26,6 +26,7 @@
 80/20 rule "Pareto"
 [ ] AAA TODO https://flinkliv.com/
 [ ] AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
+[ ] Futures studies https://en.wikipedia.org/wiki/Futures_studies + many concepts
 [ ] https://amir.rachum.com/mental-models/
 [ ] https://boz.com/
 [ ] https://en.wikipedia.org/wiki/Cognitive_bias
@@ -65,6 +66,7 @@ bike shed Effect: A group of people working on a project will fight over the mos
 biographies -- Profiles in Courage https://en.wikipedia.org/wiki/Profiles_in_Courage
 bonnes et mauvaises cartes
 brain rot https://en.wikipedia.org/wiki/Brain_rot
+Brandolini's Law = The amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it
 broken window theory
 bullying = Lack of consideration and empathy for those without power, Disrespectful behavior that is overt or subtle (in public or behind closed doors), Verbal aggression, sarcasm, or psychological manipulation. Unreasonable or constantly changing directives and deadlines. Singling out individuals. “Mobbing,” in which a group of people gang up on an individual
 bullying = repeated pattern of offensive, intimidating, or hostile behavior(s) or language, often by a strong or other person of authority. Bullying creates a toxic atmosphere for everyone, but may be accepted by many as “part of the workplace culture”
@@ -152,11 +154,13 @@ fear of missing out (FOMO)
 fear, uncertainty, death (FUD)
 femme/homme enfant https://www.wengood.com/fr/developpement-personnel/se-connaitre/art-femme-enfant
 Financial Independence Retire Early (FIRE) https://www.reddit.com/r/financialindependence/
+Fingerprint for Success (F4S)
 fire
 first practice what you preach
 first principles https://fs.blog/first-principles/
 first-principles thinker
 frame challenge
+frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
 frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
 fulfillment https://longform.asmartbear.com/fulfillment/
 fundamental attribution error https://en.wikipedia.org/wiki/Fundamental_attribution_error
@@ -207,15 +211,6 @@ if you grow as a frog, you become a shinier, jump higher frog. But you need a ki
 ikigai
 impostor syndrome
 incentive
-power -- Tony Benn's' Five Questions About Power https://australianpolitics.com/democracy/five-questions-about-power/
-power -- Tony Benn's' Five Questions About Power -- 01 What power have you got?
-power -- Tony Benn's' Five Questions About Power -- 02 Where did you get it from?
-power -- Tony Benn's' Five Questions About Power -- 03 In whose interests do you use it?
-power -- Tony Benn's' Five Questions About Power -- 04 To whom are you accountable?
-power -- Tony Benn's' Five Questions About Power -- 05 How do we get rid of you?
-frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
-Brandolini's Law = The amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it
-Fingerprint for Success (F4S)
 incentive -- perverse -- cobra effect
 incentive -- perverse https://en.wikipedia.org/wiki/Perverse_incentive
 inclusiveness = extend the opportunity for everyone to contribute
@@ -271,6 +266,7 @@ Logical Problem of Evil https://christianity.stackexchange.com/questions/100110/
 look for Things That Don’t Make Sense: The world always makes sense. But it can be confusing. When it is, your model of the world is wrong. So, things that don’t make sense are a learning opportunity. Big opportunities won’t make sense until it’s too late to profit from them.
 love = wanting the best
 low culture https://en.wikipedia.org/wiki/Low_culture
+mainstream scientific consensus
 making one's luck
 marxist philosophy
 Maslow's pyramid
@@ -333,6 +329,12 @@ picture the success
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
 porn
 power -- French and Raven five bases of power = reward, coercion, legitimate, expert, referent, informational https://en.wikipedia.org/wiki/French_and_Raven%27s_bases_of_power
+power -- Tony Benn's' Five Questions About Power -- 01 What power have you got?
+power -- Tony Benn's' Five Questions About Power -- 02 Where did you get it from?
+power -- Tony Benn's' Five Questions About Power -- 03 In whose interests do you use it?
+power -- Tony Benn's' Five Questions About Power -- 04 To whom are you accountable?
+power -- Tony Benn's' Five Questions About Power -- 05 How do we get rid of you?
+power -- Tony Benn's' Five Questions About Power https://australianpolitics.com/democracy/five-questions-about-power/
 power https://en.wikipedia.org/wiki/Power_(social_and_political)
 practice first what you teach
 praise in public (and private), criticize in private
