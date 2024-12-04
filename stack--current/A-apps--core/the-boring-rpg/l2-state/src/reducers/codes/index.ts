@@ -1,10 +1,7 @@
-/////////////////////
-
 import { type Immutable} from '@offirmo-private/ts-types'
 import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
-
-/////////////////////
+import * as RichText from '@offirmo-private/rich-text-format'
 
 import { type HypermediaContentType } from '@tbrpg/definitions'
 import * as EnergyState from '@tbrpg/state--energy'
@@ -18,10 +15,7 @@ import { getꓽprng } from '@oh-my-rpg/state--prng'
 import { create as create_weapon } from '@tbrpg/logic--weapons'
 import { create as create_armor } from '@tbrpg/logic--armors'
 
-/////////////////////
-
 import { type State } from '../../types.js'
-import { EngagementTemplateKey, getꓽengagement_template } from '../../data/engagement/index.js'
 import { CODE_SPECS_BY_KEY } from '../../data/codes.js'
 
 import {
@@ -34,7 +28,7 @@ import { _refresh_achievements } from '../achievements/index.js'
 import { reset_and_salvage } from '../../migrations/salvage.js'
 import { reseed } from '../create.js'
 
-/////////////////////
+/////////////////////////////////////////////////
 
 function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
 	// tri-state needed for "complete_or_cancel_eager_mutation"
@@ -42,17 +36,26 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 	let updated_state: Immutable<State> | null = _state // for now
 	let state: Immutable<State> = _state
 
-	let engagement_key: EngagementTemplateKey = EngagementTemplateKey.code_redemptionⵧfailed // so far
-	const engagement_params: NonNullable<EngagementState.TrackedEngagement<HypermediaContentType>['params']> = {}
-
 	code = CodesState.normalize_code(code)
 	const code_spec = CODE_SPECS_BY_KEY[code]
 
-	if (!code_spec || !CodesState.is_code_redeemable(state.u_state.codes, code_spec, state)) {
-		// nothing to do,
-		// will trigger an engagement rejection below
-	}
-	else {
+	const engagement: EngagementState.Engagement<HypermediaContentType> = (() => {
+		if (!code_spec || !CodesState.is_code_redeemable(state.u_state.codes, code_spec, state)) {
+			return {
+				summary: RichText.fragmentⵧblock()
+					.pushStrong('Error: This code is either non-existing or non redeemable at the moment.')
+					.addHints({
+						code,
+					})
+					.done(),
+				flow: 'main',
+				role: 'assistant',
+				success: false,
+				enhancements: {
+				},
+			}
+		}
+
 		updated_state = _update_to_now(previous_state, now_ms) // need to compare to an updated
 		state = updated_state
 		state = {
@@ -62,9 +65,6 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 				codes: CodesState.attempt_to_redeem_code(state.u_state.codes, code_spec, state),
 			},
 		}
-
-		engagement_key = EngagementTemplateKey.code_redemptionⵧsucceeded
-		engagement_params.code = code
 
 		// spread them for convenience
 		// BE CAREFUL!
@@ -209,7 +209,21 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 			u_state,
 			t_state,
 		}
-	}
+
+		return {
+			summary: RichText.fragmentⵧblock()
+				.pushWeak('Code successfully redeemed.')
+				.addHints({
+					code,
+				})
+				.done(),
+			flow: 'main',
+			role: 'assistant',
+			success: true,
+			enhancements: {
+			},
+		}
+	})()
 
 	// enqueue the result
 	state = {
@@ -217,10 +231,7 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 
 		u_state: {
 			...state.u_state,
-			engagement: EngagementState.enqueue(state.u_state.engagement,
-				getꓽengagement_template(engagement_key),
-				engagement_params
-			),
+			engagement: EngagementState.enqueue(state.u_state.engagement, engagement),
 		},
 	}
 
@@ -245,5 +256,3 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 export {
 	attempt_to_redeem_code,
 }
-
-/////////////////////

@@ -4,7 +4,6 @@ import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import { LIB } from '../../consts.js'
-import { EngagementTemplateKey } from '../../data/engagement/index.js'
 import {
 	create,
 	reseed,
@@ -49,7 +48,7 @@ describe(`${LIB} - reducer - codes`, function() {
 
 				const notif = state.u_state.engagement.queue
 					.filter(e =>
-					e.template.enhancements?.key === EngagementTemplateKey.code_redemptionⵧsucceeded
+					e.success === true,
 				)
 				//console.log(notif)
 				expect(notif.length).to.equal(1)
@@ -81,7 +80,7 @@ describe(`${LIB} - reducer - codes`, function() {
 			state = attempt_to_redeem_code(state, CODE)
 			const notif = state.u_state.engagement.queue
 				.filter(e =>
-					e.template.enhancements?.key === EngagementTemplateKey.code_redemptionⵧfailed
+					e.success === false,
 				)
 			//console.log(notif)
 			expect(notif.length).to.equal(1)
@@ -106,7 +105,7 @@ describe(`${LIB} - reducer - codes`, function() {
 
 			const notif = state.u_state.engagement.queue
 				.filter(e =>
-					e.template.enhancements?.key === EngagementTemplateKey.code_redemptionⵧfailed
+					e.success === false,
 				)
 			//console.log(notif)
 			expect(notif.length).to.equal(1)

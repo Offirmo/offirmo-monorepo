@@ -13,8 +13,6 @@ const EngagementTemplateKey = Enum(
 	'code_redemptionⵧfailed',
 	'code_redemptionⵧsucceeded',
 
-	'achievement_unlocked',
-
 	// meta
 	'reborn',
 )

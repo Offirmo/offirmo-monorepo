@@ -1,4 +1,5 @@
 import { type Immutable} from '@offirmo-private/ts-types'
+import * as RichText from '@offirmo-private/rich-text-format'
 
 import {
 	AchievementDefinition,
@@ -13,7 +14,6 @@ import {
 import { type State, UState } from '../../types.js'
 
 import ACHIEVEMENT_DEFINITIONS from '../../data/achievements.js'
-import { EngagementTemplateKey, getꓽengagement_template } from '../../data/engagement/index.js'
 
 /////////////////////
 
@@ -37,14 +37,23 @@ function _refresh_achievements(state: Immutable<State>): Immutable<State> {
 		if (current_status === AchievementStatus.unlocked) {
 			// tell the user
 			engagement = enqueueEngagement(engagement,
-					getꓽengagement_template(EngagementTemplateKey.achievement_unlocked),
-					{
-						$sub: {
+				{
+					summary: RichText.fragmentⵧblock()
+						.pushStrong('🏆 Achievement unlocked:')
+						//.pushLineBreak() // TODO review, display not great
+						.pushText(` “⎨⎨icon⎬⎬ ⎨⎨name⎬⎬“`)
+						.addHints({
 							icon,
 							name,
-						},
-					},
-				)
+						})
+						.done(),
+					flow: 'side',
+					role: 'system',
+					attention_needed: 'log',
+					enhancements: {
+						key: 'achievement-unlocked'
+					}
+				})
 		}
 	})
 
