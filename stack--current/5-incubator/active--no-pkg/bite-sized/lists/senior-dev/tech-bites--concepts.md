@@ -200,6 +200,7 @@ execution model https://en.wikipedia.org/wiki/Execution_model
 executive
 exposer des variables
 express
+fail fast and loudly
 feedback loop -- speed needed
 FIFO
 file read
@@ -297,6 +298,7 @@ language features -- polymorphism
 language interprété types simples / types par référence
 languages -- trends
 languages -- weekend https://stackoverflow.blog/2017/02/07/what-programming-languages-weekends/
+late/lazy evaluation vs fail fast
 layer -- abstraction
 layers -- shearing
 lazy-loading

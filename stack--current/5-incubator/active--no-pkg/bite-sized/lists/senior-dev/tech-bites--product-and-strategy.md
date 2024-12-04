@@ -156,6 +156,10 @@ reputation management
 reputation management -- REPCOM
 risk management = be proactive instead of reactive
 satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing
+scalability -- organisational -- collaboration = bigger team size can no longer efficiently collaborate, ex. merge conflicts, coordination
+scalability -- organisational -- collaboration = no limiting "gate keeping" core team
+scalability -- speed = of the product BUT ALSO of developing new features
+scalability -- technical -- complexity = devs can no longer reason about the code 
 scale frontiers - 01 Generous free product
 scale frontiers - 02 Affordable Paid Product
 scale frontiers - 03 Teams of all sizes

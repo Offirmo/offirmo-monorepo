@@ -21,6 +21,9 @@ landspeeder > airspeeder > space fighter (planetary) > star fighter (space) >  f
                                    cargo (planetary) >                      > 
                                                        exploration ships    >
 
+battlestar https://en.wikipedia.org/wiki/Battlestar_Galactica_(fictional_spacecraft)
+base star
+
 mother ship
 capital ship https://en.wikipedia.org/wiki/Capital_ship
 flag ship = the lead ship in a fleet of vessels, typically the first, largest, fastest, most heavily armed, or best known https://en.wikipedia.org/wiki/Flagship
@@ -28,6 +31,8 @@ flag ship = the lead ship in a fleet of vessels, typically the first, largest, f
 
 stasis pods
 escape pods
+
+https://en.wikipedia.org/wiki/Long_Range_Strike_Bomber
 
 
 ### internals

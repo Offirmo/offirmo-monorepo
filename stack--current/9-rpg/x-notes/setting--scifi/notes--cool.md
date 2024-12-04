@@ -52,3 +52,12 @@ lagrange points
 
 rail guns
 ram guns https://en.wikipedia.org/wiki/Ram_accelerator
+
+quantum
+dark matter https://en.wikipedia.org/wiki/Dark_matter
+dark energy https://en.wikipedia.org/wiki/Dark_energy
+dark fluid https://en.wikipedia.org/wiki/Dark_fluid
+
+
+
+anti matter

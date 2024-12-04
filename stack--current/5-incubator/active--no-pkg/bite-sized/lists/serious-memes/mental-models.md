@@ -160,6 +160,7 @@ first practice what you preach
 first principles https://fs.blog/first-principles/
 first-principles thinker
 frame challenge
+historic recurrence https://en.wikipedia.org/wiki/Historic_recurrence
 frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
 frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
 fulfillment https://longform.asmartbear.com/fulfillment/
