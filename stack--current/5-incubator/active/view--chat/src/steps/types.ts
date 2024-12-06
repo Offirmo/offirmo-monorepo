@@ -7,7 +7,7 @@ import { type Immutable } from '@offirmo-private/ts-types'
 export const StepType = Enum(
 	// output
 	'simple_message',
-	'perceived_labor',
+	//'perceived_labor'  NO! trivial to emulate with "progress"
 	'progress',
 
 	// input
@@ -23,48 +23,36 @@ export type StepType = Enum<typeof StepType> // eslint-disable-line no-redeclare
 interface BaseStep {
 
 	// always a callback after the step is done, even for a trivial one
-	// for ex. a notification system may want to mark a notif as "read" after it's been displayed
+	// for ex. a notification system may want to mark a notif as "read" after it has been displayed
 	callback?: (...p: any[]) => void
 
 	// private use area for the client
-	// for ex. the client may need to link this step to another system that generated it (uid)
-	// or may need to store some temp status data
+	// for ex. the client may need to link this step to what caused it (ex. engagement)
+	// or may need to store some temp status data (ex. ?)
 	_client_temp?: { [k:string]: any }
 }
 
 interface SimpleMessageStep<ContentType> extends BaseStep {
 	type: typeof StepType.simple_message
+	callback?: () => void // override
 
 	msg: ContentType | string
-
-	callback?: () => void
-}
-
-// TODO is it redundant with progress?
-interface PerceivedLaborStep<ContentType> extends BaseStep {
-	type: typeof StepType.perceived_labor
-
-	msg_before?: ContentType | string
-	duration_ms?: number
-	msg_after?: ContentType | string
-
-	callback?: () => void
 }
 
 interface TaskProgressStep<ContentType, T = any> extends BaseStep {
 	type: typeof StepType.progress
+	callback?: (success: boolean, result: T | Error) => void // override
 
 	msg_before?: ContentType | string
-	promises: Array<Promise<T> | PromiseWithProgress<T>>
+	promises: Array<Promise<T> | PromiseWithProgress<T>> // array bc common use case to have sevelral task aggregated AND some UI may have a better UX for multi-progress
 	msg_after?: (success: boolean, result: T | Error) => ContentType | string
-
-	callback?: (success: boolean, result: T | Error) => void
 }
 
 // inspired by <input> https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
 // TODO cancel / no choice
 interface InputStep<ContentType, T = any> extends BaseStep {
 	type: typeof StepType.input
+	callback?: (value: T) => void // override
 
 	prompt: ContentType | string
 	input_type?: // hint to use for HTML input, primitive is free to use or ignore https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
@@ -74,10 +62,9 @@ interface InputStep<ContentType, T = any> extends BaseStep {
 	default_value?: T
 	normalizer?: (raw: any) => T // raw is most likely string
 	validators: Array<(value: T) => [ boolean, ContentType | string ]>
-	msg_as_user: (value: T) => ContentType | string
-	msg_acknowledge: (value: T) => ContentType | string
 
-	callback?: (value: T) => void
+	msg_as_user?: (value: T) => ContentType | string
+	msg_acknowledge?: (value: T) => ContentType | string
 }
 
 // inspired by <select> https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
@@ -85,6 +72,7 @@ interface InputStep<ContentType, T = any> extends BaseStep {
 // TODO cancel / no choice
 interface SelectStep<ContentType, T = any> extends BaseStep {
 	type: typeof StepType.select
+	callback?: (value: T) => void // override
 
 	prompt?: ContentType | string // optional bc. can be auto-generated
 	default_value?: T
@@ -100,14 +88,11 @@ interface SelectStep<ContentType, T = any> extends BaseStep {
 
 	msg_as_user?: (value: T) => ContentType | string
 	msg_acknowledge?: (value: T) => ContentType | string
-
-	callback?: (value: T) => void
 }
 
 
 type Step<ContentType> =
 	| SimpleMessageStep<ContentType>
-	| PerceivedLaborStep<ContentType>
 	| TaskProgressStep<ContentType>
 	| InputStep<ContentType>
 	| SelectStep<ContentType>
@@ -116,7 +101,6 @@ type Step<ContentType> =
 
 export {
 	type SimpleMessageStep,
-	type PerceivedLaborStep,
 	type TaskProgressStep,
 	type InputStep,
 	type SelectStep,

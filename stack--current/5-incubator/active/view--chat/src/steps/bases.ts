@@ -6,23 +6,34 @@ import {
 	trim,
 } from '@offirmo-private/normalize-string'
 
+/////////////////////////////////////////////////
+
 function getꓽInputStepⵧnonEmptyString<ContentType>(
-	parts: Omit<InputStep<ContentType, string>, 'type' | 'normalizer' | 'validators'>
+	parts: Omit<InputStep<ContentType, string>, 'type'>
 ): InputStep<ContentType, string> {
+	const { _normalizer, _validators, ...rest } = parts
+
 	const step: InputStep<ContentType, string> = {
 		type: StepType.input,
 		input_type: 'text',
+
+		...rest,
 
 		normalizer: (raw: any): string => {
 			let val = ensure_string(raw)
 			val = normalize_unicode(val)
 			val = trim(val)
+
+			if (_normalizer) {
+				val = _normalizer(val)
+			}
+
 			return val
 		},
 		validators: [
+			...(_validators || []),
 			(value: string) => [value.length > 0, 'Should have at least 1 letter.'],
 		],
-		...parts
 	}
 	return step
 }

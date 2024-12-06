@@ -24,8 +24,8 @@ export type HashOf<T> = Record<string, T>
 // keeping it as it's useful as a shortcut to infer sub-settings
 // (Add new envs only if they differ from existing ones)
 export type Environment =
-//                 verbose?  asserts?  optims?  use canonical?  sends user analytics?  newest features?
-	| 'prod'     //  ✘         ✘         ✔        ✔               ✔                     ✘
-	| 'staging'  //  ✘         ✘         ✔        ✘               ✘                     ✔
-	| 'dev'      //  ✔         ✔         ✘        ✘               ✘                     ✔
-//	| 'test'     //  ✔         ✔         ✘        ✘               ✘                     ✔
+//                 verbose?  assertions?  optims?  use canonical?  sends user analytics?  newest features?  Fully supported w/ backups?
+	| 'prod'     //   ✘          ✘           ✔        ✔               ✔                     ✘                  ✔
+	| 'staging'  //   ✘          ✘           ✔        ✘               ✘                     ✔                  ✘
+	| 'dev'      //   ✔          ✔          ✘         ✘               ✘                     ✔                  ✘
+//	| 'test'     //   ✔          ✔          ✘         ✘               ✘                     ✔                  -

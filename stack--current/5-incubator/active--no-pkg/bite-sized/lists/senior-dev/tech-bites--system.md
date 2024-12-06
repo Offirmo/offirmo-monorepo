@@ -483,6 +483,7 @@ system properties -- 02 highly available = no scheduled/unscheduled maintenance,
 system properties -- 03 fault tolerant = can even handle hardware failure (expensive to implement)
 system properties -- distributed https://courses.cs.washington.edu/courses/cse490h/07wi/readings/IntroductionToDistributedSystems.pdf
 system properties -- ready
+system quality attributes = known as non-functional requirements. it's software architects' responsibility to match these attributes with business requirements and user requirements https://en.wikipedia.org/wiki/List_of_system_quality_attributes
 take-over
 telemetry -- logs https://opentelemetry.io/docs/concepts/observability-primer/#logs
 telemetry -- maps = Relationship information between time spans can be used to produce maps for services

@@ -65,7 +65,10 @@ capability = an end-to-end user experience or a set of related functionality. Ex
 career -- small business programmer https://smallbusinessprogramming.com/how-to-be-a-wildly-successful-small-business-programmer/
 CD (continuous delivery)
 CD (Continuous Delivery) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
-CD (continuous deployment)
+CD (continuous deployment) -- Defensive = Expect the unexpected. Expect that devs will break things in novel ways
+CD (continuous deployment) -- High Frequency = Unreleased code is expensive. Get it out
+CD (continuous deployment) -- Independent = Components are not tied to each other. They release independently
+CD (continuous deployment) -- No Downtime = No "maintenance mode" or expected downtime as part of releasing
 change -- category -- C1 = removing a product
 change -- category -- C2 = Widespread change requiring high customer/ecosystem effort
 change -- category -- C3 = Localised change requiring high customer/ecosystem effort
@@ -99,6 +102,7 @@ commits -- conventional  https://www.conventionalcommits.org/  https://gist.gith
 compile to js
 compiler
 compiler -- stanford course http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=Compilers
+compiler = translates code from one language to another at a different level of abstraction. As a result, the compiled code from a compiler is much harder for a human to read than the original.
 complexity budget https://htmx.org/essays/complexity-budget/
 compute
 compute -- hosted compute
@@ -281,7 +285,7 @@ JS http://www.toptal.com/javascript/interview-questions
 JS https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
 JS jQuery
 JSON
-JSX – Javascript XML
+JSX – Javascript XML, from React
 jump/goto
 kebab-case vs snake etc
 kill switch
@@ -550,6 +554,8 @@ tracing -- distributed https://zipkin.io/
 tracing https://andydote.co.uk/2023/09/19/tracing-is-better/
 transparent functional reactive programming "TFRP" = MobX concept
 transpilation / transpiler / transpiling
+transpiler -- vs compiler
+transpiler = translates code from one language to another in a human-readable form. Therefore, you can still read the transpiled files.
 tree
 tree -- walk
 type -- signature (type annotation) = defines the inputs and outputs of a function, subroutine or method

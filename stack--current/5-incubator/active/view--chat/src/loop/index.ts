@@ -107,6 +107,7 @@ function create<ContentType>({
 				step.callback?.()
 				break
 
+			/*
 			case StepType.perceived_labor: {
 				// we pretend there is a task, so let's use a fake task
 				const task_step: TaskProgressStep<ContentType, void> = {
@@ -116,7 +117,7 @@ function create<ContentType>({
 					})],
 				}
 				return execute_step(task_step)
-			}
+			}*/
 
 			case StepType.progress: {
 				let result: any = undefined
