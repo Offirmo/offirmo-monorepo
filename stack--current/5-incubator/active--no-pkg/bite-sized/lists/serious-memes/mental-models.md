@@ -74,6 +74,7 @@ busy work https://en.wikipedia.org/wiki/Busy_work
 buy nice or buy twice
 can't satisfy others
 capitalism -- W. H. Mallock -- is justified because it permits the most talented members of society to use the less talented for the sake of maximizing efficiency. Labor, for him, was an inert mass that was useless unless those with managerial and entrepreneurial talent set them to work. Hence, wealth is created, not by labor, but by the knowledge and ability of those who control labor. Maximization of corporate profits means in this case that the most entrepreneurial, innovative and inventive segment of society has used labor and resources to create wealth. In Mallock's view labor, by itself, creates nothing; it's not the wrench that puts the machine together, but the genius who invented it.
+career -- career limiting (action/move)
 change -- introduction -- 1 What are we doing?
 change -- introduction -- 2 Why are we doing it?
 change -- introduction -- 3 When are we making the change?
@@ -122,6 +123,8 @@ disability
 disability -- flag +++
 disability -- overcoming
 discernement -- technique de pile ou face
+discrimination -- direct = when a person is treated less favourably or unfairly than another person or group because of certain protected characteristics* or attributes
+discrimination -- indirect = when a neutral rule, policy, practice or criterion applies to everyone but disproportionately disadvantages a particular group with a protected characteristic, without objective justification
 disrespect = lack of consideration or regard for others’ privacy, physical or emotional space, viewpoints, or belongings. Intimidation, aggressive behavior, “the silent treatment”. Thoughtless or arrogant behavior, like using profanity when someone objects to it.
 don't expect perfection -> trigger self-consciousness = counter-productive
 doublespeak: People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
@@ -160,7 +163,6 @@ first practice what you preach
 first principles https://fs.blog/first-principles/
 first-principles thinker
 frame challenge
-historic recurrence https://en.wikipedia.org/wiki/Historic_recurrence
 frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
 frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
 fulfillment https://longform.asmartbear.com/fulfillment/
@@ -190,13 +192,16 @@ harassment -- behaviors -- Jokes, pranks, and written or graphic material intend
 harassment -- behaviors -- subtle = repeated, unwelcome, low-grade flirtation, or overt behaviors, like a racial slur.
 harassment -- gravity = A single incident can be harassment when it’s severe, like a physical threat or an assault
 harassment -- sexual = when based on a person’s sex or gender, or involves unwanted sexual behaviors. Also supervisor or anyone else in power asking for sexual favors in exchange for a job-related benefit (hiring, promotion, bonus, etc.)
-harassment = repeated pattern, or a particularly egregious instance, of offensive, intimidating, or hostile conduct. includes words and/or behavior(s) usually focused on someone’s personal characteristics—such as their race, religion, national origin, sex, age, or disability
+harassment = any form of behaviour that could reasonably offend, humiliate or intimidate
+harassment = includes words and/or behavior(s) usually focused on someone’s personal characteristics—such as their race, religion, national origin, sex, age, or disability
+harassment = repeated pattern, or a particularly egregious instance, of offensive, intimidating, or hostile conduct
 hawks and doves https://seldo.com/posts/the_case_for_frameworks
 helicopter parent
 herbe toujours plus verte
 Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
 high school "What You'll Wish You'd Known" https://paulgraham.com/hs.html
 high/low functioning human
+historic recurrence https://en.wikipedia.org/wiki/Historic_recurrence
 Hock Principle: Simple, clear purpose and principles give rise to complex and intelligent behavior. Complex rules and regulations give rise to simple and stupid behavior.
 Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory
 Holodomor https://en.wikipedia.org/wiki/Holodomor
@@ -206,6 +211,7 @@ https://36questionsinlove.com/
 https://cobeats.com/folder/ryfTgPr9H
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
 human trafficking
+I might be reading too much into it but...
 ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/ https://strategyu.co/pyramid-principle-part-2-communicate-top-down/
 identity -- " I’d tied my identity and reputation to hard work"
 if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
@@ -463,6 +469,7 @@ unlearn
 vanilla
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 via Negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
+victimisation/retaliation = subject to or threatened with some kind of disadvantage or unfair treatment (often referred to as detriment) because they made (or plan to make) a workplace complaint, or helped someone else to do so
 voleur volé
 volume hiring
 wabi-sabi https://en.wikipedia.org/wiki/Wabi-sabi

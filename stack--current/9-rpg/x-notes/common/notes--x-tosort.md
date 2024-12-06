@@ -78,3 +78,31 @@ anti-submarine
 air defence
 https://en.wikipedia.org/wiki/Saturation_attack
 https://en.wikipedia.org/wiki/Armed_merchantman
+
+
+
+
+Examples of workplace harassment may include:
+
+    Unacceptable physical behaviour;
+    Verbal abuse or comments that put down or stereotype people because of a protected characteristic;
+    Offensive jokes based on a protected characteristic;
+    Watching, loitering or hindering access to a location;
+    Persistent following of a person, such as stalking;
+    Interfering with a person's property;
+    Giving offensive material to a person (includes online through emails, text messages or social media) or leaving the offensive material where it will likely be found by a person; or
+    Causing a person to fear for their safety.
+
+
+
+Examples of bullying
+
+    Aggressive, violent or intimidating conduct such as yelling or shouting
+    Persistent belittling, humiliating comments (sarcasm, insults), or offensive language
+    Spreading malicious rumours
+    Regularly inappropriately teasing, or making someone the brunt of pranks or practical jokes
+    Circulating inappropriate or embarrassing photos or videos via email or social media
+    Pressuring someone to behave inappropriately
+    Deliberately withholding information or resources vital to effective work performance
+    Purposefully excluding, isolating or marginalising a person from normal work activities without a valid justification, such as confidentiality requirements or legitimate business reasons.
+    Negative and harmful online behaviours by way of email, Slack, Zoom or another platform.

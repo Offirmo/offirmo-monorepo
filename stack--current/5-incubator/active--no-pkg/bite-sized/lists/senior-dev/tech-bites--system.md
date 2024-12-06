@@ -363,6 +363,7 @@ observability -- telemetry
 observability = a measure of how well internal states of a system can be inferred from knowledge of its external outputs https://andydote.co.uk/presentations/index.html
 observability https://opentelemetry.io/docs/concepts/observability-primer/
 on-prem requirements
+operational maturity = How robust and performant do we have to be? How often is failure acceptable? How quickly do we need to restore a service when it fails? How quick and easy is it to deploy a new version of our services? Does it take days or require manual effort?
 operations (ops)
 operations -- metrics -- incident rate
 operations -- metrics -- MTTD
