@@ -5,9 +5,8 @@ import assert from 'tiny-invariant'
 import { isꓽthenable } from '@offirmo-private/type-detection'
 
 import { type ChatPrimitives } from '../primitives/types.js'
-import { type Step, StepType, type TaskProgressStep } from '../steps/index.js'
+import { type Step, StepType } from '../steps/index.js'
 import { type StepIterator } from './types.js'
-import { create_dummy_progress_promise } from '../utils/index.js'
 
 /////////////////////////////////////////////////
 
@@ -103,7 +102,11 @@ function create<ContentType>({
 		switch (step.type) {
 
 			case StepType.simple_message:
-				await primitives.display_message({ msg: step.msg })
+				await primitives.display_message({
+					msg: (typeof step.msg === 'function')
+						? (step.msg  as () => ContentType)()
+						: step.msg,
+				})
 				step.callback?.()
 				break
 
@@ -123,7 +126,19 @@ function create<ContentType>({
 				let result: any = undefined
 				let error: Error | undefined = undefined
 				let success = false
-				PProgress.all(step.promises).then(
+				PProgress.all(step.promises.map(pg => {
+					if (typeof pg ==='function')
+						pg = pg()
+
+					if (typeof (pg as any)?.onProgress === 'function')
+						return pg // no change, it's a promise with progress
+
+					if (isꓽthenable(pg))
+						return Promise.resolve(pg)
+
+					throw new Error(`Expected promise, got ${typeof pg}??`)
+				})).then(
+
 					(_res) => {
 						success = true
 						result = _res

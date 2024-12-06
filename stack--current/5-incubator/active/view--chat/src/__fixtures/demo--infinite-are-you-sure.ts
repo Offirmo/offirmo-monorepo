@@ -4,8 +4,8 @@ import {
 	type StepIterator,
 	type StepIteratorTNext,
 	type StepIteratorYieldResult,
-} from '../loop/types.js'
-import { getꓽInputStepⵧconfirmation } from '../steps/bases.js'
+	getꓽInputStepⵧconfirmation,
+} from '../index.js'
 
 /////////////////////////////////////////////////
 

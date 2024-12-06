@@ -9,20 +9,35 @@ import {
 /////////////////////////////////////////////////
 
 function getꓽInputStepⵧnonEmptyString<ContentType>(
-	parts: Omit<InputStep<ContentType, string>, 'type'>
+	parts: Partial<Omit<InputStep<ContentType, string>, 'type' | 'input_type'>>,
+	options: {
+		lengthⵧmin?: number,
+		multiline?: boolean,
+	} = {},
 ): InputStep<ContentType, string> {
-	const { _normalizer, _validators, ...rest } = parts
+	const {
+		normalizer: _normalizer,
+		validators: _validators,
+		...rest
+	} = parts
+
+	const lengthⵧmin = Math.max(1, options?.lengthⵧmin ?? 1)
+	const allow_multiline = !!options?.multiline
 
 	const step: InputStep<ContentType, string> = {
 		type: StepType.input,
 		input_type: 'text',
 
-		...rest,
+		...(rest as any), // to silence TS extra checks
 
 		normalizer: (raw: any): string => {
 			let val = ensure_string(raw)
 			val = normalize_unicode(val)
 			val = trim(val)
+
+			if (!allow_multiline) {
+				// TODO one day
+			}
 
 			if (_normalizer) {
 				val = _normalizer(val)
@@ -32,7 +47,7 @@ function getꓽInputStepⵧnonEmptyString<ContentType>(
 		},
 		validators: [
 			...(_validators || []),
-			(value: string) => [value.length > 0, 'Should have at least 1 letter.'],
+			(value: string) => [value.length >= lengthⵧmin, `Should have at least ${lengthⵧmin} letters!`],
 		],
 	}
 	return step

@@ -17,7 +17,8 @@ export const StepType = Enum(
 export type StepType = Enum<typeof StepType> // eslint-disable-line no-redeclare
 
 /////////////////////////////////////////////////
-
+// Rules:
+// - funcs are called as late as possible, only when needed
 // TODO more async?? callbacks? everything?
 
 interface BaseStep {
@@ -36,7 +37,9 @@ interface SimpleMessageStep<ContentType> extends BaseStep {
 	type: typeof StepType.simple_message
 	callback?: () => void // override
 
-	msg: ContentType | string
+	msg:
+		| ContentType | string
+		| (() => ContentType | string) // to allow dynamic content, based on whatever state
 }
 
 interface TaskProgressStep<ContentType, T = any> extends BaseStep {
@@ -44,7 +47,10 @@ interface TaskProgressStep<ContentType, T = any> extends BaseStep {
 	callback?: (success: boolean, result: T | Error) => void // override
 
 	msg_before?: ContentType | string
-	promises: Array<Promise<T> | PromiseWithProgress<T>> // array bc common use case to have sevelral task aggregated AND some UI may have a better UX for multi-progress
+	promises: Array< // array bc common occurrence to have several task aggregated AND some UI may offer a better UX for multi-progress
+		| Promise<T> | PromiseWithProgress<T>
+		| (() => Promise<T> | PromiseWithProgress<T>) // mainly to allow illusion of labor ;)
+	>
 	msg_after?: (success: boolean, result: T | Error) => ContentType | string
 }
 
