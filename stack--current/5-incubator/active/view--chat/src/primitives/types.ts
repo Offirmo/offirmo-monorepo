@@ -7,7 +7,8 @@ import { type TaskProgressStep, type InputStep, type SelectStep } from '../steps
 // helper types, TypeScript need them when implementing :(
 interface InputParameters<ContentType, T> {
 	// everything needed for an <input>
-	// primitive is free to ignore some params if not needed/supported
+	// fully resolved (vs. step which has funcs for resolving)
+	// Note: the primitive is free to ignore some params if not needed/supported
 	prompt: ContentType | string,
 	input_type?: InputStep<ContentType, T>['input_type'],
 	default_value?: T,
