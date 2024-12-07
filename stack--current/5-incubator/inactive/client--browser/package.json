@@ -50,7 +50,6 @@
 		"@offirmo-private/soft-execution-context--browser": "*",
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
-		"@offirmo/deferred": "^4",
 		"@offirmo/universal-debug-api-browser": "^1",
 		"@oh-my-rpg/assets--cursors": "^0",
 		"@oh-my-rpg/font--rpg--pixel": "^0",

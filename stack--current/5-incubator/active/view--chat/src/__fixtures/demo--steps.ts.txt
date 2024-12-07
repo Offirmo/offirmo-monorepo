@@ -1,5 +1,3 @@
-import Deferred from '@offirmo/deferred'
-
 import { type Step, StepType } from '../steps/types.js'
 import { getꓽInputStepⵧnonEmptyString, getꓽInputStepⵧconfirmation } from '../steps/bases.js'
 

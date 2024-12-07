@@ -48,7 +48,6 @@
 		"@offirmo-private/soft-execution-context--browser": "*",
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
-		"@offirmo/deferred": "^4",
 		"@offirmo/universal-debug-api-browser": "^1",
 		"actual": "^0.4",
 		"react": "^18",

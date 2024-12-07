@@ -27,7 +27,6 @@ yarn refresh--build-variables
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/view-chat": "^0",
-		"@offirmo/deferred": "^4",
 		"@offirmo/universal-debug-api-browser": "^1",
 		"@oh-my-rpg/assets--cursors": "^0",
 		"@oh-my-rpg/rsrc-backgrounds": "^0",
