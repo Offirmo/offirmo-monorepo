@@ -31,7 +31,7 @@ ES reasonably supported https://philipwalton.com/articles/the-state-of-es5-on-th
 new target env: workerd https://blog.cloudflare.com/more-npm-packages-on-cloudflare-workers-combining-polyfills-and-native-code/
 
 
-### update 2024-11-23
+### update 2024-12-07
 Updated state:
 
 1. Node runtime version
@@ -49,7 +49,7 @@ Updated state:
 * latest ES reasonably supported by browsers or polyfills = [ES2024](https://compat-table.github.io/compat-table/es2016plus/)
 * we no longer consider webpack (outdated tool, we no longer use it)
 
-⭆ latest convenient ES = 2023 (if changed, need search&replace in package.json, search for "es2023" and "update marker")
+⭆ 🆕 latest convenient ES = 2024 (if changed, need search&replace in package.json, search for "es2023" and "update marker")
 
 3. ES module
 - we consider webpack outdated and are no longer taking into account its limitations
