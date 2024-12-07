@@ -61,9 +61,9 @@ export type ImmutabilityEnforcer = <T>(x: T | Immutable<T>) => Immutable<T>
 // Example usage: API outside your control that refuse to take an Immutable, ex. ORM
 export type Mutable<I> =
 	I extends ImmutablePrimitive ? I
-		: I extends ImmutableMap<infer IK, infer IV> ? MutableMap<IK, IV>
-			: I extends ImmutableSet<infer IM> ? MutableSet<IM>
-				: MutableObject<I>
+	: I extends ImmutableMap<infer IK, infer IV> ? MutableMap<IK, IV>
+	: I extends ImmutableSet<infer IM> ? MutableSet<IM>
+	: MutableObject<I>
 
 export type MutableMap<IK, IV> = Map<Mutable<IK>, Mutable<IV>>
 export type MutableSet<IT>     = Set<Mutable<IT>>

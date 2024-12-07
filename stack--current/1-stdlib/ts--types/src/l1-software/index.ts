@@ -1,23 +1,20 @@
-/////////////////////
-// unsure where to sort those types for now
 
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types
-// TODO add Symbol?
-export type JSPrimitiveType = boolean | null | undefined | number | string
+/////////////////////////////////////////////////
 
-/////////////////////
+export type SemVer = string // TODO better? https://semver.org/
 
-export interface NumberMap {
-	[k: string]: number
-}
+/////////////////////////////////////////////////
 
-/////////////////////
+// SPDX license expression syntax version 2.0 string
+// https://spdx.org/licenses/
+// https://spdx.dev/learn/handling-license-info/
+export type SoftwareLicense‿SPDX = string
 
-// https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type
-export type HashOf<T> = Record<string, T>
+// TODO refine, license to what? is it a license to REUSE (as in npm package.json)?
+// ALSO spdx is for Software!
+//license: License‿SPDX | License‿SPDX[] | undefined // https://spdx.org/licenses/ undef = unknown :-(
 
-/////////////////////
-
+/////////////////////////////////////////////////
 
 // XXX Ideally DO NOT USE!!!
 // use dedicated sub-settings instead! cf. https://seanconnolly.dev/dont-be-fooled-by-node-env
@@ -29,3 +26,11 @@ export type Environment =
 	| 'staging'  //   ✘          ✘           ✔        ✘               ✘                     ✔                  ✘
 	| 'dev'      //   ✔          ✔          ✘         ✘               ✘                     ✔                  ✘
 //	| 'test'     //   ✔          ✔          ✘         ✘               ✘                     ✔                  -
+
+/////////////////////////////////////////////////
+
+
+// XXX only applies to Software! TODO review
+//version?: SemVer
+//changelog?: Url‿str
+//source?: Url‿str // if relevant

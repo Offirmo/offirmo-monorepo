@@ -1,6 +1,3 @@
-
-/////////////////////
-
 // isomorphic local storage
 // copied from TS libs
 export interface StorageⳇSync {
@@ -10,5 +7,3 @@ export interface StorageⳇSync {
 	removeItem(key: string): void
 	setItem(key: string, value: string): void
 }
-
-/////////////////////

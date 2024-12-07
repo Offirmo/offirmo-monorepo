@@ -1,5 +1,4 @@
-
-import { IETFLanguageType } from './international.js'
+import { IETFLanguageType } from '../l1-i18n'
 
 /////////////////////////////////////////////////
 // building blocks

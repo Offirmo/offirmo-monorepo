@@ -1,12 +1,9 @@
-
-/* PROMPT
- * ’
+/* Generic description of engagement / messaging
  */
 
-import { Url‿str } from '../content.js'
+import { Url‿str } from '../l2-content'
 
 /////////////////////////////////////////////////
-
 
 // a GENERIC engagement
 interface Engagement<TextFormat> {

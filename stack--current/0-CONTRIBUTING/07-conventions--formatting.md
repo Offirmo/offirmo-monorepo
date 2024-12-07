@@ -28,6 +28,7 @@ import {  } from './types.js'
 
 function create(): Immutable<> {
 function getꓽXYZⵧfoo‿v2(): void {}
+function deriveꓽXYZⵧfoo‿v2(): void {}
 /*
 assertꓽnode_is_xyz()
 isꓽStory‿v2(x: Immutable<any>): s is Story‿v2 {

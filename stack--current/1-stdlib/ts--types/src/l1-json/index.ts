@@ -1,9 +1,8 @@
-/////////////////////
-
 /* JSON
  * https://devblogs.microsoft.com/typescript/announcing-typescript-3-7-rc/#more-recursive-type-aliases
  * expanded for convenience / stricter typing
  */
+
 export type JSONPrimitiveType =
 	| null
 	| boolean
@@ -19,5 +18,3 @@ export type JSON =
 	| JSONPrimitiveType
 	| JSONObject
 	| JSON[]
-
-/////////////////////

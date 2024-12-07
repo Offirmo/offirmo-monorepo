@@ -1,7 +1,7 @@
-/////////////////////
-// For documentation only.
-// Obviously this doesn't cause a real additional safety
-// see also: zod
+/* For documentation only.
+ * Obviously this doesn't cause a real additional safety
+ * see also: zod
+ */
 
 export type Integer = number
 export type PositiveInteger = number
