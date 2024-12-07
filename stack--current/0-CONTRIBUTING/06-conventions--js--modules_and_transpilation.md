@@ -315,7 +315,7 @@ since node 10 in maintenance mode since 2020-05-19 https://nodejs.org/en/about/p
 - clarify not restricting node engine
 
 ```json
-	"name": "@offirmo/deferred",
+	"name": "@offirmo/example",
 	"description": "Implementation of the deferred pattern on top of a Promise",
 	"version": "4.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",

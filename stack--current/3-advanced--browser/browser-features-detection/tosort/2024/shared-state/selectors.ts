@@ -1,6 +1,5 @@
 import { Immutable } from '@offirmo-private/ts-types'
 import memoize_one from 'memoize-one'
-import getGlobalThis from '@offirmo/globalthis-ponyfill'
 
 import { State } from './types'
 

@@ -1,6 +1,5 @@
 import { Immutable } from '@offirmo-private/ts-types'
 import memoize_one from 'memoize-one'
-import getGlobalThis from '@offirmo/globalthis-ponyfill'
 
 import { State } from './types'
 
@@ -13,7 +12,7 @@ export function is_browser_connected_to_a_network(): boolean {
 	 * you cannot assume that a true value necessarily means that the browser can access the internet.
 	 * You could be getting false positives
 	 */
-	if (getGlobalThis().navigator?.onLine === false)
+	if (globalThis.navigator?.onLine === false)
 		return false
 
 	return true
@@ -21,7 +20,7 @@ export function is_browser_connected_to_a_network(): boolean {
 
 // conservative
 export function is_browser_page_visible(): boolean {
-	if (getGlobalThis().document.visibilityState === 'hidden')
+	if (globalThis.document.visibilityState === 'hidden')
 		return false
 
 	return true
