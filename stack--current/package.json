@@ -121,7 +121,7 @@
 		"log-symbols": "^7",
 		"loud-rejection": "^2",
 		"memoize-one": "^6",
-		"mocha": "^10",
+		"mocha": "^11",
 		"murmurhash3js-revisited": "^3",
 		"nanoid": "^5",
 		"npm-run-all": "^4",
