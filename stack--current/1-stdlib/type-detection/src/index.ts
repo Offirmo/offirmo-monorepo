@@ -2,9 +2,6 @@
  * ’
  */
 
-import assert from 'tiny-invariant'
-import { type Immutable } from '@offirmo-private/ts-types'
-
 /////////////////////////////////////////////////
 // Notes: Typescript
 // https://stackoverflow.com/questions/49464634/difference-between-object-and-object-in-typescript
@@ -28,7 +25,7 @@ function isꓽnegative_zero(x: number): x is -0 {
 // naming: difficult!!!
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals
 // also JSON "object is an unordered set of name/value pairs"
-function isꓽobjectⵧliteral(o: Immutable<object>): o is object {
+function isꓽobjectⵧliteral(o: object): o is object {
 	if (typeof o !== 'object')
 		return false
 
@@ -56,7 +53,7 @@ interface Thenable<T> {
 }
 
 // credits: inspired by https://github.com/then/is-promise/blob/master/index.mjs
-function isꓽthenable<T>(p: Immutable<Thenable<T> | any>): p is Thenable<T> {
+function isꓽthenable<T>(p: any): p is Thenable<T> {
 	return typeof p?.then === 'function'
 }
 

@@ -19,8 +19,6 @@
 	"peerDependencies": {
 	},
 	"dependencies": {
-		"@offirmo-private/ts-types": "*",
-		"tiny-invariant": "^1"
 	},
 
 	"scripts": {
