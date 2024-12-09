@@ -362,6 +362,8 @@ observability -- logs = logs. Unfortunately, logs aren’t extremely useful for 
 observability -- telemetry
 observability = a measure of how well internal states of a system can be inferred from knowledge of its external outputs https://andydote.co.uk/presentations/index.html
 observability https://opentelemetry.io/docs/concepts/observability-primer/
+on-call
+on-call -- "confidently"
 on-prem requirements
 operational maturity = How robust and performant do we have to be? How often is failure acceptable? How quickly do we need to restore a service when it fails? How quick and easy is it to deploy a new version of our services? Does it take days or require manual effort?
 operations (ops)
@@ -448,12 +450,14 @@ serverless -- forces devs into working within limits - mainly memory and time pe
 service
 service = software functionality https://en.wikipedia.org/wiki/Service_(systems_architecture)
 service availability
-service level objectives (SLO) https://sre.google/resources/practices-and-processes/art-of-slos/ https://sre.google/resources/
-Service mesh
+service mesh
 service monitoring -- Error budget = starts at 1 - SLO and declines as the actual performance misses the SLO
-service monitoring -- Service-level agreement (SLA) = refund!!
-service monitoring -- Service-level indicator (SLI) = a measurement of performance
-service monitoring -- Service-level objective (SLO) = a statement of desired performance
+service monitoring -- service level -- agreement (SLA) = a team’s commitment to maintain a measurably high standard of service reliability for their customers.
+service monitoring -- service level -- agreement (SLA) = refund!!
+service monitoring -- service level -- indicator (SLI) = a measurement of performance
+service monitoring -- service level -- objective (SLO) = a statement of desired performance
+service monitoring -- service level -- objectives (SLO) https://sre.google/resources/practices-and-processes/art-of-slos/ https://sre.google/resources/
+service monitoring -- service level = the performance of a service from its customers’ perspective. Encompasses many things, including: Is the service available when I need it? Is the service fast to respond? Is the service providing correct responses? Is the service protecting my privacy?... Service levels are critical in approaching reliability.
 service monitoring https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring
 Service Proxy Egress authentication
 single point of failure = avoidable with redundancy
@@ -511,6 +515,8 @@ time -- leap second
 time -- leap second -- leap smear https://googleblog.blogspot.com/2011/09/time-technology-and-leaping-seconds.html
 time = difficult yet important for distributed https://unix4lyfe.org/time/
 Time to Detection (TTD)
+user flow -- error rate = percentage of unique users encountering at least one failure when attempting to perform one of the user operations composing the user flow
+user flow = actions users can perform to achieve a specific outcome, for example, uploading media or sharing a document
 user management -- Domain Enabled Signup
 user management -- request, invitation
 user management = +++ https://workos.com/blog/the-developers-guide-to-user-management/

@@ -173,6 +173,7 @@ strategy -- 01 "where we play"
 strategy -- 02 "how we win"
 strategy -- evergreen vs cyclic
 strategy https://stratechery.com/
+support loops = ex. help desk + social media + phone etc.
 switching barriers
 switching cost
 System of Work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams

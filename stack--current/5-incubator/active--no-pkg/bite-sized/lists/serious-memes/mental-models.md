@@ -445,7 +445,9 @@ theory of constraints = A system is only as strong as its weakest point. Focus o
 theory of constraints https://www.tocinstitute.org/theory-of-constraints.html
 things learned from Medicine / Dentistry https://zenfamily.dental/csLearnDental.php
 THINK hack = Is it True? Helpful? Inspiring? Necessary? Kind?
+thought leader
 time management
+time-tested
 tip of the iceberg
 tools -- checklists
 tools -- spreadsheet
