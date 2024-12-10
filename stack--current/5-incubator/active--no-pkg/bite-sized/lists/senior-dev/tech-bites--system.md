@@ -454,8 +454,8 @@ service mesh
 service monitoring -- Error budget = starts at 1 - SLO and declines as the actual performance misses the SLO
 service monitoring -- service level -- agreement (SLA) = a team’s commitment to maintain a measurably high standard of service reliability for their customers.
 service monitoring -- service level -- agreement (SLA) = refund!!
-service monitoring -- service level -- indicator (SLI) = a measurement of performance
-service monitoring -- service level -- objective (SLO) = a statement of desired performance
+service monitoring -- service level -- indicator (SLI) = a measurement of performance, metrics of behavior and performance
+service monitoring -- service level -- objective (SLO) = a statement of desired performance = applying specific, time-windowed targets to SLIs
 service monitoring -- service level -- objectives (SLO) https://sre.google/resources/practices-and-processes/art-of-slos/ https://sre.google/resources/
 service monitoring -- service level = the performance of a service from its customers’ perspective. Encompasses many things, including: Is the service available when I need it? Is the service fast to respond? Is the service providing correct responses? Is the service protecting my privacy?... Service levels are critical in approaching reliability.
 service monitoring https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring

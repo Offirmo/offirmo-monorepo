@@ -34,6 +34,7 @@
 [ ] https://paulgraham.com/faq.html
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
 [ ] https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time
+[ ] leadership development https://jchyip.medium.com/diy-leadership-development-develop-leadership-skills-74479cde0c05
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 a country is a farm
 accent -- miscommunication https://paulgraham.com/accents.html
@@ -144,6 +145,7 @@ equity
 every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 evolution https://en.wikipedia.org/wiki/Evolutionary_game_theory
+evolution vs revolution
 ex. of edited interview misleading https://paulgraham.com/wids.html
 excuses vs. solutions
 fairness
@@ -264,6 +266,7 @@ leadership -- must never ask sth they couldn't do
 leadership -- timeless lessons https://www.linkedin.com/pulse/back-future-timeless-lessons-leadership-jo-owen
 learning machines "I constantly see people rise in life who are not the smartest, sometimes not even the most diligent, but they are learning machines" (Munger https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger)
 legibility: We are blind to what we cannot measure. Not everything that counts can be measured, and not everything that can be measured counts. But people manage what they can measure, so society repeats the same mistakes.
+less is more
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 life isn't fair https://www.linkedin.com/pulse/lifell-kill-ya-allen-white
 lifestyle
@@ -432,6 +435,10 @@ survival of the fittest / fit enough
 survivorship bias https://en.wikipedia.org/wiki/Survivorship_bias
 SWOT
 syndrome fée clochette https://www.psychologies.com/Couple/Seduction/Rencontres/Articles-et-Dossiers/Syndrome-de-la-fee-Clochette-ces-femmes-insatisfaites-et-en-manque-d-affection
+T-Shape -- develop https://jchyip.medium.com/how-to-develop-t-shaped-people-993349932f90
+T-Shape -- generalist = capable in a lot of things but not expert at any
+T-Shape -- I-shaped = expert at one thing
+T-Shape -- T-shaped = (best) expert at one thing and expert in one of them
 T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
 table selection = This idea comes from poker, where you’re advised to choose your opponents carefully. That means you shouldn’t compete against the best people. You don’t need to get good at doing difficult things if you get good at avoiding difficult things. If you want to win, pick an easy table and nail your execution.
 talent vs. Genius = Society is good at training talent but terrible at cultivating genius. Talented people are good at hitting targets others can’t hit, but geniuses find targets others can’t see. They are opposite modes of excellence. Talent is predictable, genius is unpredictable.

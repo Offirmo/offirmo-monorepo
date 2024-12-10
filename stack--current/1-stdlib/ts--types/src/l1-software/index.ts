@@ -17,6 +17,7 @@ export type SoftwareLicense‿SPDX = string
 /////////////////////////////////////////////////
 
 // BEWARE env vs. build! cf. https://seanconnolly.dev/dont-be-fooled-by-node-env
+// BEWARE env vs. release channel, ex. prod with slower "monthly" release channel (aka. "release tracks")
 // beware env SPEC vs ACTUAL, ex production could be = prod, prod-cn (usually different laws), fedramp (isolated env for security reasons)
 // XXX Ideally DO NOT USE!!! use dedicated sub-settings instead! cf. https://seanconnolly.dev/dont-be-fooled-by-node-env
 // keeping it as it's useful as a shortcut to infer sub-settings
