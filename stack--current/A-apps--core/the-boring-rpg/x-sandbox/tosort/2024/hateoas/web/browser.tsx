@@ -1,7 +1,13 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/state-utils'
 import React, { Component, type ReactNode } from "react"
-import { type Hyperlink, type Uri‿str, type URI‿x, type SchemeSpecificURIPart } from '@offirmo-private/ts-types-web'
+
+import { Immutable } from '@offirmo-private/state-utils'
+import {
+	type Hyperlink,
+	type Uri‿str,
+	type Uri‿x,
+	type SchemeSpecificURIPart,
+} from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 import { to_react } from '@offirmo-private/rich-text-format--to-react'
 
@@ -9,17 +15,25 @@ import { type HATEOASServer } from '../../to-export-to-own-package/hateoas/types
 import {
 	DEFAULT_ROOT_URI,
 	getꓽCTA,
-	normalizeꓽuri‿SSP,
-	normalizeꓽuri‿str,
-	getꓽactionⵧcontinue_to, getꓽactionsⵧreducers, getꓽactionsⵧlinks,
+	getꓽactionⵧcontinue_to,
+	getꓽactionsⵧreducers,
+	getꓽactionsⵧlinks,
 } from '../to-migrate'
+
+/////////////////////////////////////////////////
+
+const DEBUG = false
+
+/////////////////////////////////////////////////
+
+type ContentType = RichText.NodeLike
 
 interface Props<HypermediaType, Action> {
 	server: HATEOASServer<HypermediaType, Action>
 }
 
 interface State<HypermediaType> {
-	status: 'starting' | 'nominal' | 'stopping' = 'starting'
+	status: 'starting' | 'nominal' | 'stopping'
 	current_route: Uri‿str
 	current_hypermedia: HypermediaType | undefined // do we actually need it?
 	stack: Array<[string, ReactNode]>
@@ -43,8 +57,8 @@ export class HypermediaBrowserWithWebInterface<HypermediaType, Action> extends C
 		}
 	}
 
-	componentDidMount() {
-		this.navigate_to(DEFAULT_ROOT_URI)
+	override componentDidMount() {
+		//this.navigate_to(DEFAULT_ROOT_URI)
 	}
 
 	// to be called when we guess that there may be new engagement
@@ -54,6 +68,7 @@ export class HypermediaBrowserWithWebInterface<HypermediaType, Action> extends C
 		console.warn('TODO dequeue_engagement')
 	}
 
+	/*
 	async get_next_content(): Promise<State<HypermediaType>['stack'][number]> {
 		// REMINDER: ideally we want everything in the HATEOAS
 		// This is a BROWSER which should not contain app-specific behaviour
@@ -78,11 +93,6 @@ export class HypermediaBrowserWithWebInterface<HypermediaType, Action> extends C
 					const { $doc, uid } = pe
 					// TODO improve depending on the format!
 					return []
-					const step: Step<ContentType> = {
-						type: StepType.simple_message,
-						msg: $doc,
-						callback: () => dispatch(actionⵧack),
-					}
 					//console.log(`[gen_next_step()] ...yielding from PEF`)
 					return step
 				}
@@ -170,7 +180,7 @@ export class HypermediaBrowserWithWebInterface<HypermediaType, Action> extends C
 		}
 		/*console.log(`[gen_next_step()] ...yielding from hypermedia content:`,
 			//prettifyꓽjson(step_content)
-		)*/
+		)
 		return step_content
 	}
 
@@ -227,8 +237,9 @@ export class HypermediaBrowserWithWebInterface<HypermediaType, Action> extends C
 			})
 		})
 	}
+	*/
 
-	render() {
+	override render() {
 		console.log("🔄 Browser render", {
 			props: this.props,
 			state: this.state,
