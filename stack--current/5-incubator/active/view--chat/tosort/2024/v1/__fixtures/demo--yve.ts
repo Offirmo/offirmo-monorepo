@@ -29,13 +29,13 @@ function* get_next_step(skip_to_index: number = 0): Generator<Step<string>> {
 
 		{
 			type: StepType.simple_message,
-			msg: 'Hello! I\'m Yve Bot.',
+			msg: () => 'Hello! I\'m Yve Bot.',
 		},
 
 		getꓽInputStepⵧnonEmptyString<string>({
-			prompt: 'What’s your name?',
+			prompt: () => 'What’s your name?',
 			msg_acknowledge: (name: string) => `Thanks for the answer, ${name}!`,
-			callback: (name: string) => {
+			callback: async (name: string) => {
 				console.log(`【callback called: ${name}】`)
 				state.name = name
 			},
@@ -45,8 +45,8 @@ function* get_next_step(skip_to_index: number = 0): Generator<Step<string>> {
 		}),
 
 		getꓽInputStepⵧnonEmptyString<string>({
-			prompt: 'What city do you live in?',
-			callback: (city: string) => {
+			prompt: () => 'What city do you live in?',
+			callback: async (city: string) => {
 				console.log(`【callback called: ${city}】`)
 				state.city = city
 			},
@@ -56,20 +56,20 @@ function* get_next_step(skip_to_index: number = 0): Generator<Step<string>> {
 
 		{
 			type: StepType.simple_message,
-			msg: 'I\'ll skip this message',
+			msg: () => 'I\'ll skip this message',
 			//skip: true
 		},
 
 		{
 			type: StepType.progress,
 
-			msg_before: 'Thanks, wait a moment.',
+			msg_before: () => 'Thanks, wait a moment.',
 			promises: [ () => create_dummy_progress_promise({DURATION_MS: 4000})],
 		},
 
 		{
 			type: StepType.select,
-			prompt: 'Make your choice',
+			prompt: () => 'Make your choice',
 			options: {
 				1: {
 					//value: 1,
@@ -85,7 +85,7 @@ function* get_next_step(skip_to_index: number = 0): Generator<Step<string>> {
 
 		{
 			type: StepType.select,
-			prompt: 'Which colors do you like?',
+			prompt: () => 'Which colors do you like?',
 			//type: MultipleChoice TODO!
 			options: {
 				blue: {},

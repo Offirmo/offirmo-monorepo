@@ -4,8 +4,8 @@ import assert from 'tiny-invariant'
 
 import { isꓽthenable } from '@offirmo-private/type-detection'
 
-import { type ChatPrimitives } from '../primitives/types.js'
-import { type Step, StepType } from '../steps/index.js'
+import {type ChatPrimitives, InputParameters} from '../primitives/types.js'
+import {type InputStep, type Step, StepType} from '../steps/index.js'
 import { type StepIterator } from './types.js'
 
 /////////////////////////////////////////////////
@@ -107,7 +107,7 @@ function create<ContentType>({
 						? (step.msg  as () => ContentType)()
 						: step.msg,
 				})
-				step.callback?.()
+				void step.callback?.()
 				break
 
 			/*
@@ -126,40 +126,37 @@ function create<ContentType>({
 				let result: any = undefined
 				let error: Error | undefined = undefined
 				let success = false
-				PProgress.all(step.promises.map(pg => {
-					if (typeof pg ==='function')
-						pg = pg()
+				const promises = step.promises
+					.filter(pg => !!pg)
+					.map(pg => {
+						if (typeof pg ==='function')
+							pg = pg()
 
-					if (typeof (pg as any)?.onProgress === 'function')
-						return pg // no change, it's a promise with progress
+						if (typeof (pg as any)?.onProgress === 'function')
+							return pg // no change, it's a promise with progress
 
-					if (isꓽthenable(pg))
-						return Promise.resolve(pg)
+						if (isꓽthenable(pg))
+							return Promise.resolve(pg)
 
-					throw new Error(`Expected promise, got ${typeof pg}??`)
-				})).then(
-
-					(_res) => {
-						success = true
-						result = _res
-					},
-					(_err) => {
-						success = false
-						error = _err as any // TODO one day coerce to error using error utils
+						throw new Error(`Expected promise, got ${typeof pg}??`)
 					})
+
+				PProgress.all(promises).then(
+						(_res) => {
+							success = true
+							result = _res
+						},
+						(_err) => {
+							success = false
+							error = _err as any // TODO one day coerce to error using error utils
+						})
 
 				await primitives.display_task({
-						msg_before: step.msg_before || 'Processing…',
-						promises: step.promises,
-						msg_after: step.msg_after || ((success: boolean, result: any) => {
-							if (success)
-								return '✔ Success'
-							else
-								return `✖ Failed ("${result?.message}")`
-						}),
-					})
+						msg_before: step.msg_before?.() || 'Processing…',
+						promises,
 
-				step.callback?.(success, result || error)
+
+				void step.callback?.(success, result || error)
 				break
 			}
 
@@ -171,11 +168,23 @@ function create<ContentType>({
 				do {
 					// not printing the prompt
 					// since the underlying input primitive is better suited to do it
-					const raw_answer = await primitives.input(step)
+
+					const placeholder = step.placeholder?.()
+					const default_value = step.default_value?.()
+
+					const input_params: InputParameters<ContentType, any> = {
+						input_type: step.input_type,
+						prompt: step.prompt?.(),
+						...({placeholder && { placeholder }),
+						...({default_value && { default_value }),
+						...({step.normalizer && { normalizer: step.normalizer }),
+						...({step.validators && { validators: step.validators }),
+					}
+					const raw_answer = await primitives.input(input_params)
 					if (DEBUG) console.log(`↖ input(…) result =`, DEBUG_to_prettified_str(raw_answer))
 
 					answer = step.normalizer ? step.normalizer(raw_answer) : raw_answer
-					const validations = step.validators.map(validator => validator(answer))
+					const validations = await Promise.all(step.validators.map(validator => validator(answer)))
 					is_valid = validations.every(([is_valid]) => is_valid)
 					if (!is_valid) {
 						const failed_validations = validations.filter(([is_valid]) => !is_valid)
