@@ -3,26 +3,26 @@ import assert from 'tiny-invariant'
 
 /////////////////////////////////////////////////
 
-function create_dummy_progress_promise({DURATION_MS = 2000, PERIOD_MS = 100} = {}): PromiseWithProgress<void> {
-	assert(PERIOD_MS < DURATION_MS, 'PERIOD_MS should be < DURATION_MS!')
+function create_dummy_progress_promise({ duration_ms = 2000, period_ms = 100 } = {}): PromiseWithProgress<void> {
+	assert(period_ms < duration_ms, 'PERIOD_MS should be < DURATION_MS!')
 
 	return new PromiseWithProgress<void>((resolve, reject, progress) => {
 		let count = 0
 		const pulse = setInterval(() => {
 			count++
-			const completion_rate = 1. * (count * PERIOD_MS) / DURATION_MS
+			const completion_rate = 1. * (count * period_ms) / duration_ms
 			progress(completion_rate)
 
 			if (completion_rate >= 1) {
 				clearInterval(pulse)
 				resolve()
 			}
-		}, PERIOD_MS)
+		}, period_ms)
 	})
 }
 
 /////////////////////////////////////////////////
 
 export {
-	create_dummy_progress_promise
+	create_dummy_progress_promise,
 }
