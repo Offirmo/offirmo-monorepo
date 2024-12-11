@@ -28,11 +28,11 @@ application posture -- 4 parasitic/auxiliary = similar to transient applications
 application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
 apply / call / bind
 architecture -- islands
-architecture -- micro frontends
 architecture -- JAMStack = "JavaScript, APIs, Markup" as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
 architecture -- LAMP (outdated) Linux, Apache, MySQL, PHP/Python/Perl
 architecture -- MEAN "MongoDB, Express.js, Angular, Node.js"
+architecture -- micro frontends
 architecture -- microservices, API-first, cloud-native SaaS, headless (MACH) https://machalliance.org/mach-technology
 architecture -- SSR, ISR, CSR, PPR (see 'rendering')
 arguments
@@ -201,9 +201,10 @@ iframe -- seamless
 IIFE (Immediately-Invoked Function Expression)
 interop https://developer.mozilla.org/en-US/blog/interop2023-mdn-doc-updates/
 js -- AbortController https://betterstack.com/community/guides/scaling-nodejs/understanding-abortcontroller/
-JS -- book -- Exploring JavaScript (ES2024 Edition) https://exploringjs.com/js/book/index.html
-JS -- exports https://webpack.js.org/guides/package-exports/
-JS -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
+js -- book -- Exploring JavaScript (ES2024 Edition) https://exploringjs.com/js/book/index.html
+js -- exports https://webpack.js.org/guides/package-exports/
+js -- promises https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md
+js -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
 JSON - Javascript Object Notation
 latency -- high latency environments https://csswizardry.com/2024/09/optimising-for-high-latency-environments/
 layout composer https://github.com/namecheap/ilc

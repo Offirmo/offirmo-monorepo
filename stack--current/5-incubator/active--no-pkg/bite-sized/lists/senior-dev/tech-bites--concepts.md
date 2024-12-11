@@ -444,6 +444,7 @@ reactive programming
 recursion
 regex https://regexlearn.com/
 register
+release channels = offer a trade-off between feature availability and stability https://support.google.com/chrome/a/answer/9027636?hl=en https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels
 release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-10-insider-program-from-rings-to-release-channels/
 REST (REpresentational State Transfer)
 REST HTTP = How to GET a Cup of Coffee https://www.infoq.com/articles/webber-rest-workflow/
