@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<h1>X logger</h1>
+
+<script type="module">
+	import { get_iframe_depth } from './index.js'
+
+	if (get_iframe_depth() === 0) {
+		const iframe_elt = document.createElement('iframe')
+		iframe_elt.src = window.location.href
+		iframe_elt.style.border = '2px solid red'
+		document.body.appendChild(iframe_elt)
+	}
+	//console.log(`XXX get_iframe_depth`, get_iframe_depth())
+
+	console.xlog('[FOO]', {bar:42})
+	console.xwarn('[FOO]', 'bad', {bar:42})
+	console.xerror('[FOO]', new Error("Bad!"))
+
+	console.group('fee', 'foo', {bar:42})
+	console.xlog('[FOO] sdd()', {bar:42})
+	console.xtrace('[FOO] dget()', {bar:42})
+	console.groupEnd()
+</script>

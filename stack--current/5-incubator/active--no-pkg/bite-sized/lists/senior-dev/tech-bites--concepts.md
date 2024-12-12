@@ -577,6 +577,7 @@ types -- subtyping -- polymorphism
 types -- subtyping -- postconditions = cannot be weakened in the subtype
 types -- subtyping -- preconditions = cannot be strengthened in the subtype
 types -- subtyping https://en.wikipedia.org/wiki/Liskov_substitution_principle
+unicode -- FAQ https://unicode.org/faq/utf_bom.html#utf16-2
 Unix philosophy (OUTDATED -> use JSON ;)) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- (much more) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- A.01 Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features"
