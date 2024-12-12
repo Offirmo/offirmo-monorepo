@@ -5,7 +5,7 @@
 // https://docs.google.com/spreadsheets/d/1Bc32plQTswNdCqXS99deB0n7Te7FfD7uepGAOOlPbvY/edit?usp=sharing
 export type LogLevel =
 	// TODO an extra "never" level?
-	  'fatal'
+	| 'fatal'
 	| 'emerg'
 	| 'alert'
 	| 'crit'

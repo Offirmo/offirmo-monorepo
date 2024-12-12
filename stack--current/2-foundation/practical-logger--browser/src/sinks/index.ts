@@ -12,20 +12,25 @@ function quick_detect_browser(): Browser {
 	// https://dev.to/_elmahdim/safe-reliable-browser-sniffing-39bp
 
 	try {
-		if ((window as any).InstallTrigger)
+		const window = globalThis as any
+
+		// 2024/12/12 = null for FF, undef for Chrome and Safari
+		if (window?.InstallTrigger !== undefined)
 			return 'firefox'
 
-		if ((window as any).ApplePaySession)
+		// 2024/12/12 ✅
+		if (window?.ApplePaySession)
 			return 'safari'
 
-		if ((window as any).chrome)
+		// 2024/12/12 ✅
+		if (window?.chrome)
 			return 'chromium'
 	}
 	catch {
 		/* ignore */
 	}
 
-	return 'other'
+	return 'unknown'
 }
 
 
