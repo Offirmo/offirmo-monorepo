@@ -17,8 +17,8 @@
 	console.xwarn('[FOO]', 'bad', {bar:42})
 	console.xerror('[FOO]', new Error("Bad!"))
 
-	console.group('fee', 'foo', {bar:42})
+	console.xgroup('fee', 'foo', {bar:42})
 	console.xlog('[FOO] sdd()', {bar:42})
 	console.xtrace('[FOO] dget()', {bar:42})
-	console.groupEnd()
+	console.xgroupEnd()
 </script>

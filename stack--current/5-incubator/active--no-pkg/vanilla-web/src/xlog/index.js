@@ -1,12 +1,9 @@
-console.log('Hi from js')
 
 /////////////////////////////////////////////////
 
-const originalGroup = console.group.bind(console)
-const originalGroupCollapsed = console.groupCollapsed.bind(console)
-
-console.group = (...args) => group(originalGroup, ...args)
-console.groupCollapsed = (...args) => group(originalGroupCollapsed, ...args)
+console.xgroup = (...args) => group(console.group.bind(console), ...args)
+console.xgroupCollapsed = (...args) => group(console.groupCollapsed.bind(console), ...args)
+console.xgroupEnd = (...args) => group(console.groupEnd.bind(console), ...args)
 
 console.xlog = (...args) => sink('log', ...args)
 console.xwarn = (...args) => sink('warn', ...args)
@@ -17,30 +14,27 @@ console.xtrace = (...args) => sink('trace', ...args)
 
 const IFRAME_DEPTH = get_iframe_depth()
 
-const COLORⵧBG = (() => {
-	const default_color = [
-		// credits http://davidbau.com/colors/
-		'palegreen',
-		//'lavenderblush',
-		'paleturquoise',
-		'mistyrose',
-	][IFRAME_DEPTH] || 'gainsboro'
+const LSKⵧCOLORⵧBG = `xlogⳇcolorⵧbgⵧ${String(IFRAME_DEPTH).padStart(2, '0')}`
 
-	const LSK = `xlogⳇcolorⵧbgⵧ${String(IFRAME_DEPTH).padStart(2, '0')}`
+const COLORⵧBGⵧDEFAULT = [
+	// credits http://davidbau.com/colors/
+	'palegreen',
+	//'lavenderblush',
+	'paleturquoise',
+	'mistyrose',
+][IFRAME_DEPTH] || 'gainsboro';
+
+const COLORⵧBG = (() => {
 	const existing_color = (() => {
 		try {
-			return localStorage.getItem(LSK)
+			return localStorage.getItem(LSKⵧCOLORⵧBG)
 		}
 		catch (e) {
 			return 'orangered' // strong hint at issue
 		}
 	})()
 
-	const final_color = existing_color || default_color
-
-	if (typeof existing_color !== 'string') {
-		localStorage.setItem(LSK, '') // to facilitate override
-	}
+	const final_color = existing_color || COLORⵧBGⵧDEFAULT
 
 	return final_color
 })()
@@ -162,7 +156,8 @@ function append_styled_string(console__call__args, str, ...styles) {
 	]
 }
 
-export function get_iframe_depth() {
+function get_iframe_depth() {
+	// TODO REVIEW doesn't work reliably
 	let depth = 0
 	let current_window = window
 	while (current_window !== current_window.parent && depth<10) {
@@ -170,4 +165,37 @@ export function get_iframe_depth() {
 		current_window = current_window.parent
 	}
 	return depth
+}
+
+/////////////////////////////////////////////////
+
+setInterval(() => {
+	try {
+		const existing = localStorage.getItem(LSKⵧCOLORⵧBG)
+		if (typeof existing !== 'string') {
+			localStorage.setItem(LSKⵧCOLORⵧBG,
+				COLORⵧBG === COLORⵧBGⵧDEFAULT
+					? ''
+					: COLORⵧBG
+			)
+		}
+	} catch(err) {
+		// swallow, LS is notoriously unreliable
+	}
+}, 10000) // every 10s to rewrite in case of LS clearing
+
+/////////////////////////////////////////////////
+
+console.xgroup('👋 Hi from x-logger 👋')
+console.xlog("origin =", window.origin)
+try {
+	console.xlog("LS keys =", Array.from({length: localStorage.length}, (item, index) => localStorage.key(index)))
+} catch {}
+console.xgroupEnd()
+
+/////////////////////////////////////////////////
+
+export {
+	get_iframe_depth,
+	LSKⵧCOLORⵧBG,
 }
