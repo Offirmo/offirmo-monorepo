@@ -101,6 +101,7 @@ competition is for Losers: Avoid competition. Stop copying what everybody else i
 conditioning -- classical
 conditioning -- operant
 convexity: If you want to be lucky, look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
+copernican principle = humans are not privileged observers of the universe https://en.wikipedia.org/wiki/Copernican_principle
 Copernican Principle: The more we learn about astronomy, the less it seems that earth is special. It’s a small part of the universe, and each human is a small part of the earth. We are all spinning through the solar system — nowhere near the beginning or end of time.
 corporate slave (but also never achieving anything?)
 correlation is not causation
@@ -281,6 +282,7 @@ making one's luck
 marxist philosophy
 Maslow's pyramid
 McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
+mediocrity principle = if an item is drawn at random from one of several sets or categories, it's more likely to come from the most numerous category than from any one of the less numerous categories https://en.wikipedia.org/wiki/Mediocrity_principle
 mental Health: I am not my thoughts and rather than feeling like I needed to have control of every situation, that by surrendering that control, I will have more control over my life than I ever did before.
 mental models +++ TODO LIST  https://fs.blog/mental-models/
 method of learning +++ https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger
@@ -312,6 +314,7 @@ opportunity Cost: By reading this tweet, you are choosing not to read something 
 optimism = "keep only the one who say it’s possible" https://posthog.com/founders/first-ops-hire
 other people’s problems / pick your battles
 Overton Window: You can control thought without limiting speech. You can do it by defining the limits of acceptable thought while allowing for lively debate within these barriers. For example, Fox News and MSNBC set limits on what political thoughts they consider acceptable, but in the grand scheme of things, they’re both fairly conventional. The political spectrum stretches far beyond the ideas they entertain, but ideas outside their limits are shunned.
+paradigm shift https://en.wikipedia.org/wiki/Paradigm_shift
 paradox of Abundance: The average quality of information is getting worse and worse. But the best stuff is getting better and better. Markets of abundance are simultaneously bad for the median consumer but good for conscious consumers.
 paradox of Consensus: Under ancient Jewish law, if a suspect was found guilty by every judge, they were deemed innocent. Too much agreement implied a systemic error in the judicial process. Unanimous agreement sometimes leads to bad decisions.
 paradox of Specificity: Focus isn’t as constraining as it seems. In the age of the Internet, when everybody has Google search and personalized social media feeds, differentiation is free marketing. The more specific your goal, the more opportunities you’ll create for yourself. Narrowing your aperture can expand your horizons.
@@ -423,6 +426,7 @@ staggered contour trenches
 stakeholder
 start with the most risky / complicated
 start with why
+statistical significance
 Stigler's law of eponymy = inventor = the one who bring to attention, not the discoverer https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy
 stoicism -- Rudyard Kipling "If" https://en.wikipedia.org/wiki/If%E2%80%94
 Streisand effect = Increased awareness of information caused by efforts to suppress it
@@ -475,6 +479,11 @@ truth -- fully convinced vs probably https://christianity.stackexchange.com/ques
 truth -- verificationism https://christianity.stackexchange.com/a/89891
 Turning Feedback into Action
 tyranny of the urgent https://www.psychologytoday.com/us/blog/human-flourishing-101/202309/how-to-conquer-the-tyranny-of-the-urgent
+universe
+universe -- cosmological model -- +++ Lambda cold dark matter (ΛCDM) = current best (2024) https://en.wikipedia.org/wiki/Lambda-CDM_model
+universe -- cosmological model -- cyclic (various)
+universe -- cosmological model https://en.wikipedia.org/wiki/Physical_cosmology
+universe -- end big chill, big freeze, big crunch
 unlearn
 vanilla
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
