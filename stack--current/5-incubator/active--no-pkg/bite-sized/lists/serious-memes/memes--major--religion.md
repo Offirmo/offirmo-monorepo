@@ -12,6 +12,8 @@ doubt https://aleteia.org/2023/04/15/is-all-doubt-bad/
 Fatima: message, children, secrets
 great apostasy https://en.wikipedia.org/wiki/Great_Apostasy
 human sacrifice
+influence? https://en.wikipedia.org/wiki/Roman_imperial_cult
+intelligent design https://en.wikipedia.org/wiki/Intelligent_design
 Jacques Fesch
 le sacré
 Lourdes
@@ -41,4 +43,5 @@ St Simeon Salos
 St Zita
 Ste Thérèse
 testaments spirituels St Louis St Remy https://www.famillechretienne.fr/39532/article/le-testament-spirituel-de-benoit-xvi-texte-integral
+Trinity https://en.wikipedia.org/wiki/Nontrinitarianism
 What is even a religion?

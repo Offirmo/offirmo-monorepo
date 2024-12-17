@@ -390,6 +390,7 @@ perspective -- tech -- security
 polyglot persistence https://en.wikipedia.org/wiki/Polyglot_persistence
 post-mortem
 private cloud = https://threadreaderapp.com/thread/1800291897245835616.html
+product -- envoy = open source edge and service proxy, designed for cloud-native applications https://www.envoyproxy.io/
 protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https://stackoverflow.com/questions/731233/activemq-or-rabbitmq-or-zeromq-or https://news.ycombinator.com/item?id=9634801
 proxy server = intermediaries between client and servers. improve performance by caching, provide security by filtering incoming traffic, enable load balancing for efficient distribution of requests
 pub/sub -- event -- identifier -- amqp convention https://www.rabbitmq.com/tutorials/amqp-concepts

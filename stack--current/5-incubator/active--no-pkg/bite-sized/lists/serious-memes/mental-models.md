@@ -115,10 +115,11 @@ communication -- breaking bad news https://boz.com/articles/bad-news
 communication -- ELI5 https://boz.com/articles/eli5
 communication -- plainspoken https://boz.com/articles/be-plainspoken https://debliu.substack.com/p/the-importance-of-being-plainspoken
 communication non violente
-competition is for Losers: Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
+competition is for Losers = Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
 conditioning -- classical
 conditioning -- operant
-convexity: If you want to be lucky, look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
+continuity of government (COG) = establishing defined procedures that allow a government to continue its essential operations in case of a catastrophic event such as nuclear war https://en.wikipedia.org/wiki/Continuity_of_government 
+convexity = if you want to be lucky, look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
 copernican principle = humans are not privileged observers of the universe "The more we learn about astronomy, the less it seems that earth is special. It’s a small part of the universe, and each human is a small part of the earth. We are all spinning through the solar system — nowhere near the beginning or end of time." https://en.wikipedia.org/wiki/Copernican_principle
 corporate slave (but also never achieving anything?)
 correlation is not causation https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation
@@ -146,6 +147,7 @@ disability -- overcoming
 discernement -- technique de pile ou face
 discrimination -- direct = when a person is treated less favourably or unfairly than another person or group because of certain protected characteristics* or attributes
 discrimination -- indirect = when a neutral rule, policy, practice or criterion applies to everyone but disproportionately disadvantages a particular group with a protected characteristic, without objective justification
+disease -- definition? https://en.wikipedia.org/wiki/Unsolved_problems_in_medicine
 disrespect = lack of consideration or regard for others’ privacy, physical or emotional space, viewpoints, or belongings. Intimidation, aggressive behavior, “the silent treatment”. Thoughtless or arrogant behavior, like using profanity when someone objects to it.
 don't expect perfection -> trigger self-consciousness = counter-productive
 doublespeak: People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
@@ -167,6 +169,8 @@ everything must be paid for twice https://www.raptitude.com/2022/01/everything-m
 evolution https://en.wikipedia.org/wiki/Evolutionary_game_theory
 evolution vs revolution
 excuses vs. solutions
+fair division -- divide and choose https://en.wikipedia.org/wiki/Divide_and_choose
+fair division = dividing a set of resources among several people who have an entitlement to them so that each person receives their due share. division of inheritance, partnership dissolutions, divorce settlements, electronic frequency allocation, airport traffic management, and exploitation of Earth observation satellite https://en.wikipedia.org/wiki/Fair_division
 fairness
 fake it till you make it -- Of course, it’s not really “fake it till you make it.” It’s just “fake it.”
 falling behind
@@ -385,8 +389,9 @@ primals https://myprimals.com https://templetonreligiontrust.org/explore/discove
 priming
 principal-agent problem https://en.wikipedia.org/wiki/Principal–agent_problem
 Principle of Least Power
-priorities -- global catastrophic risk / existential threat https://en.wikipedia.org/wiki/Global_catastrophic_risk https://en.wikipedia.org/wiki/Global_catastrophe_scenarios
-priorities -- global issues https://en.wikipedia.org/wiki/List_of_global_issues
+priorities -- 0 life extinction = global catastrophic risk / existential threat https://en.wikipedia.org/wiki/Global_catastrophic_risk https://en.wikipedia.org/wiki/Global_catastrophe_scenarios
+priorities -- 1 human extinction (incl. omnicide) https://en.wikipedia.org/wiki/Human_extinction
+priorities -- 2 global issues https://en.wikipedia.org/wiki/List_of_global_issues
 Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
 prix au kilo
 problem solving -- structured https://strategyu.co/mckinsey-structured-problem-solving-secrets/
@@ -479,6 +484,7 @@ T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
 table selection = This idea comes from poker, where you’re advised to choose your opponents carefully. That means you shouldn’t compete against the best people. You don’t need to get good at doing difficult things if you get good at avoiding difficult things. If you want to win, pick an easy table and nail your execution.
 talent vs. Genius = Society is good at training talent but terrible at cultivating genius. Talented people are good at hitting targets others can’t hit, but geniuses find targets others can’t see. They are opposite modes of excellence. Talent is predictable, genius is unpredictable.
 tax -- lazy https://www.insurancewatch.com.au/lazy-tax-insurance.html
+The Boy Who Cried Wolf https://en.wikipedia.org/wiki/The_Boy_Who_Cried_Wolf
 The Map Is Not the Territory = Reality will never match the elegance of theory. All models have inconsistencies, but some are still useful. Some maps are useful because they’re inaccurate. If you want to find an edge, look for what the map leaves out.
 The Medium Is the Message = We pay too much attention to what is being said. But the medium of communication is more impactful. For example, the Internet’s impact on humanity has a bigger influence than anything that’s said on the Internet.
 The noisy door gets the oil https://9gag.com/gag/aGEgp07

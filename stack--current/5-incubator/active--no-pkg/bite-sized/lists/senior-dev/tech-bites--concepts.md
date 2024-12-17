@@ -41,6 +41,9 @@ API (Application Programming Interface) = interface (set of subroutine definitio
 API -- easy to build one, hard to build the **right** one
 API -- economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
 API -- external-facing = are where "design up front" and consideration about future use cases really matters. Changing APIs is a pain for us and for our users, and creating backwards incompatibility is horrible (although sometimes impossible to avoid). https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
+API -- future proof https://protobuf.dev/programming-guides/api/
+API -- pagination -- token https://protobuf.dev/programming-guides/api/ 
+API -- tradeoffs = ex. safety / flexibility / extensibility / speed
 assembly
 async -- design pattern -- reactor pattern
 async -- sync = By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
@@ -99,6 +102,7 @@ comments
 comments -- conventional
 commits
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
+compatibility window = how long should we attempt to ensure that a deployment of code doesn’t get blown up by incompatible payloads. Ex. mobile app = 6 month, web page = 1d, server = 1 release
 compile to js
 compiler
 compiler -- stanford course http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=Compilers
@@ -149,9 +153,11 @@ culture -- low/high context https://journals.sagepub.com/doi/10.1177/01461672124
 Cupertino effect = bad spell checking Cupertino effect
 currying https://en.wikipedia.org/wiki/Currying
 data interchange format -- https://capnproto.org/
+data interchange format -- https://en.wikipedia.org/wiki/Advanced_Scientific_Data_Format
 data interchange format -- JSON -- binary https://msgpack.org/
 data interchange format -- JSON https://www.json.org/
-data interchange format -- protobuf https://github.com/protocolbuffers/protobuf
+data interchange format -- protobuf -- XXX criticized "the worst serialization format and schema" https://news.ycombinator.com/item?id=21871514
+data interchange format -- protobuf = (bc Java doesn't work well with JSON) language-neutral, platform-neutral extensible mechanisms for serializing structured data https://protobuf.dev/overview/ https://github.com/protocolbuffers/protobuf
 databases
 databases -- joins https://justinjaffray.com/joins-13-ways/
 databases -- normalization
@@ -267,6 +273,7 @@ IDEALS -- 4 Availability over consistency
 IDEALS -- 5 Loose coupling
 IDEALS -- 6 Single responsibility
 IDEALS = principles for microservice design
+idempotent = make mutations idempotent. A full retry of a partial failure shouldn’t corrupt/duplicate data.
 if it ain't broke, don't fix it
 IIFE
 immutability
@@ -370,6 +377,7 @@ OOP -- layer https://en.wikipedia.org/wiki/Layer_(object-oriented_design)
 OOP -- problems -- cross cutting concerns, diamond
 OOP -- problems -- encourages promiscuous sharing of mutable state
 OOP -- problems -- side effects
+opaque = data, types
 optim des || et && effet de bord
 ORM (Object-Relational Mapping)
 orthogonality https://en.wikipedia.org/wiki/Orthogonality_(programming)
@@ -404,6 +412,7 @@ polyfill -- shim vs polyfill vs ponyfill
 polymorphism https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
 postgres -- job queue https://github.com/timgit/pg-boss
 practices -- best vs. standard
+preprocessor macros
 principle of least surprise / principle of least astonishment https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 privacy
 privacy -- collect and use someone's info respectfully
@@ -425,6 +434,7 @@ programming paradigm -- imperative programming
 programming paradigm -- object oriented
 programming paradigm -- reactive
 promises -- deferred
+protocol buffers (protobuf) => see data interchange format
 prototypes
 proxy
 questions for a new technology -- 1 What problem are we trying to solve? (Tech should never be introduced as an end to itself)
@@ -457,6 +467,7 @@ robustness -- principle (beware bad effects) https://en.wikipedia.org/wiki/Robus
 robustness https://en.wikipedia.org/wiki/Robustness_principle
 rollback
 rolling deploy
+rpc -- deadline https://protobuf.dev/programming-guides/api/
 rule of composition https://www.linfo.org/rule_of_composition.html
 rule of silence https://www.linfo.org/rule_of_silence.html
 scatter/gather (datastreams)
@@ -521,6 +532,7 @@ state
 state -- management
 state -- stateless
 stats course https://www.youtube.com/playlist?list=PLltdM60MtzxNwhL4sg7swFFlUlH7EEy7H []
+status codes
 Stick to boring architecture for as long as possible https://addyosmani.com/blog/boring-architecture/
 stories to help you grow as a software developer https://medium.com/@MediumStaff/list/stories-to-help-you-grow-as-a-software-developer-b1d913188c20
 streams
@@ -579,6 +591,8 @@ types -- subtyping -- polymorphism
 types -- subtyping -- postconditions = cannot be weakened in the subtype
 types -- subtyping -- preconditions = cannot be strengthened in the subtype
 types -- subtyping https://en.wikipedia.org/wiki/Liskov_substitution_principle
+types -- systems -- "modern" https://reasonablypolymorphic.com/blog/protos-are-wrong/
+uid -- use strings = "2^64 isn’t as big as it used to be" https://protobuf.dev/programming-guides/api/
 unicode -- FAQ https://unicode.org/faq/utf_bom.html#utf16-2
 Unix philosophy (OUTDATED -> use JSON ;)) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- (much more) https://en.wikipedia.org/wiki/Unix_philosophy
