@@ -5,20 +5,26 @@
 7+7 œuvres de misericorde https://fr.wikipedia.org/wiki/%C5%92uvres_de_mis%C3%A9ricorde
 Animism
 Apostles - what happened to them
+arianism https://en.wikipedia.org/wiki/Arius
 armor of Christ
 Countries - how christianism was introduced
 doubt https://aleteia.org/2023/04/15/is-all-doubt-bad/
 Fatima: message, children, secrets
-Human sacrifice
+great apostasy https://en.wikipedia.org/wiki/Great_Apostasy
+human sacrifice
 Jacques Fesch
 le sacré
 Lourdes
+magical thinking https://en.wikipedia.org/wiki/Magical_thinking
+mercy
+mysticism https://en.wikipedia.org/wiki/Christian_mysticism
 médaille -- miraculeuse
 médaille -- st Benoit
-mercy
 Natural Religiosity
 prayer -- extension of selfishness: santa's list, promise to be good, implore, negotiate, plead
+problem of evil https://en.wikipedia.org/wiki/Problem_of_evil
 Russian Pilgrim
+scientism
 selfishness
 small & simple better than savant
 St (france)

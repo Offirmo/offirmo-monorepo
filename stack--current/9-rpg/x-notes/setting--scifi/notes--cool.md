@@ -1,4 +1,133 @@
 
+
+
+## missions
+(all missions can also be taken part of as escort)
+
+
+### meet people
+
+#### find talents
+- artists
+- scientists
+- historians
+- 
+#### increase reputation
+
+
+
+### rescue
+
+#### find lost ships
+from the past
+
+#### find lost people / escape pods
+
+
+
+### explore
+
+#### recover from stranded at random
+- need to be able to survive
+- need to be able to get out
+- need to orient
+  - star mapping, recognizing reference stars / galaxies / pulsars https://en.wikipedia.org/wiki/International_Celestial_Reference_System_and_its_realizations
+  - using parallax https://en.wikipedia.org/wiki/Parsec#History_and_derivation
+  - following big structures
+
+
+#### find interesting knowledge
+- ancient civilizations
+- lost fleets
+
+#### find interesting stuff
+- artifacts
+- time capsules https://en.wikipedia.org/wiki/5D_optical_data_storage
+- primordial black holes
+
+
+#### find interesting places
+- habitable / terra-formable star systems
+- dark planets (secret bases)
+
+
+
+### protect
+
+#### police
+
+##### vs. space pirates
+planetary defense
+- shields
+- stations
+- fleets
+
+
+##### vs. smugglers
+
+
+
+
+### terra-form
+
+#### terra-formation
+https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System
+- go into a forming stellar system
+- using gravitation, trigger the accretion correctly = correctly sized planet + correct distance + moon (stable orbit) + bigger planet (asteroid protection) etc.
+- perform grand tack https://en.wikipedia.org/wiki/Grand_tack_hypothesis https://en.wikipedia.org/wiki/Orbital_resonance https://en.wikipedia.org/wiki/Planetary_migration
+- install a star shield https://en.wikipedia.org/wiki/Asteroid_impact_avoidance
+- seed the planet with basic life
+- monitor progress and tweak
+- monitor effective temperature with reflectivity / clouds https://en.wikipedia.org/wiki/Effective_temperature
+- add more water for plaque tectonics
+  - https://en.wikipedia.org/wiki/Large_low-shear-velocity_provinces
+- enable C4 photosynthesis
+
+#### protection
+- from extinction
+  - natural
+    - https://en.wikipedia.org/wiki/Extinction-level_event
+    - https://en.wikipedia.org/wiki/Timeline_of_the_far_future
+      - supervolcanic eruption 
+      - gamma-ray burst from a supernova
+    - ecosystem engineering https://en.wikipedia.org/wiki/Ecosystem_engineer
+      - monitor keystone species https://en.wikipedia.org/wiki/Keystone_species
+      - voluntary trigger extinctions if going wrong direction (evolution trap) https://en.wikipedia.org/wiki/Background_extinction_rate
+  - great filters https://en.wikipedia.org/wiki/Great_Filter
+    - https://en.wikipedia.org/wiki/Human_impact_on_the_environment
+    - 
+- from poachers/thieves/refugees)
+  - (OR accept refugees on the premise they'll take care of the planet)
+
+- protect forming star systems
+  - tweak the formation if needed
+    - tweak orbital patterns
+    - clear asteroids 
+  - stabilization https://en.wikipedia.org/wiki/Stability_of_the_Solar_System
+- protect biosphere https://en.wikipedia.org/wiki/Biosphere
+- protect forming civilizations
+  - prepare them for 1st contact / OCP https://en.wikipedia.org/wiki/Excession#Outside_Context_Problem
+
+
+#### terra-colonization
+- logic end = protect colonists
+
+
+#### terra-maintenance
+* https://en.wikipedia.org/wiki/Future_of_Earth
+  - fix rotation speed
+  - fix tilt
+  - fix moon tidal decay
+  - fix greenhouse/atmosphere
+  - re-heat the core / fix the magnetic field
+- https://en.wikipedia.org/wiki/Timeline_of_the_far_future
+
+
+
+
+
+
+## TOSORT
 spaceships
 lasers
 space stations
@@ -9,18 +138,24 @@ discovering exotic planets
 deep space
 hyperspace jumps
 aliens
-ancient civilizations
-lost fleets
+
 
 
 https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics
+https://en.wikipedia.org/wiki/Breakthrough_Prize_in_Fundamental_Physics
+
+https://en.wikipedia.org/wiki/Timeline_of_the_far_future
+
 
 
 https://en.wikipedia.org/wiki/Antimatter
 https://en.wikipedia.org/wiki/Dark_matter
 https://en.wikipedia.org/wiki/Dark_energy
+https://en.wikipedia.org/wiki/Dark_fluid
 https://en.wikipedia.org/wiki/Gravitational_wave
 
+https://en.wikipedia.org/wiki/Plasma_(physics)
+https://en.wikipedia.org/wiki/Particle_beam
 
 https://en.wikipedia.org/wiki/Advanced_Gun_System
 https://en.wikipedia.org/wiki/Littoral_combat_ship
@@ -36,6 +171,7 @@ space stations
 
 sillage
 
+geonium https://en.wikipedia.org/wiki/Penning_trap#Geonium_atom
 
 archeology = old probes etc.
 
@@ -57,10 +193,27 @@ rail guns
 ram guns https://en.wikipedia.org/wiki/Ram_accelerator
 
 quantum
-dark matter https://en.wikipedia.org/wiki/Dark_matter
-dark energy https://en.wikipedia.org/wiki/Dark_energy
-dark fluid https://en.wikipedia.org/wiki/Dark_fluid
-
-anti matter
+* https://en.wikipedia.org/wiki/Quantum_chromodynamics
 
 anti grav https://en.wikipedia.org/wiki/Anti-gravity
+
+https://en.wikipedia.org/wiki/Quiet_and_loud_aliens
+
+extra dimensions
+* https://en.wikipedia.org/wiki/String_theory#Extra_dimensions
+* https://en.wikipedia.org/wiki/Calabi%E2%80%93Yau_manifold = 6 dimensions
+* string theory = 11 dimensions ;)
+
+https://en.wikipedia.org/wiki/Megascale_engineering
+
+hyperpower https://en.wikipedia.org/wiki/Excession
+
+https://en.wikipedia.org/wiki/True_polar_wander
+
+replicators
+- paper clip
+- self-replicating interstellar probes https://en.wikipedia.org/wiki/Fermi_paradox#Conjectures_about_interstellar_probes https://en.wikipedia.org/wiki/Self-replicating_spacecraft#Von_Neumann_probes
+
+https://en.wikipedia.org/wiki/Dyson_sphere
+
+Mass Effect aestivations https://en.wikipedia.org/wiki/Aestivation_hypothesis

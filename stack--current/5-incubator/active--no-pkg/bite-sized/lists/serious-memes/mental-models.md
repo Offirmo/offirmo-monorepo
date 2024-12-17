@@ -7,9 +7,14 @@
 1 or 2 way door
 12 steps
 1st thought v.s 2nd thought
+3 -- trichotomy https://en.wikipedia.org/wiki/Trichotomy_(philosophy)
+3 -- trilemma https://en.wikipedia.org/wiki/Trilemma
 3 hardest things to say -- I was wrong, I need help, I love you -> also 10 https://kristyna.co/mindful-entrepreneurship/10-hardest-things-for-people-to-say
-3 sectors -- quarternary
-3 sectors https://en.wikipedia.org/wiki/Three-sector_model
+3 sectors model -- 1 primary = raw materials
+3 sectors model -- 2 secondary = manufacturing
+3 sectors model -- 3 tertiary = services
+3 sectors model -- quarternary & quinary = r&d and non-profit?
+3 sectors model https://en.wikipedia.org/wiki/Three-sector_model
 3 Strikes and You're Out = Californian law https://lao.ca.gov/analysis_1995/3strikes.html
 3-strike pivot strategy -- Strike 1: Identify and try to address the issue directly
 3-strike pivot strategy -- Strike 2: Reassess and Seek Support to resolve the problem
@@ -24,8 +29,10 @@
 5 mantras = by Christopher Davis (burnout)
 5 regrets of dying
 80/20 rule "Pareto"
+[ ] +++ mental models LIST  https://fs.blog/mental-models/
 [ ] AAA TODO https://flinkliv.com/
 [ ] AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
+[ ] ex. of edited interview misleading https://paulgraham.com/wids.html
 [ ] Futures studies https://en.wikipedia.org/wiki/Futures_studies + many concepts
 [ ] https://amir.rachum.com/mental-models/
 [ ] https://boz.com/
@@ -35,6 +42,7 @@
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
 [ ] https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time
 [ ] leadership development https://jchyip.medium.com/diy-leadership-development-develop-leadership-skills-74479cde0c05
+[ ] Nobel https://www.nobelprize.org/all-nobel-prizes-2024/
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 a country is a farm
 accent -- miscommunication https://paulgraham.com/accents.html
@@ -53,7 +61,7 @@ amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
 autocracy https://en.wikipedia.org/wiki/Autocracy
-availability cascade: A self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
+availability cascade = a self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
 baker’s dozen: The key to good hospitality is to delight your guests with an unexpected gift. If you run a hotel, leave a chocolate on the bed. If you run a bakery, give your customers one extra bagel. If you write a tweetstorm, share an extra idea.
 Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 barbarians at the gate https://en.wikipedia.org/wiki/Barbarians_at_the_Gate
@@ -63,9 +71,16 @@ bee browsing
 better ask for forgiveness than for permission
 biases -- attractiveness
 biases -- baby-face
-bike shed Effect: A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
+bike shed effect = A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
+biodiversity -- global https://en.wikipedia.org/wiki/Global_biodiversity
+biodiversity -- loss https://en.wikipedia.org/wiki/Biodiversity_loss
+biodiversity https://en.wikipedia.org/wiki/Biodiversity esp. https://en.wikipedia.org/wiki/Biodiversity#Role_and_benefits_of_biodiversity
 biographies -- Profiles in Courage https://en.wikipedia.org/wiki/Profiles_in_Courage
+black swan https://en.wikipedia.org/wiki/Black_swan_theory
 bonnes et mauvaises cartes
+brain -- fast & slow
+brain -- fast & slow -- fast = training / education / culture = biased = knee-jerk = LLM
+brain -- fast & slow -- slow = real you
 brain rot https://en.wikipedia.org/wiki/Brain_rot
 Brandolini's Law = The amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it
 broken window theory
@@ -73,7 +88,10 @@ bullying = Lack of consideration and empathy for those without power, Disrespect
 bullying = repeated pattern of offensive, intimidating, or hostile behavior(s) or language, often by a strong or other person of authority. Bullying creates a toxic atmosphere for everyone, but may be accepted by many as “part of the workplace culture”
 busy work https://en.wikipedia.org/wiki/Busy_work
 buy nice or buy twice
+cadre = should lead, can change the world
 can't satisfy others
+capitalism -- issues -- inability to collectively improve, ex. global warming
+capitalism -- late stage
 capitalism -- W. H. Mallock -- is justified because it permits the most talented members of society to use the less talented for the sake of maximizing efficiency. Labor, for him, was an inert mass that was useless unless those with managerial and entrepreneurial talent set them to work. Hence, wealth is created, not by labor, but by the knowledge and ability of those who control labor. Maximization of corporate profits means in this case that the most entrepreneurial, innovative and inventive segment of society has used labor and resources to create wealth. In Mallock's view labor, by itself, creates nothing; it's not the wrench that puts the machine together, but the genius who invented it.
 career -- career limiting (action/move)
 change -- introduction -- 1 What are we doing?
@@ -101,10 +119,10 @@ competition is for Losers: Avoid competition. Stop copying what everybody else i
 conditioning -- classical
 conditioning -- operant
 convexity: If you want to be lucky, look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
-copernican principle = humans are not privileged observers of the universe https://en.wikipedia.org/wiki/Copernican_principle
-Copernican Principle: The more we learn about astronomy, the less it seems that earth is special. It’s a small part of the universe, and each human is a small part of the earth. We are all spinning through the solar system — nowhere near the beginning or end of time.
+copernican principle = humans are not privileged observers of the universe "The more we learn about astronomy, the less it seems that earth is special. It’s a small part of the universe, and each human is a small part of the earth. We are all spinning through the solar system — nowhere near the beginning or end of time." https://en.wikipedia.org/wiki/Copernican_principle
 corporate slave (but also never achieving anything?)
-correlation is not causation
+correlation is not causation https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation
+cosmos https://en.wikipedia.org/wiki/Physical_cosmology
 cost of a thing = the amount of life which is required to be exchanged for it, immediately or in the long run
 courses après le repas
 creativity -- begins at the edge: Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
@@ -115,12 +133,13 @@ culture -- Hofstede’s Dimensions http://www.na-businesspress.com/ajm/bergieleb
 culture -- taijin kyofusho = specific type of social anxiety, occurring primarily in Japanese culture, is called taijin kyofusho. Taijin kyofusho is characterized by an intense fear that one's body parts or functions displease, embarrass or are offensive to others. https://pubmed.ncbi.nlm.nih.gov/21911434/
 curse of knowledge https://en.wikipedia.org/wiki/Curse_of_knowledge
 Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
+dark forest https://en.wikipedia.org/wiki/Dark_forest_hypothesis
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
 democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
 dependability https://posthog.com/founders/first-ops-hire
 deterrence
-differences: introvert/extrovert
+differences -- introvert/extrovert
 disability
 disability -- flag +++
 disability -- overcoming
@@ -147,29 +166,32 @@ every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 evolution https://en.wikipedia.org/wiki/Evolutionary_game_theory
 evolution vs revolution
-ex. of edited interview misleading https://paulgraham.com/wids.html
 excuses vs. solutions
 fairness
 fake it till you make it -- Of course, it’s not really “fake it till you make it.” It’s just “fake it.”
+falling behind
+false flag https://en.wikipedia.org/wiki/False_flag
 false good idea
 farm rice theory https://www.nature.com/articles/s41467-024-44770-w
 fast reading
-Faustian Bargain: A man once sold his soul to a demon in exchange for knowledge. At first, it seemed like a smart trade. But the man lost in the long-run. Tragically, what the man lost was more valuable than what he earned. In short, he won the battle but lost the war.
+Faustian Bargain = A man once sold his soul to a demon in exchange for knowledge. At first, it seemed like a smart trade. But the man lost in the long-run. Tragically, what the man lost was more valuable than what he earned. In short, he won the battle but lost the war.
 Fear Of Looking Dumb (FOLD)
 fear of missing out (FOMO)
 fear, uncertainty, death (FUD)
 femme/homme enfant https://www.wengood.com/fr/developpement-personnel/se-connaitre/art-femme-enfant
+Fermi paradox -- Drake equation https://en.wikipedia.org/wiki/Drake_equation
+Fermi paradox https://en.wikipedia.org/wiki/Fermi_paradox
 Financial Independence Retire Early (FIRE) https://www.reddit.com/r/financialindependence/
 Fingerprint for Success (F4S)
-fire
 first practice what you preach
 first principles https://fs.blog/first-principles/
 first-principles thinker
-frame challenge
 frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
 frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
+free will https://en.wikipedia.org/wiki/Free_will
 fulfillment https://longform.asmartbear.com/fulfillment/
 fundamental attribution error https://en.wikipedia.org/wiki/Fundamental_attribution_error
+future of Earth https://en.wikipedia.org/wiki/Future_of_Earth https://en.wikipedia.org/wiki/Timeline_of_the_far_future
 Gall’s Law: A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system.
 game theory
 game theory -- prisoner's dilemma https://www.bennorthrop.com/Home/Blog/2007_11_17_prisoners_dilemma.php
@@ -208,8 +230,8 @@ historic recurrence https://en.wikipedia.org/wiki/Historic_recurrence
 Hock Principle: Simple, clear purpose and principles give rise to complex and intelligent behavior. Complex rules and regulations give rise to simple and stupid behavior.
 Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory
 Holodomor https://en.wikipedia.org/wiki/Holodomor
-Hormesis: A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
-Horseshoe Theory: Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
+Hormesis = A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
+Horseshoe Theory = Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
 https://36questionsinlove.com/
 https://cobeats.com/folder/ryfTgPr9H
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
@@ -254,7 +276,7 @@ Johari window https://en.wikipedia.org/wiki/Johari_window
 juger vs. évaluer
 keep only the ones saying it's doable
 keeping up with the jones
-law of Shitty Click-Through Rates: Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
+law of Shitty Click-Through Rates = Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
 le premier jour du reste de sa vie
 leadership -- change or die
 leadership -- Decisions are about action
@@ -265,10 +287,12 @@ leadership -- know when to fight
 leadership -- leader - leader -- context-rich environment / information management
 leadership -- must never ask sth they couldn't do
 leadership -- timeless lessons https://www.linkedin.com/pulse/back-future-timeless-lessons-leadership-jo-owen
+learning -- lifelong = learning never stops
 learning machines "I constantly see people rise in life who are not the smartest, sometimes not even the most diligent, but they are learning machines" (Munger https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger)
-legibility: We are blind to what we cannot measure. Not everything that counts can be measured, and not everything that can be measured counts. But people manage what they can measure, so society repeats the same mistakes.
+legibility = We are blind to what we cannot measure. Not everything that counts can be measured, and not everything that can be measured counts. But people manage what they can measure, so society repeats the same mistakes.
 less is more
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
+life https://en.wikipedia.org/wiki/Life
 life isn't fair https://www.linkedin.com/pulse/lifell-kill-ya-allen-white
 lifestyle
 linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_relativity
@@ -283,8 +307,7 @@ marxist philosophy
 Maslow's pyramid
 McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
 mediocrity principle = if an item is drawn at random from one of several sets or categories, it's more likely to come from the most numerous category than from any one of the less numerous categories https://en.wikipedia.org/wiki/Mediocrity_principle
-mental Health: I am not my thoughts and rather than feeling like I needed to have control of every situation, that by surrendering that control, I will have more control over my life than I ever did before.
-mental models +++ TODO LIST  https://fs.blog/mental-models/
+mental health = I am not my thoughts and rather than feeling like I needed to have control of every situation, that by surrendering that control, I will have more control over my life than I ever did before.
 method of learning +++ https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger
 microaggressions
 mimetic Theory of Conflict: People who are similar are more likely to fight than people who are different. That’s why Civil Wars and family feuds create the worst conflicts. The closer two people are and the more equality between them, the greater the potential for conflict.
@@ -297,6 +320,7 @@ mondegreen https://thehabit.co/knowledge-is-power-france-is-bacon/
 monkey ladder experiment https://factschology.com/factschology-articles-podcast/monkey-ladder-experiment-truth
 Monty Hall problem https://en.wikipedia.org/wiki/Monty_Hall_problem
 moral hazard = Increases in the exposure to risk when insured, or when another bears the cost
+moral imperative https://en.wikipedia.org/wiki/Moral_imperative
 mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruction
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
 naiveté: abus sexuels, mafia
@@ -304,7 +328,6 @@ needs / wants https://en.wikipedia.org/wiki/Need
 Never interrupt someone doing what you said couldn't be done.
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
 no conflict / safe conflict / extreme conflict
-Nobel https://www.nobelprize.org/all-nobel-prizes-2024/
 non-violence
 normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-securite-la-normalisation-de-la-deviance-suite
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen
@@ -313,6 +336,7 @@ on peut toujours faire mieux
 opportunity Cost: By reading this tweet, you are choosing not to read something else. Everything we do is like this. Doing one thing requires giving up another. Whenever you explicitly choose to do one thing, you implicitly choose not to do another thing.
 optimism = "keep only the one who say it’s possible" https://posthog.com/founders/first-ops-hire
 other people’s problems / pick your battles
+outside context problem (OCP) = a problem that is "outside the context" as it is generally not considered until it occurs, and the capacity to actually conceive of or consider the OCP in the first place may not be possible or very limited (i.e., the majority of the group's population may not have the knowledge or ability to realize that the OCP can arise, or assume it is extremely unlikely). An example of OCP is an event in which a civilization does not consider the possibility that a much more technologically advanced society can exist, and then encounters one https://en.wikipedia.org/wiki/Excession#Outside_Context_Problem 
 Overton Window: You can control thought without limiting speech. You can do it by defining the limits of acceptable thought while allowing for lively debate within these barriers. For example, Fox News and MSNBC set limits on what political thoughts they consider acceptable, but in the grand scheme of things, they’re both fairly conventional. The political spectrum stretches far beyond the ideas they entertain, but ideas outside their limits are shunned.
 paradigm shift https://en.wikipedia.org/wiki/Paradigm_shift
 paradox of Abundance: The average quality of information is getting worse and worse. But the best stuff is getting better and better. Markets of abundance are simultaneously bad for the median consumer but good for conscious consumers.
@@ -338,6 +362,7 @@ personal Monopoly: Corporations reward conformity, but the Internet rewards peop
 personal moral inventory https://domprice.me/personal-moral-inventory/
 perverse incentive https://en.wikipedia.org/wiki/Perverse_incentive
 Peter principle = people in a hierarchy tend to rise to "a level of respective incompetence" https://en.wikipedia.org/wiki/Peter_principle
+phenomenology (physics) = branch of theoretical physics in which physicists construct realistic models of nature from more abstract theoretical ideas https://en.wikipedia.org/wiki/Phenomenology_(physics)
 picture the success
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
 porn
@@ -360,6 +385,8 @@ primals https://myprimals.com https://templetonreligiontrust.org/explore/discove
 priming
 principal-agent problem https://en.wikipedia.org/wiki/Principal–agent_problem
 Principle of Least Power
+priorities -- global catastrophic risk / existential threat https://en.wikipedia.org/wiki/Global_catastrophic_risk https://en.wikipedia.org/wiki/Global_catastrophe_scenarios
+priorities -- global issues https://en.wikipedia.org/wiki/List_of_global_issues
 Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
 prix au kilo
 problem solving -- structured https://strategyu.co/mckinsey-structured-problem-solving-secrets/
@@ -367,7 +394,6 @@ procrastination
 productivity
 productivity -- GSD Capture Everything, Clarify, Organize, Review, Engage https://todoist.com/productivity-methods/getting-things-done
 productivity vs. impact, value
-progress over perfection
 progress over perfection
 project management -- iron triangle = scope, time and people
 project management = boils down to one of two questions: When will it be done? Will it be done in time?
@@ -377,30 +403,32 @@ purchasing "messy middle" https://www.thinkwithgoogle.com/intl/en-emea/consumer-
 put into words
 question authority
 race to the bottom
+rare events = ex. COVID-19 https://en.wikipedia.org/wiki/Rare_events
 re-thinking established patterns
 Reach Impact Confidence Estimate (RICE)
-Reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
+reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
 rebound effect https://blog.jim-nielsen.com/2024/notes-on-making-software-by-peter-van-hardenberg/
 recruiting others to support you in addressing issue
 red herring
 rent seeking https://en.wikipedia.org/wiki/Rent-seeking
 resource curse -- Dutch disease https://en.wikipedia.org/wiki/Dutch_disease
-resource Curse = the paradox of plenty: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources https://en.wikipedia.org/wiki/Resource_curse
+resource curse = the paradox of plenty: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources https://en.wikipedia.org/wiki/Resource_curse
 respect
 rest and vest https://news.ycombinator.com/item?id=14943146
 ring theory -- 01 The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
 ring theory -- 02 When you are talking to a person in a ring smaller than yours, someone closer to the center of the crisis, the goal is to help. Listening is often more helpful than talking. But if you're going to open your mouth, first ask yourself if what you are about to say is likely to provide comfort and support. If it isn't, don't say it. Don't, for example, give advice. People who are suffering from trauma don't need advice. They need comfort and support. So say, "I'm sorry," or, "This must really be hard for you," or, "Can I bring you a pot roast?" Don't say, "You should hear what happened to me," or, "Here's what I would do if I were you." And don't say, "This is really bringing me down."
 ring theory https://en.wikipedia.org/wiki/Ring_theory_(psychology)
-robustness Principle: Be conservative in what you do, be liberal in what you accept from others. It’s a design guideline for software and a good rule for life: Hold yourself to a higher standard than you hold others to.
+robustness principle = be conservative in what you do, be liberal in what you accept from others. It’s a design guideline for software and a good rule for life: Hold yourself to a higher standard than you hold others to.
 rock the boat -- permission to (speak freely)
 root cause misattribution https://www.zeptonaut.com/posts/rocket-league-and-root-cause-misattribution/
-Russell Conjugation: Journalists often change the meaning of a sentence by replacing one word with a synonym that implies a different meaning. For example, the same person can support an estate tax but oppose a death tax — even though they are the same thing.
+Russell Conjugation = Journalists often change the meaning of a sentence by replacing one word with a synonym that implies a different meaning. For example, the same person can support an estate tax but oppose a death tax — even though they are the same thing.
 SBI https://medium.com/pm101/the-situation-behavior-impact-feedback-framework-e20ce52c9357
 SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
 SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
 schadenfreude = happy ppl misfortune
 science accepts ideas only when they fit into the then-current state of the science https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy#Similar_concepts
 scientism
+scope–severity grid https://en.wikipedia.org/wiki/Global_catastrophic_risk#Defining_existential_risks
 second Law of Thermodynamics: The world tends towards disorder. That’s why your room becomes messier and messier over time. It’s also why an engine converts only ~35% of its energy into useful work. Time moves towards increasing one direction: increasing entropy.
 secrets are Hidden in Plain Sight:  Most people think of secrets as Easter eggs. They assume that if a secret is important, it’s necessarily going to be hard to find. The best ideas can come from things that are so well-known that they aren’t well-seen.
 selectorate theory https://en.wikipedia.org/wiki/Selectorate_theory
@@ -416,7 +444,9 @@ signalling -- theory https://en.wikipedia.org/wiki/Signalling_theory
 signalling -- virtue https://en.wikipedia.org/wiki/Virtue_signalling
 significance https://www.explainxkcd.com/wiki/index.php/882:_Significant
 silent majority
+sinecure = position with a ~salary that requires or involves little or no responsibility, labour https://en.wikipedia.org/wiki/Sinecure
 Situation Complication Question Answer (SCQA) = A Framework For Defining Problems & Hypotheses https://strategyu.co/scqa-a-framework-for-defining-problems-hypotheses/
+skin in the game
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 SMART goal-setting framework
 social debt = friends, family, and strangers who feel entitled to ask, beg, and steal https://collabfund.com/blog/rich-and-anonymous/
@@ -424,6 +454,7 @@ social pressure / free will
 soft skills https://softskills.audio/
 staggered contour trenches
 stakeholder
+standing on the shoulders of giants https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants
 start with the most risky / complicated
 start with why
 statistical significance
@@ -455,6 +486,7 @@ The product is crap, so sell yourself
 the Wisdom of Paradox = Logic is the key to scientific truths, but paradoxes are the key to psychological ones. When it comes to the human condition, the deepest truths are often counter-intuitive. When you find two opposites that are both true, start exploring.
 theory of constraints = A system is only as strong as its weakest point. Focus on the bottleneck. Counterintuitively, if you break down the entire system and optimize each component individually, you’ll lower the effectiveness of the system. Optimize the entire system instead.
 theory of constraints https://www.tocinstitute.org/theory-of-constraints.html
+theory of everything https://en.wikipedia.org/wiki/Theory_of_everything
 things learned from Medicine / Dentistry https://zenfamily.dental/csLearnDental.php
 THINK hack = Is it True? Helpful? Inspiring? Necessary? Kind?
 thought leader
@@ -469,8 +501,6 @@ tradeoffs / can't have everything
 tragedy of the commons = Self-interests causing depletion of a shared resource
 Tree Decision Rights Model http://www.cio.com/article/2386119/careers-staffing/how-it-leaders-can-empower-teams-to-become-decision-makers.html
 tribal knowledge
-trichotomy https://en.wikipedia.org/wiki/Trichotomy_(philosophy)
-trilemma https://en.wikipedia.org/wiki/Trilemma
 trolley problem https://neal.fun/absurd-trolley-problems/
 trust -- is earned
 trust -- takes years to earn and seconds to lose / Trust is built slowly, and lost quickly
@@ -487,7 +517,7 @@ universe -- end big chill, big freeze, big crunch
 unlearn
 vanilla
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
-via Negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
+via negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 victimisation/retaliation = subject to or threatened with some kind of disadvantage or unfair treatment (often referred to as detriment) because they made (or plan to make) a workplace complaint, or helped someone else to do so
 voleur volé
 volume hiring

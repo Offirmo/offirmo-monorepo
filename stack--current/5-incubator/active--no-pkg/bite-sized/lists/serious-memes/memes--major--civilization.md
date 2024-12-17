@@ -1,3 +1,6 @@
+cosmos -- 1610 https://en.wikipedia.org/wiki/Copernican_Revolution
+cosmos -- 1920 galaxies https://en.wikipedia.org/wiki/Great_Debate_(astronomy)
+cosmos -- 1965 no life on Mars https://en.wikipedia.org/wiki/Martian_canals
 family
 golden rule
 génération spontanée

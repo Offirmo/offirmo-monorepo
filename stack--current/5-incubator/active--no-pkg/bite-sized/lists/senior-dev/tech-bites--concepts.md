@@ -205,6 +205,8 @@ executive
 exposer des variables
 express
 fail fast and loudly
+feature flag -- also called toggle, feature control
+feature flag = dynamically change the state of production
 feedback loop -- speed needed
 FIFO
 file read

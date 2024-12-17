@@ -32,3 +32,6 @@ https://particles.js.org/
 
 
 galaxy button https://codepen.io/jh3y/pen/eYPYKep
+
+https://en.wikipedia.org/wiki/File:Red_Giant_Earth_warm.jpg
+https://en.wikipedia.org/wiki/File:The_Mysterious_Case_of_the_Disappearing_Dust.jpg

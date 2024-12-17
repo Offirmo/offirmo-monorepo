@@ -15,4 +15,4 @@
   * Sex: Sex (sometimes called biological or physical sex) is comprised of things like reproductive organs, chromosomes, hormones, and body hair.
 * https://en.wikipedia.org/wiki/Lists_of_unsolved_problems
   * https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics
-  * 
+  * https://en.wikipedia.org/wiki/List_of_paradoxes#Cosmology
