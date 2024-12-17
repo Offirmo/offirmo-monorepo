@@ -156,15 +156,33 @@ function append_styled_string(console__call__args, str, ...styles) {
 	]
 }
 
+// TODO REVIEW doesn't work reliably
 function get_iframe_depth() {
-	// TODO REVIEW doesn't work reliably
-	let depth = 0
-	let current_window = window
-	while (current_window !== current_window.parent && depth<10) {
-		depth++
+	// Empirically seen: walking up the tree of parents yields inconsistent results?? (why? TODO investigate)
+	// so we switch to a set
+	const windows = new Set()
+
+
+	let current_window = self
+	windows.add(current_window)
+
+	let ancestors_count = 0
+	while (current_window !== current_window.parent && ancestors_count<10) {
+		ancestors_count++
+		windows.add(current_window.parent)
 		current_window = current_window.parent
 	}
-	return depth
+
+	if (windows.size !== (ancestors_count + 1)) {
+		console.warn(`[${FILTER_RADIX}] strange window ancestors count`, {
+			self,
+			windows,
+			ancestors_count,
+			'windows.size': windows.size,
+		})
+	}
+
+	return windows.size - 1
 }
 
 /////////////////////////////////////////////////
