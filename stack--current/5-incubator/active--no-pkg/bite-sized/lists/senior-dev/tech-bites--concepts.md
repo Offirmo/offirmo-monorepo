@@ -66,6 +66,7 @@ cache -- stampede https://en.wikipedia.org/wiki/Cache_stampede
 caching -- S3 FIFO https://s3fifo.com/
 capability = an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
 career -- small business programmer https://smallbusinessprogramming.com/how-to-be-a-wildly-successful-small-business-programmer/
+cargo cult = Let’s face it. You are not Google scale and you never will be. Stop cargo-culting technology just because “Google uses it” and therefore “it’s an industry best-practice.” https://reasonablypolymorphic.com/blog/protos-are-wrong/
 CD (continuous delivery)
 CD (Continuous Delivery) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
 CD (continuous deployment) -- Defensive = Expect the unexpected. Expect that devs will break things in novel ways
@@ -150,14 +151,26 @@ cross cutting concerns = aspects of a program that affect several modules withou
 CRUD "create, read, update and delete"
 crunch
 culture -- low/high context https://journals.sagepub.com/doi/10.1177/0146167212455828
-Cupertino effect = bad spell checking Cupertino effect
+Cupertino effect = bad spell checking
 currying https://en.wikipedia.org/wiki/Currying
-data interchange format -- https://capnproto.org/
-data interchange format -- https://en.wikipedia.org/wiki/Advanced_Scientific_Data_Format
-data interchange format -- JSON -- binary https://msgpack.org/
-data interchange format -- JSON https://www.json.org/
-data interchange format -- protobuf -- XXX criticized "the worst serialization format and schema" https://news.ycombinator.com/item?id=21871514
-data interchange format -- protobuf = (bc Java doesn't work well with JSON) language-neutral, platform-neutral extensible mechanisms for serializing structured data https://protobuf.dev/overview/ https://github.com/protocolbuffers/protobuf
+data format -- consumer vs producer
+data format -- consumer vs producer -- independent release/deploy
+data format -- do NOT conflate serialization w/ working representation w/ persisted w/ interchange! (cf. protobuf)
+data format -- future proofing = vastly overrated now that we have semver!! (+ migrations)
+data format -- interchange -- https://en.wikipedia.org/wiki/Advanced_Scientific_Data_Format
+data format -- interchange -- JSON -- binary https://msgpack.org/
+data format -- interchange -- JSON https://www.json.org/
+data format -- interchange -- JSON mini = some sort of protobuf-derived space-saving representation (single letters for keys)
+data format -- interoperability, fungibility, hackability, debuggability, anti-fragility
+data format -- linting = ex. for JSON compatibility, for backward/forward compatibility...
+data format -- one goal of defining the type once then generating code in various languages (hard!)
+data format -- protobuf -- XXX criticized "the worst serialization format and schema" BC conflate transport representation w work representation + bad type system https://news.ycombinator.com/item?id=21871514
+data format -- protobuf = (at the time of XML, before JSON, also bc Java doesn't work well with JSON) language-neutral, platform-neutral extensible mechanisms for serializing structured data https://protobuf.dev/overview/ https://github.com/protocolbuffers/protobuf
+data format -- serialization -- persistence
+data format -- serialization -- stability! ex. sorting by keys in k/v, important for immutability! (ex. stable hashing, caching, diff...)
+data format -- serialization -- wire format
+data format -- serialization -- wire format -- https://capnproto.org/ = serialization only! (better than protobuf)
+data format -- TODO find TS stuff
 databases
 databases -- joins https://justinjaffray.com/joins-13-ways/
 databases -- normalization
@@ -348,6 +361,7 @@ migrations
 mocha / chai
 monitoring = observing systems, collecting metrics, evaluating those metrics over time, and then using them to make decisions or take actions
 monolith = over time become poorly structured, containing many different, sometimes competing conventions. These conventions and “styles” sprawl throughout the monolith and make it difficult to understand what is going on. Because structures are built with different conventions, to work in the monolith safely, you have to examine everything to make sure you understand this instance of this pattern. It’s not safe to assume anything. This, combined with the lack of boundaries in the monolith means that every change incurs a huge cost in examination and understanding before it can be safely implemented. This skews developer performance to tenure - the longer you have been staring at the code, the more you have wrapped your head around and the faster you can go (mostly). New developers should not be worried about the time it takes to be effective in the monolith - it's the monolith’s fault, not yours."
+monorepo -- boundaries = don't conflate the main codebase vs things needed to run the build vs things produced by the build
 multi tenant -- isolation
 MVC (Model View Controller)
 namespace
@@ -592,8 +606,12 @@ types -- subtyping -- postconditions = cannot be weakened in the subtype
 types -- subtyping -- preconditions = cannot be strengthened in the subtype
 types -- subtyping https://en.wikipedia.org/wiki/Liskov_substitution_principle
 types -- systems -- "modern" https://reasonablypolymorphic.com/blog/protos-are-wrong/
+types -- systems -- role -- (disputable pre-semver citation!) the main challenge in real-world software engineering is not writing code but changing code once it is written and deployed. In general, type systems can be both helpful and harmful when it comes to changing code -- type systems are invaluable for detecting problems introduced by a change, but an overly-rigid type system can be a hindrance if it means common types of changes are difficult to make. https://news.ycombinator.com/item?id=18188519
 uid -- use strings = "2^64 isn’t as big as it used to be" https://protobuf.dev/programming-guides/api/
+unicode -- encoding -- WTF-8 "wobbly" (not needed with normalization / well formed) https://simonsapin.github.io/wtf-8/
+unicode -- encoding https://simonsapin.github.io/wtf-8/#motivation
 unicode -- FAQ https://unicode.org/faq/utf_bom.html#utf16-2
+unicode -- terminology https://simonsapin.github.io/wtf-8/#terminology
 Unix philosophy (OUTDATED -> use JSON ;)) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- (much more) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- A.01 Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features"

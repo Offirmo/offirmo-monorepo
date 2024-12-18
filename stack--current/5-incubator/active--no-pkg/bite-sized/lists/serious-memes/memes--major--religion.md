@@ -7,9 +7,12 @@ Animism
 Apostles - what happened to them
 arianism https://en.wikipedia.org/wiki/Arius
 armor of Christ
+cargo cult
 Countries - how christianism was introduced
 doubt https://aleteia.org/2023/04/15/is-all-doubt-bad/
 Fatima: message, children, secrets
+fine-tuned universe (not an argument) https://en.wikipedia.org/wiki/Fine-tuned_universe
+first cause
 great apostasy https://en.wikipedia.org/wiki/Great_Apostasy
 human sacrifice
 influence? https://en.wikipedia.org/wiki/Roman_imperial_cult
@@ -23,6 +26,11 @@ mysticism https://en.wikipedia.org/wiki/Christian_mysticism
 médaille -- miraculeuse
 médaille -- st Benoit
 Natural Religiosity
+philosophical problems -- consciousness
+philosophical problems -- impossibility of proving any truth, even in the fields of logic and mathematics?
+philosophical problems -- mind-body problem
+philosophical problems -- why there is something rather than nothing?
+philosophical problems https://en.wikipedia.org/wiki/List_of_philosophical_problems
 prayer -- extension of selfishness: santa's list, promise to be good, implore, negotiate, plead
 problem of evil https://en.wikipedia.org/wiki/Problem_of_evil
 Russian Pilgrim

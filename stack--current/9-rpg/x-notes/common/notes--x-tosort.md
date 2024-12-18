@@ -106,3 +106,6 @@ Examples of bullying
     Deliberately withholding information or resources vital to effective work performance
     Purposefully excluding, isolating or marginalising a person from normal work activities without a valid justification, such as confidentiality requirements or legitimate business reasons.
     Negative and harmful online behaviours by way of email, Slack, Zoom or another platform.
+
+
+https://en.wikipedia.org/wiki/Articles_of_War

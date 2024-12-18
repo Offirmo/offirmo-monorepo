@@ -94,6 +94,7 @@ capitalism -- issues -- inability to collectively improve, ex. global warming
 capitalism -- late stage
 capitalism -- W. H. Mallock -- is justified because it permits the most talented members of society to use the less talented for the sake of maximizing efficiency. Labor, for him, was an inert mass that was useless unless those with managerial and entrepreneurial talent set them to work. Hence, wealth is created, not by labor, but by the knowledge and ability of those who control labor. Maximization of corporate profits means in this case that the most entrepreneurial, innovative and inventive segment of society has used labor and resources to create wealth. In Mallock's view labor, by itself, creates nothing; it's not the wrench that puts the machine together, but the genius who invented it.
 career -- career limiting (action/move)
+cargo cult
 change -- introduction -- 1 What are we doing?
 change -- introduction -- 2 Why are we doing it?
 change -- introduction -- 3 When are we making the change?
@@ -278,6 +279,7 @@ it's not about lowering the bar, it's about helping more people reach it.
 jamais assez / 1st times
 Johari window https://en.wikipedia.org/wiki/Johari_window
 juger vs. évaluer
+justifiable homicide = interesting cultural differences https://en.wikipedia.org/wiki/Justifiable_homicide
 keep only the ones saying it's doable
 keeping up with the jones
 law of Shitty Click-Through Rates = Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
@@ -386,6 +388,7 @@ preach the water but drink wine / faites ce que je dis mais pas ce que je fais
 preference Falsification: People lie about their true opinions and conform to socially acceptable preferences instead. In private they’ll say one thing. In public, they’ll say another.
 pretty privilege -> karen
 primals https://myprimals.com https://templetonreligiontrust.org/explore/discovering-peoples-primal-world-beliefs/
+primate dominance hierarchy = At the end of the day we’re all just mammals trying to map every organization we’re a part of onto a primate dominance hierarchy https://blog.staysaasy.com/p/a-practical-guide-to-executive-presence-1de
 priming
 principal-agent problem https://en.wikipedia.org/wiki/Principal–agent_problem
 Principle of Least Power
@@ -431,6 +434,7 @@ SBI https://medium.com/pm101/the-situation-behavior-impact-feedback-framework-e2
 SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
 SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
 schadenfreude = happy ppl misfortune
+science -- scientific method https://en.wikipedia.org/wiki/Scientific_method
 science accepts ideas only when they fit into the then-current state of the science https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy#Similar_concepts
 scientism
 scope–severity grid https://en.wikipedia.org/wiki/Global_catastrophic_risk#Defining_existential_risks
@@ -456,6 +460,7 @@ slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slav
 SMART goal-setting framework
 social debt = friends, family, and strangers who feel entitled to ask, beg, and steal https://collabfund.com/blog/rich-and-anonymous/
 social pressure / free will
+soft skills https://newsletter.weskao.com/p/how-to-give-a-senior-leader-feedback-without-getting-fired
 soft skills https://softskills.audio/
 staggered contour trenches
 stakeholder

@@ -204,7 +204,7 @@ setInterval(() => {
 
 /////////////////////////////////////////////////
 
-console.xgroup('👋 Hi from x-logger 👋')
+console.xgroupCollapsed(`👋 Hi from freshly loaded x-logger from "${window.origin}" 👋`)
 console.xlog("origin =", window.origin)
 try {
 	console.xlog("LS keys =", Array.from({length: localStorage.length}, (item, index) => localStorage.key(index)))

@@ -5,7 +5,14 @@
 (all missions can also be taken part of as escort)
 
 
+### revenge/justice
+
+
 ### meet people
+
+#### find lost parents / ancestors
+(classic)
+
 
 #### find talents
 - artists
@@ -105,6 +112,8 @@ https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System
     - clear asteroids 
   - stabilization https://en.wikipedia.org/wiki/Stability_of_the_Solar_System
 - protect biosphere https://en.wikipedia.org/wiki/Biosphere
+  - protect from evolutionary dead end ex. dinosaurs
+    - "interventionary evolution"
 - protect forming civilizations
   - prepare them for 1st contact / OCP https://en.wikipedia.org/wiki/Excession#Outside_Context_Problem
 
@@ -146,7 +155,7 @@ https://en.wikipedia.org/wiki/Breakthrough_Prize_in_Fundamental_Physics
 
 https://en.wikipedia.org/wiki/Timeline_of_the_far_future
 
-
+https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_astronomy
 
 https://en.wikipedia.org/wiki/Antimatter
 https://en.wikipedia.org/wiki/Dark_matter
@@ -217,3 +226,21 @@ replicators
 https://en.wikipedia.org/wiki/Dyson_sphere
 
 Mass Effect aestivations https://en.wikipedia.org/wiki/Aestivation_hypothesis
+
+FTL telescope https://masseffect.fandom.com/wiki/Kholas_Array
+
+https://masseffect.fandom.com/wiki/Ark
+
+https://masseffect.fandom.com/wiki/Codex_(Mass_Effect:_Andromeda)/Ships_And_Vehicles
+
+https://masseffect.fandom.com/wiki/Remnant
+https://masseffect.fandom.com/wiki/Scourge
+https://masseffect.fandom.com/wiki/Vault
+https://masseffect.fandom.com/wiki/Mass_Effect_Field
+https://masseffect.fandom.com/wiki/Dark_energy
+https://masseffect.fandom.com/wiki/Artificial_Intelligence
+
+https://nomanssky.fandom.com/wiki/Galaxy
+
+https://en.wikipedia.org/wiki/Dimensionless_physical_constant
+https://en.wikipedia.org/wiki/List_of_orbits
