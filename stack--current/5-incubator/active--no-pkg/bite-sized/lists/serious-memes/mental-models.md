@@ -114,13 +114,15 @@ comfort zone
 common sense
 communication -- breaking bad news https://boz.com/articles/bad-news
 communication -- ELI5 https://boz.com/articles/eli5
+communication -- non violente
 communication -- plainspoken https://boz.com/articles/be-plainspoken https://debliu.substack.com/p/the-importance-of-being-plainspoken
-communication non violente
-competition is for Losers = Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
+competition -- is for losers = Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
 conditioning -- classical
 conditioning -- operant
 continuity of government (COG) = establishing defined procedures that allow a government to continue its essential operations in case of a catastrophic event such as nuclear war https://en.wikipedia.org/wiki/Continuity_of_government 
-convexity = if you want to be lucky, look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
+convex output = look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
+convex output = the smartest people can be an order of magnitude more productive than others who are only somewhat less smart https://www.8vc.com/resources/lessons-from-peter-thiel
+convex output curve = better than linear = more effort/rsrc -> much more results
 copernican principle = humans are not privileged observers of the universe "The more we learn about astronomy, the less it seems that earth is special. It’s a small part of the universe, and each human is a small part of the earth. We are all spinning through the solar system — nowhere near the beginning or end of time." https://en.wikipedia.org/wiki/Copernican_principle
 corporate slave (but also never achieving anything?)
 correlation is not causation https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation
@@ -214,9 +216,9 @@ grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
 growth mindset  https://www.khanacademy.org/college-careers-more/learnstorm-growth-mindset-activities-us/high-school-activities/activity-1-the-truth-about-your-brain-hs-02/a/the-truth-about-your-brain-part-1-3  https://www.youtube.com/watch?v=-71zdXCMU6A
 hangry = before lunch (vs. after)
+happiness -- is a skill
+happiness -- score https://www.ted.com/talks/dominic_price_what_s_your_happiness_score
 happiness -- être heureux n'est pas nécessairement confortable
-happiness is a skill
-happiness score https://www.ted.com/talks/dominic_price_what_s_your_happiness_score
 harassment -- behaviors -- intrusive = such as unwanted touching or sexual attention
 harassment -- behaviors -- Jokes, pranks, and written or graphic material intended to demean
 harassment -- behaviors -- subtle = repeated, unwelcome, low-grade flirtation, or overt behaviors, like a racial slur.
@@ -297,6 +299,14 @@ learning -- lifelong = learning never stops
 learning machines "I constantly see people rise in life who are not the smartest, sometimes not even the most diligent, but they are learning machines" (Munger https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger)
 legibility = We are blind to what we cannot measure. Not everything that counts can be measured, and not everything that can be measured counts. But people manage what they can measure, so society repeats the same mistakes.
 less is more
+Lev Landau classification of physicists -- league 0 = super league
+Lev Landau classification of physicists -- league 1 = △ extremely original, brilliant and independent + great deal of energy and care = most productive and influential
+Lev Landau classification of physicists -- league 2 = ೱ full of energy but not very original, dislike intellectual challenges, devotion to the field is somehow greater than their ability
+Lev Landau classification of physicists -- league 3 = extremely bright, intelligent, quick to understand but limited energy, do not like to investigate all details, little to no perseverance
+Lev Landau classification of physicists -- league 4 = mundane = neither original nor brilliant, poor determination, had maybe done sth significant in the past but wouldn't again
+Lev Landau classification of physicists -- line 1 = perseverance, tenacity, energy = determination
+Lev Landau classification of physicists -- line 2 = originality, genius, intuition
+Lev Landau classification of physicists https://books.google.com.au/books?id=nGcHEAAAQBAJ&pg=PA115&redir_esc=y#v=onepage&q&f=false
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 life https://en.wikipedia.org/wiki/Life
 life isn't fair https://www.linkedin.com/pulse/lifell-kill-ya-allen-white
@@ -319,6 +329,7 @@ microaggressions
 mimetic Theory of Conflict: People who are similar are more likely to fight than people who are different. That’s why Civil Wars and family feuds create the worst conflicts. The closer two people are and the more equality between them, the greater the potential for conflict.
 mimetic Theory of Desire: Humans are like sheep. We don’t know what we want, so we imitate each other. Instead of creating our own desires, we desire the same things as other people. The entire advertising industry is built on this idea.
 mindset -- "What vs How" (see What vs how)
+mindset -- growth
 mindset -- mentality in front of adversity: victim, survivor, conqueror
 minorities -- silent majority = unspecified large group of people in a country or group who do not express their opinions publicly https://en.wikipedia.org/wiki/Silent_majority
 minorities -- vocal minority
@@ -334,11 +345,16 @@ needs / wants https://en.wikipedia.org/wiki/Need
 Never interrupt someone doing what you said couldn't be done.
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
 no conflict / safe conflict / extreme conflict
+Nobel prize learnings -- discovery vs recognition, with lag between
+Nobel prize learnings -- limit of 3 = large teams don't get the Nobel vs small teams / lone
+Nobel prize learnings -- lost winners = didn't get the Nobel prize due to details, ex. death or bad timing https://par.nsf.gov/servlets/purl/10113092
+Nobel prize learnings -- random impact rule = analysis of Nobel scientists, famous work appears randomly over the career https://par.nsf.gov/servlets/purl/10113092
 non-violence
 normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-securite-la-normalisation-de-la-deviance-suite
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
 on peut toujours faire mieux
+opportunity cost
 opportunity Cost: By reading this tweet, you are choosing not to read something else. Everything we do is like this. Doing one thing requires giving up another. Whenever you explicitly choose to do one thing, you implicitly choose not to do another thing.
 optimism = "keep only the one who say it’s possible" https://posthog.com/founders/first-ops-hire
 other people’s problems / pick your battles
@@ -412,6 +428,7 @@ put into words
 question authority
 race to the bottom
 rare events = ex. COVID-19 https://en.wikipedia.org/wiki/Rare_events
+rationalize
 re-thinking established patterns
 Reach Impact Confidence Estimate (RICE)
 reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field

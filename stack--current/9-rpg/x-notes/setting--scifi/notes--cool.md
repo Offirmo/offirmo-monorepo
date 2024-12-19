@@ -86,7 +86,7 @@ https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System
 - seed the planet with basic life
 - monitor progress and tweak
 - monitor effective temperature with reflectivity / clouds https://en.wikipedia.org/wiki/Effective_temperature
-- add more water for plaque tectonics
+- add more water for plaque tectonics https://en.wikipedia.org/wiki/Origin_of_water_on_Earth
   - https://en.wikipedia.org/wiki/Large_low-shear-velocity_provinces
 - enable C4 photosynthesis
 
@@ -189,6 +189,8 @@ wormhole https://en.wikipedia.org/wiki/Wormhole https://en.wikipedia.org/wiki/Wo
 
 ion
 plasma
+
+https://en.wikipedia.org/wiki/Generation_ship
 
 space elevator
 space hook! https://en.wikipedia.org/wiki/Skyhook_(structure)

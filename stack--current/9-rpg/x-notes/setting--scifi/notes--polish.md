@@ -37,3 +37,9 @@ https://en.wikipedia.org/wiki/File:Red_Giant_Earth_warm.jpg
 https://en.wikipedia.org/wiki/File:The_Mysterious_Case_of_the_Disappearing_Dust.jpg
 
 https://science.nasa.gov/universe/  ++ https://science.nasa.gov/gallery/exoplanets/
+
+https://en.wikipedia.org/wiki/List_of_Hubble_Space_Telescope_anniversary_images
+
+https://hubblesite.org/images
+https://science.nasa.gov/mission/webb/multimedia/images/
+https://hubblesite.org/contents/media/images/2008/16/2339-Image.html

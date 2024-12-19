@@ -1,14 +1,29 @@
 
 /////////////////////////////////////////////////
 
-console.xgroup = (...args) => group(console.group.bind(console), ...args)
-console.xgroupCollapsed = (...args) => group(console.groupCollapsed.bind(console), ...args)
-console.xgroupEnd = (...args) => group(console.groupEnd.bind(console), ...args)
+const HAS_ALREADY_XLOGGER = !!console.xlog
 
-console.xlog = (...args) => sink('log', ...args)
-console.xwarn = (...args) => sink('warn', ...args)
-console.xerror = (...args) => sink('error', ...args)
-console.xtrace = (...args) => sink('trace', ...args)
+if (!HAS_ALREADY_XLOGGER) {
+	console.xgroup = (...args) => group(console.group.bind(console), ...args)
+	console.xgroupCollapsed = (...args) => group(console.groupCollapsed.bind(console), ...args)
+	console.xgroupEnd = (...args) => group(console.groupEnd.bind(console), ...args)
+
+	// reminder: 4 levels filter-able in browser = verbose, info, warning, error
+	// verbose
+	console.xdebug = (...args) => sink('debug', ...args)
+
+	// info
+	console.xinfo = (...args) => sink('info', ...args)
+	console.xlog = (...args) => sink('log', ...args)
+	console.xtrace = (...args) => sink('trace', ...args)
+
+	// warn
+	console.xwarn = (...args) => sink('warn', ...args)
+
+	// error
+	console.xerror = (...args) => sink('error', ...args)
+
+}
 
 /////////////////////////////////////////////////
 
@@ -94,10 +109,10 @@ function group(originalFn, ...args) {
 	originalFn(...console__call__args, ...args)
 }
 
-function sink(level, ...args) {
+function sink(console_method_name, ...args) {
 	let console__call__args = [''] // str + corresponding % args, starting empty
 
-	if (!has_details_indicator(level)) {
+	if (!has_details_indicator(console_method_name)) {
 		console__call__args = append_styled_string(console__call__args,
 			'▷',
 			'font-size: 8px', STYLEⵧFONT_FAMILYⵧBETTER_PROPORTIONAL, 'margin-left: .55em', 'margin-right: .4em',
@@ -114,16 +129,16 @@ function sink(level, ...args) {
 	console__call__args = append_styled_string(console__call__args,
 		`「${String(IFRAME_DEPTH).padStart(2, '0')}」`,
 		STYLEⵧORIGIN_DISCRIMINATOR,
-		//LEVEL_TO_COLOR_STYLE[level],
+		//LEVEL_TO_COLOR_STYLE[console_method_name],
 		STYLEⵧFONT_SIZEⵧHEADER,
 		STYLEⵧFONT_FAMILYⵧBETTER_MONOSPACE,
 	)
 
 	/*
 	console__call__args = append_styled_string(console__call__args,
-		level.padEnd(MIN_WIDTH, ' '),
+		console_method_name.padEnd(MIN_WIDTH, ' '),
 		STYLEⵧORIGIN_DISCRIMINATOR,
-		//LEVEL_TO_COLOR_STYLE[level],
+		//LEVEL_TO_COLOR_STYLE[console_method_name],
 		STYLEⵧFONT_SIZEⵧHEADER,
 		STYLEⵧFONT_FAMILYⵧBETTER_MONOSPACE,
 	)
@@ -138,7 +153,7 @@ function sink(level, ...args) {
 		)
 	}
 
-	console[level](...console__call__args, ...args)
+	console[console_method_name](...console__call__args, ...args)
 }
 
 /////////////////////////////////////////////////
@@ -204,14 +219,22 @@ setInterval(() => {
 
 /////////////////////////////////////////////////
 
-console.xgroupCollapsed(`👋 Hi from freshly loaded x-logger from "${window.origin}" 👋`)
+console.xgroupCollapsed(`👋 Hi from freshly loaded x-logger from "${window.origin}" ↳depth=${IFRAME_DEPTH} 👋 ${HAS_ALREADY_XLOGGER ? '(⚠dupl)' : ''}`)
 console.xlog("origin =", window.origin)
 try {
+	console.xdebug('debug')
+
+	console.xlog('log')
+	console.xinfo('info')
+	console.xtrace('trace')
+
+	console.xwarn('warn')
+
+	console.xerror('error')
+
 	console.xlog("LS keys =", Array.from({length: localStorage.length}, (item, index) => localStorage.key(index)))
 } catch {}
 console.xgroupEnd()
-
-/////////////////////////////////////////////////
 
 export {
 	get_iframe_depth,
