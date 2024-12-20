@@ -138,6 +138,7 @@ culture -- taijin kyofusho = specific type of social anxiety, occurring primaril
 curse of knowledge https://en.wikipedia.org/wiki/Curse_of_knowledge
 Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
 dark forest https://en.wikipedia.org/wiki/Dark_forest_hypothesis
+data driven
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
 democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
@@ -169,6 +170,7 @@ equality vs equity https://medium.com/@CRA1G/the-evolution-of-an-accidental-meme
 equity
 every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
+evidence based
 evolution https://en.wikipedia.org/wiki/Evolutionary_game_theory
 evolution vs revolution
 excuses vs. solutions
@@ -547,6 +549,9 @@ vanilla
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 via negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 victimisation/retaliation = subject to or threatened with some kind of disadvantage or unfair treatment (often referred to as detriment) because they made (or plan to make) a workplace complaint, or helped someone else to do so
+viz
+viz -- diagrams -- charts
+viz -- diagrams -- sankey
 voleur volé
 volume hiring
 wabi-sabi https://en.wikipedia.org/wiki/Wabi-sabi

@@ -171,10 +171,10 @@ function append_styled_string(console__call__args, str, ...styles) {
 	]
 }
 
-// TODO REVIEW doesn't work reliably
 function get_iframe_depth() {
-	// Empirically seen: walking up the tree of parents yields inconsistent results?? (why? TODO investigate)
-	// so we switch to a set
+	// Empirically seen: walking up the tree of parents yields inconsistent results
+	// (in the context of a dev local app)
+	// so we switched to a set:
 	const windows = new Set()
 
 
@@ -220,7 +220,6 @@ setInterval(() => {
 /////////////////////////////////////////////////
 
 console.xgroupCollapsed(`👋 Hi from freshly loaded x-logger from "${window.origin}" ↳depth=${IFRAME_DEPTH} 👋 ${HAS_ALREADY_XLOGGER ? '(⚠dupl)' : ''}`)
-console.xlog("origin =", window.origin)
 try {
 	console.xdebug('debug')
 

@@ -7,7 +7,15 @@
 
 	if (get_iframe_depth() === 0) {
 		const iframe_elt = document.createElement('iframe')
-		iframe_elt.src = window.location.href
+		iframe_elt.src = (() => {
+			const url = new URL(window.location.href)
+			/*if (url.hostname === 'localhost')
+				url.hostname = "iframe.localhost"
+
+			 */
+
+			return url.href
+		})()
 		iframe_elt.style.border = '2px solid red'
 		document.body.appendChild(iframe_elt)
 	}

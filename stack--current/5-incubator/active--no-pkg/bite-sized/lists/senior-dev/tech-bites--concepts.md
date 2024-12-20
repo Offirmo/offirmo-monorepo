@@ -29,6 +29,7 @@
 [ ] patterns https://www.patterns.dev/
 [ ] SWE at Google https://abseil.io/resources/swe-book/html/toc.html
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
+[] testing https://testing.googleblog.com/
 abort controller https://kettanaito.com/blog/dont-sleep-on-abort-controller
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 access control
@@ -210,6 +211,8 @@ Effect<Success, Error, Requirements> https://effect.website/docs/guides/essentia
 egress/ingress
 emscripten
 encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube.com/watch?v=RXJKdh1KZ0w
+encoding -- binary-to-text -- risk of accidental words
+encoding -- binary-to-text https://en.wikipedia.org/wiki/Binary-to-text_encoding
 entitlements -- non-standard offerings or commercial terms to meet their needs through high touch sales motions. High touch Sales teams work closely with our customers to understand their solution needs and buying preferences like Multi-year billed annual, ELAs, Ramp discounts. There is a significant volume of customers and revenue from such deals
 error -- handling -- fail fast = Check input and fail on nonsensical input or invalid state as early as possible, preferably with an exception or error response that will make the exact problem clear to your caller https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 error -- handling = exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
