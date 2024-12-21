@@ -72,3 +72,4 @@ export default function report(parent, LIB) {
 
 // TODO check referrer, history
 // TODO https://developer.mozilla.org/en-US/docs/Web/API/Window/opener
+// TODO location.ancestorOrigins

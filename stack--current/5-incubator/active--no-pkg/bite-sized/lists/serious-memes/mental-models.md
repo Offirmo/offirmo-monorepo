@@ -139,6 +139,7 @@ curse of knowledge https://en.wikipedia.org/wiki/Curse_of_knowledge
 Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
 dark forest https://en.wikipedia.org/wiki/Dark_forest_hypothesis
 data driven
+debate -- https://en.wikipedia.org/wiki/Principle_of_charity
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
 democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
@@ -148,6 +149,7 @@ differences -- introvert/extrovert
 disability
 disability -- flag +++
 disability -- overcoming
+discernement -- regret minimization https://theprokit.com/posts/a-jeff-bezos-classic-the-regret-minimization-framework/
 discernement -- technique de pile ou face
 discrimination -- direct = when a person is treated less favourably or unfairly than another person or group because of certain protected characteristics* or attributes
 discrimination -- indirect = when a neutral rule, policy, practice or criterion applies to everyone but disproportionately disadvantages a particular group with a protected characteristic, without objective justification
@@ -178,6 +180,8 @@ fair division -- divide and choose https://en.wikipedia.org/wiki/Divide_and_choo
 fair division = dividing a set of resources among several people who have an entitlement to them so that each person receives their due share. division of inheritance, partnership dissolutions, divorce settlements, electronic frequency allocation, airport traffic management, and exploitation of Earth observation satellite https://en.wikipedia.org/wiki/Fair_division
 fairness
 fake it till you make it -- Of course, it’s not really “fake it till you make it.” It’s just “fake it.”
+fallacies -- map
+fallacies -- motte and bailey https://en.wikipedia.org/wiki/Motte-and-bailey_fallacy
 falling behind
 false flag https://en.wikipedia.org/wiki/False_flag
 false good idea
@@ -286,6 +290,7 @@ juger vs. évaluer
 justifiable homicide = interesting cultural differences https://en.wikipedia.org/wiki/Justifiable_homicide
 keep only the ones saying it's doable
 keeping up with the jones
+laisser-aller
 law of Shitty Click-Through Rates = Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
 le premier jour du reste de sa vie
 leadership -- change or die

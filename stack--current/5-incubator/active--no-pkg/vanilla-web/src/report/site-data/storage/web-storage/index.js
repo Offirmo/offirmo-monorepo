@@ -7,8 +7,11 @@ function reportꓽStorage(parent, LIB) {
 	)
 
 	LIB.try_or_report(node, 'trying X', () => {
-		node.results.push(['X=', undefined])
+		// TODO try to write
+		//node.results.push(['X=', undefined])
 	})
+
+	// TODO try to write it
 
 	LIB.add_child(parent, node)
 }

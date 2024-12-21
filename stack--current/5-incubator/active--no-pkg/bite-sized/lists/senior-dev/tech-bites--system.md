@@ -35,6 +35,7 @@ ACID -- 2 Consistency = integrity constraints: "valid state" before AND after a 
 ACID -- 3 Isolation = "independent transactions"
 ACID -- 4 Durability = transaction resistance to system failures "once committed, always committed"
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
+alternative service https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Alt-Svc
 API -- best practices -- 1 DO - help client's "render-as-you-fetch" by co-loading critical data. Do not defer too much logic on the front-end.
 API -- best practices -- 1 DON’T - Build overly ‘flexible’ APIs that require client side logic and input manipulation (in the context of relay EntryPoints))
 API -- best practices -- 2 Be pragmatic - if there are many types, consider using frontend renderers instead of an interface
