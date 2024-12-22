@@ -6,8 +6,8 @@
 		"@offirmo-private/css--utils": "*",
 		"@offirmo-private/react-error-boundary": "*",
 		"@offirmo/universal-debug-api-browser": "^1",
-		"react": "^18",
-		"react-dom": "^18",
+		"react": "^19",
+		"react-dom": "^19",
 		"tiny-invariant": "^1",
 		"tslib": "^2"
 	},

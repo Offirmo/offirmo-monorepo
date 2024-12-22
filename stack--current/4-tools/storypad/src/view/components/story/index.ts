@@ -28,22 +28,27 @@ async function _renderⵧstory(container: HTMLElement) {
 	import('./index.css')
 
 	console.log('Rendering story:', storyEntry)
-	switch(true) {
+	try {
+		switch (true) {
 
-		case isꓽStory‿v2(storyEntry.story): {
-			const render_v2 = (await import('./v2')).default
-			await render_v2(storyEntry)
-			break
+			case isꓽStory‿v2(storyEntry.story): {
+				const render_v2 = (await import('./v2')).default
+				await render_v2(storyEntry)
+				break
+			}
+
+			case isꓽStory‿v3(storyEntry.story): {
+				const render_v3 = (await import('./v3')).default
+				await render_v3(storyEntry)
+				break
+			}
+
+			default:
+				throw new Error(`Unsupported story format! (yet!)`)
 		}
-
-		case isꓽStory‿v3(storyEntry.story): {
-			const render_v3 = (await import('./v3')).default
-			await render_v3(storyEntry)
-			break
-		}
-
-		default:
-			throw new Error(`Unsupported story format! (yet!)`)
+	}
+	catch (err) {
+		container.innerText = `[ERROR "${err?.message}"! please see console]`
 	}
 
 	const path_elt = document.createElement('div')

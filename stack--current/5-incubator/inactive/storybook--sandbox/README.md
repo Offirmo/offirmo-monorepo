@@ -23,8 +23,8 @@
 		"classnames": "^2",
 		"emittery": "^1",
 		"prop-types": "^15",
-		"react": "^18",
-		"react-dom": "^18",
+		"react": "^19",
+		"react-dom": "^19",
 		"tiny-invariant": "^1",
 		"tslib": "^2",
 		"typescript-string-enums": "^1"

@@ -12,7 +12,7 @@
 	"peerDependencies": {
 		"@offirmo-private/soft-execution-context": "*",
 		"prop-types": "^15",
-		"react": "^18"
+		"react": "^19"
 	},
 	"dependencies": {
 		"@offirmo-private/async-utils": "*",
@@ -29,7 +29,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"prop-types": "^15",
-		"react": "^18",
-		"react-dom": "^18"
+		"react": "^19",
+		"react-dom": "^19"
 	}
 }

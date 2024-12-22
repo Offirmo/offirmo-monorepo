@@ -11,11 +11,17 @@
 
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",
+		"clean--cache": "monorepo-script--clean-package …cache",
 
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
 		"dev": "run-s clean _build:dev:watch",
 
 		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/**/*spec.js'",
+
+
+		"_start:parcel--storypad": "parcel serve storypad/index.html --port 8080  --lazy  --no-autoinstall",
+		"stories": "npm-run-all  clean--cache  _start:parcel--storypad",
+
 
 		"xdemo": "node ./dist/src.es2024.esm/demo/index.js",
 		"demo": "node ./dist/src.es2024.esm/hateoas/terminal/index.js",
@@ -43,9 +49,11 @@
 		"@offirmo-private/view--chat": "*",
 		"@tbrpg/state": "*",
 		"@tbrpg/ui--rich-text": "^0",
+		"@tsparticles/basic": "^3",
+		"@tsparticles/engine": "^3",
 		"lit": "^3",
-		"react": "^18",
-		"react-dom": "^18",
+		"react": "^19",
+		"react-dom": "^19",
 		"tiny-invariant": "^1",
 		"tslib": "^2",
 		"typescript-string-enums": "^1"

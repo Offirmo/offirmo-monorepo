@@ -57,28 +57,17 @@ async function renderCSFV3(entry: Immutable<StoryEntry>) {
 			break
 	}
 
-	if (story.decorators || meta?.decorators) {
-		throw new Error('Decorators not implemented!')
-		/*
-		const decorators = storyEntry.storyEntry.decorators === null
-			? [] // allow resetting decorators
-			:[
-				...state.config.decorators,
-				...(storyEntry.meta?.decorators || []),
-				...(storyEntry.storyEntry.decorators || []),
-			].reverse()
-		decorators.forEach(decorator => {
-			throw new Error('Decorators not implemented!')
-			//content = decorator(content)
-		})*/
-	}
+
 	console.groupEnd()
 }
 
 async function _renderⵧcomponent(component: Immutable<GenericStoryComponent>, story: Immutable<Story‿v3>, meta: Immutable<Meta‿v3>) {
-	console.log({Component: component})
+	console.log('v3 _renderⵧcomponent', {Component: component})
 
+	// TODO one day if needed: recognize React through jsx "x" on extension
 	const isReact = (typeof component === 'function')
+
+
 
 	switch (true) {
 		case isReact: {
@@ -87,7 +76,11 @@ async function _renderⵧcomponent(component: Immutable<GenericStoryComponent>, 
 			break
 		}
 
+		// if new format
+		// don't forget to implement the decorators!
+
 		default:
+
 			throw new Error(`Unrecognized story "component" format!`)
 	}
 }

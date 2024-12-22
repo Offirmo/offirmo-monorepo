@@ -5,7 +5,7 @@ import { Html‿str } from '@offirmo-private/ts-types-web'
 
 export type GenericStory = unknown
 export type GenericStoryOutput = Html‿str // TODO extend return type
-export type GenericStoryComponent = any // TODO type better
+export type GenericStoryComponent = any // TODO type better, can be a React component, a simple function, a web component as class...
 
 /////////////////////////////////////////////////
 // https://storybook.js.org/docs/writing-stories/args

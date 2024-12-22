@@ -37,10 +37,32 @@ async function render(Component: any, story: Immutable<Story‿v3>, meta: Immuta
 		...story.args,
 	}
 
+
+	let StoryAsReactComponent = () => <Component {...props} /> // TODO one day apply args?
+
+	if (story.decorators || meta?.decorators) {
+
+		const decorators = story.decorators === null
+			? [] // allow resetting decorators
+			:[
+				...(meta?.decorators || []),
+				...(story.decorators || []),
+			].reverse()
+		decorators.forEach(decorator => {
+			// TODO one day, not sure we're correctly implementing decorators here https://storybook.js.org/docs/writing-stories/decorators
+			const output = decorator(StoryAsReactComponent)
+			StoryAsReactComponent =
+				(typeof output !== 'function')
+					? () => output // the decorator returned direct JSX, it's allowed
+					: output
+		})
+	}
+
+
 	// TODO error boundary
 	root.render(
-	<StrictWrapper>
-			<Component {...props} />
+		<StrictWrapper>
+			<StoryAsReactComponent />
 		</StrictWrapper>
 	);
 	console.groupEnd()

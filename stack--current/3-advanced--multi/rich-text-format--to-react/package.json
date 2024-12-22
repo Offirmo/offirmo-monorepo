@@ -12,7 +12,7 @@
 	"sideEffects": false,
 
 	"peerDependencies": {
-		"react": "^18"
+		"react": "^19"
 	},
 	"dependencies": {
 		"@offirmo-private/features-detection-browser": "*",
@@ -32,6 +32,6 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/toolbox--parcel": "*",
-		"react": "^18"
+		"react": "^19"
 	}
 }
