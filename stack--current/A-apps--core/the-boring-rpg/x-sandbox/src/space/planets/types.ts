@@ -30,6 +30,11 @@ interface Planet extends CelestialBody {
 				| 'official'*/
 			// TODO related to pictures
 		}
+
+	tone:
+		| 'light'
+		| 'neutral'
+		| 'dark'
 }
 
 interface Moon extends CelestialBody {

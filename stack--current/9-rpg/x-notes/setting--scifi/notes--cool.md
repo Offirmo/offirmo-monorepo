@@ -94,6 +94,7 @@ https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System
 - from extinction
   - natural
     - https://en.wikipedia.org/wiki/Extinction-level_event
+    - https://en.wikipedia.org/wiki/Extinction_event
     - https://en.wikipedia.org/wiki/Timeline_of_the_far_future
       - supervolcanic eruption 
       - gamma-ray burst from a supernova
@@ -246,3 +247,5 @@ https://nomanssky.fandom.com/wiki/Galaxy
 
 https://en.wikipedia.org/wiki/Dimensionless_physical_constant
 https://en.wikipedia.org/wiki/List_of_orbits
+
+https://en.wikipedia.org/wiki/Gravitational_singularity

@@ -6,7 +6,8 @@
     - any fundamental interaction, physical process and physical constant
     - therefore all forms of matter and energy and the structures they form, from sub-atomic particles to entire galactic filaments 
 - each level is "containing" the below as of "Hill sphere"
-- object vs structure
+- object https://en.wikipedia.org/wiki/Astronomical_object
+  - vs structure
 - dimensions = we know 4 but could have more
 
 
@@ -41,10 +42,17 @@ some theories are our current "universe" could be
 * or any sort of bubble/marble
 
 ## cosmic scale = universe (space-time universe)
+https://en.wikipedia.org/wiki/Universe
+
 
 * cosmological model, or simply cosmology, provides a description of the largest-scale structures and dynamics of the universe and allows study of fundamental questions about its origin, structure, evolution, and ultimate fate  https://en.wikipedia.org/wiki/Physical_cosmology
 * "truly cosmic" https://en.wikipedia.org/wiki/Cosmic_microwave_background#Cosmic_origin
 * shape https://en.wikipedia.org/wiki/Shape_of_the_universe
+  * curvature
+  * topology
+    * flat, spherical, hyperbolic, torus, klein bottle...
+    * infinite or finite
+    * With or without boundary
 * laws of physics https://en.wikipedia.org/wiki/Fine-tuned_universe
 * dimensions
   * 3 space + 1 time https://en.wikipedia.org/wiki/Anthropic_principle#Dimensions_of_spacetime
@@ -59,6 +67,8 @@ some theories are our current "universe" could be
 
 ## observable universe
 https://en.wikipedia.org/wiki/Observable_universe
+
++++ https://en.wikipedia.org/wiki/File:Observable_Universe_Logarithmic_Map_(horizontal_layout_english_annotations).png
 
 restricted by the speed of light = areas we'll never see or reach
 
