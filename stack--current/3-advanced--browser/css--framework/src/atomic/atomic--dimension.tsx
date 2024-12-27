@@ -3,10 +3,10 @@ import style_once from "@offirmo-private/style-once"
 //console.log('Hello from atomic--dimension.ts!')
 
 function adjust_css() {
-	console.log('Hello from atomic--dimension.ts adjust_css()!', window.location.search)
 	const referer = (new URLSearchParams(window.location.search)).get('ref')
 	if (referer !== 'webmanifest') return
 
+	console.log('Hello from @offirmo-private/css--framework / atomic--dimension.tsx: dynamically tweaking some CSS: o⋄full-viewport for iOs pinned app...')
 	style_once({
 		id: 'pinned-webapp-adjustments--viewport',
 		css: `

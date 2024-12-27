@@ -276,6 +276,7 @@ routing react-resource-router
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
+SPA -- what is even a SPA? https://jakelazaroff.com/words/whats-a-single-page-app/
 SPA https://www.matuzo.at/blog/2023/single-page-applications-criticism
 SPA vs MPA
 spirit -- browsing https://christianheilmann.com/2024/09/15/lets-bring-back-browsing/

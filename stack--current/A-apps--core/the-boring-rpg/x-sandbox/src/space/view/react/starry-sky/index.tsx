@@ -1,35 +1,56 @@
-import React, { useId, useEffect } from 'react'
+import React, { use, useId, useEffect } from 'react'
 
 // https://particles.js.org/
 import {
-	tsParticles,
+	tsParticles, // https://particles.js.org/docs/classes/tsParticles_Engine.Core_Engine.Engine.html
 	MoveDirection,
-	OutMode
+	type Container,
 } from "@tsparticles/engine"
 // https://www.npmjs.com/package/@tsparticles/basic
-import { loadBasic as loadTSPlugins } from "@tsparticles/basic"
+import { loadBasic as loadPlugins } from "@tsparticles/basic"
 
 
-// stars preset https://github.com/tsparticles/presets/blob/main/presets/stars/src/options.ts
-function getStarsPreset() {
+// inspired from the stars preset https://github.com/tsparticles/presets/blob/main/presets/stars/src/options.ts
+function getOptions() {
 	return {
+		// https://particles.js.org/docs/interfaces/tsParticles_Engine.Options_Interfaces_IOptions.IOptions.html
+
+		// no-brainer options
+		detectRetina: true,
+		pauseOnBlur: true,
+		pauseOnOutsideViewport: true,
+		//fpsLimit: TODO according to perf
+
 		autoPlay: true,
 		background: {
-			// we provide the background outside of tsParticles
+			// we provide the background outside tsParticles
 		},
+		// TODO try to make responsive
+
 		particles: {
+			// https://particles.js.org/docs/interfaces/tsParticles_Engine.Options_Interfaces_Particles_IParticlesOptions.IParticlesOptions.html
+
 			number: {
-				value: 1000
+				value: 1000,
+				density: {
+					// obviously we want the value to be relative to screen size
+					enable: true,
+					width: 1024,
+					height: 1024,
+				},
 			},
 			move: {
-				direction: MoveDirection.topRight,
 				enable: true,
-				/*outModes: {
-					default: OutMode.out
-				},*/
+				speed: 0.20,
+
+				straight: true,
+				direction: MoveDirection.topRight,
+
 				//random: true,
-				speed: 0.3,
-				straight: true
+				/*spin: {
+					enable: true,
+					direction: 'foo',
+				}*/
 			},
 			opacity: {
 				animation: {
@@ -40,46 +61,65 @@ function getStarsPreset() {
 				value: {min: 0, max: 1}
 			},
 			size: {
-				value: {min: 0.1, max: 1}
+				value: {min: .5, max: 2}
 			}
 		}
 	}
 }
 
 // this should be run only once per application lifetime
-// TODO memoize and make it lazy?
-const LIB_INIT = loadTSPlugins(tsParticles)
+const LIB_INIT = loadPlugins(tsParticles)
+LIB_INIT.then((...args) => {
+	console.log(`XXX @tsparticles/basic loaded`, args)
+})
+
+const LIB = "StarrySky"
 
 export default function StarrySky() {
+	use(LIB_INIT)
 	const id = useId()
 
 	useEffect(() => {
-		const options = getStarsPreset()
+		const options = getOptions()
 
-		console.log(`XXX in UseEffect`, {
+		const tempState = {
+			active: true,
+			ೱcontainer: undefined as (Promise<Container | undefined> | undefined),
+		}
+
+		console.log(`XXX [${LIB}] in UseEffect`, {
 			tsParticles,
 			id,
 			options,
+			tempState,
 		})
 
-		const ೱloaded = LIB_INIT.then((...args) => {
-				console.log(`XXX starting load...`)
-				return tsParticles.load({
-					id,
-					options
-				})
-			})
+		LIB_INIT.then((...args) => {
+			if (!tempState.active) return // the component was unmounted in the meantime, no need to proceed further
 
-		ೱloaded.then((...args) => {
-				console.log(`XXX loaded`, args)
+			tempState.ೱcontainer = tsParticles.load({
+				id,
+				options
 			})
+			tempState.ೱcontainer.then(() => {
+				console.log(`XXX [${LIB}] tsParticles Container loaded`)
+			})
+		})
 
 		return () => {
-			console.log(`XXX cleanup scheduled...`)
-			ೱloaded.then(container => {
-				container.stop() // needed?
-				container.destroy(true)
-			})
+			console.log(`XXX [${LIB}] cleanup scheduled...`)
+			tempState.active = false
+
+			if (tempState.ೱcontainer) {
+				console.log(`XXX [${LIB}] found a container, cleaning...`)
+				tempState.ೱcontainer.then(container => {
+					if (!container) return
+
+					container.stop() // needed?
+					container.destroy(true)
+					console.log(`XXX [${LIB}] cleaned`)
+				})
+			}
 		}
 	}, [id]);
 
@@ -93,7 +133,7 @@ export default function StarrySky() {
 			backgroundColor: background__color,
 			background: `linear-gradient(${background__gradient__direction}deg, ${background__gradient__begin} 0%, ${background__gradient__end} 100%)`,
 		}}>
-
+			tsParticles canva will be here
 		</div>
 	)
 }

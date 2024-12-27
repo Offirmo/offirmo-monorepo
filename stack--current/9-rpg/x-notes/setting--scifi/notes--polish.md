@@ -3,7 +3,6 @@
 
 ## visual effects
 
-sky https://github.com/VincentGarreau/particles.js/ (deprecated)
 https://codepen.io/Offirmo/pen/OJeGMRG
 
 hyperspace https://codepen.io/noahblon/pen/DpNRyR
@@ -42,4 +41,8 @@ https://en.wikipedia.org/wiki/List_of_Hubble_Space_Telescope_anniversary_images
 
 https://hubblesite.org/images
 https://science.nasa.gov/mission/webb/multimedia/images/
+https://hubblesite.org/images?Type=Artwork&itemsPerPage=100&page=1
 https://hubblesite.org/contents/media/images/2008/16/2339-Image.html
+https://webbtelescope.org/images?Type=Artwork&itemsPerPage=100&page=1
+
++++ https://pablocarlosbudassi.com/2021/02/planet-types.html

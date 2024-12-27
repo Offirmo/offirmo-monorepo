@@ -28,7 +28,7 @@ async function render(Component: any, story: Immutable<Story‿v3>, meta: Immuta
 
 	const root = createRoot(root_elt);
 
-	const { Fragment, StrictMode } = libⳇreact
+	const { Fragment, StrictMode, Suspense } = libⳇreact
 	const use_strict = true
 	const StrictWrapper = use_strict ? StrictMode : Fragment
 
@@ -62,7 +62,9 @@ async function render(Component: any, story: Immutable<Story‿v3>, meta: Immuta
 	// TODO error boundary
 	root.render(
 		<StrictWrapper>
-			<StoryAsReactComponent />
+			<Suspense fallback='suspense…'>
+				<StoryAsReactComponent />
+			</Suspense>
 		</StrictWrapper>
 	);
 	console.groupEnd()

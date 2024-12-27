@@ -1,3 +1,5 @@
+
+// https://motherfuckingwebsite.com/
 export function Original() {
 	return `
 <header>
@@ -74,6 +76,10 @@ href="https://twitter.com/gabehammersmith">him</a>.
 	`
 }
 
+// TODO even better
+// https://evenbettermotherfucking.website/
+
+// https://perfectmotherfuckingwebsite.com/
 export function Perfect() {
 	return `
 <h1 id="this-is-the-final-motherfucking-website">This is the <em>final</em> motherfucking website.</h1>

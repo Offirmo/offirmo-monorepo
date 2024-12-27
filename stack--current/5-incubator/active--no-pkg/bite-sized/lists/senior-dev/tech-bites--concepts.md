@@ -31,6 +31,8 @@
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
 [] testing https://testing.googleblog.com/
 abort controller https://kettanaito.com/blog/dont-sleep-on-abort-controller
+abstraction -- level
+abstraction -- wrong, premature
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 access control
 access control -- role-based (RBAC)
@@ -98,6 +100,7 @@ code is the enemy = It can go wrong, and it needs maintenance. Write less code. 
 code quality = the only definition of quality in code that makes any sense is our ability to change the code. If it's easy to change, it's high quality; if it's hard to change, it's not. 
 code quality https://blog.jim-nielsen.com/2024/easy-changes/
 code review https://www.linkedin.com/posts/ajgreenwell_code-reviews-have-unwritten-laws-i-had-activity-7239611908914319360-_MHW/
+codemod
 cohesion = degree to which the elements inside a module belong together https://en.wikipedia.org/wiki/Cohesion_(computer_science)
 command query separation (CQS)
 comments
@@ -250,6 +253,7 @@ GAFAM (Google, Amazon, Facebook, Apple, Microsoft)
 GAFAM -- "megacap companies"
 GAFAM -- Amazon https://www.vanityfair.com/news/story/inside-amazon-business-practices
 garbage collector
+general dependency injection and inversion of control problem
 git
 global variable
 God object https://en.wikipedia.org/wiki/God_object
@@ -361,7 +365,9 @@ microcode
 microprocessor https://firstmicroprocessor.com/
 middleware
 migrations
+mixins -- considered harmful https://legacy.reactjs.org/blog/2016/07/13/mixins-considered-harmful.html
 mocha / chai
+monads
 monitoring = observing systems, collecting metrics, evaluating those metrics over time, and then using them to make decisions or take actions
 monolith = over time become poorly structured, containing many different, sometimes competing conventions. These conventions and “styles” sprawl throughout the monolith and make it difficult to understand what is going on. Because structures are built with different conventions, to work in the monolith safely, you have to examine everything to make sure you understand this instance of this pattern. It’s not safe to assume anything. This, combined with the lack of boundaries in the monolith means that every change incurs a huge cost in examination and understanding before it can be safely implemented. This skews developer performance to tenure - the longer you have been staring at the code, the more you have wrapped your head around and the faster you can go (mostly). New developers should not be worried about the time it takes to be effective in the monolith - it's the monolith’s fault, not yours."
 monorepo -- boundaries = don't conflate the main codebase vs things needed to run the build vs things produced by the build
@@ -454,6 +460,8 @@ promises -- deferred
 protocol buffers (protobuf) => see data interchange format
 prototypes
 proxy
+pull vs push (IoC, promises vs observables...)
+pure https://react.dev/learn/keeping-components-pure
 questions for a new technology -- 1 What problem are we trying to solve? (Tech should never be introduced as an end to itself)
 questions for a new technology -- 2 How could we solve the problem with our current tech stack? (If the answer is we can’t, then we probably haven’t thought about the problem deeply enough)
 questions for a new technology -- 3 Are we clear on what new costs we are taking on with the new technology? (monitoring, training, cognitive load, etc)
@@ -480,6 +488,7 @@ REST HTTP = How to GET a Cup of Coffee https://www.infoq.com/articles/webber-res
 revisions
 rewrite https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22
 RFC (Request For Comments) https://rfc.fyi/
+RFC 2119 terminology = must, must not, should, should not, and may. The terms prefer and avoid correspond to should and should not, respectively. Imperative and declarative statements are prescriptive and correspond to must.
 robustness -- principle (beware bad effects) https://en.wikipedia.org/wiki/Robustness_principle
 robustness https://en.wikipedia.org/wiki/Robustness_principle
 rollback
@@ -518,6 +527,7 @@ security -- Using crypto doesn't mean you're secure (attackers will look for a w
 security -- Validate input from all untrusted sources - use whitelists not blacklists
 semaphore
 semver
+semver -- advanced example https://react.dev/community/versioning-policy (see also TS)
 SHA (Secure Hash Algorithm)
 shaving the yak
 show me the code!
@@ -557,6 +567,7 @@ superapp
 Sustainable Architectural Decisions https://adr.github.io/
 system boundaries = a publicly exposed interface that third-party developers are going to use. It’s the inability to make breaking changes because you have external users to support that really defines a boundary. As a result, you have to pay special attention to get the design of a system boundary right—it’s not easy to make changes in the future. Boundaries are more important than other parts of our programs that we can refactor at will. https://www.tedinski.com/2018/02/06/system-boundaries.html
 system call
+tainting an object https://react.dev/reference/react/experimental_taintObjectReference
 TDD
 TDZ
 tech debt -- accidental - e.g. bugs due to human error that unknowingly increases the cost of future work.
@@ -590,6 +601,7 @@ transpiler -- vs compiler
 transpiler = translates code from one language to another in a human-readable form. Therefore, you can still read the transpiled files.
 tree
 tree -- walk
+tree shaking https://en.wikipedia.org/wiki/Tree_shaking
 type -- signature (type annotation) = defines the inputs and outputs of a function, subroutine or method
 typecast
 types

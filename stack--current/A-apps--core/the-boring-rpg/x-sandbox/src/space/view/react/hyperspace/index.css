@@ -1,0 +1,107 @@
+/* credits: adapted from Noah Blon https://codepen.io/noahblon/pen/DpNRyR
+ */
+
+@keyframes move {
+	0% {
+		transform: translateZ(-500px) rotate(0deg);
+	}
+	100% {
+		transform: translateZ(500px) rotate(0deg); /* TODO optional rotate */
+	}
+}
+
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.o⋄hyperspace-animation {
+
+	&.container {
+		background: darkblue; /* must be ~dark. Seen at the beginning of the animation */
+		overflow: hidden;
+
+		display: grid;
+		height: 100%;
+		margin: 0;
+		place-items: center center;
+
+		/*zoom: 100%; /* smaller = appearance of higher speed  XXX see perspective instead */
+		--o⋄hyperspace--1: 12s; /* smaller = faster */
+		--o⋄hyperspace--2: calc(var(--o⋄hyperspace--1) * 0.5); /* must be <= than above or periods of black */
+	}
+
+	.wall {
+		background: url(./PIA09959-1280x800.jpg); /* TODO */
+		/*background: url(./STScI-01J7492J6AJFB5C8Z8P18T5C18-cropped.jpg); /* TODO */
+		background-size: cover;
+		/*filter: hue-rotate(180deg); /* TODO */
+	}
+
+	.scene {
+		display: inline-block;
+		vertical-align: middle;
+		perspective: 5px; /* tweak */
+		perspective-origin: 50% 50%;
+		position: relative;
+	}
+
+	.wrap {
+		position: absolute;
+		width: 1000px;
+		height: 1000px;
+		left: -500px;
+		top: -500px;
+		transform-style: preserve-3d;
+		animation: move var(--o⋄hyperspace--1) infinite linear;
+		animation-fill-mode: forwards;
+	}
+
+	.wrap:nth-child(2) {
+		animation: move var(--o⋄hyperspace--1) infinite linear;
+		animation-delay: var(--o⋄hyperspace--2);
+	}
+
+	.wall {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		opacity: 0;
+		animation: fade var(--o⋄hyperspace--1) infinite linear;
+		animation-delay: 0s;
+	}
+
+	.wrap:nth-child(2) .wall {
+		animation-delay: var(--o⋄hyperspace--2);
+	}
+
+	.wall-right {
+		transform: rotateY(90deg) translateZ(500px);
+	}
+
+	.wall-left {
+		transform: rotateY(-90deg) translateZ(500px);
+	}
+
+	.wall-top {
+		transform: rotateX(90deg) translateZ(500px);
+	}
+
+	.wall-bottom {
+		transform: rotateX(-90deg) translateZ(500px);
+	}
+
+	.wall-back {
+		transform: rotateX(180deg) translateZ(500px);
+	}
+}

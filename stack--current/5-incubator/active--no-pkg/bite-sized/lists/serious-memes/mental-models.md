@@ -29,7 +29,7 @@
 5 mantras = by Christopher Davis (burnout)
 5 regrets of dying
 80/20 rule "Pareto"
-[ ] +++ mental models LIST  https://fs.blog/mental-models/
+[ ] +++ https://fs.blog/mental-models/
 [ ] AAA TODO https://flinkliv.com/
 [ ] AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 [ ] ex. of edited interview misleading https://paulgraham.com/wids.html
@@ -174,6 +174,7 @@ every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 evidence based
 evolution -- adaptive radiation = not because the newly dominant group is "superior" to the old but usually because an extinction event eliminates the old, dominant group and makes way for the new one https://en.wikipedia.org/wiki/Adaptive_radiation
+evolution -- LUCA https://en.wikipedia.org/wiki/Last_universal_common_ancestor
 evolution https://en.wikipedia.org/wiki/Evolutionary_game_theory
 evolution vs revolution
 excuses vs. solutions

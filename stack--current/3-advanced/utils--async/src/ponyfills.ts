@@ -37,7 +37,8 @@ const setImmediate: (callback: (...args: any[]) => void, ...args: any[]) => Imme
 	}
 
 
-// browser only
+// browser only + not supported on Safari
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback
 // Strange semantic of being clamped to 50ms
 // https://developers.google.com/web/updates/2015/08/using-requestidlecallback
 const MIN_IDLE_TIMEOUT_MS = 2 // since <=1 is all the same
@@ -77,7 +78,7 @@ const requestIdleCallback: (callback: (info: IdleDeadline) => void, options?: { 
 			//   - 1 frame at 60fps is ~16ms "the most common refresh rate" according to MDN
 			//   - 1 frame at 30fps is ~33ms
 			//   - 1 frame at 24fps is ~42ms
-			// we settle on 37ms = slightly above 1 frame @30fps + not being round + 1337 "leet"
+			// we settle on 37ms = slightly above 1 frame @30fps + not being round + 1337 "leet" ;)
 			37,
 		)
 
