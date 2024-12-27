@@ -6,7 +6,7 @@
 		transform: translateZ(-500px) rotate(0deg);
 	}
 	100% {
-		transform: translateZ(500px) rotate(0deg); /* TODO optional rotate */
+		transform: translateZ(500px) rotate(0deg); /* rotate is fun but make dizzy */
 	}
 }
 
@@ -26,9 +26,11 @@
 }
 
 .o⋄hyperspace-animation {
+	/*--o⋄hyperspace--imgurl: url(./PIA09959-1280x800.jpg); /* original, good with speed 12s */
+	--o⋄hyperspace--filter: 'none';
 
 	&.container {
-		background: darkblue; /* must be ~dark. Seen at the beginning of the animation */
+		background: darkblue; /* must be ~dark. Seen at the beginning of the animation if delay + causes aberrations if too visible */
 		overflow: hidden;
 
 		display: grid;
@@ -36,22 +38,16 @@
 		margin: 0;
 		place-items: center center;
 
-		/*zoom: 100%; /* smaller = appearance of higher speed  XXX see perspective instead */
-		--o⋄hyperspace--1: 12s; /* smaller = faster */
-		--o⋄hyperspace--2: calc(var(--o⋄hyperspace--1) * 0.5); /* must be <= than above or periods of black */
-	}
+		--o⋄hyperspace--duration1: 12s; /* smaller = faster */
+		--o⋄hyperspace--duration2: calc(var(--o⋄hyperspace--duration1) * .5); /* must be <= than above or periods of black */
 
-	.wall {
-		background: url(./PIA09959-1280x800.jpg); /* TODO */
-		/*background: url(./STScI-01J7492J6AJFB5C8Z8P18T5C18-cropped.jpg); /* TODO */
-		background-size: cover;
-		/*filter: hue-rotate(180deg); /* TODO */
+		--immediate: 1; /* 0 = progressive start, anything else = immediate */
 	}
 
 	.scene {
 		display: inline-block;
 		vertical-align: middle;
-		perspective: 5px; /* tweak */
+		perspective: 5px; /* TODO tweak together with speed */
 		perspective-origin: 50% 50%;
 		position: relative;
 	}
@@ -63,13 +59,18 @@
 		left: -500px;
 		top: -500px;
 		transform-style: preserve-3d;
-		animation: move var(--o⋄hyperspace--1) infinite linear;
+		animation: move var(--o⋄hyperspace--duration1) infinite linear;
 		animation-fill-mode: forwards;
+		animation-delay: calc(var(--o⋄hyperspace--duration2) * (0 - var(--immediate)));
 	}
 
 	.wrap:nth-child(2) {
-		animation: move var(--o⋄hyperspace--1) infinite linear;
-		animation-delay: var(--o⋄hyperspace--2);
+		animation: move var(--o⋄hyperspace--duration1) infinite linear;
+		animation-delay: calc(var(--o⋄hyperspace--duration2) * (1 - var(--immediate)));
+	}
+
+	.wrap:nth-child(2) .wall {
+		animation-delay: calc(var(--o⋄hyperspace--duration2) * (1 - var(--immediate)));
 	}
 
 	.wall {
@@ -77,12 +78,17 @@
 		height: 100%;
 		position: absolute;
 		opacity: 0;
-		animation: fade var(--o⋄hyperspace--1) infinite linear;
-		animation-delay: 0s;
-	}
+		animation: fade var(--o⋄hyperspace--duration1) infinite linear;
+		animation-delay: calc(var(--o⋄hyperspace--duration2) * (0 - var(--immediate)));
 
-	.wrap:nth-child(2) .wall {
-		animation-delay: var(--o⋄hyperspace--2);
+
+		background-size: cover;
+		background-position: 50% 50%;
+		/* background images must ideally be ~1000px height and square
+		 * They should feature multiple big stars, ideally a close starfield
+		 */
+		background-image: var(--o⋄hyperspace--imgurl);
+		filter: var(--o⋄hyperspace--filter);
 	}
 
 	.wall-right {
@@ -102,6 +108,7 @@
 	}
 
 	.wall-back {
+		opacity: 0.5; /* too visible */
 		transform: rotateX(180deg) translateZ(500px);
 	}
 }

@@ -109,7 +109,10 @@ function group(originalFn, ...args) {
 	originalFn(...console__call__args, ...args)
 }
 
+const isEnabled = true;
 function sink(console_method_name, ...args) {
+	if (!isEnabled) return
+
 	let console__call__args = [''] // str + corresponding % args, starting empty
 
 	if (!has_details_indicator(console_method_name)) {
