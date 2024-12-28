@@ -50,7 +50,16 @@ const PRESETS: { [k: string]: HyperspaceEffectSpec } = {
 		],
 	},
 
-	'stargate': {
+	wormhole: { // rename?
+		src_image: (new URL(
+			'STScI-01J74E3HZAXK032XB1XKTR3D01-x.jpg',
+			import.meta.url,
+		)).href,
+		filters: [
+			//[ 'brightness', 1.5],
+		],
+	},
+	stargate: {
 		src_image: (new URL(
 			'STScI-01J74E3HZAXK032XB1XKTR3D01-x3.jpg',
 			import.meta.url,
@@ -60,17 +69,8 @@ const PRESETS: { [k: string]: HyperspaceEffectSpec } = {
 			[ 'blur', '2px' ],
 		],
 	},
-	'wormhole': {
-		src_image: (new URL(
-			'STScI-01J74E3HZAXK032XB1XKTR3D01-x.jpg',
-			import.meta.url,
-		)).href,
-		filters: [
-			//[ 'brightness', 1.5],
-		],
-	},
 
-	'purple': {
+	purple: {
 		// beautiful purple
 		src_image: (new URL(
 			'STScI-01HVSK7H1V5P40417HSA7TYY2P-x4.jpg',
@@ -80,8 +80,18 @@ const PRESETS: { [k: string]: HyperspaceEffectSpec } = {
 		],
 	},
 
-	'fiery': {
+	fiery: {
 		// nice fire effect
+		src_image: (new URL(
+			'STScI-01J7492J6AJFB5C8Z8P18T5C18-x.jpg',
+			import.meta.url,
+		)).href,
+		filters: [
+		],
+	},
+
+	test: {
+		// currently under test
 		src_image: (new URL(
 			'STScI-01J7492J6AJFB5C8Z8P18T5C18-x.jpg',
 			import.meta.url,

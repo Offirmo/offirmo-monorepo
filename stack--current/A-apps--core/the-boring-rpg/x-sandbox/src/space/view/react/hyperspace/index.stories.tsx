@@ -52,7 +52,7 @@ export const StarGateCustom = {
 	args: {
 		preset: 'stargate',
 		extra_filters: [
-			[ 'hue-rotate', '300deg' ],
+			[ 'hue-rotate', '320deg' ],
 		]
 	} as Props
 }
@@ -69,9 +69,14 @@ export const Fiery = {
 	} as Props
 }
 
-
 export const OriginalNoahBlon = {
 	args: {
 		preset: 'original',
+	} as Props
+}
+
+export const Test = {
+	args: {
+		preset: 'test',
 	} as Props
 }

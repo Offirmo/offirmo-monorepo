@@ -9,6 +9,7 @@ import {
 // https://www.npmjs.com/package/@tsparticles/basic
 import { loadBasic as loadPlugins } from "@tsparticles/basic"
 
+/////////////////////////////////////////////////
 
 // inspired from the stars preset https://github.com/tsparticles/presets/blob/main/presets/stars/src/options.ts
 function getOptions() {
@@ -73,9 +74,17 @@ LIB_INIT.then((...args) => {
 	console.log(`XXX @tsparticles/basic loaded`, args)
 })
 
+/////////////////////////////////////////////////
+
 const LIB = "StarrySky"
 
-export default function StarrySky() {
+interface Props {
+	// density
+	// bg
+	// direction
+	// speed
+}
+function StarrySky(props: Props = {}) {
 	use(LIB_INIT)
 	const id = useId()
 
@@ -130,10 +139,17 @@ export default function StarrySky() {
 
 	return (
 		<div id={id} className="o⋄fill-parent" style={{
+
 			backgroundColor: background__color,
 			background: `linear-gradient(${background__gradient__direction}deg, ${background__gradient__begin} 0%, ${background__gradient__end} 100%)`,
-		}}>
-			tsParticles canva will be here
-		</div>
+		}} />
 	)
 }
+
+/////////////////////////////////////////////////
+
+export {
+	StarrySky,
+	type Props,
+}
+export default StarrySky
