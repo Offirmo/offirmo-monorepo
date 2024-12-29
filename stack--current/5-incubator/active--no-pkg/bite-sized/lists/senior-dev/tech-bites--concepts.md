@@ -143,6 +143,8 @@ constructor
 context switch
 convention over configuration
 Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
+copyright -- license -- REUSE https://reuse.software/tutorial/
+copyright -- statement https://matija.suklje.name/how-and-why-to-properly-write-copyright-statements-in-your-code 
 corporate politic https://www.breakingpoint.tech/p/where-do-corporate-politics-come
 correlation
 coupling -- loose https://en.wikipedia.org/wiki/Loose_coupling

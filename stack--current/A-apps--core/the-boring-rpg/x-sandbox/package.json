@@ -54,6 +54,7 @@
 		"lit": "^3",
 		"react": "^19",
 		"react-dom": "^19",
+		"swiper": "^11",
 		"tiny-invariant": "^1",
 		"tslib": "^2",
 		"typescript-string-enums": "^1"

@@ -148,6 +148,7 @@
 		"size-limit": "^11",
 		"strip-ansi": "^7",
 		"sum-up": "^3",
+		"swiper": "^11",
 		"terminal-size": "^4",
 		"tildify": "^3",
 		"ts-node": "^10",

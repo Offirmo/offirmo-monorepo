@@ -359,6 +359,7 @@ web components -- templates -- slots https://developer.mozilla.org/en-US/docs/We
 web components https://developer.mozilla.org/en-US/docs/Web/API/Web_components
 web design https://www.webdesignmuseum.org/
 Web Linking (RFC 5988) https://datatracker.ietf.org/doc/html/rfc5988
+web text editing https://lord.io/text-editing-hates-you-too/
 web workers -- dedicated = utilized by a single script https://devdocs.io/dom/worker
 web workers -- service = proxy https://devdocs.io/dom/service_worker_api
 web workers -- shared = can be utilized by multiple scripts running in different windows, IFrames, etc., as long as they are in the same domain as the worker https://devdocs.io/dom/sharedworker

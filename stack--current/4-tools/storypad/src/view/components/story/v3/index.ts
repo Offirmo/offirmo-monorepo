@@ -9,6 +9,7 @@ import { getꓽRenderParamsⵧglobal } from '../../../../flux/selectors.ts'
 
 /////////////////////////////////////////////////
 console.log('Loading the CSF v3 renderer...')
+// reminder: https://storybook.js.org/docs/writing-stories#component-story-format
 
 async function renderCSFV3(entry: Immutable<StoryEntry>) {
 	console.group(`[${LIB}] Rendering a CSF v3 story…`)
@@ -31,15 +32,22 @@ async function renderCSFV3(entry: Immutable<StoryEntry>) {
 
 	switch (true) {
 		case story.render !== undefined: {
-			document.body.innerText = '[CSF v3: TODO re-implement "render()"]'
-			/*
+			//
+
 			const rendered = story.render({
 				...meta.args,
 				...story.args,
 			})
-			document.body.innerText = rendered
-			 */
-			break
+
+			if ('$$typeof' in rendered) {
+				// this is React
+				_renderⵧcomponent(() => rendered, story, meta)
+				break
+			}
+
+			document.body.innerText = '[CSF v3: TODO unrecognized output of "render()"!]'
+			console.error('XXX', rendered)
+			throw new Error(`Not implemented!`)
 		}
 
 		case story.component !== undefined: {
@@ -66,8 +74,6 @@ async function _renderⵧcomponent(component: Immutable<GenericStoryComponent>, 
 
 	// TODO one day if needed: recognize React through jsx "x" on extension
 	const isReact = (typeof component === 'function')
-
-
 
 	switch (true) {
 		case isReact: {

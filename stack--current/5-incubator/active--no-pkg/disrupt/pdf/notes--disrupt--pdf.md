@@ -158,3 +158,8 @@ Books
 https://dz4k.com/2024/new-hypermedia-systems/
 
 html hard to parse https://dbushell.com/2024/10/01/html-parser-conundrum/
+
+
+https://plantuml.com/   https://crashedmind.github.io/PlantUMLHitchhikersGuide/
+
+semantic types https://github.com/facebook/prop-types
