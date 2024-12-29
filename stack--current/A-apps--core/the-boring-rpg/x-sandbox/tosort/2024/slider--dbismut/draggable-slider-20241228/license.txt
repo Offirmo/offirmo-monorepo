@@ -1,0 +1,6 @@
+
+Copied from this demo https://github.com/dbismut/draggable-slider
+
+No license
+
+TODO ask permission?
