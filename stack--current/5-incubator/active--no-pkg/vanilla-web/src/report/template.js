@@ -25,6 +25,8 @@ function reportꓽy(parent, LIB) {
 		throw new Error('TEST error!')
 	})
 
+	node.notifications.push(['NIMP!', new Error(`Not implemented!`)])
+
 	LIB.add_child(parent, node)
 }
 

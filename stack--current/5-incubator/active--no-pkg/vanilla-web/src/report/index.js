@@ -95,6 +95,23 @@ function printReport(node) {
 
 /////////////////////////////////////////////////
 
+const { format: formatNumber } = new Intl.NumberFormat('en', {
+	style: 'decimal',
+	maximumFractionDigits: 2,
+	minimumFractionDigits: 0,
+})
+
+// Simple Pretty Bytes with SI system
+// Without fraction rounding
+// https://stackoverflow.com/a/62703368/587407
+function formatNumberToPrettyBytesSI(Num=0, dec=2){
+	if (Num<1000) return Num+" Bytes";
+	Num =("0".repeat((Num+="").length*2%3)+Num).match(/.{3}/g);
+	return Number(Num[0])+"."+Num[1].substring(0,dec)+" "+"  kMGTPEZY"[Num.length]+"B";
+}
+
+
+/////////////////////////////////////////////////
 
 import reportꓽsecurity from './security/index.js'
 import reportꓽenvironment from './environment/index.js'
@@ -110,6 +127,8 @@ export default function report() {
 		create_node,
 		add_child,
 		try_or_report,
+		formatNumber,
+		formatNumberToPrettyBytesSI,
 	}
 
 	reportꓽsecurity(node, LIB)
