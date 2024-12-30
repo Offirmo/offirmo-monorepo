@@ -20,7 +20,7 @@
 
 
 		"_start:parcel--storypad": "parcel serve storypad/index.html --port 8080  --lazy  --no-autoinstall",
-		"stories": "npm-run-all  clean--cache  _start:parcel--storypad",
+		"stories": "npm-run-all  clean  _start:parcel--storypad",
 
 
 		"xdemo": "node ./dist/src.es2024.esm/demo/index.js",

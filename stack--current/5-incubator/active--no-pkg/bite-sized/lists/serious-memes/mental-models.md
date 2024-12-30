@@ -154,6 +154,7 @@ discernement -- technique de pile ou face
 discrimination -- direct = when a person is treated less favourably or unfairly than another person or group because of certain protected characteristics* or attributes
 discrimination -- indirect = when a neutral rule, policy, practice or criterion applies to everyone but disproportionately disadvantages a particular group with a protected characteristic, without objective justification
 disease -- definition? https://en.wikipedia.org/wiki/Unsolved_problems_in_medicine
+disfranchisement = voter disqualification, is the restriction of suffrage (the right to vote) of a person or group of people https://en.wikipedia.org/wiki/Disfranchisement
 disrespect = lack of consideration or regard for others’ privacy, physical or emotional space, viewpoints, or belongings. Intimidation, aggressive behavior, “the silent treatment”. Thoughtless or arrogant behavior, like using profanity when someone objects to it.
 don't expect perfection -> trigger self-consciousness = counter-productive
 doublespeak: People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
@@ -435,6 +436,10 @@ Pulitzer prize -- biographies https://en.wikipedia.org/wiki/Pulitzer_Prize_for_B
 purchasing "messy middle" https://www.thinkwithgoogle.com/intl/en-emea/consumer-insights/consumer-journey/navigating-purchase-behavior-and-decision-making/
 put into words
 question authority
+race -- eugenism
+race -- Nigeria
+race -- slavery
+race -- white supremacy https://en.wikipedia.org/wiki/Grandfather_clause
 race to the bottom
 rare events = ex. COVID-19 https://en.wikipedia.org/wiki/Rare_events
 rationalize

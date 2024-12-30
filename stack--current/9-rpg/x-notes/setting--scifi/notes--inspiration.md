@@ -45,16 +45,36 @@ space monsters
 space hunters
 
 
+## Honkai Star Rail
+
+
+
+## Captain Harlock
+
+
 ## Yoko Tsuno
 Vinéens, ark ships, lost planets...
+
 
 
 ## tosort
 
 - Valérian
 - Star Trek
-- Captain Harlock
+- 
 - Buck Rogers
-- No Man Sky? (not played) https://nomanssky.fandom.com/wiki/No_Man%27s_Sky_Wiki
+- ? (not played) 
 
-https://store.steampowered.com/app/1716740/Starfield/ (mixed)
+TODO look at the reviews
+* Starfield
+  * https://store.steampowered.com/app/1716740/Starfield/
+  * from Bethesda
+  * reviews: mixed
+* No Man Sky
+  * https://nomanssky.fandom.com/wiki/No_Man%27s_Sky_Wiki
+* Stellaris
+  * https://store.steampowered.com/app/281990/Stellaris/
+  * review: very positive
+
+
+https://store.steampowered.com/app/230290/Universe_Sandbox/

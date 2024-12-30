@@ -7,13 +7,15 @@ import { getꓽstoryⵧcurrent } from '../../../flux/selectors'
 
 /////////////////////////////////////////////////
 
+const LIB = `renderꓽstory()`
+
 async function renderꓽstory(container: HTMLElement = document.body) {
-	container.innerText = `[Loading story…]`
+	container.innerText = `[${LIB}: starting...]`
 	try {
 		await _renderⵧstory(container)
 	} catch (err) {
-		console.error(err)
-		container.innerText = `[Error loading story! See dev console!]`
+		console.error(`Error in ${LIB}!`, err)
+		container.innerText = `[${LIB}: Error loading story! See dev console!]`
 	}
 }
 
@@ -28,27 +30,34 @@ async function _renderⵧstory(container: HTMLElement) {
 	import('./index.css')
 
 	console.log('Rendering story:', storyEntry)
-	try {
-		switch (true) {
+	switch (true) {
 
-			case isꓽStory‿v2(storyEntry.story): {
+		case isꓽStory‿v2(storyEntry.story): {
+			try {
 				const render_v2 = (await import('./v2')).default
 				await render_v2(storyEntry)
-				break
 			}
+			catch (err) {
+				console.error(`Error in ${LIB}! for v2`, err)
+				throw err
+			}
+			break
+		}
 
-			case isꓽStory‿v3(storyEntry.story): {
+		case isꓽStory‿v3(storyEntry.story): {
+			try {
 				const render_v3 = (await import('./v3')).default
 				await render_v3(storyEntry)
-				break
 			}
-
-			default:
-				throw new Error(`Unsupported story format! (yet!)`)
+			catch (err) {
+				console.error(`Error in ${LIB}! for v3`, err)
+				throw err
+			}
+			break
 		}
-	}
-	catch (err) {
-		container.innerText = `[ERROR "${err?.message}"! please see console]`
+
+		default:
+			throw new Error(`Unsupported story format! (yet!)`)
 	}
 
 	const path_elt = document.createElement('div')

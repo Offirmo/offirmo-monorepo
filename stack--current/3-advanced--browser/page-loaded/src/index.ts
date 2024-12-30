@@ -13,6 +13,8 @@
  *    stylesheets, scripts, iframes, and images, except those that are loaded lazily.
  */
 
+const DEBUG = false
+
 /////////////////////////////////////////////////
 // DOMContentLoaded
 // https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
@@ -23,11 +25,23 @@ const ೱᐧDOMContentLoaded: Promise<void> = (() => {
 
 	if (document.readyState === 'loading') {
 		// Loading hasn't finished yet
-		document.addEventListener('DOMContentLoaded', () => resolve())
+		DEBUG && console.log(`ೱᐧDOMContentLoaded: adding a listener… (readyState = ${document.readyState})`)
+		// important: this event is on "document"
+		document.addEventListener('DOMContentLoaded', () => {
+			DEBUG && console.log(`ೱᐧDOMContentLoaded: ⚡️DOMContentLoaded`)
+			DEBUG && console.log(`ೱᐧDOMContentLoaded: resolving…`)
+			resolve()
+		})
 	} else {
 		// `DOMContentLoaded` has already fired
+		DEBUG && console.log(`ೱᐧDOMContentLoaded: already loaded ✅`)
+		DEBUG && console.log(`ೱᐧpage_loaded: resolving…`)
 		resolve()
 	}
+
+	promise.then(() => {
+		DEBUG && console.log(`ೱᐧDOMContentLoaded: fulfilled ✅`)
+	})
 
 	return promise
 })()
@@ -41,17 +55,32 @@ const ೱᐧpage_loaded: Promise<void> = (() => {
 	const { promise, resolve, reject } = Promise.withResolvers<void>()
 
 	if (document.readyState !== 'complete') {
-		document.addEventListener('load', () =>
+		DEBUG && console.log(`ೱᐧpage_loaded: adding a listener… (readyState = ${document.readyState})`)
+		// important: this event is on "window"
+		window.addEventListener('load', () => {
+			DEBUG && console.log(`ೱᐧpage_loaded: ⚡️load`)
 			// ensure the promises are resolved in the right order
 			// even if the page is already loaded when this library is imported
-			ೱᐧDOMContentLoaded.then(() => resolve())
-		)
+			ೱᐧDOMContentLoaded
+				.then(() => {
+					DEBUG && console.log(`ೱᐧpage_loaded: resolving…`)
+					resolve()
+				})
+		})
 	} else {
 		// already loaded
+		DEBUG && console.log(`ೱᐧpage_loaded: already loaded ✅`)
 		// ensure the promises are resolved in the right order
 		// even if the page is already loaded when this library is imported
-		ೱᐧDOMContentLoaded.then(() => resolve())
+		ೱᐧDOMContentLoaded.then(() => {
+			DEBUG && console.log(`ೱᐧpage_loaded: resolving…`)
+			resolve()
+		})
 	}
+
+	promise.then(() => {
+		DEBUG && console.log(`ೱᐧpage_loaded: fulfilled ✅`)
+	})
 
 	return promise
 })()

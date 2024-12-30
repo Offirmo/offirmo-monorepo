@@ -1,6 +1,25 @@
 
 
 
+## Core
+
+### Main motivation
+
+Reflexion
+* If there are billions of planets, why exploring them??
+* If more powerful races already explored the galayies, why bother? (ex. 3rd world country)
+* Starfield: "the biggest question... what's out there?
+
+
+Ideas:
+* fresh from zoo world
+  * kept in safety for uplifting
+  * but secretly as a reserve for ??? (secret threat? war? motivation? fresh ideas?)
+    * planet core?
+  * secretly in a simulation?
+
+
+
 ## missions
 (all missions can also be taken part of as escort)
 

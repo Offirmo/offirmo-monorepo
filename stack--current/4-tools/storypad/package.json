@@ -18,6 +18,7 @@
 		"@offirmo-private/soft-execution-context--browser": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo-private/ts-types-web": "*",
+		"@offirmo-private/page-loaded": "*",
 		"@offirmo/universal-debug-api-browser": "^1",
 		"tiny-invariant": "^1",
 		"tslib": "^2"

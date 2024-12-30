@@ -22,6 +22,7 @@ import {
 
 async function init(stories_glob: Immutable<ImportGlob>, config?: Immutable<Config>): Promise<void> {
 	console.group('Flux init...')
+
 	let stateⵧin_mem = _getꓽstateⵧin_mem()
 	stateⵧin_mem = InMemState.setꓽconfig(stateⵧin_mem, config)
 	stateⵧin_mem = await InMemState.registerꓽstoriesⵧfrom_glob(stateⵧin_mem, stories_glob)
@@ -39,15 +40,17 @@ async function init(stories_glob: Immutable<ImportGlob>, config?: Immutable<Conf
 		console.warn('URL and in-mem story mismatch!', { current_story, url_story })
 	}
 
-	console.log('final state =', {
-		'InMemState': stateⵧin_mem,
-		'~UrlState': {
-			'URL': window.location.href,
-			'getꓽmain_frame_url': UrlState.getꓽmain_frame_url(),
-			'getꓽstory_frame_url': UrlState.getꓽstory_frame_url(),
-			'getꓽexplicit_render_mode': UrlState.getꓽexplicit_render_mode(),
-			'getꓽexplicit_story_uid': UrlState.getꓽexplicit_story_uid(),
-			'_sp': Object.fromEntries([...UrlState._getꓽcurrent_url__search_params()]),
+	console.log('Flux final state =', {
+		'sub-states': {
+			'in-mem': stateⵧin_mem,
+			'location': {
+				'URL': window.location.href,
+				'getꓽmain_frame_url': UrlState.getꓽmain_frame_url(),
+				'getꓽstory_frame_url': UrlState.getꓽstory_frame_url(),
+				'getꓽexplicit_render_mode': UrlState.getꓽexplicit_render_mode(),
+				'getꓽexplicit_story_uid': UrlState.getꓽexplicit_story_uid(),
+				'_sp': Object.fromEntries([...UrlState._getꓽcurrent_url__search_params()]),
+			},
 		},
 		flux: {
 			'getꓽrender_mode': getꓽrender_mode(),
@@ -55,6 +58,7 @@ async function init(stories_glob: Immutable<ImportGlob>, config?: Immutable<Conf
 			'getꓽRenderParamsⵧglobal': getꓽRenderParamsⵧglobal(),
 		}
 	})
+
 	console.groupEnd()
 }
 

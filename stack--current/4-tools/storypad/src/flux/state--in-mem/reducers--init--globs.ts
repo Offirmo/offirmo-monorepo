@@ -74,7 +74,7 @@ async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Imm
 	assert(exports_sync_or_async, `ESModule unrecognized extension! (Please implement)`)
 
 	const exports = await (async () => {
-		// TODO "on demand" resolution to avoid pollution
+		// TODO one day "on demand" resolution to avoid global js+styles pollution
 		if (typeof exports_sync_or_async === 'function') {
 			try {
 				return await exports_sync_or_async()

@@ -28,19 +28,21 @@ import render from './view'
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable<Config>) {
+export async function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable<Config>) {
 	clearTimeout(misconfig_detection)
 
-	asap_but_out_of_immediate_execution(async () => {
+	console.log(`[${LIB}] scheduling…`)
+	await asap_but_out_of_immediate_execution(async () => {
 		const is_iframe = ( window.location !== window.parent.location )
-		console.group(`Starting storypad… [${is_iframe ? 'SUB frame' : 'TOP frame'}]`, window.location.href)
+		console.group(`[${LIB}] Starting… [${is_iframe ? 'SUB frame' : 'TOP frame'}]`)
+		console.log(`location =`, window.location.href)
 		console.log('config =', config)
 		console.log('glob =', stories_glob)
 
 		// 1. services
-		console.groupCollapsed(`Services init...`)
+		console.groupCollapsed(`[${LIB}] 1/3 Services init…`)
 		// order is important! Timing is non-trivial!
-		assert(Object.keys(initsⵧservices).length > 0, 'no services/init found!')
+		assert(Object.keys(initsⵧservices).length > 0, 'Unexpectedly no services/init found!')
 		await Object.keys(initsⵧservices).sort().reduce(async (acc, key) => {
 			await acc
 			logger.group(`services/init "${key}"`)
@@ -50,14 +52,22 @@ export function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutabl
 			logger.trace(`services/init "${key}": done ✅`)
 			logger.groupEnd()
 		}, Promise.resolve())
+		console.log(`[${LIB}] 1/3 Services init ✅`)
 		console.groupEnd()
 
 		// 2. flux
+		console.groupCollapsed(`[${LIB}] 2/3 Flux init…`)
 		await initꓽflux(stories_glob, config)
+		console.log(`[${LIB}] 2/3 Flux init ✅`)
+		console.groupEnd()
 
 		// 3. view
-		render()
+		console.group(`[${LIB}] 3/3 View init…`)
+		await render()
+		console.log(`[${LIB}] 3/3 View init ✅`)
+		console.groupEnd()
 
+		console.log(`[${LIB}] Done ✔`)
 		console.groupEnd()
 	})
 }
