@@ -139,6 +139,7 @@ export default function report() {
 	reportꓽdemo(node, LIB)
 
 	// some checks need promises resolutions
+	// TODO aggregate promises and wait!
 	setTimeout(() => {
 		printReport(node)
 	}, 10)

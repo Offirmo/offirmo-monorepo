@@ -7,10 +7,10 @@ function reportSecureContext(parent, LIB) {
 		'https://developer.mozilla.org/en-US/docs/Web/API/Window/isSecureContext',
 	)
 	LIB.try_or_report(node, 'reading isSecureContext', () => {
-		node.results.push(['isSecureContext=', isSecureContext])
+		node.results.push(['isSecureContext =', isSecureContext, isSecureContext ? '✅' : '📛'])
 
 		if (!isSecureContext)
-			node.notifications.push(['not in a secure context!'])
+			node.notifications.push(['not in a secure context! 📛'])
 	})
 
 	LIB.add_child(parent, node)

@@ -24,54 +24,84 @@ function getStorageSnapshot(
 // or throw if other unexpected behavior
 const LSKEY_FILL = '_FILL'
 function fillStorage(storage) {
-	console.log(`Please wait, testing storage capacity…`)
-	let size = 10_000_000 // limit is supposed to be 5Mb
-	const buffer = 'X'.repeat(size)
+	console.log(`⏳ Please wait, testing storage capacity…`)
 
-	let last_failure_size = undefined
+	const OVER_QUOTA_SIZE = 10_000_000 // limit is supposed to be 5Mb
+	const buffer = 'X'.repeat(OVER_QUOTA_SIZE)
+
+	let last_success = (storage.setItem(LSKEY_FILL, ''), 0)
+	let last_failure = OVER_QUOTA_SIZE
 	let last_try = undefined
 	do {
+		const size = Math.ceil((last_success + last_failure) / 2)
+		//console.log(`last success = ${last_success} <= trying = ${size} <= last failure = ${last_failure}`)
 		if (size === last_try) {
 			throw new Error('Loop!')
 		}
+		last_try = size
 
 		try {
-			//console.log(`trying`, size)
-			last_try = size
 			storage.setItem(LSKEY_FILL, buffer.slice(0, size))
 
 			// success
-			if (last_failure_size === undefined) {
+			last_success = size
+			// we need to try a higher value
+			if (last_failure === OVER_QUOTA_SIZE && last_success === 0) {
 				// safety
 				throw new Error(`can't fill the storage, please update algo (starting too low)!`)
 			}
-			else if (last_failure_size > (size + 1)) {
-				size = Math.ceil((size + last_failure_size) / 2)
-			}
-			else {
+			else if (last_failure === last_success + 1) {
 				//console.log(`remaining storage found:`, size)
 				return size + LSKEY_FILL.length
 			}
 		}
 		catch (err) {
-			last_failure_size = size
 			if (err.message.toLowerCase().includes('quota')) {
-				size = Math.ceil(size/2)
+				last_failure = size
 			}
 			else {
 				throw err
 			}
 		}
-	} while (size > 1);
+	} while (true)
 	return last_try ?? 0
 }
 
 function getRemainingStorageSpace(storage) {
 	const remaining = fillStorage(storage)
+
+	// is the algo working?
+	try {
+		storage.setItem('', 'X')
+		console.error(`Unexpectedly can still write in storage!`)
+	}
+	catch (err) {
+		// as expected
+	}
+
+	/* test of behavior when full
+	try {
+		const existing = storage.getItem(LSKEY_FILL)
+		storage.setItem(LSKEY_FILL, existing)
+		console.log(`success rewriting...`)
+
+		storage.setItem('', '')
+		console.log(`success minimal entry...`)
+
+		storage.setItem('a', '')
+		console.log(`success minimal entry...`)
+	}
+	catch (err) {
+		console.error(`XXX TEST`, err)
+	}*/
+
+	// cleanup
 	try {
 		storage.removeItem(LSKEY_FILL)
+		storage.removeItem('')
 	}
 	catch { /* swallow */ }
+
 	return remaining
 }
 
