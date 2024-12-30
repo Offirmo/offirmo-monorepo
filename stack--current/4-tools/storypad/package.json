@@ -42,7 +42,7 @@
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo-private/ts-types-web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@types/react-dom": "^18",
+		"@types/react-dom": "^19",
 		"npm-run-all": "^4",
 		"tslib": "^2"
 	},

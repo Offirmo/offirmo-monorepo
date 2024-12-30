@@ -33,6 +33,9 @@ https://masseffect.fandom.com/wiki/War_Assets
 
 
 ## Star trek
+* https://memory-alpha.fandom.com/wiki/Portal:Main
+
+
 https://en.wikipedia.org/wiki/Technology_in_Star_Trek
 
 subspace, transwarp, and proto-warp
@@ -53,3 +56,5 @@ Vinéens, ark ships, lost planets...
 - Captain Harlock
 - Buck Rogers
 - No Man Sky? (not played) https://nomanssky.fandom.com/wiki/No_Man%27s_Sky_Wiki
+
+https://store.steampowered.com/app/1716740/Starfield/ (mixed)

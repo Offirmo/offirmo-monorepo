@@ -14,18 +14,22 @@
 	},
 
 	"scripts": {
+		"// TODO": "remove this, I'll likely not use heroku anymore",
 		"heroku-prebuild": "echo This runs before Heroku nodjs buildback installs dependencies. Ensuring monorepo setup... && pwd && test -f Procfile",
 		"heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies. && pwd && ls -l",
 
+		"// GREAT!": "also update the root package.json when not in sync",
 		"postinstall": "node ./0-meta/build-tools/scripts/monorepo-utils.mjs",
 
+		"// TODO": "test if it's still working",
 		"manypkg--check": "manypkg check",
 		"manypkg--fix": "manypkg fix",
 
 		"_clean--all--cmd": "bolt ws run clean",
-		"_clean--all--rm": "bolt ws exec -- rm -rf .cache .parcel .parcel-cache dist node_modules",
+		"_clean--all--rm": "bolt ws exec -- rm -rf .cache .parcel .parcel-cache node_modules",
 		"_clean--root": "rm -rf node_modules .npm npm-debug.log package-lock.json yarn.lock yarn-error.log .yalc .awcache .parcel .parcel-cache bower_components typings",
 
+		"clean-deps": "run-s  _clean--all--rm _clean--root",
 		"clean": "run-s  _clean--all--cmd _clean--all--rm _clean--root",
 		"build": "bolt ws run build",
 		"test": "bolt ws run test",
@@ -90,7 +94,7 @@
 		"@types/mocha": "^10",
 		"@types/murmurhash3js-revisited": "^3",
 		"@types/prettyjson": "^0",
-		"@types/react-dom": "^18",
+		"@types/react-dom": "^19",
 		"@types/sinon": "^17",
 		"@types/sinon-chai": "^4",
 		"ansi-escapes": "^7",

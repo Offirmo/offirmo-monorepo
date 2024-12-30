@@ -1,3 +1,6 @@
+// https://swiperjs.com/
+// found through https://www.bacancytechnology.com/blog/react-carousel
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
