@@ -1,37 +1,95 @@
-const LIB = 'OCD'
+const LIB = '🖼️ↆ'
 
-/// event delegation
-document.addEventListener('click', event => {
-	console.group(`[${LIB}] 👆 click!`)
+/////////////////////////////////////////////////
+// small utils
 
-	try {
-		// as less code as possible
-		const { target: clicked‿elt } = event
-		if (!clicked‿elt)
-			console.log(`[${LIB}] no element clicked.`)
-		else {
-			console.log(`clicked element =`, { clicked‿elt })
+const ANY_BLANK_REGEXP = /\s+/g
+const coerce_blanks_to_single_spaces = s => s.replace(ANY_BLANK_REGEXP, ' ')
 
-			on_click(clicked‿elt)
-		}
-	} catch (err) {
-		console.error(`[${LIB}] on click:`, {err})
+const RECOMMENDED_UNICODE_NORMALIZATION = 'NFC' // https://www.win.tue.nl/~aeb/linux/uc/nfc_vs_nfd.html
+const normalize_unicode = s => {
+	s = s.normalize(RECOMMENDED_UNICODE_NORMALIZATION)
+	if (s.toWellFormed)
+		s = s.toWellFormed() // https://devdocs.io/javascript/global_objects/string/iswellformed
+	return s
+}
+
+function clean_url_str_from_query_and_hash(url_str) {
+	const url‿obj = new URL(url_str)
+	return url‿obj.origin + url‿obj.pathname
+}
+
+/////////////////////////////////////////////////
+
+/*
+export interface SocialNetworkLink {
+	url: Url‿str // mandatory
+	handle?: string // ex @Offirmo, u/Offirmo
+	network: string // helps to parse, helps to replace
+}
+
+export interface WithOnlinePresence {
+	urlⵧcanonical: Url‿str
+	urlsⵧsocial?: SocialNetworkLink[] // array because it conveys the Author's preference, earlier = preferred
+}
+
+export interface Author extends WithOnlinePresence {
+	name: string
+	intro?: string // very short intro. TODO refine
+	email?: Email‿str
+	contact?: Url‿str // should not duplicate email
+	since‿y?: number // for copyright notice
+}
+
+/////////////////////////////////////////////////
+// Meta, tech-agnostic content
+
+export interface Thing {
+	lang?: IETFLanguageType
+	title?: string // Ex. "The Boring RPG" or "La Joconde"
+	description: string // must be simple, a paragraph at most
+	author: Author | undefined // undef = unknown :-(
+	since‿y?: number // for copyright notice
+}
+
+export interface ThingWithOnlinePresence extends Thing, WithOnlinePresence {
+	contact?: Url‿str // if not provided, default to author's Ideally should be a "contact center" https://docs.aws.amazon.com/connect/latest/adminguide/connect-concepts.html
+	contactⵧsecurity?: Url‿str // if not provided, default to contact
+	contactⵧsupport?: Url‿str // if not provided, default to contact
+}
+ */
+
+/////////////////////////////////////////////////
+
+class Media {
+
+}
+
+class Post {
+	socialNetworkLink = {
+		url: undefined, // str
+		network: undefined, // helps to parse, helps to replace
+		handle: undefined, // ex @Offirmo, u/Offirmo
 	}
 
-	console.groupEnd()
-})
+
+
+
+}
+
+/////////////////////////////////////////////////
 
 // to allow update w/o updating the click handler
 function on_click(clicked‿elt) {
 	const baseURI‿str = clicked‿elt.baseURI
 	const url‿obj = new URL(baseURI‿str)
 	const { hostname } = url‿obj
-	const urlⵧcanonical = clean_url_str(baseURI‿str)
+	const urlⵧcanonical = clean_url_str_from_query_and_hash(baseURI‿str)
 
 	switch(hostname) {
 		case 'www.instagram.com':
 			if (clicked‿elt.nodeName === 'A') {
-				console.log(`[${LIB}] clicked on <a> on insta = ignoring (that's not how assets work on insta)`)
+				console.log(`[${LIB}] clicked on <a> on insta = ignoring (user is just navigating, not downloading an asset)`)
 				break
 			}
 
@@ -44,11 +102,14 @@ function on_click(clicked‿elt) {
 }
 
 function on_clickⵧwwwᐧᐧinstagramᐧcom(clicked‿elt, {urlⵧcanonical}) {
-	const { previousSibling } = clicked‿elt
-	const img‿elt = previousSibling.firstChild
+	const media‿elt = (() => {
+		// as seen 2024/12
+		const { previousSibling } = clicked‿elt
+		return previousSibling.firstChild
+	})()
 
-	if (!img‿elt) {
-		console.warn(`[${LIB}] no <img> found.`)
+	if (!media‿elt) {
+		console.warn(`[${LIB}] no media found.`)
 		return
 	}
 
@@ -68,7 +129,7 @@ function on_clickⵧwwwᐧᐧinstagramᐧcom(clicked‿elt, {urlⵧcanonical}) {
 			if (link‿elt.__seen === timestamp) return false
 			link‿elt.__seen = timestamp
 
-			const cleaned_href = clean_url_str(link‿elt.href)
+			const cleaned_href = clean_url_str_from_query_and_hash(link‿elt.href)
 			//console.log({href: cleaned_href})
 
 			const is_ref = cleaned_href === urlⵧcanonical
@@ -94,7 +155,7 @@ function on_clickⵧwwwᐧᐧinstagramᐧcom(clicked‿elt, {urlⵧcanonical}) {
 		since‿y,
 	})
 
-	processꓽimg(img‿elt, {urlⵧcanonical, author_id, since‿y})
+	processꓽimg(media‿elt, {urlⵧcanonical, author_id, since‿y})
 }
 
 async function processꓽimg(img‿elt, {urlⵧcanonical, author_id, since‿y}) {
@@ -259,18 +320,26 @@ function downloadFile(file) {
 	})
 }
 
-const ANY_BLANK_REGEXP = /\s+/g
-const coerce_blanks_to_single_spaces = s => s.replace(ANY_BLANK_REGEXP, ' ')
+/////////////////////////////////////////////////
 
-const RECOMMENDED_UNICODE_NORMALIZATION = 'NFC' // https://www.win.tue.nl/~aeb/linux/uc/nfc_vs_nfd.html
-const normalize_unicode = s => {
-	s = s.normalize(RECOMMENDED_UNICODE_NORMALIZATION)
-	if (s.toWellFormed)
-	s = s.toWellFormed() // https://devdocs.io/javascript/global_objects/string/iswellformed
-	return s
-}
 
-function clean_url_str(url_str) {
-	const url‿obj = new URL(url_str)
-	return url‿obj.origin + url‿obj.pathname
-}
+/// event delegation
+document.addEventListener('click', event => {
+	console.group(`[${LIB}] 👆 click!`)
+
+	try {
+		// as few code as possible
+		const { target: clicked‿elt } = event
+		if (!clicked‿elt)
+			console.log(`[${LIB}] no element clicked.`)
+		else {
+			console.log(`[${LIB}] clicked element =`, { clicked‿elt })
+
+			on_click(clicked‿elt)
+		}
+	} catch (err) {
+		console.error(`[${LIB}] on click:`, {err})
+	}
+
+	console.groupEnd()
+})
