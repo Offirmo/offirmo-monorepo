@@ -36,7 +36,7 @@ async function _renderⵧstory(container: HTMLElement) {
 			try {
 				const render_v2 = (await import('./v2')).default
 				assert(typeof render_v2 === 'function', `render_v2 should be a function!`)
-				await render_v2(storyEntry)
+				await render_v2(container, storyEntry)
 			}
 			catch (err) {
 				console.error(`Error in ${LIB}! for v2`, err)
@@ -49,7 +49,7 @@ async function _renderⵧstory(container: HTMLElement) {
 			try {
 				const render_v3 = (await import('./v3')).default
 				assert(typeof render_v3 === 'function', `render_v3 should be a function!`)
-				await render_v3(storyEntry)
+				await render_v3(container, storyEntry)
 			}
 			catch (err) {
 				console.error(`Error in ${LIB}! for v3`, err)
@@ -65,7 +65,7 @@ async function _renderⵧstory(container: HTMLElement) {
 	const path_elt = document.createElement('div')
 	path_elt.setAttribute('id', 'path');
 	path_elt.innerText = storyEntry.uid
-	document.body.appendChild(path_elt)
+	container.appendChild(path_elt)
 }
 
 /////////////////////////////////////////////////

@@ -11,13 +11,13 @@ import { getꓽtree_root, getꓽconfig, getꓽmain_frame_url, isꓽexpandedⵧin
 /////////////////////////////////////////////////
 
 
-function render() {
+function render(container: HTMLElement) {
 	console.group(`[${LIB}] renderⵧside_panel()`)
 
 	// @ts-expect-error bundler stuff
 	import('./index.css')
 
-	_append_folder(document.body, getꓽtree_root(), [])
+	_append_folder(container, getꓽtree_root(), [])
 
 	console.groupEnd()
 }
@@ -44,11 +44,13 @@ function _append_folder(parent_elt: HTMLElement, treenode: Immutable<StoryTree>,
 		_append_folder(details_elt, treenode.childrenⵧfolders[key]!, [...path, key])
 	})
 
-	let ol_elt = document.createElement('ol')
-	details_elt.appendChild(ol_elt)
-	Object.keys(treenode.childrenⵧfiles).forEach(key => {
-		_append_leaf( ol_elt, treenode.childrenⵧfiles[key]!.payload, [...path, key])
-	})
+	if (Object.keys(treenode.childrenⵧfiles).length > 0) { // avoid adding empty <ol/>
+		let ol_elt = document.createElement('ol')
+		details_elt.appendChild(ol_elt)
+		Object.keys(treenode.childrenⵧfiles).forEach(key => {
+			_append_leaf( ol_elt, treenode.childrenⵧfiles[key]!.payload, [...path, key])
+		})
+	}
 
 	parent_elt.appendChild(details_elt)
 	//details_elt.classList.add('gridⵧsquare')

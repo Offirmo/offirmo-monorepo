@@ -11,7 +11,7 @@ import { getꓽRenderParamsⵧglobal } from '../../../../l1-flux/selectors.ts'
 console.log('Loading the CSF v3 renderer...')
 // reminder: https://storybook.js.org/docs/writing-stories#component-story-format
 
-async function renderCSFV3(entry: Immutable<StoryEntry>) {
+async function renderCSFV3(container: HTMLElement, entry: Immutable<StoryEntry>) {
 	console.group(`[${LIB}] Rendering a CSF v3 story…`)
 	console.log('StoryEntry=', entry)
 	const story: Immutable<Story‿v3> = entry.story as any
@@ -39,33 +39,33 @@ async function renderCSFV3(entry: Immutable<StoryEntry>) {
 			})
 
 			if (typeof rendered === 'string') {
-				document.body.innerHTML = rendered
+				container.innerHTML = rendered
 				break
 			}
 
 			if (!!rendered && (typeof rendered === 'object') && ('$$typeof' in rendered)) {
 				// this is React JSX
-				_renderⵧcomponent(() => rendered, story, meta)
+				_renderⵧcomponent(container, () => rendered, story, meta)
 				break
 			}
 
-			document.body.innerText = '[💣CSF v3: TODO unrecognized output of "render()"!]'
+			container.innerText = '[💣CSF v3: TODO unrecognized output of "render()"!]'
 			console.error('XXX rendered=', rendered)
 			break
 		}
 
 		case story.component !== undefined: {
-			_renderⵧcomponent(story.component, story, meta)
+			_renderⵧcomponent(container, story.component, story, meta)
 			break
 		}
 
 		case meta.component !== undefined: {
-			_renderⵧcomponent(meta.component, story, meta)
+			_renderⵧcomponent(container, meta.component, story, meta)
 			break
 		}
 
 		default:
-			document.body.innerText = '[CSF v3: Empty story or unknown rendering method]'
+			container.innerText = '[💣CSF v3: Empty story or unknown rendering method]'
 			break
 	}
 
@@ -73,7 +73,7 @@ async function renderCSFV3(entry: Immutable<StoryEntry>) {
 	console.groupEnd()
 }
 
-async function _renderⵧcomponent(component: Immutable<GenericStoryComponent>, story: Immutable<Story‿v3>, meta: Immutable<Meta‿v3>) {
+async function _renderⵧcomponent(container: HTMLElement, component: Immutable<GenericStoryComponent>, story: Immutable<Story‿v3>, meta: Immutable<Meta‿v3>) {
 	console.log('v3 _renderⵧcomponent', {Component: component})
 
 	// TODO one day if needed: recognize React through jsx "x" on extension
@@ -82,7 +82,7 @@ async function _renderⵧcomponent(component: Immutable<GenericStoryComponent>, 
 	switch (true) {
 		case isReact: {
 			const render = (await import('./react/index.tsx')).default;
-			await render(component, story, meta)
+			await render(container, component, story, meta)
 			break
 		}
 

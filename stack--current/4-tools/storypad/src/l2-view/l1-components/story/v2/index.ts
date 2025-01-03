@@ -10,7 +10,7 @@ import { aggregateꓽRenderParams, RenderParams, StoryContext } from '../../../.
 /////////////////////////////////////////////////
 console.log('Loading the CSF v2 renderer...')
 
-async function renderCSFV2(entry: Immutable<StoryEntry>) {
+async function renderCSFV2(container: HTMLElement, entry: Immutable<StoryEntry>) {
 	console.group(`[${LIB}] Rendering a CSF v2 story…`)
 	console.log('StoryEntry=', entry)
 	const story: Immutable<Story‿v2> = entry.story as any
@@ -29,12 +29,12 @@ async function renderCSFV2(entry: Immutable<StoryEntry>) {
 	)
 	console.log('render_params=', render_params)
 
-	await _renderⵧaggregated_story(render_params)
+	await _renderⵧaggregated_story(container, render_params)
 
 	console.groupEnd()
 }
 
-async function _renderⵧaggregated_story(render_params: Immutable<RenderParams<Story‿v2>>) {
+async function _renderⵧaggregated_story(container: HTMLElement, render_params: Immutable<RenderParams<Story‿v2>>) {
 	console.log(render_params)
 	const { render, component } = render_params
 
@@ -66,11 +66,11 @@ async function _renderⵧaggregated_story(render_params: Immutable<RenderParams<
 		const rendered = decorated_render(render_params.args!)
 
 		if (typeof rendered === 'string') {
-			document.body.innerHTML = rendered
+			container.innerHTML = rendered
 		}
 		else if (!!rendered && (typeof rendered === 'object') && ('$$typeof' in rendered)) {
 			// this is React JSX
-			document.body.innerHTML = `[CSFv2 is supported, as a convenience, only for trivial components. React is not supported. Please use CSF v3 format!]`
+			container.innerHTML = `[CSFv2 is supported, as a convenience, only for trivial components. React is not supported. Please use CSF v3 format!]`
 		}
 		else {
 			throw new Error(`This render output is unrecognized and not supported!`)

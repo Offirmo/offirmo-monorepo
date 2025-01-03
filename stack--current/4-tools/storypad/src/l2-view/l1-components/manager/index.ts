@@ -14,12 +14,12 @@ async function renderꓽmanager(container: HTMLElement = document.body) {
 	// we're the top frame
 	// render the full UI:
 	// 1. side panel
-	renderⵧside_panel()
+	renderⵧside_panel(container)
 	// 2. story screen
-	const { iframe_elt } = _renderⵧstory_area()
+	const { iframe_elt } = _renderⵧstory_area(container)
 
 	// navigation
-	document.body.addEventListener('click', function(e) {
+	container.addEventListener('click', function(e) {
 		const target = (e as any).target
 
 		console.log(`Click!`)
@@ -52,18 +52,18 @@ async function renderꓽmanager(container: HTMLElement = document.body) {
 }
 
 
-function _renderⵧstory_area() {
+function _renderⵧstory_area(container: HTMLElement) {
 	// TODO top nav
-	return _renderⵧstory_frame()
+	return _renderⵧstory_frame(container)
 }
 
-function _renderⵧstory_frame() {
+function _renderⵧstory_frame(container: HTMLElement) {
 	const iframe_elt = document.createElement('iframe')
 	const current_story = getꓽstoryⵧcurrent()
 	iframe_elt.src = getꓽstory_frame_url(current_story?.uid)
 	iframe_elt.id = 'storypad⋄iframe'
 	console.log('adding the story iframe…', {iframe_elt})
-	document.body.appendChild(iframe_elt)
+	container.appendChild(iframe_elt)
 	return { iframe_elt }
 }
 

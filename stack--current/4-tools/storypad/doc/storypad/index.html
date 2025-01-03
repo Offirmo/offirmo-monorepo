@@ -11,9 +11,11 @@
 	//import stories from './**/*.stories.@(js|jsx|ts|tsx|mdx)'
 	const storiesⵧownⵧcore = import('../../src/l0*/**/*.stories.@(js|jsx|ts|tsx|mdx)')
 	const storiesⵧownⵧview = import('../../src/l2*/**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	const storiesⵧofficial = import('../../src/compat/**/*.stories.@(js|jsx|ts|tsx|mdx)')
 	console.log(`[${LIB}] got the async glob(s):`, {
 		storiesⵧownⵧcore,
 		storiesⵧownⵧview,
+		storiesⵧofficial,
 	})
 
 	console.log(`[${LIB}] now invoking storypad…`)
@@ -22,6 +24,7 @@
 			own: {
 				core: storiesⵧownⵧcore,
 				view: storiesⵧownⵧview,
+				official: storiesⵧofficial,
 			},
 		},
 		{

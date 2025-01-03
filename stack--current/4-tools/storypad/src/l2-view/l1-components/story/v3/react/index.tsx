@@ -9,8 +9,7 @@ import {StoryContext} from '../../../../../l0-types/l1-csf'
 
 /////////////////////////////////////////////////
 
-// TODO container
-async function render(Component: any, story: Immutable<Story‿v3>, meta: Immutable<Meta‿v3>) {
+async function render(container: HTMLElement, Component: any, story: Immutable<Story‿v3>, meta: Immutable<Meta‿v3>) {
 	console.group(`[${LIB}] Rendering a React component…`)
 
 	// https://react.dev/reference/react-dom/client/createRoot
@@ -24,8 +23,8 @@ async function render(Component: any, story: Immutable<Story‿v3>, meta: Immuta
 	const { createRoot } = libⳇreactᝍdomⳇclient
 	let root_elt = document.createElement('div')
 	root_elt.innerHTML = `[React will load here]`
-	document.body.innerHTML = '' // reset any loading message
-	document.body.appendChild(root_elt)
+	container.innerHTML = '' // reset any loading message
+	container.appendChild(root_elt)
 
 	const root = createRoot(root_elt);
 
