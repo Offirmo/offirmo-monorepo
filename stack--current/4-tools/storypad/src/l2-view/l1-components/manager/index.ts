@@ -1,9 +1,11 @@
+// https://storybook.js.org/docs/configure/user-interface/sidebar-and-urls
+
 import assert from 'tiny-invariant'
 import { Url‿str } from '@offirmo-private/ts-types'
 
 import { FolderUId, StoryUId } from '../../../l1-flux/l1-state/types.ts'
 
-import renderⵧside_panel from './side-panel'
+import renderⵧside_panel from './sidebar'
 import {ObservableState} from '../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////

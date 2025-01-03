@@ -51,6 +51,6 @@
 		"tslib": "^2"
 	},
 	"alias": {
-		"@storybook/test": "./src/compat/@storybook/test.ts"
+		"@storybook/test": "./src/l3-compat/@storybook/test.ts"
 	}
 }

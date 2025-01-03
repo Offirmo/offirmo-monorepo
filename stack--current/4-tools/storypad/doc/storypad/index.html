@@ -7,11 +7,12 @@
 	import startꓽstorypad from '@offirmo-private/storypad'
 	import nearest_pkg from '~/package.json'
 
+	// https://storybook.js.org/docs/api/main-config/main-config-indexers
 	// important to load async so that the stories don't pollute the global scope too early (ex. before SXC)
 	//import stories from './**/*.stories.@(js|jsx|ts|tsx|mdx)'
 	const storiesⵧownⵧcore = import('../../src/l0*/**/*.stories.@(js|jsx|ts|tsx|mdx)')
 	const storiesⵧownⵧview = import('../../src/l2*/**/*.stories.@(js|jsx|ts|tsx|mdx)')
-	const storiesⵧofficial = import('../../src/compat/**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	const storiesⵧofficial = import('../../src/l3-compat/**/*.stories.@(js|jsx|ts|tsx|mdx)')
 	console.log(`[${LIB}] got the async glob(s):`, {
 		storiesⵧownⵧcore,
 		storiesⵧownⵧview,
@@ -24,8 +25,10 @@
 			own: {
 				core: storiesⵧownⵧcore,
 				view: storiesⵧownⵧview,
-				official: storiesⵧofficial,
 			},
+			storybook: {
+				official: storiesⵧofficial,
+			}
 		},
 		{
 			root_title: nearest_pkg?.name,
