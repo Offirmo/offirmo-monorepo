@@ -4,7 +4,7 @@
 import { ObservableState } from '../l1-flux/l2-observable'
 
 import { LIB } from '../consts'
-import renderⵧstory from './l1-components/story'
+import renderⵧstory from './l1-components/preview'
 import renderⵧmanager from './l1-components/manager'
 
 /////////////////////////////////////////////////

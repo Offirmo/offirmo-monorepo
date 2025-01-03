@@ -4,7 +4,7 @@ import { type Immutable } from '@offirmo-private/ts-types'
 import { Story‿v2, Meta‿v2 } from '../../../../l0-types/l1-csf/v2'
 import { StoryEntry } from '../../../../l1-flux/l1-state/types.ts'
 import { LIB } from '../../../../consts'
-import { aggregateꓽRenderParams, RenderParams, StoryContext } from '../../../../l0-types/l1-csf'
+import {aggregateꓽRenderParams, isꓽRenderParamsWithComponent, isꓽRenderParamsWithRenderFunc, RenderParams, RenderParamsWithComponent, RenderParamsWithRenderFunc, StoryContext} from '../../../../l0-types/l1-csf'
 import {ObservableState} from '../../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
@@ -29,55 +29,48 @@ async function renderCSFV2(state: ObservableState, container: HTMLElement, entry
 	)
 	console.log('render_params=', render_params)
 
-	await _renderⵧaggregated_story(container, render_params)
+	switch (true) {
+		case isꓽRenderParamsWithComponent(render_params):
+			await _renderⵧcomponent(container, render_params)
+			break
+		case isꓽRenderParamsWithRenderFunc(render_params):
+			await _renderⵧrenderFunc(container, render_params)
+			break
+		default:
+			throw new Error(`CSFv2: No component nor render()??`)
+	}
 
 	console.groupEnd()
 }
 
-async function _renderⵧaggregated_story(container: HTMLElement, render_params: Immutable<RenderParams<Story‿v2>>) {
+async function _renderⵧcomponent(container: HTMLElement, render_params: Immutable<RenderParamsWithComponent<Story‿v2>>) {
 	console.log(render_params)
-	const { render, component } = render_params
+	throw new Error('CSFv2: component-based stories not implemented!')
+}
 
-	if (component) {
-		const isReact = (typeof component === 'function')
+async function _renderⵧrenderFunc(container: HTMLElement, render_params: Immutable<RenderParamsWithRenderFunc<Story‿v2>>) {
+	console.log(render_params)
+	const { render } = render_params
 
-		switch (true) {
-			case isReact: {
-				throw new Error(`CSF v2 React components not implemented yet!`)
-			}
-
-			default:
-				throw new Error(`CSF v2: Unrecognized story "component" format!`)
+	const decorated_render = render_params.decorators!.reduce((acc, decorator) => {
+		assert(typeof decorator === 'function', 'Decorator must be a function!')
+		assert(typeof acc === 'function', 'Decorator must be applied to a function!')
+		const context: StoryContext = {
+			args: render_params.args!
 		}
+		return decorator(acc as any, context)
+	}, render)
+	const rendered = decorated_render(render_params.args!)
 
-		if (render_params.decorators?.length) {
-			throw new Error('Decorators not implemented!')
-		}
+	if (typeof rendered === 'string') {
+		container.innerHTML = rendered
 	}
-	else if (render) {
-		const decorated_render = render_params.decorators!.reduce((acc, decorator) => {
-			assert(typeof decorator === 'function', 'Decorator must be a function!')
-			assert(typeof acc === 'function', 'Decorator must be applied to a function!')
-			const context: StoryContext = {
-				args: render_params.args!
-			}
-			return decorator(acc as any, context)
-		}, render)
-		const rendered = decorated_render(render_params.args!)
-
-		if (typeof rendered === 'string') {
-			container.innerHTML = rendered
-		}
-		else if (!!rendered && (typeof rendered === 'object') && ('$$typeof' in rendered)) {
-			// this is React JSX
-			container.innerHTML = `[CSFv2 is supported, as a convenience, only for trivial components. React is not supported. Please use CSF v3 format!]`
-		}
-		else {
-			throw new Error(`This render output is unrecognized and not supported!`)
-		}
+	else if (!!rendered && (typeof rendered === 'object') && ('$$typeof' in rendered)) {
+		// this is React JSX
+		container.innerHTML = `[CSFv2 is supported, as a convenience, only for trivial components. React is not supported. Please use CSF v3 format!]`
 	}
 	else {
-		throw new Error(`CSFv2: No component nor render()??`)
+		throw new Error(`This render output is unrecognized and not supported!`)
 	}
 }
 

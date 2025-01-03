@@ -52,26 +52,51 @@ export interface Decorator<StoryType = GenericStory> {
 }
 
 /////////////////////////////////////////////////
+// render params
 
-/** Basic params present possible on all stories and meta
+export interface CommonRenderParams<StoryType = GenericStory> {
+	parameters: Parameters
+	args: GenericArgs
+	decorators: Decorator<StoryType>[]
+}
+export interface RenderParamsWithComponent<StoryType = GenericStory> extends CommonRenderParams<StoryType> {
+	component: GenericStoryComponent
+}
+export interface RenderParamsWithRenderFunc<StoryType = GenericStory> extends CommonRenderParams<StoryType> {
+	render: (args: GenericArgs) => GenericStoryOutput
+}
+export type RenderParams<StoryType = GenericStory> =
+	| RenderParamsWithComponent<StoryType>
+	| RenderParamsWithRenderFunc<StoryType>
+
+export function isꓽRenderParamsWithComponent<StoryType>(rp: Immutable<RenderParams<StoryType>>): rp is RenderParamsWithComponent<StoryType> {
+	const forTypeDetection = rp as any
+	return !!forTypeDetection.component
+}
+export function isꓽRenderParamsWithRenderFunc<StoryType>(rp: Immutable<RenderParams<StoryType>>): rp is RenderParamsWithRenderFunc<StoryType> {
+	const forTypeDetection = rp as any
+	return !!forTypeDetection.render
+}
+
+/** Basic params possibly present on all stories and meta
+ * may not have all fields
  */
-export interface RenderParams<StoryType = GenericStory> {
+export interface RawRenderParams<StoryType = GenericStory> {
 	// can have neither, extending another RenderParams or simply being empty!
 	component?: GenericStoryComponent
 	render?: (args: GenericArgs) => GenericStoryOutput
 
+	// optional
 	parameters?: Parameters | undefined
-
 	args?: GenericArgs
-
 	decorators?: Decorator<StoryType>[]
 }
 
-/* aggregate multiple RenderParams into one
- * last one win
+/* Aggregate multiple RenderParams into one.
+ * Last one wins.
  */
 export function aggregateꓽRenderParams<StoryType>(
-	...params: Immutable<RenderParams<StoryType>[]>
+	...params: Immutable<RawRenderParams<StoryType>[]>
 ): Immutable<RenderParams<StoryType>> {
 	const candidate = params.reduce((acc, rp) => {
 		return {
@@ -91,13 +116,16 @@ export function aggregateꓽRenderParams<StoryType>(
 				...(rp.decorators || []),
 			],
 		}
-	}, {} as Immutable<RenderParams<StoryType>>)
+	}, {} as Immutable<CommonRenderParams<StoryType>>)
 
-	if (candidate.render && candidate.component)
+	const forTypeDetection = candidate as any
+	if (forTypeDetection.render && forTypeDetection.component)
 		throw new Error('Cannot have both a render and a component!')
 
-	if (!candidate.render && !candidate.component)
-		throw new Error('Empty story having neither a render nor a component!')
+	if (isꓽRenderParamsWithComponent<StoryType>(forTypeDetection))
+		return forTypeDetection
+	if (isꓽRenderParamsWithRenderFunc<StoryType>(forTypeDetection))
+		return forTypeDetection
 
-	return candidate
+	throw new Error('Empty story having neither a render nor a component!')
 }

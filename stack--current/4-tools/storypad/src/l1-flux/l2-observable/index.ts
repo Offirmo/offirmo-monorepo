@@ -9,7 +9,7 @@ import * as InMemState from '../l1-state/state--in-mem'
 import * as InMemStateSelectors from '../l1-state/state--in-mem/selectors.ts'
 import * as EnvStateSelectors from '../l1-state/state--env/selectors.ts'
 import * as UrlStateSelectors from '../l1-state/state--url/selectors.ts'
-import { RenderParams } from '../../l0-types/l1-csf'
+import { type CommonRenderParams } from '../../l0-types/l1-csf'
 import * as UrlState from '../l1-state/state--url'
 import { type StoryUId} from '../l1-state/types.ts'
 
@@ -120,7 +120,7 @@ class ObservableState {
 	getꓽmain_frame_url = UrlStateSelectors.getꓽmain_frame_url
 	getꓽstory_frame_url = UrlStateSelectors.getꓽstory_frame_url
 
-	getꓽRenderParamsⵧglobal<StoryType>(): RenderParams<StoryType> {
+	getꓽRenderParamsⵧglobal<StoryType>(): CommonRenderParams<StoryType> {
 		return {
 			parameters: {
 				...this.getꓽconfig().parameters,

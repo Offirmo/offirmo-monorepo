@@ -1,9 +1,9 @@
-import { RenderParams } from '../l1-csf'
+import { type CommonRenderParams } from '../l1-csf'
 
 /////////////////////////////////////////////////
 
-// note: extending RenderParams is non-standard
-export interface Config<StoryType = any> extends RenderParams<StoryType> {
+// note: extending RenderParams for convenience, but this is non-standard
+export interface Config<StoryType = any> extends Partial<CommonRenderParams<StoryType>> {
 
 	// https://storybook.js.org/docs/configure#configure-your-storybook-project
 	addons?: never // not implemented

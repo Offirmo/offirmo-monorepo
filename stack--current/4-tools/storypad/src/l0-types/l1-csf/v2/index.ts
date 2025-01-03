@@ -1,6 +1,6 @@
 import { Html‿str } from '@offirmo-private/ts-types-web'
 
-import { RenderParams, GenericArgs, GenericStoryOutput } from '../common'
+import { type RawRenderParams, GenericArgs, GenericStoryOutput } from '../common'
 
 /////////////////////////////////////////////////
 
@@ -18,7 +18,7 @@ import { RenderParams, GenericArgs, GenericStoryOutput } from '../common'
 /* default export
  * https://storybook.js.org/docs/api/csf#default-export
  */
-export interface Meta‿v2 extends RenderParams<Story‿v2> {
+export interface Meta‿v2 extends RawRenderParams<Story‿v2> {
 	// https://storybook.js.org/docs/api/csf#upgrading-from-csf-2-to-csf-3
 
 	// tweak inheritance from RenderParams
@@ -31,7 +31,7 @@ export interface Meta‿v2 extends RenderParams<Story‿v2> {
 
 /* named export = a story = a FUNCTION for v2
  */
-export interface Story‿v2 extends RenderParams<Story‿v2> {
+export interface Story‿v2 extends RawRenderParams<Story‿v2> {
 	(args: GenericArgs): GenericStoryOutput
 
 	// tweak inheritance from RenderParams

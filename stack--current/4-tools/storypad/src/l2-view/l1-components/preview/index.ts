@@ -4,6 +4,7 @@ import { type Immutable } from '@offirmo-private/ts-types'
 import { isꓽStory‿v3 } from '../../../l0-types/l1-csf/v3'
 import { isꓽStory‿v2 } from '../../../l0-types/l1-csf/v2'
 import { ObservableState } from '../../../l1-flux/l2-observable'
+import {StoryEntry} from '../../../l1-flux/l1-state/types.ts'
 
 /////////////////////////////////////////////////
 
@@ -11,21 +12,22 @@ const LIB = `renderꓽstory()`
 
 async function renderꓽstory(state: ObservableState, container: HTMLElement = document.body) {
 	container.innerText = `[${LIB}: starting...]`
-	try {
-		await _renderⵧstory(state, container)
-	} catch (err) {
-		console.error(`💣 Error in ${LIB}!`, err)
-		container.innerText = `[💣${LIB}: Error loading story! See dev console!]`
-	}
-}
 
-async function _renderⵧstory(state: ObservableState, container: HTMLElement) {
 	const storyEntry = state.getꓽstoryⵧcurrent()
 	if (!storyEntry) {
 		container.innerText = `[No stories found. Please add some or review your setup!]`
 		return
 	}
 
+	try {
+		await _renderⵧstory(state, storyEntry, container)
+	} catch (err) {
+		console.error(`💣 Error in ${LIB}!`, err)
+		container.innerText = `[💣${LIB}: Error loading story! See dev console!]`
+	}
+}
+
+async function _renderⵧstory(state: ObservableState, storyEntry: Immutable<StoryEntry>, container: HTMLElement) {
 	// @ts-expect-error bundler stuff
 	import('./index.css')
 
@@ -35,7 +37,6 @@ async function _renderⵧstory(state: ObservableState, container: HTMLElement) {
 		case isꓽStory‿v2(storyEntry.story): {
 			try {
 				const render_v2 = (await import('./v2')).default
-				assert(typeof render_v2 === 'function', `render_v2 should be a function!`)
 				await render_v2(state, container, storyEntry)
 			}
 			catch (err) {
@@ -48,7 +49,6 @@ async function _renderⵧstory(state: ObservableState, container: HTMLElement) {
 		case isꓽStory‿v3(storyEntry.story): {
 			try {
 				const render_v3 = (await import('./v3')).default
-				assert(typeof render_v3 === 'function', `render_v3 should be a function!`)
 				await render_v3(state, container, storyEntry)
 			}
 			catch (err) {

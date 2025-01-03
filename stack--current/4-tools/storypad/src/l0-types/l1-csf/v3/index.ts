@@ -1,6 +1,6 @@
 import { Html‿str } from '@offirmo-private/ts-types-web'
 
-import { RenderParams, GenericArgs, GenericStoryOutput } from '../common'
+import { type RawRenderParams, GenericArgs, GenericStoryOutput } from '../common'
 import { isꓽStory‿v2 } from '../v2'
 
 /////////////////////////////////////////////////
@@ -22,7 +22,7 @@ import { isꓽStory‿v2 } from '../v2'
  * https://storybook.js.org/docs/api/csf#default-export
  * TODO remove ? and auto-set them
  */
-export interface Meta‿v3 extends RenderParams<Story‿v3> {
+export interface Meta‿v3 extends RawRenderParams<Story‿v3> {
 	// https://storybook.js.org/docs/writing-stories#default-export
 
 	// tweak inheritance from RenderParams
@@ -40,7 +40,7 @@ export interface Meta‿v3 extends RenderParams<Story‿v3> {
 
 /* named export = a story = an OBJECT for v3
  */
-export interface Story‿v3 extends RenderParams<Story‿v3> {
+export interface Story‿v3 extends RawRenderParams<Story‿v3> {
 	// https://storybook.js.org/docs/writing-stories#defining-stories
 
 	// tweak inheritance from RenderParams

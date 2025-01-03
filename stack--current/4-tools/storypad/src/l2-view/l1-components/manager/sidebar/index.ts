@@ -10,16 +10,19 @@ import {ObservableState} from '../../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
 
+function renderⵧsidebar(state: ObservableState): HTMLElement {
+	console.group(`[${LIB}] renderⵧsidebar()`)
 
-function render(state: ObservableState, container: HTMLElement) {
-	console.group(`[${LIB}] renderⵧside_panel()`)
+	const root = document.createElement('div')
+	root.classList.add('storypad⋄ui-element', 'storypad⋄sidebar')
 
 	// @ts-expect-error bundler stuff
 	import('./index.css')
-
-	_append_folder(state, state.getꓽtree_root(), [], container)
+	_append_folder(state, state.getꓽtree_root(), [], root)
 
 	console.groupEnd()
+
+	return root
 }
 
 function _append_folder(state: ObservableState, treenode: Immutable<StoryTree>, path: Basename[], parent_elt: HTMLElement) {
@@ -73,4 +76,4 @@ function _append_leaf(state: ObservableState, story: Immutable<StoryEntry>, path
 
 /////////////////////////////////////////////////
 
-export default render
+export default renderⵧsidebar
