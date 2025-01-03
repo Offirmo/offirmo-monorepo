@@ -1,7 +1,7 @@
 {
 	"name": "@offirmo-private/storypad",
-	"version": "0.0.1",
 	"description": "Standalone storybook replacement",
+	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 
@@ -14,11 +14,11 @@
 		"@offirmo-private/css--utils": "*",
 		"@offirmo-private/data-structures": "*",
 		"@offirmo-private/features-detection-browser": "*",
+		"@offirmo-private/page-loaded": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/soft-execution-context--browser": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo-private/ts-types-web": "*",
-		"@offirmo-private/page-loaded": "*",
 		"@offirmo/universal-debug-api-browser": "^1",
 		"tiny-invariant": "^1",
 		"tslib": "^2"
@@ -35,8 +35,11 @@
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
 		"dev": "run-s clean--dist _build:dev:watch",
 
-		"_start:parcel": "parcel serve doc/demo/storypad.html --port 8080  --lazy  --no-autoinstall",
-		"demo": "npm-run-all  clean--cache  _start:parcel"
+		"_start:parcel--stories": "parcel serve doc/storypad/index.html --port 8080  --lazy  --no-autoinstall",
+		"stories": "run-s clean--cache _start:parcel--stories",
+
+		"_start:parcel--demo": "parcel serve doc/demo/storypad.html --port 8080  --lazy  --no-autoinstall",
+		"demo": "run-s  clean--cache  _start:parcel--demo"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

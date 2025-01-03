@@ -1,12 +1,16 @@
+//import './__shared/x-logger.js'
+
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 import { asap_but_out_of_immediate_execution } from '@offirmo-private/async-utils'
-
+import { ೱᐧpage_loaded } from '@offirmo-private/page-loaded'
 import { LIB } from './consts'
-import { Config } from './types/config'
+import { Config } from './l0-types/l2-config'
 
 /////////////////////////////////////////////////
 
+// strange behavior on Parcel.js start
+Array.from({length: 10}, () => { console.log('⇱'); console.groupEnd() })
 console.info(`%c ${LIB} %c${'CSFv3'}%c${'HTML/React'}`,
 	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: hsl(337, 16%, 28%); color: hsl(42, 100%, 87%); font-weight: bold;',
 	'border-radius: 1em; padding: .1em .5em; margin-inline-end: 1ch; background-color: darkgrey; color: black; font-weight: bold;',
@@ -18,13 +22,14 @@ const misconfig_detection = setTimeout(() => {
 
 /////////////////////////////////////////////////
 
-import logger from './services/logger.ts'
+import logger from './l2-view/l0-services/logger.ts'
+
+import { init as initꓽflux } from './l1-flux/dispatcher'
 
 // @ts-expect-error bundler advanced feature
-import initsⵧservices from './services/init/*.ts'
+import initsⵧservices from './l2-view/l0-services/init/*.ts'
 
-import { init as initꓽflux } from './flux/dispatcher'
-import render from './view'
+import render from './l2-view'
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -32,6 +37,12 @@ export async function startꓽstorypad(stories_glob: Immutable<any>, config?: Im
 	clearTimeout(misconfig_detection)
 
 	console.log(`[${LIB}] scheduling…`)
+
+	// on first load, parcel.js in debug mode has some strange behavior
+	// let's try waiting
+	await ೱᐧpage_loaded
+	console.log(`[${LIB}] page loaded ✅ resuming…`)
+
 	await asap_but_out_of_immediate_execution(async () => {
 		const is_iframe = ( window.location !== window.parent.location )
 		console.group(`[${LIB}] Starting… [${is_iframe ? 'SUB frame' : 'TOP frame'}]`)
