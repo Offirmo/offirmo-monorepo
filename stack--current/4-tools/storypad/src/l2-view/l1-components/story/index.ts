@@ -14,8 +14,8 @@ async function renderꓽstory(container: HTMLElement = document.body) {
 	try {
 		await _renderⵧstory(container)
 	} catch (err) {
-		console.error(`Error in ${LIB}!`, err)
-		container.innerText = `[${LIB}: Error loading story! See dev console!]`
+		console.error(`💣 Error in ${LIB}!`, err)
+		container.innerText = `[💣${LIB}: Error loading story! See dev console!]`
 	}
 }
 

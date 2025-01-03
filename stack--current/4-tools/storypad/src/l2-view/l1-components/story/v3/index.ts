@@ -32,22 +32,26 @@ async function renderCSFV3(entry: Immutable<StoryEntry>) {
 
 	switch (true) {
 		case story.render !== undefined: {
-			//
 
 			const rendered: unknown = story.render({
 				...meta.args,
 				...story.args,
 			})
 
+			if (typeof rendered === 'string') {
+				document.body.innerHTML = rendered
+				break
+			}
+
 			if (!!rendered && (typeof rendered === 'object') && ('$$typeof' in rendered)) {
-				// this is React
+				// this is React JSX
 				_renderⵧcomponent(() => rendered, story, meta)
 				break
 			}
 
-			document.body.innerText = '[CSF v3: TODO unrecognized output of "render()"!]'
-			console.error('XXX', rendered)
-			throw new Error(`Not implemented!`)
+			document.body.innerText = '[💣CSF v3: TODO unrecognized output of "render()"!]'
+			console.error('XXX rendered=', rendered)
+			break
 		}
 
 		case story.component !== undefined: {

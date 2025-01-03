@@ -54,8 +54,7 @@ async function _renderⵧaggregated_story(render_params: Immutable<RenderParams<
 			throw new Error('Decorators not implemented!')
 		}
 	}
-
-	if (render) {
+	else if (render) {
 		const decorated_render = render_params.decorators!.reduce((acc, decorator) => {
 			assert(typeof decorator === 'function', 'Decorator must be a function!')
 			assert(typeof acc === 'function', 'Decorator must be applied to a function!')
@@ -66,9 +65,19 @@ async function _renderⵧaggregated_story(render_params: Immutable<RenderParams<
 		}, render)
 		const rendered = decorated_render(render_params.args!)
 
-		assert(typeof rendered === 'string', `render output not a string is not supported!`)
-
-		document.body.innerHTML = rendered
+		if (typeof rendered === 'string') {
+			document.body.innerHTML = rendered
+		}
+		else if (!!rendered && (typeof rendered === 'object') && ('$$typeof' in rendered)) {
+			// this is React JSX
+			document.body.innerHTML = `[CSFv2 is supported, as a convenience, only for trivial components. React is not supported. Please use CSF v3 format!]`
+		}
+		else {
+			throw new Error(`This render output is unrecognized and not supported!`)
+		}
+	}
+	else {
+		throw new Error(`CSFv2: No component nor render()??`)
 	}
 }
 

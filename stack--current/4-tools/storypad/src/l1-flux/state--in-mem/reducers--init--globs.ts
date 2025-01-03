@@ -2,14 +2,16 @@ import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
 import {
-	ImportGlob, isꓽImportGlob,
-	ImportModule, isꓽImportModule,
+	type ImportGlob, isꓽImportGlob,
+	type ImportModule, isꓽImportModule,
 } from '../../l0-types/l0-glob'
+import { type Module‿Parcelv2, isꓽMultiModule‿Parcelv2} from '../../l0-types/l0-glob/parcel/v2'
 
 import { SEPⵧSEGMENTS, SEPⵧSTORY } from '../../consts'
 import { StoryEntry, isꓽStoryEntry } from '../types'
 import { type State } from './types'
 import { registerꓽstory } from './reducers'
+import logger from '../../l2-view/l0-services/logger.ts'
 
 /////////////////////////////////////////////////
 
@@ -51,6 +53,19 @@ async function _registerꓽstoriesⵧfrom_glob_or_module(state: State, stories_g
 				state = await _registerꓽstoriesⵧfrom_module(state, blob, subpath)
 				break
 
+			case isꓽMultiModule‿Parcelv2(blob): {
+				// special case... (sse type definition)
+				// let's break this multi-module into individual modules
+				state = await Object.keys(blob).sort().reduce(async (acc, extension) => {
+					const state = await acc
+					const module: Module‿Parcelv2 = {
+						[extension]: (blob as any)[extension]!
+					}
+					return _registerꓽstoriesⵧfrom_module(state, module, [ ...subpath, extension ])
+				}, Promise.resolve(state))
+				break
+			}
+
 			case isꓽImportGlob(blob):
 				state = await _registerꓽstoriesⵧfrom_glob_or_module(state, blob, subpath)
 				break
@@ -80,10 +95,10 @@ async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Imm
 				return await exports_sync_or_async()
 			}
 			catch (err) {
-				console.error(`Error while loading the story "${parent_path.join(SEPⵧSEGMENTS)}"!`, err)
+				console.error(`💣Error while loading the story "${parent_path.join(SEPⵧSEGMENTS)}"!`, err)
 				return {
 					'!ERROR!': () => {
-						console.error(`Error while loading the story "${parent_path.join(SEPⵧSEGMENTS)}"!`, err)
+						console.error(`💣Error while loading the story "${parent_path.join(SEPⵧSEGMENTS)}"!`, err)
 						return `Error while loading stories from "${parent_path.join(SEPⵧSEGMENTS)}"! (see console)`
 					}
 				}
