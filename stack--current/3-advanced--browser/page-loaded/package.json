@@ -1,17 +1,36 @@
 {
 	"name": "@offirmo-private/page-loaded",
+	"description": "Exposes fully-wired document & page loaded as an awaitable promise",
 	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 	"private": true,
 
 	"sideEffects": true,
-	"source": "./src/index.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/src.es2024.esm/index.js"
+		}
+	},
+	"module": "dist/src.es2024.esm/index.js",
+	"typings": "dist/src.es2024.esm/index.d.ts",
+	"source": "src/index.ts",
 
+	"peerDependencies": {
+		"tslib": "^2"
+	},
 	"dependencies": {
 	},
 
 	"scripts": {
-		"clean": "monorepo-script--clean-package  …cache …dist"
+		"clean": "monorepo-script--clean-package …dist",
+
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"_build:prod": "monorepo-script--build-typescript-package",
+
+		"dev": "run-s clean _build:dev:watch",
+		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

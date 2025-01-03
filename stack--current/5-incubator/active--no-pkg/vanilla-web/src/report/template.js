@@ -6,8 +6,8 @@ function reportꓽx(parent, LIB) {
 		'link'
 	)
 
-	LIB.try_or_report(node, 'trying X', () => {
-		node.results.push(['X=', undefined])
+	LIB.try_or_report(node, 'trying X…', () => {
+		node.results.push(['X =', undefined])
 	})
 
 	LIB.add_child(parent, node)
@@ -21,7 +21,7 @@ function reportꓽy(parent, LIB) {
 		'link',
 	)
 
-	LIB.try_or_report(node, 'trying Y', () => {
+	LIB.try_or_report(node, 'trying Y…', () => {
 		throw new Error('TEST error!')
 	})
 

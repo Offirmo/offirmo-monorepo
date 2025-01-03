@@ -3,6 +3,7 @@
 // TODO
 // TODO workers https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 
+import { LIB } from '../consts.js'
 /*
 
  */
@@ -13,16 +14,20 @@ function reportꓽoriginsⵧcommunicating(parent, LIB) {
 	const node = LIB.create_node('postMessage() spying')
 
 	node.references.push(
-		'link'
+		'https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel'
 	)
 
-	LIB.try_or_report(node, 'trying X', () => {
+	LIB.try_or_report(node, 'listening to messages…', () => {
 		const originsSet = new Set()
+
 		window.addEventListener("message",(event) => {
 			console.log(event)
 		});
 
-		//node.results.push(['X=', undefined])
+		const bc = new BroadcastChannel(LIB)
+		bc.postMessage('Hi!')
+
+		node.results.push(['Seen origins =', originsSet])
 	})
 
 	LIB.add_child(parent, node)

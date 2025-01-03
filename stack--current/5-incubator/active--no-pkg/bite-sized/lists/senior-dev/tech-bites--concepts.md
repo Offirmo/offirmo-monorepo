@@ -565,6 +565,7 @@ status codes
 Stick to boring architecture for as long as possible https://addyosmani.com/blog/boring-architecture/
 stories to help you grow as a software developer https://medium.com/@MediumStaff/list/stories-to-help-you-grow-as-a-software-developer-b1d913188c20
 streams
+style guides https://google.github.io/styleguide/
 superapp
 Sustainable Architectural Decisions https://adr.github.io/
 system boundaries = a publicly exposed interface that third-party developers are going to use. It’s the inability to make breaking changes because you have external users to support that really defines a boundary. As a result, you have to pay special attention to get the design of a system boundary right—it’s not easy to make changes in the future. Boundaries are more important than other parts of our programs that we can refactor at will. https://www.tedinski.com/2018/02/06/system-boundaries.html
