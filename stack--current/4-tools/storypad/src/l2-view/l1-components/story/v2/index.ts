@@ -2,20 +2,20 @@ import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
 import { Story‿v2, Meta‿v2 } from '../../../../l0-types/l1-csf/v2'
-import { StoryEntry } from '../../../../l1-flux/types.ts'
+import { StoryEntry } from '../../../../l1-flux/l1-state/types.ts'
 import { LIB } from '../../../../consts'
-import { getꓽRenderParamsⵧglobal } from '../../../../l1-flux/selectors'
 import { aggregateꓽRenderParams, RenderParams, StoryContext } from '../../../../l0-types/l1-csf'
+import {ObservableState} from '../../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
 console.log('Loading the CSF v2 renderer...')
 
-async function renderCSFV2(container: HTMLElement, entry: Immutable<StoryEntry>) {
+async function renderCSFV2(state: ObservableState, container: HTMLElement, entry: Immutable<StoryEntry>) {
 	console.group(`[${LIB}] Rendering a CSF v2 story…`)
 	console.log('StoryEntry=', entry)
 	const story: Immutable<Story‿v2> = entry.story as any
 	const meta = (entry.meta || {}) as any as Meta‿v2
-	const global_render_params = getꓽRenderParamsⵧglobal<Story‿v2>()
+	const global_render_params = state.getꓽRenderParamsⵧglobal<Story‿v2>()
 	console.log({
 		story,
 		meta,

@@ -3,7 +3,7 @@ import { FileSystemNodeⳇFolder } from '@offirmo-private/data-structures'
 import {
 	Story, isꓽStory,
 	Meta,
-} from '../l0-types/l1-csf'
+} from '../../l0-types/l1-csf'
 
 /////////////////////////////////////////////////
 

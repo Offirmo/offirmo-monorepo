@@ -4,8 +4,8 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { StoryUId } from '../types'
-import { getꓽmain_frame_url } from './selectors'
+import { StoryUId } from '../types.ts'
+import { getꓽmain_frame_url } from './selectors.ts'
 
 /////////////////////////////////////////////////
 

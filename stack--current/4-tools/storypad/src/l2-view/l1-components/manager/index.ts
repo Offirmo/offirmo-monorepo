@@ -1,22 +1,21 @@
 import assert from 'tiny-invariant'
 import { Url‿str } from '@offirmo-private/ts-types'
 
-import { FolderUId, StoryUId } from '../../../l1-flux/types.ts'
-import { getꓽstory_frame_url, getꓽstoryⵧcurrent } from '../../../l1-flux/selectors'
-import { requestꓽstory } from '../../../l1-flux/dispatcher.ts'
+import { FolderUId, StoryUId } from '../../../l1-flux/l1-state/types.ts'
 
 import renderⵧside_panel from './side-panel'
+import {ObservableState} from '../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
 
-async function renderꓽmanager(container: HTMLElement = document.body) {
+async function renderꓽmanager(state: ObservableState, container: HTMLElement = document.body) {
 
 	// we're the top frame
 	// render the full UI:
 	// 1. side panel
-	renderⵧside_panel(container)
+	renderⵧside_panel(state, container)
 	// 2. story screen
-	const { iframe_elt } = _renderⵧstory_area(container)
+	const { iframe_elt } = _renderⵧstory_area(state, container)
 
 	// navigation
 	container.addEventListener('click', function(e) {
@@ -32,9 +31,9 @@ async function renderꓽmanager(container: HTMLElement = document.body) {
 			const story_uid: StoryUId = target.getAttribute('id')
 			console.log({target, story_uid, href})
 
-			const previous_story‿uid = getꓽstoryⵧcurrent()!.uid!
+			const previous_story‿uid = state.getꓽstoryⵧcurrent()!.uid!
 
-			requestꓽstory(story_uid)
+			state.requestꓽstory(story_uid)
 			iframe_elt.src = href
 			target.classList.add('current')
 			return
@@ -52,15 +51,15 @@ async function renderꓽmanager(container: HTMLElement = document.body) {
 }
 
 
-function _renderⵧstory_area(container: HTMLElement) {
+function _renderⵧstory_area(state: ObservableState, container: HTMLElement) {
 	// TODO top nav
-	return _renderⵧstory_frame(container)
+	return _renderⵧstory_frame(state, container)
 }
 
-function _renderⵧstory_frame(container: HTMLElement) {
+function _renderⵧstory_frame(state: ObservableState, container: HTMLElement) {
 	const iframe_elt = document.createElement('iframe')
-	const current_story = getꓽstoryⵧcurrent()
-	iframe_elt.src = getꓽstory_frame_url(current_story?.uid)
+	const current_story = state.getꓽstoryⵧcurrent()
+	iframe_elt.src = state.getꓽstory_frame_url(current_story?.uid)
 	iframe_elt.id = 'storypad⋄iframe'
 	console.log('adding the story iframe…', {iframe_elt})
 	container.appendChild(iframe_elt)

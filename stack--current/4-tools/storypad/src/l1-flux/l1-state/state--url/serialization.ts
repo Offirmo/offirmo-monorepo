@@ -2,8 +2,8 @@
  */
 
 import assert from 'tiny-invariant'
-import { StoryUId } from '../types'
-import { SEPⵧSEGMENTS, SEPⵧSTORY } from '../../consts'
+import { StoryUId } from '../types.ts'
+import { SEPⵧSEGMENTS, SEPⵧSTORY } from '../../../consts.ts'
 
 /////////////////////////////////////////////////
 

@@ -24,7 +24,7 @@ const misconfig_detection = setTimeout(() => {
 
 import logger from './l2-view/l0-services/logger.ts'
 
-import { init as initꓽflux } from './l1-flux/dispatcher'
+import { ObservableState } from './l1-flux/l2-observable'
 
 // @ts-expect-error bundler advanced feature
 import initsⵧservices from './l2-view/l0-services/init/*.ts'
@@ -68,13 +68,14 @@ export async function startꓽstorypad(stories_glob: Immutable<any>, config?: Im
 
 		// 2. flux
 		console.groupCollapsed(`[${LIB}] 2/3 Flux init…`)
-		await initꓽflux(stories_glob, config)
+		const flux = new ObservableState()
+		await flux.init(stories_glob, config)
 		console.log(`[${LIB}] 2/3 Flux init ✅`)
 		console.groupEnd()
 
 		// 3. view
 		console.group(`[${LIB}] 3/3 View init…`)
-		await render()
+		await render(flux)
 		console.log(`[${LIB}] 3/3 View init ✅`)
 		console.groupEnd()
 

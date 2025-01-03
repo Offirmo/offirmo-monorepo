@@ -1,6 +1,7 @@
 
-import { Config } from '../../l0-types/l2-config'
-import { StoryUId, StoryTree } from '../types'
+import { Config } from '../../../l0-types/l2-config'
+
+import { StoryUId, StoryTree } from '../types.ts'
 
 /////////////////////////////////////////////////
 

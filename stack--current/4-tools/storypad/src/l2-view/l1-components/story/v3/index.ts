@@ -3,20 +3,20 @@ import { type Immutable } from '@offirmo-private/ts-types'
 
 import { aggregateꓽRenderParams, GenericStoryComponent } from '../../../../l0-types/l1-csf'
 import { Story‿v3, Meta‿v3 } from '../../../../l0-types/l1-csf/v3'
-import { StoryEntry } from '../../../../l1-flux/types.ts'
+import { StoryEntry } from '../../../../l1-flux/l1-state/types.ts'
 import { LIB } from '../../../../consts'
-import { getꓽRenderParamsⵧglobal } from '../../../../l1-flux/selectors.ts'
+import {ObservableState} from '../../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
 console.log('Loading the CSF v3 renderer...')
 // reminder: https://storybook.js.org/docs/writing-stories#component-story-format
 
-async function renderCSFV3(container: HTMLElement, entry: Immutable<StoryEntry>) {
+async function renderCSFV3(state: ObservableState, container: HTMLElement, entry: Immutable<StoryEntry>) {
 	console.group(`[${LIB}] Rendering a CSF v3 story…`)
 	console.log('StoryEntry=', entry)
 	const story: Immutable<Story‿v3> = entry.story as any
 	const meta = (entry.meta || {}) as any as Meta‿v3
-	const global_render_params = getꓽRenderParamsⵧglobal<Story‿v3>()
+	const global_render_params = state.getꓽRenderParamsⵧglobal<Story‿v3>()
 	console.log({
 		story,
 		meta,

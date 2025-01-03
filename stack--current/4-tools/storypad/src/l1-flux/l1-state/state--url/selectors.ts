@@ -4,9 +4,9 @@
 import assert from 'tiny-invariant'
 import { Url‿str } from '@offirmo-private/ts-types'
 
-import { QUERYPARAMS } from './consts'
-import { StoryUId, RenderMode, isꓽrender_mode } from '../types'
-import { serializeꓽstory_uid, unserializeꓽstory_uid } from './serialization'
+import { QUERYPARAMS } from './consts.ts'
+import { StoryUId, RenderMode, isꓽrender_mode } from '../types.ts'
+import { serializeꓽstory_uid, unserializeꓽstory_uid } from './serialization.ts'
 
 
 /////////////////////////////////////////////////
