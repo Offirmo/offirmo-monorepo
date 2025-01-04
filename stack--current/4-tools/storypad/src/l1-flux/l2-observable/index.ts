@@ -1,13 +1,14 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
+import { isꓽframed } from '@offirmo-private/features-detection-browser/src/l1-is-framed'
+
 import { ImportGlob } from '../../l0-types/l0-glob'
 import { type Config } from '../../l0-types/l2-config'
 
 import { FolderUId, StoryEntry, RenderMode, StoryTree } from '../l1-state/types.ts'
 import * as InMemState from '../l1-state/state--in-mem'
 import * as InMemStateSelectors from '../l1-state/state--in-mem/selectors.ts'
-import * as EnvStateSelectors from '../l1-state/state--env/selectors.ts'
 import * as UrlStateSelectors from '../l1-state/state--url/selectors.ts'
 import { type CommonRenderParams } from '../../l0-types/l1-csf'
 import * as UrlState from '../l1-state/state--url'
@@ -95,13 +96,12 @@ class ObservableState {
 		if (explicit_render_mode)
 			return explicit_render_mode
 
-		const is_iframe = EnvStateSelectors.isꓽiframe(this.window)
-		if (is_iframe) {
+		if (isꓽframed()) {
 			// we're in an iframe -> we're the story
-			return 'story'
+			return RenderMode.story
 		}
 
-		return 'full'
+		return RenderMode.manager
 	}
 
 // must only return "undef" if NO stories

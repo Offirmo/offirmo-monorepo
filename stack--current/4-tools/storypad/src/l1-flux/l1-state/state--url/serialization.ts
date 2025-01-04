@@ -1,4 +1,5 @@
 /* serialization/deserialization related to the state stored in url
+ * TODO should be moved to type
  */
 
 import assert from 'tiny-invariant'
@@ -6,6 +7,13 @@ import { StoryUId } from '../types.ts'
 import { SEPⵧSEGMENTS, SEPⵧSTORY } from '../../../consts.ts'
 
 /////////////////////////////////////////////////
+
+function getꓽlast_segment(uid: StoryUId): string {
+	const segments = uid.split(SEPⵧSEGMENTS)
+	const story_name = segments.pop()
+	assert(story_name, `serializeꓽstory_uid() expecting a final story basename! "${uid}"`)
+	return story_name
+}
 
 function serializeꓽstory_uid(uid: StoryUId): string {
 	const segments = uid.split(SEPⵧSEGMENTS)
@@ -46,10 +54,10 @@ function unserializeꓽstory_uid(serialized_uid: string | undefined | null): Sto
 		return undefined
 	}
 }
-
 /////////////////////////////////////////////////
 
 export {
+	getꓽlast_segment,
 	serializeꓽstory_uid,
 	unserializeꓽstory_uid,
 }

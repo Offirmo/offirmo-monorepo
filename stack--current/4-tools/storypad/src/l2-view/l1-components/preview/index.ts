@@ -10,8 +10,13 @@ import {StoryEntry} from '../../../l1-flux/l1-state/types.ts'
 
 const LIB = `renderꓽstory()`
 
-async function renderꓽstory(state: ObservableState, container: HTMLElement = document.body) {
-	container.innerText = `[${LIB}: starting...]`
+async function renderꓽstory(state: ObservableState, container: HTMLElement) {
+
+	const storyContainer = document.createElement('div')
+	storyContainer.classList.add('o⋄fill-parent', 'storypad⋄story-container')
+	storyContainer.innerText = `[${LIB}: starting...]`
+	storyContainer.style.position = 'relative'
+	container.appendChild(storyContainer)
 
 	const storyEntry = state.getꓽstoryⵧcurrent()
 	if (!storyEntry) {
@@ -20,10 +25,13 @@ async function renderꓽstory(state: ObservableState, container: HTMLElement = d
 	}
 
 	try {
-		await _renderⵧstory(state, storyEntry, container)
+		await _renderⵧstory(state, storyEntry, storyContainer)
 	} catch (err) {
 		console.error(`💣 Error in ${LIB}!`, err)
-		container.innerText = `[💣${LIB}: Error loading story! See dev console!]`
+		storyContainer.innerText = `
+[💣${LIB}: Error loading story! See dev console!]
+[${(err as any)?.message}]
+`
 	}
 }
 
@@ -32,8 +40,8 @@ async function _renderⵧstory(state: ObservableState, storyEntry: Immutable<Sto
 	import('./index.css')
 
 	console.log('Rendering story:', storyEntry)
-	switch (true) {
 
+	switch (true) {
 		case isꓽStory‿v2(storyEntry.story): {
 			try {
 				const render_v2 = (await import('./v2')).default
@@ -59,13 +67,8 @@ async function _renderⵧstory(state: ObservableState, storyEntry: Immutable<Sto
 		}
 
 		default:
-			throw new Error(`Unsupported story format! (yet!)`)
+			throw new Error(`Unsupported story format! (yet?)`)
 	}
-
-	const path_elt = document.createElement('div')
-	path_elt.setAttribute('id', 'path');
-	path_elt.innerText = storyEntry.uid
-	container.appendChild(path_elt)
 }
 
 /////////////////////////////////////////////////

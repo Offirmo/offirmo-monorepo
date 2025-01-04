@@ -1,3 +1,5 @@
+import { Enum } from 'typescript-string-enums'
+
 import { FileSystemNodeⳇFolder } from '@offirmo-private/data-structures'
 
 import {
@@ -33,7 +35,18 @@ export type StoryTree = FileSystemNodeⳇFolder<StoryEntry, StoryFolder>
 
 /////////////////////////////////////////////////
 
-export type RenderMode = 'full' | 'story'
+// tslint:disable-next-line: variable-name
+export const RenderMode = Enum(
+	// from Storybook
+	'story',
+	'settings', // ??
+	'docs',
+	// storypad extensions
+	'manager', // = full
+	'story_full', // story + control bar + panel
+)
+export type RenderMode = Enum<typeof RenderMode> // eslint-disable-line no-redeclare
+
 export function isꓽrender_mode(x: any): x is RenderMode {
-	return ['full', 'story'].includes(x)
+	return Enum.isType(RenderMode, x)
 }

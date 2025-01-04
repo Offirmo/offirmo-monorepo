@@ -13,7 +13,7 @@ export const QUERYPARAMS = {
 
 	// args
 
-	// &viewMode=story
+	// seen: &viewMode=story
 	render_mode: 'viewMode',
 
 	// globals=theme:dark

@@ -11,7 +11,7 @@ addEventListener("popstate", (event) => {
 });*/
 
 // TODO rewrite
-function isꓽiframe(window: Window):boolean {
+function isꓽiframe(window: Window): boolean {
 	return window.location !== window.parent.location
 }
 

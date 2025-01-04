@@ -16,7 +16,7 @@
 
 /************************************/
 
-.storypad⋄root {
+.storypad⋄manager {
 	padding: 0;
 	margin: 0;
 
@@ -30,20 +30,20 @@
 		resize: horizontal;
 		overflow-y: scroll;
 	}
-	.storypad⋄stories-area {
+	.storypad⋄story-area {
 		flex-grow: 9999;
 	}
 }
 
 /************************************/
-/* DEBUG
-.storypad⋄root {
+/* DEBUG *
+.storypad⋄manager {
 	background-color: red;
 }
 .storypad⋄sidebar {
 	background-color: lightgreen;
 }
-.storypad⋄stories-area {
+.storypad⋄story-area {
 	background-color: lightskyblue;
 }
  */

@@ -7,8 +7,8 @@ import { Url‿str } from '@offirmo-private/ts-types'
 
 //import { FolderUId, StoryUId } from '../../../l1-flux/l1-state/types.ts'
 
-import {ObservableState} from '../../../../l1-flux/l2-observable'
-import {StoryEntry} from '../../../../l1-flux/l1-state/types.ts'
+import {ObservableState} from '../../../l1-flux/l2-observable'
+import {StoryEntry} from '../../../l1-flux/l1-state/types.ts'
 
 import renderꓽcontrolbar from './controlbar'
 import renderꓽdrawer from './drawer'
@@ -17,9 +17,9 @@ import renderꓽdrawer from './drawer'
 
 const IFRAME_CLASS = 'storypad⋄story-iframe'
 
-function renderꓽstoriesᝍarea(state: ObservableState): HTMLElement {
+function renderꓽstoryᝍarea(state: ObservableState): HTMLElement {
 	const root = document.createElement('div')
-	root.classList.add('storypad⋄stories-area')
+	root.classList.add('storypad⋄story-area')
 
 	// @ts-expect-error bundler stuff
 	import('./index.css')
@@ -55,6 +55,7 @@ function _renderⵧstory_frame(state: ObservableState, storyEntry = state.getꓽ
 /////////////////////////////////////////////////
 
 export {
+	renderꓽstoryᝍarea,
 	IFRAME_CLASS,
 }
-export default renderꓽstoriesᝍarea
+export default renderꓽstoryᝍarea

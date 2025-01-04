@@ -75,7 +75,7 @@ export async function startꓽstorypad(stories_glob: Immutable<any>, config?: Im
 
 		// 3. view
 		console.group(`[${LIB}] 3/3 View init…`)
-		await render(flux)
+		render(flux)
 		console.log(`[${LIB}] 3/3 View init ✅`)
 		console.groupEnd()
 

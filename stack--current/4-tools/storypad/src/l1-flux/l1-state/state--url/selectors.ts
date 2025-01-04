@@ -11,7 +11,7 @@ import { serializeꓽstory_uid, unserializeꓽstory_uid } from './serialization.
 
 /////////////////////////////////////////////////
 
-function _getꓽcurrent_urlⵧup_to_pathname(): string {
+function _getꓽcurrent_urlⵧup_to_pathname‿str(): string {
 	const location = document.location
 	return location.origin + location.pathname
 }
@@ -21,21 +21,32 @@ function _getꓽcurrent_url__search_params(): URLSearchParams {
 	return url‿obj.searchParams
 }
 
+function getꓽmain_frame_url‿obj(uid?: StoryUId): URL {
+	const url = new URL(_getꓽcurrent_urlⵧup_to_pathname‿str())
+
+	if (uid) {
+		url.searchParams.set(QUERYPARAMS.story_path, serializeꓽstory_uid(uid))
+	}
+
+	url.searchParams.sort()
+
+	return url
+}
+
 /** return the normalized, state-enriched URL loading this storypad with the given activated story + misc
  */
 function getꓽmain_frame_url(uid?: StoryUId): Url‿str {
-	const sp = new URLSearchParams()
-	if (uid) {
-		sp.set(QUERYPARAMS.story_path, serializeꓽstory_uid(uid))
-	}
-
-	sp.sort()
-
-	return _getꓽcurrent_urlⵧup_to_pathname() + '?' + sp.toString()
+	return getꓽmain_frame_url‿obj(uid).href
 }
 
 function getꓽstory_frame_url(uid?: StoryUId): Url‿str {
-	return getꓽmain_frame_url(uid) // no difference for now
+	const url = getꓽmain_frame_url‿obj(uid)
+
+	// let's be explicit
+	url.searchParams.set(QUERYPARAMS.render_mode, 'story')
+	url.searchParams.sort()
+
+	return url.href
 }
 
 function getꓽexplicit_render_mode(): RenderMode | undefined {

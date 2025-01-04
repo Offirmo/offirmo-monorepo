@@ -1,6 +1,9 @@
 import { LIB, DEBUG } from '../consts.js'
 import { log_anything, report_shared_state_change } from '../../tosort/2024/shared-state/reducers'
-import { is_browser_connected_to_a_network, is_browser_page_visible } from '../../tosort/2024/shared-state/selectors'
+import { is_browser_connected_to_a_network } from '../l1-is-online'
+import { is_browser_page_visible } from '../l1-is-page-visible'
+
+//import { is_browser_connected_to_a_network, is_browser_page_visible } from '../../tosort/2024/shared-state/selectors'
 
 if (DEBUG) console.info(`[${LIB}] Hello!`)
 
@@ -78,7 +81,7 @@ window.addEventListener('pointerover', onꓽpointer_over)
 
 /////////////////////
 
-
+/*
 // https://devdocs.io/dom/navigatoronline/online_and_offline_events
 window.addEventListener('offline', (event) => {
 	state = report_shared_state_change(state, '[⚡️offline] network connectivity changed to: ' + is_browser_connected_to_a_network())
@@ -93,11 +96,11 @@ document.addEventListener('visibilitychange', () => {
 	state = report_shared_state_change(state, '[⚡️visibilitychange] visibility changed to: ' + is_browser_page_visible())
 	emitter.emit(EMITTER_EVT, `visibilitychange`)
 })
-
+*/
 
 /////////////////////
 
-
+/*
 // https://web.dev/bfcache/#apis-to-observe-bfcache
 window.addEventListener('pageshow', (event) => {
 	if (event.persisted) {
@@ -117,13 +120,13 @@ window.addEventListener('beforeunload', (event) => {
 	/*if (pageHasUnsavedChanges()) {
 		event.preventDefault();
 		return event.returnValue = 'Are you sure you want to exit?';
-	}*/
+	}*
 }, {capture: true})
 
 window.addEventListener('unload', (event) => {
 	state = log_anything(state, `[⚡️unload]`)
 })
-
+*/
 
 /////////////////////////////////////////////////
 
