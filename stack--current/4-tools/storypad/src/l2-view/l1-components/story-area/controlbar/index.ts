@@ -22,7 +22,7 @@ function renderꓽcontrolbar(state: ObservableState): HTMLElement {
 	if (!storyEntry) {
 		root.innerText = `[No current story]`
 	} else {
-		console.log(`XXX `, {
+		console.log(`renderꓽcontrolbar()`, {
 			storyEntry,
 			href: state.getꓽstory_frame_url(storyEntry.uid),
 		})

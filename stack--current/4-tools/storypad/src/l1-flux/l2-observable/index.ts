@@ -123,6 +123,8 @@ class ObservableState {
 	getꓽRenderParamsⵧglobal<StoryType>(): CommonRenderParams<StoryType> {
 		return {
 			parameters: {
+				// defaults
+				layout: 'padded',
 				...this.getꓽconfig().parameters,
 				// TODO from QParams
 			},

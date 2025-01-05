@@ -27,9 +27,20 @@ export interface GenericArgs {
 /////////////////////////////////////////////////
 // https://storybook.js.org/docs/api/parameters
 
+// Parameters are static metadata used to configure your stories and addons
 export interface Parameters {
 	// https://storybook.js.org/docs/api/parameters#available-parameters
-	// TODO layout: 'centered' | 'fullscreen' | 'padded' // Default: 'padded'
+
+	// https://storybook.js.org/docs/configure/story-layout
+	layout:
+		// from storybook
+		| 'centered'
+		| 'fullscreen'
+		| 'padded' // storybook default
+		// storypad
+		| 'bare' // = as few things as possible
+
+
 	//pageLayout = 'page' (or 'page-mobile'
 }
 
@@ -87,7 +98,7 @@ export interface RawRenderParams<StoryType = GenericStory> {
 	render?: (args: GenericArgs) => GenericStoryOutput
 
 	// optional
-	parameters?: Parameters | undefined
+	parameters?: Partial<Parameters> | undefined
 	args?: GenericArgs
 	decorators?: Decorator<StoryType>[]
 }
@@ -98,7 +109,8 @@ export interface RawRenderParams<StoryType = GenericStory> {
 export function aggregateꓽRenderParams<StoryType>(
 	...params: Immutable<RawRenderParams<StoryType>[]>
 ): Immutable<RenderParams<StoryType>> {
-	const candidate = params.reduce((acc, rp) => {
+	const candidate =
+		params.reduce((acc, rp) => {
 		return {
 			...acc,
 			...rp,

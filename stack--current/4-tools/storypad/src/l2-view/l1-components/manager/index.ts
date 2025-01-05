@@ -21,13 +21,14 @@ function renderꓽmanager(state: ObservableState): HTMLElement {
 	// @ts-expect-error bundler stuff
 	import('./index.css')
 	// 1. side panel
-	root.appendChild(renderⵧsidebar(state))
+	const sidebar_elt = renderⵧsidebar(state)
+	root.appendChild(sidebar_elt)
 	// 2. story screen
 	let story_area_elt = renderⵧstory_area(state)
 	root.appendChild(story_area_elt)
 
 	// navigation
-	root.addEventListener('click', function(e) {
+	sidebar_elt.addEventListener('click', function(e) {
 		const target = (e as any).target
 
 		console.log(`Click!`)

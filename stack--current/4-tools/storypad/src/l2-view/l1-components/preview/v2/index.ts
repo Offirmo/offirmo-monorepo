@@ -4,30 +4,21 @@ import { type Immutable } from '@offirmo-private/ts-types'
 import { Story‿v2, Meta‿v2 } from '../../../../l0-types/l1-csf/v2'
 import { StoryEntry } from '../../../../l1-flux/l1-state/types.ts'
 import { LIB } from '../../../../consts'
-import {aggregateꓽRenderParams, isꓽRenderParamsWithComponent, isꓽRenderParamsWithRenderFunc, RenderParams, RenderParamsWithComponent, RenderParamsWithRenderFunc, StoryContext} from '../../../../l0-types/l1-csf'
-import {ObservableState} from '../../../../l1-flux/l2-observable'
+import {
+	aggregateꓽRenderParams,
+	isꓽRenderParamsWithComponent,
+	isꓽRenderParamsWithRenderFunc, RenderParams,
+	RenderParamsWithComponent,
+	RenderParamsWithRenderFunc,
+	StoryContext,
+} from '../../../../l0-types/l1-csf'
+import { ObservableState } from '../../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
 console.log('Loading the CSF v2 renderer...')
 
-async function renderCSFV2(state: ObservableState, container: HTMLElement, entry: Immutable<StoryEntry>) {
+async function renderCSFV2(state: ObservableState, entry: Immutable<StoryEntry>, render_params: Immutable<RenderParams<Story‿v2>>, container: HTMLElement) {
 	console.group(`[${LIB}] Rendering a CSF v2 story…`)
-	console.log('StoryEntry=', entry)
-	const story: Immutable<Story‿v2> = entry.story as any
-	const meta = (entry.meta || {}) as any as Meta‿v2
-	const global_render_params = state.getꓽRenderParamsⵧglobal<Story‿v2>()
-	console.log({
-		story,
-		meta,
-		global_render_params,
-	})
-
-	const render_params = aggregateꓽRenderParams<Story‿v2>(
-		global_render_params,
-		meta,
-		story,
-	)
-	console.log('render_params=', render_params)
 
 	switch (true) {
 		case isꓽRenderParamsWithComponent(render_params):

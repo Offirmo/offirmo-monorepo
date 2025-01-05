@@ -5,11 +5,11 @@ import { type Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from '../../../../../consts'
 import { Meta‿v3, Story‿v3 } from '../../../../../l0-types/l1-csf/v3'
-import {StoryContext} from '../../../../../l0-types/l1-csf'
+import {RenderParamsWithComponent, StoryContext} from '../../../../../l0-types/l1-csf'
 
 /////////////////////////////////////////////////
 
-async function render(container: HTMLElement, Component: any, story: Immutable<Story‿v3>, meta: Immutable<Meta‿v3>) {
+async function render(render_params: Immutable<RenderParamsWithComponent<Story‿v3>>, container: HTMLElement) {
 	console.group(`[${LIB}] Rendering a React component…`)
 
 	// https://react.dev/reference/react-dom/client/createRoot
@@ -22,6 +22,7 @@ async function render(container: HTMLElement, Component: any, story: Immutable<S
 
 	const { createRoot } = libⳇreactᝍdomⳇclient
 	let root_elt = document.createElement('div')
+	root_elt.classList.add('react-root')
 	root_elt.innerHTML = `[React will load here]`
 	container.innerHTML = '' // reset any loading message
 	container.appendChild(root_elt)
@@ -32,27 +33,16 @@ async function render(container: HTMLElement, Component: any, story: Immutable<S
 	const use_strict = false
 	const StrictWrapper = use_strict ? StrictMode : Fragment
 
-	const props = {
-		...meta.args,
-		...story.args,
-	}
+	const props = render_params.args
+	const Component = render_params.component
 
+	let StoryAsReactComponent: React.FunctionComponent = () => <Component {...props} />
 
-	let StoryAsReactComponent: React.FunctionComponent = () => <Component {...props} /> // TODO one day apply args?
-
-	if (story.decorators || meta?.decorators) {
-
-		const decorators = story.decorators === null
-			? [] // allow resetting decorators
-			:[
-				...(meta?.decorators || []),
-				...(story.decorators || []),
-			].reverse()
+	if (render_params.decorators.length) {
 		const context: StoryContext = {
-			// TODO derive from story??
-			args: story.args!,
+			args: render_params.args,
 		}
-		decorators.forEach(decorator => {
+		render_params.decorators.forEach(decorator => {
 			// TODO one day, not sure we're correctly implementing decorators here https://storybook.js.org/docs/writing-stories/decorators
 			const output = decorator(StoryAsReactComponent, context)
 			StoryAsReactComponent = (
@@ -63,6 +53,7 @@ async function render(container: HTMLElement, Component: any, story: Immutable<S
 		})
 	}
 
+	// TODO add a pill if suspended
 
 	// TODO error boundary
 	root.render(

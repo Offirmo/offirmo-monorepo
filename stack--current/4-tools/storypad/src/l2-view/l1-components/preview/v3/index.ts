@@ -1,66 +1,59 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { aggregateꓽRenderParams, GenericStoryComponent } from '../../../../l0-types/l1-csf'
+import {aggregateꓽRenderParams, GenericStoryComponent, isꓽRenderParamsWithComponent, isꓽRenderParamsWithRenderFunc, RenderParams, RenderParamsWithComponent} from '../../../../l0-types/l1-csf'
 import { Story‿v3, Meta‿v3 } from '../../../../l0-types/l1-csf/v3'
 import { StoryEntry } from '../../../../l1-flux/l1-state/types.ts'
 import { LIB } from '../../../../consts'
-import {ObservableState} from '../../../../l1-flux/l2-observable'
+import { ObservableState } from '../../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
 console.log('Loading the CSF v3 renderer...')
 // reminder: https://storybook.js.org/docs/writing-stories#component-story-format
 
-async function renderCSFV3(state: ObservableState, container: HTMLElement, entry: Immutable<StoryEntry>) {
+async function renderCSFV3(state: ObservableState, entry: Immutable<StoryEntry>, render_params: Immutable<RenderParams<Story‿v3>>, container: HTMLElement) {
 	console.group(`[${LIB}] Rendering a CSF v3 story…`)
 	console.log('StoryEntry=', entry)
 	const story: Immutable<Story‿v3> = entry.story as any
-	const meta = (entry.meta || {}) as any as Meta‿v3
-	const global_render_params = state.getꓽRenderParamsⵧglobal<Story‿v3>()
-	console.log({
-		story,
-		meta,
-		global_render_params,
-	})
 
-	const render_params = aggregateꓽRenderParams<Story‿v3>(
-		global_render_params,
-		meta,
-		story,
-	)
-	console.log('render_params=', render_params)
+	// TODO add pill CSFv3
 
 	switch (true) {
-		case story.render !== undefined: {
+		case isꓽRenderParamsWithRenderFunc<Story‿v3>(render_params): {
 
-			const rendered: unknown = story.render({
-				...meta.args,
-				...story.args,
-			})
+			const rendered: unknown = render_params.render(render_params.args)
+			console.error('render() =', rendered)
+
+			if (!rendered) {
+				throw new Error('CSF v3 render() returned null-ish!')
+			}
 
 			if (typeof rendered === 'string') {
-				container.innerHTML = rendered
-				break
+				// normally we'll use CSF v2 for such trivial cases?
+				throw new Error('TODO CSFv3 implement render() -> string with decorators')
+				//container.innerHTML = rendered
+				//break
 			}
+			// TODO one day support HTMLElement
 
-			if (!!rendered && (typeof rendered === 'object') && ('$$typeof' in rendered)) {
+			if ((typeof rendered === 'object') && ('$$typeof' in rendered)) {
 				// this is React JSX
-				_renderⵧcomponent(container, () => rendered, story, meta)
+				// TODO add pill React
+				const { render, ...rest } = render_params
+				const newRenderParams: RenderParamsWithComponent<Story‿v3> = {
+					...rest,
+					component: () => rendered
+				}
+				_renderⵧcomponent(newRenderParams, container)
 				break
 			}
 
-			container.innerText = '[💣CSF v3: TODO unrecognized output of "render()"!]'
-			console.error('XXX rendered=', rendered)
-			break
+			throw new Error('CSF v3 render() returned unrecognized data!')
+
 		}
 
-		case story.component !== undefined: {
-			_renderⵧcomponent(container, story.component, story, meta)
-			break
-		}
-
-		case meta.component !== undefined: {
-			_renderⵧcomponent(container, meta.component, story, meta)
+		case isꓽRenderParamsWithComponent<Story‿v3>(render_params): {
+			_renderⵧcomponent(render_params, container)
 			break
 		}
 
@@ -73,16 +66,16 @@ async function renderCSFV3(state: ObservableState, container: HTMLElement, entry
 	console.groupEnd()
 }
 
-async function _renderⵧcomponent(container: HTMLElement, component: Immutable<GenericStoryComponent>, story: Immutable<Story‿v3>, meta: Immutable<Meta‿v3>) {
-	console.log('v3 _renderⵧcomponent', {Component: component})
+async function _renderⵧcomponent(render_params: Immutable<RenderParamsWithComponent<Story‿v3>>, container: HTMLElement) {
+	console.log('v3 _renderⵧcomponent', {Component: render_params.component})
 
 	// TODO one day if needed: recognize React through jsx "x" on extension
-	const isReact = (typeof component === 'function')
+	const isReact = (typeof render_params.component === 'function')
 
 	switch (true) {
 		case isReact: {
 			const render = (await import('./react/index.tsx')).default;
-			await render(container, component, story, meta)
+			await render(render_params, container)
 			break
 		}
 
