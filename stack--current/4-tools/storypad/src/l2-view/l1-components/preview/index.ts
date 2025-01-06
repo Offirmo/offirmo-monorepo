@@ -76,6 +76,7 @@ async function _renderⵧstory(state: ObservableState, storyEntry: Immutable<Sto
 
 	switch (true) {
 		case isꓽStory‿v2(storyEntry.story): {
+			state.addꓽannotation('CSF', 'v2')
 			try {
 				const render_v2 = (await import('./v2')).default
 				await render_v2(state, storyEntry, render_params as any, container)
@@ -88,6 +89,7 @@ async function _renderⵧstory(state: ObservableState, storyEntry: Immutable<Sto
 		}
 
 		case isꓽStory‿v3(storyEntry.story): {
+			state.addꓽannotation('CSF', 'v3')
 			try {
 				const render_v3 = (await import('./v3')).default
 				await render_v3(state, storyEntry, render_params as any, container)

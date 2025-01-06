@@ -1,6 +1,7 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
+import EventEmitter from 'emittery'
 import { isꓽframed } from '@offirmo-private/features-detection-browser/src/l1-is-framed'
 
 import { ImportGlob } from '../../l0-types/l0-glob'
@@ -13,17 +14,24 @@ import * as UrlStateSelectors from '../l1-state/state--url/selectors.ts'
 import { type CommonRenderParams } from '../../l0-types/l1-csf'
 import * as UrlState from '../l1-state/state--url'
 import { type StoryUId} from '../l1-state/types.ts'
+import type {State} from '../l1-state/state--in-mem'
 
 /////////////////////////////////////////////////
 
+const EMITTER_EVT = 'change'
+
 class ObservableState {
 	private stateⵧin_mem: InMemState.State = InMemState.create()
+
+	emitter = new EventEmitter<{ [EMITTER_EVT]: string }>()
 
 	constructor(
 		private window: Window = self
 	) {
 
 	}
+
+	/////////////////////////////////////////////////
 
 	async init(stories_glob: Immutable<ImportGlob>, config?: Immutable<Config>): Promise<void> {
 		console.group('Flux init...')
@@ -61,6 +69,7 @@ class ObservableState {
 				'getꓽRenderParamsⵧglobal': this.getꓽRenderParamsⵧglobal(),
 			}
 		})
+		this.emitter.emit(EMITTER_EVT, `init`)
 
 		console.groupEnd()
 	}
@@ -70,26 +79,35 @@ class ObservableState {
 		this.stateⵧin_mem = InMemState.requestꓽstory(this.stateⵧin_mem, uid)
 
 		UrlState.requestꓽstory(uid)
+
+		this.emitter.emit(EMITTER_EVT, `requestꓽstory`)
 	}
 
-// for rendering the stories tree
+	addꓽannotation(key: string, value: string) {
+		this.stateⵧin_mem = InMemState.addꓽannotation(this.stateⵧin_mem, key, value)
+
+		this.emitter.emit(EMITTER_EVT, `addꓽannotation`)
+	}
+
+	/////////////////////////////////////////////////
+
+	// for rendering the stories tree
 	getꓽtree_root(): Immutable<StoryTree> {
 		return this.stateⵧin_mem.tree
 	}
 
-// for rendering a story
+	// for rendering a story
 	getꓽconfig(): Immutable<Config> {
 		return this.stateⵧin_mem.config
 	}
 
-// initial tree render
+	// initial tree render
 	isꓽexpandedⵧinitially(uid: FolderUId): boolean {
 		return true // TODO more complex depending on available viewport
 		/*const state = getꓽstate()
 		const folder = state.folders_by_uid[uid]
 		*/
 	}
-
 
 	getꓽrender_mode(): RenderMode {
 		const explicit_render_mode = UrlStateSelectors.getꓽexplicit_render_mode()
@@ -104,7 +122,7 @@ class ObservableState {
 		return RenderMode.manager
 	}
 
-// must only return "undef" if NO stories
+	// must only return "undef" if NO stories
 	getꓽstoryⵧcurrent(): Immutable<StoryEntry> | undefined {
 		const candidate_uid = UrlStateSelectors.getꓽexplicit_story_uid()
 		if (candidate_uid) {
@@ -115,7 +133,6 @@ class ObservableState {
 
 		return InMemStateSelectors.getꓽstoryⵧsuggested(this.stateⵧin_mem)
 	}
-
 
 	getꓽmain_frame_url = UrlStateSelectors.getꓽmain_frame_url
 	getꓽstory_frame_url = UrlStateSelectors.getꓽstory_frame_url
@@ -137,9 +154,6 @@ class ObservableState {
 			]
 		}
 	}
-
-
-	/// private
 }
 
 /////////////////////////////////////////////////

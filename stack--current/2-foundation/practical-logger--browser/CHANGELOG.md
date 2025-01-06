@@ -15,7 +15,7 @@ NOTE: not much reason to publish this lib since it's supposed to be bundled
 * TODO test Windows, Ubuntu
 * TODO local pictures
 * [chore] micro code style change
-* [chore][breaking] pre-builds now targeting node22/ES2023 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
+* [chore][breaking] pre-builds now targeting node22/ES2024 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
 * [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
 * [doc] marked as maintained in 2024! Happy new year!
 * ...

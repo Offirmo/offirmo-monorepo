@@ -7,7 +7,24 @@ import { StoryUId, StoryEntry, StoryFolder } from '../types.ts'
 import { type State } from './types.ts'
 
 ////////////////////////////////////////////////////////////////////////////////////
-// init
+
+function get_default_state_view(): State['view'] {
+	return {
+		manager: {
+			sidebar: {
+
+			},
+		},
+		story_area: {
+			drawer: {
+				status_bar: {
+					pills: {},
+				},
+			},
+		},
+	}
+}
+
 function create(): State {
 	return {
 		config: {
@@ -16,6 +33,7 @@ function create(): State {
 		},
 		first_encountered_story‿uid: undefined,
 		tree: createꓽfilesystem<StoryEntry, StoryFolder>(),
+		view: get_default_state_view(),
 	}
 }
 
@@ -54,11 +72,17 @@ function requestꓽstory(state: State, uid: StoryUId): State {
 	state = {
 		...state,
 		//last_explicitly_activated_story‿uid: uid,
+		view: get_default_state_view(),
 	}
 
 	return state
 }
 
+function addꓽannotation(state: State, key: string, value: string): State {
+	console.log(`TODO annotations!`, {key, value})
+
+	return state
+}
 
 // expand the tree all the way to the target
 // id can be story or folder, don't mind
@@ -75,4 +99,5 @@ export {
 	registerꓽstory,
 
 	requestꓽstory,
+	addꓽannotation,
 }

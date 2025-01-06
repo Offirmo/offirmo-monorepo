@@ -7,12 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 * TODO use globalThis to ensure there is no accidental duplication due to incorrect bundling or bundle split? (to review)
-* [chore][breaking] removed the package.json "esnext" property, can't reference of tools using it
-* [chore][breaking] pre-builds now targeting node22/ES2023 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
 * [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
+* [chore][breaking] pre-builds now targeting node22/ES2024 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
+* [chore][breaking] removed the package.json "esnext" property, can't find reference of tools using it
 * [chore] slightly improved unit tests
-* [doc] marked as maintained in 2024! Happy new year!
+* [doc] marked as maintained in 2025! Happy new year!
 * ...
+
 
 ## v1.0.0
 2022/04/03

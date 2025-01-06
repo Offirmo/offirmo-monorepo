@@ -21,7 +21,8 @@
 	},
 	"dependencies": {
 		"@offirmo-private/normalize-string": "*",
-		"@offirmo-private/ts-types": "*"
+		"@offirmo-private/ts-types": "*",
+		"@offirmo-private/type-detection": "*"
 	},
 
 	"scripts": {

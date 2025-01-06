@@ -1,20 +1,22 @@
 /* render a CSF v3 Story
  */
 import * as React from 'react'
+import { type ProfilerOnRenderCallback } from 'react'
 import { type Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from '../../../../../consts'
 import { Meta‿v3, Story‿v3 } from '../../../../../l0-types/l1-csf/v3'
 import {RenderParamsWithComponent, StoryContext} from '../../../../../l0-types/l1-csf'
+import {ObservableState} from '../../../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
 
-async function render(render_params: Immutable<RenderParamsWithComponent<Story‿v3>>, container: HTMLElement) {
+async function render(state: ObservableState, render_params: Immutable<RenderParamsWithComponent<Story‿v3>>, container: HTMLElement) {
 	console.group(`[${LIB}] Rendering a React component…`)
 
 	// https://react.dev/reference/react-dom/client/createRoot
 	const libⳇreactᝍdomⳇclient = await import('react-dom/client')
-	const libⳇreact = await import('react')
+	const libⳇreact = React //await import('react')
 	console.log('libs', {
 		libⳇreactᝍdomⳇclient,
 		libⳇreact,
@@ -29,7 +31,7 @@ async function render(render_params: Immutable<RenderParamsWithComponent<Story�
 
 	const root = createRoot(root_elt);
 
-	const { Fragment, StrictMode, Suspense } = libⳇreact
+	const { Fragment, StrictMode, Suspense, Profiler } = libⳇreact
 	const use_strict = false
 	const StrictWrapper = use_strict ? StrictMode : Fragment
 
@@ -55,15 +57,23 @@ async function render(render_params: Immutable<RenderParamsWithComponent<Story�
 
 	// TODO add a pill if suspended
 
+
 	// TODO error boundary
 	root.render(
 		<StrictWrapper>
 			<Suspense fallback='suspense…'>
-				<StoryAsReactComponent />
+				<Profiler id="storypad-story" onRender={onRender}>
+					<StoryAsReactComponent />
+				</Profiler>
 			</Suspense>
 		</StrictWrapper>
 	);
 	console.groupEnd()
+}
+
+const onRender: ProfilerOnRenderCallback = (...args)=> {
+	// Aggregate or log render timings...
+	console.log(`React <Profiler> onRender():`, args)
 }
 
 /////////////////////////////////////////////////

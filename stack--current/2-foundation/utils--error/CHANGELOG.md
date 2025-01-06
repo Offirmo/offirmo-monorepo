@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [feat] new `hasErrorShape(errLike)` exposed (should hardly be useful)
 * [feat] now supports the ES2022 "cause" attribute
 * [feat] now supports Firefox's "errors" attribute
-* [chore][breaking] pre-builds now targeting node22/ES2023 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
+* [chore][breaking] pre-builds now targeting node22/ES2024 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
 * [chore] supports typescript 4.8
 * [chore] bumped deps
 * [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended

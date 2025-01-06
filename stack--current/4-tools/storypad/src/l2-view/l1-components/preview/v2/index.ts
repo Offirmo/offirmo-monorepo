@@ -22,10 +22,10 @@ async function renderCSFV2(state: ObservableState, entry: Immutable<StoryEntry>,
 
 	switch (true) {
 		case isꓽRenderParamsWithComponent(render_params):
-			await _renderⵧcomponent(container, render_params)
+			await _renderⵧcomponent(state, container, render_params)
 			break
 		case isꓽRenderParamsWithRenderFunc(render_params):
-			await _renderⵧrenderFunc(container, render_params)
+			await _renderⵧrenderFunc(state, container, render_params)
 			break
 		default:
 			throw new Error(`CSFv2: No component nor render()??`)
@@ -34,12 +34,12 @@ async function renderCSFV2(state: ObservableState, entry: Immutable<StoryEntry>,
 	console.groupEnd()
 }
 
-async function _renderⵧcomponent(container: HTMLElement, render_params: Immutable<RenderParamsWithComponent<Story‿v2>>) {
+async function _renderⵧcomponent(state: ObservableState, container: HTMLElement, render_params: Immutable<RenderParamsWithComponent<Story‿v2>>) {
 	console.log(render_params)
 	throw new Error('CSFv2: component-based stories not implemented!')
 }
 
-async function _renderⵧrenderFunc(container: HTMLElement, render_params: Immutable<RenderParamsWithRenderFunc<Story‿v2>>) {
+async function _renderⵧrenderFunc(state: ObservableState, container: HTMLElement, render_params: Immutable<RenderParamsWithRenderFunc<Story‿v2>>) {
 	console.log(render_params)
 	const { render } = render_params
 
@@ -58,6 +58,7 @@ async function _renderⵧrenderFunc(container: HTMLElement, render_params: Immut
 	}
 	else if (!!rendered && (typeof rendered === 'object') && ('$$typeof' in rendered)) {
 		// this is React JSX
+		state.addꓽannotation('React', 'true')
 		container.innerHTML = `[CSFv2 is supported, as a convenience, only for trivial components. React is not supported. Please use CSF v3 format!]`
 	}
 	else {

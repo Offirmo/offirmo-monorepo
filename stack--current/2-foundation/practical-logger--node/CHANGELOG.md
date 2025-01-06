@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [chore] re-organized the source (monorepo) and tweaked the shared build script. No logic change.
 * [chore] bumped dependencies (minor)
 * [doc] marked as maintained in 2024! Happy new year!
-* [chore][breaking] pre-builds now targeting node22/ES2023 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
+* [chore][breaking] pre-builds now targeting node22/ES2024 [details](../../0-CONTRIBUTING/06-conventions--js--modules_and_transpilation.md)
 * [fix] fixed a dev dep incorrectly listed in prod
 * [chore][breaking] converted to full ESM, exposed as `"type": "module"`, requires node 12+, node 18+ recommended
 * ...

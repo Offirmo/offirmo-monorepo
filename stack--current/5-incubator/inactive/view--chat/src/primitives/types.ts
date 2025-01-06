@@ -1,60 +1,73 @@
-import { type Immutable } from '@offirmo-private/ts-types'
+import { PProgress as PromiseWithProgress } from 'p-progress'
 
-import { type TaskProgressStep, type InputStep, type SelectStep } from '../steps/types.js'
+import {
+	type TaskProgressStep,
+	type InputStep,
+} from '../steps/types.js'
 
 /////////////////////////////////////////////////
 
+interface UIPrimitives<RichTextType> {
+
+
+
+}
+
+
 // helper types, TypeScript need them when implementing :(
-interface InputParameters<ContentType, T> {
+interface InputParameters<RichTextType, T> {
 	// everything needed for an <input>
 	// fully resolved (vs. step which has funcs for resolving)
 	// Note: the primitive is free to ignore some params if not needed/supported
-	prompt: ContentType | string,
-	input_type?: InputStep<ContentType, T>['input_type'],
+	prompt: RichTextType | string,
+	input_type?: InputStep<RichTextType, T>['input_type'],
 	default_value?: T,
-	placeholder?: ContentType | string,
-	normalizer?: (raw: any) => T // raw is most likely string,
-	validators: Array<(value: T) => [ boolean, ContentType | string ]>,
+	placeholder?: RichTextType | string,
+	normalizer?: InputStep<RichTextType, T>['normalizer']
+	validators: InputStep<RichTextType, T>['validators']
 }
-interface SelectParameters<ContentType, T> {
+interface SelectParameters<RichTextType, T> {
 	// everything needed for a <select>
-	// primitive is free to ignore some params if not needed/supported
-	prompt: ContentType | string
+	// fully resolved (vs. step which has funcs for resolving)
+	// Note: the primitive is free to ignore some params if not needed/supported
+	prompt: RichTextType | string
 	default_value?: T
 	options: {
 		// Choices should be displayed following key insertion order.
 		// key will be used as display if none provided.
 		[key: string]: {
 			value?: T,
-			cta?: ContentType | string
+			cta?: RichTextType | string
 		}
 	}
 }
 
 // primitives should always accept string = common lowest denominator
 // up to it to convert to rich text if needed
-interface ChatPrimitives<ContentType> {
+interface ChatPrimitives<RichTextType> extends UIPrimitives<RichTextType> {
 
 	/////////////////////////////////////////////////
 	// core primitives
 
-	display_message(p: { msg: ContentType | string }): Promise<void>
+	display_message(p: { msg: RichTextType | string }): Promise<void>
 
 	// a staple of chat interfaces
 	// to be used between steps
 	pretend_to_think(p: { duration_ms: number }): Promise<void>
 
-	display_task(p: {
-		msg_before: ContentType | string,
-		promises: TaskProgressStep<ContentType>['promises'],
-		msg_after: NonNullable<TaskProgressStep<ContentType>['msg_after']>,
+	display_task<T>(p: {
+		msg_before: RichTextType | string,
+		promises: Array< // array bc common occurrence to have several task aggregated AND some UI may offer a better UX for multi-progress
+			| Promise<T> | PromiseWithProgress<T>
+			>,
+		msg_after: NonNullable<TaskProgressStep<RichTextType>['msg_after']>,
 	}): Promise<void>
 
 	// return type: some input method can't give sth else than a string (ex. terminal)
 	// caller must be ready to process the result
-	input<T>(p: InputParameters<ContentType, T>): Promise<T | string>
+	input<T>(p: InputParameters<RichTextType, T>): Promise<T | string>
 
-	select<T>(p: SelectParameters<ContentType, T>): Promise<T>
+	select<T>(p: SelectParameters<RichTextType, T>): Promise<T>
 
 	// while we wait for the next step.
 	// wraps the promise, should return it

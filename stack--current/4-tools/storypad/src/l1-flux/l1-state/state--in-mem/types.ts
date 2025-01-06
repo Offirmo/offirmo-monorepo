@@ -11,4 +11,19 @@ export interface State {
 	first_encountered_story‿uid: StoryUId | undefined
 
 	tree: StoryTree
+
+	view: {
+		manager: {
+			sidebar: {
+
+			}
+		}
+		story_area: {
+			drawer: {
+				status_bar: {
+					pills: Record<string, string>,
+				}
+			}
+		}
+	}
 }

@@ -28,9 +28,11 @@
 		  src="https://img.shields.io/badge/license-public_domain-brightgreen.svg">
 	</a>
 	<img alt="maintenance status badge"
-	  src="https://img.shields.io/maintenance/yes/2024.svg">
+	  src="https://img.shields.io/maintenance/yes/2025.svg">
 </p>
 
+
+***WARNING this package is NO LONGER MAINTAINED: Alex Reardon made a better one: https://github.com/alexreardon/limit-once***
 
 This is a trivial, isomorphic, straightforward, TypeScript-compatible [singleton](https://en.wikipedia.org/wiki/Singleton_pattern) implementation:
 * NO dependencies
@@ -79,4 +81,4 @@ get_db_client().write('hello').then(...)
 ```
 
 
-TODO switch to https://github.com/alexreardon/limit-once
+TODO retire this pkg

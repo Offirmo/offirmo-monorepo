@@ -16,8 +16,6 @@ async function renderCSFV3(state: ObservableState, entry: Immutable<StoryEntry>,
 	console.log('StoryEntry=', entry)
 	const story: Immutable<Story‿v3> = entry.story as any
 
-	// TODO add pill CSFv3
-
 	switch (true) {
 		case isꓽRenderParamsWithRenderFunc<Story‿v3>(render_params): {
 
@@ -38,13 +36,13 @@ async function renderCSFV3(state: ObservableState, entry: Immutable<StoryEntry>,
 
 			if ((typeof rendered === 'object') && ('$$typeof' in rendered)) {
 				// this is React JSX
-				// TODO add pill React
+				state.addꓽannotation('React', 'true')
 				const { render, ...rest } = render_params
 				const newRenderParams: RenderParamsWithComponent<Story‿v3> = {
 					...rest,
 					component: () => rendered
 				}
-				_renderⵧcomponent(newRenderParams, container)
+				_renderⵧcomponent(state, newRenderParams, container)
 				break
 			}
 
@@ -53,7 +51,7 @@ async function renderCSFV3(state: ObservableState, entry: Immutable<StoryEntry>,
 		}
 
 		case isꓽRenderParamsWithComponent<Story‿v3>(render_params): {
-			_renderⵧcomponent(render_params, container)
+			_renderⵧcomponent(state, render_params, container)
 			break
 		}
 
@@ -66,7 +64,7 @@ async function renderCSFV3(state: ObservableState, entry: Immutable<StoryEntry>,
 	console.groupEnd()
 }
 
-async function _renderⵧcomponent(render_params: Immutable<RenderParamsWithComponent<Story‿v3>>, container: HTMLElement) {
+async function _renderⵧcomponent(state: ObservableState, render_params: Immutable<RenderParamsWithComponent<Story‿v3>>, container: HTMLElement) {
 	console.log('v3 _renderⵧcomponent', {Component: render_params.component})
 
 	// TODO one day if needed: recognize React through jsx "x" on extension
@@ -74,8 +72,9 @@ async function _renderⵧcomponent(render_params: Immutable<RenderParamsWithComp
 
 	switch (true) {
 		case isReact: {
+			state.addꓽannotation('React', 'true')
 			const render = (await import('./react/index.tsx')).default;
-			await render(render_params, container)
+			await render(state, render_params, container)
 			break
 		}
 
