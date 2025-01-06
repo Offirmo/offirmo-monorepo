@@ -8,4 +8,5 @@ Familiarize yourself with the following concepts:
 - immutability
 - js modules: ESM
 - TypeScript
+- flux architecture
 - ...

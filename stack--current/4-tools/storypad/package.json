@@ -20,6 +20,7 @@
 		"@offirmo-private/ts-types": "*",
 		"@offirmo-private/ts-types-web": "*",
 		"@offirmo/universal-debug-api-browser": "^1",
+		"emittery": "^1",
 		"tiny-invariant": "^1",
 		"tslib": "^2"
 	},

@@ -2,7 +2,7 @@
 // better than Readonly<T>
 // To be used in parameters to enforce immutability / no side effects
 //
-// XXX MANAGE YOUR EXPECTATIONS!
+// WARNING MANAGE YOUR EXPECTATIONS!
 // Due to various bugs and limitations of TypeScript,
 // it's not possible to provide a true Immutable<T> type.
 // The one below is a trade-off.
@@ -45,11 +45,11 @@ export type ImmutableObject<T> = { +readonly [K in keyof T]: Immutable<T[K]> }
 export type Immutable<T> = true extends false ? never
 	// IMPORTANT! All those conditional type tests are distributive on "any" https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types
 	: T extends ImmutablePrimitive    ? T // "any" matches, turning "Immutable<any>" into "any" (due to "x | y | any" being coalesced as just "any")
-	//: T extends Array<infer U>        ? ImmutableArray<U> XXX strangely this line is 1) not needed 2) causes problem with tuples (spreading = possibly undef)
-	: T extends Map<infer K, infer V> ? ImmutableMap<K, V>
-	: T extends Set<infer M>          ? ImmutableSet<M>
-	: T extends EmptyStruct           ? ImmutableObject<T> // this line is greedy with other container types+fn, must be last!
-	: never // if we reach this, need to extend this conditional type
+		//: T extends Array<infer U>        ? ImmutableArray<U> ??? strangely this line is 1) not needed 2) causes problem with tuples (spreading = possibly undef)
+		: T extends Map<infer K, infer V> ? ImmutableMap<K, V>
+			: T extends Set<infer M>          ? ImmutableSet<M>
+				: T extends EmptyStruct           ? ImmutableObject<T> // this line is greedy with other container types+fn, must be last!
+					: never // if we reach this, need to extend this conditional type
 
 /////////////////////
 

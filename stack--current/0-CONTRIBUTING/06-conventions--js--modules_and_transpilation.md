@@ -20,7 +20,7 @@ Note: I do NOT agree with the opinion "don't transpile node_modules", see [issue
 ## Technical details
 
 ### PENDING updates
-- [ ] TODO TS has working support of [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762) = update unit tests!
+- [ ] TS has working support of [self referencing](https://www.typescriptlang.org/docs/handbook/esm-node.html) when [bug fix](https://github.com/microsoft/TypeScript/issues/46762) = update unit tests!
 - [ ] 🆙 2025-10-28 oldest active LTS node 22 → 24  https://github.com/nodejs/release#release-schedule
 - [ ] 🆙 mid 2025 [ES2025](https://en.wikipedia.org/wiki/ECMAScript_version_history)
 - [ ] 🆙 webpack release 5 → 6  https://github.com/webpack/webpack/milestones  https://webpack.js.org/blog/
@@ -57,7 +57,7 @@ Updated state:
 
 ⭆ latest convenient module = ES (module = 2022 in TypeScript)
 
-- [x] TODO remove all cjs since we can no longer generate it since Typescript 5.2
+- [x] remove all cjs since we can no longer generate it since Typescript 5.2
 
 
 ### update 2024-07-25
@@ -310,39 +310,6 @@ since node 10 in maintenance mode since 2020-05-19 https://nodejs.org/en/about/p
 
 
 
-## TODO
-- TODO are refreshes major or minor?? Most likely major (see @sindre)
+## Notes
+- are refreshes major or minor?? Most likely major (see @sindre)
 - clarify not restricting node engine
-
-```json
-	"name": "@offirmo/example",
-	"description": "Implementation of the deferred pattern on top of a Promise",
-	"version": "4.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com>",
-	"license": "Unlicense",
-
-	"sideEffects": false,
-	"exports": { XXX are there any tools able to read that? Even typescript doesnt (as of 4.5)
-		".": {
-         XXX those fields must start with ./
-           XXX other fields must NOT (ex. https://github.com/vuejs/vue/blob/v2.2.2/package.json#L6)
-			"import": "./dist/src.es2022.esm/index.js",
-			"require": "./dist/src.es2022.cjs/index.js"
-		}
-	},
-	"module": "dist/src.es2022.esm/index.js", XXX eventually, this is the most supported field https://stackoverflow.com/questions/42708484/what-is-the-module-package-json-field-for
-	"main": "dist/src.es2022.cjs/index.js",  oldest, used for cjs XXX needed for typescript as of 4.5
-	"typings": "dist/src.es2022.cjs/index.d.ts", XXX idem, needed for typescript 4.5
-	"source": "src/index.ts",
-
-	"size-limit": [
-		{
-			"limit": "250b",
-			"path": "dist/src.es2022.esm/index.js"
-		},
-		{
-			"limit": "250b",
-			"path": "dist/src.es2022.cjs/index.js"
-		}
-	],
-```

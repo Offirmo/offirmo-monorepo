@@ -33,7 +33,7 @@ const cli = meow('build', {
 /////////////////////
 
 // [Last updated 2024/12](update marker)
-// note: we could object to this info being duplicated here from tsconfig
+// note: we could object to this info being duplicated here from tsconfig,
 // but it's better semantic (hard to comment in tsconfig)
 const LATEST_ESⵧSUPPORTED_BY_TYPESCRIPTⵧIN_LIB = 'ES2024' // = "max ES we can use"
 const LATEST_ESⵧSUPPORTED_BY_ENVꘌOLDEST_ACTIVE_NODE_LTS = 'ES2024' // should be <= LATEST_ESⵧSUPPORTED_BY_TYPESCRIPTⵧIN_LIB
@@ -91,6 +91,7 @@ let compilerOptions = {
 /////////////////////
 
 // BROKEN since typescript 5.2 2023/10
+// we don't use it anyway...
 function build_cjs() {
 	// cjs usually = node! BUT NOT TRUE TODO FIX SEMANTIC
 	const target = LATEST_ESⵧSUPPORTED_BY_ENVꘌOLDEST_ACTIVE_NODE_LTS.toLowerCase()

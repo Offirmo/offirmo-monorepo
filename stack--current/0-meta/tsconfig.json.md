@@ -22,27 +22,25 @@ REMINDER: the build script relax a few rules in dev mode (--watch), see `build-t
 
 [https://devblogs.microsoft.com/typescript/](update marker)
 
-### TODO
-
-* 5.6 https://devblogs.microsoft.com/typescript/announcing-typescript-5-6/
-* DOESNT WORK use  "typeRoots": ["node_modules/@types", "typings"] instead of replicating the reference to types?
-* added nouncheckedsideeffectimports https://devblogs.microsoft.com/typescript/announcing-typescript-5-6/#the---nouncheckedsideeffectimports-option
-* 
-
-### PENDING 2024/10/11 5.7
-https://devblogs.microsoft.com/typescript/announcing-typescript-5-7-beta/
+### TODO review those features
 
 path rewriting `allowImportingTsExtensions true 		"rewriteRelativeImportExtensions": true,`
-es2024 
 
-### 2024/08/29
+#### TODO 2024/10/11 5.7
+https://devblogs.microsoft.com/typescript/announcing-typescript-5-7/
+
+#### TODO 2024/09 5.6
+https://devblogs.microsoft.com/typescript/announcing-typescript-5-6/
+
+* DOESNT WORK use  "typeRoots": ["node_modules/@types", "typings"] instead of replicating the reference to types?
+* added nouncheckedsideeffectimports https://devblogs.microsoft.com/typescript/announcing-typescript-5-6/#the---nouncheckedsideeffectimports-option
+
+### 2024/06 5.5
+https://devblogs.microsoft.com/typescript/announcing-typescript-5-5/
 
 big pass following some issues
 
-latest version is 5.5 https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-5.html
 
-
-### 2022/03/21
 
 ## content
 https://www.typescriptlang.org/tsconfig/
@@ -75,7 +73,7 @@ Example of errors:
 * `module` https://www.typescriptlang.org/tsconfig#module
   * IDEALLY set to the latest ES we support
   * this prop affects code GENERATION
-  * XXX this property affects `moduleResolution` (see below)
+  * WARNING: this property affects `moduleResolution` (see below)
     * 2023/09 especially since 5.2!!! https://devblogs.microsoft.com/typescript/announcing-typescript-5-2/#breaking-changes-and-correctness-fixes
 * `moduleResolution` https://www.typescriptlang.org/docs/handbook/module-resolution.html
   * UNCLEAR allowed values
@@ -131,14 +129,9 @@ no need, we're using state-of-the-art syntax
 ### Output Formatting
 
 
-
-
-
-
 ## TOSORT
 
 TODO `	"extends": "@tsconfig/strictest/tsconfig.json",` cf. https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#supporting-multiple-configuration-files-in-extends
-
 
 * ??? https://www.typescriptlang.org/tsconfig#preserveConstEnums
 * TODO https://www.typescriptlang.org/tsconfig#plugins
@@ -154,4 +147,6 @@ cjs+ESM cohabitation standard
 ```
 https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports
 
-Also the correct way to import React is `import * as React from 'react'`, cf. https://github.com/facebook/react/pull/18102
+TODO find the correct way to import React?
+- `import * as React from 'react'`, cf. https://github.com/facebook/react/pull/18102
+- nothing? (see Lepton recipe)

@@ -16,11 +16,12 @@ export type SoftwareLicense‿SPDX = string
 
 /////////////////////////////////////////////////
 
-// BEWARE env vs. build! cf. https://seanconnolly.dev/dont-be-fooled-by-node-env
-// BEWARE env vs. release channel, ex. prod with slower "monthly" release channel (aka. "release tracks") https://support.google.com/chrome/a/answer/9027636?hl=en
-// beware env SPEC vs ACTUAL, ex production could be = prod, prod-cn (usually different laws), fedramp (isolated env for security reasons)
-// XXX Ideally DO NOT USE!!! use dedicated sub-settings instead! cf. https://seanconnolly.dev/dont-be-fooled-by-node-env
-// keeping it as it's useful as a shortcut to infer sub-settings
+// WARNING Ideally DO NOT USE!!! use dedicated sub-settings instead! cf. https://seanconnolly.dev/dont-be-fooled-by-node-env
+// (keeping it as it's useful as a shortcut to infer sub-settings)
+// BEWARE of conflating different concepts:
+// - env vs. build! cf. https://seanconnolly.dev/dont-be-fooled-by-node-env
+// - env vs. release channel, ex. prod with slower "monthly" release channel (aka. "release tracks") https://support.google.com/chrome/a/answer/9027636?hl=en
+// - env SPEC vs ACTUAL, ex production could be = prod, prod-cn (usually different laws), FedRAMP (isolated env for security reasons)
 // (Add new envs only if they differ from existing ones)
 export type UNSAFE_Environment =
 //                 verbose?  assertions?  optims?  use canonical?  sends user analytics?  newest features?  Fully supported w/ backups?
@@ -30,7 +31,6 @@ export type UNSAFE_Environment =
 //	| 'test'     //   ✔          ✔          ✘         ✘               ✘                     ✔                  -
 
 /////////////////////////////////////////////////
-
 
 // XXX only applies to Software! TODO review
 //version?: SemVer

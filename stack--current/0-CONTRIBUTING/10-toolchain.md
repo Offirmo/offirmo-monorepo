@@ -10,7 +10,7 @@ Why not npm?
 * npm requires "run" `npm run dev`
 * overall npm doesn't seem as reliable as yarn
 
-TODO use yarn v4!!
+TODO use yarn v4!
 TODO use corepack (2023/10 impossible to set up with yarn v1, too bleeding edge)
 TODO evaluate https://github.com/pnpm/pnpm
 
@@ -73,7 +73,7 @@ TODO evaluate Rpack https://rspack.dev/
 TODO re-evaluate ESLint https://eslint.org/blog/2024/07/whats-coming-next-for-eslint/
      https://eslint.org/blog/2024/10/eslint-json-markdown-support/
 
-TODO https://biomejs.dev/
+TODO evaluate https://biomejs.dev/
 
 ## environment manager
 

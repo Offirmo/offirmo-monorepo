@@ -14,10 +14,6 @@ yarn test
 Note than modifying a module's source most likely requires a build for it to take effect.
 Be aware of the dependencies.
 
-At the moment, there are dependency loops which require a refactoring I don't plan to do right now. They don't prevent development.
-* TODO fix dependency loop tbrpg/state
-
-
 ### build/test only a subset
 
 For ex. to make everything work again step by step!

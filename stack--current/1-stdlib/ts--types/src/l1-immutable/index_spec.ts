@@ -1,6 +1,5 @@
-/* XXX this is not a unit test!!!
- * this file gets compiled together and should/should not trigger compilation errors
- * (not runnable)
+/* This is not a "unit" test (not runnable): this is a TS Typing test:
+ * this file should/should not trigger TS compilation errors
  */
 import {
 	ImmutableObject,

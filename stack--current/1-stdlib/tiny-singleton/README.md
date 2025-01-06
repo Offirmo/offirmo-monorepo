@@ -79,4 +79,4 @@ get_db_client().write('hello').then(...)
 ```
 
 
-TODO review https://github.com/alexreardon/limit-once
+TODO switch to https://github.com/alexreardon/limit-once

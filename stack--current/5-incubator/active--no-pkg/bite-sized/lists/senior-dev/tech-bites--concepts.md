@@ -32,7 +32,7 @@
 [] testing https://testing.googleblog.com/
 abort controller https://kettanaito.com/blog/dont-sleep-on-abort-controller
 abstraction -- level
-abstraction -- wrong, premature
+abstraction -- wrong, premature "most of the issues arise from trying to eagerly solve a problem before it fully exists in reality" https://www.transcendsoftware.se/posts/the-perils-of-premature-abstraction/ https://zackoverflow.dev/writing/premature-abstraction
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 access control
 access control -- role-based (RBAC)
@@ -297,7 +297,7 @@ IDEALS -- 6 Single responsibility
 IDEALS = principles for microservice design
 idempotent = make mutations idempotent. A full retry of a partial failure shouldn’t corrupt/duplicate data.
 if it ain't broke, don't fix it
-IIFE
+IIFE https://codilime.com/blog/iffe-forgotten-javascript-pattern/
 immutability
 inheritance -- diamond
 inheritance -- prototypal

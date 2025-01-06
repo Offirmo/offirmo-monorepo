@@ -6,6 +6,7 @@ import { WithLang } from '../00-base/index.js'
 
 /////////////////////////////////////////////////
 
+
 type Uri‿str = string
 type Url‿str = Uri‿str
 
@@ -14,6 +15,7 @@ type Url‿str = Uri‿str
 
 interface SchemeSpecificURIPart {
 	// TODO clarify encoding
+	// TODO https://blog.whatwg.org/url-pattern-standard
 
 	// authority: not needed for now
 

@@ -5,7 +5,7 @@
 
 **This has now (2023) been totally rewritten, drawing strong inspiration from the architecture and logic**
 
-**XXX THIS RNG LIB MAKES NO CLAIM OF CORRECTNESS / BEING CRYPTOGRAPHICALLY SECURE, IT'S MAINTAINED BY A NON-SCIENTIST FOR WRITING GAMES!**
+**WARNING THIS RNG LIB MAKES NO CLAIM OF CORRECTNESS / BEING CRYPTOGRAPHICALLY SECURE, IT'S MAINTAINED BY A NON-SCIENTIST FOR WRITING GAMES!**
 
 Pitch: a mathematically correct pseudo random number generator library for JavaScript:
 * no dependencies
@@ -27,9 +27,7 @@ Interface change from Random.js
 * native ESM
 
 
-
-
-
+```ts
 import { getꓽengine, RNGEngine } from '@offirmo/random'
 const rng = getꓽengine.for_unit_tests()
 const rng = getꓽengine.for_unit_tests()
@@ -39,6 +37,11 @@ const gen = getꓽrandom.generator_of.integer.between(1, 1000)
 const gen = getꓽrandom.picker.of(ARMOR_BASES)
 const gen getꓽrandom.generator_of.integer.in_interval(BASE_STRENGTH_INTERVAL_BY_QUALITY[quality]!)
 v = gen(rng)
+
+```
+
+
+
 
 
 

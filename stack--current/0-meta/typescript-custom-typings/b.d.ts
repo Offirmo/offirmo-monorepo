@@ -1,6 +1,6 @@
 // other ad-hoc typings improvements not in ts-reset
 
-/* TODO find source and re-evaluate
+/* TODO find source and re-evaluate:
 export {};
 
 type NonFalsy<T> = T extends false | 0 | '' | null | undefined | 0n ? never : T;
@@ -25,5 +25,4 @@ declare global {
 }
  */
 
-
-// TODO evaluate https://www.mattstobbs.com/object-keys-typescript/
+// TODO one day evaluate https://www.mattstobbs.com/object-keys-typescript/
