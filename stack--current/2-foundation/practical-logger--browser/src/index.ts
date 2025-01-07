@@ -1,5 +1,5 @@
 
-import tiny_singleton from '@offirmo/tiny-singleton'
+import { once } from 'limit-once'
 import { LogSink, Logger, LoggerCreationParams } from '@offirmo/practical-logger-types'
 import { createLogger as createLoggerCore } from '@offirmo/practical-logger-core'
 
@@ -13,7 +13,7 @@ const ORIGINAL_CONSOLE = console
 
 /////////////////////////////////////////////////
 
-const _request_install_better_console_groups_if_not_already = tiny_singleton((active: boolean = true) => { if (active) improve_console_groups() })
+const _request_install_better_console_groups_if_not_already = once((active: boolean = true) => { if (active) improve_console_groups() })
 
 function createLogger(p: Readonly<LoggerCreationParams<SinkOptions>> = {}): Logger {
 	_request_install_better_console_groups_if_not_already(p.sinkOptions?.betterGroups !== false)

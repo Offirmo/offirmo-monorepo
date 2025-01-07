@@ -579,7 +579,7 @@ tech debt -- incidental - e.g. organic changes in complexity over time that incr
 temporary solutions https://80.lv/articles/this-30-year-old-windows-feature-was-created-as-a-temporary-solution/
 tenant -- isolation -- sandboxing / isolates / individual processes / individual VMs / individual containers
 tenant -- multi-tenant
-test -- fixtures
+test -- fixture https://en.wikipedia.org/wiki/Test_fixture#Software
 test -- mutation testing https://sentry.engineering/blog/js-mutation-testing-our-sdks
 test -- test double -- 01 dummy = objects are passed around but never actually used. Usually they are just used to fill parameter lists
 test -- test double -- 02 fake = have working implementations, but usually take some shortcut which makes them not suitable for production (an in memory database is a good example)

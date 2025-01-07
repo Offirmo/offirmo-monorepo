@@ -230,8 +230,10 @@ if (MONOREPO_PKG_JSON.bolt) (function _update_root_dependencies_for_bolt() {
 // 3. Check and fix node_modules
 
 if (MONOREPO_PKG_JSON.bolt) (function _hoist_local_packages_to_root_node_modules() {
-	// yarn workspace does it, not bolt :(
-	// XXX why do we need this already?
+	// yarn workspace does it, not bolt
+	// Use cases?
+	// - PRO hoisting make the pkg tolerant of forgetting to declare a dep in package.json
+	//   - CONS but on the other hand it helps to surface missing dependencies
 
 	MONOREPO_PKGS_NAMESPACES.forEach(ns => {
 		const namespace_abspath = path.join(MONOREPO_ROOT, 'node_modules', ns)
