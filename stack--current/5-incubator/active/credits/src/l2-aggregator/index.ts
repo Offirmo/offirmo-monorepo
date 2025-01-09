@@ -6,7 +6,7 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { Asset } from './types.js'
+import { Asset } from '../1-types/types'
 
 /////////////////////////////////////////////////
 
@@ -21,7 +21,6 @@ const STORE: AssetStore = {
 }
 
 /////////////////////////////////////////////////
-
 
 // "fire and forget"
 // called by the asset file itself on load,
@@ -68,8 +67,7 @@ function getꓽassetsⵧrecents(n = 12): Immutable<Array<Immutable<Asset>>> {
 
 /////////////////////////////////////////////////
 
-export * from './types.js'
-import { Url‿str } from '@offirmo-private/ts-types-web'
+export * from '../1-types/types'
 export {
 	registerꓽasset_usageⵧload,
 	registerꓽasset_usageⵧstart,

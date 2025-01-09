@@ -54,20 +54,22 @@ const THINGⵧONLINE: ThingWithOnlinePresence = {
 interface Asset extends Thing {
 	// to help with searching/displaying assets when giving credits
 	type:
-		| 'background' | 'icon' | 'cursor' | 'illustration'
-		| 'sound' | 'music'
+		| 'image' | 'imageⵧbackground' | 'imageⵧicon' | 'imageⵧcursor' | 'imageⵧillustration'
+		| 'sound' | 'soundⵧmusic'
 		| 'font'
 		| 'code'
-	local_url?: Url‿str
+	// TODO learning, inspiration... ?
+	url?: Url‿str
 }
 
 /////////////////////////////////////////////////
 
 export {
+	type Asset,
+
+	// for convenience
 	type Author,
 	type Thing,
 	type WithOnlinePresence,
 	type ThingWithOnlinePresence,
-
-	type Asset,
 }

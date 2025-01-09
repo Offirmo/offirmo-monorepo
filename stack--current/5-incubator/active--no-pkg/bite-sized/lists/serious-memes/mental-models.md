@@ -476,6 +476,10 @@ self appreciation
 self centered vs. take into account others (cf. woke salaryman)
 self love
 self-righteousness
+sex -- abuse -- 12yo Samantha
+sex -- abuse -- Dominique Pelicot https://www.vox.com/world-politics/370736/france-rape-case-gisele-dominique-pelicot-metoo
+sex -- abuse -- https://en.wikipedia.org/wiki/Angers_pedophile_network
+sex -- abuse -- Outreau
 sex ed
 sex ed -- "sex positive"
 ship of theseus https://en.m.wikipedia.org/wiki/Ship_of_Theseus

@@ -359,6 +359,7 @@ MDN
 media types https://www.iana.org/assignments/media-types/media-types.xhtml
 memory -- heap
 memory -- stack
+memory safe -- "about 40% of all security problems in curl can be blamed on us using C instead of a memory-safe language. 50% of the high/critical severity ones" https://daniel.haxx.se/blog/2024/12/12/a-twenty-five-years-old-curl-bug/comment-page-1
 merge queue
 message passing https://en.wikipedia.org/wiki/Message_passing
 MFA -- 2FA
@@ -593,6 +594,7 @@ this
 thread
 threads -- virtual https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html
 TLS "Transport Layer Security"
+tool -- curl = https://curl.se/
 tool -- grep -- ast-grep https://ast-grep.github.io/
 tool -- http://devdocs.io/
 tool -- sprawl
