@@ -90,6 +90,7 @@ Huffman coding https://en.wikipedia.org/wiki/Huffman_coding
 idempotent = operation can run multiple times without changing the result
 identity function
 Josephus Problem
+Knapsack problem https://en.wikipedia.org/wiki/Knapsack_problem
 list -- floyd's cycle detection
 LLM -- temperature scaling
 LLM output generation -- beam search = search algorithm used to generate output sequences from a model during inference https://ai-guide.future.mozilla.org/content/llms-101/
@@ -121,6 +122,7 @@ P versus NP -- NP-hardness https://en.wikipedia.org/wiki/NP-hardness
 P versus NP -- NP-intermediate = If P and NP are different, then there exist decision problems in the region of NP that fall between P and the NP-complete problems. (If P and NP are the same class, then NP-intermediate problems do not exist because in this case every NP-complete problem would fall in P, and by definition, every problem in NP can be reduced to an NP-complete problem.)
 P versus NP -- P = easily solvable (Polynomial time)
 P versus NP https://en.wikipedia.org/wiki/P_versus_NP_problem
+Packing Unit Squares in Squares https://www.combinatorics.org/files/Surveys/ds7/ds7v5-2009/ds7-2009.html
 recursion -- indirect/mutual = direct = calls itself, indirect = family f calls g calls f etc.
 recursion -- single/multiple = single = classic, multiple = ex. Fibonacci badly implemented
 recursion -- structure = wrapper (top, prepare the actual recursion) + short-circuit (check for base case) + (optional, optimization) hybrid algo depending on data, since recursion is often inefficient on small data

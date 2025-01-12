@@ -16,3 +16,6 @@ WoW -- achievements
 WoW -- events
 WoW -- lore
 WoW -- community
+
+
+Knapsack problem https://en.wikipedia.org/wiki/Knapsack_problem

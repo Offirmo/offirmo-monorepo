@@ -6,7 +6,7 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { Asset } from '../1-types/types'
+import type { Asset, Url‿str, AnyPath } from '../l1-types/index.ts'
 
 /////////////////////////////////////////////////
 
@@ -66,12 +66,37 @@ function getꓽassetsⵧrecents(n = 12): Immutable<Array<Immutable<Asset>>> {
 }
 
 /////////////////////////////////////////////////
+// helpers
 
-export * from '../1-types/types'
+function getꓽurl(asset: Immutable<Asset>): Url‿str {
+	registerꓽasset_usageⵧstart(asset)
+	return asset.url
+}
+function _getꓽurl_tobind(this: Immutable<Asset>): Url‿str {
+	return getꓽurl(this)
+}
+
+function getꓽpath(asset: Immutable<Asset>): AnyPath {
+	const url = getꓽurl(asset)
+	assert(url.startsWith('file://'), 'Credits: asset Url is expected to start with file://!')
+	const url_obj = new URL(url)
+	return url_obj.pathname
+}
+function _getꓽpath_tobind(this: Immutable<Asset>): Url‿str {
+	return getꓽpath(this)
+}
+
+/////////////////////////////////////////////////
+
+export * from '../l1-types/index.ts'
 export {
 	registerꓽasset_usageⵧload,
 	registerꓽasset_usageⵧstart,
 	registerꓽasset_usageⵧend,
+
 	getꓽassetsⵧall,
 	getꓽassetsⵧrecents,
+
+	getꓽurl, _getꓽurl_tobind,
+	getꓽpath, _getꓽpath_tobind,
 }

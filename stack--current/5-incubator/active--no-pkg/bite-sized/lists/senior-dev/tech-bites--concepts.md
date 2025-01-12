@@ -11,6 +11,7 @@
 [ ] http://nodeschool.io/#workshoppers
 [ ] http://rethinkdb.com/blog/node-4/
 [ ] http://www.letudiant.fr/palmares/palmares-des-ecoles-d-ingenieurs/ouverture-internationale-2.html
+[ ] https://blog.quastor.org/
 [ ] https://craftinginterpreters.com/
 [ ] https://devpedia.pages.dev/
 [ ] https://en.wikipedia.org/wiki/Hofstadter's_law
@@ -21,6 +22,7 @@
 [ ] https://github.com/kilimchoi/engineering-blogs
 [ ] https://matklad.github.io/2023/08/06/fantastic-learning-resources.html
 [ ] https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
+[ ] https://tratt.net/laurie/blog/
 [ ] https://www.atlassian.com/team-playbook/plays/elevator-pitch
 [ ] https://www.developing.dev/p/5-books-every-software-engineer-should
 [ ] https://www.managingtheunmanageable.net/morerulesofthumb.html
@@ -29,7 +31,7 @@
 [ ] patterns https://www.patterns.dev/
 [ ] SWE at Google https://abseil.io/resources/swe-book/html/toc.html
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
-[] testing https://testing.googleblog.com/
+[ ] testing https://testing.googleblog.com/
 abort controller https://kettanaito.com/blog/dont-sleep-on-abort-controller
 abstraction -- level
 abstraction -- wrong, premature "most of the issues arise from trying to eagerly solve a problem before it fully exists in reality" https://www.transcendsoftware.se/posts/the-perils-of-premature-abstraction/ https://zackoverflow.dev/writing/premature-abstraction
@@ -140,6 +142,11 @@ concurrency -- thread pool
 concurrency -- wait-free, lock free
 connascence https://en.wikipedia.org/wiki/Connascence
 constructor
+content age rating -- "Common Sense" Media (private org) https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings
+content age rating -- culture = Different cultures have different standards for what is age-appropriate: some find graphic violence more acceptable than nudity, and some vice versa.
+content age rating -- G (General) = aka Safe for School, Appropriate for ages 13+
+content age rating -- identify = content need to be identified and labelled as safe or unsafe for each age rating. Given the volume, human review may not be a practical option.
+content age rating -- PG (Parental Guidance)= aka Not Safe For School (NSFS), Appropriate for ages 15+
 context switch
 convention over configuration
 Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
@@ -271,6 +278,7 @@ GRASP -- 7 Polymorphism = responsibility for defining the variation of behaviors
 GRASP -- 8 Protected variations = Identify points of predicted variation or instability; assign responsibilities to create a stable interface around them
 GRASP -- 9 Pure fabrication =
 GRASP -- see also: SOLID
+groupware = collaboration software = helps members of a group work better together. Groupware makes it possible for group members to easily share information and to use that information to more easily support working together.
 grug brain = complexity, readability https://grugbrain.dev/
 Grug Brained Developer = A layman's guide to thinking like the self-aware smol brained https://grugbrain.dev/
 handle
@@ -405,6 +413,13 @@ OOP -- problems -- encourages promiscuous sharing of mutable state
 OOP -- problems -- side effects
 opaque = data, types
 optim des || et && effet de bord
+optimization -- solutions -- Accept a less precise solution
+optimization -- solutions -- Use a better algorithm
+optimization -- solutions -- Use a better data-structure
+optimization -- solutions -- Use a lower-level system
+optimization -- we believe that we can easily know how to make the slow parts of a program run faster.
+optimization -- we believe that we can easily know where a program spends most of its time.
+optimization https://tratt.net/laurie/blog/2023/four_kinds_of_optimisation.html
 ORM (Object-Relational Mapping)
 orthogonality https://en.wikipedia.org/wiki/Orthogonality_(programming)
 overengineering https://blog.matt-rickard.com/p/stop-overengineering
@@ -593,6 +608,7 @@ the room https://lethain.com/getting-in-the-room/
 this
 thread
 threads -- virtual https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html
+time-travel https://docs.snowflake.com/en/user-guide/data-time-travel
 TLS "Transport Layer Security"
 tool -- curl = https://curl.se/
 tool -- grep -- ast-grep https://ast-grep.github.io/
@@ -631,6 +647,7 @@ uid -- use strings = "2^64 isn’t as big as it used to be" https://protobuf.dev
 unicode -- encoding -- WTF-8 "wobbly" (not needed with normalization / well formed) https://simonsapin.github.io/wtf-8/
 unicode -- encoding https://simonsapin.github.io/wtf-8/#motivation
 unicode -- FAQ https://unicode.org/faq/utf_bom.html#utf16-2
+unicode -- is hard https://mcilloni.ovh/2023/07/23/unicode-is-hard/
 unicode -- terminology https://simonsapin.github.io/wtf-8/#terminology
 Unix philosophy (OUTDATED -> use JSON ;)) https://en.wikipedia.org/wiki/Unix_philosophy
 Unix philosophy -- (much more) https://en.wikipedia.org/wiki/Unix_philosophy

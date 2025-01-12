@@ -1,0 +1,55 @@
+import {
+	type Url‿str,
+	type Thing,
+	type WithOnlinePresence,
+	type ThingWithOnlinePresence,
+	type Asset,
+	registerꓽasset_usageⵧload,
+	_getꓽurl_tobind, _getꓽpath_tobind,
+} from '@offirmo-private/credits'
+
+import AUTHOR from "@offirmo-private/credits/authors/neon.dimensionss"
+
+/////////////////////////////////////////////////
+
+// https://parceljs.org/recipes/image/#image-formats
+const url: Url‿str = (new URL(
+	'original.jpg?as=webp',
+	import.meta.url,
+)).href
+
+/////////////////////////////////////////////////
+
+const THING: Thing = {
+	description: 'Photo by Escape into a parallel universe on November 21, 2024. May be a cartoon.', // TODO fix
+	author: AUTHOR,
+	since‿y: 2024,
+}
+const ONLINE_PRESENCE: WithOnlinePresence = {
+	urlⵧcanonical: 'https://www.instagram.com/neon.dimensionss/p/DCqF6liJYN2/',
+}
+const THINGⵧONLINE: ThingWithOnlinePresence = {
+	...THING,
+	...ONLINE_PRESENCE,
+}
+const ASSET: Asset = {
+	...THINGⵧONLINE,
+	type: 'background',
+	url,
+	ai_involvement: {
+		generators: [],
+		level: 'major',
+	},
+}
+
+registerꓽasset_usageⵧload(ASSET)
+
+/////////////////////////////////////////////////
+
+const getꓽurl = _getꓽurl_tobind.bind(ASSET)
+const getꓽpath = _getꓽpath_tobind.bind(ASSET)
+
+export {
+	getꓽurl,
+	getꓽpath,
+}

@@ -6,7 +6,7 @@
 0-sum game
 1 or 2 way door
 12 steps
-1st thought v.s 2nd thought
+1st thought v.s 2nd thought = 2nd = what we truly are
 3 -- trichotomy https://en.wikipedia.org/wiki/Trichotomy_(philosophy)
 3 -- trilemma https://en.wikipedia.org/wiki/Trilemma
 3 hardest things to say -- I was wrong, I need help, I love you -> also 10 https://kristyna.co/mindful-entrepreneurship/10-hardest-things-for-people-to-say
@@ -68,6 +68,7 @@ barbarians at the gate https://en.wikipedia.org/wiki/Barbarians_at_the_Gate
 base rate: The average outcome for an event over time. They’re like batting averages for life, and they work best with big sample sizes. For example, if you’re starting a business, avoid the restaurant business where margins are low and competition is high.
 be prepared
 bee browsing
+being enough
 better ask for forgiveness than for permission
 biases -- attractiveness
 biases -- baby-face
@@ -119,6 +120,8 @@ communication -- plainspoken https://boz.com/articles/be-plainspoken https://deb
 competition -- is for losers = Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
 conditioning -- classical
 conditioning -- operant
+content moderation
+content rating -- "Common Sense" Media (private org) https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings
 continuity of government (COG) = establishing defined procedures that allow a government to continue its essential operations in case of a catastrophic event such as nuclear war https://en.wikipedia.org/wiki/Continuity_of_government 
 convex output = look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
 convex output = the smartest people can be an order of magnitude more productive than others who are only somewhat less smart https://www.8vc.com/resources/lessons-from-peter-thiel
@@ -179,6 +182,7 @@ evolution -- LUCA https://en.wikipedia.org/wiki/Last_universal_common_ancestor
 evolution https://en.wikipedia.org/wiki/Evolutionary_game_theory
 evolution vs revolution
 excuses vs. solutions
+fact checking
 fair division -- divide and choose https://en.wikipedia.org/wiki/Divide_and_choose
 fair division = dividing a set of resources among several people who have an entitlement to them so that each person receives their due share. division of inheritance, partnership dissolutions, divorce settlements, electronic frequency allocation, airport traffic management, and exploitation of Earth observation satellite https://en.wikipedia.org/wiki/Fair_division
 fairness
@@ -202,6 +206,7 @@ Fingerprint for Success (F4S)
 first practice what you preach
 first principles https://fs.blog/first-principles/
 first-principles thinker
+five eyes
 frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
 frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
 free will https://en.wikipedia.org/wiki/Free_will
@@ -241,6 +246,7 @@ helicopter parent
 herbe toujours plus verte
 Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
 high school "What You'll Wish You'd Known" https://paulgraham.com/hs.html
+high-profile = ~widely known, ex. high-profile media
 high/low functioning human
 historic recurrence https://en.wikipedia.org/wiki/Historic_recurrence
 Hock Principle: Simple, clear purpose and principles give rise to complex and intelligent behavior. Complex rules and regulations give rise to simple and stupid behavior.
@@ -293,6 +299,7 @@ juger vs. évaluer
 justifiable homicide = interesting cultural differences https://en.wikipedia.org/wiki/Justifiable_homicide
 keep only the ones saying it's doable
 keeping up with the jones
+labor of love
 laisser-aller
 law of Shitty Click-Through Rates = Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
 le premier jour du reste de sa vie
@@ -325,6 +332,7 @@ linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_
 living the good life
 Logical Problem of Evil https://christianity.stackexchange.com/questions/100110/what-are-christian-responses-to-the-logical-problem-of-evil
 look for Things That Don’t Make Sense: The world always makes sense. But it can be confusing. When it is, your model of the world is wrong. So, things that don’t make sense are a learning opportunity. Big opportunities won’t make sense until it’s too late to profit from them.
+loosing faith in humanity
 love = wanting the best
 low culture https://en.wikipedia.org/wiki/Low_culture
 mainstream scientific consensus
@@ -350,6 +358,7 @@ moral hazard = Increases in the exposure to risk when insured, or when another b
 moral imperative https://en.wikipedia.org/wiki/Moral_imperative
 mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruction
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
+naivety
 naiveté: abus sexuels, mafia
 needs / wants https://en.wikipedia.org/wiki/Need
 Never interrupt someone doing what you said couldn't be done.
@@ -398,6 +407,7 @@ phenomenology (physics) = branch of theoretical physics in which physicists cons
 picture the success
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
 porn
+poverty -- Sherman Alexie = It sucks to be poor, and it sucks to feel that you somehow deserve to be poor. You start believing that you're poor because you're stupid and ugly. And then you start believing that you're stupid and ugly because you're Indian. And because you're Indian you start believing you're destined to be poor. It's an ugly circle and there's nothing you can do about it. Poverty doesn't give you strength or teach you lessons about perseverance. No, poverty only teaches you how to be poor.
 power -- French and Raven five bases of power = reward, coercion, legitimate, expert, referent, informational https://en.wikipedia.org/wiki/French_and_Raven%27s_bases_of_power
 power -- Tony Benn's' Five Questions About Power -- 01 What power have you got?
 power -- Tony Benn's' Five Questions About Power -- 02 Where did you get it from?
@@ -476,6 +486,7 @@ self appreciation
 self centered vs. take into account others (cf. woke salaryman)
 self love
 self-righteousness
+sense-check = Before going too deep into solutions, align with your stakeholders on the problem. This saves time by avoiding working a lot just to find out that it’s highly contentious and there’s a different or better approach.
 sex -- abuse -- 12yo Samantha
 sex -- abuse -- Dominique Pelicot https://www.vox.com/world-politics/370736/france-rape-case-gisele-dominique-pelicot-metoo
 sex -- abuse -- https://en.wikipedia.org/wiki/Angers_pedophile_network
@@ -536,6 +547,7 @@ theory of everything https://en.wikipedia.org/wiki/Theory_of_everything
 things learned from Medicine / Dentistry https://zenfamily.dental/csLearnDental.php
 THINK hack = Is it True? Helpful? Inspiring? Necessary? Kind?
 thought leader
+tier-3 meme
 time management
 time-tested
 tip of the iceberg

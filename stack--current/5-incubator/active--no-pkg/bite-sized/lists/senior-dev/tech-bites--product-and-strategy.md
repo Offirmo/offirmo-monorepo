@@ -104,6 +104,7 @@ management maturity = high-management-maturity organisations https://infrequentl
 marketing -- "killer app"
 marketing -- case studies
 marketing -- case studies -- "flagship app" It's not that there wasn't a lot of interest in WPF, it's just there weren't any flagship apps showing off what it could do that previous frameworks couldn't. Even if Evernote had stayed with it, they still have a fairly simple client so a lot of people would simply shrug and say "I can do that in WinForms." They aren't wrong. https://www.reddit.com/r/csharp/comments/x0nu7h/comment/im9kesb/
+mature market
 metrics -- 40 something
 metrics -- functional onboarding = If a user has hit all the functional onboarding milestones, it is a strong indication that they have begun to adopt the product. Measured over 2w, chose reqs, ex. have 2 users, 2 core actions...
 metrics -- funnel

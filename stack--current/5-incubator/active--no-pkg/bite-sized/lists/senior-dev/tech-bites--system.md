@@ -125,7 +125,6 @@ background jobs -- issues -- Inefficient Error Handling: While we can implement 
 background jobs -- issues -- Lack of State Management: Background jobs typically don't maintain their state between executions. If a job fails midway, it often needs to start from the beginning, potentially leading to duplicate work or inconsistent results.
 background jobs -- issues -- Long-Running Processes: Background jobs are usually designed for relatively short-lived tasks. Managing processes that may run for hours or days becomes increasingly complex.
 background jobs -- issues -- Scalability Concerns: As the number of background jobs grows, it becomes increasingly challenging to manage their execution, monitor them, and handle errors.
-backing service = any service the app consumes over the network as part of its normal operation https://12factor.net/backing-services
 backpressure
 backup
 BASE -- 1. BA = Basically available = the system does guarantee availability, in terms of the CAP theorem.
@@ -254,7 +253,7 @@ encryption
 encryption -- at rest
 Event Driven Architectures = publish/subscribe model whereby there is a publisher (or publishers) which sends out notifications that something happened and subscribers (hereafter referred to as consumers) who are interested in things that happened. Good decoupling but hard to track impact of changes.
 event streaming https://kafka.apache.org/intro
-event-driven architecture = uses events to trigger and communicate between decoupled services, common with microservices
+event-driven architecture = uses events (from producers) to trigger and communicate (across message channels) between decoupled services (consumers). Common with microservices.
 Externalized configuration
 failure -- hardware
 failure modes -- arbitrary = server produce arbitrary response at arbitrary times
@@ -439,6 +438,7 @@ Roy Fielding's dissertation "Architectural Styles and the Design of Network-base
 scaling -- "internet scale", C10k, C10M problem  https://en.wikipedia.org/wiki/C10k_problem
 scaling -- horizontally = more machines
 scaling -- load-shedding
+scaling -- separation of storage and compute
 scaling -- vertically = more power
 scaling ~ elasticity
 search -- https://vespa.ai/ (NO OpenSearch)
@@ -450,6 +450,8 @@ serverless -- Deploy your app as one (all Lambdas as one, rather than each Lambd
 serverless -- Don’t break things down too small (dare I say microservices). Keep your lambdas and code grouped logically rather than striving for smallest unit of work
 serverless -- forces devs into working within limits - mainly memory and time per lambda function invocation. This then forces good habits around breaking down complex operations, which by default results in better resilience and scalability. E.g. we have to break down large rule executions into multiple executions per issue (instead of processing 1000s of issues in bulk)
 service
+service -- backing -- inferred = dependencies for an instrumented service, such as databases, queues, or third-party APIs, even if that dependency hasn’t been directly instrumented
+service -- backing = any service the app consumes over the network as part of its normal operation https://12factor.net/backing-services
 service = software functionality https://en.wikipedia.org/wiki/Service_(systems_architecture)
 service availability
 service mesh
@@ -484,7 +486,7 @@ stateful
 stateless -- Prefer simple, stateless services where possible
 stream processing = computing paradigm that involves the continuous processing of data streams in real-time (vs. batch). crucial in scenarios where low-latency, real-time insights, and immediate actions on data are essential
 Sustainable Architectural Decisions https://adr.github.io/
-System design is a mine-field of difficult tradeoffs
+system design -- is a mine-field of difficult tradeoffs
 system properties -- 01 available = end user can access it and it works as expected https://medium.com/baseds/ready-and-available-distributed-systems-161023aca378
 system properties -- 02 highly available = no scheduled/unscheduled maintenance, no downtime, no data loss
 system properties -- 03 fault tolerant = can even handle hardware failure (expensive to implement)

@@ -24,6 +24,7 @@ cloud save
 completionist
 compulsion loop = https://en.wikipedia.org/wiki/Compulsion_loop
 construction and management simulation (CMS)
+content age rating -- https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings
 cross-play
 cutscene
 dialog tree

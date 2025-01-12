@@ -18,12 +18,14 @@
 		"noUnusedParameters": false,
 		"strict": true,
 		"strictBindCallApply": true,
+		"strictBuiltinIteratorReturn": true,
 		"strictFunctionTypes": true,
 		"strictNullChecks": true,
 		"strictPropertyInitialization": true,
 		"useUnknownInCatchVariables": true,
 
 
+		"allowImportingTsExtensions": true,
 		"allowUmdGlobalAccess": false,
 		"module": "ES2022",
 		"moduleResolution": "bundler",
@@ -35,6 +37,7 @@
 		"declarationMap": true,
 		"downlevelIteration": false,
 		"importHelpers": true,
+		"isolatedDeclarations": false,
 		"newLine": "lf",
 		"noEmitHelpers": true,
 		"noEmitOnError": true,
@@ -56,6 +59,7 @@
 		"experimentalDecorators": false,
 		"jsx": "preserve",
 		"lib": [ "ES2024" ],
+		"rewriteRelativeImportExtensions": true,
 		"target": "ES2024",
 
 

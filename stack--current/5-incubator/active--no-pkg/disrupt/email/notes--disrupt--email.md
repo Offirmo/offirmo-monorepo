@@ -77,3 +77,5 @@ https://money.stackexchange.com/questions/71586/im-being-set-up-for-an-internet-
 
 
 templates https://squirrelly.js.org/
+
+https://learn.microsoft.com/en-us/exchange/clients/exchange-activesync/exchange-activesync?view=exchserver-2019

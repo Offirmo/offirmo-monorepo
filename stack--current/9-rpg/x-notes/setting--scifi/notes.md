@@ -27,3 +27,6 @@ https://worldbuilding.stackexchange.com/questions/253616/why-isnt-the-solar-syst
 
 crashing asteroids on young planets to more easily harvest them https://en.wikipedia.org/wiki/Sudbury_Basin#Mining
 https://en.wikipedia.org/wiki/List_of_impact_structures_on_Earth
+
+
+military units https://www.youtube.com/watch?v=l1bMFmmYFk8

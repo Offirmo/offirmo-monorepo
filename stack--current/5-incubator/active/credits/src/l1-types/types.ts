@@ -2,7 +2,8 @@
  * aiming at properly crediting the author(s)
  */
 
-import { Url‿str, Author, Thing, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
+import type { Url‿str, Thing, Author } from '@offirmo-private/ts-types-web'
+import type { SemVer } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 /* Reminder:
@@ -51,25 +52,36 @@ const THINGⵧONLINE: ThingWithOnlinePresence = {
 }
 */
 
+// for crediting. Rationale = one day, we may know which artist was used in the training data
+// We are not re-using Author, those are not "authors"
+interface AIModel {
+	name: string | 'unknown',
+	version: SemVer | 'unknown',
+}
+
 interface Asset extends Thing {
 	// to help with searching/displaying assets when giving credits
 	type:
-		| 'image' | 'imageⵧbackground' | 'imageⵧicon' | 'imageⵧcursor' | 'imageⵧillustration'
+		| 'image' | 'imageⵧphoto' | 'imageⵧillustration' | 'imageⵧicon' | 'imageⵧcursor'
 		| 'sound' | 'soundⵧmusic'
 		| 'font'
 		| 'code'
 	// TODO learning, inspiration... ?
+
 	url?: Url‿str
+
+	co_authors?: Array<Author>,
+
+	ai_involvement: 'none' | {
+		generators?: Array<AIModel>
+		level:
+			| 'minor' // ex. author generated the base, then used AI to tweak
+			| 'major' // ex. generated the base, then author tweaked
+	}
 }
 
 /////////////////////////////////////////////////
 
 export {
 	type Asset,
-
-	// for convenience
-	type Author,
-	type Thing,
-	type WithOnlinePresence,
-	type ThingWithOnlinePresence,
 }

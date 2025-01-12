@@ -25,3 +25,5 @@ Tools
 
 
 TODO 	"packageManager": "yarn@1",
+
+"A-apps--core/space-rpg/*",

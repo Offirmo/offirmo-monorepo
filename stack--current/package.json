@@ -50,7 +50,6 @@
 			"4-tools/*",
 			"5-incubator/active/*",
 			"9-rpg/*",
-			"A-apps--core/space-rpg/*",
 			"A-apps--core/the-boring-rpg/*",
 			"D-minisites/*"
 		]
@@ -132,9 +131,7 @@
 		"murmurhash3js-revisited": "^3",
 		"nanoid": "^5",
 		"npm-run-all": "^4",
-		"p-progress": "^1",
 		"parcel": "^2",
-		"particles.js": "^2",
 		"path-exists": "^5",
 		"pokemon": "^3",
 		"prettier": "^3",
@@ -153,6 +150,7 @@
 		"strip-ansi": "^7",
 		"sum-up": "^3",
 		"swiper": "^11",
+		"terminal-image": "^3",
 		"terminal-size": "^4",
 		"tildify": "^3",
 		"ts-node": "^10",

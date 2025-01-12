@@ -1,4 +1,4 @@
-import { type Author } from '@offirmo-private/ts-types-web'
+import { type Author } from '@offirmo-private/credits'
 
 /////////////////////////////////////////////////
 

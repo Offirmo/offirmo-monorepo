@@ -40,3 +40,5 @@ export default function report(parent, LIB) {
 
 	LIB.add_child(parent, node)
 }
+
+// TODO https://developer.mozilla.org/en-US/docs/Web/API/Storage_API

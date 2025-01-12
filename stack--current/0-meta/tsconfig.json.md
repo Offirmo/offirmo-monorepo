@@ -26,19 +26,35 @@ REMINDER: the build script relax a few rules in dev mode (--watch), see `build-t
 
 path rewriting `allowImportingTsExtensions true 		"rewriteRelativeImportExtensions": true,`
 
-#### TODO 2024/10/11 5.7
+#### PENDING 5.8
+
+#### 2024/10/11 5.7
 https://devblogs.microsoft.com/typescript/announcing-typescript-5-7/
 
-#### TODO 2024/09 5.6
+🆕 https://devblogs.microsoft.com/typescript/announcing-typescript-5-7/#path-rewriting-for-relative-paths`
+- enabling both `"allowImportingTsExtensions": true` and `"rewriteRelativeImportExtensions": true` (later is undocumented?) 
+
+🆕 switched target + lib to es2024
+
+TODO one day tsconfig ancestry? https://devblogs.microsoft.com/typescript/announcing-typescript-5-7/#searching-ancestor-configuration-files-for-project-ownership
+
+#### 2024/09 5.6
 https://devblogs.microsoft.com/typescript/announcing-typescript-5-6/
 
 * DOESNT WORK use  "typeRoots": ["node_modules/@types", "typings"] instead of replicating the reference to types?
 * added nouncheckedsideeffectimports https://devblogs.microsoft.com/typescript/announcing-typescript-5-6/#the---nouncheckedsideeffectimports-option
 
+🆕 `"strictBuiltinIteratorReturn": true`
+
 ### 2024/06 5.5
 https://devblogs.microsoft.com/typescript/announcing-typescript-5-5/
 
-big pass following some issues
+🆕 `"isolatedDeclarations": false` Unfortunately this causes much headach for no benefit (for me) TODO activate it manually on PUBLIC modules
+
+TODO ${configDir} ?
+TODO deprecations https://devblogs.microsoft.com/typescript/announcing-typescript-5-5/#disabling-features-deprecated-in-typescript-5.0
+
++ big pass following some issues
 
 
 

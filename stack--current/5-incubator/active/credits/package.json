@@ -7,6 +7,10 @@
 
 	"sideEffects": true,
 	"type": "module",
+	"exports": {
+		".": "./src/l2-aggregator/index.ts",
+		"./authors/*": "./src/l3-authors/*/index.ts"
+	},
 	"source": "src/aggregator/index.ts",
 
 	"dependencies": {
@@ -22,7 +26,7 @@
 		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
 		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
 
-		"demo1": "npx tsx doc/demo--personal-blog/index.mts",
+		"demoN": "npx tsx doc/demo/node/index.ts",
 
 		"dev": "run-s clean _build:dev:watch",
 		"xxtest": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/**/*spec.js'",
@@ -32,6 +36,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
+		"terminal-image": "^3",
 		"tslib": "^2"
 	}
 }
