@@ -38,6 +38,13 @@
 		"serve--pub":      "ngrok http 1987 --domain=national-rat-supreme.ngrok-free.app",
 		"serve--pub--dev": "ngrok http 8080 --domain=national-rat-supreme.ngrok-free.app"
 	},
+
+	"// @parcel/resolver": "https://parceljs.org/features/dependency-resolution/#enabling-package-exports",
+	"@parcel/resolver-default": {
+		"packageExports": true
+	},
+
+	"// bolt": "https://github.com/boltpkg/bolt",
 	"bolt": {
 		"workspaces": [
 			"0-meta/build-tools/*",
@@ -54,13 +61,13 @@
 			"D-minisites/*"
 		]
 	},
+
+	"// manypkg": "https://github.com/Thinkmill/manypkg",
 	"manypkg": {
 		"defaultBranch": "main"
 	},
-	"@parcel/resolver-default": {
-		"packageExports": true
-	},
 
+	"// deps": "only the one needed to bootstrap the monorepo",
 	"dependencies": {
 		"chalk": "^5",
 		"fs-extra": "^11",

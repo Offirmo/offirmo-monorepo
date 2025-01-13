@@ -21,7 +21,7 @@ const url: Url‿str = (new URL(
 /////////////////////////////////////////////////
 
 const THING: Thing = {
-	description: 'Photo by Escape into a parallel universe on November 21, 2024. May be a cartoon.', // TODO fix
+	description: 'An AI generated cityscape.',
 	author: AUTHOR,
 	since‿y: 2024,
 }
@@ -36,8 +36,10 @@ const ASSET: Asset = {
 	...THINGⵧONLINE,
 	type: 'background',
 	url,
+	alt: 'A bright futuristic cityscape with cliffs and greenery.',
+
 	ai_involvement: {
-		generators: [],
+		generators: [ 'unknown' ],
 		level: 'major',
 	},
 }

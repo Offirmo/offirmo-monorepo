@@ -382,6 +382,7 @@ monads
 monitoring = observing systems, collecting metrics, evaluating those metrics over time, and then using them to make decisions or take actions
 monolith = over time become poorly structured, containing many different, sometimes competing conventions. These conventions and “styles” sprawl throughout the monolith and make it difficult to understand what is going on. Because structures are built with different conventions, to work in the monolith safely, you have to examine everything to make sure you understand this instance of this pattern. It’s not safe to assume anything. This, combined with the lack of boundaries in the monolith means that every change incurs a huge cost in examination and understanding before it can be safely implemented. This skews developer performance to tenure - the longer you have been staring at the code, the more you have wrapped your head around and the faster you can go (mostly). New developers should not be worried about the time it takes to be effective in the monolith - it's the monolith’s fault, not yours."
 monorepo -- boundaries = don't conflate the main codebase vs things needed to run the build vs things produced by the build
+monorepo -- megarepo
 multi tenant -- isolation
 MVC (Model View Controller)
 namespace

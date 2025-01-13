@@ -46,7 +46,6 @@
 		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo-private/ts-utils": "*",
-		"@offirmo-private/view--chat": "*",
 		"@tbrpg/state": "*",
 		"@tbrpg/ui--rich-text": "^0",
 		"@tsparticles/basic": "^3",

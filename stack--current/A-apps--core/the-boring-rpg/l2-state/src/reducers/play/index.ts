@@ -6,8 +6,10 @@ import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation }
 
 /////////////////////
 
+import { type HypermediaContentType } from '@tbrpg/definitions'
 import * as EnergyState from '@tbrpg/state--energy'
 import * as AchievementsState from '@tbrpg/state--achievements'
+import * as EngagementState from '@oh-my-rpg/state--engagement'
 import { type AdventureHumanReadableID } from '@tbrpg/logic--adventures'
 
 /////////////////////
@@ -31,6 +33,28 @@ function play(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp�
 	let state = up_to_date_state
 
 	const is_good_play = will_next_play_be_good_at(state, now_ms)
+
+	// add a little animation
+	// totally optional of course
+	state = {
+		...state,
+		u_state: {
+			...state.u_state,
+			engagement: EngagementState.enqueue<HypermediaContentType>(state.u_state.engagement, {
+				summary: 'You’re going on an adventure...',
+				flow: 'main',
+				sequence: 'pre',
+				role: 'system',
+				success: is_good_play,
+				attention_needed: is_good_play ? 'normal' : 'notice',
+				enhancements: {
+					key: 'action--play--before-result',
+					...(!is_good_play && {vibrate: { duration‿ms: 'auto', alt: 'You encounter trouble!!!' }}),
+					//play_sound?: { url: Url‿str, alt: string }, TODO one day!
+				}
+			})
+		}
+	}
 
 	// consume energy
 	if (!is_good_play) {

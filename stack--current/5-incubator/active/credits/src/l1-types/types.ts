@@ -70,6 +70,8 @@ interface Asset extends Thing {
 
 	url?: Url‿str
 
+	alt: string // a textual description for clients who can't display
+
 	co_authors?: Array<Author>,
 
 	ai_involvement: 'none' | {

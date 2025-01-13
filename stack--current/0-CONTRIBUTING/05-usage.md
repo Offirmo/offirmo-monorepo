@@ -77,6 +77,8 @@ bolt ws run cheatsheet --only @oh-my-rpg/*
 
 ## clean
 ```bash
+bolt clean-deps
+
 bolt clean
 # equivalent to:
 #  bolt ws run clean

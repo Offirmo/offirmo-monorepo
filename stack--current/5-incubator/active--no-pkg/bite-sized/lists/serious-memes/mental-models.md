@@ -301,6 +301,21 @@ keep only the ones saying it's doable
 keeping up with the jones
 labor of love
 laisser-aller
+law -- crimes -- crime against humanity
+law -- crimes -- felonies
+law -- crimes -- l1 -- burglary
+law -- crimes -- l1 -- loitering
+law -- crimes -- l1 -- theft
+law -- crimes -- l1 -- vandalism
+law -- crimes -- l2 -- assault
+law -- crimes -- l2 -- reckless endangerment
+law -- crimes -- l2 -- rioting
+law -- crimes -- l3 -- murder
+law -- crimes -- l3 -- murder -- attempted
+law -- crimes -- misdemeanors
+law -- crimes -- treason
+law -- crimes -- treason -- high
+law -- crimes -- war crimes
 law of Shitty Click-Through Rates = Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
 le premier jour du reste de sa vie
 leadership -- change or die
