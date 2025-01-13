@@ -230,10 +230,11 @@ if (MONOREPO_PKG_JSON.bolt) (function _update_root_dependencies_for_bolt() {
 // 3. Check and fix node_modules
 
 if (MONOREPO_PKG_JSON.bolt) (function _hoist_local_packages_to_root_node_modules() {
-	// yarn workspace does it, not bolt
+	// yarn workspace does it, not bolt.
 	// Use cases?
-	// - PRO hoisting make the pkg tolerant of forgetting to declare a dep in package.json
-	//   - CONS but on the other hand it helps to surface missing dependencies
+	// - CONS hoisting make pkgs immune to forgetting to declare a dep in package.json
+	// - PROS it helps for complex monorepo situations such as @offirmo-private/parcel-config--default
+	//return // TODO from time to time, uncomment this return to check whether pkgs have their deps properly declared
 
 	MONOREPO_PKGS_NAMESPACES.forEach(ns => {
 		const namespace_abspath = path.join(MONOREPO_ROOT, 'node_modules', ns)

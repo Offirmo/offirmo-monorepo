@@ -21,6 +21,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/ts-types": "*",
 		"tiny-invariant": "^1"
 	},
 

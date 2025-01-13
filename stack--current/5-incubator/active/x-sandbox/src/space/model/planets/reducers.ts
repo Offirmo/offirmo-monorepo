@@ -1,0 +1,22 @@
+import assert from 'tiny-invariant'
+import { type Immutable } from '@offirmo-private/ts-types'
+
+import { type Planet } from './types.js'
+
+/////////////////////////////////////////////////
+
+function create(): Immutable<Planet> {
+	return {
+		name: {
+			own: 'XYZ-323'
+		},
+		archetype: 'earthlike',
+		civilization: {},
+	}
+}
+
+/////////////////////////////////////////////////
+
+export {
+	create,
+}
