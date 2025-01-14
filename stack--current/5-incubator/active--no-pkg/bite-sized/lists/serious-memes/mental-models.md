@@ -60,6 +60,7 @@ alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_co
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
+aunt sally = an argument or idea that is easily refutable and set up to invite criticism https://en.wikipedia.org/wiki/Aunt_Sally
 autocracy https://en.wikipedia.org/wiki/Autocracy
 availability cascade = a self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
 baker’s dozen: The key to good hospitality is to delight your guests with an unexpected gift. If you run a hotel, leave a chocolate on the bed. If you run a bakery, give your customers one extra bagel. If you write a tweetstorm, share an extra idea.
@@ -531,6 +532,7 @@ start with why
 statistical significance
 Stigler's law of eponymy = inventor = the one who bring to attention, not the discoverer https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy
 stoicism -- Rudyard Kipling "If" https://en.wikipedia.org/wiki/If%E2%80%94
+straw-dog proposal = (biz jargon) a brainstormed simple draft proposal intended to generate discussion of its disadvantages and to spur the generation of new and better proposals https://en.wikipedia.org/wiki/Straw_man_proposal  https://www.linkedin.com/pulse/straw-man-versus-straw-dog-michael-schwartz/
 Streisand effect = Increased awareness of information caused by efforts to suppress it
 Sturgeon's law = "90% of everything is crap" https://en.wikipedia.org/wiki/Sturgeon%27s_law
 submarine = hidden project until ready

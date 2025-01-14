@@ -581,6 +581,7 @@ stats course https://www.youtube.com/playlist?list=PLltdM60MtzxNwhL4sg7swFFlUlH7
 status codes
 Stick to boring architecture for as long as possible https://addyosmani.com/blog/boring-architecture/
 stories to help you grow as a software developer https://medium.com/@MediumStaff/list/stories-to-help-you-grow-as-a-software-developer-b1d913188c20
+straw-dog proposal = (jargon) a brainstormed simple draft proposal intended to generate discussion of its disadvantages and to spur the generation of new and better proposals https://en.wikipedia.org/wiki/Straw_man_proposal#Software_development
 streams
 style guides https://google.github.io/styleguide/
 superapp

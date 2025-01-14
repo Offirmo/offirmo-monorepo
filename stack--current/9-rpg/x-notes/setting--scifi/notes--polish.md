@@ -5,7 +5,6 @@
 
 https://codepen.io/Offirmo/pen/OJeGMRG
 
-hyperspace https://codepen.io/noahblon/pen/DpNRyR
 trails https://en.wikipedia.org/wiki/File:WarpTrails001.gif
 https://en.wikipedia.org/wiki/File:StarfieldSimulation004.gif
 

@@ -159,4 +159,5 @@ tower of Hanoi
 Trabb Pardo-Knuth (TPK) = demo program https://en.wikipedia.org/wiki/TPK_algorithm
 transitive
 traveling salesman -- https://en.wikipedia.org/wiki/Held%E2%80%93Karp_algorithm
+unsolved https://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems
 Zstandard = a fast compression algorithm, providing high compression ratios. It also offers a special mode for small data, called dictionary compression https://facebook.github.io/zstd/
