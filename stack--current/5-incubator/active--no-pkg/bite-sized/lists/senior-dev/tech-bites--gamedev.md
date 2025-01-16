@@ -3,6 +3,21 @@
 [ ] Magic the gathering -- https://magic.wizards.com/en/news/making-magic/state-of-design-2024
 AAA
 AI
+ambience = help set the tone for the atmosphere of a space
+assets
+assets -- audio -- music
+assets -- audio -- sound effect -- braam = big, brassy, cinematic hit that conveys to the audience that they are about to witness something epic, grand, and exciting; something unlike anything they’ve seen before (esp. trailer)
+assets -- audio -- sound effect -- drone = add texture and atmosphere by underscoring the scene
+assets -- audio -- sound effect -- drop = brings the action to a dead stop – a deliberate pause emphasized using a sound effect. It releases tension and serves as a moment for the viewer to soak it all in
+assets -- audio -- sound effect -- foley https://en.wikipedia.org/wiki/Foley_(filmmaking)
+assets -- audio -- sound effect -- glitch = sound of a malfunction, but make it stylish" is a glitch in a nutshell. If it jitters, scratches, skips or otherwise moves erratically
+assets -- audio -- sound effect -- impact = object making contact with another object or a structure
+assets -- audio -- sound effect -- pass by = an object passing by. A car, a spaceship, a bullet, a potted plant thrown at a character’s head…
+assets -- audio -- sound effect -- riser = steadily rises in pitch and ratchets up the tension
+assets -- audio -- sound effect -- walla = the murmur of a crowd, the sound of people going about their lives while remaining firmly in the background. It adds character to the atmosphere, so much so that you cannot interchange walla on a whim and expect the scene to feel authentic
+assets -- audio -- sound effect -- whoosh = underscore movement of some kind: a fist flying in a fight scene, a speed ramp
+assets -- audio -- sound effect https://blog.prosoundeffects.com/sound-effects-terms-explained-part-1
+assets -- audio -- soundscape
 autosave
 avatar
 balance
@@ -41,7 +56,6 @@ endgame -- GW2 -- Story and exploration-based content — playing new story chap
 endgame -- GW2 = https://wiki.guildwars2.com/wiki/Endgame
 endgame https://wiki.guildwars2.com/wiki/Endgame
 Environmental Storytelling = arranging a careful selection of the objects available in a game world so that they suggest a story to the player who sees them https://www.gamedeveloper.com/design/environmental-storytelling
-foley = sound effect https://en.wikipedia.org/wiki/Foley_(filmmaking)
 fun
 fun & cool -- "a theory of fun for game design"
 fun & cool -- "I see who are the villains" (LOTRO)
@@ -170,7 +184,6 @@ replay value -- speedrunning
 rush
 sandbox
 softlock
-soundscape
 survival
 theorycraft https://en.wikipedia.org/wiki/Theorycraft
 titles

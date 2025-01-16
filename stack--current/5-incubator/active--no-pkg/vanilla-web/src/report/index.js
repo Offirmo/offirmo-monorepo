@@ -5,6 +5,7 @@
 // Type
 // = recursive KV
 
+
 function create_node(key) {
 	return {
 		key,
@@ -12,7 +13,9 @@ function create_node(key) {
 		notifications: [], // [console args][]
 		results: [], // [console args][]
 
-		children: [] // node[]
+		children: [], // node[]
+
+		pending: [], // Promise<void>[]
 	}
 }
 
@@ -42,6 +45,19 @@ function try_or_report(node, details, func, default_result) {
 	}
 }
 
+function create_node_and_work(key, executor /*: (node) => void*/) {
+	const node = create_node(key)
+
+	try {
+		executor(node)
+	}
+	catch (err) {
+		node.notifications.push(['Unexpected crash!', err])
+	}
+
+	return node
+}
+
 /////////////////////////////////////////////////
 
 function has_notification(node, { recursive = true } = {}) {
@@ -65,9 +81,9 @@ function printReport(node) {
 	const hasNotification = has_notification(node)
 
 	if (hasNotification)
-		console.group(`report: ${node.key}`)
+		console.group(`[${LIB}] ${node.key}`)
 	else
-		console.groupCollapsed(`report: ${node.key}`) // Collapsed
+		console.groupCollapsed(`[${LIB}] ${node.key}`) // Collapsed
 
 	node.references.forEach(href => console.debug('ref:', href))
 
@@ -110,22 +126,24 @@ function formatNumberToPrettyBytesSI(Num=0, dec=2){
 	return Number(Num[0])+"."+Num[1].substring(0,dec)+" "+"  kMGTPEZY"[Num.length]+"B";
 }
 
-
 /////////////////////////////////////////////////
 
 import reportꓽsecurity from './security/index.js'
 import reportꓽenvironment from './environment/index.js'
-import reportꓽancestry from './ancestry/index.js'
-import reportꓽsiteData from './site-data/index.js'
+import reportꓽsiteData from './local-persistence/index.js'
 import reportꓽauxiliaries from './auxiliaries/index.js'
 import reportꓽdemo from './template.js'
 
+import { LIB } from './consts.js'
+import { getꓽexecution_context__id } from './environment/execution-context/index.js'
+
 export default function report() {
-	const node = create_node(window.origin)
+	const node = create_node(getꓽexecution_context__id())
 
 	const LIB = {
 		create_node,
 		add_child,
+		create_node_and_work,
 		try_or_report,
 		formatNumber,
 		formatNumberToPrettyBytesSI,
@@ -133,9 +151,9 @@ export default function report() {
 
 	reportꓽsecurity(node, LIB)
 	reportꓽenvironment(node, LIB)
-	reportꓽancestry(node, LIB)
 	reportꓽsiteData(node, LIB)
 	reportꓽauxiliaries(node, LIB)
+
 	reportꓽdemo(node, LIB)
 
 	// some checks need promises resolutions

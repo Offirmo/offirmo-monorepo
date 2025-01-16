@@ -1,4 +1,7 @@
 
+import { hasꓽbrowser_environment } from '../../../environment/execution-context/index.js'
+
+/////////////////////////////////////////////////
 
 /**
  * returns a K/V representation of all the content of the given storage, for snapshot purpose.
@@ -140,7 +143,18 @@ function reportꓽlocalStorage(parent, LIB) {
 		'https://www.rdegges.com/2018/please-stop-using-local-storage/',
 	)
 
-	_reportꓽstorage(localStorage, node, LIB)
+	if (!globalThis.localStorage) {
+		const isꓽexpected = hasꓽbrowser_environment()
+		if (isꓽexpected)
+			node.notifications.push(['missing localStorage ❌'])
+		else {
+			// nothing to report
+		}
+	}
+	else {
+		// could be native or polyfilled, we can't know
+		_reportꓽstorage(localStorage, node, LIB)
+	}
 
 	LIB.add_child(parent, node)
 }
@@ -152,7 +166,18 @@ function reportꓽsessionStorage(parent, LIB) {
 		'https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage',
 	)
 
-	_reportꓽstorage(sessionStorage, node, LIB)
+	if (!globalThis.sessionStorage) {
+		const isꓽexpected = hasꓽbrowser_environment()
+		if (isꓽexpected)
+			node.notifications.push(['missing sessionStorage ❌'])
+		else {
+			// nothing to report
+		}
+	}
+	else {
+		// could be native or polyfilled, we can't know
+		_reportꓽstorage(sessionStorage, node, LIB)
+	}
 
 	LIB.add_child(parent, node)
 }
@@ -170,3 +195,5 @@ export default function report(parent, LIB) {
 
 	LIB.add_child(parent, node)
 }
+
+/////////////////////////////////////////////////

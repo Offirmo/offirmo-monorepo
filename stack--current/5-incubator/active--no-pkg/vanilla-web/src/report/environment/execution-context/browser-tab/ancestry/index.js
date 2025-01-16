@@ -1,11 +1,5 @@
 
 
-
-function get_iframe_depth() {
-
-}
-
-
 function reportꓽparent_windows(parent, LIB) {
 	const node = LIB.create_node('Parent browsing contexts')
 

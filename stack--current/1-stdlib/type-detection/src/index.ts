@@ -42,6 +42,7 @@ function isꓽobjectⵧliteral(o: object): o is object {
 	return proto && proto.constructor === Object
 }
 
+/////////////////////////////////////////////////
 
 // https://devdocs.io/javascript/global_objects/promise#thenables
 interface Thenable<T> {

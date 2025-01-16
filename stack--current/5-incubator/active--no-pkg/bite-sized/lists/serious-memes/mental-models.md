@@ -100,6 +100,7 @@ cargo cult
 change -- introduction -- 1 What are we doing?
 change -- introduction -- 2 Why are we doing it?
 change -- introduction -- 3 When are we making the change?
+charged issues = fractally contentious, causing disagreement among people who hold all but identical opinions https://en.wikipedia.org/wiki/Narcissism_of_small_differences
 Charlie Munger 3 basic rules -- Don’t sell anything you wouldn’t buy yourself
 Charlie Munger 3 basic rules -- Don’t work for anyone you don’t respect and admire
 Charlie Munger 3 basic rules -- Work only with people you enjoy
@@ -290,9 +291,12 @@ intellectual honesty = willingness to see and admit the truth, even if it goes a
 intrinsic/extrinsic motivation https://www.swyx.io/js-tooling
 inversion: Avoiding stupidity is easier than trying to be brilliant. Instead of asking, “How can I help my company?” you should ask, “What’s hurting my company the most and how can I avoid it?” Identify obvious failure points, and steer clear of them.
 investing
+investment -- Nancy Pelosi Stock Tracker ♟ https://x.com/PelosiTracker_/status/1874859312616759754
 invisible hand: Markets aggregate knowledge. Rising prices signal falling supply or increased demand, which incentivizes an increase in production. The opposite is true for falling prices. Prices are a signal wrapped in an incentive.
 IQ -- it exists, it's measurable
 irredentism https://www.reddit.com/r/history/comments/sji919/is_there_a_term_for_this_phenomenon/
+it's impossible to agree on what's allowed -- no vehicles in the park https://novehiclesinthepark.com/ https://novehiclesinthepark.com/results.php
+it's impossible to agree on what's allowed https://danluu.com/impossible-agree/
 it's not about lowering the bar, it's about helping more people reach it.
 jamais assez / 1st times
 Johari window https://en.wikipedia.org/wiki/Johari_window

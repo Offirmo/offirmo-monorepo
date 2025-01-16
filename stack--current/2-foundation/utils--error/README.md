@@ -144,3 +144,4 @@ catch (_err) {
 * TODO look into https://github.com/jshttp/http-errors
 * TODO look into https://www.stacktracejs.com/
 * TODO look into https://github.com/ehmicky/modern-errors
+* important for custom errors! https://github.com/microsoft/TypeScript/wiki/FAQ#why-doesnt-extending-built-ins-like-error-array-and-map-work

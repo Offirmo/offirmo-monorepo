@@ -50,6 +50,7 @@ API -- future proof https://protobuf.dev/programming-guides/api/
 API -- pagination -- token https://protobuf.dev/programming-guides/api/ 
 API -- tradeoffs = ex. safety / flexibility / extensibility / speed
 assembly
+async -- "coloring" https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/
 async -- design pattern -- reactor pattern
 async -- sync = By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
 atomic
@@ -107,6 +108,7 @@ cohesion = degree to which the elements inside a module belong together https://
 command query separation (CQS)
 comments
 comments -- conventional
+comments -- leading, trailing, detached https://github.com/microsoft/TypeScript/wiki/FAQ#trailing-leading-and-detached-comments
 commits
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
 compatibility window = how long should we attempt to ensure that a deployment of code doesn’t get blown up by incompatible payloads. Ex. mobile app = 6 month, web page = 1d, server = 1 release
@@ -527,6 +529,7 @@ SDK (Software Development Kit)
 security -- Adhere to the principle of least privilege
 security -- bad defaults -- firebase https://env.fail/posts/firewreck-1
 security -- Be aware of buffer overflows and how to protect against them
+security -- cache poisoning https://en.wikipedia.org/wiki/Cache_poisoning
 security -- CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-benchmarks
 security -- Compartmentalize - so your system is not all or nothing
 security -- Don't write your own crypto
@@ -630,11 +633,20 @@ typecast
 types
 types -- abstract (class) = base (or common def) not supposed to be used "as is" but extended
 types -- abstract vs. concrete = may not be relevant, ex. TypeScript, and "duck typing"
+types -- casting -- up/down
 types -- concrete type/class = vs abstract, the one supposed to be actually used
+types -- contextual typing = occurs when the context of an expression gives a hint about what its type might be https://github.com/microsoft/TypeScript/wiki/FAQ#why-am-i-getting-an-error-about-a-missing-index-signature
 types -- duck typing
+types -- erasure https://github.com/microsoft/TypeScript/wiki/FAQ#what-is-type-erasure https://en.wikipedia.org/wiki/Type_erasure
 types -- interface = An interface decouples what needs to be implemented from how it is implemented
 types -- Liskov substitution principle (L of SOLID) https://en.wikipedia.org/wiki/Liskov_substitution_principle
+types -- method bivariance https://github.com/microsoft/TypeScript/wiki/FAQ#why-method-bivariance
+types -- nominal https://github.com/Microsoft/TypeScript/issues/202
+types -- parameter arity variance https://github.com/microsoft/TypeScript/wiki/FAQ#parameter-arity-variance-is-correct
+types -- parameter contravariance https://github.com/KiaraGrouwstra/typical?tab=readme-ov-file#similar-projects
 types -- slow types https://jsr.io/docs/about-slow-types (also in Swift: The compiler is unable to type-check this expression in reasonable time)
+types -- structural typing = two types are compatible if their members are compatible https://github.com/microsoft/TypeScript/wiki/FAQ#why-method-bivariance
+types -- substitutability https://github.com/microsoft/TypeScript/wiki/FAQ#substitutability
 types -- subtyping -- circle/ellipse or square/rectangle problem "hierarchical taxonomies are difficult to make universal" https://en.wikipedia.org/wiki/Circle%E2%80%93ellipse_problem
 types -- subtyping -- contravariance
 types -- subtyping -- covariance
