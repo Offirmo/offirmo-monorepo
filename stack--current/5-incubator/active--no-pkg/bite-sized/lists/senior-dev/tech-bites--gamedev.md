@@ -177,7 +177,17 @@ PvE, PvP
 quality of life (QoL)
 raid
 random encounter
-rating
+rating -- Diverse Representations = Which traditionally marginalized groups are represented? This can refer to gender, race, ethnicity, age, disability, religious backgrounds, socioeconomic status, or body shapes that have been underrepresented in media. How are the characters from those groups portrayed? Are they drawn from stereotypes? Are they narrow or well rounded? Do they have agency, or is their only function to support a White/male/dominant character? Are behaviors and characteristics that are traditionally seen as "masculine" and "feminine" equally valued? Is this title telling an unknown or nontraditional story?
+rating -- Drinking, Drugs & Smoking = Do characters smoke? Drink? Do drugs? Is the behavior glamorized? What are the consequences of that behavior? Are the characters of legal age?
+rating -- Ease of Play = How simple is it to learn? Are game controls difficult/complicated or intuitive? What kinds of accessibility features are available?
+rating -- Educational Value = Does the title educate kids? If so, is that the intent, or is it incidental? What specifically do kids learn?
+rating -- Language = Which specific words are used? What's the general frequency of the swearing? What about hate words/name-calling?
+rating -- Positive Messages = What's the overall takeaway? Does the title convey positive lessons/values/responsible behavior? Are there problematic viewpoints/stereotypes that should be called out?
+rating -- Positive Role Models = Are the characters realistic and relatable, or shallow and thinly drawn? Do kid characters act like people you would want real kids to emulate? Are adults present and responsible?
+rating -- Products & Purchases = Are products/advertisements present? Is the title part of a broader marketing initiative/empire? Is the intent to sell things to kids? Which came first -- the media title or toys/cards/clothes/etc.?
+rating -- Sex, Romance & Nudity = Is there sexual innuendo/banter? Flirting? Sexual activity? Nudity (and is it sexual or nonsexual)? Unsafe sex? What are the consequences, if so?
+rating -- Violence & Scariness = How bloody/gory is it? Is it fantasy violence or realistic? Cartoony or explicit? Are there consequences for the violence? Do characters get separated in scary/upsetting ways? Are pets/parents/kids in peril? Are characters mean to each other?
+rating https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings
 replay value -- prestige
 replay value -- remorting
 replay value -- speedrunning

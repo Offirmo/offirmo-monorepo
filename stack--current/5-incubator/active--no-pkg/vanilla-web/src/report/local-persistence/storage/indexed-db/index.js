@@ -8,11 +8,14 @@ import { INTERNAL_PROP } from '../../../consts.js'
 
 function reportꓽdb(parent, LIB, {name, version}) {
 	const node = LIB.create_node_and_work(`database "${name}" rev${version}`, node => {
-		LIB.try_or_report(node, 'trying Y…', () => {
-			throw new Error('TEST error!')
-		})
-
-		node.notifications.push(['NIMP!', new Error(`Not implemented!`)])
+		const ↆreq = toPromise(indexedDB.open(name, version))
+		ↆreq
+			.then(async ([db]) => {
+				node.results.push(['object store names:', db.objectStoreNames])
+			})
+			.catch(err => {
+				node.notifications.push(['indexedDB access issue!', err])
+			})
 	})
 	LIB.add_child(parent, node)
 }
@@ -22,7 +25,7 @@ function reportꓽdb(parent, LIB, {name, version}) {
 async function toPromise(req /** : IDBRequest */ ) {
 	const resolved = false
 
-	const { promise, resolve, reject } = Promise.withResolvers();
+	const { promise, resolve, reject } = Promise.withResolvers()
 
 	function try_to_resolve() {
 		if (req.readyState !== 'done')
@@ -58,7 +61,6 @@ async function toPromise(req /** : IDBRequest */ ) {
 }
 
 
-
 function report(parent, LIB) {
 	const node = LIB.create_node_and_work('IndexedDB', node => {
 		const { indexedDB } = globalThis
@@ -67,6 +69,19 @@ function report(parent, LIB) {
 			node.notifications.push(['indexedDB is missing!'])
 		}
 		else {
+			// DEBUG
+			const ↆreq = toPromise(indexedDB.open(INTERNAL_PROP, 1))
+			ↆreq.then(([db]) => {
+				// TODO populate with data
+					/*console.log(`XXX `, db)
+					const objectStore = db
+						.transaction(["toDoList"], "readwrite")
+						.objectStore("toDoList");*/
+				})
+				.catch(err => {
+					node.notifications.push(['indexedDB access issue!', err])
+				})
+
 			const ↆdatabases = indexedDB.databases()
 			const result = ['databases =', ↆdatabases, 'pending…']
 			node.results.push(result)
@@ -76,19 +91,6 @@ function report(parent, LIB) {
 				res.forEach((db_infos) => {
 					reportꓽdb(node, LIB, db_infos)
 				})
-			})
-
-			const _ↆreq = indexedDB.open(INTERNAL_PROP, 1)
-			console.log(`XXX `, _ↆreq)
-			const ↆreq = toPromise(_ↆreq)
-			node.results.push(['test db =', ↆreq])
-			ↆreq.then(res => {
-				console.log(`XXX `, res)
-				const [ db ] = res
-
-				const objectStore = db
-					.transaction(["toDoList"], "readwrite")
-					.objectStore("toDoList");
 			})
 		}
 	})

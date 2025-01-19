@@ -7,11 +7,11 @@ export default function report(parent, LIB) {
 		'https://developer.mozilla.org/en-US/docs/Glossary/WindowProxy',
 	)
 
-	const self = LIB.try_or_report(node, 'accessing self…', () => {
+	LIB.try_or_report(node, 'accessing self…', () => {
+		const { self } = globalThis
 		node.results.push(['self =', self])
-
-		return self
-	}, undefined)
+		// TODO expected?
+	})
 
 	reportꓽexecution_context(node, LIB)
 

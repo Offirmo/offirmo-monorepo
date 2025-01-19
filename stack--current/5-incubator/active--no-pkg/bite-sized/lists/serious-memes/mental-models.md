@@ -105,6 +105,7 @@ Charlie Munger 3 basic rules -- Don’t sell anything you wouldn’t buy yoursel
 Charlie Munger 3 basic rules -- Don’t work for anyone you don’t respect and admire
 Charlie Munger 3 basic rules -- Work only with people you enjoy
 Charlie Munger 3 basic rules https://www.cnbc.com/2023/11/29/charlie-munger-these-basic-career-rules-made-me-successful-in-life-with-warren-buffett-i-had-all-3.html
+charts -- hill = position on a "hill" figuring things out -> making it happen
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
 cognitive bias
 cognitive bias -- recency https://en.wikipedia.org/wiki/Recency_bias
@@ -232,6 +233,7 @@ grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
 growth mindset  https://www.khanacademy.org/college-careers-more/learnstorm-growth-mindset-activities-us/high-school-activities/activity-1-the-truth-about-your-brain-hs-02/a/the-truth-about-your-brain-part-1-3  https://www.youtube.com/watch?v=-71zdXCMU6A
 hangry = before lunch (vs. after)
+Hanlon’s razor = Never attribute to malice that which can be adequately explained by stupidity
 happiness -- is a skill
 happiness -- score https://www.ted.com/talks/dominic_price_what_s_your_happiness_score
 happiness -- être heureux n'est pas nécessairement confortable
@@ -499,6 +501,9 @@ science -- scientific method https://en.wikipedia.org/wiki/Scientific_method
 science accepts ideas only when they fit into the then-current state of the science https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy#Similar_concepts
 scientism
 scope–severity grid https://en.wikipedia.org/wiki/Global_catastrophic_risk#Defining_existential_risks
+scrum
+scrum -- myths https://www.youtube.com/watch?v=mgMk3KBsxnQ
+scrum -- scrumbut = Scrum, but...
 second Law of Thermodynamics: The world tends towards disorder. That’s why your room becomes messier and messier over time. It’s also why an engine converts only ~35% of its energy into useful work. Time moves towards increasing one direction: increasing entropy.
 secrets are Hidden in Plain Sight:  Most people think of secrets as Easter eggs. They assume that if a secret is important, it’s necessarily going to be hard to find. The best ideas can come from things that are so well-known that they aren’t well-seen.
 selectorate theory https://en.wikipedia.org/wiki/Selectorate_theory
@@ -582,11 +587,12 @@ Tree Decision Rights Model http://www.cio.com/article/2386119/careers-staffing/h
 tribal knowledge
 trolley problem https://neal.fun/absurd-trolley-problems/
 trust -- is earned
-trust -- takes years to earn and seconds to lose / Trust is built slowly, and lost quickly
+trust -- takes years to earn but seconds to lose / Trust is built slowly, and lost quickly
 trust -- trust, but verify
 truth -- fully convinced vs probably https://christianity.stackexchange.com/questions/92352/believing-that-christianity-is-probably-true-vs-being-fully-convinced-that-ch
 truth -- verificationism https://christianity.stackexchange.com/a/89891
 Turning Feedback into Action
+tyranny of the majority
 tyranny of the urgent https://www.psychologytoday.com/us/blog/human-flourishing-101/202309/how-to-conquer-the-tyranny-of-the-urgent
 universe
 universe -- cosmological model -- +++ Lambda cold dark matter (ΛCDM) = current best (2024) https://en.wikipedia.org/wiki/Lambda-CDM_model
@@ -609,6 +615,7 @@ wartime/peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetim
 We must remember that entire societies can and often do follow the wrong path for a very long time https://news.vanderbilt.edu/2011/04/13/michael-burry-transcript/
 what vs how = OPPOSITE of school +++ https://strategyu.co/consulting-mindset-shifting-from-the-what-to-the-how/
 What would you do if you weren't afraid? - Spencer Johnson
+when in Rome…
 who moved my cheese?
 wisdom
 wisdom -- a wisdom for left may not be valid for right

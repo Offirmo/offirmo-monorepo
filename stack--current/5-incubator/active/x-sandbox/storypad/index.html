@@ -10,14 +10,17 @@
 	// important to load async so that the stories don't pollute the global scope too early (ex. before SXC)
 	//import stories from './**/*.stories.@(js|jsx|ts|tsx|mdx)'
 	const storiesⵧspace = import('../src/space/**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	const storiesⵧlibrary = import('../src/library/**/*.stories.@(js|jsx|ts|tsx|mdx)')
 	console.log(`[${LIB}] got the async glob(s):`, {
 		storiesⵧspace,
+		storiesⵧlibrary
 	})
 
 	console.log(`[${LIB}] now invoking storypad…`)
 	startꓽstorypad(
 		{
-			space: storiesⵧspace,
+			//space: storiesⵧspace,
+			lib: storiesⵧlibrary,
 		},
 		{
 			root_title: nearest_pkg?.name,

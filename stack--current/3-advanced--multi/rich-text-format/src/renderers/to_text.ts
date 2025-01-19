@@ -1,4 +1,4 @@
-import { type Node, type CheckedNode } from '../types/index.js'
+import { type Node, type CheckedNode, NodeLike } from '../types/index.js'
 import {
 	type BaseRenderingOptions,
 	type OnConcatenateStringParams,
@@ -240,15 +240,18 @@ const callbacksⵧto_text: Partial<WalkerCallbacks<State, RenderingOptionsⵧToT
 }
 
 function renderⵧto_text(
-	$doc: Node,
+	$doc: NodeLike,
 	options: Partial<RenderingOptionsⵧToText> = {},
 	callback_overrides: Partial<WalkerCallbacks<State, RenderingOptionsⵧToText>> = {},
 ): string {
+
+	const node = promoteꓽto_node($doc)
+
 	const full_options: RenderingOptionsⵧToText = {
 		...DEFAULT_RENDERING_OPTIONSⵧToText,
 		...options,
 	}
-	return walk<State, RenderingOptionsⵧToText>($doc, {
+	return walk<State, RenderingOptionsⵧToText>(node, {
 		...callbacksⵧto_text,
 		...callback_overrides,
 	}, full_options).str

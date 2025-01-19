@@ -73,6 +73,9 @@ caching -- S3 FIFO https://s3fifo.com/
 capability = an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
 career -- small business programmer https://smallbusinessprogramming.com/how-to-be-a-wildly-successful-small-business-programmer/
 cargo cult = Let’s face it. You are not Google scale and you never will be. Stop cargo-culting technology just because “Google uses it” and therefore “it’s an industry best-practice.” https://reasonablypolymorphic.com/blog/protos-are-wrong/
+case -- CamelCase
+case -- SHOUTY_CASE
+case -- snake_case
 CD (continuous delivery)
 CD (Continuous Delivery) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
 CD (continuous deployment) -- Defensive = Expect the unexpected. Expect that devs will break things in novel ways
@@ -103,6 +106,10 @@ code is the enemy = It can go wrong, and it needs maintenance. Write less code. 
 code quality = the only definition of quality in code that makes any sense is our ability to change the code. If it's easy to change, it's high quality; if it's hard to change, it's not. 
 code quality https://blog.jim-nielsen.com/2024/easy-changes/
 code review https://www.linkedin.com/posts/ajgreenwell_code-reviews-have-unwritten-laws-i-had-activity-7239611908914319360-_MHW/
+codebase -- type -- hobby
+codebase -- type -- large established codebase = single-digit million lines of code (~5M, let’s say); Somewhere between 100 and 1000 engineers working on the same codebase; The first working version of the codebase is at least ten years old
+codebase -- type -- open source
+codebase -- type https://www.seangoedecke.com/large-established-codebases/
 codemod
 cohesion = degree to which the elements inside a module belong together https://en.wikipedia.org/wiki/Cohesion_(computer_science)
 command query separation (CQS)
@@ -143,6 +150,7 @@ concurrency -- thread
 concurrency -- thread pool
 concurrency -- wait-free, lock free
 connascence https://en.wikipedia.org/wiki/Connascence
+consistency = lack of consistency is the primary long-term killer of large codebases, because it makes it impossible to make any general improvements https://www.seangoedecke.com/large-established-codebases/
 constructor
 content age rating -- "Common Sense" Media (private org) https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings
 content age rating -- culture = Different cultures have different standards for what is age-appropriate: some find graphic violence more acceptable than nudity, and some vice versa.
@@ -429,6 +437,7 @@ overengineering https://blog.matt-rickard.com/p/stop-overengineering
 ownership
 ownership -- if you build it, you own it
 pair-programming
+pattern -- anti -- lava flow = code written under sub-optimal conditions is deployed into a production environment and subsequently expanded upon while still in a developmental state https://en.wikipedia.org/wiki/Lava_flow_(programming)
 pattern -- matching = checking a given sequence of tokens for the presence of the constituents of some pattern. In contrast to pattern recognition, the match usually has to be exact: "either it will or will not be a match." The patterns generally have the form of either sequences or tree structures. Uses of pattern matching include outputting the locations (if any) of a pattern within a token sequence, to output some component of the matched pattern, and to substitute the matching pattern with some other token sequence (i.e., search and replace).
 pattern -- recognition = same but not exact match
 peer review, green build = condition to merge a code change

@@ -95,7 +95,7 @@ function getRemainingStorageSpace(storage) {
 		console.log(`success minimal entry...`)
 	}
 	catch (err) {
-		console.error(`XXX TEST`, err)
+		console.error(`error filling LS:`, err)
 	}*/
 
 	// cleanup

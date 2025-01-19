@@ -8,6 +8,9 @@ import reportꓽdemo from '../../../template'
 export default function report() {
 	const node = create_node(window.origin)
 
+	node.references.push(
+		'https://developer.mozilla.org/en-US/docs/Glossary/Browsing_context'
+	)
 
 	reportꓽancestry(node, LIB)
 	reportꓽsiteData(node, LIB)

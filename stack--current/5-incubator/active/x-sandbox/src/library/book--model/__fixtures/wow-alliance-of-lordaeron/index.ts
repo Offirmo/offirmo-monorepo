@@ -2,13 +2,13 @@
  * https://www.wowhead.com/item=145298/the-alliance-of-lordaeron
  */
 
-import { Author, Book, BookCover, BookPage, BookPartKey, BookUId } from '../../l1-types'
+import type { Book, BookCover, BookPage, BookPartKey, BookUId } from '../../l1-types'
 
 /////////////////////////////////////////////////
 
 const uid: BookUId = '〖BOOKꓽWoW【The Alliance of Lordaeron】〗'
 
-const AUTHOR: Book['author'] = "(some scholar from the Alliance)"
+const AUTHOR: Book['author'] = "a scholar from the Alliance"
 
 const COVER: BookCover = {
 	title: 'The Alliance of Lordaeron',

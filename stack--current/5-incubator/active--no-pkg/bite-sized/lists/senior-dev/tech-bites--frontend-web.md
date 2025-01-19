@@ -276,6 +276,7 @@ routing -- uri -- 3 fragment
 routing react-resource-router
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
+security -- Google Tag Manager = a handy way for people you’ve never met to inject JavaScript into your site without the hindrance of a code review https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
 SPA -- what is even a SPA? https://jakelazaroff.com/words/whats-a-single-page-app/
 SPA https://www.matuzo.at/blog/2023/single-page-applications-criticism
@@ -288,10 +289,12 @@ spirit -- view source affordance https://htmx.org/essays/right-click-view-source
 spirit https://info.cern.ch/hypertext/WWW/Summary.html
 SSR good explanation https://single-spa.js.org/docs/ssr-overview/
 temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
+test -- jsdom https://github.com/jsdom/jsdom
 testing -- component https://storybook.js.org/blog/component-testing/
 testing -- Netflix's SafeTest https://www.infoq.com/news/2024/02/netflix-safetest-front-end-test/
 testing https://www.testingjavascript.com/
 Three Cs: 🤝 Concatenate, 🗜️ Compress, 🗳️ Cache https://csswizardry.com/2023/10/the-three-c-concatenate-compress-cache/
+tool -- mobile apps https://expo.dev/
 typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
 typology -- naked site

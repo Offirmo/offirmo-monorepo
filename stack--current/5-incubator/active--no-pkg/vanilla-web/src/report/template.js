@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////
 
 function reportꓽx(parent, LIB) {
-	const node = LIB.create_node_and_work('XXX', node => {
+	const node = LIB.create_node_and_work('node X', node => {
 		node.references.push(
 			'link'
 		)
@@ -19,7 +19,7 @@ function reportꓽx(parent, LIB) {
 
 
 function reportꓽy(parent, LIB) {
-	const node = LIB.create_node_and_work('YYY', node => {
+	const node = LIB.create_node_and_work('node Y', node => {
 		node.references.push(
 			'link',
 		)
