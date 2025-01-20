@@ -50,6 +50,7 @@ ControlNet = a type of model for controlling image diffusion models by condition
 cross encoder https://www.sbert.net/examples/applications/cross-encoder/README.html
 dataset  https://www.fatml.org/media/documents/datasheets_for_datasets.pdf
 deep reinforcement learning (deep RL) course: https://spinningup.openai.com/
+delvish dialect https://bruces.medium.com/preliminary-notes-on-the-delvish-dialect-by-bruce-sterling-ce68a476247b
 developer vs sociotechnic vs project organizer
 diffusers
 diffusion

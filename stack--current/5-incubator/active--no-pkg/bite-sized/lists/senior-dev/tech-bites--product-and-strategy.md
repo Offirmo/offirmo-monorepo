@@ -118,6 +118,7 @@ Most Advanced Yet Acceptable (MAYA) UX concept
 network effect
 never-ending feature party https://corgibytes.com/blog/2018/01/02/neverending-feature-party/
 Next Larger Context = always design a thing by considering it in its next larger context — a chair in a room, a room in a house, a house in a city... https://skamille.medium.com/the-next-larger-context-3970afaa8fb2 (see also shearing layers)
+next-of-kin feature
 no one was ever fired for using...
 path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
 personas -- data savvy vs data shy
