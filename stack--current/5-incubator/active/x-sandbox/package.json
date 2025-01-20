@@ -45,6 +45,7 @@
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/ts-types": "*",
+		"@offirmo-private/ts-types-web": "*",
 		"@offirmo-private/ts-utils": "*",
 		"@tbrpg/state": "*",
 		"@tbrpg/ui--rich-text": "^0",

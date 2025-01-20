@@ -16,8 +16,11 @@
 // We want a lib that can be use in:
 // - a serious environment (reader app)
 // - inside a game, RPG setting
+//
+// Hence we do not use Thing, Author bc we are "in-character" (also, bc. using rich text)
 
-import type { Emoji, PositiveInteger, Url‿str } from '@offirmo-private/ts-types'
+import type { Emoji, PositiveInteger } from '@offirmo-private/ts-types'
+import type { Url‿str, CssⳇColor‿str } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 /////////////////////////////////////////////////
@@ -32,21 +35,38 @@ type Author = Text | undefined // undef = unknown
 
 /////////////////////////////////////////////////
 
-// Because we have lazy loading,
-// we want to be able to progressively load a book, starting from the most basic infos
-// cover = 1st level, needed to display a list of books and decide whether one wants to read it
+/** The Book minus its content.
+ * Because we want lazy loading, we want to be able to progressively load a book, starting from the most basic infos.
+ * Cover = 1st level, needed to display a list of books to the user who will then choose one to read
+ *
+ * https://fr.wikipedia.org/wiki/Glossaire_de_la_reliure
+ */
 interface BookCover {
+
 	title: Text
+
 	author?: Author
+
 	subtitles?: Array<Text> // "title" in a wide sense. Anything accompanying the title we want to be displayed on the cover. By order of most importance.
+
+	description?: Text // a quick pitch / summary trying to sell the book for further engagement. May not displayed depending on the type of UI
+
+	flavor?: Text // empirically seen, a small text on the cover adding some "flavor" (see fixtures) ref. https://mtg.fandom.com/wiki/Parts_of_a_card
 
 	// since we have lazy loading, allow hints for overall data
 	// that would otherwise need a complete load, ex. number of pages
 	hints?: {
-		pages_count?: PositiveInteger
+		pages_count?: PositiveInteger // help get a sense of the investment needed to read
+
+		// cover picture
+		picture?: Url‿str
+
+		// useful for a single-line listing / Spine
 		emoji?: Emoji // 📔📕📗📘📙📓📒📃📜📄📰🗺
 		icon?: Url‿str
-		picture?: Url‿str
+		// spine
+		color_bg?: CssⳇColor‿str
+		color_fg?: CssⳇColor‿str
 	}
 }
 

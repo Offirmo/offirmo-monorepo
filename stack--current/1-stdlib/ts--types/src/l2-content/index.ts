@@ -35,7 +35,7 @@ export interface Thing {
 	lang?: IETFLanguageType
 	title?: string // Ex. "The Boring RPG" or "La Joconde"
 	description: string // must be simple, a paragraph at most
-	author: Author | undefined // undef = unknown :-(
+	author: Author | string | undefined // undef = unknown :-(  string = simple (not recommended)
 	since‿y?: number // for copyright notice
 }
 

@@ -163,6 +163,7 @@ ECMA -- 2024 https://socket.dev/blog/tc39-advances-10-ecmascript-proposals-key-f
 ECMAScript - European Computer Manufacturers Association Script (ES)
 emojis https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
 events -- event delegation
+fingerprinting https://amiunique.org/fingerprint https://github.com/fingerprintjs/fingerprintjs
 flash of -- fallback font (FOFT)
 flash of -- Undefined Custom Elements (FOUCE) https://www.abeautifulsite.net/posts/flash-of-undefined-custom-elements/
 flash of -- unstyled content (FOUC) https://dev.to/lyqht/what-the-fouc-is-happening-flash-of-unstyled-content-413j

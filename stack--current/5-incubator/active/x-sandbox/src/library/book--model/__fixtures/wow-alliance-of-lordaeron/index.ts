@@ -13,11 +13,13 @@ const AUTHOR: Book['author'] = "a scholar from the Alliance"
 const COVER: BookCover = {
 	title: 'The Alliance of Lordaeron',
 	author: AUTHOR,
-	subtitles: [ 'Copy commissioned by Archmage Newhearth of the Curators. Do not worry about returning the book, it will return on its own.' ],
+	flavor: 'Copy commissioned by Archmage Newhearth of the Curators. Do not worry about returning the book, it will return on its own.',
 	hints: {
 		pages_count: 16,
 		emoji: '📘',
 		icon: 'https://wow.zamimg.com/images/wow/icons/large/spell_misc_hellifrepvphonorholdfavor.jpg',
+		color_bg: 'hsl(42, 100%, 87%)',
+		color_fg: 'hsl(337, 16%, 28%)',
 	}
 }
 
