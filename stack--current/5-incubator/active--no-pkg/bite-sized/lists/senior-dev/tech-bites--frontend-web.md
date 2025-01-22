@@ -222,6 +222,7 @@ native apps with JS https://v2.tauri.app/
 node -- tenant isolation = node is single thread, hence issues with security, esp. AWS lambda! solutions: workerd?
 Open Web Advocacy https://open-web-advocacy.org/
 organic vs inorganic concept = coming from a real user or a bot/AI or app etc.
+Page Assembly Service = responsible for generating HTML for pages
 perf -- content jump = https://css-tricks.com/content-jumping-avoid/
 perf metrics -- "9 must known" https://twitter.com/alexxubyte/status/1769748487317651962
 perf metrics -- core web vitals -- 01 Largest Contentful Paint (LCP) = loading performance. LCP must occur within 2.5 seconds of when the page first starts loading
@@ -289,6 +290,7 @@ spirit -- the web is for everyone
 spirit -- view source affordance https://htmx.org/essays/right-click-view-source/
 spirit https://info.cern.ch/hypertext/WWW/Summary.html
 SSR good explanation https://single-spa.js.org/docs/ssr-overview/
+supported browsers https://support.atlassian.com/atlassian-account/docs/supported-browsers-for-atlassian-cloud-products/  https://www.canva.com/en_au/help/technical-requirements/
 temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
 test -- jsdom https://github.com/jsdom/jsdom
 testing -- component https://storybook.js.org/blog/component-testing/

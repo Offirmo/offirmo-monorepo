@@ -185,6 +185,7 @@ switching barriers
 switching cost
 System of Work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams
 target
+tool tech stack -- review https://www.lennysnewsletter.com/p/whats-in-your-stack-the-state-of
 top complaints -- actual case J. -- 01 Performance and Speed
 top complaints -- actual case J. -- 02 User Interface and Usability
 top complaints -- actual case J. -- 03 Onboarding and Adoption: Simplify the onboarding process to make it easy for non-technical users to adopt the product.

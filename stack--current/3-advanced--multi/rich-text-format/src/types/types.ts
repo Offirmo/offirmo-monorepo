@@ -1,6 +1,7 @@
 import { Enum } from 'typescript-string-enums'
-import { type Emoji } from '@offirmo-private/ts-types'
-import { type Uri‿x, type Hyperlink } from '@offirmo-private/ts-types-web'
+import type { Emoji, Immutable } from '@offirmo-private/ts-types'
+import type { Uri‿x, Hyperlink } from '@offirmo-private/ts-types-web'
+
 /////////////////////////////////////////////////
 
 const NodeType = Enum(
@@ -71,7 +72,11 @@ type CheckedNode = {
 type Node = Partial<CheckedNode>
 
 // Node + stuff trivial+safe to promote to a Node
-type NodeLike = Node | string | number
+type NodeLike =
+	| string
+	| number
+	| Node
+	//| Immutable<Node>
 
 ///////
 

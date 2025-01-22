@@ -20,7 +20,7 @@ not implemented yet as long as I'm the sole contributor
  */
 
 import assert from 'tiny-invariant'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import {  } from './types.js'
 

@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { type Planet } from './types.js'
+import { type Planet } from './types.ts'
 
 /////////////////////////////////////////////////
 

@@ -51,7 +51,7 @@ interface BookCover {
 
 	description?: Text // a quick pitch / summary trying to sell the book for further engagement. May not displayed depending on the type of UI
 
-	flavor?: Text // empirically seen, a small text on the cover adding some "flavor" (see fixtures) ref. https://mtg.fandom.com/wiki/Parts_of_a_card
+	flavor?: Text // empirically seen, a small text on the cover adding some "flavor" (see ex. in fixtures) ref. https://mtg.fandom.com/wiki/Parts_of_a_card
 
 	// since we have lazy loading, allow hints for overall data
 	// that would otherwise need a complete load, ex. number of pages
@@ -107,6 +107,8 @@ interface Book extends BookPart, BookCover {
 	// TODO declare template slots?
 }
 
+/////////////////////////////////////////////////
+
 // basic types needed for advanced stuff
 
 // path to a specific page, for ex. for bookmarking
@@ -114,19 +116,6 @@ type BookPageReference = string // TODO clarify the format, BookPartKey separate
 
 // path to any part of a book
 type BookPartReference = string // TODO clarify the format
-
-
-// some books can be customized and thus have several instances
-// ex.
-// - a child book customized so that the hero has the child's name
-// - an RPG where the book refers to a changeable settings (randomized wordlbuiding, hero name, past actions...)
-// NO!! The customization will now directly go in the "book experience"
-/*interface BookInstance {
-	book_uid: string
-	params: { // TODO clarify
-		[key: string]: string
-	}
-}*/
 
 /////////////////////////////////////////////////
 

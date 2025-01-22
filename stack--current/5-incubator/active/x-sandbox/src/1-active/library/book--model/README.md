@@ -14,3 +14,18 @@ We also design to be used in games, hence:
   By default, all infos are supposed to be "in universe", for ex. Author
 - books are to be "customizable" to the reader, for ex. replacing the player's name by their choice of name
 - books are to have "progressive reveal", for ex. the player may need some key or to learn the language
+
+
+
+
+// some books can be customized and thus have several instances
+// ex.
+// - a child book customized so that the hero has the child's name
+// - an RPG where the book refers to a changeable settings (randomized wordlbuiding, hero name, past actions...)
+// NO!! The customization will now directly go in the "book experience"
+/*interface BookInstance {
+book_uid: string
+params: { // TODO clarify
+[key: string]: string
+}
+}*/

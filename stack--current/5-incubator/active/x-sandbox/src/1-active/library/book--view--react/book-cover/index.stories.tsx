@@ -1,4 +1,6 @@
-import Component from './index'
+import Component, { type Props } from './index.tsx'
+
+import { COVER } from '../../book--model/__fixtures/wow-alliance-of-lordaeron/index.ts'
 
 export default {
 	component: Component,
@@ -14,9 +16,17 @@ export default {
 			import('@offirmo-private/css--framework')
 			return Story
 		},
+		/*(Story) => (
+			<div className="o⋄full-viewport">
+				<Story />
+			</div>
+		),*/
 	]
 }
 
-export const Default = {}
-
-//export const Custom = {}
+export const WoW = {
+	args: {
+		cover: COVER,
+	},
+	title: COVER.title,
+}

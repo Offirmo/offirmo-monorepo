@@ -67,6 +67,7 @@ fun & cool -- learning real things
 fun & cool -- realising everything we already know
 fun & cool -- true heroism
 fun -- a theory of fun for game design https://www.theoryoffun.com/
+gacha (gateway to gambling?)
 gating
 genre
 genre -- action = emphasizing hand–eye coordination, reflexes, timing, and other physical skills. It includes fighting games, shooters, and platformers
@@ -131,8 +132,10 @@ mechanics -- wave
 minmax
 MMO -- elements https://www.reddit.com/r/MMORPG/comments/1ezjdeo/if_you_could_transfer_any_element_from_your/
 monetization -- continue
-monetization -- dolphin, whale
+monetization -- free-to-play (F2P)
 monetization -- freemium, shareware
+monetization -- in-app purchases (IAP) -- whale $500+ > dolphin $100+ > minnow > payer (any IAP) > player https://www.reddit.com/r/gachagaming/comments/d11z0x/whales_and_dolphins/
+monetization -- loot boxes = purchasable items in video games with a chance-based outcome (gateway to gambling?)
 monetization -- paywall
 monetization -- perks
 monetization -- unlockables

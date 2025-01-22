@@ -1,4 +1,4 @@
-import Component, { type Props } from './index'
+import Component, { type Props } from './index.tsx'
 
 export default {
 	component: Component,

@@ -78,11 +78,14 @@ biodiversity -- global https://en.wikipedia.org/wiki/Global_biodiversity
 biodiversity -- loss https://en.wikipedia.org/wiki/Biodiversity_loss
 biodiversity https://en.wikipedia.org/wiki/Biodiversity esp. https://en.wikipedia.org/wiki/Biodiversity#Role_and_benefits_of_biodiversity
 biographies -- Profiles in Courage https://en.wikipedia.org/wiki/Profiles_in_Courage
+biohacking https://www.medicalnewstoday.com/articles/biohacking
 black swan https://en.wikipedia.org/wiki/Black_swan_theory
 bonnes et mauvaises cartes
 brain -- fast & slow
 brain -- fast & slow -- fast = training / education / culture = biased = knee-jerk = LLM
 brain -- fast & slow -- slow = real you
+brain -- left & right & hippocamp (debunked?)
+brain -- reptilian
 brain rot https://en.wikipedia.org/wiki/Brain_rot
 Brandolini's Law = The amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it
 broken window theory
@@ -100,6 +103,7 @@ cargo cult
 change -- introduction -- 1 What are we doing?
 change -- introduction -- 2 Why are we doing it?
 change -- introduction -- 3 When are we making the change?
+changemaker
 charged issues = fractally contentious, causing disagreement among people who hold all but identical opinions https://en.wikipedia.org/wiki/Narcissism_of_small_differences
 Charlie Munger 3 basic rules -- Don’t sell anything you wouldn’t buy yourself
 Charlie Munger 3 basic rules -- Don’t work for anyone you don’t respect and admire
@@ -219,6 +223,7 @@ future of Earth https://en.wikipedia.org/wiki/Future_of_Earth https://en.wikiped
 Gall’s Law: A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system.
 game theory
 game theory -- prisoner's dilemma https://www.bennorthrop.com/Home/Blog/2007_11_17_prisoners_dilemma.php
+gateway effect / gateway hypothesis = gateway drug (cannabis), gateway gambling (gacha games) = pathway to dangerous addictions https://www.library.hbs.edu/working-knowledge/the-15-billion-question-have-loot-boxes-turned-video-gaming-into-gambling
 giftedness and talent https://campbellms.typepad.com/files/gagne-a-differentiated-model-of-giftedness-and-talent-dmgt.pdf https://www.gigers.com/matthias/gifted/gagne_dmgt.html
 go-for-it window = Large gaps between accelerating technologies and stagnating social norms create lucrative new business opportunities. But they are only available for a short time when people can capitalize on the difference between the real and perceived state of the world. For example, 2007 was the perfect time to launch the iPhone, but Google Glasses launched too early.
 goals -- S.M.A.R.T. -- 01 S (Specific) Make the goal specific to what you are trying to achieve. It should clearly define what you want to accomplish.
@@ -249,6 +254,10 @@ hawks and doves https://seldo.com/posts/the_case_for_frameworks
 helicopter parent
 herbe toujours plus verte
 Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
+high performance
+high performance -- high performing teams
+high performance -- ripple effect -- high performers attract other high performers
+high performance -- ripple effect = training, emulation
 high school "What You'll Wish You'd Known" https://paulgraham.com/hs.html
 high-profile = ~widely known, ex. high-profile media
 high/low functioning human
@@ -268,6 +277,7 @@ identity -- " I’d tied my identity and reputation to hard work"
 if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
 ikigai
 impostor syndrome
+impulsivity = related to problem gambling, problem video gaming, gambling-related cognitions, risky loot boxes engagement https://www.sciencedirect.com/science/article/pii/S0306460322000934
 incentive
 incentive -- perverse -- cobra effect
 incentive -- perverse https://en.wikipedia.org/wiki/Perverse_incentive
@@ -293,7 +303,7 @@ intellectual honesty = willingness to see and admit the truth, even if it goes a
 intrinsic/extrinsic motivation https://www.swyx.io/js-tooling
 inversion: Avoiding stupidity is easier than trying to be brilliant. Instead of asking, “How can I help my company?” you should ask, “What’s hurting my company the most and how can I avoid it?” Identify obvious failure points, and steer clear of them.
 investing
-investment -- Nancy Pelosi Stock Tracker ♟ https://x.com/PelosiTracker_/status/1874859312616759754
+investing -- Nancy Pelosi Stock Tracker ♟ https://x.com/PelosiTracker_/status/1874859312616759754
 invisible hand: Markets aggregate knowledge. Rising prices signal falling supply or increased demand, which incentivizes an increase in production. The opposite is true for falling prices. Prices are a signal wrapped in an incentive.
 IQ -- it exists, it's measurable
 irredentism https://www.reddit.com/r/history/comments/sji919/is_there_a_term_for_this_phenomenon/
@@ -510,14 +520,14 @@ selectorate theory https://en.wikipedia.org/wiki/Selectorate_theory
 self appreciation
 self centered vs. take into account others (cf. woke salaryman)
 self love
-self-righteousness
+self righteousness
 sense-check = Before going too deep into solutions, align with your stakeholders on the problem. This saves time by avoiding working a lot just to find out that it’s highly contentious and there’s a different or better approach.
 sex -- abuse -- 12yo Samantha
 sex -- abuse -- Dominique Pelicot https://www.vox.com/world-politics/370736/france-rape-case-gisele-dominique-pelicot-metoo
 sex -- abuse -- https://en.wikipedia.org/wiki/Angers_pedophile_network
 sex -- abuse -- Outreau
-sex ed
-sex ed -- "sex positive"
+sex -- ed
+sex -- ed -- "sex positive"
 ship of theseus https://en.m.wikipedia.org/wiki/Ship_of_Theseus
 short term / long term
 signalling -- theory https://en.wikipedia.org/wiki/Signalling_theory
@@ -545,6 +555,7 @@ straw-dog proposal = (biz jargon) a brainstormed simple draft proposal intended 
 Streisand effect = Increased awareness of information caused by efforts to suppress it
 Sturgeon's law = "90% of everything is crap" https://en.wikipedia.org/wiki/Sturgeon%27s_law
 submarine = hidden project until ready
+success? power, influence, money, genius IQ, infinite resources
 Sun Tsu’s three rules of warfare -- Only fight when there is a prize worth fighting for
 Sun Tsu’s three rules of warfare -- Only fight when there is no other way of achieving your goal
 Sun Tsu’s three rules of warfare -- Only fight when you know you will win: the best fight is an unfair fight

@@ -254,7 +254,7 @@ encryption -- at rest
 Event Driven Architectures = publish/subscribe model whereby there is a publisher (or publishers) which sends out notifications that something happened and subscribers (hereafter referred to as consumers) who are interested in things that happened. Good decoupling but hard to track impact of changes.
 event streaming https://kafka.apache.org/intro
 event-driven architecture = uses events (from producers) to trigger and communicate (across message channels) between decoupled services (consumers). Common with microservices.
-Externalized configuration
+externalized configuration
 failure -- hardware
 failure modes -- arbitrary = server produce arbitrary response at arbitrary times
 failure modes -- crash = no longer responding (= full omission)
@@ -267,6 +267,7 @@ fault tolerance +++https://medium.com/baseds/ready-and-available-distributed-sys
 finops
 flux architecture
 full stack trade offs https://zknill.io/posts/backend-for-the-frontend/
+gateway (ingress) = universal vs dedicated ( se page assemble service, API gateway...))
 Google - Site Reliability Engineering
 graceful degradation = ex. of batteries in flashlight
 Hadoop https://en.wikipedia.org/wiki/Apache_Hadoop

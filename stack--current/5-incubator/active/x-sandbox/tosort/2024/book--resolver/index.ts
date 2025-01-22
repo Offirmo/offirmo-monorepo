@@ -3,7 +3,7 @@ import { type Immutable } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 
-import { Book, BookPageReference } from '../../../src/library/book/l1-types/types.ts'
+import { Book, BookPageReference } from '../../../src/1-active/library/book/l1-types/types.ts'
 import { BookResolverEntry, BookResolversIndex } from './types.ts'
 
 import {
@@ -15,7 +15,7 @@ import {
 	create,
 	registerꓽBook as _registerꓽBook,
 } from './reducers.ts'
-import { BookCover, BookUId } from '../../../src/library/book/l1-types/types.ts'
+import { BookCover, BookUId } from '../../../src/1-active/library/book/l1-types/types.ts'
 
 /////////////////////////////////////////////////
 

@@ -3,7 +3,7 @@ import { type Immutable } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import { Book, BookCover, BookPage, BookPageReference } from '../l1-types/types.ts'
-import { isꓽBook, isꓽBookCover } from '../l1-types/guards.ts'
+import { isꓽBook, isꓽBookCover } from '../l1-types/types-guards.ts'
 import { BookPageReferenceChain, getꓽBookPageⵧchain } from './selectors.ts'
 import { PAGE_REFERENCEⵧSEPARATOR } from '../consts.ts'
 

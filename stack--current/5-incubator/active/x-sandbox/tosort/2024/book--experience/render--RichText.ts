@@ -2,8 +2,8 @@ import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { BookCover } from '../../../src/library/book/l1-types/types.ts'
-import { isꓽBook } from '../../../src/library/book/l1-types/guards.ts'
+import { BookCover } from '../../../src/1-active/library/book/l1-types/types.ts'
+import { isꓽBook } from '../../../src/1-active/library/book/l1-types/guards.ts'
 import { BookExperience } from './types.ts'
 
 /////////////////////////////////////////////////

@@ -2,7 +2,7 @@ import { expect } from 'chai'
 
 import {
 	create,
-} from './reducers.js'
+} from './reducers.ts'
 
 /////////////////////////////////////////////////
 

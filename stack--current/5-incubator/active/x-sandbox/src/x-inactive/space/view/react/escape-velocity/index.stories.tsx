@@ -1,4 +1,4 @@
-import Component from './index'
+import Component from './index.tsx'
 
 export default {
 	component: Component,
@@ -14,14 +14,9 @@ export default {
 			import('@offirmo-private/css--framework')
 			return Story
 		},
-		(Story) => (
-			<div className="o⋄full-viewport">
-				<Story />
-			</div>
-		),
 	]
 }
 
 export const Default = {}
 
-export const Custom = {}
+//export const Custom = {}

@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { BookUId, Book, BookCover, BookPageReference } from '../../../src/library/book/l1-types/types.ts'
+import { BookUId, Book, BookCover, BookPageReference } from '../../../src/1-active/library/book/l1-types/types.ts'
 import { BookResolversIndex } from './types.ts'
 
 /////////////////////////////////////////////////
