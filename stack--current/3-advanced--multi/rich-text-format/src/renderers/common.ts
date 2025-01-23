@@ -1,10 +1,11 @@
+import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	type CheckedNode,
 } from '../types/types.js'
 
 /////////////////////////////////////////////////
 
-const NODE_TYPE_to_DISPLAY_MODE: Readonly<{ [k: string]: 'inline' | 'block' }> = {
+const NODE_TYPE_to_DISPLAY_MODE: Immutable<{ [k: string]: 'inline' | 'block' }> = {
 
 	// classic inlines
 	'fragmentⵧinline': 'inline',
@@ -27,15 +28,15 @@ const NODE_TYPE_to_DISPLAY_MODE: Readonly<{ [k: string]: 'inline' | 'block' }> =
 	'li':              'block',
 }
 
-function isꓽlink($node: CheckedNode): boolean {
+function isꓽlink($node: Immutable<CheckedNode>): boolean {
 	return !!$node.$hints.href
 }
 
-function isꓽlist($node: CheckedNode): boolean {
+function isꓽlist($node: Immutable<CheckedNode>): boolean {
 	return ($node.$type === 'ul' || $node.$type === 'ol')
 }
 
-function isꓽlistⵧKV($node: CheckedNode): boolean {
+function isꓽlistⵧKV($node: Immutable<CheckedNode>): boolean {
 	if (!isꓽlist($node))
 		return false
 
@@ -44,7 +45,7 @@ function isꓽlistⵧKV($node: CheckedNode): boolean {
 }
 
 // TODO what is that already?
-function isꓽlistⵧuuid($node: CheckedNode): boolean {
+function isꓽlistⵧuuid($node: Immutable<CheckedNode>): boolean {
 	if (!isꓽlist($node))
 		return false
 
