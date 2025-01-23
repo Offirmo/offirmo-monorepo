@@ -27,6 +27,7 @@ battle royale
 best of -- steam -- 2022 https://store.steampowered.com/sale/bestof2022
 best of -- steam -- 2023 https://store.steampowered.com/sale/bestof2023
 best of -- steam -- 2024 https://store.steampowered.com/sale/bestof2024
+Big Dumb Object (BDO) is any mysterious object, usually of extraterrestrial or unknown origin and immense power, in a story which generates an intense sense of wonder by its mere existence. To a certain extent, the term deliberately deflates the intended grandeur of the mysterious object. https://en.wikipedia.org/wiki/Big_Dumb_Object
 biome
 bonus stage
 capture the flag

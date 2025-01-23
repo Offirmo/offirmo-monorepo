@@ -4,7 +4,7 @@ import * as RichText from '@offirmo-private/rich-text-format'
 
 import type {
 	BookCover,
-} from '../book--model/l1-types/index.ts'
+} from '../model--book/types/index.ts'
 
 /////////////////////////////////////////////////
 
@@ -16,7 +16,7 @@ function renderꓽcover__spine(cover: Immutable<BookCover>): RichText.Document {
 
 	const $doc = RichText.fragmentⵧinline()
 		.pushNode(
-			RichText.strong().pushText(title).done(),
+			RichText.em().pushText(title).done(),
 			{
 				// TODO one day: color, font family, etc.
 				id: 'title',

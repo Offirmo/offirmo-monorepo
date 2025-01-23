@@ -2,7 +2,7 @@ import React, { use, useId, useEffect } from 'react'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import type { BookCover } from '../../book--model/l1-types/index.ts'
+import type { BookCover } from '../../model--book/types/index.ts'
 
 /////////////////////////////////////////////////
 

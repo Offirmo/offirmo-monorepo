@@ -1,4 +1,6 @@
-import { type Node, type CheckedNode, NodeLike } from '../types/index.js'
+import type { Immutable } from '@offirmo-private/ts-types'
+
+import type { CheckedNode, NodeLike } from '../types/index.js'
 import {
 	type BaseRenderingOptions,
 	type OnConcatenateStringParams,
@@ -240,18 +242,17 @@ const callbacksⵧto_text: Partial<WalkerCallbacks<State, RenderingOptionsⵧToT
 }
 
 function renderⵧto_text(
-	$doc: NodeLike,
+	$doc: Immutable<NodeLike>,
 	options: Partial<RenderingOptionsⵧToText> = {},
 	callback_overrides: Partial<WalkerCallbacks<State, RenderingOptionsⵧToText>> = {},
 ): string {
-
-	const node = promoteꓽto_node($doc)
+	const $node = promoteꓽto_node($doc)
 
 	const full_options: RenderingOptionsⵧToText = {
 		...DEFAULT_RENDERING_OPTIONSⵧToText,
 		...options,
 	}
-	return walk<State, RenderingOptionsⵧToText>(node, {
+	return walk<State, RenderingOptionsⵧToText>($node, {
 		...callbacksⵧto_text,
 		...callback_overrides,
 	}, full_options).str

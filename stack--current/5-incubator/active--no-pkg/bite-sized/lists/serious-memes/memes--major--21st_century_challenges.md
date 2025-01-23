@@ -16,3 +16,5 @@
 * https://en.wikipedia.org/wiki/Lists_of_unsolved_problems
   * https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics
   * https://en.wikipedia.org/wiki/List_of_paradoxes#Cosmology
+* frog in a well = vastness of the universe, where are we? what are we?
+* frog in a well = we may need to improve our brain capabilities 

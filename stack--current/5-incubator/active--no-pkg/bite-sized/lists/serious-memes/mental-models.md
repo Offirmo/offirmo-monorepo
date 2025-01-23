@@ -174,6 +174,7 @@ dysthymia https://en.wikipedia.org/wiki/Dysthymia
 effective altruism
 effet projecteur
 effet rétroviseur
+efficient market hypothesis = (false) https://quant.stackexchange.com/questions/81684/why-is-efficient-market-hypothesis-still-unanswered-and-no-one-really-seems-to-c
 Eisenhower's Urgent/Important https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
 elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
@@ -388,6 +389,7 @@ monkey ladder experiment https://factschology.com/factschology-articles-podcast/
 Monty Hall problem https://en.wikipedia.org/wiki/Monty_Hall_problem
 moral hazard = Increases in the exposure to risk when insured, or when another bears the cost
 moral imperative https://en.wikipedia.org/wiki/Moral_imperative
+moral system
 mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruction
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
 naivety
@@ -613,6 +615,7 @@ universe -- end big chill, big freeze, big crunch
 unlearn
 vanilla
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
+verisimilitude
 via negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 victimisation/retaliation = subject to or threatened with some kind of disadvantage or unfair treatment (often referred to as detriment) because they made (or plan to make) a workplace complaint, or helped someone else to do so
 viz

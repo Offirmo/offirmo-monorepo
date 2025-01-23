@@ -12,7 +12,7 @@
 
 /////////////////////////////////////////////////
 
-import { BookUId, BookPageReference, BookPartReference } from '../../../src/1-active/library/book/l1-types/types.ts'
+import { BookUId, BookPageReference, BookPartReference } from '../model--book/types/index.ts'
 
 /////////////////////////////////////////////////
 

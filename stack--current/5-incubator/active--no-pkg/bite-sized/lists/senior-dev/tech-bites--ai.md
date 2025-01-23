@@ -61,6 +61,7 @@ fine-tuning
 function calling (bad name) = connect large language models to external tools https://cloud.google.com/vertex-ai/docs/generative-ai/multimodal/function-calling https://platform.openai.com/docs/guides/function-calling
 generative AI
 generative AI gold rush
+glimpsing the shoggoth / forgetting the mask = situations in which the A.I. exhibits "unhinged" or unexpected behaviors that bypass its safety restrictions https://en.wikipedia.org/wiki/Shoggoth#In_popular_culture
 GLUE language understanding benchmark
 GPT "Generative Pre-trained Transformer" = understand language (natural & formal)
 Grounded Generation = see RAG

@@ -1,7 +1,7 @@
-import { BookCover } from '../l1-types'
+import type { BookCover } from '../types/index.ts'
 
-import * as LOTR from './lotr'
-import * as WoW from './wow-alliance-of-lordaeron'
+import * as LOTR from './lotr/index.ts'
+import * as WoW from './wow-alliance-of-lordaeron/index.ts'
 
 export const COVERS: Array<BookCover> = [
 	LOTR.COVER,

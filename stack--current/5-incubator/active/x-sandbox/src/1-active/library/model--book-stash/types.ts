@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { BookExperience } from '../book--experience/types.ts'
+import { BookExperience } from '../model--book-experience/types.ts'
 
 /////////////////////////////////////////////////
 

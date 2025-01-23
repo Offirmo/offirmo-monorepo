@@ -3,13 +3,20 @@
 7 degres misericorde 1) absence de jugement 2) compassion 3) confiance pardon/resilience 4) absolution 5) http://www.chemindamourverslepere.com/archive/2016/04/08/meditation-les-degres-de-la-misericorde-5785524.html
 7 demeures https://mailchi.mp/mariedenazareth.com/quelles-sont-les-etapes-de-la-vie-mystique-selon-sainte-therese-davila
 7+7 œuvres de misericorde https://fr.wikipedia.org/wiki/%C5%92uvres_de_mis%C3%A9ricorde
+Absurdism = Theory that life in general is meaningless
 Animism
+Apatheism = Apathy toward the existence or non-existence of God
 Apostles - what happened to them
 arianism https://en.wikipedia.org/wiki/Arius
 armor of Christ
 cargo cult
+Cosmicism = complete irrelevance of mankind in the face of the cosmic entities that apparently exist in the universe https://en.wikipedia.org/wiki/Cosmicism
 Countries - how christianism was introduced
+Determinism = Philosophical view that events are determined by prior events
 doubt https://aleteia.org/2023/04/15/is-all-doubt-bad/
+Existential nihilism = Theory that life has no inherent meaning
+Existentialism = Philosophical form of enquiry into subjective existence
+Fatalism = Philosophical doctrine on the subjugation of all events to fate
 Fatima: message, children, secrets
 fine-tuned universe (not an argument) https://en.wikipedia.org/wiki/Fine-tuned_universe
 first cause
@@ -22,6 +29,8 @@ le sacré
 Lourdes
 magical thinking https://en.wikipedia.org/wiki/Magical_thinking
 mercy
+Misanthropy = General dislike of humanity
+Misotheism = Hatred of God or the gods
 mysticism https://en.wikipedia.org/wiki/Christian_mysticism
 médaille -- miraculeuse
 médaille -- st Benoit
@@ -33,6 +42,7 @@ philosophical problems -- why there is something rather than nothing?
 philosophical problems https://en.wikipedia.org/wiki/List_of_philosophical_problems
 prayer -- extension of selfishness: santa's list, promise to be good, implore, negotiate, plead
 problem of evil https://en.wikipedia.org/wiki/Problem_of_evil
+purposeless, mechanical and uncaring universe. Human beings, with their limited faculties, can never fully understand this universe.
 Russian Pilgrim
 scientism
 selfishness

@@ -38,6 +38,7 @@ interface Builder {
 	pushBlockFragment(str: string, options?: CommonOptions): Builder
 
 	pushStrong(str: string, options?: CommonOptions): Builder
+	pushEm(str: string, options?: CommonOptions): Builder
 	pushWeak(str: string, options?: CommonOptions): Builder
 	pushHeading(str: string, options?: CommonOptions): Builder
 	pushHorizontalRule(): Builder
@@ -66,6 +67,7 @@ function _create($node: CheckedNode): Builder {
 		pushBlockFragment,
 
 		pushStrong,
+		pushEm,
 		pushWeak,
 		pushHeading,
 		pushHorizontalRule,
@@ -150,6 +152,10 @@ function _create($node: CheckedNode): Builder {
 		return _buildAndPush(strong(), str, options)
 	}
 
+	function pushEm(str: string, options?: CommonOptions): Builder {
+		return _buildAndPush(em(), str, options)
+	}
+
 	function pushWeak(str: string, options?: CommonOptions): Builder {
 		return _buildAndPush(weak(), str, options)
 	}
@@ -229,6 +235,10 @@ function strong(): Builder {
 	return create(NodeType.strong)
 }
 
+function em(): Builder {
+	return create(NodeType.em)
+}
+
 function weak(): Builder {
 	return create(NodeType.weak)
 }
@@ -270,6 +280,7 @@ export {
 	fragmentⵧblock,
 	heading,
 	strong,
+	em,
 	weak,
 	emoji,
 	listⵧordered,

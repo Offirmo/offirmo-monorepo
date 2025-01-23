@@ -9,9 +9,9 @@ import {
 	BookPartKey,
 	BOOK_PART_KEY_KEYWORDSᐧFIRST,
 	BOOK_PART_KEY_KEYWORDSᐧLAST,
-} from '../l1-types/types.ts'
-import { PAGE_REFERENCEⵧSEPARATOR } from '../consts.ts'
-import { isꓽPageⵧlike } from '../l1-types/types-guards.ts'
+} from './types/types.ts'
+import { PAGE_REFERENCEⵧSEPARATOR } from './consts.ts'
+import { isꓽPageⵧlike } from './types/types-guards.ts'
 
 /////////////////////////////////////////////////
 // primitives

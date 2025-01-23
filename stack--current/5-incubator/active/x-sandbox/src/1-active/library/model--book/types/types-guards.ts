@@ -1,6 +1,6 @@
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import { BookPage, BookPart, Book, BookCover } from './types.ts'
+import type { BookPage, BookPart, Book, BookCover } from './types.ts'
 
 /////////////////////////////////////////////////
 

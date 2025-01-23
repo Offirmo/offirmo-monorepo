@@ -2,10 +2,10 @@ import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { Book, BookCover, BookPage, BookPageReference } from '../l1-types/types.ts'
-import { isꓽBook, isꓽBookCover } from '../l1-types/types-guards.ts'
-import { BookPageReferenceChain, getꓽBookPageⵧchain } from './selectors.ts'
-import { PAGE_REFERENCEⵧSEPARATOR } from '../consts.ts'
+import { Book, BookCover, BookPage, BookPageReference } from '../model--book/types/types.ts'
+import { isꓽBook, isꓽBookCover } from '../model--book/types/types-guards.ts'
+import { BookPageReferenceChain, getꓽBookPageⵧchain } from '../model--book/selectors.ts'
+import { PAGE_REFERENCEⵧSEPARATOR } from '../model--book/consts.ts'
 
 /////////////////////////////////////////////////
 

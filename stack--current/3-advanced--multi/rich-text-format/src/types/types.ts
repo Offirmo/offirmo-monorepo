@@ -8,9 +8,12 @@ const NodeType = Enum(
 	// https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block
 
 	// display "inline"
-	'strong', // strong but less strong than heading. Ex. ansi.bold
-	'weak', // opposite of strong ;) Ex. ansi.dim
-	'em', // TODO clarify semantic difference with strong: Alternate? (= italic)
+	// strong > em > normal > weak
+	// https://www.shecodes.io/athena/7571-understanding-the-difference-between-strong-and-em-in-html
+	// https://stackoverflow.com/questions/1936864/what-is-the-difference-between-strong-and-em-tags
+	'strong', // emphasis -- strong (but less strong than heading) usually rendered as bold.
+	'em',     // emphasis -- medium. usually rendered as italic.
+	'weak',   // DE-emphasis, ex. ansi.dim
 	'emoji', // OPTIONAL but useful to ensure a good rendering.
 	         // This node type represent a single emoji.
 	         // As of 2024, emojis are still very hard to handle properly
@@ -39,14 +42,20 @@ type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 // - for rendering, hints should be OPTIONAL and any renderer should be able to render decently without them
 // - for non-rendering (ex. hypermedia features) hints can be made mandatory
 interface Hints {
-	href?: Uri‿x | Hyperlink // make this node a link to a specific resource
+	href?: Uri‿x | Hyperlink // make this node a link to a specific resource (TODO clarify with HATEOAS)
+
 	bullets_style?: 'none' // for ul, to remove bullets (TODO ONE DAY also allow to customize?)
+
 	key?: string // for ex. to recognize a specific content (do not abuse! Reminder to keep everything text-compatible)
-	//uuid?: string // for ex. to recognize a specific resource (TODO review, should send JSON tohether instead or use actions)
+	//uuid?: string // for ex. to recognize a specific resource (TODO review, should send JSON together instead? or use actions?)
 
 	// emoji support: TODO one day, API following https://github.com/jdecked/twemoji
 	possible_emoji?: Emoji // this emoji can be used to represent/augment this node
 
+	// TODO styles
+	// TODO colors
+
+	// anything allowed
 	[k: string]: any
 }
 

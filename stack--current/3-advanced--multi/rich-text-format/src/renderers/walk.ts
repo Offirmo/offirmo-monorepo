@@ -1,4 +1,5 @@
 import assert from 'tiny-invariant'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from '../consts.js'
 
@@ -173,11 +174,11 @@ const SUB_NODE_HR: Node = Object.freeze<Node>({
 })
 
 interface InternalWalkState {
-	$parent_node: Readonly<CheckedNode> | null,
+	$parent_node: Immutable<CheckedNode> | null,
 	$id: string,
 	depth: number,
 
-	$root_node: Readonly<CheckedNode>, // for sub-node resolution "root" mode
+	$root_node: Immutable<CheckedNode>, // for sub-node resolution "root" mode
 	/*
 		const context = parent_state
 		? Object.create(parent_state.context)
@@ -336,9 +337,9 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 
 
 function _walk<State, RenderingOptions extends BaseRenderingOptions>(
-	$raw_node: Readonly<Node>,
-	callbacks: Readonly<WalkerCallbacks<State, RenderingOptions>>,
-	options: Readonly<RenderingOptions> = {} as any,
+	$raw_node: Immutable<Node>,
+	callbacks: Immutable<WalkerCallbacks<State, RenderingOptions>>,
+	options: Immutable<RenderingOptions> = {} as any,
 	{
 		$parent_node,
 		$id,
@@ -437,8 +438,8 @@ function _walk<State, RenderingOptions extends BaseRenderingOptions>(
 
 
 function walk<State, RenderingOptions extends BaseRenderingOptions>(
-	$raw_node: Readonly<Node>,
-	raw_callbacks: Readonly<Partial<WalkerCallbacks<State, RenderingOptions>>>,
+	$raw_node: Immutable<Node>,
+	raw_callbacks: Immutable<Partial<WalkerCallbacks<State, RenderingOptions>>>,
 	options: RenderingOptions, // this internal fn can't default unknown type, so we expect the caller to give us full options
 ) {
 	assert(

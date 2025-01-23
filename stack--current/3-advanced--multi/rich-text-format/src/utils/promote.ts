@@ -9,7 +9,9 @@ import {
 
 /////////////////////////////////////////////////
 
-function promoteꓽto_node($raw: NodeLike): Node {
+function promoteꓽto_node($raw: NodeLike): Node
+function promoteꓽto_node($raw: Immutable<NodeLike>): Immutable<Node>
+function promoteꓽto_node($raw: Immutable<NodeLike>): Immutable<Node> {
 	if (typeof $raw === 'number')
 		$raw = String($raw)
 
@@ -24,16 +26,9 @@ function promoteꓽto_node($raw: NodeLike): Node {
 
 	return $raw
 }
-/*
-function promoteꓽto_nodeⵧimmutable(
-	$raw: Immutable<NodeLike>
-): Immutable<Node> {
-	return promoteꓽto_node($raw as any)
-}*/
 
 /////////////////////////////////////////////////
 
 export {
 	promoteꓽto_node,
-	//promoteꓽto_nodeⵧimmutable,
 }

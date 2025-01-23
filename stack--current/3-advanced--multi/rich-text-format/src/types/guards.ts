@@ -14,7 +14,10 @@ const EXPECTED_FIELDS = new Set<string>([
 	'$classes',
 	'$hints',
 ])
-function assertꓽisꓽNode(candidate: Immutable<any>): asserts candidate is Node {
+
+function assertꓽisꓽNode(candidate: Immutable<any>): asserts candidate is Immutable<Node>
+function assertꓽisꓽNode(candidate: any): asserts candidate is Node
+function assertꓽisꓽNode(candidate: Immutable<any>): asserts candidate is Immutable<Node> {
 	// "Node" is quite loose so we only expect at least 1 param
 	const keys = Object.keys(candidate)
 	keys.forEach(k => {
@@ -23,7 +26,9 @@ function assertꓽisꓽNode(candidate: Immutable<any>): asserts candidate is Nod
 	assert(keys.length > 0, `${LIB}: a Node should have at least 1 recognized field!`)
 }
 
-function isꓽNode(node: Immutable<any>): node is Node {
+function isꓽNode(node: Immutable<any>): node is Immutable<Node>
+function isꓽNode(node: any): node is Node
+function isꓽNode(node: Immutable<any>): node is Immutable<Node> {
 	try {
 		assertꓽisꓽNode(node)
 		return true

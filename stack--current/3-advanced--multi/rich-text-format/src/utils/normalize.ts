@@ -1,4 +1,5 @@
 import assert from 'tiny-invariant'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { normalize_unicode } from '@offirmo-private/normalize-string'
 import { LIB, SCHEMA_VERSION } from '../consts.js'
 
@@ -13,7 +14,9 @@ import {
 
 /** normalize the given node (not deeply, only 1st level)
  */
-function normalizeꓽnode($raw_node: Readonly<Node>): CheckedNode {
+function normalizeꓽnode($raw_node: Node): CheckedNode
+function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<CheckedNode>
+function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<CheckedNode> {
 	assert(!!$raw_node, `normalize_node(): param should be defined!`)
 
 	const {
@@ -33,7 +36,7 @@ function normalizeꓽnode($raw_node: Readonly<Node>): CheckedNode {
 
 	// validation: not our responsibility
 
-	const $node: CheckedNode = {
+	const $node: Immutable<CheckedNode> = {
 		$v,
 		$type,
 		$classes,
