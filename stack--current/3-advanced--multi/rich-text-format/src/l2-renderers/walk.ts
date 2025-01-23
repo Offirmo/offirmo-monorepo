@@ -1,16 +1,16 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { LIB } from '../consts.js'
+import { LIB } from '../consts.ts'
 
 import {
 	NodeType,
 	type CheckedNode,
 	type Node,
-} from '../types/index.js'
+} from '../l1-types/index.ts'
 
-import { normalizeꓽnode } from '../utils/normalize.js'
-import { promoteꓽto_node } from '../utils/promote.js'
+import { normalizeꓽnode } from '../l1-utils/normalize.ts'
+import { promoteꓽto_node } from '../l1-utils/promote.ts'
 
 /////////////////////////////////////////////////
 // "walk" is the foundation on which all the renderer are based
@@ -35,7 +35,7 @@ const DEFAULT_RENDERING_OPTIONSⵧWalk= Object.freeze<BaseRenderingOptions>({
 
 export interface BaseParams<State> {
 	state: State
-	$node: CheckedNode
+	$node: Immutable<CheckedNode>
 	depth: number
 }
 
@@ -45,7 +45,7 @@ export interface BaseParams<State> {
 // (only callback not inheriting from BaseParams)
 export interface OnNodeEnterParams {
 	$id: string
-	$node: CheckedNode
+	$node: Immutable<CheckedNode>
 	depth: number
 }
 // NODE EXIT
@@ -63,7 +63,7 @@ export interface OnConcatenateStringParams<State> extends BaseParams<State> {
 export interface OnConcatenateSubNodeParams<State> extends BaseParams<State> {
 	sub_state: State
 	$id: string
-	$parent_node: CheckedNode
+	$parent_node: Immutable<CheckedNode>
 }
 // FILTER
 export interface OnFilterParams<State> extends BaseParams<State> {
@@ -77,7 +77,7 @@ export interface OnClassParams<State> extends BaseParams<State> {
 // TYPE
 export interface OnTypeParams<State> extends BaseParams<State> {
 	$type: NodeType
-	$parent_node: CheckedNode | null
+	$parent_node: Immutable<CheckedNode> | null
 }
 // unknown sub node resolver
 export interface UnknownSubNodeResolver<State, RenderingOptions> {
@@ -191,11 +191,11 @@ interface InternalWalkState {
 }
 
 function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
-	$node: CheckedNode,
+	$node: Immutable<CheckedNode>,
 	callbacks: WalkerCallbacks<State, RenderingOptions>,
 	state: State,
 	depth: number,
-	$root_node: CheckedNode,
+	$root_node:  Immutable<CheckedNode>,
 	options: RenderingOptions,
 ) {
 	const { $content, $sub: $sub_nodes } = $node
@@ -231,7 +231,7 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 		const [ sub_node_id, ...$filters ] = split_end.shift()!.split('|')
 		assert(sub_node_id, `${LIB}: syntax error in content "${$content}", empty ⎨⎨⎬⎬!`)
 
-		let $sub_node = promoteꓽto_node((function _resolve_sub_node_by_id(): CheckedNode['$sub'][string] {
+		let $sub_node = promoteꓽto_node((function _resolve_sub_node_by_id(): Immutable<CheckedNode>['$sub'][string] {
 			if (sub_node_id === 'br') {
 				assert(!$sub_nodes[sub_node_id], `${LIB}: error in content "${$content}", having a reserved subnode "${sub_node_id}"!`)
 				return SUB_NODE_BR
@@ -339,7 +339,7 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 function _walk<State, RenderingOptions extends BaseRenderingOptions>(
 	$raw_node: Immutable<Node>,
 	callbacks: Immutable<WalkerCallbacks<State, RenderingOptions>>,
-	options: Immutable<RenderingOptions> = {} as any,
+	options: RenderingOptions = {} as any,
 	{
 		$parent_node,
 		$id,
@@ -391,7 +391,7 @@ function _walk<State, RenderingOptions extends BaseRenderingOptions>(
 			}
 		})
 		sorted_keys.forEach(key => {
-			const $sub_node: Node = {
+			const $sub_node: Immutable<Node> = {
 				$type: NodeType.li,
 				$content: '⎨⎨content⎬⎬',
 				$sub: {
@@ -467,6 +467,7 @@ function walk<State, RenderingOptions extends BaseRenderingOptions>(
 		$root_node,
 	})
 }
+
 /////////////////////////////////////////////////
 
 export {

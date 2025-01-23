@@ -1,14 +1,14 @@
 
-export * from './renderers/to_debug.js'
-export * from './renderers/to_actions.js'
-export * from './renderers/to_text.js'
-export * from './renderers/to_html.js'
+export * from './l2-renderers/to_debug.ts'
+export * from './l2-renderers/to_actions.ts'
+export * from './l2-renderers/to_text.ts'
+export * from './l2-renderers/to_html.ts'
 
-export * from './types/index.js'
-export * from './renderers/walk.js'
-export * from './renderers/common.js'
-export * from './sugar/builder.js'
-export * from './utils/index.js'
+export * from './l1-types/index.ts'
+export * from './l2-renderers/walk.ts'
+export * from './l2-renderers/common.ts'
+export * from './l2-sugar/builder.ts'
+export * from './l1-utils/index.ts'
 
 // for convenience of the consumer
 export { Enum } from 'typescript-string-enums'

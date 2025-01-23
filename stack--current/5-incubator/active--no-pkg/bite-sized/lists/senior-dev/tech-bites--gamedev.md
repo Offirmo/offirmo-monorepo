@@ -1,4 +1,5 @@
 +++ https://en.wikipedia.org/wiki/Glossary_of_video_game_terms
+5 major video game award ceremonies: the Golden Joystick Awards, The Game Awards, the D.I.C.E. Awards, the Game Developers Choice Awards, and the British Academy Games Awards https://en.wikipedia.org/wiki/Baldur%27s_Gate_3
 [ ] https://bottomfeeder.substack.com/
 [ ] Magic the gathering -- https://magic.wizards.com/en/news/making-magic/state-of-design-2024
 AAA

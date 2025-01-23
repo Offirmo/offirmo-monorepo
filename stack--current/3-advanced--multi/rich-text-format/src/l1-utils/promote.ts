@@ -5,7 +5,7 @@ import {
 	type NodeLike,
 	type Node,
 	assertꓽisꓽNode
-} from '../types/index.js'
+} from '../l1-types/index.ts'
 
 /////////////////////////////////////////////////
 

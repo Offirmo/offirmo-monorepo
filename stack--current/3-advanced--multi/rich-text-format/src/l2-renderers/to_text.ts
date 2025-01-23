@@ -1,6 +1,6 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import type { CheckedNode, NodeLike } from '../types/index.js'
+import type { CheckedNode, NodeLike } from '../l1-types/index.ts'
 import {
 	type BaseRenderingOptions,
 	type OnConcatenateStringParams,
@@ -10,10 +10,10 @@ import {
 	type WalkerReducer,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
-} from './walk.js'
+} from './walk.ts'
 
-import { isꓽlink, isꓽlistⵧKV, NODE_TYPE_to_DISPLAY_MODE } from './common.js'
-import { promoteꓽto_node } from '../utils/promote.js'
+import { isꓽlink, isꓽlistⵧKV, NODE_TYPE_to_DISPLAY_MODE } from './common.ts'
+import { promoteꓽto_node } from '../l1-utils/promote.ts'
 
 /////////////////////////////////////////////////
 
@@ -29,7 +29,7 @@ const DEFAULT_RENDERING_OPTIONSⵧToText = Object.freeze<RenderingOptionsⵧToTe
 })
 
 type State = {
-	sub_nodes: CheckedNode[] // sometimes need to remember them, for ex. for K/V lists
+	sub_nodes: Immutable<CheckedNode>[] // sometimes need to remember them, for ex. for K/V lists
 
 	// whether the current $node starts or/and end with NL
 	// needed to coalesce new lines.

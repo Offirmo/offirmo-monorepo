@@ -1,18 +1,18 @@
 import { expect } from 'chai'
 
-import { LIB } from '../consts.js'
+import { LIB } from '../consts.ts'
 
 /////////////////////////////////////////////////
 
-import * as RichText from '../index.js'
+import * as RichText from '../index.ts'
 import {
 	walk,
 	type WalkerCallbacks,
-} from './walk.js'
+} from './walk.ts'
 import {
 	type BaseRenderingOptions,
 	type Node,
-} from '../index.js'
+} from '../index.ts'
 
 describe(`${LIB} -- renderers -- walker (internal)`, function () {
 	interface State {}

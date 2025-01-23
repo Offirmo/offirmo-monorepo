@@ -1,4 +1,4 @@
-import { type Engagement } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { type Uri‿x, type Hyperlink } from '@offirmo-private/ts-types-web'
 
 import {
@@ -10,13 +10,13 @@ import {
 	type WalkerReducer,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
-} from './walk.js'
-import { type CheckedNode, type NodeLike } from '../types/index.js'
+} from './walk.ts'
+import { type CheckedNode, type NodeLike } from '../l1-types/index.ts'
 
 /////////////////////////////////////////////////
 
 interface BaseAction {
-	$node: CheckedNode // the node where this action was found
+	$node: Immutable<CheckedNode> // the node where this action was found
 
 	// TODO add UI options? ex. pretend to work?
 	// or an auto engagement? (see state--engagement)
@@ -46,12 +46,12 @@ type Action =
 	| ReducerAction
 
 interface RenderingOptionsⵧToActions extends BaseRenderingOptions {
-	getꓽactions: (node: CheckedNode) => Action[] // will be executed on every node
+	getꓽactions: (node: Immutable<CheckedNode>) => Action[] // will be executed on every node
 }
 
 const DEFAULT_RENDERING_OPTIONSⵧToActions= Object.freeze<RenderingOptionsⵧToActions>({
 	...DEFAULT_RENDERING_OPTIONSⵧWalk,
-	getꓽactions: ($node: CheckedNode): Action[] => {
+	getꓽactions: ($node) => {
 		const actions: Action[] = []
 
 		if ($node.$hints['href']) {
@@ -126,7 +126,7 @@ const callbacksⵧto_actions: Partial<WalkerCallbacks<State, RenderingOptionsⵧ
 	on_type,
 }
 
-function renderⵧto_actions($doc: NodeLike, options: Partial<RenderingOptionsⵧToActions> = {}): Action[] {
+function renderⵧto_actions($doc: Immutable<NodeLike>, options: Partial<RenderingOptionsⵧToActions> = {}): Action[] {
 	if (typeof $doc !== 'object') {
 		return []
 	}

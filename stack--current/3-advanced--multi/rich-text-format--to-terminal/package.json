@@ -8,15 +8,31 @@
 
 	"sideEffects": false,
 	"type": "module",
-	"source": "index.mjs",
-	"exports": {
-		".": {
-			"import": "./index.mjs"
-		}
-	},
+	"source": "src/index.ts",
 
+	"peerDependencies": {
+		"tslib": "^2"
+	},
 	"dependencies": {
 		"@offirmo-private/rich-text-format": "^0",
 		"chalk": "^5"
+	},
+
+	"scripts": {
+		"clean": "monorepo-script--clean-package …dist",
+
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"_build:prod": "monorepo-script--build-typescript-package",
+
+		"test": "node --experimental-strip-types --experimental-require-module ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './src/**/*spec.ts'",
+		"dev": "run-s clean _build:dev:watch",
+		"build": "run-s  clean _build:prod"
+	},
+	"devDependencies": {
+		"typescript-string-enums": "^1",
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2"
 	}
 }

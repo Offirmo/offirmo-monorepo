@@ -1,4 +1,4 @@
-import { LIB, SCHEMA_VERSION } from '../consts.js'
+import { LIB, SCHEMA_VERSION } from '../consts.ts'
 
 import {
 	NodeType,
@@ -6,9 +6,9 @@ import {
 	type CheckedNode,
 	type Node,
 	type Document, NodeLike,
-} from '../types/index.js'
-import { promoteꓽto_node } from '../utils/promote.js'
-import { normalizeꓽnode } from '../utils/normalize.js'
+} from '../l1-types/index.ts'
+import { promoteꓽto_node } from '../l1-utils/promote.ts'
+import { normalizeꓽnode } from '../l1-utils/normalize.ts'
 
 /////////////////////////////////////////////////
 

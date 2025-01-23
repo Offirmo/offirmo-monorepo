@@ -1,9 +1,9 @@
 import { expect } from 'chai'
 
-import { LIB } from '../consts.js'
+import { LIB } from '../consts.ts'
 
-import * as RichText from './builder.js'
-import { renderⵧto_text } from '../renderers/to_text.js'
+import * as RichText from './builder.ts'
+import { renderⵧto_text } from '../l2-renderers/to_text.ts'
 
 /////////////////////////////////////////////////
 

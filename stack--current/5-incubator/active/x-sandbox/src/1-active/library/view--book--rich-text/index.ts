@@ -16,14 +16,15 @@ function renderꓽcover__spine(cover: Immutable<BookCover>): RichText.Document {
 
 	const $doc = RichText.fragmentⵧinline()
 		.pushNode(
-			RichText.em().pushText(title).done(),
+			RichText.em().pushText(title.trim()).done(),
 			{
 				// TODO one day: color, font family, etc.
 				id: 'title',
 			},
 		)
+		.pushText(' by ')
 		.pushNode(
-			RichText.weak().pushText(author).done(),
+			RichText.weak().pushText(author.trim()).done(),
 			{
 				id: 'author'
 			},

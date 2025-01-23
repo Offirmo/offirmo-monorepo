@@ -1,9 +1,11 @@
 /* eslint-disable no-console */
 
+import type { Immutable } from '@offirmo-private/ts-types'
+
 import {
 	type CheckedNode,
 	type Node,
-} from '../types/index.js'
+} from '../l1-types/index.ts'
 
 import {
 	type BaseRenderingOptions,
@@ -19,7 +21,7 @@ import {
 	type OnTypeParams,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
-} from './walk.js'
+} from './walk.ts'
 
 /////////////////////////////////////////////////
 
@@ -30,7 +32,7 @@ function indent(n: number) {
 
 ////////////////////////////////////
 
-function debug_node_short($node: CheckedNode) {
+function debug_node_short($node: Immutable<CheckedNode>) {
 	const { $type, $content } = $node
 
 	return `${$type}."${$content}"`

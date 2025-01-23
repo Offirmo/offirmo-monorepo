@@ -1,7 +1,7 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	type CheckedNode,
-} from '../types/types.js'
+} from '../l1-types/types.ts'
 
 /////////////////////////////////////////////////
 

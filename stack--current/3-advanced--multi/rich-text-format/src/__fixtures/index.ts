@@ -1,4 +1,4 @@
-import * as RichText from '../index.js'
+import * as RichText from '../index.ts'
 
 /////// parts ///////
 

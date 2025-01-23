@@ -1,4 +1,6 @@
 import memoize_one from 'memoize-one'
+import type { Immutable } from '@offirmo-private/ts-types'
+
 import {
 	type BaseRenderingOptions,
 	NodeType,
@@ -9,10 +11,10 @@ import {
 	type WalkerReducer,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
-} from './walk.js'
-import { type CheckedNode, type Node } from '../types/index.js'
+} from './walk.ts'
+import { type CheckedNode, type Node } from '../l1-types/index.ts'
 
-import { isꓽlist, isꓽlink, isꓽlistⵧKV, isꓽlistⵧuuid } from './common.js'
+import { isꓽlist, isꓽlink, isꓽlistⵧKV, isꓽlistⵧuuid } from './common.ts'
 
 /////////////////////////////////////////////////
 // much simpler than "to text" since HTML is doing a lot for us
@@ -27,7 +29,7 @@ const DEFAULT_RENDERING_OPTIONSⵧToHtml= Object.freeze<RenderingOptionsⵧToHtm
 })
 
 type State = {
-	sub_nodes: CheckedNode[]
+	sub_nodes: Immutable<CheckedNode>[]
 	str: string
 }
 
