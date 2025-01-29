@@ -292,6 +292,7 @@ groupware = collaboration software = helps members of a group work better togeth
 grug brain = complexity, readability https://grugbrain.dev/
 Grug Brained Developer = A layman's guide to thinking like the self-aware smol brained https://grugbrain.dev/
 handle
+hashbang (aka. shebang) https://github.com/tc39/proposal-hashbang
 helping -- XY problem = wrongly asking about your attempted solution rather than your actual problem https://xyproblem.info/
 hoisting des vars de boucle for et switch
 hooks
@@ -667,6 +668,7 @@ types -- subtyping https://en.wikipedia.org/wiki/Liskov_substitution_principle
 types -- systems -- "modern" https://reasonablypolymorphic.com/blog/protos-are-wrong/
 types -- systems -- role -- (disputable pre-semver citation!) the main challenge in real-world software engineering is not writing code but changing code once it is written and deployed. In general, type systems can be both helpful and harmful when it comes to changing code -- type systems are invaluable for detecting problems introduced by a change, but an overly-rigid type system can be a hindrance if it means common types of changes are difficult to make. https://news.ycombinator.com/item?id=18188519
 uid -- use strings = "2^64 isn’t as big as it used to be" https://protobuf.dev/programming-guides/api/
+unicode -- byte-order mark
 unicode -- encoding -- WTF-8 "wobbly" (not needed with normalization / well formed) https://simonsapin.github.io/wtf-8/
 unicode -- encoding https://simonsapin.github.io/wtf-8/#motivation
 unicode -- FAQ https://unicode.org/faq/utf_bom.html#utf16-2

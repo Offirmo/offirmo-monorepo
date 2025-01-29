@@ -204,6 +204,8 @@ interop https://developer.mozilla.org/en-US/blog/interop2023-mdn-doc-updates/
 js -- AbortController https://betterstack.com/community/guides/scaling-nodejs/understanding-abortcontroller/
 js -- book -- Exploring JavaScript (ES2024 Edition) https://exploringjs.com/js/book/index.html
 js -- exports https://webpack.js.org/guides/package-exports/
+js -- incoming features https://github.com/tc39/proposals?tab=readme-ov-file#stage-3
+js -- latest features by year https://github.com/tc39/proposals/blob/main/finished-proposals.md
 js -- promises -- withResolvers 
 js -- promises https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md
 js -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
