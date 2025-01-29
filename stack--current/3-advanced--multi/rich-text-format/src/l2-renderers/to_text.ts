@@ -39,6 +39,7 @@ type State = {
 	// for ex. if the current block starts with a NL and its immediate child also starts with a NL, we should have only 1 NL
 	starts_with_block: boolean
 	ends_with_block: boolean
+	trailing_spaces: string
 
 	// # of lines to put on top and bottom
 	// (esp. for markdown)
@@ -58,6 +59,7 @@ const create_state: WalkerStateCreator<State, RenderingOptionsⵧToText> = (pare
 		sub_nodes: [],
 		starts_with_block: false,
 		ends_with_block: false,
+		trailing_spaces: '',
 		marginⵧtop‿lines: 0,
 		marginⵧbottom‿lines: 0,
 		nested_list_depth: parent_state?.nested_list_depth ?? 0,
@@ -86,6 +88,12 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 	//console.log('[on_type]', { $type, state })
 
 	switch ($node.$type) {
+		case 'ul':
+		// fallthrough
+		case 'ol':
+			state.starts_with_block = true // in case the container type wasn't a block. It's definitely a block!
+			break
+
 		case 'br':
 			state.ends_with_block = true
 			state.str = '' // clear, in case the user accidentally pushed some content in this node
@@ -180,62 +188,67 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 const on_concatenateⵧstr: WalkerReducer<State, OnConcatenateStringParams<State>, RenderingOptionsⵧToText> = ({state, str}) => {
 	//console.log('on_concatenateⵧstr()', {str, state: structuredClone(state),})
 	if (state.ends_with_block) {
+		state.trailing_spaces = '' // remove them
 		state.str += ''.padStart(state.marginⵧbottom‿lines + 1,'\n')
 		state.ends_with_block = false
 		state.marginⵧbottom‿lines = 0
 	}
-	state.str += str
+
+	state.str += state.trailing_spaces
+	const without_trailing = str.trimEnd()
+	state.trailing_spaces = (without_trailing.length !== str.length)
+		? str.slice(without_trailing.length - str.length)
+		: '' // bc slice(0) = full str
+	state.str += without_trailing
+
 	return state
 }
 
 const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToText> = ({
 	state, $node, depth,
 	$sub_node_id, $sub_node, sub_state
-}, {style}) => {
-	let sub_str = sub_state.str
-	let sub_starts_with_block = sub_state.starts_with_block
-
+}, options) => {
 	state.sub_nodes.push(normalizeꓽnode($sub_node))
 
-	switch ($node.$type) {
-		case 'ul': {
-			// automake sub-state a ul > li
+	const {style} = options
+	const sub_str = (() => {
+		switch ($node.$type) {
+			case 'ul':
+			// fallthrough
+			case 'ol': {
+				const bullet: string = (() => {
+					if ($node.$hints.bullets_style === 'none' && style === 'advanced')
+						return ''
 
-			const bullet: string = (() => {
-				if ($node.$hints.bullets_style === 'none' && style === 'advanced')
-					return ''
+					if ($node.$type === 'ul')
+						return '- '
 
-				return '- '
-			})()
-			sub_starts_with_block = true
-			sub_str = bullet + sub_str
-			break
+					const cleaned_index: string = (() => {
+						let res = String($sub_node_id).trim()
+
+						// trim leading 0
+						while(res[0] === '0') {
+							res = res.slice(1)
+						}
+						// trim trailing '.'
+						if (res.slice(-1)[0] === '.')
+							res = res.slice(0, -1)
+
+						return res
+					})()
+					if (style === 'markdown')
+						return `${cleaned_index}. ` // no padding
+
+					// alignment for readability
+					return cleaned_index.padStart(2) + '. '
+				})()
+				const indent: string = '  '.repeat(state.nested_list_depth - 1)
+				return indent + bullet + sub_state.str
+			}
+			default:
+				return sub_state.str
 		}
-		case 'ol': {
-			// automake sub-state a ol > li
-			const bullet: string = (() => {
-				if (style === 'markdown')
-					return `${$sub_node_id}. `
-
-				return `${(' ' + $sub_node_id).slice(-2)}. ` // TODO pad
-			})()
-			sub_starts_with_block = true
-			sub_str = bullet + sub_str
-			break
-		}
-		default:
-			break
-	}
-
-	/*console.log('on_concatenateⵧsub_node()', {
-		sub_node: $node,
-		sub_state: {
-			...sub_state,
-				str: sub_str,
-				starts_with_block: sub_starts_with_block,
-		},
-		state: structuredClone(state),
-	})*/
+	})()
 
 	if (state.str.length === 0) {
 		// we are at start
@@ -246,12 +259,17 @@ const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams
 		}
 	}
 	else {
-		if (state.ends_with_block || sub_starts_with_block) {
-			state.str += ''.padStart(Math.max(state.marginⵧbottom‿lines, sub_state.marginⵧtop‿lines) + 1,'\n')
+		if (sub_state.starts_with_block) {
+			// move it to us (for concat str)
+			state.ends_with_block = true
+			state.marginⵧbottom‿lines += sub_state.marginⵧtop‿lines
 		}
 	}
 
-	state.str += sub_str
+	state = on_concatenateⵧstr({
+		state, $node, depth, str: sub_str,
+	}, options)
+	//state.str += sub_str
 
 	state.ends_with_block = sub_state.ends_with_block
 

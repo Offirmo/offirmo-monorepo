@@ -6,13 +6,19 @@ import { DOC_DEMO_UNIT_FULL } from '../l1-types/guards.ts'
 
 /////// parts ///////
 
-const SUB_UL_ITEMS: RichText.Document['$sub'] = {
+const _SUB_OL_ITEMS: RichText.Document['$sub'] = {
+	'002': {$type: 'fragmentⵧinline', $content: 'ol #2'},
+	'001': {$type: 'fragmentⵧinline', $content: 'ol #1'},
+	'003': {$type: 'fragmentⵧinline', $content: 'ol #3'},
+}
+
+const _SUB_UL_ITEMS: RichText.Document['$sub'] = {
 	'002': {$type: 'fragmentⵧinline', $content: 'ul #2'},
 	'001': {$type: 'fragmentⵧinline', $content: 'ul #1'},
 	'003': {$type: 'fragmentⵧinline', $content: 'ul #3'},
 }
 
-const SUB_UL_KEY_VALUE_PAIRS: RichText.Document['$sub'] = {
+const _SUB_UL_KEY_VALUE_PAIRS: RichText.Document['$sub'] = {
 	'001': {
 		$type: 'fragmentⵧinline',
 		$content: '⎨⎨key⎬⎬: ⎨⎨value⎬⎬',
@@ -51,7 +57,9 @@ const SUB_UL_KEY_VALUE_PAIRS: RichText.Document['$sub'] = {
 	},
 }
 
-const DOC_WEAPON_01_NAME: RichText.Document = {
+/////// COMPLETE DOCS ///////
+
+const _DOC_WEAPON_01_NAME: RichText.Document = {
 	$classes: ['item--name', 'item--weapon--name'],
 	$content: '⎨⎨qualifier2|Capitalize⎬⎬ ⎨⎨qualifier1|Capitalize⎬⎬ ⎨⎨base|Capitalize⎬⎬',
 	$sub: {
@@ -75,7 +83,7 @@ const DOC_WEAPON_01: RichText.Document = {
 	$classes: ['item', 'item--weapon', 'item--quality--legendary'],
 	$content: '⎨⎨weapon_name⎬⎬ ⎨⎨enhancement⎬⎬',
 	$sub: {
-		weapon_name: DOC_WEAPON_01_NAME,
+		weapon_name: _DOC_WEAPON_01_NAME,
 		enhancement: {
 			$type: 'fragmentⵧinline',
 			$classes: ['item--enhancement'],
@@ -85,6 +93,13 @@ const DOC_WEAPON_01: RichText.Document = {
 	$hints: {
 		uuid: '1234',
 	},
+}
+const _SUB_UL_ACTIONABLE_ITEMS: RichText.Document['$sub'] = {
+	'001': DOC_WEAPON_01,
+	/*'002': render_item(DEMO_WEAPON_1),
+	'003': render_item(DEMO_ARMOR_1),
+	'004': render_item(DEMO_WEAPON_2),
+	'005': render_item(DEMO_ARMOR_2),*/
 }
 
 const DOC_PLACE_01: RichText.Document = {
@@ -111,19 +126,14 @@ const DOC_NPC_01: RichText.Document = {
 	},
 }
 
-/*
-function render_item(i) {
-	return render_item_short(i)
-}*/
-const SUB_UL_ACTIONABLE_ITEMS: RichText.Document['$sub'] = {
-	'001': DOC_WEAPON_01,
-	/*'002': render_item(DEMO_WEAPON_1),
-	'003': render_item(DEMO_ARMOR_1),
-	'004': render_item(DEMO_WEAPON_2),
-	'005': render_item(DEMO_ARMOR_2),*/
+const DOC_DEMO_LIST_ORDERED: RichText.Document = {
+	$type: 'ol',
+	$sub: _SUB_OL_ITEMS,
 }
-
-/////// COMPLETE DOCS ///////
+const DOC_DEMO_LIST_UNORDERED: RichText.Document = {
+	$type: 'ul',
+	$sub: _SUB_UL_ITEMS,
+}
 
 const DOC_DEMO_BASE_TYPES: RichText.Document = {
 	$type: 'fragmentⵧblock',
@@ -161,24 +171,70 @@ const DOC_DEMO_BASE_TYPES: RichText.Document = {
 						// TODO when emoji type is better specified
 					}
 				},
-				ul: {
-					$type: 'ul',
-					$sub: SUB_UL_ITEMS,
-				},
-				ol: {
-					$type: 'ol',
-					$sub: {
-						'002': {$type: 'fragmentⵧinline', $content: 'ol #2'},
-						'001': {$type: 'fragmentⵧinline', $content: 'ol #1'},
-						'003': {$type: 'fragmentⵧinline', $content: 'ol #3'},
-					},
-				},
+				ul: DOC_DEMO_LIST_UNORDERED,
+				ol: DOC_DEMO_LIST_ORDERED,
 			},
 		},
 		fragment2: {
 			$type: 'fragmentⵧblock',
 			$classes: [],
 			$content: 'Some text in a block fragment',
+		},
+	},
+}
+
+const DOC_DEMO_LIST_NESTED: RichText.Document = {
+	$type: 'ul',
+	$sub: {
+		'ol': {
+			$type: 'fragmentⵧblock',
+			$content: 'immediately nested ol: ⎨⎨sublist⎬⎬',
+			$sub: {
+				sublist: DOC_DEMO_LIST_ORDERED,
+			},
+		},
+		'txt': {
+			$type: 'fragmentⵧinline',
+			$content: 'simple text',
+			$sub: {
+			},
+		},
+		'ul': {
+			$type: 'fragmentⵧblock',
+			$content: 'immediately nested ul: ⎨⎨sublist⎬⎬',
+			$sub: {
+				sublist: DOC_DEMO_LIST_UNORDERED,
+			},
+		},
+		'xdeep': {
+			$type: 'fragmentⵧblock',
+			$content: 'deep nesting: ⎨⎨sublist⎬⎬',
+			$sub: {
+				sublist: {
+					$type: 'ul',
+					$sub: {
+						'ol': {
+							$type: 'fragmentⵧblock',
+							$content: 'immediately nested ol: ⎨⎨sublist⎬⎬',
+							$sub: {
+								sublist: DOC_DEMO_LIST_ORDERED,
+							},
+						},
+						'txt': {
+							$type: 'fragmentⵧinline',
+							$content: 'another simple text',
+							$sub: {},
+						},
+						'ul': {
+							$type: 'fragmentⵧblock',
+							$content: 'immediately nested ul: ⎨⎨sublist⎬⎬',
+							$sub: {
+								sublist: DOC_DEMO_LIST_UNORDERED,
+							},
+						},
+					},
+				},
+			},
 		},
 	},
 }
@@ -194,58 +250,15 @@ const DOC_DEMO_ADVANCED_TYPES: RichText.Document = {
 		},
 		kvdefault: {
 			$type: 'ul',
-			$sub: SUB_UL_KEY_VALUE_PAIRS,
+			$sub: _SUB_UL_KEY_VALUE_PAIRS,
 			$hints: {
 				//key_align: left,
 			},
 		},
-		nested_list: {
-			$type: 'ul',
-			$sub: {
-				'foo': {
-					$type: 'fragmentⵧinline',
-					$content: 'fooc: ⎨⎨sublist⎬⎬',
-					$sub: {
-						sublist: {
-							$type: 'ul',
-							$sub: {
-								'foo': {
-									$type: 'fragmentⵧinline',
-									$content: 'fooc',
-									$sub: {},
-								},
-								'bar': {
-									$type: 'fragmentⵧinline',
-									$content: 'barc',
-									$sub: {},
-								},
-								'baz': {
-									$type: 'fragmentⵧinline',
-									$content: 'bazc',
-									$sub: {},
-								},
-							},
-						},
-					},
-				},
-				'bar': {
-					$type: 'fragmentⵧinline',
-					$content: 'barc',
-					$sub: {
-					},
-				},
-				'baz': {
-					$type: 'fragmentⵧinline',
-					$content: 'bazc',
-					$sub: {
-					},
-				},
-			},
-			$hints: {},
-		},
+		nested_list: DOC_DEMO_LIST_NESTED,
 		uuid_list: {
 			$type: 'ol',
-			$sub: SUB_UL_ACTIONABLE_ITEMS,
+			$sub: _SUB_UL_ACTIONABLE_ITEMS,
 			$hints: {
 				//key_align: left,
 			},
@@ -271,7 +284,7 @@ const DOC_DEMO_HINTS: RichText.Document = {
 		},
 		list: {
 			$type: 'ul',
-			$sub: SUB_UL_ITEMS,
+			$sub: _SUB_UL_ITEMS,
 			$hints: {
 				bullets_style: 'none',
 			},
@@ -612,6 +625,9 @@ export {
 	DOC_DEMO_UNIT_FULL,
 
 	DOC_DEMO_BASE_TYPES,
+	DOC_DEMO_LIST_ORDERED,
+	DOC_DEMO_LIST_UNORDERED,
+	DOC_DEMO_LIST_NESTED,
 	DOC_DEMO_ADVANCED_TYPES,
 	DOC_DEMO_HINTS,
 

@@ -1,6 +1,11 @@
 import { expect } from 'chai'
 
 import { LIB } from '../consts.ts'
+import {
+	DOC_DEMO_LIST_ORDERED,
+	DOC_DEMO_LIST_UNORDERED,
+	DOC_DEMO_LIST_NESTED,
+} from '../__fixtures/index.ts'
 
 import * as RichText from '../index.ts'
 
@@ -63,6 +68,54 @@ describe(`${LIB} -- renderers -- to text`, () => {
 			// the content should be included
 			expect(str).to.contain('🏆  ')
 			expect(str).to.contain('finish the game')
+		})
+
+		it('should work -- lists -- ol', () => {
+			const str = RichText.renderⵧto_text(DOC_DEMO_LIST_ORDERED, rendering_options)
+			console.log(str)
+
+			expect(str).to.equal(
+` 1. ol #1
+ 2. ol #2
+ 3. ol #3`)
+		})
+
+		it('should work -- lists -- ul', () => {
+			const str = RichText.renderⵧto_text(DOC_DEMO_LIST_UNORDERED, rendering_options)
+			console.log(str)
+
+			expect(str).to.equal(
+`- ul #1
+- ul #2
+- ul #3`
+			)
+		})
+
+		it('should work -- lists -- nested', () => {
+			const str = RichText.renderⵧto_text(DOC_DEMO_LIST_NESTED, rendering_options)
+			console.log(str)
+
+			expect(str).to.equal(`
+- immediately nested ol:
+   1. ol #1
+   2. ol #2
+   3. ol #3
+- simple text
+- immediately nested ul:
+  - ul #1
+  - ul #2
+  - ul #3
+- deep nesting:
+  - immediately nested ol:
+     1. ol #1
+     2. ol #2
+     3. ol #3
+  - another simple text
+  - immediately nested ul:
+    - ul #1
+    - ul #2
+    - ul #3
+  			`.trim())
 		})
 
 		it('should work -- KV', () => {
@@ -139,6 +192,55 @@ describe(`${LIB} -- renderers -- to text`, () => {
 
 			// and formatted
 			expect(str).to.contain('**finish the game**')
+		})
+
+		it('should work -- lists -- ol', () => {
+			const str = RichText.renderⵧto_text(DOC_DEMO_LIST_ORDERED, rendering_options)
+			console.log(str)
+
+			expect(str).to.equal(`
+1. ol #1
+2. ol #2
+3. ol #3
+			`.trim())
+		})
+
+		it('should work -- lists -- ul', () => {
+			const str = RichText.renderⵧto_text(DOC_DEMO_LIST_UNORDERED, rendering_options)
+			console.log(str)
+
+			expect(str).to.equal(
+				`- ul #1
+- ul #2
+- ul #3`
+			)
+		})
+
+		it('should work -- lists -- nested', () => {
+			const str = RichText.renderⵧto_text(DOC_DEMO_LIST_NESTED, rendering_options)
+			console.log(str)
+
+			expect(str).to.equal(`
+- immediately nested ol:
+  1. ol #1
+  2. ol #2
+  3. ol #3
+- simple text
+- immediately nested ul:
+  - ul #1
+  - ul #2
+  - ul #3
+- deep nesting:
+  - immediately nested ol:
+    1. ol #1
+    2. ol #2
+    3. ol #3
+  - another simple text
+  - immediately nested ul:
+    - ul #1
+    - ul #2
+    - ul #3
+  			`.trim())
 		})
 
 		it('should work -- KV', () => {
