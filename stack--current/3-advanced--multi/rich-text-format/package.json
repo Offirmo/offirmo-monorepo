@@ -10,10 +10,10 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2024.esm/index.js"
+			"import": "./src/index.ts"
 		},
-		"./examples": {
-			"import": "./dist/src.es2024.esm/examples/index.js"
+		"./demos": {
+			"import": "./src/__fixtures/index.ts"
 		},
 		"./styles.css": "./src/renderers/style.css"
 	},

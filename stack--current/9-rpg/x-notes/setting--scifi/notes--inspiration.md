@@ -9,6 +9,11 @@ https://en.wikipedia.org/wiki/Technology_in_Star_Wars
 
 
 ## Escape velocity
+https://evn.fandom.com/
+http://escape-velocity.games/
+https://escape-velocity.games/EVN_Walkthroughs/html/index.html
+https://www.reddit.com/r/Escape_Velocity/
+https://www.nexusmods.com/escapevelocitynova/
 
 
 ## Mass Effect

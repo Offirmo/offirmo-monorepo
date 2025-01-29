@@ -5,6 +5,7 @@ import {
 	type BaseRenderingOptions,
 	type OnConcatenateStringParams,
 	type OnConcatenateSubNodeParams,
+	type OnNodeEnterParams,
 	type OnNodeExitParams,
 	type WalkerCallbacks,
 	type WalkerReducer,
@@ -42,6 +43,8 @@ type State = {
 	marginⵧtop‿lines: number
 	marginⵧbottom‿lines: number
 
+	nested_list_depth: number
+
 	str: string
 }
 const DEFAULT_STATE: State = Object.freeze({
@@ -50,17 +53,29 @@ const DEFAULT_STATE: State = Object.freeze({
 	ends_with_block: false,
 	marginⵧtop‿lines: 0,
 	marginⵧbottom‿lines: 0,
+	nested_list_depth: 0,
 	str: '',
 })
 
 /////////////////////////////////////////////////
 // callbacks
 
-const on_nodeⵧenter = (): State => {
+const create_state: () => State = () => {
 	return {
 		...DEFAULT_STATE,
 		sub_nodes: [],
 	}
+}
+
+const on_nodeⵧenter: WalkerReducer<State, OnNodeEnterParams<State>, RenderingOptionsⵧToText> = ({state, $node, depth}, {style}) => {
+	console.log(`XXX to text on_nodeⵧenter`, $node?.$type)
+
+	switch ($node.$type) {
+		default:
+			break
+	}
+
+	return state
 }
 
 const on_concatenateⵧstr: WalkerReducer<State, OnConcatenateStringParams<State>, RenderingOptionsⵧToText> = ({state, str}) => {
@@ -128,6 +143,10 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 				state.str = '------------------------------------------------------------'
 				break
 
+			case 'br':
+				state.str = '' // clear, in case the user accidentally pushed some content
+				break
+
 			default:
 				break
 		}
@@ -168,17 +187,18 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 	return state
 }
 
-const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToText> = ({state, sub_state, $node, $id, $parent_node}, {style}) => {
+const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToText> = ({state, sub_state, $node, $sub_node_id}, {style}) => {
 	let sub_str = sub_state.str
 	let sub_starts_with_block = sub_state.starts_with_block
 
 	state.sub_nodes.push($node)
 
-	switch ($parent_node.$type) {
+	switch ($node.$type) {
 		case 'ul': {
-		// automake sub-state a ul > li
+			// automake sub-state a ul > li
+
 			const bullet: string = (() => {
-				if ($parent_node.$hints.bullets_style === 'none' && style === 'advanced')
+				if ($node.$hints.bullets_style === 'none' && style === 'advanced')
 					return ''
 
 				return '- '
@@ -191,9 +211,9 @@ const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams
 			// automake sub-state a ol > li
 			const bullet: string = (() => {
 				if (style === 'markdown')
-					return `${$id}. `
+					return `${$sub_node_id}. `
 
-				return `${(' ' + $id).slice(-2)}. `
+				return `${(' ' + $sub_node_id).slice(-2)}. ` // TODO pad
 			})()
 			sub_starts_with_block = true
 			sub_str = bullet + sub_str
@@ -235,10 +255,13 @@ const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams
 }
 
 const callbacksⵧto_text: Partial<WalkerCallbacks<State, RenderingOptionsⵧToText>> = {
+	create_state,
+
 	on_nodeⵧenter,
+	on_nodeⵧexit,
+
 	on_concatenateⵧstr,
 	on_concatenateⵧsub_node,
-	on_nodeⵧexit,
 }
 
 function renderⵧto_text(

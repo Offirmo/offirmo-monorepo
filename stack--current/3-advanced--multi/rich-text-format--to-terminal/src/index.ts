@@ -45,10 +45,12 @@ function on_type({ $type, $parent_node, state, $node, depth }, options) {
 
 // TODO remove and put somewhere else? (extensible)
 function on_classⵧafter({ $class, state, $node, depth }, options) {
-	//console.log(`${LIB} on_classⵧafter()`)
-	const { $hints } = $node
 
-	console.warn(`${LIB}: NIMP class "${$class}", ignored.`) // todo avoid repetition
+	// not implemented!
+	// TODO one day...
+	//console.log(`${LIB} on_classⵧafter()`)
+	//const { $hints } = $node
+	//console.warn(`${LIB}: NIMP class "${$class}", ignored.`) // todo avoid repetition
 
 	return state
 }

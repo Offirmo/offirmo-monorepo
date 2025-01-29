@@ -235,6 +235,7 @@ goals -- S.M.A.R.T. -- 05 T (Time-bound) Create a specific end date for the goal
 goldilock zone / problem
 good life questions https://radreads.co/10k-questions/
 Goodhart’s Law = When a measure becomes a target, it ceases to be a good measure. One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
+great filter https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
 grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
 growth mindset  https://www.khanacademy.org/college-careers-more/learnstorm-growth-mindset-activities-us/high-school-activities/activity-1-the-truth-about-your-brain-hs-02/a/the-truth-about-your-brain-part-1-3  https://www.youtube.com/watch?v=-71zdXCMU6A
@@ -319,6 +320,7 @@ keep only the ones saying it's doable
 keeping up with the jones
 labor of love
 laisser-aller
+language -- colors https://www.richardcarrier.info/archives/7307
 law -- crimes -- crime against humanity
 law -- crimes -- felonies
 law -- crimes -- l1 -- burglary
@@ -623,6 +625,7 @@ viz -- diagrams -- charts
 viz -- diagrams -- sankey
 voleur volé
 volume hiring
+vrai vs. bien trouvé (meme) 
 wabi-sabi https://en.wikipedia.org/wiki/Wabi-sabi
 war https://en.wikipedia.org/wiki/War
 wartime/peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime

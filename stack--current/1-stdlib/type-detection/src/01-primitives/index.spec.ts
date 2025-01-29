@@ -3,11 +3,11 @@ import { expect } from 'chai'
 import {
 	isꓽobjectⵧliteral,
 	isꓽnegative_zero,
-	isꓽthenable
-} from './index.js'
+	isꓽstringified_number,
+} from './index.ts'
 
 
-describe('@offirmo-private/type-detection', function() {
+describe('@offirmo-private/type-detection -- primitives', function() {
 
 	describe('isꓽnegative_zero()', function() {
 
@@ -62,23 +62,26 @@ describe('@offirmo-private/type-detection', function() {
 		})
 	})
 
-	describe('isꓽthenable()', function() {
+	describe('isꓽstringified_number()', function() {
 
 		it('should work', () => {
 			// completely unrelated types
-			expect(isꓽthenable(null)).to.be.false
-			expect(isꓽthenable(undefined)).to.be.false
-			expect(isꓽthenable(NaN)).to.be.false
-			expect(isꓽthenable(5)).to.be.false
-			expect(isꓽthenable('foo')).to.be.false
+			expect(isꓽstringified_number(null)).to.be.false
+			expect(isꓽstringified_number(undefined)).to.be.false
+			expect(isꓽstringified_number(NaN)).to.be.false
+			expect(isꓽstringified_number(5)).to.be.false
+			expect(isꓽstringified_number('foo')).to.be.false
 
 			// closer types
-			expect(isꓽthenable([])).to.be.false
-			expect(isꓽthenable({ foo: 42 })).to.be.false
+			expect(isꓽstringified_number('01')).to.be.false
+			expect(isꓽstringified_number('42b')).to.be.false
+			expect(isꓽstringified_number('0.10')).to.be.false
+			expect(isꓽstringified_number('NaN')).to.be.false // bc NOT a number
+
 
 			// final
-			expect(isꓽthenable({ then: () => 42})).to.be.true
-			expect(isꓽthenable(Promise.resolve(42))).to.be.true
+			expect(isꓽstringified_number('42')).to.be.true
+			expect(isꓽstringified_number('0.1')).to.be.true
 		})
 	})
 })

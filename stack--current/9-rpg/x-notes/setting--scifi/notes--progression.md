@@ -99,3 +99,6 @@ A Type II civilization can directly consume a star's energy, most likely through
 A Type III civilization is able to capture all the energy emitted by its galaxy, and every object within it, such as every star, black hole, etc.
 
 aircraft carriers, cruisers, destroyers, frigates, corvettes, submarines, and amphibious assault ships. There are also support and auxiliary ships, including the oiler, minesweeper, patrol boat, hydrographic and oceanographic survey ship and tender. During the age of sail, the ship categories were divided into the ship of the line, frigate, and sloop-of-war. 
+
+
+https://escape-velocity.games/EVN_Walkthroughs/html/index.html

@@ -29,7 +29,6 @@
 		"build": "run-s  clean _build:prod"
 	},
 	"devDependencies": {
-		"typescript-string-enums": "^1",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",

@@ -11,7 +11,6 @@ import {
 	type BaseRenderingOptions,
 	type WalkerCallbacks,
 	type WalkerReducer,
-	type OnRootExitParams,
 	type OnNodeEnterParams,
 	type OnNodeExitParams,
 	type OnConcatenateStringParams,
@@ -50,19 +49,14 @@ type State = string
 const consoleGroupStart: Function = (console.groupCollapsed || console.group || console.log).bind(console)
 const consoleGroupEnd: Function = (console.groupEnd || console.log).bind(console)
 
-const on_rootⵧenter = () => {
-	consoleGroupStart('⟩ [on_rootⵧenter]')
-}
-const on_rootⵧexit = ({state}: OnRootExitParams<State>): State => {
-	console.log('⟨ [on_rootⵧexit]')
-	console.log(`  [state="${state}"]`)
-	consoleGroupEnd()
-	return state
-}
+const create_state: (parent_state: State | undefined, options: RenderingOptionsⵧToDebug) => State = () => ''
 
-const on_nodeⵧenter = ({$node, $id, depth}: OnNodeEnterParams): State => {
+const on_nodeⵧenter: WalkerReducer<State, OnNodeEnterParams<State>, RenderingOptionsⵧToDebug> = ({$node, $id, state, depth}) => {
+	if (depth === 0) {
+		consoleGroupStart('⟩ [on_rootⵧenter]')
+	}
+
 	consoleGroupStart(indent(depth) + `⟩ [on_nodeⵧenter] #${$id}/` + debug_node_short($node))
-	const state = ''
 	console.log(indent(depth) + `  [state="${state}"] (init)`)
 	return state
 }
@@ -71,6 +65,11 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 	console.log(indent(depth) + `⟨ [on_nodeⵧexit] #${$id}`)
 	console.log(indent(depth) + `  [state="${state}"]`)
 	consoleGroupEnd()
+
+	if (depth === 0) {
+		console.log('⟨ [on_rootⵧexit]')
+		consoleGroupEnd()
+	}
 
 	return state
 }
@@ -84,7 +83,7 @@ const on_concatenateⵧstr: WalkerReducer<State, OnConcatenateStringParams<State
 	return state
 }
 
-const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToDebug> = ({state, sub_state, depth, $id, $parent_node}) => {
+const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToDebug> = ({state, sub_state, depth}) => {
 	console.log(indent(depth) + `+ [on_concatenateⵧsub_node] "${sub_state}"`)
 	state = state + sub_state
 	console.log(indent(depth) + `  [state="${state}"]`)
@@ -113,23 +112,15 @@ const on_type: WalkerReducer<State, OnTypeParams<State>, RenderingOptionsⵧToDe
 ////////////////////////////////////
 
 const callbacksⵧto_debug: Partial<WalkerCallbacks<State, RenderingOptionsⵧToDebug>> = {
-	on_rootⵧenter,
-	on_rootⵧexit,
+	create_state,
 
 	on_nodeⵧenter,
 	on_nodeⵧexit,
 
 	on_concatenateⵧstr,
 	on_concatenateⵧsub_node,
-	/*
-	on_sub_node_id: ({$id, state, $node, depth}) => {
-		console.log(indent(depth) + `  [sub-node] #${$id}`)
-		console.log(indent(depth) + `  [state="${state}"]`)
-		return state
-	},
-	*/
-	on_filter,
 
+	on_filter,
 	on_classⵧbefore,
 	on_classⵧafter,
 

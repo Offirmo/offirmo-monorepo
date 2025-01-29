@@ -5,7 +5,7 @@ import {
 	type Hints,
 	type CheckedNode,
 	type Node,
-	type Document, NodeLike,
+	type Document, type NodeLike,
 } from '../l1-types/index.ts'
 import { promoteꓽto_node } from '../l1-utils/promote.ts'
 import { normalizeꓽnode } from '../l1-utils/normalize.ts'

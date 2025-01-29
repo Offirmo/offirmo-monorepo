@@ -108,7 +108,7 @@ const on_type: WalkerReducer<State, OnTypeParams<State>, RenderingOptionsⵧToAc
 	return state
 }
 
-const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToActions> = ({state, sub_state, $node, $id, $parent_node}) => {
+const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToActions> = ({state, sub_state}) => {
 	state.actions = state.actions.concat(...sub_state.actions)
 
 	return state

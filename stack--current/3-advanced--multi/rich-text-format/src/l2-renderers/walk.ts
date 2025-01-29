@@ -1,3 +1,7 @@
+/**
+ * "walk" is the foundation on which all the renderer are based
+ */
+
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
@@ -13,12 +17,8 @@ import { normalizeꓽnode } from '../l1-utils/normalize.ts'
 import { promoteꓽto_node } from '../l1-utils/promote.ts'
 
 /////////////////////////////////////////////////
-// "walk" is the foundation on which all the renderer are based
+// base rendering options
 
-////////////
-// hooks inputs
-
-// common
 export interface BaseRenderingOptions {
 	// what should happen if a sub-node could not be resolved?
 	// (final, after calling resolve_unknown_subnode())
@@ -26,74 +26,73 @@ export interface BaseRenderingOptions {
 		| false // don't
 		| 'root' // allow looking at the root's sub-nodes, common use case is adding a few extraneous base sub-nodes at the root (beware of infinite loops)
 		| 'placeholder' // NOT RECOMMENDED replace with an ugly placeholder. Useful if we can't afford to fail.
-
 }
 
 const DEFAULT_RENDERING_OPTIONSⵧWalk= Object.freeze<BaseRenderingOptions>({
 	shouldꓽrecover_from_unknown_sub_nodes: 'root',
 })
 
-export interface BaseParams<State> {
+
+/////////////////////////////////////////////////
+// Hooks
+
+export interface BaseHookParams<State> {
 	state: State
 	$node: Immutable<CheckedNode>
 	depth: number
 }
 
-// NODE ENTER
+// NODE -- ENTER
 // Useful for:
 // - initialising the state
-// (only callback not inheriting from BaseParams)
-export interface OnNodeEnterParams {
-	$id: string
-	$node: Immutable<CheckedNode>
-	depth: number
-}
-// NODE EXIT
-export interface OnNodeExitParams<State> extends BaseParams<State> {
+export interface OnNodeEnterParams<State> extends BaseHookParams<State> {
 	$id: string
 }
-// ROOT EXIT
-export interface OnRootExitParams<State> extends BaseParams<State> {
+// NODE -- EXIT
+export interface OnNodeExitParams<State> extends BaseHookParams<State> {
+	$id: string
 }
+
 // CONCAT STRING
-export interface OnConcatenateStringParams<State> extends BaseParams<State> {
+export interface OnConcatenateStringParams<State> extends BaseHookParams<State> {
 	str: string
 }
 // CONCAT SUB-NODE
-export interface OnConcatenateSubNodeParams<State> extends BaseParams<State> {
-	sub_state: State
-	$id: string
-	$parent_node: Immutable<CheckedNode>
+// REMINDER this is done at the PARENT level => node, state, depth all refer to the parent node concatenating the child
+export interface OnConcatenateSubNodeParams<State> extends BaseHookParams<State> {
+	$sub_node_id: string
+	$sub_node: Immutable<Node>
+	sub_state: State // IMPORTANT: this is where the parent node can "consume" the child state into its own state
 }
 // FILTER
-export interface OnFilterParams<State> extends BaseParams<State> {
+export interface OnFilterParams<State> extends BaseHookParams<State> {
 	$filter: string
 	$filters: string[]
 }
 // CLASS
-export interface OnClassParams<State> extends BaseParams<State> {
+export interface OnClassParams<State> extends BaseHookParams<State> {
 	$class: string
 }
 // TYPE
-export interface OnTypeParams<State> extends BaseParams<State> {
+export interface OnTypeParams<State> extends BaseHookParams<State> {
 	$type: NodeType
 	$parent_node: Immutable<CheckedNode> | null
 }
-// unknown sub node resolver
+
 export interface UnknownSubNodeResolver<State, RenderingOptions> {
-	($sub_node_id: string, context: BaseParams<State>, options: RenderingOptions): Node | undefined
+	($sub_node_id: string, context: BaseHookParams<State>, options: RenderingOptions): Node | undefined
 }
 
 
-interface WalkerReducer<State, P extends BaseParams<State>, RenderingOptions> {
+
+interface WalkerReducer<State, P extends BaseHookParams<State>, RenderingOptions> {
 	(params: P, options: RenderingOptions): State
 }
 
 interface WalkerCallbacks<State, RenderingOptions extends BaseRenderingOptions> {
-	on_rootⵧenter(options: RenderingOptions): void,
-	on_rootⵧexit(params: OnRootExitParams<State>, options: RenderingOptions): any,
+	create_state: (parent_state: State | undefined, options: RenderingOptions) => State,
 
-	on_nodeⵧenter(params: OnNodeEnterParams, options: RenderingOptions): State,
+	on_nodeⵧenter: WalkerReducer<State, OnNodeEnterParams<State>, RenderingOptions>,
 	on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOptions>,
 
 	on_concatenateⵧstr: WalkerReducer<State, OnConcatenateStringParams<State>, RenderingOptions>,
@@ -110,7 +109,7 @@ interface WalkerCallbacks<State, RenderingOptions extends BaseRenderingOptions> 
 	resolve_unknown_subnode: UnknownSubNodeResolver<State, RenderingOptions>,
 
 	on_type: WalkerReducer<State, OnTypeParams<State>, RenderingOptions>,
-	// two known specials
+	// select known specials
 	on_typeꘌhr?: WalkerReducer<State, OnTypeParams<State>, RenderingOptions>,
 	on_typeꘌbr?: WalkerReducer<State, OnTypeParams<State>, RenderingOptions>,
 	// extensions
@@ -127,10 +126,9 @@ function _getꓽcallbacksⵧdefault<State, RenderingOptions extends BaseRenderin
 	}
 
 	return {
-		on_rootⵧenter: nothing,
-		on_rootⵧexit: identity,
+		create_state: () => 'YOU NEED TO IMPLEMENT create_state()!' as any, // tricky to get right
 
-		on_nodeⵧenter: () => { throw new Error('Please define on_nodeⵧenter()!') },
+		on_nodeⵧenter: identity, //() => { throw new Error('Please define on_nodeⵧenter()!') },
 		on_nodeⵧexit: identity,
 
 		on_concatenateⵧstr: identity,
@@ -139,7 +137,7 @@ function _getꓽcallbacksⵧdefault<State, RenderingOptions extends BaseRenderin
 		on_classⵧbefore: identity,
 		on_classⵧafter: identity,
 
-		resolve_unknown_subnode($sub_node_id: string, context: BaseParams<State>, options: RenderingOptions): Node | undefined {
+		resolve_unknown_subnode($sub_node_id: string, context: BaseHookParams<State>, options: RenderingOptions): Node | undefined {
 			// BEWARE OF INFINITE LOOPS!
 			// RECOMMENDED TO ONLY RETURN SIMPLE NODES (just text)
 			return undefined
@@ -190,10 +188,11 @@ interface InternalWalkState {
 	 */
 }
 
-function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
+
+function _walk_content<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>(
 	$node: Immutable<CheckedNode>,
-	callbacks: WalkerCallbacks<State, RenderingOptions>,
-	state: State,
+	callbacks: WalkerCallbacks<ExternalWalkState, RenderingOptions>,
+	xstate: ExternalWalkState,
 	depth: number,
 	$root_node:  Immutable<CheckedNode>,
 	options: RenderingOptions,
@@ -214,50 +213,50 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 	const initial_str: string = splitⵧby_opening_brace.shift()!
 	if (initial_str) {
 		assert(initial_str.split('⎬⎬').length === 1, `${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬!`)
-		state = callbacks.on_concatenateⵧstr({
+		xstate = callbacks.on_concatenateⵧstr({
 			str: initial_str,
-			state,
+			state: xstate,
 			$node,
 			depth,
 		}, options)
 	}
 
-	state = splitⵧby_opening_brace.reduce((state: State, param_and_text: string): State => {
+	xstate = splitⵧby_opening_brace.reduce((xstate: ExternalWalkState, param_and_text: string): ExternalWalkState => {
 		const split_end = param_and_text.split('⎬⎬')
 		if (split_end.length !== 2)
 			throw new Error(`${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬!`)
 
 		// splitting the ⎨⎨place|filter1|filter2⎬⎬ content
-		const [ sub_node_id, ...$filters ] = split_end.shift()!.split('|')
-		assert(sub_node_id, `${LIB}: syntax error in content "${$content}", empty ⎨⎨⎬⎬!`)
+		const [ $sub_node_id, ...$filters ] = split_end.shift()!.split('|')
+		assert($sub_node_id, `${LIB}: syntax error in content "${$content}", empty ⎨⎨⎬⎬!`)
 
 		let $sub_node = promoteꓽto_node((function _resolve_sub_node_by_id(): Immutable<CheckedNode>['$sub'][string] {
-			if (sub_node_id === 'br') {
-				assert(!$sub_nodes[sub_node_id], `${LIB}: error in content "${$content}", having a reserved subnode "${sub_node_id}"!`)
+			if ($sub_node_id === 'br') {
+				assert(!$sub_nodes[$sub_node_id], `${LIB}: error in content "${$content}", having a reserved subnode "${$sub_node_id}"!`)
 				return SUB_NODE_BR
 			}
 
-			if (sub_node_id === 'hr') {
-				assert(!$sub_nodes[sub_node_id], `${LIB}: error in content "${$content}", having a reserved subnode "${sub_node_id}"!`)
+			if ($sub_node_id === 'hr') {
+				assert(!$sub_nodes[$sub_node_id], `${LIB}: error in content "${$content}", having a reserved subnode "${$sub_node_id}"!`)
 				return SUB_NODE_HR
 			}
 
-			if ($sub_nodes[sub_node_id]) {
-				return $sub_nodes[sub_node_id]!
+			if ($sub_nodes[$sub_node_id]) {
+				return $sub_nodes[$sub_node_id]!
 			}
 
 			// sub node is missing on the immediate node, advanced resolution:
 
-			if (options.shouldꓽrecover_from_unknown_sub_nodes === 'root' && $root_node.$sub[sub_node_id]) {
-				return $root_node.$sub[sub_node_id]!
+			if (options.shouldꓽrecover_from_unknown_sub_nodes === 'root' && $root_node.$sub[$sub_node_id]) {
+				return $root_node.$sub[$sub_node_id]!
 			}
 
 			const candidate_from_resolver = callbacks.resolve_unknown_subnode(
-				sub_node_id,
+				$sub_node_id,
 				{
 					$node,
 					depth,
-					state,
+					state: xstate,
 				},
 				options
 			)
@@ -265,29 +264,29 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 				return candidate_from_resolver
 
 			if (options.shouldꓽrecover_from_unknown_sub_nodes === 'placeholder') {
-				return { $content: `{{??${sub_node_id}??}}` }
+				return { $content: `{{??${$sub_node_id}??}}` }
 			}
 
 			if (true) {
 				console.error('shouldꓽrecover_from_unknown_sub_nodes FAILURE',)
-				console.error($node, { $content, sub_node_id })
+				console.error($node, { $content, sub_node_id: $sub_node_id })
 			}
-			throw new Error(`${LIB}: syntax error in content "${$content}", it's referencing an unknown sub-node "${sub_node_id}"! (recover mode = ${options.shouldꓽrecover_from_unknown_sub_nodes})`)
+			throw new Error(`${LIB}: syntax error in content "${$content}", it's referencing an unknown sub-node "${$sub_node_id}"! (recover mode = ${options.shouldꓽrecover_from_unknown_sub_nodes})`)
 		})())
 
 		let sub_state = _walk($sub_node, callbacks, options, {
 			$parent_node: $node,
-			$id: sub_node_id,
+			$id: $sub_node_id,
 			depth: depth + 1,
 			$root_node,
-		})
+		}, xstate)
 
 		//console.log('[filters', $filters, '])
 		sub_state = $filters.reduce(
 			(state, $filter) => {
 				const fine_filter_cb_id = `on_filterꘌ${$filter}`
 				//console.log({fine_filter_cb_id})
-				const fine_filter_callback = callbacks[fine_filter_cb_id] as WalkerReducer<State, OnFilterParams<State>, RenderingOptions>
+				const fine_filter_callback = callbacks[fine_filter_cb_id] as WalkerReducer<ExternalWalkState, OnFilterParams<ExternalWalkState>, RenderingOptions>
 				if (fine_filter_callback)
 					state = fine_filter_callback({
 						$filter,
@@ -312,41 +311,48 @@ function _walk_content<State, RenderingOptions extends BaseRenderingOptions>(
 		// NO it's convenient (ex. Oh-my-rpg) to over-set subnodes
 		// and set a content which may or may not use them.
 
-		state = callbacks.on_concatenateⵧsub_node({
-			sub_state,
-			$id: sub_node_id,
-			$parent_node: $node,
-			state,
-			$node: normalizeꓽnode($sub_node),
+		xstate = callbacks.on_concatenateⵧsub_node({
+			state: xstate,
+			$node,
 			depth,
+
+			$sub_node_id,
+			$sub_node,
+			sub_state,
 		}, options)
 
 		if (split_end[0])
-			state = callbacks.on_concatenateⵧstr({
+			xstate = callbacks.on_concatenateⵧstr({
 				str: split_end[0],
-				state,
+				state: xstate,
 				$node,
 				depth,
 			}, options)
 
-		return state
-	}, state)
+		return xstate
+	}, xstate)
 
-	return state
+	return xstate
 }
 
 
-function _walk<State, RenderingOptions extends BaseRenderingOptions>(
+/**
+ * Walk recursively inside a node.
+ * Must return a NEW "node" state.
+ */
+function _walk<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>(
 	$raw_node: Immutable<Node>,
-	callbacks: Immutable<WalkerCallbacks<State, RenderingOptions>>,
+	callbacks: Immutable<WalkerCallbacks<ExternalWalkState, RenderingOptions>>,
 	options: RenderingOptions = {} as any,
-	{
+	istate: InternalWalkState,
+	parent_xstate: ExternalWalkState | undefined,
+) {
+	const {
 		$parent_node,
 		$id,
 		depth,
 		$root_node,
-	}: InternalWalkState,
-) {
+	} = istate
 	const $node = normalizeꓽnode($raw_node)
 	const {
 		$type,
@@ -354,33 +360,30 @@ function _walk<State, RenderingOptions extends BaseRenderingOptions>(
 		$sub: $sub_nodes,
 	} = $node
 
-	const isRoot = !$parent_node
-	if (isRoot) {
-		callbacks.on_rootⵧenter(options)
-	}
-
-	let state = callbacks.on_nodeⵧenter({ $node, $id, depth }, options)
+	let xstate = callbacks.create_state(parent_xstate, options)
+	xstate = callbacks.on_nodeⵧenter({ state: xstate, $node, depth, $id }, options)
 
 	// TODO one day if needed: class begin / start
 
-	state = $classes.reduce(
+	xstate = $classes.reduce(
 		(state, $class) => callbacks.on_classⵧbefore({
 			$class,
 			state,
 			$node,
 			depth,
 		}, options),
-		state,
+		xstate,
 	)
 
+	// walk down the content
 	if ($type === 'ul' || $type === 'ol') {
-		// special case of sub-content
+		// special walk of sub-content for those
 		const sorted_keys = Object.keys($sub_nodes).sort()
 		//console.log('walk ul/ol', sorted_keys)
 		sorted_keys.forEach(key => {
-			// I've been bitten by that...
 			const number = Number(key)
-			if (key === number.toString()) {
+			if (key === number.toString()) { // TODO dedicated type guard!
+				// I've been bitten by that...
 				console.warn(
 					`in sub-node '${$id}', the ul/ol key '${key}' suspiciously looks like a number. Beware of auto sorting!`,
 					{
@@ -398,48 +401,46 @@ function _walk<State, RenderingOptions extends BaseRenderingOptions>(
 					content: $sub_nodes[key]!,
 				},
 			}
-			const sub_state = _walk( $sub_node, callbacks, options, {
+			const sub_xstate = _walk( $sub_node, callbacks, options, {
 				$parent_node: $node,
-				depth: depth +1,
+				depth: depth + 1,
 				$id: key,
 				$root_node,
-			})
-			state = callbacks.on_concatenateⵧsub_node({
-				state,
-				sub_state,
-				$id: key,
-				$node: normalizeꓽnode($sub_node),
-				$parent_node: $node,
+			}, xstate)
+			xstate = callbacks.on_concatenateⵧsub_node({
+				state: xstate,
+				$node,
 				depth,
+
+				$sub_node,
+				sub_state: sub_xstate,
+				$sub_node_id: key,
 			}, options)
 		})
 	}
 	else
-		state = _walk_content($node, callbacks, state, depth, $root_node, options)
+		xstate = _walk_content($node, callbacks, xstate, depth, $root_node, options)
 
-	state = $classes.reduce(
+	xstate = $classes.reduce(
 		(state, $class) => callbacks.on_classⵧafter({ $class, state, $node, depth }, options),
-		state,
+		xstate,
 	)
 
 	const fine_type_cb_id = `on_typeꘌ${$type}`
-	const fine_type_callback = callbacks[fine_type_cb_id] as WalkerReducer<State, OnTypeParams<State>, RenderingOptions>
+	const fine_type_callback = callbacks[fine_type_cb_id] as WalkerReducer<ExternalWalkState, OnTypeParams<ExternalWalkState>, RenderingOptions>
 	if (fine_type_callback)
-		state = fine_type_callback({ $type, $parent_node, state, $node, depth }, options)
-	state = callbacks.on_type({ $type, $parent_node, state, $node, depth }, options)
+		xstate = fine_type_callback({ $type, $parent_node, state: xstate, $node, depth }, options)
+	xstate = callbacks.on_type({ $type, $parent_node, state: xstate, $node, depth }, options)
 
-	state = callbacks.on_nodeⵧexit({$node, $id, state, depth}, options)
+	xstate = callbacks.on_nodeⵧexit({ state: xstate, $node, depth, $id }, options)
 
-	if (!$parent_node)
-		state = callbacks.on_rootⵧexit({state, $node, depth: 0}, options)
-
-	return state
+	return xstate
 }
 
 
-function walk<State, RenderingOptions extends BaseRenderingOptions>(
+function walk<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>(
 	$raw_node: Immutable<Node>,
-	raw_callbacks: Immutable<Partial<WalkerCallbacks<State, RenderingOptions>>>,
+	raw_callbacks: Immutable<Partial<WalkerCallbacks<ExternalWalkState, RenderingOptions>>>,
 	options: RenderingOptions, // this internal fn can't default unknown type, so we expect the caller to give us full options
 ) {
 	assert(
@@ -447,9 +448,9 @@ function walk<State, RenderingOptions extends BaseRenderingOptions>(
 		`${LIB}[walk]: custom callbacks should match the expected format, check the API!`
 	)
 
-	const callbacks: WalkerCallbacks<State, RenderingOptions> = {
-		..._getꓽcallbacksⵧdefault<State, RenderingOptions>(),
-		...raw_callbacks as any as WalkerCallbacks<State, RenderingOptions>,
+	const callbacks: WalkerCallbacks<ExternalWalkState, RenderingOptions> = {
+		..._getꓽcallbacksⵧdefault<ExternalWalkState, RenderingOptions>(),
+		...raw_callbacks as any as WalkerCallbacks<ExternalWalkState, RenderingOptions>,
 	}
 
 	assert(
@@ -460,12 +461,15 @@ function walk<State, RenderingOptions extends BaseRenderingOptions>(
 
 	const $root_node = normalizeꓽnode($raw_node)
 
-	return _walk($root_node, callbacks, options, {
+	const istate = {
 		$parent_node: null,
 		$id: 'root',
 		depth: 0,
 		$root_node,
-	})
+	}
+	const xstate = undefined
+
+	return _walk($root_node, callbacks, options, istate, xstate)
 }
 
 /////////////////////////////////////////////////

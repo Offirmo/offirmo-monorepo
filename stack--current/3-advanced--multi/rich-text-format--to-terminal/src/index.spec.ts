@@ -1,18 +1,8 @@
 import { expect } from 'chai'
-import { Enum } from 'typescript-string-enums'
 
 import * as RichText from '@offirmo-private/rich-text-format'
-/*
-{
-	DOC_DEMO_BASE_TYPES,
-	DOC_DEMO_ADVANCED_TYPES,
-	DOC_DEMO_HINTS,
-	DOC_DEMO_RPG_01,
-	DOC_DEMO_RPG_02,
-	DOC_DEMO_RPG_03,
-	DOC_DEMO_INVENTORY,
-}
- */
+import * as DEMOS from '@offirmo-private/rich-text-format/demos'
+
 import { LIB, renderⵧto_terminal } from './index.ts'
 
 /////////////////////////////////////////////////
@@ -28,13 +18,20 @@ describe(`${LIB} -- renderers -- to terminal`, () => {
 		describe('primitives', function () {
 
 			it('should work', () => {
-				Enum.values(RichText.NodeType).forEach(k => {
-					console.log(`XXX `, k)
+				RichText.Enum.values(RichText.NodeType).forEach(k => {
+					console.log(`------- ${k}: -------`)
+
 					const $node = RichText.create(k)
 						.pushText(k)
 						.done()
 
-					const str = renderⵧto_terminal($node, rendering_options)
+					const $wrapper = RichText.fragmentⵧblock()
+						.pushText('[pre]')
+						.pushNode($node)
+						.pushText('[post]')
+						.done()
+
+					const str = renderⵧto_terminal($wrapper, rendering_options)
 					console.log(str)
 				})
 			})
@@ -86,6 +83,13 @@ describe(`${LIB} -- renderers -- to terminal`, () => {
 			it('should work -- KV', () => {
 				const str = renderⵧto_terminal($DEMOⵧKV, rendering_options)
 				console.log(str)
+			})
+
+			it('should work -- demos', () => {
+				Object.values(DEMOS).forEach($doc => {
+					const str = renderⵧto_terminal($doc, rendering_options)
+					console.log(str)
+				})
 			})
 		})
 	})

@@ -161,6 +161,7 @@ red ocean vs blue ocean https://www.blueoceanstrategy.com/tools/red-ocean-vs-blu
 reputation management
 reputation management -- REPCOM
 risk management = be proactive instead of reactive
+sales -- Sales Development Representative (SDR) https://www.salesforce.com/blog/sales-development-representative/
 satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing
 scalability -- organisational -- collaboration = bigger team size can no longer efficiently collaborate, ex. merge conflicts, coordination
 scalability -- organisational -- collaboration = no limiting "gate keeping" core team

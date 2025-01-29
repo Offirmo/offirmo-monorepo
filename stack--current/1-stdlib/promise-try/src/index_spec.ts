@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import promiseTry from './index.js'
+import promiseTry from './index.ts'
 
 
 describe('@offirmo-private/promise-try', function() {

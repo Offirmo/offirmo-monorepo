@@ -1,6 +1,6 @@
 * #metoo
 * big companies / balance of power / democracy
-* China
+* China / multi-power
 * climate change = failure to coordinate
 * dark age of internet
 * democracy but powerless
@@ -18,3 +18,4 @@
   * https://en.wikipedia.org/wiki/List_of_paradoxes#Cosmology
 * frog in a well = vastness of the universe, where are we? what are we?
 * frog in a well = we may need to improve our brain capabilities 
+* great filters: ensure we're immune / not trapped https://blog.codinghorror.com/the-great-filter-comes-for-us-all/

@@ -42,20 +42,13 @@ function isꓽobjectⵧliteral(o: object): o is object {
 	return proto && proto.constructor === Object
 }
 
-/////////////////////////////////////////////////
 
-// https://devdocs.io/javascript/global_objects/promise#thenables
-interface Thenable<T> {
-	then<TResult1 = T, TResult2 = never>(
-		// inspired by interface PromiseLike<T>
-		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
-		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
-	): void
-}
+function isꓽstringified_number(s: string): boolean {
+	if (typeof s !== 'string')
+		return false
 
-// credits: inspired by https://github.com/then/is-promise/blob/master/index.mjs
-function isꓽthenable<T>(p: any): p is Thenable<T> {
-	return typeof p?.then === 'function'
+	const x = Number(s)
+	return String(n) === s
 }
 
 /////////////////////////////////////////////////
@@ -64,5 +57,5 @@ export {
 	isꓽnegative_zero,
 	//isꓽprimitive_object_wrapper,
 	isꓽobjectⵧliteral,
-	isꓽthenable,
+	isꓽstringified_number,
 }
