@@ -1,5 +1,9 @@
 import * as RichText from '../index.ts'
 
+/////// Units ///////
+
+import { DOC_DEMO_UNIT_FULL } from '../l1-types/guards.ts'
+
 /////// parts ///////
 
 const SUB_UL_ITEMS: RichText.Document['$sub'] = {
@@ -605,9 +609,12 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 ////////////
 
 export {
+	DOC_DEMO_UNIT_FULL,
+
 	DOC_DEMO_BASE_TYPES,
 	DOC_DEMO_ADVANCED_TYPES,
 	DOC_DEMO_HINTS,
+
 	DOC_DEMO_RPG_01,
 	DOC_DEMO_RPG_02,
 	DOC_DEMO_RPG_03,

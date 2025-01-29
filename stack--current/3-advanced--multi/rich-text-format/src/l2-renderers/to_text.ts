@@ -1,12 +1,13 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import type { CheckedNode, NodeLike } from '../l1-types/index.ts'
+import type { CheckedNode, Node, NodeLike } from '../l1-types/index.ts'
 import {
 	type BaseRenderingOptions,
 	type OnConcatenateStringParams,
 	type OnConcatenateSubNodeParams,
 	type OnNodeEnterParams,
 	type OnNodeExitParams,
+	type WalkerStateCreator,
 	type WalkerCallbacks,
 	type WalkerReducer,
 	walk,
@@ -15,6 +16,7 @@ import {
 
 import { isꓽlink, isꓽlistⵧKV, NODE_TYPE_to_DISPLAY_MODE } from './common.ts'
 import { promoteꓽto_node } from '../l1-utils/promote.ts'
+import { normalizeꓽnode } from '../l1-utils/normalize.ts'
 
 /////////////////////////////////////////////////
 
@@ -47,45 +49,36 @@ type State = {
 
 	str: string
 }
-const DEFAULT_STATE: State = Object.freeze({
-	sub_nodes: [],
-	starts_with_block: false,
-	ends_with_block: false,
-	marginⵧtop‿lines: 0,
-	marginⵧbottom‿lines: 0,
-	nested_list_depth: 0,
-	str: '',
-})
 
 /////////////////////////////////////////////////
 // callbacks
 
-const create_state: () => State = () => {
+const create_state: WalkerStateCreator<State, RenderingOptionsⵧToText> = (parent_state) => {
 	return {
-		...DEFAULT_STATE,
 		sub_nodes: [],
+		starts_with_block: false,
+		ends_with_block: false,
+		marginⵧtop‿lines: 0,
+		marginⵧbottom‿lines: 0,
+		nested_list_depth: parent_state?.nested_list_depth ?? 0,
+		str: '',
 	}
 }
 
 const on_nodeⵧenter: WalkerReducer<State, OnNodeEnterParams<State>, RenderingOptionsⵧToText> = ({state, $node, depth}, {style}) => {
-	console.log(`XXX to text on_nodeⵧenter`, $node?.$type)
+	//console.log(`XXX to text on_nodeⵧenter`, $node?.$type)
 
 	switch ($node.$type) {
+		case 'ol':
+			// fallthrough
+		case 'ul':
+			state.nested_list_depth += 1
+			break
+
 		default:
 			break
 	}
 
-	return state
-}
-
-const on_concatenateⵧstr: WalkerReducer<State, OnConcatenateStringParams<State>, RenderingOptionsⵧToText> = ({state, str}) => {
-	//console.log('on_concatenateⵧstr()', {str, state: structuredClone(state),})
-	if (state.ends_with_block) {
-		state.str += ''.padStart(state.marginⵧbottom‿lines + 1,'\n')
-		state.ends_with_block = false
-		state.marginⵧbottom‿lines = 0
-	}
-	state.str += str
 	return state
 }
 
@@ -95,6 +88,7 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 	switch ($node.$type) {
 		case 'br':
 			state.ends_with_block = true
+			state.str = '' // clear, in case the user accidentally pushed some content in this node
 			break
 
 		default:
@@ -143,10 +137,6 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 				state.str = '------------------------------------------------------------'
 				break
 
-			case 'br':
-				state.str = '' // clear, in case the user accidentally pushed some content
-				break
-
 			default:
 				break
 		}
@@ -187,11 +177,25 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 	return state
 }
 
-const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToText> = ({state, sub_state, $node, $sub_node_id}, {style}) => {
+const on_concatenateⵧstr: WalkerReducer<State, OnConcatenateStringParams<State>, RenderingOptionsⵧToText> = ({state, str}) => {
+	//console.log('on_concatenateⵧstr()', {str, state: structuredClone(state),})
+	if (state.ends_with_block) {
+		state.str += ''.padStart(state.marginⵧbottom‿lines + 1,'\n')
+		state.ends_with_block = false
+		state.marginⵧbottom‿lines = 0
+	}
+	state.str += str
+	return state
+}
+
+const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToText> = ({
+	state, $node, depth,
+	$sub_node_id, $sub_node, sub_state
+}, {style}) => {
 	let sub_str = sub_state.str
 	let sub_starts_with_block = sub_state.starts_with_block
 
-	state.sub_nodes.push($node)
+	state.sub_nodes.push(normalizeꓽnode($sub_node))
 
 	switch ($node.$type) {
 		case 'ul': {

@@ -85,34 +85,37 @@ export interface UnknownSubNodeResolver<State, RenderingOptions> {
 }
 
 
+interface WalkerStateCreator<State, RenderingOptions> {
+	(parent_state: State | undefined, options: RenderingOptions): State
+}
 
 interface WalkerReducer<State, P extends BaseHookParams<State>, RenderingOptions> {
 	(params: P, options: RenderingOptions): State
 }
 
 interface WalkerCallbacks<State, RenderingOptions extends BaseRenderingOptions> {
-	create_state: (parent_state: State | undefined, options: RenderingOptions) => State,
+	create_state: WalkerStateCreator<State, RenderingOptions>
 
-	on_nodeⵧenter: WalkerReducer<State, OnNodeEnterParams<State>, RenderingOptions>,
-	on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOptions>,
+	on_nodeⵧenter: WalkerReducer<State, OnNodeEnterParams<State>, RenderingOptions>
+	on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOptions>
 
-	on_concatenateⵧstr: WalkerReducer<State, OnConcatenateStringParams<State>, RenderingOptions>,
-	on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptions>,
+	on_concatenateⵧstr: WalkerReducer<State, OnConcatenateStringParams<State>, RenderingOptions>
+	on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptions>
 
-	on_classⵧbefore: WalkerReducer<State, OnClassParams<State>, RenderingOptions>,
-	on_classⵧafter: WalkerReducer<State, OnClassParams<State>, RenderingOptions>,
+	on_classⵧbefore: WalkerReducer<State, OnClassParams<State>, RenderingOptions>
+	on_classⵧafter: WalkerReducer<State, OnClassParams<State>, RenderingOptions>
 
-	on_filter: WalkerReducer<State, OnFilterParams<State>, RenderingOptions>,
-	on_filterꘌCapitalize: WalkerReducer<State, OnFilterParams<State>, RenderingOptions>,
+	on_filter: WalkerReducer<State, OnFilterParams<State>, RenderingOptions>
+	on_filterꘌCapitalize: WalkerReducer<State, OnFilterParams<State>, RenderingOptions>
 	// extensions
 	//[on_filterꘌxyz: string]: WalkerReducer<State, OnFilterParams<State>, RenderingOptions>,
 
-	resolve_unknown_subnode: UnknownSubNodeResolver<State, RenderingOptions>,
+	resolve_unknown_subnode: UnknownSubNodeResolver<State, RenderingOptions>
 
-	on_type: WalkerReducer<State, OnTypeParams<State>, RenderingOptions>,
+	on_type: WalkerReducer<State, OnTypeParams<State>, RenderingOptions>
 	// select known specials
-	on_typeꘌhr?: WalkerReducer<State, OnTypeParams<State>, RenderingOptions>,
-	on_typeꘌbr?: WalkerReducer<State, OnTypeParams<State>, RenderingOptions>,
+	on_typeꘌhr?: WalkerReducer<State, OnTypeParams<State>, RenderingOptions>
+	on_typeꘌbr?: WalkerReducer<State, OnTypeParams<State>, RenderingOptions>
 	// extensions
 	//[on_typeꘌxyz: string]: WalkerReducer<State, OnTypeParams<State>, RenderingOptions>,
 
@@ -478,6 +481,7 @@ export {
 	NodeType,
 	type CheckedNode,
 	type Node,
+	type WalkerStateCreator,
 	type WalkerReducer,
 	type WalkerCallbacks,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,

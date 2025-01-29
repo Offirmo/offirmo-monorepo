@@ -62,36 +62,43 @@ type Options = {
 	test_depth: 0 // which depth to go. !0 not supported yet
 }
 
-function hasꓽshape<T extends object>(reference: T, under_test: object, {
+function assertꓽshape<T extends object>(reference: T, under_test: object, {
 	match_reference_props = 'all',
 	allow_extra_props = true,
 	type_match = 'simple',
 	test_depth = 0,
-}: Partial<Options> = {}): under_test is T {
+}: Partial<Options> = {}): asserts under_test is T {
 	assert(isꓽobjectⵧkv(reference), `hasꓽshape: ref should be a k/v object!`)
 	assert(isꓽobjectⵧkv(under_test), `hasꓽshape: under_test should be a k/v object!`)
 
 	const keysⵧref = new Set<string>(Object.keys(reference))
-	const keysⵧunder_test = new Set<string>(Object.keys(under_test))
+	const keysⵧunder_test = new Set<string>(Object.keys(under_test)) as any // update marker remove when ES2025
 
 	const keysⵧmatching = keysⵧunder_test.intersection(keysⵧref) as Set<keyof typeof reference>
+
+	if (keysⵧunder_test.isDisjointFrom(keysⵧref)) {
+		// even if technically possible with some + allow extra,
+		// this is too suspicious
+		throw new Error(`assertꓽshape: no common props!`)
+	}
 
 	switch (match_reference_props) {
 		case 'all':
 			if (!keysⵧunder_test.isSupersetOf(keysⵧref))
-				return false
+				throw new Error(`assertꓽshape: missing props from reference!`)
 			break
 		case 'some':
-			if (keysⵧmatching.size === 0)
-				return false
+			// already tested above with isDisjointFrom
+			//if (keysⵧmatching.size === 0) return false
 			break
 		default:
 			throw new Error(`hasꓽshape: unsupported match_reference_props value!`)
 	}
 
 	if (!allow_extra_props) {
-		if (keysⵧunder_test.union(keysⵧref).size > keysⵧref.size)
-			return false
+		const u = keysⵧunder_test.union(keysⵧref)
+		if (u.size > keysⵧref.size)
+			throw new Error(`assertꓽshape: unexpected extraneous props, ex. "${Array.from(u.keys())[0]!}"!`)
 	}
 
 
@@ -103,7 +110,7 @@ function hasꓽshape<T extends object>(reference: T, under_test: object, {
 		case 'simple': {
 			for (const key of keysⵧmatching) {
 				if (getꓽtypeofⵧimproved(reference[key]) !== getꓽtypeofⵧimproved((under_test as any)[key]))
-					return false
+					throw new Error(`assertꓽshape: mismatching types for prop "${String(key)}"!`)
 			}
 			assert(test_depth === 0, `unsupported test_depth!`)
 			break
@@ -111,13 +118,23 @@ function hasꓽshape<T extends object>(reference: T, under_test: object, {
 		default:
 			throw new Error(`hasꓽshape: unsupported type_match value!`)
 	}
+}
 
-	return true
+function hasꓽshape<T extends object>(reference: T, under_test: object, options: Partial<Options> = {}): under_test is T {
+	try {
+		assertꓽshape(reference, under_test, options)
+		return true
+	}
+	catch {
+		// TODO one day filter arg error vs runtime error
+		return false
+	}
 }
 
 /////////////////////////////////////////////////
 
 export {
 	getꓽtypeofⵧimproved,
+	assertꓽshape,
 	hasꓽshape,
 }

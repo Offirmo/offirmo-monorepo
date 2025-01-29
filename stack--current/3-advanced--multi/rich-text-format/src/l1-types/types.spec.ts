@@ -2,7 +2,7 @@ import { expect } from 'chai'
 
 import { LIB } from '../consts.ts'
 
-import {
+import type {
 	Node,
 } from './types.ts'
 

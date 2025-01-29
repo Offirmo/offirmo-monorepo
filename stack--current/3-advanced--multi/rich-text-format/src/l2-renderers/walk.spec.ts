@@ -21,18 +21,11 @@ describe(`${LIB} -- renderers -- walker (internal)`, function () {
 		on_nodeⵧenter() { return {} as State },
 	}
 
-	let rendering_options: Options = {
-		shouldꓽrecover_from_unknown_sub_nodes: false,
-	}
+	let rendering_options: Options
 	beforeEach(() => {
 		rendering_options = {
 			shouldꓽrecover_from_unknown_sub_nodes: false,
 		}
-	})
-
-	describe('walking through all nodes in order', function () {
-
-		it('should work')
 	})
 
 	describe('sub-nodes resolution', function () {
