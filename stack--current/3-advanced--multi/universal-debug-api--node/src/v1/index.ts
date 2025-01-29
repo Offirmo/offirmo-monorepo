@@ -1,6 +1,7 @@
 import { DebugApiV1 } from '@offirmo/universal-debug-api-interface'
 import { Logger, LoggerCreationParams, createLogger } from '@offirmo/practical-logger-node'
 import { LogLevel, DEFAULT_LOG_LEVEL, DEFAULT_LOGGER_KEY } from '@offirmo/practical-logger-core'
+import { isꓽexact_stringified_number } from '@offirmo-private/type-detection'
 
 import { ENV_ROOT, getOverrideKeyForLogger, getEnvKeyForOverride } from './keys.js'
 
@@ -83,7 +84,7 @@ export default function create(): DebugApiV1 {
 					if (rawValue === 'undefined')
 						return undefined
 
-					if (String(Number(rawValue)) === rawValue)
+					if (isꓽexact_stringified_number(rawValue))
 						return Number(rawValue)
 
 					try {

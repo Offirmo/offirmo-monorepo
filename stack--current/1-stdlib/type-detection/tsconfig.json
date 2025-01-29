@@ -1,8 +1,8 @@
 {
 	"extends": "../../0-meta/tsconfig.json",
 	"compilerOptions": {
-		"importHelpers": false,
-		"noEmitHelpers": false
+		"noEmit": true,
+		"lib": [ "ESNEXT" ]
 	},
 	"include": [
 		"../../0-meta/typescript-custom-typings/*.d.ts",

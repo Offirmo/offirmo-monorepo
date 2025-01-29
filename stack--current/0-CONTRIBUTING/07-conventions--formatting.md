@@ -8,11 +8,15 @@ unix (should be enforced by git)
 ## prettifying
 not implemented yet as long as I'm the sole contributor
 
+TODO one day prettify
+
 ## file structure
 
 ### JavaScript / TypeScript
 
-* imports by order of
+* imports
+  * by order of 1) system 2) external libs 3) internal libs 4) current libs
+  * (TODO one day) can not depend on lexicographically higher (prevent loops)
 
 ```ts
 /* PROMPT

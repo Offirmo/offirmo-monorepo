@@ -6,7 +6,7 @@ Too bad we can't add comments to the file ;)
 
 This is a base config meant to be *extended* (through https://www.typescriptlang.org/tsconfig#extends)
 
-REMINDER: the build script relax a few rules in dev mode (--watch), see `build-typescript.mjs`
+REMINDER: the build script dynamically relax a few rules in dev mode (--watch), see `build-typescript.mjs`
 
 
 ## References
@@ -82,8 +82,6 @@ Example of errors:
 > error TS2349: This expression is not callable. (node_modules/micro-memoize/index")' has no call signatures.
 
 
-* `useUnknownInCatchVariables` TODO understand
-* `allowImportingTsExtensions` Not yet since it prevents Emit... We tweaked a Parcel resolver in the meantime.
 * `allowUmdGlobalAccess` set to false to detect outdated modules
 
 * `module` https://www.typescriptlang.org/tsconfig#module
@@ -147,10 +145,10 @@ no need, we're using state-of-the-art syntax
 
 ## TOSORT
 
-TODO `	"extends": "@tsconfig/strictest/tsconfig.json",` cf. https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#supporting-multiple-configuration-files-in-extends
+TODO `"extends": "@tsconfig/strictest/tsconfig.json",` cf. https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#supporting-multiple-configuration-files-in-extends
 
 * ??? https://www.typescriptlang.org/tsconfig#preserveConstEnums
-* TODO https://www.typescriptlang.org/tsconfig#plugins
+* TODO eslint https://www.typescriptlang.org/tsconfig#plugins
 * composite: disabled for now as it needs rootDir and not sure of the benefits
 
 

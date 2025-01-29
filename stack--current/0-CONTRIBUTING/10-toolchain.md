@@ -85,23 +85,14 @@ nvm
 * https://asdf-vm.com/guide/introduction.html#nvm-n-rbenv-etc
 ```
 12. Which version manager do you use? 
-
 none
-
 nvm
-
 n
-
 asdf
-
 fnm
-
 nodenv
-
 nvs
-
 volta
-
 Other (please specify)
 ```
 

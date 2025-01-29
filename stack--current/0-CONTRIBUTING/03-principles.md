@@ -6,6 +6,7 @@ Unless it's more convenient for some reason, this repo strives to adhere to thos
 * readability is the top desirable code property
   * ["Code for the human, not the computer"](https://read.engineerscodex.com/p/7-simple-habits-of-the-top-1-of-engineers)
   * TypeScript https://www.typescriptlang.org/
+* fight complexity or at least encapsulate it (lol I'm not really following this)
 * single source of truth
   * flux architecture
 * problems broken down in manageable components = separation of concerns
@@ -25,6 +26,7 @@ Unless it's more convenient for some reason, this repo strives to adhere to thos
   * Postgres
 * dev should be possible locally
   * avoid using cloud-only services
+* ideally should even work by opening a local .html file
 * avoid vendor lock-in
   * ex. auth, aws...
   * wrap commonly used modules into a thin, semantic layer

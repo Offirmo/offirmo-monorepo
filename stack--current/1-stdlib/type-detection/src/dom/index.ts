@@ -1,9 +1,9 @@
-/* PROMPT
- * ’
+/* runtime type detection of some DOM related types
  */
 
 /////////////////////////////////////////////////
 
+// TODO usage?
 // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget
 function isꓽEventTarget(x: any): x is EventTarget {
 	if (typeof x?.addEventListener !== 'function')

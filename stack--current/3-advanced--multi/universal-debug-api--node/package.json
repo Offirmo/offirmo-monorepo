@@ -27,6 +27,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/type-detection": "*",
 		"@offirmo/practical-logger-node": "^0",
 		"@offirmo/universal-debug-api-interface": "^1"
 	},

@@ -4,6 +4,7 @@
 
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
+import { hasꓽshape, isꓽexact_stringified_number } from '@offirmo-private/type-detection'
 
 import { LIB } from '../consts.ts'
 
@@ -381,11 +382,9 @@ function _walk<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>
 		const sorted_keys = Object.keys($sub_nodes).sort()
 		//console.log('walk ul/ol', sorted_keys)
 		sorted_keys.forEach(key => {
-			const number = Number(key)
-			if (key === number.toString()) { // TODO dedicated type guard!
-				// I've been bitten by that...
+			if (isꓽexact_stringified_number(key)) {
 				console.warn(
-					`in sub-node '${$id}', the ul/ol key '${key}' suspiciously looks like a number. Beware of auto sorting!`,
+					`in sub-node '${$id}', the ul/ol key '${key}' suspiciously looks like a number: Beware of auto sorting!`,
 					{
 						$node,
 						sorted_keys,
@@ -443,13 +442,14 @@ function walk<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>(
 	raw_callbacks: Immutable<Partial<WalkerCallbacks<ExternalWalkState, RenderingOptions>>>,
 	options: RenderingOptions, // this internal fn can't default unknown type, so we expect the caller to give us full options
 ) {
+	const callbacksⵧdefault = _getꓽcallbacksⵧdefault<ExternalWalkState, RenderingOptions>()
 	assert(
-		Object.keys(raw_callbacks).every(k => k === 'resolve_unknown_subnode' || k.startsWith('on_')),
+		hasꓽshape(callbacksⵧdefault, raw_callbacks, { allow_extra_props: false, match_reference_props: 'some' }),
 		`${LIB}[walk]: custom callbacks should match the expected format, check the API!`
 	)
 
 	const callbacks: WalkerCallbacks<ExternalWalkState, RenderingOptions> = {
-		..._getꓽcallbacksⵧdefault<ExternalWalkState, RenderingOptions>(),
+		...callbacksⵧdefault,
 		...raw_callbacks as any as WalkerCallbacks<ExternalWalkState, RenderingOptions>,
 	}
 

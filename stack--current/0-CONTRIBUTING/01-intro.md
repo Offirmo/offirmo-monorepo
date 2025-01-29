@@ -17,4 +17,4 @@ I code **however I want**, often departing from old conventions.
 
 I don't plan to sell/incorporate anything, enough stress in my life already, thank you!
 
-This code is multi-licensed with extremely permissive terms. Pick what you want! 
+Most of this code is multi-licensed with extremely permissive terms. Pick what you want! No need to even credit! (check closest license)

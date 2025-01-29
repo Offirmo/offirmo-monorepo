@@ -1,5 +1,4 @@
-/* PROMPT
- * ’
+/* runtime type detection: primitive types
  */
 
 /////////////////////////////////////////////////
@@ -21,11 +20,10 @@ function isꓽnegative_zero(x: number): x is -0 {
 	throw new Error('NIMP!')
 }*/
 
-// use case: for type guards
+// Is it a "key/value" object (not null, not an array)
 // naming: difficult!!!
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals
-// also JSON "object is an unordered set of name/value pairs"
-function isꓽobjectⵧliteral(o: object): o is object {
+// use case: for type guards
+function isꓽobjectⵧkv(o: object): o is object {
 	if (typeof o !== 'object')
 		return false
 
@@ -35,6 +33,18 @@ function isꓽobjectⵧliteral(o: object): o is object {
 	if (Array.isArray(o))
 		return false
 
+	return true
+}
+
+// is it a "key/value" object (not null, not an array) ALSO not a complex/class one
+// naming: difficult!!!
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals
+// use case: for type guards
+// also JSON "object is an unordered set of name/value pairs"
+function isꓽobjectⵧliteral(o: object): o is object {
+	if (!isꓽobjectⵧkv(o))
+		return false
+
 	// "normal" objects have Object as constructor
 	// technically we could also accept null proto https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototype_objects
 	// but they're unlikely to be "normal"
@@ -42,12 +52,14 @@ function isꓽobjectⵧliteral(o: object): o is object {
 	return proto && proto.constructor === Object
 }
 
-
-function isꓽstringified_number(s: string): boolean {
+// use case: in RichText, avoid wrong ordering of numeric keys
+function isꓽexact_stringified_number(s: string): boolean {
 	if (typeof s !== 'string')
 		return false
 
-	const x = Number(s)
+	const n = Number(s)
+	if (isNaN(n)) return false // bc NOT a number
+
 	return String(n) === s
 }
 
@@ -55,7 +67,7 @@ function isꓽstringified_number(s: string): boolean {
 
 export {
 	isꓽnegative_zero,
-	//isꓽprimitive_object_wrapper,
+	isꓽobjectⵧkv,
 	isꓽobjectⵧliteral,
-	isꓽstringified_number,
+	isꓽexact_stringified_number,
 }

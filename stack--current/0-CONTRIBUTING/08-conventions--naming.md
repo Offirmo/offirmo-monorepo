@@ -7,7 +7,7 @@ Every package should ideally have exactly the same structure:
 * `package.json` just a normal package.json
 * `README.md` lightweight docs for this package
 * `/src/` contains all the source code for this package, including unit tests
-* `/src/embedded-deps/` (optional) = deps we copied internally to be no-deps (rare, for very small packages)
+* `/src/00-embedded-deps/` (optional) = deps we copied internally to be no-deps (rare, for very small packages)
 * `/docs/` (optional) detailed docs for the package, that render integration examples and props API
 * `/docs/storypad/` 
 * `/dist/` (optional) contains the built version of the package, if it is a library
@@ -105,9 +105,12 @@ getꓽterminal__size = much better
 
 * "get representation of X as Y" or "convert X into Y": `toꓽStory‿v2()`
 * "normalize X": `normalizeꓽStory‿v2()`
+* "derive Y from X": `deriveꓽxyz()`
 
 #### Type hints
-* promises: `ↆfoo` (if fetched) or `ೱfoo` (if long task)
+* promises:
+  * `ↆfoo` (if fetched)
+  * `ೱfoo` (if long task)
 
 ### postfixes
 
