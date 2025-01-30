@@ -17,8 +17,6 @@
 		},
 		"./styles.css": "./src/renderers/style.css"
 	},
-	"module": "dist/src.es2024.esm/index.js",
-	"typings": "dist/src.es2024.esm/index.d.ts",
 	"source": "src/index.ts",
 
 	"peerDependencies": {

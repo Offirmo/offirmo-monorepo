@@ -8,6 +8,11 @@
 
 	"sideEffects": false,
 	"type": "module",
+	"exports": {
+		".": {
+			"import": "./src/index.ts"
+		}
+	},
 	"source": "src/index.ts",
 
 	"peerDependencies": {
