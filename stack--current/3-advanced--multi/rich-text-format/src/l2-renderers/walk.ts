@@ -175,6 +175,9 @@ const SUB_NODE_HR: Node = Object.freeze<Node>({
 	$type: 'hr',
 })
 
+// special prop for lists
+const SPECIAL_LIST_NODE_CONTENT_KEY = '_content'
+
 interface InternalWalkState {
 	$parent_node: Immutable<CheckedNode> | null,
 	$id: string,
@@ -398,9 +401,9 @@ function _walk<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>
 		sorted_keys.forEach(key => {
 			const $sub_node: Immutable<Node> = {
 				$type: NodeType.li,
-				$content: '⎨⎨content⎬⎬',
+				$content: `⎨⎨${SPECIAL_LIST_NODE_CONTENT_KEY}⎬⎬`,
 				$sub: {
-					content: $sub_nodes[key]!,
+					[SPECIAL_LIST_NODE_CONTENT_KEY]: $sub_nodes[key]!,
 				},
 			}
 			const sub_xstate = _walk( $sub_node, callbacks, options, {
@@ -478,6 +481,8 @@ function walk<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>(
 /////////////////////////////////////////////////
 
 export {
+	SPECIAL_LIST_NODE_CONTENT_KEY,
+
 	NodeType,
 	type CheckedNode,
 	type Node,

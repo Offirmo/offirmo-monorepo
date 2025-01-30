@@ -1,6 +1,11 @@
+import { type Immutable } from '@offirmo-private/ts-types'
 import stylize_string from 'chalk'
 
 import {
+	type NodeLike,
+	type WalkerCallbacks,
+	type RenderingOptionsⵧToText,
+	type RenderToTextState,
 	DEFAULT_RENDERING_OPTIONSⵧToText,
 	renderⵧto_text,
 } from '@offirmo-private/rich-text-format'
@@ -9,7 +14,11 @@ import {
 
 const LIB = '@offirmo-private/rich-text-format--to-terminal'
 
-const DEFAULT_RENDERING_OPTIONSⵧToAnsi = Object.freeze({
+interface RenderingOptionsⵧToTerminal extends RenderingOptionsⵧToText {
+	// TODO one day color dithering
+}
+
+const DEFAULT_RENDERING_OPTIONSⵧToTerminal: RenderingOptionsⵧToTerminal = Object.freeze({
 	...DEFAULT_RENDERING_OPTIONSⵧToText,
 })
 
@@ -22,7 +31,8 @@ const DEFAULT_RENDERING_OPTIONSⵧToAnsi = Object.freeze({
 // TODO handle clickable links https://github.com/sindresorhus/terminal-link
 // TODO handle pictures https://github.com/sindresorhus/terminal-image
 
-function on_type({ $type, $parent_node, state, $node, depth }, options) {
+type State = RenderToTextState
+const on_type: WalkerCallbacks<State, RenderingOptionsⵧToTerminal>['on_type'] = ({ $type, state }) => {
 	//console.log(`${LIB} on_type()`)
 	switch($type) {
 		case 'heading':
@@ -44,7 +54,7 @@ function on_type({ $type, $parent_node, state, $node, depth }, options) {
 }
 
 // TODO remove and put somewhere else? (extensible)
-function on_classⵧafter({ $class, state, $node, depth }, options) {
+const on_classⵧafter: WalkerCallbacks<State, RenderingOptionsⵧToTerminal>['on_classⵧafter'] = ({ $class, state }) => {
 
 	// not implemented!
 	// TODO one day...
@@ -60,7 +70,7 @@ const callbacksⵧto_terminal = {
 	on_classⵧafter,
 }
 
-function renderⵧto_terminal(doc, callback_overrides = {}) {
+function renderⵧto_terminal(doc: Immutable<NodeLike>, callback_overrides = {}) {
 	//console.log(`${LIB} Rendering:`, doc)
 	return renderⵧto_text(
 		doc,

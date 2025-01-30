@@ -126,8 +126,8 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 		result = `<a href="${$hints.href}" target="_blank">${result}</a>`
 
 	// for demo only
-	if ($hints.uuid)
-		result = `<button class="o⋄button--inline o⋄rich-text⋄interactive" ${$hints.uuid}">${result}</button>`
+	if ($hints['uuid'])
+		result = `<button class="o⋄button--inline o⋄rich-text⋄interactive" ${$hints['uuid']}">${result}</button>`
 
 	state.str = result
 	return state

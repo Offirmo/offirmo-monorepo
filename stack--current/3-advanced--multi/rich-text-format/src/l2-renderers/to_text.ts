@@ -2,6 +2,7 @@ import type { Immutable } from '@offirmo-private/ts-types'
 
 import type { CheckedNode, Node, NodeLike } from '../l1-types/index.ts'
 import {
+	SPECIAL_LIST_NODE_CONTENT_KEY,
 	type BaseRenderingOptions,
 	type OnConcatenateStringParams,
 	type OnConcatenateSubNodeParams,
@@ -157,10 +158,10 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 			let max_value_length = 0
 			state.sub_nodes.forEach(li_node => {
 				//console.log({li_node})
-				const kv_node = li_node.$sub.content! as CheckedNode
+				const kv_node = li_node.$sub[SPECIAL_LIST_NODE_CONTENT_KEY]! as CheckedNode
 
-				const key_node = promoteꓽto_node(kv_node.$sub.key!)
-				const value_node = promoteꓽto_node(kv_node.$sub.value!)
+				const key_node = promoteꓽto_node(kv_node.$sub['key']!)
+				const value_node = promoteꓽto_node(kv_node.$sub['value']!)
 
 				const key_text = renderⵧto_text(key_node)
 				const value_text = renderⵧto_text(value_node)
@@ -305,8 +306,11 @@ function renderⵧto_text(
 
 /////////////////////////////////////////////////
 
+type RenderToTextState = State
+
 export {
 	type RenderingOptionsⵧToText,
+	type RenderToTextState,
 	DEFAULT_RENDERING_OPTIONSⵧToText,
 	callbacksⵧto_text,
 	renderⵧto_text,
