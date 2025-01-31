@@ -3,28 +3,29 @@ import { type Immutable } from '@offirmo-private/ts-types'
 import * as NORMALIZERS from '@offirmo-private/normalize-string'
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import {
+import type {
 	WithSchemaVersion,
 	WithRevision,
 	WithTimestamp,
 	WithLastUserInvestmentTimestamp,
-	AnyOffirmoState,
 	BaseRootState,
-	isꓽRootState,
 	UTBundle,
-	isꓽUTBundle,
 	BaseUState,
 	BaseTState,
-	isꓽWithSchemaVersion, isꓽBaseState, isꓽUState, isꓽTState,
+} from '@offirmo-private/state-utils'
+import {
+	isꓽWithSchemaVersion,
+	isꓽBaseState,
+	isꓽUState, isꓽTState, isꓽUTBundle,
+	isꓽRootState,
 } from '@offirmo-private/state-utils'
 import { getꓽUTC_timestampⵧhuman_readable‿ms } from '@offirmo-private/timestamps'
-
-import * as RRT from '@tbrpg/ui--rich-text'
 
 /////////////////////////////////////////////////
 
 function _getꓽstate_type(raw_state: Immutable<any>): 'root' | 'bundle' | 'U' | 'T' | 'base' | 'unknown' {
 	switch (true) {
+		// order is important!
 		case isꓽRootState(raw_state):
 			return 'root'
 		case isꓽUTBundle(raw_state):
@@ -35,7 +36,7 @@ function _getꓽstate_type(raw_state: Immutable<any>): 'root' | 'bundle' | 'U' |
 			return 'T'
 		case isꓽBaseState(raw_state):
 			return 'base'
-		// we don't go deeper (WithSchema etc. as we'll handle those common props on everything
+		// we don't go deeper (ex. isꓽWithSchemaVersion) as we'll handle those common props on everything
 		default:
 			return 'unknown'
 	}
@@ -138,7 +139,7 @@ function _renderⵧRootState(state: Immutable<BaseRootState>, options: Options, 
 function _renderⵧUTBundle(state: Immutable<UTBundle>, options: Options, key?: string): RichText.Document {
 	const builder = RichText.fragmentⵧblock()
 
-	builder.pushHeading('TODO UTBundle!')
+	builder.pushHeading('TODO _renderⵧUTBundle!')
 
 	return builder.done()
 }
@@ -170,7 +171,7 @@ function _renderⵧUState(state: Immutable<BaseUState>, options: Immutable<Optio
 function _renderⵧTState(state: Immutable<UTBundle>, options: Options, key?: string): RichText.Document {
 	const builder = RichText.fragmentⵧblock()
 
-	builder.pushHeading('TODO TState!')
+	builder.pushHeading('TODO _renderⵧTState!')
 
 	return builder.done()
 }
@@ -178,7 +179,7 @@ function _renderⵧTState(state: Immutable<UTBundle>, options: Options, key?: st
 function _renderⵧBaseState(state: Immutable<UTBundle>, options: Options, key?: string): RichText.Document {
 	const builder = RichText.fragmentⵧblock()
 
-	builder.pushHeading('TODO BaseState!')
+	builder.pushHeading('TODO _renderⵧBaseState!')
 
 	return builder.done()
 }
@@ -186,7 +187,7 @@ function _renderⵧBaseState(state: Immutable<UTBundle>, options: Options, key?:
 function _renderⵧany(state: Immutable<any>, options: Options, key?: string): RichText.Document {
 	const builder = RichText.fragmentⵧblock()
 
-	builder.pushHeading('TODO Any!')
+	builder.pushHeading('TODO _renderⵧany!')
 
 	return builder.done()
 }
