@@ -1,5 +1,5 @@
 import { type Immutable } from '@offirmo-private/ts-types'
-import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
+import { isꓽobjectⵧliteral } from '../01-primitives/index.ts'
 
 /////////////////////////////////////////////////
 // Notes: Typescript
@@ -17,6 +17,13 @@ function isꓽobjectⵧliteralⵧempty(o: Immutable<object>): o is {} {
 		return false // safety against wrong dynamic types
 
 	return isꓽarrayⵧempty(Object.keys(o))
+}
+
+function isꓽcontainer(c: Immutable<Array<any> | object>): c is {} | [] {
+	if (Array.isArray(c))
+		return true
+
+	return isꓽobjectⵧliteral(c)
 }
 
 function isꓽcontainerⵧempty(c: Immutable<Array<any> | object>): c is {} | [] {
@@ -50,6 +57,7 @@ function hasꓽcontent(x: any, prop?: string): boolean {
 export {
 	isꓽarrayⵧempty,
 	isꓽobjectⵧliteralⵧempty,
+	isꓽcontainer,
 	isꓽcontainerⵧempty,
 	hasꓽcontent,
 }

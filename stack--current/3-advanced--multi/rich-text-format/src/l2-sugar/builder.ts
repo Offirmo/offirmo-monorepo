@@ -24,16 +24,6 @@ interface Builder {
 	pushText(str: string): Builder
 	pushEmoji(e: string, options?: CommonOptions): Builder
 
-	// node ref is auto added into content
-	pushNode(node: Node, options?: CommonOptions): Builder
-
-	// NOTHING is added into content
-	// useful for
-	// 1. lists
-	// 2. manual stuff
-	pushRawNode(node: CheckedNode['$sub'][string], options?: CommonOptions): Builder
-	pushRawNodes(nodes: CheckedNode['$sub']): Builder // batch version
-
 	pushInlineFragment(str: string, options?: CommonOptions): Builder
 	pushBlockFragment(str: string, options?: CommonOptions): Builder
 
@@ -45,6 +35,16 @@ interface Builder {
 	pushLineBreak(): Builder
 
 	pushKeyValue(key: Node | string, value: Node | string | number, options?: CommonOptions): Builder
+
+	// node ref is auto added into content
+	pushNode(node: Node, options?: CommonOptions): Builder
+
+	// Raw = NOTHING is added into content
+	// useful for
+	// 1. lists
+	// 2. manual stuff
+	pushRawNode(node: CheckedNode['$sub'][string], options?: CommonOptions): Builder
+	pushRawNodes(nodes: CheckedNode['$sub']): Builder // batch version
 
 	done(): CheckedNode
 }

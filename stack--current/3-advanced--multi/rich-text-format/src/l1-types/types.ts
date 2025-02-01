@@ -52,8 +52,9 @@ interface Hints {
 	// emoji support: TODO one day, API following https://github.com/jdecked/twemoji
 	possible_emoji?: Emoji // this emoji can be used to represent/augment this node
 
-	// TODO styles
-	// TODO colors
+	underlying?: any // the source data this RichText was rendered from. Usage: a better renderer (ex. interactive widget) may ignore the rich text and render from this instead
+
+	// TODO styles TODO colors
 
 	// anything allowed
 	[k: string]: any

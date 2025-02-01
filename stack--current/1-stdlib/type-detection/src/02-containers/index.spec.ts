@@ -7,11 +7,11 @@ import {
 	isꓽobjectⵧliteralⵧempty,
 	isꓽcontainerⵧempty,
 	hasꓽcontent,
-} from './index.js'
+} from './index.ts'
 
 /////////////////////////////////////////////////
 
-describe('@offirmo-private/ts-utils', function () {
+describe('@offirmo-private/type-detection -- containers', function () {
 
 
 	describe('isꓽarrayⵧempty()', function() {

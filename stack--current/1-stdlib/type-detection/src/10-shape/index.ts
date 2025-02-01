@@ -6,7 +6,7 @@ import {
 } from '../01-primitives/index.ts'
 import {
 	isꓽthenable,
-} from '../02-thenable/index.ts'
+} from '../03-thenable/index.ts'
 
 /////////////////////////////////////////////////
 

@@ -26,9 +26,9 @@ import {
 	isꓽUTBundle,
 } from './type-guards.js'
 
-// "loose" =
-// can recover from some legacy states (wrong structure) and will fallback to 0 if not a state (ex. undefined or unrecognized)
-// BUT we don't type them as accepting null | undefined | any to better catch errors
+// "loose" = useful for comparisons with legacy/wrong states (wrong structure)
+// will not throw and will fall back to 0 if not a corresponding state (ex. undefined or unrecognized)
+// BUT we don't type them as accepting (null | undefined | any) to better catch errors
 
 
 export function getꓽschema_version<
@@ -88,7 +88,6 @@ export function getꓽschema_versionⵧloose<
 	return 0
 }
 
-
 export function getꓽrevision<
 	V extends WithRevision,
 	B extends BaseState,
@@ -143,7 +142,6 @@ export function getꓽrevisionⵧloose<
 	return 0
 }
 
-
 export function getꓽtimestamp<
 	T extends WithTimestamp,
 	BU extends BaseUState,
@@ -189,7 +187,6 @@ export function getꓽtimestampⵧloose<
 	return 0
 }
 
-
 export function getꓽlast_user_activity_timestamp<
 	T extends WithLastUserInvestmentTimestamp,
 	B extends BaseState,
@@ -221,7 +218,6 @@ export function getꓽlast_user_activity_timestampⵧloose<
 	// final fallback
 	return 0
 }
-
 
 // TODO review name
 export function getꓽbaseⵧloose<

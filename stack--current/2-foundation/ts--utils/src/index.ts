@@ -1,2 +1,2 @@
-export * from './compare/index.js'
-export * from './has-content/index.js'
+export * from './comparison/index.ts'
+export * from './stringify/index.ts'
