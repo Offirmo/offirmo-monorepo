@@ -108,7 +108,6 @@ audit trail
 authentication (authn) = making sure that a person or device is who (or what) they claim to be
 authentication vs authorization https://www.cloudflare.com/en-gb/learning/access-management/authn-vs-authz/
 authorization (authz) = determines what an authenticated user can see and do
-auto-scaling
 autocorrection https://www.canva.dev/blog/engineering/building-a-data-driven-autocorrection-system/
 availability
 availability zone
@@ -372,6 +371,7 @@ operations -- metrics -- incident rate
 operations -- metrics -- MTTD
 operations -- metrics -- MTTR
 ops -- toil
+optimizing anything other than the bottleneck is an illusion.  if you optimize before the bottleneck, you'll have a backlog of materials (data? jobs/tasks?) at the bottleneck. If you optimize after the bottleneck, you'll have idle
 orchestrator -- kubernetes
 organizations
 PACELC theorem = extension of CAP https://en.wikipedia.org/wiki/PACELC_theorem
@@ -437,6 +437,8 @@ retire, retain, rehost, re-platform, repurchase, refactor/re-architect
 routing -- hot/cold potato https://www.usenix.org/legacy/publications/library/proceedings/usenix02/full_papers/subramanian/subramanian_html/node28.html
 Roy Fielding's dissertation "Architectural Styles and the Design of Network-based Software Architectures" https://ics.uci.edu/~fielding/pubs/dissertation/top.htm
 scaling -- "internet scale", C10k, C10M problem  https://en.wikipedia.org/wiki/C10k_problem
+scaling -- auto-scaling
+scaling -- cliff = systems can't scale past a certain point. The cliff moves, usually to the database. https://www.linkedin.com/feed/update/share:7273025401101156352/
 scaling -- horizontally = more machines
 scaling -- load-shedding
 scaling -- separation of storage and compute
@@ -520,6 +522,7 @@ time -- leap second
 time -- leap second -- leap smear https://googleblog.blogspot.com/2011/09/time-technology-and-leaping-seconds.html
 time = difficult yet important for distributed https://unix4lyfe.org/time/
 Time to Detection (TTD)
+unbounded activity = An API endpoint should never perform an unbounded number of reads or writes. That means you cannot have an endpoint to export all your bank transactions (potentially unbounded reads), or an endpoint to import all transactions from another platform (potentially unbounded writes) https://www.linkedin.com/posts/thecodingteacher_an-api-endpoint-should-never-perform-an-unbounded-activity-7268647549333299200-NxP_/ 
 user flow -- error rate = percentage of unique users encountering at least one failure when attempting to perform one of the user operations composing the user flow
 user flow = actions users can perform to achieve a specific outcome, for example, uploading media or sharing a document
 user management -- Domain Enabled Signup

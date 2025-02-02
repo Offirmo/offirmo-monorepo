@@ -265,7 +265,7 @@ function _render(raw_state: Immutable<any>, options: Immutable<Options>, key?: s
 			.pushNode($name)
 			.pushText(`⟦`)
 			.pushEmoji(`📦`)
-			.pushText(` State of type "${type}"`)
+			.pushText(` State of type "${type}" / `)
 			.pushNode($schema_version)
 			.pushText(`⟧`)
 			.done()

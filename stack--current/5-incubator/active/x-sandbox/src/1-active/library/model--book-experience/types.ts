@@ -19,7 +19,7 @@ import { BookUId, BookPageReference, BookPartReference } from '../model--book/ty
 type AccessLevel =
 	| 'unaware'                  // no access + not even aware of existence
 	| 'accessⵧno'                // aware of existence but not in possession thus obviously can't read it
-	| 'accessⵧyes'               // has a physical copy (borrowed, stolen, bought, etc.)
+	| 'accessⵧyes'               // has a physical copy (given, bought, borrowed, found, stolen, etc.)
 
 // assuming we have access
 type ComprehensionLevel =

@@ -12,15 +12,22 @@ armor of Christ
 cargo cult
 Cosmicism = complete irrelevance of mankind in the face of the cosmic entities that apparently exist in the universe https://en.wikipedia.org/wiki/Cosmicism
 Countries - how christianism was introduced
+Dead Sea Scrolls
 Determinism = Philosophical view that events are determined by prior events
+devotions -- https://aleteia.org/2023/11/27/why-our-lady-of-grace-is-on-the-miraculous-medal
 doubt https://aleteia.org/2023/04/15/is-all-doubt-bad/
+Every time you step in, you rob your team of the lessons they need to grow https://www.linkedin.com/posts/tahahussain_at-microsoft-a-junior-engineer-spent-3-days-activity-7291493025334149120-MjEo
 Existential nihilism = Theory that life has no inherent meaning
 Existentialism = Philosophical form of enquiry into subjective existence
+fallen-away https://aleteia.org/2024/11/26/popes-advice-for-worried-grandmother-about-fallen-away-kids
 Fatalism = Philosophical doctrine on the subjugation of all events to fate
+fathers of the Church https://aleteia.org/2018/02/02/who-are-the-fathers-of-the-church-and-why-do-they-matter
 Fatima: message, children, secrets
 fine-tuned universe (not an argument) https://en.wikipedia.org/wiki/Fine-tuned_universe
 first cause
 great apostasy https://en.wikipedia.org/wiki/Great_Apostasy
+https://aleteia.org/2024/11/26/shinichi-suzuki-showed-how-music-can-ennoble-the-soul
+https://aleteia.org/2024/12/18/john-traynor-beneficiary-of-lourdes-stunning-71st-miracle
 human sacrifice
 influence? https://en.wikipedia.org/wiki/Roman_imperial_cult
 intelligent design https://en.wikipedia.org/wiki/Intelligent_design
@@ -28,6 +35,7 @@ Jacques Fesch
 le sacré
 Lourdes
 magical thinking https://en.wikipedia.org/wiki/Magical_thinking
+Megiddo Mosaic: Earliest evidence of Jesus proclaimed as God https://aleteia.org/2024/11/27/megiddo-mosaic-earliest-evidence-of-jesus-proclaimed-as-god
 mercy
 Misanthropy = General dislike of humanity
 Misotheism = Hatred of God or the gods
@@ -46,6 +54,7 @@ purposeless, mechanical and uncaring universe. Human beings, with their limited 
 Russian Pilgrim
 scientism
 selfishness
+serenity prayer https://aleteia.org/2024/08/09/stressed-say-the-full-length-serenity-prayer
 small & simple better than savant
 St (france)
 St Benedict Joseph Labre
@@ -54,6 +63,7 @@ St David the Dendrite
 St Francis
 St Jeanne d'Arc
 St John Bosco
+St Joseph https://aleteia.org/2017/12/30/how-old-was-st-joseph-when-jesus-was-born https://aleteia.org/2017/09/04/what-did-st-joseph-actually-do-as-a-carpenter
 St Mary -- of the pillar
 St Philip Neri: cat, beard shaving
 St Rita

@@ -80,7 +80,9 @@ https://en.wikipedia.org/wiki/Saturation_attack
 https://en.wikipedia.org/wiki/Armed_merchantman
 
 
+“tekton,” which had various meanings in the ancient world. According to one scholar, “Etymologically, the Greek term tektōn can be traced back to the Indo-European root tek- or teks- meaning to cut or fashion with an axe, but it also refers to weaving, building, fabricating and joining.” Additionally, “passages from the Iliad and the Odyssey have shown that tektones work with all kinds of materials and tools.”
 
+https://en.wikipedia.org/wiki/Child_abandonment
 
 Examples of workplace harassment may include:
 

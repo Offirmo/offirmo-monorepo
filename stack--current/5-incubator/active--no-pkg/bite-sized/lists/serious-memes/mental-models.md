@@ -1,5 +1,4 @@
 "natural order of things in society" established by the dominant ideology
-+++ evolution
 +++ https://thewokesalaryman.com/
 -- https://fs.blog/mental-models/
 -- tool https://explorer.globe.engineer/
@@ -149,6 +148,7 @@ curse of knowledge https://en.wikipedia.org/wiki/Curse_of_knowledge
 Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
 dark forest https://en.wikipedia.org/wiki/Dark_forest_hypothesis
 data driven
+dead horse theory https://www.linkedin.com/posts/kais-mejri-tunisie_deadabrhorseabrtheory-activity-7286736656194310146-MrM7
 debate -- https://en.wikipedia.org/wiki/Principle_of_charity
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
@@ -182,9 +182,11 @@ emotionally secure https://www.cnbc.com/2024/01/03/harvard-psychologist-if-you-a
 English
 equality vs equity https://medium.com/@CRA1G/the-evolution-of-an-accidental-meme-ddc4e139e0e4
 equity
+euthanasia https://aleteia.org/2024/09/02/new-australian-study-challenges-the-rise-of-euthanasia
 every occupation has its pro/cons
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 evidence based
+evolution
 evolution -- adaptive radiation = not because the newly dominant group is "superior" to the old but usually because an extinction event eliminates the old, dominant group and makes way for the new one https://en.wikipedia.org/wiki/Adaptive_radiation
 evolution -- LUCA https://en.wikipedia.org/wiki/Last_universal_common_ancestor
 evolution https://en.wikipedia.org/wiki/Evolutionary_game_theory
@@ -215,6 +217,7 @@ first practice what you preach
 first principles https://fs.blog/first-principles/
 first-principles thinker
 five eyes
+flourishing = meaning and purpose, deep personal relationships, and character and virtue https://link.springer.com/article/10.1007/s11017-024-09679-x
 frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
 frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
 free will https://en.wikipedia.org/wiki/Free_will
@@ -239,6 +242,7 @@ great filter https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
 grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
 growth mindset  https://www.khanacademy.org/college-careers-more/learnstorm-growth-mindset-activities-us/high-school-activities/activity-1-the-truth-about-your-brain-hs-02/a/the-truth-about-your-brain-part-1-3  https://www.youtube.com/watch?v=-71zdXCMU6A
+Haiti https://aleteia.org/2025/02/01/kids-without-school-because-of-gangs-are-recruited-by-gangs
 hangry = before lunch (vs. after)
 Hanlon’s razor = Never attribute to malice that which can be adequately explained by stupidity
 happiness -- is a skill
@@ -336,6 +340,7 @@ law -- crimes -- misdemeanors
 law -- crimes -- treason
 law -- crimes -- treason -- high
 law -- crimes -- war crimes
+law of Ability = every ability is acquired through the workings of life
 law of Shitty Click-Through Rates = Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
 le premier jour du reste de sa vie
 leadership -- change or die
@@ -409,6 +414,7 @@ normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-se
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
 on peut toujours faire mieux
+once deployed, it’s too late; there’s only escalation (nuclear, euthanazia)
 opportunity cost
 opportunity Cost: By reading this tweet, you are choosing not to read something else. Everything we do is like this. Doing one thing requires giving up another. Whenever you explicitly choose to do one thing, you implicitly choose not to do another thing.
 optimism = "keep only the one who say it’s possible" https://posthog.com/founders/first-ops-hire
@@ -500,6 +506,7 @@ resource curse -- Dutch disease https://en.wikipedia.org/wiki/Dutch_disease
 resource curse = the paradox of plenty: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources https://en.wikipedia.org/wiki/Resource_curse
 respect
 rest and vest https://news.ycombinator.com/item?id=14943146
+restraining order or protective order = an order used by a court to protect a person in a situation often involving alleged domestic violence, child abuse and neglect, assault, harassment, stalking, or sexual assault https://en.wikipedia.org/wiki/Restraining_order 
 ring theory -- 01 The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
 ring theory -- 02 When you are talking to a person in a ring smaller than yours, someone closer to the center of the crisis, the goal is to help. Listening is often more helpful than talking. But if you're going to open your mouth, first ask yourself if what you are about to say is likely to provide comfort and support. If it isn't, don't say it. Don't, for example, give advice. People who are suffering from trauma don't need advice. They need comfort and support. So say, "I'm sorry," or, "This must really be hard for you," or, "Can I bring you a pot roast?" Don't say, "You should hear what happened to me," or, "Here's what I would do if I were you." And don't say, "This is really bringing me down."
 ring theory https://en.wikipedia.org/wiki/Ring_theory_(psychology)
@@ -549,6 +556,16 @@ soft skills https://newsletter.weskao.com/p/how-to-give-a-senior-leader-feedback
 soft skills https://softskills.audio/
 staggered contour trenches
 stakeholder
+standards of proof -- 01 Some evidence
+standards of proof -- 02 Reasonable indications
+standards of proof -- 03 Reasonable suspicion
+standards of proof -- 04 Reasonable to believe
+standards of proof -- 05 Probable cause
+standards of proof -- 06 Some credible evidence
+standards of proof -- 07 Preponderance of the evidence
+standards of proof -- 08 Clear and convincing evidence
+standards of proof -- 09 Beyond reasonable doubt
+standards of proof https://en.wikipedia.org/wiki/Burden_of_proof_(law)
 standing on the shoulders of giants https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants
 start with the most risky / complicated
 start with why
@@ -560,6 +577,7 @@ Streisand effect = Increased awareness of information caused by efforts to suppr
 Sturgeon's law = "90% of everything is crap" https://en.wikipedia.org/wiki/Sturgeon%27s_law
 submarine = hidden project until ready
 success? power, influence, money, genius IQ, infinite resources
+suicide -- assisted https://aleteia.org/2024/12/07/is-the-united-kingdom-still-a-christian-nation
 Sun Tsu’s three rules of warfare -- Only fight when there is a prize worth fighting for
 Sun Tsu’s three rules of warfare -- Only fight when there is no other way of achieving your goal
 Sun Tsu’s three rules of warfare -- Only fight when you know you will win: the best fight is an unfair fight
