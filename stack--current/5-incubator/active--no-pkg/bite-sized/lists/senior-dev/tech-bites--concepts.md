@@ -43,6 +43,7 @@ allocation
 annotation
 anomaly detection
 API (Application Programming Interface) = interface (set of subroutine definitions, protocols, and tools) for exposing a software feature, defines interactions that allows two applications to talk to each other
+API -- bad = make assumptions about what you are trying to do, but then break when those assumptions are not exactly right, ex. AppCache
 API -- easy to build one, hard to build the **right** one
 API -- economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
 API -- external-facing = are where "design up front" and consideration about future use cases really matters. Changing APIs is a pain for us and for our users, and creating backwards incompatibility is horrible (although sometimes impossible to avoid). https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
@@ -59,7 +60,6 @@ authentication
 B2B (Business to Business)
 B2C (Business to Customer)
 B2G (Business to Government)
-bad API = make assumptions about what you are trying to do, but then break when those assumptions are not exactly right, ex. AppCache
 BDD (Behavior-Driven Development) https://cucumber.io/school/   Discovery -> Formulation -> Automation
 big companies software = At big companies, software tends to be written by large and frequently changing teams of mediocre programmers https://paulgraham.com/noop.html
 blocking
@@ -91,15 +91,14 @@ change -- category -- dynamic categorization = gathered through tooling + PRs
 change -- management
 change -- release tracks https://support.atlassian.com/organization-administration/docs/manage-product-release-tracks/
 change -- support readiness
-change -- type -- Experiment – temporary change intended to be visible to a small cohort of customers
-change -- type -- Technical only – invisible to customers
-change -- type -- User-facing – permanent change that users will notice
+change -- type -- experiment – temporary change intended to be visible to a small cohort of customers
+change -- type -- technical only – invisible to customers
+change -- type -- user-facing – permanent change that users will notice
 change = what causes most of the failures
 changelog -- conventional https://github.com/conventional-changelog
 changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
 CI (Continuous Integration) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
-clever code considered harmful https://www.joshwcomeau.com/career/clever-code-considered-harmful/
 client/server -- multi-tier architecture
 close / destroy / terminate / dispose / release / free / delete / destruct / finalize / teardown / cleanup / shutdown / stop / end / abort / cancel / halt / kill / exit / quit / unload / dispose...
 code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
@@ -150,6 +149,8 @@ concurrency -- thread
 concurrency -- thread pool
 concurrency -- wait-free, lock free
 connascence https://en.wikipedia.org/wiki/Connascence
+considered harmful
+considered harmful -- clever code https://www.joshwcomeau.com/career/clever-code-considered-harmful/
 consistency = lack of consistency is the primary long-term killer of large codebases, because it makes it impossible to make any general improvements https://www.seangoedecke.com/large-established-codebases/
 constructor
 content age rating -- "Common Sense" Media (private org) https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings
@@ -527,6 +528,7 @@ rolling deploy
 rpc -- deadline https://protobuf.dev/programming-guides/api/
 rule of composition https://www.linfo.org/rule_of_composition.html
 rule of silence https://www.linfo.org/rule_of_silence.html
+SAAS -- Shared responsibility model
 scatter/gather (datastreams)
 schema
 schema explorer
@@ -543,6 +545,7 @@ security -- cache poisoning https://en.wikipedia.org/wiki/Cache_poisoning
 security -- CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-benchmarks
 security -- Compartmentalize - so your system is not all or nothing
 security -- Don't write your own crypto
+security -- glassbox review = vs blackbox, looking at what happens when stimulated
 security -- guidelines -- CGI security https://www.cgisecurity.com/owasp/html/ch04.html
 security -- guidelines -- S/O https://stackoverflow.com/questions/2794016/what-should-every-programmer-know-about-security
 security -- Hiding secrets is hard - and secrets hidden in code won't stay secret for long
@@ -610,8 +613,10 @@ tech debt -- incidental - e.g. organic changes in complexity over time that incr
 temporary solutions https://80.lv/articles/this-30-year-old-windows-feature-was-created-as-a-temporary-solution/
 tenant -- isolation -- sandboxing / isolates / individual processes / individual VMs / individual containers
 tenant -- multi-tenant
-test -- fixture https://en.wikipedia.org/wiki/Test_fixture#Software
+test -- fixture -- general = setup designed to hold the OUT in place and allow it to be tested by being subjected to controlled test signals https://en.wikipedia.org/wiki/Test_fixture
+test -- fixture = (also called "test context") setup of state and input data designed to allow the OUT to be tested by being subjected to controlled test signals, ex. a fake database with data https://en.wikipedia.org/wiki/Test_fixture#Software
 test -- mutation testing https://sentry.engineering/blog/js-mutation-testing-our-sdks
+test -- Object Under Test (OUT)
 test -- test double -- 01 dummy = objects are passed around but never actually used. Usually they are just used to fill parameter lists
 test -- test double -- 02 fake = have working implementations, but usually take some shortcut which makes them not suitable for production (an in memory database is a good example)
 test -- test double -- 03 stub = provide canned answers to calls made during the test, usually not responding at all to anything outside what's programmed in for the test.
@@ -692,7 +697,6 @@ virtual private cloud (VPC)
 web assembly (asm.js)
 Wirth's law = software systems grow faster in size and complexity than methods to handle complexity are invented. software is getting slower more rapidly than hardware is becoming faster. https://en.wikipedia.org/wiki/Wirth%27s_law
 worse is better https://www.dreamsongs.com/WorseIsBetter.html
-X considered harmful
 XML
 XML (Extensible Markup Language)
 XSLT

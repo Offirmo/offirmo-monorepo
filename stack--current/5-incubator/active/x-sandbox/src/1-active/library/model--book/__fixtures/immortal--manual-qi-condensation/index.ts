@@ -12,6 +12,8 @@ import { isꓽBook } from '../../../book/l1-types/guards.ts'
 const uid: BookUId = '〖BOOKꓽIMMORTAL【[SECT]’s Qi Condensation Manual】〗'
 
 const cover: BookCover = {
+	uid,
+
 	title: '⎨⎨slotꓽsect⎬⎬’s Qi Condensation Manual',
 
 	author: '(unknown)',
@@ -26,7 +28,6 @@ const ↆget: BookResolver = async function ↆget(existing, ref) {
 	const { content } = await import('./content.ts')
 
 	const book: Book = {
-		uid,
 		...cover,
 		...content,
 	}

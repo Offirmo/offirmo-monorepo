@@ -12,13 +12,13 @@
 
 /////////////////////////////////////////////////
 
-import { BookUId, BookPageReference, BookPartReference } from '../model--book/types/index.ts'
+import type { BookUId, BookPageReference, BookPartReference } from '../model--book/types/index.ts'
 
 /////////////////////////////////////////////////
 
 type AccessLevel =
 	| 'unaware'                  // no access + not even aware of existence
-	| 'accessⵧno'                // aware of existence but not in possession thus obviously can't read it
+	| 'accessⵧno'                // aware of existence but not in possession thus obviously can't read it. Ex. need to be bought or found.
 	| 'accessⵧyes'               // has a physical copy (given, bought, borrowed, found, stolen, etc.)
 
 // assuming we have access

@@ -11,6 +11,7 @@ const uid: BookUId = '〖BOOKꓽLotR【Red Book of Westmarch】〗'
 const AUTHOR: Book['author'] = "Bilbo Baggins, Frodo Baggins et al."
 
 const COVER: BookCover = {
+	uid,
 	title: 'the downfall of the lord of the rings and the return of the king',
 	author: AUTHOR,
 	subtitles: [
@@ -25,7 +26,6 @@ const COVER: BookCover = {
 
 const BOOK: Book = {
 	...COVER,
-	uid,
 	parts: {
 		1: 'The Hobbit, or There and Back Again',
 		2: 'The Lord of the Rings',

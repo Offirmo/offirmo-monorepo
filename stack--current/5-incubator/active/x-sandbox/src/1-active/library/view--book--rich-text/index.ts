@@ -14,25 +14,40 @@ function renderꓽcover__spine(cover: Immutable<BookCover>): RichText.Document {
 	const title = RichText.renderⵧto_text(cover.title || '(missing title)')
 	const author = RichText.renderⵧto_text(cover.author || 'Unknown Author')
 
-	const $doc = RichText.fragmentⵧinline()
-		.pushNode(
-			RichText.em().pushText(title.trim()).done(),
-			{
-				// TODO one day: color, font family, etc.
-				id: 'title',
-			},
-		)
-		.pushText(' by ')
-		.pushNode(
-			RichText.weak().pushText(author.trim()).done(),
+	const builder = RichText.fragmentⵧinline()
+
+	if (cover.hints?.emoji)
+		builder
+			.pushEmoji(cover.hints?.emoji)
+			.pushText(' ')
+
+	builder.pushNode(
+		RichText.em().pushText(title.trim()).done(),
+		{
+			// TODO one day: color, font family, etc.
+			id: 'title',
+		},
+	)
+
+	builder.pushNode(
+		RichText.weak().pushText(' by ').done(),
+		{
+			id: 'by'
+		},
+	)
+
+	builder.pushNode(
+			RichText.fragmentⵧinline().pushText(author.trim()).done(),
 			{
 				id: 'author'
 			},
 		)
-		// TODO one day embed the data itself
-		.done()
 
-	return $doc
+	builder.addHints({
+		underlying: cover,
+	})
+
+	return builder.done()
 }
 
 /////////////////////////////////////////////////

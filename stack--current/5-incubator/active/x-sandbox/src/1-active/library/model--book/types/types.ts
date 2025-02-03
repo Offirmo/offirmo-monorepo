@@ -42,6 +42,7 @@ type Author = Text | undefined // undef = unknown
  * https://fr.wikipedia.org/wiki/Glossaire_de_la_reliure
  */
 interface BookCover {
+	uid: BookUId // needed to later load the content
 
 	title: Text
 
@@ -99,9 +100,7 @@ interface BookPart {
 // top part
 // that can be independently considered
 interface Book extends BookPart, BookCover {
-	uid: BookUId // for referencing
-
-	title: Text // mandatory property (needed to properly inherit)
+	title: Text // needed to resolve the conflicting inheritance
 
 	is_template?: true // TODO review
 	// TODO declare template slots?
