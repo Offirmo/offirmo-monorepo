@@ -15,6 +15,9 @@ https://escape-velocity.games/EVN_Walkthroughs/html/index.html
 https://www.reddit.com/r/Escape_Velocity/
 https://www.nexusmods.com/escapevelocitynova/
 
+https://thealexandrian.net/wordpress/15222/roleplaying-games/game-structures-part-13-custom-structures
+https://thealexandrian.net/wordpress/15222/roleplaying-games/game-structures-part-13-custom-structures#comment-2002228
+
 
 ## Mass Effect
 Sources:
@@ -61,7 +64,9 @@ space hunters
 Vinéens, ark ships, lost planets...
 
 
-
+## misc / other
+https://thealexandrian.net/wordpress/15331/roleplaying-games/deus-ex-tactical-hacking
+Stellaris https://stellaris.paradoxwikis.com/Stellaris_Wiki https://stellaris.paradoxwikis.com/Crisis
 ## tosort
 
 - Valérian

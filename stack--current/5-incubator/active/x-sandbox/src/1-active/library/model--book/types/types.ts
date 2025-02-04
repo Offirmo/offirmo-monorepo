@@ -114,7 +114,9 @@ interface Book extends BookPart, BookCover {
 type BookPageReference = string // TODO clarify the format, BookPartKey separated by XX
 
 // path to any part of a book
-type BookPartReference = string // TODO clarify the format
+type BookPartReference = // TODO clarify the format
+	| '.' // root
+	| string
 
 /////////////////////////////////////////////////
 

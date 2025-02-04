@@ -11,7 +11,7 @@ import { COVERS } from '../__fixtures/index.ts'
 
 /////////////////////////////////////////////////
 
-describe(`${LIB} -- types`, function() {
+describe(`${LIB} -- Book -- types`, function() {
 
 	describe('generic render -- text', function () {
 

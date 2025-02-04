@@ -97,6 +97,7 @@ LLM -- "Pathways Language Model" (PaLM) 540B model from Google AI
 LLMs - large language models
 machine learning feature = ‘feature’, in this context might be something like ‘number of times UserA has viewed Issue123 in the last week', which may be a useful signal to a machine learning model
 machine learning feature store = ex. Tecton https://docs.tecton.ai/docs/introduction
+mind tax https://www.fastcompany.com/91242373/the-cognitive-cost-of-ai
 Mixture of Experts (MoE) = combining models https://huggingface.co/blog/moe
 Mixture of Experts -- "sparse mixture of experts" (SMoE)
 ML - machine learning https://en.wikipedia.org/wiki/Machine_learning ~"subfield of AI that describes AI using data and algorithms without a programmer explicitly specifying the solution path through program code"
@@ -144,6 +145,7 @@ Retrieval-Augmented Generation (RAG) = a methodology that assists Large Language
 RLHF reinforcement learning from human feedback
 SageMaker (AWS)
 Searle's Chinese Room https://plato.stanford.edu/entries/chinese-room/
+security -- Freysa "approveTransfer" https://x.com/jarrodwattsdev/status/1862299845710757980
 singularity
 skilled pragmatist https://cutlefish.substack.com/p/tbm-271-the-biggest-untapped-opportunity
 sleeper agents (security) https://www.anthropic.com/research/probes-catch-sleeper-agents

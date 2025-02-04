@@ -10,7 +10,7 @@ import {
 	BOOK_PART_KEY_KEYWORDSᐧFIRST,
 	BOOK_PART_KEY_KEYWORDSᐧLAST,
 } from './types/types.ts'
-import { PAGE_REFERENCEⵧSEPARATOR } from './consts.ts'
+import { REFERENCEⵧSEPARATOR } from './consts.ts'
 import { isꓽPageⵧlike } from './types/types-guards.ts'
 
 /////////////////////////////////////////////////
@@ -117,7 +117,7 @@ function getꓽBookPageⵧchain(
 	book: Immutable<Book>,
 	page_ref: BookPageReference,
 ): BookPageReferenceChain {
-	const pathⵧsplit = page_ref.split(PAGE_REFERENCEⵧSEPARATOR)
+	const pathⵧsplit = page_ref.split(REFERENCEⵧSEPARATOR)
 	return _getꓽBookPageⵧchain(book, pathⵧsplit)
 }
 
@@ -127,7 +127,7 @@ function getꓽBookPageRefⵧfrom_chain(
 ): BookPageReference {
 	const chain_keys: BookPartKey[] = chain.steps.map(step => step.keyⵧselected)
 
-	return chain_keys.join(PAGE_REFERENCEⵧSEPARATOR)
+	return chain_keys.join(REFERENCEⵧSEPARATOR)
 }
 
 function getꓽBookPageⵧchainⵧfrom_chain(

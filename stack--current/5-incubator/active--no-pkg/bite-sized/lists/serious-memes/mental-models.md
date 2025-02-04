@@ -69,6 +69,7 @@ base rate: The average outcome for an event over time. They’re like batting av
 be prepared
 bee browsing
 being enough
+Bet you’re fun at parties
 better ask for forgiveness than for permission
 biases -- attractiveness
 biases -- baby-face
@@ -264,14 +265,14 @@ high performance
 high performance -- high performing teams
 high performance -- ripple effect -- high performers attract other high performers
 high performance -- ripple effect = training, emulation
-high school "What You'll Wish You'd Known" https://paulgraham.com/hs.html
+high school -- "What You'll Wish You'd Known" https://paulgraham.com/hs.html
 high-profile = ~widely known, ex. high-profile media
 high/low functioning human
 historic recurrence https://en.wikipedia.org/wiki/Historic_recurrence
 Hock Principle: Simple, clear purpose and principles give rise to complex and intelligent behavior. Complex rules and regulations give rise to simple and stupid behavior.
 Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory
 Holodomor https://en.wikipedia.org/wiki/Holodomor
-Hormesis = A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
+hormesis = A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
 Horseshoe Theory = Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
 https://36questionsinlove.com/
 https://cobeats.com/folder/ryfTgPr9H
@@ -288,6 +289,7 @@ incentive
 incentive -- perverse -- cobra effect
 incentive -- perverse https://en.wikipedia.org/wiki/Perverse_incentive
 inclusiveness = extend the opportunity for everyone to contribute
+income poor but asset rich
 influence operations
 influence operations -- breakout scale -- 01 one platform, no breakout
 influence operations -- breakout scale -- 02 one platform, breakout OR many platforms, no breakout
@@ -371,6 +373,7 @@ lifestyle
 linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_relativity
 living the good life
 Logical Problem of Evil https://christianity.stackexchange.com/questions/100110/what-are-christian-responses-to-the-logical-problem-of-evil
+lois somptuaires https://en.wikipedia.org/wiki/Tyrian_purple
 look for Things That Don’t Make Sense: The world always makes sense. But it can be confusing. When it is, your model of the world is wrong. So, things that don’t make sense are a learning opportunity. Big opportunities won’t make sense until it’s too late to profit from them.
 loosing faith in humanity
 love = wanting the best
@@ -391,6 +394,7 @@ mindset -- growth
 mindset -- mentality in front of adversity: victim, survivor, conqueror
 minorities -- silent majority = unspecified large group of people in a country or group who do not express their opinions publicly https://en.wikipedia.org/wiki/Silent_majority
 minorities -- vocal minority
+mom and pop -- the worst https://www.reddit.com/r/yimby/comments/1biq3gg/lets_not_romanticize_smalltime_landlords_as_we/?sort=top
 mondegreen https://thehabit.co/knowledge-is-power-france-is-bacon/
 monkey ladder experiment https://factschology.com/factschology-articles-podcast/monkey-ladder-experiment-truth
 Monty Hall problem https://en.wikipedia.org/wiki/Monty_Hall_problem
@@ -415,10 +419,12 @@ not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-doz
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
 on peut toujours faire mieux
 once deployed, it’s too late; there’s only escalation (nuclear, euthanazia)
+one-size-fits-all
 opportunity cost
 opportunity Cost: By reading this tweet, you are choosing not to read something else. Everything we do is like this. Doing one thing requires giving up another. Whenever you explicitly choose to do one thing, you implicitly choose not to do another thing.
 optimism = "keep only the one who say it’s possible" https://posthog.com/founders/first-ops-hire
 other people’s problems / pick your battles
+out of your league
 outside context problem (OCP) = a problem that is "outside the context" as it is generally not considered until it occurs, and the capacity to actually conceive of or consider the OCP in the first place may not be possible or very limited (i.e., the majority of the group's population may not have the knowledge or ability to realize that the OCP can arise, or assume it is extremely unlikely). An example of OCP is an event in which a civilization does not consider the possibility that a much more technologically advanced society can exist, and then encounters one https://en.wikipedia.org/wiki/Excession#Outside_Context_Problem 
 Overton Window: You can control thought without limiting speech. You can do it by defining the limits of acceptable thought while allowing for lively debate within these barriers. For example, Fox News and MSNBC set limits on what political thoughts they consider acceptable, but in the grand scheme of things, they’re both fairly conventional. The political spectrum stretches far beyond the ideas they entertain, but ideas outside their limits are shunned.
 paradigm shift https://en.wikipedia.org/wiki/Paradigm_shift

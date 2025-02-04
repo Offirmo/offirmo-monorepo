@@ -199,6 +199,15 @@ replay value -- speedrunning
 rush
 sandbox
 softlock
+structures -- cleanliness = https://thealexandrian.net/wordpress/15176/roleplaying-games/game-structures-part-8-the-importance-of-clean-structures
+structures -- combat = hit -> defeat the opponent
+structures -- completeness = https://thealexandrian.net/wordpress/15203/roleplaying-games/game-structures-part-11-complete-game-structures
+structures -- dungeoncrawl = explore the next -> clear the dungeon
+structures -- heist
+structures -- mapcrawl = explore the next -> clear the map https://thealexandrian.net/wordpress/15156/roleplaying-games/game-structures-part-6-hexcrawls
+structures -- micro(rulings)/macro(scenario)
+structures -- mystery = Look for clues -> Solve the mystery https://thealexandrian.net/wordpress/15151/roleplaying-games/game-structures-part-5-mysteries
+structures = goal, action -> outcome, resolution/reward https://thealexandrian.net/wordpress/15126/roleplaying-games/game-structures
 survival
 theorycraft https://en.wikipedia.org/wiki/Theorycraft
 titles

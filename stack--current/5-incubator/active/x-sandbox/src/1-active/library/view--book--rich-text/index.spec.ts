@@ -12,7 +12,7 @@ import { COVERS } from '../model--book/__fixtures/index.ts'
 
 /////////////////////////////////////////////////
 
-describe(`${LIB} -- RichText`, function() {
+describe(`${LIB} -- Book -- RichText`, function() {
 
 	describe('renderꓽcover__spine', function () {
 

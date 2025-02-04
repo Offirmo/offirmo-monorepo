@@ -1,6 +1,3 @@
 
-const PAGE_REFERENCEⵧSEPARATOR = '↳'
-
-export {
-	PAGE_REFERENCEⵧSEPARATOR,
-}
+export const REFERENCEⵧSEPARATOR = '↳'
+export const REFERENCEⵧROOT = '.'

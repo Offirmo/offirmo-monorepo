@@ -1,9 +1,9 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import type { BookCover } from '../model--book/types/index.ts'
-import { AccessLevel, BookExperience, ComprehensionLevel } from '../book--experience/types.ts'
-import { BookStash } from './types.ts'
+import type { BookCover, BookUId } from '../model--book/types/index.ts'
+import type { BookExperience } from '../model--book-experience/types.ts'
+import type { BookStash } from './types.ts'
 
 /////////////////////////////////////////////////
 
