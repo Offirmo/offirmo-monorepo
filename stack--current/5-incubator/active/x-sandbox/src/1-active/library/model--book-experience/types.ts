@@ -41,7 +41,7 @@ export type ComprehensionLevel = Enum<typeof ComprehensionLevel> // eslint-disab
 interface BookExperience {
 	book_uid: BookUId // TODO review: redundant? or should be experience ID?
 
-	current_bookmark?: BookPageReference
+	bookmark?: BookPageReference
 
 	// by path bc we can have complex situations
 	// for ex. 10 volumes be we only have access to the first 3

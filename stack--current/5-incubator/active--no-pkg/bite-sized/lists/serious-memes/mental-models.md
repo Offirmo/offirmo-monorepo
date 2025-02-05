@@ -5,6 +5,8 @@
 0-sum game
 1 or 2 way door
 12 steps
+1984
+pit of success = place where it’s easier to do the right thing than the wrong thing
 1st thought v.s 2nd thought = 2nd = what we truly are
 3 -- trichotomy https://en.wikipedia.org/wiki/Trichotomy_(philosophy)
 3 -- trilemma https://en.wikipedia.org/wiki/Trilemma
@@ -27,7 +29,7 @@
 5 mantras -- You are enough = I don’t tell myself this often enough. I’d dare to say that you don’t either. But it’s a mantra that I repeat to myself often. 
 5 mantras = by Christopher Davis (burnout)
 5 regrets of dying
-80/20 rule "Pareto"
+80/20 rule "Pareto distribution" https://en.wikipedia.org/wiki/Pareto_distribution
 [ ] +++ https://fs.blog/mental-models/
 [ ] AAA TODO https://flinkliv.com/
 [ ] AAA TODO https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
@@ -44,6 +46,7 @@
 [ ] Nobel https://www.nobelprize.org/all-nobel-prizes-2024/
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 a country is a farm
+absorbing barrier = anything that prevents people with skin in the game from emerging from it, and to which the system will invariably tend. Let us call these situations ruin, as the entity cannot emerge from the condition https://en.wikipedia.org/wiki/Ergodic_hypothesis#Ergodic_hypothesis_in_finance
 accent -- miscommunication https://paulgraham.com/accents.html
 acceptance
 action -- deep dive & low-hanging fruits
@@ -169,6 +172,7 @@ disfranchisement = voter disqualification, is the restriction of suffrage (the r
 disrespect = lack of consideration or regard for others’ privacy, physical or emotional space, viewpoints, or belongings. Intimidation, aggressive behavior, “the silent treatment”. Thoughtless or arrogant behavior, like using profanity when someone objects to it.
 don't expect perfection -> trigger self-consciousness = counter-productive
 doublespeak: People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
+drinking https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd44714e619a
 drive by
 due diligence
 dysthymia https://en.wikipedia.org/wiki/Dysthymia
@@ -222,6 +226,7 @@ flourishing = meaning and purpose, deep personal relationships, and character an
 frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
 frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
 free will https://en.wikipedia.org/wiki/Free_will
+friends / party friends "When you lose friends, it’s because you’ll realise that without alcohol, they don’t have much in common with you." https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd44714e619a
 fulfillment https://longform.asmartbear.com/fulfillment/
 fundamental attribution error https://en.wikipedia.org/wiki/Fundamental_attribution_error
 future of Earth https://en.wikipedia.org/wiki/Future_of_Earth https://en.wikipedia.org/wiki/Timeline_of_the_far_future
@@ -281,6 +286,7 @@ human trafficking
 I might be reading too much into it but...
 ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/ https://strategyu.co/pyramid-principle-part-2-communicate-top-down/
 identity -- " I’d tied my identity and reputation to hard work"
+idées (no natural upper bound) ne s'usent que si l'on ne s'en sert pas (contre intuitif) https://en.wikipedia.org/wiki/Lindy_effect#History
 if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
 ikigai
 impostor syndrome
@@ -370,6 +376,7 @@ leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 life https://en.wikipedia.org/wiki/Life
 life isn't fair https://www.linkedin.com/pulse/lifell-kill-ya-allen-white
 lifestyle
+Lindy effect = a theorized phenomenon by which the future life expectancy of some non-perishable things, like a technology or an idea, is proportional to their current age https://en.wikipedia.org/wiki/Lindy_effect
 linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_relativity
 living the good life
 Logical Problem of Evil https://christianity.stackexchange.com/questions/100110/what-are-christian-responses-to-the-logical-problem-of-evil
@@ -401,10 +408,13 @@ Monty Hall problem https://en.wikipedia.org/wiki/Monty_Hall_problem
 moral hazard = Increases in the exposure to risk when insured, or when another bears the cost
 moral imperative https://en.wikipedia.org/wiki/Moral_imperative
 moral system
+morita therapy
 mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruction
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
 naivety
 naiveté: abus sexuels, mafia
+narcissism
+narcissism -- overlaps with neuroticism
 needs / wants https://en.wikipedia.org/wiki/Need
 Never interrupt someone doing what you said couldn't be done.
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
@@ -441,6 +451,7 @@ pattern / antipattern
 paved path = "The paved path" refers to a methodology where the next step to take is evident
 pay it forward
 penny Problem Gap: Economists assume demand is linear, but people’s behavior totally changes once an action costs money. If the inventors of the Internet had known about it, spam wouldn’t be such a problem. If sending an email cost you $0.001, there’d be way less spam.
+People will think you are judging them (drinking) https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd44714e619a
 Perfect is the enemy of good https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good
 personal finance -- FIRE
 personal finance -- HENRY
@@ -454,6 +465,7 @@ Peter principle = people in a hierarchy tend to rise to "a level of respective i
 phenomenology (physics) = branch of theoretical physics in which physicists construct realistic models of nature from more abstract theoretical ideas https://en.wikipedia.org/wiki/Phenomenology_(physics)
 picture the success
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
+planning fallacy
 porn
 poverty -- Sherman Alexie = It sucks to be poor, and it sucks to feel that you somehow deserve to be poor. You start believing that you're poor because you're stupid and ugly. And then you start believing that you're stupid and ugly because you're Indian. And because you're Indian you start believing you're destined to be poor. It's an ugly circle and there's nothing you can do about it. Poverty doesn't give you strength or teach you lessons about perseverance. No, poverty only teaches you how to be poor.
 power -- French and Raven five bases of power = reward, coercion, legitimate, expert, referent, informational https://en.wikipedia.org/wiki/French_and_Raven%27s_bases_of_power
@@ -470,6 +482,7 @@ praise more than criticize
 praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism
 preach the water but drink wine / faites ce que je dis mais pas ce que je fais
 preference Falsification: People lie about their true opinions and conform to socially acceptable preferences instead. In private they’ll say one thing. In public, they’ll say another.
+preferential attachment / effet Matthieu
 pretty privilege -> karen
 primals https://myprimals.com https://templetonreligiontrust.org/explore/discovering-peoples-primal-world-beliefs/
 primate dominance hierarchy = At the end of the day we’re all just mammals trying to map every organization we’re a part of onto a primate dominance hierarchy https://blog.staysaasy.com/p/a-practical-guide-to-executive-presence-1de
@@ -551,6 +564,7 @@ signalling -- theory https://en.wikipedia.org/wiki/Signalling_theory
 signalling -- virtue https://en.wikipedia.org/wiki/Virtue_signalling
 significance https://www.explainxkcd.com/wiki/index.php/882:_Significant
 silent majority
+simulation hypothesis https://en.wikipedia.org/wiki/Simulation_hypothesis
 sinecure = position with a ~salary that requires or involves little or no responsibility, labour https://en.wikipedia.org/wiki/Sinecure
 Situation Complication Question Answer (SCQA) = A Framework For Defining Problems & Hypotheses https://strategyu.co/scqa-a-framework-for-defining-problems-hypotheses/
 skin in the game
@@ -622,6 +636,7 @@ tools -- trello
 top-down/bottom-up
 tradeoffs / can't have everything
 tragedy of the commons = Self-interests causing depletion of a shared resource
+transferrable skills
 Tree Decision Rights Model http://www.cio.com/article/2386119/careers-staffing/how-it-leaders-can-empower-teams-to-become-decision-makers.html
 tribal knowledge
 trolley problem https://neal.fun/absurd-trolley-problems/

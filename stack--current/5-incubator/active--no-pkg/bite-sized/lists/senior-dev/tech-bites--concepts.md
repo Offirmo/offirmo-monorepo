@@ -43,19 +43,39 @@ allocation
 annotation
 anomaly detection
 API (Application Programming Interface) = interface (set of subroutine definitions, protocols, and tools) for exposing a software feature, defines interactions that allows two applications to talk to each other
+API -- approach design with real-life scenarios and code in mind.
+API -- avoid introducing breaking changes as much as possible.
 API -- bad = make assumptions about what you are trying to do, but then break when those assumptions are not exactly right, ex. AppCache
+API -- deprecation -- decommission = end support for an API in production. A decommissioned API will no longer appear in any supported Public API surface, and calls made to it are not guaranteed to succeed
+API -- deprecation -- deprecate = To formally indicate that support for an API has been withdrawn, and that the API will be decommissioned in the future. Deprecation of an API has no immediate functional impact on the API itself or existing consumers of the API
+API -- deprecation -- deprecation period = time between an API being marked as deprecated and it being decommissioned
+API -- deprecation -- process = decide, analyse existing use, document, consult, announce, outreach, support, track, turn off
+API -- deprecation -- retiring = decommissioning of an API without a suitable replacement
+API -- design -- Don’t contradict past decisions, Don’t reduce future options
 API -- easy to build one, hard to build the **right** one
 API -- economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
+API -- enums over booleans
 API -- external-facing = are where "design up front" and consideration about future use cases really matters. Changing APIs is a pain for us and for our users, and creating backwards incompatibility is horrible (although sometimes impossible to avoid). https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
+API -- features should be small, atomic and composable.
+API -- follow existing patterns and conventions.
 API -- future proof https://protobuf.dev/programming-guides/api/
+API -- guide developers into the pit of success.
+API -- input = Prefer objects for inputs. If a function accepts multiple pieces of data — or may accept multiple pieces of data in the future — create a single object parameter, rather than using multiple parameters. This ensures that: We can add parameters without breaking the contract + The order of the parameters becomes unimportant
+API -- must not violate the principle of least astonishment.
+API -- output = prefer objects, same reasons as input = extensible without breaking the contract
 API -- pagination -- token https://protobuf.dev/programming-guides/api/ 
+API -- public = Requires a commitment to maintain it; Can affect the velocity of the underlying feature
+API -- result = Prefer declarative interfaces: An API that describes a result, rather than how to achieve that result, is more stable, since the underlying implementation can evolve without affecting the API signature
+API -- should not force developers to do anything that could easily be done for them.
+API -- should present the mechanism, not the experience.
+API -- should provide helper functions to compose small features into common use-cases where appropriate.
 API -- tradeoffs = ex. safety / flexibility / extensibility / speed
 assembly
 async -- "coloring" https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/
 async -- design pattern -- reactor pattern
 async -- sync = By synchronous we mean a function that calls its callback on the same tick in the javascript event loop, without doing any I/O or using any timers
 atomic
-audit trail - what happened, when, who made the request and how?
+audit trail = what happened, when, who made the request and how?
 authentication
 B2B (Business to Business)
 B2C (Business to Customer)
@@ -238,7 +258,8 @@ encoding -- binary-to-text -- risk of accidental words
 encoding -- binary-to-text https://en.wikipedia.org/wiki/Binary-to-text_encoding
 entitlements -- non-standard offerings or commercial terms to meet their needs through high touch sales motions. High touch Sales teams work closely with our customers to understand their solution needs and buying preferences like Multi-year billed annual, ELAs, Ramp discounts. There is a significant volume of customers and revenue from such deals
 error -- handling -- fail fast = Check input and fail on nonsensical input or invalid state as early as possible, preferably with an exception or error response that will make the exact problem clear to your caller https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
-error -- handling = exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
+error -- handling -- exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
+error -- reuse error codes
 error -- type -- domain error = out of the specification, ex. sqrt(-x) https://cplusplus.com/reference/stdexcept/domain_error/
 error -- type -- logic error = errors in the internal logical of the program, such as violation of logical preconditions or class invariants https://cplusplus.com/reference/stdexcept/logic_error/
 error -- type -- runtime error = errors that can only be detected during runtime https://cplusplus.com/reference/stdexcept/runtime_error/
@@ -398,6 +419,14 @@ monorepo -- megarepo
 multi tenant -- isolation
 MVC (Model View Controller)
 namespace
+naming -- must leave no room for interpretation
+naming -- must not overload pre-existing, well known meanings
+naming -- must use American English
+naming -- should be chosen based on essential function, rather than UI presentation or internal-only conventions
+naming -- should be consistent
+naming -- should be precise
+naming -- should be purposeful
+naming -- should be short and simple
 naming https://ntietz.com/blog/when-to-use-cute-names-or-descriptive-names/
 no silver bullet in engineering = we cannot expect ever to see two-fold gains every two years https://en.wikipedia.org/wiki/No_Silver_Bullet
 node.js -- principles https://www.platformatichq.com/node-principles
@@ -515,6 +544,11 @@ regex https://regexlearn.com/
 register
 release channels = offer a trade-off between feature availability and stability https://support.google.com/chrome/a/answer/9027636?hl=en https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels
 release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-10-insider-program-from-rings-to-release-channels/
+resource -- deletion -- hard
+resource -- deletion -- soft = marking a resource as unavailable, rather than removing it from the datasource completely. Such resources will be said to be soft deleted and should be deleted at a later date. Allow easier restoration in case of an error/attack = undelete
+resource -- deletion -- undelete = Undeleting shouldn’t be triggered by users, but instead by trusted entities such as support, security
+resource -- subresource = delete them with parent
+resource -- trashing / untrashing = known feature, different from soft deletion
 REST (REpresentational State Transfer)
 REST HTTP = How to GET a Cup of Coffee https://www.infoq.com/articles/webber-rest-workflow/
 revisions
@@ -591,11 +625,12 @@ SSH (Secure Shell)
 stack overflow
 standard deviation
 state
+state -- making impossible states impossible https://medium.com/elm-shorts/how-to-make-impossible-states-impossible-c12a07e907b5
 state -- management
 state -- stateless
 stats course https://www.youtube.com/playlist?list=PLltdM60MtzxNwhL4sg7swFFlUlH7EEy7H []
 status codes
-Stick to boring architecture for as long as possible https://addyosmani.com/blog/boring-architecture/
+stick to boring architecture for as long as possible https://addyosmani.com/blog/boring-architecture/
 stories to help you grow as a software developer https://medium.com/@MediumStaff/list/stories-to-help-you-grow-as-a-software-developer-b1d913188c20
 straw-dog proposal = (jargon) a brainstormed simple draft proposal intended to generate discussion of its disadvantages and to spur the generation of new and better proposals https://en.wikipedia.org/wiki/Straw_man_proposal#Software_development
 streams
@@ -691,6 +726,7 @@ use boring technology
 use strict
 User Generated Content (UGC)
 UX (User Experience)
+validate everything
 vaporware
 variables pointer / natives
 virtual private cloud (VPC)
