@@ -37,7 +37,6 @@
 		"declarationMap": true,
 		"downlevelIteration": false,
 		"importHelpers": true,
-		"isolatedDeclarations": false,
 		"newLine": "lf",
 		"noEmitHelpers": true,
 		"noEmitOnError": true,
@@ -50,9 +49,10 @@
 		"allowSyntheticDefaultImports": false,
 		"esModuleInterop": false,
 		"forceConsistentCasingInFileNames": true,
+		"isolatedDeclarations": false,
 		"isolatedModules": true,
 		"preserveSymlinks": false,
-		"verbatimModuleSyntax": false,
+		"verbatimModuleSyntax": true,
 
 
 		"emitDecoratorMetadata": false,

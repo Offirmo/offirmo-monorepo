@@ -19,3 +19,4 @@
 * frog in a well = vastness of the universe, where are we? what are we?
 * frog in a well = we may need to improve our brain capabilities 
 * great filters: ensure we're immune / not trapped https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
+* expand human potential

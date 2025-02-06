@@ -24,7 +24,6 @@ REMINDER: the build script dynamically relax a few rules in dev mode (--watch), 
 
 ### TODO review those features
 
-path rewriting `allowImportingTsExtensions true 		"rewriteRelativeImportExtensions": true,`
 
 #### PENDING 5.8
 
@@ -114,21 +113,27 @@ Example of errors:
 
 ### Interop
 
-* `allowSyntheticDefaultImports` https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports
+* ✅`allowSyntheticDefaultImports` https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports
   * AFAIU doesn't add any code, it's just type checking (cf. official doc)
   * IDEALLY we want it to `false`:
     * better detect non-ESM code ✔️
-  * CURRENTLY intentionally set to `false` by default since we switched all to pure ESM, ad-hoc relaxing in specific module as needed
-* `esModuleInterop` https://www.typescriptlang.org/tsconfig#esModuleInterop
+  * CURRENTLY set to `false` by default ✔️ since we switched all to pure ESM, ad-hoc relaxing in specific module as needed
+* ✅`esModuleInterop` https://www.typescriptlang.org/tsconfig#esModuleInterop
   * AFAIU makes the generated code use helper functions
   * IDEALLY we want it to `false`:
     * no extra helper functions ✔️
     * better detect non-ESM code ✔️
   * BUT we may have to relax it to `true` due to: "most libraries with CommonJS/AMD/UMD modules didn’t conform as strictly as TypeScript’s implementation"
-  * CURRENTLY set to false by default, ad-hoc relaxing in specific module as needed
-* `isolatedModules` https://www.typescriptlang.org/tsconfig#isolatedModules
+  * CURRENTLY set to false by default ✔️, ad-hoc relaxing in specific module as needed
+* ✅`forceConsistentCasingInFileNames`
+* ❓`isolatedDeclarations`
+  * desirable, but no immediate benefit
+  * NOT enabled bc break typescript-string-enums + forces explicit types which are inconvenient
+* ✅`isolatedModules` https://www.typescriptlang.org/tsconfig#isolatedModules
   * set to true always bc. parcel needs it, cf. https://parceljs.org/languages/typescript/#isolatedmodules
-* `"verbatimModuleSyntax": true,` TODO!
+* ✅`verbatimModuleSyntax`
+  * force using `type` to discriminate. Not strictly needed in theory.
+  * REQUIRED by node `--experimental-strip-types` so turning it to `true`
 
 ### Backwards Compatibility
 

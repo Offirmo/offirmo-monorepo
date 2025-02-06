@@ -90,7 +90,7 @@ KPI -- examples https://kpiexamples.operately.com/
 land grab
 lock-in
 M&A
-M&A -- Apple 
+M&A -- Apple
 M&A -- fb / insta https://www.linkedin.com/posts/olivermolander_technology-facebook-instagram-activity-7241726426826059776-IOE4
 M&A -- killer zone = https://www.trendingtopics.eu/tech-talent-the-intricate-mechanisms-behind-apples-startup-killer-zone/
 magic moment -> habit moment
@@ -106,6 +106,7 @@ marketing -- case studies
 marketing -- case studies -- "flagship app" It's not that there wasn't a lot of interest in WPF, it's just there weren't any flagship apps showing off what it could do that previous frameworks couldn't. Even if Evernote had stayed with it, they still have a fairly simple client so a lot of people would simply shrug and say "I can do that in WinForms." They aren't wrong. https://www.reddit.com/r/csharp/comments/x0nu7h/comment/im9kesb/
 mature market
 metrics -- 40 something
+metrics -- ARR
 metrics -- functional onboarding = If a user has hit all the functional onboarding milestones, it is a strong indication that they have begun to adopt the product. Measured over 2w, chose reqs, ex. have 2 users, 2 core actions...
 metrics -- funnel
 metrics -- Monthly Core Action Users = used to measure engagement by tracking users who perform core actions within a specific time frame.
@@ -160,7 +161,9 @@ realistic scheduling = overly optimistic deadlines lead to burnout and missed mi
 red ocean vs blue ocean https://www.blueoceanstrategy.com/tools/red-ocean-vs-blue-ocean-strategy/
 reputation management
 reputation management -- REPCOM
-risk management = be proactive instead of reactive
+risk -- management = be proactive instead of reactive
+risk -- management = coordinated set of activities carried out throughout an organisation aimed at identifying, understanding and controlling its risks
+risk = effect of uncertainty on an organisation’s ability to meet its objectives
 sales -- Sales Development Representative (SDR) https://www.salesforce.com/blog/sales-development-representative/
 satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing
 scalability -- organisational -- collaboration = bigger team size can no longer efficiently collaborate, ex. merge conflicts, coordination

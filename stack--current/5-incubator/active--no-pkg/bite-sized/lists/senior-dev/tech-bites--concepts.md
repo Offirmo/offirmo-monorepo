@@ -43,6 +43,7 @@ allocation
 annotation
 anomaly detection
 API (Application Programming Interface) = interface (set of subroutine definitions, protocols, and tools) for exposing a software feature, defines interactions that allows two applications to talk to each other
+API -- AIPs (API Improvement Proposals) https://google.aip.dev/
 API -- approach design with real-life scenarios and code in mind.
 API -- avoid introducing breaking changes as much as possible.
 API -- bad = make assumptions about what you are trying to do, but then break when those assumptions are not exactly right, ex. AppCache
@@ -257,8 +258,8 @@ encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube
 encoding -- binary-to-text -- risk of accidental words
 encoding -- binary-to-text https://en.wikipedia.org/wiki/Binary-to-text_encoding
 entitlements -- non-standard offerings or commercial terms to meet their needs through high touch sales motions. High touch Sales teams work closely with our customers to understand their solution needs and buying preferences like Multi-year billed annual, ELAs, Ramp discounts. There is a significant volume of customers and revenue from such deals
-error -- handling -- fail fast = Check input and fail on nonsensical input or invalid state as early as possible, preferably with an exception or error response that will make the exact problem clear to your caller https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 error -- handling -- exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
+error -- handling -- fail fast = Check input and fail on nonsensical input or invalid state as early as possible, preferably with an exception or error response that will make the exact problem clear to your caller https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 error -- reuse error codes
 error -- type -- domain error = out of the specification, ex. sqrt(-x) https://cplusplus.com/reference/stdexcept/domain_error/
 error -- type -- logic error = errors in the internal logical of the program, such as violation of logical preconditions or class invariants https://cplusplus.com/reference/stdexcept/logic_error/
