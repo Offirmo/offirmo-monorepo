@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
 import type { Book, BookCover, BookUId, BookPageReference } from '../model--book/index.ts'
-import { State } from './types.ts'
+import type { State } from './types.ts'
 
 /////////////////////////////////////////////////
 // the core feature we need: provided a book UID, load it.

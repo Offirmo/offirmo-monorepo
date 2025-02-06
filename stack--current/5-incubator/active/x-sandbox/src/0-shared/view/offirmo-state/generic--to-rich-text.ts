@@ -152,14 +152,14 @@ function _renderⵧUState(state: Immutable<BaseUState>, options: Immutable<Optio
 	const keys = new Set([
 		...Object.keys(state),
 	])
-
+/*
 	builder.pushNode(_renderⵧWithSchemaVersion(state as any))
 	builder.pushLineBreak()
 	keys.delete('schema_version')
 
 	builder.pushNode(_renderⵧWithRevision(state as any))
 	builder.pushLineBreak()
-	keys.delete('revision')
+	keys.delete('revision')*/
 
 	const renderedⵧdedicated = _getꓽrendererⵧdedicated('U', options,key)
 	const remaining_keys_node = renderedⵧdedicated

@@ -7,11 +7,11 @@ import { LIB } from '../../consts.ts'
 import { renderꓽstateⵧprettified_text } from '../../../../0-shared/view/offirmo-state/generic--to-text.ts'
 import { renderꓽstateⵧrich_text } from '../../../../0-shared/view/offirmo-state/generic--to-rich-text.ts'
 
-import { COVERS } from '../__fixtures/index.ts'
+import { COVERS } from '../../__fixtures/index.ts'
 
 /////////////////////////////////////////////////
 
-describe(`${LIB} -- Book -- types`, function() {
+describe(`${LIB} -- 01 Book -- 01 types`, function() {
 
 	describe('generic render -- text', function () {
 

@@ -8,11 +8,11 @@ import {
 	renderꓽcover__spine,
 } from './index.ts'
 
-import { COVERS } from '../model--book/__fixtures/index.ts'
+import { COVERS } from '../__fixtures/index.ts'
 
 /////////////////////////////////////////////////
 
-describe(`${LIB} -- Book -- RichText`, function() {
+describe(`${LIB} -- 01 Book -- 04 RichText`, function() {
 
 	describe('renderꓽcover__spine', function () {
 

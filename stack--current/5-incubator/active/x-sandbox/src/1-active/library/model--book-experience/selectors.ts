@@ -2,11 +2,17 @@ import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import type { BookPartReference } from '../model--book/index.ts'
-import { REFERENCEⵧSEPARATOR, REFERENCEⵧROOT } from '../model--book/index.ts'
+import {
+	type BookPartReference,
+	REFERENCEⵧSEPARATOR,
+	REFERENCEⵧROOT,
+} from '../model--book/index.ts'
 
-import type { BookExperience } from './types.js'
-import { AccessLevel, ComprehensionLevel } from './types.js'
+import {
+	type BookExperience,
+	AccessLevel,
+	ComprehensionLevel,
+} from './types.ts'
 
 /////////////////////////////////////////////////
 

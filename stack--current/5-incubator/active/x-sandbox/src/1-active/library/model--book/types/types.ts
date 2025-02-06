@@ -131,8 +131,7 @@ export {
 
 	type BookPageReference,
 	type BookPartReference,
+
 	BOOK_PART_KEY_KEYWORDSᐧFIRST,
 	BOOK_PART_KEY_KEYWORDSᐧLAST,
-
-	//type BookInstance,
 }

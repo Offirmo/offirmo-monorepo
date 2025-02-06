@@ -1,8 +1,9 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 
-import type { BookCover, BookUId } from '../model--book/types/index.ts'
+import type { BookCover } from '../model--book/types/index.ts'
 import type { BookExperience } from '../model--book-experience/types.ts'
+
 import type { BookStash } from './types.ts'
 
 /////////////////////////////////////////////////
@@ -17,9 +18,9 @@ function create({defaultAccessLevel = 'unaware'}: Partial<{ defaultAccessLevel: 
 	}
 }
 
-function _createꓽBookExperience(book_uid: Immutable<BookUId>): Immutable<BookExperience> {
+function _createꓽBookExperience(cover: Immutable<BookCover>): Immutable<BookExperience> {
 	return {
-		book_uid,
+		book_uid: cover.uid,
 	}
 }
 
@@ -32,16 +33,17 @@ function addꓽbook(
 	cover: Immutable<BookCover>,
 	//book_uid: Immutable<BookUId> = uid,
 ): Immutable<BookStash> {
-	assert(!state.books[], `Book "${uid}" should not be already added!`)
+	assert(!state.books[cover.uid], `Book "${cover.uid}" should not be already added!`)
 
 	return {
 		...state,
 		books: {
 			...state.books,
-			[uid]: _createꓽBookExperience(book_uid),
+			[cover.uid]: _createꓽBookExperience(cover),
 		}
 	}
 }
+
 
 /////////////////////////////////////////////////
 

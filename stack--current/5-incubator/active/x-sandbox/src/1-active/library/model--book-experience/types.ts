@@ -4,12 +4,7 @@
 
 import { Enum } from 'typescript-string-enums'
 
-
-
-
-/////////////////////////////////////////////////
-
-import type { BookUId, BookPageReference, BookPartReference } from '../model--book/types/index.ts'
+import type { BookUId, BookPageReference, BookPartReference } from '../model--book/index.ts'
 
 /////////////////////////////////////////////////
 // Note: not all use cases need AccessLevel and ComprehensionLevel
@@ -37,6 +32,7 @@ export const ComprehensionLevel = Enum(
 )
 export type ComprehensionLevel = Enum<typeof ComprehensionLevel> // eslint-disable-line no-redeclare
 
+type X = AccessLevel | ComprehensionLevel
 
 interface BookExperience {
 	book_uid: BookUId // TODO review: redundant? or should be experience ID?
@@ -46,7 +42,7 @@ interface BookExperience {
 	// by path bc we can have complex situations
 	// for ex. 10 volumes be we only have access to the first 3
 	comprehension_level‿by_path?: {
-		[place: BookPartReference]: AccessLevel | ComprehensionLevel
+		[place: BookPartReference]: X
 	}
 
 	// TODO one day multiple bookmarks?
@@ -56,5 +52,6 @@ interface BookExperience {
 /////////////////////////////////////////////////
 
 export {
+	type X,
 	type BookExperience,
 }

@@ -2,8 +2,7 @@
  * https://en.wikipedia.org/wiki/Red_Book_of_Westmarch
  */
 
-import type { Book, BookCover, BookPage, BookPartKey, BookUId } from '../../types/index.ts'
-import { registry } from '../../../service--book-resolver/index.ts'
+import type { Book, BookCover, BookUId } from '../../model--book/index.ts'
 
 /////////////////////////////////////////////////
 

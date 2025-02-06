@@ -1,4 +1,4 @@
-import type { BookCover } from '../types/index.ts'
+import type { BookCover } from '../model--book/index.ts'
 
 import * as LOTR from './lotr/cover.ts'
 import * as WoW from './wow-alliance-of-lordaeron/cover.ts'

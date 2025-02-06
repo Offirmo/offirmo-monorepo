@@ -2,17 +2,13 @@ import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { BookUId } from '../book/l1-types/types.ts'
-import * as BookResolverLib from '../book--resolver'
-import * as BookStashLib from './index.ts'
+import { type BookUId } from '../model--book/index.ts'
+import * as BookStashLib from '../model--book-stash/index.ts'
 
 /////////////////////////////////////////////////
 
 function renderꓽBookStash(
 	state: Immutable<BookStashLib.BookStash>,
-	options: {} = {
-		resolver: BookResolverLib.getꓽdefault(), // TODO REVIEW should be done by caller?
-	},
 ): RichText.Node {
 
 	const list = RichText.listⵧunordered()

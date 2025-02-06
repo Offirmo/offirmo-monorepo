@@ -5,24 +5,18 @@ import { renderꓽstateⵧrich_text } from '../../../0-shared/view/offirmo-state
 
 import { LIB } from '../consts.ts'
 
-import { COVERS } from '../model--book/__fixtures/index.ts'
+import { EXAMPLE } from './__fixtures/index.ts'
 
-import { addꓽbook, create } from './reducers.ts'
+import { create } from './reducers.ts'
 
 /////////////////////////////////////////////////
 
-describe(`${LIB} -- Stash -- reducers`, function() {
+describe(`${LIB} -- 03 BookStash -- 03 reducers`, function() {
 
 	describe('create()', function () {
 
 		it('should work', () => {
-			let stash = create({defaultAccessLevel: 'accessⵧyes'})
-
-			COVERS.forEach(cover => {
-				stash = addꓽbook(stash, cover)
-			})
-
-			const $doc = renderꓽstateⵧrich_text(stash)
+			const $doc = renderꓽstateⵧrich_text(EXAMPLE)
 			const str = to_terminal($doc)
 			console.log(str)
 		})
