@@ -4,7 +4,7 @@ import { type Immutable } from '@offirmo-private/ts-types'
 import assert from 'tiny-invariant'
 
 import { Book, BookCover, BookUId } from '../../../book/l1-types/types.ts'
-import { BookResolver, BookResolverEntry } from '../../../book--resolver/types.ts'
+import { BookResolver, BookResolverEntry } from '../../../service--book-resolver/types.ts'
 import { isꓽBook } from '../../../book/l1-types/guards.ts'
 
 /////////////////////////////////////////////////

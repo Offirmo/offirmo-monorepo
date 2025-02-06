@@ -1,6 +1,6 @@
 import Component, { type Props } from './index.tsx'
 
-import { COVER } from '../../model--book/__fixtures/wow-alliance-of-lordaeron/index.ts'
+import { COVER } from '../../model--book/__fixtures/wow-alliance-of-lordaeron/cover.ts'
 
 export default {
 	component: Component,

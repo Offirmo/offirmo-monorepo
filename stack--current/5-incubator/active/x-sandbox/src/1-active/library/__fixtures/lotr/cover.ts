@@ -3,6 +3,7 @@
  */
 
 import type { Book, BookCover, BookPage, BookPartKey, BookUId } from '../../types/index.ts'
+import { registry } from '../../../service--book-resolver/index.ts'
 
 /////////////////////////////////////////////////
 
@@ -24,20 +25,8 @@ const COVER: BookCover = {
 	}
 }
 
-const BOOK: Book = {
-	...COVER,
-	parts: {
-		1: 'The Hobbit, or There and Back Again',
-		2: 'The Lord of the Rings',
-		3: 'Appendices',
-		4: 'The Adventures of Tom Bombadil',
-		5: 'The Silmarillion',
-	}
-}
-
 /////////////////////////////////////////////////
 
 export {
 	COVER,
-	BOOK,
 }

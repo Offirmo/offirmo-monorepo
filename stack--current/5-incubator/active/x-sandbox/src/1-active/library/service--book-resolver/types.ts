@@ -1,6 +1,6 @@
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
-import { Book, BookCover, BookUId, BookPageReference } from '../../../src/1-active/library/book/l1-types/types.ts'
+import type { Book, BookUId, BookPageReference } from '../model--book/index.ts'
 
 /////////////////////////////////////////////////
 
@@ -9,19 +9,20 @@ import { Book, BookCover, BookUId, BookPageReference } from '../../../src/1-acti
 // hence the param:
 // - page_ref: optional, in case we have a granular dynamic loading
 type BookResolver =
-	(existing: Immutable<BookCover> | Immutable<Book>, page_ref?: BookPageReference)
+	(existing: Immutable<Book>, page_ref?: BookPageReference)
 		=> Promise<Immutable<Book>>
 
+/*
 interface BookResolverEntry {
 	uid: BookUId
 	cover: BookCover
 	ↆget: BookResolver
-}
+}*/
 
-interface BookResolversIndex {
+interface State {
 	entries: {
 		[book_uid: BookUId]: {
-			book: BookCover | Book // reminder: book can be loaded in a granular way, may not be complete
+			partial: Book // reminder: may not be complete; books can be loaded in a granular way
 			ↆget: BookResolver
 		}
 	}
@@ -31,6 +32,6 @@ interface BookResolversIndex {
 
 export {
 	type BookResolver,
-	type BookResolverEntry,
-	type BookResolversIndex,
+	//type BookResolverEntry,
+	type State,
 }
