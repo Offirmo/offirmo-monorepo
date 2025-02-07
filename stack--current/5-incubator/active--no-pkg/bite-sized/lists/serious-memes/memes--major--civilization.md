@@ -1,3 +1,5 @@
+capitalism
+communism
 cosmos -- 1610 https://en.wikipedia.org/wiki/Copernican_Revolution
 cosmos -- 1920 galaxies https://en.wikipedia.org/wiki/Great_Debate_(astronomy)
 cosmos -- 1965 no life on Mars https://en.wikipedia.org/wiki/Martian_canals
@@ -13,6 +15,7 @@ https://www.famillechretienne.fr/40361/article/remi-brague-nous-voyons-lislam-av
 intrinsic motivation comes from working in an environment where Autonomy, Mastery and Purpose can flourish.
 loi du talion
 military tactics https://civilization.fandom.com/wiki/Military_Tactics_(Civ6)
+pollution -- 12xx https://en.wikipedia.org/wiki/Pea_soup_fog
 ransom
 slavery
 violence

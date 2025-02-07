@@ -6,7 +6,6 @@
 1 or 2 way door
 12 steps
 1984
-pit of success = place where it’s easier to do the right thing than the wrong thing
 1st thought v.s 2nd thought = 2nd = what we truly are
 3 -- trichotomy https://en.wikipedia.org/wiki/Trichotomy_(philosophy)
 3 -- trilemma https://en.wikipedia.org/wiki/Trilemma
@@ -90,6 +89,10 @@ brain -- fast & slow -- slow = real you
 brain -- left & right & hippocamp (debunked?)
 brain -- reptilian
 brain rot https://en.wikipedia.org/wiki/Brain_rot
+brainstorming -- decoy technique = suggest sth bad as a bottom baseline to trigger defense of better alternatives
+brainstorming -- technique -- reverse = come up with ideas to make things worse https://www.mural.co/blog/reverse-brainstorming
+brainstorming -- technique -- wrong = try to come up with the worst ideas https://hbr.org/2017/08/to-come-up-with-a-good-idea-start-by-imagining-the-worst-idea-possible
+brainstorming -- veto technique = "anyone who vetoes a suggestion has to pay for that veto with a suggestion of their own" https://www.reddit.com/r/LifeProTips/comments/1cyvsz/lpt_cant_decide_on_dinner_use_the_veto_rule/
 Brandolini's Law = The amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it
 broken window theory
 bullying = Lack of consideration and empathy for those without power, Disrespectful behavior that is overt or subtle (in public or behind closed doors), Verbal aggression, sarcasm, or psychological manipulation. Unreasonable or constantly changing directives and deadlines. Singling out individuals. “Mobbing,” in which a group of people gang up on an individual
@@ -113,6 +116,7 @@ Charlie Munger 3 basic rules -- Don’t work for anyone you don’t respect and 
 Charlie Munger 3 basic rules -- Work only with people you enjoy
 Charlie Munger 3 basic rules https://www.cnbc.com/2023/11/29/charlie-munger-these-basic-career-rules-made-me-successful-in-life-with-warren-buffett-i-had-all-3.html
 charts -- hill = position on a "hill" figuring things out -> making it happen
+choice making -- 5-2-1 technique https://www.reddit.com/r/lifehacks/comments/ctdibo/521_technique/
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
 cognitive bias
 cognitive bias -- recency https://en.wikipedia.org/wiki/Recency_bias
@@ -154,6 +158,7 @@ dark forest https://en.wikipedia.org/wiki/Dark_forest_hypothesis
 data driven
 dead horse theory https://www.linkedin.com/posts/kais-mejri-tunisie_deadabrhorseabrtheory-activity-7286736656194310146-MrM7
 debate -- https://en.wikipedia.org/wiki/Principle_of_charity
+decoy effect https://en.wikipedia.org/wiki/Decoy_effect
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
 democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
@@ -163,8 +168,8 @@ differences -- introvert/extrovert
 disability
 disability -- flag +++
 disability -- overcoming
+discernement -- coin flipping = don't look, which one do you wish is not?
 discernement -- regret minimization https://theprokit.com/posts/a-jeff-bezos-classic-the-regret-minimization-framework/
-discernement -- technique de pile ou face
 discrimination -- direct = when a person is treated less favourably or unfairly than another person or group because of certain protected characteristics* or attributes
 discrimination -- indirect = when a neutral rule, policy, practice or criterion applies to everyone but disproportionately disadvantages a particular group with a protected characteristic, without objective justification
 disease -- definition? https://en.wikipedia.org/wiki/Unsolved_problems_in_medicine
@@ -363,6 +368,7 @@ leadership -- timeless lessons https://www.linkedin.com/pulse/back-future-timele
 learning -- lifelong = learning never stops
 learning machines "I constantly see people rise in life who are not the smartest, sometimes not even the most diligent, but they are learning machines" (Munger https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger)
 legibility = We are blind to what we cannot measure. Not everything that counts can be measured, and not everything that can be measured counts. But people manage what they can measure, so society repeats the same mistakes.
+lend-lease https://en.wikipedia.org/wiki/Lend-Lease
 less is more
 Lev Landau classification of physicists -- league 0 = super league
 Lev Landau classification of physicists -- league 1 = △ extremely original, brilliant and independent + great deal of energy and care = most productive and influential
@@ -464,6 +470,7 @@ perverse incentive https://en.wikipedia.org/wiki/Perverse_incentive
 Peter principle = people in a hierarchy tend to rise to "a level of respective incompetence" https://en.wikipedia.org/wiki/Peter_principle
 phenomenology (physics) = branch of theoretical physics in which physicists construct realistic models of nature from more abstract theoretical ideas https://en.wikipedia.org/wiki/Phenomenology_(physics)
 picture the success
+pit of success = place where it’s easier to do the right thing than the wrong thing
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
 planning fallacy
 porn

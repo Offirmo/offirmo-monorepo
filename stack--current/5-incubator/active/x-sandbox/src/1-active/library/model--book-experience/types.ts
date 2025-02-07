@@ -38,7 +38,8 @@ export type ComprehensionLevel = Enum<typeof ComprehensionLevel> // eslint-disab
 interface NodeExperience {
 
 	// dynamic, we can obtain access then lose it
-	access_level: AccessLevel
+	// if undef, user must fall back to their own preferred default
+	access_level?: AccessLevel
 
 	// refers to when we had access. Not set = we never had access or never opened it
 	// can be set even if access = no = memory of when we had it

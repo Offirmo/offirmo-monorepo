@@ -20,6 +20,7 @@ interface BookshelfEntry  extends WithLastUserInvestmentTimestamp {
 	// aggregated+defaulted root details
 	access_level: BookExperienceLib.AccessLevel
 	comprehension_level: BookExperienceLib.ComprehensionLevel | undefined
+	is_root_starred: boolean
 	stared_nodes_count: number
 }
 
@@ -87,6 +88,7 @@ function getꓽbookshelf(state: Immutable<BookStash>)
 			access_level: BookExperienceLib.getꓽaccess_level(experience) ?? state.defaultAccessLevel,
 			comprehension_level: BookExperienceLib.getꓽcomprehension_level(experience),
 			stared_nodes_count: BookExperienceLib.getꓽstared_nodes_count(experience),
+			is_root_starred: false, // TODO
 			last_user_investment_tms,
 		}
 	}).sort(_sortBookshelfEntries)
@@ -97,5 +99,6 @@ function getꓽbookshelf(state: Immutable<BookStash>)
 /////////////////////////////////////////////////
 
 export {
+	type BookshelfEntry,
 	getꓽbookshelf,
 }
