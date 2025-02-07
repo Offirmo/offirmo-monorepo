@@ -20,12 +20,12 @@ function registerꓽCover(state: Immutable<State>, cover: Immutable<BookCover>, 
 	const { uid } = cover
 	assert(!state.entries[uid], `Book entry "${uid}" should not be already registered!`)
 
-	const book: Immutable<Book> = {
-		...cover,
-		parts: {
-			...(cover as Book).parts, // in case a full book was passed
-		},
-	}
+	const book: Immutable<Book> = Object.hasOwn(cover, 'parts')
+		? (cover as Book) // a book was passed, not just a cover
+		: {
+			...cover,
+			parts: {},
+		}
 
 	return {
 		...state,

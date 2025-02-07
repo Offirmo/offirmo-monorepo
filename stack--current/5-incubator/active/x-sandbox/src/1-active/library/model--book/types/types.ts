@@ -114,13 +114,17 @@ interface Book extends BookPart, BookCover {
 type BookPageReference = string // TODO clarify the format, BookPartKey separated by XX
 
 // path to any part of a book
-type BookPartReference = // TODO clarify the format
+type BookPartReference =
 	| '.' // root
-	| string
+	| string // TODO clarify the format
+
+type BookNodeReference = BookPartReference | BookPageReference
 
 /////////////////////////////////////////////////
 
 export {
+	type Text,
+
 	type BookPage,
 	type BookPartKey,
 	type BookPart,
@@ -131,6 +135,7 @@ export {
 
 	type BookPageReference,
 	type BookPartReference,
+	type BookNodeReference,
 
 	BOOK_PART_KEY_KEYWORDSᐧFIRST,
 	BOOK_PART_KEY_KEYWORDSᐧLAST,

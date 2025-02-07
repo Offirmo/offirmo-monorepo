@@ -216,6 +216,8 @@ data format -- serialization -- stability! ex. sorting by keys in k/v, important
 data format -- serialization -- wire format
 data format -- serialization -- wire format -- https://capnproto.org/ = serialization only! (better than protobuf)
 data format -- TODO find TS stuff
+data residency -- storing = storing user data in the same jurisdiction as the customer’s residence. 
+data residency = helps customers feel confident that the data they own (or about them) is subject to their local laws and regulations. This is especially important for enterprise, education, and government customers, many of whom might have rules and regulations mandating the use of data-resident software.
 databases
 databases -- joins https://justinjaffray.com/joins-13-ways/
 databases -- normalization
@@ -567,7 +569,7 @@ SAAS -- Shared responsibility model
 scatter/gather (datastreams)
 schema
 schema explorer
-SCM (Source Control Managment)
+SCM (Source Control Management)
 scope
 script
 Scripts -- should be written using the project main language https://joaomagfreitas.link/scripts-should-be-written-using-the-project-main-language/

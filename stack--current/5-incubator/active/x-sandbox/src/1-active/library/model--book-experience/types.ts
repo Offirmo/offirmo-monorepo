@@ -3,8 +3,9 @@
 // = meta customization
 
 import { Enum } from 'typescript-string-enums'
+import type { WithLastUserInvestmentTimestamp } from '@offirmo-private/state-utils'
 
-import type { BookUId, BookPageReference, BookPartReference } from '../model--book/index.ts'
+import type { BookUId, BookPageReference, BookNodeReference, Text } from '../model--book/index.ts'
 
 /////////////////////////////////////////////////
 // Note: not all use cases need AccessLevel and ComprehensionLevel
@@ -21,9 +22,9 @@ export type AccessLevel = Enum<typeof AccessLevel> // eslint-disable-line no-red
 // assuming we have access
 // tslint:disable-next-line: variable-name
 export const ComprehensionLevel = Enum(
-	'forbidden',                // owner do not want to read it, ex. forbidden knowledge
-	'unviewed',                 // not viewed at all = book never opened, page never turned
-	'viewedⵧblocked',           // ex. can browse the book but comprehension is blocked, bc can't read or can't understand the language
+	//'unviewed',                 // not viewed at all = book never opened, page never turned (TOTO should it be explicit or undef?)
+	'abstaining',               // owner do not want to read it, ex. forbidden knowledge
+	'viewedⵧblocked',           // tried to read the book but comprehension is blocked, bc can't read or can't understand the language
 	'understoodⵧpartially',     // ex. skimmed quickly
 	'understoodⵧsuperficially', // ex. can barely read or missing concepts, understand the general idea but not much more (ex. Math book but math level is too low)
 	'understood',               // normal
@@ -32,26 +33,42 @@ export const ComprehensionLevel = Enum(
 )
 export type ComprehensionLevel = Enum<typeof ComprehensionLevel> // eslint-disable-line no-redeclare
 
-type X = AccessLevel | ComprehensionLevel
+// implicit expectation that a node inherits from its parents
+// unless explicitly specified
+interface NodeExperience {
 
-interface BookExperience {
-	book_uid: BookUId // TODO review: redundant? or should be experience ID?
+	// dynamic, we can obtain access then lose it
+	access_level: AccessLevel
+
+	// refers to when we had access. Not set = we never had access or never opened it
+	// can be set even if access = no = memory of when we had it
+	// BUT cannot have unaware + comprehension
+	comprehension_level?: ComprehensionLevel
+
+	starred?: true
+	summary?: Text // a textual summary of this experience. This is important esp. in case of game, ex. "quest to find this book but no access"
+}
+
+interface BookExperience extends WithLastUserInvestmentTimestamp {
+	book_uid: BookUId // real book id this experience is covering. IMPORTANT because we can have several experiences for the same book, with different customizations
 
 	bookmark?: BookPageReference
 
 	// by path bc we can have complex situations
 	// for ex. 10 volumes be we only have access to the first 3
+	// or missing page in a book
+	// BUT inheritance is implicit! So to have missing pages, they'd need to be explicitly called out
 	comprehension_level‿by_path?: {
-		[place: BookPartReference]: X
+		[place: BookNodeReference]: NodeExperience
 	}
 
-	// TODO one day multiple bookmarks?
-	// TODO one day allow customization
+	// TODO % read
+	// TODO one day customization
 }
 
 /////////////////////////////////////////////////
 
 export {
-	type X,
+	type NodeExperience,
 	type BookExperience,
 }

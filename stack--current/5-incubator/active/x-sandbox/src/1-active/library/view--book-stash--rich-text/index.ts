@@ -10,7 +10,8 @@ import * as BookStashLib from '../model--book-stash/index.ts'
 function renderꓽBookStash(
 	state: Immutable<BookStashLib.BookStash>,
 ): RichText.Node {
-
+	throw new Error('NIMP!')
+	/*
 	const list = RichText.listⵧunordered()
 
 	const uids = Object.keys(state.books).sort()
@@ -21,6 +22,7 @@ function renderꓽBookStash(
 	return RichText.fragmentⵧblock()
 		.pushNode(list.done())
 		.done()
+		*/
 }
 
 /////////////////////////////////////////////////

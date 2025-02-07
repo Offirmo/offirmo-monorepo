@@ -5,13 +5,17 @@ import type { AccessLevel, BookExperience } from '../model--book-experience/type
 
 /////////////////////////////////////////////////
 
+type BookExperienceUid = string // !Book Uid since the same book can be forked through customization
+
 // this is to be serialized and stored as part of the user state
 // only add necessary data
 interface BookStash {
 	defaultAccessLevel: AccessLevel, // bc. depend on the application, ex. reader vs game.
 
-	books: {
-		[uid: string]: BookExperience
+	_unique_experience_uid_generator: number
+
+	experiences: {
+		[experience_uid: BookExperienceUid]: BookExperience
 		// books not in the book stash are implicitly AccessLevel = 'unaware'
 	}
 
@@ -23,5 +27,6 @@ interface BookStash {
 /////////////////////////////////////////////////
 
 export {
+	type BookExperienceUid,
 	type BookStash,
 }
