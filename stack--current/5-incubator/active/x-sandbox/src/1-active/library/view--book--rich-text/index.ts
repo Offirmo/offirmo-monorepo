@@ -12,7 +12,9 @@ function renderꓽcover__spine(cover: Immutable<BookCover>): RichText.Document {
 
 	// for now, downgrade. We can improve later
 	const title = RichText.renderⵧto_text(cover.title || '(missing title)')
-	const author = RichText.renderⵧto_text(cover.author || 'Unknown Author')
+	const author = cover.author
+		? RichText.renderⵧto_text(cover.author)
+		: undefined
 
 	const builder = RichText.fragmentⵧinline()
 
@@ -29,19 +31,21 @@ function renderꓽcover__spine(cover: Immutable<BookCover>): RichText.Document {
 		},
 	)
 
-	builder.pushNode(
-		RichText.weak().pushText(' by ').done(),
-		{
-			id: 'by'
-		},
-	)
+	if (author) {
+		builder.pushNode(
+			RichText.weak().pushText(', by ').done(),
+			{
+				id: 'by'
+			},
+		)
 
-	builder.pushNode(
+		builder.pushNode(
 			RichText.fragmentⵧinline().pushText(author.trim()).done(),
 			{
 				id: 'author'
 			},
 		)
+	}
 
 	builder.addHints({
 		underlying: cover,

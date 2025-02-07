@@ -46,7 +46,7 @@ interface BookCover {
 
 	title: Text
 
-	author?: Author
+	author?: Author | undefined
 
 	subtitles?: Array<Text> // "title" in a wide sense. Anything accompanying the title we want to be displayed on the cover. By order of most importance.
 

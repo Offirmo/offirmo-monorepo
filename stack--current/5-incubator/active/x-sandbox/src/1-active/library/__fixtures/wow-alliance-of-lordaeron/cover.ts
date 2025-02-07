@@ -8,7 +8,7 @@ import type { Book, BookCover, BookUId } from '../../model--book/index.ts'
 
 const uid: BookUId = '〖BOOKꓽWoW【The Alliance of Lordaeron】〗'
 
-const AUTHOR: Book['author'] = "a scholar from the Alliance"
+const AUTHOR: Book['author'] = undefined // "a scholar from the Alliance"
 
 const COVER: BookCover = {
 	uid,

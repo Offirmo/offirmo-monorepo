@@ -12,7 +12,7 @@ const AUTHOR: Book['author'] = "Bilbo Baggins, Frodo Baggins et al."
 
 const COVER: BookCover = {
 	uid,
-	title: 'the downfall of the lord of the rings and the return of the king',
+	title: 'The Downfall of the Lord of the Rings and the Return of the King',
 	author: AUTHOR,
 	subtitles: [
 		'(as seen by the Little People; being the memoirs of Bilbo and Frodo of the Shire, supplemented by the accounts of their friends and the learning of the Wise.)',

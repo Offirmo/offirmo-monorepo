@@ -211,8 +211,8 @@ const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams
 }, options) => {
 	state.sub_nodes.push(normalizeꓽnode($sub_node))
 
-	const {style} = options
-	const sub_str = (() => {
+	const { style } = options
+	const [ sub_str, trailing_spaces ] = (() => {
 		switch ($node.$type) {
 			case 'ul':
 			// fallthrough
@@ -244,33 +244,34 @@ const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams
 					return cleaned_index.padStart(2) + '. '
 				})()
 				const indent: string = '  '.repeat(state.nested_list_depth - 1)
-				return indent + bullet + sub_state.str
+				return [ indent + bullet + sub_state.str, sub_state.trailing_spaces ]
 			}
 			default:
-				return sub_state.str
+				return [ sub_state.str, sub_state.trailing_spaces ]
 		}
 	})()
 
 	if (state.str.length === 0) {
 		// we are at start
 		if (sub_state.starts_with_block) {
-			// propagate start
+			// propagate to us
 			state.starts_with_block = true
+			// merge margin
 			state.marginⵧtop‿lines = Math.max(state.marginⵧtop‿lines, sub_state.marginⵧtop‿lines)
 		}
 	}
 	else {
 		if (sub_state.starts_with_block) {
-			// move it to us (for concat str)
+			// concatenate
 			state.ends_with_block = true
+			// collapse margins
 			state.marginⵧbottom‿lines += sub_state.marginⵧtop‿lines
 		}
 	}
 
 	state = on_concatenateⵧstr({
-		state, $node, depth, str: sub_str,
+		state, $node, depth, str: sub_str + trailing_spaces,
 	}, options)
-	//state.str += sub_str
 
 	state.ends_with_block = sub_state.ends_with_block
 
@@ -298,10 +299,11 @@ function renderⵧto_text(
 		...DEFAULT_RENDERING_OPTIONSⵧToText,
 		...options,
 	}
-	return walk<State, RenderingOptionsⵧToText>($node, {
+	const state = walk<State, RenderingOptionsⵧToText>($node, {
 		...callbacksⵧto_text,
 		...callback_overrides,
-	}, full_options).str
+	}, full_options)
+	return state.str + state.trailing_spaces
 }
 
 /////////////////////////////////////////////////
