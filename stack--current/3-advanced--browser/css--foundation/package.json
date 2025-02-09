@@ -6,7 +6,13 @@
 	"private": true,
 
 	"sideEffects": true,
-	"source": "src/index.css",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./src/index.ts"
+		}
+	},
+	"source": "src/index.ts",
 
 	"dependencies": {
 		"@offirmo-private/css--reset": "*"

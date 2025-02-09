@@ -47,15 +47,21 @@ function getꓽcomprehension_level(state: Immutable<BookExperience>, path: Immut
 	return experience?.comprehension_level
 }
 
-function getꓽstared_nodes_count(state: Immutable<BookExperience>): number {
-	return Object.values(state.comprehension_level‿by_path || {})
-		.filter(node_exp => node_exp.starred)
-		.length
-}
-
 function isꓽaware(state: Immutable<BookExperience>, fallback: AccessLevel): boolean {
 	const access_level = getꓽaccess_level(state) ?? fallback
 	return access_level !== AccessLevel.unaware
+}
+
+function isꓽroot_starred(state: Immutable<BookExperience>): boolean {
+	const exp = _getꓽnode__experience(state)
+	return exp?.starred === true
+}
+
+function getꓽstared_nodes_count(state: Immutable<BookExperience>): number {
+	const root_adjust = isꓽroot_starred(state) ? -1 : 0
+	return Object.values(state.comprehension_level‿by_path || {})
+		.filter(node_exp => node_exp.starred)
+		.length + root_adjust
 }
 
 /////////////////////////////////////////////////
@@ -63,6 +69,7 @@ function isꓽaware(state: Immutable<BookExperience>, fallback: AccessLevel): bo
 export {
 	getꓽaccess_level,
 	getꓽcomprehension_level,
+	isꓽroot_starred,
 	getꓽstared_nodes_count,
 	isꓽaware,
 }

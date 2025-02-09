@@ -1,6 +1,7 @@
 {
 	"extends": "../../../0-meta/tsconfig.json",
 	"compilerOptions": {
+		"lib": [ "ES2024", "DOM" ],
 		"noEmit": true
 	},
 	"include": [

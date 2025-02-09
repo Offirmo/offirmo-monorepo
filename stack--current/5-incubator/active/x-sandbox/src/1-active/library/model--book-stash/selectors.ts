@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/ts-types'
 import type { WithLastUserInvestmentTimestamp } from '@offirmo-private/state-utils'
 
-import type { BookCover } from '../model--book/index.ts'
+import type { BookCover, BookNodeReference, BookPage, BookPageReference, Text } from '../model--book/index.ts'
 
 import * as BookExperienceLib from '../model--book-experience/index.ts'
 
@@ -10,6 +10,9 @@ import type { BookStash, BookExperienceUid } from './types.ts'
 
 import { registry } from '../service--book-resolver/index.ts'
 import type { ComprehensionLevel } from '../model--book-experience/index.ts'
+import { ↆgetꓽMoreCompleteBook } from '../service--book-resolver/selectors.ts'
+
+type ErrorText = Text
 
 /////////////////////////////////////////////////
 
@@ -37,6 +40,7 @@ function _comprehensionLevelToSortingNumber(c: ComprehensionLevel | undefined): 
 
 	return 1
 }
+
 
 function _sortBookshelfEntries(a: Immutable<BookshelfEntry>, b: Immutable<BookshelfEntry>): number {
 	assert(a.access_level !== 'unaware')
@@ -67,7 +71,6 @@ function _sortBookshelfEntries(a: Immutable<BookshelfEntry>, b: Immutable<Booksh
 	return a.experience_uid.localeCompare(b.experience_uid)
 }
 
-
 // use case: initial display, for the user to select a book to read
 // should return all the books known to the user (even if not available)
 function getꓽbookshelf(state: Immutable<BookStash>)
@@ -88,7 +91,7 @@ function getꓽbookshelf(state: Immutable<BookStash>)
 			access_level: BookExperienceLib.getꓽaccess_level(experience) ?? state.defaultAccessLevel,
 			comprehension_level: BookExperienceLib.getꓽcomprehension_level(experience),
 			stared_nodes_count: BookExperienceLib.getꓽstared_nodes_count(experience),
-			is_root_starred: false, // TODO
+			is_root_starred: BookExperienceLib.isꓽroot_starred(experience),
 			last_user_investment_tms,
 		}
 	}).sort(_sortBookshelfEntries)
@@ -98,7 +101,20 @@ function getꓽbookshelf(state: Immutable<BookStash>)
 
 /////////////////////////////////////////////////
 
+async function ↆgetꓽpage(state: Immutable<BookStash>, experience_uid: BookExperienceUid, path: BookNodeReference | undefined = state.experiences[experience_uid]!.bookmark):
+	Promise<[ Immutable<BookPage | ErrorText>, BookNodeReference ]> {
+
+	throw new Error('NIMP!')
+}
+
+// TODO one day get page recto + verso (typical 2p display)
+
+/////////////////////////////////////////////////
+
 export {
 	type BookshelfEntry,
+	type ErrorText,
+
 	getꓽbookshelf,
+	ↆgetꓽpage,
 }

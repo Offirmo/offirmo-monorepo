@@ -7,7 +7,7 @@ const DEBUG = false
 
 /////////////////////
 
-function onꓽkeydown(evt) {
+window.addEventListener('keydown', function onꓽkeydown(evt) {
 	if (evt.keyCode === 9) { // tab => "I am a keyboard user"
 		if (DEBUG) console.info(`[@offirmo-private/css--framework] Keyboard usage detected! (tab key)`)
 
@@ -16,5 +16,4 @@ function onꓽkeydown(evt) {
 
 		window.removeEventListener('keydown', onꓽkeydown)
 	}
-}
-window.addEventListener('keydown', onꓽkeydown)
+})

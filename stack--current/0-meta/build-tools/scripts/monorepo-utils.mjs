@@ -10,6 +10,7 @@ import { lsDirsSync } from '../../../3-advanced--node/cli-toolbox/fs/extra/ls/in
 // extracted from https://github.com/sindresorhus/load-json-file/blob/main/index.js
 // in order to have as few external deps as possible
 function load_json_file(filePath) {
+	//console.debug(`load_json_file(${filePath})`)
 	const buffer = fs.readFileSync(filePath)
 	// Unlike `buffer.toString()` and `fs.readFile(path, 'utf8')`, `TextDecoder`` will remove BOM.
 	const data = new TextDecoder().decode(buffer)
@@ -31,6 +32,7 @@ const MONOREPO_PKG_JSON = load_json_file(MONOREPO_PKG_JSON_PATH)
 // 1. gathering environment data
 
 const MONOREPO_WORKSPACES_RELPATHS = MONOREPO_PKG_JSON.bolt.workspaces.map(p => p.slice(0, -2)) // slice to remove trailing "/*"
+//console.log({MONOREPO_WORKSPACES_RELPATHS})
 const MONOREPO_PKGS_ABSPATHS = MONOREPO_WORKSPACES_RELPATHS.reduce((acc, val) => {
 	try {
 		const module_dirs = lsDirsSync(path.join(MONOREPO_ROOT, val))
