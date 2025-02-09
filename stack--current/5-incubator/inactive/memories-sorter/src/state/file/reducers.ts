@@ -1,7 +1,7 @@
 import path from 'path'
 import assert from 'tiny-invariant'
 import { Tags as EXIFTags } from 'exiftool-vendored'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 

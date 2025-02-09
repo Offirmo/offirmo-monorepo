@@ -1,7 +1,7 @@
 import path from 'path'
 import assert from 'tiny-invariant'
 import stylize_string from 'chalk'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { NORMALIZERS } from '@offirmo-private/normalize-string'
 import micro_memoize from 'micro-memoize'
 

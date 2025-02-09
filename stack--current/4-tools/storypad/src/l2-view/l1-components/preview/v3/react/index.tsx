@@ -2,7 +2,7 @@
  */
 import * as React from 'react'
 import { type ProfilerOnRenderCallback } from 'react'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from '../../../../../consts'
 import { Meta‿v3, Story‿v3 } from '../../../../../l0-types/l1-csf/v3'

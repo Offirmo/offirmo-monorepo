@@ -4,7 +4,7 @@
  */
 
 import assert from 'tiny-invariant'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import type { Asset, Url‿str, AnyPath } from '../l1-types/index.ts'
 

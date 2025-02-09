@@ -1,5 +1,5 @@
 import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import {
 	BaseRootState,

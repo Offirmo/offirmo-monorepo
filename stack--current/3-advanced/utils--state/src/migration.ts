@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import { type SoftExecutionContext } from '@offirmo-private/soft-execution-context'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import { BaseState, UTBundle, BaseRootState, AnyOffirmoState } from './types.js'
 import {

@@ -2,7 +2,7 @@ import path from 'node:path'
 
 import assert from 'tiny-invariant'
 import memoize_once from 'memoize-one'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
 import { FILE_EXTENSIONSⵧEXIF_POWERED‿LC } from './consts.js'

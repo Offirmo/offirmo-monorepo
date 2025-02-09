@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import { type State, prettifyꓽjson, getꓽoptionsⵧfull } from '@offirmo-private/prettify-any'
 import { isꓽWithSchemaVersion } from '@offirmo-private/state-utils'

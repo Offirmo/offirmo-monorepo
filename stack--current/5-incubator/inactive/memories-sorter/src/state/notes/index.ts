@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { getꓽmutable_copy } from '@offirmo-private/state-utils'
 import stylize_string from 'chalk'

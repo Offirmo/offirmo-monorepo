@@ -1,4 +1,4 @@
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { ItemQuality, InventorySlot, Item } from '@tbrpg/definitions'
 import { Armor } from '@tbrpg/logic--armors'
 import { Weapon } from '@tbrpg/logic--weapons'

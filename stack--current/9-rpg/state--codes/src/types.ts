@@ -1,4 +1,4 @@
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { HumanReadableTimestampUTCMinutes } from '@offirmo-private/timestamps'
 import { BaseUState } from '@offirmo-private/state-utils'
 

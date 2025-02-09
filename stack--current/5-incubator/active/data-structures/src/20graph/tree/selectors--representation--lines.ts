@@ -2,7 +2,7 @@
  * into a visual text representation using unicode
  */
 
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 

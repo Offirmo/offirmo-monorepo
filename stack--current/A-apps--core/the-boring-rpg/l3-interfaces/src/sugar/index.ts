@@ -1,5 +1,5 @@
 import { Enum } from 'typescript-string-enums'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import { UUID } from '@offirmo-private/uuid'
 import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'

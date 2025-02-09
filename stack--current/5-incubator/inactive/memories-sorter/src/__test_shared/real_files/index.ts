@@ -3,7 +3,7 @@ import path from 'node:path'
 
 import memoize_once from 'memoize-one'
 import micro_memoize from 'micro-memoize'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { expect } from 'chai'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { utimes } from 'utimes'

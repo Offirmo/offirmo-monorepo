@@ -1,4 +1,4 @@
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { Html‿str } from '@offirmo-private/ts-types-web'
 
 import {

@@ -1,6 +1,4 @@
-import { Html‿str } from '@offirmo-private/ts-types-web'
-
-import { type RawRenderParams, GenericArgs, GenericStoryOutput } from '../common'
+import type { RawRenderParams, GenericArgs, GenericStoryOutput } from '../common'
 import { isꓽStory‿v2 } from '../v2'
 
 /////////////////////////////////////////////////

@@ -1,7 +1,7 @@
 /////////////////////
 
 import { Enum } from 'typescript-string-enums'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import { ItemQuality, InventorySlot } from '@tbrpg/definitions'
 

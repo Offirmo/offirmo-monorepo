@@ -1,4 +1,4 @@
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from './consts.js'
 import {State, CodeSpec, CodeRedemption} from './types.js'

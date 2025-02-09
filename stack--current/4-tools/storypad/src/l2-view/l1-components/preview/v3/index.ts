@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import {aggregateꓽRenderParams, GenericStoryComponent, isꓽRenderParamsWithComponent, isꓽRenderParamsWithRenderFunc, RenderParams, RenderParamsWithComponent} from '../../../../l0-types/l1-csf'
 import { Story‿v3, Meta‿v3 } from '../../../../l0-types/l1-csf/v3'

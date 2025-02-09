@@ -1,5 +1,5 @@
 import {PProgress} from 'p-progress'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import assert from 'tiny-invariant'
 
 import { isꓽthenable } from '@offirmo-private/type-detection'

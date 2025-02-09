@@ -1,7 +1,7 @@
 import { strict as node_assert } from 'node:assert'
 
 import { normalizeError } from '@offirmo/error-utils'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { getꓽjson_difference } from '@offirmo-private/state-utils'
 
 import '../../__test_shared/mocha_spec.js'

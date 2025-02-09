@@ -1,4 +1,4 @@
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import * as Meta from '@oh-my-rpg/state--meta'
 import { VERSION, BUILD_DATE } from '@tbrpg/state'

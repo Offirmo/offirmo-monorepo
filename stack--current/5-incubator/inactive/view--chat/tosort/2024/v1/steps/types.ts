@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
 import { PProgress as PromiseWithProgress } from 'p-progress'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 

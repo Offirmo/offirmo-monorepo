@@ -6,8 +6,8 @@
 // I could steal the definitions from the storybook source code,
 // but they're huge: I'd rather work it out feature by feature.
 
-import { Story‿v2, isꓽStory‿v2, Meta‿v2 } from './v2'
-import { Story‿v3, isꓽStory‿v3, Meta‿v3 } from './v3'
+import { type Story‿v2, isꓽStory‿v2, type Meta‿v2 } from './v2'
+import { type Story‿v3, isꓽStory‿v3, type Meta‿v3 } from './v3'
 
 /////////////////////////////////////////////////
 

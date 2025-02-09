@@ -1,7 +1,7 @@
 import path from 'path'
 import assert from 'tiny-invariant'
 import { NORMALIZERS } from '@offirmo-private/normalize-string'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import micro_memoize from 'micro-memoize'
 
 import { RELATIVE_PATH_NORMALIZATION_VERSION } from '../consts.js'

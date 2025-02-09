@@ -1,7 +1,7 @@
 // https://storybook.js.org/docs/configure/user-interface/sidebar-and-urls
 
 import assert from 'tiny-invariant'
-import { type Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import { Url‿str } from '@offirmo-private/ts-types'
 
