@@ -26,28 +26,32 @@ const MONOREPO_ROOT_PATH = path.join(__dirname, '../../..')
 
 /////////////////////
 
-//console.log({PKG_PATH, DIST_DIR, DEPS_DIR})
+//console.log({PKG_PATH, MONOREPO_ROOT_PATH})
 console.log(`🧹  🔻 Cleaning ${stylize_string.bold(PKG_NAME)} [${cli.input}]...`)
 
+function rm_folderⵧwith_trace(filepath) {
+	console.debug(`     - "↳/${path.relative(MONOREPO_ROOT_PATH, filepath)}/"…`)
+	return fs.remove(filepath)
+}
 
 Promise.all(cli.input
 	.map(dir => {
 		switch(dir) {
 
 			case '…dist':
-				return fs.remove(path.join(PKG_PATH, 'dist'))
+				return rm_folderⵧwith_trace(path.join(PKG_PATH, 'dist'))
 
 			case '…cache':
 				return Promise.all([
-					fs.remove(path.join(PKG_PATH, '.cache')), // parcel 1 ?
-					fs.remove(path.join(PKG_PATH, 'node_modules/.cache')),
-					fs.remove(path.join(PKG_PATH, '.parcel')), // parcel 1
-					fs.remove(path.join(PKG_PATH, '.parcel-cache')), // parcel 2
-					fs.remove(path.join(MONOREPO_ROOT_PATH, '.parcel-cache')), // parcel 2 shared cache which causes heaps of troubles in monorepos
+					rm_folderⵧwith_trace(path.join(PKG_PATH, '.cache')), // parcel 1 ?
+					rm_folderⵧwith_trace(path.join(PKG_PATH, 'node_modules/.cache')),
+					rm_folderⵧwith_trace(path.join(PKG_PATH, '.parcel')), // parcel 1
+					rm_folderⵧwith_trace(path.join(PKG_PATH, '.parcel-cache')), // parcel 2
+					rm_folderⵧwith_trace(path.join(MONOREPO_ROOT_PATH, '.parcel-cache')), // parcel 2 shared cache which causes heaps of troubles in monorepos
 				])
 
 			default:
-				return fs.remove(path.join(PKG_PATH, dir))
+				return rm_folderⵧwith_trace(path.join(PKG_PATH, dir))
 		}
 	})
 )

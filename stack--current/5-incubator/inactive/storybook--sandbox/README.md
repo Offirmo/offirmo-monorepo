@@ -10,7 +10,7 @@
 
 		"@offirmo-private/async-utils": "^0",
 		"@offirmo-private/react-error-boundary": "*",
-		"@offirmo-private/rich-text-format": "^0",
+		"@offirmo-private/rich-text-format": "*",
 		"@offirmo-private/rich-text-format--to-react": "^0",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/soft-execution-context--browser": "*",

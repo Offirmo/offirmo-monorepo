@@ -20,7 +20,7 @@ import { promoteꓽto_node } from '../l1-utils/promote.ts'
 /////////////////////////////////////////////////
 // base rendering options
 
-export interface BaseRenderingOptions {
+interface BaseRenderingOptions {
 	// what should happen if a sub-node could not be resolved?
 	// (final, after calling resolve_unknown_subnode())
 	shouldꓽrecover_from_unknown_sub_nodes:
@@ -33,11 +33,10 @@ const DEFAULT_RENDERING_OPTIONSⵧWalk= Object.freeze<BaseRenderingOptions>({
 	shouldꓽrecover_from_unknown_sub_nodes: 'root',
 })
 
-
 /////////////////////////////////////////////////
 // Hooks
 
-export interface BaseHookParams<State> {
+interface BaseHookParams<State> {
 	state: State
 	$node: Immutable<CheckedNode>
 	depth: number
@@ -46,41 +45,41 @@ export interface BaseHookParams<State> {
 // NODE -- ENTER
 // Useful for:
 // - initialising the state
-export interface OnNodeEnterParams<State> extends BaseHookParams<State> {
+interface OnNodeEnterParams<State> extends BaseHookParams<State> {
 	$id: string
 }
 // NODE -- EXIT
-export interface OnNodeExitParams<State> extends BaseHookParams<State> {
+interface OnNodeExitParams<State> extends BaseHookParams<State> {
 	$id: string
 }
 
 // CONCAT STRING
-export interface OnConcatenateStringParams<State> extends BaseHookParams<State> {
+interface OnConcatenateStringParams<State> extends BaseHookParams<State> {
 	str: string
 }
 // CONCAT SUB-NODE
 // REMINDER this is done at the PARENT level => node, state, depth all refer to the parent node concatenating the child
-export interface OnConcatenateSubNodeParams<State> extends BaseHookParams<State> {
+interface OnConcatenateSubNodeParams<State> extends BaseHookParams<State> {
 	$sub_node_id: string
 	$sub_node: Immutable<Node>
 	sub_state: State // IMPORTANT: this is where the parent node can "consume" the child state into its own state
 }
 // FILTER
-export interface OnFilterParams<State> extends BaseHookParams<State> {
+interface OnFilterParams<State> extends BaseHookParams<State> {
 	$filter: string
 	$filters: string[]
 }
 // CLASS
-export interface OnClassParams<State> extends BaseHookParams<State> {
+interface OnClassParams<State> extends BaseHookParams<State> {
 	$class: string
 }
 // TYPE
-export interface OnTypeParams<State> extends BaseHookParams<State> {
+interface OnTypeParams<State> extends BaseHookParams<State> {
 	$type: NodeType
 	$parent_node: Immutable<CheckedNode> | null
 }
 
-export interface UnknownSubNodeResolver<State, RenderingOptions> {
+interface UnknownSubNodeResolver<State, RenderingOptions> {
 	($sub_node_id: string, context: BaseHookParams<State>, options: RenderingOptions): Node | undefined
 }
 
@@ -122,6 +121,8 @@ interface WalkerCallbacks<State, RenderingOptions extends BaseRenderingOptions> 
 	// hard to type strictly
 	[on_filter_or_type: string]: any
 }
+
+/////////////////////////////////////////////////
 
 function _getꓽcallbacksⵧdefault<State, RenderingOptions extends BaseRenderingOptions = any>(): WalkerCallbacks<State, RenderingOptions> {
 	function nothing(): void {}
@@ -194,7 +195,6 @@ interface InternalWalkState {
 	}
 	 */
 }
-
 
 function _walk_content<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>(
 	$node: Immutable<CheckedNode>,
@@ -442,6 +442,7 @@ function _walk<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>
 	return xstate
 }
 
+/////////////////////////////////////////////////
 
 function walk<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>(
 	$raw_node: Immutable<Node>,
@@ -481,14 +482,16 @@ function walk<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>(
 /////////////////////////////////////////////////
 
 export {
+	type BaseRenderingOptions,
+	DEFAULT_RENDERING_OPTIONSⵧWalk,
+
+	type WalkerCallbacks,
+	walk,
+
 	SPECIAL_LIST_NODE_CONTENT_KEY,
 
+	// for convenience
 	NodeType,
 	type CheckedNode,
 	type Node,
-	type WalkerStateCreator,
-	type WalkerReducer,
-	type WalkerCallbacks,
-	DEFAULT_RENDERING_OPTIONSⵧWalk,
-	walk,
 }

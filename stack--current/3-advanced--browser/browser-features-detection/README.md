@@ -13,3 +13,8 @@ MUST be semantic!!
 * TODO device detection to refine the inset? https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
 
 TODO https://css-tricks.com/recipes-for-detecting-support-for-css-at-rules/
+
+```ts
+import { hasꓽhover } from '@offirmo-private/browser-features-detection/has-hover'
+
+```

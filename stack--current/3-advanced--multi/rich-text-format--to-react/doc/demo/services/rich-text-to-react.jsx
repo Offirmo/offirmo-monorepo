@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import {
-	to_react,
+	renderⵧto_react,
 	intermediate_on_node_exit,
 	intermediate_assemble,
 	InteractiveRichTextFragment,
@@ -61,7 +61,7 @@ const DEFAULT_OPTIONS = {
 
 export default function rich_text_to_react(doc, options = {}) {
 	//console.log(`${LIB} Rendering a rich text:`, doc)
-	return to_react(
+	return renderⵧto_react(
 		doc,
 		{
 			on_nodeⵧexit,

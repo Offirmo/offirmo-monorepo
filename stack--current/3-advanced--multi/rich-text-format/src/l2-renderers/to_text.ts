@@ -4,13 +4,7 @@ import type { CheckedNode, Node, NodeLike } from '../l1-types/index.ts'
 import {
 	SPECIAL_LIST_NODE_CONTENT_KEY,
 	type BaseRenderingOptions,
-	type OnConcatenateStringParams,
-	type OnConcatenateSubNodeParams,
-	type OnNodeEnterParams,
-	type OnNodeExitParams,
-	type WalkerStateCreator,
 	type WalkerCallbacks,
-	type WalkerReducer,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
 } from './walk.ts'
@@ -55,7 +49,7 @@ type State = {
 /////////////////////////////////////////////////
 // callbacks
 
-const create_state: WalkerStateCreator<State, RenderingOptionsⵧToText> = (parent_state) => {
+const create_state: WalkerCallbacks<State, RenderingOptionsⵧToText>['create_state'] = (parent_state) => {
 	return {
 		sub_nodes: [],
 		starts_with_block: false,
@@ -68,7 +62,7 @@ const create_state: WalkerStateCreator<State, RenderingOptionsⵧToText> = (pare
 	}
 }
 
-const on_nodeⵧenter: WalkerReducer<State, OnNodeEnterParams<State>, RenderingOptionsⵧToText> = ({state, $node, depth}, {style}) => {
+const on_nodeⵧenter: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_nodeⵧenter'] = ({state, $node, depth}, {style}) => {
 	//console.log(`XXX to text on_nodeⵧenter`, $node?.$type)
 
 	switch ($node.$type) {
@@ -85,7 +79,7 @@ const on_nodeⵧenter: WalkerReducer<State, OnNodeEnterParams<State>, RenderingO
 	return state
 }
 
-const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOptionsⵧToText> = ({state, $node, depth}, {style}) => {
+const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_nodeⵧexit'] = ({state, $node, depth}, {style}) => {
 	//console.log('[on_type]', { $type, state })
 
 	switch ($node.$type) {
@@ -186,7 +180,7 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 	return state
 }
 
-const on_concatenateⵧstr: WalkerReducer<State, OnConcatenateStringParams<State>, RenderingOptionsⵧToText> = ({state, str}) => {
+const on_concatenateⵧstr: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_concatenateⵧstr'] = ({state, str}) => {
 	//console.log('on_concatenateⵧstr()', {str, state: structuredClone(state),})
 	if (state.ends_with_block) {
 		state.trailing_spaces = '' // remove them
@@ -205,7 +199,7 @@ const on_concatenateⵧstr: WalkerReducer<State, OnConcatenateStringParams<State
 	return state
 }
 
-const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToText> = ({
+const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_concatenateⵧsub_node'] = ({
 	state, $node, depth,
 	$sub_node_id, $sub_node, sub_state
 }, options) => {

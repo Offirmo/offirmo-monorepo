@@ -3,11 +3,7 @@ import { type Uri‿x, type Hyperlink } from '@offirmo-private/ts-types-web'
 
 import {
 	type BaseRenderingOptions,
-	type OnConcatenateStringParams,
-	type OnConcatenateSubNodeParams,
-	type OnTypeParams,
 	type WalkerCallbacks,
-	type WalkerReducer,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
 } from './walk.ts'
@@ -95,12 +91,11 @@ const DEFAULT_RENDERING_OPTIONSⵧToActions= Object.freeze<RenderingOptionsⵧTo
 	},
 })
 
-type State = {
+type WalkState = {
 	actions: Action[],
 }
 
-
-const on_type: WalkerReducer<State, OnTypeParams<State>, RenderingOptionsⵧToActions> = ({$type, state, $node, depth}, { getꓽactions }) => {
+const on_type: WalkerCallbacks<WalkState, RenderingOptionsⵧToActions>['on_type'] = ({$type, state, $node, depth}, { getꓽactions }) => {
 	//console.log('[on_type]', { $type, state })
 
 	state.actions.push(...getꓽactions($node))
@@ -108,20 +103,25 @@ const on_type: WalkerReducer<State, OnTypeParams<State>, RenderingOptionsⵧToAc
 	return state
 }
 
-const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToActions> = ({state, sub_state}) => {
+const on_concatenateⵧsub_node: WalkerCallbacks<WalkState, RenderingOptionsⵧToActions>['on_concatenateⵧsub_node'] = ({state, sub_state}) => {
 	state.actions = state.actions.concat(...sub_state.actions)
 
 	return state
 }
 
-const callbacksⵧto_actions: Partial<WalkerCallbacks<State, RenderingOptionsⵧToActions>> = {
-	on_nodeⵧenter: () => ({
+const on_concatenateⵧstr: WalkerCallbacks<WalkState, RenderingOptionsⵧToActions>['on_concatenateⵧstr'] = ({state, str}) => {
+	// nothing
+	return state
+}
+
+const create_state: WalkerCallbacks<WalkState, RenderingOptionsⵧToActions>['create_state'] = () => {
+	return {
 		actions: [],
-	}),
-	on_concatenateⵧstr: ({state, str}: OnConcatenateStringParams<State>) => {
-		// nothing
-		return state
-	},
+	}
+}
+const callbacksⵧto_actions: Partial<WalkerCallbacks<WalkState, RenderingOptionsⵧToActions>> = {
+	create_state,
+	on_concatenateⵧstr,
 	on_concatenateⵧsub_node,
 	on_type,
 }
@@ -134,7 +134,7 @@ function renderⵧto_actions($doc: Immutable<NodeLike>, options: Partial<Renderi
 		...DEFAULT_RENDERING_OPTIONSⵧToActions,
 		...options,
 	}
-	return walk<State, RenderingOptionsⵧToActions>($doc, callbacksⵧto_actions, full_options).actions
+	return walk<WalkState, RenderingOptionsⵧToActions>($doc, callbacksⵧto_actions, full_options).actions
 }
 
 /////////////////////////////////////////////////

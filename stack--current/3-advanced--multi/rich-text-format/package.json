@@ -15,7 +15,7 @@
 		"./demos": {
 			"import": "./src/__fixtures/index.ts"
 		},
-		"./styles.css": "./src/renderers/style.css"
+		"./styles.css": "./src/l2-renderers/style.css"
 	},
 	"source": "src/index.ts",
 

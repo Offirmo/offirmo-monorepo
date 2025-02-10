@@ -9,9 +9,8 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		"./is-framed": {
-			"import": "./src/l1-is-framed/index.ts"
-		}
+		"./has-hover": { "import": "./src/l3-has-hover/index.ts" },
+		"./is-framed": { "import": "./src/l1-is-framed/index.ts" }
 	},
 
 	"dependencies": {

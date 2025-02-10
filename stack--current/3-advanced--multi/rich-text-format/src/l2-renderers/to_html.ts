@@ -4,11 +4,7 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	type BaseRenderingOptions,
 	NodeType,
-	type OnConcatenateStringParams,
-	type OnConcatenateSubNodeParams,
-	type OnNodeExitParams,
 	type WalkerCallbacks,
-	type WalkerReducer,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
 } from './walk.ts'
@@ -47,13 +43,23 @@ const NODE_TYPE_TO_HTML_ELEMENT: { [k: string]: string } = {
 
 const warn_kvp = memoize_one(() => console.warn(`${LIB} TODO KVP`))
 
-const on_concatenateⵧsub_node: WalkerReducer<State, OnConcatenateSubNodeParams<State>, RenderingOptionsⵧToHtml> = ({$node, state, sub_state}) => {
+const create_state: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['create_state'] = () => ({
+		sub_nodes: [],
+		str: '',
+	})
+
+const on_concatenateⵧstr: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['on_concatenateⵧstr'] = ({state, str}) => {
+	state.str += str
+	return state
+}
+
+const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['on_concatenateⵧsub_node'] = ({$node, state, sub_state}) => {
 	state.sub_nodes.push($node)
 	state.str = state.str + sub_state.str
 	return state
 }
 
-const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOptionsⵧToHtml> = ({state, $node, depth}) => {
+const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['on_nodeⵧexit'] = ({state, $node, depth}) => {
 	const { $type, $classes, $sub, $hints } = $node
 	const $sub_node_count = Object.keys($sub).length
 
@@ -134,14 +140,9 @@ const on_nodeⵧexit: WalkerReducer<State, OnNodeExitParams<State>, RenderingOpt
 }
 
 const callbacksⵧto_html: Partial<WalkerCallbacks<State, RenderingOptionsⵧToHtml>> = {
-	on_nodeⵧenter: () => ({
-		sub_nodes: [],
-		str: '',
-	}),
-	on_concatenateⵧstr: ({state, str}: OnConcatenateStringParams<State>) => {
-		state.str += str
-		return state
-	},
+	create_state,
+
+	on_concatenateⵧstr,
 	on_concatenateⵧsub_node,
 	on_nodeⵧexit,
 }

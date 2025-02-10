@@ -40,6 +40,17 @@ console.log(RichText.renderⵧto_text($doc))
 console.log(RichText.renderⵧto_actions($doc))
 ```
 
+```ts
+import type { Immutable } from '@offirmo-private/ts-types'
+
+import {
+	type BaseRenderingOptions,
+	DEFAULT_RENDERING_OPTIONSⵧWalk,
+	type WalkerCallbacks,
+	walk,
+} from '@offirmo-private/rich-text-format'
+
+```
 Inspiration:
 * "Atlassian Document Format" https://developer.atlassian.com/cloud/jira/platform/apis/document/structure/
 

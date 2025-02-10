@@ -1,13 +1,21 @@
 import memoize_one from 'memoize-one'
 import * as React from 'react'
 import classNames from 'classnames'
+import type { Immutable } from '@offirmo-private/ts-types'
 
-import { Enum, NodeType, walk, isꓽlist, isꓽlistⵧuuid, isꓽlistⵧKV } from '@offirmo-private/rich-text-format'
-import 'npm:@offirmo-private/rich-text-format/styles.css'
+import {
+	type NodeLike,
+	Enum, NodeType, walk, isꓽlist, isꓽlistⵧuuid, isꓽlistⵧKV,
+	type WalkerCallbacks,
+	type RenderingOptionsⵧToText,
+} from '@offirmo-private/rich-text-format'
+import '@offirmo-private/rich-text-format/styles.css'
+
+/////////////////////////////////////////////////
 
 const LIB = 'rich_text_to_react'
 
-export const NODE_TYPE_TO_COMPONENT = {
+const NODE_TYPE_TO_COMPONENT = {
 	// will default to own tag if not in this list (ex. strong => strong)
 	[NodeType.weak]: 'span',
 	[NodeType.heading]: 'h3',
@@ -15,7 +23,7 @@ export const NODE_TYPE_TO_COMPONENT = {
 	[NodeType.fragmentⵧblock]: 'div',
 }
 
-export const NODE_TYPE_TO_EXTRA_CLASSES = {
+const NODE_TYPE_TO_EXTRA_CLASSES = {
 	[NodeType.weak]: [ 'o⋄colorꘌsecondary' ],
 }
 
@@ -24,7 +32,7 @@ const warn_kvp = memoize_one(() => console.warn(`${LIB} TODO KVP`))
 // a clever key is critically needed in general, but even more critical
 // for lists, whom default keys "1, 2, 3" is dangerous if the list is re-ordered.
 // Thus we attempt to enrich the default key ($id) from various hints.
-export function generate_react_key({$id, $node}) {
+function generate_react_key({$id, $node}) {
 	let key = $id
 
 	if ($node.$type === 'li') {
@@ -44,8 +52,17 @@ export function generate_react_key({$id, $node}) {
 	return key
 }
 
-// turn the state into a react element
-export function intermediate_on_node_exit({$node, $id, state}, options) {
+interface RenderingOptionsⵧToReact extends RenderingOptionsⵧToText {
+}
+
+interface WalkState {
+	sub_nodes: []
+	element: null
+	children: []
+}
+
+// turn the state into a React element
+function intermediate_on_node_exit({$node, $id, state}, options) {
 	const { $type, $classes, $hints } = $node
 
 	// initial values, may be overriden later
@@ -142,7 +159,7 @@ export function intermediate_on_node_exit({$node, $id, state}, options) {
 	return result
 }
 
-export function intermediate_assemble({ $id, $node, children, classes, component, wrapper }, options) {
+function intermediate_assemble({ $id, $node, children, classes, component, wrapper }, options) {
 	//console.log('intermediate_assemble', arguments)
 	if (component === 'br' || component === 'hr')
 		children = undefined
@@ -159,38 +176,39 @@ export function intermediate_assemble({ $id, $node, children, classes, component
 	)
 }
 
+/////////////////////////////////////////////////
 
-/// XXX ////
-// default version,
-// replace it for extension
-function on_nodeⵧexit(params, options) {
+const create_state: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>['create_state'] = () => {
+	return {
+		sub_nodes: [],
+		element: null,
+		children: [],
+	}
+}
+
+const on_nodeⵧexit: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>['on_nodeⵧexit'] = (params, options)=> {
 	const { children, classes, component, wrapper } = intermediate_on_node_exit(params, options)
 
 	params.state.element = intermediate_assemble({ ...params, children, classes, component, wrapper }, options)
 
 	return params.state
 }
-/// XXX ////
 
-function on_concatenateⵧstr({state, str}) {
+const on_concatenateⵧstr: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>['on_concatenateⵧstr'] = ({state, str}) => {
 	state.children.push({
 		element: str,
 	})
 	return state
 }
 
-function on_concatenateⵧsub_node({$node, state, sub_state}, options) {
+const on_concatenateⵧsub_node: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>['on_concatenateⵧsub_node'] = ({$node, state, sub_state}, options) => {
 	state.sub_nodes.push($node)
 	state.children.push(sub_state)
 	return state
 }
 
-const callbacks = {
-	on_nodeⵧenter: () => ({
-		sub_nodes: [],
-		element: null,
-		children: [],
-	}),
+const callbacks: WalkerCallbacks<WalkState, RenderingOptionsⵧToText> = {
+	create_state,
 	on_nodeⵧexit,
 	on_concatenateⵧstr,
 	on_concatenateⵧsub_node,
@@ -213,9 +231,13 @@ const callbacks = {
 	},
 }
 
-////////////
+/////////////////////////////////////////////////
 
-export function to_react(doc, callback_overrides = {}, options = {}) {
+type Options = {
+	key?: string
+}
+
+function renderⵧto_react(doc: Immutable<NodeLike>, callback_overrides: Partial<WalkerCallbacks<WalkState, RenderingOptionsⵧToText>> = {}, options: Options = {}) {
 	//console.log(`${LIB} Rendering a rich text:`, doc)
 	const content = walk(
 		doc,
@@ -232,4 +254,9 @@ export function to_react(doc, callback_overrides = {}, options = {}) {
 	}, content)
 }
 
-export default to_react
+/////////////////////////////////////////////////
+
+export {
+	type RenderingOptionsⵧToReact,
+	renderⵧto_react,
+}
