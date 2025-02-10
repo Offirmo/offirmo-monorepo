@@ -16,9 +16,7 @@ function renderꓽmanager(state: ObservableState): HTMLElement {
 	root.classList.add('storypad⋄manager')
 
 	// render the full UI:
-	// @ts-expect-error bundler stuff
-	import('@offirmo-private/css--framework/src/atomic/atomic--dimension.css')
-	// @ts-expect-error bundler stuff
+	import('@offirmo-private/css--framework/viewport.css')
 	import('./index.css')
 	// 1. side panel
 	const sidebar_elt = renderⵧsidebar(state)

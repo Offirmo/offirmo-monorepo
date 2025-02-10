@@ -10,6 +10,9 @@
 	"exports": {
 		".": {
 			"import": "./src/index.ts"
+		},
+		"./viewport.css": {
+			"import": "./src/atomic/atomic--dimension.css"
 		}
 	},
 	"source": "src/index.ts",

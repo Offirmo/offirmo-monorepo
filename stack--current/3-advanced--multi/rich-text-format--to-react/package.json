@@ -15,7 +15,7 @@
 		"react": "^19"
 	},
 	"dependencies": {
-		"@offirmo-private/features-detection-browser": "*",
+		"@offirmo-private/browser-features-detection": "*",
 		"@offirmo-private/react-error-boundary": "*",
 		"@offirmo-private/rich-text-format": "^0",
 		"classnames": "^2",

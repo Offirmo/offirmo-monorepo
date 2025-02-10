@@ -16,3 +16,8 @@ The core change is an inversion of control:
 https://storybook.js.org/docs/react/api/csf
 https://github.com/ComponentDriven/csf
 https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#sorting-stories
+
+
+```ts
+import type { Meta, Story } from '@offirmo-private/storypad/types'
+```

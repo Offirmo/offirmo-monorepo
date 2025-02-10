@@ -15,7 +15,6 @@ function renderꓽdrawer(state: ObservableState): HTMLElement {
 	const root = document.createElement('div')
 	root.classList.add('storypad⋄ui-element', 'storypad⋄drawer')
 
-	// @ts-expect-error bundler stuff
 	import('./index.css')
 	root.innerText = 'TODO drawer'
 

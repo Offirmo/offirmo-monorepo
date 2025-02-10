@@ -15,7 +15,6 @@ function renderꓽcontrolbar(state: ObservableState): HTMLElement {
 	const root = document.createElement('div')
 	root.classList.add('storypad⋄ui-element', 'storypad⋄controlbar')
 
-	// @ts-expect-error bundler stuff
 	import('./index.css')
 
 	const storyEntry = state.getꓽstoryⵧcurrent()

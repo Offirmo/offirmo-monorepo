@@ -16,7 +16,6 @@ function renderⵧsidebar(state: ObservableState): HTMLElement {
 	const root = document.createElement('div')
 	root.classList.add('storypad⋄ui-element', 'storypad⋄sidebar')
 
-	// @ts-expect-error bundler stuff
 	import('./index.css')
 	_append_folder(state, state.getꓽtree_root(), [], root)
 

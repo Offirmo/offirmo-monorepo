@@ -6,6 +6,15 @@
 	"license": "Unlicense",
 
 	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./src/index.ts"
+		},
+		"./types": {
+			"import": "./src/l0-types/index.ts"
+		}
+	},
 	"source": "src/index.ts",
 
 	"dependencies": {
@@ -13,7 +22,7 @@
 		"@offirmo-private/css--framework": "*",
 		"@offirmo-private/css--utils": "*",
 		"@offirmo-private/data-structures": "*",
-		"@offirmo-private/features-detection-browser": "*",
+		"@offirmo-private/browser-features-detection": "*",
 		"@offirmo-private/page-loaded": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/soft-execution-context--browser": "*",

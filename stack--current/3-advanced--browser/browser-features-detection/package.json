@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/features-detection-browser",
+	"name": "@offirmo-private/browser-features-detection",
 	"description": "My own feature detection lib",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
@@ -7,7 +7,12 @@
 	"private": true,
 
 	"sideEffects": true,
-	"source": "src/index.js",
+	"type": "module",
+	"exports": {
+		"./is-framed": {
+			"import": "./src/l1-is-framed/index.ts"
+		}
+	},
 
 	"dependencies": {
 		"memoize-one": "^6"

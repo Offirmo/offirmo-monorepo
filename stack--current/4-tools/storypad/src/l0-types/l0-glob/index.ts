@@ -1,7 +1,7 @@
 
 import {
-	Module‿Parcelv2, isꓽModule‿Parcelv2,
-	Glob‿Parcelv2,
+	type Module‿Parcelv2, isꓽModule‿Parcelv2,
+	type Glob‿Parcelv2,
 } from './parcel/v2'
 
 

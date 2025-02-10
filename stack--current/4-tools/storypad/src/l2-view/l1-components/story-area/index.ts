@@ -21,7 +21,6 @@ function renderꓽstoryᝍarea(state: ObservableState): HTMLElement {
 	const root = document.createElement('div')
 	root.classList.add('storypad⋄story-area')
 
-	// @ts-expect-error bundler stuff
 	import('./index.css')
 
 	root.appendChild(renderꓽcontrolbar(state))

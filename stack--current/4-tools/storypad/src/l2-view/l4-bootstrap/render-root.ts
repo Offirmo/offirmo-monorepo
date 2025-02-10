@@ -1,14 +1,14 @@
 /* Root render function
  */
 
-import { isꓽframed } from '@offirmo-private/features-detection-browser/src/l1-is-framed'
+import { isꓽframed } from '@offirmo-private/browser-features-detection/is-framed'
 
-import { RenderMode } from '../l1-flux/l1-state/types'
-import { ObservableState } from '../l1-flux/l2-observable'
-import { LIB } from '../consts'
-import renderⵧstory from './l1-components/preview'
-import renderⵧmanager from './l1-components/manager'
-import renderꓽstoryᝍarea from './l1-components/story-area'
+import { RenderMode } from '../../l1-flux/l1-state/types.ts'
+import { ObservableState } from '../../l1-flux/l2-observable'
+import { LIB } from '../../consts.ts'
+import renderⵧstory from '../l1-components/preview'
+import renderⵧmanager from '../l1-components/manager'
+import renderꓽstoryᝍarea from '../l1-components/story-area'
 
 /////////////////////////////////////////////////
 
@@ -24,10 +24,8 @@ function renderꓽroot(state: ObservableState, container: HTMLElement = document
 	}
 	else {
 		// our stuff, we can be more free
-		// @ts-expect-error bundler stuff
-		import('@offirmo-private/css--framework/src/atomic/atomic--dimension.css')
-		// @ts-expect-error bundler stuff
-		import('./index.css')
+		import('@offirmo-private/css--framework/viewport.css')
+		import('../index.css')
 
 		const root = document.createElement('div')
 		root.classList.add('o⋄full-viewport', 'storypad⋄root')

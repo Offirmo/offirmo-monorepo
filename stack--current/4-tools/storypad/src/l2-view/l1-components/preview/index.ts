@@ -48,7 +48,6 @@ async function renderꓽstory(state: ObservableState, container: HTMLElement) {
 			if (layout === 'bare')
 				return container
 
-			// @ts-expect-error bundler stuff
 			import('./index.css')
 
 			const storyContainer = document.createElement('div')
