@@ -1,9 +1,13 @@
-import memoize_one from 'memoize-one'
 import * as React from 'react'
-import { HTMLElementType, type ReactNode } from 'react'
+import { type ReactNode } from 'react'
 import classNames from 'classnames'
-import type { Immutable } from '@offirmo-private/ts-types'
 
+import memoize_one from 'memoize-one'
+import type { Immutable } from '@offirmo-private/ts-types'
+import {
+	normalize_unicode,
+	capitalize,
+} from '@offirmo-private/normalize-string'
 import {
 	type NodeLike, type Node, type CheckedNode,
 	Enum, NodeType, walk, isꓽlist, isꓽlistⵧuuid, isꓽlistⵧKV,
@@ -11,28 +15,13 @@ import {
 	type BaseRenderingOptions,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
 	SPECIAL_LIST_NODE_CONTENT_KEY,
+	promoteꓽto_node,
 } from '@offirmo-private/rich-text-format'
 import '@offirmo-private/rich-text-format/styles.css'
 
 /////////////////////////////////////////////////
 
 const LIB = 'rich_text_to_react'
-
-const NODE_TYPE_TO_COMPONENT = {
-	// will default to own tag if not in this list (ex. strong => strong)
-	[NodeType.weak]: 'span' as React.HTMLElementType,
-	[NodeType.heading]: 'h3' as React.HTMLElementType,
-	[NodeType.fragmentⵧinline]: 'span' as React.HTMLElementType,
-	[NodeType.fragmentⵧblock]: 'div' as React.HTMLElementType,
-}
-
-const NODE_TYPE_TO_EXTRA_CLASSES = {
-	[NodeType.weak]: [ 'o⋄colorꘌsecondary' ],
-}
-
-const warn_kvp = memoize_one(() => console.warn(`${LIB} TODO KVP`))
-
-
 
 interface RenderingOptionsⵧToReact extends BaseRenderingOptions {
 	key?: string
@@ -41,50 +30,78 @@ const DEFAULT_RENDERING_OPTIONSⵧToReact: RenderingOptionsⵧToReact = {
 	...DEFAULT_RENDERING_OPTIONSⵧWalk,
 }
 
-interface WalkState {
-	element: React.ReactElement // core result
+/////////////////////////////////////////////////
 
-	// this is where the sub-nodes concatenation happens
-	children_states: Array<WalkState>
-	$sub_nodes: Array<Node> // we also store the sub-nodes, but no usage yet
+const NODE_TYPE_TO_COMPONENT: { [type: string]: React.HTMLElementType | undefined } = {
+	// will default to own tag if not in this list (ex. strong => strong)
+	[NodeType.weak]: 'span' as React.HTMLElementType,
+	[NodeType.heading]: 'h3' as React.HTMLElementType,
+	[NodeType.fragmentⵧinline]: 'span' as React.HTMLElementType,
+	[NodeType.fragmentⵧblock]: 'div' as React.HTMLElementType,
+	[NodeType.emoji]: 'span' as React.HTMLElementType,
+}
 
+const NODE_TYPE_TO_EXTRA_CLASSES: { [type: string]: string[] | undefined } = {
+	[NodeType.weak]: [ 'o⋄colorꘌsecondary' ],
+}
 
-	//classes: Array<string>
+const _warn_kvp = memoize_one(() => console.warn(`${LIB} TODO KVP`))
 
-	//component: keyof typeof NODE_TYPE_TO_COMPONENT
+function _is_react_element(n: React.ReactNode): n is React.ReactElement {
+	const is_renderable = !!n && n !== true
+	if (!is_renderable)
+		return false
 
-	//wrapper: React.ReactElement // wrapper, needed when children
+	const is_primitive = typeof n === 'string' || typeof n === 'number' || typeof n === 'bigint'
+	if (is_primitive)
+		return false
+
+	return true
 }
 
 // a clever key is critically needed in general, but even more critical
-// for lists, whom default keys "1, 2, 3" is dangerous if the list is re-ordered.
+// for lists, the default keys "1, 2, 3" are non-optimal, ex. if the list is re-ordered.
 // Thus we attempt to enrich the default key ($id) from various hints.
-function _generate_own_react_key({$id, $node}) {
+function _generate_own_react_key({$id, $node}: {$id: string, $node: Immutable<CheckedNode> | Immutable<Node>}) {
 	let key = $id
 
 	if ($node.$type === 'li') {
 		// this is a wrapper, go down a level
-		$node = $node.$sub[SPECIAL_LIST_NODE_CONTENT_KEY]
+		$node = promoteꓽto_node($node.$sub![SPECIAL_LIST_NODE_CONTENT_KEY]!)
 	}
 
 	if ($node.$hints?.key)
 		key += `.aka:${$node.$hints.key}`
-	if ($node.$hints?.uuid)
-		key += `.uuid:${$node.$hints.uuid}`
+	if ($node.$hints?.['uuid'])
+		key += `.uuid:${$node.$hints['uuid']}`
 
 	//console.log('_generate_own_react_key', {$id, $node, key})
 
 	return key
 }
 
-function _get_aggregated_keyed_children({state}): Array<React.ReactElement> {
-	let children: Array<React.ReactElement> = state.children_states.map(s => s.element)
-	const complex_children_count = children.reduce((acc, child) => {
-		if (!child || typeof child === 'string')
+function _get_aggregated_keyed_children({state}: {state: WalkState}): Array<React.ReactNode> {
+	let children: Array<React.ReactNode> = state.children_states
+		.map(s => s.element)
+		.filter(child => {
+			// https://legacy.reactjs.org/docs/jsx-in-depth.html#booleans-null-and-undefined-are-ignored
+			// false, null, undefined, and true are valid children. They simply don’t render.
+			return !!child && child !== true
+		})
+		.map(child => {
+			if (typeof child === 'string')
+				return normalize_unicode(child)
+
+			return child
+		})
+
+	const complex_children_count = children.reduce<number>((acc, child) => {
+		if (!_is_react_element(child))
 			return acc
 
 		return acc + 1
 	}, 0)
+
 	if (complex_children_count > 1) {
 		// we need to key the children out of safety
 		// at their level, children can't ensure that their keys are unique,
@@ -93,37 +110,42 @@ function _get_aggregated_keyed_children({state}): Array<React.ReactElement> {
 
 		//console.group(`starting rekey for ${$id}...`)
 		//console.log({$node, state})
-		const key_count = {}
+		const key_count = new Map<string, number>
 		children = children.map(child => {
-			if (typeof child === 'string')
+			if (!_is_react_element(child))
 				return child
 
-			let key = child.key
+			let key = (child! as React.ReactElement).key!
 
-			key_count[key] = (key_count[key] || 0) + 1
+			const count = (key_count.get(key) || 0) + 1
+			key_count.set(key, count)
 
-			if (key_count[key] > 1)
-				key += `+${key_count[key]}`
-
-			if (key !== child.key)
+			if (count > 1) {
+				key += `+${count}`
 				child = React.cloneElement(child, { key })
+			}
 
 			return child
 		})
 		//console.log(key_count)
 		//console.groupEnd()
 	}
+	else {
+		const has_only_str_children = children
+			.every(child => typeof child === 'string')
+		if (has_only_str_children)
+			children = [ children.join('') ] // merge into a single string
+	}
 
 	return children
 }
 
-function _get_aggregated_classes({$node}): Set<string> {
+function _get_aggregated_classes({$node}: {$node: Immutable<CheckedNode>}): Set<string> {
 	const { $type, $classes, $hints } = $node
 
 	const classes = new Set<string>([
 		...$classes,
 		...(NODE_TYPE_TO_EXTRA_CLASSES[$type] || []),
-		'o⋄children-spacing⁚flow',
 	])
 
 	if (isꓽlist($node)) {
@@ -145,7 +167,7 @@ function _get_aggregated_classes({$node}): Set<string> {
 
 		if (isꓽlistⵧKV($node)) {
 			// TODO rewrite completely
-			warn_kvp()
+			_warn_kvp()
 			classes.add('o⋄rich-text⋄list--no-bullet')
 		}
 	}
@@ -153,13 +175,30 @@ function _get_aggregated_classes({$node}): Set<string> {
 	return classes
 }
 
-function _get_final_element_creator({$node, $id, classes} : { $node: CheckedNode, $id: string, classes: Set<string>}): (children: ReactNode[]) => React.ReactElement | React.ReactElement[] {
+function _get_final_element_creator({$node, $id, classes} : { $node: Immutable<CheckedNode>, $id: string, classes: Set<string>}): (children: ReactNode[]) => React.ReactNode {
 	const { $type, $hints } = $node
 
-	const key = _generate_own_react_key({$id, $node})
-	const classProps = {
-		...(classes.size && { className: classNames(Array.from(classes.values()))}),
+	if (!Enum.isType(NodeType, $type)) {
+		throw new Error(`Unknown node type "${$type}"!`)
+		/*		wrapper = children => React.createElement(
+					'div',
+					{
+						key: _generate_own_react_key({$id, $node}),
+						className: 'o⋄rich-text⋄error',
+					},
+					[
+						`[Unknown type "${$type}"]`, // extra inline text
+						children,
+					],
+				)*/
 	}
+
+	const has_classes = classes.size !== 0
+	const classProps = {
+		...(has_classes && { className: classNames(Array.from(classes.values()))}),
+	}
+
+	const key = _generate_own_react_key({$id, $node})
 
 	if ($hints.href)
 		return (children) => React.createElement(
@@ -173,38 +212,40 @@ function _get_final_element_creator({$node, $id, classes} : { $node: CheckedNode
 			children,
 		)
 
-	if (!Enum.isType(NodeType, $type)) {
-		throw new Error(`Unknown node type "${$type}"!`)
-/*		wrapper = children => React.createElement(
-			'div',
+	const element_type: React.HTMLElementType = NODE_TYPE_TO_COMPONENT[$type] || ($type as React.HTMLElementType)
+
+	return children => {
+		if (element_type === 'span' && !has_classes) {
+			const has_only_str_children = children
+				.every(child => typeof child === 'string')
+			if (has_only_str_children)
+				return children.join('')
+		}
+
+		return React.createElement(
+			element_type,
 			{
-				key: _generate_own_react_key({$id, $node}),
-				className: 'o⋄rich-text⋄error',
+				key,
+				...classProps,
 			},
-			[
-				`[Unknown type "${$type}"]`, // extra inline text
-				children,
-			],
-		)*/
+			children,
+		)
 	}
-
-	const component: React.HTMLElementType = NODE_TYPE_TO_COMPONENT[$type] || $type
-
-	return children => React.createElement(
-		component,
-		{
-			key,
-			...classProps,
-		},
-		children,
-	)
 }
 
 /////////////////////////////////////////////////
 
+interface WalkState {
+	element: undefined | React.ReactNode // core result
+
+	// this is where the sub-nodes concatenation happens
+	children_states: Array<WalkState>
+	$sub_nodes: Array<Immutable<Node>> // we also store the sub-nodes, but no usage yet
+}
+
 const create_state: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>['create_state'] = (): WalkState => {
 	return {
-		element: null,
+		element: undefined,
 		$sub_nodes: [],
 		children_states: [],
 	}
@@ -227,6 +268,8 @@ const on_nodeⵧexit: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>['on
 const on_concatenateⵧstr: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>['on_concatenateⵧstr'] = ({state, str}) => {
 	state.children_states.push({
 		element: str,
+		$sub_nodes: [],
+		children_states: [],
 	})
 	return state
 }
@@ -241,22 +284,26 @@ const on_concatenateⵧsub_node: WalkerCallbacks<WalkState, RenderingOptionsⵧT
 const on_filterꘌCapitalize: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>['on_filter'] =  ({state}) => {
 	//console.warn('rich-text-to-react Capitalize', state)
 
-	state.element = React.cloneElement(
-		state.element,
-		{
-			children: React.Children.map(
-				state.element.props.children,
-				(child) => (typeof child === 'string')
-					? child[0].toUpperCase() + child.slice(1)
-					: child,
-			),
-		},
-	)
+	if (typeof state.element === 'string')
+		state.element = capitalize(state.element)
+	else if (_is_react_element(state.element))
+		state.element = React.cloneElement( // TODO test
+			state.element,
+			{
+				// TODO deep capitalize?
+				children: React.Children.map(
+					state.element.props.children,
+					(child) => (typeof child === 'string')
+						? capitalize(child)
+						: child,
+				),
+			},
+		)
 
 	return state
 }
 
-const callbacksⵧto_react: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact> = {
+const callbacksⵧto_react: Partial<WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>> = {
 	create_state,
 	on_nodeⵧexit,
 	on_concatenateⵧstr,
@@ -269,28 +316,28 @@ const callbacksⵧto_react: WalkerCallbacks<WalkState, RenderingOptionsⵧToReac
 type Options = {
 }
 
-function renderⵧto_react(doc: Immutable<NodeLike>, callback_overrides: Partial<WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>> = {}, options: RenderingOptionsⵧToReact = {}) {
+function renderⵧto_react(doc: Immutable<NodeLike>, callback_overrides: Partial<WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>> = {}, raw_options: Partial<RenderingOptionsⵧToReact> = {}) {
 	//console.log(`${LIB} Rendering a rich text:`, doc)
 
-	const callbacks: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact> = {
+	const callbacks: Partial<WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>> = {
 		...callbacksⵧto_react,
 		...callback_overrides,
 	}
 
-	options = {
+	const options: RenderingOptionsⵧToReact = {
 		...DEFAULT_RENDERING_OPTIONSⵧToReact,
-		...options,
+		...raw_options,
 	}
 
 	const state = walk<WalkState, RenderingOptionsⵧToReact>(
-		doc,
+		promoteꓽto_node(doc),
 		callbacks,
 		options,
 	)
 
 	return React.createElement('div', {
 		key: options.key || 'rich-text-format-to-react--root',
-		className: 'o⋄rich-text o⋄children-spacing⁚flow',
+		className: 'o⋄rich-text',
 	}, state.element)
 }
 

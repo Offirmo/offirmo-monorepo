@@ -9,6 +9,7 @@ import {
   ensure_string,
   normalize_unicode,
   trim,
+  capitalize,
 } from '@offirmo-private/normalize-string'
 
 ```

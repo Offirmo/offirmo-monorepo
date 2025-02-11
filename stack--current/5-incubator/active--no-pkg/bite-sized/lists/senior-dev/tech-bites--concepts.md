@@ -125,6 +125,7 @@ close / destroy / terminate / dispose / release / free / delete / destruct / fin
 code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 code quality = the only definition of quality in code that makes any sense is our ability to change the code. If it's easy to change, it's high quality; if it's hard to change, it's not. 
 code quality https://blog.jim-nielsen.com/2024/easy-changes/
+code reuse -- small focused modules = Make small focused modules for reusability and to make it possible to build larger more advanced things that are easier to reason about https://sindresorhus.com/blog/small-focused-modules
 code review https://www.linkedin.com/posts/ajgreenwell_code-reviews-have-unwritten-laws-i-had-activity-7239611908914319360-_MHW/
 codebase -- type -- hobby
 codebase -- type -- large established codebase = single-digit million lines of code (~5M, let’s say); Somewhere between 100 and 1000 engineers working on the same codebase; The first working version of the codebase is at least ten years old
@@ -316,6 +317,7 @@ GRASP -- see also: SOLID
 groupware = collaboration software = helps members of a group work better together. Groupware makes it possible for group members to easily share information and to use that information to more easily support working together.
 grug brain = complexity, readability https://grugbrain.dev/
 Grug Brained Developer = A layman's guide to thinking like the self-aware smol brained https://grugbrain.dev/
+hallway usability testing https://en.wikipedia.org/wiki/Usability_testing#Hallway_testing
 handle
 hashbang (aka. shebang) https://github.com/tc39/proposal-hashbang
 helping -- XY problem = wrongly asking about your attempted solution rather than your actual problem https://xyproblem.info/
@@ -351,7 +353,33 @@ interface
 interface -- abstract = no implementation, only to be extended (OOP)
 Interface segregation principle = instead of a class interface with all possible methods clients might need, there should be separate interfaces catering to the specific needs of each type of client https://en.wikipedia.org/wiki/Interface_segregation_principle
 interpreters = make your own programming language https://craftinginterpreters.com/
-Joel test
+Joel test -- 01 Do you use source control?
+Joel test -- 02 Can you make a build in one step?
+Joel test -- 03 Do you make daily builds?
+Joel test -- 04 Do you have a bug database?
+Joel test -- 05 Do you fix bugs before writing new code?
+Joel test -- 06 Do you have an up-to-date schedule?
+Joel test -- 07 Do you have a spec?
+Joel test -- 08 Do programmers have quiet working conditions?
+Joel test -- 09 Do you use the best tools money can buy?
+Joel test -- 10 Do you have testers?
+Joel test -- 11 Do new candidates write code during their interview?
+Joel test -- 12 Do you do hallway usability testing?
+Joel test -- revised -- 01 Do you use Git, or some lesser source control system?
+Joel test -- revised -- 02 Can you build and release in one step?
+Joel test -- revised -- 03 Do you build and test before merging to master?
+Joel test -- revised -- 04 Do you have a bug database?
+Joel test -- revised -- 05 Do you fix bugs before writing new code?
+Joel test -- revised -- 06 Do you have an up-to-date schedule?
+Joel test -- revised -- 07 Do you write a spec before writing code?
+Joel test -- revised -- 08 Do programmers have quiet working conditions free of interruptions?
+Joel test -- revised -- 09 Do you use the best development tools money can buy?
+Joel test -- revised -- 10 Do you have human testers?
+Joel test -- revised -- 11 Do you do automated testing?
+Joel test -- revised -- 12 Do new candidates write code as part of the hiring process?
+Joel test -- revised -- 13 Do you watch people actually try to use your software?
+Joel test -- revised https://dev.to/checkgit/the-joel-test-20-years-later-1kjk
+Joel test https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/
 JS equality
 JS http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
 JS http://developer.telerik.com/featured/a-guide-to-javascript-engines-for-idiots/

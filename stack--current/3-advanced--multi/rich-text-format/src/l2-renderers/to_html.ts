@@ -155,7 +155,7 @@ function renderⵧto_html($doc: Node, options: Partial<RenderingOptionsⵧToHtml
 
 	// TODO review classes
 	return `
-<div class="o⋄rich-text o⋄children-spacing⁚flow">
+<div class="o⋄rich-text">
 	${walk<State, RenderingOptionsⵧToHtml>($doc, callbacksⵧto_html, full_options).str}
 </div>
 `

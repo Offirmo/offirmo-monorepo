@@ -21,7 +21,8 @@ function promoteꓽto_node($raw: Immutable<NodeLike>): Immutable<Node> {
 			$content: $raw,
 		}
 
-	// it could be anything bc type Node is very lax, better check
+	// we could be passed anything, (ex false, undef...)
+	// better check it looks like a Node
 	assertꓽisꓽNode($raw)
 
 	return $raw
