@@ -30,12 +30,23 @@
 
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",
-		"start:parcel": "parcel --out-dir .parcel --no-autoinstall --no-hmr doc/demo/index.html doc/demo/index-iframe.html",
-		"demo": "run-s clean start:parcel"
+		"clean--cache": "monorepo-script--clean-package …cache",
+
+		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"dev": "run-s clean _build:dev:watch",
+
+		"_start:parcel--storypad": "parcel serve storypad/index.html --port 1981  --lazy  --no-autoinstall",
+		"stories": "npm-run-all  clean  _start:parcel--storypad"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/prettify-any": "*",
+		"@offirmo-private/react-error-boundary": "*",
+		"@offirmo-private/soft-execution-context": "*",
+		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
 		"react": "^19"
 	}
 }

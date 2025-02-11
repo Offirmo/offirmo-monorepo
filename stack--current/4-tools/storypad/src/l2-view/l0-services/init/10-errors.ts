@@ -15,8 +15,9 @@ async function init(): Promise<void> {
 		try {
 			// this code must be super extra safe!!!
 			// don't even use the advanced logger!
-
 			console.group('%cSXC "final-error" event!', STYLES)
+
+			console.error(err, {err})
 
 			/*
 			// ignore some
@@ -25,7 +26,9 @@ async function init(): Promise<void> {
 				return
 			}*/
 
-			console.error('%c↑ error! (no report since dev)', STYLES, {SXC, err})
+			console.error({SXC})
+
+			console.log('↑ error! (no report since dev)', STYLES)
 
 			console.groupEnd()
 		}

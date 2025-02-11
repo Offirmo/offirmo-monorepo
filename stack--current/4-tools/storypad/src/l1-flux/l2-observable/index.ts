@@ -45,9 +45,9 @@ class ObservableState {
 			console.warn('No stories found!')
 		}
 
-		const url_story = UrlState.getꓽexplicit_story_uid()
-		if (url_story && current_story?.uid !== url_story) {
-			console.warn('URL and in-mem story mismatch!', { current_story, url_story })
+		const story_uid_from_url = UrlState.getꓽexplicit_story_uid()
+		if (story_uid_from_url && current_story?.uid !== story_uid_from_url) {
+			console.warn('URL and in-mem story mismatch!', { current_story, story_uid_from_url })
 		}
 
 		console.log('Flux final state =', {

@@ -54,9 +54,7 @@ function renderꓽBookStash(
 		list.pushNode(renderꓽbookshelf__entry__spine(entry))
 	})
 
-	return RichText.fragmentⵧblock()
-		.pushNode(list.done())
-		.done()
+	return list.done()
 }
 
 /////////////////////////////////////////////////

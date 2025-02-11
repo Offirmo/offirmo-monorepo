@@ -1,0 +1,12 @@
+{
+	"extends": "../../0-meta/tsconfig.json",
+	"compilerOptions": {
+		"lib": [ "ES2024", "DOM" ],
+		"noEmit": true
+	},
+	"include": [
+		"../../0-meta/typescript-custom-typings/*.d.ts",
+		"src/**/*.ts",
+		"src/**/*.tsx"
+	]
+}
