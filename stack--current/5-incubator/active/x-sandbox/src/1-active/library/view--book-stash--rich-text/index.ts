@@ -44,6 +44,9 @@ function renderꓽBookStash(
 	state: Immutable<BookStashLib.BookStash>,
 ): RichText.Node {
 	const list = RichText.listⵧordered()
+	list.addHints({
+		bullets_style: 'none',
+	})
 
 	const bookshelf = getꓽbookshelf(state)
 

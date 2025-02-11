@@ -42,13 +42,14 @@ interface BaseHookParams<State> {
 	depth: number
 }
 
-// NODE -- ENTER
-// Useful for:
-// - initialising the state
+// known usages:
+// - tracking (increasing) list depth
 interface OnNodeEnterParams<State> extends BaseHookParams<State> {
 	$id: string
 }
-// NODE -- EXIT
+// known usages:
+// - perform normalization/linting/autofixes of the node
+// - finally collate all the sub-nodes (in some cases)
 interface OnNodeExitParams<State> extends BaseHookParams<State> {
 	$id: string
 }
@@ -58,7 +59,7 @@ interface OnConcatenateStringParams<State> extends BaseHookParams<State> {
 	str: string
 }
 // CONCAT SUB-NODE
-// REMINDER this is done at the PARENT level => node, state, depth all refer to the parent node concatenating the child
+// REMINDER this is done at the PARENT level => node, state, depth all refer to the PARENT node concatenating the child
 interface OnConcatenateSubNodeParams<State> extends BaseHookParams<State> {
 	$sub_node_id: string
 	$sub_node: Immutable<Node>
@@ -185,15 +186,6 @@ interface InternalWalkState {
 	depth: number,
 
 	$root_node: Immutable<CheckedNode>, // for sub-node resolution "root" mode
-	/*
-		const context = parent_state
-		? Object.create(parent_state.context)
-		: Object.create(null) // NO auto-injections here, let's keep it simple. See core & common
-
-	return {
-		context,
-	}
-	 */
 }
 
 function _walk_content<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>(
@@ -463,7 +455,7 @@ function walk<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>(
 	assert(
 		// detect incorrectly built options (actual issue before rewrite in 2024)
 		options.shouldꓽrecover_from_unknown_sub_nodes !== undefined,
-		`${LIB}[walk]: options should be a fully initialized options object!`
+		`${LIB}[walk]: walk options should be a fully initialized options object! Please extend the base one and spread the defaults.`
 	)
 
 	const $root_node = normalizeꓽnode($raw_node)

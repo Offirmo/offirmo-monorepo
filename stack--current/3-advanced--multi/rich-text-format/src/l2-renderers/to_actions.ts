@@ -95,6 +95,12 @@ type WalkState = {
 	actions: Action[],
 }
 
+const create_state: WalkerCallbacks<WalkState, RenderingOptionsⵧToActions>['create_state'] = () => {
+	return {
+		actions: [],
+	}
+}
+
 const on_type: WalkerCallbacks<WalkState, RenderingOptionsⵧToActions>['on_type'] = ({$type, state, $node, depth}, { getꓽactions }) => {
 	//console.log('[on_type]', { $type, state })
 
@@ -114,11 +120,6 @@ const on_concatenateⵧstr: WalkerCallbacks<WalkState, RenderingOptionsⵧToActi
 	return state
 }
 
-const create_state: WalkerCallbacks<WalkState, RenderingOptionsⵧToActions>['create_state'] = () => {
-	return {
-		actions: [],
-	}
-}
 const callbacksⵧto_actions: Partial<WalkerCallbacks<WalkState, RenderingOptionsⵧToActions>> = {
 	create_state,
 	on_concatenateⵧstr,

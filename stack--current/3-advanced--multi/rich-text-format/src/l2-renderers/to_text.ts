@@ -84,12 +84,14 @@ const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_node
 
 	switch ($node.$type) {
 		case 'ul':
-		// fallthrough
+			// fallthrough
 		case 'ol':
 			state.starts_with_block = true // in case the container type wasn't a block. It's definitely a block!
 			break
 
 		case 'br':
+			// fallthrough
+		case 'hr':
 			state.ends_with_block = true
 			state.str = '' // clear, in case the user accidentally pushed some content in this node
 			break
