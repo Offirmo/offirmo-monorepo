@@ -31,7 +31,7 @@ function serializeꓽstory_uid(uid: StoryUId): string {
 			? [ path, story_name ].join(SEPⵧSTORY)
 			: story_name
 
-	console.debug(`serializeꓽstory_uid(${uid}) -> "${result}"`)
+	//console.debug(`serializeꓽstory_uid(${uid}) -> "${result}"`)
 
 	return result
 }
@@ -59,7 +59,7 @@ function unserializeꓽstory_uid(serialized_uid: string | undefined | null): Sto
 				? [ path, story_name ].join(SEPⵧSEGMENTS)
 				: story_name
 
-		console.debug(`unserializeꓽstory_uid(${serialized_uid}) -> "${result}"`)
+		//console.debug(`unserializeꓽstory_uid(${serialized_uid}) -> "${result}"`)
 
 		return result
 	}

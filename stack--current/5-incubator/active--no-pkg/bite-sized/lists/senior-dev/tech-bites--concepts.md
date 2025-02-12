@@ -1,4 +1,5 @@
 12 factors https://12factor.net/
+2025 https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/
 [ ] +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
 [ ] +++ https://explorer.globe.engineer/
 [ ] +++ https://martinfowler.com/
@@ -118,6 +119,7 @@ change -- type -- user-facing – permanent change that users will notice
 change = what causes most of the failures
 changelog -- conventional https://github.com/conventional-changelog
 changelog -- standard https://keepachangelog.com/  https://common-changelog.org/
+CHOP "chat-oriented programming"
 CI (Continuous Integration) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
 client/server -- multi-tier architecture

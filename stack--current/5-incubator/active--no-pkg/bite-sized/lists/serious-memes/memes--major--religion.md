@@ -9,6 +9,7 @@ Apatheism = Apathy toward the existence or non-existence of God
 Apostles - what happened to them
 arianism https://en.wikipedia.org/wiki/Arius
 armor of Christ
+Bible -- Hebrew https://en.wikipedia.org/wiki/Hebrew_Bible
 cargo cult
 Cosmicism = complete irrelevance of mankind in the face of the cosmic entities that apparently exist in the universe https://en.wikipedia.org/wiki/Cosmicism
 Countries - how christianism was introduced
@@ -28,8 +29,10 @@ first cause
 great apostasy https://en.wikipedia.org/wiki/Great_Apostasy
 https://aleteia.org/2024/11/26/shinichi-suzuki-showed-how-music-can-ennoble-the-soul
 https://aleteia.org/2024/12/18/john-traynor-beneficiary-of-lourdes-stunning-71st-miracle
+https://en.wikipedia.org/wiki/Giordano_Bruno
 human sacrifice
 influence? https://en.wikipedia.org/wiki/Roman_imperial_cult
+inquisition
 intelligent design https://en.wikipedia.org/wiki/Intelligent_design
 Jacques Fesch
 le sacré

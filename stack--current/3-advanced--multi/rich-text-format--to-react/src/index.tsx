@@ -215,11 +215,17 @@ function _get_final_element_creator({$node, $id, classes} : { $node: Immutable<C
 	const element_type: React.HTMLElementType = NODE_TYPE_TO_COMPONENT[$type] || ($type as React.HTMLElementType)
 
 	return children => {
-		if (element_type === 'span' && !has_classes) {
-			const has_only_str_children = children
-				.every(child => typeof child === 'string')
-			if (has_only_str_children)
-				return children.join('')
+		const has_only_str_children = children
+			.every(child => typeof child === 'string')
+
+		if (element_type === 'span' && !has_classes && has_only_str_children) {
+			return children.join('') // directly as a string
+		}
+
+		let cleaned_children: ReactNode[] | undefined = children
+		if (children.length === 0 || (has_only_str_children && children.join('') === '')) {
+			// this is equivalent to not having children
+			cleaned_children = undefined
 		}
 
 		return React.createElement(
@@ -228,7 +234,7 @@ function _get_final_element_creator({$node, $id, classes} : { $node: Immutable<C
 				key,
 				...classProps,
 			},
-			children,
+			cleaned_children,
 		)
 	}
 }
@@ -314,9 +320,6 @@ const callbacksⵧto_react: Partial<WalkerCallbacks<WalkState, RenderingOptions�
 
 /////////////////////////////////////////////////
 
-type Options = {
-}
-
 function renderⵧto_react($doc: Immutable<NodeLike>, callback_overrides: Partial<WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>> = {}, raw_options: Partial<RenderingOptionsⵧToReact> = {}) {
 	console.log(`${LIB} Rendering a rich text:`, $doc)
 
@@ -335,6 +338,14 @@ function renderⵧto_react($doc: Immutable<NodeLike>, callback_overrides: Partia
 		callbacks,
 		options,
 	)
+
+	if (_is_react_element(state.element)) {
+		// optim to avoid a useless div
+		return React.cloneElement(state.element, {
+			key: options.key || 'rich-text-format-to-react--root',
+			className: 'o⋄rich-text',
+		})
+	}
 
 	return React.createElement('div', {
 		key: options.key || 'rich-text-format-to-react--root',

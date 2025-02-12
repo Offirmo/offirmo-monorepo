@@ -142,7 +142,7 @@ const DOC_DEMO_BASE_TYPES: RichText.Document = {
 		fragment1: {
 			$type: 'fragmentⵧblock',
 			$classes: [],
-			$content: 'horizontal rule:⎨⎨hr⎬⎬Heading:⎨⎨heading⎬⎬Another heading:⎨⎨heading⎬⎬Some text:⎨⎨br⎬⎬⎨⎨text⎬⎬⎨⎨br⎬⎬⎨⎨strong⎬⎬⎨⎨br⎬⎬⎨⎨weak⎬⎬⎨⎨br⎬⎬⎨⎨em⎬⎬⎨⎨br⎬⎬emoji:⎨⎨emoji⎬⎬⎨⎨br⎬⎬Unordered list:⎨⎨ul⎬⎬Ordered list:⎨⎨ol⎬⎬More text.',
+			$content: 'horizontal rule:⎨⎨hr⎬⎬Heading:⎨⎨heading⎬⎬Another heading:⎨⎨heading⎬⎬Some text (before br)⎨⎨br⎬⎬(after br) ⎨⎨text⎬⎬⎨⎨br⎬⎬⎨⎨strong⎬⎬⎨⎨br⎬⎬⎨⎨em⎬⎬⎨⎨br⎬⎬normal⎨⎨br⎬⎬⎨⎨weak⎬⎬⎨⎨br⎬⎬emoji:⎨⎨emoji⎬⎬⎨⎨br⎬⎬Unordered list:⎨⎨ul⎬⎬Ordered list:⎨⎨ol⎬⎬More text.',
 			$sub: {
 				heading: {
 					$type: 'heading',
@@ -150,7 +150,7 @@ const DOC_DEMO_BASE_TYPES: RichText.Document = {
 				},
 				text: {
 					$type: 'fragmentⵧinline',
-					$content: 'normal',
+					$content: 'completely normal and ordinary.',
 				},
 				strong: {
 					$type: 'strong',
@@ -434,7 +434,7 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 							'$v': 1,
 							'$type': 'fragmentⵧinline',
 							'$classes': [],
-							'$content': 'armor : ⎨⎨s1⎬⎬',
+							'$content': 'armor: ⎨⎨s1⎬⎬',
 							'$sub': {
 								's1': {
 									'$v': 1,

@@ -106,6 +106,7 @@ capitalism -- late stage
 capitalism -- W. H. Mallock -- is justified because it permits the most talented members of society to use the less talented for the sake of maximizing efficiency. Labor, for him, was an inert mass that was useless unless those with managerial and entrepreneurial talent set them to work. Hence, wealth is created, not by labor, but by the knowledge and ability of those who control labor. Maximization of corporate profits means in this case that the most entrepreneurial, innovative and inventive segment of society has used labor and resources to create wealth. In Mallock's view labor, by itself, creates nothing; it's not the wrench that puts the machine together, but the genius who invented it.
 career -- career limiting (action/move)
 cargo cult
+chaine trophique = salsepareille <- schtroumpf <- Gargamel
 change -- introduction -- 1 What are we doing?
 change -- introduction -- 2 Why are we doing it?
 change -- introduction -- 3 When are we making the change?
@@ -118,7 +119,10 @@ Charlie Munger 3 basic rules https://www.cnbc.com/2023/11/29/charlie-munger-thes
 charts -- hill = position on a "hill" figuring things out -> making it happen
 choice making -- 5-2-1 technique https://www.reddit.com/r/lifehacks/comments/ctdibo/521_technique/
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
-cognitive bias
+class -- high -- new money
+class -- high -- old money
+class -- low
+class -- middle
 cognitive bias -- recency https://en.wikipedia.org/wiki/Recency_bias
 cognitive bias https://en.wikipedia.org/wiki/Cognitive_bias
 cognitive dissonance
@@ -181,6 +185,7 @@ drinking https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd447
 drive by
 due diligence
 dysthymia https://en.wikipedia.org/wiki/Dysthymia
+ecosystem -- engineers https://fr.wikipedia.org/wiki/Esp%C3%A8ce_ing%C3%A9nieure
 effective altruism
 effet projecteur
 effet rétroviseur
@@ -271,10 +276,11 @@ hawks and doves https://seldo.com/posts/the_case_for_frameworks
 helicopter parent
 herbe toujours plus verte
 Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
+high agency
 high performance
 high performance -- high performing teams
 high performance -- ripple effect -- high performers attract other high performers
-high performance -- ripple effect = training, emulation
+high performance -- ripple effect -- high performers builds high performers = training, emulation
 high school -- "What You'll Wish You'd Known" https://paulgraham.com/hs.html
 high-profile = ~widely known, ex. high-profile media
 high/low functioning human
@@ -567,6 +573,9 @@ sex -- ed
 sex -- ed -- "sex positive"
 ship of theseus https://en.m.wikipedia.org/wiki/Ship_of_Theseus
 short term / long term
+signaling -- class, social standing, status
+signaling -- virtue
+signaling = behavior that convey (advertise?) something about ourselves, true or not
 signalling -- theory https://en.wikipedia.org/wiki/Signalling_theory
 signalling -- virtue https://en.wikipedia.org/wiki/Virtue_signalling
 significance https://www.explainxkcd.com/wiki/index.php/882:_Significant
@@ -643,7 +652,7 @@ tools -- trello
 top-down/bottom-up
 tradeoffs / can't have everything
 tragedy of the commons = Self-interests causing depletion of a shared resource
-transferrable skills
+transferable skills
 Tree Decision Rights Model http://www.cio.com/article/2386119/careers-staffing/how-it-leaders-can-empower-teams-to-become-decision-makers.html
 tribal knowledge
 trolley problem https://neal.fun/absurd-trolley-problems/

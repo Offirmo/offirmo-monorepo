@@ -2,7 +2,7 @@ import type { Meta, Story } from '@offirmo-private/storypad/types'
 
 import type { NodeLike } from '@offirmo-private/rich-text-format'
 
-import renderⵧto_react from './index.ts'
+import renderⵧto_react from './index.tsx'
 
 /////////////////////////////////////////////////
 
@@ -41,8 +41,8 @@ export default {
 	]
 } satisfies Meta
 
-export const String = { args: { $doc: "Hello, World!" }} satisfies Story
-export const Number = { args: { $doc: 42 }} satisfies Story
+export const NodelikeString = { args: { $doc: "Hello!" }} satisfies Story
+export const NodelikeNumber = { args: { $doc: 42 }} satisfies Story
 
 export const COMPLETE_NODE = { args: { $doc: EXAMPLE_COMPLETE_NODE }} satisfies Story
 
@@ -53,5 +53,7 @@ export const LIST_NESTED = { args: { $doc: DOC_DEMO_LIST_NESTED }} satisfies Sto
 export const ADVANCED_TYPES = { args: { $doc: DOC_DEMO_ADVANCED_TYPES }} satisfies Story
 export const HINTS = { args: { $doc: DOC_DEMO_HINTS }} satisfies Story
 
-
-//export const Custom = {}
+export const RPG_01 = { args: { $doc: DOC_DEMO_RPG_01 }} satisfies Story
+export const RPG_02 = { args: { $doc: DOC_DEMO_RPG_02 }} satisfies Story
+export const RPG_03 = { args: { $doc: DOC_DEMO_RPG_03 }} satisfies Story
+export const INVENTORY = { args: { $doc: DOC_DEMO_INVENTORY }} satisfies Story

@@ -1,11 +1,6 @@
 // https://storybook.js.org/docs/configure/user-interface/sidebar-and-urls
 
-import assert from 'tiny-invariant'
-import {type Immutable} from '@offirmo-private/ts-types'
-
-import {Url‿str} from '@offirmo-private/ts-types'
-
-//import { FolderUId, StoryUId } from '../../../l1-flux/l1-state/types.ts'
+import { DEBUG } from '../../../../consts.ts'
 import { getꓽlast_segment } from '../../../../l1-flux/l1-state/state--url/serialization'
 import { ObservableState } from '../../../../l1-flux/l2-observable'
 
@@ -21,7 +16,7 @@ function renderꓽcontrolbar(state: ObservableState): HTMLElement {
 	if (!storyEntry) {
 		root.innerText = `[No current story]`
 	} else {
-		console.log(`renderꓽcontrolbar()`, {
+		DEBUG && console.log(`renderꓽcontrolbar()`, {
 			storyEntry,
 			href: state.getꓽstory_frame_url(storyEntry.uid),
 		})

@@ -1,13 +1,14 @@
 // https://storybook.js.org/docs/configure/user-interface/sidebar-and-urls
 
 import assert from 'tiny-invariant'
-import { Url‿str } from '@offirmo-private/ts-types'
+import type { Url‿str } from '@offirmo-private/ts-types'
 
-import { FolderUId, StoryUId } from '../../../l1-flux/l1-state/types.ts'
+import type { FolderUId, StoryUId } from '../../../l1-flux/l1-state/types.ts'
 import { ObservableState } from '../../../l1-flux/l2-observable'
+import { LIB, DEBUG } from '../../../consts.ts'
 
 import renderⵧsidebar from './sidebar'
-import renderⵧstory_area, { IFRAME_CLASS } from '../story-area'
+import renderⵧstory_area from '../story-area'
 
 /////////////////////////////////////////////////
 
@@ -29,17 +30,16 @@ function renderꓽmanager(state: ObservableState): HTMLElement {
 	sidebar_elt.addEventListener('click', function(e) {
 		const target = (e as any).target
 
-		console.log(`Click!`)
+		DEBUG && console.log(`[${LIB}] Click!`)
 
 		const href: Url‿str = target?.href
 		if (href) {
 			e.preventDefault()
 
-			console.log('———————————— NAVIGATION ————————————')
+			console.clear()
+			DEBUG && console.log(`———————————— [${LIB}] NAVIGATION ————————————`)
 			const story_uid: StoryUId = target.getAttribute('id')
-			console.log({target, story_uid, href})
-
-			const previous_story‿uid = state.getꓽstoryⵧcurrent()!.uid!
+			DEBUG && console.log({target, story_uid, href})
 
 			state.requestꓽstory(story_uid)
 			root.removeChild(story_area_elt)
@@ -56,12 +56,12 @@ function renderꓽmanager(state: ObservableState): HTMLElement {
 
 		const folder_uid: FolderUId = target?.closest('details')?.dataset?.folderUid
 		if (folder_uid) {
-			console.log('———————————— TREE ————————————')
+			console.log('———————————— [${LIB}] TREE ————————————')
 			console.log('TODO auto fold/unfold!')
 			return
 		}
 
-		console.log('———————————— UNKNOWN ————————————')
+		// no target or not recognized = random click anywhere, ignore
 	})
 
 	return root

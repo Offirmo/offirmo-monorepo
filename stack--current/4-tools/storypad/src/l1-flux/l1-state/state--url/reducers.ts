@@ -12,7 +12,7 @@ import { getꓽmain_frame_url } from './selectors.ts'
 function requestꓽstory(uid: StoryUId): void {
 	const new_url = getꓽmain_frame_url(uid)
 
-	console.log('about to history.pushState()', new_url)
+	//console.log('about to history.pushState()', new_url)
 
 	history.pushState({}, '', new_url)
 }

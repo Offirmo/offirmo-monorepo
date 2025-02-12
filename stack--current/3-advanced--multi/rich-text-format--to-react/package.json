@@ -10,10 +10,10 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./src/index.js"
+			"import": "./src/index.tsx"
 		}
 	},
-	"source": "src/index.js",
+	"source": "src/index.tsx",
 
 	"peerDependencies": {
 		"react": "^19"
