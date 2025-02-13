@@ -10,7 +10,7 @@
 	"heroku-run-build-script": false,
 
 	"engines": {
-		"node": "22.x"
+		"node": "23.x"
 	},
 
 	"scripts": {
