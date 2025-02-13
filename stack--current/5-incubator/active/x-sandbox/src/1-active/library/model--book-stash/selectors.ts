@@ -79,7 +79,7 @@ function getꓽbookshelf(state: Immutable<BookStash>)
 {
 	const booksⵧall = Array.from(Object.entries(state.experiences))
 	const booksⵧknown = booksⵧall.filter(([experience_uid, experience]) => {
-		return BookExperienceLib.isꓽaware(experience, state.defaultAccessLevel)
+		return BookExperienceLib.isꓽawareⵧinherited(experience, BookExperienceLib.REFERENCEꘌROOT, state.defaultAccessLevel)
 	})
 
 	const result: ReturnType<typeof getꓽbookshelf> = booksⵧknown.map(([experience_uid, experience]) => {
@@ -88,10 +88,10 @@ function getꓽbookshelf(state: Immutable<BookStash>)
 		return {
 			experience_uid,
 			cover,
-			access_level: BookExperienceLib.getꓽaccess_level(experience) ?? state.defaultAccessLevel,
-			comprehension_level: BookExperienceLib.getꓽcomprehension_level(experience),
-			stared_nodes_count: BookExperienceLib.getꓽstared_nodes_count(experience),
-			is_root_starred: BookExperienceLib.isꓽroot_starred(experience),
+			access_level: BookExperienceLib.getꓽaccess_levelⵧinherited(experience, BookExperienceLib.REFERENCEꘌROOT) ?? state.defaultAccessLevel,
+			comprehension_level: BookExperienceLib.getꓽcomprehension_levelⵧinherited(experience, BookExperienceLib.REFERENCEꘌROOT),
+			stared_nodes_count: BookExperienceLib.getꓽstarred_nodes_count(experience),
+			is_root_starred: BookExperienceLib.isꓽstarredⵧexact(experience, BookExperienceLib.REFERENCEꘌROOT),
 			last_user_investment_tms,
 		}
 	}).sort(_sortBookshelfEntries)

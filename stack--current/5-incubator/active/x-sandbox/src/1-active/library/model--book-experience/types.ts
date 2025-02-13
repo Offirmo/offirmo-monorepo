@@ -37,16 +37,20 @@ export type ComprehensionLevel = Enum<typeof ComprehensionLevel> // eslint-disab
 // unless explicitly specified
 interface NodeExperience {
 
+	/////// INHERITED from parent nodes if absent
+
 	// dynamic, we can obtain access then lose it
 	// if undef, user must fall back to their own preferred default
 	access_level?: AccessLevel
 
 	// refers to when we had access. Not set = we never had access or never opened it
-	// can be set even if access = no = memory of when we had it
+	// can be set even if access=no => memory of when we had it
 	// BUT cannot have unaware + comprehension
+	// INHERITED from parent nodes if absent
 	comprehension_level?: ComprehensionLevel
 
-	starred?: true
+	/////// NOT inherited from parent nodes if absent
+	starred?: boolean // ideally should not be present if false
 	summary?: Text // a textual summary of this experience. This is important esp. in case of game, ex. "quest to find this book but no access"
 }
 
@@ -60,6 +64,7 @@ interface BookExperience extends WithLastUserInvestmentTimestamp {
 	// or missing page in a book
 	// BUT inheritance is implicit! So to have missing pages, they'd need to be explicitly called out
 	comprehension_level‿by_path?: {
+		// TODO one day clean useless entries
 		[place: BookNodeReference]: NodeExperience
 	}
 

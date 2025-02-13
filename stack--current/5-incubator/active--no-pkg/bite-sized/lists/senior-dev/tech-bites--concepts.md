@@ -65,7 +65,7 @@ API -- guide developers into the pit of success.
 API -- input = Prefer objects for inputs. If a function accepts multiple pieces of data — or may accept multiple pieces of data in the future — create a single object parameter, rather than using multiple parameters. This ensures that: We can add parameters without breaking the contract + The order of the parameters becomes unimportant
 API -- must not violate the principle of least astonishment.
 API -- output = prefer objects, same reasons as input = extensible without breaking the contract
-API -- pagination -- token https://protobuf.dev/programming-guides/api/ 
+API -- pagination -- token https://protobuf.dev/best-practices/api/#define-pagination-api
 API -- public = Requires a commitment to maintain it; Can affect the velocity of the underlying feature
 API -- result = Prefer declarative interfaces: An API that describes a result, rather than how to achieve that result, is more stable, since the underlying implementation can evolve without affecting the API signature
 API -- should not force developers to do anything that could easily be done for them.

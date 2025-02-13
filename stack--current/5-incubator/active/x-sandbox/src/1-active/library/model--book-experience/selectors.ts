@@ -5,7 +5,7 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	type BookPartReference,
 	REFERENCEⵧSEPARATOR,
-	REFERENCEⵧROOT,
+	REFERENCEꘌROOT,
 } from '../model--book/index.ts'
 
 import {
@@ -17,12 +17,16 @@ import {
 
 /////////////////////////////////////////////////
 
-function _getꓽnode__experience(state: Immutable<BookExperience>, path: Immutable<BookPartReference> = REFERENCEⵧROOT): Immutable<NodeExperience> | undefined {
+function _getꓽnode__experienceⵧexact(state: Immutable<BookExperience>, path: Immutable<BookPartReference>): Immutable<NodeExperience> | undefined {
+	return state.comprehension_level‿by_path?.[path]
+}
+
+function _getꓽnode__experienceⵧinherited(state: Immutable<BookExperience>, path: Immutable<BookPartReference>): Immutable<NodeExperience> | undefined {
 	const pathⵧsplitted = path.split(REFERENCEⵧSEPARATOR) // reminder: will always have at least one element, maybe empty
 
 	while (pathⵧsplitted.length) {
-		const path = pathⵧsplitted.join(REFERENCEⵧSEPARATOR) ?? REFERENCEⵧROOT
-		const raw = state.comprehension_level‿by_path?.[path]
+		const path = pathⵧsplitted.join(REFERENCEⵧSEPARATOR) ?? REFERENCEꘌROOT
+		const raw = _getꓽnode__experienceⵧexact(state, path)
 		if (raw)
 			return raw
 		pathⵧsplitted.pop()
@@ -31,34 +35,34 @@ function _getꓽnode__experience(state: Immutable<BookExperience>, path: Immutab
 	return undefined
 }
 
-function getꓽaccess_level(state: Immutable<BookExperience>, path: Immutable<BookPartReference> = REFERENCEⵧROOT): AccessLevel | undefined {
-	const experience = _getꓽnode__experience(state, path)
+function getꓽaccess_levelⵧinherited(state: Immutable<BookExperience>, path: Immutable<BookPartReference>): AccessLevel | undefined {
+	const experience = _getꓽnode__experienceⵧinherited(state, path)
 
 	return experience?.access_level
 }
 
-function getꓽcomprehension_level(state: Immutable<BookExperience>, path: Immutable<BookPartReference> = REFERENCEⵧROOT): ComprehensionLevel | undefined {
-	const access_level = getꓽaccess_level(state, path)
+function getꓽcomprehension_levelⵧinherited(state: Immutable<BookExperience>, path: Immutable<BookPartReference>): ComprehensionLevel | undefined {
+	const access_level = getꓽaccess_levelⵧinherited(state, path)
 	if (access_level === 'unaware')
 		return undefined
 
-	const experience = _getꓽnode__experience(state, path)
+	const experience = _getꓽnode__experienceⵧinherited(state, path)
 
 	return experience?.comprehension_level
 }
 
-function isꓽaware(state: Immutable<BookExperience>, fallback: AccessLevel): boolean {
-	const access_level = getꓽaccess_level(state) ?? fallback
+function isꓽawareⵧinherited(state: Immutable<BookExperience>, path: Immutable<BookPartReference>, fallback: AccessLevel): boolean {
+	const access_level = getꓽaccess_levelⵧinherited(state, path) ?? fallback
 	return access_level !== AccessLevel.unaware
 }
 
-function isꓽroot_starred(state: Immutable<BookExperience>): boolean {
-	const exp = _getꓽnode__experience(state)
+function isꓽstarredⵧexact(state: Immutable<BookExperience>, path: Immutable<BookPartReference>): boolean {
+	const exp = _getꓽnode__experienceⵧexact(state, path)
 	return exp?.starred === true
 }
 
-function getꓽstared_nodes_count(state: Immutable<BookExperience>): number {
-	const root_adjust = isꓽroot_starred(state) ? -1 : 0
+function getꓽstarred_nodes_count(state: Immutable<BookExperience>): number {
+	const root_adjust = isꓽstarredⵧexact(state, REFERENCEꘌROOT) ? -1 : 0
 	return Object.values(state.comprehension_level‿by_path || {})
 		.filter(node_exp => node_exp.starred)
 		.length + root_adjust
@@ -67,9 +71,16 @@ function getꓽstared_nodes_count(state: Immutable<BookExperience>): number {
 /////////////////////////////////////////////////
 
 export {
-	getꓽaccess_level,
-	getꓽcomprehension_level,
-	isꓽroot_starred,
-	getꓽstared_nodes_count,
-	isꓽaware,
+	REFERENCEꘌROOT, // for convenience
+
+	_getꓽnode__experienceⵧexact,
+	_getꓽnode__experienceⵧinherited,
+
+	getꓽaccess_levelⵧinherited,
+	getꓽcomprehension_levelⵧinherited,
+
+	isꓽawareⵧinherited,
+
+	isꓽstarredⵧexact,
+	getꓽstarred_nodes_count,
 }

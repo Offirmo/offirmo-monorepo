@@ -1,3 +1,3 @@
 
 export const REFERENCEⵧSEPARATOR = '↳'
-export const REFERENCEⵧROOT = '.'
+export const REFERENCEꘌROOT = '.'

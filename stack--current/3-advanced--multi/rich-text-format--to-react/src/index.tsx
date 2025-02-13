@@ -17,7 +17,7 @@ import {
 	SPECIAL_LIST_NODE_CONTENT_KEY,
 	promoteꓽto_node,
 } from '@offirmo-private/rich-text-format'
-import '@offirmo-private/rich-text-format/styles.css'
+
 
 /////////////////////////////////////////////////
 
@@ -46,6 +46,11 @@ const NODE_TYPE_TO_EXTRA_CLASSES: { [type: string]: string[] | undefined } = {
 }
 
 const _warn_kvp = memoize_one(() => console.warn(`${LIB} TODO KVP`))
+
+const _load_styles = memoize_one(() => {
+	//console.info(`loading RichText styles on-demand`)
+	import('@offirmo-private/rich-text-format/styles.css')
+})
 
 function _is_react_element(n: React.ReactNode): n is React.ReactElement {
 	const is_renderable = !!n && n !== true
@@ -322,6 +327,7 @@ const callbacksⵧto_react: Partial<WalkerCallbacks<WalkState, RenderingOptions�
 
 function renderⵧto_react($doc: Immutable<NodeLike>, callback_overrides: Partial<WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>> = {}, raw_options: Partial<RenderingOptionsⵧToReact> = {}) {
 	console.log(`${LIB} Rendering a rich text:`, $doc)
+	_load_styles()
 
 	const callbacks: Partial<WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>> = {
 		...callbacksⵧto_react,
@@ -341,9 +347,14 @@ function renderⵧto_react($doc: Immutable<NodeLike>, callback_overrides: Partia
 
 	if (_is_react_element(state.element)) {
 		// optim to avoid a useless div
+		// do not loose infos!
+		const key = options.key || state.element.key || 'rich-text-format-to-react--root'
+		const props = state.element.props || {}
+		const className = 'o⋄rich-text ' + (props.className || '')
 		return React.cloneElement(state.element, {
-			key: options.key || 'rich-text-format-to-react--root',
-			className: 'o⋄rich-text',
+			...props,
+			key,
+			className,
 		})
 	}
 

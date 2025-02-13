@@ -2,10 +2,7 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
 import type { BookCover, BookUId } from '../model--book/types/index.ts'
-import {
-	type BookExperience,
-	create as _createꓽBookExperience,
-} from '../model--book-experience/index.ts'
+import * as BookExperienceLib from '../model--book-experience/index.ts'
 
 import type { BookStash } from './types.ts'
 
@@ -31,13 +28,36 @@ function addꓽbook(
 	cover: Immutable<BookCover>,
 	experience_uid: Immutable<BookUId> = cover.uid, // TODO replace with customization + auto sub-ids
 ): Immutable<BookStash> {
-	assert(!state.experiences[experience_uid], `Book "${experience_uid}" should not be already added!`)
+	assert(!state.experiences[experience_uid], `Experience "${experience_uid}" should not already exist!`)
 
 	return {
 		...state,
 		experiences: {
 			...state.experiences,
-			[experience_uid]: _createꓽBookExperience(cover),
+			[experience_uid]: BookExperienceLib.create(cover),
+		}
+	}
+}
+
+function starꓽbook(
+	state: Immutable<BookStash>,
+	experience_uid: Immutable<BookUId>,
+	target: boolean | 'toggle',
+): Immutable<BookStash> {
+	let experience = state.experiences[experience_uid]
+	assert(experience, `Experience "${experience_uid}" should exist!`)
+
+	const isꓽstarred = BookExperienceLib.isꓽstarredⵧexact(experience, BookExperienceLib.REFERENCEꘌROOT)
+	if (isꓽstarred === target)
+		return state // nothing to do
+
+	return {
+		...state,
+		experiences: {
+			...state.experiences,
+			[experience_uid]: BookExperienceLib.setꓽstarred(experience, BookExperienceLib.REFERENCEꘌROOT,
+				target === 'toggle' ? !isꓽstarred : target
+			),
 		}
 	}
 }
@@ -47,4 +67,5 @@ function addꓽbook(
 export {
 	create,
 	addꓽbook,
+	starꓽbook,
 }

@@ -104,6 +104,7 @@ can't satisfy others
 capitalism -- issues -- inability to collectively improve, ex. global warming
 capitalism -- late stage
 capitalism -- W. H. Mallock -- is justified because it permits the most talented members of society to use the less talented for the sake of maximizing efficiency. Labor, for him, was an inert mass that was useless unless those with managerial and entrepreneurial talent set them to work. Hence, wealth is created, not by labor, but by the knowledge and ability of those who control labor. Maximization of corporate profits means in this case that the most entrepreneurial, innovative and inventive segment of society has used labor and resources to create wealth. In Mallock's view labor, by itself, creates nothing; it's not the wrench that puts the machine together, but the genius who invented it.
+care -- doesn't scale https://stevenscrawls.com/care-doesnt-scale/
 career -- career limiting (action/move)
 cargo cult
 chaine trophique = salsepareille <- schtroumpf <- Gargamel
@@ -254,6 +255,7 @@ goals -- S.M.A.R.T. -- 05 T (Time-bound) Create a specific end date for the goal
 goldilock zone / problem
 good life questions https://radreads.co/10k-questions/
 Goodhart’s Law = When a measure becomes a target, it ceases to be a good measure. One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
+grapevine
 great filter https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
 grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
@@ -691,4 +693,5 @@ when in Rome…
 who moved my cheese?
 wisdom
 wisdom -- a wisdom for left may not be valid for right
+xenia https://greekmythcomix.com/comic/how-to-do-xenia/
 you can bring a horse to water...
