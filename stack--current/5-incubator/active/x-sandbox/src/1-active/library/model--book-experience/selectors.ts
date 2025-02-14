@@ -4,8 +4,8 @@ import type { Immutable } from '@offirmo-private/ts-types'
 
 import {
 	type BookPartReference,
-	REFERENCEⵧSEPARATOR,
-	REFERENCEꘌROOT,
+	NODE_REFERENCEⵧSEPARATOR,
+	NODE_REFERENCEꘌROOT,
 } from '../model--book/index.ts'
 
 import {
@@ -22,10 +22,10 @@ function _getꓽnode__experienceⵧexact(state: Immutable<BookExperience>, path:
 }
 
 function _getꓽnode__experienceⵧinherited(state: Immutable<BookExperience>, path: Immutable<BookPartReference>): Immutable<NodeExperience> | undefined {
-	const pathⵧsplitted = path.split(REFERENCEⵧSEPARATOR) // reminder: will always have at least one element, maybe empty
+	const pathⵧsplitted = path.split(NODE_REFERENCEⵧSEPARATOR) // reminder: will always have at least one element, maybe empty
 
 	while (pathⵧsplitted.length) {
-		const path = pathⵧsplitted.join(REFERENCEⵧSEPARATOR) ?? REFERENCEꘌROOT
+		const path = pathⵧsplitted.join(NODE_REFERENCEⵧSEPARATOR) ?? NODE_REFERENCEꘌROOT
 		const raw = _getꓽnode__experienceⵧexact(state, path)
 		if (raw)
 			return raw
@@ -62,7 +62,7 @@ function isꓽstarredⵧexact(state: Immutable<BookExperience>, path: Immutable<
 }
 
 function getꓽstarred_nodes_count(state: Immutable<BookExperience>): number {
-	const root_adjust = isꓽstarredⵧexact(state, REFERENCEꘌROOT) ? -1 : 0
+	const root_adjust = isꓽstarredⵧexact(state, NODE_REFERENCEꘌROOT) ? -1 : 0
 	return Object.values(state.comprehension_level‿by_path || {})
 		.filter(node_exp => node_exp.starred)
 		.length + root_adjust
@@ -71,7 +71,7 @@ function getꓽstarred_nodes_count(state: Immutable<BookExperience>): number {
 /////////////////////////////////////////////////
 
 export {
-	REFERENCEꘌROOT, // for convenience
+	NODE_REFERENCEꘌROOT, // for convenience
 
 	_getꓽnode__experienceⵧexact,
 	_getꓽnode__experienceⵧinherited,

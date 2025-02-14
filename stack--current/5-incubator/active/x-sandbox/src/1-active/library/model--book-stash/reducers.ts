@@ -47,7 +47,7 @@ function starꓽbook(
 	let experience = state.experiences[experience_uid]
 	assert(experience, `Experience "${experience_uid}" should exist!`)
 
-	const isꓽstarred = BookExperienceLib.isꓽstarredⵧexact(experience, BookExperienceLib.REFERENCEꘌROOT)
+	const isꓽstarred = BookExperienceLib.isꓽstarredⵧexact(experience, BookExperienceLib.NODE_REFERENCEꘌROOT)
 	if (isꓽstarred === target)
 		return state // nothing to do
 
@@ -55,7 +55,7 @@ function starꓽbook(
 		...state,
 		experiences: {
 			...state.experiences,
-			[experience_uid]: BookExperienceLib.setꓽstarred(experience, BookExperienceLib.REFERENCEꘌROOT,
+			[experience_uid]: BookExperienceLib.setꓽstarred(experience, BookExperienceLib.NODE_REFERENCEꘌROOT,
 				target === 'toggle' ? !isꓽstarred : target
 			),
 		}

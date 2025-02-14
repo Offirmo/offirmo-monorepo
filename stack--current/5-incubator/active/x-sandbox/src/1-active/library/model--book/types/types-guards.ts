@@ -1,18 +1,26 @@
 import type { Immutable } from '@offirmo-private/ts-types'
+import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
+import { isꓽNode } from '@offirmo-private/rich-text-format'
 
-import type { BookPage, BookPart, Book, BookCover } from './types.ts'
+import type { Text, BookPage, BookPageLike, BookPart, Book, BookCover } from './types.ts'
 
 /////////////////////////////////////////////////
 
 function isꓽPage(x: Immutable<any>): x is BookPage {
-	return typeof x?.content === 'string'
+	if (!Object.hasOwn(x, 'content'))
+		return false
+
+	if (isꓽNode(x.content))
+		return true
+
+	return typeof x.content === 'string'
 }
-function isꓽPageⵧlike(x: Immutable<any>): x is BookPage | string {
-	return isꓽPage(x) || typeof x === 'string'
+function isꓽPageⵧlike(x: Immutable<any>): x is BookPageLike {
+	return isꓽPage(x) || isꓽNode(x) || (typeof x === 'string')
 }
 
 function isꓽBookPart(x: Immutable<any>): x is BookPart {
-	return !!x && x.hasOwnProperty('parts') && Object.getPrototypeOf(x.parts).constructor?.name === 'Object'
+	return !!x && isꓽobjectⵧliteral(x) && Object.hasOwn(x, 'parts')
 }
 
 function isꓽBookCover(x: Immutable<any>): x is BookCover {
@@ -34,7 +42,6 @@ function isꓽBook(x: Immutable<any>): x is Book {
 	if (!isꓽBookPart(x))
 		return false
 
-	// TODO report TS error
 	if (typeof (x as any).uid !== 'string')
 		return false
 

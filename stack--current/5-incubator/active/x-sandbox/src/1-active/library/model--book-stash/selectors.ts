@@ -10,7 +10,6 @@ import type { BookStash, BookExperienceUid } from './types.ts'
 
 import { registry } from '../service--book-resolver/index.ts'
 import type { ComprehensionLevel } from '../model--book-experience/index.ts'
-import { ↆgetꓽMoreCompleteBook } from '../service--book-resolver/selectors.ts'
 
 type ErrorText = Text
 
@@ -79,7 +78,7 @@ function getꓽbookshelf(state: Immutable<BookStash>)
 {
 	const booksⵧall = Array.from(Object.entries(state.experiences))
 	const booksⵧknown = booksⵧall.filter(([experience_uid, experience]) => {
-		return BookExperienceLib.isꓽawareⵧinherited(experience, BookExperienceLib.REFERENCEꘌROOT, state.defaultAccessLevel)
+		return BookExperienceLib.isꓽawareⵧinherited(experience, BookExperienceLib.NODE_REFERENCEꘌROOT, state.defaultAccessLevel)
 	})
 
 	const result: ReturnType<typeof getꓽbookshelf> = booksⵧknown.map(([experience_uid, experience]) => {
@@ -88,10 +87,10 @@ function getꓽbookshelf(state: Immutable<BookStash>)
 		return {
 			experience_uid,
 			cover,
-			access_level: BookExperienceLib.getꓽaccess_levelⵧinherited(experience, BookExperienceLib.REFERENCEꘌROOT) ?? state.defaultAccessLevel,
-			comprehension_level: BookExperienceLib.getꓽcomprehension_levelⵧinherited(experience, BookExperienceLib.REFERENCEꘌROOT),
+			access_level: BookExperienceLib.getꓽaccess_levelⵧinherited(experience, BookExperienceLib.NODE_REFERENCEꘌROOT) ?? state.defaultAccessLevel,
+			comprehension_level: BookExperienceLib.getꓽcomprehension_levelⵧinherited(experience, BookExperienceLib.NODE_REFERENCEꘌROOT),
 			stared_nodes_count: BookExperienceLib.getꓽstarred_nodes_count(experience),
-			is_root_starred: BookExperienceLib.isꓽstarredⵧexact(experience, BookExperienceLib.REFERENCEꘌROOT),
+			is_root_starred: BookExperienceLib.isꓽstarredⵧexact(experience, BookExperienceLib.NODE_REFERENCEꘌROOT),
 			last_user_investment_tms,
 		}
 	}).sort(_sortBookshelfEntries)
@@ -101,13 +100,39 @@ function getꓽbookshelf(state: Immutable<BookStash>)
 
 /////////////////////////////////////////////////
 
-async function ↆgetꓽpage(state: Immutable<BookStash>, experience_uid: BookExperienceUid, path: BookNodeReference | undefined = state.experiences[experience_uid]!.bookmark):
-	Promise<[ Immutable<BookPage | ErrorText>, BookNodeReference ]> {
+interface PageResult {
+	// it's convenient to return prev & next, esp. for 2 pages display
+	contentⵧprevious: Immutable<BookPage> | null // if null, means there is no previous, we are the first
+	content: Immutable<BookPage>
+	contentⵧnext: Immutable<BookPage> | null // if null, means there is no next, we are the last
+
+	// references, for navigation
+	// relative to current level
+	referenceⵧfirst: BookPageReference // can = current if current is first
+	referenceⵧprevious: BookPageReference // can = current if current is first
+	referenceⵧcurrent: BookPageReference
+	referenceⵧnext: BookPageReference // can = current if current is last
+	referenceⵧlast: BookPageReference // can = current if current is last
+	referenceⵧup: BookPageReference
+
+	// hint for visual display
+	direction?: 'rtl' | 'ltr' | 'ttb' | 'btt'
+	medium?: 'sheet' | 'scroll' | 'screen'
+	physical_sheet_side?: 'recto' | 'verso'
+}
+async function ↆgetꓽpage(state: Immutable<BookStash>, experience_uid: BookExperienceUid, path: BookNodeReference | undefined = state.experiences[experience_uid]!.bookmark): Promise<PageResult | ErrorText> {
+	const reference: BookPageReference = path ?? BookExperienceLib.NODE_REFERENCEꘌROOT
+
+	const experience = state.experiences[experience_uid]
+	assert(experience, `Experience "${experience_uid}" should exist!`)
+	const { book_uid } = experience
+
+	const book = await registry.ↆgetꓽMoreCompleteBook(book_uid, reference)
+
+
 
 	throw new Error('NIMP!')
 }
-
-// TODO one day get page recto + verso (typical 2p display)
 
 /////////////////////////////////////////////////
 
@@ -116,5 +141,7 @@ export {
 	type ErrorText,
 
 	getꓽbookshelf,
+
+	type PageResult,
 	ↆgetꓽpage,
 }

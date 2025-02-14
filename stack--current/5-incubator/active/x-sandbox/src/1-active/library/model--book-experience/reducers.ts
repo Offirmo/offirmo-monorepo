@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { type BookCover, type BookPartReference, REFERENCEꘌROOT, type Text } from '../model--book/index.ts'
+import { type BookCover, type BookPartReference, NODE_REFERENCEꘌROOT, type Text } from '../model--book/index.ts'
 
 import { AccessLevel, type BookExperience, type NodeExperience } from './types.ts'
 import { _getꓽnode__experienceⵧexact, isꓽstarredⵧexact } from './selectors.ts'
@@ -59,7 +59,7 @@ function setꓽstarred(state: Immutable<BookExperience>, path: Immutable<BookPar
 		...state,
 		comprehension_level‿by_path: {
 			...state.comprehension_level‿by_path,
-			[REFERENCEꘌROOT]: node_experienceⵧtarget,
+			[NODE_REFERENCEꘌROOT]: node_experienceⵧtarget,
 		}
 	}
 }

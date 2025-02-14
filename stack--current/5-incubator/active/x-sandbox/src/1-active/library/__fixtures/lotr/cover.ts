@@ -2,7 +2,7 @@
  * https://en.wikipedia.org/wiki/Red_Book_of_Westmarch
  */
 
-import type { Book, BookCover, BookUId } from '../../model--book/index.ts'
+import type { Book, BookCover, BookUId } from '../../model--book/types/types.ts'
 
 /////////////////////////////////////////////////
 

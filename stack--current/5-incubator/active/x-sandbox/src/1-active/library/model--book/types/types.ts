@@ -79,22 +79,32 @@ interface BookPage {
 	// TODO clarify whether the visual replaces or complement the text? We'll decide later with real use cases
 	contentⵧvisual?: Url‿str
 }
+type BookPageLike = BookPage | Text
 
 // any unit above the "page" final leave, ex. volume, chapter...
 // Can form a tree of any depth.
 type BookPartKey = string
-const BOOK_PART_KEY_KEYWORDSᐧFIRST: BookPartKey = '⟦first⟧' // TODO usage??
-const BOOK_PART_KEY_KEYWORDSᐧLAST: BookPartKey = '⟦last⟧'
 interface BookPart {
 	parts_type?: string // ex. volume, chapter...
 	parts: {
-		[k: BookPartKey]: BookPart | BookPage | Text
+		[k: BookPartKey]: BookPart | BookPageLike
 	}
 
 	// optionally a part may have its own infos
+	// if present and if this is not the root, this will "auto create" a "cover" page with this content
 	title?: Text
 	subtitles?: Array<Text>
 	author?: Author
+	// TODO one day hints
+
+	// hint for visual display
+	direction?:
+		| 'btt' | 'ttb'
+		| 'ltr' | 'rtl'
+	medium?:
+		| 'sheet'
+		| 'scroll'
+		| 'screen'
 }
 
 // top part
@@ -104,21 +114,24 @@ interface Book extends BookPart, BookCover {
 
 	is_template?: true // TODO review
 	// TODO declare template slots?
+
+
 }
 
 /////////////////////////////////////////////////
 
 // basic types needed for advanced stuff
+type BookNodeReference =
+	| '.' // root TODO use const?
+	| string // TODO clarify the format, BookPartKey separated by XX
 
 // path to a specific page, for ex. for bookmarking
-type BookPageReference = string // TODO clarify the format, BookPartKey separated by XX
+// NOTE that the page can be "auto generated", ex. cover of an intermediate part
+type BookPageReference = BookNodeReference
 
 // path to any part of a book
-type BookPartReference =
-	| '.' // root
-	| string // TODO clarify the format
+type BookPartReference = BookNodeReference
 
-type BookNodeReference = BookPartReference | BookPageReference
 
 /////////////////////////////////////////////////
 
@@ -126,6 +139,7 @@ export {
 	type Text,
 
 	type BookPage,
+	type BookPageLike,
 	type BookPartKey,
 	type BookPart,
 
@@ -136,7 +150,4 @@ export {
 	type BookPageReference,
 	type BookPartReference,
 	type BookNodeReference,
-
-	BOOK_PART_KEY_KEYWORDSᐧFIRST,
-	BOOK_PART_KEY_KEYWORDSᐧLAST,
 }

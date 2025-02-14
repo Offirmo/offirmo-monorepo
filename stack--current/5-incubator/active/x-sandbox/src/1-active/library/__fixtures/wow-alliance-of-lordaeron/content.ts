@@ -1,4 +1,4 @@
-import type { Book } from '../../model--book/index.ts'
+import type { Book } from '../../model--book/types/types.ts'
 
 import { COVER } from './cover.ts'
 

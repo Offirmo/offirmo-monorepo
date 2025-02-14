@@ -2,7 +2,7 @@
  * https://www.wowhead.com/item=145298/the-alliance-of-lordaeron
  */
 
-import type { Book, BookCover, BookUId } from '../../model--book/index.ts'
+import type { Book, BookCover, BookUId } from '../../model--book/types/types.ts'
 
 /////////////////////////////////////////////////
 
