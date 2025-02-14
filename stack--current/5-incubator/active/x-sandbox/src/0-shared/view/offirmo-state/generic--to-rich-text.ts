@@ -251,7 +251,7 @@ function _render(raw_state: Immutable<any>, options: Immutable<Options>, key?: s
 	const type = _getꓽstate_type(raw_state)
 
 	const $name = RichText.fragmentⵧinline()
-		.pushText(raw_state.hasOwnProperty('ⵙapp_id') ? `ᘛ ${raw_state.ⵙapp_id} ᘚ ` : '')
+		.pushText(Object.hasOwn(raw_state, 'ⵙapp_id') ? `ᘛ ${raw_state.ⵙapp_id} ᘚ ` : '')
 		.done()
 	keys.delete('ⵙapp_id')
 

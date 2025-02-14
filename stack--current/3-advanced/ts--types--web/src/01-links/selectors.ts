@@ -15,7 +15,7 @@ function isꓽHyperlink(x: Immutable<any>): x is Hyperlink {
 	if (!isꓽobjectⵧliteral(x))
 		return false
 
-	return x.hasOwnProperty('href')
+	return Object.hasOwn(x, 'href')
 }
 
 /////////////////////////////////////////////////

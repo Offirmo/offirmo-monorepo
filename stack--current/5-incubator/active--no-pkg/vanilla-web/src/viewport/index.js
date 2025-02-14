@@ -71,7 +71,7 @@ function getBoundingRectꓽScreenⵧavailable(s = globalThis.top.screen) {
 }
 
 function hasꓽdimensions(rect) {
-	return rect && (rect.hasOwnProperty('w') || rect.hasOwnProperty('h'))
+	return rect && (Object.hasOwn(rect, 'w') || Object.hasOwn(rect,'h'))
 }
 
 function getBoundingRect‿str(rect, parentRect) {
@@ -88,7 +88,7 @@ function getBoundingRect‿str(rect, parentRect) {
 		}
 	}
 
-	if (rect && (rect.hasOwnProperty('x') || rect.hasOwnProperty('y'))) {
+	if (rect && (Object.hasOwn(rect, 'x') || Object.hasOwn(rect, 'y'))) {
 		result += `(${rect.x},${rect.y})`
 	}
 

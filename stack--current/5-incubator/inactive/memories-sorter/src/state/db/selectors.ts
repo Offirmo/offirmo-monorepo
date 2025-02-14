@@ -91,13 +91,13 @@ export function getꓽall_media_file_ids(state: Immutable<State>): string[] {
 
 // TODO unicode normalization of folders
 export function is_file_existing(state: Immutable<State>, id: FileId): boolean {
-	return state.files.hasOwnProperty(id)
+	return Object.hasOwn(state.files, id)
 }
 
 // beware of unknown OS path normalization!
 // TODO unicode normalization of folders
 export function is_folder_existing(state: Immutable<State>, id: FolderId): boolean {
-	return state.folders.hasOwnProperty(id)
+	return Object.hasOwn(state.folders, id)
 }
 
 // CORE LOGIC

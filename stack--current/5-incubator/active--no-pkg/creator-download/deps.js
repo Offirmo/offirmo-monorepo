@@ -5376,7 +5376,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
 				}
 
 				for (var p in source) {
-					if (source.hasOwnProperty(p)) {
+					if (Object.hasOwn(source, p)) {
 						obj[p] = source[p];
 					}
 				}

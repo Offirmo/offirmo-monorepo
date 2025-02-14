@@ -295,7 +295,8 @@ const on_concatenateⵧsub_node: WalkerCallbacks<WalkState, RenderingOptionsⵧT
 // TODO test if still working!!
 const on_filterꘌCapitalize: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>['on_filter'] =  ({state}) => {
 	//console.warn('rich-text-to-react Capitalize', state)
-
+	throw new Error('NIMP!')
+/*
 	if (typeof state.element === 'string')
 		state.element = capitalize(state.element)
 	else if (_is_react_element(state.element))
@@ -312,7 +313,7 @@ const on_filterꘌCapitalize: WalkerCallbacks<WalkState, RenderingOptionsⵧToRe
 			},
 		)
 
-	return state
+	return state*/
 }
 
 const callbacksⵧto_react: Partial<WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>> = {
@@ -349,7 +350,7 @@ function renderⵧto_react($doc: Immutable<NodeLike>, callback_overrides: Partia
 		// optim to avoid a useless div
 		// do not loose infos!
 		const key = options.key || state.element.key || 'rich-text-format-to-react--root'
-		const props = state.element.props || {}
+		const props = (state.element.props || {}) as any
 		const className = 'o⋄rich-text ' + (props.className || '')
 		return React.cloneElement(state.element, {
 			...props,

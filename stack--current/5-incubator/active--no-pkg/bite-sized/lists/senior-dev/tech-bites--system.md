@@ -146,6 +146,7 @@ CAP Theorem -> see also PACELC theorem
 capacity planning
 cascading failures
 cascading failures -- exponential backoff + jitter +
+cell-based architecture = isolated feature (titanic))
 change -- release tracks -- bundled = will get all of the features that were released to Preview Release Track during the previous months (pro tier)
 change -- release tracks -- continuous = see new features when they are released (free tier)
 change -- release tracks -- preview = will receive all updates released to Continuous Track in the last month (sandbox for admis)

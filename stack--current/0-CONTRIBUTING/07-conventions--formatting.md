@@ -26,7 +26,7 @@ TODO one day prettify
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import {  } from './types.js'
+import type {  } from './types.js'
 
 /////////////////////////////////////////////////
 
@@ -61,12 +61,12 @@ export {
 ```ts
 import { expect } from 'chai'
 
-import { LIB } from './consts.js'
-import { getꓽSXC } from './sec.js'
+import { LIB } from './consts.ts'
+import { getꓽSXC } from './sec.ts'
 
 import {
   ...
-} from './index.js'
+} from './index.ts'
 
 /////////////////////////////////////////////////
 

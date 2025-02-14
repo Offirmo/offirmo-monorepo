@@ -67,7 +67,7 @@ function normalizeꓽstep<ContentType>(step: Step<ContentType>): Required<Step<C
 function normalize_choice(choice) {
 	// TODO auto-id
 	try {
-		if (!choice.hasOwnProperty('value') || typeof choice.value === 'undefined')
+		if (!Object.hasOwn(choice, 'value') || typeof choice.value === 'undefined')
 			throw new Error('Choice has no value!')
 		choice.msg_cta = choice.msg_cta || String(choice.value)
 		return choice

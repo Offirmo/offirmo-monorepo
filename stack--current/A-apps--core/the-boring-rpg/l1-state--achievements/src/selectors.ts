@@ -10,7 +10,7 @@ function getꓽlast_known_achievement_status(state: Immutable<State>, key: strin
 }
 
 function isꓽachievement_already_unlocked(state: Immutable<State>, key: string): boolean {
-	return state.achievements.hasOwnProperty(key)
+	return Object.hasOwn(state.achievements, key)
 		? state.achievements[key] === AchievementStatus.unlocked
 		: false
 }
