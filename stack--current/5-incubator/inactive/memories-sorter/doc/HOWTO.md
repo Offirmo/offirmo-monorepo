@@ -1,4 +1,6 @@
-
+1. do all software updates, incl. host + phone
+1. maybe restart both the computer and the iPhone
+1. plug the phone directly (not through a hub/dock) with a genuine cable
 1. Recently deleted
    1. delete
 1. Import in "Photos"
@@ -6,7 +8,7 @@
 1. Duplicates
     clean
 1. Media Types -- Screenshots
-   1. export UNMODIFIED originals
+   1. File > Export > Export UNMODIFIED Originals
       IN A FOLDER (to check progress)
    1. delete
 1. Media Types -- Portrait

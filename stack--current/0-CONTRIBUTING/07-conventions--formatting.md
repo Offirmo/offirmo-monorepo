@@ -60,6 +60,8 @@ export {
 
 ```ts
 import { expect } from 'chai'
+import assert from 'tiny-invariant'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from './consts.ts'
 import { getꓽSXC } from './sec.ts'
@@ -70,7 +72,9 @@ import {
 
 /////////////////////////////////////////////////
 
-function expectㆍfileㆍstatesㆍdeepㆍequal(s1: Immutable<State>, s2: Immutable<State>, should_log = true): void {}
+function expectㆍfileㆍstatesㆍdeepㆍequal(s1: Immutable<State>, s2: Immutable<State>, should_log = true): void {
+  assert(...
+}
 
 describe(`${LIB} -- examples`, function() {
 
