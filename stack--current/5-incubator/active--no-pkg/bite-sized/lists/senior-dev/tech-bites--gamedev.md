@@ -198,6 +198,9 @@ replay value -- remorting
 replay value -- speedrunning
 rush
 sandbox
+setting -- legendarium
+setting -- mythopoeia https://en.wikipedia.org/wiki/Mythopoeia
+setting -- worldbuilding https://en.wikipedia.org/wiki/Worldbuilding
 softlock
 structures -- cleanliness = https://thealexandrian.net/wordpress/15176/roleplaying-games/game-structures-part-8-the-importance-of-clean-structures
 structures -- combat = hit -> defeat the opponent

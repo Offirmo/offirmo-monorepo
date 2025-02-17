@@ -97,6 +97,7 @@ LLM -- "Pathways Language Model" (PaLM) 540B model from Google AI
 LLMs - large language models
 machine learning feature = ‘feature’, in this context might be something like ‘number of times UserA has viewed Issue123 in the last week', which may be a useful signal to a machine learning model
 machine learning feature store = ex. Tecton https://docs.tecton.ai/docs/introduction
+MCP https://modelcontextprotocol.io/tutorials/building-mcp-with-llms
 mind tax https://www.fastcompany.com/91242373/the-cognitive-cost-of-ai
 Mixture of Experts (MoE) = combining models https://huggingface.co/blog/moe
 Mixture of Experts -- "sparse mixture of experts" (SMoE)

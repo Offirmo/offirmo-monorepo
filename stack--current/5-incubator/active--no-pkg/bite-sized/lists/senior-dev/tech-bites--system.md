@@ -454,20 +454,21 @@ serverless -- Deploy your app as one (all Lambdas as one, rather than each Lambd
 serverless -- Don’t break things down too small (dare I say microservices). Keep your lambdas and code grouped logically rather than striving for smallest unit of work
 serverless -- forces devs into working within limits - mainly memory and time per lambda function invocation. This then forces good habits around breaking down complex operations, which by default results in better resilience and scalability. E.g. we have to break down large rule executions into multiple executions per issue (instead of processing 1000s of issues in bulk)
 service
+service -- availability
 service -- backing -- inferred = dependencies for an instrumented service, such as databases, queues, or third-party APIs, even if that dependency hasn’t been directly instrumented
 service -- backing = any service the app consumes over the network as part of its normal operation https://12factor.net/backing-services
+service -- mesh
+service -- monitoring -- Error budget = starts at 1 - SLO and declines as the actual performance misses the SLO
+service -- monitoring -- service level -- agreement (SLA) = a team’s commitment to maintain a measurably high standard of service reliability for their customers.
+service -- monitoring -- service level -- agreement (SLA) = refund!!
+service -- monitoring -- service level -- indicator (SLI) = a measurement of performance, metrics of behavior and performance
+service -- monitoring -- service level -- objective (SLO) = a statement of desired performance = applying specific, time-windowed targets to SLIs
+service -- monitoring -- service level -- objectives (SLO) https://sre.google/resources/practices-and-processes/art-of-slos/ https://sre.google/resources/
+service -- monitoring -- service level = the performance of a service from its customers’ perspective. Encompasses many things, including: Is the service available when I need it? Is the service fast to respond? Is the service providing correct responses? Is the service protecting my privacy?... Service levels are critical in approaching reliability.
+service -- monitoring https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring
+service -- proxy -- egress authentication
+service -- weaving https://serviceweaver.dev/
 service = software functionality https://en.wikipedia.org/wiki/Service_(systems_architecture)
-service availability
-service mesh
-service monitoring -- Error budget = starts at 1 - SLO and declines as the actual performance misses the SLO
-service monitoring -- service level -- agreement (SLA) = a team’s commitment to maintain a measurably high standard of service reliability for their customers.
-service monitoring -- service level -- agreement (SLA) = refund!!
-service monitoring -- service level -- indicator (SLI) = a measurement of performance, metrics of behavior and performance
-service monitoring -- service level -- objective (SLO) = a statement of desired performance = applying specific, time-windowed targets to SLIs
-service monitoring -- service level -- objectives (SLO) https://sre.google/resources/practices-and-processes/art-of-slos/ https://sre.google/resources/
-service monitoring -- service level = the performance of a service from its customers’ perspective. Encompasses many things, including: Is the service available when I need it? Is the service fast to respond? Is the service providing correct responses? Is the service protecting my privacy?... Service levels are critical in approaching reliability.
-service monitoring https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring
-Service Proxy Egress authentication
 single point of failure = avoidable with redundancy
 site reliability engineering (SRE) "treat operations as if it’s a software problem" https://sre.google/
 snowflake (Twitter) = distributed k-sorted uuid generator https://blog.x.com/engineering/en_us/a/2010/announcing-snowflake

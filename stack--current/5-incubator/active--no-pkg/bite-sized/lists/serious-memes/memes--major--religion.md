@@ -1,32 +1,33 @@
 4 R emblem https://apostolicchurchqld.org.au/definition-of-the-4-r-emblem/
-7 degres ascension spirituelle https://fsj.fr/2013/09/les-7-degres-lascension-spirituelle/ http://voiemystique.free.fr/ruysbroeck_sept_degres.htm
-7 degres misericorde 1) absence de jugement 2) compassion 3) confiance pardon/resilience 4) absolution 5) http://www.chemindamourverslepere.com/archive/2016/04/08/meditation-les-degres-de-la-misericorde-5785524.html
+7 degrés ascension spirituelle https://fsj.fr/2013/09/les-7-degres-lascension-spirituelle/ http://voiemystique.free.fr/ruysbroeck_sept_degres.htm
+7 degrés miséricorde 1) absence de jugement 2) compassion 3) confiance pardon/resilience 4) absolution 5) http://www.chemindamourverslepere.com/archive/2016/04/08/meditation-les-degres-de-la-misericorde-5785524.html
 7 demeures https://mailchi.mp/mariedenazareth.com/quelles-sont-les-etapes-de-la-vie-mystique-selon-sainte-therese-davila
-7+7 œuvres de misericorde https://fr.wikipedia.org/wiki/%C5%92uvres_de_mis%C3%A9ricorde
-Absurdism = Theory that life in general is meaningless
-Animism
-Apatheism = Apathy toward the existence or non-existence of God
-Apostles - what happened to them
+7+7 œuvres de miséricorde https://fr.wikipedia.org/wiki/%C5%92uvres_de_mis%C3%A9ricorde
+absurdism = Theory that life in general is meaningless
+animism
+apatheism = Apathy toward the existence or non-existence of God
+apostles -- what happened to them
 arianism https://en.wikipedia.org/wiki/Arius
 armor of Christ
 Bible -- Hebrew https://en.wikipedia.org/wiki/Hebrew_Bible
 cargo cult
-Cosmicism = complete irrelevance of mankind in the face of the cosmic entities that apparently exist in the universe https://en.wikipedia.org/wiki/Cosmicism
-Countries - how christianism was introduced
-Dead Sea Scrolls
-Determinism = Philosophical view that events are determined by prior events
-devotions -- https://aleteia.org/2023/11/27/why-our-lady-of-grace-is-on-the-miraculous-medal
+cosmicism = complete irrelevance of mankind in the face of the cosmic entities that apparently exist in the universe https://en.wikipedia.org/wiki/Cosmicism
+countries -- how christianism was introduced
+Dead Sea scrolls
+determinism = Philosophical view that events are determined by prior events
 doubt https://aleteia.org/2023/04/15/is-all-doubt-bad/
-Every time you step in, you rob your team of the lessons they need to grow https://www.linkedin.com/posts/tahahussain_at-microsoft-a-junior-engineer-spent-3-days-activity-7291493025334149120-MjEo
-Existential nihilism = Theory that life has no inherent meaning
-Existentialism = Philosophical form of enquiry into subjective existence
+dévotions -- https://aleteia.org/2023/11/27/why-our-lady-of-grace-is-on-the-miraculous-medal
+every time you step in, you rob your team of the lessons they need to grow https://www.linkedin.com/posts/tahahussain_at-microsoft-a-junior-engineer-spent-3-days-activity-7291493025334149120-MjEo
+existential nihilism = Theory that life has no inherent meaning
+existentialism = Philosophical form of enquiry into subjective existence
 fallen-away https://aleteia.org/2024/11/26/popes-advice-for-worried-grandmother-about-fallen-away-kids
-Fatalism = Philosophical doctrine on the subjugation of all events to fate
+fatalism = Philosophical doctrine on the subjugation of all events to fate
 fathers of the Church https://aleteia.org/2018/02/02/who-are-the-fathers-of-the-church-and-why-do-they-matter
 Fatima: message, children, secrets
-fine-tuned universe (not an argument) https://en.wikipedia.org/wiki/Fine-tuned_universe
+fine-tuned universe (not an argument, selection bias) https://en.wikipedia.org/wiki/Fine-tuned_universe
 first cause
 great apostasy https://en.wikipedia.org/wiki/Great_Apostasy
+holier than you
 https://aleteia.org/2024/11/26/shinichi-suzuki-showed-how-music-can-ennoble-the-soul
 https://aleteia.org/2024/12/18/john-traynor-beneficiary-of-lourdes-stunning-71st-miracle
 https://en.wikipedia.org/wiki/Giordano_Bruno
@@ -40,17 +41,18 @@ Lourdes
 magical thinking https://en.wikipedia.org/wiki/Magical_thinking
 Megiddo Mosaic: Earliest evidence of Jesus proclaimed as God https://aleteia.org/2024/11/27/megiddo-mosaic-earliest-evidence-of-jesus-proclaimed-as-god
 mercy
-Misanthropy = General dislike of humanity
-Misotheism = Hatred of God or the gods
+misanthropy = General dislike of humanity
+misotheism = Hatred of God or the gods
 mysticism https://en.wikipedia.org/wiki/Christian_mysticism
 médaille -- miraculeuse
 médaille -- st Benoit
-Natural Religiosity
+natural religiosity
 philosophical problems -- consciousness
 philosophical problems -- impossibility of proving any truth, even in the fields of logic and mathematics?
 philosophical problems -- mind-body problem
 philosophical problems -- why there is something rather than nothing?
 philosophical problems https://en.wikipedia.org/wiki/List_of_philosophical_problems
+prayer
 prayer -- extension of selfishness: santa's list, promise to be good, implore, negotiate, plead
 problem of evil https://en.wikipedia.org/wiki/Problem_of_evil
 purposeless, mechanical and uncaring universe. Human beings, with their limited faculties, can never fully understand this universe.
@@ -73,6 +75,9 @@ St Rita
 St Simeon Salos
 St Zita
 Ste Thérèse
-testaments spirituels St Louis St Remy https://www.famillechretienne.fr/39532/article/le-testament-spirituel-de-benoit-xvi-texte-integral
+subcreation = a creation of Man within God's primary creation "Man becomes a sub-creator" https://en.wikipedia.org/wiki/Mythopoeia
+testament spirituel -- Benoît XVI https://www.famillechretienne.fr/39532/article/le-testament-spirituel-de-benoit-xvi-texte-integral
+testament spirituel -- St Louis
+testament spirituel -- St Remy
 Trinity https://en.wikipedia.org/wiki/Nontrinitarianism
 What is even a religion?

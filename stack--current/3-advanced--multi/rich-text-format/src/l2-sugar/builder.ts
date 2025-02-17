@@ -4,8 +4,7 @@ import {
 	NodeType,
 	type Hints,
 	type CheckedNode,
-	type Node,
-	type Document, type NodeLike,
+	type Node, type Document, type NodeLike,
 } from '../l1-types/index.ts'
 import { promoteꓽto_node } from '../l1-utils/promote.ts'
 import { normalizeꓽnode } from '../l1-utils/normalize.ts'
@@ -27,17 +26,17 @@ interface Builder {
 	pushInlineFragment(str: string, options?: CommonOptions): Builder
 	pushBlockFragment(str: string, options?: CommonOptions): Builder
 
-	pushStrong(str: string, options?: CommonOptions): Builder
-	pushEm(str: string, options?: CommonOptions): Builder
-	pushWeak(str: string, options?: CommonOptions): Builder
-	pushHeading(str: string, options?: CommonOptions): Builder
+	pushStrong(str: NodeLike, options?: CommonOptions): Builder
+	pushEm(str: NodeLike, options?: CommonOptions): Builder
+	pushWeak(str: NodeLike, options?: CommonOptions): Builder
+	pushHeading(str: NodeLike, options?: CommonOptions): Builder
 	pushHorizontalRule(): Builder
 	pushLineBreak(): Builder
 
-	pushKeyValue(key: Node | string, value: Node | string | number, options?: CommonOptions): Builder
+	pushKeyValue(key: NodeLike, value: NodeLike, options?: CommonOptions): Builder
 
 	// node ref is auto added into content
-	pushNode(node: Node, options?: CommonOptions): Builder
+	pushNode(node: NodeLike, options?: CommonOptions): Builder
 
 	// Raw = NOTHING is added into content
 	// useful for
@@ -81,7 +80,7 @@ function _create($node: CheckedNode): Builder {
 	let sub_id = 0
 
 	function addClass(...classes: string[]): Builder {
-		$node.$classes.push(...classes)
+		$node.$classes = Array.from(new Set<string>([ ...$node.$classes, ...classes]))
 		return builder
 	}
 
@@ -98,29 +97,26 @@ function _create($node: CheckedNode): Builder {
 		return builder
 	}
 
-	function _buildAndPush(builder: Builder, str: string, options: CommonOptions = {}) {
-		options = {
-			classes: [],
-			...options,
+	function _buildAndPush(builder: Builder, str: NodeLike, options: CommonOptions = {}) {
+		if (typeof str === 'string')
+			builder.pushText(str)
+		else {
+			builder.pushNode(str)
 		}
-		const node = builder
-			.pushText(str)
-			.addClass(...options.classes!)
-			.done()
-		delete options.classes // TODO immu
+		builder.addClass(...(options.classes || []))
 
-		return pushNode(node, options)
+		return pushNode(builder.done(), options)
 	}
 
 
-	function pushRawNode(node: Node, options: CommonOptions = {}): Builder {
+	function pushRawNode(node: CheckedNode['$sub'][string], options: CommonOptions = {}): Builder {
 		const id = options.id || String(++sub_id).padStart(4, '0')
 		$node.$sub[id] = node
 		if (options.classes)
 			$node.$classes.push(...options.classes)
 		return builder
 	}
-	function pushRawNodes(nodes: { [id: string]: Node }): Builder {
+	function pushRawNodes(nodes: CheckedNode['$sub']): Builder {
 		$node.$sub = {
 			...$node.$sub,
 			...nodes,
@@ -128,7 +124,7 @@ function _create($node: CheckedNode): Builder {
 		return builder
 	}
 
-	function pushNode(node: Node, options: CommonOptions = {}): Builder {
+	function pushNode(node: NodeLike, options: CommonOptions = {}): Builder {
 		const id = options.id || ('000' + ++sub_id).slice(-4)
 		$node.$content += `⎨⎨${id}⎬⎬`
 		return pushRawNode(node, { ...options, id })
@@ -148,19 +144,19 @@ function _create($node: CheckedNode): Builder {
 		return _buildAndPush(emoji(), str, options)
 	}
 
-	function pushStrong(str: string, options?: CommonOptions): Builder {
+	function pushStrong(str: NodeLike, options?: CommonOptions): Builder {
 		return _buildAndPush(strong(), str, options)
 	}
 
-	function pushEm(str: string, options?: CommonOptions): Builder {
+	function pushEm(str: NodeLike, options?: CommonOptions): Builder {
 		return _buildAndPush(em(), str, options)
 	}
 
-	function pushWeak(str: string, options?: CommonOptions): Builder {
+	function pushWeak(str: NodeLike, options?: CommonOptions): Builder {
 		return _buildAndPush(weak(), str, options)
 	}
 
-	function pushHeading(str: string, options?: CommonOptions): Builder {
+	function pushHeading(str: NodeLike, options?: CommonOptions): Builder {
 		return _buildAndPush(heading(), str, options)
 	}
 

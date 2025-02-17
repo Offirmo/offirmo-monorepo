@@ -46,6 +46,8 @@
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 a country is a farm
 absorbing barrier = anything that prevents people with skin in the game from emerging from it, and to which the system will invariably tend. Let us call these situations ruin, as the entity cannot emerge from the condition https://en.wikipedia.org/wiki/Ergodic_hypothesis#Ergodic_hypothesis_in_finance
+academic disciplines -- humanities = academic disciplines that study aspects of human society and culture, including certain fundamental questions asked by humans https://en.wikipedia.org/wiki/Humanities
+academic disciplines -- trans / cross
 accent -- miscommunication https://paulgraham.com/accents.html
 acceptance
 action -- deep dive & low-hanging fruits
@@ -60,7 +62,11 @@ ally = s/o who actively seeks to bridge differences, stand for fairness or harmo
 alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
+applied = vs. theoric. practical. Not always need to be an expert / scientist / priest. Applying (citizen, engineer, lay) is complementary and can be, at times, more useful/concrete than expertise ("perché")
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
+at the table or on the table?
+attention
+attention -- economy
 aunt sally = an argument or idea that is easily refutable and set up to invite criticism https://en.wikipedia.org/wiki/Aunt_Sally
 autocracy https://en.wikipedia.org/wiki/Autocracy
 availability cascade = a self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
@@ -71,6 +77,7 @@ base rate: The average outcome for an event over time. They’re like batting av
 be prepared
 bee browsing
 being enough
+Bell curve = bottom 20%, middle 60%, top 20%
 Bet you’re fun at parties
 better ask for forgiveness than for permission
 biases -- attractiveness
@@ -94,6 +101,7 @@ brainstorming -- technique -- reverse = come up with ideas to make things worse 
 brainstorming -- technique -- wrong = try to come up with the worst ideas https://hbr.org/2017/08/to-come-up-with-a-good-idea-start-by-imagining-the-worst-idea-possible
 brainstorming -- veto technique = "anyone who vetoes a suggestion has to pay for that veto with a suggestion of their own" https://www.reddit.com/r/LifeProTips/comments/1cyvsz/lpt_cant_decide_on_dinner_use_the_veto_rule/
 Brandolini's Law = The amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it
+breaking through
 broken window theory
 bullying = Lack of consideration and empathy for those without power, Disrespectful behavior that is overt or subtle (in public or behind closed doors), Verbal aggression, sarcasm, or psychological manipulation. Unreasonable or constantly changing directives and deadlines. Singling out individuals. “Mobbing,” in which a group of people gang up on an individual
 bullying = repeated pattern of offensive, intimidating, or hostile behavior(s) or language, often by a strong or other person of authority. Bullying creates a toxic atmosphere for everyone, but may be accepted by many as “part of the workplace culture”
@@ -136,6 +144,7 @@ communication -- breaking bad news https://boz.com/articles/bad-news
 communication -- ELI5 https://boz.com/articles/eli5
 communication -- non violente
 communication -- plainspoken https://boz.com/articles/be-plainspoken https://debliu.substack.com/p/the-importance-of-being-plainspoken
+comparison is the thief of joy
 competition -- is for losers = Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
 conditioning -- classical
 conditioning -- operant
@@ -191,6 +200,7 @@ effective altruism
 effet projecteur
 effet rétroviseur
 efficient market hypothesis = (false) https://quant.stackexchange.com/questions/81684/why-is-efficient-market-hypothesis-still-unanswered-and-no-one-really-seems-to-c
+ego
 Eisenhower's Urgent/Important https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
 elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
@@ -200,6 +210,7 @@ equality vs equity https://medium.com/@CRA1G/the-evolution-of-an-accidental-meme
 equity
 euthanasia https://aleteia.org/2024/09/02/new-australian-study-challenges-the-rise-of-euthanasia
 every occupation has its pro/cons
+every time you step in, you rob your team of the lessons they need to grow https://www.linkedin.com/posts/tahahussain_at-microsoft-a-junior-engineer-spent-3-days-activity-7291493025334149120-MjEo
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 evidence based
 evolution
@@ -212,6 +223,7 @@ fact checking
 fair division -- divide and choose https://en.wikipedia.org/wiki/Divide_and_choose
 fair division = dividing a set of resources among several people who have an entitlement to them so that each person receives their due share. division of inheritance, partnership dissolutions, divorce settlements, electronic frequency allocation, airport traffic management, and exploitation of Earth observation satellite https://en.wikipedia.org/wiki/Fair_division
 fairness
+fake it till you make it
 fake it till you make it -- Of course, it’s not really “fake it till you make it.” It’s just “fake it.”
 fallacies -- map
 fallacies -- motte and bailey https://en.wikipedia.org/wiki/Motte-and-bailey_fallacy
@@ -234,6 +246,7 @@ first principles https://fs.blog/first-principles/
 first-principles thinker
 five eyes
 flourishing = meaning and purpose, deep personal relationships, and character and virtue https://link.springer.com/article/10.1007/s11017-024-09679-x
+follow your bliss -- "I've never done a thing I wanted to do in all my life" (but not hedonism) https://en.wikipedia.org/wiki/Joseph_Campbell#%22Follow_your_bliss%22
 frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
 frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
 free will https://en.wikipedia.org/wiki/Free_will
@@ -345,6 +358,7 @@ keep only the ones saying it's doable
 keeping up with the jones
 labor of love
 laisser-aller
+language -- any word exists in any language in order to describe something relevant to speakers of that language
 language -- colors https://www.richardcarrier.info/archives/7307
 law -- crimes -- crime against humanity
 law -- crimes -- felonies
@@ -393,17 +407,31 @@ lifestyle
 Lindy effect = a theorized phenomenon by which the future life expectancy of some non-perishable things, like a technology or an idea, is proportional to their current age https://en.wikipedia.org/wiki/Lindy_effect
 linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_relativity
 living the good life
+locally special and globally average
 Logical Problem of Evil https://christianity.stackexchange.com/questions/100110/what-are-christian-responses-to-the-logical-problem-of-evil
 lois somptuaires https://en.wikipedia.org/wiki/Tyrian_purple
 look for Things That Don’t Make Sense: The world always makes sense. But it can be confusing. When it is, your model of the world is wrong. So, things that don’t make sense are a learning opportunity. Big opportunities won’t make sense until it’s too late to profit from them.
 loosing faith in humanity
 love = wanting the best
+love and acceptance -- conditional/unconditional
 low culture https://en.wikipedia.org/wiki/Low_culture
 mainstream scientific consensus
 making one's luck
 marxist philosophy
 Maslow's pyramid
 McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
+mediocrity -- accepting (vs. special, high potential) https://www.reddit.com/r/LifeProTips/comments/10znhn2/lpt_request_how_do_i_just_accept_that_i_am/
+mediocrity -- as a goal, sucks... as a result, is OK 
+mediocrity -- at last passing forward: kids, teaching...
+mediocrity -- Bell curve
+mediocrity -- comparison "it just depends on who you're comparing to"
+mediocrity -- helping smart people
+mediocrity -- image of the iceberg
+mediocrity -- perception = value system, achiever, failure
+mediocrity -- progress over perfection "There is nothing noble in being superior to your fellow man; true nobility is being superior to your former self"
+mediocrity -- self-acceptance
+mediocrity -- self-acceptance, self-compassion, self-kindness
+mediocrity -- tyranny of excellence
 mediocrity principle = if an item is drawn at random from one of several sets or categories, it's more likely to come from the most numerous category than from any one of the less numerous categories https://en.wikipedia.org/wiki/Mediocrity_principle
 mental health = I am not my thoughts and rather than feeling like I needed to have control of every situation, that by surrendering that control, I will have more control over my life than I ever did before.
 method of learning +++ https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger
@@ -425,6 +453,13 @@ moral system
 morita therapy
 mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruction
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
+myths -- "true myth"
+myths -- apocalypse / armaggedon
+myths -- Campbell
+myths -- functions of myth https://en.wikipedia.org/wiki/Joseph_Campbell#Functions_of_myth
+myths -- monomyth = all mythic narratives as variations of a single great story
+myths -- mythopoeia/mythopoesis = creating a myth "artificial mythology" "provides relief from the existential dread that comes with a rational world, and that it can serve as a way to link different cultures and societies" https://en.wikipedia.org/wiki/Mythopoeia
+myths -- origin
 naivety
 naiveté: abus sexuels, mafia
 narcissism
@@ -437,6 +472,8 @@ Nobel prize learnings -- discovery vs recognition, with lag between
 Nobel prize learnings -- limit of 3 = large teams don't get the Nobel vs small teams / lone
 Nobel prize learnings -- lost winners = didn't get the Nobel prize due to details, ex. death or bad timing https://par.nsf.gov/servlets/purl/10113092
 Nobel prize learnings -- random impact rule = analysis of Nobel scientists, famous work appears randomly over the career https://par.nsf.gov/servlets/purl/10113092
+nobility
+nobility -- true
 non-violence
 normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-securite-la-normalisation-de-la-deviance-suite
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen
@@ -450,6 +487,7 @@ optimism = "keep only the one who say it’s possible" https://posthog.com/found
 other people’s problems / pick your battles
 out of your league
 outside context problem (OCP) = a problem that is "outside the context" as it is generally not considered until it occurs, and the capacity to actually conceive of or consider the OCP in the first place may not be possible or very limited (i.e., the majority of the group's population may not have the knowledge or ability to realize that the OCP can arise, or assume it is extremely unlikely). An example of OCP is an event in which a civilization does not consider the possibility that a much more technologically advanced society can exist, and then encounters one https://en.wikipedia.org/wiki/Excession#Outside_Context_Problem 
+overachiever
 Overton Window: You can control thought without limiting speech. You can do it by defining the limits of acceptable thought while allowing for lively debate within these barriers. For example, Fox News and MSNBC set limits on what political thoughts they consider acceptable, but in the grand scheme of things, they’re both fairly conventional. The political spectrum stretches far beyond the ideas they entertain, but ideas outside their limits are shunned.
 paradigm shift https://en.wikipedia.org/wiki/Paradigm_shift
 paradox of Abundance: The average quality of information is getting worse and worse. But the best stuff is getting better and better. Markets of abundance are simultaneously bad for the median consumer but good for conscious consumers.
@@ -466,7 +504,9 @@ paved path = "The paved path" refers to a methodology where the next step to tak
 pay it forward
 penny Problem Gap: Economists assume demand is linear, but people’s behavior totally changes once an action costs money. If the inventors of the Internet had known about it, spam wouldn’t be such a problem. If sending an email cost you $0.001, there’d be way less spam.
 People will think you are judging them (drinking) https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd44714e619a
-Perfect is the enemy of good https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good
+perfection -- embodying perfection
+perfection -- is the enemy of progress/done/good https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good
+perfection -- unbearable expectations (heroes)
 personal finance -- FIRE
 personal finance -- HENRY
 personal finance https://thewokesalaryman.substack.com/p/10-finance-revelations
@@ -531,6 +571,8 @@ rare events = ex. COVID-19 https://en.wikipedia.org/wiki/Rare_events
 rationalize
 re-thinking established patterns
 Reach Impact Confidence Estimate (RICE)
+reading -- Campbell: "I would get nine hours of sheer reading done a day. And this went on for five years straight"
+reading -- science fiction
 reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
 rebound effect https://blog.jim-nielsen.com/2024/notes-on-making-software-by-peter-van-hardenberg/
 recruiting others to support you in addressing issue
@@ -548,6 +590,7 @@ robustness principle = be conservative in what you do, be liberal in what you ac
 rock the boat -- permission to (speak freely)
 root cause misattribution https://www.zeptonaut.com/posts/rocket-league-and-root-cause-misattribution/
 Russell Conjugation = Journalists often change the meaning of a sentence by replacing one word with a synonym that implies a different meaning. For example, the same person can support an estate tax but oppose a death tax — even though they are the same thing.
+satisfied with his lot, adjusted to his environment, happy in his work, and representative of all that is best in the American tradition https://en.wikipedia.org/wiki/Ed_Ricketts#Philosophy
 SBI https://medium.com/pm101/the-situation-behavior-impact-feedback-framework-e20ce52c9357
 SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
 SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
@@ -565,8 +608,9 @@ selectorate theory https://en.wikipedia.org/wiki/Selectorate_theory
 self appreciation
 self centered vs. take into account others (cf. woke salaryman)
 self love
-self righteousness
+self-righteousness = attitude and belief of moral superiority derived from a person deeming their own beliefs, actions, or affiliations to be of greater virtue than those of others https://en.wikipedia.org/wiki/Self-righteousness 
 sense-check = Before going too deep into solutions, align with your stakeholders on the problem. This saves time by avoiding working a lot just to find out that it’s highly contentious and there’s a different or better approach.
+settling
 sex -- abuse -- 12yo Samantha
 sex -- abuse -- Dominique Pelicot https://www.vox.com/world-politics/370736/france-rape-case-gisele-dominique-pelicot-metoo
 sex -- abuse -- https://en.wikipedia.org/wiki/Angers_pedophile_network
@@ -575,6 +619,7 @@ sex -- ed
 sex -- ed -- "sex positive"
 ship of theseus https://en.m.wikipedia.org/wiki/Ship_of_Theseus
 short term / long term
+signal-to-noise ratio
 signaling -- class, social standing, status
 signaling -- virtue
 signaling = behavior that convey (advertise?) something about ourselves, true or not
@@ -592,6 +637,7 @@ social debt = friends, family, and strangers who feel entitled to ask, beg, and 
 social pressure / free will
 soft skills https://newsletter.weskao.com/p/how-to-give-a-senior-leader-feedback-without-getting-fired
 soft skills https://softskills.audio/
+stages of life / seasons of life
 staggered contour trenches
 stakeholder
 standards of proof -- 01 Some evidence
@@ -694,4 +740,5 @@ who moved my cheese?
 wisdom
 wisdom -- a wisdom for left may not be valid for right
 xenia https://greekmythcomix.com/comic/how-to-do-xenia/
+you are the company you keep
 you can bring a horse to water...

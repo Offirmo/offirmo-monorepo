@@ -16,11 +16,8 @@ import { key_value } from '@offirmo-private/rich-text-format'
 function _recursively_enqueue(book_part: Immutable<BookPart>, current_path‿split: BookPartKey[], ordered_refs: BookNodeReference[]) {
 	const { parts } = book_part
 
-	if (current_path‿split.filter(s => s !== NODE_REFERENCEꘌROOT).length) {
-		// add a pseudo-page for the cover
-		ordered_refs.push(current_path‿split.join(NODE_REFERENCEⵧSEPARATOR))
-	}
-
+	// add a pseudo-page for the cover
+	ordered_refs.push(current_path‿split.join(NODE_REFERENCEⵧSEPARATOR))
 
 	const part_keys = Object.keys(parts)
 	if (part_keys.every(key => isꓽPageⵧlike(parts[key]))) {

@@ -77,7 +77,7 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 		// 2a. top priority result -- for display
 		// to display where we are, ex "Book X > Chapter X > Page N out of M"
 		breadcrumbs: [ book.title ],
-		part_type: 'page', // TEMP
+		part_type: 'page', // so far
 		relative_index‿human: -1, // so far
 		group_count: -1, // so far
 
@@ -132,8 +132,10 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 		const parts_keyⵧlast: BookPartKey = parts_keys[parts_keys.length - 1]!
 		const parts_keyⵧcurrentⵧraw: BookPartKey | undefined = path__segments‿split.shift()
 		if (!parts_keyⵧcurrentⵧraw) {
-			// normal, happens when we start reading the book
+			// normal, no path = happens when we start reading the book/part
+			throw new Error('NIMP')
 		}
+
 		let parts_keyⵧcurrent: BookPartKey = parts_keyⵧcurrentⵧraw || parts_keyⵧfirst
 		let indexⵧcurrent = parts_keys.indexOf(parts_keyⵧcurrent)
 		if (indexⵧcurrent === -1) {
