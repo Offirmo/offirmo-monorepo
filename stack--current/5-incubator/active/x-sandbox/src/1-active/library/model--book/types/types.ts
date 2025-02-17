@@ -95,6 +95,7 @@ interface BookPart {
 	title?: Text
 	subtitles?: Array<Text>
 	author?: Author
+	blurb?: Text // often happens for chapters, some sort of summary or teaser/pitch
 	// TODO one day hints
 
 	// hint for visual display

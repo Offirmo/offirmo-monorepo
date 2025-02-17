@@ -9,7 +9,7 @@ import { NODE_REFERENCEⵧSEPARATOR, NODE_REFERENCEꘌROOT } from '../../model--
 import { getꓽpage } from '../../model--book/selectors.ts'
 
 import { BOOK } from './content.ts'
-import { key_value } from '@offirmo-private/rich-text-format'
+import { keyꓺvalue } from '@offirmo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 

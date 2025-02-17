@@ -1,8 +1,9 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
+import * as RichText from '@offirmo-private/rich-text-format'
 
 import type { Text, Book, BookPart, BookPage, BookNodeReference, BookPartKey } from './types/types.ts'
-import { isꓽPageⵧlike } from './types/types-guards.ts'
+import { isꓽBookCover, isꓽPageⵧlike } from './types/types-guards.ts'
 import { promote_toꓽBookPage } from './types/normalizers.ts'
 
 import { NODE_REFERENCEⵧSEPARATOR, NODE_REFERENCEꘌROOT } from './consts.ts'
@@ -52,10 +53,47 @@ function _get_breadcrumb_entry(book_part : Immutable<BookPart>, key: BookPartKey
 	return `${book_part.parts_type || 'part'} ${key}`
 }
 
+function _get_page_from_part_cover(book_part: Immutable<BookPart>, parent: Immutable<BookPart> | undefined): BookPage {
+	const builder = RichText.fragmentⵧblock()
 
-function _get_page_from_part_cover(book_part: Immutable<BookPart>, parent: Immutable<BookPart>): BookPage {
+	if (parent) {
+		builder.pushBlockFragment(
+			RichText.strong(`${parent.parts_type || 'part'} ${Object.values(parent.parts).indexOf(book_part) + 1}`).done(),
+			{ id: 'part_id' },
+		)
+	}
+
+	if (!book_part.title) {
+		if (!parent) {
+			// no title and no parent? That's not possible
+			assert(isꓽBookCover(book_part), `Book part is root, thus a cover, thus should have a title!`)
+		}
+	}
+	else {
+		builder.pushHeading(book_part.title, { id: 'title' })
+	}
+
+
+	if (book_part.subtitles?.length) {
+		builder.pushBlockFragment(
+				RichText.strong(book_part.subtitles?.[0]!).done(),
+				{ id: 'subtitle' },
+			)
+	}
+
+	if (book_part.blurb) {
+		builder.pushBlockFragment(book_part.blurb, { id: 'blurb' })
+	}
+
+	if (book_part.author) {
+		builder.pushBlockFragment(
+			RichText.em(book_part.author).done(),
+			{ id: 'author' },
+		)
+	}
+
 	return {
-		content: 'TODO _get_page_from_part_cover',
+		content: builder.done(),
 	}
 }
 
@@ -120,20 +158,58 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 	let book_part: Immutable<BookPart> = book
 	do {
 		const { parts } = book_part
-		if (!parts) {
-			throw new Error('NIMP')
-		}
+		assert(!!parts, `tree walk expecting a BookPart!`)
+
+		const parent = parent_parts_chain[parent_parts_chain.length - 1]
+
 		const parts_keys: Array<BookPartKey> = Object.keys(parts)
 			// .sort() TODO one day sort intelligently alphanum
+
 		if (parts_keys.length === 0) {
 			throw new Error('NIMP')
 		}
+
 		const parts_keyⵧfirst: BookPartKey = parts_keys[0]!
 		const parts_keyⵧlast: BookPartKey = parts_keys[parts_keys.length - 1]!
 		const parts_keyⵧcurrentⵧraw: BookPartKey | undefined = path__segments‿split.shift()
 		if (!parts_keyⵧcurrentⵧraw) {
 			// normal, no path = happens when we start reading the book/part
-			throw new Error('NIMP')
+
+			// 1.
+			result.content = _get_page_from_part_cover(book_part, parent)
+
+			// 2a.
+			result.part_type = parent?.parts_type || 'book'
+			result.relative_index‿human = 0 // means "cover"
+			result.group_count = parts_keys.length
+
+			// 2b.
+			result.referenceⵧcurrent = [ ...referenceⵧcurrent‿split ].join(NODE_REFERENCEⵧSEPARATOR)
+			result.referenceⵧnextⵧin_tree = ((): BookPartKey[] => {
+				if (parts_keys.length) {
+					return [ ...referenceⵧnext‿split, parts_keys[0]! ]
+				}
+
+				while (depth > 0) {
+					// go up
+					depth--
+					throw new Error('NIMP')
+				}
+
+				return [ NODE_REFERENCEꘌROOT ]
+			})().join(NODE_REFERENCEⵧSEPARATOR)
+			result.referenceⵧpreviousⵧin_tree = ((): BookPartKey[] => {
+				let depth = parent_parts_chain.length
+				while (depth > 0) {
+					// go up
+					depth--
+					throw new Error('NIMP')
+				}
+
+				return [ NODE_REFERENCEꘌROOT ]
+			})().join(NODE_REFERENCEⵧSEPARATOR)
+
+			return result
 		}
 
 		let parts_keyⵧcurrent: BookPartKey = parts_keyⵧcurrentⵧraw || parts_keyⵧfirst
@@ -141,7 +217,7 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 		if (indexⵧcurrent === -1) {
 			// should not happen,
 			// but may happen if a book is updated and its tree changes. Should not crash.
-			console.warn(`BookPartKey "${parts_keyⵧcurrent}" not found in the book tree, using "first" instead.`, { book, book_part, parts_keys, part_keyⵧcurrentⵧraw: parts_keyⵧcurrentⵧraw })
+			console.warn(`BookPartKey "${parts_keyⵧcurrent}" not found in the book tree, falling back to "first" instead.`, { book, book_part, parts_keys, part_keyⵧcurrentⵧraw: parts_keyⵧcurrentⵧraw })
 			parts_keyⵧcurrent = parts_keyⵧfirst
 			indexⵧcurrent = 0
 		}

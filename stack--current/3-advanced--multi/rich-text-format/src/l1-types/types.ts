@@ -71,7 +71,7 @@ type CheckedNode = {
 	$sub: {
 		// sub-nodes MAYBE referenced in the content by their id
 		// Note: extraneous sub-nodes are allowed for convenience, excess will not be checked
-		[id: string]: NodeLike
+		[id: string]: Immutable<NodeLike> // Immutable to clearly convey that a node will not modify its given sub-nodes
 	}
 
 	// hints for renderers. May or may not be used.

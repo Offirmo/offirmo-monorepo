@@ -1,10 +1,13 @@
+import assert from 'tiny-invariant'
+import type { Immutable } from '@offirmo-private/ts-types'
+
 import { LIB, SCHEMA_VERSION } from '../consts.ts'
 
 import {
 	NodeType,
 	type Hints,
 	type CheckedNode,
-	type Node, type Document, type NodeLike,
+	type Node, type Document, type NodeLike, isꓽNode,
 } from '../l1-types/index.ts'
 import { promoteꓽto_node } from '../l1-utils/promote.ts'
 import { normalizeꓽnode } from '../l1-utils/normalize.ts'
@@ -16,34 +19,37 @@ interface CommonOptions {
 	classes?: string[]
 }
 
+type SubNodes = Immutable<CheckedNode['$sub']>
+type SubNode = CheckedNode['$sub'][string]
+
 interface Builder {
-	addClass(...classes: string[]): Builder
+	addClass(...classes: ReadonlyArray<string>): Builder
 	addHints(hints: Partial<Hints>): Builder
 
-	pushText(str: string): Builder
-	pushEmoji(e: string, options?: CommonOptions): Builder
+	pushText(str: Immutable<Exclude<NodeLike, Node>>): Builder
+	pushEmoji(e: string, options?: Immutable<CommonOptions>): Builder
 
-	pushInlineFragment(str: string, options?: CommonOptions): Builder
-	pushBlockFragment(str: string, options?: CommonOptions): Builder
+	pushInlineFragment(str: SubNode, options?: Immutable<CommonOptions>): Builder
+	pushBlockFragment(str: SubNode, options?: Immutable<CommonOptions>): Builder
 
-	pushStrong(str: NodeLike, options?: CommonOptions): Builder
-	pushEm(str: NodeLike, options?: CommonOptions): Builder
-	pushWeak(str: NodeLike, options?: CommonOptions): Builder
-	pushHeading(str: NodeLike, options?: CommonOptions): Builder
+	pushStrong(str: SubNode, options?: Immutable<CommonOptions>): Builder
+	pushEm(str: SubNode, options?: Immutable<CommonOptions>): Builder
+	pushWeak(str: SubNode, options?: Immutable<CommonOptions>): Builder
+	pushHeading(str: SubNode, options?: Immutable<CommonOptions>): Builder
 	pushHorizontalRule(): Builder
 	pushLineBreak(): Builder
 
-	pushKeyValue(key: NodeLike, value: NodeLike, options?: CommonOptions): Builder
+	pushKeyValue(key: SubNode, value: SubNode, options?: Immutable<CommonOptions>): Builder
 
 	// node ref is auto added into content
-	pushNode(node: NodeLike, options?: CommonOptions): Builder
+	pushNode(node: SubNode, options?: Immutable<CommonOptions>): Builder
 
 	// Raw = NOTHING is added into content
 	// useful for
 	// 1. lists
 	// 2. manual stuff
-	pushRawNode(node: CheckedNode['$sub'][string], options?: CommonOptions): Builder
-	pushRawNodes(nodes: CheckedNode['$sub']): Builder // batch version
+	pushRawNode(node: SubNode, options?: Immutable<CommonOptions>): Builder
+	pushRawNodes(nodes: SubNodes): Builder // batch version
 
 	done(): CheckedNode
 }
@@ -78,8 +84,9 @@ function _create($node: CheckedNode): Builder {
 	}
 
 	let sub_id = 0
+	//let locale = 'en-US' TODO one day
 
-	function addClass(...classes: string[]): Builder {
+	function addClass(...classes: ReadonlyArray<string>): Builder {
 		$node.$classes = Array.from(new Set<string>([ ...$node.$classes, ...classes]))
 		return builder
 	}
@@ -92,71 +99,69 @@ function _create($node: CheckedNode): Builder {
 		return builder
 	}
 
-	function pushText(str: string): Builder {
+	function pushText(str: Immutable<Exclude<NodeLike, Node>>): Builder {
+		// TODO one day number formatting with locale
 		$node.$content += str
 		return builder
 	}
 
-	function _buildAndPush(builder: Builder, str: NodeLike, options: CommonOptions = {}) {
-		if (typeof str === 'string')
-			builder.pushText(str)
-		else {
+	function _buildAndPush(builder: Builder, str: SubNode, options: Immutable<CommonOptions> = {}) {
+		if (isꓽNode(str))
 			builder.pushNode(str)
-		}
+		else
+			builder.pushText(str)
+
 		builder.addClass(...(options.classes || []))
 
 		return pushNode(builder.done(), options)
 	}
 
 
-	function pushRawNode(node: CheckedNode['$sub'][string], options: CommonOptions = {}): Builder {
+	function pushRawNode(node: SubNode, options: Immutable<CommonOptions> = {}): Builder {
 		const id = options.id || String(++sub_id).padStart(4, '0')
 		$node.$sub[id] = node
 		if (options.classes)
-			$node.$classes.push(...options.classes)
+			addClass(...options.classes)
 		return builder
 	}
-	function pushRawNodes(nodes: CheckedNode['$sub']): Builder {
-		$node.$sub = {
-			...$node.$sub,
-			...nodes,
-		}
+	function pushRawNodes(nodes: SubNodes): Builder {
+		Object.entries(nodes).forEach(([id, node]) => pushRawNode(node, { id }))
 		return builder
 	}
 
-	function pushNode(node: NodeLike, options: CommonOptions = {}): Builder {
+	function pushNode(node: SubNode, options: Immutable<CommonOptions> = {}): Builder {
 		const id = options.id || ('000' + ++sub_id).slice(-4)
 		$node.$content += `⎨⎨${id}⎬⎬`
 		return pushRawNode(node, { ...options, id })
 	}
 
-	function pushInlineFragment(str: string, options?: CommonOptions): Builder {
+	function pushInlineFragment(str: SubNode, options?: Immutable<CommonOptions>): Builder {
 		return _buildAndPush(fragmentⵧinline(), str, options)
 	}
 
-	function pushBlockFragment(str: string, options?: CommonOptions): Builder {
+	function pushBlockFragment(str: SubNode, options?: Immutable<CommonOptions>): Builder {
 		return _buildAndPush(fragmentⵧblock(), str, options)
 	}
 
-	function pushEmoji(str: string, options?: CommonOptions): Builder {
+	function pushEmoji(str: string, options?: Immutable<CommonOptions>): Builder {
 		// TODO extra emoji details
 		// TODO recognize emoji code
 		return _buildAndPush(emoji(), str, options)
 	}
 
-	function pushStrong(str: NodeLike, options?: CommonOptions): Builder {
+	function pushStrong(str: SubNode, options?: Immutable<CommonOptions>): Builder {
 		return _buildAndPush(strong(), str, options)
 	}
 
-	function pushEm(str: NodeLike, options?: CommonOptions): Builder {
+	function pushEm(str: SubNode, options?: Immutable<CommonOptions>): Builder {
 		return _buildAndPush(em(), str, options)
 	}
 
-	function pushWeak(str: NodeLike, options?: CommonOptions): Builder {
+	function pushWeak(str: SubNode, options?: Immutable<CommonOptions>): Builder {
 		return _buildAndPush(weak(), str, options)
 	}
 
-	function pushHeading(str: NodeLike, options?: CommonOptions): Builder {
+	function pushHeading(str: SubNode, options?: Immutable<CommonOptions>): Builder {
 		return _buildAndPush(heading(), str, options)
 	}
 
@@ -170,20 +175,14 @@ function _create($node: CheckedNode): Builder {
 		return builder
 	}
 
-	function pushKeyValue(key: Node | string, value: Node | string | number, options: CommonOptions = {}): Builder {
+	function pushKeyValue(key: SubNode, value: SubNode, options: Immutable<CommonOptions> = {}): Builder {
 		if ($node.$type !== NodeType.ol && $node.$type !== NodeType.ul)
 			throw new Error(`${LIB}: Key/value is intended to be used in a ol/ul only!`)
 
-		options = {
-			classes: [],
-			...options,
-		}
-		const kv_node: Node = key_value(key, value)
-			.addClass(...options.classes!)
-			.done()
-		delete options.classes // TODO review
-
-		return pushRawNode(kv_node, options)
+		return pushRawNode(
+				keyꓺvalue(key, value).done(),
+				options,
+			)
 	}
 
 	// TODO rename to value() like lodash chain?
@@ -194,53 +193,65 @@ function _create($node: CheckedNode): Builder {
 	return builder
 }
 
-function create($type: NodeType): Builder {
+// TODO one day add option to
+function create($type: NodeType, content?: Immutable<NodeLike>): Builder {
 
-	const $node: CheckedNode = {
-		$v: SCHEMA_VERSION,
-		$type,
-		$classes: [],
-		$content: '',
-		$sub: {},
-		$hints: {} as Hints,
-	}
+	const $node: CheckedNode = ((): CheckedNode => {
+		if (isꓽNode(content)) {
+			// "lift" it to avoid an unneeded subnode
+			// also make mutable
+			return {
+				$v: SCHEMA_VERSION,
+				$type,
+				$classes: [ ...(content.$classes || []) ],
+				$content: content.$content || '',
+				$sub: content.$sub || {},
+				$hints: content.$hints
+					? structuredClone<CheckedNode['$hints']>(content.$hints as any)
+					: {},
+			}
+		}
+
+		return {
+			$v: SCHEMA_VERSION,
+			$type,
+			$classes: [],
+			$content: '',
+			$sub: {},
+			$hints: {} as Hints,
+		}
+	})()
+
+
 
 	return _create($node)
 }
 
-function createⵧfrom_content($raw: NodeLike): Builder {
-	return _create(
-		normalizeꓽnode(
-			promoteꓽto_node($raw)
-		)
-	)
+function fragmentⵧinline(content?: Immutable<NodeLike>): Builder {
+	return create(NodeType.fragmentⵧinline, content)
+}
+function fragmentⵧblock(content?: Immutable<NodeLike>): Builder {
+	return create(NodeType.fragmentⵧblock, content)
 }
 
-function fragmentⵧinline(): Builder {
-	return create(NodeType.fragmentⵧinline)
-}
-function fragmentⵧblock(): Builder {
-	return create(NodeType.fragmentⵧblock)
+function heading(content?: Immutable<NodeLike>): Builder {
+	return create(NodeType.heading, content)
 }
 
-function heading(): Builder {
-	return create(NodeType.heading)
+function strong(content?: Immutable<NodeLike>): Builder {
+	return create(NodeType.strong, content)
 }
 
-function strong(): Builder {
-	return create(NodeType.strong)
+function em(content?: Immutable<NodeLike>): Builder {
+	return create(NodeType.em, content)
 }
 
-function em(): Builder {
-	return create(NodeType.em)
+function weak(content?: Immutable<NodeLike>): Builder {
+	return create(NodeType.weak, content)
 }
 
-function weak(): Builder {
-	return create(NodeType.weak)
-}
-
-function emoji(): Builder {
-	return create(NodeType.emoji)
+function emoji(content?: Immutable<NodeLike>): Builder {
+	return create(NodeType.emoji, content)
 }
 
 function listⵧordered(): Builder {
@@ -250,15 +261,11 @@ function listⵧunordered(): Builder {
 	return create(NodeType.ul)
 }
 
-function key_value(key: Node | string, value: Node | string | number): Builder {
-	const key_node: Node = promoteꓽto_node(key)
-
-	const value_node: Node = promoteꓽto_node(value)
-
+function keyꓺvalue(key: SubNode, value: SubNode): Builder {
 	return fragmentⵧinline()
-		.pushNode(key_node, { id: 'key' })
+		.pushNode(key, { id: 'key' })
 		.pushText(': ')
-		.pushNode(value_node, { id: 'value' })
+		.pushNode(value, { id: 'value' })
 }
 
 /////////////////////////////////////////////////
@@ -270,7 +277,6 @@ export {
 	type Builder,
 
 	create,
-	createⵧfrom_content,
 
 	fragmentⵧinline,
 	fragmentⵧblock,
@@ -281,5 +287,5 @@ export {
 	emoji,
 	listⵧordered,
 	listⵧunordered,
-	key_value,
+	keyꓺvalue,
 }
