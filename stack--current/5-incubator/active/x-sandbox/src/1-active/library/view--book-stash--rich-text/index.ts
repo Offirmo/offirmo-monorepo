@@ -2,13 +2,14 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { type BookCover, type BookUId } from '../model--book/index.ts'
+import { type BookCover, type BookUId, type PageResult } from '../model--book/index.ts'
 import * as BookStashLib from '../model--book-stash/index.ts'
 import { renderꓽcover__spine } from '../view--book--rich-text/index.ts'
 import { getꓽbookshelf } from '../model--book-stash/index.ts'
 
 /////////////////////////////////////////////////
 
+// bookshelf = "aware" subset of the stash
 function renderꓽbookshelf__entry__spine(entry: Immutable<BookStashLib.BookshelfEntry>): RichText.Document {
 	const {
 		cover,
@@ -39,8 +40,7 @@ function renderꓽbookshelf__entry__spine(entry: Immutable<BookStashLib.Bookshel
 	return builder.done()
 }
 
-
-function renderꓽBookStash(
+function renderꓽbookshelf(
 	state: Immutable<BookStashLib.BookStash>,
 ): RichText.Node {
 	const list = RichText.listⵧordered()
@@ -57,8 +57,17 @@ function renderꓽBookStash(
 	return list.done()
 }
 
+function renderꓽpage_result(page_result: Immutable<PageResult>): RichText.Node {
+
+	throw new Error(`Not implemented!`)
+}
+
+
 /////////////////////////////////////////////////
 
 export {
-	renderꓽBookStash,
+	renderꓽbookshelf__entry__spine,
+	renderꓽbookshelf,
+
+	renderꓽpage_result,
 }

@@ -22,7 +22,7 @@ export type AccessLevel = Enum<typeof AccessLevel> // eslint-disable-line no-red
 // assuming we have access
 // tslint:disable-next-line: variable-name
 export const ComprehensionLevel = Enum(
-	//'unviewed',                 // not viewed at all = book never opened, page never turned (TOTO should it be explicit or undef?)
+	//'unviewed',                 // not viewed at all = book never opened, page never turned (TODO should it be explicit or undef?)
 	'abstaining',               // owner do not want to read it, ex. forbidden knowledge
 	'viewedⵧblocked',           // tried to read the book but comprehension is blocked, bc can't read or can't understand the language
 	'understoodⵧpartially',     // ex. skimmed quickly

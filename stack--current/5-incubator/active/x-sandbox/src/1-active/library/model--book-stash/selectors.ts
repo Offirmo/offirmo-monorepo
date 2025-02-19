@@ -10,7 +10,7 @@ import * as BookExperienceLib from '../model--book-experience/index.ts'
 import type { BookStash, BookExperienceUid } from './types.ts'
 
 import { registry } from '../service--book-resolver/index.ts'
-import type { ComprehensionLevel } from '../model--book-experience/index.ts'
+import { type ComprehensionLevel, getꓽaccess_levelⵧinherited } from '../model--book-experience/index.ts'
 
 type ErrorText = Text
 
@@ -102,17 +102,43 @@ function getꓽbookshelf(state: Immutable<BookStash>)
 /////////////////////////////////////////////////
 
 async function ↆgetꓽpage(state: Immutable<BookStash>, experience_uid: BookExperienceUid, path: BookNodeReference | undefined = state.experiences[experience_uid]!.bookmark): Promise<PageResult> {
-
 	const experience = state.experiences[experience_uid]
-	assert(experience, `Experience "${experience_uid}" should exist!`)
+	assert(experience, `BookStash.ↆgetꓽpage(): Experience "${experience_uid}" should exist!`)
 	const { book_uid } = experience
 
 	const reference: BookPageReference = path ?? BookExperienceLib.NODE_REFERENCEꘌROOT
+
+	const access_level = BookExperienceLib.getꓽaccess_levelⵧinherited(experience, reference) || state.defaultAccessLevel
+	assert(access_level === 'accessⵧyes', `BookStash.ↆgetꓽpage(): Cannot get page from experience "${experience_uid}" because no access!`) // should have been prevented by the caller
+
+	const comprehension_level = BookExperienceLib.getꓽcomprehension_levelⵧinherited(experience, reference)
+	switch (comprehension_level) {
+		case undefined:
+			// TODO one day when implementing advanced in-universe modes
+			break
+
+		case 'abstaining':
+			throw new Error(`BookStash.ↆgetꓽpage(): Cannot get page from experience "${experience_uid}" because abstaining!`) // should have been prevented by the caller
+
+		case 'viewedⵧblocked':
+			// TODO one day when implementing advanced in-universe modes
+			throw new Error(`"viewedⵧblocked" Not implemented!`)
+
+		case 'understoodⵧpartially':
+		case 'understoodⵧsuperficially':
+		case 'understood':
+		case 'understoodⵧthoroughly':
+		case 'understoodⵧcritically':
+			// ok
+			break
+
+		default:
+			throw new Error(`Not implemented!`)
+	}
+
 	const book = await registry.ↆgetꓽMoreCompleteBook(book_uid, reference)
 
-
-
-	throw new Error('NIMP!')
+	return getꓽpage(book, reference)
 }
 
 /////////////////////////////////////////////////

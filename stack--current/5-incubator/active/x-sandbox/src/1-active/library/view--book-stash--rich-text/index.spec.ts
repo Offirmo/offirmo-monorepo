@@ -5,18 +5,32 @@ import renderⵧto_terminal from '@offirmo-private/rich-text-format--to-terminal
 
 import { LIB } from '../consts.ts'
 
+import { ↆgetꓽpage } from '../model--book-stash/selectors.ts'
 import { EXAMPLE } from '../model--book-stash/__fixtures/index.ts'
 
-import { renderꓽBookStash } from './index.ts'
+import { renderꓽbookshelf, renderꓽpage_result } from './index.ts'
 
 /////////////////////////////////////////////////
 
 describe(`${LIB} -- 03 BookStash -- 03 RichText`, function() {
 
-	describe('renderꓽBookStash()', function () {
+	describe('renderꓽbookshelf()', function () {
 
 		it('should work', () => {
-			const $doc = renderꓽBookStash(EXAMPLE)
+			const $doc = renderꓽbookshelf(EXAMPLE)
+			console.log(`--- txt:`)
+			console.log(renderⵧto_text($doc))
+			console.log(`--- terminal:`)
+			console.log(renderⵧto_terminal($doc))
+		})
+	})
+
+	describe('renderꓽpage_result()', function () {
+
+		it('should work', async () => {
+			const page_result = await ↆgetꓽpage(EXAMPLE, Object.keys(EXAMPLE.experiences)[0]!)
+			console.log(`XXX page_result`, page_result)
+			const $doc = renderꓽpage_result(page_result)
 			console.log(`--- txt:`)
 			console.log(renderⵧto_text($doc))
 			console.log(`--- terminal:`)
