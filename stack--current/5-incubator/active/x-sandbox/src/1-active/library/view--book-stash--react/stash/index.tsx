@@ -6,7 +6,7 @@ import renderⵧto_react from '@offirmo-private/rich-text-format--to-react'
 //import React, { use, useId, useEffect, useState } from 'react'
 
 import { type BookStash } from '../../model--book-stash'
-import { renderꓽBookStash } from '../../view--book-stash--rich-text'
+import { renderꓽbookshelf } from '../../view--book-stash--rich-text'
 
 /////////////////////////////////////////////////
 
@@ -14,7 +14,7 @@ interface Props {
 	state: Immutable<BookStash>
 }
 function Component({ state }: Props) {
-	const $doc = renderꓽBookStash(state)
+	const $doc = renderꓽbookshelf(state)
 
 	return renderⵧto_react($doc)
 /*	return (

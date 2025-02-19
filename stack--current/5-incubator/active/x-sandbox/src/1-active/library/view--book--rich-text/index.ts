@@ -11,7 +11,7 @@ import type {
 function renderꓽcover__spine(cover: Immutable<BookCover>): RichText.Document {
 
 	// for now, downgrade. We can improve later
-	const title = RichText.renderⵧto_text(cover.title || '(missing title)')
+	const title = RichText.renderⵧto_text(cover.title || '(missing title)').trim()
 	const author = cover.author
 		? RichText.renderⵧto_text(cover.author)
 		: undefined
@@ -24,7 +24,7 @@ function renderꓽcover__spine(cover: Immutable<BookCover>): RichText.Document {
 			.pushText(' ')
 
 	builder.pushNode(
-		RichText.em(title.trim()).done(),
+		RichText.em(title).done(),
 		{
 			// TODO one day: color, font family, etc.
 			id: 'title',

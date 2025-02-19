@@ -60,7 +60,7 @@ const BLOCK_NODE_TYPES = new Set([
 	'li',
 ])
 // TODO assert completeness and no-intersection of inline and block
-function _getꓽdisplay_type(node: Immutable<NodeLike>): 'inline' | 'block' {
+function getꓽdisplay_type(node: Immutable<NodeLike>): 'inline' | 'block' {
 	if (!isꓽNode(node)) return 'inline'
 
 	if (!node.$type) {
@@ -77,10 +77,10 @@ function _getꓽdisplay_type(node: Immutable<NodeLike>): 'inline' | 'block' {
 }
 
 function isꓽinline(node: Immutable<NodeLike>): boolean {
-	return _getꓽdisplay_type(node) === 'inline'
+	return getꓽdisplay_type(node) === 'inline'
 }
 function isꓽblock(node: Immutable<NodeLike>): boolean {
-	return _getꓽdisplay_type(node) === 'block'
+	return getꓽdisplay_type(node) === 'block'
 }
 
 /////////////////////////////////////////////////
@@ -91,6 +91,7 @@ export {
 	assertꓽisꓽNode,
 	isꓽNode,
 
+	getꓽdisplay_type,
 	isꓽinline,
 	isꓽblock,
 }

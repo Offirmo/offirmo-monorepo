@@ -32,8 +32,8 @@ describe(`${LIB} -- renderers -- to text`, () => {
 			//console.log(str)
 
 			// the content should be included
-			expect(str).to.contain('🏆  ')
-			expect(str).to.contain('finish the game')
+			expect(str).to.contain('🏆')
+			expect(str).to.contain('Finish the game')
 		})
 
 		it('should work -- lists -- ol', () => {
@@ -115,8 +115,8 @@ describe(`${LIB} -- renderers -- to text`, () => {
 			//console.log(str)
 
 			// the content should be included
-			expect(str).to.contain('🏆  ')
-			expect(str).to.contain('finish the game')
+			expect(str).to.contain('🏆')
+			expect(str).to.contain('Finish the game')
 		})
 
 		it('should work -- KV', () => {
@@ -153,11 +153,11 @@ describe(`${LIB} -- renderers -- to text`, () => {
 			//console.log(str)
 
 			// the content should be included
-			expect(str).to.contain('🏆  ')
-			expect(str).to.contain('finish the game')
+			expect(str).to.contain('🏆')
+			expect(str).to.contain('Finish the game')
 
 			// and formatted
-			expect(str).to.contain('**finish the game**')
+			expect(str).to.contain('**Finish the game**')
 		})
 
 		it('should work -- lists -- ol', () => {

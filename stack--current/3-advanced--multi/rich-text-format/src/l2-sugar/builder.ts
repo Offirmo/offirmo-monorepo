@@ -8,9 +8,9 @@ import {
 	type Hints,
 	type CheckedNode,
 	type Node, type Document, type NodeLike, isꓽNode,
+	getꓽdisplay_type,
 } from '../l1-types/index.ts'
 import { promoteꓽto_node } from '../l1-utils/promote.ts'
-import { normalizeꓽnode } from '../l1-utils/normalize.ts'
 
 /////////////////////////////////////////////////
 
@@ -42,7 +42,7 @@ interface Builder {
 	pushKeyValue(key: SubNode, value: SubNode, options?: Immutable<CommonOptions>): Builder
 
 	// node ref is auto added into content
-	pushNode(node: SubNode, options?: Immutable<CommonOptions>): Builder
+	pushNode(node: SubNode, options?: Immutable<Pick<CommonOptions, 'id'>>): Builder
 
 	// Raw = NOTHING is added into content
 	// useful for
@@ -56,7 +56,7 @@ interface Builder {
 
 /////////////////////////////////////////////////
 
-function _create($node: CheckedNode): Builder {
+function _createꓽbuilder($node: CheckedNode): Builder {
 	const builder: Builder = {
 		addClass,
 		addHints,
@@ -83,7 +83,13 @@ function _create($node: CheckedNode): Builder {
 		done,
 	}
 
+	const display_type = getꓽdisplay_type($node)
+
 	let sub_id = 0
+	function _get_next_id() {
+		return String(++sub_id).padStart(4, '0')
+	}
+
 	//let locale = 'en-US' TODO one day
 
 	function addClass(...classes: ReadonlyArray<string>): Builder {
@@ -113,15 +119,15 @@ function _create($node: CheckedNode): Builder {
 
 		builder.addClass(...(options.classes || []))
 
-		return pushNode(builder.done(), options)
+		return pushNode(builder.done(), options.id ? { id: options.id } : undefined)
 	}
 
 
 	function pushRawNode(node: SubNode, options: Immutable<CommonOptions> = {}): Builder {
-		const id = options.id || String(++sub_id).padStart(4, '0')
+		const id = options.id || _get_next_id()
 		$node.$sub[id] = node
-		if (options.classes)
-			addClass(...options.classes)
+		if (Object.keys(options).filter(k => k !== 'id').length)
+			assert(false, `${LIB}: sugar: pushRawNode(): Cannot pass any option other than id!`) // make no sense at the level of this primitive. Other options should be filtered out by the caller.
 		return builder
 	}
 	function pushRawNodes(nodes: SubNodes): Builder {
@@ -130,7 +136,14 @@ function _create($node: CheckedNode): Builder {
 	}
 
 	function pushNode(node: SubNode, options: Immutable<CommonOptions> = {}): Builder {
-		const id = options.id || ('000' + ++sub_id).slice(-4)
+
+		// sanity checks
+		const display_typeⵧsub = getꓽdisplay_type(node)
+		if (display_type === 'inline' && display_typeⵧsub === 'block') {
+			assert(false, `${LIB}: sugar: Cannot push a block node into an inline node!`)
+		}
+
+		const id = options.id || _get_next_id()
 		$node.$content += `⎨⎨${id}⎬⎬`
 		return pushRawNode(node, { ...options, id })
 	}
@@ -194,37 +207,48 @@ function _create($node: CheckedNode): Builder {
 }
 
 // TODO one day add option to
-function create($type: NodeType, content?: Immutable<NodeLike>): Builder {
-
-	const $node: CheckedNode = ((): CheckedNode => {
+function create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
+	const $node_base = ((): Immutable<Node> => {
 		if (isꓽNode(content)) {
 			// "lift" it to avoid an unneeded subnode
 			// also make mutable
-			return {
-				$v: SCHEMA_VERSION,
-				$type,
-				$classes: [ ...(content.$classes || []) ],
-				$content: content.$content || '',
-				$sub: content.$sub || {},
-				$hints: content.$hints
-					? structuredClone<CheckedNode['$hints']>(content.$hints as any)
-					: {},
+
+			const display_typeⵧsource = getꓽdisplay_type(content)
+			const display_typeⵧtarget = getꓽdisplay_type({ $type })
+			if (display_typeⵧtarget === 'inline' && display_typeⵧsource === 'block') {
+				// wrong lifting
+				assert(false, `${LIB}: sugar: Cannot lift init block node into an inline node!`)
 			}
+
+			const typeⵧsource = content.$type || NodeType.fragmentⵧinline
+			if (typeⵧsource === $type) {
+				// TODO review, could be an assertion from an unknown type
+				assert(false, `${LIB}: sugar: No reason to lift init node into the same node type! Are you sure you want to do that?`)
+			}
+			if (typeⵧsource !== NodeType.fragmentⵧinline && typeⵧsource !== NodeType.fragmentⵧblock) {
+				// we're losing semantic infos. This should be pushed as a sub-node instead
+				// TODO review should this happen automatically?
+				assert(false, `${LIB}: sugar: Cannot lift non-trivial init node into another node type!`)
+			}
+
+			return content
 		}
 
-		return {
-			$v: SCHEMA_VERSION,
-			$type,
-			$classes: [],
-			$content: '',
-			$sub: {},
-			$hints: {} as Hints,
-		}
+		return promoteꓽto_node(content)
 	})()
 
+	const $node: CheckedNode =  {
+		$v: SCHEMA_VERSION,
+		$type,
+		$classes: [...($node_base.$classes || [])],
+		$content: $node_base.$content || '',
+		$sub: $node_base.$sub || {},
+		$hints: $node_base.$hints
+			? structuredClone<CheckedNode['$hints']>($node_base.$hints as any)
+			: {},
+	}
 
-
-	return _create($node)
+	return _createꓽbuilder($node)
 }
 
 function fragmentⵧinline(content?: Immutable<NodeLike>): Builder {
