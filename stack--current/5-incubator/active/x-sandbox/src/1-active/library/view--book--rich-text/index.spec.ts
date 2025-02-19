@@ -19,8 +19,10 @@ describe(`${LIB} -- 01 Book -- 04 RichText`, function() {
 		it('should work', () => {
 			COVERS.forEach(cover => {
 				const $doc = renderꓽcover__spine(cover)
-				const str = to_terminal($doc)
-				console.log(str)
+				console.log(to_terminal($doc))
+
+				const str = RichText.renderⵧto_text($doc)
+				expect(str).to.contain(cover.title)
 			})
 		})
 	})

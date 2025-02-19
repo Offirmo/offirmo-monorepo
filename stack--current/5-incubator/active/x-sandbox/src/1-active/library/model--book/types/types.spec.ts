@@ -18,7 +18,7 @@ describe(`${LIB} -- 01 Book -- 01 types`, function() {
 		it('should work', () => {
 			COVERS.forEach(cover => {
 				const str = renderꓽstateⵧprettified_text(cover)
-				console.log(str)
+				//console.log(str)
 			})
 		})
 	})
@@ -29,7 +29,7 @@ describe(`${LIB} -- 01 Book -- 01 types`, function() {
 			COVERS.forEach(cover => {
 				const $doc = renderꓽstateⵧrich_text(cover)
 				const str = to_terminal($doc)
-				console.log(str)
+				//console.log(str)
 			})
 		})
 	})

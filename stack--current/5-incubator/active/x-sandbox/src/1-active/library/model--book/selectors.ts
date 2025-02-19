@@ -190,6 +190,7 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 					return [ ...referenceⵧnext‿split, parts_keys[0]! ]
 				}
 
+				let depth = parent_parts_chain.length
 				while (depth > 0) {
 					// go up
 					depth--

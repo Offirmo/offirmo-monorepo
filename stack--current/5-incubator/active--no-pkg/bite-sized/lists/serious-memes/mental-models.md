@@ -63,6 +63,7 @@ alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_co
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
 applied = vs. theoric. practical. Not always need to be an expert / scientist / priest. Applying (citizen, engineer, lay) is complementary and can be, at times, more useful/concrete than expertise ("perché")
+asking smart questions http://www.catb.org/esr/faqs/smart-questions.html
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
 at the table or on the table?
 attention
@@ -162,6 +163,7 @@ cost of a thing = the amount of life which is required to be exchanged for it, i
 courses après le repas
 creativity -- begins at the edge: Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
 critical thinking +++  https://strategyu.co/critical-thinking/
+crucial conversations
 cultural hegemony https://en.wikipedia.org/wiki/Cultural_hegemony https://en.wikipedia.org/wiki/Power_(social_and_political)#Cultural_hegemony
 culture -- differences -- https://www.youtube.com/watch?v=vi8pyS076a8
 culture -- Hofstede’s Dimensions http://www.na-businesspress.com/ajm/bergieleb_web12_1_.pdf
@@ -236,6 +238,7 @@ Faustian Bargain = A man once sold his soul to a demon in exchange for knowledge
 Fear Of Looking Dumb (FOLD)
 fear of missing out (FOMO)
 fear, uncertainty, death (FUD)
+feedback -- feedworward "in the future..." "next time..."
 femme/homme enfant https://www.wengood.com/fr/developpement-personnel/se-connaitre/art-femme-enfant
 Fermi paradox -- Drake equation https://en.wikipedia.org/wiki/Drake_equation
 Fermi paradox https://en.wikipedia.org/wiki/Fermi_paradox
@@ -416,6 +419,7 @@ love = wanting the best
 love and acceptance -- conditional/unconditional
 low culture https://en.wikipedia.org/wiki/Low_culture
 mainstream scientific consensus
+make it work, make it good, make it fast, make it work again
 making one's luck
 marxist philosophy
 Maslow's pyramid
@@ -567,6 +571,7 @@ race -- Nigeria
 race -- slavery
 race -- white supremacy https://en.wikipedia.org/wiki/Grandfather_clause
 race to the bottom
+radical candor
 rare events = ex. COVID-19 https://en.wikipedia.org/wiki/Rare_events
 rationalize
 re-thinking established patterns
@@ -632,6 +637,7 @@ sinecure = position with a ~salary that requires or involves little or no respon
 Situation Complication Question Answer (SCQA) = A Framework For Defining Problems & Hypotheses https://strategyu.co/scqa-a-framework-for-defining-problems-hypotheses/
 skin in the game
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
+sleep on it
 SMART goal-setting framework
 social debt = friends, family, and strangers who feel entitled to ask, beg, and steal https://collabfund.com/blog/rich-and-anonymous/
 social pressure / free will
@@ -740,5 +746,6 @@ who moved my cheese?
 wisdom
 wisdom -- a wisdom for left may not be valid for right
 xenia https://greekmythcomix.com/comic/how-to-do-xenia/
+XY problem = "what are you trying to achieve?" https://xyproblem.info/
 you are the company you keep
 you can bring a horse to water...

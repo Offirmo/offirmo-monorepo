@@ -60,6 +60,12 @@ space hunters
 ## Captain Harlock
 
 
+## Pacific Rim
+
+## Transformers
+
+## Gundam
+
 ## Yoko Tsuno
 Vinéens, ark ships, lost planets...
 
