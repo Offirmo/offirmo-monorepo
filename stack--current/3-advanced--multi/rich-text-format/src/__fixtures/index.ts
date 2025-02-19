@@ -59,6 +59,42 @@ const _SUB_UL_KEY_VALUE_PAIRS: RichText.Document['$sub'] = {
 
 /////// COMPLETE DOCS ///////
 
+const $DEMOⵧSIMPLE = (() => {
+	const builder = RichText.fragmentⵧinline()
+		.addClass('achievement')
+
+	builder
+		.pushEmoji('🏆')
+		.pushText('  ')
+
+	builder.pushStrong('Finish the game')
+	// builder.pushWeak(legend)
+
+	builder.addHints({ uuid: '1234' })
+
+	return builder.done()
+})()
+
+const $DEMOⵧKV = (() => {
+	const builder = RichText.fragmentⵧblock()
+		.addClass('character_sheet')
+
+	builder.pushStrong('Your character:')
+
+	builder.pushNode(
+		RichText.listⵧordered()
+			// various width to test the alignment
+			.pushKeyValue('Max health', 123)
+			.pushKeyValue('Intelligence', 45)
+			.pushKeyValue('Strength', 6)
+			.done(),
+		{ id: 'stats'}
+	)
+
+	return builder.done()
+})()
+
+
 const _DOC_WEAPON_01_NAME: RichText.Document = {
 	$classes: ['item--name', 'item--weapon--name'],
 	$content: '⎨⎨qualifier2|Capitalize⎬⎬ ⎨⎨qualifier1|Capitalize⎬⎬ ⎨⎨base|Capitalize⎬⎬',
@@ -623,6 +659,9 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 
 export {
 	EXAMPLE_COMPLETE_NODE,
+
+	$DEMOⵧSIMPLE,
+	$DEMOⵧKV,
 
 	DOC_DEMO_BASE_TYPES,
 	DOC_DEMO_LIST_ORDERED,

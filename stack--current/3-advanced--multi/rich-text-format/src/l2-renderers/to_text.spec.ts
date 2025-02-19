@@ -2,6 +2,8 @@ import { expect } from 'chai'
 
 import { LIB } from '../consts.ts'
 import {
+	$DEMOⵧSIMPLE,
+	$DEMOⵧKV,
 	DOC_DEMO_LIST_ORDERED,
 	DOC_DEMO_LIST_UNORDERED,
 	DOC_DEMO_LIST_NESTED,
@@ -16,42 +18,6 @@ describe(`${LIB} -- renderers -- to text`, () => {
 	beforeEach(() => {
 		rendering_options = {}
 	})
-
-	const $DEMOⵧSIMPLE = (() => {
-		const builder = RichText.fragmentⵧinline()
-			.addClass('achievement')
-
-		builder
-			.pushText('🏆')
-			.pushText('  ')
-
-		builder.pushStrong('finish the game')
-		// builder.pushWeak(legend)
-
-		builder.addHints({ uuid: '1234' })
-
-
-		return builder.done()
-	})()
-
-	const $DEMOⵧKV = (() => {
-		const builder = RichText.fragmentⵧblock()
-			.addClass('character_sheet')
-
-		builder.pushStrong('Your character:')
-
-		builder.pushNode(
-			RichText.listⵧordered()
-				// various width to test the alignment
-				.pushKeyValue('Max health', 123)
-				.pushKeyValue('Intelligence', 45)
-				.pushKeyValue('Strength', 6)
-				.done(),
-			{ id: 'stats'}
-		)
-
-		return builder.done()
-	})()
 
 	describe(`mode = basic`, function () {
 		beforeEach(() => {

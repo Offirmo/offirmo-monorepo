@@ -7,6 +7,8 @@ adaptability = turn the challenges into opportunities
 aha moment
 Annual Recurring Revenue (ARR)
 average revenue per user (ARPU)
+barriers -- to entry = moat against competitors
+barriers -- to exit = users can't leave
 boring -- culture 
 boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
 boring -- technology https://mcfunley.com/choose-boring-technology
@@ -24,6 +26,7 @@ CSAT
 CSAT -- hard to move
 CSAT -- visual appeal
 customer segmentation = Strategic, Enterprise, Mid-Market, SMB
+don't build castles in others people's kingdoms
 earliest -- 01 feedback-able product (EFP)
 earliest -- 02 testable product = first release that customers can actually do something with
 earliest -- 03 usable product = first release that early adopters will actually use, willingly
@@ -64,14 +67,19 @@ first-mover advantage -- second mover advantage / "fast followers" / "free rider
 first-mover advantage https://en.wikipedia.org/wiki/First-mover_advantage
 flexible planning = scope changes and unexpected risks: adaptability is crucial 
 funnel
-Go-To-Market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
+go-to-market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
 growth +++ https://growth.design/
+growth -- bootstrapping
 growth -- bundles
 growth -- cognitive load
 growth -- concepts https://growth.design/psychology
 growth -- friction
+growth -- get to scale
+growth -- get to scale -- how to?
+growth -- if we build it, they will come (not)
 growth -- labor perception / perceived labor https://growth.design/case-studies/labor-perception-bias
 growth -- onboarding -- fatigue
+growth -- viral = helpful but not necessary
 illegal practices -- monopoly
 illegal practices -- payola https://en.wikipedia.org/wiki/Payola
 illegal practices -- predatory pricing
@@ -116,9 +124,16 @@ metrics -- serviceable addressable market (SAM) = TAM we can reasonably reach
 metrics -- total addressable market (TAM)
 moat https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
 Most Advanced Yet Acceptable (MAYA) UX concept
-network effect
+network -- defensible? path to critical mass?
+network -- degrees, clustering, clusters types
+network -- heterogeneous -- chicken and egg problem = which side comes first?
+network -- heterogeneous -- money side and subsidy side
+network -- heterogeneous = different nodes, ex. restaurants and customers network around delivery
+network -- homogeneous = same nodes, ex. users of a messaging app
+network -- marketplaces, platforms...
+network effect = a product or service becomes more valuable to its users as more people use it https://www.slideshare.net/slideshow/network-effects-59206938/59206938
+network effect = key dynamic behind many successful software companies
 never-ending feature party https://corgibytes.com/blog/2018/01/02/neverending-feature-party/
-Next Larger Context = always design a thing by considering it in its next larger context — a chair in a room, a room in a house, a house in a city... https://skamille.medium.com/the-next-larger-context-3970afaa8fb2 (see also shearing layers)
 next-of-kin feature
 no one was ever fired for using...
 path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
@@ -155,6 +170,10 @@ product market fit (PMF) https://www.sequoiacap.com/article/pmf-framework/
 product market fit -- Arc archetype -- Future Vision = enable a new reality through visionary innovation
 product market fit -- Arc archetype -- Hair on Fire = solve a problem that’s a clear, urgent need for customers
 product market fit -- Arc archetype -- Hard Fact = pain point universally accepted as a hard fact of life, and see that it’s merely a hard problem that your product solves
+product mode -- come for the tool, stay for the network "best X I've ever used"
+product mode -- multiplayer = no utility for a single user or until a critical mass of users is reached
+product mode -- single = has immediate value for a single user
+product mode = single or multiplayer? (sometimes both)
 quality vs speed = sacrificing code quality for speed leads to compounding issues later. balance speed with long-term sustainabidity
 real-world context https://contextsdk.com/insights#product
 realistic scheduling = overly optimistic deadlines lead to burnout and missed milestones. Always add a (secret?) buffer.
@@ -178,16 +197,17 @@ second product -- syndrome https://www.hubspot.com/startups/resources/second-pro
 second product -- When and How https://caseyaccidental.com/second-products/
 shared vision = maintaining a shared vision across the board to help stay on course
 side projects -- outside of job https://www.reddit.com/r/SideProject/comments/1br62xb/building_side_projects_outside_fulltime_job/
+simplicity "no ads, no gimmicks, no games"
 stalking horse https://en.wikipedia.org/wiki/Stalking_horse
 startups should avoid being held hostage by the preferences of their early user base if it deviates from the broader market, ex. social feed or reels
+strategy -- "bowling pin" = starts with a niche segment easily attainable then move to next niche or broader market
 strategy -- 01 "where we play"
 strategy -- 02 "how we win"
 strategy -- evergreen vs cyclic
 strategy https://stratechery.com/
 support loops = ex. help desk + social media + phone etc.
-switching barriers
-switching cost
-System of Work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams
+switching: barriers, cost
+system of work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams
 target
 tool tech stack -- review https://www.lennysnewsletter.com/p/whats-in-your-stack-the-state-of
 top complaints -- actual case J. -- 01 Performance and Speed
@@ -206,5 +226,6 @@ User Experience Research (UXR) https://medium.com/getting-started-in-user-experi
 vendor lock-in
 wartime vs peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 what got us here won't get us there…
+winner takes it all
 worse is better = there is a point where less functionality ("worse") is a preferable option ("better") in terms of practicality and usability. Software that is limited, but simple to use, may be more appealing to the user and market than the reverse https://en.wikipedia.org/wiki/Worse_is_better
 You can develop the best strategy in the world, but if it isn’t producing the desired results, it’s time to reassess. "It’s not that we aren’t doing as well as we could, but it’s not the best strategy we could be doing to win." https://worldofwarcraft.blizzard.com/en-us/news/21952451/midgame-moves-adapt-survive-and-thrive

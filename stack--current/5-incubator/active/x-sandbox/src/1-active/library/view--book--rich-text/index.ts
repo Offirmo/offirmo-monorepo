@@ -24,7 +24,7 @@ function renderꓽcover__spine(cover: Immutable<BookCover>): RichText.Document {
 			.pushText(' ')
 
 	builder.pushNode(
-		RichText.em().pushText(title.trim()).done(),
+		RichText.em(title.trim()).done(),
 		{
 			// TODO one day: color, font family, etc.
 			id: 'title',
@@ -33,14 +33,14 @@ function renderꓽcover__spine(cover: Immutable<BookCover>): RichText.Document {
 
 	if (author) {
 		builder.pushNode(
-			RichText.weak().pushText(', by ').done(),
+			RichText.weak(', by ').done(),
 			{
 				id: 'by'
 			},
 		)
 
 		builder.pushNode(
-			RichText.fragmentⵧinline().pushText(author.trim()).done(),
+			RichText.fragmentⵧinline(author.trim()).done(),
 			{
 				id: 'author'
 			},

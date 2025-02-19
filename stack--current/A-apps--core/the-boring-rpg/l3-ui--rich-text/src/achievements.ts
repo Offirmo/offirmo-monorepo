@@ -39,7 +39,7 @@ function render_achievement_snapshot_short(achievement_snapshot: Immutable<Achie
 
 	if (icon_text) {
 		builder
-			.pushText(icon_text)
+			.pushEmoji(icon_text)
 			.pushText('  ')
 	}
 
@@ -105,7 +105,7 @@ function render_achievement_snapshot_detailed(achievement_snapshot: Immutable<Ac
 
 	if (icon_text) {
 		builder
-			.pushText(icon_text)
+			.pushEmoji(icon_text)
 			.pushText(' ')
 	}
 

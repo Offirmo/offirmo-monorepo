@@ -2,7 +2,8 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import type { WithLastUserInvestmentTimestamp } from '@offirmo-private/state-utils'
 
-import type { BookCover, BookNodeReference, BookPage, BookPageReference, Text } from '../model--book/index.ts'
+import type { BookCover, BookNodeReference, PageResult, BookPageReference, Text } from '../model--book/index.ts'
+import { getꓽpage } from '../model--book/index.ts'
 
 import * as BookExperienceLib from '../model--book-experience/index.ts'
 
@@ -100,33 +101,13 @@ function getꓽbookshelf(state: Immutable<BookStash>)
 
 /////////////////////////////////////////////////
 
-interface PageResult {
-	// it's convenient to return prev & next, esp. for 2 pages display
-	contentⵧprevious: Immutable<BookPage> | null // if null, means there is no previous, we are the first
-	content: Immutable<BookPage>
-	contentⵧnext: Immutable<BookPage> | null // if null, means there is no next, we are the last
-
-	// references, for navigation
-	// relative to current level
-	referenceⵧfirst: BookPageReference // can = current if current is first
-	referenceⵧprevious: BookPageReference // can = current if current is first
-	referenceⵧcurrent: BookPageReference
-	referenceⵧnext: BookPageReference // can = current if current is last
-	referenceⵧlast: BookPageReference // can = current if current is last
-	referenceⵧup: BookPageReference
-
-	// hint for visual display
-	direction?: 'rtl' | 'ltr' | 'ttb' | 'btt'
-	medium?: 'sheet' | 'scroll' | 'screen'
-	physical_sheet_side?: 'recto' | 'verso'
-}
-async function ↆgetꓽpage(state: Immutable<BookStash>, experience_uid: BookExperienceUid, path: BookNodeReference | undefined = state.experiences[experience_uid]!.bookmark): Promise<PageResult | ErrorText> {
-	const reference: BookPageReference = path ?? BookExperienceLib.NODE_REFERENCEꘌROOT
+async function ↆgetꓽpage(state: Immutable<BookStash>, experience_uid: BookExperienceUid, path: BookNodeReference | undefined = state.experiences[experience_uid]!.bookmark): Promise<PageResult> {
 
 	const experience = state.experiences[experience_uid]
 	assert(experience, `Experience "${experience_uid}" should exist!`)
 	const { book_uid } = experience
 
+	const reference: BookPageReference = path ?? BookExperienceLib.NODE_REFERENCEꘌROOT
 	const book = await registry.ↆgetꓽMoreCompleteBook(book_uid, reference)
 
 

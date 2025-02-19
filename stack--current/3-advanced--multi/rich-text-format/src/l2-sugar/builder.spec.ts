@@ -5,26 +5,21 @@ import { LIB } from '../consts.ts'
 import * as RichText from './builder.ts'
 import { renderⵧto_text } from '../l2-renderers/to_text.ts'
 
+import * as DEMOS from '@offirmo-private/rich-text-format/demos'
+import { isꓽNode } from '../l1-types'
+
 /////////////////////////////////////////////////
 
 describe(`${LIB} -- sugar -- builder`, () => {
 
 	it('should work', () => {
-		const builder = RichText.fragmentⵧinline()
-			.addClass('achievement')
+		const $doc = RichText.fragmentⵧinline()
+			.pushText('Hello!')
+			.addHints({ uuid: '1234' })
+			.done()
 
-		builder
-			.pushText('🏆')
-			.pushText('  ')
-
-		builder.pushStrong('finish the game')
-		// builder.pushWeak(legend)
-
-		builder.addHints({ uuid: '1234' })
-
-
-		const $doc = builder.done()
-		expect($doc).not.to.be.null // TODO more
+		expect(isꓽNode($doc)).to.be.true
+		expect(renderⵧto_text($doc)).to.equal('Hello!')
 	})
 
 	it('should allow loose nodes', () => {

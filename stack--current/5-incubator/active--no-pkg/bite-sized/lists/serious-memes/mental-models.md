@@ -65,6 +65,7 @@ Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
 applied = vs. theoric. practical. Not always need to be an expert / scientist / priest. Applying (citizen, engineer, lay) is complementary and can be, at times, more useful/concrete than expertise ("perché")
 asking smart questions http://www.catb.org/esr/faqs/smart-questions.html
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
+assumptions -- faulty
 at the table or on the table?
 attention
 attention -- economy
@@ -275,6 +276,7 @@ grapevine
 great filter https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
 grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
+growth -- should never be a goal in itself, engagement is
 growth mindset  https://www.khanacademy.org/college-careers-more/learnstorm-growth-mindset-activities-us/high-school-activities/activity-1-the-truth-about-your-brain-hs-02/a/the-truth-about-your-brain-part-1-3  https://www.youtube.com/watch?v=-71zdXCMU6A
 Haiti https://aleteia.org/2025/02/01/kids-without-school-because-of-gangs-are-recruited-by-gangs
 hangry = before lunch (vs. after)
@@ -308,6 +310,7 @@ Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s
 Holodomor https://en.wikipedia.org/wiki/Holodomor
 hormesis = A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
 Horseshoe Theory = Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
+how to ask questions http://www.catb.org/esr/faqs/smart-questions.html
 https://36questionsinlove.com/
 https://cobeats.com/folder/ryfTgPr9H
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
@@ -469,8 +472,10 @@ naiveté: abus sexuels, mafia
 narcissism
 narcissism -- overlaps with neuroticism
 needs / wants https://en.wikipedia.org/wiki/Need
+network effect
 Never interrupt someone doing what you said couldn't be done.
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
+next larger context = always design a thing by considering it in its next larger context — a chair in a room, a room in a house, a house in a city... https://skamille.medium.com/the-next-larger-context-3970afaa8fb2 (see also shearing layers)
 no conflict / safe conflict / extreme conflict
 Nobel prize learnings -- discovery vs recognition, with lag between
 Nobel prize learnings -- limit of 3 = large teams don't get the Nobel vs small teams / lone
@@ -492,7 +497,7 @@ other people’s problems / pick your battles
 out of your league
 outside context problem (OCP) = a problem that is "outside the context" as it is generally not considered until it occurs, and the capacity to actually conceive of or consider the OCP in the first place may not be possible or very limited (i.e., the majority of the group's population may not have the knowledge or ability to realize that the OCP can arise, or assume it is extremely unlikely). An example of OCP is an event in which a civilization does not consider the possibility that a much more technologically advanced society can exist, and then encounters one https://en.wikipedia.org/wiki/Excession#Outside_Context_Problem 
 overachiever
-Overton Window: You can control thought without limiting speech. You can do it by defining the limits of acceptable thought while allowing for lively debate within these barriers. For example, Fox News and MSNBC set limits on what political thoughts they consider acceptable, but in the grand scheme of things, they’re both fairly conventional. The political spectrum stretches far beyond the ideas they entertain, but ideas outside their limits are shunned.
+Overton window: You can control thought without limiting speech. You can do it by defining the limits of acceptable thought while allowing for lively debate within these barriers. For example, Fox News and MSNBC set limits on what political thoughts they consider acceptable, but in the grand scheme of things, they’re both fairly conventional. The political spectrum stretches far beyond the ideas they entertain, but ideas outside their limits are shunned.
 paradigm shift https://en.wikipedia.org/wiki/Paradigm_shift
 paradox of Abundance: The average quality of information is getting worse and worse. But the best stuff is getting better and better. Markets of abundance are simultaneously bad for the median consumer but good for conscious consumers.
 paradox of Consensus: Under ancient Jewish law, if a suspect was found guilty by every judge, they were deemed innocent. Too much agreement implied a systemic error in the judicial process. Unanimous agreement sometimes leads to bad decisions.
@@ -743,6 +748,7 @@ what vs how = OPPOSITE of school +++ https://strategyu.co/consulting-mindset-shi
 What would you do if you weren't afraid? - Spencer Johnson
 when in Rome…
 who moved my cheese?
+winner takes it all
 wisdom
 wisdom -- a wisdom for left may not be valid for right
 xenia https://greekmythcomix.com/comic/how-to-do-xenia/

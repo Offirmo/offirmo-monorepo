@@ -136,8 +136,7 @@ async function renderꓽBook(book: Immutable<Book>, options: { resolver?: (id:st
 
 	const $nodeⵧtitle = _raw_text_to_$node(book.title)
 	console.log(renderⵧto_terminal(
-		RichText.heading()
-			.pushText(`‖ ⎨⎨gᐧtitle⎬⎬ ‖`)
+		RichText.heading(`‖ ⎨⎨gᐧtitle⎬⎬ ‖`)
 			.done(),
 		{
 			resolve_unknown_subnode,
