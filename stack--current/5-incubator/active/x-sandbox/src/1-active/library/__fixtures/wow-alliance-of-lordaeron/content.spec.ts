@@ -56,7 +56,12 @@ function expectㆍbookㆍtoㆍbeㆍcorrect(book: Immutable<Book>): void {
 		expect(page_result.referenceⵧnextⵧin_tree).to.equal(ordered_refs[index + 1] || NODE_REFERENCEꘌROOT)
 
 		// 2a.
-		expect(page_result.breadcrumbs).to.have.lengthOf(page_result.referenceⵧcurrent.split(NODE_REFERENCEⵧSEPARATOR).length)
+		if (page_result.relative_index‿human === 0) {
+			expect(page_result.breadcrumbs).to.have.lengthOf(page_result.referenceⵧcurrent.split(NODE_REFERENCEⵧSEPARATOR).length - 1)
+		}
+		else {
+			expect(page_result.breadcrumbs).to.have.lengthOf(page_result.referenceⵧcurrent.split(NODE_REFERENCEⵧSEPARATOR).length)
+		}
 	})
 }
 

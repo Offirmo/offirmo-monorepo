@@ -32,7 +32,7 @@ describe(`${LIB} -- Model: Book -- selectors`, function() {
 				if (BOOK.author) expect(content).to.contain(`### ${BOOK.author}`)
 
 				// 2a.
-				expect(result0).to.have.nested.property('breadcrumbs[0]', BOOK.title)
+				expect(result0.breadcrumbs).to.have.lengthOf(0)
 				expect(result0).to.have.property('part_type', 'book')
 				expect(result0).to.have.property('relative_index‿human', 0)
 				expect(result0).to.have.property('group_count', 16)
@@ -52,7 +52,7 @@ describe(`${LIB} -- Model: Book -- selectors`, function() {
 				expect(result1).to.have.nested.property('content.content', BOOK.parts['1'])
 
 				// 2a.
-				expect(result1).to.have.nested.property('breadcrumbs[0]', BOOK.title)
+				expect(result1.breadcrumbs).to.deep.equal([ BOOK.title ])
 				expect(result1).to.have.property('part_type', 'page')
 				expect(result1).to.have.property('relative_index‿human', 1)
 				expect(result1).to.have.property('group_count', 16)
@@ -73,7 +73,7 @@ describe(`${LIB} -- Model: Book -- selectors`, function() {
 				expect(result2).to.have.nested.property('content.content', BOOK.parts['2'])
 
 				// 2a.
-				expect(result2).to.have.nested.property('breadcrumbs[0]', BOOK.title)
+				expect(result2.breadcrumbs).to.deep.equal([ BOOK.title ])
 				expect(result2).to.have.property('part_type', 'page')
 				expect(result2).to.have.property('relative_index‿human', 2)
 				expect(result2).to.have.property('group_count', 16)
@@ -92,7 +92,7 @@ describe(`${LIB} -- Model: Book -- selectors`, function() {
 				expect(result16).to.have.nested.property('content.content', BOOK.parts['16'])
 
 				// 2a.
-				expect(result16).to.have.nested.property('breadcrumbs[0]', BOOK.title)
+				expect(result16.breadcrumbs).to.deep.equal([ BOOK.title ])
 				expect(result16).to.have.property('part_type', 'page')
 				expect(result16).to.have.property('relative_index‿human', 16)
 				expect(result16).to.have.property('group_count', 16)

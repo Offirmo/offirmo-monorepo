@@ -175,10 +175,12 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 		if (!parts_keyⵧcurrentⵧraw) {
 			// normal, no path = happens when we start reading the book/part
 
+
 			// 1.
 			result.content = _get_page_from_part_cover(book_part, parent)
 
 			// 2a.
+			result.breadcrumbs.pop() // remove the part title since it will be in the content
 			result.part_type = parent?.parts_type || 'book'
 			result.relative_index‿human = 0 // means "cover"
 			result.group_count = parts_keys.length
@@ -226,7 +228,7 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 		// are we actually pointing to a book part cover?
 		if (parts_keyⵧcurrent === parts_keyⵧfirst && parent_parts_chain.length > 0 && parts_keyⵧcurrentⵧraw !== parts_keyⵧfirst) {
 			// yes, the user didn't explicitly ask for "first" (we defaulted to it)
-			// it should be better to display the bokpart cover
+			// it should be better to display the bookpart cover
 			throw new Error('NIMP')
 		}
 
