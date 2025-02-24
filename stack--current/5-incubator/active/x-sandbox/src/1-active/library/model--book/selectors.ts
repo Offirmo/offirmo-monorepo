@@ -181,6 +181,7 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 
 			// 2a.
 			result.breadcrumbs.pop() // remove the part title since it will be in the content
+			result.breadcrumbs.push('cover')
 			result.part_type = parent?.parts_type || 'book'
 			result.relative_index‿human = 0 // means "cover"
 			result.group_count = parts_keys.length
@@ -255,6 +256,7 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 			result.content = promote_toꓽBookPage(content)
 
 			// 2a.
+			result.breadcrumbs.push()
 			result.part_type = book_part.parts_type || 'page'
 			result.relative_index‿human = indexⵧcurrent + 1
 			result.group_count = parts_keys.length

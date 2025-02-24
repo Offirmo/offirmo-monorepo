@@ -58,6 +58,8 @@ Discrete Variational Auto Encoder (VAE) for image generation? https://medium.com
 DL Deep Learning (NN)
 embeddings = raw underlying representation of a concept preserving aspects of its content and/or its meaning (Of course it's model-dependent?) https://platform.openai.com/docs/guides/embeddings/use-cases
 fine-tuning
+frontier AI -- OpenAI = highly capable foundation models that could possess dangerous capabilities sufficient to pose severe risks to public safety https://openai.com/index/frontier-ai-regulation/
+frontier AI = bleeding edge models
 function calling (bad name) = connect large language models to external tools https://cloud.google.com/vertex-ai/docs/generative-ai/multimodal/function-calling https://platform.openai.com/docs/guides/function-calling
 generative AI
 generative AI gold rush

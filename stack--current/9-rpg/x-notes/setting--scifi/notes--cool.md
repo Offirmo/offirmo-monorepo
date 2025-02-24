@@ -268,3 +268,7 @@ https://en.wikipedia.org/wiki/Dimensionless_physical_constant
 https://en.wikipedia.org/wiki/List_of_orbits
 
 https://en.wikipedia.org/wiki/Gravitational_singularity
+
++++ https://en.wikipedia.org/wiki/Outline_of_space_science
+
+https://en.wikipedia.org/wiki/Kardashev_scale

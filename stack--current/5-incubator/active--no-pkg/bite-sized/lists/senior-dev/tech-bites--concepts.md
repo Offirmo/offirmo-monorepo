@@ -185,6 +185,8 @@ content age rating -- PG (Parental Guidance)= aka Not Safe For School (NSFS), Ap
 context switch
 convention over configuration
 Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
+copyright -- clean-room design = copying a design by reverse engineering and then recreating it without infringing any of the copyrights associated with the original design https://en.m.wikipedia.org/wiki/Clean-room_design
+copyright -- code, binary, BIOS, APIs...
 copyright -- license -- REUSE https://reuse.software/tutorial/
 copyright -- statement https://matija.suklje.name/how-and-why-to-properly-write-copyright-statements-in-your-code 
 corporate politic https://www.breakingpoint.tech/p/where-do-corporate-politics-come
@@ -196,6 +198,7 @@ CQRS (command query responsibility segregation)
 CRDT / automerge / local first https://automerge.org/
 cron https://onlineornot.com/the-complete-guide-to-cron-jobs
 cross cutting concerns = aspects of a program that affect several modules without the possibility of being encapsulated in any of them https://en.wikipedia.org/wiki/Cross-cutting_concern
+cross-platform https://en.m.wikipedia.org/wiki/Cross-platform_software
 CRUD "create, read, update and delete"
 crunch
 culture -- low/high context https://journals.sagepub.com/doi/10.1177/0146167212455828
@@ -237,6 +240,9 @@ defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actu
 demos
 dependencies
 dependency -- hell https://en.wikipedia.org/wiki/Dependency_hell
+dependency injection -- containers = frameworks that manage the dependencies of objects https://blog.ploeh.dk/2014/06/10/pure-di/
+dependency injection -- pure = no framework https://blog.ploeh.dk/2014/06/10/pure-di/
+dependency injection -- vs. func = if magic, makes everything functionally impure https://blog.ploeh.dk/2017/01/30/partial-application-is-dependency-injection/
 dependency injection = passing parameters. no need for complex lib
 deployment maturity levels https://itnext.io/deployment-maturity-levels-feab55c20d04
 design patterns
@@ -262,6 +268,7 @@ emscripten
 encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube.com/watch?v=RXJKdh1KZ0w
 encoding -- binary-to-text -- risk of accidental words
 encoding -- binary-to-text https://en.wikipedia.org/wiki/Binary-to-text_encoding
+engineer's notions of simplicity, economies of scale, and design integrity https://en.wikipedia.org/wiki/Planned_obsolescence#History
 entitlements -- non-standard offerings or commercial terms to meet their needs through high touch sales motions. High touch Sales teams work closely with our customers to understand their solution needs and buying preferences like Multi-year billed annual, ELAs, Ramp discounts. There is a significant volume of customers and revenue from such deals
 error -- handling -- exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
 error -- handling -- fail fast = Check input and fail on nonsensical input or invalid state as early as possible, preferably with an exception or error response that will make the exact problem clear to your caller https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
@@ -272,6 +279,7 @@ error -- type -- runtime error = errors that can only be detected during runtime
 error = failure = inability of a function to return a valid result, instead producing an error object describing the reason for the failure https://boostorg.github.io/leaf/#tutorial
 ETL “extract, transform, load” = the three interdependent processes of data integration used to pull data from one database and move it to another
 event loop
+exceptions -- checked vs unchecked = only Java does checked, no-one followed, too much boilerplate https://en.wikipedia.org/wiki/Criticism_of_Java#Checked_exceptions
 execution model https://en.wikipedia.org/wiki/Execution_model
 executive
 exposer des variables
@@ -328,6 +336,7 @@ hooks
 hotfix
 hypermedia
 hypertext
+i18n -- truly local = more than just translation
 IAM "identity and access management"
 IAM -- CIAM "Customer Identity and Access Management" = a type of identity and access management (IAM) that integrates authentication and authorization into customer-facing applications
 IAM -- CIAM -- 01 Improves customer registration and login experiences while reducing the risk of account takeover (a rampant problem in the consumer space because of password reuse)
@@ -355,6 +364,7 @@ interface
 interface -- abstract = no implementation, only to be extended (OOP)
 Interface segregation principle = instead of a class interface with all possible methods clients might need, there should be separate interfaces catering to the specific needs of each type of client https://en.wikipedia.org/wiki/Interface_segregation_principle
 interpreters = make your own programming language https://craftinginterpreters.com/
+Inversion of control (IoC) = programming principle whereby flow is managed in the opposite way to traditional procedural programming. With inversion of control, custom-written portions of a program receive the flow of control from a generic framework, as opposed to the traditional procedural approach whereby custom code calls into reusable libraries to take care of generic tasks. With inversion of control, the framework calls into custom, or task-specific, code
 Joel test -- 01 Do you use source control?
 Joel test -- 02 Can you make a build in one step?
 Joel test -- 03 Do you make daily builds?
@@ -501,6 +511,7 @@ overengineering https://blog.matt-rickard.com/p/stop-overengineering
 ownership
 ownership -- if you build it, you own it
 pair-programming
+partial application = creating a new version of a function with one or more of its parameters bound to some predefined value
 pattern -- anti -- lava flow = code written under sub-optimal conditions is deployed into a production environment and subsequently expanded upon while still in a developmental state https://en.wikipedia.org/wiki/Lava_flow_(programming)
 pattern -- matching = checking a given sequence of tokens for the presence of the constituents of some pattern. In contrast to pattern recognition, the match usually has to be exact: "either it will or will not be a match." The patterns generally have the form of either sequences or tree structures. Uses of pattern matching include outputting the locations (if any) of a pattern within a token sequence, to output some component of the matched pattern, and to substitute the matching pattern with some other token sequence (i.e., search and replace).
 pattern -- recognition = same but not exact match
@@ -573,6 +584,7 @@ rate limiting -- cost based
 React
 reactive programming
 recursion
+red / blue deployment -- compatibility window = period, measured either in elapsed time or number of releases, where all versions of a component released during this window must be compatible with all components of the current version, and vice versa.
 regex https://regexlearn.com/
 register
 release channels = offer a trade-off between feature availability and stability https://support.google.com/chrome/a/answer/9027636?hl=en https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels
@@ -765,6 +777,8 @@ variables pointer / natives
 virtual private cloud (VPC)
 web assembly (asm.js)
 Wirth's law = software systems grow faster in size and complexity than methods to handle complexity are invented. software is getting slower more rapidly than hardware is becoming faster. https://en.wikipedia.org/wiki/Wirth%27s_law
+WORA "write once, run anywhere" https://en.m.wikipedia.org/wiki/Write_once,_run_anywhere
+WORA -- Write Once, Debug Everywhere = because of subtle incompatibilities
 worse is better https://www.dreamsongs.com/WorseIsBetter.html
 XML
 XML (Extensible Markup Language)

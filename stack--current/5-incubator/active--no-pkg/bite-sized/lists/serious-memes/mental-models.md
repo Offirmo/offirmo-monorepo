@@ -27,7 +27,12 @@
 5 mantras -- Prototype the path = The only way through is to do. Hard problems get a hell of a lot easier when we get our hands dirty, equip our curiosity, and start trying things out.
 5 mantras -- You are enough = I don’t tell myself this often enough. I’d dare to say that you don’t either. But it’s a mantra that I repeat to myself often. 
 5 mantras = by Christopher Davis (burnout)
-5 regrets of dying
+5 top regrets of the dying -- 1 I wish I'd had the courage to live a life true to myself, not the life others expected of me
+5 top regrets of the dying -- 2 I wish I hadn't worked so hard
+5 top regrets of the dying -- 3 I wish I'd had the courage to express my feelings
+5 top regrets of the dying -- 4 I wish I had stayed in touch with my friends
+5 top regrets of the dying -- 5 I wish that I had let myself be happier
+5 top regrets of the dying https://en.wikipedia.org/wiki/The_Top_Five_Regrets_of_the_Dying
 80/20 rule "Pareto distribution" https://en.wikipedia.org/wiki/Pareto_distribution
 [ ] +++ https://fs.blog/mental-models/
 [ ] AAA TODO https://flinkliv.com/
@@ -52,7 +57,6 @@ accent -- miscommunication https://paulgraham.com/accents.html
 acceptance
 action -- deep dive & low-hanging fruits
 advocacy
-affirmative action?
 agency
 agile -- "what the client wanted"
 alcohol https://podcastnotes.org/huberman-lab/episode-86-what-alcohol-does-to-your-body-brain-health-huberman-lab/  https://www.soberonadrunkplanet.com/
@@ -69,6 +73,11 @@ assumptions -- faulty
 at the table or on the table?
 attention
 attention -- economy
+attention -- marketplace -- The Algorithm = doesn’t measure what people want but what people pay attention to
+attention -- marketplace -- The Algorithm = instead of posting on what excites them and their fans the most, creators increasingly feel forced to post memes, trends, clickbait, and sensationalism, because that’s what will perform well
+attention -- marketplace -- The Algorithm = the way that major platforms currently organize their feeds about maximizing attention, watch time, and ad revenue
+attention -- marketplace = Netflix, Fortnite, Social media...
+attention -- TikTokification = of the internet
 aunt sally = an argument or idea that is easily refutable and set up to invite criticism https://en.wikipedia.org/wiki/Aunt_Sally
 autocracy https://en.wikipedia.org/wiki/Autocracy
 availability cascade = a self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
@@ -97,6 +106,7 @@ brain -- fast & slow -- fast = training / education / culture = biased = knee-je
 brain -- fast & slow -- slow = real you
 brain -- left & right & hippocamp (debunked?)
 brain -- reptilian
+brain rot = the sort of stuff that keeps you watching, but doesn’t provide lasting value
 brain rot https://en.wikipedia.org/wiki/Brain_rot
 brainstorming -- decoy technique = suggest sth bad as a bottom baseline to trigger defense of better alternatives
 brainstorming -- technique -- reverse = come up with ideas to make things worse https://www.mural.co/blog/reverse-brainstorming
@@ -162,7 +172,9 @@ correlation is not causation https://en.wikipedia.org/wiki/Correlation_does_not_
 cosmos https://en.wikipedia.org/wiki/Physical_cosmology
 cost of a thing = the amount of life which is required to be exchanged for it, immediately or in the long run
 courses après le repas
+creative process
 creativity -- begins at the edge: Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
+criminal act = fraud, theft, dishonesty, arson, wilful damage or malicious damage
 critical thinking +++  https://strategyu.co/critical-thinking/
 crucial conversations
 cultural hegemony https://en.wikipedia.org/wiki/Cultural_hegemony https://en.wikipedia.org/wiki/Power_(social_and_political)#Cultural_hegemony
@@ -181,14 +193,41 @@ democracy -- education https://politics.stackexchange.com/questions/84583/is-dem
 democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
 dependability https://posthog.com/founders/first-ops-hire
 deterrence
+diagrams -- charts
+diagrams -- charts -- bar
+diagrams -- charts -- bubble
+diagrams -- charts -- heat map
+diagrams -- charts -- line
+diagrams -- charts -- pie
+diagrams -- charts -- radar
+diagrams -- charts -- scatter
+diagrams -- fishbone / cause and effect
+diagrams -- flowchart
+diagrams -- funnel
+diagrams -- Gantt
+diagrams -- mind map
+diagrams -- network
+diagrams -- pyramid ex. Maslow
+diagrams -- quadrant
+diagrams -- Sankey
+diagrams -- timeline
+diagrams -- tree -- decision
+diagrams -- tree -- org
+diagrams -- UML -- behavioral -- sequence
+diagrams -- UML -- behavioral -- state
+diagrams -- UML -- structural -- class
+diagrams -- UML https://creately.com/blog/diagrams/uml-diagram-types-examples/
+diagrams -- Venn ex. Ikigai
 differences -- introvert/extrovert
 disability
 disability -- flag +++
 disability -- overcoming
 discernement -- coin flipping = don't look, which one do you wish is not?
 discernement -- regret minimization https://theprokit.com/posts/a-jeff-bezos-classic-the-regret-minimization-framework/
+discrimination
 discrimination -- direct = when a person is treated less favourably or unfairly than another person or group because of certain protected characteristics* or attributes
 discrimination -- indirect = when a neutral rule, policy, practice or criterion applies to everyone but disproportionately disadvantages a particular group with a protected characteristic, without objective justification
+discrimination -- positive / affirmative action = policies and practices seeking to address systemic discrimination https://en.wikipedia.org/wiki/Affirmative_action
 disease -- definition? https://en.wikipedia.org/wiki/Unsolved_problems_in_medicine
 disfranchisement = voter disqualification, is the restriction of suffrage (the right to vote) of a person or group of people https://en.wikipedia.org/wiki/Disfranchisement
 disrespect = lack of consideration or regard for others’ privacy, physical or emotional space, viewpoints, or belongings. Intimidation, aggressive behavior, “the silent treatment”. Thoughtless or arrogant behavior, like using profanity when someone objects to it.
@@ -320,7 +359,7 @@ ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-
 identity -- " I’d tied my identity and reputation to hard work"
 idées (no natural upper bound) ne s'usent que si l'on ne s'en sert pas (contre intuitif) https://en.wikipedia.org/wiki/Lindy_effect#History
 if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
-ikigai
+ikigai = a reason for being what you love ∩ what you're good at ∩ what the world needs ∩ what you can be paid for
 impostor syndrome
 impulsivity = related to problem gambling, problem video gaming, gambling-related cognitions, risky loot boxes engagement https://www.sciencedirect.com/science/article/pii/S0306460322000934
 incentive
@@ -409,6 +448,7 @@ Lev Landau classification of physicists https://books.google.com.au/books?id=nGc
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 life https://en.wikipedia.org/wiki/Life
 life isn't fair https://www.linkedin.com/pulse/lifell-kill-ya-allen-white
+lifeboat strategy to avoid annihilation of the human race
 lifestyle
 Lindy effect = a theorized phenomenon by which the future life expectancy of some non-perishable things, like a technology or an idea, is proportional to their current age https://en.wikipedia.org/wiki/Lindy_effect
 linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_relativity
@@ -452,6 +492,7 @@ minorities -- silent majority = unspecified large group of people in a country o
 minorities -- vocal minority
 mom and pop -- the worst https://www.reddit.com/r/yimby/comments/1biq3gg/lets_not_romanticize_smalltime_landlords_as_we/?sort=top
 mondegreen https://thehabit.co/knowledge-is-power-france-is-bacon/
+money = by its very nature, is an emotional topic. We all have grown up with different relationships with money—earning it, asking for it, making it, and even spending it
 monkey ladder experiment https://factschology.com/factschology-articles-podcast/monkey-ladder-experiment-truth
 Monty Hall problem https://en.wikipedia.org/wiki/Monty_Hall_problem
 moral hazard = Increases in the exposure to risk when insured, or when another bears the cost
@@ -487,6 +528,7 @@ non-violence
 normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-securite-la-normalisation-de-la-deviance-suite
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
+oligopoly = a market in which pricing control lies in the hands of a few sellers https://en.wikipedia.org/wiki/Oligopoly
 on peut toujours faire mieux
 once deployed, it’s too late; there’s only escalation (nuclear, euthanazia)
 one-size-fits-all
@@ -529,6 +571,7 @@ phenomenology (physics) = branch of theoretical physics in which physicists cons
 picture the success
 pit of success = place where it’s easier to do the right thing than the wrong thing
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
+planned obsolescence = Instilling in the buyer the desire to own something a little newer, a little better, a little sooner than is necessary https://en.wikipedia.org/wiki/Planned_obsolescence#History
 planning fallacy
 porn
 poverty -- Sherman Alexie = It sucks to be poor, and it sucks to feel that you somehow deserve to be poor. You start believing that you're poor because you're stupid and ugly. And then you start believing that you're stupid and ugly because you're Indian. And because you're Indian you start believing you're destined to be poor. It's an ugly circle and there's nothing you can do about it. Poverty doesn't give you strength or teach you lessons about perseverance. No, poverty only teaches you how to be poor.
@@ -605,7 +648,11 @@ SBI https://medium.com/pm101/the-situation-behavior-impact-feedback-framework-e2
 SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
 SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
 schadenfreude = happy ppl misfortune
+science -- currently most accurate model
+science -- null result = didn't see the expected effect/prevision https://en.wikipedia.org/wiki/Null_result
+science -- research -- line of
 science -- scientific method https://en.wikipedia.org/wiki/Scientific_method
+science -- space https://en.wikipedia.org/wiki/Outline_of_space_science
 science accepts ideas only when they fit into the then-current state of the science https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy#Similar_concepts
 scientism
 scope–severity grid https://en.wikipedia.org/wiki/Global_catastrophic_risk#Defining_existential_risks
@@ -648,6 +695,7 @@ social debt = friends, family, and strangers who feel entitled to ask, beg, and 
 social pressure / free will
 soft skills https://newsletter.weskao.com/p/how-to-give-a-senior-leader-feedback-without-getting-fired
 soft skills https://softskills.audio/
+sponcon "sponsored content" = a form of influencer marketing popular on social media
 stages of life / seasons of life
 staggered contour trenches
 stakeholder
@@ -680,6 +728,7 @@ support
 survival of the fittest / fit enough
 survivorship bias https://en.wikipedia.org/wiki/Survivorship_bias
 SWOT
+SWOT "Strengths, Weaknesses, Opportunities, Threats"
 syndrome fée clochette https://www.psychologies.com/Couple/Seduction/Rencontres/Articles-et-Dossiers/Syndrome-de-la-fee-Clochette-ces-femmes-insatisfaites-et-en-manque-d-affection
 T-Shape -- develop https://jchyip.medium.com/how-to-develop-t-shaped-people-993349932f90
 T-Shape -- generalist = capable in a lot of things but not expert at any

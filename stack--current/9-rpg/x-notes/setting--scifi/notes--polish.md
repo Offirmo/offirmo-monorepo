@@ -20,6 +20,8 @@ small solar system
 * https://codepen.io/sylvaingarnot/pen/RwvrbZK
 * 
 
+Planets and sounds from EV Nova https://github.com/andrews05/ResForge
+
 
 ## tosort
 

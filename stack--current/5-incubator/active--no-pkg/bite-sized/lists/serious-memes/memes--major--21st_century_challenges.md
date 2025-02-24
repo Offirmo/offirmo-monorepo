@@ -1,22 +1,23 @@
-* #metoo
-* big companies / balance of power / democracy
-* China / multi-power
-* climate change = failure to coordinate
-* dark age of internet
-* democracy but powerless
-* medias
-* population renewal
-* rich/poor gini
-* social medias
-* social networks
-* science -- quantum mechanics and thermodynamics = Despite efforts to reconcile quantum mechanics and thermodynamics over the years, their compatibility is still an open fundamental problem. The full extent that quantum properties can alter classical thermodynamic bounds is unknown  https://en.wikipedia.org/wiki/Zero-point_energy#Single_heat_baths
-* lgbtq, trans & related issues
-  * Gender: Your psychological sense of self. Who you know yourself to be, based on how much you align (or don’t align) with what you understand to be the options for gender.
-  * Sex: Sex (sometimes called biological or physical sex) is comprised of things like reproductive organs, chromosomes, hormones, and body hair.
-* https://en.wikipedia.org/wiki/Lists_of_unsolved_problems
-  * https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics
-  * https://en.wikipedia.org/wiki/List_of_paradoxes#Cosmology
-* frog in a well = vastness of the universe, where are we? what are we?
-* frog in a well = we may need to improve our brain capabilities 
-* great filters: ensure we're immune / not trapped https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
-* expand human potential
+#metoo
+big companies / balance of power / democracy
+China / multi-power
+climate change = failure to coordinate
+dark age of internet
+democracy but powerless
+medias
+population renewal
+rich/poor gini
+social medias / attention marketplace
+social networks
+science -- quantum mechanics and thermodynamics = Despite efforts to reconcile quantum mechanics and thermodynamics over the years, their compatibility is still an open fundamental problem. The full extent that quantum properties can alter classical thermodynamic bounds is unknown  https://en.wikipedia.org/wiki/Zero-point_energy#Single_heat_baths
+gender theory -- lgbtq
+gender theory -- gender = Your psychological sense of self. Who you know yourself to be, based on how much you align (or don’t align) with what you understand to be the options for gender.
+gender theory -- Sex: Sex (sometimes called biological or physical sex) is comprised of things like reproductive organs, chromosomes, hormones, and body hair.
+unsolved problems https://en.wikipedia.org/wiki/Lists_of_unsolved_problems
+unsolved problems -- physics https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics
+unsolved problems -- paradoxes https://en.wikipedia.org/wiki/List_of_paradoxes#Cosmology
+frog in a well = vastness of the universe, where are we? what are we?
+frog in a well = we may need to improve our brain capabilities 
+great filters: ensure we're immune / not trapped https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
+expand human potential
+great filter -- rsrc depletion https://en.wikipedia.org/wiki/Resource_depletion

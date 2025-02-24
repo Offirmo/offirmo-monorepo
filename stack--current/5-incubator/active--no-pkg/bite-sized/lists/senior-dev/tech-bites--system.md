@@ -155,6 +155,7 @@ churn -- subscription -- involuntary or delinquent churn = missed payments causi
 churn -- subscription -- voluntary = subscriber actively cancelling their subscription
 cloud native = leverages the full capabilities of the cloud, beyond storage and hosting, including elastic scaling of highly available resources. Functionality is updated automatically no manual effort required
 compliance
+compliance stakeholder = someone responsible for ensuring system, processes, and operations comply with relevant laws and practices related to security, data, privacy, legal, or other legislative or industry practice requirements
 compute
 confidentiality
 config -- drift https://score.dev/
