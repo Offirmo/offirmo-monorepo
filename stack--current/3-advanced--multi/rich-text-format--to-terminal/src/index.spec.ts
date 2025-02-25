@@ -24,7 +24,7 @@ describe(`${LIB} -- renderers -- to terminal`, () => {
 					.forEach(k => {
 					console.log(`------- ${k}: -------`)
 
-					const $node = RichText.create(k)
+					const $node = RichText._create(k)
 						.pushText(k === 'emoji' ? '🏆' : k)
 						.done()
 

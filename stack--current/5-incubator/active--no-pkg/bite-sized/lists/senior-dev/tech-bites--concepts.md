@@ -72,6 +72,7 @@ API -- should not force developers to do anything that could easily be done for 
 API -- should present the mechanism, not the experience.
 API -- should provide helper functions to compose small features into common use-cases where appropriate.
 API -- tradeoffs = ex. safety / flexibility / extensibility / speed
+asking smart questions (tech) http://www.catb.org/esr/faqs/smart-questions.html
 assembly
 async -- "coloring" https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/
 async -- design pattern -- reactor pattern

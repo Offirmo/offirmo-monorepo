@@ -44,7 +44,7 @@ interface Builder {
 	// node ref is auto added into content
 	pushNode(node: SubNode, options?: Immutable<Pick<CommonOptions, 'id'>>): Builder
 
-	// Raw = NOTHING is added into content
+	// Raw = NOTHING is added into content (this node may end up not being referenced)
 	// useful for
 	// 1. lists
 	// 2. manual stuff
@@ -83,7 +83,7 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		done,
 	}
 
-	const display_type = getꓽdisplay_type($node)
+	const built_node__display_type = getꓽdisplay_type($node)
 
 	let sub_id = 0
 	function _get_next_id() {
@@ -124,6 +124,13 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 
 
 	function pushRawNode(node: SubNode, options: Immutable<CommonOptions> = {}): Builder {
+
+		// sanity checks
+		const display_typeⵧsub = getꓽdisplay_type(node)
+		if (built_node__display_type === 'inline' && display_typeⵧsub === 'block') {
+			assert(false, `${LIB}: sugar: Cannot push a block node into an inline node!`)
+		}
+
 		const id = options.id || _get_next_id()
 		$node.$sub[id] = node
 		if (Object.keys(options).filter(k => k !== 'id').length)
@@ -136,13 +143,6 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 	}
 
 	function pushNode(node: SubNode, options: Immutable<CommonOptions> = {}): Builder {
-
-		// sanity checks
-		const display_typeⵧsub = getꓽdisplay_type(node)
-		if (display_type === 'inline' && display_typeⵧsub === 'block') {
-			assert(false, `${LIB}: sugar: Cannot push a block node into an inline node!`)
-		}
-
 		const id = options.id || _get_next_id()
 		$node.$content += `⎨⎨${id}⎬⎬`
 		return pushRawNode(node, { ...options, id })
@@ -206,8 +206,7 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 	return builder
 }
 
-// TODO one day add option to
-function create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
+function _create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
 	const $node_base = ((): Immutable<Node> => {
 		if (isꓽNode(content)) {
 			// "lift" it to avoid an unneeded subnode
@@ -252,38 +251,37 @@ function create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
 }
 
 function fragmentⵧinline(content?: Immutable<NodeLike>): Builder {
-	return create(NodeType.fragmentⵧinline, content)
+	return _create(NodeType.fragmentⵧinline, content)
 }
-function fragmentⵧblock(content?: Immutable<NodeLike>): Builder {
-	return create(NodeType.fragmentⵧblock, content)
-}
-
-function heading(content?: Immutable<NodeLike>): Builder {
-	return create(NodeType.heading, content)
-}
-
 function strong(content?: Immutable<NodeLike>): Builder {
-	return create(NodeType.strong, content)
+	return _create(NodeType.strong, content)
 }
-
 function em(content?: Immutable<NodeLike>): Builder {
-	return create(NodeType.em, content)
+	return _create(NodeType.em, content)
 }
-
 function weak(content?: Immutable<NodeLike>): Builder {
-	return create(NodeType.weak, content)
+	return _create(NodeType.weak, content)
 }
-
 function emoji(content?: Immutable<NodeLike>): Builder {
-	return create(NodeType.emoji, content)
+	return _create(NodeType.emoji, content)
 }
 
+function fragmentⵧblock(content?: Immutable<NodeLike>): Builder {
+	return _create(NodeType.fragmentⵧblock, content)
+}
+function heading(content?: Immutable<NodeLike>): Builder {
+	return _create(NodeType.heading, content)
+}
 function listⵧordered(): Builder {
-	return create(NodeType.ol)
+	return _create(NodeType.ol)
 }
 function listⵧunordered(): Builder {
-	return create(NodeType.ul)
+	return _create(NodeType.ul)
 }
+// reminder: hr is through pushHorizontalRule
+
+// reminder: br is through pushLineBreak
+// reminder: li is through pushListItem
 
 function keyꓺvalue(key: SubNode, value: SubNode): Builder {
 	return fragmentⵧinline()
@@ -300,16 +298,18 @@ export {
 	type Document,
 	type Builder,
 
-	create,
+	_create,
 
 	fragmentⵧinline,
-	fragmentⵧblock,
-	heading,
 	strong,
 	em,
 	weak,
 	emoji,
+
+	fragmentⵧblock,
+	heading,
 	listⵧordered,
 	listⵧunordered,
+
 	keyꓺvalue,
 }

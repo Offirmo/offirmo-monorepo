@@ -67,7 +67,6 @@ alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_co
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
 applied = vs. theoric. practical. Not always need to be an expert / scientist / priest. Applying (citizen, engineer, lay) is complementary and can be, at times, more useful/concrete than expertise ("perché")
-asking smart questions http://www.catb.org/esr/faqs/smart-questions.html
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
 assumptions -- faulty
 at the table or on the table?
@@ -767,6 +766,7 @@ trolley problem https://neal.fun/absurd-trolley-problems/
 trust -- is earned
 trust -- takes years to earn but seconds to lose / Trust is built slowly, and lost quickly
 trust -- trust, but verify
+truth -- false documents -- hoaxes https://en.wikipedia.org/wiki/False_document#Hoaxes
 truth -- fully convinced vs probably https://christianity.stackexchange.com/questions/92352/believing-that-christianity-is-probably-true-vs-being-fully-convinced-that-ch
 truth -- verificationism https://christianity.stackexchange.com/a/89891
 Turning Feedback into Action

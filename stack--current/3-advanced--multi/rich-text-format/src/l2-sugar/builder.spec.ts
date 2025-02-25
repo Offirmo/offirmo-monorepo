@@ -108,6 +108,16 @@ describe(`${LIB} -- sugar -- builder`, () => {
 			expect(Object.keys($doc.$sub)).to.deep.equal(['0001']) // auto id
 			expect(renderⵧto_text($doc)).to.equal('') // yes, empty! We pushed a raw sub node without referencing it
 		})
+
+		it('should detect semantic errors = block in inline', () => {
+			const builder = RichText.fragmentⵧinline()
+
+			expect(() => builder.pushRawNode(RichText.fragmentⵧblock('foo').done())).to.throw('block node into an inline node')
+			expect(() => builder.pushRawNode(RichText.heading('foo').done())).to.throw('block node into an inline node')
+			expect(() => builder.pushRawNode(RichText.listⵧordered().done())).to.throw('block node into an inline node')
+			expect(() => builder.pushRawNode(RichText.listⵧunordered().done())).to.throw('block node into an inline node')
+			expect(() => builder.pushHorizontalRule()).to.throw('block node into an inline node')
+		})
 	})
 
 	describe('pushRawNodes()', function () {
