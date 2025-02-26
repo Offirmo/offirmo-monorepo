@@ -112,11 +112,18 @@ describe(`${LIB} -- sugar -- builder`, () => {
 		it('should detect semantic errors = block in inline', () => {
 			const builder = RichText.fragmentⵧinline()
 
-			expect(() => builder.pushRawNode(RichText.fragmentⵧblock('foo').done())).to.throw('block node into an inline node')
-			expect(() => builder.pushRawNode(RichText.heading('foo').done())).to.throw('block node into an inline node')
-			expect(() => builder.pushRawNode(RichText.listⵧordered().done())).to.throw('block node into an inline node')
-			expect(() => builder.pushRawNode(RichText.listⵧunordered().done())).to.throw('block node into an inline node')
-			expect(() => builder.pushHorizontalRule()).to.throw('block node into an inline node')
+			expect(() => builder.pushRawNode(RichText.fragmentⵧblock('foo').done()), 'block').to.throw('block node into an inline node')
+			expect(() => builder.pushRawNode(RichText.heading('foo').done()), 'heading').to.throw('block node into an inline node')
+			expect(() => builder.pushRawNode(RichText.listⵧordered().done()), 'ol').to.throw('block node into an inline node')
+			expect(() => builder.pushRawNode(RichText.listⵧunordered().done()), 'ul').to.throw('block node into an inline node')
+			expect(() => builder.pushHorizontalRule(), 'hr').to.throw('block node into an inline node')
+		})
+
+		it('should detect semantic errors = list items outside of a list', () => {
+			const builder = RichText.fragmentⵧblock()
+
+			expect(() => builder.pushKeyValue(1, 42)).to.throw('intended to be used in a ol/ul only')
+			//expect(() => builder.pushListItem(42)).to.throw('xxx')
 		})
 	})
 

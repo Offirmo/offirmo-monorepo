@@ -6,7 +6,7 @@ import {
 	coerce_toꓽascii, convert_spaces_to_camel_case, convert_spaces_to_kebab_case, ensure_string,
 	to_lower_case, to_upper_case,
 	trim,
-} from '../base/index.js'
+} from '../1-base/index.ts'
 
 /////////////////////////////////////////////////
 

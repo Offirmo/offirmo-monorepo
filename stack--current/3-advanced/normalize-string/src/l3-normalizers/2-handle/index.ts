@@ -7,7 +7,7 @@ import {
 	coerce_toꓽascii, convert_spaces_to_camel_case,
 	to_lower_case,
 	trim,
-} from '../base/index.js'
+} from '../1-base/index.ts'
 
 /////////////////////////////////////////////////
 

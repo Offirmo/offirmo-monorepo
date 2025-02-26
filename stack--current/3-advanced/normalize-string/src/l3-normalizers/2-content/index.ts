@@ -1,10 +1,10 @@
-import { StringNormalizer } from '../../l1-types/types.ts'
+import type { StringNormalizer } from '../../l1-types/types.ts'
 import { combineꓽnormalizers } from '../../l2-core/normalize.ts'
 import {
 	coerce_blanks_to_single_spaces,
 	normalize_unicode,
 	trim,
-} from '../base/index.js'
+} from '../1-base/index.ts'
 
 /////////////////////////////////////////////////
 

@@ -12,6 +12,11 @@ import {
   capitalize,
 } from '@offirmo-private/normalize-string'
 
+import {
+	assertꓽstringⵧnormalized,
+	assertꓽstringⵧnormalized_and_trimmedꓽ,
+} from '@offirmo-private/normalize-string'
+
 ```
 https://thread.engineering/2018-08-29-searching-and-sorting-text-with-diacritical-marks-in-javascript/
 

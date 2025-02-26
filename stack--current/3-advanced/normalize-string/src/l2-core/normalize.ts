@@ -1,5 +1,5 @@
 
-import { StringNormalizer } from './types.js'
+import type { StringNormalizer } from '../l1-types/types.ts'
 
 /////////////////////////////////////////////////
 

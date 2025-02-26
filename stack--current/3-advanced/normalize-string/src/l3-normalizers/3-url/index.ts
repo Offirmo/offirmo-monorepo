@@ -3,8 +3,8 @@ import { combineꓽnormalizers } from '../../l2-core/normalize.ts'
 import {
 	normalize_unicode,
 	remove_all_spaces,
-} from '../base/index.js'
-import { normalizeꓽemailⵧreasonable, hasꓽemail_structure } from '../email/index.js'
+} from '../1-base/index.ts'
+import { normalizeꓽemailⵧreasonable, hasꓽemail_structure } from '../2-email/index.ts'
 
 /////////////////////////////////////////////////
 // https://en.wikipedia.org/wiki/URL
@@ -18,8 +18,8 @@ function _normalizeⵧschemeꘌhttpₓ(url: string): string {
 		throw new Error(`Invalid URL!`)
 	}
 
-	let [scheme, ...rest] = url.split(':')
-	scheme = scheme.toLowerCase()
+	let [ raw_scheme, ...rest] = url.split(':')
+	let scheme = (raw_scheme || '').toLowerCase()
 
 	if (scheme === 'http') {
 		// upgrade to https
@@ -44,9 +44,8 @@ function _normalize_per_scheme(url: string): string {
 	if (!url.includes(':') && hasꓽemail_structure(url))
 		url = `mailto:${url}`
 
-	let [ scheme, ...rest ] = url.split(':')
-	scheme = scheme.toLowerCase()
-
+	let [ raw_scheme, ...rest] = url.split(':')
+	let scheme = (raw_scheme || '').toLowerCase()
 
 	switch(scheme) {
 		case 'mailto':
@@ -56,8 +55,7 @@ function _normalize_per_scheme(url: string): string {
 			/* falls through */
 		case 'https': {
 			url = _normalizeⵧschemeꘌhttpₓ([ scheme, ...rest ].join(':'))
-			;[ scheme, ...rest ] = url.split(':')
-			scheme = scheme.toLowerCase()
+			;[ scheme, ...rest ] = url.split(':') as [string, string]
 			break
 		}
 

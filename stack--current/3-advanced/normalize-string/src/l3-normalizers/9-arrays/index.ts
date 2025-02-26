@@ -13,7 +13,10 @@ function normalizeꓽarrayⵧof_strings(a: ReadonlyArray<string | undefined | nu
 	sort = false,
 	extra_normalizers = [] as StringNormalizer[],
 } = {}): string[] {
-	let result = normalizeꓽarray(a || [], ensure_string, normalize_unicode, trim, ...extra_normalizers)
+	let result = normalizeꓽarray(
+		(a || []).map(ensure_string),
+		normalize_unicode, trim, ...extra_normalizers,
+	)
 
 	if (filter_out_empty) {
 		result = result.filter(s => !!s)

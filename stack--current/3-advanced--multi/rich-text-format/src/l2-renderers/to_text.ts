@@ -1,6 +1,12 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import type { CheckedNode, Node, NodeLike } from '../l1-types/index.ts'
+import type { CheckedNode, NodeLike } from '../l1-types/index.ts'
+import { getꓽdisplay_type } from '../l1-types/guards.ts'
+
+import { promoteꓽto_node } from '../l1-utils/promote.ts'
+import { normalizeꓽnode } from '../l1-utils/normalize.ts'
+
+import { isꓽlink, isꓽlistⵧKV } from './common.ts'
 import {
 	SPECIAL_LIST_NODE_CONTENT_KEY,
 	type BaseRenderingOptions,
@@ -8,10 +14,6 @@ import {
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
 } from './walk.ts'
-
-import { isꓽlink, isꓽlistⵧKV, NODE_TYPE_to_DISPLAY_MODE } from './common.ts'
-import { promoteꓽto_node } from '../l1-utils/promote.ts'
-import { normalizeꓽnode } from '../l1-utils/normalize.ts'
 
 /////////////////////////////////////////////////
 
@@ -174,7 +176,7 @@ const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToText>['on_node
 		}
 	}
 
-	if (NODE_TYPE_to_DISPLAY_MODE[$node.$type] === 'block') {
+	if (getꓽdisplay_type($node) === 'block') {
 		state.starts_with_block = true
 		state.ends_with_block = true
 	}

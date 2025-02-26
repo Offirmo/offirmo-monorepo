@@ -26,9 +26,9 @@ const normalize_unicode: StringNormalizer = s => {
 /////////////////////////////////////////////////
 
 // TODO more variants https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize#value
-const capitalize: StringNormalizer = s => s.length === 0
+const capitalize: StringNormalizer = s => (s.length === 0)
 	? s
-	: s[0].toUpperCase() + s.slice(1)
+	: s[0]!.toUpperCase() + s.slice(1)
 
 const to_lower_case: StringNormalizer = s => s.toLowerCase()
 const to_upper_case: StringNormalizer = s => s.toUpperCase()

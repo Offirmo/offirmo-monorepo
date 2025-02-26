@@ -1,4 +1,9 @@
+import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
+import { assertꓽstringⵧnormalized } from '@offirmo-private/normalize-string'
+import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
+
+import { LIB } from '../consts.ts'
 
 import {
 	NodeType,
@@ -9,27 +14,47 @@ import {
 
 /////////////////////////////////////////////////
 
+function promoteꓽto_string_for_node_content(str: Immutable<Exclude<NodeLike, Node>>): string {
+	switch (typeof str) {
+		case 'string': {
+			// note: can be empty, esp. at node creation
+			assertꓽstringⵧnormalized(str)
+			break
+		}
+		case 'number':
+			// TODO one day number formatting with locale
+			break
+
+		default:
+			assert(false, `${LIB}: sugar: pushText(): Unknown pseudo-node type!`)
+	}
+
+	return '' + str
+}
+
 function promoteꓽto_node($raw: NodeLike): Node
 function promoteꓽto_node($raw: Immutable<NodeLike>): Immutable<Node>
 function promoteꓽto_node($raw: Immutable<NodeLike>): Immutable<Node> {
-	if (typeof $raw === 'number')
-		$raw = String($raw)
+	switch (typeof $raw) {
+		case 'string':
+		case 'number':
+			return {
+				$type: NodeType.fragmentⵧinline,
+				$content: promoteꓽto_string_for_node_content($raw),
+			}
 
-	if (typeof $raw === 'string')
-		return {
-			$type: NodeType.fragmentⵧinline,
-			$content: $raw,
-		}
-
-	// we could be passed anything, (ex false, undef...)
-	// better check it looks like a Node
-	assertꓽisꓽNode($raw)
-
-	return $raw
+		default:
+			// we could be passed anything, (ex false, undef...)
+			// better check it looks like a Node
+			assert(isꓽobjectⵧliteral($raw), `promoteꓽto_node(): passed object should be an object literal!`)
+			assertꓽisꓽNode($raw)
+			return $raw
+	}
 }
 
 /////////////////////////////////////////////////
 
 export {
+	promoteꓽto_string_for_node_content,
 	promoteꓽto_node,
 }

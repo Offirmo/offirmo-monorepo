@@ -5,7 +5,6 @@ import { LIB, SCHEMA_VERSION } from '../consts.ts'
 
 import {
 	NodeType,
-	type Hints,
 	type CheckedNode,
 	type Node,
 } from '../l1-types/types.ts'

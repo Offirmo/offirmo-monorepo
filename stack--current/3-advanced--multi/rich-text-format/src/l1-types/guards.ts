@@ -2,7 +2,8 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import { assertꓽshape } from '@offirmo-private/type-detection'
 
-import type { Node, NodeType, CheckedNode, NodeLike } from './types.ts'
+import type { Node, CheckedNode, NodeLike } from './types.ts'
+import { NodeType } from './types.ts'
 
 /////////////////////////////////////////////////
 
@@ -43,6 +44,9 @@ function isꓽNode(node: Immutable<any>): node is Immutable<Node> {
 	}
 }
 
+/////////////////////////////////////////////////
+// selectors
+
 const DEFAULT_NODE_TYPE: NodeType = 'fragmentⵧinline'
 
 function getꓽtype(node: Immutable<NodeLike>): NodeType {
@@ -61,32 +65,38 @@ function isꓽlist(node: Immutable<NodeLike>): boolean {
 	return $type === 'ol' || $type === 'ul'
 }
 
-const INLINE_NODE_TYPES = new Set([
-	'strong',
-	'em',
-	'weak',
-	'emoji',
-	'fragmentⵧinline',
-])
-const BLOCK_NODE_TYPES = new Set([
-	'heading',
-	'ol',
-	'ul',
-	'hr',
-	'fragmentⵧblock',
-	'br',
-	'li',
-])
+
+const _NODE_TYPE_to_DISPLAY_MODE: Immutable<{ [k: string]: 'inline' | 'block' }> = {
 // TODO assert completeness and no-intersection of inline and block
+
+	// classic inlines
+	[NodeType.fragmentⵧinline]: 'inline',
+	[NodeType.strong]:          'inline',
+	[NodeType.weak]:            'inline',
+	[NodeType.em]:              'inline',
+	[NodeType.emoji]:           'inline',
+
+	// classic blocks
+	[NodeType.fragmentⵧblock]:  'block',
+	[NodeType.heading]:         'block',
+	[NodeType.ol]:              'block',
+	[NodeType.ul]:              'block',
+	[NodeType.hr]:              'block',
+
+	// special
+	[NodeType.br]:              'inline', // allowed in inline
+
+	// internally used, don't mind
+	[NodeType._li]:             'block',
+}
+
 function getꓽdisplay_type(node: Immutable<NodeLike>): 'inline' | 'block' {
 	const $type = getꓽtype(node)
 
-	switch(true) {
-		case INLINE_NODE_TYPES.has($type): return 'inline'
-		case BLOCK_NODE_TYPES.has($type): return 'block'
-		default:
-			throw new Error(`Unknown node type "${$type}"`)
-	}
+	const result = _NODE_TYPE_to_DISPLAY_MODE[$type]!
+	assert(result, `getꓽdisplay_type: unknown type "${$type}"!`)
+
+	return result
 }
 
 function isꓽinline(node: Immutable<NodeLike>): boolean {
@@ -104,6 +114,8 @@ export {
 	assertꓽisꓽNode,
 	isꓽNode,
 
+	DEFAULT_NODE_TYPE,
+	_NODE_TYPE_to_DISPLAY_MODE,
 	getꓽtype,
 	isꓽlist,
 

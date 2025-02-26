@@ -1,5 +1,10 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
+import { hasꓽemoji } from '@offirmo-private/type-detection'
+import {
+	assertꓽstringⵧnormalized,
+	assertꓽstringⵧnormalized_and_trimmed,
+} from '@offirmo-private/normalize-string'
 
 import { LIB, SCHEMA_VERSION } from '../consts.ts'
 
@@ -9,10 +14,10 @@ import {
 	type CheckedNode,
 	type Node, type Document, type NodeLike,
 	isꓽNode,
-	getꓽtype, isꓽlist,
+	getꓽtype,
 	getꓽdisplay_type,
 } from '../l1-types/index.ts'
-import { promoteꓽto_node } from '../l1-utils/promote.ts'
+import { promoteꓽto_node, promoteꓽto_string_for_node_content } from '../l1-utils/promote.ts'
 
 /////////////////////////////////////////////////
 
@@ -96,6 +101,15 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 	//let locale = 'en-US' TODO one day
 
 	function addClass(...classes: ReadonlyArray<string>): Builder {
+		try {
+			classes.forEach(assertꓽstringⵧnormalized_and_trimmed)
+		}
+		catch (cause) {
+			const err = new Error(`${LIB}: sugar: addClass(): Invalid class name(s) !`)
+			err.cause = cause
+			throw err
+		}
+
 		$node.$classes = Array.from(new Set<string>([ ...$node.$classes, ...classes]))
 		return builder
 	}
@@ -109,7 +123,25 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 	}
 
 	function pushText(str: Immutable<Exclude<NodeLike, Node>>): Builder {
-		// TODO one day number formatting with locale
+
+		switch (typeof str) {
+			case 'number':
+				// fallthrough
+			case 'string': {
+				str = promoteꓽto_string_for_node_content(str) // contains assertions
+				assert(!!str, `${LIB}: sugar: pushText(): Empty string?!`)
+
+				// TODO one day
+				//if (hasꓽemoji(str)) {
+					//assert($node.$type === NodeType.emoji, `${LIB}: sugar: pushText(): Emoji detected in a non-emoji node!`)
+				//}
+				break
+			}
+
+			default:
+				assert(false, `${LIB}: sugar: pushText(): Unknown pseudo-node type!`)
+		}
+
 		$node.$content += str
 		return builder
 	}
@@ -128,16 +160,29 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 
 	function pushRawNode(subnode: SubNode, options: Immutable<CommonOptions> = {}): Builder {
 
-		// sanity checks
-		assert(getꓽtype(subnode) !== NodeType._li), `${LIB}: sugar: The LI type is just for internal use during walk, end users should not use it!`)
-		// 1. inline vs block
-		assert(built_node__display_type === 'block' || getꓽdisplay_type(subnode) !== 'block', `${LIB}: sugar: Cannot push a block node into an inline node!`)
-		}
-
-		const id = options.id || _get_next_id()
-		$node.$sub[id] = subnode
+		// params check
 		if (Object.keys(options).filter(k => k !== 'id').length)
 			assert(false, `${LIB}: sugar: pushRawNode(): Cannot pass any option other than id!`) // make no sense at the level of this primitive. Other options should be filtered out by the caller.
+
+		// sanity checks
+		assert(getꓽtype(subnode) !== NodeType._li, `${LIB}: sugar: The LI type is just for internal use during walk, end users should not use it!`)
+		// 1. inline vs block
+		assert(built_node__display_type === 'block' || getꓽdisplay_type(subnode) !== 'block', `${LIB}: sugar: Cannot push a block node into an inline node!`)
+		// 2. list item
+		/*if (isꓽlist($node)) {
+			if (getꓽtype(subnode) !== NodeType.li) {
+				assert(false, `${LIB}: sugar: Cannot push a non-list-item node into a list!`)
+			}
+		}
+		else {
+			if (getꓽtype(subnode) === NodeType.li) {
+				assert(false, `${LIB}: sugar: Cannot push a list-item node into a non-list!`)
+			}
+		}*/
+
+		const id = options.id || _get_next_id()
+		assertꓽstringⵧnormalized_and_trimmed(id)
+		$node.$sub[id] = subnode
 		return builder
 	}
 	function pushRawNodes(nodes: SubNodes): Builder {
@@ -182,6 +227,7 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 	}
 
 	function pushHorizontalRule(): Builder {
+		assert(built_node__display_type === 'block', `${LIB}: sugar: Cannot push a hr block node into an inline node!`)
 		$node.$content += '⎨⎨hr⎬⎬'
 		return builder
 	}
@@ -222,7 +268,7 @@ function _create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
 				assert(false, `${LIB}: sugar: Cannot lift init block node into an inline node!`)
 			}
 
-			const typeⵧsource = content.$type || NodeType.fragmentⵧinline
+			const typeⵧsource = getꓽtype(content)
 			if (typeⵧsource === $type) {
 				// TODO review, could be an assertion from an unknown type
 				assert(false, `${LIB}: sugar: No reason to lift init node into the same node type! Are you sure you want to do that?`)

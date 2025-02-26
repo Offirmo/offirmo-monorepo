@@ -1,9 +1,9 @@
 /////////////////////
 
-import {expect} from 'chai'
+import { expect } from 'chai'
 
-import { LIB } from '../../consts.js'
-import { normalizeꓽemailⵧfull, normalizeꓽemailⵧreasonable } from './index.js'
+import { LIB } from '../../consts.ts'
+import { normalizeꓽemailⵧfull, normalizeꓽemailⵧreasonable } from './index.ts'
 
 ////////////////////////////////////
 

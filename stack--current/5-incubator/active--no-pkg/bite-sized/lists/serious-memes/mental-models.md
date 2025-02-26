@@ -406,23 +406,42 @@ laisser-aller
 language -- any word exists in any language in order to describe something relevant to speakers of that language
 language -- colors https://www.richardcarrier.info/archives/7307
 law -- crimes -- arson
+law -- crimes -- assault -- simple
+law -- crimes -- assault -- aggravated
+law -- crimes -- battery
+law -- crimes -- classifications -- France -- contravention = lowest, 5 classes https://en.wikipedia.org/wiki/Contravention_in_French_criminal_law
+law -- crimes -- classifications -- France = contravention -> délit -> crime
+law -- crimes -- classifications -- new = summary offenses -> indictable offenses
+law -- crimes -- classifications -- old = misdemeanors -> felonies
 law -- crimes -- crime against humanity
 law -- crimes -- criminal, malicious, or wilful damage
+law -- crimes -- disorderly conduct
 law -- crimes -- drugs
-law -- crimes -- felonies
+law -- crimes -- felony -- felon / convicted felon
+law -- crimes -- felony = a crime of high seriousness
+law -- crimes -- forcible touching
 law -- crimes -- fraud
+law -- crimes -- indecent exposure
 law -- crimes -- l1 -- burglary
 law -- crimes -- l1 -- loitering
 law -- crimes -- l1 -- theft
-law -- crimes -- l1 -- vandalism
+law -- crimes -- l1 -- theft -- grand
+law -- crimes -- l1 -- theft -- petty
+law -- crimes -- l1 -- theft -- shoplifting
+law -- crimes -- l1 -- vandalism https://en.wikipedia.org/wiki/Vandalism
+law -- crimes -- l1 -- vandalism -- graffiti
 law -- crimes -- l2 -- assault
 law -- crimes -- l2 -- reckless endangerment
 law -- crimes -- l2 -- rioting
 law -- crimes -- l3 -- murder
 law -- crimes -- l3 -- murder -- attempted
-law -- crimes -- misdemeanors
+law -- crimes -- misdemeanor = any "lesser" criminal act, sometimes classes
+law -- crimes -- prostitution
+law -- crimes -- public intoxication
+law -- crimes -- reckless driving
 law -- crimes -- treason
 law -- crimes -- treason -- high
+law -- crimes -- trespass
 law -- crimes -- war crimes
 law of Ability = every ability is acquired through the workings of life
 law of Shitty Click-Through Rates = Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.

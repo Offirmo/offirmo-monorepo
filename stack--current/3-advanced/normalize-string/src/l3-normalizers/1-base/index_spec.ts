@@ -1,9 +1,9 @@
 import { expect } from 'chai'
 
-import { LIB } from '../../consts.js'
-import { StringNormalizer } from '../../l1-types/types.ts'
-import * as NORMALIZERS from './index.js'
-import { ensure_string } from './index.js'
+import { LIB } from '../../consts.ts'
+import type { StringNormalizer } from '../../l1-types/types.ts'
+import * as NORMALIZERS from './index.ts'
+import { ensure_string } from './index.ts'
 
 /////////////////////////////////////////////////
 
