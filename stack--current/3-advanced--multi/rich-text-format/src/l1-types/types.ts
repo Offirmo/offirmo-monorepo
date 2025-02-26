@@ -34,7 +34,8 @@ const NodeType = Enum(
 	      // REMINDER the client should be the one doing line breaks for long content
 
 	// internally used, don't use directly
-	'li',
+	// the key-value semantic is already semantic enough to describe a list
+	'_li',
 )
 type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 

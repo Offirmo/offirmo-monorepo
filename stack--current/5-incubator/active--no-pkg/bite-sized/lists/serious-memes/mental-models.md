@@ -69,6 +69,7 @@ Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
 applied = vs. theoric. practical. Not always need to be an expert / scientist / priest. Applying (citizen, engineer, lay) is complementary and can be, at times, more useful/concrete than expertise ("perché")
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
 assumptions -- faulty
+at fault = you caused the accident or damage, or someone else did but you couldn't identify them and provide their details
 at the table or on the table?
 attention
 attention -- economy
@@ -404,8 +405,12 @@ labor of love
 laisser-aller
 language -- any word exists in any language in order to describe something relevant to speakers of that language
 language -- colors https://www.richardcarrier.info/archives/7307
+law -- crimes -- arson
 law -- crimes -- crime against humanity
+law -- crimes -- criminal, malicious, or wilful damage
+law -- crimes -- drugs
 law -- crimes -- felonies
+law -- crimes -- fraud
 law -- crimes -- l1 -- burglary
 law -- crimes -- l1 -- loitering
 law -- crimes -- l1 -- theft

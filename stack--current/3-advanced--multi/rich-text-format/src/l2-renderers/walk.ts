@@ -392,7 +392,7 @@ function _walk<ExternalWalkState, RenderingOptions extends BaseRenderingOptions>
 		})
 		sorted_keys.forEach(key => {
 			const $sub_node: Immutable<Node> = {
-				$type: NodeType.li,
+				$type: NodeType._li,
 				$content: `⎨⎨${SPECIAL_LIST_NODE_CONTENT_KEY}⎬⎬`,
 				$sub: {
 					[SPECIAL_LIST_NODE_CONTENT_KEY]: $sub_nodes[key]!,

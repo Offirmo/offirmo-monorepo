@@ -7,7 +7,9 @@ import {
 	NodeType,
 	type Hints,
 	type CheckedNode,
-	type Node, type Document, type NodeLike, isꓽNode,
+	type Node, type Document, type NodeLike,
+	isꓽNode,
+	getꓽtype, isꓽlist,
 	getꓽdisplay_type,
 } from '../l1-types/index.ts'
 import { promoteꓽto_node } from '../l1-utils/promote.ts'
@@ -40,6 +42,7 @@ interface Builder {
 	pushLineBreak(): Builder
 
 	pushKeyValue(key: SubNode, value: SubNode, options?: Immutable<CommonOptions>): Builder
+	//pushListItem No! this is an internal node type, just use pushNode(1, 'xxx') instead
 
 	// node ref is auto added into content
 	pushNode(node: SubNode, options?: Immutable<Pick<CommonOptions, 'id'>>): Builder
@@ -123,16 +126,16 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 	}
 
 
-	function pushRawNode(node: SubNode, options: Immutable<CommonOptions> = {}): Builder {
+	function pushRawNode(subnode: SubNode, options: Immutable<CommonOptions> = {}): Builder {
 
 		// sanity checks
-		const display_typeⵧsub = getꓽdisplay_type(node)
-		if (built_node__display_type === 'inline' && display_typeⵧsub === 'block') {
-			assert(false, `${LIB}: sugar: Cannot push a block node into an inline node!`)
+		assert(getꓽtype(subnode) !== NodeType._li), `${LIB}: sugar: The LI type is just for internal use during walk, end users should not use it!`)
+		// 1. inline vs block
+		assert(built_node__display_type === 'block' || getꓽdisplay_type(subnode) !== 'block', `${LIB}: sugar: Cannot push a block node into an inline node!`)
 		}
 
 		const id = options.id || _get_next_id()
-		$node.$sub[id] = node
+		$node.$sub[id] = subnode
 		if (Object.keys(options).filter(k => k !== 'id').length)
 			assert(false, `${LIB}: sugar: pushRawNode(): Cannot pass any option other than id!`) // make no sense at the level of this primitive. Other options should be filtered out by the caller.
 		return builder
@@ -284,7 +287,7 @@ function listⵧunordered(): Builder {
 // reminder: li is through pushListItem
 
 function keyꓺvalue(key: SubNode, value: SubNode): Builder {
-	return fragmentⵧinline()
+	return fragmentⵧblock() // K/V are meant to be separated, they can't be inline
 		.pushNode(key, { id: 'key' })
 		.pushText(': ')
 		.pushNode(value, { id: 'value' })

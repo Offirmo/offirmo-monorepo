@@ -1,5 +1,5 @@
 
-import { combineꓽnormalizers } from '../../normalize.js'
+import { combineꓽnormalizers } from '../../l2-core/normalize.ts'
 import {
 	normalize_unicode,
 	remove_all_spaces,

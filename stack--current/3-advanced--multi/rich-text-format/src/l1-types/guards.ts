@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import { assertꓽshape } from '@offirmo-private/type-detection'
 
-import type { Node, CheckedNode, NodeLike } from './types.ts'
+import type { Node, NodeType, CheckedNode, NodeLike } from './types.ts'
 
 /////////////////////////////////////////////////
 
@@ -43,6 +43,24 @@ function isꓽNode(node: Immutable<any>): node is Immutable<Node> {
 	}
 }
 
+const DEFAULT_NODE_TYPE: NodeType = 'fragmentⵧinline'
+
+function getꓽtype(node: Immutable<NodeLike>): NodeType {
+	if (!isꓽNode(node)) return DEFAULT_NODE_TYPE
+
+	if (!node.$type) {
+		return DEFAULT_NODE_TYPE
+	}
+
+	return node.$type
+}
+
+function isꓽlist(node: Immutable<NodeLike>): boolean {
+	const $type = getꓽtype(node)
+
+	return $type === 'ol' || $type === 'ul'
+}
+
 const INLINE_NODE_TYPES = new Set([
 	'strong',
 	'em',
@@ -61,18 +79,13 @@ const BLOCK_NODE_TYPES = new Set([
 ])
 // TODO assert completeness and no-intersection of inline and block
 function getꓽdisplay_type(node: Immutable<NodeLike>): 'inline' | 'block' {
-	if (!isꓽNode(node)) return 'inline'
-
-	if (!node.$type) {
-		// default is fragmentⵧinline
-		return 'inline'
-	}
+	const $type = getꓽtype(node)
 
 	switch(true) {
-		case INLINE_NODE_TYPES.has(node.$type): return 'inline'
-		case BLOCK_NODE_TYPES.has(node.$type): return 'block'
+		case INLINE_NODE_TYPES.has($type): return 'inline'
+		case BLOCK_NODE_TYPES.has($type): return 'block'
 		default:
-			throw new Error(`Unknown node type "${node.$type}"`)
+			throw new Error(`Unknown node type "${$type}"`)
 	}
 }
 
@@ -90,6 +103,9 @@ export {
 
 	assertꓽisꓽNode,
 	isꓽNode,
+
+	getꓽtype,
+	isꓽlist,
 
 	getꓽdisplay_type,
 	isꓽinline,

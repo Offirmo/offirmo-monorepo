@@ -1,11 +1,12 @@
 
-import { StringNormalizer } from '../../types.js'
-import { normalizeꓽarray } from '../../normalize.js'
-import { ensure_string, trim, normalize_unicode } from '../../normalizers/base/index.js'
+import type { StringNormalizer } from '../../l1-types/types.ts'
+import { normalizeꓽarray } from '../../l2-core/normalize.ts'
+import { ensure_string, trim, normalize_unicode } from '../1-base/index.ts'
 
 /////////////////////////////////////////////////
 
 // light, obvious normalization + options
+// includes: unicode, trim
 function normalizeꓽarrayⵧof_strings(a: ReadonlyArray<string | undefined | null> | undefined | null = [], {
 	filter_out_empty = true,
 	deduplicate = false,

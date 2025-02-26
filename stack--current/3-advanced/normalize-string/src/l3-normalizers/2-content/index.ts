@@ -1,5 +1,5 @@
-import { StringNormalizer } from '../../types.js'
-import { combineꓽnormalizers } from '../../normalize.js'
+import { StringNormalizer } from '../../l1-types/types.ts'
+import { combineꓽnormalizers } from '../../l2-core/normalize.ts'
 import {
 	coerce_blanks_to_single_spaces,
 	normalize_unicode,

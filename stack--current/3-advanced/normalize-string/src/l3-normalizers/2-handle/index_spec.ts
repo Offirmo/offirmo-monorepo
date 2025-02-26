@@ -1,33 +1,28 @@
 import { expect } from 'chai'
 
 import { LIB } from '../../consts.js'
-import { StringNormalizer } from '../../types.js'
+import { StringNormalizer } from '../../l1-types/types.ts'
 import * as NORMALIZERS from './index.js'
-import { normalizeꓽpath } from './index.js'
 
 /////////////////////////////////////////////////
 
-describe(`${LIB} -- basename`, function() {
+describe(`${LIB} -- handle`, function() {
 
 	const TEST_CASES: any = {
 
-		coerce_toꓽsafe_basenameⵧstrictest: {
-			'A': 'a',
-			'.A-': 'a',
-			'.a--b..c': 'a-b-c',
-			'Côte et Ciel': 'cote-et-ciel',
-			' lord  MOK ': 'lord-mok',
-			'**lord_MOK** ': 'lord-mok',
+		coerce_toꓽnicknameⵧsafe: {
+			'': '',
+			' ': '',
+			'a': 'A',
+			'Côte et Ciel': 'CoteEtCiel',
+			' lord  MOK ': 'LordMok',
+			'**lord_MOK** ': 'LordMok',
 		},
-
-		normalizeꓽpath: {
-			'/' : '',
-			'': '', // no change
-			'/foo/bar/': 'foo/bar',
-			'foo/bar': 'foo/bar', // no change
-			'/foo/bar/baz.gif': 'foo/bar/baz.gif',
-		}
 	}
+	Object.keys(NORMALIZERS).forEach(key => {
+		if (!TEST_CASES[key])
+			throw new Error(`(internal check) Missing test cases for normalizer "${key}"!`)
+	})
 
 	Object.keys(TEST_CASES).forEach(key => {
 		const normalizer: StringNormalizer = (NORMALIZERS as any)[key]
@@ -46,10 +41,5 @@ describe(`${LIB} -- basename`, function() {
 				})
 			})
 		})
-	})
-
-	Object.keys(NORMALIZERS).forEach(key => {
-		if (!TEST_CASES[key])
-			throw new Error(`(internal check) Missing test cases for normalizer "${key}"!`)
 	})
 })

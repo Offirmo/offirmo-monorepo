@@ -67,8 +67,9 @@ Tosort
 
 TODO add hypermedia as first class?
 
+TODO i18n compatibility!
+
 TODO one day add a linting feature:
 - lint types etc.
-- prevent a block in an inline
-- normalize strings
-- detect and normalize emojis
+
+`⎨⎨foo|Capitalize⎬⎬`

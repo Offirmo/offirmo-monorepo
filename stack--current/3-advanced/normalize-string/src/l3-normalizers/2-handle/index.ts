@@ -1,6 +1,6 @@
 // for user names, player names...
 
-import { combineꓽnormalizers } from '../../normalize.js'
+import { combineꓽnormalizers } from '../../l2-core/normalize.ts'
 import {
 	coerce_blanks_to_single_spaces,
 	coerce_delimiters_to_space,
