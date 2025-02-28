@@ -48,19 +48,19 @@ function expectㆍbookㆍtoㆍbeㆍcorrect(book: Immutable<Book>): void {
 		const page_result = getꓽpage(book, ref)
 
 		// 1. core result
-		expect(isꓽPage(page_result.content))
+		expect(isꓽPage(page_result.content), 'is page').to.be.true
 
 		// 2b.
-		expect(page_result.referenceⵧcurrent).to.equal(ref)
-		expect(page_result.referenceⵧpreviousⵧin_tree).to.equal(ordered_refs[index - 1] || NODE_REFERENCEꘌROOT)
-		expect(page_result.referenceⵧnextⵧin_tree).to.equal(ordered_refs[index + 1] || NODE_REFERENCEꘌROOT)
+		expect(page_result.referenceⵧcurrent, 'referenceⵧcurrent').to.equal(ref)
+		expect(page_result.referenceⵧpreviousⵧin_tree, 'referenceⵧpreviousⵧin_tree').to.equal(ordered_refs[index - 1] || NODE_REFERENCEꘌROOT)
+		expect(page_result.referenceⵧnextⵧin_tree, 'referenceⵧnextⵧin_tree').to.equal(ordered_refs[index + 1] || NODE_REFERENCEꘌROOT)
 
 		// 2a.
 		if (page_result.relative_index‿human === 0) {
-			expect(page_result.breadcrumbs).to.have.lengthOf(page_result.referenceⵧcurrent.split(NODE_REFERENCEⵧSEPARATOR).length - 1)
+			expect(page_result.breadcrumbs, 'breadcrumbs--0').to.have.lengthOf(page_result.referenceⵧcurrent.split(NODE_REFERENCEⵧSEPARATOR).length - 1)
 		}
 		else {
-			expect(page_result.breadcrumbs).to.have.lengthOf(page_result.referenceⵧcurrent.split(NODE_REFERENCEⵧSEPARATOR).length)
+			expect(page_result.breadcrumbs, 'breadcrumbs').to.have.lengthOf(page_result.referenceⵧcurrent.split(NODE_REFERENCEⵧSEPARATOR).length)
 		}
 	})
 }

@@ -129,7 +129,9 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 				// fallthrough
 			case 'string': {
 				str = promoteꓽto_string_for_node_content(str) // contains assertions
-				assert(!!str, `${LIB}: sugar: pushText(): Empty string?!`)
+
+				// no, allow empty strings. sometimes it's easier for control flow reasons.
+				//assert(!!str, `${LIB}: sugar: pushText(): Empty string?!`)
 
 				// TODO one day
 				//if (hasꓽemoji(str)) {

@@ -6,6 +6,7 @@ import { type BookCover, type BookPage, type BookPart, type BookUId, type PageRe
 import * as BookStashLib from '../model--book-stash/index.ts'
 import { renderꓽcover__spine } from '../view--book--rich-text/index.ts'
 import { getꓽbookshelf } from '../model--book-stash/index.ts'
+import type { NodeLike } from '@offirmo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 
@@ -51,6 +52,7 @@ function renderꓽbookshelf(
 	const bookshelf = getꓽbookshelf(state)
 
 	bookshelf.forEach((entry) => {
+		// auto-numbered :check:
 		list.pushNode(renderꓽbookshelf__entry__spine(entry))
 	})
 
@@ -73,7 +75,7 @@ function renderꓽpage_result(page_result: Immutable<PageResult>): RichText.Node
 		breadcrumbs‿bldr.pushText(' > ')
 		breadcrumbs‿bldr.pushInlineFragment(crumb)
 	})
-	builder.pushBlockFragment(RichText.weak(breadcrumbs‿bldr.done()).done(), {id: 'breadcrumbs'})
+	builder.pushBlockFragment(breadcrumbs‿bldr.done(), {id: 'breadcrumbs'})
 
 	if (relative_index‿human === 0) {
 		// this is a part cover

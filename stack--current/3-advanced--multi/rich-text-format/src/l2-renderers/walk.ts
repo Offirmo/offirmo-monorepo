@@ -240,7 +240,7 @@ function _walk_content<ExternalWalkState, RenderingOptions extends BaseRendering
 				return SUB_NODE_HR
 			}
 
-			if ($sub_nodes[$sub_node_id]) {
+			if ($sub_nodes[$sub_node_id] !== undefined) { // reminder: can be a falsy node-like 0, ''
 				return $sub_nodes[$sub_node_id]!
 			}
 

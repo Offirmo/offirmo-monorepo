@@ -114,7 +114,7 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 
 		// 2a. top priority result -- for display
 		// to display where we are, ex "Book X > Chapter X > Page N out of M"
-		breadcrumbs: [ book.title ],
+		breadcrumbs: [ RichText.renderⵧto_text(book.title).trim() ],
 		part_type: 'page', // so far
 		relative_index‿human: -1, // so far
 		group_count: -1, // so far
@@ -181,7 +181,7 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 
 			// 2a.
 			result.breadcrumbs.pop() // remove the part title since it will be in the content
-			result.breadcrumbs.push('cover')
+			//result.breadcrumbs.push('cover')
 			result.part_type = parent?.parts_type || 'book'
 			result.relative_index‿human = 0 // means "cover"
 			result.group_count = parts_keys.length

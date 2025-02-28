@@ -4,6 +4,7 @@
 7 demeures https://mailchi.mp/mariedenazareth.com/quelles-sont-les-etapes-de-la-vie-mystique-selon-sainte-therese-davila
 7+7 œuvres de miséricorde https://fr.wikipedia.org/wiki/%C5%92uvres_de_mis%C3%A9ricorde
 absurdism = Theory that life in general is meaningless
+animaux méchants?
 animism
 apatheism = Apathy toward the existence or non-existence of God
 apostles -- what happened to them
@@ -15,6 +16,7 @@ cosmicism = complete irrelevance of mankind in the face of the cosmic entities t
 countries -- how christianism was introduced
 Dead Sea scrolls
 determinism = Philosophical view that events are determined by prior events
+Dieu crée monde pas d’un coup = progrès , cocréation
 doubt https://aleteia.org/2023/04/15/is-all-doubt-bad/
 dévotions -- https://aleteia.org/2023/11/27/why-our-lady-of-grace-is-on-the-miraculous-medal
 every time you step in, you rob your team of the lessons they need to grow https://www.linkedin.com/posts/tahahussain_at-microsoft-a-junior-engineer-spent-3-days-activity-7291493025334149120-MjEo
@@ -52,6 +54,7 @@ philosophical problems -- impossibility of proving any truth, even in the fields
 philosophical problems -- mind-body problem
 philosophical problems -- why there is something rather than nothing?
 philosophical problems https://en.wikipedia.org/wiki/List_of_philosophical_problems
+pomme ? serpent? = dessin
 prayer
 prayer -- extension of selfishness: santa's list, promise to be good, implore, negotiate, plead
 problem of evil https://en.wikipedia.org/wiki/Problem_of_evil
