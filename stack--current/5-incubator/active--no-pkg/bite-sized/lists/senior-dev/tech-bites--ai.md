@@ -56,6 +56,8 @@ diffusers
 diffusion
 Discrete Variational Auto Encoder (VAE) for image generation? https://medium.com/@jaswanth04/discrete-variational-auto-encoder-explained-41493ebe294d
 DL Deep Learning (NN)
+effort paradox -- optimal human touchpoints
+effort paradox https://uxdesign.cc/the-effort-paradox-in-ai-design-996a0bc2f7f6
 embeddings = raw underlying representation of a concept preserving aspects of its content and/or its meaning (Of course it's model-dependent?) https://platform.openai.com/docs/guides/embeddings/use-cases
 fine-tuning
 frontier AI -- OpenAI = highly capable foundation models that could possess dangerous capabilities sufficient to pose severe risks to public safety https://openai.com/index/frontier-ai-regulation/
@@ -173,6 +175,7 @@ tasks -- vision -- Video Classification
 tasks -- vision -- Zero-Shot Image Classification
 tasks -- vision -- Zero-Shot Object Detection
 temperature
+temptation to over-automate = need balance vs overwork https://uxdesign.cc/the-effort-paradox-in-ai-design-996a0bc2f7f6
 tensor ??
 TensorFlow = outdated, this is all pyTorch now. See also JAX
 Text generation models -> see GPT https://platform.openai.com/docs/introduction/text-generation-models

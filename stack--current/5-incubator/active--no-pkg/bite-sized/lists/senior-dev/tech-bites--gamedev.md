@@ -95,6 +95,8 @@ graphics -- 3D -- perspective (true 3D)
 graphics -- projections https://en.wikipedia.org/wiki/Axonometric_projection https://en.wikipedia.org/wiki/Axonometric_projection#/media/File:Graphical_projection_comparison.png
 graphics https://en.wikipedia.org/wiki/Video_game_graphics
 idle
+matchmaking -- elo hell https://en.wikipedia.org/wiki/Elo_hell
+matchmaking -- smurfing
 mechanics
 mechanics -- aggro, tank, taunt
 mechanics -- base building (Elvenar)
@@ -182,6 +184,7 @@ PvE, PvP
 quality of life (QoL)
 raid
 random encounter
+ranking systems https://en.wikipedia.org/wiki/Elo_rating_system
 rating -- Diverse Representations = Which traditionally marginalized groups are represented? This can refer to gender, race, ethnicity, age, disability, religious backgrounds, socioeconomic status, or body shapes that have been underrepresented in media. How are the characters from those groups portrayed? Are they drawn from stereotypes? Are they narrow or well rounded? Do they have agency, or is their only function to support a White/male/dominant character? Are behaviors and characteristics that are traditionally seen as "masculine" and "feminine" equally valued? Is this title telling an unknown or nontraditional story?
 rating -- Drinking, Drugs & Smoking = Do characters smoke? Drink? Do drugs? Is the behavior glamorized? What are the consequences of that behavior? Are the characters of legal age?
 rating -- Ease of Play = How simple is it to learn? Are game controls difficult/complicated or intuitive? What kinds of accessibility features are available?

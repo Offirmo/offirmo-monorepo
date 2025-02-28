@@ -4,6 +4,7 @@
 7 demeures https://mailchi.mp/mariedenazareth.com/quelles-sont-les-etapes-de-la-vie-mystique-selon-sainte-therese-davila
 7+7 œuvres de miséricorde https://fr.wikipedia.org/wiki/%C5%92uvres_de_mis%C3%A9ricorde
 absurdism = Theory that life in general is meaningless
+Action on top of prayer
 animaux méchants?
 animism
 apatheism = Apathy toward the existence or non-existence of God
@@ -15,6 +16,7 @@ cargo cult
 cosmicism = complete irrelevance of mankind in the face of the cosmic entities that apparently exist in the universe https://en.wikipedia.org/wiki/Cosmicism
 countries -- how christianism was introduced
 Dead Sea scrolls
+debate -- Mother Teresa Was a Jerk, and So Were a Bunch of Other Saints https://www.vice.com/en/article/mother-teresa-was-a-jerk-and-so-were-a-bunch-of-other-saints/
 determinism = Philosophical view that events are determined by prior events
 Dieu crée monde pas d’un coup = progrès , cocréation
 doubt https://aleteia.org/2023/04/15/is-all-doubt-bad/
@@ -28,6 +30,7 @@ fathers of the Church https://aleteia.org/2018/02/02/who-are-the-fathers-of-the-
 Fatima: message, children, secrets
 fine-tuned universe (not an argument, selection bias) https://en.wikipedia.org/wiki/Fine-tuned_universe
 first cause
+Gratitude
 great apostasy https://en.wikipedia.org/wiki/Great_Apostasy
 holier than you
 https://aleteia.org/2024/11/26/shinichi-suzuki-showed-how-music-can-ennoble-the-soul
@@ -59,6 +62,7 @@ prayer
 prayer -- extension of selfishness: santa's list, promise to be good, implore, negotiate, plead
 problem of evil https://en.wikipedia.org/wiki/Problem_of_evil
 purposeless, mechanical and uncaring universe. Human beings, with their limited faculties, can never fully understand this universe.
+Rely on God
 Russian Pilgrim
 scientism
 selfishness

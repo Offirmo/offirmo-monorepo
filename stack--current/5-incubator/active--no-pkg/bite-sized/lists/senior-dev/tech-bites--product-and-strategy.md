@@ -198,6 +198,7 @@ second product -- When and How https://caseyaccidental.com/second-products/
 shared vision = maintaining a shared vision across the board to help stay on course
 side projects -- outside of job https://www.reddit.com/r/SideProject/comments/1br62xb/building_side_projects_outside_fulltime_job/
 simplicity "no ads, no gimmicks, no games"
+sleeper technology
 stalking horse https://en.wikipedia.org/wiki/Stalking_horse
 startups should avoid being held hostage by the preferences of their early user base if it deviates from the broader market, ex. social feed or reels
 strategy -- "bowling pin" = starts with a niche segment easily attainable then move to next niche or broader market

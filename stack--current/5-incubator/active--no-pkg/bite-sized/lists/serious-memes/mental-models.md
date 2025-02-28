@@ -52,7 +52,6 @@
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 a country is a farm
 abandon animaux compagnie
-absorbing barrier = anything that prevents people with skin in the game from emerging from it, and to which the system will invariably tend. Let us call these situations ruin, as the entity cannot emerge from the condition https://en.wikipedia.org/wiki/Ergodic_hypothesis#Ergodic_hypothesis_in_finance
 academic disciplines -- humanities = academic disciplines that study aspects of human society and culture, including certain fundamental questions asked by humans https://en.wikipedia.org/wiki/Humanities
 academic disciplines -- trans / cross
 accent -- miscommunication https://paulgraham.com/accents.html
@@ -71,6 +70,7 @@ alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_co
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 amour vs attraction
 Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
+anti-fragile
 applied = vs. theoric. practical. Not always need to be an expert / scientist / priest. Applying (citizen, engineer, lay) is complementary and can be, at times, more useful/concrete than expertise ("perché")
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
 assumptions -- faulty
@@ -128,6 +128,7 @@ bullying = repeated pattern of offensive, intimidating, or hostile behavior(s) o
 busy work https://en.wikipedia.org/wiki/Busy_work
 buy nice or buy twice
 cadre = should lead, can change the world
+Can the Subaltern Speak? = highlights the challenges faced by marginalised groups in having their voices heard within dominant power structure https://en.wikipedia.org/wiki/Gayatri_Chakravorty_Spivak#%22Can_the_Subaltern_Speak?%22
 can't satisfy others
 capitalism -- issues -- inability to collectively improve, ex. global warming
 capitalism -- late stage
@@ -190,6 +191,7 @@ creativity -- begins at the edge: Change starts away from the spotlight. Then, i
 crimes -- human trafficking
 criminal act = fraud, theft, dishonesty, arson, wilful damage or malicious damage
 critical thinking +++  https://strategyu.co/critical-thinking/
+cronyism = specific form of in-group favoritism = spoils system practice of partiality in awarding jobs and other advantages to friends or trusted colleagues, especially in politics and between politicians and supportive organizations https://en.wikipedia.org/wiki/Cronyism
 crucial conversations
 crème solaire vs brossage de dents
 cultural hegemony https://en.wikipedia.org/wiki/Cultural_hegemony https://en.wikipedia.org/wiki/Power_(social_and_political)#Cultural_hegemony
@@ -248,6 +250,8 @@ disfranchisement = voter disqualification, is the restriction of suffrage (the r
 disrespect = lack of consideration or regard for others’ privacy, physical or emotional space, viewpoints, or belongings. Intimidation, aggressive behavior, “the silent treatment”. Thoughtless or arrogant behavior, like using profanity when someone objects to it.
 diversité des esprits humains
 don't expect perfection -> trigger self-consciousness = counter-productive
+don't judge me / You do you. I’ll do me / I’m just living my truth. You live yours. https://aleteia.org/2022/12/18/why-saying-dont-judge-me-isnt-quite-right
+don't shoot the messenger
 doublespeak: People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
 drinking https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd44714e619a
 drive by
@@ -258,14 +262,19 @@ effective altruism
 effet projecteur
 effet rétroviseur
 efficient market hypothesis = (false) https://quant.stackexchange.com/questions/81684/why-is-efficient-market-hypothesis-still-unanswered-and-no-one-really-seems-to-c
+effort paradox = Betty Crocker eggs https://uxdesign.cc/the-effort-paradox-in-ai-design-996a0bc2f7f6
 ego
+ego -- vs. craftman's pride?
 Eisenhower's Urgent/Important https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
 elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
 emotionally secure https://www.cnbc.com/2024/01/03/harvard-psychologist-if-you-answer-yes-to-any-of-these-questions-youre-more-emotionally-secure-than-most-people.html
 English
+entrepreneurship -- billing -- free day https://blog.jpl-consulting.com/2011/05/the-free-day/
+entrepreneurship -- billing -- hourly rate vs fixed price 
 equality vs equity https://medium.com/@CRA1G/the-evolution-of-an-accidental-meme-ddc4e139e0e4
 equity
+eternal september https://en.wikipedia.org/wiki/Eternal_September
 euthanasia https://aleteia.org/2024/09/02/new-australian-study-challenges-the-rise-of-euthanasia
 every occupation has its pro/cons
 every time you step in, you rob your team of the lessons they need to grow https://www.linkedin.com/posts/tahahussain_at-microsoft-a-junior-engineer-spent-3-days-activity-7291493025334149120-MjEo
@@ -380,6 +389,7 @@ ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-
 identity -- " I’d tied my identity and reputation to hard work"
 idées (no natural upper bound) ne s'usent que si l'on ne s'en sert pas (contre intuitif) https://en.wikipedia.org/wiki/Lindy_effect#History
 if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
+IKEA effect = labor leads to love https://www.hbs.edu/ris/Publication%20Files/11-091.pdf
 ikigai = a reason for being what you love ∩ what you're good at ∩ what the world needs ∩ what you can be paid for
 impostor syndrome
 impulsivity = related to problem gambling, problem video gaming, gambling-related cognitions, risky loot boxes engagement https://www.sciencedirect.com/science/article/pii/S0306460322000934
@@ -406,6 +416,7 @@ intellectual honesty -- FLOATER "Falsifiable, Logic, Objective, Alternative expl
 intellectual honesty -- FLOATER -- If someone claims they saw a unicorn, ask yourself: Is it Falsifiable? Were there any Logic fallacies? Are they being Objective? Are there Alternative explanations? Is this a Tentative conclusion? Is the Evidence reliable? Can you Replicate the results?
 intellectual honesty -- “It’s not possible” vs “I wasn’t able to do it” vs “I don’t want to do it.”
 intellectual honesty = willingness to see and admit the truth, even if it goes against your argument, supports the argument of “the other side,” or proves you wrong. Even if it bruises your ego. https://newsletter.weskao.com/p/intellectual-honesty
+internalising feelings of inferiority and alienation (colonialism, race...)
 intrinsic/extrinsic motivation https://www.swyx.io/js-tooling
 inversion: Avoiding stupidity is easier than trying to be brilliant. Instead of asking, “How can I help my company?” you should ask, “What’s hurting my company the most and how can I avoid it?” Identify obvious failure points, and steer clear of them.
 investing
@@ -417,9 +428,13 @@ irredentism https://www.reddit.com/r/history/comments/sji919/is_there_a_term_for
 it's impossible to agree on what's allowed -- no vehicles in the park https://novehiclesinthepark.com/ https://novehiclesinthepark.com/results.php
 it's impossible to agree on what's allowed https://danluu.com/impossible-agree/
 it's not about lowering the bar, it's about helping more people reach it.
+Jack Welch A/B/C players -- A = filled with passion, committed to "making things happen", open to ideas from anywhere, blessed with much "runway" ahead of them, charisma, able to energize themselves and others, can make business productive and enjoyable at the same time, exhibit four E of leadership
+Jack Welch A/B/C players -- B = not visionary or the most driven, but "vital" because they make up the majority
+Jack Welch A/B/C players -- C = nonproducers, likely to "enervate" rather than "energize". Procrastination, failure to deliver on promises
+Jack Welch A/B/C players https://en.wikipedia.org/wiki/Vitality_curve#Ratings
 jamais assez / 1st times
 Johari window https://en.wikipedia.org/wiki/Johari_window
-joie de l’effort
+joie de l’effort = "Satisfaction lies in the effort, not in the attainment" Gandhi
 joie du don
 juger vs. évaluer
 justifiable homicide = interesting cultural differences https://en.wikipedia.org/wiki/Justifiable_homicide
@@ -470,7 +485,13 @@ law -- crimes -- trespass
 law -- crimes -- war crimes
 law of Ability = every ability is acquired through the workings of life
 law of Shitty Click-Through Rates = Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
+le bien ne fait pas de bruit, le bruit ne fait pas de bien
 le premier jour du reste de sa vie
+leadership -- 4 "E"s of leadership -- Edge = The "Edge" to make difficult decisions
+leadership -- 4 "E"s of leadership -- Energize = Can Energize others around common goals
+leadership -- 4 "E"s of leadership -- Energy = Very high Energy levels
+leadership -- 4 "E"s of leadership -- Execute = The ability to consistently Execute
+leadership -- 4 "E"s of leadership https://en.wikipedia.org/wiki/Vitality_curve#Ratings
 leadership -- change or die
 leadership -- Decisions are about action
 leadership -- exiger seulement ce qu’on peut faire soi même
@@ -480,7 +501,9 @@ leadership -- know when to fight
 leadership -- leader - leader -- context-rich environment / information management
 leadership -- must never ask sth they couldn't do
 leadership -- timeless lessons https://www.linkedin.com/pulse/back-future-timeless-lessons-leadership-jo-owen
+learned helplessness
 learning -- lifelong = learning never stops
+learning -- no speed limit = all the way through High School at the same measured pace as everyone else. I could have done whatever I wanted, but I thought there was a speed limit https://sive.rs/kimo
 learning machines "I constantly see people rise in life who are not the smartest, sometimes not even the most diligent, but they are learning machines" (Munger https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger)
 legibility = We are blind to what we cannot measure. Not everything that counts can be measured, and not everything that can be measured counts. But people manage what they can measure, so society repeats the same mistakes.
 lend-lease https://en.wikipedia.org/wiki/Lend-Lease
@@ -496,8 +519,10 @@ Lev Landau classification of physicists https://books.google.com.au/books?id=nGc
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 life https://en.wikipedia.org/wiki/Life
 life isn't fair https://www.linkedin.com/pulse/lifell-kill-ya-allen-white
+life operating system -- Munger https://fs.blog/munger-operating-system/
 lifeboat strategy to avoid annihilation of the human race
 lifestyle
+lifestyle inflation
 Lindy effect = a theorized phenomenon by which the future life expectancy of some non-perishable things, like a technology or an idea, is proportional to their current age https://en.wikipedia.org/wiki/Lindy_effect
 linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_relativity
 living history = activity that incorporates historical tools, activities and dress into an interactive presentation that seeks to give observers and participants a sense of stepping back in time https://en.wikipedia.org/wiki/Living_history
@@ -567,6 +592,7 @@ needs / wants https://en.wikipedia.org/wiki/Need
 network effect
 Never interrupt someone doing what you said couldn't be done.
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
+new normal
 next larger context = always design a thing by considering it in its next larger context — a chair in a room, a room in a house, a house in a city... https://skamille.medium.com/the-next-larger-context-3970afaa8fb2 (see also shearing layers)
 no conflict / safe conflict / extreme conflict
 no drug
@@ -579,9 +605,11 @@ nobility -- true
 non-violence
 normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-securite-la-normalisation-de-la-deviance-suite
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen
+not gonna make it "ngmi" = can't adapt https://ghuntley.com/ngmi/
 not wrong infos but missing pieces of the puzzle
 nutrition / diététique
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
+old boy network = informal system in which wealthy men with similar social or educational backgrounds help each other in business or personal matters https://en.wikipedia.org/wiki/Old_boy_network
 oligopoly = a market in which pricing control lies in the hands of a few sellers https://en.wikipedia.org/wiki/Oligopoly
 on peut toujours faire mieux
 once deployed, it’s too late; there’s only escalation (nuclear, euthanazia)
@@ -695,6 +723,7 @@ race -- slavery
 race -- white supremacy https://en.wikipedia.org/wiki/Grandfather_clause
 race to the bottom
 radical candor
+rank and file
 rare events = ex. COVID-19 https://en.wikipedia.org/wiki/Rare_events
 rationalize
 re-thinking established patterns
@@ -705,6 +734,7 @@ reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
 rebound effect https://blog.jim-nielsen.com/2024/notes-on-making-software-by-peter-van-hardenberg/
 recruiting others to support you in addressing issue
 red herring
+regulatory crackdown
 rent seeking https://en.wikipedia.org/wiki/Rent-seeking
 resource curse -- Dutch disease https://en.wikipedia.org/wiki/Dutch_disease
 resource curse = the paradox of plenty: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources https://en.wikipedia.org/wiki/Resource_curse
@@ -756,6 +786,7 @@ signal-to-noise ratio
 signaling -- class, social standing, status
 signaling -- virtue
 signaling = behavior that convey (advertise?) something about ourselves, true or not
+signalling -- honest = stotting,
 signalling -- theory https://en.wikipedia.org/wiki/Signalling_theory
 signalling -- virtue https://en.wikipedia.org/wiki/Virtue_signalling
 significance https://www.explainxkcd.com/wiki/index.php/882:_Significant
@@ -766,11 +797,13 @@ simulation hypothesis https://en.wikipedia.org/wiki/Simulation_hypothesis
 sinecure = position with a ~salary that requires or involves little or no responsibility, labour https://en.wikipedia.org/wiki/Sinecure
 Situation Complication Question Answer (SCQA) = A Framework For Defining Problems & Hypotheses https://strategyu.co/scqa-a-framework-for-defining-problems-hypotheses/
 skin in the game
+skin in the game -- absorbing barrier = anything that prevents people with skin in the game from emerging from it, and to which the system will invariably tend. Let us call these situations ruin, as the entity cannot emerge from the condition https://en.wikipedia.org/wiki/Ergodic_hypothesis#Ergodic_hypothesis_in_finance
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 sleep on it
 SMART goal-setting framework
 social capital (white male)
 social debt = friends, family, and strangers who feel entitled to ask, beg, and steal https://collabfund.com/blog/rich-and-anonymous/
+social norm of reciprocity https://en.wikipedia.org/wiki/Norm_of_reciprocity
 social pressure / free will
 soft skills https://newsletter.weskao.com/p/how-to-give-a-senior-leader-feedback-without-getting-fired
 soft skills https://softskills.audio/
@@ -779,6 +812,7 @@ sponcon "sponsored content" = a form of influencer marketing popular on social m
 stages of life / seasons of life
 staggered contour trenches
 stakeholder
+standards -- having some
 standards of proof -- 01 Some evidence
 standards of proof -- 02 Reasonable indications
 standards of proof -- 03 Reasonable suspicion
@@ -831,6 +865,7 @@ theory of everything https://en.wikipedia.org/wiki/Theory_of_everything
 things learned from Medicine / Dentistry https://zenfamily.dental/csLearnDental.php
 THINK hack = Is it True? Helpful? Inspiring? Necessary? Kind?
 thought leader
+tier list https://en.wikipedia.org/wiki/Tier_list
 tier-3 meme
 time management
 time-tested
@@ -840,7 +875,7 @@ tools -- spreadsheet
 tools -- trello
 top-down/bottom-up
 tradeoffs / can't have everything
-tragedy of the commons = Self-interests causing depletion of a shared resource
+tragedy of the commons = Self-interests causing depletion of a shared resource https://en.wikipedia.org/wiki/Tragedy_of_the_commons
 transferable skills
 Tree Decision Rights Model http://www.cio.com/article/2386119/careers-staffing/how-it-leaders-can-empower-teams-to-become-decision-makers.html
 tribal knowledge
@@ -865,6 +900,7 @@ verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 verisimilitude
 via negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 victimisation/retaliation = subject to or threatened with some kind of disadvantage or unfair treatment (often referred to as detriment) because they made (or plan to make) a workplace complaint, or helped someone else to do so
+vitality curve / stack ranking / forced ranking / rank and yank = performance management practice that calls for individuals to be ranked or rated against their coworkers https://en.wikipedia.org/wiki/Vitality_curve
 viz
 viz -- diagrams -- charts
 viz -- diagrams -- sankey
@@ -882,7 +918,10 @@ who moved my cheese?
 winner takes it all
 wisdom
 wisdom -- a wisdom for left may not be valid for right
+wisdom of the rooms = AA steps
 xenia https://greekmythcomix.com/comic/how-to-do-xenia/
 XY problem = "what are you trying to achieve?" https://xyproblem.info/
+you are a tool. It sucks not being on top = not true, "being of service to something or someone, which gives purpose"
 you are the company you keep
 you can bring a horse to water...
+zero-sum game https://en.wikipedia.org/wiki/Zero-sum_game

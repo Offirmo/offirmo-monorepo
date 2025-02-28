@@ -89,6 +89,9 @@ blocking
 blocklist/blacklist -- https://paulgraham.com/spamhausblacklist.html
 bro culture in tech https://www.smh.com.au/technology/australias-tech-darling-atlassian-in-sexism-row-20140605-zryjd.html
 bug -- mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html
+bugs -- $370M bug https://en.wikipedia.org/wiki/Ariane_flight_V88
+bugs -- significants https://en.wikipedia.org/wiki/List_of_software_bugs
+C++ 26 https://thenewstack.io/coming-to-iso-c-26-standard-an-ai-acceleration-edge/
 C10k problem https://en.wikipedia.org/wiki/C10k_problem
 cache
 cache -- stampede https://en.wikipedia.org/wiki/Cache_stampede
@@ -124,6 +127,7 @@ CHOP "chat-oriented programming"
 CI (Continuous Integration) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 class
 client/server -- multi-tier architecture
+clippy https://www.mentalfloss.com/article/504767/tragic-life-clippy-worlds-most-hated-virtual-assistant
 close / destroy / terminate / dispose / release / free / delete / destruct / finalize / teardown / cleanup / shutdown / stop / end / abort / cancel / halt / kill / exit / quit / unload / dispose...
 code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 code quality = the only definition of quality in code that makes any sense is our ability to change the code. If it's easy to change, it's high quality; if it's hard to change, it's not. 
@@ -173,6 +177,7 @@ concurrency -- starvation https://en.wikipedia.org/wiki/Starvation_(computer_sci
 concurrency -- thread
 concurrency -- thread pool
 concurrency -- wait-free, lock free
+concurrent ownership
 connascence https://en.wikipedia.org/wiki/Connascence
 considered harmful
 considered harmful -- clever code https://www.joshwcomeau.com/career/clever-code-considered-harmful/
@@ -252,6 +257,7 @@ design patterns -- facade https://en.wikipedia.org/wiki/Facade_pattern
 design patterns -- strangler https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/
 design patterns -- visitor (not recommended, see grug)
 design smell https://en.wikipedia.org/wiki/Design_smell
+developement containers https://containers.dev/implementors/spec/
 DevEx
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 DevOps Research and Assessment (DORA) = how we should develop our software right and what numbers we should show to our managers to make them happy https://medium.com/booking-com-development/a-step-by-step-guide-on-how-not-to-implement-dora-metrics-85081f0d4484
@@ -271,6 +277,7 @@ encoding -- binary-to-text -- risk of accidental words
 encoding -- binary-to-text https://en.wikipedia.org/wiki/Binary-to-text_encoding
 engineer's notions of simplicity, economies of scale, and design integrity https://en.wikipedia.org/wiki/Planned_obsolescence#History
 entitlements -- non-standard offerings or commercial terms to meet their needs through high touch sales motions. High touch Sales teams work closely with our customers to understand their solution needs and buying preferences like Multi-year billed annual, ELAs, Ramp discounts. There is a significant volume of customers and revenue from such deals
+epochs: a backward-compatible language evolution mechanism https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1881r0.html
 error -- handling -- exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
 error -- handling -- fail fast = Check input and fail on nonsensical input or invalid state as early as possible, preferably with an exception or error response that will make the exact problem clear to your caller https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 error -- reuse error codes
@@ -354,6 +361,7 @@ IDEALS = principles for microservice design
 idempotent = make mutations idempotent. A full retry of a partial failure shouldn’t corrupt/duplicate data.
 if it ain't broke, don't fix it
 IIFE https://codilime.com/blog/iffe-forgotten-javascript-pattern/
+illusion of clean code = "the good news is that my code is quite beautiful and well organized, with perfectly uniform indentation and formatting, completely consistent conventions, and immaculately well factored. Any developer who is worth their salt in the language I have laid down will be able to understand, trace, and build upon my code within one day of poring over it. (If not, fire them. Trust me.)" https://blog.jpl-consulting.com/2011/03/what-happens-if-i-get-hit-by-a-bus/
 immutability
 inheritance -- diamond
 inheritance -- prototypal
@@ -434,6 +442,7 @@ log
 loop
 loop - breaking out of
 LTS, maintenance LTS, active LTS https://nodejs.org/en/about/previous-releases
+LxTHW "Learn X The Hard Way" Philosophy = has students do exercises, focuses on practice and rote repetition, and instills an attitude that to learn anything one must be prepared to work at it https://github.com/georgeowen1993/learn-git-the-hard-way/ 
 magic number
 manifest
 map
@@ -443,6 +452,8 @@ media types https://www.iana.org/assignments/media-types/media-types.xhtml
 memory -- heap
 memory -- stack
 memory safe -- "about 40% of all security problems in curl can be blamed on us using C instead of a memory-safe language. 50% of the high/critical severity ones" https://daniel.haxx.se/blog/2024/12/12/a-twenty-five-years-old-curl-bug/comment-page-1
+memory safety -- borrow-checking system = Rust https://thenewstack.io/c-committee-divided-on-memory-safety-plans/
+memory safety -- profiles https://thenewstack.io/c-committee-divided-on-memory-safety-plans/
 merge queue
 message passing https://en.wikipedia.org/wiki/Message_passing
 MFA -- 2FA
@@ -451,6 +462,7 @@ microcode
 microprocessor https://firstmicroprocessor.com/
 middleware
 migrations
+mission-critical software
 mixins -- considered harmful https://legacy.reactjs.org/blog/2016/07/13/mixins-considered-harmful.html
 mocha / chai
 monads
@@ -551,6 +563,7 @@ privacy -- right to correct
 privacy -- right to delete
 privacy -- right to portability
 privacy -- right to restrict
+programmer resistance https://blog.jpl-consulting.com/2010/07/programmer-resistance/
 programming -- application
 programming -- systems https://en.wikipedia.org/wiki/Systems_programming
 programming languages -- top -- 2024 https://spectrum.ieee.org/top-programming-languages-2024
@@ -606,6 +619,7 @@ rolling deploy
 rpc -- deadline https://protobuf.dev/programming-guides/api/
 rule of composition https://www.linfo.org/rule_of_composition.html
 rule of silence https://www.linfo.org/rule_of_silence.html
+Rust -- TRACTOR "Translating All C to Rust"
 SAAS -- Shared responsibility model
 scatter/gather (datastreams)
 schema
@@ -634,6 +648,7 @@ security -- Never trust any input!
 security -- OWASP top 10 https://owasp.org/www-project-top-ten/
 security -- Plan for security from the start - it's not something you can bolt on at the end
 security -- principle of least privilege
+security -- through obscurity https://en.wikipedia.org/wiki/Security_through_obscurity
 security -- Use defence in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
 security -- Use threat modelling
 security -- Using crypto doesn't mean you're secure (attackers will look for a weaker link)
@@ -773,6 +788,7 @@ UX (User Experience)
 validate everything
 vaporware
 variables pointer / natives
+vendoring https://htmx.org/essays/vendoring/
 virtual private cloud (VPC)
 web assembly (asm.js)
 Wirth's law = software systems grow faster in size and complexity than methods to handle complexity are invented. software is getting slower more rapidly than hardware is becoming faster. https://en.wikipedia.org/wiki/Wirth%27s_law
