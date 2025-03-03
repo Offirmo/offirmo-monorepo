@@ -190,6 +190,7 @@ training (NN) -- supervised learning
 training (NN) -- transfer learning = see fine-tuning
 training (NN) -- unsupervised learning
 training (NN) = iterative process in which data is passed to a neural network + parameters of the neural network are adjusted to achieve an optimal solution for the given problem. a dataset is required
+training data -- illegal https://www.pcgamer.com/gaming-industry/court-documents-show-not-only-did-meta-torrent-terabytes-of-pirated-books-to-train-ai-models-employees-wouldnt-stop-emailing-each-other-about-it-torrenting-from-a-corporate-laptop-doesnt-feel-right/
 Trainium
 transfer learning
 transformers "a new type of NLP model that demolished the reading comprehension abilities of both humans and the best AI incumbent at the time" ~pattern recognition techniques

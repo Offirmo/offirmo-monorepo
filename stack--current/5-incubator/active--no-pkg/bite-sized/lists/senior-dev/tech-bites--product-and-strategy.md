@@ -1,3 +1,4 @@
+++ Getting Real https://basecamp.com/gettingreal
 6 Reasons Users Hate Your New Feature https://www.slicedbreaddesign.com/blog/6-reasons-users-hate-your-new-feature
 [ ] https://skamille.medium.com/
 [ ] personal MBA
@@ -22,6 +23,7 @@ consolidation = common across multiple industries, which is fueling competition.
 core actions
 core actions -- active users
 core mental models (of the product)
+creator/user gap https://blog.jpl-consulting.com/2010/03/creator-user-gap/
 CSAT
 CSAT -- hard to move
 CSAT -- visual appeal
@@ -80,6 +82,7 @@ growth -- if we build it, they will come (not)
 growth -- labor perception / perceived labor https://growth.design/case-studies/labor-perception-bias
 growth -- onboarding -- fatigue
 growth -- viral = helpful but not necessary
+how to make something great https://ryolu.notion.site/how-to-make-something-great
 illegal practices -- monopoly
 illegal practices -- payola https://en.wikipedia.org/wiki/Payola
 illegal practices -- predatory pricing

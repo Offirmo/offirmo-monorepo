@@ -95,6 +95,7 @@ graphics -- 3D -- perspective (true 3D)
 graphics -- projections https://en.wikipedia.org/wiki/Axonometric_projection https://en.wikipedia.org/wiki/Axonometric_projection#/media/File:Graphical_projection_comparison.png
 graphics https://en.wikipedia.org/wiki/Video_game_graphics
 idle
+key item https://bulbapedia.bulbagarden.net/wiki/Key_Item
 matchmaking -- elo hell https://en.wikipedia.org/wiki/Elo_hell
 matchmaking -- smurfing
 mechanics

@@ -1,5 +1,6 @@
 12 factors https://12factor.net/
 2025 https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/
+5 min zoom vs 10 emails/comments volley https://blog.jpl-consulting.com/2010/04/ten-email-volley-or-five-minute-phone-call/
 [ ] +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
 [ ] +++ https://explorer.globe.engineer/
 [ ] +++ https://martinfowler.com/
@@ -257,13 +258,15 @@ design patterns -- facade https://en.wikipedia.org/wiki/Facade_pattern
 design patterns -- strangler https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/
 design patterns -- visitor (not recommended, see grug)
 design smell https://en.wikipedia.org/wiki/Design_smell
-developement containers https://containers.dev/implementors/spec/
+development containers https://containers.dev/implementors/spec/
 DevEx
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 DevOps Research and Assessment (DORA) = how we should develop our software right and what numbers we should show to our managers to make them happy https://medium.com/booking-com-development/a-step-by-step-guide-on-how-not-to-implement-dora-metrics-85081f0d4484
 DNS (Domain Name System)
 do what I mean (DWIM) = computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
 dogfooding = practice of a company using its own products or services internally as a way to test, evaluate, and improve them. Essentially, the company's employees become the primary users of their own products.
+domain -- Domain Driven Design (DDD) https://en.wikipedia.org/wiki/Domain-driven_design
+domain = a targeted subject area of a computer program
 DRY (don't repeat yourself)
 DRY -- WET (write everything twice) https://overreacted.io/the-wet-codebase/
 dry run
@@ -296,6 +299,8 @@ feature flag = dynamically change the state of production
 feedback loop -- speed needed
 FIFO
 file read
+file watcher -- watchman
+file watcher https://github.com/parcel-bundler/watcher
 file write
 finished software https://josem.co/the-beauty-of-finished-software/
 finops
@@ -422,6 +427,8 @@ language features -- data hiding
 language features -- encapsulation
 language features -- polymorphism
 language interprété types simples / types par référence
+languages -- generations = (disputed) https://en.wikipedia.org/wiki/Programming_language_generations
+languages -- higher level -- against https://www.reddit.com/r/compsci/comments/zx1eu8/von_neumann_was_admonishing_people_who_built/
 languages -- trends
 languages -- weekend https://stackoverflow.blog/2017/02/07/what-programming-languages-weekends/
 late/lazy evaluation vs fail fast
@@ -621,6 +628,7 @@ rule of composition https://www.linfo.org/rule_of_composition.html
 rule of silence https://www.linfo.org/rule_of_silence.html
 Rust -- TRACTOR "Translating All C to Rust"
 SAAS -- Shared responsibility model
+safety -- defense in depth = incident only when all the layers failed (rare but happens)
 scatter/gather (datastreams)
 schema
 schema explorer
@@ -648,6 +656,8 @@ security -- Never trust any input!
 security -- OWASP top 10 https://owasp.org/www-project-top-ten/
 security -- Plan for security from the start - it's not something you can bolt on at the end
 security -- principle of least privilege
+security -- through obscurity -- ok if not only https://security.stackexchange.com/questions/32064/at-what-point-does-something-count-as-security-through-obscurity
+security -- through obscurity -- still useful https://news.ycombinator.com/item?id=24444497
 security -- through obscurity https://en.wikipedia.org/wiki/Security_through_obscurity
 security -- Use defence in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
 security -- Use threat modelling

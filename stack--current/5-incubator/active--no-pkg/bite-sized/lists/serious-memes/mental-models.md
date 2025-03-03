@@ -10,6 +10,7 @@
 3 -- trichotomy https://en.wikipedia.org/wiki/Trichotomy_(philosophy)
 3 -- trilemma https://en.wikipedia.org/wiki/Trilemma
 3 hardest things to say -- I was wrong, I need help, I love you -> also 10 https://kristyna.co/mindful-entrepreneurship/10-hardest-things-for-people-to-say
+3 man killers: money, power, sex https://www.artofmanliness.com/character/behavior/3-man-killers-sex/
 3 sectors model -- 1 primary = raw materials
 3 sectors model -- 2 secondary = manufacturing
 3 sectors model -- 3 tertiary = services
@@ -310,6 +311,7 @@ feedback -- feedworward "in the future..." "next time..."
 femme/homme enfant https://www.wengood.com/fr/developpement-personnel/se-connaitre/art-femme-enfant
 Fermi paradox -- Drake equation https://en.wikipedia.org/wiki/Drake_equation
 Fermi paradox https://en.wikipedia.org/wiki/Fermi_paradox
+finance -- Benjamin Franklin's The Way to Wealth = 85 maxims https://www.artofmanliness.com/career-wealth/wealth/money-and-career-advice-from-benjamin-franklins-way-to-wealth/
 Financial Independence Retire Early (FIRE) https://www.reddit.com/r/financialindependence/
 Fingerprint for Success (F4S)
 first practice what you preach
@@ -408,6 +410,7 @@ influence operations -- breakout scale -- 06 policy response OR call for violenc
 influence operations -- breakout scale https://www.brookings.edu/articles/the-breakout-scale-measuring-the-impact-of-influence-operations/
 infotainment
 ingroup/outgroup
+innate desire to be useful, resourceful, valuable…and needed
 intellectual honesty -- 1 Is this true?
 intellectual honesty -- 2 What evidence do I have for and against this?
 intellectual honesty -- 3 Am I telling myself a certain narrative to avoid facing a truth I don’t like?
@@ -712,6 +715,7 @@ progress -- USA -- "trail of tears" = native mistreatment https://arthistory327.
 progress over perfection
 project management -- iron triangle = scope, time and people
 project management = boils down to one of two questions: When will it be done? Will it be done in time?
+précariat https://en.wikipedia.org/wiki/Precariat
 psychological safety
 Pulitzer prize -- biographies https://en.wikipedia.org/wiki/Pulitzer_Prize_for_Biography
 purchasing "messy middle" https://www.thinkwithgoogle.com/intl/en-emea/consumer-insights/consumer-journey/navigating-purchase-behavior-and-decision-making/
@@ -723,6 +727,7 @@ race -- slavery
 race -- white supremacy https://en.wikipedia.org/wiki/Grandfather_clause
 race to the bottom
 radical candor
+random acts of kindness -- bingo
 rank and file
 rare events = ex. COVID-19 https://en.wikipedia.org/wiki/Rare_events
 rationalize
@@ -853,6 +858,7 @@ T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
 table selection = This idea comes from poker, where you’re advised to choose your opponents carefully. That means you shouldn’t compete against the best people. You don’t need to get good at doing difficult things if you get good at avoiding difficult things. If you want to win, pick an easy table and nail your execution.
 talent vs. Genius = Society is good at training talent but terrible at cultivating genius. Talented people are good at hitting targets others can’t hit, but geniuses find targets others can’t see. They are opposite modes of excellence. Talent is predictable, genius is unpredictable.
 tax -- lazy https://www.insurancewatch.com.au/lazy-tax-insurance.html
+the best defense is a good offense
 The Boy Who Cried Wolf https://en.wikipedia.org/wiki/The_Boy_Who_Cried_Wolf
 The Map Is Not the Territory = Reality will never match the elegance of theory. All models have inconsistencies, but some are still useful. Some maps are useful because they’re inaccurate. If you want to find an edge, look for what the map leaves out.
 The Medium Is the Message = We pay too much attention to what is being said. But the medium of communication is more impactful. For example, the Internet’s impact on humanity has a bigger influence than anything that’s said on the Internet.

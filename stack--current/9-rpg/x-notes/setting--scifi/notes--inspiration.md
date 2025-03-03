@@ -92,5 +92,6 @@ TODO look at the reviews
 * Starfield (Bethesda, mixed) https://store.steampowered.com/app/1716740/Starfield/
 * https://en.wikipedia.org/wiki/Wing_Commander_(franchise) ?
 * https://en.wikipedia.org/wiki/Freelancer_(video_game) ?
+* Eve Online https://en.wikipedia.org/wiki/Expansions_of_Eve_Online
 
 https://store.steampowered.com/app/230290/Universe_Sandbox/
