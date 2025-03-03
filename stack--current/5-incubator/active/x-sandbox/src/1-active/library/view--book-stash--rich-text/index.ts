@@ -46,7 +46,7 @@ function renderꓽbookshelf(
 ): RichText.Node {
 	const list = RichText.listⵧordered()
 	list.addHints({
-		bullets_style: 'none',
+		listⵧstyleⵧtype: '',
 	})
 
 	const bookshelf = getꓽbookshelf(state)
@@ -70,22 +70,40 @@ function renderꓽpage_result(page_result: Immutable<PageResult>): RichText.Node
 		group_count,
 	} = page_result
 
-	const breadcrumbs‿bldr = RichText.fragmentⵧinline()
+	const $breadcrumbs = breadcrumbs
+		.toReversed()
+		.reduce<NodeLike>(($acc, crumb, index) => {
+			const builder = RichText.listⵧordered()
+				.addHints({ listⵧstyleⵧtype: '>' })
+
+			const text = RichText.weak(crumb).done()
+			builder.pushNode(text, {id: 'crumb'})
+
+			if ($acc)
+				builder.pushNode($acc, {id: 'sub'})
+
+			return builder.done()
+		}, '')
+	/*
+	const breadcrumbs‿bldr = RichText.fragmentⵧblock()
 	breadcrumbs.forEach((crumb, index, arr) => {
 		breadcrumbs‿bldr.pushText(' > ')
 		breadcrumbs‿bldr.pushInlineFragment(crumb)
-	})
-	builder.pushBlockFragment(breadcrumbs‿bldr.done(), {id: 'breadcrumbs'})
+	})*/
+	builder.pushHeading('Breadcrumb:')
+	builder.pushNode($breadcrumbs, {id: 'breadcrumbs'})
 
+	builder.pushHeading('Pagination:') // TODO needed???
 	if (relative_index‿human === 0) {
 		// this is a part cover
-		builder.pushBlockFragment(RichText.weak(`${group_count} ${part_type}(s)`).done(), { id: 'pagination'}) // TODO one day i18n
+		builder.pushBlockFragment(RichText.weak(`Cover, contains ${group_count} ${part_type}(s)`).done(), { id: 'pagination'}) // TODO one day i18n
 	}
 	else {
 		// this is a part content
 		builder.pushBlockFragment(RichText.weak(`${part_type} ${relative_index‿human} out of ${group_count}`).done(), { id: 'pagination'})
 	}
 
+	builder.pushHeading('Content:')
 	assert(!content.contentⵧvisual, `Page visual content not implemented!`)
 	builder.pushNode(content.content, {id: 'content'})
 

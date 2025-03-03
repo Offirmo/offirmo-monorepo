@@ -18,6 +18,7 @@ import {
 /////////////////////////////////////////////////
 
 interface RenderingOptionsⵧToText extends BaseRenderingOptions {
+	use_hints?: boolean
 	style:
 		| 'basic'    // text only
 		| 'advanced' // more intelligent: detect KV lists; allow bullet-less lists
@@ -25,6 +26,7 @@ interface RenderingOptionsⵧToText extends BaseRenderingOptions {
 }
 const DEFAULT_RENDERING_OPTIONSⵧToText = Object.freeze<RenderingOptionsⵧToText>({
 	...DEFAULT_RENDERING_OPTIONSⵧWalk,
+	use_hints: true,
 	style: 'advanced',
 })
 
@@ -216,11 +218,11 @@ const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToTex
 			// fallthrough
 			case 'ol': {
 				const bullet: string = (() => {
-					if ($node.$hints.bullets_style === 'none' && style === 'advanced')
-						return ''
+					if (options.use_hints && $node.$hints.listⵧstyleⵧtype !== undefined)
+						return $node.$hints.listⵧstyleⵧtype
 
 					if ($node.$type === 'ul')
-						return '- '
+						return '-'
 
 					const cleaned_index: string = (() => {
 						let res = String($sub_node_id).trim()
@@ -239,10 +241,10 @@ const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToTex
 						return `${cleaned_index}. ` // no padding
 
 					// alignment for readability
-					return cleaned_index.padStart(2) + '. '
+					return cleaned_index.padStart(2) + '.'
 				})()
 				const indent: string = '  '.repeat(state.nested_list_depth - 1)
-				return [ indent + bullet + sub_state.str, sub_state.trailing_spaces ]
+				return [ indent + bullet + (bullet ? ' ' : '') + sub_state.str, sub_state.trailing_spaces ]
 			}
 			default:
 				return [ sub_state.str, sub_state.trailing_spaces ]

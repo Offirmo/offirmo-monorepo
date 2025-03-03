@@ -27,21 +27,23 @@ describe(`${LIB} -- 03 BookStash -- 03 RichText`, function() {
 
 	describe('renderꓽpage_result()', function () {
 
-		it('should work', async () => {
+		it('should work -- root', async () => {
 			const experience_uid = Object.keys(EXAMPLE.experiences)[0]!
 			let page_result = await ↆgetꓽpage(EXAMPLE, experience_uid)
 			//console.log(`XXX page_result`, page_result)
 
-			console.log(`\n------- default ------`)
 			let $doc = renderꓽpage_result(page_result)
-			console.log(`--- txt:`)
-			console.log(renderⵧto_text($doc, { style: 'markdown' }))
+			//console.log(`--- txt:`)
+			//console.log(renderⵧto_text($doc, { style: 'markdown' }))
 			console.log(`--- terminal:`)
 			console.log(renderⵧto_terminal($doc))
+		})
 
-			console.log(`\n------- next ------`)
+		it('should work -- pages next to root', async () => {
+			const experience_uid = Object.keys(EXAMPLE.experiences)[0]!
+			let page_result = await ↆgetꓽpage(EXAMPLE, experience_uid)
 			page_result = await ↆgetꓽpage(EXAMPLE, experience_uid, page_result.referenceⵧnextⵧin_tree)
-			$doc = renderꓽpage_result(page_result)
+			let $doc = renderꓽpage_result(page_result)
 			console.log(`--- txt:`)
 			console.log(renderⵧto_text($doc, { style: 'markdown' }))
 			console.log(`--- terminal:`)

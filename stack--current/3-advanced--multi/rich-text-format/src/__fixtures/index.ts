@@ -322,7 +322,7 @@ const DOC_DEMO_HINTS: RichText.Document = {
 			$type: 'ul',
 			$sub: _SUB_UL_ITEMS,
 			$hints: {
-				bullets_style: 'none',
+				listⵧstyleⵧtype: '',
 			},
 		},
 	},

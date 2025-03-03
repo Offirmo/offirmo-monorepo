@@ -10,6 +10,7 @@ Annual Recurring Revenue (ARR)
 average revenue per user (ARPU)
 barriers -- to entry = moat against competitors
 barriers -- to exit = users can't leave
+bloated, forgettable software dripping with mediocrity. Blech. https://basecamp.com/gettingreal/01.1-what-is-getting-real
 boring -- culture 
 boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
 boring -- technology https://mcfunley.com/choose-boring-technology

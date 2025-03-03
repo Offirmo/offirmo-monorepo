@@ -49,8 +49,35 @@ interface PageResult {
 	//medium?: 'sheet' | 'scroll' | 'screen'
 }
 
-function _get_breadcrumb_entry(book_part : Immutable<BookPart>, key: BookPartKey): string {
-	return `${book_part.parts_type || 'part'} ${key}`
+function _get_breadcrumb_entry(book_part : Immutable<BookPart>, parents: Immutable<BookPart[]>, key?: BookPartKey): string {
+	const emoji = [...parents, book_part]
+		.toReversed()
+		.reduce((acc, book_part) => {
+			return acc || book_part.hints?.emoji
+
+		}, undefined as (string | undefined)) || '📖'
+
+	const title = RichText.renderⵧto_text(book_part.title || '').trim()
+
+	const pagination = (() => {
+		if (parents.length === 0) {
+			// we're root, no pagination
+			return ''
+		}
+
+		assert(key, `if parent, need the key!`)
+
+		throw new Error(`Not implemented!`)
+		//return `${book_part.parts_type || 'part'} ${key} of ${Object.keys(book_part.parts).length}`
+	})()
+
+	return [
+			emoji,
+			pagination,
+			title,
+		]
+		.filter(s => !!s)
+		.join(' ')
 }
 
 function _get_page_from_part_cover(book_part: Immutable<BookPart>, parent: Immutable<BookPart> | undefined): BookPage {
@@ -114,7 +141,9 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 
 		// 2a. top priority result -- for display
 		// to display where we are, ex "Book X > Chapter X > Page N out of M"
-		breadcrumbs: [ RichText.renderⵧto_text(book.title).trim() ],
+		breadcrumbs: [
+			//_get_breadcrumb_entry(book, [])
+		],
 		part_type: 'page', // so far
 		relative_index‿human: -1, // so far
 		group_count: -1, // so far
@@ -175,13 +204,11 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 		if (!parts_keyⵧcurrentⵧraw) {
 			// normal, no path = happens when we start reading the book/part
 
-
 			// 1.
 			result.content = _get_page_from_part_cover(book_part, parent)
 
 			// 2a.
-			result.breadcrumbs.pop() // remove the part title since it will be in the content
-			//result.breadcrumbs.push('cover')
+			result.breadcrumbs.push(_get_breadcrumb_entry(book_part, parent_parts_chain))
 			result.part_type = parent?.parts_type || 'book'
 			result.relative_index‿human = 0 // means "cover"
 			result.group_count = parts_keys.length
@@ -233,6 +260,8 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 			throw new Error('NIMP')
 		}
 
+		result.breadcrumbs.push(_get_breadcrumb_entry(book_part, parent_parts_chain, parts_keyⵧcurrent))
+
 		// did we reach a leaf?
 		const content = parts[parts_keyⵧcurrent]
 		if (isꓽPageⵧlike(content)) {
@@ -256,7 +285,7 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 			result.content = promote_toꓽBookPage(content)
 
 			// 2a.
-			result.breadcrumbs.push()
+			//result.breadcrumbs.push(xxx)
 			result.part_type = book_part.parts_type || 'page'
 			result.relative_index‿human = indexⵧcurrent + 1
 			result.group_count = parts_keys.length
@@ -335,7 +364,6 @@ function getꓽpage(book: Immutable<Book>, path: BookNodeReference = NODE_REFERE
 		referenceⵧup‿split.push(parts_keyⵧcurrent)
 
 		parent_parts_chain.push(book_part)
-		result.breadcrumbs.push(_get_breadcrumb_entry(book_part, parts_keyⵧcurrent))
 		book_part = parts[parts_keyⵧcurrent]! as Immutable<BookPart>
 	} while (false)
 

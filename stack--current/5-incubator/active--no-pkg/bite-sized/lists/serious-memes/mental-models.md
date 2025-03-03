@@ -1,3 +1,4 @@
+
 "natural order of things in society" established by the dominant ideology
 +++ https://thewokesalaryman.com/
 -- https://fs.blog/mental-models/
@@ -100,6 +101,7 @@ Bell curve = bottom 20%, middle 60%, top 20%
 Bet you’re fun at parties
 better ask for forgiveness than for permission
 better safe than sorry
+bias -- resulting = the tendency to judge a decision by its eventual outcome instead of based on the quality of the decision at the time it was made https://www.artofmanliness.com/career-wealth/career/one-mistake-never-to-make-when-leading-a-meeting/
 biases -- attractiveness
 biases -- baby-face
 bike shed effect = A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
@@ -128,7 +130,7 @@ bullying = Lack of consideration and empathy for those without power, Disrespect
 bullying = repeated pattern of offensive, intimidating, or hostile behavior(s) or language, often by a strong or other person of authority. Bullying creates a toxic atmosphere for everyone, but may be accepted by many as “part of the workplace culture”
 busy work https://en.wikipedia.org/wiki/Busy_work
 buy nice or buy twice
-cadre = should lead, can change the world
+cadre = should lead, can change the world (cf. "du role social de l'officier")
 Can the Subaltern Speak? = highlights the challenges faced by marginalised groups in having their voices heard within dominant power structure https://en.wikipedia.org/wiki/Gayatri_Chakravorty_Spivak#%22Can_the_Subaltern_Speak?%22
 can't satisfy others
 capitalism -- issues -- inability to collectively improve, ex. global warming
@@ -342,6 +344,8 @@ goals -- S.M.A.R.T. -- 05 T (Time-bound) Create a specific end date for the goal
 goldilock zone / problem
 good life questions https://radreads.co/10k-questions/
 Goodhart’s Law = When a measure becomes a target, it ceases to be a good measure. One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
+Gospel of Wealth -- Help those who will help themselves, to provide part of the means by which those who desire to improve may do so
+Gospel of Wealth = responsibility of philanthropy by the new upper class of self-made rich https://en.wikipedia.org/wiki/The_Gospel_of_Wealth
 grapevine
 great filter https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
 grit
@@ -507,7 +511,9 @@ leadership -- must never ask sth they couldn't do
 leadership -- timeless lessons https://www.linkedin.com/pulse/back-future-timeless-lessons-leadership-jo-owen
 learned helplessness
 learning -- lifelong = learning never stops
+learning -- membership of mutual improvement group https://www.artofmanliness.com/career-wealth/wealth/andrew-carnegie-financial-lessons/
 learning -- no speed limit = all the way through High School at the same measured pace as everyone else. I could have done whatever I wanted, but I thought there was a speed limit https://sive.rs/kimo
+learning -- self education = ex. spend all spare moments reading any books they could get their hands on https://www.artofmanliness.com/career-wealth/wealth/andrew-carnegie-financial-lessons/
 learning machines "I constantly see people rise in life who are not the smartest, sometimes not even the most diligent, but they are learning machines" (Munger https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger)
 legibility = We are blind to what we cannot measure. Not everything that counts can be measured, and not everything that can be measured counts. But people manage what they can measure, so society repeats the same mistakes.
 lend-lease https://en.wikipedia.org/wiki/Lend-Lease
@@ -606,6 +612,7 @@ Nobel prize learnings -- lost winners = didn't get the Nobel prize due to detail
 Nobel prize learnings -- random impact rule = analysis of Nobel scientists, famous work appears randomly over the career https://par.nsf.gov/servlets/purl/10113092
 nobility
 nobility -- true
+noblesse oblige https://en.wikipedia.org/wiki/Noblesse_oblige
 non-violence
 normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-securite-la-normalisation-de-la-deviance-suite
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen

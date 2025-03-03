@@ -45,7 +45,8 @@ type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 interface Hints {
 	href?: Uri‿x | Hyperlink // make this node a link to a specific resource (TODO clarify with HATEOAS)
 
-	bullets_style?: 'none' // for ul, to remove bullets (TODO ONE DAY also allow to customize?)
+	// string or keyword to use as bullets. to remove bullets: ''
+	listⵧstyleⵧtype?: string // https://www.w3schools.com/cssref/pr_list-style-type.php
 
 	key?: string // for ex. to recognize a specific content (do not abuse! Reminder to keep everything text-compatible)
 	//uuid?: string // for ex. to recognize a specific resource (TODO review, should send JSON together instead? or use actions?)

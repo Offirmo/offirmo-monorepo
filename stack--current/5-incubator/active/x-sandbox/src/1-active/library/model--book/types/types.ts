@@ -35,16 +35,15 @@ type Author = Text | undefined // undef = unknown
 
 /////////////////////////////////////////////////
 
-/** The Book minus its content.
+/** A Book minus its content.
  * Because we want lazy loading, we want to be able to progressively load a book, starting from the most basic infos.
  * Cover = 1st level, needed to display a list of books to the user who will then choose one to read
+ * Also reminder than a "book" can also be a collection of books, so book parts can extend cover as well
  *
  * https://fr.wikipedia.org/wiki/Glossaire_de_la_reliure
  */
-interface BookCover {
-	uid: BookUId // needed to later load the content
-
-	title: Text
+interface BookPartCover {
+	title?: Text
 
 	author?: Author | undefined
 
@@ -63,12 +62,27 @@ interface BookCover {
 		picture?: Url‿str
 
 		// useful for a single-line listing / Spine
-		emoji?: Emoji // 📔📕📗📘📙📓📒📃📜📄📰🗺
+		emoji?: Emoji // 📚📖📔📕📗📘📙📓📒📃📜📄📰🗺
 		icon?: Url‿str
 		// spine
 		color_bg?: CssⳇColor‿str
 		color_fg?: CssⳇColor‿str
+
+		// hint for visual display
+		/*direction?:
+			| 'btt' | 'ttb'
+			| 'ltr' | 'rtl'
+		medium?:
+			| 'sheet'
+			| 'scroll'
+			| 'screen'*/
 	}
+}
+// this level of granularity can be registered for lazy-loading
+interface BookCover extends BookPartCover {
+	uid: BookUId // needed to later load the content
+
+	title: Text // mandatory for this level
 }
 
 // page = smallest unit of a "book" that can be displayed / linked to / have a "next" button
@@ -84,28 +98,14 @@ type BookPageLike = BookPage | Text
 // any unit above the "page" final leave, ex. volume, chapter...
 // Can form a tree of any depth.
 type BookPartKey = string
-interface BookPart {
+interface BookPart extends BookPartCover {
 	parts_type?: string // ex. volume, chapter...
 	parts: {
 		[k: BookPartKey]: BookPart | BookPageLike
 	}
 
 	// optionally a part may have its own infos
-	// if present and if this is not the root, this will "auto create" a "cover" page with this content
-	title?: Text
-	subtitles?: Array<Text>
-	author?: Author
 	blurb?: Text // often happens for chapters, some sort of summary or teaser/pitch
-	// TODO one day hints
-
-	// hint for visual display
-	direction?:
-		| 'btt' | 'ttb'
-		| 'ltr' | 'rtl'
-	medium?:
-		| 'sheet'
-		| 'scroll'
-		| 'screen'
 }
 
 // top part

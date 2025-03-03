@@ -161,8 +161,8 @@ function _get_aggregated_classes({$node}: {$node: Immutable<CheckedNode>}): Set<
 			classes.add('o⋄rich-text⋄list--interactive')
 		}
 
-		switch($hints.bullets_style) {
-			case 'none':
+		switch($hints.listⵧstyleⵧtype) {
+			case '':
 				classes.add('o⋄rich-text⋄list--no-bullet')
 				break
 
