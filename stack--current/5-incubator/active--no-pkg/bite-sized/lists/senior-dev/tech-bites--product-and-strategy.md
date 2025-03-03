@@ -28,6 +28,7 @@ CSAT
 CSAT -- hard to move
 CSAT -- visual appeal
 customer segmentation = Strategic, Enterprise, Mid-Market, SMB
+dark side = selling the users https://www.androidpolice.com/mozilla-firefox-new-privacy-terms-raise-red-flags/
 don't build castles in others people's kingdoms
 earliest -- 01 feedback-able product (EFP)
 earliest -- 02 testable product = first release that customers can actually do something with

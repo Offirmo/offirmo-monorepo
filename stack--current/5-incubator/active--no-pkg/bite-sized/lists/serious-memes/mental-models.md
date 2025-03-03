@@ -147,7 +147,7 @@ Charlie Munger 3 basic rules -- Don’t sell anything you wouldn’t buy yoursel
 Charlie Munger 3 basic rules -- Don’t work for anyone you don’t respect and admire
 Charlie Munger 3 basic rules -- Work only with people you enjoy
 Charlie Munger 3 basic rules https://www.cnbc.com/2023/11/29/charlie-munger-these-basic-career-rules-made-me-successful-in-life-with-warren-buffett-i-had-all-3.html
-charts -- hill = position on a "hill" figuring things out -> making it happen
+charts -- hill = position on a "hill" figuring things out -> making it happen https://basecamp.com/shapeup/4.0-appendix-01#track-scopes-on-the-hill-chart
 choice making -- 5-2-1 technique https://www.reddit.com/r/lifehacks/comments/ctdibo/521_technique/
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
 class -- high -- new money
@@ -428,6 +428,7 @@ investing -- Nancy Pelosi Stock Tracker ♟ https://x.com/PelosiTracker_/status/
 invisible hand: Markets aggregate knowledge. Rising prices signal falling supply or increased demand, which incentivizes an increase in production. The opposite is true for falling prices. Prices are a signal wrapped in an incentive.
 IQ -- it exists, it's measurable
 irredentism https://www.reddit.com/r/history/comments/sji919/is_there_a_term_for_this_phenomenon/
+irrelevance = the true fall, ex. Roman Empire didn't "fall", it just became irrelevant
 it's impossible to agree on what's allowed -- no vehicles in the park https://novehiclesinthepark.com/ https://novehiclesinthepark.com/results.php
 it's impossible to agree on what's allowed https://danluu.com/impossible-agree/
 it's not about lowering the bar, it's about helping more people reach it.

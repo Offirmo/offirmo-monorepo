@@ -1,16 +1,16 @@
 import memoize_one from 'memoize-one'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { type CheckedNode, type Node, isꓽlist } from '../l1-types/index.ts'
+import { type CheckedNode, type Node, isꓽlist } from '../../l1-types/index.ts'
 
-import { isꓽlink, isꓽlistⵧKV, isꓽlistⵧuuid } from './common.ts'
+import { isꓽlink, isꓽlistⵧKV, isꓽlistⵧuuid } from '../common.ts'
 import {
 	type BaseRenderingOptions,
 	NodeType,
 	type WalkerCallbacks,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
-} from './walk.ts'
+} from '../walk.ts'
 
 /////////////////////////////////////////////////
 // much simpler than "to text" since HTML is doing a lot for us

@@ -2,7 +2,7 @@
 export * from './l2-renderers/to_debug.ts'
 export * from './l2-renderers/to_actions.ts'
 export * from './l2-renderers/to_text.ts'
-export * from './l2-renderers/to_html.ts'
+export * from './l2-renderers/to-html/index.ts'
 
 export * from './l1-types/index.ts'
 export * from './l2-renderers/walk.ts'
