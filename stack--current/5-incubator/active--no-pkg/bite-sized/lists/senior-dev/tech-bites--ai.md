@@ -110,8 +110,10 @@ issues -- Inaccuracy (answer quality)
 issues -- Language = not English
 issues -- privacy, control
 jailbreak
-jailbreak -- universal
+jailbreak -- compute overhead
 jailbreak -- over-refusal = rejection of a harmless prompt
+jailbreak -- rapid response https://arxiv.org/abs/2411.07494
+jailbreak -- universal https://www.anthropic.com/research/constitutional-classifiers
 JAX
 knowledge cutoff
 langchain = a framework for developing applications powered by language models https://python.langchain.com/docs/get_started/introduction
@@ -194,6 +196,7 @@ superintelligence "AI vastly smarter than humans" https://openai.com/research/we
 Support Vector Machines
 symbolic logic
 synthesizer = sound generation
+system card https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf
 T5X is a modular, composable, research-friendly framework for high-performance, configurable, self-service training, evaluation, and inference of sequence models (starting with language) at many scales.
 tasks -- vision -- Depth Estimation
 tasks -- vision -- Image Classification

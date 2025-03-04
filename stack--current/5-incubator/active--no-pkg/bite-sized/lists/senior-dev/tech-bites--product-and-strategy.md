@@ -1,17 +1,20 @@
 ++ Getting Real https://basecamp.com/gettingreal
+6 Reasons Users Hate Your New Feature -- The Feature’s Not Finishable
+6 Reasons Users Hate Your New Feature -- The Feature’s Not Finished
+6 Reasons Users Hate Your New Feature -- You Built EXACTLY What They Asked For
+6 Reasons Users Hate Your New Feature -- You Didn’t Build What They Asked For
+6 Reasons Users Hate Your New Feature -- Your Existing Product Needs Too Much Work
+6 Reasons Users Hate Your New Feature -- Your Product Interface Is a Giant Mess
 6 Reasons Users Hate Your New Feature https://www.slicedbreaddesign.com/blog/6-reasons-users-hate-your-new-feature
 [ ] https://skamille.medium.com/
 [ ] personal MBA
-active users -- daily (DAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
-active users -- monthly (MAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
+[ ] strategy https://stratechery.com/
 adaptability = turn the challenges into opportunities
 aha moment
-Annual Recurring Revenue (ARR)
-average revenue per user (ARPU)
 barriers -- to entry = moat against competitors
-barriers -- to exit = users can't leave
+barriers -- to exit = users can't leave (switch) ex. cost
 bloated, forgettable software dripping with mediocrity. Blech. https://basecamp.com/gettingreal/01.1-what-is-getting-real
-boring -- culture 
+boring -- culture
 boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
 boring -- technology https://mcfunley.com/choose-boring-technology
 brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
@@ -21,17 +24,14 @@ commoditization -- commodity businesses generally compete on price alone and are
 commoditization = undifferentiated mass, one no different than the other. We can pick the cheapest.
 computers should adapt to users = not necessarily if the solution is good (ex. typing on a keyboard, Palm Graffiti) https://www.creativitypost.com/technology/the_memory_prediction_framework_of_intelligence_and_the_subject_of_creativi
 consolidation = common across multiple industries, which is fueling competition. But, competition was in turn fueling commoditization
-core actions
-consumer technology / consumer tech = intended for use by consumers in the general public, as opposed to technology created for businesses or government organizations https://builtin.com/consumer-tech
 consumer technology -- usually ads supported :/
+consumer technology / consumer tech = intended for use by consumers in the general public, as opposed to technology created for businesses or government organizations https://builtin.com/consumer-tech
+core actions
 core actions -- active users
 core mental models (of the product)
+corporate cannibalism = prioritize short-term profits over long-term sustainability
 creator/user gap https://blog.jpl-consulting.com/2010/03/creator-user-gap/
-CSAT
-CSAT -- hard to move
-CSAT -- visual appeal
 customer segmentation = Strategic, Enterprise, Mid-Market, SMB
-dark side = selling the users https://www.androidpolice.com/mozilla-firefox-new-privacy-terms-raise-red-flags/
 don't build castles in others people's kingdoms
 earliest -- 01 feedback-able product (EFP)
 earliest -- 02 testable product = first release that customers can actually do something with
@@ -41,39 +41,48 @@ earliest -- 05 marketable product = packaged?
 earliest -- 06 "app store"able product
 earliest -- 07 "pro" product? scalable? (entitlements, billing, compliance...)
 earliest https://every.to/p/the-most-advanced-yet-acceptable-products-win
+economies of scale = aren’t available to smaller players in a market, including increased visibility, increased buying power, and lower customer acquisition costs https://dealroom.net/blog/industry-consolidation
 Embrace, Extend, and Extinguish https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish
 enshittification = first, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die. https://en.wikipedia.org/wiki/Enshittification
-enterprise -- access control
-enterprise -- billing
-enterprise -- change aversion
-enterprise -- comments
-enterprise -- comments -- resolve
-enterprise -- comments -- threaded
-enterprise -- compliance
-enterprise -- cross-orgs (shared channels) 
-enterprise -- data residency
-enterprise -- drafts
-enterprise -- personal workspace = to use the feature for themselves
-enterprise -- regulated industries
-enterprise -- security
-enterprise -- similar
-enterprise -- SSO
-enterprise -- templates
-enterprise -- user management
 executive presence
 failures -- inVision -- https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 features -- "infantile level" https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 features -- collaboration https://zknill.io/posts/collaboration-no-crdts/
 features -- creep
-features -- scale = Search, sort, diffs, authorship tracking, comments, permissions (user management), sharing security, SSO, integrations... https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
+features -- enterprise scale -- access control
+features -- enterprise scale -- authorship tracking
+features -- enterprise scale -- billing
+features -- enterprise scale -- change aversion
+features -- enterprise scale -- comments
+features -- enterprise scale -- comments -- resolve
+features -- enterprise scale -- comments -- threaded
+features -- enterprise scale -- compliance
+features -- enterprise scale -- cross-orgs (shared channels)
+features -- enterprise scale -- data residency
+features -- enterprise scale -- diffs
+features -- enterprise scale -- drafts
+features -- enterprise scale -- integrations
+features -- enterprise scale -- IT / admin (user management)
+features -- enterprise scale -- permissions
+features -- enterprise scale -- personal workspace = to use the feature for themselves
+features -- enterprise scale -- regulated industries
+features -- enterprise scale -- search
+features -- enterprise scale -- security
+features -- enterprise scale -- sharing + security
+features -- enterprise scale -- similar
+features -- enterprise scale -- sort
+features -- enterprise scale -- SSO
+features -- enterprise scale -- templates
+features -- enterprise scale -- user management
 FFP "First Full Purchase" = the moment customers finally decide it’s time to go from ‘just browsing’ to ‘fine, take my money already'
 financing cycle https://en.wikipedia.org/wiki/Seed_money
 first-mover advantage -- handicap of a head start https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_start
 first-mover advantage -- second mover advantage / "fast followers" / "free riders" https://en.wikipedia.org/wiki/First-mover_advantage#Second-mover_advantage
 first-mover advantage https://en.wikipedia.org/wiki/First-mover_advantage
-flexible planning = scope changes and unexpected risks: adaptability is crucial 
+flexible planning = scope changes and unexpected risks: adaptability is crucial
 funnel
 go-to-market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
+gold rush tools = during a gold rush, the one selling tools is the one making money
 growth +++ https://growth.design/
 growth -- bootstrapping
 growth -- bundles
@@ -87,10 +96,10 @@ growth -- labor perception / perceived labor https://growth.design/case-studies/
 growth -- onboarding -- fatigue
 growth -- viral = helpful but not necessary
 how to make something great https://ryolu.notion.site/how-to-make-something-great
-illegal practices -- monopoly
-illegal practices -- payola https://en.wikipedia.org/wiki/Payola
+illegal practices -- monopoly / oligopoly
+illegal practices -- payola = illegal practice of paying a commercial radio station to play a song without the station disclosing the payment (boosted) https://en.wikipedia.org/wiki/Payola
 illegal practices -- predatory pricing
-illegal practices -- price fixing -- Jedi Blue https://en.wikipedia.org/wiki/Jedi_Blue
+illegal practices -- price fixing -- Jedi Blue = agreement between Alphabet and Meta Platforms that allegedly gave Facebook an illegal advantage in Google's ad auctions in exchange for Facebook's word that it would end its own ad service plans https://en.wikipedia.org/wiki/Jedi_Blue
 illegal practices -- price gouging
 illegal practices -- price skimming
 incentives -- perverse https://en.wikipedia.org/wiki/Perverse_incentive
@@ -102,8 +111,9 @@ jobs to be done
 knowledge creating company https://hbr.org/2007/07/the-knowledge-creating-company
 KPI "Key Product Indicators"
 KPI -- examples https://kpiexamples.operately.com/
-land grab
+land grab https://fastercapital.com/topics/understanding-the-concept-of-land-grab-strategies.html
 lock-in
+lock-in -- vendor
 M&A
 M&A -- Apple
 M&A -- fb / insta https://www.linkedin.com/posts/olivermolander_technology-facebook-instagram-activity-7241726426826059776-IOE4
@@ -121,7 +131,14 @@ marketing -- case studies
 marketing -- case studies -- "flagship app" It's not that there wasn't a lot of interest in WPF, it's just there weren't any flagship apps showing off what it could do that previous frameworks couldn't. Even if Evernote had stayed with it, they still have a fairly simple client so a lot of people would simply shrug and say "I can do that in WinForms." They aren't wrong. https://www.reddit.com/r/csharp/comments/x0nu7h/comment/im9kesb/
 mature market
 metrics -- 40 something
+metrics -- active users -- daily (DAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
+metrics -- active users -- monthly (MAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
+metrics -- Annual Recurring Revenue (ARR)
 metrics -- ARR
+metrics -- average revenue per user (ARPU)
+metrics -- CSAT
+metrics -- CSAT -- hard to move
+metrics -- CSAT -- visual appeal
 metrics -- functional onboarding = If a user has hit all the functional onboarding milestones, it is a strong indication that they have begun to adopt the product. Measured over 2w, chose reqs, ex. have 2 users, 2 core actions...
 metrics -- funnel
 metrics -- Monthly Core Action Users = used to measure engagement by tracking users who perform core actions within a specific time frame.
@@ -140,7 +157,7 @@ network -- homogeneous = same nodes, ex. users of a messaging app
 network -- marketplaces, platforms...
 network effect = a product or service becomes more valuable to its users as more people use it https://www.slideshare.net/slideshow/network-effects-59206938/59206938
 network effect = key dynamic behind many successful software companies
-never-ending feature party https://corgibytes.com/blog/2018/01/02/neverending-feature-party/
+never-ending feature party = but tech debt "clean up and restocking" https://corgibytes.com/blog/2018/01/02/neverending-feature-party/
 next-of-kin feature
 no one was ever fired for using...
 path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
@@ -181,7 +198,9 @@ product mode -- come for the tool, stay for the network "best X I've ever used"
 product mode -- multiplayer = no utility for a single user or until a critical mass of users is reached
 product mode -- single = has immediate value for a single user
 product mode = single or multiplayer? (sometimes both)
-quality vs speed = sacrificing code quality for speed leads to compounding issues later. balance speed with long-term sustainabidity
+proposition -- selling = What makes your product or service unique? What sets you apart from your competition?
+proposition -- value
+quality vs speed = sacrificing code quality for speed leads to compounding issues later. balance speed with long-term sustainability
 real-world context https://contextsdk.com/insights#product
 realistic scheduling = overly optimistic deadlines lead to burnout and missed milestones. Always add a (secret?) buffer.
 red ocean vs blue ocean https://www.blueoceanstrategy.com/tools/red-ocean-vs-blue-ocean-strategy/
@@ -203,6 +222,7 @@ scale frontiers - 04 Large Orgs
 second product -- syndrome https://www.hubspot.com/startups/resources/second-product-tips-for-success
 second product -- When and How https://caseyaccidental.com/second-products/
 shared vision = maintaining a shared vision across the board to help stay on course
+side -- dark side = selling the users https://www.androidpolice.com/mozilla-firefox-new-privacy-terms-raise-red-flags/
 side projects -- outside of job https://www.reddit.com/r/SideProject/comments/1br62xb/building_side_projects_outside_fulltime_job/
 simplicity "no ads, no gimmicks, no games"
 sleeper technology
@@ -212,9 +232,7 @@ strategy -- "bowling pin" = starts with a niche segment easily attainable then m
 strategy -- 01 "where we play"
 strategy -- 02 "how we win"
 strategy -- evergreen vs cyclic
-strategy https://stratechery.com/
 support loops = ex. help desk + social media + phone etc.
-switching: barriers, cost
 system of work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams
 target
 tool tech stack -- review https://www.lennysnewsletter.com/p/whats-in-your-stack-the-state-of
@@ -231,7 +249,6 @@ top complaints -- actual case J. -- 10 Training and Support: Provide dedicated t
 top complaints -- actual case J. -- 11 Positioning and Value Proposition
 try/test/graduate
 User Experience Research (UXR) https://medium.com/getting-started-in-user-experience-and-design
-vendor lock-in
 wartime vs peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 what got us here won't get us there…
 winner takes it all

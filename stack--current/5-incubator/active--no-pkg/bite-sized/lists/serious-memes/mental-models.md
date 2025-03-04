@@ -117,6 +117,7 @@ brain -- fast & slow -- fast = training / education / culture = biased = knee-je
 brain -- fast & slow -- slow = real you
 brain -- left & right & hippocamp (debunked?)
 brain -- reptilian
+incentives -- perverse https://en.wikipedia.org/wiki/Perverse_incentive
 brain rot = the sort of stuff that keeps you watching, but doesn’t provide lasting value
 brain rot https://en.wikipedia.org/wiki/Brain_rot
 brainstorming -- decoy technique = suggest sth bad as a bottom baseline to trigger defense of better alternatives
@@ -912,6 +913,7 @@ universe -- cosmological model https://en.wikipedia.org/wiki/Physical_cosmology
 universe -- end big chill, big freeze, big crunch
 unlearn
 vanilla
+Veblen good https://en.wikipedia.org/wiki/Veblen_good
 verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 verisimilitude
 via negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
