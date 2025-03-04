@@ -22,6 +22,8 @@ commoditization = undifferentiated mass, one no different than the other. We can
 computers should adapt to users = not necessarily if the solution is good (ex. typing on a keyboard, Palm Graffiti) https://www.creativitypost.com/technology/the_memory_prediction_framework_of_intelligence_and_the_subject_of_creativi
 consolidation = common across multiple industries, which is fueling competition. But, competition was in turn fueling commoditization
 core actions
+consumer technology / consumer tech = intended for use by consumers in the general public, as opposed to technology created for businesses or government organizations https://builtin.com/consumer-tech
+consumer technology -- usually ads supported :/
 core actions -- active users
 core mental models (of the product)
 creator/user gap https://blog.jpl-consulting.com/2010/03/creator-user-gap/

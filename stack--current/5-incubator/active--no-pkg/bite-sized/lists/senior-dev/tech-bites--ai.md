@@ -1,8 +1,11 @@
 +++ 2023 https://9elements.com/blog/ai-glossary/
 +++ https://platform.openai.com/docs/introduction/key-concepts
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
+2024-11 MCP https://www.anthropic.com/news/model-context-protocol
+2025-02 
 ??? https://github.com/SkalskiP/courses crème de la crème of AI courses
 [ ] https://aleteia.org/tag/artificial-intelligence/
+[ ] https://www.anthropic.com/news
 [ ] https://www.perspectiveapi.com/
 [ ] https://www.sbert.net/
 [ ] People + AI Guidebook https://pair.withgoogle.com/guidebook/patterns
@@ -12,12 +15,14 @@ agents -- principals
 agents = you provide a goal, They'll generate a task list and get to work https://zapier.com/blog/ai-agent/
 AGI -- ANI -> AGI -> ASI = narrow(weak) / general(strong) / super[human](strong)
 AGI ~ strong AI = can independently learn new problem-solving strategies that are not explicitly included in its original model or training data
+ah ah moment
 AI - Artificial intelligence = intentionally vague term / "solving tasks or problems by computers/machines, which require a form of human-like intelligence"
 AI -- weak AI = task specific
 AI 50 2023 https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
 AI Driven Organisations (AIDO)
 AI gateway = convenient self-service integration point for internal teams who want to utilise turnkey AI APIs, proxy for the external and internal AI offerings + additional set of capabilities that empower usage and tracking of AI functionalities at an enterprise level.
 AI winter
+alignment -- Alignment Stress Testing team = validates akignment (Anthropic)
 alignment -- generic = conform to predefined values, usually ethical or social values, Truthfulness, Harmlessness, Helpfulness
 alignment -- super alignment =  https://openai.com/blog/introducing-superalignment  https://openai.com/blog/superalignment-fast-grants
 alignment =  making AI do what its users want it to do (and nothing more) see also "paper clip"
@@ -25,9 +30,17 @@ annotation https://www.peopleforai.com/ https://www.isahit.com/
 API -- Gemini https://ai.google.dev/docs/gemini_api_overview
 applications -- legacy code https://martinfowler.com/articles/legacy-modernization-gen-ai.html
 applied -- 2024/06 Slack Enzyme to RTL https://slack.engineering/balancing-old-tricks-with-new-feats-ai-powered-conversion-from-enzyme-to-react-testing-library-at-slack/
+ASL "AI Safety Level" https://www.linkedin.com/pulse/what-ai-safety-level-asl-where-we-now-siddhesh-joglekar-gieof/
+ASL-1 = This level involves smaller, simpler AI models with minimal risk. It’s the starting point, where basic safety checks are in place, but the technology itself is relatively low-stakes .
+ASL-2 = At this stage, larger, more complex AI models are introduced, requiring heightened safety protocols to ensure responsible usage. These models can handle more tasks but are still largely controllable and predictable.
+ASL-3 = This level signifies a significantly higher risk as AI models become increasingly powerful. More sophisticated safety and security measures are essential because the technology is now capable of complex problem-solving and may pose unintended risks if misused or uncontrolled.
+ASL-4+ = (Speculative) The highest level, ASL-4, is where AI technology enters speculative, highly autonomous territory. Models at this level may start exhibiting autonomous behaviors, making independent decisions, and even potentially circumventing certain safety checks—creating complex and unprecedented risks.
 assistant = entities capable of performing tasks for users. assistants operate based on the instructions in a context window + tools https://platform.openai.com/docs/introduction/assistants
 attention
 attention -- flash attention = ???
+benchmark -- GPQA https://arxiv.org/abs/2311.12022
+benchmark -- Humanity's Last Exam https://lastexam.ai/
+benchmark -- OSWorld https://os-world.github.io/
 BERT
 bias
 BLOOM = "BigScience Large Open-science Open-access Multilingual Language Model" = deprecated former big model
@@ -36,13 +49,19 @@ BPE Byte Pair Encoding is a way of converting text into tokens
 canny edge (generative AI) https://en.wikipedia.org/wiki/Canny_edge_detector
 capability stack = interaction, generation, automation, recommendation, prediction, classification, recognition
 chain-of-thoughts https://arxiv.org/abs/2201.11903
+character -- training
+character = how the AI behaves, its personality https://www.anthropic.com/research/claude-character
 chat -- ChatGPT
 chat -- Claude https://claude.ai/chat/
 chat -- Gemini
 chat -- GroqChat https://groq.com/
 chatbots = the reason why AI exploded in 2023
+Chemical, Biological, Radiological, and Nuclear (CBRN) weapons = example of restricted topics
 citation accuracy
 common sense https://commonsense.run/
+constitution = a list of principles to which the model should adhere https://www.anthropic.com/research/constitutional-classifiers
+constitutional AI = AI training themselves from a set of human-given rules, self-critique and revision https://arxiv.org/abs/2212.08073
+constitutional classifiers = method that defends AI models against universal jailbreaks https://www.anthropic.com/research/constitutional-classifiers
 context
 Contextual Language Models (CLMs) Contextual.ai
 control vector https://vgel.me/posts/representation-engineering/
@@ -55,11 +74,15 @@ developer vs sociotechnic vs project organizer
 diffusers
 diffusion
 Discrete Variational Auto Encoder (VAE) for image generation? https://medium.com/@jaswanth04/discrete-variational-auto-encoder-explained-41493ebe294d
+distillation = machine learning technique in which a smaller “student model” is trained on predictions of a larger and more complex “teacher model” https://theconversation.com/openai-says-deepseek-inappropriately-copied-chatgpt-but-its-facing-copyright-claims-too-248863
 DL Deep Learning (NN)
 effort paradox -- optimal human touchpoints
 effort paradox https://uxdesign.cc/the-effort-paradox-in-ai-design-996a0bc2f7f6
 embeddings = raw underlying representation of a concept preserving aspects of its content and/or its meaning (Of course it's model-dependent?) https://platform.openai.com/docs/guides/embeddings/use-cases
+extended thinking https://www.anthropic.com/research/visible-extended-thinking
+faithfulness = not certain that what’s in the thought process truly represents what’s going on in the model’s mind https://www.anthropic.com/research/visible-extended-thinking
 fine-tuning
+frontier -- Frontier Red Team = ensures no danger (Anthropic)
 frontier AI -- OpenAI = highly capable foundation models that could possess dangerous capabilities sufficient to pose severe risks to public safety https://openai.com/index/frontier-ai-regulation/
 frontier AI = bleeding edge models
 function calling (bad name) = connect large language models to external tools https://cloud.google.com/vertex-ai/docs/generative-ai/multimodal/function-calling https://platform.openai.com/docs/guides/function-calling
@@ -86,6 +109,9 @@ issues -- bad data = Garbage In, Garbage Out
 issues -- Inaccuracy (answer quality)
 issues -- Language = not English
 issues -- privacy, control
+jailbreak
+jailbreak -- universal
+jailbreak -- over-refusal = rejection of a harmless prompt
 JAX
 knowledge cutoff
 langchain = a framework for developing applications powered by language models https://python.langchain.com/docs/get_started/introduction
@@ -114,6 +140,8 @@ model -- transformer model
 NLG Natural Language Generation
 NLP Natural Language Processing
 NN Neural Networks "computer architecture inspired by the human brain"
+not gonna make it
+not left behind
 OpenAI GPTs = custom versions of ChatGPT that you can create for a specific purpose with instructions, expanded knowledge, and custom capabilities
 paper -- "attention is all you need" https://arxiv.org/pdf/1706.03762.pdf
 parameter (NN)
@@ -135,19 +163,22 @@ prompt -- design -- google https://ai.google.dev/gemini-api/docs/prompting-strat
 prompt -- generation https://www.anthropic.com/news/evaluate-prompts
 prompt -- optimization https://app.hamming.ai/prompt-optimizer
 prompt -- ROC = [Role] + [Output] + [Context], ex. You are an engineering manager, how many story points do you think this will be and why? https://community.atlassian.com/t5/Jira-Software-articles/Be-an-AI-Rockstar-Prompts-in-Jira-Software/ba-p/2636811
+prompt injection = attack where a malicious third party hides a secret message somewhere where AI may see it while using the computer, potentially tricking it into taking actions the user didn’t intend https://www.anthropic.com/research/visible-extended-thinking
 Pytorch
 RAG 2.0 https://medium.com/towards-artificial-intelligence/rag-2-0-finally-getting-rag-right-f74d0194a720
 rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-to-stay-competitive-hits-tech.html
 ReAct flow
 reasoning trace https://arstechnica.com/information-technology/2024/09/openai-threatens-bans-for-probing-new-ai-models-reasoning-process/
 regulation -- European AI act https://www.reddit.com/r/ArtificialInteligence/comments/1fqmcds/i_worked_on_the_eus_artificial_intelligence_act/
+reinforcement learning from human feedback (RLHF) https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback&ved=2ahUKEwiV_o6h9e6LAxUJXWwGHZpzE74QFnoECBAQAQ&usg=AOvVaw3cKKpEYiTP2H21l8DbR9BO
+reinforcement learning https://en.wikipedia.org/wiki/Reinforcement_learning
 Representation Engineering = calculating a "control vector" that can be read from or added to model activations during inference to interpret or control the model's behavior https://vgel.me/posts/representation-engineering/
 research directions -- honesty, chain-of-thought faithfulness, adversarial robustness, evals and testbeds...
 research directions -- Interpretability: How can we understand model internals? And can we use this to e.g. build an AI lie detector?
 research directions -- Scalable oversight: How can we use AI systems to assist humans in evaluating the outputs of other AI systems on complex tasks?
 research directions -- Weak-to-strong generalization: Humans will be weak supervisors relative to superhuman models. Can we understand and control how strong models generalize from weak supervision?
 Retrieval-Augmented Generation (RAG) = a methodology that assists Large Language Models (LLMs) generate accurate and up-to-date information https://medium.com/@rushing_andrei/building-a-basic-rag-retrieval-augmented-generation-system-in-a-rails-app-247ccce5d1d2
-RLHF reinforcement learning from human feedback
+RLAIF "RL from AI Feedback" https://arxiv.org/abs/2212.08073
 SageMaker (AWS)
 Searle's Chinese Room https://plato.stanford.edu/entries/chinese-room/
 security -- Freysa "approveTransfer" https://x.com/jarrodwattsdev/status/1862299845710757980
@@ -201,4 +232,5 @@ vector database
 vector database -- https://weaviate.io/
 vector database -- https://www.pinecone.io
 vector database -- Qdrant https://qdrant.tech/blog/series-a-funding-round/
+watermarking outputs https://proceedings.mlr.press/v202/zhao23i.html
 weak-to-strong generalization https://openai.com/research/weak-to-strong-generalization

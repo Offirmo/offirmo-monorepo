@@ -345,6 +345,7 @@ helping -- XY problem = wrongly asking about your attempted solution rather than
 hoisting des vars de boucle for et switch
 hooks
 hotfix
+http -- ohttp "oblivious" https://support.mozilla.org/en-US/kb/ohttp-explained
 hypermedia
 hypertext
 i18n -- truly local = more than just translation
@@ -709,25 +710,26 @@ Sustainable Architectural Decisions https://adr.github.io/
 system boundaries = a publicly exposed interface that third-party developers are going to use. It’s the inability to make breaking changes because you have external users to support that really defines a boundary. As a result, you have to pay special attention to get the design of a system boundary right—it’s not easy to make changes in the future. Boundaries are more important than other parts of our programs that we can refactor at will. https://www.tedinski.com/2018/02/06/system-boundaries.html
 system call
 tainting an object https://react.dev/reference/react/experimental_taintObjectReference
-TDD
-TDZ
 tech debt -- accidental - e.g. bugs due to human error that unknowingly increases the cost of future work.
 tech debt -- deliberate - e.g. optimising for short term delivery, knowing it increases the cost of future work.
 tech debt -- incidental - e.g. organic changes in complexity over time that increases the cost of future work.
+Temporal Dead Zone (TDZ)
 temporary solutions https://80.lv/articles/this-30-year-old-windows-feature-was-created-as-a-temporary-solution/
 tenant -- isolation -- sandboxing / isolates / individual processes / individual VMs / individual containers
 tenant -- multi-tenant
-test -- fixture -- general = setup designed to hold the OUT in place and allow it to be tested by being subjected to controlled test signals https://en.wikipedia.org/wiki/Test_fixture
-test -- fixture = (also called "test context") setup of state and input data designed to allow the OUT to be tested by being subjected to controlled test signals, ex. a fake database with data https://en.wikipedia.org/wiki/Test_fixture#Software
-test -- mutation testing https://sentry.engineering/blog/js-mutation-testing-our-sdks
-test -- Object Under Test (OUT)
-test -- test double -- 01 dummy = objects are passed around but never actually used. Usually they are just used to fill parameter lists
-test -- test double -- 02 fake = have working implementations, but usually take some shortcut which makes them not suitable for production (an in memory database is a good example)
-test -- test double -- 03 stub = provide canned answers to calls made during the test, usually not responding at all to anything outside what's programmed in for the test.
-test -- test double -- 04 spy = stubs that also record some information based on how they were called. One form of this might be an email service that records how many messages it was sent.
-test -- test double -- 05 mock = objects pre-programmed with expectations which form a specification of the calls they are expected to receive.
-test -- test double = dummy, fake, stub, spy, mock - Every class or object created is a fake. It is a mock if you assert against it. Otherwise it is a stub. https://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub
-test -- test double https://martinfowler.com/articles/mocksArentStubs.html
+testing -- fixture -- general = setup designed to hold the OUT in place and allow it to be tested by being subjected to controlled test signals https://en.wikipedia.org/wiki/Test_fixture
+testing -- fixture = (also called "test context") setup of state and input data designed to allow the OUT to be tested by being subjected to controlled test signals, ex. a fake database with data https://en.wikipedia.org/wiki/Test_fixture#Software
+testing -- mutation testing = tests your test suite by introducing a bug into the code under test, running the tests, and verifying the tests failed (i.e. that your tests are good enough to catch the bug) https://sentry.engineering/blog/js-mutation-testing-our-sdks https://stryker-mutator.io/
+testing -- Object Under Test (OUT)
+testing -- property based = instead of “it works for this case”, it’s “it works for any arbitrary input of this pattern” (e.g. “all integers”, “all alphanumeric strings”, “all List<Foo>s of length less than 10”)
+testing -- TDD
+testing -- test double -- 01 dummy = objects are passed around but never actually used. Usually they are just used to fill parameter lists
+testing -- test double -- 02 fake = have working implementations, but usually take some shortcut which makes them not suitable for production (an in memory database is a good example)
+testing -- test double -- 03 stub = provide canned answers to calls made during the test, usually not responding at all to anything outside what's programmed in for the test.
+testing -- test double -- 04 spy = stubs that also record some information based on how they were called. One form of this might be an email service that records how many messages it was sent.
+testing -- test double -- 05 mock = objects pre-programmed with expectations which form a specification of the calls they are expected to receive.
+testing -- test double = dummy, fake, stub, spy, mock - Every class or object created is a fake. It is a mock if you assert against it. Otherwise it is a stub. https://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub
+testing -- test double https://martinfowler.com/articles/mocksArentStubs.html
 the room https://lethain.com/getting-in-the-room/
 this
 thread
@@ -747,6 +749,7 @@ transpiler = translates code from one language to another in a human-readable fo
 tree
 tree -- walk
 tree shaking https://en.wikipedia.org/wiki/Tree_shaking
+TUIs (terminal user interfaces) https://ratatui.rs/
 type -- signature (type annotation) = defines the inputs and outputs of a function, subroutine or method
 typecast
 types

@@ -305,6 +305,7 @@ false flag https://en.wikipedia.org/wiki/False_flag
 false good idea
 farm rice theory https://www.nature.com/articles/s41467-024-44770-w
 fast reading
+fate
 Faustian Bargain = A man once sold his soul to a demon in exchange for knowledge. At first, it seemed like a smart trade. But the man lost in the long-run. Tragically, what the man lost was more valuable than what he earned. In short, he won the battle but lost the war.
 Fear Of Looking Dumb (FOLD)
 fear of missing out (FOMO)
@@ -580,6 +581,7 @@ mom and pop -- the worst https://www.reddit.com/r/yimby/comments/1biq3gg/lets_no
 mondegreen https://thehabit.co/knowledge-is-power-france-is-bacon/
 money = by its very nature, is an emotional topic. We all have grown up with different relationships with money—earning it, asking for it, making it, and even spending it
 monkey ladder experiment https://factschology.com/factschology-articles-podcast/monkey-ladder-experiment-truth
+Monkey's Paw = wishes come with an enormous price for interfering with fate https://en.wikipedia.org/wiki/The_Monkey%27s_Paw
 Monty Hall problem https://en.wikipedia.org/wiki/Monty_Hall_problem
 moral hazard = Increases in the exposure to risk when insured, or when another bears the cost
 moral imperative https://en.wikipedia.org/wiki/Moral_imperative
