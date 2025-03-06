@@ -22,6 +22,7 @@
 3-strike pivot strategy -- Strike 2: Reassess and Seek Support to resolve the problem
 3-strike pivot strategy -- Strike 3: Make the Pivot
 3-strike pivot strategy = give 3 chances https://blog.gouravkhanijoe.com/p/3-strike-pivot-strategy-to-become
+4-Hour Workweek
 5 Harsh Truths for Success from Linus Torvalds https://medium.com/codex/5-harsh-truths-from-linus-torvalds-406ab20cea02
 5 mantras -- 1% better = You don’t need to change the world. Just make something — anything — 1% better, every day. Movement of the smallest rocks can cause the greatest landslides.
 5 mantras -- Don’t get stuck = when I feel stuck it is because I am being too stubborn to change, too egotistical to ask for help, or too tired to invite creativity into my thinking. There is rarely no way out.
@@ -117,7 +118,6 @@ brain -- fast & slow -- fast = training / education / culture = biased = knee-je
 brain -- fast & slow -- slow = real you
 brain -- left & right & hippocamp (debunked?)
 brain -- reptilian
-incentives -- perverse https://en.wikipedia.org/wiki/Perverse_incentive
 brain rot = the sort of stuff that keeps you watching, but doesn’t provide lasting value
 brain rot https://en.wikipedia.org/wiki/Brain_rot
 brainstorming -- decoy technique = suggest sth bad as a bottom baseline to trigger defense of better alternatives
@@ -337,6 +337,7 @@ game theory -- prisoner's dilemma https://www.bennorthrop.com/Home/Blog/2007_11_
 gateway effect / gateway hypothesis = gateway drug (cannabis), gateway gambling (gacha games) = pathway to dangerous addictions https://www.library.hbs.edu/working-knowledge/the-15-billion-question-have-loot-boxes-turned-video-gaming-into-gambling
 giftedness and talent https://campbellms.typepad.com/files/gagne-a-differentiated-model-of-giftedness-and-talent-dmgt.pdf https://www.gigers.com/matthias/gifted/gagne_dmgt.html
 go go before you go
+go slow to go fast
 go-for-it window = Large gaps between accelerating technologies and stagnating social norms create lucrative new business opportunities. But they are only available for a short time when people can capitalize on the difference between the real and perceived state of the world. For example, 2007 was the perfect time to launch the iPhone, but Google Glasses launched too early.
 goals -- S.M.A.R.T. -- 01 S (Specific) Make the goal specific to what you are trying to achieve. It should clearly define what you want to accomplish.
 goals -- S.M.A.R.T. -- 02 M (Measurable) Include measures and metrics where progress can be tracked and quantified.  For bigger goals, include milestones that are steps toward the bigger goal.
@@ -350,6 +351,7 @@ Gospel of Wealth -- Help those who will help themselves, to provide part of the 
 Gospel of Wealth = responsibility of philanthropy by the new upper class of self-made rich https://en.wikipedia.org/wiki/The_Gospel_of_Wealth
 grapevine
 great filter https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
+grinders
 grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
 growth -- should never be a goal in itself, engagement is
@@ -392,6 +394,7 @@ https://36questionsinlove.com/
 https://cobeats.com/folder/ryfTgPr9H
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
 humble bragging https://www.linkedin.com/posts/staceychampagne_womenincybersecurity-cybersecurity-certifications-activity-7284636641648889857-B_y_/
+hustlers
 I might be reading too much into it but...
 ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/ https://strategyu.co/pyramid-principle-part-2-communicate-top-down/
 identity -- " I’d tied my identity and reputation to hard work"
@@ -807,6 +810,7 @@ signalling -- theory https://en.wikipedia.org/wiki/Signalling_theory
 signalling -- virtue https://en.wikipedia.org/wiki/Virtue_signalling
 significance https://www.explainxkcd.com/wiki/index.php/882:_Significant
 silent majority
+silver spoon
 simplicité -- exemple de croûton du pain = P1 laisse à P2 croyant qu'iel aime, P2 se force croyant que P1 n'aime pas 
 simplicité = désirable, évite de tout le temps douter / lire entre les lignes
 simulation hypothesis https://en.wikipedia.org/wiki/Simulation_hypothesis
@@ -926,6 +930,7 @@ voleur volé
 volume hiring
 vrai vs. bien trouvé (meme) 
 wabi-sabi https://en.wikipedia.org/wiki/Wabi-sabi
+wantrepreneurs
 war https://en.wikipedia.org/wiki/War
 wartime/peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 We must remember that entire societies can and often do follow the wrong path for a very long time https://news.vanderbilt.edu/2011/04/13/michael-burry-transcript/
@@ -937,6 +942,9 @@ winner takes it all
 wisdom
 wisdom -- a wisdom for left may not be valid for right
 wisdom of the rooms = AA steps
+works of mercy -- corporal
+works of mercy -- spiritual
+works of mercy https://en.wikipedia.org/wiki/Works_of_mercy
 xenia https://greekmythcomix.com/comic/how-to-do-xenia/
 XY problem = "what are you trying to achieve?" https://xyproblem.info/
 you are a tool. It sucks not being on top = not true, "being of service to something or someone, which gives purpose"

@@ -1,9 +1,11 @@
 +++ 2023 https://9elements.com/blog/ai-glossary/
 +++ https://platform.openai.com/docs/introduction/key-concepts
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
+2022 ChatGPT https://openai.com/index/chatgpt/
+2023-10 Claude 2
 2024-11 MCP https://www.anthropic.com/news/model-context-protocol
 2025-02 
-??? https://github.com/SkalskiP/courses crème de la crème of AI courses
+[ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://www.anthropic.com/news
 [ ] https://www.perspectiveapi.com/
@@ -22,7 +24,7 @@ AI 50 2023 https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
 AI Driven Organisations (AIDO)
 AI gateway = convenient self-service integration point for internal teams who want to utilise turnkey AI APIs, proxy for the external and internal AI offerings + additional set of capabilities that empower usage and tracking of AI functionalities at an enterprise level.
 AI winter
-alignment -- Alignment Stress Testing team = validates akignment (Anthropic)
+alignment -- Alignment Stress Testing team = validates alignment (Anthropic)
 alignment -- generic = conform to predefined values, usually ethical or social values, Truthfulness, Harmlessness, Helpfulness
 alignment -- super alignment =  https://openai.com/blog/introducing-superalignment  https://openai.com/blog/superalignment-fast-grants
 alignment =  making AI do what its users want it to do (and nothing more) see also "paper clip"
@@ -104,6 +106,9 @@ illusion of understanding = hypothesis that LLMs don't actually perform formal r
 in-context learning = ~long prompt / many shots https://www.anthropic.com/research/many-shot-jailbreaking
 inference
 inference = what happens when we prompt
+instruction hierarchy / nested prompting = layered prompting with different levels of authority
+Intelligence Age https://openai.com/global-affairs/introducing-the-intelligence-age/
+ISO 42001 certification for responsible AI https://www.anthropic.com/news/anthropic-achieves-iso-42001-certification-for-responsible-ai
 issues -- babysitting the AI = don’t want to spend more time correcting the AI than using it
 issues -- bad data = Garbage In, Garbage Out
 issues -- Inaccuracy (answer quality)
@@ -172,7 +177,7 @@ rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-t
 ReAct flow
 reasoning trace https://arstechnica.com/information-technology/2024/09/openai-threatens-bans-for-probing-new-ai-models-reasoning-process/
 regulation -- European AI act https://www.reddit.com/r/ArtificialInteligence/comments/1fqmcds/i_worked_on_the_eus_artificial_intelligence_act/
-reinforcement learning from human feedback (RLHF) https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback&ved=2ahUKEwiV_o6h9e6LAxUJXWwGHZpzE74QFnoECBAQAQ&usg=AOvVaw3cKKpEYiTP2H21l8DbR9BO
+reinforcement learning -- from human feedback (RLHF) https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback&ved=2ahUKEwiV_o6h9e6LAxUJXWwGHZpzE74QFnoECBAQAQ&usg=AOvVaw3cKKpEYiTP2H21l8DbR9BO
 reinforcement learning https://en.wikipedia.org/wiki/Reinforcement_learning
 Representation Engineering = calculating a "control vector" that can be read from or added to model activations during inference to interpret or control the model's behavior https://vgel.me/posts/representation-engineering/
 research directions -- honesty, chain-of-thought faithfulness, adversarial robustness, evals and testbeds...

@@ -91,6 +91,7 @@ idempotent = operation can run multiple times without changing the result
 identity function
 Josephus Problem
 Knapsack problem https://en.wikipedia.org/wiki/Knapsack_problem
+lexorank = algo to custom reorder in O(1) + background clean (based on lexicographic order)
 list -- floyd's cycle detection
 LLM -- temperature scaling
 LLM output generation -- beam search = search algorithm used to generate output sequences from a model during inference https://ai-guide.future.mozilla.org/content/llms-101/

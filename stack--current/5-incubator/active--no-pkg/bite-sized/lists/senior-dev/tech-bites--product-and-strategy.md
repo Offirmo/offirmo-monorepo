@@ -26,6 +26,8 @@ computers should adapt to users = not necessarily if the solution is good (ex. t
 consolidation = common across multiple industries, which is fueling competition. But, competition was in turn fueling commoditization
 consumer technology -- usually ads supported :/
 consumer technology / consumer tech = intended for use by consumers in the general public, as opposed to technology created for businesses or government organizations https://builtin.com/consumer-tech
+content is king -- small payments = failed to materialize
+content is king https://medium.com/@HeathEvans/content-is-king-essay-by-bill-gates-1996-df74552f80d9
 core actions
 core actions -- active users
 core mental models (of the product)
@@ -81,6 +83,7 @@ first-mover advantage -- second mover advantage / "fast followers" / "free rider
 first-mover advantage https://en.wikipedia.org/wiki/First-mover_advantage
 flexible planning = scope changes and unexpected risks: adaptability is crucial
 funnel
+get big fast / get large or get lost
 go-to-market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
 gold rush tools = during a gold rush, the one selling tools is the one making money
 growth +++ https://growth.design/
@@ -146,6 +149,7 @@ metrics -- Monthly Core User (MCU) = a user who do core actions at least X times
 metrics -- retention
 metrics -- serviceable addressable market (SAM) = TAM we can reasonably reach
 metrics -- total addressable market (TAM)
+mind share = When people think of examples of a product type or category, they usually think of a limited number of brand names https://en.wikipedia.org/wiki/Mind_share
 moat https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
 Most Advanced Yet Acceptable (MAYA) UX concept
 network -- defensible? path to critical mass?
@@ -226,7 +230,7 @@ side -- dark side = selling the users https://www.androidpolice.com/mozilla-fire
 side projects -- outside of job https://www.reddit.com/r/SideProject/comments/1br62xb/building_side_projects_outside_fulltime_job/
 simplicity "no ads, no gimmicks, no games"
 sleeper technology
-stalking horse https://en.wikipedia.org/wiki/Stalking_horse
+stalking horse = figure used to test a concept or mount a challenge on behalf of a third party. If the idea proves viable or popular, the third party can then declare its interest and advance the concept with little risk of failure. If the concept fails, the third party will not be tainted by association with the failed concept and can either drop the idea completely or bide its time and wait until a better moment to launch an attack https://en.wikipedia.org/wiki/Stalking_horse
 startups should avoid being held hostage by the preferences of their early user base if it deviates from the broader market, ex. social feed or reels
 strategy -- "bowling pin" = starts with a niche segment easily attainable then move to next niche or broader market
 strategy -- 01 "where we play"

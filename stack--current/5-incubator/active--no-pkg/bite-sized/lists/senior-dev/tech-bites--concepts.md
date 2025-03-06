@@ -293,6 +293,7 @@ event loop
 exceptions -- checked vs unchecked = only Java does checked, no-one followed, too much boilerplate https://en.wikipedia.org/wiki/Criticism_of_Java#Checked_exceptions
 execution model https://en.wikipedia.org/wiki/Execution_model
 express
+FAANG https://www.faangfire.com/
 fail fast and loudly
 feature flag -- also called toggle, feature control
 feature flag = dynamically change the state of production
