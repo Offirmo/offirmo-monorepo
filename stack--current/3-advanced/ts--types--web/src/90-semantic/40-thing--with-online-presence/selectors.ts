@@ -2,15 +2,15 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import { normalize_unicode, normalizeꓽemailⵧsafe, normalizeꓽurl } from '@offirmo-private/normalize-string'
 
-import { Url‿str } from '../../01-links/index.js'
-import * as ThingSelectors from '../30-thing/selectors.js'
+import type { Url‿str } from '../../01-links/index.ts'
+import * as ThingSelectors from '../30-thing/selectors.ts'
 
-import { ThingWithOnlinePresence } from './types.js'
+import type { ThingWithOnlinePresence } from './types.ts'
 
 /////////////////////////////////////////////////
 // ThingWithOnlinePresence extends Thing, WithOnlinePresence
-export * from '../10-with-online-presence/selectors.js'
-export * from '../30-thing/selectors.js'
+export * from '../10-with-online-presence/selectors.ts'
+export * from '../30-thing/selectors.ts'
 
 /////////////////////////////////////////////////
 

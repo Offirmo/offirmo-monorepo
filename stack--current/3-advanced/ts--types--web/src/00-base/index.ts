@@ -1,2 +1,2 @@
-export * from './types.js'
-export * from './selectors.js'
+export * from './types.ts'
+export * from './selectors.ts'

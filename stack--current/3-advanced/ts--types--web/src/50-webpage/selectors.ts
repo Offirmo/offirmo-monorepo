@@ -2,10 +2,10 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import { normalizeꓽarrayⵧof_strings } from '@offirmo-private/normalize-string'
 
-import { Html‿str } from '../10-html/index.js'
-import { Css‿str } from '../20-css/index.js'
-import { JS‿str } from '../30-js/index.js'
-import type { Contentⳇweb } from './types.js'
+import type { Html‿str } from '../10-html/index.ts'
+import type { Css‿str } from '../20-css/index.ts'
+import type { JS‿str } from '../30-js/index.ts'
+import type { Contentⳇweb } from './types.ts'
 
 /////////////////////////////////////////////////
 // accessors

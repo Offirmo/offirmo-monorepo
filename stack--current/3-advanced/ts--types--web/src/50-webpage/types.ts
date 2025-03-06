@@ -1,11 +1,11 @@
 /* A data structure specifying a webpage.
  * Given such a structure, we should be able to generate a corresponding html file.
  */
-import { WithCharset, WithLang, WithTitle } from '../00-base/index.js'
-import { Url‿str } from '../01-links/index.js'
-import { Html‿str } from '../10-html/index.js'
-import { Css‿str } from '../20-css/index.js'
-import { JS‿str } from '../30-js/index.js'
+import type { WithCharset, WithLang, WithTitle } from '../00-base/index.ts'
+import type { Url‿str } from '../01-links/index.ts'
+import type { Html‿str } from '../10-html/index.ts'
+import type { Css‿str } from '../20-css/index.ts'
+import type { JS‿str } from '../30-js/index.ts'
 
 /////////////////////////////////////////////////
 

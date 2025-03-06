@@ -4,9 +4,9 @@ import {
 	normalize_unicode,
 } from '@offirmo-private/normalize-string'
 
-import * as AuthorSelectors from '../20-author/selectors.js'
+import * as AuthorSelectors from '../20-author/selectors.ts'
 
-import { Thing } from './types.js'
+import type { Thing } from './types.ts'
 
 /////////////////////////////////////////////////
 

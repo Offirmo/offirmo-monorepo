@@ -3,11 +3,11 @@ import { expect } from 'chai'
 import {
 	getꓽtitle,
 	getꓽlang,
-	getꓽcharset, Css‿str,
-} from '../index.js'
+	getꓽcharset,
+} from '../index.ts'
 
 import {
-	Contentⳇweb,
+	type Contentⳇweb,
 	getꓽhtml,
 	getꓽhtml__root__attributes,
 	getꓽcssⵧcritical,
@@ -16,7 +16,7 @@ import {
 	getꓽcssⵧtop__namespaces,
 	getꓽjsⵧcritical,
 	getꓽjs,
-} from './index.js'
+} from './index.ts'
 
 /////////////////////////////////////////////////
 

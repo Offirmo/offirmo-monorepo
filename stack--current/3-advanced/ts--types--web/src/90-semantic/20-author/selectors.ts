@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import { Author, Url‿str, Immutable } from '@offirmo-private/ts-types'
+import type { Author, Url‿str, Immutable } from '@offirmo-private/ts-types'
 import {
 	normalize_unicode,
 	normalizeꓽemailⵧsafe,
@@ -8,7 +8,7 @@ import {
 
 /////////////////////////////////////////////////
 // Author extends WithOnlinePresence
-export * from '../10-with-online-presence/selectors.js'
+export * from '../10-with-online-presence/selectors.ts'
 
 /////////////////////////////////////////////////
 

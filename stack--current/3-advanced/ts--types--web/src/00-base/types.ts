@@ -1,7 +1,7 @@
 /* Common building blocks for the more advanced types.
  */
 
-import { IETFLanguageType, Charset } from '@offirmo-private/ts-types'
+import type { IETFLanguageType, Charset } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 

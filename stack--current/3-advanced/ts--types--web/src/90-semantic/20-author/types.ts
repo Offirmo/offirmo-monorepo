@@ -1,8 +1,8 @@
 import type { Author as SimplerAuthor } from '@offirmo-private/ts-types'
 
-import { Url‿str } from '../../01-links/index.js'
-import { Email‿str } from '../../40-email/index.js'
-import { WithOnlinePresence } from '../10-with-online-presence/types.js'
+import type { Url‿str } from '../../01-links/index.ts'
+import type { Email‿str } from '../../40-email/index.ts'
+import type { WithOnlinePresence } from '../10-with-online-presence/types.ts'
 
 
 /////////////////////////////////////////////////

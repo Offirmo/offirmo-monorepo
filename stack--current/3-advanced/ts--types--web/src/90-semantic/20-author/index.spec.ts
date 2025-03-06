@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { Author, getꓽname, getꓽintro, getꓽemail, getꓽcontact } from './index.js'
+import { type Author, getꓽname, getꓽintro, getꓽemail, getꓽcontact } from './index.ts'
 
 /////////////////////////////////////////////////
 

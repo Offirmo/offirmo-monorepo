@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import {
 	type CssⳇFilterSpec,
 	getꓽCssⳇfilter__value,
-} from '../index.js'
+} from '../index.ts'
 
 
 /////////////////////////////////////////////////

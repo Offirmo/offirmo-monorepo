@@ -1,7 +1,7 @@
 import type { IETFLanguageType, Thing as SimplerThing } from '@offirmo-private/ts-types'
 
-import { Author } from '../20-author/types.js'
-import { WithLang } from '../../00-base/types.js'
+import type { Author } from '../20-author/types.ts'
+import type { WithLang } from '../../00-base/types.ts'
 
 /////////////////////////////////////////////////
 

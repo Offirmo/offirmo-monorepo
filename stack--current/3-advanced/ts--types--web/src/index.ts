@@ -1,14 +1,14 @@
 
-export * from './00-base/index.js'
+export * from './00-base/index.ts'
 
-export * from './01-links/index.js'
+export * from './01-links/index.ts'
 
-export * from './10-html/index.js'
-export * from './20-css/index.js'
-export * from './30-js/index.js'
+export * from './10-html/index.ts'
+export * from './20-css/index.ts'
+export * from './30-js/index.ts'
 
-export * from './40-email/index.js'
+export * from './40-email/index.ts'
 
-export * from './50-webpage/index.js'
+export * from './50-webpage/index.ts'
 
-export * from './90-semantic/index.js'
+export * from './90-semantic/index.ts'

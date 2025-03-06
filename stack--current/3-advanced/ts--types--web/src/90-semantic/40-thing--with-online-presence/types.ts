@@ -1,7 +1,7 @@
 
-import { Url‿str } from '../../01-links/index.js'
-import { WithOnlinePresence } from '../10-with-online-presence/types.js'
-import { Thing } from '../30-thing/types.js'
+import type { Url‿str } from '../../01-links/index.ts'
+import type { WithOnlinePresence } from '../10-with-online-presence/types.ts'
+import type { Thing } from '../30-thing/types.ts'
 
 /////////////////////////////////////////////////
 

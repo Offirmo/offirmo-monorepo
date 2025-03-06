@@ -1,13 +1,14 @@
 import assert from 'tiny-invariant'
-import { type Immutable} from "@offirmo-private/ts-types";
+import type { Immutable} from "@offirmo-private/ts-types"
+
 import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
 
 import type {
 	Uri‿x,
 	SchemeSpecificURIPart,
 	Hyperlink,
-	Hyperlink‿x, Uri‿str, Url‿str,
-} from './types.js'
+	Hyperlink‿x, Uri‿str,
+} from './types.ts'
 
 /////////////////////////////////////////////////
 

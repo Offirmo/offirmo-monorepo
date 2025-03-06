@@ -1,5 +1,5 @@
 import type { WithOnlinePresence as SimplerWithOnlinePresence } from '@offirmo-private/ts-types'
-import { Url‿str, SocialNetworkLink } from '../../01-links/index.js'
+import type { Url‿str, SocialNetworkLink } from '../../01-links/index.ts'
 
 export interface WithOnlinePresence extends SimplerWithOnlinePresence {
 	urlⵧcanonical: Url‿str
