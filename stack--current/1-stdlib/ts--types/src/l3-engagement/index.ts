@@ -1,7 +1,7 @@
 /* Generic description of engagement / messaging
  */
 
-import { Url‿str } from '../l2-content'
+import type { Url‿str } from '../l2-content'
 
 /////////////////////////////////////////////////
 

@@ -2,9 +2,9 @@ import * as path from 'node:path'
 import * as fs from '@offirmo/cli-toolbox/fs/extra'
 import assert from 'tiny-invariant'
 import * as Prettier from 'prettier'
-import { type Immutable, AbsolutePath } from '@offirmo-private/ts-types'
+import type { Immutable, AbsolutePath } from '@offirmo-private/ts-types'
 
-import { EntryPoints, WebPropertyEntryPointSpec } from './types.js'
+import type { EntryPoints, WebPropertyEntryPointSpec } from './types.js'
 
 import { needsꓽwebmanifest, getꓽbasenameⵧwebmanifest, shouldꓽgenerateꓽjscode } from './selectors/index.js'
 

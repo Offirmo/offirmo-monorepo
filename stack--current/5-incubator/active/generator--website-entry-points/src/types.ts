@@ -1,5 +1,5 @@
-import { Emoji, Basename, AnyPath} from '@offirmo-private/ts-types'
-import {
+import type { Emoji, Basename, AnyPath} from '@offirmo-private/ts-types'
+import type {
 	Author,
 	Contentⳇweb,
 	CssColor‿str,
@@ -90,6 +90,7 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	// optional '?:' = truly optional (can be easily derived)
 	// TODO use zod? or tRPC?
 
+	// meta selector that triggers different defaults
 	preset?:
 		| 'game' // webapp, uses full screen, no nav nor browser controls
 		| 'blog' // content oriented
@@ -114,7 +115,8 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	usesꓽpull_to_refresh?: boolean
 
 	/////// JS SRC
-	generatesꓽjsⵧscaffold?: 'offirmo--react' // TODO clarify generate JS/TS source code
+	generatesꓽjsⵧscaffold?:
+		| 'offirmo--react' // TODO clarify generate JS/TS source code
 
 	/////// META
 	host?:

@@ -1,7 +1,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/SVG
 
-import { IETFLanguageType } from '@offirmo-private/ts-types'
-import { Url‿str, CssColor‿str } from '@offirmo-private/ts-types-web'
+import type { IETFLanguageType } from '@offirmo-private/ts-types'
+import type { Url‿str, CssColor‿str } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 

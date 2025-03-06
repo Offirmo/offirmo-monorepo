@@ -1,4 +1,4 @@
-import { Author, Url‿str } from '@offirmo-private/ts-types-web'
+import type { Author, Url‿str } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 

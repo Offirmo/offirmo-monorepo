@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
-import { PositiveIntegerInRange, RealInRange, Charset, IETFLanguageType } from '@offirmo-private/ts-types'
-import { CssColor‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
+import type { PositiveIntegerInRange, RealInRange, Charset, IETFLanguageType } from '@offirmo-private/ts-types'
+import type { CssⳇColor‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 
@@ -110,7 +110,7 @@ interface HtmlMetas {
 
 		// https://www.w3.org/TR/appmanifest/#theme_color-member
 		// https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
-		'theme-color'?: CssColor‿str;
+		'theme-color'?: CssⳇColor‿str;
 
 		//'color-scheme'?: unknown;
 	};
@@ -151,7 +151,7 @@ export const FeatureSnippets = Enum(
 )
 export type FeatureSnippets = Enum<typeof FeatureSnippets> // eslint-disable-line no-redeclare
 
-interface HtmlDocumentSpec {
+interface HtmlFileSpec {
 	content: Contentⳇweb
 
 	links?: Links
@@ -168,5 +168,5 @@ export {
 	type HtmlMetaContentⳇViewport,
 	type HtmlMetas,
 
-	type HtmlDocumentSpec,
+	type HtmlFileSpec,
 }

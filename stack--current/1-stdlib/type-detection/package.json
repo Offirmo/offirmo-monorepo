@@ -1,9 +1,10 @@
 {
 	"name": "@offirmo-private/type-detection",
-	"description": "",
+	"description": "Primitive type guards and type assertions",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
+	"private": true,
 
 	"sideEffects": false,
 	"type": "module",

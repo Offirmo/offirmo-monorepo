@@ -2,15 +2,15 @@ import assert from 'tiny-invariant'
 const chroma = ((await import('chroma-js')) as any).default as chroma.ChromaStatic // has ESM issues 2024/08
 
 import type { Immutable } from '@offirmo-private/ts-types'
-import { Contentⳇweb, Css‿str, Html‿str, JS‿str } from '@offirmo-private/ts-types-web';
+import type { Contentⳇweb, Css‿str, Html‿str, JS‿str } from '@offirmo-private/ts-types-web';
 import * as ContentⳇwebᐧSelectors from '@offirmo-private/ts-types-web';
 import {
 	HtmlMetas,
 	HtmlMetaContentⳇViewport,
-	HtmlDocumentSpec,
+	HtmlFileSpec,
 } from '@offirmo-private/generator--html'
 
-import { WebPropertyEntryPointSpec } from '../../types.js'
+import type { WebPropertyEntryPointSpec } from '../../types.js'
 import { LIB } from '../../consts.js'
 import {
 	getꓽtitleⵧpage,
@@ -236,8 +236,8 @@ function getꓽcontentⵧweb(spec: Immutable<WebPropertyEntryPointSpec>): Conten
 
 /////////////////////////////////////////////////
 
-function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDocumentSpec {
-	const result: HtmlDocumentSpec = {
+function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlFileSpec {
+	const result: HtmlFileSpec = {
 		content: getꓽcontentⵧweb(spec),
 		links: getꓽlinks(spec),
 		metas: getꓽmetas(spec),

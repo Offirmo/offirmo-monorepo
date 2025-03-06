@@ -1,22 +1,19 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
-import { Contentⳇweb } from '@offirmo-private/ts-types-web';
-import {
+
+import type {
 	FeatureSnippets,
-	HtmlDocumentSpec,
+	HtmlFileSpec,
 } from '@offirmo-private/generator--html'
 
-import { WebPropertyEntryPointSpec } from '../../types.js'
-import {
-	getꓽfeatures,
-} from '../../selectors/index.js'
+import type { WebPropertyEntryPointSpec } from '../../types.js'
 import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../index-html/selectors.js'
 
 /////////////////////////////////////////////////
 
-function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDocumentSpec {
+function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlFileSpec {
 	const base = _getꓽhtml_doc_spec(spec)
-	const result: HtmlDocumentSpec = {
+	const result: HtmlFileSpec = {
 		...base,
 
 		features: (base.features ?? [])

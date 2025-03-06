@@ -3,12 +3,12 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import assert from 'tiny-invariant'
 
 import { LIB } from '../consts.js'
-import {
+import type {
 	Graph,
 	Node, NodeUId,
 } from '../../types.js'
 import {
-	Rsrc,
+	type Rsrc,
 	getꓽfull_fledged,
 	createꓽgraphⵧmochi_cake,
 } from '../../../__fixtures/graph--recipe--mochi_cake.js'

@@ -3,7 +3,7 @@
 import {
 	type ValueInputSpec,
 	type SelectOneInputSpec,
-} from '../index.js'
+} from '../index.ts'
 
 /////////////////////////////////////////////////
 

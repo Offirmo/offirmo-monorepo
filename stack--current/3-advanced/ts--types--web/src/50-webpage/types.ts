@@ -9,9 +9,9 @@ import { JS‿str } from '../30-js/index.js'
 
 /////////////////////////////////////////////////
 
-// See also HtmlDocumentSpec
+// See also HtmlFileSpec
 // this version can be seen as "simplified", focusing purely on content?
-// TODO clarify cf. other type HtmlDocumentSpec
+// TODO clarify cf. other type HtmlFileSpec
 export interface Contentⳇweb extends
 	WithCharset,
 	WithLang,

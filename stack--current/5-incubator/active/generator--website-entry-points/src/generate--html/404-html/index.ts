@@ -3,11 +3,11 @@
 
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
-import { Html‿str } from '@offirmo-private/ts-types-web';
+import type { Html‿str } from '@offirmo-private/ts-types-web';
 import { normalize_unicode } from '@offirmo-private/normalize-string'
 import { getꓽhtml‿str } from '@offirmo-private/generator--html'
 
-import { WebPropertyEntryPointSpec } from '../../types.js'
+import type { WebPropertyEntryPointSpec } from '../../types.js'
 import {	getꓽhtml_doc_spec } from './selectors.js'
 /////////////////////////////////////////////////
 

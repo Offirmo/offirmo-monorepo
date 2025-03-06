@@ -49,7 +49,7 @@ interface PageResult {
 	//medium?: 'sheet' | 'scroll' | 'screen'
 }
 
-function _get_breadcrumb_entry(book_part : Immutable<BookPart>, parents: Immutable<BookPart[]>, key?: BookPartKey): string {
+function _get_breadcrumb_entry(book_part : Immutable<BookPart>, parent?: Immutable<BookPart> | undefined, key?: BookPartKey): string {
 	const emoji = [...parents, book_part]
 		.toReversed()
 		.reduce((acc, book_part) => {

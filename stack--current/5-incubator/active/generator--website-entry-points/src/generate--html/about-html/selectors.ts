@@ -1,15 +1,16 @@
 import assert from 'tiny-invariant'
-import { type Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
-import { Contentⳇweb } from '@offirmo-private/ts-types-web';
+import type { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
+
+import type { Contentⳇweb } from '@offirmo-private/ts-types-web';
 import {
 	FeatureSnippets,
 	HtmlMetas,
 	HtmlMetaContentⳇViewport,
-	HtmlDocumentSpec,
+	HtmlFileSpec,
 	getꓽfeatures as _getꓽfeatures,
 } from '@offirmo-private/generator--html'
 
-import { WebPropertyEntryPointSpec } from '../../types.js'
+import type { WebPropertyEntryPointSpec } from '../../types.js'
 import { LIB } from '../../consts.js'
 import {
 	prefersꓽorientation,
@@ -26,9 +27,9 @@ import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../index-html/selec
 
 /////////////////////////////////////////////////
 
-function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlDocumentSpec {
+function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlFileSpec {
 	const base = _getꓽhtml_doc_spec(spec)
-	const result: HtmlDocumentSpec = {
+	const result: HtmlFileSpec = {
 		...base,
 
 		features: (base.features ?? [])

@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
-import { type Immutable, Emoji } from '@offirmo-private/ts-types'
-import { CssColor‿str } from '@offirmo-private/ts-types-web'
+import type { Immutable, Emoji } from '@offirmo-private/ts-types'
+import type { CssColor‿str } from '@offirmo-private/ts-types-web'
 
-import { SVG, SVGElement, SVGId, SVGViewBox, Svg‿str } from './types.js'
+import type { SVG, SVGElement, SVGId, SVGViewBox, Svg‿str } from './types.js'
 
 /////////////////////////////////////////////////
 

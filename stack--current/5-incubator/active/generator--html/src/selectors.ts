@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
-import { type Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
+import type { Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
 import { hasꓽcontent } from '@offirmo-private/ts-utils'
-import { Url‿str, Css‿str, Html‿str, JS‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
+import type { Url‿str, Css‿str, Html‿str, JS‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
 import * as Selectors from '@offirmo-private/ts-types-web'
 import {
 	normalize_unicode,
@@ -10,7 +10,7 @@ import {
 
 import {
 	FeatureSnippets,
-	HtmlDocumentSpec,
+	HtmlFileSpec,
 	HtmlMetas,
 	Links,
 } from './types.js'
@@ -25,17 +25,17 @@ import snippetꓽjsⳇnormalizeᝍtrailingᝍslash from './snippets/js/snippet--
 /////////////////////////////////////////////////
 // Contentⳇweb
 
-function getꓽlang(spec: Immutable<HtmlDocumentSpec>): IETFLanguageType {
+function getꓽlang(spec: Immutable<HtmlFileSpec>): IETFLanguageType {
 	return Selectors.getꓽlang(spec.content)
 }
-function getꓽcharset(spec: Immutable<HtmlDocumentSpec>): Charset {
+function getꓽcharset(spec: Immutable<HtmlFileSpec>): Charset {
 	return Selectors.getꓽcharset(spec.content)
 }
 
-function getꓽcontent_blocksⵧhtml(spec: Immutable<HtmlDocumentSpec>): Immutable<Html‿str[]> {
+function getꓽcontent_blocksⵧhtml(spec: Immutable<HtmlFileSpec>): Immutable<Html‿str[]> {
 	return Selectors.getꓽhtml(spec.content)
 }
-function getꓽcontent_blocksⵧcssⵧcritical(spec: Immutable<HtmlDocumentSpec>): Immutable<Css‿str[]> {
+function getꓽcontent_blocksⵧcssⵧcritical(spec: Immutable<HtmlFileSpec>): Immutable<Css‿str[]> {
 	// CSS has requirements on order:
 	// 1. namespaces
 	// 2. layers
@@ -62,7 +62,7 @@ function getꓽcontent_blocksⵧcssⵧcritical(spec: Immutable<HtmlDocumentSpec>
 		...rest,
 	]
 }
-function getꓽcontent_blocksⵧcss(spec: Immutable<HtmlDocumentSpec>): Immutable<Css‿str[]> {
+function getꓽcontent_blocksⵧcss(spec: Immutable<HtmlFileSpec>): Immutable<Css‿str[]> {
 	const imports = Selectors.getꓽcss(spec.content).filter(s => s.startsWith('@import'))
 	const rest = Selectors.getꓽcss(spec.content).filter(s => !s.startsWith('@import'))
 	return [
@@ -70,24 +70,24 @@ function getꓽcontent_blocksⵧcss(spec: Immutable<HtmlDocumentSpec>): Immutabl
 		...rest,
 	]
 }
-function getꓽcontent_blocksⵧjsⵧcritical(spec: Immutable<HtmlDocumentSpec>): Immutable<JS‿str[]> {
+function getꓽcontent_blocksⵧjsⵧcritical(spec: Immutable<HtmlFileSpec>): Immutable<JS‿str[]> {
 	return Selectors.getꓽjsⵧcritical(spec.content)
 }
-function getꓽcontent_blocksⵧjs(spec: Immutable<HtmlDocumentSpec>): Immutable<JS‿str[]> {
+function getꓽcontent_blocksⵧjs(spec: Immutable<HtmlFileSpec>): Immutable<JS‿str[]> {
 	return Selectors.getꓽjs(spec.content)
 }
 
-function getꓽcontent_html__root__attributes(spec: Immutable<HtmlDocumentSpec>): Immutable<NonNullable<Contentⳇweb['html__root__attributes']>> {
+function getꓽcontent_html__root__attributes(spec: Immutable<HtmlFileSpec>): Immutable<NonNullable<Contentⳇweb['html__root__attributes']>> {
 	return Selectors.getꓽhtml__root__attributes(spec.content)
 }
 
-function getꓽtitleⵧpage(spec: Immutable<HtmlDocumentSpec>, fallback = 'Index'): string{
+function getꓽtitleⵧpage(spec: Immutable<HtmlFileSpec>, fallback = 'Index'): string{
 	return Selectors.getꓽtitle(spec.content) || fallback
 }
 
 /////////////////////////////////////////////////
 
-function getꓽmetas(spec: Immutable<HtmlDocumentSpec>): Immutable<HtmlMetas> {
+function getꓽmetas(spec: Immutable<HtmlFileSpec>): Immutable<HtmlMetas> {
 	const charset = getꓽcharset(spec)
 	const metas: HtmlMetas = {
 		charset,
@@ -114,13 +114,13 @@ function getꓽmetas(spec: Immutable<HtmlDocumentSpec>): Immutable<HtmlMetas> {
 	return metas as any
 }
 
-function getꓽlinks(spec: Immutable<HtmlDocumentSpec>): Immutable<Links> {
+function getꓽlinks(spec: Immutable<HtmlFileSpec>): Immutable<Links> {
 	// TODO normalize?
 	return spec.links || {}
 }
 
 /////////////////////////////////////////////////
-function getꓽfeatures(spec: Immutable<HtmlDocumentSpec>): FeatureSnippets[] {
+function getꓽfeatures(spec: Immutable<HtmlFileSpec>): FeatureSnippets[] {
 	const features = new Set<FeatureSnippets>(spec.features ?? [])
 
 	return Array.from(features).filter(f => {
@@ -130,7 +130,7 @@ function getꓽfeatures(spec: Immutable<HtmlDocumentSpec>): FeatureSnippets[] {
 }
 
 // alt
-function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>): Immutable<HtmlDocumentSpec> {
+function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlFileSpec>): Immutable<HtmlFileSpec> {
 	const content = ((): Contentⳇweb => {
 		const content_expanded = structuredClone(spec.content) as Contentⳇweb
 
@@ -273,7 +273,7 @@ function getꓽspecⵧwith_features_expanded(spec: Immutable<HtmlDocumentSpec>):
 const EOL = '\n'
 const CRITICAL_CSS_LINK = `https://www.smashingmagazine.com/2015/08/understanding-critical-css/`
 
-function _getꓽhtml__head__style‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+function _getꓽhtml__head__style‿str(spec: Immutable<HtmlFileSpec>): Html‿str {
 	const blocks = getꓽcontent_blocksⵧcssⵧcritical(spec)
 	if (!hasꓽcontent(blocks)) return ''
 
@@ -284,7 +284,7 @@ function _getꓽhtml__head__style‿str(spec: Immutable<HtmlDocumentSpec>): Html
 `
 }
 
-function _getꓽhtml__head__js‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+function _getꓽhtml__head__js‿str(spec: Immutable<HtmlFileSpec>): Html‿str {
 	const blocks = getꓽcontent_blocksⵧjsⵧcritical(spec)
 	if (!hasꓽcontent(blocks)) return ''
 
@@ -295,7 +295,7 @@ function _getꓽhtml__head__js‿str(spec: Immutable<HtmlDocumentSpec>): Html‿
 `
 }
 
-function _stringifyꓽmetaⵧviewport__content(viewport_spec: Immutable<HtmlDocumentSpec>): string {
+function _stringifyꓽmetaⵧviewport__content(viewport_spec: Immutable<HtmlFileSpec>): string {
 	return Object.entries(viewport_spec)
 		.map(([key, value]) => {
 			assert(hasꓽcontent(value), `viewport entry "${key}" should not be empty: "${value}"!`)
@@ -304,7 +304,7 @@ function _stringifyꓽmetaⵧviewport__content(viewport_spec: Immutable<HtmlDocu
 		.join(',')
 }
 
-function _getꓽhtml__head__meta‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+function _getꓽhtml__head__meta‿str(spec: Immutable<HtmlFileSpec>): Html‿str {
 	const metas = getꓽmetas(spec)
 	const links = getꓽlinks(spec)
 
@@ -373,7 +373,7 @@ function _getꓽhtml__head__meta‿str(spec: Immutable<HtmlDocumentSpec>): Html�
 	].join(EOL)
 }
 
-function _getꓽhtml__head‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+function _getꓽhtml__head‿str(spec: Immutable<HtmlFileSpec>): Html‿str {
 	// https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
 	return `
 <head>
@@ -390,7 +390,7 @@ function _getꓽhtml__head‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str 
 
 /////////////////////////////////////////////////
 
-function _getꓽhtml__body__style‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+function _getꓽhtml__body__style‿str(spec: Immutable<HtmlFileSpec>): Html‿str {
 	const blocks = getꓽcontent_blocksⵧcss(spec)
 	if (!hasꓽcontent(blocks)) return ''
 
@@ -401,7 +401,7 @@ function _getꓽhtml__body__style‿str(spec: Immutable<HtmlDocumentSpec>): Html
 `
 }
 
-function _getꓽhtml__body__js‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+function _getꓽhtml__body__js‿str(spec: Immutable<HtmlFileSpec>): Html‿str {
 	const blocks = getꓽcontent_blocksⵧjs(spec)
 	if (!hasꓽcontent(blocks)) return ''
 
@@ -412,7 +412,7 @@ function _getꓽhtml__body__js‿str(spec: Immutable<HtmlDocumentSpec>): Html‿
 `
 }
 
-function _getꓽhtml__body‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+function _getꓽhtml__body‿str(spec: Immutable<HtmlFileSpec>): Html‿str {
 	return `
 <body>
 	${getꓽcontent_blocksⵧhtml(spec).join(EOL)}
@@ -424,7 +424,7 @@ function _getꓽhtml__body‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str 
 
 /////////////////////////////////////////////////
 
-function getꓽhtml‿str(spec: Immutable<HtmlDocumentSpec>): Html‿str {
+function getꓽhtml‿str(spec: Immutable<HtmlFileSpec>): Html‿str {
 	spec = getꓽspecⵧwith_features_expanded(spec)
 	const root__attributes = getꓽcontent_html__root__attributes(spec)
 	const classes = root__attributes.filter(a => a.startsWith('.')).map(a => a.slice(1))

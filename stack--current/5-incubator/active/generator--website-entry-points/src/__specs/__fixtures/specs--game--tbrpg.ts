@@ -2,10 +2,10 @@ import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-import { Thing, SocialNetworkLink, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
+import type { Thing, SocialNetworkLink, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
 import { AUTHOR } from '@offirmo-private/marketing'
 
-import { type WebProperty, type WebPropertyEntryPointSpec } from '../..'
+import type { WebProperty, WebPropertyEntryPointSpec } from '../..'
 
 /////////////////////////////////////////////////
 /*

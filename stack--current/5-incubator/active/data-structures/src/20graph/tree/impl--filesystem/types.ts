@@ -2,9 +2,9 @@
  */
 
 import assert from 'tiny-invariant'
-import { Basename, RelativePath } from '@offirmo-private/ts-types'
+import type { Basename, RelativePath } from '@offirmo-private/ts-types'
 
-import { WithOptions, WithPayload } from '../../../10common/types'
+import type { WithOptions, WithPayload } from '../../../10common/types'
 
 /////////////////////////////////////////////////
 // There are plenty of ways to store a graph.

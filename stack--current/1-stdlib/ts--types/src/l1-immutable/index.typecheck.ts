@@ -1,11 +1,11 @@
 /* This is not a "unit" test (not runnable): this is a TS Typing test:
  * this file should/should not trigger TS compilation errors
  */
-import {
+import type {
 	ImmutableObject,
 	Immutable,
 	ImmutabilityEnforcer,
-} from '../index.js'
+} from '../index.ts'
 
 
 /////////////////////////////////////////////////
@@ -23,9 +23,9 @@ const t: Test = { foo: 42, bar: { baz: 'x' } }
 // test underlying typescript mechanisms
 function mutateBuiltin__Readonly__Any(x: Readonly<any>): void {
 	// @ts-expect-error TS2542
-	x.foo = 33
+	x['foo'] = 33
 	// XXX No error... What can we do?
-	x.foo.bar = 33
+	x['foo'].bar = 33
 }
 mutateBuiltin__Readonly__Any(t)
 function mutateBuiltin__Never(x: never): void {
@@ -91,7 +91,7 @@ function mutateAny(x: Immutable<any>): void {
 }
 mutateAny({})
 mutateAny({} as Immutable<any>)
-//mutateAny({} as Immutable<unknown>)
+mutateAny({} as Immutable<unknown>)
 
 /////////////////////////////////////////////////
 function mutateStructure(struct: Immutable<Test>): void {

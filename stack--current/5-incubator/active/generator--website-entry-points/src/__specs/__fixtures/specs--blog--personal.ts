@@ -1,8 +1,8 @@
-import { Author, Thing, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
+import type { Author, Thing, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
 
 import { AUTHOR } from '@offirmo-private/marketing'
 
-import { type WebProperty, type WebPropertyEntryPointSpec } from '../..'
+import type { WebProperty, WebPropertyEntryPointSpec } from '../..'
 
 /////////////////////////////////////////////////
 /*

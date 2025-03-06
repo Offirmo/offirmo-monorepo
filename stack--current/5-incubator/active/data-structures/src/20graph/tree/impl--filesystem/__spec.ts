@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { RelativePath } from '@offirmo-private/ts-types'
+import type { RelativePath } from '@offirmo-private/ts-types'
 
 import { LIB } from '../consts.js'
 import { createꓽgraphⵧfilesystem } from '../../../__fixtures/graph--filesystem.js'

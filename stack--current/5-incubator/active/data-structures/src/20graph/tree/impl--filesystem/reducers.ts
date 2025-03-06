@@ -2,10 +2,10 @@
  */
 
 import assert from 'tiny-invariant'
-import { RelativePath } from '@offirmo-private/ts-types'
+import type { RelativePath } from '@offirmo-private/ts-types'
 import { normalizeꓽpath } from '@offirmo-private/normalize-string'
 
-import {
+import type {
 	FileSystemNodeⳇFile,
 	FileSystemNodeⳇFolder,
 	FileSystemRoot,

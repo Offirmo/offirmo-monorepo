@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
-import { type Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
-import { CssColor‿str, Url‿str, } from '@offirmo-private/ts-types-web'
+import type { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
+import type { CssColor‿str, Url‿str, } from '@offirmo-private/ts-types-web'
 
-import { Category } from '../types.js'
+import type { Category } from '../types.js'
 
 /////////////////////////////////////////////////
 // Home => https://github.com/w3c/manifest   https://www.w3.org/TR/manifest-app-info/

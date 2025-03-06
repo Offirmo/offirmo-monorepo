@@ -4,10 +4,10 @@ import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 const chroma = ((await import('chroma-js')) as any).default as chroma.ChromaStatic // has ESM issues 2024/08
 
-import { AnyPath, Basename, Emoji, Immutable, RelativePath } from '@offirmo-private/ts-types'
+import type { AnyPath, Basename, Emoji, Immutable, RelativePath } from '@offirmo-private/ts-types'
 import { getꓽtitle as Contentⳇwebᐧgetꓽtitle, getꓽdescription as _getꓽdescription } from '@offirmo-private/ts-types-web'
-import { CssColor‿str } from '@offirmo-private/ts-types-web'
-import { FeatureSnippets } from '@offirmo-private/generator--html'
+import type { CssColor‿str } from '@offirmo-private/ts-types-web'
+import type { FeatureSnippets } from '@offirmo-private/generator--html'
 import type { SVG } from '@offirmo-private/generator--svg'
 
 import { normalize_unicode, coerce_toꓽsafe_basenameⵧstrictest, normalizeꓽtextⵧsentence } from '@offirmo-private/normalize-string'

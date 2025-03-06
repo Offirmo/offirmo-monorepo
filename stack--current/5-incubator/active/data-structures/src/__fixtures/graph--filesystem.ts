@@ -13,7 +13,7 @@
  */
 
 import assert from 'tiny-invariant'
-import { RelativePath } from '@offirmo-private/ts-types'
+import type { RelativePath } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 

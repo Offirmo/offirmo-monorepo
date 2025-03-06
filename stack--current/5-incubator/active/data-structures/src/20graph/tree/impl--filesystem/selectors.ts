@@ -2,7 +2,7 @@
  */
 
 import assert from 'tiny-invariant'
-import { type Immutable, RelativePath } from '@offirmo-private/ts-types'
+import type { Immutable, RelativePath } from '@offirmo-private/ts-types'
 import { normalizeꓽpath } from '@offirmo-private/normalize-string'
 
 import { TreeForRL, getꓽrepresentationⵧlinesⵧgeneric } from '../selectors--representation--lines.js'

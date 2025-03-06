@@ -1,10 +1,10 @@
-import { Contentⳇweb } from '@offirmo-private/ts-types-web'
+import type { Contentⳇweb } from '@offirmo-private/ts-types-web'
 
-import { type HtmlDocumentSpec } from '../..'
+import { type HtmlFileSpec } from '../..'
 
 /////////////////////////////////////////////////
 /*
-HtmlDocumentSpec
+HtmlFileSpec
 ↳ content: Contentⳇweb
 	⇲ WithCharset
 	⇲ WithLang
@@ -34,7 +34,7 @@ const CONTENT: Contentⳇweb = {
 //const METAS: HtmlMetas
 
 
-const SPEC: HtmlDocumentSpec = {
+const SPEC: HtmlFileSpec = {
 	content: CONTENT,
 	features: [
 		'cssⳇbox-layout--natural',
