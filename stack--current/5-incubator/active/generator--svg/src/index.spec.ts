@@ -4,7 +4,7 @@
 
 import { expect } from 'chai'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 
 import {
 	createꓽempty,
@@ -15,7 +15,7 @@ import {
 	addꓽcontent,
 
 	getꓽsvg‿str,
-} from './index.js'
+} from './index.ts'
 
 /////////////////////////////////////////////////
 

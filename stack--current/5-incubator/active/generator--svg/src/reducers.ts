@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import type { Immutable, Emoji } from '@offirmo-private/ts-types'
 import type { CssⳇColor‿str } from '@offirmo-private/ts-types-web'
 
-import type { SVG, SVGElement, SVGId, SVGViewBox, Svg‿str } from './types.js'
+import type { SVG, SVGElement, SVGId, SVGViewBox, Svg‿str } from './types.ts'
 
 /////////////////////////////////////////////////
 

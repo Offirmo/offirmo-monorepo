@@ -5,8 +5,8 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { EOL, TAB } from './consts.js'
-import type { SVG, Svg‿str } from './types.js'
+import { EOL, TAB } from './consts.ts'
+import type { SVG, Svg‿str } from './types.ts'
 
 /////////////////////////////////////////////////
 
