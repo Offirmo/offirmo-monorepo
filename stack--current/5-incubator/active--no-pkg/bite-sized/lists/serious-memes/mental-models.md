@@ -807,6 +807,7 @@ sex -- abuse -- Outreau
 sex -- ed
 sex -- ed -- "sex positive"
 sex ratio -- human -- returning soldier effect = more boys are born immediately after wars https://en.m.wikipedia.org/wiki/Returning_soldier_effect
+sharpen your axe before cutting the forest
 ship of theseus https://en.m.wikipedia.org/wiki/Ship_of_Theseus
 short term / long term
 signal-to-noise ratio
@@ -894,7 +895,7 @@ theory of everything https://en.wikipedia.org/wiki/Theory_of_everything
 things learned from Medicine / Dentistry https://zenfamily.dental/csLearnDental.php
 THINK hack = Is it True? Helpful? Inspiring? Necessary? Kind?
 thought leader
-tier list https://en.wikipedia.org/wiki/Tier_list
+tier list = ranking by desirability/viability/fitness https://en.wikipedia.org/wiki/Tier_list
 tier-3 meme
 time management
 time-tested

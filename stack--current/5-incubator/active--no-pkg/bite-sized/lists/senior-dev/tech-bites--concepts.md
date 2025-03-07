@@ -89,8 +89,8 @@ big companies software = At big companies, software tends to be written by large
 blocking
 blocklist/blacklist -- https://paulgraham.com/spamhausblacklist.html
 bro culture in tech https://www.smh.com.au/technology/australias-tech-darling-atlassian-in-sexism-row-20140605-zryjd.html
-bug -- mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html
 bugs -- $370M bug https://en.wikipedia.org/wiki/Ariane_flight_V88
+bugs -- mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html
 bugs -- significants https://en.wikipedia.org/wiki/List_of_software_bugs
 C++ 26 https://thenewstack.io/coming-to-iso-c-26-standard-an-ai-acceleration-edge/
 C10k problem https://en.wikipedia.org/wiki/C10k_problem
@@ -131,8 +131,9 @@ client/server -- multi-tier architecture
 clippy https://www.mentalfloss.com/article/504767/tragic-life-clippy-worlds-most-hated-virtual-assistant
 close / destroy / terminate / dispose / release / free / delete / destruct / finalize / teardown / cleanup / shutdown / stop / end / abort / cancel / halt / kill / exit / quit / unload / dispose...
 code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
-code quality = the only definition of quality in code that makes any sense is our ability to change the code. If it's easy to change, it's high quality; if it's hard to change, it's not. 
+code quality = the only definition of quality in code that makes any sense is our ability to change the code. If it's easy to change, it's high quality; if it's hard to change, it's not.
 code quality https://blog.jim-nielsen.com/2024/easy-changes/
+code reuse -- DRY
 code reuse -- small focused modules = Make small focused modules for reusability and to make it possible to build larger more advanced things that are easier to reason about https://sindresorhus.com/blog/small-focused-modules
 code review https://www.linkedin.com/posts/ajgreenwell_code-reviews-have-unwritten-laws-i-had-activity-7239611908914319360-_MHW/
 codebase -- type -- hobby
@@ -211,6 +212,13 @@ crunch
 culture -- low/high context https://journals.sagepub.com/doi/10.1177/0146167212455828
 Cupertino effect = bad spell checking
 currying https://en.wikipedia.org/wiki/Currying
+data -- description = for discoverability
+data -- hydration
+data -- lake
+data -- lineage tracking = who created it, transformed it, enriched it...
+data -- privacy
+data -- re-extraction = of v3.4.5
+data -- versioning = of content + schema
 data format -- consumer vs producer
 data format -- consumer vs producer -- independent release/deploy
 data format -- do NOT conflate serialization w/ working representation w/ persisted w/ interchange! (cf. protobuf)
@@ -218,6 +226,7 @@ data format -- future proofing = vastly overrated now that we have semver!! (+ m
 data format -- interchange -- https://en.wikipedia.org/wiki/Advanced_Scientific_Data_Format
 data format -- interchange -- JSON -- binary https://msgpack.org/
 data format -- interchange -- JSON https://www.json.org/
+data format -- interchange -- JSON5 https://json5.org/
 data format -- interchange -- JSON mini = some sort of protobuf-derived space-saving representation (single letters for keys)
 data format -- interoperability, fungibility, hackability, debuggability, anti-fragility
 data format -- linting = ex. for JSON compatibility, for backward/forward compatibility...
@@ -236,6 +245,7 @@ databases -- joins https://justinjaffray.com/joins-13-ways/
 databases -- normalization
 databases -- sharding -- middleware -- gizzard (legacy) = sharding middleware https://github.com/twitter-archive/gizzard
 databases -- sharding https://www.mongodb.com/docs/manual/sharding/
+dataset
 DBMS (Database Management System)
 DDD (Domain-Driven Design) https://en.wikipedia.org/wiki/Domain-driven_design
 DDOS
@@ -258,6 +268,16 @@ design patterns -- facade https://en.wikipedia.org/wiki/Facade_pattern
 design patterns -- strangler https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/
 design patterns -- visitor (not recommended, see grug)
 design smell https://en.wikipedia.org/wiki/Design_smell
+desirables -- changeability
+desirables -- isolation
+desirables -- no complexity
+desirables -- no maintenance
+desirables -- no surprises
+desirables -- quality (vague)
+desirables -- readability
+desirables -- reliability
+desirables -- resilience
+desirables -- side-effect free
 development containers https://containers.dev/implementors/spec/
 DevEx
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
@@ -283,6 +303,7 @@ entitlements -- non-standard offerings or commercial terms to meet their needs t
 epochs: a backward-compatible language evolution mechanism https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1881r0.html
 error -- handling -- exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
 error -- handling -- fail fast = Check input and fail on nonsensical input or invalid state as early as possible, preferably with an exception or error response that will make the exact problem clear to your caller https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
+error -- handling -- fail fast and loudly
 error -- reuse error codes
 error -- type -- domain error = out of the specification, ex. sqrt(-x) https://cplusplus.com/reference/stdexcept/domain_error/
 error -- type -- logic error = errors in the internal logical of the program, such as violation of logical preconditions or class invariants https://cplusplus.com/reference/stdexcept/logic_error/
@@ -294,7 +315,6 @@ exceptions -- checked vs unchecked = only Java does checked, no-one followed, to
 execution model https://en.wikipedia.org/wiki/Execution_model
 express
 FAANG https://www.faangfire.com/
-fail fast and loudly
 feature flag -- also called toggle, feature control
 feature flag = dynamically change the state of production
 feedback loop -- speed needed
@@ -366,7 +386,7 @@ IDEALS -- 5 Loose coupling
 IDEALS -- 6 Single responsibility
 IDEALS = principles for microservice design
 idempotent = make mutations idempotent. A full retry of a partial failure shouldn’t corrupt/duplicate data.
-if it ain't broke, don't fix it
+if it ain't broken, don't fix it
 IIFE https://codilime.com/blog/iffe-forgotten-javascript-pattern/
 illusion of clean code = "the good news is that my code is quite beautiful and well organized, with perfectly uniform indentation and formatting, completely consistent conventions, and immaculately well factored. Any developer who is worth their salt in the language I have laid down will be able to understand, trace, and build upon my code within one day of poring over it. (If not, fire them. Trust me.)" https://blog.jpl-consulting.com/2011/03/what-happens-if-i-get-hit-by-a-bus/
 immutability
@@ -435,8 +455,10 @@ languages -- trends
 languages -- weekend https://stackoverflow.blog/2017/02/07/what-programming-languages-weekends/
 late/lazy evaluation vs fail fast
 layer -- abstraction
+layers
 layers -- shearing
 lazy-loading
+leaking
 legacy code = code without good testing coverage that we don’t recall writing https://www.booktopia.com.au/working-effectively-with-legacy-code-michael-feathers/book/9780131177055.html
 let's deploy to production https://www.youtube.com/watch?v=5p8wTOr8AbU
 LIFO
@@ -496,7 +518,7 @@ node.js -- principles https://www.platformatichq.com/node-principles
 not invented here https://en.wikipedia.org/wiki/Not_invented_here
 npm
 nyan cat
-o11y https://o11y.eu/blog/what-is-o11y/
+o11y observability https://o11y.eu/blog/what-is-o11y/
 object
 OOP -- against https://paulgraham.com/noop.html
 OOP -- fake strengths -- abstraction -> any interface
@@ -619,6 +641,7 @@ REST (REpresentational State Transfer)
 REST HTTP = How to GET a Cup of Coffee https://www.infoq.com/articles/webber-rest-workflow/
 revisions
 rewrite https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22
+rewrites https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22
 RFC (Request For Comments) https://rfc.fyi/
 RFC 2119 terminology = must, must not, should, should not, and may. The terms prefer and avoid correspond to should and should not, respectively. Imperative and declarative statements are prescriptive and correspond to must.
 robustness -- principle (beware bad effects) https://en.wikipedia.org/wiki/Robustness_principle
@@ -640,31 +663,7 @@ script
 Scripts -- should be written using the project main language https://joaomagfreitas.link/scripts-should-be-written-using-the-project-main-language/
 scrum
 SDK (Software Development Kit)
-security -- Adhere to the principle of least privilege
-security -- bad defaults -- firebase https://env.fail/posts/firewreck-1
-security -- Be aware of buffer overflows and how to protect against them
-security -- cache poisoning https://en.wikipedia.org/wiki/Cache_poisoning
-security -- CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-benchmarks
-security -- Compartmentalize - so your system is not all or nothing
-security -- Don't write your own crypto
-security -- glassbox review = vs blackbox, looking at what happens when stimulated
-security -- guidelines -- CGI security https://www.cgisecurity.com/owasp/html/ch04.html
-security -- guidelines -- S/O https://stackoverflow.com/questions/2794016/what-should-every-programmer-know-about-security
-security -- Hiding secrets is hard - and secrets hidden in code won't stay secret for long
-security -- Keep it simple - complexity increases the likelihood of security holes
-security -- Keep your attack surface to a minimum
-security -- Make sure you fail securely
-security -- Never trust any input!
-security -- OWASP top 10 https://owasp.org/www-project-top-ten/
-security -- Plan for security from the start - it's not something you can bolt on at the end
-security -- principle of least privilege
-security -- through obscurity -- ok if not only https://security.stackexchange.com/questions/32064/at-what-point-does-something-count-as-security-through-obscurity
-security -- through obscurity -- still useful https://news.ycombinator.com/item?id=24444497
-security -- through obscurity https://en.wikipedia.org/wiki/Security_through_obscurity
-security -- Use defence in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
-security -- Use threat modelling
-security -- Using crypto doesn't mean you're secure (attackers will look for a weaker link)
-security -- Validate input from all untrusted sources - use whitelists not blacklists
+security -- (see dedicated file)
 semaphore
 semver
 semver -- advanced example https://react.dev/community/versioning-policy (see also TS)
@@ -672,7 +671,7 @@ SHA (Secure Hash Algorithm)
 shaving the yak
 show me the code!
 shrinkwrap
-side-effect free
+side effects (avoid them!)
 significant change
 simple average
 single executable application "SEA" -- node https://codesnip.sh/posts/building-standalone-nodejs-executables
@@ -737,7 +736,6 @@ this
 thread
 threads -- virtual https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html
 time-travel https://docs.snowflake.com/en/user-guide/data-time-travel
-TLS "Transport Layer Security"
 tool -- curl = https://curl.se/
 tool -- grep -- ast-grep https://ast-grep.github.io/
 tool -- http://devdocs.io/

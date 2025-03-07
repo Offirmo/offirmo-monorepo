@@ -58,7 +58,6 @@ function normalizeꓽpath(path: string, type?: 'file' | 'folder', SEP = '/'): st
 	return path
 }
 
-
 /////////////////////////////////////////////////
 
 export {

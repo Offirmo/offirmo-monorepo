@@ -1,11 +1,4 @@
-++ Getting Real https://basecamp.com/gettingreal
-6 Reasons Users Hate Your New Feature -- The Feature’s Not Finishable
-6 Reasons Users Hate Your New Feature -- The Feature’s Not Finished
-6 Reasons Users Hate Your New Feature -- You Built EXACTLY What They Asked For
-6 Reasons Users Hate Your New Feature -- You Didn’t Build What They Asked For
-6 Reasons Users Hate Your New Feature -- Your Existing Product Needs Too Much Work
-6 Reasons Users Hate Your New Feature -- Your Product Interface Is a Giant Mess
-6 Reasons Users Hate Your New Feature https://www.slicedbreaddesign.com/blog/6-reasons-users-hate-your-new-feature
+[ ] ++ Getting Real https://basecamp.com/gettingreal
 [ ] https://skamille.medium.com/
 [ ] personal MBA
 [ ] strategy https://stratechery.com/
@@ -33,6 +26,7 @@ core actions -- active users
 core mental models (of the product)
 corporate cannibalism = prioritize short-term profits over long-term sustainability
 creator/user gap https://blog.jpl-consulting.com/2010/03/creator-user-gap/
+Critical User Journeys (CUJ)
 customer segmentation = Strategic, Enterprise, Mid-Market, SMB
 don't build castles in others people's kingdoms
 earliest -- 01 feedback-able product (EFP)
@@ -48,7 +42,13 @@ Embrace, Extend, and Extinguish https://en.wikipedia.org/wiki/Embrace,_extend,_a
 enshittification = first, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die. https://en.wikipedia.org/wiki/Enshittification
 executive presence
 failures -- inVision -- https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
-features -- "infantile level" https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
+features -- 6 Reasons Users Hate Your New Feature -- The Feature’s Not Finishable
+features -- 6 Reasons Users Hate Your New Feature -- The Feature’s Not Finished
+features -- 6 Reasons Users Hate Your New Feature -- You Built EXACTLY What They Asked For
+features -- 6 Reasons Users Hate Your New Feature -- You Didn’t Build What They Asked For
+features -- 6 Reasons Users Hate Your New Feature -- Your Existing Product Needs Too Much Work
+features -- 6 Reasons Users Hate Your New Feature -- Your Product Interface Is a Giant Mess
+features -- 6 Reasons Users Hate Your New Feature https://www.slicedbreaddesign.com/blog/6-reasons-users-hate-your-new-feature
 features -- collaboration https://zknill.io/posts/collaboration-no-crdts/
 features -- creep
 features -- enterprise scale -- access control
@@ -76,6 +76,8 @@ features -- enterprise scale -- sort
 features -- enterprise scale -- SSO
 features -- enterprise scale -- templates
 features -- enterprise scale -- user management
+features -- infantile level https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
+features -- worse is better = there is a point where less functionality ("worse") is a preferable option ("better") in terms of practicality and usability. Software that is limited, but simple to use, may be more appealing to the user and market than the reverse https://en.wikipedia.org/wiki/Worse_is_better
 FFP "First Full Purchase" = the moment customers finally decide it’s time to go from ‘just browsing’ to ‘fine, take my money already'
 financing cycle https://en.wikipedia.org/wiki/Seed_money
 first-mover advantage -- handicap of a head start https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_start
@@ -111,9 +113,8 @@ incumbent inertia -- organizationally inflexible
 incumbent inertia -- reluctant to cannibalize existing product lines
 incumbent inertia https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_start#Incumbent_inertia
 jobs to be done
+Jobs to be Done (JTBD) https://en.wikipedia.org/wiki/Jobs-to-be-done_theory
 knowledge creating company https://hbr.org/2007/07/the-knowledge-creating-company
-KPI "Key Product Indicators"
-KPI -- examples https://kpiexamples.operately.com/
 land grab https://fastercapital.com/topics/understanding-the-concept-of-land-grab-strategies.html
 lock-in
 lock-in -- vendor
@@ -190,7 +191,6 @@ principles -- canva -- Weigh up every line = We want customers to feel a connect
 principles -- canva -- Words are design = What customers read is as important to their experience as the interactions and visuals. Clear and meaningful labels and written content are an important part of an interface, therefore language and writing are an important skill to have as a designer.
 principles -- canva https://www.canva.dev/docs/apps/design-guidelines/principles/
 procurement
-
 product life cycle -- stage 1 = Market Development is where you engage in experiments and innovation
 product life cycle -- stage 2 = Growth is where you iterate on differentiation features
 product life cycle -- stage 3 = Maturity is where you shift to “good enough” and start optimising for cost of operation
@@ -208,14 +208,13 @@ proposition -- value
 quality vs speed = sacrificing code quality for speed leads to compounding issues later. balance speed with long-term sustainability
 real-world context https://contextsdk.com/insights#product
 realistic scheduling = overly optimistic deadlines lead to burnout and missed milestones. Always add a (secret?) buffer.
-red ocean vs blue ocean https://www.blueoceanstrategy.com/tools/red-ocean-vs-blue-ocean-strategy/
 reputation management
 reputation management -- REPCOM
 risk -- management = be proactive instead of reactive
 risk -- management = coordinated set of activities carried out throughout an organisation aimed at identifying, understanding and controlling its risks
 risk = effect of uncertainty on an organisation’s ability to meet its objectives
-sales -- Sales Development Representative (SDR) https://www.salesforce.com/blog/sales-development-representative/
 sales -- high-skills sales reps https://blog.staysaasy.com/p/this-is-the-person-selling-your-product
+sales -- Sales Development Representative (SDR) https://www.salesforce.com/blog/sales-development-representative/
 satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing
 scalability -- organisational -- collaboration = bigger team size can no longer efficiently collaborate, ex. merge conflicts, coordination
 scalability -- organisational -- collaboration = no limiting "gate keeping" core team
@@ -234,10 +233,12 @@ simplicity "no ads, no gimmicks, no games"
 sleeper technology
 stalking horse = figure used to test a concept or mount a challenge on behalf of a third party. If the idea proves viable or popular, the third party can then declare its interest and advance the concept with little risk of failure. If the concept fails, the third party will not be tainted by association with the failed concept and can either drop the idea completely or bide its time and wait until a better moment to launch an attack https://en.wikipedia.org/wiki/Stalking_horse
 startups should avoid being held hostage by the preferences of their early user base if it deviates from the broader market, ex. social feed or reels
-strategy -- "bowling pin" = starts with a niche segment easily attainable then move to next niche or broader market
+Stock Keeping Unit (SKU) = a clearly identified product https://en.wikipedia.org/wiki/Stock_keeping_unit
 strategy -- 01 "where we play"
 strategy -- 02 "how we win"
+strategy -- bowling pin = starts with a niche segment easily attainable then move to next niche or broader market
 strategy -- evergreen vs cyclic
+strategy -- red ocean vs blue ocean https://www.blueoceanstrategy.com/tools/red-ocean-vs-blue-ocean-strategy/
 support loops = ex. help desk + social media + phone etc.
 system of work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams
 target
@@ -258,5 +259,4 @@ User Experience Research (UXR) https://medium.com/getting-started-in-user-experi
 wartime vs peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 what got us here won't get us there…
 winner takes it all
-worse is better = there is a point where less functionality ("worse") is a preferable option ("better") in terms of practicality and usability. Software that is limited, but simple to use, may be more appealing to the user and market than the reverse https://en.wikipedia.org/wiki/Worse_is_better
 You can develop the best strategy in the world, but if it isn’t producing the desired results, it’s time to reassess. "It’s not that we aren’t doing as well as we could, but it’s not the best strategy we could be doing to win." https://worldofwarcraft.blizzard.com/en-us/news/21952451/midgame-moves-adapt-survive-and-thrive
