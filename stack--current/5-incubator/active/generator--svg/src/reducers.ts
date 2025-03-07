@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import type { Immutable, Emoji } from '@offirmo-private/ts-types'
-import type { CssColor‿str } from '@offirmo-private/ts-types-web'
+import type { CssⳇColor‿str } from '@offirmo-private/ts-types-web'
 
 import type { SVG, SVGElement, SVGId, SVGViewBox, Svg‿str } from './types.js'
 
@@ -38,7 +38,7 @@ function setꓽviewBox(svg: Immutable<SVG>, viewBox: Immutable<SVGViewBox>): Imm
 	}
 }
 
-function setꓽbackground_color(svg: Immutable<SVG>, background_color: CssColor‿str): Immutable<SVG> {
+function setꓽbackground_color(svg: Immutable<SVG>, background_color: CssⳇColor‿str): Immutable<SVG> {
 	return {
 		...svg,
 		background_color,

@@ -29,6 +29,9 @@ export type UNSAFE_Environment =
 	| 'staging'  //   ✘          ✘           ✔        ✘               ✘                     ✔                  ✘
 	| 'dev'      //   ✔          ✔          ✘         ✘               ✘                     ✔                  ✘
 //	| 'test'     //   ✔          ✔          ✘         ✘               ✘                     ✔                  -
+// staging? https://www.linkedin.com/pulse/staging-environments-inefficient-relic-past-julien-danjou-
+// staging = who maintain it?
+// staging can slow you down https://www.linkedin.com/posts/enzoa_staging-can-slow-you-down-here-is-how-to-activity-7120787524377014273-slXZ
 
 /////////////////////////////////////////////////
 

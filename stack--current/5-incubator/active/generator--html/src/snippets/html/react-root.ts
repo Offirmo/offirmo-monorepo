@@ -3,9 +3,9 @@ import type { Html‿str } from '@offirmo-private/ts-types-web'
 
 import {
 	getꓽtitleⵧpage,
-} from '../../selectors.js'
+} from '../../selectors.ts'
 
-import type { HtmlFileSpec } from '../../types.js'
+import type { HtmlFileSpec } from '../../types.ts'
 
 /////////////////////////////////////////////////
 

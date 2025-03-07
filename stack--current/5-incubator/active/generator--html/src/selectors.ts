@@ -1,7 +1,8 @@
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 import type { Immutable, IETFLanguageType, Charset } from '@offirmo-private/ts-types'
-import { hasꓽcontent } from '@offirmo-private/ts-utils'
+
+import { hasꓽcontent } from '@offirmo-private/type-detection'
 import type { Url‿str, Css‿str, Html‿str, JS‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
 import * as Selectors from '@offirmo-private/ts-types-web'
 import {
@@ -10,17 +11,17 @@ import {
 
 import {
 	FeatureSnippets,
-	HtmlFileSpec,
-	HtmlMetas,
-	Links,
-} from './types.js'
+	type HtmlFileSpec,
+	type HtmlMetas,
+	type Links,
+} from './types.ts'
 
 /////////////////////////////////////////////////
 
-import snippetꓽcssⳇboxᝍlayoutⵧnatural from './snippets/css/box-layout--natural.js'
-import snippetꓽcssⳇviewportⵧfull from './snippets/css/viewport--full.js'
-import snippetꓽhtmlⳇreact_root from './snippets/html/react-root.js'
-import snippetꓽjsⳇnormalizeᝍtrailingᝍslash from './snippets/js/snippet--normalize-url.js'
+import snippetꓽcssⳇboxᝍlayoutⵧnatural from './snippets/css/box-layout--natural.ts'
+import snippetꓽcssⳇviewportⵧfull from './snippets/css/viewport--full.ts'
+import snippetꓽhtmlⳇreact_root from './snippets/html/react-root.ts'
+import snippetꓽjsⳇnormalizeᝍtrailingᝍslash from './snippets/js/snippet--normalize-url.ts'
 
 /////////////////////////////////////////////////
 // Contentⳇweb

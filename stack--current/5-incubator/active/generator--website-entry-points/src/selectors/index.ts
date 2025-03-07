@@ -6,7 +6,7 @@ const chroma = ((await import('chroma-js')) as any).default as chroma.ChromaStat
 
 import type { AnyPath, Basename, Emoji, Immutable, RelativePath } from '@offirmo-private/ts-types'
 import { getꓽtitle as Contentⳇwebᐧgetꓽtitle, getꓽdescription as _getꓽdescription } from '@offirmo-private/ts-types-web'
-import type { CssColor‿str } from '@offirmo-private/ts-types-web'
+import type { CssⳇColor‿str } from '@offirmo-private/ts-types-web'
 import type { FeatureSnippets } from '@offirmo-private/generator--html'
 import type { SVG } from '@offirmo-private/generator--svg'
 
@@ -177,19 +177,19 @@ function getꓽdescriptionⵧpage(spec: Immutable<WebPropertyEntryPointSpec>): s
 /////////////////////////////////////////////////
 // polish
 
-function getꓽcolorⵧforeground(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
+function getꓽcolorⵧforeground(spec: Immutable<WebPropertyEntryPointSpec>): CssⳇColor‿str {
 	const candidate = spec.colorⵧforeground ?? 'black'
 	assert(chroma.valid(candidate), `Invalid fg color "${candidate}"!`)
 	return chroma(candidate).name()
 }
 
-function getꓽcolorⵧbackground(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
+function getꓽcolorⵧbackground(spec: Immutable<WebPropertyEntryPointSpec>): CssⳇColor‿str {
 	const candidate = spec.colorⵧbackground ?? 'white'
 	assert(chroma.valid(candidate), `Invalid bg color "${candidate}"!`)
 	return chroma(candidate).name()
 }
 
-function getꓽcolorⵧtheme(spec: Immutable<WebPropertyEntryPointSpec>): CssColor‿str {
+function getꓽcolorⵧtheme(spec: Immutable<WebPropertyEntryPointSpec>): CssⳇColor‿str {
 	const candidate = spec.colorⵧtheme ?? getꓽcolorⵧbackground(spec)
 	assert(chroma.valid(candidate), `Invalid theme color "${candidate}"!`)
 	return chroma(candidate).name()

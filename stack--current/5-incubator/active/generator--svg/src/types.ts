@@ -1,7 +1,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/SVG
 
 import type { IETFLanguageType } from '@offirmo-private/ts-types'
-import type { Url‿str, CssColor‿str } from '@offirmo-private/ts-types-web'
+import type { Url‿str, CssⳇColor‿str } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 
@@ -126,7 +126,7 @@ interface SVG extends SVGContainerElement {
 	// - good semantic
 	// - helps when composing
 	// - helps when rasterizing (cf. options of https://github.com/yisibl/resvg-js#nodejs-1)
-	background_color?: CssColor‿str
+	background_color?: CssⳇColor‿str
 
 	// in order
 	content: Array<SVGElement | string>

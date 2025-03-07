@@ -1,6 +1,3 @@
-
-"natural order of things in society" established by the dominant ideology
-+++ https://thewokesalaryman.com/
 -- https://fs.blog/mental-models/
 -- tool https://explorer.globe.engineer/
 0-sum game
@@ -40,6 +37,7 @@
 [ ] ++ https://savoir-sans-frontieres.com/
 [ ] +++ flinkliv.com https://flinkliv.com/
 [ ] +++ https://fs.blog/mental-models/
+[ ] +++ https://thewokesalaryman.com/
 [ ] ex. of edited interview misleading https://paulgraham.com/wids.html
 [ ] Futures studies https://en.wikipedia.org/wiki/Futures_studies + many concepts
 [ ] https://amir.rachum.com/mental-models/
@@ -151,6 +149,7 @@ Charlie Munger 3 basic rules -- Don’t work for anyone you don’t respect and 
 Charlie Munger 3 basic rules -- Work only with people you enjoy
 Charlie Munger 3 basic rules https://www.cnbc.com/2023/11/29/charlie-munger-these-basic-career-rules-made-me-successful-in-life-with-warren-buffett-i-had-all-3.html
 charts -- hill = position on a "hill" figuring things out -> making it happen https://basecamp.com/shapeup/4.0-appendix-01#track-scopes-on-the-hill-chart
+cherchez la femme https://en.m.wikipedia.org/wiki/Cherchez_la_femme
 choice making -- 5-2-1 technique https://www.reddit.com/r/lifehacks/comments/ctdibo/521_technique/
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
 class -- high -- new money
@@ -323,6 +322,7 @@ first principles https://fs.blog/first-principles/
 first-principles thinker
 five eyes
 flourishing = meaning and purpose, deep personal relationships, and character and virtue https://link.springer.com/article/10.1007/s11017-024-09679-x
+follow the money https://en.m.wikipedia.org/wiki/Follow_the_money
 follow your bliss -- "I've never done a thing I wanted to do in all my life" (but not hedonism) https://en.wikipedia.org/wiki/Joseph_Campbell#%22Follow_your_bliss%22
 frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
 frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
@@ -532,9 +532,14 @@ Lev Landau classification of physicists -- line 1 = perseverance, tenacity, ener
 Lev Landau classification of physicists -- line 2 = originality, genius, intuition
 Lev Landau classification of physicists https://books.google.com.au/books?id=nGcHEAAAQBAJ&pg=PA115&redir_esc=y#v=onepage&q&f=false
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
+life expectancy -- healthy "HALE" = average number of years that a person can expect to live in "full health" excluding the years lived in less than full health due to disease and/or injury
+life expectancy -- remaining
+life expectancy https://en.m.wikipedia.org/wiki/Life_expectancy
 life https://en.wikipedia.org/wiki/Life
 life isn't fair https://www.linkedin.com/pulse/lifell-kill-ya-allen-white
 life operating system -- Munger https://fs.blog/munger-operating-system/
+life span
+life span -- maximum https://en.m.wikipedia.org/wiki/Maximum_life_span
 lifeboat strategy to avoid annihilation of the human race
 lifestyle
 lifestyle inflation
@@ -604,6 +609,7 @@ naivety
 naiveté: abus sexuels, mafia
 narcissism
 narcissism -- overlaps with neuroticism
+natural order of things in society = established by the dominant ideology
 needs / wants https://en.wikipedia.org/wiki/Need
 network effect
 Never interrupt someone doing what you said couldn't be done.
@@ -741,6 +747,7 @@ race -- slavery
 race -- white supremacy https://en.wikipedia.org/wiki/Grandfather_clause
 race to the bottom
 radical candor
+rainbow code https://en.m.wikipedia.org/wiki/Rainbow_Code
 random acts of kindness -- bingo
 rank and file
 rare events = ex. COVID-19 https://en.wikipedia.org/wiki/Rare_events
@@ -799,6 +806,7 @@ sex -- abuse -- https://en.wikipedia.org/wiki/Angers_pedophile_network
 sex -- abuse -- Outreau
 sex -- ed
 sex -- ed -- "sex positive"
+sex ratio -- human -- returning soldier effect = more boys are born immediately after wars https://en.m.wikipedia.org/wiki/Returning_soldier_effect
 ship of theseus https://en.m.wikipedia.org/wiki/Ship_of_Theseus
 short term / long term
 signal-to-noise ratio

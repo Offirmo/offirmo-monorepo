@@ -190,6 +190,7 @@ principles -- canva -- Weigh up every line = We want customers to feel a connect
 principles -- canva -- Words are design = What customers read is as important to their experience as the interactions and visuals. Clear and meaningful labels and written content are an important part of an interface, therefore language and writing are an important skill to have as a designer.
 principles -- canva https://www.canva.dev/docs/apps/design-guidelines/principles/
 procurement
+
 product life cycle -- stage 1 = Market Development is where you engage in experiments and innovation
 product life cycle -- stage 2 = Growth is where you iterate on differentiation features
 product life cycle -- stage 3 = Maturity is where you shift to “good enough” and start optimising for cost of operation
@@ -214,6 +215,7 @@ risk -- management = be proactive instead of reactive
 risk -- management = coordinated set of activities carried out throughout an organisation aimed at identifying, understanding and controlling its risks
 risk = effect of uncertainty on an organisation’s ability to meet its objectives
 sales -- Sales Development Representative (SDR) https://www.salesforce.com/blog/sales-development-representative/
+sales -- high-skills sales reps https://blog.staysaasy.com/p/this-is-the-person-selling-your-product
 satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing
 scalability -- organisational -- collaboration = bigger team size can no longer efficiently collaborate, ex. merge conflicts, coordination
 scalability -- organisational -- collaboration = no limiting "gate keeping" core team

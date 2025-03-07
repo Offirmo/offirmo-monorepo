@@ -2,7 +2,7 @@ import type { Emoji, Basename, AnyPath} from '@offirmo-private/ts-types'
 import type {
 	Author,
 	Contentⳇweb,
-	CssColor‿str,
+	CssⳇColor‿str,
 	Thing,
 	ThingWithOnlinePresence,
 } from '@offirmo-private/ts-types-web'
@@ -76,9 +76,9 @@ interface WebProperty extends ThingWithOnlinePresence {
 	// from: https://web.dev/learn/pwa/web-app-manifest/#recommended_fields
 	// - Warning: Do not use transparency, CSS variables, gradient functions, or color functions with transparency (such as rgba())
 	// - as they are not supported by most browsers. You will get inconsistent results.
-	colorⵧbackground?: CssColor‿str
-	colorⵧforeground?: CssColor‿str
-	colorⵧtheme?: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
+	colorⵧbackground?: CssⳇColor‿str
+	colorⵧforeground?: CssⳇColor‿str
+	colorⵧtheme?: CssⳇColor‿str // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Customize_your_app_colors#define_a_theme_color
 	// XXX if customizing colors, very likely you'll need to tweak the link colors as well!
 	// TODO recognize a dark theme and include the theme file if offirmo framework
 	// TODO one day themes

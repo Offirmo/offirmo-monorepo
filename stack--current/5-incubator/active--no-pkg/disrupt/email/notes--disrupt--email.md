@@ -66,7 +66,7 @@ experience https://productidentity.co/p/3-telegram-the-mysterious-messenger
 
 
 [ ] Email vs Capitalism, or, Why We Can't Have Nice Things - Dylan Beattie - NDC Oslo 2023 https://youtu.be/mrGfahzt-4Q?si=-RK4oJ-sR4zFjdmD
-
+https://www.youtube.com/watch?v=mrGfahzt-4Q
 
 gmail https://www.thenationalnews.com/future/technology/2024/04/01/gmails-20th-anniversary-technologys-best-april-fools-prank-yet/
 

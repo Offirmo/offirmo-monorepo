@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import type { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
-import type { CssColor‿str, Url‿str, } from '@offirmo-private/ts-types-web'
+import type { CssⳇColor‿str, Url‿str, } from '@offirmo-private/ts-types-web'
 
 import type { Category } from '../types.js'
 
@@ -41,8 +41,8 @@ interface WebManifest {
 
 	// critical for good experience
 	short_name: string
-	theme_color: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Manifest/theme_color
-	background_color: CssColor‿str // https://developer.mozilla.org/en-US/docs/Web/Manifest/background_color
+	theme_color: CssⳇColor‿str // https://developer.mozilla.org/en-US/docs/Web/Manifest/theme_color
+	background_color: CssⳇColor‿str // https://developer.mozilla.org/en-US/docs/Web/Manifest/background_color
 	lang: IETFLanguageType // https://github.com/w3c/manifest/blob/gh-pages/explainer.md#internationalization-lang-and-dir
 	dir?: unknown // useful if not ltr https://github.com/w3c/manifest/blob/gh-pages/explainer.md#internationalization-lang-and-dir
 

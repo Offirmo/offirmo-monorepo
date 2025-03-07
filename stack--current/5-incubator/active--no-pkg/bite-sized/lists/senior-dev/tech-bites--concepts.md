@@ -714,6 +714,7 @@ tainting an object https://react.dev/reference/react/experimental_taintObjectRef
 tech debt -- accidental - e.g. bugs due to human error that unknowingly increases the cost of future work.
 tech debt -- deliberate - e.g. optimising for short term delivery, knowing it increases the cost of future work.
 tech debt -- incidental - e.g. organic changes in complexity over time that increases the cost of future work.
+tech specs https://hybridhacker.email/p/how-to-write-great-tech-specs
 Temporal Dead Zone (TDZ)
 temporary solutions https://80.lv/articles/this-30-year-old-windows-feature-was-created-as-a-temporary-solution/
 tenant -- isolation -- sandboxing / isolates / individual processes / individual VMs / individual containers
