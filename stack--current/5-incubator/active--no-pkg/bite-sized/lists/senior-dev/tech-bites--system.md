@@ -470,6 +470,8 @@ service -- monitoring https://cloud.google.com/stackdriver/docs/solutions/slo-mo
 service -- proxy -- egress authentication
 service -- weaving https://serviceweaver.dev/
 service = software functionality https://en.wikipedia.org/wiki/Service_(systems_architecture)
+service tiers -- 0 = most critical bc serving the most critical biz/customer needs
+service tiers = related to capabilities
 single point of failure = avoidable with redundancy
 site reliability engineering (SRE) "treat operations as if it’s a software problem" https://sre.google/
 snowflake (Twitter) = distributed k-sorted uuid generator https://blog.x.com/engineering/en_us/a/2010/announcing-snowflake
