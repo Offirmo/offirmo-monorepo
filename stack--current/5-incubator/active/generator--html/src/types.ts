@@ -169,4 +169,5 @@ export {
 	type HtmlMetas,
 
 	type HtmlFileSpec,
+	type Contentⳇweb, // for convenience
 }

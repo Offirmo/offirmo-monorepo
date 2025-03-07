@@ -370,6 +370,8 @@ harassment -- sexual = when based on a person’s sex or gender, or involves unw
 harassment = any form of behaviour that could reasonably offend, humiliate or intimidate
 harassment = includes words and/or behavior(s) usually focused on someone’s personal characteristics—such as their race, religion, national origin, sex, age, or disability
 harassment = repeated pattern, or a particularly egregious instance, of offensive, intimidating, or hostile conduct
+haters -- haters gonna hate
+haters -- ignore the f’ing haters = including the ones "in the arena" https://aseemk.substack.com/p/ignore-the-f-ing-haters-json5
 hawks and doves https://seldo.com/posts/the_case_for_frameworks
 helicopter parent
 herbe toujours plus verte
@@ -434,6 +436,7 @@ inversion: Avoiding stupidity is easier than trying to be brilliant. Instead of 
 investing
 investing -- fund vs index = index always better
 investing -- Nancy Pelosi Stock Tracker ♟ https://x.com/PelosiTracker_/status/1874859312616759754
+invictus https://en.wikipedia.org/wiki/Invictus
 invisible hand: Markets aggregate knowledge. Rising prices signal falling supply or increased demand, which incentivizes an increase in production. The opposite is true for falling prices. Prices are a signal wrapped in an incentive.
 IQ -- it exists, it's measurable
 irredentism https://www.reddit.com/r/history/comments/sji919/is_there_a_term_for_this_phenomenon/
@@ -559,6 +562,7 @@ low culture https://en.wikipedia.org/wiki/Low_culture
 mainstream scientific consensus
 make it work, make it good, make it fast, make it work again
 making one's luck
+man in the arena = from a speech https://en.wikipedia.org/wiki/Citizenship_in_a_Republic
 marxist philosophy
 Maslow's pyramid
 maturity = judgement of persons

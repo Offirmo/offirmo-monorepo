@@ -196,7 +196,7 @@ Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
 copyright -- clean-room design = copying a design by reverse engineering and then recreating it without infringing any of the copyrights associated with the original design https://en.m.wikipedia.org/wiki/Clean-room_design
 copyright -- code, binary, BIOS, APIs...
 copyright -- license -- REUSE https://reuse.software/tutorial/
-copyright -- statement https://matija.suklje.name/how-and-why-to-properly-write-copyright-statements-in-your-code 
+copyright -- statement https://matija.suklje.name/how-and-why-to-properly-write-copyright-statements-in-your-code
 corporate politic https://www.breakingpoint.tech/p/where-do-corporate-politics-come
 correlation
 coupling -- loose https://en.wikipedia.org/wiki/Loose_coupling
@@ -226,8 +226,8 @@ data format -- future proofing = vastly overrated now that we have semver!! (+ m
 data format -- interchange -- https://en.wikipedia.org/wiki/Advanced_Scientific_Data_Format
 data format -- interchange -- JSON -- binary https://msgpack.org/
 data format -- interchange -- JSON https://www.json.org/
-data format -- interchange -- JSON5 https://json5.org/
 data format -- interchange -- JSON mini = some sort of protobuf-derived space-saving representation (single letters for keys)
+data format -- interchange -- JSON5 https://json5.org/ https://github.com/json5/json5
 data format -- interoperability, fungibility, hackability, debuggability, anti-fragility
 data format -- linting = ex. for JSON compatibility, for backward/forward compatibility...
 data format -- one goal of defining the type once then generating code in various languages (hard!)
@@ -238,7 +238,7 @@ data format -- serialization -- stability! ex. sorting by keys in k/v, important
 data format -- serialization -- wire format
 data format -- serialization -- wire format -- https://capnproto.org/ = serialization only! (better than protobuf)
 data format -- TODO find TS stuff
-data residency -- storing = storing user data in the same jurisdiction as the customer’s residence. 
+data residency -- storing = storing user data in the same jurisdiction as the customer’s residence.
 data residency = helps customers feel confident that the data they own (or about them) is subject to their local laws and regulations. This is especially important for enterprise, education, and government customers, many of whom might have rules and regulations mandating the use of data-resident software.
 databases
 databases -- joins https://justinjaffray.com/joins-13-ways/
@@ -449,6 +449,8 @@ language features -- data hiding
 language features -- encapsulation
 language features -- polymorphism
 language interprété types simples / types par référence
+languages -- configuration
+languages -- configuration -- https://github.com/bazelbuild/starlark/
 languages -- generations = (disputed) https://en.wikipedia.org/wiki/Programming_language_generations
 languages -- higher level -- against https://www.reddit.com/r/compsci/comments/zx1eu8/von_neumann_was_admonishing_people_who_built/
 languages -- trends
@@ -473,7 +475,7 @@ log
 loop
 loop - breaking out of
 LTS, maintenance LTS, active LTS https://nodejs.org/en/about/previous-releases
-LxTHW "Learn X The Hard Way" Philosophy = has students do exercises, focuses on practice and rote repetition, and instills an attitude that to learn anything one must be prepared to work at it https://github.com/georgeowen1993/learn-git-the-hard-way/ 
+LxTHW "Learn X The Hard Way" Philosophy = has students do exercises, focuses on practice and rote repetition, and instills an attitude that to learn anything one must be prepared to work at it https://github.com/georgeowen1993/learn-git-the-hard-way/
 magic number
 manifest
 map

@@ -13,7 +13,9 @@ Ideas
 https://github.com/ncochard/parse-imports-ts
 
 detection of node / web
+detection of APIs (global vars)
 
+labels
 
 structured vs unstructured
 
@@ -27,7 +29,9 @@ boundary marker
 = BUILD file for Bazel
 = some JSON5 for us
 
+visibility (bazel) = whether a target allow being depended upon by X
 
+pkg groups
 
 hinting
 = file expected to be modified by hand / not
