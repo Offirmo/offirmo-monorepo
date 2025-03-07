@@ -5,7 +5,7 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import { getꓽISO8601ⵧsimplified‿days } from '@offirmo-private/timestamps'
 
-import { WebPropertyEntryPointSpec, EntryPoints } from '../../types.js'
+import type { WebPropertyEntryPointSpec, EntryPoints } from '../../types.ts'
 
 /////////////////////////////////////////////////
 // Cloudflare Pages
@@ -24,7 +24,7 @@ function generateꓽcloudflare(spec: Immutable<WebPropertyEntryPointSpec>): Entr
 	return {
 			_headers: generateꓽ_headersⵧcloudflare(spec),
 			_redirects: generateꓽ_redirectsⵧcloudflare(spec),
-			'functions/hello-world.js': `// https://developers.cloudflare.com/pages/functions/get-started/#create-a-function
+			'functions/hello-world.ts': `// https://developers.cloudflare.com/pages/functions/get-started/#create-a-function
 export function onRequest(context) {
 return new Response("Hello, world!")
 }

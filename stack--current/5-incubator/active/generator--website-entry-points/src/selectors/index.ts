@@ -12,7 +12,7 @@ import type { SVG } from '@offirmo-private/generator--svg'
 
 import { normalize_unicode, coerce_toꓽsafe_basenameⵧstrictest, normalizeꓽtextⵧsentence } from '@offirmo-private/normalize-string'
 
-import { WebPropertyEntryPointSpec } from '../types.js'
+import type { WebPropertyEntryPointSpec } from '../types.ts'
 
 // Relpath should NOT feature ./ as it's up to the caller to decide if they want it or not
 // always use safe defaults

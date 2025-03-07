@@ -1,10 +1,10 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { WebPropertyEntryPointSpec } from '../../types.js'
+import type { WebPropertyEntryPointSpec } from '../../types.ts'
 import {
 	getꓽcontactⵧsecurity,
-} from '../../selectors/index.js'
+} from '../../selectors/index.ts'
 
 /////////////////////////////////////////////////
 

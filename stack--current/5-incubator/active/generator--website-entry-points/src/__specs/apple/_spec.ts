@@ -1,10 +1,10 @@
 import { expect } from 'chai'
 
-import { LIB } from '../../consts.js'
+import { LIB } from '../../consts.ts'
 
-import { getꓽwebsiteᝍentryᝍpoints } from '../../index.js'
+import { getꓽwebsiteᝍentryᝍpoints } from '../../index.ts'
 
-import { SPEC as _SPEC } from '../__fixtures/specs--game--tbrpg.js'
+import { SPEC as _SPEC } from '../__fixtures/specs--game--tbrpg.ts'
 
 /////////////////////////////////////////////////
 

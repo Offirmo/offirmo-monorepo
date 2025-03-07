@@ -3,15 +3,11 @@ import type { Immutable, IETFLanguageType } from '@offirmo-private/ts-types'
 
 import type { Contentⳇweb } from '@offirmo-private/ts-types-web';
 import {
-	FeatureSnippets,
-	HtmlMetas,
-	HtmlMetaContentⳇViewport,
-	HtmlFileSpec,
-	getꓽfeatures as _getꓽfeatures,
+	type HtmlFileSpec,
 } from '@offirmo-private/generator--html'
 
-import type { WebPropertyEntryPointSpec } from '../../types.js'
-import { LIB } from '../../consts.js'
+import type { WebPropertyEntryPointSpec } from '../../types.ts'
+import { LIB } from '../../consts.ts'
 import {
 	prefersꓽorientation,
 	getꓽfeatures,
@@ -21,9 +17,9 @@ import {
 	isꓽuser_scalable,
 	supportsꓽscreensⵧwith_shape,
 	wantsꓽinstall,
-} from '../../selectors/index.js'
-import { ifꓽdebug } from '../../utils/debug.js'
-import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../index-html/selectors.js'
+} from '../../selectors/index.ts'
+import { ifꓽdebug } from '../../utils/debug.ts'
+import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../index-html/selectors.ts'
 
 /////////////////////////////////////////////////
 

@@ -4,9 +4,9 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { WebPropertyEntryPointSpec, EntryPoints } from '../types.js'
+import type { WebPropertyEntryPointSpec, EntryPoints } from '../types.ts'
 
-import generateꓽsecurityᐧtxt from './security-txt/index.js'
+import generateꓽsecurityᐧtxt from './security-txt/index.ts'
 
 /////////////////////////////////////////////////
 

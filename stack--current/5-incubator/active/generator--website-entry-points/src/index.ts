@@ -4,16 +4,16 @@ import assert from 'tiny-invariant'
 import * as Prettier from 'prettier'
 import type { Immutable, AbsolutePath } from '@offirmo-private/ts-types'
 
-import type { EntryPoints, WebPropertyEntryPointSpec } from './types.js'
+import type { EntryPoints, WebPropertyEntryPointSpec } from './types.ts'
 
-import { needsꓽwebmanifest, getꓽbasenameⵧwebmanifest, shouldꓽgenerateꓽjscode } from './selectors/index.js'
+import { needsꓽwebmanifest, getꓽbasenameⵧwebmanifest, shouldꓽgenerateꓽjscode } from './selectors/index.ts'
 
-import generateꓽhtml from './generate--html/index.js'
-import generateꓽicons from './generate--icons/index.js'
-import generateꓽmisc_root_files from './generate--misc-root-files/index.js'
-import generateꓽsource_code from './generate--src/index.js'
-import generateꓽwebmanifest from './generate--webmanifest/index.js'
-import generateꓽwell_known from './generate--well-known/index.js'
+import generateꓽhtml from './generate--html/index.ts'
+import generateꓽicons from './generate--icons/index.ts'
+import generateꓽmisc_root_files from './generate--misc-root-files/index.ts'
+import generateꓽsource_code from './generate--src/index.ts'
+import generateꓽwebmanifest from './generate--webmanifest/index.ts'
+import generateꓽwell_known from './generate--well-known/index.ts'
 
 /////////////////////////////////////////////////
 
@@ -93,7 +93,7 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 						assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
 						file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'typescript' })
 						break
-					case '.js':
+					case '.ts':
 						assert(typeof file__content === 'string', `file ${file__path} should be a string!`)
 						file__content = await Prettier.format(file__content, { ...PRETTIER_OPTIONS, parser: 'acorn' })
 						break
@@ -149,9 +149,9 @@ export {
 	writeꓽwebsiteᝍentryᝍpoints,
 	generateꓽwebsiteᝍentryᝍpoints,
 }
-export * from './utils/gravatar.js'
+export * from './utils/gravatar.ts'
 
-export * from './types.js'
+export * from './types.ts'
 
 // for convenience
 export * from '@offirmo-private/ts-types-web'

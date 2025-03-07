@@ -1,15 +1,15 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { EntryPoints, WebPropertyEntryPointSpec } from '../types.js'
+import type { EntryPoints, WebPropertyEntryPointSpec } from '../types.ts'
 import {
 	getꓽtitleⵧapp,
 	getꓽtitleⵧappⵧshort,
 	getꓽtitleⵧlib,
 	getꓽcolorⵧbackground,
 	getꓽcolorⵧforeground,
-} from '../selectors/index.js'
-import { ifꓽdebug } from '../utils/debug.js'
+} from '../selectors/index.ts'
+import { ifꓽdebug } from '../utils/debug.ts'
 
 /////////////////////////////////////////////////
 
@@ -17,7 +17,7 @@ const CODE_TEMPLATEⵧGENERIC = `
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-//import {  } from './types.js'
+//import {  } from './types.ts'
 
 /////////////////////////////////////////////////
 

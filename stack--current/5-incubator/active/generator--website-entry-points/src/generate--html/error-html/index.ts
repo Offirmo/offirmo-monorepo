@@ -7,8 +7,9 @@ import type { Html‿str } from '@offirmo-private/ts-types-web';
 import { normalize_unicode } from '@offirmo-private/normalize-string'
 import { getꓽhtml‿str } from '@offirmo-private/generator--html'
 
-import type { WebPropertyEntryPointSpec } from '../../types.js'
-import {	getꓽhtml_doc_spec } from './selectors.js'
+import type { WebPropertyEntryPointSpec } from '../../types.ts'
+import { getꓽhtml_doc_spec } from './selectors.ts'
+
 /////////////////////////////////////////////////
 
 function generate(spec: Immutable<WebPropertyEntryPointSpec>): Html‿str {

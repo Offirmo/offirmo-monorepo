@@ -6,8 +6,8 @@ import type {
 	HtmlFileSpec,
 } from '@offirmo-private/generator--html'
 
-import type { WebPropertyEntryPointSpec } from '../../types.js'
-import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../index-html/selectors.js'
+import type { WebPropertyEntryPointSpec } from '../../types.ts'
+import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../index-html/selectors.ts'
 
 /////////////////////////////////////////////////
 

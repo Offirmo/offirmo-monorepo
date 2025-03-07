@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { Category, EntryPoints, WebPropertyEntryPointSpec } from '../types.js'
-import { Icon, WebManifest } from './types.js'
+import type { Category, EntryPoints, WebPropertyEntryPointSpec } from '../types.ts'
+import type { Icon, WebManifest } from './types.ts'
 import {
 	canꓽuse_window_controls_overlay,
 	hasꓽown_navigation,
@@ -12,8 +12,8 @@ import {
 	getꓽtitleⵧappⵧshort,
 	getꓽcolorⵧbackground,
 	getꓽcolorⵧtheme, supportsꓽscreensⵧwith_shape, getꓽicon__sizes, getꓽicon__path,
-} from '../selectors/index.js'
-import { ifꓽdebug } from '../utils/debug.js'
+} from '../selectors/index.ts'
+import { ifꓽdebug } from '../utils/debug.ts'
 
 /////////////////////////////////////////////////
 

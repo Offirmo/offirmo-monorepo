@@ -4,20 +4,20 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import type { WebPropertyEntryPointSpec, EntryPoints } from '../types.js'
+import type { WebPropertyEntryPointSpec, EntryPoints } from '../types.ts'
 import {
 	getꓽbasenameⵧindexᐧhtml,
 	getꓽbasenameⵧaboutᐧhtml,
 	getꓽbasenameⵧcontactᐧhtml,
 	getꓽbasenameⵧerrorᐧhtml,
-} from '../selectors/index.js'
+} from '../selectors/index.ts'
 
-import generateꓽindexᐧhtml from './index-html/index.js'
-import { getꓽhtml_doc_spec } from './index-html/selectors.js'
-import generateꓽaboutᐧhtml from './about-html/index.js'
-import generateꓽcontactᐧhtml from './contact-html/index.js'
-import generateꓽerrorᐧhtml from './error-html/index.js'
-import generateꓽ404ᐧhtml from './404-html/index.js'
+import generateꓽindexᐧhtml from './index-html/index.ts'
+import { getꓽhtml_doc_spec } from './index-html/selectors.ts'
+import generateꓽaboutᐧhtml from './about-html/index.ts'
+import generateꓽcontactᐧhtml from './contact-html/index.ts'
+import generateꓽerrorᐧhtml from './error-html/index.ts'
+import generateꓽ404ᐧhtml from './404-html/index.ts'
 
 /////////////////////////////////////////////////
 

@@ -10,10 +10,15 @@ Ideas
 - "scopes"
 
 
+sorting by languages
+
+
 https://github.com/ncochard/parse-imports-ts
 
 detection of node / web
 detection of APIs (global vars)
+
+install @types automatically (by inspecting if types are provided)
 
 labels
 

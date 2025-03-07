@@ -4,12 +4,12 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { WebPropertyEntryPointSpec, EntryPoints } from '../types.js'
+import type { WebPropertyEntryPointSpec, EntryPoints } from '../types.ts'
 
 
-import generateꓽhost_specific from './generate--host-specific/index.js'
-import generateꓽhumansᐧtxt from './generate--humans-txt/index.js'
-import generateꓽrobotsᐧtxt from './generate--robots-txt/index.js'
+import generateꓽhost_specific from './generate--host-specific/index.ts'
+import generateꓽhumansᐧtxt from './generate--humans-txt/index.ts'
+import generateꓽrobotsᐧtxt from './generate--robots-txt/index.ts'
 
 /////////////////////////////////////////////////
 

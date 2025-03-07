@@ -93,6 +93,7 @@
 		"@tsparticles/engine": "^3",
 		"@types/chai": "^5",
 		"@types/chai-as-promised": "^8",
+		"@types/chroma-js": "^3",
 		"@types/cross-spawn": "^6",
 		"@types/icepick": "^2",
 		"@types/json-stable-stringify": "^1",

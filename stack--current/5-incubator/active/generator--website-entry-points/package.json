@@ -52,6 +52,7 @@
 		"@offirmo-private/marketing": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/chroma-js": "^3",
 		"npm-run-all": "^4",
 		"tslib": "^2"
 	}

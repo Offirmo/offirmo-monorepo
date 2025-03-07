@@ -4,14 +4,14 @@ const chroma = ((await import('chroma-js')) as any).default as chroma.ChromaStat
 import type { Immutable } from '@offirmo-private/ts-types'
 import type { Contentⳇweb, Css‿str, Html‿str, JS‿str } from '@offirmo-private/ts-types-web';
 import * as ContentⳇwebᐧSelectors from '@offirmo-private/ts-types-web';
-import {
+import type {
 	HtmlMetas,
 	HtmlMetaContentⳇViewport,
 	HtmlFileSpec,
 } from '@offirmo-private/generator--html'
 
-import type { WebPropertyEntryPointSpec } from '../../types.js'
-import { LIB } from '../../consts.js'
+import type { WebPropertyEntryPointSpec } from '../../types.ts'
+import { LIB } from '../../consts.ts'
 import {
 	getꓽtitleⵧpage,
 	getꓽfeatures,
@@ -25,9 +25,9 @@ import {
 	getꓽcolorⵧbackground, getꓽcolorⵧforeground,
 	needsꓽwebmanifest, getꓽbasenameⵧwebmanifest,
 	shouldꓽgenerateꓽjscode
-} from '../../selectors/index.js'
-import { generateꓽinline as generateꓽfavicon__iconⵧinline } from '../../generate--icons/index.js'
-import { ifꓽdebug } from '../../utils/debug.js'
+} from '../../selectors/index.ts'
+import { generateꓽinline as generateꓽfavicon__iconⵧinline } from '../../generate--icons/index.ts'
+import { ifꓽdebug } from '../../utils/debug.ts'
 
 /////////////////////////////////////////////////
 
@@ -217,7 +217,7 @@ function getꓽcontentⵧweb__js(spec: Immutable<WebPropertyEntryPointSpec>): Pi
 	}
 
 	if (shouldꓽgenerateꓽjscode(spec) && !spec.content?.js?.some(x => x.includes('app/index')))
-		result.js.push(`import './app/index.js'`)
+		result.js.push(`import './app/index.ts'`)
 
 	return result
 }

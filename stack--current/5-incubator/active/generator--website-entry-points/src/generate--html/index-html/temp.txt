@@ -195,7 +195,7 @@ function generateꓽhtml__body(spec: Immutable<WebPropertyEntryPointSpec>): Html
 			return acc
 		}, [] as JS‿str[]),
 	].map(js‿str => {
-		if (js‿str.endsWith('.js') || js‿str.endsWith('.jsx') || js‿str.endsWith('.ts') || js‿str.endsWith('.tsx'))
+		if (js‿str.endsWith('.ts') || js‿str.endsWith('.jsx') || js‿str.endsWith('.ts') || js‿str.endsWith('.tsx'))
 			return `import '${js‿str}'`
 		return js‿str
 	})
