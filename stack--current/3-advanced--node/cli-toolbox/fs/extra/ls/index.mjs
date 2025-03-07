@@ -12,11 +12,11 @@ export function lsDirsSync(srcpath, options = {}) {
 	let result = fs
 		.readdirSync(srcpath, { withFileTypes: true })
 		.map(dirent => {
-			if (!dirent.path) {
-				throw new Error('Missing dirent.path! Are you properly using node >= 18?')
+			if (!dirent.parentPath) {
+				throw new Error('Missing dirent.parentPath! Are you properly using node >= 20?')
 			}
 			/*console.log('from dirent:', {
-				path: dirent.path,
+				path: dirent.parentPath,
 				name: dirent.name,
 				type: dirent.isSymbolicLink()
 					? 'symlink'
@@ -30,7 +30,7 @@ export function lsDirsSync(srcpath, options = {}) {
 		})
 		.filter(dirent => dirent.isDirectory())
 		.map(dirent => options.full_path
-			? path.join(dirent.path, dirent.name)
+			? path.join(dirent.parentPath, dirent.name)
 			: dirent.name)
 
 	return result.sort()
@@ -45,11 +45,11 @@ export function lsFilesSync(srcpath, options = {}) {
 	let result = fs
 		.readdirSync(srcpath, { withFileTypes: true })
 		.map(dirent => {
-			if (!dirent.path) {
-				throw new Error('Missing dirent.path! Are you properly using node >= 18?')
+			if (!dirent.parentPath) {
+				throw new Error('Missing dirent.parentPath! Are you properly using node >= 20?')
 			}
 			/*console.log('from dirent:', {
-				path: dirent.path,
+				path: dirent.parentPath,
 				name: dirent.name,
 				type: dirent.isSymbolicLink()
 					? 'symlink'
@@ -63,7 +63,7 @@ export function lsFilesSync(srcpath, options = {}) {
 		})
 		.filter(dirent => dirent.isFile())
 		.map(dirent => options.full_path
-			? path.join(dirent.path, dirent.name)
+			? path.join(dirent.parentPath, dirent.name)
 			: dirent.name)
 
 	return result.sort()

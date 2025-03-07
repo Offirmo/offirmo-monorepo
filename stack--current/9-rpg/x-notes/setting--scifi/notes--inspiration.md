@@ -69,6 +69,11 @@ space hunters
 ## Yoko Tsuno
 Vinéens, ark ships, lost planets...
 
+## Schlock Mercenary
+
+https://schlockmercenary.fandom.com/wiki/
+https://www.ovalkwiki.com/
+
 
 ## misc / other
 https://thealexandrian.net/wordpress/15331/roleplaying-games/deus-ex-tactical-hacking

@@ -11,7 +11,7 @@ boring -- culture
 boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
 boring -- technology https://mcfunley.com/choose-boring-technology
 brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
-business as a by-product https://www.linkedin.com/posts/jason-fried_ive-always-thought-of-business-as-a-by-product-activity-7236805665627717632-_s96
+business -- as a by-product = structure that ultimately has to exist around a group of people to make things and service customers over the long term, but not inherently interesting https://www.linkedin.com/posts/jason-fried_ive-always-thought-of-business-as-a-by-product-activity-7236805665627717632-_s96/
 churn
 commoditization -- commodity businesses generally compete on price alone and are plagued by high inventories and low profit margins. In other non-commodity businesses, you would say “innovate”
 commoditization = undifferentiated mass, one no different than the other. We can pick the cheapest.
@@ -219,7 +219,7 @@ satisficing = satisfy + suffice = good enough even if not optimal https://en.wik
 scalability -- organisational -- collaboration = bigger team size can no longer efficiently collaborate, ex. merge conflicts, coordination
 scalability -- organisational -- collaboration = no limiting "gate keeping" core team
 scalability -- speed = of the product BUT ALSO of developing new features
-scalability -- technical -- complexity = devs can no longer reason about the code 
+scalability -- technical -- complexity = devs can no longer reason about the code
 scale frontiers - 01 Generous free product
 scale frontiers - 02 Affordable Paid Product
 scale frontiers - 03 Teams of all sizes

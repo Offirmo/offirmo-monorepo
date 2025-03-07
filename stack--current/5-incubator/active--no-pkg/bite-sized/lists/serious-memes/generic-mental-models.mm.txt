@@ -23,9 +23,9 @@
 5 Harsh Truths for Success from Linus Torvalds https://medium.com/codex/5-harsh-truths-from-linus-torvalds-406ab20cea02
 5 mantras -- 1% better = You don’t need to change the world. Just make something — anything — 1% better, every day. Movement of the smallest rocks can cause the greatest landslides.
 5 mantras -- Don’t get stuck = when I feel stuck it is because I am being too stubborn to change, too egotistical to ask for help, or too tired to invite creativity into my thinking. There is rarely no way out.
-5 mantras -- Find joy in the journey = We give so much of our lives to our work, so we should put some effort into making it something that brings us joy. We probably find that joy in different places, but it’s important that we know what fuels us. Our work, and our lives, are better for it. 
+5 mantras -- Find joy in the journey = We give so much of our lives to our work, so we should put some effort into making it something that brings us joy. We probably find that joy in different places, but it’s important that we know what fuels us. Our work, and our lives, are better for it.
 5 mantras -- Prototype the path = The only way through is to do. Hard problems get a hell of a lot easier when we get our hands dirty, equip our curiosity, and start trying things out.
-5 mantras -- You are enough = I don’t tell myself this often enough. I’d dare to say that you don’t either. But it’s a mantra that I repeat to myself often. 
+5 mantras -- You are enough = I don’t tell myself this often enough. I’d dare to say that you don’t either. But it’s a mantra that I repeat to myself often.
 5 mantras = by Christopher Davis (burnout)
 5 top regrets of the dying -- 1 I wish I'd had the courage to live a life true to myself, not the life others expected of me
 5 top regrets of the dying -- 2 I wish I hadn't worked so hard
@@ -176,7 +176,7 @@ contempt
 content moderation
 content rating -- "Common Sense" Media (private org) https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings
 content rating -- Hays code https://en.wikipedia.org/wiki/Hays_Code
-continuity of government (COG) = establishing defined procedures that allow a government to continue its essential operations in case of a catastrophic event such as nuclear war https://en.wikipedia.org/wiki/Continuity_of_government 
+continuity of government (COG) = establishing defined procedures that allow a government to continue its essential operations in case of a catastrophic event such as nuclear war https://en.wikipedia.org/wiki/Continuity_of_government
 convex output = look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
 convex output = the smartest people can be an order of magnitude more productive than others who are only somewhat less smart https://www.8vc.com/resources/lessons-from-peter-thiel
 convex output curve = better than linear = more effort/rsrc -> much more results
@@ -274,7 +274,7 @@ emergence: When things interact, they often birth new, unpredictable forms. Ther
 emotionally secure https://www.cnbc.com/2024/01/03/harvard-psychologist-if-you-answer-yes-to-any-of-these-questions-youre-more-emotionally-secure-than-most-people.html
 English
 entrepreneurship -- billing -- free day https://blog.jpl-consulting.com/2011/05/the-free-day/
-entrepreneurship -- billing -- hourly rate vs fixed price 
+entrepreneurship -- billing -- hourly rate vs fixed price
 equality vs equity https://medium.com/@CRA1G/the-evolution-of-an-accidental-meme-ddc4e139e0e4
 equity
 eternal september https://en.wikipedia.org/wiki/Eternal_September
@@ -568,7 +568,7 @@ Maslow's pyramid
 maturity = judgement of persons
 McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
 mediocrity -- accepting (vs. special, high potential) https://www.reddit.com/r/LifeProTips/comments/10znhn2/lpt_request_how_do_i_just_accept_that_i_am/
-mediocrity -- as a goal, sucks... as a result, is OK 
+mediocrity -- as a goal, sucks... as a result, is OK
 mediocrity -- at last passing forward: kids, teaching...
 mediocrity -- Bell curve
 mediocrity -- comparison "it just depends on who you're comparing to"
@@ -647,7 +647,7 @@ optimism = "keep only the one who say it’s possible" https://posthog.com/found
 other people’s problems / pick your battles
 oui, peut-être que personne n’y a encore pensé
 out of your league
-outside context problem (OCP) = a problem that is "outside the context" as it is generally not considered until it occurs, and the capacity to actually conceive of or consider the OCP in the first place may not be possible or very limited (i.e., the majority of the group's population may not have the knowledge or ability to realize that the OCP can arise, or assume it is extremely unlikely). An example of OCP is an event in which a civilization does not consider the possibility that a much more technologically advanced society can exist, and then encounters one https://en.wikipedia.org/wiki/Excession#Outside_Context_Problem 
+outside context problem (OCP) = a problem that is "outside the context" as it is generally not considered until it occurs, and the capacity to actually conceive of or consider the OCP in the first place may not be possible or very limited (i.e., the majority of the group's population may not have the knowledge or ability to realize that the OCP can arise, or assume it is extremely unlikely). An example of OCP is an event in which a civilization does not consider the possibility that a much more technologically advanced society can exist, and then encounters one https://en.wikipedia.org/wiki/Excession#Outside_Context_Problem
 overachiever
 Overton window: You can control thought without limiting speech. You can do it by defining the limits of acceptable thought while allowing for lively debate within these barriers. For example, Fox News and MSNBC set limits on what political thoughts they consider acceptable, but in the grand scheme of things, they’re both fairly conventional. The political spectrum stretches far beyond the ideas they entertain, but ideas outside their limits are shunned.
 paradigm shift https://en.wikipedia.org/wiki/Paradigm_shift
@@ -770,7 +770,7 @@ resource curse -- Dutch disease https://en.wikipedia.org/wiki/Dutch_disease
 resource curse = the paradox of plenty: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources https://en.wikipedia.org/wiki/Resource_curse
 respect
 rest and vest https://news.ycombinator.com/item?id=14943146
-restraining order or protective order = an order used by a court to protect a person in a situation often involving alleged domestic violence, child abuse and neglect, assault, harassment, stalking, or sexual assault https://en.wikipedia.org/wiki/Restraining_order 
+restraining order or protective order = an order used by a court to protect a person in a situation often involving alleged domestic violence, child abuse and neglect, assault, harassment, stalking, or sexual assault https://en.wikipedia.org/wiki/Restraining_order
 ring theory -- 01 The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
 ring theory -- 02 When you are talking to a person in a ring smaller than yours, someone closer to the center of the crisis, the goal is to help. Listening is often more helpful than talking. But if you're going to open your mouth, first ask yourself if what you are about to say is likely to provide comfort and support. If it isn't, don't say it. Don't, for example, give advice. People who are suffering from trauma don't need advice. They need comfort and support. So say, "I'm sorry," or, "This must really be hard for you," or, "Can I bring you a pot roast?" Don't say, "You should hear what happened to me," or, "Here's what I would do if I were you." And don't say, "This is really bringing me down."
 ring theory https://en.wikipedia.org/wiki/Ring_theory_(psychology)
@@ -801,7 +801,7 @@ selectorate theory https://en.wikipedia.org/wiki/Selectorate_theory
 self appreciation
 self centered vs. take into account others (cf. woke salaryman)
 self love
-self-righteousness = attitude and belief of moral superiority derived from a person deeming their own beliefs, actions, or affiliations to be of greater virtue than those of others https://en.wikipedia.org/wiki/Self-righteousness 
+self-righteousness = attitude and belief of moral superiority derived from a person deeming their own beliefs, actions, or affiliations to be of greater virtue than those of others https://en.wikipedia.org/wiki/Self-righteousness
 sense-check = Before going too deep into solutions, align with your stakeholders on the problem. This saves time by avoiding working a lot just to find out that it’s highly contentious and there’s a different or better approach.
 settling
 sex -- abuse -- 12yo Samantha
@@ -824,7 +824,7 @@ signalling -- virtue https://en.wikipedia.org/wiki/Virtue_signalling
 significance https://www.explainxkcd.com/wiki/index.php/882:_Significant
 silent majority
 silver spoon
-simplicité -- exemple de croûton du pain = P1 laisse à P2 croyant qu'iel aime, P2 se force croyant que P1 n'aime pas 
+simplicité -- exemple de croûton du pain = P1 laisse à P2 croyant qu'iel aime, P2 se force croyant que P1 n'aime pas
 simplicité = désirable, évite de tout le temps douter / lire entre les lignes
 simulation hypothesis https://en.wikipedia.org/wiki/Simulation_hypothesis
 sinecure = position with a ~salary that requires or involves little or no responsibility, labour https://en.wikipedia.org/wiki/Sinecure
@@ -834,6 +834,7 @@ skin in the game -- absorbing barrier = anything that prevents people with skin 
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 sleep on it
 SMART goal-setting framework
+sober thoughts are drunk words
 social capital (white male)
 social debt = friends, family, and strangers who feel entitled to ask, beg, and steal https://collabfund.com/blog/rich-and-anonymous/
 social norm of reciprocity https://en.wikipedia.org/wiki/Norm_of_reciprocity
@@ -941,7 +942,7 @@ viz -- diagrams -- charts
 viz -- diagrams -- sankey
 voleur volé
 volume hiring
-vrai vs. bien trouvé (meme) 
+vrai vs. bien trouvé (meme)
 wabi-sabi https://en.wikipedia.org/wiki/Wabi-sabi
 wantrepreneurs
 war https://en.wikipedia.org/wiki/War

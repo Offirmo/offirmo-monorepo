@@ -26,7 +26,6 @@ application posture -- 2 transient = comes and goes, presenting a single, high-r
 application posture -- 3 daemonic = background processes that require no direct user interaction.
 application posture -- 4 parasitic/auxiliary = similar to transient applications in providing a limited, focused set of functionality and occupy a small space, but they are shown persistently and can be used for a long period of time.
 application posture = sovereign, transient, background, auxiliary https://en.wikipedia.org/wiki/Application_posture
-apply / call / bind
 architecture -- islands
 architecture -- JAMStack = "JavaScript, APIs, Markup" as much HTML as possible is pre-built and stored in a content delivery network (CDN). Instead of running a monolithic backend application on the server side to generate dynamic content, dynamic components of the application are based on APIs. Ideally, this results in a much faster user experience and a much simpler developer experience. https://www.cloudflare.com/learning/performance/what-is-jamstack/  https://jamstack.org/what-is-jamstack/
 architecture -- JamStack = decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability
@@ -54,8 +53,8 @@ cache https://csswizardry.com/2024/08/cache-grab-how-much-are-you-leaving-on-the
 case study -- 2024/09 Josh Comeau's blog https://www.joshwcomeau.com/blog/how-i-built-my-blog-v2/
 CDN
 CDN -- quality = hot/cold potato routing https://vercel.com/blog/latency-numbers-every-web-developer-should-know
+Chrome -- is not the standard https://v4.chriskrycho.com/2017/chrome-is-not-the-standard.html
 chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
-Chrome is not the standard https://v4.chriskrycho.com/2017/chrome-is-not-the-standard.html
 client/server -- multi-tier architecture -- 01 presentation
 client/server -- multi-tier architecture -- 02 application
 client/server -- multi-tier architecture -- 03 business
@@ -102,7 +101,7 @@ CSS -- margin -- negative https://www.quirksmode.org/blog/archives/2020/02/negat
 CSS -- Media Queries https://courses.joshwcomeau.com/css-for-js/00-recap/03-media-queries
 CSS -- methodologies -- BEM
 CSS -- nesting
-CSS -- optimization -- containment https://blogs.igalia.com/mrego/2019/01/11/an-introduction-to-css-containment/ https://developer.mozilla.org/en-US/docs/Web/CSS/contain https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Using_CSS_containment 
+CSS -- optimization -- containment https://blogs.igalia.com/mrego/2019/01/11/an-introduction-to-css-containment/ https://developer.mozilla.org/en-US/docs/Web/CSS/contain https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Using_CSS_containment
 CSS -- overflow https://www.bram.us/2024/02/14/scroll-driven-animations-you-want-overflow-clip-not-overflow-hidden/ https://frontendmasters.com/blog/single-directionally-allowed-overflow/
 CSS -- perf -- avoid modifying the layout (geometric properties)
 CSS -- properties -- inheritance (or not)
@@ -131,7 +130,7 @@ data fetching https://17.reactjs.org/docs/concurrent-mode-suspense.html#traditio
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
 Data Layer Abstraction (DLA)
 design -- design aesthetic
-design -- ease of use vs. clunky, all over the place, 
+design -- ease of use vs. clunky, all over the place,
 design -- guides https://owickstrom.github.io/the-monospace-web/
 design -- intuitiveness vs. confusing, cluttered, dense, not practical, lack of visual hierarchy
 design quality -- 1 Intuitiveness vs complicated, overwhelming, cluttered, steep learning curve, significant cognitive load.
@@ -199,17 +198,18 @@ iframe
 iframe -- fenced
 iframe -- sandbox
 iframe -- seamless
-IIFE (Immediately-Invoked Function Expression)
 interop https://developer.mozilla.org/en-US/blog/interop2023-mdn-doc-updates/
 js -- AbortController https://betterstack.com/community/guides/scaling-nodejs/understanding-abortcontroller/
+js -- apply / call / bind
 js -- book -- Exploring JavaScript (ES2024 Edition) https://exploringjs.com/js/book/index.html
 js -- exports https://webpack.js.org/guides/package-exports/
+js -- IIFE (Immediately-Invoked Function Expression)
 js -- incoming features https://github.com/tc39/proposals?tab=readme-ov-file#stage-3
 js -- latest features by year https://github.com/tc39/proposals/blob/main/finished-proposals.md
-js -- promises -- withResolvers 
+js -- promises -- withResolvers
 js -- promises https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md
 js -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
-JSON - Javascript Object Notation
+JSON "Javascript Object Notation"
 latency -- high latency environments https://csswizardry.com/2024/09/optimising-for-high-latency-environments/
 layout composer https://github.com/namecheap/ilc
 lazy loading -- preloading https://www.differentshelf.com/lazy-loading-isnt-just-lazy-its-late-the-web-deserves-faster/
@@ -312,7 +312,7 @@ UI -- event -- blur, hover, focus, click, auxclick, double click...
 UI -- floating action button (FAB) = the primary action of a screen in Material UI / Android https://m2.material.io/components/buttons-floating-action-button
 UI -- flow vs. float https://floating-ui.com/
 UI -- HUD
-UI -- layout -- 
+UI -- layout --
 UI -- layout -- list -- details = with detailed preview on the side
 UI -- layout -- list -- simple
 UI -- layout -- masonry

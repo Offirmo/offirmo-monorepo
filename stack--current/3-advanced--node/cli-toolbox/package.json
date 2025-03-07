@@ -10,7 +10,7 @@
 		"./framework/cli-interface":  "./framework/cli-interface.mjs",
 		"./fs/extra":                 "./fs/extra/index.mjs",
 		"./fs/extra/json":            "./fs/extra/json/index.mjs",
-		"./fs/extra/ls":              "./fs/extra/json/index.mjs",
+		"./fs/extra/ls":              "./fs/extra/ls/index.mjs",
 		"./stdout/clear-cli":         "./stdout/clear-cli.mjs",
 		"./string/arrayify":          "./string/arrayify.mjs",
 		"./string/boxify":            "./string/boxify.mjs",

@@ -11,3 +11,6 @@ Sound Counting - Using Lego or similar, say a word slowly and ask XXX to repeat 
 Tongue Ticklers: Make up some funny alliterative sentences and take turns identifying the repeating initial sound, e.g. "Sally the snake sings songs about socks and strawberries"
 Talk about words that start or end with the sound as other familiar words, e.g. "The word cat ends in /t/? What else ends in /t/? Plate, let etc. Talk about how the start/end sounds of the words are alike. You can do the same with other words and names - Mum, Dad etc.
 Play with magnetic letters or big letters cut from a magazine - put them together to blend simple three-letter words.
+
+
+Advice mallard
