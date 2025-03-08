@@ -5,7 +5,6 @@
 AAA
 AI
 ambience = help set the tone for the atmosphere of a space
-assets
 assets -- audio -- music
 assets -- audio -- sound effect -- braam = big, brassy, cinematic hit that conveys to the audience that they are about to witness something epic, grand, and exciting; something unlike anything they’ve seen before (esp. trailer)
 assets -- audio -- sound effect -- drone = add texture and atmosphere by underscoring the scene
@@ -19,6 +18,7 @@ assets -- audio -- sound effect -- walla = the murmur of a crowd, the sound of p
 assets -- audio -- sound effect -- whoosh = underscore movement of some kind: a fist flying in a fight scene, a speed ramp
 assets -- audio -- sound effect https://blog.prosoundeffects.com/sound-effects-terms-explained-part-1
 assets -- audio -- soundscape
+assets https://www.openxcell.com/blog/common-types-game-assets/
 autosave
 avatar
 balance
@@ -96,6 +96,7 @@ graphics -- projections https://en.wikipedia.org/wiki/Axonometric_projection htt
 graphics https://en.wikipedia.org/wiki/Video_game_graphics
 idle
 key item https://bulbapedia.bulbagarden.net/wiki/Key_Item
+marketing https://howtomarketagame.com/
 matchmaking -- elo hell https://en.wikipedia.org/wiki/Elo_hell
 matchmaking -- smurfing
 mechanics

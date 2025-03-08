@@ -1,3 +1,33 @@
+
+
+
+
+## Keep what worked well
+- bolt
+- small modules with ability to incrementally "resurrect/repair" them one by one when making major changes (ex. ESM, node 23 type stripping)
+
+
+## remediate a few things
+- manually tracking dependencies = crap
+- starting to have too many bolt workspaces 1- 2- 3-
+- painful upgrade of tsconfig, pkg.json, etc. => they should be auto generated
+  - ex. switching to noEmit / node 23 type stripping
+    - requires changes to test
+    - require adding a new "fake build" for tests
+- enable out-of-source build
+- wish no longer need to "move" packages, they would be in a flat, single source of truth place 
+- usually working only on one project, but slowed down by the other un-needed modules
+  - unneeded deps take too long to install
+- manual yarn outdated
+- AI-intelligible? (how?)
+  - ability to "scope" the current project with only the needed code
+
+
+
+
+
+
+## tosort
 Ideas
 - AI-intelligible
 - /src is the source of truth
@@ -10,8 +40,7 @@ Ideas
 - "scopes"
 
 
-sorting by languages
-
+sorting by languages?
 
 https://github.com/ncochard/parse-imports-ts
 

@@ -27,3 +27,8 @@ Tech
 
 
 https://getpocket.com/explore/item/43-of-the-most-iconic-short-stories-in-the-english-language
+
+
+Classiques
+https://www.google.com/search?q=Primer+For+Those+Who+Would+Govern
+https://archive.org/details/empireofbusiness1908carn/page/n9/mode/2up
