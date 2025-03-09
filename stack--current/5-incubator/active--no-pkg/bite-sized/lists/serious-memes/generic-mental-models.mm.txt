@@ -89,6 +89,7 @@ aunt sally = an argument or idea that is easily refutable and set up to invite c
 autocracy https://en.wikipedia.org/wiki/Autocracy
 availability cascade = a self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
 avoir vs prendre le temps
+Babbitt = person and especially a business or professional man who conforms unthinkingly to prevailing middle-class standards https://en.wikipedia.org/wiki/Babbitt_(novel)
 baker’s dozen: The key to good hospitality is to delight your guests with an unexpected gift. If you run a hotel, leave a chocolate on the bed. If you run a bakery, give your customers one extra bagel. If you write a tweetstorm, share an extra idea.
 Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 barbarians at the gate https://en.wikipedia.org/wiki/Barbarians_at_the_Gate
@@ -192,6 +193,7 @@ courses après le repas
 creative process
 creativity -- begins at the edge: Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
 crimes -- human trafficking
+crimes -- some sociological theories of criminology attributes criminal action to environmental and unconscious factors
 crimes https://en.wikipedia.org/wiki/Criminal_law
 criminal act = fraud, theft, dishonesty, arson, wilful damage or malicious damage
 critical thinking +++  https://strategyu.co/critical-thinking/
@@ -348,6 +350,7 @@ goals -- S.M.A.R.T. -- 04 R (Relevant) Align the goal with your team’s mission
 goals -- S.M.A.R.T. -- 05 T (Time-bound) Create a specific end date for the goal. This instills a sense of urgency and helps you develop a work plan that prioritizes tasks leading up to the delivery date (e.g., one month, one quarter, or longer).
 goldilock zone / problem
 good life questions https://radreads.co/10k-questions/
+good neighbor https://en.wikipedia.org/wiki/Good_Neighbor_policy
 Goodhart’s Law = When a measure becomes a target, it ceases to be a good measure. One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
 Gospel of Wealth -- Help those who will help themselves, to provide part of the means by which those who desire to improve may do so
 Gospel of Wealth = responsibility of philanthropy by the new upper class of self-made rich https://en.wikipedia.org/wiki/The_Gospel_of_Wealth
@@ -754,6 +757,7 @@ race -- Nigeria
 race -- slavery
 race -- white supremacy https://en.wikipedia.org/wiki/Grandfather_clause
 race to the bottom
+racism -- Double V campaign https://en.wikipedia.org/wiki/Double_V_campaign
 radical candor
 rainbow code https://en.m.wikipedia.org/wiki/Rainbow_Code
 random acts of kindness -- bingo
@@ -851,6 +855,7 @@ solution / excuses
 sponcon "sponsored content" = a form of influencer marketing popular on social media
 stages of life / seasons of life
 staggered contour trenches
+stairstep approach to building https://robwalling.com/essays/2015/03/26/the-stair-step-method-of-bootstrapping https://howtomarketagame.com/2019/10/21/the-stairstep-approach-to-indie-game-marketing/
 stakeholder
 standards -- having some
 standards of proof -- 01 Some evidence

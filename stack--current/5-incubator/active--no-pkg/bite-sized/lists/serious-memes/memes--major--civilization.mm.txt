@@ -19,3 +19,5 @@ pollution -- 12xx https://en.wikipedia.org/wiki/Pea_soup_fog
 ransom
 slavery
 violence
+war -- https://en.wikipedia.org/wiki/Irredentism
+war -- https://en.wikipedia.org/wiki/July_Crisis

@@ -32,3 +32,7 @@ https://getpocket.com/explore/item/43-of-the-most-iconic-short-stories-in-the-en
 Classiques
 https://www.google.com/search?q=Primer+For+Those+Who+Would+Govern
 https://archive.org/details/empireofbusiness1908carn/page/n9/mode/2up
+https://en.wikipedia.org/wiki/Citizenship_in_a_Republic
+https://en.wikipedia.org/wiki/Invictus
+https://en.wikipedia.org/wiki/The_Strenuous_Life
+https://en.wikipedia.org/wiki/If%E2%80%94

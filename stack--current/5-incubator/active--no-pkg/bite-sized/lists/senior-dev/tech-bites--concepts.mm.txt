@@ -675,6 +675,7 @@ show me the code!
 shrinkwrap
 side effects (avoid them!)
 significant change
+silly "make software silly again" https://www.linkedin.com/posts/addyosmani_softwareengineering-programming-javascript-ugcPost-7296794102514229248-m976
 simple average
 single executable application "SEA" -- node https://codesnip.sh/posts/building-standalone-nodejs-executables
 single source of truth

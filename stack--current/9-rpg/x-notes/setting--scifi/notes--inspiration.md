@@ -99,5 +99,6 @@ TODO look at the reviews
 * https://en.wikipedia.org/wiki/Wing_Commander_(franchise) ?
 * https://en.wikipedia.org/wiki/Freelancer_(video_game) ?
 * Eve Online https://en.wikipedia.org/wiki/Expansions_of_Eve_Online
-
+  https://en.wikipedia.org/wiki/Campaign_setting#Science_fiction
+* 
 https://store.steampowered.com/app/230290/Universe_Sandbox/
