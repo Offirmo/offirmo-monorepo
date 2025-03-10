@@ -8,11 +8,14 @@
 
 
 ## remediate a few things
-- manually tracking dependencies = crap
+- manually tracking dependencies (dev, peer etc) = crap
+  - also install @types automatically (by inspecting if types are provided)
 - starting to have too many bolt workspaces 1- 2- 3-
+- uneasy to move packages around and split into smaller ones
+- maybe support "vendored" pkgs automatically?
 - painful upgrade of tsconfig, pkg.json, etc. => they should be auto generated
   - ex. switching to noEmit / node 23 type stripping
-    - requires changes to test
+    - requires changes to test command
     - require adding a new "fake build" for tests
 - enable out-of-source build
 - wish no longer need to "move" packages, they would be in a flat, single source of truth place 
@@ -47,7 +50,6 @@ https://github.com/ncochard/parse-imports-ts
 detection of node / web
 detection of APIs (global vars)
 
-install @types automatically (by inspecting if types are provided)
 
 labels
 
@@ -80,7 +82,11 @@ module rating/tier
 = try/test/graduate
 - spike
 - incubator / experimental
+- v1 vs v2 (or "last architecture cleanup" null / YYYY)
+- deprecated
+- inactive
 - dead
+
 
 
 exposing only "top level" usages

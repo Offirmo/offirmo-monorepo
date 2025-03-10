@@ -72,6 +72,7 @@
 		"chalk": "^5",
 		"fs-extra": "^11",
 		"meow": "^13",
+		"parse-imports-ts": "^1",
 		"serve": "^14",
 		"tiny-invariant": "^1",
 		"write-json-file": "^6",

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+
+<style>
+
+	:root                  { box-sizing: border-box; }
+	*, *::before, *::after { box-sizing: inherit; }
+
+	:root {
+		--page__aspect-ratio--iso216--landscape: 297 / 210;
+		--page__aspect-ratio--iso216--portrait:  210 / 297;
+
+		--width--landscape--a3: 420mm;
+		--shortest-side--a3: 297mm;
+
+		--width--landscape--a4: 297mm;
+		--shortest-side--a4: 210mm;
+
+		--width--landscape--a5: 210mm;
+		--shortest-side--a5: 148mm;
+
+		--width--landscape--a6: 148mm;
+		--shortest-side--a6: 105mm;
+	}
+
+	:root {
+		margin: 0;
+		padding: 0;
+		background-color: black;
+
+		--o⋄font-family--system--sans:   ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, Cantarell, Ubuntu, Roboto, Noto, Arial, sans-serif;
+		--o⋄font-family--main:                 var(--o⋄font-family--system--sans);
+		font-family: var(--o⋄font-family--main);
+
+		/******* modern standards *******/
+
+		/* https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
+		 */
+		-moz-text-size-adjust: none;
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+
+		/******* font smoothing/rendering *******/
+
+		/*
+		 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/
+		 *  see also https://www.webdesignerdepot.com/2013/05/how-to-optimize-for-legibility-using-text-rendering/
+			 and https://wp-mix.com/font-smoothing-chrome-firefox/)
+		 * tested 2023/10 on high and low DPI:
+		 * -> on Chrome, geometricPrecision is REALLY the best ✅
+		 *    for ex. it enables the computing of lighter/bolder variants if you don't provide them
+		 *    (on Safari and FF the effect is less clear)
+		 * challenge about perf: https://marco.org/2012/11/15/text-rendering-optimize-legibility
+		 * -> TODO test on mobile!
+		 * -> TODO allow switch in prefs?
+		 */
+		text-rendering: geometricPrecision;
+
+		/* chrome / safari only, macOs only
+		 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/
+		 *  see also https://wp-mix.com/font-smoothing-chrome-firefox/)
+		 * tested 2023/10 on high and low DPI
+		 * -> antialiased is the best all-rounder ✅ esp. when coupled with 'optimizeLegibility' above
+		 *    (subpixel is mushy on low-dpi but no much better on high dpi)
+		 */
+		-webkit-font-smoothing: antialiased;
+		/* Firefox only, macOs only
+		 * (from https://www.leejamesrobinson.com/blog/how-stripe-designs-beautiful-websites/
+		 *  see also https://wp-mix.com/font-smoothing-chrome-firefox/)
+		 * tested 2023/10 on high and low DPI
+		 * -> grayscale is always better ✅
+		 */
+		-moz-osx-font-smoothing: grayscale;
+		/* See also
+		 * https://szafranek.net/blog/2009/02/22/font-smoothing-explained/
+		 */
+	}
+
+	body {
+		--page__width: var(--width--landscape--a4);
+		--page__aspect-ratio: var(--page__aspect-ratio--iso216--landscape);
+
+		/* max width + centering = #1 most important styling according to https://jgthms.com/web-design-in-4-minutes/#centering
+		 * (Of course full-viewport webapps will need to cancel those default styles)
+		 */
+		max-width: var(--page__width);
+		margin: 0 auto;
+		padding: 0;
+
+		display: grid;
+	}
+
+	@media print {
+		body {
+		}
+	}
+
+	@media screen {
+		body {
+			padding: 1cm 0;
+			gap: 1cm;
+		}
+	}
+
+	@page {
+		size: A4 landscape;
+		margin: 0;
+	}
+	.page {
+		page-break-before: always;
+		page-break-inside: avoid;
+		page-break-after: always;
+		break-after: page;
+
+		display: block;
+		width: var(--page__width);
+		aspect-ratio: var(--page__aspect-ratio);
+		padding: 1cm;
+
+		counter-increment: page;
+
+		position: relative;
+
+		background-color: white;
+
+		border: solid 1px red;
+	}
+	.page::after {
+		border: solid 1px grey;
+		background-color: white;
+		color: grey;
+		width: .5cm;
+		height: .5cm;
+		font-size: .3cm;
+		line-height: .5cm;
+		border-radius: 50%;
+		content: counter(page);
+		text-align: center;
+		position: absolute;
+		bottom: 1cm;
+		left: 50%;
+		transform: translate(-50%, 0%);
+	}
+
+</style>
+
+<section class="page">cover front</section>
+<section class="page">1</section>
+<section class="page">2</section>
+<section class="page">3</section>
+<section class="page">4</section>
+<section class="page">5</section>
+<section class="page">6</section>
+<section class="page">cover back</section>
+
+</html>

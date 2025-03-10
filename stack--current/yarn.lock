@@ -4842,6 +4842,11 @@ parse-headers@^2.0.0:
   resolved "https://registry.yarnpkg.com/parse-headers/-/parse-headers-2.0.5.tgz#069793f9356a54008571eb7f9761153e6c770da9"
   integrity sha512-ft3iAoLOB/MlwbNXgzy43SWGP6sQki2jQvAyBg/zDFAgr9bfNWZIUj42Kw2eJIl8kEi4PbgE6U1Zau/HwI75HA==
 
+parse-imports-ts@^1:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/parse-imports-ts/-/parse-imports-ts-1.0.4.tgz#bdbcd3ad4d107cbbb84a707bc301600dff7a6388"
+  integrity sha512-aiIufTo5Oj6k/lq7frtPWKjAbYk9F3hL75LXp0DudJ85/grS5AwRu69VYwufcJg8zoM4L1Jwn2ne3lrxiyG4Ig==
+
 parse-json@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/parse-json/-/parse-json-4.0.0.tgz#be35f5425be1f7f6c747184f98a788cb99477ee0"

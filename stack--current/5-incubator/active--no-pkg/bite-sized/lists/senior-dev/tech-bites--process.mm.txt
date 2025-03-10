@@ -13,7 +13,7 @@ comms "the loop" 02 -- Curate, don’t automate = Information overload does not 
 comms "the loop" 03 -- Common vocabulary over common tooling = Whether we know it or not, every time we communicate we make comprehension and speed trade-offs
 comms "the loop" 04 -- Show that you’re paying attention = We spend too much time on status reports for them not to be read
 comms "the loop" https://www.atlassian.com/loop/
-Conway's law = soft archi maps teams
+Conway's law = soft architecture maps teams
 decision making -- 01 LDR “lightweight decision record” = for 2 way doors, lightweight decisions that have already been made and should be recorded. Should reference the slack threads, pages, comments, and tasks where the decision was made.
 decision making -- 02 RFC “request for comments” = the first - in some cases the only - formal step in agreeing on a proposal. should only ever contain a single option with the intention to receive comments and additional insights. Does not require an explicit approver, although it does require a general consensus. It is expected that the correct stakeholders are included on the page with a reasonable timeframe to provide their inputs.
 decision making -- 03 DACI “driver, approver, contributor, informed" = will contain multiple solutions to be discussed and one chosen. expensive process both as it requires significant time and mental investment. required for higher impact decisions or when a consensus cannot be found from an RFC document https://www.atlassian.com/team-playbook/plays/daci
@@ -38,13 +38,13 @@ hiring -- paper ceiling https://www.tearthepaperceiling.org/
 hiring -- Skilled Through Alternative Routes (STAR)
 How Might We? (HMW) = technique used to frame design challenges by formulating questions that focus on the desired outcome, are broad, and are phrased positively to encourage creativity and generate ideas
 Kanban https://en.wikipedia.org/wiki/Kanban_(development)
+KPI "Key Product Indicators"
+KPI -- examples https://kpiexamples.operately.com/
 merge queues https://engineering.shopify.com/blogs/engineering/successfully-merging-work-1000-developers
 moonshots = "sheer audacity of the challenge inspired motivation and passion in a way that a smaller goal never could" https://x.company/moonshot/
 north star
 nudges = PRs nudges for speed https://dl.acm.org/doi/abs/10.1145/3544791
 OKR
-KPI "Key Product Indicators"
-KPI -- examples https://kpiexamples.operately.com/
 planning -- Goals, Ideas, Step-Projects, and Tasks (GIST) https://www.productplan.com/glossary/gist-planning/
 platform engineering
 prioritization -- P0 = crisis
@@ -74,6 +74,7 @@ team -- performance -- four key metrics -- Lead Time for Changes = The amount of
 team -- performance -- four key metrics -- Time to Restore Service = How long it takes an organization to recover from a failure in production
 team -- performance -- four key metrics https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance
 team -- Tuckman model "Forming, Storming, Norming, and Performing"
+vision -> goal -> milestones -> build -> refine -> launch (+ learn, repeat)
 X alarm fire -- "alarm" conditions = Inability to obtain a proper balance between reliability and delivery
 X alarm fire -- "alarm" conditions = Not meeting SLOs
 X alarm fire -- "alarm" conditions = Practices that lead to re-work in production

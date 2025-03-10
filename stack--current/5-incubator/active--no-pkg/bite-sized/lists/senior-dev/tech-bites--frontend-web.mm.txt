@@ -349,6 +349,8 @@ UX -- types -- Hardware interfaces = physical, spatial interfaces found on produ
 UX -- types -- Task-focused = address the information overload problem of the desktop metaphor by making tasks, not files, the primary unit of interaction.
 UX -- types -- Text-based user interfaces (TUIs) are user interfaces which interact via text. TUIs include command-line interfaces and text-based WIMP environments.
 UX -- types -- Zooming = information objects are represented at different levels of scale and detail, and where the user can change the scale of the viewed area in order to show more detail.
+UX -- unified experience
+UX -- unified experience -- design system, component reuse
 vanilla https://plainvanillaweb.com/index.html
 viewport
 viewport -- small <= dynamic <= large

@@ -134,6 +134,7 @@ code is the enemy = It can go wrong, and it needs maintenance. Write less code. 
 code quality = the only definition of quality in code that makes any sense is our ability to change the code. If it's easy to change, it's high quality; if it's hard to change, it's not.
 code quality https://blog.jim-nielsen.com/2024/easy-changes/
 code reuse -- DRY
+code reuse -- reduce reuse recycle
 code reuse -- small focused modules = Make small focused modules for reusability and to make it possible to build larger more advanced things that are easier to reason about https://sindresorhus.com/blog/small-focused-modules
 code review https://www.linkedin.com/posts/ajgreenwell_code-reviews-have-unwritten-laws-i-had-activity-7239611908914319360-_MHW/
 codebase -- type -- hobby

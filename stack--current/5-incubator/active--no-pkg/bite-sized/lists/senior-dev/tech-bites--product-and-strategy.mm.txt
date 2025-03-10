@@ -254,6 +254,8 @@ top complaints -- actual case J. -- 08 Integration and Automation: Enhance integ
 top complaints -- actual case J. -- 09 Blended Features and Cross-Platform Integration: Explore the possibility of blending features from the suite to offer a more holistic project management experience.
 top complaints -- actual case J. -- 10 Training and Support: Provide dedicated training resources and support tailored for targe teams, including guides on using the product for targeted tasks.
 top complaints -- actual case J. -- 11 Positioning and Value Proposition
+triad -- sometimes + data analyst
+triad = product, design, engineering
 try/test/graduate
 User Experience Research (UXR) https://medium.com/getting-started-in-user-experience-and-design
 wartime vs peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
