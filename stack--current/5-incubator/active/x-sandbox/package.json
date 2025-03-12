@@ -47,7 +47,6 @@
 		"@tsparticles/basic": "^3",
 		"@tsparticles/engine": "^3",
 		"lit": "^3",
-		"parse-imports-ts": "^1",
 		"react": "^19",
 		"react-dom": "^19",
 		"swiper": "^11",

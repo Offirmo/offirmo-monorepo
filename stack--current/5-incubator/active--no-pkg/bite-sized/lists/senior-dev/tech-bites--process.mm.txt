@@ -40,6 +40,7 @@ How Might We? (HMW) = technique used to frame design challenges by formulating q
 Kanban https://en.wikipedia.org/wiki/Kanban_(development)
 KPI "Key Product Indicators"
 KPI -- examples https://kpiexamples.operately.com/
+manager's impact -- Andy Grove's equation = the output of a manager is the output of their team, plus the output of the neighboring teams under their influence
 merge queues https://engineering.shopify.com/blogs/engineering/successfully-merging-work-1000-developers
 moonshots = "sheer audacity of the challenge inspired motivation and passion in a way that a smaller goal never could" https://x.company/moonshot/
 north star

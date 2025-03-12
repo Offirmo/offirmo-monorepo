@@ -1,0 +1,16 @@
+{
+	"name": "@offirmo-private/pure-module--presenter",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+
+	"main": "src/index.ts",
+
+	"dependencies": {
+		"@offirmo-private/pure-module--analyzer": "*",
+		"fs-extra": "^11",
+		"parse-imports-ts": "^1"
+	},
+	"scripts": {
+		"demo": "node --experimental-strip-types ./demo/index.mts"
+	}
+}

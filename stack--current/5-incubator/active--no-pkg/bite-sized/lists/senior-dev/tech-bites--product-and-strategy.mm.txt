@@ -12,11 +12,13 @@ boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
 boring -- technology https://mcfunley.com/choose-boring-technology
 brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
 business -- as a by-product = structure that ultimately has to exist around a group of people to make things and service customers over the long term, but not inherently interesting https://www.linkedin.com/posts/jason-fried_ive-always-thought-of-business-as-a-by-product-activity-7236805665627717632-_s96/
+CEO "If I/we got fired today, what would the new CEO do?"
 churn
 commoditization -- commodity businesses generally compete on price alone and are plagued by high inventories and low profit margins. In other non-commodity businesses, you would say “innovate”
 commoditization = undifferentiated mass, one no different than the other. We can pick the cheapest.
 computers should adapt to users = not necessarily if the solution is good (ex. typing on a keyboard, Palm Graffiti) https://www.creativitypost.com/technology/the_memory_prediction_framework_of_intelligence_and_the_subject_of_creativi
 consolidation = common across multiple industries, which is fueling competition. But, competition was in turn fueling commoditization
+constructive confrontation -- spot threats/issues/problems, debate aggressively, make bold moves before competitors/enemies
 consumer technology -- usually ads supported :/
 consumer technology / consumer tech = intended for use by consumers in the general public, as opposed to technology created for businesses or government organizations https://builtin.com/consumer-tech
 content is king -- small payments = failed to materialize
@@ -165,6 +167,10 @@ network effect = key dynamic behind many successful software companies
 never-ending feature party = but tech debt "clean up and restocking" https://corgibytes.com/blog/2018/01/02/neverending-feature-party/
 next-of-kin feature
 no one was ever fired for using...
+only the paranoid survive (Andy Grove) = success breeds complacency, complacency breeds failure, only the paranoid survives. If you're winning, that's when you should be the most paranoid, bc disruption is always coming
+only the paranoid survive -- 1 assume disaster is coming
+only the paranoid survive -- 2 spot threats before they explode = if you wait until a crisis is obvious, it's already too late
+only the paranoid survive -- 3 reinvent before you're forced to = industries shit, adapt or die
 path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
 personas -- data savvy vs data shy
 pitch -- 01 Why the world needs this now
@@ -234,6 +240,8 @@ sleeper technology
 stalking horse = figure used to test a concept or mount a challenge on behalf of a third party. If the idea proves viable or popular, the third party can then declare its interest and advance the concept with little risk of failure. If the concept fails, the third party will not be tainted by association with the failed concept and can either drop the idea completely or bide its time and wait until a better moment to launch an attack https://en.wikipedia.org/wiki/Stalking_horse
 startups should avoid being held hostage by the preferences of their early user base if it deviates from the broader market, ex. social feed or reels
 Stock Keeping Unit (SKU) = a clearly identified product https://en.wikipedia.org/wiki/Stock_keeping_unit
+strategic dissonance = (Andy Grove) = mismatch between a company's current strategies and changes in the industry due to strategic inflection points
+strategic inflection point = a moment when everything changes (most react too late)
 strategy -- 01 "where we play"
 strategy -- 02 "how we win"
 strategy -- bowling pin = starts with a niche segment easily attainable then move to next niche or broader market

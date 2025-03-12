@@ -14,9 +14,9 @@ import {
 	getꓽISO8601ⵧsimplified‿days,
 
 	TEST_TIMESTAMP_MS,
-} from './index.js'
+} from './index.ts'
 
-declare const console: any
+//declare const console: any
 
 
 describe('@offirmo-private/timestamps', function() {
