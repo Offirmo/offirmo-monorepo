@@ -253,16 +253,16 @@ ${pure_module_details.description}
 			}
 
 			if (pure_module_details.languages.has('ts')) {
-				scripts['check--ts'] = 'tsc --noEmit'
-				scripts['check--ts--watch'] = 'tsc --noEmit --watch'
+				scripts['test--ts'] = 'tsc --noEmit'
+				scripts['test--ts--watch'] = 'tsc --noEmit --watch'
 				scripts['dev'] = scriptsⵧclean.length
-					? `run-s clean check--ts--watch`
-					: `run-s check--ts--watch`
+					? `run-s clean test--ts--watch`
+					: `run-s test--ts--watch`
 			}
 
-			const scriptsⵧcheck = Object.keys(scripts).filter(k => k.startsWith('check') && !k.endsWith('--watch'))
-			if (scriptsⵧcheck.length) {
-				scripts.check = `run-s ${scriptsⵧcheck.join(' ')}`
+			const scriptsⵧtest = Object.keys(scripts).filter(k => k.startsWith('test') && !k.endsWith('--watch'))
+			if (scriptsⵧtest.length) {
+				scripts['test'] = `run-s ${scriptsⵧtest.join(' ')}`
 			}
 
 			return scripts

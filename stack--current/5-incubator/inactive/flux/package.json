@@ -45,7 +45,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/soft-execution-context--node": "*",
-		"@offirmo/unit-test-toolbox": "^9",
+		"@offirmo/unit-test-toolbox": "*",
 		"@offirmo/universal-debug-api-node": "^0",
 		"npm-run-all": "^4",
 		"tslib": "^2"

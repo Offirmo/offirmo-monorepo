@@ -29,7 +29,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "^9",
+		"@offirmo/unit-test-toolbox": "*",
 		"npm-run-all": "^4"
 	}
 }

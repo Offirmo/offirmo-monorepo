@@ -36,7 +36,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
-		"@offirmo/unit-test-toolbox": "^9",
+		"@offirmo/unit-test-toolbox": "*",
 		"npm-run-all": "^4",
 		"tslib": "^2"
 	}

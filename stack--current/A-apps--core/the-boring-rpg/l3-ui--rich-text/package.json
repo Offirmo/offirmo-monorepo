@@ -54,7 +54,7 @@
 		"@offirmo-private/prettify-any": "*",
 		"@offirmo-private/rich-text-format--to-terminal": "^0",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo/unit-test-toolbox": "^9",
+		"@offirmo/unit-test-toolbox": "*",
 		"@oh-my-rpg/state--prng": "^0",
 		"npm-run-all": "^4",
 		"strip-ansi": "^7",

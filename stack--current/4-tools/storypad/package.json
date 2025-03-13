@@ -55,7 +55,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo-private/ts-types-web": "*",
-		"@offirmo/unit-test-toolbox": "^9",
+		"@offirmo/unit-test-toolbox": "*",
 		"@types/react-dom": "^19",
 		"npm-run-all": "^4",
 		"tslib": "^2"

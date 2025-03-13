@@ -33,7 +33,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "^9",
+		"@offirmo/unit-test-toolbox": "*",
 		"@types/cross-spawn": "^6",
 		"npm-run-all": "^4",
 		"typescript": "^5"

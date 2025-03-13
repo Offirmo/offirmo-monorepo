@@ -38,6 +38,7 @@ type ProgLang =
 	| 'jsx'
 	| 'html'
 	| 'css'
+	| 'md'
 
 interface PureModuleDetails {
 	root‿abspath: string
@@ -55,6 +56,7 @@ interface PureModuleDetails {
 	extra_entries: {
 		[label: string]: FileEntry
 	}
+
 	depsⵧnormal: Set<string>
 	depsⵧdev: Set<string>
 	depsⵧpeer: Set<string>
@@ -106,14 +108,24 @@ function _createꓽresult(root‿abspath: string): PureModuleDetails {
 function _isꓽin_excluded_folder(entry: FileEntry): boolean {
 	const { path‿rel } = entry
 
-	if (path‿rel.includes('/~~gen/'))
+	if (path‿rel.includes('node_modules/'))
+		throw new Error(`A pure module should not contain node_modules!`)
+
+	if (path‿rel.includes('++gen/'))
 		return true
 
 	// vendored deps are supposed to have no deps
-	if (path‿rel.includes('/__vendored/'))
+	if (path‿rel.includes('__vendored/'))
 		return true
 
-	if (path‿rel.includes('/tosort/'))
+	if (path‿rel.includes('~~tosort/'))
+		return true
+
+	return false
+}
+
+function _isꓽignored(entry: FileEntry): boolean {
+	if (entry.basename === '.DS_Store')
 		return true
 
 	return false
@@ -193,6 +205,9 @@ function getꓽProgLangs(entry: FileEntry): ProgLang[] {
 		case ['.css'].includes(ext):
 			return [ 'css' ]
 
+		case ['.md'].includes(ext):
+			return [ 'md' ]
+
 		/*case ['.json',].includes(ext):
 			return [ 'json' ]*/
 
@@ -239,7 +254,7 @@ function getꓽpure_module_details(module_path: string, { indent = ''} = {}) {
 	const raw_deps: Array<Dependency> = []
 
 	file_entries.forEach(entry => {
-		const is_excluded = _isꓽin_excluded_folder(entry)
+		const is_excluded = _isꓽin_excluded_folder(entry) || _isꓽignored(entry)
 		const { path‿rel } = entry
 		console.log(`${indent} ↳ 📄`, path‿rel, is_excluded ? '🚫' : '')
 		if (is_excluded)

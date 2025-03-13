@@ -57,7 +57,7 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/state-migration-tester": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo/unit-test-toolbox": "^9",
+		"@offirmo/unit-test-toolbox": "*",
 		"@types/async": "^3",
 		"npm-run-all": "^4"
 	}
