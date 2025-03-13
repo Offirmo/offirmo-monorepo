@@ -99,6 +99,7 @@ cache -- stampede https://en.wikipedia.org/wiki/Cache_stampede
 caching -- S3 FIFO https://s3fifo.com/
 capability = an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
 career -- small business programmer https://smallbusinessprogramming.com/how-to-be-a-wildly-successful-small-business-programmer/
+career -- staff engineer https://www.linkedin.com/posts/alexewerlof_no-one-is-talking-about-staff-engineer-mental-activity-7297125140159471617-_J1-
 cargo cult = Let’s face it. You are not Google scale and you never will be. Stop cargo-culting technology just because “Google uses it” and therefore “it’s an industry best-practice.” https://reasonablypolymorphic.com/blog/protos-are-wrong/
 case -- CamelCase
 case -- SHOUTY_CASE

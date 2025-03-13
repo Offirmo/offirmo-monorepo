@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 import { getꓽpure_module_details } from '@offirmo-private/pure-module--analyzer'
 
-const pure_module_details = getꓽpure_module_details(
+const pure_module_details = await getꓽpure_module_details(
 	path.resolve(__dirname, '../../../../../stack--next/2-pure-modules/timestamps/'),
 	{
 		indent: '   ',
@@ -22,7 +22,7 @@ console.log(pure_module_details)
 
 import { present } from '@offirmo-private/pure-module--presenter'
 
-present({
+await present({
 	indent: '   ',
 
 	pure_module_path: pure_module_details.root‿abspath,

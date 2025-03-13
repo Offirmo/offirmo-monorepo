@@ -38,6 +38,7 @@
 [ ] +++ flinkliv.com https://flinkliv.com/
 [ ] +++ https://fs.blog/mental-models/
 [ ] +++ https://thewokesalaryman.com/
+[ ] Ash Lamb visuals https://www.linkedin.com/in/ashlamb/recent-activity/all/
 [ ] ex. of edited interview misleading https://paulgraham.com/wids.html
 [ ] Futures studies https://en.wikipedia.org/wiki/Futures_studies + many concepts
 [ ] https://amir.rachum.com/mental-models/
@@ -257,6 +258,7 @@ discrimination -- positive / affirmative action = policies and practices seeking
 disease -- definition? https://en.wikipedia.org/wiki/Unsolved_problems_in_medicine
 disfranchisement = voter disqualification, is the restriction of suffrage (the right to vote) of a person or group of people https://en.wikipedia.org/wiki/Disfranchisement
 disrespect = lack of consideration or regard for others’ privacy, physical or emotional space, viewpoints, or belongings. Intimidation, aggressive behavior, “the silent treatment”. Thoughtless or arrogant behavior, like using profanity when someone objects to it.
+distance sociale = ne pas être accessible pour être plus désirable (ex. mannequins) https://www.linkedin.com/posts/maud-alaves_je-suis-consultante-en-r%C3%A9putation-et-je-souris-activity-7305283449576148992-5BvV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABCMjsBlsnsypQrujQIErVuOdIdbCIH5O0
 diversité des esprits humains
 do fewer things well
 do I want my name on this? = tool to decide if sth is good https://lynnandtonic.com/thoughts/entries/put-your-name-on-it/
@@ -532,6 +534,8 @@ leadership -- leader - leader -- context-rich environment / information manageme
 leadership -- must never ask sth they couldn't do
 leadership -- timeless lessons https://www.linkedin.com/pulse/back-future-timeless-lessons-leadership-jo-owen
 learned helplessness
+learning -- compounding effect
+learning -- compounding effect -- NOT! fast at start, but then plateau or very hard to improve. Need breakthrough or lateral/diversification
 learning -- lifelong = learning never stops
 learning -- membership of mutual improvement group https://www.artofmanliness.com/career-wealth/wealth/andrew-carnegie-financial-lessons/
 learning -- no speed limit = all the way through High School at the same measured pace as everyone else. I could have done whatever I wanted, but I thought there was a speed limit https://sive.rs/kimo
@@ -599,6 +603,7 @@ mediocrity -- tyranny of excellence
 mediocrity principle = if an item is drawn at random from one of several sets or categories, it's more likely to come from the most numerous category than from any one of the less numerous categories https://en.wikipedia.org/wiki/Mediocrity_principle
 mental health = I am not my thoughts and rather than feeling like I needed to have control of every situation, that by surrendering that control, I will have more control over my life than I ever did before.
 method of learning +++ https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger
+micro-aggressions https://www.themicropedia.org/
 microaggressions
 mimetic Theory of Conflict: People who are similar are more likely to fight than people who are different. That’s why Civil Wars and family feuds create the worst conflicts. The closer two people are and the more equality between them, the greater the potential for conflict.
 mimetic Theory of Desire: Humans are like sheep. We don’t know what we want, so we imitate each other. Instead of creating our own desires, we desire the same things as other people. The entire advertising industry is built on this idea.
@@ -856,6 +861,7 @@ skin in the game -- absorbing barrier = anything that prevents people with skin 
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 sleep on it
 SMART goal-setting framework
+so bad you don't even realize you are bad = https://workplace.stackexchange.com/a/25756
 sober thoughts are drunk words
 social capital (white male)
 social debt = friends, family, and strangers who feel entitled to ask, beg, and steal https://collabfund.com/blog/rich-and-anonymous/

@@ -9,7 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 import { getꓽpure_module_details } from '@offirmo-private/pure-module--analyzer'
 
-const result = getꓽpure_module_details(
+const result = await getꓽpure_module_details(
 	__dirname + '/../../../../1-stdlib/timestamps/src',
 	{
 		indent: '   ',

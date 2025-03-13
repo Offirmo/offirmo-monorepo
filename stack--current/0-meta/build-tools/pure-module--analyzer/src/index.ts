@@ -4,7 +4,7 @@
 import * as path from 'node:path'
 import { readFileSync } from 'node:fs'
 
-import { parse } from "parse-imports-ts"
+import { parse as parseImports } from "parse-imports-ts"
 
 import { lsFilesRecursiveSync } from './_vendor/fs_ls.ts'
 
@@ -48,11 +48,13 @@ interface PureModuleDetails {
 	name: string
 	version: string
 	description?: string
-	isꓽprivate: boolean
+	isꓽpublished: boolean
 	author: string
 	license: string // TODO SPDX
 	source: FileEntry
 	hasꓽside_effects: boolean
+	hasꓽtestsⵧunit: boolean
+	hasꓽtestsⵧsmoke: boolean
 	extra_entries: {
 		[label: string]: FileEntry
 	}
@@ -86,11 +88,13 @@ function _createꓽresult(root‿abspath: string): PureModuleDetails {
 		name,
 		version: '0.0.1',
 		//description?: string
-		isꓽprivate: true,
+		isꓽpublished: true,
 		author: 'Offirmo <offirmo.net@gmail.com>',
 		license: 'Unlicense',
 		source: null as any, // XXX TODO
 		hasꓽside_effects: false,
+		hasꓽtestsⵧunit: false,
+		hasꓽtestsⵧsmoke: false,
 		extra_entries: {},
 		depsⵧnormal: new Set<string>(),
 		depsⵧdev: new Set<string>([
@@ -217,7 +221,7 @@ function getꓽProgLangs(entry: FileEntry): ProgLang[] {
 }
 
 const MANIFEST‿basename = 'MANIFEST.json5'
-function getꓽpure_module_details(module_path: string, { indent = ''} = {}) {
+async function getꓽpure_module_details(module_path: string, { indent = ''} = {}) {
 	const root‿abspath = path.resolve(module_path)
 	console.log(`${indent}🗂  analysing pure code module at "${root‿abspath}"…`)
 
@@ -279,7 +283,31 @@ function getꓽpure_module_details(module_path: string, { indent = ''} = {}) {
 			return
 		}
 
-		getꓽProgLangs(entry).forEach(lang => result.languages.add(lang))
+		const langs = getꓽProgLangs(entry)
+		langs.forEach(lang => result.languages.add(lang))
+		if (langs.includes('ts')) {
+			const content = readFileSync(entry.path‿abs, 'utf8')
+			const imports = parseImports(content)
+			imports.forEach(({name, type}) => {
+				console.log(`${indent}    ↘ ${name} ${type ? '[type]' : ''}`)
+				// import { isBuiltin } from 'node:module';
+
+				switch (type) {
+					case 0:
+						raw_deps.push({ label: name, type: 'dev' })
+						break
+					case 1:
+						raw_deps.push({ label: name, type: 'normal' })
+						break
+					default:
+						throw new Error(`Unknown import type "${type}"!`)
+				}
+			})
+		}
+
+		if (entry.extⵧsub === '.tests') {
+			result.hasꓽtestsⵧunit = true
+		}
 	})
 
 	// extras
@@ -317,6 +345,10 @@ function getꓽpure_module_details(module_path: string, { indent = ''} = {}) {
 
 	for (const dep of result.depsⵧdev) {
 		if (result.depsⵧnormal.has(dep)) {
+			result.depsⵧdev.delete(dep)
+		}
+		else if (dep === 'chai' || dep === 'sinon') {
+			result.depsⵧdev.add('@offirmo/unit-test-toolbox')
 			result.depsⵧdev.delete(dep)
 		}
 	}

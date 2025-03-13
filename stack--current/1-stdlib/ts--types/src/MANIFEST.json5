@@ -1,5 +1,5 @@
 {
-	namespace: '@offirmo-private',
+	//namespace: '@offirmo-private',
 	name: "ts-types", //can be inferred? No bc needs to be stable
 	//group: 'tbrpg',
 	description: "TypeScript base types definitions",

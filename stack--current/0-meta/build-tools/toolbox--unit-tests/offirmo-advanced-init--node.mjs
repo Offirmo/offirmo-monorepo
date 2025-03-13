@@ -14,7 +14,7 @@ let lib_udaⵧnode
 lib_udaⵧnode = await import('@offirmo/universal-debug-api-node')
 	.catch(err => {
 		if (process.env['OFFIRMO_GLOBAL_DEBUG_ENV_EXPECTED']) {
-			console.warn(`${terminal_escapeꘌfgⵧred}([from @offirmo/unit-test-toolbox] @offirmo/universal-debug-api-node install skipped, require() failure)${terminal_escapeꘌreset}`, err)
+			console.warn(`${terminal_escapeꘌfgⵧred}([from @offirmo/unit-test-toolbox] @offirmo/universal-debug-api-node install skipped, import() failure)${terminal_escapeꘌreset}`, err)
 		}
 		return null
 	})

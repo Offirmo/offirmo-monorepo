@@ -208,13 +208,13 @@ ${pure_module_details.description}
 			"version": pure_module_details.version,
 			"author": pure_module_details.author,
 			"license": pure_module_details.license,
-			"private": pure_module_details.isꓽprivate,
+			"private": pure_module_details.isꓽpublished,
 
 			"sideEffects": pure_module_details.hasꓽside_effects,
 			"type": "module",
 			"exports": {
 				".": {
-					"import": source_path,
+					"import": './' + source_path,
 				}
 			},
 				"source": source_path,
@@ -250,6 +250,12 @@ ${pure_module_details.description}
 			const scriptsⵧclean = Object.keys(scripts).filter(k => k.startsWith('clean'))
 			if (scriptsⵧclean.length) {
 				scripts.clean = `npm-run-all ${scriptsⵧclean.join(' ')}`
+			}
+
+			if (pure_module_details.hasꓽtestsⵧunit) {
+				scripts['test--unit'] =
+					`node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './src/**/*.tests.ts'`
+					//  --experimental-require-module
 			}
 
 			if (pure_module_details.languages.has('ts')) {
