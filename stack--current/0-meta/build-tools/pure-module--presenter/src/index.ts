@@ -5,8 +5,127 @@ import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
 
 import { writeJsonFile as write_json_file } from 'write-json-file' // full pkg is too useful, ex. preserve indent
+import packageJson from 'package-json'
+import semver from 'semver'
 
 import { getꓽpure_module_details, type PureModuleDetails } from '@offirmo-private/pure-module--analyzer'
+
+/////////////////////////////////////////////////
+
+class PkgVersionResolver {
+	#packageᐧjson_cache: Record<string, any> = {}
+	#pending_promises: Record<string, Promise<any>> = {}
+
+	/////////////////////////////////////////////////
+
+	preload(pkg_name: string) {
+		this.assert_allowed_package(pkg_name)
+
+		if (this.#packageᐧjson_cache[pkg_name])
+			return
+
+		if (this.#pending_promises[pkg_name])
+			return
+
+		if (this.is_internal_package(pkg_name)) {
+			// for now
+			return
+		}
+
+		this.#pending_promises[pkg_name] = packageJson(pkg_name, { fullMetadata: true })
+			.then(content => {
+				this.#packageᐧjson_cache[pkg_name] = content
+				console.log(`package.json loaded for "${pkg_name}" (has types? ${!!content?.typings})`)
+				//console.log(`XXX content`, content)
+				return content // for chaining
+			})
+			.finally(() => {
+				delete this.#pending_promises[pkg_name]
+			})
+
+		if (!pkg_name.startsWith('@types') && !pkg_name.includes('/')) {
+			// also preload types if needed
+			const potential_types_pkg_name = `@types/${pkg_name}`
+			this.#pending_promises[potential_types_pkg_name] = this.#pending_promises[pkg_name]
+				.then(content => {
+					if (content?.typings) {
+						// no need for types
+						return null
+					}
+					else if (content?.bin) {
+						// it's a tool
+						return null
+					}
+					else {
+						return packageJson(potential_types_pkg_name, { fullMetadata: true })
+							.then(content => {
+								this.#packageᐧjson_cache[potential_types_pkg_name] = content
+								console.log(`package.json loaded for "${potential_types_pkg_name}"`)
+
+								return content // for chaining
+							},
+							err => {
+								console.log(`Type pkg ${potential_types_pkg_name} not found, ignoring.`)
+								return null
+							})
+					}
+				})
+				.finally(() => {
+					delete this.#pending_promises[potential_types_pkg_name]
+				})
+		}
+	}
+
+	async all_pending_loaded() {
+		await Promise.all(Object.values(this.#pending_promises))
+	}
+
+	// need to be sync for convenience (.map())
+	get_target_version(pkg_name: string) {
+		this.assert_allowed_package(pkg_name)
+
+		if (this.is_internal_package(pkg_name))
+			return '*'
+
+		const packageᐧjson = this.#packageᐧjson_cache[pkg_name]
+		if (!packageᐧjson) {
+			throw new Error(`No package.json for "${pkg_name}" or no version!`)
+		}
+
+		const latest_pkg_version = semver.clean(packageᐧjson?.version)
+
+		const major = semver.major(latest_pkg_version)
+		//console.log(`XXX latest_pkg_version`, { pkg_name, latest_pkg_version, major })
+		if (major !== 0)
+			return `^${major}`
+		const minor = semver.minor(latest_pkg_version)
+		if (minor !== 0)
+			return `^0.${minor}`
+
+		return `^0.0.${semver.patch(latest_pkg_version)}`
+	}
+
+	/////////////////////////////////////////////////
+
+	private assert_allowed_package(pkg_name: string): void {
+		if ([
+			// known blocklist of packages we no longer want
+			'parcel-bundler', // parcel v1
+		].includes(pkg_name)) {
+			throw new Error(`⛔️ forbidden package "${pkg_name}" encountered!`)
+		}
+	}
+
+	// internal = from this monorepo
+	// vs. external = npm
+	// TODO review is this needed?
+	private is_internal_package(pkg_name: string) {
+		return pkg_name.startsWith('@offirmo')
+		// TODO more
+	}
+}
+
+const pkg_version_resolver = new PkgVersionResolver()
 
 /////////////////////////////////////////////////
 
@@ -46,6 +165,16 @@ package-lock=false
 		{ encoding: 'utf-8' },
 	))
 
+	promises.push(fs.writeFile(
+		path.resolve(dest_dir‿abspath, 'README.md'),
+		`
+# ${pure_module_details.name}
+
+${pure_module_details.description}
+`.trimStart(),
+		{ encoding: 'utf-8' },
+	))
+
 	promises.push(write_json_file(
 		path.resolve(dest_dir‿abspath, 'tsconfig.json'),
 		{
@@ -65,9 +194,15 @@ package-lock=false
 		)
 	)
 
-	promises.push(write_json_file(
-		path.resolve(dest_dir‿abspath, 'package.json'),
-		{
+	const source_path = path.relative(dest_dir‿abspath, path.resolve(dest_dir‿abspath, 'src', pure_module_details.source.path‿rel))
+
+	if (pure_module_details.depsⵧvendored.size) {
+		throw new Error(`Not implemented!`)
+		// TODO link + declare in private entries
+	}
+
+	const packageᐧjson = await (async () => {
+		const pkg: any = {
 			"name": `${pure_module_details.namespace}/${pure_module_details.name}`,
 			"description": pure_module_details.description,
 			"version": pure_module_details.version,
@@ -75,24 +210,75 @@ package-lock=false
 			"license": pure_module_details.license,
 			"private": pure_module_details.isꓽprivate,
 
-			"sideEffects": false,
+			"sideEffects": pure_module_details.hasꓽside_effects,
 			"type": "module",
 			"exports": {
 				".": {
-					"import": "./src/index.ts"
+					"import": source_path,
 				}
 			},
-			"source": "src/index.ts",
-
-			"peerDependencies": {
-			},
-			"dependencies": {
-			},
-			"scripts": {
-			},
-			"devDependencies": {
+				"source": source_path,
 			}
+
+		const all_declared_deps: Set<string> = (new Set<string>())
+			.union(pure_module_details.depsⵧnormal)
+			.union(pure_module_details.depsⵧdev)
+			.union(pure_module_details.depsⵧpeer)
+			.union(pure_module_details.depsⵧoptional)
+			// vendored are copied, not declared
+
+		Array.from(all_declared_deps.values()).forEach(dep => pkg_version_resolver.preload(dep))
+		await pkg_version_resolver.all_pending_loaded()
+
+		if (pure_module_details.depsⵧpeer.size) {
+			pkg.peerDependencies = Object.fromEntries(
+				Array.from(pure_module_details.depsⵧpeer).sort().map(dep => [dep, pkg_version_resolver.get_target_version(dep)])
+			)
 		}
+
+		pkg.dependencies = Object.fromEntries(
+			Array.from(pure_module_details.depsⵧnormal).sort().map(dep => [dep, pkg_version_resolver.get_target_version(dep)])
+		)
+		if (pure_module_details.depsⵧoptional.size) {
+			throw new Error(`Not implemented!`)
+		}
+
+		pkg.scripts = (() => {
+			const scripts: Record<string, string> = {}
+
+			// aggregs
+			const scriptsⵧclean = Object.keys(scripts).filter(k => k.startsWith('clean'))
+			if (scriptsⵧclean.length) {
+				scripts.clean = `npm-run-all ${scriptsⵧclean.join(' ')}`
+			}
+
+			if (pure_module_details.languages.has('ts')) {
+				scripts['check--ts'] = 'tsc --noEmit'
+				scripts['check--ts--watch'] = 'tsc --noEmit --watch'
+				scripts['dev'] = scriptsⵧclean.length
+					? `run-s clean check--ts--watch`
+					: `run-s check--ts--watch`
+			}
+
+			const scriptsⵧcheck = Object.keys(scripts).filter(k => k.startsWith('check') && !k.endsWith('--watch'))
+			if (scriptsⵧcheck.length) {
+				scripts.check = `run-s ${scriptsⵧcheck.join(' ')}`
+			}
+
+			return scripts
+		})()
+
+		if (pure_module_details.depsⵧdev.size) {
+			pkg.devDependencies = Object.fromEntries(
+				Array.from(pure_module_details.depsⵧdev).sort().map(dep => [dep, pkg_version_resolver.get_target_version(dep)])
+			)
+		}
+
+		return pkg
+	})()
+
+	promises.push(write_json_file(
+		path.resolve(dest_dir‿abspath, 'package.json'), packageᐧjson
 	))
 }
 

@@ -4,7 +4,7 @@
 2022 ChatGPT https://openai.com/index/chatgpt/
 2023-10 Claude 2
 2024-11 MCP https://www.anthropic.com/news/model-context-protocol
-2025-02 
+2025-02
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://www.anthropic.com/news
@@ -240,5 +240,6 @@ vector database
 vector database -- https://weaviate.io/
 vector database -- https://www.pinecone.io
 vector database -- Qdrant https://qdrant.tech/blog/series-a-funding-round/
+vibe coding https://x.com/karpathy/status/1886192184808149383
 watermarking outputs https://proceedings.mlr.press/v202/zhao23i.html
 weak-to-strong generalization https://openai.com/research/weak-to-strong-generalization

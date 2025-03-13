@@ -8,7 +8,9 @@
 	"dependencies": {
 		"@offirmo-private/pure-module--analyzer": "*",
 		"fs-extra": "^11",
-		"parse-imports-ts": "^1"
+		"package-json": "^10",
+		"parse-imports-ts": "^1",
+		"semver": "^7"
 	},
 	"scripts": {
 		"demo": "node --experimental-strip-types ./demo/index.mts"

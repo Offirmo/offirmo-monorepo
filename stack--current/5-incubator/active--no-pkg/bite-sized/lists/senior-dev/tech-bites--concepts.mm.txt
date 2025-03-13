@@ -287,6 +287,8 @@ DNS (Domain Name System)
 do what I mean (DWIM) = computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
 dogfooding = practice of a company using its own products or services internally as a way to test, evaluate, and improve them. Essentially, the company's employees become the primary users of their own products.
 domain -- Domain Driven Design (DDD) https://en.wikipedia.org/wiki/Domain-driven_design
+domain -- top-level = collection of services, libraries, and other components you can logically group into an API for a specific business function to represent a unit of autonomous decision-making.
+domain -- top-level = should be A grouping based on functionality, not organizational hierarchy; Able to operate as an independent area of decision-making; Stable in the face of organizational changes.
 domain = a targeted subject area of a computer program
 DRY (don't repeat yourself)
 DRY -- WET (write everything twice) https://overreacted.io/the-wet-codebase/
@@ -441,10 +443,12 @@ kebab-case vs snake etc
 kill switch
 KISS
 KTLO
-language -- Bend = massively parallel, high-level programming language https://github.com/HigherOrderCO/Bend
-language -- go
-language -- Rust https://www.rust-lang.org/
-language -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
+lang -- Bend = massively parallel, high-level programming language https://github.com/HigherOrderCO/Bend
+lang -- go
+lang -- go -- advocacy https://github.com/microsoft/typescript-go/discussions/411
+lang -- Rust https://www.rust-lang.org/
+lang -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
+lang -- wasp = high level website / SaaS
 language features -- contract enforcement
 language features -- data hiding
 language features -- encapsulation
@@ -783,6 +787,7 @@ types -- subtyping -- preconditions = cannot be strengthened in the subtype
 types -- subtyping https://en.wikipedia.org/wiki/Liskov_substitution_principle
 types -- systems -- "modern" https://reasonablypolymorphic.com/blog/protos-are-wrong/
 types -- systems -- role -- (disputable pre-semver citation!) the main challenge in real-world software engineering is not writing code but changing code once it is written and deployed. In general, type systems can be both helpful and harmful when it comes to changing code -- type systems are invaluable for detecting problems introduced by a change, but an overly-rigid type system can be a hindrance if it means common types of changes are difficult to make. https://news.ycombinator.com/item?id=18188519
+UI layout algorithms https://www.youtube.com/watch?v=by9lQvpvMIc
 uid -- use strings = "2^64 isn’t as big as it used to be" https://protobuf.dev/programming-guides/api/
 unicode -- byte-order mark
 unicode -- encoding -- WTF-8 "wobbly" (not needed with normalization / well formed) https://simonsapin.github.io/wtf-8/
@@ -806,6 +811,7 @@ validate everything
 vaporware
 variables pointer / natives
 vendoring https://htmx.org/essays/vendoring/
+vibe coding https://x.com/karpathy/status/1886192184808149383
 virtual private cloud (VPC)
 web assembly (asm.js)
 Wirth's law = software systems grow faster in size and complexity than methods to handle complexity are invented. software is getting slower more rapidly than hardware is becoming faster. https://en.wikipedia.org/wiki/Wirth%27s_law

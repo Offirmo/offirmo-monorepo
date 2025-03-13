@@ -461,6 +461,7 @@ Jack Welch A/B/C players -- B = not visionary or the most driven, but "vital" be
 Jack Welch A/B/C players -- C = nonproducers, likely to "enervate" rather than "energize". Procrastination, failure to deliver on promises
 Jack Welch A/B/C players https://en.wikipedia.org/wiki/Vitality_curve#Ratings
 jamais assez / 1st times
+job readiness
 Johari window https://en.wikipedia.org/wiki/Johari_window
 joie de l’effort = "Satisfaction lies in the effort, not in the attainment" Gandhi
 joie du don
@@ -962,6 +963,7 @@ vitality curve / stack ranking / forced ranking / rank and yank = performance ma
 viz
 viz -- diagrams -- charts
 viz -- diagrams -- sankey
+viz -- ridgeline plot https://en.wikipedia.org/wiki/Ridgeline_plot
 voleur volé
 volume hiring
 vrai vs. bien trouvé (meme)

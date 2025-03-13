@@ -141,6 +141,7 @@
 		"nanoid": "^5",
 		"npm-run-all": "^4",
 		"openai": "^4",
+		"package-json": "^10",
 		"parcel": "^2",
 		"path-exists": "^5",
 		"pokemon": "^3",

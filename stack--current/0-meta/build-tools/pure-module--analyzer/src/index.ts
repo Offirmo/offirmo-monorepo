@@ -45,18 +45,26 @@ interface PureModuleDetails {
 	// everything needed to build package.json
 	namespace: string
 	name: string
-	version?: string
+	version: string
 	description?: string
-	isꓽprivate?: boolean
+	isꓽprivate: boolean
 	author: string
 	license: string // TODO SPDX
-	deps: Map<string, DependencyType>
-	entries: {
+	source: FileEntry
+	hasꓽside_effects: boolean
+	extra_entries: {
 		[label: string]: FileEntry
 	}
+	depsⵧnormal: Set<string>
+	depsⵧdev: Set<string>
+	depsⵧpeer: Set<string>
+	depsⵧoptional: Set<string>
+	depsⵧvendored: Set<string>
 
 	// needed to build scripts
 	languages: Set<ProgLang>
+	// TODO bundler reqs, ex. Parcel-specific imports
+	// TODO engines ex. node
 }
 
 /////////////////////////////////////////////////
@@ -79,12 +87,18 @@ function _createꓽresult(root‿abspath: string): PureModuleDetails {
 		isꓽprivate: true,
 		author: 'Offirmo <offirmo.net@gmail.com>',
 		license: 'Unlicense',
-		deps: new Map<string, DependencyType>([
-			[ '@offirmo-private/monorepo-scripts', 'dev' ],
-			[ '@offirmo/unit-test-toolbox', 'dev' ],
-			[ 'npm-run-all', 'dev' ],
+		source: null as any, // XXX TODO
+		hasꓽside_effects: false,
+		extra_entries: {},
+		depsⵧnormal: new Set<string>(),
+		depsⵧdev: new Set<string>([
+			'@offirmo-private/monorepo-scripts',
+			'@offirmo/unit-test-toolbox',
+			'npm-run-all',
 		]),
-		entries: {},
+		depsⵧpeer: new Set<string>(),
+		depsⵧoptional: new Set<string>(),
+		depsⵧvendored: new Set<string>(),
 		languages: new Set<ProgLang>(),
 	}
 }
@@ -95,10 +109,27 @@ function _isꓽin_excluded_folder(entry: FileEntry): boolean {
 	if (path‿rel.includes('/~~gen/'))
 		return true
 
+	// vendored deps are supposed to have no deps
+	if (path‿rel.includes('/__vendored/'))
+		return true
+
 	if (path‿rel.includes('/tosort/'))
 		return true
 
 	return false
+}
+
+// examples ? demo?
+function getꓽdeptype(entry: FileEntry): DependencyType {
+	const { path‿rel, extⵧsub } = entry
+
+	if (path‿rel.includes('/__fixtures/'))
+		return 'dev'
+
+	if (extⵧsub === 'tests')
+		return 'dev'
+
+	return 'normal'
 }
 
 function assertꓽmigrated(entry: FileEntry, { indent = ''} = {}): void {
@@ -205,16 +236,26 @@ function getꓽpure_module_details(module_path: string, { indent = ''} = {}) {
 
 	// start aggregating
 	const result = _createꓽresult(root‿abspath)
+	const raw_deps: Array<Dependency> = []
 
 	file_entries.forEach(entry => {
-		const { path‿rel } = entry
 		const is_excluded = _isꓽin_excluded_folder(entry)
+		const { path‿rel } = entry
 		console.log(`${indent} ↳ 📄`, path‿rel, is_excluded ? '🚫' : '')
 		if (is_excluded)
 			return
 
 		assertꓽmigrated(entry)
 		assertꓽnormalized(entry)
+
+		if (!result.source) {
+			result.source = entry
+		}
+		else if (entry.basename‿noext === 'index') {
+			if (entry.path‿rel.length < result.source.path‿rel.length) {
+				result.source = entry
+			}
+		}
 
 		const { basename } = entry
 		if (basename === MANIFEST‿basename) {
@@ -226,9 +267,47 @@ function getꓽpure_module_details(module_path: string, { indent = ''} = {}) {
 		getꓽProgLangs(entry).forEach(lang => result.languages.add(lang))
 	})
 
+	// extras
+	if (result.languages.has('ts')) {
+		raw_deps.push({ label: 'tslib', type: 'peer' })
+		raw_deps.push({ label: 'typescript', type: 'dev' })
+	}
+
 	/*if(!entryⵧmanifest) {
 		throw new Error(`No MANIFEST found!`)
 	}*/
+
+	// consolidate
+	raw_deps.forEach(({label, type}) => {
+		switch (type) {
+			case 'normal':
+				result.depsⵧnormal.add(label)
+				break
+			case 'dev':
+				result.depsⵧdev.add(label)
+				break
+			case 'peer':
+				result.depsⵧpeer.add(label)
+				break
+			case 'optional':
+				result.depsⵧoptional.add(label)
+				break
+			case 'vendored':
+				result.depsⵧvendored.add(label)
+				break
+			default:
+				throw new Error(`Unknown dep type "${type}"!`)
+		}
+	})
+
+	for (const dep of result.depsⵧdev) {
+		if (result.depsⵧnormal.has(dep)) {
+			result.depsⵧdev.delete(dep)
+		}
+	}
+	for (const dep of result.depsⵧpeer) {
+		result.depsⵧdev.add(dep)
+	}
 
 	return result
 }

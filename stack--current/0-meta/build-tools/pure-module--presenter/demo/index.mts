@@ -11,7 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 import { getꓽpure_module_details } from '@offirmo-private/pure-module--analyzer'
 
 const pure_module_details = getꓽpure_module_details(
-	__dirname + '/../../../../1-stdlib/timestamps/src',
+	path.resolve(__dirname, '../../../../../stack--next/2-pure-modules/timestamps/'),
 	{
 		indent: '   ',
 	},
@@ -28,7 +28,8 @@ present({
 	pure_module_path: pure_module_details.root‿abspath,
 	pure_module_details,
 
-	dest_dir: path.resolve(__dirname, 'output'),
+	//dest_dir: path.resolve(__dirname, 'output'),
+	dest_dir: path.resolve(__dirname, '../../../../1-stdlib/timestamps/'),
 	ts__config__path: path.resolve(__dirname, '../../../tsconfig.json'),
 	ts__custom_types__path: path.resolve(__dirname, '../../../typescript-custom-typings'),
 })
