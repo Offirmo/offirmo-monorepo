@@ -315,6 +315,9 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 		raw_deps.push({ label: 'tslib', type: 'peer' })
 		raw_deps.push({ label: 'typescript', type: 'dev' })
 	}
+	// encourage safe practices
+	raw_deps.push({ label: 'tiny-invariant', type: 'normal'})
+	// TODO add extended error types
 
 	/*if(!entryⵧmanifest) {
 		throw new Error(`No MANIFEST found!`)

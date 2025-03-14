@@ -1,0 +1,17 @@
+{
+	"name": "@offirmo-private/bolt-utils",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+
+	"type": "module",
+	"main": "src/index.ts",
+
+	"dependencies": {
+		"fs-extra": "^11",
+		"load-json-file": "^7",
+		"semver": "^7"
+	},
+	"scripts": {
+		"demo": "node --experimental-strip-types ./demo/index.mts"
+	}
+}

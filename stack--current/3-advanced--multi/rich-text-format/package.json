@@ -38,14 +38,18 @@
 		"dev": "run-s clean _build:dev:watch",
 
 		"test": "node --experimental-strip-types --experimental-require-module ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './src/**/*spec.ts'",
+
 		"cheatsheet": "node doc/cheatsheet.mjs",
-		"demo": "node doc/demo-node/index.mjs"
+		"demo": "node doc/demo-node/index.mjs",
+
+		"_start:parcel--storypad": "parcel serve storypad/index.html --port 1981  --lazy  --no-autoinstall",
+		"stories": "npm-run-all  clean  _start:parcel--storypad"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/prettify-any": "*",
 		"@offirmo/practical-logger-browser": "^3",
-		"@offirmo/unit-test-toolbox": "^9",
+		"@offirmo/unit-test-toolbox": "*",
 		"npm-run-all": "^4",
 		"tiny-invariant": "^1",
 		"tslib": "^2"

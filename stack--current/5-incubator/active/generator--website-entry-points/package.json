@@ -9,11 +9,9 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".":  "./dist/src.es2024.esm/index.js",
-		"./tbrpg":  "./dist/src.es2024.esm/__specs/__fixtures/specs--game--tbrpg.js"
+		".":  "./src/index.ts",
+		"./tbrpg":  "./src/__specs/__fixtures/specs--game--tbrpg.js"
 	},
-	"module": "dist/src.es2024.esm/index.js",
-	"typings": "dist/src.es2024.esm/index.d.ts",
 	"source": "src/index.ts",
 
 	"dependencies": {
@@ -51,7 +49,7 @@
 	"devDependencies": {
 		"@offirmo-private/marketing": "*",
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "^9",
+		"@offirmo/unit-test-toolbox": "*",
 		"@types/chroma-js": "^3",
 		"npm-run-all": "^4",
 		"tslib": "^2"
