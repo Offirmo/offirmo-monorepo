@@ -5,32 +5,47 @@
  * TODO REPORT auto-hoist those?
  */
 
+/* TODO display block like image? */
 
-/* As SVG does not provide a default visual style for links,
- * it's considered best practice to add some
- * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a#example
- *
- * @see elements--a.css
- *
- * WARNING This svg|a selector works ONLY if the svg namespace is defined!!
- */
-svg|a {
-	/******* See also element--a.css *******/
-
-	/* SVG specific additional styles */
-	&:link,
-	&:visited {
-		cursor: pointer;
+svg {
+	text {
+		fill: light-dark(black, white); /* Even for text, SVG uses fill over color */
 	}
 
-	&, & text {
-		fill: var(--o⋄color⁚fg--link); /* Even for text, SVG uses fill over color */
-		text-decoration: underline;
-	}
-	&:hover,
-	&:active {
-		outline: dotted var(--o⋄border--thickness) var(--o⋄color⁚activity-outline); /* TODO test, TODO consider following normal a with fill */
+	/* As SVG does not provide a default visual style for links,
+	 * it's considered best practice to add some
+	 * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a#example
+	 *
+	 * @see elements--a.css
+	 */
+	a {
+		/* a color are being overwritten by the default style.
+		 * make it specific and inheritable
+		 */
+		color: var(--o⋄color⁚fg--link);
+
+		text-decoration-thickness: var(--o⋄border--thickness);
+
+		/* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
+		touch-action: manipulation;
+
+		/* SVG specific additional styles */
+
+		&:link,
+		&:visited {
+			cursor: pointer;
+			color: var(--o⋄color⁚fg--link--visited, light-dark(hsl(271, 68%, 32%), #f4a5f4));
+		}
+
+		&, & text {
+			fill: var(--o⋄color⁚fg--link, light-dark(hsl(240, 100%, 50%), #f4a5f4)); /* Even for text, SVG uses fill over color */
+			text-decoration: underline;
+		}
+
+
+		&:hover,
+		&:active {
+			outline: dotted var(--o⋄border--thickness) var(--o⋄color⁚activity-outline); /* TODO test, TODO consider following normal a with fill */
+		}
 	}
 }
-
-/* TODO display block? */

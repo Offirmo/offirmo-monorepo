@@ -6,9 +6,7 @@
 :root {
 	/* Standard
 	 * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars
-	 * 2022/07 = FF only  https://caniuse.com/mdn-css_properties_scrollbar-color
 	 */
-	scrollbar-color: var(--o⋄color⁚bg--highlight--1) var(--o⋄color⁚bg--main); /* <scrollbar color> <scrollbar track color> */
 	scrollbar-width: thin;
 }
 *, *::before, *::after { scrollbar-color: inherit; scrollbar-width: inherit; }
@@ -18,16 +16,6 @@
  * https://stackoverflow.com/a/14150577/587407
  * https://css-tricks.com/almanac/properties/s/scrollbar/
  */
-::-webkit-scrollbar {
-	xxwidth: .5rem;
-}
-::-webkit-scrollbar-thumb {
-	background-color: var(--o⋄color⁚bg--highlight--2);
-	/*-webkit-box-shadow: inset 0 0 .4em var(--o⋄color⁚bg--highlight--2);*/
-}
-
-
-
 
 
 /* TODO

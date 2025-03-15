@@ -4,6 +4,7 @@
 	 * cf. https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886 §4
 	 */
 	--o⋄border--thickness: .07rem;
+	/* TODO bigger if dark mode */
 
 	/* recommendation for max width of content:
 	 - 40-55 https://buffer.com/library/the-ideal-length-of-everything-online-according-to-science/#the-ideal-width-of-a-paragraph-is-40-55-characters

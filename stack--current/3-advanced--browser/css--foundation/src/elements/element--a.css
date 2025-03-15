@@ -17,12 +17,10 @@
   - should be able to tell an already clicked link https://mashable.com/article/google-black-links
  */
 
-a, svg|a { /* we also style the embedded SVG links at the same time, see ./element--svg.css */
-	/* a color are being overwritten by the default style.
-	 * make it specific and inheritable
-	 */
-	color: var(--o⋄color⁚fg--link);
-
+/* Do NOT style svg|a here,
+ * or forgetting to declare the SVG namespace would break this rule!
+ */
+a {
 	text-decoration-thickness: var(--o⋄border--thickness);
 
 	/* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
@@ -32,7 +30,6 @@ a, svg|a { /* we also style the embedded SVG links at the same time, see ./eleme
 	}
 
 	&:visited {
-		color: var(--o⋄color⁚fg--link--visited);
 	}
 
 	&:focus {
@@ -45,6 +42,5 @@ a, svg|a { /* we also style the embedded SVG links at the same time, see ./eleme
 		background-color: var(--o⋄color⁚bg--highlight--1);
 	}
 	&:active {
-		color: var(--o⋄color⁚activity-outline);
 	}
 }

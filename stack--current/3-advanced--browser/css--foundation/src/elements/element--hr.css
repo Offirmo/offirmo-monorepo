@@ -6,5 +6,4 @@ hr {
 	width: 100%;
 	border: none;
 	border-top: var(--o⋄border--thickness) solid;
-	background-color: var(--o⋄color⁚fg--ancillary);
 }

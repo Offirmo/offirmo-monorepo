@@ -9,93 +9,85 @@
 			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖼</text></svg>">
 	<style>
 		@import "npm:@offirmo-private/css--foundation";
+		@namespace svg url(http://www.w3.org/2000/svg);
 	</style>
 </head>
 <body>
 Hi, let's see how color-scheme behaves!
 
-<script>
-	;[
-		'fg--main',
-		'bg--main',
-		'fg--strong',
-		'accent',
-		'fg--link',
-		'fg--link--visited',
-		'activity-outline',
-		'bg--code',
-		'bg--highlight--1',
-		'bg--highlight--2',
-	].forEach(radix => {
-		// TODO one day
-	})
-</script>
-
 <div>
-	<hr>
-	<p>
-		normal <strong>strong</strong> <em>em</em>
-		<a href="#">link</a> <small>small</small>
-	</p>
-	<p>
-		<img width="300" height="50"></img>
-	</p>
-	<p>
-		<svg viewBox="0 0 300 35">
-			<text x="0" y="15">Text from an SVG!</text>
-			<a xlink:href="#">
-				<text x="0" y="35">Link from an SVG!</text>
-			</a>
-		</svg>
-	</p>
-	<pre>	pre</pre>
-	<p>
-		<textarea id="example-element">Text Area</textarea>
-	</p>
+	<section>
+		<hr>
+		<p>
+			normal <strong>strong</strong> <em>em</em>
+			<a href="#">link</a> <small>small</small>
+		</p>
+		<p>
+			<img width="300" height="25">
+		</p>
+		<p>
+			<svg viewBox="0 0 300 35" style="background-color: light-dark(#DBFFF1, #37463E)">
+				<text x="0" y="15">Text from an SVG!</text>
+				<a xlink:href="#">
+					<text x="0" y="30">Link from an SVG!</text>
+				</a>
+			</svg>
+		</p>
+		<pre>	pre</pre>
+		<p>
+			<textarea id="story" name="story" rows="1">It was a dark and stormy night...</textarea>
+		</p>
+	</section>
 </div>
 
 <div style="color-scheme: light">
-	<hr>
-	<p>
-		normal <strong>strong</strong> <em>em</em>
-		<a href="#">link</a> <small>small</small>
-	</p>
-	<p>
-		<img width="300" height="50"></img>
-	</p>
-	<p>
-		<svg viewBox="0 0 300 35">
-			<text x="0" y="15">Text from an SVG!</text>
-			<a xlink:href="#">
-				<text x="0" y="35">Link from an SVG!</text>
-			</a>
-		</svg>
-	</p>
-	<pre>
-		pre
-	</pre>
+	<section>
+		<hr>
+		<p>
+			normal <strong>strong</strong> <em>em</em>
+			<a href="#">link</a> <small>small</small>
+		</p>
+		<p>
+			<img width="300" height="25">
+		</p>
+		<p>
+			<svg viewBox="0 0 300 35" style="background-color: light-dark(#DBFFF1, #37463E)">
+				<text x="0" y="15">Text from an SVG!</text>
+				<a xlink:href="#">
+					<text x="0" y="30">Link from an SVG!</text>
+				</a>
+			</svg>
+		</p>
+		<pre>	pre</pre>
+		<p>
+			<textarea id="story" name="story" rows="1">It was a dark and stormy night...</textarea>
+		</p>
+	</section>
 </div>
 
 <div style="color-scheme: dark">
-	<hr>
-	<p>
-		normal <strong>strong</strong> <em>em</em>
-		<a href="#">link</a> <small>small</small>
-	</p>
-	<p>
-		<img width="300" height="50"></img>
-	</p>
-	<p>
-		<svg viewBox="0 0 300 35">
-			<text x="0" y="15">Text from an SVG!</text>
-			<a xlink:href="#">
-				<text x="0" y="35">Link from an SVG!</text>
-			</a>
-		</svg>
-	</p>
-	<pre>
-		pre
-	</pre>
+	<section>
+		<hr>
+		<p>
+			normal <strong>strong</strong> <em>em</em>
+			<a href="#">link</a> <small>small</small>
+		</p>
+		<p>
+			<img width="300" height="25">
+		</p>
+		<p>
+			<svg viewBox="0 0 300 35" style="background-color: light-dark(#DBFFF1, #37463E)">
+				<text x="0" y="15">Text from an SVG!</text>
+				<a xlink:href="#">
+					<text x="0" y="30">Link from an SVG!</text>
+				</a>
+			</svg>
+		</p>
+		<pre>	pre</pre>
+		<p>
+			<textarea id="story" name="story" rows="1">It was a dark and stormy night...</textarea>
+		</p>
+	</section>
 </div>
 
 </body>

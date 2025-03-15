@@ -26,9 +26,10 @@
 		"clean--dist": "monorepo-script--clean-package …dist",
 
 		"_start:parcel:storypad": "parcel serve doc/storypad/index.html --port 8080  --lazy  --no-autoinstall",
-		"_start:parcel:demo": "parcel serve --log-level verbose  'doc/demo/*.html' --port 3020 --no-autoinstall",
+		"_start:parcel:sandbox": "parcel serve --no-hmr --log-level verbose  'src/++gen/sandbox/*.html' --port 3020 --no-autoinstall",
 
-		"dev": "npm-run-all clean--cache --parallel _start:parcel:storypad",
+		"stories": "npm-run-all clean--cache --parallel _start:parcel:storypad",
+		"sandbox": "npm-run-all clean--cache --parallel _start:parcel:sandbox",
 
 		"build": "node ./src/~~gen/bundle.mjs"
 	},

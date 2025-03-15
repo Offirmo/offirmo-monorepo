@@ -1,12 +1,8 @@
-
-:root {
-	/* https://web.dev/accent-color/
-	 * https://www.smashingmagazine.com/2021/09/simplifying-form-styles-accent-color/
-	 *
-	 * An "accent color" is an easy way to add "that dash of visual flair to your UI"
-	 * cf. https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886 §6
-	 * It's also an easy way to style inputs.
-	 * Note: because browsers will do auto-contrast, we need to use a light accent on light mode and vice versa
-	 */
-	accent-color: var(--o⋄color⁚accent);
-}
+/* inputs (aka. controls) are a beast to style
+ * We opt to not style them beyond small, very useful tweaks.
+ * Interactive websites with lots of inputs will use dedicated styling.
+ *
+ * However, <a> and <button> are technically inputs, very common, and we style them.
+ * @see elements--a.css
+ * @see elements--button.css
+ */
