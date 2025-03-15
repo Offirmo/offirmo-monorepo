@@ -26,21 +26,10 @@ a {
 	/* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
 	touch-action: manipulation;
 
-	&:link {
-	}
-
-	&:visited {
-	}
-
-	&:focus {
-	}
-
 	&:hover {
 		/* There is no hover indicator on links.
 		 * Adding one is a no-brainer.
 		 */
 		background-color: var(--o⋄color⁚bg--highlight--1);
-	}
-	&:active {
 	}
 }

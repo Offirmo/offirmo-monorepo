@@ -9,7 +9,7 @@
 
 svg {
 	text {
-		fill: light-dark(black, white); /* Even for text, SVG uses fill over color */
+		fill: var(--o⋄color⁚fg--main) /* Even for text, SVG uses fill over color */
 	}
 
 	/* As SVG does not provide a default visual style for links,
