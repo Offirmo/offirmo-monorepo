@@ -99,6 +99,7 @@ base rate: The average outcome for an event over time. They’re like batting av
 be prepared
 bee browsing
 being enough
+being in the details https://www.theengineeringmanager.com/managing-managers/being-in-the-details/
 Bell curve = bottom 20%, middle 60%, top 20%
 bet you’re fun at parties
 better ask for forgiveness than for permission
@@ -171,7 +172,9 @@ communication -- breaking bad news https://boz.com/articles/bad-news
 communication -- ELI5 https://boz.com/articles/eli5
 communication -- non violente
 communication -- plainspoken https://boz.com/articles/be-plainspoken https://debliu.substack.com/p/the-importance-of-being-plainspoken
-comparison is the thief of joy
+comparison -- is the thief of joy
+comparison -- the only comparison worth making is you vs. you 1y ago
+competition -- healthy = critical source of progress and innovation
 competition -- is for losers = Avoid competition. Stop copying what everybody else is doing. If you work at a for-profit company, work on problems that would not otherwise be solved. If you’re at a non-profit, fix unpopular problems. Life is easier when you don’t compete. (Hint: don’t start another bottled water company).
 competitive mindset = competition as the key driver of innovation and progress
 conditioning -- classical

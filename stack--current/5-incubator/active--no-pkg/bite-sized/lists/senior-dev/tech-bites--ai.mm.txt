@@ -45,6 +45,7 @@ benchmark -- Humanity's Last Exam https://lastexam.ai/
 benchmark -- OSWorld https://os-world.github.io/
 BERT
 bias
+bitter lesson = generic + Moor law beats specific https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf
 BLOOM = "BigScience Large Open-science Open-access Multilingual Language Model" = deprecated former big model
 BM25 (Best Matching 25) = a ranking function that uses lexical matching to find precise word or phrase matches. It's particularly effective for queries that include unique identifiers or technical terms https://www.anthropic.com/news/contextual-retrieval
 BPE Byte Pair Encoding is a way of converting text into tokens
@@ -103,6 +104,7 @@ Hierarchical Navigable Small World (HNSW) = graph for vector search https://www.
 Hugging Face = "the GitHub of machine learning" = the collaboration platform for the machine learning community https://www.techtarget.com/whatis/definition/Hugging-Face
 huggingface.co "space"
 illusion of understanding = hypothesis that LLMs don't actually perform formal reasoning and instead mimic it with probabilistic pattern-matching of the closest similar data seen in their vast training sets https://arstechnica.com/ai/2024/10/llms-cant-perform-genuine-logical-reasoning-apple-researchers-suggest/
+impostors https://cloud.google.com/blog/topics/threat-intelligence/mitigating-dprk-it-worker-threat
 in-context learning = ~long prompt / many shots https://www.anthropic.com/research/many-shot-jailbreaking
 inference
 inference = what happens when we prompt

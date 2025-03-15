@@ -211,6 +211,7 @@ js -- promises https://github.com/domenic/promises-unwrapping/blob/master/docs/s
 js -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
 JSON "Javascript Object Notation"
 latency -- high latency environments https://csswizardry.com/2024/09/optimising-for-high-latency-environments/
+layout -- trashing https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing
 layout composer https://github.com/namecheap/ilc
 lazy loading -- preloading https://www.differentshelf.com/lazy-loading-isnt-just-lazy-its-late-the-web-deserves-faster/
 lib -- react -- v19 https://vercel.com/blog/whats-new-in-react-19

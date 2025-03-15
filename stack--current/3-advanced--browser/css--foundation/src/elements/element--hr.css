@@ -1,8 +1,8 @@
-/* TODO possible ideas: https://css-tricks.com/examples/hrs/
+/* TODO possible more fancy ones: https://css-tricks.com/examples/hrs/
  */
 
 hr {
-	/* simple one TODO review*/
+	/* simple one */
 	width: 100%;
 	border: none;
 	border-top: var(--o⋄border--thickness) solid;

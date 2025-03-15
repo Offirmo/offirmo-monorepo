@@ -131,6 +131,9 @@ class
 client/server -- multi-tier architecture
 clippy https://www.mentalfloss.com/article/504767/tragic-life-clippy-worlds-most-hated-virtual-assistant
 close / destroy / terminate / dispose / release / free / delete / destruct / finalize / teardown / cleanup / shutdown / stop / end / abort / cancel / halt / kill / exit / quit / unload / dispose...
+code -- range -- prompt "make it pop" https://theoatmeal.com/comics/design_hell
+code -- range -- spec = less formal
+code -- range = prompt > spec > code
 code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 code quality = the only definition of quality in code that makes any sense is our ability to change the code. If it's easy to change, it's high quality; if it's hard to change, it's not.
 code quality https://blog.jim-nielsen.com/2024/easy-changes/
@@ -379,6 +382,7 @@ IAM -- CIAM "Customer Identity and Access Management" = a type of identity and a
 IAM -- CIAM -- 01 Improves customer registration and login experiences while reducing the risk of account takeover (a rampant problem in the consumer space because of password reuse)
 IAM -- CIAM -- 02 Offers customized and branded experiences for consumers, businesses, and enterprise customers
 IAM -- CIAM -- 03 Provides a scalable solution that can support hundreds of millions of customers
+IC vs management https://theengineeringmanager.substack.com/p/should-managers-still-code
 IDE "You're not productive enough without a productive IDE"
 IDE (Integrated Development Environment)
 IDEALS
@@ -556,6 +560,7 @@ optimization -- we believe that we can easily know how to make the slow parts of
 optimization -- we believe that we can easily know where a program spends most of its time.
 optimization https://tratt.net/laurie/blog/2023/four_kinds_of_optimisation.html
 ORM (Object-Relational Mapping)
+ORM https://github.com/typeorm/typeorm
 orthogonality https://en.wikipedia.org/wiki/Orthogonality_(programming)
 overengineering https://blog.matt-rickard.com/p/stop-overengineering
 ownership
@@ -613,6 +618,7 @@ programming paradigm -- imperative programming
 programming paradigm -- object oriented
 programming paradigm -- reactive
 promises -- deferred
+prompt
 protocol buffers (protobuf) => see data interchange format
 prototypes
 proxy
@@ -731,7 +737,7 @@ testing -- fixture -- general = setup designed to hold the OUT in place and allo
 testing -- fixture = (also called "test context") setup of state and input data designed to allow the OUT to be tested by being subjected to controlled test signals, ex. a fake database with data https://en.wikipedia.org/wiki/Test_fixture#Software
 testing -- mutation testing = tests your test suite by introducing a bug into the code under test, running the tests, and verifying the tests failed (i.e. that your tests are good enough to catch the bug) https://sentry.engineering/blog/js-mutation-testing-our-sdks https://stryker-mutator.io/
 testing -- Object Under Test (OUT)
-testing -- property based = instead of “it works for this case”, it’s “it works for any arbitrary input of this pattern” (e.g. “all integers”, “all alphanumeric strings”, “all List<Foo>s of length less than 10”)
+testing -- property based = instead of “it works for this case”, it’s “it works for any arbitrary input of this pattern” (e.g. “all integers”, “all alphanumeric strings”, “all List<Foo>s of length less than 10”) https://en.wikipedia.org/wiki/Property_testing
 testing -- TDD
 testing -- test double -- 01 dummy = objects are passed around but never actually used. Usually they are just used to fill parameter lists
 testing -- test double -- 02 fake = have working implementations, but usually take some shortcut which makes them not suitable for production (an in memory database is a good example)
@@ -824,4 +830,5 @@ XML (Extensible Markup Language)
 XSLT
 XSS (Cross-site scripting)
 YAGNI (you aren't gonna need it) -- Too general too soon https://frontendatscale.com/issues/15/
+yaml -- NO https://noyaml.com/
 yet another guideline I need to follow (YAGINTF)

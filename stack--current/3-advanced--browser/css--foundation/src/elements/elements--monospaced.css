@@ -34,4 +34,9 @@ samp {
 	 * Add a separator padding on inline elements
 	 */
 	padding-inline: .5ch;
+
+	/* replace the abominable default to 8
+	 * https://caniuse.com/css3-tabsize
+	 */
+	tab-size: 3;
 }
