@@ -654,8 +654,7 @@ resource -- trashing / untrashing = known feature, different from soft deletion
 REST (REpresentational State Transfer)
 REST HTTP = How to GET a Cup of Coffee https://www.infoq.com/articles/webber-rest-workflow/
 revisions
-rewrite https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22
-rewrites https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22
+rewrite trap https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22 https://skamille.medium.com/avoiding-the-rewrite-trap-b1283b8dd39e
 RFC (Request For Comments) https://rfc.fyi/
 RFC 2119 terminology = must, must not, should, should not, and may. The terms prefer and avoid correspond to should and should not, respectively. Imperative and declarative statements are prescriptive and correspond to must.
 robustness -- principle (beware bad effects) https://en.wikipedia.org/wiki/Robustness_principle

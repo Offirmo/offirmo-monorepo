@@ -17,5 +17,5 @@ details summary > * {
 	display: inline;
 }
 details[open] {
-	border-color: var(--o⋄color⁚fg--main);
+	border-color: currentColor;
 }

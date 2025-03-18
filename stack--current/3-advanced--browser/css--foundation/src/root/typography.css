@@ -3,6 +3,8 @@
 
 	/******* better defaults *******/
 
+	/* TODO bigger default root font? */
+
 	/* font sans serif = #1 most important styling according to https://jgthms.com/web-design-in-4-minutes/#font-family
 	 */
 	font-family: var(--o⋄font-family--main);
@@ -18,9 +20,10 @@
 	/* Help discriminate 0 and O if the font supports it.
 	 * Not mathematically correct but...
 	 */
-	font-variant-numeric: slashed-zero;
+	font-variant-numeric: slashed-zero; /* TODO composability */
 
 	text-decoration-thickness: var(--o⋄border--thickness);
+
 
 
 	/******* modern standards *******/

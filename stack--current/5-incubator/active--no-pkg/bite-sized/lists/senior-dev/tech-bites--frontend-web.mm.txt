@@ -216,6 +216,8 @@ JSON "Javascript Object Notation"
 latency -- high latency environments https://csswizardry.com/2024/09/optimising-for-high-latency-environments/
 layout -- trashing https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing
 layout composer https://github.com/namecheap/ilc
+layouts -- holy grail
+layouts -- masonry https://ishadeed.com/article/css-grid-masonry/
 lazy loading -- preloading https://www.differentshelf.com/lazy-loading-isnt-just-lazy-its-late-the-web-deserves-faster/
 lib -- react -- v19 https://vercel.com/blog/whats-new-in-react-19
 MDN

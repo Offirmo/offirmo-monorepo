@@ -13,12 +13,12 @@
 
 svg {
 
-	text { /* ⬅ intentionally don't use svg|text because there is no HTML'<text>, so not conflict ✔ */
+	text { /* ⬅ intentionally don't use svg|text because there is no HTML'<text>, so no conflict ✔ */
 		/* make SVG text follow the document's main text color.
 		 * This is especially great for color-scheme support.
 		 * This has low specificity so won't affect explicitly styled text.
 		 */
-		fill: var(--o⋄color⁚fg--main) /* Even for text, SVG uses fill over color */
+		fill: var(--o⋄color⁚fg--main, CanvasText) /* Even for text, SVG uses fill over color */
 	}
 
 	/* As SVG does not provide a default visual style for links,
@@ -27,32 +27,36 @@ svg {
 	 *
 	 * @see elements--a.css
 	 */
-	a { /* ⬅ intentionally don't use svg|a because the styles here are the same as a, so not conflict ✔ */
-		/* same color as the default stylesheet */
-		color: var(--o⋄color⁚fg--link, var(--o⋄color⁚fg--link--default));
+	a { /* ⬅ intentionally don't use svg|a because the styles here are the same as a OR irrelevant, so no conflict ✔ */
 
-		text-decoration-thickness: var(--o⋄border--thickness);
+		/* same color as the default stylesheet */
+		color: var(--o⋄color⁚fg--link, LinkText);
+
 
 		/* we assume PWA, https://webkit.org/blog/5610/more-responsive-tapping-on-ios/ */
 		touch-action: manipulation;
 
-		/* SVG specific additional styles */
-
-		&:link,
 		&:visited {
-			cursor: pointer;
-			color: var(--o⋄color⁚fg--link--visited, var(--o⋄color⁚fg--link--visited--default));
+			color: var(--o⋄color⁚fg--link--visited, VisitedText);
 		}
 
-		&, & text {
-			fill: var(--o⋄color⁚fg--link, var(--o⋄color⁚fg--link--default)); /* Even for text, SVG uses fill over color */
+		& text {
+			fill: currentColor; /* Even for text, SVG uses fill over color */
 			text-decoration: underline;
+			text-decoration-thickness: var(--o⋄border--thickness);
 		}
 
-		/* XXX does it even work?? */
-		&:hover,
-		&:active {
-			outline: dotted var(--o⋄border--thickness) var(--o⋄color⁚activity-outline); /* TODO test, TODO consider following normal a with fill */
+		&:hover {
+			/* Hover indicator: none by default.
+			 * SVG text can't be applied a "background-color" like HTML text
+			 * let's use another visual indicator:
+			 */
+			/*outline: No, too big, visually unpleasant */
+			stroke: currentColor;
+			stroke-width: var(--o⋄border--thickness);
 		}
+		/* &:active : doesn't work on SVG
+		 * TODO one day find an alternative or a solution
+		 */
 	}
 }

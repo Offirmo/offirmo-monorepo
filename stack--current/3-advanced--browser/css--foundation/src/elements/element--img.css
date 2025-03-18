@@ -9,7 +9,7 @@ img {
 	/* defensive CSS, feel free to override https://ishadeed.com/article/defensive-css/ */
 	object-fit: cover;
 	max-width: 100%;
-	background-color: var(--o⋄color⁚bg--highlight); /* in case the image doesn't load */
+	background-color: var(--o⋄color⁚bg--highlight, ButtonFace); /* in case the image doesn't load */
 
 	/* src: ? */
 	image-rendering: -webkit-optimize-contrast;
