@@ -7,9 +7,12 @@ Base CSS improving the default browser stylesheet.
 This is **not** a CSS reset:
 - This layer assumes a CSS reset
 
-This is **not** a CSS framework:
+This layer is "opt-out" = strong recommendations that should not need to be overriden
 - This thin layer of improvements should be usable on every website.
-- No "optional" classes are declared
+- all the code is enabled at once, it's "best practices"
+- No dev work needed: no config, no required decisions, no opt-in features (like a CSS framework)
+
+This is **not** a CSS framework = opt-in, needs input from the dev
 
 The goal is to be used as a base for more advanced CSS frameworks:
 - by default, the minimal styles to make a page looks good,
@@ -31,12 +34,19 @@ By default, this stylesheet will activate a page like "mother fucking website".
 alternatively:
 ```css
 @import 'npm:@offirmo-private/css--foundation';
+@namespace svg url(http://www.w3.org/2000/svg);
 ```
 
 ### customization
-see "tokens"
+
+Customization is not a primary goal of this layer.
+However, some decisions are built in a way that they can be overriden easily through CSS tokens:
 
 ```
+--o⋄font-family--main
+--o⋄font-family--code
+
+XXX TOREVIEW
 --o⋄color⁚fg--main
 --o⋄color⁚fg--strong          = <Hx> and <strong> (nice to have, usually defaulted to fg--main) 
 --o⋄color⁚fg--ancillary       = ex. hr  (ancillary bc. we may have a "secondary/dim" and this one is even dim'er)
@@ -59,20 +69,3 @@ see "tokens"
 --o⋄border--thickness
 --o⋄content-recommended-width
 ```
-
-## Contribution
-
-### tokens
-
-* allow overrides!
-* solved with layers
-
-### TODO
-
-TODO +++ https://atlassian.design/foundations/typography
-
-TODO     width: fit-content; on all? https://courses.joshwcomeau.com/css-for-js/01-rendering-logic-1/09-flow-layout
-
-TODO review https://github.com/jenil/chota
-TODO review https://jakelazaroff.com/words/my-modern-css-reset/
-TODO review https://www.mcmaster.com/products/pipe-hangers/seismic-bracing-brackets~/mounting-location~angle-iron/

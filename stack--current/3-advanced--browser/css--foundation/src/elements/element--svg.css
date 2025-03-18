@@ -1,14 +1,23 @@
-/* Necessary to select only SVGelements, and not also HTML's
- * Commented due to Parcel issue https://github.com/parcel-bundler/parcel/issues/9534
- * need to be manually inserted at the top of the final CSS or top of critical CSS
+/* Warning: Technically a svg namespace is necessary to select only SVG elements, and not also HTML's.
+ * (Reminder that SVG can embed HTML, and that HTML can embed SVG... so it's not as trivial as nesting the CSS rules inside a svg selector)
+⬇This doesn't work!⬇ (crashes Parcel.js)
 @namespace svg url(http://www.w3.org/2000/svg);
- * TODO REPORT auto-hoist those?
+ * Because there are restrictions on namespace declarations = need to be absolutely at the ~top: https://github.com/parcel-bundler/parcel/issues/9534#issuecomment-1950227347
+ * Ex. strictly enforced by Parcel CSS bundler: issue https://github.com/parcel-bundler/parcel/issues/9534
+ * Solutions:
+ 1. manually declare the SVG namespace at the highest level of CSS declaration (Offirmo's html generator does it ✔)
+ 2. improve the CSS bundler to auto-hoist namespace declarations (unlikely to happen + can't be sure the final CSS will be in the right order)
+ 3. (hack) be careful and always target SVG elements via proper nesting and avoid conflicts = not ideal but may be enough ✔
+ * It happens that 3. works for us ✔
  */
 
-/* TODO display block like image? */
-
 svg {
-	text {
+
+	text { /* ⬅ intentionally don't use svg|text because there is no HTML'<text>, so not conflict ✔ */
+		/* make SVG text follow the document's main text color.
+		 * This is especially great for color-scheme support.
+		 * This has low specificity so won't affect explicitly styled text.
+		 */
 		fill: var(--o⋄color⁚fg--main) /* Even for text, SVG uses fill over color */
 	}
 
@@ -18,11 +27,9 @@ svg {
 	 *
 	 * @see elements--a.css
 	 */
-	a {
-		/* a color are being overwritten by the default style.
-		 * make it specific and inheritable
-		 */
-		color: var(--o⋄color⁚fg--link);
+	a { /* ⬅ intentionally don't use svg|a because the styles here are the same as a, so not conflict ✔ */
+		/* same color as the default stylesheet */
+		color: var(--o⋄color⁚fg--link, var(--o⋄color⁚fg--link--default));
 
 		text-decoration-thickness: var(--o⋄border--thickness);
 
@@ -34,15 +41,15 @@ svg {
 		&:link,
 		&:visited {
 			cursor: pointer;
-			color: var(--o⋄color⁚fg--link--visited, light-dark(hsl(271, 68%, 32%), #f4a5f4));
+			color: var(--o⋄color⁚fg--link--visited, var(--o⋄color⁚fg--link--visited--default));
 		}
 
 		&, & text {
-			fill: var(--o⋄color⁚fg--link, light-dark(hsl(240, 100%, 50%), #f4a5f4)); /* Even for text, SVG uses fill over color */
+			fill: var(--o⋄color⁚fg--link, var(--o⋄color⁚fg--link--default)); /* Even for text, SVG uses fill over color */
 			text-decoration: underline;
 		}
 
-
+		/* XXX does it even work?? */
 		&:hover,
 		&:active {
 			outline: dotted var(--o⋄border--thickness) var(--o⋄color⁚activity-outline); /* TODO test, TODO consider following normal a with fill */

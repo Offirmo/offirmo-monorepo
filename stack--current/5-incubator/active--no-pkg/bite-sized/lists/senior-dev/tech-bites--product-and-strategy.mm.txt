@@ -31,6 +31,8 @@ creator/user gap https://blog.jpl-consulting.com/2010/03/creator-user-gap/
 Critical User Journeys (CUJ)
 customer segmentation = Strategic, Enterprise, Mid-Market, SMB
 don't build castles in others people's kingdoms
+DTC (direct-to-consumer) companies = sell products directly to consumers, bypassing traditional retail channels, allowing them to control the entire customer experience and build strong brand relationships
+DTC -- often do well at the beginning, then a bunch of copycats come out and it's a race to the bottom funded by VC dollars https://www.youtube.com/watch?v=WcNbIm0fRxk
 earliest -- 01 feedback-able product (EFP)
 earliest -- 02 testable product = first release that customers can actually do something with
 earliest -- 03 usable product = first release that early adopters will actually use, willingly

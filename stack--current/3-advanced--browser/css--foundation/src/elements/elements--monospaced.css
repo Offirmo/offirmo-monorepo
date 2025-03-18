@@ -27,7 +27,7 @@ samp {
 	/* Apply a slightly different background on those elements.
 	 * This is now a widely accepted semantic style.
 	 */
-	background: var(--o⋄color⁚bg--code);
+	background-color: var(--o⋄color⁚bg--code, var(--o⋄color⁚bg--highlight));
 	border-radius: 0.2em;
 
 	/* To prevent the background from being too close to the content,

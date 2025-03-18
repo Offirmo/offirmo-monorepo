@@ -136,6 +136,9 @@ design -- intuitiveness vs. confusing, cluttered, dense, not practical, lack of 
 design quality -- 1 Intuitiveness vs complicated, overwhelming, cluttered, steep learning curve, significant cognitive load.
 design quality -- 2 Ease of Use: difficult to navigate and locate features, concerns about accessibility, efficiency, consistency, and readability
 design quality -- 3 outdated design aesthetic
+design system
+design system -- CSS is tech debt ;)
+design system -- design tokens
 Design System -- vs. Web Pattern Library (WPL) = Built specifically for web, with the intention of helping makers publish pages with speed, scale, and consistency.
 Design System = foundational base for which all other user interfaces are built upon. DS built with the intention to make it easy for makers (designers and developers) to design, develop, and deliver UI at scale.
 devices -- support
@@ -360,7 +363,7 @@ viewport -- Visual Viewport API = Window.visualViewport https://developer.mozill
 virtualization = an advanced technique that uses JS to remove DOM nodes not currently on-screen
 web app dev vs web site dev = so different now that they probably shouldn’t be called the same thing anymore
 Web Application Firewall (WAF)
-web capabilities -- fugu team https://www.chromium.org/teams/web-capabilities-fugu/
+web capabilities -- Google's fugu team https://www.chromium.org/teams/web-capabilities-fugu/
 web components -- "autonomous" = no extends, no "is", must inherit from HTMLElement
 web components -- custom elements
 web components -- is XXX not supported on Safari!

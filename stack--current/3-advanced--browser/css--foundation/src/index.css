@@ -5,8 +5,6 @@
 
 @import 'elements/index.css'                       layer(offirmo--foundation);
 
-@import 'media-specific/index.css'                 layer(offirmo--foundation);
-
 @import 'root/index.css'                           layer(offirmo--foundation);
 
 /* debug to check the correct layer stacking

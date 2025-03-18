@@ -1,8 +1,7 @@
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element
  * typical: embed, iframe, img, video
  * sometimes: audio, canvas, object, option
- * NO: picture, svg,
- * they are a bit harder to style
+ * NO: picture, svg ⭆ they are a bit harder to style
  */
 
 /* https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design#responsive_images

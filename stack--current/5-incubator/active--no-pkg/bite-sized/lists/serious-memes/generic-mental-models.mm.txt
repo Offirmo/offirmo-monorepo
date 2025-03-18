@@ -556,6 +556,8 @@ Lev Landau classification of physicists -- line 1 = perseverance, tenacity, ener
 Lev Landau classification of physicists -- line 2 = originality, genius, intuition
 Lev Landau classification of physicists https://books.google.com.au/books?id=nGcHEAAAQBAJ&pg=PA115&redir_esc=y#v=onepage&q&f=false
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
+life -- stages -- 20+ boomerang https://en.wikipedia.org/wiki/Boomerang_Generation
+life -- stages -- 40+ sandwich https://en.wikipedia.org/wiki/Sandwich_generation
 life expectancy -- healthy "HALE" = average number of years that a person can expect to live in "full health" excluding the years lived in less than full health due to disease and/or injury
 life expectancy -- remaining
 life expectancy https://en.m.wikipedia.org/wiki/Life_expectancy
@@ -944,6 +946,7 @@ top-down/bottom-up
 tradeoffs / can't have everything
 tragedy of the commons = Self-interests causing depletion of a shared resource https://en.wikipedia.org/wiki/Tragedy_of_the_commons
 transferable skills
+travel restriction https://en.wikipedia.org/wiki/Hukou
 Tree Decision Rights Model http://www.cio.com/article/2386119/careers-staffing/how-it-leaders-can-empower-teams-to-become-decision-makers.html
 tribal knowledge
 trolley problem https://neal.fun/absurd-trolley-problems/

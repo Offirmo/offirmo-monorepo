@@ -1,7 +1,10 @@
 
 :root {
-	--o⋄color⁚fg--main: light-dark(black, white);
-	--o⋄color⁚bg--highlight--1: light-dark(hsla(0, 100%, 0%, .1), rgba(255, 255, 255, .25));
-	--o⋄color⁚bg--highlight--2: light-dark(hsla(0, 100%, 0%, .3), rgba(255, 255, 255, .25));
-	--o⋄color⁚bg--code: var(--o⋄color⁚bg--highlight--1);
+	/**
+	 * only the minimal tokens needed for the foundation
+	 * this "root" setup does not provide theming,
+	 * but that's for the "framework" level anyway.
+	 */
+	--o⋄color⁚bg--highlight:      light-dark(hsla(0, 100%, 0%, .09), hsla(0, 100%, 100%, .08));
+	--o⋄color⁚bg--highlight--alt: light-dark(hsla(0, 100%, 0%, .18), hsla(0, 100%, 100%, .16));
 }

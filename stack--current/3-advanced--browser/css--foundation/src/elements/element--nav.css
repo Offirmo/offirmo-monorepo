@@ -4,7 +4,7 @@
 
 nav {
 
-	/* Assume lists in a nav are meant to be horizontal
+	/* Assume lists inside a nav are meant to be horizontal
 	 */
 	:is(ol, ul) {
 		/* cancel the default list display
