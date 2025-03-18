@@ -9,10 +9,10 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./src/index.ts"
+			"import": "./src/src/index.ts"
 		}
 	},
-	"source": "src/index.ts",
+	"source": "src/src/index.ts",
 
 	"dependencies": {
 		"@offirmo-private/css--reset": "*"
