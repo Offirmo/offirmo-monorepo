@@ -38,3 +38,5 @@ TODO font -- monospace https://monaspace.githubnext.com/ https://fonts.google.co
 TODO use @scope? https://developer.chrome.com/docs/css-ui/at-scope 2024/08 no FF
 
 TODO emojis in classes? https://nerdy.dev/css-emoji-convention
+
+https://fonts.google.com/share?selection.family=Flow+Block|Flow+Circular|Flow+Rounded|Redacted|Redacted+Script

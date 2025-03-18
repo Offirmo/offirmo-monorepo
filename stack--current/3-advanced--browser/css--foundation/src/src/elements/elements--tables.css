@@ -19,11 +19,11 @@ td {
  */
 tbody tr:nth-child(even) {
 	/* TODO opacity instead */
-	background-color: var(--o⋄color⁚bg--highlight);
+	background-color: var(--o⋄color⁚bg--highlight, ButtonFace);
 }
 
 thead {
-	background-color: var(--o⋄color⁚bg--highlight--alt); /* to differentiate from alternative rows */
+	background-color: var(--o⋄color⁚bg--highlight--alt, Highlight); /* to differentiate from alternative rows */
 
 	/* https: //btxx.org/posts/Please_Make_Your_Table_Headings_Sticky/ */
 	position: sticky;

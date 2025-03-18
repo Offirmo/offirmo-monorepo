@@ -2,22 +2,7 @@
 @import '../consts/consts--colors--boz.css';
 @import '../consts/consts--colors--modifiers.css';
 
-/* NOTE about o⋄error-report
- * This is special:
- * - we want high readability so, so we force a default mode
- * - we select *dark* mode to hint at dev (but could have selected light as well, no big deal)
- */
 
-[data-o-theme], .o⋄error-report {
-	/* needed!
-	 * We need to re-set the var usages initially set in :root {} (including from @offirmo/foundation tokens-colors.css)
-	 * To allow local overrides of the styles down in the DOM
-	 */
-	color:                var(--o⋄color⁚fg--main);
-	background-color:     var(--o⋄color⁚bg--main);
-	accent-color:         var(--o⋄color⁚accent);
-	scrollbar-color:      var(--o⋄color⁚bg--highlight--1) var(--o⋄color⁚bg--main); /* <scrollbar color> <scrollbar track color> */
-}
 
 
 /* Traditional, most efficient theme
