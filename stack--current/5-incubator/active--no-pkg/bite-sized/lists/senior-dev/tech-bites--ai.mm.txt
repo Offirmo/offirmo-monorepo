@@ -152,6 +152,7 @@ NN Neural Networks "computer architecture inspired by the human brain"
 not gonna make it
 not left behind
 OpenAI GPTs = custom versions of ChatGPT that you can create for a specific purpose with instructions, expanded knowledge, and custom capabilities
+OpenWebUi https://openwebui.com/
 paper -- "attention is all you need" https://arxiv.org/pdf/1706.03762.pdf
 parameter (NN)
 parameter -- hyperparameter = values provided to the model from the outside to make adjustments that can influence the learning process and its performance, among other things
@@ -242,6 +243,7 @@ vector database
 vector database -- https://weaviate.io/
 vector database -- https://www.pinecone.io
 vector database -- Qdrant https://qdrant.tech/blog/series-a-funding-round/
+vibe code fixers ;) https://vibecodefixers.com/
 vibe coding https://x.com/karpathy/status/1886192184808149383
 watermarking outputs https://proceedings.mlr.press/v202/zhao23i.html
 weak-to-strong generalization https://openai.com/research/weak-to-strong-generalization

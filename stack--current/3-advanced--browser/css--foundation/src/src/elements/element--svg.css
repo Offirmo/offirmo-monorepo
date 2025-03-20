@@ -43,7 +43,7 @@ svg {
 		& text {
 			fill: currentColor; /* Even for text, SVG uses fill over color */
 			text-decoration: underline;
-			text-decoration-thickness: var(--o⋄border--thickness);
+			/* leave text-decoration-thickness to auto, found it better than explicit */
 		}
 
 		&:hover {
@@ -55,7 +55,7 @@ svg {
 			stroke: currentColor;
 			stroke-width: var(--o⋄border--thickness);
 		}
-		/* &:active : doesn't work on SVG
+		/* &:active : doesn't work in SVG?
 		 * TODO one day find an alternative or a solution
 		 */
 	}

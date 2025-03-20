@@ -214,6 +214,7 @@ cross cutting concerns = aspects of a program that affect several modules withou
 cross-platform https://en.m.wikipedia.org/wiki/Cross-platform_software
 CRUD "create, read, update and delete"
 crunch
+CTAP
 culture -- low/high context https://journals.sagepub.com/doi/10.1177/0146167212455828
 Cupertino effect = bad spell checking
 currying https://en.wikipedia.org/wiki/Currying
@@ -532,6 +533,7 @@ npm
 nyan cat
 o11y observability https://o11y.eu/blog/what-is-o11y/
 object
+object model = memory, working representation ex. DOM, CCSOM...
 OOP -- against https://paulgraham.com/noop.html
 OOP -- fake strengths -- abstraction -> any interface
 OOP -- fake strengths -- code re-use
@@ -650,7 +652,7 @@ resource -- deletion -- hard
 resource -- deletion -- soft = marking a resource as unavailable, rather than removing it from the datasource completely. Such resources will be said to be soft deleted and should be deleted at a later date. Allow easier restoration in case of an error/attack = undelete
 resource -- deletion -- undelete = Undeleting shouldn’t be triggered by users, but instead by trusted entities such as support, security
 resource -- subresource = delete them with parent
-resource -- trashing / untrashing = known feature, different from soft deletion
+resource -- trash can + untrashing = known feature, different from soft deletion
 REST (REpresentational State Transfer)
 REST HTTP = How to GET a Cup of Coffee https://www.infoq.com/articles/webber-rest-workflow/
 revisions
@@ -704,6 +706,8 @@ SOLID -- 3 Liskov substitution principle https://en.wikipedia.org/wiki/Liskov_su
 SOLID -- 4 Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
 SOLID -- 5 principle https://en.wikipedia.org/wiki/Dependency_inversion_principle
 SOLID -- critique https://www.tedinski.com/2019/04/02/solid-critique.html
+space shuttle disasters -- Challenger = https://en.wikipedia.org/wiki/Space_Shuttle_Challenger_disaster
+space shuttle disasters -- Columbia = https://en.wikipedia.org/wiki/Space_Shuttle_Columbia_disaster
 spec
 SSH (Secure Shell)
 stack overflow
@@ -793,6 +797,7 @@ types -- subtyping -- preconditions = cannot be strengthened in the subtype
 types -- subtyping https://en.wikipedia.org/wiki/Liskov_substitution_principle
 types -- systems -- "modern" https://reasonablypolymorphic.com/blog/protos-are-wrong/
 types -- systems -- role -- (disputable pre-semver citation!) the main challenge in real-world software engineering is not writing code but changing code once it is written and deployed. In general, type systems can be both helpful and harmful when it comes to changing code -- type systems are invaluable for detecting problems introduced by a change, but an overly-rigid type system can be a hindrance if it means common types of changes are difficult to make. https://news.ycombinator.com/item?id=18188519
+typography -- quotes https://smartquotesforsmartpeople.com/
 UI layout algorithms https://www.youtube.com/watch?v=by9lQvpvMIc
 uid -- use strings = "2^64 isn’t as big as it used to be" https://protobuf.dev/programming-guides/api/
 unicode -- byte-order mark
@@ -820,6 +825,7 @@ vendoring https://htmx.org/essays/vendoring/
 vibe coding https://x.com/karpathy/status/1886192184808149383
 virtual private cloud (VPC)
 web assembly (asm.js)
+WebAuth
 Wirth's law = software systems grow faster in size and complexity than methods to handle complexity are invented. software is getting slower more rapidly than hardware is becoming faster. https://en.wikipedia.org/wiki/Wirth%27s_law
 WORA "write once, run anywhere" https://en.m.wikipedia.org/wiki/Write_once,_run_anywhere
 WORA -- Write Once, Debug Everywhere = because of subtle incompatibilities

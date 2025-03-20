@@ -13,6 +13,9 @@
 		},
 		"./types": {
 			"import": "./src/l0-types/index.ts"
+		},
+		"./decorators/diagnostics": {
+			"import": "./src/__shared/decorators/diagnostics.js"
 		}
 	},
 	"source": "src/index.ts",

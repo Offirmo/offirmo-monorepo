@@ -37,6 +37,7 @@
 [ ] ++ https://savoir-sans-frontieres.com/
 [ ] +++ flinkliv.com https://flinkliv.com/
 [ ] +++ https://fs.blog/mental-models/
+[ ] +++ https://paulgraham.com/articles.html
 [ ] +++ https://thewokesalaryman.com/
 [ ] Ash Lamb visuals https://www.linkedin.com/in/ashlamb/recent-activity/all/
 [ ] ex. of edited interview misleading https://paulgraham.com/wids.html
@@ -45,7 +46,6 @@
 [ ] https://boz.com/
 [ ] https://en.wikipedia.org/wiki/Cognitive_bias
 [ ] https://en.wikipedia.org/wiki/Power_(social_and_political)
-[ ] https://paulgraham.com/faq.html
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
 [ ] https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 [ ] https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time
@@ -58,6 +58,7 @@ academic disciplines -- humanities = academic disciplines that study aspects of 
 academic disciplines -- trans / cross
 accent -- miscommunication https://paulgraham.com/accents.html
 acceptance
+accepting oneself
 action -- deep dive & low-hanging fruits
 addictions -- casino -- je vais me refaire
 addictions -- casino -- maison qui gagne
@@ -148,6 +149,7 @@ change -- introduction -- 2 Why are we doing it?
 change -- introduction -- 3 When are we making the change?
 changemaker
 charged issues = fractally contentious, causing disagreement among people who hold all but identical opinions https://en.wikipedia.org/wiki/Narcissism_of_small_differences
+charisma https://paulgraham.com/charisma.html
 Charlie Munger 3 basic rules -- Don’t sell anything you wouldn’t buy yourself
 Charlie Munger 3 basic rules -- Don’t work for anyone you don’t respect and admire
 Charlie Munger 3 basic rules -- Work only with people you enjoy
@@ -179,6 +181,12 @@ competition -- is for losers = Avoid competition. Stop copying what everybody el
 competitive mindset = competition as the key driver of innovation and progress
 conditioning -- classical
 conditioning -- operant
+conformism -- quadrants -- 1 aggressively conventional-minded = tattletales, believe not only that rules must be obeyed, but that those who disobey them must be punished.
+conformism -- quadrants -- 2 passively    conventional-minded = sheep, careful to obey the rules, but when other break them, their impulse is to worry that those will be punished, not to ensure that they will
+conformism -- quadrants -- 3 passively     independent-minded = dreamy, don't care much about rules and probably aren't 100% sure what the rules even are
+conformism -- quadrants -- 4 aggressively  independent-minded = naughty, when they see a rule, their first impulse is to question it. Merely being told what to do makes them inclined to do the opposite.
+conformism -- test = do you have any opinions that you would be reluctant to express in front of a group of your peers? https://paulgraham.com/say.html
+conformism = https://paulgraham.com/conformism.html
 constructive confrontation -- spot threats/issues/problems, debate aggressively, make bold moves before competitors/enemies
 contempt
 content moderation
@@ -218,6 +226,7 @@ data driven
 dead horse theory https://www.linkedin.com/posts/kais-mejri-tunisie_deadabrhorseabrtheory-activity-7286736656194310146-MrM7
 debate -- https://en.wikipedia.org/wiki/Principle_of_charity
 decoy effect https://en.wikipedia.org/wiki/Decoy_effect
+DEI
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
 democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
@@ -289,6 +298,8 @@ emotionally secure https://www.cnbc.com/2024/01/03/harvard-psychologist-if-you-a
 English
 entrepreneurship -- billing -- free day https://blog.jpl-consulting.com/2011/05/the-free-day/
 entrepreneurship -- billing -- hourly rate vs fixed price
+equality -- gender -- Scully effect
+equality -- race
 equality vs equity https://medium.com/@CRA1G/the-evolution-of-an-accidental-meme-ddc4e139e0e4
 equity
 eternal september https://en.wikipedia.org/wiki/Eternal_September
@@ -299,6 +310,7 @@ everything must be paid for twice https://www.raptitude.com/2022/01/everything-m
 evidence based
 evolution
 evolution -- adaptive radiation = not because the newly dominant group is "superior" to the old but usually because an extinction event eliminates the old, dominant group and makes way for the new one https://en.wikipedia.org/wiki/Adaptive_radiation
+evolution -- greater male variability hypothesis (heretic) https://en.wikipedia.org/wiki/Variability_hypothesis
 evolution -- LUCA https://en.wikipedia.org/wiki/Last_universal_common_ancestor
 evolution https://en.wikipedia.org/wiki/Evolutionary_game_theory
 evolution vs revolution
@@ -338,6 +350,7 @@ five eyes
 flourishing = meaning and purpose, deep personal relationships, and character and virtue https://link.springer.com/article/10.1007/s11017-024-09679-x
 follow the money https://en.m.wikipedia.org/wiki/Follow_the_money
 follow your bliss -- "I've never done a thing I wanted to do in all my life" (but not hedonism) https://en.wikipedia.org/wiki/Joseph_Campbell#%22Follow_your_bliss%22
+founder mode https://paulgraham.com/foundermode.html
 frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
 frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
 free will https://en.wikipedia.org/wiki/Free_will
@@ -361,6 +374,7 @@ goals -- S.M.A.R.T. -- 05 T (Time-bound) Create a specific end date for the goal
 goldilock zone / problem
 good life questions https://radreads.co/10k-questions/
 good neighbor https://en.wikipedia.org/wiki/Good_Neighbor_policy
+good taste https://paulgraham.com/goodtaste.html
 Goodhart’s Law = When a measure becomes a target, it ceases to be a good measure. One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
 Gospel of Wealth -- Help those who will help themselves, to provide part of the means by which those who desire to improve may do so
 Gospel of Wealth = responsibility of philanthropy by the new upper class of self-made rich https://en.wikipedia.org/wiki/The_Gospel_of_Wealth
@@ -371,6 +385,8 @@ grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
 growth -- should never be a goal in itself, engagement is
 growth mindset  https://www.khanacademy.org/college-careers-more/learnstorm-growth-mindset-activities-us/high-school-activities/activity-1-the-truth-about-your-brain-hs-02/a/the-truth-about-your-brain-part-1-3  https://www.youtube.com/watch?v=-71zdXCMU6A
+hacker -- jargon http://catb.org/jargon/html/index.html
+hacking (tech)
 Haiti https://aleteia.org/2025/02/01/kids-without-school-because-of-gangs-are-recruited-by-gangs
 hangry = before lunch (vs. after)
 Hanlon’s razor = Never attribute to malice that which can be adequately explained by stupidity
@@ -390,6 +406,7 @@ haters -- ignore the f’ing haters = including the ones "in the arena" https://
 hawks and doves https://seldo.com/posts/the_case_for_frameworks
 helicopter parent
 herbe toujours plus verte
+heresy = opinions you're punished for expressing https://paulgraham.com/heresy.html
 Hickam’s Dictum: The opposite of Occam’s Razor. In a complex system, problems usually have more than one cause. For example, in medicine, people can have many diseases at the same time.
 high agency
 high performance
@@ -410,6 +427,7 @@ how to ask questions http://www.catb.org/esr/faqs/smart-questions.html
 https://36questionsinlove.com/
 https://cobeats.com/folder/ryfTgPr9H
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
+humanities and social sciences = includes some of the biggest and easiest undergrad majors
 humble bragging https://www.linkedin.com/posts/staceychampagne_womenincybersecurity-cybersecurity-certifications-activity-7284636641648889857-B_y_/
 hustlers
 I might be reading too much into it but...
@@ -473,7 +491,9 @@ joie du don
 juger vs. évaluer
 justifiable homicide = interesting cultural differences https://en.wikipedia.org/wiki/Justifiable_homicide
 keep only the ones saying it's doable
+keep your identity small https://paulgraham.com/identity.html
 keeping up with the jones
+kidnapping https://fr.wikipedia.org/wiki/Affaire_Empain
 Kipling poem
 know someone -- you get to know someone through talk, togetherness, and time
 labor of love
@@ -521,6 +541,7 @@ law -- crimes -- war crimes
 law of Ability = every ability is acquired through the workings of life
 law of Shitty Click-Through Rates = Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
 le bien ne fait pas de bruit, le bruit ne fait pas de bien
+le monde de Sophie
 le premier jour du reste de sa vie
 leadership -- 4 "E"s of leadership -- Edge = The "Edge" to make difficult decisions
 leadership -- 4 "E"s of leadership -- Energize = Can Energize others around common goals
@@ -566,7 +587,7 @@ life isn't fair https://www.linkedin.com/pulse/lifell-kill-ya-allen-white
 life operating system -- Munger https://fs.blog/munger-operating-system/
 life span
 life span -- maximum https://en.m.wikipedia.org/wiki/Maximum_life_span
-lifeboat strategy to avoid annihilation of the human race
+lifeboat strategy = to avoid annihilation of the human race
 lifestyle
 lifestyle inflation
 Lindy effect = a theorized phenomenon by which the future life expectancy of some non-perishable things, like a technology or an idea, is proportional to their current age https://en.wikipedia.org/wiki/Lindy_effect
@@ -578,10 +599,15 @@ Logical Problem of Evil https://christianity.stackexchange.com/questions/100110/
 lois somptuaires https://en.wikipedia.org/wiki/Tyrian_purple
 look for Things That Don’t Make Sense: The world always makes sense. But it can be confusing. When it is, your model of the world is wrong. So, things that don’t make sense are a learning opportunity. Big opportunities won’t make sense until it’s too late to profit from them.
 loosing faith in humanity
+lord of the flies
 loterie / casino
 love = wanting the best
 love and acceptance -- conditional/unconditional
 low culture https://en.wikipedia.org/wiki/Low_culture
+légende blanche -- colonisation
+légende blanche -- Lost Cause of the Confederacy https://en.wikipedia.org/wiki/Lost_Cause_of_the_Confederacy
+légende dorée
+légende noire -- inquisition
 mainstream scientific consensus
 make it work, make it good, make it fast, make it work again
 making one's luck
@@ -659,6 +685,7 @@ nobility -- true
 noblesse oblige https://en.wikipedia.org/wiki/Noblesse_oblige
 non-violence
 normalisation de la déviance https://macbidouille.com/news/2024/07/13/samedi-securite-la-normalisation-de-la-deviance-suite
+not even wrong = more than wrong
 not for profit -- The dirty dozen myths https://www.linkedin.com/pulse/dirty-dozen-myths-profit-sector-jo-owen
 not gonna make it "ngmi" = can't adapt https://ghuntley.com/ngmi/
 not wrong infos but missing pieces of the puzzle
@@ -729,8 +756,12 @@ Planck’s Principle: Science doesn’t progress because people change their vie
 planned obsolescence = Instilling in the buyer the desire to own something a little newer, a little better, a little sooner than is necessary https://en.wikipedia.org/wiki/Planned_obsolescence#History
 planning fallacy
 plant a tree
+pointy-haired boss
+political correctness -- rise of = due to lack of other things to be morally pure about. Previous generations of prigs had been prigs mostly about religion and sex.
 Ponzi, Madoff
 porn
+positive good = defense technique arguing an overall "positive good" ex. colonisation = train (which were for stealing rsrcs) https://en.wikipedia.org/wiki/Pro-slavery_ideology_in_the_United_States
+pour vivre heureux vivons cachés
 poverty -- Sherman Alexie = It sucks to be poor, and it sucks to feel that you somehow deserve to be poor. You start believing that you're poor because you're stupid and ugly. And then you start believing that you're stupid and ugly because you're Indian. And because you're Indian you start believing you're destined to be poor. It's an ugly circle and there's nothing you can do about it. Poverty doesn't give you strength or teach you lessons about perseverance. No, poverty only teaches you how to be poor.
 power -- French and Raven five bases of power = reward, coercion, legitimate, expert, referent, informational https://en.wikipedia.org/wiki/French_and_Raven%27s_bases_of_power
 power -- Tony Benn's' Five Questions About Power -- 01 What power have you got?
@@ -748,6 +779,7 @@ preach the water but drink wine / faites ce que je dis mais pas ce que je fais
 preference Falsification: People lie about their true opinions and conform to socially acceptable preferences instead. In private they’ll say one thing. In public, they’ll say another.
 preferential attachment / effet Matthieu
 pretty privilege -> karen
+prig = self-righteously moralistic person who behaves as if superior to others
 primals https://myprimals.com https://templetonreligiontrust.org/explore/discovering-peoples-primal-world-beliefs/
 primate dominance hierarchy = At the end of the day we’re all just mammals trying to map every organization we’re a part of onto a primate dominance hierarchy https://blog.staysaasy.com/p/a-practical-guide-to-executive-presence-1de
 priming
@@ -757,6 +789,8 @@ priorities -- 0 life extinction = global catastrophic risk / existential threat 
 priorities -- 1 human extinction (incl. omnicide) https://en.wikipedia.org/wiki/Human_extinction
 priorities -- 2 global issues https://en.wikipedia.org/wiki/List_of_global_issues
 Prisoner's dilemma https://en.wikipedia.org/wiki/Prisoner%27s_dilemma
+privilege
+privilege -- as "original sin" = "An able-bodied straight white American male is born with such a load of sin that only by the most abject repentance can he be saved." https://paulgraham.com/woke.html
 prix au kilo
 problem solving -- structured https://strategyu.co/mckinsey-structured-problem-solving-secrets/
 procrastination
@@ -784,6 +818,8 @@ rainbow code https://en.m.wikipedia.org/wiki/Rainbow_Code
 random acts of kindness -- bingo
 rank and file
 rare events = ex. COVID-19 https://en.wikipedia.org/wiki/Rare_events
+rational arguments https://psychology.stackexchange.com/a/5957
+rationalization https://en.wikipedia.org/wiki/Rationalization_(psychology)
 rationalize
 re-thinking established patterns
 Reach Impact Confidence Estimate (RICE)
@@ -803,6 +839,7 @@ resource curse = the paradox of plenty: Countries with an abundance of natural r
 respect
 rest and vest https://news.ycombinator.com/item?id=14943146
 restraining order or protective order = an order used by a court to protect a person in a situation often involving alleged domestic violence, child abuse and neglect, assault, harassment, stalking, or sexual assault https://en.wikipedia.org/wiki/Restraining_order
+rights -- of abode https://en.wikipedia.org/wiki/Right_of_abode
 ring theory -- 01 The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
 ring theory -- 02 When you are talking to a person in a ring smaller than yours, someone closer to the center of the crisis, the goal is to help. Listening is often more helpful than talking. But if you're going to open your mouth, first ask yourself if what you are about to say is likely to provide comfort and support. If it isn't, don't say it. Don't, for example, give advice. People who are suffering from trauma don't need advice. They need comfort and support. So say, "I'm sorry," or, "This must really be hard for you," or, "Can I bring you a pot roast?" Don't say, "You should hear what happened to me," or, "Here's what I would do if I were you." And don't say, "This is really bringing me down."
 ring theory https://en.wikipedia.org/wiki/Ring_theory_(psychology)
@@ -816,6 +853,7 @@ SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-be
 SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
 schadenfreude = happy ppl misfortune
 science -- currently most accurate model
+science -- flat Earth -- https://en.wikipedia.org/wiki/Bedford_Level_experiment
 science -- null result = didn't see the expected effect/prevision https://en.wikipedia.org/wiki/Null_result
 science -- pseudoscience
 science -- research -- line of
@@ -829,12 +867,14 @@ scrum -- myths https://www.youtube.com/watch?v=mgMk3KBsxnQ
 scrum -- scrumbut = Scrum, but...
 second Law of Thermodynamics: The world tends towards disorder. That’s why your room becomes messier and messier over time. It’s also why an engine converts only ~35% of its energy into useful work. Time moves towards increasing one direction: increasing entropy.
 secrets are Hidden in Plain Sight:  Most people think of secrets as Easter eggs. They assume that if a secret is important, it’s necessarily going to be hard to find. The best ideas can come from things that are so well-known that they aren’t well-seen.
+seizing the means of production
 selectorate theory https://en.wikipedia.org/wiki/Selectorate_theory
 self appreciation
 self centered vs. take into account others (cf. woke salaryman)
 self love
 self-righteousness = attitude and belief of moral superiority derived from a person deeming their own beliefs, actions, or affiliations to be of greater virtue than those of others https://en.wikipedia.org/wiki/Self-righteousness
 sense-check = Before going too deep into solutions, align with your stakeholders on the problem. This saves time by avoiding working a lot just to find out that it’s highly contentious and there’s a different or better approach.
+separation of powers
 settling
 sex -- abuse -- 12yo Samantha
 sex -- abuse -- Dominique Pelicot https://www.vox.com/world-politics/370736/france-rape-case-gisele-dominique-pelicot-metoo
@@ -921,6 +961,8 @@ T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
 table selection = This idea comes from poker, where you’re advised to choose your opponents carefully. That means you shouldn’t compete against the best people. You don’t need to get good at doing difficult things if you get good at avoiding difficult things. If you want to win, pick an easy table and nail your execution.
 talent vs. Genius = Society is good at training talent but terrible at cultivating genius. Talented people are good at hitting targets others can’t hit, but geniuses find targets others can’t see. They are opposite modes of excellence. Talent is predictable, genius is unpredictable.
 tax -- lazy https://www.insurancewatch.com.au/lazy-tax-insurance.html
+taxation -- Bernie Senders https://imgur.com/gallery/im-member-of-1-im-voting-bernie-sanders-heres-why-v5hWg
+teacher https://paulgraham.com/raq.html
 the best defense is a good offense
 The Boy Who Cried Wolf https://en.wikipedia.org/wiki/The_Boy_Who_Cried_Wolf
 The Map Is Not the Territory = Reality will never match the elegance of theory. All models have inconsistencies, but some are still useful. Some maps are useful because they’re inaccurate. If you want to find an edge, look for what the map leaves out.
@@ -928,6 +970,7 @@ The Medium Is the Message = We pay too much attention to what is being said. But
 The noisy door gets the oil https://9gag.com/gag/aGEgp07
 The product is crap, so sell yourself
 the Wisdom of Paradox = Logic is the key to scientific truths, but paradoxes are the key to psychological ones. When it comes to the human condition, the deepest truths are often counter-intuitive. When you find two opposites that are both true, start exploring.
+the world is NOT full of bad people, it's just the media/infotainment, do not get crushed!
 theory of constraints = A system is only as strong as its weakest point. Focus on the bottleneck. Counterintuitively, if you break down the entire system and optimize each component individually, you’ll lower the effectiveness of the system. Optimize the entire system instead.
 theory of constraints https://www.tocinstitute.org/theory-of-constraints.html
 theory of everything https://en.wikipedia.org/wiki/Theory_of_everything
@@ -957,6 +1000,8 @@ truth -- false documents -- hoaxes https://en.wikipedia.org/wiki/False_document#
 truth -- fully convinced vs probably https://christianity.stackexchange.com/questions/92352/believing-that-christianity-is-probably-true-vs-being-fully-convinced-that-ch
 truth -- verificationism https://christianity.stackexchange.com/a/89891
 Turning Feedback into Action
+tycoon = highly successful businessman (oil and rail being in the typical industries)
+typography -- quotes https://smartquotesforsmartpeople.com/
 tyranny of the majority
 tyranny of the urgent https://www.psychologytoday.com/us/blog/human-flourishing-101/202309/how-to-conquer-the-tyranny-of-the-urgent
 universe
@@ -992,6 +1037,7 @@ winner takes it all
 wisdom
 wisdom -- a wisdom for left may not be valid for right
 wisdom of the rooms = AA steps
+wokeness = An aggressively performative focus on social justice https://paulgraham.com/woke.html
 works of mercy -- corporal
 works of mercy -- spiritual
 works of mercy https://en.wikipedia.org/wiki/Works_of_mercy

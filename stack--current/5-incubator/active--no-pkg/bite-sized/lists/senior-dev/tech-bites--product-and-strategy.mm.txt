@@ -120,6 +120,7 @@ jobs to be done
 Jobs to be Done (JTBD) https://en.wikipedia.org/wiki/Jobs-to-be-done_theory
 knowledge creating company https://hbr.org/2007/07/the-knowledge-creating-company
 land grab https://fastercapital.com/topics/understanding-the-concept-of-land-grab-strategies.html
+learning from users https://paulgraham.com/users.html
 lock-in
 lock-in -- vendor
 M&A

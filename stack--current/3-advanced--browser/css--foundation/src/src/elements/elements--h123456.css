@@ -9,6 +9,12 @@
 	 * cf. 2023 https://developer.chrome.com/blog/css-text-wrap-pretty/
 	 */
 	text-wrap: balance;
+
+	/* LOWER the line height so that header that are wrapping
+	 * are visually hinted as a single block.
+	 * (Ideally headers should not be long enough to wrap, but it happens)
+	 */
+	line-height: 1.25;
 }
 
 /* Add scroll margin to all elements which can be targeted

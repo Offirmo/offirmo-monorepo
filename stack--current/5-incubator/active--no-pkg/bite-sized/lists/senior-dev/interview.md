@@ -13,6 +13,7 @@ Resume
 https://www.canva.com/newsroom/news/new-job-canva/
 https://github.com/BartoszJarocki/cv
 https://www.faangtechleads.com/
+++ keywords https://imgur.com/gallery/getting-good-job-is-easy-part-1-get-noticed-Q89Wo
 
 
 https://theindieweb.com/github-has-added-profiles-here-are-the-most-creative-ones-so-far/

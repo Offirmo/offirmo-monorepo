@@ -1,46 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-o-theme="solarized">
 <head>
 	<meta charset="UTF-8">
 	<title>Customization</title>
 
+	<link rel="icon"
+			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👙</text></svg>">
+
 	<!-- https://fonts.google.com/noto/specimen/Noto+Sans -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 	<style>
 		@import "npm:@offirmo-private/css--foundation";
 		@namespace svg url(http://www.w3.org/2000/svg);
 
-		/* https://www.fireballrpg.com/ */
+		/*
 		:root {
-			font-family: "Noto Sans", sans-serif;
-			/*font-optical-sizing: auto;
-			font-style: normal;
-			font-variation-settings: "wdth" 100;*/
+			--o⋄color⁚co212__beige:   hsl(42, 100%, 87%);
+		--o⋄color⁚co212__blue:    hsl(185, 33%, 52%);
+		--o⋄color⁚co212__brown:   hsl(337, 16%, 28%);
+		--o⋄color⁚co212__dark:    hsl(248,  9%, 17%);
+		}
+		*/
 
+		:root {
+			--o⋄font-family--main: "Noto Sans", var(--o⋄font-family--fast_and_good_enough), var(--o⋄font-family--system--sans), sans-serif;
+			--o⋄font-family--code: "Noto Sans Mono", var(--o⋄font-family--system--mono), monospace;
+			font-size: 18px;
+		}
 
-			/*--o⋄color⁚fg--main__h: 38;
-			--o⋄color⁚fg--main__s: 63%;
-			--o⋄color⁚fg--main__l: 82%;
+		[data-o-theme="solarized"] { /* data-o-theme="solarized" */
+			color-scheme: light dark;
 
-			/*--o⋄color⁚fg--strong:     hsl(38, 100%, 95%);*/
+			--o⋄color⁚fg--main: light-dark(#586E75, #839496);
+			--o⋄color⁚bg--main: light-dark(#FDF6E3, #002B36);
 
-			/*--o⋄color⁚bg--main__h: 20;
-			--o⋄color⁚bg--main__s: 100%;
-			--o⋄color⁚bg--main__l: 3%;
+			--o⋄color⁚fg--link: light-dark(#268BD2, #268BD2);
+			--o⋄color⁚fg--link--active: light-dark(#268BD2, #268BD2);
+			--o⋄color⁚fg--link--visited: light-dark(#268BD2, #268BD2);
 
 			/*
-			fff5e4
-			--o⋄color⁚fg--main__h: 0;
-			--o⋄color⁚fg--main__s: 0%;
-			--o⋄color⁚fg--main__l: 0%;
-			--o⋄color⁚bg--main__h: 0;
-			--o⋄color⁚bg--main__s: 0%;
-			--o⋄color⁚bg--main__l: 100%;
-			--o⋄content-recommended-width
-			*/
+			baseUnitInRem
+			baseUnitInRem
+
+
+
+
+
+			background-color: light-dark(var(--o⋄color⁚co212__beige), var(--o⋄color⁚co212__brown));
+			           color: light-dark(var(--o⋄color⁚co212__brown), var(--o⋄color⁚co212__beige));
+
+			--o⋄border--thickness: .14rem;
+			 */
+		}
+
+		:root {
+			color: var(--o⋄color⁚fg--main, CanvasText);
+			background-color: var(--o⋄color⁚bg--main, Canvas);
+
 		}
 	</style>
 </head>
@@ -49,6 +68,8 @@
 <h1 id="this-is-the-final-motherfucking-website">This is the <em>final</em> motherfucking website.</h1>
 
 <p>And it’s <em>really</em> more fucking perfect than the last guy’s.</p>
+
+<p>0123456789<i>0123456789</i>0123456789<i>0123456789</i>0123456789<i>0123456789</i></p>
 
 <h2 id="seriously-some-minimal-fucking-things-are-needed-to-make-this-shit-perfect">Seriously, some minimal fucking
 	things are needed to make this shit perfect.</h2>
@@ -69,33 +90,6 @@
 	<li>Shit’s <em>still</em> legible and gets your fucking point across.</li>
 </ul>
 
-<h3 id="and-guess-what-motherfucker">And guess what, motherfucker:</h3>
-
-<p>You never knew it, but it’s easy to improve reliability on your site. Here’s how.</p>
-
-<h2 id="a-little-more-accessibility">A little more accessibility</h2>
-
-<p>I know you love marginalization, but you should take care of people.
-	The <abbr title="HyperText Markup Language">HTML</abbr> tag doesn’t include the <a
-		href="https://www.w3.org/TR/html5/dom.html#the-lang-and-xml:lang-attributes"><code
-		class="language-plaintext highlighter-rouge">lang</code> attribute</a> in your shitty webpage.<br/>
-	You ever listen to a <a href="https://www.youtube.com/watch?v=NP94u7y_KkQ">wrong language screen reader lecture</a>?
-	What a shitty experience.</p>
-
-<h2 id="typography-matters">Typography matters</h2>
-
-<p><a href="https://smartquotesforsmartpeople.com/">Don’t be dumb with typography</a>. Don’t let improper marks and
-	quotes make their way onto websites because of dumb defaults in applications and CMSs.<br/>
-	And did you let the browser choose the font? Don’t make me read such text with <em>Times New Roman</em>.</p>
-
-<h2 id="license-motherfucker">License, motherfucker</h2>
-
-<p>Do you revendicate intellectual property? No. So you must <a href="https://choosealicense.com/">choose a fucking
-	public license</a>.<br/>
-	And as you’ll never be perfect, let others <a href="https://github.com/LeoColomb/perfectmotherfuckingwebsite">improve
-		your shit</a> or <a href="https://github.com/LeoColomb/perfectmotherfuckingwebsite/blob/main/LICENSE">do what the
-		fuck they want to</a>.</p>
-
 <h2 id="yes-this-is-the-last-fucking-satire-you-fuck">Yes, this is the last fucking satire, you fuck</h2>
 
 <p>I’m impressed about what the creator of <a href="http://bettermotherfuckingwebsite.com/">this site’s inspiration
@@ -104,8 +98,9 @@
 	out there need to make them not total shit.</p>
 
 <blockquote>
-	<p>Don’t ignore stupid things or you will stay at the motherfucker level.
-		— Brad Hollande</p>
+	<header>Good advice:</header>
+	<p>Don’t ignore stupid things or you will stay at the motherfucker level.</p>
+	<footer>— Brad Hollande</footer>
 </blockquote>
 
 <hr/>

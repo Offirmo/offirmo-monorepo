@@ -28,6 +28,7 @@ documentation -- divio system -- 02 How-to guides = task-oriented, practical ste
 documentation -- divio system -- 03 Technical references = information-oriented, theoretical knowledge
 documentation -- divio system -- 04 Explanations (or discussions) = understanding-oriented, theoretical knowledge
 documentation -- divio system = https://documentation.divio.com/  https://nick.groenen.me/posts/the-4-types-of-technical-documentation/
+Edwards Deming 14 principles for management https://deming.org/explore/fourteen-points/
 Every piece of business finance I could come up with after 10 years as a CFO https://twitter.com/KurtisHanni/status/1560986912613072899
 exec summary https://lethain.com/present-to-executives/
 fix broken windows https://frontendatscale.com/issues/22/
@@ -50,6 +51,7 @@ nudges = PRs nudges for speed https://dl.acm.org/doi/abs/10.1145/3544791
 OKR
 planning -- Goals, Ideas, Step-Projects, and Tasks (GIST) https://www.productplan.com/glossary/gist-planning/
 platform engineering
+pointy-haired boss
 prioritization -- P0 = crisis
 prioritization -- P0 P1 P2 P3 P4 requirements = https://fibery.io/blog/product-management/p0-vs-p1/
 prioritization -- P1

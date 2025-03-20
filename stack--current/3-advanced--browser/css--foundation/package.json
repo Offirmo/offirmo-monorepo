@@ -25,7 +25,7 @@
 		"clean--cache": "monorepo-script--clean-package …cache",
 		"clean--dist": "monorepo-script--clean-package …dist",
 
-		"_start:parcel:storypad": "parcel serve doc/storypad/index.html --port 8080  --lazy  --no-autoinstall",
+		"_start:parcel:storypad": "parcel serve src/__storypad/index.html --port 8080  --lazy  --no-autoinstall",
 		"_start:parcel:sandbox": "parcel serve --no-hmr --log-level verbose  'src/++gen/sandbox/*.html' --port 3020 --no-autoinstall",
 
 		"stories": "npm-run-all clean--cache --parallel _start:parcel:storypad",

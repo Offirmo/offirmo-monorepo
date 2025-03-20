@@ -1,3 +1,4 @@
+[ ] list of books to learn history https://paulgraham.com/raq.html
 capitalism
 communism
 cosmos -- 1610 https://en.wikipedia.org/wiki/Copernican_Revolution

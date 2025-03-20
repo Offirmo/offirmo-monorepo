@@ -5,7 +5,16 @@
 	"license": "Unlicense",
 	"private": true,
 
-	"source": "src/diagnostics/index.css",
+	"sideEffects": true,
+	"type": "module",
+	"exports": {
+		"./diagnostics": {
+			"import": "./src/diagnostics/index.css"
+		},
+		"./debug": {
+			"import": "./src/debug/index.css"
+		}
+	},
 
 	"dependencies": {
 	},
