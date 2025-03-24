@@ -1,12 +1,12 @@
 
 export function Basic() {
 	return `
-		Hello, world!
+		Raw Hello, world!
 	`
 }
 
 export function Advanced() {
 	return `
-		<p>Hello, world!</p>
+		<p>Paragraph Hello, world!</p>
 	`
 }

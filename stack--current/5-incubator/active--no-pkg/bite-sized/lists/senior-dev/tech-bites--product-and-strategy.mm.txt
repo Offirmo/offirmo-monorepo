@@ -1,4 +1,5 @@
-[ ] ++ Getting Real https://basecamp.com/gettingreal
+[ ] https://basecamp.com/books
+[ ] https://basecamp.com/books ++ Getting Real https://basecamp.com/gettingreal
 [ ] https://skamille.medium.com/
 [ ] personal MBA
 [ ] strategy https://stratechery.com/

@@ -32,6 +32,7 @@ annotation https://www.peopleforai.com/ https://www.isahit.com/
 API -- Gemini https://ai.google.dev/docs/gemini_api_overview
 applications -- legacy code https://martinfowler.com/articles/legacy-modernization-gen-ai.html
 applied -- 2024/06 Slack Enzyme to RTL https://slack.engineering/balancing-old-tricks-with-new-feats-ai-powered-conversion-from-enzyme-to-react-testing-library-at-slack/
+applied -- framework migration https://medium.com/airbnb-engineering/accelerating-large-scale-test-migration-with-llms-9565c208023b
 ASL "AI Safety Level" https://www.linkedin.com/pulse/what-ai-safety-level-asl-where-we-now-siddhesh-joglekar-gieof/
 ASL-1 = This level involves smaller, simpler AI models with minimal risk. It’s the starting point, where basic safety checks are in place, but the technology itself is relatively low-stakes .
 ASL-2 = At this stage, larger, more complex AI models are introduced, requiring heightened safety protocols to ensure responsible usage. These models can handle more tasks but are still largely controllable and predictable.
@@ -46,6 +47,7 @@ benchmark -- OSWorld https://os-world.github.io/
 BERT
 bias
 bitter lesson = generic + Moor law beats specific https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf
+blindspots https://ezyang.github.io/ai-blindspots/
 BLOOM = "BigScience Large Open-science Open-access Multilingual Language Model" = deprecated former big model
 BM25 (Best Matching 25) = a ranking function that uses lexical matching to find precise word or phrase matches. It's particularly effective for queries that include unique identifiers or technical terms https://www.anthropic.com/news/contextual-retrieval
 BPE Byte Pair Encoding is a way of converting text into tokens
@@ -123,6 +125,7 @@ jailbreak -- rapid response https://arxiv.org/abs/2411.07494
 jailbreak -- universal https://www.anthropic.com/research/constitutional-classifiers
 JAX
 knowledge cutoff
+labyrinth https://blog.cloudflare.com/ai-labyrinth/
 langchain = a framework for developing applications powered by language models https://python.langchain.com/docs/get_started/introduction
 latency
 laziness = cases where the model doesn’t complete a task https://openai.com/blog/new-embedding-models-and-api-updates
@@ -232,6 +235,7 @@ training (NN) -- supervised learning
 training (NN) -- transfer learning = see fine-tuning
 training (NN) -- unsupervised learning
 training (NN) = iterative process in which data is passed to a neural network + parameters of the neural network are adjusted to achieve an optimal solution for the given problem. a dataset is required
+training cutoff
 training data -- illegal https://www.pcgamer.com/gaming-industry/court-documents-show-not-only-did-meta-torrent-terabytes-of-pirated-books-to-train-ai-models-employees-wouldnt-stop-emailing-each-other-about-it-torrenting-from-a-corporate-laptop-doesnt-feel-right/
 Trainium
 transfer learning

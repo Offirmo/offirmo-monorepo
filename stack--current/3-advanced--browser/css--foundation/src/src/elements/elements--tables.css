@@ -8,10 +8,9 @@ table {
 td {
 	/* text-align: center; NO! looks good in some situation, not in others */
 
-	/* https://piccalil.li/blog/control-changing-numbers-with-font-variant-numeric/
-	 * could be a good idea... TODO REVIEW
+	/* tabular nums are better for readability of columns of numbers
 	 */
-	font-variant-numeric: tabular-nums; /* TODO review composition with conflicting declarations ! */
+	font-variant-numeric: var(--o⋄font-variant--default) tabular-nums;
 }
 
 /* zebra striping

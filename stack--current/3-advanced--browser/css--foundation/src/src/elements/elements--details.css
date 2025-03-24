@@ -4,13 +4,13 @@
  */
 details {
 	border: dashed var(--o⋄border--thickness);
-	padding-inline-start: 1.4rem; /* for the content */
+	padding-inline-start: 1.4em; /* for the content */
 }
 details summary {
 	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/#aa-the-css-reset-fix */
 	cursor: pointer;
 
-	margin-inline-start: -1rem; /* TODO xxx rem */
+	margin-inline-start: -1em;
 }
 details summary > * {
 	/* https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/#aa-the-css-reset-fix */
@@ -18,4 +18,15 @@ details summary > * {
 }
 details[open] {
 	border-color: currentColor;
+}
+
+/* Visually improve end borders adjacence
+ */
+/* remove children's block-end border if there is an adjacent parent border */
+details details:last-child {
+	border-block-end: 0;
+}
+/* remove children's inline-end-borders always */
+details details {
+	border-inline-end: 0;
 }

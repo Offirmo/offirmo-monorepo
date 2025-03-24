@@ -200,6 +200,7 @@ rating -- Products & Purchases = Are products/advertisements present? Is the tit
 rating -- Sex, Romance & Nudity = Is there sexual innuendo/banter? Flirting? Sexual activity? Nudity (and is it sexual or nonsexual)? Unsafe sex? What are the consequences, if so?
 rating -- Violence & Scariness = How bloody/gory is it? Is it fantasy violence or realistic? Cartoony or explicit? Are there consequences for the violence? Do characters get separated in scary/upsetting ways? Are pets/parents/kids in peril? Are characters mean to each other?
 rating https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings
+regulation -- online safety -- https://www.gamedeveloper.com/business/free-to-play-browser-game-urban-dead-taken-offline-by-uk-s-online-safety-law
 replay value -- prestige
 replay value -- remorting
 replay value -- speedrunning

@@ -12,15 +12,13 @@
 	/* #3 most important styling according to https://jgthms.com/web-design-in-4-minutes/#spacing
 	 * 1.5 is recommended by accessibility https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html
 	 */
-	line-height: 1.5;
+	line-height: 1.5; /* TODO custom */
 
 	/* do NOT change the root font-size as it's used as a default zoom by accessibility users cf. https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/
 	*/
 
-	/* Help discriminate 0 and O if the font supports it.
-	 * Not mathematically correct but...
-	 */
-	font-variant-numeric: slashed-zero; /* TODO composability */
+
+	font-variant-numeric: var(--o⋄font-variant--default);
 
 	text-decoration-thickness: var(--o⋄border--thickness);
 

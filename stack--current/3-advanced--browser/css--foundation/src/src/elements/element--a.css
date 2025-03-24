@@ -18,3 +18,8 @@ a {
 		background-color: var(--o⋄color⁚bg--highlight--alt, Highlight);
 	}
 }
+
+/* Add a visual indicator for external links
+ */
+a[target=_blank]::after {content: "↗"}
+a[download]::after {content: "⬇"}

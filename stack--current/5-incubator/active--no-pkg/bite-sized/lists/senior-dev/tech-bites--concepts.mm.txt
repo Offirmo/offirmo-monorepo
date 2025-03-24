@@ -16,7 +16,6 @@
 [ ] https://blog.quastor.org/
 [ ] https://craftinginterpreters.com/
 [ ] https://devpedia.pages.dev/
-[ ] https://en.wikipedia.org/wiki/Hofstadter's_law
 [ ] https://en.wikipedia.org/wiki/Reference_class_forecasting
 [ ] https://github.com/anvaka/npmrank/blob/master/sample/dependencies.md
 [ ] https://github.com/charlax/professional-programming
@@ -137,6 +136,7 @@ code -- range = prompt > spec > code
 code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 code quality = the only definition of quality in code that makes any sense is our ability to change the code. If it's easy to change, it's high quality; if it's hard to change, it's not.
 code quality https://blog.jim-nielsen.com/2024/easy-changes/
+code readability -- visual patterns https://seeinglogic.com/posts/visual-readability-patterns/
 code reuse -- DRY
 code reuse -- reduce reuse recycle
 code reuse -- small focused modules = Make small focused modules for reusability and to make it possible to build larger more advanced things that are easier to reason about https://sindresorhus.com/blog/small-focused-modules
@@ -322,6 +322,7 @@ event loop
 exceptions -- checked vs unchecked = only Java does checked, no-one followed, too much boilerplate https://en.wikipedia.org/wiki/Criticism_of_Java#Checked_exceptions
 execution model https://en.wikipedia.org/wiki/Execution_model
 express
+extreme programming
 FAANG https://www.faangfire.com/
 feature flag -- also called toggle, feature control
 feature flag = dynamically change the state of production
@@ -371,6 +372,7 @@ hallway usability testing https://en.wikipedia.org/wiki/Usability_testing#Hallwa
 handle
 hashbang (aka. shebang) https://github.com/tc39/proposal-hashbang
 helping -- XY problem = wrongly asking about your attempted solution rather than your actual problem https://xyproblem.info/
+Hofstadter's Law = It always takes longer than you expect, even when you take into account Hofstadter's Law https://en.wikipedia.org/wiki/Hofstadter's_law
 hoisting des vars de boucle for et switch
 hooks
 hotfix
@@ -472,6 +474,7 @@ layers
 layers -- shearing
 lazy-loading
 leaking
+learning -- https://roadmap.sh/
 legacy code = code without good testing coverage that we don’t recall writing https://www.booktopia.com.au/working-effectively-with-legacy-code-michael-feathers/book/9780131177055.html
 let's deploy to production https://www.youtube.com/watch?v=5p8wTOr8AbU
 LIFO
@@ -567,6 +570,7 @@ orthogonality https://en.wikipedia.org/wiki/Orthogonality_(programming)
 overengineering https://blog.matt-rickard.com/p/stop-overengineering
 ownership
 ownership -- if you build it, you own it
+ownership -- shift left = lower levels own
 pair-programming
 partial application = creating a new version of a function with one or more of its parameters bound to some predefined value
 pattern -- anti -- lava flow = code written under sub-optimal conditions is deployed into a production environment and subsequently expanded upon while still in a developmental state https://en.wikipedia.org/wiki/Lava_flow_(programming)
@@ -749,6 +753,7 @@ testing -- test double -- 04 spy = stubs that also record some information based
 testing -- test double -- 05 mock = objects pre-programmed with expectations which form a specification of the calls they are expected to receive.
 testing -- test double = dummy, fake, stub, spy, mock - Every class or object created is a fake. It is a mock if you assert against it. Otherwise it is a stub. https://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub
 testing -- test double https://martinfowler.com/articles/mocksArentStubs.html
+The Mythical Man-Month
 the room https://lethain.com/getting-in-the-room/
 this
 thread

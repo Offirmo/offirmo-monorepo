@@ -14,9 +14,24 @@
 		"./types": {
 			"import": "./src/l0-types/index.ts"
 		},
+
 		"./decorators/diagnostics": {
 			"import": "./src/__shared/decorators/diagnostics.js"
-		}
+		},
+
+		"./stories/html/html5-kitchen-sink":     { "import": "./src/__shared/stories/html/html5-kitchen-sink_by_dbox.stories.ts" },
+		"./stories/html/html-demos--offirmo":    { "import": "./src/__shared/stories/html/html-demos-by-offirmo.stories.ts" },
+		"./stories/html/html-demos--others":     { "import": "./src/__shared/stories/html/html-demos-misc.stories.ts" },
+		"./stories/html/motherfuckingwebsites":  { "import": "./src/__shared/stories/html/motherfuckingwebsites.stories.ts" },
+		"./stories/html/elements/a":             { "import": "./src/__shared/stories/html/elements/a.stories.ts" },
+		"./stories/html/elements/blockquote":    { "import": "./src/__shared/stories/html/elements/blockquote.stories.ts" },
+		"./stories/html/elements/body":          { "import": "./src/__shared/stories/html/elements/body.stories.ts" },
+		"./stories/html/elements/details":       { "import": "./src/__shared/stories/html/elements/details.stories.ts" },
+		"./stories/html/elements/dl":            { "import": "./src/__shared/stories/html/elements/dl.stories.ts" },
+		"./stories/html/elements/h123456":       { "import": "./src/__shared/stories/html/elements/h123456.stories.ts" },
+		"./stories/html/elements/nav":           { "import": "./src/__shared/stories/html/elements/nav.stories.ts" },
+		"./stories/html/elements/ol":            { "import": "./src/__shared/stories/html/elements/ol.stories.ts" },
+		"./stories/html/elements/ul":            { "import": "./src/__shared/stories/html/elements/ul.stories.ts" }
 	},
 	"source": "src/index.ts",
 

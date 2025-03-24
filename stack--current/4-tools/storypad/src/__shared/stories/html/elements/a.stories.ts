@@ -1,24 +1,91 @@
-
 export function AllTogether() {
-	return [
-		NeverVisited(),
-		AlreadyVisited(),
-	].join('<br/>')
-}
-
-export function NeverVisited() {
-	const location = document.location
-	console.log('hello')
-
 	return `
-		<a href="${location.origin + location.pathname + location.search + '&random=' + String(Math.random())}">link -- never visited</a>
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>Not visited</th>
+			<th>Already visited</th>
+		</tr>
+	</thead>
+	<tbody>
+		${
+		['normal', 'new-tab', 'download'].map(type => `
+			<tr>
+				<td>${type}</td>
+				<td>${_link({ text: 'link', type, isꓽvisited: false })}</td>
+				<td>${_link({ text: 'link', type, isꓽvisited: true })}</td>
+			</tr>
+		`).join(`\n`)
+		}
+	</tbody>
+</table>
 	`
 }
 
+export function NeverVisited() {
+	return _link({
+		isꓽvisited: false,
+	})
+}
+
 export function AlreadyVisited() {
+	return _link({
+		isꓽvisited: true,
+	})
+}
+
+export function NewTab() {
+	return _link({
+		type: 'new-tab',
+	})
+}
+
+export function Download() {
+	return _link({
+		type: 'download',
+	})
+}
+
+export function External() {
+	return _link({
+		isꓽexternal: true,
+	})
+}
+
+export function _link({
+	isꓽvisited = false,
+	isꓽexternal = false,
+	type = isꓽexternal ? 'new-tab' : 'normal',
+	text,
+}: {
+	isꓽvisited?: boolean,
+	isꓽexternal?: boolean,
+	type?: 'normal' | 'new-tab' | 'download',
+	text?: string,
+}) {
 	const location = document.location
 
+	const auto_text = [
+		type === 'download' ? 'download' : '',
+		isꓽexternal ? 'external' : 'internal',
+		'link',
+		type === 'new-tab' ? 'to new tab' : '',
+		isꓽvisited ? '(visited)' : '(not visited)',
+	].join(' ')
+
+	let href = isꓽexternal
+		? 'https://www.google.com?'
+		: location.pathname + location.search
+
 	return `
-		<a href="${location.origin + location.pathname + location.search}">link -- already visited</a>
+		<a
+			href="${href}${isꓽvisited ? '' : ('&random=' + String(Math.random()))}"
+			${type === 'new-tab' ? 'target="_blank"' : ''}
+			${type === 'download' ? 'download' : ''}
+			${isꓽexternal ? 'rel="noreferrer"' : ''}
+			>
+			${text || auto_text}
+		</a>
 	`
 }

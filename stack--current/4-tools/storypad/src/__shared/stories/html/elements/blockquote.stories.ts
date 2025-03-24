@@ -108,7 +108,7 @@ export function InAFigure() {
 		<p>It was a bright cold day in April, and the clocks were striking thirteen.</p>
 	</blockquote>
 	<figcaption>
-		First sentence in <cite><a href="https://www.george-orwell.org/1984/0.html">Nineteen Eighty-Four</a></cite>
+		First sentence in <cite><a href="https://www.george-orwell.org/1984/0.html" rel="noreferrer">Nineteen Eighty-Four</a></cite>
 		by George Orwell (Part 1, Chapter 1).
 	</figcaption>
 </figure>

@@ -114,6 +114,11 @@ async function _registerꓽstoriesⵧfrom_module(state: State, story_module: Imm
 	Object.keys(stories).forEach(story_key => {
 		DEBUGⵧglob_parsing && console.log(`Found story: key "${story_key}"`)
 
+		if (story_key.startsWith('_')) {
+			console.debug(`Ignoring because it starts with an underscore.`)
+			return
+		}
+
 		assert(!story_key.includes(SEPⵧSTORY), `Story key contains a forbidden character! (story sep)`)
 		assert(![...parent_path, story_key].some(p => p.includes(SEPⵧSEGMENTS)), `Story path contains a forbidden character!`) // TODO one day improve
 
