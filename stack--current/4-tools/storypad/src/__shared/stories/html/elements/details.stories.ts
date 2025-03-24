@@ -28,6 +28,19 @@ export function WithParagraphs() {
 	`
 }
 
+export function Adjacent() {
+	return `
+<details open>
+	<summary>summary 1</summary>
+	Content
+</details>
+<details open>
+	<summary>summary 2</summary>
+	Content
+</details>
+	`
+}
+
 export function NestedSimple() {
 	return `
 <details open>
@@ -57,7 +70,7 @@ export function NestedMixed() {
 	<details open>
 		<summary>summary 1</summary>
 		<details open>
-			<summary>summary 2</summary>
+			<summary>summary 2a</summary>
 			<details open>
 				<summary>summary 3</summary>
 				<ol>
@@ -69,6 +82,10 @@ export function NestedMixed() {
 				<li>item 1.2</li>
 				<li>item 2.2</li>
 			</ol>
+		</details>
+		<details open>
+			<summary>summary 2b</summary>
+			Hello
 		</details>
 		<ol>
 			<li>item 1.0</li>

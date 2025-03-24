@@ -27,6 +27,7 @@
 	display: flex;
 	align-items: stretch;
 	.storypad⋄sidebar {
+		height: 100dvh;
 		resize: horizontal;
 		overflow-y: scroll;
 	}

@@ -1,5 +1,7 @@
 
-
+/**
+ * Note: partially styled by the parent, @see ../index.css
+ */
 .storypad⋄sidebar {
 	--icon-width: 10px; /* actual fixed width from the SVG */
 	--line-width: 1px;

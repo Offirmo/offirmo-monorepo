@@ -30,3 +30,11 @@ details details:last-child {
 details details {
 	border-inline-end: 0;
 }
+/* on top of each other */
+details ~ details {
+	border-block-start: 0;
+}
+
+/* TODO one day: cascading sticky summaries
+ * (not possible in CSS as of 2025)
+ */
