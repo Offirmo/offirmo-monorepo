@@ -4,6 +4,8 @@
 1 or 2 way door
 12 steps
 1984
+ELI5 https://www.reddit.com/r/explainlikeimfive/
+Goodhart's law = When a measure becomes a target, it ceases to be a good measure https://en.wikipedia.org/wiki/Goodhart%27s_law
 1st thought v.s 2nd thought = 2nd = what we truly are
 3 -- trichotomy https://en.wikipedia.org/wiki/Trichotomy_(philosophy)
 3 -- trilemma https://en.wikipedia.org/wiki/Trilemma
@@ -102,6 +104,7 @@ bee browsing
 being enough
 being in the details https://www.theengineeringmanager.com/managing-managers/being-in-the-details/
 Bell curve = bottom 20%, middle 60%, top 20%
+best decision based on the information available at the time
 bet you’re fun at parties
 better ask for forgiveness than for permission
 better safe than sorry
@@ -162,6 +165,7 @@ class -- high -- new money
 class -- high -- old money
 class -- low
 class -- middle
+coach vs mentor vs sponsor = A coach talks to you, a mentor talks with you, and a sponsor talks about you https://www.linkedin.com/posts/addyosmani_softwareengineering-productivity-leadership-activity-6996942888802598912-hUgl
 cognitive bias -- recency https://en.wikipedia.org/wiki/Recency_bias
 cognitive bias https://en.wikipedia.org/wiki/Cognitive_bias
 cognitive dissonance
@@ -566,6 +570,7 @@ learning -- no speed limit = all the way through High School at the same measure
 learning -- self education = ex. spend all spare moments reading any books they could get their hands on https://www.artofmanliness.com/career-wealth/wealth/andrew-carnegie-financial-lessons/
 learning machines "I constantly see people rise in life who are not the smartest, sometimes not even the most diligent, but they are learning machines" (Munger https://jamesclear.com/great-speeches/2007-usc-law-school-commencement-address-by-charlie-munger)
 legibility = We are blind to what we cannot measure. Not everything that counts can be measured, and not everything that can be measured counts. But people manage what they can measure, so society repeats the same mistakes.
+Lencioni model of team dysfunction https://www.linkedin.com/posts/addyosmani_softwareengineering-productivity-leadership-activity-7000540911050907648-vxzN
 lend-lease https://en.wikipedia.org/wiki/Lend-Lease
 less is more
 Lev Landau classification of physicists -- league 0 = super league
@@ -908,6 +913,7 @@ sleep on it
 SMART goal-setting framework
 so bad you don't even realize you are bad = https://workplace.stackexchange.com/a/25756
 sober thoughts are drunk words
+social capital
 social capital (white male)
 social debt = friends, family, and strangers who feel entitled to ask, beg, and steal https://collabfund.com/blog/rich-and-anonymous/
 social norm of reciprocity https://en.wikipedia.org/wiki/Norm_of_reciprocity
@@ -1038,6 +1044,7 @@ wisdom
 wisdom -- a wisdom for left may not be valid for right
 wisdom of the rooms = AA steps
 wokeness = An aggressively performative focus on social justice https://paulgraham.com/woke.html
+workaholic
 works of mercy -- corporal
 works of mercy -- spiritual
 works of mercy https://en.wikipedia.org/wiki/Works_of_mercy

@@ -105,6 +105,7 @@ growth -- if we build it, they will come (not)
 growth -- labor perception / perceived labor https://growth.design/case-studies/labor-perception-bias
 growth -- onboarding -- fatigue
 growth -- viral = helpful but not necessary
+house ads = surfacing 1p content / features to user
 how to make something great https://ryolu.notion.site/how-to-make-something-great
 illegal practices -- monopoly / oligopoly
 illegal practices -- payola = illegal practice of paying a commercial radio station to play a song without the station disclosing the payment (boosted) https://en.wikipedia.org/wiki/Payola
@@ -215,6 +216,7 @@ product mode -- single = has immediate value for a single user
 product mode = single or multiplayer? (sometimes both)
 proposition -- selling = What makes your product or service unique? What sets you apart from your competition?
 proposition -- value
+push moment https://www.linkedin.com/posts/enzoa_the-1-reason-people-come-to-june-is-when-activity-7309959729164812288-_u7k
 quality vs speed = sacrificing code quality for speed leads to compounding issues later. balance speed with long-term sustainability
 real-world context https://contextsdk.com/insights#product
 realistic scheduling = overly optimistic deadlines lead to burnout and missed milestones. Always add a (secret?) buffer.
@@ -234,6 +236,7 @@ scale frontiers - 01 Generous free product
 scale frontiers - 02 Affordable Paid Product
 scale frontiers - 03 Teams of all sizes
 scale frontiers - 04 Large Orgs
+scaling -- managers who get promoted quickly into upper manager and leader positions often try to apply what worked locally to what might feasibly work globally. When that fails, their first instinct is to carve out the autonomy and boundaries they once enjoyed as managers of smaller teams, which works in the short term but can lead to problems when collaborating across messier boundaries.
 second product -- syndrome https://www.hubspot.com/startups/resources/second-product-tips-for-success
 second product -- When and How https://caseyaccidental.com/second-products/
 shared vision = maintaining a shared vision across the board to help stay on course
@@ -272,5 +275,6 @@ try/test/graduate
 User Experience Research (UXR) https://medium.com/getting-started-in-user-experience-and-design
 wartime vs peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 what got us here won't get us there…
+what is the actual problem we're trying to solve?
 winner takes it all
 You can develop the best strategy in the world, but if it isn’t producing the desired results, it’s time to reassess. "It’s not that we aren’t doing as well as we could, but it’s not the best strategy we could be doing to win." https://worldofwarcraft.blizzard.com/en-us/news/21952451/midgame-moves-adapt-survive-and-thrive

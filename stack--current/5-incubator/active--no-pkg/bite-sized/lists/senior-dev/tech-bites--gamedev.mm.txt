@@ -42,6 +42,9 @@ completionist
 compulsion loop = https://en.wikipedia.org/wiki/Compulsion_loop
 construction and management simulation (CMS)
 content age rating -- https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings
+creativity -- an idea that is unprecedented
+creativity -- hollow repeat accidentally building a hollow repeat
+creativity -- sobriety = being intentional and thoughtful about the ideas we develop https://www.gamedeveloper.com/design/achieving-creative-sobriety-in-game-design
 cross-play
 cutscene
 dialog tree
@@ -63,7 +66,10 @@ fun & cool -- "a theory of fun for game design"
 fun & cool -- "I see who are the villains" (LOTRO)
 fun & cool -- at last having an impact / being a hero / being a leader / changing things
 fun & cool -- at last kindness / right things wins
+fun & cool -- competing
 fun & cool -- escape
+fun & cool -- foraging
+fun & cool -- hunting
 fun & cool -- isekai
 fun & cool -- learning real things
 fun & cool -- realising everything we already know
@@ -74,6 +80,7 @@ gating
 genre
 genre -- action = emphasizing hand–eye coordination, reflexes, timing, and other physical skills. It includes fighting games, shooters, and platformers
 genre -- adventure = emphasizes exploration and puzzle-solving
+genre -- cozy https://www.reddit.com/r/CozyGamers/
 genre -- RPG
 genre -- shooter
 ghost
@@ -152,6 +159,7 @@ New Game Plus (NG+)
 NPC
 offline first
 open world
+originality -- value https://www.gamedeveloper.com/design/achieving-creative-sobriety-in-game-design
 overworld / underworld
 overworld https://en.wikipedia.org/wiki/Overworld
 pacifist run
@@ -167,6 +175,7 @@ player taxonomy -- Magic -- Johnny = wants to express something. Combo, Offbeat,
 player taxonomy -- Magic -- Spike = wants to prove something, primarily how good he is. Innovators, Tuners, Analysts. SPIKE GETS HIS GREATEST JOY FROM PROVING SOMETHING BY WINNING
 player taxonomy -- Magic -- Timmy = wants to experience something. plays because he enjoys the feeling he gets when he plays. Power, Social, Diversity, Adrenalin gamers. THE ENTIRE REASON TO PLAY IS HAVING A GOOD TIME
 player taxonomy -- Magic https://magic.wizards.com/en/news/making-magic/timmy-johnny-and-spike-revisited-2006-03-20
+playthrough
 PR-generated worlds =  emergence, self-organization https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 procedural generation
 progression -- horizontal = Recruit > Soldier (max level) > Learn to wield guns (expac 1) > Learn to wield swords (expac 2) > Learn to do magic stuff (expac 3) > and so on
@@ -210,6 +219,11 @@ setting -- legendarium
 setting -- mythopoeia https://en.wikipedia.org/wiki/Mythopoeia
 setting -- worldbuilding https://en.wikipedia.org/wiki/Worldbuilding
 softlock
+story -- narrative system -- design elements -- narrative events
+story -- narrative system -- design elements -- narrative tags
+story -- narrative system -- design elements -- storylets
+story -- narrative system https://www.gamedeveloper.com/design/how-civilization-vii-s-powerful-narrative-system-helps-players-experience-unique-parts-of-history
+story -- natural disasters
 structures -- cleanliness = https://thealexandrian.net/wordpress/15176/roleplaying-games/game-structures-part-8-the-importance-of-clean-structures
 structures -- combat = hit -> defeat the opponent
 structures -- completeness = https://thealexandrian.net/wordpress/15203/roleplaying-games/game-structures-part-11-complete-game-structures
@@ -226,12 +240,13 @@ total party kill (TPK)
 transmog
 turtling
 twinking
-UI -- HUD
 UI -- HUD https://en.wikipedia.org/wiki/HUD_(video_games)
 UI -- minimap
 UI -- radar
 UI https://news.blizzard.com/en-us/world-of-warcraft/23837944/get-into-the-grid-of-things-with-the-updated-ui-and-hud
+unique selling point
 UX -- title screen
+value proposition
 warp -- zone
 warp https://en.wikipedia.org/wiki/Warp_(video_games)
 woodwalking

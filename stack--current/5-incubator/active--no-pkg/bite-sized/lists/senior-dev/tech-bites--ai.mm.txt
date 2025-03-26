@@ -73,11 +73,13 @@ control vector https://vgel.me/posts/representation-engineering/
 ControlNet = a type of model for controlling image diffusion models by conditioning the model with an additional input image https://huggingface.co/docs/diffusers/using-diffusers/controlnet https://github.com/lllyasviel/ControlNet
 cross encoder https://www.sbert.net/examples/applications/cross-encoder/README.html
 dataset  https://www.fatml.org/media/documents/datasheets_for_datasets.pdf
+day 2 = The challenge of revising, maintaining, further developing, and deploying an AI-generated app https://manual.bubble.io/beta-features/bubbles-ai-app-generator#the-day-1-and-day-2-dilemma-in-ai-driven-app-development
 deep reinforcement learning (deep RL) course: https://spinningup.openai.com/
 delvish dialect https://bruces.medium.com/preliminary-notes-on-the-delvish-dialect-by-bruce-sterling-ce68a476247b
 developer vs sociotechnic vs project organizer
 diffusers
 diffusion
+disclosure = does this content contains AI? https://www.canva.dev/docs/apps/v2-migration-guide/#ai-disclosure
 Discrete Variational Auto Encoder (VAE) for image generation? https://medium.com/@jaswanth04/discrete-variational-auto-encoder-explained-41493ebe294d
 distillation = machine learning technique in which a smaller “student model” is trained on predictions of a larger and more complex “teacher model” https://theconversation.com/openai-says-deepseek-inappropriately-copied-chatgpt-but-its-facing-copyright-claims-too-248863
 DL Deep Learning (NN)
@@ -249,5 +251,6 @@ vector database -- https://www.pinecone.io
 vector database -- Qdrant https://qdrant.tech/blog/series-a-funding-round/
 vibe code fixers ;) https://vibecodefixers.com/
 vibe coding https://x.com/karpathy/status/1886192184808149383
+vs. low-code / no-code
 watermarking outputs https://proceedings.mlr.press/v202/zhao23i.html
 weak-to-strong generalization https://openai.com/research/weak-to-strong-generalization

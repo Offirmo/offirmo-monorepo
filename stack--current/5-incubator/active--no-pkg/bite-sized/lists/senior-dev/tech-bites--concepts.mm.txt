@@ -153,6 +153,10 @@ comments -- conventional
 comments -- leading, trailing, detached https://github.com/microsoft/TypeScript/wiki/FAQ#trailing-leading-and-detached-comments
 commits
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
+compatibility -- backward = consumer's new version can read producer's old data
+compatibility -- forward = consumer's old version can read producer's new data
+compatibility -- window = duration deployed code needs to remain compatible
+compatibility = 2x things being able to live together without issues
 compatibility window = how long should we attempt to ensure that a deployment of code doesn’t get blown up by incompatible payloads. Ex. mobile app = 6 month, web page = 1d, server = 1 release
 compile to js
 compiler
@@ -301,6 +305,17 @@ dry run
 DSL (Domain Specific Language)
 durable execution = development paradigm that preserves complete application state so that upon host or software failure it can seamlessly migrate execution to another machine https://stackoverflow.blog/2024/05/28/an-open-source-development-paradigm/
 Effect<Success, Error, Requirements> https://effect.website/docs/guides/essentials/the-effect-type
+effective engineer -- LeadDev -- 1. Care about the user and their needs
+effective engineer -- LeadDev -- 10. Be comfortable taking on new challenges
+effective engineer -- LeadDev -- 2. Be a great problem solver
+effective engineer -- LeadDev -- 3. Keep things simple, while caring about quality
+effective engineer -- LeadDev -- 4. Communicate effectively with your team
+effective engineer -- LeadDev -- 5. Build trust, autonomy, and social capital
+effective engineer -- LeadDev -- 6. Understand team strategy
+effective engineer -- LeadDev -- 7. Prioritize appropriately and execute independently
+effective engineer -- LeadDev -- 8. Think long term (e.g. implications of decisions)
+effective engineer -- LeadDev -- 9. Leave software projects better than you found them
+effective engineer -- LeadDev https://www.linkedin.com/posts/addyosmani_softwareengineering-programming-effectiveness-activity-7018966411389661184-pVev
 egress/ingress
 emscripten
 encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube.com/watch?v=RXJKdh1KZ0w
@@ -456,7 +471,7 @@ lang -- go
 lang -- go -- advocacy https://github.com/microsoft/typescript-go/discussions/411
 lang -- Rust https://www.rust-lang.org/
 lang -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
-lang -- wasp = high level website / SaaS
+lang -- wasp = high level website / SaaS https://wasp.sh/
 language features -- contract enforcement
 language features -- data hiding
 language features -- encapsulation
