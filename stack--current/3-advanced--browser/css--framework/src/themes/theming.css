@@ -65,7 +65,7 @@
 	  - should be able to tell an already clicked link https://mashable.com/article/google-black-links
 	 */
 
-	a, svg|a {
+	a, svg|a { XXX namespace!!!
 		/* a color are being overwritten by the default style.
 		 * make it specific and inheritable
 		 */
