@@ -199,7 +199,7 @@ package-lock=false
 		`
 # ${pure_module_details.name}
 
-${pure_module_details.description || 'TODO description'}
+${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 `.trimStart(),
 		{ encoding: 'utf-8' },
 	))
