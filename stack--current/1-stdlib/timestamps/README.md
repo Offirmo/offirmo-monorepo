@@ -1,3 +1,3 @@
 # timestamps
 
-TODO description
+TODO description in MANIFEST.json5

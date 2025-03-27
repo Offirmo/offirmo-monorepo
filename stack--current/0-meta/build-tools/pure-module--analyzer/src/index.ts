@@ -4,7 +4,9 @@
 import * as path from 'node:path'
 import { readFileSync } from 'node:fs'
 
-import { parse as parseImports } from "parse-imports-ts"
+import { parse as parseImports } from 'parse-imports-ts'
+import JSON5 from 'json5'
+import { writeJsonFile as write_json_file } from 'write-json-file'
 
 import { lsFilesRecursiveSync } from './_vendor/fs_ls.ts'
 
@@ -44,7 +46,7 @@ interface PureModuleDetails {
 	root‿abspath: string
 
 	// everything needed to build package.json
-	namespace: string
+	namespace?: string
 	name: string
 	version: string
 	description?: string
@@ -69,6 +71,9 @@ interface PureModuleDetails {
 	languages: Set<ProgLang>
 	// TODO bundler reqs, ex. Parcel-specific imports
 	// TODO engines ex. node
+
+	// in case of extra info
+	manifest: object
 }
 
 const MANIFEST‿basename = 'MANIFEST.json5'
@@ -92,11 +97,11 @@ function _createꓽresult(root‿abspath: string): PureModuleDetails {
 	return {
 		root‿abspath,
 
-		namespace: '@offirmo-private',
+		namespace: undefined,
 		name,
 		version: '0.0.1',
 		//description?: string
-		isꓽpublished: true,
+		isꓽpublished: false,
 		author: 'Offirmo <offirmo.net@gmail.com>',
 		license: 'Unlicense',
 		source: null as any, // XXX TODO
@@ -119,6 +124,8 @@ function _createꓽresult(root‿abspath: string): PureModuleDetails {
 		depsⵧoptional: new Set<string>(),
 		depsⵧvendored: new Set<string>(),
 		languages: new Set<ProgLang>(),
+
+		manifest: {},
 	}
 }
 
@@ -144,8 +151,15 @@ function _isꓽin_excluded_folder(entry: FileEntry): boolean {
 }
 
 function _isꓽignored(entry: FileEntry): boolean {
-	if (entry.basename === '.DS_Store')
+	if (entry.basename === '.DS_Store') {
+		// TODO one day load from gitignore
 		return true
+	}
+
+	if (entry.basename === 'LICENSE') {
+		// license override for a sub-folder, ignore
+		return true
+	}
 
 	return false
 }
@@ -341,14 +355,49 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 		throw new Error(`No "source" candidate found!`)
 	}
 
-	/* not necessarily needed!
-	 * Also maybe create one if missing
 	if(!entryⵧmanifest) {
-		throw new Error(`No MANIFEST found!`)
-	}*/
+		// not necessarily needed but good to have
+		// NOTE: yes, this is a side effect in a read function, but it's a good one 😅
+		write_json_file(
+			path.resolve(root‿abspath, MANIFEST‿basename),
+			{
+				description: 'TODO description in MANIFEST.json5'
+			},
+		)
+	}
+	else {
+		const data = JSON5.parse(readFileSync(entryⵧmanifest.path‿abs, 'utf8'))
+		result.manifest = data
+
+		// overrides from the manifest
+		const unprocessed_keys = new Set<string>(Object.keys(data))
+
+		if (unprocessed_keys.has('version')) {
+			result.version = data.version
+			unprocessed_keys.delete('version')
+		}
+		if (unprocessed_keys.has('isꓽpublished')) {
+			result.isꓽpublished = data.isꓽpublished
+			unprocessed_keys.delete('isꓽpublished')
+		}
+		if (unprocessed_keys.has('description')) {
+			result.description = data.description
+			unprocessed_keys.delete('description')
+		}
+
+		if (unprocessed_keys.size) {
+			throw new Error(`Unknown keys in manifest: "${Array.from(unprocessed_keys).join(', ')}"!`)
+		}
+	}
 
 	// consolidate
 	raw_deps.forEach(({label, type}) => {
+		if (label.startsWith('node:')) {
+			result.depsⵧdev.add('@types/node')
+			// TODO one day how to express dependency to a runtime?
+			return
+		}
+
 		switch (type) {
 			case 'normal':
 				result.depsⵧnormal.add(label)

@@ -27,6 +27,11 @@ class PkgVersionResolver {
 		if (this.#pending_promises[pkg_name])
 			return
 
+		if (!this.is_npm_package(pkg_name)) {
+			// for now
+			return
+		}
+
 		if (this.is_internal_package(pkg_name)) {
 			// for now
 			return
@@ -35,7 +40,7 @@ class PkgVersionResolver {
 		this.#pending_promises[pkg_name] = packageJson(pkg_name, { fullMetadata: true })
 			.then(content => {
 				this.#packageᐧjson_cache[pkg_name] = content
-				console.log(`package.json loaded for "${pkg_name}" (has types? ${!!content?.typings})`)
+				console.log(`     package.json loaded for "${pkg_name}" v${semver.clean(content.version)} (${pkg_name.startsWith('@types/') ? 'is @type' : `includes types? ${!!content?.typings}`})`)
 				//console.log(`XXX content`, content)
 				return content // for chaining
 			})
@@ -60,7 +65,7 @@ class PkgVersionResolver {
 						return packageJson(potential_types_pkg_name, { fullMetadata: true })
 							.then(content => {
 								this.#packageᐧjson_cache[potential_types_pkg_name] = content
-								console.log(`package.json loaded for "${potential_types_pkg_name}"`)
+								console.log(`auto package.json loaded for "${potential_types_pkg_name}" v${semver.clean(content.version)}`)
 
 								return content // for chaining
 							},
@@ -116,6 +121,15 @@ class PkgVersionResolver {
 		}
 	}
 
+	private is_npm_package(pkg_name: string): boolean {
+		if (pkg_name.startsWith('node:')) {
+			return false
+		}
+
+		return true
+	}
+
+
 	// internal = from this monorepo
 	// vs. external = npm
 	// TODO review is this needed?
@@ -163,6 +177,15 @@ async function present({
 		throw new Error(`Out-of-source build cannot target inside the pure-module!`)
 	}
 
+	// TODO one day if public, pre-build?
+	// TODO one day add "size-limit"? to all?
+	/*
+"_build:prod": "monorepo-script--build-typescript-package",
+"ensure-size": "size-limit",
+"build": "run-s  clean _build:prod",
+"prepublishOnly": "run-s build ensure-size"
+	*/
+
 	const promises: Array<Promise<void>> = []
 
 	const PURE_MODULE_CONTENT_RELPATH = path.basename(pure_module_path)
@@ -194,10 +217,13 @@ package-lock=false
 		{ encoding: 'utf-8' },
 	))
 
+	const npm_module_namespace = pure_module_details.namespace || (pure_module_details.isꓽpublished ? '@offirmo' : '@offirmo-private')
+	const npm_module_name = npm_module_namespace + '/' + pure_module_details.name
+
 	promises.push(fs.writeFile(
 		path.resolve(dest_dir‿abspath, 'README.md'),
 		`
-# ${pure_module_details.name}
+# ${npm_module_name}
 
 ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 `.trimStart(),
@@ -226,12 +252,12 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 
 	const packageᐧjson = await (async () => {
 		const pkg: any = {
-			"name": `${pure_module_details.namespace}/${pure_module_details.name}`,
-			"description": pure_module_details.description,
+			"name": npm_module_name,
+			...(pure_module_details.description && {"description": pure_module_details.description}),
 			"version": pure_module_details.version,
 			"author": pure_module_details.author,
 			"license": pure_module_details.license,
-			"private": pure_module_details.isꓽpublished,
+			...(pure_module_details.isꓽpublished ? {} : { "private": true}),
 
 			"sideEffects": pure_module_details.hasꓽside_effects,
 			"type": "module",
