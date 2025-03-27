@@ -632,8 +632,8 @@ export function merge_notes(...notes: Immutable<PersistedNotes[]>): Immutable<Pe
 		// used by several:
 		const basemane__current__nv = getꓽmedia_basename_normalisation_version(merged_notes.historical.basename)
 		const basename__candidate__nv = getꓽmedia_basename_normalisation_version(basename)
-		const parent_path__current__nv = getꓽfolder_basename_normalisation_version(merged_notes.historical.parent_path.split(path.sep).slice(-1)[0] || 'root')
-		const parent_path__candidate__nv = getꓽfolder_basename_normalisation_version(parent_path.split(path.sep).slice(-1)[0] || 'root')
+		const parent_path__current__nv = getꓽfolder_basename_normalisation_version(merged_notes.historical.parent_path.split(path.sep).at(-1) || 'root')
+		const parent_path__candidate__nv = getꓽfolder_basename_normalisation_version(parent_path.split(path.sep).at(-1) || 'root')
 
 		// basename + parent_path (those 2 go together)
 		let oldest_basename_and_path: 'current' | 'candidate' | 'both' = (() => {

@@ -13,7 +13,7 @@ export function is_digit(char: string): boolean {
 }
 
 export function deep_trim(s: string): string {
-	while (s && SEPARATORS.includes(s.slice(-1))) {
+	while (s && SEPARATORS.includes(s.at(-1))) {
 		s = s.slice(0, s.length - 1)
 	}
 	while (s && SEPARATORS.includes(s[0])) {

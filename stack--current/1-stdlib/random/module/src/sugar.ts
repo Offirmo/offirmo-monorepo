@@ -4,11 +4,11 @@ import {
 	getꓽrandom_generator_ofꓽintegerⵧbetween,
 	getꓽrandom_generator_ofꓽintegerⵧin_interval,
 	getꓽrandom_picker,
-} from './distributions/index.js'
-import { getꓽRNGⵧISAAC32 } from './engines/ISAAC/index.js'
-import { getꓽRNGⵧMathᐧrandom } from './engines/MathRandom/index.js'
-import { PRNGEngine, PRNGState } from './types.js'
-import { type Immutable } from './embedded-deps/types/index.js'
+} from './distributions/index.ts'
+import { getꓽRNGⵧISAAC32 } from './engines/ISAAC/index.ts'
+import { getꓽRNGⵧMathᐧrandom } from './engines/MathRandom/index.ts'
+import type { PRNGEngine, PRNGState } from './types.ts'
+import type { Immutable } from './embedded-deps/types/index.ts'
 
 /////////////////////////////////////////////////
 

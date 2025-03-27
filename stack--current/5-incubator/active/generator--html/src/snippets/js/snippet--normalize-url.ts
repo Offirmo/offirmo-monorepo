@@ -18,7 +18,7 @@ export default function normalize_trailing_slash() {
 	 * ex. /foo/bar/           => ✔ no change
 	 * ex. /foo/bar            => ✖ REDIRECT foo/bar/
 	 */
-	const trailing_segment = location.pathname.split('/').slice(-1)[0] || ''
+	const trailing_segment = location.pathname.split('/').at(-1) || ''
 	if (!trailing_segment) {
 		// ✔ located by a folder, location ends with a trailing slash
 		// NOTE Some browsers (Chrome) may VISUALLY HIDE the trailing slash on the root of the domain, but it's there ✔

@@ -77,11 +77,13 @@ const MANIFEST‿basename = 'MANIFEST.json5'
 
 function _createꓽresult(root‿abspath: string): PureModuleDetails {
 	const name = (() => {
-		let _path = path.resolve(root‿abspath)
-		if (_path.endsWith('/src'))
-			_path = _path.slice(0, -4)
+		let _path = path.resolve(root‿abspath).split(path.sep)
+		if (_path.at(-1) === 'src')
+			_path.pop()
+		if (_path.at(-1) === 'module')
+			_path.pop()
 
-		return path.basename(_path)
+		return _path.pop()
 	})()
 
 	// TODO not this tool's job to set defaults:

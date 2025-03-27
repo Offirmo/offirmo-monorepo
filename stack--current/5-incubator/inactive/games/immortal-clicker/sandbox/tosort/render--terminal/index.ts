@@ -43,7 +43,7 @@ function update_path_last_index(walk_state: Immutable<WalkState>, index: number)
 		path: [
 			...walk_state.path.slice(0, -1),
 			{
-				...walk_state.path.slice(-1)[0],
+				...walk_state.path.at(-1),
 				index,
 			}
 		]
@@ -207,7 +207,7 @@ async function _renderꓽPage(page: Immutable<BookPage>, walk_state: Immutable<W
 	if (DEBUG) console.log(walk_state)
 
 	const path_parent = walk_state.path.slice(0, -1)
-	const path_last = walk_state.path.slice(-1)[0]
+	const path_last = walk_state.path.at(-1)
 
 	console.log(`┌──┄┄ ${path_last.type} ${path_last.index + 1}/${path_last.length}`)
 
@@ -263,7 +263,7 @@ function _split_into_sentences(p: string): string[] {
 		temp.forEach(p => {
 			const split = p.split(sep)
 			res.push(...split.slice(0, -1).map(s => s + sep))
-			res.push(split.slice(-1)[0])
+			res.push(split.at(-1))
 		})
 	})
 

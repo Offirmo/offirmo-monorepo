@@ -232,7 +232,7 @@ const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToTex
 							res = res.slice(1)
 						}
 						// trim trailing '.'
-						if (res.slice(-1)[0] === '.')
+						if (res.at(-1) === '.')
 							res = res.slice(0, -1)
 
 						return res

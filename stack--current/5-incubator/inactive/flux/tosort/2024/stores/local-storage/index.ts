@@ -244,7 +244,7 @@ export function create<State extends AnyOffirmoState, Action extends BaseAction>
 					...(bkp__older[1] && { major_2: bkp__older[1]}),
 				})
 
-			const most_recent_unmigrated_bkp = recovered_states_unmigrated_ordered_oldest_first.slice(-1)[0]
+			const most_recent_unmigrated_bkp = recovered_states_unmigrated_ordered_oldest_first.at(-1)
 
 			if (!most_recent_unmigrated_bkp) {
 				logger.trace(`[${LIB}] found NO candidate state to be restored.`)

@@ -68,8 +68,8 @@ function _enqueue_action(state: Immutable<State>, action: Action): Immutable<Sta
 }
 
 export function discard_last_pending_action(state: Immutable<State>, expected_type: ActionType): Immutable<State> {
-	logger.trace(`${LIB} discard_last_pending_action(…)`, { action: state.queue.slice(-1)[0] })
-	assert(state.queue.slice(-1)[0].type === expected_type, `discard_last_pending_action() should have expected type`)
+	logger.trace(`${LIB} discard_last_pending_action(…)`, { action: state.queue.at(-1) })
+	assert(state.queue.at(-1).type === expected_type, `discard_last_pending_action() should have expected type`)
 
 	return {
 		...state,

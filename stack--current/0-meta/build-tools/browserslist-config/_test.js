@@ -12,7 +12,7 @@ console.log({
 	resulting_browsers: browserslist(BROWSERS_QUERIES),
 })
 
-assert.ok(BROWSERS_QUERIES.slice(-1)[0] === 'not dead')
+assert.ok(BROWSERS_QUERIES.at(-1) === 'not dead')
 
 const ROOT_QUERIES = fs.readFileSync('../../../.browserslistrc', 'utf8')
 	.split('\n')

@@ -272,7 +272,7 @@ function createꓽstoreⵧlocal_storage<State extends AnyOffirmoState, Action ex
 					return
 				}
 
-				const bkpⵧmost_recentⵧunmigrated = recovered_backup_pipeline_unmigrated_ordered_oldest_first.slice(-1)[0]
+				const bkpⵧmost_recentⵧunmigrated = recovered_backup_pipeline_unmigrated_ordered_oldest_first.at(-1)
 
 				if (!bkpⵧmost_recentⵧunmigrated) {
 					logger.trace(`[${LIB}] found NO candidate state to be restored.`)

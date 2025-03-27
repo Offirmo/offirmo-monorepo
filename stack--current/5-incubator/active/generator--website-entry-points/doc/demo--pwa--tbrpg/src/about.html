@@ -76,7 +76,7 @@
 				 * ex. /foo/bar/           => ✔ no change
 				 * ex. /foo/bar            => ✖ REDIRECT foo/bar/
 				 */
-				const trailing_segment = location.pathname.split('/').slice(-1)[0] || ''
+				const trailing_segment = location.pathname.split('/').at(-1) || ''
 				if (!trailing_segment) {
 					// ✔ located by a folder, location ends with a trailing slash
 					return

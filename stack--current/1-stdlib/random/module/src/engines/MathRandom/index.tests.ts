@@ -1,5 +1,5 @@
-import { getꓽRNGⵧMathᐧrandom } from './index.js'
-import { itᐧshouldᐧbeᐧaᐧvalidᐧengine } from '../_test_helpers.js'
+import { getꓽRNGⵧMathᐧrandom } from './index.ts'
+import { itᐧshouldᐧbeᐧaᐧvalidᐧengine } from '../_test_helpers.ts'
 
 /////////////////////////////////////////////////
 

@@ -1,5 +1,5 @@
-import { Seed, Int32 } from './types.js'
-import { assert } from './embedded-deps/assert/index.js'
+import type { Seed, Int32 } from './types.ts'
+import { assert } from './embedded-deps/assert/index.ts'
 
 /////////////////////////////////////////////////
 

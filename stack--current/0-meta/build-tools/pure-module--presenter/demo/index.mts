@@ -29,8 +29,9 @@ await present({
 	pure_module_path: pure_module_details.root‿abspath,
 	pure_module_details,
 
-	dest_dir: path.resolve(__dirname, 'output'),
-	//dest_dir: path.resolve(__dirname, '../../../../1-stdlib/timestamps/'),
+	//dest_dir: path.resolve(__dirname, 'output'),
+	dest_dir: path.resolve(__dirname, '../../../../1-stdlib/timestamps/'),
+
 	ts__config__path: path.resolve(__dirname, '../../../tsconfig.json'),
 	ts__custom_types__path: path.resolve(__dirname, '../../../typescript-custom-typings'),
 })

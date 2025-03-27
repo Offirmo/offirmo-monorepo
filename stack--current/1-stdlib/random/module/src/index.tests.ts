@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import {
 	getꓽrandom,
 	getꓽengine,
-} from './index.js' // TODO self-ref
+} from './index.ts' // TODO self-ref
 
 /////////////////////////////////////////////////
 

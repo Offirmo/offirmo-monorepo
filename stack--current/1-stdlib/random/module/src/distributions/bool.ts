@@ -1,8 +1,8 @@
-import { type Int32, RNGEngine } from '../types.js'
-import { type Immutable, Percentage } from '../embedded-deps/types/index.js'
-import { assert } from '../embedded-deps/assert/index.js'
-import { type RandomValueGenerator } from './types.js'
-import { _getꓽgenerator_ofꓽconstant } from './_internal.js'
+import type { Int32, RNGEngine } from '../types.ts'
+import type { Immutable, Percentage } from '../embedded-deps/types/index.ts'
+import { assert } from '../embedded-deps/assert/index.ts'
+import type { RandomValueGenerator } from './types.ts'
+import { _getꓽgenerator_ofꓽconstant } from './_internal.ts'
 
 /////////////////////////////////////////////////
 

@@ -40,7 +40,7 @@ function _append_folder(state: ObservableState, treenode: Immutable<StoryTree>, 
 	details_elt.dataset['folderUid'] = payload.uid
 	details_elt.open = payload.isꓽexpandedⵧinitially
 	details_elt.innerHTML = `
-	<summary>${path.slice(-1)[0] || config.root_title}</summary>
+	<summary>${path.at(-1) || config.root_title}</summary>
 	`
 	Object.keys(treenode.childrenⵧfolders).forEach(key => {
 		_append_folder(state, treenode.childrenⵧfolders[key]!, [...path, key], details_elt)
@@ -61,7 +61,7 @@ function _append_folder(state: ObservableState, treenode: Immutable<StoryTree>, 
 
 function _append_leaf(state: ObservableState, story: Immutable<StoryEntry>, path: Basename[], parent_elt: HTMLElement) {
 	let li_elt = document.createElement('li')
-	const key = path.slice(-1)[0]
+	const key = path.at(-1)
 	li_elt.dataset['storyUid'] = story.uid
 	li_elt.innerHTML = `<a id="${story.uid}" href="${state.getꓽmain_frame_url(story.uid)}">${key}</a>`
 	parent_elt.appendChild(li_elt)

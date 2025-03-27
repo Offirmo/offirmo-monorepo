@@ -64,7 +64,7 @@ const find_next_element = memoize_one(function find_next_element(content, from_i
 		const key_and_id = content.slice(index_template_opening_begin + template_begin.length, index_template_opening_end - template_end.length + 1).trim()
 		let split_key_and_id = key_and_id.split(' ').filter(e => !!e.trim())
 		res.tag = split_key_and_id.shift()
-		res.version = (res.tag === KEYWORDS.build_tag && split_key_and_id.slice(-1)[0].startsWith('v'))
+		res.version = (res.tag === KEYWORDS.build_tag && split_key_and_id.at(-1).startsWith('v'))
 			? split_key_and_id.pop()
 			: null
 

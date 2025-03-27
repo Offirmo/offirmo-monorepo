@@ -78,7 +78,7 @@ export function getꓽfile_basename_extension(basename: Basename): string {
 
 	return split_by_dot.length <= 1
 		? ''
-		: ('.' + split_by_dot.slice(-1)[0])
+		: ('.' + split_by_dot.at(-1))
 }
 export function getꓽfile_basename_extension‿normalized(basename: Basename): string {
 	return normalize_extension(getꓽfile_basename_extension(basename))
@@ -532,7 +532,7 @@ const _parse_memoized = micro_memoize(function _parse(basename: Basename, type: 
 		const name_lc = basename.toLowerCase()
 		const split_by_dot = name_lc.split('.')
 		if (split_by_dot.length > 1) {
-			result.extension_lc = '.' + split_by_dot.slice(-1)[0]
+			result.extension_lc = '.' + split_by_dot.at(-1)
 			//debug && console.log({ extension_lc: result.extension_lc })
 			state.buffer = basename.slice(0, -result.extension_lc.length)
 			//debug && console.log({ buffer: state.buffer })
@@ -630,7 +630,7 @@ const _parse_memoized = micro_memoize(function _parse(basename: Basename, type: 
 		else if (state.digit_blocks) {
 			if (is_separator) {
 				state.digits_pattern += c
-				if (state.digit_blocks.slice(-1) !== '-') {
+				if (state.digit_blocks.at(-1) !== '-') {
 					state.digit_blocks += '-'
 
 					// this may be the end of a correct date
@@ -799,7 +799,7 @@ export function getꓽmedia_basename_normalisation_version(basename: Basename): 
 	if (splitted_by_dot.length <= 1)
 		return undefined
 
-	const ext = splitted_by_dot.slice(-1)[0]
+	const ext = splitted_by_dot.at(-1)
 	if (ext.length <= 2)
 		return undefined
 
@@ -850,7 +850,7 @@ export function getꓽfolder_basename_normalisation_version(basename: Basename):
 export function getꓽfolder_relpath_normalisation_version(relpath: RelativePath): number | undefined {
 	const splitted = relpath.split(path.sep)
 
-	const basename = splitted.slice(-1)[0]
+	const basename = splitted.at(-1)
 
 	if (splitted.length === 2
 		&& is_year(splitted[0])

@@ -159,10 +159,13 @@ async function present({
 	const dest_dir‿abspath = path.resolve(dest_dir)
 	console.log(`${indent}🗃  exposing pure code module to "${dest_dir‿abspath}"…`)
 
-
 	if (isAncestorDir(pure_module_details.root‿abspath, dest_dir‿abspath)) {
 		throw new Error(`Out-of-source build cannot target inside the pure-module!`)
 	}
+
+	const promises: Array<Promise<void>> = []
+
+	const PURE_MODULE_CONTENT_RELPATH = path.basename(pure_module_path)
 
 	if (isAncestorDir(dest_dir‿abspath, pure_module_details.root‿abspath)) {
 		// the pure module is inside the target dir
@@ -172,18 +175,15 @@ async function present({
 	else {
 		await fs.rm(dest_dir‿abspath, { recursive: true, force: true })
 		await fs.mkdir(dest_dir‿abspath, { recursive: true })
-	}
 
-	const promises: Array<Promise<void>> = []
-
-	const PURE_MODULE_CONTENT_RELPATH = path.basename(pure_module_path)
-	promises.push(
-		fs.symlink(
-			pure_module_details.root‿abspath,
-			path.resolve(dest_dir‿abspath, PURE_MODULE_CONTENT_RELPATH),
-			'dir'
+		promises.push(
+			fs.symlink(
+				pure_module_details.root‿abspath,
+				path.resolve(dest_dir‿abspath, PURE_MODULE_CONTENT_RELPATH),
+				'dir'
+			)
 		)
-	)
+	}
 
 	promises.push(fs.writeFile(
 		path.resolve(dest_dir‿abspath, '.npmrc'),

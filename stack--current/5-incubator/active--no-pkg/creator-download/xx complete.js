@@ -1384,7 +1384,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
 			 * @return {string} the parent folder, or ""
 			 */
 			var parentFolder = function (path) {
-				if (path.slice(-1) === "/") {
+				if (path.at(-1) === "/") {
 					path = path.substring(0, path.length - 1);
 				}
 				var lastSlash = path.lastIndexOf("/");
@@ -1399,7 +1399,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
 			 */
 			var forceTrailingSlash = function(path) {
 				// Check the name ends with a /
-				if (path.slice(-1) !== "/") {
+				if (path.at(-1) !== "/") {
 					path += "/"; // IE doesn't like substr(-1)
 				}
 				return path;
@@ -1554,7 +1554,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
 					var file = this.files[name];
 					if (!file) {
 						// Look for any folders
-						if (name.slice(-1) !== "/") {
+						if (name.at(-1) !== "/") {
 							name += "/";
 						}
 						file = this.files[name];
@@ -3896,7 +3896,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
 					}
 
 					// fail safe : if the name ends with a / it probably means a folder
-					if (!this.dir && this.fileNameStr.slice(-1) === "/") {
+					if (!this.dir && this.fileNameStr.at(-1) === "/") {
 						this.dir = true;
 					}
 				},

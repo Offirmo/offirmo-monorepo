@@ -1,4 +1,4 @@
-import { type RNGEngine } from '../../types.js'
+import type { RNGEngine } from '../../types.ts'
 
 /////////////////////////////////////////////////
 

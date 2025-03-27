@@ -191,7 +191,7 @@ function itㆍshouldㆍmigrateㆍcorrectly({
 		;(function create_or_update_latest_if_allowed() {
 			if (should_skip) return
 
-			const latest_snapshot_path = ALL_SNAPSHOTS.slice(-1)[0]
+			const latest_snapshot_path = ALL_SNAPSHOTS.at(-1)
 
 			const latest_snapshot_data = latest_snapshot_path
 				? fs.json.readSync(latest_snapshot_path)

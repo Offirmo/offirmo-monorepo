@@ -3,10 +3,10 @@ import { expect } from 'chai'
 import {
 	getꓽrandom_generator_ofꓽbool,
 	getꓽrandom_generator_ofꓽboolⵧweighted,
-} from './bool.js'
-import { type RNGEngine } from '../types.js'
-import { getꓽRNGⵧMathᐧrandom } from '../engines/MathRandom/index.js'
-import { ROUNDS_COUNT } from '../_test_helpers.js'
+} from './bool.ts'
+import type { RNGEngine } from '../types.ts'
+import { getꓽRNGⵧMathᐧrandom } from '../engines/MathRandom/index.ts'
+import { ROUNDS_COUNT } from '../_test_helpers.ts'
 
 /////////////////////////////////////////////////
 
