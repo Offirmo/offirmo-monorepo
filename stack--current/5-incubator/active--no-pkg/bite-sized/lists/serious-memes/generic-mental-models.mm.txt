@@ -1,16 +1,12 @@
--- https://fs.blog/mental-models/
--- tool https://explorer.globe.engineer/
 0-sum game
 1 or 2 way door
 12 steps
 1984
-ELI5 https://www.reddit.com/r/explainlikeimfive/
-Goodhart's law = When a measure becomes a target, it ceases to be a good measure https://en.wikipedia.org/wiki/Goodhart%27s_law
 1st thought v.s 2nd thought = 2nd = what we truly are
 3 -- trichotomy https://en.wikipedia.org/wiki/Trichotomy_(philosophy)
 3 -- trilemma https://en.wikipedia.org/wiki/Trilemma
-3 hardest things to say -- I was wrong, I need help, I love you -> also 10 https://kristyna.co/mindful-entrepreneurship/10-hardest-things-for-people-to-say
-3 man killers: money, power, sex https://www.artofmanliness.com/character/behavior/3-man-killers-sex/
+3 hardest things to say = I was wrong, I need help, I love you -> also 10 https://kristyna.co/mindful-entrepreneurship/10-hardest-things-for-people-to-say
+3 man killers = money, power, sex https://www.artofmanliness.com/character/behavior/3-man-killers-sex/
 3 sectors model -- 1 primary = raw materials
 3 sectors model -- 2 secondary = manufacturing
 3 sectors model -- 3 tertiary = services
@@ -37,7 +33,7 @@ Goodhart's law = When a measure becomes a target, it ceases to be a good measure
 5 top regrets of the dying https://en.wikipedia.org/wiki/The_Top_Five_Regrets_of_the_Dying
 80/20 rule "Pareto distribution" https://en.wikipedia.org/wiki/Pareto_distribution
 [ ] ++ https://savoir-sans-frontieres.com/
-[ ] +++ flinkliv.com https://flinkliv.com/
+[ ] +++ https://flinkliv.com/
 [ ] +++ https://fs.blog/mental-models/
 [ ] +++ https://paulgraham.com/articles.html
 [ ] +++ https://thewokesalaryman.com/
@@ -46,13 +42,14 @@ Goodhart's law = When a measure becomes a target, it ceases to be a good measure
 [ ] Futures studies https://en.wikipedia.org/wiki/Futures_studies + many concepts
 [ ] https://amir.rachum.com/mental-models/
 [ ] https://boz.com/
-[ ] https://en.wikipedia.org/wiki/Cognitive_bias
 [ ] https://en.wikipedia.org/wiki/Power_(social_and_political)
+[ ] https://fs.blog/mental-models/
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
 [ ] https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 [ ] https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time
 [ ] leadership development https://jchyip.medium.com/diy-leadership-development-develop-leadership-skills-74479cde0c05
 [ ] Nobel https://www.nobelprize.org/all-nobel-prizes-2024/
+[ ] tool https://explorer.globe.engineer/
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
 a country is a farm
 abandon animaux compagnie
@@ -62,7 +59,7 @@ accent -- miscommunication https://paulgraham.com/accents.html
 acceptance
 accepting oneself
 action -- deep dive & low-hanging fruits
-addictions -- casino -- je vais me refaire
+addictions -- casino -- "je vais me refaire"
 addictions -- casino -- maison qui gagne
 advocacy
 agency
@@ -108,9 +105,10 @@ best decision based on the information available at the time
 bet you’re fun at parties
 better ask for forgiveness than for permission
 better safe than sorry
-bias -- resulting = the tendency to judge a decision by its eventual outcome instead of based on the quality of the decision at the time it was made https://www.artofmanliness.com/career-wealth/career/one-mistake-never-to-make-when-leading-a-meeting/
 biases -- attractiveness
 biases -- baby-face
+biases -- cognitive = https://en.wikipedia.org/wiki/Cognitive_bias TODO
+biases -- resulting = the tendency to judge a decision by its eventual outcome instead of based on the quality of the decision at the time it was made https://www.artofmanliness.com/career-wealth/career/one-mistake-never-to-make-when-leading-a-meeting/
 bike shed effect = A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
 biodiversity -- global https://en.wikipedia.org/wiki/Global_biodiversity
 biodiversity -- loss https://en.wikipedia.org/wiki/Biodiversity_loss
@@ -278,6 +276,7 @@ distance sociale = ne pas être accessible pour être plus désirable (ex. manne
 diversité des esprits humains
 do fewer things well
 do I want my name on this? = tool to decide if sth is good https://lynnandtonic.com/thoughts/entries/put-your-name-on-it/
+don't blame the audience
 don't expect perfection -> trigger self-consciousness = counter-productive
 don't judge me / You do you. I’ll do me / I’m just living my truth. You live yours. https://aleteia.org/2022/12/18/why-saying-dont-judge-me-isnt-quite-right
 don't shoot the messenger
@@ -297,6 +296,7 @@ ego
 ego -- vs. craftman's pride?
 Eisenhower's Urgent/Important https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
 elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
+ELI5 https://www.reddit.com/r/explainlikeimfive/
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
 emotionally secure https://www.cnbc.com/2024/01/03/harvard-psychologist-if-you-answer-yes-to-any-of-these-questions-youre-more-emotionally-secure-than-most-people.html
 English
@@ -334,18 +334,20 @@ falling behind
 false flag https://en.wikipedia.org/wiki/False_flag
 false good idea
 farm rice theory https://www.nature.com/articles/s41467-024-44770-w
-fast reading
 fate
 Faustian Bargain = A man once sold his soul to a demon in exchange for knowledge. At first, it seemed like a smart trade. But the man lost in the long-run. Tragically, what the man lost was more valuable than what he earned. In short, he won the battle but lost the war.
-Fear Of Looking Dumb (FOLD)
+Fear of looking dumb (FOLD) = the one asking a question looks like a fool for 5 min, the one never asking questions stays a fool forever
 fear of missing out (FOMO)
 fear, uncertainty, death (FUD)
 feedback -- feedworward "in the future..." "next time..."
 femme/homme enfant https://www.wengood.com/fr/developpement-personnel/se-connaitre/art-femme-enfant
+Fermi paradox  -- see [great filters]
 Fermi paradox -- Drake equation https://en.wikipedia.org/wiki/Drake_equation
 Fermi paradox https://en.wikipedia.org/wiki/Fermi_paradox
 finance -- Benjamin Franklin's The Way to Wealth = 85 maxims https://www.artofmanliness.com/career-wealth/wealth/money-and-career-advice-from-benjamin-franklins-way-to-wealth/
-Financial Independence Retire Early (FIRE) https://www.reddit.com/r/financialindependence/
+finance -- FIRE "Financial Independence Retire Early" = not necessarily retire, but more like being free from worry / able to pick lower-paying jobs (no gambling / weapons / hyper competitive), not being a scared slave https://www.reddit.com/r/financialindependence/
+finance -- FIRE = be careful of life balance, not all eggs in the same basket, see [flourishing]
+finance -- FIRE = preparing for the 40s = lower motivation, desillusion, sandwich generation...
 Fingerprint for Success (F4S)
 first practice what you preach
 first principles https://fs.blog/first-principles/
@@ -358,7 +360,7 @@ founder mode https://paulgraham.com/foundermode.html
 frame challenge https://worldbuilding.meta.stackexchange.com/questions/7097/a-proposal-for-helping-users-understand-frame-challenges
 frat boy immature behavior https://www.smh.com.au/technology/snapchat-ceo-evan-spiegel-mortified-and-embarrassed-by-sexist-derogatory-emails-20140529-zrrgy.html
 free will https://en.wikipedia.org/wiki/Free_will
-friends / party friends "When you lose friends, it’s because you’ll realise that without alcohol, they don’t have much in common with you." https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd44714e619a
+friends / party friends = "you lose friends, because you realise that without alcohol, they don’t have much in common with you." https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd44714e619a
 fulfillment https://longform.asmartbear.com/fulfillment/
 fundamental attribution error https://en.wikipedia.org/wiki/Fundamental_attribution_error
 future of Earth https://en.wikipedia.org/wiki/Future_of_Earth https://en.wikipedia.org/wiki/Timeline_of_the_far_future
@@ -376,10 +378,12 @@ goals -- S.M.A.R.T. -- 03 A (Aspirational yet Achievable) Write Individual Goals
 goals -- S.M.A.R.T. -- 04 R (Relevant) Align the goal with your team’s mission, values, department/team OKRs, and strategic and business objectives. Clearly articulate the reason(s) for pursuing the goal and how this contributes to our short- and long-term objectives.
 goals -- S.M.A.R.T. -- 05 T (Time-bound) Create a specific end date for the goal. This instills a sense of urgency and helps you develop a work plan that prioritizes tasks leading up to the delivery date (e.g., one month, one quarter, or longer).
 goldilock zone / problem
+good > correct? = "bien trouvé"
 good life questions https://radreads.co/10k-questions/
 good neighbor https://en.wikipedia.org/wiki/Good_Neighbor_policy
 good taste https://paulgraham.com/goodtaste.html
-Goodhart’s Law = When a measure becomes a target, it ceases to be a good measure. One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
+Goodhart's law = When a measure becomes a target, it ceases to be a good measure https://en.wikipedia.org/wiki/Goodhart%27s_law
+Goodhart’s Law -- example: One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
 Gospel of Wealth -- Help those who will help themselves, to provide part of the means by which those who desire to improve may do so
 Gospel of Wealth = responsibility of philanthropy by the new upper class of self-made rich https://en.wikipedia.org/wiki/The_Gospel_of_Wealth
 grapevine
@@ -564,6 +568,7 @@ leadership -- timeless lessons https://www.linkedin.com/pulse/back-future-timele
 learned helplessness
 learning -- compounding effect
 learning -- compounding effect -- NOT! fast at start, but then plateau or very hard to improve. Need breakthrough or lateral/diversification
+learning -- fast reading
 learning -- lifelong = learning never stops
 learning -- membership of mutual improvement group https://www.artofmanliness.com/career-wealth/wealth/andrew-carnegie-financial-lessons/
 learning -- no speed limit = all the way through High School at the same measured pace as everyone else. I could have done whatever I wanted, but I thought there was a speed limit https://sive.rs/kimo
@@ -582,6 +587,8 @@ Lev Landau classification of physicists -- line 1 = perseverance, tenacity, ener
 Lev Landau classification of physicists -- line 2 = originality, genius, intuition
 Lev Landau classification of physicists https://books.google.com.au/books?id=nGcHEAAAQBAJ&pg=PA115&redir_esc=y#v=onepage&q&f=false
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
+life -- balance between living the moment and preparing the long-term = ex. of ppl dying at 50 before planned retirement / travelling (Also Gospel's parable)
+life -- fallacies -- "you are a tool. It sucks not being on top" = not true, "being of service to something or someone, which gives purpose"
 life -- stages -- 20+ boomerang https://en.wikipedia.org/wiki/Boomerang_Generation
 life -- stages -- 40+ sandwich https://en.wikipedia.org/wiki/Sandwich_generation
 life expectancy -- healthy "HALE" = average number of years that a person can expect to live in "full health" excluding the years lived in less than full health due to disease and/or injury
@@ -613,6 +620,7 @@ légende blanche -- colonisation
 légende blanche -- Lost Cause of the Confederacy https://en.wikipedia.org/wiki/Lost_Cause_of_the_Confederacy
 légende dorée
 légende noire -- inquisition
+Machiavel -- The Prince
 mainstream scientific consensus
 make it work, make it good, make it fast, make it work again
 making one's luck
@@ -812,12 +820,12 @@ Pulitzer prize -- biographies https://en.wikipedia.org/wiki/Pulitzer_Prize_for_B
 purchasing "messy middle" https://www.thinkwithgoogle.com/intl/en-emea/consumer-insights/consumer-journey/navigating-purchase-behavior-and-decision-making/
 put into words
 question authority
+race -- activism -- Double V campaign https://en.wikipedia.org/wiki/Double_V_campaign
 race -- eugenism
 race -- Nigeria
 race -- slavery
-race -- white supremacy https://en.wikipedia.org/wiki/Grandfather_clause
+race -- white supremacy -- hidden intent behind laws ex. https://en.wikipedia.org/wiki/Grandfather_clause
 race to the bottom
-racism -- Double V campaign https://en.wikipedia.org/wiki/Double_V_campaign
 radical candor
 rainbow code https://en.m.wikipedia.org/wiki/Rainbow_Code
 random acts of kindness -- bingo
@@ -830,6 +838,11 @@ re-thinking established patterns
 Reach Impact Confidence Estimate (RICE)
 reading -- Campbell: "I would get nine hours of sheer reading done a day. And this went on for five years straight"
 reading -- science fiction
+real -- vs. entertaining = infotainment
+real -- vs. interesting = in the context of attention economy
+real -- vs. lovable = ex. of iPhone camera's over-processing of photos
+real / istic (replica of the real world) -- vs. expected / trained = movie sound effects, ex. car door closing
+real / plausible -- vs. theatrical = ex. extra lighting effects in movies
 reality distortion field https://en.wikipedia.org/wiki/Reality_distortion_field
 rebound effect https://blog.jim-nielsen.com/2024/notes-on-making-software-by-peter-van-hardenberg/
 recruiting others to support you in addressing issue
@@ -1050,7 +1063,6 @@ works of mercy -- spiritual
 works of mercy https://en.wikipedia.org/wiki/Works_of_mercy
 xenia https://greekmythcomix.com/comic/how-to-do-xenia/
 XY problem = "what are you trying to achieve?" https://xyproblem.info/
-you are a tool. It sucks not being on top = not true, "being of service to something or someone, which gives purpose"
 you are the company you keep
 you can bring a horse to water...
 zero-sum game https://en.wikipedia.org/wiki/Zero-sum_game

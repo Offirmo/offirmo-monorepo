@@ -25,7 +25,7 @@ type DependencyType =
 	| 'dev'
 	| 'peer'
 	| 'optional'
-	| 'vendored' // special
+	| 'vendored' // special, TODO
 
 interface Dependency {
 	label: string
@@ -50,7 +50,7 @@ interface PureModuleDetails {
 	description?: string
 	isꓽpublished: boolean
 	author: string
-	license: string // TODO SPDX
+	license: undefined | string // TODO SPDX
 	source: FileEntry
 	hasꓽside_effects: boolean
 	hasꓽtestsⵧunit: boolean
@@ -71,6 +71,8 @@ interface PureModuleDetails {
 	// TODO engines ex. node
 }
 
+const MANIFEST‿basename = 'MANIFEST.json5'
+
 /////////////////////////////////////////////////
 
 function _createꓽresult(root‿abspath: string): PureModuleDetails {
@@ -81,6 +83,10 @@ function _createꓽresult(root‿abspath: string): PureModuleDetails {
 
 		return path.basename(_path)
 	})()
+
+	// TODO not this tool's job to set defaults:
+	// TODO one day: caller to provide defaults
+
 	return {
 		root‿abspath,
 
@@ -98,9 +104,14 @@ function _createꓽresult(root‿abspath: string): PureModuleDetails {
 		extra_entries: {},
 		depsⵧnormal: new Set<string>(),
 		depsⵧdev: new Set<string>([
-			'@offirmo-private/monorepo-scripts',
-			'@offirmo/unit-test-toolbox',
+			// implicit deps:
+
+			// common tools
 			'npm-run-all',
+			// obvious in our monorepo
+			'@offirmo-private/monorepo-scripts',
+			// encourage unit tests
+			'@offirmo/unit-test-toolbox',
 		]),
 		depsⵧpeer: new Set<string>(),
 		depsⵧoptional: new Set<string>(),
@@ -108,6 +119,8 @@ function _createꓽresult(root‿abspath: string): PureModuleDetails {
 		languages: new Set<ProgLang>(),
 	}
 }
+
+/////////////////////////////////////////////////
 
 function _isꓽin_excluded_folder(entry: FileEntry): boolean {
 	const { path‿rel } = entry
@@ -135,6 +148,38 @@ function _isꓽignored(entry: FileEntry): boolean {
 	return false
 }
 
+function getꓽProgLangs(entry: FileEntry): ProgLang[] {
+	const { ext } = entry
+	switch(true) {
+		case ['.js'].includes(ext):
+			return [ 'js' ]
+
+		case ['.jsx'].includes(ext):
+			return [ 'js', 'jsx' ]
+
+		case ['.ts'].includes(ext):
+			return [ 'ts' ]
+
+		case ['.tsx'].includes(ext):
+			return [ 'ts', 'jsx' ]
+
+		case ['.html'].includes(ext):
+			return [ 'html' ]
+
+		case ['.css'].includes(ext):
+			return [ 'css' ]
+
+		case ['.md'].includes(ext):
+			return [ 'md' ]
+
+		/*case ['.json',].includes(ext):
+			return [ 'json' ]*/
+
+		default:
+			throw new Error(`Unsupported language for extension "${ext}"!`)
+	}
+}
+
 // examples ? demo?
 function getꓽdeptype(entry: FileEntry): DependencyType {
 	const { path‿rel, extⵧsub } = entry
@@ -147,6 +192,8 @@ function getꓽdeptype(entry: FileEntry): DependencyType {
 
 	return 'normal'
 }
+
+/////////////////////////////////////////////////
 
 function assertꓽmigrated(entry: FileEntry, { indent = ''} = {}): void {
 	let has_pending_migration = false
@@ -188,39 +235,8 @@ function assertꓽnormalized(entry: FileEntry, { indent = ''} = {}): void {
 	// TODO UTF-8 etc
 }
 
-function getꓽProgLangs(entry: FileEntry): ProgLang[] {
-	const { ext } = entry
-	switch(true) {
-		case ['.js'].includes(ext):
-			return [ 'js' ]
+/////////////////////////////////////////////////
 
-		case ['.jsx'].includes(ext):
-			return [ 'js', 'jsx' ]
-
-		case ['.ts'].includes(ext):
-			return [ 'ts' ]
-
-		case ['.tsx'].includes(ext):
-			return [ 'ts', 'jsx' ]
-
-		case ['.html'].includes(ext):
-			return [ 'html' ]
-
-		case ['.css'].includes(ext):
-			return [ 'css' ]
-
-		case ['.md'].includes(ext):
-			return [ 'md' ]
-
-		/*case ['.json',].includes(ext):
-			return [ 'json' ]*/
-
-		default:
-			throw new Error(`Unsupported language for extension "${ext}"!`)
-	}
-}
-
-const MANIFEST‿basename = 'MANIFEST.json5'
 async function getꓽpure_module_details(module_path: string, { indent = ''} = {}) {
 	const root‿abspath = path.resolve(module_path)
 	console.log(`${indent}🗂  analysing pure code module at "${root‿abspath}"…`)
@@ -319,7 +335,13 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 	raw_deps.push({ label: 'tiny-invariant', type: 'normal'})
 	// TODO add extended error types
 
-	/*if(!entryⵧmanifest) {
+	if(!result.source) {
+		throw new Error(`No "source" candidate found!`)
+	}
+
+	/* not necessarily needed!
+	 * Also maybe create one if missing
+	if(!entryⵧmanifest) {
 		throw new Error(`No MANIFEST found!`)
 	}*/
 
@@ -361,11 +383,6 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 
 	return result
 }
-
-// TODO implicit deps ex. if has tests = mocha
-// also always dev deps for runner
-
-// node --experimental-strip-types ./X-spikes/parse-import-ts/index.mjs
 
 /////////////////////////////////////////////////
 

@@ -129,6 +129,14 @@ const pkg_version_resolver = new PkgVersionResolver()
 
 /////////////////////////////////////////////////
 
+function isAncestorDir(parent: string, child: string): boolean {
+	const parentDirs = parent.split(path.sep).filter(dir => !!dir);
+	const childDirs = child.split(path.sep).filter(dir => !!dir);
+	return parentDirs.every((dir, i) => childDirs[i] === dir);
+}
+
+/////////////////////////////////////////////////
+
 interface Params {
 	pure_module_path: string
 	pure_module_details?: PureModuleDetails
@@ -151,10 +159,31 @@ async function present({
 	const dest_dir‿abspath = path.resolve(dest_dir)
 	console.log(`${indent}🗃  exposing pure code module to "${dest_dir‿abspath}"…`)
 
-	await fs.rm(dest_dir‿abspath, { recursive: true, force: true })
-	await fs.mkdir(dest_dir‿abspath, { recursive: true })
+
+	if (isAncestorDir(pure_module_details.root‿abspath, dest_dir‿abspath)) {
+		throw new Error(`Out-of-source build cannot target inside the pure-module!`)
+	}
+
+	if (isAncestorDir(dest_dir‿abspath, pure_module_details.root‿abspath)) {
+		// the pure module is inside the target dir
+		// do not remove any file
+		// TODO one day clear everything except the pure-module
+	}
+	else {
+		await fs.rm(dest_dir‿abspath, { recursive: true, force: true })
+		await fs.mkdir(dest_dir‿abspath, { recursive: true })
+	}
 
 	const promises: Array<Promise<void>> = []
+
+	const PURE_MODULE_CONTENT_RELPATH = path.basename(pure_module_path)
+	promises.push(
+		fs.symlink(
+			pure_module_details.root‿abspath,
+			path.resolve(dest_dir‿abspath, PURE_MODULE_CONTENT_RELPATH),
+			'dir'
+		)
+	)
 
 	promises.push(fs.writeFile(
 		path.resolve(dest_dir‿abspath, '.npmrc'),
@@ -170,10 +199,13 @@ package-lock=false
 		`
 # ${pure_module_details.name}
 
-${pure_module_details.description}
+${pure_module_details.description || 'TODO description'}
 `.trimStart(),
 		{ encoding: 'utf-8' },
 	))
+
+	const SRC_RELPATH = path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.source.path‿rel)
+	const SRC_DIR_RELPATH = path.dirname(SRC_RELPATH)
 
 	promises.push(write_json_file(
 		path.resolve(dest_dir‿abspath, 'tsconfig.json'),
@@ -181,20 +213,11 @@ ${pure_module_details.description}
 			"extends": path.relative(dest_dir‿abspath, ts__config__path),
 			"include": [
 				path.relative(dest_dir‿abspath, ts__custom_types__path) + '/*.d.ts',
-				"src/**/*.ts"
+				`${SRC_DIR_RELPATH}/**/*.ts`
 			]
 		}
 	))
 
-	promises.push(
-		fs.symlink(
-			pure_module_details.root‿abspath,
-			path.resolve(dest_dir‿abspath, 'src'),
-			'dir'
-		)
-	)
-
-	const source_path = path.relative(dest_dir‿abspath, path.resolve(dest_dir‿abspath, 'src', pure_module_details.source.path‿rel))
 
 	if (pure_module_details.depsⵧvendored.size) {
 		throw new Error(`Not implemented!`)
@@ -214,10 +237,10 @@ ${pure_module_details.description}
 			"type": "module",
 			"exports": {
 				".": {
-					"import": './' + source_path,
+					"import": './' + SRC_RELPATH,
 				}
 			},
-				"source": source_path,
+				"source": SRC_RELPATH,
 			}
 
 		const all_declared_deps: Set<string> = (new Set<string>())
@@ -254,7 +277,7 @@ ${pure_module_details.description}
 
 			if (pure_module_details.hasꓽtestsⵧunit) {
 				scripts['test--unit'] =
-					`node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './src/**/*.tests.ts'`
+					`node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './${SRC_DIR_RELPATH}/**/*.tests.ts'`
 					//  --experimental-require-module
 			}
 

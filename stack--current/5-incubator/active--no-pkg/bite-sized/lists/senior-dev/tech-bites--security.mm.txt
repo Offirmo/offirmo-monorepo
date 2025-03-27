@@ -23,6 +23,7 @@ filtering = to pass input data through a logic that will hold parts of input tha
 glassbox review = vs blackbox, looking at what happens when stimulated
 guidelines -- CGI security https://www.cgisecurity.com/owasp/html/ch04.html
 guidelines -- S/O https://stackoverflow.com/questions/2794016/what-should-every-programmer-know-about-security
+have I been pwned? https://www.troyhunt.com/
 input -- never trust any input!
 input -- validate input from all untrusted sources - use whitelists not blacklists
 input -- validation -- 2 levels : Syntactical and Semantic
