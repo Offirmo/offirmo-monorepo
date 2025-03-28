@@ -18,6 +18,7 @@
 	},
 	"dependencies": {
 		"fs-extra": "^11",
+		"ignore-walk": "^7",
 		"json5": "^2",
 		"parse-imports-ts": "^1",
 		"tiny-invariant": "^1",

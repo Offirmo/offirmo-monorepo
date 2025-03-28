@@ -178,6 +178,8 @@ only the paranoid survive -- 2 spot threats before they explode = if you wait un
 only the paranoid survive -- 3 reinvent before you're forced to = industries shit, adapt or die
 path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
 personas -- data savvy vs data shy
+piracy -- anti = do not make the product worse for paying customers, pirates wouldn't have paid anyway
+piracy -- pirates = not usually people who were ever considering paying for it
 pitch -- 01 Why the world needs this now
 pitch -- 02 Our approach, team, and why we win
 pitch -- 03 How big this could get. Napkin math

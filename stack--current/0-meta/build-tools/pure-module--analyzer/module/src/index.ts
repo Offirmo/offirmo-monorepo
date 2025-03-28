@@ -5,6 +5,7 @@ import * as path from 'node:path'
 import { readFileSync } from 'node:fs'
 import { isBuiltin } from 'node:module'
 
+import walk from 'ignore-walk'
 import { parse as parseImports } from 'parse-imports-ts'
 import JSON5 from 'json5'
 import { writeJsonFile as write_json_file } from 'write-json-file'
@@ -195,7 +196,7 @@ function getꓽProgLangs(entry: FileEntry): ProgLang[] {
 			return [ 'json' ]*/
 
 		default:
-			throw new Error(`Unsupported language for extension "${ext}"!`)
+			throw new Error(`Unsupported language for extension "${ext}" (${entry.basename})!`)
 	}
 }
 
@@ -260,7 +261,10 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 	const root‿abspath = path.resolve(module_path)
 	console.log(`${indent}🗂  analysing pure code module at "${root‿abspath}"…`)
 
-	const files = lsFilesRecursiveSync(root‿abspath)
+	const files = walk.sync({ path: root‿abspath })
+		.map(p => path.resolve(root‿abspath, p))
+		.sort()
+	//const files = lsFilesRecursiveSync(root‿abspath)
 
 	const file_entries: Array<FileEntry> = files.map(path‿abs => {
 		const basename = path.basename(path‿abs)

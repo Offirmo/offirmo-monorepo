@@ -3,7 +3,7 @@ import path from 'node:path'
 import fs from 'fs-extra'
 
 // hat tip to https://stackoverflow.com/a/24594123/587407
-export function lsDirsSync(srcpath, options = {}) {
+export function lsDirsSync(srcpath: string, options = {}): Array<string> {
 	options = {
 		full_path: true, // because it's what we usually want
 		...options,
@@ -36,7 +36,7 @@ export function lsDirsSync(srcpath, options = {}) {
 	return result.sort()
 }
 
-export function lsFilesSync(srcpath, options = {}) {
+export function lsFilesSync(srcpath: string, options = {}): Array<string> {
 	options = {
 		full_path: true, // because it's what we usually want
 		...options,
@@ -69,7 +69,7 @@ export function lsFilesSync(srcpath, options = {}) {
 	return result.sort()
 }
 
-export function lsFilesRecursiveSync(srcpath) {
+export function lsFilesRecursiveSync(srcpath: string): Array<string> {
 	const options = {
 		full_path: true, // because it's what we usually want
 	}
