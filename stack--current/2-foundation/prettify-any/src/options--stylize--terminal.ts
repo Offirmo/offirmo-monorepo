@@ -1,6 +1,6 @@
-import {
+import type {
 	StylizeOptions,
-} from './types.js'
+} from './types.ts'
 
 /////////////////////////////////////////////////
 

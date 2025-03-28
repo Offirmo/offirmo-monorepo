@@ -1,7 +1,7 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { Options, State } from './types.js'
-import { getꓽoptionsⵧfull } from './options.js'
+import type { Options, State } from './types.ts'
+import { getꓽoptionsⵧfull } from './options.ts'
 
 /////////////////////////////////////////////////
 

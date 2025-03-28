@@ -5,46 +5,38 @@
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2024.esm/index.js"
+			"import": "./src/index.ts"
 		}
 	},
-	"module": "dist/src.es2024.esm/index.js",
-	"typings": "dist/src.es2024.esm/index.d.ts",
 	"source": "src/index.ts",
-
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/ts-types": "*",
 		"@offirmo-private/type-detection": "*",
-		"indent-string": "^5",
 		"terminal-size": "^4",
 		"tiny-invariant": "^1"
 	},
-
 	"scripts": {
-		"clean": "monorepo-script--clean-package …dist",
-
-		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
-		"_build:prod": "monorepo-script--build-typescript-package",
-
-		"dev": "run-s clean _build:dev:watch",
-		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/**/*spec.js'",
-		"build": "run-s  clean _build:prod"
+		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './src/**/*.tests.ts'",
+		"test--ts": "tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"test": "run-s test--unit test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "*",
-		"@types/prettyjson": "^0",
+		"@types/node": "^22",
 		"chalk": "^5",
 		"npm-run-all": "^4",
 		"prettyjson": "^1",
-		"tslib": "^2"
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

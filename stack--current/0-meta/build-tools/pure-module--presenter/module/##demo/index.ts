@@ -43,7 +43,11 @@ async function refresh_pure_module(pure_module_path: string) {
 
 /////////////////////////////////////////////////
 
-await refresh_pure_module( '../../../../../1-stdlib/timestamps/module/' )
-await refresh_pure_module( '../../../../../1-stdlib/random/module/')
-await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--analyzer/module/')
-await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/')
+//await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--analyzer/module/')
+//await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/')
+//await refresh_pure_module( '../../../../../1-stdlib/timestamps/module/' )
+//await refresh_pure_module( '../../../../../1-stdlib/random/module/')
+await refresh_pure_module( '../../../../../2-foundation/prettify-any/src/')
+
+// not ready
+//await refresh_pure_module( '../../../../../2-foundation/utils--error/src/')

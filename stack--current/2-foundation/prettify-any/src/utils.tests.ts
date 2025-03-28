@@ -1,11 +1,11 @@
 import chalk from 'chalk'
-import { injectꓽlibꓽchalk } from './injectable-lib--chalk.js'
+import { injectꓽlibꓽchalk } from './injectable-lib--chalk.ts'
 injectꓽlibꓽchalk(chalk as any)
 import { expect } from 'chai'
 
 import {
 	cmp,
-} from './utils.js'
+} from './utils.ts'
 
 /////////////////////////////////////////////////
 

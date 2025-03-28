@@ -4,13 +4,13 @@ import getꓽterminal_size from 'terminal-size'
 import chalk from 'chalk'
 import { render as prettyjson } from 'prettyjson'
 
-import { injectꓽlibꓽchalk } from './injectable-lib--chalk.js'
+import { injectꓽlibꓽchalk } from './injectable-lib--chalk.ts'
 injectꓽlibꓽchalk(chalk as any)
 
 import {
 	prettifyꓽany as _prettify_any,
-} from './v2.js'
-import { getꓽstylize_optionsⵧterminal } from './options--stylize--terminal.js'
+} from './v2.ts'
+import { getꓽstylize_optionsⵧterminal } from './options--stylize--terminal.ts'
 
 /////////////////////////////////////////////////
 
