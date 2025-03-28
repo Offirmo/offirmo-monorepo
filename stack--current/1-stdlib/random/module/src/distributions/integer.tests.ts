@@ -2,7 +2,7 @@ import { expect } from 'chai'
 
 import type { RNGEngine } from '../types.ts'
 import { getꓽRNGⵧMathᐧrandom } from '../engines/MathRandom/index.ts'
-import { ROUNDS_COUNT } from '../_test_helpers.ts'
+import { ROUNDS_COUNT } from '../__fixtures/_shared.ts'
 import { getꓽrandom_generator_ofꓽintegerⵧbetween } from './integer.ts'
 
 /////////////////////////////////////////////////

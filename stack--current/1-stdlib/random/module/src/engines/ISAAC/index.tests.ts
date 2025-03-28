@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { getꓽRNGⵧISAAC32 } from './index.ts'
-import { itᐧshouldᐧbeᐧaᐧvalidᐧengine } from '../_test_helpers.ts'
+import { itᐧshouldᐧbeᐧaᐧvalidᐧengine } from '../__fixtures/_shared.ts'
 import type { Int32 } from '../../types.ts'
 
 /////////////////////////////////////////////////

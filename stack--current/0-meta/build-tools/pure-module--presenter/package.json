@@ -1,19 +1,41 @@
 {
 	"name": "@offirmo-private/pure-module--presenter",
+	"description": "Create the technical files to turn a pure module into a bolt/yarn package",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
-
+	"license": "Unlicense",
+	"private": true,
+	"sideEffects": false,
 	"type": "module",
-	"main": "module/src/index.ts",
-
+	"exports": {
+		".": {
+			"import": "./module/src/index.ts"
+		}
+	},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
 	"dependencies": {
 		"@offirmo-private/pure-module--analyzer": "*",
-		"fs-extra": "^11",
 		"package-json": "^10",
-		"parse-imports-ts": "^1",
-		"semver": "^7"
+		"semver": "^7",
+		"tiny-invariant": "^1",
+		"write-json-file": "^6"
 	},
 	"scripts": {
-		"demo": "node --experimental-strip-types ./module/##demo/index.ts"
+		"test--ts": "tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"demo": "node --experimental-strip-types ./module/##demo/index.ts",
+		"test": "run-s test--ts"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "*",
+		"@types/node": "^22",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

@@ -165,6 +165,11 @@ function _isꓽignored(entry: FileEntry): boolean {
 		return true
 	}
 
+	if (entry.basename === '.gitignore') {
+		// ???
+		return true
+	}
+
 	return false
 }
 
@@ -201,13 +206,16 @@ function getꓽProgLangs(entry: FileEntry): ProgLang[] {
 }
 
 // examples ? demo?
-function getꓽdeptype(entry: FileEntry): DependencyType {
+function inferꓽdeptype_from_caller(entry: FileEntry): DependencyType {
 	const { path‿rel, extⵧsub } = entry
 
-	if (path‿rel.includes('/__fixtures/'))
+	if (path‿rel.includes('/__'))
 		return 'dev'
 
-	if (extⵧsub === 'tests')
+	if (path‿rel.includes('/##'))
+		return 'dev'
+
+	if (extⵧsub === '.tests')
 		return 'dev'
 
 	return 'normal'
@@ -261,7 +269,10 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 	const root‿abspath = path.resolve(module_path)
 	console.log(`${indent}🗂  analysing pure code module at "${root‿abspath}"…`)
 
-	const files = walk.sync({ path: root‿abspath })
+	const files = walk.sync({
+			path: root‿abspath,
+			ignoreFiles: [ '.gitignore' ],
+		})
 		.map(p => path.resolve(root‿abspath, p))
 		.sort()
 	//const files = lsFilesRecursiveSync(root‿abspath)
@@ -337,7 +348,11 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 	file_entries.forEach(entry => {
 		const is_excluded = _isꓽin_excluded_folder(entry) || _isꓽignored(entry)
 		const { path‿rel } = entry
-		console.log(`${indent} ↳ 📄`, path‿rel, is_excluded ? '🚫' : '')
+		console.log(
+			`${indent} ↳ 📄`, path‿rel,
+			is_excluded ? '🚫' : '',
+			//entry.extⵧsub, entry.ext, entry.extⵧextended,
+		)
 		if (is_excluded)
 			return
 
@@ -369,9 +384,12 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 		langs.forEach(lang => result.languages.add(lang))
 		if (langs.includes('ts')) {
 			const content = readFileSync(entry.path‿abs, 'utf8')
+			const dep_type = inferꓽdeptype_from_caller(entry)
+			console.log(`${indent}      inferred as: ${dep_type}`)
+
 			const imports = parseImports(content)
 			imports.forEach(({name, type}) => {
-				console.log(`${indent}    ↘ ${name} ${type}`)
+				console.log(`${indent}    ↘ import ${type === 1 ? 'type ' : ''}${name}`)
 
 				if (isBuiltin(name)) {
 					 // built-in node module
@@ -387,13 +405,20 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 				}
 
 				switch (type ?? 1) {
-					case 0:
-						raw_deps.push({ label: name, type: 'normal' })
+					case 0: {
+						if ((name === 'chai' || name === 'sinon') && dep_type !== 'dev') {
+							throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the file name/folder!')
+						}
+
+						raw_deps.push({ label: name, type: dep_type })
 						break
+					}
+
 					case 1:
 						// types ar for dev
 						raw_deps.push({ label: name, type: 'dev' })
 						break
+
 					default:
 						throw new Error(`Unknown import type "${type}"!`)
 				}

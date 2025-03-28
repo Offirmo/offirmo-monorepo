@@ -9,10 +9,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 /////////////////////////////////////////////////
 
 import { getꓽpure_module_details } from '@offirmo-private/pure-module--analyzer'
-import { present } from '@offirmo-private/pure-module--presenter'
+import { PkgVersionResolver, present } from '@offirmo-private/pure-module--presenter'
 
-async function refresh_pure_module(pure_module_abspath: string) {
+const pkg_version_resolver = new PkgVersionResolver()
 
+async function refresh_pure_module(pure_module_path: string) {
+	console.log('---------------------------------------')
+	const pure_module_abspath = path.resolve(__dirname, pure_module_path)
 	const pure_module_details = await getꓽpure_module_details(
 		pure_module_abspath,
 		{
@@ -33,14 +36,14 @@ async function refresh_pure_module(pure_module_abspath: string) {
 
 		ts__config__path: path.resolve(__dirname, '../../../../tsconfig.json'),
 		ts__custom_types__path: path.resolve(__dirname, '../../../../typescript-custom-typings'),
+
+		pkg_version_resolver,
 	})
 }
 
 /////////////////////////////////////////////////
 
-await refresh_pure_module(
-	//path.resolve(__dirname, '../../../../../1-stdlib/timestamps/module/'),
-	//path.resolve(__dirname, '../../../../../1-stdlib/random/module/'),
-	path.resolve(__dirname, '../../../../../0-meta/build-tools/pure-module--analyzer/module/'),
-	//path.resolve(__dirname, '../../../../../0-meta/build-tools/pure-module--presenter/module/'),
-)
+await refresh_pure_module( '../../../../../1-stdlib/timestamps/module/' )
+await refresh_pure_module( '../../../../../1-stdlib/random/module/')
+await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--analyzer/module/')
+await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/')

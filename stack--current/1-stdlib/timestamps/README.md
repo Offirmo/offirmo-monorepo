@@ -1,3 +1,3 @@
-# timestamps
+# @offirmo-private/timestamps
 
-TODO description in MANIFEST.json5
+string timestamps generators

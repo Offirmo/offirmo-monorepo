@@ -1,5 +1,5 @@
 import { getꓽRNGⵧMathᐧrandom } from './index.ts'
-import { itᐧshouldᐧbeᐧaᐧvalidᐧengine } from '../_test_helpers.ts'
+import { itᐧshouldᐧbeᐧaᐧvalidᐧengine } from '../__fixtures/_shared.ts'
 
 /////////////////////////////////////////////////
 
