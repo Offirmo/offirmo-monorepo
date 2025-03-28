@@ -176,8 +176,8 @@ data loss
 data retrieval
 data store -- data type -- BLOB (Binary Large Object) https://stackoverflow.com/questions/211895/storing-documents-as-blobs-in-a-database-any-disadvantages
 data store -- data type -- CLOB (character large object) value can be up to 2,147,483,647 characters long. A CLOB is used to store unicode character-based data, such as large documents in any character set. https://docs.oracle.com/javadb/10.10.1.2/ref/rrefclob.html
-data store -- data type -- JSON, BSON = BSON supposed to be more efficient in space but at the same time also wants to improve traversal by storing extra data, so not always better. depends on the data. 
-data store -- database -- Graph = Neo4J, 
+data store -- data type -- JSON, BSON = BSON supposed to be more efficient in space but at the same time also wants to improve traversal by storing extra data, so not always better. depends on the data.
+data store -- database -- Graph = Neo4J,
 data store -- database -- NoSQL = unstructured or semi-structured, less of everything SQL
 data store -- database -- relational -- Codd's 12 rules https://en.wikipedia.org/wiki/Codd%27s_12_rules
 data store -- database -- relational/SQL = structured, schema, relationships, transactions
@@ -318,8 +318,8 @@ metrics layer -- 01 system = CPU, memory, disk...
 metrics layer -- 02 application = queues, timing (DB calls), flow, cache hit rate...
 metrics layer -- 03 business = usage and core actions
 micro-frontend https://micro-frontends.org/ https://the-tractor.store/
-microservice -- design -- IDEALS -- 01 Interface segregation = 
-microservice -- design -- IDEALS -- 02 Deployability (is on you) = 
+microservice -- design -- IDEALS -- 01 Interface segregation =
+microservice -- design -- IDEALS -- 02 Deployability (is on you) =
 microservice -- design -- IDEALS -- 03 Event-driven = event-driven microservices are more likely to meet the scalability and performance requirements
 microservice -- design -- IDEALS -- 04 Availability over consistency = see CAP theorem
 microservice -- design -- IDEALS -- 05 Loose coupling = facade, adapter, wrapper
@@ -398,12 +398,12 @@ protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https:/
 proxy server = intermediaries between client and servers. improve performance by caching, provide security by filtering incoming traffic, enable load balancing for efficient distribution of requests
 pub/sub -- event -- identifier -- amqp convention https://www.rabbitmq.com/tutorials/amqp-concepts
 pub/sub -- event -- identifier = usually should help with topics, see "topics"
-pub/sub -- topics -- disembiguate = Ambiguity in the topic should be minimised as far as possible. The more ambiguous the topic, the more work the consumer has to do in order to interpret and the process/discard the event.
+pub/sub -- topics -- disambiguate = Ambiguity in the topic should be minimised as far as possible. The more ambiguous the topic, the more work the consumer has to do in order to interpret and the process/discard the event.
 pub/sub -- topics -- event/action = should indicate the event (action) that occurred: Was something created, updated, notified, shut down etc?
 pub/sub -- topics -- source? service? (disputable) or owner?
 pub/sub -- topics -- what = Events typically operate on something. I.e. a comment was created, a user was notified etc. The "what" should thus also form part of the topic.
 pub/sub -- topics = a way to shard a large event stream so that consumers don't have to listen to all events, greatly improving scalability. It does however raise the question of how topics are/should be defined.
-PubSub = Publish-Subscribe 
+PubSub = Publish-Subscribe
 push -- long polling, server-side events (SSE), and WebSockets
 push vs pull
 rate limiting -- headers https://bitbucket.org/blog/introducing-scaled-rate-limits-for-bitbucket-cloud-api
@@ -527,7 +527,7 @@ time -- leap second
 time -- leap second -- leap smear https://googleblog.blogspot.com/2011/09/time-technology-and-leaping-seconds.html
 time = difficult yet important for distributed https://unix4lyfe.org/time/
 Time to Detection (TTD)
-unbounded activity = An API endpoint should never perform an unbounded number of reads or writes. That means you cannot have an endpoint to export all your bank transactions (potentially unbounded reads), or an endpoint to import all transactions from another platform (potentially unbounded writes) https://www.linkedin.com/posts/thecodingteacher_an-api-endpoint-should-never-perform-an-unbounded-activity-7268647549333299200-NxP_/ 
+unbounded activity = An API endpoint should never perform an unbounded number of reads or writes. That means you cannot have an endpoint to export all your bank transactions (potentially unbounded reads), or an endpoint to import all transactions from another platform (potentially unbounded writes) https://www.linkedin.com/posts/thecodingteacher_an-api-endpoint-should-never-perform-an-unbounded-activity-7268647549333299200-NxP_/
 user flow -- error rate = percentage of unique users encountering at least one failure when attempting to perform one of the user operations composing the user flow
 user flow = actions users can perform to achieve a specific outcome, for example, uploading media or sharing a document
 user management -- Domain Enabled Signup

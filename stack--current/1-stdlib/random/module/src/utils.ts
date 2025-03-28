@@ -64,7 +64,6 @@ function _toꓽInt32Arrayⵧstring(s: string): Int32Array {
 
 function getꓽseed‿Int32Array(raw_seed: Seed | Int32Array): Int32Array {
 	let normalized_seed = ((): Int32Array => {
-
 		if(typeof raw_seed === 'string') {
 			assert(raw_seed.length > 0, `seed as string should not be empty!`)
 			return _toꓽInt32Arrayⵧstring(raw_seed)
@@ -76,7 +75,7 @@ function getꓽseed‿Int32Array(raw_seed: Seed | Int32Array): Int32Array {
 		}
 
 		if (Array.isArray(raw_seed)) {
-			return _toꓽInt32Arrayⵧarray(raw_seed)
+			return _toꓽInt32Arrayⵧarray(raw_seed as Array<number>)
 		}
 
 		assert((raw_seed as any)?.BYTES_PER_ELEMENT === 4, `_seed: wrong TypeArray type!`)

@@ -1,0 +1,4 @@
+{
+	description: "Walk/parse a pure module and extra infos from it",
+	status: 'tech-demo',
+}

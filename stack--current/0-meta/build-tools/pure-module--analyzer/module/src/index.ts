@@ -47,6 +47,8 @@ type ProgLang =
 interface PureModuleDetails {
 	root‿abspath: string
 
+	status: string // EXPERIMENTAL rating of modules spike -> demo -> stable -> core -> critical ?
+
 	// everything needed to build package.json
 	namespace: string // namespace + name mandatory (needed at this stage already)
 	name: string
@@ -101,6 +103,7 @@ function _createꓽresult(root‿abspath: string): PureModuleDetails {
 	return {
 		root‿abspath,
 
+		status: 'stable',
 		namespace: '@offirmo-private',
 		name,
 		version: '0.0.1',
@@ -335,6 +338,14 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 			result.description = data.description
 			unprocessed_keys.delete('description')
 		}
+		if (unprocessed_keys.has('status')) {
+			result.status = data.status
+			unprocessed_keys.delete('status')
+		}
+		if (unprocessed_keys.has('name')) {
+			result.name = data.name
+			unprocessed_keys.delete('name')
+		}
 
 		if (unprocessed_keys.size) {
 			throw new Error(`Unknown keys in manifest: "${Array.from(unprocessed_keys).join(', ')}"!`)
@@ -435,8 +446,11 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 		raw_deps.push({ label: 'tslib', type: 'peer' })
 		raw_deps.push({ label: 'typescript', type: 'dev' })
 	}
+
 	// encourage safe practices
-	raw_deps.push({ label: 'tiny-invariant', type: 'normal'})
+	if (!result.isꓽpublished) {
+		raw_deps.push({ label: 'tiny-invariant', type: 'normal'})
+	}
 	// TODO add extended error types
 
 	if(!result.source) {

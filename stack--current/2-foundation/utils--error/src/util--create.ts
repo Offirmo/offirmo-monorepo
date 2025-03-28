@@ -1,4 +1,4 @@
-import {
+import type {
 	XError,
 	XXError
 } from './types.js'

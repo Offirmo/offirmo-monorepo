@@ -6,7 +6,7 @@ import {
 	COMMON_ERROR_FIELDS_EXTENDED,
 } from './fields.js'
 
-import { XXError } from './types.js'
+import type { XXError } from './types.js'
 import { normalizeError } from './util--normalize.js'
 
 

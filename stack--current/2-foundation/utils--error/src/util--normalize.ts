@@ -1,4 +1,4 @@
-import { XXError, isꓽError } from './types.js'
+import { type XXError, isꓽError } from './types.js'
 import { COMMON_ERROR_FIELDS_EXTENDED } from './fields.js'
 
 /////////////////////////////////////////////////

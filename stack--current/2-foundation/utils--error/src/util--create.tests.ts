@@ -4,9 +4,9 @@ import {
 	COMMON_ERROR_FIELDS_EXTENDED,
 } from './fields.js'
 
-import { XXError } from './types.js'
+import type { XXError } from './types.js'
 
-import { createError, ErrorCreationAttributes } from './util--create.js'
+import { createError } from './util--create.js'
 
 
 describe(`@offirmo/error-utils`, () => {

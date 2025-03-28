@@ -3,22 +3,25 @@
 
 
 ## Keep what worked well
-- bolt
-- small modules with ability to incrementally "resurrect/repair" them one by one when making major changes (ex. ESM, node 23 type stripping)
+- ✅ bolt = simple and effective monorepo solution
+- ✅ small modules with ability to incrementally "resurrect/repair" them one by one when making major changes (ex. ESM, node 23 type stripping)
 
 
 ## remediate a few things
-- manually tracking dependencies (dev, peer etc) = crap
-  - also install @types automatically (by inspecting if types are provided)
+- ✅ manually tracking dependencies (dev, peer etc) = crap
+  - ✅ also install @types automatically (by inspecting if types are provided)
 - starting to have too many bolt workspaces 1- 2- 3-
 - uneasy to move packages around and split into smaller ones
 - maybe support "vendored" pkgs automatically?
-- painful upgrade of tsconfig, pkg.json, etc. => they should be auto generated
+- ✅ painful upgrade of tsconfig, pkg.json, etc. => they should be auto generated
   - ex. switching to noEmit / node 23 type stripping
     - requires changes to test command
     - require adding a new "fake build" for tests
 - enable out-of-source build
-- wish no longer need to "move" packages, they would be in a flat, single source of truth place 
+  - difficult due to node looking for modules up the file tree in-place!
+- no longer need to "move" packages, they would be in a flat, single source of truth place
+  - sorting by languages?
+- easy to split packages
 - usually working only on one project, but slowed down by the other un-needed modules
   - unneeded deps take too long to install
 - manual yarn outdated
@@ -26,32 +29,18 @@
   - ability to "scope" the current project with only the needed code
 
 
-
-
-
-
 ## tosort
 Ideas
 - AI-intelligible
-- /src is the source of truth
+- /module (~src) is the source of truth
 - highly re-organizable = packages can be moved around, renamed, etc. without breaking anything
-- pkg.json and tsconfig auto-generated
-  - incl types
 - deps auto-generated, triaged by tree depth
 - out-of-source build, ex. tsconfig out of src
 - cycle detection
 - "scopes"
 
-
-sorting by languages?
-
-https://github.com/ncochard/parse-imports-ts
-
 detection of node / web
 detection of APIs (global vars)
-
-
-labels
 
 structured vs unstructured
 
@@ -63,7 +52,6 @@ prompt
 https://bazel.build/concepts/build-ref
 boundary marker
 = BUILD file for Bazel
-= some JSON5 for us
 
 visibility (bazel) = whether a target allow being depended upon by X
 
@@ -72,15 +60,14 @@ pkg groups
 hinting
 = file expected to be modified by hand / not
 
-
 auto extracting layers by depth
-
 
 module rating/tier
 = can only be used by lower rated modules (not strict, from top, ex spike -> tier 0 -> spike = ok)
 = dictates quality, ex. unit tests, coverage...
 = try/test/graduate
 - spike
+- technical demo
 - incubator / experimental
 - v1 vs v2 (or "last architecture cleanup" null / YYYY)
 - deprecated

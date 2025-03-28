@@ -194,7 +194,11 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 
 			const scriptsⵧtest = Object.keys(scripts).filter(k => k.startsWith('test') && !k.endsWith('--watch'))
 			if (scriptsⵧtest.length) {
-				scripts['test'] = `run-s ${scriptsⵧtest.join(' ')}`
+				const name = pure_module_details.status === 'stable' // TODO improve status check
+					? 'test'
+					: '_test'
+
+				scripts[name] = `run-s ${scriptsⵧtest.join(' ')}`
 			}
 
 			return scripts

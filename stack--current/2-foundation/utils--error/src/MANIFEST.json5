@@ -1,0 +1,8 @@
+{
+	// public @offirmo/error-utils https://www.npmjs.com/package/@offirmo/error-utils
+	// TODO one day not public anymore?
+
+	name: 'error-utils',
+	description: "utilities around JavaScript Error creation and manipulation",
+	isꓽpublished: true,
+}

@@ -29,7 +29,7 @@
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
 		"demo": "node --experimental-strip-types ./module/##demo/index.ts",
-		"test": "run-s test--ts"
+		"_test": "run-s test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
