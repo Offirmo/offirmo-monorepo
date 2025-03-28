@@ -3,6 +3,7 @@
  */
 import * as path from 'node:path'
 import { readFileSync } from 'node:fs'
+import { isBuiltin } from 'node:module'
 
 import { parse as parseImports } from 'parse-imports-ts'
 import JSON5 from 'json5'
@@ -46,14 +47,16 @@ interface PureModuleDetails {
 	root‿abspath: string
 
 	// everything needed to build package.json
-	namespace?: string
+	namespace: string // namespace + name mandatory (needed at this stage already)
 	name: string
+
 	version: string
 	description?: string
 	isꓽpublished: boolean
 	author: string
 	license: undefined | string // TODO SPDX
 	source: FileEntry
+	demo?: FileEntry
 	hasꓽside_effects: boolean
 	hasꓽtestsⵧunit: boolean
 	hasꓽtestsⵧsmoke: boolean
@@ -88,7 +91,7 @@ function _createꓽresult(root‿abspath: string): PureModuleDetails {
 		if (_path.at(-1) === 'module')
 			_path.pop()
 
-		return _path.pop()
+		return _path.pop()!
 	})()
 
 	// TODO not this tool's job to set defaults:
@@ -97,7 +100,7 @@ function _createꓽresult(root‿abspath: string): PureModuleDetails {
 	return {
 		root‿abspath,
 
-		namespace: undefined,
+		namespace: '@offirmo-private',
 		name,
 		version: '0.0.1',
 		//description?: string
@@ -173,7 +176,7 @@ function getꓽProgLangs(entry: FileEntry): ProgLang[] {
 		case ['.jsx'].includes(ext):
 			return [ 'js', 'jsx' ]
 
-		case ['.ts'].includes(ext):
+		case ['.ts'].includes(ext): // mts sometimes needed for node scripts
 			return [ 'ts' ]
 
 		case ['.tsx'].includes(ext):
@@ -283,78 +286,11 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 		return entry
 	})
 
-	const entryⵧmanifest = file_entries.find(({ basename }) => basename === MANIFEST‿basename)
-
 	// start aggregating
 	const result = _createꓽresult(root‿abspath)
 	const raw_deps: Array<Dependency> = []
 
-	file_entries.forEach(entry => {
-		const is_excluded = _isꓽin_excluded_folder(entry) || _isꓽignored(entry)
-		const { path‿rel } = entry
-		console.log(`${indent} ↳ 📄`, path‿rel, is_excluded ? '🚫' : '')
-		if (is_excluded)
-			return
-
-		assertꓽmigrated(entry)
-		assertꓽnormalized(entry)
-
-		if (!result.source) {
-			result.source = entry
-		}
-		else if (entry.basename‿noext === 'index') {
-			if (entry.path‿rel.length < result.source.path‿rel.length) {
-				result.source = entry
-			}
-		}
-
-		const { basename } = entry
-		if (basename === MANIFEST‿basename) {
-			if(entry !== entryⵧmanifest)
-				throw new Error(`Multiple MANIFEST files found!`)
-			return
-		}
-
-		const langs = getꓽProgLangs(entry)
-		langs.forEach(lang => result.languages.add(lang))
-		if (langs.includes('ts')) {
-			const content = readFileSync(entry.path‿abs, 'utf8')
-			const imports = parseImports(content)
-			imports.forEach(({name, type}) => {
-				console.log(`${indent}    ↘ ${name} ${type ? '[type]' : ''}`)
-				// import { isBuiltin } from 'node:module';
-
-				switch (type) {
-					case 0:
-						raw_deps.push({ label: name, type: 'dev' })
-						break
-					case 1:
-						raw_deps.push({ label: name, type: 'normal' })
-						break
-					default:
-						throw new Error(`Unknown import type "${type}"!`)
-				}
-			})
-		}
-
-		if (entry.extⵧsub === '.tests') {
-			result.hasꓽtestsⵧunit = true
-		}
-	})
-
-	// extras
-	if (result.languages.has('ts')) {
-		raw_deps.push({ label: 'tslib', type: 'peer' })
-		raw_deps.push({ label: 'typescript', type: 'dev' })
-	}
-	// encourage safe practices
-	raw_deps.push({ label: 'tiny-invariant', type: 'normal'})
-	// TODO add extended error types
-
-	if(!result.source) {
-		throw new Error(`No "source" candidate found!`)
-	}
-
+	const entryⵧmanifest = file_entries.find(({ basename }) => basename === MANIFEST‿basename)
 	if(!entryⵧmanifest) {
 		// not necessarily needed but good to have
 		// NOTE: yes, this is a side effect in a read function, but it's a good one 😅
@@ -390,14 +326,96 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 		}
 	}
 
-	// consolidate
-	raw_deps.forEach(({label, type}) => {
-		if (label.startsWith('node:')) {
-			result.depsⵧdev.add('@types/node')
-			// TODO one day how to express dependency to a runtime?
+	// we need the fully qualified name of the module
+	result.namespace = result.isꓽpublished ? '@offirmo' : '@offirmo-private' // TODO one day external
+	const module_fqname = result.namespace + '/' + result.name
+
+	file_entries.forEach(entry => {
+		const is_excluded = _isꓽin_excluded_folder(entry) || _isꓽignored(entry)
+		const { path‿rel } = entry
+		console.log(`${indent} ↳ 📄`, path‿rel, is_excluded ? '🚫' : '')
+		if (is_excluded)
+			return
+
+		assertꓽmigrated(entry)
+		assertꓽnormalized(entry)
+
+		if (!result.source) {
+			result.source = entry
+		}
+		else if (entry.basename‿noext === 'index') {
+			if (entry.path‿rel.length < result.source.path‿rel.length) {
+				result.source = entry
+			}
+		}
+		if (path.basename(path.dirname(path‿rel)) === '##demo') {
+			if (entry.basename‿noext === 'index') {
+				result.demo = entry
+			}
+		}
+
+		const { basename } = entry
+		if (basename === MANIFEST‿basename) {
+			if(entry !== entryⵧmanifest)
+				throw new Error(`Multiple MANIFEST files found!`)
 			return
 		}
 
+		const langs = getꓽProgLangs(entry)
+		langs.forEach(lang => result.languages.add(lang))
+		if (langs.includes('ts')) {
+			const content = readFileSync(entry.path‿abs, 'utf8')
+			const imports = parseImports(content)
+			imports.forEach(({name, type}) => {
+				console.log(`${indent}    ↘ ${name} ${type}`)
+
+				if (isBuiltin(name)) {
+					 // built-in node module
+					raw_deps.push({ label: '@types/node', type: 'dev' })
+					// TODO one day how to express dependency to a runtime?
+					return
+				}
+
+				if (name === module_fqname) {
+					// self-reference
+					// this is allowed, but no need to declare it as dep
+					return
+				}
+
+				switch (type ?? 1) {
+					case 0:
+						raw_deps.push({ label: name, type: 'normal' })
+						break
+					case 1:
+						// types ar for dev
+						raw_deps.push({ label: name, type: 'dev' })
+						break
+					default:
+						throw new Error(`Unknown import type "${type}"!`)
+				}
+			})
+		}
+
+		if (entry.extⵧsub === '.tests') {
+			result.hasꓽtestsⵧunit = true
+		}
+	})
+
+	// extras
+	if (result.languages.has('ts')) {
+		raw_deps.push({ label: 'tslib', type: 'peer' })
+		raw_deps.push({ label: 'typescript', type: 'dev' })
+	}
+	// encourage safe practices
+	raw_deps.push({ label: 'tiny-invariant', type: 'normal'})
+	// TODO add extended error types
+
+	if(!result.source) {
+		throw new Error(`No "source" candidate found!`)
+	}
+
+	// consolidate
+	raw_deps.forEach(({label, type}) => {
 		switch (type) {
 			case 'normal':
 				result.depsⵧnormal.add(label)

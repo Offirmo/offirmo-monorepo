@@ -4,7 +4,7 @@
 	"author": "Offirmo <offirmo.net@gmail.com>",
 
 	"type": "module",
-	"main": "src/index.ts",
+	"main": "module/src/index.ts",
 
 	"dependencies": {
 		"@offirmo-private/pure-module--analyzer": "*",
@@ -14,6 +14,6 @@
 		"semver": "^7"
 	},
 	"scripts": {
-		"demo": "node --experimental-strip-types ./demo/index.mts"
+		"demo": "node --experimental-strip-types ./module/##demo/index.ts"
 	}
 }

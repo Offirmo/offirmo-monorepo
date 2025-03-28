@@ -31,15 +31,16 @@ async function refresh_pure_module(pure_module_abspath: string) {
 		//dest_dir: path.resolve(__dirname, '../../../../1-stdlib/timestamps/'),
 		dest_dir: path.dirname(pure_module_abspath),
 
-		ts__config__path: path.resolve(__dirname, '../../../tsconfig.json'),
-		ts__custom_types__path: path.resolve(__dirname, '../../../typescript-custom-typings'),
+		ts__config__path: path.resolve(__dirname, '../../../../tsconfig.json'),
+		ts__custom_types__path: path.resolve(__dirname, '../../../../typescript-custom-typings'),
 	})
 }
 
 /////////////////////////////////////////////////
 
 await refresh_pure_module(
-	//path.resolve(__dirname, '../../../../1-stdlib/timestamps/module/'),
-	//path.resolve(__dirname, '../../../../1-stdlib/random/module/'),
-	path.resolve(__dirname, '../../../../0-meta/build-tools/pure-module--analyzer/src/'),
+	//path.resolve(__dirname, '../../../../../1-stdlib/timestamps/module/'),
+	//path.resolve(__dirname, '../../../../../1-stdlib/random/module/'),
+	path.resolve(__dirname, '../../../../../0-meta/build-tools/pure-module--analyzer/module/'),
+	//path.resolve(__dirname, '../../../../../0-meta/build-tools/pure-module--presenter/module/'),
 )
