@@ -1,4 +1,4 @@
-import { UUID, WithUUID } from './types.js'
+import type { UUID, WithUUID } from './types.ts'
 
 interface Test extends WithUUID {
 	another: UUID

@@ -92,12 +92,10 @@ package-lock=false
 		{ encoding: 'utf-8' },
 	))
 
-	const npm_module_fqname = pure_module_details.namespace + '/' + pure_module_details.name
-
 	promises.push(fs.writeFile(
 		path.resolve(dest_dir‿abspath, 'README.md'),
 		`
-# ${npm_module_fqname}
+# ${pure_module_details.fqname}
 
 ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 `.trimStart(),
@@ -126,7 +124,7 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 
 	const packageᐧjson = await (async () => {
 		const pkg: any = {
-			"name": npm_module_fqname,
+			"name": pure_module_details.fqname,
 			...(pure_module_details.description && {"description": pure_module_details.description}),
 			"version": pure_module_details.version,
 			"author": pure_module_details.author,

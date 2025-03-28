@@ -1,18 +1,35 @@
 {
 	"name": "@offirmo-private/poll",
+	"description": "A simple polling utility, sometimes there is no other way…",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./index.js"
+			"import": "./module/index.ts"
 		}
 	},
-	"module": "index.js",
-	"main": "index.js",
-	"source": "index.js"
+	"source": "module/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"tiny-invariant": "^1"
+	},
+	"scripts": {
+		"test--ts": "tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"test": "run-s test--ts"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "*",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
+	}
 }

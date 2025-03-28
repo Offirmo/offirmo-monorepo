@@ -52,6 +52,7 @@ interface PureModuleDetails {
 	// everything needed to build package.json
 	namespace: string // namespace + name mandatory (needed at this stage already)
 	name: string
+	fqname: string // fully qualified
 
 	version: string
 	description?: string
@@ -106,6 +107,7 @@ function _createꓽresult(root‿abspath: string): PureModuleDetails {
 		status: 'stable',
 		namespace: '@offirmo-private',
 		name,
+		fqname: '@offirmo-private/' + name,
 		version: '0.0.1',
 		//description?: string
 		isꓽpublished: false,
@@ -354,7 +356,7 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 
 	// we need the fully qualified name of the module
 	result.namespace = result.isꓽpublished ? '@offirmo' : '@offirmo-private' // TODO one day external
-	const module_fqname = result.namespace + '/' + result.name
+	result.fqname = result.namespace + '/' + result.name
 
 	file_entries.forEach(entry => {
 		const is_excluded = _isꓽin_excluded_folder(entry) || _isꓽignored(entry)
@@ -409,7 +411,7 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 					return
 				}
 
-				if (name === module_fqname) {
+				if (name === result.fqname) {
 					// self-reference
 					// this is allowed, but no need to declare it as dep
 					return

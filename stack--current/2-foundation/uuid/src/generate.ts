@@ -4,7 +4,7 @@ import { nanoid, customRandom, urlAlphabet } from 'nanoid'
 
 import { type RNGEngine, getꓽrandom_generator_ofꓽintegerⵧbetween } from '@offirmo/random'
 
-import { UUID } from './types.js'
+import type { UUID } from './types.ts'
 
 /////////////////////////////////////////////////
 

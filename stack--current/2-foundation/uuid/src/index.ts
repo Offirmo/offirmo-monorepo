@@ -1,3 +1,3 @@
-export * from './types.js'
-export * from './generate.js'
-export * from './utils.js'
+export * from './types.ts'
+export * from './generate.ts'
+export * from './utils.ts'

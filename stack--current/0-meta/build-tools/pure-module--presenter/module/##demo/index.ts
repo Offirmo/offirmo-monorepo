@@ -8,10 +8,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 /////////////////////////////////////////////////
 
-import { getꓽpure_module_details } from '@offirmo-private/pure-module--analyzer'
+import { getꓽpure_module_details, type PureModuleDetails } from '@offirmo-private/pure-module--analyzer'
 import { PkgVersionResolver, present } from '@offirmo-private/pure-module--presenter'
 
 const pkg_version_resolver = new PkgVersionResolver()
+
+const module_details: Record<string, PureModuleDetails> = {}
 
 async function refresh_pure_module(pure_module_path: string) {
 	console.log('---------------------------------------')
@@ -23,6 +25,12 @@ async function refresh_pure_module(pure_module_path: string) {
 		},
 	)
 	console.log(pure_module_details)
+
+	module_details[pure_module_details.fqname] = pure_module_details
+
+	// TODO check loops
+	// TODO check # of external deps
+	// TODO check status ranking
 
 	await present({
 		indent: '   ',
@@ -45,9 +53,12 @@ async function refresh_pure_module(pure_module_path: string) {
 
 //await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--analyzer/module/')
 //await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/')
+
+await refresh_pure_module( '../../../../../1-stdlib/poll/module/' )
 //await refresh_pure_module( '../../../../../1-stdlib/timestamps/module/' )
 //await refresh_pure_module( '../../../../../1-stdlib/random/module/')
-await refresh_pure_module( '../../../../../2-foundation/prettify-any/src/')
+
+// await refresh_pure_module( '../../../../../2-foundation/prettify-any/src/')
 
 // not ready
 //await refresh_pure_module( '../../../../../2-foundation/utils--error/src/')

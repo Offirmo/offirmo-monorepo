@@ -2,10 +2,10 @@ import { expect } from 'chai'
 import { getꓽRNGⵧISAAC32 } from '@offirmo/random'
 
 import {
-	UUID, WithUUID,
+	type UUID, type WithUUID,
 	generate_uuid,
 	xxx_test_unrandomize_element,
-} from './index.js'
+} from './index.ts'
 
 /////////////////////////////////////////////////
 

@@ -8,7 +8,7 @@
 
 
 ## remediate a few things
-- ✅ manually tracking dependencies (dev, peer etc) = crap
+- ✅ manually tracking dependencies (dev, peer etc) = chore to add them by hand + never cleared if no longer used
   - ✅ also install @types automatically (by inspecting if types are provided)
 - starting to have too many bolt workspaces 1- 2- 3-
 - uneasy to move packages around and split into smaller ones
@@ -27,7 +27,6 @@
 - manual yarn outdated
 - AI-intelligible? (how?)
   - ability to "scope" the current project with only the needed code
-
 
 ## tosort
 Ideas

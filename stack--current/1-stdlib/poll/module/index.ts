@@ -1,16 +1,28 @@
-const DEFAULT_OPTIONS = {
+
+/////////////////////////////////////////////////
+
+interface Options {
+	periodMs: number
+	timeoutMs: number
+	debugId: string
+}
+
+const DEFAULT_OPTIONS: Options = {
 	periodMs: 100, // check every 100ms
 	timeoutMs: 10 * 1000, // after 10 seconds, timeout
 	debugId: 'an unnamed predicate',
 }
 
-export default function poll(predicate, options) {
+function poll(predicate: () => boolean, options: Partial<Options> = {}) {
 	// early check to save an initial poll period
 	let result = predicate()
 	if (result)
 		return Promise.resolve(result)
 
-	const {periodMs, timeoutMs, debugId} = Object.assign(DEFAULT_OPTIONS, options || {})
+	const { periodMs, timeoutMs, debugId } = {
+		...DEFAULT_OPTIONS,
+		...options,
+	}
 
 	return new Promise((resolve, reject) => {
 		const waitForElement = setInterval(() => {
@@ -26,4 +38,12 @@ export default function poll(predicate, options) {
 			reject(new Error(`@offirmo-private/poll: Timed out while waiting for "${debugId}"`))
 		}, timeoutMs)
 	})
+}
+
+/////////////////////////////////////////////////
+
+export {
+	type Options,
+
+	poll,
 }

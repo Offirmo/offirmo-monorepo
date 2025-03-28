@@ -1,11 +1,13 @@
 import { expect } from 'chai'
 import { getꓽRNGⵧISAAC32 } from '@offirmo/random'
 
-import { generate_uuid, UUID_LENGTH } from './index.js'
+import { generate_uuid, UUID_LENGTH } from './index.ts'
 
 
 describe('@offirmo-private/uuid - generate', function() {
+
 	describe('generate_uuid()', function() {
+
 		context('when provided a random generator', function() {
 
 			it('should return correct uuids', function () {
