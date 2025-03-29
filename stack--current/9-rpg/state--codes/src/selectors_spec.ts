@@ -1,15 +1,15 @@
 import { expect } from 'chai'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 import {
 	is_code,
 	is_code_redeemable,
 	create,
 	attempt_to_redeem_code,
-} from './index.js'
+} from './index.ts'
 
-import { CodesConditions, CODESPECS_BY_KEY } from './__fixtures/index.js'
+import { CodesConditions, CODESPECS_BY_KEY } from './__fixtures/index.ts'
 
 /////////////////////
 

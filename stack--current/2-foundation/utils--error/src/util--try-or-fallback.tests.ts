@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { try_or_fallback } from './util--try-or-fallback.js'
+import { try_or_fallback } from './util--try-or-fallback.ts'
 
 
 describe(`@offirmo/error-utils`, () => {

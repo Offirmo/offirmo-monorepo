@@ -1,10 +1,10 @@
 import { expect } from 'chai'
 
-import { LIB, SCHEMA_VERSION } from '../consts.js'
+import { LIB, SCHEMA_VERSION } from '../consts.ts'
 import {
 	create,
-} from './index.js'
-import { getꓽSXC } from '../utils/sec.js'
+} from './index.ts'
+import { getꓽSXC } from '../utils/sec.ts'
 
 //////////////////////////////////////////////////////////////////////
 

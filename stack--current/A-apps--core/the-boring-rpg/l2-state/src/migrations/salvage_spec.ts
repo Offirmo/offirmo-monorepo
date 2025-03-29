@@ -3,10 +3,10 @@ import {expect} from 'chai'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
-import { LIB } from '../consts.js'
+import { LIB } from '../consts.ts'
 
-import { reset_and_salvage } from './salvage.js'
-import { DEMO_STATE } from '../examples/index.js'
+import { reset_and_salvage } from './salvage.ts'
+import { DEMO_STATE } from '../examples/index.ts'
 
 
 

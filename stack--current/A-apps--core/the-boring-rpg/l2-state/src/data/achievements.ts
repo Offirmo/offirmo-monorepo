@@ -9,8 +9,8 @@ import { Weapon, matches as matches_weapon } from '@tbrpg/logic--weapons'
 import { Armor, matches as matches_armor } from '@tbrpg/logic--armors'
 import { ALL_GOOD_ADVENTURE_ARCHETYPES } from '@tbrpg/logic--adventures'
 
-import { UState } from '../types.js'
-import { STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC } from '../reducers/create.js'
+import { UState } from '../types.ts'
+import { STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC } from '../reducers/create.ts'
 
 // ’
 

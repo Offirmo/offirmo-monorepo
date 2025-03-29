@@ -8,9 +8,9 @@ import {
 	AchievementSnapshot,
 } from '@tbrpg/state--achievements'
 
-import { UState } from '../types.js'
+import { UState } from '../types.ts'
 
-import ACHIEVEMENT_DEFINITIONS from '../data/achievements.js'
+import ACHIEVEMENT_DEFINITIONS from '../data/achievements.ts'
 
 /////////////////////////////////////////////////
 

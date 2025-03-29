@@ -2,12 +2,12 @@ import { expect } from 'chai'
 
 import { getꓽengine, RNGEngine } from '@offirmo/random'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 import {
 	generate_random_demo_armor,
 	compare_armors_by_potential,
 	getꓽultimate_medium_damage_reduction,
-} from './index.js'
+} from './index.ts'
 
 
 describe(`${LIB} - compare`, function() {

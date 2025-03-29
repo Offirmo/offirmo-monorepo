@@ -1,1 +1,1 @@
-export * from './recap/index.js'
+export * from './recap/index.ts'

@@ -5,11 +5,11 @@ import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-util
 import { InventorySlot } from '@tbrpg/definitions'
 
 
-import { SCHEMA_VERSION } from './consts.js'
-import { Item, State } from './types.js'
-import { compareꓽitemsⵧby_slot_then_strength } from './compare.js'
-import { is_full, getꓽitem_in_slot } from './selectors.js'
-import { TBRSoftExecutionContext, getꓽSXC } from './sec.js'
+import { SCHEMA_VERSION } from './consts.ts'
+import { Item, State } from './types.ts'
+import { compareꓽitemsⵧby_slot_then_strength } from './compare.ts'
+import { is_full, getꓽitem_in_slot } from './selectors.ts'
+import { TBRSoftExecutionContext, getꓽSXC } from './sec.ts'
 
 /////////////////////
 

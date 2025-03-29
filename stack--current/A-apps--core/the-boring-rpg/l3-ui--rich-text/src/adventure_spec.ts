@@ -15,7 +15,7 @@ import {
 	DEMO_ADVENTURE_04,
 } from '@tbrpg/logic--adventure--resolved'
 
-import { renderꓽresolved_adventure } from './index.js'
+import { renderꓽresolved_adventure } from './index.ts'
 
 
 describe('🔠  view to @offirmo-private/rich-text-format - adventure', function() {

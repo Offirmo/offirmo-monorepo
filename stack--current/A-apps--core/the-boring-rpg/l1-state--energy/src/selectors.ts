@@ -4,9 +4,9 @@ import memoize_one from 'memoize-one'
 import { getꓽlogger } from '@tbrpg/definitions'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
-import { LIB, TICK_MS } from './consts.js'
-import { UState, TState } from './types.js'
-import { Fraction, time_to_human } from './utils.js'
+import { LIB, TICK_MS } from './consts.ts'
+import { UState, TState } from './types.ts'
+import { Fraction, time_to_human } from './utils.ts'
 
 ////////////////////////////////////
 

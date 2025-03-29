@@ -7,8 +7,8 @@ import {
 } from '@tbrpg/state--inventory'
 import { DEFAULT_SEED } from '@oh-my-rpg/state--prng'
 
-import { LIB, SCHEMA_VERSION } from '../consts.js'
-import { create, reseed } from './index.js'
+import { LIB, SCHEMA_VERSION } from '../consts.ts'
+import { create, reseed } from './index.ts'
 
 
 describe(`${LIB} -- reducers -- create`, function() {

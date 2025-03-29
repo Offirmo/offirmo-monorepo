@@ -1,9 +1,9 @@
-import { LIB, INTERNAL_PROP } from './consts.js'
-import { type SoftExecutionContext } from './types.js'
-import { ROOT_PROTOTYPE } from './root-prototype.js'
-import * as State from './state.js'
-import { PLUGINS } from './plugins/index.js'
-import { decorateWithDetectedEnv } from './common.js'
+import { LIB, INTERNAL_PROP } from './consts.ts'
+import { type SoftExecutionContext } from './types.ts'
+import { ROOT_PROTOTYPE } from './root-prototype.ts'
+import * as State from './state.ts'
+import { PLUGINS } from './plugins/index.ts'
+import { decorateWithDetectedEnv } from './common.ts'
 
 /////////////////////////////////////////////////
 

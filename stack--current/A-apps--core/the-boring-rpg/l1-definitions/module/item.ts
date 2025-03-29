@@ -1,8 +1,8 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { ElementType, Item, ItemQuality, InventorySlot } from './types.js'
-import { ITEM_SLOTS_TO_INT, ITEM_QUALITIES_TO_INT } from './consts.js'
-import { createꓽelementⵧbase } from './element.js'
+import { ElementType, Item, ItemQuality, InventorySlot } from './types.ts'
+import { ITEM_SLOTS_TO_INT, ITEM_QUALITIES_TO_INT } from './consts.ts'
+import { createꓽelementⵧbase } from './element.ts'
 
 /////////////////////////////////////////////////
 

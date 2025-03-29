@@ -1,3 +1,3 @@
-export * from './types.js'
-export * from './reducers/index.js'
-export * from './examples/index.js'
+export * from './types.ts'
+export * from './reducers/index.ts'
+export * from './examples/index.ts'

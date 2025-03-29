@@ -12,8 +12,8 @@ import {
 import * as PRNGState from '@oh-my-rpg/state--prng'
 import { getꓽprng } from '@oh-my-rpg/state--prng'
 
-import { LIB } from '../../consts.js'
-import { State } from '../../types.js'
+import { LIB } from '../../consts.ts'
+import { State } from '../../types.ts'
 import {
 	_receive_stat_increase,
 	_receive_coins,
@@ -22,7 +22,7 @@ import {
 	_receive_item,
 	_enhance_an_armor,
 	_enhance_a_weapon,
-} from '../internal.js'
+} from '../internal.ts'
 
 /////////////////////
 

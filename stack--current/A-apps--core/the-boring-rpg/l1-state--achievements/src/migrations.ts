@@ -1,8 +1,8 @@
 import { enforceꓽimmutable, LastMigrationStep, MigrationStep, migrate_toꓽlatestⵧgeneric } from '@offirmo-private/state-utils'
 
-import { LIB, SCHEMA_VERSION } from './consts.js'
-import { type State } from './types.js'
-import { TBRSoftExecutionContext } from './sec.js'
+import { LIB, SCHEMA_VERSION } from './consts.ts'
+import { type State } from './types.ts'
+import { TBRSoftExecutionContext } from './sec.ts'
 
 // some hints may be needed to migrate to demo state
 // need to export them for composing tests

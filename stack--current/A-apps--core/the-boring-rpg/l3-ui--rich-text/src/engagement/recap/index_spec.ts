@@ -5,11 +5,11 @@ import * as RichText from '@offirmo-private/rich-text-format'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 import { create, play } from '@tbrpg/state'
 
-import { LIB } from '../../consts.js'
+import { LIB } from '../../consts.ts'
 
 import {
 	getꓽrecap,
-} from './index.js'
+} from './index.ts'
 
 
 describe(`${LIB} - engagement - recap`, function() {

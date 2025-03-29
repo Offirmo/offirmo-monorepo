@@ -2,13 +2,13 @@ import { expect } from 'chai'
 import type { Immutable } from '@offirmo-private/ts-types'
 import { type SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 
 import {
 	LastMigrationStep,
 	MigrationStep,
 	migrate_toꓽlatestⵧgeneric,
-} from './migration.js'
+} from './migration.ts'
 
 import {
 	StateA_U_v0,
@@ -18,7 +18,7 @@ import {
 	StateA_U_v2,
 	DEMO_STATE_A_U_v2,
 	SCHEMA_VERSION_A,
-} from './_test_helpers.js'
+} from './_test_helpers.ts'
 
 
 describe(`${LIB} - migration`, function() {

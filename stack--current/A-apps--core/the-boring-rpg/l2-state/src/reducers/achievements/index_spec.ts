@@ -4,11 +4,11 @@ import { expect } from 'chai'
 import { AchievementStatus, AchievementDefinition } from '@tbrpg/state--achievements'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 
-import { LIB } from '../../consts.js'
-import { type State, UState } from '../../types.js'
-import { create } from '../index.js'
-import { _refresh_achievements } from './index.js'
-import ACHIEVEMENT_DEFINITIONS from '../../data/achievements.js'
+import { LIB } from '../../consts.ts'
+import { type State, UState } from '../../types.ts'
+import { create } from '../index.ts'
+import { _refresh_achievements } from './index.ts'
+import ACHIEVEMENT_DEFINITIONS from '../../data/achievements.ts'
 
 
 describe(`${LIB} - reducer`, function() {

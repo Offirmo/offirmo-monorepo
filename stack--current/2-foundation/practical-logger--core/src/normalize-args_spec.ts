@@ -2,8 +2,8 @@ import { expect } from 'chai'
 import { LogDetails } from '@offirmo/practical-logger-types'
 import { XXError } from '@offirmo/error-utils'
 
-import { LIB } from './consts.js'
-import { normalizeArguments } from './normalize-args.js'
+import { LIB } from './consts.ts'
+import { normalizeArguments } from './normalize-args.ts'
 
 
 describe(`${LIB} - normalize args`, () => {

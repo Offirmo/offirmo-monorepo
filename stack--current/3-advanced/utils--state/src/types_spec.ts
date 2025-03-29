@@ -2,7 +2,7 @@
 
 import { Enum } from 'typescript-string-enums'
 
-import { BaseUState } from './types.js'
+import { BaseUState } from './types.ts'
 
 /////////////////////
 

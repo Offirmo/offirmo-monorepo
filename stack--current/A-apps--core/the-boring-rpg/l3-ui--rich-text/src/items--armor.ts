@@ -10,8 +10,8 @@ import * as RichText from '@offirmo-private/rich-text-format'
 import { i18n_messages as I18N_ARMORS } from '@tbrpg/logic--armors'
 import { appraise_power, appraise_sell_value } from '@tbrpg/logic--shop'
 
-import { RenderItemOptions } from './types.js'
-import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.js'
+import { RenderItemOptions } from './types.ts'
+import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.ts'
 
 /////////////////////
 

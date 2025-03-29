@@ -2,14 +2,14 @@ import { expect } from 'chai'
 
 import { getꓽrandom } from '@offirmo/random'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 
 import {
 	create,
 	update_use_count,
 	getꓽprng,
 	xxx_internal_reset_prng_cache,
-} from './index.js'
+} from './index.ts'
 
 /////////////////////////////////////////////////
 

@@ -65,11 +65,10 @@ async function refresh_pure_modules(parent_path: string) {
 //await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/')
 
 await refresh_pure_modules('../../../../../1-stdlib/')
-
-//await refresh_pure_module( '../../../../../1-stdlib/poll/module/' )
 //await refresh_pure_module( '../../../../../1-stdlib/timestamps/module/' )
 //await refresh_pure_module( '../../../../../1-stdlib/random/module/')
 
+await refresh_pure_modules('../../../../../2-foundation/')
 // await refresh_pure_module( '../../../../../2-foundation/prettify-any/src/')
 
 // not ready

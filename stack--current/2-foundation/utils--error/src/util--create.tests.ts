@@ -2,11 +2,11 @@ import { expect } from 'chai'
 
 import {
 	COMMON_ERROR_FIELDS_EXTENDED,
-} from './fields.js'
+} from './fields.ts'
 
-import type { XXError } from './types.js'
+import type { XXError } from './types.ts'
 
-import { createError } from './util--create.js'
+import { createError } from './util--create.ts'
 
 
 describe(`@offirmo/error-utils`, () => {

@@ -10,7 +10,7 @@ import { Weapon } from '@tbrpg/logic--weapons'
 import {
 	Item,
 	State,
-} from './types.js'
+} from './types.ts'
 
 /////////////////////
 

@@ -1,6 +1,6 @@
 import { getLogger } from '@offirmo/universal-debug-api-placeholder'
 
-import { PRODUCT } from './consts.js'
+import { PRODUCT } from './consts.ts'
 
 
 export function getꓽlogger() {

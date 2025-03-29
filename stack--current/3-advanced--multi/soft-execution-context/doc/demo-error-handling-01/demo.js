@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { createLogger } from '@offirmo/practical-logger-browser'
 
-import {getRootSXC} from '../../src/index.js'
-import * as good_lib from './good_lib.js'
+import {getRootSXC} from '../../src/index.ts'
+import * as good_lib from './good_lib.ts'
 
 const APP = 'SXC_DEMO_01'
 

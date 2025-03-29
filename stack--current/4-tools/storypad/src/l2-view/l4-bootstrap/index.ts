@@ -1,4 +1,4 @@
-//import './__shared/x-logger.js'
+//import './__shared/x-logger.ts'
 
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'

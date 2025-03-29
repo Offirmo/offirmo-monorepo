@@ -2,11 +2,11 @@ import { expect } from 'chai'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 
-import { LIB } from '../consts.js'
-import { create } from '../index.js'
+import { LIB } from '../consts.ts'
+import { create } from '../index.ts'
 import {
 	find_element,
-} from './others.js'
+} from './others.ts'
 
 
 describe(`${LIB} - selectors - others`, function() {

@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
 
-import { ItemQuality, InventorySlot } from './types.js'
+import { ItemQuality, InventorySlot } from './types.ts'
 
 /////////////////////////////////////////////////
 

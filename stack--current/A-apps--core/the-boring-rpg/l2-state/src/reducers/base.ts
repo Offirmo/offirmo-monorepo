@@ -23,16 +23,16 @@ import { type PendingEngagementUId } from '@oh-my-rpg/state--engagement'
 
 /////////////////////
 
-import { LIB } from '../consts.js'
-import { type State } from '../types.js'
-import { getꓽSXC } from '../services/sec.js'
-import { getꓽavailable_classes } from '../selectors/index.js'
+import { LIB } from '../consts.ts'
+import { type State } from '../types.ts'
+import { getꓽSXC } from '../services/sec.ts'
+import { getꓽavailable_classes } from '../selectors/index.ts'
 
-import { _refresh_achievements } from './achievements/index.js'
+import { _refresh_achievements } from './achievements/index.ts'
 import {
 	_sell_item,
 	_update_to_now,
-} from './internal.js'
+} from './internal.ts'
 
 /////////////////////
 

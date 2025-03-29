@@ -1,12 +1,12 @@
 import { expect } from 'chai'
 import { displayError } from '@offirmo-private/print-error-to-terminal'
 
-import { LIB } from '../../consts.js'
+import { LIB } from '../../consts.ts'
 import {
 	SoftExecutionContext,
 	getRootSXC,
 	_test_only__reset_root_SXC,
-} from '../../index.js'
+} from '../../index.ts'
 
 
 describe(`${LIB}`, function () {

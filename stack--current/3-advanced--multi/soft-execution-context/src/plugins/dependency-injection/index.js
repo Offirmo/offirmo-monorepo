@@ -1,7 +1,7 @@
-import { INTERNAL_PROP } from '../../consts.js'
-import * as TopState from '../../state.js'
-import * as State from './state.js'
-import { flattenToOwn } from '../../utils.js'
+import { INTERNAL_PROP } from '../../consts.ts'
+import * as TopState from '../../state.ts'
+import * as State from './state.ts'
+import { flattenToOwn } from '../../utils.ts'
 
 const PLUGIN_ID = 'dependency_injection'
 

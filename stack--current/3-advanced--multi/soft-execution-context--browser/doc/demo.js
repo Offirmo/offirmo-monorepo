@@ -6,8 +6,8 @@ import {
 	listenToErrorEvents,
 	listenToUnhandledRejections,
 	decorateWithDetectedEnv,
-} from '../src/index.js'
-import * as good_lib from './good_lib.js'
+} from '../src/index.ts'
+import * as good_lib from './good_lib.ts'
 
 const APP = 'SXC_BROWSER_DEMO'
 

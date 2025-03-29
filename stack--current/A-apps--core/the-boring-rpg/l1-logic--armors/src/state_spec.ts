@@ -4,14 +4,14 @@ import { Enum } from 'typescript-string-enums'
 import { InventorySlot, ItemQuality, ElementType, xxx_test_unrandomize_element } from '@tbrpg/definitions'
 import { getꓽengine } from '@offirmo/random'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 import {
 	Armor,
 	MAX_ENHANCEMENT_LEVEL,
 	create,
 	generate_random_demo_armor,
 	enhance,
-} from './index.js'
+} from './index.ts'
 
 
 function assert_shape(armor: Readonly<Armor>) {

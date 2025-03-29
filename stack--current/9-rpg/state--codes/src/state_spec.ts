@@ -1,14 +1,14 @@
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { expect } from 'chai'
 
-import { LIB, SCHEMA_VERSION } from './consts.js'
+import { LIB, SCHEMA_VERSION } from './consts.ts'
 import {
 	create,
 	attempt_to_redeem_code,
-} from './index.js'
-import { getꓽSXC } from './sec.js'
+} from './index.ts'
+import { getꓽSXC } from './sec.ts'
 
-import { CodesConditions, CODESPECS_BY_KEY } from './__fixtures/index.js'
+import { CodesConditions, CODESPECS_BY_KEY } from './__fixtures/index.ts'
 
 
 describe(`${LIB} - state`, function() {

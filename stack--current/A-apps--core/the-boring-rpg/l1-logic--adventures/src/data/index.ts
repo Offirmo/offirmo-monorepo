@@ -1,10 +1,10 @@
 import { I18nMessages } from '@offirmo-private/ts-types'
 
-import { type AdventureHumanReadableID } from '../types.js'
-import { messages as en } from './i18n_en.js'
+import { type AdventureHumanReadableID } from '../types.ts'
+import { messages as en } from './i18n_en.ts'
 
 // TODO type better? (coins)
-import { CoinsGain, OutcomeArchetype, AdventureType } from '../types.js'
+import { CoinsGain, OutcomeArchetype, AdventureType } from '../types.ts'
 
 interface RawAdventureArchetypeEntry {
 	good: boolean

@@ -32,7 +32,7 @@ console.log(result) // Version 5.2.2
 ### Advanced
 
 ```ts
-import { spawnCorrectly, SpawnError, ChildProcess } from './index.js'
+import { spawnCorrectly, SpawnError, ChildProcess } from './index.ts'
 // TODO (see unit tests)
 ```
 

@@ -3,9 +3,9 @@ import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import {
 	create,
-} from './index.js'
-import { getꓽSXC } from './sec.js'
-import { LIB } from './consts.js'
+} from './index.ts'
+import { getꓽSXC } from './sec.ts'
+import { LIB } from './consts.ts'
 
 
 describe(`${LIB} - selectors`, function() {

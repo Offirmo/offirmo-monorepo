@@ -2,9 +2,9 @@
 
 import { I18nMessages } from '@offirmo-private/ts-types'
 
-import { WeaponPartType } from '../types.js'
-import en from './i18n_en.js'
-import { ENTRIES } from './entries.js'
+import { WeaponPartType } from '../types.ts'
+import en from './i18n_en.ts'
+import { ENTRIES } from './entries.ts'
 
 /////////////////////
 

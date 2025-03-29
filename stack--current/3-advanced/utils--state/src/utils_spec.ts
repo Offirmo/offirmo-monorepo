@@ -1,12 +1,12 @@
 import { expect } from 'chai'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 
 import {
 	DEMO_BASE_STATE_WITH_SUBS,
 	DEMO_BUNDLE_STATE,
 	DEMO_ROOT_STATE,
-} from './_test_helpers.js'
+} from './_test_helpers.ts'
 
 import {
 	complete_or_cancel_eager_mutation_propagating_possible_child_mutation,
@@ -16,7 +16,7 @@ import {
 	createꓽBaseAction,
 	createꓽaction,
 	createꓽActionⳇReconcile,
-} from './utils.js'
+} from './utils.ts'
 
 /////////////////////////////////////////////////
 

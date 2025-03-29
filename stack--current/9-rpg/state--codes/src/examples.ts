@@ -1,7 +1,7 @@
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { TEST_TIMESTAMP_MS, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 
-import { type State } from './types.js'
+import { type State } from './types.ts'
 
 /////////////////////
 

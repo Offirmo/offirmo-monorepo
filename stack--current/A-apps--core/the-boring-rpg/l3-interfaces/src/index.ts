@@ -1,2 +1,2 @@
-export * from './actions/index.js'
-export * from './sugar/index.js'
+export * from './actions/index.ts'
+export * from './sugar/index.ts'

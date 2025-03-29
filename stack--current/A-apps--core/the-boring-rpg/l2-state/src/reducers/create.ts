@@ -25,15 +25,15 @@ import { Armor, create as create_armor } from '@tbrpg/logic--armors'
 
 /////////////////////
 
-import { SCHEMA_VERSION } from '../consts.js'
-import { TBRSoftExecutionContext, getꓽSXC } from '../services/sec.js'
-import { type State } from '../types.js'
+import { SCHEMA_VERSION } from '../consts.ts'
+import { TBRSoftExecutionContext, getꓽSXC } from '../services/sec.ts'
+import { type State } from '../types.ts'
 import {
 	_receive_item,
 	_ack_all_engagements,
-} from './internal.js'
-import { equip_item } from './base.js'
-import { _refresh_achievements } from './achievements/index.js'
+} from './internal.ts'
+import { equip_item } from './base.ts'
+import { _refresh_achievements } from './achievements/index.ts'
 
 /////////////////////
 

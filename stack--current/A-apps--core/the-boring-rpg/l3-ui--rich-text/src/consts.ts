@@ -1,5 +1,5 @@
 
-import { RenderItemOptions } from './types.js'
+import { RenderItemOptions } from './types.ts'
 
 /////////////////////
 

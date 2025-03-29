@@ -1,6 +1,6 @@
 import { type WithUUID, generate_uuid } from '@offirmo-private/uuid'
 
-import { ElementType, Element} from './types.js'
+import { ElementType, Element} from './types.ts'
 
 /////////////////////////////////////////////////
 

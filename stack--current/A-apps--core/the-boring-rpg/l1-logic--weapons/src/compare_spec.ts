@@ -2,13 +2,13 @@ import { expect } from 'chai'
 
 import { getꓽengine } from '@offirmo/random'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 import {
 	create,
 	generate_random_demo_weapon,
 	compare_weapons_by_potential,
 	getꓽultimate_medium_damage,
-} from './index.js'
+} from './index.ts'
 
 
 describe(`${LIB} - compare`, function() {

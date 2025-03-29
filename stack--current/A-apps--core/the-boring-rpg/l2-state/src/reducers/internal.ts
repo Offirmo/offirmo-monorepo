@@ -26,16 +26,16 @@ import * as InventoryState from '@tbrpg/state--inventory'
 
 /////////////////////
 
-import { type State } from '../types.js'
+import { type State } from '../types.ts'
 
 import {
 	appraise_item_value,
 	is_inventory_full,
-} from '../selectors/index.js'
+} from '../selectors/index.ts'
 
-import { getꓽSXC } from '../services/sec.js'
+import { getꓽSXC } from '../services/sec.ts'
 
-import {STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC} from './create.js'
+import {STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC} from './create.ts'
 
 /////////////////////
 

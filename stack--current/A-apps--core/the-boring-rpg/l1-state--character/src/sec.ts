@@ -1,7 +1,7 @@
 import { getRootSXC } from '@offirmo-private/soft-execution-context'
 import { TBRSoftExecutionContext, decorate_SXC } from '@tbrpg/definitions'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 
 function getꓽSXC(parent?: TBRSoftExecutionContext): TBRSoftExecutionContext {
 	// TODO review memoize / not mutate the parent??

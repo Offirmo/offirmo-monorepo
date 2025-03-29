@@ -4,7 +4,7 @@ import {
 	nextTick as nextTick_p,
 	setImmediate as setImmediate_p,
 	requestIdleCallback,
-} from './ponyfills.js'
+} from './ponyfills.ts'
 
 /////////////////////////////////////////////////
 

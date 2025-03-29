@@ -1,8 +1,8 @@
 // useful to disable tooltips on touch-only device
 // Tooltips are a nice addition but don't play well with touch, especially on iOs.
 
-import { getꓽmedia_queriesⵧrelevant } from '../l2-internal/_media-queries.js'
-import { has_seenꓽtouch_usage } from '../l2-internal/_event-listeners.js'
+import { getꓽmedia_queriesⵧrelevant } from '../l2-internal/_media-queries.ts'
+import { has_seenꓽtouch_usage } from '../l2-internal/_event-listeners.ts'
 
 /////////////////////////////////////////////////
 

@@ -4,11 +4,11 @@ import { expect } from 'chai'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { itㆍshouldㆍmigrateㆍcorrectly } from '@offirmo-private/state-migration-tester'
 
-import { LIB, SCHEMA_VERSION } from '../consts.js'
-import { migrate_toꓽlatest, MIGRATION_HINTS_FOR_TESTS } from './index.js'
-import { DEMO_STATE } from '../examples/index.js'
-import { getꓽSXC } from '../utils/sec.js'
-import { create } from '../reducers/index.js'
+import { LIB, SCHEMA_VERSION } from '../consts.ts'
+import { migrate_toꓽlatest, MIGRATION_HINTS_FOR_TESTS } from './index.ts'
+import { DEMO_STATE } from '../examples/index.ts'
+import { getꓽSXC } from '../utils/sec.ts'
+import { create } from '../reducers/index.ts'
 
 //////////////////////////////////////////////////////////////////////
 

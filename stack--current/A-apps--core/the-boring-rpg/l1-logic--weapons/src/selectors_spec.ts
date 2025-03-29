@@ -4,7 +4,7 @@ import { Enum } from 'typescript-string-enums'
 import { ItemQuality, InventorySlot } from '@tbrpg/definitions'
 import { getꓽengine } from '@offirmo/random'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 import {
 	OVERALL_STRENGTH_INTERVAL_BY_QUALITY,
 	BASE_STRENGTH_INTERVAL_BY_QUALITY,
@@ -15,7 +15,7 @@ import {
 	get_medium_damage,
 	getꓽultimate_medium_damage,
 	matches,
-} from './index.js'
+} from './index.ts'
 
 
 describe(`${LIB} - selectors`, function() {

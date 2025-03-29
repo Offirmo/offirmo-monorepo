@@ -1,6 +1,6 @@
 'use strict'
 
-const good_lib = require('./good_lib.js').create()
+const good_lib = require('./good_lib.ts').create()
 
 function foo_sync() {
 	return good_lib.foo_sync()

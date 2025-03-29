@@ -19,11 +19,11 @@ import * as CodesState from '@oh-my-rpg/state--codes'
 import * as AchievementsState from '@tbrpg/state--achievements'
 import * as MetaState from '@oh-my-rpg/state--meta'
 
-import { LIB, SCHEMA_VERSION } from '../consts.js'
-import { type State } from '../types.js'
-import { TBRSoftExecutionContext } from '../services/sec.js'
-import { _refresh_achievements } from '../reducers/achievements/index.js'
-import { reset_and_salvage } from './salvage.js'
+import { LIB, SCHEMA_VERSION } from '../consts.ts'
+import { type State } from '../types.ts'
+import { TBRSoftExecutionContext } from '../services/sec.ts'
+import { _refresh_achievements } from '../reducers/achievements/index.ts'
+import { reset_and_salvage } from './salvage.ts'
 import { getꓽengine } from '@offirmo/random'
 
 

@@ -13,12 +13,12 @@ import * as CodesState from '@oh-my-rpg/state--codes'
 import * as AchievementsState from '@tbrpg/state--achievements'
 import * as MetaState from '@oh-my-rpg/state--meta'
 
-import { LIB, SCHEMA_VERSION } from '../consts.js'
-import { migrate_toꓽlatest } from './index.js'
-import { getꓽSXC } from '../services/sec.js'
+import { LIB, SCHEMA_VERSION } from '../consts.ts'
+import { migrate_toꓽlatest } from './index.ts'
+import { getꓽSXC } from '../services/sec.ts'
 
-import { create } from '../index.js'
-import { DEMO_STATE } from '../examples/index.js'
+import { create } from '../index.ts'
+import { DEMO_STATE } from '../examples/index.ts'
 
 
 describe(`${LIB} - schema migration`, function() {

@@ -2,7 +2,7 @@ import { expect } from 'chai'
 
 import { getꓽengine } from '@offirmo/random'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 import {
 	CoinsGain,
 	AdventureArchetype,
@@ -15,7 +15,7 @@ import {
 	ALL_BAD_ADVENTURE_ARCHETYPES,
 	ALL_GOOD_ADVENTURE_ARCHETYPES,
 	GOOD_ADVENTURE_ARCHETYPES_BY_TYPE,
-} from './index.js'
+} from './index.ts'
 
 describe(`${LIB} - logic`, function () {
 

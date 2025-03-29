@@ -14,7 +14,7 @@ import {
 
 /////////////////////
 
-import { UState } from '../types.js'
+import { UState } from '../types.ts'
 
 /////////////////////
 

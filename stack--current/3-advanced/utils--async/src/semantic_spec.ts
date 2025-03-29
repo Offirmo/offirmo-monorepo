@@ -6,7 +6,7 @@ import {
 	asap_but_out_of_current_event_loop,
 	schedule_when_idle_but_within_human_perception,
 	schedule_when_idle_but_not_too_far,
-} from './semantic.js'
+} from './semantic.ts'
 
 /////////////////////////////////////////////////
 

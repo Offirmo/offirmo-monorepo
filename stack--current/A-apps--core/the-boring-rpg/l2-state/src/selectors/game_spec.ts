@@ -4,16 +4,16 @@ import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 
-import { LIB } from '../consts.js'
-import {create, State} from '../index.js'
+import { LIB } from '../consts.ts'
+import {create, State} from '../index.ts'
 import {
 	getꓽavailable_classes,
 	will_next_play_be_good_at,
-} from './game.js'
+} from './game.ts'
 import { CharacterClass } from '@tbrpg/state--character'
 import {
 	_lose_all_energy,
-} from '../reducers/internal.js'
+} from '../reducers/internal.ts'
 
 
 describe(`${LIB} - selectors - game`, function() {

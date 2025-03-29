@@ -8,16 +8,16 @@ import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 import { CharacterClass } from '@tbrpg/state--character'
 import * as EngagementState from '@oh-my-rpg/state--engagement'
 
-import { LIB } from '../consts.js'
-import { type State } from '../types.js'
-import { getꓽlogger } from '../services/logger.js'
+import { LIB } from '../consts.ts'
+import { type State } from '../types.ts'
+import { getꓽlogger } from '../services/logger.ts'
 import {
 	create,
 	reseed,
 	rename_avatar,
 	change_avatar_class,
 	_autoplay,
-} from '../reducers/index.js'
+} from '../reducers/index.ts'
 
 /////////////////////
 

@@ -11,12 +11,12 @@ import {
 	LogSink,
 } from '@offirmo/practical-logger-types'
 
-import { SinkOptions } from '../types.js'
+import { SinkOptions } from '../types.ts'
 
 import {
 	LEVEL_TO_ASCII,
 	LEVEL_TO_STYLIZE,
-} from './common.js'
+} from './common.ts'
 
 
 export function createSink(options: Readonly<SinkOptions> = {}): LogSink {

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { SCHEMA_VERSION, LIB } from './consts.js'
+import { SCHEMA_VERSION, LIB } from './consts.ts'
 import {
 	CharacterAttribute,
 	CharacterClass,
@@ -8,8 +8,8 @@ import {
 
 	create,
 	increase_stat,
-} from './index.js'
-import { getꓽSXC } from './sec.js'
+} from './index.ts'
+import { getꓽSXC } from './sec.ts'
 
 describe(`${LIB} - state`, function() {
 

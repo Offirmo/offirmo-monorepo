@@ -20,12 +20,12 @@ import {
 
 import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 import {
 	render_backpack,
 	render_equipment,
 	render_full_inventory,
-} from './index.js'
+} from './index.ts'
 
 
 describe(`🔠  ${LIB} - inventory`, function() {

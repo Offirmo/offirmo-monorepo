@@ -1,7 +1,7 @@
 import { TextEncoder } from 'node:util'
 import { expect } from 'chai'
 
-import MurmurHash from './index.js'
+import MurmurHash from './index.ts'
 
 
 describe('@offirmo-private/murmurhash', function() {

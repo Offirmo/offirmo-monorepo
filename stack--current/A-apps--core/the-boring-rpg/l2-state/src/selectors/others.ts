@@ -13,8 +13,8 @@ import { AchievementSnapshot } from '@tbrpg/state--achievements'
 
 /////////////////////
 
-import { UState } from '../types.js'
-import { getꓽachievement_snapshot_by_temporary_id } from './achievements.js'
+import { UState } from '../types.ts'
+import { getꓽachievement_snapshot_by_temporary_id } from './achievements.ts'
 
 /////////////////////
 

@@ -7,7 +7,7 @@ import {
 	Monster,
 	MonsterRank,
 	create,
-} from './index.js'
+} from './index.ts'
 
 
 function _assert_shape(monster: Readonly<Monster>) {

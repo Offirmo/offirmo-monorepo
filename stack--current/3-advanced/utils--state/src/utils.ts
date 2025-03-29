@@ -11,20 +11,20 @@ import {
 	BaseAction,
 	ActionⳇReconcile,
 	GenericActionType,
-} from './types.js'
+} from './types.ts'
 import {
 	AnyBaseState,
 	AnyRootState,
-} from './types--internal.js'
+} from './types--internal.ts'
 import {
 	isꓽRootState,
 	isꓽTState,
 	isꓽUState, isꓽUTBundle, isꓽWithRevision,
-} from './type-guards.js'
+} from './type-guards.ts'
 import {
 	getꓽrevision,
 	getꓽrevisionⵧloose,
-} from './selectors.js'
+} from './selectors.ts'
 
 /////////////////////////////////////////////////
 

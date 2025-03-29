@@ -4,10 +4,10 @@ import { Armor } from '@tbrpg/logic--armors'
 import { Weapon } from '@tbrpg/logic--weapons'
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { render_armor_short, render_armor_detailed } from './items--armor.js'
-import { render_weapon_short, render_weapon_detailed } from './items--weapon.js'
-import { RenderItemOptions } from './types.js'
-import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.js'
+import { render_armor_short, render_armor_detailed } from './items--armor.ts'
+import { render_weapon_short, render_weapon_detailed } from './items--weapon.ts'
+import { RenderItemOptions } from './types.ts'
+import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.ts'
 
 
 function decorate_with_common_item_props(i: Immutable<Item>, doc: RichText.Document): RichText.Document {

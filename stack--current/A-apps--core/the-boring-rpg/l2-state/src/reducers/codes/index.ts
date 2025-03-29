@@ -15,18 +15,18 @@ import { getꓽprng } from '@oh-my-rpg/state--prng'
 import { create as create_weapon } from '@tbrpg/logic--weapons'
 import { create as create_armor } from '@tbrpg/logic--armors'
 
-import { type State } from '../../types.js'
-import { CODE_SPECS_BY_KEY } from '../../data/codes.js'
+import { type State } from '../../types.ts'
+import { CODE_SPECS_BY_KEY } from '../../data/codes.ts'
 
 import {
 	_update_to_now,
 	_receive_item,
 	_auto_make_room,
-} from '../internal.js'
+} from '../internal.ts'
 
-import { _refresh_achievements } from '../achievements/index.js'
-import { reset_and_salvage } from '../../migrations/salvage.js'
-import { reseed } from '../create.js'
+import { _refresh_achievements } from '../achievements/index.ts'
+import { reset_and_salvage } from '../../migrations/salvage.ts'
+import { reseed } from '../create.ts'
 
 /////////////////////////////////////////////////
 

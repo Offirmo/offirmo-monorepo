@@ -3,16 +3,16 @@
 import { Enum } from 'typescript-string-enums'
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
-import { LIB, SCHEMA_VERSION } from './consts.js'
+import { LIB, SCHEMA_VERSION } from './consts.ts'
 
 import {
 	CharacterAttribute,
 	CharacterClass,
 	CharacterAttributes,
 	State,
-} from './types.js'
+} from './types.ts'
 
-import { TBRSoftExecutionContext, getꓽSXC } from './sec.js'
+import { TBRSoftExecutionContext, getꓽSXC } from './sec.ts'
 
 /////////////////////
 

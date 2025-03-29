@@ -1,4 +1,4 @@
-export { VERSION, NUMERIC_VERSION } from './build.js'
+export { VERSION, NUMERIC_VERSION } from './build.ts'
 
 export const LIB = '@tbrpg/state'
 

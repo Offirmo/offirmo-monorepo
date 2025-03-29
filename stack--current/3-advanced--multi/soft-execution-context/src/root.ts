@@ -1,5 +1,5 @@
-import { type SoftExecutionContext } from './types.js'
-import { _createSXC } from './core.js'
+import { type SoftExecutionContext } from './types.ts'
+import { _createSXC } from './core.ts'
 
 /////////////////////
 

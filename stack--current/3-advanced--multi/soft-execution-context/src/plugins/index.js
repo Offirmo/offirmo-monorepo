@@ -1,7 +1,7 @@
-import { PLUGIN as PLUGIN_LOGICAL_STACK } from './logical-stack/index.js'
-import { PLUGIN as PLUGIN_DI } from './dependency-injection/index.js'
-import { PLUGIN as PLUGIN_ERROR_HANDLING } from './error-handling/index.js'
-import { PLUGIN as PLUGIN_ANALYTICS } from './analytics/index.js'
+import { PLUGIN as PLUGIN_LOGICAL_STACK } from './logical-stack/index.ts'
+import { PLUGIN as PLUGIN_DI } from './dependency-injection/index.ts'
+import { PLUGIN as PLUGIN_ERROR_HANDLING } from './error-handling/index.ts'
+import { PLUGIN as PLUGIN_ANALYTICS } from './analytics/index.ts'
 
 
 const PLUGINS_BY_ID = {

@@ -1,3 +1,3 @@
-export * from './types.js'
-export * from './state.js'
-export * from './examples.js'
+export * from './types.ts'
+export * from './state.ts'
+export * from './examples.ts'

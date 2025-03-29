@@ -3,7 +3,7 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	type State,
 	type TrackedEngagement,
-} from '../types.js'
+} from '../types.ts'
 
 //////////////////////////////////////////////////////////////////////
 

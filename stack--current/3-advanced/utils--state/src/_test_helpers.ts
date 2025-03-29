@@ -7,8 +7,8 @@ import {
 	BaseTState,
 	BaseUState,
 	WithSchemaVersion,
-} from './types.js'
-import { enforceꓽimmutable } from './utils.js'
+} from './types.ts'
+import { enforceꓽimmutable } from './utils.ts'
 
 // needed only for changing the default level
 //import { _force_set_level_of_uda_default_logger } from '@offirmo-private/soft-execution-context--node'

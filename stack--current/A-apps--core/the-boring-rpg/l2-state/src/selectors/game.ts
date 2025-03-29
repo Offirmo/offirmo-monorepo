@@ -4,9 +4,9 @@ import { type Immutable} from '@offirmo-private/ts-types'
 import { CharacterClass } from '@tbrpg/state--character'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
 
-import { type State, UState } from '../types.js'
-import { getꓽavailable_energy‿float } from './energy.js'
-import { _update_to_now } from '../reducers/internal.js'
+import { type State, UState } from '../types.ts'
+import { getꓽavailable_energy‿float } from './energy.ts'
+import { _update_to_now } from '../reducers/internal.ts'
 
 /////////////////////////////////////////////////
 

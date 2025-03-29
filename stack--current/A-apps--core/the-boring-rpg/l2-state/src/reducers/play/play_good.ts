@@ -25,9 +25,9 @@ import {
 
 /////////////////////
 
-import { LIB } from '../../consts.js'
-import { type State, UState } from '../../types.js'
-import { _play_adventure } from './play_adventure.js'
+import { LIB } from '../../consts.ts'
+import { type State, UState } from '../../types.ts'
+import { _play_adventure } from './play_adventure.ts'
 
 /////////////////////
 

@@ -3,7 +3,7 @@ import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-util
 import { DEMO_WEAPON_1 } from '@tbrpg/logic--weapons'
 import { DEMO_MONSTER_01 } from '@tbrpg/logic--monsters'
 
-import { ResolvedAdventure } from '../types.js'
+import { ResolvedAdventure } from '../types.ts'
 
 /////////////////////////////////////////////////
 

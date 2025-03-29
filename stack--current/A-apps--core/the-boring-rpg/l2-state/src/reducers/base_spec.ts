@@ -2,7 +2,7 @@ import { expect } from 'chai'
 
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 
-import { LIB } from '../consts.js'
+import { LIB } from '../consts.ts'
 
 describe(`${LIB} - reducer`, function() {
 	beforeEach(() => xxx_internal_reset_prng_cache())

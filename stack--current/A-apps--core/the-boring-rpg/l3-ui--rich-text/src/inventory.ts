@@ -16,10 +16,10 @@ import { type State as WalletState } from '@tbrpg/state--wallet'
 import * as RichText from '@offirmo-private/rich-text-format'
 import { appraise_power } from '@tbrpg/logic--shop'
 
-import { render_item_short } from './items.js'
-import { render_wallet } from './wallet.js'
-import { RenderItemOptions } from './types.js'
-import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.js'
+import { render_item_short } from './items.ts'
+import { render_wallet } from './wallet.ts'
+import { RenderItemOptions } from './types.ts'
+import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.ts'
 
 
 // we want the slots sorted by types according to an arbitrary order

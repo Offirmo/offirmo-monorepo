@@ -1,14 +1,14 @@
 import { expect } from 'chai'
 import { Enum } from 'typescript-string-enums'
 
-import { LIB } from '../consts.js'
-import { CoinsGain } from '../types.js'
+import { LIB } from '../consts.ts'
+import { CoinsGain } from '../types.ts'
 import {
 	RawAdventureArchetypeEntry,
 	i18n_messages,
 	ENTRIES,
-} from './index.js'
-import { OFFIRMO_BLAND_REPARTITION_ADJUSTMENT } from './i18n_en.js'
+} from './index.ts'
+import { OFFIRMO_BLAND_REPARTITION_ADJUSTMENT } from './i18n_en.ts'
 
 /////////////////////////////////////////////////
 

@@ -17,31 +17,31 @@ import {
 
 /////////////////////
 
-import { type State } from '../types.js'
+import { type State } from '../types.ts'
 
 import {
 	getꓽavailable_energy‿float,
 	find_better_unequipped_armor,
 	find_better_unequipped_weapon, getꓽavailable_classes,
-} from '../selectors/index.js'
+} from '../selectors/index.ts'
 
 import {
 	_lose_all_energy,
 	_auto_make_room,
 	_ack_all_engagements,
-} from './internal.js'
+} from './internal.ts'
 
 import {
 	rename_avatar,
 	change_avatar_class,
 	equip_item,
-} from './base.js'
+} from './base.ts'
 
 import {
 	play,
-} from './play/index.js'
+} from './play/index.ts'
 
-import { _refresh_achievements } from './achievements/index.js'
+import { _refresh_achievements } from './achievements/index.ts'
 
 /////////////////////
 

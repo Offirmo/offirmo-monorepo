@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { LIB, SCHEMA_VERSION } from './consts.js'
+import { LIB, SCHEMA_VERSION } from './consts.ts'
 
 import {
 	Currency,
@@ -13,7 +13,7 @@ import {
 
 	get_currency_amount,
 	iterables_currency,
-} from './index.js'
+} from './index.ts'
 
 describe(`${LIB} - state`, function() {
 	const EXPECTED_CURRENCY_SLOT_COUNT = 2

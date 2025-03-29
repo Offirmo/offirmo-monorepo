@@ -11,24 +11,24 @@ import { getꓽrandom, RNGEngine } from '@offirmo/random'
 
 import {
 	Armor,
-} from './types.js'
+} from './types.ts'
 
 import {
 	i18n_messages,
 	ARMOR_BASES,
 	ARMOR_QUALIFIERS1,
 	ARMOR_QUALIFIERS2,
-} from './data/index.js'
+} from './data/index.ts'
 
 import {
 	LIB,
 	MIN_ENHANCEMENT_LEVEL,
 	MAX_ENHANCEMENT_LEVEL,
-} from './consts.js'
+} from './consts.ts'
 
 import {
 	BASE_STRENGTH_INTERVAL_BY_QUALITY,
-} from './selectors.js'
+} from './selectors.ts'
 
 /////////////////////
 
@@ -123,6 +123,6 @@ export {
 	create,
 	enhance,
 }
-export { i18n_messages } from './data/index.js'
+export { i18n_messages } from './data/index.ts'
 
 /////////////////////

@@ -1,11 +1,11 @@
 import type {
 	XError,
 	XXError
-} from './types.js'
+} from './types.ts'
 
 import {
 	COMMON_ERROR_FIELDS_EXTENDED,
-} from './fields.js'
+} from './fields.ts'
 
 /////////////////////////////////////////////////
 

@@ -12,7 +12,7 @@ const {
 	listenToUnhandledRejections,
 	decorateWithDetectedEnv,
 } = require('../..')
-const good_lib  = require('./good_lib.js')
+const good_lib  = require('./good_lib.ts')
 
 const APP = 'SXC_NODE_DEMO'
 

@@ -1,10 +1,10 @@
 import { expect } from 'chai'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 
 import {
 	getꓽjson_difference,
-} from './comparators--base.js'
+} from './comparators--base.ts'
 
 
 describe(`${LIB} - comparators`, function() {

@@ -1,6 +1,6 @@
 import { getRootSXC, SoftExecutionContext } from '@offirmo-private/soft-execution-context'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 
 function getꓽSXC(parent?: SoftExecutionContext): SoftExecutionContext {
 	return (parent || getRootSXC())

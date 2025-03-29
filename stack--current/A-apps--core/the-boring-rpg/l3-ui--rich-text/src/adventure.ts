@@ -7,11 +7,11 @@ import { ALL_CURRENCIES, type Currency } from '@tbrpg/state--wallet'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { render_item_short } from './items.js'
-import { render_currency_amount } from './wallet.js'
-import { render_monster } from './monster.js'
-import { RenderItemOptions } from './types.js'
-import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.js'
+import { render_item_short } from './items.ts'
+import { render_currency_amount } from './wallet.ts'
+import { render_monster } from './monster.ts'
+import { RenderItemOptions } from './types.ts'
+import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.ts'
 
 
 function renderꓽresolved_adventure(a: Immutable<ResolvedAdventure>, options: Immutable<RenderItemOptions> = DEFAULT_RENDER_ITEM_OPTIONS): RichText.Document {

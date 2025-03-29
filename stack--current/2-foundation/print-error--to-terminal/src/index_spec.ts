@@ -4,7 +4,7 @@ import strip_terminal_escape_codes from 'strip-ansi'
 import {
 	displayError,
 	error_to_string,
-} from './index.js'
+} from './index.ts'
 
 import { createError } from '@offirmo/error-utils'
 

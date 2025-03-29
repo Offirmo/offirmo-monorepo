@@ -134,7 +134,7 @@ full path [
   '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/LICENSE',
   '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/NOTES.md',
   '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/README.md',
-  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/index.js',
+  '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/index.ts',
   '/Users/offirmo/work/src/off/offirmo-monorepo/stack--current/3-advanced--node/cli-toolbox/package.json'
 ]
 short path [
@@ -144,7 +144,7 @@ short path [
   'LICENSE',
   'NOTES.md',
   'README.md',
-  'index.js',
+  'index.ts',
   'package.json'
 ]
 recursive [

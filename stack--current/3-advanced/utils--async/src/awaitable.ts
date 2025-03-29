@@ -1,7 +1,7 @@
 import {
 	IdleDeadline,
 	requestIdleCallback,
-} from './ponyfills.js'
+} from './ponyfills.ts'
 
 /////////////////////////////////////////////////
 

@@ -6,7 +6,7 @@ import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-termina
 import {
 	//render_account_info,
 	render_game_info,
-} from './index.js'
+} from './index.ts'
 
 
 describe('🔠  view to @offirmo-private/rich-text-format - meta', function() {

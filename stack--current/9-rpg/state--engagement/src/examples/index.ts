@@ -3,9 +3,9 @@ import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-util
 import {
 	type Engagement,
 	type State,
-} from '../types.js'
+} from '../types.ts'
 
-import { SCHEMA_VERSION } from '../consts.js'
+import { SCHEMA_VERSION } from '../consts.ts'
 
 //////////////////////////////////////////////////////////////////////
 

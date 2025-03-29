@@ -9,24 +9,24 @@ import {
 	ElementType,
 } from '@tbrpg/definitions'
 
-import { Weapon } from './types.js'
+import { Weapon } from './types.ts'
 
 import {
 	MIN_ENHANCEMENT_LEVEL,
 	MAX_ENHANCEMENT_LEVEL,
-} from './consts.js'
+} from './consts.ts'
 
 import {
 	WEAPON_BASES,
 	WEAPON_QUALIFIERS1,
 	WEAPON_QUALIFIERS2,
-} from './data/index.js'
+} from './data/index.ts'
 
 import {
 	BASE_STRENGTH_INTERVAL_BY_QUALITY,
-} from './selectors.js'
+} from './selectors.ts'
 
-import { create } from './state.js'
+import { create } from './state.ts'
 
 /////////////////////
 

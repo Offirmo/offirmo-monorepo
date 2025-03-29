@@ -5,7 +5,7 @@ import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-termina
 
 import {
 	render_monster,
-} from './index.js'
+} from './index.ts'
 
 
 describe('🔠  view to @offirmo-private/rich-text-format - monster', function() {

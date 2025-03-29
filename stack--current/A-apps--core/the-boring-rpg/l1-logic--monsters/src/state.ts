@@ -6,11 +6,11 @@ import { MAX_LEVEL } from '@tbrpg/definitions'
 import {
 	Monster,
 	MonsterRank,
-} from './types.js'
+} from './types.ts'
 
 import {
 	ENTRIES,
-} from './data/index.js'
+} from './data/index.ts'
 
 /////////////////////
 

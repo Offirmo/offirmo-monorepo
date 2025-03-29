@@ -1,12 +1,12 @@
 import { expect } from 'chai'
 
-import { Item, InventorySlot, ItemQuality } from './types.js'
-import { LIB } from './consts.js'
+import { Item, InventorySlot, ItemQuality } from './types.ts'
+import { LIB } from './consts.ts'
 import {
 	createꓽitemⵧbase,
 	compareꓽitemsⵧby_slot,
 	compareꓽitemsⵧby_quality,
-} from './item.js'
+} from './item.ts'
 
 
 describe(`${LIB} - item (utilities)`, function() {

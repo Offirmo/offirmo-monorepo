@@ -1,4 +1,4 @@
-import { NumeratorDenominator } from 'fraction.js'
+import { NumeratorDenominator } from 'fraction.ts'
 import { BaseUState, BaseTState } from '@offirmo-private/state-utils'
 
 /////////////////////

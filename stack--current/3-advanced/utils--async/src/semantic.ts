@@ -1,4 +1,4 @@
-import { requestIdleCallback } from './ponyfills.js'
+import { requestIdleCallback } from './ponyfills.ts'
 
 /////////////////////////////////////////////////
 

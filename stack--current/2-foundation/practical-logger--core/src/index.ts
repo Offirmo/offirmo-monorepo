@@ -1,4 +1,4 @@
-import { create as createLogger } from './core.js'
+import { create as createLogger } from './core.ts'
 export { createLogger }
 
 export * from '@offirmo/practical-logger-types'
@@ -9,7 +9,7 @@ export {
 	LOG_LEVEL_TO_HUMAN,
 	DEFAULT_LOG_LEVEL,
 	DEFAULT_LOGGER_KEY,
-} from './consts.js'
+} from './consts.ts'
 
-export { checkLevel } from './core.js'
-export * from './normalize-args.js'
+export { checkLevel } from './core.ts'
+export * from './normalize-args.ts'

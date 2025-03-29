@@ -3,9 +3,9 @@ import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-util
 import { Weapon } from '@tbrpg/logic--weapons'
 import { Armor } from '@tbrpg/logic--armors'
 
-import { type State } from '../types.js'
-import { cleanup } from '../migrations/index.js'
-import { getꓽSXC } from '../services/sec.js'
+import { type State } from '../types.ts'
+import { cleanup } from '../migrations/index.ts'
+import { getꓽSXC } from '../services/sec.ts'
 
 /////////////////////////////////////////////////
 // needed to test migrations, both here and in composing parents

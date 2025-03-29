@@ -1,15 +1,15 @@
 import { expect } from 'chai'
 import * as sinon from 'sinon'
 
-import { LIB, SCHEMA_VERSION } from './consts.js'
+import { LIB, SCHEMA_VERSION } from './consts.ts'
 import {
 	State,
 	AchievementStatus,
 	create,
 	on_played,
 	on_achieved,
-} from './index.js'
-import { getꓽSXC } from './sec.js'
+} from './index.ts'
+import { getꓽSXC } from './sec.ts'
 
 
 describe(`${LIB} - state`, function() {

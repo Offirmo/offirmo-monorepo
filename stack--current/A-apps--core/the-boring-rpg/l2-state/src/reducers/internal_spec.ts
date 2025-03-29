@@ -3,19 +3,19 @@ import { expect } from 'chai'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 
 
-import { LIB } from '../consts.js'
+import { LIB } from '../consts.ts'
 
 import {
 	getꓽavailable_energy‿float,
-} from '../selectors/energy.js'
+} from '../selectors/energy.ts'
 
 import {
 	_lose_all_energy,
-} from './internal.js'
+} from './internal.ts'
 
 import {
 	create,
-} from './index.js'
+} from './index.ts'
 
 
 describe(`${LIB} -- reducers -- internal`, function() {

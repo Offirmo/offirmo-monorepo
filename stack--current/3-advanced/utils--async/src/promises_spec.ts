@@ -2,8 +2,8 @@ import { expect } from 'chai'
 
 import {
 	forArray,
-} from './promises.js'
-import { elapsed_time_ms } from './awaitable.js'
+} from './promises.ts'
+import { elapsed_time_ms } from './awaitable.ts'
 
 /////////////////////////////////////////////////
 

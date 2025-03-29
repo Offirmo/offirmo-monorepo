@@ -1,15 +1,15 @@
 
-import { INTERNAL_PROP } from '../../consts.js'
-import * as TopState from '../../state.js'
+import { INTERNAL_PROP } from '../../consts.ts'
+import * as TopState from '../../state.ts'
 import {
 	LOGICAL_STACK_BEGIN_MARKER,
 	LOGICAL_STACK_END_MARKER,
 	LOGICAL_STACK_SEPARATOR,
 	LOGICAL_STACK_OPERATION_MARKER,
 	LOGICAL_STACK_SEPARATOR_NON_ADJACENT,
-} from './consts.js'
-import * as State from './state.js'
-import { _getSXCStatePath } from '../../utils.js'
+} from './consts.ts'
+import * as State from './state.ts'
+import { _getSXCStatePath } from '../../utils.ts'
 
 const PLUGIN_ID = 'logical_stack'
 

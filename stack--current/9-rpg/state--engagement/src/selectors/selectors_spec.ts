@@ -1,12 +1,12 @@
 import { expect } from 'chai'
 import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
-import { LIB } from '../consts.js'
+import { LIB } from '../consts.ts'
 
 import {
 	create,
-} from '../reducers/index.js'
-import { getꓽSXC } from '../utils/sec.js'
+} from '../reducers/index.ts'
+import { getꓽSXC } from '../utils/sec.ts'
 
 //////////////////////////////////////////////////////////////////////
 

@@ -2,7 +2,7 @@ import { EOL } from 'node:os'
 
 import { expect } from 'chai'
 
-import spawnCorrectlyAndResolvesWithStdout, { SpawnError, ChildProcess } from './index.js'
+import spawnCorrectlyAndResolvesWithStdout, { SpawnError, ChildProcess } from './index.ts'
 
 /////////////////////////////////////////////////
 

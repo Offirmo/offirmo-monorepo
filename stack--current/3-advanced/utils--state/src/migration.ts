@@ -2,15 +2,15 @@ import assert from 'tiny-invariant'
 import { type SoftExecutionContext } from '@offirmo-private/soft-execution-context'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { BaseState, UTBundle, BaseRootState, AnyOffirmoState } from './types.js'
+import { BaseState, UTBundle, BaseRootState, AnyOffirmoState } from './types.ts'
 import {
 	AnyBaseState,
 	AnyBaseUState,
 	AnyBaseTState,
 	AnyRootState,
-} from './types--internal.js'
-import { isꓽRootState, hasꓽversioned_schema, isꓽBaseState, isꓽUTBundle } from './type-guards.js'
-import { getꓽschema_versionⵧloose, getꓽbaseⵧloose } from './selectors.js'
+} from './types--internal.ts'
+import { isꓽRootState, hasꓽversioned_schema, isꓽBaseState, isꓽUTBundle } from './type-guards.ts'
+import { getꓽschema_versionⵧloose, getꓽbaseⵧloose } from './selectors.ts'
 
 
 ////////////////////////////////////////////////////////////////////////////////////

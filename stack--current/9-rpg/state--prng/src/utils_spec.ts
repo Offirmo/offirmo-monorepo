@@ -11,7 +11,7 @@ import {
 	regenerate_until_not_recently_encountered,
 
 	xxx_internal_reset_prng_cache,
-} from './index.js'
+} from './index.ts'
 
 /////////////////////////////////////////////////
 

@@ -4,7 +4,7 @@ import { normalizeꓽemailⵧreasonable, normalize_unicode } from '@offirmo-priv
 
 import {
 	AUTHOR,
-} from './index.js'
+} from './index.ts'
 
 /////////////////////////////////////////////////
 

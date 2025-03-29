@@ -2,9 +2,9 @@ import { expect } from 'chai'
 
 import { ALL_LOG_LEVELS } from '@offirmo/practical-logger-core'
 
-import { LIB } from '../consts.js'
+import { LIB } from '../consts.ts'
 
-import { LEVEL_TO_CONSOLE_METHOD } from './common.js'
+import { LEVEL_TO_CONSOLE_METHOD } from './common.ts'
 
 
 describe(`${LIB} / sinks - common`, () => {

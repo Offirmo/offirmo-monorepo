@@ -7,16 +7,16 @@ import {
 } from '@offirmo-private/timestamps'
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
-import { LIB, SCHEMA_VERSION } from './consts.js'
+import { LIB, SCHEMA_VERSION } from './consts.ts'
 
 import {
 	AchievementStatus,
 	State,
-} from './types.js'
+} from './types.ts'
 
-import { getꓽlast_known_achievement_status } from './selectors.js'
+import { getꓽlast_known_achievement_status } from './selectors.ts'
 
-import { TBRSoftExecutionContext, getꓽSXC } from './sec.js'
+import { TBRSoftExecutionContext, getꓽSXC } from './sec.ts'
 
 /////////////////////
 

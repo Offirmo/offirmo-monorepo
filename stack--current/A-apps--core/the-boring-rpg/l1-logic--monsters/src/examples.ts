@@ -6,8 +6,8 @@ import { getꓽengine } from '@offirmo/random'
 import {
 	Monster,
 	MonsterRank,
-} from './types.js'
-import { create } from './state.js'
+} from './types.ts'
+import { create } from './state.ts'
 
 /////////////////////
 

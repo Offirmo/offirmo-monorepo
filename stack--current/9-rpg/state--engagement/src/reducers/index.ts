@@ -1,16 +1,16 @@
 import assert from 'tiny-invariant'
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
-import { SCHEMA_VERSION } from '../consts.js'
+import { SCHEMA_VERSION } from '../consts.ts'
 
 import {
 	type Engagement,
 	type TrackedEngagement,
 	type PendingEngagementUId,
 	type State,
-} from '../types.js'
+} from '../types.ts'
 
-import { type SoftExecutionContext, getꓽSXC } from '../utils/sec.js'
+import { type SoftExecutionContext, getꓽSXC } from '../utils/sec.ts'
 
 //////////////////////////////////////////////////////////////////////
 

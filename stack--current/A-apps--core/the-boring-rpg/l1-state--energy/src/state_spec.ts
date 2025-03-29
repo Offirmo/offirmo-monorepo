@@ -3,7 +3,7 @@ import * as sinon from 'sinon'
 import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
 import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 
-import { LIB, SCHEMA_VERSION } from './consts.js'
+import { LIB, SCHEMA_VERSION } from './consts.ts'
 
 import {
 	create,
@@ -13,7 +13,7 @@ import {
 	restore_energy,
 
 	getꓽavailable_energy‿float,
-} from './index.js'
+} from './index.ts'
 
 const SECOND_ms = 1000
 const HOUR_ms = 3600 * SECOND_ms

@@ -8,9 +8,9 @@ import {
 	AdventureType,
 	OutcomeArchetype,
 	AdventureArchetype,
-} from './types.js'
+} from './types.ts'
 
-import { i18n_messages, ENTRIES } from './data/index.js'
+import { i18n_messages, ENTRIES } from './data/index.ts'
 
 /////////////////////
 
@@ -141,7 +141,7 @@ function generate_random_coin_gain_or_loss(rng: RNGEngine, {
 
 /////////////////////
 
-export * from './types.js'
+export * from './types.ts'
 export {
 	i18n_messages,
 

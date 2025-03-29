@@ -1,8 +1,8 @@
 import { Logger, LoggerCreationParams } from '@offirmo/practical-logger-types'
 import { createLogger as createLoggerCore } from '@offirmo/practical-logger-core'
 
-import { SinkOptions } from './types.js'
-import createSink from './sinks/to-console.js'
+import { SinkOptions } from './types.ts'
+import createSink from './sinks/to-console.ts'
 
 const ORIGINAL_CONSOLE = console
 

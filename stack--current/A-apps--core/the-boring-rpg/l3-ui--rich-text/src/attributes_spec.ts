@@ -7,7 +7,7 @@ import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-termina
 import {
 	render_attributes,
 	render_character_sheet,
-} from './index.js'
+} from './index.ts'
 
 
 describe('🔠  view to @offirmo-private/rich-text-format - attributes', function() {

@@ -14,13 +14,13 @@ import { type AdventureHumanReadableID } from '@tbrpg/logic--adventures'
 
 /////////////////////
 
-import { type State } from '../../types.js'
+import { type State } from '../../types.ts'
 
-import { will_next_play_be_good_at } from '../../selectors/index.js'
-import { _update_to_now } from '../internal.js'
-import { _play_good } from './play_good.js'
-import { _play_bad } from './play_bad.js'
-import { _refresh_achievements } from '../achievements/index.js'
+import { will_next_play_be_good_at } from '../../selectors/index.ts'
+import { _update_to_now } from '../internal.ts'
+import { _play_good } from './play_good.ts'
+import { _play_bad } from './play_bad.ts'
+import { _refresh_achievements } from '../achievements/index.ts'
 
 /////////////////////
 

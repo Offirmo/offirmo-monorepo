@@ -18,7 +18,7 @@ import {
 
 import {
 	LIB,
-} from './consts.js'
+} from './consts.ts'
 
 /////////////////////
 

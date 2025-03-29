@@ -7,11 +7,11 @@ import {
 	generate_random_demo_weapon,
 } from '@tbrpg/logic--weapons'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 import {
 	Item,
 	compareꓽitemsⵧby_slot_then_strength,
-} from './index.js'
+} from './index.ts'
 
 describe(`${LIB} - compare`, function() {
 

@@ -13,7 +13,7 @@ import {
 	BaseRootState,
 	StateInfos,
 	AnyOffirmoState,
-} from './types.js'
+} from './types.ts'
 import {
 	isꓽWithSchemaVersion,
 	isꓽWithRevision,
@@ -24,7 +24,7 @@ import {
 	is_time_stamped,
 	isꓽRootState,
 	isꓽUTBundle,
-} from './type-guards.js'
+} from './type-guards.ts'
 
 // "loose" = useful for comparisons with legacy/wrong states (wrong structure)
 // will not throw and will fall back to 0 if not a corresponding state (ex. undefined or unrecognized)

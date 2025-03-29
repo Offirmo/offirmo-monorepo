@@ -1,5 +1,5 @@
-import { type XXError, isꓽError } from './types.js'
-import { COMMON_ERROR_FIELDS_EXTENDED } from './fields.js'
+import { type XXError, isꓽError } from './types.ts'
+import { COMMON_ERROR_FIELDS_EXTENDED } from './fields.ts'
 
 /////////////////////////////////////////////////
 

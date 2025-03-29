@@ -3,7 +3,7 @@ import {
 	BaseTState,
 	BaseUState,
 	BaseState,
-} from './types.js'
+} from './types.ts'
 
 
 export interface AnyBaseState extends BaseState {

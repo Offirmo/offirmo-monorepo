@@ -4,7 +4,7 @@ import { Enum } from 'typescript-string-enums'
 import { ItemQuality, InventorySlot } from '@tbrpg/definitions'
 import { getꓽengine, RNGEngine } from '@offirmo/random'
 
-import { LIB } from './consts.js'
+import { LIB } from './consts.ts'
 import {
 	OVERALL_STRENGTH_INTERVAL_BY_QUALITY,
 	BASE_STRENGTH_INTERVAL_BY_QUALITY,
@@ -13,7 +13,7 @@ import {
 	getꓽdamage_reduction_interval,
 	get_medium_damage_reduction,
 	matches,
-} from './index.js'
+} from './index.ts'
 
 
 

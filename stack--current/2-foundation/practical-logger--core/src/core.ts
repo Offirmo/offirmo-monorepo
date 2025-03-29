@@ -15,9 +15,9 @@ import {
 	LOG_LEVEL_TO_INTEGER,
 	DEFAULT_LOG_LEVEL,
 	DEFAULT_LOGGER_KEY,
-} from './consts.js'
+} from './consts.ts'
 
-import { normalizeArguments } from './normalize-args.js'
+import { normalizeArguments } from './normalize-args.ts'
 
 
 export function checkLevel(level: any): asserts level is LogLevel {

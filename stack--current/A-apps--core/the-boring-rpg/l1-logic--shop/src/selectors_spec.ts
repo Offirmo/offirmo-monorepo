@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import { DEMO_ARMOR_1 } from '@tbrpg/logic--armors'
 import { DEMO_WEAPON_1 } from '@tbrpg/logic--weapons'
 
-import { appraise_sell_value } from './index.js'
+import { appraise_sell_value } from './index.ts'
 
 
 describe('@tbrpg/logic--shop - selectors:', function() {

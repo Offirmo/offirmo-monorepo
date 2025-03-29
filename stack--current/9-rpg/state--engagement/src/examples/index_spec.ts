@@ -2,10 +2,10 @@
 
 import {expect} from 'chai'
 
-import {LIB} from '../consts.js'
-import {getꓽSXC} from '../utils/sec.js'
-import { DEMO_STATE } from './index.js'
-import { migrate_toꓽlatest } from '../migrations/index.js'
+import {LIB} from '../consts.ts'
+import {getꓽSXC} from '../utils/sec.ts'
+import { DEMO_STATE } from './index.ts'
+import { migrate_toꓽlatest } from '../migrations/index.ts'
 
 //////////////////////////////////////////////////////////////////////
 

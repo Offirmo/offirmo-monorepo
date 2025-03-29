@@ -1,6 +1,6 @@
 import { DebugApiRoot, DebugApi } from '@offirmo/universal-debug-api-interface'
 
-import createV1 from './v1.js'
+import createV1 from './v1.ts'
 
 // ensure the root is present
 const _p = '_debug'

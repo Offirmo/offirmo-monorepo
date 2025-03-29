@@ -1,4 +1,4 @@
-import { LIB, DEBUG } from '../consts.js'
+import { LIB, DEBUG } from '../consts.ts'
 import { log_anything, report_shared_state_change } from '../../tosort/2024/shared-state/reducers'
 import { is_browser_connected_to_a_network } from '../l1-is-online'
 import { is_browser_page_visible } from '../l1-is-page-visible'

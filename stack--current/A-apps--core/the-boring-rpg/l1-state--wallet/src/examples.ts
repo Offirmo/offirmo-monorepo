@@ -1,5 +1,5 @@
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
-import { type State } from './types.js'
+import { type State } from './types.ts'
 
 /////////////////////
 

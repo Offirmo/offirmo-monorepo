@@ -30,9 +30,9 @@ import {
 
 import {
 	ResolvedAdventure,
-} from '../types.js'
+} from '../types.ts'
 
-import { LIB } from '../consts.js'
+import { LIB } from '../consts.ts'
 
 /////////////////////////////////////////////////
 

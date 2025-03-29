@@ -3,8 +3,8 @@ import * as sinon from 'sinon'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 
-import { LIB, TICK_MS } from './consts.js'
-import { Fraction } from './utils.js'
+import { LIB, TICK_MS } from './consts.ts'
+import { Fraction } from './utils.ts'
 import {
 	UState,
 	TState,
@@ -17,7 +17,7 @@ import {
 	get_milliseconds_to_next,
 	getꓽavailable_energy‿float,
 	getꓽhuman_time_to_next,
-} from './index.js'
+} from './index.ts'
 
 
 // TODO fix energy limit

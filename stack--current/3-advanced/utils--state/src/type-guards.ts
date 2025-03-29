@@ -9,7 +9,7 @@ import {
 	BaseUState,
 	BaseRootState,
 	UTBundle, WithLastUserInvestmentTimestamp,
-} from './types.js'
+} from './types.ts'
 
 /////////////////////////////////////////////////
 

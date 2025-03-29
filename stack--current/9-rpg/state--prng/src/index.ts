@@ -1,9 +1,9 @@
-export * from './types.js'
-export * from './examples.js'
-export * from './get_prng.js'
-export * from './state.js'
-export * from './utils.js'
-export * from './migrations.js'
+export * from './types.ts'
+export * from './examples.ts'
+export * from './get_prng.ts'
+export * from './state.ts'
+export * from './utils.ts'
+export * from './migrations.ts'
 
 // for convenience
 export {

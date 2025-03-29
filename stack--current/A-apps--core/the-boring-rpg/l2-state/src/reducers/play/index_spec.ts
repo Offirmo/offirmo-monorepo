@@ -14,20 +14,20 @@ import {
 	get_currency_amount,
 } from '@tbrpg/state--wallet'
 
-import { LIB } from '../../consts.js'
-import { type State} from '../../types.js'
+import { LIB } from '../../consts.ts'
+import { type State} from '../../types.ts'
 import {
 	getꓽavailable_energy‿float,
-} from '../../selectors/index.js'
+} from '../../selectors/index.ts'
 import {
 	_lose_all_energy,
-} from '../internal.js'
+} from '../internal.ts'
 import {
 	create,
-} from '../index.js'
+} from '../index.ts'
 import {
 	play,
-} from './index.js'
+} from './index.ts'
 
 
 describe(`${LIB} - reducer - play`, function() {

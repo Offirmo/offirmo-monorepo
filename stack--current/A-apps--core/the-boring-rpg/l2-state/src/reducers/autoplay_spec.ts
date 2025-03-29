@@ -8,16 +8,16 @@ import { Weapon, matches as matches_weapon } from '@tbrpg/logic--weapons'
 import { Armor, matches as matches_armor } from '@tbrpg/logic--armors'
 
 
-import { LIB } from '../consts.js'
+import { LIB } from '../consts.ts'
 import {
 	is_inventory_full,
-} from '../selectors/index.js'
+} from '../selectors/index.ts'
 import {
 	STARTING_WEAPON_SPEC,
 	STARTING_ARMOR_SPEC,
 	create,
-} from './create.js'
-import { _autoplay } from './autoplay.js'
+} from './create.ts'
+import { _autoplay } from './autoplay.ts'
 
 
 describe(`${LIB} - reducer`, function() {

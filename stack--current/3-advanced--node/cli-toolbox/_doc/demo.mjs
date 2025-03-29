@@ -1,7 +1,7 @@
 #!/bin/sh
 ':' //# https://sambal.org/?p=1014 ; exec /usr/bin/env node "$0" "$@"
 
-await import('loud-rejection/register.js')
+await import('loud-rejection/register.ts')
 
 import fs from 'node:fs/promises';
 import { fileURLToPath } from 'node:url'

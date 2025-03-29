@@ -10,9 +10,9 @@ import {
 import { generate_uuid } from '@offirmo-private/uuid'
 import { PRNGState } from '@offirmo/random'
 
-import { LIB, SCHEMA_VERSION } from './consts.js'
-import { type State } from './types.js'
-import { type SoftExecutionContext } from './sec.js'
+import { LIB, SCHEMA_VERSION } from './consts.ts'
+import { type State } from './types.ts'
+import { type SoftExecutionContext } from './sec.ts'
 
 //////////////////////////////////////////////////////////////////////
 

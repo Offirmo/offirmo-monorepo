@@ -41,4 +41,4 @@ export const LOG_LEVEL_TO_HUMAN: Readonly<{ readonly [k: string]: string }> = AL
 	return acc
 }, {} as any)
 
-export * from './consts-base.js'
+export * from './consts-base.ts'

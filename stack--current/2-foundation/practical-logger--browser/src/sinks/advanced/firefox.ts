@@ -6,14 +6,14 @@ import {
 import {
 	LEVEL_TO_CONSOLE_METHOD,
 	to_uniform_level,
-} from '../common.js'
+} from '../common.ts'
 import {
 	FONT_FAMILY_BETTER_PROPORTIONAL,
 	FONT_FAMILY_BETTER_MONOSPACE,
 	LEVEL_TO_COLOR_STYLE,
 	add_styled_string,
 	build_args,
-} from './common.js'
+} from './common.ts'
 
 
 function has_details_indicator(console_method_name: string): boolean {
