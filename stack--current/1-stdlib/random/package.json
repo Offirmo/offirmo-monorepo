@@ -15,9 +15,7 @@
 	"peerDependencies": {
 		"tslib": "^2"
 	},
-	"dependencies": {
-		"tiny-invariant": "^1"
-	},
+	"dependencies": {},
 	"scripts": {
 		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
 		"test--ts": "tsc --noEmit",
