@@ -1,6 +1,6 @@
 const {
 	promiseTry,
-} = require('..')
+} = require('../../dist/src.es2024.esm/index.ts')
 
 promiseTry(() => { throw new Error('Oups!') })
 	.then(

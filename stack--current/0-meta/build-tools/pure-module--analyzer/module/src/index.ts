@@ -1,8 +1,5 @@
-/* PROMPT
- * ’
- */
 import * as path from 'node:path'
-import { readFileSync } from 'node:fs'
+import { readFileSync, renameSync } from 'node:fs'
 import { isBuiltin } from 'node:module'
 
 import walk from 'ignore-walk'
@@ -10,19 +7,57 @@ import { parse as parseImports } from 'parse-imports-ts'
 import JSON5 from 'json5'
 import { writeJsonFile as write_json_file } from 'write-json-file'
 
-import { lsFilesRecursiveSync } from './_vendor/fs_ls.ts'
-
 /////////////////////////////////////////////////
 
+// for readability. Unfortunately this doesn't cause a real additional safety
+export type Basename = string
+export type RelativePath = string // implied relative to some "working dir"
+export type AbsolutePath = string
+export type AnyPath = RelativePath | AbsolutePath
+
 interface FileEntry {
-	path‿abs: string
-	path‿rel: string
-	basename: string
+	path‿abs: AbsolutePath
+	path‿rel: RelativePath
+	basename: Basename
 	ext: string // . included, ex. .ts
 	extⵧsub: string // . included, ex. .tests
 	extⵧextended: string
-	basename‿noext: string
+	basename‿noext: Basename
 }
+
+function get_file_entry(path‿abs: AbsolutePath, root‿abspath: AbsolutePath): FileEntry {
+	const basename = path.basename(path‿abs)
+	const ext = path.extname(basename)
+	const extⵧsub = path.extname(path.basename(basename, ext))
+	const extⵧextended = (() => {
+		const split = basename.split('.')
+		split[0] = ''
+		return split.join('.')
+	})()
+	const basename‿noext = path.basename(path‿abs, extⵧextended)
+
+	const entry: FileEntry = {
+		path‿abs,
+		path‿rel: path.relative(root‿abspath, path‿abs),
+		basename,
+		ext,
+		extⵧsub,
+		extⵧextended,
+		basename‿noext,
+	}
+
+	return entry
+}
+
+function update_file_entry(entry: FileEntry, new_path‿abs: AbsolutePath, root‿abspath: AbsolutePath): void {
+	const new_entry = get_file_entry(new_path‿abs, root‿abspath)
+	Object.keys(entry).forEach(k => {
+		// @ts-ignore
+		entry[k] = new_entry[k]
+	})
+}
+
+/////////////////////////////////////////////////
 
 type DependencyType =
 	| 'normal'
@@ -87,7 +122,7 @@ const MANIFEST‿basename = 'MANIFEST.json5'
 
 /////////////////////////////////////////////////
 
-function _createꓽresult(root‿abspath: string): PureModuleDetails {
+function _createꓽresult(root‿abspath: AbsolutePath): PureModuleDetails {
 	const name = (() => {
 		let _path = path.resolve(root‿abspath).split(path.sep)
 		if (_path.at(-1) === 'src')
@@ -146,14 +181,11 @@ function _isꓽin_excluded_folder(entry: FileEntry): boolean {
 	if (path‿rel.includes('node_modules/'))
 		throw new Error(`A pure module should not contain node_modules!`)
 
-	if (path‿rel.includes('++gen/'))
+	if (path‿rel.includes('~~')) // means "unstructured
 		return true
 
 	// vendored deps are supposed to have no deps
 	if (path‿rel.includes('__vendored/'))
-		return true
-
-	if (path‿rel.includes('~~tosort/'))
 		return true
 
 	return false
@@ -228,32 +260,32 @@ function inferꓽdeptype_from_caller(entry: FileEntry): DependencyType {
 
 /////////////////////////////////////////////////
 
-function assertꓽmigrated(entry: FileEntry, { indent = ''} = {}): void {
-	let has_pending_migration = false
+
+function assertꓽmigrated(entry: FileEntry, { indent = '', root‿abspath }: { indent?: string, root‿abspath: AbsolutePath}): void {
+	let migration_target : AbsolutePath | null = null
 
 	const { path‿abs, basename‿noext, ext, extⵧextended } = entry
 
 	if (basename‿noext.endsWith('_spec')) {
-		console.log(`Please normalize this file:`)
-		console.log(`mv "${path.relative(process.cwd(), path‿abs)}" "${path.relative(process.cwd(), path‿abs.replace('_spec', '.tests'))}"`)
-		has_pending_migration = true
+		migration_target = path‿abs.replace('_spec', '.tests')
 	}
-	if (extⵧextended.startsWith('.spec')) {
-		console.log(`Please normalize this file:`)
-		console.log(`mv "${path.relative(process.cwd(), path‿abs)}" "${path.relative(process.cwd(), path‿abs.replace('.spec', '.tests'))}"`)
-		has_pending_migration = true
+	else if (extⵧextended.startsWith('.spec')) {
+		migration_target = path‿abs.replace('.spec', '.tests')
 	}
 
 	if ([
 		'.cjs', '.cts', '.htm', '.markdown',
 	].includes(ext)) {
 		console.log(`Please normalize this file:`)
-		console.log(`Using outdated extension "${ext}"!`)
-		has_pending_migration = true
+		throw new Error(`Using outdated extension "${ext}"!`)
 	}
 
-	if (has_pending_migration) {
-		throw new Error(`Pending migration!`)
+	if (migration_target) {
+		console.log(`Auto normalizing file:`)
+		console.log(`mv "${path.relative(root‿abspath, path‿abs)}" "${path.relative(root‿abspath, migration_target)}"`)
+		renameSync(path‿abs, migration_target)
+
+		update_file_entry(entry, migration_target, root‿abspath)
 	}
 }
 
@@ -270,41 +302,19 @@ function assertꓽnormalized(entry: FileEntry, { indent = ''} = {}): void {
 
 /////////////////////////////////////////////////
 
-async function getꓽpure_module_details(module_path: string, { indent = ''} = {}) {
+async function getꓽpure_module_details(module_path: AnyPath, { indent = ''} = {}) {
 	const root‿abspath = path.resolve(module_path)
 	console.log(`${indent}🗂  analysing pure code module at "${root‿abspath}"…`)
 
-	const files = walk.sync({
+	const files = (walk.sync({
 			path: root‿abspath,
 			ignoreFiles: [ '.gitignore' ],
-		})
+		}) as Array<string>)
 		.map(p => path.resolve(root‿abspath, p))
 		.sort()
 	//const files = lsFilesRecursiveSync(root‿abspath)
 
-	const file_entries: Array<FileEntry> = files.map(path‿abs => {
-		const basename = path.basename(path‿abs)
-		const ext = path.extname(basename)
-		const extⵧsub = path.extname(path.basename(basename, ext))
-		const extⵧextended = (() => {
-			const split = basename.split('.')
-			split[0] = ''
-			return split.join('.')
-		})()
-		const basename‿noext = path.basename(path‿abs, extⵧextended)
-
-		const entry: FileEntry = {
-			path‿abs,
-			path‿rel: path.relative(root‿abspath, path‿abs),
-			basename,
-			ext,
-			extⵧsub,
-			extⵧextended,
-			basename‿noext,
-		}
-
-		return entry
-	})
+	const file_entries: Array<FileEntry> = files.map(path‿abs => get_file_entry(path‿abs, root‿abspath))
 
 	// start aggregating
 	const result = _createꓽresult(root‿abspath)
@@ -369,7 +379,7 @@ async function getꓽpure_module_details(module_path: string, { indent = ''} = {
 		if (is_excluded)
 			return
 
-		assertꓽmigrated(entry)
+		assertꓽmigrated(entry, { indent, root‿abspath })
 		assertꓽnormalized(entry)
 
 		if (!result.source) {

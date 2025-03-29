@@ -49,12 +49,24 @@ async function refresh_pure_module(pure_module_path: string) {
 	})
 }
 
+import { lsDirsSync } from './fs_ls.ts'
+
+async function refresh_pure_modules(parent_path: string) {
+	const dirs = lsDirsSync(path.resolve(__dirname, parent_path), { full_path: true })
+	for (const dir of dirs) {
+		await refresh_pure_module(dir + '/module/')
+	}
+}
+
 /////////////////////////////////////////////////
+
 
 //await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--analyzer/module/')
 //await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/')
 
-await refresh_pure_module( '../../../../../1-stdlib/poll/module/' )
+await refresh_pure_modules('../../../../../1-stdlib/')
+
+//await refresh_pure_module( '../../../../../1-stdlib/poll/module/' )
 //await refresh_pure_module( '../../../../../1-stdlib/timestamps/module/' )
 //await refresh_pure_module( '../../../../../1-stdlib/random/module/')
 

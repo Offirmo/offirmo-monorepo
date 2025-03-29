@@ -1,6 +1,4 @@
-'use strict'
-
-const tiny_singleton = require('../..').default
+import tiny_singleton from '@offirmo-private/tiny-singleton'
 
 console.log('starting…', { tiny_singleton })
 

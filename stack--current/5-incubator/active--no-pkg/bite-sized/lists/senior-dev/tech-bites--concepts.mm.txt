@@ -33,6 +33,7 @@
 [ ] SWE at Google https://abseil.io/resources/swe-book/html/toc.html
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
 [ ] testing https://testing.googleblog.com/
+a11y = Accessibility
 abort controller https://kettanaito.com/blog/dont-sleep-on-abort-controller
 abstraction -- level
 abstraction -- wrong, premature "most of the issues arise from trying to eagerly solve a problem before it fully exists in reality" https://www.transcendsoftware.se/posts/the-perils-of-premature-abstraction/ https://zackoverflow.dev/writing/premature-abstraction
@@ -394,7 +395,6 @@ hotfix
 http -- ohttp "oblivious" https://support.mozilla.org/en-US/kb/ohttp-explained
 hypermedia
 hypertext
-i18n -- truly local = more than just translation
 IAM "identity and access management"
 IAM -- CIAM "Customer Identity and Access Management" = a type of identity and access management (IAM) that integrates authentication and authorization into customer-facing applications
 IAM -- CIAM -- 01 Improves customer registration and login experiences while reducing the risk of account takeover (a rampant problem in the consumer space because of password reuse)
@@ -466,6 +466,14 @@ kebab-case vs snake etc
 kill switch
 KISS
 KTLO
+l10n (localization) = process of adapting a product to local markets (for example, by i18n'ing it)
+l10n -- g11n = Globalization
+l10n -- i18n (internationalization) = planning and implementing products and services so that they can be adapted easily localized to specific languages and cultures
+l10n -- i18n -- blocking languages = core business
+l10n -- i18n -- ICU format https://formatjs.github.io/
+l10n -- i18n -- pseudolocalization = [Lóôõrēĕėęm iìíîpsúûüũm]
+l10n -- i18n -- text size change https://www.w3.org/International/articles/article-text-size
+l10n -- truly local = more than just translation
 lang -- Bend = massively parallel, high-level programming language https://github.com/HigherOrderCO/Bend
 lang -- go
 lang -- go -- advocacy https://github.com/microsoft/typescript-go/discussions/411
@@ -477,6 +485,7 @@ language features -- data hiding
 language features -- encapsulation
 language features -- polymorphism
 language interprété types simples / types par référence
+language tags
 languages -- configuration
 languages -- configuration -- https://github.com/bazelbuild/starlark/
 languages -- generations = (disputed) https://en.wikipedia.org/wiki/Programming_language_generations

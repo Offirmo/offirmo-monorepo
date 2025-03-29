@@ -815,7 +815,6 @@ progress over perfection
 project management -- iron triangle = scope, time and people
 project management = boils down to one of two questions: When will it be done? Will it be done in time?
 précariat https://en.wikipedia.org/wiki/Precariat
-psychological safety
 Pulitzer prize -- biographies https://en.wikipedia.org/wiki/Pulitzer_Prize_for_Biography
 purchasing "messy middle" https://www.thinkwithgoogle.com/intl/en-emea/consumer-insights/consumer-journey/navigating-purchase-behavior-and-decision-making/
 put into words
@@ -865,6 +864,8 @@ robustness principle = be conservative in what you do, be liberal in what you ac
 rock the boat -- permission to (speak freely)
 root cause misattribution https://www.zeptonaut.com/posts/rocket-league-and-root-cause-misattribution/
 Russell Conjugation = Journalists often change the meaning of a sentence by replacing one word with a synonym that implies a different meaning. For example, the same person can support an estate tax but oppose a death tax — even though they are the same thing.
+safety -- psychological = critical
+safety -- Swiss cheese model
 satisfied with his lot, adjusted to his environment, happy in his work, and representative of all that is best in the American tradition https://en.wikipedia.org/wiki/Ed_Ricketts#Philosophy
 SBI https://medium.com/pm101/the-situation-behavior-impact-feedback-framework-e20ce52c9357
 SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/
