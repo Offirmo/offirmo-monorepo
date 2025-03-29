@@ -1,5 +1,6 @@
 import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { existsSync, renameSync } from 'node:fs'
 
 /////////////////////////////////////////////////
 
@@ -54,6 +55,9 @@ import { lsDirsSync } from './fs_ls.ts'
 async function refresh_pure_modules(parent_path: string) {
 	const dirs = lsDirsSync(path.resolve(__dirname, parent_path), { full_path: true })
 	for (const dir of dirs) {
+		if (!existsSync(path.resolve(__dirname, dir, 'module'))) {
+			renameSync(path.resolve(__dirname, dir, 'src'), path.resolve(__dirname, dir, 'module'))
+		}
 		await refresh_pure_module(dir + '/module/')
 	}
 }
@@ -64,12 +68,10 @@ async function refresh_pure_modules(parent_path: string) {
 //await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--analyzer/module/')
 //await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/')
 
-await refresh_pure_modules('../../../../../1-stdlib/')
+//await refresh_pure_modules('../../../../../1-stdlib/')
 //await refresh_pure_module( '../../../../../1-stdlib/timestamps/module/' )
-//await refresh_pure_module( '../../../../../1-stdlib/random/module/')
 
-await refresh_pure_modules('../../../../../2-foundation/')
+//await refresh_pure_modules('../../../../../2-foundation/')
 // await refresh_pure_module( '../../../../../2-foundation/prettify-any/src/')
 
-// not ready
-//await refresh_pure_module( '../../../../../2-foundation/utils--error/src/')
+await refresh_pure_modules('../../../../../A-apps--core/the-boring-rpg/')

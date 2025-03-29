@@ -73,6 +73,7 @@ interface Dependency {
 
 type ProgLang =
 	| 'js'
+	| 'json'
 	| 'ts'
 	| 'jsx'
 	| 'html'
@@ -218,6 +219,9 @@ function getꓽProgLangs(entry: FileEntry): ProgLang[] {
 
 		case ['.jsx'].includes(ext):
 			return [ 'js', 'jsx' ]
+
+		case ['.json'].includes(ext):
+			return [ 'json' ]
 
 		case ['.ts'].includes(ext): // mts sometimes needed for node scripts
 			return [ 'ts' ]

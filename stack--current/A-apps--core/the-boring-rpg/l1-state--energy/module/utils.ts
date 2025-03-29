@@ -1,4 +1,4 @@
-import FractionBadlyTyped, { NumeratorDenominator } from 'fraction.ts'
+import FractionBadlyTyped, { NumeratorDenominator } from 'fraction.js'
 
 function time_to_human(seconds: number): string {
 	//console.log(`time_to_human(${seconds})`)

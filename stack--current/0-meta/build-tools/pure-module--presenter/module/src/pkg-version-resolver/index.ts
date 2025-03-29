@@ -129,7 +129,8 @@ class PkgVersionResolver {
 	// TODO review is this needed?
 	private is_internal_package(pkg_name: string) {
 		return pkg_name.startsWith('@offirmo')
-		// TODO more
+			|| pkg_name.startsWith('@oh-my-rpg')
+			|| pkg_name.startsWith('@tbrpg')
 	}
 }
 
