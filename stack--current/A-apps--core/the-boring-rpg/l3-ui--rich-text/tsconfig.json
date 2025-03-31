@@ -1,10 +1,7 @@
 {
 	"extends": "../../../0-meta/tsconfig.json",
-	"compilerOptions": {
-		"noPropertyAccessFromIndexSignature": false
-	},
 	"include": [
 		"../../../0-meta/typescript-custom-typings/*.d.ts",
-		"src/**/*.ts"
+		"module/**/*.ts"
 	]
 }

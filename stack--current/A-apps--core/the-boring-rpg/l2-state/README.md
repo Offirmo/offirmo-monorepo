@@ -1,2 +1,3 @@
+# @offirmo-private/l2-state
 
-See ../sandbox for demo usage
+Overall TBRPG state: types, reducers, accessors and utilities

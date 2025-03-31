@@ -272,3 +272,5 @@ https://en.wikipedia.org/wiki/Gravitational_singularity
 +++ https://en.wikipedia.org/wiki/Outline_of_space_science
 
 https://en.wikipedia.org/wiki/Kardashev_scale
+
+https://en.wikipedia.org/wiki/Long-term_nuclear_waste_warning_messages
