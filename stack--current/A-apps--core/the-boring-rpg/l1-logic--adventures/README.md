@@ -1,3 +1,6 @@
+## @tbrpg/logic--adventures
+
+Predefined adventures: logic and utilities
 
 ```
 ⎨⎨encounter⎬⎬

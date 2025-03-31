@@ -1,3 +1,4 @@
 {
+	name: 'state--inventory',
 	"description": "Inventory: types, reducers, accessors and utilities"
 }

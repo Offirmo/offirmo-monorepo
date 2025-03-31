@@ -1,3 +1,6 @@
+# @tbrpg/state--energy
+
+Consumable & replenishing energy: types, reducers, accessors and utilities
 
 Energy bar, like most mobile games.
 

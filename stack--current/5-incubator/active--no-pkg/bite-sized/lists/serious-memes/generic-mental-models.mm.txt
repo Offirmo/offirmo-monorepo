@@ -92,6 +92,8 @@ autocracy https://en.wikipedia.org/wiki/Autocracy
 availability cascade = a self-reinforcing cycle that creates collective beliefs. An idea will gain traction once it enters the mainstream, which triggers a chain reaction, which causes lots of people to adopt it not because it’s true but because it’s popular.
 avoir vs prendre le temps
 Babbitt = person and especially a business or professional man who conforms unthinkingly to prevailing middle-class standards https://en.wikipedia.org/wiki/Babbitt_(novel)
+bad randomness -- color + single digit = blue & 7
+bad randomness -- tool + color = hammer red
 baker’s dozen: The key to good hospitality is to delight your guests with an unexpected gift. If you run a hotel, leave a chocolate on the bed. If you run a bakery, give your customers one extra bagel. If you write a tweetstorm, share an extra idea.
 Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 barbarians at the gate https://en.wikipedia.org/wiki/Barbarians_at_the_Gate
@@ -107,8 +109,16 @@ better ask for forgiveness than for permission
 better safe than sorry
 biases -- attractiveness
 biases -- baby-face
+biases -- Benjamin Franklin effect = ppl like a person more after doing a favor to them
+biases -- bias blind spot = tendency to see oneself as less biased than others
 biases -- cognitive = https://en.wikipedia.org/wiki/Cognitive_bias TODO
+biases -- false-uniqueness effect = ppl tend to view their qualities, traits & pers attributes as unique when they are not
+biases -- hostile attribution = tendency to interpret others' behavior as having hostile intent, even when ambiguous or benign
+biases -- mean world syndrome = perceive the world as more dangerous than it is
 biases -- resulting = the tendency to judge a decision by its eventual outcome instead of based on the quality of the decision at the time it was made https://www.artofmanliness.com/career-wealth/career/one-mistake-never-to-make-when-leading-a-meeting/
+biases -- rhyme-as-reason = sayings that rhyme are perceived more accurate or truthful
+biases -- well travelled road = perceived shorter time
+biases -- wet forecast = wheather forecasters exaggerate the chance of rain
 bike shed effect = A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
 biodiversity -- global https://en.wikipedia.org/wiki/Global_biodiversity
 biodiversity -- loss https://en.wikipedia.org/wiki/Biodiversity_loss
@@ -221,7 +231,9 @@ cultural hegemony https://en.wikipedia.org/wiki/Cultural_hegemony https://en.wik
 culture -- differences -- https://www.youtube.com/watch?v=vi8pyS076a8
 culture -- Hofstede’s Dimensions http://www.na-businesspress.com/ajm/bergieleb_web12_1_.pdf
 culture -- taijin kyofusho = specific type of social anxiety, occurring primarily in Japanese culture, is called taijin kyofusho. Taijin kyofusho is characterized by an intense fear that one's body parts or functions displease, embarrass or are offensive to others. https://pubmed.ncbi.nlm.nih.gov/21911434/
-curse of knowledge https://en.wikipedia.org/wiki/Curse_of_knowledge
+curses -- curse of knowledge = person having a specialized knowledge assumse that other share in that k https://en.wikipedia.org/wiki/Curse_of_knowledge
+curses -- resource curse -- Dutch disease https://en.wikipedia.org/wiki/Dutch_disease
+curses -- resource curse = the paradox of plenty: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources https://en.wikipedia.org/wiki/Resource_curse
 Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
 dark forest https://en.wikipedia.org/wiki/Dark_forest_hypothesis
 data driven
@@ -731,6 +743,7 @@ passive aggressive
 pattern / antipattern
 paved path = "The paved path" refers to a methodology where the next step to take is evident
 pay it forward
+peak earning years -- workers in their 40s and 50s
 penny Problem Gap: Economists assume demand is linear, but people’s behavior totally changes once an action costs money. If the inventors of the Internet had known about it, spam wouldn’t be such a problem. If sending an email cost you $0.001, there’d be way less spam.
 People will think you are judging them (drinking) https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd44714e619a
 perfection -- embodying perfection
@@ -851,8 +864,6 @@ regulatory crackdown
 relationships -- how to Avoid Falling in Love with a Jerk: The Foolproof Way to Follow Your Heart Without Losing Your Mind
 rent seeking https://en.wikipedia.org/wiki/Rent-seeking
 resentment = Resentment, born of weakness, harms no one more than the weak person himself (Nietzsche
-resource curse -- Dutch disease https://en.wikipedia.org/wiki/Dutch_disease
-resource curse = the paradox of plenty: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources https://en.wikipedia.org/wiki/Resource_curse
 respect
 rest and vest https://news.ycombinator.com/item?id=14943146
 restraining order or protective order = an order used by a court to protect a person in a situation often involving alleged domestic violence, child abuse and neglect, assault, harassment, stalking, or sexual assault https://en.wikipedia.org/wiki/Restraining_order

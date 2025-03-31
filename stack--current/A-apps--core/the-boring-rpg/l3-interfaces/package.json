@@ -1,22 +1,18 @@
 {
 	"name": "@tbrpg/interfaces",
-	"description": "Interface for TBRPG (RPC for cloud features)",
+	"description": "TBRPG interfaces for advanced features, ex. persistence",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2024.esm/index.js"
+			"import": "./module/index.ts"
 		}
 	},
-	"module": "dist/src.es2024.esm/index.js",
-	"typings": "dist/src.es2024.esm/index.d.ts",
-	"source": "src/index.ts",
-
+	"source": "module/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
@@ -24,24 +20,23 @@
 		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/uuid": "*",
 		"@tbrpg/state": "*",
-		"@tbrpg/state--character": "^0",
+		"@tbrpg/state--character": "*",
+		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
-
 	"scripts": {
-		"clean": "monorepo-script--clean-package …dist",
-
-		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
-		"_build:prod": "monorepo-script--build-typescript-package",
-
-		"dev": "run-s clean _build:dev:watch",
-		"build": "run-s  clean _build:prod"
+		"test--ts": "tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"test": "run-s test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "*",
+		"@oh-my-rpg/state--engagement": "*",
 		"npm-run-all": "^4",
-		"tslib": "^2"
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

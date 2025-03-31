@@ -1,3 +1,3 @@
-# @offirmo-private/l3-interfaces
+# @tbrpg/interfaces
 
 TBRPG interfaces for advanced features, ex. persistence

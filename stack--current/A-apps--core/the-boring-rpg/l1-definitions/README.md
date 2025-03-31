@@ -1,9 +1,3 @@
-Base definitions needed in nearly all other modules.
+# @tbrpg/definitions
 
-On top to avoid circular dependencies.
-
-import {
-    Item,
-    InventorySlot,
-    ItemQuality,
- } from '@tbrpg/definitions'
+Extracted TBRPG global definitions used in almost all packages, mainly to avoid dependency loops

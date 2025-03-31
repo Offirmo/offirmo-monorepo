@@ -1,3 +1,3 @@
-# @offirmo-private/l1-logic--monsters
+# @tbrpg/logic--monsters
 
 Monsters: types, logic and utilities

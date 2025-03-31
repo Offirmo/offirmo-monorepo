@@ -12,6 +12,7 @@ boring -- culture
 boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
 boring -- technology https://mcfunley.com/choose-boring-technology
 brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
+build-boost-discard cycle of internet applications = scourge https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_deploy-web-apps-anywhere-activity-7305513792275169281-C2-h
 business -- as a by-product = structure that ultimately has to exist around a group of people to make things and service customers over the long term, but not inherently interesting https://www.linkedin.com/posts/jason-fried_ive-always-thought-of-business-as-a-by-product-activity-7236805665627717632-_s96/
 CEO "If I/we got fired today, what would the new CEO do?"
 churn

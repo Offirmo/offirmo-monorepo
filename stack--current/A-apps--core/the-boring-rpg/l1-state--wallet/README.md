@@ -1,3 +1,3 @@
-# @offirmo-private/l1-state--wallet
+# @tbrpg/state--wallet
 
 Wallet: types, reducers, accessors and utilities

@@ -527,6 +527,7 @@ time -- leap second
 time -- leap second -- leap smear https://googleblog.blogspot.com/2011/09/time-technology-and-leaping-seconds.html
 time = difficult yet important for distributed https://unix4lyfe.org/time/
 Time to Detection (TTD)
+tool -- no cloud Kamal https://kamal-deploy.org/ https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_deploy-web-apps-anywhere-activity-7305513792275169281-C2-h/
 unbounded activity = An API endpoint should never perform an unbounded number of reads or writes. That means you cannot have an endpoint to export all your bank transactions (potentially unbounded reads), or an endpoint to import all transactions from another platform (potentially unbounded writes) https://www.linkedin.com/posts/thecodingteacher_an-api-endpoint-should-never-perform-an-unbounded-activity-7268647549333299200-NxP_/
 user flow -- error rate = percentage of unique users encountering at least one failure when attempting to perform one of the user operations composing the user flow
 user flow = actions users can perform to achieve a specific outcome, for example, uploading media or sharing a document

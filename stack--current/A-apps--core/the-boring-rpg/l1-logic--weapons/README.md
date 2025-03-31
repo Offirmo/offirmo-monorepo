@@ -1,3 +1,3 @@
-# @offirmo-private/l1-logic--weapons
+# @tbrpg/logic--weapons
 
 Weapon items: types, logic and utilities

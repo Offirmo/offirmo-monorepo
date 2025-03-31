@@ -1,3 +1,3 @@
-see @tbrpg/logic--adventures
+# @tbrpg/logic--adventure--resolved
 
-TODO add tests
+resolved adventures logic and utilities

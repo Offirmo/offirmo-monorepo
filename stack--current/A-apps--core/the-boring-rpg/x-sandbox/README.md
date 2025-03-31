@@ -1,3 +1,3 @@
-# @offirmo-private/x-sandbox
+# @tbrpg/sandbox
 
 Sandbox to develop TBRPG

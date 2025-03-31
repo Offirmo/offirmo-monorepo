@@ -134,16 +134,13 @@ function _createꓽresult(root‿abspath: AbsolutePath): PureModuleDetails {
 		return _path.pop()!
 	})()
 
-	// TODO not this tool's job to set defaults:
-	// TODO one day: caller to provide defaults
-
 	return {
 		root‿abspath,
 
 		status: 'stable',
-		namespace: '@offirmo-private',
+		namespace: 'unknown',
 		name,
-		fqname: '@offirmo-private/' + name,
+		fqname: 'unknown',
 		version: '0.0.1',
 		//description?: string
 		isꓽpublished: false,
@@ -306,7 +303,14 @@ function assertꓽnormalized(entry: FileEntry, { indent = ''} = {}): void {
 
 /////////////////////////////////////////////////
 
-async function getꓽpure_module_details(module_path: AnyPath, { indent = ''} = {}) {
+interface Options {
+	indent: string
+	getꓽdefault_namespace: (details_so_far: PureModuleDetails) => PureModuleDetails['namespace'],
+}
+
+async function getꓽpure_module_details(module_path: AnyPath, options: Options) {
+	const { indent = '', getꓽdefault_namespace } = options
+
 	const root‿abspath = path.resolve(module_path)
 	console.log(`${indent}🗂  analysing pure code module at "${root‿abspath}"…`)
 
@@ -369,7 +373,7 @@ async function getꓽpure_module_details(module_path: AnyPath, { indent = ''} = 
 	}
 
 	// we need the fully qualified name of the module
-	result.namespace = result.isꓽpublished ? '@offirmo' : '@offirmo-private' // TODO one day external
+	result.namespace = getꓽdefault_namespace(result)
 	result.fqname = result.namespace + '/' + result.name
 
 	file_entries.forEach(entry => {

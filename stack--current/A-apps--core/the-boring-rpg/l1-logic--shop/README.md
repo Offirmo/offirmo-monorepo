@@ -1,3 +1,3 @@
-# @offirmo-private/l1-logic--shop
+# @tbrpg/logic--shop
 
 Shop buy/sell feature: types, logic and utilities
