@@ -1,6 +1,7 @@
 {
 	"extends": "../../0-meta/tsconfig.json",
 	"include": [
-		"src/**/*.ts"
+		"../../0-meta/typescript-custom-typings/*.d.ts",
+		"module/**/*.ts"
 	]
 }

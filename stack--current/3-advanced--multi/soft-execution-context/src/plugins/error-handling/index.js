@@ -1,4 +1,3 @@
-import { promiseTry } from '@offirmo-private/promise-try'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { createError as _createError, normalizeError } from '@offirmo/error-utils'
 
@@ -166,7 +165,7 @@ const PLUGIN = {
 
 			const params = SXC[INTERNAL_PROP].plugins[ID_DI].context
 
-			return promiseTry(() => fn(params))
+			return Promise.try(() => fn(params))
 				.catch(err => {
 					_handleError({
 						SXC,

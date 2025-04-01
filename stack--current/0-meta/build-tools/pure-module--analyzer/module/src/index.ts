@@ -356,9 +356,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Options)
 
 		const status = packageᐧjson.name.includes('sandbox')
 			? 'sandbox'
-			: packageᐧjson.scripts?.hasOwn?.('test')
-				? 'stable'
-				: 'tech-demo'
+			: 'stable'
 
 		const [ namespace, name ] = packageᐧjson.name.split('/')
 
