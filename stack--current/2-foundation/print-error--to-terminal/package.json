@@ -17,7 +17,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo/error-utils": "*",
+		"@offirmo/error-utils": "^0.0.1",
 		"chalk": "^5",
 		"tiny-invariant": "^1"
 	},
@@ -30,7 +30,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"strip-ansi": "^7",
 		"tslib": "^2",

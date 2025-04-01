@@ -18,8 +18,8 @@
 	"dependencies": {
 		"@offirmo-private/prettify-any": "*",
 		"@offirmo-private/print-error-to-terminal": "*",
-		"@offirmo/practical-logger-core": "*",
-		"@offirmo/practical-logger-types": "*",
+		"@offirmo/practical-logger-core": "^3",
+		"@offirmo/practical-logger-types": "^3",
 		"chalk": "^5"
 	},
 	"scripts": {
@@ -31,7 +31,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

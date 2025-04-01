@@ -16,7 +16,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo/practical-logger-types": "*"
+		"@offirmo/practical-logger-types": "^3"
 	},
 	"scripts": {
 		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/**/*.tests.ts'",
@@ -27,8 +27,8 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/error-utils": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/error-utils": "^0.0.1",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

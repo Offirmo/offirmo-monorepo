@@ -30,7 +30,8 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@types/murmurhash3js-revisited": "^3",
 		"@types/node": "^22",
 		"npm-run-all": "^4",
 		"tslib": "^2",

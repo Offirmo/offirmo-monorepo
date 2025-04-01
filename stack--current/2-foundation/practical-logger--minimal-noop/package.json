@@ -25,9 +25,9 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/practical-logger-core": "*",
-		"@offirmo/practical-logger-types": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/practical-logger-core": "^3",
+		"@offirmo/practical-logger-types": "^3",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

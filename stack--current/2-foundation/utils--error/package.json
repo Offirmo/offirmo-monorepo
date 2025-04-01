@@ -25,7 +25,8 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@types/icepick": "^2",
 		"icepick": "^2",
 		"npm-run-all": "^4",
 		"tslib": "^2",
