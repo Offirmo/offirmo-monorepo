@@ -5,6 +5,7 @@ bad defaults -- firebase https://env.fail/posts/firewreck-1
 buffer overflows and how to protect against them
 cache poisoning https://en.wikipedia.org/wiki/Cache_poisoning
 CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-benchmarks
+cloud -- Cloudbleed https://en.m.wikipedia.org/wiki/Cloudbleed
 compartmentalize - so your system is not all or nothing
 Content security policy (CSP) https://web.dev/articles/csp
 Cross Site Scripting (XSS) -- defense = escaping

@@ -1,4 +1,4 @@
-## @tbrpg/logic--adventures
+# @tbrpg/logic--adventures
 
 Predefined adventures: logic and utilities
 

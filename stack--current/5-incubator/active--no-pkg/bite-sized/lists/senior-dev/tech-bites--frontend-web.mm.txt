@@ -214,8 +214,8 @@ js -- promises https://github.com/domenic/promises-unwrapping/blob/master/docs/s
 js -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
 JSON "Javascript Object Notation"
 latency -- high latency environments https://csswizardry.com/2024/09/optimising-for-high-latency-environments/
+layout -- composer https://github.com/namecheap/ilc
 layout -- trashing https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing
-layout composer https://github.com/namecheap/ilc
 layouts -- holy grail
 layouts -- masonry https://ishadeed.com/article/css-grid-masonry/
 lazy loading -- preloading https://www.differentshelf.com/lazy-loading-isnt-just-lazy-its-late-the-web-deserves-faster/
@@ -306,6 +306,9 @@ testing -- Netflix's SafeTest https://www.infoq.com/news/2024/02/netflix-safetes
 testing https://www.testingjavascript.com/
 Three Cs: 🤝 Concatenate, 🗜️ Compress, 🗳️ Cache https://csswizardry.com/2023/10/the-three-c-concatenate-compress-cache/
 tool -- mobile apps https://expo.dev/
+tools -- http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
+tools -- jQuery
+tools -- js -- ocx https://oxc.rs/
 typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
 typology -- naked site

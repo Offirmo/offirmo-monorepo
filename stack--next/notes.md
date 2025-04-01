@@ -28,6 +28,39 @@
 - AI-intelligible? (how?)
   - ability to "scope" the current project with only the needed code
 
+## module life cycle / tiers / ratings
+
+Concepts:
+- beware of conflating concepts, maybe we need multiple ratings ex. capability vs tier vs architecture
+- idea of try/test/graduate
+- dictates quality, ex. unit tests, coverage...
+- a module can only be consumed from lower-or-equally rated modules
+- v1 vs v2 (not in the semver sense) = important concept 
+  - v1 (not in the semver sense) aka first release = often considered "low quality" as it's when spec discovery happened
+  - v2 (not in the semver sense) aka rewrite = on the other hand, considered much higher quality as all the discovered specs have been integrated into a holistic architecture = usually faster, clearer...
+  - could be captured as "last architecture cleanup" = null | YYYY"
+
+1. spike
+1. technical demo ???
+1. sandbox = not public, to test other modules ~"dev integration" 
+1. incubator / experimental ???
+1. stable
+
+
+product - Products can be thought as a composition of various capabilities empowering users to perform various tasks.
+service - a deployable software component fulfilling specific function within a product. Can be used by other services in same or different products = containers of capabilities
+capability - As “A Capability is functionality that a product or platform provides to a customer. In short, a Capability’s scope covers what our customers care about“
+
+C1, C2, C3 importance reflecting global capability rank C1 being critical, C2 important and C3 regular
+
+
+Tier 0 is the foundation level
+Tier 0 = C1 for more than one product 
+service which supports more than one C1 capability from different product
+Tier 1 = C1 Critical business service which supports at least one C1  capability but all of C1 capabilities are within the same product
+Tier 2 C2 Maximum level of capability supported is C2
+Tier 3 C3 Maximum level of capability supported is C3
+
 ## tosort
 Ideas
 - AI-intelligible
@@ -61,44 +94,8 @@ hinting
 
 auto extracting layers by depth
 
-module rating/tier
-= can only be used by lower rated modules (not strict, from top, ex spike -> tier 0 -> spike = ok)
-= dictates quality, ex. unit tests, coverage...
-= try/test/graduate
-- spike
-- technical demo
-- incubator / experimental
-- v1 vs v2 (or "last architecture cleanup" null / YYYY)
-- deprecated
-- inactive
-- dead
-
-
-
 exposing only "top level" usages
-= unused code is automatically
+= unused code is automatically excluded from the build = no need to keep updated
 
-
-
-product - Products can be thought as a composition of various capabilities empowering users to perform various tasks.
-service - a deployable software component fulfilling specific function within a product. Can be used by other services in same or different products
-  = containers of capabilities
-capability - As defined here: “A Capability is functionality that a product or platform provides to a customer. In short, a Capability’s scope covers what our customers care about“
-
-C1, C2, C3 importance reflecting global capability rank C1 being critical, C2 important and C3 regular
 
 Hard dependencies/Soft dependencies
-
-Tier 0 C1 for more than one product Tier 0 is the foundation level
-service which supports more
-than one C1 capability from
-different product
-Tier 1 C1 Critical business service which
-supports at least one C1
-capability but all of C1
-capabilities are within the same
-product
-Tier 2 C2 Maximum level of capability
-supported is C2
-Tier 3 C3 Maximum level of capability
-supported is C3

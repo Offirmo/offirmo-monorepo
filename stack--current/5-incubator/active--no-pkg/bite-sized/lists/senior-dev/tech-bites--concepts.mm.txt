@@ -39,6 +39,8 @@ abstraction -- level
 abstraction -- wrong, premature "most of the issues arise from trying to eagerly solve a problem before it fully exists in reality" https://www.transcendsoftware.se/posts/the-perils-of-premature-abstraction/ https://zackoverflow.dev/writing/premature-abstraction
 abstraction https://www.merrickchristensen.com/articles/abstraction/
 access control
+access control -- discretionary https://en.wikipedia.org/wiki/Discretionary_access_control
+access control -- mandatory https://en.wikipedia.org/wiki/Mandatory_access_control
 access control -- role-based (RBAC)
 actually portable executables https://justine.lol/ape.html
 allocation
@@ -452,15 +454,6 @@ Joel test -- revised -- 12 Do new candidates write code as part of the hiring pr
 Joel test -- revised -- 13 Do you watch people actually try to use your software?
 Joel test -- revised https://dev.to/checkgit/the-joel-test-20-years-later-1kjk
 Joel test https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/
-JS equality
-JS http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
-JS http://developer.telerik.com/featured/a-guide-to-javascript-engines-for-idiots/
-JS http://stackoverflow.com/questions/17106681/parseint-vs-unary-plus-when-to-use-which/17106702#17106702
-JS http://www.toptal.com/javascript/interview-questions
-JS https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
-JS jQuery
-JSON
-JSX – Javascript XML, from React
 jump/goto
 kebab-case vs snake etc
 kill switch
@@ -471,12 +464,20 @@ l10n -- g11n = Globalization
 l10n -- i18n (internationalization) = planning and implementing products and services so that they can be adapted easily localized to specific languages and cultures
 l10n -- i18n -- blocking languages = core business
 l10n -- i18n -- ICU format https://formatjs.github.io/
+l10n -- i18n -- not required for some areas such as admin, dev docs...
 l10n -- i18n -- pseudolocalization = [Lóôõrēĕėęm iìíîpsúûüũm]
 l10n -- i18n -- text size change https://www.w3.org/International/articles/article-text-size
 l10n -- truly local = more than just translation
 lang -- Bend = massively parallel, high-level programming language https://github.com/HigherOrderCO/Bend
 lang -- go
 lang -- go -- advocacy https://github.com/microsoft/typescript-go/discussions/411
+lang -- JS -- engines http://developer.telerik.com/featured/a-guide-to-javascript-engines-for-idiots/
+lang -- JS -- equality
+lang -- JS -- interview http://www.toptal.com/javascript/interview-questions
+lang -- JS -- interview https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
+lang -- JS -- parseInt http://stackoverflow.com/questions/17106681/parseint-vs-unary-plus-when-to-use-which/17106702#17106702
+lang -- JSON
+lang -- JSX – Javascript XML, from React
 lang -- Rust https://www.rust-lang.org/
 lang -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
 lang -- wasp = high level website / SaaS https://wasp.sh/
@@ -489,7 +490,7 @@ language tags
 languages -- configuration
 languages -- configuration -- https://github.com/bazelbuild/starlark/
 languages -- generations = (disputed) https://en.wikipedia.org/wiki/Programming_language_generations
-languages -- higher level -- against https://www.reddit.com/r/compsci/comments/zx1eu8/von_neumann_was_admonishing_people_who_built/
+languages -- higher level -- wrongly against = Von Neumann https://www.reddit.com/r/compsci/comments/zx1eu8/von_neumann_was_admonishing_people_who_built/
 languages -- trends
 languages -- weekend https://stackoverflow.blog/2017/02/07/what-programming-languages-weekends/
 late/lazy evaluation vs fail fast
@@ -504,6 +505,7 @@ let's deploy to production https://www.youtube.com/watch?v=5p8wTOr8AbU
 LIFO
 linked list
 linting
+linux
 linux -- eBPF https://ebpf.io/what-is-ebpf/
 locality
 locality -- conflict locality = reducing conflicts on close changes, ex. enforcing trailing commas, sorting...
@@ -604,6 +606,7 @@ peer review, green build = condition to merge a code change
 perf
 perf -- as a feature
 perf -- only pay for what you need
+permissions -- AppArmor https://en.wikipedia.org/wiki/AppArmor
 personal data
 personal data (PD)
 personal data -- processing -- high-risk -- automated decision-making (e.g., rejecting employment based on automatic scoring)

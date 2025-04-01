@@ -1,5 +1,5 @@
 import * as path from 'node:path'
-import { readFileSync, renameSync } from 'node:fs'
+import * as fs from 'node:fs'
 import { isBuiltin } from 'node:module'
 
 import walk from 'ignore-walk'
@@ -80,6 +80,19 @@ type ProgLang =
 	| 'css'
 	| 'md'
 
+
+interface PureModuleManifest {
+	name?: string // NOT including the namespace
+	description?: string
+	version?: string // Semver version TODO proper type
+	isꓽpublished?: true
+	status?: // EXPERIMENTAL rating of modules TODO clarify
+		| 'spike'
+		| 'tech-demo'
+		| 'sandbox'
+		| 'stable'
+}
+
 interface PureModuleDetails {
 	root‿abspath: string
 
@@ -116,7 +129,7 @@ interface PureModuleDetails {
 	// TODO engines ex. node
 
 	// in case of extra info
-	manifest: object
+	manifest: PureModuleManifest
 }
 
 const MANIFEST‿basename = 'MANIFEST.json5'
@@ -284,7 +297,7 @@ function assertꓽmigrated(entry: FileEntry, { indent = '', root‿abspath }: { 
 	if (migration_target) {
 		console.log(`Auto normalizing file:`)
 		console.log(`mv "${path.relative(root‿abspath, path‿abs)}" "${path.relative(root‿abspath, migration_target)}"`)
-		renameSync(path‿abs, migration_target)
+		fs.renameSync(path‿abs, migration_target)
 
 		update_file_entry(entry, migration_target, root‿abspath)
 	}
@@ -320,56 +333,71 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Options)
 		}) as Array<string>)
 		.map(p => path.resolve(root‿abspath, p))
 		.sort()
-	//const files = lsFilesRecursiveSync(root‿abspath)
+	//const files = lsFilesRecursiveSync(root‿abspath) old version
 
-	const file_entries: Array<FileEntry> = files.map(path‿abs => get_file_entry(path‿abs, root‿abspath))
+	const file_entries: Array<FileEntry> = files
+		.map(path‿abs => get_file_entry(path‿abs, root‿abspath))
 
 	// start aggregating
 	const result = _createꓽresult(root‿abspath)
 	const raw_deps: Array<Dependency> = []
 
-	const entryⵧmanifest = file_entries.find(({ basename }) => basename === MANIFEST‿basename)
-	if(!entryⵧmanifest) {
-		// not necessarily needed but good to have
+	const entryⵧmanifest: FileEntry = await (async () => {
+		const candidate = file_entries.find(({basename}) => basename === MANIFEST‿basename)
+		if (candidate)
+			return candidate
+
+		// MIGRATION
 		// NOTE: yes, this is a side effect in a read function, but it's a good one 😅
-		write_json_file(
-			path.resolve(root‿abspath, MANIFEST‿basename),
-			{
-				description: 'TODO description in MANIFEST.json5'
-			},
-		)
+		// needed. build it from existing package.json
+
+		const package_json_path = path.dirname(root‿abspath) + '/package.json'
+		const packageᐧjson: any = JSON.parse(fs.readFileSync(package_json_path, { encoding: 'utf-8' }))
+
+		const status = packageᐧjson.name.includes('sandbox')
+			? 'sandbox'
+			: packageᐧjson.scripts?.hasOwn('test')
+				? 'stable'
+				: 'tech-demo'
+
+		const data: any = {
+			...(packageᐧjson.name !== result.name && { name: packageᐧjson.name}),
+			...(packageᐧjson.version !== '0.0.1' && { version: packageᐧjson.version}),
+			description: packageᐧjson.description || 'TODO description in MANIFEST.json5',
+			...(!packageᐧjson.private && { isꓽpublished: true }),
+			...(status !== 'stable' && { status }),
+		}
+
+		const target_path = path.resolve(root‿abspath, MANIFEST‿basename)
+		await write_json_file(target_path, data)
+		return get_file_entry(target_path, root‿abspath)
+	})()
+
+	// overrides from the manifest
+	result.manifest = JSON5.parse(fs.readFileSync(entryⵧmanifest.path‿abs, 'utf8'))
+	const unprocessed_keys = new Set<string>(Object.keys(result.manifest))
+	if (unprocessed_keys.has('version')) {
+		result.version = result.manifest.version
+		unprocessed_keys.delete('version')
 	}
-	else {
-		const data = JSON5.parse(readFileSync(entryⵧmanifest.path‿abs, 'utf8'))
-		result.manifest = data
-
-		// overrides from the manifest
-		const unprocessed_keys = new Set<string>(Object.keys(data))
-
-		if (unprocessed_keys.has('version')) {
-			result.version = data.version
-			unprocessed_keys.delete('version')
-		}
-		if (unprocessed_keys.has('isꓽpublished')) {
-			result.isꓽpublished = data.isꓽpublished
-			unprocessed_keys.delete('isꓽpublished')
-		}
-		if (unprocessed_keys.has('description')) {
-			result.description = data.description
-			unprocessed_keys.delete('description')
-		}
-		if (unprocessed_keys.has('status')) {
-			result.status = data.status
-			unprocessed_keys.delete('status')
-		}
-		if (unprocessed_keys.has('name')) {
-			result.name = data.name
-			unprocessed_keys.delete('name')
-		}
-
-		if (unprocessed_keys.size) {
+	if (unprocessed_keys.has('isꓽpublished')) {
+		result.isꓽpublished = result.manifest.isꓽpublished
+		unprocessed_keys.delete('isꓽpublished')
+	}
+	if (unprocessed_keys.has('description')) {
+		result.description = result.manifest.description
+		unprocessed_keys.delete('description')
+	}
+	if (unprocessed_keys.has('status')) {
+		result.status = result.manifest.status
+		unprocessed_keys.delete('status')
+	}
+	if (unprocessed_keys.has('name')) {
+		result.name = result.manifest.name
+		unprocessed_keys.delete('name')
+	}
+	if (unprocessed_keys.size) {
 			throw new Error(`Unknown keys in manifest: "${Array.from(unprocessed_keys).join(', ')}"!`)
-		}
 	}
 
 	// we need the fully qualified name of the module
@@ -414,7 +442,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Options)
 		const langs = getꓽProgLangs(entry)
 		langs.forEach(lang => result.languages.add(lang))
 		if (langs.includes('ts')) {
-			const content = readFileSync(entry.path‿abs, 'utf8')
+			const content = fs.readFileSync(entry.path‿abs, 'utf8')
 			const dep_type = inferꓽdeptype_from_caller(entry)
 			console.log(`${indent}      inferred as: ${dep_type}`)
 
