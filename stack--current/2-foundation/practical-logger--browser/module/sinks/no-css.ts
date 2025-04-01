@@ -1,9 +1,6 @@
-import {
-	LogPayload,
-	LogSink,
-} from '@offirmo/practical-logger-types'
+import type { LogPayload, LogSink } from '@offirmo/practical-logger-types'
 
-import { SinkOptions } from '../types.ts'
+import type { SinkOptions } from '../types.ts'
 import { LEVEL_TO_CONSOLE_METHOD, to_uniform_level } from './common.ts'
 
 

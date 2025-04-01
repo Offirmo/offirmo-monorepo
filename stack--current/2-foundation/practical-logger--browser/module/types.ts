@@ -1,4 +1,4 @@
-import { BaseSinkOptions } from '@offirmo/practical-logger-types'
+import type { BaseSinkOptions } from '@offirmo/practical-logger-types'
 
 export type Browser =
 	| 'firefox'

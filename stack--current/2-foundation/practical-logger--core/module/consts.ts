@@ -1,4 +1,4 @@
-import { LogLevel } from '@offirmo/practical-logger-types'
+import type { LogLevel } from '@offirmo/practical-logger-types'
 
 export const LIB = '@offirmo/practical-logger-core'
 

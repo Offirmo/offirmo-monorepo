@@ -1,4 +1,4 @@
-import { Logger, LoggerCreationParams } from '@offirmo/practical-logger-types'
+import type { Logger, LoggerCreationParams } from '@offirmo/practical-logger-types'
 
 
 function NOP () {}

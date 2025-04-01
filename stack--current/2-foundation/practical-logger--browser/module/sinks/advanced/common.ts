@@ -1,7 +1,4 @@
-import {
-	LogPayload,
-} from '@offirmo/practical-logger-types'
-
+import type { LogPayload } from '@offirmo/practical-logger-types'
 
 const FONT_FAMILY_BETTER_PROPORTIONAL = 'font-family: ' + [
 	'-apple-system',

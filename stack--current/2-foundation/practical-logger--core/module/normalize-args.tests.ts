@@ -1,6 +1,6 @@
 import { expect } from 'chai'
-import { LogDetails } from '@offirmo/practical-logger-types'
-import { XXError } from '@offirmo/error-utils'
+import type { LogDetails } from '@offirmo/practical-logger-types'
+import { type XXError } from '@offirmo/error-utils'
 
 import { LIB } from './consts.ts'
 import { normalizeArguments } from './normalize-args.ts'

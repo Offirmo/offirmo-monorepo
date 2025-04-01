@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import { type SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
-import { Logger } from '@offirmo/practical-logger-types'
+import type { Logger } from '@offirmo/practical-logger-types'
 
 import { LIB } from './consts.ts'
 

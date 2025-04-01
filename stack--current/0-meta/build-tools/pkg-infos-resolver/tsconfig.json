@@ -1,0 +1,7 @@
+{
+	"extends": "../../tsconfig.json",
+	"include": [
+		"../../typescript-custom-typings/*.d.ts",
+		"module/**/*.ts"
+	]
+}

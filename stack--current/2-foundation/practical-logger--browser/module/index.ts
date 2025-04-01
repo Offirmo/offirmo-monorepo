@@ -1,9 +1,9 @@
 
 import { once } from 'limit-once'
-import { LogSink, Logger, LoggerCreationParams } from '@offirmo/practical-logger-types'
+import type { LogSink, Logger, LoggerCreationParams } from '@offirmo/practical-logger-types'
 import { createLogger as createLoggerCore } from '@offirmo/practical-logger-core'
 
-import { SinkOptions } from './types.ts'
+import type { SinkOptions } from './types.ts'
 import { create } from './sinks/index.ts'
 import improve_console_groups from './better-console-groups/practical-logger.ts'
 

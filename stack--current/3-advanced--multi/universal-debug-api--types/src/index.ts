@@ -1,4 +1,4 @@
-import { DebugApi as DebugApiV1 } from './v1.ts'
+import { type DebugApi as DebugApiV1 } from './v1.ts'
 
 interface DebugApiRoot {
 	v1: DebugApiV1,

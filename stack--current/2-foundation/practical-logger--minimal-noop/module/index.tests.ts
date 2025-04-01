@@ -1,4 +1,4 @@
-import { LogSink, LogPayload } from '@offirmo/practical-logger-types'
+import type { LogPayload, LogSink } from '@offirmo/practical-logger-types'
 import { ALL_LOG_LEVELS } from '@offirmo/practical-logger-core'
 
 const LIB = '@offirmo/practical-logger-minimal-noop'

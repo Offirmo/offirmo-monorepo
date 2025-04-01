@@ -10,7 +10,7 @@ import semver from 'semver'
 
 import { getꓽpure_module_details, type PureModuleDetails } from '@offirmo-private/pure-module--analyzer'
 
-import { PkgVersionResolver } from './pkg-version-resolver/index.ts'
+import { PkgVersionResolver } from '@offirmo-private/pkg-infos-resolver'
 
 /////////////////////////////////////////////////
 
@@ -37,7 +37,7 @@ async function present({
 	indent = '',
 
 	pure_module_path,
-	pure_module_details = getꓽpure_module_details(pure_module_path, { indent }),
+	pure_module_details = getꓽpure_module_details(pure_module_path, { indent: indent + '   ' }),
 
 	dest_dir,
 	ts__config__path,
@@ -52,12 +52,15 @@ async function present({
 		throw new Error(`Out-of-source build cannot target inside the pure-module!`)
 	}
 
-	// TODO one day if public, pre-build?
+	// TODO one day if public, re-instate pre-build?
 	// TODO one day add "size-limit"? to all?
 	/*
+"clean": "monorepo-script--clean-package …dist",
+"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
 "_build:prod": "monorepo-script--build-typescript-package",
-"ensure-size": "size-limit",
+"dev": "run-s clean _build:dev:watch",
 "build": "run-s  clean _build:prod",
+"ensure-size": "size-limit",
 "prepublishOnly": "run-s build ensure-size"
 	*/
 
@@ -65,6 +68,7 @@ async function present({
 
 	const PURE_MODULE_CONTENT_RELPATH = path.basename(pure_module_path)
 
+	// out-of-source build (NOT working at the moment)
 	if (isAncestorDir(dest_dir‿abspath, pure_module_details.root‿abspath)) {
 		// the pure module is inside the target dir
 		// do not remove any file
@@ -92,6 +96,7 @@ package-lock=false
 		{ encoding: 'utf-8' },
 	))
 
+	/* TODO only if not redundant
 	promises.push(fs.writeFile(
 		path.resolve(dest_dir‿abspath, 'README.md'),
 		`
@@ -101,6 +106,7 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 `.trimStart(),
 		{ encoding: 'utf-8' },
 	))
+	*/
 
 	const SRC_RELPATH = path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.source.path‿rel)
 	const SRC_DIR_RELPATH = path.dirname(SRC_RELPATH)
@@ -115,7 +121,6 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 			]
 		}
 	))
-
 
 	if (pure_module_details.depsⵧvendored.size) {
 		throw new Error(`Not implemented!`)
@@ -153,12 +158,12 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 
 		if (pure_module_details.depsⵧpeer.size) {
 			pkg.peerDependencies = Object.fromEntries(
-				Array.from(pure_module_details.depsⵧpeer).sort().map(dep => [dep, pkg_version_resolver.get_target_version(dep)])
+				Array.from(pure_module_details.depsⵧpeer).sort().map(dep => [dep, pkg_version_resolver?.ǃgetꓽversionⵧfor_dep(dep)])
 			)
 		}
 
 		pkg.dependencies = Object.fromEntries(
-			Array.from(pure_module_details.depsⵧnormal).sort().map(dep => [dep, pkg_version_resolver.get_target_version(dep)])
+			Array.from(pure_module_details.depsⵧnormal).sort().map(dep => [dep, pkg_version_resolver.ǃgetꓽversionⵧfor_dep(dep)])
 		)
 		if (pure_module_details.depsⵧoptional.size) {
 			throw new Error(`Not implemented!`)
@@ -170,7 +175,7 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 			// aggregs
 			const scriptsⵧclean = Object.keys(scripts).filter(k => k.startsWith('clean'))
 			if (scriptsⵧclean.length) {
-				scripts.clean = `npm-run-all ${scriptsⵧclean.join(' ')}`
+				scripts['clean'] = `npm-run-all ${scriptsⵧclean.join(' ')}`
 			}
 
 			if (pure_module_details.hasꓽtestsⵧunit) {
@@ -204,7 +209,7 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 
 		if (pure_module_details.depsⵧdev.size) {
 			pkg.devDependencies = Object.fromEntries(
-				Array.from(pure_module_details.depsⵧdev).sort().map(dep => [dep, pkg_version_resolver.get_target_version(dep)])
+				Array.from(pure_module_details.depsⵧdev).sort().map(dep => [dep, pkg_version_resolver.ǃgetꓽversionⵧfor_dep(dep)])
 			)
 		}
 

@@ -1,11 +1,12 @@
 import * as path from 'node:path'
 import * as fs from 'node:fs'
-import { isBuiltin } from 'node:module'
+import { isBuiltin as isBuiltInNodeModule } from 'node:module'
 
 import walk from 'ignore-walk'
 import { parse as parseImports } from 'parse-imports-ts'
 import JSON5 from 'json5'
 import { writeJsonFile as write_json_file } from 'write-json-file'
+import { PkgVersionResolver } from '@offirmo-private/pkg-infos-resolver'
 
 /////////////////////////////////////////////////
 
@@ -319,10 +320,15 @@ function assertꓽnormalized(entry: FileEntry, { indent = ''} = {}): void {
 interface Options {
 	indent: string
 	getꓽdefault_namespace: (details_so_far: PureModuleDetails) => PureModuleDetails['namespace'],
+	pkg_version_resolver: PkgVersionResolver,
 }
 
-async function getꓽpure_module_details(module_path: AnyPath, options: Options) {
-	const { indent = '', getꓽdefault_namespace } = options
+async function getꓽpure_module_details(module_path: AnyPath, options: Partial<Options> = {}) {
+	const {
+		indent = '',
+		getꓽdefault_namespace = () => '@UNKNOWN',
+		pkg_version_resolver = new PkgVersionResolver(),
+	} = options
 
 	const root‿abspath = path.resolve(module_path)
 	console.log(`${indent}🗂  analysing pure code module at "${root‿abspath}"…`)
@@ -404,6 +410,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Options)
 	result.namespace = getꓽdefault_namespace(result)
 	result.fqname = result.namespace + '/' + result.name
 
+	const pending_promises: Array<Promise<void>> = []
+
 	file_entries.forEach(entry => {
 		const is_excluded = _isꓽin_excluded_folder(entry) || _isꓽignored(entry)
 		const { path‿rel } = entry
@@ -450,8 +458,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Options)
 			imports.forEach(({name, type}) => {
 				console.log(`${indent}    ↘ import ${type === 1 ? 'type ' : ''}${name}`)
 
-				if (isBuiltin(name)) {
-					 // built-in node module
+				if (isBuiltInNodeModule(name)) {
 					raw_deps.push({ label: '@types/node', type: 'dev' })
 					// TODO one day how to express dependency to a runtime?
 					return
@@ -459,28 +466,43 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Options)
 
 				if (name === result.fqname) {
 					// self-reference
-					// this is allowed, but no need to declare it as dep
+					// this is allowed, no need to declare it as dep
+					return
+				}
+
+				// intercept aggregations
+				if (name === 'chai' || name === 'sinon') {
+					if (dep_type !== 'dev') {
+						throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')
+					}
+
+					raw_deps.push({ label: '@offirmo/unit-test-toolbox', type: 'dev' })
 					return
 				}
 
 				switch (type ?? 1) {
 					case 0: {
-						if ((name === 'chai' || name === 'sinon') && dep_type !== 'dev') {
-							throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the file name/folder!')
-						}
-
 						raw_deps.push({ label: name, type: dep_type })
 						break
 					}
 
 					case 1:
-						// types ar for dev
+						// types are needed in dev only
+						// even if published as pure TS module, node type stripping will remove those deps in prod
 						raw_deps.push({ label: name, type: 'dev' })
 						break
 
 					default:
 						throw new Error(`Unknown import type "${type}"!`)
 				}
+
+				console.log(`${indent}      ↳ Checking for potential @types/ package for "${name}"…`)
+				pending_promises.push(
+					pkg_version_resolver.ↆgetꓽextra_typings_pkg_name_for(name)
+						.then(name => {
+							if (name) raw_deps.push({ label: name, type: 'dev' })
+						})
+				)
 			})
 		}
 
@@ -488,6 +510,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Options)
 			result.hasꓽtestsⵧunit = true
 		}
 	})
+
+	await Promise.all(pending_promises)
 
 	// extras
 	if (result.languages.has('ts')) {
@@ -530,10 +554,6 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Options)
 
 	for (const dep of result.depsⵧdev) {
 		if (result.depsⵧnormal.has(dep)) {
-			result.depsⵧdev.delete(dep)
-		}
-		else if (dep === 'chai' || dep === 'sinon') {
-			result.depsⵧdev.add('@offirmo/unit-test-toolbox')
 			result.depsⵧdev.delete(dep)
 		}
 	}

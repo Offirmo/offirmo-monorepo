@@ -1,6 +1,6 @@
 {
-	"name": "@offirmo-private/pure-module--presenter",
-	"description": "Create the technical files to turn a pure module into a bolt/yarn package",
+	"name": "@offirmo-private/pkg-infos-resolver",
+	"description": "Resolves infos about packages such as their version, typings, etc.",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
@@ -9,34 +9,27 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./module/src/index.ts"
+			"import": "./module/index.ts"
 		}
 	},
-	"source": "module/src/index.ts",
+	"source": "module/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/pkg-infos-resolver": "*",
-		"@offirmo-private/pure-module--analyzer": "*",
-		"fs-extra": "^11",
 		"package-json": "^10",
 		"semver": "^7",
-		"tiny-invariant": "^1",
-		"write-json-file": "^6"
+		"tiny-invariant": "^1"
 	},
 	"scripts": {
 		"test--ts": "tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
-		"demo": "node --experimental-strip-types ./module/##demo/index.ts",
 		"_test": "run-s test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@types/fs-extra": "^11",
-		"@types/node": "^22",
 		"@types/semver": "^7",
 		"npm-run-all": "^4",
 		"tslib": "^2",

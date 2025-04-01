@@ -29,7 +29,6 @@
 		"sinon-chai": "^4"
 	},
 	"optionalDependencies": {
-		"@offirmo/universal-debug-api-node": "^0",
 		"chai-fetch-mock": "^3"
 	},
 

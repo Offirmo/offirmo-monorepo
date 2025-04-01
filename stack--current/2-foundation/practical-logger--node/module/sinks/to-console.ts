@@ -6,12 +6,9 @@ import { displayError } from '@offirmo-private/print-error-to-terminal'
 
 injectꓽlibꓽchalk(chalk)
 
-import {
-	LogPayload,
-	LogSink,
-} from '@offirmo/practical-logger-types'
+import type { LogPayload, LogSink } from '@offirmo/practical-logger-types'
 
-import { SinkOptions } from '../types.ts'
+import type { SinkOptions } from '../types.ts'
 
 import {
 	LEVEL_TO_ASCII,

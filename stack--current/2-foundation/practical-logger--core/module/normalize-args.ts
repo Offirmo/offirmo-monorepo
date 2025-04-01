@@ -1,6 +1,4 @@
-import {
-	LogDetails,
-} from '@offirmo/practical-logger-types'
+import type { LogDetails } from '@offirmo/practical-logger-types'
 
 
 // TODO externalize?

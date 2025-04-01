@@ -1,5 +1,5 @@
 import { BaseInjections, SoftExecutionContext } from '@offirmo-private/soft-execution-context'
-import { Logger } from '@offirmo/practical-logger-types'
+import type { Logger } from '@offirmo/practical-logger-types'
 
 import { PRODUCT } from './consts.ts'
 

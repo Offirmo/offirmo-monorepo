@@ -1,4 +1,4 @@
-import {
+import type {
 	LogLevel,
 	BaseInternalLoggerState,
 	Logger,

@@ -1,7 +1,4 @@
-import {
-	LogPayload,
-	LogSink,
-} from '@offirmo/practical-logger-types'
+import type { LogPayload, LogSink } from '@offirmo/practical-logger-types'
 
 import {
 	LEVEL_TO_CONSOLE_METHOD,

@@ -1,7 +1,4 @@
-import {
-	isꓽobjectⵧliteral,
-	hasꓽcontent, isꓽnegative_zero, isꓽcontainer,
-} from '@offirmo-private/type-detection'
+import { hasꓽcontent, isꓽnegative_zero, isꓽcontainer } from '@offirmo-private/type-detection'
 
 /////////////////////////////////////////////////
 

@@ -9,12 +9,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 /////////////////////////////////////////////////
 
+import { PkgVersionResolver } from '@offirmo-private/pkg-infos-resolver'
 import { getꓽpure_module_details, type PureModuleDetails, type Options as PureModuleAnalyzerOptions } from '@offirmo-private/pure-module--analyzer'
-import { PkgVersionResolver, present } from '@offirmo-private/pure-module--presenter'
+import { present } from '@offirmo-private/pure-module--presenter'
 
 const pkg_version_resolver = new PkgVersionResolver()
+// TODO feed with bolt knowledge!!!
 
-const module_details: Record<string, PureModuleDetails> = {}
+const PURE_MODULE__DETAILS: Record<string, PureModuleDetails> = {}
 
 async function refresh_pure_module(pure_module_path: string, getꓽdefault_namespace: PureModuleAnalyzerOptions['getꓽdefault_namespace']) {
 	console.log('---------------------------------------')
@@ -24,11 +26,12 @@ async function refresh_pure_module(pure_module_path: string, getꓽdefault_names
 		{
 			indent: '   ',
 			getꓽdefault_namespace,
+			pkg_version_resolver,
 		},
 	)
 	console.log(pure_module_details)
 
-	module_details[pure_module_details.fqname] = pure_module_details
+	PURE_MODULE__DETAILS[pure_module_details.fqname] = pure_module_details
 
 	// TODO check loops
 	// TODO check # of external deps
@@ -37,7 +40,7 @@ async function refresh_pure_module(pure_module_path: string, getꓽdefault_names
 	await present({
 		indent: '   ',
 
-		pure_module_path: pure_module_abspath,
+		pure_module_path,
 		pure_module_details,
 
 		//dest_dir: path.resolve(__dirname, 'output'),
@@ -67,13 +70,18 @@ async function refresh_pure_modules(parent_path: string, getꓽdefault_namespace
 
 const getꓽdefault_namespace: PureModuleAnalyzerOptions['getꓽdefault_namespace'] = (result: PureModuleDetails) => result.isꓽpublished ? '@offirmo' : '@offirmo-private'
 
-//await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--analyzer/module/')
-//await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/')
+await refresh_pure_module( '../../../../../0-meta/build-tools/pkg-infos-resolver/module/', getꓽdefault_namespace)
+await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--analyzer/module/', getꓽdefault_namespace)
+await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/', getꓽdefault_namespace)
 
-//await refresh_pure_modules('../../../../../1-stdlib/')
-//await refresh_pure_module( '../../../../../1-stdlib/timestamps/module/' )
+//await refresh_pure_modules('../../../../../1-stdlib/', getꓽdefault_namespace)
+//await refresh_pure_module( '../../../../../1-stdlib/timestamps/module/', getꓽdefault_namespace)
 
-await refresh_pure_modules('../../../../../2-foundation/', getꓽdefault_namespace)
-// await refresh_pure_module( '../../../../../2-foundation/prettify-any/src/')
+//await refresh_pure_modules('../../../../../2-foundation/', getꓽdefault_namespace)
+//await refresh_pure_module( '../../../../../2-foundation/prettify-any/module/', getꓽdefault_namespace)
 
 //await refresh_pure_modules('../../../../../A-apps--core/the-boring-rpg/', () => '@tbrpg')
+
+
+// TODO circular deps
+// TODO a published module must not depend on an unpublished one

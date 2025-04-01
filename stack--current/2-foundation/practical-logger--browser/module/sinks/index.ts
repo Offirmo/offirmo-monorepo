@@ -1,6 +1,6 @@
-import { LogSink } from '@offirmo/practical-logger-types'
+import type { LogSink } from '@offirmo/practical-logger-types'
 
-import { Browser, SinkOptions } from '../types.ts'
+import type { Browser, SinkOptions } from '../types.ts'
 import sink_firefox from './advanced/firefox.ts'
 import sink_chromium from './advanced/chromium.ts'
 import sink_safari from './advanced/safari.ts'

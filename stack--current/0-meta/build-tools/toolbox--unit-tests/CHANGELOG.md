@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [feat][breaking] bumped deps: sinon 18, sinon 19
 * [feat][breaking] bumped deps: sinon-chai 4 https://github.com/chaijs/sinon-chai/releases/tag/4.0.0
 * [feat][breaking] bumped deps: mocha 11
+* [chore][patch] tweaked offirmo specific inits (normal users will never see anything)
 * bumped deps: @types/chai-as-promised 8 + other @types
 * ...
 
