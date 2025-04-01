@@ -356,12 +356,14 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Options)
 
 		const status = packageᐧjson.name.includes('sandbox')
 			? 'sandbox'
-			: packageᐧjson.scripts?.hasOwn('test')
+			: packageᐧjson.scripts?.hasOwn?.('test')
 				? 'stable'
 				: 'tech-demo'
 
+		const [ namespace, name ] = packageᐧjson.name.split('/')
+
 		const data: any = {
-			...(packageᐧjson.name !== result.name && { name: packageᐧjson.name}),
+			...(name !== result.name && { name }),
 			...(packageᐧjson.version !== '0.0.1' && { version: packageᐧjson.version}),
 			description: packageᐧjson.description || 'TODO description in MANIFEST.json5',
 			...(!packageᐧjson.private && { isꓽpublished: true }),

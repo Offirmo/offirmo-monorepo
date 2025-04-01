@@ -73,7 +73,7 @@ const getꓽdefault_namespace: PureModuleAnalyzerOptions['getꓽdefault_namespac
 //await refresh_pure_modules('../../../../../1-stdlib/')
 //await refresh_pure_module( '../../../../../1-stdlib/timestamps/module/' )
 
-//await refresh_pure_modules('../../../../../2-foundation/')
+await refresh_pure_modules('../../../../../2-foundation/', getꓽdefault_namespace)
 // await refresh_pure_module( '../../../../../2-foundation/prettify-any/src/')
 
-await refresh_pure_modules('../../../../../A-apps--core/the-boring-rpg/', () => '@tbrpg')
+//await refresh_pure_modules('../../../../../A-apps--core/the-boring-rpg/', () => '@tbrpg')
