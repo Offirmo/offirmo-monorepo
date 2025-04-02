@@ -17,22 +17,22 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/credits": "*"
+		"@offirmo-private/credits": "*",
+		"tiny-invariant": "^1"
 	},
-
 	"scripts": {
-		"clean": "monorepo-script--clean-package  …cache …dist",
-
-		"_start:parcel:storypad": "parcel serve doc/storypad/index.html --port 8080  --lazy  --no-autoinstall",
-
-		"dev": "npm-run-all clean --parallel _start:parcel:storypad"
+		"test--ts": "echo \"@offirmo-private/font--smallest\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"test": "run-s test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
-		"tslib": "^2"
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

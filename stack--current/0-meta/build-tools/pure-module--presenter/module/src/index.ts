@@ -109,7 +109,7 @@ ${pure_module_details.description || ''}
 	// TODO .tabset with auto color
 	//tabset --badge $1 --color "#a4d4dd"
 
-	const SRC_RELPATH = path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.source.path‿rel)
+	const SRC_RELPATH = path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.main.path‿rel)
 	const SRC_DIR_RELPATH = path.dirname(SRC_RELPATH)
 
 	if (pure_module_details.languages.has('ts')) {
@@ -117,6 +117,9 @@ ${pure_module_details.description || ''}
 			path.resolve(dest_dir‿abspath, 'tsconfig.json'),
 			{
 				"extends": path.relative(dest_dir‿abspath, ts__config__path),
+				"compilerOptions": {
+					// to allow easy tweaks
+				},
 				"include": [
 					path.relative(dest_dir‿abspath, ts__custom_types__path) + '/*.d.ts',
 					`${SRC_DIR_RELPATH}/**/*.ts`

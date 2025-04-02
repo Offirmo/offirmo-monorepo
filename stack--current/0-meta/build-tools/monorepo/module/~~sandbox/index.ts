@@ -22,11 +22,6 @@ async function refreshꓽmonorepo() {
 
 	const PURE_MODULE__DETAILS = await ↆgetꓽall_pure_module_details(pkg_infos_resolver)
 
-	// TODO graph
-	// TODO check loops
-	// TODO check tiers
-	// TODO compute graph degrees
-
 	for (const pure_module_details of Object.values(PURE_MODULE__DETAILS)) {
 		await present({
 			indent: '   ',
@@ -53,11 +48,12 @@ async function resurrectꓽfrom(rootpkg_name) {
 
 	const PURE_MODULE__DETAILS = await ↆgetꓽall_pure_module_details(pkg_infos_resolver)
 
-	// TODO graph
-	// TODO check loops
+
+	// TODO graph from root
+	// TODO check dep loops
 	// TODO check tiers
 	// TODO compute graph degrees
-
+	// TODO a published module must not depend on an unpublished one
 }
 
 /////////////////////////////////////////////////

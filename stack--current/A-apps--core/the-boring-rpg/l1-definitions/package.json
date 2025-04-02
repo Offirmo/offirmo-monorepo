@@ -14,10 +14,10 @@
 	},
 	"source": "module/index.ts",
 	"peerDependencies": {
+		"@offirmo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/uuid": "*",
 		"@offirmo/universal-debug-api-placeholder": "^1",
 		"tiny-invariant": "^1",
@@ -33,6 +33,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/rich-text-format": "*",
+		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/practical-logger-types": "^3",
 		"@offirmo/unit-test-toolbox": "^9",

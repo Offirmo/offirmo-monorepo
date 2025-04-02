@@ -83,14 +83,21 @@ type ProgLang =
 	| 'md'
 
 
+/* This type should have AS FEW ENTRIES as possible
+ * reminder that we aim for a single source of truth
+ * Anything that can be inferred from the code itself should be!
+ *
+ * So all entries are optional, only to be used if an override is needed or if not inferrable
+ */
 interface PureModuleManifest {
 	name?: string // NOT including the namespace
 	namespace?: string
 	license?: string // SPDX
 	description?: string
 	version?: string // Semver version TODO proper type
-	isꓽpublished?: true
-	hasꓽside_effects?: true // assuming most pkgs don't
+	isꓽpublished?: boolean
+	isꓽapp?: boolean // app in the generic sense of "not a lib"
+	hasꓽside_effects?: boolean // assuming most pkgs don't
 	status?: // EXPERIMENTAL rating of modules TODO clarify
 		| 'spike'
 		| 'tech-demo'
@@ -98,29 +105,24 @@ interface PureModuleManifest {
 		| 'stable'
 }
 
-interface PureModuleDetails {
+// Should contain everything needed to build
+// - package.json
+// - tsconfig.json
+// - any other config
+interface PureModuleDetails extends Required<PureModuleManifest> {
 	root‿abspath: string
 
-	status: string // EXPERIMENTAL rating of modules spike -> demo -> stable -> core -> critical ?
-
-	// everything needed to build package.json
-	namespace: string // namespace + name mandatory (needed at this stage already)
-	name: string
 	fqname: string // fully qualified
 
-	version: string
-	description?: string
-	isꓽpublished: boolean
 	author: string
 	license: undefined | string // TODO SPDX
-	source: FileEntry
+	main: FileEntry // TODO review fuse with entries?
 	demo?: FileEntry
-	hasꓽside_effects: boolean
 	hasꓽtestsⵧunit: boolean
-	hasꓽtestsⵧsmoke: boolean // TODO one day
+	//hasꓽtestsⵧsmoke: boolean // TODO one day
 	hasꓽstories: boolean,
 	extra_entries: {
-		[label: string]: FileEntry
+		[label: string]: FileEntry // TODO one day
 	}
 
 	depsⵧnormal: Set<string>
@@ -134,8 +136,8 @@ interface PureModuleDetails {
 	// TODO bundler reqs, ex. Parcel-specific imports
 	// TODO engines ex. node
 
-	// in case of extra info
-	manifest: PureModuleManifest
+	// in case
+	_manifest: PureModuleManifest
 }
 
 const MANIFEST‿basename = 'MANIFEST.json5'
@@ -165,10 +167,11 @@ function _createꓽresult(root‿abspath: AbsolutePath): PureModuleDetails {
 		isꓽpublished: false,
 		author: 'Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)', // https://docs.npmjs.com/cli/v11/configuring-npm/package-json#people-fields-author-contributors
 		license: 'Unlicense',
-		source: null as any, // XXX TODO
+		main: null as any, // XXX TODO
+		isꓽapp: false, // most common case
 		hasꓽside_effects: false,
 		hasꓽtestsⵧunit: false,
-		hasꓽtestsⵧsmoke: false,
+		//hasꓽtestsⵧsmoke: false,
 		hasꓽstories: false,
 		extra_entries: {},
 		depsⵧnormal: new Set<string>(),
@@ -187,7 +190,7 @@ function _createꓽresult(root‿abspath: AbsolutePath): PureModuleDetails {
 		depsⵧvendored: new Set<string>(),
 		languages: new Set<ProgLang>(),
 
-		manifest: {},
+		_manifest: {},
 	}
 }
 
@@ -280,7 +283,7 @@ function getꓽProgLangs(entry: FileEntry): ProgLang[] {
 			return [ 'json' ]
 
 		case ['.ts'].includes(ext): // mts sometimes needed for node scripts
-			return [ 'ts' ]
+			return [ 'ts' ] // TODO should we add js? Technically true...
 
 		case ['.tsx'].includes(ext):
 			return [ 'ts', 'jsx' ]
@@ -401,6 +404,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 	// start aggregating
 	const result = _createꓽresult(root‿abspath)
+	result.isꓽapp = module_path.includes('sandbox')
+
 	const raw_deps: Array<Dependency> = []
 
 	const entryⵧmanifest: FileEntry = await (async () => {
@@ -441,38 +446,38 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	})()
 
 	// overrides from the manifest
-	result.manifest = JSON5.parse(fs.readFileSync(entryⵧmanifest.path‿abs, 'utf8'))
-	const unprocessed_keys = new Set<string>(Object.keys(result.manifest))
+	result._manifest = JSON5.parse(fs.readFileSync(entryⵧmanifest.path‿abs, 'utf8'))
+	const unprocessed_keys = new Set<string>(Object.keys(result._manifest))
 	if (unprocessed_keys.has('name')) {
-		result.name = result.manifest.name
+		result.name = result._manifest.name
 		unprocessed_keys.delete('name')
 	}
 	if (unprocessed_keys.has('namespace')) {
-		result.namespace = result.manifest.namespace
+		result.namespace = result._manifest.namespace
 		unprocessed_keys.delete('namespace')
 	}
 	if (unprocessed_keys.has('license')) {
-		result.license = result.manifest.license
+		result.license = result._manifest.license
 		unprocessed_keys.delete('license')
 	}
 	if (unprocessed_keys.has('version')) {
-		result.version = result.manifest.version
+		result.version = result._manifest.version
 		unprocessed_keys.delete('version')
 	}
 	if (unprocessed_keys.has('isꓽpublished')) {
-		result.isꓽpublished = result.manifest.isꓽpublished
+		result.isꓽpublished = result._manifest.isꓽpublished
 		unprocessed_keys.delete('isꓽpublished')
 	}
 	if (unprocessed_keys.has('hasꓽside_effects')) {
-		result.hasꓽside_effects = result.manifest.hasꓽside_effects
+		result.hasꓽside_effects = result._manifest.hasꓽside_effects
 		unprocessed_keys.delete('hasꓽside_effects')
 	}
 	if (unprocessed_keys.has('description')) {
-		result.description = result.manifest.description
+		result.description = result._manifest.description
 		unprocessed_keys.delete('description')
 	}
 	if (unprocessed_keys.has('status')) {
-		result.status = result.manifest.status
+		result.status = result._manifest.status
 		unprocessed_keys.delete('status')
 	}
 	if (unprocessed_keys.size) {
@@ -506,14 +511,28 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		assertꓽmigrated(entry, { indent, root‿abspath })
 		assertꓽnormalized(entry)
 
-		if (!result.source) {
-			result.source = entry
+		if (!result.main) {
+			result.main = entry
 		}
-		else if (entry.basename‿noext === 'index') {
-			if (entry.path‿rel.length < result.source.path‿rel.length) {
-				result.source = entry
+		else if (entry.basename‿noext !== 'MANIFEST') { // manifest is at the root and should be ignored
+			// priority order:
+			// - shortest / top file has priority
+			// - index has priority over not index
+			const current_is_index = result.main.basename‿noext === 'index'
+			const candidate_is_index = entry.basename‿noext === 'index'
+			if (candidate_is_index !== current_is_index) {
+				result.main = candidate_is_index
+					? entry
+					: result.main
+			}
+			else {
+				// both are index or both are not
+				if (entry.path‿rel.length < result.main.path‿rel.length) {
+					result.main = entry
+				}
 			}
 		}
+
 		if (path.basename(path.dirname(path‿rel)) === '##demo') {
 			if (entry.basename‿noext === 'index') {
 				result.demo = entry
@@ -678,13 +697,13 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	}
 
 	// encourage safe practices
-	if (!result.isꓽpublished) {
+	if (!result.isꓽpublished && (result.languages.has('js') || result.languages.has('ts'))) {
 		raw_deps.push({ label: 'tiny-invariant', type: 'normal'})
 	}
 	// TODO add extended error types
 
-	if(!result.source) {
-		throw new Error(`No "source" candidate found!`)
+	if(!result.main) {
+		throw new Error(`No "main" candidate found!`)
 	}
 	if (result.hasꓽstories) {
 		raw_deps.push({ label: '@offirmo-private/storypad', type: 'dev'})
@@ -692,7 +711,11 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	}
 
 	// consolidate
+	let hasꓽReact = false
 	raw_deps.forEach(({label, type}) => {
+		if (label === 'react') {
+			hasꓽReact = true
+		}
 		switch (type) {
 			case 'normal':
 				result.depsⵧnormal.add(label)
@@ -714,26 +737,55 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		}
 	})
 
+	if (hasꓽReact) {
+		// indirect dependency
+		if (result.isꓽapp) {
+			result.depsⵧnormal.add('react-dom')
+		}
+		else {
+			result.depsⵧdev.add('react-dom')
+		}
+	}
+
+	for (const dep of result.depsⵧnormal) {
+		// small control
+		if ([
+			'@offirmo-private/monorepo-scripts',
+			'@offirmo-private/storypad',
+			'@offirmo-private/toolbox--parcel',
+			'@offirmo/unit-test-toolbox',
+			'npm-run-all',
+			'tslib',
+			'typescript',
+		].includes(dep))
+			throw new Error(`Unexpected dep "${dep}" in normal deps! (should be dev)`)
+
+		const is_peer_candidate = [
+			'tslib',
+			'react',
+			'@offirmo-private/soft-execution-context',
+		].includes(dep)
+		if (is_peer_candidate) {
+			// note: will be moved back to normal if not a lib, see below
+			result.depsⵧpeer.add(dep)
+			result.depsⵧnormal.delete(dep)
+		}
+	}
 	for (const dep of result.depsⵧdev) {
 		if (result.depsⵧnormal.has(dep)) {
 			result.depsⵧdev.delete(dep)
 		}
 	}
 	for (const dep of result.depsⵧpeer) {
-		result.depsⵧdev.add(dep)
-	}
-	for (const dep of result.depsⵧnormal) {
-		// small control
-		if ([
-			'@offirmo-private/storypad',
-			'@offirmo-private/toolbox--parcel',
-			'tslib',
-			'@offirmo/unit-test-toolbox',
-			'@offirmo-private/monorepo-scripts',
-			'npm-run-all',
-			'typescript',
-		].includes(dep))
-			throw new Error(`Unexpected dep "${dep}" in normal deps! (should be dev)`)
+		if (result.isꓽapp) {
+			// move them all to normal
+			result.depsⵧnormal.add(dep)
+			result.depsⵧpeer.delete(dep)
+		}
+		else {
+			// also move to dev
+			result.depsⵧdev.add(dep)
+		}
 	}
 
 	return result

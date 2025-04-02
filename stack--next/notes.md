@@ -40,6 +40,8 @@ Concepts:
   - v2 (not in the semver sense) aka rewrite = on the other hand, considered much higher quality as all the discovered specs have been integrated into a holistic architecture = usually faster, clearer...
   - could be captured as "last architecture cleanup" = null | YYYY"
 
+spike -> demo -> stable -> core -> critical ?
+
 1. spike
 1. technical demo ???
 1. sandbox = not public, to test other modules ~"dev integration" 

@@ -9,13 +9,12 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./module/index.css"
+			"import": "./module/src/index.css"
 		}
 	},
-	"source": "module/index.css",
+	"source": "module/src/index.css",
 	"dependencies": {
 	},
-
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",
 

@@ -1,11 +1,10 @@
 {
 	"name": "@offirmo-private/iframe--social",
-	"version": "0.0.2",
 	"description": "A Web Component to display a social bar",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"version": "0.0.2",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": true,
 	"source": "src/web-component--social-links.js"
 }
