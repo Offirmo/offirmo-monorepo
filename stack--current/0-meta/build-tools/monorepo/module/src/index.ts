@@ -5,6 +5,7 @@ import { lsDirsSync } from '@offirmo-private/fs--ls'
 import { getꓽbolt_monorepo__workspaces } from '@offirmo-private/utils--bolt'
 
 import { MONOREPO_ROOT } from './consts.ts'
+import { existsSync, renameSync } from 'node:fs'
 
 /////////////////////////////////////////////////
 
@@ -32,9 +33,18 @@ function getꓽall_known_pure_module__dirs‿abspath(): Array<AbsPath> {
 
 	return workspaces.reduce((acc, workspace) => {
 			const subdirs = lsDirsSync(workspace.path‿abs, { full_path: true })
-				.map(p => path.join(p, 'module'))
-				.filter(p => fs.existsSync(p))
 				.filter(p => !p.includes('~~'))
+				.filter(p => {
+					// migration
+					if (!existsSync(path.resolve(p, 'module'))) {
+						if (!existsSync(path.resolve(p, 'src'))) {
+							return false
+						}
+						renameSync(path.resolve(p, 'src'), path.resolve(p, 'module'))
+					}
+					return true
+				})
+				.map(p => path.join(p, 'module'))
 
 			return acc.concat(subdirs)
 		}, [] as Array<AbsPath>)

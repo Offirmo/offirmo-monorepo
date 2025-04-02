@@ -10,6 +10,7 @@
 	"type": "module",
 	"exports": {
 		"./SpellBook--TurnPage--01": "./src/licensed/audio_alchemist/spellbook_turnpage_01.ts"
+	},
 	"peerDependencies": {
 		"tslib": "^2"
 	},

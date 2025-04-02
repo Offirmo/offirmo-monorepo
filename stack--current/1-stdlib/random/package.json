@@ -2,7 +2,7 @@
 	"name": "@offirmo/random",
 	"description": "Mathematically correct pseudo random generation (ESM / TypeScript)",
 	"version": "3.0.0",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"sideEffects": false,
 	"type": "module",

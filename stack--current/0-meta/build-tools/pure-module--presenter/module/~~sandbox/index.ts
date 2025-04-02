@@ -70,26 +70,26 @@ async function convert_and_refresh_pure_modules(parent_path: string, getꓽdefau
 
 
 
-//await refresh_pure_module( '../../../../../0-meta/build-tools/pkg-infos-resolver/module/', getꓽdefault_namespace)
-//await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--analyzer/module/', getꓽdefault_namespace)
-//await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/', getꓽdefault_namespace)
+await refresh_pure_module( '../../../../../0-meta/build-tools/pkg-infos-resolver/module/', getꓽdefault_namespace)
+await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--analyzer/module/', getꓽdefault_namespace)
+await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/', getꓽdefault_namespace)
 
-//await convert_and_refresh_pure_modules('../../../../../1-stdlib/', getꓽdefault_namespace)
+await convert_and_refresh_pure_modules('../../../../../1-stdlib/', getꓽdefault_namespace)
 //await refresh_pure_module( '../../../../../1-stdlib/timestamps/module/', getꓽdefault_namespace)
 
-//await convert_and_refresh_pure_modules('../../../../../2-foundation/', getꓽdefault_namespace)
+await convert_and_refresh_pure_modules('../../../../../2-foundation/', getꓽdefault_namespace)
 //await refresh_pure_module( '../../../../../2-foundation/prettify-any/module/', getꓽdefault_namespace)
 
-//await convert_and_refresh_pure_modules('../../../../../3-advanced/', getꓽdefault_namespace)
-//await convert_and_refresh_pure_modules('../../../../../3-advanced--multi/', getꓽdefault_namespace)
-//await convert_and_refresh_pure_modules('../../../../../3-advanced--browser/', getꓽdefault_namespace)
-//await convert_and_refresh_pure_modules('../../../../../3-advanced--node/', getꓽdefault_namespace)
+await convert_and_refresh_pure_modules('../../../../../3-advanced/', getꓽdefault_namespace)
+await convert_and_refresh_pure_modules('../../../../../3-advanced--multi/', getꓽdefault_namespace)
+await convert_and_refresh_pure_modules('../../../../../3-advanced--browser/', getꓽdefault_namespace)
+await convert_and_refresh_pure_modules('../../../../../3-advanced--node/', getꓽdefault_namespace)
 
 await convert_and_refresh_pure_modules('../../../../../4-tools/', getꓽdefault_namespace)
 
-//await convert_and_refresh_pure_modules('../../../../../9-rpg/', getꓽdefault_namespace)
+await convert_and_refresh_pure_modules('../../../../../9-rpg/', getꓽdefault_namespace)
 
-//await convert_and_refresh_pure_modules('../../../../../A-apps--core/the-boring-rpg/', getꓽdefault_namespace)
+await convert_and_refresh_pure_modules('../../../../../A-apps--core/the-boring-rpg/', getꓽdefault_namespace)
 
 
 // TODO circular deps

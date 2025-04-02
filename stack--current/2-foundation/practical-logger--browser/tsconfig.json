@@ -2,8 +2,6 @@
 	"extends": "../../0-meta/tsconfig.json",
 	"compilerOptions": {
 		"lib": [ "ES2024", "DOM" ],
-		"importHelpers": false,
-		"noEmitHelpers": false,
 
 		"exactOptionalPropertyTypes": false,
 		"noPropertyAccessFromIndexSignature": false,

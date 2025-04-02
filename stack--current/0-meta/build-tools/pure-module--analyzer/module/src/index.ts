@@ -248,13 +248,21 @@ function _isꓽignored(entry: FileEntry): boolean {
 		return true
 	}
 
+	if (entry.ext === '.md') {
+		// technically a markdown file can reference resources
+		// ex. static website
+		// However for now we consider no deps
+		// TODO one day use parcel for such cases
+		return true
+	}
+
 	return false
 }
 
 function getꓽProgLangs(entry: FileEntry): ProgLang[] {
 	const { ext } = entry
 	switch(true) {
-		case ['.js'].includes(ext):
+		case ['.js', '.mjs'].includes(ext): // TODO remove mjs, tolerated for node-typescript-compiler
 			return [ 'js' ]
 
 		case ['.jsx'].includes(ext):
@@ -277,6 +285,9 @@ function getꓽProgLangs(entry: FileEntry): ProgLang[] {
 
 		case ['.md'].includes(ext):
 			return [ 'md' ]
+
+		case ['.mdx'].includes(ext):
+			return [ 'md', 'jsx' ]
 
 		/*case ['.json',].includes(ext):
 			return [ 'json' ]*/
@@ -513,23 +524,24 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			console.log(`${indent}      inferred as: ${dep_type}`)
 
 			const imports = parseImports(content)
-			imports.forEach(({name, type}) => {
-				console.log(`${indent}    ↘ import ${type === 1 ? 'type ' : ''}${name}`)
+			imports.forEach(({name: dependency_name, type}) => {
+				console.log(`${indent}    ↘ import ${type === 1 ? 'type ' : ''}${dependency_name}`)
+				assert(!dependency_name.startsWith('npm:'), `Unexpected "npm:" URL scheme in import!`)
 
-				if (isBuiltInNodeModule(name)) {
+				if (isBuiltInNodeModule(dependency_name)) {
 					raw_deps.push({ label: '@types/node', type: 'dev' })
 					// TODO one day how to express dependency to a runtime?
 					return
 				}
 
-				if (name === result.fqname) {
+				if (dependency_name === result.fqname) {
 					// self-reference
 					// this is allowed, no need to declare it as dep
 					return
 				}
 
 				// intercept aggregations
-				if (name === 'chai' || name === 'sinon') {
+				if (dependency_name === 'chai' || dependency_name === 'sinon') {
 					if (dep_type !== 'dev') {
 						throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')
 					}
@@ -540,23 +552,23 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 				switch (type ?? 1) {
 					case 0: {
-						raw_deps.push({ label: name, type: dep_type })
+						raw_deps.push({ label: dependency_name, type: dep_type })
 						break
 					}
 
 					case 1:
 						// types are needed in dev only
 						// even if published as pure TS module, node type stripping will remove those deps in prod
-						raw_deps.push({ label: name, type: 'dev' })
+						raw_deps.push({ label: dependency_name, type: 'dev' })
 						break
 
 					default:
 						throw new Error(`Unknown import type "${type}"!`)
 				}
 
-				console.log(`${indent}      ↳ Checking for potential @types/ package for "${name}"…`)
+				console.log(`${indent}      ↳ Checking for potential @types/ package for "${dependency_name}"…`)
 				pending_promises.push(
-					pkg_infos_resolver.ↆgetꓽextra_typings_pkg_name_for(name)
+					pkg_infos_resolver.ↆgetꓽextra_typings_pkg_name_for(dependency_name)
 						.then(name => {
 							if (name) raw_deps.push({ label: name, type: 'dev' })
 						})
@@ -569,11 +581,12 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			const dep_type = inferꓽdeptype_from_caller(entry)
 			console.log(`${indent}      inferred as: ${dep_type}`)
 
-			throw new Error(`JS imports detection not implemented! Please convert to TS!`)
+			//throw new Error(`JS imports detection not implemented! Please convert to TS!`)
 			const imports = parseImports(content)
 			console.log(`XXX imports:`, imports)
 			imports.forEach(({name: dependency_name, type}) => {
 				console.log(`${indent}    ↘ import ${type === 1 ? 'type ' : ''}${dependency_name}`)
+				assert(!dependency_name.startsWith('npm:'), `Unexpected "npm:" URL scheme in import!`)
 
 				if (isBuiltInNodeModule(dependency_name)) {
 					// TODO one day how to express dependency to a runtime?
