@@ -6,9 +6,8 @@
  * - TC39 Temporal https://tc39.es/proposal-temporal/docs/cookbook.html
  */
 
-import { strict as node_assert } from 'node:assert'
+import { strict as assert } from 'node:assert'
 
-import assert from 'tiny-invariant'
 import { ExifDateTime } from 'exiftool-vendored'
 import type { Immutable } from '@offirmo-private/ts-types'
 import { TimestampUTCMs } from '@offirmo-private/timestamps'
@@ -612,13 +611,13 @@ export function assertㆍBetterDateㆍdeepㆍequal(s1: Immutable<BetterDate>, s2
 	const s2_alt = _clean_debug(s2)
 
 	try {
-		node_assert.deepStrictEqual(s1_alt, s2_alt)
+		assert.deepStrictEqual(s1_alt, s2_alt)
 	}
 	catch (err: any) {
 		const js_diff = getꓽjson_difference(s1_alt, s2_alt)
 		if (err.message.includes('Values have same structure but are not reference-equal') && js_diff === undefined) {
 			// no difference
-			// TODO review if node_assert.deepStrictEqual makes sense
+			// TODO review if assert.deepStrictEqual makes sense
 			return
 		}
 		if (should_log)

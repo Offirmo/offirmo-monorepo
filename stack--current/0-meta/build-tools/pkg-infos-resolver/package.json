@@ -22,7 +22,7 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"test--ts": "tsc --noEmit",
+		"test--ts": "echo \"@offirmo-private/pkg-infos-resolver\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
 		"_test": "run-s test--ts"
@@ -30,6 +30,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^22",
 		"@types/semver": "^7",
 		"npm-run-all": "^4",
 		"tslib": "^2",

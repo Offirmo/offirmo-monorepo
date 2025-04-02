@@ -44,5 +44,5 @@ try {
 
 
 // convenience
-import path from 'node:path'
+import * as path from 'node:path'
 console.log(`* Starting tests for "${path.basename(process.cwd())}"... [powered by @offirmo/unit-test-toolbox]`)

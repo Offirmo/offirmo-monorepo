@@ -1,5 +1,5 @@
 import { EOL } from 'node:os'
-import path from 'node:path'
+import * as path from 'node:path'
 
 import { spawn } from 'cross-spawn'
 import tildify from 'tildify'

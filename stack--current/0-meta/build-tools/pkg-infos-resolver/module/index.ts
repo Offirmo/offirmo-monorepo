@@ -1,18 +1,20 @@
 /**
- * Fetch the latest version of a npm package
+ * Fetch the latest infos about a "package.json"-based package
  */
 
+import { strict as assert } from 'node:assert'
 import packageJson from 'package-json'
 import semver from 'semver'
 
 /////////////////////////////////////////////////
 
 interface PackageJson {
+	name: string // full, including scope/namespace
 	version?: string
+	types?: string // https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#including-declarations-in-your-npm-package
 }
 
-
-class PkgVersionResolver {
+class PkgInfosResolver {
 	#packageᐧjson_cache: Record<string, any> = {}
 	#pending_promises: Record<string, Promise<any>> = {}
 
@@ -40,7 +42,7 @@ class PkgVersionResolver {
 		const potential_types_pkg_name = _get_at_types_for_pkg_name(pkg_name)
 		await this.all_pending_loaded() // bc cascade
 
-		if (_has_types(this.#packageᐧjson_cache[pkg_name])) {
+		if (_has_typescript_types(this.#packageᐧjson_cache[pkg_name])) {
 			// not needed
 			return undefined
 		}
@@ -79,9 +81,16 @@ class PkgVersionResolver {
 		console.log(`PkgVersionResolver querying "${pkg_name}"…`)
 		this.#pending_promises[pkg_name] = packageJson(pkg_name, { fullMetadata: true })
 			.then(
-				content => {
+				(content: PackageJson) => {
+					// normalization
+					const types = content.types || (content as any).typings
+					delete (content as any).typings
+					if (types) {
+						content.types = types
+					}
+
 					this.#packageᐧjson_cache[pkg_name] = content
-					console.log(`${auto ? 'auto' : '    '} package.json loaded for "${pkg_name}" v${semver.clean(content.version)} (${`includes types? ${_has_types(content)}`})`)
+					console.log(`${auto ? 'auto' : '    '} package.json loaded for "${pkg_name}" v${semver.clean(content.version)} (${`includes types? ${_has_typescript_types(content)}`})`)
 					//console.log(`XXX content`, content)
 					return content // for chaining
 				},
@@ -105,7 +114,7 @@ class PkgVersionResolver {
 			const pending_id = 'auto-' + potential_types_pkg_name
 			this.#pending_promises[pending_id] = this.#pending_promises[pkg_name]
 				.then(content => {
-					if (_has_types(content)) {
+					if (_has_typescript_types(content)) {
 						// no need to search for a types package, it's already included
 						return
 					}
@@ -170,6 +179,17 @@ class PkgVersionResolver {
 
 	/////////////////////////////////////////////////
 
+	// useful for LOCAL packages
+	inject(packageᐧjson: PackageJson, { force = false } = {}): void {
+		assert(packageᐧjson.name, `Injection: Package name is required!`)
+		if (!force)
+			assert(!this.#packageᐧjson_cache[packageᐧjson.name], `Injection: Package "${packageᐧjson.name}" should not be already loaded!`)
+
+		this.#packageᐧjson_cache[packageᐧjson.name] = packageᐧjson
+	}
+
+	/////////////////////////////////////////////////
+
 	private assert_allowed_package(pkg_name: string): void {
 		if ([
 			// known blocklist of packages we absolutely don't want to use
@@ -191,6 +211,7 @@ class PkgVersionResolver {
 	// TODO review usage!!
 	// internal = from this monorepo
 	// vs. external = npm
+	// TODO externalize
 	private is_unpublished_monorepo_package(pkg_name: string) {
 		return pkg_name.startsWith('@offirmo-private')
 			|| pkg_name.startsWith('@oh-my-rpg')
@@ -220,8 +241,8 @@ function _get_at_types_for_pkg_name(pkg_name: string): string {
 	return `@types/${pkg_name}`
 }
 
-function _has_types(packageᐧjson: PackageJson): boolean {
-	return (!!packageᐧjson?.typings || !!packageᐧjson?.types)
+function _has_typescript_types(packageᐧjson: PackageJson): boolean {
+	return !!packageᐧjson?.types
 }
 
 /////////////////////////////////////////////////
@@ -229,5 +250,5 @@ function _has_types(packageᐧjson: PackageJson): boolean {
 export {
 	type PackageJson,
 
-	PkgVersionResolver,
+	PkgInfosResolver,
 }

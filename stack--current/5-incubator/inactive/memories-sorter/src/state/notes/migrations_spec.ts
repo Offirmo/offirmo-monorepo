@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'node:url'
-import path from 'node:path'
+import * as path from 'node:path'
 
 import { expect } from 'chai'
 import * as sinon from 'sinon'

@@ -9,11 +9,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 /////////////////////////////////////////////////
 
-import { PkgVersionResolver } from '@offirmo-private/pkg-infos-resolver'
+import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
 import { getꓽpure_module_details, type PureModuleDetails, type Options as PureModuleAnalyzerOptions } from '@offirmo-private/pure-module--analyzer'
 import { present } from '@offirmo-private/pure-module--presenter'
 
-const pkg_version_resolver = new PkgVersionResolver()
+const pkg_infos_resolver = new PkgInfosResolver()
 // TODO feed with bolt knowledge!!!
 
 const PURE_MODULE__DETAILS: Record<string, PureModuleDetails> = {}
@@ -26,16 +26,12 @@ async function refresh_pure_module(pure_module_path: string, getꓽdefault_names
 		{
 			indent: '   ',
 			getꓽdefault_namespace,
-			pkg_version_resolver,
+			pkg_infos_resolver,
 		},
 	)
 	console.log(pure_module_details)
 
 	PURE_MODULE__DETAILS[pure_module_details.fqname] = pure_module_details
-
-	// TODO check loops
-	// TODO check # of external deps
-	// TODO check status ranking
 
 	await present({
 		indent: '   ',
@@ -50,12 +46,13 @@ async function refresh_pure_module(pure_module_path: string, getꓽdefault_names
 		ts__config__path: path.resolve(__dirname, '../../../../tsconfig.json'),
 		ts__custom_types__path: path.resolve(__dirname, '../../../../typescript-custom-typings'),
 
-		pkg_version_resolver,
+		pkg_infos_resolver,
 	})
 }
 
 import { lsDirsSync } from './fs_ls.ts'
 
+// xxx to replace with bolt utils
 async function refresh_pure_modules(parent_path: string, getꓽdefault_namespace: PureModuleAnalyzerOptions['getꓽdefault_namespace']) {
 	const dirs = lsDirsSync(path.resolve(__dirname, parent_path), { full_path: true })
 	for (const dir of dirs) {
@@ -68,19 +65,19 @@ async function refresh_pure_modules(parent_path: string, getꓽdefault_namespace
 
 /////////////////////////////////////////////////
 
-const getꓽdefault_namespace: PureModuleAnalyzerOptions['getꓽdefault_namespace'] = (result: PureModuleDetails) => result.isꓽpublished ? '@offirmo' : '@offirmo-private'
 
-await refresh_pure_module( '../../../../../0-meta/build-tools/pkg-infos-resolver/module/', getꓽdefault_namespace)
-await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--analyzer/module/', getꓽdefault_namespace)
-await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/', getꓽdefault_namespace)
+
+//await refresh_pure_module( '../../../../../0-meta/build-tools/pkg-infos-resolver/module/', getꓽdefault_namespace)
+//await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--analyzer/module/', getꓽdefault_namespace)
+//await refresh_pure_module( '../../../../../0-meta/build-tools/pure-module--presenter/module/', getꓽdefault_namespace)
 
 //await refresh_pure_modules('../../../../../1-stdlib/', getꓽdefault_namespace)
 //await refresh_pure_module( '../../../../../1-stdlib/timestamps/module/', getꓽdefault_namespace)
 
-//await refresh_pure_modules('../../../../../2-foundation/', getꓽdefault_namespace)
+await refresh_pure_modules('../../../../../2-foundation/', getꓽdefault_namespace)
 //await refresh_pure_module( '../../../../../2-foundation/prettify-any/module/', getꓽdefault_namespace)
 
-//await refresh_pure_modules('../../../../../A-apps--core/the-boring-rpg/', () => '@tbrpg')
+//await refresh_pure_modules('../../../../../A-apps--core/the-boring-rpg/', getꓽdefault_namespace)
 
 
 // TODO circular deps

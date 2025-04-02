@@ -1,4 +1,4 @@
-import { strict as assert } from 'node:assert';
+import { strict as assert } from 'node:assert'
 import * as util from 'node:util';
 const INSPECT_OPTIONS = {
 	depth: Infinity,

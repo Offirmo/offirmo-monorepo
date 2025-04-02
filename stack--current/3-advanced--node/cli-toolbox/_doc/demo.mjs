@@ -3,9 +3,9 @@
 
 await import('loud-rejection/register.ts')
 
-import fs from 'node:fs/promises';
+import * as fs from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
-import path from 'node:path'
+import * as path from 'node:path'
 import sum_up_module from 'sum-up'
 
 const MARKDOWN_OUTPUT = true

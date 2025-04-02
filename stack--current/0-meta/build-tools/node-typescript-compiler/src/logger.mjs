@@ -1,5 +1,5 @@
 
-import path from 'node:path'
+import * as path from 'node:path'
 import { promises as fs } from 'node:fs'
 
 import { LIB, __dirname } from './consts.mjs'

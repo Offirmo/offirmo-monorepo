@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////
 console.log('🧙️  Hello from update-build-variables.js!')
 
-import path from 'node:path'
+import * as path from 'node:path'
 import { readFileSync, writeFileSync } from 'node:fs'
 
 import semver from 'semver'

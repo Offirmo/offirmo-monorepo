@@ -1,4 +1,4 @@
-import readline from 'node:readline'
+import * as readline from 'node:readline'
 import term_size from 'term-size'
 import strip_ansi from 'strip-ansi'
 import create_ora_spinner from 'ora'

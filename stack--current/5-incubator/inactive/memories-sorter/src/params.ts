@@ -1,4 +1,4 @@
-import path from 'node:path'
+import * as path from 'node:path'
 
 import assert from 'tiny-invariant'
 import memoize_once from 'memoize-one'

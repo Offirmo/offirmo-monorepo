@@ -27,7 +27,6 @@ bolt --only-fs "[0-5]-*/*" ws run test
    bolt --only-fs "0-meta/build-tools/*" ws run test
    bolt --only-fs "1-stdlib/*" ws run build
    bolt --only-fs "1-stdlib/*" ws run test
-   bolt --only-fs "1-stdlib/*" ws run ensure-size
    bolt --only-fs "2-foundation/*" ws run build
    bolt --only-fs "2-foundation/*" ws run test
    bolt --only-fs "3-advance*/*" ws run build
@@ -73,6 +72,7 @@ bolt ws run test  --only @offirmo-private/*
 bolt ws run cheatsheet
 bolt ws run cheatsheet --only @offirmo-private/*
 bolt ws run cheatsheet --only @oh-my-rpg/*
+bolt --only-fs "1-stdlib/*" ws run ensure-size
 ```
 
 ## clean

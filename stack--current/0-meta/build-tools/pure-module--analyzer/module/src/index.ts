@@ -1,3 +1,4 @@
+import { strict as assert } from 'node:assert'
 import * as path from 'node:path'
 import * as fs from 'node:fs'
 import { isBuiltin as isBuiltInNodeModule } from 'node:module'
@@ -6,7 +7,7 @@ import walk from 'ignore-walk'
 import { parse as parseImports } from 'parse-imports-ts'
 import JSON5 from 'json5'
 import { writeJsonFile as write_json_file } from 'write-json-file'
-import { PkgVersionResolver } from '@offirmo-private/pkg-infos-resolver'
+import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
 
 /////////////////////////////////////////////////
 
@@ -84,6 +85,8 @@ type ProgLang =
 
 interface PureModuleManifest {
 	name?: string // NOT including the namespace
+	namespace?: string
+	license?: string // SPDX
 	description?: string
 	version?: string // Semver version TODO proper type
 	isꓽpublished?: true
@@ -320,14 +323,14 @@ function assertꓽnormalized(entry: FileEntry, { indent = ''} = {}): void {
 interface Options {
 	indent: string
 	getꓽdefault_namespace: (details_so_far: PureModuleDetails) => PureModuleDetails['namespace'],
-	pkg_version_resolver: PkgVersionResolver,
+	pkg_infos_resolver: PkgInfosResolver,
 }
 
-async function getꓽpure_module_details(module_path: AnyPath, options: Partial<Options> = {}) {
+async function getꓽpure_module_details(module_path: AnyPath, options: Partial<Options> = {}): Promise<PureModuleDetails> {
 	const {
 		indent = '',
 		getꓽdefault_namespace = () => '@UNKNOWN',
-		pkg_version_resolver = new PkgVersionResolver(),
+		pkg_infos_resolver = new PkgInfosResolver(),
 	} = options
 
 	const root‿abspath = path.resolve(module_path)
@@ -367,7 +370,9 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		const [ namespace, name ] = packageᐧjson.name.split('/')
 
 		const data: any = {
+			...(namespace !== result.namespace && { namespace }),
 			...(name !== result.name && { name }),
+			...(packageᐧjson.license !== result.license && { license: packageᐧjson.license}),
 			...(packageᐧjson.version !== '0.0.1' && { version: packageᐧjson.version}),
 			description: packageᐧjson.description || 'TODO description in MANIFEST.json5',
 			...(!packageᐧjson.private && { isꓽpublished: true }),
@@ -382,6 +387,18 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	// overrides from the manifest
 	result.manifest = JSON5.parse(fs.readFileSync(entryⵧmanifest.path‿abs, 'utf8'))
 	const unprocessed_keys = new Set<string>(Object.keys(result.manifest))
+	if (unprocessed_keys.has('name')) {
+		result.name = result.manifest.name
+		unprocessed_keys.delete('name')
+	}
+	if (unprocessed_keys.has('namespace')) {
+		result.namespace = result.manifest.namespace
+		unprocessed_keys.delete('namespace')
+	}
+	if (unprocessed_keys.has('license')) {
+		result.license = result.manifest.license
+		unprocessed_keys.delete('license')
+	}
 	if (unprocessed_keys.has('version')) {
 		result.version = result.manifest.version
 		unprocessed_keys.delete('version')
@@ -397,10 +414,6 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	if (unprocessed_keys.has('status')) {
 		result.status = result.manifest.status
 		unprocessed_keys.delete('status')
-	}
-	if (unprocessed_keys.has('name')) {
-		result.name = result.manifest.name
-		unprocessed_keys.delete('name')
 	}
 	if (unprocessed_keys.size) {
 			throw new Error(`Unknown keys in manifest: "${Array.from(unprocessed_keys).join(', ')}"!`)
@@ -420,8 +433,15 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			is_excluded ? '🚫' : '',
 			//entry.extⵧsub, entry.ext, entry.extⵧextended,
 		)
-		if (is_excluded)
+		if (is_excluded) {
+			if (path.basename(path.dirname(path‿rel)) === '~~sandbox') {
+				if (entry.basename‿noext === 'index' && !result.demo) {
+					result.demo = entry // unless we find better
+				}
+			}
+
 			return
+		}
 
 		assertꓽmigrated(entry, { indent, root‿abspath })
 		assertꓽnormalized(entry)
@@ -439,6 +459,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 				result.demo = entry
 			}
 		}
+
 
 		const { basename } = entry
 		if (basename === MANIFEST‿basename) {
@@ -498,7 +519,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 				console.log(`${indent}      ↳ Checking for potential @types/ package for "${name}"…`)
 				pending_promises.push(
-					pkg_version_resolver.ↆgetꓽextra_typings_pkg_name_for(name)
+					pkg_infos_resolver.ↆgetꓽextra_typings_pkg_name_for(name)
 						.then(name => {
 							if (name) raw_deps.push({ label: name, type: 'dev' })
 						})

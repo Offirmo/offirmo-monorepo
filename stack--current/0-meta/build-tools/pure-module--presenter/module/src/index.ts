@@ -1,16 +1,14 @@
 /* PROMPT
  * ’
  */
+import { strict as assert } from 'node:assert'
 import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
 
 import { writeJsonFile as write_json_file } from 'write-json-file' // full pkg is too useful, ex. preserve indent
-import packageJson from 'package-json'
-import semver from 'semver'
 
 import { getꓽpure_module_details, type PureModuleDetails } from '@offirmo-private/pure-module--analyzer'
-
-import { PkgVersionResolver } from '@offirmo-private/pkg-infos-resolver'
+import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
 
 /////////////////////////////////////////////////
 
@@ -24,26 +22,26 @@ function isAncestorDir(parent: string, child: string): boolean {
 
 interface Params {
 	pure_module_path: string
-	pure_module_details?: PureModuleDetails
+	pure_module_details: PureModuleDetails
 	dest_dir: string
 	ts__config__path: string
 	ts__custom_types__path: string
 
 	indent: string
 
-	pkg_version_resolver? : PkgVersionResolver
+	pkg_infos_resolver? : PkgInfosResolver
 }
 async function present({
 	indent = '',
 
 	pure_module_path,
-	pure_module_details = getꓽpure_module_details(pure_module_path, { indent: indent + '   ' }),
+	pure_module_details,
 
 	dest_dir,
 	ts__config__path,
 	ts__custom_types__path,
 
-	pkg_version_resolver = new PkgVersionResolver()
+	pkg_infos_resolver = new PkgInfosResolver()
 }: Params) {
 	const dest_dir‿abspath = path.resolve(dest_dir)
 	console.log(`${indent}🗃  exposing pure code module to "${dest_dir‿abspath}"…`)
@@ -153,17 +151,17 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 			.union(pure_module_details.depsⵧoptional)
 			// vendored are copied, not declared
 
-		Array.from(all_declared_deps.values()).forEach(dep => pkg_version_resolver.preload(dep))
-		await pkg_version_resolver.all_pending_loaded()
+		Array.from(all_declared_deps.values()).forEach(dep => pkg_infos_resolver.preload(dep))
+		await pkg_infos_resolver.all_pending_loaded()
 
 		if (pure_module_details.depsⵧpeer.size) {
 			pkg.peerDependencies = Object.fromEntries(
-				Array.from(pure_module_details.depsⵧpeer).sort().map(dep => [dep, pkg_version_resolver?.ǃgetꓽversionⵧfor_dep(dep)])
+				Array.from(pure_module_details.depsⵧpeer).sort().map(dep => [dep, pkg_infos_resolver?.ǃgetꓽversionⵧfor_dep(dep)])
 			)
 		}
 
 		pkg.dependencies = Object.fromEntries(
-			Array.from(pure_module_details.depsⵧnormal).sort().map(dep => [dep, pkg_version_resolver.ǃgetꓽversionⵧfor_dep(dep)])
+			Array.from(pure_module_details.depsⵧnormal).sort().map(dep => [dep, pkg_infos_resolver.ǃgetꓽversionⵧfor_dep(dep)])
 		)
 		if (pure_module_details.depsⵧoptional.size) {
 			throw new Error(`Not implemented!`)
@@ -185,7 +183,7 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 			}
 
 			if (pure_module_details.languages.has('ts')) {
-				scripts['test--ts'] = 'tsc --noEmit'
+				scripts['test--ts'] = `echo "${pure_module_details.fqname}" && tsc --noEmit`
 				scripts['test--ts--watch'] = 'tsc --noEmit --watch'
 				scripts['dev'] = scriptsⵧclean.length
 					? `run-s clean test--ts--watch`
@@ -209,7 +207,7 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 
 		if (pure_module_details.depsⵧdev.size) {
 			pkg.devDependencies = Object.fromEntries(
-				Array.from(pure_module_details.depsⵧdev).sort().map(dep => [dep, pkg_version_resolver.ǃgetꓽversionⵧfor_dep(dep)])
+				Array.from(pure_module_details.depsⵧdev).sort().map(dep => [dep, pkg_infos_resolver.ǃgetꓽversionⵧfor_dep(dep)])
 			)
 		}
 
@@ -226,5 +224,5 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 export {
 	present,
 
-	PkgVersionResolver,
+	PkgInfosResolver,
 }

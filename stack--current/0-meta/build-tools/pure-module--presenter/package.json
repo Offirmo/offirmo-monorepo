@@ -19,14 +19,11 @@
 	"dependencies": {
 		"@offirmo-private/pkg-infos-resolver": "*",
 		"@offirmo-private/pure-module--analyzer": "*",
-		"fs-extra": "^11",
-		"package-json": "^10",
-		"semver": "^7",
 		"tiny-invariant": "^1",
 		"write-json-file": "^6"
 	},
 	"scripts": {
-		"test--ts": "tsc --noEmit",
+		"test--ts": "echo \"@offirmo-private/pure-module--presenter\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
 		"demo": "node --experimental-strip-types ./module/##demo/index.ts",
@@ -35,9 +32,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@types/fs-extra": "^11",
 		"@types/node": "^22",
-		"@types/semver": "^7",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

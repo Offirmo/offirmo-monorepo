@@ -1,7 +1,7 @@
 #!/usr/bin/env zx
 // using https://github.com/google/zx
 import { fileURLToPath } from 'node:url'
-import path from 'node:path'
+import * as path from 'node:path'
 import * as fs from 'node:fs'
 
 import { writeJsonFile as write_json_file } from 'write-json-file' // full pkg is too useful, ex. preserve indent

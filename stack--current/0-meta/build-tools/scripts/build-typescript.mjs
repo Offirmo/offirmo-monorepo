@@ -2,7 +2,7 @@
 ':' //# https://sambal.org/?p=1014 ; exec /usr/bin/env node --experimental-import-meta-resolve "$0" "$@"
 
 import { fileURLToPath } from 'node:url'
-import path from 'node:path'
+import * as path from 'node:path'
 import { promises as fs } from 'node:fs'
 
 import meow from 'meow'

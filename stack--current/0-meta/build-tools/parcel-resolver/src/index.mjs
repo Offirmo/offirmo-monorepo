@@ -1,7 +1,7 @@
 // https://parceljs.org/plugin-system/resolver/
 
 import { Resolver } from '@parcel/plugin'
-import path from 'node:path'
+import * as path from 'node:path'
 
 
 const DEBUG = false

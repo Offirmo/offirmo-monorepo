@@ -1,7 +1,7 @@
 import { strict as assert } from 'node:assert'
 import * as fs from 'node:fs'
 import * as path from 'node:path'
-import os from 'node:os'
+import * as os from 'node:os'
 import {
 	coerce_to_tokens,
 	normalize_unicode,

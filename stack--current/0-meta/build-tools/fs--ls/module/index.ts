@@ -1,11 +1,23 @@
-import path from 'node:path'
+/* Extra fs functions to list directories and files under a given path
+ */
+import { strict as assert } from 'node:assert'
+import * as path from 'node:path'
+import * as fs from 'node:fs'
 
-import fs from 'fs-extra'
+/////////////////////////////////////////////////
+
+interface Options {
+	full_path: boolean
+}
+
+const DEFAULT_OPTIONS: Options = {
+	full_path: true, // because it's what we usually want
+}
 
 // hat tip to https://stackoverflow.com/a/24594123/587407
-export function lsDirsSync(srcpath: string, options = {}): Array<string> {
+function lsDirsSync(srcpath: string, options: Partial<Options> = {}): Array<string> {
 	options = {
-		full_path: true, // because it's what we usually want
+		...DEFAULT_OPTIONS,
 		...options,
 	}
 
@@ -36,9 +48,9 @@ export function lsDirsSync(srcpath: string, options = {}): Array<string> {
 	return result.sort()
 }
 
-export function lsFilesSync(srcpath: string, options = {}): Array<string> {
+function lsFilesSync(srcpath: string, options: Partial<Options> = {}): Array<string> {
 	options = {
-		full_path: true, // because it's what we usually want
+		...DEFAULT_OPTIONS,
 		...options,
 	}
 
@@ -69,9 +81,10 @@ export function lsFilesSync(srcpath: string, options = {}): Array<string> {
 	return result.sort()
 }
 
-export function lsFilesRecursiveSync(srcpath: string): Array<string> {
-	const options = {
-		full_path: true, // because it's what we usually want
+function lsFilesRecursiveSync(srcpath: string, options: Partial<Options> = {}): Array<string> {
+	options = {
+		...DEFAULT_OPTIONS,
+		...options,
 	}
 
 	let result = lsFilesSync(srcpath, options)
@@ -84,4 +97,14 @@ export function lsFilesRecursiveSync(srcpath: string): Array<string> {
 	})
 
 	return result.sort()
+}
+
+/////////////////////////////////////////////////
+
+export {
+	type Options,
+
+	lsDirsSync,
+	lsFilesSync,
+	lsFilesRecursiveSync,
 }

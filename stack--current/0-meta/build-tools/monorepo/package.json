@@ -1,0 +1,39 @@
+{
+	"name": "@offirmo-private/monorepo",
+	"description": "Source of truth about this monorepo",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
+	"license": "Unlicense",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./module/src/index.ts"
+		}
+	},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@offirmo-private/fs--ls": "*",
+		"@offirmo-private/utils--bolt": "*",
+		"tiny-invariant": "^1"
+	},
+	"scripts": {
+		"test--ts": "echo \"@offirmo-private/monorepo\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"demo": "node --experimental-strip-types ./module/~~sandbox/index.ts",
+		"_test": "run-s test--ts"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^22",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
+	}
+}

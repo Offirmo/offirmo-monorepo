@@ -1,4 +1,4 @@
-import { LogLevel, LOG_LEVEL_TO_HUMAN } from '@offirmo/practical-logger-core'
+import { type LogLevel, LOG_LEVEL_TO_HUMAN } from '@offirmo/practical-logger-core'
 
 export const LEVEL_TO_CONSOLE_METHOD: Readonly<{ [k: string]: string }> = {
 	fatal:   'error',

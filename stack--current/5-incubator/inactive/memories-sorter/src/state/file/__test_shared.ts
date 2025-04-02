@@ -1,4 +1,4 @@
-import { strict as node_assert } from 'node:assert'
+import { strict as assert } from 'node:assert'
 
 import { normalizeError } from '@offirmo/error-utils'
 import type { Immutable } from '@offirmo-private/ts-types'
@@ -19,7 +19,7 @@ export function expectㆍfileㆍstatesㆍdeepㆍequal(s1: Immutable<State>, s2: 
 	}
 
 	try {
-		node_assert.deepStrictEqual(s1_alt, s2_alt)
+		assert.deepStrictEqual(s1_alt, s2_alt)
 	}
 	catch (err) {
 		if (should_log)

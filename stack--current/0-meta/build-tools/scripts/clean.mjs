@@ -2,7 +2,7 @@
 ':' //# https://sambal.org/?p=1014 ; exec /usr/bin/env node "$0" "$@"
 
 import { fileURLToPath } from 'node:url'
-import path from 'node:path'
+import * as path from 'node:path'
 
 import meow from 'meow'
 import stylize_string from 'chalk'

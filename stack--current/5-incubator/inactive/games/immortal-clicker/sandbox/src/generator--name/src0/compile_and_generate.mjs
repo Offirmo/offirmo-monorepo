@@ -1,4 +1,4 @@
-import fs from 'node:fs'
+import * as fs from 'node:fs'
 
 import assert from 'tiny-invariant'
 import { normalize, NORMALIZERS, combineꓽnormalizers } from '@offirmo-private/normalize-string'

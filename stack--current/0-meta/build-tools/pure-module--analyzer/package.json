@@ -25,7 +25,7 @@
 		"write-json-file": "^6"
 	},
 	"scripts": {
-		"test--ts": "tsc --noEmit",
+		"test--ts": "echo \"@offirmo-private/pure-module--analyzer\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
 		"demo": "node --experimental-strip-types ./module/##demo/index.ts",

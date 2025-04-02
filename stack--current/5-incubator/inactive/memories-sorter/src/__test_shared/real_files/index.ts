@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'node:url'
-import path from 'node:path'
+import * as path from 'node:path'
 
 import memoize_once from 'memoize-one'
 import micro_memoize from 'micro-memoize'

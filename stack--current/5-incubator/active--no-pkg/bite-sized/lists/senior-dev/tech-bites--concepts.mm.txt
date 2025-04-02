@@ -463,8 +463,9 @@ l10n (localization) = process of adapting a product to local markets (for exampl
 l10n -- g11n = Globalization
 l10n -- i18n (internationalization) = planning and implementing products and services so that they can be adapted easily localized to specific languages and cultures
 l10n -- i18n -- blocking languages = core business
+l10n -- i18n -- exclusions -- admin
+l10n -- i18n -- exclusions -- dev doc / portal = really hard - you need engineers fluent in both languages (and the tools/sdks/etc)
 l10n -- i18n -- ICU format https://formatjs.github.io/
-l10n -- i18n -- not required for some areas such as admin, dev docs...
 l10n -- i18n -- pseudolocalization = [Lóôõrēĕėęm iìíîpsúûüũm]
 l10n -- i18n -- text size change https://www.w3.org/International/articles/article-text-size
 l10n -- truly local = more than just translation

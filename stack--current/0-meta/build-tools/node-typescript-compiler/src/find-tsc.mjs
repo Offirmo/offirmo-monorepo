@@ -1,6 +1,6 @@
-import path from 'node:path'
+import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import os from 'node:os'
+import * as os from 'node:os'
 
 import { pathExists } from 'path-exists'
 
