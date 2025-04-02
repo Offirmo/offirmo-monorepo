@@ -112,6 +112,7 @@ biases -- baby-face
 biases -- Benjamin Franklin effect = ppl like a person more after doing a favor to them
 biases -- bias blind spot = tendency to see oneself as less biased than others
 biases -- cognitive = https://en.wikipedia.org/wiki/Cognitive_bias TODO
+biases -- derangement syndrome = (pejorative) irrational negative reactions, ex. to Trump https://en.wikipedia.org/wiki/Trump_derangement_syndrome
 biases -- false-uniqueness effect = ppl tend to view their qualities, traits & pers attributes as unique when they are not
 biases -- hostile attribution = tendency to interpret others' behavior as having hostile intent, even when ambiguous or benign
 biases -- mean world syndrome = perceive the world as more dangerous than it is

@@ -85,7 +85,9 @@ async function convert_and_refresh_pure_modules(parent_path: string, getꓽdefau
 //await convert_and_refresh_pure_modules('../../../../../3-advanced--browser/', getꓽdefault_namespace)
 //await convert_and_refresh_pure_modules('../../../../../3-advanced--node/', getꓽdefault_namespace)
 
-await convert_and_refresh_pure_modules('../../../../../9-rpg/', getꓽdefault_namespace)
+await convert_and_refresh_pure_modules('../../../../../4-tools/', getꓽdefault_namespace)
+
+//await convert_and_refresh_pure_modules('../../../../../9-rpg/', getꓽdefault_namespace)
 
 //await convert_and_refresh_pure_modules('../../../../../A-apps--core/the-boring-rpg/', getꓽdefault_namespace)
 

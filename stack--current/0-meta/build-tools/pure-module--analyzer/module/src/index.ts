@@ -239,6 +239,15 @@ function _isꓽignored(entry: FileEntry): boolean {
 		return true
 	}
 
+	if (entry.ext === '.svg') {
+		// technically an SVG can
+		// - reference resources
+		// - embed HTML itself referencing other resources
+		// However for now we consider no deps
+		// TODO one day use parcel for such cases
+		return true
+	}
+
 	return false
 }
 
@@ -349,7 +358,7 @@ interface Options {
 async function getꓽpure_module_details(module_path: AnyPath, options: Partial<Options> = {}): Promise<PureModuleDetails> {
 	const {
 		indent = '',
-		getꓽdefault_namespace = () => '@UNKNOWN',
+		getꓽdefault_namespace = () => { throw new Error(`getꓽdefault_namespace() not provided!`) },
 		pkg_infos_resolver = new PkgInfosResolver(),
 	} = options
 
@@ -390,7 +399,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		const [ namespace, name ] = packageᐧjson.name.split('/')
 
 		const data: any = {
-			...(namespace !== result.namespace && { namespace }),
+			...(namespace !== getꓽdefault_namespace(result) && { namespace }),
 			...(name !== result.name && { name }),
 			...(packageᐧjson.license !== result.license && { license: packageᐧjson.license}),
 			...(packageᐧjson.version !== '0.0.1' && { version: packageᐧjson.version}),
@@ -495,7 +504,10 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 		const langs = getꓽProgLangs(entry)
 		langs.forEach(lang => result.languages.add(lang))
+
+		const unprocessed_langs = new Set(langs)
 		if (langs.includes('ts')) {
+			unprocessed_langs.delete('ts')
 			const content = fs.readFileSync(entry.path‿abs, 'utf8')
 			const dep_type = inferꓽdeptype_from_caller(entry)
 			console.log(`${indent}      inferred as: ${dep_type}`)
@@ -550,6 +562,60 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 						})
 				)
 			})
+		}
+		if (langs.includes('js')) {
+			unprocessed_langs.delete('js')
+			const content = fs.readFileSync(entry.path‿abs, 'utf8')
+			const dep_type = inferꓽdeptype_from_caller(entry)
+			console.log(`${indent}      inferred as: ${dep_type}`)
+
+			throw new Error(`JS imports detection not implemented! Please convert to TS!`)
+			const imports = parseImports(content)
+			console.log(`XXX imports:`, imports)
+			imports.forEach(({name: dependency_name, type}) => {
+				console.log(`${indent}    ↘ import ${type === 1 ? 'type ' : ''}${dependency_name}`)
+
+				if (isBuiltInNodeModule(dependency_name)) {
+					// TODO one day how to express dependency to a runtime?
+					return
+				}
+
+				if (dependency_name === result.fqname) {
+					// self-reference
+					// this is allowed, no need to declare it as dep
+					return
+				}
+
+				// intercept aggregations
+				if (dependency_name === 'chai' || dependency_name === 'sinon') {
+					if (dep_type !== 'dev') {
+						throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')
+					}
+
+					raw_deps.push({ label: '@offirmo/unit-test-toolbox', type: 'dev' })
+					return
+				}
+
+				switch (type ?? 1) {
+					case 0: {
+						raw_deps.push({ label: dependency_name, type: dep_type })
+						break
+					}
+
+					case 1:
+						throw new Error('Type imports in JS??')
+
+					default:
+						throw new Error(`Unknown import type "${type}"!`)
+				}
+			})
+		}
+		if (langs.includes('html')) {
+			unprocessed_langs.delete('html')
+			throw new Error(`HTML imports detection not implemented!`) // TODO use parcel
+		}
+		if (unprocessed_langs.size) {
+			throw new Error(`Unknown language(s) "${Array.from(unprocessed_langs).join(', ')}" for "${basename}"!`)
 		}
 
 		if (entry.extⵧsub === '.tests') {

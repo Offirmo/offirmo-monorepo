@@ -1,15 +1,15 @@
 {
 	"name": "@offirmo-private/storypad",
-	"description": "Standalone storybook replacement",
+	"description": "Storybook replacement",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
-
+	"private": true,
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./src/index.ts"
+			"import": "./module/src/index.ts"
 		},
 		"./types": {
 			"import": "./src/l0-types/index.ts"
@@ -32,28 +32,26 @@
 		"./stories/html/elements/nav":           { "import": "./src/__shared/stories/html/elements/nav.stories.ts" },
 		"./stories/html/elements/ol":            { "import": "./src/__shared/stories/html/elements/ol.stories.ts" },
 		"./stories/html/elements/ul":            { "import": "./src/__shared/stories/html/elements/ul.stories.ts" }
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
 	},
-	"source": "src/index.ts",
-
 	"dependencies": {
 		"@offirmo-private/async-utils": "*",
-		"@offirmo-private/css--framework": "*",
-		"@offirmo-private/css--utils": "*",
-		"@offirmo-private/data-structures": "*",
 		"@offirmo-private/browser-features-detection": "*",
+		"@offirmo-private/css--framework": "*",
+		"@offirmo-private/data-structures": "*",
 		"@offirmo-private/page-loaded": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/soft-execution-context--browser": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo-private/ts-types-web": "*",
+		"@offirmo/practical-logger-browser": "^3",
 		"@offirmo/universal-debug-api-browser": "^1",
 		"emittery": "^1",
-		"tiny-invariant": "^1",
-		"tslib": "^2"
-	},
-	"optionalDependencies": {
 		"react": "^19",
-		"react-dom": "^19"
+		"react-dom": "^19",
+		"tiny-invariant": "^1",
+		"typescript-string-enums": "^1"
 	},
 
 	"scripts": {
@@ -73,7 +71,8 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo-private/ts-types-web": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@types/react": "^19",
 		"@types/react-dom": "^19",
 		"npm-run-all": "^4",
 		"tslib": "^2"
