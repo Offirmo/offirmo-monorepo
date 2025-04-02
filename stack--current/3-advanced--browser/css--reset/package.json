@@ -2,12 +2,17 @@
 	"name": "@offirmo-private/css--reset",
 	"description": "My CSS reset",
 	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": true,
-	"source": "src/index.css",
-
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./module/index.css"
+		}
+	},
+	"source": "module/index.css",
 	"dependencies": {
 	},
 

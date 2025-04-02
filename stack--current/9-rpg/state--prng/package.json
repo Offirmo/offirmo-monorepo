@@ -20,7 +20,7 @@
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/uuid": "*",
-		"@offirmo/random": "^2",
+		"@offirmo/random": "^3",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {

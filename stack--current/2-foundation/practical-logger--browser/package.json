@@ -8,10 +8,10 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./module/index.ts"
+			"import": "./module/src/index.ts"
 		}
 	},
-	"source": "module/index.ts",
+	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
@@ -21,7 +21,7 @@
 		"limit-once": "^0.16"
 	},
 	"scripts": {
-		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/**/*.tests.ts'",
+		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
 		"test--ts": "echo \"@offirmo/practical-logger-browser\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",

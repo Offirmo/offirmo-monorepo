@@ -1,4 +1,4 @@
-const { createLogger } = require('..')
+import { createLogger } from '@offirmo/practical-logger-minimal-noop'
 
 const {
 	demo_legacy_console,

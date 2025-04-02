@@ -62,8 +62,8 @@ async function resurrectꓽfrom(rootpkg_name) {
 
 /////////////////////////////////////////////////
 
-//refreshꓽmonorepo()
-resurrectꓽfrom('@tbrpg/sandbox')
+refreshꓽmonorepo()
+//resurrectꓽfrom('@tbrpg/sandbox')
 
 /////////////////////////////////////////////////
 

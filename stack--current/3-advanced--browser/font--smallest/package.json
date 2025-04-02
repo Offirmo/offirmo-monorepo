@@ -1,12 +1,21 @@
 {
 	"name": "@offirmo-private/font--smallest",
+	"description": "Asset: font, smallest size possible for technical use, ex. discreetly displaying a version",
 	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": true,
-	"source": "./src/index.tsx",
-
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./module/index.tsx"
+		}
+	},
+	"source": "module/index.tsx",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
 	"dependencies": {
 		"@offirmo-private/credits": "*"
 	},

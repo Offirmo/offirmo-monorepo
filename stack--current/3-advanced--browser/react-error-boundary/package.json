@@ -1,10 +1,10 @@
 {
 	"name": "@offirmo-private/react-error-boundary",
+	"description": "Generic error boundary for React, with a fallback UI and logging",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
 	"module": "src/index.js",
 	"source": "src/index.js",
 	"sideEffects": false,

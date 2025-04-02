@@ -1,0 +1,7 @@
+{
+	"name": "universal-debug-api-placeholder",
+	"version": "1.0.1",
+	"description": "Implementation of Offirmo’s Universal Debug Api doing nothing at all, yielding to any other effective implementation",
+	"isꓽpublished": true,
+	"hasꓽside_effects": true,
+}

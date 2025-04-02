@@ -1,20 +1,18 @@
 {
 	"name": "@offirmo-private/rich-text-format--to-react",
-	"version": "0.0.1",
 	"description": "Rendering rich text format to React",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./src/index.tsx"
+			"import": "./module/index.tsx"
 		}
 	},
-	"source": "src/index.tsx",
-
+	"source": "module/index.tsx",
 	"peerDependencies": {
 		"react": "^19"
 	},

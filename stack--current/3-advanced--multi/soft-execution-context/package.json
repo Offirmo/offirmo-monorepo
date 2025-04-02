@@ -2,21 +2,17 @@
 	"name": "@offirmo-private/soft-execution-context",
 	"description": "graph of execution context to do amazing things!",
 	"version": "0.0.2",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2024.esm/index.js"
+			"import": "./module/index.ts"
 		}
 	},
-	"module": "dist/src.es2024.esm/index.js",
-	"typings": "dist/src.es2024.esm/index.d.ts",
-	"source": "src/index.ts",
-
+	"source": "module/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},

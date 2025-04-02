@@ -317,6 +317,10 @@ function inferꓽdeptype_from_caller(entry: FileEntry): DependencyType {
 
 	if (extⵧsub === '.tests')
 		return 'dev'
+	if (extⵧsub === '.stories')
+		return 'dev'
+	if (extⵧsub === '.typecheck')
+		return 'dev'
 
 	return 'normal'
 }
@@ -418,7 +422,10 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		const [ namespace, name ] = packageᐧjson.name.split('/')
 
 		const data: any = {
-			...(namespace !== getꓽdefault_namespace(result) && { namespace }),
+			...(namespace !== getꓽdefault_namespace({
+				...result,
+				isꓽpublished: !packageᐧjson.private,
+			}) && { namespace }),
 			...(name !== result.name && { name }),
 			...(packageᐧjson.license !== result.license && { license: packageᐧjson.license}),
 			...(packageᐧjson.version !== '0.0.1' && { version: packageᐧjson.version}),
@@ -637,7 +644,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		if (langs.includes('html')) {
 			unprocessed_langs.delete('html')
 			//throw new Error(`HTML imports detection not implemented!`)
-			// TODO one day use parcel
+			// TODO one day use parcel to track deps
+			raw_deps.push({ label: '@offirmo-private/toolbox--parcel', type: 'dev'})
 		}
 		if (langs.includes('css')) {
 			unprocessed_langs.delete('css')
@@ -680,6 +688,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	}
 	if (result.hasꓽstories) {
 		raw_deps.push({ label: '@offirmo-private/storypad', type: 'dev'})
+		raw_deps.push({ label: '@offirmo-private/toolbox--parcel', type: 'dev'})
 	}
 
 	// consolidate
@@ -712,6 +721,19 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	}
 	for (const dep of result.depsⵧpeer) {
 		result.depsⵧdev.add(dep)
+	}
+	for (const dep of result.depsⵧnormal) {
+		// small control
+		if ([
+			'@offirmo-private/storypad',
+			'@offirmo-private/toolbox--parcel',
+			'tslib',
+			'@offirmo/unit-test-toolbox',
+			'@offirmo-private/monorepo-scripts',
+			'npm-run-all',
+			'typescript',
+		].includes(dep))
+			throw new Error(`Unexpected dep "${dep}" in normal deps! (should be dev)`)
 	}
 
 	return result

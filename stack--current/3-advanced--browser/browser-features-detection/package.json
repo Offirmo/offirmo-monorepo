@@ -2,17 +2,17 @@
 	"name": "@offirmo-private/browser-features-detection",
 	"description": "My own feature detection lib",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
 		"./has-hover": { "import": "./src/l3-has-hover/index.ts" },
 		"./is-framed": { "import": "./src/l1-is-framed/index.ts" }
+	"peerDependencies": {
+		"tslib": "^2"
 	},
-
 	"dependencies": {
 		"memoize-one": "^6",
 		"tiny-invariant": "^1"

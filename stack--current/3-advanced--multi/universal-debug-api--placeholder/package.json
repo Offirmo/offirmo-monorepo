@@ -2,20 +2,15 @@
 	"name": "@offirmo/universal-debug-api-placeholder",
 	"description": "Implementation of Offirmo’s Universal Debug Api doing nothing at all, yielding to any other effective implementation",
 	"version": "1.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
-
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2024.esm/index.js"
+			"import": "./module/src/index.ts"
 		}
 	},
-	"module": "dist/src.es2024.esm/index.js",
-	"typings": "dist/src.es2024.esm/index.d.ts",
-	"source": "src/index.ts",
-
 	"size-limit": [
 		{
 			"limit": "600b",
@@ -26,7 +21,7 @@
 			"path": "dist/index-bundle.js"
 		}
 	],
-
+	"source": "module/src/index.ts",
 	"peerDependencies": {
 	},
 	"dependencies": {

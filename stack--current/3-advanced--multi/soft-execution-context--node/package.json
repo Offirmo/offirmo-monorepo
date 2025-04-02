@@ -2,16 +2,17 @@
 	"name": "@offirmo-private/soft-execution-context--node",
 	"description": "node-specific Software Execution Context",
 	"version": "0.0.2",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
-	"type": "module",
-	"module": "src/index.js",
-	"main":   "src/index.js",
-	"source": "src/index.js",
 	"sideEffects": true,
-
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./module/src/index.ts"
+		}
+	},
+	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"@offirmo-private/soft-execution-context": "*",
 		"tslib": "^2"

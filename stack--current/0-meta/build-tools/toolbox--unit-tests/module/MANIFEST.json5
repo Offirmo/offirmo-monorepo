@@ -1,0 +1,7 @@
+{
+	"name": "unit-test-toolbox",
+	"version": "9.0.0",
+	"description": "An aggregation of quality npm modules to be used for writing unit tests.",
+	"isꓽpublished": true,
+	"hasꓽside_effects": true
+}

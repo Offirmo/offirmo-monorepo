@@ -94,31 +94,39 @@ package-lock=false
 		{ encoding: 'utf-8' },
 	))
 
-	/* TODO only if not redundant
+	/* TODO only when more content than this
 	promises.push(fs.writeFile(
 		path.resolve(dest_dir‿abspath, 'README.md'),
 		`
 # ${pure_module_details.fqname}
 
-${pure_module_details.description || 'TODO description in MANIFEST.json5'}
-`.trimStart(),
+${pure_module_details.description || ''}
+`.trim() + '\n,
 		{ encoding: 'utf-8' },
 	))
 	*/
 
+	// TODO .tabset with auto color
+	//tabset --badge $1 --color "#a4d4dd"
+
 	const SRC_RELPATH = path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.source.path‿rel)
 	const SRC_DIR_RELPATH = path.dirname(SRC_RELPATH)
 
-	promises.push(write_json_file(
-		path.resolve(dest_dir‿abspath, 'tsconfig.json'),
-		{
-			"extends": path.relative(dest_dir‿abspath, ts__config__path),
-			"include": [
-				path.relative(dest_dir‿abspath, ts__custom_types__path) + '/*.d.ts',
-				`${SRC_DIR_RELPATH}/**/*.ts`
-			]
-		}
-	))
+	if (pure_module_details.languages.has('ts')) {
+		promises.push(write_json_file(
+			path.resolve(dest_dir‿abspath, 'tsconfig.json'),
+			{
+				"extends": path.relative(dest_dir‿abspath, ts__config__path),
+				"include": [
+					path.relative(dest_dir‿abspath, ts__custom_types__path) + '/*.d.ts',
+					`${SRC_DIR_RELPATH}/**/*.ts`
+				]
+			}
+		))
+	}
+	else {
+		promises.push(fs.rm(path.resolve(dest_dir‿abspath, 'tsconfig.json'), { force: true }))
+	}
 
 	if (pure_module_details.depsⵧvendored.size) {
 		throw new Error(`Not implemented!`)
@@ -156,7 +164,7 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 
 		if (pure_module_details.depsⵧpeer.size) {
 			pkg.peerDependencies = Object.fromEntries(
-				Array.from(pure_module_details.depsⵧpeer).sort().map(dep => [dep, pkg_infos_resolver?.ǃgetꓽversionⵧfor_dep(dep)])
+				Array.from(pure_module_details.depsⵧpeer).sort().map(dep => [dep, pkg_infos_resolver.ǃgetꓽversionⵧfor_dep(dep)])
 			)
 		}
 
@@ -213,7 +221,6 @@ ${pure_module_details.description || 'TODO description in MANIFEST.json5'}
 
 		return pkg
 	})()
-
 	promises.push(write_json_file(
 		path.resolve(dest_dir‿abspath, 'package.json'), packageᐧjson
 	))

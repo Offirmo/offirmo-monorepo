@@ -1,0 +1,3 @@
+{
+	"description": "Generic error boundary for React, with a fallback UI and logging",
+}

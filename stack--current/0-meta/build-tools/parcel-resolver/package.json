@@ -1,7 +1,8 @@
 {
 	"name": "@offirmo-private/parcel-resolver",
+	"description": "Special Parcel plugin (resolver) to mitigate some bugs",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 
 	"main": "src/index.mjs",

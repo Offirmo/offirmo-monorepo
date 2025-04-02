@@ -1,28 +1,26 @@
 {
 	"name": "@offirmo-private/rich-text-format--to-terminal",
-	"version": "0.0.1",
 	"description": "Rendering rich text format for display on a Terminal (with escape codes)",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./src/index.ts"
+			"import": "./module/index.ts"
 		}
 	},
-	"source": "src/index.ts",
-
+	"source": "module/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
 		"@offirmo-private/rich-text-format": "*",
-		"chalk": "^5"
+		"chalk": "^5",
+		"tiny-invariant": "^1"
 	},
-
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",
 
@@ -35,8 +33,10 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo-private/ts-types": "*",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
-		"tslib": "^2"
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

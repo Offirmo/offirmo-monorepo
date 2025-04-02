@@ -12,7 +12,6 @@
 	},
 	"include": [
 		"../../0-meta/typescript-custom-typings/*.d.ts",
-		"src/**/*.ts",
-		"src/**/*.js"
+		"module/**/*.ts"
 	]
 }

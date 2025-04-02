@@ -2,28 +2,24 @@
 	"name": "@offirmo/universal-debug-api-interface",
 	"description": "TypeScript types for a universal debug API (no code)",
 	"version": "1.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
-
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2024.esm/index.js"
+			"import": "./module/src/index.ts"
 		}
 	},
-	"module": "dist/src.es2024.esm/index.js",
-	"typings": "dist/src.es2024.esm/index.d.ts",
-	"source": "src/index.ts",
-
 	"size-limit": [
 		{
 			"limit": "100b",
 			"path": "dist/src.es2024.esm/index.js"
 		}
 	],
-
+	"source": "module/src/index.ts",
 	"peerDependencies": {
+		"tslib": "^2"
 	},
 	"dependencies": {
 		"@offirmo/practical-logger-types": "^3"

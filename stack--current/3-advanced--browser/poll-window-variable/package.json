@@ -1,17 +1,36 @@
 {
 	"name": "@offirmo-private/poll-window-variable",
+	"description": "Poll the window until the presence of a given variable",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": false,
-	"exports": "./index.js",
-	"source": "index.js",
-
-	"dependencies": {
-		"@offirmo-private/poll": "^0"
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./module/index.ts"
+		}
 	},
-
-	"scripts": {}
+	"source": "module/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@offirmo-private/poll": "*",
+		"tiny-invariant": "^1"
+	},
+	"scripts": {
+		"test--ts": "echo \"@offirmo-private/poll-window-variable\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"test": "run-s test--ts"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
+	}
 }

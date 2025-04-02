@@ -1,9 +1,9 @@
-const {
+import {
 	getLogger,
 	overrideHook,
 	exposeInternal,
 	addDebugCommand,
-} = require('..')
+} from '@offirmo/universal-debug-api-node'
 
 console.log('Stuff may on may not be displayed:')
 

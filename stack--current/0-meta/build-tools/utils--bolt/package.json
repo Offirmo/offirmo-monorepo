@@ -2,7 +2,7 @@
 	"name": "@offirmo-private/utils--bolt",
 	"description": "Bolt monorepo related utils",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,

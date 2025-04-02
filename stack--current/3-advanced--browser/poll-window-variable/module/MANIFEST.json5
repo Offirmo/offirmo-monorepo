@@ -1,0 +1,3 @@
+{
+	"description": "Poll the window until the presence of a given variable",
+}

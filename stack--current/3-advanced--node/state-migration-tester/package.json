@@ -1,30 +1,34 @@
 {
 	"name": "@offirmo-private/state-migration-tester",
-	"version": "0.0.1",
 	"description": "helper for testing migrations",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
-	"type": "module",
-	"main": "src/index.mjs",
 	"sideEffects": false,
-
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./module/index.mjs"
+		}
+	},
+	"source": "module/index.mjs",
 	"dependencies": {
 		"@offirmo-private/prettify-any": "*",
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
 		"@offirmo/cli-toolbox": "^3",
-		"jsondiffpatch": "^0.6",
-		"lodash-es": "^4"
+		"jsondiffpatch": "^0.7",
+		"lodash-es": "^4",
+		"tiny-invariant": "^1"
 	},
-
 	"scripts": {
-		"test": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'src/**/*spec.mjs'"
+		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/**/*.tests.ts'",
+		"test": "run-s test--unit"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4"
 	}
 }

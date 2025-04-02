@@ -12,6 +12,7 @@ interface PackageJson {
 	name: string // full, including scope/namespace
 	version?: string
 	types?: string // https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#including-declarations-in-your-npm-package
+	private?: true
 }
 
 class PkgInfosResolver {
@@ -167,7 +168,7 @@ class PkgInfosResolver {
 		const latest_pkg_version = this.ǃgetꓽversionⵧlatest(pkg_name)
 
 		const major = semver.major(latest_pkg_version)
-		//console.log(`XXX latest_pkg_version`, { pkg_name, latest_pkg_version, major })
+		//console.log(`latest_pkg_version for ${pkg_name}`, { latest_pkg_version, major })
 		if (major !== 0)
 			return `^${major}`
 		const minor = semver.minor(latest_pkg_version)
@@ -213,9 +214,19 @@ class PkgInfosResolver {
 	// vs. external = npm
 	// TODO externalize
 	private is_unpublished_monorepo_package(pkg_name: string) {
-		return pkg_name.startsWith('@offirmo-private')
-			|| pkg_name.startsWith('@oh-my-rpg')
-			|| pkg_name.startsWith('@tbrpg')
+		if (pkg_name.startsWith('@offirmo-private/')
+			|| pkg_name.startsWith('@oh-my-rpg/')
+			|| pkg_name.startsWith('@tbrpg/'))
+			return true // always for those one
+
+		/*if (pkg_name.startsWith('@offirmo/')) {
+			// maybe...
+			//const packageᐧjson = this.ǃgetꓽpackageᐧjson(pkg_name)
+			//return packageᐧjson.private === true
+			return false
+		}*/
+
+		return false
 	}
 
 	private should_use_joker_version_for_dep(pkg_name: string): boolean {

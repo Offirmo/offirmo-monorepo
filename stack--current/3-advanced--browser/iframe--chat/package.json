@@ -1,8 +1,8 @@
 {
 	"name": "@offirmo-private/iframe--chat",
-	"version": "0.0.1",
 	"description": "A top-level index.html loading a chat, to be used as an iframe",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
 

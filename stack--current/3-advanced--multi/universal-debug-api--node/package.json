@@ -2,27 +2,22 @@
 	"name": "@offirmo/universal-debug-api-node",
 	"description": "Implementation of Offirmo’s Universal Debug Api for node",
 	"version": "0.2.0",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
-
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/src.es2024.esm/index.js"
+			"import": "./module/src/index.ts"
 		}
 	},
-	"module": "dist/src.es2024.esm/index.js",
-	"typings": "dist/src.es2024.esm/index.d.ts",
-	"source": "src/index.ts",
-
 	"size-limit": [
 		{
 			"limit": "15kb",
 			"path": "dist/src.es2024.esm/index.js"
 		}
 	],
-
+	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
