@@ -256,6 +256,14 @@ function _isꓽignored(entry: FileEntry): boolean {
 		return true
 	}
 
+	if (entry.ext === '.json') {
+		// technically some json files can reference resources
+		// ex. website manifest
+		// However for now we consider no deps
+		// TODO one day use parcel for such cases
+		return true
+	}
+
 	return false
 }
 
@@ -581,9 +589,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			const dep_type = inferꓽdeptype_from_caller(entry)
 			console.log(`${indent}      inferred as: ${dep_type}`)
 
-			//throw new Error(`JS imports detection not implemented! Please convert to TS!`)
 			const imports = parseImports(content)
-			console.log(`XXX imports:`, imports)
 			imports.forEach(({name: dependency_name, type}) => {
 				console.log(`${indent}    ↘ import ${type === 1 ? 'type ' : ''}${dependency_name}`)
 				assert(!dependency_name.startsWith('npm:'), `Unexpected "npm:" URL scheme in import!`)
@@ -602,7 +608,12 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 				// intercept aggregations
 				if (dependency_name === 'chai' || dependency_name === 'sinon') {
 					if (dep_type !== 'dev') {
-						throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')
+						if (result.fqname === '@offirmo-private/state-migration-tester') {
+							// Ok, special case
+						}
+						else {
+							throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')
+						}
 					}
 
 					raw_deps.push({ label: '@offirmo/unit-test-toolbox', type: 'dev' })
@@ -625,7 +636,18 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		}
 		if (langs.includes('html')) {
 			unprocessed_langs.delete('html')
-			throw new Error(`HTML imports detection not implemented!`) // TODO use parcel
+			//throw new Error(`HTML imports detection not implemented!`)
+			// TODO one day use parcel
+		}
+		if (langs.includes('css')) {
+			unprocessed_langs.delete('css')
+			//throw new Error(`CSS imports detection not implemented!`)
+			// TODO one day use parcel
+		}
+		if (langs.includes('jsx')) {
+			unprocessed_langs.delete('jsx')
+			// need a jsx transform.
+			// Parcel does it for us.
 		}
 		if (unprocessed_langs.size) {
 			throw new Error(`Unknown language(s) "${Array.from(unprocessed_langs).join(', ')}" for "${basename}"!`)
