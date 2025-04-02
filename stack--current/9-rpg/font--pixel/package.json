@@ -1,8 +1,25 @@
 {
-	"name": "@oh-my-rpg/font--rpg--pixel",
+	"name": "@oh-my-rpg/font--pixel",
+	"description": "Graphical assets for an RPG UI: fonts, pixel style",
 	"version": "0.0.1",
-	"private": true,
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
-
-	"source": "src/index.css"
+	"private": true,
+	"sideEffects": true,
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./module/index.css"
+		}
+	},
+	"source": "module/index.css",
+	"dependencies": {
+		"tiny-invariant": "^1"
+	},
+	"scripts": {},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4"
+	}
 }

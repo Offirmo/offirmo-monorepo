@@ -2,29 +2,29 @@
 	"name": "@oh-my-rpg/assets--cursors",
 	"description": "Graphical assets for an RPG UI: cursors",
 	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": true,
-
-	"dependencies": {
-		"@offirmo-private/credits": "*"
+	"type": "module",
+	"peerDependencies": {
+		"tslib": "^2"
 	},
-
+	"dependencies": {
+		"@offirmo-private/credits": "*",
+		"tiny-invariant": "^1"
+	},
 	"scripts": {
-		"clean": "monorepo-script--clean-package …dist",
-
-		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
-		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
-
-		"xdev": "run-s clean _build:dev:watch",
-		"xtest": "./node_modules/.bin/mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/**/*spec.ts'",
-		"xbuild": "run-s  clean _build:prod"
+		"test--ts": "echo \"@oh-my-rpg/assets--cursors\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"test": "run-s test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
-		"tslib": "^2"
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }
