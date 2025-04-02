@@ -90,6 +90,7 @@ interface PureModuleManifest {
 	description?: string
 	version?: string // Semver version TODO proper type
 	isꓽpublished?: true
+	hasꓽside_effects?: true // assuming most pkgs don't
 	status?: // EXPERIMENTAL rating of modules TODO clarify
 		| 'spike'
 		| 'tech-demo'
@@ -116,7 +117,8 @@ interface PureModuleDetails {
 	demo?: FileEntry
 	hasꓽside_effects: boolean
 	hasꓽtestsⵧunit: boolean
-	hasꓽtestsⵧsmoke: boolean
+	hasꓽtestsⵧsmoke: boolean // TODO one day
+	hasꓽstories: boolean,
 	extra_entries: {
 		[label: string]: FileEntry
 	}
@@ -167,6 +169,7 @@ function _createꓽresult(root‿abspath: AbsolutePath): PureModuleDetails {
 		hasꓽside_effects: false,
 		hasꓽtestsⵧunit: false,
 		hasꓽtestsⵧsmoke: false,
+		hasꓽstories: false,
 		extra_entries: {},
 		depsⵧnormal: new Set<string>(),
 		depsⵧdev: new Set<string>([
@@ -386,6 +389,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			...(packageᐧjson.version !== '0.0.1' && { version: packageᐧjson.version}),
 			description: packageᐧjson.description || 'TODO description in MANIFEST.json5',
 			...(!packageᐧjson.private && { isꓽpublished: true }),
+			...(packageᐧjson.sideEffects && { hasꓽside_effects: true }),
 			...(status !== 'stable' && { status }),
 		}
 
@@ -416,6 +420,10 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	if (unprocessed_keys.has('isꓽpublished')) {
 		result.isꓽpublished = result.manifest.isꓽpublished
 		unprocessed_keys.delete('isꓽpublished')
+	}
+	if (unprocessed_keys.has('hasꓽside_effects')) {
+		result.hasꓽside_effects = result.manifest.hasꓽside_effects
+		unprocessed_keys.delete('hasꓽside_effects')
 	}
 	if (unprocessed_keys.has('description')) {
 		result.description = result.manifest.description
@@ -540,6 +548,9 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		if (entry.extⵧsub === '.tests') {
 			result.hasꓽtestsⵧunit = true
 		}
+		if (entry.extⵧsub === '.stories') {
+			result.hasꓽstories = true
+		}
 	})
 
 	await Promise.all(pending_promises)
@@ -558,6 +569,9 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 	if(!result.source) {
 		throw new Error(`No "source" candidate found!`)
+	}
+	if (result.hasꓽstories) {
+		raw_deps.push({ label: '@offirmo-private/storypad', type: 'dev'})
 	}
 
 	// consolidate

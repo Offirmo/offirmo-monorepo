@@ -60,13 +60,14 @@ graph -- adjacency matrix = elements indicate whether pairs of vertices are adja
 graph -- Arborescence = directed graph with only 1 single possible path to a leaf https://en.wikipedia.org/wiki/Arborescence_(graph_theory)
 graph -- cyclic/acyclic
 graph -- degree (or valency) of a vertex = the number of edges that are incident to the vertex
+graph -- degree -- indegree/outdegree = # of to/from https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree
 graph -- degree matrix = contains information about the degree of each vertex
 graph -- directed/undirected
 graph -- in-degree and out-degree ?
 graph -- incidence matrix = elements indicate whether vertex–edge pairs are incident or not
 heap
 map
-piece table https://en.wikipedia.org/wiki/Piece_table 
+piece table https://en.wikipedia.org/wiki/Piece_table
 rope -- SumTree = concurrency-friendly B-tree structure to represent text, from zed https://zed.dev/blog/zed-decoded-rope-sumtree
 rope https://en.wikipedia.org/wiki/Rope_(data_structure)
 search = retrieve efficiently from a set https://en.wikipedia.org/wiki/Search_data_structure

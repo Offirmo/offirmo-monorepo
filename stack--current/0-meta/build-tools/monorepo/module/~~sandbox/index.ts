@@ -44,9 +44,10 @@ async function refresh_monorepo() {
 			return acc
 		}, Promise.resolve({} as Record<string, PureModuleDetails>))
 
+	// TODO graph
 	// TODO check loops
-	// TODO check # of local deps
-	// TODO check status ranking
+	// TODO check tiers
+	// TODO compute graph degrees
 
 	for (const pure_module_details of Object.values(PURE_MODULE__DETAILS)) {
 		await present({
