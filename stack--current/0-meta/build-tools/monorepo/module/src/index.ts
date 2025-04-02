@@ -34,6 +34,7 @@ function getꓽall_known_pure_module__dirs‿abspath(): Array<AbsPath> {
 			const subdirs = lsDirsSync(workspace.path‿abs, { full_path: true })
 				.map(p => path.join(p, 'module'))
 				.filter(p => fs.existsSync(p))
+				.filter(p => !p.includes('~~'))
 
 			return acc.concat(subdirs)
 		}, [] as Array<AbsPath>)

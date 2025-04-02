@@ -56,6 +56,8 @@ async function refresh_pure_module(pure_module_path: string, getꓽdefault_names
 // xxx to replace with bolt utils
 async function convert_and_refresh_pure_modules(parent_path: string, getꓽdefault_namespace: PureModuleAnalyzerOptions['getꓽdefault_namespace']) {
 	const dirs = lsDirsSync(path.resolve(__dirname, parent_path), { full_path: true })
+		.filter(p => !p.includes('~~'))
+
 	for (const dir of dirs) {
 		if (!existsSync(path.resolve(__dirname, dir, 'module'))) {
 			renameSync(path.resolve(__dirname, dir, 'src'), path.resolve(__dirname, dir, 'module'))
@@ -82,6 +84,8 @@ async function convert_and_refresh_pure_modules(parent_path: string, getꓽdefau
 //await convert_and_refresh_pure_modules('../../../../../3-advanced--multi/', getꓽdefault_namespace)
 //await convert_and_refresh_pure_modules('../../../../../3-advanced--browser/', getꓽdefault_namespace)
 //await convert_and_refresh_pure_modules('../../../../../3-advanced--node/', getꓽdefault_namespace)
+
+await convert_and_refresh_pure_modules('../../../../../9-rpg/', getꓽdefault_namespace)
 
 //await convert_and_refresh_pure_modules('../../../../../A-apps--core/the-boring-rpg/', getꓽdefault_namespace)
 

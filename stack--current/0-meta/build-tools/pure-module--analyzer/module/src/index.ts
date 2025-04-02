@@ -163,7 +163,7 @@ function _createꓽresult(root‿abspath: AbsolutePath): PureModuleDetails {
 		version: '0.0.1',
 		//description?: string
 		isꓽpublished: false,
-		author: 'Offirmo <offirmo.net@gmail.com>',
+		author: 'Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)', // https://docs.npmjs.com/cli/v11/configuring-npm/package-json#people-fields-author-contributors
 		license: 'Unlicense',
 		source: null as any, // XXX TODO
 		hasꓽside_effects: false,
@@ -226,11 +226,15 @@ function _isꓽignored(entry: FileEntry): boolean {
 	}*/
 
 	if ([
-		// assets = leaf nodes (no deps)
-		'.ttf',
+		// BINARY assets = leaf nodes (no deps)
 		'.jpg',
-		'.webp',
+		'.mp3',
+		'.otf',
 		'.png',
+		'.ttf',
+		'.webp',
+		'.woff',
+		// do NOT add .svg, this is source code with deps!
 		].includes(entry.ext)) {
 		return true
 	}
@@ -291,7 +295,6 @@ function inferꓽdeptype_from_caller(entry: FileEntry): DependencyType {
 
 /////////////////////////////////////////////////
 
-
 function assertꓽmigrated(entry: FileEntry, { indent = '', root‿abspath }: { indent?: string, root‿abspath: AbsolutePath}): void {
 	let migration_target : AbsolutePath | null = null
 
@@ -302,6 +305,10 @@ function assertꓽmigrated(entry: FileEntry, { indent = '', root‿abspath }: { 
 	}
 	else if (extⵧextended.startsWith('.spec')) {
 		migration_target = path‿abs.replace('.spec', '.tests')
+	}
+
+	if (basename‿noext === 'LICENSE' && ext) {
+		migration_target = path.join(path.dirname(entry.path‿abs), 'LICENSE') // official name is without extension
 	}
 
 	if ([
