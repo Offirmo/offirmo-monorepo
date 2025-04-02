@@ -14,6 +14,20 @@
 	},
 
 	"dependencies": {
-		"memoize-one": "^6"
+		"memoize-one": "^6",
+		"tiny-invariant": "^1"
+	},
+	"scripts": {
+		"test--ts": "echo \"@offirmo-private/browser-features-detection\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"test": "run-s test--ts"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

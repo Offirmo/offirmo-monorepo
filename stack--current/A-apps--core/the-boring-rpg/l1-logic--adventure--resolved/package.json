@@ -19,7 +19,7 @@
 	"dependencies": {
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/uuid": "*",
-		"@offirmo/random": "*",
+		"@offirmo/random": "^3",
 		"@tbrpg/logic--adventures": "*",
 		"@tbrpg/logic--armors": "*",
 		"@tbrpg/logic--monsters": "*",
@@ -31,7 +31,7 @@
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {
-		"test--ts": "tsc --noEmit",
+		"test--ts": "echo \"@tbrpg/logic--adventure--resolved\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
 		"test": "run-s test--ts"
@@ -39,7 +39,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

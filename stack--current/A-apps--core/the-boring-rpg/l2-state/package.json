@@ -23,7 +23,7 @@
 		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo-private/uuid": "*",
-		"@offirmo/random": "*",
+		"@offirmo/random": "^3",
 		"@oh-my-rpg/state--codes": "*",
 		"@oh-my-rpg/state--engagement": "*",
 		"@oh-my-rpg/state--meta": "*",
@@ -44,7 +44,7 @@
 	},
 	"scripts": {
 		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/**/*.tests.ts'",
-		"test--ts": "tsc --noEmit",
+		"test--ts": "echo \"@tbrpg/state\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
 		"test": "run-s test--unit test--ts"
@@ -53,7 +53,8 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/prettify-any": "*",
 		"@offirmo-private/state-migration-tester": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@types/icepick": "^2",
 		"icepick": "^2",
 		"npm-run-all": "^4",
 		"tslib": "^2",

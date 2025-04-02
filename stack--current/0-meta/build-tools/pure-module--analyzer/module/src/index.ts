@@ -217,8 +217,18 @@ function _isꓽignored(entry: FileEntry): boolean {
 		return true
 	}
 
-	if (entry.basename === '.gitignore') {
+	/*if (entry.basename === '.gitignore') {
 		// ???
+		return true
+	}*/
+
+	if ([
+		// assets = leaf nodes (no deps)
+		'.ttf',
+		'.jpg',
+		'.webp',
+		'.png',
+		].includes(entry.ext)) {
 		return true
 	}
 

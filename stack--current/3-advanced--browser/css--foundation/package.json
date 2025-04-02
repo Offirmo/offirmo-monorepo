@@ -2,6 +2,7 @@
 	"name": "@offirmo-private/css--foundation",
 	"description": "A thin layer of universal, semantically great, strongly recommended modern CSS",
 	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 	"private": true,
 

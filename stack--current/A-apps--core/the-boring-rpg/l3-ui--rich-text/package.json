@@ -35,7 +35,7 @@
 	},
 	"scripts": {
 		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/**/*.tests.ts'",
-		"test--ts": "tsc --noEmit",
+		"test--ts": "echo \"@tbrpg/ui--rich-text\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
 		"test": "run-s test--unit test--ts"
@@ -45,7 +45,7 @@
 		"@offirmo-private/prettify-any": "*",
 		"@offirmo-private/rich-text-format--to-terminal": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
 		"@oh-my-rpg/state--prng": "*",
 		"@tbrpg/logic--adventure--resolved": "*",
 		"npm-run-all": "^4",

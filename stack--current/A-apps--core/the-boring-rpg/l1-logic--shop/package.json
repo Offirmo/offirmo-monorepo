@@ -17,7 +17,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo/random": "*",
+		"@offirmo/random": "^3",
 		"@tbrpg/definitions": "*",
 		"@tbrpg/logic--armors": "*",
 		"@tbrpg/logic--weapons": "*",
@@ -26,7 +26,7 @@
 	},
 	"scripts": {
 		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/**/*.tests.ts'",
-		"test--ts": "tsc --noEmit",
+		"test--ts": "echo \"@tbrpg/logic--shop\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
 		"test": "run-s test--unit test--ts"
@@ -34,7 +34,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"
