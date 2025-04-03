@@ -8,14 +8,15 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		".": {
-			"import": "./module/src/index.ts"
-		}
+		".": "./module/src/index.ts"
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"@offirmo-private/soft-execution-context": "*",
 		"tslib": "^2"
+	},
+	"optionalDependencies": {
+		"@offirmo/universal-debug-api-node": "^0.2"
 	},
 	"dependencies": {
 	},

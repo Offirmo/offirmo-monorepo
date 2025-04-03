@@ -31,13 +31,6 @@
 		"devw--pub": "ngrok http 8080 --domain=national-rat-supreme.ngrok-free.app"
 	},
 
-	"size-limit": [
-		{
-			"limit": "700kb",
-			"path": "dist/index.js"
-		}
-	],
-
 	"dependencies": {
 		"@offirmo-private/react-error-boundary": "*",
 		"@offirmo-private/rich-text-format": "*",
@@ -66,7 +59,7 @@
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4"
 	}
 }

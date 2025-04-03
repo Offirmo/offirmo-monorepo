@@ -7,20 +7,9 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		".": {
-			"import": "./module/src/index.ts"
-		}
+		".": "./module/src/index.ts"
 	},
-	"size-limit": [
-		{
-			"limit": "4kb",
-			"path": "dist/src.es2024.esm/index.js"
-		},
-		{
-			"limit": "6kb",
-			"path": "dist/index-bundle.js"
-		}
-	],
+
 	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
@@ -32,9 +21,8 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@size-limit/preset-small-lib": "^11",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
-		"size-limit": "^11"
 	},
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",

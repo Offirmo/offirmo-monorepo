@@ -8,9 +8,7 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		".": {
-			"import": "./module/src/sword--standard/index.ts"
-		}
+		".": "./module/src/sword--standard/index.ts"
 	},
 	"source": "module/src/sword--standard/index.ts",
 	"peerDependencies": {

@@ -58,7 +58,7 @@
 			"5-incubator/active/*",
 			"9-rpg/*",
 			"A-apps--core/the-boring-rpg/*",
-			"D-minisites/*"
+			"#D-minisites/*"
 		]
 	},
 
@@ -101,7 +101,7 @@
 		"@types/mocha": "^10",
 		"@types/murmurhash3js-revisited": "^3",
 		"@types/node": "^22",
-		"@types/prettyjson": "^0",
+		"@types/prettyjson": "^0.0.33",
 		"@types/react-dom": "^19",
 		"@types/sinon": "^17",
 		"@types/sinon-chai": "^4",
@@ -129,8 +129,8 @@
 		"ignore-walk": "^7",
 		"indent-string": "^5",
 		"json5": "^2",
-		"jsondiffpatch": "^0.6",
 		"lightningcss": "^1",
+		"jsondiffpatch": "^0.7",
 		"limit-once": "^0.16",
 		"lit": "^3",
 		"load-json-file": "^7",

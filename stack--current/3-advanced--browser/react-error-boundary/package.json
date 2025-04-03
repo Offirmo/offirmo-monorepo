@@ -8,9 +8,7 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": {
-			"import": "./module/index.js"
-		}
+		".": "./module/index.js"
 	},
 	"source": "module/index.js",
 	"peerDependencies": {

@@ -8,9 +8,7 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		".": {
-			"import": "./module/src/index.ts"
-		}
+		".": "./module/src/index.ts"
 	},
 	"source": "module/src/index.ts",
 	"dependencies": {
@@ -38,6 +36,9 @@
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/cli-toolbox": "^3",
 		"lightningcss": "^1",
-		"npm-run-all": "^4"
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

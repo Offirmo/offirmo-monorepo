@@ -28,12 +28,7 @@
 		"build": "npm-run-all  clean  refresh--build-variables  build:parcel  copy-extra"
 	},
 
-	"size-limit": [
-		{
-			"limit": "100kb",
-			"path": "dist/index.js"
-		}
-	],
+
 
 	"dependencies": {
 		"@offirmo-private/async-utils": "^0",

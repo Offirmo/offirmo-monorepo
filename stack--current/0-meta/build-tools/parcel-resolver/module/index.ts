@@ -1,7 +1,9 @@
 // https://parceljs.org/plugin-system/resolver/
 
 import { Resolver } from '@parcel/plugin'
+
 import * as path from 'node:path'
+import assert from 'tiny-invariant'
 
 
 const DEBUG = false
@@ -19,6 +21,7 @@ export default new Resolver({
 			const parsed = path.parse(params.specifier)
 			const ts = path.join(parsed.root, parsed.dir, parsed.name + '.ts')
 			DEBUG && console.log('Remapping to=', ts)
+			assert(params.dependency.resolveFrom, `Expecting resolveFrom!`)
 			const realFrom = path.parse(params.dependency.resolveFrom).dir
 			const filePath = path.resolve(realFrom, ts)
 			DEBUG && console.log('Resolving to=', filePath)

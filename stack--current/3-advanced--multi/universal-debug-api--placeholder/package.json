@@ -7,20 +7,9 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		".": {
-			"import": "./module/src/index.ts"
-		}
+		".": "./module/src/index.ts"
 	},
-	"size-limit": [
-		{
-			"limit": "600b",
-			"path": "dist/src.es2024.esm/index.js"
-		},
-		{
-			"limit": "1.3kb",
-			"path": "dist/index-bundle.js"
-		}
-	],
+
 	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"

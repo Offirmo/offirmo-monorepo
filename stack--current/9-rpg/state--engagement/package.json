@@ -8,9 +8,7 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": {
-			"import": "./module/src/index.ts"
-		}
+		".": "./module/src/index.ts"
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {

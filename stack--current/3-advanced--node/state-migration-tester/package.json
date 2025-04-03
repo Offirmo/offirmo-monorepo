@@ -8,9 +8,7 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": {
-			"import": "./module/index.mjs"
-		}
+		".": "./module/index.mjs"
 	},
 	"source": "module/index.mjs",
 	"dependencies": {

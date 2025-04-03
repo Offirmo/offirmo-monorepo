@@ -8,9 +8,7 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		".": {
-			"import": "./module/index.css"
-		}
+		".": "./module/index.css"
 	},
 	"source": "module/index.css",
 	"dependencies": {},
