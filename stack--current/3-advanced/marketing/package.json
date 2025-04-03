@@ -15,7 +15,6 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/ts-types-web": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
@@ -28,6 +27,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/normalize-string": "*",
+		"@offirmo-private/ts-types-web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^22",
 		"npm-run-all": "^4",

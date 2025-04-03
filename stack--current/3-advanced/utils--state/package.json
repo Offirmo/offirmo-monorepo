@@ -17,7 +17,6 @@
 	"dependencies": {
 		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo/error-utils": "^0.0.1",
 		"icepick": "^2",
 		"jsondiffpatch": "^0.7",
 		"memoize-one": "^6",
@@ -34,6 +33,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/soft-execution-context": "*",
+		"@offirmo/error-utils": "^0.0.1",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/icepick": "^2",
 		"npm-run-all": "^4",
