@@ -6,15 +6,13 @@ import {
 	DEMO_BASE_STATE_WITH_SUBS,
 	DEMO_BUNDLE_STATE,
 	DEMO_ROOT_STATE,
-} from './_test_helpers.ts'
+} from './__fixtures/examples.ts'
 
 import {
 	complete_or_cancel_eager_mutation_propagating_possible_child_mutation,
 	are_ustate_revision_requirements_met,
 	enforceꓽimmutable,
 
-	createꓽBaseAction,
-	createꓽaction,
 	createꓽActionⳇReconcile,
 } from './utils.ts'
 

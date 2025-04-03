@@ -5,20 +5,20 @@ import { type SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-exe
 import { LIB } from './consts.ts'
 
 import {
-	LastMigrationStep,
-	MigrationStep,
+	type LastMigrationStep,
+	type MigrationStep,
 	migrate_toꓽlatestⵧgeneric,
 } from './migration.ts'
 
 import {
-	StateA_U_v0,
+	type StateA_U_v0,
 	DEMO_STATE_A_U_v0,
-	StateA_U_v1,
+	type StateA_U_v1,
 	DEMO_STATE_A_U_v1,
-	StateA_U_v2,
+	type StateA_U_v2,
 	DEMO_STATE_A_U_v2,
 	SCHEMA_VERSION_A,
-} from './_test_helpers.ts'
+} from './__fixtures/examples.ts'
 
 
 describe(`${LIB} - migration`, function() {

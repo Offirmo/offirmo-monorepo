@@ -14,7 +14,7 @@ import {
 
 import {
 	DEMO_ROOT_STATE,
-} from './_test_helpers.ts'
+} from './__fixtures/examples.ts'
 
 
 describe(`${LIB} - type guards`, function() {

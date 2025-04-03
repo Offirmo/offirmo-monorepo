@@ -8,10 +8,9 @@ import {
 import { type Module‿Parcelv2, isꓽMultiModule‿Parcelv2} from '../../../l0-types/l0-glob/parcel/v2'
 
 import { SEPⵧSEGMENTS, SEPⵧSTORY } from '../../../consts.ts'
-import { StoryEntry, isꓽStoryEntry } from '../types.ts'
-import { type State } from './types.ts'
+import { type StoryEntry, isꓽStoryEntry } from '../types.ts'
+import type { State } from './types.ts'
 import { registerꓽstory } from './reducers.ts'
-import logger from '../../../l2-view/l0-services/logger.ts'
 
 /////////////////////////////////////////////////
 

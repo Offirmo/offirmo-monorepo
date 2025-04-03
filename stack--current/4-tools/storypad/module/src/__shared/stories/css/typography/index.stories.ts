@@ -1,4 +1,4 @@
-import { FontFamilyGenericName } from '@offirmo-private/ts-types-web'
+import type { FontFamilyGenericName } from '@offirmo-private/ts-types-web'
 import { PANGRAM, ALPHABET, CALIBRATION_SUBSET } from './consts.ts'
 
 ////////////////////////////////////////////////////////////////////////////////////

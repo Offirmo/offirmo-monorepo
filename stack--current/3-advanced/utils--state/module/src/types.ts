@@ -1,7 +1,7 @@
 import { Enum } from 'typescript-string-enums'
 import type { Immutable } from '@offirmo-private/ts-types'
-import { TimestampUTCMs } from '@offirmo-private/timestamps'
-import { XXError } from '@offirmo/error-utils'
+import { type TimestampUTCMs } from '@offirmo-private/timestamps'
+import { type XXError } from '@offirmo/error-utils'
 
 /////////////////////////////////////////////////
 // building blocks

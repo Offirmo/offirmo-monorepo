@@ -1,5 +1,5 @@
 import type { Immutable } from '@offirmo-private/ts-types'
-import { type Uri‿x, type Hyperlink } from '@offirmo-private/ts-types-web'
+import type { Uri‿x, Hyperlink } from '@offirmo-private/ts-types-web'
 
 import {
 	type BaseRenderingOptions,
@@ -7,7 +7,7 @@ import {
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
 } from './walk.ts'
-import { type CheckedNode, type NodeLike } from '../l1-types/index.ts'
+import type { CheckedNode, NodeLike } from '../l1-types/index.ts'
 
 /////////////////////////////////////////////////
 

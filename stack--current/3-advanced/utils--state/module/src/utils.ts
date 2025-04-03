@@ -1,18 +1,18 @@
 import assert from 'tiny-invariant'
 import * as icepick from 'icepick'
-import { type Immutable, Mutable, ImmutabilityEnforcer } from '@offirmo-private/ts-types'
-import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import type { Immutable, Mutable, ImmutabilityEnforcer } from '@offirmo-private/ts-types'
+import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
-import {
+import type {
 	BaseUState,
 	BaseTState,
 	BaseRootState,
 	UTBundle,
 	BaseAction,
 	ActionⳇReconcile,
-	GenericActionType,
 } from './types.ts'
-import {
+import { GenericActionType } from './types.ts'
+import type {
 	AnyBaseState,
 	AnyRootState,
 } from './types--internal.ts'

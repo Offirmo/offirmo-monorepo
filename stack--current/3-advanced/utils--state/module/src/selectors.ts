@@ -1,7 +1,7 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import {
+import type {
 	WithSchemaVersion,
 	WithRevision,
 	WithTimestamp,

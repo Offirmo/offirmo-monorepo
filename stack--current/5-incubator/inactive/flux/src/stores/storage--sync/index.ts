@@ -3,8 +3,7 @@ import assert from 'tiny-invariant'
 import EventEmitter from 'emittery'
 import { try_or_fallback } from '@offirmo/error-utils'
 import stringifyⵧstable from '@offirmo-private/json-stable-stringify'
-import { type Immutable, StorageⳇSync, JSONObject } from '@offirmo-private/ts-types'
-import { getꓽcompareFn } from '@offirmo-private/ts-utils'
+import type { Immutable, StorageⳇSync, JSONObject } from '@offirmo-private/ts-types'
 import {
 	AnyOffirmoState,
 	BaseAction,
@@ -14,13 +13,12 @@ import {
 	getꓽrevisionⵧloose,
 	getꓽschema_versionⵧloose,
 	isꓽvalid_offirmo_state_object,
-	cast_toꓽimmutable,
 } from '@offirmo-private/state-utils'
 import {
 	schedule_when_idle_but_not_too_far,
 } from '@offirmo-private/async-utils'
 
-import { Store, Dispatcher } from '../../types'
+import type { Store } from '../../types'
 import { type SoftExecutionContext } from '../../services/sec.js'
 
 

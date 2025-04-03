@@ -32,7 +32,8 @@ interface XXError extends XError {
 
 	_temp?: {
 		SXC?: any // Software eXecution Context (Offirmo private)
-		statePath?: string // idem
+		statePath?: any // other known SXC temp
+
 		[k: string]: any
 	}
 }

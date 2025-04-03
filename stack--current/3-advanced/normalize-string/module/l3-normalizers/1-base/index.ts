@@ -1,4 +1,4 @@
-import { type StringNormalizer } from '../../l1-types/types.ts'
+import type { StringNormalizer } from '../../l1-types/types.ts'
 
 /////////////////////////////////////////////////
 

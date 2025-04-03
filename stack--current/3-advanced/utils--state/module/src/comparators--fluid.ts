@@ -1,6 +1,6 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { AnyOffirmoState } from './types.ts'
+import type { AnyOffirmoState } from './types.ts'
 import {
 	getꓽschema_versionⵧloose,
 	getꓽrevisionⵧloose,

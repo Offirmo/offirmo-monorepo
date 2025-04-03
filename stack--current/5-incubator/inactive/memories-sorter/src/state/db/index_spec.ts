@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { _test_only__reset_root_SXC } from '@offirmo-private/soft-execution-context'
+import { _TEST_ONLY__reset_root_SXC } from '@offirmo-private/soft-execution-context'
 
 import { LIB, NOTES_FILE__BASENAME‿LC } from '../../consts.js'
 import * as Notes from '../notes/index.js'
@@ -30,10 +30,10 @@ import * as File from '../file/index.js'
 describe(`${LIB} - DB (state) aka. root state`, function() {
 	function _mocha_bug_clean_global() {
 		// https://github.com/mochajs/mocha/issues/4954
-		_test_only__reset_root_SXC()
+		_TEST_ONLY__reset_root_SXC()
 	}
-	before(_test_only__reset_root_SXC)
-	afterEach(_test_only__reset_root_SXC)
+	before(_TEST_ONLY__reset_root_SXC)
+	afterEach(_TEST_ONLY__reset_root_SXC)
 
 	describe('integration', function() {
 

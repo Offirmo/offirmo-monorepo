@@ -7,8 +7,7 @@ import { Url‿str } from '@offirmo-private/ts-types'
 
 //import { FolderUId, StoryUId } from '../../../l1-flux/l1-state/types.ts'
 
-import {ObservableState} from '../../../l1-flux/l2-observable'
-import {StoryEntry} from '../../../l1-flux/l1-state/types.ts'
+import type { ObservableState} from '../../../l1-flux/l2-observable'
 
 import renderꓽcontrolbar from './controlbar'
 import renderꓽdrawer from './drawer'

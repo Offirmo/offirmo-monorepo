@@ -22,7 +22,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"npm-run-all": "^4",
+		"npm-run-all": "^4"
 	},
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",

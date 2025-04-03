@@ -18,7 +18,7 @@ import {
 	DEMO_BASE_STATE_WITH_SUBS,
 	DEMO_TSTATE,
 	DEMO_ROOT_STATE,
-} from './_test_helpers.ts'
+} from './__fixtures/examples.ts'
 
 
 describe(`${LIB} - selectors`, function() {

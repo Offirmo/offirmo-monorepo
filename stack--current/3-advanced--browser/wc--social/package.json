@@ -6,7 +6,7 @@
 	"license": "Unlicense",
 	"private": true,
 	"sideEffects": true,
-	"source": "src/web-component--social-links.js"
+	"source": "module/src/web-component--social-links.js",
 	"scripts": {},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

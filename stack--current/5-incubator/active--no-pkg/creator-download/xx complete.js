@@ -11692,7 +11692,7 @@ Description:
 import { Thing, WithOnlinePresence, ThingWithOnlinePresence, Asset, registerꓽasset_usageⵧload } from '@offirmo-private/credits'
 import AUTHOR from "@offirmo-private/credits/src/authors/${author_id}/index.ts"
 
-import { type Background } from '../../../types.ts'
+import type { Background } from '../../../types.ts'
 
 /////////////////////////////////////////////////
 

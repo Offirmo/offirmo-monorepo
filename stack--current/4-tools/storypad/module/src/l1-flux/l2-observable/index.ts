@@ -13,7 +13,7 @@ import * as InMemStateSelectors from '../l1-state/state--in-mem/selectors.ts'
 import * as UrlStateSelectors from '../l1-state/state--url/selectors.ts'
 import { type CommonRenderParams } from '../../l0-types/l1-csf'
 import * as UrlState from '../l1-state/state--url'
-import { type StoryUId} from '../l1-state/types.ts'
+import type { StoryUId} from '../l1-state/types.ts'
 
 /////////////////////////////////////////////////
 

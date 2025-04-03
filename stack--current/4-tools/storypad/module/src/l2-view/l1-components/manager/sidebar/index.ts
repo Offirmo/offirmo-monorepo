@@ -2,11 +2,11 @@
  */
 
 import assert from 'tiny-invariant'
-import { type Immutable, Basename } from '@offirmo-private/ts-types'
+import type { Immutable, Basename } from '@offirmo-private/ts-types'
 
 import { LIB, SEPⵧSEGMENTS } from '../../../../consts'
-import { StoryEntry, StoryFolder, StoryTree } from '../../../../l1-flux/l1-state/types.ts'
-import {ObservableState} from '../../../../l1-flux/l2-observable'
+import type { StoryEntry, StoryFolder, StoryTree } from '../../../../l1-flux/l1-state/types.ts'
+import type { ObservableState } from '../../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
 

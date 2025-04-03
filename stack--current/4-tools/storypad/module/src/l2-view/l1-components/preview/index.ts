@@ -1,12 +1,12 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import {StoryEntry} from '../../../l1-flux/l1-state/types.ts'
-import { Story‿v2, isꓽStory‿v2 } from '../../../l0-types/l1-csf/v2'
-import { Story‿v3, isꓽStory‿v3 } from '../../../l0-types/l1-csf/v3'
-import {aggregateꓽRenderParams, CommonRenderParams, RenderParams} from '../../../l0-types/l1-csf'
+import type { StoryEntry } from '../../../l1-flux/l1-state/types.ts'
+import { type Story‿v2, isꓽStory‿v2 } from '../../../l0-types/l1-csf/v2'
+import { type Story‿v3, isꓽStory‿v3 } from '../../../l0-types/l1-csf/v3'
+import { aggregateꓽRenderParams, type RenderParams} from '../../../l0-types/l1-csf'
 
-import { ObservableState } from '../../../l1-flux/l2-observable'
+import type { ObservableState } from '../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
 

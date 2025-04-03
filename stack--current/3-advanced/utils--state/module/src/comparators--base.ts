@@ -1,7 +1,7 @@
 import memoize_one from 'memoize-one'
 import * as jsondiffpatch from 'jsondiffpatch'
 
-import { type Immutable, JSONObject } from '@offirmo-private/ts-types'
+import type { Immutable, JSONObject } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 

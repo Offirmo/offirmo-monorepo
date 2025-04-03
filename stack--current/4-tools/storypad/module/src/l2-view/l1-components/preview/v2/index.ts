@@ -1,18 +1,18 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { Story‿v2, Meta‿v2 } from '../../../../l0-types/l1-csf/v2'
-import { StoryEntry } from '../../../../l1-flux/l1-state/types.ts'
+import type { Story‿v2, Meta‿v2 } from '../../../../l0-types/l1-csf/v2'
+import type { StoryEntry } from '../../../../l1-flux/l1-state/types.ts'
 import { LIB } from '../../../../consts'
 import {
-	aggregateꓽRenderParams,
 	isꓽRenderParamsWithComponent,
-	isꓽRenderParamsWithRenderFunc, RenderParams,
-	RenderParamsWithComponent,
-	RenderParamsWithRenderFunc,
-	StoryContext,
+	isꓽRenderParamsWithRenderFunc,
+	type RenderParams,
+	type RenderParamsWithComponent,
+	type RenderParamsWithRenderFunc,
+	type StoryContext,
 } from '../../../../l0-types/l1-csf'
-import { ObservableState } from '../../../../l1-flux/l2-observable'
+import type { ObservableState } from '../../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
 console.log('Loading the CSF v2 renderer...')

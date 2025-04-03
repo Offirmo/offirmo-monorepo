@@ -4,7 +4,7 @@
 import { isꓽframed } from '@offirmo-private/browser-features-detection/is-framed'
 
 import { RenderMode } from '../../l1-flux/l1-state/types.ts'
-import { ObservableState } from '../../l1-flux/l2-observable'
+import type { ObservableState } from '../../l1-flux/l2-observable'
 import { LIB } from '../../consts.ts'
 import renderⵧstory from '../l1-components/preview'
 import renderⵧmanager from '../l1-components/manager'

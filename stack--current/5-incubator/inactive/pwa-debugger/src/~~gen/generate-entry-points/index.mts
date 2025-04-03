@@ -7,7 +7,7 @@
 import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import { Thing, SocialNetworkLink, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
+import type { Thing, SocialNetworkLink, WithOnlinePresence, ThingWithOnlinePresence } from '@offirmo-private/ts-types-web'
 import { AUTHOR } from '@offirmo-private/marketing'
 
 import generateꓽwebsiteᝍentryᝍpoints, { type WebProperty, type WebPropertyEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
