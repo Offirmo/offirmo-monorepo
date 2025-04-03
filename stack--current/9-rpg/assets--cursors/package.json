@@ -7,6 +7,12 @@
 	"private": true,
 	"sideEffects": true,
 	"type": "module",
+	"exports": {
+		".": {
+			"import": "./module/src/sword--standard/index.ts"
+		}
+	},
+	"source": "module/src/sword--standard/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},

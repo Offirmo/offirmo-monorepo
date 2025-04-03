@@ -7,6 +7,12 @@
 	"private": true,
 	"sideEffects": true,
 	"type": "module",
+	"exports": {
+		".": {
+			"import": "./module/src/_test/index.css"
+		}
+	},
+	"source": "module/src/_test/index.css",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
@@ -22,6 +28,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
+		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

@@ -32,7 +32,6 @@
 
 		"build": "node ./src/~~gen/bundle.mjs"
 	},
-
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",

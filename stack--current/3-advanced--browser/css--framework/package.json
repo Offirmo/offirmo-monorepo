@@ -15,7 +15,7 @@
 			"import": "./src/atomic/atomic--dimension.css"
 		}
 	},
-	"source": "module/index.ts",
+	"source": "module/src/index.ts",
 	"dependencies": {
 		"@offirmo-private/css--foundation": "*"
 	},

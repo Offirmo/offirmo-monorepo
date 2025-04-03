@@ -19,16 +19,19 @@
 	},
 	"dependencies": {
 	},
-
 	"scripts": {
-		"cheatsheet": "node doc/cheatsheet.mjs",
-		"demo": "./doc/demo/demo.js"
+		"test--ts": "echo \"@offirmo-private/soft-execution-context--node\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"test": "run-s test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo/practical-logger-node": "^0",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^22",
 		"npm-run-all": "^4",
-		"tslib": "^2"
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

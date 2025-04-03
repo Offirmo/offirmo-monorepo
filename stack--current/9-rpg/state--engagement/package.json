@@ -14,10 +14,10 @@
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {
+		"@offirmo-private/soft-execution-context": "*",
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/state-utils": "*",
 		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
@@ -31,6 +31,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/state-migration-tester": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",

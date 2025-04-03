@@ -5,21 +5,24 @@
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-	"module": "src/index.js",
-	"source": "src/index.js",
 	"sideEffects": false,
-
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./module/index.js"
+		}
+	},
+	"source": "module/index.js",
 	"peerDependencies": {
 		"@offirmo-private/soft-execution-context": "*",
-		"prop-types": "^15",
 		"react": "^19"
 	},
 	"dependencies": {
 		"@offirmo-private/async-utils": "*",
 		"memoize-one": "^6",
+		"prop-types": "^15",
 		"tiny-invariant": "^1"
 	},
-
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",
 		"start:parcel": "parcel --out-dir .parcel --no-autoinstall doc/demo/index.html",
@@ -28,7 +31,8 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/soft-execution-context": "*",
-		"prop-types": "^15",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
 		"react": "^19",
 		"react-dom": "^19"
 	}

@@ -1,6 +1,8 @@
 {
 	"extends": "../../tsconfig.json",
-	"compilerOptions": {},
+	"compilerOptions": {
+		"pretty": true
+	},
 	"include": [
 		"../../typescript-custom-typings/*.d.ts",
 		"module/**/*.ts"

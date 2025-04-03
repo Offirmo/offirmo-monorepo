@@ -23,16 +23,15 @@
 	],
 	"source": "module/src/index.ts",
 	"peerDependencies": {
+		"tslib": "^2"
 	},
 	"dependencies": {
 		"@offirmo/practical-logger-minimal-noop": "^3",
 		"@offirmo/universal-debug-api-interface": "^1"
 	},
-
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/practical-logger-core": "^3",
-		"@size-limit/preset-small-lib": "^11",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"size-limit": "^11",
 		"ts-node": "^10"

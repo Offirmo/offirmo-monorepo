@@ -7,4 +7,10 @@
 	"private": true,
 	"sideEffects": true,
 	"source": "src/web-component--social-links.js"
+	"scripts": {},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4"
+	}
 }

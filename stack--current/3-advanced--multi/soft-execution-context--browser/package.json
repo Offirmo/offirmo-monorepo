@@ -18,16 +18,21 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"bowser": "^2",
+		"tiny-invariant": "^1"
 	},
-
 	"scripts": {
+		"test--ts": "echo \"@offirmo-private/soft-execution-context--browser\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"test": "run-s test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo/practical-logger-browser": "^3",
-		"bowser": "^2",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
-		"tslib": "^2"
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

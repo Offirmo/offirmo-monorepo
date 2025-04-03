@@ -26,7 +26,7 @@ function getꓽbolt_monorepo__workspaces(MONOREPO_ROOT: AbsPath): Array<Workspac
 	return MONOREPO_WORKSPACES_RELPATHS
 		.sort()
 		.filter((p: RelPath) => {
-			return !p.startsWith('#') || !p.startsWith('xx') // we allow "commenting" a workspace to help "progressive resurrection"
+			return !p.startsWith('#') && !p.startsWith('xx') // we allow "commenting" a workspace to help "progressive resurrection"
 		})
 		.map((p: RelPath): Workspace => {
 			return {

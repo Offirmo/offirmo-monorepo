@@ -31,6 +31,7 @@ interface Params {
 
 	pkg_infos_resolver? : PkgInfosResolver
 }
+
 async function present({
 	indent = '',
 
@@ -118,7 +119,7 @@ ${pure_module_details.description || ''}
 			{
 				"extends": path.relative(dest_dir‿abspath, ts__config__path),
 				"compilerOptions": {
-					// to allow easy tweaks
+					"pretty": true, // placeholder for adding stuff / helping diffs
 				},
 				"include": [
 					path.relative(dest_dir‿abspath, ts__custom_types__path) + '/*.d.ts',

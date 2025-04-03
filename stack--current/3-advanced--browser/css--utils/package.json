@@ -25,11 +25,13 @@
 		"_parcel:serve": "parcel serve --log-level verbose  'doc/demo/*.html' --port 3010 --no-autoinstall",
 		"dev": "npm-run-all clean --parallel _parcel:serve"
 	},
-
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
-		"npm-run-all": "^4"
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

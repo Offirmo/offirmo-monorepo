@@ -5,6 +5,6 @@
 	},
 	"include": [
 		"../../0-meta/typescript-custom-typings/*.d.ts",
-		"module/src/sword--standard/**/*.ts"
+		"module/debug/**/*.ts"
 	]
 }

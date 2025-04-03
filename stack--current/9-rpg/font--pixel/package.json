@@ -13,9 +13,7 @@
 		}
 	},
 	"source": "module/index.css",
-	"dependencies": {
-		"tiny-invariant": "^1"
-	},
+	"dependencies": {},
 	"scripts": {},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
