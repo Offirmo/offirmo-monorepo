@@ -218,7 +218,7 @@ function _isꓽignored(entry: FileEntry): boolean {
 		return true
 	}
 
-	if (entry.basename === 'LICENSE') {
+	if (entry.basename.toUpperCase() === 'LICENSE') {
 		// license override for a sub-folder, ignore
 		return true
 	}
@@ -266,6 +266,8 @@ function _isꓽignored(entry: FileEntry): boolean {
 		// TODO one day use parcel for such cases
 		return true
 	}
+
+	// no txt -> use another format
 
 	return false
 }
@@ -342,8 +344,8 @@ function assertꓽmigrated(entry: FileEntry, { indent = '', root‿abspath }: { 
 		migration_target = path‿abs.replace('.spec', '.tests')
 	}
 
-	if (basename‿noext === 'LICENSE' && ext) {
-		migration_target = path.join(path.dirname(entry.path‿abs), 'LICENSE') // official name is without extension
+	if (basename‿noext.toUpperCase() === 'LICENSE' && ext) {
+		migration_target = path.join(path.dirname(entry.path‿abs), 'LICENSE') // official name is uppercase without extension TODO link
 	}
 
 	if ([
@@ -509,6 +511,11 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		}
 
 		assertꓽmigrated(entry, { indent, root‿abspath })
+		if (_isꓽignored(entry)) {
+			// can become ignored after migration
+			console.log(`${indent}      migrated, now 🚫`)
+			return
+		}
 		assertꓽnormalized(entry)
 
 		if (!result.main) {
