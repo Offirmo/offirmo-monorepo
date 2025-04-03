@@ -149,12 +149,10 @@ ${pure_module_details.description || ''}
 			"sideEffects": pure_module_details.hasꓽside_effects,
 			"type": "module",
 			"exports": {
-				".": {
-					"import": './' + SRC_RELPATH,
-				}
+				".": './' + SRC_RELPATH,
 			},
-				"source": SRC_RELPATH,
-			}
+			"source": SRC_RELPATH,
+		}
 
 		const all_declared_deps: Set<string> = (new Set<string>())
 			.union(pure_module_details.depsⵧnormal)

@@ -1,9 +1,10 @@
 {
 	"extends": "../../../0-meta/tsconfig.json",
 	"compilerOptions": {
+		"pretty": true
 	},
 	"include": [
 		"../../../0-meta/typescript-custom-typings/*.d.ts",
-		"src/**/*.ts"
+		"module/src/l1-types/**/*.ts"
 	]
 }

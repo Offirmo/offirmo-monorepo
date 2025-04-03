@@ -1,42 +1,37 @@
 {
 	"name": "@offirmo-private/credits",
+	"description": "Lib for crediting creators (mainly of assets) and tracking the recent usage of assets for dynamic crediting",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		".": "./src/l2-aggregator/index.ts",
-		"./authors/*": "./src/l3-authors/*/index.ts"
+		".": "./module/src/l2-aggregator/index.ts",
+		"./authors/*": "./module/src/l3-authors/*/index.ts"
 	},
-	"source": "src/aggregator/index.ts",
-
+	"source": "module/src/l2-aggregator/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
 	"dependencies": {
-		"@offirmo-private/ts-types-web": "*",
-		"@offirmo-private/ts-types": "*",
+		"@offirmo-private/marketing": "*",
 		"tiny-invariant": "^1"
 	},
-
-
 	"scripts": {
-		"clean": "monorepo-script--clean-package …dist",
-
-		"_build:dev:watch": "monorepo-script--build-typescript-package --watch --module=esm",
-		"_build:prod": "monorepo-script--build-typescript-package --module=esm",
-
-		"demoN": "npx tsx doc/demo/node/index.ts",
-
-		"dev": "run-s clean _build:dev:watch",
-		"xxtest": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/**/*spec.js'",
-		"build": "run-s  clean _build:prod"
+		"test--ts": "echo \"@offirmo-private/credits\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"test": "run-s test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo-private/ts-types": "*",
+		"@offirmo-private/ts-types-web": "*",
+		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
-		"terminal-image": "^3",
-		"tslib": "^2"
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }
