@@ -1,3 +1,3 @@
-## stdlib
+## isomorphic
 
-base libraries which usually have no dependencies
+= using only pure ECMAScript, no dependency on an engine (ex. node, browser, lambda...)

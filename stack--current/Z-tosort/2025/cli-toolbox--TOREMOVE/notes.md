@@ -26,6 +26,9 @@ https://github.com/Offirmo-team/wiki/wiki/outil-en-ligne-de-commande-avec-node
 
 
 
+TODO break into smaller packages!
+
+
 
 	"toreview": {
 		"bytes": "^2",
