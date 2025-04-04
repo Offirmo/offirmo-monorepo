@@ -37,11 +37,9 @@ bolt --only-fs "[0-9]-*/*" ws run build
 bolt --only-fs "[0-9]-*/*" ws run test
 bolt --only-fs "[0-5]-*/*" ws run build
 bolt --only-fs "[0-5]-*/*" ws run test
-   bolt --only-fs "0-meta/build-tools/*" ws run build
    bolt --only-fs "0-meta/build-tools/*" ws run test
-   bolt --only-fs "1-isomorphi*/*" ws run build
    bolt --only-fs "1-isomorphi*/*" ws run test
-      bolt --only-fs "1-isomorphic/1-libs--simple/*" ws run build
+      bolt --only-fs "1-isomorphic/1-libs--simple/*" ws run test
    
    
    bolt --only-fs "1-stdlib/*" ws run test

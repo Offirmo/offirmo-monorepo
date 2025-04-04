@@ -12,7 +12,7 @@ const MAX_IDLE_DELAY_SAFE_FOR_HUMAN_PERCEPTION_MS = Math.floor(HUMAN_PERCEPTION_
 
 
 // ALWAYS "not too far" bc we never want to wait forever!
-function schedule_when_idle_but_not_too_far<T>(callback: Callback<T>, timeout_ms: number = HUMAN_PERCEPTION_MS): Promise<T> {
+function schedule_when_idle_but_not_too_far<T>(callback: Callback<T>, timeout_ms: number = MAX_IDLE_DELAY_SAFE_FOR_HUMAN_PERCEPTION_MS): Promise<T> {
 	return new Promise<T>((resolve, reject) => {
 		requestIdleCallback(() => {
 			try {
@@ -28,7 +28,7 @@ function schedule_when_idle_but_not_too_far<T>(callback: Callback<T>, timeout_ms
 
 function schedule_when_idle_but_within_human_perception<T>(callback: Callback<T>): Promise<T> {
 	// yes, same as above but semantically different
-	// and with slightly different timer
+	// and timeout may be different
 	return schedule_when_idle_but_not_too_far(callback, MAX_IDLE_DELAY_SAFE_FOR_HUMAN_PERCEPTION_MS)
 }
 
