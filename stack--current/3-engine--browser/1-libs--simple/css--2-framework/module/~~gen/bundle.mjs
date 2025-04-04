@@ -3,9 +3,9 @@
 
 import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
+import * as fs from 'node:fs'
 
 import { bundleAsync } from 'lightningcss'
-import * as fs from '@offirmo/cli-toolbox/fs/extra'
 
 
 /////////////////////////////////////////////////

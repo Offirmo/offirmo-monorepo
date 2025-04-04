@@ -1,8 +1,8 @@
 'use strict'
 
-const path = require('path')
+const path = require('node:path')
+import * as fs from 'node:fs'
 
-const fs = require('@offirmo/cli-toolbox/fs/extra/index.cjs')
 const { expect } = require('chai')
 const sinon = require('sinon')
 const { cloneDeep } = require('lodash')

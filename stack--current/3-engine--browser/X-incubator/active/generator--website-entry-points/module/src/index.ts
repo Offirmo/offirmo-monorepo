@@ -1,5 +1,6 @@
 import * as path from 'node:path'
-import * as fs from '@offirmo/cli-toolbox/fs/extra'
+import * as fs from 'node:fs'
+
 import assert from 'tiny-invariant'
 import * as Prettier from 'prettier'
 import type { Immutable, AbsolutePath } from '@offirmo-private/ts-types'

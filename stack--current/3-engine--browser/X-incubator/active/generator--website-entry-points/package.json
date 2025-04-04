@@ -20,7 +20,6 @@
 		"@offirmo-private/normalize-string": "*",
 		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/ts-types-web": "*",
-		"@offirmo/cli-toolbox": "^3",
 		"@resvg/resvg-js": "^2",
 		"chroma-js": "^3",
 		"prettier": "^3",

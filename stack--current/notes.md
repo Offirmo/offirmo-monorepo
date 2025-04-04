@@ -29,6 +29,13 @@ TODO 	"packageManager": "yarn@1",
 "A-apps--core/space-rpg/*",
 
 
+
+		"// TODO": "remove this, I'll likely not use heroku anymore",
+		"heroku-prebuild": "echo This runs before Heroku nodjs buildback installs dependencies. Ensuring monorepo setup... && pwd && test -f Procfile",
+		"heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies. && pwd && ls -l",
+
+
+
 old workspaces:
 
  			"0-meta/build-tools/*",

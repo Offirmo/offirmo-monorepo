@@ -15,7 +15,6 @@
 		"@offirmo-private/prettify-any": "*",
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
-		"@offirmo/cli-toolbox": "^3",
 		"jsondiffpatch": "^0.7",
 		"lodash-es": "^4",
 		"tiny-invariant": "^1"
