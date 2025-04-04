@@ -27,3 +27,19 @@ Tools
 TODO 	"packageManager": "yarn@1",
 
 "A-apps--core/space-rpg/*",
+
+
+old workspaces:
+
+ 			"0-meta/build-tools/*",
+-			"1-stdlib/*",
+-			"2-foundation/*",
+-			"3-advanced/*",
+-			"3-advanced--browser/*",
+-			"3-advanced--multi/*",
+-			"3-advanced--node/*",
+-			"4-tools/*",
+-			"5-incubator/active/*",
+-			"9-rpg/*",
+-			"A-apps--core/the-boring-rpg/*",
+-			"#D-minisites/*"

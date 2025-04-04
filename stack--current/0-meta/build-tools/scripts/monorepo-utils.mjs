@@ -5,7 +5,7 @@ import * as path from 'node:path'
 import * as fs from 'node:fs'
 
 import { writeJsonFile as write_json_file } from 'write-json-file' // full pkg is too useful, ex. preserve indent
-import { lsDirsSync } from '../../../3-advanced--node/cli-toolbox/fs/extra/ls/index.mjs'
+import { lsDirsSync } from '../fs--ls/module/index.mjs'
 
 // extracted from https://github.com/sindresorhus/load-json-file/blob/main/index.js
 // in order to have as few external deps as possible
