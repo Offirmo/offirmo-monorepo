@@ -1,6 +1,6 @@
 import * as process from 'node:process'
 
-import { isꓽnegative_zero } from '@offirmo-private/type-detection'
+import { isꓽnegative_zero } from './__vendor/@offirmo-private/type-detection/index.ts'
 
 import type {
 	PrettifyOptions,

@@ -1,16 +1,10 @@
 {
-	"extends": "../../0-meta/tsconfig.json",
+	"extends": "../../../0-meta/tsconfig.json",
 	"compilerOptions": {
-
-		"exactOptionalPropertyTypes": false,
-		"noPropertyAccessFromIndexSignature": false,
-		"noUncheckedIndexedAccess": false,
-		"noUnusedLocals": false,
-		"strictNullChecks": false,
-		"strictPropertyInitialization": false
+		"pretty": true
 	},
 	"include": [
-		"../../0-meta/typescript-custom-typings/*.d.ts",
+		"../../../0-meta/typescript-custom-typings/*.d.ts",
 		"module/src/**/*.ts"
 	]
 }

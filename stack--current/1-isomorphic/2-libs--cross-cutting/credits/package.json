@@ -11,7 +11,7 @@
 		".": "./module/src/l2-aggregator/index.ts",
 		"./authors/*": "./module/src/l3-authors/*/index.ts"
 	},
-	"source": "module/src/l2-aggregator/index.ts",
+	"source": "module/src/l1-types/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},

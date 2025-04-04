@@ -18,6 +18,20 @@ Be aware of the dependencies.
 
 For ex. to make everything work again step by step!
 
+			"1-isomorphic/0-dev-tools/*",
+			"1-isomorphic/1-libs--simple/*",
+			"1-isomorphic/2-libs--cross-cutting/*",
+			"1-isomorphic/7-libs--rpg/*",
+			"1-isomorphic/A-libs--the-boring-rpg/*",
+			"1-isomorphic/X-incubator/active/*",
+			"2-engine--node/1-libs--simple/*",
+			"2-engine--node/2-libs--cross-cutting/*",
+			"3-engine--browser/0-dev-tools/*",
+			"3-engine--browser/1-libs--simple/*",
+			"3-engine--browser/2-libs--cross-cutting/*",
+			"3-engine--browser/X-incubator/active/*"
+
+
 ```bash
 bolt --only-fs "[0-9]-*/*" ws run build
 bolt --only-fs "[0-9]-*/*" ws run test
@@ -25,7 +39,10 @@ bolt --only-fs "[0-5]-*/*" ws run build
 bolt --only-fs "[0-5]-*/*" ws run test
    bolt --only-fs "0-meta/build-tools/*" ws run build
    bolt --only-fs "0-meta/build-tools/*" ws run test
-   bolt --only-fs "1-stdlib/*" ws run build
+   bolt --only-fs "1-isomorphi*/*" ws run build
+   bolt --only-fs "1-isomorphi*/*" ws run build
+   
+   
    bolt --only-fs "1-stdlib/*" ws run test
    bolt --only-fs "2-foundation/*" ws run build
    bolt --only-fs "2-foundation/*" ws run test

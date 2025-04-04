@@ -15,7 +15,6 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/type-detection": "*",
 		"terminal-size": "^4",
 		"tiny-invariant": "^1"
 	},
