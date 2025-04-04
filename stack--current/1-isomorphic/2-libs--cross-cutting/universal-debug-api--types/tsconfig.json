@@ -1,5 +1,5 @@
 {
-	"extends": "../../0-meta/tsconfig.json",
+	"extends": "../../../0-meta/tsconfig.json",
 	"compilerOptions": {
 		"importHelpers": false,
 		"noEmitHelpers": false,
@@ -12,7 +12,7 @@
 		"strictPropertyInitialization": false
 	},
 	"include": [
-		"../../0-meta/typescript-custom-typings/*.d.ts",
+		"../../../0-meta/typescript-custom-typings/*.d.ts",
 		"module/src/**/*.ts"
 	]
 }
