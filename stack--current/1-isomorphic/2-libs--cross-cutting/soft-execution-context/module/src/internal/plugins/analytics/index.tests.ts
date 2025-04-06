@@ -2,6 +2,7 @@ import { expect } from 'chai'
 
 import { LIB } from '../../../consts.ts'
 import {
+	getRootSXC,
 	_TEST_ONLY__reset_root_SXC,
 } from '../../../index.ts'
 
@@ -17,13 +18,55 @@ describe(`${LIB} -- plugins -- analytics`, function () {
 
 	describe('setAnalyticsAndErrorDetails', function () {
 
-		it('should work')
+		it('should work', () => {
+			const SXC = getRootSXC()
+			SXC.setAnalyticsAndErrorDetails({v: '1.2.3'})
+
+			_mocha_bug_clean_global()
+		})
 	})
 
 	describe('analytics event', function () {
 
-		it('should be emitted')
+		it('should be emitted', async () => {
+			const SXC = getRootSXC()
 
-		it('should have all the properties')
+			const seen = new Promise<void>((resolve, reject) => {
+				SXC.emitter.on('analytics', function onAnalyticsEvent({eventId}) {
+					try {
+						expect(eventId).to.equal('foo')
+						resolve()
+					}
+					catch(err) {
+						reject(err)
+					}
+				})
+			})
+			SXC.fireAnalyticsEvent('foo')
+
+			await seen.finally(_mocha_bug_clean_global)
+		})
+
+		it('should have all the properties', async () => {
+			const SXC = getRootSXC()
+
+			SXC.setAnalyticsAndErrorDetails({v: '1.2.3'})
+
+			const seen = new Promise<void>((resolve, reject) => {
+				SXC.emitter.on('analytics', function onAnalyticsEvent({details}) {
+					try {
+						console.log(`XXX `, details)
+						expect(details).to.haveOwnProperty('v', '1.2.3')
+						resolve()
+					}
+					catch(err) {
+						reject(err)
+					}
+				})
+			})
+			SXC.fireAnalyticsEvent('foo')
+
+			await seen.finally(_mocha_bug_clean_global)
+		})
 	})
 })

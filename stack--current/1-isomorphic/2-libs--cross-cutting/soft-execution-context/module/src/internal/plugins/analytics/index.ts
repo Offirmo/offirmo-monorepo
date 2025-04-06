@@ -15,7 +15,6 @@ const PLUGIN: SXCPlugin = {
 	id: PLUGIN_ID,
 	state: StateFns,
 	augment: prototype => {
-
 		prototype.setAnalyticsDetails = function setAnalyticsDetails(details: Record<string, any>) {
 			const SXC = this
 			let root_state = SXC[INTERNAL_PROP]
@@ -53,10 +52,10 @@ const PLUGIN: SXCPlugin = {
 				TIME: now,
 				SESSION_DURATION_MS: now - root_state.plugins[PLUGIN_ID_DI].context.SESSION_START_TIME_MS,
 			}
-			const userDetails = SXC.getAnalyticsDetails()
+			const existingDetails = SXC.getAnalyticsDetails()
 			details = {
 				...autoDetails,
-				...userDetails,
+				...existingDetails,
 				...details,
 			}
 

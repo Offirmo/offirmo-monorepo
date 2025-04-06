@@ -9,7 +9,7 @@ import { INTERNAL_PROP } from './consts.ts'
 interface InternalSXCState {
 	sid: number // not really useful yet, but helps debug
 
-	parent: InternalSXCState | null
+	parent: InternalSXCState | undefined
 
 	plugins: Record<string, unknown>
 

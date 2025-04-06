@@ -15,14 +15,18 @@ function create(parent_state: State | undefined) {
 	}
 }
 
-function injectDependencies(state: State, key: string, value: any): State {
-	const { context } = state
+function injectDependency(state: State, key: string, value: any): State {
+	if (Object.hasOwn(state.context, key) && state.context[key] === value) {
+		// no change
+		return state
+	}
 
-	context[key] = value
+	// REMINDER "context" is a prototypically inherited object
+	// it MUST be mutated and not re-created
+	state.context[key] = value
 
 	return {
 		...state,
-		context,
 	}
 }
 
@@ -31,5 +35,5 @@ function injectDependencies(state: State, key: string, value: any): State {
 export {
 	type State,
 	create,
-	injectDependencies,
+	injectDependency,
 }

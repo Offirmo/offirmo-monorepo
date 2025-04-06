@@ -12,13 +12,12 @@ const PLUGIN: SXCPlugin = {
 	id: PLUGIN_ID,
 	state: StateFns,
 	augment: prototype => {
-
 		prototype.injectDependencies = function injectDependencies(deps: Record<string, any>) {
 			let root_state = this[INTERNAL_PROP]
 
 			root_state = TopState.reduce_plugin<State>(root_state, PLUGIN_ID, state => {
 				Object.entries(deps).forEach(([key, value]) => {
-					state = StateFns.injectDependencies(state, key, value)
+					state = StateFns.injectDependency(state, key, value)
 				})
 				return state
 			})
@@ -31,6 +30,7 @@ const PLUGIN: SXCPlugin = {
 		prototype.getInjectedDependencies = function getInjectedDependencies() {
 			const plugin_state = this[INTERNAL_PROP].plugins[PLUGIN_ID]
 
+			// TODO review: why do we have to flatten? benefit?
 			return flattenOwnAndInheritedProps(plugin_state.context)
 		}
 

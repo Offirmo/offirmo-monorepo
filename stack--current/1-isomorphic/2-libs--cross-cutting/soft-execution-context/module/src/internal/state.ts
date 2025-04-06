@@ -6,19 +6,17 @@ import type { SXCPlugin } from './plugins/types.ts'
 /////////////////////////////////////////////////
 
 let instance_count = 0
-function create(parent_state: InternalSXCState | null): InternalSXCState {
+function create(parent_state: InternalSXCState | undefined): InternalSXCState {
 	return {
 		sid: instance_count++, // not really useful yet, but helps debug
-		parent: parent_state || null,
+		parent: parent_state,
 		plugins: {},
 		cache: {}, // per-SXC cache for complex computations
 	}
 }
 
 function activate_plugin(state: InternalSXCState, PLUGIN: SXCPlugin/*, args*/): InternalSXCState {
-	const plugin_parent_state = state.parent
-		? state.parent.plugins[PLUGIN.id]
-		: null
+	const plugin_parent_state = state.parent?.plugins?.[PLUGIN.id]
 
 	const plugin_state = PLUGIN.state.create(plugin_parent_state)
 

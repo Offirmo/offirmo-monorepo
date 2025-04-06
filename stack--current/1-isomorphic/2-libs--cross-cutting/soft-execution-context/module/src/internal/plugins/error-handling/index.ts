@@ -1,7 +1,7 @@
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { createError as _createError, normalizeError, type XXError } from '@offirmo/error-utils'
 
-import type { SoftExecutionContext, Operation } from '../../../types.ts'
+import type { Operation } from '../../../types.ts'
 import type { InternalSXC } from '../../types.ts'
 import type { SXCPlugin } from '../types.ts'
 
@@ -10,7 +10,6 @@ import { flattenOwnAndInheritedProps } from '../../utils.ts'
 import * as StateFns from './state.ts'
 import { type State } from './state.ts'
 import { _create_catcher } from './catch-factory.ts'
-import { PLUGIN_ID as ID_DI } from '../dependency-injection/index.ts'
 import * as TopState from '../../state.ts'
 
 const PLUGIN_ID: SXCPlugin['id'] = 'error_handling'
@@ -37,11 +36,10 @@ function _handleError({
 			err => SXC._decorateErrorWithDetails(err as XXError),
 		],
 		onError: shouldRethrow
-			? null
+			? undefined
 			: err => {
 				const params = {
-					...(SXC[INTERNAL_PROP].plugins[ID_DI] as any).context,
-					SXC,
+					...SXC.getInjectedDependencies(),
 					err: _clean_temp(err as XXError)
 				}
 				SXC.emitter.emit('final-error', params)
@@ -53,16 +51,16 @@ const PLUGIN: SXCPlugin = {
 	id: PLUGIN_ID,
 	state: StateFns,
 	augment: prototype => {
-
 		prototype._decorateErrorWithDetails = function _decorateErrorWithDetails(err: XXError) {
 			const SXC = this
 			const state = SXC[INTERNAL_PROP]
 			const now = getꓽUTC_timestamp‿ms()
 
+			const { ENV, SESSION_START_TIME_MS } = SXC.getInjectedDependencies()
 			const autoDetails = {
-				ENV: state.plugins[ID_DI].context.ENV,
+				ENV,
 				TIME: now,
-				SESSION_DURATION_MS: now - state.plugins[ID_DI].context.SESSION_START_TIME_MS,
+				SESSION_DURATION_MS: now - SESSION_START_TIME_MS,
 			}
 			const userDetails = flattenOwnAndInheritedProps(state.plugins[PLUGIN_ID].details)
 			err.details = {
@@ -124,10 +122,7 @@ const PLUGIN: SXCPlugin = {
 				.createChild()
 				.setLogicalStack({operation})
 
-			const params = {
-				...SXC[INTERNAL_PROP].plugins[ID_DI].context,
-				SXC,
-			}
+			const params = SXC.getInjectedDependencies()
 
 			try {
 				return fn(params)
@@ -148,13 +143,10 @@ const PLUGIN: SXCPlugin = {
 				.createChild()
 				.setLogicalStack({operation})
 
-			const params = {
-				...SXC[INTERNAL_PROP].plugins[ID_DI].context,
-				SXC,
-			}
+			const params = SXC.getInjectedDependencies()
 
 			try {
-				fn(params) // <- no return OR TODO REVIEW add fallback value?
+				fn(params)
 			}
 			catch (err) {
 				_handleError({
@@ -172,10 +164,7 @@ const PLUGIN: SXCPlugin = {
 				.createChild()
 				.setLogicalStack({operation})
 
-			const params = {
-				...SXC[INTERNAL_PROP].plugins[ID_DI].context,
-				SXC,
-			}
+			const params = SXC.getInjectedDependencies()
 
 			return (new Promise(resolver_fn.bind(undefined, params)))
 				.catch(err => {
@@ -194,10 +183,7 @@ const PLUGIN: SXCPlugin = {
 				.createChild()
 				.setLogicalStack({operation})
 
-			const params = {
-				...SXC[INTERNAL_PROP].plugins[ID_DI].context,
-				SXC,
-			}
+			const params = SXC.getInjectedDependencies()
 
 			// @ts-expect-error @types/node 22 missing it
 			return Promise.try(() => fn(params))
@@ -209,8 +195,6 @@ const PLUGIN: SXCPlugin = {
 					}, err)
 				})
 		}
-
-
 	},
 }
 

@@ -21,6 +21,7 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
+		"demo": "node --experimental-strip-types ./module/src/##doc/demo.ts",
 		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
 		"test--ts": "echo \"@offirmo-private/soft-execution-context\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",

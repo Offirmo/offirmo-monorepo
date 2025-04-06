@@ -14,13 +14,17 @@ function create(parent_state: State | undefined) {
 }
 
 function addDetail(state: State, key: string, value: any): State {
-	const { details } = state
+	if (Object.hasOwn(state.details, key) && state.details[key] === value) {
+		// no change
+		return state
+	}
 
-	details[key] = value
+	// REMINDER "details" is a prototypically inherited object
+	// it MUST be mutated and not re-created
+	state.details[key] = value
 
 	return {
 		...state,
-		details,
 	}
 }
 

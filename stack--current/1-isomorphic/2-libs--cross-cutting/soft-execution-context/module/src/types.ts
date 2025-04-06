@@ -32,10 +32,7 @@ export interface WithSXC<Injections, AnalyticsDetails, ErrorDetails> {
 
 export interface EventDataMap<Injections, AnalyticsDetails, ErrorDetails> {
 	'analytics':
-		Injections
-		& BaseInjections
-		& WithSXC<Injections, AnalyticsDetails, ErrorDetails>
-		& { eventId: string, details: any }
+		{ eventId: string, details: Record<string, any> }
 	'final-error':
 		Injections
 		& BaseInjections
@@ -62,6 +59,7 @@ export interface SoftExecutionContext<
 	createChild: ()
 		=> SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>
 
+	// TODO hide? encapsulate?
 	emitter: Emittery<EventDataMap<Injections, AnalyticsDetails, ErrorDetails>>
 
 	/////////////////////
@@ -70,8 +68,7 @@ export interface SoftExecutionContext<
 		Injections
 		& BaseInjections
 		& WithSXC<Injections, AnalyticsDetails, ErrorDetails>
-	>)
-		=> SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>
+	>) => SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>
 	getInjectedDependencies: () =>
 		Injections
 		& BaseInjections
