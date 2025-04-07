@@ -1,11 +1,12 @@
 import { expect } from 'chai'
 
-import { LIB } from './consts.mjs'
+import { LIB } from '../consts.ts'
 import {
 	get_raw_diff,
 	get_advanced_diff
-} from './json-diff.mjs'
+} from './index.ts'
 
+/////////////////////////////////////////////////
 
 describe(`${LIB} - json diff`, function() {
 

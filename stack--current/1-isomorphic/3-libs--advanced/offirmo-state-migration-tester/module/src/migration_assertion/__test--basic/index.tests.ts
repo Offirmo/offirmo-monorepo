@@ -1,14 +1,9 @@
-import { fileURLToPath } from 'node:url'
-import * as path from 'node:path'
-
-
 import { expect } from 'chai'
 
-import { LIB } from '../../consts.mjs'
-import { itㆍshouldㆍmigrateㆍcorrectly } from '../../migration_assertion.mjs'
+import { LIB } from '../../consts.ts'
+import { itㆍshouldㆍmigrateㆍcorrectly } from '../index.tests.ts'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-
+/////////////////////////////////////////////////
 
 describe(`${LIB} - example usage`, function() {
 	const SCHEMA_VERSION = 3
@@ -35,7 +30,7 @@ describe(`${LIB} - example usage`, function() {
 			LATEST_EXPECTED_DATA,
 			migrate_toꓽlatest,
 			import_meta_url: import.meta.url, // for resolving the path below
-relative_dir_path: './migrations_of_blank_state_specs',
+			relative_dir_path: './migrations_of_blank_state_specs',
 			describe, context, it, expect,
 		})
 	})
@@ -50,7 +45,7 @@ relative_dir_path: './migrations_of_blank_state_specs',
 			LATEST_EXPECTED_DATA,
 			migrate_toꓽlatest,
 			import_meta_url: import.meta.url, // for resolving the path below
-relative_dir_path: './migrations_of_active_state_specs',
+			relative_dir_path: './migrations_of_active_state_specs',
 			describe, context, it, expect,
 		})
 	})

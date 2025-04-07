@@ -3,13 +3,12 @@ import * as path from 'node:path'
 import * as fs from 'node:fs'
 
 import * as sinon from 'sinon'
-import { cloneDeep } from 'lodash-es'
 import { prettifyꓽjson } from '@offirmo-private/prettify-any'
 import { TEST_TIMESTAMP_MS, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
 import { getꓽschema_version, getꓽschema_versionⵧloose } from '@offirmo-private/state-utils'
 
-import { LIB, HINTS_FILENAME } from './consts.mjs'
-import { get_advanced_diff as base_get_json_diff } from './json-diff.mjs'
+import { LIB, HINTS_FILENAME } from '../consts.ts'
+import { get_advanced_diff as base_get_json_diff } from '../advanced-json-diff/index.ts'
 
 
 export function itㆍshouldㆍmigrateㆍcorrectly({
@@ -118,7 +117,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 				return false // unit tests above will catch this
 
 			const LATEST_EXPECTED_DATA_migrated_diff = get_json_diff(
-				migrate_toꓽlatest(cloneDeep(LATEST_EXPECTED_DATA)),
+				migrate_toꓽlatest(structuredClone(LATEST_EXPECTED_DATA)),
 				LATEST_EXPECTED_DATA,
 			)
 			if (LATEST_EXPECTED_DATA_migrated_diff) {

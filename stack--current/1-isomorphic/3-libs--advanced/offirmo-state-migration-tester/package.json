@@ -8,24 +8,32 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/index.mjs"
+		".": "./module/src/index.ts"
 	},
-	"source": "module/index.mjs",
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
 	"dependencies": {
-		"@offirmo-private/prettify-any": "*",
-		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
 		"jsondiffpatch": "^0.7",
-		"lodash-es": "^4",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/**/*.tests.ts'",
-		"test": "run-s test--unit"
+		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
+		"test--ts": "echo \"@offirmo-private/offirmo-state-migration-tester\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s test--ts--watch",
+		"test": "run-s test--unit test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/prettify-any": "*",
+		"@offirmo-private/state-utils": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"npm-run-all": "^4"
+		"@types/node": "^22",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

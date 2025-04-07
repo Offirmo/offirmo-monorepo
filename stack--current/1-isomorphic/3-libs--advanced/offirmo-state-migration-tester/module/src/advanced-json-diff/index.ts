@@ -2,6 +2,7 @@ import * as jsondiffpatch from 'jsondiffpatch'
 
 // TODO use a validating stringifier!
 
+/////////////////////////////////////////////////
 
 function _is_valid_uuid(uuid) {
 	// XXX TODO where does this comes from??? We should have a lib!
@@ -50,6 +51,7 @@ const _advanced_comparator = jsondiffpatch.create({
 })
 const get_advanced_diff = _advanced_comparator.diff.bind(_advanced_comparator)
 
+/////////////////////////////////////////////////
 
 export {
 	get_raw_diff,
