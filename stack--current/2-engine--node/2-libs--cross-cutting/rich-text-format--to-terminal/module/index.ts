@@ -65,7 +65,7 @@ const on_classⵧafter: WalkerCallbacks<State, RenderingOptionsⵧToTerminal>['o
 	return state
 }
 
-const callbacksⵧto_terminal = {
+const callbacksⵧto_terminal: Partial<WalkerCallbacks<State, RenderingOptionsⵧToTerminal>> = {
 	on_type,
 	on_classⵧafter,
 }

@@ -18,7 +18,7 @@ import {
 /////////////////////////////////////////////////
 
 interface RenderingOptionsⵧToText extends BaseRenderingOptions {
-	use_hints?: boolean
+	use_hints?: boolean // use known hints to improve rendering? or ignore them and render the most basic style?
 	style:
 		| 'basic'    // text only
 		| 'advanced' // more intelligent: detect KV lists; allow bullet-less lists
@@ -238,7 +238,7 @@ const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToTex
 						return res
 					})()
 					if (style === 'markdown')
-						return `${cleaned_index}. ` // no padding
+						return `${cleaned_index}.` // no alignment, could mess with the markdown
 
 					// alignment for readability
 					return cleaned_index.padStart(2) + '.'
