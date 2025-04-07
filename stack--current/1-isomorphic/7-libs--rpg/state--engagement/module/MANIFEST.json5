@@ -1,3 +1,4 @@
 {
-	"description": "feedback messages state and reducer TODO review!"
+	description: "feedback messages state and reducer",
+	status: 'unstable' // major rewrite in progress
 }

@@ -1,6 +1,6 @@
 {
 	"name": "@oh-my-rpg/state--engagement",
-	"description": "feedback messages state and reducer TODO review!",
+	"description": "feedback messages state and reducer",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -25,7 +25,7 @@
 		"test--ts": "echo \"@oh-my-rpg/state--engagement\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
-		"test": "run-s test--unit test--ts"
+		"_test": "run-s test--unit test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

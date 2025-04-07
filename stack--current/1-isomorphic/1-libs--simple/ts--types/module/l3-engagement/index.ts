@@ -17,7 +17,7 @@ interface Engagement<TextFormat> {
 	flow: // How is this engagement related to the current user's flow of action + intent?
 		| 'main' // directly flowing from the current flow + intent, ex. a direct answer to a user's question
 		| 'side' // related to the current flow but more of a side effect or low-intent, ex. "achievement unlocked", tip, greeting...
-		| 'not'  // not related to the current flow at all, ex. announcement banner about server restart
+		| 'not'  // not related to the current flow at all, ex. banner about server restart
 
 	// TODO review!
 	// relative to what? to a previously displayed rsrc??
@@ -31,9 +31,9 @@ interface Engagement<TextFormat> {
 	role: // "who" is "speaking"
 			// use case 1: if displayed on a chat-like interface, which side should it be displayed on?
 			// use case 2: if presented to a LLM, who is the one speaking? (see Google type AIAssistantPromptRole = 'system' | 'user' | 'assistant')
-		| 'user'      // rare but useful ex. when rephrasing a choice from the user as the user's own words
 		| 'assistant' // most standard case
 		| 'system'    // system, narrator
+		| 'user'      // rare but useful ex. when paraphrasing a choice from the user as the user's own words
 
 	success?: boolean // if present, this engagement is a success/failure message
 

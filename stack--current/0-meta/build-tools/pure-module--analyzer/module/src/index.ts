@@ -100,8 +100,9 @@ interface PureModuleManifest {
 	hasꓽside_effects?: boolean // assuming most pkgs don't
 	status?: // EXPERIMENTAL rating of modules TODO clarify
 		| 'spike'
-		| 'tech-demo'
+		| 'tech-demo' // not YET in prod
 		| 'sandbox'
+		| 'unstable' // ex. a rewrite or refactor in progress, most likely behind a flag
 		| 'stable'
 
 	_dont_present?: boolean // unsupported module, don't "present" it TODO remove once all the modules are compatible!
