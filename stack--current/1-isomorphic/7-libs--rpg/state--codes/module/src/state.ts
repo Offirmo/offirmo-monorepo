@@ -3,7 +3,7 @@ import { getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private
 
 import { SCHEMA_VERSION } from './consts.ts'
 
-import {
+import type {
 	CodeSpec,
 	CodeRedemption,
 	State,

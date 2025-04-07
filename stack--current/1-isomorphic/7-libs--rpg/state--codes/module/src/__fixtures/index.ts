@@ -1,7 +1,7 @@
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
 import normalize_code from '../normalize-code.ts'
-import { CodeSpec, State } from '../types.ts'
+import type { CodeSpec, State } from '../types.ts'
 
 ////////////
 // for test only

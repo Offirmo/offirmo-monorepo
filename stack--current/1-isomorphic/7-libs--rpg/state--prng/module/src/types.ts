@@ -1,6 +1,6 @@
-import { BaseUState } from '@offirmo-private/state-utils'
-import { UUID } from '@offirmo-private/uuid'
-import { PRNGState } from '@offirmo/random'
+import type { BaseUState } from '@offirmo-private/state-utils'
+import type { UUID } from '@offirmo-private/uuid'
+import type { PRNGState } from '@offirmo/random'
 
 /////////////////////////////////////////////////
 

@@ -2,7 +2,7 @@
 
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/state-utils'
-import { Seed, getꓽengine, PRNGEngine, PRNGState } from '@offirmo/random'
+import { type Seed, getꓽengine, type PRNGEngine, type PRNGState } from '@offirmo/random'
 import { generate_uuid } from '@offirmo-private/uuid'
 
 import { LIB, SCHEMA_VERSION } from './consts.ts'

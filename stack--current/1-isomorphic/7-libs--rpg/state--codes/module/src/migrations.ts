@@ -1,10 +1,10 @@
 //////////////////////////////////////////////////////////////////////
 
 import {
-	Immutable,
+	type Immutable,
 	enforceꓽimmutable,
-	LastMigrationStep,
-	MigrationStep,
+	type LastMigrationStep,
+	type MigrationStep,
 	migrate_toꓽlatestⵧgeneric,
 } from '@offirmo-private/state-utils'
 

@@ -18,7 +18,7 @@ function getꓽdefault_namespace(module_details: {
 	if (module_details.root‿abspath.includes('the-boring-rpg'))
 		return '@tbrpg'
 
-	if (module_details.root‿abspath.includes('9-rpg'))
+	if (module_details.root‿abspath.includes('-rpg'))
 		return '@oh-my-rpg'
 
 	return module_details.isꓽpublished

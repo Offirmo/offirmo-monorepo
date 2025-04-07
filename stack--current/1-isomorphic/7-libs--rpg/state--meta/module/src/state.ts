@@ -4,7 +4,7 @@ import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-util
 
 import { LIB, SCHEMA_VERSION } from './consts.ts'
 
-import {
+import type {
 	State,
 } from './types.ts'
 

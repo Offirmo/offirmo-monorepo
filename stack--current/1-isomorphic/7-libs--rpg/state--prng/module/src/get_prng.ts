@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import { type Immutable } from '@offirmo-private/state-utils'
-import { getꓽengine, PRNGEngine } from '@offirmo/random'
+import { getꓽengine, type PRNGEngine } from '@offirmo/random'
 
 import { LIB } from './consts.ts'
 import { type State } from './types.ts'

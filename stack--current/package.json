@@ -52,6 +52,7 @@
 			"1-isomorphic/1-libs--simple/*",
 			"1-isomorphic/2-libs--cross-cutting/*",
 			"1-isomorphic/3-libs--advanced/*",
+			"1-isomorphic/7-libs--rpg/*",
 		]
 	},
 

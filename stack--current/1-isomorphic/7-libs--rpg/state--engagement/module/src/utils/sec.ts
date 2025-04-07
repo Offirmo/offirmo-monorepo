@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////
 
-import { getRootSXC, SoftExecutionContext } from '@offirmo-private/soft-execution-context'
+import { getRootSXC, type SoftExecutionContext } from '@offirmo-private/soft-execution-context'
 
 import { LIB } from '../consts.ts'
 

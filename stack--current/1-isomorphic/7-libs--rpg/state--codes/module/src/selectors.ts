@@ -1,7 +1,7 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from './consts.ts'
-import {State, CodeSpec, CodeRedemption} from './types.ts'
+import type { State, CodeSpec, CodeRedemption } from './types.ts'
 import normalize_code from './normalize-code.ts'
 
 /////////////////////

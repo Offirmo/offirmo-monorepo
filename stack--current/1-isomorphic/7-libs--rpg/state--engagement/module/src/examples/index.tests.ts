@@ -1,9 +1,9 @@
 //////////////////////////////////////////////////////////////////////
 
-import {expect} from 'chai'
+import { expect } from 'chai'
 
-import {LIB} from '../consts.ts'
-import {getꓽSXC} from '../utils/sec.ts'
+import { LIB } from '../consts.ts'
+import { getꓽSXC } from '../utils/sec.ts'
 import { DEMO_STATE } from './index.ts'
 import { migrate_toꓽlatest } from '../migrations/index.ts'
 

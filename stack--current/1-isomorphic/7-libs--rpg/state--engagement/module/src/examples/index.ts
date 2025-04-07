@@ -1,8 +1,8 @@
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
-import {
-	type Engagement,
-	type State,
+import type {
+	Engagement,
+	State,
 } from '../types.ts'
 
 import { SCHEMA_VERSION } from '../consts.ts'

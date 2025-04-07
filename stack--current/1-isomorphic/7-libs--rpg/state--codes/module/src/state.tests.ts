@@ -8,7 +8,7 @@ import {
 } from './index.ts'
 import { getꓽSXC } from './sec.ts'
 
-import { CodesConditions, CODESPECS_BY_KEY } from './__fixtures/index.ts'
+import { type CodesConditions, CODESPECS_BY_KEY } from './__fixtures/index.ts'
 
 
 describe(`${LIB} - state`, function() {

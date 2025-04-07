@@ -5,7 +5,7 @@ import {
 	type PendingEngagementUId,
 	type TrackedEngagement,
 } from '@offirmo-private/ts-types'
-import { BaseUState } from '@offirmo-private/state-utils'
+import { type BaseUState } from '@offirmo-private/state-utils'
 
 //////////////////////////////////////////////////////////////////////
 

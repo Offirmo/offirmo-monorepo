@@ -3,7 +3,6 @@ import { expect } from 'chai'
 import { LIB, SCHEMA_VERSION } from './consts.ts'
 
 import {
-	State,
 	create,
 } from './index.ts'
 

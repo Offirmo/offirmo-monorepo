@@ -1,4 +1,4 @@
-import { BaseUState } from '@offirmo-private/state-utils'
+import type { BaseUState } from '@offirmo-private/state-utils'
 
 /////////////////////
 

@@ -1,14 +1,14 @@
 //////////////////////////////////////////////////////////////////////
 
 import {
-	Immutable,
+	type Immutable,
 	enforceꓽimmutable,
-	LastMigrationStep,
-	MigrationStep,
+	type LastMigrationStep,
+	type MigrationStep,
 	migrate_toꓽlatestⵧgeneric,
 } from '@offirmo-private/state-utils'
 import { generate_uuid } from '@offirmo-private/uuid'
-import { PRNGState } from '@offirmo/random'
+import { type PRNGState } from '@offirmo/random'
 
 import { LIB, SCHEMA_VERSION } from './consts.ts'
 import { type State } from './types.ts'

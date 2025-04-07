@@ -18,7 +18,6 @@ Be aware of the dependencies.
 
 For ex. to make everything work again step by step!
 
-			"1-isomorphic/7-libs--rpg/*",
 			"1-isomorphic/A-libs--the-boring-rpg/*",
 			"1-isomorphic/X-incubator/active/*",
 			"2-engine--node/1-libs--simple/*",
@@ -39,6 +38,7 @@ bolt --only-fs "[0-5]-*/*" ws run test
       bolt --only-fs "1-isomorphic/1-libs--simple/*" ws run test
       bolt --only-fs "1-isomorphic/2-libs--cross-cutting/*" ws run test
       bolt --only-fs "1-isomorphic/3-libs--advanced/*" ws run test
+      bolt --only-fs "1-isomorphic/7-libs--rpg/*" ws run test
    
    
 

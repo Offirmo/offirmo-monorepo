@@ -9,7 +9,7 @@ import {
 	attempt_to_redeem_code,
 } from './index.ts'
 
-import { CodesConditions, CODESPECS_BY_KEY } from './__fixtures/index.ts'
+import { type CodesConditions, CODESPECS_BY_KEY } from './__fixtures/index.ts'
 
 /////////////////////
 

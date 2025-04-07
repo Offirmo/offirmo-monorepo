@@ -13,7 +13,7 @@ import {
 
 	getꓽprng,
 
-	xxx_internal_reset_prng_cache, State,
+	xxx_internal_reset_prng_cache, type State,
 } from './index.ts'
 
 /////////////////////////////////////////////////
