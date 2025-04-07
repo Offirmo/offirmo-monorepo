@@ -103,6 +103,8 @@ interface PureModuleManifest {
 		| 'tech-demo'
 		| 'sandbox'
 		| 'stable'
+
+	_dont_present?: boolean // unsupported module, don't "present" it TODO remove once all the modules are compatible!
 }
 
 // Should contain everything needed to build
@@ -138,6 +140,9 @@ interface PureModuleDetails extends Required<PureModuleManifest> {
 
 	// in case
 	_manifest: PureModuleManifest
+
+	// special
+	_dont_present?: never
 }
 
 const MANIFEST‿basename = 'MANIFEST.json5'
@@ -482,8 +487,9 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		result.status = result._manifest.status
 		unprocessed_keys.delete('status')
 	}
+	unprocessed_keys.delete('_dont_present') // special
 	if (unprocessed_keys.size) {
-			throw new Error(`Unknown keys in manifest: "${Array.from(unprocessed_keys).join(', ')}"!`)
+		throw new Error(`Unknown keys in manifest: "${Array.from(unprocessed_keys).join(', ')}"!`)
 	}
 
 	// we need the fully qualified name of the module
@@ -540,12 +546,13 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			}
 		}
 
-		if (path.basename(path.dirname(path‿rel)) === '##demo') {
-			if (entry.basename‿noext === 'index') {
-				result.demo = entry
-			}
+		if (entry.basename‿noext === 'demo') {
+			result.demo = entry
 		}
-
+		if (path.basename(path.dirname(path‿rel)) === '##demo'
+			&& entry.basename‿noext === 'index') {
+			result.demo ||= entry
+		}
 
 		const { basename } = entry
 		if (basename === MANIFEST‿basename) {
@@ -583,7 +590,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 				// intercept aggregations
 				if (dependency_name === 'chai' || dependency_name === 'sinon') {
-					if (dep_type !== 'dev') {
+					if (dep_type !== 'dev' && result.fqname !== '@offirmo-private/state-migration-tester') {
 						throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')
 					}
 

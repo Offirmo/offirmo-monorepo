@@ -19,6 +19,7 @@
 		"test--ts": "echo \"@offirmo/practical-logger-minimal-noop\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
+		"demo": "node --experimental-strip-types ./module/##demo/demo.ts",
 		"test": "run-s test--unit test--ts"
 	},
 	"devDependencies": {

@@ -51,6 +51,11 @@ async function present({
 		throw new Error(`Out-of-source build cannot target inside the pure-module!`)
 	}
 
+	if (pure_module_details._manifest?._dont_present) {
+		console.log(`${indent}marked as "do not present", skipping`)
+		return
+	}
+
 	// TODO one day if public, re-instate pre-build?
 	// TODO one day add "size-limit"? to all?
 	/*

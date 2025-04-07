@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { LIB } from '../../consts.ts'
-import { itㆍshouldㆍmigrateㆍcorrectly } from '../index.tests.ts'
+import { itㆍshouldㆍmigrateㆍcorrectly } from '../index.ts'
 
 /////////////////////////////////////////////////
 

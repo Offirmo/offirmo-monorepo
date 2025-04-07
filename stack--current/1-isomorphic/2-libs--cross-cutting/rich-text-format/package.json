@@ -22,11 +22,11 @@
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {
-		"demo": "node --experimental-strip-types ./module/src/##doc/demo.ts",
 		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
 		"test--ts": "echo \"@offirmo-private/rich-text-format\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
+		"demo": "node --experimental-strip-types ./module/src/##doc/demo.ts",
 		"test": "run-s test--unit test--ts"
 	},
 	"devDependencies": {
