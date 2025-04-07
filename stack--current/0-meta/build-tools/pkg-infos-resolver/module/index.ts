@@ -83,13 +83,6 @@ class PkgInfosResolver {
 		this.#pending_promises[pkg_name] = packageJson(pkg_name, { fullMetadata: true })
 			.then(
 				(content: PackageJson) => {
-					// normalization
-					const types = content.types || (content as any).typings
-					delete (content as any).typings
-					if (types) {
-						content.types = types
-					}
-
 					this.#packageᐧjson_cache[pkg_name] = content
 					console.log(`${auto ? 'auto' : '    '} package.json loaded for "${pkg_name}" v${semver.clean(content.version)} (${`includes types? ${_has_typescript_types(content)}`})`)
 					//console.log(`XXX content`, content)
@@ -253,7 +246,19 @@ function _get_at_types_for_pkg_name(pkg_name: string): string {
 }
 
 function _has_typescript_types(packageᐧjson: PackageJson): boolean {
-	return !!packageᐧjson?.types
+	if (packageᐧjson.types)
+		return true
+
+	// non standard
+	const raw = packageᐧjson as any
+	if (raw.typings
+		|| raw?.exports?.types // https://github.com/sindresorhus/write-json-file/blob/main/package.json
+		|| raw.files?.includes('index.d.ts') // https://github.com/sindresorhus/load-json-file/blob/main/package.json
+		|| ['load-json-file'].includes(raw.name)
+	)
+		return true
+
+	return false
 }
 
 /////////////////////////////////////////////////

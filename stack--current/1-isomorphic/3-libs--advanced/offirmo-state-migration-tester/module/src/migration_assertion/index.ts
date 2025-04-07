@@ -1,7 +1,11 @@
 import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
 import * as fs from 'node:fs'
+import { lsFilesSync } from '@offirmo-private/fs--ls'
+import { writeJsonFileSync } from 'write-json-file'
+import { loadJsonFileSync } from 'load-json-file'
 
+import * as chai from 'chai'
 import * as sinon from 'sinon'
 import { prettifyꓽjson } from '@offirmo-private/prettify-any'
 import { TEST_TIMESTAMP_MS, getꓽUTC_timestampⵧhuman_readable‿minutes } from '@offirmo-private/timestamps'
@@ -10,6 +14,29 @@ import { getꓽschema_version, getꓽschema_versionⵧloose } from '@offirmo-pri
 import { LIB, HINTS_FILENAME } from '../consts.ts'
 import { get_advanced_diff as base_get_json_diff } from '../advanced-json-diff/index.ts'
 
+interface Options {
+	use_hints?: boolean,
+	migration_hints_for_chaining?: unknown
+	SCHEMA_VERSION: number
+	LATEST_EXPECTED_DATA: any
+	migrate_toꓽlatest: (state: any, migration_hints_for_chaining?: unknown) => any
+	relative_dir_path: string
+	import_meta_url: any
+	advanced_diff_json?: typeof base_get_json_diff
+	clean_json_diff?: (p: {
+		json_diff: ReturnType<typeof base_get_json_diff>
+		LATEST_EXPECTED_DATA: any
+		migrated_data: any
+	}) => ReturnType<typeof base_get_json_diff>
+
+	describe: Mocha.SuiteFunction
+	context: Mocha.SuiteFunction
+	it: Mocha.TestFunction
+	expect: Chai.ExpectStatic
+
+	can_update_snapshots?: boolean
+	should_skip?: boolean
+}
 
 export function itㆍshouldㆍmigrateㆍcorrectly({
 	use_hints = true,
@@ -25,7 +52,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 
 	can_update_snapshots = false,
 	should_skip = false, // allow skipping the test, like it.skip
-}) {
+}: Options) {
 	if (typeof LATEST_EXPECTED_DATA === 'function') {
 		// wrap the call with the fake timers
 		const clock = sinon.useFakeTimers(TEST_TIMESTAMP_MS)
@@ -49,19 +76,17 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 		console.log(`${LOG_PREFIX} note: skip mode, will do the minimum`)
 
 	// propagate the skip
-	describe = should_skip ? describe.skip.bind(describe) : describe
+	describe = should_skip
+		? (describe.skip.bind(describe) as Mocha.SuiteFunction)
+		: describe
 
-	function get_json_diff(a, b) {
+	function get_json_diff(a: any, b: any) {
 		let diff = base_get_json_diff(a, b)
 		if (!diff) return
 
 		if (advanced_diff_json) {
-			diff = advanced_diff_json(a, b, {
-				diff_json: base_get_json_diff,
-				prettifyꓽjson,
-				diff,
-			})
-			if (!Object.keys(diff).length)
+			diff = advanced_diff_json(a, b)
+			if (!Object.keys(diff as any).length)
 				diff = undefined
 		}
 
@@ -71,10 +96,10 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 	// early tests, always valid
 	describe(`[${LIB} - automatically generated migration tests]`, function() {
 		beforeEach(function () {
-			this.clock = sinon.useFakeTimers(TEST_TIMESTAMP_MS)
+			this['clock'] = sinon.useFakeTimers(TEST_TIMESTAMP_MS)
 		})
 		afterEach(function () {
-			this.clock.restore()
+			this['clock'].restore()
 		})
 
 		context('when the version is more recent', function () {
@@ -97,7 +122,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 					expect(migrated_data, 'deep no change').to.deep.equal(LATEST_EXPECTED_DATA)
 					expect(migrated_data, 'immutability').to.equal(LATEST_EXPECTED_DATA)
 				}
-				catch (err) {
+				catch (err: any) {
 					err.message = err.message + ` [${LIB} hint: check param LATEST_EXPECTED_DATA]`
 					throw err
 				}
@@ -133,17 +158,17 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 		}
 
 		/////// grab the files = past snapshots and hints
-		if (can_update_snapshots) fs.mkdirpSync(absolute_dir_path)
+		if (can_update_snapshots) fs.mkdirSync(absolute_dir_path, { recursive: true })
 
 		try {
-			fs.lsFilesSync(absolute_dir_path, { full_path: false })
+			lsFilesSync(absolute_dir_path, { full_path: false })
 		}
 		catch (err) {
 			if (should_skip) return
 			throw err
 		}
 
-		const ALL_FILES = fs.lsFilesSync(absolute_dir_path, { full_path: false })
+		const ALL_FILES = lsFilesSync(absolute_dir_path, { full_path: false })
 			.filter(snap_path => !snap_path.startsWith('.')) // skip .DS_STORE and like
 			.filter(snap_path => snap_path.endsWith('.json')) // allows README :)
 			.sort()
@@ -167,8 +192,8 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 				return hints_from_params
 			}
 
-			const hints = ALL_FILES.find(snap_path => snap_path === HINTS_FILE)
-				? fs.json.readSync(HINTS_FILE)
+			const hints: any = ALL_FILES.find(snap_path => snap_path === HINTS_FILE)
+				? loadJsonFileSync(HINTS_FILE)
 				: {}
 
 			// create/update the structure (in memory)
@@ -178,7 +203,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 			}
 			// persist the creation/update
 			if (can_update_snapshots)
-				fs.json.writeSync(HINTS_FILE, hints)
+				writeJsonFileSync(HINTS_FILE, hints)
 
 			//console.log(`${LOG_PREFIX} using hints, provided from a file ✔`)
 			return hints
@@ -191,7 +216,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 			const latest_snapshot_path = ALL_SNAPSHOTS.at(-1)
 
 			const latest_snapshot_data = latest_snapshot_path
-				? fs.json.readSync(latest_snapshot_path)
+				? loadJsonFileSync(latest_snapshot_path)
 				: undefined
 
 			//if (latest_snapshot_data) console.log(`${LOG_PREFIX} found latest snapshot data ✔`)
@@ -221,11 +246,11 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 			// create a new snapshot with the new expected data
 			const name = getꓽUTC_timestampⵧhuman_readable‿minutes() + '_v' + SCHEMA_VERSION + '.json'
 			console.log(`${LOG_PREFIX} Creating a new data snapshot: ${name}.`)
-			fs.json.writeSync(path.join(absolute_dir_path, name), LATEST_EXPECTED_DATA)
+			writeJsonFileSync(path.join(absolute_dir_path, name), LATEST_EXPECTED_DATA)
 		})()
 
 		ALL_SNAPSHOTS.forEach(snapshot_path => {
-			const LEGACY_DATA = fs.json.readSync(snapshot_path)
+			const LEGACY_DATA = loadJsonFileSync(snapshot_path) as any
 
 			context(`when the version is ${getꓽschema_versionⵧloose(LEGACY_DATA) === SCHEMA_VERSION ? 'UP TO DATE' : 'OUTDATED' }: v${getꓽschema_versionⵧloose(LEGACY_DATA)} from ${path.basename(snapshot_path)}`, function () {
 
@@ -249,7 +274,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 							console.warn('Test failure: additional diff (json) for info:', prettifyꓽjson(json_diff))
 							expect(migrated_data).to.deep.equal(LATEST_EXPECTED_DATA)
 						}
-					} catch (err) {
+					} catch (err: any) {
 						err.message = err.message + ` [${LIB} hint: check file ${path.basename(snapshot_path)}]`
 						throw err
 					}
@@ -260,7 +285,7 @@ export function itㆍshouldㆍmigrateㆍcorrectly({
 }
 
 // emulate describe.skip
-itㆍshouldㆍmigrateㆍcorrectly.skip = function(options) {
+itㆍshouldㆍmigrateㆍcorrectly.skip = function(options: Options) {
 	return itㆍshouldㆍmigrateㆍcorrectly({
 		...options,
 		should_skip: true,

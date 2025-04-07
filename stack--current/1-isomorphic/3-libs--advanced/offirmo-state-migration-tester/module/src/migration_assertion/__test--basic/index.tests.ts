@@ -1,5 +1,7 @@
 import { expect } from 'chai'
 
+import type { WithSchemaVersion } from '@offirmo-private/state-utils'
+
 import { LIB } from '../../consts.ts'
 import { itㆍshouldㆍmigrateㆍcorrectly } from '../index.ts'
 
@@ -8,7 +10,7 @@ import { itㆍshouldㆍmigrateㆍcorrectly } from '../index.ts'
 describe(`${LIB} - example usage`, function() {
 	const SCHEMA_VERSION = 3
 
-	function migrate_toꓽlatest(state) {
+	function migrate_toꓽlatest(state: WithSchemaVersion) {
 		if (state.schema_version > SCHEMA_VERSION)
 			throw new Error('More recent version!')
 		if (((state || {}).schema_version || 0) < SCHEMA_VERSION) {
