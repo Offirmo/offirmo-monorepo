@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import * as RichText from '@offirmo-private/rich-text-format'
-import * as DEMOS from '@offirmo-private/rich-text-format/demos'
+import * as DEMOS from '@offirmo-private/rich-text-format/examples'
 
 import { LIB, renderⵧto_terminal } from './index.ts'
 
@@ -20,7 +20,7 @@ describe(`${LIB} -- renderers -- to terminal`, () => {
 			it('should work', () => {
 				RichText.Enum
 					.values(RichText.NodeType)
-					.filter(k => k!== 'li')
+					.filter(k => k!== '_li')
 					.forEach(k => {
 					console.log(`------- ${k}: -------`)
 

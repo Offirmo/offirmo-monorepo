@@ -19,6 +19,7 @@
 		"@offirmo/universal-debug-api-node": "^0.2"
 	},
 	"dependencies": {
+		"tiny-invariant": "^1"
 	},
 	"scripts": {
 		"test--ts": "echo \"@offirmo-private/soft-execution-context--node\" && tsc --noEmit",

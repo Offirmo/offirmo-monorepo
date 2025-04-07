@@ -2,7 +2,7 @@ import * as RichText from '../index.ts'
 
 /////// Units ///////
 
-import { EXAMPLE_COMPLETE_NODE } from '../l1-types/guards.ts'
+import { $EXAMPLE_COMPLETE_NODE } from '../l1-types/guards.ts'
 
 /////// parts ///////
 
@@ -658,7 +658,7 @@ const DOC_DEMO_INVENTORY: RichText.Document = {
 ////////////
 
 export {
-	EXAMPLE_COMPLETE_NODE,
+	$EXAMPLE_COMPLETE_NODE,
 
 	$DEMOⵧSIMPLE,
 	$DEMOⵧKV,

@@ -7,7 +7,7 @@ import {
 	DOC_DEMO_LIST_ORDERED,
 	DOC_DEMO_LIST_UNORDERED,
 	DOC_DEMO_LIST_NESTED,
-} from '../__fixtures/index.ts'
+} from '../__examples/index.ts'
 
 import * as RichText from '../index.ts'
 

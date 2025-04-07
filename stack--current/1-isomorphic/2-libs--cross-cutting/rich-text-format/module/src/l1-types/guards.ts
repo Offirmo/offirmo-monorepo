@@ -8,7 +8,7 @@ import { NodeType } from './types.ts'
 /////////////////////////////////////////////////
 
 // full demo with all fields, even optional
-const EXAMPLE_COMPLETE_NODE: CheckedNode = {
+const $EXAMPLE_COMPLETE_NODE: CheckedNode = {
 	$v: 1,
 	$type: 'fragmentⵧinline',
 	$content: 'Hello, ⎨⎨target⎬⎬!',
@@ -24,7 +24,7 @@ const EXAMPLE_COMPLETE_NODE: CheckedNode = {
 function assertꓽisꓽNode(candidate: Immutable<any>): asserts candidate is Immutable<Node>
 function assertꓽisꓽNode(candidate: any): asserts candidate is Node
 function assertꓽisꓽNode(candidate: Immutable<any>): asserts candidate is Immutable<Node> {
-	return assertꓽshape(EXAMPLE_COMPLETE_NODE, candidate, {
+	return assertꓽshape($EXAMPLE_COMPLETE_NODE, candidate, {
 		// "Node" is quite loose so we only expect at least 1 prop
 		match_reference_props: 'some',
 		// but no extra prop
@@ -109,7 +109,7 @@ function isꓽblock(node: Immutable<NodeLike>): boolean {
 /////////////////////////////////////////////////
 
 export {
-	EXAMPLE_COMPLETE_NODE,
+	$EXAMPLE_COMPLETE_NODE,
 
 	assertꓽisꓽNode,
 	isꓽNode,

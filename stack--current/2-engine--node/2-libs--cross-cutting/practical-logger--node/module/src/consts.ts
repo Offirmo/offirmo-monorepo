@@ -1,6 +1,2 @@
 
-const LIB = '@offirmo/practical-logger-node'
-
-export {
-	LIB,
-}
+export const LIB = '@offirmo/practical-logger-node'
