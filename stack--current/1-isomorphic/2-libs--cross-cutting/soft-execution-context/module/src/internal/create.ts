@@ -67,8 +67,8 @@ function _isSXC(SXC: any): SXC is SoftExecutionContext {
 function _decorateWithDetectedEnv(SXC: SoftExecutionContext<any>) {
 	const ENV = (() => {
 		try {
-			if (typeof process?.env?.NODE_ENV === 'string')
-				return process.env.NODE_ENV
+			if (typeof process?.env?.['NODE_ENV'] === 'string')
+				return process.env['NODE_ENV']
 		}
 		catch (err) {
 			/* swallow */

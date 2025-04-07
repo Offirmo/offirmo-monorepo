@@ -4,6 +4,11 @@
 	"version": "1.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
+	"keywords": [
+		"debug",
+		"logger",
+		"typescript"
+	],
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
@@ -22,8 +27,8 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
-		"size-limit": "^11",
-		"ts-node": "^10"
+		"tslib": "^2",
+		"typescript": "^5"
 	},
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",
@@ -40,17 +45,11 @@
 		"np": "np --no-publish",
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
-
 	"files": [
 		"dist",
 		"src"
 	],
 	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/3-advanced--multi/universal-debug-api-placeholder",
-	"keywords": [
-		"debug",
-		"logger",
-		"typescript"
-	],
 	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/3-advanced--multi/universal-debug-api-placeholder",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"

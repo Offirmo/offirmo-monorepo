@@ -1,5 +1,4 @@
 
-
 import * as RichText from '@offirmo-private/rich-text-format'
 
 const $doc = RichText.fragmentⵧinline()

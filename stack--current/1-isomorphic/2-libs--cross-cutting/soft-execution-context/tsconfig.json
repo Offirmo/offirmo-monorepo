@@ -1,13 +1,9 @@
 {
 	"extends": "../../../0-meta/tsconfig.json",
 	"compilerOptions": {
-		"allowJs": true,
-
-		"exactOptionalPropertyTypes": false,
-		"noPropertyAccessFromIndexSignature": false,
-		"noUncheckedIndexedAccess": false,
-		"noUnusedLocals": false,
 		"strictNullChecks": false,
+		"exactOptionalPropertyTypes": false,
+		"noUncheckedIndexedAccess": false,
 		"strictPropertyInitialization": false
 	},
 	"include": [

@@ -11,7 +11,6 @@ function getꓽanswer(SXC: SoftExecutionContext): number {
 
 // APP = use a port dedicated to your engine
 import { getRootSXC } from '@offirmo-private/soft-execution-context'
-import * as console from 'node:console'
 
 const SXC = getRootSXC()
 	.createChild()
