@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 
-import { LOG_LEVEL_TO_HUMAN } from '@offirmo/practical-logger-core'
+import { LOG_LEVEL_TO_HUMAN, type LogLevel } from '@offirmo/practical-logger-core'
 
 
 const MIN_WIDTH = 7
@@ -15,7 +15,7 @@ function to_aligned_ascii(level: string): string {
 }
 
 
-export const LEVEL_TO_ASCII: Readonly<{ [k: string]: string }> = {
+export const LEVEL_TO_ASCII: Readonly<Record<LogLevel, string>> = {
 	fatal:   chalk.bgRed.white.bold(to_aligned_ascii(' ' + LOG_LEVEL_TO_HUMAN['fatal'])),
 	emerg:   chalk.bgRed.white.bold(to_aligned_ascii(LOG_LEVEL_TO_HUMAN['emerg'])),
 	alert:   chalk.bgRed.white.bold(to_aligned_ascii(' ' + LOG_LEVEL_TO_HUMAN['alert'])),
@@ -38,7 +38,7 @@ export const LEVEL_TO_ASCII: Readonly<{ [k: string]: string }> = {
 }
 
 
-export const LEVEL_TO_STYLIZE: Readonly<{ [k: string]: (s: string) => string }> = {
+export const LEVEL_TO_STYLIZE: Readonly<Record<LogLevel, (s: string) => string>> = {
 	fatal:   s => chalk.red.bold(s),
 	emerg:   s => chalk.red.bold(s),
 	alert:   s => chalk.red.bold(s),

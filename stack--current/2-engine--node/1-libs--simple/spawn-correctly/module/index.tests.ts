@@ -2,7 +2,8 @@ import { EOL } from 'node:os'
 
 import { expect } from 'chai'
 
-import spawnCorrectlyAndResolvesWithStdout, { SpawnError, ChildProcess } from './index.ts'
+import spawnCorrectlyAndResolvesWithStdout from './index.ts'
+import type { SpawnError, ChildProcess } from './index.ts'
 
 /////////////////////////////////////////////////
 

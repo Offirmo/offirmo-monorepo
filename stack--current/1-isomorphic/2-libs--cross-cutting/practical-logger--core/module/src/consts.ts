@@ -36,7 +36,7 @@ export const ALL_LOG_LEVELS: ReadonlyArray<LogLevel> =
 // rationalization to a clear, human understandable string
 // generated to shave a few bytes
 // not using fromEntries bc not available in node <12
-export const LOG_LEVEL_TO_HUMAN: Readonly<{ readonly [k: string]: string }> = ALL_LOG_LEVELS.reduce((acc, ll) => {
+export const LOG_LEVEL_TO_HUMAN: Readonly<Record<LogLevel, string>> = ALL_LOG_LEVELS.reduce((acc, ll) => {
 	acc[ll] = ({ em: 'emergency', wa: 'warn'} as any)[ll.slice(0, 1)] || ll
 	return acc
 }, {} as any)

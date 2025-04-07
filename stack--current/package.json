@@ -53,6 +53,8 @@
 			"1-isomorphic/2-libs--cross-cutting/*",
 			"1-isomorphic/3-libs--advanced/*",
 			"1-isomorphic/7-libs--rpg/*",
+			"2-engine--node/1-libs--simple/*",
+			"2-engine--node/2-libs--cross-cutting/*",
 		]
 	},
 

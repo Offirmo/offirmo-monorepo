@@ -23,8 +23,8 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
-		"size-limit": "^11",
-		"tslib": "^2"
+		"tslib": "^2",
+		"typescript": "^5"
 	},
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist",
