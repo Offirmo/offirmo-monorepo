@@ -1,17 +1,19 @@
 import type { XXError } from '@offirmo/error-utils'
 
-interface Decorator {
+/////////////////////////////////////////////////
+
+interface ErrorDecorator {
 	(err: unknown): XXError
 }
 
-export function _create_catcher(
+function _create_catcher(
 	{
 		decorators = [],
 		onError,
 		debugId = '?',
 	}: {
-		decorators?: Array<Decorator>,
-		onError?: (err: unknown) => void,
+		decorators?: Array<ErrorDecorator>,
+		onError?: ((err: unknown) => void) | undefined,
 		debugId?: string
 	}
 	= {}
@@ -41,4 +43,11 @@ export function _create_catcher(
 
 		throw err // or rethrow since still unhandled
 	}
+}
+
+/////////////////////////////////////////////////
+
+export {
+	type ErrorDecorator,
+	_create_catcher,
 }

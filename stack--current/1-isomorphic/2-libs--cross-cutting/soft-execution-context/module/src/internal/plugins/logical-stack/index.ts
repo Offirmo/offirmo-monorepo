@@ -3,7 +3,7 @@ import type { XXError } from '@offirmo/error-utils'
 import type { SXCPlugin } from '../types.ts'
 
 import { INTERNAL_PROP } from '../../consts.ts'
-import * as TopState from '../../state.ts'
+import * as TopStateFns from '../../state.ts'
 import { type InternalSXCState } from '../../state.ts'
 import {
 	LOGICAL_STACK_BEGIN_MARKER,
@@ -19,8 +19,9 @@ import type { Stack } from './types.ts'
 
 const PLUGIN_ID: SXCPlugin['id'] = 'logical_stack'
 
-const BRANCH_JUMP_PSEUDO_STATE = {
+const BRANCH_JUMP_PSEUDO_STATE: InternalSXCState = {
 	sid: -1,
+	parent: undefined,
 	plugins: {
 		[PLUGIN_ID]: {
 			stack: {
@@ -29,6 +30,7 @@ const BRANCH_JUMP_PSEUDO_STATE = {
 			},
 		},
 	},
+	cache: {},
 }
 
 function _reduceStatePathToLogicalStack(statePath: InternalSXCState[]) {
@@ -65,7 +67,7 @@ const PLUGIN: SXCPlugin = {
 			const SXC = this
 			let root_state = SXC[INTERNAL_PROP]
 
-			root_state = TopState.reduce_plugin<State>(root_state, PLUGIN_ID, state => {
+			root_state = TopStateFns.reduce_plugin<State>(root_state, PLUGIN_ID, state => {
 				if (module)
 					state = StateFns.set_module(state, module)
 				if (operation)
@@ -115,7 +117,7 @@ const PLUGIN: SXCPlugin = {
 				// Thus the message is also already decorated, don't touch it.
 
 				// BUT we may be able to add more info, can we?
-				if (err.details.logicalStack.includes(logicalStack.full)) {
+				if (err.details.logicalStack?.includes(logicalStack.full)) {
 					// ok, logical stack already chained, nothing to add
 				}
 				else {
@@ -133,7 +135,7 @@ const PLUGIN: SXCPlugin = {
 					}
 
 					// reconcile the 2 stack traces
-					let improvedStatePath = [].concat(current_path)
+					let improvedStatePath = [...current_path]
 					improvedStatePath.push(BRANCH_JUMP_PSEUDO_STATE)
 					improvedStatePath = improvedStatePath.concat(
 						other_path.slice(last_common_index + 1),
@@ -148,7 +150,7 @@ const PLUGIN: SXCPlugin = {
 				err._temp.statePath = _getSXCStatePath(SXC)
 
 				logicalStack.short = SXC.getShortLogicalStack()
-				if (err.message.startsWith(logicalStack.short)) {
+				if (err.message.startsWith(logicalStack.short!)) {
 					// can that happen??? It's a bug!
 					/* eslint-disable no-console */
 					console.warn('UNEXPECTED SXC non-decorated error already prefixed??')

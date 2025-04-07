@@ -15,8 +15,8 @@ function create(parent_state: InternalSXCState | undefined): InternalSXCState {
 	}
 }
 
-function activate_plugin(state: InternalSXCState, PLUGIN: SXCPlugin/*, args*/): InternalSXCState {
-	const plugin_parent_state = state.parent?.plugins?.[PLUGIN.id]
+function activate_plugin<PluginState = {}>(state: InternalSXCState, PLUGIN: SXCPlugin<PluginState>/*, args*/): InternalSXCState {
+	const plugin_parent_state = state.parent?.plugins?.[PLUGIN.id] as PluginState | undefined
 
 	const plugin_state = PLUGIN.state.create(plugin_parent_state)
 

@@ -1,10 +1,6 @@
 {
 	"extends": "../../../0-meta/tsconfig.json",
 	"compilerOptions": {
-		"strictNullChecks": false,
-		"exactOptionalPropertyTypes": false,
-		"noUncheckedIndexedAccess": false,
-		"strictPropertyInitialization": false
 	},
 	"include": [
 		"../../../0-meta/typescript-custom-typings/*.d.ts",

@@ -8,7 +8,7 @@ interface SXCPlugin<State = {}> {
 	augment: (ROOT_PROTOTYPE: any) => void
 
 	state: {
-		create(parent_state: State): State
+		create(parent_state: State | undefined): State
 	}
 }
 

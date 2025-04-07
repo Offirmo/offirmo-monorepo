@@ -39,7 +39,7 @@ function _getSXCStatePath(SXC: SoftExecutionContext): InternalSXCState[] {
 
 	if (!_SXC[INTERNAL_PROP].cache.statePath) {
 		const path = []
-		let state = _SXC[INTERNAL_PROP]
+		let state: InternalSXCState | undefined = _SXC[INTERNAL_PROP]
 
 		while (state) {
 			path.unshift(state)

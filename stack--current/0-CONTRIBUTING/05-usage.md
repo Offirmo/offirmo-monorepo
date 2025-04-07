@@ -18,9 +18,6 @@ Be aware of the dependencies.
 
 For ex. to make everything work again step by step!
 
-			"1-isomorphic/0-dev-tools/*",
-			"1-isomorphic/1-libs--simple/*",
-			"1-isomorphic/2-libs--cross-cutting/*",
 			"1-isomorphic/7-libs--rpg/*",
 			"1-isomorphic/A-libs--the-boring-rpg/*",
 			"1-isomorphic/X-incubator/active/*",
@@ -41,37 +38,9 @@ bolt --only-fs "[0-5]-*/*" ws run test
    bolt --only-fs "1-isomorphi*/*" ws run test
       bolt --only-fs "1-isomorphic/1-libs--simple/*" ws run test
       bolt --only-fs "1-isomorphic/2-libs--cross-cutting/*" ws run test
+      bolt --only-fs "1-isomorphic/3-libs--advanced/*" ws run test
    
    
-   bolt --only-fs "1-stdlib/*" ws run test
-   bolt --only-fs "2-foundation/*" ws run build
-   bolt --only-fs "2-foundation/*" ws run test
-   bolt --only-fs "3-advance*/*" ws run build
-   bolt --only-fs "3-advance*/*" ws run test
-      bolt --only-fs "3-advanced/*" ws run build
-      bolt --only-fs "3-advanced/*" ws run test
-      bolt --only-fs "3-advanced--multi/*" ws run build
-      bolt --only-fs "3-advanced--multi/*" ws run test
-      bolt --only-fs "3-advanced--browser/*" ws run build
-      bolt --only-fs "3-advanced--browser/*" ws run test
-      bolt --only-fs "3-advanced--node/*" ws run build
-      bolt --only-fs "3-advanced--node/*" ws run test
-   bolt --only-fs "4-tools/*" ws run build
-   bolt --only-fs "4-tools/*" ws run test
-   bolt --only-fs "5-incubator/**/*" ws run build
-   bolt --only-fs "5-incubator/**/*" ws run test
-   bolt --only-fs "9-rpg/**/*" ws run build
-   bolt --only-fs "9-rpg/**/*" ws run test
-bolt --only-fs "A-apps--core/the-boring-rpg/**/*" ws run build
-   bolt --only-fs "A-apps--core/the-boring-rpg/l1-*" ws run build
-   bolt --only-fs "A-apps--core/the-boring-rpg/l2-*" ws run build
-   bolt --only-fs "A-apps--core/the-boring-rpg/l3-*" ws run build
-bolt --only-fs "A-apps--core/the-boring-rpg/**/*" ws run test
-bolt --only-fs "B-apps--support/online-adventur.es/**/*" ws run build
-bolt --only-fs "B-apps--support/online-adventur.es/**/*" ws run test
-bolt --only-fs "C-apps--clients/the-boring-rpg/**/*" ws run build
-bolt --only-fs "C-apps--clients/the-boring-rpg/**/*" ws run test
-bolt --only-fs "D-minisites/*" ws run build
 
 ## Alt:
 bolt --only @oh-my-rpg/* ws run test
