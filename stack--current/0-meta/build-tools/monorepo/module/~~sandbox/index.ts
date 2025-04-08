@@ -24,6 +24,7 @@ async function refreshꓽmonorepo() {
 	const PURE_MODULE__DETAILS = await ↆgetꓽall_pure_module_details(pkg_infos_resolver)
 
 	for (const pure_module_details of Object.values(PURE_MODULE__DETAILS)) {
+		const dest_dir = path.dirname(pure_module_details.root‿abspath)
 		await present({
 			indent: '   ',
 
@@ -32,13 +33,31 @@ async function refreshꓽmonorepo() {
 
 			git_root: GIT_ROOT,
 
-			dest_dir: path.dirname(pure_module_details.root‿abspath),
+			dest_dir,
 
 			ts__config__path: MONOREPO__ROOT_TSCONFIG‿abs,
 			ts__custom_types__path: MONOREPO__SHARED_TS_TYPINGS‿abs,
 
 			pkg_infos_resolver,
 		})
+	}
+
+	// _aliases--projects.sh
+	for (const pure_module_details of Object.values(PURE_MODULE__DETAILS)) {
+		const dest_dir = path.dirname(pure_module_details.root‿abspath)
+		const relpath = path.relative(MONOREPO_ROOT, dest_dir)
+		const relpath_split = relpath.split(path.sep).filter(s => !!s)
+		const radix = relpath_split.map(s => s[0]).join('')
+		console.log([
+			'alias',
+			`mono${radix}='cd`,
+			'~/work/src/off/offirmo-monorepo/stack--current/;',
+			'nvm use;',
+			'git--offirmo.sh;',
+			`cd ${relpath_split.slice(0, -2).join(path.sep)}/;`,
+			`cd ${relpath_split.slice(-2).join(path.sep)}/;`,
+			`tabset --color "#006EDB" --badge mono${radix}'`
+		].join(' '))
 	}
 }
 

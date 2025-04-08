@@ -44,13 +44,13 @@
 		"np": "np --no-publish",
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
-	"files": [
-		"dist",
-		"src"
-	],
 	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/1-isomorphic/2-libs--cross-cutting/universal-debug-api--placeholder",
 	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/1-isomorphic/2-libs--cross-cutting/universal-debug-api--placeholder/README.md",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
-	}
+	},
+	"files": [
+		"dist",
+		"module"
+	]
 }

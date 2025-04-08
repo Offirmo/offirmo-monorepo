@@ -318,7 +318,8 @@ function getꓽProgLangs(entry: FileEntry): ProgLang[] {
 
 // examples ? demo?
 function inferꓽdeptype_from_caller(entry: FileEntry): DependencyType {
-	const { path‿rel, extⵧsub } = entry
+	let { path‿rel, extⵧsub } = entry
+	path‿rel = '/' + path‿rel
 
 	if (path‿rel.includes('/__'))
 		return 'dev'

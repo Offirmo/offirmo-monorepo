@@ -40,11 +40,6 @@
 		"np": "np --no-publish",
 		"prepublishOnly": "run-s clean _build:prod ensure-size"
 	},
-
-	"files": [
-		"dist",
-		"src"
-	],
 	"keywords": [
 		"debug",
 		"logger",
@@ -54,5 +49,9 @@
 	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/2-engine--node/2-libs--cross-cutting/universal-debug-api--node/README.md",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
-	}
+	},
+	"files": [
+		"dist",
+		"module"
+	]
 }

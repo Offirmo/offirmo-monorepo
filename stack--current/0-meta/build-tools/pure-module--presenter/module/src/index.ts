@@ -234,6 +234,7 @@ ${pure_module_details.description || ''}
 			pkg.bugs = {
 				url: 'https://github.com/Offirmo/offirmo-monorepo/issues'
 			}
+			pkg.files = [ 'dist', 'module' ]
 		}
 
 		return pkg
