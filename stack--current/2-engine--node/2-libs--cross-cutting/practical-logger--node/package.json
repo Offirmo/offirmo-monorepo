@@ -25,6 +25,7 @@
 		"test--ts": "echo \"@offirmo/practical-logger-node\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
+		"demo": "node --experimental-strip-types ./module/##doc/demo.ts",
 		"test": "run-s test--unit test--ts"
 	},
 	"devDependencies": {
@@ -33,5 +34,10 @@
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/2-engine--node/2-libs--cross-cutting/practical-logger--node",
+	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/2-engine--node/2-libs--cross-cutting/practical-logger--node/README.md",
+	"bugs": {
+		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
 	}
 }

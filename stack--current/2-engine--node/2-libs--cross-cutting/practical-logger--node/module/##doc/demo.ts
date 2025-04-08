@@ -1,8 +1,4 @@
-#!/bin/sh
-':' //# https://sambal.org/?p=1014 ; exec `dirname $0`/../../../../node_modules/.bin/babel-node "$0" "$@"
-'use strict'
-
-const { createLogger } = require('..')
+import { createLogger } from '@offirmo/practical-logger-node'
 
 const logger_trivial = createLogger()
 logger_trivial.log('trivial log test!')
@@ -35,4 +31,3 @@ demo_logger_levels(logger)
 //demo_group(logger)
 demo_incorrect_logger_invocations(logger)
 //demo_devtools_fonts(logger)
-

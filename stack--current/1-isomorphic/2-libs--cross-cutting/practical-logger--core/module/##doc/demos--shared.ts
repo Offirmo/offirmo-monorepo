@@ -1,4 +1,15 @@
-const { ALL_LOG_LEVELS } = require('..')
+import { ALL_LOG_LEVELS, type Logger } from '@offirmo/practical-logger-core'
+import { createError } from '@offirmo/error-utils'
+
+/////////////////////////////////////////////////
+
+const DEMO_ERR = createError('Timeout loading state!', {
+	statusCode: 1234,
+	httpStatus: 418, // to check that custom props are preserved
+	hello: 42,
+})
+
+/////////////////////////////////////////////////
 
 function demo_legacy_console() {
 	console.log('------------↓ For comparison: Legacy console: levels, in order ↓-----------')
@@ -9,8 +20,7 @@ function demo_legacy_console() {
 	console.error('Legacy console > message with level "error"', { level: 'error', foo: 42 })
 }
 
-
-function demo_logger_basic_usage(logger, in_group = true) {
+function demo_logger_basic_usage(logger: Logger, in_group = true) {
 	console[in_group ? 'group' : 'log']('------------↓ Practical logger demo: example real usage ↓------------')
 
 	logger.silly('Hi!')
@@ -28,10 +38,7 @@ function demo_logger_basic_usage(logger, in_group = true) {
 
 	logger.warn('Restoration of state is taking more time than expected', { elapsedMs: 3000 })
 
-	const err = new Error('Timeout loading state!')
-	err.httpStatus = 418 // to check that custom props are preserved
-
-	logger.error(undefined, err)
+	logger.error(undefined, DEMO_ERR)
 
 	logger.info('Reverting to last known local state')
 
@@ -49,7 +56,7 @@ function demo_logger_basic_usage(logger, in_group = true) {
 	if (in_group) console.groupEnd()
 }
 
-function demo_logger_levels(logger) {
+function demo_logger_levels(logger: Logger) {
 	console.log('------------↓ Practical logger demo: all levels, in order ↓------------')
 	;[...ALL_LOG_LEVELS].reverse().forEach(level =>
 		logger[level](`message with level "${level}"`, { level, foo: 42 }),
@@ -64,7 +71,7 @@ console.groupEnd()
 */
 }
 
-function demo_group(logger) {
+function demo_group(logger: Logger) {
 	console.log('------------↓ logger demo: group ↓------------')
 
 	logger.group('level 1 (NOT collapsed)')
@@ -110,7 +117,7 @@ function demo_group(logger) {
 	logger.groupEnd()
 }
 
-function demo_incorrect_logger_invocations(logger) {
+function demo_incorrect_logger_invocations(logger: any) {
 	const bob = {
 		firstName: 'Bob',
 		lastName: 'Dupont',
@@ -118,9 +125,6 @@ function demo_incorrect_logger_invocations(logger) {
 	}
 
 	const more = 'some stuff'
-
-	const err = new Error('Timeout loading state!')
-	err.httpStatus = 418 // to check that custom props are preserved
 
 	console.group('------------↓ logger demo: incorrect invocation (bunyan style) ↓------------')
 	logger.info()
@@ -130,15 +134,15 @@ function demo_incorrect_logger_invocations(logger) {
 
 	logger.info({foo: 'bar'}, 'hi')
 
-	logger.info(err)
-	logger.info(err, 'more on this: %s', more)
+	logger.info(DEMO_ERR)
+	logger.info(DEMO_ERR, 'more on this: %s', more)
 
-	logger.info({foo: 'bar', err: err}, 'some msg about this error')
+	logger.info({foo: 'bar', err: DEMO_ERR}, 'some msg about this error')
 	logger.warn('foo', 'bar', 42)
 	console.groupEnd()
 }
 
-function demo_logger_api(getLogger) {
+function demo_logger_api(getLogger: (params: any) => Logger) {
 	console.log('------------↓ logger creation and basic usage ↓------------')
 	const root_logger = getLogger({
 		suggestedLevel: 'silly',
@@ -159,18 +163,12 @@ function demo_logger_api(getLogger) {
 	demo_incorrect_logger_invocations(logger)
 }
 
-function demo_error(logger, in_group = true) {
+function demo_error(logger: Logger, in_group = true) {
 	console[in_group ? 'group' : 'log']('------------↓ logger demo: error display ↓------------')
 
 	function foo() {
 		function bar() {
-			const err = new Error('Test error!')
-			err.statusCode = 1234
-			err.details = {
-				hello: 42,
-			}
-
-			throw err
+			throw DEMO_ERR
 		}
 		bar()
 	}
@@ -228,7 +226,8 @@ function demo_devtools_fonts() {
 	console.groupEnd()
 }
 
-module.exports = {
+/////////////////////////////////////////////////
+export {
 	demo_legacy_console,
 	demo_logger_basic_usage,
 	demo_logger_levels,

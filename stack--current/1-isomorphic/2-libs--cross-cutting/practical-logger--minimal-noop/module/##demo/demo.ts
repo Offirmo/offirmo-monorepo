@@ -1,6 +1,6 @@
 import { createLogger } from '@offirmo/practical-logger-minimal-noop'
 
-const {
+import {
 	demo_legacy_console,
 	demo_logger_basic_usage,
 	demo_logger_levels,
@@ -8,7 +8,7 @@ const {
 	demo_incorrect_logger_invocations,
 	demo_logger_api,
 	demo_devtools_fonts,
-} = require('../../practical-logger-core/doc/shared-demo')
+} from '../../practical-logger-core/doc/shared-demo'
 
 const logger = createLogger({
 	name: 'demo',

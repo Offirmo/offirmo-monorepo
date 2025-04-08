@@ -27,5 +27,10 @@
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/1-isomorphic/1-libs--simple/random",
+	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/1-isomorphic/1-libs--simple/random/README.md",
+	"bugs": {
+		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
 	}
 }

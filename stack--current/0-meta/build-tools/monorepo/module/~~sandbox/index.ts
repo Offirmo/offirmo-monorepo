@@ -5,6 +5,7 @@ import { getꓽpure_module_details, type PureModuleDetails, type Options as Pure
 import { present } from '@offirmo-private/pure-module--presenter'
 
 import {
+	GIT_ROOT,
 	MONOREPO_ROOT,
 	MONOREPO__ROOT_TSCONFIG‿abs,
 	MONOREPO__SHARED_TS_TYPINGS‿abs,
@@ -28,6 +29,8 @@ async function refreshꓽmonorepo() {
 
 			pure_module_path: pure_module_details.root‿abspath,
 			pure_module_details,
+
+			git_root: GIT_ROOT,
 
 			dest_dir: path.dirname(pure_module_details.root‿abspath),
 

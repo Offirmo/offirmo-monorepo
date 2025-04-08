@@ -1,18 +1,13 @@
-#!/bin/sh
-':' //# https://sambal.org/?p=1014 ; exec `dirname $0`/../../node_modules/.bin/babel-node "$0" "$@"
-'use strict'
 
-/* eslint-disable no-unused-vars */
+/////////////////////////////////////////////////
 
 const { createLogger } = require('@offirmo/practical-logger-node')
-const { getRootSXC } = require('@offirmo-private/soft-execution-context')
-
-const {
+import {
+	getRootSXC,
 	listenToUncaughtErrors,
 	listenToUnhandledRejections,
 	decorateWithDetectedEnv,
-} = require('../..')
-const good_lib  = require('./good_lib.ts')
+} from '@offirmo-private/soft-execution-context--node'
 
 const APP = 'SXC_NODE_DEMO'
 
@@ -23,8 +18,7 @@ const logger = createLogger({
 
 logger.notice(`Hello from ${APP}...`)
 
-
-const SXC = getRootSXC()
+getRootSXC()
 	.setLogicalStack({
 		module: APP,
 	})
@@ -32,7 +26,7 @@ const SXC = getRootSXC()
 		logger,
 	})
 
-SXC.emitter.on('final-error', function onError({SXC, err}) {
+getRootSXC().emitter.on('final-error', function onError({SXC, err}) {
 	logger.log('that', {err})
 
 	// or direct to reporter
@@ -42,8 +36,7 @@ SXC.emitter.on('final-error', function onError({SXC, err}) {
 	})
 })
 
-
-SXC.emitter.on('analytics', function onError({SXC, eventId, details}) {
+getRootSXC().emitter.on('analytics', function onError({SXC, eventId, details}) {
 	console.groupCollapsed(`⚡  Analytics! ⚡  ${eventId}`)
 	console.log('details', details)
 	console.groupEnd()
@@ -53,8 +46,13 @@ listenToUncaughtErrors()
 listenToUnhandledRejections()
 decorateWithDetectedEnv()
 
+/////////////////////////////////////////////////
+
+
+import * as good_lib from './good_lib.ts'
+
 // Top uses tryCatch
-SXC.xTryCatch('starting', ({SXC, logger}) => {
+getRootSXC().xTryCatch('starting', ({SXC, logger}) => {
 	const good_lib_inst = good_lib.create({SXC})
 	SXC.xTry('calling good lib', () => good_lib_inst.foo_sync({x: 1}))
 

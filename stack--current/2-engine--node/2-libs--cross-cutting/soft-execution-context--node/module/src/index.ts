@@ -43,7 +43,7 @@ function decorateWithDetectedEnv() {
 }
 
 // for unit tests only, for convenience
-function _force_set_level_of_uda_default_logger(suggestedLevel) {
+/*function _force_set_level_of_uda_default_logger(suggestedLevel: string) {
 	let logger = getRootSXC().getInjectedDependencies().logger // can be console or UDA
 	if (!logger.setLevel) {
 		try {
@@ -65,7 +65,7 @@ function _force_set_level_of_uda_default_logger(suggestedLevel) {
 	catch {
 		logger.warn('Couldn’t force an UDA logger with given level!')
 	}
-}
+}*/
 
 /////////////////////
 
@@ -74,5 +74,5 @@ export {
 	listenToUncaughtErrors,
 	listenToUnhandledRejections,
 	decorateWithDetectedEnv,
-	_force_set_level_of_uda_default_logger, // for convenience, especially unit tests
+	//_force_set_level_of_uda_default_logger, // for convenience, especially unit tests
 }

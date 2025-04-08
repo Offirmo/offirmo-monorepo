@@ -1,6 +1,6 @@
-const { createLogger } = require('..')
+import { createLogger } from '@offirmo/practical-logger-core'
 
-const {
+import {
 	demo_legacy_console,
 	demo_logger_basic_usage,
 	demo_logger_levels,
@@ -9,7 +9,7 @@ const {
 	demo_incorrect_logger_invocations,
 	demo_logger_api,
 	demo_devtools_fonts,
-} = require('./shared-demo')
+} from './demos--shared.ts'
 
 const logger = createLogger({
 	name: 'demo',

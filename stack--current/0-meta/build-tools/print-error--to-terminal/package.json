@@ -24,6 +24,7 @@
 		"test--ts": "echo \"@offirmo-private/print-error-to-terminal\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
+		"demo": "node --experimental-strip-types ./module/src/##doc/demo.ts",
 		"test": "run-s test--unit test--ts"
 	},
 	"devDependencies": {

@@ -24,6 +24,7 @@ interface Params {
 	pure_module_path: string
 	pure_module_details: PureModuleDetails
 	dest_dir: string
+	git_root: string
 	ts__config__path: string
 	ts__custom_types__path: string
 
@@ -37,8 +38,9 @@ async function present({
 
 	pure_module_path,
 	pure_module_details,
-
 	dest_dir,
+
+	git_root,
 	ts__config__path,
 	ts__custom_types__path,
 
@@ -224,6 +226,14 @@ ${pure_module_details.description || ''}
 			pkg.devDependencies = Object.fromEntries(
 				Array.from(pure_module_details.depsⵧdev).sort().map(dep => [dep, pkg_infos_resolver.ǃgetꓽversionⵧfor_dep(dep)])
 			)
+		}
+
+		if (pure_module_details.isꓽpublished) {
+			pkg.repository = `https://github.com/Offirmo/offirmo-monorepo/tree/main/` + path.relative(git_root, dest_dir‿abspath)
+			pkg.homepage = pkg.repository + '/README.md'
+			pkg.bugs = {
+				url: 'https://github.com/Offirmo/offirmo-monorepo/issues'
+			}
 		}
 
 		return pkg

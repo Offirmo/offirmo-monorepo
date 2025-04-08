@@ -101,7 +101,7 @@ export interface SoftExecutionContext<
 	getErrorDetails: () => ErrorDetails & BaseErrorDetails
 
 	createError: (message: string, details: XXError['details']) => XXError
-	handleError: (err: XXError, debugId: string) => void
+	handleError: (err: unknown, debugId: string) => void
 
 	xTry: <T>(operation: string, fn: Operation<T, Injections, AnalyticsDetails, ErrorDetails>) => T
 	xTryCatch: <T>(operation: string, fn: Operation<T, Injections, AnalyticsDetails, ErrorDetails>) => T | undefined

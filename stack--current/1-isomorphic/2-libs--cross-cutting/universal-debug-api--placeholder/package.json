@@ -14,7 +14,6 @@
 	"exports": {
 		".": "./module/src/index.ts"
 	},
-
 	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
@@ -49,8 +48,8 @@
 		"dist",
 		"src"
 	],
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/3-advanced--multi/universal-debug-api-placeholder",
-	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/3-advanced--multi/universal-debug-api-placeholder",
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/1-isomorphic/2-libs--cross-cutting/universal-debug-api--placeholder",
+	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/1-isomorphic/2-libs--cross-cutting/universal-debug-api--placeholder/README.md",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
 	}

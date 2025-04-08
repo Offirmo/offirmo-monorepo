@@ -1,8 +1,10 @@
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
+import { getRootSXC, type SoftExecutionContext, type WithSXC } from '@offirmo-private/soft-execution-context'
+
+/////////////////////////////////////////////////
 
 const LIB = 'GOOD_LIB'
 
-function getꓽSXC(parent) {
+function getꓽSXC(parent?: SoftExecutionContext) {
 	return (parent || getRootSXC())
 		.createChild()
 		.setLogicalStack({module: LIB})
@@ -10,11 +12,13 @@ function getꓽSXC(parent) {
 
 let instance_count = 0
 
-function create({SXC} = {}) {
+/////////////////////////////////////////////////
+
+function create({ SXC }: Partial<WithSXC<{}, {}, {}>> = {}) {
 	instance_count++
 	SXC = getꓽSXC(SXC)
 
-	return SXC.xTryCatch(`instantiating#${instance_count}`, ({logger, ENV}) => {
+	return SXC.xTry(`instantiating#${instance_count}`, ({logger, ENV}) => {
 		logger.trace(`instantiating#${instance_count}`, {ENV})
 
 		// test
@@ -63,6 +67,7 @@ function create({SXC} = {}) {
 	})
 }
 
+/////////////////////////////////////////////////
 
 export {
 	create,
