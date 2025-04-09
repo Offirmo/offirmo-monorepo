@@ -1,0 +1,12 @@
+
+<component name="ProjectRunConfigurationManager">
+	<configuration default="false"
+		name="@offirmo/universal-debug-api-placeholder -- Demo"
+		type="NodeJSConfigurationType"
+		path-to-node="$USER_HOME$/.nvm/versions/node/v23.11.0/bin/node"
+		node-parameters="--experimental-strip-types"
+		path-to-js-file="module/src/##doc/demo.ts"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/2-libs--cross-cutting/universal-debug-api--placeholder">
+		<method v="2" />
+	</configuration>
+</component>

@@ -1,15 +1,15 @@
 
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="@oh-my-rpg/state--prng -- UT" type="mocha-javascript-test-runner">
-    <node-interpreter>$USER_HOME$/.nvm/versions/node/v23.11.0/bin/node</node-interpreter>
-    <node-options>--experimental-strip-types --experimental-require-module</node-options>
-    <mocha-package>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/node_modules/mocha</mocha-package>
-    <working-directory>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/7-libs--rpg/state--prng</working-directory>
-    <pass-parent-env>true</pass-parent-env>
-    <ui>bdd</ui>
-    <extra-mocha-options>--bail</extra-mocha-options>
-    <test-kind>PATTERN</test-kind>
-    <test-pattern>./module/**/*tests.ts</test-pattern>
-    <method v="2" />
-  </configuration>
+	<configuration default="false" name="@oh-my-rpg/state--prng -- UT" type="mocha-javascript-test-runner">
+		<node-interpreter>$USER_HOME$/.nvm/versions/node/v23.11.0/bin/node</node-interpreter>
+		<node-options>--experimental-strip-types</node-options>
+		<mocha-package>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/node_modules/mocha</mocha-package>
+		<working-directory>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/7-libs--rpg/state--prng</working-directory>
+		<pass-parent-env>true</pass-parent-env>
+		<ui>bdd</ui>
+		<extra-mocha-options>--bail</extra-mocha-options>
+		<test-kind>PATTERN</test-kind>
+		<test-pattern>./module/**/*tests.ts</test-pattern>
+		<method v="2" />
+	</configuration>
 </component>

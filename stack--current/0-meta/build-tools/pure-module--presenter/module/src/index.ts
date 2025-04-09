@@ -26,6 +26,7 @@ interface Params {
 	pure_module_details: PureModuleDetails
 	dest_dir: string
 	git_root: string
+	bolt_root: string
 	ts__config__path: string
 	ts__custom_types__path: string
 
@@ -250,18 +251,18 @@ ${pure_module_details.description || ''}
 
 	const webstorm__run_configⵧUT = `
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="${pure_module_details.fqname} -- UT" type="mocha-javascript-test-runner">
-    <node-interpreter>$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node</node-interpreter>
-    <node-options>--experimental-strip-types --experimental-require-module</node-options>
-    <mocha-package>$USER_HOME$/${path.relative(process.env['HOME'], path.resolve(bolt_root))}/node_modules/mocha</mocha-package>
-    <working-directory>$USER_HOME$/${dest_dir__from_HOME‿rel}</working-directory>
-    <pass-parent-env>true</pass-parent-env>
-    <ui>bdd</ui>
-    <extra-mocha-options>--bail</extra-mocha-options>
-    <test-kind>PATTERN</test-kind>
-    <test-pattern>./module/**/*tests.ts</test-pattern>
-    <method v="2" />
-  </configuration>
+	<configuration default="false" name="${pure_module_details.fqname} -- UT" type="mocha-javascript-test-runner">
+		<node-interpreter>$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node</node-interpreter>
+		<node-options>--experimental-strip-types</node-options>
+		<mocha-package>$USER_HOME$/${path.relative(process.env['HOME'], path.resolve(bolt_root))}/node_modules/mocha</mocha-package>
+		<working-directory>$USER_HOME$/${dest_dir__from_HOME‿rel}</working-directory>
+		<pass-parent-env>true</pass-parent-env>
+		<ui>bdd</ui>
+		<extra-mocha-options>--bail</extra-mocha-options>
+		<test-kind>PATTERN</test-kind>
+		<test-pattern>./module/**/*tests.ts</test-pattern>
+		<method v="2" />
+	</configuration>
 </component>
 `
 	promises.push(fs.writeFile(
@@ -269,6 +270,28 @@ ${pure_module_details.description || ''}
 		webstorm__run_configⵧUT,
 		{ encoding: 'utf-8' }
 	))
+
+	if (pure_module_details.demo) {
+		// 		nameIsGenerated="false"
+		const webstorm__run_configⵧdemo = `
+<component name="ProjectRunConfigurationManager">
+	<configuration default="false"
+		name="${pure_module_details.fqname} -- Demo"
+		type="NodeJSConfigurationType"
+		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
+		node-parameters="--experimental-strip-types"
+		path-to-js-file="${path.relative(dest_dir, pure_module_details.demo.path‿abs)}"
+		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
+		<method v="2" />
+	</configuration>
+</component>
+`
+		promises.push(fs.writeFile(
+			path.resolve(dest_dir‿abspath, 'webstorm--demo.run.xml'),
+			webstorm__run_configⵧdemo,
+			{ encoding: 'utf-8' }
+		))
+	}
 }
 
 /////////////////////////////////////////////////

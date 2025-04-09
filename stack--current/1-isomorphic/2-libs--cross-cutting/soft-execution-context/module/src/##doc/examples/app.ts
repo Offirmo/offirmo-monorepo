@@ -19,7 +19,6 @@ logger.log(`Hello from ${APP}...`)
 
 // important: Root = direct init of root SXC
 getRootSXC()
-	.createChild()
 	.setLogicalStack({
 		module: APP,
 	})

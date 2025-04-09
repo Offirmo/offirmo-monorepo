@@ -48,7 +48,15 @@ async function refreshꓽmonorepo() {
 		const dest_dir = path.dirname(pure_module_details.root‿abspath)
 		const relpath = path.relative(MONOREPO_ROOT, dest_dir)
 		const relpath_split = relpath.split(path.sep).filter(s => !!s)
-		const radix = relpath_split.map(s => s[0]).join('')
+		const radix = relpath_split
+			.map(segment => {
+				if ('0123456789'.includes(segment[0]))
+					return segment
+
+				return segment.split('--')
+			})
+			.flat()
+			.map(s => s[0]).join('')
 		console.log([
 			'alias',
 			`mono${radix}='cd`.padStart(12),
