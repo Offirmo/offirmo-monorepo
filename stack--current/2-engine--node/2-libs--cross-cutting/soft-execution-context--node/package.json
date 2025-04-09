@@ -22,7 +22,7 @@
 		"test--ts": "echo \"@offirmo-private/soft-execution-context--node\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
-		"demo": "node --experimental-strip-types ./module/src/##doc/demo.ts",
+		"demo": "node --experimental-strip-types ./module/##doc/demo.ts",
 		"test": "run-s test--ts"
 	},
 	"devDependencies": {

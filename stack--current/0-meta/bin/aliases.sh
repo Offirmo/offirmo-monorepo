@@ -1,3 +1,5 @@
+#@IgnoreInspection BashAddShebang
+[ "$VERBOSE__RC" == true ] && echo "* […monorepo/…/aliases.sh] hello!"
 alias  mono0bfl='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/fs--ls/;                               tabset --color "#006EDB" --badge mono0bfl'
 alias   mono0bm='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/monorepo/;                             tabset --color "#006EDB" --badge mono0bm'
 alias   mono0bn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/node-typescript-compiler/;             tabset --color "#006EDB" --badge mono0bn'
