@@ -11,6 +11,7 @@ import {
 	MONOREPO__SHARED_TS_TYPINGS‿abs,
 } from '../src/consts.ts'
 import { getꓽdefault_namespace, getꓽall_known_pure_module__dirs‿abspath } from '../src/index.ts'
+import * as process from 'node:process'
 
 console.log(`\n~~~~~~~~~~~~~~~~\nHello!!!`)
 
@@ -24,7 +25,6 @@ async function refreshꓽmonorepo() {
 	const PURE_MODULE__DETAILS = await ↆgetꓽall_pure_module_details(pkg_infos_resolver)
 
 	for (const pure_module_details of Object.values(PURE_MODULE__DETAILS)) {
-		const dest_dir = path.dirname(pure_module_details.root‿abspath)
 		await present({
 			indent: '   ',
 
@@ -32,8 +32,9 @@ async function refreshꓽmonorepo() {
 			pure_module_details,
 
 			git_root: GIT_ROOT,
+			bolt_root: MONOREPO_ROOT,
 
-			dest_dir,
+			dest_dir: path.dirname(pure_module_details.root‿abspath),
 
 			ts__config__path: MONOREPO__ROOT_TSCONFIG‿abs,
 			ts__custom_types__path: MONOREPO__SHARED_TS_TYPINGS‿abs,
@@ -50,12 +51,12 @@ async function refreshꓽmonorepo() {
 		const radix = relpath_split.map(s => s[0]).join('')
 		console.log([
 			'alias',
-			`mono${radix}='cd`,
-			'~/work/src/off/offirmo-monorepo/stack--current/;',
+			`mono${radix}='cd`.padStart(12),
+			`~/${path.relative(process.env['HOME']!, MONOREPO_ROOT)}/;`,
 			'nvm use;',
 			'git--offirmo.sh;',
-			`cd ${relpath_split.slice(0, -2).join(path.sep)}/;`,
-			`cd ${relpath_split.slice(-2).join(path.sep)}/;`,
+			`cd ${relpath_split.slice(0, -2).join(path.sep)}/;`.padEnd(20),
+			`cd ${relpath_split.slice(-2).join(path.sep)}/;`.padEnd(53),
 			`tabset --color "#006EDB" --badge mono${radix}'`
 		].join(' '))
 	}

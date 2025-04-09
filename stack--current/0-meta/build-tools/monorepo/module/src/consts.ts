@@ -12,6 +12,11 @@ assert(fs.existsSync(GIT_ROOT), `GIT_ROOT dir "${GIT_ROOT}" should exist!`)
 
 /////////////////////////////////////////////////
 
+const NODE_MAJOR_VERSION = 23
+assert(process.versions.node.startsWith(String(NODE_MAJOR_VERSION)), `Unexpected node runtime version "${process.versions.node}", should be ^${NODE_MAJOR_VERSION}!`)
+
+/////////////////////////////////////////////////
+
 const MONOREPO_ROOT = path.resolve(path.join(GIT_ROOT, 'stack--current'))
 assert(fs.existsSync(MONOREPO_ROOT), `MONOREPO_ROOT dir "${MONOREPO_ROOT}" should exist!`)
 
@@ -25,6 +30,7 @@ assert(fs.existsSync(MONOREPO__SHARED_TS_TYPINGS‿abs), `MONOREPO__SHARED_TS_TY
 
 export {
 	GIT_ROOT,
+	NODE_MAJOR_VERSION,
 	MONOREPO_ROOT,
 	MONOREPO__ROOT_TSCONFIG‿abs,
 	MONOREPO__SHARED_TS_TYPINGS‿abs,

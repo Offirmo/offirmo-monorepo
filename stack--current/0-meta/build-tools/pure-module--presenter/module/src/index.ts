@@ -9,6 +9,7 @@ import { writeJsonFile as write_json_file } from 'write-json-file' // full pkg i
 
 import { getꓽpure_module_details, type PureModuleDetails } from '@offirmo-private/pure-module--analyzer'
 import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
+import * as process from 'node:process'
 
 /////////////////////////////////////////////////
 
@@ -41,12 +42,15 @@ async function present({
 	dest_dir,
 
 	git_root,
+	bolt_root,
 	ts__config__path,
 	ts__custom_types__path,
 
 	pkg_infos_resolver = new PkgInfosResolver()
 }: Params) {
 	const dest_dir‿abspath = path.resolve(dest_dir)
+	assert(process.env['HOME'], `$HOME is expected to be set!`)
+	const dest_dir__from_HOME‿rel = path.relative(process.env['HOME'], dest_dir‿abspath)
 	console.log(`${indent}🗃  exposing pure code module to "${dest_dir‿abspath}"…`)
 
 	if (isAncestorDir(pure_module_details.root‿abspath, dest_dir‿abspath)) {
@@ -241,6 +245,29 @@ ${pure_module_details.description || ''}
 	})()
 	promises.push(write_json_file(
 		path.resolve(dest_dir‿abspath, 'package.json'), packageᐧjson
+	))
+
+
+	const webstorm__run_configⵧUT = `
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="${pure_module_details.fqname} -- UT" type="mocha-javascript-test-runner">
+    <node-interpreter>$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node</node-interpreter>
+    <node-options>--experimental-strip-types --experimental-require-module</node-options>
+    <mocha-package>$USER_HOME$/${path.relative(process.env['HOME'], path.resolve(bolt_root))}/node_modules/mocha</mocha-package>
+    <working-directory>$USER_HOME$/${dest_dir__from_HOME‿rel}</working-directory>
+    <pass-parent-env>true</pass-parent-env>
+    <ui>bdd</ui>
+    <extra-mocha-options>--bail</extra-mocha-options>
+    <test-kind>PATTERN</test-kind>
+    <test-pattern>./module/**/*tests.ts</test-pattern>
+    <method v="2" />
+  </configuration>
+</component>
+`
+	promises.push(fs.writeFile(
+		path.resolve(dest_dir‿abspath, 'webstorm--UT.run.xml'),
+		webstorm__run_configⵧUT,
+		{ encoding: 'utf-8' }
 	))
 }
 
