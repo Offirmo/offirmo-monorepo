@@ -9,9 +9,8 @@ export interface BaseInjections {
 
 	// detected env
 	ENV: string
-	NODE_ENV: string
 	IS_DEV_MODE: boolean
-	IS_VERBOSE: boolean
+	IS_VERBOSE: boolean // common CLI flag triggering extra debugging
 	CHANNEL: string
 	SESSION_START_TIME_MS: TimestampUTCMs
 }
@@ -26,7 +25,7 @@ export interface BaseErrorDetails {
 	CHANNEL: string
 }
 
-export interface WithSXC<Injections, AnalyticsDetails, ErrorDetails> {
+export interface WithSXC<Injections = {}, AnalyticsDetails = {}, ErrorDetails = {}> {
 	SXC: SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>
 }
 
@@ -56,8 +55,7 @@ export interface SoftExecutionContext<
 
 	/////////////////////
 	// core
-	createChild: ()
-		=> SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>
+	createChild: <ExtraInjections = Injections, ExtraAnalyticsDetails = AnalyticsDetails, ExtraErrorDetails = ErrorDetails>() => SoftExecutionContext<ExtraInjections, ExtraAnalyticsDetails, ExtraErrorDetails>
 
 	// TODO hide? encapsulate?
 	emitter: Emittery<EventDataMap<Injections, AnalyticsDetails, ErrorDetails>>
@@ -67,7 +65,7 @@ export interface SoftExecutionContext<
 	injectDependencies: (p: Partial<
 		Injections
 		& BaseInjections
-		& WithSXC<Injections, AnalyticsDetails, ErrorDetails>
+		//& WithSXC<Injections, AnalyticsDetails, ErrorDetails>
 	>) => SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>
 	getInjectedDependencies: () =>
 		Injections
@@ -106,12 +104,13 @@ export interface SoftExecutionContext<
 	xTry: <T>(operation: string, fn: Operation<T, Injections, AnalyticsDetails, ErrorDetails>) => T
 	xTryCatch: <T>(operation: string, fn: Operation<T, Injections, AnalyticsDetails, ErrorDetails>) => T | undefined
 
-	xPromiseTry: <T>(operation: string, fn: Operation<Promise<T>, Injections, AnalyticsDetails, ErrorDetails>) => Promise<T>
-	xNewPromise: <T>(operation: string, fn: (
+	xPromiseTry: <T>(operation: string, fn: Operation<(T | Promise<T>), Injections, AnalyticsDetails, ErrorDetails>) => Promise<T>
+	// TODO one day xPromiseTryCatch
+	/*xNewPromise: <T>(operation: string, fn: (
 		p: Injections
 			& BaseInjections
 			& WithSXC<Injections, AnalyticsDetails, ErrorDetails>,
 		_resolve: (value?: T | PromiseLike<T>) => void,
 		_reject: (reason?: any) => void,
-	) => void) => Promise<T>
+	) => void) => Promise<T>*/
 }

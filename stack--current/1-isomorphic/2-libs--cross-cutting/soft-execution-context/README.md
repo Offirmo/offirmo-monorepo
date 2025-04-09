@@ -102,7 +102,6 @@ SXC.emitter.emit('analytics', { SXC, eventId, details })
 |-------------------------|----------|-----------|---------------|------------- |
 | `SXC`                   | yes✅    | -         | -             | the current Software Execution Context |
 | `logger`                | yes✅     | -         | -             | default to console |
-| `NODE_ENV`              | yes✅     | -         | -             | intended usage: if "development", may activate extra error checks, extra error reporting (cf. React) Mirror of NODE_ENV at evaluation time, defaulting to `'development'` if not set. `'production'` or `development` |
 | `ENV`                   | yes✅     | yes✅      | yes✅       | less connoted alias of `NODE_ENV` 😉 |
 | `IS_DEV_MODE`           | yes✅     | -         | -             | default to `false`. Used to activate dev commands or reportings, ex. extra settings, extra UI |
 | `IS_VERBOSE`            | yes✅     | -         | -             | default to `false`. Used to activate extra reporting on tasks, intent like --verbose |

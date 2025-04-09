@@ -17,6 +17,7 @@ const PLUGIN: SXCPlugin = {
 
 			root_state = TopState.reduce_plugin<State>(root_state, PLUGIN_ID, state => {
 				Object.entries(deps).forEach(([key, value]) => {
+					if (key === 'SXC') throw new Error(`SXC.injectDependencies() forbidden internal property "SXC"!`)
 					state = StateFns.injectDependency(state, key, value)
 				})
 				return state
@@ -31,7 +32,10 @@ const PLUGIN: SXCPlugin = {
 			const plugin_state = this[INTERNAL_PROP].plugins[PLUGIN_ID]
 
 			// TODO review: why do we have to flatten? benefit?
-			return flattenOwnAndInheritedProps(plugin_state.context)
+			return {
+				...flattenOwnAndInheritedProps(plugin_state.context),
+				SXC: this,
+			}
 		}
 
 	},

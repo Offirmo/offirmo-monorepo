@@ -48,7 +48,6 @@ function _createSXC<Injections, AnalyticsDetails, ErrorDetails>(parent?: Interna
 
 		_decorateWithDetectedEnv(SXC)
 	}
-	SXC.injectDependencies({ SXC })
 
 	// Here we could send an event on the SXC bus. No usage for now.
 	// Here we could have lifecycle methods. No usage for now.
@@ -84,7 +83,6 @@ function _decorateWithDetectedEnv(SXC: SoftExecutionContext<any>) {
 
 	SXC.injectDependencies({
 		ENV,
-		'NODE_ENV': ENV, // yes, intentional 1) ENV = NODE_ENV 2) default value
 		IS_DEV_MODE,
 		IS_VERBOSE,
 		CHANNEL,

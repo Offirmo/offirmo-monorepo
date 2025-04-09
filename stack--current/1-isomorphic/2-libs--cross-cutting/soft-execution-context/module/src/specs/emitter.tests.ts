@@ -5,7 +5,7 @@ import { LIB } from '../consts.ts'
 import { _TEST_ONLY__reset_root_SXC } from '../index.ts'
 
 
-describe(`${LIB}`, function () {
+describe(`${LIB} -- internal event emitter`, function () {
 	function _mocha_bug_clean_global() {
 		// https://github.com/mochajs/mocha/issues/4954
 		_TEST_ONLY__reset_root_SXC()
@@ -13,11 +13,7 @@ describe(`${LIB}`, function () {
 	before(_TEST_ONLY__reset_root_SXC)
 	afterEach(_TEST_ONLY__reset_root_SXC)
 
+	it('should work')
 
-	describe('internal event emitter', function () {
-
-		it('should work')
-
-		it('should be shared across all SXC instances')
-	})
+	it('should be shared across all SXC instances')
 })
