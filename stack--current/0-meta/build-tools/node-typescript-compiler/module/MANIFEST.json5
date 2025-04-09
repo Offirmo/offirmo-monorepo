@@ -4,5 +4,5 @@
 	description: "Exposes typescript compiler (tsc) as a node.js module",
 	isꓽpublished: true,
 
-	_dont_present: true,
+	_dontꓽpresent: true,
 }

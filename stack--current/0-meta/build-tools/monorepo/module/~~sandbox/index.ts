@@ -1,4 +1,5 @@
 import * as path from 'node:path'
+import * as fs from 'node:fs'
 
 import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
 import { getꓽpure_module_details, type PureModuleDetails, type Options as PureModuleAnalyzerOptions } from '@offirmo-private/pure-module--analyzer'
@@ -44,11 +45,13 @@ async function refreshꓽmonorepo() {
 	}
 
 	// _aliases--projects.sh
+	const aliases: string[] = []
+	const radix_set = new Set<string>()
 	for (const pure_module_details of Object.values(PURE_MODULE__DETAILS)) {
 		const dest_dir = path.dirname(pure_module_details.root‿abspath)
 		const relpath = path.relative(MONOREPO_ROOT, dest_dir)
 		const relpath_split = relpath.split(path.sep).filter(s => !!s)
-		const radix = relpath_split
+		let radix = relpath_split
 			.map(segment => {
 				if ('0123456789'.includes(segment[0]))
 					return segment
@@ -57,17 +60,32 @@ async function refreshꓽmonorepo() {
 			})
 			.flat()
 			.map(s => s[0]).join('')
-		console.log([
+		let dedupe: number = 1
+		while (radix_set.has(radix + (dedupe > 1 ? String(dedupe) : ''))) {
+			dedupe++
+		}
+		radix = radix + (dedupe > 1 ? String(dedupe) : '')
+		radix_set.add(radix)
+		const alias = [
 			'alias',
-			`mono${radix}='cd`.padStart(12),
+			`mono${radix}='cd`.padStart(13),
 			`~/${path.relative(process.env['HOME']!, MONOREPO_ROOT)}/;`,
 			'nvm use;',
 			'git--offirmo.sh;',
 			`cd ${relpath_split.slice(0, -2).join(path.sep)}/;`.padEnd(20),
 			`cd ${relpath_split.slice(-2).join(path.sep)}/;`.padEnd(53),
 			`tabset --color "#006EDB" --badge mono${radix}'`
-		].join(' '))
+		].join(' ')
+		aliases.push(alias)
 	}
+
+	fs.writeFileSync(
+		path.resolve(MONOREPO_ROOT, '0-meta', 'bin', 'aliases.sh'),
+		`#@IgnoreInspection BashAddShebang
+[ "$VERBOSE__RC" == true ] && echo "* […monorepo/…/aliases.sh] hello!"
+` + aliases.join('\n'),
+		{ encoding: 'utf-8' },
+	)
 }
 
 /////////////////////////////////////////////////

@@ -3,10 +3,14 @@ import * as path from 'node:path'
 import * as fs from 'node:fs'
 import { isBuiltin as isBuiltInNodeModule } from 'node:module'
 
+// @ts-ignore
 import walk from 'ignore-walk'
-import { parse as parseImports } from 'parse-imports-ts'
+// @ts-ignore
 import JSON5 from 'json5'
+
+import { parse as parseImports } from 'parse-imports-ts'
 import { writeJsonFile as write_json_file } from 'write-json-file'
+
 import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
 
 /////////////////////////////////////////////////
@@ -82,43 +86,42 @@ type ProgLang =
 	| 'css'
 	| 'md'
 
-
 /* This type should have AS FEW ENTRIES as possible
  * reminder that we aim for a single source of truth
  * Anything that can be inferred from the code itself should be!
- *
- * So all entries are optional, only to be used if an override is needed or if not inferrable
  */
-interface PureModuleManifest {
-	name?: string // NOT including the namespace
-	namespace?: string
+interface PureModuleDetailsAllowedInManifest {
+	name: string // NOT including the namespace
+	namespace: string
 	license?: string // SPDX
 	description?: string
-	version?: string // Semver version TODO proper type
-	isꓽpublished?: boolean
-	isꓽapp?: boolean // app in the generic sense of "not a lib"
-	hasꓽside_effects?: boolean // assuming most pkgs don't
-	status?: // EXPERIMENTAL rating of modules TODO clarify
+	version: string // Semver version TODO proper type
+	isꓽpublished: boolean
+	isꓽapp: boolean // app in the generic sense of "not a lib"
+	hasꓽside_effects: boolean // assuming most pkgs don't
+	status: // EXPERIMENTAL rating of modules TODO clarify
 		| 'spike'
+		| 'sandbox' // self-contained playground for testing stuff
 		| 'tech-demo' // not YET in prod
-		| 'sandbox'
 		| 'unstable' // ex. a rewrite or refactor in progress, most likely behind a flag
 		| 'stable'
+}
 
-	_dont_present?: boolean // unsupported module, don't "present" it TODO remove once all the modules are compatible!
+//  all entries are optional, only to be used if an override is needed or if not inferrable
+interface PureModuleManifest extends Partial<PureModuleDetailsAllowedInManifest> {
+	_dontꓽpresent?: boolean // unsupported module, don't "present" it TODO remove once all the modules are compatible!
 }
 
 // Should contain everything needed to build
 // - package.json
 // - tsconfig.json
 // - any other config
-interface PureModuleDetails extends Required<PureModuleManifest> {
+interface PureModuleDetails extends PureModuleDetailsAllowedInManifest {
 	root‿abspath: string
 
 	fqname: string // fully qualified
 
 	author: string
-	license: undefined | string // TODO SPDX
 	main: FileEntry // TODO review fuse with entries?
 	demo?: FileEntry
 	hasꓽtestsⵧunit: boolean
@@ -141,9 +144,6 @@ interface PureModuleDetails extends Required<PureModuleManifest> {
 
 	// in case
 	_manifest: PureModuleManifest
-
-	// special
-	_dont_present?: never
 }
 
 const MANIFEST‿basename = 'MANIFEST.json5'
@@ -172,7 +172,7 @@ function _createꓽresult(root‿abspath: AbsolutePath): PureModuleDetails {
 		//description?: string
 		isꓽpublished: false,
 		author: 'Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)', // https://docs.npmjs.com/cli/v11/configuring-npm/package-json#people-fields-author-contributors
-		license: 'Unlicense',
+		//license: 'Unlicense',
 		main: null as any, // XXX TODO
 		isꓽapp: false, // most common case
 		hasꓽside_effects: false,
@@ -457,39 +457,23 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	// overrides from the manifest
 	result._manifest = JSON5.parse(fs.readFileSync(entryⵧmanifest.path‿abs, 'utf8'))
 	const unprocessed_keys = new Set<string>(Object.keys(result._manifest))
-	if (unprocessed_keys.has('name')) {
-		result.name = result._manifest.name
-		unprocessed_keys.delete('name')
-	}
-	if (unprocessed_keys.has('namespace')) {
-		result.namespace = result._manifest.namespace
-		unprocessed_keys.delete('namespace')
-	}
-	if (unprocessed_keys.has('license')) {
-		result.license = result._manifest.license
-		unprocessed_keys.delete('license')
-	}
-	if (unprocessed_keys.has('version')) {
-		result.version = result._manifest.version
-		unprocessed_keys.delete('version')
-	}
-	if (unprocessed_keys.has('isꓽpublished')) {
-		result.isꓽpublished = result._manifest.isꓽpublished
-		unprocessed_keys.delete('isꓽpublished')
-	}
-	if (unprocessed_keys.has('hasꓽside_effects')) {
-		result.hasꓽside_effects = result._manifest.hasꓽside_effects
-		unprocessed_keys.delete('hasꓽside_effects')
-	}
-	if (unprocessed_keys.has('description')) {
-		result.description = result._manifest.description
-		unprocessed_keys.delete('description')
-	}
-	if (unprocessed_keys.has('status')) {
-		result.status = result._manifest.status
-		unprocessed_keys.delete('status')
-	}
-	unprocessed_keys.delete('_dont_present') // special
+	;([
+		'description',
+		'hasꓽside_effects',
+		'isꓽpublished',
+		'license',
+		'name',
+		'namespace',
+		'status',
+		'version',
+	] as Array<keyof PureModuleManifest>).forEach(k => {
+		if (unprocessed_keys.has(k)) {
+			assert(!!result._manifest[k])
+			;(result as any)[k] = result._manifest[k]
+			unprocessed_keys.delete(k)
+		}
+	})
+	unprocessed_keys.delete('_dontꓽpresent') // special
 	if (unprocessed_keys.size) {
 		throw new Error(`Unknown keys in manifest: "${Array.from(unprocessed_keys).join(', ')}"!`)
 	}

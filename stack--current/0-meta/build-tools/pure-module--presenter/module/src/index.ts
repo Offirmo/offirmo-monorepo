@@ -58,7 +58,7 @@ async function present({
 		throw new Error(`Out-of-source build cannot target inside the pure-module!`)
 	}
 
-	if (pure_module_details._manifest?._dont_present) {
+	if (pure_module_details._manifest?._dontꓽpresent) {
 		console.log(`${indent}marked as "do not present", skipping`)
 		return
 	}
@@ -155,7 +155,7 @@ ${pure_module_details.description || ''}
 			...(pure_module_details.description && {"description": pure_module_details.description}),
 			"version": pure_module_details.version,
 			"author": pure_module_details.author,
-			"license": pure_module_details.license,
+			"license": pure_module_details.license || 'Unlicense',
 			...(pure_module_details.isꓽpublished ? {} : { "private": true}),
 
 			"sideEffects": pure_module_details.hasꓽside_effects,

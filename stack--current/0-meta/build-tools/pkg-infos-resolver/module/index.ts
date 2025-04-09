@@ -4,7 +4,7 @@
 
 import { strict as assert } from 'node:assert'
 import packageJson from 'package-json'
-import semver from 'semver'
+import * as semver from 'semver'
 
 /////////////////////////////////////////////////
 
@@ -82,14 +82,14 @@ class PkgInfosResolver {
 		console.log(`PkgVersionResolver querying "${pkg_name}"…`)
 		this.#pending_promises[pkg_name] = packageJson(pkg_name, { fullMetadata: true })
 			.then(
-				(content: PackageJson) => {
+				(content) => {
 					this.#packageᐧjson_cache[pkg_name] = content
-					console.log(`${auto ? 'auto' : '    '} package.json loaded for "${pkg_name}" v${semver.clean(content.version)} (${`includes types? ${_has_typescript_types(content)}`})`)
+					console.log(`${auto ? 'auto' : '    '} package.json loaded for "${pkg_name}" v${semver.clean(content.version)} (${`includes types? ${_has_typescript_types(content as any)}`})`)
 					//console.log(`XXX content`, content)
 					return content // for chaining
 				},
 				err => {
-					if (auto && err?.name === 'PackageNotFoundError') {
+					if (auto && (err as any)?.name === 'PackageNotFoundError') {
 						console.log(`Auto pkg ${pkg_name} not found, ignoring.`)
 						return
 					}
@@ -149,7 +149,10 @@ class PkgInfosResolver {
 
 		const packageᐧjson = this.ǃgetꓽpackageᐧjson(pkg_name)
 
-		return semver.clean(packageᐧjson.version)
+		assert(packageᐧjson.version)
+		const result = semver.clean(packageᐧjson.version)
+		assert(result)
+		return result
 	}
 
 	ǃgetꓽversionⵧfor_dep(pkg_name: string) {

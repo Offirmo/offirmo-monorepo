@@ -20,7 +20,7 @@ function getꓽbolt_monorepo__workspaces(MONOREPO_ROOT: AbsPath): Array<Workspac
 	assert(Object.hasOwn(MONOREPO_ROOT_PKGᐧJSON, 'bolt'), `The bolt monorepo's root package.json should contain the "bolt" key!`)
 	assert(Object.hasOwn(MONOREPO_ROOT_PKGᐧJSON.bolt, 'workspaces'), `The bolt monorepo's root package.json should contain the "bolt.workspaces" key!`)
 
-	const MONOREPO_WORKSPACES_RELPATHS = MONOREPO_ROOT_PKGᐧJSON.bolt.workspaces
+	const MONOREPO_WORKSPACES_RELPATHS = (MONOREPO_ROOT_PKGᐧJSON.bolt.workspaces as string[])
 		.map(p => p.slice(0, -2)) // slice to remove trailing "/*"
 
 	return MONOREPO_WORKSPACES_RELPATHS
