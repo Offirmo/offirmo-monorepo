@@ -21,7 +21,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/css--foundation": "*"
+		"@offirmo-private/css--foundation": "*",
 		"@offirmo-private/style-once": "*",
 		"tiny-invariant": "^1"
 	},

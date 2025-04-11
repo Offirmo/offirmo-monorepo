@@ -1,7 +1,7 @@
 /* Root render function
  */
 
-import { isꓽframed } from '@offirmo-private/browser-features-detection/is-framed'
+import { isꓽframed } from '../../__vendor/@offirmo-private/browser-features-detection/is-framed.ts'
 
 import { RenderMode } from '../../l1-flux/l1-state/types.ts'
 import type { ObservableState } from '../../l1-flux/l2-observable'
