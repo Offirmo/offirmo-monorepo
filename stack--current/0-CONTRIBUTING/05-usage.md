@@ -25,7 +25,7 @@ For ex. to make everything work again step by step!
 			"3-engine--browser/2-libs--cross-cutting/*",
 			"3-engine--browser/X-incubator/active/*"
 
-
+TODO auto-generate this list!!
 ```bash
 bolt --only-fs "[0-9]-*/*" ws run build
 bolt --only-fs "[0-9]-*/*" ws run test
@@ -36,8 +36,9 @@ bolt --only-fs "[0-5]-*/*" ws run test
       bolt --only-fs "1-isomorphic/1-libs--simple/*" ws run test
       bolt --only-fs "1-isomorphic/2-libs--cross-cutting/*" ws run test
       bolt --only-fs "1-isomorphic/3-libs--advanced/*" ws run test
-      bolt --only-fs "1-isomorphic/7-libs--rpg/*" ws run test
+      bolt --only-fs "1-isomorphic/X-incubator/active/*" ws run test
    bolt --only-fs "2-engine--nod*/**/*" ws run test
+      bolt --only-fs "2-engine--node/0-dev-tools/*" ws run test
       bolt --only-fs "2-engine--node/1-libs--simple/*" ws run test
       bolt --only-fs "2-engine--node/2-libs--cross-cutting/*" ws run test
 

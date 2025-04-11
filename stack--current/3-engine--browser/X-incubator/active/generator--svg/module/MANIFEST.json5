@@ -1,3 +1,4 @@
 {
-	"description": "Dynamic generator of SVG images"
+	description: "Dynamic generator of SVG images",
+	status: 'experimental'
 }

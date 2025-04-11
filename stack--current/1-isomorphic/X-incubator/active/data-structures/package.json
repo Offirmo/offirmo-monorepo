@@ -23,7 +23,7 @@
 		"test--ts": "echo \"@offirmo-private/data-structures\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
-		"test": "run-s test--unit test--ts"
+		"_test": "run-s test--unit test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
