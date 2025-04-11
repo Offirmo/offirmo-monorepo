@@ -11,9 +11,7 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		".": {
-			"import": "./src/index.ts"
-		},
+		".": "./module/src/index.ts",
 		"./viewport.css": {
 			"import": "./src/atomic/atomic--dimension.css"
 		}

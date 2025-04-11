@@ -1,5 +1,5 @@
-import { getRootSXC } from '@offirmo-private/soft-execution-context'
 import {
+	getRootSXC,
 	listenToErrorEvents,
 	listenToUnhandledRejections,
 } from '@offirmo-private/soft-execution-context--browser'

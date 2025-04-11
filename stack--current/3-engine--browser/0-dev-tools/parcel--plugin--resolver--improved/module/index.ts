@@ -12,7 +12,7 @@ export default new Resolver({
 	async resolve(params) {
 		if (params.specifier?.endsWith('.js')) {
 			if (DEBUG) {
-				console.warn('@offirmo-private/parcel-resolver ACTIVATING 😓')
+				console.warn('@offirmo-private/parcel--plugin--resolver--improved ACTIVATING 😓')
 				console.log('Params=', params)
 				const { specifier, specifierType, sourcePath, resolveFrom } = params.dependency
 				console.log('Dependency=', { specifier, specifierType, sourcePath, resolveFrom })
@@ -39,7 +39,7 @@ export default new Resolver({
 		// Since this plugin is a "last resort", that may cause a failure.
 
 		if (DEBUG) {
-			console.error('@offirmo-private/parcel-resolver ABOUT TO FAIL')
+			console.error('@offirmo-private/parcel--plugin--resolver--improved ABOUT TO FAIL')
 			console.error('Params=', params)
 			const { specifier, specifierType, sourcePath, resolveFrom } = params.dependency
 			console.error('Dependency=', { specifier, specifierType, sourcePath, resolveFrom })
