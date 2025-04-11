@@ -13,7 +13,7 @@
 
 	"dependencies": {
 		"@offirmo-private/parcel-config--default": "*",
-		"@offirmo-private/parcel--plugin--resolver--improved": "*",
+		"@offirmo-private/parcel-resolver-js2ts": "*",
 		"@parcel/config-default": "^2",
 		"@parcel/core": "^2",
 		"@parcel/reporter-bundle-analyzer": "^2",

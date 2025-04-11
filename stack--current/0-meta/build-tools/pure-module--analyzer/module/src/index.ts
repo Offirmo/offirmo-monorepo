@@ -126,6 +126,8 @@ interface PureModuleDetails extends PureModuleDetailsAllowedInManifest {
 	author: string
 	main: FileEntry // TODO review fuse with entries?
 	demo?: FileEntry
+	storypad?: FileEntry
+	sandbox?: FileEntry // TODO
 	hasꓽtestsⵧunit: boolean
 	//hasꓽtestsⵧsmoke: boolean // TODO one day
 	hasꓽstories: boolean,
@@ -462,15 +464,16 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	result._manifest = JSON5.parse(fs.readFileSync(entryⵧmanifest.path‿abs, 'utf8'))
 	const unprocessed_keys = new Set<string>(Object.keys(result._manifest))
 	;([
-		'description',
-		'hasꓽside_effects',
-		'isꓽpublished',
-		'license',
 		'name',
 		'namespace',
-		'status',
+		'license',
+		'description',
 		'version',
+		'isꓽpublished',
+		'isꓽapp',
+		'hasꓽside_effects',
 		'engines',
+		'status',
 	] as Array<keyof PureModuleManifest>).forEach(k => {
 		if (unprocessed_keys.has(k)) {
 			assert(!!result._manifest[k])
@@ -540,9 +543,25 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		if (entry.basename‿noext === 'demo') {
 			result.demo = entry
 		}
-		if (path.basename(path.dirname(path‿rel)) === '##demo'
+		if (path.basename(path.dirname(path‿rel)).includes('demo')
 			&& entry.basename‿noext === 'index') {
 			result.demo ||= entry
+		}
+
+		if (entry.basename‿noext === 'sandbox') {
+			result.sandbox = entry
+		}
+		if (path.basename(path.dirname(path‿rel)).includes('sandbox')
+			&& entry.basename‿noext === 'index') {
+			result.sandbox ||= entry
+		}
+
+		if (entry.basename‿noext === 'storypad') {
+			result.storypad = entry
+		}
+		if (path.basename(path.dirname(path‿rel)).includes('storypad')
+			&& entry.basename‿noext === 'index') {
+			result.storypad ||= entry
 		}
 
 		const { basename } = entry
@@ -695,6 +714,54 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 	await Promise.all(pending_promises)
 
+	// migrations
+	if (result.hasꓽstories) {
+		if (!result.storypad) {
+			// auto-create storypad in the right place
+			const storypad__path = path.resolve(root‿abspath, '__fixtures', 'storypad')
+			const storypad__content = `
+<!DOCTYPE html>
+
+<script type="module">
+	import startꓽstorypad from '@offirmo-private/storypad'
+	import decoratorⵧdiagnostics from '@offirmo-private/storypad/decorators/diagnostics'
+	import nearest_pkg from '~/package.json'
+
+	const DEBUG = false
+
+	// important to load async so that the stories don't pollute the global scope too early (ex. before SXC)
+	const stories = import('../../**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	if (DEBUG) console.log('BOOTSTRAP stories', {
+		stories,
+	})
+
+	startꓽstorypad(
+		{
+			'own': stories,
+		},
+		{
+			root_title: nearest_pkg?.name,
+			decorators: [
+				/*(story) => {
+					import('npm:@offirmo-private/css--foundation')
+					return story
+				},*/
+				decoratorⵧdiagnostics
+			]
+		}
+	)
+</script>
+`
+			fs.mkdirSync(storypad__path, { recursive: true })
+			fs.writeFileSync(
+				path.resolve(storypad__path, 'index.html'),
+				storypad__content,
+				{encoding: 'utf-8'}
+			)
+			result.storypad = get_file_entry(path.resolve(storypad__path, 'index.html'), root‿abspath)
+		}
+	}
+
 	// extras
 	if (result.languages.has('ts')) {
 		raw_deps.push({ label: 'tslib', type: 'peer' })
@@ -718,9 +785,12 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	// consolidate
 	let hasꓽReact = false
 	raw_deps.forEach(({label, type}) => {
-		if (label === 'react') {
+		if (label === result.fqname)
+			return // self-reference
+
+		if (label === 'react')
 			hasꓽReact = true
-		}
+
 		switch (type) {
 			case 'normal':
 				result.depsⵧnormal.add(label)

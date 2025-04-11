@@ -1,5 +1,6 @@
 {
 	description: "Storybook replacement",
+	isꓽapp: true,
 	engines: {
 		browser: '*'
 	}

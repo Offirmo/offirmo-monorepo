@@ -1,4 +1,5 @@
 {
+	name: 'parcel-resolver-js2ts',
 	description: "Special Parcel plugin (resolver) to mitigate some bugs",
 	engines: {
 		"parcel": "2.x"

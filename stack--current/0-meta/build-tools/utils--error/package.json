@@ -15,10 +15,12 @@
 	},
 	"dependencies": {},
 	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …dist",
+		"clean": "npm-run-all _clean--pkg",
 		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
 		"test--ts": "echo \"@offirmo/error-utils\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s test--ts--watch",
+		"dev": "run-s clean test--ts--watch",
 		"demo": "node --experimental-strip-types ./module/~~sandbox/index.ts",
 		"test": "run-s test--unit test--ts"
 	},

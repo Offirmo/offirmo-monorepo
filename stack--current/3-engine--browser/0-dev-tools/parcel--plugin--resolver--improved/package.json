@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/parcel--plugin--resolver--improved",
+	"name": "@offirmo-private/parcel-resolver-js2ts",
 	"description": "Special Parcel plugin (resolver) to mitigate some bugs",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
@@ -22,7 +22,7 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"test--ts": "echo \"@offirmo-private/parcel--plugin--resolver--improved\" && tsc --noEmit",
+		"test--ts": "echo \"@offirmo-private/parcel-resolver-js2ts\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
 		"test": "run-s test--ts"

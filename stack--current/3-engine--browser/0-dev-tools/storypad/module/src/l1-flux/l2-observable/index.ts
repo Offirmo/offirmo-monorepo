@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
 import EventEmitter from 'emittery'
-import { isꓽframed } from '@offirmo-private/browser-features-detection/is-framed'
+import { isꓽframed } from '../../__vendor/@offirmo-private/browser-features-detection/is-framed.ts'
 
 import type { ImportGlob } from '../../l0-types/l0-glob'
 import type { Config } from '../../l0-types/l2-config'

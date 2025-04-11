@@ -45,8 +45,6 @@
 		"@offirmo-private/async-utils": "*",
 		"@offirmo-private/css--framework": "*",
 		"@offirmo-private/data-structures": "*",
-		"@offirmo-private/page-loaded": "*",
-		"@offirmo-private/soft-execution-context--browser": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/practical-logger-browser": "^3",
 		"@offirmo/universal-debug-api-browser": "^1",

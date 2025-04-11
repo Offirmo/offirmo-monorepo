@@ -174,7 +174,7 @@ ${pure_module_details.description || ''}
 			.union(pure_module_details.depsⵧdev)
 			.union(pure_module_details.depsⵧpeer)
 			.union(pure_module_details.depsⵧoptional)
-			// vendored are copied, not declared
+			// TODO vendored to be copied, not declared
 
 		Array.from(all_declared_deps.values()).forEach(dep => pkg_infos_resolver.preload(dep))
 		await pkg_infos_resolver.all_pending_loaded()
@@ -195,12 +195,27 @@ ${pure_module_details.description || ''}
 		pkg.scripts = (() => {
 			const scripts: Record<string, string> = {}
 
-			// aggregs
-			const scriptsⵧclean = Object.keys(scripts).filter(k => k.startsWith('clean'))
+			/////// order is important
+
+			/////// Clean
+			const monorepo_clean_targets = new Set<string>()
+			if (pure_module_details.isꓽpublished) {
+				monorepo_clean_targets.add('…dist')
+			}
+			if (pure_module_details.languages.has('html') || pure_module_details.engines?.['browser']) {
+				monorepo_clean_targets.add('…cache') // for Parcel
+			}
+			if (monorepo_clean_targets.size) {
+				scripts['_clean--pkg'] = `monorepo-script--clean-package ${Array.from(monorepo_clean_targets).join(' ')}`
+			}
+
+			const scriptsⵧclean = Object.keys(scripts)
+				.filter(k => k.startsWith('clean') || k.startsWith('_clean'))
 			if (scriptsⵧclean.length) {
 				scripts['clean'] = `npm-run-all ${scriptsⵧclean.join(' ')}`
 			}
 
+			/////// Dev
 			if (pure_module_details.hasꓽtestsⵧunit) {
 				scripts['test--unit'] =
 					`node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './${SRC_DIR_RELPATH}/**/*.tests.ts'`
@@ -215,7 +230,21 @@ ${pure_module_details.description || ''}
 					: `run-s test--ts--watch`
 			}
 			if (pure_module_details.demo) {
-				scripts['demo'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.demo.path‿rel)}`
+				switch (pure_module_details.demo.ext) {
+					case '.ts': {
+						scripts['demo'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.demo.path‿rel)}`
+						break
+					}
+
+					case '.html': {
+						scripts["_start:parcel:demo"] = `parcel serve ${pure_module_details.demo.path‿rel} --port 8080  --lazy  --no-autoinstall`
+						scripts['demo'] = `npm-run-all clean--cache --parallel _start:parcel:demo`
+						break
+					}
+
+					default:
+						throw new Error(`Not implemented: demo with extension "${pure_module_details.demo.ext}"!`)
+				}
 			}
 
 			const scriptsⵧtest = Object.keys(scripts).filter(k => k.startsWith('test') && !k.endsWith('--watch'))
@@ -252,7 +281,8 @@ ${pure_module_details.description || ''}
 	))
 
 
-	const webstorm__run_configⵧUT = `
+	if (pure_module_details.hasꓽtestsⵧunit) {
+		const webstorm__run_configⵧUT = `
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" name="${pure_module_details.fqname} -- UT" type="mocha-javascript-test-runner">
 		<node-interpreter>$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node</node-interpreter>
@@ -268,15 +298,17 @@ ${pure_module_details.description || ''}
 	</configuration>
 </component>
 `
-	promises.push(fs.writeFile(
-		path.resolve(dest_dir‿abspath, 'webstorm--UT.run.xml'),
-		webstorm__run_configⵧUT,
-		{ encoding: 'utf-8' }
-	))
+		promises.push(fs.writeFile(
+			path.resolve(dest_dir‿abspath, 'webstorm--UT.run.xml'),
+			webstorm__run_configⵧUT,
+			{ encoding: 'utf-8' }
+		))
+	}
 
 	if (pure_module_details.demo) {
-		// 		nameIsGenerated="false"
-		const webstorm__run_configⵧdemo = `
+
+		if (pure_module_details.demo.ext === '.ts') {
+			const webstorm__run_configⵧdemo = `
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false"
 		name="${pure_module_details.fqname} -- Demo"
@@ -289,11 +321,16 @@ ${pure_module_details.description || ''}
 	</configuration>
 </component>
 `
-		promises.push(fs.writeFile(
-			path.resolve(dest_dir‿abspath, 'webstorm--demo.run.xml'),
-			webstorm__run_configⵧdemo,
-			{ encoding: 'utf-8' }
-		))
+			promises.push(fs.writeFile(
+				path.resolve(dest_dir‿abspath, 'webstorm--demo.run.xml'),
+				webstorm__run_configⵧdemo,
+				{encoding: 'utf-8'}
+			))
+		}
+
+		if (pure_module_details.demo.ext === '.html') {
+			// no extra file necessary
+		}
 	}
 }
 

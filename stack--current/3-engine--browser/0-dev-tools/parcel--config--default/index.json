@@ -4,7 +4,7 @@
 	"resolvers": [
 		"@parcel/resolver-glob",
 		"...",
-		"@offirmo-private/parcel--plugin--resolver--improved"
+		"@offirmo-private/parcel-resolver-js2ts"
 	]
 
 }
