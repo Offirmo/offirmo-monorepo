@@ -4,7 +4,7 @@ import * as os from 'node:os'
 
 import { pathExists } from 'path-exists'
 
-import { LIB, __dirname } from './consts.mjs'
+import { LIB, PATH_TO_PARENT_DIR } from './consts.mjs'
 
 /////////////////////////////////////////////////
 
@@ -18,7 +18,7 @@ async function find_tsc(display_banner_if_1st_output) {
 	// - ex. if this package is symlinked, for ex. with "npm link"
 	// - ex. with alternative package managers
 	const candidateⵧfrom_sibling_module =
-		path.join(__dirname, '..', 'typescript', 'bin', EXECUTABLE)
+		path.resolve(PATH_TO_PARENT_DIR, 'typescript', 'bin', EXECUTABLE)
 
 	// second option: should work even if this package is symlinked
 	// but still won't work with alternative package managers

@@ -1,8 +1,4 @@
-#!/bin/sh
-':' //# https://sambal.org/?p=1014 ; exec /usr/bin/env node "$0" "$@"
-"use strict";
-
-import tsc from '../src/index.mjs'
+import tsc from 'node-typescript-compiler'
 
 console.log('TEST: tsc exported =', tsc)
 

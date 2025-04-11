@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * TODO typescript peer dep?
 * [chore] removed useless default spawn option
 * [chore] minor internal var renamings
+* [chore] refactors: moved files internally + no reuse of __dirname outside of a file
 * [doc] slight improvements
 * [doc] marked as maintained in 2024! Happy new year!
 * ...

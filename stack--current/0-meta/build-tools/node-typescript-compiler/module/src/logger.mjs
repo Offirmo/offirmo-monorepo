@@ -1,12 +1,11 @@
 
-import * as path from 'node:path'
 import { promises as fs } from 'node:fs'
 
-import { LIB, __dirname } from './consts.mjs'
+import { LIB, PATH_TO_OWN_PACKAGE_JSON } from './consts.mjs'
 
 /////////////////////////////////////////////////
 
-const { version } = JSON.parse(await fs.readFile(path.join(__dirname, '..', 'package.json')))
+const { version } = JSON.parse(await fs.readFile(PATH_TO_OWN_PACKAGE_JSON))
 
 const DEFAULT_BANNER = `[${LIB}] v${version}:`
 

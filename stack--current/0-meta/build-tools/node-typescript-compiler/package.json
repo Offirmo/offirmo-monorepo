@@ -7,8 +7,8 @@
 
 	"sideEffects": false,
 	"type": "module",
-	"exports": "./src/index.mjs",
-	"source": "./src/index.mjs",
+	"exports": "./module/src/index.mjs",
+	"source": "./module/src/index.mjs",
 
 	"engines": {
 		"npm": ">=3"
@@ -27,7 +27,7 @@
 		"@total-typescript/ts-reset": "^0.6"
 	},
 	"scripts": {
-		"test": "node ./test/test.mjs"
+		"test": "node ./module/test/test.mjs"
 	},
 
 	"files": [

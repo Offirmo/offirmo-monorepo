@@ -230,7 +230,7 @@ ${pure_module_details.description || ''}
 			/////// Dev
 			if (pure_module_details.hasꓽtestsⵧunit) {
 				scripts['test--unit'] =
-					`node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './${SRC_DIR_RELPATH}/**/*.tests.ts'`
+					`node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './${SRC_DIR_RELPATH}/**/*.tests.ts'`
 					//  --experimental-require-module
 			}
 			if (pure_module_details.hasꓽstories) {

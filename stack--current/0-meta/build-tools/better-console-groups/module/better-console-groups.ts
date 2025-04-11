@@ -39,7 +39,7 @@ function install({ uncollapse_level = 'warn', lazy = true, original_console = co
 	const ORIGINAL_METHODS: Console = PATCHED_METHODS.reduce((acc, k) => {
 		acc[k] = (original_console as any)[k]
 		return acc
-	}, {})
+	}, {} as any)
 
 	function better_group(...p: any[]): void {
 		if (DEBUG) ORIGINAL_METHODS['log']('>>> before group', { lazy, depth: group_invocations.length}, `"${p[0]}"`)
@@ -79,7 +79,7 @@ function install({ uncollapse_level = 'warn', lazy = true, original_console = co
 		const last_invocation = group_invocations.pop()
 		if (last_invocation&& last_invocation.is_effective) {
 			in_original_call = true
-			ORIGINAL_METHODS['groupEnd'](...p)
+			ORIGINAL_METHODS['groupEnd']()
 			in_original_call = false
 		}
 
@@ -164,7 +164,7 @@ function install({ uncollapse_level = 'warn', lazy = true, original_console = co
 	PATCHED_METHODS.forEach(method => {
 		if (patched.has(method)) return
 
-		;(console as any as { [k: string]: Console['log'] })[method] = better_output.bind(null, ORIGINAL_METHODS[method], false)
+		;(console as any)[method] = better_output.bind(null, (ORIGINAL_METHODS as any)[method], false)
 		patched.add(method)
 	})
 }
