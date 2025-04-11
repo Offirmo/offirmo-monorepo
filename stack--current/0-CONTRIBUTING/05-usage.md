@@ -41,6 +41,8 @@ bolt --only-fs "[0-5]-*/*" ws run test
       bolt --only-fs "2-engine--node/0-dev-tools/*" ws run test
       bolt --only-fs "2-engine--node/1-libs--simple/*" ws run test
       bolt --only-fs "2-engine--node/2-libs--cross-cutting/*" ws run test
+   bolt --only-fs "3-engine--browse*/**/*" ws run test
+      bolt --only-fs "3-engine--browser/0-dev-tools/*" ws run test
 
 
 ## Alt:

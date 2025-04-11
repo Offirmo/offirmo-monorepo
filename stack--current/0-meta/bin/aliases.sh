@@ -41,3 +41,4 @@ alias  mono22pn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; gi
 alias  mono22rt='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;  cd 2-libs--cross-cutting/rich-text-format--to-terminal/; tabset --color "#006EDB" --badge mono22rt'
 alias  mono22sn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;  cd 2-libs--cross-cutting/soft-execution-context--node/; tabset --color "#006EDB" --badge mono22sn'
 alias  mono22un='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;  cd 2-libs--cross-cutting/universal-debug-api--node/;  tabset --color "#006EDB" --badge mono22un'
+alias mono30ppr='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/; cd 0-dev-tools/parcel--plugin--resolver-improved/;    tabset --color "#006EDB" --badge mono30ppr'
