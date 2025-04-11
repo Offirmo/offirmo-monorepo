@@ -1,13 +1,10 @@
 {
-	"name": "@offirmo-private/css--utils--diagnostic",
+	"name": "@offirmo-private/css--utils--diagnostics",
 	"description": "Some CSS utilities",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-	"engines": {
-		"browser": "*"
-	},
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
@@ -21,10 +18,14 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"clean": "monorepo-script--clean-package …dist …cache",
-
-		"_parcel:serve": "parcel serve --log-level verbose  'doc/demo/*.html' --port 3010 --no-autoinstall",
-		"dev": "npm-run-all clean --parallel _parcel:serve"
+		"_clean--pkg": "monorepo-script--clean-package …cache",
+		"clean": "npm-run-all _clean--pkg",
+		"_start:parcel:storypad": "parcel serve __fixtures/storypad/index.html --port 8383  --lazy  --no-autoinstall",
+		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
+		"test--ts": "echo \"@offirmo-private/css--utils--diagnostics\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s clean test--ts--watch",
+		"test": "run-s test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

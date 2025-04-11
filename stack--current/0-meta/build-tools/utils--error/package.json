@@ -22,7 +22,12 @@
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean test--ts--watch",
 		"demo": "node --experimental-strip-types ./module/~~sandbox/index.ts",
-		"test": "run-s test--unit test--ts"
+		"test": "run-s test--unit test--ts",
+		"_build:prod": "monorepo-script--build-typescript-package",
+		"build": "run-p _build:prod",
+		"ensure-size": "size-limit",
+		"np": "np --no-publish",
+		"prepublishOnly": "run-s clean build ensure-size"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

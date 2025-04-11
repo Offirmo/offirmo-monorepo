@@ -11,53 +11,48 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": {
-			"import": "./module/src/index.ts"
-		},
-		"./types": {
-			"import": "./module/src/l0-types/index.ts"
-		},
-
-		"./decorators/diagnostics": {
-			"import": "./module/src/__shared/decorators/diagnostics.js"
-		},
-
-		"./stories/html/html5-kitchen-sink":     { "import": "./module/src/__shared/stories/html/html5-kitchen-sink_by_dbox.stories.ts" },
-		"./stories/html/html-demos--offirmo":    { "import": "./module/src/__shared/stories/html/html-demos-by-offirmo.stories.ts" },
-		"./stories/html/html-demos--others":     { "import": "./module/src/__shared/stories/html/html-demos-misc.stories.ts" },
-		"./stories/html/motherfuckingwebsites":  { "import": "./module/src/__shared/stories/html/motherfuckingwebsites.stories.ts" },
-		"./stories/html/elements/a":             { "import": "./module/src/__shared/stories/html/elements/a.stories.ts" },
-		"./stories/html/elements/blockquote":    { "import": "./module/src/__shared/stories/html/elements/blockquote.stories.ts" },
-		"./stories/html/elements/body":          { "import": "./module/src/__shared/stories/html/elements/body.stories.ts" },
-		"./stories/html/elements/details":       { "import": "./module/src/__shared/stories/html/elements/details.stories.ts" },
-		"./stories/html/elements/dl":            { "import": "./module/src/__shared/stories/html/elements/dl.stories.ts" },
-		"./stories/html/elements/h123456":       { "import": "./module/src/__shared/stories/html/elements/h123456.stories.ts" },
-		"./stories/html/elements/nav":           { "import": "./module/src/__shared/stories/html/elements/nav.stories.ts" },
-		"./stories/html/elements/ol":            { "import": "./module/src/__shared/stories/html/elements/ol.stories.ts" },
-		"./stories/html/elements/ul":            { "import": "./module/src/__shared/stories/html/elements/ul.stories.ts" }
+		".": "./module/src/index.ts",
+		"./types": "./module/src/l0-types/index.ts",
+		"./decorators/diagnostics": "./module/src/__shared/decorators/diagnostics.js",
+		"./stories/html/html5-kitchen-sink":     "./module/src/__shared/stories/html/html5-kitchen-sink_by_dbox.stories.ts",
+		"./stories/html/html-demos--offirmo":    "./module/src/__shared/stories/html/html-demos-by-offirmo.stories.ts",
+		"./stories/html/html-demos--others":     "./module/src/__shared/stories/html/html-demos-misc.stories.ts",
+		"./stories/html/motherfuckingwebsites":  "./module/src/__shared/stories/html/motherfuckingwebsites.stories.ts",
+		"./stories/html/elements/a":             "./module/src/__shared/stories/html/elements/a.stories.ts",
+		"./stories/html/elements/blockquote":    "./module/src/__shared/stories/html/elements/blockquote.stories.ts",
+		"./stories/html/elements/body":          "./module/src/__shared/stories/html/elements/body.stories.ts",
+		"./stories/html/elements/details":       "./module/src/__shared/stories/html/elements/details.stories.ts",
+		"./stories/html/elements/dl":            "./module/src/__shared/stories/html/elements/dl.stories.ts",
+		"./stories/html/elements/h123456":       "./module/src/__shared/stories/html/elements/h123456.stories.ts",
+		"./stories/html/elements/nav":           "./module/src/__shared/stories/html/elements/nav.stories.ts",
+		"./stories/html/elements/ol":            "./module/src/__shared/stories/html/elements/ol.stories.ts",
+		"./stories/html/elements/ul":            "./module/src/__shared/stories/html/elements/ul.stories.ts"
 	},
 	"source": "module/src/index.ts",
-	"peerDependencies": {
-		"react": "^19",
-		"tslib": "^2"
-	},
 	"dependencies": {
 		"@offirmo-private/async-utils": "*",
-		"@offirmo-private/css--framework": "*",
 		"@offirmo-private/data-structures": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/practical-logger-browser": "^3",
 		"@offirmo/universal-debug-api-browser": "^1",
 		"emittery": "^1",
+		"react": "^19",
 		"react-dom": "^19",
 		"tiny-invariant": "^1",
+		"tslib": "^2",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …cache",
+		"clean": "npm-run-all _clean--pkg",
 		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
+		"_start:parcel:storypad": "parcel serve src/__fixtures/storypad/index.html --port 8383  --lazy  --no-autoinstall",
+		"stories": "npm-run-all clean--cache --parallel _start:parcel:storypad",
 		"test--ts": "echo \"@offirmo-private/storypad\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s test--ts--watch",
+		"dev": "run-s clean test--ts--watch",
+		"_start:parcel:demo": "parcel serve ##doc/demo.html --port 8080  --lazy  --no-autoinstall",
+		"demo": "npm-run-all clean--cache --parallel _start:parcel:demo",
 		"test": "run-s test--unit test--ts"
 	},
 	"devDependencies": {
@@ -70,7 +65,6 @@
 		"@types/react-dom": "^19",
 		"npm-run-all": "^4",
 		"react": "^19",
-		"tslib": "^2",
 		"typescript": "^5"
 	}
 }

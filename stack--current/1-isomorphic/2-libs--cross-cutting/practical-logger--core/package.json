@@ -17,12 +17,19 @@
 		"@offirmo/practical-logger-types": "^3"
 	},
 	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …dist",
+		"clean": "npm-run-all _clean--pkg",
 		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
 		"test--ts": "echo \"@offirmo/practical-logger-core\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s test--ts--watch",
+		"dev": "run-s clean test--ts--watch",
 		"demo": "node --experimental-strip-types ./module/##doc/demo.ts",
-		"test": "run-s test--unit test--ts"
+		"test": "run-s test--unit test--ts",
+		"_build:prod": "monorepo-script--build-typescript-package",
+		"build": "run-p _build:prod",
+		"ensure-size": "size-limit",
+		"np": "np --no-publish",
+		"prepublishOnly": "run-s clean build ensure-size"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

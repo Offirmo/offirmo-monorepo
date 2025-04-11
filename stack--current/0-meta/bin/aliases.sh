@@ -1,5 +1,6 @@
 #@IgnoreInspection BashAddShebang
 [ "$VERBOSE__RC" == true ] && echo "* […monorepo/…/aliases.sh] hello!"
+alias   mono0bb='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/better-console-groups/;                tabset --color "#006EDB" --badge mono0bb'
 alias  mono0bfl='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/fs--ls/;                               tabset --color "#006EDB" --badge mono0bfl'
 alias   mono0bm='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/monorepo/;                             tabset --color "#006EDB" --badge mono0bm'
 alias   mono0bn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/node-typescript-compiler/;             tabset --color "#006EDB" --badge mono0bn'
@@ -41,6 +42,6 @@ alias  mono22pn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; gi
 alias  mono22rt='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;  cd 2-libs--cross-cutting/rich-text-format--to-terminal/; tabset --color "#006EDB" --badge mono22rt'
 alias  mono22sn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;  cd 2-libs--cross-cutting/soft-execution-context--node/; tabset --color "#006EDB" --badge mono22sn'
 alias  mono22un='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;  cd 2-libs--cross-cutting/universal-debug-api--node/;  tabset --color "#006EDB" --badge mono22un'
-alias mono30cud='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/; cd 0-dev-tools/css--utils--diagnostic/;               tabset --color "#006EDB" --badge mono30cud'
+alias mono30cud='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/; cd 0-dev-tools/css--utils--diagnostics/;              tabset --color "#006EDB" --badge mono30cud'
 alias mono30ppri='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/; cd 0-dev-tools/parcel--plugin--resolver--improved/;   tabset --color "#006EDB" --badge mono30ppri'
 alias   mono30s='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/; cd 0-dev-tools/storypad/;                             tabset --color "#006EDB" --badge mono30s'

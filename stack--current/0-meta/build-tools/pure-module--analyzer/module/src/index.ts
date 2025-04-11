@@ -100,7 +100,7 @@ interface PureModuleDetailsAllowedInManifest {
 	isꓽpublished: boolean
 	isꓽapp: boolean // app in the generic sense of "not a lib"
 	hasꓽside_effects: boolean // assuming most pkgs don't
-	engines?: Record<string, Semver>
+	engines: Record<string, Semver>
 	status: // EXPERIMENTAL rating of modules TODO clarify
 		| 'spike'
 		| 'sandbox' // self-contained playground for testing stuff
@@ -144,7 +144,6 @@ interface PureModuleDetails extends PureModuleDetailsAllowedInManifest {
 	// needed to build scripts
 	languages: Set<ProgLang>
 	// TODO bundler reqs, ex. Parcel-specific imports
-	// TODO engines ex. node
 
 	// in case
 	_manifest: PureModuleManifest
@@ -432,28 +431,41 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		// needed. build it from existing package.json
 
 		const package_json_path = path.dirname(root‿abspath) + '/package.json'
-		const packageᐧjson: any = JSON.parse(fs.readFileSync(package_json_path, { encoding: 'utf-8' }))
-
-		const status = packageᐧjson.name.includes('sandbox')
-			? 'sandbox'
-			: 'stable'
-
-		const [ namespace, name ] = packageᐧjson.name.split('/')
-
-		const data: any = {
-			...(namespace !== getꓽdefault_namespace({
-				...result,
-				isꓽpublished: !packageᐧjson.private,
-			}) && { namespace }),
-			...(name !== result.name && { name }),
-			...(packageᐧjson.license !== result.license && { license: packageᐧjson.license}),
-			...(packageᐧjson.version !== '0.0.1' && { version: packageᐧjson.version}),
-			description: packageᐧjson.description || 'TODO description in MANIFEST.json5',
-			...(!packageᐧjson.private && { isꓽpublished: true }),
-			...(packageᐧjson.sideEffects && { hasꓽside_effects: true }),
-			...(status !== 'stable' && { status }),
-			...(packageᐧjson.engines && { engines: packageᐧjson.engines }),
+		let packageᐧjson: any = '{}'
+		try {
+			packageᐧjson = fs.readFileSync(package_json_path, { encoding: 'utf-8' })
 		}
+		catch (err) {
+			// it's totally ok to not have a package.json
+			// ex. brand new package
+		}
+		packageᐧjson = JSON.parse(packageᐧjson)
+
+		const data: any = (() => {
+			if (Object.keys(packageᐧjson).length === 0)
+				return {}
+
+			const status = packageᐧjson.name?.includes('sandbox')
+				? 'sandbox'
+				: 'stable'
+
+			const [ namespace = undefined, name = undefined ] = packageᐧjson.name?.split('/') || []
+
+			return {
+				...(namespace !== getꓽdefault_namespace({
+					...result,
+					isꓽpublished: !packageᐧjson.private,
+				}) && { namespace }),
+				...(name !== result.name && { name }),
+				...(packageᐧjson.license !== result.license && { license: packageᐧjson.license}),
+				...(packageᐧjson.version !== '0.0.1' && { version: packageᐧjson.version}),
+				description: packageᐧjson.description || 'TODO description in MANIFEST.json5',
+				...(!packageᐧjson.private && { isꓽpublished: true }),
+				...(packageᐧjson.sideEffects && { hasꓽside_effects: true }),
+				...(status !== 'stable' && { status }),
+				...(packageᐧjson.engines && { engines: packageᐧjson.engines }),
+			}
+		})()
 
 		const target_path = path.resolve(root‿abspath, MANIFEST‿basename)
 		await write_json_file(target_path, data)
@@ -518,13 +530,12 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		}
 		assertꓽnormalized(entry)
 
-		if (!result.main) {
-			result.main = entry
-		}
-		else if (entry.basename‿noext !== 'MANIFEST') { // manifest is at the root and should be ignored
+		if (entry.basename‿noext !== 'MANIFEST') {
+			// manifest is a false positive (short and at the root) and should be ignored
 			// priority order:
 			// - shortest / top file has priority
 			// - index has priority over not index
+			result.main ||= entry
 			const current_is_index = result.main.basename‿noext === 'index'
 			const candidate_is_index = entry.basename‿noext === 'index'
 			if (candidate_is_index !== current_is_index) {
@@ -600,7 +611,11 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 				// intercept aggregations
 				if (dependency_name === 'chai' || dependency_name === 'sinon') {
-					if (dep_type !== 'dev' && result.fqname !== '@offirmo-private/state-migration-tester') {
+					if (dep_type !== 'dev' && ![
+							'@offirmo-private/state-migration-tester',
+							'@offirmo/unit-test-toolbox',
+						].includes(result.fqname)
+					) {
 						throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')
 					}
 
@@ -657,13 +672,12 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 				// intercept aggregations
 				if (dependency_name === 'chai' || dependency_name === 'sinon') {
-					if (dep_type !== 'dev') {
-						if (result.fqname === '@offirmo-private/state-migration-tester') {
-							// Ok, special case
-						}
-						else {
-							throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')
-						}
+					if (dep_type !== 'dev' && ![
+						'@offirmo-private/state-migration-tester',
+						'@offirmo/unit-test-toolbox',
+					].includes(result.fqname)
+					) {
+						throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')
 					}
 
 					raw_deps.push({ label: '@offirmo/unit-test-toolbox', type: 'dev' })
@@ -713,6 +727,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	})
 
 	await Promise.all(pending_promises)
+	assert(result.main, 'No main file found?')
 
 	// migrations
 	if (result.hasꓽstories) {
@@ -777,7 +792,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	if(!result.main) {
 		throw new Error(`No "main" candidate found!`)
 	}
-	if (result.hasꓽstories || result.engines?.['browser']) {
+	if (result.hasꓽstories || result.engines['browser']) {
 		raw_deps.push({ label: '@offirmo-private/storypad', type: 'dev'})
 		raw_deps.push({ label: '@offirmo-private/toolbox--parcel', type: 'dev'})
 	}

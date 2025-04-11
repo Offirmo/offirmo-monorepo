@@ -131,7 +131,7 @@ ${pure_module_details.description || ''}
 			{
 				"extends": path.relative(dest_dir‿abspath, ts__config__path),
 				"compilerOptions": {
-					...(pure_module_details.engines?.['browser'] && { lib: [ "ES2024", "DOM" ] }),
+					...(pure_module_details.engines['browser'] && { lib: [ "ES2024", "DOM" ] }),
 					"pretty": true, // placeholder for adding stuff / helping diffs
 				},
 				"include": [
@@ -151,6 +151,18 @@ ${pure_module_details.description || ''}
 	}
 
 	const packageᐧjson = await (async () => {
+		const enginesⵧcleaned = Object.fromEntries(
+			Object.entries(pure_module_details.engines)
+				.filter(([k, v]) => {
+					if (k === 'browser') {
+						// not a formal engine
+						// also Parcel complains about it
+						return false
+					}
+
+					return true
+				})
+		)
 		const pkg: any = {
 			"name": pure_module_details.fqname,
 			...(pure_module_details.description && {"description": pure_module_details.description}),
@@ -159,7 +171,7 @@ ${pure_module_details.description || ''}
 			"license": pure_module_details.license || 'Unlicense',
 			...(pure_module_details.isꓽpublished ? {} : { "private": true}),
 
-			...(Object.keys(pure_module_details.engines || {}).length && { "engines": pure_module_details.engines }),
+			...(Object.keys(enginesⵧcleaned).length && { engines: enginesⵧcleaned }),
 			"sideEffects": pure_module_details.hasꓽside_effects,
 
 			"type": "module",
@@ -202,7 +214,7 @@ ${pure_module_details.description || ''}
 			if (pure_module_details.isꓽpublished) {
 				monorepo_clean_targets.add('…dist')
 			}
-			if (pure_module_details.languages.has('html') || pure_module_details.engines?.['browser']) {
+			if (pure_module_details.languages.has('html') || pure_module_details.engines['browser']) {
 				monorepo_clean_targets.add('…cache') // for Parcel
 			}
 			if (monorepo_clean_targets.size) {
@@ -221,6 +233,11 @@ ${pure_module_details.description || ''}
 					`node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './${SRC_DIR_RELPATH}/**/*.tests.ts'`
 					//  --experimental-require-module
 			}
+			if (pure_module_details.hasꓽstories) {
+				assert(pure_module_details.storypad, `Expected storypad to be defined!`)
+				scripts["_start:parcel:storypad"] = `parcel serve ${pure_module_details.storypad.path‿rel} --port 8383  --lazy  --no-autoinstall`
+				scripts['stories'] = `npm-run-all clean --parallel _start:parcel:storypad`
+			}
 
 			if (pure_module_details.languages.has('ts')) {
 				scripts['test--ts'] = `echo "${pure_module_details.fqname}" && tsc --noEmit`
@@ -237,13 +254,30 @@ ${pure_module_details.description || ''}
 					}
 
 					case '.html': {
-						scripts["_start:parcel:demo"] = `parcel serve ${pure_module_details.demo.path‿rel} --port 8080  --lazy  --no-autoinstall`
-						scripts['demo'] = `npm-run-all clean--cache --parallel _start:parcel:demo`
+						scripts["_start:parcel:demo"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.demo.path‿rel)} --port 8080  --lazy  --no-autoinstall`
+						scripts['demo'] = `npm-run-all clean --parallel _start:parcel:demo`
 						break
 					}
 
 					default:
 						throw new Error(`Not implemented: demo with extension "${pure_module_details.demo.ext}"!`)
+				}
+			}
+			if (pure_module_details.sandbox) {
+				switch (pure_module_details.sandbox.ext) {
+					case '.ts': {
+						scripts['sandbox'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.sandbox.path‿rel)}`
+						break
+					}
+
+					case '.html': {
+						scripts["_start:parcel:sandbox"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.sandbox.path‿rel)} --port 8181  --lazy  --no-autoinstall`
+						scripts['sandbox'] = `npm-run-all clean --parallel _start:parcel:sandbox`
+						break
+					}
+
+					default:
+						throw new Error(`Not implemented: demo with extension "${pure_module_details.sandbox.ext}"!`)
 				}
 			}
 
@@ -254,6 +288,25 @@ ${pure_module_details.description || ''}
 					: '_test'
 
 				scripts[name] = `run-s ${scriptsⵧtest.join(' ')}`
+			}
+
+			// build
+			if (pure_module_details.isꓽpublished) {
+				if (pure_module_details.languages.has('ts')) {
+					scripts["_build:prod"] = "monorepo-script--build-typescript-package"
+				}
+			}
+			const scriptsⵧbuild = Object.keys(scripts)
+				.filter(k => k.startsWith('build') || k.startsWith('_build'))
+			if (scriptsⵧbuild.length) {
+				scripts['build'] = `run-p ${scriptsⵧbuild.join(' ')}`
+			}
+
+			// misc
+			if (pure_module_details.isꓽpublished) {
+				scripts["ensure-size"] = "size-limit"
+				scripts["np"] = "np --no-publish"
+				scripts["prepublishOnly"] = "run-s clean build ensure-size"
 			}
 
 			return scripts
