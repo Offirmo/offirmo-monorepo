@@ -1,4 +1,4 @@
 {
-	"name": "ts-utils",
-	"description": "TypeScript small utilities"
+	name: "ts-utils",
+	description: "TypeScript small utilities"
 }

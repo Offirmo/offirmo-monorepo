@@ -1,4 +1,4 @@
 {
 	name: 'state--character',
-	"description": "Character: types, reducers, accessors and utilities"
+	description: "Character: types, reducers, accessors and utilities"
 }

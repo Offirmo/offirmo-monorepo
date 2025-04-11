@@ -1,4 +1,4 @@
 {
-	"name": "print-error-to-terminal",
-	"description": "nicely print an error object to a terminal (using escape codes)"
+	name: "print-error-to-terminal",
+	description: "nicely print an error object to a terminal (using escape codes)"
 }

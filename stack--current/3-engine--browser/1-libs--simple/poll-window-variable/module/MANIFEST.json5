@@ -1,3 +1,6 @@
 {
-	"description": "Poll the window until the presence of a given variable",
+	description: "Poll the window until the presence of a given variable",
+	engines: {
+		browser: '*',
+	}
 }

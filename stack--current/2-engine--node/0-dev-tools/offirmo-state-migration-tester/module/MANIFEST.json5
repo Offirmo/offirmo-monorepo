@@ -1,4 +1,4 @@
 {
 	name: "state-migration-tester",
-	"description": "helper for testing migrations"
+	description: "helper for testing migrations"
 }

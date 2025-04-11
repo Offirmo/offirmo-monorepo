@@ -9,7 +9,7 @@
 	},
 
 	"dependencies": {
-		"@offirmo-private/parcel-resolver": "*",
+		"@offirmo-private/parcel--plugin--resolver-improved": "*",
 		"@parcel/config-default": "^2",
 		"@parcel/packager-raw-url": "^2",
 		"@parcel/resolver-glob": "^2",

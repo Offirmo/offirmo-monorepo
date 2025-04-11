@@ -1,4 +1,4 @@
 {
 	name: 'interfaces',
-	"description": "TBRPG interfaces for advanced features, ex. persistence"
+	description: "TBRPG interfaces for advanced features, ex. persistence"
 }

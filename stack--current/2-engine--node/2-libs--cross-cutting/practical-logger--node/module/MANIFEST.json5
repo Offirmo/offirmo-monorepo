@@ -1,6 +1,6 @@
 {
-	"name": "practical-logger-node",
-	"version": "0.3.0",
-	"description": "node-specific practical logger",
+	name: "practical-logger-node",
+	version: "0.3.0",
+	description: "node-specific practical logger",
 	"isꓽpublished": true
 }

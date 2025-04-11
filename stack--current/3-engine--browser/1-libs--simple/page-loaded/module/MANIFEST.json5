@@ -1,4 +1,7 @@
 {
-	"description": "Exposes fully-wired document & page loaded as an awaitable promise",
-	"hasꓽside_effects": true
+	description: "Exposes fully-wired document & page loaded as an awaitable promise",
+	hasꓽside_effects: true,
+	engines: {
+		browser: '*',
+	}
 }

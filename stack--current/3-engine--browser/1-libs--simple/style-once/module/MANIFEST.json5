@@ -1,3 +1,6 @@
 {
-	"description": "Ensure some CSS is declared and only once, even if the module is imported multiple times",
+	description: "Ensure some CSS is declared and only once, even if the module is imported multiple times",
+	engines: {
+		browser: '*',
+	}
 }

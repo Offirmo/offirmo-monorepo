@@ -1,6 +1,6 @@
 {
-	"name": "practical-logger-core",
-	"version": "3.1.0",
-	"description": "Common internal code for Offirmo’s practical logger",
+	name: "practical-logger-core",
+	version: "3.1.0",
+	description: "Common internal code for Offirmo’s practical logger",
 	"isꓽpublished": true
 }

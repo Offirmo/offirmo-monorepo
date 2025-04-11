@@ -1,4 +1,7 @@
 {
-	"description": "Asset: font, smallest size possible for technical use, ex. discreetly displaying a version",
-	"hasꓽside_effects": true
+	description: "Asset: font, smallest size possible for technical use, ex. discreetly displaying a version",
+	hasꓽside_effects: true,
+	engines: {
+		browser: '*',
+	}
 }

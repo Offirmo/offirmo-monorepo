@@ -131,6 +131,7 @@ ${pure_module_details.description || ''}
 			{
 				"extends": path.relative(dest_dir‿abspath, ts__config__path),
 				"compilerOptions": {
+					...(pure_module_details.engines?.['browser'] && { lib: [ "ES2024", "DOM" ] }),
 					"pretty": true, // placeholder for adding stuff / helping diffs
 				},
 				"include": [
@@ -158,7 +159,9 @@ ${pure_module_details.description || ''}
 			"license": pure_module_details.license || 'Unlicense',
 			...(pure_module_details.isꓽpublished ? {} : { "private": true}),
 
+			...(Object.keys(pure_module_details.engines || {}).length && { "engines": pure_module_details.engines }),
 			"sideEffects": pure_module_details.hasꓽside_effects,
+
 			"type": "module",
 			"exports": {
 				".": './' + SRC_RELPATH,

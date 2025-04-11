@@ -1,4 +1,7 @@
 {
-	"description": "Some CSS utilities",
-	"hasꓽside_effects": true
+	description: "Some CSS utilities",
+	hasꓽside_effects: true,
+	engines: {
+		browser: '*',
+	}
 }

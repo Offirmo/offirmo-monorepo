@@ -1,3 +1,6 @@
 {
-	"description": "Special Parcel plugin (resolver) to mitigate some bugs"
+	description: "Special Parcel plugin (resolver) to mitigate some bugs",
+	engines: {
+		"parcel": "2.x"
+	}
 }

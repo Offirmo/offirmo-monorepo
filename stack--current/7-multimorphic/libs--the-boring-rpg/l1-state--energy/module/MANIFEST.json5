@@ -1,4 +1,4 @@
 {
 	name: 'state--energy',
-	"description": "Consumable & replenishing energy: types, reducers, accessors and utilities"
+	description: "Consumable & replenishing energy: types, reducers, accessors and utilities"
 }

@@ -1,4 +1,8 @@
 {
-	"description": "Small reusable CSS classes",
-	"hasꓽside_effects": true
+	name: 'css--framework',
+	description: "Small reusable CSS classes",
+	hasꓽside_effects: true,
+	engines: {
+		browser: '*',
+	}
 }

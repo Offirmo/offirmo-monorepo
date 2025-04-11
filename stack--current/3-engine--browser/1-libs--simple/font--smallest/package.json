@@ -6,6 +6,9 @@
 	"license": "Unlicense",
 	"private": true,
 	"sideEffects": true,
+	"engines": {
+		"browser": "*"
+	},
 	"type": "module",
 	"exports": {
 		".": "./module/index.tsx"

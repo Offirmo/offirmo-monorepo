@@ -20,6 +20,7 @@ export type Basename = string
 export type RelativePath = string // implied relative to some "working dir"
 export type AbsolutePath = string
 export type AnyPath = RelativePath | AbsolutePath
+export type Semver = string
 
 interface FileEntry {
 	path‿abs: AbsolutePath
@@ -95,10 +96,11 @@ interface PureModuleDetailsAllowedInManifest {
 	namespace: string
 	license?: string // SPDX
 	description?: string
-	version: string // Semver version TODO proper type
+	version: Semver
 	isꓽpublished: boolean
 	isꓽapp: boolean // app in the generic sense of "not a lib"
 	hasꓽside_effects: boolean // assuming most pkgs don't
+	engines?: Record<string, Semver>
 	status: // EXPERIMENTAL rating of modules TODO clarify
 		| 'spike'
 		| 'sandbox' // self-contained playground for testing stuff
@@ -195,6 +197,7 @@ function _createꓽresult(root‿abspath: AbsolutePath): PureModuleDetails {
 		depsⵧoptional: new Set<string>(),
 		depsⵧvendored: new Set<string>(),
 		languages: new Set<ProgLang>(),
+		engines: {},
 
 		_manifest: {},
 	}
@@ -447,6 +450,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			...(!packageᐧjson.private && { isꓽpublished: true }),
 			...(packageᐧjson.sideEffects && { hasꓽside_effects: true }),
 			...(status !== 'stable' && { status }),
+			...(packageᐧjson.engines && { engines: packageᐧjson.engines }),
 		}
 
 		const target_path = path.resolve(root‿abspath, MANIFEST‿basename)
@@ -466,6 +470,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		'namespace',
 		'status',
 		'version',
+		'engines',
 	] as Array<keyof PureModuleManifest>).forEach(k => {
 		if (unprocessed_keys.has(k)) {
 			assert(!!result._manifest[k])
@@ -705,7 +710,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	if(!result.main) {
 		throw new Error(`No "main" candidate found!`)
 	}
-	if (result.hasꓽstories) {
+	if (result.hasꓽstories || result.engines?.['browser']) {
 		raw_deps.push({ label: '@offirmo-private/storypad', type: 'dev'})
 		raw_deps.push({ label: '@offirmo-private/toolbox--parcel', type: 'dev'})
 	}

@@ -6,6 +6,9 @@
 	"license": "Unlicense",
 	"private": true,
 	"sideEffects": false,
+	"engines": {
+		"browser": "*"
+	},
 	"type": "module",
 	"exports": {
 		".": "./module/index.ts"
@@ -26,6 +29,8 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/storypad": "*",
+		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

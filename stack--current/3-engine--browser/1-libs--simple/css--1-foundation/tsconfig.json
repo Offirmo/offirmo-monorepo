@@ -1,12 +1,14 @@
 {
-	"extends": "../../0-meta/tsconfig.json",
+	"extends": "../../../0-meta/tsconfig.json",
 	"compilerOptions": {
-		"lib": [ "ES2024", "DOM" ],
-		"importHelpers": false,
-		"noEmit": true
+		"lib": [
+			"ES2024",
+			"DOM"
+		],
+		"pretty": true
 	},
 	"include": [
-		"../../0-meta/typescript-custom-typings/*.d.ts",
+		"../../../0-meta/typescript-custom-typings/*.d.ts",
 		"module/src/**/*.ts"
 	]
 }

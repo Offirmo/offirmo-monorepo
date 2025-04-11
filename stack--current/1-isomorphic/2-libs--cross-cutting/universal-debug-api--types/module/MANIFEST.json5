@@ -1,6 +1,6 @@
 {
-	"name": "universal-debug-api-interface",
-	"version": "1.0.1",
-	"description": "TypeScript types for a universal debug API (no code)",
+	name: "universal-debug-api-interface",
+	version: "1.0.1",
+	description: "TypeScript types for a universal debug API (no code)",
 	"isꓽpublished": true,
 }

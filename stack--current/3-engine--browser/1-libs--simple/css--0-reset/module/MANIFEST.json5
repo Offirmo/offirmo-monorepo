@@ -1,4 +1,8 @@
 {
-	"description": "My CSS reset",
-	"hasꓽside_effects": true
+	name: 'css--reset',
+	description: "My CSS reset",
+	hasꓽside_effects: true,
+	engines: {
+		browser: '*',
+	}
 }
