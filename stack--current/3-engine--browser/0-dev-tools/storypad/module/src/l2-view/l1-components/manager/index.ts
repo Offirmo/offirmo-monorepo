@@ -17,7 +17,7 @@ function renderꓽmanager(state: ObservableState): HTMLElement {
 	root.classList.add('storypad⋄manager')
 
 	// render the full UI:
-	import('@offirmo-private/css--framework/viewport.css')
+	//import('@offirmo-private/css--framework/viewport.css')
 	import('./index.css')
 	// 1. side panel
 	const sidebar_elt = renderⵧsidebar(state)

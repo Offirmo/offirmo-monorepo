@@ -1,23 +1,23 @@
-import {
+/*import {
 	getRootSXC,
 	listenToErrorEvents,
 	listenToUnhandledRejections,
-} from '@offirmo-private/soft-execution-context--browser'
+} from '@offirmo-private/soft-execution-context--browser'*/
 
 /////////////////////////////////////////////////
 
 const STYLES = 'padding: .5em; background-color: red; color: white; font-weight: bold;'
 
 async function init(): Promise<void> {
-	const rootSXC = getRootSXC()
 
-	rootSXC.emitter.on('final-error', function onFinalError({SXC, err}) {
+	function on_error(err: unknown, src: string) {
 		try {
 			// this code must be super extra safe!!!
 			// don't even use the advanced logger!
-			console.group('%cSXC "final-error" event!', STYLES)
+			console.group('%con_error()', STYLES)
 
-			console.error(err, {err})
+			console.error(err)
+			console.error({err})
 
 			/*
 			// ignore some
@@ -26,33 +26,48 @@ async function init(): Promise<void> {
 				return
 			}*/
 
-			console.error({SXC})
-
-			console.log('↑ error! (no report since dev)', STYLES)
-
 			console.groupEnd()
 		}
-		catch(err) {
+		catch (err2) {
 			console.log(`%c RECURSIVE CRASH!!! SXC ERROR HANDLING CAN ABSOLUTELY NOT CRASH!!! FIX THIS!!!`,
 				STYLES,
 			)
-			console.log(err)
+			console.log(err2)
 		}
+	}
+
+	window.addEventListener('error', function(evt) {
+		// https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent
+		//console.log('DEBUG SXC browser debug: error event', arguments)
+		const err = (evt && evt.message === 'Script error.')
+			? new Error('Unreadable error from another origin!')
+			: evt.error || new Error(`Error "${evt.message}" from "${evt.filename}", line ${evt.lineno}.${evt.colno}!`)
+
+		on_error(err, 'browser/onError')
+
+		//evt.preventDefault() // XXX should we?
 	})
 
+	window.addEventListener('unhandledrejection', function(evt) {
+		// https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent
+		//console.log('DEBUG SXC browser debug: onunhandledrejection', arguments)
+		//console.log(evt.reason)
+		const err = evt.reason || new Error('Error: uncaught promise rejection!')
+
+		on_error(err, 'browser/unhandled rejection')
+	})
+
+	/*
+	const rootSXC = getRootSXC()
+	rootSXC.emitter.on('final-error', on_error)
 	listenToErrorEvents()
 	listenToUnhandledRejections()
-
 	rootSXC.xTry('init:SXC', ({logger, SXC}) => {
 		logger.debug('Root SXC is now decorated with error details ✔', SXC.getErrorDetails())
 	})
+	*/
 }
 
 /////////////////////////////////////////////////
 
 export default init
-
-
-/*
-import { get_raven_client, set_imminent_captured_error } from './raven'
- */

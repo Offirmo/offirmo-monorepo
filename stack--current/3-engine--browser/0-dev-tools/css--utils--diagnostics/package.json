@@ -20,7 +20,7 @@
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache",
 		"clean": "npm-run-all _clean--pkg",
-		"_start:parcel:storypad": "parcel serve __fixtures/storypad/index.html --port 8383  --lazy  --no-autoinstall",
+		"_start:parcel:storypad": "parcel serve module/__fixtures/storypad/index.html --port 8383  --lazy  --no-autoinstall",
 		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
 		"test--ts": "echo \"@offirmo-private/css--utils--diagnostics\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",

@@ -235,7 +235,7 @@ ${pure_module_details.description || ''}
 			}
 			if (pure_module_details.hasꓽstories) {
 				assert(pure_module_details.storypad, `Expected storypad to be defined!`)
-				scripts["_start:parcel:storypad"] = `parcel serve ${pure_module_details.storypad.path‿rel} --port 8383  --lazy  --no-autoinstall`
+				scripts["_start:parcel:storypad"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.storypad.path‿rel)} --port 8383  --lazy  --no-autoinstall`
 				scripts['stories'] = `npm-run-all clean --parallel _start:parcel:storypad`
 			}
 

@@ -24,7 +24,7 @@ function renderꓽroot(state: ObservableState, container: HTMLElement = document
 	}
 	else {
 		// our stuff, we can be more free
-		import('@offirmo-private/css--framework/viewport.css')
+		//import('@offirmo-private/css--framework/viewport.css')
 		import('../index.css')
 
 		const root = document.createElement('div')

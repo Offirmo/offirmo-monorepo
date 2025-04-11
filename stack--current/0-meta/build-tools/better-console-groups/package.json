@@ -8,13 +8,14 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/better-console-groups.ts"
+		".": "./module/index.ts"
 	},
-	"source": "module/better-console-groups.ts",
+	"source": "module/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"limit-once": "^0.16",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {

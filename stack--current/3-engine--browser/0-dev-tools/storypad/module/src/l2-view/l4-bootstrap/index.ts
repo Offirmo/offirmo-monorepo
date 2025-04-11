@@ -3,7 +3,7 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import { asap_but_out_of_immediate_execution } from '@offirmo-private/async-utils'
-import { ೱᐧpage_loaded } from '@offirmo-private/page-loaded'
+//import { ೱᐧpage_loaded } from '@offirmo-private/page-loaded'
 
 import { LIB, DEBUG } from '../../consts.ts'
 import type { Config } from '../../l0-types/l2-config/index.ts'
@@ -43,8 +43,8 @@ async function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable
 
 	// on first load, parcel.js in debug mode has some strange behavior
 	// let's try waiting
-	await ೱᐧpage_loaded
-	DEBUG && console.log(`[${LIB}] page loaded ✅ resuming…`)
+	//await ೱᐧpage_loaded
+	//DEBUG && console.log(`[${LIB}] page loaded ✅ resuming…`)
 
 	await asap_but_out_of_immediate_execution(async () => {
 		console.groupCollapsed(`[${LIB}] Starting… `)

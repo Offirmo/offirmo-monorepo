@@ -1,3 +1,8 @@
+// TODO one day fix this missing feature
+
+
+import x from 'prop-types' // just for auto-deps to work, used by the Storybook examples
+
 
 let fn_count = 0
 export function fn() {

@@ -25,10 +25,11 @@ interface Options {
 }
 
 const DEBUG = false
+const ORIGINAL_CONSOLE = console
 
 /////////////////////////////////////////////////
 
-function install({ uncollapse_level = 'warn', lazy = true, original_console = console }: Options = {}): void {
+function install({ uncollapse_level = 'warn', lazy = true, original_console = ORIGINAL_CONSOLE }: Options = {}): void {
 	if (DEBUG) console.log('better-console-groups install', { uncollapse_level, lazy })
 
 	const group_invocations: GroupInvocation[] = []

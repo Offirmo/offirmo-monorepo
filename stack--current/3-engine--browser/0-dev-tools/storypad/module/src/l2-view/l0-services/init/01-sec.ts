@@ -1,7 +1,7 @@
-import {
+/*import {
 	decorateWithDetectedEnv,
 	getRootSXC,
-} from '@offirmo-private/soft-execution-context--browser'
+} from '@offirmo-private/soft-execution-context--browser'*/
 
 import { LIB } from '../../../consts.ts'
 import logger from '../logger.ts'
@@ -9,7 +9,7 @@ import logger from '../logger.ts'
 /////////////////////////////////////////////////
 
 async function init(): Promise<void> {
-	const rootSXC = getRootSXC()
+	/*const rootSXC = getRootSXC()
 
 	decorateWithDetectedEnv(rootSXC)
 
@@ -26,7 +26,7 @@ async function init(): Promise<void> {
 		logger.debug('Root Soft Execution Context initialized.', rootSXC)
 		logger.debug('Root SXC is now decorated with a logger ✔')
 		logger.debug('Root SXC is now decorated with env infos ✔', SXC.getAnalyticsDetails())
-	})
+	})*/
 }
 
 /////////////////////////////////////////////////

@@ -5,9 +5,6 @@
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-	"engines": {
-		"browser": "*"
-	},
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
@@ -31,11 +28,11 @@
 	"source": "module/src/index.ts",
 	"dependencies": {
 		"@offirmo-private/async-utils": "*",
+		"@offirmo-private/better-console-groups": "*",
 		"@offirmo-private/data-structures": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo/practical-logger-browser": "^3",
-		"@offirmo/universal-debug-api-browser": "^1",
 		"emittery": "^1",
+		"prop-types": "^15",
 		"react": "^19",
 		"react-dom": "^19",
 		"tiny-invariant": "^1",
@@ -45,14 +42,14 @@
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache",
 		"clean": "npm-run-all _clean--pkg",
-		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"_start:parcel:storypad": "parcel serve src/__fixtures/storypad/index.html --port 8383  --lazy  --no-autoinstall",
-		"stories": "npm-run-all clean--cache --parallel _start:parcel:storypad",
+		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
+		"_start:parcel:storypad": "parcel serve module/src/__fixtures/storypad/index.html --port 8383  --lazy  --no-autoinstall",
+		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
 		"test--ts": "echo \"@offirmo-private/storypad\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean test--ts--watch",
-		"_start:parcel:demo": "parcel serve ##doc/demo.html --port 8080  --lazy  --no-autoinstall",
-		"demo": "npm-run-all clean--cache --parallel _start:parcel:demo",
+		"_start:parcel:demo": "parcel serve module/demo.html --port 8080  --lazy  --no-autoinstall",
+		"demo": "npm-run-all clean --parallel _start:parcel:demo",
 		"test": "run-s test--unit test--ts"
 	},
 	"devDependencies": {
@@ -61,6 +58,7 @@
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo-private/ts-types-web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/prop-types": "^15",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
 		"npm-run-all": "^4",
