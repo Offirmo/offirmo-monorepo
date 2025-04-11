@@ -5,6 +5,9 @@
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
+	"engines": {
+		"browser": "*"
+	},
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
@@ -16,10 +19,14 @@
 		}
 	},
 	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
 	"dependencies": {
 		"@offirmo-private/css--foundation": "*"
+		"@offirmo-private/style-once": "*",
+		"tiny-invariant": "^1"
 	},
-
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",
 
@@ -28,13 +35,13 @@
 
 		"build": "node ./src/~~gen/bundle.mjs"
 	},
-
 	"devDependencies": {
-		"@offirmo-private/css--utils": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
-		"lightningcss": "^1",
-		"npm-run-all": "^4"
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

@@ -1,24 +1,25 @@
 {
-	"name": "@offirmo-private/css--utils",
+	"name": "@offirmo-private/css--utils--diagnostic",
 	"description": "Some CSS utilities",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
+	"engines": {
+		"browser": "*"
+	},
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		"./diagnostics": {
-			"import": "./src/diagnostics/index.css"
-		},
-		"./debug": {
-			"import": "./src/debug/index.css"
-		}
+		".": "./module/src/index.css"
 	},
-
+	"source": "module/src/index.css",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
 	"dependencies": {
+		"tiny-invariant": "^1"
 	},
-
 	"scripts": {
 		"clean": "monorepo-script--clean-package …dist …cache",
 

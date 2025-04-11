@@ -5,19 +5,21 @@
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
+	"engines": {
+		"browser": "*"
+	},
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
 		".": "./module/src/index.ts"
 	},
 	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
 	"dependencies": {
-		"@offirmo-private/css--reset": "*"
+		"tiny-invariant": "^1"
 	},
-	"optionalDependencies": {
-		"@offirmo-private/style-once": "*"
-	},
-
 	"scripts": {
 		"clean--cache": "monorepo-script--clean-package …cache",
 		"clean--dist": "monorepo-script--clean-package …dist",

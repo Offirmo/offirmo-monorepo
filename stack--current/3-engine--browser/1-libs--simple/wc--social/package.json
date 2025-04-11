@@ -1,15 +1,24 @@
 {
-	"name": "@offirmo-private/iframe--social",
+	"name": "@offirmo-private/wc--social",
 	"description": "A Web Component to display a social bar",
 	"version": "0.0.2",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
+	"engines": {
+		"browser": "*"
+	},
 	"sideEffects": true,
 	"source": "module/src/web-component--social-links.js",
+	"type": "module",
+	"dependencies": {
+		"tiny-invariant": "^1"
+	},
 	"scripts": {},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/storypad": "*",
+		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4"
 	}
