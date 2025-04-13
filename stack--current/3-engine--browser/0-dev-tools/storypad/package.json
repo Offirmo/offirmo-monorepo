@@ -50,7 +50,7 @@
 		"dev": "run-s clean test--ts--watch",
 		"_start:parcel:demo": "parcel serve module/demo.html --port 8080  --lazy  --no-autoinstall",
 		"demo": "npm-run-all clean --parallel _start:parcel:demo",
-		"test": "run-s test--unit test--ts"
+		"_test": "run-s test--unit test--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/css--utils--diagnostics": "*",

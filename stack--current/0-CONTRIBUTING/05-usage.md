@@ -27,10 +27,7 @@ For ex. to make everything work again step by step!
 
 TODO auto-generate this list!!
 ```bash
-bolt --only-fs "[0-9]-*/*" ws run build
-bolt --only-fs "[0-9]-*/*" ws run test
-bolt --only-fs "[0-5]-*/*" ws run build
-bolt --only-fs "[0-5]-*/*" ws run test
+bolt --only-fs "[0-9]-*/**/*" ws run test
    bolt --only-fs "0-meta/build-tools/*" ws run test
    bolt --only-fs "1-isomorphi*/**/*" ws run test
       bolt --only-fs "1-isomorphic/1-libs--simple/*" ws run test

@@ -87,6 +87,11 @@ type ProgLang =
 	| 'css'
 	| 'md'
 
+interface DependencyDetails {
+	type?: DependencyType
+	v?: Semver
+}
+
 /* This type should have AS FEW ENTRIES as possible
  * reminder that we aim for a single source of truth
  * Anything that can be inferred from the code itself should be!
@@ -112,6 +117,7 @@ interface PureModuleDetailsAllowedInManifest {
 //  all entries are optional, only to be used if an override is needed or if not inferrable
 interface PureModuleManifest extends Partial<PureModuleDetailsAllowedInManifest> {
 	_dontꓽpresent?: boolean // unsupported module, don't "present" it TODO remove once all the modules are compatible!
+	_dependenciesOverrides?: Record<string, DependencyDetails | 'ignore'>
 }
 
 // Should contain everything needed to build
@@ -493,7 +499,9 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			unprocessed_keys.delete(k)
 		}
 	})
-	unprocessed_keys.delete('_dontꓽpresent') // special
+	// special ones that don't map to details
+	unprocessed_keys.delete('_dontꓽpresent')
+	unprocessed_keys.delete('_dependenciesOverrides')
 	if (unprocessed_keys.size) {
 		throw new Error(`Unknown keys in manifest: "${Array.from(unprocessed_keys).join(', ')}"!`)
 	}
@@ -798,15 +806,29 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	}
 
 	// consolidate
+	Object.entries(result._manifest._dependenciesOverrides || {}).forEach(([label, details]) => {
+		if (details === 'ignore')
+			return
+
+		raw_deps.push({label, type: details.type || 'normal'})
+	})
 	let hasꓽReact = false
 	raw_deps.forEach(({label, type}) => {
 		if (label === result.fqname)
-			return // self-reference
+			return // self-reference, not a real dep
+
+		const overrides = result._manifest._dependenciesOverrides?.[label]
+		if (overrides === 'ignore') {
+			// currently use to allow using optional "cross-cutting" libs
+			// which may not be available if resurrecting bolt workspace 1-by-1
+			// thus should not appear in package.json
+			return
+		}
 
 		if (label === 'react')
 			hasꓽReact = true
 
-		switch (type) {
+		switch (overrides?.type || type) {
 			case 'normal':
 				result.depsⵧnormal.add(label)
 				break
@@ -826,6 +848,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 				throw new Error(`Unknown dep type "${type}"!`)
 		}
 	})
+
+
 
 	if (hasꓽReact) {
 		// indirect dependency
