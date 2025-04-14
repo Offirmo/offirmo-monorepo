@@ -1,15 +1,10 @@
-/*import {
-	getRootSXC,
-	listenToErrorEvents,
-	listenToUnhandledRejections,
-} from '@offirmo-private/soft-execution-context--browser'*/
 
-/////////////////////////////////////////////////
+import { LIB } from '../../../consts.ts'
+import { getꓽlogger } from '../logger.ts'
 
 const STYLES = 'padding: .5em; background-color: red; color: white; font-weight: bold;'
 
 async function init(): Promise<void> {
-
 	function on_error(err: unknown, src: string) {
 		try {
 			// this code must be super extra safe!!!
@@ -36,36 +31,41 @@ async function init(): Promise<void> {
 		}
 	}
 
-	window.addEventListener('error', function(evt) {
-		// https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent
-		//console.log('DEBUG SXC browser debug: error event', arguments)
-		const err = (evt && evt.message === 'Script error.')
-			? new Error('Unreadable error from another origin!')
-			: evt.error || new Error(`Error "${evt.message}" from "${evt.filename}", line ${evt.lineno}.${evt.colno}!`)
+	try {
+		const { getRootSXC, listenToErrorEvents, listenToUnhandledRejections } = await import('@offirmo-private/soft-execution-context--browser')
 
-		on_error(err, 'browser/onError')
+		const rootSXC = getRootSXC()
+		rootSXC.emitter.on('final-error', on_error)
+		listenToErrorEvents()
+		listenToUnhandledRejections()
+		rootSXC.xTry('init:SXC', ({logger, SXC}) => {
+			logger.debug('Root SXC is now decorated with error details ✔', SXC.getErrorDetails())
+		})
+	}
+	catch (err) {
+		console.error(err)
 
-		//evt.preventDefault() // XXX should we?
-	})
+		window.addEventListener('error', function(evt) {
+			// https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent
+			//console.log('DEBUG SXC browser debug: error event', arguments)
+			const err = (evt && evt.message === 'Script error.')
+				? new Error('Unreadable error from another origin!')
+				: evt.error || new Error(`Error "${evt.message}" from "${evt.filename}", line ${evt.lineno}.${evt.colno}!`)
 
-	window.addEventListener('unhandledrejection', function(evt) {
-		// https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent
-		//console.log('DEBUG SXC browser debug: onunhandledrejection', arguments)
-		//console.log(evt.reason)
-		const err = evt.reason || new Error('Error: uncaught promise rejection!')
+			on_error(err, 'browser/onError')
 
-		on_error(err, 'browser/unhandled rejection')
-	})
+			//evt.preventDefault() // XXX should we?
+		})
 
-	/*
-	const rootSXC = getRootSXC()
-	rootSXC.emitter.on('final-error', on_error)
-	listenToErrorEvents()
-	listenToUnhandledRejections()
-	rootSXC.xTry('init:SXC', ({logger, SXC}) => {
-		logger.debug('Root SXC is now decorated with error details ✔', SXC.getErrorDetails())
-	})
-	*/
+		window.addEventListener('unhandledrejection', function(evt) {
+			// https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent
+			//console.log('DEBUG SXC browser debug: onunhandledrejection', arguments)
+			//console.log(evt.reason)
+			const err = evt.reason || new Error('Error: uncaught promise rejection!')
+
+			on_error(err, 'browser/unhandled rejection')
+		})
+	}
 }
 
 /////////////////////////////////////////////////

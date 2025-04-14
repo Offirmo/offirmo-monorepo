@@ -5,9 +5,6 @@
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-	"engines": {
-		"browser": "*"
-	},
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
@@ -22,9 +19,13 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …cache",
+		"clean": "npm-run-all _clean--pkg",
+		"_start:parcel:storypad": "parcel serve module/__fixtures/storypad/index.html --port 8383  --lazy  --no-autoinstall",
+		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
 		"test--ts": "echo \"@offirmo-private/font--smallest\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s test--ts--watch",
+		"dev": "run-s clean test--ts--watch",
 		"test": "run-s test--ts"
 	},
 	"devDependencies": {

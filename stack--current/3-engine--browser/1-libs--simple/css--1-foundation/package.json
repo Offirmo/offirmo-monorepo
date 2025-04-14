@@ -5,9 +5,6 @@
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-	"engines": {
-		"browser": "*"
-	},
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
@@ -33,11 +30,13 @@
 		"build": "node ./src/~~gen/bundle.mjs"
 	},
 	"devDependencies": {
+		"@offirmo-private/css--reset": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
-		"lightningcss": "^1",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^22",
+		"lightningcss": "^1",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

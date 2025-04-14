@@ -24,7 +24,7 @@
 		"test--ts": "echo \"@offirmo-private/pure-module--presenter\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s test--ts--watch",
-		"demo": "node --experimental-strip-types ./module/~~sandbox/index.ts",
+		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts",
 		"_test": "run-s test--ts"
 	},
 	"devDependencies": {

@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
-import logger from '../logger.ts'
+import { getꓽlogger } from '../logger.ts'
 
 /////////////////////////////////////////////////
 
@@ -26,7 +26,7 @@ async function init(): Promise<void> {
 				'silly',
 			].forEach(level => {
 				//console.log(`logger demo with level "${level}":`)
-				;(logger as any)[level](`logger demo with level "${level}"`, {level})
+				;(getꓽlogger() as any)[level](`logger demo with level "${level}"`, {level})
 			})
 			console.groupEnd()
 		}, 1000)

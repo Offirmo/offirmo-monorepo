@@ -25,8 +25,6 @@ const misconfig_detection = setTimeout(() => {
 
 /////////////////////////////////////////////////
 
-import logger from '../l0-services/logger.ts'
-
 import { ObservableState } from '../../l1-flux/l2-observable'
 
 // @ts-expect-error bundler advanced feature
@@ -58,12 +56,12 @@ async function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable
 		assert(Object.keys(initsⵧservices).length > 0, 'Unexpectedly no services/init found!')
 		await Object.keys(initsⵧservices).sort().reduce(async (acc, key) => {
 			await acc
-			logger.group(`services/init "${key}"`)
+			console.group(`services/init "${key}"`)
 			const init_fn = initsⵧservices[key].default
-			logger.trace(`services/init "${key}": exec…`)
+			_logger.trace(`services/init "${key}": exec…`)
 			await init_fn()
-			logger.trace(`services/init "${key}": done ✅`)
-			logger.groupEnd()
+			console.trace(`services/init "${key}": done ✅`)
+			console.groupEnd()
 		}, Promise.resolve())
 		console.log(`[${LIB}] 1/3 Services init ✅`)
 		console.groupEnd()

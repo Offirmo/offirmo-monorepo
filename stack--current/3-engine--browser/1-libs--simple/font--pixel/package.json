@@ -5,9 +5,6 @@
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-	"engines": {
-		"browser": "*"
-	},
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
@@ -15,7 +12,10 @@
 	},
 	"source": "module/index.css",
 	"dependencies": {},
-	"scripts": {},
+	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …cache",
+		"clean": "npm-run-all _clean--pkg"
+	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",

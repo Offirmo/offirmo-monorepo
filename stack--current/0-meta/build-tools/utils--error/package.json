@@ -21,7 +21,7 @@
 		"test--ts": "echo \"@offirmo/error-utils\" && tsc --noEmit",
 		"test--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean test--ts--watch",
-		"demo": "node --experimental-strip-types ./module/~~sandbox/index.ts",
+		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts",
 		"test": "run-s test--unit test--ts",
 		"_build:prod": "monorepo-script--build-typescript-package",
 		"build": "run-p _build:prod",

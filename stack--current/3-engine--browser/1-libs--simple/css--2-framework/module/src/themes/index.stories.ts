@@ -78,7 +78,7 @@ function _theme_demo(theme: string) {
 }
 
 function _decorator_add_all_themes(story) {
-	import('../src/themes/theme--dark--colorhunt212.css')
+	import('./theme--dark--colorhunt212.css')
 	return story
 }
 function _decorator_select_theme(theme) {

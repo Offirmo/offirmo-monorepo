@@ -4,5 +4,19 @@
 	hasꓽside_effects: true,
 	engines: {
 		browser: '*',
+	},
+	_overrides: {
+		dependencies: {
+			'@offirmo-private/css--foundation': {
+				type: 'dev'
+			},
+		},
+
+		// avoid as much as possible, try semantic overrides first
+		files: {
+			package_json: {
+				'scripts.build': 'node --experimental-strip-types ./module/__build/bundle.ts',
+			}
+		}
 	}
 }

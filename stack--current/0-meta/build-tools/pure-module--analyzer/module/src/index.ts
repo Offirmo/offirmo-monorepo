@@ -522,8 +522,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		)
 		if (is_excluded) {
 			if (path.basename(path.dirname(path‿rel)) === '~~sandbox') {
-				if (entry.basename‿noext === 'index' && !result.demo) {
-					result.demo = entry // unless we find better
+				if (entry.basename‿noext === 'index' && !result.sandbox) {
+					result.sandbox = entry
 				}
 			}
 

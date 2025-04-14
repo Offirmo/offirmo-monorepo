@@ -5,16 +5,19 @@
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-	"engines": {
-		"browser": "*"
-	},
 	"sideEffects": true,
-	"source": "module/src/web-component--social-links.js",
 	"type": "module",
+	"exports": {
+		".": "./module/src/web-component--social-links.js"
+	},
+	"source": "module/src/web-component--social-links.js",
 	"dependencies": {
 		"tiny-invariant": "^1"
 	},
-	"scripts": {},
+	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …cache",
+		"clean": "npm-run-all _clean--pkg"
+	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
