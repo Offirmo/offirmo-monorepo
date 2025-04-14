@@ -9,6 +9,9 @@
 	},
 	"include": [
 		"../../../0-meta/typescript-custom-typings/*.d.ts",
-		"module/src/**/*.ts"
+		"module/**/*.ts"
+	],
+	"exclude": [
+		"**/~~*/**/*"
 	]
 }

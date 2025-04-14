@@ -6,5 +6,8 @@
 	"include": [
 		"../../typescript-custom-typings/*.d.ts",
 		"module/**/*.ts"
+	],
+	"exclude": [
+		"**/~~*/**/*"
 	]
 }

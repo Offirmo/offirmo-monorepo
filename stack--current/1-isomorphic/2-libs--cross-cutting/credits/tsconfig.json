@@ -5,6 +5,9 @@
 	},
 	"include": [
 		"../../../0-meta/typescript-custom-typings/*.d.ts",
-		"module/src/l1-types/**/*.ts"
+		"module/**/*.ts"
+	],
+	"exclude": [
+		"**/~~*/**/*"
 	]
 }

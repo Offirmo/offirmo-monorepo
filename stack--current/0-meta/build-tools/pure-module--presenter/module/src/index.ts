@@ -137,7 +137,10 @@ ${pure_module_details.description || ''}
 				},
 				"include": [
 					path.relative(dest_dir‿abspath, ts__custom_types__path) + '/*.d.ts',
-					`${SRC_DIR_RELPATH}/**/*.ts`
+					`${PURE_MODULE_CONTENT_RELPATH}/**/*.ts`
+				],
+				"exclude": [
+					'**/~~*/**/*',
 				]
 			}
 		))
