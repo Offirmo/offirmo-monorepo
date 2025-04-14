@@ -2,8 +2,6 @@ import { LIB, DEBUG } from '../consts.ts'
 import { is_browser_connected_to_a_network } from '../l1-is-online/index'
 import { is_browser_page_visible } from '../l1-is-page-visible/index'
 
-//import { is_browser_connected_to_a_network, is_browser_page_visible } from '../../tosort/2024/shared-state/selectors'
-
 if (DEBUG) console.info(`[${LIB}] Hello!`)
 
 /////////////////////////////////////////////////

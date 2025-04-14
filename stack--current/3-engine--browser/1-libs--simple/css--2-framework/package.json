@@ -8,27 +8,26 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts",
-		"./viewport.css": {
-			"import": "./src/atomic/atomic--dimension.css"
-		}
+		".": "./module/src/index.ts"
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/css--foundation": "*",
 		"@offirmo-private/style-once": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"clean": "monorepo-script--clean-package …dist …cache",
-
-		"serve--parcel": "parcel serve --log-level verbose  'doc/demo/*.html' --port 3030 --no-autoinstall",
-		"dev": "npm-run-all clean --parallel serve--parcel",
-
-		"build": "node ./src/~~gen/bundle.mjs"
+		"_clean--pkg": "monorepo-script--clean-package …cache",
+		"clean": "npm-run-all _clean--pkg",
+		"_start:parcel:storypad": "parcel serve module/__fixtures/storypad/index.html --port 8383  --lazy  --no-autoinstall",
+		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
+		"test--ts": "echo \"@offirmo-private/css--framework\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s clean test--ts--watch",
+		"test": "run-s test--ts",
+		"build": "node --experimental-strip-types ./module/__build/bundle.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/css--foundation": "*",

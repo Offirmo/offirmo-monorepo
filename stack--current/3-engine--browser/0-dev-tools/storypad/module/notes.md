@@ -5,3 +5,6 @@ https://fluent-components.azurewebsites.net/?path=/docs/getting-started-overview
 
 		"@storybook/csf": "^0",
 		"@storybook/react": "^8",
+
+
+--no-hmr --log-level verbose

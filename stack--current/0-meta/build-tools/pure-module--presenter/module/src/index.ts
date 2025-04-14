@@ -4,6 +4,7 @@
 import { strict as assert } from 'node:assert'
 import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
+import { setꓽpropertyⵧdeep } from '@offirmo-private/set-deep-property'
 
 import { writeJsonFile as write_json_file } from 'write-json-file' // full pkg is too useful, ex. preserve indent
 
@@ -163,7 +164,7 @@ ${pure_module_details.description || ''}
 					return true
 				})
 		)
-		const pkg: any = {
+		let pkg: any = {
 			"name": pure_module_details.fqname,
 			...(pure_module_details.description && {"description": pure_module_details.description}),
 			"version": pure_module_details.version,
@@ -326,6 +327,10 @@ ${pure_module_details.description || ''}
 			}
 			pkg.files = [ 'dist', 'module' ]
 		}
+
+		Object.entries(pure_module_details._manifest._overrides?.files?.packageᐧjson || {}).forEach(([path, value]) => {
+			pkg = setꓽpropertyⵧdeep(pkg, path, value)
+		})
 
 		return pkg
 	})()

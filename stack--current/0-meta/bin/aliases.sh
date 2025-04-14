@@ -9,6 +9,7 @@ alias  mono0bp2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; gi
 alias  mono0bpt='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/print-error--to-terminal/;             tabset --color "#006EDB" --badge mono0bpt'
 alias  mono0bpa='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/pure-module--analyzer/;                tabset --color "#006EDB" --badge mono0bpa'
 alias  mono0bpp='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/pure-module--presenter/;               tabset --color "#006EDB" --badge mono0bpp'
+alias   mono0bs='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/set-deep-property/;                    tabset --color "#006EDB" --badge mono0bs'
 alias  mono0btu='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/toolbox--unit-tests/;                  tabset --color "#006EDB" --badge mono0btu'
 alias  mono0bub='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/utils--bolt/;                          tabset --color "#006EDB" --badge mono0bub'
 alias  mono0bue='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;          cd build-tools/utils--error/;                         tabset --color "#006EDB" --badge mono0bue'

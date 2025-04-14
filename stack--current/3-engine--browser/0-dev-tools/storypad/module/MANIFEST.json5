@@ -5,10 +5,12 @@
 	engines: {
 		browser: '*'
 	},
-	_dependenciesOverrides: {
-		'@offirmo-private/react-error-boundary': 'ignore',
-		'@offirmo-private/rich-text-format--to-react': 'ignore',
-		'@offirmo-private/soft-execution-context--browser': 'ignore',
-		'@offirmo/universal-debug-api-browser': 'ignore',
+	_overrides: {
+		dependencies: {
+			'@offirmo-private/react-error-boundary': 'ignore',
+			'@offirmo-private/rich-text-format--to-react': 'ignore',
+			'@offirmo-private/soft-execution-context--browser': 'ignore',
+			'@offirmo/universal-debug-api-browser': 'ignore',
+		},
 	}
 }

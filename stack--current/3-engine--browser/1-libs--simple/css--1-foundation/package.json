@@ -18,16 +18,19 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"clean--cache": "monorepo-script--clean-package …cache",
-		"clean--dist": "monorepo-script--clean-package …dist",
-
-		"_start:parcel:storypad": "parcel serve src/__storypad/index.html --port 8080  --lazy  --no-autoinstall",
-		"_start:parcel:sandbox": "parcel serve --no-hmr --log-level verbose  'src/++gen/sandbox/*.html' --port 3020 --no-autoinstall",
-
-		"stories": "npm-run-all clean--cache --parallel _start:parcel:storypad",
-		"sandbox": "npm-run-all clean--cache --parallel _start:parcel:sandbox",
-
-		"build": "node ./src/~~gen/bundle.mjs"
+		"_clean--pkg": "monorepo-script--clean-package …cache",
+		"clean": "npm-run-all _clean--pkg",
+		"_start:parcel:storypad": "parcel serve module/__fixtures/storypad/index.html --port 8383  --lazy  --no-autoinstall",
+		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
+		"test--ts": "echo \"@offirmo-private/css--foundation\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s clean test--ts--watch",
+		"_start:parcel:demo": "parcel serve module/__fixtures/wc-kitchen-sink/demo.html --port 8080  --lazy  --no-autoinstall",
+		"demo": "npm-run-all clean --parallel _start:parcel:demo",
+		"_start:parcel:sandbox": "parcel serve module/~~sandbox/index.html --port 8181  --lazy  --no-autoinstall",
+		"sandbox": "npm-run-all clean --parallel _start:parcel:sandbox",
+		"test": "run-s test--ts",
+		"build": "node --experimental-strip-types ./module/__build/bundle.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/css--reset": "*",

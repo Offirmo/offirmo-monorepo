@@ -16,6 +16,19 @@
 	"dependencies": {
 		"@offirmo/practical-logger-types": "^3"
 	},
+	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …dist",
+		"clean": "npm-run-all _clean--pkg",
+		"test--ts": "echo \"@offirmo/universal-debug-api-interface\" && tsc --noEmit",
+		"test--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s clean test--ts--watch",
+		"test": "run-s test--ts",
+		"_build:prod": "monorepo-script--build-typescript-package",
+		"build": "run-p _build:prod",
+		"ensure-size": "size-limit",
+		"np": "np --no-publish",
+		"prepublishOnly": "run-s clean build ensure-size"
+	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
@@ -23,24 +36,6 @@
 		"tslib": "^2",
 		"typescript": "^5"
 	},
-	"scripts": {
-		"clean": "monorepo-script--clean-package …dist",
-
-		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
-		"_build:prod": "monorepo-script--build-typescript-package",
-		"ensure-size": "size-limit",
-
-		"dev": "run-s clean _build:dev:watch",
-		"build": "run-s  clean _build:prod",
-
-		"np": "np --no-publish",
-		"prepublishOnly": "run-s clean build ensure-size"
-	},
-	"keywords": [
-		"logger",
-		"debug",
-		"typescript"
-	],
 	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/1-isomorphic/2-libs--cross-cutting/universal-debug-api--types",
 	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/1-isomorphic/2-libs--cross-cutting/universal-debug-api--types/README.md",
 	"bugs": {

@@ -117,7 +117,11 @@ interface PureModuleDetailsAllowedInManifest {
 //  all entries are optional, only to be used if an override is needed or if not inferrable
 interface PureModuleManifest extends Partial<PureModuleDetailsAllowedInManifest> {
 	_dontꓽpresent?: boolean // unsupported module, don't "present" it TODO remove once all the modules are compatible!
-	_dependenciesOverrides?: Record<string, DependencyDetails | 'ignore'>
+	_overrides?: {
+		dependencies: Record<string, DependencyDetails | 'ignore'>,
+		packageᐧjson?: { [json_path: string]: any },
+	}
+
 }
 
 // Should contain everything needed to build
@@ -501,7 +505,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	})
 	// special ones that don't map to details
 	unprocessed_keys.delete('_dontꓽpresent')
-	unprocessed_keys.delete('_dependenciesOverrides')
+	unprocessed_keys.delete('_overrides')
 	if (unprocessed_keys.size) {
 		throw new Error(`Unknown keys in manifest: "${Array.from(unprocessed_keys).join(', ')}"!`)
 	}
@@ -524,6 +528,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			if (path.basename(path.dirname(path‿rel)) === '~~sandbox') {
 				if (entry.basename‿noext === 'index' && !result.sandbox) {
 					result.sandbox = entry
+					console.log(`${indent}    ⭐️current candidate for sandbox`)
+
 				}
 			}
 
@@ -547,40 +553,54 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			const current_is_index = result.main.basename‿noext === 'index'
 			const candidate_is_index = entry.basename‿noext === 'index'
 			if (candidate_is_index !== current_is_index) {
-				result.main = candidate_is_index
-					? entry
-					: result.main
+				if (candidate_is_index) {
+					result.main = entry
+					console.log(`${indent}    ⭐️current candidate for main`)
+				}
 			}
 			else {
 				// both are index or both are not
 				if (entry.path‿rel.length < result.main.path‿rel.length) {
+					console.log(`${indent}    ⭐️current candidate for main`)
 					result.main = entry
 				}
 			}
 		}
 
 		if (entry.basename‿noext === 'demo') {
+			console.log(`${indent}    ⭐️current candidate for demo`)
 			result.demo = entry
 		}
 		if (path.basename(path.dirname(path‿rel)).includes('demo')
 			&& entry.basename‿noext === 'index') {
-			result.demo ||= entry
+			if (!result.demo) {
+				console.log(`${indent}    ⭐️current candidate for demo`)
+				result.demo = entry
+			}
 		}
 
 		if (entry.basename‿noext === 'sandbox') {
+			console.log(`${indent}    ⭐️current candidate for sandbox`)
 			result.sandbox = entry
 		}
 		if (path.basename(path.dirname(path‿rel)).includes('sandbox')
 			&& entry.basename‿noext === 'index') {
-			result.sandbox ||= entry
+			if (!result.sandbox) {
+				console.log(`${indent}    ⭐️current candidate for sandbox`)
+				result.sandbox = entry
+			}
 		}
 
 		if (entry.basename‿noext === 'storypad') {
+			console.log(`${indent}    ⭐️current candidate for storypad`)
 			result.storypad = entry
 		}
 		if (path.basename(path.dirname(path‿rel)).includes('storypad')
 			&& entry.basename‿noext === 'index') {
-			result.storypad ||= entry
+			if (!result.storypad) {
+				console.log(`${indent}    ⭐️current candidate for storypad`)
+				result.storypad = entry
+			}
 		}
 
 		const { basename } = entry
@@ -591,6 +611,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		}
 
 		const langs = getꓽProgLangs(entry)
+		console.log(`${indent}    langs: ${langs.join(', ')}`)
 		langs.forEach(lang => result.languages.add(lang))
 
 		const unprocessed_langs = new Set(langs)
@@ -627,6 +648,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 						throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')
 					}
 
+					console.log(`${indent}    ↘ converted to @offirmo/unit-test-toolbox`)
 					raw_deps.push({ label: '@offirmo/unit-test-toolbox', type: 'dev' })
 					return
 				}
@@ -688,6 +710,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 						throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')
 					}
 
+					console.log(`${indent}    ↘ converted to @offirmo/unit-test-toolbox`)
 					raw_deps.push({ label: '@offirmo/unit-test-toolbox', type: 'dev' })
 					return
 				}
@@ -710,6 +733,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			unprocessed_langs.delete('html')
 			//throw new Error(`HTML imports detection not implemented!`)
 			// TODO one day use parcel to track deps
+			console.log(`${indent}    ↘ auto-dep to @offirmo-private/toolbox--parcel`)
 			raw_deps.push({ label: '@offirmo-private/toolbox--parcel', type: 'dev'})
 		}
 		if (langs.includes('css')) {
@@ -806,9 +830,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	}
 
 	// consolidate
-	Object.entries(result._manifest._dependenciesOverrides || {}).forEach(([label, details]) => {
-		if (details === 'ignore')
-			return
+	Object.entries(result._manifest._overrides?.dependencies || {}).forEach(([label, details]) => {
+		if (details === 'ignore') return
 
 		raw_deps.push({label, type: details.type || 'normal'})
 	})
@@ -817,7 +840,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		if (label === result.fqname)
 			return // self-reference, not a real dep
 
-		const overrides = result._manifest._dependenciesOverrides?.[label]
+		const overrides = result._manifest._overrides?.dependencies?.[label]
 		if (overrides === 'ignore') {
 			// currently use to allow using optional "cross-cutting" libs
 			// which may not be available if resurrecting bolt workspace 1-by-1

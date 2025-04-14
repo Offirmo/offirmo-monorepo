@@ -8,8 +8,7 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		".": "./module/src/l2-aggregator/index.ts",
-		"./authors/*": "./module/src/l3-authors/*/index.ts"
+		".": "./module/src/l2-aggregator/index.ts"
 	},
 	"source": "module/src/l1-types/index.ts",
 	"peerDependencies": {

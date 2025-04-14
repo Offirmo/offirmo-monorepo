@@ -13,7 +13,7 @@
 
 		// avoid as much as possible, try semantic overrides first
 		files: {
-			package_json: {
+			packageᐧjson: {
 				'scripts.build': 'node --experimental-strip-types ./module/__build/bundle.ts',
 			}
 		}

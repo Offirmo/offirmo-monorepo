@@ -56,7 +56,7 @@
 			"2-engine--node/1-libs--simple/*",
 			"2-engine--node/2-libs--cross-cutting/*",
 			"3-engine--browser/0-dev-tools/*",
-			"xx3-engine--browser/1-libs--simple/*",
+			"3-engine--browser/1-libs--simple/*",
 			"xx3-engine--browser/2-libs--cross-cutting/*",
 			"xx3-engine--browser/X-incubator/active/*",
 			"xx1-isomorphic/A-libs--the-boring-rpg/*",
