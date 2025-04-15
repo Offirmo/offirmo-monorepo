@@ -5,7 +5,7 @@ import {
 	addDebugCommand,
 } from '@offirmo/universal-debug-api-node'
 
-console.log('Stuff may on may not be displayed:')
+console.log('Stuff may or may not be displayed:')
 
 const root_logger = getLogger({
 	suggestedLevel: 'silly',

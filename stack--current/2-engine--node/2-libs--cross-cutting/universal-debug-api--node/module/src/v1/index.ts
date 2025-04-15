@@ -1,6 +1,6 @@
-import { DebugApiV1 } from '@offirmo/universal-debug-api-interface'
-import { Logger, LoggerCreationParams, createLogger } from '@offirmo/practical-logger-node'
-import { LogLevel, DEFAULT_LOG_LEVEL, DEFAULT_LOGGER_KEY } from '@offirmo/practical-logger-core'
+import type { DebugApiV1 } from '@offirmo/universal-debug-api-interface'
+import { type Logger, type LoggerCreationParams, createLogger } from '@offirmo/practical-logger-node'
+import { type LogLevel, DEFAULT_LOG_LEVEL, DEFAULT_LOGGER_KEY } from '@offirmo/practical-logger-core'
 import { isꓽexact_stringified_number } from '@offirmo-private/type-detection'
 
 import { ENV_ROOT, getOverrideKeyForLogger, getEnvKeyForOverride } from './keys.ts'
