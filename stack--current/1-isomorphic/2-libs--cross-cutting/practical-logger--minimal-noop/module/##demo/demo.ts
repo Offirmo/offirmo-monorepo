@@ -8,7 +8,7 @@ import {
 	demo_incorrect_logger_invocations,
 	demo_logger_api,
 	demo_devtools_fonts,
-} from '../../practical-logger-core/doc/shared-demo'
+} from '@offirmo/practical-logger-core/__shared-demos'
 
 const logger = createLogger({
 	name: 'demo',

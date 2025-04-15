@@ -55,7 +55,7 @@ const THINGⵧONLINE: ThingWithOnlinePresence = {
 // for crediting. Rationale = one day, we may know which artist was used in the training data
 // We are not re-using Author, those are not "authors"
 interface AIModel {
-	name: string | 'unknown',
+	name: string,
 	version: SemVer | 'unknown',
 }
 
@@ -68,14 +68,14 @@ interface Asset extends Thing {
 		| 'code'
 	// TODO learning, inspiration... ?
 
-	url?: Url‿str
+	url: Url‿str
 
 	alt: string // a textual description for clients who can't display
 
 	co_authors?: Array<Author>,
 
 	ai_involvement: 'none' | {
-		generators?: Array<AIModel>
+		generators?: Array<AIModel | 'unknown'>
 		level:
 			| 'minor' // ex. author generated the base, then used AI to tweak
 			| 'major' // ex. generated the base, then author tweaked

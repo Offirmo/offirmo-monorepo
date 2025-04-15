@@ -7,7 +7,8 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts"
+		".": "./module/src/index.ts",
+		"./__shared-demos": "./module/src/__shared-demos/index.ts"
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {

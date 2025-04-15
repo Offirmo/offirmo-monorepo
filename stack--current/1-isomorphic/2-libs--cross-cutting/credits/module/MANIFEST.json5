@@ -1,12 +1,13 @@
 {
 	description: "Lib for crediting creators (mainly of assets) and tracking the recent usage of assets for dynamic crediting",
 	hasꓽside_effects: true,
+	status: 'experimental',
 
 	_overrides: {
 		files: {
 			packageᐧjson: {
-				'|exports|.': './module/src/l2-aggregator/index.ts'
-			}
-		}
-	}
+				'|exports|./authors/*': './module/src/l3-authors/*/index.ts',
+			},
+		},
+	},
 }

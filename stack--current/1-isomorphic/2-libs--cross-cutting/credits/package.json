@@ -8,9 +8,10 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		".": "./module/src/l2-aggregator/index.ts"
+		".": "./module/src/index.ts",
+		"./authors/*": "./module/src/l3-authors/*/index.ts"
 	},
-	"source": "module/src/l1-types/index.ts",
+	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},

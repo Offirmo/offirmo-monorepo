@@ -9,7 +9,7 @@ import {
 	demo_incorrect_logger_invocations,
 	demo_logger_api,
 	demo_devtools_fonts,
-} from './demos--shared.ts'
+} from '../src/__shared-demos/index.ts'
 
 const logger = createLogger({
 	name: 'demo',

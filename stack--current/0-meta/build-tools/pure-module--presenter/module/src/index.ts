@@ -233,22 +233,43 @@ ${pure_module_details.description || ''}
 
 			/////// Dev
 			if (pure_module_details.hasꓽtestsⵧunit) {
-				scripts['test--unit'] =
+				scripts['tests'] = // --unit
 					`node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './${SRC_DIR_RELPATH}/**/*.tests.ts'`
 					//  --experimental-require-module
 			}
+
+			if (pure_module_details.languages.has('ts')) {
+				scripts['check--ts'] = `echo "${pure_module_details.fqname}" && tsc --noEmit`
+				scripts['check--ts--watch'] = 'tsc --noEmit --watch'
+				scripts['dev'] = scriptsⵧclean.length
+					? `run-s clean check--ts--watch`
+					: `run-s check--ts--watch`
+			}
+			else {
+				//scripts['dev'] = TODO ??
+			}
+
+			if (pure_module_details.isꓽpublished) {
+				scripts["check--size"] = "size-limit"
+			}
+
+			// TODO smoke check
+
+			const scriptsⵧchecks = Object.keys(scripts)
+				.filter(k => k.startsWith('test') || k.startsWith('check'))
+				.filter(k => !k.endsWith('--watch'))
+			if (scriptsⵧchecks.length) {
+				const name = pure_module_details.status === 'stable' // TODO improve status check
+					? 'check'
+					: '_check'
+
+				scripts[name] = `run-s ${scriptsⵧchecks.join(' ')}`
+			}
+
 			if (pure_module_details.hasꓽstories) {
 				assert(pure_module_details.storypad, `Expected storypad to be defined!`)
 				scripts["_start:parcel:storypad"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.storypad.path‿rel)} --port 8383  --lazy  --no-autoinstall`
 				scripts['stories'] = `npm-run-all clean --parallel _start:parcel:storypad`
-			}
-
-			if (pure_module_details.languages.has('ts')) {
-				scripts['test--ts'] = `echo "${pure_module_details.fqname}" && tsc --noEmit`
-				scripts['test--ts--watch'] = 'tsc --noEmit --watch'
-				scripts['dev'] = scriptsⵧclean.length
-					? `run-s clean test--ts--watch`
-					: `run-s test--ts--watch`
 			}
 			if (pure_module_details.demo) {
 				switch (pure_module_details.demo.ext) {
@@ -285,15 +306,6 @@ ${pure_module_details.description || ''}
 				}
 			}
 
-			const scriptsⵧtest = Object.keys(scripts).filter(k => k.startsWith('test') && !k.endsWith('--watch'))
-			if (scriptsⵧtest.length) {
-				const name = pure_module_details.status === 'stable' // TODO improve status check
-					? 'test'
-					: '_test'
-
-				scripts[name] = `run-s ${scriptsⵧtest.join(' ')}`
-			}
-
 			// build
 			if (pure_module_details.isꓽpublished) {
 				if (pure_module_details.languages.has('ts')) {
@@ -308,7 +320,6 @@ ${pure_module_details.description || ''}
 
 			// misc
 			if (pure_module_details.isꓽpublished) {
-				scripts["ensure-size"] = "size-limit"
 				scripts["np"] = "np --no-publish"
 				scripts["prepublishOnly"] = "run-s clean build ensure-size"
 			}

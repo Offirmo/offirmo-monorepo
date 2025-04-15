@@ -2,5 +2,13 @@
 	name: "practical-logger-core",
 	version: "3.1.0",
 	description: "Common internal code for Offirmo’s practical logger",
-	"isꓽpublished": true
+	"isꓽpublished": true,
+
+	_overrides: {
+		files: {
+			packageᐧjson: {
+				'|exports|./__shared-demos': './module/src/__shared-demos/index.ts',
+			},
+		},
+	},
 }

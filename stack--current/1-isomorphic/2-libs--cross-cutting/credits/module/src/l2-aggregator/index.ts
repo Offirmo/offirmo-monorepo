@@ -42,7 +42,7 @@ function registerꓽasset_usageⵧstart(asset: Immutable<Asset>): void {
 	if (STORE.assetsⵧrecents.includes(asset))
 		return
 
-	console.log(`🖼️ about to feature a ${asset.type} asset from "${asset.author.name}": "${asset.description}"`)
+	console.log(`🖼️ about to feature a ${asset.type} asset from "${asset.author?.name || 'unknown'}": "${asset.description}"`)
 
 	STORE.assetsⵧall.add(asset)
 	STORE.assetsⵧrecents.unshift(asset)

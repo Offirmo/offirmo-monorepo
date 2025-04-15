@@ -424,7 +424,16 @@ describe('@offirmo-private/prettify-any', function() {
 				})
 
 				it('should handle deep objects - fetch', async () => {
-					const ↆf = fetch('https://www.google.com')
+					const ↆf: Promise<any> = fetch('https://www.google.com')
+						.catch(err => {
+							if ((err as any).message?.includes('fetch failed')) {
+								// offline, let it slide
+								// TODO one day find a better complex object
+								// or maybe create a server ourselves?
+								return err
+							}
+							throw err
+						})
 
 					return ↆf.then(
 						(fetch_raw_result: any) => {

@@ -14,7 +14,7 @@ import AUTHOR from "@offirmo-private/credits/authors/neon.dimensionss"
 
 // https://parceljs.org/recipes/image/#image-formats
 const url: Url‿str = (new URL(
-	'original.jpg?as=webp',
+	'original.jpg?as=webp', // TODO how to generate variants? ex. small / big?
 	import.meta.url,
 )).href
 
@@ -34,7 +34,7 @@ const THINGⵧONLINE: ThingWithOnlinePresence = {
 }
 const ASSET: Asset = {
 	...THINGⵧONLINE,
-	type: 'background',
+	type: 'imageⵧillustration',
 	url,
 	alt: 'A bright futuristic cityscape with cliffs and greenery.',
 

@@ -119,7 +119,9 @@ interface PureModuleManifest extends Partial<PureModuleDetailsAllowedInManifest>
 	_dontꓽpresent?: boolean // unsupported module, don't "present" it TODO remove once all the modules are compatible!
 	_overrides?: {
 		dependencies: Record<string, DependencyDetails | 'ignore'>,
-		packageᐧjson?: { [json_path: string]: any },
+		files: {
+			packageᐧjson?: { [json_path: string]: any }
+		},
 	}
 
 }

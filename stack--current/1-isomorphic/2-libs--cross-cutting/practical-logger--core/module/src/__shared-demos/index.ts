@@ -92,6 +92,7 @@ function demo_group(logger: Logger) {
 		logger.groupCollapsed('level 2c (collapsed)')
 			// no output
 			logger.warn('warn from level 2c!')
+			// @ts-expect-error
 			logger.error(new Error('error from level 2c!'))
 		logger.groupEnd()
 
@@ -99,6 +100,7 @@ function demo_group(logger: Logger) {
 			logger.log('in level 2d')
 			logger.group('level 3b (NOT collapsed)')
 				logger.warn('warn from level 3b!')
+				// @ts-expect-error
 				logger.error(new Error('error from level 3b!'))
 				logger.log('in level 3b')
 			logger.groupEnd()
@@ -176,7 +178,7 @@ function demo_error(logger: Logger, in_group = true) {
 	try {
 		foo()
 	}
-	catch (err) {
+	catch (err: any) {
 		logger.log(err)
 		logger.log('message', err)
 		logger.log('message', { some: 'stuff', err })
