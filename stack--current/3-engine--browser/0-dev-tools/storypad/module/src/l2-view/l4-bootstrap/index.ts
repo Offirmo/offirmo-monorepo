@@ -58,7 +58,7 @@ async function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable
 			await acc
 			console.group(`services/init "${key}"`)
 			const init_fn = initsⵧservices[key].default
-			_logger.trace(`services/init "${key}": exec…`)
+			console.trace(`services/init "${key}": exec…`)
 			await init_fn()
 			console.trace(`services/init "${key}": done ✅`)
 			console.groupEnd()

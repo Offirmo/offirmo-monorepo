@@ -137,9 +137,9 @@ mechanics -- finishing move
 mechanics -- fog of war
 mechanics -- gacha (meh)
 mechanics -- housing
-mechanics -- inventory, inventory management
-mechanics -- inventory https://gamedevelopment.tutsplus.com/articles/designing-an-rpg-inventory-system-that-fits-preliminary-steps--gamedev-14725  https://gamedevelopment.tutsplus.com/articles/designing-an-rpg-inventory-system-that-fits-echoes-of-eternea--gamedev-14947
 mechanics -- inventory -- multi set = bag, which is similar to a set but allows repeated ("equal") values (duplicates). This is used in two distinct senses: either equal values are considered identical, and are simply counted, or equal values are considered equivalent, and are stored as distinct items https://en.wikipedia.org/wiki/Set_(abstract_data_type)#Multiset
+mechanics -- inventory https://gamedevelopment.tutsplus.com/articles/designing-an-rpg-inventory-system-that-fits-preliminary-steps--gamedev-14725  https://gamedevelopment.tutsplus.com/articles/designing-an-rpg-inventory-system-that-fits-echoes-of-eternea--gamedev-14947
+mechanics -- inventory, inventory management
 mechanics -- invocation
 mechanics -- mount, flying mount
 mechanics -- pet
@@ -205,7 +205,6 @@ PvE, PvP
 quality of life (QoL)
 raid
 random encounter
-
 ranking systems https://en.wikipedia.org/wiki/Elo_rating_system
 rating -- Diverse Representations = Which traditionally marginalized groups are represented? This can refer to gender, race, ethnicity, age, disability, religious backgrounds, socioeconomic status, or body shapes that have been underrepresented in media. How are the characters from those groups portrayed? Are they drawn from stereotypes? Are they narrow or well rounded? Do they have agency, or is their only function to support a White/male/dominant character? Are behaviors and characteristics that are traditionally seen as "masculine" and "feminine" equally valued? Is this title telling an unknown or nontraditional story?
 rating -- Drinking, Drugs & Smoking = Do characters smoke? Drink? Do drugs? Is the behavior glamorized? What are the consequences of that behavior? Are the characters of legal age?

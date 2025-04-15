@@ -5,9 +5,9 @@ import { type ProfilerOnRenderCallback } from 'react'
 import type { Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from '../../../../../consts'
-import { Meta‿v3, Story‿v3 } from '../../../../../l0-types/l1-csf/v3'
-import {RenderParamsWithComponent, StoryContext} from '../../../../../l0-types/l1-csf'
-import {ObservableState} from '../../../../../l1-flux/l2-observable'
+import type { Meta‿v3, Story‿v3 } from '../../../../../l0-types/l1-csf/v3'
+import type { RenderParamsWithComponent, StoryContext } from '../../../../../l0-types/l1-csf'
+import type { ObservableState } from '../../../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
 

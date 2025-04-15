@@ -1,5 +1,5 @@
 
-import type { Config } from '../../../l0-types/l2-config'
+import type { Config } from '../../../l0-types/l2-config/index.ts'
 
 import type { StoryUId, StoryTree } from '../types.ts'
 

@@ -7,6 +7,7 @@ import { getꓽlogger } from '../logger.ts'
 async function init(): Promise<void> {
 
 	if (false) {
+		// @ts-expect-error
 		setTimeout(() => {
 			console.group('Testing log levels...')
 			;[

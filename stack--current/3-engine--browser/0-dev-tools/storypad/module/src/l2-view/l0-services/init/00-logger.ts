@@ -9,6 +9,7 @@ import { LIB } from '../../../consts.ts'
 
 async function init(): Promise<void> {
 	try {
+		// @ts-expect-error
 		const { getLogger } = await import('@offirmo/universal-debug-api-browser')
 		const logger = getLogger({
 			name: LIB,
@@ -22,8 +23,6 @@ async function init(): Promise<void> {
 	catch (err) {
 		console.error(err)
 	}
-
-	console.log(`🗂 Logger up with level "${getꓽlogger.getLevel?.()}". Reminder to check your dev tools log level!`)
 }
 
 /////////////////////////////////////////////////

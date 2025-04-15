@@ -3,7 +3,7 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { Url‿str } from '@offirmo-private/ts-types'
+import type { Url‿str } from '@offirmo-private/ts-types'
 
 //import { FolderUId, StoryUId } from '../../../l1-flux/l1-state/types.ts'
 

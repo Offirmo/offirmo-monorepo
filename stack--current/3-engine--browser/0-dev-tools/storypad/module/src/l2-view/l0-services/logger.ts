@@ -1,4 +1,3 @@
-//import { getLogger } from '@offirmo/practical-logger-core'
 import { _request_install_better_console_groups_if_not_already } from '@offirmo-private/better-console-groups'
 
 /////////////////////////////////////////////////
@@ -15,6 +14,7 @@ function getꓽlogger() {
 
 function _setꓽlogger(new_logger: any): void {
 	_logger = new_logger
+	console.log(`🗂 Logger up with level "${(_logger as any).getLevel?.()}". Reminder to check your dev tools log level!`)
 }
 
 /////////////////////////////////////////////////

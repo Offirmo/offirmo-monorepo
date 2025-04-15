@@ -1,23 +1,9 @@
-/* Use case of graphs: storing a representation of a filesystem
- *
- * parameters
- * - directed
- * - acyclic
- *
- * use cases:
- * - storybook
- * - memories sorter
- *
- * Extra features:
- * - ideally we'd like to be able to use a subtree as a tree for easy recursion
- */
-
 import assert from 'tiny-invariant'
 import type { RelativePath } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
 
-function createꓽgraphⵧfilesystem<Graph = any>(
+function createꓽgraph<Graph = any>(
 	create: () => Graph,
 	insertꓽfile: (graph: Graph, path: RelativePath) => RelativePath,
 	upsertꓽfolder: (graph: Graph, path: RelativePath) => RelativePath,
@@ -49,10 +35,6 @@ function createꓽgraphⵧfilesystem<Graph = any>(
 
 /////////////////////////////////////////////////
 
-
-/////////////////////////////////////////////////
-
-
 export {
-	createꓽgraphⵧfilesystem,
+	createꓽgraph,
 }

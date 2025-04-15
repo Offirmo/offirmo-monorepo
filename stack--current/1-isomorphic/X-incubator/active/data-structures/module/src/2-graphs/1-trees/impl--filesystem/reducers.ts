@@ -1,6 +1,3 @@
-/* PROMPT
- */
-
 import assert from 'tiny-invariant'
 import type { RelativePath } from '@offirmo-private/ts-types'
 import { normalizeꓽpath } from '@offirmo-private/normalize-string'
@@ -10,8 +7,8 @@ import type {
 	FileSystemNodeⳇFolder,
 	FileSystemRoot,
 	FileSystemOptions,
-} from './types.js'
-import { getꓽnodeⵧby_path, getꓽnodeⵧby_pathⵧensure_folder } from './selectors.js'
+} from './types.ts'
+import { getꓽnodeⵧby_path, getꓽnodeⵧby_pathⵧensure_folder } from './selectors.ts'
 
 /////////////////////////////////////////////////
 

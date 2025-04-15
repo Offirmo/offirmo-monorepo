@@ -1,5 +1,3 @@
-import { URLSearchParamsⳇName } from './types.ts'
-
 
 export const QUERYPARAMS = {
 	// let's try to stay compatible with Storybook

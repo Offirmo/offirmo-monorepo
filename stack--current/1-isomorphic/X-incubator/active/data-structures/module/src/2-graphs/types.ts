@@ -2,7 +2,7 @@
  * Those types should be IMPLEMENTATION INDEPENDENT
  */
 
-import { WithOptions, WithPayload } from '../10common/types.js'
+import type { WithOptions, WithPayload } from '../1-common/types.ts'
 
 /////////////////////////////////////////////////
 

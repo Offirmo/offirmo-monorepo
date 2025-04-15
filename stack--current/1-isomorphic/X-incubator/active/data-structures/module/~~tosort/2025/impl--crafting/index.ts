@@ -2,16 +2,16 @@ import { expect } from 'chai'
 import type { Immutable } from '@offirmo-private/ts-types'
 import assert from 'tiny-invariant'
 
-import { LIB } from '../consts.js'
+import { LIB } from '../consts.ts'
 import type {
 	Graph,
 	Node, NodeUId,
-} from '../../types.js'
+} from '../../types.ts'
 import {
 	type Rsrc,
 	getꓽfull_fledged,
 	createꓽgraphⵧmochi_cake,
-} from '../../../__fixtures/graph--recipe--mochi_cake.js'
+} from '../../__examples/crafting--mochi-cake/index.ts'
 
 
 /////////////////////////////////////////////////

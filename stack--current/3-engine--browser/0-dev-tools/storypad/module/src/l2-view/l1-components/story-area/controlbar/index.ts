@@ -2,7 +2,7 @@
 
 import { DEBUG } from '../../../../consts.ts'
 import { getꓽlast_segment } from '../../../../l1-flux/l1-state/state--url/serialization'
-import { ObservableState } from '../../../../l1-flux/l2-observable'
+import { type ObservableState } from '../../../../l1-flux/l2-observable'
 
 /////////////////////////////////////////////////
 

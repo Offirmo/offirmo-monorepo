@@ -1,16 +1,13 @@
-/* PROMPT
- */
-
 import assert from 'tiny-invariant'
 import type { Immutable, RelativePath } from '@offirmo-private/ts-types'
 import { normalizeꓽpath } from '@offirmo-private/normalize-string'
 
-import { TreeForRL, getꓽrepresentationⵧlinesⵧgeneric } from '../selectors--representation--lines.js'
+import { type TreeForRL, getꓽrepresentationⵧlinesⵧgeneric } from '../selectors--representation--lines.ts'
 import {
-	FileSystemNode,
-	FileSystemNodeⳇFolder, isꓽFileSystemNodeⳇFolder,
-	FileSystemNodeⳇFile, isꓽFileSystemNodeⳇFile,
-} from './types.js'
+	type FileSystemNode,
+	type FileSystemNodeⳇFolder, isꓽFileSystemNodeⳇFolder,
+	type FileSystemNodeⳇFile, isꓽFileSystemNodeⳇFile,
+} from './types.ts'
 
 /////////////////////////////////////////////////
 

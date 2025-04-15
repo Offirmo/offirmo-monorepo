@@ -1,3 +1,4 @@
+import type { SoftExecutionContext } from '@offirmo-private/soft-execution-context'
 
 import { LIB } from '../../../consts.ts'
 import { getꓽlogger } from '../logger.ts'
@@ -32,10 +33,13 @@ async function init(): Promise<void> {
 	}
 
 	try {
+		// @ts-expect-error
 		const { getRootSXC, listenToErrorEvents, listenToUnhandledRejections } = await import('@offirmo-private/soft-execution-context--browser')
 
-		const rootSXC = getRootSXC()
-		rootSXC.emitter.on('final-error', on_error)
+		const rootSXC: SoftExecutionContext = getRootSXC()
+		rootSXC.emitter.on('final-error', ({err}) => {
+			on_error(err, 'SXC/final-error')
+		})
 		listenToErrorEvents()
 		listenToUnhandledRejections()
 		rootSXC.xTry('init:SXC', ({logger, SXC}) => {

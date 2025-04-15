@@ -1,3 +1,5 @@
+import type { SoftExecutionContext } from '@offirmo-private/soft-execution-context'
+
 import { LIB } from '../../../consts.ts'
 import { getꓽlogger } from '../logger.ts'
 
@@ -5,9 +7,10 @@ import { getꓽlogger } from '../logger.ts'
 
 async function init(): Promise<void> {
 	try {
+		// @ts-expect-error
 		const { getRootSXC, decorateWithDetectedEnv } = await import('@offirmo-private/soft-execution-context--browser')
 
-		const rootSXC = getRootSXC()
+		const rootSXC: SoftExecutionContext = getRootSXC()
 
 		decorateWithDetectedEnv(rootSXC)
 

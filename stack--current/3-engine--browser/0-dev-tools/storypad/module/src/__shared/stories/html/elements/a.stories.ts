@@ -1,3 +1,9 @@
+
+type LinkType =
+	| 'normal'
+	| 'new-tab'
+	| 'download'
+
 export function AllTogether() {
 	return `
 <table>
@@ -10,7 +16,7 @@ export function AllTogether() {
 	</thead>
 	<tbody>
 		${
-		['normal', 'new-tab', 'download'].map(type => `
+		(['normal', 'new-tab', 'download'] as LinkType[]).map(type => `
 			<tr>
 				<td>${type}</td>
 				<td>${_link({ text: 'link', type, isꓽvisited: false })}</td>
@@ -61,7 +67,7 @@ export function _link({
 }: {
 	isꓽvisited?: boolean,
 	isꓽexternal?: boolean,
-	type?: 'normal' | 'new-tab' | 'download',
+	type?: LinkType,
 	text?: string,
 }) {
 	const location = document.location

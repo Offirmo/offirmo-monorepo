@@ -1,10 +1,10 @@
 import { Enum } from 'typescript-string-enums'
 
-import { FileSystemNodeⳇFolder } from '@offirmo-private/data-structures'
+import { type FileSystemNodeⳇFolder } from '@offirmo-private/data-structures'
 
 import {
-	Story, isꓽStory,
-	Meta,
+	type Story, isꓽStory,
+	type Meta,
 } from '../../l0-types/l1-csf'
 
 /////////////////////////////////////////////////

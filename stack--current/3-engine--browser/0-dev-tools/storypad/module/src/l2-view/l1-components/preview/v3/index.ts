@@ -1,7 +1,12 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { isꓽRenderParamsWithComponent, isꓽRenderParamsWithRenderFunc, RenderParams, RenderParamsWithComponent} from '../../../../l0-types/l1-csf'
+import {
+	isꓽRenderParamsWithComponent,
+	isꓽRenderParamsWithRenderFunc,
+	type RenderParams,
+	type RenderParamsWithComponent,
+} from '../../../../l0-types/l1-csf'
 import type { Story‿v3, Meta‿v3 } from '../../../../l0-types/l1-csf/v3'
 import type { StoryEntry } from '../../../../l1-flux/l1-state/types.ts'
 import { LIB } from '../../../../consts'

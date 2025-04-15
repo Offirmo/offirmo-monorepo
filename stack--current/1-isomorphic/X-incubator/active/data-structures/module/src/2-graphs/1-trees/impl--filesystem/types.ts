@@ -1,10 +1,6 @@
-/* PROMPT
- */
-
-import assert from 'tiny-invariant'
 import type { Basename, RelativePath } from '@offirmo-private/ts-types'
 
-import type { WithOptions, WithPayload } from '../../../10common/types'
+import type { WithOptions, WithPayload } from '../../../1-common/types.ts'
 
 /////////////////////////////////////////////////
 // There are plenty of ways to store a graph.

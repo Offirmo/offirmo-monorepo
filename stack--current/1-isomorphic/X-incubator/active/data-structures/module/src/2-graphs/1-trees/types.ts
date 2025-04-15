@@ -2,7 +2,7 @@
  * Those types should NOT assume any particular implementation.
  */
 import type { Immutable } from '@offirmo-private/ts-types'
-import type { Node, Graph } from '../types.js'
+import type { Node, Graph } from '../types.ts'
 
 /////////////////////////////////////////////////
 
