@@ -19,7 +19,7 @@ let has_seenꓽtouch_usage = false // so far
 /////////////////////
 
 
-function onꓽkeydown(evt) {
+function onꓽkeydown(evt: WindowEventMap['keydown']) {
 
 	if (evt.keyCode === 9) { // tab => "I am a keyboard user"
 		if (DEBUG) console.info(`[${LIB}] Keyboard usage detected! (tab key)`)
@@ -51,7 +51,7 @@ window.addEventListener('touchstart', onꓽtouch_start)
 
 
 // https://developer.mozilla.org/en-US/docs/Web/Events/pointerover
-function onꓽpointer_over(evt) {
+function onꓽpointer_over(evt: WindowEventMap['pointerover']) {
 	if (DEBUG) console.info(`[${LIB}] pointer event`, { evt, type: evt.pointerType, pointerType: evt.pointerType })
 
 	switch(evt.pointerType) {

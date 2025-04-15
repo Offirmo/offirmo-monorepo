@@ -14,3 +14,5 @@ function usesꓽtab(): boolean | undefined {
 export {
 	usesꓽtab,
 }
+
+// TODO persist it lo LS if we detect it!

@@ -6,7 +6,7 @@ function _getꓽmedia_queriesⵧrelevant() {
 	// beware of multiplicity!
 	// https://www.stucox.com/blog/the-good-and-bad-of-level-4-media-queries/#multiplicity
 
-	const result = {}
+	const result: Record<string, boolean> = {}
 
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
 	;[

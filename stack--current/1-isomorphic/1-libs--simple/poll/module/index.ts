@@ -47,3 +47,4 @@ export {
 
 	poll,
 }
+export default poll

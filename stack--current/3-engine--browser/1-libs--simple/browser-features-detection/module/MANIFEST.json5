@@ -1,6 +1,9 @@
 {
 	description: "My own feature detection lib",
 	hasꓽside_effects: true,
+	engines: {
+		browser: '*',
+	},
 
 	_overrides: {
 		files: {

@@ -1,9 +1,12 @@
-import poll from '@offirmo-private/poll'
+import { poll, type Options } from '@offirmo-private/poll'
 
-function pollWindowVariable(varname, options) {
-	options = Object.assign({}, {debugId: `window.${varname}`}, options || {})
-	return poll(() => window[varname], options)
+function pollꓽWindowVariable(varname: string, options: Partial<Options> = {}) {
+	options = {
+		debugId: `window.${varname}`,
+		...options
+	}
+	return poll(() => (window as any)[varname], options)
 }
 
-export default pollWindowVariable
-export { poll } // for convenience
+export default pollꓽWindowVariable
+export { poll, type Options } // for convenience
