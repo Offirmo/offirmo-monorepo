@@ -18,42 +18,39 @@ Be aware of the dependencies.
 
 For ex. to make everything work again step by step!
 
-			"1-isomorphic/A-libs--the-boring-rpg/*",
-			"1-isomorphic/X-incubator/active/*",
-			"3-engine--browser/0-dev-tools/*",
-			"3-engine--browser/1-libs--simple/*",
-			"3-engine--browser/2-libs--cross-cutting/*",
-			"3-engine--browser/X-incubator/active/*"
-
 TODO auto-generate this list!!
 ```bash
-bolt --only-fs "[0-9]-*/**/*" ws run test
-   bolt --only-fs "0-meta/build-tools/*" ws run test
-   bolt --only-fs "1-isomorphi*/**/*" ws run test
-      bolt --only-fs "1-isomorphic/1-libs--simple/*" ws run test
-      bolt --only-fs "1-isomorphic/2-libs--cross-cutting/*" ws run test
-      bolt --only-fs "1-isomorphic/3-libs--advanced/*" ws run test
-      bolt --only-fs "1-isomorphic/X-incubator/active/*" ws run test
-   bolt --only-fs "2-engine--nod*/**/*" ws run test
-      bolt --only-fs "2-engine--node/0-dev-tools/*" ws run test
-      bolt --only-fs "2-engine--node/1-libs--simple/*" ws run test
-      bolt --only-fs "2-engine--node/2-libs--cross-cutting/*" ws run test
-   bolt --only-fs "3-engine--browse*/**/*" ws run test
-      bolt --only-fs "3-engine--browser/0-dev-tools/*" ws run test
-      bolt --only-fs "3-engine--browser/1-libs--simple/*" ws run test
-
+bolt --only-fs "[0-9]-*/**/*" ws run check
+   bolt --only-fs "0-meta/build-tools/*" ws run check
+   bolt --only-fs "1-isomorphi*/**/*" ws run check
+      bolt --only-fs "1-isomorphic/1-libs--simple/*" ws run check
+      bolt --only-fs "1-isomorphic/2-libs--cross-cutting/*" ws run check
+      bolt --only-fs "1-isomorphic/3-libs--advanced/*" ws run check
+      bolt --only-fs "1-isomorphic/X-incubator/active/*" ws run check
+   bolt --only-fs "2-engine--nod*/**/*" ws run check
+      bolt --only-fs "2-engine--node/0-dev-tools/*" ws run check
+      bolt --only-fs "2-engine--node/1-libs--simple/*" ws run check
+      bolt --only-fs "2-engine--node/2-libs--cross-cutting/*" ws run check
+   bolt --only-fs "3-engine--browse*/**/*" ws run check
+      bolt --only-fs "3-engine--browser/0-dev-tools/*" ws run check
+      bolt --only-fs "3-engine--browser/1-libs--simple/*" ws run check
+      bolt --only-fs "3-engine--browser/2-libs--cross-cutting/*" ws run check
+      bolt --only-fs "3-engine--browser/X-incubator/active/*" ws run check
+   bolt --only-fs "7-multimorphi*/**/*" ws run check
+      bolt --only-fs "7-multimorphic/libs--rpg/*" ws run check
+      bolt --only-fs "7-multimorphic/libs--the-boring-rpg/*" ws run check
 
 ## Alt:
-bolt --only @oh-my-rpg/* ws run test
+bolt --only @oh-my-rpg/* ws run check
 bolt --only-fs "A-apps--core/**/*" ws run build
-bolt --only-fs "A-apps--core/**/*" ws run test
+bolt --only-fs "A-apps--core/**/*" ws run check
 bolt --only-fs "B-apps--support/**/*" ws run build
-bolt --only-fs "B-apps--support/**/*" ws run test
+bolt --only-fs "B-apps--support/**/*" ws run check
 bolt --only-fs "C-apps--clients/**/*" ws run build
-bolt --only-fs "C-apps--clients/**/*" ws run test
+bolt --only-fs "C-apps--clients/**/*" ws run check
 bolt w @tbrpg/definitions run build
 bolt ws run build --only @offirmo-private/*
-bolt ws run test  --only @offirmo-private/*
+bolt ws run check  --only @offirmo-private/*
 
 ## misc:
 bolt ws run cheatsheet

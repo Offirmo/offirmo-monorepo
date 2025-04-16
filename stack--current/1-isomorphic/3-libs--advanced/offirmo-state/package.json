@@ -24,11 +24,11 @@
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {
-		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"test--ts": "echo \"@offirmo-private/state-utils\" && tsc --noEmit",
-		"test--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s test--ts--watch",
-		"test": "run-s test--unit test--ts"
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
+		"check--ts": "echo \"@offirmo-private/state-utils\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

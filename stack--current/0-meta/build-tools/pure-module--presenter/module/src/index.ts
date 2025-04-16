@@ -220,6 +220,7 @@ ${pure_module_details.description || ''}
 			}
 			if (pure_module_details.languages.has('html') || pure_module_details.engines['browser']) {
 				monorepo_clean_targets.add('…cache') // for Parcel
+				monorepo_clean_targets.add('…dist') // as well, parcel outputs stuff in a dist dir when serving locally
 			}
 			if (monorepo_clean_targets.size) {
 				scripts['_clean--pkg'] = `monorepo-script--clean-package ${Array.from(monorepo_clean_targets).join(' ')}`
@@ -233,7 +234,7 @@ ${pure_module_details.description || ''}
 
 			/////// Dev
 			if (pure_module_details.hasꓽtestsⵧunit) {
-				scripts['tests'] = // --unit
+				scripts['tests'] = // TODO one day discriminate between test types? --unit
 					`node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './${SRC_DIR_RELPATH}/**/*.tests.ts'`
 					//  --experimental-require-module
 			}
@@ -250,25 +251,35 @@ ${pure_module_details.description || ''}
 			}
 
 			if (pure_module_details.isꓽpublished) {
-				scripts["check--size"] = "size-limit"
+				// TODO one day "check--size" once this feature is resurrected
+				scripts["ensure--size"] = "size-limit"
 			}
 
-			// TODO smoke check
+			// TODO smoke tests
 
 			const scriptsⵧchecks = Object.keys(scripts)
 				.filter(k => k.startsWith('test') || k.startsWith('check'))
 				.filter(k => !k.endsWith('--watch'))
+				.sort()
+				.reverse() // do that "test" is before "check"
 			if (scriptsⵧchecks.length) {
-				const name = pure_module_details.status === 'stable' // TODO improve status check
+				const name = pure_module_details.status === 'stable' // TODO improve this status check
 					? 'check'
 					: '_check'
 
 				scripts[name] = `run-s ${scriptsⵧchecks.join(' ')}`
 			}
 
+			const PARCEL__COMMON_OPTIONS = [
+				'--port 1981', // because parcel caches with bugs, so we can't have several running anyway
+				'--lazy', // because faster
+				'--no-autoinstall', // we don't want to auto-install anything, if missing = it's on us
+				'--no-hmr', // because of bug https://github.com/parcel-bundler/parcel/issues/8181
+			].join(' ')
+
 			if (pure_module_details.hasꓽstories) {
 				assert(pure_module_details.storypad, `Expected storypad to be defined!`)
-				scripts["_start:parcel:storypad"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.storypad.path‿rel)} --port 8383  --lazy  --no-autoinstall`
+				scripts["_start:parcel:storypad"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.storypad.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
 				scripts['stories'] = `npm-run-all clean --parallel _start:parcel:storypad`
 			}
 			if (pure_module_details.demo) {
@@ -279,7 +290,7 @@ ${pure_module_details.description || ''}
 					}
 
 					case '.html': {
-						scripts["_start:parcel:demo"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.demo.path‿rel)} --port 8080  --lazy  --no-autoinstall`
+						scripts["_start:parcel:demo"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.demo.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
 						scripts['demo'] = `npm-run-all clean --parallel _start:parcel:demo`
 						break
 					}
@@ -296,7 +307,7 @@ ${pure_module_details.description || ''}
 					}
 
 					case '.html': {
-						scripts["_start:parcel:sandbox"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.sandbox.path‿rel)} --port 8181  --lazy  --no-autoinstall`
+						scripts["_start:parcel:sandbox"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.sandbox.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
 						scripts['sandbox'] = `npm-run-all clean --parallel _start:parcel:sandbox`
 						break
 					}

@@ -19,12 +19,12 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"_clean--pkg": "monorepo-script--clean-package …cache",
+		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"test--ts": "echo \"@offirmo-private/poll-window-variable\" && tsc --noEmit",
-		"test--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s clean test--ts--watch",
-		"test": "run-s test--ts"
+		"check--ts": "echo \"@offirmo-private/poll-window-variable\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s clean check--ts--watch",
+		"check": "run-s check--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

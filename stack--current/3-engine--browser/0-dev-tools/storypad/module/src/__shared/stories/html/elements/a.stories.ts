@@ -69,7 +69,7 @@ export function _link({
 	isꓽexternal?: boolean,
 	type?: LinkType,
 	text?: string,
-}) {
+} = {}) {
 	const location = document.location
 
 	const auto_text = [

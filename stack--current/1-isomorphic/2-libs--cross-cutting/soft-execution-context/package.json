@@ -21,12 +21,12 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"test--unit": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"test--ts": "echo \"@offirmo-private/soft-execution-context\" && tsc --noEmit",
-		"test--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s test--ts--watch",
-		"demo": "node --experimental-strip-types ./module/##doc/demo.ts",
-		"test": "run-s test--unit test--ts"
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
+		"check--ts": "echo \"@offirmo-private/soft-execution-context\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s tests check--ts",
+		"demo": "node --experimental-strip-types ./module/##doc/demo.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

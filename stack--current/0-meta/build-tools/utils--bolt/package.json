@@ -18,11 +18,11 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"test--ts": "echo \"@offirmo-private/utils--bolt\" && tsc --noEmit",
-		"test--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s test--ts--watch",
-		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts",
-		"_test": "run-s test--ts"
+		"check--ts": "echo \"@offirmo-private/utils--bolt\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"_check": "run-s check--ts",
+		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

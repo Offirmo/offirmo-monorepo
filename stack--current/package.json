@@ -48,19 +48,23 @@
 	"bolt": {
 		"workspaces": [
 			"0-meta/build-tools/*",
+
 			"1-isomorphic/1-libs--simple/*",
 			"1-isomorphic/2-libs--cross-cutting/*",
 			"1-isomorphic/3-libs--advanced/*",
 			"1-isomorphic/X-incubator/active/*",
+
 			"2-engine--node/0-dev-tools/*",
 			"2-engine--node/1-libs--simple/*",
 			"2-engine--node/2-libs--cross-cutting/*",
+
 			"3-engine--browser/0-dev-tools/*",
 			"3-engine--browser/1-libs--simple/*",
 			"xx3-engine--browser/2-libs--cross-cutting/*",
 			"xx3-engine--browser/X-incubator/active/*",
-			"xx1-isomorphic/A-libs--the-boring-rpg/*",
-			"xx1-isomorphic/X-incubator/active/*"
+
+			"xx7-multimorphic/libs--rpg/*",
+			"xx7-multimorphic/libs--the-boring-rpg/*"
 		]
 	},
 

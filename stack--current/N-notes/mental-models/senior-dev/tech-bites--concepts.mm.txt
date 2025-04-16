@@ -87,6 +87,7 @@ B2B (Business to Business)
 B2C (Business to Customer)
 B2G (Business to Government)
 BDD (Behavior-Driven Development) https://cucumber.io/school/   Discovery -> Formulation -> Automation
+Beyoncé Principle = If you liked it, then you shoulda put a test on it
 big companies software = At big companies, software tends to be written by large and frequently changing teams of mediocre programmers https://paulgraham.com/noop.html
 blocking
 blocklist/blacklist -- https://paulgraham.com/spamhausblacklist.html

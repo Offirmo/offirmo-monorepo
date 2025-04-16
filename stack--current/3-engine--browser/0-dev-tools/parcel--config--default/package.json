@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/parcel-config--default",
+	"name": "@offirmo-private/parcel-config",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
@@ -7,12 +7,15 @@
 	"engines": {
 		"parcel": "2.x"
 	},
+	"main": "index.json",
 
 	"dependencies": {
-		"@offirmo-private/parcel-resolver-js2ts": "*",
 		"@parcel/config-default": "^2",
+
 		"@parcel/packager-raw-url": "^2",
 		"@parcel/resolver-glob": "^2",
-		"@parcel/transformer-webmanifest": "^2"
+		"@parcel/transformer-webmanifest": "^2",
+
+		"@offirmo-private/parcel-resolver": "*"
 	}
 }

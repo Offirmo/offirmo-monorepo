@@ -20,10 +20,10 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"test--ts": "echo \"@offirmo-private/pkg-infos-resolver\" && tsc --noEmit",
-		"test--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s test--ts--watch",
-		"test": "run-s test--ts"
+		"check--ts": "echo \"@offirmo-private/pkg-infos-resolver\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s check--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
