@@ -1,0 +1,92 @@
+
+import type {
+	Semver,
+	SPDXLicense,
+	ProgLang,
+	DependencyFQName,
+	DependencyDetails,
+} from '../types.ts'
+
+import type {
+	FileEntry,
+} from '../file-entry/types.ts'
+
+/////////////////////////////////////////////////
+
+
+/* This type should have AS FEW ENTRIES as possible
+ * reminder that we aim for a single source of truth
+ * Anything that can be inferred from the code itself should be!
+ */
+interface PureModuleDetailsAllowedInManifest {
+	name: string // NOT including the namespace
+	namespace: string
+	license?: SPDXLicense
+	description?: string
+	version: Semver
+	isꓽpublished: boolean
+	isꓽapp: boolean // app in the generic sense of "not a lib"
+	hasꓽside_effects: boolean // assuming most pkgs don't
+	engines: Record<string, Semver>
+	status: // EXPERIMENTAL rating of modules TODO clarify
+		| 'spike'
+		| 'sandbox' // self-contained playground for testing stuff
+		| 'tech-demo' // not YET in prod
+		| 'unstable' // ex. a rewrite or refactor in progress, most likely behind a flag
+		| 'stable'
+}
+
+//  all entries are optional, only to be used if an override is needed or if not inferrable
+interface PureModuleManifest extends Partial<PureModuleDetailsAllowedInManifest> {
+	_dontꓽpresent?: boolean // unsupported module, don't "present" it TODO remove once all the modules are compatible!
+	_overrides?: {
+		dependencies: Record<string, DependencyDetails | 'ignore'>,
+		files: {
+			packageᐧjson?: { [path: string]: any }
+		},
+	}
+
+}
+
+// Should contain everything needed to build
+// - package.json
+// - tsconfig.json
+// - any other config
+interface PureModuleDetails extends PureModuleDetailsAllowedInManifest {
+	root‿abspath: string
+
+	fqname: DependencyFQName // fully qualified
+
+	author: string
+	main: FileEntry // TODO review fuse with entries?
+	demo?: FileEntry
+	storypad?: FileEntry
+	sandbox?: FileEntry // TODO
+	hasꓽtestsⵧunit: boolean
+	//hasꓽtestsⵧsmoke: boolean // TODO one day
+	hasꓽstories: boolean,
+	/* TODO one day
+	extra_entries: {
+		[label: string]: FileEntry
+	} */
+
+	depsⵧnormal: Set<string>
+	depsⵧdev: Set<string>
+	depsⵧpeer: Set<string>
+	depsⵧoptional: Set<string>
+	depsⵧvendored: Set<string>
+
+	// needed to build scripts
+	languages: Set<ProgLang>
+
+	// in case
+	_manifest: PureModuleManifest
+}
+
+/////////////////////////////////////////////////
+
+export {
+	type PureModuleDetailsAllowedInManifest,
+	type PureModuleManifest,
+	type PureModuleDetails,
+}

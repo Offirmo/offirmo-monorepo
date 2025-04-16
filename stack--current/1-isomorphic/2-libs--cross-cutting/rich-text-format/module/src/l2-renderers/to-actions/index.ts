@@ -6,8 +6,8 @@ import {
 	type WalkerCallbacks,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
-} from './walk.ts'
-import type { CheckedNode, NodeLike } from '../l1-types/index.ts'
+} from '../walk.ts'
+import type { CheckedNode, NodeLike } from '../../l1-types/index.ts'
 
 /////////////////////////////////////////////////
 

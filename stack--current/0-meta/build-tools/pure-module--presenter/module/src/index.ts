@@ -190,7 +190,7 @@ ${pure_module_details.description || ''}
 			.union(pure_module_details.depsⵧdev)
 			.union(pure_module_details.depsⵧpeer)
 			.union(pure_module_details.depsⵧoptional)
-			// TODO vendored to be copied, not declared
+			// ignoring vendored: to be copied, not declared
 
 		Array.from(all_declared_deps.values()).forEach(dep => pkg_infos_resolver.preload(dep))
 		await pkg_infos_resolver.all_pending_loaded()
@@ -205,7 +205,7 @@ ${pure_module_details.description || ''}
 			Array.from(pure_module_details.depsⵧnormal).sort().map(dep => [dep, pkg_infos_resolver.ǃgetꓽversionⵧfor_dep(dep)])
 		)
 		if (pure_module_details.depsⵧoptional.size) {
-			throw new Error(`Not implemented!`)
+			throw new Error(`Optional deps not implemented!`)
 		}
 
 		pkg.scripts = (() => {
@@ -218,7 +218,7 @@ ${pure_module_details.description || ''}
 			if (pure_module_details.isꓽpublished) {
 				monorepo_clean_targets.add('…dist')
 			}
-			if (pure_module_details.languages.has('html') || pure_module_details.engines['browser']) {
+			if (pure_module_details.engines['browser']) {
 				monorepo_clean_targets.add('…cache') // for Parcel
 				monorepo_clean_targets.add('…dist') // as well, parcel outputs stuff in a dist dir when serving locally
 			}
@@ -277,7 +277,7 @@ ${pure_module_details.description || ''}
 				'--no-hmr', // because of bug https://github.com/parcel-bundler/parcel/issues/8181
 			].join(' ')
 
-			if (pure_module_details.hasꓽstories) {
+			if (pure_module_details.hasꓽstories || pure_module_details.storypad) {
 				assert(pure_module_details.storypad, `Expected storypad to be defined!`)
 				scripts["_start:parcel:storypad"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.storypad.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
 				scripts['stories'] = `npm-run-all clean --parallel _start:parcel:storypad`
@@ -315,6 +315,10 @@ ${pure_module_details.description || ''}
 					default:
 						throw new Error(`Not implemented: demo with extension "${pure_module_details.sandbox.ext}"!`)
 				}
+			}
+			if (pure_module_details.main.ext === '.html') {
+				scripts["_start:parcel:main"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.main.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
+				scripts['start'] = `npm-run-all clean --parallel _start:parcel:main`
 			}
 
 			// build

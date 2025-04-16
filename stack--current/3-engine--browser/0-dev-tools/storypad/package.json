@@ -39,17 +39,15 @@
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {
-		"_clean--pkg": "monorepo-script--clean-package …cache",
+		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
 		"check--ts": "echo \"@offirmo-private/storypad\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"_check": "run-s tests check--ts",
-		"_start:parcel:storypad": "parcel serve module/src/__fixtures/storypad/index.html --port 8383  --lazy  --no-autoinstall",
-		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
-		"_start:parcel:demo": "parcel serve module/demo.html --port 8080  --lazy  --no-autoinstall",
-		"demo": "npm-run-all clean --parallel _start:parcel:demo"
+		"_start:parcel:storypad": "parcel serve module/src/__fixtures/storypad/index.html --port 1981 --lazy --no-autoinstall --no-hmr",
+		"stories": "npm-run-all clean --parallel _start:parcel:storypad"
 	},
 	"devDependencies": {
 		"@offirmo-private/css--utils--diagnostics": "*",

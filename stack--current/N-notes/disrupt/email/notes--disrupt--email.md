@@ -79,3 +79,14 @@ https://money.stackexchange.com/questions/71586/im-being-set-up-for-an-internet-
 templates https://squirrelly.js.org/
 
 https://learn.microsoft.com/en-us/exchange/clients/exchange-activesync/exchange-activesync?view=exchserver-2019
+
+https://cora.computer/
+Hidden in the noise is a melody.
+
+Your email tells the story of your life.
+
+An epic record of who you talk to and how, of what you worked on and how you feel, of where you've been and what comes next.
+
+What if you could transform your inbox from chaos into a clear story? One that gives you the bottom line, instead of the back and forth.
+
+Your inbox wouldn't just deliver email to you—it would deliver you from email

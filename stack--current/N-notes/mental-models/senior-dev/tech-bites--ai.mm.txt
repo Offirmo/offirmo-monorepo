@@ -5,6 +5,7 @@
 2023-10 Claude 2
 2024-11 MCP https://www.anthropic.com/news/model-context-protocol
 2025-03 4o image generation = incredible, +1M users in 1h https://openai.com/index/introducing-4o-image-generation/ https://x.com/sama/status/1906771292390666325
+2025-04 multimodal img gen https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://www.anthropic.com/news
@@ -151,6 +152,7 @@ model (NN) = sort of snapshot of a trained neural network / brain = NN (structur
 model -- efficiency
 model -- foundational = a big one pre-trained on vast resources
 model -- transformer model
+multimodal image generation "no elephant in the room" https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image
 NLG Natural Language Generation
 NLP Natural Language Processing
 NN Neural Networks "computer architecture inspired by the human brain"
@@ -250,6 +252,7 @@ vector database -- https://weaviate.io/
 vector database -- https://www.pinecone.io
 vector database -- Qdrant https://qdrant.tech/blog/series-a-funding-round/
 vibe code fixers ;) https://vibecodefixers.com/
+vibe coding -- Leo's example https://x.com/leojr94_/status/1903176192330477729
 vibe coding https://x.com/karpathy/status/1886192184808149383
 vs. low-code / no-code
 watermarking outputs https://proceedings.mlr.press/v202/zhao23i.html

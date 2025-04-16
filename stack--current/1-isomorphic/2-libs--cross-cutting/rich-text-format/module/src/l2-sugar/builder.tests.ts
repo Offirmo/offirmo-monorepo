@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import { LIB } from '../consts.ts'
 
 import * as RichText from './builder.ts'
-import { renderⵧto_text } from '../l2-renderers/to_text.ts'
+import { renderⵧto_text } from '../l2-renderers/to-text/index.ts'
 
 import { isꓽNode } from '../l1-types/guards.ts'
 

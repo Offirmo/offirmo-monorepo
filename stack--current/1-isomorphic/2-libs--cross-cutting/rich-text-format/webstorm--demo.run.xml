@@ -5,7 +5,7 @@
 		type="NodeJSConfigurationType"
 		path-to-node="$USER_HOME$/.nvm/versions/node/v23.11.0/bin/node"
 		node-parameters="--experimental-strip-types"
-		path-to-js-file="module/src/##doc/demo.ts"
+		path-to-js-file="module/##doc/demo.ts"
 		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/2-libs--cross-cutting/rich-text-format">
 		<method v="2" />
 	</configuration>

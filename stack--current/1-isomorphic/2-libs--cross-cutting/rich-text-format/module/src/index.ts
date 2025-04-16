@@ -1,7 +1,7 @@
 
-export * from './l2-renderers/to_debug.ts'
-export * from './l2-renderers/to_actions.ts'
-export * from './l2-renderers/to_text.ts'
+export * from './l2-renderers/to-debug/index.ts'
+export * from './l2-renderers/to-actions/index.ts'
+export * from './l2-renderers/to-text/index.ts'
 export * from './l2-renderers/to-html/index.ts'
 
 export * from './l1-types/index.ts'

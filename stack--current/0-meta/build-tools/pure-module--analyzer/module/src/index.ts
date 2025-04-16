@@ -13,212 +13,34 @@ import { writeJsonFile as write_json_file } from 'write-json-file'
 
 import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
 
-/////////////////////////////////////////////////
+import type {
+	AbsolutePath,
+	AnyPath,
+	ProgLang,
+	Dependency,
+	DependencyType,
+} from './types'
 
-// for readability. Unfortunately this doesn't cause a real additional safety
-export type Basename = string
-export type RelativePath = string // implied relative to some "working dir"
-export type AbsolutePath = string
-export type AnyPath = RelativePath | AbsolutePath
-export type Semver = string
+import {
+	type FileEntry,
+	createꓽfile_entry,
+	updateꓽfile_entry,
+} from './file-entry/index.ts'
 
-interface FileEntry {
-	path‿abs: AbsolutePath
-	path‿rel: RelativePath
-	basename: Basename
-	ext: string // . included, ex. .ts
-	extⵧsub: string // . included, ex. .tests
-	extⵧextended: string
-	basename‿noext: Basename
-}
-
-function get_file_entry(path‿abs: AbsolutePath, root‿abspath: AbsolutePath): FileEntry {
-	const basename = path.basename(path‿abs)
-	const ext = path.extname(basename)
-	const extⵧsub = path.extname(path.basename(basename, ext))
-	const extⵧextended = (() => {
-		const split = basename.split('.')
-		split[0] = ''
-		return split.join('.')
-	})()
-	const basename‿noext = path.basename(path‿abs, extⵧextended)
-
-	const entry: FileEntry = {
-		path‿abs,
-		path‿rel: path.relative(root‿abspath, path‿abs),
-		basename,
-		ext,
-		extⵧsub,
-		extⵧextended,
-		basename‿noext,
-	}
-
-	return entry
-}
-
-function update_file_entry(entry: FileEntry, new_path‿abs: AbsolutePath, root‿abspath: AbsolutePath): void {
-	const new_entry = get_file_entry(new_path‿abs, root‿abspath)
-	Object.keys(entry).forEach(k => {
-		// @ts-ignore
-		entry[k] = new_entry[k]
-	})
-}
+import {
+	type PureModuleManifest,
+	type PureModuleDetails,
+	create as _createꓽresult,
+	updateⵧfrom_manifest,
+} from './pure-module-details/index.ts'
 
 /////////////////////////////////////////////////
-
-type DependencyType =
-	| 'normal'
-	| 'dev'
-	| 'peer'
-	| 'optional'
-	| 'vendored' // special, TODO
-
-interface Dependency {
-	label: string
-	type: DependencyType
-}
-
-type ProgLang =
-	| 'js'
-	| 'json'
-	| 'ts'
-	| 'jsx'
-	| 'html'
-	| 'css'
-	| 'md'
-
-interface DependencyDetails {
-	type?: DependencyType
-	v?: Semver
-}
-
-/* This type should have AS FEW ENTRIES as possible
- * reminder that we aim for a single source of truth
- * Anything that can be inferred from the code itself should be!
- */
-interface PureModuleDetailsAllowedInManifest {
-	name: string // NOT including the namespace
-	namespace: string
-	license?: string // SPDX
-	description?: string
-	version: Semver
-	isꓽpublished: boolean
-	isꓽapp: boolean // app in the generic sense of "not a lib"
-	hasꓽside_effects: boolean // assuming most pkgs don't
-	engines: Record<string, Semver>
-	status: // EXPERIMENTAL rating of modules TODO clarify
-		| 'spike'
-		| 'sandbox' // self-contained playground for testing stuff
-		| 'tech-demo' // not YET in prod
-		| 'unstable' // ex. a rewrite or refactor in progress, most likely behind a flag
-		| 'stable'
-}
-
-//  all entries are optional, only to be used if an override is needed or if not inferrable
-interface PureModuleManifest extends Partial<PureModuleDetailsAllowedInManifest> {
-	_dontꓽpresent?: boolean // unsupported module, don't "present" it TODO remove once all the modules are compatible!
-	_overrides?: {
-		dependencies: Record<string, DependencyDetails | 'ignore'>,
-		files: {
-			packageᐧjson?: { [json_path: string]: any }
-		},
-	}
-
-}
-
-// Should contain everything needed to build
-// - package.json
-// - tsconfig.json
-// - any other config
-interface PureModuleDetails extends PureModuleDetailsAllowedInManifest {
-	root‿abspath: string
-
-	fqname: string // fully qualified
-
-	author: string
-	main: FileEntry // TODO review fuse with entries?
-	demo?: FileEntry
-	storypad?: FileEntry
-	sandbox?: FileEntry // TODO
-	hasꓽtestsⵧunit: boolean
-	//hasꓽtestsⵧsmoke: boolean // TODO one day
-	hasꓽstories: boolean,
-	extra_entries: {
-		[label: string]: FileEntry // TODO one day
-	}
-
-	depsⵧnormal: Set<string>
-	depsⵧdev: Set<string>
-	depsⵧpeer: Set<string>
-	depsⵧoptional: Set<string>
-	depsⵧvendored: Set<string>
-
-	// needed to build scripts
-	languages: Set<ProgLang>
-	// TODO bundler reqs, ex. Parcel-specific imports
-
-	// in case
-	_manifest: PureModuleManifest
-}
 
 const MANIFEST‿basename = 'MANIFEST.json5'
 
 /////////////////////////////////////////////////
 
-function _createꓽresult(root‿abspath: AbsolutePath): PureModuleDetails {
-	const name = (() => {
-		let _path = path.resolve(root‿abspath).split(path.sep)
-		if (_path.at(-1) === 'src')
-			_path.pop()
-		if (_path.at(-1) === 'module')
-			_path.pop()
-
-		return _path.pop()!
-	})()
-
-	return {
-		root‿abspath,
-
-		status: 'stable',
-		namespace: 'unknown',
-		name,
-		fqname: 'unknown',
-		version: '0.0.1',
-		//description?: string
-		isꓽpublished: false,
-		author: 'Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)', // https://docs.npmjs.com/cli/v11/configuring-npm/package-json#people-fields-author-contributors
-		//license: 'Unlicense',
-		main: null as any, // XXX TODO
-		isꓽapp: false, // most common case
-		hasꓽside_effects: false,
-		hasꓽtestsⵧunit: false,
-		//hasꓽtestsⵧsmoke: false,
-		hasꓽstories: false,
-		extra_entries: {},
-		depsⵧnormal: new Set<string>(),
-		depsⵧdev: new Set<string>([
-			// implicit deps:
-
-			// common tools
-			'npm-run-all',
-			// obvious in our monorepo
-			'@offirmo-private/monorepo-scripts',
-			// encourage unit tests
-			'@offirmo/unit-test-toolbox',
-		]),
-		depsⵧpeer: new Set<string>(),
-		depsⵧoptional: new Set<string>(),
-		depsⵧvendored: new Set<string>(),
-		languages: new Set<ProgLang>(),
-		engines: {},
-
-		_manifest: {},
-	}
-}
-
-/////////////////////////////////////////////////
-
-function _isꓽin_excluded_folder(entry: FileEntry): boolean {
+function isꓽin_ignored_folder(entry: FileEntry): boolean {
 	const { path‿rel } = entry
 
 	if (path‿rel.includes('node_modules/'))
@@ -234,7 +56,7 @@ function _isꓽin_excluded_folder(entry: FileEntry): boolean {
 	return false
 }
 
-function _isꓽignored(entry: FileEntry): boolean {
+function isꓽignored_file(entry: FileEntry): boolean {
 	if (entry.basename === '.DS_Store') {
 		// TODO one day load from gitignore
 		return true
@@ -383,7 +205,7 @@ function assertꓽmigrated(entry: FileEntry, { indent = '', root‿abspath }: { 
 		console.log(`mv "${path.relative(root‿abspath, path‿abs)}" "${path.relative(root‿abspath, migration_target)}"`)
 		fs.renameSync(path‿abs, migration_target)
 
-		update_file_entry(entry, migration_target, root‿abspath)
+		updateꓽfile_entry(entry, migration_target, root‿abspath)
 	}
 }
 
@@ -422,17 +244,16 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		}) as Array<string>)
 		.map(p => path.resolve(root‿abspath, p))
 		.sort()
-	//const files = lsFilesRecursiveSync(root‿abspath) old version
+	//const files = lsFilesRecursiveSync(root‿abspath) <- old version
 
 	const file_entries: Array<FileEntry> = files
-		.map(path‿abs => get_file_entry(path‿abs, root‿abspath))
+		.map(path‿abs => createꓽfile_entry(path‿abs, root‿abspath))
+	console.log(`${indent}   found #${file_entries.length} file(s)…`)
 
-	// start aggregating
 	const result = _createꓽresult(root‿abspath)
-	result.isꓽapp = module_path.includes('sandbox')
 
-	const raw_deps: Array<Dependency> = []
-
+	// init from the manifest
+	// must be done as early as possible
 	const entryⵧmanifest: FileEntry = await (async () => {
 		const candidate = file_entries.find(({basename}) => basename === MANIFEST‿basename)
 		if (candidate)
@@ -481,57 +302,33 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 		const target_path = path.resolve(root‿abspath, MANIFEST‿basename)
 		await write_json_file(target_path, data)
-		return get_file_entry(target_path, root‿abspath)
+		return createꓽfile_entry(target_path, root‿abspath)
 	})()
+	const _manifest = JSON5.parse(fs.readFileSync(entryⵧmanifest.path‿abs, 'utf8'))
+	updateⵧfrom_manifest(result, _manifest)
 
-	// overrides from the manifest
-	result._manifest = JSON5.parse(fs.readFileSync(entryⵧmanifest.path‿abs, 'utf8'))
-	const unprocessed_keys = new Set<string>(Object.keys(result._manifest))
-	;([
-		'name',
-		'namespace',
-		'license',
-		'description',
-		'version',
-		'isꓽpublished',
-		'isꓽapp',
-		'hasꓽside_effects',
-		'engines',
-		'status',
-	] as Array<keyof PureModuleManifest>).forEach(k => {
-		if (unprocessed_keys.has(k)) {
-			assert(!!result._manifest[k])
-			;(result as any)[k] = result._manifest[k]
-			unprocessed_keys.delete(k)
-		}
-	})
-	// special ones that don't map to details
-	unprocessed_keys.delete('_dontꓽpresent')
-	unprocessed_keys.delete('_overrides')
-	if (unprocessed_keys.size) {
-		throw new Error(`Unknown keys in manifest: "${Array.from(unprocessed_keys).join(', ')}"!`)
-	}
-
+	// start aggregating
 	// we need the fully qualified name of the module
 	result.namespace = getꓽdefault_namespace(result)
 	result.fqname = result.namespace + '/' + result.name
 
 	const pending_promises: Array<Promise<void>> = []
+	const raw_deps: Array<Dependency> = []
 
 	file_entries.forEach(entry => {
-		const is_excluded = _isꓽin_excluded_folder(entry) || _isꓽignored(entry)
+		const isꓽignored = isꓽin_ignored_folder(entry) || isꓽignored_file(entry)
 		const { path‿rel } = entry
 		console.log(
 			`${indent} ↳ 📄`, path‿rel,
-			is_excluded ? '🚫' : '',
+			isꓽignored ? '🚫' : '',
 			//entry.extⵧsub, entry.ext, entry.extⵧextended,
 		)
-		if (is_excluded) {
+		if (isꓽignored) {
+			// still eligible for a restricted set of things
 			if (path.basename(path.dirname(path‿rel)) === '~~sandbox') {
 				if (entry.basename‿noext === 'index' && !result.sandbox) {
 					result.sandbox = entry
-					console.log(`${indent}    ⭐️current candidate for sandbox`)
-
+					console.log(`${indent}    ⭐️new candidate for: sandbox`)
 				}
 			}
 
@@ -539,13 +336,15 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		}
 
 		assertꓽmigrated(entry, { indent, root‿abspath })
-		if (_isꓽignored(entry)) {
-			// can become ignored after migration
+
+		if (isꓽignored_file(entry)) { // can become ignored after migration
 			console.log(`${indent}      migrated, now 🚫`)
 			return
 		}
+
 		assertꓽnormalized(entry)
 
+		// main
 		if (entry.basename‿noext !== 'MANIFEST') {
 			// manifest is a false positive (short and at the root) and should be ignored
 			// priority order:
@@ -557,50 +356,50 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			if (candidate_is_index !== current_is_index) {
 				if (candidate_is_index) {
 					result.main = entry
-					console.log(`${indent}    ⭐️current candidate for main`)
+					console.log(`${indent}    ⭐️new candidate for: main`)
 				}
 			}
 			else {
 				// both are index or both are not
 				if (entry.path‿rel.length < result.main.path‿rel.length) {
-					console.log(`${indent}    ⭐️current candidate for main`)
+					console.log(`${indent}    ⭐️new candidate for: main`)
 					result.main = entry
 				}
 			}
 		}
 
 		if (entry.basename‿noext === 'demo') {
-			console.log(`${indent}    ⭐️current candidate for demo`)
+			console.log(`${indent}    ⭐️new candidate for: demo`)
 			result.demo = entry
 		}
 		if (path.basename(path.dirname(path‿rel)).includes('demo')
 			&& entry.basename‿noext === 'index') {
 			if (!result.demo) {
-				console.log(`${indent}    ⭐️current candidate for demo`)
+				console.log(`${indent}    ⭐️new candidate for: demo`)
 				result.demo = entry
 			}
 		}
 
 		if (entry.basename‿noext === 'sandbox') {
-			console.log(`${indent}    ⭐️current candidate for sandbox`)
+			console.log(`${indent}    ⭐️new candidate for: sandbox`)
 			result.sandbox = entry
 		}
 		if (path.basename(path.dirname(path‿rel)).includes('sandbox')
 			&& entry.basename‿noext === 'index') {
 			if (!result.sandbox) {
-				console.log(`${indent}    ⭐️current candidate for sandbox`)
+				console.log(`${indent}    ⭐️new candidate for: sandbox`)
 				result.sandbox = entry
 			}
 		}
 
 		if (entry.basename‿noext === 'storypad') {
-			console.log(`${indent}    ⭐️current candidate for storypad`)
+			console.log(`${indent}    ⭐️new candidate for: storypad`)
 			result.storypad = entry
 		}
 		if (path.basename(path.dirname(path‿rel)).includes('storypad')
 			&& entry.basename‿noext === 'index') {
 			if (!result.storypad) {
-				console.log(`${indent}    ⭐️current candidate for storypad`)
+				console.log(`${indent}    ⭐️new candidate for: storypad`)
 				result.storypad = entry
 			}
 		}
@@ -617,7 +416,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		langs.forEach(lang => result.languages.add(lang))
 
 		const unprocessed_langs = new Set(langs)
-		if (langs.includes('ts')) {
+		if (langs.includes('js') || langs.includes('ts')) {
+			unprocessed_langs.delete('js')
 			unprocessed_langs.delete('ts')
 			const content = fs.readFileSync(entry.path‿abs, 'utf8')
 			const dep_type = inferꓽdeptype_from_caller(entry)
@@ -629,7 +429,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 				assert(!dependency_name.startsWith('npm:'), `Unexpected "npm:" URL scheme in import!`)
 
 				if (isBuiltInNodeModule(dependency_name)) {
-					raw_deps.push({ label: '@types/node', type: 'dev' })
+					if (langs.includes('ts')) raw_deps.push({ label: '@types/node', type: 'dev' })
 					// TODO one day how to express dependency to a runtime?
 					return
 				}
@@ -671,63 +471,14 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 						throw new Error(`Unknown import type "${type}"!`)
 				}
 
-				console.log(`${indent}      ↳ Checking for potential @types/ package for "${dependency_name}"…`)
-				pending_promises.push(
-					pkg_infos_resolver.ↆgetꓽextra_typings_pkg_name_for(dependency_name)
-						.then(name => {
-							if (name) raw_deps.push({ label: name, type: 'dev' })
-						})
-				)
-			})
-		}
-		if (langs.includes('js')) {
-			unprocessed_langs.delete('js')
-			const content = fs.readFileSync(entry.path‿abs, 'utf8')
-			const dep_type = inferꓽdeptype_from_caller(entry)
-			console.log(`${indent}      inferred as: ${dep_type}`)
-
-			const imports = parseImports(content)
-			imports.forEach(({name: dependency_name, type}) => {
-				console.log(`${indent}    ↘ import ${type === 1 ? 'type ' : ''}${dependency_name}`)
-				assert(!dependency_name.startsWith('npm:'), `Unexpected "npm:" URL scheme in import!`)
-
-				if (isBuiltInNodeModule(dependency_name)) {
-					// TODO one day how to express dependency to a runtime?
-					return
-				}
-
-				if (dependency_name === result.fqname) {
-					// self-reference
-					// this is allowed, no need to declare it as dep
-					return
-				}
-
-				// intercept aggregations
-				if (dependency_name === 'chai' || dependency_name === 'sinon') {
-					if (dep_type !== 'dev' && ![
-						'@offirmo-private/state-migration-tester',
-						'@offirmo/unit-test-toolbox',
-					].includes(result.fqname)
-					) {
-						throw new Error('Unexpected chai/sinon NON-DEV dependency! Please review the module structure!')
-					}
-
-					console.log(`${indent}    ↘ converted to @offirmo/unit-test-toolbox`)
-					raw_deps.push({ label: '@offirmo/unit-test-toolbox', type: 'dev' })
-					return
-				}
-
-				switch (type ?? 1) {
-					case 0: {
-						raw_deps.push({ label: dependency_name, type: dep_type })
-						break
-					}
-
-					case 1:
-						throw new Error('Type imports in JS??')
-
-					default:
-						throw new Error(`Unknown import type "${type}"!`)
+				if (langs.includes('ts')) {
+					console.log(`${indent}      ↳ Checking for potential @types/ package for "${dependency_name}"…`)
+					pending_promises.push(
+						pkg_infos_resolver.ↆgetꓽextra_typings_pkg_name_for(dependency_name)
+							.then(name => {
+								if (name) raw_deps.push({ label: name, type: 'dev' })
+							})
+					)
 				}
 			})
 		}
@@ -763,12 +514,16 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	await Promise.all(pending_promises)
 	assert(result.main, 'No main file found?')
 
+	result.isꓽapp = result._manifest.isꓽapp ?? (
+		module_path.includes('sandbox')
+		|| result.main.ext === '.html'
+	)
+
 	// migrations
-	if (result.hasꓽstories) {
-		if (!result.storypad) {
-			// auto-create storypad in the right place
-			const storypad__path = path.resolve(root‿abspath, '__fixtures', 'storypad')
-			const storypad__content = `
+	if (result.hasꓽstories && !result.storypad) {
+		// auto-create storypad in the right place
+		const storypad__path = path.resolve(root‿abspath, '__fixtures', 'storypad')
+		const storypad__content = `
 <!DOCTYPE html>
 
 <script type="module">
@@ -801,14 +556,13 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	)
 </script>
 `
-			fs.mkdirSync(storypad__path, { recursive: true })
-			fs.writeFileSync(
-				path.resolve(storypad__path, 'index.html'),
-				storypad__content,
-				{encoding: 'utf-8'}
-			)
-			result.storypad = get_file_entry(path.resolve(storypad__path, 'index.html'), root‿abspath)
-		}
+		fs.mkdirSync(storypad__path, { recursive: true })
+		fs.writeFileSync(
+			path.resolve(storypad__path, 'index.html'),
+			storypad__content,
+			{encoding: 'utf-8'}
+		)
+		result.storypad = createꓽfile_entry(path.resolve(storypad__path, 'index.html'), root‿abspath)
 	}
 
 	// extras
@@ -821,15 +575,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	if (!result.isꓽpublished && (result.languages.has('js') || result.languages.has('ts'))) {
 		raw_deps.push({ label: 'tiny-invariant', type: 'normal'})
 	}
-	// TODO add extended error types
-
-	if(!result.main) {
-		throw new Error(`No "main" candidate found!`)
-	}
-	if (result.hasꓽstories || result.engines['browser']) {
-		raw_deps.push({ label: '@offirmo-private/storypad', type: 'dev'})
-		raw_deps.push({ label: '@offirmo-private/toolbox--parcel', type: 'dev'})
-	}
+	// TODO add extended error types?
 
 	// consolidate
 	Object.entries(result._manifest._overrides?.dependencies || {}).forEach(([label, details]) => {
@@ -837,7 +583,33 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 		raw_deps.push({label, type: details.type || 'normal'})
 	})
-	let hasꓽReact = false
+	const hasꓽdependency_onꓽReact = raw_deps.some(({label}) => label === 'react')
+	if (hasꓽdependency_onꓽReact) {
+		// indirect dependency
+		if (result.isꓽapp) {
+			result.depsⵧnormal.add('react-dom')
+		}
+		else {
+			result.depsⵧdev.add('react-dom')
+		}
+	}
+
+	const targets_runtimeꓽbrowser = result.engines['browser']
+		|| hasꓽdependency_onꓽReact
+		|| result.languages.has('html')
+		|| result.languages.has('css')
+		|| result.languages.has('jsx')
+		|| result.languages.has('tsx')
+		|| result.hasꓽstories
+		|| result.storypad
+	if (targets_runtimeꓽbrowser)
+		result.engines['browser'] = '*'
+
+	if (targets_runtimeꓽbrowser) {
+		raw_deps.push({ label: '@offirmo-private/storypad', type: 'dev'})
+		raw_deps.push({ label: '@offirmo-private/toolbox--parcel', type: 'dev'})
+	}
+
 	raw_deps.forEach(({label, type}) => {
 		if (label === result.fqname)
 			return // self-reference, not a real dep
@@ -849,9 +621,6 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			// thus should not appear in package.json
 			return
 		}
-
-		if (label === 'react')
-			hasꓽReact = true
 
 		switch (overrides?.type || type) {
 			case 'normal':
@@ -874,18 +643,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		}
 	})
 
-
-
-	if (hasꓽReact) {
-		// indirect dependency
-		if (result.isꓽapp) {
-			result.depsⵧnormal.add('react-dom')
-		}
-		else {
-			result.depsⵧdev.add('react-dom')
-		}
-	}
-
+	// move some deps around
 	for (const dep of result.depsⵧnormal) {
 		// small control
 		if ([

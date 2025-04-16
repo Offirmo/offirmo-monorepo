@@ -5,14 +5,14 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	type CheckedNode,
 	type Node,
-} from '../l1-types/index.ts'
+} from '../../l1-types/index.ts'
 
 import {
 	type BaseRenderingOptions,
 	type WalkerCallbacks,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
-} from './walk.ts'
+} from '../walk.ts'
 
 /////////////////////////////////////////////////
 

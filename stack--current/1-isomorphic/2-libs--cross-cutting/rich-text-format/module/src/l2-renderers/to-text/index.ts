@@ -1,19 +1,19 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import type { CheckedNode, NodeLike } from '../l1-types/index.ts'
-import { getꓽdisplay_type } from '../l1-types/guards.ts'
+import type { CheckedNode, NodeLike } from '../../l1-types/index.ts'
+import { getꓽdisplay_type } from '../../l1-types/guards.ts'
 
-import { promoteꓽto_node } from '../l1-utils/promote.ts'
-import { normalizeꓽnode } from '../l1-utils/normalize.ts'
+import { promoteꓽto_node } from '../../l1-utils/promote.ts'
+import { normalizeꓽnode } from '../../l1-utils/normalize.ts'
 
-import { isꓽlink, isꓽlistⵧKV } from './common.ts'
+import { isꓽlink, isꓽlistⵧKV } from '../common.ts'
 import {
 	SPECIAL_LIST_NODE_CONTENT_KEY,
 	type BaseRenderingOptions,
 	type WalkerCallbacks,
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
-} from './walk.ts'
+} from '../walk.ts'
 
 /////////////////////////////////////////////////
 

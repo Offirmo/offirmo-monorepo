@@ -1,15 +1,15 @@
 import { expect } from 'chai'
 
-import { LIB } from '../consts.ts'
+import { LIB } from '../../consts.ts'
 import {
 	$DEMOⵧSIMPLE,
 	$DEMOⵧKV,
 	DOC_DEMO_LIST_ORDERED,
 	DOC_DEMO_LIST_UNORDERED,
 	DOC_DEMO_LIST_NESTED,
-} from '../__examples/index.ts'
+} from '../../__examples/index.ts'
 
-import * as RichText from '../index.ts'
+import * as RichText from '../../index.ts'
 
 /////////////////////////////////////////////////
 

@@ -1,0 +1,6 @@
+{
+	description: 'Unfortunately parcel JS is very unstable 😢 This basic project tries to use it in a very simple way, to pinpoint issues.',
+	engines: {
+		browser: '*',
+	},
+}

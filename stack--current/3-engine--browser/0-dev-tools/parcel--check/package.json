@@ -1,0 +1,28 @@
+{
+	"name": "@offirmo-private/parcel--check",
+	"description": "Unfortunately parcel JS is very unstable 😢 This basic project tries to use it in a very simple way, to pinpoint issues.",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/index.html"
+	},
+	"source": "module/index.html",
+	"dependencies": {},
+	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
+		"clean": "npm-run-all _clean--pkg",
+		"_start:parcel:main": "parcel serve module/index.html --port 1981 --lazy --no-autoinstall --no-hmr",
+		"start": "npm-run-all clean --parallel _start:parcel:main"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/storypad": "*",
+		"@offirmo-private/toolbox--parcel": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4"
+	}
+}

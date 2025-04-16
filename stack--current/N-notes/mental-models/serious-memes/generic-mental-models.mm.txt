@@ -459,6 +459,7 @@ if you grow as a frog, you become a shinier, jump higher frog. But you need a ki
 IKEA effect = labor leads to love https://www.hbs.edu/ris/Publication%20Files/11-091.pdf
 ikigai = a reason for being what you love ∩ what you're good at ∩ what the world needs ∩ what you can be paid for
 impostor syndrome
+impostor syndrome -- cure = is to stop judging others. The same brain circuitry that assesses others, does the self assessment against you. Don't self-reject. Don't boost others in your head based on the little that's visible to you. Understand that everyone is doing trade-offs all the time and you probably don't want to be in their shoes all things considered https://www.linkedin.com/posts/alexewerlof_no-one-is-talking-about-staff-engineer-mental-activity-7297125140159471617-_J1-
 impulsivity = related to problem gambling, problem video gaming, gambling-related cognitions, risky loot boxes engagement https://www.sciencedirect.com/science/article/pii/S0306460322000934
 incentive
 incentive -- perverse -- cobra effect
@@ -1072,6 +1073,7 @@ wisdom
 wisdom -- a wisdom for left may not be valid for right
 wisdom of the rooms = AA steps
 wokeness = An aggressively performative focus on social justice https://paulgraham.com/woke.html
+word frequency -- English https://frequencylist.com/
 workaholic
 works of mercy -- corporal
 works of mercy -- spiritual
