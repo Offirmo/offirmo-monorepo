@@ -2,9 +2,6 @@
 	description: "Storybook replacement",
 	isꓽapp: true,
 	status: 'pragmatism',
-	engines: {
-		browser: '*'
-	},
 	_overrides: {
 		dependencies: {
 			// possibly unresurrected cross-cutting nice to have

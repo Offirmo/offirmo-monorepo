@@ -62,7 +62,7 @@ function _demo_content(theme: string | null = null, is_alternate: boolean = fals
 	`
 }
 
-function _theme_demo(theme: string) {
+function _theme_demo(theme?: string) {
 	const alternate_themes: string[] = []
 	if (theme && theme !== 'light') alternate_themes.push('light')
 	if (theme !== 'dark') alternate_themes.push('dark')
@@ -71,18 +71,18 @@ function _theme_demo(theme: string) {
 	return `
 		${_demo_content(theme)}
 		${alternate_themes
-			.map(alternate_theme => _demo_content(alternate_theme, is_alternate = true))
+			.map(alternate_theme => _demo_content(alternate_theme, true))
 			.join('')
 		}
 	`
 }
 
-function _decorator_add_all_themes(story) {
+function _decorator_add_all_themes(story: unknown) {
 	import('./theme--dark--colorhunt212.css')
 	return story
 }
-function _decorator_select_theme(theme) {
-	return (story) => {
+function _decorator_select_theme(theme: string) {
+	return (story: unknown) => {
 		const root_elt = document.getElementsByTagName('html')[0]
 		root_elt!.dataset['oTheme'] = theme
 		return story
@@ -92,8 +92,7 @@ function _decorator_select_theme(theme) {
 export function NoThemesLoadedNoThemeSet() {
 	return _theme_demo()
 }
-NoThemesLoadedNoThemeSet.decorators = [
-]
+//NoThemesLoadedNoThemeSet.decorators = []
 
 export function AllThemesLoadedNoThemeSet() {
 	return _theme_demo()
@@ -107,7 +106,7 @@ export function AllThemesLoadedNoThemeSetCustomized() {
 }
 AllThemesLoadedNoThemeSetCustomized.decorators = [
 	_decorator_add_all_themes,
-	(story) => {
+	(story: unknown) => {
 
 		setTimeout(() => {
 			const style = document.createElement('style')
@@ -158,7 +157,7 @@ export function AllThemesLoadedThemeSetDarkCustom() {
 AllThemesLoadedThemeSetDarkCustom.decorators = [
 	_decorator_add_all_themes,
 	_decorator_select_theme('dark'),
-	(story) => {
+	(story: unknown) => {
 		const style = document.createElement('style')
 		style.textContent = `
 		`
