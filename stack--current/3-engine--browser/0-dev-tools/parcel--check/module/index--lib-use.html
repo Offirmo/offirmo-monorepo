@@ -3,6 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Parcel test</title>
+	<script type="module">
+		import { hello } from './hello.ts';
+		console.log(hello('world'));
+	</script>
 </head>
 <body>
 Completely trivial HTML page to test the parcel build system.

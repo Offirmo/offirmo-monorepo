@@ -16,7 +16,6 @@
 	},
 	"dependencies": {
 		"@offirmo-private/pkg-infos-resolver": "*",
-		"@offirmo-private/pure-module--analyzer": "*",
 		"@offirmo-private/set-deep-property": "*",
 		"tiny-invariant": "^1",
 		"write-json-file": "^6"
@@ -30,6 +29,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/pure-module--analyzer": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^22",
 		"npm-run-all": "^4",

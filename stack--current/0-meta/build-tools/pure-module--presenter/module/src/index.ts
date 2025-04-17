@@ -4,13 +4,12 @@
 import { strict as assert } from 'node:assert'
 import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
-import { setꓽpropertyⵧdeep } from '@offirmo-private/set-deep-property'
-
-import { writeJsonFile as write_json_file } from 'write-json-file' // full pkg is too useful, ex. preserve indent
-
-import { getꓽpure_module_details, type PureModuleDetails } from '@offirmo-private/pure-module--analyzer'
-import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
 import * as process from 'node:process'
+
+import { setꓽpropertyⵧdeep } from '@offirmo-private/set-deep-property'
+import { writeJsonFile as write_json_file } from 'write-json-file' // full pkg is too useful, ex. preserve indent
+import { type Basename, type PureModuleDetails } from '@offirmo-private/pure-module--analyzer'
+import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
 
 /////////////////////////////////////////////////
 
@@ -64,21 +63,15 @@ async function present({
 		return
 	}
 
-	// TODO one day if public, re-instate pre-build?
-	// TODO one day add "size-limit"? to all?
-	/*
-"clean": "monorepo-script--clean-package …dist",
-"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
-"_build:prod": "monorepo-script--build-typescript-package",
-"dev": "run-s clean _build:dev:watch",
-"build": "run-s  clean _build:prod",
-"ensure-size": "size-limit",
-"prepublishOnly": "run-s build ensure-size"
-	*/
+	/////////////////////////////////////////////////
+	const ೱpromises: Array<Promise<void>> = []
 
-	const promises: Array<Promise<void>> = []
+	/////////////////////////////////////////////////
+	// prepare: clean up
 
 	const PURE_MODULE_CONTENT_RELPATH = path.basename(pure_module_path)
+	const SRC_RELPATH = path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.main.path‿rel)
+	const SRC_DIR_RELPATH = path.dirname(SRC_RELPATH)
 
 	// out-of-source build (NOT working at the moment)
 	if (isAncestorDir(dest_dir‿abspath, pure_module_details.root‿abspath)) {
@@ -90,7 +83,7 @@ async function present({
 		await fs.rm(dest_dir‿abspath, { recursive: true, force: true })
 		await fs.mkdir(dest_dir‿abspath, { recursive: true })
 
-		promises.push(
+		ೱpromises.push(
 			fs.symlink(
 				pure_module_details.root‿abspath,
 				path.resolve(dest_dir‿abspath, PURE_MODULE_CONTENT_RELPATH),
@@ -99,19 +92,35 @@ async function present({
 		)
 	}
 
-	promises.push(fs.writeFile(
-		path.resolve(dest_dir‿abspath, '.npmrc'),
-		`
-registry=https://registry.npmjs.org/
-package-lock=false
-`.trimStart(),
-		{ encoding: 'utf-8' },
-	))
+	/////////////////////////////////////////////////
+	// create files
+	function _schedule_root_file_creation(basename: Basename, content: string | object) {
+		const target_file‿abspath = path.resolve(dest_dir‿abspath, basename)
+
+		if (typeof content == 'string') {
+			content = content.trimStart()
+			if (!content.endsWith('\n')) content += '\n'
+
+			ೱpromises.push(
+				fs.writeFile(
+					target_file‿abspath,
+					content,
+					{ encoding: 'utf-8' },
+				)
+			)
+			return
+		}
+
+		ೱpromises.push(
+			write_json_file(
+				target_file‿abspath,
+				content,
+			)
+		)
+	}
 
 	/* TODO only when more content than this
-	promises.push(fs.writeFile(
-		path.resolve(dest_dir‿abspath, 'README.md'),
-		`
+	_schedule_root_file_creation('README.md', `
 # ${pure_module_details.fqname}
 
 ${pure_module_details.description || ''}
@@ -120,33 +129,41 @@ ${pure_module_details.description || ''}
 	))
 	*/
 
-	// TODO .tabset with auto color
-	//tabset --badge $1 --color "#a4d4dd"
+	// https://github.com/jonathaneunice/iterm2-tab-set
+	// ?? can't find a reference to folder .tabset?
+	// and it's set by the shortcut itself?
+	// TODO review
+	//_schedule_root_file_creation('.tabset', `tabset --badge $1 --color "#a4d4dd"`)
+	ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, '.tabset'), { force: true }))
 
-	const SRC_RELPATH = path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.main.path‿rel)
-	const SRC_DIR_RELPATH = path.dirname(SRC_RELPATH)
-
+	// tsconfig.json
 	if (pure_module_details.languages.has('ts')) {
-		promises.push(write_json_file(
-			path.resolve(dest_dir‿abspath, 'tsconfig.json'),
-			{
-				"extends": path.relative(dest_dir‿abspath, ts__config__path),
-				"compilerOptions": {
-					...(pure_module_details.engines['browser'] && { lib: [ "ES2024", "DOM" ] }),
-					"pretty": true, // placeholder for adding stuff / helping diffs
-				},
-				"include": [
-					path.relative(dest_dir‿abspath, ts__custom_types__path) + '/*.d.ts',
-					`${PURE_MODULE_CONTENT_RELPATH}/**/*.ts`
-				],
-				"exclude": [
-					'**/~~*/**/*',
-				]
-			}
-		))
+		_schedule_root_file_creation('tsconfig.json', {
+			"extends": path.relative(dest_dir‿abspath, ts__config__path),
+			"compilerOptions": {
+				...(pure_module_details.engines['browser'] && { lib: [ "ES2024", "DOM" ] }),
+				"pretty": true, // placeholder for adding stuff / helping diffs
+			},
+			"include": [
+				path.relative(dest_dir‿abspath, ts__custom_types__path) + '/*.d.ts',
+				`${PURE_MODULE_CONTENT_RELPATH}/**/*.ts`
+			],
+			"exclude": [
+				'**/~~*/**/*',
+			]
+		})
 	}
 	else {
-		promises.push(fs.rm(path.resolve(dest_dir‿abspath, 'tsconfig.json'), { force: true }))
+		ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'tsconfig.json'), { force: true }))
+	}
+
+	if (pure_module_details.engines['browser']) {
+		_schedule_root_file_creation('.parcelrc', {
+			"extends": "@offirmo-private/parcel-config",
+		})
+	}
+	else {
+		ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, '.parcelrc'), { force: true }))
 	}
 
 	if (pure_module_details.depsⵧvendored.size) {
@@ -363,13 +380,10 @@ ${pure_module_details.description || ''}
 
 		return pkg
 	})()
-	promises.push(write_json_file(
-		path.resolve(dest_dir‿abspath, 'package.json'), packageᐧjson
-	))
-
+	_schedule_root_file_creation('package.json', packageᐧjson)
 
 	if (pure_module_details.hasꓽtestsⵧunit) {
-		const webstorm__run_configⵧUT = `
+		_schedule_root_file_creation('webstorm--UT.run.xml', `
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" name="${pure_module_details.fqname} -- UT" type="mocha-javascript-test-runner">
 		<node-interpreter>$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node</node-interpreter>
@@ -384,18 +398,13 @@ ${pure_module_details.description || ''}
 		<method v="2" />
 	</configuration>
 </component>
-`
-		promises.push(fs.writeFile(
-			path.resolve(dest_dir‿abspath, 'webstorm--UT.run.xml'),
-			webstorm__run_configⵧUT,
-			{ encoding: 'utf-8' }
-		))
+`)
 	}
 
 	if (pure_module_details.demo) {
 
 		if (pure_module_details.demo.ext === '.ts') {
-			const webstorm__run_configⵧdemo = `
+			_schedule_root_file_creation('webstorm--demo.run.xml', `
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false"
 		name="${pure_module_details.fqname} -- Demo"
@@ -407,18 +416,15 @@ ${pure_module_details.description || ''}
 		<method v="2" />
 	</configuration>
 </component>
-`
-			promises.push(fs.writeFile(
-				path.resolve(dest_dir‿abspath, 'webstorm--demo.run.xml'),
-				webstorm__run_configⵧdemo,
-				{encoding: 'utf-8'}
-			))
+`)
 		}
 
 		if (pure_module_details.demo.ext === '.html') {
 			// no extra file necessary
 		}
 	}
+
+	await Promise.all(ೱpromises)
 }
 
 /////////////////////////////////////////////////

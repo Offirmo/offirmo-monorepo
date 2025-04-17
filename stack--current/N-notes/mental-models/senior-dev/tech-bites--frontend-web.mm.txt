@@ -41,6 +41,7 @@ architecture -- SPC "Store-Presenter-Component" = Presenters operate on the stor
 architecture -- SSR, ISR, CSR, PPR (see 'rendering')
 arguments
 ARIA "Accessible Rich Internet Applications" https://www.w3.org/WAI/ARIA/apg/
+awards -- awwwards https://www.awwwards.com/websites/developer/
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 blocking -- css -- Stylesheets are render blocking
 blocking -- fetching -> parsing -> rendering https://csswizardry.com/2024/08/blocking-render-why-whould-you-do-that/

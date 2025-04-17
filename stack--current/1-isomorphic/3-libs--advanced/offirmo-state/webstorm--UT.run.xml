@@ -1,4 +1,3 @@
-
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" name="@offirmo-private/state-utils -- UT" type="mocha-javascript-test-runner">
 		<node-interpreter>$USER_HOME$/.nvm/versions/node/v23.11.0/bin/node</node-interpreter>

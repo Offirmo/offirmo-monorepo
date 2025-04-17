@@ -690,6 +690,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 /////////////////////////////////////////////////
 
+export * from './types.ts'
 export {
 	type PureModuleDetails,
 	getꓽpure_module_details,

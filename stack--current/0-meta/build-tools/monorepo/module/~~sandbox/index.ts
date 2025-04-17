@@ -2,7 +2,7 @@ import * as path from 'node:path'
 import * as fs from 'node:fs'
 
 import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
-import { getꓽpure_module_details, type PureModuleDetails, type Options as PureModuleAnalyzerOptions } from '@offirmo-private/pure-module--analyzer'
+import { getꓽpure_module_details, type PureModuleDetails } from '@offirmo-private/pure-module--analyzer'
 import { present } from '@offirmo-private/pure-module--presenter'
 
 import {
@@ -74,7 +74,7 @@ async function refreshꓽmonorepo() {
 			'git--offirmo.sh;',
 			`cd ${relpath_split.slice(0, -2).join(path.sep)}/;`.padEnd(20),
 			`cd ${relpath_split.slice(-2).join(path.sep)}/;`.padEnd(53),
-			`tabset --color "#006EDB" --badge mono${radix}'`
+			`tabset --badge mono${radix}'` //  --color "#006EDB" https://github.com/jonathaneunice/iterm2-tab-set
 		].join(' ')
 		aliases.push(alias)
 	}

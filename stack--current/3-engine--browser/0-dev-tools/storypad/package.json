@@ -61,7 +61,6 @@
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
 		"npm-run-all": "^4",
-		"react": "^19",
 		"typescript": "^5"
 	}
 }
