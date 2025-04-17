@@ -31,3 +31,10 @@ https://cdn.jsdelivr.net/gh/Offirmo/offirmo-monorepo@master/3-advanced--multi/un
 			"path": "dist/index-bundle.js"
 		}
 	],
+
+
+"keywords": [
+-		"debug",
+-		"logger",
+-		"typescript"
+-	],

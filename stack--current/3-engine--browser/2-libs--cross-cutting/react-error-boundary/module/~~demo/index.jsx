@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-import ErrorBoundary from '../..'
+import ErrorBoundary from '../index.js'
 
 export default class Demo extends Component {
 

@@ -5,7 +5,7 @@ import {
 	intermediate_on_node_exit,
 	intermediate_assemble,
 	InteractiveRichTextFragment,
-} from '../../..'
+} from '../../../index.js'
 
 ////////////
 

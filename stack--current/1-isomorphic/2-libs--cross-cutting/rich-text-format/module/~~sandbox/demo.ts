@@ -13,16 +13,6 @@ console.log('\n------- to text -------\n' + RichText.renderⵧto_text($doc, {
 
 /////////////////////////////////////////////////
 
-try {
-	const renderⵧto_terminal = (await import('../../../../../../2-engine--node/2-libs--cross-cutting/rich-text-format--to-terminal/module/index.ts')).default
-
-	console.log('\n------- to terminal -------\n' + renderⵧto_terminal($doc))
-}
-catch {
-	// swallow
-	console.log(`TODO resurrect rich-text-format--to-terminal`)
-}
-
 /*
 import * as DEMOS from '@offirmo-private/rich-text-format/demos'
 

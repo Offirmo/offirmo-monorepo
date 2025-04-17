@@ -3,5 +3,8 @@
 	version: "1.0.1",
 	description: "An implementation of the universal debug API for browsers",
 	"isꓽpublished": true,
-	hasꓽside_effects: true
+	hasꓽside_effects: true,
+	engines: {
+		browser: '*',
+	}
 }

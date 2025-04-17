@@ -9,7 +9,6 @@
 	"exports": {
 		".": "./module/src/index.ts"
 	},
-
 	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
@@ -19,39 +18,35 @@
 		"@offirmo/practical-logger-core": "^3",
 		"@offirmo/universal-debug-api-interface": "^1"
 	},
-	"devDependencies": {
-		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo/unit-test-toolbox": "^9",
-		"npm-run-all": "^4"
-	},
 	"scripts": {
-		"clean": "monorepo-script--clean-package …dist",
-
-		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
+		"_clean--pkg": "monorepo-script--clean-package …dist …cache",
+		"clean": "npm-run-all _clean--pkg",
+		"check--ts": "echo \"@offirmo/universal-debug-api-browser\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s clean check--ts--watch",
+		"ensure--size": "size-limit",
+		"check": "run-s check--ts",
 		"_build:prod": "monorepo-script--build-typescript-package",
-		"xxxbuild:bundle": "parcel build --no-autoinstall --no-source-maps --out-file index-bundle.js  src/index.ts",
-		"ensure-size": "size-limit",
-
-		"dev": "run-s clean _build:dev:watch",
 		"build": "run-p _build:prod",
-		"demo": "parcel --out-dir .parcel --no-autoinstall doc/demo/index.html",
-
 		"np": "np --no-publish",
 		"prepublishOnly": "run-s clean build ensure-size"
 	},
-
-	"files": [
-		"dist",
-		"src"
-	],
-	"repository": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/3-advanced--multi/universal-debug-api-browser",
-	"keywords": [
-		"debug",
-		"logger",
-		"typescript"
-	],
-	"homepage": "https://github.com/Offirmo/offirmo-monorepo--2022/tree/main/stack--current/3-advanced--multi/universal-debug-api-browser",
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/storypad": "*",
+		"@offirmo-private/toolbox--parcel": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
+	},
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/3-engine--browser/2-libs--cross-cutting/universal-debug-api--browser",
+	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/3-engine--browser/2-libs--cross-cutting/universal-debug-api--browser/README.md",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
-	}
+	},
+	"files": [
+		"dist",
+		"module"
+	]
 }
