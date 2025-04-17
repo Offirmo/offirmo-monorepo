@@ -226,6 +226,8 @@ tasks -- vision -- Zero-Shot Object Detection
 temperature
 temptation to over-automate = need balance vs overwork https://uxdesign.cc/the-effort-paradox-in-ai-design-996a0bc2f7f6
 tensor ??
+thinking -- think = once it starts generating a response, to add a step to stop and think about whether it has all the information it needs to move forward https://www.anthropic.com/engineering/claude-think-tool
+thinking -- extended = deeply considers and iterates on its plan before taking action https://www.anthropic.com/research/visible-extended-thinking
 TensorFlow = outdated, this is all pyTorch now. See also JAX
 Text generation models -> see GPT https://platform.openai.com/docs/introduction/text-generation-models
 tokenization https://platform.openai.com/tokenizer vs https://github.com/huggingface/tokenizers

@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 
 <script type="module">
-	const LIB = 'storypad root index.html'
+	import nearest_pkg from '~/package.json'
+	const ROOT_NAME = nearest_pkg?.name ?? 'unknown pkg'
+	const LIB = `${ROOT_NAME}’s storypad’s index.html`
 	console.log(`[${LIB}] 🚀 Hello…`)
 
-	import startꓽstorypad from '@offirmo-private/storypad'
-	import nearest_pkg from '~/package.json'
-
-	// https://storybook.js.org/docs/api/main-config/main-config-indexers
+	// build the index of stories https://storybook.js.org/docs/api/main-config/main-config-indexers
 	// important to load async so that the stories don't pollute the global scope too early (ex. before SXC)
-	//import stories from './**/*.stories.@(js|jsx|ts|tsx|mdx)'
-	const storiesⵧownⵧcore = import('../../src/l0*/**/*.stories.@(js|jsx|ts|tsx|mdx)')
-	const storiesⵧownⵧview = import('../../src/l2*/**/*.stories.@(js|jsx|ts|tsx|mdx)')
-	const storiesⵧofficial = import('../../src/l3-compat/**/*.stories.@(js|jsx|ts|tsx|mdx)')
-	console.log(`[${LIB}] got the async glob(s):`, {
-		storiesⵧownⵧcore,
-		storiesⵧownⵧview,
-		storiesⵧofficial,
-	})
+	// that's enabled with .@(...) actually
+	const storiesⵧownⵧcore = import('../../l0*/**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	const storiesⵧownⵧview = import('../../l2*/**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	const storiesⵧofficial = import('../../l3-compat/**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	const stories_index = {
+		own: {
+			core: storiesⵧownⵧcore,
+			view: storiesⵧownⵧview,
+		},
+		storybook: {
+			official: storiesⵧofficial,
+		}
+	}
+	console.log(`[${LIB}] got the async glob(s):`, stories_index)
+
 
 	console.log(`[${LIB}] now invoking storypad…`)
+	import startꓽstorypad from '@offirmo-private/storypad'
 	startꓽstorypad(
+		stories_index,
 		{
-			own: {
-				core: storiesⵧownⵧcore,
-				view: storiesⵧownⵧview,
-			},
-			storybook: {
-				official: storiesⵧofficial,
-			}
-		},
-		{
-			root_title: nearest_pkg?.name,
+			root_title: ROOT_NAME,
 			//decorators: []
 		}
 	)

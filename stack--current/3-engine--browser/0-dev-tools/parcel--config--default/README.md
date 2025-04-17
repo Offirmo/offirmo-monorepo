@@ -36,14 +36,18 @@ Added support for exports https://parceljs.org/features/dependency-resolution/#p
 
 ## Common issues
 
+### Common troubleshooting
+* XXX all packages and sub-packages must have a `.parcelrc`!
+* Check our custom config and remove everything unsure
+* use parcel--check
+
 ### globs not working
-= config issue
+solved by "common troubleshooting"
 
 ### At launch: ENOENT: no such file or directory, open '(...)/node_modules/@parcel/runtime-browser-hmr/lib/runtime-861bbfc0e96a0020.js'
-
 [Known bug 😢](https://github.com/parcel-bundler/parcel/issues/8181)
 
-use `--no-hmr`
+May be solved by "common troubleshooting", or use `--no-hmr`
 
 
 

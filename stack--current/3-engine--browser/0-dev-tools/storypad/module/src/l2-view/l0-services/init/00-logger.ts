@@ -21,7 +21,7 @@ async function init(): Promise<void> {
 		_setꓽlogger(logger)
 	}
 	catch (err) {
-		console.error(err)
+		if (!err?.message?.includes?.('not yet resurrected')) throw err
 	}
 }
 

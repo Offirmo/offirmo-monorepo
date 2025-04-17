@@ -12,14 +12,8 @@
 	"sideEffects": true,
 
 	"dependencies": {
-		"@offirmo-private/parcel-config--default": "*",
-		"@offirmo-private/parcel-resolver-js2ts": "*",
-		"@parcel/config-default": "^2",
-		"@parcel/core": "^2",
-		"@parcel/reporter-bundle-analyzer": "^2",
-		"parcel": "^2",
-		"process": "^0",
-		"sharp": "^0.31"
+		"@offirmo-private/parcel-config": "*",
+		"parcel": "^2"
 	},
 	"optionalDependencies": {
 	},

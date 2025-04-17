@@ -28,7 +28,6 @@ import {
 } from './file-entry/index.ts'
 
 import {
-	type PureModuleManifest,
 	type PureModuleDetails,
 	create as _createꓽresult,
 	updateⵧfrom_manifest,

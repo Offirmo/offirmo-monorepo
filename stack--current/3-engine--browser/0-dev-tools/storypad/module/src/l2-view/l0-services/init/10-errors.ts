@@ -47,7 +47,7 @@ async function init(): Promise<void> {
 		})
 	}
 	catch (err) {
-		console.error(err)
+		if (!err?.message?.includes?.('not yet resurrected')) throw err
 
 		window.addEventListener('error', function(evt) {
 			// https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent

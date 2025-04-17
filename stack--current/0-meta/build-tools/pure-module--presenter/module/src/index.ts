@@ -291,7 +291,8 @@ ${pure_module_details.description || ''}
 				'--port 1981', // because parcel caches with bugs, so we can't have several running anyway
 				'--lazy', // because faster
 				'--no-autoinstall', // we don't want to auto-install anything, if missing = it's on us
-				'--no-hmr', // because of bug https://github.com/parcel-bundler/parcel/issues/8181
+				//'--no-hmr', // because of bug https://github.com/parcel-bundler/parcel/issues/8181
+				// it seems to work for now...
 			].join(' ')
 
 			if (pure_module_details.hasꓽstories || pure_module_details.storypad) {

@@ -11,10 +11,17 @@
 		".": "./module/index.html"
 	},
 	"source": "module/index.html",
-	"dependencies": {},
+	"dependencies": {
+		"tiny-invariant": "^1",
+		"tslib": "^2"
+	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
+		"check--ts": "echo \"@offirmo-private/parcel--check\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s clean check--ts--watch",
+		"check": "run-s check--ts",
 		"_start:parcel:main": "parcel serve module/*.html --port 1981 --lazy --no-autoinstall",
 		"start": "npm-run-all clean --parallel _start:parcel:main"
 	},
@@ -23,6 +30,7 @@
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"npm-run-all": "^4"
+		"npm-run-all": "^4",
+		"typescript": "^5"
 	}
 }
