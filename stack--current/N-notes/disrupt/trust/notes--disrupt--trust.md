@@ -1,5 +1,10 @@
 
 
+https://blog.google/technology/safety-security/
+
+https://www.troyhunt.com/a-sneaky-phish-just-grabbed-my-mailchimp-mailing-list/
+
+https://it.slashdot.org/story/25/04/14/0356212/the-effs-certbot-now-supports-six-day-certs
 
 https://devdocs.io/dom/webotp_api
 https://devdocs.io/dom/credential_management_api

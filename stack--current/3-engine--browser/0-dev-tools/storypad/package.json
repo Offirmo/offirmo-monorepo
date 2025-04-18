@@ -10,7 +10,7 @@
 	"exports": {
 		".": "./module/src/index.ts",
 		"./types": "./module/src/l0-types/index.ts",
-		"./decorators/diagnostics": "./module/src/__shared/decorators/diagnostics.js",
+		"./decorators/diagnostics": "./module/src/__shared/decorators/diagnostics.ts",
 		"./stories/html/html5-kitchen-sink":     "./module/src/__shared/stories/html/html5-kitchen-sink_by_dbox.stories.ts",
 		"./stories/html/html-demos--offirmo":    "./module/src/__shared/stories/html/html-demos-by-offirmo.stories.ts",
 		"./stories/html/html-demos--others":     "./module/src/__shared/stories/html/html-demos-misc.stories.ts",

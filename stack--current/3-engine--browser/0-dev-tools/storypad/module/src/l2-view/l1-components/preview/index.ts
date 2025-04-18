@@ -68,6 +68,8 @@ async function renderꓽstory(state: ObservableState, container: HTMLElement) {
 `
 		}
 	}
+
+	console.groupEnd()
 }
 
 async function _renderⵧstory(state: ObservableState, storyEntry: Immutable<StoryEntry>, render_params: Immutable<RenderParams<Story‿v2 | Story‿v3>>, container: HTMLElement) {

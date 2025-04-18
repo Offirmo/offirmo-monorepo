@@ -73,6 +73,7 @@ Contextual Language Models (CLMs) Contextual.ai
 control vector https://vgel.me/posts/representation-engineering/
 ControlNet = a type of model for controlling image diffusion models by conditioning the model with an additional input image https://huggingface.co/docs/diffusers/using-diffusers/controlnet https://github.com/lllyasviel/ControlNet
 cross encoder https://www.sbert.net/examples/applications/cross-encoder/README.html
+custom instructions https://www.reddit.com/r/ChatGPTPro/comments/15ffpx3/reddit_what_are_your_best_custom_instructions_for/
 dataset  https://www.fatml.org/media/documents/datasheets_for_datasets.pdf
 day 2 = The challenge of revising, maintaining, further developing, and deploying an AI-generated app https://manual.bubble.io/beta-features/bubbles-ai-app-generator#the-day-1-and-day-2-dilemma-in-ai-driven-app-development
 deep reinforcement learning (deep RL) course: https://spinningup.openai.com/
@@ -133,6 +134,7 @@ langchain = a framework for developing applications powered by language models h
 latency
 laziness = cases where the model doesn’t complete a task https://openai.com/blog/new-embedding-models-and-api-updates
 learning -- Transfer learning = a technique where a model is first pre-trained on a data-rich task before being fine-tuned on a downstream task
+left-leaning biases https://tech.slashdot.org/story/25/04/10/1628209/meta-says-llama-4-targets-left-leaning-bias
 lib -- JAX https://github.com/google/jax
 lib -- PyTorch https://pytorch.org/
 lib -- TensorFlow https://www.tensorflow.org/ (deprecated?)
@@ -226,10 +228,10 @@ tasks -- vision -- Zero-Shot Object Detection
 temperature
 temptation to over-automate = need balance vs overwork https://uxdesign.cc/the-effort-paradox-in-ai-design-996a0bc2f7f6
 tensor ??
-thinking -- think = once it starts generating a response, to add a step to stop and think about whether it has all the information it needs to move forward https://www.anthropic.com/engineering/claude-think-tool
-thinking -- extended = deeply considers and iterates on its plan before taking action https://www.anthropic.com/research/visible-extended-thinking
 TensorFlow = outdated, this is all pyTorch now. See also JAX
 Text generation models -> see GPT https://platform.openai.com/docs/introduction/text-generation-models
+thinking -- extended = deeply considers and iterates on its plan before taking action https://www.anthropic.com/research/visible-extended-thinking
+thinking -- think = once it starts generating a response, to add a step to stop and think about whether it has all the information it needs to move forward https://www.anthropic.com/engineering/claude-think-tool
 tokenization https://platform.openai.com/tokenizer vs https://github.com/huggingface/tokenizers
 tokenizer -- sentencepiece https://github.com/google/sentencepiece
 tokenizer -- tiktoken https://tiktokenizer.vercel.app/
@@ -259,3 +261,5 @@ vibe coding https://x.com/karpathy/status/1886192184808149383
 vs. low-code / no-code
 watermarking outputs https://proceedings.mlr.press/v202/zhao23i.html
 weak-to-strong generalization https://openai.com/research/weak-to-strong-generalization
+yap -- yap score
+yap https://www.reddit.com/r/ChatGPT/comments/1djgyvb/is_it_just_me_or_gpt4_yaps_too_much/

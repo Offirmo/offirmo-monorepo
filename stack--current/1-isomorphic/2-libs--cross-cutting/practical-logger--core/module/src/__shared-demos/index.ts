@@ -3,7 +3,7 @@ import { createError } from '@offirmo/error-utils'
 
 /////////////////////////////////////////////////
 
-const DEMO_ERR = createError('Timeout loading state!', {
+const DEMO_ERR = createError('Demo error!', {
 	statusCode: 1234,
 	httpStatus: 418, // to check that custom props are preserved
 	hello: 42,
@@ -236,6 +236,8 @@ export {
 	demo_error,
 	demo_group,
 	demo_incorrect_logger_invocations,
+
 	demo_logger_api,
+
 	demo_devtools_fonts,
 }

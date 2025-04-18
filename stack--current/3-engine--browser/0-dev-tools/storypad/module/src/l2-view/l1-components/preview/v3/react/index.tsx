@@ -57,7 +57,6 @@ async function render(state: ObservableState, render_params: Immutable<RenderPar
 
 	// TODO add a pill if suspended
 
-
 	// TODO error boundary
 	root.render(
 		<StrictWrapper>
@@ -68,6 +67,7 @@ async function render(state: ObservableState, render_params: Immutable<RenderPar
 			</Suspense>
 		</StrictWrapper>
 	);
+
 	console.groupEnd()
 }
 

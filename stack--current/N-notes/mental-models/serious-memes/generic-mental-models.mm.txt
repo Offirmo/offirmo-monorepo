@@ -391,6 +391,7 @@ goals -- S.M.A.R.T. -- 03 A (Aspirational yet Achievable) Write Individual Goals
 goals -- S.M.A.R.T. -- 04 R (Relevant) Align the goal with your team’s mission, values, department/team OKRs, and strategic and business objectives. Clearly articulate the reason(s) for pursuing the goal and how this contributes to our short- and long-term objectives.
 goals -- S.M.A.R.T. -- 05 T (Time-bound) Create a specific end date for the goal. This instills a sense of urgency and helps you develop a work plan that prioritizes tasks leading up to the delivery date (e.g., one month, one quarter, or longer).
 goldilock zone / problem
+Goldwater rule https://en.wikipedia.org/wiki/Goldwater_rule
 good > correct? = "bien trouvé"
 good life questions https://radreads.co/10k-questions/
 good neighbor https://en.wikipedia.org/wiki/Good_Neighbor_policy
@@ -871,7 +872,10 @@ resentment = Resentment, born of weakness, harms no one more than the weak perso
 respect
 rest and vest https://news.ycombinator.com/item?id=14943146
 restraining order or protective order = an order used by a court to protect a person in a situation often involving alleged domestic violence, child abuse and neglect, assault, harassment, stalking, or sexual assault https://en.wikipedia.org/wiki/Restraining_order
+rights -- no discrimination based on race, color, religion, sex, and national origin = https://en.wikipedia.org/wiki/Civil_Rights_Act_of_1964
 rights -- of abode https://en.wikipedia.org/wiki/Right_of_abode
+rights -- of initiative -- ex. of LMPT rejected referendum d'initiative nationale
+rights -- of initiative https://en.wikipedia.org/wiki/Popular_initiative
 ring theory -- 01 The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
 ring theory -- 02 When you are talking to a person in a ring smaller than yours, someone closer to the center of the crisis, the goal is to help. Listening is often more helpful than talking. But if you're going to open your mouth, first ask yourself if what you are about to say is likely to provide comfort and support. If it isn't, don't say it. Don't, for example, give advice. People who are suffering from trauma don't need advice. They need comfort and support. So say, "I'm sorry," or, "This must really be hard for you," or, "Can I bring you a pot roast?" Don't say, "You should hear what happened to me," or, "Here's what I would do if I were you." And don't say, "This is really bringing me down."
 ring theory https://en.wikipedia.org/wiki/Ring_theory_(psychology)
@@ -916,6 +920,7 @@ sex -- abuse -- https://en.wikipedia.org/wiki/Angers_pedophile_network
 sex -- abuse -- Outreau
 sex -- ed
 sex -- ed -- "sex positive"
+sex -- possibility of pregnancy https://www.reddit.com/r/Catholicism/comments/1k0zrsc/abortion_post_update/
 sex ratio -- human -- returning soldier effect = more boys are born immediately after wars https://en.m.wikipedia.org/wiki/Returning_soldier_effect
 sharpen your axe before cutting the forest
 ship of theseus https://en.m.wikipedia.org/wiki/Ship_of_Theseus

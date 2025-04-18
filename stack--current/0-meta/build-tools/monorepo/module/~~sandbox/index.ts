@@ -68,12 +68,12 @@ async function refreshꓽmonorepo() {
 		radix_set.add(radix)
 		const alias = [
 			'alias',
-			`mono${radix}='cd`.padStart(13),
+			`mono${radix}='cd`.padStart(15),
 			`~/${path.relative(process.env['HOME']!, MONOREPO_ROOT)}/;`,
 			'nvm use;',
 			'git--offirmo.sh;',
-			`cd ${relpath_split.slice(0, -2).join(path.sep)}/;`.padEnd(20),
-			`cd ${relpath_split.slice(-2).join(path.sep)}/;`.padEnd(53),
+			`cd ${relpath_split.slice(0, -2).join(path.sep)}/;`.padEnd(24),
+			`cd ${relpath_split.slice(-2).join(path.sep)}/;`.padEnd(60),
 			`tabset --badge mono${radix}'` //  --color "#006EDB" https://github.com/jonathaneunice/iterm2-tab-set
 		].join(' ')
 		aliases.push(alias)
@@ -83,7 +83,9 @@ async function refreshꓽmonorepo() {
 		path.resolve(MONOREPO_ROOT, '0-meta', 'bin', 'aliases.sh'),
 		`#@IgnoreInspection BashAddShebang
 [ "$VERBOSE__RC" == true ] && echo "* […monorepo/…/aliases.sh] hello!"
-` + aliases.join('\n'),
+
+${aliases.join('\n')}
+`,
 		{ encoding: 'utf-8' },
 	)
 }

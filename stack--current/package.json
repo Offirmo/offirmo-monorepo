@@ -136,10 +136,12 @@
 		"parcel": "^2",
 		"path-exists": "^5",
 		"prettyjson": "^1",
+		"process": "^0",
 		"prop-types": "^15",
 		"react": "^19",
 		"react-dom": "^19",
 		"semver": "^7",
+		"sharp": "^0.31",
 		"sinon": "^19",
 		"sinon-chai": "^4",
 		"strip-ansi": "^7",
@@ -148,5 +150,8 @@
 		"tslib": "^2",
 		"typescript": "^5",
 		"typescript-string-enums": "^1"
+	},
+	"resolutions": {
+		"sharp": "^0.34"
 	}
 }

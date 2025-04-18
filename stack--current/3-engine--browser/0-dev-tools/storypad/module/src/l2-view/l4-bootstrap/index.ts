@@ -46,40 +46,40 @@ async function startꓽstorypad(stories_glob: Immutable<any>, config?: Immutable
 
 	await asap_but_out_of_immediate_execution(async () => {
 		console.groupCollapsed(`[${LIB}] Starting… `)
-		console.log(`location =`, window.location.href)
-		console.log('config =', config)
-		console.log('glob =', stories_glob)
+			console.log(`location =`, window.location.href)
+			console.log('config =', config)
+			console.log('glob =', stories_glob)
 
-		// 1. services
-		console.groupCollapsed(`[${LIB}] 1/3 Services init…`)
-		// order is important! Timing is non-trivial!
-		assert(Object.keys(initsⵧservices).length > 0, 'Unexpectedly no services/init found!')
-		await Object.keys(initsⵧservices).sort().reduce(async (acc, key) => {
-			await acc
-			console.group(`services/init "${key}"`)
-			const init_fn = initsⵧservices[key].default
-			console.trace(`services/init "${key}": exec…`)
-			await init_fn()
-			console.trace(`services/init "${key}": done ✅`)
+			// 1. services
+			console.groupCollapsed(`[${LIB}] 1/3 Services init…`)
+				// order is important! Timing is non-trivial!
+				assert(Object.keys(initsⵧservices).length > 0, 'Unexpectedly no services/init found!')
+				await Object.keys(initsⵧservices).sort().reduce(async (acc, key) => {
+					await acc
+					console.group(`services/init "${key}"`)
+						const init_fn = initsⵧservices[key].default
+						console.trace(`services/init "${key}": exec…`)
+						await init_fn()
+						console.trace(`services/init "${key}": done ✅`)
+					console.groupEnd()
+				}, Promise.resolve())
+				console.log(`[${LIB}] 1/3 Services init ✅`)
 			console.groupEnd()
-		}, Promise.resolve())
-		console.log(`[${LIB}] 1/3 Services init ✅`)
-		console.groupEnd()
 
-		// 2. flux
-		console.groupCollapsed(`[${LIB}] 2/3 Flux init…`)
-		const flux = new ObservableState()
-		await flux.init(stories_glob, config)
-		console.log(`[${LIB}] 2/3 Flux init ✅`)
-		console.groupEnd()
+			// 2. flux
+			console.groupCollapsed(`[${LIB}] 2/3 Flux init…`)
+				const flux = new ObservableState()
+				await flux.init(stories_glob, config)
+				console.log(`[${LIB}] 2/3 Flux init ✅`)
+			console.groupEnd()
 
-		// 3. view
-		console.groupCollapsed(`[${LIB}] 3/3 View init…`)
-		render(flux)
-		console.log(`[${LIB}] 3/3 View init ✅`)
-		console.groupEnd()
+			// 3. view
+			console.groupCollapsed(`[${LIB}] 3/3 View init…`)
+				render(flux)
+				console.log(`[${LIB}] 3/3 View init ✅`)
+			console.groupEnd()
 
-		console.log(`[${LIB}] Done ✔`)
+			console.log(`[${LIB}] Done ✔`)
 		console.groupEnd()
 	})
 }

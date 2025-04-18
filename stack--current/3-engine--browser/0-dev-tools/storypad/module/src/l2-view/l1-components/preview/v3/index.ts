@@ -65,7 +65,6 @@ async function renderCSFV3(state: ObservableState, entry: Immutable<StoryEntry>,
 			break
 	}
 
-
 	console.groupEnd()
 }
 
