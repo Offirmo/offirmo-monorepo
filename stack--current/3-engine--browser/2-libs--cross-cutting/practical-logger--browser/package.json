@@ -14,9 +14,9 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/better-console-groups": "*",
 		"@offirmo/practical-logger-core": "^3",
-		"@offirmo/practical-logger-types": "^3",
-		"limit-once": "^0.16"
+		"@offirmo/practical-logger-types": "^3"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …dist …cache",

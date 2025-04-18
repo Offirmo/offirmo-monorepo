@@ -1,5 +1,5 @@
 import * as Bowser from 'bowser'
-import { BaseInjections, SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
+import { type BaseInjections, type SoftExecutionContext, getRootSXC } from '@offirmo-private/soft-execution-context'
 //import ensureDeviceUUID from '@offirmo-private/ensure-device-uuid-browser'
 
 import { LS_KEYS } from './consts.ts'

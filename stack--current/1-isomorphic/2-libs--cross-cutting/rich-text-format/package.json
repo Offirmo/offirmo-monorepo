@@ -27,7 +27,8 @@
 		"check--ts": "echo \"@offirmo-private/rich-text-format\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"check": "run-s tests check--ts"
+		"check": "run-s tests check--ts",
+		"demo": "node --experimental-strip-types ./module/~~sandbox/demo.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

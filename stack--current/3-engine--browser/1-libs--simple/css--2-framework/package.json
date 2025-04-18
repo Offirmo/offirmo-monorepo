@@ -27,6 +27,8 @@
 		"check": "run-s check--ts",
 		"_start:parcel:storypad": "parcel serve module/__fixtures/storypad/index.html --port 1981 --lazy --no-autoinstall",
 		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
+		"_start:parcel:demo": "parcel serve module/~~demo/index.html --port 1981 --lazy --no-autoinstall",
+		"demo": "npm-run-all clean --parallel _start:parcel:demo",
 		"build": "node --experimental-strip-types ./module/__build/bundle.ts"
 	},
 	"devDependencies": {

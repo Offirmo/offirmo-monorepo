@@ -401,6 +401,9 @@ ${pure_module_details.description || ''}
 </component>
 `)
 	}
+	else {
+		ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--UT.run.xml'), { force: true }))
+	}
 
 	if (pure_module_details.demo) {
 
@@ -418,6 +421,9 @@ ${pure_module_details.description || ''}
 	</configuration>
 </component>
 `)
+		}
+		else {
+			ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--demo.run.xml'), { force: true }))
 		}
 
 		if (pure_module_details.demo.ext === '.html') {

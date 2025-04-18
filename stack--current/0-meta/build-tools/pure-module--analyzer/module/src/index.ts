@@ -45,7 +45,7 @@ function isꓽin_ignored_folder(entry: FileEntry): boolean {
 	if (path‿rel.includes('node_modules/'))
 		throw new Error(`A pure module should not contain node_modules!`)
 
-	if (path‿rel.includes('~~')) // means "unstructured
+	if (path‿rel.includes('tosort'))
 		return true
 
 	// vendored deps are supposed to have no deps
@@ -54,6 +54,16 @@ function isꓽin_ignored_folder(entry: FileEntry): boolean {
 
 	return false
 }
+
+function isꓽin_unstructured_folder(entry: FileEntry): boolean {
+	const { path‿rel } = entry
+
+	if (path‿rel.includes('~~')) // means unstructured
+		return true
+
+	return false
+}
+
 
 function isꓽignored_file(entry: FileEntry): boolean {
 	if (entry.basename === '.DS_Store') {
@@ -306,6 +316,8 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	const _manifest = JSON5.parse(fs.readFileSync(entryⵧmanifest.path‿abs, 'utf8'))
 	updateⵧfrom_manifest(result, _manifest)
 
+	/////////////////////////////////////////////////
+
 	// start aggregating
 	// we need the fully qualified name of the module
 	result.namespace = getꓽdefault_namespace(result)
@@ -314,30 +326,46 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	const pending_promises: Array<Promise<void>> = []
 	const raw_deps: Array<Dependency> = []
 
+	// HERE MAIN LOOP
 	file_entries.forEach(entry => {
-		const isꓽignored = isꓽin_ignored_folder(entry) || isꓽignored_file(entry)
+		let isꓽignored = isꓽin_ignored_folder(entry) || isꓽignored_file(entry)
 		const { path‿rel } = entry
 		console.log(
 			`${indent} ↳ 📄`, path‿rel,
 			isꓽignored ? '🚫' : '',
 			//entry.extⵧsub, entry.ext, entry.extⵧextended,
 		)
+
+		if (!isꓽignored) {
+			assertꓽmigrated(entry, { indent, root‿abspath })
+			isꓽignored = isꓽignored_file(entry) // update bc can become ignored after migration
+			if (isꓽignored) console.log(`${indent}      migrated, now 🚫`)
+		}
+
 		if (isꓽignored) {
-			// still eligible for a restricted set of things
-			if (path.basename(path.dirname(path‿rel)) === '~~sandbox') {
-				if (entry.basename‿noext === 'index' && !result.sandbox) {
-					result.sandbox = entry
-					console.log(`${indent}    ⭐️new candidate for: sandbox`)
+			return
+		}
+		else if (isꓽin_unstructured_folder(entry)) {
+			// we'll ignore as well but still eligible for a restricted set of things
+
+			if (!result.demo) {
+				if (entry.basename‿noext === 'demo'
+					|| (path.basename(path.dirname(path‿rel)).includes('demo') && entry.basename‿noext === 'index')) {
+					assertꓽnormalized(entry)
+					console.log(`${indent}    ⭐️new candidate for: demo`)
+					result.demo = entry
 				}
 			}
 
-			return
-		}
+			if (!result.sandbox) {
+				if (entry.basename‿noext === 'sandbox'
+				|| (path.basename(path.dirname(path‿rel)).includes('sandbox') && entry.basename‿noext === 'index')) {
+					assertꓽnormalized(entry)
+					console.log(`${indent}    ⭐️new candidate for: sandbox`)
+					result.sandbox = entry
+				}
+			}
 
-		assertꓽmigrated(entry, { indent, root‿abspath })
-
-		if (isꓽignored_file(entry)) { // can become ignored after migration
-			console.log(`${indent}      migrated, now 🚫`)
 			return
 		}
 

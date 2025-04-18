@@ -1,4 +1,4 @@
-import type { LogPayload } from '@offirmo/practical-logger-types'
+import type { LogLevel, LogPayload } from '@offirmo/practical-logger-types'
 
 const FONT_FAMILY_BETTER_PROPORTIONAL = 'font-family: ' + [
 	'-apple-system',
@@ -17,7 +17,7 @@ const FONT_FAMILY_BETTER_MONOSPACE = 'font-family: ' + [
 ].join(', ')
 
 
-const LEVEL_TO_COLOR_STYLE: Readonly<{ [k: string]: string }> = {
+const LEVEL_TO_COLOR_STYLE: Readonly<Record<LogLevel, string>> = {
 	// empty = no need, console method already covers it well
 	fatal:   '',
 	emerg:   '',

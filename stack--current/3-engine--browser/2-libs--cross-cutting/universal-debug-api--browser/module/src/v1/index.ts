@@ -1,10 +1,10 @@
-import { DebugApiV1 } from '@offirmo/universal-debug-api-interface'
+import type { DebugApiV1 } from '@offirmo/universal-debug-api-interface'
 import {
-	LogLevel,
+	type LogLevel,
 	DEFAULT_LOG_LEVEL,
 	DEFAULT_LOGGER_KEY,
-	Logger,
-	LoggerCreationParams,
+	type Logger,
+	type LoggerCreationParams,
 } from '@offirmo/practical-logger-core'
 import {
 	createLogger,

@@ -4,8 +4,9 @@ import assert from 'tiny-invariant'
 import { asap_but_not_synchronous } from '@offirmo-private/async-utils'
 
 import { getꓽSXC } from './sxc.ts'
-import { render_any } from './render-any.jsx'
+import { render_any } from './render-any.js'
 
+/////////////////////////////////////////////////
 
 class ErrorBoundary extends React.Component {
 	state = {
@@ -112,5 +113,7 @@ ErrorBoundary.defaultProps = {
 	onError: () => {},
 	// TODO report link customization
 }
+
+/////////////////////////////////////////////////
 
 export default ErrorBoundary

@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types'
 import assert from 'tiny-invariant'
 import memoize_one from 'memoize-one'
+
+/////////////////////////////////////////////////
 
 // from React doc
 // https://reactjs.org/docs/higher-order-components.html#convention-wrap-the-display-name-for-easy-debugging
@@ -44,6 +45,8 @@ function render_any(xprops) {
 }
 
 const render_any_m = memoize_one(render_any)
+
+/////////////////////////////////////////////////
 
 export {
 	render_any,

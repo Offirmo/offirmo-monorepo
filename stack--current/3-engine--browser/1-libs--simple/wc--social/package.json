@@ -16,7 +16,9 @@
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
-		"clean": "npm-run-all _clean--pkg"
+		"clean": "npm-run-all _clean--pkg",
+		"_start:parcel:demo": "parcel serve module/~~sandbox/demo.html --port 1981 --lazy --no-autoinstall",
+		"demo": "npm-run-all clean --parallel _start:parcel:demo"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

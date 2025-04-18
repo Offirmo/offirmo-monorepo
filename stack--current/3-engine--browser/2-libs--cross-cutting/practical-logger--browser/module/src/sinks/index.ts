@@ -4,7 +4,7 @@ import type { Browser, SinkOptions } from '../types.ts'
 import sink_firefox from './advanced/firefox.ts'
 import sink_chromium from './advanced/chromium.ts'
 import sink_safari from './advanced/safari.ts'
-import create_sink_no_css from './no-css.ts'
+import create_sink_no_css from './sink--no-css.ts'
 
 // TODO export that?
 function quick_detect_browser(): Browser {

@@ -1,5 +1,7 @@
 import { getRootSXC } from '@offirmo-private/soft-execution-context'
 
+/////////////////////////////////////////////////
+
 const LIB = 'ErrorBoundary'
 
 function getꓽSXC(parent) {
@@ -7,6 +9,8 @@ function getꓽSXC(parent) {
 		.createChild()
 		.setLogicalStack({module: LIB})
 }
+
+/////////////////////////////////////////////////
 
 export {
 	getꓽSXC,

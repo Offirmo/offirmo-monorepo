@@ -1,6 +1,6 @@
 import { type LogLevel, LOG_LEVEL_TO_HUMAN } from '@offirmo/practical-logger-core'
 
-export const LEVEL_TO_CONSOLE_METHOD: Readonly<{ [k: string]: string }> = {
+export const LEVEL_TO_CONSOLE_METHOD: Readonly<Record<LogLevel, string>> = {
 	fatal:   'error',
 	emerg:   'error',
 	alert:   'error',
