@@ -4,8 +4,8 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	type ImportGlob, isꓽImportGlob,
 	type ImportModule, isꓽImportModule,
-} from '../../../l0-types/l0-glob'
-import { type Module‿Parcelv2, isꓽMultiModule‿Parcelv2} from '../../../l0-types/l0-glob/parcel/v2'
+} from '../../../l0-types/l0-glob/index.ts'
+import { type Module‿Parcelv2, isꓽMultiModule‿Parcelv2} from '../../../l0-types/l0-glob/parcel/v2/index.ts'
 
 import { SEPⵧSEGMENTS, SEPⵧSTORY } from '../../../consts.ts'
 import { type StoryEntry, isꓽStoryEntry } from '../types.ts'

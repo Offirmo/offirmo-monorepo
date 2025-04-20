@@ -51,7 +51,6 @@
 [ ] Nobel https://www.nobelprize.org/all-nobel-prizes-2024/
 [ ] tool https://explorer.globe.engineer/
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
-a country is a farm
 abandon animaux compagnie
 academic disciplines -- humanities = academic disciplines that study aspects of human society and culture, including certain fundamental questions asked by humans https://en.wikipedia.org/wiki/Humanities
 academic disciplines -- trans / cross
@@ -69,9 +68,8 @@ ally -- barriers = Diffusion of Responsibility, Lack of Awareness or Skills, Fea
 ally -- howto = Be Present, Provide Options, Know Your Role, follow/beware laws/policies
 ally = s/o who actively seeks to bridge differences, stand for fairness or harmony, and encourage equal opportunities for others in the workplace through thoughtful and respectful communication
 alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community
-amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 amour vs attraction
-Anna Karenina principle https://en.wikipedia.org/wiki/Anna_Karenina_principle
+Anna Karenina principle = https://en.wikipedia.org/wiki/Anna_Karenina_principle
 anti-fragile
 applied = vs. theoric. practical. Not always need to be an expert / scientist / priest. Applying (citizen, engineer, lay) is complementary and can be, at times, more useful/concrete than expertise ("perché")
 artisanal and small scale mining (ASM) https://www.glencore.com/sustainability/esg-a-z/artisanal-and-small-scale-mining
@@ -149,9 +147,6 @@ buy nice or buy twice
 cadre = should lead, can change the world (cf. "du role social de l'officier")
 Can the Subaltern Speak? = highlights the challenges faced by marginalised groups in having their voices heard within dominant power structure https://en.wikipedia.org/wiki/Gayatri_Chakravorty_Spivak#%22Can_the_Subaltern_Speak?%22
 can't satisfy others
-capitalism -- issues -- inability to collectively improve, ex. global warming
-capitalism -- late stage
-capitalism -- W. H. Mallock -- is justified because it permits the most talented members of society to use the less talented for the sake of maximizing efficiency. Labor, for him, was an inert mass that was useless unless those with managerial and entrepreneurial talent set them to work. Hence, wealth is created, not by labor, but by the knowledge and ability of those who control labor. Maximization of corporate profits means in this case that the most entrepreneurial, innovative and inventive segment of society has used labor and resources to create wealth. In Mallock's view labor, by itself, creates nothing; it's not the wrench that puts the machine together, but the genius who invented it.
 care -- doesn't scale https://stevenscrawls.com/care-doesnt-scale/
 career -- career limiting (action/move)
 cargo cult
@@ -170,10 +165,6 @@ charts -- hill = position on a "hill" figuring things out -> making it happen ht
 cherchez la femme https://en.m.wikipedia.org/wiki/Cherchez_la_femme
 choice making -- 5-2-1 technique https://www.reddit.com/r/lifehacks/comments/ctdibo/521_technique/
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
-class -- high -- new money
-class -- high -- old money
-class -- low
-class -- middle
 coach vs mentor vs sponsor = A coach talks to you, a mentor talks with you, and a sponsor talks about you https://www.linkedin.com/posts/addyosmani_softwareengineering-productivity-leadership-activity-6996942888802598912-hUgl
 cognitive bias -- recency https://en.wikipedia.org/wiki/Recency_bias
 cognitive bias https://en.wikipedia.org/wiki/Cognitive_bias

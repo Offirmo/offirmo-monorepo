@@ -14,11 +14,12 @@ import renderⵧstory_area from '../story-area'
 
 function renderꓽmanager(state: ObservableState): HTMLElement {
 	const root = document.createElement('div')
-	root.classList.add('storypad⋄manager')
+	root.classList.add('o⋄full-viewport', 'storypad⋄manager')
 
 	// render the full UI:
-	//import('@offirmo-private/css--framework/viewport.css')
+	import('../../../__vendor/@offirmo-private/css--framework/atomic/atomic--dimension.css')
 	import('./index.css')
+
 	// 1. side panel
 	const sidebar_elt = renderⵧsidebar(state)
 	root.appendChild(sidebar_elt)

@@ -1,5 +1,5 @@
-import type { RawRenderParams, GenericArgs, GenericStoryOutput } from '../common'
-import { isꓽStory‿v2 } from '../v2'
+import type { RawRenderParams, GenericArgs, GenericStoryOutput } from '../common/index.ts'
+import { isꓽStory‿v2 } from '../v2/index.ts'
 
 /////////////////////////////////////////////////
 

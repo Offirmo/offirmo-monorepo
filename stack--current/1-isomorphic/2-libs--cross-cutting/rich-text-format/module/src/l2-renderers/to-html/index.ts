@@ -1,7 +1,7 @@
 import memoize_one from 'memoize-one'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { type CheckedNode, type Node, isꓽlist } from '../../l1-types/index.ts'
+import { type CheckedNode, type Node, isꓽlist, type NodeLike } from '../../l1-types/index.ts'
 
 import { isꓽlink, isꓽlistⵧKV, isꓽlistⵧuuid } from '../common.ts'
 import {
@@ -11,6 +11,7 @@ import {
 	walk,
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
 } from '../walk.ts'
+import { promoteꓽto_node } from '../../l1-utils/index.ts'
 
 /////////////////////////////////////////////////
 // much simpler than "to text" since HTML is doing a lot for us
@@ -147,7 +148,12 @@ const callbacksⵧto_html: Partial<WalkerCallbacks<State, RenderingOptionsⵧToH
 	on_nodeⵧexit,
 }
 
-function renderⵧto_html($doc: Node, options: Partial<RenderingOptionsⵧToHtml> = {}): string {
+function renderⵧto_html(
+	$doc: Immutable<NodeLike>,
+	options: Partial<RenderingOptionsⵧToHtml> = {}
+): string {
+	const $node = promoteꓽto_node($doc)
+
 	const full_options: RenderingOptionsⵧToHtml = {
 		...DEFAULT_RENDERING_OPTIONSⵧToHtml,
 		...options,
@@ -156,7 +162,7 @@ function renderⵧto_html($doc: Node, options: Partial<RenderingOptionsⵧToHtml
 	// TODO review classes
 	return `
 <div class="o⋄rich-text">
-	${walk<State, RenderingOptionsⵧToHtml>($doc, callbacksⵧto_html, full_options).str}
+	${walk<State, RenderingOptionsⵧToHtml>($node, callbacksⵧto_html, full_options).str}
 </div>
 `
 }

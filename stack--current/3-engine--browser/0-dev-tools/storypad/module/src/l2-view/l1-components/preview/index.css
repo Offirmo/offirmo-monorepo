@@ -1,10 +1,4 @@
 
-/*
-body {
-	position: relative;
-}
-*/
-
 /* layouts */
 .storypad⋄story-container--centered {
 	/* https://css-tricks.com/centering-the-newest-coolest-way-vs-the-oldest-coolest-way/ */
@@ -14,11 +8,6 @@ body {
 	place-items: center center;
 }
 
-*:has(.storypad⋄story-container--fullscreen) {
-	margin: 0;
-	padding: 0;
-	border: initial;
-}
 .storypad⋄story-container--fullscreen {
 	/* TODO review = is it too much? */
 
@@ -46,9 +35,16 @@ body {
 	overflow: hidden;
 }
 
+*:has(.storypad⋄story-container--fullscreen), *:has(.storypad⋄story-container--centered) {
+	margin: 0;
+	padding: 0;
+	border: initial;
+}
+
 .storypad⋄story-container--padded {
 	padding: 1rem;
 }
+
 .storypad⋄story-container--bare {
 	/* should never appear because in "bare" mode we don't even have a container! */
 	background-color: red;

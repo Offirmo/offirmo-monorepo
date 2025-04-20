@@ -60,8 +60,6 @@ export {
 
 ```ts
 import { expect } from 'chai'
-import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
 
 import { LIB } from './consts.ts'
 import { getꓽSXC } from './sec.ts'

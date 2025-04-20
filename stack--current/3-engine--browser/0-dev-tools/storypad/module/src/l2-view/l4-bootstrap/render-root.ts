@@ -4,11 +4,11 @@
 import { isꓽframed } from '../../__vendor/@offirmo-private/browser-features-detection/is-framed.ts'
 
 import { RenderMode } from '../../l1-flux/l1-state/types.ts'
-import type { ObservableState } from '../../l1-flux/l2-observable'
+import type { ObservableState } from '../../l1-flux/l2-observable/index.ts'
 import { LIB } from '../../consts.ts'
-import renderⵧstory from '../l1-components/preview'
-import renderⵧmanager from '../l1-components/manager'
-import renderꓽstoryᝍarea from '../l1-components/story-area'
+import renderⵧstory from '../l1-components/preview/index.ts'
+import renderⵧmanager from '../l1-components/manager/index.ts'
+import renderꓽstoryᝍarea from '../l1-components/story-area/index.ts'
 
 /////////////////////////////////////////////////
 

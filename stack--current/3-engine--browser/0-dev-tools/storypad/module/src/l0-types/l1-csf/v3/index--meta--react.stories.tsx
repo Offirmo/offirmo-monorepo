@@ -1,22 +1,23 @@
-//import * as React from 'react'
+import type { Meta‿v3, Story‿v3 } from './index.ts'
+
 
 interface Props {
 	target: string
 }
 function Component({target = 'default'}: Props) {
 	return <div>
-		Hello, {target}!
+		Hello, {target} from CSFv3 shared React Component!
 	</div>
 }
 
 // Meta
 export default {
 	component: Component
-}
+} satisfies Meta‿v3
 
-export const Default = {}
+export const Default: Story‿v3 = {}
 
-export const WithTarget = {
+export const WithTarget: Story‿v3 = {
 	args: {
 		target: 'special'
 	}

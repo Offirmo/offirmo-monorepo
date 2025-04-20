@@ -6,12 +6,12 @@
 // I could steal the definitions from the storybook source code,
 // but they're huge: I'd rather work it out feature by feature.
 
-import { type Story‿v2, isꓽStory‿v2, type Meta‿v2 } from './v2'
-import { type Story‿v3, isꓽStory‿v3, type Meta‿v3 } from './v3'
+import { type Story‿v2, isꓽStory‿v2, type Meta‿v2 } from './v2/index.ts'
+import { type Story‿v3, isꓽStory‿v3, type Meta‿v3 } from './v3/index.ts'
 
 /////////////////////////////////////////////////
 
-export * from './common'
+export * from './common/index.ts'
 
 export type Story = Story‿v2 | Story‿v3
 export function isꓽStory(s: any): s is Story {

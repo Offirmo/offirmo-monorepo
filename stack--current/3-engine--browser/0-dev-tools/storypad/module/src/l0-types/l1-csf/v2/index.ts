@@ -1,11 +1,4 @@
-import type { Html‿str } from '@offirmo-private/ts-types-web'
-
-import type { RawRenderParams, GenericArgs, GenericStoryOutput } from '../common'
-
-/////////////////////////////////////////////////
-
-//export type StoryOutput‿v2 = Html‿str // TODO extend return type
-//export type StoryComponent‿v2 = any // TODO type better
+import type { RawRenderParams, GenericArgs, GenericStoryOutput } from '../common/index.ts'
 
 /////////////////////////////////////////////////
 // Component story format CSF
@@ -22,11 +15,8 @@ export interface Meta‿v2 extends RawRenderParams<Story‿v2> {
 	// https://storybook.js.org/docs/api/csf#upgrading-from-csf-2-to-csf-3
 
 	// tweak inheritance from RenderParams
-	//component?: StoryComponent‿v2
+	component?: never // NO since we have a render
 	render?: never // NO! the story itself is the "render"
-
-	//
-	title?: never
 }
 
 /* named export = a story = a FUNCTION for v2
@@ -39,7 +29,7 @@ export interface Story‿v2 extends RawRenderParams<Story‿v2> {
 	render?: never
 	component?: never
 
-	name?: never
+	name?: string
 }
 export function isꓽStory‿v2(s: any): s is Story‿v2 {
 	return (typeof s === 'function')

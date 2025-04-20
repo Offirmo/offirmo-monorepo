@@ -1,5 +1,6 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 import type { Html‿str } from '@offirmo-private/ts-types-web'
+import { type Node as RichTextNode } from '@offirmo-private/rich-text-format'
 
 /////////////////////////////////////////////////
 
@@ -7,6 +8,8 @@ export type GenericStory = unknown
 
 export type GenericStoryOutput =
 	| Html‿str
+	| RichTextNode
+	| HTMLElement
 	| { $$typeof: Symbol } // React
 
 export type GenericStoryComponent = any // TODO type better, can be a React component, a simple function, a web component as class...
@@ -53,13 +56,11 @@ export interface StoryContext {
 	//argTypes: unknown
 	//globals: unknown
 	//hooks: unknown
-	//parameters: unknown
-	//viewMode: unknown
+	parameters: Parameters
+	viewMode: 'canvas' | 'docs'
 }
 export interface Decorator<StoryType = GenericStory> {
-
-	(story: StoryType | Function, context: StoryContext): StoryType // TODO clarify
-
+	(story: StoryType | Function, context: StoryContext): StoryType | Function // TODO clarify
 }
 
 /////////////////////////////////////////////////
@@ -93,7 +94,7 @@ export function isꓽRenderParamsWithRenderFunc<StoryType>(rp: Immutable<RenderP
  * may not have all fields
  */
 export interface RawRenderParams<StoryType = GenericStory> {
-	// can have neither, extending another RenderParams or simply being empty!
+	// can have neither, extending another RenderParams, or simply being empty!
 	component?: GenericStoryComponent
 	render?: (args: GenericArgs) => GenericStoryOutput
 
@@ -101,6 +102,7 @@ export interface RawRenderParams<StoryType = GenericStory> {
 	parameters?: Partial<Parameters> | undefined
 	args?: GenericArgs
 	decorators?: Decorator<StoryType>[]
+	title?: string
 }
 
 /* Aggregate multiple RenderParams into one.

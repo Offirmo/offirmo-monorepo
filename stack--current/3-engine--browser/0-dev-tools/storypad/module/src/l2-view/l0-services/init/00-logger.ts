@@ -9,7 +9,7 @@ import { LIB } from '../../../consts.ts'
 
 async function init(): Promise<void> {
 	try {
-		// @ts-expect-error
+		// x@ts-expect-error during monorepo resurrection, the package below may not yet be available
 		const { getLogger } = await import('@offirmo/universal-debug-api-browser')
 		const logger = getLogger({
 			name: LIB,
@@ -20,7 +20,7 @@ async function init(): Promise<void> {
 		})
 		_setꓽlogger(logger)
 	}
-	catch (err) {
+	catch (err: any) {
 		if (!err?.message?.includes?.('not yet resurrected')) throw err
 	}
 }

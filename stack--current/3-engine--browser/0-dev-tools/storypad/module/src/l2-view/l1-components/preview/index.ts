@@ -2,11 +2,11 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
 import type { StoryEntry } from '../../../l1-flux/l1-state/types.ts'
-import { type Story‿v2, isꓽStory‿v2 } from '../../../l0-types/l1-csf/v2'
-import { type Story‿v3, isꓽStory‿v3 } from '../../../l0-types/l1-csf/v3'
-import { aggregateꓽRenderParams, type RenderParams} from '../../../l0-types/l1-csf'
+import { type Story‿v2, isꓽStory‿v2 } from '../../../l0-types/l1-csf/v2/index.ts'
+import { type Story‿v3, isꓽStory‿v3 } from '../../../l0-types/l1-csf/v3/index.ts'
+import { aggregateꓽRenderParams, type RenderParams} from '../../../l0-types/l1-csf/index.ts'
 
-import type { ObservableState } from '../../../l1-flux/l2-observable'
+import type { ObservableState } from '../../../l1-flux/l2-observable/index.ts'
 
 /////////////////////////////////////////////////
 
@@ -48,11 +48,12 @@ async function renderꓽstory(state: ObservableState, container: HTMLElement) {
 			if (layout === 'bare')
 				return container
 
+			//import('../../../__vendor/@offirmo-private/css--framework/atomic/atomic--dimension.css')
 			import('./index.css')
 
 			const storyContainer = document.createElement('div')
 			storyContainer.classList.add('storypad⋄story-container', `storypad⋄story-container--${layout}`)
-			storyContainer.innerText = `[${LIB}: starting...]`
+			storyContainer.innerText = `[${LIB}: starting…]`
 			container.appendChild(storyContainer)
 
 			return storyContainer
@@ -74,10 +75,10 @@ async function renderꓽstory(state: ObservableState, container: HTMLElement) {
 
 async function _renderⵧstory(state: ObservableState, storyEntry: Immutable<StoryEntry>, render_params: Immutable<RenderParams<Story‿v2 | Story‿v3>>, container: HTMLElement) {
 
-
 	switch (true) {
 		case isꓽStory‿v2(storyEntry.story): {
 			state.addꓽannotation('CSF', 'v2')
+			// TODO convert to v3!!!
 			try {
 				const render_v2 = (await import('./v2')).default
 				await render_v2(state, storyEntry, render_params as any, container)

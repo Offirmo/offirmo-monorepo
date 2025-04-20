@@ -1,8 +1,5 @@
 import type { SoftExecutionContext } from '@offirmo-private/soft-execution-context'
 
-import { LIB } from '../../../consts.ts'
-import { getꓽlogger } from '../logger.ts'
-
 const STYLES = 'padding: .5em; background-color: red; color: white; font-weight: bold;'
 
 async function init(): Promise<void> {
@@ -33,7 +30,7 @@ async function init(): Promise<void> {
 	}
 
 	try {
-		// @ts-expect-error
+		// x@ts-expect-error during monorepo resurrection, the package below may not yet be available
 		const { getRootSXC, listenToErrorEvents, listenToUnhandledRejections } = await import('@offirmo-private/soft-execution-context--browser')
 
 		const rootSXC: SoftExecutionContext = getRootSXC()
@@ -46,7 +43,7 @@ async function init(): Promise<void> {
 			logger.debug('Root SXC is now decorated with error details ✔', SXC.getErrorDetails())
 		})
 	}
-	catch (err) {
+	catch (err: any) {
 		if (!err?.message?.includes?.('not yet resurrected')) throw err
 
 		window.addEventListener('error', function(evt) {

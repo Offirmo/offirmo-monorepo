@@ -4,15 +4,15 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import EventEmitter from 'emittery'
 import { isꓽframed } from '../../__vendor/@offirmo-private/browser-features-detection/is-framed.ts'
 
-import type { ImportGlob } from '../../l0-types/l0-glob'
-import type { Config } from '../../l0-types/l2-config'
+import type { ImportGlob } from '../../l0-types/l0-glob/index.ts'
+import type { Config } from '../../l0-types/l2-config/index.ts'
 
 import { type FolderUId, type StoryEntry, RenderMode, type StoryTree } from '../l1-state/types.ts'
-import * as InMemState from '../l1-state/state--in-mem'
+import * as InMemState from '../l1-state/state--in-mem/index.ts'
 import * as InMemStateSelectors from '../l1-state/state--in-mem/selectors.ts'
 import * as UrlStateSelectors from '../l1-state/state--url/selectors.ts'
-import { type CommonRenderParams } from '../../l0-types/l1-csf'
-import * as UrlState from '../l1-state/state--url'
+import { type CommonRenderParams } from '../../l0-types/l1-csf/index.ts'
+import * as UrlState from '../l1-state/state--url/index.ts'
 import type { StoryUId} from '../l1-state/types.ts'
 
 /////////////////////////////////////////////////

@@ -1,6 +1,16 @@
-//import * as React from 'react'
+import type { Meta‿v2, Story‿v2 } from './index.ts'
 
-export const DefaultReactNoParams = () => {
+/////////////////////////////////////////////////
+
+export default {
+	parameters: {
+		layout: 'centered',
+	},
+} satisfies Meta‿v2
+
+/////////////////////////////////////////////////
+
+export const DefaultReactNoParams: Story‿v2 = () => {
 	return (
 		<>
 			Hello world from React!

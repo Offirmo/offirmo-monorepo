@@ -299,10 +299,12 @@ function renderⵧto_text(
 		...DEFAULT_RENDERING_OPTIONSⵧToText,
 		...options,
 	}
+
 	const state = walk<State, RenderingOptionsⵧToText>($node, {
 		...callbacksⵧto_text,
 		...callback_overrides,
 	}, full_options)
+
 	return state.str + state.trailing_spaces
 }
 

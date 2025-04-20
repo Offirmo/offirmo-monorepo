@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import type { Immutable, RelativePath } from '@offirmo-private/ts-types'
 import { createꓽfilesystem, insertꓽfile } from '@offirmo-private/data-structures'
 
-import type { Config } from '../../../l0-types/l2-config'
+import type { Config } from '../../../l0-types/l2-config/index.ts'
 import type { StoryUId, StoryEntry, StoryFolder } from '../types.ts'
 import type { State } from './types.ts'
 

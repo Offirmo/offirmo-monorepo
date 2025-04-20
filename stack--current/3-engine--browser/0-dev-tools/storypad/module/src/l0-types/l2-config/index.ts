@@ -1,4 +1,4 @@
-import { type CommonRenderParams } from '../l1-csf'
+import { type CommonRenderParams } from '../l1-csf/index.ts'
 
 /////////////////////////////////////////////////
 
