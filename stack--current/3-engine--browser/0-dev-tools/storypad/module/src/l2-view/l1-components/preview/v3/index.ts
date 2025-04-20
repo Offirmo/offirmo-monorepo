@@ -17,9 +17,9 @@ import type { ObservableState } from '../../../../l1-flux/l2-observable/index.ts
 console.log('Loading the CSF v3 renderer...')
 // reminder: https://storybook.js.org/docs/writing-stories#component-story-format
 
-async function renderCSFV3(state: ObservableState, entry: Immutable<StoryEntry>, render_params: Immutable<RenderParams<Story‿v3>>, container: HTMLElement) {
+async function renderCSFV3(state: ObservableState, render_params: Immutable<RenderParams<Story‿v3>>, container: HTMLElement) {
 	console.group(`[${LIB}] Rendering a CSF v3 story…`)
-	console.log({ state, entry, render_params })
+	console.log({ state, render_params })
 
 	switch (true) {
 		case isꓽRenderParamsWithRenderFunc<Story‿v3>(render_params):

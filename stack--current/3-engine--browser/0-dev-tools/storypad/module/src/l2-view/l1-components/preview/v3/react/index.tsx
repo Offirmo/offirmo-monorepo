@@ -43,6 +43,8 @@ async function render(state: ObservableState, render_params: Immutable<RenderPar
 	if (render_params.decorators.length) {
 		const context: StoryContext = {
 			args: render_params.args,
+			parameters: render_params.parameters,
+			viewMode: 'canvas',
 		}
 		render_params.decorators.forEach(decorator => {
 			// TODO one day, not sure we're correctly implementing decorators here https://storybook.js.org/docs/writing-stories/decorators
