@@ -6,7 +6,7 @@ interface Props {
 }
 function Component({target = 'default'}: Props) {
 	return <div>
-		Hello, {target} from CSFv3 shared React Component!
+		Hello, <strong>{target}</strong> from CSFv3 shared React Component!
 	</div>
 }
 

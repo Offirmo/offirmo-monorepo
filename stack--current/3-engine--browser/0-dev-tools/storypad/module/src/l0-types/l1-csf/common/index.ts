@@ -40,11 +40,10 @@ export interface Parameters {
 		| 'centered'
 		| 'fullscreen'
 		| 'padded' // storybook default
-		// storypad
+		// new from storypad
 		| 'bare' // = as few things as possible
 
-
-	//pageLayout = 'page' (or 'page-mobile'
+	//pageLayout = 'page'| 'page-mobile'
 }
 
 /////////////////////////////////////////////////

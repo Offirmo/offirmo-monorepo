@@ -34,3 +34,7 @@ export interface Story‿v2 extends RawRenderParams<Story‿v2> {
 export function isꓽStory‿v2(s: any): s is Story‿v2 {
 	return (typeof s === 'function')
 }
+
+/////////////////////////////////////////////////
+
+export * from '../common/index.ts'

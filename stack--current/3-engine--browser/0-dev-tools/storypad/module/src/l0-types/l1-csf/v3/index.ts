@@ -1,10 +1,5 @@
-import type { RawRenderParams, GenericArgs, GenericStoryOutput } from '../common/index.ts'
+import type { RawRenderParams } from '../common/index.ts'
 import { isꓽStory‿v2 } from '../v2/index.ts'
-
-/////////////////////////////////////////////////
-
-//export type StoryOutput‿v3 = Html‿str // TODO extend return type
-//export type StoryComponent‿v3 = any // TODO type better
 
 /////////////////////////////////////////////////
 // Component story format CSF
@@ -50,3 +45,7 @@ export interface Story‿v3 extends RawRenderParams<Story‿v3> {
 export function isꓽStory‿v3(s: any): s is Story‿v3 {
 	return !isꓽStory‿v2(s)
 }
+
+/////////////////////////////////////////////////
+
+export * from '../common/index.ts'
