@@ -26,9 +26,7 @@ class ObservableState {
 
 	constructor(
 		private window: Window = self
-	) {
-
-	}
+	) {}
 
 	/////////////////////////////////////////////////
 
@@ -119,6 +117,10 @@ class ObservableState {
 		}
 
 		return RenderMode.manager
+	}
+
+	getꓽpills(): Immutable<{ [key: string]: string }> {
+		return this.stateⵧin_mem.view.story_area.drawer.status_bar.pills
 	}
 
 	// must only return "undef" if NO stories
