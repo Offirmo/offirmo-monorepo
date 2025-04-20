@@ -1,3 +1,5 @@
+import 'react'
+
 import assert from 'tiny-invariant'
 import memoize_one from 'memoize-one'
 
@@ -5,16 +7,24 @@ import memoize_one from 'memoize-one'
 
 // from React doc
 // https://reactjs.org/docs/higher-order-components.html#convention-wrap-the-display-name-for-easy-debugging
-function getDisplayName(WrappedComponent) {
-	return WrappedComponent.displayName || WrappedComponent.name || 'ComponentX'
+function getDisplayName(WrappedComponent: React.ComponentType) {
+	return WrappedComponent.displayName || WrappedComponent.name || 'UnknownReactComponent'
 }
 
+function isReactJSXElementConstructor(MaybeComponent: any): MaybeComponent is React.JSXElementConstructor<any> {
+	return MaybeComponent.render || (MaybeComponent.prototype && MaybeComponent.prototype.render)
+}
 
 // inspired from render-props:
 // https://github.com/donavon/render-props/blob/develop/src/index.js
 // but enhanced.
 const id = 0
-function render_any(xprops) {
+interface Props extends React.PropsWithChildren, React.Attributes {
+	render?: () => React.ReactNode
+
+	name?: string
+}
+function render_any_children(xprops: Props) {
 	const { children, render, ...props } = xprops
 	const id = props.key || props.name || 'ra#{id++}'
 
@@ -28,8 +38,7 @@ function render_any(xprops) {
 	assert(children || render, `render_any "${id}": no children nor render prop!`)
 	assert(!(children && render), `render_any "${id}": competing children and render prop!`)
 
-	const isComponent = ComponentOrFunctionOrAny.render || (ComponentOrFunctionOrAny.prototype && ComponentOrFunctionOrAny.prototype.render)
-	if (isComponent) {
+	if (isReactJSXElementConstructor(ComponentOrFunctionOrAny)) {
 		//console.warn('render_any: component', getDisplayName(ComponentOrFunctionOrAny), id)
 		return <ComponentOrFunctionOrAny {...props} />
 	}
@@ -44,11 +53,11 @@ function render_any(xprops) {
 	return ComponentOrFunctionOrAny
 }
 
-const render_any_m = memoize_one(render_any)
+const render_any_m = memoize_one(render_any_children)
 
 /////////////////////////////////////////////////
 
 export {
-	render_any,
+	render_any_children,
 	render_any_m,
 }

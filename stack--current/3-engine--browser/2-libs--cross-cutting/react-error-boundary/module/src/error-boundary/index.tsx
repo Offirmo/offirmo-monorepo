@@ -4,9 +4,13 @@ import assert from 'tiny-invariant'
 import { asap_but_not_synchronous } from '@offirmo-private/async-utils'
 
 import { getꓽSXC } from './sxc.ts'
-import { render_any } from './render-any.js'
+import { render_any_children } from './render-anything/index.tsx'
 
 /////////////////////////////////////////////////
+
+interface Props {
+
+}
 
 class ErrorBoundary extends React.Component {
 	state = {
@@ -96,7 +100,7 @@ class ErrorBoundary extends React.Component {
 		}
 
 		try {
-			return render_any(this.props)
+			return render_any_children(this.props)
 		}
 		catch (err) {
 			asap_but_not_synchronous(() => this.componentDidCatch(err, 'crash in ErrorBoundary.render()'))
