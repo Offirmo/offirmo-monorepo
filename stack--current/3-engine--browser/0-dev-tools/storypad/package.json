@@ -9,21 +9,17 @@
 	"type": "module",
 	"exports": {
 		".": "./module/src/index.ts",
+
 		"./types": "./module/src/l0-types/index.ts",
+
 		"./decorators/diagnostics": "./module/src/__shared/decorators/diagnostics.ts",
+
 		"./stories/html/html5-kitchen-sink":     "./module/src/__shared/stories/html/html5-kitchen-sink_by_dbox.stories.ts",
 		"./stories/html/html-demos--offirmo":    "./module/src/__shared/stories/html/html-demos-by-offirmo.stories.ts",
 		"./stories/html/html-demos--others":     "./module/src/__shared/stories/html/html-demos-misc.stories.ts",
 		"./stories/html/motherfuckingwebsites":  "./module/src/__shared/stories/html/motherfuckingwebsites.stories.ts",
-		"./stories/html/elements/a":             "./module/src/__shared/stories/html/elements/a.stories.ts",
-		"./stories/html/elements/blockquote":    "./module/src/__shared/stories/html/elements/blockquote.stories.ts",
-		"./stories/html/elements/body":          "./module/src/__shared/stories/html/elements/body.stories.ts",
-		"./stories/html/elements/details":       "./module/src/__shared/stories/html/elements/details.stories.ts",
-		"./stories/html/elements/dl":            "./module/src/__shared/stories/html/elements/dl.stories.ts",
-		"./stories/html/elements/h123456":       "./module/src/__shared/stories/html/elements/h123456.stories.ts",
-		"./stories/html/elements/nav":           "./module/src/__shared/stories/html/elements/nav.stories.ts",
-		"./stories/html/elements/ol":            "./module/src/__shared/stories/html/elements/ol.stories.ts",
-		"./stories/html/elements/ul":            "./module/src/__shared/stories/html/elements/ul.stories.ts"
+
+		"./stories/html/elements/*":             "./module/src/__shared/stories/html/elements/*.stories.ts"
 	},
 	"source": "module/src/index.ts",
 	"dependencies": {

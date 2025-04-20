@@ -9,19 +9,13 @@
 	// build the index of stories https://storybook.js.org/docs/api/main-config/main-config-indexers
 	// important to load async so that the stories don't pollute the global scope too early (ex. before SXC)
 	// that's enabled with .@(...) actually
-	const storiesⵧownⵧcore = import('../../l0*/**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	const storiesⵧown = import('../../l0-types/l1-csf/**/*.stories.@(js|jsx|ts|tsx|mdx)')
 	const storiesⵧofficial = import('../../l3-compat/**/*.stories.@(js|jsx|ts|tsx|mdx)')
-	const storiesⵧtests = {} //import('../../__tests/**/*.stories.@(js|jsx|ts|tsx|mdx)') break Storypad! Enable on-demand
-	const storiesⵧownⵧview = import('../../l2*/**/*.stories.@(js|jsx|ts|tsx|mdx)')
+	const storiesⵧstress_tests = {} //import('../../__tests/**/*.stories.@(js|jsx|ts|tsx|mdx)') break Storypad! Enable on-demand
 	const stories_index = {
-		own: {
-			core: storiesⵧownⵧcore,
-			view: storiesⵧownⵧview,
-		},
-		compat: {
-			storybook_official: storiesⵧofficial,
-			tests: storiesⵧtests,
-		}
+		own: storiesⵧown,
+		storybook_official: storiesⵧofficial,
+		stress: storiesⵧstress_tests,
 	}
 	console.log(`[${LIB}] got the async glob(s):`, stories_index)
 

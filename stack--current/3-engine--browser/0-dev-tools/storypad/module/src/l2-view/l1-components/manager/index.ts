@@ -17,7 +17,8 @@ function renderꓽmanager(state: ObservableState): HTMLElement {
 	root.classList.add('o⋄full-viewport', 'storypad⋄manager')
 
 	// render the full UI:
-	import('../../../__vendor/@offirmo-private/css--framework/atomic/atomic--dimension.css')
+	import('../../../__vendor/@offirmo-private/css--foundation/index.css')
+	import('../../../__vendor/@offirmo-private/css--framework/index.css')
 	import('./index.css')
 
 	// 1. side panel
