@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { Item, InventorySlot, ItemQuality } from './types.ts'
+import { type Item, InventorySlot, ItemQuality } from './types.ts'
 import { LIB } from './consts.ts'
 import {
 	createꓽitemⵧbase,

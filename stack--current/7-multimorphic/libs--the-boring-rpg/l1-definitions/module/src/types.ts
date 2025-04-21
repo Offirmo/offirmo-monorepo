@@ -1,5 +1,5 @@
 import { Enum } from 'typescript-string-enums'
-import { WithUUID } from '@offirmo-private/uuid'
+import { type WithUUID } from '@offirmo-private/uuid'
 import { type NodeLike } from '@offirmo-private/rich-text-format'
 
 /////////////////////////////////////////////////

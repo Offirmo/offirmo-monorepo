@@ -2,12 +2,12 @@ import { type Immutable} from '@offirmo-private/ts-types'
 import { Enum } from 'typescript-string-enums'
 
 import { generate_uuid } from '@offirmo-private/uuid'
-import { getꓽrandom, RNGEngine } from '@offirmo/random'
+import { getꓽrandom, type RNGEngine } from '@offirmo/random'
 
 import {
 	CharacterAttribute,
 	CharacterClass,
-	State as CharacterState,
+	type State as CharacterState,
 } from '@tbrpg/state--character'
 import * as InventoryState from '@tbrpg/state--inventory'
 import * as WalletState from '@tbrpg/state--wallet'
@@ -22,14 +22,14 @@ import {
 	create as create_monster,
 } from '@tbrpg/logic--monsters'
 import {
-	OutcomeArchetype,
+	type OutcomeArchetype,
 	AdventureType,
-	AdventureArchetype,
+	type AdventureArchetype,
 	generate_random_coin_gain_or_loss,
 } from '@tbrpg/logic--adventures'
 
 import {
-	ResolvedAdventure,
+	type ResolvedAdventure,
 } from '../types.ts'
 
 import { LIB } from '../consts.ts'

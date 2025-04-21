@@ -1,7 +1,7 @@
-import { BaseInjections, SoftExecutionContext } from '@offirmo-private/soft-execution-context'
+import type { BaseInjections, SoftExecutionContext } from '@offirmo-private/soft-execution-context'
 import type { Logger } from '@offirmo/practical-logger-types'
 
-import { PRODUCT } from './consts.ts'
+import { APP } from './consts.ts'
 
 /////////////////////
 
@@ -15,7 +15,7 @@ type TBRSoftExecutionContext = SoftExecutionContext<TBRInjections>
 
 function decorate_SXC(SXC: TBRSoftExecutionContext): TBRSoftExecutionContext {
 	SXC.setAnalyticsAndErrorDetails({
-		product: PRODUCT, // TODO LIB?
+		product: APP, // TODO LIB?
 		// TODO add more details
 	})
 

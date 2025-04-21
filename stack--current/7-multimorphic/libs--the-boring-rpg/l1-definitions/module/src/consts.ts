@@ -5,7 +5,7 @@ import { ItemQuality, InventorySlot } from './types.ts'
 
 /////////////////////////////////////////////////
 
-export const PRODUCT = '@tbrpg'
+export const APP = '@tbrpg'
 
 export const LIB = '@tbrpg/definitions'
 
