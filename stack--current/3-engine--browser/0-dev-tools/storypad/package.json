@@ -26,6 +26,7 @@
 		"@offirmo-private/async-utils": "*",
 		"@offirmo-private/better-console-groups": "*",
 		"@offirmo-private/data-structures": "*",
+		"@offirmo-private/rich-text-format": "*",
 		"emittery": "^1",
 		"prop-types": "^15",
 		"react": "^19",
