@@ -29,10 +29,10 @@
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {
-		"test--ts": "echo \"@tbrpg/logic--adventure--resolved\" && tsc --noEmit",
-		"test--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s test--ts--watch",
-		"test": "run-s test--ts"
+		"check--ts": "echo \"@tbrpg/logic--adventure--resolved\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s check--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
