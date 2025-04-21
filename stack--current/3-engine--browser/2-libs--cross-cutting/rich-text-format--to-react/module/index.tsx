@@ -7,6 +7,7 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	normalize_unicode,
 	capitalize,
+	normalizeꓽurl,
 } from '@offirmo-private/normalize-string'
 import {
 	type NodeLike, type Node, type CheckedNode,
@@ -39,6 +40,7 @@ const NODE_TYPE_TO_COMPONENT: { [type: string]: React.HTMLElementType | undefine
 	[NodeType.fragmentⵧinline]: 'span' as React.HTMLElementType,
 	[NodeType.fragmentⵧblock]: 'div' as React.HTMLElementType,
 	[NodeType.emoji]: 'span' as React.HTMLElementType,
+	[NodeType._li]: 'li' as React.HTMLElementType,
 }
 
 const NODE_TYPE_TO_EXTRA_CLASSES: { [type: string]: string[] | undefined } = {
@@ -49,7 +51,7 @@ const _warn_kvp = memoize_one(() => console.warn(`${LIB} TODO KVP`))
 
 const _load_styles = memoize_one(() => {
 	//console.info(`loading RichText styles on-demand`)
-	import('@offirmo-private/rich-text-format/styles.css')
+	//import('@offirmo-private/rich-text-format/styles.css')
 })
 
 function _is_react_element(n: React.ReactNode): n is React.ReactElement {
@@ -70,7 +72,7 @@ function _is_react_element(n: React.ReactNode): n is React.ReactElement {
 function _generate_own_react_key({$id, $node}: {$id: string, $node: Immutable<CheckedNode> | Immutable<Node>}) {
 	let key = $id
 
-	if ($node.$type === 'li') {
+	if ($node.$type === NodeType._li) {
 		// this is a wrapper, go down a level
 		$node = promoteꓽto_node($node.$sub![SPECIAL_LIST_NODE_CONTENT_KEY]!)
 	}
@@ -205,17 +207,26 @@ function _get_final_element_creator({$node, $id, classes} : { $node: Immutable<C
 
 	const key = _generate_own_react_key({$id, $node})
 
-	if ($hints.href)
+	if ($hints.href) {
+		const props = {
+			key,
+			...classProps,
+			href: normalizeꓽurl($hints.href),
+		} as any
+		const urlⵧcurrent‿obj = (new URL(window.location.href))
+		const urlⵧtarget‿obj = (new URL(props.href))
+		const isꓽexternal = urlⵧcurrent‿obj.origin !== urlⵧtarget‿obj.origin
+		if (isꓽexternal) {
+			props.target = '_blank'
+			props.rel = 'noopener external' // default safe
+		}
+
 		return (children) => React.createElement(
 			'a',
-			{
-				key,
-				...classProps,
-				href: $hints.href,
-				target: '_blank',
-			},
+			props,
 			children,
 		)
+	}
 
 	const element_type: React.HTMLElementType = NODE_TYPE_TO_COMPONENT[$type] || ($type as React.HTMLElementType)
 
@@ -263,7 +274,7 @@ const create_state: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>['crea
 }
 
 const on_nodeⵧexit: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>['on_nodeⵧexit'] = ({state, $node, $id})=> {
-	if ($node.$type === 'br' || $node.$type === 'hr') {
+	if ($node.$type === NodeType.br || $node.$type === NodeType.hr) {
 		state.children_states = []
 	}
 
@@ -292,11 +303,9 @@ const on_concatenateⵧsub_node: WalkerCallbacks<WalkState, RenderingOptionsⵧT
 	return state
 }
 
-// TODO test if still working!!
 const on_filterꘌCapitalize: WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>['on_filter'] =  ({state}) => {
 	//console.warn('rich-text-to-react Capitalize', state)
-	throw new Error('NIMP!')
-/*
+
 	if (typeof state.element === 'string')
 		state.element = capitalize(state.element)
 	else if (_is_react_element(state.element))
@@ -313,7 +322,7 @@ const on_filterꘌCapitalize: WalkerCallbacks<WalkState, RenderingOptionsⵧToRe
 			},
 		)
 
-	return state*/
+	return state
 }
 
 const callbacksⵧto_react: Partial<WalkerCallbacks<WalkState, RenderingOptionsⵧToReact>> = {

@@ -5,6 +5,7 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import { hasꓽshape, isꓽexact_stringified_number } from '@offirmo-private/type-detection'
+import { capitalize } from '@offirmo-private/normalize-string'
 
 import { LIB } from '../consts.ts'
 
@@ -155,10 +156,9 @@ function _getꓽcallbacksⵧdefault<State, RenderingOptions extends BaseRenderin
 			const generic_state = state as any
 			if (generic_state && typeof generic_state.str === 'string') {
 				//console.log(`${LIB} auto capitalizing...`, state)
-				const str = '' + generic_state.str
 				return {
 					...(generic_state as any),
-					str: str.slice(0,1).toUpperCase() + str.slice(1),
+					str: capitalize(generic_state.str),
 				} satisfies State
 			}
 

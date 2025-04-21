@@ -16,7 +16,7 @@ function Component({ $doc }: Props) {
 /////////////////////////////////////////////////
 
 import {
-	EXAMPLE_COMPLETE_NODE,
+	$EXAMPLE_COMPLETE_NODE,
 
 	DOC_DEMO_BASE_TYPES,
 	DOC_DEMO_LIST_ORDERED,
@@ -29,7 +29,7 @@ import {
 	DOC_DEMO_RPG_02,
 	DOC_DEMO_RPG_03,
 	DOC_DEMO_INVENTORY,
-} from '@offirmo-private/rich-text-format/demos'
+} from '@offirmo-private/rich-text-format/examples'
 
 export default {
 	component: Component,
@@ -44,7 +44,7 @@ export default {
 export const NodelikeString = { args: { $doc: "Hello!" }} satisfies Story
 export const NodelikeNumber = { args: { $doc: 42 }} satisfies Story
 
-export const COMPLETE_NODE = { args: { $doc: EXAMPLE_COMPLETE_NODE }} satisfies Story
+export const COMPLETE_NODE = { args: { $doc: $EXAMPLE_COMPLETE_NODE }} satisfies Story
 
 export const BASE_TYPES = { args: { $doc: DOC_DEMO_BASE_TYPES }} satisfies Story
 export const LIST_ORDERED = { args: { $doc: DOC_DEMO_LIST_ORDERED }} satisfies Story
