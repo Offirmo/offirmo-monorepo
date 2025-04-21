@@ -13,7 +13,7 @@ type TBRSoftExecutionContext = SoftExecutionContext<TBRInjections>
 
 /////////////////////
 
-function decorate_SXC(SXC: TBRSoftExecutionContext): TBRSoftExecutionContext {
+function decorateꓽSXC(SXC: TBRSoftExecutionContext): TBRSoftExecutionContext {
 	SXC.setAnalyticsAndErrorDetails({
 		product: APP, // TODO LIB?
 		// TODO add more details
@@ -27,5 +27,5 @@ function decorate_SXC(SXC: TBRSoftExecutionContext): TBRSoftExecutionContext {
 export {
 	type TBRInjections,
 	type TBRSoftExecutionContext,
-	decorate_SXC,
+	decorateꓽSXC,
 }

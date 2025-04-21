@@ -5,9 +5,7 @@ import { getꓽengine } from '@offirmo/random'
 import { LIB } from './consts.ts'
 import {
 	CoinsGain,
-	AdventureArchetype,
 	ALL_ADVENTURE_ARCHETYPES,
-	i18n_messages,
 
 	pick_random_good_archetype,
 	pick_random_bad_archetype,

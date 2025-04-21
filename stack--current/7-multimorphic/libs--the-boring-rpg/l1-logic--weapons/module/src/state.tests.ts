@@ -6,7 +6,7 @@ import { getꓽengine } from '@offirmo/random'
 
 import { LIB } from './consts.ts'
 import {
-	Weapon,
+	type Weapon,
 	MAX_ENHANCEMENT_LEVEL,
 	create,
 	generate_random_demo_weapon,

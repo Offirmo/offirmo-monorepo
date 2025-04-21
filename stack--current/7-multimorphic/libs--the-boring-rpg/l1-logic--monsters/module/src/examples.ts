@@ -4,7 +4,7 @@ import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-util
 import { getꓽengine } from '@offirmo/random'
 
 import {
-	Monster,
+	type Monster,
 	MonsterRank,
 } from './types.ts'
 import { create } from './state.ts'

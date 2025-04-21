@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { getꓽengine, RNGEngine } from '@offirmo/random'
+import { getꓽengine } from '@offirmo/random'
 
 import { LIB } from './consts.ts'
 import {

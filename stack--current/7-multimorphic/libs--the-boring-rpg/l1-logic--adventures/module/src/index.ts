@@ -1,13 +1,13 @@
 /////////////////////
 
 import assert from 'tiny-invariant'
-import { getꓽrandom, RNGEngine } from '@offirmo/random'
+import { getꓽrandom, type RNGEngine } from '@offirmo/random'
 
 import {
 	CoinsGain,
 	AdventureType,
-	OutcomeArchetype,
-	AdventureArchetype,
+	type OutcomeArchetype,
+	type AdventureArchetype,
 } from './types.ts'
 
 import { i18n_messages, ENTRIES } from './data/index.ts'

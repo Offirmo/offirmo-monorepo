@@ -6,7 +6,7 @@ import { LIB, SCHEMA_VERSION } from './consts.ts'
 
 import {
 	Currency,
-	State,
+	type State,
 } from './types.ts'
 
 /////////////////////

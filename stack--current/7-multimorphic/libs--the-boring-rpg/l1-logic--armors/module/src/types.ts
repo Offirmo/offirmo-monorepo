@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
 
-import { Item, InventorySlot, ItemQuality } from '@tbrpg/definitions'
+import { type Item, InventorySlot, ItemQuality } from '@tbrpg/definitions'
 
 /////////////////////
 

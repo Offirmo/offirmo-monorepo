@@ -3,7 +3,7 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 import { compareꓽitemsⵧby_quality } from '@tbrpg/definitions'
 
-import { Weapon } from './types.ts'
+import type { Weapon } from './types.ts'
 import { getꓽultimate_medium_damage } from './selectors.ts'
 
 /////////////////////

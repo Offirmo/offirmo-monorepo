@@ -4,7 +4,7 @@ import { getꓽengine } from '@offirmo/random'
 import { MAX_LEVEL } from '@tbrpg/definitions'
 
 import {
-	Monster,
+	type Monster,
 	MonsterRank,
 	create,
 } from './index.ts'

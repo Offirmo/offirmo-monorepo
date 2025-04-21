@@ -4,7 +4,6 @@ import { LIB, SCHEMA_VERSION } from './consts.ts'
 
 import {
 	Currency,
-	State,
 	ALL_CURRENCIES,
 
 	create,
@@ -12,7 +11,6 @@ import {
 	remove_amount,
 
 	get_currency_amount,
-	iterables_currency,
 } from './index.ts'
 
 describe(`${LIB} - state`, function() {

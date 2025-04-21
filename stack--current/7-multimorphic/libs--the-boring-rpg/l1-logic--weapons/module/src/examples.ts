@@ -1,7 +1,7 @@
 /////////////////////
 
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
-import { getꓽengine, getꓽrandom, RNGEngine } from '@offirmo/random'
+import { getꓽengine, getꓽrandom, type RNGEngine } from '@offirmo/random'
 
 import {
 	ItemQuality,
@@ -9,7 +9,7 @@ import {
 	ElementType,
 } from '@tbrpg/definitions'
 
-import { Weapon } from './types.ts'
+import type { Weapon } from './types.ts'
 
 import {
 	MIN_ENHANCEMENT_LEVEL,

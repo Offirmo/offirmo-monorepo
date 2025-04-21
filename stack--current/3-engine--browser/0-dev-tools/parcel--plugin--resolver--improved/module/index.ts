@@ -65,7 +65,7 @@ export default new Resolver({
 		// no match, let the next resolver in the pipeline handle this dependency.
 		// Since this plugin is a "last resort",this will very likely cause a failure:
 
-		if (DEBUG) {
+		if (true || DEBUG) {
 			console.error('@offirmo-private/parcel-resolver ABOUT TO FAIL')
 			console.error('Params=', params)
 			const { specifier, specifierType, sourcePath, resolveFrom } = params.dependency

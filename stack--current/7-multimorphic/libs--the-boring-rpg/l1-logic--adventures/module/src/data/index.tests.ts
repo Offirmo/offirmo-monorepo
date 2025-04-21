@@ -4,7 +4,7 @@ import { Enum } from 'typescript-string-enums'
 import { LIB } from '../consts.ts'
 import { CoinsGain } from '../types.ts'
 import {
-	RawAdventureArchetypeEntry,
+	type RawAdventureArchetypeEntry,
 	i18n_messages,
 	ENTRIES,
 } from './index.ts'

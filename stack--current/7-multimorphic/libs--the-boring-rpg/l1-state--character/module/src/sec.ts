@@ -1,11 +1,11 @@
 import { getRootSXC } from '@offirmo-private/soft-execution-context'
-import { TBRSoftExecutionContext, decorate_SXC } from '@tbrpg/definitions'
+import { TBRSoftExecutionContext, decorateꓽSXC } from '@tbrpg/definitions'
 
 import { LIB } from './consts.ts'
 
 function getꓽSXC(parent?: TBRSoftExecutionContext): TBRSoftExecutionContext {
 	// TODO review memoize / not mutate the parent??
-	return decorate_SXC(
+	return decorateꓽSXC(
 		(parent || getRootSXC())
 			.createChild()
 			.setLogicalStack({module: LIB})

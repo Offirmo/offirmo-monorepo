@@ -1,5 +1,5 @@
 import {
-	UnicodeCharDetails,
+	type UnicodeCharDetails,
 	UNICODE_CHARS,
 } from '@offirmo-private/unicode-data'
 import type { Immutable } from '@offirmo-private/ts-types'

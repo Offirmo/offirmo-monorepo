@@ -1,14 +1,14 @@
 /////////////////////
 
 import type { Immutable } from '@offirmo-private/ts-types'
-import { Item, InventorySlot } from '@tbrpg/definitions'
+import { type Item, InventorySlot } from '@tbrpg/definitions'
 import {
-	Armor,
+	type Armor,
 	getꓽultimate_medium_damage_reduction,
 	ATTACK_VS_DEFENSE_RATIO,
 } from '@tbrpg/logic--armors'
 import {
-	Weapon,
+	type Weapon,
 	getꓽultimate_medium_damage,
 } from '@tbrpg/logic--weapons'
 

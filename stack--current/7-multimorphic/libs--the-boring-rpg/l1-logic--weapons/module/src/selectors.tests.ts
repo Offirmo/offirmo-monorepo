@@ -9,7 +9,7 @@ import {
 	OVERALL_STRENGTH_INTERVAL_BY_QUALITY,
 	BASE_STRENGTH_INTERVAL_BY_QUALITY,
 	MAX_ENHANCEMENT_LEVEL,
-	Weapon,
+	type Weapon,
 	create,
 	get_damage_interval,
 	get_medium_damage,

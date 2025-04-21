@@ -1,17 +1,6 @@
 /////////////////////
 
-import { getꓽengine, RNGEngine } from '@offirmo/random'
-import { Item, InventorySlot } from '@tbrpg/definitions'
-import {
-	Weapon,
-	create as create_weapon,
-	get_medium_damage,
-} from '@tbrpg/logic--weapons'
-import {
-	Armor,
-	create as create_armor,
-	get_medium_damage_reduction,
-} from '@tbrpg/logic--armors'
+import { getꓽengine, type RNGEngine } from '@offirmo/random'
 
 /////////////////////
 

@@ -1,16 +1,15 @@
 //////////////////////////////////////////////////////////////////////
 
 import {
-	Immutable,
+	type Immutable,
 	enforceꓽimmutable,
-	LastMigrationStep,
-	MigrationStep,
+	type LastMigrationStep,
 	migrate_toꓽlatestⵧgeneric,
 } from '@offirmo-private/state-utils'
 
 import { LIB, SCHEMA_VERSION } from './consts.ts'
 import { type State } from './types.ts'
-import { TBRSoftExecutionContext } from './sec.ts'
+import { type TBRSoftExecutionContext } from './sxc.ts'
 
 //////////////////////////////////////////////////////////////////////
 

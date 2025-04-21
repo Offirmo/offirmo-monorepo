@@ -2,13 +2,13 @@ import { expect } from 'chai'
 
 import { Enum } from 'typescript-string-enums'
 import { ItemQuality, InventorySlot } from '@tbrpg/definitions'
-import { getꓽengine, RNGEngine } from '@offirmo/random'
+import { getꓽengine } from '@offirmo/random'
 
 import { LIB } from './consts.ts'
 import {
 	OVERALL_STRENGTH_INTERVAL_BY_QUALITY,
 	BASE_STRENGTH_INTERVAL_BY_QUALITY,
-	Armor,
+	type Armor,
 	create,
 	getꓽdamage_reduction_interval,
 	get_medium_damage_reduction,

@@ -2,15 +2,15 @@
 
 import type { Immutable } from '@offirmo-private/ts-types'
 import {
-	Item,
+	type Item,
 	ItemQuality,
 	InventorySlot,
 	createꓽitemⵧbase,
 } from '@tbrpg/definitions'
-import { getꓽrandom, RNGEngine } from '@offirmo/random'
+import { getꓽrandom, type RNGEngine } from '@offirmo/random'
 
 import {
-	Armor,
+	type Armor,
 } from './types.ts'
 
 import {

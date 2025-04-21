@@ -1,10 +1,10 @@
 /////////////////////
 
-import { getꓽrandom, RNGEngine } from '@offirmo/random'
+import { getꓽrandom, type RNGEngine } from '@offirmo/random'
 import { MAX_LEVEL } from '@tbrpg/definitions'
 
 import {
-	Monster,
+	type Monster,
 	MonsterRank,
 } from './types.ts'
 

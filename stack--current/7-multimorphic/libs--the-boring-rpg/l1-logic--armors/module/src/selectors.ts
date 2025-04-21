@@ -6,7 +6,7 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import { ItemQuality, InventorySlot } from '@tbrpg/definitions'
 
 import { LIB, MAX_ENHANCEMENT_LEVEL } from './consts.ts'
-import { Armor } from './types.ts'
+import type { Armor } from './types.ts'
 
 ////////////////////////////////////
 
