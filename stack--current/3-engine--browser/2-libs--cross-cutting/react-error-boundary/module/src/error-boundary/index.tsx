@@ -1,49 +1,57 @@
-import * as React from 'react'
-import PropTypes from 'prop-types'
+import { Component, type ErrorInfo } from 'react'
+
 import assert from 'tiny-invariant'
 import { asap_but_not_synchronous } from '@offirmo-private/async-utils'
+import { getRootSXC, type SoftExecutionContext } from '@offirmo-private/soft-execution-context'
 
-import { getꓽSXC } from './sxc.ts'
-import { render_any_children } from './render-anything/index.tsx'
+import { render_any_children } from '../render-anything/index.tsx'
+import { ErrorOverlay } from '../error-overlay/index.tsx'
 
 /////////////////////////////////////////////////
 
 interface Props {
-
+	name: string
+	SXC?: SoftExecutionContext
 }
 
-class ErrorBoundary extends React.Component {
-	state = {
-		error: null,
-		errorInfo: null,
-	}
-	mounted = true // need to track that in case an error happen during unmounting
+interface State {
+	error: unknown | undefined
+	errorInfo: ErrorInfo | undefined
+}
 
-	constructor(props) {
+class ErrorBoundary extends Component<Props, State> {
+	mounted = true // need to track that in case an error happen during unmounting
+	SXC: SoftExecutionContext
+	override state = {
+		error: undefined,
+		errorInfo: undefined,
+	}
+
+	constructor(props: Props) {
 		super(props)
 
-		const {name, SXC} = props
+		const { name, SXC: parentSXC = getRootSXC() } = props
 		assert(name, 'ErrorBoundary must have a name!!!')
-		this.SXC = getꓽSXC(SXC).createChild()
-			.setLogicalStack({module: `EB:${name}`})
+		this.SXC = parentSXC
+			.createChild()
+			.setLogicalStack({module: `ErrorBoundary:${name}`})
 			.setAnalyticsAndErrorDetails({
 				error_boundary: name,
 			})
 	}
 
-	componentDidMount() {
+	override componentDidMount() {
 	}
 
-	componentWillUnmount() {
+	override componentWillUnmount() {
 		this.mounted = false
 	}
 
 	// as a member var to be able to pass it around
-	componentDidCatch = (error, errorInfo) => {
+	override componentDidCatch = (error: unknown, errorInfo: ErrorInfo) => {
 		const { name } = this.props
 
 		this.SXC.xTryCatch(`handling error boundary "${name}"`, ({SXC, logger}) => {
-
 			if (this.mounted) {
 				// Catch errors in any components below and re-render with error message
 				this.setState({
@@ -63,61 +71,40 @@ class ErrorBoundary extends React.Component {
 				isMounted: this.mounted,
 			})
 
-			// forward to parent
-			this.props.onError({
+			// forward to parent TODO one day if useful
+			/*this.props.onError({
 				error,
 				errorInfo,
 				name,
-			})
+			})*/
 		})
 	}
 
-	render() {
+	override render() {
 		const { name } = this.props
-
 		if (this.state.error || this.state.errorInfo) {
 			const { error, errorInfo } = this.state
-			return (
-				<div key={`error:${name}`} className={`o⋄error-report error-boundary-report-${name}`} style={{padding: '.3em'}}>
-					<h2 style={{margin: '0'}}>Boundary "{name}": Something went wrong</h2>
-					<details open={false} style={{ whiteSpace: 'pre-wrap', margin: '.3em 0' }}>
-						<summary>{(error || 'unknown error').toString()}</summary>
-						{(errorInfo?.componentStack || '').trim()}
-					</details>
-					<a href="https://github.com/Offirmo/offirmo-monorepo/issues"
-					   target="_blank"
-					   referrerPolicy="no-referrer-when-downgrade"
-					   rel="external"
-					><strong>Report bug</strong></a>
-					&nbsp;
-					<button
-						style={{'--o⋄color⁚fg--main': 'var(--o⋄color⁚fg--error)'}}
-						onClick={() => window.location.reload()}>
-						Reload page
-					</button>
-				</div>
-			)
+			return <ErrorOverlay
+					name={name}
+					error={error}
+					errorInfo={errorInfo}
+				/>
 		}
 
 		try {
 			return render_any_children(this.props)
 		}
 		catch (err) {
-			asap_but_not_synchronous(() => this.componentDidCatch(err, 'crash in ErrorBoundary.render()'))
+			asap_but_not_synchronous(() => this.componentDidCatch(err, { digest: `crash in ErrorBoundary.render("${name}")` }))
 		}
 
 		return null
 	}
 }
-ErrorBoundary.propTypes = {
-	name: PropTypes.string.isRequired,
-	onError: PropTypes.func,
-}
-ErrorBoundary.defaultProps = {
-	onError: () => {},
-	// TODO report link customization
-}
 
 /////////////////////////////////////////////////
 
+export {
+	ErrorBoundary,
+}
 export default ErrorBoundary

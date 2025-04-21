@@ -5,6 +5,8 @@ import memoize_one from 'memoize-one'
 
 /////////////////////////////////////////////////
 
+const LIB = 'render_any_children()'
+
 // from React doc
 // https://reactjs.org/docs/higher-order-components.html#convention-wrap-the-display-name-for-easy-debugging
 function getDisplayName(WrappedComponent: React.ComponentType) {
@@ -12,45 +14,41 @@ function getDisplayName(WrappedComponent: React.ComponentType) {
 }
 
 function isReactJSXElementConstructor(MaybeComponent: any): MaybeComponent is React.JSXElementConstructor<any> {
-	return MaybeComponent.render || (MaybeComponent.prototype && MaybeComponent.prototype.render)
+	return MaybeComponent?.render || MaybeComponent?.prototype?.render
 }
 
 // inspired from render-props:
 // https://github.com/donavon/render-props/blob/develop/src/index.js
 // but enhanced.
-const id = 0
-interface Props extends React.PropsWithChildren, React.Attributes {
+let _id = 0
+interface OwnProps extends React.PropsWithChildren, React.Attributes {
 	render?: () => React.ReactNode
 
 	name?: string
 }
-function render_any_children(xprops: Props) {
-	const { children, render, ...props } = xprops
-	const id = props.key || props.name || 'ra#{id++}'
+function render_any_children<ChildComponentProps = {}>(props: OwnProps & ChildComponentProps): React.ReactNode {
+	const { children, render, ...childProps } = props
+	const id = props.key || props.name || `ra#${_id++}`
+	//console.log(`[${LIB}] "${id}"`, { children, render, alienProps })
 
-	//console.log(`render_any "${id}"`, { children, render, props })
+	assert(children || render, `[${LIB}] "${id}": no children nor render prop!`) // technically children can be undef/null/0/''/false BUT error boundaries are for wrapping "complex" nodes so falsy is highly unexpected
+	assert(!(children && render), `[${LIB}] "${id}": competing children and render prop!`)
 
-	const ComponentOrFunctionOrAny = children || render || (
-		<span className={`o⋄error-report error-boundary-report--${id}`}>
-			ErrorBoundary: no children nor render prop!
-		</span>
-	)
-	assert(children || render, `render_any "${id}": no children nor render prop!`)
-	assert(!(children && render), `render_any "${id}": competing children and render prop!`)
+	const RenderfuncOrNode: React.ReactNode | ((props: ChildComponentProps) => React.ReactNode) = children || render
 
-	if (isReactJSXElementConstructor(ComponentOrFunctionOrAny)) {
-		//console.warn('render_any: component', getDisplayName(ComponentOrFunctionOrAny), id)
-		return <ComponentOrFunctionOrAny {...props} />
+	if (isReactJSXElementConstructor(RenderfuncOrNode)) {
+		//console.warn('[${LIB}]: component', getDisplayName(RenderfuncOrNode), id)
+		return <RenderfuncOrNode {...props} />
 	}
 
-	if (typeof ComponentOrFunctionOrAny === 'function')
-		return ComponentOrFunctionOrAny({
-			...(ComponentOrFunctionOrAny.defaultProps || {}),
-			...props,
+	if (typeof RenderfuncOrNode === 'function')
+		return RenderfuncOrNode({
+			...((RenderfuncOrNode as any).defaultProps || {}), // defaultProps is deprecated, but just in case...
+			...childProps,
 		})
 
-	//console.warn(`render_any "${id}": defaulting to "${ComponentOrFunctionOrAny}"`, ComponentOrFunctionOrAny)
-	return ComponentOrFunctionOrAny
+	//console.warn(`[${LIB}] "${id}": defaulting to "${RenderfuncOrNode}"`, RenderfuncOrNode)
+	return RenderfuncOrNode
 }
 
 const render_any_m = memoize_one(render_any_children)

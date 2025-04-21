@@ -1,4 +1,5 @@
-import ErrorBoundary from './error-boundary.tsx'
-export default ErrorBoundary
+export * from './render-anything/index.tsx'
+export * from './error-boundary/index.tsx'
 
-export * from './render-any.ts'
+import ErrorBoundary from './error-boundary/index.tsx'
+export default ErrorBoundary
