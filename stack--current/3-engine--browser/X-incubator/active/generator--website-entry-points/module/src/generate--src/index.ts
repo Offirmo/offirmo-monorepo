@@ -285,7 +285,7 @@ import { createRoot } from 'react-dom/client'
 
 import { getRootSXC } from '@offirmo-private/soft-execution-context'
 import { schedule_when_idle_but_within_human_perception } from '@offirmo-private/async-utils'
-import ErrorBoundary from '@offirmo-private/react-error-boundary'
+import ErrorBoundary from '@offirmo-private/react--error-boundary'
 
 import { LIB } from '../consts.ts'
 

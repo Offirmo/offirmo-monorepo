@@ -15,7 +15,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const POSSIBLY_UNRESURRECTED_OFFIRMO_MODULES = [
 
 	// cross-cutting
-	'@offirmo-private/react-error-boundary',
+	'@offirmo-private/react--error-boundary',
 	'@offirmo-private/rich-text-format--to-react',
 	'@offirmo-private/soft-execution-context--browser',
 	'@offirmo/practical-logger-browser',

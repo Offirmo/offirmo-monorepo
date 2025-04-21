@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/react-error-boundary",
+	"name": "@offirmo-private/react--error-boundary",
 	"description": "Generic error boundary for React, with a fallback UI and logging",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
@@ -25,7 +25,7 @@
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"check--ts": "echo \"@offirmo-private/react-error-boundary\" && tsc --noEmit",
+		"check--ts": "echo \"@offirmo-private/react--error-boundary\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"check": "run-s check--ts",
