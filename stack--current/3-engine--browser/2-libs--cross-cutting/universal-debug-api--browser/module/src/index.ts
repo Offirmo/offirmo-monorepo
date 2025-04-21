@@ -38,7 +38,7 @@ root.v1 = ((existing) => {
 
 	ownLogger = existing.getLogger({name: OWN_LOGGER_NAME})
 	ownLogger.warn('install warning: several true implementation coexists, only the top module should import it. Check your submodules!')
-	// note that this can happens if a bundler incorrectly duplicates the same module
+	// note that this can happen if a bundler incorrectly duplicates the same module
 
 	try {
 		const minVersion = Math.min(existing._!.minor, candidate._!.minor)
