@@ -19,8 +19,7 @@
 		"@tbrpg/definitions": "*",
 		"@tbrpg/logic--armors": "*",
 		"@tbrpg/logic--weapons": "*",
-		"tiny-invariant": "^1",
-		"typescript-string-enums": "^1"
+		"tiny-invariant": "^1"
 	},
 	"scripts": {
 		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",

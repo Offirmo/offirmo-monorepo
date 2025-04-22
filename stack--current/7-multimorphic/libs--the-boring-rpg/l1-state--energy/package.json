@@ -19,7 +19,6 @@
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
 		"@tbrpg/definitions": "*",
-		"fraction.js": "^5",
 		"memoize-one": "^6",
 		"tiny-invariant": "^1"
 	},
@@ -36,6 +35,7 @@
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/state-migration-tester": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"fraction.js": "^5",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

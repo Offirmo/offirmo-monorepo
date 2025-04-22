@@ -16,7 +16,6 @@
 	},
 	"dependencies": {
 		"@offirmo-private/state-utils": "*",
-		"@offirmo-private/ts-types": "*",
 		"@offirmo/random": "^3",
 		"@tbrpg/definitions": "*",
 		"tiny-invariant": "^1",
@@ -31,6 +30,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

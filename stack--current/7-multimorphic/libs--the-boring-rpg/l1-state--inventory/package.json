@@ -17,7 +17,6 @@
 	},
 	"dependencies": {
 		"@offirmo-private/state-utils": "*",
-		"@offirmo-private/uuid": "*",
 		"@tbrpg/definitions": "*",
 		"@tbrpg/logic--armors": "*",
 		"@tbrpg/logic--weapons": "*",
@@ -35,6 +34,7 @@
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/state-migration-tester": "*",
 		"@offirmo-private/ts-types": "*",
+		"@offirmo-private/uuid": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
