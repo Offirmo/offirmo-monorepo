@@ -35,7 +35,7 @@ export const ITEM_SLOTS_TO_INT: Readonly<Record<InventorySlot, number>> = {
 
 	[InventorySlot.none]: NaN, // impossible, for type only
 }
-assert(Object.keys(ITEM_SLOTS_TO_INT).length === ITEM_SLOTS.length, `ITEM_SLOTS_TO_INT should be up to date!`)
+assert(Object.keys(ITEM_SLOTS_TO_INT).length === ITEM_SLOTS.length + 1, `ITEM_SLOTS_TO_INT should be up to date!`)
 
 /////////////////////////////////////////////////
 

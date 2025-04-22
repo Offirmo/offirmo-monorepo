@@ -64,7 +64,8 @@
 			"xx3-engine--browser/X-incubator/active/*",
 
 			"7-multimorphic/libs--rpg/*",
-			"7-multimorphic/libs--the-boring-rpg/*"
+			"7-multimorphic/libs--the-boring-rpg/*",
+			"7-multimorphic/X-incubator/active/*"
 		]
 	},
 

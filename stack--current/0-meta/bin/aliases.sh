@@ -64,6 +64,7 @@ alias    mono32re='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias    mono32rt='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;   cd 2-libs--cross-cutting/rich-text-format--to-react/;        tabset --badge mono32rt'
 alias    mono32sb='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;   cd 2-libs--cross-cutting/soft-execution-context--browser/;   tabset --badge mono32sb'
 alias    mono32ub='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;   cd 2-libs--cross-cutting/universal-debug-api--browser/;      tabset --badge mono32ub'
+alias    mono7Xax='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/X-incubator/; cd active/x-sandbox/;                                        tabset --badge mono7Xax'
 alias   mono7lrsc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;      cd libs--rpg/state--codes/;                                  tabset --badge mono7lrsc'
 alias   mono7lrse='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;      cd libs--rpg/state--engagement/;                             tabset --badge mono7lrse'
 alias   mono7lrsm='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;      cd libs--rpg/state--meta/;                                   tabset --badge mono7lrsm'

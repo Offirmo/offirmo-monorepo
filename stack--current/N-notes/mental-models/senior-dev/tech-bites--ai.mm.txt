@@ -6,6 +6,7 @@
 2024-11 MCP https://www.anthropic.com/news/model-context-protocol
 2025-03 4o image generation = incredible, +1M users in 1h https://openai.com/index/introducing-4o-image-generation/ https://x.com/sama/status/1906771292390666325
 2025-04 multimodal img gen https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image
+2025-04 Shopify threatening internal memo "Reflexive AI usage is now a baseline expectation" https://x.com/tobi/status/1909251946235437514
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://www.anthropic.com/news
@@ -25,6 +26,7 @@ AI 50 2023 https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
 AI Driven Organisations (AIDO)
 AI gateway = convenient self-service integration point for internal teams who want to utilise turnkey AI APIs, proxy for the external and internal AI offerings + additional set of capabilities that empower usage and tracking of AI functionalities at an enterprise level.
 AI winter
+algorithmic aversion = We don’t like taking instructions from machines when they conflict with our judgement https://www.oneusefulthing.org/p/getting-started-with-ai-good-enough
 alignment -- Alignment Stress Testing team = validates alignment (Anthropic)
 alignment -- generic = conform to predefined values, usually ethical or social values, Truthfulness, Harmlessness, Helpfulness
 alignment -- super alignment =  https://openai.com/blog/introducing-superalignment  https://openai.com/blog/superalignment-fast-grants

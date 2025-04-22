@@ -539,6 +539,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	})
 
 	await Promise.all(pending_promises)
+	result.main ??= result.sandbox! // happens in pure sandbox fake packages, which don't really need a main
 	assert(result.main, 'No main file found?')
 
 	result.isꓽapp = result._manifest.isꓽapp ?? (

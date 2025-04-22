@@ -1,4 +1,4 @@
-import type { IETFLanguageType } from '../l1-i18n'
+import type { IETFLanguageType } from '../l1-i18n/index.ts'
 
 /////////////////////////////////////////////////
 // building blocks

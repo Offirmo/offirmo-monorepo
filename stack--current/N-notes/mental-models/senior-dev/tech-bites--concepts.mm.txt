@@ -734,6 +734,7 @@ SME Subject Matter Expert
 SOAP (Simple Object Access Protocol)
 software acceptance = How Is Technology Accepted? https://www.dreamsongs.com/Files/AcceptanceModels.pdf
 software crisis https://en.wikipedia.org/wiki/Software_crisis
+software engineering is programming integrated over time — Software Engineering at Google: Lessons Learned from Programming Over Time
 SOLID
 SOLID -- 1 Single responsibility principle (SRP) https://en.wikipedia.org/wiki/Single_responsibility_principle
 SOLID -- 2 Open–closed principle (OCP) https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
