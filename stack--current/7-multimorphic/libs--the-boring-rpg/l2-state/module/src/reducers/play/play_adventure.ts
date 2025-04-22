@@ -13,7 +13,7 @@ import * as PRNGState from '@oh-my-rpg/state--prng'
 import { getꓽprng } from '@oh-my-rpg/state--prng'
 
 import { LIB } from '../../consts.ts'
-import { State } from '../../types.ts'
+import type { State } from '../../types.ts'
 import {
 	_receive_stat_increase,
 	_receive_coins,

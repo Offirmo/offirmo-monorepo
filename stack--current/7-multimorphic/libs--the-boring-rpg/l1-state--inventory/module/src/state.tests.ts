@@ -15,8 +15,7 @@ import { LIB, SCHEMA_VERSION } from './consts.ts'
 
 
 import {
-	Item,
-	State,
+	type Item,
 
 	create,
 	add_item,

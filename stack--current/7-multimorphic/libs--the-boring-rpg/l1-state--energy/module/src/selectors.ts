@@ -5,7 +5,7 @@ import { getꓽlogger } from '@tbrpg/definitions'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 
 import { LIB, TICK_MS } from './consts.ts'
-import { UState, TState } from './types.ts'
+import { type UState, type TState } from './types.ts'
 import { Fraction, time_to_human } from './utils.ts'
 
 ////////////////////////////////////

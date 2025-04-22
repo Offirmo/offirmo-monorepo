@@ -3,13 +3,13 @@ import * as sinon from 'sinon'
 
 import { LIB, SCHEMA_VERSION } from './consts.ts'
 import {
-	State,
+	type State,
 	AchievementStatus,
 	create,
 	on_played,
 	on_achieved,
 } from './index.ts'
-import { getꓽSXC } from './sec.ts'
+import { getꓽSXC } from './sxc.ts'
 
 
 describe(`${LIB} - state`, function() {

@@ -1,17 +1,14 @@
 /////////////////////
 
 import { type Immutable} from '@offirmo-private/ts-types'
-import { UUID } from '@offirmo-private/uuid'
-import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { type UUID } from '@offirmo-private/uuid'
+import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation } from '@offirmo-private/state-utils'
 
 /////////////////////
 
 import {
-	CharacterAttribute,
-	CharacterAttributes,
 	CharacterClass,
-	increase_stat,
 	rename,
 	switch_class,
 } from '@tbrpg/state--character'
@@ -25,7 +22,7 @@ import { type PendingEngagementUId } from '@oh-my-rpg/state--engagement'
 
 import { LIB } from '../consts.ts'
 import { type State } from '../types.ts'
-import { getꓽSXC } from '../services/sec.ts'
+import { getꓽSXC } from '../services/sxc.ts'
 import { getꓽavailable_classes } from '../selectors/index.ts'
 
 import { _refresh_achievements } from './achievements/index.ts'

@@ -1,15 +1,15 @@
 /////////////////////
 
-import { UUID } from '@offirmo-private/uuid'
+import { type UUID } from '@offirmo-private/uuid'
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { InventorySlot } from '@tbrpg/definitions'
 
 
 import { SCHEMA_VERSION } from './consts.ts'
-import { Item, State } from './types.ts'
+import type { Item, State } from './types.ts'
 import { compareꓽitemsⵧby_slot_then_strength } from './compare.ts'
 import { is_full, getꓽitem_in_slot } from './selectors.ts'
-import { TBRSoftExecutionContext, getꓽSXC } from './sec.ts'
+import { type TBRSoftExecutionContext, getꓽSXC } from './sxc.ts'
 
 /////////////////////
 

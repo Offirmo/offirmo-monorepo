@@ -2,7 +2,7 @@ import { type Immutable} from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import {
-	AchievementDefinition,
+	type AchievementDefinition,
 	AchievementStatus,
 	on_achieved,
 	getꓽlast_known_achievement_status,
@@ -11,7 +11,7 @@ import {
 	enqueue as enqueueEngagement,
 } from '@oh-my-rpg/state--engagement'
 
-import { type State, UState } from '../../types.ts'
+import type { State, UState } from '../../types.ts'
 
 import ACHIEVEMENT_DEFINITIONS from '../../data/achievements.ts'
 

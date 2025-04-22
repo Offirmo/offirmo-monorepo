@@ -1,6 +1,5 @@
 import { type Immutable} from '@offirmo-private/ts-types'
-import { UUID } from '@offirmo-private/uuid'
-import * as RichText from '@offirmo-private/rich-text-format'
+import { type UUID } from '@offirmo-private/uuid'
 
 import { ITEM_SLOTS, type InventorySlot, type Element, type HypermediaContentType } from '@tbrpg/definitions'
 import { appraise_power } from '@tbrpg/logic--shop'
@@ -9,11 +8,11 @@ import {
 	getꓽitem_in_slot as _get_item_in_slot,
 } from '@tbrpg/state--inventory'
 import * as EngagementState from '@oh-my-rpg/state--engagement'
-import { AchievementSnapshot } from '@tbrpg/state--achievements'
+import { type AchievementSnapshot } from '@tbrpg/state--achievements'
 
 /////////////////////
 
-import { UState } from '../types.ts'
+import type { UState } from '../types.ts'
 import { getꓽachievement_snapshot_by_temporary_id } from './achievements.ts'
 
 /////////////////////

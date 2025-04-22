@@ -14,8 +14,7 @@ import {
 } from '@oh-my-rpg/state--prng'
 
 import {
-	AdventureType,
-	AdventureArchetype,
+	type AdventureArchetype,
 
 	getꓽarchetype,
 	pick_random_good_archetype,
@@ -25,7 +24,7 @@ import {
 /////////////////////
 
 import { LIB } from '../../consts.ts'
-import { type State, UState } from '../../types.ts'
+import type { State, UState } from '../../types.ts'
 import { _play_adventure } from './play_adventure.ts'
 
 /////////////////////

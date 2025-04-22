@@ -9,7 +9,7 @@ import {
 
 import { LIB } from './consts.ts'
 import {
-	Item,
+	type Item,
 	compareꓽitemsⵧby_slot_then_strength,
 } from './index.ts'
 

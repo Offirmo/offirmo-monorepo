@@ -20,13 +20,13 @@ import * as InventoryState from '@tbrpg/state--inventory'
 import * as AchievementsState from '@tbrpg/state--achievements'
 import * as WalletState from '@tbrpg/state--wallet'
 
-import { Weapon, create as create_weapon } from '@tbrpg/logic--weapons'
-import { Armor, create as create_armor } from '@tbrpg/logic--armors'
+import { type Weapon, create as create_weapon } from '@tbrpg/logic--weapons'
+import { type Armor, create as create_armor } from '@tbrpg/logic--armors'
 
 /////////////////////
 
 import { SCHEMA_VERSION } from '../consts.ts'
-import { TBRSoftExecutionContext, getꓽSXC } from '../services/sec.ts'
+import { type TBRSoftExecutionContext, getꓽSXC } from '../services/sxc.ts'
 import { type State } from '../types.ts'
 import {
 	_receive_item,

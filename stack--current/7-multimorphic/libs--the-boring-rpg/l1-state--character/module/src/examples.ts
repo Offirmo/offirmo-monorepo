@@ -2,7 +2,7 @@ import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-util
 
 import {
 	CharacterClass,
-	State,
+	type State,
 } from './types.ts'
 
 /////////////////////

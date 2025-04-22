@@ -3,11 +3,11 @@ import * as sinon from 'sinon'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 
-import { LIB, TICK_MS } from './consts.ts'
+import { LIB } from './consts.ts'
 import { Fraction } from './utils.ts'
 import {
-	UState,
-	TState,
+	type UState,
+	type TState,
 
 	create,
 	use_energy,
@@ -23,10 +23,10 @@ import {
 // TODO fix energy limit
 describe(`${LIB} - selectors`, function() {
 	beforeEach(function () {
-		this.clock = sinon.useFakeTimers()
+		this['clock'] = sinon.useFakeTimers()
 	})
 	afterEach(function () {
-		this.clock.restore()
+		this['clock'].restore()
 	})
 
 	describe('get_current_energy_refilling_rate_per_ms()', function() {

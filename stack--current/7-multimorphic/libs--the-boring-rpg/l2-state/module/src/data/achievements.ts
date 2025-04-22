@@ -1,15 +1,15 @@
 import { type Immutable} from '@offirmo-private/ts-types'
 
 import { ItemQuality, InventorySlot, ITEM_QUALITIES_TO_INT, ITEM_SLOTS } from '@tbrpg/definitions'
-import { appraise_sell_value, appraise_power } from '@tbrpg/logic--shop'
-import { AchievementStatus, AchievementDefinition } from '@tbrpg/state--achievements'
+import { appraise_power } from '@tbrpg/logic--shop'
+import { AchievementStatus, type AchievementDefinition } from '@tbrpg/state--achievements'
 import { CharacterClass, DEFAULT_AVATAR_NAME } from '@tbrpg/state--character'
 import { getꓽitem_in_slot } from '@tbrpg/state--inventory'
-import { Weapon, matches as matches_weapon } from '@tbrpg/logic--weapons'
-import { Armor, matches as matches_armor } from '@tbrpg/logic--armors'
+import { type Weapon, matches as matches_weapon } from '@tbrpg/logic--weapons'
+import { type Armor, matches as matches_armor } from '@tbrpg/logic--armors'
 import { ALL_GOOD_ADVENTURE_ARCHETYPES } from '@tbrpg/logic--adventures'
 
-import { UState } from '../types.ts'
+import { type UState } from '../types.ts'
 import { STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC } from '../reducers/create.ts'
 
 // ’
@@ -109,7 +109,7 @@ const RAW_ENTRIES_GAME_PHASES: Immutable<Partial<AchievementDefinition<UState>>>
 	},
 ]
 
-const ADVENTURE_TIERS = [1, 5, 10, 25, 50, 100, 150]
+const ADVENTURE_TIERS = [1, 5, 10, 25, 50, 100, 150] as const
 const RAW_ENTRIES_ADVENTURING: Immutable<Partial<AchievementDefinition<UState>>>[] = [
 	{
 		icon: '🥉',
@@ -188,7 +188,7 @@ const RAW_ENTRIES_ADVENTURING: Immutable<Partial<AchievementDefinition<UState>>>
 	},
 ]
 
-const FIGHT_ENCOUNTER_TIERS = [1, 3, 10, 49, 50, 100, 500]
+const FIGHT_ENCOUNTER_TIERS = [1, 3, 10, 49, 50, 100, 500] as const
 const RAW_ENTRIES_FIGHT_ENCOUNTERS: Immutable<Partial<AchievementDefinition<UState>>>[] = [
 	{
 		icon: '🥄',
@@ -344,7 +344,7 @@ const RAW_ENTRIES_ADVENTURES_SETS: Immutable<Partial<AchievementDefinition<UStat
 ]
 
 
-const GOOD_CLICKS_TIERS = [1, 7, 11, 77, 500, 1000, 10_000]
+const GOOD_CLICKS_TIERS = [1, 7, 11, 77, 500, 1000, 10_000] as const
 const RAW_ENTRIES_PRIMARY_CTA: Immutable<Partial<AchievementDefinition<UState>>>[] = [
 	{
 		icon: '🥉',
@@ -428,7 +428,7 @@ const RAW_ENTRIES_PRIMARY_CTA: Immutable<Partial<AchievementDefinition<UState>>>
 	},
 ]
 
-const BAD_CLICKS_TIERS = [0, 1, 2, 10, 50, 500]
+const BAD_CLICKS_TIERS = [0, 1, 2, 10, 50, 500] as const
 const RAW_ENTRIES_COUNTER_CTA: Immutable<Partial<AchievementDefinition<UState>>>[] = [
 	// = bad clicks
 	{
@@ -488,7 +488,7 @@ const RAW_ENTRIES_COUNTER_CTA: Immutable<Partial<AchievementDefinition<UState>>>
 	},
 ]
 
-const REGULARITY_TIERS = [1, 2, 3, 7, 30, 120, 365]
+const REGULARITY_TIERS = [1, 2, 3, 7, 30, 120, 365] as const
 const RAW_ENTRIES_SECONDARY_CTAS: Immutable<Partial<AchievementDefinition<UState>>>[] = [
 	// regularity
 	{
@@ -591,7 +591,7 @@ const RAW_ENTRIES_ENGAGEMENT: Immutable<Partial<AchievementDefinition<UState>>>[
 	},
 ]
 
-const POWER_TIERS = [0, 5_000, 20_000, 60_000, 120_000, 180_000]
+const POWER_TIERS = [0, 5_000, 20_000, 60_000, 120_000, 180_000] as const
 const RAW_ENTRIES_PROGRESSION_EQUIPMENT: Immutable<Partial<AchievementDefinition<UState>>>[] = [
 	{
 		icon: '🥄',
@@ -740,7 +740,7 @@ const RAW_ENTRIES_PROGRESSION_EQUIPMENT: Immutable<Partial<AchievementDefinition
 	},
 ]
 
-const ATTRIBUTES_TIERS = [1, 10, 33, 66, 100]
+const ATTRIBUTES_TIERS = [1, 10, 33, 66, 100] as const
 const RAW_ENTRIES_PROGRESSION_ATTRIBUTES: Immutable<Partial<AchievementDefinition<UState>>>[] = [
 
 	/////// LEVEL ///////

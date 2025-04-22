@@ -5,7 +5,7 @@ import { itㆍshouldㆍmigrateㆍcorrectly } from '@offirmo-private/state-migrat
 import { LIB, SCHEMA_VERSION } from './consts.ts'
 import { migrate_toꓽlatest, MIGRATION_HINTS_FOR_TESTS } from './migrations.ts'
 import { DEMO_STATE } from './examples.ts'
-import { getꓽSXC } from './sec.ts'
+import { getꓽSXC } from './sxc.ts'
 import { create } from './state.ts'
 
 
@@ -20,7 +20,7 @@ describe(`${LIB} - migration`, function() {
 			LATEST_EXPECTED_DATA: enforceꓽimmutable<any>(create()),
 			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSXC()),
 			import_meta_url: import.meta.url, // for resolving the path below
-			relative_dir_path: '../../src/migrations_of_blank_state_specs',
+			relative_dir_path: './migrations_of_blank_state_specs',
 			describe, context, it, expect,
 		})
 	})
@@ -35,7 +35,7 @@ describe(`${LIB} - migration`, function() {
 			LATEST_EXPECTED_DATA: DEMO_STATE,
 			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSXC()),
 			import_meta_url: import.meta.url, // for resolving the path below
-			relative_dir_path: '../../src/migrations_of_active_state_specs',
+			relative_dir_path: './migrations_of_active_state_specs',
 			describe, context, it, expect,
 		})
 	})

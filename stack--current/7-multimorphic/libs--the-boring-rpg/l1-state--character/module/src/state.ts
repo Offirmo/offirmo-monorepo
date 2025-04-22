@@ -8,11 +8,11 @@ import { LIB, SCHEMA_VERSION } from './consts.ts'
 import {
 	CharacterAttribute,
 	CharacterClass,
-	CharacterAttributes,
-	State,
+	type CharacterAttributes,
+	type State,
 } from './types.ts'
 
-import { TBRSoftExecutionContext, getꓽSXC } from './sec.ts'
+import { type TBRSoftExecutionContext, getꓽSXC } from './sxc.ts'
 
 /////////////////////
 

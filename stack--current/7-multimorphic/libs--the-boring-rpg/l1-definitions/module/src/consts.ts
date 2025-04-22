@@ -14,7 +14,7 @@ export const LIB = '@tbrpg/definitions'
 export const ITEM_QUALITIES = Enum.keys(ItemQuality)
 
 // useful for ex. for sorting
-export const ITEM_QUALITIES_TO_INT: Readonly<{ [k: string]: number }> = {
+export const ITEM_QUALITIES_TO_INT: Readonly<Record<ItemQuality, number>> = {
 	[ItemQuality.common]:     6,
 	[ItemQuality.uncommon]:   5,
 	[ItemQuality.rare]:       4,
@@ -29,9 +29,11 @@ assert(Object.keys(ITEM_QUALITIES_TO_INT).length === ITEM_QUALITIES.length, `ITE
 export const ITEM_SLOTS: InventorySlot[] = Enum.keys(InventorySlot).filter(s => s !== InventorySlot.none)
 
 // useful for ex. for sorting
-export const ITEM_SLOTS_TO_INT: Readonly<{ [k: string]: number }> = {
+export const ITEM_SLOTS_TO_INT: Readonly<Record<InventorySlot, number>> = {
 	[InventorySlot.weapon]: 1,
 	[InventorySlot.armor]: 2,
+
+	[InventorySlot.none]: NaN, // impossible, for type only
 }
 assert(Object.keys(ITEM_SLOTS_TO_INT).length === ITEM_SLOTS.length, `ITEM_SLOTS_TO_INT should be up to date!`)
 

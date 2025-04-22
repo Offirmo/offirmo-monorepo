@@ -20,10 +20,10 @@ const HOUR_ms = 3600 * SECOND_ms
 
 describe(`${LIB} - state`, function() {
 	beforeEach(function () {
-		this.clock = sinon.useFakeTimers()
+		this['clock'] = sinon.useFakeTimers()
 	})
 	afterEach(function () {
-		this.clock.restore()
+		this['clock'].restore()
 	})
 
 	describe('🆕  create()', function() {
@@ -59,11 +59,11 @@ describe(`${LIB} - state`, function() {
 
 			context('when using sinon', function() {
 				beforeEach(function () {
-					this.clock.restore()
-					this.clock = sinon.useFakeTimers(TEST_TIMESTAMP_MS)
+					this['clock'].restore()
+					this['clock'] = sinon.useFakeTimers(TEST_TIMESTAMP_MS)
 				})
 				afterEach(function () {
-					this.clock.restore()
+					this['clock'].restore()
 				})
 
 				it('should be affected by useFakeTimers()', function() {
@@ -98,19 +98,19 @@ describe(`${LIB} - state`, function() {
 			}
 
 			// all in short sequence
-			this.clock.tick(+new Date(2017, 1, 1, 1, 1, 1))
+			this['clock'].tick(+new Date(2017, 1, 1, 1, 1, 1))
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
-			this.clock.tick(1 * SECOND_ms)
+			this['clock'].tick(1 * SECOND_ms)
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
-			this.clock.tick(1 * SECOND_ms)
+			this['clock'].tick(1 * SECOND_ms)
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
-			this.clock.tick(1 * SECOND_ms)
+			this['clock'].tick(1 * SECOND_ms)
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
-			this.clock.tick(1 * SECOND_ms)
+			this['clock'].tick(1 * SECOND_ms)
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
-			this.clock.tick(1 * SECOND_ms)
+			this['clock'].tick(1 * SECOND_ms)
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
-			this.clock.tick(1 * SECOND_ms)
+			this['clock'].tick(1 * SECOND_ms)
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
 
 			// not yet
@@ -132,30 +132,30 @@ describe(`${LIB} - state`, function() {
 			}
 
 			// time to time but less than full reload
-			this.clock.tick(+new Date(2017, 1, 1, 1, 1, 1))
+			this['clock'].tick(+new Date(2017, 1, 1, 1, 1, 1))
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
-			this.clock.tick(1 * SECOND_ms)
+			this['clock'].tick(1 * SECOND_ms)
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
-			this.clock.tick(1 * SECOND_ms)
+			this['clock'].tick(1 * SECOND_ms)
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
 			expect(getꓽavailable_energy‿float(t_state), 'p3').to.be.within(4., 5.)
 
-			this.clock.tick(3 * HOUR_ms) // not enough to refill 1 energy
+			this['clock'].tick(3 * HOUR_ms) // not enough to refill 1 energy
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
 			expect(getꓽavailable_energy‿float(t_state), 'p4').to.be.within(3., 4.)
-			this.clock.tick(1 * SECOND_ms)
+			this['clock'].tick(1 * SECOND_ms)
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
 			expect(getꓽavailable_energy‿float(t_state), 'p5').to.be.within(2., 3.)
 
-			this.clock.tick(4 * HOUR_ms) // 2 energy refilled due to all waits combined
+			this['clock'].tick(4 * HOUR_ms) // 2 energy refilled due to all waits combined
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
 			expect(getꓽavailable_energy‿float(t_state), 'p6').to.be.within(3., 4.)
-			this.clock.tick(1 * HOUR_ms) // no energy refilled
+			this['clock'].tick(1 * HOUR_ms) // no energy refilled
 			;[ u_state, t_state ] = use_energy([ u_state, t_state ], 1)
 			expect(getꓽavailable_energy‿float(t_state), 'p7').to.be.within(2., 3.)
 
 			// not yet
-			this.clock.tick(+new Date(2017, 1, 1, 23) - this.clock.now)
+			this['clock'].tick(+new Date(2017, 1, 1, 23) - this['clock'].now)
 			t_state = update_to_now([ u_state, t_state ] )
 			expect(getꓽavailable_energy‿float(t_state)).to.be.below(7.)
 

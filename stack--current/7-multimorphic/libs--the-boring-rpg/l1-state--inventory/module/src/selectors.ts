@@ -1,15 +1,15 @@
 /////////////////////
 
-import { UUID } from '@offirmo-private/uuid'
+import { type UUID } from '@offirmo-private/uuid'
 import type { Immutable } from '@offirmo-private/ts-types'
 
 import { InventorySlot } from '@tbrpg/definitions'
-import { Armor } from '@tbrpg/logic--armors'
-import { Weapon } from '@tbrpg/logic--weapons'
+import { type Armor } from '@tbrpg/logic--armors'
+import { type Weapon } from '@tbrpg/logic--weapons'
 
 import {
-	Item,
-	State,
+	type Item,
+	type State,
 } from './types.ts'
 
 /////////////////////

@@ -3,7 +3,7 @@
 import { expect } from 'chai'
 
 import { LIB } from '../consts.ts'
-import { getꓽSXC } from '../services/sec.ts'
+import { getꓽSXC } from '../services/sxc.ts'
 import { migrate_toꓽlatest } from '../migrations/index.ts'
 
 import { DEMO_STATE } from './index.ts'

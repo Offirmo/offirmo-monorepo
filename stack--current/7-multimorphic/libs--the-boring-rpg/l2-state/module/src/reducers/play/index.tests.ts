@@ -62,12 +62,12 @@ describe(`${LIB} - reducer - play`, function() {
 				state = play(state)
 
 				expect(state.u_state.progress.statistics.bad_play_count).to.equal(1)
-				expect(state.u_state.progress.statistics.bad_play_count_by_active_class.novice).to.equal(1)
+				expect(state.u_state.progress.statistics.bad_play_count_by_active_class['novice']).to.equal(1)
 
 				state = play(state)
 
 				expect(state.u_state.progress.statistics.bad_play_count).to.equal(2)
-				expect(state.u_state.progress.statistics.bad_play_count_by_active_class.novice).to.equal(2)
+				expect(state.u_state.progress.statistics.bad_play_count_by_active_class['novice']).to.equal(2)
 			})
 
 			it('should punish a bit the user (ex. by increasing the cooldown)', () => {
@@ -108,12 +108,12 @@ describe(`${LIB} - reducer - play`, function() {
 				let state = play(create())
 
 				expect(state.u_state.progress.statistics.good_play_count).to.equal(1)
-				expect(state.u_state.progress.statistics.good_play_count_by_active_class.novice).to.equal(1)
+				expect(state.u_state.progress.statistics.good_play_count_by_active_class['novice']).to.equal(1)
 
 				state = play(state)
 
 				expect(state.u_state.progress.statistics.good_play_count).to.equal(2)
-				expect(state.u_state.progress.statistics.good_play_count_by_active_class.novice).to.equal(2)
+				expect(state.u_state.progress.statistics.good_play_count_by_active_class['novice']).to.equal(2)
 			})
 
 			// hard to test

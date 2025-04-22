@@ -5,7 +5,7 @@ import { TEST_TIMESTAMP_MS } from '@offirmo-private/timestamps'
 import { xxx_internal_reset_prng_cache } from '@oh-my-rpg/state--prng'
 
 import { LIB } from '../consts.ts'
-import {create, State} from '../index.ts'
+import { create, type State } from '../index.ts'
 import {
 	getꓽavailable_classes,
 	will_next_play_be_good_at,

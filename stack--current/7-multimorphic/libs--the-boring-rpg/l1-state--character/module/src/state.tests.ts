@@ -4,12 +4,11 @@ import { SCHEMA_VERSION, LIB } from './consts.ts'
 import {
 	CharacterAttribute,
 	CharacterClass,
-	State,
 
 	create,
 	increase_stat,
 } from './index.ts'
-import { getꓽSXC } from './sec.ts'
+import { getꓽSXC } from './sxc.ts'
 
 describe(`${LIB} - state`, function() {
 

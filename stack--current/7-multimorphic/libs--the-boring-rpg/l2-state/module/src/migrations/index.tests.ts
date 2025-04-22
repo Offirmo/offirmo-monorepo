@@ -15,7 +15,7 @@ import * as MetaState from '@oh-my-rpg/state--meta'
 
 import { LIB, SCHEMA_VERSION } from '../consts.ts'
 import { migrate_toꓽlatest } from './index.ts'
-import { getꓽSXC } from '../services/sec.ts'
+import { getꓽSXC } from '../services/sxc.ts'
 
 import { create } from '../index.ts'
 import { DEMO_STATE } from '../examples/index.ts'
@@ -36,7 +36,7 @@ describe(`${LIB} - schema migration`, function() {
 			},
 			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSXC()),
 			import_meta_url: import.meta.url, // for resolving the path below
-			relative_dir_path: '../../../src/migrations/migrations_of_blank_state_specs',
+			relative_dir_path: './migrations/migrations_of_blank_state_specs',
 			describe, context, it, expect,
 		})
 	})
@@ -68,7 +68,7 @@ describe(`${LIB} - schema migration`, function() {
 			LATEST_EXPECTED_DATA: DEMO_STATE,
 			migrate_toꓽlatest: migrate_toꓽlatest.bind(null, getꓽSXC()),
 			import_meta_url: import.meta.url, // for resolving the path below
-			relative_dir_path: '../../../src/migrations/migrations_of_active_state_specs',
+			relative_dir_path: './migrations/migrations_of_active_state_specs',
 			describe, context, it, expect,
 		})
 	})

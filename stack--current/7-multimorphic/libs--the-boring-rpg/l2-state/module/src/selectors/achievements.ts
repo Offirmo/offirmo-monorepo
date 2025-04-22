@@ -3,12 +3,12 @@ import { type Immutable} from '@offirmo-private/ts-types'
 
 import {
 	getꓽlast_known_achievement_status,
-	AchievementDefinition,
+	type AchievementDefinition,
 	AchievementStatus,
-	AchievementSnapshot,
+	type AchievementSnapshot,
 } from '@tbrpg/state--achievements'
 
-import { UState } from '../types.ts'
+import type { UState } from '../types.ts'
 
 import ACHIEVEMENT_DEFINITIONS from '../data/achievements.ts'
 

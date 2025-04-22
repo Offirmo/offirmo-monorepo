@@ -1,18 +1,18 @@
 /////////////////////
 
 import {
-	Item,
+	type Item,
 	InventorySlot,
 	compareꓽitemsⵧby_slot,
 } from '@tbrpg/definitions'
 
 import {
-	Armor,
+	type Armor,
 	compare_armors_by_potential,
 } from '@tbrpg/logic--armors'
 
 import {
-	Weapon,
+	type Weapon,
 	compare_weapons_by_potential,
 } from '@tbrpg/logic--weapons'
 

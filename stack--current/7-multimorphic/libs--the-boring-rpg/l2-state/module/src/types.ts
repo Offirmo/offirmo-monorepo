@@ -1,7 +1,7 @@
 import {
-	BaseUState,
-	BaseTState,
-	BaseRootState,
+	type BaseUState,
+	type BaseTState,
+	type BaseRootState,
 } from '@offirmo-private/state-utils'
 
 import { type HypermediaContentType } from '@tbrpg/definitions'
@@ -10,8 +10,8 @@ import { type State as InventoryState } from '@tbrpg/state--inventory'
 import { type State as WalletState } from '@tbrpg/state--wallet'
 import { type State as PRNGState } from '@oh-my-rpg/state--prng'
 import {
-	UState as EnergyUState,
-	TState as EnergyTState,
+	type UState as EnergyUState,
+	type TState as EnergyTState,
 } from '@tbrpg/state--energy'
 import { type State as EngagementState } from '@oh-my-rpg/state--engagement'
 import { type State as CodesState } from '@oh-my-rpg/state--codes'

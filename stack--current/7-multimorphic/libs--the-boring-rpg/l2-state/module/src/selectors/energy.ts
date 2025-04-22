@@ -5,7 +5,7 @@ import {
 	getꓽhuman_time_to_next,
 } from '@tbrpg/state--energy'
 
-import { type State, TState } from '../types.ts'
+import type { State, TState } from '../types.ts'
 
 /////////////////////////////////////////////////
 

@@ -14,7 +14,6 @@ import {
 	CharacterClass,
 } from '@tbrpg/state--character'
 
-
 /////////////////////
 
 import { type State } from '../types.ts'

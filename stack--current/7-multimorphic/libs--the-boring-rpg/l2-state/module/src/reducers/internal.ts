@@ -1,18 +1,18 @@
 /////////////////////
 
 import { type Immutable} from '@offirmo-private/ts-types'
-import { UUID } from '@offirmo-private/uuid'
-import { TimestampUTCMs } from '@offirmo-private/timestamps'
+import { type UUID } from '@offirmo-private/uuid'
+import { type TimestampUTCMs } from '@offirmo-private/timestamps'
 
 /////////////////////
 
 import * as EngagementState from '@oh-my-rpg/state--engagement'
 
-import { InventorySlot, Item, ItemQuality } from '@tbrpg/definitions'
+import { InventorySlot, type Item, ItemQuality } from '@tbrpg/definitions'
 
-import { Weapon } from '@tbrpg/logic--weapons'
+import { type Weapon } from '@tbrpg/logic--weapons'
 import * as WeaponLib from '@tbrpg/logic--weapons'
-import { Armor } from '@tbrpg/logic--armors'
+import { type Armor } from '@tbrpg/logic--armors'
 import * as ArmorLib from '@tbrpg/logic--armors'
 import { appraise_power_normalized } from '@tbrpg/logic--shop'
 import {
@@ -33,7 +33,7 @@ import {
 	is_inventory_full,
 } from '../selectors/index.ts'
 
-import { getꓽSXC } from '../services/sec.ts'
+import { getꓽSXC } from '../services/sxc.ts'
 
 import {STARTING_ARMOR_SPEC, STARTING_WEAPON_SPEC} from './create.ts'
 

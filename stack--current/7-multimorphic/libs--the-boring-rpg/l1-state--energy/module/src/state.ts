@@ -1,11 +1,11 @@
 /////////////////////
 
 import assert from 'tiny-invariant'
-import { TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
 import { getꓽlogger } from '@tbrpg/definitions'
 
 import { LIB, SCHEMA_VERSION, TICK_MS } from './consts.ts'
-import { UState, TState } from './types.ts'
+import type { UState, TState } from './types.ts'
 import { Fraction } from './utils.ts'
 import {
 	get_milliseconds_to_next,

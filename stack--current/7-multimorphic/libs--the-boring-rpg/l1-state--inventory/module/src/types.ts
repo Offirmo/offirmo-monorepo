@@ -1,8 +1,8 @@
-import { BaseUState } from '@offirmo-private/state-utils'
+import { type BaseUState } from '@offirmo-private/state-utils'
 
-import { Item, InventorySlot } from '@tbrpg/definitions'
-import { Armor } from '@tbrpg/logic--armors'
-import { Weapon } from '@tbrpg/logic--weapons'
+import { type Item, InventorySlot } from '@tbrpg/definitions'
+import { type Armor } from '@tbrpg/logic--armors'
+import { type Weapon } from '@tbrpg/logic--weapons'
 
 /////////////////////
 

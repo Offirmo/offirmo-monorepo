@@ -1,5 +1,5 @@
-import { NumeratorDenominator } from 'fraction.js'
-import { BaseUState, BaseTState } from '@offirmo-private/state-utils'
+import { type NumeratorDenominator } from 'fraction.js'
+import { type BaseUState, type BaseTState } from '@offirmo-private/state-utils'
 
 /////////////////////
 

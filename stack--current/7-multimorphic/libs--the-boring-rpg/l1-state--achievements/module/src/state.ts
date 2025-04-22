@@ -3,7 +3,6 @@
 import assert from 'tiny-invariant'
 import {
 	getꓽUTC_timestampⵧhuman_readable‿days,
-	getꓽUTC_timestampⵧhuman_readable‿minutes,
 } from '@offirmo-private/timestamps'
 import { type Immutable, enforceꓽimmutable } from '@offirmo-private/state-utils'
 
@@ -11,12 +10,12 @@ import { LIB, SCHEMA_VERSION } from './consts.ts'
 
 import {
 	AchievementStatus,
-	State,
+	type State,
 } from './types.ts'
 
 import { getꓽlast_known_achievement_status } from './selectors.ts'
 
-import { TBRSoftExecutionContext, getꓽSXC } from './sec.ts'
+import { type TBRSoftExecutionContext, getꓽSXC } from './sxc.ts'
 
 /////////////////////
 
