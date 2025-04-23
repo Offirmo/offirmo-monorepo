@@ -1,5 +1,5 @@
 
-# New Hypermedia representation
+# New improved Hypermedia
 
 ## Introduction
 Goal:
@@ -21,7 +21,7 @@ We want more.
 
 * new Hypermedia format to be used as "representation" for **true** REST / HATEOAS architecture
   * would need a new kind of browser, of course
-* should be generic to be used in both terminal, web app, mobile app
+* should be generic to be used in both terminal, chat-like interface, web app, mobile app
 * JSON based (obviously)
 * would always have a text representation
   * with optional enrichments as supported by the "browser", but would have a fallback representation
@@ -31,7 +31,7 @@ We want more.
     * soundscape
     * ...
 * mutations not limited to PUT/POST/DELETE, also RPC/action
-  * not restricted to a & form
+  * not restricted to <a> & <form>
 * optionally code-on-demand? (lazy loading?)
 * would not need a full screen refresh
   * tabs? trees? tables?
@@ -48,7 +48,7 @@ We want more.
   semantic_level?: 'error' | 'warning' | 'info' | 'success',
   * auto-dismiss?
   * ...
-
+* push from server
 
 recommended design?
 chain of resources with "continue-to" or actions/engagements?
