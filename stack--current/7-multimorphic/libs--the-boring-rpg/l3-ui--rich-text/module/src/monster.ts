@@ -1,5 +1,5 @@
 import type { Immutable } from '@offirmo-private/ts-types'
-import { MonsterRank, Monster } from '@tbrpg/logic--monsters'
+import { type Monster } from '@tbrpg/logic--monsters'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 

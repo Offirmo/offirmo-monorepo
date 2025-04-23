@@ -18,6 +18,7 @@ interface Engagement<TextFormat> {
 		| 'main' // directly flowing from the current flow + intent, ex. a direct answer to a user's question
 		| 'side' // related to the current flow but more of a side effect or low-intent, ex. "achievement unlocked", tip, greeting...
 		| 'not'  // not related to the current flow at all, ex. banner about server restart
+	// TODO background = the user can do sth else in the meantime?
 
 	// TODO review!
 	// relative to what? to a previously displayed rsrc??

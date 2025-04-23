@@ -1,12 +1,12 @@
 import type { Immutable } from '@offirmo-private/ts-types'
-import { ItemQuality, InventorySlot, Item } from '@tbrpg/definitions'
-import { Armor } from '@tbrpg/logic--armors'
-import { Weapon } from '@tbrpg/logic--weapons'
+import { InventorySlot, type Item } from '@tbrpg/definitions'
+import { type Armor } from '@tbrpg/logic--armors'
+import { type Weapon } from '@tbrpg/logic--weapons'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import { render_armor_short, render_armor_detailed } from './items--armor.ts'
 import { render_weapon_short, render_weapon_detailed } from './items--weapon.ts'
-import { RenderItemOptions } from './types.ts'
+import { type RenderItemOptions } from './types.ts'
 import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.ts'
 
 

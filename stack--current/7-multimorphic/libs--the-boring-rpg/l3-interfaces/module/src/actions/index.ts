@@ -1,8 +1,8 @@
 import { Enum } from 'typescript-string-enums'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import { UUID } from '@offirmo-private/uuid'
-import { TimestampUTCMs } from '@offirmo-private/timestamps'
+import { type UUID } from '@offirmo-private/uuid'
+import { type TimestampUTCMs } from '@offirmo-private/timestamps'
 import { type PendingEngagementUId } from '@oh-my-rpg/state--engagement'
 import {
 	type State,
