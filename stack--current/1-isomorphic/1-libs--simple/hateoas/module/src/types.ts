@@ -10,16 +10,6 @@ import {
 
 /////////////////////////////////////////////////
 
-/*
-interface HATEOASEngagement<HypermediaType> {
-	type: 'flow' | 'non-flow'
-	$doc: HypermediaType
-	ack_action: any // TODO type better?
-	uid: string | number // OPAQUE unique id, useful for ex. for React keying. Should not be used for anything else.
-}
-
- */
-
 interface HATEOASPendingEngagement<HypermediaType, Action> extends TrackedEngagement<HypermediaType> {
 	ack_action?: Action // the action to dispatch to acknowledge this engagement, ex. record engagement as seen
 }
