@@ -1,4 +1,5 @@
 {
 	name: 'ui--rich-text',
 	description: "UI (rich text) for TBRPG",
+	status: "refactoring"
 }

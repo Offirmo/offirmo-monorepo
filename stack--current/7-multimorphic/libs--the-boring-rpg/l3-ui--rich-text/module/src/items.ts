@@ -12,7 +12,7 @@ import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.ts'
 
 function decorate_with_common_item_props(i: Immutable<Item>, doc: RichText.Document): RichText.Document {
 	doc.$hints = doc.$hints || {}
-	doc.$hints.uuid = i.uuid
+	doc.$hints['uuid'] = i.uuid
 
 	return doc
 }

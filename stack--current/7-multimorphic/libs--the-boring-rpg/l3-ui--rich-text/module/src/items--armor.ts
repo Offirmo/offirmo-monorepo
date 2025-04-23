@@ -78,7 +78,7 @@ function push_sell_value(builder: Builder, i: Immutable<Armor>): Builder {
 /////////////////////
 
 function render_armor_name(i: Immutable<Armor>): RichText.Document {
-	const _ = I18N_ARMORS.en as any
+	const _ = I18N_ARMORS['en'] as any
 	const b = _.armor.base[i.base_hid]
 	const q1 = _.armor.qualifier1[i.qualifier1_hid]
 	const q2 = _.armor.qualifier2[i.qualifier2_hid]
@@ -101,9 +101,9 @@ function render_armor_name(i: Immutable<Armor>): RichText.Document {
 	}
 
 	const $doc = builder.done()
-	$doc.$sub.base = RichText.fragmentⵧinline().pushText(b).done()
-	$doc.$sub.q1 = RichText.fragmentⵧinline().pushText(q1).done()
-	$doc.$sub.q2 = RichText.fragmentⵧinline().pushText(q2).done()
+	$doc.$sub['base'] = RichText.fragmentⵧinline().pushText(b).done()
+	$doc.$sub['q1'] = RichText.fragmentⵧinline().pushText(q1).done()
+	$doc.$sub['q2'] = RichText.fragmentⵧinline().pushText(q2).done()
 
 	return $doc
 }

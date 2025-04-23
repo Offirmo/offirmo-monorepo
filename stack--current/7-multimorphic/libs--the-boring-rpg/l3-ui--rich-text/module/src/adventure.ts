@@ -44,8 +44,8 @@ function renderꓽresolved_adventure(a: Immutable<ResolvedAdventure>, options: I
 
 			const $doc = render_item_short(gains[slot], options)
 
-			$story_sub_elements.item = $doc
-			$story_sub_elements.item_slot = RichText.fragmentⵧinline().pushText(slot).done()
+			$story_sub_elements['item'] = $doc
+			$story_sub_elements['item_slot'] = RichText.fragmentⵧinline().pushText(slot).done()
 			$story_sub_elements[slot] = $doc
 			$loot_list.$sub[slot] = $doc
 
@@ -80,10 +80,10 @@ function renderꓽresolved_adventure(a: Immutable<ResolvedAdventure>, options: I
 			//console.info('handling adventure outcome [c1]: ' + attr)
 			if (!gains[attr]) return
 
-			$story_sub_elements.attr_name = RichText.fragmentⵧinline().pushText(attr).done()
+			$story_sub_elements['attr_name'] = RichText.fragmentⵧinline().pushText(attr).done()
 
 			const $doc_attr_gain_value = RichText.fragmentⵧinline().pushText('' + gains[attr]).done()
-			$story_sub_elements.attr = $doc_attr_gain_value // generic
+			$story_sub_elements['attr'] = $doc_attr_gain_value // generic
 			$story_sub_elements[attr] = $doc_attr_gain_value // precise
 
 
@@ -126,7 +126,7 @@ function renderꓽresolved_adventure(a: Immutable<ResolvedAdventure>, options: I
 
 	/////// Encounter ///////
 	if (a.encounter)
-		$story_sub_elements.encounter = render_monster(a.encounter)
+		$story_sub_elements['encounter'] = render_monster(a.encounter)
 
 	/////// checks ///////
 	const active_adventure_outcomes = Object.keys(gains).filter(prop => !!gains[prop])
@@ -138,7 +138,7 @@ function renderꓽresolved_adventure(a: Immutable<ResolvedAdventure>, options: I
 	}
 
 	/////// Final wrap-up //////
-	const _ = I18N_ADVENTURES.en as any
+	const _ = I18N_ADVENTURES['en'] as any
 	const story = _.adventures[a.hid]
 
 	const $doc = RichText.fragmentⵧblock()

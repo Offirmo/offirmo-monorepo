@@ -14,6 +14,7 @@ alias     mono0bs='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias    mono0btu='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;              cd build-tools/toolbox--unit-tests/;                         tabset --badge mono0btu'
 alias    mono0bub='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;              cd build-tools/utils--bolt/;                                 tabset --badge mono0bub'
 alias    mono0bue='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;              cd build-tools/utils--error/;                                tabset --badge mono0bue'
+alias     mono11h='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/;        cd 1-libs--simple/hateoas/;                                  tabset --badge mono11h'
 alias     mono11j='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/;        cd 1-libs--simple/json-stable-stringify/;                    tabset --badge mono11j'
 alias     mono11m='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/;        cd 1-libs--simple/marketing/;                                tabset --badge mono11m'
 alias    mono11m2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/;        cd 1-libs--simple/murmurhash/;                               tabset --badge mono11m2'

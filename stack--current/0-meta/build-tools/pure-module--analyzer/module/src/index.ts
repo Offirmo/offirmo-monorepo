@@ -539,7 +539,19 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	})
 
 	await Promise.all(pending_promises)
-	result.main ??= result.sandbox! // happens in pure sandbox fake packages, which don't really need a main
+	if (!result.main) {
+		if (result.sandbox) {
+			// happens in:
+			// - pure sandbox fake packages, which don't really need a main
+			// - early stage packages
+			result.main ??= result.sandbox
+			result.status = (result.status === 'stable')
+				? (result.name.toLowerCase().includes('sandbox')
+						? 'sandbox'
+						: 'tech-demo')
+				: result.status
+		}
+	}
 	assert(result.main, 'No main file found?')
 
 	result.isꓽapp = result._manifest.isꓽapp ?? (

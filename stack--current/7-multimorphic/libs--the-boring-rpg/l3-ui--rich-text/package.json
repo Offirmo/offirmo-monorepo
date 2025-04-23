@@ -20,7 +20,6 @@
 		"@tbrpg/definitions": "*",
 		"@tbrpg/logic--adventures": "*",
 		"@tbrpg/logic--armors": "*",
-		"@tbrpg/logic--monsters": "*",
 		"@tbrpg/logic--shop": "*",
 		"@tbrpg/logic--weapons": "*",
 		"@tbrpg/state": "*",
@@ -36,7 +35,7 @@
 		"check--ts": "echo \"@tbrpg/ui--rich-text\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"check": "run-s tests check--ts"
+		"_check": "run-s tests check--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
@@ -46,6 +45,7 @@
 		"@offirmo/unit-test-toolbox": "^9",
 		"@oh-my-rpg/state--prng": "*",
 		"@tbrpg/logic--adventure--resolved": "*",
+		"@tbrpg/logic--monsters": "*",
 		"npm-run-all": "^4",
 		"strip-ansi": "^7",
 		"tslib": "^2",

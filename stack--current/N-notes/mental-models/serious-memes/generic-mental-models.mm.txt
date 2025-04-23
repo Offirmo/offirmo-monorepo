@@ -1,5 +1,7 @@
+ Michelangelo Phenomenon = close partners “sculpt one another’s selves” and help the other person achieve their dreams https://faculty.wcas.northwestern.edu/eli-finkel/documents/47_RusbultFinkelKumashiro2009_CDir.pdf
 0-sum game
 1 or 2 way door
+10th dentist = someone who sincerely, or professionally, disagree with the broad majority of people "9 dentists out of 10 recommends..." https://www.reddit.com/r/The10thDentist/
 12 steps
 1984
 1st thought v.s 2nd thought = 2nd = what we truly are
@@ -25,12 +27,6 @@
 5 mantras -- Prototype the path = The only way through is to do. Hard problems get a hell of a lot easier when we get our hands dirty, equip our curiosity, and start trying things out.
 5 mantras -- You are enough = I don’t tell myself this often enough. I’d dare to say that you don’t either. But it’s a mantra that I repeat to myself often.
 5 mantras = by Christopher Davis (burnout)
-5 top regrets of the dying -- 1 I wish I'd had the courage to live a life true to myself, not the life others expected of me
-5 top regrets of the dying -- 2 I wish I hadn't worked so hard
-5 top regrets of the dying -- 3 I wish I'd had the courage to express my feelings
-5 top regrets of the dying -- 4 I wish I had stayed in touch with my friends
-5 top regrets of the dying -- 5 I wish that I had let myself be happier
-5 top regrets of the dying https://en.wikipedia.org/wiki/The_Top_Five_Regrets_of_the_Dying
 80/20 rule "Pareto distribution" https://en.wikipedia.org/wiki/Pareto_distribution
 [ ] ++ https://savoir-sans-frontieres.com/
 [ ] +++ https://flinkliv.com/
@@ -103,6 +99,7 @@ being in the details https://www.theengineeringmanager.com/managing-managers/bei
 being like planes: they only make news when they crash, even though so many of them are in the air
 Bell curve = bottom 20%, middle 60%, top 20%
 best decision based on the information available at the time
+best time to plant a tree = was 20 years ago. The second best time is now
 bet you’re fun at parties
 better ask for forgiveness than for permission
 better safe than sorry
@@ -164,6 +161,7 @@ Charlie Munger 3 basic rules -- Work only with people you enjoy
 Charlie Munger 3 basic rules https://www.cnbc.com/2023/11/29/charlie-munger-these-basic-career-rules-made-me-successful-in-life-with-warren-buffett-i-had-all-3.html
 charts -- hill = position on a "hill" figuring things out -> making it happen https://basecamp.com/shapeup/4.0-appendix-01#track-scopes-on-the-hill-chart
 cherchez la femme https://en.m.wikipedia.org/wiki/Cherchez_la_femme
+child of deaf adult (CODA) https://en.wikipedia.org/wiki/Child_of_deaf_adult
 choice making -- 5-2-1 technique https://www.reddit.com/r/lifehacks/comments/ctdibo/521_technique/
 circle of competence: Define the limits of your knowledge. Hint: the limits are smaller than you think. That’s because being an expert in one area doesn’t make you an expert in anything else. Be clear about what you know and don’t know.
 coach vs mentor vs sponsor = A coach talks to you, a mentor talks with you, and a sponsor talks about you https://www.linkedin.com/posts/addyosmani_softwareengineering-productivity-leadership-activity-6996942888802598912-hUgl
@@ -209,6 +207,12 @@ cosmological models -- alternative -- Janus https://januscosmologicalmodel.com/
 cosmological models -- alternative -- Quantised Inertia https://physicsfromtheedge.blogspot.com/2024/11/a-potted-history-of-qi.html
 cosmos https://en.wikipedia.org/wiki/Physical_cosmology
 cost of a thing = the amount of life which is required to be exchanged for it, immediately or in the long run
+counterfactual thinking = the human tendency to consider what might have been, or how things could have been different in the past. It involves imagining alternative outcomes to past events, often expressing themselves as "what if?" or "if only..." questions. These thoughts explore possibilities contrary to the actual facts and can be a tool for learning, problem-solving, and managing emotions
+counterfactuals -- additive
+counterfactuals -- post-mortem = how to improve the system
+counterfactuals -- subtractive
+counterfactuals -- useful if stimulating, not if regret = may evoke deleterious rather than favorable consequences
+counterfactuals = contrary to the actual facts. can be a tool for learning, problem-solving, and managing emotions https://www.sciencedirect.com/science/article/abs/pii/S0065260117300187
 courses après le repas
 creative process
 creativity -- begins at the edge: Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
@@ -286,6 +290,12 @@ don't expect perfection -> trigger self-consciousness = counter-productive
 don't judge me / You do you. I’ll do me / I’m just living my truth. You live yours. https://aleteia.org/2022/12/18/why-saying-dont-judge-me-isnt-quite-right
 don't shoot the messenger
 doublespeak: People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, “War is peace. Freedom is slavery. Ignorance is strength.”
+dreams -- unattainable = People sometimes have unattainable dreams and set unrealistic aspirations for themselves, guaranteeing continued discrepancies between who they perceive themselves to be and who they ideally want to become. Even when they meet their more realistic aspirations, they often develop new ones that are harder to meet
+dreams and aspirations -- be a player
+dreams and aspirations -- interpersonal = as a team, couple, or family. an ally in this process is invaluable, particularly when the ally is a gifted sculptor.
+dreams and aspirations -- intrapersonal
+dreams and aspirations -- pursuit
+dreams and aspirations = ppl may want to acquire desirable traits such as warmth, confidence, or decisiveness; to achieve professional success in the form of advancement, peer respect, or financial benefits; or to advance important pursuits involving religion, travel, or athletics
 drinking https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd44714e619a
 drive by
 due diligence
@@ -304,6 +314,10 @@ elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 ELI5 https://www.reddit.com/r/explainlikeimfive/
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
 emotionally secure https://www.cnbc.com/2024/01/03/harvard-psychologist-if-you-answer-yes-to-any-of-these-questions-youre-more-emotionally-secure-than-most-people.html
+emotions -- agitation = fear, guilt, restlessness
+emotions -- cool = despair, sadness, emptiness
+emotions -- dejection = sadness, disappointment
+emotions -- hot = anger, irritation, disgust
 English
 entrepreneurship -- billing -- free day https://blog.jpl-consulting.com/2011/05/the-free-day/
 entrepreneurship -- billing -- hourly rate vs fixed price
@@ -323,6 +337,7 @@ evolution -- greater male variability hypothesis (heretic) https://en.wikipedia.
 evolution -- LUCA https://en.wikipedia.org/wiki/Last_universal_common_ancestor
 evolution https://en.wikipedia.org/wiki/Evolutionary_game_theory
 evolution vs revolution
+evolutionary theory of mate selection
 excuses vs. solutions
 executive
 extremum local
@@ -395,6 +410,7 @@ Gospel of Wealth -- Help those who will help themselves, to provide part of the 
 Gospel of Wealth = responsibility of philanthropy by the new upper class of self-made rich https://en.wikipedia.org/wiki/The_Gospel_of_Wealth
 grapevine
 great filter https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
+great works of literature = works that penetrate to the core of the human experience
 grinders
 grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
@@ -403,6 +419,7 @@ growth mindset  https://www.khanacademy.org/college-careers-more/learnstorm-grow
 hacker -- jargon http://catb.org/jargon/html/index.html
 hacking (tech)
 Haiti https://aleteia.org/2025/02/01/kids-without-school-because-of-gangs-are-recruited-by-gangs
+hand-me-down
 hangry = before lunch (vs. after)
 Hanlon’s razor = Never attribute to malice that which can be adequately explained by stupidity
 happiness -- is a skill
@@ -456,11 +473,13 @@ ikigai = a reason for being what you love ∩ what you're good at ∩ what the w
 impostor syndrome
 impostor syndrome -- cure = is to stop judging others. The same brain circuitry that assesses others, does the self assessment against you. Don't self-reject. Don't boost others in your head based on the little that's visible to you. Understand that everyone is doing trade-offs all the time and you probably don't want to be in their shoes all things considered https://www.linkedin.com/posts/alexewerlof_no-one-is-talking-about-staff-engineer-mental-activity-7297125140159471617-_J1-
 impulsivity = related to problem gambling, problem video gaming, gambling-related cognitions, risky loot boxes engagement https://www.sciencedirect.com/science/article/pii/S0306460322000934
+in which it slumbers
 incentive
 incentive -- perverse -- cobra effect
 incentive -- perverse https://en.wikipedia.org/wiki/Perverse_incentive
 inclusiveness = extend the opportunity for everyone to contribute
 income poor but asset rich
+inertia wins = slowly boiling frog
 influence operations
 influence operations -- breakout scale -- 01 one platform, no breakout
 influence operations -- breakout scale -- 02 one platform, breakout OR many platforms, no breakout
@@ -482,6 +501,7 @@ intellectual honesty -- FLOATER -- If someone claims they saw a unicorn, ask you
 intellectual honesty -- “It’s not possible” vs “I wasn’t able to do it” vs “I don’t want to do it.”
 intellectual honesty = willingness to see and admit the truth, even if it goes against your argument, supports the argument of “the other side,” or proves you wrong. Even if it bruises your ego. https://newsletter.weskao.com/p/intellectual-honesty
 internalising feelings of inferiority and alienation (colonialism, race...)
+International law = more what you'd call "guidelines" than actual rules. Violating it really only matters if the countries that actually care to object are collectively powerful enough to stop you https://politics.stackexchange.com/a/91479
 intrinsic/extrinsic motivation https://www.swyx.io/js-tooling
 inversion: Avoiding stupidity is easier than trying to be brilliant. Instead of asking, “How can I help my company?” you should ask, “What’s hurting my company the most and how can I avoid it?” Identify obvious failure points, and steer clear of them.
 investing
@@ -505,6 +525,11 @@ job readiness
 Johari window https://en.wikipedia.org/wiki/Johari_window
 joie de l’effort = "Satisfaction lies in the effort, not in the attainment" Gandhi
 joie du don
+journalism -- objective and investigative reporting
+journalism -- scandal sheets
+journalism -- tabloid https://en.wikipedia.org/wiki/Tabloid_journalism
+journalism -- yellow-press = exaggerated headlines, unverified claims, partisan agendas, and a focus on topics like crime, scandal, sports, and violence
+journalism -- yellow-press = journalist associated with the style characterized by sensationalism, eye-catching headlines, and often exaggerated or fabricated stories, primarily used to boost circulation and sales https://en.wikipedia.org/wiki/Yellow_journalism
 juger vs. évaluer
 justifiable homicide = interesting cultural differences https://en.wikipedia.org/wiki/Justifiable_homicide
 keep only the ones saying it's doable
@@ -692,6 +717,7 @@ natural order of things in society = established by the dominant ideology
 needs / wants https://en.wikipedia.org/wiki/Need
 network effect
 Never interrupt someone doing what you said couldn't be done.
+Never job backwards. What-might-have-been was a waste of time. Follow your fate, and be satisfied with it, and be glad not to be a second-hand motor salesman, or a yellow-press journalist, pickled in gin and nicotine, or a cripple—or dead (Fleming / James Bond)
 never-Ending Now: The structure of our social media feeds blinds us to history, as it causes us to live in an endless cycle of ephemeral content consumption. The structure of the Internet pulls people away from age-old wisdom.
 new normal
 next larger context = always design a thing by considering it in its next larger context — a chair in a room, a room in a house, a house in a city... https://skamille.medium.com/the-next-larger-context-3970afaa8fb2 (see also shearing layers)
@@ -778,7 +804,6 @@ pit of success = place where it’s easier to do the right thing than the wrong 
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
 planned obsolescence = Instilling in the buyer the desire to own something a little newer, a little better, a little sooner than is necessary https://en.wikipedia.org/wiki/Planned_obsolescence#History
 planning fallacy
-plant a tree
 pointy-haired boss
 political correctness -- rise of = due to lack of other things to be morally pure about. Previous generations of prigs had been prigs mostly about religion and sex.
 Ponzi, Madoff
@@ -814,11 +839,20 @@ practice first what you teach
 praise in public (and private), criticize in private
 praise more than criticize
 praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism
+pre-mortem = imagine the worst possible outcome of a decision and work backwards to prevent it
 preach the water but drink wine / faites ce que je dis mais pas ce que je fais
 preference Falsification: People lie about their true opinions and conform to socially acceptable preferences instead. In private they’ll say one thing. In public, they’ll say another.
 preferential attachment / effet Matthieu
 presentations -- "so what?" after every slide
 pretty privilege -> karen
+parenting overparenting https://en.wikipedia.org/wiki/Helicopter_parent
+parenting -- https://en.wikipedia.org/wiki/Social_stratification
+parenting -- https://en.wikipedia.org/wiki/Slow_parenting
+parenting -- concerted cultivation https://en.wikipedia.org/wiki/Concerted_cultivation
+stereotypes -- karen = difficult / unreasonable white women, "speak to the manager" a middle class woman who is perceived as entitled or excessively demanding, racist https://en.wikipedia.org/wiki/Karen_(slang)
+stereotypes -- karen -- Miss Ann / Becky / Barbecue Becky / Cornerstore Caroline / Permit Patty
+stereotypes -- karen -- https://en.wikipedia.org/wiki/Central_Park_birdwatching_incident
+stereotypes -- soccer mom https://en.wikipedia.org/wiki/Soccer_mom
 prig = self-righteously moralistic person who behaves as if superior to others
 primals https://myprimals.com https://templetonreligiontrust.org/explore/discovering-peoples-primal-world-beliefs/
 primate dominance hierarchy = At the end of the day we’re all just mammals trying to map every organization we’re a part of onto a primate dominance hierarchy https://blog.staysaasy.com/p/a-practical-guide-to-executive-presence-1de
@@ -845,6 +879,8 @@ précariat https://en.wikipedia.org/wiki/Precariat
 Pulitzer prize -- biographies https://en.wikipedia.org/wiki/Pulitzer_Prize_for_Biography
 purchasing "messy middle" https://www.thinkwithgoogle.com/intl/en-emea/consumer-insights/consumer-journey/navigating-purchase-behavior-and-decision-making/
 put into words
+Pygmalion phenomenon -- Research reveals that the Pygmalion phenomenon is negatively associated with diverse indices of personal and couple well-being = "know better what's good for you"
+Pygmalion phenomenon = ppl perceives and behaves toward the target in ways that are consistent with an ideal self perceived from s/o else
 question authority
 race -- activism -- Double V campaign https://en.wikipedia.org/wiki/Double_V_campaign
 race -- eugenism
@@ -875,8 +911,32 @@ recruiting others to support you in addressing issue
 red herring
 reduce reuse recycle
 regeneration -- urban = restoring wildlife
+regrets -- "biggest mistakes in life" = ppl more likely to mention failures to act on opportunities than regrettable actions
+regrets -- 5 top regrets of the dying -- 1 I wish I'd had the courage to live a life true to myself, not the life others expected of me
+regrets -- 5 top regrets of the dying -- 2 I wish I hadn't worked so hard
+regrets -- 5 top regrets of the dying -- 3 I wish I'd had the courage to express my feelings
+regrets -- 5 top regrets of the dying -- 4 I wish I had stayed in touch with my friends
+regrets -- 5 top regrets of the dying -- 5 I wish that I had let myself be happier
+regrets -- 5 top regrets of the dying https://en.wikipedia.org/wiki/The_Top_Five_Regrets_of_the_Dying
+regrets -- guiding toward less-regrettable courses of action
+regrets -- inaction over action -- 1 = because we can undo an action’s consequences. Although one cannot take back a disastrous action or hurtful comment, restitutions and apologies can diminish the intensity of regret. In contrast, “undoing” a failure to act is often impossible. The one who got away may now be married to someone else; some talents can only be fully developed if one starts young; a once-in-a-lifetime job opportunity comes around only once. Even when ameliorative action is possible, people find it difficult to overcome the inertia inherent in one’s earlier inaction
+regrets -- inaction over action -- 2 = people are typically better able to rationalize their mistakes of action than their mistakes of inaction. It is generally easier for people to identify a silver lining in their regrettable actions by focusing on important lessons learned, new relationships forged, and new doors opened. Not acting, or acting the same as one always has, rarely provides the same sort of compensatory benefits
+regrets -- inaction over action -- 3 = inactions tend to be seen as less justified in retrospect. Although the reasons that prevent people from acting are compelling at the time, they are often experienced as less so down the road. A contemporaneous fear of failure, for example, often gives way to more confident retrospective evaluations of one’s likelihood of success
+regrets -- inaction over action -- 4 = people tend to remember their unrealized goals better than those that have been fulfilled and many regrets of inaction are exactly that—unfulfilled goals. People are therefore more likely to call to mind and be bothered by their regrets of inaction than their regrets of action
+regrets -- inaction over action -- BUT "best time to plant a tree..."
+regrets -- inaction over action = ppl regret more things they didn’t do and wish they had done rather than things they did and wish they hadn’t
+regrets -- life / of the dying -- nothing
+regrets -- People report regretting such things as -- forgoing a stimulating college major for one with better job prospects
+regrets -- People report regretting such things as -- marrying the wrong person
+regrets -- People report regretting such things as -- opting for a secure job near home over an adventurous position overseas
+regrets -- romantic = males, who are thought to be more promotion-oriented in relation to romance and sexual activity, tend to regret their failures to seize romantic opportunities, females are more likely to regret their past actions in this domain
+regrets https://walkerd.people.charleston.edu/317/Regrets2018.pdf
 regulatory crackdown
+regulatory focus
+relationships -- 4 questions to test the strength https://www.today.com/health/behavior/4-questions-test-relationship-strength-rcna202125
 relationships -- how to Avoid Falling in Love with a Jerk: The Foolproof Way to Follow Your Heart Without Losing Your Mind
+relationships -- love at first sight = a “fantasy” that can clash with the reality of day-to-day life
+relationships -- regrets -- Madame Bovary
 rent seeking https://en.wikipedia.org/wiki/Rent-seeking
 resentment = Resentment, born of weakness, harms no one more than the weak person himself (Nietzsche
 respect
@@ -913,12 +973,30 @@ scope–severity grid https://en.wikipedia.org/wiki/Global_catastrophic_risk#Def
 scrum
 scrum -- myths https://www.youtube.com/watch?v=mgMk3KBsxnQ
 scrum -- scrumbut = Scrum, but...
+sculpting = process whereby the artist releases an ideal figure from the block of stone
 second Law of Thermodynamics: The world tends towards disorder. That’s why your room becomes messier and messier over time. It’s also why an engine converts only ~35% of its energy into useful work. Time moves towards increasing one direction: increasing entropy.
 secrets are Hidden in Plain Sight:  Most people think of secrets as Easter eggs. They assume that if a secret is important, it’s necessarily going to be hard to find. The best ideas can come from things that are so well-known that they aren’t well-seen.
 seizing the means of production
 selectorate theory https://en.wikipedia.org/wiki/Selectorate_theory
+self -- 3 selves = ideal, actual/real, ought = A grasp of these three elements and the discrepancies between them provides a roadmap to understanding the individual’s sense of self and her characteristic emotions and patterns of behavior.
+self -- actual/real = representation of the attributes she (or others) believes she possesses
+self -- discrepancy -- ideal = causes dejection-related emotions such as sadness and disappointment
+self -- discrepancy -- ideal = promotion-focused
+self -- discrepancy -- ideal = the most important on dying
+self -- discrepancy -- ought = causes agitation-related emotions such as fear, guilt, and restlessness
+self -- discrepancy -- ought = prevention-focused
+self -- discrepancy -- ought vs ideal = immediate guilt, anxiety, and agitation that come from failures to live up to one’s duties and responsibilities are “hot” emotions that beg for quick resolution vs the slowly accumulating disappointment, discouragement, and dejection that come from failures to live up to one’s goals and aspirations are less likely to elicit the same immediate reactions. People may sometimes feel the urge to resolve their ideal-related regrets, but these typically take a backseat to more urgent and pressing ought-related regrets.2 As a result, although the initial sting of ought-related regrets may be more intense, ideal-related regrets may prove more bothersome—and more enduring in the long run
+self -- discrepancy = gaps between how an individual perceives her actual self and her ideal and ought selves lead to predictable patterns of negative emotions
+self -- ideal = individual’s dreams and aspirations, or the constellation of skills, traits, and resources that an individual ideally wishes to acquire
+self -- ideal = representation of the attributes she (or others) would ideally like to possess (e.g., her hopes, goals, aspirations, or wishes
+self -- ought = representation of the attributes she (or others) believes she should possess (e.g., her duties, obligations, and responsibilities)
+self -- self-acceptance
+self -- self-actualization
+self = socially constructed entity
 self appreciation
 self centered vs. take into account others (cf. woke salaryman)
+self defence -- reasonable
+self defence -- reasonable -- ex https://en.wikipedia.org/wiki/Killing_of_Yoshihiro_Hattori
 self love
 self-righteousness = attitude and belief of moral superiority derived from a person deeming their own beliefs, actions, or affiliations to be of greater virtue than those of others https://en.wikipedia.org/wiki/Self-righteousness
 sense-check = Before going too deep into solutions, align with your stakeholders on the problem. This saves time by avoiding working a lot just to find out that it’s highly contentious and there’s a different or better approach.
@@ -945,6 +1023,7 @@ signalling -- virtue https://en.wikipedia.org/wiki/Virtue_signalling
 significance https://www.explainxkcd.com/wiki/index.php/882:_Significant
 silent majority
 silver spoon
+simple vs complex causal domains
 simplicité -- exemple de croûton du pain = P1 laisse à P2 croyant qu'iel aime, P2 se force croyant que P1 n'aime pas
 simplicité = désirable, évite de tout le temps douter / lire entre les lignes
 simulation hypothesis https://en.wikipedia.org/wiki/Simulation_hypothesis
@@ -962,6 +1041,8 @@ social capital (white male)
 social debt = friends, family, and strangers who feel entitled to ask, beg, and steal https://collabfund.com/blog/rich-and-anonymous/
 social norm of reciprocity https://en.wikipedia.org/wiki/Norm_of_reciprocity
 social pressure / free will
+society -- high -- 400 = only 400 people in fashionable New York Society "If you go outside that number you strike people who are either not at ease in a ballroom or else make other people not at ease" https://en.wikipedia.org/wiki/The_Four_Hundred_(Gilded_Age)
+society -- high -- crème de la crème
 soft skills https://newsletter.weskao.com/p/how-to-give-a-senior-leader-feedback-without-getting-fired
 soft skills https://softskills.audio/
 solution / excuses
@@ -999,6 +1080,7 @@ Sun Tsu’s three rules of warfare -- Only fight when you know you will win: the
 support
 survival of the fittest / fit enough
 survivorship bias https://en.wikipedia.org/wiki/Survivorship_bias
+survivor’s guilt = the feeling of guilt that arises when a person survives a traumatic event while others do not https://en.wikipedia.org/wiki/Killing_of_Yoshihiro_Hattori#Aftermath
 SWOT
 SWOT "Strengths, Weaknesses, Opportunities, Threats"
 syndrome fée clochette https://www.psychologies.com/Couple/Seduction/Rencontres/Articles-et-Dossiers/Syndrome-de-la-fee-Clochette-ces-femmes-insatisfaites-et-en-manque-d-affection

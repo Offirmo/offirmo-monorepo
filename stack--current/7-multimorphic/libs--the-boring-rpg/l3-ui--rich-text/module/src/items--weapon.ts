@@ -81,7 +81,7 @@ function render_weapon_name(i: Immutable<Weapon>): RichText.Document {
 	if (i.slot !== InventorySlot.weapon)
 		throw new Error(`render_weapon(): can't render a ${i.slot}!`)
 
-	const _ = I18N_WEAPONS.en as any
+	const _ = I18N_WEAPONS['en'] as any
 	const b = _.weapon.base[i.base_hid]
 	const q1 = _.weapon.qualifier1[i.qualifier1_hid]
 	const q2 = _.weapon.qualifier2[i.qualifier2_hid]
@@ -104,9 +104,9 @@ function render_weapon_name(i: Immutable<Weapon>): RichText.Document {
 	}
 
 	const $doc = builder.done()
-	$doc.$sub.base = RichText.fragmentⵧinline().pushText(b).done()
-	$doc.$sub.q1 = RichText.fragmentⵧinline().pushText(q1).done()
-	$doc.$sub.q2 = RichText.fragmentⵧinline().pushText(q2).done()
+	$doc.$sub['base'] = RichText.fragmentⵧinline().pushText(b).done()
+	$doc.$sub['q1'] = RichText.fragmentⵧinline().pushText(q1).done()
+	$doc.$sub['q2'] = RichText.fragmentⵧinline().pushText(q2).done()
 
 	return $doc
 }

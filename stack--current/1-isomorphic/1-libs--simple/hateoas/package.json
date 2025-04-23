@@ -1,6 +1,5 @@
 {
-	"name": "@tbrpg/interfaces",
-	"description": "TBRPG interfaces for advanced features, ex. persistence",
+	"name": "@offirmo-private/hateoas",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -8,29 +7,26 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts"
+		".": "./module/src/types.ts"
 	},
-	"source": "module/src/index.ts",
+	"source": "module/src/types.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@tbrpg/state": "*",
-		"@tbrpg/state--character": "*",
-		"tiny-invariant": "^1",
-		"typescript-string-enums": "^1"
+		"@offirmo-private/state-utils": "*",
+		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@tbrpg/interfaces\" && tsc --noEmit",
+		"check--ts": "echo \"@offirmo-private/hateoas\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"_check": "run-s check--ts"
+		"_check": "run-s check--ts",
+		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/timestamps": "*",
-		"@offirmo-private/ts-types": "*",
-		"@offirmo-private/uuid": "*",
+		"@offirmo-private/ts-types-web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@oh-my-rpg/state--engagement": "*",
 		"npm-run-all": "^4",
