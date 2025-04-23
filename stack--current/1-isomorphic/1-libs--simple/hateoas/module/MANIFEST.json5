@@ -1,3 +1,4 @@
 {
+	description: 'A reinvention of hypertext to enable advanced HATEOAS web applications',
 	status: 'tech-demo',
 }

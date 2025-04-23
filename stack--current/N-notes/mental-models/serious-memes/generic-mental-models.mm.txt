@@ -758,6 +758,10 @@ paradox of Abundance: The average quality of information is getting worse and wo
 paradox of Consensus: Under ancient Jewish law, if a suspect was found guilty by every judge, they were deemed innocent. Too much agreement implied a systemic error in the judicial process. Unanimous agreement sometimes leads to bad decisions.
 paradox of Specificity: Focus isn’t as constraining as it seems. In the age of the Internet, when everybody has Google search and personalized social media feeds, differentiation is free marketing. The more specific your goal, the more opportunities you’ll create for yourself. Narrowing your aperture can expand your horizons.
 pardon pas oubli
+parenting -- concerted cultivation https://en.wikipedia.org/wiki/Concerted_cultivation
+parenting -- https://en.wikipedia.org/wiki/Slow_parenting
+parenting -- https://en.wikipedia.org/wiki/Social_stratification
+parenting overparenting https://en.wikipedia.org/wiki/Helicopter_parent
 Pareto
 Pareto efficiency
 Parkinson’s Law: Work expands to fill the time available. People don’t want to look like they’re lazy, so they find extra tasks to tackle, even if they’re trivial. If you have six months to complete a project, it will take six months to complete. Set deadlines accordingly.
@@ -845,14 +849,6 @@ preference Falsification: People lie about their true opinions and conform to so
 preferential attachment / effet Matthieu
 presentations -- "so what?" after every slide
 pretty privilege -> karen
-parenting overparenting https://en.wikipedia.org/wiki/Helicopter_parent
-parenting -- https://en.wikipedia.org/wiki/Social_stratification
-parenting -- https://en.wikipedia.org/wiki/Slow_parenting
-parenting -- concerted cultivation https://en.wikipedia.org/wiki/Concerted_cultivation
-stereotypes -- karen = difficult / unreasonable white women, "speak to the manager" a middle class woman who is perceived as entitled or excessively demanding, racist https://en.wikipedia.org/wiki/Karen_(slang)
-stereotypes -- karen -- Miss Ann / Becky / Barbecue Becky / Cornerstore Caroline / Permit Patty
-stereotypes -- karen -- https://en.wikipedia.org/wiki/Central_Park_birdwatching_incident
-stereotypes -- soccer mom https://en.wikipedia.org/wiki/Soccer_mom
 prig = self-righteously moralistic person who behaves as if superior to others
 primals https://myprimals.com https://templetonreligiontrust.org/explore/discovering-peoples-primal-world-beliefs/
 primate dominance hierarchy = At the end of the day we’re all just mammals trying to map every organization we’re a part of onto a primate dominance hierarchy https://blog.staysaasy.com/p/a-practical-guide-to-executive-presence-1de
@@ -1031,6 +1027,7 @@ sinecure = position with a ~salary that requires or involves little or no respon
 Situation Complication Question Answer (SCQA) = A Framework For Defining Problems & Hypotheses https://strategyu.co/scqa-a-framework-for-defining-problems-hypotheses/
 skin in the game
 skin in the game -- absorbing barrier = anything that prevents people with skin in the game from emerging from it, and to which the system will invariably tend. Let us call these situations ruin, as the entity cannot emerge from the condition https://en.wikipedia.org/wiki/Ergodic_hypothesis#Ergodic_hypothesis_in_finance
+slavery -- USA https://en.wikipedia.org/wiki/Slavery_in_the_United_States
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 sleep on it
 SMART goal-setting framework
@@ -1066,6 +1063,10 @@ standing on the shoulders of giants https://en.wikipedia.org/wiki/Standing_on_th
 start with the most risky / complicated
 start with why
 statistical significance
+stereotypes -- karen -- https://en.wikipedia.org/wiki/Central_Park_birdwatching_incident
+stereotypes -- karen -- Miss Ann / Becky / Barbecue Becky / Cornerstore Caroline / Permit Patty
+stereotypes -- karen = difficult / unreasonable white women, "speak to the manager" a middle class woman who is perceived as entitled or excessively demanding, racist https://en.wikipedia.org/wiki/Karen_(slang)
+stereotypes -- soccer mom https://en.wikipedia.org/wiki/Soccer_mom
 Stigler's law of eponymy = inventor = the one who bring to attention, not the discoverer https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy
 stoicism -- Rudyard Kipling "If" https://en.wikipedia.org/wiki/If%E2%80%94
 straw-dog proposal = (biz jargon) a brainstormed simple draft proposal intended to generate discussion of its disadvantages and to spur the generation of new and better proposals https://en.wikipedia.org/wiki/Straw_man_proposal  https://www.linkedin.com/pulse/straw-man-versus-straw-dog-michael-schwartz/
