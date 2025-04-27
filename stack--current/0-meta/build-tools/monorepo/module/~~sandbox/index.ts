@@ -47,6 +47,7 @@ async function refreshꓽmonorepo() {
 	// _aliases--projects.sh
 	const aliases: string[] = []
 	const radix_set = new Set<string>()
+	let last_workspace = ''
 	for (const pure_module_details of Object.values(PURE_MODULE__DETAILS)) {
 		const dest_dir = path.dirname(pure_module_details.root‿abspath)
 		const relpath = path.relative(MONOREPO_ROOT, dest_dir)
@@ -66,14 +67,22 @@ async function refreshꓽmonorepo() {
 		}
 		radix = radix + (dedupe > 1 ? String(dedupe) : '')
 		radix_set.add(radix)
+		const workspace = relpath_split[0]
+		const subfolder = relpath_split.slice(1).join(path.sep)
+		if (workspace !== last_workspace) {
+			last_workspace = workspace
+			aliases.push('') // separator for readability
+		}
 		const alias = [
 			'alias',
 			`mono${radix}='cd`.padStart(15),
 			`~/${path.relative(process.env['HOME']!, MONOREPO_ROOT)}/;`,
 			'nvm use;',
 			'git--offirmo.sh;',
-			`cd ${relpath_split.slice(0, -2).join(path.sep)}/;`.padEnd(24),
-			`cd ${relpath_split.slice(-2).join(path.sep)}/;`.padEnd(60),
+			(
+				`cd ${workspace}/;`.padEnd(22)
+				+ `cd ${subfolder}/;`
+			).padEnd(22 + 60),
 			`tabset --badge mono${radix}'` //  --color "#006EDB" https://github.com/jonathaneunice/iterm2-tab-set
 		].join(' ')
 		aliases.push(alias)

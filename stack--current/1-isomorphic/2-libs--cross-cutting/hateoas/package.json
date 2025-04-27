@@ -1,5 +1,6 @@
 {
 	"name": "@offirmo-private/hateoas",
+	"description": "A reinvention of hypertext to enable advanced HATEOAS web applications",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -14,7 +15,6 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/state-utils": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
@@ -22,10 +22,13 @@
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s check--ts",
-		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts"
+		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts",
+		"sb1": "node --experimental-strip-types ./module/src/~~sandbox/example--check-for-update/index.ts",
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/rich-text-format": "*",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo-private/ts-types-web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@oh-my-rpg/state--engagement": "*",

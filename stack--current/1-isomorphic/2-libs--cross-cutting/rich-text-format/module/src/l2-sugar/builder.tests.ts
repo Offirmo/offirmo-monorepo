@@ -53,6 +53,26 @@ describe(`${LIB} -- sugar -- builder`, () => {
 			expect($doc.$hints).to.deep.equal({ uuid: '1234' })
 			expect($doc.$content).to.equal('⎨⎨sub⎬⎬')
 		})
+
+		it('should work -- from content: multiple nodes (list) -- array', () => {
+			const $doc = RichText.listⵧordered([
+				42,
+				'foo',
+			]).done()
+
+			expect(isꓽNode($doc)).to.be.true
+			expect(renderⵧto_text($doc)).to.equal('- 42\n- foo')
+		})
+
+		it('should work -- from content: multiple nodes (list) -- k/v', () => {
+			const $doc = RichText.listⵧordered({
+				class: 'foo',
+				lvl: 42,
+			}).done()
+
+			expect(isꓽNode($doc)).to.be.true
+			expect(renderⵧto_text($doc)).to.equal('class..foo\nlvl.....42')
+		})
 	})
 
 	describe('pushText()', function () {

@@ -1,5 +1,5 @@
 import type { Immutable } from '@offirmo-private/ts-types'
-import type { Uri‿x, Hyperlink } from '@offirmo-private/ts-types-web'
+import { type Uri‿x, type Hyperlink, promote_toꓽhyperlink } from '@offirmo-private/ts-types-web'
 
 import {
 	type BaseRenderingOptions,
@@ -34,7 +34,7 @@ interface EmbeddedReducerAction {
 }
 // the final action yielded by this renderer
 interface ReducerAction extends BaseAction, EmbeddedReducerAction {
-	type: 'action' // in the sense of reducer(action)
+	type: 'reduce' // in the sense of reducer(action)
 }
 
 type Action =
@@ -51,14 +51,12 @@ const DEFAULT_RENDERING_OPTIONSⵧToActions= Object.freeze<RenderingOptionsⵧTo
 		const actions: Action[] = []
 
 		if ($node.$hints['href']) {
+			// this node is a hyperlink to something
 			const raw_link = $node.$hints['href']
-			const hyperlink: Hyperlink = Object.hasOwn(raw_link as any, 'href') // TODO type guard for Hyperlink
-				? (raw_link as Hyperlink)
-				: {
-					// TODO default CTA from $node itself?
-					href: raw_link as Uri‿x, // TODO escaping for security? (This is debug, see React renderer which will do)
-					rel: [],
-				}
+			// TODO promote
+			const hyperlink: Hyperlink = promote_toꓽhyperlink(raw_link, {
+				// TODO default CTA from $node itself?
+			})
 			actions.push({
 				$node,
 				type: 'hyperlink',
@@ -69,10 +67,10 @@ const DEFAULT_RENDERING_OPTIONSⵧToActions= Object.freeze<RenderingOptionsⵧTo
 		if ($node.$hints['actions']) {
 			actions.push(...$node.$hints['actions'].map((action: EmbeddedReducerAction): ReducerAction => {
 				return {
-					// TODO default CTA from $node itself?
+					// TODO default CTA from $node itself
 					...action,
 					$node,
-					type: 'action',
+					type: 'reduce',
 				}
 			}))
 		}

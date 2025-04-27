@@ -6,6 +6,7 @@ Goal:
 * new Hypermedia format to be used as "representation" for **true** REST / HATEOAS architecture
   * would need a new kind of browser, of course
 
+
 ### existing
 * ancestor: hypercard
 * HTML
@@ -21,7 +22,9 @@ We want more.
 
 * new Hypermedia format to be used as "representation" for **true** REST / HATEOAS architecture
   * would need a new kind of browser, of course
-* should be generic to be used in both terminal, chat-like interface, web app, mobile app
+  * REST: stateless, cacheable, uniform interface
+  * HATEOAS: avoid state as much as possible at all level, try to help the layer above to avoid state
+* should be generic to be used in both terminal, chat-like interface, web app, mobile app…
 * JSON based (obviously)
 * would always have a text representation
   * with optional enrichments as supported by the "browser", but would have a fallback representation
@@ -49,6 +52,8 @@ We want more.
   * auto-dismiss?
   * ...
 * push from server
+* resrc + pending engagements
+
 
 recommended design?
 chain of resources with "continue-to" or actions/engagements?

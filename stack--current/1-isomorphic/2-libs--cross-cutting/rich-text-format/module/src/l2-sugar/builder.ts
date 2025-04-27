@@ -47,7 +47,7 @@ interface Builder {
 	pushLineBreak(): Builder
 
 	pushKeyValue(key: SubNode, value: SubNode, options?: Immutable<CommonOptions>): Builder
-	//pushListItem No! this is an internal node type, just use pushNode(1, 'xxx') instead
+	//pushListItem No! this is an internal node type, just use pushRawNode()/pushKeyValue() instead
 
 	// node ref is auto added into content
 	pushNode(node: SubNode, options?: Immutable<Pick<CommonOptions, 'id'>>): Builder
@@ -323,16 +323,41 @@ function fragmentⵧblock(content?: Immutable<NodeLike>): Builder {
 function heading(content?: Immutable<NodeLike>): Builder {
 	return _create(NodeType.heading, content)
 }
-function listⵧordered(): Builder {
-	return _create(NodeType.ol)
+
+// reminder: lists should then be pushed pushRawNode/pushRawNodes/pushKeyValue
+function listⵧordered(content?: Immutable<
+	| Array<NodeLike> // items
+	| Record<string, NodeLike> // KV
+>): Builder {
+	const list = _create(NodeType.ul)
+	if (content) {
+		if (Array.isArray(content)) {
+			;(content as Array<NodeLike>).forEach((item) => list.pushRawNode(item))
+		}
+		else {
+			Object.entries(content as Record<string, NodeLike>).forEach(([key, value]) => list.pushKeyValue(key, value))
+		}
+	}
+	return list
 }
-function listⵧunordered(): Builder {
-	return _create(NodeType.ul)
+function listⵧunordered(content?: Immutable<
+	| Array<NodeLike> // items
+	| Record<string, NodeLike> // KV
+>): Builder {
+	const list = _create(NodeType.ul)
+	if (content) {
+		if (Array.isArray(content)) {
+			;(content as Array<NodeLike>).forEach((item) => list.pushRawNode(item))
+		}
+		else {
+			Object.entries(content as Record<string, NodeLike>).forEach(([key, value]) => list.pushKeyValue(key, value))
+		}
+	}
+	return list
 }
 // reminder: hr is through pushHorizontalRule
 
 // reminder: br is through pushLineBreak
-// reminder: li is through pushListItem
 
 function keyꓺvalue(key: SubNode, value: SubNode): Builder {
 	return fragmentⵧblock() // K/V are meant to be separated, they can't be inline

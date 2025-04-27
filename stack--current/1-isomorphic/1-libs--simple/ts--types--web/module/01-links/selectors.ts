@@ -49,15 +49,16 @@ function promote_toꓽscheme_specific_part(uri: Uri‿x): SchemeSpecificURIPart 
 }
 
 // promote to the most expressive of "X"
-function promote_toꓽhyperlink(link: Hyperlink‿x): Hyperlink {
+function promote_toꓽhyperlink(link: Hyperlink‿x, hints: Partial<Omit<Hyperlink, 'href'>> = {}): Hyperlink {
 	if (isꓽHyperlink(link))
 		return link
 
 	const href = promote_toꓽscheme_specific_part(link)
 
 	return {
-		href,
 		rel: [],
+		...hints,
+		href,
 	}
 }
 

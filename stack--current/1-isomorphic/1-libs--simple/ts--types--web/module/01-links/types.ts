@@ -13,6 +13,7 @@ type Url‿str = Uri‿str
 
 ////////////
 
+// ex. /foo?sort=asc#bar
 interface SchemeSpecificURIPart {
 	// TODO clarify encoding
 	// TODO https://blog.whatwg.org/url-pattern-standard
@@ -72,8 +73,15 @@ type LinkRelation =
 	// ultimately, everything is valid
 	//| string
 
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/target
+type LinkTarget =
+	// https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#target
+	| '_self'   // The current browsing context. (Default)
+	| '_blank'  // Usually a new tab, but users can configure browsers to open a new window instead.
+	| '_parent' // The parent browsing context of the current one. If no parent, behaves as _self.
 
-/** A more generic hyperlink than HTML's <a> following hypermedia theory
+
+	/** A more generic hyperlink than HTML's <a> following hypermedia theory
  * see https://hypermedia.systems/
  */
 interface Hyperlink extends WithLang {
@@ -87,7 +95,7 @@ interface Hyperlink extends WithLang {
 	cta?: string // if present, replace / complement the anchor content
 	// TODO label?
 
-	target?: never // TODO clarify
+	target?: LinkTarget
 
 	// referrer TODO
 	// opener TODO
@@ -141,6 +149,7 @@ export {
 	type Uri‿x,
 
 	type LinkRelation,
+	type LinkTarget,
 	type Hyperlink,
 	type Hyperlink‿x,
 
