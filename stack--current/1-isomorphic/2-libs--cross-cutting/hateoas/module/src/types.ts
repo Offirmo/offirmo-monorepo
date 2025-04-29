@@ -3,8 +3,10 @@ import type { Immutable, JSONPrimitiveType } from '@offirmo-private/ts-types'
 import type { Node as RichTextNode } from '@offirmo-private/rich-text-format'
 
 import {
+	type Uri‿x,
+	type Hyper,
 	type Hyperlink as _Hyperlink,
-	type Action, type Uri‿x,
+	type Action,
 } from '@offirmo-private/ts-types-web'
 import {
 	type TrackedEngagement,
@@ -16,7 +18,6 @@ import {
 type HyperMedia = RichTextNode
 
 /////////////////////////////////////////////////
-
 
 // ex. ack "your request has been received"
 // ex. wait "processing..."
@@ -39,11 +40,31 @@ interface HyperLink extends _Hyperlink {
 /////////////////////////////////////////////////
 
 type InputType =
-	// inspired by HTML5 input types
+	| 'string' // any string (not recommended)
+	| 'string--email'
+	| 'string--url'
+	| 'string--url--http'
+	| 'string--password'
+	| 'number' // any number (not recommended)
+	// useful for selecting an installer or an app store
+	// will be auto-populated
+	| 'env--os'
+	| 'env--arch'
+
+	// TODO inspired by HTML5 input types
+/*	| 'text'
+	| 'checkbox'
+	| 'radio'
+	| 'select'
+	| 'textarea' */
 // TODO add more types
 
-interface InputSpec {
-	// TODO one day
+interface InputSpec<T = any> {
+	type: InputType
+	intent?: 'new' | 'update' | 'change' // useful for UI
+	normalizers?: string[] // pre-defined normalizers (TODO)
+	existing?: T // useful in case [intent = change] to discourage using the same value or move it last in UI
+	default?: T // ~suggested
 }
 
 // anything not hypermedia.GET
@@ -53,25 +74,24 @@ interface InputSpec {
 // this is intentional as the point is to decouple client & server
 // actions dispatched from the client should originate from the server
 // so the client shouldn't have to know about strict typing
-interface HyperActionCandidate {
+interface HyperActionCandidate extends Hyper {
 	type: string // TODO standardize refresh, about, faq (from rel)
 
-	// presentation
-	cta?: string // optional bc should ideally be derived from the action (esp. for i18n) BUT same action could have different CTA following the context (ex. equip best equipment)
-
 	// requirements
-	input?: Record<string, InputSpec>// the data of the action, could be anything
+	input?: Record<string, InputSpec>// the data of the action, could be anything (or nothing)
 
 	// aftermath
-	href?: Uri‿x // optional URL to navigate to following the action
-	// TODO feedback engagement? Or in an extension of this?
+	feedback?: {
+		href?: Uri‿x // optional URL to navigate to following the action
+		// TODO feedback engagement? Or in an extension of this?
+	}
 }
 
 // constructed from the above
 interface HyperAction {
 	type: string
 
-	payload: Record<string, JSONPrimitiveType>
+	payload?: Record<string, JSONPrimitiveType>
 }
 
 /////////////////////////////////////////////////

@@ -1,6 +1,7 @@
 [ ] https://basecamp.com/books
 [ ] https://basecamp.com/books ++ Getting Real https://basecamp.com/gettingreal
 [ ] https://skamille.medium.com/
+[ ] https://stratechery.com/category/year-in-review/
 [ ] personal MBA
 [ ] strategy https://stratechery.com/
 adaptability = turn the challenges into opportunities
@@ -129,9 +130,11 @@ kodak moment
 land grab https://fastercapital.com/topics/understanding-the-concept-of-land-grab-strategies.html
 layers in the stack between humans and the money -- for every layer: dominate it or commoditize it
 layers in the stack between humans and the money = ex. Google Human - device – OS – browser – bandwidth –  websites - ads – ad tech – relationship to advertiser – $$$ https://cdixon.org/2009/12/30/whats-strategic-for-google
+leadership -- failure -- Quantas example https://www.australianfrequentflyer.com.au/the-chairmans-lounge-joe-aston-book-review/
 learning from users https://paulgraham.com/users.html
 lock-in
 lock-in -- vendor
+looking like a toy = Disruptive technologies are dismissed as toys because when they are first launched they “undershoot” user needs https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy
 M&A
 M&A -- Apple
 M&A -- fb / insta https://www.linkedin.com/posts/olivermolander_technology-facebook-instagram-activity-7241726426826059776-IOE4
@@ -249,6 +252,7 @@ scale frontiers - 04 Large Orgs
 scaling -- managers who get promoted quickly into upper manager and leader positions often try to apply what worked locally to what might feasibly work globally. When that fails, their first instinct is to carve out the autonomy and boundaries they once enjoyed as managers of smaller teams, which works in the short term but can lead to problems when collaborating across messier boundaries.
 second product -- syndrome https://www.hubspot.com/startups/resources/second-product-tips-for-success
 second product -- When and How https://caseyaccidental.com/second-products/
+seed money -- how much? https://cdixon.org/2009/12/28/whats-the-right-amount-of-seed-money-to-raise
 shared vision = maintaining a shared vision across the board to help stay on course
 shutting down https://cdixon.org/2010/01/09/shutting-down
 side -- dark side = selling the users https://www.androidpolice.com/mozilla-firefox-new-privacy-terms-raise-red-flags/
@@ -265,6 +269,7 @@ strategy -- 02 "how we win"
 strategy -- bowling pin = starts with a niche segment easily attainable then move to next niche or broader market
 strategy -- evergreen vs cyclic
 strategy -- red ocean vs blue ocean https://www.blueoceanstrategy.com/tools/red-ocean-vs-blue-ocean-strategy/
+strategy tax = negative pattern in a big company where every project / new product has to synergise/contribute to the cash-cow product = can be killer
 support loops = ex. help desk + social media + phone etc.
 system of work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams
 target

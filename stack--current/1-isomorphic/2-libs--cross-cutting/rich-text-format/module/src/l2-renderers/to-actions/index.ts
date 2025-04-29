@@ -1,5 +1,5 @@
 import type { Immutable } from '@offirmo-private/ts-types'
-import { type Uri‿x, type Hyperlink, promote_toꓽhyperlink } from '@offirmo-private/ts-types-web'
+import { type Hyper, type Hyperlink, promote_toꓽhyperlink } from '@offirmo-private/ts-types-web'
 
 import {
 	type BaseRenderingOptions,
@@ -12,7 +12,7 @@ import type { CheckedNode, NodeLike } from '../../l1-types/index.ts'
 /////////////////////////////////////////////////
 
 interface BaseAction {
-	$node: Immutable<CheckedNode> // the node where this action was found
+	$node: Immutable<CheckedNode> // the node where this action was found TODO review needed?
 
 	// TODO add UI options? ex. pretend to work?
 	// or an auto engagement? (see state--engagement)
@@ -26,20 +26,15 @@ interface HyperlinkAction extends BaseAction {
 	// TODO meta data? TODO identify use cases
 }
 
-// the data to embed as "hint"
-interface EmbeddedReducerAction {
-	cta?: string // optional bc should ideally be derived from the action (esp. for i18n) BUT same action could have different CTA following the context (ex. equip best equipment)
-	payload: any // the data of the action, could be anything
-	href?: Uri‿x // optional URL to navigate to following the action
-}
 // the final action yielded by this renderer
-interface ReducerAction extends BaseAction, EmbeddedReducerAction {
+interface ReduceAction extends BaseAction {
 	type: 'reduce' // in the sense of reducer(action)
+	action: Hyper
 }
 
 type Action =
 	| HyperlinkAction
-	| ReducerAction
+	| ReduceAction
 
 interface RenderingOptionsⵧToActions extends BaseRenderingOptions {
 	getꓽactions: (node: Immutable<CheckedNode>) => Action[] // will be executed on every node
@@ -65,12 +60,12 @@ const DEFAULT_RENDERING_OPTIONSⵧToActions= Object.freeze<RenderingOptionsⵧTo
 		}
 
 		if ($node.$hints['actions']) {
-			actions.push(...$node.$hints['actions'].map((action: EmbeddedReducerAction): ReducerAction => {
+			actions.push(...$node.$hints['actions'].map((action: Hyper): ReduceAction => {
 				return {
 					// TODO default CTA from $node itself
-					...action,
 					$node,
 					type: 'reduce',
+					action,
 				}
 			}))
 		}
@@ -140,7 +135,7 @@ function renderⵧto_actions($doc: Immutable<NodeLike>, options: Partial<Renderi
 
 export {
 	type HyperlinkAction,
-	type ReducerAction, type EmbeddedReducerAction,
+	type ReduceAction, type EmbeddedReducerAction,
 	type Action,
 	type RenderingOptionsⵧToActions,
 

@@ -1,15 +1,27 @@
 import * as RichText from '@offirmo-private/rich-text-format'
 import type {
+	SemVer,
+} from '@offirmo-private/ts-types'
+import type {
 	HyperMedia,
-	HATEOASServer
+	HyperActionCandidate,
+	HyperAction,
+	HATEOASServer,
+	HATEOASPendingEngagement,
+	HyperLink,
 } from '../../../types.ts'
-import { Hyperlink, HyperActionCandidate } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 
 function backend() {
 	return {
-
+		async ↆgetꓽproducts(): Promise<Record<string, SemVer>> {
+			return {
+				'Webstorm': '2024.3.5',
+				'JetBrains Gateway': '2024.3.2',
+				'IntelliJ IDEA': '2024.3.5',
+			}
+		}
 	}
 }
 
@@ -19,12 +31,7 @@ function backend() {
 function createꓽserver(): HATEOASServer {
 
 	const ↆget: HATEOASServer['ↆget'] = async (url = '/') => {
-
-		const data: Record<string, string> = {
-			'Webstorm': '2024.3.5',
-			'JetBrains Gateway': '2024.3.2',
-			'IntelliJ IDEA': '2024.3.5',
-		}
+		const data = await backend().ↆgetꓽproducts()
 
 		const _doc = RichText.listⵧordered()
 		Object.entries(data).forEach(([name, version]) => {
@@ -36,12 +43,13 @@ function createꓽserver(): HATEOASServer {
 					underlying: version,
 				})
 				.done()
-			_doc.push(
+			_doc.pushRawNode(
 				RichText.fragmentⵧinline()
 					.pushNode($name, { id: 'name' })
 					.pushText(' ')
 					.pushNode($version, { id: 'version' })
-					.done()
+					.done(),
+				{ id: name },
 			)
 		})
 
@@ -51,7 +59,7 @@ function createꓽserver(): HATEOASServer {
 		})
 
 		// related actions
-		const links: Array<Hyperlink> = [
+		const links: Array<HyperLink> = [
 			{
 				href: 'https://jb.gg/toolbox-app-faq',
 				rel: ['about', 'external', 'noopener'], // TODO some defaults could be inferred from the href
@@ -61,10 +69,20 @@ function createꓽserver(): HATEOASServer {
 		]
 		const actions: Array<HyperActionCandidate> = [
 			{
-				type: 'refresh',
+				type: 'refresh', // really?
 				cta: 'Check for updates',
-				shortcut: 'Apple+R',
-				feedback: 'Checking for updates…',
+				shortcut: 'Apple+R', // needed? inferrable? too specific? conflicts?
+
+				input: {
+					'os': {},
+					'arch': {},
+				},
+
+				feedback: {
+					type: 'background',
+					type: 'loader',
+					summary: 'Checking for updates…',
+				},
 			},
 		]
 		_doc.addHints({
@@ -76,6 +94,9 @@ function createꓽserver(): HATEOASServer {
 	}
 
 	const dispatch: HATEOASServer['dispatch'] = async (action) => {
+		console.log(`Server: asked to dispatch action…`, action)
+
+		// TODO return engagement pending action
 		throw new Error(`Not implemented!`)
 	}
 

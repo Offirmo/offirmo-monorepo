@@ -271,6 +271,8 @@ defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actu
 demos
 dependencies
 dependency -- hell https://en.wikipedia.org/wiki/Dependency_hell
+dependency -- transitive problem https://htmx.org/essays/vendoring/
+dependency -- vendoring = a technique where you copy the source of another project directly into your own project https://htmx.org/essays/vendoring/
 dependency injection -- containers = frameworks that manage the dependencies of objects https://blog.ploeh.dk/2014/06/10/pure-di/
 dependency injection -- pure = no framework https://blog.ploeh.dk/2014/06/10/pure-di/
 dependency injection -- vs. func = if magic, makes everything functionally impure https://blog.ploeh.dk/2017/01/30/partial-application-is-dependency-injection/

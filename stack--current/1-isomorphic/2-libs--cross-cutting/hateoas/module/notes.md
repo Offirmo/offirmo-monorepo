@@ -20,6 +20,8 @@ Goal:
 
 We want more.
 
+See all the essays in https://htmx.org/essays/
+
 * new Hypermedia format to be used as "representation" for **true** REST / HATEOAS architecture
   * would need a new kind of browser, of course
   * REST: stateless, cacheable, uniform interface
@@ -33,10 +35,11 @@ We want more.
       * landscape
     * soundscape
     * ...
+* keep the semantic!
 * mutations not limited to PUT/POST/DELETE, also RPC/action
   * not restricted to <a> & <form>
 * optionally code-on-demand? (lazy loading?)
-* would not need a full screen refresh
+* would not need a full screen refresh (the case for SPA)
   * tabs? trees? tables?
   * frames/widgets?
   * tooltips? ("floating UI" https://floating-ui.com/)
@@ -48,11 +51,24 @@ We want more.
   * popover
   * announcement
   * cutscene
+  * skippable
+  * possibility of aborting? (difficult)
   semantic_level?: 'error' | 'warning' | 'info' | 'success',
   * auto-dismiss?
   * ...
-* push from server
-* resrc + pending engagements
+* push from server (the other missing case)
+* rsrc + pending engagements
+* offline first
+* progressive enhancement
+* improved concept of "session"
+  * not tied to tab life
+    * bc for ex. if tab left for a long time, may be considered a new session
+    * also bc we want to embrace "multi tab" work = no need to have several recaps or notifs
+  * also concept of recap
+* ideally should embed the concept of notifications as well
+* And don't forget!
+  * cool!
+  * whimsical!
 
 
 recommended design?

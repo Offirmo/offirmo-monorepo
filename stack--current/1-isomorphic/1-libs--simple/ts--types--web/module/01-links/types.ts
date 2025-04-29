@@ -68,32 +68,40 @@ type LinkRelation =
 	| 'opener' // Indicates that any newly created top-level browsing context which results from following the link will be an auxiliary browsing context.
 	| 'section' // Refers to a section in a collection of resources.'
 	// TODO one day look into webmention, "Linkback" mechanism to the ones of Refback, Trackback, and Pingback
-	// special Offirmo HATEOAS
-	| 'continue-to' // automatically navigates to this resource once the current one is displayed
 	// ultimately, everything is valid
 	//| string
+	// special Offirmo HATEOAS
+	| 'continue-to' // automatically navigates to this resource once the current one is displayed
 
-// https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/target
+// inspired by https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/target
 type LinkTarget =
-	// https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#target
-	| '_self'   // The current browsing context. (Default)
+	// from https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#target
+	| '_self' // The current browsing context (default)
 	| '_blank'  // Usually a new tab, but users can configure browsers to open a new window instead.
 	| '_parent' // The parent browsing context of the current one. If no parent, behaves as _self.
+	| '_top'    // The topmost browsing context. To be specific, this means the "highest" context that's an ancestor of the current one. If no ancestors, behaves as _self.
+	| string // The name of a browsing context (window or tab) in which to display the resource. If no such context exists, the user agent will create one with that name
+	// special Offirmo HATEOAS
+	| '_root' // the closest root, ~to a webapp (may not be the topmost HATEOAS context) = needed for immersion, ex. full-screen cutscene
 
-
-	/** A more generic hyperlink than HTML's <a> following hypermedia theory
+/** A more generic hyperlink than HTML's <a> following hypermedia theory
  * see https://hypermedia.systems/
  */
-interface Hyperlink extends WithLang {
-	href: Uri‿x
+interface Hyper {
+	// hyper target of this
+	href?: Uri‿x // optional bc can sometimes be inferred = current
+
+	// presentation
+	cta?: string // optional bc should ideally be derived from the action (esp. for i18n) BUT same action could have different CTA following the context (ex. equip best equipment)
+	shortcut?: string // TODO 1D format
+}
+interface Hyperlink extends Hyper, WithLang {
+	href: Uri‿x // mandatory for this subtype
 
 	/**
 	 * https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel
 	 */
 	rel: LinkRelation[] // https://www.iana.org/assignments/link-relations/link-relations.xhtml
-
-	cta?: string // if present, replace / complement the anchor content
-	// TODO label?
 
 	target?: LinkTarget
 
@@ -111,8 +119,6 @@ interface Hyperlink extends WithLang {
 	// ping
 	// referrer policy
 	// attribution https://wicg.github.io/attribution-reporting-api/?sjid=5871821160398133867-AP#monkeypatch-attributionsrc
-
-	// reducer action?
 }
 
 // "x" = "any [kind of format]"
@@ -147,6 +153,8 @@ export {
 	type Uri‿str, type Url‿str,
 	type SchemeSpecificURIPart,
 	type Uri‿x,
+
+	type Hyper,
 
 	type LinkRelation,
 	type LinkTarget,

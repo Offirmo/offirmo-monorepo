@@ -13,6 +13,15 @@ interface Engagement<TextFormat> {
 	// ↳ in this case, this field can be seen as an a11y "alt" text
 	summary: TextFormat
 
+	role: // "who" is "speaking"
+	// use case 1: if displayed on a chat-like interface, which side should it be displayed on?
+	// use case 2: if presented to a LLM, who is the one speaking? (see Google type AIAssistantPromptRole = 'system' | 'user' | 'assistant')
+		| 'assistant' // most standard case
+		| 'system'    // system, narrator
+		| 'user'      // rare but useful ex. when paraphrasing a choice from the user as the user's own words
+
+	success?: boolean // if present, identify this engagement as a success/failure message
+
 	// semantic infos
 	flow: // How is this engagement related to the current user's flow of action + intent?
 		| 'main' // directly flowing from the current flow + intent, ex. a direct answer to a user's question
@@ -28,15 +37,6 @@ interface Engagement<TextFormat> {
 		| 'intro'        // should only be displayed ONCE, at the beginning of the flow. The client is to keep track of this. Ex. "Welcome to the app!" or a recap of the story so far. The client must NEVER ack it to not change the state on loading. Instead, it should be ignored.
 		| 'transition'   // should only be displayed BETWEEN navigations/refreshes. The client is to keep track of this. Ex. a hyperspace animation while navigating BETWEEN 2 planets but not when we load initially (we WERE on the planet). The client must ack it even if not displayed.
 		| 'pre'          // should be displayed+resolved BEFORE/ABOVE(masking) the resource, ex. a spoiler alert or content warning.
-
-	role: // "who" is "speaking"
-			// use case 1: if displayed on a chat-like interface, which side should it be displayed on?
-			// use case 2: if presented to a LLM, who is the one speaking? (see Google type AIAssistantPromptRole = 'system' | 'user' | 'assistant')
-		| 'assistant' // most standard case
-		| 'system'    // system, narrator
-		| 'user'      // rare but useful ex. when paraphrasing a choice from the user as the user's own words
-
-	success?: boolean // if present, this engagement is a success/failure message
 
 	// TODO should be mandatory?
 	attention_needed?: // level of attention needed https://docs.google.com/spreadsheets/d/1Bc32plQTswNdCqXS99deB0n7Te7FfD7uepGAOOlPbvY/
@@ -56,6 +56,7 @@ interface Engagement<TextFormat> {
 	// hints for optional enhancements
 	enhancements?: {
 		key?: string // for ex. to recognize a specific template (do not abuse! Reminder to keep everything text-compatible)
+
 		vibrate?: { duration‿ms: 'auto' | number, alt: string },
 		play_sound?: { url: Url‿str, alt: string },
 		play_video?: { url: Url‿str, alt: string },

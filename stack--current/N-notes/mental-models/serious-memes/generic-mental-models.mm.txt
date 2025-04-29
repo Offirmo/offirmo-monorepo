@@ -89,6 +89,7 @@ Babbitt = person and especially a business or professional man who conforms unth
 bad randomness -- color + single digit = blue & 7
 bad randomness -- tool + color = hammer red
 baker’s dozen: The key to good hospitality is to delight your guests with an unexpected gift. If you run a hotel, leave a chocolate on the bed. If you run a bakery, give your customers one extra bagel. If you write a tweetstorm, share an extra idea.
+balayer devant sa porte
 Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 barbarians at the gate https://en.wikipedia.org/wiki/Barbarians_at_the_Gate
 base rate: The average outcome for an event over time. They’re like batting averages for life, and they work best with big sample sizes. For example, if you’re starting a business, avoid the restaurant business where margins are low and competition is high.
@@ -148,11 +149,13 @@ can't satisfy others
 care -- doesn't scale https://stevenscrawls.com/care-doesnt-scale/
 career -- career limiting (action/move)
 cargo cult
+chacun chez soi et les vaches sont bien gardées
 chaine trophique = salsepareille <- schtroumpf <- Gargamel
 change -- introduction -- 1 What are we doing?
 change -- introduction -- 2 Why are we doing it?
 change -- introduction -- 3 When are we making the change?
 changemaker
+charbonnier est maître chez soi
 charged issues = fractally contentious, causing disagreement among people who hold all but identical opinions https://en.wikipedia.org/wiki/Narcissism_of_small_differences
 charisma https://paulgraham.com/charisma.html
 Charlie Munger 3 basic rules -- Don’t sell anything you wouldn’t buy yourself
@@ -273,6 +276,7 @@ disability
 disability -- flag +++
 disability -- overcoming
 discernement -- coin flipping = don't look, which one do you wish is not?
+discernement -- example avec plusieurs questions https://archive.md/zpgip
 discernement -- regret minimization https://theprokit.com/posts/a-jeff-bezos-classic-the-regret-minimization-framework/
 discrimination
 discrimination -- direct = when a person is treated less favourably or unfairly than another person or group because of certain protected characteristics* or attributes
@@ -830,6 +834,7 @@ Pope Francis 15 spiritual diseases https://www.vatican.va/content/francesco/en/s
 porn
 positive good = defense technique arguing an overall "positive good" ex. colonisation = train (which were for stealing rsrcs) https://en.wikipedia.org/wiki/Pro-slavery_ideology_in_the_United_States
 pour vivre heureux vivons cachés
+pouvoir d'achat
 poverty -- Sherman Alexie = It sucks to be poor, and it sucks to feel that you somehow deserve to be poor. You start believing that you're poor because you're stupid and ugly. And then you start believing that you're stupid and ugly because you're Indian. And because you're Indian you start believing you're destined to be poor. It's an ugly circle and there's nothing you can do about it. Poverty doesn't give you strength or teach you lessons about perseverance. No, poverty only teaches you how to be poor.
 power -- French and Raven five bases of power = reward, coercion, legitimate, expert, referent, informational https://en.wikipedia.org/wiki/French_and_Raven%27s_bases_of_power
 power -- Tony Benn's' Five Questions About Power -- 01 What power have you got?

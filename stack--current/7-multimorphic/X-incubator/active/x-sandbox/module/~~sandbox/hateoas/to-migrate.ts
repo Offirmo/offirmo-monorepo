@@ -35,7 +35,7 @@ function getꓽCTA(action: Immutable<RichText.Action>): string {
 
 const DEFAULT_ROOT_URI: Uri‿str = normalizeꓽuri‿str('')
 
-function getꓽactionsⵧreducers(actions: Array<RichText.Action>): Array<RichText.ReducerAction> {
+function getꓽactionsⵧreducers(actions: Array<RichText.Action>): Array<RichText.ReduceAction> {
 	return actions.filter(a => a.type === 'action')
 }
 
