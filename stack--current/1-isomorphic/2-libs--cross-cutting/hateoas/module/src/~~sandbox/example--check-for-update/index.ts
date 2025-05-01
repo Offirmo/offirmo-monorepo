@@ -5,12 +5,12 @@ import * as RichText from '@offirmo-private/rich-text-format'
 import { createꓽserver } from './server/index.ts'
 
 import type {
-	HyperMedia,
-	HyperActionCandidate,
-	HyperAction,
+	OHAHyperMedia,
+	OHAHyperActionBlueprint,
+	OHAHyperAction,
 	HATEOASServer,
-	HATEOASPendingEngagement,
-	HyperLink,
+	OHAPendingEngagement,
+	OHAHyperLink,
 } from '../../types.ts'
 
 /////////////////////////////////////////////////
@@ -21,8 +21,8 @@ function get_cta(hyper: Hyper): RichText.NodeLike {
 
 }
 
-function prepare_for_dispatch(action_candidate: HyperActionCandidate): {
-	action: HyperAction,
+function prepare_for_dispatch(action_candidate: OHAHyperActionBlueprint): {
+	action: OHAHyperAction,
 	feedback
 } {
 	const { type, input = {} } = action_candidate

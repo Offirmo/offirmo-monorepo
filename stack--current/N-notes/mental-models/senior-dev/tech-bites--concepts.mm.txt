@@ -75,6 +75,8 @@ API -- should not force developers to do anything that could easily be done for 
 API -- should present the mechanism, not the experience.
 API -- should provide helper functions to compose small features into common use-cases where appropriate.
 API -- tradeoffs = ex. safety / flexibility / extensibility / speed
+architectural styles = independent of any specific implementation
+architecture -- services https://en.wikipedia.org/wiki/Service-oriented_architecture
 asking smart questions (tech) http://www.catb.org/esr/faqs/smart-questions.html
 assembly
 async -- "coloring" https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/
@@ -485,6 +487,7 @@ lang -- JSX – Javascript XML, from React
 lang -- Rust https://www.rust-lang.org/
 lang -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
 lang -- wasp = high level website / SaaS https://wasp.sh/
+language -- type -- markup = a text-encoding system which specifies the structure and formatting of a document and potentially the relationships among its parts.[1] Markup can control the display of a document or enrich its content to facilitate automated processing https://en.wikipedia.org/wiki/Markup_language
 language features -- contract enforcement
 language features -- data hiding
 language features -- encapsulation

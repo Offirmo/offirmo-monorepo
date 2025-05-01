@@ -15,7 +15,7 @@
 [ ] perf https://github.com/prettydiff/wisdom/blob/master/performance_frontend.md
 [ ] security https://portswigger.net/web-security/all-topics
 [ ] security https://xsleaks.dev/
-[ ] TODO shearing layers https://en.wikipedia.org/wiki/Shearing_layers
+[ ] shearing layers https://en.wikipedia.org/wiki/Shearing_layers
 AJAX (Asynchronous JavaScript And XML) = LEGACY interactive web apps now fetch + json
 AMP (Accelerated Mobile Pages)
 animations -- API https://devdocs.io/dom/web_animations_api
@@ -208,6 +208,8 @@ iframe -- fenced
 iframe -- sandbox
 iframe -- seamless
 interop https://developer.mozilla.org/en-US/blog/interop2023-mdn-doc-updates/
+Javascript fatigue
+Javascript pressure = pressure to adopt JavaScript only grow as your investment in the JavaScript front end ecosystem grows https://htmx.org/essays/hypermedia-on-whatever-youd-like/#feeling-the-javascript-pressure
 js -- AbortController https://betterstack.com/community/guides/scaling-nodejs/understanding-abortcontroller/
 js -- apply / call / bind
 js -- book -- Exploring JavaScript (ES2024 Edition) https://exploringjs.com/js/book/index.html

@@ -586,6 +586,7 @@ law -- crimes -- trespass
 law -- crimes -- war crimes
 law of Ability = every ability is acquired through the workings of life
 law of Shitty Click-Through Rates = Most marketing strategies have a short window of success, as click-through rates decrease as tactics mature. For example, the first banner-ad has a click-through rate of more than 70%. Now we avoid them with ad-blockers.
+laws to ban harmful products https://politics.stackexchange.com/questions/91537/why-do-countries-not-ban-harmful-products-such-as-tobacco-and-sugar
 le bien ne fait pas de bruit, le bruit ne fait pas de bien
 le monde de Sophie
 le premier jour du reste de sa vie
@@ -874,6 +875,7 @@ productivity -- GSD Capture Everything, Clarify, Organize, Review, Engage https:
 productivity vs. impact, value
 progress -- USA -- "trail of tears" = native mistreatment https://arthistory327.wordpress.com/2012/10/08/american-progress-and-the-native-american-struggle/
 progress over perfection
+prohibition https://politics.stackexchange.com/questions/91537/why-do-countries-not-ban-harmful-products-such-as-tobacco-and-sugar
 project management -- iron triangle = scope, time and people
 project management = boils down to one of two questions: When will it be done? Will it be done in time?
 précariat https://en.wikipedia.org/wiki/Precariat
@@ -1000,6 +1002,7 @@ self defence -- reasonable
 self defence -- reasonable -- ex https://en.wikipedia.org/wiki/Killing_of_Yoshihiro_Hattori
 self love
 self-righteousness = attitude and belief of moral superiority derived from a person deeming their own beliefs, actions, or affiliations to be of greater virtue than those of others https://en.wikipedia.org/wiki/Self-righteousness
+selling own's body parts https://politics.stackexchange.com/questions/56270/why-do-many-countries-ban-the-sale-of-ones-own-blood
 sense-check = Before going too deep into solutions, align with your stakeholders on the problem. This saves time by avoiding working a lot just to find out that it’s highly contentious and there’s a different or better approach.
 separation of powers
 settling

@@ -1,21 +1,87 @@
+// New "Offirmo's Hyper Architecture" OHA
 import assert from 'tiny-invariant'
-import type { Immutable, JSONPrimitiveType } from '@offirmo-private/ts-types'
-import type { Node as RichTextNode } from '@offirmo-private/rich-text-format'
-
-import {
-	type Uri‿x,
-	type Hyper,
-	type Hyperlink as _Hyperlink,
-	type Action,
-} from '@offirmo-private/ts-types-web'
+import type { JSONPrimitiveType } from '@offirmo-private/ts-types'
+import { type Uri‿x } from '@offirmo-private/ts-types-web'
+import type { NodeLike as RichTextNode } from '@offirmo-private/rich-text-format'
 import {
 	type TrackedEngagement,
 	type Engagement,
 } from '@oh-my-rpg/state--engagement'
 
 /////////////////////////////////////////////////
+// 1. Hypertext / Hypermedia
 
-type HyperMedia = RichTextNode
+// IMPORTANT
+// RichTextNode = no links/actions (will be ignored if any)
+// HyperMedia   = RichTextNode + links/actions
+type OHAHyperMedia = RichTextNode
+
+/////////////////////////////////////////////////
+// 2a. Hyperlinks
+
+/** A more generic hyperlink than HTML's <a> following hypermedia theory
+ * see https://hypermedia.systems/
+ */
+interface OHAHyper {
+	// hyper target of this
+	href?: Uri‿x // optional bc can sometimes be inferred = current
+
+	// TODO navigation type? https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/navigationType
+	// useful to hint for back
+
+	// TODO description of the target? needed?
+
+	// presentation
+	// as usual, the client is free to ignore all hints, it should still work
+	hints?: {
+		cta?: RichTextNode // optional bc 1) not always needed (ex. already an anchor) 2) SSoT = should ideally be derived BUT useful bc same action could have different CTA following the context (ex. equip the best equipment)
+		keyboard_shortcut?: string // TODO 1D high level format
+	}
+}
+
+type OHALinkRelation =
+	// inspired by https://www.iana.org/assignments/link-relations/link-relations.xhtml
+	| 'self'
+	| 'home'     // or root ? TODO clarify
+	//| 'back'  TODO review what need? shouldn't it be handled by the browser?
+	//| 'external' // Refers to a resource that is not part of the same site as the current context
+	//| 'item'     // The target IRI points to a resource that is a member of the collection represented by the context IRI
+	// no need: no follow/open/ref is the default in our Hyper Architecture
+	//| 'nofollow' // Indicates that the context’s original author or publisher does not endorse the link target.
+	//| 'noopener'
+	//| 'noreferrer'
+	//| 'opener' // Indicates that any newly created top-level browsing context which results from following the link will be an auxiliary browsing context.
+	//| 'section' // Refers to a section in a collection of resources.'
+	// TODO 1D look into webmention, "Linkback" mechanism to the ones of Refback, Trackback, and Pingback
+	// new OHA
+	| 'continue-to' // automatically navigates to this resource once the current one is displayed (assuming some timing/next/skip/no need ?)
+	// classic "well known" expected pages
+	| 'about' | 'support' | 'security' | 'pricing' | 'privacy-policy' | 'terms-and-conditions' | 'blog' | 'docs' | 'faq' | 'source' | 'contact'
+
+type OHALinkTarget =
+	// inspired by https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/target
+	| '_self' // The current browsing context (default)
+	//| '_blank'  // Usually a new tab, but users can configure browsers to open a new window instead.
+	//| '_parent' // The parent browsing context of the current one. If no parent, behaves as _self.
+	//| '_top'    // The topmost browsing context. To be specific, this means the "highest" context that's an ancestor of the current one. If no ancestors, behaves as _self.
+	| string // The name of a browsing context (window or tab) in which to display the resource. If no such context exists, the user agent will create one with that name
+	// special OHA
+	| '_root' // the closest root, ~to a webapp (may not be the topmost HATEOAS context) = needed for immersion, ex. full-screen cutscene yet not necessarily topmost, ex. windowed game
+
+interface OHAHyperLink extends OHAHyper {
+	href: Uri‿x // mandatory for this subtype
+
+	rel?: OHALinkRelation[]
+
+	target?: OHALinkTarget
+
+	// TODO some kind of feedback engagement?
+}
+
+// "x" = "any [kind of format]"
+type OHAHyperLink‿x =
+	| OHAHyperLink
+	| Uri‿x
 
 /////////////////////////////////////////////////
 
@@ -30,14 +96,20 @@ interface Feedback {
 }
 
 /////////////////////////////////////////////////
+// 2b. Hyperactions (improved ~forms)
 
-// TODO navigation type? https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/navigationType
-
-interface HyperLink extends _Hyperlink {
-	// TODO some kind of feedback engagement
-}
-
-/////////////////////////////////////////////////
+// inspired by CRUD, obviously without the "read" part
+// use cases:
+// - hint to derive some UI, ex. icons, colors, confirmation…
+type StateChangeCategory =
+	| 'none'       // no risk, ex. dry runs, simulation, report…
+	| 'create'     // usually low risk since no data loss
+	| 'delete'     // usually high risk, ex. delete a file
+	| 'update'     // implies low risk incremental maintenance/improvement, loss of previous data (~semver minor)
+	| 'upgrade'    // technical migration, should be no risk, but we may want a backup (~semver minor)
+	| 'permission' // no data loss risk but some access/disclosure risks
+	//| 'admin'    // any kind of admin not covered by the above
+	| 'reduce'     // any other change, moderate risk (~semver major)
 
 type InputType =
 	| 'string' // any string (not recommended)
@@ -47,10 +119,9 @@ type InputType =
 	| 'string--password'
 	| 'number' // any number (not recommended)
 	// useful for selecting an installer or an app store
-	// will be auto-populated
+	// will be autopopulated
 	| 'env--os'
 	| 'env--arch'
-
 	// TODO inspired by HTML5 input types
 /*	| 'text'
 	| 'checkbox'
@@ -59,13 +130,15 @@ type InputType =
 	| 'textarea' */
 // TODO add more types
 
-interface InputSpec<T = any> {
+interface InputSpec<T = JSONPrimitiveType> {
 	type: InputType
-	intent?: 'new' | 'update' | 'change' // useful for UI
 	normalizers?: string[] // pre-defined normalizers (TODO)
-	existing?: T // useful in case [intent = change] to discourage using the same value or move it last in UI
-	default?: T // ~suggested
+	hidden?: boolean // if true, the input is not shown/requested to the user, implies a default/autopopulated value
+	advanced?: boolean // if true, the input is only shown/requested to the user on their explicit request. implies a good, safe default/autopopulated value
+	valueⵧdefault?: T // ~suggested/recommended
+	valueⵧcurrent?: T // useful in case [intent = change] to discourage using the same value or move it last in UI
 }
+
 
 // anything not hypermedia.GET
 // conceptually maps to an HTML form
@@ -74,72 +147,68 @@ interface InputSpec<T = any> {
 // this is intentional as the point is to decouple client & server
 // actions dispatched from the client should originate from the server
 // so the client shouldn't have to know about strict typing
-interface HyperActionCandidate extends Hyper {
-	type: string // TODO standardize refresh, about, faq (from rel)
+interface OHAHyperActionBlueprint extends OHAHyper {
+	key: string // some unique key to identify the action type. TODO standardize some?
 
-	// requirements
+	// required parameters we need to get from the user (or pre-supplied)
+	// input as in "form"
 	input?: Record<string, InputSpec>// the data of the action, could be anything (or nothing)
 
+	hints?: OHAHyper['hints']  & {
+		purpose?: StateChangeCategory
+		// TODO some sort of risk?
+	}
+
 	// aftermath
+	// this is needed in the blueprint so that the client knows what to do/show
 	feedback?: {
-		href?: Uri‿x // optional URL to navigate to following the action
+		tracking:
+			| 'forget'     // as in "fire-and-forget" = no tracking UI of the action is needed. Ex. sending a mail
+			| 'background' // tracking UI recommended but doesn't prevent sending other actions
+			| 'foreground' // (default) full "waiting/loading" UI, no other action can be sent until this one is resolved
+
+		durationⵧmin‿ms?: number // if present, never resolve the action faster than this (illusion of labor) Do not abuse! (default to some value depending on the verb)
+
+		continueᝍto?: OHAHyperLink // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
+
 		// TODO feedback engagement? Or in an extension of this?
 	}
 }
 
 // constructed from the above
-interface HyperAction {
-	type: string
+interface OHAHyperAction {
+	key: string
 
 	payload?: Record<string, JSONPrimitiveType>
+
+	// TODO requirements on previous state, see TBRPG
 }
 
 /////////////////////////////////////////////////
 
-interface HATEOASPendingEngagement extends TrackedEngagement<HyperMedia> {
-	ack_action?: HyperAction // the action to dispatch to acknowledge this engagement, ex. record engagement as seen
+interface OHAPendingEngagement extends TrackedEngagement<OHAHyperMedia> {
+	ack_action?: OHAHyperAction // the action to dispatch to acknowledge this engagement as seen
 }
 
-/////////////////////////////////////////////////
-
-interface HATEOASServer<
-	HypermediaType = RichTextNode, // an advanced Hypermedia format able to contain links and actions
-> {
-	// inspired by GET, POST, PUT, DELETE https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
-	// also QUERY https://www.ietf.org/archive/id/draft-ietf-httpbis-safe-method-w-body-05.html
-
-	// the base one, return a hypermedia representation with hyperlinks/actions
-	ↆget(url?: HyperLink['href']): Promise<HypermediaType> // TODO more complex response? meta/headers?
-
-	// TODO query? https://www.ietf.org/archive/id/draft-ietf-httpbis-safe-method-w-body-05.html
-
-	// dispatch an action
-	// doesn't return (so far) bc:
-	// - the response can be lost and we may want strict feedback on actions
-	// - may not need a response, for ex. sanding a mail or simple button click
-	// ex. a game where an action triggers an important cutscene, we could return the important cutscene
-	//     but in case of crash/disconnection and the player lose a very important story development. (happened to me in Ultima IX with crashing vids btw)
-	//     = we must ensure it has been seen/processed by the player
-	// thus we'd rather use "engagement", see next method.
-	// TODO REVIEW we may want to return trivial, "can-be-lost" feedback, for ex. "ticket created" or "action acknowledged"
-	// XXX should a URL be attached to clarify which resource is the target?
-	dispatch(action: Immutable<HyperAction>, url?: HyperLink['href']): Promise<void>
-
-	// XXX why not in GET???
-	// important to separate resource representation from actions feedback
-	// sync bc we assume the browser awaits dispatches
-	// the consumer must sort out the engagements by flow and priority
-	//getꓽengagementsⵧpending(url?: HyperLink['href']): Immutable<Array<HATEOASPendingEngagement>>
-
-	// TODO push
-}
 
 /////////////////////////////////////////////////
 
 export {
-	type HyperMedia,
-	type HyperLink,
-	type HyperActionCandidate, type HyperAction,
-	type HATEOASPendingEngagement,
-	type HATEOASServer,
+	type Uri‿str, type Url‿str,
+	type SchemeSpecificURIPart,
+	type Uri‿x,
+} from '@offirmo-private/ts-types-web'
+
+export {
+	type RichTextNode,
+
+	type OHAHyperMedia,
+
+	type OHAHyper,
+	type OHALinkRelation, type OHALinkTarget,	type OHAHyperLink,
+	type OHAHyperLink‿x,
+
+	type OHAHyperActionBlueprint, type OHAHyperAction,
+
+	type OHAPendingEngagement,
 }

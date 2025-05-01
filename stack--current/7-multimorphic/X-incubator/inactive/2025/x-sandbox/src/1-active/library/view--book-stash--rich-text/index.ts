@@ -46,7 +46,7 @@ function renderꓽbookshelf(
 ): RichText.Node {
 	const list = RichText.listⵧordered()
 	list.addHints({
-		listⵧstyleⵧtype: '',
+		list__style__type: '',
 	})
 
 	const bookshelf = getꓽbookshelf(state)
@@ -74,7 +74,7 @@ function renderꓽpage_result(page_result: Immutable<PageResult>): RichText.Node
 		.toReversed()
 		.reduce<NodeLike>(($acc, crumb, index) => {
 			const builder = RichText.listⵧordered()
-				.addHints({ listⵧstyleⵧtype: '>' })
+				.addHints({ list__style__type: '>' })
 
 			const text = RichText.weak(crumb).done()
 			builder.pushNode(text, {id: 'crumb'})

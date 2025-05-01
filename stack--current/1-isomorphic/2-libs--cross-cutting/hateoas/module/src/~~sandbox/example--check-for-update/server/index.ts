@@ -3,13 +3,15 @@ import type {
 	SemVer,
 } from '@offirmo-private/ts-types'
 import type {
-	HyperMedia,
-	HyperActionCandidate,
-	HyperAction,
-	HATEOASServer,
-	HATEOASPendingEngagement,
-	HyperLink,
+	OHAHyperMedia,
+	OHAHyperActionBlueprint,
+	OHAHyperAction,
+	OHAPendingEngagement,
+	OHAHyperLink,
 } from '../../../types.ts'
+import type {
+	OHAServer,
+} from '../../../server/types.ts'
 
 /////////////////////////////////////////////////
 
@@ -28,9 +30,9 @@ function backend() {
 
 /////////////////////////////////////////////////
 
-function createꓽserver(): HATEOASServer {
+function createꓽserver(): OHAServer {
 
-	const ↆget: HATEOASServer['ↆget'] = async (url = '/') => {
+	const ↆget: OHAServer['ↆget'] = async (url = '/') => {
 		const data = await backend().ↆgetꓽproducts()
 
 		const _doc = RichText.listⵧordered()
@@ -56,31 +58,33 @@ function createꓽserver(): HATEOASServer {
 		// Hypermedia
 		_doc.addHints({
 			underlying__href: url, // self
+			underlying__data: data,
 		})
 
 		// related actions
-		const links: Array<HyperLink> = [
+		const links: Array<OHAHyperLink> = [
 			{
 				href: 'https://jb.gg/toolbox-app-faq',
-				rel: ['about', 'external', 'noopener'], // TODO some defaults could be inferred from the href
+				rel: [ 'faq' ],
 				//cta: 'about', // TODO could be inferred from the rel
-				target: '_blank', // TODO could be inferred from href being external
+				//target: '_blank', // TODO could be inferred from href being external
 			},
 		]
-		const actions: Array<HyperActionCandidate> = [
+		const actions: Array<OHAHyperActionBlueprint> = [
 			{
-				type: 'refresh', // really?
+				verb: 'reduce', //'refresh', // really?
+
 				cta: 'Check for updates',
 				shortcut: 'Apple+R', // needed? inferrable? too specific? conflicts?
 
 				input: {
-					'os': {},
-					'arch': {},
+					'os': { type: 'env--os' },
+					'arch': { type: 'env--arch' },
 				},
 
 				feedback: {
-					type: 'background',
-					type: 'loader',
+					type: 'background-task',
+					traits: [ 'loader' ],
 					summary: 'Checking for updates…',
 				},
 			},
@@ -93,7 +97,7 @@ function createꓽserver(): HATEOASServer {
 		return _doc.done()
 	}
 
-	const dispatch: HATEOASServer['dispatch'] = async (action) => {
+	const dispatch: OHAServer['dispatch'] = async (action) => {
 		console.log(`Server: asked to dispatch action…`, action)
 
 		// TODO return engagement pending action

@@ -1,5 +1,5 @@
 import { Enum } from 'typescript-string-enums'
-import type { Emoji, Immutable } from '@offirmo-private/ts-types'
+import type { Emoji, Immutable, JSON } from '@offirmo-private/ts-types'
 import type { Uri‿x, Hyperlink } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
@@ -45,23 +45,23 @@ type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 interface Hints {
 
 	// string or keyword to use as bullets. to remove bullets: ''
-	listⵧstyleⵧtype?: string // https://www.w3schools.com/cssref/pr_list-style-type.php
+	// https://www.w3schools.com/cssref/pr_list-style-type.php
+	list__style__type?: string
 
-	key?: string // for ex. to recognize a specific content (do not abuse! Reminder to keep everything text-compatible)
-
-	// emoji support: TODO one day, API following https://github.com/jdecked/twemoji
 	possible_emoji?: Emoji // this emoji can be used to represent/augment this node
 
 	// Hypermedia
-	href?: Uri‿x | Hyperlink // make this node an anchor to another Hypermedia resource
+	href?: Uri‿x | Hyperlink // make this node as an anchor to another Hypermedia resource
 	underlying__href?: Uri‿x // identify this node as the representation of this Hypermedia resource. Implicitly rel=self, so no need for full Hyperlink
-	underlying?: any // the resource data this representation was rendered from. Usage: a better renderer (ex. interactive widget) may ignore the rich text and re-render from this instead
+	underlying__data?: JSON // the resource data this representation was rendered from. Usage: a better renderer (ex. interactive widget) may ignore the rich text and re-render from this instead
 	//underlying__uuid?: string // for ex. to recognize a specific resource without attaching it to the content TODO review duplicate of href?
 	links?: Array<Hyperlink> // HATEOAS links to other related resources with appropriate rel
 	actions?: Array<{}> // TODO
 	engagements?: Array<{}> // TODO
 
 	// TODO styles TODO colors
+
+	key?: string // for ex. to recognize a specific content (do not abuse! Reminder to keep everything text-compatible)
 
 	// anything allowed
 	[k: string]: any

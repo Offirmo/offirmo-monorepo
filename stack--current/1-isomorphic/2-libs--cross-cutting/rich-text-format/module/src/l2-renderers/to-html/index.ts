@@ -103,7 +103,7 @@ const on_nodeⵧexit: WalkerCallbacks<State, RenderingOptionsⵧToHtml>['on_node
 	if (isꓽlist($node)) {
 		classes.push('o⋄rich-text⋄list')
 
-		switch($hints.listⵧstyleⵧtype) {
+		switch($hints.list__style__type) {
 			case '':
 				classes.push('o⋄rich-text⋄list--no-bullet')
 				break

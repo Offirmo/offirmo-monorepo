@@ -218,8 +218,8 @@ const on_concatenateⵧsub_node: WalkerCallbacks<State, RenderingOptionsⵧToTex
 			// fallthrough
 			case 'ol': {
 				const bullet: string = (() => {
-					if (options.use_hints && $node.$hints.listⵧstyleⵧtype !== undefined)
-						return $node.$hints.listⵧstyleⵧtype
+					if (options.use_hints && $node.$hints.list__style__type !== undefined)
+						return $node.$hints.list__style__type
 
 					if ($node.$type === 'ul')
 						return '-'

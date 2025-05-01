@@ -25,7 +25,10 @@ REMINDER: the build script dynamically relax a few rules in dev mode (--watch), 
 ### TODO review those features
 
 
-#### PENDING 5.8
+#### 2025/02/28 5.8
+https://devblogs.microsoft.com/typescript/announcing-typescript-5-8/
+
+🆕 `erasableSyntaxOnly` https://www.typescriptlang.org/tsconfig/#erasableSyntaxOnly
 
 #### 2024/10/11 5.7
 https://devblogs.microsoft.com/typescript/announcing-typescript-5-7/
