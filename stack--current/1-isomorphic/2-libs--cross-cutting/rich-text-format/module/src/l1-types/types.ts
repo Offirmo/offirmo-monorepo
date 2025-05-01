@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
 import type { Emoji, Immutable, JSON } from '@offirmo-private/ts-types'
-import type { Uri‿x, Hyperlink } from '@offirmo-private/ts-types-web'
+import type { Uri‿x, Hyperlink, Hyperlink‿x } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 
@@ -42,7 +42,7 @@ type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 // hints for progressive enhancement
 // - for rendering, hints should be OPTIONAL and any renderer should be able to render decently without them
 // - for non-rendering (ex. hypermedia features) hints can be made mandatory
-interface Hints {
+interface Hints<UnderlyingData = JSON, HyperLink = Hyperlink‿x> {
 
 	// string or keyword to use as bullets. to remove bullets: ''
 	// https://www.w3schools.com/cssref/pr_list-style-type.php
@@ -50,14 +50,12 @@ interface Hints {
 
 	possible_emoji?: Emoji // this emoji can be used to represent/augment this node
 
-	// Hypermedia
-	href?: Uri‿x | Hyperlink // make this node as an anchor to another Hypermedia resource
-	underlying__href?: Uri‿x // identify this node as the representation of this Hypermedia resource. Implicitly rel=self, so no need for full Hyperlink
-	underlying__data?: JSON // the resource data this representation was rendered from. Usage: a better renderer (ex. interactive widget) may ignore the rich text and re-render from this instead
+	underlying__data?: UnderlyingData // the resource data this representation was rendered from. Usage: a better renderer (ex. interactive widget) may ignore the rich text and re-render from this instead
 	//underlying__uuid?: string // for ex. to recognize a specific resource without attaching it to the content TODO review duplicate of href?
-	links?: Array<Hyperlink> // HATEOAS links to other related resources with appropriate rel
-	actions?: Array<{}> // TODO
-	engagements?: Array<{}> // TODO
+
+	// Hypermedia
+	href?: Hyperlink // make this node as an anchor to another Hypermedia resource
+	// advanced = moved to dedicated OHA lib
 
 	// TODO styles TODO colors
 

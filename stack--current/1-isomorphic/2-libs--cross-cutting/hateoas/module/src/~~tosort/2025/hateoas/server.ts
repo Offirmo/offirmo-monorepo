@@ -105,7 +105,7 @@ class AppHateoasServer implements HATEOASServer<HypermediaContentType, Action> {
 
 		// TODO "back" -> NO!! it's the responsibility of the browser
 
-		// TODO recursive routing!
+		// TODO recursive routing
 		switch (path) {
 			case '/': { // root, expected to redirect
 				$builder = $builder.pushText('Welcome to…')

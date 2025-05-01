@@ -5,13 +5,14 @@ import * as RichText from '@offirmo-private/rich-text-format'
 import { createꓽserver } from './server/index.ts'
 
 import type {
+
 	OHAHyperMedia,
 	OHAHyperActionBlueprint,
 	OHAHyperAction,
 	HATEOASServer,
 	OHAPendingEngagement,
 	OHAHyperLink,
-} from '../../types.ts'
+} from '../../types/types.ts'
 
 /////////////////////////////////////////////////
 

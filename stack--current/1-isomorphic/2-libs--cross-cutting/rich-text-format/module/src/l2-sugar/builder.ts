@@ -10,7 +10,7 @@ import { LIB, SCHEMA_VERSION } from '../consts.ts'
 
 import {
 	NodeType,
-	type Hints,
+	type Hints as DefaultHints,
 	type CheckedNode,
 	type Node, type Document, type NodeLike,
 	isꓽNode,
@@ -31,7 +31,7 @@ type SubNode = CheckedNode['$sub'][string]
 
 interface Builder {
 	addClass(...classes: ReadonlyArray<string>): Builder
-	addHints(hints: Partial<Hints>): Builder
+	addHints<Hints = DefaultHints>(hints: Partial<Hints>): Builder
 
 	pushText(str: Immutable<Exclude<NodeLike, Node>>): Builder
 	pushEmoji(e: string, options?: Immutable<CommonOptions>): Builder

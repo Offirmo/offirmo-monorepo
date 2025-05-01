@@ -1,11 +1,11 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 
 import type {
-	RichTextNode,
+	RichTextNodeLike,
 	OHAHyperMedia,
 	OHAHyperLink,
 	OHAHyperAction,
-} from '../types.ts'
+} from '../types/types.ts'
 
 /////////////////////////////////////////////////
 

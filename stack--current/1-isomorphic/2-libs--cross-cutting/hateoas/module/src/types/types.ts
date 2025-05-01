@@ -1,8 +1,8 @@
 // New "Offirmo's Hyper Architecture" OHA
 import assert from 'tiny-invariant'
-import type { JSONPrimitiveType } from '@offirmo-private/ts-types'
-import { type Uri‿x } from '@offirmo-private/ts-types-web'
-import type { NodeLike as RichTextNode } from '@offirmo-private/rich-text-format'
+import type { Emoji, JSON, JSONPrimitiveType } from '@offirmo-private/ts-types'
+import { type Hyperlink, type Uri‿x } from '@offirmo-private/ts-types-web'
+import type { Hints as RichTextHints, NodeLike as RichTextNodeLike } from '@offirmo-private/rich-text-format'
 import {
 	type TrackedEngagement,
 	type Engagement,
@@ -14,7 +14,7 @@ import {
 // IMPORTANT
 // RichTextNode = no links/actions (will be ignored if any)
 // HyperMedia   = RichTextNode + links/actions
-type OHAHyperMedia = RichTextNode
+type OHAHyperMedia = RichTextNodeLike
 
 /////////////////////////////////////////////////
 // 2a. Hyperlinks
@@ -34,7 +34,7 @@ interface OHAHyper {
 	// presentation
 	// as usual, the client is free to ignore all hints, it should still work
 	hints?: {
-		cta?: RichTextNode // optional bc 1) not always needed (ex. already an anchor) 2) SSoT = should ideally be derived BUT useful bc same action could have different CTA following the context (ex. equip the best equipment)
+		cta?: RichTextNodeLike // optional bc 1) not always needed (ex. already an anchor) 2) SSoT = should ideally be derived BUT useful bc same action could have different CTA following the context (ex. equip the best equipment)
 		keyboard_shortcut?: string // TODO 1D high level format
 	}
 }
@@ -169,7 +169,7 @@ interface OHAHyperActionBlueprint extends OHAHyper {
 
 		durationⵧmin‿ms?: number // if present, never resolve the action faster than this (illusion of labor) Do not abuse! (default to some value depending on the verb)
 
-		continueᝍto?: OHAHyperLink // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
+		continueᝍto?: Uri‿x // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
 
 		// TODO feedback engagement? Or in an extension of this?
 	}
@@ -190,8 +190,16 @@ interface OHAPendingEngagement extends TrackedEngagement<OHAHyperMedia> {
 	ack_action?: OHAHyperAction // the action to dispatch to acknowledge this engagement as seen
 }
 
+/////////////////////////////////////////////////
+
+interface OHARichTextHints<UnderlyingData = JSON> extends RichTextHints<UnderlyingData, OHAHyperLink‿x> {
+	links?:       Record<string, OHAHyperLink‿x>          // HATEOAS links to other related resources with appropriate rel. Record as it's extremely convenient for lookup. key should be core "rel" or anything
+	actions?:     Record<string, OHAHyperActionBlueprint> // OHA actions. Record as it's extremely convenient for lookup. key should be the action key
+	engagements?: Array<OHAPendingEngagement>             // array bc order is important
+}
 
 /////////////////////////////////////////////////
+
 
 export {
 	type Uri‿str, type Url‿str,
@@ -200,9 +208,10 @@ export {
 } from '@offirmo-private/ts-types-web'
 
 export {
-	type RichTextNode,
+	type RichTextNodeLike,
 
 	type OHAHyperMedia,
+	type OHARichTextHints,
 
 	type OHAHyper,
 	type OHALinkRelation, type OHALinkTarget,	type OHAHyperLink,

@@ -33,6 +33,8 @@ function backend() {
 function createꓽserver(): OHAServer {
 
 	const ↆget: OHAServer['ↆget'] = async (url = '/') => {
+
+
 		const data = await backend().ↆgetꓽproducts()
 
 		const _doc = RichText.listⵧordered()

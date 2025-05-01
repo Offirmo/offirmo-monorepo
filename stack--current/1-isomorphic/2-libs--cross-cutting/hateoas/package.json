@@ -23,7 +23,9 @@
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s check--ts",
 		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts",
-		"sb1": "node --experimental-strip-types ./module/src/~~sandbox/example--check-for-update/index.ts"
+		"sb1": "node --experimental-strip-types ./module/src/~~sandbox/example--check-for-update/index.ts",
+		"sb2": "node --experimental-strip-types ./module/src/~~sandbox/example--check-for-update/index.ts",
+		"sb3": "node --experimental-strip-types ./module/src/~~sandbox/example--tbrpg/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
