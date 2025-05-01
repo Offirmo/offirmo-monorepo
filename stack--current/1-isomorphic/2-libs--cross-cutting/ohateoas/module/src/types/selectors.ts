@@ -12,11 +12,9 @@ function promote_toꓽOHAHyperLink(link: OHAHyperLink‿x, hints: Partial<Omit<O
 	if (isꓽOHAHyperLink(link))
 		return link
 
-	const href = promote_toꓽscheme_specific_part(link)
-
 	return {
 		...hints,
-		href,
+		href: link,
 	}
 }
 

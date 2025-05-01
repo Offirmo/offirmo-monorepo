@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/hateoas",
+	"name": "@offirmo-private/ohateoas",
 	"description": "A reinvention of hypertext to enable advanced HATEOAS web applications",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
@@ -8,20 +8,23 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/types.ts"
+		".": "./module/src/server/index.ts"
 	},
-	"source": "module/src/types.ts",
+	"source": "module/src/server/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/ts-types-web": "*",
+		"@offirmo-private/type-detection": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/hateoas\" && tsc --noEmit",
+		"check--ts": "echo \"@offirmo-private/ohateoas\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s check--ts",
+		"demo": "node --experimental-strip-types ./module/src/~~demo/index.ts",
 		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts",
 		"sb1": "node --experimental-strip-types ./module/src/~~sandbox/example--check-for-update/index.ts",
 		"sb2": "node --experimental-strip-types ./module/src/~~sandbox/example--check-for-update/index.ts",
@@ -31,7 +34,6 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/rich-text-format": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo-private/ts-types-web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@oh-my-rpg/state--engagement": "*",
 		"npm-run-all": "^4",

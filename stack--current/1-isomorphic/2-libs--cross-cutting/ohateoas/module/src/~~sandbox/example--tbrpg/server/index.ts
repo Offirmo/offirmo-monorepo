@@ -150,6 +150,8 @@ function createꓽserver(): OHAServer {
 			engagements,
 		})
 
+		DEBUG && console.groupEnd()
+
 		return $builder.done()
 	}
 
@@ -160,7 +162,6 @@ function createꓽserver(): OHAServer {
 		throw new Error(`Not implemented!`)
 	}
 
-	DEBUG && console.groupEnd()
 
 	return {
 		ↆget,

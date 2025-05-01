@@ -1,22 +1,27 @@
 import type { Immutable, JSONPrimitiveType } from '@offirmo-private/ts-types'
-import type { Hyper } from '@offirmo-private/ts-types-web'
+import type { Hyper, Uri‿str } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 
-import { createꓽserver } from './server/index.ts'
+import { createꓽserver } from '../~~sandbox/example--tbrpg/server/index.ts'
 
-import { LINK__REL__CONTINUE_TO } from '../../types/consts.ts'
+import { LINK__REL__CONTINUE_TO } from '../types/consts.ts'
 import type {
 	OHARichTextHints,
 	OHAHyperMedia,
 	OHAHyperActionBlueprint,
 	OHAHyperAction, OHAHyperLink,
-} from '../../types/types.ts'
-import { promote_toꓽOHAHyperLink } from '../../types/selectors.ts'
+} from '../types/types.ts'
+import { promote_toꓽOHAHyperLink } from '../types/selectors.ts'
 
 /////////////////////////////////////////////////
 
+function getꓽhints(repr: Immutable<OHAHyperMedia>): Immutable<OHARichTextHints> {
+	const { $hints = {} } = repr
+	return $hints
+}
+
 function getꓽlinks(repr: Immutable<OHAHyperMedia>): Record<string, Immutable<OHAHyperLink>> {
-	const { links = {} } = repr
+	const { links = {} } = getꓽhints(repr)
 
 	return Object.fromEntries(
 		Object.entries(links)
@@ -24,11 +29,9 @@ function getꓽlinks(repr: Immutable<OHAHyperMedia>): Record<string, Immutable<O
 	)
 }
 
-function getꓽaction_blueprints(repr: Immutable<OHAHyperMedia>): Record<string, Immutable<OHAHyperActionBlueprint>> {
-	const { actions = {} } = repr
-	return {
-		...actions,
-	}
+function getꓽaction_blueprints(repr: Immutable<OHAHyperMedia>): Immutable<Record<string, OHAHyperActionBlueprint>> {
+	const { actions = {} } = getꓽhints(repr)
+	return actions
 }
 
 /////////////////////////////////////////////////
@@ -59,7 +62,7 @@ function prepare_for_dispatch(action_candidate: OHAHyperActionBlueprint): {
 /////////////////////////////////////////////////
 
 async function main() {
-	let url = '/'
+	let url: Uri‿str = '/'
 	let pending_stuff = false
 	loop: do {
 		pending_stuff = false
