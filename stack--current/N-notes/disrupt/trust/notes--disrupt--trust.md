@@ -1,4 +1,5 @@
 
+https://en.wikipedia.org/wiki/Proof_of_personhood
 
 https://blog.google/technology/safety-security/
 

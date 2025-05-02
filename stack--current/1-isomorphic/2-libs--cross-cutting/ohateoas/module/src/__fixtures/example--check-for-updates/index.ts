@@ -1,22 +1,11 @@
-import type {
-	SemVer,
-} from '@offirmo-private/ts-types'
-import {
-	normalizeꓽuri‿str,
-	getꓽscheme_specific_part,
-} from '@offirmo-private/ts-types-web'
+import type { SemVer } from '@offirmo-private/ts-types'
+import { normalizeꓽuri‿str, getꓽscheme_specific_part } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
-import type {
-	OHAHyperMedia, OHARichTextHints,
-	OHAHyperActionBlueprint,
-	OHAHyperAction,
-	OHAPendingEngagement,
-	OHAHyperLink, OHAHyper,
-} from '../../../types/types.ts'
 import {
+	type OHARichTextHints,
 	type OHAServer,
 	DEFAULT_ROOT_URI,
-} from '../../../server/index.ts'
+} from '@offirmo-private/ohateoas'
 
 /////////////////////////////////////////////////
 

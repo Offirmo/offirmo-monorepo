@@ -12,11 +12,11 @@ import type {
 	OHAHyperAction,
 	OHAPendingEngagement,
 	OHAHyperLink, OHAHyper,
-} from '../../../types/types.ts'
+} from '../../types/types.ts'
 import {
 	type OHAServer,
 	DEFAULT_ROOT_URI,
-} from '../../../server/index.ts'
+} from '../../server/index.ts'
 
 /////////////////////////////////////////////////
 

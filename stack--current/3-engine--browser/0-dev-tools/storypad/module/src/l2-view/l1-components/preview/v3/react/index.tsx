@@ -17,10 +17,10 @@ async function render(state: ObservableState, render_params: Immutable<RenderPar
 	// https://react.dev/reference/react-dom/client/createRoot
 	const libⳇreactᝍdomⳇclient = await import('react-dom/client')
 	const libⳇreact = React //await import('react')
-	console.log('libs', {
+	/*console.log('libs', {
 		libⳇreactᝍdomⳇclient,
 		libⳇreact,
-	})
+	})*/
 
 	const { createRoot } = libⳇreactᝍdomⳇclient
 	let root_elt = document.createElement('div')

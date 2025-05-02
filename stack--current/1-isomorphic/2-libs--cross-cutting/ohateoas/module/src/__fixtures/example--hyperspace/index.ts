@@ -8,10 +8,10 @@ import type {
 	OHAHyperAction,
 	OHAPendingEngagement,
 	OHAHyperLink,
-} from '../../../types/types.ts'
+} from '../../types/types.ts'
 import type {
 	OHAServer,
-} from '../../../server/types.ts'
+} from '../../server/types.ts'
 
 /////////////////////////////////////////////////
 

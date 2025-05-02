@@ -12,7 +12,7 @@ import {
 	coerce_delimiters_to_space,
 } from '@offirmo-private/normalize-string'
 
-import { createꓽserver } from '../~~sandbox/example--check-for-update/server/index.ts'
+import { createꓽserver } from '../__fixtures/example--check-for-update/index.ts'
 //import { createꓽserver } from '../~~sandbox/example--tbrpg/server/index.ts'
 //import { createꓽserver } from '../~~sandbox/example--tbrpg/server/index.ts'
 
@@ -108,8 +108,6 @@ function getꓽaction_blueprints(repr: Immutable<OHAHyperMedia>): Immutable<Reco
 /////////////////////////////////////////////////
 
 const SERVER = createꓽserver()
-
-
 
 function convert_to_action(action_blueprint: OHAHyperActionBlueprint): {
 	action: OHAHyperAction,
