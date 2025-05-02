@@ -2,7 +2,7 @@
 	"name": "offirmo-monorepo",
 	"description": "A monorepo for all my JavaScript / TypeScript personal projects. So convenient!",
 	"repository": "https://github.com/Offirmo/offirmo-monorepo",
-	"version": "2.6.0",
+	"version": "2025.5.2",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "Unlicense",
 	"private": true,
@@ -14,10 +14,6 @@
 	},
 
 	"scripts": {
-		"// TODO": "remove this, I'll likely not use heroku anymore",
-		"heroku-prebuild": "echo This runs before Heroku nodjs buildback installs dependencies. Ensuring monorepo setup... && pwd && test -f Procfile",
-		"heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies. && pwd && ls -l",
-
 		"// GREAT!": "also update the root package.json when not in sync",
 		"postinstall": "node ./0-meta/build-tools/scripts/monorepo-utils.mjs",
 
@@ -71,15 +67,19 @@
 
 	"// manypkg": "https://github.com/Thinkmill/manypkg",
 	"manypkg": {
-		"defaultBranch": "main"
+		"defaultBranch": "main",
+		"ignoredRules": [
+			"ROOT_HAS_PROD_DEPENDENCIES"
+		]
 	},
 
 	"// deps": "only the one needed to bootstrap the monorepo",
 	"dependencies": {
+		"@manypkg/cli": "^0",
 		"chalk": "^5",
-		"fs-extra": "^11",
 		"meow": "^13",
 		"parse-imports-ts": "^1",
+		"semver": "^7",
 		"serve": "^14",
 		"tiny-invariant": "^1",
 		"write-json-file": "^6",
@@ -119,7 +119,7 @@
 		"cross-spawn": "^7",
 		"emittery": "^1",
 		"eslint-plugin-chai-expect": "^3",
-		"eslint-plugin-mocha": "^10",
+		"eslint-plugin-mocha": "^11",
 		"fraction.js": "^5",
 		"icepick": "^2",
 		"ignore-walk": "^7",
@@ -142,9 +142,8 @@
 		"prop-types": "^15",
 		"react": "^19",
 		"react-dom": "^19",
-		"semver": "^7",
 		"sharp": "^0.31",
-		"sinon": "^19",
+		"sinon": "^20",
 		"sinon-chai": "^4",
 		"strip-ansi": "^7",
 		"terminal-size": "^4",

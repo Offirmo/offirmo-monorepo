@@ -15,7 +15,6 @@
 	"dependencies": {
 		"@tsconfig/strictest": "^2",
 		"chalk": "^5",
-		"fs-extra": "^11",
 		"meow": "^13",
 		"node-typescript-compiler": "*",
 		"semver": "^7",

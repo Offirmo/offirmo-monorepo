@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
 import * as fs from 'node:fs'
 
+import * as semver from 'semver'
 import { writeJsonFile as write_json_file } from 'write-json-file' // full pkg is too useful, ex. preserve indent
 import { lsDirsSync } from '../fs--ls/module/index.mjs'
 
@@ -131,7 +132,7 @@ if (MONOREPO_PKG_JSON.bolt) (function _update_root_dependencies_for_bolt() {
 	let needs_update = false // so far
 
 	Object.keys(all_root_dependencies).forEach(function _ensure_existing_root_dep_is_not_extraneous_and_has_unique_semver(dep_name) {
-		const dep_version = all_root_dependencies[dep_name]
+		const root_version = all_root_dependencies[dep_name]
 
 		// extraneous check:
 		const is_meta_script_dependency = dep_name in dependencies // ok, minimal modules needed for the scripts (clean, build) to work
@@ -160,10 +161,19 @@ if (MONOREPO_PKG_JSON.bolt) (function _update_root_dependencies_for_bolt() {
 		}
 
 		if (is_package_dependency) {
-			const existing_version = MONOREPO_PKGS_DEPENDENCIES.get(dep_name)
-			if (existing_version !== dep_version) {
-				console.error(`⛔️ version conflict for "${dep_name}" at the root: "${dep_version}" vs. in package(s) "${existing_version}"!`)
-				throw new Error(`⛔️ root version conflict for "${dep_name}"!`)
+			const pkg_version = MONOREPO_PKGS_DEPENDENCIES.get(dep_name)
+			if (pkg_version !== root_version) {
+				//console.log(`XXX root ${root_version} != pkg ${pkg_version}`, semver.coerce(root_version), semver.coerce(pkg_version))
+				if (semver.gt(semver.coerce(pkg_version).version, semver.coerce(root_version).version)) {
+					// there must have been an update in a module that is not reflected in the root package.json
+					console.log(`Upgrading root dependency "${dep_name}": ${root_version} -> ${pkg_version}`)
+					candidate_root_package_json.devDependencies[dep_name] = pkg_version
+					needs_update = true
+				}
+				else {
+					console.error(`⛔️ version conflict for "${dep_name}" at the root: "${root_version}" vs. in package(s) "${pkg_version}"!`)
+					throw new Error(`⛔️ root version conflict for "${dep_name}"!`)
+				}
 			}
 		}
 

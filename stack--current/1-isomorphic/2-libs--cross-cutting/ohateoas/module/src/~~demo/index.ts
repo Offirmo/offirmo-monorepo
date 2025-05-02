@@ -92,8 +92,13 @@ async function main() {
 		console.log('- reload')
 		console.log('- home')
 
-		//const action = convert_to_action(actions[0].action)
-		//const x = await SERVER.dispatch(action)
+		const action_blueprint = action_blueprints[Object.keys(action_blueprints)[0]]
+		if (action_blueprint) {
+			const action = convert_to_action(action_blueprint)
+			await SERVER.dispatch(action)
+			pending_stuff = true
+		}
+
 	} while (pending_stuff)
 }
 main()

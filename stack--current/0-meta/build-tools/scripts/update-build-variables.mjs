@@ -7,7 +7,7 @@ console.log('🧙️  Hello from update-build-variables.js!')
 import * as path from 'node:path'
 import { readFileSync, writeFileSync } from 'node:fs'
 
-import semver from 'semver'
+import * as semver from 'semver'
 import assert from 'tiny-invariant'
 import { writeJsonFile } from 'write-json-file'
 import meow from 'meow'
