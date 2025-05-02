@@ -13,7 +13,7 @@
    1. delete
 1. Media Types -- Portrait
    1. export photos (NOT ORIGINALS)
-   2. type JPEG size FULL SIZE
+   2. type JPEG size high / FULL SIZE
       IN A FOLDER (to check progress)
    1. delete
 1. Library -- "filter by" -- edited
