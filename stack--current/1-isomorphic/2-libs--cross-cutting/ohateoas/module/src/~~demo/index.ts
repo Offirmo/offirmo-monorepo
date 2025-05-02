@@ -10,8 +10,6 @@ import {
 	trim,
 	coerce_blanks_to_single_spaces,
 	coerce_delimiters_to_space,
-	normalizeꓽurl,
-	normalizeꓽurlⵧhttpₓ,
 } from '@offirmo-private/normalize-string'
 
 import { createꓽserver } from '../~~sandbox/example--check-for-update/server/index.ts'

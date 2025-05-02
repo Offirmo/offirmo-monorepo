@@ -331,7 +331,7 @@ const DOC_DEMO_HINTS: RichText.Document = {
 const DOC_DEMO_RPG_01: RichText.Document = {
 	$v: 1,
 	$type: 'fragmentⵧblock',
-	$content: 'You are in ⎨⎨place⎬⎬. You meet ⎨⎨npc⎬⎬.⎨⎨br⎬⎬He gives you a ⎨⎨item⎬⎬.⎨⎨hr⎬⎬',
+	$content: 'You are in ⎨⎨place⎬⎬. You meet ⎨⎨npc⎬⎬.⎨⎨br⎬⎬He gives you a ⎨⎨item⎬⎬.',
 	$sub: {
 		place: DOC_PLACE_01,
 		npc: DOC_NPC_01,
@@ -357,8 +357,8 @@ const DOC_DEMO_RPG_03 = RichText.fragmentⵧblock()
 		+ '…undoubtly, you’ll make a name in this world and fulfill your destiny!⎨⎨br⎬⎬',
 	)
 	.pushStrong('A great saga just started.')
-	.pushText('⎨⎨br⎬⎬loot:')
-	.pushRawNode(DOC_DEMO_RPG_02, { id: 'loot' })
+	.pushLineBreak()
+	.pushNode(DOC_DEMO_RPG_01, { id: 'adventure' })
 	.done()
 
 const DOC_DEMO_INVENTORY: RichText.Document = {

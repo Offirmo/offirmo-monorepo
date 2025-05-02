@@ -29,6 +29,12 @@ describe(`${LIB} -- url`, function() {
 			// recognized as an email
 			'a@b.c': 'mailto:a@b.c',
 			'A@b. c': 'mailto:a@b.c',
+
+			// only scheme-specific
+			'': '/',
+			'/': '/',
+			'?&b=2&a=1': '/?a=1&b=2',
+			'#xyz': '/#xyz',
 		},
 	}
 

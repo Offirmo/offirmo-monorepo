@@ -1,0 +1,7 @@
+{
+	name: "ohateoas-browser--react",
+	description: "Web implementation of a Offirmo’s Hypermedia Architecture browser in React",
+	engines: {
+		browser: '*',
+	},
+}

@@ -9,10 +9,12 @@ import { normalizeꓽemailⵧreasonable, hasꓽemail_structure } from '../2-emai
 /////////////////////////////////////////////////
 // https://en.wikipedia.org/wiki/URL
 
+const FAKE_ORIGIN = 'https://placeholder.fake'
+
 function _normalizeⵧschemeꘌhttpₓ(url: string): string {
 	try {
 		// TODO one day URL.canParse
-		new URL(url)
+		new URL(url, FAKE_ORIGIN)
 	}
 	catch(e) {
 		throw new Error(`Invalid URL!`)
@@ -32,20 +34,20 @@ function _normalizeⵧschemeꘌhttpₓ(url: string): string {
 		throw new Error(`Not a http(s) scheme "${scheme}"!`)
 	}
 
-	// TODO remove trackers?
-	// TODO add trailing slash?
-	// TODO more?
-
 	return [scheme, ...rest].join(':')
 }
 
 function _normalize_per_scheme(url: string): string {
 	// classic case of passing a raw email without the "mailto:" scheme
-	if (!url.includes(':') && hasꓽemail_structure(url))
-		url = `mailto:${url}`
+	if (!url.includes(':')) {
+		if (hasꓽemail_structure(url))
+			url = `mailto:${url}`
+	}
 
-	let [ raw_scheme, ...rest] = url.split(':')
-	let scheme = (raw_scheme || '').toLowerCase()
+	let [ raw_scheme, ...rest] = url.includes(':')
+		? url.split(':')
+		: [ '', url ]
+	let scheme = raw_scheme!.toLowerCase()
 
 	switch(scheme) {
 		case 'mailto':
@@ -55,36 +57,54 @@ function _normalize_per_scheme(url: string): string {
 			/* falls through */
 		case 'https': {
 			url = _normalizeⵧschemeꘌhttpₓ([ scheme, ...rest ].join(':'))
+
+			// TODO remove trackers
+			// TODO add trailing slash
+			// TODO normalize URI encoding
+			// TODO check forbidden domains https://www.rfc-editor.org/rfc/rfc2606.html#section-2
+
 			;[ scheme, ...rest ] = url.split(':') as [string, string]
 			break
 		}
 
-		// TODO more schemes
 		default:
-			console.warn(`normalizeꓽurl: Unknown scheme "${scheme}"!`)
+			if (!scheme) {
+				// scheme-less URL, allowed, don't add unnecessary ':'
+				return [ ...rest ].join(':')
+			}
+			else {
+				// TODO more schemes
+				console.warn(`normalizeꓽurl: Unknown scheme "${scheme}"!`)
+			}
 			break
 	}
 
 	return [ scheme, ...rest ].join(':')
 }
 
-function _validate_url_structure(possible_url: string): string {
-	const url‿obj = new URL(possible_url)
+function _normalize_url_structure(possible_url: string | URL): string {
+	const url‿obj = (possible_url instanceof  URL)
+		? possible_url
+		: (new URL(possible_url, FAKE_ORIGIN))
+
 	url‿obj.searchParams.sort()
 
-	// TODO check forbidden domains
-	// https://www.rfc-editor.org/rfc/rfc2606.html#section-2
-
-	return (url‿obj.origin == 'null' ? url‿obj.protocol : url‿obj.origin) + url‿obj.pathname + url‿obj.search + url‿obj.hash
+	return (url‿obj.origin === FAKE_ORIGIN
+			? ''
+			: (url‿obj.origin === "null"
+				? url‿obj.protocol // no origin, ex. email -> fallback on protocol mailto:
+				: url‿obj.origin))
+		+ url‿obj.pathname
+		+ url‿obj.search
+		+ url‿obj.hash
 }
 
 const normalizeꓽurl = combineꓽnormalizers(
 	normalize_unicode,
 	remove_all_spaces, // yes in theory we could encode them, but a space is more likely a typo, ex. wrong input type for email "Offirmo. Net@gmail. Com"
 	_normalize_per_scheme,
-	_validate_url_structure,
-	// TODO normalize URI encoding?
-	// TODO redundant with ts-types-web normalizeꓽuri‿str!
+	_normalize_url_structure,
+
 )
 
 const normalizeꓽurlⵧhttpₓ = combineꓽnormalizers(
@@ -95,6 +115,8 @@ const normalizeꓽurlⵧhttpₓ = combineꓽnormalizers(
 /////////////////////////////////////////////////
 
 export {
+	FAKE_ORIGIN,
+
 	normalizeꓽurl,
 	normalizeꓽurlⵧhttpₓ,
 }

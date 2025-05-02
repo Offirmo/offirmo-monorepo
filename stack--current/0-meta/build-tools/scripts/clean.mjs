@@ -3,10 +3,10 @@
 
 import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
+import * as fs from 'node:fs/promises'
 
 import meow from 'meow'
 import stylize_string from 'chalk'
-import fs from 'fs-extra'
 
 /////////////////////
 
@@ -31,7 +31,7 @@ console.log(`🧹  🔻 Cleaning ${stylize_string.bold(PKG_NAME)} [${cli.input}]
 
 function rm_folderⵧwith_trace(filepath) {
 	console.debug(`     - "↳/${path.relative(MONOREPO_ROOT_PATH, filepath)}/"…`)
-	return fs.remove(filepath)
+	return fs.rm(filepath, { recursive: true, force: true })
 }
 
 Promise.all(cli.input

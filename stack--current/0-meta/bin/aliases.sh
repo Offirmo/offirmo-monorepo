@@ -44,6 +44,7 @@ alias    mono1Xad='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 
 alias     mono20o='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 0-dev-tools/offirmo-state-migration-tester/;              tabset --badge mono20o'
 alias     mono21s='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 1-libs--simple/spawn-correctly/;                          tabset --badge mono21s'
+alias    mono22ot='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 2-libs--cross-cutting/ohateoas-browser--terminal/;        tabset --badge mono22ot'
 alias    mono22pn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 2-libs--cross-cutting/practical-logger--node/;            tabset --badge mono22pn'
 alias    mono22rt='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 2-libs--cross-cutting/rich-text-format--to-terminal/;     tabset --badge mono22rt'
 alias    mono22sn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 2-libs--cross-cutting/soft-execution-context--node/;      tabset --badge mono22sn'
@@ -65,6 +66,7 @@ alias     mono31p='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias    mono31p2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd 1-libs--simple/poll-window-variable/;                     tabset --badge mono31p2'
 alias     mono31s='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd 1-libs--simple/style-once/;                               tabset --badge mono31s'
 alias    mono31ws='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd 1-libs--simple/wc--social/;                               tabset --badge mono31ws'
+alias    mono32or='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd 2-libs--cross-cutting/ohateoas-browser--react/;           tabset --badge mono32or'
 alias    mono32pb='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd 2-libs--cross-cutting/practical-logger--browser/;         tabset --badge mono32pb'
 alias    mono32re='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd 2-libs--cross-cutting/react--error-boundary/;             tabset --badge mono32re'
 alias    mono32rt='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd 2-libs--cross-cutting/rich-text-format--to-react/;        tabset --badge mono32rt'

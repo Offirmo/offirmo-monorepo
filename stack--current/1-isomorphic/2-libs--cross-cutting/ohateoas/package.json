@@ -8,9 +8,9 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/server/index.ts"
+		".": "./module/src/index.ts"
 	},
-	"source": "module/src/server/index.ts",
+	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
@@ -25,10 +25,7 @@
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s check--ts",
 		"demo": "node --experimental-strip-types ./module/src/~~demo/index.ts",
-		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts",
-		"sb1": "node --experimental-strip-types ./module/src/~~sandbox/example--check-for-update/index.ts",
-		"sb2": "node --experimental-strip-types ./module/src/~~sandbox/example--check-for-update/index.ts",
-		"sb3": "node --experimental-strip-types ./module/src/~~sandbox/example--tbrpg/index.ts"
+		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
