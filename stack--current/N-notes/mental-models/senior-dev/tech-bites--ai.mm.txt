@@ -9,6 +9,7 @@
 2025-04 Shopify threatening internal memo "Reflexive AI usage is now a baseline expectation" https://x.com/tobi/status/1909251946235437514
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
+[ ] https://openai.com/news/
 [ ] https://www.anthropic.com/news
 [ ] https://www.perspectiveapi.com/
 [ ] https://www.sbert.net/

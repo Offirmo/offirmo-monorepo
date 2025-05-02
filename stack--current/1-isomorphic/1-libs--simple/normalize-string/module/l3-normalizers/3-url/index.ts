@@ -69,7 +69,6 @@ function _normalize_per_scheme(url: string): string {
 }
 
 function _validate_url_structure(possible_url: string): string {
-
 	const url‿obj = new URL(possible_url)
 	url‿obj.searchParams.sort()
 
@@ -81,10 +80,11 @@ function _validate_url_structure(possible_url: string): string {
 
 const normalizeꓽurl = combineꓽnormalizers(
 	normalize_unicode,
-	remove_all_spaces, // yes in theory we could encode them, but a space is more likely a typo, ex. mobile adding a " " after a .
+	remove_all_spaces, // yes in theory we could encode them, but a space is more likely a typo, ex. wrong input type for email "Offirmo. Net@gmail. Com"
 	_normalize_per_scheme,
 	_validate_url_structure,
 	// TODO normalize URI encoding?
+	// TODO redundant with ts-types-web normalizeꓽuri‿str!
 )
 
 const normalizeꓽurlⵧhttpₓ = combineꓽnormalizers(

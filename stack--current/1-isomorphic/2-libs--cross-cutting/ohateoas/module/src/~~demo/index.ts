@@ -14,7 +14,9 @@ import {
 	normalizeꓽurlⵧhttpₓ,
 } from '@offirmo-private/normalize-string'
 
-import { createꓽserver } from '../~~sandbox/example--tbrpg/server/index.ts'
+import { createꓽserver } from '../~~sandbox/example--check-for-update/server/index.ts'
+//import { createꓽserver } from '../~~sandbox/example--tbrpg/server/index.ts'
+//import { createꓽserver } from '../~~sandbox/example--tbrpg/server/index.ts'
 
 import { LINK__REL__CONTINUE_TO } from '../types/consts.ts'
 import type {
@@ -119,15 +121,17 @@ function convert_to_action(action_blueprint: OHAHyperActionBlueprint): {
 
 	const payload = new Map<string, JSONPrimitiveType>()
 	Object.keys(input).forEach(k => {
-		switch (k) {
+		const spec = input[k]
+		switch (spec.type) {
 			case 'env--os':
 				payload.set(k, 'macOs')
 				break
 			case 'env--arch':
 				payload.set(k, 'arm')
 				break
+			default:
+				throw new Error(`Not implemented!`)
 		}
-		throw new Error(`Not implemented!`)
 	})
 
 	const action: OHAHyperAction = {

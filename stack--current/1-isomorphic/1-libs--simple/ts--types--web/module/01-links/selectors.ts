@@ -9,6 +9,8 @@ import type {
 	Hyperlink,
 	Hyperlink‿x, Uri‿str,
 } from './types.ts'
+import type { OHALinkRelation } from '@offirmo-private/ohateoas/module/src/types/types.ts'
+import { hasꓽemail_structure, normalize_unicode, normalizeꓽemailⵧreasonable, remove_all_spaces } from '@offirmo-private/normalize-string'
 
 /////////////////////////////////////////////////
 
@@ -20,6 +22,8 @@ function isꓽHyperlink(x: Immutable<any>): x is Hyperlink {
 }
 
 /////////////////////////////////////////////////
+
+const FAKE_ORIGIN = 'https://placeholder.fake'
 
 function getꓽscheme_specific_partⵧfrom_URLObject(url‿obj: URL): SchemeSpecificURIPart {
 	return {
@@ -34,13 +38,12 @@ function getꓽscheme_specific_partⵧfrom_URLObject(url‿obj: URL): SchemeSpec
 function getꓽscheme_specific_partⵧfrom_Uri_str(uri‿str: Uri‿str): SchemeSpecificURIPart {
 	uri‿str ||= '/'
 
-	const url‿obj = new URL(uri‿str, 'https://example.com')
+	const url‿obj = new URL(uri‿str, FAKE_ORIGIN)
 
 	return getꓽscheme_specific_partⵧfrom_URLObject(url‿obj)
 }
 
-// promote to the most expressive of "X"
-function promote_toꓽscheme_specific_part(uri: Uri‿x): SchemeSpecificURIPart {
+function getꓽscheme_specific_part(uri: Uri‿str | SchemeSpecificURIPart): SchemeSpecificURIPart {
 	if (typeof uri === 'string') {
 		return getꓽscheme_specific_partⵧfrom_Uri_str(uri)
 	}
@@ -48,24 +51,70 @@ function promote_toꓽscheme_specific_part(uri: Uri‿x): SchemeSpecificURIPart 
 	return uri
 }
 
-// promote to the most expressive of "X"
-function promote_toꓽhyperlink(link: Hyperlink‿x, hints: Partial<Omit<Hyperlink, 'href'>> = {}): Hyperlink {
-	if (isꓽHyperlink(link))
-		return link
 
-	const href = promote_toꓽscheme_specific_part(link)
+function getꓽuriⵧnormalized‿str(link: Uri‿str | SchemeSpecificURIPart | Hyperlink | URL): Uri‿str {
+	try {
+		// TODO does it work for emails??
+		let url‿obj: URL = (() => {
+			if (link instanceof URL)
+				return link
 
-	return {
-		rel: [],
-		...hints,
-		href,
+			let uri‿str: Uri‿str = (() => {
+				if (typeof link === 'string')
+					return link
+
+				if (isꓽHyperlink(link))
+					return link.href
+
+				throw new Error(`Not implemented!`)
+			})()
+
+			uri‿str = remove_all_spaces(
+				normalize_unicode(uri‿str)
+			)
+
+			if (!uri‿str.includes(':') && hasꓽemail_structure(uri‿str))
+				uri‿str = `mailto:${uri‿str}`
+
+
+			return new URL(uri‿str, FAKE_ORIGIN)
+		})()
+
+		if (url‿obj.origin === "null") {
+			// using the fake origin may have yielded a bad scheme
+
+		}
+
+		let pathname = url‿obj.pathname // bc seen not assignable
+
+		if (url‿obj.origin !== FAKE_ORIGIN) {
+			if (url‿obj.protocol === 'http:') {
+				// upgrade to https
+				// YES I know it can break the link
+				// but this upgrade is good more often than not
+				url‿obj.protocol = 'https:'
+			}
+			if (url‿obj.protocol === 'mailto:') {
+				pathname = normalizeꓽemailⵧreasonable(url‿obj.pathname)
+			}
+		}
+
+		url‿obj.searchParams.sort()
+
+		return (url‿obj.origin === FAKE_ORIGIN
+				? ''
+				: (url‿obj.origin === "null"
+					? url‿obj.protocol // no origin, ex. email
+					: url‿obj.origin))
+			+ pathname
+			+ url‿obj.search
+			+ url‿obj.hash
 	}
-}
+	catch (e) {
+		throw e
+	}
 
-function getꓽuri‿str(link: Uri‿x | Hyperlink‿x): Uri‿str {
-	const href = promote_toꓽhyperlink(link).href
-
-	const { path, query, fragment } = promote_toꓽscheme_specific_part(href)
+	throw new Error(`Not implemented!`)
 
 	let result = path
 
@@ -80,23 +129,41 @@ function getꓽuri‿str(link: Uri‿x | Hyperlink‿x): Uri‿str {
 	return result
 }
 
+// promote to the most expressive of "X"
+function promote_toꓽhyperlink(link: Hyperlink‿x, hints: Partial<Omit<Hyperlink, 'href'>> = {}): Hyperlink {
+	if (isꓽHyperlink(link))
+		return {
+			...hints,
+			...link,
+			rel: Array.from((new Set<OHALinkRelation>([
+					...(link.rel ?? []),
+					...(hints.rel ?? [])
+				])).values())
+				.sort(),
+		}
+
+	return {
+		rel: [],
+		...hints,
+		href: getꓽuriⵧnormalized‿str(link),
+	}
+}
+
 // semantic alias
 // also useful to normalize = sort query params etc.
 function normalizeꓽuri‿str(uri: Immutable<Uri‿x>): Uri‿str {
-	// TODO sort query params!!
-	// (but hard bc no standard on the query params...)
-	return getꓽuri‿str(uri)
+	return getꓽuriⵧnormalized‿str(uri)
 }
 
 /////////////////////////////////////////////////
 
 export {
-	promote_toꓽscheme_specific_part,
+	getꓽscheme_specific_part,
 
 	isꓽHyperlink,
 	promote_toꓽhyperlink,
 
-	getꓽuri‿str,
+	getꓽuriⵧnormalized‿str,
 
 	normalizeꓽuri‿str,
 }

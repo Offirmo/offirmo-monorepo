@@ -13,6 +13,7 @@ type Url‿str = Uri‿str
 
 ////////////
 
+// TODO review! scheme agnostic?? query optional??
 // ex. /foo?sort=asc#bar
 interface SchemeSpecificURIPart {
 	// TODO clarify encoding
@@ -69,9 +70,7 @@ type LinkRelation =
 	| 'section' // Refers to a section in a collection of resources.'
 	// TODO one day look into webmention, "Linkback" mechanism to the ones of Refback, Trackback, and Pingback
 	// ultimately, everything is valid
-	//| string
-	// special Offirmo HATEOAS
-	| 'continue-to' // automatically navigates to this resource once the current one is displayed
+	| string
 
 // inspired by https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/target
 type LinkTarget =
@@ -81,22 +80,10 @@ type LinkTarget =
 	| '_parent' // The parent browsing context of the current one. If no parent, behaves as _self.
 	| '_top'    // The topmost browsing context. To be specific, this means the "highest" context that's an ancestor of the current one. If no ancestors, behaves as _self.
 	| string // The name of a browsing context (window or tab) in which to display the resource. If no such context exists, the user agent will create one with that name
-	// special Offirmo HATEOAS
-	| '_root' // the closest root, ~to a webapp (may not be the topmost HATEOAS context) = needed for immersion, ex. full-screen cutscene
 
-/** A more generic hyperlink than HTML's <a> following hypermedia theory
- * see https://hypermedia.systems/
- */
-interface Hyper {
+interface Hyperlink extends WithLang {
 	// hyper target of this
-	href?: Uri‿x // optional bc can sometimes be inferred = current
-
-	// presentation
-	cta?: string // optional bc should ideally be derived from the action (esp. for i18n) BUT same action could have different CTA following the context (ex. equip best equipment)
-	shortcut?: string // TODO 1D format
-}
-interface Hyperlink extends Hyper, WithLang {
-	href: Uri‿x // mandatory for this subtype
+	href: Uri‿x
 
 	/**
 	 * https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel
@@ -153,8 +140,6 @@ export {
 	type Uri‿str, type Url‿str,
 	type SchemeSpecificURIPart,
 	type Uri‿x,
-
-	type Hyper,
 
 	type LinkRelation,
 	type LinkTarget,

@@ -1,6 +1,6 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
-import { promote_toꓽscheme_specific_part } from '@offirmo-private/ts-types-web'
+import { getꓽscheme_specific_part } from '@offirmo-private/ts-types-web'
 
 import type { OHAHyperLink, OHAHyperLink‿x, OHALinkRelation } from './types.ts'
 import { isꓽOHAHyperLink } from './guards.ts'

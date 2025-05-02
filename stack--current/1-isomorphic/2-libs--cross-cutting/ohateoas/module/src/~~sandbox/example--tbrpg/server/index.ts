@@ -2,8 +2,8 @@ import type {
 	SemVer,
 } from '@offirmo-private/ts-types'
 import {
-	promote_toꓽscheme_specific_part,
 	normalizeꓽuri‿str,
+	getꓽscheme_specific_part,
 } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 import type {
@@ -36,7 +36,16 @@ function backend() {
 
 /////////////////////////////////////////////////
 
-const ROOT_URI = normalizeꓽuri‿str('/session/adventures/')
+const URIꘌROOT = normalizeꓽuri‿str('/session/adventures/')
+
+const URIꘌEQUIPMENT: OHAHyperLink = {
+	href: '/session/equipment/',
+	target: 'character_sheet/equipment',
+	rel: [],
+	hints: {
+		cta: 'Manage equipment & inventory…',
+	}
+}
 
 function createꓽserver(): OHAServer {
 
@@ -44,17 +53,16 @@ function createꓽserver(): OHAServer {
 		DEBUG && console.group(`↘ OHA ↆget("${url}")`)
 
 		////////////
-		const { path, query, fragment } = promote_toꓽscheme_specific_part(url)
+		const { path, query, fragment } = getꓽscheme_specific_part(url)
 		DEBUG && console.log('URL after normalization:', { path, query, fragment })
 
 		////////////
 		// prepare aggregation
-
 		let $builder = RichText.fragmentⵧblock() // "block" bc maps to a ~frame/sub-browser
 
 		const links: OHARichTextHints['links'] = {
 			self: normalizeꓽuri‿str(path), // intentionally strip query & path until considered relevant
-			home: ROOT_URI, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
+			home: URIꘌROOT, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
 		}
 
 		const actions: OHARichTextHints['actions'] = {
@@ -124,9 +132,11 @@ function createꓽserver(): OHAServer {
 						tracking: 'foreground', // (default) full "waiting/loading" UI, no other action can be sent until this one is resolved
 						durationⵧmin‿ms: 1000, // if present, never resolve the action faster than this (illusion of labor) Do not abuse! (default to some value depending on the verb)
 						//continueᝍto: '/session/adventures/last' // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
-						//meesage...
+						//message...
 					}
 				}
+
+				links['equipment'] = URIꘌEQUIPMENT
 
 				break
 			}

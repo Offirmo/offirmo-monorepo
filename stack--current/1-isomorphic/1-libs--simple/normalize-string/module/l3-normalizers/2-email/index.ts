@@ -8,7 +8,6 @@ import {
 // general infos: https://github.com/Offirmo-team/wiki/wiki/courriel
 // credits to TODO ???
 
-
 ////////////////////////////////////
 // fragments
 
@@ -135,22 +134,15 @@ const normalizeꓽemailⵧsafe = combineꓽnormalizers(
 )
 
 const normalizeꓽemailⵧreasonable = combineꓽnormalizers(
-	normalize_unicode,
-	remove_all_spaces,
-	_assertꓽhas_email_structure,
+	normalizeꓽemailⵧsafe,
 	_normalize_domain,
 	_remove_plus_fragment_from_local_part_if_insensitive,
 	_lowercase_local_part_if_insensitive,
 )
 
 const normalizeꓽemailⵧfull = combineꓽnormalizers(
-	normalize_unicode,
-	remove_all_spaces,
-	_assertꓽhas_email_structure,
-	_normalize_domain,
-	_remove_plus_fragment_from_local_part_if_insensitive,
+	normalizeꓽemailⵧreasonable,
 	_remove_dots_from_local_part_if_insensitive,
-	_lowercase_local_part_if_insensitive,
 )
 
 /////////////////////////////////////////////////
