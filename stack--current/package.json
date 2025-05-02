@@ -17,7 +17,7 @@
 		"// GREAT!": "also update the root package.json when not in sync",
 		"postinstall": "node ./0-meta/build-tools/scripts/monorepo-utils.mjs",
 
-		"// TODO": "test if it's still working",
+		"// Meh": "not doing much ATM",
 		"manypkg--check": "manypkg check",
 		"manypkg--fix": "manypkg fix",
 

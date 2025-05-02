@@ -75,7 +75,7 @@ interface OHAHyperLink extends OHAHyper {
 
 	target?: OHALinkTarget
 
-	// TODO some kind of feedback engagement?
+	// TODO some kind of feedback engagement? needed for links?
 }
 
 // "x" = "any [kind of format]"
@@ -85,15 +85,7 @@ type OHAHyperLink‿x =
 
 /////////////////////////////////////////////////
 
-// ex. ack "your request has been received"
-// ex. wait "processing..."
-// ex. prepare transition "hyperspace" from planet A to planet B
-interface Feedback {
-	// text
-	// loader
-	// emoji
-	// color...
-}
+
 
 /////////////////////////////////////////////////
 // 2b. Hyperactions (improved ~forms)
@@ -139,6 +131,26 @@ interface InputSpec<T = JSONPrimitiveType> {
 	valueⵧcurrent?: T // useful in case [intent = change] to discourage using the same value or move it last in UI
 }
 
+// a simple feedback on action, without waiting for a server answer
+// ex. ack "your request has been received"
+// ex. wait "processing..."
+// ex. prepare transition "hyperspace" from planet A to planet B
+interface OHAFeedback {
+	// text
+	// loader
+	// emoji
+	// color...
+	tracking:
+		| 'forget'     // as in "fire-and-forget" = no tracking UI of the action is needed. Ex. sending a mail
+		| 'background' // tracking UI recommended but doesn't prevent sending other actions
+		| 'foreground' // (default) full "waiting/loading" UI, no other action can be sent until this one is resolved
+
+	durationⵧmin‿ms?: number // if present, never resolve the action faster than this (illusion of labor) Do not abuse! (default to some value depending on the verb)
+
+	continueᝍto?: Uri‿x // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
+
+	// TODO feedback engagement? Or in an extension of this?
+}
 
 // anything not hypermedia.GET
 // conceptually maps to an HTML form
@@ -155,27 +167,17 @@ interface OHAHyperActionBlueprint extends OHAHyper {
 	input?: Record<string, InputSpec>// the data of the action, could be anything (or nothing)
 
 	hints?: OHAHyper['hints']  & {
-		purpose?: StateChangeCategory
+		change?: StateChangeCategory
 		// TODO some sort of risk?
 	}
 
 	// aftermath
 	// this is needed in the blueprint so that the client knows what to do/show
-	feedback?: {
-		tracking:
-			| 'forget'     // as in "fire-and-forget" = no tracking UI of the action is needed. Ex. sending a mail
-			| 'background' // tracking UI recommended but doesn't prevent sending other actions
-			| 'foreground' // (default) full "waiting/loading" UI, no other action can be sent until this one is resolved
-
-		durationⵧmin‿ms?: number // if present, never resolve the action faster than this (illusion of labor) Do not abuse! (default to some value depending on the verb)
-
-		continueᝍto?: Uri‿x // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
-
-		// TODO feedback engagement? Or in an extension of this?
-	}
+	feedback?: OHAFeedback
 }
 
 // constructed from the above
+// much simpler, correspond to a ~rpc
 interface OHAHyperAction {
 	key: string
 
@@ -218,6 +220,7 @@ export {
 	type OHAHyperLink‿x,
 
 	type OHAHyperActionBlueprint, type OHAHyperAction,
+	type OHAFeedback,
 
 	type OHAPendingEngagement,
 }

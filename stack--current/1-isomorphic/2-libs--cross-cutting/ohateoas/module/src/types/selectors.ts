@@ -2,15 +2,18 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import { promote_toꓽscheme_specific_part } from '@offirmo-private/ts-types-web'
 
-import type { OHAHyperLink, OHAHyperLink‿x } from './types.ts'
+import type { OHAHyperLink, OHAHyperLink‿x, OHALinkRelation } from './types.ts'
 import { isꓽOHAHyperLink } from './guards.ts'
 
 /////////////////////////////////////////////////
 
 // promote to the most expressive of "X"
-function promote_toꓽOHAHyperLink(link: OHAHyperLink‿x, hints: Partial<Omit<OHAHyperLink‿x, 'href'>> = {}): OHAHyperLink {
+function promote_toꓽOHAHyperLink(link: OHAHyperLink‿x, hints: Partial<Omit<OHAHyperLink, 'href'>> = {}): OHAHyperLink {
 	if (isꓽOHAHyperLink(link))
-		return link
+		return {
+			...link,
+			rel: Array.from((new Set<OHALinkRelation>([ ...(link.rel ?? []), ...(hints.rel ?? [])])).values()).sort(),
+		}
 
 	return {
 		...hints,

@@ -4,7 +4,7 @@
 interface DisplayOptions {
 	eol: '' | '\n' | '\r\n' // what should be used for EOL. '' (empty string) = no line return
 	max_width‿charcount: number // max width before need to wrap NOT IMPLEMENTED TODO
-	outline: boolean // add a strong separator at top and bottom so that it stands out    NOT IMPLEMENTED TODO
+	//outline: boolean // add a strong separator at top and bottom so that it stands out    NOT IMPLEMENTED TODO
 	indent_size‿charcount: number, // how many spaces to use for indentation
 	max_primitive_str_size: null | number // NOT IMPLEMENTED TODO
 	should_recognize_constants: boolean
@@ -12,7 +12,7 @@ interface DisplayOptions {
 	should_sort_keys: boolean
 	should_compact_objects: boolean // if true, will attempt to compact simpler objects on a single line as long as they fit
 	should_warn_not_json: boolean // if true, will print in red if not JSON
-	quote: '\'' | '"'
+	quote: "'" | '"'
 	date_serialization_fn: string
 }
 

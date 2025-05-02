@@ -20,7 +20,7 @@ import {
 
 /////////////////////////////////////////////////
 
-const DEBUG = true
+const DEBUG = false
 
 function backend() {
 	return {
@@ -89,7 +89,7 @@ function createꓽserver(): OHAServer {
 			}
 
 			case normalizeꓽuri‿str('/session/adventures/'): {
-				$builder = $builder.pushHeading('Currently adventuring…')
+				$builder = $builder.pushBlockFragment('What do you want to do?')
 
 				// NO recap of last adventure, it's a different route from when we play!
 
@@ -102,7 +102,7 @@ function createꓽserver(): OHAServer {
 					// TODO is it a blocker for playing?
 				}*/
 
-				$builder = $builder.pushBlockFragment('You can play now!')
+				//$builder = $builder.pushBlockFragment('You can play now!')
 				/*
 				if(AppState.getꓽavailable_energy‿float(state.t_state) >= 1) {
 					$builder = $builder.pushBlockFragment('You can play now!')
@@ -115,7 +115,7 @@ function createꓽserver(): OHAServer {
 					key: 'play',
 
 					hints: {
-						purpose: 'reduce',
+						change: 'reduce',
 						cta: 'Play!',
 						keyboard_shortcut: 'P',
 					},
@@ -123,7 +123,8 @@ function createꓽserver(): OHAServer {
 					feedback: {
 						tracking: 'foreground', // (default) full "waiting/loading" UI, no other action can be sent until this one is resolved
 						durationⵧmin‿ms: 1000, // if present, never resolve the action faster than this (illusion of labor) Do not abuse! (default to some value depending on the verb)
-						continueᝍto: '/session/adventures/last' // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
+						//continueᝍto: '/session/adventures/last' // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
+						//meesage...
 					}
 				}
 

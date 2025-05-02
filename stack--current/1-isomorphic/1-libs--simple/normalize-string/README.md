@@ -1,29 +1,65 @@
 
-TODO change the API to avoid the intermediate NORMALIZERS
-TODO publish on npm?
-
 
 ```ts
 import {
-  combineꓽnormalizers,
+  // base
   ensure_string,
+  
+  coerce_toꓽascii,
+  RECOMMENDED_UNICODE_NORMALIZATION,
   normalize_unicode,
-  trim,
+  
   capitalize,
+  to_lower_case,
+  to_upper_case,
+  
+  trim,
+  
+  coerce_blanks_to_single_spaces,
+  remove_all_spaces,
+  coerce_delimiters_to_space,
+  convert_spaces_to_camel_case,
+  convert_spaces_to_kebab_case,
+  
+  // content
+  normalizeꓽtextⵧsentence,
+  
+  // email
+  normalizeꓽemailⵧsafe,
+  normalizeꓽemailⵧreasonable,
+  normalizeꓽemailⵧfull,
+  
+  // fs
+  coerce_toꓽsafe_basenameⵧstrictest,
+  normalizeꓽpath,
+  
+  // handle
+  coerce_toꓽnicknameⵧsafe,
+  
+  // misc
+  coerce_toꓽtokens,
+  coerce_toꓽredeemable_code,
+  normalizeꓽIETFLanguageType,
+  
+  // url
+  normalizeꓽurl,
+  normalizeꓽurlⵧhttpₓ,
+  
+  // arrays
+  normalizeꓽarrayⵧof_strings,
 } from '@offirmo-private/normalize-string'
 
 import {
-	assertꓽstringⵧnormalized,
-	assertꓽstringⵧnormalized_and_trimmedꓽ,
+  assertꓽstringⵧnormalized,
+  assertꓽstringⵧnormalized_and_trimmed,
+  hasꓽemail_structure,
+} from '@offirmo-private/normalize-string'
+
+import {
+	combineꓽnormalizers,
+	normalize,
+	default_to,
+	normalizeꓽarray,
 } from '@offirmo-private/normalize-string'
 
 ```
-https://thread.engineering/2018-08-29-searching-and-sorting-text-with-diacritical-marks-in-javascript/
-
-See: https://github.com/aceakash/string-similarity
-to avoid copyrighted names
-
-https://github.com/minimaxir/big-list-of-naughty-strings/blob/master/blns.txt
-
-* TODO look at https://github.com/johno/normalize-email
-* TODO look at https://github.com/iDoRecall/email-normalize

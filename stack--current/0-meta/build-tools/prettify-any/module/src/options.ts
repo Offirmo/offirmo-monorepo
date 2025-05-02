@@ -15,7 +15,7 @@ function getꓽoptionsⵧdefault(): Options {
 		...OPTIONS__DISPLAYⵧDEFAULT,
 		...OPTIONS__PRETTIFYⵧDEFAULT,
 		...OPTIONS__STYLIZEⵧNONE,
-		...(getꓽlibꓽchalk() && getꓽstylize_optionsⵧterminal(getꓽlibꓽchalk())),
+		...(getꓽlibꓽchalk() && getꓽstylize_optionsⵧterminal(getꓽlibꓽchalk()!)),
 	}
 }
 
