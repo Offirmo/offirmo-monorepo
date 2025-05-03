@@ -1,64 +1,64 @@
 {
 	"name": "@offirmo-private/memories-sorter",
-	"version": "0.0.1",
 	"description": "An automated photo/media sorter",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
 	"private": true,
-
+	"sideEffects": false,
 	"type": "module",
-
+	"exports": {
+		".": "./module/src/index.ts"
+	},
+	"source": "module/src/index.ts",
 	"dependencies": {
-		"@offirmo-private/json-stable-stringify": "*",
 		"@offirmo-private/normalize-string": "*",
 		"@offirmo-private/prettify-any": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/state-utils": "*",
 		"@offirmo-private/timestamps": "*",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo/cli-toolbox": "^3",
-		"@offirmo/error-utils": "^0",
+		"@offirmo/error-utils": "^0.0.1",
 		"@offirmo/practical-logger-core": "^3",
-		"@offirmo/universal-debug-api-node": "^0",
+		"@offirmo/universal-debug-api-node": "^0.2",
 		"async": "^3",
+		"chalk": "^5",
 		"cli-progress": "^3",
-		"exiftool-vendored": "^28",
-		"fs-extra": "^11",
-		"geo-tz": "^8",
+		"exiftool-vendored": "^29",
 		"hasha": "^6",
-		"lodash": "^4",
 		"luxon": "^3",
 		"memoize-one": "^6",
 		"micro-memoize": "^4",
+		"tiny-invariant": "^1",
 		"tslib": "^2",
-		"typescript-string-enums": "^1",
-		"utimes": "^5"
+		"typescript-string-enums": "^1"
 	},
-
 	"scripts": {
-		"clean": "monorepo-script--clean-package …dist",
-
-		"_build:dev:watch": "monorepo-script--build-typescript-package --watch",
-		"_build:prod": "monorepo-script--build-typescript-package",
-
-		"dev": "run-s clean _build:dev:watch",
-		"xxtest":  "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/**/*spec.js'",
-
 		"test0": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/services/**/*spec.js'",
 		"test1": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/state/file/**/*spec.js'",
 		"test2": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/state/folder/**/*spec.js'",
 		"test3": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/state/db/**/*spec.js'",
 		"test4": "mocha --bail --config ./node_modules/@offirmo/unit-test-toolbox/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/mocha-chai-init-node.mjs 'dist/src.es2024.esm/state/notes/**/*spec.js'",
 
-		"xxbuild": "run-s  clean _build:prod",
-
-		"start": "node dist/src.es2024.esm/index.js"
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
+		"check--ts": "echo \"@offirmo-private/memories-sorter\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"_check": "run-s tests check--ts",
+		"start": "node --experimental-strip-types ./module/src/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/state-migration-tester": "*",
-		"@offirmo-private/ts-types": "*",
-		"@offirmo/unit-test-toolbox": "*",
+		"@offirmo/unit-test-toolbox": "^9",
 		"@types/async": "^3",
-		"npm-run-all": "^4"
+		"@types/cli-progress": "^3",
+		"@types/luxon": "^3",
+		"@types/node": "^22",
+		"npm-run-all": "^4",
+		"typescript": "^5",
+		"utimes": "^5"
 	}
 }

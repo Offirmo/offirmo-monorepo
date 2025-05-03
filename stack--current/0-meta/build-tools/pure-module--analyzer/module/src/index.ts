@@ -83,6 +83,8 @@ function isꓽignored_file(entry: FileEntry): boolean {
 
 	if ([
 		// BINARY assets = leaf nodes (no deps)
+		'.gif',
+		'.heic',
 		'.jpg',
 		'.mp3',
 		'.otf',

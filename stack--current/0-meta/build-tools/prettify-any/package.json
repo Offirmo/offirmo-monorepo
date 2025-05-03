@@ -15,6 +15,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"chalk": "^5",
 		"terminal-size": "^4",
 		"tiny-invariant": "^1"
 	},
@@ -31,7 +32,6 @@
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^22",
 		"@types/prettyjson": "^0.0.33",
-		"chalk": "^5",
 		"npm-run-all": "^4",
 		"prettyjson": "^1",
 		"tslib": "^2",
