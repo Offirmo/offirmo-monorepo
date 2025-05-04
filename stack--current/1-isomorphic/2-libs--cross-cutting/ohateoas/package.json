@@ -16,6 +16,8 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/normalize-string": "*",
+		"@offirmo-private/rich-text-format": "*",
 		"@offirmo-private/ts-types-web": "*",
 		"@offirmo-private/type-detection": "*",
 		"tiny-invariant": "^1"
@@ -30,7 +32,6 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/rich-text-format": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@oh-my-rpg/state--engagement": "*",

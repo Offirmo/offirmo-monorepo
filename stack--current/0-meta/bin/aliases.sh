@@ -49,7 +49,6 @@ alias    mono22pn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias    mono22rt='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 2-libs--cross-cutting/rich-text-format--to-terminal/;     tabset --badge mono22rt'
 alias    mono22sn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 2-libs--cross-cutting/soft-execution-context--node/;      tabset --badge mono22sn'
 alias    mono22un='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 2-libs--cross-cutting/universal-debug-api--node/;         tabset --badge mono22un'
-alias     mono2Am='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd A-tools/memories-sorter/;                                 tabset --badge mono2Am'
 
 alias   mono30cud='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd 0-dev-tools/css--utils--diagnostics/;                     tabset --badge mono30cud'
 alias    mono30pc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd 0-dev-tools/parcel--check/;                               tabset --badge mono30pc'

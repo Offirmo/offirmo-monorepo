@@ -16,6 +16,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/ohateoas": "*",
 		"@offirmo-private/rich-text-format--to-react": "*",
 		"tiny-invariant": "^1"
 	},
@@ -31,7 +32,7 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ohateoas": "*",
+		"@offirmo-private/rich-text-format": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo-private/ts-types-web": "*",

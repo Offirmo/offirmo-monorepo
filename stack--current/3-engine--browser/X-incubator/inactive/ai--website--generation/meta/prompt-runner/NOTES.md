@@ -14,7 +14,7 @@
 * TODO no underscore?
 
 
-Fromats
+Formats
 
 QA format: https://huggingface.co/microsoft/phi-2
 `Instruct: <prompt>\nOutput:`

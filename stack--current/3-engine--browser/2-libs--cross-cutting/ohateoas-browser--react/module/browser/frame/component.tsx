@@ -8,7 +8,7 @@ import {
 	getꓽaction_blueprints, getꓽcta,
 } from '@offirmo-private/ohateoas'
 
-import Chrome from './chrome/component.tsx'
+import ᄆChrome from './chrome/index.tsx'
 
 /////////////////////////////////////////////////
 
@@ -35,7 +35,7 @@ function ᄆComponent({url, $doc}: Props) {
 
 	return (
 		<div>
-			<Chrome url={url} />
+			<ᄆChrome url={url} />
 
 			<div>
 				[TODO top notifs]
