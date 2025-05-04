@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import type { Url‿str } from '@offirmo-private/ts-types-web'
 import type { OHAHyperMedia, OHAServer } from '@offirmo-private/ohateoas'
 
-import Frame from '../frame/component.tsx'
+import Frame from './frame/index.tsx'
 
 /////////////////////////////////////////////////
 

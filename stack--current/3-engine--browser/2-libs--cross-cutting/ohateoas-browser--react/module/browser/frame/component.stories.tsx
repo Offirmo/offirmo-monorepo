@@ -1,12 +1,12 @@
 import type { Meta‿v3, Story‿v3 } from '@offirmo-private/storypad'
 
 import { DOC_DEMO_RPG_03 } from '@offirmo-private/rich-text-format/examples'
-import Component from './component.tsx'
+import ᄆComponent from './component.tsx'
 
 /////////////////////////////////////////////////
 
 export default {
-	component: Component
+	component: ᄆComponent
 } satisfies Meta‿v3
 
 /////////////////////////////////////////////////

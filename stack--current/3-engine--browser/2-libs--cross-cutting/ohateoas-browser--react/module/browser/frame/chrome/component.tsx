@@ -8,8 +8,8 @@ interface Props {
 	url: Uri‿str
 }
 
-function Component({url}: Props) {
-	if (window.oᐧextra?.flagꓽdebug_render) console.log('🔄 XXX')
+function ᄆComponent({url}: Props) {
+	if (window.oᐧextra?.flagꓽdebug_render) console.log('🔄 Chrome/1')
 
 	return (
 		<div>
@@ -24,4 +24,4 @@ function Component({url}: Props) {
 
 /////////////////////////////////////////////////
 
-export default Component
+export default ᄆComponent
