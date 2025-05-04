@@ -3,7 +3,7 @@ import * as RichText from '@offirmo-private/rich-text-format'
 import {
 	normalize,
 	normalize_unicode,
-	capitalize,
+	capitalizeⵧfirst,
 	to_lower_case,
 	trim,
 	coerce_blanks_to_single_spaces,
@@ -70,7 +70,7 @@ function getꓽcta(hyper: OHAHyperLink | OHAHyperActionBlueprint): RichText.Node
 		coerce_blanks_to_single_spaces,
 		trim,
 		to_lower_case,
-		capitalize,
+		capitalizeⵧfirst,
 	)
 }
 

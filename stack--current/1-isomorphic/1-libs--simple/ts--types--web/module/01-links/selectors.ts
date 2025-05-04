@@ -12,6 +12,7 @@ import type {
 	SchemeSpecificURIPart,
 	Hyperlink,
 	Hyperlink‿x, Uri‿str,
+	LinkRelation,
 } from './types.ts'
 
 /////////////////////////////////////////////////
@@ -73,7 +74,7 @@ function promote_toꓽhyperlink(link: Hyperlink‿x, hints: Partial<Omit<Hyperli
 		return {
 			...hints,
 			...link,
-			rel: Array.from((new Set<OHALinkRelation>([
+			rel: Array.from((new Set<LinkRelation>([
 					...(link.rel ?? []),
 					...(hints.rel ?? [])
 				])).values())

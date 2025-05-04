@@ -6,7 +6,7 @@ import {
 import indent_string from 'indent-string'
 
 import stylize_string from 'chalk'
-injectꓽlibꓽchalk(stylize_string)
+//injectꓽlibꓽchalk(stylize_string)
 
 // https://github.com/AnAppAMonth/linewrap
 import linewrap from 'linewrap'

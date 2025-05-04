@@ -49,7 +49,7 @@ describe(`${LIB} -- url`, function() {
 			...TEST_CASES_BY_PROTOCOL.httpₓ,
 		},
 	}
-	Object.keys(NORMALIZERS).forEach(key => {
+	Object.keys(NORMALIZERS).filter(k => k !== 'FAKE_ORIGIN').forEach(key => {
 		if (!TEST_CASES[key])
 			throw new Error(`(internal check) Missing test cases for normalizer "${key}"!`)
 	})

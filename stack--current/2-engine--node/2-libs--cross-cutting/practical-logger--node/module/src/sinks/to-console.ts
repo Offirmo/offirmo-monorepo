@@ -1,10 +1,9 @@
-/* eslint-disable no-console */
 import chalk from 'chalk'
 
 import { injectꓽlibꓽchalk, prettifyꓽany } from '@offirmo-private/prettify-any'
 import { displayError } from '@offirmo-private/print-error-to-terminal'
 
-injectꓽlibꓽchalk(chalk)
+//injectꓽlibꓽchalk(chalk)
 
 import type { LogPayload, LogSink } from '@offirmo/practical-logger-types'
 

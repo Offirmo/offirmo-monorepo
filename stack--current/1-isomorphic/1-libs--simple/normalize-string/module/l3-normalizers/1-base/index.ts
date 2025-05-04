@@ -25,12 +25,17 @@ const normalize_unicode: StringNormalizer = s => {
 
 /////////////////////////////////////////////////
 
-// TODO more variants:
-// - https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize#value
-// - lodash https://devdocs.io/lodash~4/index#capitalize
-const capitalize: StringNormalizer = s => (s.length === 0)
+// Capitalize can have many variants
+
+// simplest = capitalize the 1st letter
+const capitalizeⵧfirst: StringNormalizer = s => (s.length === 0)
 	? s
-	: s[0]!.toUpperCase() + s.slice(1).toLowerCase()
+	: s[0]!.toUpperCase() + s.slice(1)
+
+// lodash style 1st letter + force rest lowercase https://devdocs.io/lodash~4/index#capitalize
+const capitalizeⵧfirstⵧlow: StringNormalizer = s => capitalizeⵧfirst(s.toLowerCase())
+
+// TODO more on demand https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize#value
 
 const to_lower_case: StringNormalizer = s => s.toLowerCase()
 const to_upper_case: StringNormalizer = s => s.toUpperCase()
@@ -59,7 +64,7 @@ const coerce_delimiters_to_space: StringNormalizer = s => s.replace(ANY_DELIMITE
 const convert_spaces_to_camel_case: StringNormalizer = s =>
 		s.split(' ')
 		.filter(s => !!s)
-		.map(capitalize)
+		.map(capitalizeⵧfirst)
 		.join('')
 
 const convert_spaces_to_kebab_case: StringNormalizer = s =>
@@ -77,7 +82,9 @@ export {
 	RECOMMENDED_UNICODE_NORMALIZATION,
 	normalize_unicode,
 
-	capitalize,
+	capitalizeⵧfirst,
+	capitalizeⵧfirstⵧlow,
+
 	to_lower_case,
 	to_upper_case,
 

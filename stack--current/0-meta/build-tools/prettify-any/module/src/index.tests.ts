@@ -4,8 +4,8 @@ import getꓽterminal_size from 'terminal-size'
 import chalk from 'chalk'
 import { render as prettyjson } from 'prettyjson'
 
-import { injectꓽlibꓽchalk } from './injectable-lib--chalk.ts'
-injectꓽlibꓽchalk(chalk as any)
+//import { injectꓽlibꓽchalk } from './injectable-lib--chalk.ts'
+//injectꓽlibꓽchalk(chalk as any)
 
 import {
 	prettifyꓽany as _prettify_any,

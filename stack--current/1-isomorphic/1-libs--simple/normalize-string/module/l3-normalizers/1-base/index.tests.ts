@@ -17,13 +17,22 @@ describe(`${LIB} -- base`, function() {
 			// see dedicated tests for non-string inputs
 		},
 
-		capitalize: {
+		capitalizeⵧfirst: {
 			'': '',
 			' ': ' ',
 			'a': 'A',
 			' a': ' a',
 			'foo': 'Foo',
 			'FoO': 'FoO',
+		},
+
+		capitalizeⵧfirstⵧlow: {
+			'': '',
+			' ': ' ',
+			'a': 'A',
+			' a': ' a',
+			'foo': 'Foo',
+			'FoO': 'Foo',
 		},
 
 		to_lower_case: {

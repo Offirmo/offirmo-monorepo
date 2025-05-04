@@ -1,4 +1,4 @@
 {
 	description: "Bolt monorepo related utils",
-	status: 'tech-demo'
+	status: 'experimental'
 }
