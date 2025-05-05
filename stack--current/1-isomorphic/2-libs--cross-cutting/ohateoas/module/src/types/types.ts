@@ -112,6 +112,7 @@ type InputType =
 	| 'number' // any number (not recommended)
 	// useful for selecting an installer or an app store
 	// will be autopopulated
+	| 'number--integer--timestamp--utc--ms'
 	| 'env--os'
 	| 'env--arch'
 	// TODO inspired by HTML5 input types

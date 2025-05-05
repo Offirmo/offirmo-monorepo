@@ -96,6 +96,7 @@ button.o⋄button--inline {
 
 
 /* TODO clarify
+see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog
 .o⋄backdrop {
 	background-color: var(--o⋄color⁚bg--main--backdrop);
 	backdrop-filter: blur(10px);

@@ -1,4 +1,6 @@
 import type { Immutable, JSONPrimitiveType } from '@offirmo-private/ts-types'
+import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+
 import { normalizeꓽuri‿str, type Uri‿str } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 import { prettifyꓽjson } from '@offirmo-private/prettify-any'
@@ -20,52 +22,12 @@ import { LINK__REL__CONTINUE_TO } from '../types/consts.ts'
 import {
 	type OHAHyperActionBlueprint, type OHAHyperAction,
 	type OHAFeedback,
+	deriveꓽaction,
 } from '@offirmo-private/ohateoas'
 
 /////////////////////////////////////////////////
 
-
-
-/////////////////////////////////////////////////
-
 const SERVER = createꓽserver()
-
-function convert_to_action(action_blueprint: OHAHyperActionBlueprint): {
-	action: OHAHyperAction,
-	feedback: OHAFeedback,
-} {
-	const { key, input = {}, feedback: _feedback = {} } = action_blueprint
-
-	const payload = new Map<string, JSONPrimitiveType>()
-	Object.keys(input).forEach(k => {
-		const spec = input[k]
-		switch (spec.type) {
-			case 'env--os':
-				payload.set(k, 'macOs')
-				break
-			case 'env--arch':
-				payload.set(k, 'arm')
-				break
-			default:
-				throw new Error(`Not implemented!`)
-		}
-	})
-
-	const action: OHAHyperAction = {
-		key,
-		...(payload.size > 0 && { payload: Object.fromEntries(payload) })
-	}
-
-	const feedback: OHAFeedback = {
-		tracking: 'foreground',
-		..._feedback,
-	}
-
-	return {
-		action,
-		feedback,
-	}
-}
 
 /////////////////////////////////////////////////
 
@@ -112,7 +74,7 @@ async function main() {
 
 		const action_blueprint = action_blueprints[Object.keys(action_blueprints)[0]]
 		if (action_blueprint) {
-			const { action, feedback } = convert_to_action(action_blueprint)
+			const { action, feedback } = deriveꓽaction(action_blueprint)
 			console.log('Dispatching action:', action)
 			console.log('Feedback:', feedback)
 			await SERVER.dispatch(action)

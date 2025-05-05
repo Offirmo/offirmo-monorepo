@@ -1,7 +1,7 @@
 import type { Meta‿v3, Story‿v3 } from '@offirmo-private/storypad'
 
 import { DOC_DEMO_RPG_03 } from '@offirmo-private/rich-text-format/examples'
-import ᄆComponent from './component.tsx'
+import { ᄆComponent } from './component.tsx'
 
 /////////////////////////////////////////////////
 
@@ -17,7 +17,3 @@ export const Default: Story‿v3 = {
 		url: 'https://example.com',
 	},
 }
-/*
-export const NoHyper = {
-
-}*/

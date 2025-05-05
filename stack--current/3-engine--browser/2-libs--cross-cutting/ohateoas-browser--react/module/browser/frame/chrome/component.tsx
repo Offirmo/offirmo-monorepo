@@ -24,4 +24,7 @@ function ᄆComponent({url}: Props) {
 
 /////////////////////////////////////////////////
 
-export default ᄆComponent
+export {
+	type Props,
+	ᄆComponent,
+}

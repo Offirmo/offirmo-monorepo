@@ -3,15 +3,16 @@ import React, { use } from 'react'
 import type { Url‿str } from '@offirmo-private/ts-types-web'
 
 import {
-	type OHAHyperMedia,
+	type OHAHyperMedia, type OHAServer,
 } from '@offirmo-private/ohateoas'
 
-import ᄆComponentⳇpure from './component.tsx'
+import { ᄆComponent as ᄆComponentⳇpure } from './component.tsx'
 
 /////////////////////////////////////////////////
 
 interface Props {
 	ↆ$doc: Awaited<OHAHyperMedia>
+	dispatch: OHAServer['dispatch']
 	url: Url‿str
 }
 function ᄆComponent({url, ↆ$doc}: Props) {
@@ -24,4 +25,7 @@ function ᄆComponent({url, ↆ$doc}: Props) {
 
 /////////////////////////////////////////////////
 
-export default ᄆComponent
+export {
+	type Props,
+	ᄆComponent,
+}
