@@ -18,6 +18,7 @@
 	"dependencies": {
 		"@offirmo-private/normalize-string": "*",
 		"@offirmo-private/rich-text-format": "*",
+		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/ts-types-web": "*",
 		"@offirmo-private/type-detection": "*",
 		"tiny-invariant": "^1"

@@ -11,6 +11,8 @@ import { loadBasic as loadPlugins } from "@tsparticles/basic"
 
 /////////////////////////////////////////////////
 
+const DEBUG = false
+
 // inspired from the stars preset https://github.com/tsparticles/presets/blob/main/presets/stars/src/options.ts
 function getOptions() {
 	return {
@@ -71,7 +73,7 @@ function getOptions() {
 // this should be run only once per application lifetime
 const LIB_INIT = loadPlugins(tsParticles)
 LIB_INIT.then((...args) => {
-	console.log(`XXX @tsparticles/basic loaded`, args)
+	DEBUG && console.log(`FYI @tsparticles/basic loaded`, args)
 })
 
 /////////////////////////////////////////////////
@@ -79,11 +81,13 @@ LIB_INIT.then((...args) => {
 const LIB = "StarrySky"
 
 interface Props {
+	// TODO
 	// density
 	// bg
 	// direction
 	// speed
 }
+
 function StarrySky(props: Props = {}) {
 	use(LIB_INIT)
 	const id = useId()
@@ -96,7 +100,7 @@ function StarrySky(props: Props = {}) {
 			ೱcontainer: undefined as (Promise<Container | undefined> | undefined),
 		}
 
-		console.log(`XXX [${LIB}] in UseEffect`, {
+		DEBUG && console.log(`XXX [${LIB}] in UseEffect`, {
 			tsParticles,
 			id,
 			options,
@@ -111,22 +115,22 @@ function StarrySky(props: Props = {}) {
 				options
 			})
 			tempState.ೱcontainer.then(() => {
-				console.log(`XXX [${LIB}] tsParticles Container loaded`)
+				DEBUG && console.log(`XXX [${LIB}] tsParticles Container loaded`)
 			})
 		})
 
 		return () => {
-			console.log(`XXX [${LIB}] cleanup scheduled...`)
+			DEBUG && console.log(`XXX [${LIB}] cleanup scheduled...`)
 			tempState.active = false
 
 			if (tempState.ೱcontainer) {
-				console.log(`XXX [${LIB}] found a container, cleaning...`)
+				DEBUG && console.log(`XXX [${LIB}] found a container, cleaning...`)
 				tempState.ೱcontainer.then(container => {
 					if (!container) return
 
 					container.stop() // needed?
 					container.destroy(true)
-					console.log(`XXX [${LIB}] cleaned`)
+					DEBUG && console.log(`XXX [${LIB}] cleaned`)
 				})
 			}
 		}
@@ -139,7 +143,6 @@ function StarrySky(props: Props = {}) {
 
 	return (
 		<div id={id} className="o⋄fill-parent" style={{
-
 			backgroundColor: background__color,
 			background: `linear-gradient(${background__gradient__direction}deg, ${background__gradient__begin} 0%, ${background__gradient__end} 100%)`,
 		}} />

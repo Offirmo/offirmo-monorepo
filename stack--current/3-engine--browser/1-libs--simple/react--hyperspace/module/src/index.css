@@ -1,7 +1,7 @@
 /* credits: adapted from Noah Blon https://codepen.io/noahblon/pen/DpNRyR
  */
 
-@keyframes move {
+@keyframes o⋄hyperspace-move {
 	0% {
 		transform: translateZ(-500px) rotate(0deg);
 	}
@@ -10,7 +10,7 @@
 	}
 }
 
-@keyframes fade {
+@keyframes o⋄hyperspace-fade {
 	0% {
 		opacity: 0;
 	}
@@ -59,13 +59,13 @@
 		left: -500px;
 		top: -500px;
 		transform-style: preserve-3d;
-		animation: move var(--o⋄hyperspace--duration1) infinite linear;
+		animation: o⋄hyperspace-move var(--o⋄hyperspace--duration1) infinite linear;
 		animation-fill-mode: forwards;
 		animation-delay: calc(var(--o⋄hyperspace--duration2) * (0 - var(--immediate)));
 	}
 
 	.wrap:nth-child(2) {
-		animation: move var(--o⋄hyperspace--duration1) infinite linear;
+		animation: o⋄hyperspace-move var(--o⋄hyperspace--duration1) infinite linear;
 		animation-delay: calc(var(--o⋄hyperspace--duration2) * (1 - var(--immediate)));
 	}
 
@@ -78,7 +78,7 @@
 		height: 100%;
 		position: absolute;
 		opacity: 0;
-		animation: fade var(--o⋄hyperspace--duration1) infinite linear;
+		animation: o⋄hyperspace-fade var(--o⋄hyperspace--duration1) infinite linear;
 		animation-delay: calc(var(--o⋄hyperspace--duration2) * (0 - var(--immediate)));
 
 

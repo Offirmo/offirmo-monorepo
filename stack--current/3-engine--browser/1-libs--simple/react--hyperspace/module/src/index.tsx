@@ -101,10 +101,6 @@ const PRESETS: { [k: string]: HyperspaceEffectSpec } = {
 	},
 }
 
-/*background-image: url(./STScI-01HVSK7H1V5P40417HSA7TYY2P.png); /*filter: brightness(2) hue-rotate(0deg); /*  */
-/*background-image: url(./); filter: brightness(1) hue-rotate(0deg); /* TODO */
-
-
 /////////////////////////////////////////////////
 
 interface Props {
@@ -132,11 +128,12 @@ function HyperSpace(props: Props = {}) {
 
 	const filter__value = getꓽCssⳇfilter__value(effect_spec.filters)
 
-	console.log(`XXX `, {
+	/*console.log(`XXX `, {
 		props,
 		effect_spec,
 			filter__value,
-	})
+	})*/
+
 	return (
 		<div className="o⋄fill-parent o⋄hyperspace-animation container" style={{
 			'--o⋄hyperspace--imgurl': `url(${effect_spec.src_image})`,
@@ -162,7 +159,7 @@ function HyperSpace(props: Props = {}) {
 	)
 }
 
-///
+/////////////////////////////////////////////////
 
 export {
 	type Props,
