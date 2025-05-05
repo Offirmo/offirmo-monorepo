@@ -3,11 +3,12 @@ import { type Monster } from '@tbrpg/logic--monsters'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 
+/////////////////////////////////////////////////
 
 function render_monster(m: Immutable<Monster>): RichText.Document {
 	const $doc = RichText.fragmentⵧinline()
 		.addClass('monster', 'monster--rank--' + m.rank)
-		.pushText('⎨⎨level⎬⎬ ⎨⎨rank⎬⎬ ⎨⎨name||Capitalize⎬⎬')
+		.pushText('⎨⎨level⎬⎬ ⎨⎨rank||Capitalize⎬⎬ ⎨⎨name||Capitalize⎬⎬')
 		.pushRawNode(
 			RichText.fragmentⵧinline().pushText('L') .pushText('' + m.level).done(),
 			{id: 'level'},

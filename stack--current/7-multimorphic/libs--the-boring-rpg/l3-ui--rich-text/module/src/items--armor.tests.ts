@@ -7,9 +7,11 @@ import { generate_random_demo_armor, DEMO_ARMOR_1, DEMO_ARMOR_2 } from '@tbrpg/l
 import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 import { render_armor_detailed } from './index.ts'
+import { LIB } from './consts.ts'
 
+/////////////////////////////////////////////////
 
-describe('🔠  view to @offirmo-private/rich-text-format - items -- armor', function() {
+describe(`🔠  ${LIB} - items -- armor`, function() {
 
 	context('when not enhanced', function() {
 

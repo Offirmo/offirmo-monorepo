@@ -12,9 +12,11 @@ import {
 	render_item_short,
 	render_item_detailed,
 } from './index.ts'
+import { LIB } from './consts.ts'
 
+/////////////////////////////////////////////////
 
-describe('🔠  view to @offirmo-private/rich-text-format - items', function() {
+describe(`🔠  ${LIB} - items`, function() {
 
 	describe('render_item_short()', function () {
 

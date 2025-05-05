@@ -13,7 +13,7 @@ import { appraise_power, appraise_sell_value } from '@tbrpg/logic--shop'
 import { type RenderItemOptions } from './types.ts'
 import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.ts'
 
-/////////////////////
+/////////////////////////////////////////////////
 
 function push_quality(builder: Builder, i: Immutable<Weapon>): Builder {
 	const $node = RichText.fragmentⵧinline().pushText(i.quality).done()
@@ -183,6 +183,8 @@ function render_weapon_detailed(i: Immutable<Weapon>, reference_power?: number):
 
 	return builder.done()
 }
+
+/////////////////////////////////////////////////
 
 export {
 	render_weapon_name,

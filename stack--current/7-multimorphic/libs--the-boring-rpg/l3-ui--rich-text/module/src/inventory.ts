@@ -1,13 +1,13 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	InventorySlot,
-	Item,
+	type Item,
 	ITEM_SLOTS,
 	ITEM_SLOTS_TO_INT,
 } from '@tbrpg/definitions'
 
 import {
-	State as InventoryState,
+	type State as InventoryState,
 	iterables_unslotted,
 	getꓽitem_in_slot,
 } from '@tbrpg/state--inventory'
@@ -18,9 +18,10 @@ import { appraise_power } from '@tbrpg/logic--shop'
 
 import { render_item_short } from './items.ts'
 import { render_wallet } from './wallet.ts'
-import { RenderItemOptions } from './types.ts'
+import type { RenderItemOptions } from './types.ts'
 import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.ts'
 
+/////////////////////////////////////////////////
 
 // we want the slots sorted by types according to an arbitrary order
 function render_equipment(inventory: Immutable<InventoryState>, options?: Immutable<RenderItemOptions>): RichText.Document {
@@ -103,6 +104,8 @@ function render_full_inventory(inventory: Immutable<InventoryState>, wallet: Imm
 	//console.log(JSON.stringify($doc, null, 2))
 	return $doc
 }
+
+/////////////////////////////////////////////////
 
 export {
 	render_backpack,

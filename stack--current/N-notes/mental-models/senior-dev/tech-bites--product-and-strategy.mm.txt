@@ -240,6 +240,7 @@ risk -- management = be proactive instead of reactive
 risk -- management = coordinated set of activities carried out throughout an organisation aimed at identifying, understanding and controlling its risks
 risk = effect of uncertainty on an organisation’s ability to meet its objectives
 sales -- high-skills sales reps https://blog.staysaasy.com/p/this-is-the-person-selling-your-product
+sales -- operations = it's hard for many customers to "just buy" they need a lot of support from dedicated teams
 sales -- Sales Development Representative (SDR) https://www.salesforce.com/blog/sales-development-representative/
 satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing
 scalability -- organisational -- collaboration = bigger team size can no longer efficiently collaborate, ex. merge conflicts, coordination

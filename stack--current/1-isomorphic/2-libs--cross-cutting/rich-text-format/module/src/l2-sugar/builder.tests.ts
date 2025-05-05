@@ -54,14 +54,24 @@ describe(`${LIB} -- sugar -- builder`, () => {
 			expect($doc.$content).to.equal('⎨⎨sub⎬⎬')
 		})
 
-		it('should work -- from content: multiple nodes (list) -- array', () => {
-			const $doc = RichText.listⵧordered([
+		it('should work -- from content: multiple nodes (list) -- array -- ul', () => {
+			const $doc = RichText.listⵧunordered([
 				42,
 				'foo',
 			]).done()
 
 			expect(isꓽNode($doc)).to.be.true
 			expect(renderⵧto_text($doc)).to.equal('- 42\n- foo')
+		})
+
+		it('should work -- from content: multiple nodes (list) -- array -- ol', () => {
+			const $doc = RichText.listⵧordered([
+				42,
+				'foo',
+			]).done()
+
+			expect(isꓽNode($doc)).to.be.true
+			expect(renderⵧto_text($doc)).to.equal(' 1. 42\n 2. foo')
 		})
 
 		it('should work -- from content: multiple nodes (list) -- k/v', () => {

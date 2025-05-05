@@ -114,7 +114,7 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		return builder
 	}
 
-	function addHints(hints: Hints): Builder {
+	function addHints<Hints = DefaultHints>(hints: Hints): Builder {
 		$node.$hints = {
 			...$node.$hints,
 			...hints,
@@ -329,7 +329,7 @@ function listⵧordered(content?: Immutable<
 	| Array<NodeLike> // items
 	| Record<string, NodeLike> // KV
 >): Builder {
-	const list = _create(NodeType.ul)
+	const list = _create(NodeType.ol)
 	if (content) {
 		if (Array.isArray(content)) {
 			;(content as Array<NodeLike>).forEach((item) => list.pushRawNode(item))

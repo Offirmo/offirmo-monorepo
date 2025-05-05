@@ -35,7 +35,7 @@
 		"check--ts": "echo \"@tbrpg/ui--rich-text\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"_check": "run-s tests check--ts"
+		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

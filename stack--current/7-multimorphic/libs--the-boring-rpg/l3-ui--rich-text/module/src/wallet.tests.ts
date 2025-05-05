@@ -14,9 +14,11 @@ import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-termina
 import {
 	render_wallet,
 } from './index.ts'
+import { LIB } from './consts.ts'
 
+/////////////////////////////////////////////////
 
-describe('🔠  view to @offirmo-private/rich-text-format - wallet', function() {
+describe(`🔠  ${LIB} - wallet`, function() {
 
 	context('when empty', function() {
 

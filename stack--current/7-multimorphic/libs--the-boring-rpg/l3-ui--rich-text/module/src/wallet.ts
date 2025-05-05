@@ -3,6 +3,7 @@ import { type State as WalletState, ALL_CURRENCIES, Currency, get_currency_amoun
 
 import * as RichText from '@offirmo-private/rich-text-format'
 
+/////////////////////////////////////////////////
 
 function render_currency_amount(currency: Currency, amount: number, { render_unit }: { render_unit: boolean} = { render_unit: true }): RichText.Document {
 	const doc = RichText.fragmentⵧinline()
@@ -33,6 +34,7 @@ function render_wallet(wallet: Immutable<WalletState>): RichText.Document {
 	return $doc
 }
 
+/////////////////////////////////////////////////
 
 export {
 	render_currency_amount,

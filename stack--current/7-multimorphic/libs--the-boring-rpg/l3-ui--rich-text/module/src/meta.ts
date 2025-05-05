@@ -5,6 +5,8 @@ import { VERSION, BUILD_DATE } from '@tbrpg/state'
 
 import * as RichText from '@offirmo-private/rich-text-format'
 
+/////////////////////////////////////////////////
+
 function _render_meta_infos(metas: Immutable<{[k: string]: string | number | undefined}>): RichText.Document {
 	const $doc_list = RichText.listⵧunordered()
 
@@ -58,6 +60,8 @@ function render_game_info(extra: Immutable<{[k: string]: string | number | undef
 
 	return $doc
 }
+
+/////////////////////////////////////////////////
 
 export {
 	//render_account_info,

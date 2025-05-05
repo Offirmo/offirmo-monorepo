@@ -5,7 +5,7 @@ import { prettifyꓽjson } from '@offirmo-private/prettify-any'
 import {
 	normalize,
 	normalize_unicode,
-	capitalize,
+	capitalizeⵧfirst,
 	to_lower_case,
 	trim,
 	coerce_blanks_to_single_spaces,

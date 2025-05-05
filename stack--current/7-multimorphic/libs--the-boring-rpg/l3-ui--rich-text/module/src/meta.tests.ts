@@ -7,9 +7,11 @@ import {
 	//render_account_info,
 	render_game_info,
 } from './index.ts'
+import { LIB } from './consts.ts'
 
+/////////////////////////////////////////////////
 
-describe('🔠  view to @offirmo-private/rich-text-format - meta', function() {
+describe(`🔠  ${LIB} - meta`, function() {
 
 	describe('game infos', function() {
 

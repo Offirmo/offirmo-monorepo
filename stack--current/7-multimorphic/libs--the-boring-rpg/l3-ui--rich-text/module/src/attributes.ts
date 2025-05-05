@@ -2,6 +2,7 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 import { type State as CharacterState, CharacterAttribute, CHARACTER_ATTRIBUTES_SORTED } from '@tbrpg/state--character'
 
+/////////////////////////////////////////////////
 
 function render_avatar(state: Immutable<CharacterState>): RichText.Document {
 	const $doc_name = RichText.fragmentⵧinline().addClass('avatar__name').pushText(state.name).done()
@@ -50,6 +51,8 @@ function render_character_sheet(state: Immutable<CharacterState>): RichText.Docu
 
 	return $doc
 }
+
+/////////////////////////////////////////////////
 
 export {
 	render_avatar,

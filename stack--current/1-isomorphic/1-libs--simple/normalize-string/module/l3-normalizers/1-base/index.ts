@@ -24,21 +24,19 @@ const normalize_unicode: StringNormalizer = s => {
 }
 
 /////////////////////////////////////////////////
-
-// Capitalize can have many variants
-
-// simplest = capitalize the 1st letter
-const capitalizeⵧfirst: StringNormalizer = s => (s.length === 0)
-	? s
-	: s[0]!.toUpperCase() + s.slice(1)
-
-// lodash style 1st letter + force rest lowercase https://devdocs.io/lodash~4/index#capitalize
-const capitalizeⵧfirstⵧlow: StringNormalizer = s => capitalizeⵧfirst(s.toLowerCase())
-
-// TODO more on demand https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize#value
-
+// Case
 const to_lower_case: StringNormalizer = s => s.toLowerCase()
 const to_upper_case: StringNormalizer = s => s.toUpperCase()
+
+// simplest = capitalize the 1st letter
+const capitalizeⵧfirst: StringNormalizer = s => to_upper_case(s[0] ?? '') + s.slice(1)
+
+// lodash style 1st letter + force rest lowercase https://devdocs.io/lodash~4/index#capitalize
+// = NO! trivial for the caller to do "to_lower_case" before calling a capitalizer
+
+// TODO more on demand https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize#value
+// const capitalizeⵧwords: StringNormalizer =
+// const capitalizeⵧwordsⵧnon_trivial: StringNormalizer = (no the / a / an etc.)
 
 /////////////////////////////////////////////////
 
@@ -83,7 +81,6 @@ export {
 	normalize_unicode,
 
 	capitalizeⵧfirst,
-	capitalizeⵧfirstⵧlow,
 
 	to_lower_case,
 	to_upper_case,

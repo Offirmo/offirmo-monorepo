@@ -39,6 +39,9 @@ bolt --only-fs "[0-9]-*/**/*" ws run check
    bolt --only-fs "7-multimorphi*/**/*" ws run check
       bolt --only-fs "7-multimorphic/libs--rpg/*" ws run check
       bolt --only-fs "7-multimorphic/libs--the-boring-rpg/*" ws run check
+         bolt --only-fs "7-multimorphic/libs--the-boring-rpg/l1-*" ws run check
+         bolt --only-fs "7-multimorphic/libs--the-boring-rpg/l2-*" ws run check
+         bolt --only-fs "7-multimorphic/libs--the-boring-rpg/l3-*" ws run check
 
 ## Alt:
 bolt --only @oh-my-rpg/* ws run check

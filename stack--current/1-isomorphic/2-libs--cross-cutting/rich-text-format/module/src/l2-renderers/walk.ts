@@ -5,7 +5,7 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import { hasꓽshape, isꓽexact_stringified_number } from '@offirmo-private/type-detection'
-import { capitalize } from '@offirmo-private/normalize-string'
+import { capitalizeⵧfirst } from '@offirmo-private/normalize-string'
 
 import { LIB } from '../consts.ts'
 
@@ -158,7 +158,7 @@ function _getꓽcallbacksⵧdefault<State, RenderingOptions extends BaseRenderin
 				//console.log(`${LIB} auto capitalizing...`, state)
 				return {
 					...(generic_state as any),
-					str: capitalize(generic_state.str),
+					str: capitalizeⵧfirst(generic_state.str),
 				} satisfies State
 			}
 

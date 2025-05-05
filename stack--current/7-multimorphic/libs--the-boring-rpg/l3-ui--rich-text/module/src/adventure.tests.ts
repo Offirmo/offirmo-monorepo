@@ -16,9 +16,11 @@ import {
 } from '@tbrpg/logic--adventure--resolved'
 
 import { renderꓽresolved_adventure } from './index.ts'
+import { LIB } from './consts.ts'
 
+/////////////////////////////////////////////////
 
-describe('🔠  view to @offirmo-private/rich-text-format - adventure', function() {
+describe(`🔠  ${LIB} - adventure`, function() {
 
 	it('should render properly - with gain of skills', () => {
 		const $doc = renderꓽresolved_adventure(DEMO_ADVENTURE_01)
@@ -29,8 +31,8 @@ describe('🔠  view to @offirmo-private/rich-text-format - adventure', function
 		expect(str).to.be.a('string')
 		expect(str).to.include('You were attacked and nearly killed')
 		expect(str).to.include('L7')
-		expect(str).to.include('elite')
-		expect(str).to.include('chicken')
+		expect(str).to.include('Elite')
+		expect(str).to.include('Chicken')
 		expect(str).to.include('+1 luck!')
 	})
 

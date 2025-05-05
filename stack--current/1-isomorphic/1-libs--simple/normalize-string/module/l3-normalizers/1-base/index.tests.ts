@@ -26,15 +26,6 @@ describe(`${LIB} -- base`, function() {
 			'FoO': 'FoO',
 		},
 
-		capitalizeⵧfirstⵧlow: {
-			'': '',
-			' ': ' ',
-			'a': 'A',
-			' a': ' a',
-			'foo': 'Foo',
-			'FoO': 'Foo',
-		},
-
 		to_lower_case: {
 			'': '',
 			' ': ' ',

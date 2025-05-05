@@ -125,7 +125,7 @@ function _renderⵧRootState(state: Immutable<BaseRootState>, options: Options, 
 	subkeys.forEach(k => {
 		const u = (state.u_state as any)[k] as BaseUState | undefined
 		const t = (state.t_state as any)[k] as BaseTState | undefined
-		builder.pushHeading(`{${NORMALIZERS['capitalize']!(k)}}`)
+		builder.pushHeading(`{${NORMALIZERS['capitalizeⵧfirst']!(k)}}`)
 		//console.log({ u: !!u, t: !!t })
 		if (!t) {
 			builder.pushNode(_render(u!, options, k))

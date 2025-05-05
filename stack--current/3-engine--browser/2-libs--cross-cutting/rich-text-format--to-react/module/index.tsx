@@ -6,7 +6,7 @@ import memoize_one from 'memoize-one'
 import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	normalize_unicode,
-	capitalize,
+	capitalizeⵧfirst,
 	normalizeꓽurl,
 } from '@offirmo-private/normalize-string'
 import {
@@ -307,7 +307,7 @@ const on_filterꘌCapitalize: WalkerCallbacks<WalkState, RenderingOptionsⵧToRe
 	//console.warn('rich-text-to-react Capitalize', state)
 
 	if (typeof state.element === 'string')
-		state.element = capitalize(state.element)
+		state.element = capitalizeⵧfirst(state.element)
 	else if (_is_react_element(state.element))
 		state.element = React.cloneElement(
 			state.element,
@@ -316,7 +316,7 @@ const on_filterꘌCapitalize: WalkerCallbacks<WalkState, RenderingOptionsⵧToRe
 				children: React.Children.map(
 					state.element.props.children,
 					(child) => (typeof child === 'string')
-						? capitalize(child)
+						? capitalizeⵧfirst(child)
 						: child,
 				),
 			},

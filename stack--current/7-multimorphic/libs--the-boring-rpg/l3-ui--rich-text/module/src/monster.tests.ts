@@ -6,9 +6,11 @@ import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-termina
 import {
 	render_monster,
 } from './index.ts'
+import { LIB } from './consts.ts'
 
+/////////////////////////////////////////////////
 
-describe('🔠  view to @offirmo-private/rich-text-format - monster', function() {
+describe(`🔠  ${LIB} - monster`, function() {
 
 	describe('demo', function() {
 

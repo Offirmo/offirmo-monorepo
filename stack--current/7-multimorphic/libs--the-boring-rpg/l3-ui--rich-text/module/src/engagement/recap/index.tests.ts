@@ -11,11 +11,12 @@ import {
 	getꓽrecap,
 } from './index.ts'
 
+/////////////////////////////////////////////////
 
 describe(`${LIB} - engagement - recap`, function() {
 	beforeEach(() => xxx_internal_reset_prng_cache())
 
-	describe('get recap', function() {
+	describe('getꓽrecap()', function() {
 
 		context('when the user has just started a new game', function() {
 

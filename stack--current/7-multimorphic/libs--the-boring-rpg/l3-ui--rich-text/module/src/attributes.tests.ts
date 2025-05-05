@@ -3,14 +3,15 @@ import { expect } from 'chai'
 import { DEMO_STATE } from '@tbrpg/state--character'
 import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
-
 import {
 	render_attributes,
 	render_character_sheet,
 } from './index.ts'
+import { LIB } from './consts.ts'
 
+/////////////////////////////////////////////////
 
-describe('🔠  view to @offirmo-private/rich-text-format - attributes', function() {
+describe(`🔠  ${LIB} - attributes`, function() {
 
 	describe('full character sheet rendering', function() {
 

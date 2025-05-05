@@ -7,6 +7,7 @@ import {
 	ITEM_SLOTS,
 	ITEM_SLOTS_TO_INT,
 } from './consts.ts'
+import { InventorySlot } from './types.ts'
 
 
 describe(`${LIB} - constants`, function() {
@@ -26,7 +27,10 @@ describe(`${LIB} - constants`, function() {
 		describe('mapping to int', function() {
 
 			it('should be up-to-date', () => {
-				expect(Object.keys(ITEM_SLOTS_TO_INT)).to.have.lengthOf(ITEM_SLOTS.length)
+				expect(
+					Object.keys(ITEM_SLOTS_TO_INT)
+						.filter(s => s !== InventorySlot.none)
+				).to.have.lengthOf(ITEM_SLOTS.length)
 			})
 		})
 	})

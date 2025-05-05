@@ -1,8 +1,7 @@
-/////////////////////
 
 import { Enum } from 'typescript-string-enums'
 
-/////////////////////
+/////////////////////////////////////////////////
 
 const TextClass = Enum(
 	'person',
@@ -21,11 +20,9 @@ interface RenderItemOptions {
 	display_sell_value?: boolean
 }
 
-/////////////////////
+/////////////////////////////////////////////////
 
 export {
 	TextClass,
 	type RenderItemOptions,
 }
-
-/////////////////////

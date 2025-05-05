@@ -9,9 +9,11 @@ import {
 import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 import { render_achievements_snapshot } from './index.ts'
+import { LIB } from './consts.ts'
 
+/////////////////////////////////////////////////
 
-describe('🔠  view to @offirmo-private/rich-text-format - achievements', function() {
+describe(`🔠  ${LIB} - achievements`, function() {
 
 	it('should render properly - demo', () => {
 		const state = play(create())

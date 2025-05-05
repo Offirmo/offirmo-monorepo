@@ -1,6 +1,6 @@
 import { Enum } from 'typescript-string-enums'
 import type { Emoji, Immutable, JSON } from '@offirmo-private/ts-types'
-import type { Uri‿x, Hyperlink, Hyperlink‿x } from '@offirmo-private/ts-types-web'
+import type { Hyperlink‿x } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 
@@ -42,7 +42,8 @@ type NodeType = Enum<typeof NodeType> // eslint-disable-line no-redeclare
 // hints for progressive enhancement
 // - for rendering, hints should be OPTIONAL and any renderer should be able to render decently without them
 // - for non-rendering (ex. hypermedia features) hints can be made mandatory
-interface Hints<UnderlyingData = JSON, HyperLink = Hyperlink‿x> {
+// UnderlyingData = JSON =  no, causes error "Type instantiation is excessively deep and possibly infinite."
+interface Hints<UnderlyingData = any, HyperLink = Hyperlink‿x> {
 
 	// string or keyword to use as bullets. to remove bullets: ''
 	// https://www.w3schools.com/cssref/pr_list-style-type.php
@@ -54,7 +55,7 @@ interface Hints<UnderlyingData = JSON, HyperLink = Hyperlink‿x> {
 	//underlying__uuid?: string // for ex. to recognize a specific resource without attaching it to the content TODO review duplicate of href?
 
 	// Hypermedia
-	href?: Hyperlink // make this node as an anchor to another Hypermedia resource
+	href?: HyperLink // make this node as an anchor to another Hypermedia resource
 	// advanced = moved to dedicated OHA lib
 
 	// TODO styles TODO colors

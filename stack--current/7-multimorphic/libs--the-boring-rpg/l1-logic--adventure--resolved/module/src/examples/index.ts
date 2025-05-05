@@ -9,6 +9,7 @@ import { type ResolvedAdventure } from '../types.ts'
 
 // needed to test migrations, both here and in composing parents
 
+// with skill gain
 const DEMO_ADVENTURE_01: Immutable<ResolvedAdventure> = enforceꓽimmutable<ResolvedAdventure>({
 	hid: 'fight_lost_any',
 	uuid: 'uu1~example~adventure~01',

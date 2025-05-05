@@ -13,6 +13,7 @@ import { render_monster } from './monster.ts'
 import { type RenderItemOptions } from './types.ts'
 import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.ts'
 
+/////////////////////////////////////////////////
 
 function renderꓽresolved_adventure(a: Immutable<ResolvedAdventure>, options: Immutable<RenderItemOptions> = DEFAULT_RENDER_ITEM_OPTIONS): RichText.Document {
 	const gains: any = a.gains // alias for typing

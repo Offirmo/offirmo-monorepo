@@ -27,6 +27,7 @@ import {
 	render_full_inventory,
 } from './index.ts'
 
+/////////////////////////////////////////////////
 
 describe(`🔠  ${LIB} - inventory`, function() {
 
@@ -60,10 +61,10 @@ describe(`🔠  ${LIB} - inventory`, function() {
 				const str = RichText.renderⵧto_text($doc)
 
 				expect(str).to.be.a('string')
-				expect(str).not.to.contain('00.')
-				expect(str).to.contain('01.')
-				expect(str).to.contain('05.')
-				expect(str).not.to.contain('06.')
+				expect(str).not.to.contain('0.')
+				expect(str).to.contain(' 1.')
+				expect(str).to.contain(' 5.')
+				expect(str).not.to.contain('6.')
 			})
 		})
 

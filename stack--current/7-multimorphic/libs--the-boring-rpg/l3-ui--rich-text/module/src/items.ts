@@ -9,6 +9,7 @@ import { render_weapon_short, render_weapon_detailed } from './items--weapon.ts'
 import { type RenderItemOptions } from './types.ts'
 import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.ts'
 
+/////////////////////////////////////////////////
 
 function decorate_with_common_item_props(i: Immutable<Item>, doc: RichText.Document): RichText.Document {
 	doc.$hints = doc.$hints || {}
@@ -52,6 +53,8 @@ function render_item_detailed(i: Immutable<Item>): RichText.Document {
 
 	return decorate_with_common_item_props(i, doc)
 }
+
+/////////////////////////////////////////////////
 
 export {
 	render_item_short,

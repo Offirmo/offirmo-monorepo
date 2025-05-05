@@ -26,7 +26,10 @@ assert(Object.keys(ITEM_QUALITIES_TO_INT).length === ITEM_QUALITIES.length, `ITE
 
 ///////
 
-export const ITEM_SLOTS: InventorySlot[] = Enum.keys(InventorySlot).filter(s => s !== InventorySlot.none)
+export const ITEM_SLOTS: InventorySlot[] =
+	Enum.keys(InventorySlot)
+	.filter(s => s !== InventorySlot.none)
+	.sort()
 
 // useful for ex. for sorting
 export const ITEM_SLOTS_TO_INT: Readonly<Record<InventorySlot, number>> = {
@@ -35,7 +38,13 @@ export const ITEM_SLOTS_TO_INT: Readonly<Record<InventorySlot, number>> = {
 
 	[InventorySlot.none]: NaN, // impossible, for type only
 }
-assert(Object.keys(ITEM_SLOTS_TO_INT).length === ITEM_SLOTS.length + 1, `ITEM_SLOTS_TO_INT should be up to date!`)
+assert(
+	Object.keys(ITEM_SLOTS_TO_INT)
+		.filter(s => s !== InventorySlot.none)
+		.length
+	=== ITEM_SLOTS.length,
+	`ITEM_SLOTS_TO_INT should be up to date!`
+)
 
 /////////////////////////////////////////////////
 

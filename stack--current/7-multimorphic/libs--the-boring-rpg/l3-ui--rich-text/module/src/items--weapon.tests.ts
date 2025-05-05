@@ -8,9 +8,11 @@ import { generate_random_demo_weapon, DEMO_WEAPON_1, DEMO_WEAPON_2 } from '@tbrp
 import rich_text_to_terminal from '@offirmo-private/rich-text-format--to-terminal'
 
 import { render_weapon_detailed } from './index.ts'
+import { LIB } from './consts.ts'
 
+/////////////////////////////////////////////////
 
-describe('🔠  view to @offirmo-private/rich-text-format - items -- weapon', function() {
+describe(`🔠  ${LIB} - items -- weapon`, function() {
 
 	context('when not enhanced', function() {
 

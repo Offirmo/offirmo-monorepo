@@ -13,7 +13,7 @@ import { appraise_power, appraise_sell_value } from '@tbrpg/logic--shop'
 import type { RenderItemOptions } from './types.ts'
 import { DEFAULT_RENDER_ITEM_OPTIONS } from './consts.ts'
 
-/////////////////////
+/////////////////////////////////////////////////
 
 function push_quality(builder: Builder, i: Immutable<Armor>): Builder {
 	const $node = RichText.fragmentⵧinline().pushText(i.quality).done()
@@ -180,6 +180,8 @@ function render_armor_detailed(i: Immutable<Armor>, reference_power?: number): R
 
 	return builder.done()
 }
+
+/////////////////////////////////////////////////
 
 export {
 	render_armor_short,
