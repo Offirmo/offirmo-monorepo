@@ -55,6 +55,9 @@ We want more.
 
 See all the essays in https://htmx.org/essays/
 
+Warning: avoid inner platform effect!!!
+
+
 * new Hypermedia format to be used as "representation" for **true** REST / HATEOAS architecture
   * would need a new kind of browser, of course
   * HATEOAS: avoid state as much as possible at all level, try to help the layer above to avoid state
@@ -98,6 +101,7 @@ See all the essays in https://htmx.org/essays/
     * also bc we want to embrace "multi tab" work = no need to have several recaps or notifs
   * also concept of recap
 * ideally should embed the concept of notifications as well
+* support preview = highly simplified summary of a rsrc
 * And don't forget!
   * cool!
   * whimsical!

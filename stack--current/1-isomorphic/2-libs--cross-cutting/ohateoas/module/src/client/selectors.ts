@@ -12,7 +12,7 @@ function deriveꓽaction(action_blueprint: Immutable<OHAHyperActionBlueprint>, p
 	action: OHAHyperAction,
 	feedback: OHAFeedback,
 } {
-	const { key, input = {}, feedback: _feedback = {} } = action_blueprint
+	const { type, input = {}, feedback: _feedback = {} } = action_blueprint
 
 	const final_payload = new Map<string, JSONPrimitiveType>()
 	Object.entries(input).forEach(([k, spec]) => {
@@ -38,7 +38,7 @@ function deriveꓽaction(action_blueprint: Immutable<OHAHyperActionBlueprint>, p
 	})
 
 	const action: OHAHyperAction = {
-		key,
+		type,
 		...(final_payload.size > 0 && { payload: Object.fromEntries(final_payload) })
 	}
 

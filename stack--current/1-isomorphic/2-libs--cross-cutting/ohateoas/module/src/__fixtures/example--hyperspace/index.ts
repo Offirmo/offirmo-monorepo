@@ -7,11 +7,12 @@ import type {
 	OHAHyperActionBlueprint,
 	OHAHyperAction,
 	OHAPendingEngagement,
-	OHAHyperLink,
+	OHAHyperLink, OHARichTextHints,
 } from '../../types/types.ts'
 import type {
 	OHAServer,
 } from '../../server/types.ts'
+import { getꓽscheme_specific_part, normalizeꓽuri‿str } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 
@@ -33,11 +34,31 @@ function backend() {
 function createꓽserver(): OHAServer {
 
 	const ↆget: OHAServer['ↆget'] = async (url = '/') => {
+		////////////
+		const { path, query, fragment } = getꓽscheme_specific_part(url)
 
+		////////////
+		// prepare aggregation
+		let $builder = RichText.fragmentⵧblock() // "block" bc maps to a ~frame/sub-browser
 
+		const links: OHARichTextHints['links'] = {
+			self: normalizeꓽuri‿str(path), // intentionally strip query & path until considered relevant
+			home: URIꘌROOT, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
+		}
+
+		const actions: OHARichTextHints['actions'] = {
+		}
+
+		const engagements: OHARichTextHints['engagements'] = []
+
+		////////////
+
+		// TODO recursive routing
 		const data = await backend().ↆgetꓽproducts()
 
-		const _doc = RichText.listⵧordered()
+		$builder.pushHeading('Installed')
+
+		const _products = RichText.listⵧordered()
 		Object.entries(data).forEach(([name, version]) => {
 			const $name = RichText.fragmentⵧinline(name)
 				.addHints({ })
@@ -47,7 +68,7 @@ function createꓽserver(): OHAServer {
 					underlying: version,
 				})
 				.done()
-			_doc.pushRawNode(
+			_products.pushRawNode(
 				RichText.fragmentⵧinline()
 					.pushNode($name, { id: 'name' })
 					.pushText(' ')
@@ -57,46 +78,38 @@ function createꓽserver(): OHAServer {
 			)
 		})
 
-		// Hypermedia
-		_doc.addHints({
-			underlying__href: url, // self
-			underlying__data: data,
-		})
+		$builder.pushNode(_products.done())
 
-		// related actions
-		const links: Array<OHAHyperLink> = [
-			{
-				href: 'https://jb.gg/toolbox-app-faq',
-				rel: [ 'faq' ],
-				//cta: 'about', // TODO could be inferred from the rel
-				//target: '_blank', // TODO could be inferred from href being external
+		links['faq'] = 'https://jb.gg/toolbox-app-faq'
+
+		actions['check-for-updates'] = {
+			key: 'check-for-updates',
+
+			input: {
+				'os': { type: 'env--os' },
+				'arch': { type: 'env--arch' },
 			},
-		]
-		const actions: Array<OHAHyperActionBlueprint> = [
-			{
-				verb: 'reduce', //'refresh', // really?
 
-				cta: 'Check for updates',
-				shortcut: 'Apple+R', // needed? inferrable? too specific? conflicts?
-
-				input: {
-					'os': { type: 'env--os' },
-					'arch': { type: 'env--arch' },
-				},
-
-				feedback: {
-					type: 'background-task',
-					traits: [ 'loader' ],
-					summary: 'Checking for updates…',
-				},
+			hints: {
+				change: 'none',
 			},
-		]
-		_doc.addHints({
+
+			feedback: {
+				tracking: 'background',
+				//traits: [ 'loader' ],
+				summary: 'Checking for updates…', // TODO
+			},
+		}
+
+		////////////
+		// wrap together
+		$builder.addHints<OHARichTextHints>({
 			links,
 			actions,
+			engagements,
 		})
 
-		return _doc.done()
+		return $builder.done()
 	}
 
 	const dispatch: OHAServer['dispatch'] = async (action) => {

@@ -22,18 +22,6 @@ import {
 
 const DEBUG = false
 
-function backend() {
-	return {
-		async ↆgetꓽproducts(): Promise<Record<string, SemVer>> {
-			return {
-				'Webstorm': '2024.3.5',
-				'JetBrains Gateway': '2024.3.2',
-				'IntelliJ IDEA': '2024.3.5',
-			}
-		}
-	}
-}
-
 /////////////////////////////////////////////////
 
 const URIꘌROOT = normalizeꓽuri‿str('/session/adventures/')
@@ -130,11 +118,15 @@ function createꓽserver(): OHAServer {
 
 					feedback: {
 						tracking: 'foreground', // (default) full "waiting/loading" UI, no other action can be sent until this one is resolved
-						durationⵧmin‿ms: 1000, // if present, never resolve the action faster than this (illusion of labor) Do not abuse! (default to some value depending on the verb)
-						//continueᝍto: '/session/adventures/last' // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
-						//message...
-					}
-				}
+
+						//continueᝍto: '/session/adventures/last', // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
+
+						hints: {
+							message: 'Exploring…',
+							durationⵧmin‿ms: 1000, // if present, never resolve the action faster than this (illusion of labor) Do not abuse! (default to some value depending on the verb)
+						},
+					} as OHAHyperActionBlueprint['feedback'],
+				} as OHAHyperActionBlueprint
 
 				links['equipment'] = URIꘌEQUIPMENT
 

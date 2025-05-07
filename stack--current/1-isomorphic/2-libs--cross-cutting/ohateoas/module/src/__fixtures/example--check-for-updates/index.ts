@@ -2,21 +2,27 @@ import type { SemVer } from '@offirmo-private/ts-types'
 import { normalizeꓽuri‿str, getꓽscheme_specific_part } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 import {
+	DEFAULT_ROOT_URI,
 	type OHARichTextHints,
 	type OHAServer,
-	DEFAULT_ROOT_URI,
+	type OHAStory,
+	type OHAHyperActionBlueprint,
+	type OHAFeedback,
 } from '@offirmo-private/ohateoas'
 
 /////////////////////////////////////////////////
 
+// In this demo, the state is LOCAL
+const state = {
+	'Webstorm': { installed: '2024.3.5', latest: undefined as SemVer | undefined },
+	'JetBrains Gateway': { installed: '2024.3.2', latest: undefined as SemVer | undefined },
+	'IntelliJ IDEA': { installed: '2024.3.5', latest: undefined as SemVer | undefined },
+}
+
 function backend() {
 	return {
-		async ↆgetꓽproducts(): Promise<Record<string, SemVer>> {
-			return {
-				'Webstorm': '2024.3.5',
-				'JetBrains Gateway': '2024.3.2',
-				'IntelliJ IDEA': '2024.3.5',
-			}
+		async ↆgetꓽproducts() {
+			return state
 		}
 	}
 }
@@ -53,13 +59,18 @@ function createꓽserver(): OHAServer {
 		$builder.pushHeading('Installed')
 
 		const _products = RichText.listⵧordered()
-		Object.entries(data).forEach(([name, version]) => {
+		Object.entries(data).forEach(([name, version_info]) => {
+			const {
+				installed: versionⵧinstalled,
+				latest: versionⵧlatest,
+			} = version_info
+
 			const $name = RichText.fragmentⵧinline(name)
 				.addHints({ })
 				.done()
-			const $version = RichText.weak(`v${version}`)
+			const $version = RichText.weak(`v${versionⵧinstalled}`)
 				.addHints({
-					underlying: version,
+					underlying: versionⵧinstalled,
 				})
 				.done()
 			_products.pushRawNode(
@@ -77,7 +88,7 @@ function createꓽserver(): OHAServer {
 		links['faq'] = 'https://jb.gg/toolbox-app-faq'
 
 		actions['check-for-updates'] = {
-			key: 'check-for-updates',
+			type: 'check-for-updates',
 
 			input: {
 				'os': { type: 'env--os' },
@@ -85,15 +96,13 @@ function createꓽserver(): OHAServer {
 			},
 
 			hints: {
-				change: 'none',
+				change: 'update',
 			},
 
 			feedback: {
 				tracking: 'background',
-				//traits: [ 'loader' ],
-				summary: 'Checking for updates…', // TODO
-			},
-		}
+			} as OHAFeedback,
+		} as OHAHyperActionBlueprint
 
 		////////////
 		// wrap together
@@ -109,8 +118,29 @@ function createꓽserver(): OHAServer {
 	const dispatch: OHAServer['dispatch'] = async (action) => {
 		console.log(`Server: asked to dispatch action…`, action)
 
-		// TODO return engagement pending action
-		throw new Error(`Not implemented!`)
+		switch (action.type) {
+			case 'check-for-updates': {
+				// fake a call to a remote server
+				return new Promise<OHAStory>((resolve) => {
+					// pretend work
+					setTimeout(() => {
+						if (state.Webstorm.latest !== '2025.1') {
+							state.Webstorm.latest = '2025.1'
+							resolve({
+								message: 'Updates found!',
+							} as OHAStory)
+						}
+						else {
+							resolve({
+								message: 'No updates available',
+							} as OHAStory)
+						}
+					}, 2000)
+				})
+			}
+			default:
+				throw new Error(`Unknown action type "${action.type}"!`)
+		}
 	}
 
 	return {

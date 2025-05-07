@@ -90,3 +90,5 @@ An epic record of who you talk to and how, of what you worked on and how you fee
 What if you could transform your inbox from chaos into a clear story? One that gives you the bottom line, instead of the back and forth.
 
 Your inbox wouldn't just deliver email to you—it would deliver you from email
+
+https://it.slashdot.org/story/25/05/05/1817247/microsoft-cracks-down-on-bulk-email-with-strict-new-outlook-rules

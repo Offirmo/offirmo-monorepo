@@ -274,3 +274,6 @@ https://en.wikipedia.org/wiki/Gravitational_singularity
 https://en.wikipedia.org/wiki/Kardashev_scale
 
 https://en.wikipedia.org/wiki/Long-term_nuclear_waste_warning_messages
+https://en.wikipedia.org/wiki/Deep_geological_repository
+https://en.wikipedia.org/wiki/Knowledge_ark
+https://en.wikipedia.org/wiki/Memory_of_Mankind

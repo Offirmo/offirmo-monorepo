@@ -1,15 +1,11 @@
-import type {
-	SocialNetworkLink as SimplerSocialNetworkLink,
-} from '@offirmo-private/ts-types'
+import type { SocialNetworkLink as SimplerSocialNetworkLink } from '@offirmo-private/ts-types'
 
 import type { WithLang } from '../00-base/index.ts'
 
 /////////////////////////////////////////////////
 
-
 type Uri‿str = string
 type Url‿str = Uri‿str
-
 
 ////////////
 
@@ -127,6 +123,7 @@ type SocialNetworkId =
 	| 'twitch'
 	| 'ko-fi' // https://ko-fi.com/xyz
 	| 'twitter' // we keep "twitter" as an internal id, "X" is too generic
+	// TODO more on-demand
 
 interface SocialNetworkLink extends SimplerSocialNetworkLink {
 	url: Url‿str // mandatory
@@ -137,8 +134,9 @@ interface SocialNetworkLink extends SimplerSocialNetworkLink {
 /////////////////////////////////////////////////
 
 export {
-	type Uri‿str, type Url‿str,
+	type Url‿str, type Uri‿str,
 	type SchemeSpecificURIPart,
+
 	type Uri‿x,
 
 	type LinkRelation,

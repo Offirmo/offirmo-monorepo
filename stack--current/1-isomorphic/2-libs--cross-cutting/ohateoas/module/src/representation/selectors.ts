@@ -16,62 +16,75 @@ import type {
 	OHARichTextHints,
 	OHAHyperMedia,
 	OHAHyperActionBlueprint,
-	OHAHyperLink, OHALinkRelation,
+	OHAHyperLink, OHALinkRelation, OHAPendingEngagement,
 } from '../types/types.ts'
 import { promote_toꓽOHAHyperLink } from '../types/selectors.ts'
 import { isꓽOHAHyperLink } from '../types/guards.ts'
+import { getꓽuriⵧnormalized‿str } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 
 function getꓽcta(hyper: OHAHyperLink | OHAHyperActionBlueprint): RichText.NodeLike {
 	const { hints = {} } = hyper
+	let is_code = false
 
-	let candidate = hints.cta
-		? RichText.renderⵧto_text(hints.cta)
-		: 'unknown'
+	let candidate: string = (() => {
+		if (hints.cta) return RichText.renderⵧto_text(hints.cta)
 
-	if (isꓽOHAHyperLink(hyper)) {
-		const { rel = [] } = hyper
-		const candidates = rel.filter(r => r !== LINK__REL__CONTINUE_TO)
-		candidate = '➡️ ' + (candidates[0] || candidate)
-	}
-	else {
-		candidate = hyper.key
-		switch (hints.change) {
-			case 'none':
-				break
-			case 'create':
-				candidate = '🆕 ' + candidate
-				break
-			case 'delete':
-				candidate = '❌ ' + candidate
-				break
-			case 'update':
-				candidate = '❇️ ' + candidate
-				break
-			case 'upgrade':
-				candidate = '✳️ ' + candidate
-				break
-			case 'permission':
-				candidate = '🪪 ' + candidate
-				break
-
-			case 'reduce':
-				// fallthrough
-			default:
-				candidate = '▶️ ' + candidate
-				break
+		if (isꓽOHAHyperLink(hyper)) {
+			const { rel = [], href } = hyper
+			const candidates =
+				// trying to find an expressive relation
+				rel.filter(r => r !== LINK__REL__CONTINUE_TO && r !== 'self')
+			if (candidates.length === 0) is_code = true
+			return candidates[0] ?? getꓽuriⵧnormalized‿str(href) // fallback on the URL itself
 		}
-	}
 
-	return normalize(candidate,
+		// it's an action
+		const { type } = hyper
+		return type
+	})()
+
+	if (is_code)
+		return candidate // raw
+
+	candidate = normalize(candidate,
 		normalize_unicode,
 		coerce_delimiters_to_space,
 		coerce_blanks_to_single_spaces,
 		trim,
-		to_lower_case,
+		//to_lower_case,
 		capitalizeⵧfirst,
 	)
+
+	switch (hints.change) {
+		case 'none':
+			break
+		case 'create':
+			candidate = '🆕 ' + candidate
+			break
+		case 'delete':
+			candidate = '❌ ' + candidate
+			break
+		case 'update':
+			candidate = '❇️ ' + candidate
+			break
+		case 'upgrade':
+			candidate = '✳️ ' + candidate
+			break
+		case 'permission':
+			candidate = '🪪 ' + candidate
+			break
+
+		case 'reduce':
+		// fallthrough
+		default:
+			if (!isꓽOHAHyperLink(hyper))
+				candidate = '▶️ ' + candidate
+			break
+	}
+
+	return candidate
 }
 
 function getꓽlink‿str(link: Immutable<OHAHyperLink>): string {
@@ -82,6 +95,12 @@ function getꓽlink‿str(link: Immutable<OHAHyperLink>): string {
 function getꓽhints(repr: Immutable<OHAHyperMedia>): Immutable<OHARichTextHints> {
 	const { $hints = {} } = repr
 	return $hints
+}
+
+function getꓽengagements(repr: Immutable<OHAHyperMedia>): Immutable<Array<OHAPendingEngagement>> {
+	const { engagements = [] } = getꓽhints(repr)
+
+	return engagements
 }
 
 function getꓽlinks(repr: Immutable<OHAHyperMedia>): Record<string, Immutable<OHAHyperLink>> {
@@ -104,7 +123,10 @@ function getꓽaction_blueprints(repr: Immutable<OHAHyperMedia>): Immutable<Reco
 export {
 	getꓽcta,
 	getꓽlink‿str,
+
 	getꓽhints,
+
+	getꓽengagements,
 	getꓽlinks,
 	getꓽaction_blueprints,
 }

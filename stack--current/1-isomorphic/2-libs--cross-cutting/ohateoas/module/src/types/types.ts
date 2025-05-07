@@ -1,7 +1,7 @@
 // New "Offirmo's Hyper Architecture" OHA
 import assert from 'tiny-invariant'
-import type { Emoji, JSON, JSONPrimitiveType } from '@offirmo-private/ts-types'
-import { type Hyperlink, type Uri‿x } from '@offirmo-private/ts-types-web'
+import type { JSON, JSONPrimitiveType, Story } from '@offirmo-private/ts-types'
+import { type Hyperlink, type ReducerAction, type Uri‿x, type WithHints } from '@offirmo-private/ts-types-web'
 import type { Hints as RichTextHints, NodeLike as RichTextNodeLike } from '@offirmo-private/rich-text-format'
 import {
 	type TrackedEngagement,
@@ -15,6 +15,8 @@ import {
 // RichTextNode = no links/actions (will be ignored if any)
 // HyperMedia   = RichTextNode + links/actions
 type OHAHyperMedia = RichTextNodeLike
+
+type OHAStory = Story<OHAHyperMedia>
 
 /////////////////////////////////////////////////
 // 2a. Hyperlinks
@@ -83,12 +85,11 @@ type OHAHyperLink‿x =
 	| OHAHyperLink
 	| Uri‿x
 
-/////////////////////////////////////////////////
-
-
 
 /////////////////////////////////////////////////
 // 2b. Hyperactions (improved ~forms)
+
+// TODO move input in ts-types
 
 // inspired by CRUD, obviously without the "read" part
 // use cases:
@@ -115,13 +116,10 @@ type InputType =
 	| 'number--integer--timestamp--utc--ms'
 	| 'env--os'
 	| 'env--arch'
+	// TODO add more types
 	// TODO inspired by HTML5 input types
-/*	| 'text'
-	| 'checkbox'
-	| 'radio'
-	| 'select'
-	| 'textarea' */
-// TODO add more types
+	// TODO inspired by https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
+	// TODO inspired by schemas https://standardschema.dev/
 
 interface InputSpec<T = JSONPrimitiveType> {
 	type: InputType
@@ -136,23 +134,20 @@ interface InputSpec<T = JSONPrimitiveType> {
 // ex. ack "your request has been received"
 // ex. wait "processing..."
 // ex. prepare transition "hyperspace" from planet A to planet B
-interface OHAFeedback {
-	// text
-	// loader
-	// emoji
-	// color...
+interface OHAFeedback extends WithHints {
 	tracking:
 		| 'forget'     // as in "fire-and-forget" = no tracking UI of the action is needed. Ex. sending a mail
 		| 'background' // tracking UI recommended but doesn't prevent sending other actions
 		| 'foreground' // (default) full "waiting/loading" UI, no other action can be sent until this one is resolved
 
-	durationⵧmin‿ms?: number // if present, never resolve the action faster than this (illusion of labor) Do not abuse! (default to some value depending on the verb)
+	story?: OHAStory // the message to show to the user. not mandatory bc can also be inferred from the action's CTA
 
+	// TODO is this relevant for tracking = bg/fg?
 	continueᝍto?: Uri‿x // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
 
-	// TODO msg
-
-	// TODO feedback engagement? Or in an extension of this?
+	// XXX should this be in the story itself?
+	/*hints?: {
+	}*/
 }
 
 // anything not hypermedia.GET
@@ -162,28 +157,24 @@ interface OHAFeedback {
 // this is intentional as the point is to decouple client & server
 // actions dispatched from the client should originate from the server
 // so the client shouldn't have to know about strict typing
-interface OHAHyperActionBlueprint extends OHAHyper {
-	key: string // some unique key to identify the action type. TODO standardize some?
-
+interface OHAHyperActionBlueprint extends OHAHyper, ReducerAction {
 	// required parameters we need to get from the user (or pre-supplied)
 	// input as in "form"
 	input?: Record<string, InputSpec>// the data of the action, could be anything (or nothing)
 
-	hints?: OHAHyper['hints']  & {
+	hints?: OHAHyper['hints'] & {
 		change?: StateChangeCategory
 		// TODO some sort of risk?
 	}
 
 	// aftermath
-	// this is needed in the blueprint so that the client knows what to do/show
+	// this is needed in the blueprint so that the client knows what to do/show WITHOUT waiting for the server
 	feedback?: OHAFeedback
 }
 
 // constructed from the above
 // much simpler, correspond to a ~rpc
-interface OHAHyperAction {
-	key: string
-
+interface OHAHyperAction extends ReducerAction {
 	payload?: Record<string, JSONPrimitiveType>
 
 	// TODO requirements on previous state, see TBRPG
@@ -224,6 +215,8 @@ export {
 
 	type OHAHyperActionBlueprint, type OHAHyperAction,
 	type OHAFeedback,
+
+	type OHAStory,
 
 	type OHAPendingEngagement,
 }

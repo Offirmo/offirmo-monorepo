@@ -65,6 +65,7 @@ API -- features should be small, atomic and composable.
 API -- follow existing patterns and conventions.
 API -- future proof https://protobuf.dev/programming-guides/api/
 API -- guide developers into the pit of success.
+API -- Hyrum's Law = With a sufficient number of users of an API, all observable behaviors (public or not) of your system will be depended on by somebody https://www.hyrumslaw.com/ https://xkcd.com/1172/
 API -- input = Prefer objects for inputs. If a function accepts multiple pieces of data — or may accept multiple pieces of data in the future — create a single object parameter, rather than using multiple parameters. This ensures that: We can add parameters without breaking the contract + The order of the parameters becomes unimportant
 API -- must not violate the principle of least astonishment.
 API -- output = prefer objects, same reasons as input = extensible without breaking the contract
@@ -519,6 +520,7 @@ locality -- conflict locality = reducing conflicts on close changes, ex. enforci
 locality -- of behaviour "LoB" https://htmx.org/essays/locality-of-behaviour/
 lodash
 log
+long-term support (LTS)
 loop
 loop - breaking out of
 LTS, maintenance LTS, active LTS https://nodejs.org/en/about/previous-releases
