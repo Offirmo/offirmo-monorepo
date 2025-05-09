@@ -103,12 +103,17 @@ function getꓽengagements(repr: Immutable<OHAHyperMedia>): Immutable<Array<OHAP
 	return engagements
 }
 
-function getꓽlinks(repr: Immutable<OHAHyperMedia>): Record<string, Immutable<OHAHyperLink>> {
+function getꓽlinks(repr: Immutable<OHAHyperMedia>, { self = true }: { self?: boolean} = {}): Record<string, Immutable<OHAHyperLink>> {
 	const { links = {} } = getꓽhints(repr)
 
 	return Object.fromEntries(
 		Object.entries(links)
 			.sort((a, b) => a[0].localeCompare(b[0]))
+			.filter(([k, l]) => {
+				if (k === 'self' && !self) return false
+
+				return true
+			})
 			.map(([k, l]) => [ k, promote_toꓽOHAHyperLink(l, { rel: [ k as OHALinkRelation ]}) ])
 	)
 }

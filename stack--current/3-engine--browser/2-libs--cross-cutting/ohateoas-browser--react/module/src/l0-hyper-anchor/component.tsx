@@ -15,9 +15,9 @@ const NAME = `OHAAnchor/1`
 
 interface Props {
 	href: OHAHyperLink
-	onꓽinteraction: (link: OHAHyperLink) => void
+	onꓽclick: (link: OHAHyperLink) => void
 }
-function ᄆComponent({href, onꓽinteraction}: Props) {
+function ᄆComponent({href, onꓽclick}: Props) {
 	if (window.oᐧextra?.flagꓽdebug_render) console.log(`🔄 ${NAME}`)
 
 	const href_str = getꓽuriⵧnormalized‿str(href)
@@ -26,7 +26,10 @@ function ᄆComponent({href, onꓽinteraction}: Props) {
 	return (
 			<a
 				href={href_str}
-				onClick={() => onꓽinteraction(href)}
+				onClick={(e) => {
+					onꓽclick(href)
+					e.preventDefault()
+				}}
 			>
 				{renderⵧto_react($cta)}
 			</a>

@@ -22,7 +22,7 @@ type SuccessOrFailure = boolean | null // hint a message as a success/failure/no
 type FlowAlignment =
 	| 'main' // directly flowing from the current flow + intent, ex. a direct answer to a user's question
 	| 'side' // ~related to the current flow but more of a side effect or low-intent, ex. "achievement unlocked", tip, greeting...
-	| 'not'  // not related to the current flow at all, ex. banner about server restart
+	| 'out'  // not related to the current flow at all, ex. banner about server restart
 	// should we add background? = the user can do sth else in the meantime?
 
 /////////////////////////////////////////////////
@@ -73,10 +73,10 @@ type EngagementSequence =
 	| 'session'      // should only be displayed ONCE, at the beginning of the session. The client is to keep track of this.
 	                 // Ex. "Welcome to the app!" or a recap of the story so far.
 	                 // The client must NEVER ack it to not change the state on loading: We don't want the mere loading of the app to trigger a state change due to a simple recap!
-	// TODO 'home' when a user returns a frame to its home? TODO review if useful
+	//| 'home' when a user returns a frame to its home? TODO review if useful
 	//| 'transition'   // should only be displayed BETWEEN navigations/refreshes. The client is to keep track of this.
 	                   // Ex. a hyperspace animation while navigating BETWEEN 2 planets but not when we load initially (we WERE on the planet). The client must ack it even if not displayed.
-	                   // TODO is it even useful? can be a feedback / actionresult instead
+	                   // TODO is it even useful? can be a actionfeedback / actionresult instead
 	//| 'pre'          // should be displayed+resolved BEFORE/ABOVE(masking) the resource, ex. a spoiler alert or content warning.
 	                   // TODO is it even useful? implement when needed
 
@@ -95,7 +95,7 @@ type AttentionLevel =
 interface Engagement<RichTextFormat> {
 	flow: FlowAlignment
 
-	// if needed, sequencing infos: (flow MUST = main)
+	// if needed, sequencing infos
 	sequence?: EngagementSequence
 
 	// TODO should be mandatory?

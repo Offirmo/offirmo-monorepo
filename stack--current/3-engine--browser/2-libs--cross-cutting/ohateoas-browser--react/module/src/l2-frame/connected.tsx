@@ -10,7 +10,7 @@ import {
 	type OHAHyperLink, type OHAStory, type OHAHyperAction, type OHAServer,
 	create,
 	navigate_to,
-	onꓽloaded, isꓽOHAHyperLink,
+	onꓽloaded, isꓽOHAHyperLink, getꓽlinks, LINK__REL__CONTINUE_TO,
 } from '@offirmo-private/ohateoas'
 
 import { ᄆComponent as ᄆComponent_ } from './component.tsx'
@@ -35,7 +35,13 @@ function ᄆComponent({name, url, server}: Props) {
 		ↆ$doc.then($doc => {
 			if (!connected) return
 
-			setState(state => onꓽloaded(state, $doc))
+			if (getꓽlinks($doc)[LINK__REL__CONTINUE_TO]) {
+				// direct navigation
+				setState(state => navigate_to(state, getꓽlinks($doc)[LINK__REL__CONTINUE_TO]))
+			}
+			else {
+				setState(state => onꓽloaded(state, $doc))
+			}
 		})
 		return () => {
 			connected = false

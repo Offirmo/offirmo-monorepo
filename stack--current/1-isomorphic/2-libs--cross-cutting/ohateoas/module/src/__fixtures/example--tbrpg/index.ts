@@ -60,6 +60,17 @@ function createꓽserver(): OHAServer {
 
 		////////////
 
+		engagements.push({
+			flow: 'out',
+			sequence: 'session',
+			attention_needed: 'notice',
+			//auto_dismiss_delay_ms: 'normal',
+			story: 'Welcome to my game! This is a hobby game, no guarantee.',
+
+			uid: -1
+		} as OHAPendingEngagement)
+
+
 		// TODO recursive routing
 
 		switch (path) {
@@ -76,7 +87,7 @@ function createꓽserver(): OHAServer {
 			case normalizeꓽuri‿str('/session/'): { // for recap
 				// TODO review should be engagement instead?
 				$builder = $builder
-					.pushText('Recap...')
+					.pushText('Loading...')
 					.pushLineBreak()
 
 				links['continue-to'] = '/session/adventures/'
@@ -108,7 +119,7 @@ function createꓽserver(): OHAServer {
 				}*/
 
 				actions['play'] = {
-					key: 'play',
+					type: 'play',
 
 					hints: {
 						change: 'reduce',
