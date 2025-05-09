@@ -1,6 +1,9 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
-import { getꓽscheme_specific_part } from '@offirmo-private/ts-types-web'
+import {
+	type Url‿str,
+	getꓽuriⵧnormalized‿str as _getꓽuriⵧnormalized‿str,
+} from '@offirmo-private/ts-types-web'
 
 import type { OHAHyperLink, OHAHyperLink‿x, OHALinkRelation } from './types.ts'
 import { isꓽOHAHyperLink } from './guards.ts'
@@ -8,7 +11,7 @@ import { isꓽOHAHyperLink } from './guards.ts'
 /////////////////////////////////////////////////
 
 // promote to the most expressive of "X"
-function promote_toꓽOHAHyperLink(link: OHAHyperLink‿x, hints: Partial<Omit<OHAHyperLink, 'href'>> = {}): OHAHyperLink {
+function promote_toꓽOHAHyperLink(link: Immutable<OHAHyperLink‿x>, hints: Immutable<Partial<Omit<OHAHyperLink, 'href'>>> = {}): Immutable<OHAHyperLink> {
 	if (isꓽOHAHyperLink(link))
 		return {
 			...link,
@@ -21,8 +24,16 @@ function promote_toꓽOHAHyperLink(link: OHAHyperLink‿x, hints: Partial<Omit<O
 	}
 }
 
+function getꓽuriⵧnormalized‿str(link: Immutable<OHAHyperLink‿x>): Url‿str {
+	if (isꓽOHAHyperLink(link))
+		return _getꓽuriⵧnormalized‿str(link.href)
+
+	return _getꓽuriⵧnormalized‿str(link)
+}
+
 /////////////////////////////////////////////////
 
 export {
 	promote_toꓽOHAHyperLink,
+	getꓽuriⵧnormalized‿str,
 }

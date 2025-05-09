@@ -51,7 +51,7 @@ function getꓽscheme_specific_part(uri: Uri‿str | SchemeSpecificURIPart): Sch
 }
 
 // note: superset of normalizeꓽurl()
-function getꓽuriⵧnormalized‿str(link: Uri‿str | SchemeSpecificURIPart | Hyperlink | URL): Uri‿str {
+function getꓽuriⵧnormalized‿str(link: Immutable<Uri‿str | SchemeSpecificURIPart | Hyperlink | URL>): Uri‿str {
 	if (isꓽHyperlink(link))
 		return getꓽuriⵧnormalized‿str(link.href)
 

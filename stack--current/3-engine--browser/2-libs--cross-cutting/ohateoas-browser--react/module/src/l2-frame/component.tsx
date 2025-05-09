@@ -13,7 +13,7 @@ import {
 	getꓽaction_blueprints,
 	getꓽcta,
 	OHAHyperActionBlueprint,
-	deriveꓽaction, type OHAHyperLink, type OHAStory, type OHAHyperAction,
+	deriveꓽaction, type OHAHyperLink, type OHAStory, type OHAHyperAction, type OHAServer,
 } from '@offirmo-private/ohateoas'
 
 import ᄆChrome from './chrome/index.tsx'
@@ -21,6 +21,7 @@ import ᄆChrome from './chrome/index.tsx'
 import './component.css'
 
 /////////////////////////////////////////////////
+const NAME = `OHAFrame`
 
 interface BackgroundTask {
 
@@ -35,6 +36,7 @@ function ᄆBackgroundTasks() {
 }
 
 interface Props {
+	server: OHAServer
 	url: Url‿str
 	$doc: OHAHyperMedia
 	onꓽinteraction: (x: OHAHyperAction | OHAHyperLink) => Promise<OHAStory | undefined>

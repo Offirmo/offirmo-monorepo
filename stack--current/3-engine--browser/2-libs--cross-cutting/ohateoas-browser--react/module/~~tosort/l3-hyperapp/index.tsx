@@ -14,12 +14,14 @@ import ᄆFrame from './frame/index.tsx'
 
 /////////////////////////////////////////////////
 
+const NAME = `OHyperApp`
+
 interface Props {
 	server: OHAServer
 }
 
 function ᄆComponent({server}: Props) {
-	if (window.oᐧextra?.flagꓽdebug_render) console.log('🔄 Browser')
+	if (window.oᐧextra?.flagꓽdebug_render) console.log(`🔄 ${NAME}`)
 
 	const [ url, setUrl ] = useState<Url‿str>('/')
 

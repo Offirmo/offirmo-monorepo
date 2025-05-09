@@ -1,12 +1,3 @@
-import { normalizeꓽuri‿str, type Uri‿str } from '@offirmo-private/ts-types-web'
-
-/////////////////////////////////////////////////
-
-const DEFAULT_ROOT_URI: Uri‿str = normalizeꓽuri‿str('')
-
-/////////////////////////////////////////////////
-
+export * from './consts.ts'
 export * from './types.ts'
-export {
-	DEFAULT_ROOT_URI,
-}
+export * from './state--frame/index.ts'
