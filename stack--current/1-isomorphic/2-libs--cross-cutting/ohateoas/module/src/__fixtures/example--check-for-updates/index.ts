@@ -68,11 +68,33 @@ function createꓽserver(): OHAServer {
 			const $name = RichText.fragmentⵧinline(name)
 				.addHints({ })
 				.done()
-			const $version = RichText.weak(`v${versionⵧinstalled}`)
-				.addHints({
-					underlying: versionⵧinstalled,
-				})
-				.done()
+
+			const $version = (() => {
+				const builder = RichText.fragmentⵧinline()
+
+				const $versionⵧcurrent = RichText.weak(`v${versionⵧinstalled}`)
+					.addHints({
+						underlying: versionⵧinstalled,
+					})
+					.done()
+
+				builder.pushNode($versionⵧcurrent, { id: 'current' })
+
+				if (versionⵧlatest && versionⵧinstalled !== versionⵧlatest) {
+					const $versionⵧlatest = RichText.weak(`v${versionⵧlatest}`)
+						.addHints({
+							underlying: versionⵧlatest,
+						})
+						.done()
+					builder.pushText(' → ')
+					builder.pushNode($versionⵧlatest, { id: 'latest' })
+					builder.pushText(' ')
+					builder.pushStrong('What’s new?') // should be a link
+				}
+
+				return builder.done()
+			})()
+
 			_products.pushRawNode(
 				RichText.fragmentⵧinline()
 					.pushNode($name, { id: 'name' })

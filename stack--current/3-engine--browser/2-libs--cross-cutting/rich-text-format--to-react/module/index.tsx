@@ -17,8 +17,8 @@ import {
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
 	SPECIAL_LIST_NODE_CONTENT_KEY,
 	promoteꓽto_node,
+	isꓽblock,
 } from '@offirmo-private/rich-text-format'
-
 
 /////////////////////////////////////////////////
 
@@ -349,8 +349,9 @@ function renderⵧto_react($doc: Immutable<NodeLike>, callback_overrides: Partia
 		...raw_options,
 	}
 
+	$doc = promoteꓽto_node($doc)
 	const state = walk<WalkState, RenderingOptionsⵧToReact>(
-		promoteꓽto_node($doc),
+		$doc,
 		callbacks,
 		options,
 	)
@@ -368,7 +369,7 @@ function renderⵧto_react($doc: Immutable<NodeLike>, callback_overrides: Partia
 		})
 	}
 
-	return React.createElement('div', {
+	return React.createElement(NODE_TYPE_TO_COMPONENT[$doc.$type], {
 		key: options.key || 'rich-text-format-to-react--root',
 		className: 'o⋄rich-text',
 	}, state.element)

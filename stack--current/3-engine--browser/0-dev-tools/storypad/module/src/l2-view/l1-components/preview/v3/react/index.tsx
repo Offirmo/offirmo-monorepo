@@ -24,7 +24,7 @@ async function render(state: ObservableState, render_params: Immutable<RenderPar
 
 	const { createRoot } = libⳇreactᝍdomⳇclient
 	let root_elt = document.createElement('div')
-	root_elt.classList.add('react-root')
+	root_elt.setAttribute('id', 'react-root');
 	root_elt.innerHTML = `[React will load here]`
 	container.innerHTML = '' // reset any loading message
 	container.appendChild(root_elt)

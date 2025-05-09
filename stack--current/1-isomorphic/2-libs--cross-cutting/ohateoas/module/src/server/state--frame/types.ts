@@ -15,6 +15,8 @@ interface State {
 
 	$representation: OHAHyperMedia | undefined
 
+	status: string
+
 	// TODO one day
 	//url_history: []
 

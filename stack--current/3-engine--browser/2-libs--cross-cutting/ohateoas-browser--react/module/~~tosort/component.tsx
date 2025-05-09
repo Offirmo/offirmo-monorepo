@@ -1,4 +1,4 @@
-import React, { useState, Suspense, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 
 import {
 	type Url‿str,
@@ -7,7 +7,6 @@ import {
 import renderⵧto_react from '@offirmo-private/rich-text-format--to-react'
 
 import {
-	type State,
 	type OHAHyperMedia,
 	getꓽlinks,
 	getꓽengagements,
@@ -15,30 +14,28 @@ import {
 	getꓽcta,
 	OHAHyperActionBlueprint,
 	deriveꓽaction, type OHAHyperLink, type OHAStory, type OHAHyperAction, type OHAServer,
-	create,
-	navigate_to,
-	onꓽloaded, isꓽOHAHyperLink,
 } from '@offirmo-private/ohateoas'
 
 import ᄆChrome from './chrome/index.tsx'
 
-import ᄆViewport from '../l1-viewport/index.tsx'
 import './component.css'
 
 /////////////////////////////////////////////////
-const NAME = `OHAFrame/1`
+const NAME = `OHAViewPort/1`
 
 interface Props {
-	state: State
-	onꓽinteraction: (x: OHAHyperAction | OHAHyperLink | 'reload') => Promise<OHAStory | undefined>
+	$doc: OHAHyperMedia
+	onꓽinteraction: (x: OHAHyperAction | OHAHyperLink) => void
 }
-function ᄆComponent({state, onꓽinteraction}: Props) {
+function ᄆComponent({$doc, onꓽinteraction}: Props) {
 	if (window.oᐧextra?.flagꓽdebug_render) console.log(`🔄 ${NAME}`)
 
 	const refⵧdialog = useRef(undefined)
 	const [fg_action, setFgAction] = useState<undefined | Promise<unknown>>(undefined)
 
-	const $doc = state.$representation
+	const engagements = getꓽengagements($doc)
+	const action_blueprints = getꓽaction_blueprints($doc)
+	const links = getꓽlinks($doc)
 
 	async function on_click_action(action_blueprint: OHAHyperActionBlueprint) {
 		const { action, feedback } = deriveꓽaction(action_blueprint)
@@ -55,8 +52,8 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 				// TODO
 				break
 			case 'background':
-			// not implemented yet
-			// fallback on foreground
+				// not implemented yet
+				// fallback on foreground
 			case 'foreground': {
 				setFgAction(ೱtask)
 				refⵧdialog.current.showModal()
@@ -83,9 +80,6 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 
 					// TODO continue to ??
 				}
-
-				// an action implies the need for a reload
-				onꓽinteraction('reload')
 			})
 			.catch(err => {
 				console.error('task failed', err)
@@ -96,24 +90,38 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 			})
 	}
 
-
-
-	function _onꓽinteraction(x: OHAHyperActionBlueprint | OHAHyperLink): void {
-		if (isꓽOHAHyperLink(x)) onꓽinteraction(x)
-
-		on_click_action(x)
-	}
-
 	return (
-		<section key={NAME} style={{border: 'solid 2px black'}} className={['o⋄fill-parent']}>
-			<ᄆChrome url={state.urlⵧself} />
-			<hr style={{color: 'red'}}/>
+		<section key={NAME}>
+			<div key="notifs">
+				[TODO top notifs]
+				<hr />
+			</div>
 
-			{$doc ? <ᄆViewport $doc={$doc} onꓽinteraction={_onꓽinteraction}/> : "[Loading…]"}
+			{renderⵧto_react($doc)}
 
-			<StatusBar text={state.status} />
+			<hr key='sep--actions'/>
+			{Object.values(action_blueprints).map((action_blueprint) => {
+				return <button
+					key={action_blueprint.type /* XXX may not be unique!!! */ }
+					onClick={() => {
+						onꓽinteraction(action_blueprint)
+					}}
+				>{getꓽcta(action_blueprint)}</button>
+			})}
 
-			{/* TODO dialog should only cover the viewport!*/}
+			<hr key='sep--links'/>
+			{Object.values(links).map((link, index) => {
+				const href = getꓽuriⵧnormalized‿str(link)
+				// XXX TODO better a with all props!!!
+				return <a
+					key={href + index /* XXX bad!!! */ }
+					href={href}
+				>{getꓽcta(link)}</a>
+			})}
+
+			<hr key='sep--bgtasks'/>
+			<ᄆBackgroundTasks />
+
 			<dialog open={!!fg_action} ref={refⵧdialog}>
 				<p>Task in progress…</p>
 				{/*<form method="dialog">
@@ -126,12 +134,11 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 
 /////////////////////////////////////////////////
 
-interface StatusBarProps {
-	text: string
-}
-function StatusBar({text}: StatusBarProps) {
-	return text && (
-		<code key="status_bar" style={{position: 'absolute', bottom: 0, left: 0}}>{text}</code>
+function ᄆBackgroundTasks() {
+	return (
+		<div>
+			[TODO background tasks]
+		</div>
 	)
 }
 

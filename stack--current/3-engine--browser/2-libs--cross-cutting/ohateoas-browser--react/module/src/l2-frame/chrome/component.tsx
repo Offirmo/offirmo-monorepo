@@ -7,7 +7,6 @@ import type { Uri‿str } from '@offirmo-private/ts-types-web'
 interface Props {
 	url: Uri‿str
 }
-
 function ᄆComponent({url}: Props) {
 	if (window.oᐧextra?.flagꓽdebug_render) console.log('🔄 Chrome/1')
 

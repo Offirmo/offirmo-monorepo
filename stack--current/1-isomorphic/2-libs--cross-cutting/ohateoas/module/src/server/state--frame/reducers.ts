@@ -6,26 +6,35 @@ import type { State } from './types.js'
 import { DEFAULT_ROOT_URI } from '../index.ts'
 
 import {
+	type OHAHyperLink,
 	type OHAHyperLink‿x,
-	getꓽuriⵧnormalized‿str, type OHAHyperMedia,
+	type OHAHyperMedia,
+	getꓽuriⵧnormalized‿str,
+	isꓽOHAHyperLink,
 } from '../../types/index.ts'
+
 import { getꓽlinks } from '../../representation/index.ts'
 
 /////////////////////////////////////////////////
 
+function get_status_loading(url: string): string {
+	return `Loading: "${url}"…`
+}
+
 function create(): Immutable<State> {
+	const starting_url = DEFAULT_ROOT_URI
 	return {
-		urlⵧload: DEFAULT_ROOT_URI,
-		urlⵧself: DEFAULT_ROOT_URI, // so far
+		urlⵧload: starting_url,
+		urlⵧself: starting_url, // so far
 		reload_counter: 0,
 		$representation: undefined,
+		status: get_status_loading(starting_url),
 	}
 }
 
 // "replace" type navigation
 function onꓽloaded(state: Immutable<State>, $representation: OHAHyperMedia): Immutable<State> {
 	const self = getꓽlinks($representation).self
-
 
 	if (self) {
 		const urlⵧself = getꓽuriⵧnormalized‿str(self)
@@ -40,6 +49,13 @@ function onꓽloaded(state: Immutable<State>, $representation: OHAHyperMedia): I
 		state = {
 			...state,
 			$representation,
+		}
+	}
+
+	if (state.status !== '') {
+		state = {
+			...state,
+			status: '',
 		}
 	}
 
@@ -70,6 +86,7 @@ function navigate_to(state: Immutable<State>, options: {
 		urlⵧload: target_str,
 		urlⵧself: target_str, // so far
 		...(is_same_url && reload && { reload_counter: state.reload_counter + 1}),
+		status: get_status_loading(target_str),
 	}
 }
 
