@@ -5,6 +5,7 @@ import { ᄆComponent } from './connected.tsx'
 import { createꓽserver as createꓽserverⵧcfu } from '@offirmo-private/ohateoas/examples/check-for-updates'
 import { createꓽserver as createꓽserverⵧtbrpg } from '@offirmo-private/ohateoas/examples/tbrpg'
 import { createꓽserver as createꓽserverⵧhyp } from '@offirmo-private/ohateoas/examples/hyperspace'
+import { createꓽserver as createꓽserverⵧbroken } from '@offirmo-private/ohateoas/examples/broken'
 
 /////////////////////////////////////////////////
 
@@ -33,5 +34,11 @@ export const TBRPG: Story‿v3 = {
 export const Hyperspace: Story‿v3 = {
 	args: {
 		server: createꓽserverⵧhyp(),
+	},
+}
+
+export const Broken: Story‿v3 = {
+	args: {
+		server: createꓽserverⵧbroken(),
 	},
 }

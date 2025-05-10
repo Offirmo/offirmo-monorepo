@@ -8,18 +8,19 @@ interface State {
 	//session_start_tms: number
 	//last_user_activity_tms: number
 
-	// note: should always be normalized, should always be relative
-	urlⵧload: Url‿str
-	urlⵧself: Url‿str // can be != load if the rsrc returns a different "self"
+	// note: all urls should always be normalized, should always be relative
+	urlⵧhome: Url‿str // latest known recommended home
+
+	urlⵧload: Url‿str // url we're loading or have loaded with no pending load
 	reload_counter: number // for reloads
 
 	$representation: OHAHyperMedia | undefined
+	urlⵧself: Url‿str | undefined // "self" advertised by the $representation. can be != load if the rsrc returns a different "self"
 
 	status: string
 
 	// TODO one day
 	//url_history: []
-
 	//engagements: {}
 }
 

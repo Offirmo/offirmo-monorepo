@@ -1,5 +1,7 @@
 // New "Offirmo's Hyper Architecture" OHA
+
 import assert from 'tiny-invariant'
+import { Enum } from 'typescript-string-enums'
 import type { JSON, JSONPrimitiveType, Story } from '@offirmo-private/ts-types'
 import { type Hyperlink, type ReducerAction, type Uri‿x, type WithHints } from '@offirmo-private/ts-types-web'
 import type { Hints as RichTextHints, NodeLike as RichTextNodeLike } from '@offirmo-private/rich-text-format'
@@ -41,10 +43,11 @@ interface OHAHyper {
 	}
 }
 
-type OHALinkRelation =
+// tslint:disable-next-line: variable-name
+export const OHALinkRelation = Enum(
 	// inspired by https://www.iana.org/assignments/link-relations/link-relations.xhtml
-	| 'self'
-	| 'home'     // or root ? TODO clarify
+	'self',
+	'home',     // or root ? TODO clarify
 	//| 'back'  TODO review what need? shouldn't it be handled by the browser?
 	//| 'external' // Refers to a resource that is not part of the same site as the current context
 	//| 'item'     // The target IRI points to a resource that is a member of the collection represented by the context IRI
@@ -56,9 +59,12 @@ type OHALinkRelation =
 	//| 'section' // Refers to a section in a collection of resources.'
 	// TODO 1D look into webmention, "Linkback" mechanism to the ones of Refback, Trackback, and Pingback
 	// new OHA
-	| 'continue-to' // automatically navigates to this resource once the current one is displayed (assuming some timing/next/skip/no need ?)
+	'continueᝍto', // automatically navigates to this resource once the current one is displayed (assuming some timing/next/skip/no need ?)
 	// classic "well known" expected pages
-	| 'about' | 'support' | 'security' | 'pricing' | 'privacy-policy' | 'terms-and-conditions' | 'blog' | 'docs' | 'faq' | 'source' | 'contact'
+	'about', 'support', 'security', 'pricing', 'privacy-policy', 'terms-and-conditions', 'blog', 'docs', 'faq', 'source', 'contact',
+)
+export type OHALinkRelation = Enum<typeof OHALinkRelation> // eslint-disable-line no-redeclare
+
 
 type OHALinkTarget =
 	// inspired by https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/target
@@ -143,7 +149,7 @@ interface OHAFeedback extends WithHints {
 	story?: OHAStory // the message to show to the user. not mandatory bc can also be inferred from the action's CTA
 
 	// TODO is this relevant for tracking = bg/fg?
-	continueᝍto?: Uri‿x // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
+	//[continueᝍto]?: Uri‿x // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
 
 	// XXX should this be in the story itself?
 	/*hints?: {
@@ -210,7 +216,7 @@ export {
 	type OHARichTextHints,
 
 	type OHAHyper,
-	type OHALinkRelation, type OHALinkTarget,	type OHAHyperLink,
+	type OHALinkTarget,	type OHAHyperLink,
 	type OHAHyperLink‿x,
 
 	type OHAHyperActionBlueprint, type OHAHyperAction,

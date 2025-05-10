@@ -13,7 +13,7 @@ import {
 	getꓽaction_blueprints,
 	getꓽcta,
 	OHAHyperActionBlueprint,
-	deriveꓽaction, type OHAHyperLink, type OHAStory, type OHAHyperAction, type OHAServer,
+	deriveꓽaction, type OHAHyperLink, type OHAStory, type OHAHyperAction, type OHAServer, OHALinkRelation,
 } from '@offirmo-private/ohateoas'
 
 import ᄆChrome from './chrome/index.tsx'
@@ -67,7 +67,7 @@ function ᄆComponent({$doc, onꓽinteraction}: Props) {
 			throw new Error(`Not implemented feedback story!`)
 		}
 
-		if (feedback.continueᝍto) {
+		if (feedback[OHALinkRelation.continueᝍto]) {
 			throw new Error(`Not implemented continueᝍto!`)
 		}
 

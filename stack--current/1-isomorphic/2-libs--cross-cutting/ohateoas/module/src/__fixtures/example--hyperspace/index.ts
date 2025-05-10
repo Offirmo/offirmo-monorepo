@@ -2,12 +2,12 @@ import * as RichText from '@offirmo-private/rich-text-format'
 import type {
 	SemVer,
 } from '@offirmo-private/ts-types'
-import type {
-	OHAHyperMedia,
-	OHAHyperActionBlueprint,
-	OHAHyperAction,
-	OHAPendingEngagement,
-	OHAHyperLink, OHARichTextHints,
+import {
+	type OHAHyperMedia,
+	type OHAHyperActionBlueprint,
+	type OHAHyperAction,
+	type OHAPendingEngagement,
+	type OHAHyperLink, type OHARichTextHints, OHALinkRelation,
 } from '../../types/types.ts'
 import type {
 	OHAServer,
@@ -42,8 +42,8 @@ function createꓽserver(): OHAServer {
 		let $builder = RichText.fragmentⵧblock() // "block" bc maps to a ~frame/sub-browser
 
 		const links: OHARichTextHints['links'] = {
-			self: normalizeꓽuri‿str(path), // intentionally strip query & path until considered relevant
-			home: URIꘌROOT, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
+			[OHALinkRelation.self]: normalizeꓽuri‿str(path), // intentionally strip query & path until considered relevant
+			[OHALinkRelation.home]: URIꘌROOT, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
 		}
 
 		const actions: OHARichTextHints['actions'] = {

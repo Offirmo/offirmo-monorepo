@@ -25,7 +25,7 @@ function ᄆComponent({ↆ$doc, onꓽinteraction}: Props) {
 
 	const $doc = use(ↆ$doc)
 
-	return <ᄆComponent_ $doc={$doc} onꓽinteraction={onꓽinteraction} />
+	return <ᄆComponent_ $doc={$doc} onꓽinteraction={onꓽinteraction} background_tasks={[]} />
 }
 
 /////////////////////////////////////////////////

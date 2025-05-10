@@ -7,7 +7,7 @@ import type { State } from './types.js'
 /////////////////////////////////////////////////
 
 function getꓽurl_for_display(state: Immutable<State>): Url‿str {
-	return state.urlⵧself
+	return state.urlⵧself || state.urlⵧload
 }
 
 /////////////////////////////////////////////////

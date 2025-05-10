@@ -7,7 +7,7 @@ import {
 	type OHAServer,
 	type OHAStory,
 	type OHAHyperActionBlueprint,
-	type OHAFeedback,
+	type OHAFeedback, OHALinkRelation,
 } from '@offirmo-private/ohateoas'
 
 /////////////////////////////////////////////////
@@ -42,8 +42,8 @@ function createꓽserver(): OHAServer {
 		let $builder = RichText.fragmentⵧblock() // "block" bc maps to a ~frame/sub-browser
 
 		const links: OHARichTextHints['links'] = {
-			self: normalizeꓽuri‿str(path), // intentionally strip query & path until considered relevant
-			home: URIꘌROOT, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
+			[OHALinkRelation.self]: normalizeꓽuri‿str(path), // intentionally strip query & path until considered relevant
+			[OHALinkRelation.home]: URIꘌROOT, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
 		}
 
 		const actions: OHARichTextHints['actions'] = {

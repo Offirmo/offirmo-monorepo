@@ -92,7 +92,6 @@ type NodeLike =
 	| string
 	| number
 	| Node
-	//| Immutable<Node>
 
 ///////
 

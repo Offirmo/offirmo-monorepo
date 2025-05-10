@@ -11,12 +11,12 @@ import {
 } from '@offirmo-private/normalize-string'
 
 
-import { LINK__REL__CONTINUE_TO } from '../types/consts.ts'
+import { OHALinkRelation } from '../types/types.ts'
 import type {
 	OHARichTextHints,
 	OHAHyperMedia,
 	OHAHyperActionBlueprint,
-	OHAHyperLink, OHALinkRelation, OHAPendingEngagement,
+	OHAHyperLink, OHAPendingEngagement,
 } from '../types/types.ts'
 import { promote_toꓽOHAHyperLink } from '../types/selectors.ts'
 import { isꓽOHAHyperLink } from '../types/guards.ts'
@@ -35,7 +35,7 @@ function getꓽcta(hyper: OHAHyperLink | OHAHyperActionBlueprint): RichText.Node
 			const { rel = [], href } = hyper
 			const candidates =
 				// trying to find an expressive relation
-				rel.filter(r => r !== LINK__REL__CONTINUE_TO && r !== 'self')
+				rel.filter(r => r !== OHALinkRelation.continueᝍto && r !== OHALinkRelation.self)
 			if (candidates.length === 0) is_code = true
 			return candidates[0] ?? getꓽuriⵧnormalized‿str(href) // fallback on the URL itself
 		}
@@ -103,14 +103,18 @@ function getꓽengagements(repr: Immutable<OHAHyperMedia>): Immutable<Array<OHAP
 	return engagements
 }
 
-function getꓽlinks(repr: Immutable<OHAHyperMedia>, { self = true }: { self?: boolean} = {}): Record<string, Immutable<OHAHyperLink>> {
+function getꓽlinks(repr: Immutable<OHAHyperMedia>, { filter_outꓽtechnical = false }: { filter_outꓽtechnical?: boolean} = {}): Record<string, Immutable<OHAHyperLink>> {
 	const { links = {} } = getꓽhints(repr)
 
 	return Object.fromEntries(
 		Object.entries(links)
 			.sort((a, b) => a[0].localeCompare(b[0]))
 			.filter(([k, l]) => {
-				if (k === 'self' && !self) return false
+				if (filter_outꓽtechnical) {
+					return true
+						&& k !== OHALinkRelation.self // "reload"
+						&& k !== OHALinkRelation.home // "home"
+				}
 
 				return true
 			})

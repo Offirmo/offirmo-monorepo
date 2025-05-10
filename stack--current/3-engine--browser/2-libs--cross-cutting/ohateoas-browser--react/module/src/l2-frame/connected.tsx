@@ -10,7 +10,7 @@ import {
 	type OHAHyperLink, type OHAStory, type OHAHyperAction, type OHAServer,
 	create,
 	navigate_to,
-	onꓽloaded, isꓽOHAHyperLink, getꓽlinks, LINK__REL__CONTINUE_TO,
+	onꓽloaded, isꓽOHAHyperLink,
 } from '@offirmo-private/ohateoas'
 
 import { ᄆComponent as ᄆComponent_ } from './component.tsx'
@@ -27,22 +27,23 @@ interface Props {
 function ᄆComponent({name, url, server}: Props) {
 	if (window.oᐧextra?.flagꓽdebug_render) console.log(`🔄 ${NAME}`)
 
-	const [state, setState] = useState(navigate_to(create(), {href: url}))
+	const [state, setState] = useState(create(url))
 
 	useEffect(() => {
 		const ↆ$doc = server.ↆget(state.urlⵧload)
 		let connected = true
-		ↆ$doc.then($doc => {
-			if (!connected) return
+		ↆ$doc.then(
+				$doc => {
+					if (!connected) return
 
-			if (getꓽlinks($doc)[LINK__REL__CONTINUE_TO]) {
-				// direct navigation
-				setState(state => navigate_to(state, getꓽlinks($doc)[LINK__REL__CONTINUE_TO]))
-			}
-			else {
-				setState(state => onꓽloaded(state, $doc))
-			}
-		})
+					setState(state => onꓽloaded(state, $doc))
+				},
+				err => {
+					if (!connected) return
+
+					setState(state => onꓽloaded(state, err))
+				}
+			)
 		return () => {
 			connected = false
 		}
@@ -60,6 +61,7 @@ function ᄆComponent({name, url, server}: Props) {
 			return Promise.resolve(undefined)
 		}
 
+		// just pass it on
 		return server.dispatch(x, state.urlⵧself)
 	}
 

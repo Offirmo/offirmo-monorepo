@@ -44,6 +44,19 @@ function isꓽNode(node: Immutable<any>): node is Immutable<Node> {
 	}
 }
 
+function isꓽNodeLike(node: Immutable<any>): node is Immutable<NodeLike>
+function isꓽNodeLike(node: any): node is NodeLike
+function isꓽNodeLike(node: Immutable<any>): node is Immutable<NodeLike> {
+	const type = typeof node
+	switch (type) {
+		case 'string':
+		case 'number':
+			return true
+		default:
+			return isꓽNode(node)
+	}
+}
+
 /////////////////////////////////////////////////
 // selectors
 
@@ -113,6 +126,7 @@ export {
 
 	assertꓽisꓽNode,
 	isꓽNode,
+	isꓽNodeLike,
 
 	DEFAULT_NODE_TYPE,
 	_NODE_TYPE_to_DISPLAY_MODE,

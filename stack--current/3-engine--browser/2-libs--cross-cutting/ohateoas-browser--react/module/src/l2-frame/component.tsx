@@ -7,6 +7,7 @@ import {
 import renderⵧto_react from '@offirmo-private/rich-text-format--to-react'
 
 import {
+	OHALinkRelation,
 	type State,
 	type OHAHyperMedia,
 	getꓽlinks,
@@ -48,11 +49,11 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 		const ೱdispatch_result = onꓽinteraction(action)
 		let ೱtask = ೱdispatch_result // so far
 
-		// TODO durationⵧmin‿ms
+		// TODO 1D durationⵧmin‿ms
 
 		switch(feedback.tracking) {
 			case 'forget':
-				// TODO
+				// TODO 1D
 				break
 			case 'background':
 			// not implemented yet
@@ -70,7 +71,7 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 			throw new Error(`Not implemented feedback story!`)
 		}
 
-		if (feedback.continueᝍto) {
+		if (feedback[OHALinkRelation.continueᝍto]) {
 			throw new Error(`Not implemented continueᝍto!`)
 		}
 
@@ -88,6 +89,7 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 				onꓽinteraction('reload')
 			})
 			.catch(err => {
+				// TODO better error
 				console.error('task failed', err)
 			})
 			.finally(() => {
@@ -99,7 +101,7 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 
 
 	function _onꓽinteraction(x: OHAHyperActionBlueprint | OHAHyperLink): void {
-		if (isꓽOHAHyperLink(x)) onꓽinteraction(x)
+		if (isꓽOHAHyperLink(x)) return onꓽinteraction(x)
 
 		on_click_action(x)
 	}
@@ -109,7 +111,7 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 			<ᄆChrome url={state.urlⵧself} />
 			<hr style={{color: 'red'}}/>
 
-			{$doc ? <ᄆViewport $doc={$doc} onꓽinteraction={_onꓽinteraction}/> : "[Loading…]"}
+			{$doc ? <ᄆViewport $doc={$doc} onꓽinteraction={_onꓽinteraction} background_tasks={[]}/> : "[Loading…]"}
 
 			<StatusBar text={state.status} />
 

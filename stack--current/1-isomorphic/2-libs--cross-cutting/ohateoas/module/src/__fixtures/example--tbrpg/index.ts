@@ -6,6 +6,7 @@ import {
 	getꓽscheme_specific_part,
 } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
+import { OHALinkRelation } from '../../types/types.ts'
 import type {
 	OHAHyperMedia, OHARichTextHints,
 	OHAHyperActionBlueprint,
@@ -49,8 +50,8 @@ function createꓽserver(): OHAServer {
 		let $builder = RichText.fragmentⵧblock() // "block" bc maps to a ~frame/sub-browser
 
 		const links: OHARichTextHints['links'] = {
-			self: normalizeꓽuri‿str(path), // intentionally strip query & path until considered relevant
-			home: URIꘌROOT, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
+			[OHALinkRelation.self]: normalizeꓽuri‿str(path), // intentionally strip query & path until considered relevant
+			[OHALinkRelation.home]: URIꘌROOT, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
 		}
 
 		const actions: OHARichTextHints['actions'] = {
@@ -79,7 +80,9 @@ function createꓽserver(): OHAServer {
 					.pushText('Welcome to The Boring RPG!')
 					.pushLineBreak()
 
-				links['continue-to'] = '/session/'
+				// imagining a login screen, then continue on login
+
+				links[OHALinkRelation.continueᝍto] = '/session/'
 
 				break
 			}
@@ -90,7 +93,9 @@ function createꓽserver(): OHAServer {
 					.pushText('Loading...')
 					.pushLineBreak()
 
-				links['continue-to'] = '/session/adventures/'
+				// imagining a character/savegame selection, then continue to game
+
+				links[OHALinkRelation.continueᝍto] = '/session/adventures/'
 
 				break
 			}
@@ -130,12 +135,12 @@ function createꓽserver(): OHAServer {
 					feedback: {
 						tracking: 'foreground', // (default) full "waiting/loading" UI, no other action can be sent until this one is resolved
 
-						//continueᝍto: '/session/adventures/last', // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
-
-						hints: {
+						story: {
 							message: 'Exploring…',
-							durationⵧmin‿ms: 1000, // if present, never resolve the action faster than this (illusion of labor) Do not abuse! (default to some value depending on the verb)
-						},
+							hints: {
+								durationⵧmin‿ms: 1000, // if present, never resolve the action faster than this (illusion of labor) Do not abuse! (default to some value depending on the verb)
+							},
+						}
 					} as OHAHyperActionBlueprint['feedback'],
 				} as OHAHyperActionBlueprint
 
@@ -147,7 +152,7 @@ function createꓽserver(): OHAServer {
 			case '/session/adventures/last': {
 				throw new Error(`Not implemented!`)
 
-				links['continue-to'] = '/session/adventures/'
+				links[OHALinkRelation.continueᝍto] = '/session/adventures/'
 
 				break
 			}
@@ -172,10 +177,11 @@ function createꓽserver(): OHAServer {
 	const dispatch: OHAServer['dispatch'] = async (action) => {
 		console.log(`Server: asked to dispatch action…`, action)
 
-		// TODO return engagement pending action
-		throw new Error(`Not implemented!`)
+		switch (action.type) {
+			default:
+				throw new Error(`Unknown action type "${action.type}"!`)
+		}
 	}
-
 
 	return {
 		ↆget,

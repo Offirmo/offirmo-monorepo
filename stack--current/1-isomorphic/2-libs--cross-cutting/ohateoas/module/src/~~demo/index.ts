@@ -18,7 +18,7 @@ import { createꓽserver } from '../__fixtures/example--check-for-update/index.t
 //import { createꓽserver } from '../~~sandbox/example--tbrpg/server/index.ts'
 //import { createꓽserver } from '../~~sandbox/example--tbrpg/server/index.ts'
 
-import { LINK__REL__CONTINUE_TO } from '../types/consts.ts'
+import { OHALinkRelation } from '../types/types.ts'
 import {
 	type OHAHyperActionBlueprint, type OHAHyperAction,
 	type OHAFeedback,
@@ -49,8 +49,8 @@ async function main() {
 		console.log(view)
 
 		const links = getꓽlinks($doc)
-		if (links[LINK__REL__CONTINUE_TO]) {
-			const { href } = links[LINK__REL__CONTINUE_TO]
+		if (links[LINK__RELꘌCONTINUE_TO]) {
+			const { href } = links[LINK__RELꘌCONTINUE_TO]
 			url = href
 			pending_stuff = true
 			continue loop
