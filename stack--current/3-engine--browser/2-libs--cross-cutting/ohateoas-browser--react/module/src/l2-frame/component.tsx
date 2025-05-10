@@ -4,6 +4,7 @@ import {
 	type Url‿str,
 	getꓽuriⵧnormalized‿str,
 } from '@offirmo-private/ts-types-web'
+import * as RichText from '@offirmo-private/rich-text-format'
 import renderⵧto_react from '@offirmo-private/rich-text-format--to-react'
 
 import {
@@ -37,6 +38,7 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 	if (window.oᐧextra?.flagꓽdebug_render) console.log(`🔄 ${NAME}`)
 
 	const refⵧdialog = useRef(undefined)
+	const [story, setStory] = useState<string | undefined>(undefined)
 	const [fg_action, setFgAction] = useState<undefined | Promise<unknown>>(undefined)
 
 	const $doc = state.$representation
@@ -68,7 +70,18 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 		}
 
 		if (feedback.story) {
-			throw new Error(`Not implemented feedback story!`)
+			if (RichText.isꓽNodeLike(feedback.story)) {
+				setStory(renderⵧto_react(feedback.story))
+			}
+			else if (RichText.isꓽNodeLike(feedback.story.message)) {
+				setStory(renderⵧto_react(feedback.story.message))
+			}
+			else {
+				throw new Error(`Not implemented feedback story!`)
+			}
+		}
+		else {
+			setStory(`Executing "${getꓽcta(action_blueprint)}"…`)
 		}
 
 		if (feedback[OHALinkRelation.continueᝍto]) {
@@ -79,29 +92,30 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 			.then((story?: OHAStory) => {
 				console.log('task done', story)
 
-				if (story) {
-					console.warn(`TODO implement displaying story!`, story)
-
-					// TODO continue to ??
+				if (RichText.isꓽNodeLike(story)) {
+					setStory(renderⵧto_react(story))
+				}
+				else if (RichText.isꓽNodeLike(story.message)) {
+					setStory(renderⵧto_react(story.message))
+				}
+				else {
+					throw new Error(`Not implemented result story!`)
 				}
 
 				// an action implies the need for a reload
 				onꓽinteraction('reload')
 			})
 			.catch(err => {
+				setStory("ERROR" + err)
+				console.error(err)
 				// TODO better error
-				console.error('task failed', err)
-			})
-			.finally(() => {
-				setFgAction(undefined)
-				refⵧdialog.current.close()
 			})
 	}
 
 
 
 	function _onꓽinteraction(x: OHAHyperActionBlueprint | OHAHyperLink): void {
-		if (isꓽOHAHyperLink(x)) return onꓽinteraction(x)
+		if (isꓽOHAHyperLink(x)) return void onꓽinteraction(x)
 
 		on_click_action(x)
 	}
@@ -117,10 +131,13 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 
 			{/* TODO dialog should only cover the viewport!*/}
 			<dialog open={!!fg_action} ref={refⵧdialog}>
-				<p>Task in progress…</p>
-				{/*<form method="dialog">
-					<button>OK</button>
-				</form>*/}
+				<p>{story}</p>
+				<form method="dialog">
+					<button onClick={() => {
+						setFgAction(undefined)
+						refⵧdialog.current.close()
+					}}>Close</button>
+				</form>
 			</dialog>
 		</section>
 	)
