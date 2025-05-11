@@ -12,9 +12,14 @@ import { createꓽserver as createꓽserverⵧbroken } from '@offirmo-private/oh
 export default {
 	component: ᄆComponent,
 	args: {
-		url: '/',
 		name: '_root',
-	}
+	},
+	decorators: [
+		(story) => {
+			document.getElementById('react-root').classList.add('o⋄full-viewport')
+			return story
+		},
+	]
 } satisfies Meta‿v3
 
 /////////////////////////////////////////////////

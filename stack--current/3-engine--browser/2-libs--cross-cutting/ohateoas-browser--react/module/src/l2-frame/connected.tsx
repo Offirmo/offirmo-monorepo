@@ -11,6 +11,7 @@ import {
 	create,
 	navigate_to,
 	onꓽloaded, isꓽOHAHyperLink,
+	DEFAULT_ROOT_URI,
 } from '@offirmo-private/ohateoas'
 
 import { ᄆComponent as ᄆComponent_ } from './component.tsx'
@@ -22,12 +23,12 @@ interface Props {
 	name: string
 	// TODO 1D chrome_type: 'borderless' | 'minimal' | 'full'
 	server: OHAServer
-	url: Url‿str
+	starting_url?: Url‿str
 }
-function ᄆComponent({name, url, server}: Props) {
+function ᄆComponent({name, starting_url = DEFAULT_ROOT_URI, server}: Props) {
 	if (window.oᐧextra?.flagꓽdebug_render) console.log(`🔄 ${NAME}`)
 
-	const [state, setState] = useState(create(url))
+	const [state, setState] = useState(create(starting_url))
 
 	useEffect(() => {
 		const ↆ$doc = server.ↆget(state.urlⵧload)
