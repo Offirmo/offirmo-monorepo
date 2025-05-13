@@ -10,6 +10,8 @@ Goal:
 * chat-like interface compatible
   * by extension terminal compatible
   * great for accessibility!
+* ideally striving back to a thinner client
+  * yet supporting progressive enhancement / fat client
 
 
 
@@ -41,6 +43,7 @@ Spectrums:
 thin/thick client + thick/thin servers but also now edge!
 
 ### existing
+
 * HTML
   * is "screen only", a screen replaces the previous screen on navigation
   * can use frames, but frames have perf issues
@@ -70,6 +73,7 @@ Warning: avoid inner platform effect!!!
       * landscape
     * soundscape
     * ...
+* auto-reloads should not end in failures = broken pages
 * keep the semantic!
 * mutations not limited to PUT/POST/DELETE, also RPC/action
   * not restricted to <a> & <form>
@@ -91,7 +95,7 @@ Warning: avoid inner platform effect!!!
   semantic_level?: 'error' | 'warning' | 'info' | 'success',
   * auto-dismiss?
   * ...
-* push from server (the other missing case)
+* push from server (the other missing case from PWA/traditional html)
 * rsrc + pending engagements
 * offline first
 * progressive enhancement
@@ -102,6 +106,8 @@ Warning: avoid inner platform effect!!!
   * also concept of recap
 * ideally should embed the concept of notifications as well
 * support preview = highly simplified summary of a rsrc
+* should be designed to be composable, with different teams working on different rsrc
+  * ex. no "overall hints" at the root, should be discoverable along the way
 * And don't forget!
   * cool!
   * whimsical!

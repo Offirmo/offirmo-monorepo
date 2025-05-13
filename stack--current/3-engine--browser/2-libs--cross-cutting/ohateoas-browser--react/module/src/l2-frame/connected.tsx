@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { type CSSProperties, useState, useEffect } from 'react'
 
 import {
 	type Url‿str,
@@ -20,12 +20,12 @@ import { ᄆComponent as ᄆComponent_ } from './component.tsx'
 const NAME = `OHAFrame/2`
 
 interface Props {
-	name: string
+	available_width: CSSProperties['width']
 	// TODO 1D chrome_type: 'borderless' | 'minimal' | 'full'
 	server: OHAServer
 	starting_url?: Url‿str
 }
-function ᄆComponent({name, starting_url = DEFAULT_ROOT_URI, server}: Props) {
+function ᄆComponent({available_width, starting_url = DEFAULT_ROOT_URI, server}: Props) {
 	if (window.oᐧextra?.flagꓽdebug_render) console.log(`🔄 ${NAME}`)
 
 	const [state, setState] = useState(create(starting_url))
@@ -67,7 +67,7 @@ function ᄆComponent({name, starting_url = DEFAULT_ROOT_URI, server}: Props) {
 	}
 
 	return (
-		<ᄆComponent_ state={state} onꓽinteraction={onꓽinteraction} />
+		<ᄆComponent_ available_width={available_width} state={state} onꓽinteraction={onꓽinteraction} />
 	)
 }
 

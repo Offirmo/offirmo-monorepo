@@ -1,25 +1,15 @@
-import React, { useState, Suspense, useRef } from 'react'
+import React, { type CSSProperties, useState, useRef } from 'react'
 
-import {
-	type Url‿str,
-	getꓽuriⵧnormalized‿str,
-} from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 import renderⵧto_react from '@offirmo-private/rich-text-format--to-react'
 
 import {
 	OHALinkRelation,
 	type State,
-	type OHAHyperMedia,
-	getꓽlinks,
-	getꓽengagements,
-	getꓽaction_blueprints,
 	getꓽcta,
 	OHAHyperActionBlueprint,
-	deriveꓽaction, type OHAHyperLink, type OHAStory, type OHAHyperAction, type OHAServer,
-	create,
-	navigate_to,
-	onꓽloaded, isꓽOHAHyperLink,
+	deriveꓽaction, type OHAHyperLink, type OHAStory, type OHAHyperAction,
+	isꓽOHAHyperLink,
 } from '@offirmo-private/ohateoas'
 
 import ᄆChrome from './chrome/index.tsx'
@@ -31,10 +21,11 @@ import './component.css'
 const NAME = `OHAFrame/1`
 
 interface Props {
+	available_width: CSSProperties['width']
 	state: State
 	onꓽinteraction: (x: OHAHyperAction | OHAHyperLink | 'reload') => Promise<OHAStory | undefined>
 }
-function ᄆComponent({state, onꓽinteraction}: Props) {
+function ᄆComponent({state, available_width, onꓽinteraction}: Props) {
 	if (window.oᐧextra?.flagꓽdebug_render) console.log(`🔄 ${NAME}`)
 
 	const refⵧdialog = useRef(undefined)
@@ -112,8 +103,6 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 			})
 	}
 
-
-
 	function _onꓽinteraction(x: OHAHyperActionBlueprint | OHAHyperLink): void {
 		if (isꓽOHAHyperLink(x)) return void onꓽinteraction(x)
 
@@ -121,11 +110,12 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 	}
 
 	return (
-		<section key={NAME} style={{border: 'solid 2px black'}} className={['o⋄fill-parent']}>
+		<div className="o⋄fill-parent o⋄flex--directionꘌcolumn">
 			<ᄆChrome url={state.urlⵧself} />
-			<hr style={{color: 'red'}}/>
 
-			{$doc ? <ᄆViewport $doc={$doc} onꓽinteraction={_onꓽinteraction} background_tasks={[]}/> : "[Loading…]"}
+			<div className="o⋄flex-element--grow" style={{position: 'relative'}}>
+				{$doc ? <ᄆViewport  available_width={available_width} $doc={$doc} onꓽinteraction={_onꓽinteraction} background_tasks={[]}/> : "[Loading…]"}
+			</div>
 
 			<StatusBar text={state.status} />
 
@@ -139,7 +129,7 @@ function ᄆComponent({state, onꓽinteraction}: Props) {
 					}}>Close</button>
 				</form>
 			</dialog>
-		</section>
+		</div>
 	)
 }
 

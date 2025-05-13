@@ -58,10 +58,24 @@ export const OHALinkRelation = Enum(
 	//| 'opener' // Indicates that any newly created top-level browsing context which results from following the link will be an auxiliary browsing context.
 	//| 'section' // Refers to a section in a collection of resources.'
 	// TODO 1D look into webmention, "Linkback" mechanism to the ones of Refback, Trackback, and Pingback
+
 	// new OHA
-	'continueᝍto', // automatically navigates to this resource once the current one is displayed (assuming some timing/next/skip/no need ?)
+	'continueᝍto', // automatically navigates to this resource once the current one is displayed (assuming some timing/next/skip/no need?)
+
 	// classic "well known" expected pages
-	'about', 'support', 'security', 'pricing', 'privacy-policy', 'terms-and-conditions', 'blog', 'docs', 'faq', 'source', 'contact',
+	'about',
+	'status',
+	'support',
+	'security',
+	'privacy-policy',
+	'terms-and-conditions',
+	'credits',
+	'pricing',
+	'blog',
+	'docs',
+	'faq',
+	'source',
+	'contact',
 )
 export type OHALinkRelation = Enum<typeof OHALinkRelation> // eslint-disable-line no-redeclare
 

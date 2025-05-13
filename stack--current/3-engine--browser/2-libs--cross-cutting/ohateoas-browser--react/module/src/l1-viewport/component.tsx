@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { type CSSProperties } from 'react'
 
 import {
 	getꓽuriⵧnormalized‿str,
@@ -23,11 +23,12 @@ import type { Immutable } from '@offirmo-private/ts-types'
 const NAME = `OHAViewPort/1`
 
 interface Props {
+	available_width: CSSProperties['width']
 	$doc: OHAHyperMedia
 	background_tasks: Array<unknown>
 	onꓽinteraction: (x: OHAHyperActionBlueprint | OHAHyperLink) => void
 }
-function ᄆComponent({$doc, background_tasks, onꓽinteraction}: Props) {
+function ᄆComponent({available_width, $doc, background_tasks, onꓽinteraction}: Props) {
 	if (window.oᐧextra?.flagꓽdebug_render) console.log(`🔄 ${NAME}`)
 
 	const engagements = getꓽengagements($doc)
@@ -36,16 +37,21 @@ function ᄆComponent({$doc, background_tasks, onꓽinteraction}: Props) {
 	console.log(`${NAME}`, { $doc, engagements, action_blueprints, links})
 
 	return (
-		<section key={NAME}>
-			<ᄆEngagements engagements={engagements} />
+		<section key={NAME} style={{margin: 0, padding: 0}} className={['o⋄fill-parent']}>
+			<div className="wrapper" style={{
+				maxWidth: `var(--o⋄content-recommended-width)`,
+				margin: `0 max(1ch, (${available_width} - var(--o⋄content-recommended-width))/2)`
+			}}>
+				<ᄆEngagements engagements={engagements} />
 
-			{renderⵧto_react($doc)}
+				{renderⵧto_react($doc)}
 
-			<ᄆActions action_blueprints={action_blueprints} onꓽclick={onꓽinteraction} />
+				<ᄆActions action_blueprints={action_blueprints} onꓽclick={onꓽinteraction} />
 
-			<ᄆLinks links={links} onꓽclick={onꓽinteraction} />
+				<ᄆLinks links={links} onꓽclick={onꓽinteraction} />
 
-			<ᄆBackgroundTasks background_tasks={background_tasks} />
+				<ᄆBackgroundTasks background_tasks={background_tasks} />
+			</div>
 		</section>
 	)
 }

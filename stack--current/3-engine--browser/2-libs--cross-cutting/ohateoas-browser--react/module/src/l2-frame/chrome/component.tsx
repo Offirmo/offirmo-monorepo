@@ -11,7 +11,7 @@ function ᄆComponent({url}: Props) {
 	if (window.oᐧextra?.flagꓽdebug_render) console.log('🔄 Chrome/1')
 
 	return (
-		<div>
+		<div style={{backgroundColor: 'lightgoldenrodyellow'}}>
 			<button>🏠</button>
 			<button>⏪</button>
 			<button>⏩</button>

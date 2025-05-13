@@ -23,6 +23,8 @@ function ᄆComponent({href, onꓽclick}: Props) {
 	const href_str = getꓽuriⵧnormalized‿str(href)
 	const $cta = getꓽcta(href)
 
+	// TODO children + https://stackoverflow.com/questions/2136461/use-javascript-to-intercept-all-document-link-clicks
+
 	return (
 			<a
 				href={href_str}

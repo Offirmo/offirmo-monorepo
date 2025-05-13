@@ -8,16 +8,18 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/index.tsx"
+		".": "./module/src/index.tsx"
 	},
-	"source": "module/index.tsx",
+	"source": "module/src/index.tsx",
 	"peerDependencies": {
 		"react": "^19",
 		"tslib": "^2"
 	},
 	"dependencies": {
 		"@offirmo-private/ohateoas": "*",
+		"@offirmo-private/rich-text-format": "*",
 		"@offirmo-private/rich-text-format--to-react": "*",
+		"@offirmo-private/ts-types-web": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
@@ -32,10 +34,9 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/rich-text-format": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
-		"@offirmo-private/ts-types-web": "*",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/react": "^19",
 		"npm-run-all": "^4",
