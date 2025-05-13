@@ -8,7 +8,7 @@ import generateꓽwebsiteᝍentryᝍpoints from '@offirmo-private/generator--web
 
 await generateꓽwebsiteᝍentryᝍpoints({
 		// nothing
-	},
+	} as any,
 	path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'),
 	{rm: true},
 )

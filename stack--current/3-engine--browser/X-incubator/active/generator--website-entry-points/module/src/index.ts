@@ -1,5 +1,5 @@
 import * as path from 'node:path'
-import * as fs from 'node:fs'
+import * as fs from 'node:fs/promises'
 
 import assert from 'tiny-invariant'
 import * as Prettier from 'prettier'
@@ -62,7 +62,6 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 	targetDir = path.normalize(targetDir)
 	assert(path.isAbsolute(targetDir), `dir must be absolute, got "${targetDir}"`)
 	console.log(`📁 ${targetDir}`)
-	// TODO rm? too dangerous?
 
 	Object.keys(entries)
 		.sort()
@@ -112,7 +111,7 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 				file__content = file__content.replace(process.env['HOME'] ?? '$HOME', '~')
 
 			return fs
-				.outputFile(file__path, file__content, {
+				.writeFile(file__path, file__content, {
 					...(typeof file__content === 'string' && { encoding: 'utf8' }),
 				})
 				.catch((err: any) => {
@@ -135,7 +134,7 @@ async function generateꓽwebsiteᝍentryᝍpoints(
 	const entries = getꓽwebsiteᝍentryᝍpoints(spec)
 
 	if (options.rm) {
-		await fs.remove(targetDir)
+		await fs.rm(targetDir, { force: true })
 	}
 
 	return writeꓽwebsiteᝍentryᝍpoints(entries, targetDir)

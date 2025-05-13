@@ -2,7 +2,7 @@ import type { Author, Thing, WithOnlinePresence, ThingWithOnlinePresence } from 
 
 import { AUTHOR } from '@offirmo-private/marketing'
 
-import type { WebProperty, WebPropertyEntryPointSpec } from '../..'
+import type { WebProperty, WebPropertyEntryPointSpec } from '@offirmo-private/generator--website-entry-points'
 
 /////////////////////////////////////////////////
 /*
@@ -40,7 +40,6 @@ const THINGⵧONLINE: ThingWithOnlinePresence = {
 /////////////////////////////////////////////////
 // Ok now we're having a website
 
-
 const WEBSITE: WebProperty = {
 	...THINGⵧONLINE,
 
@@ -53,7 +52,7 @@ const WEBSITE: WebProperty = {
 	features: [
 		'cssⳇbox-layout--natural',
 		'normalize-url-trailing-slash',
-		'cssⳇfoundation--offirmo',
+		'cssⳇframework--offirmo',
 	],
 
 	/////// SOCIAL

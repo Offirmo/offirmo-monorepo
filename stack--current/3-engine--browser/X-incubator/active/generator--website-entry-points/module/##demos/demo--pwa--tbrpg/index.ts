@@ -4,7 +4,7 @@ import * as path from 'node:path'
 
 import generateꓽwebsiteᝍentryᝍpoints from '@offirmo-private/generator--website-entry-points'
 
-import { SPEC } from '../../src/__specs/__fixtures/specs--game--tbrpg.js'
+import { SPEC } from '../../src/__fixtures/specs--game--tbrpg/index.ts'
 
 /////////////////////////////////////////////////
 

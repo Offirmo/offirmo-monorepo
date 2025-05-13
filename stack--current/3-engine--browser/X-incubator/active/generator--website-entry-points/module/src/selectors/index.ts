@@ -7,8 +7,8 @@ const chroma = ((await import('chroma-js')) as any).default as chroma.ChromaStat
 import type { AnyPath, Basename, Emoji, Immutable, RelativePath } from '@offirmo-private/ts-types'
 import { getꓽtitle as Contentⳇwebᐧgetꓽtitle, getꓽdescription as _getꓽdescription } from '@offirmo-private/ts-types-web'
 import type { CssⳇColor‿str } from '@offirmo-private/ts-types-web'
-import type { FeatureSnippets } from '@offirmo-private/generator--html'
-import type { SVG } from '@offirmo-private/generator--svg'
+import { FeatureSnippets } from '@offirmo-private/generator--html'
+import { type SVG } from '@offirmo-private/generator--svg'
 
 import { normalize_unicode, coerce_toꓽsafe_basenameⵧstrictest, normalizeꓽtextⵧsentence } from '@offirmo-private/normalize-string'
 

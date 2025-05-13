@@ -65,7 +65,7 @@ export const OHALinkRelation = Enum(
 	// classic "well known" expected pages
 	'about',
 	'status',
-	'support',
+	'support', // where users should go if they need help with your thing
 	'security',
 	'privacy-policy',
 	'terms-and-conditions',
