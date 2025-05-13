@@ -15,6 +15,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/fs--output-file": "*",
 		"@offirmo-private/generator--html": "*",
 		"@offirmo-private/generator--svg": "*",
 		"@offirmo-private/normalize-string": "*",
@@ -34,6 +35,7 @@
 		"demo": "node --experimental-strip-types ./module/##demos/demo--personal-blog/index.ts"
 	},
 	"devDependencies": {
+		"@offirmo-private/marketing": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",

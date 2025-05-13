@@ -211,15 +211,12 @@ function getꓽbasenameⵧindexᐧhtml(spec: Immutable<WebPropertyEntryPointSpec
 	return `${_getꓽbasenameⵧwithout_extension(spec)}.html`
 }
 
-function getꓽbasenameⵧcontactᐧhtml(spec: Immutable<WebPropertyEntryPointSpec>): Basename {
-	return `contact.html`
-}
-function getꓽbasenameⵧerrorᐧhtml(spec: Immutable<WebPropertyEntryPointSpec>): Basename {
-	return `error.html`
-}
-function getꓽbasenameⵧaboutᐧhtml(spec: Immutable<WebPropertyEntryPointSpec>): Basename {
-	return `about.html`
-}
+function getꓽbasenameⵧcontactᐧhtml             (spec: Immutable<WebPropertyEntryPointSpec>): Basename { return `contact.html` }
+function getꓽbasenameⵧerrorᐧhtml               (spec: Immutable<WebPropertyEntryPointSpec>): Basename { return `error.html` }
+function getꓽbasenameⵧaboutᐧhtml               (spec: Immutable<WebPropertyEntryPointSpec>): Basename { return `about.html` }
+function getꓽbasenameⵧterms_and_conditionsᐧhtml(spec: Immutable<WebPropertyEntryPointSpec>): Basename { return `terms-and-conditions.html` }
+function getꓽbasenameⵧprivacy_policyᐧhtml      (spec: Immutable<WebPropertyEntryPointSpec>): Basename { return `privacy-policy.html` }
+function getꓽbasenameⵧsupportᐧhtml             (spec: Immutable<WebPropertyEntryPointSpec>): Basename { return `support.html` }
 
 function getꓽbasenameⵧwebmanifest(spec: Immutable<WebPropertyEntryPointSpec>): Basename {
 	// the recommended extension is .webmanifest https://web.dev/learn/pwa/web-app-manifest/
@@ -364,9 +361,13 @@ export {
 	needsꓽwebmanifest,
 	// TODO move to own file?
 	getꓽbasenameⵧindexᐧhtml,
+	getꓽbasenameⵧaboutᐧhtml,
 	getꓽbasenameⵧcontactᐧhtml,
 	getꓽbasenameⵧerrorᐧhtml,
-	getꓽbasenameⵧaboutᐧhtml,
+	getꓽbasenameⵧprivacy_policyᐧhtml,
+	getꓽbasenameⵧsupportᐧhtml,
+	getꓽbasenameⵧterms_and_conditionsᐧhtml,
+
 	getꓽbasenameⵧwebmanifest,
 
 	getꓽfeatures,

@@ -10,14 +10,20 @@ import {
 	getꓽbasenameⵧaboutᐧhtml,
 	getꓽbasenameⵧcontactᐧhtml,
 	getꓽbasenameⵧerrorᐧhtml,
+	getꓽbasenameⵧprivacy_policyᐧhtml,
+	getꓽbasenameⵧsupportᐧhtml,
+	getꓽbasenameⵧterms_and_conditionsᐧhtml,
 } from '../selectors/index.ts'
 
 import generateꓽindexᐧhtml from './index-html/index.ts'
+import generateꓽ404ᐧhtml from './404/index.ts'
+import generateꓽaboutᐧhtml from './about/index.ts'
+import generateꓽcontactᐧhtml from './contact/index.ts'
+import generateꓽerrorᐧhtml from './error/index.ts'
+import generateꓽprivacy_policyᐧhtml from './privacy-policy/index.ts'
+import generateꓽsupportᐧhtml from './support/index.ts'
+import generateꓽterms_and_conditionsᐧhtml from './terms-and-conditions/index.ts'
 import { getꓽhtml_doc_spec } from './index-html/selectors.ts'
-import generateꓽaboutᐧhtml from './about-html/index.ts'
-import generateꓽcontactᐧhtml from './contact-html/index.ts'
-import generateꓽerrorᐧhtml from './error-html/index.ts'
-import generateꓽ404ᐧhtml from './404-html/index.ts'
 
 /////////////////////////////////////////////////
 
@@ -41,6 +47,9 @@ function generateꓽcomplimentary(spec: Immutable<WebPropertyEntryPointSpec>): E
 	return {
 		[getꓽbasenameⵧaboutᐧhtml(spec)]: generateꓽaboutᐧhtml(spec),
 		[getꓽbasenameⵧcontactᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
+		[getꓽbasenameⵧprivacy_policyᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
+		[getꓽbasenameⵧsupportᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
+		[getꓽbasenameⵧterms_and_conditionsᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
 
 		...generateꓽerror_handling(spec),
 	}

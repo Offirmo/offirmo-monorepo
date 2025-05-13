@@ -21,6 +21,7 @@ churn
 commoditization -- commodity businesses generally compete on price alone and are plagued by high inventories and low profit margins. In other non-commodity businesses, you would say “innovate”
 commoditization = undifferentiated mass, one no different than the other. We can pick the cheapest.
 computers should adapt to users = not necessarily if the solution is good (ex. typing on a keyboard, Palm Graffiti) https://www.creativitypost.com/technology/the_memory_prediction_framework_of_intelligence_and_the_subject_of_creativi
+conseil corporate
 consolidation = common across multiple industries, which is fueling competition. But, competition was in turn fueling commoditization
 constructive confrontation -- spot threats/issues/problems, debate aggressively, make bold moves before competitors/enemies
 consumer technology -- usually ads supported :/
@@ -34,6 +35,7 @@ corporate cannibalism = prioritize short-term profits over long-term sustainabil
 creator/user gap https://blog.jpl-consulting.com/2010/03/creator-user-gap/
 Critical User Journeys (CUJ)
 customer segmentation = Strategic, Enterprise, Mid-Market, SMB
+decision maker https://www.youtube.com/watch?v=qf-_bRjZ38U
 disruptive -- Clay Christensen’s theory = the next big thing always starts out being dismissed as a “toy.” observation that technologies tend to get better at a faster rate than users’ needs increase. From this simple insight follows all kinds of interesting conclusions about how markets and products change over time. https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy
 don't build castles in others people's kingdoms
 DTC (direct-to-consumer) companies = sell products directly to consumers, bypassing traditional retail channels, allowing them to control the entire customer experience and build strong brand relationships

@@ -43,6 +43,7 @@ alias     mono13o='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias    mono1Xad='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/;     cd X-incubator/active/data-structures/;                      tabset --badge mono1Xad'
 
 alias     mono20o='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 0-dev-tools/offirmo-state-migration-tester/;              tabset --badge mono20o'
+alias    mono21fo='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 1-libs--simple/fs--output-file/;                          tabset --badge mono21fo'
 alias     mono21s='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 1-libs--simple/spawn-correctly/;                          tabset --badge mono21s'
 alias    mono22ot='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 2-libs--cross-cutting/ohateoas-browser--terminal/;        tabset --badge mono22ot'
 alias    mono22pn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 2-libs--cross-cutting/practical-logger--node/;            tabset --badge mono22pn'

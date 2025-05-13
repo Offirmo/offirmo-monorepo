@@ -1,5 +1,6 @@
 import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
+import { ೱoutputꓽfile } from '@offirmo-private/fs--output-file'
 
 import assert from 'tiny-invariant'
 import * as Prettier from 'prettier'
@@ -110,8 +111,7 @@ async function writeꓽwebsiteᝍentryᝍpoints(entries: Immutable<EntryPoints>,
 			if (typeof file__content === 'string')
 				file__content = file__content.replace(process.env['HOME'] ?? '$HOME', '~')
 
-			return fs
-				.writeFile(file__path, file__content, {
+			return ೱoutputꓽfile(file__path, file__content, {
 					...(typeof file__content === 'string' && { encoding: 'utf8' }),
 				})
 				.catch((err: any) => {
