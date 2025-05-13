@@ -21,13 +21,15 @@
 		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/ts-types-web": "*",
 		"@offirmo-private/type-detection": "*",
-		"tiny-invariant": "^1"
+		"tiny-invariant": "^1",
+		"typescript-string-enums": "^1"
 	},
 	"scripts": {
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
 		"check--ts": "echo \"@offirmo-private/ohateoas\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"_check": "run-s check--ts",
+		"_check": "run-s tests check--ts",
 		"demo": "node --experimental-strip-types ./module/src/~~demo/index.ts",
 		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts"
 	},

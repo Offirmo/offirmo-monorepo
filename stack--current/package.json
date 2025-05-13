@@ -59,7 +59,7 @@
 			"3-engine--browser/0-dev-tools/*",
 			"3-engine--browser/1-libs--simple/*",
 			"3-engine--browser/2-libs--cross-cutting/*",
-			"xx3-engine--browser/X-incubator/active/*",
+			"3-engine--browser/X-incubator/active/*",
 
 			"7-multimorphic/libs--rpg/*",
 			"7-multimorphic/libs--the-boring-rpg/*",

@@ -1,8 +1,7 @@
 /* Generic description of engagement / messaging
  */
 
-import type { Url‿str } from '../l2-content/index.ts'
-import type { WithHints } from '@offirmo-private/ts-types-web'
+import type { WithHints } from '../l1-misc/index.ts'
 
 /////////////////////////////////////////////////
 // low-level units

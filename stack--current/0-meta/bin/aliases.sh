@@ -74,6 +74,9 @@ alias    mono32re='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias    mono32rt='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd 2-libs--cross-cutting/rich-text-format--to-react/;        tabset --badge mono32rt'
 alias    mono32sb='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd 2-libs--cross-cutting/soft-execution-context--browser/;   tabset --badge mono32sb'
 alias    mono32ub='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd 2-libs--cross-cutting/universal-debug-api--browser/;      tabset --badge mono32ub'
+alias   mono3Xagh='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd X-incubator/active/generator--html/;                      tabset --badge mono3Xagh'
+alias   mono3Xags='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd X-incubator/active/generator--svg/;                       tabset --badge mono3Xags'
+alias   mono3Xagw='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd X-incubator/active/generator--website-entry-points/;      tabset --badge mono3Xagw'
 
 alias    mono7Xax='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd X-incubator/active/x-sandbox/;                            tabset --badge mono7Xax'
 alias   mono7lrsc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--rpg/state--codes/;                                  tabset --badge mono7lrsc'

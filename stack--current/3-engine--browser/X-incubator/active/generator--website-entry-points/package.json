@@ -27,10 +27,11 @@
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {
-		"test--ts": "echo \"@offirmo-private/generator--website-entry-points\" && tsc --noEmit",
-		"test--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s test--ts--watch",
-		"test": "run-s test--ts"
+		"check--ts": "echo \"@offirmo-private/generator--website-entry-points\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"_check": "run-s check--ts",
+		"demo": "node --experimental-strip-types ./module/##demos/demo--personal-blog/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

@@ -18,21 +18,22 @@
 		"@offirmo-private/normalize-string": "*",
 		"@offirmo-private/ts-types-web": "*",
 		"@offirmo-private/type-detection": "*",
-		"prettier": "^3",
 		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {
-		"test--ts": "echo \"@offirmo-private/generator--html\" && tsc --noEmit",
-		"test--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s test--ts--watch",
-		"test": "run-s test--ts"
+		"check--ts": "echo \"@offirmo-private/generator--html\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"_check": "run-s check--ts",
+		"demo": "node --experimental-strip-types ./module/##demo/demo--defaults/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
+		"prettier": "^3",
 		"tslib": "^2",
 		"typescript": "^5"
 	}
