@@ -27,6 +27,7 @@ export {
 	getꓽauthor__intro,
 	getꓽcontactⵧhuman,
 	getꓽcontactⵧsecurity,
+	getꓽcontactⵧsupport,
 } from '@offirmo-private/ts-types-web';
 
 /////////////////////////////////////////////////

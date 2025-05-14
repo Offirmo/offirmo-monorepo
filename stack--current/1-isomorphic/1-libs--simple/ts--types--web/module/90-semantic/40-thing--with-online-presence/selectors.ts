@@ -41,4 +41,8 @@ function getꓽcontactⵧsupport(thing: Immutable<ThingWithOnlinePresence>): Url
 
 /////////////////////////////////////////////////
 
-export { getꓽcontactⵧhuman, getꓽcontactⵧsecurity, getꓽcontactⵧsupport,}
+export {
+	getꓽcontactⵧhuman,
+	getꓽcontactⵧsecurity,
+	getꓽcontactⵧsupport,
+}

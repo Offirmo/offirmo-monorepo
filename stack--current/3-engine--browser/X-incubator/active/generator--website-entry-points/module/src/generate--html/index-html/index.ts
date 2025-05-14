@@ -5,10 +5,11 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import type { Html‿str } from '@offirmo-private/ts-types-web';
 import { normalize_unicode } from '@offirmo-private/normalize-string'
-import { getꓽhtml‿str } from '@offirmo-private/generator--html'
 
 import type { WebPropertyEntryPointSpec } from '../../types.ts'
-import {	getꓽhtml_doc_spec } from './selectors.ts'
+import { getꓽhtml_doc_spec } from './selectors.ts'
+import { getꓽhtml‿str } from '@offirmo-private/generator--html'
+
 /////////////////////////////////////////////////
 
 function generate(spec: Immutable<WebPropertyEntryPointSpec>): Html‿str {

@@ -7,7 +7,9 @@ import type {
 } from '@offirmo-private/generator--html'
 
 import type { WebPropertyEntryPointSpec } from '../../types.ts'
-import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../index-html/selectors.ts'
+import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../pages--common/selectors.ts'
+
+import snippetꓽjsⳇredirect_extensionless_known_pathes from '../snippets/js/snippet--github-pages--redirect-extensionless.ts'
 
 /////////////////////////////////////////////////
 
@@ -24,6 +26,10 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlFi
 		content: {
 			...base.content,
 			title: '404 Not Found',
+			jsⵧcritical: [
+				...(spec.host === 'github-pages' ? [ `;(${String(snippetꓽjsⳇredirect_extensionless_known_pathes)})()` ]: []),
+				// no fancies, only this one (TODO review?)
+			],
 			js: [],
 			html: [
 				`

@@ -65,6 +65,7 @@ If you're not using Jekyll, you can add a .nojekyll file to the root of your rep
 Reason: GitHub build auto-converts the markdown files and don't serve them.
 Ref: https://github.com/blog/572-bypassing-jekyll-on-github-pages
 `,
+		'CNAME': (new URL(spec.urlⵧcanonical)).hostname,
 	}
 }
 

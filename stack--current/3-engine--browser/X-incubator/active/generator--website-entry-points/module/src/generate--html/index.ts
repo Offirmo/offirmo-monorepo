@@ -16,14 +16,14 @@ import {
 } from '../selectors/index.ts'
 
 import generateꓽindexᐧhtml from './index-html/index.ts'
-import generateꓽ404ᐧhtml from './404/index.ts'
+import generateꓽ404ᐧhtml from './page--404/index.ts'
 import generateꓽaboutᐧhtml from './about/index.ts'
 import generateꓽcontactᐧhtml from './contact/index.ts'
-import generateꓽerrorᐧhtml from './error/index.ts'
-import generateꓽprivacy_policyᐧhtml from './privacy-policy/index.ts'
-import generateꓽsupportᐧhtml from './support/index.ts'
-import generateꓽterms_and_conditionsᐧhtml from './terms-and-conditions/index.ts'
-import { getꓽhtml_doc_spec } from './index-html/selectors.ts'
+import generateꓽerrorᐧhtml from './page--error/index.ts'
+import generateꓽprivacy_policyᐧhtml from './page--privacy-policy/index.ts'
+import generateꓽsupportᐧhtml from './page--support/index.ts'
+import generateꓽterms_and_conditionsᐧhtml from './page--terms-and-conditions/index.ts'
+import { getꓽhtml_doc_spec } from './pages--common/selectors.ts'
 
 /////////////////////////////////////////////////
 

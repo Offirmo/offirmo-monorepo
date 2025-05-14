@@ -18,7 +18,7 @@ import {
 	wantsꓽinstall,
 } from '../../selectors/index.ts'
 import { ifꓽdebug } from '../../utils/debug.ts'
-import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../index-html/selectors.ts'
+import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../pages--common/selectors.ts'
 
 /////////////////////////////////////////////////
 

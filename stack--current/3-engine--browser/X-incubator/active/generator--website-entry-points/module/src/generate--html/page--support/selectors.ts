@@ -9,17 +9,12 @@ import {
 import type { WebPropertyEntryPointSpec } from '../../types.ts'
 import { LIB } from '../../consts.ts'
 import {
-	prefersꓽorientation,
-	getꓽfeatures,
-	getꓽlang,
-	getꓽcolorⵧtheme,
-	getꓽcharset,
-	isꓽuser_scalable,
-	supportsꓽscreensⵧwith_shape,
-	wantsꓽinstall,
+	getꓽcontactⵧhuman,
+	getꓽcontactⵧsecurity,
+	getꓽcontactⵧsupport,
 } from '../../selectors/index.ts'
 import { ifꓽdebug } from '../../utils/debug.ts'
-import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../index-html/selectors.ts'
+import { getꓽhtml_doc_spec as _getꓽhtml_doc_spec } from '../pages--common/selectors.ts'
 
 /////////////////////////////////////////////////
 
@@ -37,7 +32,14 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlFi
 			js: [],
 			html: [
 				`<h1>Support</h1>`,
-				`<p>TODO...</p>`],
+				`<p>Should you need support, please visit:</p>`,
+				`<ul>
+					<li>Security issues: <code>${getꓽcontactⵧsecurity(spec)}</code></li>
+					<li>Tech support: <code>${getꓽcontactⵧsupport(spec)}</code></li>
+					<li>Anything else: <code>${getꓽcontactⵧhuman(spec)}</code></li>
+				</ul>`,
+				`<a href="/">⬅ Back to home</a>`,
+			],
 		},
 	}
 	return result
