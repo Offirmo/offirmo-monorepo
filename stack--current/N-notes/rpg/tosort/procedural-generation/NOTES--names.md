@@ -1764,7 +1764,7 @@ name list
 1 Zachariah
 1 Zabrina
 1 Zabdiel
-1 Yves-Emmanuel
+1 Yves
 1 Yvan
 1 Yuxuan
 1 Yuwei

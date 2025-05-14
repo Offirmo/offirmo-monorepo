@@ -33,10 +33,10 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlFi
 			.filter(f => f !== 'cssⳇviewport--full' && f !== 'page-loader--offirmo'), // no fancies
 		content: {
 			...base.content,
-			title: base.content.title + ' - About',
+			title: base.content.title + ' - Privacy Policy',
 			js: [],
 			html: [
-				`<h1>About ${base.content.title}</h1>`,
+				`<h1>Privacy Policy</h1>`,
 				`<p>TODO...</p>`],
 		},
 	}

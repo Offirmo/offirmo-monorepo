@@ -297,6 +297,8 @@ desirables -- readability
 desirables -- reliability
 desirables -- resilience
 desirables -- side-effect free
+dev style -- TDD
+dev style -- TDD -- red → green → refactor
 development containers https://containers.dev/implementors/spec/
 DevEx
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery

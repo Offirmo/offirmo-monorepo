@@ -13,6 +13,6 @@ await generateꓽwebsiteᝍentryᝍpoints({
 		host: 'netlify',
 		generatesꓽjsⵧscaffold: 'offirmo--react',
 	},
-	path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'),
+	path.resolve(path.dirname(fileURLToPath(import.meta.url)), '~~output'),
 	{rm: true},
 )

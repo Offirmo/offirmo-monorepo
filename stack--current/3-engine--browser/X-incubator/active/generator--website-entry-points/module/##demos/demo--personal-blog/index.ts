@@ -12,6 +12,6 @@ await generateꓽwebsiteᝍentryᝍpoints({
 		...SPEC,
 		host: 'github-pages',
 	},
-	path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'),
+	path.resolve(path.dirname(fileURLToPath(import.meta.url)), '~~output'),
 	{rm: true},
 )

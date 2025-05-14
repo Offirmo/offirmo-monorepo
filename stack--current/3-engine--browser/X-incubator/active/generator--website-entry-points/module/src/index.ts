@@ -134,7 +134,7 @@ async function generateꓽwebsiteᝍentryᝍpoints(
 	const entries = getꓽwebsiteᝍentryᝍpoints(spec)
 
 	if (options.rm) {
-		await fs.rm(targetDir, { force: true })
+		await fs.rm(targetDir, { recursive: true, force: true })
 	}
 
 	return writeꓽwebsiteᝍentryᝍpoints(entries, targetDir)
