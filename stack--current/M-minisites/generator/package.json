@@ -1,38 +1,44 @@
 {
-	"name": "@offirmo-private/minisite-generation",
+	"name": "@offirmo-private/minisites-generation",
 	"version": "0.0.1",
-	"author": "Offirmo <offirmo.net@gmail.com>",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
 	"private": true,
-
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/sandbox/index.ts"
+	},
+	"source": "module/sandbox/index.ts",
+	"dependencies": {
+		"@offirmo-private/generator--website-entry-points": "*",
+		"tiny-invariant": "^1",
+		"tslib": "^2"
+	},
 	"scripts": {
-		"clean": "monorepo-script--clean-package …dist …cache",
+		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
+		"clean": "npm-run-all _clean--pkg",
+		"check--ts": "echo \"@offirmo-private/minisites-generation\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s clean check--ts--watch",
+		"_check": "run-s check--ts",
+		"sandbox": "node --experimental-strip-types ./module/sandbox/index.ts",
 
-		"refresh--entry-points": "npx tsx src/~~gen/generate-entry-points/index.mts",
 
+		"refresh--entry-points": "node --experimental-strip-types ./module/sandbox/index.ts",
 		"start:parcel": "parcel serve src/entry-points/*.html --port 8080  --lazy  --no-autoinstall",
-		"dev": "npm-run-all  clean  --parallel start:parcel",
-
+		"devp": "npm-run-all  clean  --parallel start:parcel",
 		"copy-extra": "mkdir -p dist && cp -R -f -v src/entry-points/   dist",
 		"build:parcel": "parcel build src/entry-points/*.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
 		"xbuild": "npm-run-all  clean  copy-extra  build:parcel"
 	},
-
-	"dependencies": {
-		"@offirmo-private/css--foundation": "*",
-		"@offirmo-private/css--framework": "*",
-		"@offirmo-private/css--utils": "*",
-		"@offirmo-private/iframe--social": "*",
-		"@offirmo/universal-debug-api-browser": "^1",
-		"react": "^19",
-		"react-dom": "^19",
-		"tiny-invariant": "^1",
-		"tslib": "^2"
-	},
 	"devDependencies": {
-		"@offirmo-private/generator--website-entry-points": "*",
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/parcel-config--default": "*",
+		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
-		"npm-run-all": "^4"
+		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^22",
+		"npm-run-all": "^4",
+		"typescript": "^5"
 	}
 }

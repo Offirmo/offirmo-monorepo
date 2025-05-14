@@ -4,7 +4,7 @@ import * as fs from 'node:fs'
 import { isBuiltin as isBuiltInNodeModule } from 'node:module'
 
 // @ts-ignore
-import walk from 'ignore-walk'
+import walkNotGitIgnored from 'ignore-walk'
 // @ts-ignore
 import JSON5 from 'json5'
 
@@ -66,8 +66,10 @@ function isꓽin_unstructured_folder(entry: FileEntry): boolean {
 
 
 function isꓽignored_file(entry: FileEntry): boolean {
+
 	if (entry.basename === '.DS_Store') {
-		// TODO one day load from gitignore
+		// should never happen bc git-ignored at user level
+		// reported: https://github.com/npm/ignore-walk/issues/146
 		return true
 	}
 
@@ -76,10 +78,11 @@ function isꓽignored_file(entry: FileEntry): boolean {
 		return true
 	}
 
-	/*if (entry.basename === '.gitignore') {
-		// ???
+	if (entry.basename === '.gitignore') {
+		// should never happen bc should be git-ignored
+		// reported: https://github.com/npm/ignore-walk/issues/147
 		return true
-	}*/
+	}
 
 	if ([
 		// BINARY assets = leaf nodes (no deps)
@@ -249,9 +252,9 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	const root‿abspath = path.resolve(module_path)
 	console.log(`${indent}🗂  analysing pure code module at "${root‿abspath}"…`)
 
-	const files = (walk.sync({
+	const files = (walkNotGitIgnored.sync({ // https://github.com/npm/ignore-walk
 			path: root‿abspath,
-			ignoreFiles: [ '.gitignore' ],
+			ignoreFiles: [ '.ignore', '.gitignore' ],
 		}) as Array<string>)
 		.map(p => path.resolve(root‿abspath, p))
 		.sort()
