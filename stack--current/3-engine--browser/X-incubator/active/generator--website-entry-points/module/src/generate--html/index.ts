@@ -47,9 +47,9 @@ function generateꓽcomplimentary(spec: Immutable<WebPropertyEntryPointSpec>): E
 	return {
 		[getꓽbasenameⵧaboutᐧhtml(spec)]: generateꓽaboutᐧhtml(spec),
 		[getꓽbasenameⵧcontactᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
-		[getꓽbasenameⵧprivacy_policyᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
-		[getꓽbasenameⵧsupportᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
-		[getꓽbasenameⵧterms_and_conditionsᐧhtml(spec)]: generateꓽcontactᐧhtml(spec),
+		[getꓽbasenameⵧprivacy_policyᐧhtml(spec)]: generateꓽprivacy_policyᐧhtml(spec),
+		[getꓽbasenameⵧsupportᐧhtml(spec)]: generateꓽsupportᐧhtml(spec),
+		[getꓽbasenameⵧterms_and_conditionsᐧhtml(spec)]: generateꓽterms_and_conditionsᐧhtml(spec),
 
 		...generateꓽerror_handling(spec),
 	}

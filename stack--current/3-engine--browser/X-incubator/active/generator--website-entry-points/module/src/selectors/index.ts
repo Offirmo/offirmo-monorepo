@@ -23,6 +23,7 @@ export {
 	getꓽlang,
 	getꓽcharset,
 	getꓽauthor__name,
+	getꓽauthor__contact,
 	getꓽauthor__intro,
 	getꓽcontactⵧhuman,
 	getꓽcontactⵧsecurity,

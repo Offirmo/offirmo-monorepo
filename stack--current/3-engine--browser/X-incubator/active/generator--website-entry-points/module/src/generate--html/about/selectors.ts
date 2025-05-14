@@ -28,6 +28,8 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlFi
 	const result: HtmlFileSpec = {
 		...base,
 
+		// TODO if the site itself is an "about", should redirect to root
+
 		features: (base.features ?? [])
 			.filter(f => f !== 'htmlⳇreact-root')
 			.filter(f => f !== 'cssⳇviewport--full' && f !== 'page-loader--offirmo'), // no fancies

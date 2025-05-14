@@ -36,6 +36,7 @@ function getꓽhtml_doc_spec(spec: Immutable<WebPropertyEntryPointSpec>): HtmlFi
 	</ul>
 </nav>
 				`
+				// TODO auto-link to /support and /status
 			],
 		}
 	}
