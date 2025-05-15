@@ -63,13 +63,19 @@ function createꓽall_store_fns(SXC?: TBRSoftExecutionContext): AllStoreFns<Stat
 	}
 
 	/////////////////////////////////////////////////
+	let state: Immutable<State> = init()
 
 	function subscribe(onStoreChange: () => void): SyncStoreUnsubscribeFn {
 		throw new Error(`Not implemented!`)
 	}
 
 	function getSnapshot(): Immutable<State> {
-		throw new Error(`Not implemented!`)
+		return state
+	}
+
+	function dispatch(action: Immutable<TBRPGAction>): void {
+		state = reducer(state, action)
+		xxx TODO call store change!
 	}
 
 	/////////////////////////////////////////////////

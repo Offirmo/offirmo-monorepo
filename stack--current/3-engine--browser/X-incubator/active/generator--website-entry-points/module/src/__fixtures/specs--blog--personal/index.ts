@@ -77,7 +77,7 @@ const SPEC: WebPropertyEntryPointSpec = {
 	// TODO refine
 
 	/////// META
-	isꓽpublic: false,
+	isꓽpublic: false, // XXX
 	isꓽdebug: true,
 }
 

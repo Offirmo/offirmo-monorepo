@@ -12,6 +12,16 @@ import {
 
 /////////////////////////////////////////////////
 
+/* React
+function useReducer<S, A extends AnyActionArg>(
+	reducer: (prevState: S, ...args: A) => S,
+	initialState: S,
+): [S, ActionDispatch<A>];
+ */
+interface SyncReducerFns<State, InitArgs, Action extends ReducerAction> {
+	reducer: Reducer<State, Action>
+	init(args?: InitArgs): Immutable<State> // slight departure from React = making the init args optional
+}
 
 /////////////////////////////////////////////////
 
@@ -26,27 +36,17 @@ export function useSyncExternalStore<Snapshot>(
 	getServerSnapshot?: () => Snapshot,
 ): Snapshot;
  */
-interface SyncStoreFns<State> {
+interface SyncStoreFns<State, Action extends ReducerAction> {
 	subscribe: (onStoreChange: () => void) => SyncStoreUnsubscribeFn,
 	getSnapshot: () => Snapshot<State>,
+
+	// not needed for React but needed for the above to make sense!
+	dispatch(action: Immutable<Action>): void,
 }
 
 /////////////////////////////////////////////////
 
-/* React
-function useReducer<S, A extends AnyActionArg>(
-	reducer: (prevState: S, ...args: A) => S,
-	initialState: S,
-): [S, ActionDispatch<A>];
- */
-interface SyncReducerFns<State, InitArgs, Action extends ReducerAction> {
-	reducer: Reducer<State, Action>
-	init(args?: InitArgs): Immutable<State> // slight departure from React = making the init args optional
-}
-
-/////////////////////////////////////////////////
-
-type AllStoreFns<State, InitArgs, Action extends ReducerAction> = SyncStoreFns<State> & SyncReducerFns<State, InitArgs, Action>
+type AllStoreFns<State, InitArgs, Action extends ReducerAction> = SyncStoreFns<State, Action> & SyncReducerFns<State, InitArgs, Action>
 
 /////////////////////////////////////////////////
 
