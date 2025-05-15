@@ -20,7 +20,7 @@ import './component.css'
 import type { Immutable } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
-const NAME = `OHAViewPort/1`
+const NAME = `<OHAViewPort>/1`
 
 interface Props {
 	available_width: CSSProperties['width']

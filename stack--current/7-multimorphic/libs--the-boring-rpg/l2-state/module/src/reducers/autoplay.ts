@@ -32,7 +32,7 @@ import {
 
 import {
 	rename_avatar,
-	change_avatar_class,
+	switch_class,
 	equip_item,
 } from './base.ts'
 
@@ -60,7 +60,7 @@ function _autogroom(state: Immutable<State>, options: { DEBUG?: boolean } = {}):
 		const available_classes = getꓽavailable_classes(state.u_state)
 		const new_class: CharacterClass = getꓽrandom.picker.of(available_classes)(side_engine)
 		if (DEBUG) console.log(`    - Changing class to ${new_class}…`)
-		state = change_avatar_class(state, new_class)
+		state = switch_class(state, new_class)
 	}
 	// User name
 	if (state.u_state.avatar.name === CharacterState.DEFAULT_AVATAR_NAME) {

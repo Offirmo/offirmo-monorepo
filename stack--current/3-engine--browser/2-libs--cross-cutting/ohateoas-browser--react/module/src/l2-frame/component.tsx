@@ -18,7 +18,7 @@ import ᄆViewport from '../l1-viewport/index.tsx'
 import './component.css'
 
 /////////////////////////////////////////////////
-const NAME = `OHAFrame/1`
+const NAME = `<OHAFrame>/1`
 
 interface Props {
 	available_width: CSSProperties['width']

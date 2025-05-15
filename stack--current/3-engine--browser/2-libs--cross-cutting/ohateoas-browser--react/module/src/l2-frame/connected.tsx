@@ -17,7 +17,7 @@ import {
 import { ᄆComponent as ᄆComponent_ } from './component.tsx'
 
 /////////////////////////////////////////////////
-const NAME = `OHAFrame/2`
+const NAME = `<OHAFrame>/2`
 
 interface Props {
 	available_width: CSSProperties['width']

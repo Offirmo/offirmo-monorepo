@@ -47,7 +47,7 @@ const FRAME_SPECⵧROOT: FrameSpec = {
 
 /////////////////////////////////////////////////
 
-const NAME = `OHARoot`
+const NAME = `<OHARoot>`
 
 interface Props {
 	available_width: CSSProperties['width']

@@ -15,7 +15,7 @@ import {
 	create,
 	reseed,
 	rename_avatar,
-	change_avatar_class,
+	switch_class,
 	_autoplay,
 } from '../reducers/index.ts'
 
@@ -96,7 +96,7 @@ function reset_and_salvage(legacy_state: Immutable<any>): Immutable<State> {
 	}
 	else {
 		if (klass !== state.u_state.avatar.klass)
-			state = change_avatar_class(state, klass as CharacterClass)
+			state = switch_class(state, klass as CharacterClass)
 	}
 
 	const good_play_count = get_good_play_count(legacy_state)

@@ -11,7 +11,7 @@ import {
 } from '@offirmo-private/ohateoas'
 
 /////////////////////////////////////////////////
-const NAME = `OHAAnchor/1`
+const NAME = `<OHAAnchor>/1`
 
 interface Props {
 	href: OHAHyperLink

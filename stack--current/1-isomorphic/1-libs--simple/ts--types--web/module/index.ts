@@ -2,7 +2,7 @@
 export * from './00-base/index.ts'
 
 export * from './01-links/index.ts'
-export * from './02-actions/index.ts'
+export * from './02-misc/index.ts'
 
 export * from './10-html/index.ts'
 export * from './20-css/index.ts'

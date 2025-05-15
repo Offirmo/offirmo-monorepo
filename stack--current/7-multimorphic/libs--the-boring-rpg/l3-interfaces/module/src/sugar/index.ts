@@ -2,7 +2,7 @@ import type { Immutable } from '@offirmo-private/ts-types'
 
 import * as State from '@tbrpg/state'
 
-import { type Action, ActionType } from '../actions/index.ts'
+import { type TBRPGAction, ActionType } from '../actions/index.ts'
 
 
 // systematically async to pretend we're talking to a "server" or any other async store
@@ -27,7 +27,7 @@ export class Game {
 
 
 	// generic reducer
-	async dispatch(action: Immutable<Action>) {
+	async dispatch(action: Immutable<TBRPGAction>) {
 
 		if (Object.values(action.expected_revisions ?? {}).length) {
 			throw new Error(`NIMP!`)

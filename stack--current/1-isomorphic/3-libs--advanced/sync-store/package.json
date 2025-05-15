@@ -1,6 +1,5 @@
 {
-	"name": "@tbrpg/interfaces",
-	"description": "TBRPG interfaces for advanced features, ex. persistence",
+	"name": "@offirmo-private/sync-store",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -16,24 +15,18 @@
 	},
 	"dependencies": {
 		"@offirmo-private/ts-types-web": "*",
-		"@tbrpg/state": "*",
-		"@tbrpg/state--character": "*",
-		"tiny-invariant": "^1",
-		"typescript-string-enums": "^1"
+		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@tbrpg/interfaces\" && tsc --noEmit",
+		"check--ts": "echo \"@offirmo-private/sync-store\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"_check": "run-s check--ts"
+		"check": "run-s check--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo-private/uuid": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@oh-my-rpg/state--engagement": "*",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"
