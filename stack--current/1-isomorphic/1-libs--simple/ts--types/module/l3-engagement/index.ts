@@ -56,7 +56,7 @@ interface StoryTellingConcurrence<RichTextFormat> {
 }
 
 type Story<RichTextFormat> =
-	| RichTextFormat // raw
+	| RichTextFormat // raw. implied role = assistant
 	| StoryTellingUnit<RichTextFormat> // a more complex object
 	| StoryTellingSequence<RichTextFormat>
 	| StoryTellingConcurrence<RichTextFormat>
@@ -91,7 +91,7 @@ type AttentionLevel =
 	| 'debug'
 
 // a GENERIC engagement
-interface Engagement<RichTextFormat> {
+interface Engagement<RichTextFormat> extends WithHints {
 	flow: FlowAlignment
 
 	// if needed, sequencing infos
@@ -106,10 +106,7 @@ interface Engagement<RichTextFormat> {
 
 	story: Story<RichTextFormat> // what we want to say/convey
 
-	// hints for optional enhancements
-	hints?: {
-		// ideally do not use, should be in the story itself!
-	}
+	// hints?: ideally do not use, should be in the story itself!
 }
 
 type PendingEngagementUId = number // unique id for this engagement, needed to acknowledge it was shown to the user

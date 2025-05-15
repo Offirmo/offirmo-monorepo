@@ -44,53 +44,53 @@ export type ActionType = Enum<typeof ActionType> // eslint-disable-line no-redec
 /////////////////////////////////////////////////
 
 interface ActionPlay extends ReducerAction {
-	type: typeof ActionType.play
+	type: typeof ActionType['play']
 }
 
 interface ActionEquipItem extends ReducerAction {
-	type: typeof ActionType.equip_item
+	type: typeof ActionType['equip_item']
 	target_uuid: UUID
 }
 
 interface ActionSellItem extends ReducerAction {
-	type: typeof ActionType.sell_item
+	type: typeof ActionType['sell_item']
 	target_uuid: UUID
 }
 
 interface ActionRenameAvatar extends ReducerAction {
-	type: typeof ActionType.rename_avatar
+	type: typeof ActionType['rename_avatar']
 	new_name: string
 }
 
 interface ActionSwitchClass extends ReducerAction {
-	type: typeof ActionType.switch_class
+	type: typeof ActionType['switch_class']
 	new_class: CharacterClass
 }
 
 
 interface ActionRedeemCode extends ReducerAction {
-	type: typeof ActionType.redeem_code
+	type: typeof ActionType['redeem_code']
 	code: string
 }
 
 
 interface ActionReSeed extends ReducerAction {
-	type: typeof ActionType.re_seed
+	type: typeof ActionType['re_seed']
 	seed: number
 }
 
 interface ActionStartSession extends ReducerAction, StartSessionParams {
-	type: typeof ActionType.on_start_session
+	type: typeof ActionType['on_start_session']
 }
 
 interface ActionRefreshLoggedInInfos extends ReducerAction {
-	type: typeof ActionType.on_logged_in_refresh
+	type: typeof ActionType['on_logged_in_refresh']
 	is_logged_in: boolean
 	roles: string[]
 }
 
 interface ActionAcknowledgeEngagementMsgSeen extends ReducerAction, AcknowledgeEngagementMsgSeen {
-	type: typeof ActionType.acknowledge_engagement_msg_seen
+	type: typeof ActionType['acknowledge_engagement_msg_seen']
 	uids: Array<PendingEngagementUId>
 }
 

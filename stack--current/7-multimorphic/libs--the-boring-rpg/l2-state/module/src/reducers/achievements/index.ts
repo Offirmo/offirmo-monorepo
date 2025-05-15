@@ -38,19 +38,22 @@ function _refresh_achievements(state: Immutable<State>): Immutable<State> {
 			// tell the user
 			engagement = enqueueEngagement(engagement,
 				{
-					summary: RichText.fragmentⵧblock()
-						.pushStrong('🏆 Achievement unlocked:')
-						//.pushLineBreak() // TODO review, display not great
-						.pushText(` “⎨⎨icon⎬⎬ ⎨⎨name⎬⎬“`)
-						.addHints({
-							icon,
-							name,
-						})
-						.done(),
+					story: {
+						kind: 'unit',
+						message: RichText.fragmentⵧblock()
+							.pushStrong('🏆 Achievement unlocked:')
+							//.pushLineBreak() // TODO review, display not great
+							.pushText(` “⎨⎨icon⎬⎬ ⎨⎨name⎬⎬“`)
+							.addHints({
+								icon,
+								name,
+							})
+							.done(),
+						role: 'system',
+					},
 					flow: 'side',
-					role: 'system',
 					attention_needed: 'log',
-					enhancements: {
+					hints: {
 						key: 'achievement-unlocked'
 					}
 				})

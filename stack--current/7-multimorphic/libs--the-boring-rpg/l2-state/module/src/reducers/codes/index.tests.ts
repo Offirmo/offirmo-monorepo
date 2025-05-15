@@ -48,7 +48,7 @@ describe(`${LIB} - reducer - codes`, function() {
 
 				const notif = state.u_state.engagement.queue
 					.filter(e =>
-					e.success === true,
+						e.hints?.['success'] === true,
 				)
 				//console.log(notif)
 				expect(notif.length).to.equal(1)
@@ -80,7 +80,7 @@ describe(`${LIB} - reducer - codes`, function() {
 			state = attempt_to_redeem_code(state, CODE)
 			const notif = state.u_state.engagement.queue
 				.filter(e =>
-					e.success === false,
+					e.hints?.['success'] === false,
 				)
 			//console.log(notif)
 			expect(notif.length).to.equal(1)
@@ -105,7 +105,7 @@ describe(`${LIB} - reducer - codes`, function() {
 
 			const notif = state.u_state.engagement.queue
 				.filter(e =>
-					e.success === false,
+					e.hints?.['success'] === false,
 				)
 			//console.log(notif)
 			expect(notif.length).to.equal(1)

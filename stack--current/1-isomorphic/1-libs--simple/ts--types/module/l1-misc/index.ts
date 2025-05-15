@@ -37,7 +37,7 @@ export interface BaseHints {
 	key?: string // for ex. to recognize a specific content (do not abuse! Reminder to keep everything text-compatible)
 
 	// anything allowed
-	//[k: string]: any NO! to allow strict typing
+	[k: string]: any
 }
 export interface WithHints<Hints = BaseHints> {
 	hints?: Hints

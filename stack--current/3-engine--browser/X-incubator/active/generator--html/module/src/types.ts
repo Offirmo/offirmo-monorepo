@@ -112,6 +112,8 @@ interface HtmlMetas {
 		// https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
 		'theme-color'?: CssⳇColor‿str;
 
+		// refresh: no, discouraged by W3C https://en.wikipedia.org/wiki/Meta_refresh#Usability
+
 		//'color-scheme'?: unknown;
 	};
 

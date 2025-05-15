@@ -2,7 +2,7 @@ import type { Immutable } from '@offirmo-private/ts-types'
 
 import * as State from '@tbrpg/state'
 
-import { type TBRPGAction, ActionType } from '../actions/index.ts'
+import { type TBRPGAction, ActionType } from '../../l1-actions/index.ts'
 
 
 // systematically async to pretend we're talking to a "server" or any other async store

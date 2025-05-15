@@ -40,6 +40,7 @@ alias     mono12s='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias    mono12up='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/;     cd 2-libs--cross-cutting/universal-debug-api--placeholder/;  tabset --badge mono12up'
 alias    mono12ut='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/;     cd 2-libs--cross-cutting/universal-debug-api--types/;        tabset --badge mono12ut'
 alias     mono13o='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/;     cd 3-libs--advanced/offirmo-state/;                          tabset --badge mono13o'
+alias     mono13s='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/;     cd 3-libs--advanced/sync-store/;                             tabset --badge mono13s'
 alias    mono1Xad='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/;     cd X-incubator/active/data-structures/;                      tabset --badge mono1Xad'
 
 alias     mono20o='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--node/;   cd 0-dev-tools/offirmo-state-migration-tester/;              tabset --badge mono20o'

@@ -40,7 +40,7 @@ export interface ActionNoop extends ReducerAction {
 export const ACTION_TYPEꘌSET: ReducerAction['type'] = 'utilⵧset'
 export interface ActionSet_<State> extends ReducerAction {
 	type: typeof ACTION_TYPEꘌSET
-	new_state: Immutable<State>
+	new_state: State
 }
 
 // for debug / hacks = ex. replenishing energy during local tests

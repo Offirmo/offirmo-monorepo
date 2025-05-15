@@ -118,13 +118,16 @@ function reset_and_salvage(legacy_state: Immutable<any>): Immutable<State> {
 			...state.u_state,
 			engagement: EngagementState.enqueue(state.u_state.engagement,
 				{
-					summary: RichText.fragmentⵧblock()
-						.pushStrong('You got reborn')
-						.pushLineBreak()
-						.pushText('Sorry, I changed the data format 😰.')
-						.done(),
+					story: {
+						kind: 'unit',
+						message: RichText.fragmentⵧblock()
+							.pushStrong('You got reborn')
+							.pushLineBreak()
+							.pushText('Sorry, I changed the data format 😰.')
+							.done(),
+						role: 'assistant',
+					},
 					flow: 'side',
-					role: 'assistant',
 					attention_needed: 'log',
 				}
 			),

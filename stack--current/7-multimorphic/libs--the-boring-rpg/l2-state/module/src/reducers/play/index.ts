@@ -41,13 +41,13 @@ function play(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp�
 		u_state: {
 			...state.u_state,
 			engagement: EngagementState.enqueue<HypermediaContentType>(state.u_state.engagement, {
-				summary: 'You’re going on an adventure...',
+				story: 'You’re going on an adventure...',
 				flow: 'main',
-				sequence: 'pre',
-				role: 'system',
-				success: is_good_play,
+				//sequence: 'pre',
+				//role: 'system',
+				//success: is_good_play,
 				attention_needed: is_good_play ? 'normal' : 'notice',
-				enhancements: {
+				hints: {
 					key: 'action--play--before-result',
 					...(!is_good_play && {vibrate: { duration‿ms: 'auto', alt: 'You encounter trouble!!!' }}),
 					//play_sound?: { url: Url‿str, alt: string }, TODO one day!

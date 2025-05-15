@@ -42,17 +42,16 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 	const engagement: EngagementState.Engagement<HypermediaContentType> = (() => {
 		if (!code_spec || !CodesState.is_code_redeemable(state.u_state.codes, code_spec, state)) {
 			return {
-				summary: RichText.fragmentⵧblock()
-					.pushStrong('Error: This code is either non-existing or non redeemable at the moment.')
-					.addHints({
-						code,
-					})
-					.done(),
+				story: RichText.fragmentⵧblock()
+						.pushStrong('Error: This code is either non-existing or non redeemable at the moment.')
+						.addHints({
+							code,
+						})
+						.done(),
 				flow: 'main',
-				role: 'assistant',
-				success: false,
-				enhancements: {
-				},
+				hints: {
+					success: false,
+				}
 			}
 		}
 
@@ -130,7 +129,7 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 						{
 							...EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
 							// https://rickadams.org/adventure/d_hints/hint024.html
-							summary: 'fee fie foe foo ;)',
+							story: 'fee fie foe foo ;)',
 						},
 					),
 				}
@@ -141,7 +140,7 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 					engagement: EngagementState.enqueue(u_state.engagement,
 						{
 							...EngagementState.DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL,
-							summary: 'A hollow voice says "Ahhhhhhh".', // TODO more
+							story: 'A hollow voice says "Ahhhhhhh".', // TODO more
 						},
 					),
 				}
@@ -211,16 +210,15 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 		}
 
 		return {
-			summary: RichText.fragmentⵧblock()
+			story: RichText.fragmentⵧblock()
 				.pushWeak('Code successfully redeemed.')
 				.addHints({
 					code,
 				})
 				.done(),
 			flow: 'main',
-			role: 'assistant',
-			success: true,
-			enhancements: {
+			hints: {
+				success: true,
 			},
 		}
 	})()

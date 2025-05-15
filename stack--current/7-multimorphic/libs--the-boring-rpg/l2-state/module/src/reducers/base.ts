@@ -10,7 +10,7 @@ import { complete_or_cancel_eager_mutation_propagating_possible_child_mutation }
 import {
 	CharacterClass,
 	rename,
-	switch_class,
+	switch_class as _switch_class,
 } from '@tbrpg/state--character'
 import * as InventoryState from '@tbrpg/state--inventory'
 import * as EngagementState from '@oh-my-rpg/state--engagement'
@@ -154,7 +154,7 @@ function switch_class(previous_state: Immutable<State>, new_class: CharacterClas
 
 		u_state: {
 			...state.u_state,
-			avatar: switch_class(getꓽSXC(), state.u_state.avatar, new_class),
+			avatar: _switch_class(getꓽSXC(), state.u_state.avatar, new_class),
 			revision: previous_state.u_state.revision + 1,
 		},
 	}

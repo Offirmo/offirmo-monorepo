@@ -14,22 +14,28 @@ type DemoContentType = string
 // the most common case
 // can be re-used
 const DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL: Engagement<DemoContentType> = {
-	summary: '[ENGT DEMO]Hello, World!',
+	story: {
+		kind:'unit',
+		message: '[ENGT DEMO]Hello, World!',
+		role: 'assistant',
+	},
 
 	flow: 'main',
-	role: 'assistant',
 	attention_needed: 'normal',
 }
 
 const DEMO_TEMPLATEⵧPLAYⵧFAILURE: Engagement<DemoContentType> = {
-	summary: '[ENGT DEMO]You failed!',
+	story: {
+		kind: 'unit',
+		message: '[ENGT DEMO]You failed!',
+		role: 'system',
+	},
 
 	flow: 'main',
-	role: 'system',
-	success: false,
 	attention_needed: 'notice',
 
-	enhancements: {
+	hints: {
+		success: false,
 		key: 'playⵧfailure',
 		vibrate: { duration‿ms: 'auto', alt: '' },
 		play_sound: { url: 'death.mp4', alt: '' },
@@ -38,34 +44,44 @@ const DEMO_TEMPLATEⵧPLAYⵧFAILURE: Engagement<DemoContentType> = {
 
 // low importance
 const DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG: Engagement<DemoContentType> = {
-	summary: '[ENGT DEMO]Hello, World!',
+	story: {
+		kind: 'unit',
+		message: '[ENGT DEMO]Hello, World!',
+		role: 'assistant',
+	},
 
 	flow: 'side',
-	role: 'assistant',
 	attention_needed: 'log',
 }
 
 const DEMO_TEMPLATEⵧNON_FLOW: Engagement<DemoContentType> = {
-	summary: `[ENGT DEMO]You got an update! See what's new!`,
+	story: {
+		kind: 'unit',
+		message: `[ENGT DEMO]You got an update! See what's new!`,
+		role: 'assistant',
+	},
 
-	flow: 'not',
-	role: 'assistant',
+	flow: 'out',
 	attention_needed: 'notice',
 }
 
 // real examples
+/*
 const DEMO_SPOILER: Engagement<DemoContentType> = {
-	summary: 'Spoiler alert!',
+	story: {
+		kind: 'unit',
+		message: 'Spoiler alert!',
+		role: 'system',
+	},
 
 	flow: 'main',
-	role: 'system',
 	sequence: 'pre',
 	attention_needed: 'warning',
 
 	enhancements: {
 		background: 'blurⵧextreme',
 	},
-}
+}*/
 
 // a full-featured, non-trivial demo state
 // useful for demos and unit tests

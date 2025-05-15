@@ -37,7 +37,7 @@ function createꓽactionꘌupdate_to_now(): ActionUpdateToNow {
 	})
 }
 
-function createꓽactionꘌset<State>(new_state: Immutable<State>): ActionSet_<State> {
+function createꓽactionꘌset<State>(new_state: State): ActionSet_<State> {
 	return createꓽaction<ActionSet_<State>>({
 		type: ACTION_TYPEꘌSET,
 		new_state,

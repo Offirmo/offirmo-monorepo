@@ -46,10 +46,16 @@ interface SyncReducerFns<State, InitArgs, Action extends ReducerAction> {
 
 /////////////////////////////////////////////////
 
+type AllStoreFns<State, InitArgs, Action extends ReducerAction> = SyncStoreFns<State> & SyncReducerFns<State, InitArgs, Action>
+
+/////////////////////////////////////////////////
+
 export {
 	type Snapshot,
 	type SyncStoreUnsubscribeFn,
 	type SyncStoreFns,
 
 	type SyncReducerFns,
+
+	type AllStoreFns,
 }
