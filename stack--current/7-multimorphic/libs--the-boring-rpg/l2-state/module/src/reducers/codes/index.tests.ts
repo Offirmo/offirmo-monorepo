@@ -6,7 +6,7 @@ import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 import { LIB } from '../../consts.ts'
 import {
 	create,
-	reseed,
+	re_seed,
 	attempt_to_redeem_code,
 } from '../index.ts'
 
@@ -36,7 +36,7 @@ describe(`${LIB} - reducer - codes`, function() {
 				const initial_state = enforceꓽimmutable<State>(
 					_ack_all_engagements(
 						_lose_all_energy( // for BORED
-							reseed(
+							re_seed(
 								create(),
 							),
 						),
@@ -66,7 +66,7 @@ describe(`${LIB} - reducer - codes`, function() {
 		it('should correctly crash on second attempt', () => {
 			const initial_state = enforceꓽimmutable<State>(
 				_ack_all_engagements(
-					reseed(
+					re_seed(
 						create(),
 					),
 				),
@@ -93,7 +93,7 @@ describe(`${LIB} - reducer - codes`, function() {
 		it('should cause a crash', function() {
 			const initial_state = enforceꓽimmutable<State>(
 				_ack_all_engagements(
-					reseed(
+					re_seed(
 						create(),
 					),
 				),

@@ -8,7 +8,7 @@ import {
 import { DEFAULT_SEED } from '@oh-my-rpg/state--prng'
 
 import { LIB, SCHEMA_VERSION } from '../consts.ts'
-import { create, reseed } from './index.ts'
+import { create, re_seed } from './index.ts'
 
 
 describe(`${LIB} -- reducers -- create`, function() {
@@ -59,7 +59,7 @@ describe(`${LIB} -- reducers -- create`, function() {
 	describe('re-seeding', function() {
 
 		it('should work', function() {
-			const { u_state } = reseed(create())
+			const { u_state } = re_seed(create())
 
 			expect(u_state.prng.prng_state.seed).to.be.a('number')
 			expect(u_state.prng.prng_state.seed).not.to.equal(DEFAULT_SEED)

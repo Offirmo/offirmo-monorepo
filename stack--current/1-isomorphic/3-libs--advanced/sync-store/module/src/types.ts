@@ -41,7 +41,7 @@ function useReducer<S, A extends AnyActionArg>(
  */
 interface SyncReducerFns<State, InitArgs, Action extends ReducerAction> {
 	reducer: Reducer<State, Action>
-	init(args: InitArgs): Immutable<State>
+	init(args?: InitArgs): Immutable<State> // slight departure from React = making the init args optional
 }
 
 /////////////////////////////////////////////////

@@ -141,7 +141,7 @@ function create(SXC?: TBRSoftExecutionContext, { now_ms = getꓽUTC_timestamp‿
 }
 
 // TODO review normally only useful for UTests
-function reseed(state: Immutable<State>, seed?: PRNGState.Seed): Immutable<State> {
+function re_seed(state: Immutable<State>, seed?: PRNGState.Seed): Immutable<State> {
 	if (seed) {
 		console.warn('TODO review manual seeding!') // unless UT we normally don't want a manual seed
 		state = {
@@ -177,7 +177,7 @@ export {
 	type CreateParams,
 	create,
 
-	reseed,
+	re_seed,
 }
 
 /////////////////////

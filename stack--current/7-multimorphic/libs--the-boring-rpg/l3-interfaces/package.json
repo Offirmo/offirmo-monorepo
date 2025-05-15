@@ -15,17 +15,18 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/sync-store": "*",
 		"@offirmo-private/ts-types-web": "*",
-		"@tbrpg/state": "*",
 		"@tbrpg/state--character": "*",
 		"tiny-invariant": "^1",
 		"typescript-string-enums": "^1"
 	},
 	"scripts": {
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
 		"check--ts": "echo \"@tbrpg/interfaces\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"_check": "run-s check--ts"
+		"_check": "run-s tests check--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
@@ -34,6 +35,7 @@
 		"@offirmo-private/uuid": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@oh-my-rpg/state--engagement": "*",
+		"@tbrpg/state": "*",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

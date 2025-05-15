@@ -13,7 +13,7 @@ import { type State } from '../types.ts'
 import { getꓽlogger } from '../services/logger.ts'
 import {
 	create,
-	reseed,
+	re_seed,
 	rename_avatar,
 	switch_class,
 	_autoplay,
@@ -76,10 +76,10 @@ function reset_and_salvage(legacy_state: Immutable<any>): Immutable<State> {
 	const seed = get_seed(legacy_state)
 	if (!Number.isInteger(seed as any)) {
 		getꓽlogger().warn(`${LIB}: salvaging: may need to update the seed salvaging!`)
-		state = reseed(state) // force random reseed to avoid pp having the same game
+		state = re_seed(state) // force random reseed to avoid pp having the same game
 	}
 	else {
-		state = reseed(state, seed as number)
+		state = re_seed(state, seed as number)
 	}
 
 	const name = getꓽname(legacy_state)

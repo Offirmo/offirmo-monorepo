@@ -26,7 +26,7 @@ import {
 
 import { _refresh_achievements } from '../achievements/index.ts'
 import { reset_and_salvage } from '../../migrations/salvage.ts'
-import { reseed } from '../create.ts'
+import { re_seed } from '../create.ts'
 
 /////////////////////////////////////////////////
 
@@ -73,7 +73,7 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 
 			case 'REBORNX':
 				previous_state = updated_state = null // since we completely recreate the state
-				state = reseed(state) // force random reseed to see new stuff
+				state = re_seed(state) // force random reseed to see new stuff
 				state = reset_and_salvage(state as any)
 				u_state = state.u_state
 				t_state = state.t_state
