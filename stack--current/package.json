@@ -129,7 +129,7 @@
 		"emittery": "^1",
 		"eslint-plugin-chai-expect": "^3",
 		"eslint-plugin-mocha": "^11",
-		"fraction.js": "^5",
+		"fraction.js": "^4",
 		"icepick": "^2",
 		"ignore-walk": "^7",
 		"json5": "^2",

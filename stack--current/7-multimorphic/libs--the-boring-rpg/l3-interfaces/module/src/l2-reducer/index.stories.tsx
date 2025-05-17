@@ -17,8 +17,9 @@ export default {
 const { reducer, init, subscribe, getSnapshot, dispatch } = createꓽall_store_fns()
 
 export const UseReducer: Story‿v3 = {
-	render: () => {
+	component: () => {
 		const [state, dispatch] = useReducer(reducer, undefined, init)
+		console.log(`UseReducer:`, { state })
 
 		return (
 			<>
@@ -33,8 +34,9 @@ export const UseReducer: Story‿v3 = {
 
 
 export const UseSyncExternalStore: Story‿v3 = {
-	render: () => {
+	component: () => {
 		const snapshot = useSyncExternalStore(subscribe, getSnapshot)
+		console.log(`useSyncExternalStore:`, { snapshot })
 
 		return (
 			<>

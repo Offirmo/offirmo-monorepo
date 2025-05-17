@@ -15,6 +15,10 @@ interface PackageJson {
 	private?: true
 }
 
+const OVERRIDES: Record<string, {}> = {
+	'fraction.js': { version: '^4' } // v5+ switched to BigInt which is not json-compatible
+}
+
 class PkgInfosResolver {
 	#packageᐧjson_cache: Record<string, any> = {}
 	#pending_promises: Record<string, Promise<any>> = {}
@@ -80,7 +84,10 @@ class PkgInfosResolver {
 		}
 
 		console.log(`PkgVersionResolver querying "${pkg_name}"…`)
-		this.#pending_promises[pkg_name] = packageJson(pkg_name, { fullMetadata: true })
+		this.#pending_promises[pkg_name] = packageJson(pkg_name, {
+			...OVERRIDES[pkg_name],
+			fullMetadata: true
+		})
 			.then(
 				(content) => {
 					this.#packageᐧjson_cache[pkg_name] = content
