@@ -1,4 +1,8 @@
 import assert from 'tiny-invariant'
+import EventEmitter from 'emittery'
+
+
+
 import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	type ReducerAction, type Reducer, type ReducerMap,
@@ -16,57 +20,70 @@ import {
 	reduceꓽhack,
 } from '@offirmo-private/sync-store'
 
-import { type TBRSoftExecutionContext, decorateꓽSXC } from '@tbrpg/definitions'
+import { type TBRSoftExecutionContext } from '@tbrpg/definitions'
 import * as TBRPGState from '@tbrpg/state'
-import { type AcknowledgeEngagementMsgSeen, type StartSessionParams, type State } from '@tbrpg/state'
+import { type State } from '@tbrpg/state'
 
 import {
 	ActionType,
 	type TBRPGAction,
 } from '../l1-actions/index.ts'
-import type { UUID } from '@offirmo-private/uuid'
-import { CharacterClass } from '@tbrpg/state--character'
 
 /////////////////////////////////////////////////
 
-const REDUCERS_MAP = {
-	[ActionType['play'] as string]: TBRPGState.play,
-	[ActionType['equip_item'] as string]: TBRPGState.equip_item,
-	[ActionType['sell_item'] as string]: TBRPGState.sell_item,
-	[ActionType['rename_avatar'] as string]: TBRPGState.rename_avatar,
-	[ActionType['switch_class'] as string]: TBRPGState.switch_class,
-	[ActionType['redeem_code'] as string]: TBRPGState.attempt_to_redeem_code,
-	[ActionType['re_seed'] as string]: TBRPGState.re_seed,
-	[ActionType['on_start_session'] as string]: TBRPGState.on_start_session,
-	[ActionType['on_logged_in_refresh'] as string]: TBRPGState.on_logged_in_refresh,
-	[ActionType['acknowledge_engagement_msg_seen'] as string]: TBRPGState.acknowledge_engagement_msg_seen,
-	[ACTION_TYPEꘌUPDATE_TO_NOW]: TBRPGState.update_to_now,
-	[ACTION_TYPEꘌNOOP]: reduceꓽnoop,
-	[ACTION_TYPEꘌSET]: reduceꓽset,
-	[ACTION_TYPEꘌHACK]: reduceꓽhack,
-}
-
-/////////////////////////////////////////////////
+const EMITTER_EVT = 'change'
 
 function createꓽall_store_fns(SXC?: TBRSoftExecutionContext): AllStoreFns<State, TBRPGState.CreateParams, TBRPGAction> {
 
 	function init(args?: TBRPGState.CreateParams): Immutable<State> {
-		assert(!args, `No args expected!`)
 		return TBRPGState.create(SXC, args)
 	}
 
 	function reducer(state: Immutable<State>, action: Immutable<TBRPGAction>): Immutable<State> {
-		const reducer: Reducer<State, TBRPGAction> = REDUCERS_MAP[action.type] as any
-		assert(reducer, `Reducer not found for action type "${action.type}"!`)
-
-		return reducer(state, action)
+		switch (action.type) {
+			case ActionType['play']:
+				return TBRPGState.play(state, action)
+			case ActionType['equip_item']:
+				return TBRPGState.equip_item(state, action)
+			case ActionType['sell_item']:
+				return TBRPGState.sell_item(state, action)
+			case ActionType['rename_avatar']:
+				return TBRPGState.rename_avatar(state, action)
+			case ActionType['switch_class']:
+				return TBRPGState.switch_class(state, action)
+			case ActionType['redeem_code']:
+				return TBRPGState.attempt_to_redeem_code(state, action)
+			case ActionType['re_seed']:
+				return TBRPGState.re_seed(state, action)
+			case ActionType['on_start_session']:
+				return TBRPGState.on_start_session(state, action)
+			case ActionType['on_logged_in_refresh']:
+				return TBRPGState.on_logged_in_refresh(state, action)
+			case ActionType['acknowledge_engagement_msg_seen']:
+				return TBRPGState.acknowledge_engagement_msg_seen(state, action)
+			case ACTION_TYPEꘌUPDATE_TO_NOW:
+				return TBRPGState.update_to_now(state, action)
+			case ACTION_TYPEꘌNOOP:
+				return reduceꓽnoop(state, action)
+			case ACTION_TYPEꘌSET:
+				return reduceꓽset(state, action)
+			case ACTION_TYPEꘌHACK:
+				return reduceꓽhack(state, action)
+			default:
+				throw new Error(`Unknown action type "${action.type}"!`)
+		}
 	}
 
 	/////////////////////////////////////////////////
 	let state: Immutable<State> = init()
+	const emitter = new EventEmitter<{ [EMITTER_EVT]: string }>()
 
 	function subscribe(onStoreChange: () => void): SyncStoreUnsubscribeFn {
-		throw new Error(`Not implemented!`)
+		const unbind = emitter.on(EMITTER_EVT, (src: string) => {
+			onStoreChange()
+		})
+
+		return unbind
 	}
 
 	function getSnapshot(): Immutable<State> {
@@ -75,7 +92,7 @@ function createꓽall_store_fns(SXC?: TBRSoftExecutionContext): AllStoreFns<Stat
 
 	function dispatch(action: Immutable<TBRPGAction>): void {
 		state = reducer(state, action)
-		xxx TODO call store change!
+		emitter.emit(EMITTER_EVT, `[dispatch]`)
 	}
 
 	/////////////////////////////////////////////////
@@ -85,6 +102,7 @@ function createꓽall_store_fns(SXC?: TBRSoftExecutionContext): AllStoreFns<Stat
 		init,
 		subscribe,
 		getSnapshot,
+		dispatch,
 	}
 }
 

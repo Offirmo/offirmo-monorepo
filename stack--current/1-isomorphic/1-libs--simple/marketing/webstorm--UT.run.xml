@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" name="@offirmo-private/marketing -- UT" type="mocha-javascript-test-runner">
-		<node-interpreter>$USER_HOME$/.nvm/versions/node/v23.11.0/bin/node</node-interpreter>
+		<node-interpreter>$USER_HOME$/.nvm/versions/node/v23.11.1/bin/node</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
 		<mocha-package>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/node_modules/mocha</mocha-package>
 		<working-directory>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/1-libs--simple/marketing</working-directory>

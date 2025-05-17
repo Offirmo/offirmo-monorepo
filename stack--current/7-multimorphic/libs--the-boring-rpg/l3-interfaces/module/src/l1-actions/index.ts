@@ -15,6 +15,8 @@ import {
 	type State,
 	type StartSessionParams,
 	type AcknowledgeEngagementMsgSeen,
+	type EquipItemParams,
+	type SellItemParams,
 } from '@tbrpg/state'
 import { CharacterClass } from '@tbrpg/state--character'
 
@@ -47,14 +49,12 @@ interface ActionPlay extends ReducerAction {
 	type: typeof ActionType['play']
 }
 
-interface ActionEquipItem extends ReducerAction {
+interface ActionEquipItem extends ReducerAction, EquipItemParams {
 	type: typeof ActionType['equip_item']
-	target_uuid: UUID
 }
 
-interface ActionSellItem extends ReducerAction {
+interface ActionSellItem extends ReducerAction, SellItemParams {
 	type: typeof ActionType['sell_item']
-	target_uuid: UUID
 }
 
 interface ActionRenameAvatar extends ReducerAction {
