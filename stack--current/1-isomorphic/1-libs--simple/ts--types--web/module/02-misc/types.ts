@@ -8,8 +8,8 @@ export interface ReducerAction {
 	type: string // a unique identifier of this action
 	now_ms?: TimestampUTCMs // do not set manually! -> better inferred at dispatch. But can be useful for tests or replay.
 	expected_revisions?: {
-		// prevent this action from being applied if some parts of the state (referenced by k) has been modified since the last time we checked
-		// Do NOT abuse! Ideally actions should be idempotent!!
+		// prevent this action from being applied if some parts of the state (referenced by k) have been modified since the last time we checked
+		// Do NOT abuse! Ideally, actions should be idempotent!!
 		[k:string]: number
 	}
 }
