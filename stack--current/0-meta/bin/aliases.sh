@@ -100,5 +100,6 @@ alias  mono7ltlw2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias   mono7ltl2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--the-boring-rpg/l2-state/;                           tabset --badge mono7ltl2'
 alias   mono7ltl3='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--the-boring-rpg/l3-interfaces/;                      tabset --badge mono7ltl3'
 alias   mono7ltlr='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--the-boring-rpg/l3-ui--rich-text/;                   tabset --badge mono7ltlr'
+alias   mono7ltl4='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--the-boring-rpg/l4-ohateoas/;                        tabset --badge mono7ltl4'
 
 alias      monoMg='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd M-minisites/;      cd generator/;                                               tabset --badge monoMg'

@@ -1,6 +1,5 @@
 {
-	"name": "@tbrpg/interfaces",
-	"description": "TBRPG interfaces for advanced features, ex. persistence",
+	"name": "@tbrpg/l4-ohateoas",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -8,46 +7,37 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts"
+		".": "./module/src/server.ts"
 	},
-	"source": "module/src/index.ts",
+	"source": "module/src/server.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/sync-store": "*",
+		"@offirmo-private/ohateoas": "*",
+		"@offirmo-private/rich-text-format": "*",
 		"@offirmo-private/ts-types-web": "*",
-		"@tbrpg/state": "*",
-		"@tbrpg/state--character": "*",
-		"emittery": "^1",
-		"tiny-invariant": "^1",
-		"typescript-string-enums": "^1"
+		"@tbrpg/interfaces": "*",
+		"@tbrpg/ui--rich-text": "*",
+		"tiny-invariant": "^1"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
-		"check--ts": "echo \"@tbrpg/interfaces\" && tsc --noEmit",
+		"check--ts": "echo \"@tbrpg/l4-ohateoas\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
-		"_check": "run-s tests check--ts",
+		"check": "run-s check--ts",
 		"_start:parcel:storypad": "parcel serve module/__fixtures/storypad/index.html --port 1981 --lazy --no-autoinstall",
 		"stories": "npm-run-all clean --parallel _start:parcel:storypad"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
-		"@offirmo-private/timestamps": "*",
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo-private/uuid": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@oh-my-rpg/state--engagement": "*",
-		"@tbrpg/definitions": "*",
-		"@types/react": "^19",
 		"npm-run-all": "^4",
-		"react": "^19",
-		"react-dom": "^19",
 		"tslib": "^2",
 		"typescript": "^5"
 	}
