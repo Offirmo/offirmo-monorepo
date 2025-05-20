@@ -36,13 +36,13 @@ function play(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp�
 
 	// add a little animation
 	// totally optional of course
-	state = {
+	/*state = {
 		...state,
 		u_state: {
 			...state.u_state,
 			engagement: EngagementState.enqueue<HypermediaContentType>(state.u_state.engagement, {
-				story: 'You’re going on an adventure...',
 				flow: 'main',
+				story: 'You’re going on an adventure...',
 				//sequence: 'pre',
 				//role: 'system',
 				//success: is_good_play,
@@ -54,7 +54,7 @@ function play(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp�
 				}
 			})
 		}
-	}
+	}*/
 
 	// consume energy
 	if (!is_good_play) {

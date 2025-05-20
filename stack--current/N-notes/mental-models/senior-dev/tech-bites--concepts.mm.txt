@@ -552,6 +552,9 @@ mocha / chai
 monads
 monitoring = observing systems, collecting metrics, evaluating those metrics over time, and then using them to make decisions or take actions
 monolith = over time become poorly structured, containing many different, sometimes competing conventions. These conventions and “styles” sprawl throughout the monolith and make it difficult to understand what is going on. Because structures are built with different conventions, to work in the monolith safely, you have to examine everything to make sure you understand this instance of this pattern. It’s not safe to assume anything. This, combined with the lack of boundaries in the monolith means that every change incurs a huge cost in examination and understanding before it can be safely implemented. This skews developer performance to tenure - the longer you have been staring at the code, the more you have wrapped your head around and the faster you can go (mostly). New developers should not be worried about the time it takes to be effective in the monolith - it's the monolith’s fault, not yours."
+monolith refactoring -- 1. Move code into a good module structure, unpicking code and dependencies along the way
+monolith refactoring -- 2. Understand the domain and build good and scalable abstractions in the form of new APIs which are backed directly by the database (no managers, etc.)
+monolith refactoring -- 3. Replace usage of the old mess with the new APIs, validate consistency, etc.
 monorepo -- boundaries = don't conflate the main codebase vs things needed to run the build vs things produced by the build
 monorepo -- megarepo
 multi tenant -- isolation
@@ -688,6 +691,7 @@ React
 reactive programming
 recursion
 red / blue deployment -- compatibility window = period, measured either in elapsed time or number of releases, where all versions of a component released during this window must be compatible with all components of the current version, and vice versa.
+regex - 2x problems = Some people, when confronted with a problem, think “I know, I'll use regular expressions.” Now they have two problems. https://regex.info/blog/2006-09-15/247
 regex https://regexlearn.com/
 register
 release channels = offer a trade-off between feature availability and stability https://support.google.com/chrome/a/answer/9027636?hl=en https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels

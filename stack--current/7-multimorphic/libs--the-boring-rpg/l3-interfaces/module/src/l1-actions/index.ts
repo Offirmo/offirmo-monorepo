@@ -1,7 +1,7 @@
 import { Enum } from 'typescript-string-enums'
 import type { Immutable } from '@offirmo-private/ts-types'
 import {
-	type ReducerAction,
+	type BaseReducerAction,
 	createꓽaction__base, createꓽaction,
 	ACTION_TYPEꘌUPDATE_TO_NOW, type ActionUpdateToNow, createꓽactionꘌupdate_to_now,
 	ACTION_TYPEꘌNOOP, type ActionNoop, createꓽactionꘌnoop,
@@ -14,7 +14,7 @@ import { type PendingEngagementUId } from '@oh-my-rpg/state--engagement'
 import {
 	type State,
 	type StartSessionParams,
-	type AcknowledgeEngagementMsgSeen,
+	type AcknowledgeEngagementMsgSeenParams,
 	type EquipItemParams,
 	type SellItemParams,
 } from '@tbrpg/state'
@@ -45,51 +45,51 @@ export type ActionType = Enum<typeof ActionType> // eslint-disable-line no-redec
 
 /////////////////////////////////////////////////
 
-interface ActionPlay extends ReducerAction {
+interface ActionPlay extends BaseReducerAction {
 	type: typeof ActionType['play']
 }
 
-interface ActionEquipItem extends ReducerAction, EquipItemParams {
+interface ActionEquipItem extends BaseReducerAction, EquipItemParams {
 	type: typeof ActionType['equip_item']
 }
 
-interface ActionSellItem extends ReducerAction, SellItemParams {
+interface ActionSellItem extends BaseReducerAction, SellItemParams {
 	type: typeof ActionType['sell_item']
 }
 
-interface ActionRenameAvatar extends ReducerAction {
+interface ActionRenameAvatar extends BaseReducerAction {
 	type: typeof ActionType['rename_avatar']
 	new_name: string
 }
 
-interface ActionSwitchClass extends ReducerAction {
+interface ActionSwitchClass extends BaseReducerAction {
 	type: typeof ActionType['switch_class']
 	new_class: CharacterClass
 }
 
 
-interface ActionRedeemCode extends ReducerAction {
+interface ActionRedeemCode extends BaseReducerAction {
 	type: typeof ActionType['redeem_code']
 	code: string
 }
 
 
-interface ActionReSeed extends ReducerAction {
+interface ActionReSeed extends BaseReducerAction {
 	type: typeof ActionType['re_seed']
 	seed: number
 }
 
-interface ActionStartSession extends ReducerAction, StartSessionParams {
+interface ActionStartSession extends BaseReducerAction, StartSessionParams {
 	type: typeof ActionType['on_start_session']
 }
 
-interface ActionRefreshLoggedInInfos extends ReducerAction {
+interface ActionRefreshLoggedInInfos extends BaseReducerAction {
 	type: typeof ActionType['on_logged_in_refresh']
 	is_logged_in: boolean
 	roles: string[]
 }
 
-interface ActionAcknowledgeEngagementMsgSeen extends ReducerAction, AcknowledgeEngagementMsgSeen {
+interface ActionAcknowledgeEngagementMsgSeen extends BaseReducerAction, AcknowledgeEngagementMsgSeenParams {
 	type: typeof ActionType['acknowledge_engagement_msg_seen']
 	uids: Array<PendingEngagementUId>
 }

@@ -13,6 +13,8 @@
 [ ] https://www.anthropic.com/news
 [ ] https://www.perspectiveapi.com/
 [ ] https://www.sbert.net/
+[ ] https://ghuntley.com/
+[ ] https://simonwillison.net/
 [ ] People + AI Guidebook https://pair.withgoogle.com/guidebook/patterns
 A::B Prompting Challenge: $10k to prove me wrong! https://twitter.com/VictorTaelin/status/1776677635491344744 https://twitter.com/headinthebox/status/1777016124141650254
 Agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
@@ -50,7 +52,7 @@ benchmark -- Humanity's Last Exam https://lastexam.ai/
 benchmark -- OSWorld https://os-world.github.io/
 BERT
 bias
-bitter lesson = generic + Moor law beats specific https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf
+bitter lesson = generic + Moore law beats specific https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf
 blindspots https://ezyang.github.io/ai-blindspots/
 BLOOM = "BigScience Large Open-science Open-access Multilingual Language Model" = deprecated former big model
 BM25 (Best Matching 25) = a ranking function that uses lexical matching to find precise word or phrase matches. It's particularly effective for queries that include unique identifiers or technical terms https://www.anthropic.com/news/contextual-retrieval
@@ -77,7 +79,7 @@ control vector https://vgel.me/posts/representation-engineering/
 ControlNet = a type of model for controlling image diffusion models by conditioning the model with an additional input image https://huggingface.co/docs/diffusers/using-diffusers/controlnet https://github.com/lllyasviel/ControlNet
 cross encoder https://www.sbert.net/examples/applications/cross-encoder/README.html
 custom instructions https://www.reddit.com/r/ChatGPTPro/comments/15ffpx3/reddit_what_are_your_best_custom_instructions_for/
-dataset  https://www.fatml.org/media/documents/datasheets_for_datasets.pdf
+dataset https://www.fatml.org/media/documents/datasheets_for_datasets.pdf
 day 2 = The challenge of revising, maintaining, further developing, and deploying an AI-generated app https://manual.bubble.io/beta-features/bubbles-ai-app-generator#the-day-1-and-day-2-dilemma-in-ai-driven-app-development
 deep reinforcement learning (deep RL) course: https://spinningup.openai.com/
 delvish dialect https://bruces.medium.com/preliminary-notes-on-the-delvish-dialect-by-bruce-sterling-ce68a476247b

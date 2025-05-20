@@ -2,8 +2,8 @@
 
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
-import type { JSON, JSONPrimitiveType, Story } from '@offirmo-private/ts-types'
-import { type Hyperlink, type ReducerAction, type Uri‿x, type WithHints } from '@offirmo-private/ts-types-web'
+import type { JSON, JSONPrimitiveType, Story, WithHints } from '@offirmo-private/ts-types'
+import { type Hyperlink, type ReducerAction, type Uri‿x } from '@offirmo-private/ts-types-web'
 import type { Hints as RichTextHints, NodeLike as RichTextNodeLike } from '@offirmo-private/rich-text-format'
 import {
 	type TrackedEngagement,
@@ -26,7 +26,12 @@ type OHAStory = Story<OHAHyperMedia>
 /** A more generic hyperlink than HTML's <a> following hypermedia theory
  * see https://hypermedia.systems/
  */
-interface OHAHyper {
+	// as usual, the client is free to ignore all hints, it should still work
+interface OHAHyperHints {
+	cta?: RichTextNodeLike // optional bc 1) not always needed (ex. already an anchor) 2) SSoT = should ideally be derived BUT useful bc same action could have different CTA following the context (ex. equip the best equipment)
+	keyboard_shortcut?: string // TODO 1D high level format
+}
+interface OHAHyper extends WithHints<OHAHyperHints> {
 	// hyper target of this
 	href?: Uri‿x // optional bc can sometimes be inferred = current
 
@@ -34,13 +39,6 @@ interface OHAHyper {
 	// useful to hint for back
 
 	// TODO description of the target? needed?
-
-	// presentation
-	// as usual, the client is free to ignore all hints, it should still work
-	hints?: {
-		cta?: RichTextNodeLike // optional bc 1) not always needed (ex. already an anchor) 2) SSoT = should ideally be derived BUT useful bc same action could have different CTA following the context (ex. equip the best equipment)
-		keyboard_shortcut?: string // TODO 1D high level format
-	}
 }
 
 // tslint:disable-next-line: variable-name

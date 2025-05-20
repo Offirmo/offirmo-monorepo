@@ -19,6 +19,7 @@ const DEMO_TEMPLATEⵧFLOWꘌMAIN_ROLEꘌASSISTANT_ATTNꘌNORMAL: Engagement<Dem
 		message: '[ENGT DEMO]Hello, World!',
 		role: 'assistant',
 	},
+	storyⵧllm: '', // no value
 
 	flow: 'main',
 	attention_needed: 'normal',
@@ -30,6 +31,7 @@ const DEMO_TEMPLATEⵧPLAYⵧFAILURE: Engagement<DemoContentType> = {
 		message: '[ENGT DEMO]You failed!',
 		role: 'system',
 	},
+	storyⵧllm: 'The play action failed.',
 
 	flow: 'main',
 	attention_needed: 'notice',
@@ -49,6 +51,7 @@ const DEMO_TEMPLATEⵧFLOWꘌSIDE_ROLEꘌASSISTANT_ATTNꘌLOG: Engagement<DemoCo
 		message: '[ENGT DEMO]Hello, World!',
 		role: 'assistant',
 	},
+	storyⵧllm: '', // no value
 
 	flow: 'side',
 	attention_needed: 'log',
@@ -60,6 +63,7 @@ const DEMO_TEMPLATEⵧNON_FLOW: Engagement<DemoContentType> = {
 		message: `[ENGT DEMO]You got an update! See what's new!`,
 		role: 'assistant',
 	},
+	storyⵧllm: 'The current app has been updated.',
 
 	flow: 'out',
 	attention_needed: 'notice',

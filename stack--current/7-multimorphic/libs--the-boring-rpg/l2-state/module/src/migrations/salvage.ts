@@ -127,6 +127,7 @@ function reset_and_salvage(legacy_state: Immutable<any>): Immutable<State> {
 							.done(),
 						role: 'assistant',
 					},
+					storyⵧllm: '', // no value
 					flow: 'side',
 					attention_needed: 'log',
 				}

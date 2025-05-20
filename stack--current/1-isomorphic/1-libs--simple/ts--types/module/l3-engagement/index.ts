@@ -32,13 +32,14 @@ interface StoryHints {
 }
 
 interface StoryTellingUnit<RichTextFormat> extends WithHints {
-	kind: 'unit'
+	kind?: 'unit' // this is the default
 
 	role: ConversationRole
 
 	// CORE source of truth
 	// should hold as much info as possible (incl. hints)
 	message: RichTextFormat
+	messageⵧllm?: string // TODO review mandatory
 }
 
 // use case: a conversation between characters
@@ -105,6 +106,7 @@ interface Engagement<RichTextFormat> extends WithHints {
 	//auto_dismiss_delay_ms?: number, // falsy = never
 
 	story: Story<RichTextFormat> // what we want to say/convey
+	storyⵧllm: string // text version for LLMs TODO optional
 
 	// hints?: ideally do not use, should be in the story itself!
 }

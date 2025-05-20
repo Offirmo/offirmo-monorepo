@@ -1,4 +1,9 @@
-+++ glue work + I'm good at what I spend time on https://www.noidea.dog/glue
++++ glue work https://www.noidea.dog/glue
+4 convos -- how to -- break out of a mental rut
+4 convos -- how to -- build resilience
+4 convos -- how to -- influence others
+4 convos -- how to -- job craft
+4 convos = https://hbr.org/2019/09/to-coach-junior-employees-start-with-4-conversations
 git "so you have a mess" http://justinhileman.info/article/git-pretty/full/
 How to efficiently help someone with a problem https://xyproblem.info/
 HR is not your friend https://www.inc-aus.com/jt-odonnell/what-20-somethings-need-to-know-about-complaining-to-hr.html
@@ -9,6 +14,7 @@ https://stackoverflow.blog/2019/08/07/what-every-developer-should-learn-early-on
 https://wiki.theory.org/YourLanguageSucks
 https://www.instagram.com/flinkliv_en/
 https://www.programmingfonts.org/
+I'm good at what I spend time on https://www.noidea.dog/glue
 The Absolute Minimum Every Software Developer Must Know About Unicode in 2023 (Still No Excuses!) https://tonsky.me/blog/unicode/
 the customer doesn't know what they want
 war mode / peace mode

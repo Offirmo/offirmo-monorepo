@@ -83,7 +83,10 @@ function on_logged_in_refresh(previous_state: Immutable<State>, is_logged_in: bo
 	return state
 }
 
-function update_to_now(state: Immutable<State>, now_ms: TimestampUTCMs = getꓽUTC_timestamp‿ms()): Immutable<State> {
+interface UpdateToNowParams {
+	now_ms?: TimestampUTCMs
+}
+function update_to_now(state: Immutable<State>, { now_ms = getꓽUTC_timestamp‿ms() }: UpdateToNowParams): Immutable<State> {
 	return _update_to_now(state, now_ms)
 }
 
@@ -162,11 +165,13 @@ function switch_class(previous_state: Immutable<State>, new_class: CharacterClas
 	return _refresh_achievements(state)
 }
 
-interface AcknowledgeEngagementMsgSeen {
+interface AcknowledgeEngagementMsgSeenParams {
 	now_ms?: TimestampUTCMs // will be inferred if not provided
 	uids: Immutable<Array<PendingEngagementUId>>
 }
-function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp‿ms(), uids }: AcknowledgeEngagementMsgSeen): Immutable<State> {
+function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, { now_ms = getꓽUTC_timestamp‿ms(), uids }: AcknowledgeEngagementMsgSeenParams): Immutable<State> {
+	if (uids.length === 0) return previous_state
+
 	let state = previous_state
 	state = {
 		...state,
@@ -185,13 +190,15 @@ function acknowledge_engagement_msg_seen(previous_state: Immutable<State>, { now
 /////////////////////
 
 export {
-	type AcknowledgeEngagementMsgSeen,
+	type AcknowledgeEngagementMsgSeenParams,
 	acknowledge_engagement_msg_seen,
 
 	type StartSessionParams,
 	on_start_session,
 
 	on_logged_in_refresh,
+
+	type UpdateToNowParams,
 	update_to_now,
 
 	type EquipItemParams,

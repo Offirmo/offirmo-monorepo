@@ -42,16 +42,17 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 	const engagement: EngagementState.Engagement<HypermediaContentType> = (() => {
 		if (!code_spec || !CodesState.is_code_redeemable(state.u_state.codes, code_spec, state)) {
 			return {
+				flow: 'main',
 				story: RichText.fragmentⵧblock()
 						.pushStrong('Error: This code is either non-existing or non redeemable at the moment.')
 						.addHints({
 							code,
 						})
 						.done(),
-				flow: 'main',
 				hints: {
 					success: false,
-				}
+				},
+				storyⵧllm: `Failure: The code "${code}" is either non-existing or non redeemable at the moment.`
 			}
 		}
 
@@ -210,17 +211,18 @@ function attempt_to_redeem_code(_state: Immutable<State>, code: string, now_ms: 
 		}
 
 		return {
+			flow: 'main',
 			story: RichText.fragmentⵧblock()
 				.pushWeak('Code successfully redeemed.')
 				.addHints({
 					code,
 				})
 				.done(),
-			flow: 'main',
+			storyⵧllm: `Success: The code "${code}" was successfully redeemed.`,
 			hints: {
 				success: true,
 			},
-		}
+		} satisfies EngagementState.Engagement<HypermediaContentType>
 	})()
 
 	// enqueue the result

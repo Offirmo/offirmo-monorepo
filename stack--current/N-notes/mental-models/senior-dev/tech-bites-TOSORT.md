@@ -15,7 +15,7 @@ Pull Requests:
 
 
 
-    “Clean Craftsmanship”Medal by Robert C. Martin Code quality 
+    “Clean Craftsmanship” by Robert C. Martin Code quality 
 
         Turned out to be EXCELLENT book. Definitely technical. Half of it forms the most comprehensive resource on TDD I’ve ever read. (I’m contemplating creating a separate category for Testing/TDD).
 
@@ -31,7 +31,7 @@ Pull Requests:
 
         Still reading this multi-book encyclopedia JavaScriptica grinning face with smiling eyes 
 
-    “Revising Prose”Medal by Richard A. Lanham Writing
+    “Revising Prose” by Richard A. Lanham Writing
 
         Does one thing, and does it very well: improves your sentence structure.
 
@@ -42,19 +42,7 @@ Pull Requests:
 
 
 
-
-
-monolith refactoring
-1. Move code into a good module structure, unpicking code and dependencies along the way
-1. Understand the domain and build good and scalable abstractions in the form of new APIs which are backed directly by the database (no managers, etc.)
-1. Replace usage of the old mess with the new APIs, validate consistency, etc.
-
-
-
-[ ] https://www.hiredintech.com/soft-skills/common-questions/before-the-interview/
-
-
-http://regex.info/blog/2006-09-15/247
+http://regex.info/blog/2006-09-15/247 = lots of fun
 
 
 In the future I plan on avoiding these mistakes by asking myself two questions:
@@ -66,12 +54,6 @@ https://ryanwarnock.me/blog/260222.html
 
 
 https://twitter.com/dan_abramov/status/1470613731071696896
-
-how to build resilience
-how to influence others
-how to job craft
-how to break out of a mental rut
-https://hbr.org/2019/09/to-coach-junior-employees-start-with-4-conversations
 
 
 https://blockprotocol.org/

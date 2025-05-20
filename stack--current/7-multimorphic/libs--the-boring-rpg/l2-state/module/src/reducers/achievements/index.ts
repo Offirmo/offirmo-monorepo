@@ -38,8 +38,9 @@ function _refresh_achievements(state: Immutable<State>): Immutable<State> {
 			// tell the user
 			engagement = enqueueEngagement(engagement,
 				{
+					flow: 'side',
 					story: {
-						kind: 'unit',
+						//kind: 'unit',
 						message: RichText.fragmentⵧblock()
 							.pushStrong('🏆 Achievement unlocked:')
 							//.pushLineBreak() // TODO review, display not great
@@ -51,7 +52,7 @@ function _refresh_achievements(state: Immutable<State>): Immutable<State> {
 							.done(),
 						role: 'system',
 					},
-					flow: 'side',
+					storyⵧllm: `You received the achievement “${name}“!`,
 					attention_needed: 'log',
 					hints: {
 						key: 'achievement-unlocked'

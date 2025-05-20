@@ -1,4 +1,4 @@
-import type { Immutable } from '@offirmo-private/ts-types'
+import type {Immutable, WithHints} from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 import {
 	normalize,
@@ -19,7 +19,7 @@ import type {
 	OHAHyperLink, OHAPendingEngagement,
 } from '../types/types.ts'
 import { promote_toꓽOHAHyperLink } from '../types/selectors.ts'
-import { isꓽOHAHyperLink } from '../types/guards.ts'
+import { isꓽOHAHyperLink, isꓽOHAHyperActionBlueprint } from '../types/guards.ts'
 import { getꓽuriⵧnormalized‿str } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
@@ -57,31 +57,33 @@ function getꓽcta(hyper: OHAHyperLink | OHAHyperActionBlueprint): RichText.Node
 		capitalizeⵧfirst,
 	)
 
-	switch (hints.change) {
-		case 'none':
-			break
-		case 'create':
-			candidate = '🆕 ' + candidate
-			break
-		case 'delete':
-			candidate = '❌ ' + candidate
-			break
-		case 'update':
-			candidate = '❇️ ' + candidate
-			break
-		case 'upgrade':
-			candidate = '✳️ ' + candidate
-			break
-		case 'permission':
-			candidate = '🪪 ' + candidate
-			break
+	if (isꓽOHAHyperActionBlueprint(hyper)) {
+		const { hints = {} } = hyper
+		switch (hints.change) {
+			case 'none':
+				break
+			case 'create':
+				candidate = '🆕 ' + candidate
+				break
+			case 'delete':
+				candidate = '❌ ' + candidate
+				break
+			case 'update':
+				candidate = '❇️ ' + candidate
+				break
+			case 'upgrade':
+				candidate = '✳️ ' + candidate
+				break
+			case 'permission':
+				candidate = '🪪 ' + candidate
+				break
 
-		case 'reduce':
-		// fallthrough
-		default:
-			if (!isꓽOHAHyperLink(hyper))
+			case 'reduce':
+			// fallthrough
+			default:
 				candidate = '▶️ ' + candidate
-			break
+				break
+		}
 	}
 
 	return candidate
@@ -93,7 +95,7 @@ function getꓽlink‿str(link: Immutable<OHAHyperLink>): string {
 }
 
 function getꓽhints(repr: Immutable<OHAHyperMedia>): Immutable<OHARichTextHints> {
-	const { $hints = {} } = repr
+	const { $hints = {} } = repr as any
 	return $hints
 }
 

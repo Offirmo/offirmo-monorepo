@@ -65,15 +65,46 @@ function ᄆEngagements({ engagements }: EngagementProps) {
 	if (engagements.length === 0) return undefined
 
 	return [
-		...engagements.map(engagement => {
-			return (
-				<div key={engagement.uid}>
-					{renderⵧto_react(engagement.story)}
-				</div>
-			)
-		}),
-			<hr key="sep--engagements"/>
-		]
+		<div key="wrapper--engagements" className="o⋄flex--directionꘌcolumn" style={{
+			backgroundColor: 'lightgray',
+			gap: '1px',
+		}}>
+			{...engagements.map(engagement => {
+				console.log(`XXX Engagement`, engagement)
+				const { attention_needed = 'normal' } = engagement
+				const fgcolor = ((): CSSProperties['color'] => {
+					switch (attention_needed) {
+						case 'fatal':
+						case 'alert':
+						case 'error':
+							return 'var(--o⋄color⁚fg--error)'
+						case 'warning':
+							return 'var(--o⋄color⁚fg--warning)'
+						case 'notice':
+							return 'var(--o⋄color⁚fg--info)'
+						case 'normal':
+							return 'var(--o⋄color⁚fg--main)'
+						case 'log':
+							return 'var(--o⋄color⁚fg--secondary)'
+						case 'debug':
+							return 'var(--o⋄color⁚fg--auxiliary)'
+						default:
+							return 'var(--o⋄color⁚fg--error)'
+					}
+				})()
+
+				return (
+					<div key={engagement.uid} style={{
+						backgroundColor: 'var(--o⋄color⁚bg--main)',
+						color: fgcolor,
+					}}>
+						{renderⵧto_react(engagement.story)}
+					</div>
+				)
+			})}
+		</div>,
+		<hr key='sep--engagements'/>
+	]
 }
 
 interface LinksProps {

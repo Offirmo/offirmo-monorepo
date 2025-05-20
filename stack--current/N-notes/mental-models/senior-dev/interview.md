@@ -5,6 +5,7 @@ funnel https://posthog.com/newsletter/how-to-get-job-startup
 
 https://www.techinterviewhandbook.org/understanding-compensation/
 
+[ ] https://www.hiredintech.com/soft-skills/common-questions/before-the-interview/
 
 https://www.techinterviewhandbook.org/
 

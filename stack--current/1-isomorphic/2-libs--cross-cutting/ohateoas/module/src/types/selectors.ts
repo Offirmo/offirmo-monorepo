@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	type Url‿str,
-	getꓽuriⵧnormalized‿str as _getꓽuriⵧnormalized‿str,
+	getꓽuriⵧnormalized‿str as _getꓽuriⵧnormalized‿str, type Uri‿x,
 } from '@offirmo-private/ts-types-web'
 
 import type { OHAHyperLink, OHAHyperLink‿x, OHALinkRelation } from './types.ts'
@@ -20,7 +20,7 @@ function promote_toꓽOHAHyperLink(link: Immutable<OHAHyperLink‿x>, hints: Imm
 
 	return {
 		...hints,
-		href: link,
+		href: link as Uri‿x, // TODO better TS discrimination
 	}
 }
 
@@ -28,7 +28,7 @@ function getꓽuriⵧnormalized‿str(link: Immutable<OHAHyperLink‿x>): Url‿
 	if (isꓽOHAHyperLink(link))
 		return _getꓽuriⵧnormalized‿str(link.href)
 
-	return _getꓽuriⵧnormalized‿str(link)
+	return _getꓽuriⵧnormalized‿str(link as Uri‿x) // TODO better TS discrimination
 }
 
 /////////////////////////////////////////////////

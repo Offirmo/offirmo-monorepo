@@ -1,5 +1,9 @@
-import type { SemVer } from '@offirmo-private/ts-types'
-import {normalizeꓽuri‿str, getꓽscheme_specific_part, ReducerAction} from '@offirmo-private/ts-types-web'
+import { type TimestampUTCMs, getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import {
+	normalizeꓽuri‿str,
+	getꓽscheme_specific_part,
+	type ReducerAction,
+} from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 import {
 	DEFAULT_ROOT_URI,
@@ -7,17 +11,19 @@ import {
 	type OHAServer,
 	type OHAStory,
 	type OHAHyperActionBlueprint,
-	type OHAFeedback, OHALinkRelation, type OHAHyperLink, type OHAPendingEngagement,
+	type OHAFeedback, OHALinkRelation, type OHAHyperLink, type OHAPendingEngagement, type OHAHyperMedia,
 } from '@offirmo-private/ohateoas'
-import { createꓽall_store_fns } from '@tbrpg/interfaces'
+import {ActionType, createꓽall_store_fns} from '@tbrpg/interfaces'
 import * as UIRT from '@tbrpg/ui--rich-text'
+import * as TBRPGState from "@tbrpg/state";
+import {will_next_play_be_good_at} from "@tbrpg/state";
 
 /////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////
 
-const DEBUG = false
+const DEBUG = true
 
 /////////////////////////////////////////////////
 
@@ -53,15 +59,15 @@ function createꓽserver(): OHAServer {
 		// prepare aggregation
 		let $builder = RichText.fragmentⵧblock() // "block" bc maps to a ~frame/sub-browser
 
-		const links: OHARichTextHints['links'] = {
+		const links: NonNullable<OHARichTextHints['links']> = {
 			[OHALinkRelation.self]: normalizeꓽuri‿str(path), // intentionally strip query & path until considered relevant
 			[OHALinkRelation.home]: URIꘌROOT, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
 		}
 
-		const actions: OHARichTextHints['actions'] = {
+		const actions: NonNullable<OHARichTextHints['actions']> = {
 		}
 
-		const engagements: OHARichTextHints['engagements'] = []
+		const engagements: NonNullable<OHARichTextHints['engagements']> = []
 
 		const prompt: Array<PromptFragment> = []
 		prompt.push({ text: `
@@ -75,16 +81,10 @@ a fantasy RPG where you play as a hero and try to maximise your power and explor
 		const $recap = UIRT.getꓽrecap(state.u_state)
 		prompt.push({text: RichText.renderⵧto_text($recap)})
 
-		// XXX should come from the state
-		engagements.push({
-			flow: 'out',
-			sequence: 'session',
-			attention_needed: 'notice',
-			//auto_dismiss_delay_ms: 'normal',
-			story: 'Welcome to my game! This is a hobby game, no guarantee.',
-
-			uid: -1
-		} as OHAPendingEngagement)
+		const pending_engagements = TBRPGState.getꓽpending_engagements(state.u_state)
+		pending_engagements.forEach(pe => {
+			engagements.push(pe as any) // TODO immu
+		})
 
 		// TODO 1D recursive routing
 		switch (path) {
@@ -135,6 +135,21 @@ a fantasy RPG where you play as a hero and try to maximise your power and explor
 					$builder = $builder.pushBlockFragment('You can play again in ' + AppState.getꓽhuman_time_to_next_energy(state))
 				}*/
 
+				if (TBRPGState.is_inventory_full(state.u_state)) {
+					xxx
+					{
+						msg_main: 'Your inventory is full! You can’t play until you make some space.',
+							choices: [
+						{
+							msg_cta: 'Manage Inventory (equip, sell…)',
+							value: 'inventory',
+							msgg_as_user: () => 'Let’s sort out my stuff.',
+							callback: () => game_instance.view.set_state(() => ({mode: 'inventory'})),
+						},
+					],
+					}
+				}
+
 				actions['play'] = {
 					type: 'play',
 
@@ -149,6 +164,7 @@ a fantasy RPG where you play as a hero and try to maximise your power and explor
 
 						story: {
 							message: 'Exploring…',
+							messageⵧllm: '', // no use
 							hints: {
 								durationⵧmin‿ms: 1000, // if present, never resolve the action faster than this (illusion of labor) Do not abuse! (default to some value depending on the verb)
 							},
@@ -187,9 +203,55 @@ a fantasy RPG where you play as a hero and try to maximise your power and explor
 	}
 
 	const dispatch: OHAServer['dispatch'] = async (action: ReducerAction) => {
-		console.log(`Server: asked to dispatch action…`, action)
+		// reminder that the action contains its own feedback!
+
+		const now_ms = getꓽUTC_timestamp‿ms()
+		console.log(`Server: asked to dispatch action…`, { action, now_ms })
+		action = {
+			now_ms,
+			...action
+		}
+
+		let result_story: OHAStory | undefined = undefined
+
+		const state = all_store_fns.getSnapshot()
+
+		switch (action.type) {
+			case ActionType['play']: {
+				if (TBRPGState.is_inventory_full(state.u_state)) {
+					result_story = {
+						kind: 'unit',
+						role: 'assistant',
+						message: 'Your inventory is full! You can’t play until you make some space.',
+					}
+				} else {
+					const is_good = TBRPGState.will_next_play_be_good_at(state, now_ms)
+
+					if (!is_good) {
+						// interrupt
+						throw new Error(`Not implemented!`)
+					} else {
+						result_story = {
+							kind: 'unit',
+							role: 'assistant',
+							message: 'Encountered something!',
+							hints: {
+								[OHALinkRelation.continueᝍto]: '/session/adventures/last'
+							}
+						}
+					}
+				}
+				break
+			}
+
+			default:
+				break
+		}
 
 		all_store_fns.dispatch(action)
+
+
+		return result_story
 	}
 
 	return {

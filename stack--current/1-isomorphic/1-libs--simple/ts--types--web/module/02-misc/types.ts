@@ -4,14 +4,18 @@ import { type TimestampUTCMs } from '@offirmo-private/timestamps'
 /////////////////////////////////////////////////
 
 // see https://react.dev/learn/extracting-state-logic-into-a-reducer
-export interface ReducerAction {
-	type: string // a unique identifier of this action
+export interface BaseReducerAction {
 	now_ms?: TimestampUTCMs // do not set manually! -> better inferred at dispatch. But can be useful for tests or replay.
 	expected_revisions?: {
 		// prevent this action from being applied if some parts of the state (referenced by k) have been modified since the last time we checked
 		// Do NOT abuse! Ideally, actions should be idempotent!!
 		[k:string]: number
 	}
+}
+export interface ReducerAction extends BaseReducerAction {
+	type: string // a unique identifier of this action
+
+	[k: string]: any // TODO better type
 }
 
 // https://react.dev/reference/react/useReducer#parameters

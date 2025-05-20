@@ -40,35 +40,36 @@ function createꓽall_store_fns(SXC?: TBRSoftExecutionContext): AllStoreFns<Stat
 	}
 
 	function reducer(state: Immutable<State>, action: Immutable<TBRPGAction>): Immutable<State> {
+		const action_ts_discrimination_not_working = action as any
 		switch (action.type) {
 			case ActionType['play']:
 				return TBRPGState.play(state, action)
 			case ActionType['equip_item']:
-				return TBRPGState.equip_item(state, action)
+				return TBRPGState.equip_item(state, action_ts_discrimination_not_working)
 			case ActionType['sell_item']:
-				return TBRPGState.sell_item(state, action)
+				return TBRPGState.sell_item(state, action_ts_discrimination_not_working)
 			case ActionType['rename_avatar']:
-				return TBRPGState.rename_avatar(state, action)
+				return TBRPGState.rename_avatar(state, action_ts_discrimination_not_working)
 			case ActionType['switch_class']:
-				return TBRPGState.switch_class(state, action)
+				return TBRPGState.switch_class(state, action_ts_discrimination_not_working)
 			case ActionType['redeem_code']:
-				return TBRPGState.attempt_to_redeem_code(state, action)
+				return TBRPGState.attempt_to_redeem_code(state, action_ts_discrimination_not_working)
 			case ActionType['re_seed']:
-				return TBRPGState.re_seed(state, action)
+				return TBRPGState.re_seed(state, action_ts_discrimination_not_working)
 			case ActionType['on_start_session']:
-				return TBRPGState.on_start_session(state, action)
+				return TBRPGState.on_start_session(state, action_ts_discrimination_not_working)
 			case ActionType['on_logged_in_refresh']:
-				return TBRPGState.on_logged_in_refresh(state, action)
+				return TBRPGState.on_logged_in_refresh(state, action_ts_discrimination_not_working)
 			case ActionType['acknowledge_engagement_msg_seen']:
-				return TBRPGState.acknowledge_engagement_msg_seen(state, action)
+				return TBRPGState.acknowledge_engagement_msg_seen(state, action_ts_discrimination_not_working)
 			case ACTION_TYPEꘌUPDATE_TO_NOW:
-				return TBRPGState.update_to_now(state, action)
+				return TBRPGState.update_to_now(state, action_ts_discrimination_not_working)
 			case ACTION_TYPEꘌNOOP:
-				return reduceꓽnoop(state, action)
+				return reduceꓽnoop(state, action_ts_discrimination_not_working)
 			case ACTION_TYPEꘌSET:
-				return reduceꓽset(state, action)
+				return reduceꓽset(state, action_ts_discrimination_not_working)
 			case ACTION_TYPEꘌHACK:
-				return reduceꓽhack(state, action)
+				return reduceꓽhack(state, action_ts_discrimination_not_working)
 			default:
 				throw new Error(`Unknown action type "${action.type}"!`)
 		}

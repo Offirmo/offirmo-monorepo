@@ -34,7 +34,7 @@ function create(starting_url: Url‿str = DEFAULT_ROOT_URI): Immutable<State> {
 	}
 }
 
-function onꓽloaded(state: Immutable<State>, $representation: OHAHyperMedia | Error): Immutable<State> {
+function onꓽloaded(state: Immutable<State>, $representation: Immutable<OHAHyperMedia | Error>): Immutable<State> {
 	DEBUG && console.log(`↘ ${LIB}: onꓽloaded()`, {
 		state: structuredClone(state),
 		$representation,
@@ -50,7 +50,7 @@ function onꓽloaded(state: Immutable<State>, $representation: OHAHyperMedia | E
 	if ($representation instanceof Error) {
 		const error = $representation
 
-		if (state.$representation?.$hints?.underlying__data === error) {
+		if (RichText.isꓽNode(state.$representation) && state.$representation?.$hints?.underlying__data === error) {
 			$representation = state.$representation
 		}
 		else {
@@ -122,6 +122,7 @@ function navigate_to(state: Immutable<State>, options: {
 		type = 'push',
 		reload = false,
 	} = options
+	assert(href, `navigate_to(): href should be defined!`)
 
 	const target_str = getꓽuriⵧnormalized‿str(href)
 

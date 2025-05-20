@@ -11,12 +11,12 @@ function ᄆComponent({url}: Props) {
 	if (window.oᐧextra?.flagꓽdebug_render) console.log('🔄 Chrome/1')
 
 	return (
-		<div style={{backgroundColor: 'lightgoldenrodyellow'}}>
+		<div style={{backgroundColor: 'var(--o⋄color⁚bg--code)'}}>
 			<button>🏠</button>
 			<button>⏪</button>
 			<button>⏩</button>
 			<button>🔃</button>
-			<code>{url}</code>
+			<code> {url}</code>
 		</div>
 	)
 }
