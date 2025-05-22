@@ -23,15 +23,19 @@ ln -s "$HOME/Library/Logs/Claude/" "$HOME/work/bin/symlinked/claude/logs/"
     }
   }
 ```
-
+npx -y @modelcontextprotocol/server-filesystem /Users/sam/Desktop
 
 ```json
 {
   "mcpServers": {
     "hello-world": {
-      "command": "node",
+      "command": "/Users/sam/.nvm/nvm-exec",
+      "env": {
+        "NODE_VERSION": "23"
+      },
       "args": [
-        "--experimental-strip-types",
+        "node",
+        "--disable-warning=ExperimentalWarning --experimental-strip-types",
         "/Users/sam/work/src/off/offirmo-monorepo/stack--current/X-incubator/active/mcp/module/src/index.ts",
         "Hi"
       ]
@@ -39,3 +43,6 @@ ln -s "$HOME/Library/Logs/Claude/" "$HOME/work/bin/symlinked/claude/logs/"
   }
 }
 ```
+node --disable-warning=ExperimentalWarning --experimental-strip-types /Users/sam/work/src/off/offirmo-monorepo/stack--current/X-incubator/active/mcp/module/src/index.ts
+
+NODE_VERSION=23 /Users/sam/.nvm/nvm-exec node --disable-warning=ExperimentalWarning --experimental-strip-types /Users/sam/work/src/off/offirmo-monorepo/stack--current/X-incubator/active/mcp/module/src/index.ts
