@@ -1,4 +1,5 @@
 Agile
+antipattern -- promotion-driven development = need shiny new stuff to get promoted https://medium.com/@quarterdome/promotion-driven-development-fbc6f48d43e8
 Architectural Decision Records (ADRs) https://adr.github.io/
 Big Hairy Audacious Goals (BHAG) https://www.jimcollins.com/article_topics/articles/BHAG.html
 big rocks

@@ -964,6 +964,7 @@ resentment = Resentment, born of weakness, harms no one more than the weak perso
 respect
 rest and vest https://news.ycombinator.com/item?id=14943146
 restraining order or protective order = an order used by a court to protect a person in a situation often involving alleged domestic violence, child abuse and neglect, assault, harassment, stalking, or sexual assault https://en.wikipedia.org/wiki/Restraining_order
+rich -- downsides https://www.nzherald.co.nz/entertainment/39b-made-minecraft-creator-depressed-ive-never-felt-more-isolated/TWVBK5OKRFUXSKD3OVX7KNKTGQ/ https://money.cnn.com/2015/08/31/technology/minecraft-creator-tweets/index.html
 rights -- no discrimination based on race, color, religion, sex, and national origin = https://en.wikipedia.org/wiki/Civil_Rights_Act_of_1964
 rights -- of abode https://en.wikipedia.org/wiki/Right_of_abode
 rights -- of initiative -- ex. of LMPT rejected referendum d'initiative nationale
@@ -1210,7 +1211,7 @@ word frequency -- English https://frequencylist.com/
 workaholic
 works of mercy -- corporal
 works of mercy -- spiritual
-works of mercy https://en.wikipedia.org/wiki/Works_of_mercy
+works of mercy = https://en.wikipedia.org/wiki/Works_of_mercy
 worldview defense = a psychological mechanism that strengthens people's connection with their in-group as a defense mechanism against threats https://en.wikipedia.org/wiki/Mortality_salience#Potential_to_cause_worldview_defense
 xenia https://greekmythcomix.com/comic/how-to-do-xenia/
 XY problem = "what are you trying to achieve?" https://xyproblem.info/

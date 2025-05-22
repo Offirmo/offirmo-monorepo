@@ -9,12 +9,12 @@
 2025-04 Shopify threatening internal memo "Reflexive AI usage is now a baseline expectation" https://x.com/tobi/status/1909251946235437514
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
+[ ] https://ghuntley.com/
 [ ] https://openai.com/news/
+[ ] https://simonwillison.net/
 [ ] https://www.anthropic.com/news
 [ ] https://www.perspectiveapi.com/
 [ ] https://www.sbert.net/
-[ ] https://ghuntley.com/
-[ ] https://simonwillison.net/
 [ ] People + AI Guidebook https://pair.withgoogle.com/guidebook/patterns
 A::B Prompting Challenge: $10k to prove me wrong! https://twitter.com/VictorTaelin/status/1776677635491344744 https://twitter.com/headinthebox/status/1777016124141650254
 Agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
@@ -137,6 +137,7 @@ knowledge cutoff
 labyrinth https://blog.cloudflare.com/ai-labyrinth/
 langchain = a framework for developing applications powered by language models https://python.langchain.com/docs/get_started/introduction
 latency
+latent representation = mysterious neural network representation of an idea/concept, waiting to be converted in text / image etc.
 laziness = cases where the model doesn’t complete a task https://openai.com/blog/new-embedding-models-and-api-updates
 learning -- Transfer learning = a technique where a model is first pre-trained on a data-rich task before being fine-tuned on a downstream task
 left-leaning biases https://tech.slashdot.org/story/25/04/10/1628209/meta-says-llama-4-targets-left-leaning-bias
@@ -147,6 +148,7 @@ lib -- Transformers https://github.com/huggingface/transformers  https://hugging
 LLM -- "Language Model for Dialogue Applications" (LaMDA) 137B model from Google AI
 LLM -- "Pathways Language Model" (PaLM) 540B model from Google AI
 LLMs - large language models
+luddites
 machine learning feature = ‘feature’, in this context might be something like ‘number of times UserA has viewed Issue123 in the last week', which may be a useful signal to a machine learning model
 machine learning feature store = ex. Tecton https://docs.tecton.ai/docs/introduction
 MCP https://modelcontextprotocol.io/tutorials/building-mcp-with-llms
