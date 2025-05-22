@@ -621,6 +621,7 @@ peer review, green build = condition to merge a code change
 perf
 perf -- as a feature
 perf -- only pay for what you need
+performance -- analysis https://www.brendangregg.com/methodology.html
 permissions -- AppArmor https://en.wikipedia.org/wiki/AppArmor
 personal data
 personal data (PD)
@@ -882,6 +883,7 @@ WORA -- Write Once, Debug Everywhere = because of subtle incompatibilities
 worse is better https://www.dreamsongs.com/WorseIsBetter.html
 XML
 XML (Extensible Markup Language)
+xml - zalgo is tony the pony = You can't parse [X]HTML with regex https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454
 XSLT
 XSS (Cross-site scripting)
 YAGNI (you aren't gonna need it) -- Too general too soon https://frontendatscale.com/issues/15/
