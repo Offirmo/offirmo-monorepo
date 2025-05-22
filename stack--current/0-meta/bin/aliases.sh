@@ -103,3 +103,5 @@ alias   mono7ltlr='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias   mono7ltl4='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--the-boring-rpg/l4-ohateoas/;                        tabset --badge mono7ltl4'
 
 alias      monoMg='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd M-minisites/;      cd generator/;                                               tabset --badge monoMg'
+
+alias     monoXam='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd X-incubator/;      cd active/mcp/;                                              tabset --badge monoXam'

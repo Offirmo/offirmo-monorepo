@@ -65,7 +65,8 @@
 			"7-multimorphic/libs--the-boring-rpg/*",
 			"7-multimorphic/X-incubator/active/*",
 
-			"M-minisites/*"
+			"M-minisites/*",
+			"X-incubator/active/*"
 		]
 	},
 
@@ -90,6 +91,7 @@
 		"zx": "^8"
 	},
 	"devDependencies": {
+		"@modelcontextprotocol/sdk": "^1",
 		"@parcel/config-default": "^2",
 		"@parcel/packager-raw-url": "^2",
 		"@parcel/plugin": "^2",
@@ -160,7 +162,8 @@
 		"tildify": "^3",
 		"tslib": "^2",
 		"typescript": "^5",
-		"typescript-string-enums": "^1"
+		"typescript-string-enums": "^1",
+		"zod": "^3"
 	},
 	"resolutions": {
 		"sharp": "^0.34"
