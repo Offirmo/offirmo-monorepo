@@ -9,3 +9,4 @@ license -- proliferation https://en.wikipedia.org/wiki/License_proliferation
 source available = https://news.itsfoss.com/open-source-source-available/
 tea https://tea.xyz/rewards-for-oss-contributions
 tidelift https://tidelift.com/
+UN Open Source Principles https://unite.un.org/fr/news/france-becomes-first-government-endorse-un-open-source-principles-joined-19-organizations

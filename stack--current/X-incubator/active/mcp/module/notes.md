@@ -1,5 +1,8 @@
 
-https://modelcontextprotocol.io/quickstart/server#node
+* spec https://modelcontextprotocol.io/specification/2025-03-26
+* https://modelcontextprotocol.io/quickstart/server#node
+* roadmap https://modelcontextprotocol.io/development/roadmap
+
 
 mkdir -p ~/work/bin/symlinked/claude/
 ln -s "$HOME/Library/Application Support/Claude/claude_desktop_config.json" "$HOME/work/bin/symlinked/claude/config.json"

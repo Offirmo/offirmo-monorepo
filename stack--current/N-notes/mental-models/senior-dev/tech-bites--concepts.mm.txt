@@ -242,6 +242,7 @@ data format -- do NOT conflate serialization w/ working representation w/ persis
 data format -- future proofing = vastly overrated now that we have semver!! (+ migrations)
 data format -- interchange -- https://en.wikipedia.org/wiki/Advanced_Scientific_Data_Format
 data format -- interchange -- JSON -- binary https://msgpack.org/
+data format -- interchange -- JSON -- RPC https://www.jsonrpc.org/
 data format -- interchange -- JSON https://www.json.org/
 data format -- interchange -- JSON mini = some sort of protobuf-derived space-saving representation (single letters for keys)
 data format -- interchange -- JSON5 https://json5.org/ https://github.com/json5/json5
@@ -496,6 +497,8 @@ language features -- data hiding
 language features -- encapsulation
 language features -- polymorphism
 language interprété types simples / types par référence
+Language Server Index Format (LSIF)
+Language Server Protocol https://microsoft.github.io/language-server-protocol/
 language tags
 languages -- configuration
 languages -- configuration -- https://github.com/bazelbuild/starlark/

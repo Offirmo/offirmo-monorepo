@@ -3,6 +3,7 @@
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
 2022 ChatGPT https://openai.com/index/chatgpt/
 2023-10 Claude 2
+2024 Google I/O AI built-in Chrome
 2024-11 MCP https://www.anthropic.com/news/model-context-protocol
 2025-03 4o image generation = incredible, +1M users in 1h https://openai.com/index/introducing-4o-image-generation/ https://x.com/sama/status/1906771292390666325
 2025-04 multimodal img gen https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image
@@ -18,6 +19,8 @@
 [ ] People + AI Guidebook https://pair.withgoogle.com/guidebook/patterns
 A::B Prompting Challenge: $10k to prove me wrong! https://twitter.com/VictorTaelin/status/1776677635491344744 https://twitter.com/headinthebox/status/1777016124141650254
 Agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
+agents = ~unclear definition
+agents -- graph
 agents -- principals
 agents = you provide a goal, They'll generate a task list and get to work https://zapier.com/blog/ai-agent/
 AGI -- ANI -> AGI -> ASI = narrow(weak) / general(strong) / super[human](strong)
