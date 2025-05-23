@@ -4,6 +4,10 @@ turned to typescript + no incompatible cjs export + modernized
 
 TODO add a feature to validate JSON
 
+```
+import stringifyⵧstable from '@offirmo-private/json-stable-stringify'
+```
+
 See also
 * https://typia.io/docs/json/stringify/
 * https://www.npmjs.com/package/fast-json-stringify

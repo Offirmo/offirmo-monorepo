@@ -1,0 +1,35 @@
+{
+	"name": "@offirmo-private/db--generic-core--migrations",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/knexfile.ts"
+	},
+	"source": "module/knexfile.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@offirmo-private/normalize-string": "*",
+		"knex": "^3",
+		"tiny-invariant": "^1"
+	},
+	"scripts": {
+		"check--ts": "echo \"@offirmo-private/db--generic-core--migrations\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s check--ts"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^22",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
+	}
+}

@@ -65,6 +65,7 @@
 			"7-multimorphic/libs--the-boring-rpg/*",
 			"7-multimorphic/X-incubator/active/*",
 
+			"A-backend/*",
 			"M-minisites/*",
 			"X-incubator/active/*"
 		]
@@ -136,6 +137,7 @@
 		"ignore-walk": "^7",
 		"json5": "^2",
 		"jsondiffpatch": "^0.7",
+		"knex": "^3",
 		"lightningcss": "^1",
 		"limit-once": "^0.16",
 		"load-json-file": "^7",

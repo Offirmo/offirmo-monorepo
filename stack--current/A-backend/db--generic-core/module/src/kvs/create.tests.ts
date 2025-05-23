@@ -3,7 +3,6 @@
 import { expect, assert } from 'chai'
 
 import { LIB } from '../consts'
-import get_db from '../db'
 import {
 	get_test_base_user_01,
 	get_test_base_user_02,
