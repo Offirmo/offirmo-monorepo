@@ -1,7 +1,7 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { NORMALIZERS, combine_normalizers } from '@offirmo-private/normalize-string'
 
-import { BaseUser, User, PUser } from './types'
+import type { BaseUser, User, PUser } from './types'
 import {
 	logger,
 	deep_equals_stable,

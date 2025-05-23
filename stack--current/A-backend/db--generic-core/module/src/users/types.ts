@@ -1,4 +1,4 @@
-import { WithTimestamps } from '../types'
+import type { WithTimestamps } from '../types'
 
 /////////////////////
 // NOTE: This is CODE data

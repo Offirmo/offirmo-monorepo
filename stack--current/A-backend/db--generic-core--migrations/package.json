@@ -7,29 +7,37 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/knexfile.ts"
+		".": "./module/deps.ts"
 	},
-	"source": "module/knexfile.ts",
-	"peerDependencies": {
-		"tslib": "^2"
-	},
+	"source": "module/deps.ts",
 	"dependencies": {
 		"@offirmo-private/normalize-string": "*",
 		"knex": "^3",
-		"tiny-invariant": "^1"
+		"pg": "^8",
+		"pg-connection-string": "^2",
+		"tiny-invariant": "^1",
+		"tslib": "^2"
 	},
 	"scripts": {
 		"check--ts": "echo \"@offirmo-private/db--generic-core--migrations\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"check": "run-s check--ts"
+		"check": "run-s check--ts",
+
+		"latest":   "knex migrate:latest    --knexfile ./module/knexfile.ts  --migrations-directory ./module/migrations/",
+		"rollback": "knex migrate:rollback",
+		"up":       "knex migrate:up",
+		"down":     "knex migrate:down",
+		"reset":    "knex migrate:rollback --all && knex migrate:latest",
+
+		"new": "knex migrate:make TODO -x ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^22",
+		"@types/pg": "^8",
 		"npm-run-all": "^4",
-		"tslib": "^2",
 		"typescript": "^5"
 	}
 }

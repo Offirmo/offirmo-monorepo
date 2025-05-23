@@ -1,6 +1,6 @@
 /////////////////////
 
-import {expect} from 'chai'
+import { expect } from 'chai'
 
 import { LIB } from '../consts'
 import { TABLE__USERS } from './consts'

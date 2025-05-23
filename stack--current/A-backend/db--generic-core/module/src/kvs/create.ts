@@ -1,10 +1,10 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
-import { WithoutTimestamps } from '../types'
-import { PKeyValue } from './types'
+import type { WithoutTimestamps } from '../types'
+import type { PKeyValue } from './types'
 import { TABLE__KEY_VALUES } from './consts'
-import { PUser } from '../users'
+import type { PUser } from '../users'
 import { logger } from '../utils'
 import get_db from '../db'
 

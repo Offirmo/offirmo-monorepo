@@ -35,6 +35,8 @@ yarn reset
 yarn new
 ```
 
+--knexfile
+
 ### local dev
 
 1. Install Docker Desktop
@@ -74,13 +76,4 @@ In prod:
 
 In dev:
 - if fresh docker image: ensure port mapping 5432 -> 5432
-- otherwise check whether the docker DB matches the hardcoded dev preset
-
-
-## Tosort
-
-We target the current heroku PostgreSQL addon version:
-* 12.7 (2021/08/03)
-* 12.6 (2021/05/02)
-* 12.4 (2020/11/10)
-* 12.3 (2020/07/17)
+- otherwise, check whether the docker DB matches the hardcoded dev preset

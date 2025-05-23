@@ -1,8 +1,8 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
 import get_db from '../db'
-import { BaseUser, NetlifyUser, PUser } from './types'
+import type { BaseUser, NetlifyUser, PUser } from './types'
 import { TABLE__USERS } from './consts'
 import { sanitize_persisted, extract_base } from './common'
 import { get_base_user_from_netlify_user, create_netlify_user, create_user_through_netlify } from './create'

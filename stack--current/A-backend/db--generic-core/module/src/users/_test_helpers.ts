@@ -1,9 +1,9 @@
-import { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 import { enforce_immutability } from '@offirmo-private/state-utils'
 
-import { NetlifyUser, BaseUser, PNetlifyUser } from './types'
+import type { NetlifyUser, BaseUser, PNetlifyUser } from './types'
 import { delete_by_email } from './delete'
-import { WithoutTimestamps } from '../types'
+import type { WithoutTimestamps } from '../types'
 import get_db from '../db'
 
 ////////////////////////////////////

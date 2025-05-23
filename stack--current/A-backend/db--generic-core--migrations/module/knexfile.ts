@@ -28,21 +28,22 @@ const COMMON_KNEX_CONFIG = {
 	}*/
 }
 
-module.exports = {
+const development = {
+	...COMMON_KNEX_CONFIG,
+	connection: LOCAL_DEV_CNX_STR,
+}
+const staging = {
+	...COMMON_KNEX_CONFIG,
+	connection: process.env.SECRET_DATABASE_URL,
+}
 
-	development: {
-		...COMMON_KNEX_CONFIG,
-		connection: LOCAL_DEV_CNX_STR,
-	},
+const production = {
+	...COMMON_KNEX_CONFIG,
+	connection: process.env.SECRET_DATABASE_URL,
+}
 
-	staging: {
-		...COMMON_KNEX_CONFIG,
-		connection: process.env.SECRET_DATABASE_URL,
-	},
-
-	production: {
-		...COMMON_KNEX_CONFIG,
-		connection: process.env.SECRET_DATABASE_URL,
-	},
-
+export {
+	development,
+	staging,
+	production,
 }

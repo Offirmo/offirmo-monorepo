@@ -1,10 +1,10 @@
 import { Knex } from 'knex'
 
-////////////////////////////////////
+/////////////////////////////////////////////////
 
 export const NAME = 'kvs'
 
-////////////////////////////////////
+/////////////////////////////////////////////////
 
 export async function up(knex: Knex): Promise<any> {
 	return knex.schema.createTable(NAME, table => {
@@ -41,6 +41,7 @@ export async function up(knex: Knex): Promise<any> {
 	})
 }
 
+/////////////////////////////////////////////////
 
 export async function down(knex: Knex): Promise<any> {
 	return knex.schema.dropTableIfExists(NAME)

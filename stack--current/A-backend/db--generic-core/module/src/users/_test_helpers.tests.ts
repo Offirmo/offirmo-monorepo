@@ -1,6 +1,6 @@
 /////////////////////
 
-import {expect} from 'chai'
+import { expect } from 'chai'
 
 import { LIB } from '../consts'
 import { get_test_netlify_user_01, get_test_netlify_user_01_alt } from './_test_helpers'

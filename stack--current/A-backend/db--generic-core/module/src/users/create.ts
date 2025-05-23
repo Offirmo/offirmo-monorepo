@@ -1,9 +1,9 @@
 import assert from 'tiny-invariant'
-import { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
-import { WithoutTimestamps } from '../types'
+import type { WithoutTimestamps } from '../types'
 import get_db from '../db'
-import { NetlifyUser, BaseUser, PUser, PNetlifyUser, } from './types'
+import type { NetlifyUser, BaseUser, PUser, PNetlifyUser, } from './types'
 import { logger, normalize_email_full } from '../utils'
 import { sanitize_persisted } from './common'
 

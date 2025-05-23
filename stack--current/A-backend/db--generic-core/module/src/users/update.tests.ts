@@ -1,5 +1,5 @@
 /////////////////////
-import {expect} from 'chai'
+import { expect } from 'chai'
 
 import { LIB } from '../consts'
 import get_db from '../db'
