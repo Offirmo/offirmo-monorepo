@@ -1,8 +1,8 @@
 import { overrideHook } from '@offirmo/universal-debug-api-placeholder'
-import { XXError } from '@offirmo/error-utils'
+import { type XXError } from '@offirmo/error-utils'
 
-import { ReleaseChannel, OAServerResponseBody } from './types'
-import { LIB, SERVER_RESPONSE_VERSION } from './consts'
+import { ReleaseChannel, type OAServerResponseBody } from './types.ts'
+import { LIB, SERVER_RESPONSE_VERSION } from './consts.ts'
 
 /////////////////////////////////////////////////
 
@@ -54,7 +54,7 @@ export function create_server_response_body__error<T>(error: Readonly<XXError>):
 	body.error = {
 		message: error.message,
 		code: error.code,
-		logical_stack: error._temp?.SEC?.getLogicalStack(),
+		logical_stack: error._temp?.SXC?.getLogicalStack(),
 	}
 
 	return body

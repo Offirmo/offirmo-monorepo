@@ -39,7 +39,7 @@ export interface OAServerResponseBody<T> extends Omit<OAResponse<T>, "data"> {
 		message: string
 		// no stack trace, can be too big and a security issue
 		code?: string // node
-		logical_stack: string // SEC "safe" and readable logical stack
+		logical_stack: string // SXC "safe" and readable logical stack
 		// TODO some kind of details?
 	}
 

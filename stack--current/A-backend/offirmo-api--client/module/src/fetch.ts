@@ -8,7 +8,7 @@ import {
 	OAServerResponseBody,
 	OAResponse,
 	get_api_base_url,
-} from '@online-adventur.es/api-interface'
+} from '@offirmo-private/offirmo-api--interface'
 
 /////////////////////////////////////////////////
 
@@ -25,7 +25,7 @@ const _state = { // TODO improve
 }
 
 export async function fetch_oa<Req, Res>({
-	SEC = getRootSEC(),
+	SXC = getRootSEC(),
 
 	url,
 	method = 'GET',
@@ -34,7 +34,7 @@ export async function fetch_oa<Req, Res>({
 
 	timeout_ms = 10_000,
 }: {
-	SEC?: SoftExecutionContext
+	SXC?: SoftExecutionContext
 
 	// like fetch:
 	method?: string
@@ -45,11 +45,11 @@ export async function fetch_oa<Req, Res>({
 	// extras
 	timeout_ms?: number
 } = {}): Promise<Immutable<OAResponse<Res>>> {
-	return SEC.xPromiseTry('fetch_oa', async ({ SEC, logger, CHANNEL }) => {
+	return SXC.xPromiseTry('fetch_oa', async ({ SXC, logger, CHANNEL }) => {
 		const request_id = ++_state.request_count
 		const channel: ReleaseChannel = CHANNEL as any
 		logger.trace(`fetch_oa() #${request_id}…`, { method, url, body, headers })
-		const headers_from_SEC = (SEC.getInjectedDependencies() as any).shared_fetch_headers || {}
+		const headers_from_SEC = (SXC.getInjectedDependencies() as any).shared_fetch_headers || {}
 
 		if (_state.error_count > 25)
 			throw new Error(`fetch_oa(): too many errors in the past, circuit breaker!`) // TODO improve with debounce
@@ -139,5 +139,3 @@ export async function fetch_oa<Req, Res>({
 			})
 	})
 }
-
-

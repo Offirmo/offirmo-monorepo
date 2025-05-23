@@ -1,14 +1,14 @@
 import { expect } from 'chai'
 import { getRootSEC } from '@offirmo-private/soft-execution-context'
 
-import { ReleaseChannel, Endpoint, SERVER_RESPONSE_VERSION } from '@online-adventur.es/api-interface'
+import { ReleaseChannel, Endpoint } from '@offirmo-private/offirmo-api--interface'
 
-import { LIB } from './consts'
-import { fetch_oa } from './fetch'
+import { LIB } from './consts.ts'
+import { fetch_oa } from './fetch.ts'
 
 
 describe(`${LIB} - fetch`, function() {
-	const SEC = getRootSEC()
+	const SXC = getRootSEC()
 		.createChild()
 		.setLogicalStack({module: 'UT'})
 		.injectDependencies({ CHANNEL: ReleaseChannel.staging })
@@ -18,7 +18,7 @@ describe(`${LIB} - fetch`, function() {
 		it('should handle 404 properly', function () {
 			this.timeout(10_000)
 			const ↆresult = fetch_oa({
-				SEC,
+				SXC,
 				method: 'GET',
 				url: 'foo-bar-baz',
 			})
@@ -28,7 +28,7 @@ describe(`${LIB} - fetch`, function() {
 		it('should handle a non-json response (should not happen)', function () {
 			this.timeout(10_000)
 			const ↆresult = fetch_oa({
-				SEC,
+				SXC,
 				method: 'GET',
 				url: 'hello-world',
 			})
@@ -40,7 +40,7 @@ describe(`${LIB} - fetch`, function() {
 			//const failure_mode = 'unhandled-rejection' this mode doesn't work as of 2021/04 :sad: TODO fix
 			const failure_mode = 'throw-sync'
 			const ↆresult = fetch_oa({
-				SEC,
+				SXC,
 				method: 'GET',
 				url: Endpoint['test-error-handling'] + '?mode=' + failure_mode,
 			})
@@ -50,7 +50,7 @@ describe(`${LIB} - fetch`, function() {
 		it('should work when receiving data', async function () {
 			this.timeout(10_000)
 			const result = await fetch_oa({
-				SEC,
+				SXC,
 				method: 'GET',
 				url: Endpoint['test-error-handling'] + '?mode=none',
 				//url: Endpoint['hello-world-advanced'] + '/foo?bar=42',
