@@ -1101,6 +1101,7 @@ stereotypes -- karen -- Miss Ann / Becky / Barbecue Becky / Cornerstore Caroline
 stereotypes -- karen = difficult / unreasonable white women, "speak to the manager" a middle class woman who is perceived as entitled or excessively demanding, racist https://en.wikipedia.org/wiki/Karen_(slang)
 stereotypes -- soccer mom https://en.wikipedia.org/wiki/Soccer_mom
 Stigler's law of eponymy = inventor = the one who bring to attention, not the discoverer https://en.wikipedia.org/wiki/Stigler%27s_law_of_eponymy
+stochastic mindset = abandon determinism = understand what maybe can / can't do
 stoicism -- Rudyard Kipling "If" https://en.wikipedia.org/wiki/If%E2%80%94
 straw-dog proposal = (biz jargon) a brainstormed simple draft proposal intended to generate discussion of its disadvantages and to spur the generation of new and better proposals https://en.wikipedia.org/wiki/Straw_man_proposal  https://www.linkedin.com/pulse/straw-man-versus-straw-dog-michael-schwartz/
 Streisand effect = Increased awareness of information caused by efforts to suppress it

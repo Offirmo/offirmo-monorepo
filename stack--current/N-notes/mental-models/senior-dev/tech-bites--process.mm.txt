@@ -34,6 +34,7 @@ Every piece of business finance I could come up with after 10 years as a CFO htt
 exec summary https://lethain.com/present-to-executives/
 fix broken windows https://frontendatscale.com/issues/22/
 full service ownership https://nick.groenen.me/notes/full-service-ownership/#full-service-ownership
+good customer vibes = trust from the customer, in the product and that it will get better. If not = screwed
 Headline driven development (Amazon) https://www.spakhm.com/headline-development
 hiring -- flexibility
 hiring -- paper ceiling https://www.tearthepaperceiling.org/
@@ -68,6 +69,7 @@ progressive deployment strategy -- 04 Stage interval = Allow at least 10 minutes
 progressive deployment strategy -- 06 old stack retention time = Retain the old stack for at least 60 minutes as a reliable fallback option, so that we can promptly restore service if something goes wrong with the new version shortly after deployment
 progressive deployment strategy for controlled rollouts
 RACI matrix = project role and responsibility assignment chart that maps out every task, milestone, or key decision to: Responsible, Accountable, Consulted or Informed
+revenue -- vibe revenue = are you really creating change?
 role and responsibility
 Safe Release Management (SRM) minimizing the customer impact from change-related incidents
 Safe Release Management -- 01 Improving Rollout Safety (i.e. Progressive rollout, Feature Flag Rollout)

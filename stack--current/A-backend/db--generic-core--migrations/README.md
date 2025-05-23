@@ -2,16 +2,16 @@
 
 ## Principles
 
-We only store in the DB **EXPLICIT** data.
+We only store in the DB **EXPLICIT** data as the **source of truth**.
 for ex.
 * user "called": if not explicitly set, stay empty (will default in code)
 * user avatar_url: if not explicitly set, stay empty (will be inferred)
 
-We target the current heroku PostgreSQL addon version:
-* 12.7 (2021/08/03)
-* 12.6 (2021/05/02)
-* 12.4 (2020/11/10)
-* 12.3 (2020/07/17)
+We target the latest PostgreSQL version supported by cloud providers:
+* AWS RDS https://aws.amazon.com/rds/postgresql/
+  * 17 (2025/05/23) 
+
+
 
 * https://softwareengineering.stackexchange.com/questions/328458/is-it-good-practice-to-always-have-an-autoincrement-integer-primary-key
 
@@ -37,13 +37,13 @@ yarn new
 
 ### local dev
 
+1. Install Docker Desktop
 1. launch docker
-2. launch kitematic
-3. in kitematic
-   1. create a PostgreSQL container with the correct version (see above)
-   1. set `POSTGRES_PASSWORD` = `password`
+   1. create a PostgreSQL container with the correct version (see above) use 
    1. map port 5432 -> 5432
-4. check access in pgAdmin (password)
+   1. set `POSTGRES_PASSWORD` = `password`
+1. Download and install https://www.pgadmin.org/download/
+1. check access in pgAdmin (password)
 
 
 ## References
@@ -60,6 +60,7 @@ postgres array:
 * TODO sessions? with confidence level?
 * TODO auto migrate on heroku deploy??
 
+
 ## Troubleshooting
 
 ### Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call?
@@ -74,3 +75,12 @@ In prod:
 In dev:
 - if fresh docker image: ensure port mapping 5432 -> 5432
 - otherwise check whether the docker DB matches the hardcoded dev preset
+
+
+## Tosort
+
+We target the current heroku PostgreSQL addon version:
+* 12.7 (2021/08/03)
+* 12.6 (2021/05/02)
+* 12.4 (2020/11/10)
+* 12.3 (2020/07/17)
