@@ -1,30 +1,30 @@
-const crypto = require('crypto')
-import { NORMALIZERS } from '@offirmo-private/normalize-string'
+import { createHash } from 'node:crypto'
+import { normalizeꓽemailⵧsafe, normalizeꓽemailⵧreasonable, normalizeꓽemailⵧfull } from '@offirmo-private/normalize-string'
 
 
 export function get_gravatar_url(email: string): string {
-	email = NORMALIZERS.normalize_email_reasonable(email) // not too much
-	const md5 = crypto.createHash('md5').update(email).digest('hex')
+	email = normalizeꓽemailⵧreasonable(email) // not too much
+	const md5 = createHash('md5').update(email).digest('hex')
 	return `https://www.gravatar.com/avatar/${md5}?r=pg&d=retro`
 }
 
 
 export function normalize_email_safe(email: string): string {
-	return NORMALIZERS.normalize_email_safe(email)
+	return normalizeꓽemailⵧsafe(email)
 }
 
 export function normalize_email_reasonable(email: string): string {
-	const safe = NORMALIZERS.normalize_email_safe(email)
+	const safe = normalizeꓽemailⵧsafe(email)
 	if (safe.startsWith('offirmo.net+') && safe.endsWith('@gmail.com')) {
 		return safe
 	}
-	return NORMALIZERS.normalize_email_reasonable(email)
+	return normalizeꓽemailⵧreasonable(email)
 }
 
 export function normalize_email_full(email: string): string {
-	const safe = NORMALIZERS.normalize_email_safe(email)
+	const safe = normalizeꓽemailⵧsafe(email)
 	if (safe.startsWith('offirmo.net+') && safe.endsWith('@gmail.com')) {
 		return safe
 	}
-	return NORMALIZERS.normalize_email_full(email)
+	return normalizeꓽemailⵧfull(email)
 }

@@ -1,10 +1,10 @@
 import assert from 'tiny-invariant'
 
-import get_db from '../db'
-import { type PUser } from '../users'
-import { logger } from '../utils'
-import type { PKeyValue } from './types'
-import { TABLE__KEY_VALUES } from './consts'
+import get_db from '../db.ts'
+import { type PUser } from '../users/index.ts'
+import { logger } from '../utils/index.ts'
+import type { PKeyValue } from './types.ts'
+import { TABLE__KEY_VALUES } from './consts.ts'
 
 ////////////////////////////////////
 
@@ -30,6 +30,7 @@ export async function get<T>(
 		return null
 	}
 
+	//console.log(rows)
 	const data = rows[0]
 	logger.log('⭅ read a KV entry ✔', data)
 

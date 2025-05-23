@@ -2,20 +2,20 @@
 
 import { expect, assert } from 'chai'
 
-import { LIB } from '../consts'
+import { LIB } from '../consts.ts'
 import {
 	get_test_base_user_01,
 	get_test_base_user_02,
 	cleanup as user_cleanup,
-} from '../users/_test_helpers'
-import { create_user } from '../users'
-import { TABLE__KEY_VALUES } from './consts'
+} from '../users/_test_helpers.ts'
+import { create_user } from '../users/index.ts'
+import { TABLE__KEY_VALUES } from './consts.ts'
 import {
 	create_kv_entry
-} from './create'
+} from './create.ts'
 import {
 	get_value,
-} from './read'
+} from './read.ts'
 
 ////////////////////////////////////
 

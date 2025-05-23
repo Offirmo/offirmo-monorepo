@@ -1,9 +1,9 @@
 import { once } from 'limit-once'
-import { knex } from 'knex'
+import knex_pkg from 'knex'
 //import { parse } from 'pg-connection-string'
 import { overrideHook } from '@offirmo/universal-debug-api-placeholder'
 
-import logger from './utils/logger'
+import logger from './utils/logger.ts'
 
 // Defaults
 // https://hub.docker.com/_/postgres
@@ -27,7 +27,7 @@ export function get_connection_string(): string {
 export const get_db = once(({min = 1, max = 1}: {min?: number, max?: number} = {}) => {
 	logger.trace('get_db() called')
 
-	const db = knex({
+	const db = knex_pkg.knex({
 		client: 'pg',
 		connection: get_connection_string(),
 		debug: Boolean(overrideHook('knex-debug', true)), // TODO change default and improve the coercion

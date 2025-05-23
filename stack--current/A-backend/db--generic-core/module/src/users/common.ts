@@ -1,7 +1,13 @@
 import type { Immutable } from '@offirmo-private/ts-types'
-import { NORMALIZERS, combine_normalizers } from '@offirmo-private/normalize-string'
+import {
+	coerce_blanks_to_single_spaces,
+	coerce_delimiters_to_space,
+	capitalizeⵧfirst,
+	normalize_unicode, trim,
+	combineꓽnormalizers,
+} from '@offirmo-private/normalize-string'
 
-import type { BaseUser, User, PUser } from './types'
+import type { BaseUser, User, PUser } from './types.ts'
 import {
 	logger,
 	deep_equals_stable,
@@ -10,7 +16,7 @@ import {
 	normalize_email_safe,
 	normalize_email_reasonable,
 	normalize_email_full,
-} from '../utils'
+} from '../utils/index.ts'
 
 ////////////////////////////////////
 
@@ -27,20 +33,20 @@ export function _infer_called(data: Immutable<BaseUser>): string {
 
 	/*console.log({
 		1: local_part,
-		2: NORMALIZERS.coerce_delimiters_to_space(local_part),
-		3: NORMALIZERS.coerce_blanks_to_single_spaces(
-			NORMALIZERS.coerce_delimiters_to_space(local_part)
+		2: coerce_delimiters_to_space(local_part),
+		3: coerce_blanks_to_single_spaces(
+			coerce_delimiters_to_space(local_part)
 		)
 	})*/
-	return NORMALIZERS.coerce_blanks_to_single_spaces(
-		NORMALIZERS.coerce_delimiters_to_space(local_part)
-	).split(' ').map(s => NORMALIZERS.capitalize(s)).join(' ')
+	return coerce_blanks_to_single_spaces(
+		coerce_delimiters_to_space(local_part)
+	).split(' ').map(s => capitalizeⵧfirst(s)).join(' ')
 }
 
 // separate since can be called on explicit "called"
-export const _sanitize_called = combine_normalizers(
-	NORMALIZERS.normalize_unicode,
-	NORMALIZERS.trim,
+export const _sanitize_called = combineꓽnormalizers(
+	normalize_unicode,
+	trim,
 	// TODO one day multiple space / exotic spaces to single normal space
 )
 

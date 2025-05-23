@@ -1,6 +1,6 @@
-import type { WithTimestamps } from '../types'
+import type { WithTimestamps } from '../types.ts'
 
-import type { PUser } from '../users/types'
+import type { PUser } from '../users/types.ts'
 
 /////////////////////
 // NOTE: This is CODE data

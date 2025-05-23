@@ -2,14 +2,14 @@
 
 import { expect } from 'chai'
 
-import { LIB } from '../consts'
-import get_db from '../db'
-import { TABLE__USERS } from './consts'
+import { LIB } from '../consts.ts'
+import get_db from '../db.ts'
+import { TABLE__USERS } from './consts.ts'
 import {
 	create_netlify_user,
 	create_user,
 	create_user_through_netlify,
-} from './create'
+} from './create.ts'
 import {
 	EMAIL_01_ALT,
 	TEST_NETLIFY_ID,
@@ -17,7 +17,7 @@ import {
 	get_test_base_user_01,
 	get_test_netlify_user_01,
 	cleanup,
-} from './_test_helpers'
+} from './_test_helpers.ts'
 
 ////////////////////////////////////
 

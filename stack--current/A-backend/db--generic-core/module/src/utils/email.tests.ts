@@ -1,10 +1,10 @@
 /////////////////////
 
 import { expect } from 'chai'
-import { NORMALIZERS } from '@offirmo-private/normalize-string'
+import { normalizeꓽemailⵧsafe, normalizeꓽemailⵧreasonable, normalizeꓽemailⵧfull } from '@offirmo-private/normalize-string'
 
-import { LIB } from '../consts'
-import { get_gravatar_url, normalize_email_safe, normalize_email_reasonable, normalize_email_full } from './email'
+import { LIB } from '../consts.ts'
+import { normalize_email_safe, normalize_email_reasonable, normalize_email_full} from './email.ts'
 
 ////////////////////////////////////
 
@@ -15,33 +15,33 @@ describe(`${LIB} - utils/email`, function() {
 	describe('normalize_email_safe()', function() {
 		it('should work', () => {
 			expect(normalize_email_safe(TEST_EMAIL))
-				.to.equal(NORMALIZERS.normalize_email_safe(TEST_EMAIL))
+				.to.equal(normalizeꓽemailⵧsafe(TEST_EMAIL))
 		})
 		it('should normalize offirmo.net+xxx@gmail.com appropriately', () => {
 			expect(normalize_email_safe(TEST_EMAIL_OFFIRMO_ALT))
-				.to.equal(NORMALIZERS.normalize_email_safe(TEST_EMAIL_OFFIRMO_ALT))
+				.to.equal(normalizeꓽemailⵧsafe(TEST_EMAIL_OFFIRMO_ALT))
 		})
 	})
 
 	describe('normalize_email_reasonable()', function() {
 		it('should work', () => {
 			expect(normalize_email_reasonable(TEST_EMAIL))
-				.to.equal(NORMALIZERS.normalize_email_reasonable(TEST_EMAIL))
+				.to.equal(normalizeꓽemailⵧreasonable(TEST_EMAIL))
 		})
 		it('should normalize offirmo.net+xxx@gmail.com appropriately', () => {
 			expect(normalize_email_reasonable(TEST_EMAIL_OFFIRMO_ALT))
-				.to.equal(NORMALIZERS.normalize_email_safe(TEST_EMAIL_OFFIRMO_ALT))
+				.to.equal(normalizeꓽemailⵧsafe(TEST_EMAIL_OFFIRMO_ALT))
 		})
 	})
 
 	describe('normalize_email_full()', function() {
 		it('should work', () => {
 			expect(normalize_email_full(TEST_EMAIL))
-				.to.equal(NORMALIZERS.normalize_email_full(TEST_EMAIL))
+				.to.equal(normalizeꓽemailⵧfull(TEST_EMAIL))
 		})
 		it('should normalize offirmo.net+xxx@gmail.com appropriately', () => {
 			expect(normalize_email_full(TEST_EMAIL_OFFIRMO_ALT))
-				.to.equal(NORMALIZERS.normalize_email_safe(TEST_EMAIL_OFFIRMO_ALT))
+				.to.equal(normalizeꓽemailⵧsafe(TEST_EMAIL_OFFIRMO_ALT))
 		})
 	})
 })

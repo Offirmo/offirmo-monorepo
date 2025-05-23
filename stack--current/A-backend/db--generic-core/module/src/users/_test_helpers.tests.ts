@@ -2,9 +2,9 @@
 
 import { expect } from 'chai'
 
-import { LIB } from '../consts'
-import { get_test_netlify_user_01, get_test_netlify_user_01_alt } from './_test_helpers'
-import { normalize_email_full, normalize_email_reasonable, normalize_email_safe } from '../utils'
+import { LIB } from '../consts.ts'
+import { get_test_netlify_user_01, get_test_netlify_user_01_alt } from './_test_helpers.ts'
+import { normalize_email_full, normalize_email_reasonable, normalize_email_safe } from '../utils/index.ts'
 
 ////////////////////////////////////
 

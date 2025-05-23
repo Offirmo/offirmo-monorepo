@@ -1,17 +1,17 @@
-const { isDeepStrictEqual } = require('util')
+import { isDeepStrictEqual } from 'node:util'
 import type { Immutable } from '@offirmo-private/ts-types'
 
 import assert from 'tiny-invariant'
 import { createError } from '@offirmo/error-utils'
 import { type AnyOffirmoState, fluid_select } from '@offirmo-private/state-utils'
 
-import type { WithoutTimestamps } from '../types'
-import get_db from '../db'
-import { type PUser } from '../users'
-import { logger } from '../utils'
-import type { PKeyValue } from './types'
-import { TABLE__KEY_VALUES } from './consts'
-import { get } from './read'
+import type { WithoutTimestamps } from '../types.ts'
+import get_db from '../db.ts'
+import { type PUser } from '../users/index.ts'
+import { logger } from '../utils/index.ts'
+import type { PKeyValue } from './types.ts'
+import { TABLE__KEY_VALUES } from './consts.ts'
+import { get } from './read.ts'
 
 ////////////////////////////////////
 
@@ -83,7 +83,7 @@ export async function set_kv_entry_intelligently<T>(
 			//candidate: value,
 			//existing_pipeline,
 			...fluid_select(value as unknown as AnyOffirmoState)
-				.get_debug_infos_about_comparison_with(existing_pipeline?.value as unknown as AnyOffirmoState, 'candidate', 'existing'),
+				.getꓽdebug_infos_about_comparison_with(existing_pipeline?.value as unknown as AnyOffirmoState, 'candidate', 'existing'),
 		})
 
 		if (existing_pipeline) {
@@ -105,7 +105,7 @@ export async function set_kv_entry_intelligently<T>(
 				throw createError(`Old schema version, please update your client first!`, { statusCode: 426 }) // upgrade required
 			}*/
 
-			const should_candidate_replace_existing = fluid_select(value as unknown as AnyOffirmoState).has_higher_investment_than(existing_pipeline.value as unknown as AnyOffirmoState)
+			const should_candidate_replace_existing = fluid_select(value as unknown as AnyOffirmoState).hasꓽhigher_investment_than(existing_pipeline.value as unknown as AnyOffirmoState)
 			if (!should_candidate_replace_existing) {
 				// that's how a lagging client will get the newest/most invested in data
 				throw createError(`Existing data has more value/investment!`, { [SPECIAL_ERROR_ATTRIBUTE__LATEST_FROM_DB]: existing_pipeline.value })
@@ -115,7 +115,7 @@ export async function set_kv_entry_intelligently<T>(
 			function enqueue_in_bkp_pipeline(old_val: any) {
 				if (!old_val) return
 
-				const is_major_update = fluid_select(value as unknown as AnyOffirmoState).has_higher_schema_version_than(old_val as unknown as AnyOffirmoState)
+				const is_major_update = fluid_select(value as unknown as AnyOffirmoState).hasꓽhigher_schema_version_than(old_val as unknown as AnyOffirmoState)
 				if (is_major_update) {
 					enqueue_in_major_bkp_pipeline(old_val)
 				} else {
@@ -130,7 +130,7 @@ export async function set_kv_entry_intelligently<T>(
 				if (!has_previous_major_version)
 					previous_major_versions.unshift(old_val)
 				else {
-					const is_major_update = fluid_select(old_val).has_higher_schema_version_than(most_recent_previous_major_version)
+					const is_major_update = fluid_select(old_val).hasꓽhigher_schema_version_than(most_recent_previous_major_version)
 					if (is_major_update) {
 						previous_major_versions.unshift(old_val)
 					}

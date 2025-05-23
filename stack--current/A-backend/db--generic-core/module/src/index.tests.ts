@@ -1,17 +1,18 @@
 /////////////////////
 
 import { expect } from 'chai'
-import { LIB } from './consts'
-import get_db from './db'
 
-import { create_user, get_by_email } from './users'
-import { cleanup, get_test_base_user_01, get_test_netlify_user_01 } from './users/_test_helpers'
+import { LIB } from './consts.ts'
+import get_db from './db.ts'
+
+import { create_user, get_by_email } from './users/index.ts'
+import { cleanup, get_test_base_user_01, get_test_netlify_user_01 } from './users/_test_helpers.ts'
 
 ////////////////////////////////////
 
 describe(`${LIB}`, function() {
 
-	describe('transactions', function() {
+	describe('meta_feature:transactions', function() {
 		before(cleanup)
 		afterEach(cleanup)
 

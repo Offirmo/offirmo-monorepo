@@ -1,11 +1,11 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import type { WithoutTimestamps } from '../types'
-import get_db from '../db'
-import type { NetlifyUser, BaseUser, PUser, PNetlifyUser, } from './types'
-import { logger, normalize_email_full } from '../utils'
-import { sanitize_persisted } from './common'
+import type { WithoutTimestamps } from '../types.ts'
+import get_db from '../db.ts'
+import type { NetlifyUser, BaseUser, PUser, PNetlifyUser, } from './types.ts'
+import { logger, normalize_email_full } from '../utils/index.ts'
+import { sanitize_persisted } from './common.ts'
 
 ////////////////////////////////////
 
@@ -31,11 +31,11 @@ export async function create_user(
 	}
 	logger.log('creating user...', { data })
 
-	const [ id ] = await trx('users')
+	const [{ id }] = await trx('users')
 		.insert(data)
 		.returning('id')
 
-	assert(id >= 0, 'created user id')
+	assert(id >= 0, `created user id should be >= 0! ("${id}")`)
 
 	logger.log('created user ✔', { id })
 

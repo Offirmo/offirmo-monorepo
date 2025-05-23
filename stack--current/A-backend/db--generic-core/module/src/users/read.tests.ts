@@ -2,24 +2,24 @@
 
 import { expect } from 'chai'
 
-import { LIB } from '../consts'
-import get_db from '../db'
-import { TABLE__USERS } from './consts'
+import { LIB } from '../consts.ts'
+import get_db from '../db.ts'
+import { TABLE__USERS } from './consts.ts'
 import {
 	create_user,
 	create_user_through_netlify,
-} from './create'
+} from './create.ts'
 import {
 	get_by_netlify,
 	get_by_email,
-} from './read'
+} from './read.ts'
 import {
 	TEST_NETLIFY_ID,
 	get_test_base_user_01,
 	get_test_netlify_user_01,
 	cleanup
-} from './_test_helpers'
-import { sanitize_persisted } from './common'
+} from './_test_helpers.ts'
+import { sanitize_persisted } from './common.ts'
 
 /////////////////////
 

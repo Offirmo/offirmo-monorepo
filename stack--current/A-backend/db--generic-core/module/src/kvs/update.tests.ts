@@ -4,25 +4,25 @@ import { expect, assert } from 'chai'
 
 import {
 	DEMO_ROOT_STATE,
-} from '@offirmo-private/state-utils/dist/src.es2019.cjs/_test_helpers'
+} from '@offirmo-private/state-utils/examples'
 
-import { LIB } from '../consts'
-import get_db from '../db'
+import { LIB } from '../consts.ts'
+import get_db from '../db.ts'
 import {
 	get_test_base_user_01,
 	get_test_base_user_02,
 	cleanup as user_cleanup,
-} from '../users/_test_helpers'
-import { create_user } from '../users'
-import { TABLE__KEY_VALUES } from './consts'
+} from '../users/_test_helpers.ts'
+import { create_user } from '../users/index.ts'
+import { TABLE__KEY_VALUES } from './consts.ts'
 import {
 	upsert_kv_entry,
 	set_kv_entry_intelligently,
 	sync_kv_entry,
-} from './update'
+} from './update.ts'
 import {
 	get,
-} from './read'
+} from './read.ts'
 
 ////////////////////////////////////
 

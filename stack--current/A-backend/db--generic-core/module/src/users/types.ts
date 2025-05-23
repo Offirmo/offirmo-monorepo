@@ -1,4 +1,4 @@
-import type { WithTimestamps } from '../types'
+import type { WithTimestamps } from '../types.ts'
 
 /////////////////////
 // NOTE: This is CODE data

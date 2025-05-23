@@ -1,6 +1,6 @@
-import { TABLE__USERS } from './consts'
-import get_db from '../db'
-import { logger, normalize_email_full } from '../utils'
+import { TABLE__USERS } from './consts.ts'
+import get_db from '../db.ts'
+import { logger, normalize_email_full } from '../utils/index.ts'
 
 ////////////////////////////////////
 

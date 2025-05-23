@@ -1,12 +1,12 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import type { WithoutTimestamps } from '../types'
-import type { PKeyValue } from './types'
-import { TABLE__KEY_VALUES } from './consts'
-import type { PUser } from '../users'
-import { logger } from '../utils'
-import get_db from '../db'
+import type { WithoutTimestamps } from '../types.ts'
+import type { PKeyValue } from './types.ts'
+import { TABLE__KEY_VALUES } from './consts.ts'
+import type { PUser } from '../users/index.ts'
+import { logger } from '../utils/index.ts'
+import get_db from '../db.ts'
 
 ////////////////////////////////////
 

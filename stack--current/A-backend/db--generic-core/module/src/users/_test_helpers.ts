@@ -1,10 +1,10 @@
 import type { Immutable } from '@offirmo-private/ts-types'
-import { enforce_immutability } from '@offirmo-private/state-utils'
+import { enforceꓽimmutable } from '@offirmo-private/state-utils'
 
-import type { NetlifyUser, BaseUser, PNetlifyUser } from './types'
-import { delete_by_email } from './delete'
-import type { WithoutTimestamps } from '../types'
-import get_db from '../db'
+import type { NetlifyUser, BaseUser, PNetlifyUser } from './types.ts'
+import { delete_by_email } from './delete.ts'
+import type { WithoutTimestamps } from '../types.ts'
+import get_db from '../db.ts'
 
 ////////////////////////////////////
 
@@ -22,7 +22,7 @@ export const CALLED_02 = 'The Tester 02'
 
 export function get_test_netlify_user_01(p: Partial<Immutable<NetlifyUser>> = {}): Immutable<NetlifyUser> {
 	// data is intentionally "rough"
-	return enforce_immutability({
+	return enforceꓽimmutable({
 		netlify_id: TEST_NETLIFY_ID,
 		full_name: CALLED_01,
 		email: EMAIL_01,
@@ -34,7 +34,7 @@ export function get_test_netlify_user_01(p: Partial<Immutable<NetlifyUser>> = {}
 }
 export function get_test_netlify_user_01_alt(p: Partial<Immutable<NetlifyUser>> = {}): Immutable<NetlifyUser> {
 	// data is intentionally "rough"
-	return enforce_immutability({
+	return enforceꓽimmutable({
 		netlify_id: TEST_NETLIFY_ID_ALT,
 		full_name: CALLED_01,
 		email: EMAIL_01_ALT,
@@ -46,7 +46,7 @@ export function get_test_netlify_user_01_alt(p: Partial<Immutable<NetlifyUser>> 
 }
 
 export function get_test_base_user_01(p: Partial<Immutable<BaseUser>> = {}): Immutable<BaseUser> {
-	return enforce_immutability({
+	return enforceꓽimmutable({
 		called: CALLED_01,
 		raw_email: EMAIL_01,
 		normalized_email: undefined,
@@ -56,7 +56,7 @@ export function get_test_base_user_01(p: Partial<Immutable<BaseUser>> = {}): Imm
 	})
 }
 export function get_test_base_user_02(p: Partial<Immutable<BaseUser>> = {}): Immutable<BaseUser> {
-	return enforce_immutability({
+	return enforceꓽimmutable({
 		called: CALLED_02,
 		raw_email: EMAIL_02,
 		normalized_email: undefined,
@@ -67,7 +67,7 @@ export function get_test_base_user_02(p: Partial<Immutable<BaseUser>> = {}): Imm
 }
 
 export function get_test_base_netlify_user(user_id: number, netlify_id: string = TEST_NETLIFY_ID): Immutable<WithoutTimestamps<PNetlifyUser>> {
-	return enforce_immutability({
+	return enforceꓽimmutable({
 		user_id,
 		own_id: netlify_id
 	})

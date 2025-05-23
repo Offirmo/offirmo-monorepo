@@ -1,6 +1,6 @@
 import { getLogger } from '@offirmo/universal-debug-api-placeholder'
 
-import { LIB } from '../consts'
+import { LIB } from '../consts.ts'
 
 ////////////////////////////////////
 
@@ -10,6 +10,6 @@ export const logger = getLogger({
 	//suggestedLevel: 'log',
 	//suggestedLevel: 'warn',
 })
-logger.info('@offirmo-private/db loaded', { logger_level: logger.getLevel() })
+logger.info('logger ready', { logger_level: logger.getLevel() })
 
 export default logger
