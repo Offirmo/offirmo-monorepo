@@ -24,7 +24,7 @@
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts",
 
-		"latest":   "knex migrate:latest    --knexfile ./module/knexfile.ts  --migrations-directory ./module/migrations/",
+		"latest":   "knex migrate:latest    --knexfile ./module/knexfile.ts",
 		"rollback": "knex migrate:rollback",
 		"up":       "knex migrate:up",
 		"down":     "knex migrate:down",

@@ -1,7 +1,8 @@
-import { Knex } from 'knex'
+import { type Knex } from 'knex'
+
 import { normalizeꓽemailⵧreasonable, normalizeꓽemailⵧfull } from '@offirmo-private/normalize-string'
 
-import { NAME as USERS_TABLE } from './20190915112614_create__users'
+import { NAME as USERS_TABLE } from './20190915112614_create__users.ts'
 
 /////////////////////////////////////////////////
 
