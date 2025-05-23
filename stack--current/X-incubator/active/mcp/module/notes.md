@@ -4,6 +4,9 @@
 * roadmap https://modelcontextprotocol.io/development/roadmap
 
 
+https://blog.trailofbits.com/2025/04/21/jumping-the-line-how-mcp-servers-can-attack-you-before-you-ever-use-them/
+
+
 mkdir -p ~/work/bin/symlinked/claude/
 ln -s "$HOME/Library/Application Support/Claude/claude_desktop_config.json" "$HOME/work/bin/symlinked/claude/config.json"
 ln -s "$HOME/Library/Logs/Claude/" "$HOME/work/bin/symlinked/claude/logs/"

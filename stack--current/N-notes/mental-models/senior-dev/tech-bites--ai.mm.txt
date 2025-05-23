@@ -19,18 +19,19 @@
 [ ] People + AI Guidebook https://pair.withgoogle.com/guidebook/patterns
 A::B Prompting Challenge: $10k to prove me wrong! https://twitter.com/VictorTaelin/status/1776677635491344744 https://twitter.com/headinthebox/status/1777016124141650254
 Agentic AI systems = AI systems that can pursue complex goals with limited direct supervision https://openai.com/research/practices-for-governing-agentic-ai-systems
-agents = ~unclear definition
 agents -- graph
 agents -- principals
 agents = you provide a goal, They'll generate a task list and get to work https://zapier.com/blog/ai-agent/
+agents = ~unclear definition
 AGI -- ANI -> AGI -> ASI = narrow(weak) / general(strong) / super[human](strong)
 AGI ~ strong AI = can independently learn new problem-solving strategies that are not explicitly included in its original model or training data
 ah ah moment
-AI - Artificial intelligence = intentionally vague term / "solving tasks or problems by computers/machines, which require a form of human-like intelligence"
+AI "Artificial intelligence" = intentionally vague term / "solving tasks or problems by computers/machines, which require a form of human-like intelligence"
 AI -- weak AI = task specific
 AI 50 2023 https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
 AI Driven Organisations (AIDO)
 AI gateway = convenient self-service integration point for internal teams who want to utilise turnkey AI APIs, proxy for the external and internal AI offerings + additional set of capabilities that empower usage and tracking of AI functionalities at an enterprise level.
+AI transition = https://www.youtube.com/watch?v=v9JBMnxuPX8
 AI winter
 algorithmic aversion = We don’t like taking instructions from machines when they conflict with our judgement https://www.oneusefulthing.org/p/getting-started-with-ai-good-enough
 alignment -- Alignment Stress Testing team = validates alignment (Anthropic)
