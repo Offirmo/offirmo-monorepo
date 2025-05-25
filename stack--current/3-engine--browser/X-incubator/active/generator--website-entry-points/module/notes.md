@@ -88,3 +88,4 @@ Log reference: xxx-yyy-zzz
 
 TODO https://opengraphgenerator.org/
 TODO https://colinkeany.github.io/brandgrab/
+TODO https://llmstxt.org

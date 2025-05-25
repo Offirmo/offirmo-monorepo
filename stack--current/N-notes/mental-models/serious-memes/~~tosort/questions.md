@@ -13,7 +13,7 @@ where should you ask the question?
 - in person?
 - digitally?
 
-what are you going to do with the answer
+what are you going to do with the answer?
 - why do you need to know this?
 - do you care about the answer?
 - are you giving the person chance to answer authentically?

@@ -608,6 +608,10 @@ optimization -- we believe that we can easily know how to make the slow parts of
 optimization -- we believe that we can easily know where a program spends most of its time.
 optimization https://tratt.net/laurie/blog/2023/four_kinds_of_optimisation.html
 ORM (Object-Relational Mapping)
+bug -- 3 questions https://mental-reverb.com/blog.php?id=42
+bug -- 3 questions -- 1. Have I made this error anywhere else?
+bug -- 3 questions -- 2. What happens when I fix the bug?
+bug -- 3 questions -- 3. How can I change my ways to make this bug impossible?
 ORM https://github.com/typeorm/typeorm
 orthogonality https://en.wikipedia.org/wiki/Orthogonality_(programming)
 overengineering https://blog.matt-rickard.com/p/stop-overengineering

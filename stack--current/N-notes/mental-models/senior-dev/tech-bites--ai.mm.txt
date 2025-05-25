@@ -1,6 +1,7 @@
 +++ 2023 https://9elements.com/blog/ai-glossary/
 +++ https://platform.openai.com/docs/introduction/key-concepts
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
+2022 -- 2030 self driving car bet https://blog.codinghorror.com/the-2030-self-driving-car-bet/
 2022 ChatGPT https://openai.com/index/chatgpt/
 2023-10 Claude 2
 2024 "Her" moment for voice = crossed the uncanny valley
@@ -36,6 +37,7 @@ AI "Artificial intelligence" = intentionally vague term / "solving tasks or prob
 AI -- first cohort of winners
 AI -- weak AI = task specific
 AI 50 2023 https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
+AI doomer https://www.wheresyoured.at/wheres-the-money/ https://www.wheresyoured.at/longcon/?utm_source=thecollectivenewsletter.beehiiv.com&utm_medium=newsletter&utm_campaign=the-collective-900
 AI Driven Organisations (AIDO)
 AI gateway = convenient self-service integration point for internal teams who want to utilise turnkey AI APIs, proxy for the external and internal AI offerings + additional set of capabilities that empower usage and tracking of AI functionalities at an enterprise level.
 AI transition = https://www.youtube.com/watch?v=v9JBMnxuPX8
@@ -160,6 +162,7 @@ lib -- Transformers https://github.com/huggingface/transformers  https://hugging
 LLM -- "Language Model for Dialogue Applications" (LaMDA) 137B model from Google AI
 LLM -- "Pathways Language Model" (PaLM) 540B model from Google AI
 LLMs - large language models
+llms.txt https://llmstxt.org
 luddites
 machine learning feature = ‘feature’, in this context might be something like ‘number of times UserA has viewed Issue123 in the last week', which may be a useful signal to a machine learning model
 machine learning feature store = ex. Tecton https://docs.tecton.ai/docs/introduction
