@@ -80,6 +80,7 @@ alias   mono3Xagh='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias   mono3Xags='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd X-incubator/active/generator--svg/;                       tabset --badge mono3Xags'
 alias   mono3Xagw='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--browser/;cd X-incubator/active/generator--website-entry-points/;      tabset --badge mono3Xagw'
 
+alias   mono7Xaid='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd X-incubator/active/interview--dsa/;                       tabset --badge mono7Xaid'
 alias    mono7Xax='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd X-incubator/active/x-sandbox/;                            tabset --badge mono7Xax'
 alias   mono7lrsc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--rpg/state--codes/;                                  tabset --badge mono7lrsc'
 alias   mono7lrse='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--rpg/state--engagement/;                             tabset --badge mono7lrse'
