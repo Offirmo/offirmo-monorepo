@@ -66,7 +66,7 @@ alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_co
 amour vs attraction
 Anna Karenina principle = https://en.wikipedia.org/wiki/Anna_Karenina_principle
 anti-fragile
-applied = vs. theoric. practical. Not always need to be an expert / scientist / priest. Applying (citizen, engineer, lay) is complementary and can be, at times, more useful/concrete than expertise ("perché")
+applied = vs. theoretic. practical. Not always need to be an expert / scientist / priest. Applying (citizen, engineer, lay) is complementary and can be, at times, more useful/concrete than expertise ("perché")
 artisanal and small scale mining (ASM) https://www.glencore.com/sustainability/esg-a-z/artisanal-and-small-scale-mining
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
 assume the microphone is on https://www.bbc.com/news/world-50662928 https://www.theguardian.com/commentisfree/2006/jul/23/comment.politics
@@ -153,6 +153,7 @@ can't satisfy others
 care -- doesn't scale https://stevenscrawls.com/care-doesnt-scale/
 career -- career limiting (action/move)
 cargo cult
+CER framework = answer with Claim, Evidence, Reasoning (+ use keywords) https://www.edutopia.org/blog/science-inquiry-claim-evidence-reasoning-eric-brunsell
 chacun chez soi et les vaches sont bien gardées
 chaine trophique = salsepareille <- schtroumpf <- Gargamel
 change -- introduction -- 1 What are we doing?
@@ -722,6 +723,11 @@ moral imperative https://en.wikipedia.org/wiki/Moral_imperative
 moral system
 morita therapy
 most angry people/customers just want to be heard https://www.reddit.com/r/AskReddit/comments/18ng177/comment/keb6402/
+motivation
+motivation -- addiction
+motivation -- addiction -- chemical
+motivation -- addiction -- comportemental
+motivation -- addiction -- compulsion
 mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruction
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
 myths -- "true myth"

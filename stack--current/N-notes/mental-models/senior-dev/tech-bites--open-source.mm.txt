@@ -6,6 +6,7 @@ https://oss.love/
 https://polar.sh/
 licence -- vanity
 license -- proliferation https://en.wikipedia.org/wiki/License_proliferation
+monetary value https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4693148
 source available = https://news.itsfoss.com/open-source-source-available/
 tea https://tea.xyz/rewards-for-oss-contributions
 tidelift https://tidelift.com/

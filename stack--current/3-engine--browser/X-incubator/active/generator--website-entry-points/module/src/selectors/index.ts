@@ -138,11 +138,14 @@ function _getꓽtitle(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	if (candidate_own)
 		return candidate_own
 
-	const candidate_content = Contentⳇwebᐧgetꓽtitle(spec.content)
-	if (candidate_content)
-		return candidate_content
+	if (spec.content) {
+		const candidate_content = Contentⳇwebᐧgetꓽtitle(spec.content)
+		if (candidate_content)
+			return candidate_content
+	}
 
-	throw new Error(`Sorry, we need a title, I can't infer one!`)
+	//throw new Error(`Sorry, we need a title, I can't infer one!`)
+	return 'Hello, World!'
 }
 function getꓽtitleⵧpage(spec: Immutable<WebPropertyEntryPointSpec>): string {
 	return _getꓽtitle(spec)

@@ -84,7 +84,6 @@ interface WebProperty extends ThingWithOnlinePresence {
 	// TODO one day themes
 }
 
-
 interface WebPropertyEntryPointSpec extends WebProperty {
 	// must be flat for easy defaulting
 	// optional '?:' = truly optional (can be easily derived)
@@ -121,7 +120,7 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	/////// META
 	host?:
 		| 'github-pages' // https://pages.github.com/  https://docs.github.com/en/pages
-		| 'cloudflare-pages'
+		| 'cloudflare--pages' // still active but not recommended
 		| 'netlify' // https://old.reddit.com/r/webdev/comments/1b14bty/netlify_just_sent_me_a_104k_bill_for_a_simple/
 		| 'cloudfront'
 		| 'other'

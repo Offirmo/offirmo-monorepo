@@ -1,6 +1,7 @@
 
 // how to redirect: https://love2dev.com/blog/ways-to-use-javascript-redirect-to-another-page/
 // +be careful to not lose any part of the URL: origin + pathname + search + hash
+// can also be automatically handled by the provider https://developers.cloudflare.com/workers/wrangler/configuration/#assets
 
 export default function normalize_trailing_slash() {
 	/* IF the current path doesn't end with a trailing slash, this may be an issue

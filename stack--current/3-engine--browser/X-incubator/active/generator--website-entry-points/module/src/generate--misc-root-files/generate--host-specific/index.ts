@@ -74,7 +74,7 @@ Ref: https://github.com/blog/572-bypassing-jekyll-on-github-pages
 // Well-known https://en.wikipedia.org/wiki/Well-known_URI
 function generate(spec: Immutable<WebPropertyEntryPointSpec>): EntryPoints {
 	return {
-		...(spec.host === 'cloudflare-pages' && generateꓽcloudflare(spec)),
+		...(spec.host === 'cloudflare--pages' && generateꓽcloudflare(spec)),
 		...(spec.host === 'netlify' && generateꓽnetlify(spec)),
 		...(spec.host === 'github-pages' && generateꓽgithub_pages(spec)),
 

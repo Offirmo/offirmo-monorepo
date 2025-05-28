@@ -11,7 +11,7 @@ import { SPEC as _SPEC } from '../../__fixtures/specs--blog--personal.ts'
 describe(`${LIB} -- hosting -- Cloudflare Pages`, function() {
 	const SPEC: typeof _SPEC = {
 		..._SPEC,
-		host: 'cloudflare-pages',
+		host: 'cloudflare--pages',
 	}
 
 	describe('404 Not Found', function () {

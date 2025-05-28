@@ -18,6 +18,7 @@ crypto -- don't write your own
 crypto -- ssing crypto doesn't mean you're secure (attackers will look for a weaker link)
 defence -- Primary / Secondary / Tertiary
 defense in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
+device posture
 encryption of stored data
 File Path (Directory) Traversal
 filtering = to pass input data through a logic that will hold parts of input that match a certain criteria and let other input pass through as is. The filter logic then makes a specific decision on the data that is in hold - possibly discarding it or transforming it.
@@ -73,5 +74,6 @@ threat modelling
 through obscurity -- ok if not only https://security.stackexchange.com/questions/32064/at-what-point-does-something-count-as-security-through-obscurity
 through obscurity -- still useful https://news.ycombinator.com/item?id=24444497
 through obscurity https://en.wikipedia.org/wiki/Security_through_obscurity
+timed-release encryption scheme = to encrypt messages toward the future that anybody can decrypt when the time has come, even if you or your services are off-line by then https://docs.drand.love/
 TLS "Transport Layer Security"
 XML External Entity (XXE) = attack where an attacker is able to exploit applications processing XML inputs using improperly configured parser

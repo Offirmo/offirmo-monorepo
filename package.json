@@ -2,20 +2,18 @@
 	"name": "offirmo-monorepo",
 	"description": "A monorepo for all my JavaScript / TypeScript projects. So convenient.",
 	"repository": "https://github.com/Offirmo/offirmo-monorepo",
-	"version": "2.5.0",
+	"version": "2.6.0",
 	"author": "Offirmo <offirmo.net@gmail.com>",
 	"license": "(Unlicense AND MIT)",
 	"private": true,
 
 	"heroku-run-build-script": false,
 	"scripts": {
-		"heroku-prebuild": "echo This runs before Heroku nodjs buildback installs dependencies. Ensuring monorepo setup... && pwd && test -f Procfile && yarn global add bolt",
-		"heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies. && pwd && ls -l && bolt"
 	},
 	"resolutions": {
 	},
 	"comments": {
-		"01": "Netlify build only installs PROD dependencies, so make sure modules critical for scripts are included"
+		"//01": "Netlify build only installs PROD dependencies, so make sure modules critical for scripts are included"
 	},
 	"dependencies": {
 	},

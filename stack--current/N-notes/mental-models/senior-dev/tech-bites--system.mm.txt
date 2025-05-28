@@ -235,6 +235,10 @@ distributed lock -- Google Chubby https://static.googleusercontent.com/media/res
 distributed lock -- redis https://redis.io/docs/latest/develop/use/patterns/distributed-locks/
 distributed lock = https://www.linkedin.com/advice/0/what-some-common-distributed-locking-patterns
 distributed queues
+distributed randomness -- drand https://docs.drand.love/docs/overview/
+distributed randomness -- league of entropy https://www.drand.love/loe
+distributed randomness = https://developers.cloudflare.com/randomness-beacon/about/background/
+distributed randomness beacon daemon = servers running it can be linked to each other to produce collective, publicly verifiable, unbiased, unpredictable random values at fixed intervals using bilinear pairings and threshold cryptography https://developers.cloudflare.com/randomness-beacon/
 distributed system -- characteristics -- Concurrency = naturally present in Distributed Systems, same activity or functionality performed by separate users who are in remote locations
 distributed system -- characteristics -- Fault tolerance = reliability = the system, if there is a failure in Hardware or Software, continues to operate properly without degrading the performance the system
 distributed system -- characteristics -- Heterogeneity = Networks, computer hardware, operating systems, programming languages, and developer implementations can all vary and differ among dispersed system components.
@@ -246,6 +250,7 @@ distributed system -- failures -- Communication medium failure = happens once a 
 distributed system -- failures -- Method failure = the distributed system is generally halted and unable to perform the execution. Sometimes it leads to ending up the execution resulting in an associate incorrect outcome. Method failure causes the system state to deviate from specifications, and also method might fail to progress.
 distributed system -- failures -- Secondary storage device failure = occurred once the keep information can’t be accessed. This failure is sometimes caused by parity error, head crash, or dirt particles settled on the medium.
 distributed system -- failures -- System failure = the processor associated with the distributed system fails to perform the execution. This is caused by computer code errors and hardware issues. Hardware issues may involve CPU/memory/bus failure. This is assumed that whenever the system stops its execution due to some fault then the interior state is lost.
+drift = when a config drifts from the original / standard
 edge
 edge -- "So, @vercel reverted all edge rendering back to Node.js" https://twitter.com/leeerob/status/1780705942734331983
 efficiency
@@ -285,6 +290,9 @@ incidents
 incidents -- rate (i.e. # of HOTs and # repeat incidents)
 information retrieval
 infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-code-tools
+infrastructure as code (IaC) https://www.pulumi.com/what-is/what-is-infrastructure-as-code/
+Infrastructure as Code -- Terraform
+Infrastructure as Software = supposedly better than IaC https://www.pulumi.com/what-is/what-is-infrastructure-as-software/ https://www.pulumi.com/what-is/what-is-infrastructure-as-software/
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
 integrity
 kafka = pub/sub + store + process
@@ -447,6 +455,7 @@ scaling -- separation of storage and compute
 scaling -- vertically = more power
 scaling ~ elasticity
 search -- https://vespa.ai/ (NO OpenSearch)
+secrets management https://www.pulumi.com/what-is/what-is-secrets-management/
 security
 serverless
 serverless -- debugging sucks, but can be alleviated by fast dev-cycle and using unit tests/not including too much code in Lambda itself

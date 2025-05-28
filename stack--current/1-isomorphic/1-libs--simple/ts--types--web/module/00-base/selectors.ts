@@ -9,16 +9,18 @@ import type { WithLang, WithCharset, WithTitle } from './types.ts'
 
 /////////////////////////////////////////////////
 
-function getꓽlang(spec: Immutable<WithLang>): IETFLanguageType {
-	return normalizeꓽIETFLanguageType(spec.lang ?? '')
+function getꓽlang(spec: undefined | Immutable<WithLang>): IETFLanguageType {
+	return normalizeꓽIETFLanguageType(spec?.lang ?? '')
 }
 
 const CHARSETⵧDEFAULT: Charset = 'utf-8'
-function getꓽcharset(spec: Immutable<WithCharset>): Charset {
+function getꓽcharset(spec: undefined | Immutable<WithCharset>): Charset {
 	return CHARSETⵧDEFAULT
 }
 
-function getꓽtitle(spec: Immutable<WithTitle>): string | undefined {
+function getꓽtitle(spec: undefined | Immutable<WithTitle>): string | undefined {
+	if (!spec) return undefined
+
 	const candidate = normalizeꓽtextⵧsentence(spec.title ?? '')
 	return candidate ? candidate : undefined
 }

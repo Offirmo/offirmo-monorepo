@@ -134,15 +134,16 @@ const TOKEN__COLOR__FG = '--o⋄color⁚fg--main' //color--fg'
 const TOKEN__FONT__SYSTEMⵧSANS = '--o⋄font-family--system--sans'
 
 function getꓽcontentⵧinitial(spec: Immutable<WebPropertyEntryPointSpec>): Immutable<Contentⳇweb> {
-	return spec.content
+	return spec.content ?? {}
 }
 
 function getꓽcontentⵧweb__css(spec: Immutable<WebPropertyEntryPointSpec>): Pick<Contentⳇweb, 'css' | 'cssⵧtop__layers' | 'cssⵧtop__namespaces' | 'cssⵧcritical'> {
+	const content: Immutable<Contentⳇweb> = getꓽcontentⵧinitial(spec)
 	const result: ReturnType<typeof getꓽcontentⵧweb__css> = {
-		css: [ ...ContentⳇwebᐧSelectors.getꓽcss(spec.content) ],
-		cssⵧtop__layers: [ ...ContentⳇwebᐧSelectors.getꓽcssⵧtop__layers(spec.content) ],
-		cssⵧtop__namespaces: { ...ContentⳇwebᐧSelectors.getꓽcssⵧtop__namespaces(spec.content) },
-		cssⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽcssⵧcritical(spec.content) ],
+		css: [ ...ContentⳇwebᐧSelectors.getꓽcss(content) ],
+		cssⵧtop__layers: [ ...ContentⳇwebᐧSelectors.getꓽcssⵧtop__layers(content) ],
+		cssⵧtop__namespaces: { ...ContentⳇwebᐧSelectors.getꓽcssⵧtop__namespaces(content) },
+		cssⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽcssⵧcritical(content) ],
 	}
 
 	const colorⵧbackground = getꓽcolorⵧbackground(spec)
@@ -211,9 +212,10 @@ function getꓽcontentⵧweb__html(spec: Immutable<WebPropertyEntryPointSpec>): 
 }
 
 function getꓽcontentⵧweb__js(spec: Immutable<WebPropertyEntryPointSpec>): Pick<Contentⳇweb, 'js' | 'jsⵧcritical'> {
+	const content: Immutable<Contentⳇweb> = getꓽcontentⵧinitial(spec)
 	const result = {
-		js: [ ...ContentⳇwebᐧSelectors.getꓽjs(spec.content) ],
-		jsⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽjsⵧcritical(spec.content) ],
+		js: [ ...ContentⳇwebᐧSelectors.getꓽjs(content) ],
+		jsⵧcritical: [ ...ContentⳇwebᐧSelectors.getꓽjsⵧcritical(content) ],
 	}
 
 	if (shouldꓽgenerateꓽjscode(spec) && !spec.content?.js?.some(x => x.includes('app/index')))

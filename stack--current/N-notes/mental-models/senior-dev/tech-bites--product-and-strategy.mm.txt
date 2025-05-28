@@ -186,6 +186,7 @@ network effect = key dynamic behind many successful software companies
 never-ending feature party = but tech debt "clean up and restocking" https://corgibytes.com/blog/2018/01/02/neverending-feature-party/
 next-of-kin feature
 no one was ever fired for using...
+novelty tax = problem where users found the novel product too different to adopt it widely
 only the paranoid survive (Andy Grove) = success breeds complacency, complacency breeds failure, only the paranoid survives. If you're winning, that's when you should be the most paranoid, bc disruption is always coming
 only the paranoid survive -- 1 assume disaster is coming
 only the paranoid survive -- 2 spot threats before they explode = if you wait until a crisis is obvious, it's already too late
