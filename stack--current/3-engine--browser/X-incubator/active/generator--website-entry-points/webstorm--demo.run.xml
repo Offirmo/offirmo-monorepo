@@ -4,7 +4,7 @@
 		type="NodeJSConfigurationType"
 		path-to-node="$USER_HOME$/.nvm/versions/node/v23.11.1/bin/node"
 		node-parameters="--experimental-strip-types"
-		path-to-js-file="module/##demos/demo--personal-blog/index.ts"
+		path-to-js-file="module/##demos/demo--pure-defaults/index.ts"
 		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/3-engine--browser/X-incubator/active/generator--website-entry-points">
 		<method v="2" />
 	</configuration>
