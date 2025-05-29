@@ -8,19 +8,20 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts"
+		".": "./module/src/index.tests.ts"
 	},
-	"source": "module/src/index.ts",
+	"source": "module/src/index.tests.ts",
 	"dependencies": {
 		"tiny-invariant": "^1",
 		"tinybench": "^4",
 		"tslib": "^2"
 	},
 	"scripts": {
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
 		"check--ts": "echo \"@offirmo-private/interview--dsa\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"check": "run-s check--ts"
+		"check": "run-s tests check--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

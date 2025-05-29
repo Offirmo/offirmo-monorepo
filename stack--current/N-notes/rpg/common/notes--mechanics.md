@@ -19,3 +19,7 @@ WoW -- community
 
 
 Knapsack problem https://en.wikipedia.org/wiki/Knapsack_problem
+
+
+quests = ex. rats in WoW metro = should be a "local event" instead of a quest?
+quests = too many, hard to track

@@ -76,7 +76,7 @@ Safe Release Management -- 01 Improving Rollout Safety (i.e. Progressive rollout
 Safe Release Management -- 02 Improving Post Deployment checks (i.e. Anomaly Detection, Post Deployment Verification)
 Safe Release Management -- 03 Addressing known issues (i.e. Auto-scaling)
 Safe Release Management -- Production Change Control (PCC)
-Scrum = an agile team collaboration framework; PM, dev, Scrum master, sprint, baily scrum, backlog, retro, velocity
+Scrum = an agile team collaboration framework; PM, dev, Scrum master, sprint, daily scrum, backlog, retro, velocity
 Scrumban https://en.wikipedia.org/wiki/Scrumban
 team -- performance -- four key metrics -- Change Failure Rate = The percentage of deployments causing a failure in production
 team -- performance -- four key metrics -- Deployment Frequency = How often an organization successfully releases to production
@@ -86,6 +86,7 @@ team -- performance -- four key metrics https://cloud.google.com/blog/products/d
 team -- Tuckman model "Forming, Storming, Norming, and Performing"
 toxic = worst than low perf https://hbr.org/2016/11/isolate-toxic-employees-to-reduce-their-negative-effects
 vision -> goal -> milestones -> build -> refine -> launch (+ learn, repeat)
+wartime/peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 X alarm fire -- "alarm" conditions = Inability to obtain a proper balance between reliability and delivery
 X alarm fire -- "alarm" conditions = Not meeting SLOs
 X alarm fire -- "alarm" conditions = Practices that lead to re-work in production

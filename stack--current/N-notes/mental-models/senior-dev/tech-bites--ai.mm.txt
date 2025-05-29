@@ -161,6 +161,10 @@ lib -- TensorFlow https://www.tensorflow.org/ (deprecated?)
 lib -- Transformers https://github.com/huggingface/transformers  https://huggingface.co/blog/noob_intro_transformers
 LLM -- "Language Model for Dialogue Applications" (LaMDA) 137B model from Google AI
 LLM -- "Pathways Language Model" (PaLM) 540B model from Google AI
+LLM -- temperature scaling
+LLM output generation -- beam search = search algorithm used to generate output sequences from a model during inference https://ai-guide.future.mozilla.org/content/llms-101/
+LLM output generation -- nucleus sampling aka. top-P sampling
+LLM output generation -- sampling = search algorithm used to generate output sequences from a model during inference https://ai-guide.future.mozilla.org/content/llms-101/
 LLMs - large language models
 llms.txt https://llmstxt.org
 luddites
