@@ -735,6 +735,7 @@ safety -- defense in depth = incident only when all the layers failed (rare but 
 scatter/gather (datastreams)
 schema
 schema explorer
+science -- Sokal affair = hoax leftist https://en.wikipedia.org/wiki/Sokal_affair
 SCM (Source Control Management)
 scope
 script

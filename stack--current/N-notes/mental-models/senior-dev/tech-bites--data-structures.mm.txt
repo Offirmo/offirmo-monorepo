@@ -34,6 +34,15 @@ data structures -- recursive (structural recursion) = ex. linked list https://en
 deterministic acyclic finite state automaton (DAFSA)
 dictionary = associative array = map = symbol table
 dictionary problem = how to efficiently implement an associative array? https://en.wikipedia.org/wiki/Associative_array
+DSA categories -- Anu Sharma -- DP: Longest common subsequence, Longest consecutive sequence, Max strength of k disjoint subarrays
+DSA categories -- Anu Sharma -- Graphs & Trees: Cheapest flight within K stops, Satisfiability of equality equations, Unique paths, Collect coins in a tree
+DSA categories -- Anu Sharma -- Greedy: Maximize the topmost element after K moves
+DSA categories -- Anu Sharma -- Hashing: 4Sum, Rabbits in forest, Min window substring, Count nice pairs
+DSA categories -- Anu Sharma -- https://www.linkedin.com/posts/anu-sharma-2002_dsaquestions-dsainterviews-paidpartnership-activity-7330457821014085633-ZXEE
+DSA categories -- Anu Sharma -- Searching & Sorting: Min in rotated sorted array, 132 pattern, Largest divisible subset, Search a 2D matrix
+DSA categories -- Anu Sharma -- Stacks & Queues: IPO, Longest valid parentheses, Sliding window median, Sliding window max
+DSA categories -- Anu Sharma -- Tries & Strings: Concatenated words, Longest substring without repeats, Interleaving string
+DSA categories -- Anu Sharma -- Two Pointers: Boats to save people, 2Sum, Container with most water, Trapping rain water
 DSA categories -- leetcode -- 01 array / string
 DSA categories -- leetcode -- 02 two pointers
 DSA categories -- leetcode -- 03 Sliding windows
@@ -89,6 +98,7 @@ tree -- search
 tree -- search tree -- binary
 tree -- search tree -- binary -- AVL
 tree -- search tree -- binary -- red/black
+tree -- search tree -- binary -- self-balanced https://adrianmejia.com/self-balanced-binary-search-trees-with-avl-tree-data-structure-for-beginners/
 tree -- search tree -- quadtree = variant of a Tree in which each node has zero or four children, useful for spatial indexing https://medium.com/@waleoyediran/spatial-indexing-with-quadtrees-b998ae49336
 tree -- search tree -- trie -- bitwise
 tree -- search tree -- trie -- radix -- patricia = radix with radix = 2

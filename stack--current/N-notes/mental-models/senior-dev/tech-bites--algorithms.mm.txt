@@ -102,6 +102,7 @@ Markov Chains -- limiting matrix
 Markov Chains -- stationary distribution
 Markov Chains -- transition matrix
 Markov Chains https://www.youtube.com/watch?v=JHwyHIz6a8A
+master theorem = (formula) easiest way of obtaining runtime of recursive algorithms https://adrianmejia.com/analysis-of-recursive-algorithms/
 minimax https://en.wikipedia.org/wiki/Minimax
 negamax https://en.wikipedia.org/wiki/Negamax
 operation -- binary = combining 2 operands/elements

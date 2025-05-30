@@ -40,14 +40,17 @@ AI 50 2023 https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
 AI doomer https://www.wheresyoured.at/wheres-the-money/ https://www.wheresyoured.at/longcon/?utm_source=thecollectivenewsletter.beehiiv.com&utm_medium=newsletter&utm_campaign=the-collective-900
 AI Driven Organisations (AIDO)
 AI gateway = convenient self-service integration point for internal teams who want to utilise turnkey AI APIs, proxy for the external and internal AI offerings + additional set of capabilities that empower usage and tracking of AI functionalities at an enterprise level.
+AI model collapse = as AI grows, systems are trained on their own outputs, gradually losing accuracy, diversity, and reliability. This occurs because errors compound across successive model generations, leading to distorted data distributions and "irreversible defects" in performance. The model becomes poisoned with its own projection of reality. https://slashdot.org/story/25/05/28/0242240/some-signs-of-ai-model-collapse-begin-to-reveal-themselves
 AI transition = https://www.youtube.com/watch?v=v9JBMnxuPX8
 AI winter
+AI-Induced Death Spiral = StackOverflow Q&A plummeted 90% https://developers.slashdot.org/story/25/05/29/1921248/stack-overflows-radical-new-plan-to-fight-ai-induced-death-spiral
 algorithmic aversion = We don’t like taking instructions from machines when they conflict with our judgement https://www.oneusefulthing.org/p/getting-started-with-ai-good-enough
 alignment -- Alignment Stress Testing team = validates alignment (Anthropic)
 alignment -- generic = conform to predefined values, usually ethical or social values, Truthfulness, Harmlessness, Helpfulness
 alignment -- super alignment =  https://openai.com/blog/introducing-superalignment  https://openai.com/blog/superalignment-fast-grants
 alignment =  making AI do what its users want it to do (and nothing more) see also "paper clip"
 annotation https://www.peopleforai.com/ https://www.isahit.com/
+anthropomorphization = models are not really "thinking" or "reasoning" https://tech.slashdot.org/story/25/05/29/1411236/researchers-warn-against-treating-ai-outputs-as-human-like-reasoning
 API -- Gemini https://ai.google.dev/docs/gemini_api_overview
 applications -- legacy code https://martinfowler.com/articles/legacy-modernization-gen-ai.html
 applied -- 2024/06 Slack Enzyme to RTL https://slack.engineering/balancing-old-tricks-with-new-feats-ai-powered-conversion-from-enzyme-to-react-testing-library-at-slack/
@@ -60,6 +63,7 @@ ASL-4+ = (Speculative) The highest level, ASL-4, is where AI technology enters s
 assistant = entities capable of performing tasks for users. assistants operate based on the instructions in a context window + tools https://platform.openai.com/docs/introduction/assistants
 attention
 attention -- flash attention = ???
+beliefs = judgments a model appears to be forming about a user during a conversation, ex. age, wealth, education level, gender https://slashdot.org/story/25/05/24/1946203/people-should-know-about-the-beliefs-llms-form-about-them-while-conversing
 benchmark -- GPQA https://arxiv.org/abs/2311.12022
 benchmark -- Humanity's Last Exam https://lastexam.ai/
 benchmark -- OSWorld https://os-world.github.io/
@@ -114,6 +118,7 @@ frontier -- Frontier Red Team = ensures no danger (Anthropic)
 frontier AI -- OpenAI = highly capable foundation models that could possess dangerous capabilities sufficient to pose severe risks to public safety https://openai.com/index/frontier-ai-regulation/
 frontier AI = bleeding edge models
 function calling (bad name) = connect large language models to external tools https://cloud.google.com/vertex-ai/docs/generative-ai/multimodal/function-calling https://platform.openai.com/docs/guides/function-calling
+Garbage In/Garbage Out (GIGO)
 generative AI
 generative AI gold rush
 glimpsing the shoggoth / forgetting the mask = situations in which the A.I. exhibits "unhinged" or unexpected behaviors that bypass its safety restrictions https://en.wikipedia.org/wiki/Shoggoth#In_popular_culture
@@ -135,6 +140,7 @@ inference
 inference = what happens when we prompt
 instruction hierarchy / nested prompting = layered prompting with different levels of authority
 Intelligence Age https://openai.com/global-affairs/introducing-the-intelligence-age/
+Intermediate token generation (ITG) = a model produces output before the solution which are fed to the final solution, empirically improves results https://arxiv.org/pdf/2504.09762
 ISO 42001 certification for responsible AI https://www.anthropic.com/news/anthropic-achieves-iso-42001-certification-for-responsible-ai
 issues -- babysitting the AI = don’t want to spend more time correcting the AI than using it
 issues -- bad data = Garbage In, Garbage Out
@@ -147,6 +153,7 @@ jailbreak -- over-refusal = rejection of a harmless prompt
 jailbreak -- rapid response https://arxiv.org/abs/2411.07494
 jailbreak -- universal https://www.anthropic.com/research/constitutional-classifiers
 JAX
+jobs -- shrinkage of entry-level jobs In Tech https://slashdot.org/story/25/05/28/2239206/ai-may-already-be-shrinking-entry-level-jobs-in-tech-new-research-suggests
 knowledge cutoff
 labyrinth https://blog.cloudflare.com/ai-labyrinth/
 langchain = a framework for developing applications powered by language models https://python.langchain.com/docs/get_started/introduction
@@ -170,6 +177,7 @@ llms.txt https://llmstxt.org
 luddites
 machine learning feature = ‘feature’, in this context might be something like ‘number of times UserA has viewed Issue123 in the last week', which may be a useful signal to a machine learning model
 machine learning feature store = ex. Tecton https://docs.tecton.ai/docs/introduction
+MCP -- servers -- remote https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/
 MCP https://modelcontextprotocol.io/tutorials/building-mcp-with-llms
 MCP threats -- Rug Pull – A malicious MCP server can perform a “rug pull” by altering a tool’s description after it’s been approved by the user.
 MCP threats -- Shadowing – A malicious server injects a tool description that alters the agent’s behavior toward a trusted service or tool.
@@ -218,6 +226,7 @@ Pytorch
 RAG 2.0 https://medium.com/towards-artificial-intelligence/rag-2-0-finally-getting-rag-right-f74d0194a720
 rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-to-stay-competitive-hits-tech.html
 ReAct flow
+reasoning trace = see ITG
 reasoning trace https://arstechnica.com/information-technology/2024/09/openai-threatens-bans-for-probing-new-ai-models-reasoning-process/
 regulation -- European AI act https://www.reddit.com/r/ArtificialInteligence/comments/1fqmcds/i_worked_on_the_eus_artificial_intelligence_act/
 reinforcement learning -- from human feedback (RLHF) https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback&ved=2ahUKEwiV_o6h9e6LAxUJXWwGHZpzE74QFnoECBAQAQ&usg=AOvVaw3cKKpEYiTP2H21l8DbR9BO
@@ -263,6 +272,7 @@ TensorFlow = outdated, this is all pyTorch now. See also JAX
 Text generation models -> see GPT https://platform.openai.com/docs/introduction/text-generation-models
 thinking -- extended = deeply considers and iterates on its plan before taking action https://www.anthropic.com/research/visible-extended-thinking
 thinking -- think = once it starts generating a response, to add a step to stop and think about whether it has all the information it needs to move forward https://www.anthropic.com/engineering/claude-think-tool
+thoughts -- chain of thought = see ITG
 tokenization https://platform.openai.com/tokenizer vs https://github.com/huggingface/tokenizers
 tokenizer -- sentencepiece https://github.com/google/sentencepiece
 tokenizer -- tiktoken https://tiktokenizer.vercel.app/
