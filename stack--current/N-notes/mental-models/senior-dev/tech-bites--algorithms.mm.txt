@@ -136,6 +136,9 @@ recursion -- tail call optimization -- support = the language/interpreter/compil
 recursion -- tail call optimization = allow saving stack space when doing recursion by only doing a call as the last ("tail") action https://stackoverflow.com/questions/310974/what-is-tail-call-optimization
 recursion https://en.wikipedia.org/wiki/Recursion_(computer_science)
 reflexive
+resolution -- 01 brute force = to understand the problem. usually recursion. Sometimes it's enough or missing considerations, ex. time vs space
+resolution -- 02 evaluate complexity
+resolution -- 03 improve -- remove useless work = remove recursion? remove duplicated computations? prune areas of the search space that can't yield a good solution
 S3FIFO https://blog.jasony.me/system/cache/2023/08/01/s3fifo
 search -- binary O(log n) = half-interval, logarithmic, binary chop, dichotomic https://en.wikipedia.org/wiki/Binary_search_algorithm
 search -- exponential https://en.wikipedia.org/wiki/Exponential_search

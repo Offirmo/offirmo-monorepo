@@ -64,17 +64,16 @@ describe('exercise', () => {
 
 	test_case('1 - 1', 0)
 
-	/*it('should be fast', async () => {
+	it.skip('should be fast', async () => {
 		// https://github.com/tinylibs/tinybench
 		console.log('Benchmarking…')
-		const bench = new Bench({ time: 200 })
+		const bench = new Bench({ time: 10 })
 
 		bench
-			.add('v0', () => V0(40))
+			.add('v0', () => FUT(40))
 			.add('current', () => FUT(40))
 
-		await bench.warmup() // make results more reliable, ref: https://github.com/tinylibs/tinybench/pull/50
 		await bench.run()
 		console.table(bench.table())
-	})*/
+	})
 })

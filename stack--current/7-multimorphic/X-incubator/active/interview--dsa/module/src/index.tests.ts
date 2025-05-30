@@ -9,16 +9,14 @@ import { Bench } from 'tinybench'
 
 /////////////////////////////////////////////////
 
-function maxArea(height: number[]): number {
-
-	while (height[0] === 0) height.
+function foo(expression: string): number {
 	throw new Error(`NIMP!`)
 }
 
 /////////////////////////////////////////////////
 
 describe('exercise', () => {
-	const FUT = maxArea
+	const FUT = foo
 	function test_case(...args: [ ...Parameters<typeof FUT>, ReturnType<typeof FUT> ]) {
 		const result__expected: ReturnType<typeof FUT> = args.pop() as any
 		const params: Parameters<typeof FUT> = args as any
@@ -64,29 +62,18 @@ describe('exercise', () => {
 		})
 	}
 
-	test_case([], 0)
-	test_case([1], 0)
-	test_case([1,0], 0)
-	test_case([1,1], 1)
-	test_case([1,2], 1)
-	test_case([1,3,3,1,1,1], 5)
-	test_case([0,1,0], 0)
+	test_case('1 - 1', 0)
 
-	test_case([1,8,6,2,5,4,8,3,7], 49)
-
-
-
-	/*it('should be fast', async () => {
+	it.skip('should be fast', async () => {
 		// https://github.com/tinylibs/tinybench
 		console.log('Benchmarking…')
-		const bench = new Bench({ time: 200 })
+		const bench = new Bench({ time: 10 })
 
 		bench
-			.add('v0', () => V0(40))
+			.add('v0', () => FUT(40))
 			.add('current', () => FUT(40))
 
-		await bench.warmup() // make results more reliable, ref: https://github.com/tinylibs/tinybench/pull/50
 		await bench.run()
 		console.table(bench.table())
-	})*/
+	})
 })
