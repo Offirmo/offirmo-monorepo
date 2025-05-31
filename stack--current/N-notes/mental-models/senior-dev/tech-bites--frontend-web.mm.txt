@@ -20,6 +20,7 @@ AJAX (Asynchronous JavaScript And XML) = LEGACY interactive web apps now fetch +
 AMP (Accelerated Mobile Pages)
 animations -- API https://devdocs.io/dom/web_animations_api
 APIs web
+app.domain.com / https://web.telegram.org/
 appli web
 application posture -- 1 sovereign = monopolizes the user's attention for long periods of time.
 application posture -- 2 transient = comes and goes, presenting a single, high-relief function with a tightly restricted set of accompanying controls. The program is called when needed, it appears and performs its job, then it quickly leaves, letting the user continue her more normal activity, usually a sovereign application.

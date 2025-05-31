@@ -1,4 +1,10 @@
+Airdrop
+Arbitrum
+Bankman-Fried
+Base
+Berachain
 Bitcoin = the first decentralized cryptocurrency https://en.wikipedia.org/wiki/Bitcoin
+Blast
 blockchain -- transaction -- step 1 – Record the transaction
 blockchain -- transaction -- step 2 – Gain consensus = Most participants on the distributed blockchain network must agree that the recorded transaction is valid. Depending on the type of network, rules of agreement can vary but are typically established at the start of the network.
 blockchain -- transaction -- step 3 – Link the blocks = Once the participants have reached a consensus, transactions on the blockchain are written into blocks equivalent to the pages of a ledger book. Along with the transactions, a cryptographic hash is also appended to the new block. The hash acts as a chain that links the blocks together. If the contents of the block are intentionally or unintentionally modified, the hash value changes, providing a way to detect data tampering. Thus, the blocks and chains link securely, and you cannot edit them. Each additional block strengthens the verification of the previous block and therefore the entire blockchain. This is like stacking wooden blocks to make a tower. You can only stack blocks on top, and if you remove a block from the middle of the tower, the whole tower breaks.
@@ -6,34 +12,67 @@ blockchain -- transaction -- step 4 – Share the ledger = The system distribute
 blockchain -- transaction = shows the movement of physical or digital assets from one party to another in the blockchain network. It is recorded as a data block and can include details like these: who, what, when, where, why, how much, preconditions
 blockchain database = stores data in chronologically consistent blocks that you can delete or modify only with consensus from the peer-to-peer network. Built-in mechanisms prevent unauthorized transaction entries and create consistency in the shared view of these transactions. As a result, you can use it to create an unalterable or immutable ledger for tracking all types of transactions.
 blockchain https://aws.amazon.com/what-is/blockchain/
+BNB Chain
+bridging
 challenges -- Governance = can be challenging in decentralized systems . It requires effective structures that involve community participation and don’t centralize power.
 challenges -- Regulatory compliance = Web3 applications must follow existing data protection and financial security requirements.
 challenges -- scalability = a primary concern, because lack of trust is expensive: blockchain networks get very expensive and computationally demanding as data volumes increase
 challenges -- User experience and adoption = Complex interfaces and a steep learning curve limit mainstream adoption. Improving the user experience by designing intuitive interfaces that abstract the complexities of blockchain technology is essential.
 consensus
+cross-chain
+cryptocurrency
+cryptocurrency exchange
+Decentralized Autonomous Organisation, or DAO
 decentralized autonomous organization (DAO) = agreed-upon smart contract that automates decentralized decision-making over a pool of resources (tokens). Users with tokens vote on how resources get spent, and the code automatically performs the voting outcome.
 decentralized identity = technology that aims to give individuals more control and ownership over their digital identity. In traditional online systems, users often rely on centralized identity providers (like social media platforms or email services) to manage their identities and access various online services. Decentralized identity shifts the control of identity information back to the individual user. It uses globally unique identifiers associated with a decentralized identifier (DID) document. This document contains public keys, cryptographic material, and service endpoints related to identity. The technology uses selective disclosure to share specific identity attributes and minimize exposure to personally identifiable information (PII) during identity verification processes.
+DeFi
+Ethena
+Ethereum
 Ethereum
 Ethereum = a decentralized open-source blockchain platform that people can use to build public blockchain applications. Ethereum Enterprise is designed for business use cases. https://aws.amazon.com/blockchain/what-is-ethereum/
+EVM
+EVM and non-EVM chains
+EVM network
+fiat
+fiat ramps
+FTX crash
+gas
 Hyperledger Fabric = open-source project with a suite of tools and libraries. Enterprises can use it to build private blockchain applications quickly and effectively. It is a modular, general-purpose framework that offers unique identity management and access control features. These features make it suitable for various applications, such as track-and-trace of supply chains, trade finance, loyalty and rewards, and clearing settlement of financial assets. https://aws.amazon.com/blockchain/what-is-hyperledger-fabric/
 immutability
 InterPlanetary File System (IPFS) = a decentralized and distributed file storage system that provides a more efficient and resilient way to store and access content on Web 3.0. It gives a unique cryptographic hash (content-based address) to every file. It uses a peer-to-peer network, where each IPFS node acts as a client and server. Nodes cooperate to store, retrieve, and distribute content across the web, eliminating the need for centralized servers.
 mining
 NFT
+non-custodial
+onchain protocols such as Ethena, Synthetix, Wormhole
+Optimism
+perp
+Polygon
 Polygon
 public key cryptography
 read/write/own paradigm = data creators own and control their own data and have a greater say in how it is used and managed
 Resource Description Framework (RDF) = express statements as triples in the form of subject-predicate-object
+seed phrase
 smart contracts -- bug = ex. of loss of everything
 smart contracts = self-implementing contracts with predefined rules written in code. They automatically enforce the terms of the agreement when certain conditions are met. For example, if a contract says that ownership of an item transfers to whoever pays for it, you simply send the asking price to that contract. The ledger then automatically updates by using a transaction in the next block to reflect you as the new owner.
+Solana
+Solana network
 solutions -- Amazon Managed Blockchain (AMB) = https://aws.amazon.com/managed-blockchain/
 solutions -- Cloudflare Ethereum
+Sonic
 SPARQL = query language for querying RDF data
+spot
+staking
+staking -- chain-agnostic
+swidge
 tokenization = process of representing real-world or digital assets as digital tokens on a blockchain
 tokens -- standards
 tokens -- tokenomics
 tokens = cryptographic representations of ownership, access rights, or other forms of value. Ex. physical and digital assets like real estate, stocks, commodities, art, music, and even in-game items
+Unichain
+vault
 virtual currencies -- Bitcoin
+wallet
+wallet -- cross-chain
 Web Ontology Language (OWL) = language for defining ontologies, or formal representations of knowledge and relationships between concepts. You can use it to specify classes, properties, and instances, as well as facilitate reasoning and inferencing.
 Web1 = read-only
 Web2 = interactive, but challenges with centralized providers: data portability, data abuse (privacy), censorship, ban (democracy)...
