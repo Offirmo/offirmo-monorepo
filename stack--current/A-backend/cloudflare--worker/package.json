@@ -11,6 +11,8 @@
 	},
 	"source": "module/src/index.ts",
 	"dependencies": {
+		"@offirmo-private/prettify-any": "*",
+		"@parcel/core": "^2",
 		"hono": "^4",
 		"tiny-invariant": "^1",
 		"tslib": "^2"
@@ -32,6 +34,8 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@parcel/types": "^2",
+		"@types/node": "^22",
 		"npm-run-all": "^4",
 		"typescript": "^5",
 		"wrangler": "^4"

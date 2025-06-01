@@ -7,12 +7,13 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/++gen/index.ts"
+		".": "./module/++gen/bundle/index.ts"
 	},
-	"source": "module/src/++gen/index.ts",
+	"source": "module/++gen/bundle/index.ts",
 	"dependencies": {
 		"@offirmo-private/generator--website-entry-points": "*",
 		"@offirmo-private/marketing": "*",
+		"@parcel/core": "^2",
 		"tiny-invariant": "^1",
 		"tslib": "^2"
 	},

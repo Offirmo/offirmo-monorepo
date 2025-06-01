@@ -94,10 +94,12 @@
 	"devDependencies": {
 		"@modelcontextprotocol/sdk": "^1",
 		"@parcel/config-default": "^2",
+		"@parcel/core": "^2",
 		"@parcel/packager-raw-url": "^2",
 		"@parcel/plugin": "^2",
 		"@parcel/resolver-glob": "^2",
 		"@parcel/transformer-webmanifest": "^2",
+		"@parcel/types": "^2",
 		"@resvg/resvg-js": "^2",
 		"@total-typescript/ts-reset": "^0.6",
 		"@tsconfig/strictest": "^2",
