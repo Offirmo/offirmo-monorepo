@@ -8,10 +8,10 @@ import { SPEC as _SPEC } from '../../__fixtures/specs--blog--personal.ts'
 
 /////////////////////////////////////////////////
 
-describe(`${LIB} -- hosting -- GitHub Pages`, function() {
+describe(`${LIB} -- hosting -- AWS Cloudfront`, function() {
 	const SPEC: typeof _SPEC = {
 		..._SPEC,
-		host: 'cloudfront',
+		host: 'aws--cloudfront',
 	}
 
 	describe('404 Not Found', function () {

@@ -31,7 +31,7 @@ function generateꓽerror_handling(spec: Immutable<WebPropertyEntryPointSpec>): 
 	if (spec.isꓽcatching_all_routes)
 		return {}
 
-	const needsꓽerrorᐧhtml = !spec.host || spec.host === 'cloudfront'
+	const needsꓽerrorᐧhtml = !spec.host || spec.host === 'aws--cloudfront'
 	const needsꓽ404ᐧhtml = !spec.host || !needsꓽerrorᐧhtml
 
 	return {

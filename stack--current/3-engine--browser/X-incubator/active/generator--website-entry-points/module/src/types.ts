@@ -120,13 +120,14 @@ interface WebPropertyEntryPointSpec extends WebProperty {
 	/////// META
 	host?:
 		| 'github-pages' // https://pages.github.com/  https://docs.github.com/en/pages
+		| 'cloudflare--workers' // https://developers.cloudflare.com/workers/
 		| 'cloudflare--pages' // still active but not recommended
 		| 'netlify' // https://old.reddit.com/r/webdev/comments/1b14bty/netlify_just_sent_me_a_104k_bill_for_a_simple/
-		| 'cloudfront'
+		| 'aws--cloudfront'
 		| 'other'
 	basename?: Basename // without extension. default to "index"
 	env?: 'prod' | 'production' | string // default to env.NODE_ENV ?? dev
-	isꓽpublic?: boolean // default: true if prod, false else
+	isꓽpublic?: boolean // true = this website is public and robots are welcome to index it. Automatically disabled for non-prod builds = no need to index a staging site
 	isꓽdebug?: boolean // true = want to debug those entry points, will add extra content to pinpoint which entry point is used
 }
 
