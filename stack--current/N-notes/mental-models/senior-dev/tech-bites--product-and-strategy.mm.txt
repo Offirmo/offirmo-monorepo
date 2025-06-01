@@ -7,6 +7,10 @@
 adaptability = turn the challenges into opportunities
 adoption -- technology adoption -- usually non-linear = due to so-called complementary network effects
 aha moment
+alignment -- challenges -- risk of social layer capture: means "having the right friends"
+alignment -- of incentives https://vitalik.eth.limo/general/2024/09/28/alignment.html
+alignment -- of tech
+alignment -- of values
 barriers -- to entry = moat against competitors
 barriers -- to exit = users can't leave (switch) ex. cost
 bloated, forgettable software dripping with mediocrity. Blech. https://basecamp.com/gettingreal/01.1-what-is-getting-real
@@ -53,6 +57,7 @@ Embrace, Extend, and Extinguish https://en.wikipedia.org/wiki/Embrace,_extend,_a
 enshittification -- hate = ex. Adobe https://petapixel.com/2025/04/10/adobe-deletes-bluesky-posts-after-furious-backlash/
 enshittification = first, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die. https://en.wikipedia.org/wiki/Enshittification
 entry -- barrier -- low = low entry barrier to enable global adoption
+Ethereum Virtual Machine (EVM) is a decentralized virtual environment that executes code consistently and securely across all Ethereum nodes. Nodes run the EVM to execute smart contracts, using "gas" to measure the computational effort required for operations, ensuring efficient resource allocation and network security. https://ethereum.org/en/developers/docs/evm/
 executive presence
 failures -- inVision -- https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
 features -- 6 Reasons Users Hate Your New Feature -- The Feature’s Not Finishable

@@ -1,6 +1,10 @@
+[ ] endgame https://vitalik.eth.limo/general/2021/12/06/endgame.html
+[ ] Gitcoin https://grants.gitcoin.co/
+[ ] https://vitalik.eth.limo/
 Airdrop
 Arbitrum
 Bankman-Fried
+Base
 Base
 Berachain
 Bitcoin = the first decentralized cryptocurrency https://en.wikipedia.org/wiki/Bitcoin
@@ -10,8 +14,8 @@ blockchain -- transaction -- step 2 – Gain consensus = Most participants on th
 blockchain -- transaction -- step 3 – Link the blocks = Once the participants have reached a consensus, transactions on the blockchain are written into blocks equivalent to the pages of a ledger book. Along with the transactions, a cryptographic hash is also appended to the new block. The hash acts as a chain that links the blocks together. If the contents of the block are intentionally or unintentionally modified, the hash value changes, providing a way to detect data tampering. Thus, the blocks and chains link securely, and you cannot edit them. Each additional block strengthens the verification of the previous block and therefore the entire blockchain. This is like stacking wooden blocks to make a tower. You can only stack blocks on top, and if you remove a block from the middle of the tower, the whole tower breaks.
 blockchain -- transaction -- step 4 – Share the ledger = The system distributes the latest copy of the central ledger to all participants.
 blockchain -- transaction = shows the movement of physical or digital assets from one party to another in the blockchain network. It is recorded as a data block and can include details like these: who, what, when, where, why, how much, preconditions
-blockchain database = stores data in chronologically consistent blocks that you can delete or modify only with consensus from the peer-to-peer network. Built-in mechanisms prevent unauthorized transaction entries and create consistency in the shared view of these transactions. As a result, you can use it to create an unalterable or immutable ledger for tracking all types of transactions.
-blockchain https://aws.amazon.com/what-is/blockchain/
+blockchain = database = stores data in chronologically consistent blocks that you can delete or modify only with consensus from the peer-to-peer network. Built-in mechanisms prevent unauthorized transaction entries and create consistency in the shared view of these transactions. As a result, you can use it to create an unalterable or immutable ledger for tracking all types of transactions.
+blockchain https://ethereum.org/en/developers/docs/intro-to-ethereum/ https://aws.amazon.com/what-is/blockchain/
 BNB Chain
 bridging
 challenges -- Governance = can be challenging in decentralized systems . It requires effective structures that involve community participation and don’t centralize power.
@@ -22,36 +26,52 @@ consensus
 cross-chain
 cryptocurrency
 cryptocurrency exchange
+culture
+decentralization -- metric -- insider attack test = if your team itself tries to attack the system, how much will break, and how much harm could you do?
+decentralization -- metric -- the walkaway test = if your team and servers disappear tomorrow, will your application still be usable?
+decentralization avoiding points of trust, minimizing censorship vulnerabilities, and minimizing centralized infrastructure dependency. The natural metrics are
 Decentralized Autonomous Organisation, or DAO
 decentralized autonomous organization (DAO) = agreed-upon smart contract that automates decentralized decision-making over a pool of resources (tokens). Users with tokens vote on how resources get spent, and the code automatically performs the voting outcome.
 decentralized identity = technology that aims to give individuals more control and ownership over their digital identity. In traditional online systems, users often rely on centralized identity providers (like social media platforms or email services) to manage their identities and access various online services. Decentralized identity shifts the control of identity information back to the individual user. It uses globally unique identifiers associated with a decentralized identifier (DID) document. This document contains public keys, cryptographic material, and service endpoints related to identity. The technology uses selective disclosure to share specific identity attributes and minimize exposure to personally identifiable information (PII) during identity verification processes.
 DeFi
 Ethena
-Ethereum
-Ethereum
-Ethereum = a decentralized open-source blockchain platform that people can use to build public blockchain applications. Ethereum Enterprise is designed for business use cases. https://aws.amazon.com/blockchain/what-is-ethereum/
-EVM
+Ethereum - REth https://github.com/paradigmxyz/reth
+Ethereum -- Ethereum Improvement Proposals (EIPs) https://eips.ethereum.org/
+Ethereum -- roadmap https://ethereum.org/en/roadmap/
+Ethereum = a decentralized open-source blockchain platform that people can use to build public blockchain applications. Ethereum Enterprise is designed for business use cases. https://ethereum.org/ https://aws.amazon.com/blockchain/what-is-ethereum/
 EVM and non-EVM chains
 EVM network
 fiat
 fiat ramps
+fiat-backed
+fork -- hard
+fork -- soft
 FTX crash
 gas
 Hyperledger Fabric = open-source project with a suite of tools and libraries. Enterprises can use it to build private blockchain applications quickly and effectively. It is a modular, general-purpose framework that offers unique identity management and access control features. These features make it suitable for various applications, such as track-and-trace of supply chains, trade finance, loyalty and rewards, and clearing settlement of financial assets. https://aws.amazon.com/blockchain/what-is-hyperledger-fabric/
 immutability
 InterPlanetary File System (IPFS) = a decentralized and distributed file storage system that provides a more efficient and resilient way to store and access content on Web 3.0. It gives a unique cryptographic hash (content-based address) to every file. It uses a peer-to-peer network, where each IPFS node acts as a client and server. Nodes cooperate to store, retrieve, and distribute content across the web, eliminating the need for centralized servers.
+layer 2 = https://vitalik.eth.limo/general/2024/05/29/l2culture.html
 mining
+multi-chain https://arxiv.org/abs/2112.01472
 NFT
 non-custodial
 onchain protocols such as Ethena, Synthetix, Wormhole
+open source -- benefits -- code being inspectable = to ensure security, and more importantly
+open source -- benefits -- enabling permissionless third-party improvements
+open source -- benefits -- reducing the risk of proprietary lockin
+open standards -- striving for interoperability. If you want to introduce a new feature that is not well-served by existing standards, write a new proposal in collaboration with others. Applications can be rated by which proposals they are compatible with.
 Optimism
+passkey
 perp
-Polygon
 Polygon
 public key cryptography
 read/write/own paradigm = data creators own and control their own data and have a greater say in how it is used and managed
 Resource Description Framework (RDF) = express statements as triples in the form of subject-predicate-object
+scalability
+scalability -- transactions per second
 seed phrase
+smart contract -- auditing = https://iosiro.com/services/smart-contract-auditing
 smart contracts -- bug = ex. of loss of everything
 smart contracts = self-implementing contracts with predefined rules written in code. They automatically enforce the terms of the agreement when certain conditions are met. For example, if a contract says that ownership of an item transfers to whoever pays for it, you simply send the asking price to that contract. The ledger then automatically updates by using a transaction in the next block to reflect you as the new owner.
 Solana
