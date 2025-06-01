@@ -1,3 +1,4 @@
+
 0-sum game
 1 or 2 way door
 10th dentist = someone who sincerely, or professionally, disagree with the broad majority of people "9 dentists out of 10 recommends..." https://www.reddit.com/r/The10thDentist/
@@ -389,6 +390,10 @@ first practice what you preach
 first principles https://fs.blog/first-principles/
 first-principles thinker
 five eyes
+flags -- amber = Amber flags, in various contexts, serve as signals or indicators that something requires attention or further consideration, but is not as immediate or concerning as a red flag
+flags -- beige = neutral. a quirky or unusual behavior or trait that is neither inherently good nor bad, but simply noteworthy
+flags -- green
+flags -- red
 flourishing = meaning and purpose, deep personal relationships, and character and virtue https://link.springer.com/article/10.1007/s11017-024-09679-x
 follow the money https://en.m.wikipedia.org/wiki/Follow_the_money
 follow your bliss -- "I've never done a thing I wanted to do in all my life" (but not hedonism) https://en.wikipedia.org/wiki/Joseph_Campbell#%22Follow_your_bliss%22
@@ -894,6 +899,7 @@ privilege
 privilege -- as "original sin" = "An able-bodied straight white American male is born with such a load of sin that only by the most abject repentance can he be saved." https://paulgraham.com/woke.html
 prix au kilo
 problem solving -- structured https://strategyu.co/mckinsey-structured-problem-solving-secrets/
+processes and outcomes https://surfingcomplexity.blog/2025/05/10/on-work-processes-and-outcomes/
 procrastination
 productivity
 productivity -- GSD Capture Everything, Clarify, Organize, Review, Engage https://todoist.com/productivity-methods/getting-things-done
@@ -1209,6 +1215,7 @@ What would you do if you weren't afraid? - Spencer Johnson
 when in Rome…
 whitewashing
 who moved my cheese?
+why do things go right? https://safetydifferently.com/why-do-things-go-right/
 winner takes it all
 wisdom
 wisdom -- a wisdom for left may not be valid for right

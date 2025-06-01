@@ -182,6 +182,9 @@ P6 should be driving action in your teams, after identifying opportunities thems
 ## TOSORT
 
 
+self-promotion https://hils.substack.com/p/the-self-promotion-horror-show
+staff level https://betterthanrandom.substack.com/p/th-mythical-staff-level https://www.infoq.com/presentations/staff-plus-level-scale/
+
 
 startups
 https://www.joinprospect.com/blog/which-stage-startup

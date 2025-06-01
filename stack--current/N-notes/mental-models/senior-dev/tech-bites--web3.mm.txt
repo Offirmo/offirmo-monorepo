@@ -48,9 +48,10 @@ fork -- hard
 fork -- soft
 FTX crash
 gas
+HODL
 Hyperledger Fabric = open-source project with a suite of tools and libraries. Enterprises can use it to build private blockchain applications quickly and effectively. It is a modular, general-purpose framework that offers unique identity management and access control features. These features make it suitable for various applications, such as track-and-trace of supply chains, trade finance, loyalty and rewards, and clearing settlement of financial assets. https://aws.amazon.com/blockchain/what-is-hyperledger-fabric/
 immutability
-InterPlanetary File System (IPFS) = a decentralized and distributed file storage system that provides a more efficient and resilient way to store and access content on Web 3.0. It gives a unique cryptographic hash (content-based address) to every file. It uses a peer-to-peer network, where each IPFS node acts as a client and server. Nodes cooperate to store, retrieve, and distribute content across the web, eliminating the need for centralized servers.
+InterPlanetary File System (IPFS) = a decentralized and distributed file storage system that provides a more efficient and resilient way to store and access content on Web 3.0. It gives a unique cryptographic hash (content-based address) to every file. It uses a peer-to-peer network, where each IPFS node acts as a client and server. Nodes cooperate to store, retrieve, and distribute content across the web, eliminating the need for centralized servers. https://docs.ipfs.tech/concepts/
 layer 2 = https://vitalik.eth.limo/general/2024/05/29/l2culture.html
 mining
 multi-chain https://arxiv.org/abs/2112.01472
@@ -77,7 +78,8 @@ smart contracts = self-implementing contracts with predefined rules written in c
 Solana
 Solana network
 solutions -- Amazon Managed Blockchain (AMB) = https://aws.amazon.com/managed-blockchain/
-solutions -- Cloudflare Ethereum
+solutions -- Cloudflare -- Ethereum gateway https://developers.cloudflare.com/web3/ethereum-gateway/
+solutions -- Cloudflare -- IFPS
 Sonic
 SPARQL = query language for querying RDF data
 spot
@@ -100,4 +102,5 @@ Web3 -- decentralization = aim to distribute and store data in decentralized net
 Web3 -- interoperability = Web 3.0 aims to create more interconnections between diverse technologies, so data flows between different platforms without intermediaries. Interoperability makes data portable so users can seamlessly switch between services while maintaining their preferences, profiles, and settings.
 Web3 -- semantic web = enables applications to perform complex tasks by understanding the content and context of web data. It uses metadata and artificial intelligence to provide meanings (semantics) to user-generated data. Web 3.0 aims to move more fully towards semantic web technologies currently found in some aspects of existing web technologies. For example, a search engine provides more accurate and contextually relevant search results, and intelligent agents assist users in performing tasks more efficiently.
 Web3 -- trustlessness = In centralized web applications and services, users often need to place trust in a central authority to manage their data, transactions, and interactions. These central authorities have control over user data, and they can manipulate the system's rules. The data may be subject to security risks or mismanagement, potentially resulting in the loss or misuse of user information. In contrast, Web3 introduces trustlessness, so users can engage in transactions and interactions without trusting any specific party.
+Web3 = "the distributed web" = a set of technologies that enables hosting of content and web applications in a serverless manner by leveraging distributed systems and consensus protocols https://developers.cloudflare.com/web3/
 Web3 = umbrella term for technologies like blockchain that decentralize data ownership and control on the internet. Most internet applications are controlled by centralized entities that determine how they save and use end-user data. https://aws.amazon.com/what-is/web3/

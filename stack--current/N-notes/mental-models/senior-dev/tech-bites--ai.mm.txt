@@ -177,6 +177,7 @@ llms.txt https://llmstxt.org
 luddites
 machine learning feature = ‘feature’, in this context might be something like ‘number of times UserA has viewed Issue123 in the last week', which may be a useful signal to a machine learning model
 machine learning feature store = ex. Tecton https://docs.tecton.ai/docs/introduction
+MCP -- issues https://www.docker.com/blog/build-to-prod-mcp-servers-with-docker/
 MCP -- servers -- remote https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/
 MCP https://modelcontextprotocol.io/tutorials/building-mcp-with-llms
 MCP threats -- Rug Pull – A malicious MCP server can perform a “rug pull” by altering a tool’s description after it’s been approved by the user.

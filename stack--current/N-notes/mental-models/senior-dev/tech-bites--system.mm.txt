@@ -130,6 +130,7 @@ BASE -- 1. BA = Basically available = the system does guarantee availability, in
 BASE -- 2. S = Soft state = state of the system may change over time, even without input. This is because of the eventual consistency model.
 BASE -- 3. E = Eventual consistency = the system will become consistent over time, given that the system doesn't receive input during that time.
 BASE = properties of certain databases, usually NoSQL databases. A BASE system gives up on consistency in CAP. opposite of ACID
+bastion host = special-purpose computer on a network specifically designed and configured to withstand attacks = usually security hardened public host within a security zone https://en.wikipedia.org/wiki/Bastion_host
 blue/green deployment
 cache
 cache -- counter cache https://thoughtbot.com/blog/what-is-counter-cache
@@ -295,6 +296,8 @@ Infrastructure as Code -- Terraform
 Infrastructure as Software = supposedly better than IaC https://www.pulumi.com/what-is/what-is-infrastructure-as-software/ https://www.pulumi.com/what-is/what-is-infrastructure-as-software/
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
 integrity
+jump server = jump server is a virtual machine that is used to manage other systems. It is sometimes called a “pivot server” for this reason: once you are logged in, you can “pivot” to the other servers. It is usually security hardened and treated as the single entryway to a server group from within your security zone, or inside the overall network. A jump server is a “bridge” between two trusted networks https://www.lunavi.com/blog/whats-a-jumpbox-or-bastion-host-anyway
+jumpbox = see [[jump server]]
 kafka = pub/sub + store + process
 kubernetes
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
@@ -546,6 +549,9 @@ user management = +++ https://workos.com/blog/the-developers-guide-to-user-manag
 user management = broader process of managing user accounts, profiles, and access privileges. It determines what a user is authorized to do or access within the system, after they have been authenticated
 utilisation = How “full” or “busy” is the service?
 VPN
+WebAssembly (Wasm) is a fast, light alternative to Linux and Windows containers
+WebAssembly -- docker https://docs.docker.com/desktop/features/wasm/
+WebAssembly System Interface (WASI) = a group of standards-track API specifications for software compiled to the W3C WebAssembly (Wasm) standard https://wasi.dev/
 WebRTC
 WebSockets
 WebSockets -- gateway

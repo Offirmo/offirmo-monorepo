@@ -29,6 +29,7 @@ military tactics https://civilization.fandom.com/wiki/Military_Tactics_(Civ6)
 pollution -- 12xx https://en.wikipedia.org/wiki/Pea_soup_fog
 ransom
 slavery
+surproduction d'élite https://pierre-yves-gomez.fr/trop-delite-tue-lelite/
 violence
 war -- https://en.wikipedia.org/wiki/Irredentism
 war -- https://en.wikipedia.org/wiki/July_Crisis
