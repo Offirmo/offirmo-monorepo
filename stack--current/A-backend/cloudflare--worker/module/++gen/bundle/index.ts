@@ -5,16 +5,22 @@ import * as path from 'node:path'
 
 import { Parcel } from '@parcel/core'
 
-const INPUT_DIR = path.resolve(path.join(fileURLToPath(import.meta.url), '../../entry-points/output/'))
+const INPUT_DIR = path.resolve(path.join(fileURLToPath(import.meta.url), '../../../src/'))
 const OUTPUT_DIR = path.resolve(path.join(fileURLToPath(import.meta.url), '../../../../dist/'))
 
 const OPTIONS = {
 	// https://parceljs.org/plugin-system/api/#InitialParcelOptions
 
-	entries: INPUT_DIR + '/*.html',
+	entries: INPUT_DIR + '/index.ts',
 	defaultConfig: '@offirmo-private/parcel-config',
 	//mode: 'production',
 	defaultTargetOptions: {
+		context: 'node',
+		engines: {
+			"node": ">= 23"
+		},
+		outputFormat: 'esmodule',
+		includeNodeModules: true,
 		distDir: OUTPUT_DIR,
 		/*engines: {
 			browsers: ['last 1 Chrome version']

@@ -16,10 +16,16 @@
 		"tslib": "^2"
 	},
 	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
+		"clean": "npm-run-all _clean--pkg",
 		"check--ts": "echo \"@offirmo-private/cloudflare--worker\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
-		"dev": "run-s check--ts--watch",
-		"_check": "run-s check--ts"
+		"_check": "run-s check--ts",
+		"dev": "run-s clean check--ts--watch",
+
+		"build:worker": "node --experimental-strip-types ./module/++gen/bundle/index.ts",
+
+		"xbuild": "npm-run-all  clean  build:worker"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

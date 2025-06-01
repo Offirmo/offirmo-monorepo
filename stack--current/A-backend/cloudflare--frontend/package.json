@@ -30,9 +30,10 @@
 		"devp": "npm-run-all  clean  --parallel start:parcel",
 		"copy-extra": "mkdir -p dist && cp -R -f -v module/sandbox/output/   dist",
 
-		"build:parcel": "parcel build module/sandbox/output/*.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
+		"xxbuild:parcel": "parcel build module/sandbox/output/*.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
+		"build:parcel": "node --experimental-strip-types ./module/++gen/bundle/index.ts",
 
-		"xbuild": "npm-run-all  clean  copy-extra  build:parcel"
+		"xbuild": "npm-run-all  clean  refresh--entry-points  build:parcel"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
