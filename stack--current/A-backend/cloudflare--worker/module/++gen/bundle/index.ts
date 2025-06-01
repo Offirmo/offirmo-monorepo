@@ -16,7 +16,7 @@ const OPTIONS: InitialParcelOptions = {
 
 	entries: INPUT_DIR + '/index.ts',
 	defaultConfig: '@offirmo-private/parcel-config',
-	//mode: 'production',
+	mode: 'production',
 
 	targets: {
 		'worker': {
@@ -39,6 +39,7 @@ console.log({
 
 let bundler = new Parcel(OPTIONS)
 
+/*
 let subscription = await bundler.watch((err, event) => {
 	if (err) {
 		// fatal error
@@ -51,11 +52,9 @@ let subscription = await bundler.watch((err, event) => {
 	} else if (event.type === 'buildFailure') {
 		console.log(event.diagnostics);
 	}
-});
-
-// some time later...
+});*/
 //await subscription.unsubscribe();
-/*
+
 try {
 	let {bundleGraph, buildTime} = await bundler.run();
 	let bundles = bundleGraph.getBundles();
@@ -65,4 +64,3 @@ try {
 	console.error(`XXX ERROR`, err)
 	console.log(err?.diagnostics);
 }
-*/

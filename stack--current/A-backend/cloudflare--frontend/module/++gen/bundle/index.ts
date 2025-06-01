@@ -13,7 +13,7 @@ const OPTIONS = {
 
 	entries: INPUT_DIR + '/*.html',
 	defaultConfig: '@offirmo-private/parcel-config',
-	//mode: 'production',
+	mode: 'production',
 	defaultTargetOptions: {
 		distDir: OUTPUT_DIR,
 		/*engines: {
