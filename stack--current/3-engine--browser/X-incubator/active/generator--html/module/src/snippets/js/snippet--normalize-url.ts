@@ -36,7 +36,8 @@ export default function normalize_trailing_slash() {
 	// Redirect to the version with slash
 	const locationᐧpathnameⵧfixed = location.pathname + '/'
 
-	location.replace(
+	// Do NOT use location.replace() or it can trigger infinite loops with servers doing auto redirects with/without slashes ex. https://developers.cloudflare.com/workers/static-assets/routing/advanced/html-handling/
+	history.replaceState(null, "",
 		location.origin
 		+ locationᐧpathnameⵧfixed
 		+ location.search

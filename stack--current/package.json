@@ -135,6 +135,7 @@
 		"eslint-plugin-mocha": "^11",
 		"fetch-ponyfill": "^7",
 		"fraction.js": "^4",
+		"hono": "^4",
 		"icepick": "^2",
 		"ignore-walk": "^7",
 		"json5": "^2",
@@ -170,6 +171,7 @@
 		"tslib": "^2",
 		"typescript": "^5",
 		"typescript-string-enums": "^1",
+		"wrangler": "^4",
 		"zod": "^3"
 	},
 	"resolutions": {

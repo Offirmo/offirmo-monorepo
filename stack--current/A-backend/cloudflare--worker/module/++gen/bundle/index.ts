@@ -4,28 +4,31 @@ import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
 
 import { Parcel } from '@parcel/core'
+import type {
+	InitialParcelOptions, TargetDescriptor,
+} from '@parcel/types';
 
 const INPUT_DIR = path.resolve(path.join(fileURLToPath(import.meta.url), '../../../src/'))
 const OUTPUT_DIR = path.resolve(path.join(fileURLToPath(import.meta.url), '../../../../dist/'))
 
-const OPTIONS = {
+const OPTIONS: InitialParcelOptions = {
 	// https://parceljs.org/plugin-system/api/#InitialParcelOptions
 
 	entries: INPUT_DIR + '/index.ts',
 	defaultConfig: '@offirmo-private/parcel-config',
 	//mode: 'production',
-	defaultTargetOptions: {
-		context: 'node',
-		engines: {
-			"node": ">= 23"
-		},
-		outputFormat: 'esmodule',
-		includeNodeModules: true,
-		distDir: OUTPUT_DIR,
-		/*engines: {
-			browsers: ['last 1 Chrome version']
-		}*/
-	}
+
+	targets: {
+		'worker': {
+			context: 'node',
+			engines: {
+				"node": ">= 23"
+			},
+			outputFormat: "esmodule",
+			includeNodeModules: true,
+			distDir: OUTPUT_DIR,
+		} satisfies TargetDescriptor,
+	},
 }
 
 console.log({
@@ -41,7 +44,7 @@ try {
 	let bundles = bundleGraph.getBundles();
 	if (bundles.length === 0) throw new Error('Nothing built!!')
 	console.log(`✨ Built ${bundles.length} bundles in ${buildTime}ms!`);
-} catch (err) {
+} catch (err: any) {
 	console.error(`XXX ERROR`, err)
-	console.log(err.diagnostics);
+	console.log(err?.diagnostics);
 }
