@@ -4,7 +4,6 @@
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 [ ] +++ https://github.com/donnemartin/system-design-primer
 [ ] +++ https://lethain.com/distributed-systems-vocabulary/
-[ ] API guidelines https://github.com/microsoft/api-guidelines/blob/vNext/graph/Guidelines-deprecated.md
 [ ] architecture https://engineering.fb.com/2020/08/17/production-engineering/async/
 [ ] client side API gateway "egress" TODO
 [ ] concepts https://dgraph.io/docs/design-concepts/
@@ -35,7 +34,7 @@ ACID -- 2 Consistency = integrity constraints: "valid state" before AND after a 
 ACID -- 3 Isolation = "independent transactions"
 ACID -- 4 Durability = transaction resistance to system failures "once committed, always committed"
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
-alternative service https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Alt-Svc
+alternative service (header) = indicate that another network location (the "alternative service") can be treated as authoritative for that origin when making future requests https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Alt-Svc
 API -- best practices -- 1 DO - help client's "render-as-you-fetch" by co-loading critical data. Do not defer too much logic on the front-end.
 API -- best practices -- 1 DON’T - Build overly ‘flexible’ APIs that require client side logic and input manipulation (in the context of relay EntryPoints))
 API -- best practices -- 2 Be pragmatic - if there are many types, consider using frontend renderers instead of an interface
@@ -43,10 +42,15 @@ API -- best practices -- 2 DO - polymorphic types, ex. multiple "cards/calendar 
 API -- best practices -- 2 DON’T Create new concrete types that represent existing objects.   It kills Relay
 API -- best practices -- 3 DO - Use GraphQL interfaces to make scenario created objects and business objects ‘look’ the same to the frontend
 API -- best practices -- 3 DON’T - Try and coerce objects that are different into the same GraphQL concrete type
+API -- best practices -- 4 ALWAYS paginate collection responses
+API -- best practices -- 4 NEVER allow an endpoint to perform an unbounded number of reads or writes. That means you cannot have an endpoint to export all your bank transactions (potentially unbounded reads), or an endpoint to import all transactions from another platform (potentially unbounded writes) https://www.linkedin.com/posts/thecodingteacher_an-api-endpoint-should-never-perform-an-unbounded-activity-7268647549333299200-NxP_/
+API -- best practices -- Microsoft's internal company-wide REST API design guidelines https://github.com/microsoft/api-guidelines https://github.com/microsoft/api-guidelines/blob/vNext/graph/Guidelines-deprecated.md
 API -- constraints -- Relay EntryPoints = a loading mechanism that makes implementing the parallel loading pattern render-as-you-fetch simple, as it encapsulates information about an experience’s UI assets and its required GraphQL data into a single loadable resource. https://github.com/relay-tools/typescript-relayjs-examples/issues/1
 API -- contracts
 API -- Diogo Lucas classification = far-team, near-team and inner-team. inner team = used within a team or between partner teams, near team = "Conway APIs" between teams that don't always communicate with each other, Far-team API = between teams that have low-bandwidth communications
 API -- hybrids = reconcile the need for a stable public API that will not constantly disrupt your carefully tended ecosystem with your team’s ability to move fast and (eventually) break stuff? cater for different requirements regarding security and SLAs or to radically different client natures? https://www.youtube.com/watch?v=eqy609JleoE
+API -- pagination
+API -- resilience
 API -- REST (Representational State Transfer) = architectural style for distributed hypermedia systems https://restfulapi.net/
 API -- REST -- cookbook https://restcookbook.com/
 API -- REST -- critic https://mmikowski.github.io/the_lie/
@@ -61,34 +65,25 @@ API -- REST -- principles == 5 Layered System
 API -- REST -- principles == 6 Code on Demand (optional)
 API -- REST -- resource https://roy.gbiv.com/untangled/category/web-architecture/page/2
 API -- REST -- RESTful
+API -- REST -- RESTful = systems which adhere to a set of constraints to achieve simplicity, scalability, and uniformity.
+API -- REST -- Roy Fielding's dissertation "Architectural Styles and the Design of Network-based Software Architectures" https://ics.uci.edu/~fielding/pubs/dissertation/top.htm
 API -- REST -- TRUE REST = missing hypertext / "representation" https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven
+API -- REST = architectural style, stateless client-server communication model
+API -- Richardson Maturity Model -- Level 0 "the swamp of POX" = using HTTP as a transport system for remote interactions, but without using any of the mechanisms of the web
+API -- Richardson Maturity Model -- Level 1 - Resources = now rather than making all our requests to a singular service endpoint, we now start talking to individual resources.
+API -- Richardson Maturity Model -- Level 2 - HTTP Verbs (correct semantic)
+API -- Richardson Maturity Model -- Level 3 - Hypermedia Controls = HATEOAS (Hypertext As The Engine Of Application State)
 API -- Richardson Maturity Model https://martinfowler.com/articles/richardsonMaturityModel.html
 API -- view -- scope -- types = "raw / user defined scope" ex. a user-entered filter, "natural object scope" = when the object is a natural container, "persisted scope" = saved filter / board / custom view
 API -- view -- scope = the limit of where to conduct a search for domain objects for display on a view
 API -- view = an API is a view on the resources, or is a certain resource mapping over the business objects
 API -- visibility = public/external > internal > team > private beta. Guidelines: Consider a public-by-default approach, even if you are starting at a lower level of access (helps dogfooding, new use cases. Treat your internal APIs as candidates for Public level access (bc happens quickly, sometimes for merging with a public one)
-API gateway
-API-First = Built with APIs from the ground up. All functionality is exposed through an API
-app -- a11y
-app -- API -- common design
-app -- API -- pagination
-app -- API -- resilience
-app -- architecture: LAMP / JAMStack / SSR...
-app -- auth
-app -- BFFE / GraphQL / REST
-app -- collaboration: which model? https://zknill.io/posts/collaboration-no-crdts/
-app -- components https://www.componentdriven.org/
-app -- constraints: mobile first ? offline first ? low latency ? criticity ?
-app -- i18n
-app -- navigation
-app -- performance
-app -- reliability
-app -- router
-app -- scalability: where will it scroll? perf?
-app -- security
-app -- session
-app -- state
-app -- state -- structure
+API --gateway
+API-first = Built with APIs from the ground up. All functionality is exposed through an API
+Architectural Decisions -- bets = to revisit them
+Architectural Decisions -- register
+Architectural Decisions -- Sustainable Architectural Decisions https://adr.github.io/
+Architectural Decisions -- trade-offs
 architecture -- 12 factors -- 01 Codebase =  One codebase tracked in revision control, many deploys
 architecture -- 12 factors -- 02 Dependencies = Explicitly declare and isolate dependencies
 architecture -- 12 factors -- 03 Config = Store config in the environment
@@ -104,7 +99,6 @@ architecture -- 12 factors -- 12 Admin processes = Run admin/management tasks as
 architecture -- 12 factors https://12factor.net/
 architecture -- entitlement (vs. billing) = a customer’s access to a specific feature or product, within a given plan https://arnon.dk/why-you-should-separate-your-billing-from-entitlement/
 audit
-webhooks -- as a service https://www.svix.com/
 audit trail
 authentication (authn) = making sure that a person or device is who (or what) they claim to be
 authentication vs authorization https://www.cloudflare.com/en-gb/learning/access-management/authn-vs-authz/
@@ -136,7 +130,7 @@ BASE = properties of certain databases, usually NoSQL databases. A BASE system g
 bastion host = special-purpose computer on a network specifically designed and configured to withstand attacks = usually security hardened public host within a security zone https://en.wikipedia.org/wiki/Bastion_host
 blue/green deployment
 cache
-cache -- counter cache https://thoughtbot.com/blog/what-is-counter-cache
+cache -- counter cache = solution to an active record issue in RoR https://thoughtbot.com/blog/what-is-counter-cache
 cache -- eviction = Time-Based Eviction, Count-Based Eviction, Query Result Eviction, Cache Region Clearing
 cache -- invalidation/control
 caching -- stale-if-error
@@ -149,42 +143,61 @@ CAP Theorem -- 3. Partition tolerance = The system continues to operate despite 
 CAP Theorem -> see also PACELC theorem
 capacity planning
 cascading failures
-cascading failures -- exponential backoff + jitter +
+cascading failures -- exponential backoff + jitter
 cell-based architecture = isolated feature (titanic))
 change -- release tracks -- bundled = will get all of the features that were released to Preview Release Track during the previous months (pro tier)
 change -- release tracks -- continuous = see new features when they are released (free tier)
-change -- release tracks -- preview = will receive all updates released to Continuous Track in the last month (sandbox for admis)
+change -- release tracks -- preview = will receive all updates released to Continuous Track in the last month (sandbox for admins)
 chaos monkey
-churn -- subscription -- involuntary or delinquent churn = missed payments causing an automated cancellation
-churn -- subscription -- voluntary = subscriber actively cancelling their subscription
 cloud native = leverages the full capabilities of the cloud, beyond storage and hosting, including elastic scaling of highly available resources. Functionality is updated automatically no manual effort required
 compliance
-compliance stakeholder = someone responsible for ensuring system, processes, and operations comply with relevant laws and practices related to security, data, privacy, legal, or other legislative or industry practice requirements
+compliance -- stakeholder = someone responsible for ensuring system, processes, and operations comply with relevant laws and practices related to security, data, privacy, legal, or other legislative or industry practice requirements
 compute
 confidentiality
+config -- drift = when a config drifts from the original / standard
 config -- drift https://score.dev/
-consistent Hashing
+consistent hashing
 containers
 containers -- images -- golden = pre-configured and optimised container images that serve as standardised and reusable foundations for building other images (apps, services...)
+containers -- images -- hardened = see docker
 containers -- images -- Red Hat Universal Base Image (UBI) = minimal, freely redistributable base image for containerised applications, providing a consistent foundation with essential packages from Red Hat Enterprise Linux (RHEL) to build and deploy reliable and secure containers https://developers.redhat.com/products/rhel/ubi
 Content Delivery Network (CDN) ex. CloudFront
 coordination -- quorum, leader election
 cron
-CRUD "Create, Read, Update, Delete" = In SQL, the four related commands are: INSERT (for Create), SELECT (for Read), UPDATE (for Update), and DELETE (for Delete).
+CRUD "Create, Read, Update, Delete" = In SQL, the four related commands are: INSERT/POST (for Create), SELECT/GET (for Read), UPDATE/PUT (for Update), and DELETE (for Delete).
 data -- 0. raw need to be processed, OLAP, OLTP https://www.snowflake.com/guides/olap-vs-oltp/
 data -- 1. analytics = useful
 data -- 2. predictive = forecast and predict from data
 data -- 3. prescriptive = recommend actions based on data
-Data Layer Abstraction(DLA)
+Data Layer Abstraction (DLA)
 data loss
 data retrieval
 data store -- data type -- BLOB (Binary Large Object) https://stackoverflow.com/questions/211895/storing-documents-as-blobs-in-a-database-any-disadvantages
 data store -- data type -- CLOB (character large object) value can be up to 2,147,483,647 characters long. A CLOB is used to store unicode character-based data, such as large documents in any character set. https://docs.oracle.com/javadb/10.10.1.2/ref/rrefclob.html
 data store -- data type -- JSON, BSON = BSON supposed to be more efficient in space but at the same time also wants to improve traversal by storing extra data, so not always better. depends on the data.
+data store -- database -- Bigtable -- Cassandra = open source Bigtable-like
+data store -- database -- Bigtable -- HBase = open source Bigtable-like for Hadoop https://en.wikipedia.org/wiki/Apache_HBase
+data store -- database -- Bigtable = wide-column and key-value NoSQL database https://en.wikipedia.org/wiki/Bigtable
+data store -- database -- blockchain
+data store -- database -- denormalization = improving the performance of the database by adding redundant data
 data store -- database -- Graph = Neo4J,
-data store -- database -- NoSQL = unstructured or semi-structured, less of everything SQL
-data store -- database -- relational -- Codd's 12 rules https://en.wikipedia.org/wiki/Codd%27s_12_rules
-data store -- database -- relational/SQL = structured, schema, relationships, transactions
+data store -- database -- indexes
+data store -- database -- key -- primary, foreign
+data store -- database -- N+1 query problem = cascade, naive, inefficient query https://guides.rubyonrails.org/active_record_querying.html#n-1-queries-problem https://thoughtbot.com/blog/what-is-counter-cache
+data store -- database -- NoSQL -- Cassandra https://cassandra.apache.org/_/index.html
+data store -- database -- NoSQL -- MongoDB
+data store -- database -- NoSQL/document = unstructured or semi-structured, less of everything SQL
+data store -- database -- partitioning -- multiple DBs or tables
+data store -- database -- partitioning vs sharding vs replication
+data store -- database -- RDBMS (Relational database management system)
+data store -- database -- relational -- Codd's 12 rules = to tick to be a "relational" database https://en.wikipedia.org/wiki/Codd%27s_12_rules
+data store -- database -- relational = structured, schema, relationships, transactions ~SQL
+data store -- database -- replica = copy for redundancy or/and perf -- read replica
+data store -- database -- sharding -- by key, range, directory https://dgraph.io/blog/post/sharding-database/
+data store -- database -- sharding -- uneven distribution
+data store -- database -- sharding https://dgraph.io/blog/post/sharding-database/
+data store -- database -- SQL "Structured Query Language"
+data store -- database -- SQL vs NoSQL - NoSQL = less features, more perf (trade offs, debatable)
 data store -- database = specialised, for data not binary, relationships, querying, indexing, transactions https://dgraph.io/blog/post/data-store-vs-database/
 data store -- file system -- Google File System (GFS)
 data store -- file system -- Hadoop Distributed File System (HDFS)
@@ -194,26 +207,9 @@ data store -- google sheets https://www.jacobparis.com/content/submit-form-googl
 data store -- KV store
 data store -- KV store -- Memcached
 data store -- KV store -- Redis
-data store -- object store -- S3
+data store -- object store -- AWS S3
+data store -- object store -- Cloudflare R2
 data store -- object store = flat structure of objects + uid + metadata
-database -- Bigtable -- Cassandra = open source Bigtable-like
-database -- Bigtable -- HBase = open source Bigtable-like for Hadoop https://en.wikipedia.org/wiki/Apache_HBase
-database -- Bigtable = wide-column and key-value NoSQL database https://en.wikipedia.org/wiki/Bigtable
-database -- denormalization = improving the performance of the database by adding redundant data
-database -- indexes
-database -- N+1 query problem = cascade, naive, inefficient query https://guides.rubyonrails.org/active_record_querying.html#n-1-queries-problem https://thoughtbot.com/blog/what-is-counter-cache
-database -- NoSQL -- Cassandra https://cassandra.apache.org/_/index.html
-database -- NoSQL -- MongoDB
-database -- partitioning -- multiple DBs or tables
-database -- partitioning vs sharding vs replication
-database -- primary, foreign key
-database -- RDBMS (Relational database management system
-database -- replica = copy for redundancy or/and perf -- read replica
-database -- sharding -- by key, range, directory https://dgraph.io/blog/post/sharding-database/
-database -- sharding -- uneven distribution
-database -- sharding https://dgraph.io/blog/post/sharding-database/
-database -- SQL (Structured Query Language))
-database -- SQL vs NoSQL - NoSQL = less features, more perf (trade offs, debatable)
 DDOS (incl. self)
 design -- 01b clarifying questions
 design -- 01b requirements -> including CAP
@@ -226,6 +222,7 @@ design -- high-level https://en.wikipedia.org/wiki/High-level_design
 design -- low-level https://en.wikipedia.org/wiki/Low-level_design
 destructive engineering = kill and get strong in response
 DevOps
+DevSecOps
 distributed computing -- fallacies -- 1 The network is reliable
 distributed computing -- fallacies -- 2 Latency is zero
 distributed computing -- fallacies -- 3 Bandwidth is infinite
@@ -239,31 +236,31 @@ distributed lock -- Google Chubby https://static.googleusercontent.com/media/res
 distributed lock -- redis https://redis.io/docs/latest/develop/use/patterns/distributed-locks/
 distributed lock = https://www.linkedin.com/advice/0/what-some-common-distributed-locking-patterns
 distributed queues
+distributed randomness -- beacon daemon = servers running it can be linked to each other to produce collective, publicly verifiable, unbiased, unpredictable random values at fixed intervals using bilinear pairings and threshold cryptography https://developers.cloudflare.com/randomness-beacon/
 distributed randomness -- drand https://docs.drand.love/docs/overview/
 distributed randomness -- league of entropy https://www.drand.love/loe
 distributed randomness = https://developers.cloudflare.com/randomness-beacon/about/background/
-distributed randomness beacon daemon = servers running it can be linked to each other to produce collective, publicly verifiable, unbiased, unpredictable random values at fixed intervals using bilinear pairings and threshold cryptography https://developers.cloudflare.com/randomness-beacon/
 distributed system -- characteristics -- Concurrency = naturally present in Distributed Systems, same activity or functionality performed by separate users who are in remote locations
 distributed system -- characteristics -- Fault tolerance = reliability = the system, if there is a failure in Hardware or Software, continues to operate properly without degrading the performance the system
 distributed system -- characteristics -- Heterogeneity = Networks, computer hardware, operating systems, programming languages, and developer implementations can all vary and differ among dispersed system components.
 distributed system -- characteristics -- Openness = possible extensions and improvements in the system
 distributed system -- characteristics -- Resource Sharing = ability to use any Hardware, Software, or Data anywhere in the System.
-distributed system -- characteristics -- Scalability: It increases the scale of the system as a number of processors communicate with more users by accommodating to improve the responsiveness of the system.
+distributed system -- characteristics -- Scalability = increases the scale of the system as a number of processors communicate with more users by accommodating to improve the responsiveness of the system.
 distributed system -- characteristics -- Transparency = hides the complexity of the Distributed Systems to the Users and Application programs as there should be privacy in every system.
 distributed system -- failures -- Communication medium failure = happens once a web site cannot communicate with another operational site within the network. it’s typically caused by the failure of the shift nodes and/or the links of the human activity system.
 distributed system -- failures -- Method failure = the distributed system is generally halted and unable to perform the execution. Sometimes it leads to ending up the execution resulting in an associate incorrect outcome. Method failure causes the system state to deviate from specifications, and also method might fail to progress.
 distributed system -- failures -- Secondary storage device failure = occurred once the keep information can’t be accessed. This failure is sometimes caused by parity error, head crash, or dirt particles settled on the medium.
 distributed system -- failures -- System failure = the processor associated with the distributed system fails to perform the execution. This is caused by computer code errors and hardware issues. Hardware issues may involve CPU/memory/bus failure. This is assumed that whenever the system stops its execution due to some fault then the interior state is lost.
-drift = when a config drifts from the original / standard
 edge
 edge -- "So, @vercel reverted all edge rendering back to Node.js" https://twitter.com/leeerob/status/1780705942734331983
+edge -- lambda@edge (AWS) = a lambda closer to the user. Downside is being away from the backend/DB
 efficiency
 emergency response
 encryption
 encryption -- at rest
-Event Driven Architectures = publish/subscribe model whereby there is a publisher (or publishers) which sends out notifications that something happened and subscribers (hereafter referred to as consumers) who are interested in things that happened. Good decoupling but hard to track impact of changes.
 event streaming https://kafka.apache.org/intro
-event-driven architecture = uses events (from producers) to trigger and communicate (across message channels) between decoupled services (consumers). Common with microservices.
+event-driven architecture = publish/subscribe model whereby there is a publisher (or publishers) which sends out notifications that something happened and subscribers (hereafter referred to as consumers) who are interested in things that happened. Good decoupling but hard to track impact of changes.
+event-driven architecture = uses events (from producers) to trigger and communicate (across message channels) between decoupled services (consumers). Common with microservices. https://en.wikipedia.org/wiki/Event-driven_architecture
 externalized configuration
 failure -- hardware
 failure modes -- arbitrary = server produce arbitrary response at arbitrary times
@@ -289,6 +286,8 @@ HTTP response status codes -- 300–399 = Redirection
 HTTP response status codes -- 400–499 = Client error
 HTTP response status codes -- 500–599 = Server error
 hypermedia
+incident -- post-mortem
+incident -- Time to Detection (TTD)
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
 incident values -- 01 Detect = knows before our customers do. A balanced service includes enough monitoring and alerting to detect incidents before our customers do. The best monitoring alerts us to problems before they even become incidents.
 incident values -- 02 Respond = Escalate, escalate, escalate. Nobody will mind getting woken up for an incident that it turns out they aren't needed for. But they will mind if they don't get woken up for an incident when they should have been. We won't always have all the answers, so "don't hesitate to escalate".
@@ -308,7 +307,6 @@ jump server = jump server is a virtual machine that is used to manage other syst
 jumpbox = see [[jump server]]
 kafka = pub/sub + store + process
 kubernetes
-lambda@edge (AWS) = a lambda closer to the user. Downside is being away from the backend/DB
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
 latency = the time that passes between an action and the resulting response
 latency https://www.a10networks.com/glossary/osi-network-model-and-types-of-load-balancers/
@@ -317,7 +315,11 @@ latency numbers -- frontend -- shortest duration of time perceived by humans as 
 latency numbers -- frontend https://vercel.com/blog/latency-numbers-every-web-developer-should-know
 latency numbers https://brenocon.com/dean_perf.html
 limiting -- content limiting = ex. only X Gb of storage
+limiting -- cost limiting
+limiting -- headers https://bitbucket.org/blog/introducing-scaled-rate-limits-for-bitbucket-cloud-api
+limiting -- noisy neighbors
 limiting -- rate limiting = control the rate of requests sent or received by a network interface (DoS, scraping) https://en.wikipedia.org/wiki/Rate_limiting
+limiting -- scaled = per number of seats https://bitbucket.org/blog/introducing-scaled-rate-limits-for-bitbucket-cloud-api
 load balancer
 load balancer -- affinity = grouping related in the same server, when desirable
 load balancer -- google sth
@@ -328,7 +330,7 @@ log consolidation
 logging = the most basic form of application monitoring and is the first line of defense to identify incidents or bugs. It involves recording timestamped data of different applications or services at regular intervals. Since logs can get pretty complex (and massive) in distributed systems with many services, we typically use log levels to filter out important information from these logs. The most common levels are FATAL, ERROR, WARN, DEBUG, INFO, TRACE, and ALL. The amount of data logged on each log level also varies based on how critical it is to store that information for troubleshooting and auditing applications. Most logs are highly detailed with relative information about a particular microservice, function, or application. You’ll need to collate and analyze multiple log entries to understand how the application functions normally. And since logs are often unstructured, reading them from a text file on your server is not the best idea.
 Mean Time Between Failures (MTBF)
 Mean Time To Detection (MTTD)
-Mean Time To Resolution/repair/recover  (MTTR) https://www.dataset.com/blog/mean-time-to-repair/
+Mean Time To Resolution/repair/recover (MTTR) https://www.dataset.com/blog/mean-time-to-repair/
 message queue = temporary storage and routing system for messages exchanged between different components. ex. AWS SQS, Kafka (real time)
 messaging -- queueing -- dead letter queue (DLQ) https://en.wikipedia.org/wiki/Dead_letter_queue
 messaging -- queueing -- RabbitMQ
@@ -350,9 +352,7 @@ microservice -- downsides -- proliferation of environments (dev, staging, prod, 
 microservice -- service sprawl
 microservice = small, loosely coupled distributed. solution to the scalability, independently deployability, and innovation challenges
 middleware https://en.wikipedia.org/wiki/Middleware_(distributed_applications)
-mitigations: code rollback, data rollback, degrade, upsize, blocklist, drain, quarantine https://www.oreilly.com/content/generic-mitigations/
-monitoring
-monitoring "Understanding what is happening in your environment is key to maintaining efficient, secure, and compliant applications"
+monitoring -- utilisation = How “full” or “busy” is the service?
 naming -- best practicies = Be descriptive of the use-case and environment. For example, "staging-db-web" or "production-db-backend" https://developers.cloudflare.com/d1/get-started/
 network ACL
 network model -- OSI -- Layer 1 = The physical layer, as with TCP/IP, provides the physical connection to the network and defines the electrical and physical characteristics
@@ -381,7 +381,8 @@ non-abstract large system design (NALSD) https://sre.google/workbook/non-abstrac
 numbers everyone should know https://static.googleusercontent.com/media/sre.google/en//static/pdf/rule-of-thumb-latency-numbers-letter.pdf
 observability
 observability -- logs -- data model https://opentelemetry.io/docs/specs/otel/logs/data-model/
-observability -- logs = logs. Unfortunately, logs aren’t extremely useful for tracking code execution, as they typically lack contextual information, such as where they were called from. They become far more useful when they are included as part of a span, or when they are correlated with a trace and a span. Need to be stored and searchable. beware of costs!
+observability -- logs = Unfortunately, logs aren’t extremely useful for tracking code execution, as they typically lack contextual information, such as where they were called from. They become far more useful when they are included as part of a span, or when they are correlated with a trace and a span. Need to be stored and searchable. beware of costs!
+observability -- monitoring = "Understanding what is happening in your environment is key to maintaining efficient, secure, and compliant applications"
 observability -- telemetry
 observability = a measure of how well internal states of a system can be inferred from knowledge of its external outputs https://andydote.co.uk/presentations/index.html
 observability https://opentelemetry.io/docs/concepts/observability-primer/
@@ -394,9 +395,17 @@ operations -- metrics -- incident rate
 operations -- metrics -- MTTD
 operations -- metrics -- MTTR
 ops -- toil
-optimizing anything other than the bottleneck is an illusion.  if you optimize before the bottleneck, you'll have a backlog of materials (data? jobs/tasks?) at the bottleneck. If you optimize after the bottleneck, you'll have idle
+optimizing anything other than the bottleneck is an illusion. if you optimize before the bottleneck, you'll have a backlog of materials (data? jobs/tasks?) at the bottleneck. If you optimize after the bottleneck, you'll have idle
 orchestrator -- kubernetes
 organizations
+outage -- generic mitigations -- blocklist
+outage -- generic mitigations -- code rollback
+outage -- generic mitigations -- data rollback
+outage -- generic mitigations -- degrade
+outage -- generic mitigations -- drain
+outage -- generic mitigations -- quarantine
+outage -- generic mitigations -- upsize
+outage -- generic mitigations https://www.oreilly.com/content/generic-mitigations/
 PACELC theorem = extension of CAP https://en.wikipedia.org/wiki/PACELC_theorem
 peak hours, off-peak hours
 performance
@@ -412,7 +421,6 @@ perspective -- tech -- operations = focuses on operating and recovering IT workl
 perspective -- tech -- platform (cloud!)
 perspective -- tech -- security
 polyglot persistence https://en.wikipedia.org/wiki/Polyglot_persistence
-post-mortem
 private cloud = https://threadreaderapp.com/thread/1800291897245835616.html
 product -- envoy = open source edge and service proxy, designed for cloud-native applications https://www.envoyproxy.io/
 protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https://stackoverflow.com/questions/731233/activemq-or-rabbitmq-or-zeromq-or https://news.ycombinator.com/item?id=9634801
@@ -427,8 +435,6 @@ pub/sub -- topics = a way to shard a large event stream so that consumers don't 
 PubSub = Publish-Subscribe
 push -- long polling, server-side events (SSE), and WebSockets
 push vs pull
-rate limiting -- headers https://bitbucket.org/blog/introducing-scaled-rate-limits-for-bitbucket-cloud-api
-rate limiting -- scaled = per number of seats https://bitbucket.org/blog/introducing-scaled-rate-limits-for-bitbucket-cloud-api
 real-time -- hard real-time = a system is said to be hard real-time if it must meet strict timing constraints
 real-time -- protocols -- 01 Session Traversal Utilities for NAT (STUN) - Used to establish a direct UDP connection between two clients.
 real-time -- protocols -- 02 Traversal Using Relay around NAT (TURN) - Used to establish a relayed UDP or TCP connection between two clients. Here, the traffic must be relayed through the TURN server to bypass restrictive firewall rules, and the preference is UDP over TCP because TCP's guaranteed ordered delivery of packets implies overhead that is undesirable for real-time communications.
@@ -440,7 +446,7 @@ real-time application -- goals = high throughput, low latency communication betw
 recommender systems https://www.canva.dev/blog/engineering/recommender-systems-when-they-fail-who-are-you-gonna-call/
 redeployment = can impact the service due to rebalancing etc. causing latency, connexions loss, etc.
 regions
-reliability -- organizational reliability continuum = absent -> reactive -> proactive -> strategic -> visionary / there is a significant cost associated with moving from one phase to another and a cost to remain very high on this curve. In our experience, being proactive is a healthy level to target and is ideal for most products https://cloud.google.com/blog/products/devops-sre/the-five-phases-of-organizational-reliability
+reliability -- organizational reliability continuum = absent -> reactive -> proactive -> strategic -> visionary. there is a significant cost associated with moving from one phase to another and a cost to remain very high on this curve. In our experience, being proactive is a healthy level to target and is ideal for most products https://cloud.google.com/blog/products/devops-sre/the-five-phases-of-organizational-reliability
 replication = improving availability, distribute the load, and enhance fault tolerance
 request deduplication
 requirements -- functional/behavioral = end user's basic facilities that the system should offer
@@ -452,13 +458,10 @@ requirements -- non-functional -- Reliability
 requirements -- non-functional -- Reusability
 requirements -- non-functional -- Scalability
 requirements -- non-functional -- Security
-requirements -- non-functional/non-behavioral  = quality constraints that the system must satisfy
+requirements -- non-functional/non-behavioral  = quality constraints that the system must satisfy outside of the immediate feature
 resilience
-REST = architectural style, stateless client-server communication model
-RESTful = systems which adhere to a set of constraints to achieve simplicity, scalability, and uniformity.
 retire, retain, rehost, re-platform, repurchase, refactor/re-architect
 routing -- hot/cold potato https://www.usenix.org/legacy/publications/library/proceedings/usenix02/full_papers/subramanian/subramanian_html/node28.html
-Roy Fielding's dissertation "Architectural Styles and the Design of Network-based Software Architectures" https://ics.uci.edu/~fielding/pubs/dissertation/top.htm
 scaling -- "internet scale", C10k, C10M problem  https://en.wikipedia.org/wiki/C10k_problem
 scaling -- auto-scaling
 scaling -- cliff = systems can't scale past a certain point. The cliff moves, usually to the database. https://www.linkedin.com/feed/update/share:7273025401101156352/
@@ -471,7 +474,7 @@ search -- https://vespa.ai/ (NO OpenSearch)
 secrets management https://www.pulumi.com/what-is/what-is-secrets-management/
 security
 serverless
-serverless -- debugging sucks, but can be alleviated by fast dev-cycle and using unit tests/not including too much code in Lambda itself
+serverless -- debugging sucks, but can be alleviated by fast dev-cycle, using unit tests, not including too much code in Lambda itself
 serverless -- Default architecture everyone arrives at seems to be: Lambda → SQS/SNS/Kinesis → Lambda
 serverless -- Deploy your app as one (all Lambdas as one, rather than each Lambda individually). Cloudformation helps (blue green deployments FTW)
 serverless -- Don’t break things down too small (dare I say microservices). Keep your lambdas and code grouped logically rather than striving for smallest unit of work
@@ -485,8 +488,7 @@ service -- monitoring -- Error budget = starts at 1 - SLO and declines as the ac
 service -- monitoring -- service level -- agreement (SLA) = a team’s commitment to maintain a measurably high standard of service reliability for their customers.
 service -- monitoring -- service level -- agreement (SLA) = refund!!
 service -- monitoring -- service level -- indicator (SLI) = a measurement of performance, metrics of behavior and performance
-service -- monitoring -- service level -- objective (SLO) = a statement of desired performance = applying specific, time-windowed targets to SLIs
-service -- monitoring -- service level -- objectives (SLO) https://sre.google/resources/practices-and-processes/art-of-slos/ https://sre.google/resources/
+service -- monitoring -- service level -- objective (SLO) = a statement of desired performance = applying specific, time-windowed targets to SLIs https://sre.google/resources/practices-and-processes/art-of-slos/ https://sre.google/resources/
 service -- monitoring -- service level = the performance of a service from its customers’ perspective. Encompasses many things, including: Is the service available when I need it? Is the service fast to respond? Is the service providing correct responses? Is the service protecting my privacy?... Service levels are critical in approaching reliability.
 service -- monitoring https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring
 service -- proxy -- egress authentication
@@ -497,6 +499,7 @@ service tiers = related to capabilities
 single point of failure = avoidable with redundancy
 site reliability engineering (SRE) "treat operations as if it’s a software problem" https://sre.google/
 snowflake (Twitter) = distributed k-sorted uuid generator https://blog.x.com/engineering/en_us/a/2010/announcing-snowflake
+solution -- "no cloud Kamal" https://kamal-deploy.org/ https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_deploy-web-apps-anywhere-activity-7305513792275169281-C2-h/
 SRE -- learning 01 = The riskiness of a mitigation should scale with the severity of the outage
 SRE -- learning 02 = Recovery mechanisms should be fully tested before an emergency
 SRE -- learning 03 = Canary all changes
@@ -515,7 +518,6 @@ state
 stateful
 stateless -- Prefer simple, stateless services where possible
 stream processing = computing paradigm that involves the continuous processing of data streams in real-time (vs. batch). crucial in scenarios where low-latency, real-time insights, and immediate actions on data are essential
-Sustainable Architectural Decisions https://adr.github.io/
 system design -- is a mine-field of difficult tradeoffs
 system properties -- 01 available = end user can access it and it works as expected https://medium.com/baseds/ready-and-available-distributed-systems-161023aca378
 system properties -- 02 highly available = no scheduled/unscheduled maintenance, no downtime, no data loss
@@ -523,7 +525,6 @@ system properties -- 03 fault tolerant = can even handle hardware failure (expen
 system properties -- distributed https://courses.cs.washington.edu/courses/cse490h/07wi/readings/IntroductionToDistributedSystems.pdf
 system properties -- ready
 system quality attributes = known as non-functional requirements. it's software architects' responsibility to match these attributes with business requirements and user requirements https://en.wikipedia.org/wiki/List_of_system_quality_attributes
-take-over
 telemetry -- logs https://opentelemetry.io/docs/concepts/observability-primer/#logs
 telemetry -- maps = Relationship information between time spans can be used to produce maps for services
 telemetry -- metrics -- application-based vs time-based
@@ -548,21 +549,18 @@ third-party risk management
 time -- leap second
 time -- leap second -- leap smear https://googleblog.blogspot.com/2011/09/time-technology-and-leaping-seconds.html
 time = difficult yet important for distributed https://unix4lyfe.org/time/
-Time to Detection (TTD)
-tool -- no cloud Kamal https://kamal-deploy.org/ https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_deploy-web-apps-anywhere-activity-7305513792275169281-C2-h/
-unbounded activity = An API endpoint should never perform an unbounded number of reads or writes. That means you cannot have an endpoint to export all your bank transactions (potentially unbounded reads), or an endpoint to import all transactions from another platform (potentially unbounded writes) https://www.linkedin.com/posts/thecodingteacher_an-api-endpoint-should-never-perform-an-unbounded-activity-7268647549333299200-NxP_/
 user flow -- error rate = percentage of unique users encountering at least one failure when attempting to perform one of the user operations composing the user flow
 user flow = actions users can perform to achieve a specific outcome, for example, uploading media or sharing a document
 user management -- Domain Enabled Signup
 user management -- request, invitation
 user management = +++ https://workos.com/blog/the-developers-guide-to-user-management/
 user management = broader process of managing user accounts, profiles, and access privileges. It determines what a user is authorized to do or access within the system, after they have been authenticated
-utilisation = How “full” or “busy” is the service?
 VPN
 WebAssembly (Wasm) is a fast, light alternative to Linux and Windows containers
 WebAssembly -- docker https://docs.docker.com/desktop/features/wasm/
 WebAssembly System Interface (WASI) = a group of standards-track API specifications for software compiled to the W3C WebAssembly (Wasm) standard https://wasi.dev/
 webhook = event-driven method of communication between applications
+webhooks -- as a service https://www.svix.com/
 WebRTC
 WebSockets
 WebSockets -- gateway
@@ -574,4 +572,5 @@ well architected -- pillar -- performance efficiency = using IT and computing re
 well architected -- pillar -- reliability = consistently and correctly perform intended functions, Recover from infrastructure or service disruptions, Dynamically acquire computing resources to meet demand, Mitigate disruptions such as misconfigurations or transient network issues -- includes testing recovery procedures, scaling horizontally to increase aggregate system availability, and automatically recovering from failure.
 well architected -- pillar -- security = protecting information, systems, and assets while delivering business value through risk assessments and mitigation strategies -- Automate security best practices when possible, Apply security at all layers, Protect data in transit and at rest.
 well architected -- pillar -- sustainability = minimizing the environmental impact of your technology -- Understand your impact, Establish sustainability goals, Maximize utilization, Anticipate and adopt new, more efficient hardware and software offerings, Use managed services, Reduce the downstream impact of your cloud workloads
+WinterCG "Web-interoperable Runtimes Community Group" https://wintercg.org/
 workload https://score.dev/

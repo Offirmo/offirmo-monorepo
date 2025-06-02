@@ -23,6 +23,8 @@ build-boost-discard cycle of internet applications = scourge https://www.linkedi
 business -- as a by-product = structure that ultimately has to exist around a group of people to make things and service customers over the long term, but not inherently interesting https://www.linkedin.com/posts/jason-fried_ive-always-thought-of-business-as-a-by-product-activity-7236805665627717632-_s96/
 CEO "If I/we got fired today, what would the new CEO do?"
 churn
+churn -- subscription -- involuntary or delinquent churn = missed payments causing an automated cancellation
+churn -- subscription -- voluntary = subscriber actively cancelling their subscription
 commoditization -- commodity businesses generally compete on price alone and are plagued by high inventories and low profit margins. In other non-commodity businesses, you would say “innovate”
 commoditization = undifferentiated mass, one no different than the other. We can pick the cheapest.
 computers should adapt to users = not necessarily if the solution is good (ex. typing on a keyboard, Palm Graffiti) https://www.creativitypost.com/technology/the_memory_prediction_framework_of_intelligence_and_the_subject_of_creativi

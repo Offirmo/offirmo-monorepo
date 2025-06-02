@@ -1,4 +1,3 @@
-12 factors https://12factor.net/
 2025 https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/
 5 min zoom vs 10 emails/comments volley https://blog.jpl-consulting.com/2010/04/ten-email-volley-or-five-minute-phone-call/
 [ ] +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
