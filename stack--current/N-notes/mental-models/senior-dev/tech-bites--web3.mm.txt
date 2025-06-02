@@ -1,10 +1,13 @@
+2017 bitfinex packaged loss https://bitfinexed.medium.com/bitfinex-never-repaid-their-tokens-bitfinex-started-a-ponzi-scheme-86a9291add29
+2025-05 SEC abandon crypto regulation https://yro.slashdot.org/story/25/05/29/2155215/sec-voluntarily-dismisses-lawsuit-against-binance
+2025-05 USA strategic reserve https://news.slashdot.org/story/25/05/31/0636246/whats-in-the-us-governments-new-strategic-reserve-of-seized-crytocurrencies
+[ ] criticism https://bitfinexed.medium.com/
 [ ] endgame https://vitalik.eth.limo/general/2021/12/06/endgame.html
 [ ] Gitcoin https://grants.gitcoin.co/
 [ ] https://vitalik.eth.limo/
 Airdrop
 Arbitrum
 Bankman-Fried
-Base
 Base
 Berachain
 Bitcoin = the first decentralized cryptocurrency https://en.wikipedia.org/wiki/Bitcoin
@@ -71,8 +74,10 @@ read/write/own paradigm = data creators own and control their own data and have 
 Resource Description Framework (RDF) = express statements as triples in the form of subject-predicate-object
 scalability
 scalability -- transactions per second
+scam -- wash trading = artificially inflating volume https://bitfinexed.medium.com/wash-trading-bitcoin-how-bitfinex-benefits-from-fraudulent-trading-8bd66be73215
 scams -- pig butchering = people are lured by flirtatious strangers online into investing in fraudulent cryptocurrency trading platforms. Victims are coached to invest more and more money into what appears to be an extremely profitable trading platform, only to find their money is gone when they wish to cash out. https://yro.slashdot.org/story/25/05/30/2151248/us-sanctions-cloud-provider-funnull-as-top-source-of-pig-butchering-scams
 scams -- pyramid scheme
+scams -- rug-pull = disappear after cashing early success
 seed phrase
 smart contract -- auditing = https://iosiro.com/services/smart-contract-auditing
 smart contracts -- bug = ex. of loss of everything
@@ -96,7 +101,10 @@ Unichain
 vault
 virtual currencies -- Bitcoin
 wallet
+wallet -- coinbase https://www.coinbase.com/en-au/wallet/smart-wallet
 wallet -- cross-chain
+wallet -- metamask https://metamask.io/download
+wallet -- okx https://web3.okx.com/
 Web Ontology Language (OWL) = language for defining ontologies, or formal representations of knowledge and relationships between concepts. You can use it to specify classes, properties, and instances, as well as facilitate reasoning and inferencing.
 Web1 = read-only
 Web2 = interactive, but challenges with centralized providers: data portability, data abuse (privacy), censorship, ban (democracy)...

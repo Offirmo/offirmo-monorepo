@@ -68,6 +68,7 @@ secrets -- hiding secrets is hard - and secrets hidden in code won't stay secret
 secure by default = security is ON by default, need to be manually disabled if not needed (ex. dev).  Historically, many libraries had to be configured for them to be used securely.  For example, user content in JSP applications presented a cross site scripting risk, and developers needed to use special functions such as c:out or fn:escapeXml in order to prevent such vulnerabilities.  In a secure by default library, the risk is inherently prevented in the library implying that the developer does not need to think about special functionality in order to use it securely.
 Secure Cryptographic Hashing
 secure data at rest
+security posture = overall cybersecurity strength and readiness of an organization, ability to recognize threats and your readiness to mitigate them or recover from an attack
 Server Side Request Forgery (SSRF) -- defense -- outbound proxy
 Server Side Request Forgery (SSRF) = attacker to send a crafted request from a vulnerable server to an arbitrary destination. The attack can be used to bypass security restrictions and access internal systems and network resources that are not intended to be publicly accessible.
 threat modelling
@@ -78,3 +79,4 @@ timed-release encryption scheme = to encrypt messages toward the future that any
 TLS "Transport Layer Security"
 XML External Entity (XXE) = attack where an attacker is able to exploit applications processing XML inputs using improperly configured parser
 ZK-SNARKs https://vitalik.eth.limo/general/2022/06/15/using_snarks.html
+zxcvbn = password strength estimation https://zxcvbn-ts.github.io/zxcvbn/

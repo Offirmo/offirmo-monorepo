@@ -23,3 +23,7 @@ last 2 Chrome versions
 last 2 iOS versions
 last 2 ChromeAndroid versions
 not dead
+
+
+
+TODO check new 2025 https://web.dev/articles/use-baseline-with-browserslist

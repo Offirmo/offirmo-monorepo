@@ -272,6 +272,7 @@ realtime -- patterns -- push biz events
 realtime -- patterns -- push state
 realtime -- patterns -- push state diff
 realtime updates https://zknill.io/posts/how-to-adopt-realtime/
+redirections https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Redirections
 rendering strategy -- client-side rendering (CSR) = give customers ingredients to prepare themselves
 rendering strategy -- incremental static re-generation = refire cold plates
 rendering strategy -- partial pre-rendering

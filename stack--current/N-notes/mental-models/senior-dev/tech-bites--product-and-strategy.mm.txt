@@ -18,6 +18,7 @@ boring -- culture
 boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
 boring -- technology https://mcfunley.com/choose-boring-technology
 brand -- 6 what's? = what we stand for, what we believe in, what people we seek to engage, what distinguishes us, what we offer, what we say and show https://hbr.org/2014/06/start-ups-need-a-minimum-viable-brand
+build vs buy = example https://www.svix.com/build-vs-buy/
 build-boost-discard cycle of internet applications = scourge https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_deploy-web-apps-anywhere-activity-7305513792275169281-C2-h
 business -- as a by-product = structure that ultimately has to exist around a group of people to make things and service customers over the long term, but not inherently interesting https://www.linkedin.com/posts/jason-fried_ive-always-thought-of-business-as-a-by-product-activity-7236805665627717632-_s96/
 CEO "If I/we got fired today, what would the new CEO do?"
@@ -53,6 +54,7 @@ earliest -- 06 "app store"able product
 earliest -- 07 "pro" product? scalable? (entitlements, billing, compliance...)
 earliest https://every.to/p/the-most-advanced-yet-acceptable-products-win
 economies of scale = aren’t available to smaller players in a market, including increased visibility, increased buying power, and lower customer acquisition costs https://dealroom.net/blog/industry-consolidation
+ecosystem -- Application Development Kit (ADK) = encompasses the code that enables licensed distributors to port the application onto their own platforms and streamline the process straight to testing and QA with us. The ADK is available as a software package that contains all the tools a distributor could need to build on their diverse device platform. https://medium.com/disney-streaming/introducing-the-disney-application-development-kit-adk-ad85ca139073
 Embrace, Extend, and Extinguish https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish
 enshittification -- hate = ex. Adobe https://petapixel.com/2025/04/10/adobe-deletes-bluesky-posts-after-furious-backlash/
 enshittification = first, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die. https://en.wikipedia.org/wiki/Enshittification
@@ -133,6 +135,7 @@ incumbent inertia -- reluctant to cannibalize existing product lines
 incumbent inertia https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_start#Incumbent_inertia
 jobs to be done
 Jobs to be Done (JTBD) https://en.wikipedia.org/wiki/Jobs-to-be-done_theory
+Justification Filler = "Best Practice", "Industry Standard", "Security Posture", "" Phrases https://serce.me/posts/2025-05-19-justification-filler-phrases
 knowledge creating company https://hbr.org/2007/07/the-knowledge-creating-company
 kodak moment
 land grab https://fastercapital.com/topics/understanding-the-concept-of-land-grab-strategies.html
@@ -212,6 +215,7 @@ pitch -- extra -- YC application https://docs.google.com/document/d/1lkRIGrssL5W
 pitch -- extra -- “what we don’t know” or “what assumptions we’ve made that need to be true” (to make it more rounded and less pitchy. Maybe that’s why I’ve never got an investor! Ha)
 pitch -- Q -- If you get no investments what alternatives do you have in mind
 policy -- internal -- no politics https://www.linkedin.com/posts/jason-fried_inevitably-around-major-elections-or-political-activity-7260061274544234496-tSB1
+PRD "product requirements document" https://www.atlassian.com/agile/product-management/requirements
 pricing
 pricing strategy
 principle -- end-to-end principle = fundamental principle of the Internet in which the role of a network is to reliably deliver data from willing senders to willing receivers
@@ -299,6 +303,7 @@ triad -- sometimes + data analyst
 triad = product, design, engineering
 try/test/graduate
 User Experience Research (UXR) https://medium.com/getting-started-in-user-experience-and-design
+USP "Unique Selling Point" = secret sauce, difference with competition
 wartime vs peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 what got us here won't get us there…
 what is the actual problem we're trying to solve?

@@ -104,6 +104,7 @@ architecture -- 12 factors -- 12 Admin processes = Run admin/management tasks as
 architecture -- 12 factors https://12factor.net/
 architecture -- entitlement (vs. billing) = a customer’s access to a specific feature or product, within a given plan https://arnon.dk/why-you-should-separate-your-billing-from-entitlement/
 audit
+webhooks -- as a service https://www.svix.com/
 audit trail
 authentication (authn) = making sure that a person or device is who (or what) they claim to be
 authentication vs authorization https://www.cloudflare.com/en-gb/learning/access-management/authn-vs-authz/
@@ -114,6 +115,8 @@ availability zone
 AWS -- accounts -- limitations https://www.atlassian.com/blog/atlassian-engineering/multi-account-strategy
 AWS Shield
 AWS WAF
+BaaS "backend-as-a-service" = ~managed DB + serverless + auth + goodies, ex. firebase/supabase
+BaaS -- challenges = may not be colocated with the server = sometimes better to have everything in AWS + spinning a simple instance is simpler and cheaper https://news.ycombinator.com/item?id=41223327
 back of the envelope
 back-off and retry mechanisms
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
@@ -280,6 +283,11 @@ graceful degradation = ex. of batteries in flashlight
 Hadoop https://en.wikipedia.org/wiki/Apache_Hadoop
 headless = Front-end presentation is completely decoupled from back-end logic/CMS. Designed to be channel, programming language, and framework agnostic https://jamstack.org/glossary/headless-technology/
 heavy hitters = very popular content, celebrities
+HTTP response status codes -- 100–199 = Informational
+HTTP response status codes -- 200–299 = Successful
+HTTP response status codes -- 300–399 = Redirection
+HTTP response status codes -- 400–499 = Client error
+HTTP response status codes -- 500–599 = Server error
 hypermedia
 incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
 incident values -- 01 Detect = knows before our customers do. A balanced service includes enough monitoring and alerting to detect incidents before our customers do. The best monitoring alerts us to problems before they even become incidents.
@@ -300,6 +308,7 @@ jump server = jump server is a virtual machine that is used to manage other syst
 jumpbox = see [[jump server]]
 kafka = pub/sub + store + process
 kubernetes
+lambda@edge (AWS) = a lambda closer to the user. Downside is being away from the backend/DB
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
 latency = the time that passes between an action and the resulting response
 latency https://www.a10networks.com/glossary/osi-network-model-and-types-of-load-balancers/
@@ -344,6 +353,7 @@ middleware https://en.wikipedia.org/wiki/Middleware_(distributed_applications)
 mitigations: code rollback, data rollback, degrade, upsize, blocklist, drain, quarantine https://www.oreilly.com/content/generic-mitigations/
 monitoring
 monitoring "Understanding what is happening in your environment is key to maintaining efficient, secure, and compliant applications"
+naming -- best practicies = Be descriptive of the use-case and environment. For example, "staging-db-web" or "production-db-backend" https://developers.cloudflare.com/d1/get-started/
 network ACL
 network model -- OSI -- Layer 1 = The physical layer, as with TCP/IP, provides the physical connection to the network and defines the electrical and physical characteristics
 network model -- OSI -- Layer 2 = The datalink layer conceptually creates a point-to-point connection between network endpoints and receives and sends data to and from the network layer
@@ -552,6 +562,7 @@ VPN
 WebAssembly (Wasm) is a fast, light alternative to Linux and Windows containers
 WebAssembly -- docker https://docs.docker.com/desktop/features/wasm/
 WebAssembly System Interface (WASI) = a group of standards-track API specifications for software compiled to the W3C WebAssembly (Wasm) standard https://wasi.dev/
+webhook = event-driven method of communication between applications
 WebRTC
 WebSockets
 WebSockets -- gateway

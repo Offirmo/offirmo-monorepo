@@ -479,6 +479,7 @@ hormesis = A low dose of something can have the opposite effect of a high dose. 
 Horseshoe Theory = Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
 hostile architecture https://en.wikipedia.org/wiki/Hostile_architecture
 how to ask questions http://www.catb.org/esr/faqs/smart-questions.html
+how to fail well = https://www.linkedin.com/posts/davidkline_7-lessons-on-how-to-fail-well-activity-7330569803084034049-U4Hx/
 https://36questionsinlove.com/
 https://cobeats.com/folder/ryfTgPr9H
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
