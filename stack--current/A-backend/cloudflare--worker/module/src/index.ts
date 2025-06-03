@@ -2,19 +2,19 @@
 
 import { Hono } from 'hono'
 
-//import { type Bindings } from './types.ts'
+import type { Env } from './types.ts'
 import { FOO } from './endpoints/users/index.ts'
 
 /////////////////////////////////////////////////
 
-const app = new Hono()
+const app = new Hono<Env>()
 
 /////////////////////////////////////////////////
 
 app.onError((err, c) => {
 	console.error(`${err}`)
 
-	return c.text('Error from Hono', 500)
+	return c.text('Error!', 500)
 })
 
 /////////////////////////////////////////////////
@@ -37,15 +37,16 @@ app.use(async (c, next) => {
 	console.log(`Hono after`, c.req.url)
 })
 
-app.get('/api', (c) => c.text(`Hello Cloudflare Workers! ${FOO}`))
-app.get('/test', (c) => c.text('Hono!'))
+//app.get('/api', (c) => c.text(`Hello Cloudflare Workers! ${FOO}`))
+//app.get('/test', (c) => c.text('Hono!'))
 
-/*
-app.all('*', c => {
+app.all('*', (c) => {
 	console.log(`Hono All`, c.req.url)
 
 	// https://developers.cloudflare.com/workers/static-assets/binding/#runtime-api-reference
 	//return c.env.ASSETS.fetch(c.req.raw);
-})*/
+
+	c.text('Hono!')
+})
 
 export default app

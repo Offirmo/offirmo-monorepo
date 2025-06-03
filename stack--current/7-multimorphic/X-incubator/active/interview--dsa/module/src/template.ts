@@ -6,9 +6,6 @@ import { Bench } from 'tinybench'
 
 /////////////////////////////////////////////////
 
-
-/////////////////////////////////////////////////
-
 function foo(expression: string): number {
 	throw new Error(`NIMP!`)
 }
@@ -64,7 +61,7 @@ describe('exercise', () => {
 
 	test_case('1 - 1', 0)
 
-	it.skip('should be fast', async () => {
+	/*it.skip('should be fast', async () => {
 		// https://github.com/tinylibs/tinybench
 		console.log('Benchmarking…')
 		const bench = new Bench({ time: 10 })
@@ -75,5 +72,5 @@ describe('exercise', () => {
 
 		await bench.run()
 		console.table(bench.table())
-	})
+	})*/
 })

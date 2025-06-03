@@ -6,14 +6,27 @@ import { Bench } from 'tinybench'
 
 /////////////////////////////////////////////////
 
-function foo(expression: string): number {
-	throw new Error(`NIMP!`)
+function repeatedSubstringPattern(s: string): boolean {
+	outer: for (let n = 2; n <= s.length; ++n) {
+		const segmentSize = s.length / n
+		const isExactDivisor = Math.round(segmentSize) === segmentSize
+		if (!isExactDivisor) continue
+
+		for (let i = 0; i < segmentSize; ++i) {
+			for (let j = 1; j < n; ++j) {
+				if (s[j * segmentSize + i] !== s[i]) continue outer
+			}
+		}
+		return true
+	}
+
+	return false
 }
 
 /////////////////////////////////////////////////
 
 describe('exercise', () => {
-	const FUT = foo
+	const FUT = repeatedSubstringPattern
 	function test_case(...args: [ ...Parameters<typeof FUT>, ReturnType<typeof FUT> ]) {
 		const result__expected: ReturnType<typeof FUT> = args.pop() as any
 		const params: Parameters<typeof FUT> = args as any
@@ -59,7 +72,16 @@ describe('exercise', () => {
 		})
 	}
 
-	test_case('1 - 1', 0)
+	// test_case('a', false)
+	test_case('aa', true)
+	test_case('aaa', true)
+
+	test_case('abab', true)
+	test_case('aba', false)
+	test_case('abcabcabcabc', true)
+
+	test_case('abcabcabc', true)
+
 
 	/*it.skip('should be fast', async () => {
 		// https://github.com/tinylibs/tinybench

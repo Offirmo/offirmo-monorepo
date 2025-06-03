@@ -4,3 +4,7 @@ export type Bindings = {
 	//USERNAME: string
 	//PASSWORD: string
 }
+
+export type Env = {
+	Binding: Bindings,
+}

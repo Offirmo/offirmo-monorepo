@@ -26,6 +26,7 @@
 		"dev": "run-s clean check--ts--watch",
 
 		"start": "wrangler --no-bundle dev",
+		"refresh-types": "wrangler types",
 
 		"build:worker": "node --experimental-strip-types ./module/++gen/bundle/index.ts",
 

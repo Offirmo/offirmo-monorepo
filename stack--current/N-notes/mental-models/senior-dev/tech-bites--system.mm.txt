@@ -74,6 +74,7 @@ API -- Richardson Maturity Model -- Level 1 - Resources = now rather than making
 API -- Richardson Maturity Model -- Level 2 - HTTP Verbs (correct semantic)
 API -- Richardson Maturity Model -- Level 3 - Hypermedia Controls = HATEOAS (Hypertext As The Engine Of Application State)
 API -- Richardson Maturity Model https://martinfowler.com/articles/richardsonMaturityModel.html
+API -- unofficial = nables programmatic access to data or functionality that providers don’t officially support https://blog.supergood.ai/p/what-is-an-unofficial-api
 API -- view -- scope -- types = "raw / user defined scope" ex. a user-entered filter, "natural object scope" = when the object is a natural container, "persisted scope" = saved filter / board / custom view
 API -- view -- scope = the limit of where to conduct a search for domain objects for display on a view
 API -- view = an API is a view on the resources, or is a certain resource mapping over the business objects
