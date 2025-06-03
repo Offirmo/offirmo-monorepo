@@ -11,14 +11,12 @@
 	},
 	"source": "module/src/index.ts",
 	"dependencies": {
-		"@offirmo-private/db": "*",
 		"@offirmo-private/offirmo-api--interface": "*",
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo-private/soft-execution-context--node": "*",
 		"@offirmo/error-utils": "^0.0.1",
 		"@offirmo/universal-debug-api-node": "^0.2",
 		"@parcel/core": "^2",
-		"@sentry/node": "^9",
 		"hono": "^4",
 		"tiny-invariant": "^1",
 		"tslib": "^2",
@@ -45,7 +43,6 @@
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@parcel/types": "^2",
-		"@types/node": "^22",
 		"npm-run-all": "^4",
 		"typescript": "^5",
 		"wrangler": "^4"

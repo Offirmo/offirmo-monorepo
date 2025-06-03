@@ -1,13 +1,15 @@
+/// <reference path="../../worker-configuration.d.ts" />
+
 //import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 
 import { Hono } from 'hono'
 
-import type { Env } from './types.ts'
+import type { HonoEnv } from './types.ts'
 import { FOO } from './endpoints/users/index.ts'
 
 /////////////////////////////////////////////////
 
-const app = new Hono<Env>()
+const app = new Hono<HonoEnv>()
 
 /////////////////////////////////////////////////
 
@@ -32,13 +34,10 @@ app.notFound((c) => {
 /////////////////////////////////////////////////
 
 app.use(async (c, next) => {
-	console.log(`Hono before`, c.req.url)
+	console.log(`Hono begin`, c.req.url)
 	await next()
-	console.log(`Hono after`, c.req.url)
+	console.log(`Hono end`, c.req.url)
 })
-
-//app.get('/api', (c) => c.text(`Hello Cloudflare Workers! ${FOO}`))
-//app.get('/test', (c) => c.text('Hono!'))
 
 app.all('*', (c) => {
 	console.log(`Hono All`, c.req.url)
@@ -46,7 +45,7 @@ app.all('*', (c) => {
 	// https://developers.cloudflare.com/workers/static-assets/binding/#runtime-api-reference
 	//return c.env.ASSETS.fetch(c.req.raw);
 
-	c.text('Hono!')
+	return c.text('Hono!')
 })
 
 export default app

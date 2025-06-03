@@ -1,10 +1,13 @@
+/// <reference path="../../worker-configuration.d.ts" />
+import { type Env as HonoDefaultEnv } from 'hono'
 
-export type Bindings = {
-	//MY_BUCKET: R2Bucket
-	//USERNAME: string
-	//PASSWORD: string
+type Bindings = Cloudflare.Env
+
+interface Variables {
+
 }
 
-export type Env = {
-	Binding: Bindings,
+export interface HonoEnv extends Required<HonoDefaultEnv> {
+	Binding: Bindings
+	Variables: Variables
 }

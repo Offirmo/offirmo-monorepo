@@ -39,11 +39,13 @@ console.log({
 
 let bundler = new Parcel(OPTIONS)
 
-/*
 let subscription = await bundler.watch((err, event) => {
 	if (err) {
 		// fatal error
 		throw err;
+	}
+	if (!event) {
+		throw new Error('should never happen!')
 	}
 
 	if (event.type === 'buildSuccess') {
@@ -52,11 +54,12 @@ let subscription = await bundler.watch((err, event) => {
 	} else if (event.type === 'buildFailure') {
 		console.log(event.diagnostics);
 	}
-});*/
+});
 //await subscription.unsubscribe();
 
+/*
 try {
-	let {bundleGraph, buildTime} = await bundler.run();
+	let { bundleGraph, buildTime } = await bundler.run();
 	let bundles = bundleGraph.getBundles();
 	if (bundles.length === 0) throw new Error('Nothing built!!')
 	console.log(`✨ Built ${bundles.length} bundles in ${buildTime}ms!`);
@@ -64,3 +67,4 @@ try {
 	console.error(`XXX ERROR`, err)
 	console.log(err?.diagnostics);
 }
+*/
