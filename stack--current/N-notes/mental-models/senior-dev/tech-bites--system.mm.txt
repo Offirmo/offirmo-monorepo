@@ -208,6 +208,8 @@ data store -- google sheets https://www.jacobparis.com/content/submit-form-googl
 data store -- KV store
 data store -- KV store -- Memcached
 data store -- KV store -- Redis
+data store -- live query: A live query is a query that is re-run when the data it depends on changes.
+data store -- live store: Manages live query subscribers and invalidations on the server. The current implementation is in-memory. Other stores can be implemented in the future (Redis, etc.).
 data store -- object store -- AWS S3
 data store -- object store -- Cloudflare R2
 data store -- object store = flat structure of objects + uid + metadata

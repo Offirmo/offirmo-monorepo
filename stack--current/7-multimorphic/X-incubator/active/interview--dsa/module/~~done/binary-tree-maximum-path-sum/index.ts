@@ -90,7 +90,6 @@ function maxPathSumFromUnserialized(treeAsArray: Array<number | null>): number {
 /////////////////////////////////////////////////
 
 describe('exercise', () => {
-
 	const FUT = maxPathSumFromUnserialized
 	function test_case(...args: [ ...Parameters<typeof FUT>, ReturnType<typeof FUT> ]) {
 		const result__expected: ReturnType<typeof FUT> = args.pop() as any

@@ -6,6 +6,7 @@ import { LIB, SERVER_RESPONSE_VERSION } from './consts.ts'
 
 /////////////////////////////////////////////////
 
+/*
 export function get_allowed_origin(channel: ReleaseChannel): string {
 	switch(channel) {
 		case 'dev':
@@ -18,6 +19,7 @@ export function get_allowed_origin(channel: ReleaseChannel): string {
 			throw new Error(`[${LIB}] no allowed origin for channel "${channel}"!`)
 	}
 }
+*/
 
 function _get_api_base_url(channel: ReleaseChannel): string {
 	switch(channel) {

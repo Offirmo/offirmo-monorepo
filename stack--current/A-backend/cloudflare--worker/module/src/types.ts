@@ -1,11 +1,22 @@
 /// <reference path="../../worker-configuration.d.ts" />
+
 import { type Env as HonoDefaultEnv } from 'hono'
+import type { XSoftExecutionContext } from './services/sxc.ts'
 
-type Bindings = Cloudflare.Env
 
-interface Variables {
+/////////////////////////////////////////////////
 
+
+
+/////////////////////////////////////////////////
+
+export type Bindings = Cloudflare.Env
+
+export interface Variables {
+	SXC: XSoftExecutionContext
 }
+
+/////////////////////////////////////////////////
 
 export interface HonoEnv extends Required<HonoDefaultEnv> {
 	Binding: Bindings

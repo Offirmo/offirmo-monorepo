@@ -2,7 +2,7 @@ import { Enum } from 'typescript-string-enums'
 
 /////////////////////////////////////////////////
 
-export const LIB = '@online-adventur.es/api-interface'
+export const LIB = '@offirmo-private/offirmo-api--interface'
 
 /////////////////////////////////////////////////
 
@@ -52,4 +52,4 @@ export const HTTP_STATUS_CODE = {
 			not_implemented: 501,
 		}
 	}
-}
+} as const

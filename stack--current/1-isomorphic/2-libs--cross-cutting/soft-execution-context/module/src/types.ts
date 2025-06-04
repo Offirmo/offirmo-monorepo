@@ -5,7 +5,7 @@ import { type XXError } from '@offirmo/error-utils'
 /////////////////////////////////////////////////
 
 export interface BaseInjections {
-	logger: any // TODO improve
+	logger: any // TODO improve typing
 
 	// detected env
 	ENV: string
@@ -98,7 +98,10 @@ export interface SoftExecutionContext<
 		=> SoftExecutionContext<Injections, AnalyticsDetails, ErrorDetails>
 	getErrorDetails: () => ErrorDetails & BaseErrorDetails
 
+	// create a fully decorated error
+	// useful if creating an error later from a saved SXC, ex. from a pipeline
 	createError: (message: string, details: XXError['details']) => XXError
+
 	handleError: (err: unknown, debugId: string) => void
 
 	xTry: <T>(operation: string, fn: Operation<T, Injections, AnalyticsDetails, ErrorDetails>) => T

@@ -1,5 +1,7 @@
 import { Enum } from 'typescript-string-enums'
 
+/////////////////////////////////////////////////
+// TODO move elsewhere
 
 // tslint:disable-next-line: variable-name
 export const ReleaseChannel = Enum(
@@ -9,6 +11,7 @@ export const ReleaseChannel = Enum(
 )
 export type ReleaseChannel = Enum<typeof ReleaseChannel> // eslint-disable-line no-redeclar
 
+/////////////////////////////////////////////////
 
 // nominal response **assuming no errors**
 export interface OAResponse<T> {
@@ -34,11 +37,11 @@ export interface OAServerResponseBody<T> extends Omit<OAResponse<T>, "data"> {
 	v: number,
 
 	// either error or data, not both
-	data?: T, // see OAResponse
-	error?: { // if present, may be forwarded (thrown) on reception
+	data?: T | undefined, // see OAResponse
+	error?: undefined | { // if present, may be forwarded (thrown) on reception
 		message: string
 		// no stack trace, can be too big and a security issue
-		code?: string // node
+		code?: undefined | string // node
 		logical_stack: string // SXC "safe" and readable logical stack
 		// TODO some kind of details?
 	}

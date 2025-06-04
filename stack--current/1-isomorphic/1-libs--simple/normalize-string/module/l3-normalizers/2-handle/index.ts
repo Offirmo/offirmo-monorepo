@@ -11,6 +11,8 @@ import {
 
 /////////////////////////////////////////////////
 
+// TODO extra rules https://9to5mac.com/2025/06/02/whatsapp-getting-usernames/
+
 const coerce_toꓽnicknameⵧsafe = combineꓽnormalizers(
 	coerce_toꓽascii, // no unicode allowed
 	to_lower_case,

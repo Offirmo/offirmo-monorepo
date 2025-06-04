@@ -16,7 +16,7 @@ const OPTIONS: InitialParcelOptions = {
 
 	entries: INPUT_DIR + '/index.ts',
 	defaultConfig: '@offirmo-private/parcel-config',
-	mode: 'production',
+	//mode: 'production',
 
 	targets: {
 		'worker': {
@@ -50,9 +50,11 @@ let subscription = await bundler.watch((err, event) => {
 
 	if (event.type === 'buildSuccess') {
 		let bundles = event.bundleGraph.getBundles();
+		console.log(`✅✅✅✅✅✅✅`)
 		console.log(`✨ Built ${bundles.length} bundles in ${event.buildTime}ms!`);
-	} else if (event.type === 'buildFailure') {
-		console.log(event.diagnostics);
+	} else /*if (event.type === 'buildFailure')*/ {
+		console.error('❌❌❌❌❌❌❌❌❌❌❌❌❌❌')
+		console.error(event.diagnostics);
 	}
 });
 //await subscription.unsubscribe();

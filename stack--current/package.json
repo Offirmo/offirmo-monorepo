@@ -129,7 +129,6 @@
 		"chai-as-promised": "^8",
 		"chai-fetch-mock": "^3",
 		"chai-moment": "^0.1",
-		"chai-subset": "^1",
 		"chroma-js": "^3",
 		"classnames": "^2",
 		"cross-spawn": "^7",

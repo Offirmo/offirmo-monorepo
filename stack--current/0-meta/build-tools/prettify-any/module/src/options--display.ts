@@ -1,4 +1,4 @@
-import { EOL } from 'node:os'
+//import { EOL } from 'node:os' we need to be runtime agnostic, ex. lambda or workers
 import getꓽterminal_size from 'terminal-size'
 
 import type { DisplayOptions } from './types.ts'
@@ -6,7 +6,7 @@ import type { DisplayOptions } from './types.ts'
 /////////////////////////////////////////////////
 
 const OPTIONS__DISPLAYⵧDEFAULT: DisplayOptions = {
-	eol: EOL as DisplayOptions['eol'],
+	eol: '\n', //EOL as DisplayOptions['eol'],
 	max_width‿charcount: getꓽterminal_size().columns,
 	indent_size‿charcount: 3,
 	max_primitive_str_size: null,

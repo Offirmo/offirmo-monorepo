@@ -1,5 +1,3 @@
-import * as process from 'node:process'
-
 import { isꓽnegative_zero } from './__vendor/@offirmo-private/type-detection/index.ts'
 
 import type {
@@ -289,7 +287,7 @@ const OPTIONS__PRETTIFYⵧDEFAULT: PrettifyOptions = {
 							return [ o.stylizeꓽglobal('globalThis') ]
 
 						// @ts-expect-error TS7029
-						case process.env:
+						case (globalThis as any).process?.env:
 							o = {
 								...o,
 								should_sort_keys: true, // force for this object
