@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [feat][breaking] bumped deps: mocha 11
 * [chore][patch] tweaked offirmo specific inits (normal users will never see anything)
 * bumped deps: @types/chai-as-promised 8 + other @types
+* removing chai-subset as it's now integrated https://github.com/chaijs/chai/pull/1664
 * ...
 
 ## [9.0.0] - 2023/11/18

@@ -15,7 +15,6 @@ globalThis.sinon = sinon
 import * as chai from 'chai'
 import * as chai_as_promised from 'chai-as-promised'
 import * as sinon_chai from 'sinon-chai'
-import * as chai_subset from 'chai-subset'
 import * as chai_moment from 'chai-moment'
 chai.use(chai_as_promised.default) // order is important: https://github.com/prodatakey/dirty-chai#use-with-chai-as-promised
 chai.use(sinon_chai.default)

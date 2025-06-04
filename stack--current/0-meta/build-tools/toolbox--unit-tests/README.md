@@ -36,7 +36,6 @@ This modules bundles:
 * `sinon`
 * `sinon-chai`
 * `chai-as-promised`
-* `chai-subset`
 * `chai-moment`
 * (optional) `chai-fetch-mock`
 * `eslint-plugin-mocha` and `eslint-plugin-chai-expect`
@@ -46,7 +45,7 @@ This modules bundles:
 It also exposes:
 - a pre-made plumbing for:
   - activating the `chai.expect` interface
-  - activating correctly the chai plugins: `sinon-chai`, `chai-as-promised`, `chai-subset`, `chai-moment`, [`chai-fetch-mock` if present]
+  - activating correctly the chai plugins: `sinon-chai`, `chai-as-promised`, `chai-moment`, [`chai-fetch-mock` if present]
 - a pre-made mocha options file
 
 
@@ -55,7 +54,7 @@ Writing unit tests in JavaScript with mocha/chai requires assembling a bunch of 
 
 **:-1: WITHOUT @offirmo/unit-test-toolbox :-1: :hurtrealbad:**:
 1. remembering all the libs needed
-1. installing them: `npm install mocha chai sinon sinon-chai chai-as-promised chai-subset chai-moment`
+1. installing them: `npm install mocha chai sinon sinon-chai chai-as-promised chai-moment`
 1. if using typescript: `npm install @types/mocha @types/chai @types/sinon @types/sinon-chai @types/chai-as-promised`
 1. write an init file for activating `chai.expect` (what else ?), `sinon-chai` and `chai-as-promised`
 1. write the npm task `"test": "mocha --config mocharc.json path/to/init.js '<glob_to_my_tests/**/*spec.js>'"`
@@ -92,7 +91,6 @@ If you want to use the pre-written init file, reference it in your `test` task:
 * sinon
 * sinon-chai
 * chai-as-promised
-* chai-subset
 * chai-moment https://www.npmjs.com/package/chai-moment
 
 
