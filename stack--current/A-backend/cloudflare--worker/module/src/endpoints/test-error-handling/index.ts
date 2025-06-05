@@ -60,7 +60,7 @@ async function fail(
 		case FailureMode['manual']:
 			// bad idea (should throw instead) but possible
 			return new Response(
-				get_test_err().message,
+				'Manually created ERROR response (do not do that! Throw instead!)',
 				{
 					status: get_test_err().statusCode!
 				}

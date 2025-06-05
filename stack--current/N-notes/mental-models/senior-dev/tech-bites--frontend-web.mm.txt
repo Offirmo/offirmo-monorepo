@@ -71,6 +71,9 @@ browser compatibility data -- watch https://bcd-watch.igalia.com/
 browsers -- Chrome -- is not the standard https://v4.chriskrycho.com/2017/chrome-is-not-the-standard.html
 browsers -- supported browsers https://support.atlassian.com/atlassian-account/docs/supported-browsers-for-atlassian-cloud-products/  https://www.canva.com/en_au/help/technical-requirements/
 browsing contexts = such as several windows, iframes or even workers
+bundling -- dead code elimination
+bundling -- tree shaking
+bundling -- solutions = Parcel, Webpack, Rollup, Vite...
 button vs link -- Button = Use when you want to trigger an immediate action on the current page, for example, opening a modal, or playing a video.
 button vs link -- Link = Use when you want to navigate to a different page, or to a different part of the same page without causing any action to the current page. Used for basic navigation, mailto: links, phone numbers, or changing the URL path in some way.
 button vs link -- Link button = Use when you want to navigate to a different page or a different part of the same page, but maintain visual consistency with other buttons. Works like a link (for navigation), but looks like a button. Use to maintain consistent visual styles and semantic accuracy. Link button shares visual style with Button but shares behaviour & semantics with Link.

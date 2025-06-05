@@ -28,6 +28,7 @@ challenges -- User experience and adoption = Complex interfaces and a steep lear
 compliance -- AU -- AUSTRAC https://www.austrac.gov.au/business/new-to-austrac
 consensus
 cross-chain
+crypto signals = advice to invest https://www.tokenmetrics.com/blog/crypto-signals
 cryptocurrency
 cryptocurrency exchange
 culture

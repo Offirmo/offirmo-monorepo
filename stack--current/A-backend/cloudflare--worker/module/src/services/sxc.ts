@@ -1,12 +1,11 @@
-import type { Immutable } from '@offirmo-private/ts-types'
-import { type Logger } from '@offirmo/universal-debug-api-node'
+import { type Logger } from '@offirmo/universal-debug-api-interface'
 import {
-	getRootSXC,
-	type BaseInjections,
+	getRootSXC as _getRootSXC,
+	type BaseInjections, type BaseAnalyticsDetails, type BaseErrorDetails,
 	type OperationParams,
 	type Operation,
 	type SoftExecutionContext,
-	type WithSXC,
+	type WithSXC as _WithSXC,
 	type EventDataMap,
 } from '@offirmo-private/soft-execution-context'
 //import { JSONRpcRequest, JSONRpcResponse } from '@offirmo-private/json-rpc-types'
@@ -23,7 +22,7 @@ import logger from './logger'
 
 /////////////////////////////////////////////////
 
-export interface Injections extends BaseInjections {
+export interface SXCInjections extends BaseInjections {
 	logger: Logger
 	//p_user?: Immutable<Users.PUser>
 	//user?: Users.User
@@ -31,57 +30,64 @@ export interface Injections extends BaseInjections {
 	//jsonrpc_response?: JSONRpcResponse<{}>,
 }
 
-export type XSoftExecutionContext = SoftExecutionContext<Injections>
+export interface SXCAnalyticsDetails extends BaseAnalyticsDetails {
+
+}
+
+export interface SXCErrorDetails extends BaseErrorDetails{
+
+}
+
+export type XSoftExecutionContext = SoftExecutionContext<SXCInjections, SXCAnalyticsDetails, SXCErrorDetails>
+
+/*
 export type WithXSEC = WithSXC<Injections>
 export type XSECEventDataMap = EventDataMap<Injections>
 export type XOperationParams = OperationParams<Injections>
 export type XOperation<T> = Operation<T, Injections>
+*/
 
 /////////////////////
 
+export const getRootSXC = _getRootSXC<SXCInjections, SXCAnalyticsDetails, SXCErrorDetails>
 
-const SXC: XSoftExecutionContext = getRootSXC<Injections>()
+getRootSXC()
 	.setLogicalStack({ module: APP })
 	.injectDependencies({ logger })
 
-decorateWithDetectedEnv(SXC)
+decorateWithDetectedEnv()
 
-SXC.injectDependencies({
+getRootSXC().injectDependencies({
 	CHANNEL,
 //	VERSION,
 })
-SXC.setAnalyticsAndErrorDetails({
-	product: APP,
+getRootSXC().setAnalyticsAndErrorDetails({
+	//product: APP,
 //	VERSION,
 	CHANNEL,
 })
 
 /////////////////////////////////////////////////
 
-SXC.emitter.on('analytics', function onAnalytics({SEC, eventId, details}) {
+getRootSXC().emitter.on('analytics', function onAnalytics({eventId, details}) {
 	console.groupCollapsed(`⚡  [TODO] Analytics! ⚡  ${eventId}`)
-	console.table('details', details)
+	console.table(details)
 	console.groupEnd()
 })
 
-// remove all the listeners installed by AWS (if any)
-// TODO externalize in SEC-node
+// remove all the listeners installed by the runtime (ex. AWS) if any
+// TODO externalize in SEC-node?
 //console.log('uncaughtException Listeners:', process.listenerCount('uncaughtException'))
 //console.log('unhandledRejection Listeners:', process.listenerCount('unhandledRejection'))
-process.listeners('uncaughtException').forEach(l => process.off('uncaughtException', l))
-process.listeners('unhandledRejection').forEach(l => process.off('unhandledRejection', l))
-listenToUncaughtErrors()
-listenToUnhandledRejections()
+//process.listeners('uncaughtException').forEach(l => process.off('uncaughtException', l))
+//process.listeners('unhandledRejection').forEach(l => process.off('unhandledRejection', l))
+//listenToUncaughtErrors()
+//listenToUnhandledRejections()
 
-SXC.xTry('SEC/init', ({logger}) => {
+getRootSXC().xTry('SEC/init', ({logger}) => {
 	logger.trace('Root Soft Execution Context initialized ✔')
 })
 
-const { ENV } = SXC.getInjectedDependencies()
-if (ENV !== process.env.NODE_ENV) {
-	logger.error('ENV detection mismatch!', { 'SEC.ENV': ENV, 'process.env.NODE_ENV': process.env.NODE_ENV })
-}
-
 /////////////////////////////////////////////////
 
-export { type LXXError } from '../utils/index.ts'
+//export { type LXXError } from '../utils/index.ts'

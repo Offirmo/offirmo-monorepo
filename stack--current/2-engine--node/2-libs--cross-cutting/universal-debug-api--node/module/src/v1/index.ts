@@ -46,7 +46,7 @@ export default function create(): DebugApiV1 {
 		try {
 			const EnvKey = getEnvKeyForOverride(ovKey)
 			//console.log(`- reading EnvKey = "${EnvKey}"`)
-			const rawValue = process.env[EnvKey] || null
+			const rawValue = globalThis.process?.env?.[EnvKey] || null
 			//console.log(`   ↳ read EnvKey "${EnvKey}", content = "${rawValue}"`)
 			return rawValue
 		}

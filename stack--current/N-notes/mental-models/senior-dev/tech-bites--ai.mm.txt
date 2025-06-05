@@ -43,6 +43,8 @@ AI gateway = convenient self-service integration point for internal teams who wa
 AI model collapse = as AI grows, systems are trained on their own outputs, gradually losing accuracy, diversity, and reliability. This occurs because errors compound across successive model generations, leading to distorted data distributions and "irreversible defects" in performance. The model becomes poisoned with its own projection of reality. https://slashdot.org/story/25/05/28/0242240/some-signs-of-ai-model-collapse-begin-to-reveal-themselves
 AI transition = https://www.youtube.com/watch?v=v9JBMnxuPX8
 AI winter
+AI with ifs (TODO find better name)
+AI-first software delivery = https://www.linkedin.com/pulse/what-ai-first-software-delivery-thoughtworks-4krff/
 AI-Induced Death Spiral = StackOverflow Q&A plummeted 90% https://developers.slashdot.org/story/25/05/29/1921248/stack-overflows-radical-new-plan-to-fight-ai-induced-death-spiral
 algorithmic aversion = We don’t like taking instructions from machines when they conflict with our judgement https://www.oneusefulthing.org/p/getting-started-with-ai-good-enough
 alignment -- Alignment Stress Testing team = validates alignment (Anthropic)
@@ -225,9 +227,6 @@ prompt -- optimization https://app.hamming.ai/prompt-optimizer
 prompt -- ROC = [Role] + [Output] + [Context], ex. You are an engineering manager, how many story points do you think this will be and why? https://community.atlassian.com/t5/Jira-Software-articles/Be-an-AI-Rockstar-Prompts-in-Jira-Software/ba-p/2636811
 prompt injection = attack where a malicious third party hides a secret message somewhere where AI may see it while using the computer, potentially tricking it into taking actions the user didn’t intend https://www.anthropic.com/research/visible-extended-thinking
 Pytorch
-crypto signals = advice to invest https://www.tokenmetrics.com/blog/crypto-signals
-solved problems = don't use AI for that
-AI with ifs (TODO find better name)
 RAG 2.0 https://medium.com/towards-artificial-intelligence/rag-2-0-finally-getting-rag-right-f74d0194a720
 rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-to-stay-competitive-hits-tech.html
 ReAct flow
@@ -253,6 +252,7 @@ sleeper agents -- defection probes https://www.anthropic.com/research/probes-cat
 slop = unwanted AI generated content https://simonwillison.net/2024/May/8/slop/
 Snowflake Arctic https://www.snowflake.com/blog/arctic-open-efficient-foundation-language-models-snowflake/
 sociotechnic = skilled at analyzing the interaction of technology and society long-term: lawyers, ethicists, sociologists, or rights advocates
+solved problems = don't use AI for that
 Stable Diffusion
 superintelligence "AI vastly smarter than humans" https://openai.com/research/weak-to-strong-generalization
 Support Vector Machines

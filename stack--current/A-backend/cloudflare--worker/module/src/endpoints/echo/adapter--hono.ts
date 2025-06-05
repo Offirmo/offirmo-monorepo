@@ -1,5 +1,5 @@
 import { type Handler } from 'hono'
-import { create_server_response_body__data } from "@offirmo-private/offirmo-api--interface";
+import { create_server_response_body__data } from '@offirmo-private/offirmo-api--interface'
 
 /////////////////////////////////////////////////
 

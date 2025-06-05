@@ -33,7 +33,7 @@ function decorateWithDetectedEnv() {
 
 	// TODO normalize browser/os detection
 	const details = {
-		node_version: process.versions.node,
+		...(globalThis.process && { node_version: globalThis.process?.versions?.node, })
 		//os_platform: os.platform(),
 		//os_release: os.release(),
 		//os_type: os.type(),

@@ -9,7 +9,8 @@
 	// overall project name, will appear in Cloudflare dashboard. BEWARE OF COPY PASTE!
 
 	// https://developers.cloudflare.com/workers/configuration/compatibility-dates/
-	"compatibility_date": "2025-06-01",
+	"compatibility_date": "2025-06-05",
+	"compatibility_flags": [ "nodejs_compat" ],
 	// https://developers.cloudflare.com/workers/wrangler/configuration/#observability
 	"send_metrics": false,
 
