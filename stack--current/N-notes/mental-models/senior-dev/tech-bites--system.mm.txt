@@ -49,7 +49,8 @@ API -- constraints -- Relay EntryPoints = a loading mechanism that makes impleme
 API -- contracts
 API -- Diogo Lucas classification = far-team, near-team and inner-team. inner team = used within a team or between partner teams, near team = "Conway APIs" between teams that don't always communicate with each other, Far-team API = between teams that have low-bandwidth communications
 API -- hybrids = reconcile the need for a stable public API that will not constantly disrupt your carefully tended ecosystem with your team’s ability to move fast and (eventually) break stuff? cater for different requirements regarding security and SLAs or to radically different client natures? https://www.youtube.com/watch?v=eqy609JleoE
-API -- pagination
+API -- pagination -- current page, total pages https://google.aip.dev/158 https://graphql.org/learn/pagination/
+API -- pagination -- cursor https://graphql.org/learn/pagination/
 API -- resilience
 API -- REST (Representational State Transfer) = architectural style for distributed hypermedia systems https://restfulapi.net/
 API -- REST -- cookbook https://restcookbook.com/

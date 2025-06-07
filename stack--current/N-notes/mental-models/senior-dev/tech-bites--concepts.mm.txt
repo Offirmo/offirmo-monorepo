@@ -44,9 +44,12 @@ access control -- role-based (RBAC)
 actually portable executables https://justine.lol/ape.html
 allocation
 annotation
+anti-pattern -- god class / file
+anti-pattern -- constants file = https://softwareengineering.stackexchange.com/a/290009/39510 https://bytedev.medium.com/the-god-constant-class-30d82cd4f677
 anomaly detection
 API (Application Programming Interface) = interface (set of subroutine definitions, protocols, and tools) for exposing a software feature, defines interactions that allows two applications to talk to each other
 API -- AIPs (API Improvement Proposals) https://google.aip.dev/
+API -- dev solution -- https://reqres.in/
 API -- approach design with real-life scenarios and code in mind.
 API -- avoid introducing breaking changes as much as possible.
 API -- bad = make assumptions about what you are trying to do, but then break when those assumptions are not exactly right, ex. AppCache
@@ -58,7 +61,7 @@ API -- deprecation -- retiring = decommissioning of an API without a suitable re
 API -- design -- Don’t contradict past decisions, Don’t reduce future options
 API -- easy to build one, hard to build the **right** one
 API -- economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
-API -- enums over booleans
+API -- enums over booleans https://www.teamten.com/lawrence/programming/prefer-enums-over-booleans.html
 API -- external-facing = are where "design up front" and consideration about future use cases really matters. Changing APIs is a pain for us and for our users, and creating backwards incompatibility is horrible (although sometimes impossible to avoid). https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 API -- features should be small, atomic and composable.
 API -- follow existing patterns and conventions.
