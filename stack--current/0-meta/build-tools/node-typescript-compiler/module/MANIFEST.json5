@@ -1,8 +1,7 @@
 {
-	namespace: "node-typescript-compiler",
+	_dontꓽpresent: true,
+
 	version: "4.0.0",
 	description: "Exposes typescript compiler (tsc) as a node.js module",
 	isꓽpublished: true,
-
-	_dontꓽpresent: true,
 }

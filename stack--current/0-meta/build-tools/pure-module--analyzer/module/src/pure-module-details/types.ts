@@ -45,7 +45,6 @@ interface PureModuleManifest extends Partial<PureModuleDetailsAllowedInManifest>
 			packageᐧjson?: { [path: string]: any }
 		},
 	}
-
 }
 
 // Should contain everything needed to build

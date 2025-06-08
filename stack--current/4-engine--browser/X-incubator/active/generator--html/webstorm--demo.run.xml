@@ -5,7 +5,7 @@
 		path-to-node="$USER_HOME$/.nvm/versions/node/v23.11.1/bin/node"
 		node-parameters="--experimental-strip-types"
 		path-to-js-file="module/##demo/demo--defaults/index.ts"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/3-engine--browser/X-incubator/active/generator--html">
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/4-engine--browser/X-incubator/active/generator--html">
 		<method v="2" />
 	</configuration>
 </component>

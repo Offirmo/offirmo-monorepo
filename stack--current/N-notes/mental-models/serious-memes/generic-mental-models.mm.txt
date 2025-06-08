@@ -1224,6 +1224,9 @@ wisdom -- a wisdom for left may not be valid for right
 wisdom of the rooms = AA steps
 wokeness = An aggressively performative focus on social justice https://paulgraham.com/woke.html
 word frequency -- English https://frequencylist.com/
+work --
+work -- ghostworking https://www.linkedin.com/news/story/the-ghostworking-trend-explained-7359850/
+work -- quiet quitting
 workaholic
 works of mercy -- corporal
 works of mercy -- spiritual

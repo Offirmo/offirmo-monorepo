@@ -303,7 +303,9 @@ incidents -- rate (i.e. # of HOTs and # repeat incidents)
 information retrieval
 infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-code-tools
 infrastructure as code (IaC) https://www.pulumi.com/what-is/what-is-infrastructure-as-code/
-Infrastructure as Code -- Terraform
+Infrastructure as Code -- AWS CDK
+Infrastructure as Code -- AWS CDK -- flaws https://sst.dev/blog/moving-away-from-cdk#design-flaws
+Infrastructure as Code -- Terraform = to abstract CDK / Cloudformation
 Infrastructure as Software = supposedly better than IaC https://www.pulumi.com/what-is/what-is-infrastructure-as-software/ https://www.pulumi.com/what-is/what-is-infrastructure-as-software/
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
 integrity

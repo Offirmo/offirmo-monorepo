@@ -1,4 +1,4 @@
-//import * as os from 'node:os'
+import * as os from 'node:os'
 
 import { getRootSXC } from '@offirmo-private/soft-execution-context'
 
@@ -33,10 +33,10 @@ function decorateWithDetectedEnv() {
 
 	// TODO normalize browser/os detection
 	const details = {
-		...(globalThis.process && { node_version: globalThis.process?.versions?.node, })
-		//os_platform: os.platform(),
-		//os_release: os.release(),
-		//os_type: os.type(),
+		...(globalThis.process && { node_version: globalThis.process?.versions?.node, }),
+		os_platform: os.platform(),
+		os_release: os.release(),
+		os_type: os.type(),
 	}
 
 	SXC.setAnalyticsAndErrorDetails(details)

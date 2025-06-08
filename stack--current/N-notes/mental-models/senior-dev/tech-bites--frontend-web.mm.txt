@@ -260,6 +260,7 @@ monitoring -- labs = made by a lab, ex. camera
 monitoring -- Real user monitoring (RUM) = passive monitoring technology that records all user interaction with a website or client interacting with a server or cloud-based application (vs. lab) https://en.wikipedia.org/wiki/Real_user_monitoring
 monitoring -- synthetic = own test bot https://en.wikipedia.org/wiki/Synthetic_monitoring
 native apps with JS https://v2.tauri.app/
+navigation -- client side vs full refresh
 node -- tenant isolation = node is single thread, hence issues with security, esp. AWS lambda! solutions: workerd?
 Open Web Advocacy https://open-web-advocacy.org/
 optimisation -- fonts https://nextjs.org/learn/dashboard-app/optimizing-fonts-images

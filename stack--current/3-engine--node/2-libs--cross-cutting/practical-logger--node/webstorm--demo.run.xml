@@ -5,7 +5,7 @@
 		path-to-node="$USER_HOME$/.nvm/versions/node/v23.11.1/bin/node"
 		node-parameters="--experimental-strip-types"
 		path-to-js-file="module/##doc/demo.ts"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/2-engine--node/2-libs--cross-cutting/practical-logger--node">
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/3-engine--node/2-libs--cross-cutting/practical-logger--node">
 		<method v="2" />
 	</configuration>
 </component>

@@ -45,8 +45,8 @@
 		"tslib": "^2",
 		"typescript": "^5"
 	},
-	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/3-engine--browser/2-libs--cross-cutting/practical-logger--browser",
-	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/3-engine--browser/2-libs--cross-cutting/practical-logger--browser/README.md",
+	"repository": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/4-engine--browser/2-libs--cross-cutting/practical-logger--browser",
+	"homepage": "https://github.com/Offirmo/offirmo-monorepo/tree/main/stack--current/4-engine--browser/2-libs--cross-cutting/practical-logger--browser/README.md",
 	"bugs": {
 		"url": "https://github.com/Offirmo/offirmo-monorepo/issues"
 	},
