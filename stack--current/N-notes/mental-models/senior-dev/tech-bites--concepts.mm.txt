@@ -44,12 +44,11 @@ access control -- role-based (RBAC)
 actually portable executables https://justine.lol/ape.html
 allocation
 annotation
-anti-pattern -- god class / file
-anti-pattern -- constants file = https://softwareengineering.stackexchange.com/a/290009/39510 https://bytedev.medium.com/the-god-constant-class-30d82cd4f677
 anomaly detection
+anti-pattern -- constants file = https://softwareengineering.stackexchange.com/a/290009/39510 https://bytedev.medium.com/the-god-constant-class-30d82cd4f677
+anti-pattern -- god class / file
 API (Application Programming Interface) = interface (set of subroutine definitions, protocols, and tools) for exposing a software feature, defines interactions that allows two applications to talk to each other
 API -- AIPs (API Improvement Proposals) https://google.aip.dev/
-API -- dev solution -- https://reqres.in/
 API -- approach design with real-life scenarios and code in mind.
 API -- avoid introducing breaking changes as much as possible.
 API -- bad = make assumptions about what you are trying to do, but then break when those assumptions are not exactly right, ex. AppCache
@@ -59,6 +58,8 @@ API -- deprecation -- deprecation period = time between an API being marked as d
 API -- deprecation -- process = decide, analyse existing use, document, consult, announce, outreach, support, track, turn off
 API -- deprecation -- retiring = decommissioning of an API without a suitable replacement
 API -- design -- Don’t contradict past decisions, Don’t reduce future options
+API -- dev solution -- https://mockapi.io/
+API -- dev solution -- https://reqres.in/
 API -- easy to build one, hard to build the **right** one
 API -- economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
 API -- enums over booleans https://www.teamten.com/lawrence/programming/prefer-enums-over-booleans.html
@@ -353,6 +354,9 @@ error -- type -- runtime error = errors that can only be detected during runtime
 error = failure = inability of a function to return a valid result, instead producing an error object describing the reason for the failure https://boostorg.github.io/leaf/#tutorial
 ETL “extract, transform, load” = the three interdependent processes of data integration used to pull data from one database and move it to another
 event loop
+evolution -- "that's the old way and it sucks, do it this way now..."
+evolution -- I'm old and I yell at clouds
+evolution -- nothing ages faster than a (UI) framework
 exceptions -- checked vs unchecked = only Java does checked, no-one followed, too much boilerplate https://en.wikipedia.org/wiki/Criticism_of_Java#Checked_exceptions
 execution model https://en.wikipedia.org/wiki/Execution_model
 express

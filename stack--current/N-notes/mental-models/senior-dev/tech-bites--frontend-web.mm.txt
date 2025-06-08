@@ -81,6 +81,11 @@ cache https://csswizardry.com/2024/08/cache-grab-how-much-are-you-leaving-on-the
 case study -- 2024/09 Josh Comeau's blog https://www.joshwcomeau.com/blog/how-i-built-my-blog-v2/
 CDN
 CDN -- quality = hot/cold potato routing https://vercel.com/blog/latency-numbers-every-web-developer-should-know
+challenges -- accessibility
+challenges -- browser support
+challenges -- layout shift
+challenges -- load time
+challenges -- mobile
 client/server -- multi-tier architecture -- 01 presentation
 client/server -- multi-tier architecture -- 02 application
 client/server -- multi-tier architecture -- 03 business
@@ -122,6 +127,7 @@ CSS -- margin -- collapse
 CSS -- margin -- negative https://www.quirksmode.org/blog/archives/2020/02/negative_margin.html
 CSS -- Media Queries https://courses.joshwcomeau.com/css-for-js/00-recap/03-media-queries
 CSS -- methodologies -- BEM
+CSS -- modules https://github.com/css-modules/css-modules
 CSS -- nesting
 CSS -- optimization -- containment https://blogs.igalia.com/mrego/2019/01/11/an-introduction-to-css-containment/ https://developer.mozilla.org/en-US/docs/Web/CSS/contain https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Using_CSS_containment
 CSS -- overflow https://www.bram.us/2024/02/14/scroll-driven-animations-you-want-overflow-clip-not-overflow-hidden/ https://frontendmasters.com/blog/single-directionally-allowed-overflow/
@@ -134,6 +140,7 @@ CSS -- selectors -- descendant combinator -- expensive (perf) https://medium.com
 CSS -- selectors -- descendant combinator `ul li {`
 CSS -- specificity
 CSS -- stacking context https://github.com/andreadev-it/stacking-contexts-inspector
+CSS -- styled components https://styled-components.com/ https://emotion.sh/docs/introduction
 CSS -- transforms
 CSS -- triggers https://csstriggers.com/ https://css-triggers.com/
 CSS -- width = auto, fit-content, min-content https://courses.joshwcomeau.com/css-for-js/01-rendering-logic-1/10-widths
@@ -196,6 +203,7 @@ fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
 fonts -- Font Friday https://pimpmytype.com/fontfriday/
 FORC "Fear of Removing CSS" = https://x-team.com/blog/forc-fear-of-removing-css
+frameworks -- "Remember that time when 3 out of 4 websites look like Bootstrap?"
 frontend cross-concerns = hosting, cache configuration, security headers, DDoS protection, progressive rollout...
 frontend routing
 frontend testing pyramid -- confidence vs time / cost / flakiness
@@ -252,6 +260,8 @@ monitoring -- synthetic = own test bot https://en.wikipedia.org/wiki/Synthetic_m
 native apps with JS https://v2.tauri.app/
 node -- tenant isolation = node is single thread, hence issues with security, esp. AWS lambda! solutions: workerd?
 Open Web Advocacy https://open-web-advocacy.org/
+optimisation -- fonts https://nextjs.org/learn/dashboard-app/optimizing-fonts-images
+optimisation -- images https://nextjs.org/learn/dashboard-app/optimizing-fonts-images
 organic vs inorganic concept = coming from a real user or a bot/AI or app etc.
 Page Assembly Service = responsible for generating HTML for pages
 perf -- content jump = https://css-tricks.com/content-jumping-avoid/

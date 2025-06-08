@@ -8,6 +8,7 @@ CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-
 cloud -- Cloudbleed https://en.m.wikipedia.org/wiki/Cloudbleed
 compartmentalize - so your system is not all or nothing
 Content security policy (CSP) https://web.dev/articles/csp
+credential stuffing https://owasp.org/www-community/attacks/Credential_stuffing
 Cross Site Scripting (XSS) -- defense = escaping
 Cross Site Scripting (XSS) = attack where a user is able to exploit weaknesses in a web application to inject arbitrary scripts that execute on the browsers of victim users.  This code executes from the origin of the vulnerable domain. https://portswigger.net/web-security/cross-site-scripting
 Cross-Site Request Forgery (CSRF / XSRF) -- defense -- double submit
@@ -51,6 +52,7 @@ OWASP top 10 https://owasp.org/www-project-top-ten/
 PKI = Public Key Infrastructure
 plan for security from the start - it's not something you can bolt on at the end
 principle of least privilege
+pwned = https://haveibeenpwned.com/API/v3 https://github.com/BlinqOSS/is-pwned
 salting https://en.wikipedia.org/wiki/Salt_(cryptography)
 sanitization -- data as part of database query
 sanitization -- data as part of the query string in a link's URL
