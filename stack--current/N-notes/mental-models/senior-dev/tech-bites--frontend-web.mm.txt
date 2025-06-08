@@ -201,6 +201,8 @@ flash of -- Undefined Custom Elements (FOUCE) https://www.abeautifulsite.net/pos
 flash of -- unstyled content (FOUC) https://dev.to/lyqht/what-the-fouc-is-happening-flash-of-unstyled-content-413j
 fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
+fonts -- concepts +++ https://fonts.google.com/knowledge/glossary
+fonts -- concepts -- subsetting https://fonts.google.com/knowledge/glossary/subsetting
 fonts -- Font Friday https://pimpmytype.com/fontfriday/
 FORC "Fear of Removing CSS" = https://x-team.com/blog/forc-fear-of-removing-css
 frameworks -- "Remember that time when 3 out of 4 websites look like Bootstrap?"

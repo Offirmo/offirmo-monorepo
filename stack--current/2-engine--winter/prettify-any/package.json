@@ -14,9 +14,11 @@
 	"peerDependencies": {
 		"tslib": "^2"
 	},
-	"dependencies": {
+	"optionalDependencies": {
 		"chalk": "^5",
-		"terminal-size": "^4",
+		"terminal-size": "^4"
+	},
+	"dependencies": {
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
