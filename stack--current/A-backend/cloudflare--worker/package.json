@@ -40,9 +40,10 @@
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4",
 		"@offirmo-private/monorepo-scripts": "*",
-		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@offirmo/universal-debug-api-interface": "^1",
 		"@parcel/types": "^2",
+		"@types/node": "^22",
 		"npm-run-all": "^4",
 		"typescript": "^5",
 		"wrangler": "^4"

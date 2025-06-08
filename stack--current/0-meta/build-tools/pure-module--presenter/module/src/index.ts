@@ -222,7 +222,9 @@ ${pure_module_details.description || ''}
 			Array.from(pure_module_details.depsⵧnormal).sort().map(dep => [dep, pkg_infos_resolver.ǃgetꓽversionⵧfor_dep(dep)])
 		)
 		if (pure_module_details.depsⵧoptional.size) {
-			throw new Error(`Optional deps not implemented!`)
+			pkg.optionalDependencies = Object.fromEntries(
+				Array.from(pure_module_details.depsⵧoptional).sort().map(dep => [dep, pkg_infos_resolver.ǃgetꓽversionⵧfor_dep(dep)])
+			)
 		}
 
 		pkg.scripts = (() => {
@@ -334,12 +336,22 @@ ${pure_module_details.description || ''}
 						throw new Error(`Not implemented: demo with extension "${pure_module_details.sandbox.ext}"!`)
 				}
 			}
+
+			/////// Start
 			if (pure_module_details.main.ext === '.html') {
 				scripts["_start:parcel:main"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.main.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
-				scripts['start'] = `npm-run-all clean --parallel _start:parcel:main`
+			}
+			if (pure_module_details.isꓽapp) {
+				if (Object.keys(pure_module_details.engines).length === 0 || pure_module_details.engines['node']) {
+					scripts['start'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.main.path‿rel)}`
+				} else {
+					if (scripts['_start:parcel:main']) {
+						scripts['start'] = `npm-run-all clean --parallel _start:parcel:main`
+					}
+				}
 			}
 
-			// build
+			/////// build
 			if (pure_module_details.isꓽpublished) {
 				if (pure_module_details.languages.has('ts')) {
 					scripts["_build:prod"] = "monorepo-script--build-typescript-package"

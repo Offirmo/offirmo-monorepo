@@ -22,14 +22,13 @@
 		"check--ts": "echo \"@offirmo-private/db--generic-core--migrations\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"check": "run-s check--ts",
-
-		"latest":   "knex migrate:latest         --knexfile ./module/knexfile.ts",
+		"_check": "run-s check--ts",
+		"start": "node --experimental-strip-types ./module/deps.ts",
+		"latest": "knex migrate:latest         --knexfile ./module/knexfile.ts",
 		"rollback": "knex migrate:rollback       --knexfile ./module/knexfile.ts",
-		"up":       "knex migrate:up             --knexfile ./module/knexfile.ts",
-		"down":     "knex migrate:down           --knexfile ./module/knexfile.ts",
-		"reset":    "knex migrate:rollback --all --knexfile ./module/knexfile.ts  &&  knex migrate:latest  --knexfile ./module/knexfile.ts",
-
+		"up": "knex migrate:up             --knexfile ./module/knexfile.ts",
+		"down": "knex migrate:down           --knexfile ./module/knexfile.ts",
+		"reset": "knex migrate:rollback --all --knexfile ./module/knexfile.ts  &&  knex migrate:latest  --knexfile ./module/knexfile.ts",
 		"new": "knex migrate:make TODO -x ts"
 	},
 	"devDependencies": {

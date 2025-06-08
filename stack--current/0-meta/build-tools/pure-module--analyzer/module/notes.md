@@ -57,7 +57,7 @@ DEMO
 			'@offirmo-private/react--error-boundary': 'ignore',
 			
 			'@offirmo-private/css--reset': { type:  'dev' },
-		}
+		},
 		files: {
 			packageᐧjson: {
 				"|source": ">DELETE<",

@@ -4,7 +4,7 @@
 	_overrides: {
 		files: {
 			packageᐧjson: {
-				"|scripts|_start:parcel:main": "parcel serve module/*.html --port 1981 --lazy --no-autoinstall",
+				"scripts._start:parcel:main": "parcel serve module/*.html --port 1981 --lazy --no-autoinstall",
 			},
 		},
 	}

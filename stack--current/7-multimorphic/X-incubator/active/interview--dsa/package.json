@@ -21,7 +21,8 @@
 		"check--ts": "echo \"@offirmo-private/interview--dsa\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"check": "run-s tests check--ts"
+		"check": "run-s tests check--ts",
+		"start": "node --experimental-strip-types ./module/src/index.tests.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

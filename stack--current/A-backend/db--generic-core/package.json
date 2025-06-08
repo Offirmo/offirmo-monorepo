@@ -28,7 +28,7 @@
 		"check--ts": "echo \"@offirmo-private/db--generic-core\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"check": "run-s tests check--ts"
+		"_check": "run-s tests check--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

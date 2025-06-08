@@ -12,6 +12,17 @@
 		},
 		files: {
 			packageᐧjson: {
+				'|exports|./types': "./module/src/l0-types/index.ts",
+
+				'|exports|./decorators/diagnostics': "./module/src/__shared/decorators/diagnostics.ts",
+
+				'|exports|./stories/html/html5-kitchen-sink':     "./module/src/__shared/stories/html/html5-kitchen-sink_by_dbox.stories.ts",
+				'|exports|./stories/html/html-demos--offirmo':    "./module/src/__shared/stories/html/html-demos-by-offirmo.stories.ts",
+				'|exports|./stories/html/html-demos--others':     "./module/src/__shared/stories/html/html-demos-misc.stories.ts",
+				'|exports|./stories/html/motherfuckingwebsites':  "./module/src/__shared/stories/html/motherfuckingwebsites.stories.ts",
+
+				'|exports|./stories/html/elements/*':             "./module/src/__shared/stories/html/elements/*.stories.ts",
+
 				"|alias|@storybook/test": "./module/src/l3-compat/@storybook/test.ts",
 			},
 		},

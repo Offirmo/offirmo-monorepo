@@ -13,7 +13,8 @@
 	"source": "module/~~sandbox/index.ts",
 	"dependencies": {},
 	"scripts": {
-		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts"
+		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts",
+		"start": "node --experimental-strip-types ./module/~~sandbox/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

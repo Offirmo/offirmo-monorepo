@@ -1,3 +1,19 @@
 {
 	isꓽapp: true,
+
+	status: 'spike',
+
+	_overrides: {
+		files: {
+			packageᐧjson: {
+				"scripts.latest":   "knex migrate:latest         --knexfile ./module/knexfile.ts",
+				"scripts.rollback": "knex migrate:rollback       --knexfile ./module/knexfile.ts",
+				"scripts.up":       "knex migrate:up             --knexfile ./module/knexfile.ts",
+				"scripts.down":     "knex migrate:down           --knexfile ./module/knexfile.ts",
+				"scripts.reset":    "knex migrate:rollback --all --knexfile ./module/knexfile.ts  &&  knex migrate:latest  --knexfile ./module/knexfile.ts",
+
+				"scripts.new": "knex migrate:make TODO -x ts"
+			},
+		},
+	}
 }

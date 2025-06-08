@@ -20,8 +20,8 @@
 		"check--ts": "echo \"@offirmo-private/mcp\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"start": "node --experimental-strip-types ./module/src/index.ts",
-		"_check": "run-s check--ts"
+		"_check": "run-s check--ts",
+		"start": "node --experimental-strip-types ./module/src/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
