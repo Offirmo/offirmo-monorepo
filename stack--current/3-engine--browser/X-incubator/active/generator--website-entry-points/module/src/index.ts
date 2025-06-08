@@ -33,6 +33,7 @@ function getꓽwebsiteᝍentryᝍpoints(spec: Immutable<WebPropertyEntryPointSpe
 		...(shouldꓽgenerateꓽjscode(spec) && generateꓽsource_code(spec)),
 
 		// meta
+		// XXX
 		'~~gen/logs/spec.json': JSON.stringify(spec, undefined, '	'),
 	}
 }
