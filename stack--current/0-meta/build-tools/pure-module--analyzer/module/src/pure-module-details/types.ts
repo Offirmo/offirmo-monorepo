@@ -62,6 +62,7 @@ interface PureModuleDetails extends PureModuleDetailsAllowedInManifest {
 	storypad?: FileEntry
 	sandbox?: FileEntry // TODO
 	hasꓽtestsⵧunit: boolean
+	hasꓽtestsⵧevals: boolean
 	//hasꓽtestsⵧsmoke: boolean // TODO one day
 	hasꓽstories: boolean,
 	/* TODO one day

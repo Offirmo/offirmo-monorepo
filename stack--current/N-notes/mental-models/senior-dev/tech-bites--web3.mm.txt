@@ -39,6 +39,7 @@ Decentralized Autonomous Organisation, or DAO
 decentralized autonomous organization (DAO) = agreed-upon smart contract that automates decentralized decision-making over a pool of resources (tokens). Users with tokens vote on how resources get spent, and the code automatically performs the voting outcome.
 decentralized identity = technology that aims to give individuals more control and ownership over their digital identity. In traditional online systems, users often rely on centralized identity providers (like social media platforms or email services) to manage their identities and access various online services. Decentralized identity shifts the control of identity information back to the individual user. It uses globally unique identifiers associated with a decentralized identifier (DID) document. This document contains public keys, cryptographic material, and service endpoints related to identity. The technology uses selective disclosure to share specific identity attributes and minimize exposure to personally identifiable information (PII) during identity verification processes.
 DeFi
+domains = https://support.unstoppabledomains.com/support/solutions/articles/48001181690-what-are-web3-domains-
 Ethena
 Ethereum - REth https://github.com/paradigmxyz/reth
 Ethereum -- Ethereum Improvement Proposals (EIPs) https://eips.ethereum.org/

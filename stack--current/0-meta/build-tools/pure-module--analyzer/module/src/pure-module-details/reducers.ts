@@ -34,6 +34,7 @@ function create(root‿abspath: AbsolutePath): PureModuleDetails {
 		isꓽapp: false, // most common case
 		hasꓽside_effects: false,
 		hasꓽtestsⵧunit: false,
+		hasꓽtestsⵧevals: false,
 		//hasꓽtestsⵧsmoke: false,
 		hasꓽstories: false,
 		depsⵧnormal: new Set<string>(),

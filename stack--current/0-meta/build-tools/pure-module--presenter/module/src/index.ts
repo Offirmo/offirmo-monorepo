@@ -443,6 +443,24 @@ ${pure_module_details.description || ''}
 		}
 	}
 
+	if (packageᐧjson?.['scripts']?.['start']) {
+		if (Object.keys(pure_module_details.engines).length === 0 || pure_module_details.engines['node']) {
+			_schedule_root_file_creation('webstorm--start.run.xml', `
+<component name="ProjectRunConfigurationManager">
+	<configuration default="false"
+		name="${pure_module_details.fqname} -- Start"
+		type="NodeJSConfigurationType"
+		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
+		node-parameters="--experimental-strip-types"
+		path-to-js-file="${path.relative(dest_dir, pure_module_details.main.path‿abs)}"
+		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
+		<method v="2" />
+	</configuration>
+</component>
+`)
+		}
+	}
+
 	// TODO 1D .eslintrc.js
 
 	await Promise.all(ೱpromises)

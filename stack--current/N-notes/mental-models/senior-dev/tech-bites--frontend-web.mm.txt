@@ -309,6 +309,7 @@ rendering strategy -- server-side rendering (SSR) = cook dishes as orders come i
 rendering strategy -- static rendering = pre-cook everything
 rendering strategy https://vercel.com/blog/how-to-choose-the-best-rendering-strategy-for-your-app
 requestAnimationFrame
+security -- domain registration, DNS, hosting = don't use the same provider so that a compromise don't allow to access everything (from a domain recovery expert) https://www.reddit.com/r/Domains/comments/1gdpqdk/comment/miu1osc/
 UI -- loading skeleton = a simplified version of the UI shown during loading
 requestAnimationFrame -- double = https://github.com/ryanve/draf
 Resource Description Framework (RDF) = a language for representing information about resources in the World Wide Web https://www.w3.org/TR/rdf-primer/

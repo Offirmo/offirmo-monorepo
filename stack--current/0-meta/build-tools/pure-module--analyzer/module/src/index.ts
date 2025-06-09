@@ -538,6 +538,9 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		if (entry.extⵧsub === '.tests') {
 			result.hasꓽtestsⵧunit = true
 		}
+		if (entry.extⵧsub === '.evals') {
+			result.hasꓽtestsⵧevals = true
+		}
 		if (entry.extⵧsub === '.stories') {
 			result.hasꓽstories = true
 		}

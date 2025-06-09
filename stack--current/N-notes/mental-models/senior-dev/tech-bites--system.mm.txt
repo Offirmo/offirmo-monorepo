@@ -255,6 +255,7 @@ distributed system -- failures -- Communication medium failure = happens once a 
 distributed system -- failures -- Method failure = the distributed system is generally halted and unable to perform the execution. Sometimes it leads to ending up the execution resulting in an associate incorrect outcome. Method failure causes the system state to deviate from specifications, and also method might fail to progress.
 distributed system -- failures -- Secondary storage device failure = occurred once the keep information can’t be accessed. This failure is sometimes caused by parity error, head crash, or dirt particles settled on the medium.
 distributed system -- failures -- System failure = the processor associated with the distributed system fails to perform the execution. This is caused by computer code errors and hardware issues. Hardware issues may involve CPU/memory/bus failure. This is assumed that whenever the system stops its execution due to some fault then the interior state is lost.
+domains -- expired https://www.dropcatch.com/
 edge
 edge -- "So, @vercel reverted all edge rendering back to Node.js" https://twitter.com/leeerob/status/1780705942734331983
 edge -- lambda@edge (AWS) = a lambda closer to the user. Downside is being away from the backend/DB

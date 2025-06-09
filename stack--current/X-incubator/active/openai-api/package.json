@@ -13,7 +13,8 @@
 	"dependencies": {
 		"openai": "^5",
 		"tiny-invariant": "^1",
-		"tslib": "^2"
+		"tslib": "^2",
+		"zod": "^3"
 	},
 	"scripts": {
 		"check--ts": "echo \"@offirmo-private/openai-api\" && tsc --noEmit",
@@ -25,6 +26,7 @@
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^22",
 		"npm-run-all": "^4",
 		"typescript": "^5"
 	}
