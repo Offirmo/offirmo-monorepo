@@ -154,6 +154,7 @@ layers in the stack between humans and the money -- for every layer: dominate it
 layers in the stack between humans and the money = ex. Google Human - device – OS – browser – bandwidth –  websites - ads – ad tech – relationship to advertiser – $$$ https://cdixon.org/2009/12/30/whats-strategic-for-google
 leadership -- failure -- Quantas example https://www.australianfrequentflyer.com.au/the-chairmans-lounge-joe-aston-book-review/
 learning from users https://paulgraham.com/users.html
+listen, build, ship, tell the customer, then repeat forever
 lock-in
 lock-in -- vendor
 looking like a toy = Disruptive technologies are dismissed as toys because when they are first launched they “undershoot” user needs https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy

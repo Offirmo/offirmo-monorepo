@@ -327,7 +327,10 @@ DSL (Domain Specific Language)
 durable execution = development paradigm that preserves complete application state so that upon host or software failure it can seamlessly migrate execution to another machine https://stackoverflow.blog/2024/05/28/an-open-source-development-paradigm/
 ecosystem -- ADK "App Development Kit" = https://medium.com/disney-streaming/introducing-the-disney-application-development-kit-adk-ad85ca139073
 ecosystem -- Apps
+ecosystem -- create
+ecosystem -- repositories = npm, jsr https://deno.com/blog/openai-on-jsr
 ecosystem -- SDK
+ecosystem -- templates
 Effect<Success, Error, Requirements> https://effect.website/docs/guides/essentials/the-effect-type
 effective engineer -- LeadDev -- 1. Care about the user and their needs
 effective engineer -- LeadDev -- 10. Be comfortable taking on new challenges

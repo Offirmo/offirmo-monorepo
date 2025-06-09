@@ -156,6 +156,7 @@
 		"murmurhash3js-revisited": "^3",
 		"nanoid": "^5",
 		"npm-run-all": "^4",
+		"openai": "^5",
 		"package-json": "^10",
 		"parcel": "^2",
 		"path-exists": "^5",

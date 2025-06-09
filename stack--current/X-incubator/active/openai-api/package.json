@@ -1,0 +1,31 @@
+{
+	"name": "@offirmo-private/openai-api",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/index.ts"
+	},
+	"source": "module/index.ts",
+	"dependencies": {
+		"openai": "^5",
+		"tiny-invariant": "^1",
+		"tslib": "^2"
+	},
+	"scripts": {
+		"check--ts": "echo \"@offirmo-private/openai-api\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"_check": "run-s check--ts",
+		"start": "node --experimental-strip-types ./module/index.ts"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"typescript": "^5"
+	}
+}

@@ -114,3 +114,4 @@ alias     monoAoi='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias      monoMg='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd M-minisites/;      cd generator/;                                               tabset --badge monoMg'
 
 alias     monoXam='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd X-incubator/;      cd active/mcp/;                                              tabset --badge monoXam'
+alias     monoXao='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd X-incubator/;      cd active/openai-api/;                                       tabset --badge monoXao'

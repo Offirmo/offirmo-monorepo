@@ -3948,6 +3948,11 @@ onetime@^5.1.2:
   dependencies:
     mimic-fn "^2.1.0"
 
+openai@^5:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/openai/-/openai-5.1.1.tgz#b09f43520e1b6321d487e39c3295cbbe11827def"
+  integrity sha512-lgIdLqvpLpz8xPUKcEIV6ml+by74mbSBz8zv/AHHebtLn/WdpH4kdXT3/Q5uUKDHg3vHV/z9+G9wZINRX6rkDg==
+
 ordered-binary@^1.4.1:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/ordered-binary/-/ordered-binary-1.5.3.tgz#8bee2aa7a82c3439caeb1e80c272fd4cf51170fb"
