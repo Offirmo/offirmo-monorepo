@@ -396,9 +396,9 @@ ${pure_module_details.description || ''}
 	_schedule_root_file_creation('package.json', packageᐧjson)
 
 	if (pure_module_details.hasꓽtestsⵧunit) {
-		_schedule_root_file_creation('webstorm--UT.run.xml', `
+		_schedule_root_file_creation('webstorm--tests--unit.run.xml', `
 <component name="ProjectRunConfigurationManager">
-	<configuration default="false" name="${pure_module_details.fqname} -- UT" type="mocha-javascript-test-runner">
+	<configuration default="false" name="${pure_module_details.fqname} -- TESTS -- UNIT" type="mocha-javascript-test-runner">
 		<node-interpreter>$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
 		<mocha-package>$USER_HOME$/${path.relative(process.env['HOME'], path.resolve(bolt_root))}/node_modules/mocha</mocha-package>
@@ -407,14 +407,38 @@ ${pure_module_details.description || ''}
 		<ui>bdd</ui>
 		<extra-mocha-options>--bail</extra-mocha-options>
 		<test-kind>PATTERN</test-kind>
-		<test-pattern>./module/**/*tests.ts</test-pattern>
+		<test-pattern>./module/**/*.tests.ts</test-pattern>
 		<method v="2" />
 	</configuration>
 </component>
 `)
 	}
 	else {
-		ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--UT.run.xml'), { force: true }))
+		ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--tests--unit.xml'), { force: true }))
+	}
+	// old format
+	ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--UT.run.xml'), { force: true }))
+
+	if (pure_module_details.hasꓽtestsⵧevals) {
+		_schedule_root_file_creation('webstorm--tests--evals.run.xml', `
+<component name="ProjectRunConfigurationManager">
+	<configuration default="false" name="${pure_module_details.fqname} -- TESTS -- EVALS" type="mocha-javascript-test-runner">
+		<node-interpreter>$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node</node-interpreter>
+		<node-options>--experimental-strip-types</node-options>
+		<mocha-package>$USER_HOME$/${path.relative(process.env['HOME'], path.resolve(bolt_root))}/node_modules/mocha</mocha-package>
+		<working-directory>$USER_HOME$/${dest_dir__from_HOME‿rel}</working-directory>
+		<pass-parent-env>true</pass-parent-env>
+		<ui>bdd</ui>
+		<extra-mocha-options>--bail</extra-mocha-options>
+		<test-kind>PATTERN</test-kind>
+		<test-pattern>./module/**/*.evals.ts</test-pattern>
+		<method v="2" />
+	</configuration>
+</component>
+`)
+	}
+	else {
+		ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--tests--evals.run.xml'), { force: true }))
 	}
 
 	if (pure_module_details.demo) {
@@ -458,6 +482,9 @@ ${pure_module_details.description || ''}
 	</configuration>
 </component>
 `)
+		}
+		else {
+			ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--start.run.xml'), { force: true }))
 		}
 	}
 
