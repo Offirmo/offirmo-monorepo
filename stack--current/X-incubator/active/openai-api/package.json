@@ -24,6 +24,7 @@
 		"start": "node --experimental-strip-types ./module/index.ts"
 	},
 	"devDependencies": {
+		"@evalkit/core": "^0.0.2",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^22",

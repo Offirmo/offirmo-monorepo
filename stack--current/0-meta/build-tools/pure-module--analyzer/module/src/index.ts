@@ -181,6 +181,8 @@ function inferꓽdeptype_from_caller(entry: FileEntry): DependencyType {
 
 	if (extⵧsub === '.tests')
 		return 'dev'
+	if (extⵧsub === '.evals')
+		return 'dev'
 	if (extⵧsub === '.stories')
 		return 'dev'
 	if (extⵧsub === '.typecheck')
