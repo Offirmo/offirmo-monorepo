@@ -16,7 +16,7 @@ Cross-Site Request Forgery (CSRF / XSRF) -- defense -- manual confirmation
 Cross-Site Request Forgery (CSRF / XSRF) -- defense -- sync token https://hirunimirando.blogspot.com/2018/10/synchronizer-token-pattern-nodejs.html
 Cross-Site Request Forgery (CSRF / XSRF) = attack where requests can be made from an attacker-controlled site to an endpoint to perform actions on behalf of the victim without the victim’s knowledge or consent.
 crypto -- don't write your own
-crypto -- ssing crypto doesn't mean you're secure (attackers will look for a weaker link)
+crypto -- using crypto doesn't mean you're secure (attackers will look for a weaker link)
 defence -- Primary / Secondary / Tertiary
 defense in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
 device posture
@@ -49,6 +49,7 @@ network ACL
 Open / Unvalidated Redirects
 OS Command Injection = attacker is able to inject and execute malicious code within a command that is passed to an application's operating system shell
 OWASP top 10 https://owasp.org/www-project-top-ten/
+pin codes -- most common https://informationisbeautiful.net/visualizations/most-common-pin-codes/
 PKI = Public Key Infrastructure
 plan for security from the start - it's not something you can bolt on at the end
 principle of least privilege

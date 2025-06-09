@@ -233,6 +233,9 @@ iframe
 iframe -- fenced
 iframe -- sandbox
 iframe -- seamless
+interface layout patterns -- holy grail
+interface layout patterns -- masonry https://ishadeed.com/article/css-grid-masonry/
+interface layout patterns https://web.dev/patterns/layout/
 interop https://developer.mozilla.org/en-US/blog/interop2023-mdn-doc-updates/
 Javascript fatigue
 Javascript pressure = pressure to adopt JavaScript only grow as your investment in the JavaScript front end ecosystem grows https://htmx.org/essays/hypermedia-on-whatever-youd-like/#feeling-the-javascript-pressure
@@ -250,8 +253,6 @@ JSON "Javascript Object Notation"
 latency -- high latency environments https://csswizardry.com/2024/09/optimising-for-high-latency-environments/
 layout -- composer https://github.com/namecheap/ilc
 layout -- trashing https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing
-layouts -- holy grail
-layouts -- masonry https://ishadeed.com/article/css-grid-masonry/
 lazy loading -- preloading https://www.differentshelf.com/lazy-loading-isnt-just-lazy-its-late-the-web-deserves-faster/
 MDN
 MDN curriculum https://developer.mozilla.org/en-US/curriculum/
@@ -308,6 +309,7 @@ rendering strategy -- server-side rendering (SSR) = cook dishes as orders come i
 rendering strategy -- static rendering = pre-cook everything
 rendering strategy https://vercel.com/blog/how-to-choose-the-best-rendering-strategy-for-your-app
 requestAnimationFrame
+UI -- loading skeleton = a simplified version of the UI shown during loading
 requestAnimationFrame -- double = https://github.com/ryanve/draf
 Resource Description Framework (RDF) = a language for representing information about resources in the World Wide Web https://www.w3.org/TR/rdf-primer/
 response times -- 0.1s = about the limit for having the user feel that the system is reacting instantaneously, meaning that no special feedback is necessary except to display the result.
@@ -326,6 +328,9 @@ security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
 security -- Google Tag Manager = a handy way for people you’ve never met to inject JavaScript into your site without the hindrance of a code review https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
+skew -- version skew -- protection https://vercel.com/docs/skew-protection
+skew -- occurs when different versions of your application run on client and server, causing application errors and other unexpected behavior https://www.industrialempathy.com/posts/version-skew/
+skew -- flags skew
 solutions -- http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
 solutions -- jQuery
 solutions -- js -- ocx https://oxc.rs/
