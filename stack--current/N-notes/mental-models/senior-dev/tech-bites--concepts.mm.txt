@@ -550,6 +550,7 @@ log
 long-term support (LTS)
 loop
 loop - breaking out of
+lore -- NSC "Nocturnal Self Correction" = improved performance after long weekends
 LTS, maintenance LTS, active LTS https://nodejs.org/en/about/previous-releases
 LxTHW "Learn X The Hard Way" Philosophy = has students do exercises, focuses on practice and rote repetition, and instills an attitude that to learn anything one must be prepared to work at it https://github.com/georgeowen1993/learn-git-the-hard-way/
 magic number

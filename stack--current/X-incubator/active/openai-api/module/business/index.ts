@@ -1,24 +1,15 @@
 import OpenAI from "openai"
+import assert from 'tiny-invariant'
 
 import { zodTextFormat } from "openai/helpers/zod"
-import { z } from "zod"
+import { z, type ZodType } from "zod"
 
-interface Input {
-	texts: Array<string>
-}
+/////////////////////////////////////////////////
 
-type Title = string
 
-interface Output {
-	raw: string
-	improved: string
-	categories: Array<Title>
-}
 
 const RECOMMENDED_UNICODE_NORMALIZATION = 'NFC' // https://www.win.tue.nl/~aeb/linux/uc/nfc_vs_nfd.html
 
-const lineseps = Array.from({ length: 7}, () => '\n').join('')
-const spaces = Array.from({ length: 7}, () => ' ').join('')
 
 // https://stackoverflow.com/a/1981366/587407
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes#types
@@ -27,7 +18,8 @@ function coerce_blanks_to_single_spaces(s: string): string {
 	return s.replace(ANY_BLANK_REGEXP, ' ')
 }
 
-function _normalize_text(raw: string): string {
+const lineseps = Array.from({ length: 7}, () => '\n').join('')
+function normalize_long_text(raw: string): string {
 	let result = raw || ''
 	result = result.normalize(RECOMMENDED_UNICODE_NORMALIZATION)
 	result = result.trim()
@@ -48,11 +40,8 @@ function _normalize_text(raw: string): string {
 
 }
 
-const Category = z.object({
-	title: z.string(),
-	subtitle: z.string(),
-});
 
+/////////////////////////////////////////////////
 
 // see OpenAi EasyInputMessage
 interface ConversationEntry {
@@ -61,27 +50,100 @@ interface ConversationEntry {
 }
 type Conversation = Array<ConversationEntry>
 
-async function prompt(client: OpenAI, input: Conversation) {
-	const response = await client.responses.create({
+const MARKER_BEGIN = '~#BEGIN#~'
+const MARKER_END = '~#END#~'
+
+async function prompt_to_single_text_output(client: OpenAI, input: Conversation, _fake_response?: Awaited<ReturnType<typeof client.responses.create>>) {
+	const response = await (_fake_response || client.responses.create({
 		model: "gpt-4o-mini", // XXX
 		input,
-	});
+	}))
 
-	return response
+	if (!_fake_response) {
+		console.log('/////// GOT prompt-to-text response', response)
+		debugger
+	}
+
+	const { error, output } = response
+	if (error)
+		throw error
+
+	assert(output.length === 1, `unexpected multi output!`)
+
+	const message = output[0]!
+	assert(message.status === 'completed', `unexpected message status!`)
+	assert(message.role === 'assistant', `unexpected message role!`)
+	assert(message.content.length === 1, `unexpected multi message!`)
+
+	let content = message.content[0]!.text.trim()
+	if (content.startsWith(MARKER_BEGIN)) content = content.slice(MARKER_BEGIN.length)
+	if (content.endsWith(MARKER_END)) content = content.slice(0, -MARKER_END.length)
+
+	return content.normalize(RECOMMENDED_UNICODE_NORMALIZATION).trim()
 }
 
+async function prompt_to_json(client: OpenAI, input: Conversation, zodObject: ZodType, _fake_response?: Awaited<ReturnType<typeof client.responses.parse>>) {
+	// TODO 1D auto wrap + unwrap arrays
 
-async function extract_categories(openai: OpenAI, input: Input): Output {
+	const response = await (_fake_response || client.responses.parse({
+		model: "gpt-4o-mini", // XXX
+		input,
+		text: {
+			format: zodTextFormat(zodObject, "result"),
+		},
+	}))
+
+	if (!_fake_response) {
+		console.log('/////// GOT prompt-to-JSON response', response)
+		debugger
+	}
+
+	const { error, output } = response
+	if (error)
+		throw error
+
+	assert(output.length === 1, `unexpected multi output!`)
+
+	const message = output[0]!
+	assert(message.status === 'completed', `unexpected message status!`)
+	assert(message.role === 'assistant', `unexpected message role!`)
+	assert(message.content.length === 1, `unexpected multi message!`)
+
+	const parsed = message.content[0]!.parsed
+
+	return parsed
+}
+
+/////////////////////////////////////////////////
+
+const ZKnowledgeBaseSection = z.object({
+	title: z.string(),
+	subtitle: z.string(),
+	excerpt: z.string(),
+});
+const ZKnowledgeBaseSections = z.object({
+	categories: z.array(ZKnowledgeBaseSection)
+})
+
+interface ExtractedStructure {
+	raw_cleaned: string
+	categories: Array<z.infer<typeof ZKnowledgeBaseSection>>
+}
+
+interface ExtractStructureInput {
+	texts: Array<string>
+}
+async function extract_categories(client: OpenAI, input: ExtractStructureInput, _fake_responses_chain: Array<any> = []): Promise<ExtractedStructure> {
 	const improved_concatenated_input_1_safe = input.texts
-		.map(_normalize_text)
+		.map(normalize_long_text)
 		.filter(t => !!t)
 		.join(lineseps.slice(-2))
 
-	const improved_concatenated_input_2_improved = await prompt(openai, [
+	const improved_concatenated_input_2_improved = await prompt_to_single_text_output(client, [
 		{
-			role: 'developer',
+			role: 'system',
 			content: `
-You are a genius proofreader and grammarian. You can easily fix typos, formatting mistakes and minor grammatical errors.
+You are a genius content writer, proofreader and grammarian. You can easily fix typos, formatting mistakes and minor grammatical errors.
 			`.trim()
 		},
 		{
@@ -104,19 +166,19 @@ Return a text as close as possible to the original. Only fix what you're very co
 			content: `
 Example: This text:
 
-BEGIN
+${MARKER_BEGIN}
 42 Repor ting Work-Related
 Grievances
 Atlassian™s should report
 03
-END
+${MARKER_END}
 
 Should be fixed into:
 
-BEGIN
+${MARKER_BEGIN}
 ## Reporting Work-Related Grievances
 Atlassians should report
-END
+${MARKER_END}
 			`
 		},
 		{
@@ -138,22 +200,205 @@ Proofread this text and return only the improved text without any other message:
 		},
 		{
 			role: 'user',
-			content: [ 'BEGIN', improved_concatenated_input_1_safe, 'END' ].join('\n')
+			content: [ MARKER_BEGIN, improved_concatenated_input_1_safe, MARKER_END ].join('\n')
 		}
-	])
-	console.log('///////', improved_concatenated_input_2_improved)
+	], _fake_responses_chain.shift())
 
-	debugger
+	const improved_concatenated_input_3_improved = normalize_long_text(improved_concatenated_input_2_improved)
 
-	const result: Output = {
-		raw: improved_concatenated_input_1_safe,
-		improved: improved_concatenated_input_2_improved,
-		categories: [],
+	const { categories } = await prompt_to_json(client, [
+			{
+				role: 'system',
+				content: `
+You are a genius knowledge worker specialized in writing clear and structured documentation.
+			`.trim()
+			},
+			{
+				role: 'developer',
+				content: `
+Read the raw text below and group the knowledge it contains into broader categories.
+
+Output an ordered list of those categories with a title, a subtitle and an excerpt for each category.
+
+The subtitle MUST hint at the content and MUST NOT paraphrase the title.
+
+The excerpt MUST contain the most critical and relevant 1 or 2 paragraphs of text that correspond to this category.
+
+Order the categories in logical order AND importance order.
+			`.trim()
+			},
+			{
+				role: 'developer',
+				content: `
+Example: This text:
+
+${MARKER_BEGIN}
+work hours
+Employees are expected to work 9 to 5.
+
+recruitment process
+Employees will have to provide 2 references and an ID.
+
+flexible working hours
+Employees can move their work hours flexibly by agreement with their team.
+${MARKER_END}
+
+Should yield:
+
+${MARKER_BEGIN}
+{
+  "sections": [
+    { "title": "Recruitment process", "subtitle": "More details about your obligations during the recruitment process.", "excerpt: "Employees will have to provide 2 references and an ID." },
+    { "title": "Work hours", "subtitle": "Everything you need to know about normal and flexible work hours.", "excerpt: "Employees are expected to work 9 to 5. Employees can move their work hours flexibly by agreement with their team." },
+  ]
+}
+${MARKER_END}
+			`
+			},
+			{
+				role: 'developer',
+				content: `
+Read the raw text below and extract ordered categories as instructed:
+			`.trim()
+			},
+			{
+				role: "user",
+				content: [ MARKER_BEGIN, improved_concatenated_input_3_improved, MARKER_END ].join('\n')
+			},
+		], ZKnowledgeBaseSections, _fake_responses_chain.shift())
+
+	const result: ExtractedStructure = {
+		//raw: improved_concatenated_input_1_safe,
+		raw_cleaned: improved_concatenated_input_3_improved,
+		categories,
 	}
 
 	return result
 }
 
+/////////////////////////////////////////////////
+
+interface ImprovedKnowledgeBaseSection {
+	title: string
+	subtitle: string
+	content: string
+
+	_original_content_for_review: string
+}
+
+interface FilterAndImproveInput {
+	raw_kb_content: string
+
+	topic: string
+	topic_details: string
+}
+async function filter_and_improve_content(client: OpenAI, input: FilterAndImproveInput, _fake_responses_chain: Array<any> = []): Promise<ImprovedKnowledgeBaseSection> {
+
+	const raw_kb_content = await prompt_to_single_text_output(client, [
+		{
+			role: 'system',
+			content: `
+You are a genius knowledge worker specialized in writing clear and structured documentation.
+			`.trim()
+		},
+		{
+			role: 'developer',
+			content: `
+Select from the given text the parts related to the given topic. Filter out the parts NOT related to the given topic.
+
+Do NOT add content. Only REMOVE irrelevant content.
+			`
+		},
+		{
+			role: 'developer',
+			content: `
+Example: Starting from this text:
+
+${MARKER_BEGIN}
+work hours
+Employees are expected to work 9 to 5.
+
+recruitment process
+Employees will have to provide 2 references and an ID.
+
+flexible working hours
+Employees can move their work hours flexibly by agreement with their team.
+${MARKER_END}
+
+When asked to keep only parts related to "work hours", should yield:
+
+${MARKER_BEGIN}
+work hours
+Employees are expected to work 9 to 5.
+
+flexible working hours
+Employees can move their work hours flexibly by agreement with their team.
+${MARKER_END}
+			`
+		},
+		{
+			role: 'developer',
+			content: `
+Now select from the given text the parts related to the given topic. Filter out the parts NOT related to the given topic:
+			`
+		},
+		{
+			role: 'user',
+			content: [ MARKER_BEGIN, input.raw_kb_content, MARKER_END ].join('\n')
+		}
+	], _fake_responses_chain.shift())
+
+	const improved_kb_content_1 = normalize_long_text(raw_kb_content)
+
+	const improved_kb_content_2 = await prompt_to_single_text_output(client, [
+		{
+			role: 'system',
+			content: `
+You are a genius knowledge worker specialized in writing clear and structured documentation.
+			`.trim()
+		},
+		{
+			role: 'developer',
+			content: `
+Improve the given text:
+1. remove duplicated content.
+1. sort the content in logical order: introduce base concepts first and in order of criticity.
+1. make the content clear and readable using the best writing practices: keep things simple; get rid of extra words; Write short sentences; Avoid putting multiple thoughts in one sentence; Use active voice.
+1. if a concept is unclear or not previously introduced, you MAY add an introduction or expend it a little.
+1. make the content engaging but stay professional.
+
+Do NOT add any new content, only reformat/reword/improve the existing content.
+			`
+		},
+		{
+			role: 'developer',
+			content: `
+Now turn this text into a well structured, clear, engaging improved version:
+			`
+		},
+		{
+			role: 'user',
+			content: [ MARKER_BEGIN, improved_kb_content_1, MARKER_END ].join('\n')
+		}
+	], _fake_responses_chain.shift())
+
+	const result: ImprovedKnowledgeBaseSection = {
+		title: input.topic,
+		subtitle: input.topic_details,
+		content: improved_kb_content_2,
+		_original_content_for_review: raw_kb_content,
+	}
+
+	return result
+}
+
+/////////////////////////////////////////////////
+
 export {
+	type ExtractStructureInput,
 	extract_categories,
+	type ExtractedStructure,
+
+	type FilterAndImproveInput,
+	filter_and_improve_content,
 }

@@ -3,8 +3,8 @@
 
 import OpenAI from "openai";
 const client = new OpenAI({
-	apiKey: 'foo',
-	baseURL: 'http://127.0.0.1:1337/v1'
+	apiKey: 'sk-proj-XXXX',
+	//baseURL: 'http://127.0.0.1:1337/v1'
 });
 
 import { extract_categories } from './business/index.ts'
@@ -19,7 +19,7 @@ const content = fs.readFileSync(some_file, 'utf8')
 
 //console.log(content)
 
-extract_categories({
+extract_categories(client, {
 	texts: [
 		content
 	]
