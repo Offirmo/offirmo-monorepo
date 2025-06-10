@@ -144,19 +144,18 @@ async function extract_categories(client: OpenAI, input: ExtractStructureInput, 
 			role: 'system',
 			content: `
 You are a genius content writer, proofreader and grammarian. You can easily fix typos, formatting mistakes and minor grammatical errors.
-			`.trim()
+			`
 		},
 		{
 			role: 'developer',
 			content: `
 Proofread the texts that you're given by the user:
-1. fix misformated words, for example cut in half with a space: "he llo" -> "hello".
+1. fix misformatted words, for example cut in half with a space: "he llo" -> "hello".
 1. fix typos.
 1. fix misspelled words.
 1. fix small grammatical mistakes.
-1. Detect page numbers mistakenly embedded inside the text and remove them when you're sure they're not part of sentences.
+1. remove spurious numbers appearing at the beginning or end of a line when you're sure they're not part of the surrounding sentences.
 1. collate split sentences when you're sure words on different lines are from the same sentence.
-1. When you recognize titles, use markdown to emphasize them.
 
 Return a text as close as possible to the original. Only fix what you're very confident is an error. Do NOT add content. Do NOT delete content, unless you replace it with fixed content.
 			`
@@ -189,9 +188,8 @@ Reminder:
 1. fix typos.
 1. fix misspelled words.
 1. fix small grammatical mistakes.
-1. Detect page numbers mistakenly embedded inside the text and remove them when you're sure they're not part of sentences.
+1. remove spurious numbers appearing at the beginning or end of a line when you're sure they're not part of the surrounding sentences.
 1. collate split sentences when you're sure words on different lines are from the same sentence.
-1. When you recognize titles, use markdown to emphasize them.
 
 Return a text as close as possible to the original. Only fix what you're very confident is an error. Do NOT add content. Do NOT delete content, unless you replace it with fixed content.
 
@@ -211,7 +209,7 @@ Proofread this text and return only the improved text without any other message:
 				role: 'system',
 				content: `
 You are a genius knowledge worker specialized in writing clear and structured documentation.
-			`.trim()
+			`
 			},
 			{
 				role: 'developer',
@@ -225,7 +223,7 @@ The subtitle MUST hint at the content and MUST NOT paraphrase the title.
 The excerpt MUST contain the most critical and relevant 1 or 2 paragraphs of text that correspond to this category.
 
 Order the categories in logical order AND importance order.
-			`.trim()
+			`
 			},
 			{
 				role: 'developer',
@@ -294,12 +292,12 @@ interface FilterAndImproveInput {
 }
 async function filter_and_improve_content(client: OpenAI, input: FilterAndImproveInput, _fake_responses_chain: Array<any> = []): Promise<ImprovedKnowledgeBaseSection> {
 
-	const raw_kb_content = await prompt_to_single_text_output(client, [
+	const relevant_kb_content = await prompt_to_single_text_output(client, [
 		{
 			role: 'system',
 			content: `
 You are a genius knowledge worker specialized in writing clear and structured documentation.
-			`.trim()
+			`
 		},
 		{
 			role: 'developer',
@@ -339,7 +337,7 @@ ${MARKER_END}
 		{
 			role: 'developer',
 			content: `
-Now select from the given text the parts related to the given topic. Filter out the parts NOT related to the given topic:
+Now select from the given text the parts related to the given topic "${input.topic}". Filter out the parts NOT related to the given topic "${input.topic_details}":
 			`
 		},
 		{
@@ -348,14 +346,14 @@ Now select from the given text the parts related to the given topic. Filter out 
 		}
 	], _fake_responses_chain.shift())
 
-	const improved_kb_content_1 = normalize_long_text(raw_kb_content)
+	const improved_kb_content_1 = normalize_long_text(relevant_kb_content)
 
-	const improved_kb_content_2 = await prompt_to_single_text_output(client, [
+	let improved_kb_content_2 = await prompt_to_single_text_output(client, [
 		{
 			role: 'system',
 			content: `
 You are a genius knowledge worker specialized in writing clear and structured documentation.
-			`.trim()
+			`
 		},
 		{
 			role: 'developer',
@@ -364,8 +362,9 @@ Improve the given text:
 1. remove duplicated content.
 1. sort the content in logical order: introduce base concepts first and in order of criticity.
 1. make the content clear and readable using the best writing practices: keep things simple; get rid of extra words; Write short sentences; Avoid putting multiple thoughts in one sentence; Use active voice.
-1. if a concept is unclear or not previously introduced, you MAY add an introduction or expend it a little.
+1. if a concept is unclear or not previously introduced, you MAY add an introduction of the concept or expend it a little.
 1. make the content engaging but stay professional.
+1. turn the content into well-formatted markdown.
 
 Do NOT add any new content, only reformat/reword/improve the existing content.
 			`
@@ -373,7 +372,7 @@ Do NOT add any new content, only reformat/reword/improve the existing content.
 		{
 			role: 'developer',
 			content: `
-Now turn this text into a well structured, clear, engaging improved version:
+Now turn this text into a well structured, clear, engaging improved markdown version:
 			`
 		},
 		{
@@ -382,11 +381,17 @@ Now turn this text into a well structured, clear, engaging improved version:
 		}
 	], _fake_responses_chain.shift())
 
+	improved_kb_content_2 = improved_kb_content_2.trim()
+	if (improved_kb_content_2.startsWith('```markdown')) improved_kb_content_2 = improved_kb_content_2.slice('```markdown'.length).trim()
+	if (improved_kb_content_2.startsWith('```md')) improved_kb_content_2 = improved_kb_content_2.slice('```md'.length).trim()
+	if (improved_kb_content_2.startsWith('```')) improved_kb_content_2 = improved_kb_content_2.slice('```'.length).trim()
+	if (improved_kb_content_2.endsWith('```')) improved_kb_content_2 = improved_kb_content_2.slice(0, -'```'.length).trim()
+
 	const result: ImprovedKnowledgeBaseSection = {
 		title: input.topic,
 		subtitle: input.topic_details,
 		content: improved_kb_content_2,
-		_original_content_for_review: raw_kb_content,
+		_original_content_for_review: relevant_kb_content,
 	}
 
 	return result
