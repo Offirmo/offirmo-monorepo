@@ -30,11 +30,11 @@ save like crazy to get FI (not necessarily RE)
 https://www.teamblind.com/post/Made-it-to-FAANG-Director-without-a-single-promotion-ever-NS2LaxE7
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
 
-I finally (recently) made it to FAANG Director  without ever being promoted in my entire career.
+I finally (recently) made it to FAANG Director without ever being promoted in my entire career.
 
 Started as a new grad (out of grad school) 15 years ago.
 
-Entire career was in big tech companies (including 3 “FAANG “ companies).
+Entire career was in big tech companies (including 3 “FAANG“ companies).
 
 Never stayed at a company longer than 3 years.
 
@@ -62,7 +62,7 @@ How?
   
   7b. Shortest tenure in a team was 2 months; I have changed teams internally  3 times (tenures of 2 months, 5 months, 7 months)
 
-8. Consciously take up work that helps colleagues. I spend 3-4 hours every week helping  colleagues.
+8. Consciously take up work that helps colleagues. I spend 3-4 hours every week helping colleagues.
 
 9. Invest in upskilling. While I work only 20 hours I am a hard worker and have constantly invested in myself (leetcode back in the day, systems knowledge, books on management and leadership, providing talks at conferences and publishing. For
    Someone with just a Masters degree I have a decent publication record and am considered somewhat of an expert in my area).
@@ -130,7 +130,6 @@ Leadership opportunities, directly connected to your technical efforts or otherw
 
 See SMART goals (MModels)
 
-
 Descriptive action
 (what you plan to do and who you plan to do it with)
 
@@ -181,6 +180,9 @@ P6 should be driving action in your teams, after identifying opportunities thems
 
 ## TOSORT
 
+earn or learn (or prestige)
+
+career mistakes https://www.linkedin.com/news/story/lessons-from-career-mistakes-7392714/
 
 self-promotion https://hils.substack.com/p/the-self-promotion-horror-show
 staff level https://betterthanrandom.substack.com/p/th-mythical-staff-level https://www.infoq.com/presentations/staff-plus-level-scale/

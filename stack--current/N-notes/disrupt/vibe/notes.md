@@ -154,3 +154,6 @@ if (DEBUG) console.info(`[${LIB}] pointer event`, { evt, type: evt.pointerType, 
 	window.removeEventListener('pointerover', onꓽpointer_over)
 }
 window.addEventListener('pointerover', onꓽpointer_over)
+
+URL cleanup
+- ex. youtube = https://www.youtube-nocookie.com/embed/Xdkkux6OxfM?autoplay=1&state=1

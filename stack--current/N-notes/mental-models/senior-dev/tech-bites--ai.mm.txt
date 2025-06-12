@@ -13,8 +13,8 @@
 2025-04 Shopify threatening internal memo "Reflexive AI usage is now a baseline expectation" https://x.com/tobi/status/1909251946235437514
 2025-05 AI's Trillion-Dollar Opportunity: Sequoia AI Ascent 2025 Keynote https://www.youtube.com/watch?v=v9JBMnxuPX8
 2025-05 Duolingo "AI crashout" https://www.fastcompany.com/91338068/duolingo-deletes-tiktok-ai-backlash-returns-with-strange-message https://www.reddit.com/r/OutOfTheLoop/comments/1kncne7/whats_going_on_with_duolingo/ https://it.slashdot.org/story/25/06/08/185209/after-ai-first-promise-duolingo-ceo-admits-i-did-not-expect-the-blowback
-2025-06 dev AI perf framework
 2025-06 Apple "The illusion of thinking" https://machinelearning.apple.com/research/illusion-of-thinking
+2025-06 dev AI perf framework
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://ghuntley.com/
@@ -137,6 +137,7 @@ HHH helpful, honest, and harmless
 Hierarchical Navigable Small World (HNSW) = graph for vector search https://www.pinecone.io/learn/series/faiss/hnsw/
 Hugging Face = "the GitHub of machine learning" = the collaboration platform for the machine learning community https://www.techtarget.com/whatis/definition/Hugging-Face
 huggingface.co "space"
+hype cycle -- coding https://www.linkedin.com/posts/svpino_literally-everyone-is-freaking-out-over-codex-activity-7329865083411402752-T8KU
 illusion of understanding = hypothesis that LLMs don't actually perform formal reasoning and instead mimic it with probabilistic pattern-matching of the closest similar data seen in their vast training sets https://arstechnica.com/ai/2024/10/llms-cant-perform-genuine-logical-reasoning-apple-researchers-suggest/
 impostors https://cloud.google.com/blog/topics/threat-intelligence/mitigating-dprk-it-worker-threat
 in-context learning = ~long prompt / many shots https://www.anthropic.com/research/many-shot-jailbreaking

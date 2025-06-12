@@ -1,6 +1,7 @@
 +++ https://courses.joshwcomeau.com/
 +++ https://developer.mozilla.org/en-US/curriculum/
 +++ https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3 + https://medium.com/@cramforce/designing-even-larger-applications-460ee029012d
+2023-09 React -- server components https://www.joshwcomeau.com/react/server-components/
 2024 https://socket.dev/blog/tc39-advances-10-ecmascript-proposals-key-features-to-watch
 [ ] +++ https://dev.to/anze_kop1tar/acronyms-you-should-know-when-going-to-a-job-interview-369l
 [ ] 37signals suite https://stimulus.hotwired.dev/
@@ -225,6 +226,7 @@ HTML -- tags
 htmx https://htmx.org/
 http "happy eyeballs" https://www.checklyhq.com/blog/how-a-tcpdump-led-us-to-a-bug-in-nodes-ipv6-handli/
 HTTP -- QUERY = safe, idempotent request method that can carry request content https://www.ietf.org/archive/id/draft-ietf-httpbis-safe-method-w-body-05.html
+hydration = rendering a web app from existing (pre-rendered) HTML instead of from scratch. Can fail if the data mismatch (shouldn't!) "Hydration is like watering the “dry” HTML with the “water” of interactivity and event handlers."
 hypercard https://hypercard.org
 hypermedia
 hypertext
@@ -295,6 +297,7 @@ puppeteer https://pptr.dev/
 PWA https://whatpwacando.today/ https://web.dev/learn/pwa
 react
 react -- hooks
+React -- RSC "React server components" https://www.joshwcomeau.com/react/server-components/
 react -- v19 https://vercel.com/blog/whats-new-in-react-19
 realtime -- patterns -- poke/pull
 realtime -- patterns -- push biz events
@@ -309,8 +312,6 @@ rendering strategy -- server-side rendering (SSR) = cook dishes as orders come i
 rendering strategy -- static rendering = pre-cook everything
 rendering strategy https://vercel.com/blog/how-to-choose-the-best-rendering-strategy-for-your-app
 requestAnimationFrame
-security -- domain registration, DNS, hosting = don't use the same provider so that a compromise don't allow to access everything (from a domain recovery expert) https://www.reddit.com/r/Domains/comments/1gdpqdk/comment/miu1osc/
-UI -- loading skeleton = a simplified version of the UI shown during loading
 requestAnimationFrame -- double = https://github.com/ryanve/draf
 Resource Description Framework (RDF) = a language for representing information about resources in the World Wide Web https://www.w3.org/TR/rdf-primer/
 response times -- 0.1s = about the limit for having the user feel that the system is reacting instantaneously, meaning that no special feedback is necessary except to display the result.
@@ -327,11 +328,13 @@ routing -- uri -- 2 query (incl query params)
 routing -- uri -- 3 fragment
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
+security -- domain registration, DNS, hosting = don't use the same provider so that a compromise don't allow to access everything (from a domain recovery expert) https://www.reddit.com/r/Domains/comments/1gdpqdk/comment/miu1osc/
 security -- Google Tag Manager = a handy way for people you’ve never met to inject JavaScript into your site without the hindrance of a code review https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
-skew -- version skew -- protection https://vercel.com/docs/skew-protection
-skew -- occurs when different versions of your application run on client and server, causing application errors and other unexpected behavior https://www.industrialempathy.com/posts/version-skew/
+Server Side Rendering = an umbrella term that includes several different rendering strategies. They all have one thing in common: the initial render happens in a server runtime like Node.js, using the ReactDOMServer APIs. It doesn't actually matter when this happens, whether it's on-demand or at compile-time. https://www.joshwcomeau.com/react/server-components/
 skew -- flags skew
+skew -- occurs when different versions of your application run on client and server, causing application errors and other unexpected behavior https://www.industrialempathy.com/posts/version-skew/
+skew -- version skew -- protection https://vercel.com/docs/skew-protection
 solutions -- http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results
 solutions -- jQuery
 solutions -- js -- ocx https://oxc.rs/
@@ -371,6 +374,7 @@ UI -- layout -- list -- simple
 UI -- layout -- masonry
 UI -- layout -- table
 UI -- layout -- tree
+UI -- loading skeleton = a simplified version of the UI shown during loading
 UI -- modals -- sheets = ~semi-modal https://en.wikipedia.org/wiki/Modal_window#Modal_sheets_in_Mac_OS_X
 UI -- modals https://en.wikipedia.org/wiki/Modal_window
 UI -- modes https://en.wikipedia.org/wiki/User_interface#Modalities_and_modes

@@ -110,7 +110,8 @@ graphics -- projections https://en.wikipedia.org/wiki/Axonometric_projection htt
 graphics https://en.wikipedia.org/wiki/Video_game_graphics
 hero's journey https://en.wikipedia.org/wiki/Hero%27s_journey
 idle
-key item https://bulbapedia.bulbagarden.net/wiki/Key_Item
+items -- fungibility = a normal, undistinguishable item (ex. can of soda) or a unique, irreplaceable one (ex. Frostmourne)?
+items -- key item https://bulbapedia.bulbagarden.net/wiki/Key_Item
 legendarium https://en.wikipedia.org/wiki/Tolkien%27s_legendarium
 marketing https://howtomarketagame.com/
 matchmaking -- elo hell https://en.wikipedia.org/wiki/Elo_hell
