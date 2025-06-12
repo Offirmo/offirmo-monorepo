@@ -1,12 +1,18 @@
+1% using crypto, then 3% paying with it https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
 2017 bitfinex packaged loss https://bitfinexed.medium.com/bitfinex-never-repaid-their-tokens-bitfinex-started-a-ponzi-scheme-86a9291add29
+2020 "DeFi summer"
+2024-09 fundraising https://cointelegraph.com/news/patronage-model-fix-crypto-fundraising-says-kain-warwick
 2025-05 SEC abandon crypto regulation https://yro.slashdot.org/story/25/05/29/2155215/sec-voluntarily-dismisses-lawsuit-against-binance
 2025-05 USA strategic reserve https://news.slashdot.org/story/25/05/31/0636246/whats-in-the-us-governments-new-strategic-reserve-of-seized-crytocurrencies
 [ ] criticism https://bitfinexed.medium.com/
 [ ] endgame https://vitalik.eth.limo/general/2021/12/06/endgame.html
 [ ] Gitcoin https://grants.gitcoin.co/
+[ ] great videos on DeFi https://www.youtube.com/@Finematics
 [ ] https://vitalik.eth.limo/
 Airdrop
 Arbitrum
+asset seizure
+bag check
 Bankman-Fried
 Base
 Berachain
@@ -21,13 +27,20 @@ blockchain = database = stores data in chronologically consistent blocks that yo
 blockchain https://ethereum.org/en/developers/docs/intro-to-ethereum/ https://aws.amazon.com/what-is/blockchain/
 BNB Chain
 bridging
+CBDC "Central bank digital currencies" https://cointelegraph.com/magazine/cbdcs-kryptonite-for-crypto/
+Celsius = a risky crypto lending venture masquerading as a safe, bank-like platform that provided unusually high interest on crypto savings accounts
 challenges -- Governance = can be challenging in decentralized systems . It requires effective structures that involve community participation and don’t centralize power.
+challenges -- multibillion-dollar implosions of FTX, BlockFi, Celsius and Voyager Digital
+challenges -- need to purchase crypto first, have to endure a steep learning curve with wallets and exchanges as well as additional costs "It’s really hard to get non crypto people to use it" https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
 challenges -- Regulatory compliance = Web3 applications must follow existing data protection and financial security requirements.
 challenges -- scalability = a primary concern, because lack of trust is expensive: blockchain networks get very expensive and computationally demanding as data volumes increase
 challenges -- User experience and adoption = Complex interfaces and a steep learning curve limit mainstream adoption. Improving the user experience by designing intuitive interfaces that abstract the complexities of blockchain technology is essential.
+CoinGecko
 compliance -- AU -- AUSTRAC https://www.austrac.gov.au/business/new-to-austrac
 consensus
 cross-chain
+cross-chain -- chain abstraction
+cross-chain -- swaps = swidge??
 crypto signals = advice to invest https://www.tokenmetrics.com/blog/crypto-signals
 cryptocurrency
 cryptocurrency exchange
@@ -36,19 +49,21 @@ culture
 decentralization -- metric -- insider attack test = if your team itself tries to attack the system, how much will break, and how much harm could you do?
 decentralization -- metric -- the walkaway test = if your team and servers disappear tomorrow, will your application still be usable?
 decentralization avoiding points of trust, minimizing censorship vulnerabilities, and minimizing centralized infrastructure dependency. The natural metrics are
-Decentralized Autonomous Organisation, or DAO
 decentralized autonomous organization (DAO) = agreed-upon smart contract that automates decentralized decision-making over a pool of resources (tokens). Users with tokens vote on how resources get spent, and the code automatically performs the voting outcome.
 decentralized identity = technology that aims to give individuals more control and ownership over their digital identity. In traditional online systems, users often rely on centralized identity providers (like social media platforms or email services) to manage their identities and access various online services. Decentralized identity shifts the control of identity information back to the individual user. It uses globally unique identifiers associated with a decentralized identifier (DID) document. This document contains public keys, cryptographic material, and service endpoints related to identity. The technology uses selective disclosure to share specific identity attributes and minimize exposure to personally identifiable information (PII) during identity verification processes.
 DeFi
+DeFi -- lending / borrowing -- Compound, AAVE
+Dogecoin https://cointelegraph.com/magazine/elon-musk-dogecoin-rally-bitcoin-ethereum-solana-predictions-trade-secrets/
 domains = .crypto https://support.unstoppabledomains.com/support/solutions/articles/48001181690-what-are-web3-domains-
 domains = .eth
-ethereum -- ENS = .eth
+drain = attack?
 Enjin
 ERC-1155 = fungible + non-fungible tokens = good for games currency + items
 ERC-20 = fungible tokens
 ERC-721 = non-fungible tokens
 Ethena
 Ethereum - REth https://github.com/paradigmxyz/reth
+ethereum -- ENS = .eth
 Ethereum -- Ethereum Improvement Proposals (EIPs) https://eips.ethereum.org/
 Ethereum -- roadmap https://ethereum.org/en/roadmap/
 Ethereum = a decentralized open-source blockchain platform that people can use to build public blockchain applications. Ethereum Enterprise is designed for business use cases. https://ethereum.org/ https://aws.amazon.com/blockchain/what-is-ethereum/
@@ -57,6 +72,8 @@ EVM network
 fiat
 fiat ramps
 fiat-backed
+finance -- security -- stocks, bonds, ETFs (exchange traded funds), options, and mutual funds
+finance -- security = a financial asset that can be sold or traded in a financial market + investments that can be exchanged and used to raise capital. https://gordonlaw.com/learn/what-is-a-security/
 fork -- hard
 fork -- soft
 FTX crash
@@ -64,20 +81,35 @@ fungibility
 fungibility -- non-fungible
 gas
 HODL
+Howey Test -- four key criteria -- 1 Investment of Money: An investor must put their money into the venture.
+Howey Test -- four key criteria -- 2 Common Enterprise: There must be a shared investment pool or a group of individuals collectively participating in the venture.
+Howey Test -- four key criteria -- 3 Expectation of Profit: The investor anticipates a financial return from the investment.
+Howey Test -- four key criteria -- 4 Reliance on Efforts of Others: The investor's profits are primarily derived from the efforts of the promoters or a third party, not their own efforts.
+Howey Test = a legal framework used to determine if a transaction or scheme constitutes an "investment contract" and is therefore subject to U.S. securities law https://gordonlaw.com/learn/howey-test-is-your-token-security/
 Hyperledger Fabric = open-source project with a suite of tools and libraries. Enterprises can use it to build private blockchain applications quickly and effectively. It is a modular, general-purpose framework that offers unique identity management and access control features. These features make it suitable for various applications, such as track-and-trace of supply chains, trade finance, loyalty and rewards, and clearing settlement of financial assets. https://aws.amazon.com/blockchain/what-is-hyperledger-fabric/
+ICO -- boom
+ICO -- crackdown
 immutability
+intermediation
 InterPlanetary File System (IPFS) = a decentralized and distributed file storage system that provides a more efficient and resilient way to store and access content on Web 3.0. It gives a unique cryptographic hash (content-based address) to every file. It uses a peer-to-peer network, where each IPFS node acts as a client and server. Nodes cooperate to store, retrieve, and distribute content across the web, eliminating the need for centralized servers. https://docs.ipfs.tech/concepts/
 layer 2 = https://vitalik.eth.limo/general/2024/05/29/l2culture.html
 legal definition -- AU = A type of currency that only exists in digital rather than physical form (not coins or notes, for example). Digital currency: can be exchanged for goods, services or physical currency; is not issued by or under the authority of a government. https://www.austrac.gov.au/glossary/digital-currency-or-cryptocurrency
+Markets in Crypto Assets (MiCA) regulation to oversee the crypto industry
+memecoin
 mining
 multi-chain https://arxiv.org/abs/2112.01472
+narratives = to bring interest into crypto
+NFTs -- as collateral -- NFTti
 NFTs -- games -- CryptoKitties
 NFTs -- games -- Decentraland
 NFTs -- games -- Gods Unchained
-NFTs = https://www.youtube-nocookie.com/embed/Xdkkux6OxfM
-NFTs -- marketplaces = Rare, SuperRare
 NFTs -- marketplaces -- aggregators = OpenSea
-non-custodial
+NFTs -- marketplaces = Rare, SuperRare
+NFTs -- Patrons -- locked/unlocked
+NFTs -- Patrons = ~shares with no return = not a security = not under law, but get exclusive rewards and benefits? https://cointelegraph.com/magazine/crypto-four-years-grow-cant-be-shut-down-kain-warwick-infinex/
+NFTs = https://www.youtube-nocookie.com/embed/Xdkkux6OxfM
+non-custodial = "even if someone goes and nukes the platform, censors it, DDoS’s it, or takes down AWS, you can still go to the chain and get your assets back."
+normie friendly = to break out of the limited circle
 onchain protocols such as Ethena, Synthetix, Wormhole
 open source -- benefits -- code being inspectable = to ensure security, and more importantly
 open source -- benefits -- enabling permissionless third-party improvements
@@ -87,9 +119,12 @@ Optimism
 passkey
 perp
 Polygon
+porn https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
+price oracles = pricing of some resource
 public key cryptography
 read/write/own paradigm = data creators own and control their own data and have a greater say in how it is used and managed
 Resource Description Framework (RDF) = express statements as triples in the form of subject-predicate-object
+rotation = swapping crypto around cycles, ex. BTC-to-ETH
 scalability
 scalability -- transactions per second
 scam -- wash trading = artificially inflating volume https://bitfinexed.medium.com/wash-trading-bitcoin-how-bitfinex-benefits-from-fraudulent-trading-8bd66be73215
@@ -97,6 +132,7 @@ scams -- pig butchering = people are lured by flirtatious strangers online into 
 scams -- pyramid scheme
 scams -- rug-pull = disappear after cashing early success
 seed phrase
+silk road / Ross Ulbricht
 smart contract -- auditing = https://iosiro.com/services/smart-contract-auditing
 smart contracts -- bug = ex. of loss of everything
 smart contracts = self-implementing contracts with predefined rules written in code. They automatically enforce the terms of the agreement when certain conditions are met. For example, if a contract says that ownership of an item transfers to whoever pays for it, you simply send the asking price to that contract. The ledger then automatically updates by using a transaction in the next block to reflect you as the new owner.
@@ -107,10 +143,12 @@ solutions -- Cloudflare -- Ethereum gateway https://developers.cloudflare.com/we
 solutions -- Cloudflare -- IFPS
 Sonic
 SPARQL = query language for querying RDF data
+spirit -- "Ignoring sensible advice is what we do in crypto"
 spot
 staking
 staking -- chain-agnostic
 swidge
+Synthetix
 tokenization = process of representing real-world or digital assets as digital tokens on a blockchain
 tokens
 tokens -- standards
@@ -123,14 +161,17 @@ virtual currencies -- Bitcoin
 wallet
 wallet -- coinbase https://www.coinbase.com/en-au/wallet/smart-wallet
 wallet -- cross-chain
+wallet -- hot
 wallet -- metamask https://metamask.io/download
 wallet -- okx https://web3.okx.com/
 Web Ontology Language (OWL) = language for defining ontologies, or formal representations of knowledge and relationships between concepts. You can use it to specify classes, properties, and instances, as well as facilitate reasoning and inferencing.
 Web1 = read-only
 Web2 = interactive, but challenges with centralized providers: data portability, data abuse (privacy), censorship, ban (democracy)...
+Web2.5 = where content creators have benefited from the rise of social media, but what they create is owned by centralized groups
 Web3 -- decentralization = aim to distribute and store data in decentralized networks. In these networks, different entities own the underlying infrastructure and the user pays directly to the storage provider to access that space. Decentralized applications also store information replicas in multiple locations and ensure data consistency throughout. Individual users can control where their data resides instead of handing it over to a centralized infrastructure. Decentralized internet users can sell their own data if they want to.
 Web3 -- interoperability = Web 3.0 aims to create more interconnections between diverse technologies, so data flows between different platforms without intermediaries. Interoperability makes data portable so users can seamlessly switch between services while maintaining their preferences, profiles, and settings.
 Web3 -- semantic web = enables applications to perform complex tasks by understanding the content and context of web data. It uses metadata and artificial intelligence to provide meanings (semantics) to user-generated data. Web 3.0 aims to move more fully towards semantic web technologies currently found in some aspects of existing web technologies. For example, a search engine provides more accurate and contextually relevant search results, and intelligent agents assist users in performing tasks more efficiently.
 Web3 -- trustlessness = In centralized web applications and services, users often need to place trust in a central authority to manage their data, transactions, and interactions. These central authorities have control over user data, and they can manipulate the system's rules. The data may be subject to security risks or mismanagement, potentially resulting in the loss or misuse of user information. In contrast, Web3 introduces trustlessness, so users can engage in transactions and interactions without trusting any specific party.
 Web3 = "the distributed web" = a set of technologies that enables hosting of content and web applications in a serverless manner by leveraging distributed systems and consensus protocols https://developers.cloudflare.com/web3/
 Web3 = umbrella term for technologies like blockchain that decentralize data ownership and control on the internet. Most internet applications are controlled by centralized entities that determine how they save and use end-user data. https://aws.amazon.com/what-is/web3/
+whale??
