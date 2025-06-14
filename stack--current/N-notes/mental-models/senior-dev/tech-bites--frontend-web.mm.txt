@@ -298,6 +298,7 @@ PWA https://whatpwacando.today/ https://web.dev/learn/pwa
 react
 react -- hooks
 React -- RSC "React server components" https://www.joshwcomeau.com/react/server-components/
+React -- trigger, render, commit https://react.dev/learn/render-and-commit
 react -- v19 https://vercel.com/blog/whats-new-in-react-19
 realtime -- patterns -- poke/pull
 realtime -- patterns -- push biz events

@@ -156,6 +156,7 @@ tokens -- tainted = can be differentiated = less fungible
 tokens -- tokenomics
 tokens = cryptographic representations of ownership, access rights, or other forms of value. Ex. physical and digital assets like real estate, stocks, commodities, art, music, and even in-game items
 Unichain
+unstable coins https://cointelegraph.com/magazine/unstable-coins-de-pegging-bank-runs-other-risks-2023/
 vault
 virtual currencies -- Bitcoin
 wallet

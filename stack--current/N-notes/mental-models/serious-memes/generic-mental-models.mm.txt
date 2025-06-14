@@ -363,6 +363,14 @@ executive
 extremum local
 face cachée de l’iceberg
 fact checking
+failing -- well -- 01 OWN YOUR ROLE ↳ Before you allocate blame, understand your contribution ↳ The fastest path to respect is radical ownership ↳ "Here's what I could have done differently..."
+failing -- well -- 02 RUN SPECIFIC TESTS ↳ Don't fail to fail, fail to learn ↳ Each attempt should test one clear hypothesis ↳ Document what you're testing before you start
+failing -- well -- 03 HARVEST THE LESSONS ↳ If you don't compound understanding, you wasted the attempt ↳ Write it down immediately, as clarity has a half-life ↳ Share the insights so your failure scales
+failing -- well -- 04 KEEP CALM, CARRY ON ↳ Your response shapes others' confidence in you ↳ The only real failure is stopping ↳ Crisis reveals character
+failing -- well -- 05 PROTECT YOUR REPUTATION ↳ You can't recover from a character breach ↳ Build trust even as things break ↳ You can recover from failure
+failing -- well -- 06 NEVER RISK IT ALL ↳ Tomorrow's opportunity needs today's resources ↳ You can still win the game if you stay in it ↳ Smart players always keep dry powder
+failing -- well -- 07 ACCELERATE THE INEVITABLE ↳ Make quick decisions to preserve options ↳ Slow failure drains more than money ↳ If it's going to fail, fail fast
+failing -- well https://www.linkedin.com/posts/davidkline_7-lessons-on-how-to-fail-well-activity-7330569803084034049-U4Hx
 fair division -- divide and choose https://en.wikipedia.org/wiki/Divide_and_choose
 fair division = dividing a set of resources among several people who have an entitlement to them so that each person receives their due share. division of inheritance, partnership dissolutions, divorce settlements, electronic frequency allocation, airport traffic management, and exploitation of Earth observation satellite https://en.wikipedia.org/wiki/Fair_division
 fairness
@@ -386,11 +394,11 @@ Fermi paradox  -- see [great filters]
 Fermi paradox -- Drake equation https://en.wikipedia.org/wiki/Drake_equation
 Fermi paradox https://en.wikipedia.org/wiki/Fermi_paradox
 finance -- Benjamin Franklin's The Way to Wealth = 85 maxims https://www.artofmanliness.com/career-wealth/wealth/money-and-career-advice-from-benjamin-franklins-way-to-wealth/
+finance -- buy now pay later (BNPL)
+finance -- debt spiral
 finance -- FIRE "Financial Independence Retire Early" = not necessarily retire, but more like being free from worry / able to pick lower-paying jobs (no gambling / weapons / hyper competitive), not being a scared slave https://www.reddit.com/r/financialindependence/
 finance -- FIRE = be careful of life balance, not all eggs in the same basket, see [flourishing]
 finance -- FIRE = preparing for the 40s = lower motivation, desillusion, sandwich generation...
-finance -- debt spiral
-finance -- buy now pay later (BNPL)
 financially (il)literate = https://www.smh.com.au/business/the-economy/our-financial-literacy-crisis-can-you-answer-these-5-money-questions-20230109-p5cb6c.html
 Fingerprint for Success (F4S)
 first practice what you preach
@@ -570,6 +578,7 @@ keeping up with the jones
 kidnapping https://fr.wikipedia.org/wiki/Affaire_Empain
 Kipling poem
 know someone -- you get to know someone through talk, togetherness, and time
+kvetching = complain persistently
 labor of love
 laisser-aller
 language -- any word exists in any language in order to describe something relevant to speakers of that language
@@ -1163,6 +1172,7 @@ theory of constraints https://www.tocinstitute.org/theory-of-constraints.html
 theory of everything https://en.wikipedia.org/wiki/Theory_of_everything
 things learned from Medicine / Dentistry https://zenfamily.dental/csLearnDental.php
 THINK hack = Is it True? Helpful? Inspiring? Necessary? Kind?
+third place = meeting places, ex. Starbucks
 thought leader
 tier list = ranking by desirability/viability/fitness https://en.wikipedia.org/wiki/Tier_list
 tier-3 meme
