@@ -11,7 +11,7 @@ import {
 	MONOREPO__ROOT_TSCONFIG‿abs,
 	MONOREPO__SHARED_TS_TYPINGS‿abs,
 } from '../src/consts.ts'
-import { getꓽdefault_namespace, getꓽall_known_pure_module__dirs‿abspath } from '../src/index.ts'
+import { getꓽdefault_namespace, getꓽall_known_pure_module__dirs‿abspath } from '../src/selectors.ts'
 import * as process from 'node:process'
 
 console.log(`\n~~~~~~~~~~~~~~~~\nHello!!!`)

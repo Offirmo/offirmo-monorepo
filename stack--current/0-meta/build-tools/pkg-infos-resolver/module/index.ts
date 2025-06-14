@@ -5,6 +5,7 @@
 import { strict as assert } from 'node:assert'
 import packageJson from 'package-json'
 import * as semver from 'semver'
+import { NODE_MAJOR_VERSION } from '@offirmo-private/monorepo'
 
 /////////////////////////////////////////////////
 
@@ -15,9 +16,15 @@ interface PackageJson {
 	private?: true
 }
 
+// TODO move in another pkg and inject?
 const OVERRIDES: Record<string, {}> = {
-	'fraction.js': { version: '^4' } // v5+ switched to BigInt which is not json-compatible
+	'fraction.js': { version: '^4' }, // v5+ switched to BigInt which is not json-compatible
+
+	// bit complicated. Ideally we should use NODE_MAJOR_VERSION but not all versions have a matching @type/node...
+	'@types/node': { version: `^22` }, // clamp it to the closest, safest available version
 }
+assert(NODE_MAJOR_VERSION === 23, `pkg-infos-resolver should be up to date with NODE_MAJOR_VERSION!`)
+
 
 class PkgInfosResolver {
 	#packageᐧjson_cache: Record<string, any> = {}

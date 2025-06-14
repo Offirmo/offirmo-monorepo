@@ -15,6 +15,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/monorepo": "*",
 		"package-json": "^10",
 		"semver": "^7",
 		"tiny-invariant": "^1"

@@ -238,6 +238,89 @@ function assertꓽnormalized(entry: FileEntry, { indent = ''} = {}): void {
 
 /////////////////////////////////////////////////
 
+// lower is better
+// null
+type Score =
+	| null // = not even eligible to be scored
+	| Array<number> // empty = lowest possible score
+
+/////////////////////////////////////////////////
+
+function get_main_entrypoint_score(entry: FileEntry | undefined): Score {
+	if (!entry) return null
+
+	// manifest is a false positive (short and at the root) and should be ignored
+	if (entry.basename‿noext === 'MANIFEST') return null
+
+	const score: NonNullable<Score> = []
+
+	let score_unit = 0
+
+	// priority order:
+	// - shortest / top file has priority
+	// - index has priority over not index
+
+	if (entry.basename‿noext === 'entrypoint') {
+		score.push(score_unit)
+		score.push(entry.path‿rel.length)
+		return score
+	}
+
+	score_unit++
+	if (entry.extⵧextended === 'entrypoint') {
+		score.push(score_unit)
+		score.push(entry.path‿rel.length)
+		return score
+	}
+
+	score_unit++
+	if (entry.basename‿noext === 'index') {
+		score.push(score_unit)
+		score.push(entry.path‿rel.length)
+		return score
+	}
+
+	score_unit++
+	score.push(score_unit)
+	score.push(entry.path‿rel.length)
+
+	return score
+}
+
+function compare_scores(score_a: Score, score_b: Score): number {
+	assert(score_a !== null || score_b !== null, `At least one score should be eligible!`)
+
+	if (score_a === score_b) return 0
+
+	if (score_b === null) return -1
+	if (score_a === null) return +1
+
+	assert(score_a.length > 0, `score should have length! (A)`)
+	assert(score_b.length > 0, `score should have length! (B)`)
+
+	return (Array.from({length: Math.max(score_a.length, score_b.length)})).reduce<number>((acc, _, index) => {
+		if (acc === 0) {
+			try {
+				const score_unit_a = score_a[index]
+				assert(typeof score_unit_a === 'number', `Score comparison should never yield different path on previous equality!`)
+				const score_unit_b = score_b[index]
+				assert(typeof score_unit_b === 'number', `Score comparison should never yield different path on previous equality!`)
+
+				acc = score_unit_a - score_unit_b
+			} catch (err) {
+				console.error(`compare_scores(…) Error at #${index}!`, err)
+				console.log(score_a)
+				console.log(score_b)
+				throw err
+			}
+		}
+
+		return acc
+	}, 0)
+}
+
+/////////////////////////////////////////////////
+
 interface Options {
 	indent: string
 	getꓽdefault_namespace: (details_so_far: PureModuleDetails) => PureModuleDetails['namespace'],
@@ -260,7 +343,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		}) as Array<string>)
 		.map(p => path.resolve(root‿abspath, p))
 		.sort()
-	//const files = lsFilesRecursiveSync(root‿abspath) <- old version
+	//const files = lsFilesRecursiveSync(root‿abspath) <- FYI old version
 
 	const file_entries: Array<FileEntry> = files
 		.map(path‿abs => createꓽfile_entry(path‿abs, root‿abspath))
@@ -379,29 +462,20 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		assertꓽnormalized(entry)
 
 		// main
-		if (entry.basename‿noext !== 'MANIFEST') {
-			// manifest is a false positive (short and at the root) and should be ignored
-			// priority order:
-			// - shortest / top file has priority
-			// - index has priority over not index
-			result.main ||= entry
-			const current_is_index = result.main.basename‿noext === 'index'
-			const candidate_is_index = entry.basename‿noext === 'index'
-			if (candidate_is_index !== current_is_index) {
-				if (candidate_is_index) {
-					result.main = entry
-					console.log(`${indent}    ⭐️new candidate for: main`)
-				}
+		const main_entrypoint‿score = get_main_entrypoint_score(entry)
+		if (main_entrypoint‿score) {
+			const previous_candidate_score = get_main_entrypoint_score(result.main)
+			if (compare_scores(previous_candidate_score, main_entrypoint‿score) < 0) {
+				// "A should come before B"
+				// keep previous
 			}
 			else {
-				// both are index or both are not
-				if (entry.path‿rel.length < result.main.path‿rel.length) {
-					console.log(`${indent}    ⭐️new candidate for: main`)
-					result.main = entry
-				}
+				console.log(`${indent}    ⭐️new candidate for: main entry point`)
+				result.main = entry
 			}
 		}
 
+		// TODO use score
 		if (entry.basename‿noext === 'demo') {
 			console.log(`${indent}    ⭐️new candidate for: demo`)
 			result.demo = entry
@@ -546,6 +620,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		if (entry.extⵧsub === '.stories') {
 			result.hasꓽstories = true
 		}
+		// TODO more test types
 	})
 
 	await Promise.all(pending_promises)
