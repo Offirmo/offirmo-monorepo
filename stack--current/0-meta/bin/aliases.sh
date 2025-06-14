@@ -77,12 +77,11 @@ alias    mono42re='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias    mono42rt='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 2-libs--cross-cutting/rich-text-format--to-react/;        tabset --badge mono42rt'
 alias    mono42sb='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 2-libs--cross-cutting/soft-execution-context--browser/;   tabset --badge mono42sb'
 alias    mono42ub='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 2-libs--cross-cutting/universal-debug-api--browser/;      tabset --badge mono42ub'
+alias  mono4Xaden='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd X-incubator/active/droppable-feature--egress--navigation/; tabset --badge mono4Xaden'
 alias   mono4Xagh='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd X-incubator/active/generator--html/;                      tabset --badge mono4Xagh'
 alias   mono4Xags='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd X-incubator/active/generator--svg/;                       tabset --badge mono4Xags'
 alias   mono4Xagw='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd X-incubator/active/generator--website-entry-points/;      tabset --badge mono4Xagw'
 
-alias   mono7Xaid='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd X-incubator/active/interview--dsa/;                       tabset --badge mono7Xaid'
-alias    mono7Xax='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd X-incubator/active/x-sandbox/;                            tabset --badge mono7Xax'
 alias   mono7lrsc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--rpg/state--codes/;                                  tabset --badge mono7lrsc'
 alias   mono7lrse='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--rpg/state--engagement/;                             tabset --badge mono7lrse'
 alias   mono7lrsm='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--rpg/state--meta/;                                   tabset --badge mono7lrsm'
@@ -112,6 +111,3 @@ alias     monoAoc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias     monoAoi='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-backend/;        cd offirmo-api--interface/;                                  tabset --badge monoAoi'
 
 alias      monoMg='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd M-minisites/;      cd generator/;                                               tabset --badge monoMg'
-
-alias     monoXam='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd X-incubator/;      cd active/mcp/;                                              tabset --badge monoXam'
-alias     monoXao='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd X-incubator/;      cd active/openai-api/;                                       tabset --badge monoXao'

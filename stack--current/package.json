@@ -97,7 +97,6 @@
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4",
-		"@modelcontextprotocol/sdk": "^1",
 		"@parcel/config-default": "^2",
 		"@parcel/core": "^2",
 		"@parcel/packager-raw-url": "^2",
@@ -156,7 +155,6 @@
 		"murmurhash3js-revisited": "^3",
 		"nanoid": "^5",
 		"npm-run-all": "^4",
-		"openai": "^5",
 		"package-json": "^10",
 		"parcel": "^2",
 		"path-exists": "^5",
@@ -174,12 +172,10 @@
 		"strip-ansi": "^7",
 		"terminal-size": "^4",
 		"tildify": "^3",
-		"tinybench": "^4",
 		"tslib": "^2",
 		"typescript": "^5",
 		"typescript-string-enums": "^1",
-		"wrangler": "^4",
-		"zod": "^3"
+		"wrangler": "^4"
 	},
 	"resolutions": {
 		"sharp": "^0.34"
