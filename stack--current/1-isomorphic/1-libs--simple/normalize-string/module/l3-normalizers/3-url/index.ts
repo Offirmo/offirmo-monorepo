@@ -11,7 +11,7 @@ import { normalizeꓽemailⵧreasonable, hasꓽemail_structure } from '../2-emai
 
 const FAKE_ORIGIN = 'https://placeholder.fake'
 
-function _normalizeⵧschemeꘌhttpₓ(url: string): string {
+function _normalizeꓽschemeꘌhttpₓ(url: string): string {
 	try {
 		// TODO one day URL.canParse
 		new URL(url, FAKE_ORIGIN)
@@ -56,7 +56,7 @@ function _normalize_per_scheme(url: string): string {
 		case 'http':
 			/* falls through */
 		case 'https': {
-			url = _normalizeⵧschemeꘌhttpₓ([ scheme, ...rest ].join(':'))
+			url = _normalizeꓽschemeꘌhttpₓ([ scheme, ...rest ].join(':'))
 
 			// TODO remove trackers
 			// TODO add trailing slash
@@ -82,7 +82,7 @@ function _normalize_per_scheme(url: string): string {
 	return [ scheme, ...rest ].join(':')
 }
 
-function _normalize_url_structure(possible_url: string | URL): string {
+function _normalizeꓽurl__structure(possible_url: string | URL): string {
 	const url‿obj = (possible_url instanceof  URL)
 		? possible_url
 		: (new URL(possible_url, FAKE_ORIGIN))
@@ -103,13 +103,13 @@ const normalizeꓽurl = combineꓽnormalizers(
 	normalize_unicode,
 	remove_all_spaces, // yes in theory we could encode them, but a space is more likely a typo, ex. wrong input type for email "Offirmo. Net@gmail. Com"
 	_normalize_per_scheme,
-	_normalize_url_structure,
+	_normalizeꓽurl__structure,
 
 )
 
 const normalizeꓽurlⵧhttpₓ = combineꓽnormalizers(
 	normalizeꓽurl,
-	_normalizeⵧschemeꘌhttpₓ,
+	_normalizeꓽschemeꘌhttpₓ,
 )
 
 /////////////////////////////////////////////////

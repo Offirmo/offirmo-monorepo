@@ -15,6 +15,7 @@
 2025-05 Duolingo "AI crashout" https://www.fastcompany.com/91338068/duolingo-deletes-tiktok-ai-backlash-returns-with-strange-message https://www.reddit.com/r/OutOfTheLoop/comments/1kncne7/whats_going_on_with_duolingo/ https://it.slashdot.org/story/25/06/08/185209/after-ai-first-promise-duolingo-ceo-admits-i-did-not-expect-the-blowback
 2025-06 Apple "The illusion of thinking" https://machinelearning.apple.com/research/illusion-of-thinking
 2025-06 dev AI perf framework
+2025-06 real applied case "composite model architecture" https://vercel.com/blog/v0-composite-model-family
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://ghuntley.com/
@@ -39,7 +40,7 @@ AI "Artificial intelligence" = intentionally vague term / "solving tasks or prob
 AI -- first cohort of winners
 AI -- weak AI = task specific
 AI 50 2023 https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
-AI doomer https://www.wheresyoured.at/wheres-the-money/ https://www.wheresyoured.at/longcon/?utm_source=thecollectivenewsletter.beehiiv.com&utm_medium=newsletter&utm_campaign=the-collective-900
+AI doomer https://www.wheresyoured.at/wheres-the-money/ https://www.wheresyoured.at/longcon/
 AI Driven Organisations (AIDO)
 AI gateway = convenient self-service integration point for internal teams who want to utilise turnkey AI APIs, proxy for the external and internal AI offerings + additional set of capabilities that empower usage and tracking of AI functionalities at an enterprise level.
 AI model collapse = as AI grows, systems are trained on their own outputs, gradually losing accuracy, diversity, and reliability. This occurs because errors compound across successive model generations, leading to distorted data distributions and "irreversible defects" in performance. The model becomes poisoned with its own projection of reality. https://slashdot.org/story/25/05/28/0242240/some-signs-of-ai-model-collapse-begin-to-reveal-themselves

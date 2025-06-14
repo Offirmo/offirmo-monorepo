@@ -244,13 +244,55 @@ type Score =
 	| null // = not even eligible to be scored
 	| Array<number> // empty = lowest possible score
 
+function compareꓽscores(score_a: Score, score_b: Score): number {
+	assert(score_a !== null || score_b !== null, `At least one score should be eligible!`)
+
+	if (score_a === score_b) return 0
+
+	if (score_b === null) return -1
+	if (score_a === null) return +1
+
+	assert(score_a.length > 0, `score should have length! (A)`)
+	assert(score_b.length > 0, `score should have length! (B)`)
+
+	return (Array.from({length: Math.max(score_a.length, score_b.length)})).reduce<number>((acc, _, index) => {
+		if (acc === 0) {
+			try {
+				const score_unit_a = score_a[index]
+				assert(typeof score_unit_a === 'number', `Score comparison should never yield different path on previous equality!`)
+				const score_unit_b = score_b[index]
+				assert(typeof score_unit_b === 'number', `Score comparison should never yield different path on previous equality!`)
+
+				acc = score_unit_a - score_unit_b
+			} catch (err) {
+				console.error(`compare_scores(…) Error at #${index}!`, err)
+				console.log(score_a)
+				console.log(score_b)
+				throw err
+			}
+		}
+
+		return acc
+	}, 0)
+}
+
 /////////////////////////////////////////////////
 
-function get_main_entrypoint_score(entry: FileEntry | undefined): Score {
+function hasꓽentrypoint_affinity(entry: FileEntry | undefined): boolean {
+	if (!entry) return false
+
+	if (entry.basename‿noext === 'MANIFEST') return false
+
+	// TODO reevaluate css
+	if (!['.ts', '.tsx', '.js', '.mjs', '.html', '.css'].includes(entry.ext)) return false
+
+	return true
+}
+
+function getꓽmain_entrypoint_affinity‿score(entry: FileEntry | undefined): Score {
 	if (!entry) return null
 
-	// manifest is a false positive (short and at the root) and should be ignored
-	if (entry.basename‿noext === 'MANIFEST') return null
+	if (!hasꓽentrypoint_affinity(entry)) return null
 
 	const score: NonNullable<Score> = []
 
@@ -287,37 +329,78 @@ function get_main_entrypoint_score(entry: FileEntry | undefined): Score {
 	return score
 }
 
-function compare_scores(score_a: Score, score_b: Score): number {
-	assert(score_a !== null || score_b !== null, `At least one score should be eligible!`)
+function getꓽdemo_entrypoint_affinity‿score(entry: FileEntry | undefined): Score {
+	if (!entry) return null
 
-	if (score_a === score_b) return 0
+	if (!hasꓽentrypoint_affinity(entry)) return null
 
-	if (score_b === null) return -1
-	if (score_a === null) return +1
+	const score: NonNullable<Score> = []
 
-	assert(score_a.length > 0, `score should have length! (A)`)
-	assert(score_b.length > 0, `score should have length! (B)`)
+	let score_unit = 0
 
-	return (Array.from({length: Math.max(score_a.length, score_b.length)})).reduce<number>((acc, _, index) => {
-		if (acc === 0) {
-			try {
-				const score_unit_a = score_a[index]
-				assert(typeof score_unit_a === 'number', `Score comparison should never yield different path on previous equality!`)
-				const score_unit_b = score_b[index]
-				assert(typeof score_unit_b === 'number', `Score comparison should never yield different path on previous equality!`)
+	if (entry.basename‿noext === 'demo') {
+		score.push(score_unit)
+		score.push(entry.path‿rel.length)
+		return score
+	}
 
-				acc = score_unit_a - score_unit_b
-			} catch (err) {
-				console.error(`compare_scores(…) Error at #${index}!`, err)
-				console.log(score_a)
-				console.log(score_b)
-				throw err
-			}
+	score_unit++
+	if (path.basename(path.dirname(entry.path‿rel)).includes('demo')) {
+		score.push(score_unit)
+
+		score_unit = 0
+		if (entry.basename‿noext === 'index') {
+			score.push(score_unit)
+			score.push(entry.path‿rel.length)
+			return score
 		}
 
-		return acc
-	}, 0)
+		score_unit++
+		score.push(score_unit)
+		score.push(entry.path‿rel.length)
+
+		return score
+	}
+
+	return null
 }
+
+function getꓽsandbox_entrypoint_affinity‿score(entry: FileEntry | undefined): Score {
+	if (!entry) return null
+
+	if (!hasꓽentrypoint_affinity(entry)) return null
+
+	const score: NonNullable<Score> = []
+
+	let score_unit = 0
+
+	if (entry.basename‿noext === 'sandbox') {
+		score.push(score_unit)
+		score.push(entry.path‿rel.length)
+		return score
+	}
+
+	score_unit++
+	if (path.basename(path.dirname(entry.path‿rel)).includes('sandbox')) {
+		score.push(score_unit)
+
+		score_unit = 0
+		if (entry.basename‿noext === 'index') {
+			score.push(score_unit)
+			score.push(entry.path‿rel.length)
+			return score
+		}
+
+		score_unit++
+		score.push(score_unit)
+		score.push(entry.path‿rel.length)
+
+		return score
+	}
+
+	return null
+}
+
 
 /////////////////////////////////////////////////
 
@@ -461,11 +544,11 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 		assertꓽnormalized(entry)
 
-		// main
-		const main_entrypoint‿score = get_main_entrypoint_score(entry)
+		// main entry
+		const main_entrypoint‿score = getꓽmain_entrypoint_affinity‿score(entry)
 		if (main_entrypoint‿score) {
-			const previous_candidate_score = get_main_entrypoint_score(result.main)
-			if (compare_scores(previous_candidate_score, main_entrypoint‿score) < 0) {
+			const previous_candidate_score = getꓽmain_entrypoint_affinity‿score(result.main)
+			if (compareꓽscores(previous_candidate_score, main_entrypoint‿score) < 0) {
 				// "A should come before B"
 				// keep previous
 			}
@@ -475,28 +558,30 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			}
 		}
 
-		// TODO use score
-		if (entry.basename‿noext === 'demo') {
-			console.log(`${indent}    ⭐️new candidate for: demo`)
-			result.demo = entry
-		}
-		if (path.basename(path.dirname(path‿rel)).includes('demo')
-			&& entry.basename‿noext === 'index') {
-			if (!result.demo) {
-				console.log(`${indent}    ⭐️new candidate for: demo`)
+		// demo entry
+		const demo_entrypoint‿score = getꓽdemo_entrypoint_affinity‿score(entry)
+		if (demo_entrypoint‿score) {
+			const previous_candidate_score = getꓽdemo_entrypoint_affinity‿score(result.demo)
+			if (compareꓽscores(previous_candidate_score, main_entrypoint‿score) < 0) {
+				// "A should come before B"
+				// keep previous
+			}
+			else {
+				console.log(`${indent}    ⭐️new candidate for: demo entry point`)
 				result.demo = entry
 			}
 		}
 
-		if (entry.basename‿noext === 'sandbox') {
-			console.log(`${indent}    ⭐️new candidate for: sandbox`)
-			result.sandbox = entry
-		}
-		if (path.basename(path.dirname(path‿rel)).includes('sandbox')
-			&& entry.basename‿noext === 'index') {
-			if (!result.sandbox) {
-				console.log(`${indent}    ⭐️new candidate for: sandbox`)
-				result.sandbox = entry
+		const sandbox_entrypoint‿score = getꓽsandbox_entrypoint_affinity‿score(entry)
+		if (sandbox_entrypoint‿score) {
+			const previous_candidate_score = getꓽsandbox_entrypoint_affinity‿score(result.sandbox)
+			if (compareꓽscores(previous_candidate_score, main_entrypoint‿score) < 0) {
+				// "A should come before B"
+				// keep previous
+			}
+			else {
+				console.log(`${indent}    ⭐️new candidate for: sandbox entry point`)
+				result.demo = entry
 			}
 		}
 
