@@ -25,9 +25,11 @@ interface PureModuleDetailsAllowedInManifest {
 	description?: string
 	version: Semver
 	isꓽpublished: boolean
+
 	isꓽapp: boolean // app in the generic sense of "not a lib"
 	hasꓽside_effects: boolean // assuming most pkgs don't
 	engines: Record<string, Semver>
+
 	status: // EXPERIMENTAL rating of modules TODO clarify
 		| 'spike'
 		| 'sandbox' // self-contained playground for testing stuff
@@ -43,6 +45,7 @@ interface PureModuleManifest extends Partial<PureModuleDetailsAllowedInManifest>
 		dependencies: Record<string, DependencyDetails | 'ignore'>,
 		files: {
 			packageᐧjson?: { [path: string]: any }
+			// TODO 1D tsconfig.json
 		},
 	}
 }
@@ -76,7 +79,7 @@ interface PureModuleDetails extends PureModuleDetailsAllowedInManifest {
 	depsⵧoptional: Set<string>
 	depsⵧvendored: Set<string>
 
-	// needed to build scripts
+	// needed to build "scripts"
 	languages: Set<ProgLang>
 
 	// in case

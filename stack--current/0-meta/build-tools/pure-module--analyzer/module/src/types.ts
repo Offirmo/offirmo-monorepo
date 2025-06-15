@@ -3,7 +3,7 @@
 // for readability. Unfortunately this doesn't cause a real additional safety
 
 type Basename = string
-type Extension = string // . included, ex. .ts
+type Extension = string // '.' included, ex. '.ts'
 
 type RelativePath = string // implied relative to some "working dir"
 type AbsolutePath = string
@@ -15,13 +15,13 @@ type SPDXLicense = string
 /////////////////////////////////////////////////
 
 type ProgLang =
+	| 'css'
+	| 'html'
 	| 'js'
 	| 'json'
-	| 'ts'
-	| 'jsx'
-	| 'html'
-	| 'css'
+	| 'jsx' // also covers tsx
 	| 'md'
+	| 'ts'
 
 /////////////////////////////////////////////////
 

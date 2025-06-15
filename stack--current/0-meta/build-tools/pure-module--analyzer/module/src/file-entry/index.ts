@@ -18,9 +18,11 @@ function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsoluteP
 	})()
 	const basename‿noext = path.basename(path‿abs, extⵧextended)
 
+	const path‿rel = path.relative(root‿abspath, path‿abs)
+
 	return {
 		path‿abs,
-		path‿rel: path.relative(root‿abspath, path‿abs),
+		path‿rel,
 		basename,
 		ext,
 		extⵧsub,
