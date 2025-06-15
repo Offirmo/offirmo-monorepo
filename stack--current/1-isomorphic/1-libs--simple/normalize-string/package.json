@@ -8,7 +8,9 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/index.ts"
+		".": "./module/index.ts",
+		"./email": "./module/l3-normalizers/2-email/entrypoint.ts",
+		"./url": "./module/l3-normalizers/3-url/entrypoint.ts"
 	},
 	"source": "module/index.ts",
 	"peerDependencies": {

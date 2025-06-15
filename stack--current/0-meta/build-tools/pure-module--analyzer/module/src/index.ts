@@ -294,27 +294,16 @@ function getꓽentrypointⵧmain__affinity‿score(entry: FileEntry | undefined)
 	if (!entry) return null
 
 	if (!hasꓽentrypoint_affinity(entry)) return null
+	if (entry.basename‿noext === 'entrypoint' || entry.extⵧextended === 'entrypoint') {
+		// those are sub-entrypoints, not the main one
+		return null
+	}
 
 	const score: NonNullable<Score> = []
 
 	let score_unit = 0
 
-	// priority order:
-	// - shortest / top file has priority
-	// - index has priority over not index
-
-	if (entry.basename‿noext === 'entrypoint') {
-		score.push(score_unit)
-		score.push(entry.path‿rel.length)
-		return score
-	}
-
-	score_unit++
-	if (entry.extⵧextended === 'entrypoint') {
-		score.push(score_unit)
-		score.push(entry.path‿rel.length)
-		return score
-	}
+	// basically the top "index.xyz"
 
 	score_unit++
 	if (entry.basename‿noext === 'index') {
@@ -628,8 +617,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			result.storypad = entry
 		}
 
-		const { basename } = entry
-		if (basename === MANIFEST‿basename) {
+		if (entry.basename === MANIFEST‿basename) {
 			if(entry !== entryⵧmanifest)
 				throw new Error(`Multiple MANIFEST files found!`)
 			return
@@ -654,7 +642,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 				if (isBuiltInNodeModule(dependency_name)) {
 					if (langs.includes('ts')) raw_deps.push({ label: '@types/node', type: 'dev' })
-					// TODO one day how to express dependency to a runtime?
+					// TODO 1D express dependency to a runtime?
 					return
 				}
 
@@ -705,6 +693,13 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 					)
 				}
 			})
+
+			if (entry.basename‿noext === 'entrypoint') {
+				const first_line = content.trim().split('\n').at(0)!.trim()
+				const id = first_line.slice(2).trim()
+				console.log(`${indent}    ⭐️new sub entry point "${id}"`)
+				result.extra_entry_points[id] = entry
+			}
 		}
 		if (langs.includes('html')) {
 			unprocessed_langs.delete('html')
@@ -724,7 +719,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			// Parcel does it for us.
 		}
 		if (unprocessed_langs.size) {
-			throw new Error(`Unknown language(s) "${Array.from(unprocessed_langs).join(', ')}" for "${basename}"!`)
+			throw new Error(`Unknown language(s) "${Array.from(unprocessed_langs).join(', ')}" for "${entry.basename}"!`)
 		}
 
 		if (entry.extⵧsub === '.tests') {

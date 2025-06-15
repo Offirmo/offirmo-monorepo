@@ -202,6 +202,10 @@ ${pure_module_details.description || ''}
 			"source": SRC_RELPATH,
 		}
 
+		Object.keys(pure_module_details.extra_entry_points).sort().forEach(k => {
+			pkg.exports[k] = './' + path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.extra_entry_points[k]!.path‿rel)
+		})
+
 		const all_declared_deps: Set<string> = (new Set<string>())
 			.union(pure_module_details.depsⵧnormal)
 			.union(pure_module_details.depsⵧdev)
@@ -304,6 +308,10 @@ ${pure_module_details.description || ''}
 			}
 			if (pure_module_details.demo) {
 				switch (pure_module_details.demo.ext) {
+					case '.js': {
+						scripts['demo'] = `node ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.demo.path‿rel)}`
+						break
+					}
 					case '.ts': {
 						scripts['demo'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.demo.path‿rel)}`
 						break
@@ -321,6 +329,10 @@ ${pure_module_details.description || ''}
 			}
 			if (pure_module_details.sandbox) {
 				switch (pure_module_details.sandbox.ext) {
+					case '.js': {
+						scripts['sandbox'] = `node ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.sandbox.path‿rel)}`
+						break
+					}
 					case '.ts': {
 						scripts['sandbox'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.sandbox.path‿rel)}`
 						break
@@ -333,7 +345,7 @@ ${pure_module_details.description || ''}
 					}
 
 					default:
-						throw new Error(`Not implemented: demo with extension "${pure_module_details.sandbox.ext}"!`)
+						throw new Error(`Not implemented: sandbox with extension "${pure_module_details.sandbox.ext}"!`)
 				}
 			}
 
