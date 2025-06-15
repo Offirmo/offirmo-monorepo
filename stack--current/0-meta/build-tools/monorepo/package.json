@@ -8,9 +8,9 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/entrypoint.ts"
+		".": "./module/src/index.ts"
 	},
-	"source": "module/src/entrypoint.ts",
+	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},

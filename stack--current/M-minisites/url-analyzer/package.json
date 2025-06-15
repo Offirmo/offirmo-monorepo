@@ -1,0 +1,27 @@
+{
+	"name": "@offirmo-private/url-analyzer",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.js"
+	},
+	"source": "module/src/index.js",
+	"dependencies": {
+		"tiny-invariant": "^1"
+	},
+	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
+		"clean": "npm-run-all _clean--pkg"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/storypad": "*",
+		"@offirmo-private/toolbox--parcel": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4"
+	}
+}

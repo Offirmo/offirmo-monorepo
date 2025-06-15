@@ -282,6 +282,7 @@ function hasꓽentrypoint_affinity(entry: FileEntry | undefined): boolean {
 	if (!entry) return false
 
 	if (entry.basename‿noext === 'MANIFEST') return false
+	if (entry.extⵧsub) return false // derived files obviously can't be entry points
 
 	// TODO reevaluate css
 	if (!['.ts', '.tsx', '.js', '.mjs', '.html', '.css'].includes(entry.ext)) return false
@@ -289,7 +290,7 @@ function hasꓽentrypoint_affinity(entry: FileEntry | undefined): boolean {
 	return true
 }
 
-function getꓽmain_entrypoint_affinity‿score(entry: FileEntry | undefined): Score {
+function getꓽentrypointⵧmain__affinity‿score(entry: FileEntry | undefined): Score {
 	if (!entry) return null
 
 	if (!hasꓽentrypoint_affinity(entry)) return null
@@ -329,16 +330,18 @@ function getꓽmain_entrypoint_affinity‿score(entry: FileEntry | undefined): S
 	return score
 }
 
-function getꓽdemo_entrypoint_affinity‿score(entry: FileEntry | undefined): Score {
+function getꓽentrypointⵧdemo__affinity‿score(entry: FileEntry | undefined): Score {
 	if (!entry) return null
 
 	if (!hasꓽentrypoint_affinity(entry)) return null
+
+	if (!['.ts', '.js', '.html'].includes(entry.ext)) return null
 
 	const score: NonNullable<Score> = []
 
 	let score_unit = 0
 
-	if (entry.basename‿noext === 'demo') {
+	if (entry.basenameⵧsemantic‿noext === 'demo') {
 		score.push(score_unit)
 		score.push(entry.path‿rel.length)
 		return score
@@ -365,16 +368,18 @@ function getꓽdemo_entrypoint_affinity‿score(entry: FileEntry | undefined): S
 	return null
 }
 
-function getꓽsandbox_entrypoint_affinity‿score(entry: FileEntry | undefined): Score {
+function getꓽentrypointⵧsandbox__affinity‿score(entry: FileEntry | undefined): Score {
 	if (!entry) return null
 
 	if (!hasꓽentrypoint_affinity(entry)) return null
+
+	if (!['.ts', '.js', '.html'].includes(entry.ext)) return null
 
 	const score: NonNullable<Score> = []
 
 	let score_unit = 0
 
-	if (entry.basename‿noext === 'sandbox') {
+	if (entry.basenameⵧsemantic‿noext === 'sandbox') {
 		score.push(score_unit)
 		score.push(entry.path‿rel.length)
 		return score
@@ -401,6 +406,43 @@ function getꓽsandbox_entrypoint_affinity‿score(entry: FileEntry | undefined)
 	return null
 }
 
+function getꓽentrypointⵧbuild__affinity‿score(entry: FileEntry | undefined): Score {
+	if (!entry) return null
+
+	if (!hasꓽentrypoint_affinity(entry)) return null
+
+	if (!['.ts', '.js'].includes(entry.ext)) return null
+
+	const score: NonNullable<Score> = []
+
+	let score_unit = 0
+
+	if (entry.basenameⵧsemantic‿noext === 'build') {
+		score.push(score_unit)
+		score.push(entry.path‿rel.length)
+		return score
+	}
+
+	score_unit++
+	if (path.basename(path.dirname(entry.path‿rel)).includes('build')) {
+		score.push(score_unit)
+
+		score_unit = 0
+		if (entry.basename‿noext === 'index') {
+			score.push(score_unit)
+			score.push(entry.path‿rel.length)
+			return score
+		}
+
+		score_unit++
+		score.push(score_unit)
+		score.push(entry.path‿rel.length)
+
+		return score
+	}
+
+	return null
+}
 
 /////////////////////////////////////////////////
 
@@ -518,36 +560,46 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		if (isꓽignored) {
 			return
 		}
-		else if (isꓽin_unstructured_folder(entry)) {
-			// we'll ignore as well but still eligible for a restricted set of things
 
-			if (!result.demo) {
-				if (entry.basename‿noext === 'demo'
-					|| (path.basename(path.dirname(path‿rel)).includes('demo') && entry.basename‿noext === 'index')) {
-					assertꓽnormalized(entry)
-					console.log(`${indent}    ⭐️new candidate for: demo`)
-					result.demo = entry
-				}
+		// order is important!
+
+		const demo_entrypoint‿score = getꓽentrypointⵧdemo__affinity‿score(entry)
+		if (demo_entrypoint‿score) {
+			const previous_candidate_score = getꓽentrypointⵧdemo__affinity‿score(result.demo)
+			if (compareꓽscores(previous_candidate_score, demo_entrypoint‿score) < 0) {
+				// "A should come before B"
+				// keep previous
 			}
-
-			if (!result.sandbox) {
-				if (entry.basename‿noext === 'sandbox'
-				|| (path.basename(path.dirname(path‿rel)).includes('sandbox') && entry.basename‿noext === 'index')) {
-					assertꓽnormalized(entry)
-					console.log(`${indent}    ⭐️new candidate for: sandbox`)
-					result.sandbox = entry
-				}
+			else {
+				console.log(`${indent}    ⭐️new candidate for: demo entry point`)
+				result.demo = entry
 			}
+		}
 
+		const sandbox_entrypoint‿score = getꓽentrypointⵧsandbox__affinity‿score(entry)
+		if (sandbox_entrypoint‿score) {
+			const previous_candidate_score = getꓽentrypointⵧsandbox__affinity‿score(result.sandbox)
+			if (compareꓽscores(previous_candidate_score, sandbox_entrypoint‿score) < 0) {
+				// "A should come before B"
+				// keep previous
+			}
+			else {
+				console.log(`${indent}    ⭐️new candidate for: sandbox entry point`)
+				result.sandbox = entry
+			}
+		}
+
+		if (isꓽin_unstructured_folder(entry)) {
+			// no more analysis
 			return
 		}
 
 		assertꓽnormalized(entry)
 
 		// main entry
-		const main_entrypoint‿score = getꓽmain_entrypoint_affinity‿score(entry)
+		const main_entrypoint‿score = getꓽentrypointⵧmain__affinity‿score(entry)
 		if (main_entrypoint‿score) {
-			const previous_candidate_score = getꓽmain_entrypoint_affinity‿score(result.main)
+			const previous_candidate_score = getꓽentrypointⵧmain__affinity‿score(result.main)
 			if (compareꓽscores(previous_candidate_score, main_entrypoint‿score) < 0) {
 				// "A should come before B"
 				// keep previous
@@ -558,43 +610,22 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			}
 		}
 
-		// demo entry
-		const demo_entrypoint‿score = getꓽdemo_entrypoint_affinity‿score(entry)
-		if (demo_entrypoint‿score) {
-			const previous_candidate_score = getꓽdemo_entrypoint_affinity‿score(result.demo)
-			if (compareꓽscores(previous_candidate_score, main_entrypoint‿score) < 0) {
+		const build_entrypoint‿score = getꓽentrypointⵧbuild__affinity‿score(entry)
+		if (build_entrypoint‿score) {
+			const previous_candidate_score = getꓽentrypointⵧbuild__affinity‿score(result.build)
+			if (compareꓽscores(previous_candidate_score, build_entrypoint‿score) < 0) {
 				// "A should come before B"
 				// keep previous
 			}
 			else {
-				console.log(`${indent}    ⭐️new candidate for: demo entry point`)
-				result.demo = entry
+				console.log(`${indent}    ⭐️new candidate for: build entry point`)
+				result.build = entry
 			}
 		}
 
-		const sandbox_entrypoint‿score = getꓽsandbox_entrypoint_affinity‿score(entry)
-		if (sandbox_entrypoint‿score) {
-			const previous_candidate_score = getꓽsandbox_entrypoint_affinity‿score(result.sandbox)
-			if (compareꓽscores(previous_candidate_score, main_entrypoint‿score) < 0) {
-				// "A should come before B"
-				// keep previous
-			}
-			else {
-				console.log(`${indent}    ⭐️new candidate for: sandbox entry point`)
-				result.demo = entry
-			}
-		}
-
-		if (entry.basename‿noext === 'storypad') {
+		if (entry.basenameⵧsemantic‿noext === 'storypad' && entry.ext === '.html') {
 			console.log(`${indent}    ⭐️new candidate for: storypad`)
 			result.storypad = entry
-		}
-		if (path.basename(path.dirname(path‿rel)).includes('storypad')
-			&& entry.basename‿noext === 'index') {
-			if (!result.storypad) {
-				console.log(`${indent}    ⭐️new candidate for: storypad`)
-				result.storypad = entry
-			}
 		}
 
 		const { basename } = entry

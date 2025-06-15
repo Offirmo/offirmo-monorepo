@@ -24,7 +24,7 @@ function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsoluteP
 	const basenameⵧsemantic‿noext = ((): string => {
 		if (basename‿noext === 'index') {
 			// low info, try better
-			const last_segment = path.basename(path‿rel)
+			const last_segment = path.basename(path.dirname(path‿rel))
 			if (last_segment) {
 				return last_segment + extⵧsub
 			}

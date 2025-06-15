@@ -111,3 +111,4 @@ alias     monoAoc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias     monoAoi='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-backend/;        cd offirmo-api--interface/;                                  tabset --badge monoAoi'
 
 alias      monoMg='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd M-minisites/;      cd generator/;                                               tabset --badge monoMg'
+alias      monoMu='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd M-minisites/;      cd url-analyzer/;                                            tabset --badge monoMu'
