@@ -30,13 +30,18 @@ function create(root‿abspath: AbsolutePath): PureModuleDetails {
 		isꓽpublished: false,
 		author: 'Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)', // https://docs.npmjs.com/cli/v11/configuring-npm/package-json#people-fields-author-contributors
 		//license: 'Unlicense',
+
 		main: null as any, // XXX TODO
+		extra_entry_points: {},
+
 		isꓽapp: false, // most common case
 		hasꓽside_effects: false,
+
 		hasꓽtestsⵧunit: false,
 		hasꓽtestsⵧevals: false,
 		//hasꓽtestsⵧsmoke: false,
 		hasꓽstories: false,
+
 		depsⵧnormal: new Set<string>(),
 		depsⵧdev: new Set<string>([
 			// implicit deps:
@@ -51,6 +56,7 @@ function create(root‿abspath: AbsolutePath): PureModuleDetails {
 		depsⵧpeer: new Set<string>(),
 		depsⵧoptional: new Set<string>(),
 		depsⵧvendored: new Set<string>(),
+
 		languages: new Set<ProgLang>(),
 		engines: {},
 

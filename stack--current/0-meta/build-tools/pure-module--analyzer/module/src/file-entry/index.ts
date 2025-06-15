@@ -16,9 +16,22 @@ function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsoluteP
 		split[0] = ''
 		return split.join('.')
 	})()
-	const basename‿noext = path.basename(path‿abs, extⵧextended)
+	const basename‿noext = path.basename(path‿abs, ext)
+	const basename‿noxext = path.basename(path‿abs, extⵧextended)
 
 	const path‿rel = path.relative(root‿abspath, path‿abs)
+
+	const basenameⵧsemantic‿noext = ((): string => {
+		if (basename‿noext === 'index') {
+			// low info, try better
+			const last_segment = path.basename(path‿rel)
+			if (last_segment) {
+				return last_segment + extⵧsub
+			}
+		}
+
+		return basename‿noext
+	})()
 
 	return {
 		path‿abs,
@@ -28,6 +41,9 @@ function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsoluteP
 		extⵧsub,
 		extⵧextended,
 		basename‿noext,
+		basename‿noxext,
+
+		basenameⵧsemantic‿noext,
 	}
 }
 

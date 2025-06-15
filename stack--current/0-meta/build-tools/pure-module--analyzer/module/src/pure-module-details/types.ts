@@ -60,18 +60,21 @@ interface PureModuleDetails extends PureModuleDetailsAllowedInManifest {
 	fqname: DependencyFQName // fully qualified
 
 	author: string
+
+	// entry points
 	main: FileEntry // TODO review fuse with entries?
 	demo?: FileEntry
+	sandbox?: FileEntry
 	storypad?: FileEntry
-	sandbox?: FileEntry // TODO
+	build?: FileEntry // a build script
+	extra_entry_points: {
+		[label: string]: FileEntry
+	}
+
 	hasꓽtestsⵧunit: boolean
 	hasꓽtestsⵧevals: boolean
-	//hasꓽtestsⵧsmoke: boolean // TODO one day
 	hasꓽstories: boolean,
-	/* TODO one day
-	extra_entries: {
-		[label: string]: FileEntry
-	} */
+	//hasꓽtestsⵧsmoke: boolean // TODO one day
 
 	depsⵧnormal: Set<string>
 	depsⵧdev: Set<string>
