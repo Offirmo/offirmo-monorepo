@@ -1,7 +1,3 @@
-
-// TODO https://jwatt.org/svg/authoring/
-
-
 import { expect } from 'chai'
 
 import { LIB } from './consts.ts'
@@ -21,7 +17,8 @@ import {
 
 describe(`${LIB}`, function() {
 
-	describe('getꓽsvg‿str', function () {
+	describe('getꓽsvg‿str()', function () {
+		// TODO validate against https://jwatt.org/svg/authoring/
 
 		it('should work -- emoji -- compact', () => {
 			const svg = createꓽfrom_emoji('🦄')

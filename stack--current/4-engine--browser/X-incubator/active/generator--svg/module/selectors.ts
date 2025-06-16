@@ -8,6 +8,7 @@ import type { Dimensions2D } from '@offirmo-private/ts-types-web'
 
 import { EOL, TAB } from './consts.ts'
 import type { SVG, Svg‿str } from './types.ts'
+import { is_SVG } from './types-guards.ts'
 
 /////////////////////////////////////////////////
 
@@ -49,7 +50,7 @@ function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 		...(svg.content.map((x): string => {
 			if (typeof x === 'string') return x
 
-			if ((x as any).viewbox) { // TODO type guard
+			if (is_SVG(x)) { // TODO type guard
 				// sub-svg
 				return getꓽsvg‿str(x, options)
 			}
