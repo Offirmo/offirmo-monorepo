@@ -10,12 +10,5 @@
 		dependencies: {
 			'@offirmo-private/css--foundation': { type: 'dev' },
 		},
-
-		// avoid as much as possible, try semantic overrides first
-		files: {
-			packageᐧjson: {
-				'scripts.build': 'node --experimental-strip-types ./module/__build/bundle.ts',
-			}
-		}
 	}
 }

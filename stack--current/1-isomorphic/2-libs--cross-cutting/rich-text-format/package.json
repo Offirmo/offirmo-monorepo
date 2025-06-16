@@ -9,7 +9,7 @@
 	"type": "module",
 	"exports": {
 		".": "./module/src/index.ts",
-		"./examples": "./module/src/__examples/index.ts"
+		"./examples": "./module/src/__examples/_entrypoint.ts"
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {

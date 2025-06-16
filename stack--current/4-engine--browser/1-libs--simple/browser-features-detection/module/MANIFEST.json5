@@ -10,9 +10,7 @@
 			packageᐧjson: {
 				"|source": ">DELETE<",
 				"|exports|.": ">DELETE<",
-				"|exports|./has-hover": "./src/l3-has-hover/index.ts",
-				"|exports|./is-framed": "./src/l1-is-framed/index.ts",
-			}
-		}
+			},
+		},
 	},
 }

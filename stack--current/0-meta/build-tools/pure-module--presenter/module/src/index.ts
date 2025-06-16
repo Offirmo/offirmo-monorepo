@@ -364,7 +364,16 @@ ${pure_module_details.description || ''}
 			}
 
 			/////// build
-			if (pure_module_details.isꓽpublished) {
+			if (pure_module_details.build) {
+				scripts["_build:custom"] = (() => {
+					if (pure_module_details.build.ext === '.ts') {
+						return `node --experimental-strip-types ./${pure_module_details.build?.path‿rel}`
+					}
+
+					throw new Error(`Build format not implemented!`)
+				})()
+			}
+			else if (pure_module_details.isꓽpublished) {
 				if (pure_module_details.languages.has('ts')) {
 					scripts["_build:prod"] = "monorepo-script--build-typescript-package"
 				}

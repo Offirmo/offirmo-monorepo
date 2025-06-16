@@ -8,7 +8,7 @@
 	"type": "module",
 	"exports": {
 		".": "./module/src/index.ts",
-		"./__shared-demos": "./module/src/__shared-demos/index.ts"
+		"./__shared-demos": "./module/src/__shared-demos/_entrypoint.ts"
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {

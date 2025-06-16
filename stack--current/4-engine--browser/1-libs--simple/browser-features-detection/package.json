@@ -8,8 +8,8 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		"./has-hover": "./src/l3-has-hover/index.ts",
-		"./is-framed": "./src/l1-is-framed/index.ts"
+		"./has-hover": "./module/src/l1-is-framed/_entrypoint.ts",
+		"./is-framed": "./module/src/l3-has-hover/_entrypoint.ts"
 	},
 	"peerDependencies": {
 		"tslib": "^2"

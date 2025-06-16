@@ -351,7 +351,7 @@ function getꓽentrypointⵧmain__affinity‿score(entry: FileEntry | undefined)
 
 	if (!hasꓽentrypoint_affinity(entry)) return null
 
-	if (entry.basename‿no_ᐧext === 'entrypoint' || entry.extⵧextended === 'entrypoint') {
+	if (entry.basename‿no_ᐧext === '_entrypoint') {
 		// those are sub-entrypoints, not the main one
 		return null
 	}
@@ -438,6 +438,18 @@ function getꓽentrypointⵧbuild__affinity‿score(entry: FileEntry | undefined
 	if (!['.ts', '.js', '.bash'].includes(entry.ext)) return null
 
 	if (!entry.path‿rel.includes('build')) return null
+
+	// some path / files have "build" in them without being build scripts
+	// ex. builder.ts
+	// we require at least one perfectly "build" segment
+	const segments = entry.path‿rel.split(SEP).map(s => {
+		s = s.trim()
+		if (s.startsWith('~~') || s.startsWith('__')) {
+			s = s.slice(2).trim()
+		}
+		return s
+	})
+	if (!segments.includes('build')) return null
 
 	const score: NonNullable<Score> = []
 
@@ -719,7 +731,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 				}
 			})
 
-			if (entry.basename‿no_ᐧext === 'entrypoint') {
+			if (entry.basename‿no_ᐧext === '_entrypoint') {
 				const first_line = content.trim().split('\n').at(0)!.trim()
 				const id = first_line.slice(2).trim()
 				console.log(`${indent}    ⭐️new sub entry point "${id}"`)

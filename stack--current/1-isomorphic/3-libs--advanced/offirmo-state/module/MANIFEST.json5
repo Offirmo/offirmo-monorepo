@@ -1,11 +1,4 @@
 {
 	name: "state-utils",
 	description: "Base types + base utils for Offirmo style states",
-	_overrides: {
-		files: {
-			packageᐧjson: {
-				'|exports|./examples': "./module/src/__fixtures/examples.ts"
-			},
-		},
-	},
 }
