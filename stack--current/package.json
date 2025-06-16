@@ -167,7 +167,7 @@
 		"react": "^19",
 		"react-dom": "^19",
 		"sharp": "^0.31",
-		"sinon": "^20",
+		"sinon": "^21",
 		"sinon-chai": "^4",
 		"strip-ansi": "^7",
 		"terminal-size": "^4",

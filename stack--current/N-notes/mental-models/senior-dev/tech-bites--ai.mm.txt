@@ -201,6 +201,7 @@ model -- efficiency
 model -- foundational = a big one pre-trained on vast resources
 model -- transformer model
 multimodal image generation "no elephant in the room" https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image
+ngmi "not gonna make it" https://ghuntley.com/ngmi/
 NLG Natural Language Generation
 NLP Natural Language Processing
 NN Neural Networks "computer architecture inspired by the human brain"
@@ -249,6 +250,7 @@ RLAIF "RL from AI Feedback" https://arxiv.org/abs/2212.08073
 SageMaker (AWS)
 Searle's Chinese Room https://plato.stanford.edu/entries/chinese-room/
 security -- Freysa "approveTransfer" https://x.com/jarrodwattsdev/status/1862299845710757980
+shadow AI = where all the employees use AI in stealth https://ghuntley.com/mirrors/
 singularity
 skilled pragmatist https://cutlefish.substack.com/p/tbm-271-the-biggest-untapped-opportunity
 sleeper agents (security) https://www.anthropic.com/research/probes-catch-sleeper-agents

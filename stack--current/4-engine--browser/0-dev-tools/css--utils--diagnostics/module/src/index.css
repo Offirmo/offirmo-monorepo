@@ -23,7 +23,6 @@
 
 /************ QUESTIONABLE ************/
 
-
 *[style], /* inline styles: questionable since very useful in react or component-based */
 a[href="#"] /* acceptable for page navs? */
 {
@@ -37,7 +36,6 @@ b, i {
 	border: 3px dotted var(--o⋄color⁚diagnostics--not-semantic) !important;
 }
 
-
 th:not([scope=col], [scope=row])
 {
 	border: 3px dotted var(--o⋄color⁚diagnostics--empty) !important;
@@ -46,7 +44,6 @@ th:not([scope=col], [scope=row])
 /* TODO check incorrect nesting
     https://github.com/facebook/react/blob/49eba01930e9e1f331b34967fca65d5a0ba62846/packages/react-dom-bindings/src/client/validateDOMNesting.js#L436
  */
-
 
 /************ FASHION POLICE ************/
 /* TODO */
@@ -167,7 +164,7 @@ a[href="#"], a[href="javascript:void(0)"] /* abuse of a as button https://develo
 
 img[src=""], img:not([src]),
 a[href=""], a:not([href]),
-html:not([lang]) body /* lang is important for some CSS features to work, ex. "hyphens: auto"
+html:not([lang]) body /* lang is important for some CSS features to work, ex. "hyphens: auto" */
 {
 	outline: 5px dashed var(--o⋄color⁚diagnostics--broken) !important;
 }
@@ -189,4 +186,5 @@ iframe:not([sandbox]),
 figure with no figcaption
 figcaption not last child
 picture with no img
+img with no size
  */

@@ -31,7 +31,8 @@ function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 		`<svg ${svg__atributes‿str}>`,
 
 		// https://stackoverflow.com/questions/11293026/default-background-color-of-svg-root-element
-		// use a giant circle?
+		// other options: use a giant circle (but circle = computation heavy)
+		// TODO review: bleed a little bit the rectangle? Would that be useful?
 		svg.background_color
 			? `<rect id='background-color' fill='${svg.background_color}' x='${svg.viewBox[0]}' y='${svg.viewBox[1]}' width='${svg.viewBox[2]}' height='${svg.viewBox[3]}' />`
 			: '',

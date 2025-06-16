@@ -257,6 +257,7 @@ debanking = close/refuse account https://www.austrac.gov.au/news-and-media/media
 debate -- https://en.wikipedia.org/wiki/Principle_of_charity
 decoy effect https://en.wikipedia.org/wiki/Decoy_effect
 DEI
+deliberate intentional practice https://ghuntley.com/play/
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
 democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
@@ -338,6 +339,7 @@ emotions -- agitation = fear, guilt, restlessness
 emotions -- cool = despair, sadness, emptiness
 emotions -- dejection = sadness, disappointment
 emotions -- hot = anger, irritation, disgust
+employees exchange skills and time for money
 English
 entrepreneurship -- billing -- free day https://blog.jpl-consulting.com/2011/05/the-free-day/
 entrepreneurship -- billing -- hourly rate vs fixed price

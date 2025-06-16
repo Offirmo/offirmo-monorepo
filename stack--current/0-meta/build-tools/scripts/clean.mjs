@@ -34,25 +34,28 @@ function rm_folderⵧwith_trace(filepath) {
 	return fs.rm(filepath, { recursive: true, force: true })
 }
 
-Promise.all(cli.input
-	.map(dir => {
-		switch(dir) {
+Promise.all(
+		cli.input.map(dir => {
+			switch(dir) {
 
-			case '…dist':
-				return rm_folderⵧwith_trace(path.join(PKG_PATH, 'dist'))
+				case '…dist':
+					return Promise.all([
+						rm_folderⵧwith_trace(path.join(PKG_PATH, 'dist')),
+						rm_folderⵧwith_trace(path.join(PKG_PATH, 'public')),
+					])
 
-			case '…cache':
-				return Promise.all([
-					rm_folderⵧwith_trace(path.join(PKG_PATH, '.cache')), // parcel 1 ?
-					rm_folderⵧwith_trace(path.join(PKG_PATH, 'node_modules/.cache')),
-					rm_folderⵧwith_trace(path.join(PKG_PATH, '.parcel')), // parcel 1
-					rm_folderⵧwith_trace(path.join(PKG_PATH, '.parcel-cache')), // parcel 2
-					rm_folderⵧwith_trace(path.join(MONOREPO_ROOT_PATH, '.parcel-cache')), // parcel 2 shared cache which causes heaps of troubles in monorepos
-				])
+				case '…cache':
+					return Promise.all([
+						rm_folderⵧwith_trace(path.join(PKG_PATH, '.cache')), // parcel 1 ?
+						rm_folderⵧwith_trace(path.join(PKG_PATH, 'node_modules/.cache')),
+						rm_folderⵧwith_trace(path.join(PKG_PATH, '.parcel')), // parcel 1
+						rm_folderⵧwith_trace(path.join(PKG_PATH, '.parcel-cache')), // parcel 2
+						rm_folderⵧwith_trace(path.join(MONOREPO_ROOT_PATH, '.parcel-cache')), // parcel 2 shared cache which causes heaps of troubles in monorepos
+					])
 
-			default:
-				return rm_folderⵧwith_trace(path.join(PKG_PATH, dir))
-		}
-	})
-)
+				default:
+					return rm_folderⵧwith_trace(path.join(PKG_PATH, dir))
+			}
+		})
+	)
 	.then(() => console.log(`🧹  🔺 Cleaning ${stylize_string.bold(PKG_NAME)} [${cli.input}] done ✔`))

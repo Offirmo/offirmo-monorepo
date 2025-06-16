@@ -1,6 +1,7 @@
 1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
 1% rule -- lurk, lurker
 1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
+12 factors = see [architecture -- 12 factors]
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 [ ] +++ https://github.com/donnemartin/system-design-primer
 [ ] +++ https://lethain.com/distributed-systems-vocabulary/
@@ -48,6 +49,7 @@ API -- best practices -- Microsoft's internal company-wide REST API design guide
 API -- constraints -- Relay EntryPoints = a loading mechanism that makes implementing the parallel loading pattern render-as-you-fetch simple, as it encapsulates information about an experience’s UI assets and its required GraphQL data into a single loadable resource. https://github.com/relay-tools/typescript-relayjs-examples/issues/1
 API -- contracts
 API -- Diogo Lucas classification = far-team, near-team and inner-team. inner team = used within a team or between partner teams, near team = "Conway APIs" between teams that don't always communicate with each other, Far-team API = between teams that have low-bandwidth communications
+API -- gateway
 API -- hybrids = reconcile the need for a stable public API that will not constantly disrupt your carefully tended ecosystem with your team’s ability to move fast and (eventually) break stuff? cater for different requirements regarding security and SLAs or to radically different client natures? https://www.youtube.com/watch?v=eqy609JleoE
 API -- pagination -- current page, total pages https://google.aip.dev/158 https://graphql.org/learn/pagination/
 API -- pagination -- cursor https://graphql.org/learn/pagination/
@@ -65,7 +67,6 @@ API -- REST -- principles == 4 Cacheable
 API -- REST -- principles == 5 Layered System
 API -- REST -- principles == 6 Code on Demand (optional)
 API -- REST -- resource https://roy.gbiv.com/untangled/category/web-architecture/page/2
-API -- REST -- RESTful
 API -- REST -- RESTful = systems which adhere to a set of constraints to achieve simplicity, scalability, and uniformity.
 API -- REST -- Roy Fielding's dissertation "Architectural Styles and the Design of Network-based Software Architectures" https://ics.uci.edu/~fielding/pubs/dissertation/top.htm
 API -- REST -- TRUE REST = missing hypertext / "representation" https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven
@@ -80,7 +81,6 @@ API -- view -- scope -- types = "raw / user defined scope" ex. a user-entered fi
 API -- view -- scope = the limit of where to conduct a search for domain objects for display on a view
 API -- view = an API is a view on the resources, or is a certain resource mapping over the business objects
 API -- visibility = public/external > internal > team > private beta. Guidelines: Consider a public-by-default approach, even if you are starting at a lower level of access (helps dogfooding, new use cases. Treat your internal APIs as candidates for Public level access (bc happens quickly, sometimes for merging with a public one)
-API --gateway
 API-first = Built with APIs from the ground up. All functionality is exposed through an API
 Architectural Decisions -- bets = to revisit them
 Architectural Decisions -- register
@@ -215,6 +215,11 @@ data store -- object store -- AWS S3
 data store -- object store -- Cloudflare R2
 data store -- object store = flat structure of objects + uid + metadata
 DDOS (incl. self)
+deploy -- stages -- 1 build = converts a code repo into an executable bundle known as a build. Using a version of the code at a commit specified by the deployment process, the build stage fetches vendors dependencies and compiles binaries and assets.
+deploy -- stages -- 2 release = takes the build produced by the build stage and combines it with the deploy’s current config. The resulting release contains both the build and the config and is ready for immediate execution in the execution environment.
+deploy -- stages -- 3 run = (also known as “runtime”) runs the app in the execution environment, by launching some set of the app’s processes against a selected release.
+deploy -- stages -- separation = recommended https://12factor.net/build-release-run
+deploy -- stages https://12factor.net/build-release-run
 design -- 01b clarifying questions
 design -- 01b requirements -> including CAP
 design -- 02b breakdown in list of MICRO services: stateless/stateful? scalability?
@@ -225,6 +230,7 @@ design -- high-level -- high-level design document (HLDD)
 design -- high-level https://en.wikipedia.org/wiki/High-level_design
 design -- low-level https://en.wikipedia.org/wiki/Low-level_design
 destructive engineering = kill and get strong in response
+dev/prod parity https://12factor.net/dev-prod-parity
 DevOps
 DevSecOps
 distributed computing -- fallacies -- 1 The network is reliable

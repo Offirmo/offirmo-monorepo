@@ -381,7 +381,10 @@ ${pure_module_details.description || ''}
 			const scriptsⵧbuild = Object.keys(scripts)
 				.filter(k => k.startsWith('build') || k.startsWith('_build'))
 			if (scriptsⵧbuild.length) {
-				scripts['build'] = `run-p ${scriptsⵧbuild.join(' ')}`
+				const name = pure_module_details.status === 'stable' // TODO improve this status check
+					? 'build'
+					: '_build'
+				scripts[name] = `run-p ${scriptsⵧbuild.join(' ')}`
 			}
 
 			// misc
