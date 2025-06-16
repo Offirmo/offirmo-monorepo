@@ -43,12 +43,9 @@ interface SVGGraphicElement extends SVGElement {
 	desc?: string // https://developer.mozilla.org/en-US/docs/Web/SVG/Element/desc
 }
 
-
-
-
-
-// TODO one can nest SVG elements!
+// one can nest SVG elements
 // https://www.sarasoueidan.com/blog/mimic-relative-positioning-in-svg/
+// TODO special handling?
 
 interface SVG extends SVGContainerElement {
 	/////////////////////////////////////////////////
@@ -129,12 +126,16 @@ interface SVG extends SVGContainerElement {
 	background_color?: CssⳇColor‿str
 
 	// in order
-	content: Array<SVGElement | string>
+	content: Array<
+		| SVGElement
+		| SVG
+		| string
+	>
 
 	// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/view
 	// A view is a defined way to view the image, like a zoom level or a detail view.
 	// = it's an alternative viewbox
-	// can be used for a "sprite-like" svg?
+	// can be used for a "sprite-like" svg
 	// see also https://caniuse.com/svg-fragment
 	views: {
 		[id: SVGId]: SVGViewBox

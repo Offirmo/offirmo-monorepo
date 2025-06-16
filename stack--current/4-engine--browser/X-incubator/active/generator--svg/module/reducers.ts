@@ -1,8 +1,10 @@
 import assert from 'tiny-invariant'
 import type { Immutable, Emoji } from '@offirmo-private/ts-types'
-import type { CssⳇColor‿str } from '@offirmo-private/ts-types-web'
+import type { CssⳇColor‿str, Dimensions2DSpec } from '@offirmo-private/ts-types-web'
+import { getꓽdimensions2D } from '@offirmo-private/ts-types-web'
 
 import type { SVG, SVGElement, SVGId, SVGViewBox, Svg‿str } from './types.ts'
+import { getꓽviewbox__dimensions } from './selectors.ts'
 
 /////////////////////////////////////////////////
 
@@ -38,7 +40,12 @@ function setꓽviewBox(svg: Immutable<SVG>, viewBox: Immutable<SVGViewBox>): Imm
 	}
 }
 
-function setꓽbackground_color(svg: Immutable<SVG>, background_color: CssⳇColor‿str): Immutable<SVG> {
+function setꓽbackground_color(svg: Immutable<SVG>, background_color: CssⳇColor‿str | 'auto-theme'): Immutable<SVG> {
+
+	if (background_color === 'auto-theme') {
+		throw new Error(`Not implemented!`)
+	}
+
 	return {
 		...svg,
 		background_color,
@@ -52,6 +59,30 @@ function addꓽcontent(svg: Immutable<SVG>, content: Immutable<SVG['content'][0]
 			...svg.content,
 			content,
 		],
+	}
+}
+
+
+function addꓽcontentꘌcontour(svg: Immutable<SVG>, border_width?: number): Immutable<SVG> {
+	const { width, height } = getꓽviewbox__dimensions(svg)
+	const sw = Math.min(width, height) / 50
+
+	return addꓽcontent(svg, `
+<rect width="${width}" height="${height}" style="fill:transparent; stroke-width:${sw}; stroke:black" />
+	`)
+}
+
+/////////////////////////////////////////////////
+
+// Do NOT use
+// you most likely want to set those on RENDER! @see getꓽsvg‿str()
+function setꓽdimensions_ǃnot_recommended(svg: Immutable<SVG>, dimensions: Immutable<Dimensions2DSpec>): Immutable<SVG> {
+	const { width, height } = getꓽdimensions2D(dimensions)
+
+	return {
+		...svg,
+		width,
+		height,
 	}
 }
 
@@ -83,7 +114,11 @@ export {
 
 	setꓽviewBox,
 	setꓽbackground_color,
+
 	addꓽcontent,
+	addꓽcontentꘌcontour,
+
+	setꓽdimensions_ǃnot_recommended,
 
 	createꓽfrom_emoji,
 }

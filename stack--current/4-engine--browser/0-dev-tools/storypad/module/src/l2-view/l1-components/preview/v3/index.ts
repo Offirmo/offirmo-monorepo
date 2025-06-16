@@ -23,11 +23,11 @@ async function renderCSFV3(state: ObservableState, render_params: Immutable<Rend
 
 	switch (true) {
 		case isꓽRenderParamsWithRenderFunc<Story‿v3>(render_params):
-			_renderⵧrender_func(state, render_params, container)
+			await _renderⵧrender_func(state, render_params, container)
 			break
 
 		case isꓽRenderParamsWithComponent<Story‿v3>(render_params):
-			_renderⵧcomponent(state, render_params, container)
+			await _renderⵧcomponent(state, render_params, container)
 			break
 
 		default:
@@ -87,7 +87,7 @@ async function _renderⵧrender_func(state: ObservableState, render_params: Immu
 	}
 
 	if (RichText.isꓽNode(rendered)) {
-		const asⵧtext = RichText.renderⵧto_text(rendered)
+		//const asⵧtext = RichText.renderⵧto_text(rendered)
 		const asⵧhtml = RichText.renderⵧto_html(rendered)
 		// TODO multi-render
 		// TODO react

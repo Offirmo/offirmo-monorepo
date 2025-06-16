@@ -49,7 +49,5 @@ describe(`${LIB}`, function() {
 			const str = getꓽsvg‿str(svg, { wantsꓽcompact: true })
 			expect(str).to.equal(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 200'><rect id='background-color' fill='#123456' x='0' y='0' width='100' height='200' /></svg>`)
 		})
-
-
 	})
 })

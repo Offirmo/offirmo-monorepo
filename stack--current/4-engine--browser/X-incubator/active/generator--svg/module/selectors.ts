@@ -4,11 +4,19 @@
 
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
+import type { Dimensions2D } from '@offirmo-private/ts-types-web'
 
 import { EOL, TAB } from './consts.ts'
 import type { SVG, Svg‿str } from './types.ts'
 
 /////////////////////////////////////////////////
+
+function getꓽviewbox__dimensions(svg: Immutable<SVG>): Dimensions2D {
+	return {
+		width: svg.viewBox[2],
+		height: svg.viewBox[3],
+	}
+}
 
 // Note that we use single quotes for embeddability in head / css
 function getꓽsvg‿str(svg: Immutable<SVG>, options: {
@@ -20,10 +28,11 @@ function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 	const wantsꓽcompact = options.wantsꓽcompact ?? false
 	const isꓽnested = options.isꓽnested ?? false
 
+	console.log(`XXX rendering`, svg)
 	const svg__atributes‿str = [
 		isꓽnested ? '' : `xmlns='http://www.w3.org/2000/svg'`,
-		options.width ? `width='${options.width}'` : '',
-		options.height ? `height='${options.height}'` : '',
+		(options.width || svg.width) ? `width='${options.width || svg.width}'` : '',
+		(options.height || svg.height) ? `height='${options.height || svg.height}'` : '',
 		`viewBox='${svg.viewBox.join(' ')}'`
 	].filter(a => !!a).join(wantsꓽcompact ? ' ' : `${EOL}${TAB}`)
 
@@ -37,7 +46,16 @@ function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 			? `<rect id='background-color' fill='${svg.background_color}' x='${svg.viewBox[0]}' y='${svg.viewBox[1]}' width='${svg.viewBox[2]}' height='${svg.viewBox[3]}' />`
 			: '',
 
-		...(svg.content as string[]), // TODO stringify
+		...(svg.content.map((x): string => {
+			if (typeof x === 'string') return x
+
+			if ((x as any).viewbox) { // TODO type guard
+				// sub-svg
+				return getꓽsvg‿str(x, options)
+			}
+
+			throw new Error(`Not implemented!`)
+		})),
 
 		`</svg>`
 	].map(x => x.trim()).filter(x => !!x).join(wantsꓽcompact ? '' : `${EOL}${TAB}`).trim()
@@ -46,5 +64,6 @@ function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 /////////////////////////////////////////////////
 
 export {
+	getꓽviewbox__dimensions,
 	getꓽsvg‿str,
 }

@@ -33,7 +33,6 @@ export type CssⳇFilterⳇFunctionSpec =
 
 export type CssⳇFilterSpec = Array<CssⳇFilterⳇFunctionSpec>
 
-
 /* TODO more complicated CSS type? Let's see if needed
 export interface Css {
 	isꓽcritical?: true
