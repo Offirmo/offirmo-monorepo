@@ -15,6 +15,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/ts-types-web": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
@@ -33,7 +34,6 @@
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo-private/ts-types": "*",
-		"@offirmo-private/ts-types-web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",

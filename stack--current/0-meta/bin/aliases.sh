@@ -64,6 +64,7 @@ alias    mono41c2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias    mono41fc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/font--comics/;                             tabset --badge mono41fc'
 alias    mono41fp='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/font--pixel/;                              tabset --badge mono41fp'
 alias    mono41fs='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/font--smallest/;                           tabset --badge mono41fs'
+alias    mono41gs='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/generator--svg/;                           tabset --badge mono41gs'
 alias     mono41p='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/page-loaded/;                              tabset --badge mono41p'
 alias    mono41p2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/poll-window-variable/;                     tabset --badge mono41p2'
 alias    mono41rh='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/react--hyperspace/;                        tabset --badge mono41rh'
@@ -79,7 +80,6 @@ alias    mono42sb='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias    mono42ub='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 2-libs--cross-cutting/universal-debug-api--browser/;      tabset --badge mono42ub'
 alias  mono4Xaden='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd X-incubator/active/droppable-feature--egress--navigation/; tabset --badge mono4Xaden'
 alias   mono4Xagh='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd X-incubator/active/generator--html/;                      tabset --badge mono4Xagh'
-alias   mono4Xags='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd X-incubator/active/generator--svg/;                       tabset --badge mono4Xags'
 alias   mono4Xagw='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd X-incubator/active/generator--website-entry-points/;      tabset --badge mono4Xagw'
 
 alias   mono7lrsc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--rpg/state--codes/;                                  tabset --badge mono7lrsc'
