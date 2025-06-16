@@ -70,7 +70,7 @@
 			"A-backend/*",
 
 			"M-minisites/*",
-
+			"V-projects/placeholders/*",
 			"X-incubator/active/*"
 		]
 	},

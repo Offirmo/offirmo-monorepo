@@ -112,3 +112,7 @@ alias     monoAoi='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 
 alias      monoMg='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd M-minisites/;      cd generator/;                                               tabset --badge monoMg'
 alias      monoMu='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd M-minisites/;      cd url-analyzer/;                                            tabset --badge monoMu'
+
+alias     monoVp1='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd V-projects/;       cd placeholders/1-logic/;                                    tabset --badge monoVp1'
+alias     monoVp2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd V-projects/;       cd placeholders/2-api/;                                      tabset --badge monoVp2'
+alias     monoVp3='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd V-projects/;       cd placeholders/3-cloudflare-worker/;                        tabset --badge monoVp3'
