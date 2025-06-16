@@ -9,17 +9,17 @@ import type {
 /////////////////////////////////////////////////
 
 interface FileEntry {
-	path‿abs: AbsolutePath
-	path‿rel: RelativePath
+	path‿abs: AbsolutePath      // ex. /Users/sam/work/src/off/offirmo-monorepo/stack--current/4-engine--browser/0-dev-tools/storypad/module/src/index.stories.ts
+	path‿rel: RelativePath      // ex. src/index.stories.ts
 
-	basename: Basename        // ex. index.stories.ts
-	ext: Extension            // ex.              .ts
-	extⵧsub: Extension        // ex.      .stories
-	extⵧextended: Extension   // ex.      .stories.ts
-	basename‿noext: Basename  // ex. index.stories
-	basename‿noxext: Basename // ex. index              "no Xtended ext"
+	basename: Basename          // ex. index.stories.ts
+	ext: Extension              // ex.              .ts
+	basename‿no_ᐧext: Basename   // ex. index.stories
+	extⵧextended: Extension     // ex.      .stories.ts
+	basename‿no_ᐧxᐧext: Basename // ex. index              "no Xtended ext"
+	extⵧsub: Extension          // ex.      .stories
 
-	basenameⵧsemantic‿noext: string        // ex. foo/index.tests.ts -> foo.tests
+	basenameⵧsemantic‿no_ᐧext: string // ex. foo/index.tests.ts -> foo.tests
 }
 
 /////////////////////////////////////////////////

@@ -7,9 +7,9 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/++gen/bundle/index.ts"
+		".": "./module/++gen/entry-points/index.ts"
 	},
-	"source": "module/++gen/bundle/index.ts",
+	"source": "module/++gen/entry-points/index.ts",
 	"dependencies": {
 		"@offirmo-private/generator--website-entry-points": "*",
 		"@offirmo-private/marketing": "*",

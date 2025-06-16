@@ -7,9 +7,12 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/__fixtures/storypad/index.html"
+		".": "./module/src/server.ts"
 	},
-	"source": "module/__fixtures/storypad/index.html",
+	"source": "module/src/server.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
 	"dependencies": {
 		"@offirmo-private/ohateoas": "*",
 		"@offirmo-private/rich-text-format": "*",
@@ -18,21 +21,18 @@
 		"@tbrpg/interfaces": "*",
 		"@tbrpg/state": "*",
 		"@tbrpg/ui--rich-text": "*",
-		"tiny-invariant": "^1",
-		"tslib": "^2"
+		"tiny-invariant": "^1"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/__fixtures/storypad/**/*.tests.ts'",
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
 		"check--ts": "echo \"@tbrpg/l4-ohateoas\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"check": "run-s tests check--ts",
 		"_start:parcel:storypad": "parcel serve module/__fixtures/storypad/index.html --port 1981 --lazy --no-autoinstall",
-		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
-		"_start:parcel:main": "parcel serve module/__fixtures/storypad/index.html --port 1981 --lazy --no-autoinstall",
-		"start": "npm-run-all clean --parallel _start:parcel:main"
+		"stories": "npm-run-all clean --parallel _start:parcel:storypad"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
@@ -41,6 +41,7 @@
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
+		"tslib": "^2",
 		"typescript": "^5"
 	}
 }

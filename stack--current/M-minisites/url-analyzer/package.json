@@ -7,15 +7,17 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.js"
+		".": "./module/src/index.html"
 	},
-	"source": "module/src/index.js",
+	"source": "module/src/index.html",
 	"dependencies": {
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
-		"clean": "npm-run-all _clean--pkg"
+		"clean": "npm-run-all _clean--pkg",
+		"_start:parcel:main": "parcel serve module/src/index.html --port 1981 --lazy --no-autoinstall",
+		"start": "npm-run-all clean --parallel _start:parcel:main"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

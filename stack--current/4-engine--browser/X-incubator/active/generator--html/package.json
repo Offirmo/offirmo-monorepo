@@ -26,7 +26,7 @@
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"_check": "run-s check--ts",
-		"demo": "node --experimental-strip-types ./module/##demo/demo--defaults/index.ts"
+		"demo": "node --experimental-strip-types ./module/##demo/demo--personal-blog/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

@@ -28,10 +28,18 @@ assert(fs.existsSync(MONOREPO__SHARED_TS_TYPINGS‿abs), `MONOREPO__SHARED_TS_TY
 
 /////////////////////////////////////////////////
 
+const EOL = '\n'
+
+/////////////////////////////////////////////////
+
 export {
 	GIT_ROOT,
+
 	NODE_MAJOR_VERSION,
+
 	MONOREPO_ROOT,
 	MONOREPO__ROOT_TSCONFIG‿abs,
 	MONOREPO__SHARED_TS_TYPINGS‿abs,
+
+	EOL,
 }

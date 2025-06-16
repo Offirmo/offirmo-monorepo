@@ -8,9 +8,9 @@
 	"sideEffects": true,
 	"type": "module",
 	"exports": {
-		".": "./module/src/_test/index.css"
+		".": "./module/src/deevad-hand/index.css"
 	},
-	"source": "module/src/_test/index.css",
+	"source": "module/src/deevad-hand/index.css",
 	"peerDependencies": {
 		"tslib": "^2"
 	},

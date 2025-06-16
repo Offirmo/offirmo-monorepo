@@ -16,13 +16,13 @@ function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsoluteP
 		split[0] = ''
 		return split.join('.')
 	})()
-	const basename‿noext = path.basename(path‿abs, ext)
-	const basename‿noxext = path.basename(path‿abs, extⵧextended)
+	const basename‿no_ᐧext = path.basename(path‿abs, ext)
+	const basename‿no_ᐧxᐧext = path.basename(path‿abs, extⵧextended)
 
 	const path‿rel = path.relative(root‿abspath, path‿abs)
 
-	const basenameⵧsemantic‿noext = ((): string => {
-		if (basename‿noext === 'index') {
+	const basenameⵧsemantic‿no_ᐧext = ((): string => {
+		if (basename‿no_ᐧext === 'index') {
 			// low info, try better
 			const last_segment = path.basename(path.dirname(path‿rel))
 			if (last_segment) {
@@ -30,7 +30,7 @@ function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsoluteP
 			}
 		}
 
-		return basename‿noext
+		return basename‿no_ᐧext
 	})()
 
 	return {
@@ -40,10 +40,10 @@ function createꓽfile_entry(path‿abs: AbsolutePath, root‿abspath: AbsoluteP
 		ext,
 		extⵧsub,
 		extⵧextended,
-		basename‿noext,
-		basename‿noxext,
+		basename‿no_ᐧext,
+		basename‿no_ᐧxᐧext,
 
-		basenameⵧsemantic‿noext,
+		basenameⵧsemantic‿no_ᐧext,
 	}
 }
 

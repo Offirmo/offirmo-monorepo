@@ -22,15 +22,13 @@
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"_check": "run-s check--ts",
-		"sandbox": "node --experimental-strip-types ./module/sandbox/index.ts",
-
-
 		"refresh--entry-points": "node --experimental-strip-types ./module/sandbox/index.ts",
 		"start:parcel": "parcel serve module/sandbox/output/*.html --port 8080  --lazy  --no-autoinstall",
 		"devp": "npm-run-all  clean  --parallel start:parcel",
 		"copy-extra": "mkdir -p dist && cp -R -f -v module/sandbox/output/   dist",
 		"build:parcel": "parcel build module/sandbox/output/*.html --public-url ./  --no-cache  --no-autoinstall  --no-scope-hoist  --detailed-report 25",
-		"xbuild": "npm-run-all  clean  copy-extra  build:parcel"
+		"xbuild": "npm-run-all  clean  copy-extra  build:parcel",
+		"sandbox": "node --experimental-strip-types ./module/sandbox/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",

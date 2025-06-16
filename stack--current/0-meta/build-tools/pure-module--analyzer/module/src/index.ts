@@ -1,6 +1,7 @@
 import { strict as assert } from 'node:assert'
 import * as path from 'node:path'
 import * as fs from 'node:fs'
+import { sep as SEP } from 'node:path'
 import { isBuiltin as isBuiltInNodeModule } from 'node:module'
 
 // @ts-ignore
@@ -63,7 +64,6 @@ function isꓽin_unstructured_folder(entry: FileEntry): boolean {
 
 	return false
 }
-
 
 function isꓽignored_file(entry: FileEntry): boolean {
 
@@ -196,16 +196,16 @@ function inferꓽdeptype_from_caller(entry: FileEntry): DependencyType {
 function assertꓽmigrated(entry: FileEntry, { indent = '', root‿abspath }: { indent?: string, root‿abspath: AbsolutePath}): void {
 	let migration_target : AbsolutePath | null = null
 
-	const { path‿abs, basename‿noext, ext, extⵧextended } = entry
+	const { path‿abs, basename‿no_ᐧext, ext, extⵧextended } = entry
 
-	if (basename‿noext.endsWith('_spec')) {
+	if (basename‿no_ᐧext.endsWith('_spec')) {
 		migration_target = path‿abs.replace('_spec', '.tests')
 	}
 	else if (extⵧextended.startsWith('.spec')) {
 		migration_target = path‿abs.replace('.spec', '.tests')
 	}
 
-	if (basename‿noext.toUpperCase() === 'LICENSE' && ext) {
+	if (basename‿no_ᐧext.toUpperCase() === 'LICENSE' && ext) {
 		migration_target = path.join(path.dirname(entry.path‿abs), 'LICENSE') // official name is uppercase without extension TODO link
 	}
 
@@ -237,12 +237,13 @@ function assertꓽnormalized(entry: FileEntry, { indent = ''} = {}): void {
 }
 
 /////////////////////////////////////////////////
+// Scoring. TODO move to dedicated lib
 
 // lower is better
 // null
 type Score =
 	| null // = not even eligible to be scored
-	| Array<number> // empty = lowest possible score
+	| Array<number> // empty not allowed
 
 function compareꓽscores(score_a: Score, score_b: Score): number {
 	assert(score_a !== null || score_b !== null, `At least one score should be eligible!`)
@@ -259,9 +260,9 @@ function compareꓽscores(score_a: Score, score_b: Score): number {
 		if (acc === 0) {
 			try {
 				const score_unit_a = score_a[index]
-				assert(typeof score_unit_a === 'number', `Score comparison should never yield different path on previous equality!`)
+				assert(typeof score_unit_a === 'number', `Score comparison should never yield different path on previous equality! (A)`)
 				const score_unit_b = score_b[index]
-				assert(typeof score_unit_b === 'number', `Score comparison should never yield different path on previous equality!`)
+				assert(typeof score_unit_b === 'number', `Score comparison should never yield different path on previous equality! (B)`)
 
 				acc = score_unit_a - score_unit_b
 			} catch (err) {
@@ -278,10 +279,65 @@ function compareꓽscores(score_a: Score, score_b: Score): number {
 
 /////////////////////////////////////////////////
 
+function getꓽtrailing_score(entry: FileEntry): NonNullable<Score> {
+	const score: NonNullable<Score> = []
+
+	// ~~ are lowest
+	score.push(
+		entry.path‿rel.includes('~~')
+			? 1
+			: 0
+	)
+
+	// top in the dir structure wins
+	score.push(entry.path‿rel.split(SEP).length)
+
+	// then index wins over other / derived
+	score.push((() => {
+		let score_unit = 0
+
+		if (entry.basename‿no_ᐧext === 'index')
+			return score_unit
+		score_unit++
+
+		if (!entry.extⵧsub) {
+			// roots are before their derived
+			return score_unit
+		}
+		score_unit++
+
+		return score_unit
+	})())
+
+	// then shortest path wins
+	score.push(entry.basename‿no_ᐧext.length)
+
+	// then some extension wins over some other
+	score.push((() => {
+		let score_unit = 0
+
+		if (['.html'].includes(entry.ext)) {
+			// html contains js / css, it has a slightly higher priority
+			return score_unit
+		}
+		score_unit++
+
+		if (['.ts', '.tsx', '.js', '.jsx'].includes(entry.ext)) {
+			// js/ts  contain css, it has a slightly higher priority
+			return score_unit
+		}
+		score_unit++
+
+		return score_unit
+	})())
+
+	return score
+}
+
 function hasꓽentrypoint_affinity(entry: FileEntry | undefined): boolean {
 	if (!entry) return false
 
-	if (entry.basename‿noext === 'MANIFEST') return false
+	if (entry.basename‿no_ᐧext === 'MANIFEST') return false
 	if (entry.extⵧsub) return false // derived files obviously can't be entry points
 
 	// TODO reevaluate css
@@ -294,7 +350,8 @@ function getꓽentrypointⵧmain__affinity‿score(entry: FileEntry | undefined)
 	if (!entry) return null
 
 	if (!hasꓽentrypoint_affinity(entry)) return null
-	if (entry.basename‿noext === 'entrypoint' || entry.extⵧextended === 'entrypoint') {
+
+	if (entry.basename‿no_ᐧext === 'entrypoint' || entry.extⵧextended === 'entrypoint') {
 		// those are sub-entrypoints, not the main one
 		return null
 	}
@@ -306,15 +363,15 @@ function getꓽentrypointⵧmain__affinity‿score(entry: FileEntry | undefined)
 	// basically the top "index.xyz"
 
 	score_unit++
-	if (entry.basename‿noext === 'index') {
+	if (entry.basename‿no_ᐧext === 'index') {
 		score.push(score_unit)
-		score.push(entry.path‿rel.length)
+		score.push(...getꓽtrailing_score(entry))
 		return score
 	}
 
 	score_unit++
 	score.push(score_unit)
-	score.push(entry.path‿rel.length)
+	score.push(...getꓽtrailing_score(entry))
 
 	return score
 }
@@ -326,35 +383,24 @@ function getꓽentrypointⵧdemo__affinity‿score(entry: FileEntry | undefined)
 
 	if (!['.ts', '.js', '.html'].includes(entry.ext)) return null
 
+	if (!entry.path‿rel.includes('demo')) return null
+
 	const score: NonNullable<Score> = []
 
-	let score_unit = 0
+	score.push((() => {
+		let score_unit = 0
 
-	if (entry.basenameⵧsemantic‿noext === 'demo') {
-		score.push(score_unit)
-		score.push(entry.path‿rel.length)
-		return score
-	}
-
-	score_unit++
-	if (path.basename(path.dirname(entry.path‿rel)).includes('demo')) {
-		score.push(score_unit)
-
-		score_unit = 0
-		if (entry.basename‿noext === 'index') {
-			score.push(score_unit)
-			score.push(entry.path‿rel.length)
-			return score
+		if (entry.basenameⵧsemantic‿no_ᐧext === 'demo') {
+			return score_unit
 		}
-
 		score_unit++
-		score.push(score_unit)
-		score.push(entry.path‿rel.length)
 
-		return score
-	}
+		return score_unit
+	})())
 
-	return null
+	score.push(...getꓽtrailing_score(entry))
+
+	return score
 }
 
 function getꓽentrypointⵧsandbox__affinity‿score(entry: FileEntry | undefined): Score {
@@ -364,35 +410,24 @@ function getꓽentrypointⵧsandbox__affinity‿score(entry: FileEntry | undefin
 
 	if (!['.ts', '.js', '.html'].includes(entry.ext)) return null
 
+	if (!entry.path‿rel.includes('sandbox')) return null
+
 	const score: NonNullable<Score> = []
 
-	let score_unit = 0
+	score.push((() => {
+		let score_unit = 0
 
-	if (entry.basenameⵧsemantic‿noext === 'sandbox') {
-		score.push(score_unit)
-		score.push(entry.path‿rel.length)
-		return score
-	}
-
-	score_unit++
-	if (path.basename(path.dirname(entry.path‿rel)).includes('sandbox')) {
-		score.push(score_unit)
-
-		score_unit = 0
-		if (entry.basename‿noext === 'index') {
-			score.push(score_unit)
-			score.push(entry.path‿rel.length)
-			return score
+		if (entry.basenameⵧsemantic‿no_ᐧext === 'sandbox') {
+			return score_unit
 		}
-
 		score_unit++
-		score.push(score_unit)
-		score.push(entry.path‿rel.length)
 
-		return score
-	}
+		return score_unit
+	})())
 
-	return null
+	score.push(...getꓽtrailing_score(entry))
+
+	return score
 }
 
 function getꓽentrypointⵧbuild__affinity‿score(entry: FileEntry | undefined): Score {
@@ -400,37 +435,26 @@ function getꓽentrypointⵧbuild__affinity‿score(entry: FileEntry | undefined
 
 	if (!hasꓽentrypoint_affinity(entry)) return null
 
-	if (!['.ts', '.js'].includes(entry.ext)) return null
+	if (!['.ts', '.js', '.bash'].includes(entry.ext)) return null
+
+	if (!entry.path‿rel.includes('build')) return null
 
 	const score: NonNullable<Score> = []
 
-	let score_unit = 0
+	score.push((() => {
+		let score_unit = 0
 
-	if (entry.basenameⵧsemantic‿noext === 'build') {
-		score.push(score_unit)
-		score.push(entry.path‿rel.length)
-		return score
-	}
-
-	score_unit++
-	if (path.basename(path.dirname(entry.path‿rel)).includes('build')) {
-		score.push(score_unit)
-
-		score_unit = 0
-		if (entry.basename‿noext === 'index') {
-			score.push(score_unit)
-			score.push(entry.path‿rel.length)
-			return score
+		if (entry.basenameⵧsemantic‿no_ᐧext === 'build') {
+			return score_unit
 		}
-
 		score_unit++
-		score.push(score_unit)
-		score.push(entry.path‿rel.length)
 
-		return score
-	}
+		return score_unit
+	})())
 
-	return null
+	score.push(...getꓽtrailing_score(entry))
+
+	return score
 }
 
 /////////////////////////////////////////////////
@@ -585,18 +609,9 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 		assertꓽnormalized(entry)
 
-		// main entry
-		const main_entrypoint‿score = getꓽentrypointⵧmain__affinity‿score(entry)
-		if (main_entrypoint‿score) {
-			const previous_candidate_score = getꓽentrypointⵧmain__affinity‿score(result.main)
-			if (compareꓽscores(previous_candidate_score, main_entrypoint‿score) < 0) {
-				// "A should come before B"
-				// keep previous
-			}
-			else {
-				console.log(`${indent}    ⭐️new candidate for: main entry point`)
-				result.main = entry
-			}
+		if (entry.basenameⵧsemantic‿no_ᐧext === 'storypad' && entry.ext === '.html') {
+			console.log(`${indent}    ⭐️new candidate for: storypad`)
+			result.storypad = entry
 		}
 
 		const build_entrypoint‿score = getꓽentrypointⵧbuild__affinity‿score(entry)
@@ -612,9 +627,19 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			}
 		}
 
-		if (entry.basenameⵧsemantic‿noext === 'storypad' && entry.ext === '.html') {
-			console.log(`${indent}    ⭐️new candidate for: storypad`)
-			result.storypad = entry
+		if (!demo_entrypoint‿score && !sandbox_entrypoint‿score && !build_entrypoint‿score && result.storypad !== entry) {
+			const main_entrypoint‿score = getꓽentrypointⵧmain__affinity‿score(entry)
+			if (main_entrypoint‿score) {
+				const previous_candidate_score = getꓽentrypointⵧmain__affinity‿score(result.main)
+				if (compareꓽscores(previous_candidate_score, main_entrypoint‿score) < 0) {
+					// "A should come before B"
+					// keep previous
+				}
+				else {
+					console.log(`${indent}    ⭐️new candidate for: main entry point`)
+					result.main = entry
+				}
+			}
 		}
 
 		if (entry.basename === MANIFEST‿basename) {
@@ -694,7 +719,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 				}
 			})
 
-			if (entry.basename‿noext === 'entrypoint') {
+			if (entry.basename‿no_ᐧext === 'entrypoint') {
 				const first_line = content.trim().split('\n').at(0)!.trim()
 				const id = first_line.slice(2).trim()
 				console.log(`${indent}    ⭐️new sub entry point "${id}"`)
