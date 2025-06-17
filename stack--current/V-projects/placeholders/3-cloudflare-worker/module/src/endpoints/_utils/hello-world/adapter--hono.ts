@@ -1,0 +1,9 @@
+import { type Handler } from 'hono'
+
+/////////////////////////////////////////////////
+
+export const get: Handler = (c) => {
+	return c.text('Hello from the backend!')
+}
+
+/////////////////////////////////////////////////

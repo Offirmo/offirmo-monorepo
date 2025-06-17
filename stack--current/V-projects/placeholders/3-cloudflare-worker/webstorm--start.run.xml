@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+	<configuration default="false"
+		name="@offirmo-private/3-cloudflare-worker -- Start"
+		type="NodeJSConfigurationType"
+		path-to-node="$USER_HOME$/.nvm/versions/node/v23.11.1/bin/node"
+		node-parameters="--experimental-strip-types"
+		path-to-js-file="module/src/index.ts"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/V-projects/placeholders/3-cloudflare-worker">
+		<method v="2" />
+	</configuration>
+</component>

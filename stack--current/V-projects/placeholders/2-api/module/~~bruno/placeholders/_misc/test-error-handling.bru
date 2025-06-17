@@ -1,0 +1,28 @@
+meta {
+  name: test-error-handling
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{host}}/_utils/test-error-handling?mode=assertion-sync
+  body: none
+  auth: inherit
+}
+
+params:query {
+  mode: assertion-sync
+  ~mode: non-stringified-body
+  ~mode: timeout
+  ~mode: non-stringifiable-body
+  ~mode: throw-sync
+  ~mode: throw-sync-non-error
+  ~mode: throw-async
+  ~mode: rejection
+  ~mode: unhandled-rejection
+  ~mode: foo
+  ~mode: manual
+  ~mode: bad-status-code
+  ~mode: non-json-stringified-body
+  ~mode: no-response-set
+}

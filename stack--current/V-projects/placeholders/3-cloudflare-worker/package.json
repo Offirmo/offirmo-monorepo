@@ -1,0 +1,52 @@
+{
+	"name": "@offirmo-private/3-cloudflare-worker",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.ts"
+	},
+	"source": "module/src/index.ts",
+	"dependencies": {
+		"@offirmo-private/offirmo-api--interface": "*",
+		"@offirmo-private/soft-execution-context": "*",
+		"@offirmo-private/soft-execution-context--node": "*",
+		"@offirmo/error-utils": "^0.0.1",
+		"@offirmo/practical-logger-core": "^3",
+		"@parcel/core": "^2",
+		"hono": "^4",
+		"tiny-invariant": "^1",
+		"tslib": "^2",
+		"typescript-string-enums": "^1"
+	},
+	"scripts": {
+		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
+		"clean": "npm-run-all _clean--pkg",
+
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
+		"check--ts": "echo \"@offirmo-private/cloudflare--worker\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"start": "wrangler --no-bundle dev",
+		"refresh-types": "wrangler types",
+
+		"build:worker": "node --experimental-strip-types ./module/++gen/bundle/index.ts",
+		"xbuild": "npm-run-all  clean  build:worker",
+
+		"dev": "run-s check--ts--watch",
+		"_check": "run-s tests check--ts"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4",
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"@offirmo/universal-debug-api-interface": "^1",
+		"@parcel/types": "^2",
+		"@types/node": "^22",
+		"npm-run-all": "^4",
+		"typescript": "^5",
+		"wrangler": "^4"
+	}
+}

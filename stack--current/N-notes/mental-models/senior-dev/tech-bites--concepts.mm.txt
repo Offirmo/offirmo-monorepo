@@ -208,6 +208,7 @@ concurrent ownership
 connascence https://en.wikipedia.org/wiki/Connascence
 considered harmful
 considered harmful -- clever code https://www.joshwcomeau.com/career/clever-code-considered-harmful/
+considered harmful -- NODE_ENV
 consistency = lack of consistency is the primary long-term killer of large codebases, because it makes it impossible to make any general improvements https://www.seangoedecke.com/large-established-codebases/
 constructor
 content age rating -- "Common Sense" Media (private org) https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings

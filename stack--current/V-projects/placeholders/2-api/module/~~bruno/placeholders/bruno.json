@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "placeholders",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

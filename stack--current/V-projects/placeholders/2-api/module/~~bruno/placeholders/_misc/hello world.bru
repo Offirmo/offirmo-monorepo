@@ -1,0 +1,15 @@
+meta {
+  name: hello world
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{host}}/_utils/hello-world?foo=bar
+  body: none
+  auth: inherit
+}
+
+params:query {
+  foo: bar
+}

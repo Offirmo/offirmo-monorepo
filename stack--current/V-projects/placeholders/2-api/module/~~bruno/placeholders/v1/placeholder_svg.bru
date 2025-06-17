@@ -1,0 +1,15 @@
+meta {
+  name: /placeholder_svg
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{host}}/v1/placeholder.svg?width=200
+  body: none
+  auth: inherit
+}
+
+params:query {
+  width: 200
+}

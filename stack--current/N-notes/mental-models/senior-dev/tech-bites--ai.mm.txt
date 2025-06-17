@@ -258,6 +258,7 @@ sleeper agents -- defection probes https://www.anthropic.com/research/probes-cat
 slop = unwanted AI generated content https://simonwillison.net/2024/May/8/slop/
 Snowflake Arctic https://www.snowflake.com/blog/arctic-open-efficient-foundation-language-models-snowflake/
 sociotechnic = skilled at analyzing the interaction of technology and society long-term: lawyers, ethicists, sociologists, or rights advocates
+solution -- code -- https://www.anthropic.com/claude-code
 solved problems = don't use AI for that
 Stable Diffusion
 superintelligence "AI vastly smarter than humans" https://openai.com/research/weak-to-strong-generalization
