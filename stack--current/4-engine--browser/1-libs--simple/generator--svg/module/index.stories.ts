@@ -1,7 +1,7 @@
 import type { Meta‿v3, Story‿v3 } from '@offirmo-private/storypad/types'
 import * as Reducers from "./reducers.ts";
 import {getꓽsvg‿str} from "./selectors.ts";
-import { getꓽcontentꘌcat } from './__fixtures/content.ts'
+import { getꓽcontentꘌcat } from './__fixtures/examples'
 import type {Immutable} from "@offirmo-private/ts-types";
 import type {SVG, Svg‿str} from "./types.ts";
 

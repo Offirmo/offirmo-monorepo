@@ -28,7 +28,7 @@
 	 * https://developers.cloudflare.com/workers/static-assets/binding/
 	 */
 	"assets": {
-		"directory": "./public/",
+		"directory": "./module/public/",
 		"binding": "ASSETS", // to allow access from the worker
 		//"not_found_handling": "single-page-application"
 		"not_found_handling": "404-page"

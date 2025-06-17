@@ -58,11 +58,11 @@ app.use(async function injectSXC(c, next): Promise<void> {
 
 /////////////////////////////////////////////////
 
-import v1‿app from './endpoints/v1/index.ts'
-app.route('v1', v1‿app)
+import v1‿app from './api/v1/index.ts'
+app.route('/api/v1', v1‿app)
 
-import _utils‿app from './endpoints/_utils/index.ts'
-app.route('_utils', _utils‿app)
+import _utils‿app from './api/_utils/index.ts'
+app.route('/api/_utils', _utils‿app)
 
 /////////////////////////////////////////////////
 
