@@ -4,6 +4,7 @@
 
 alias     mono0bb='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/better-console-groups/;                       tabset --badge mono0bb'
 alias    mono0bfl='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/fs--ls/;                                      tabset --badge mono0bfl'
+alias    mono0bmd='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/monorepo--decisions/;                         tabset --badge mono0bmd'
 alias     mono0bm='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/monorepo/;                                    tabset --badge mono0bm'
 alias     mono0bn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/node-typescript-compiler/;                    tabset --badge mono0bn'
 alias     mono0bp='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/;           cd build-tools/pkg-infos-resolver/;                          tabset --badge mono0bp'
@@ -115,4 +116,5 @@ alias      monoMu='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 
 alias     monoVp1='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd V-projects/;       cd placeholders/1-logic/;                                    tabset --badge monoVp1'
 alias     monoVp2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd V-projects/;       cd placeholders/2-api/;                                      tabset --badge monoVp2'
-alias     monoVp3='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd V-projects/;       cd placeholders/3-cloudflare-worker/;                        tabset --badge monoVp3'
+alias     monoVp3='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd V-projects/;       cd placeholders/3-static-assets/;                            tabset --badge monoVp3'
+alias     monoVp4='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd V-projects/;       cd placeholders/4-cloudflare-worker/;                        tabset --badge monoVp4'

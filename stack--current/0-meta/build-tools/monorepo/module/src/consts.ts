@@ -2,6 +2,11 @@ import { strict as assert } from 'node:assert'
 import { fileURLToPath } from 'node:url'
 import * as path from 'node:path'
 import * as fs from 'node:fs'
+import { EOL as _os_EOL } from 'node:os'
+
+import { NODE_MAJOR_VERSION, EOL, SEP } from '@offirmo-private/monorepo--decisions'
+
+/////////////////////////////////////////////////
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -12,8 +17,9 @@ assert(fs.existsSync(GIT_ROOT), `GIT_ROOT dir "${GIT_ROOT}" should exist!`)
 
 /////////////////////////////////////////////////
 
-const NODE_MAJOR_VERSION = 23
 assert(process.versions.node.startsWith(String(NODE_MAJOR_VERSION)), `Unexpected node runtime version "${process.versions.node}", should be ^${NODE_MAJOR_VERSION}!`)
+assert(path.sep === SEP, `Unexpected SEP!`) // TODO review
+assert(EOL === _os_EOL, `Unexpected EOL!`) // TODO review
 
 /////////////////////////////////////////////////
 
@@ -26,9 +32,6 @@ assert(fs.existsSync(MONOREPO__ROOT_TSCONFIG‿abs), `MONOREPO__ROOT_TSCONFIG‿
 const MONOREPO__SHARED_TS_TYPINGS‿abs = path.join(__dirname, '../../../../typescript-custom-typings')
 assert(fs.existsSync(MONOREPO__SHARED_TS_TYPINGS‿abs), `MONOREPO__SHARED_TS_TYPINGS‿abs dir "${MONOREPO__SHARED_TS_TYPINGS‿abs}" should exist!`)
 
-/////////////////////////////////////////////////
-
-const EOL = '\n'
 
 /////////////////////////////////////////////////
 
@@ -41,5 +44,5 @@ export {
 	MONOREPO__ROOT_TSCONFIG‿abs,
 	MONOREPO__SHARED_TS_TYPINGS‿abs,
 
-	EOL,
+	EOL, SEP,
 }

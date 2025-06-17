@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 /////////////////////////////////////////////////
 
 import { lsDirsSync } from '@offirmo-private/fs--ls'
-import { getꓽdefault_namespace } from '@offirmo-private/monorepo'
+import { getꓽdefault_namespace } from '@offirmo-private/monorepo--decisions'
 import { PkgInfosResolver } from '@offirmo-private/pkg-infos-resolver'
 import { getꓽpure_module_details, type PureModuleDetails, type Options as PureModuleAnalyzerOptions } from '@offirmo-private/pure-module--analyzer'
 import { present } from '@offirmo-private/pure-module--presenter'

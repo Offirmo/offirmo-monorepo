@@ -11,21 +11,6 @@ import { existsSync, renameSync } from 'node:fs'
 
 type AbsPath = string
 
-function getꓽdefault_namespace(module_details: {
-	root‿abspath: AbsPath,
-	isꓽpublished: boolean,
-}) {
-	if (module_details.root‿abspath.includes('the-boring-rpg'))
-		return '@tbrpg'
-
-	if (module_details.root‿abspath.includes('-rpg'))
-		return '@oh-my-rpg'
-
-	return module_details.isꓽpublished
-		? '@offirmo'
-		: '@offirmo-private'
-}
-
 function getꓽall_known_pure_module__dirs‿abspath(): Array<AbsPath> {
 	// we're currently using bolt
 	// TODO one day out-of-source build from a flat list of pure modules
@@ -54,6 +39,5 @@ function getꓽall_known_pure_module__dirs‿abspath(): Array<AbsPath> {
 /////////////////////////////////////////////////
 
 export {
-	getꓽdefault_namespace,
 	getꓽall_known_pure_module__dirs‿abspath,
 }

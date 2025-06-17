@@ -1,0 +1,4 @@
+{
+	description: "Core decisions for this monorepo, NO DEPS, NO ENGINE (node)",
+	status: 'experimental'
+}
