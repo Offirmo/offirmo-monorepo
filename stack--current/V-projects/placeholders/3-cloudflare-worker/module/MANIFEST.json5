@@ -1,4 +1,7 @@
 {
 	isꓽapp: true,
 	status: 'spike',
+	engines: {
+		'cloudflare--wrangler': '*',
+	},
 }

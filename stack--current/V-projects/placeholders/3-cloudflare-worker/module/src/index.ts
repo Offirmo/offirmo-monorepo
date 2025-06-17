@@ -34,11 +34,25 @@ app.onError((raw_err, c) => {
 
 /////////////////////////////////////////////////
 
-app.notFound((c) => {
-	return c.text('404!', 404)
+app.notFound(async (c) => {
 
-	/*const url404 = new URL('404.html', c.req.url)
-	return c.env.ASSETS.fetch(url404)*/
+	switch (c.req.header('Sec-Fetch-Mode')) {
+		case 'navigate': {
+			try {
+				const html = await c.env.ASSETS.fetch(new URL('404.html', c.req.url)).then(r => r.blob())
+				return new Response(html, {
+					status: 404,
+				})
+			} catch (err) {
+				// don't care
+			}
+			break
+		}
+		default:
+			break
+	}
+
+	return c.text('404!', 404) // TODO json?
 })
 
 /////////////////////////////////////////////////
@@ -47,6 +61,7 @@ app.notFound((c) => {
 app.use(async function injectSXC(c, next): Promise<void> {
 	const operation = `${c.req.method}:${c.req.path}`
 	console.log(`Hono begin`, operation)
+	console.log(c.req.header('Sec-Fetch-Mode'))
 
 	await getRootSXC().xPromiseTry(operation, async ({SXC}) => {
 		c.set('SXC', SXC)

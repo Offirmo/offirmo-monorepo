@@ -7,13 +7,13 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts"
+		".": "./module/public/index.html"
 	},
-	"source": "module/src/index.ts",
+	"source": "module/public/index.html",
 	"dependencies": {
+		"@offirmo-private/generator--svg": "*",
 		"@offirmo-private/offirmo-api--interface": "*",
 		"@offirmo-private/soft-execution-context": "*",
-		"@offirmo-private/soft-execution-context--node": "*",
 		"@offirmo/error-utils": "^0.0.1",
 		"@offirmo/practical-logger-core": "^3",
 		"@parcel/core": "^2",

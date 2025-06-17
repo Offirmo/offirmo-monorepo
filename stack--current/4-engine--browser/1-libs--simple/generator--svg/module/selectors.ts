@@ -29,7 +29,8 @@ function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 	const wantsꓽcompact = options.wantsꓽcompact ?? false
 	const isꓽnested = options.isꓽnested ?? false
 
-	console.log(`XXX rendering`, svg)
+	//console.log(`XXX rendering`, svg)
+
 	const svg__atributes‿str = [
 		isꓽnested ? '' : `xmlns='http://www.w3.org/2000/svg'`,
 		(options.width || svg.width) ? `width='${options.width || svg.width}'` : '',

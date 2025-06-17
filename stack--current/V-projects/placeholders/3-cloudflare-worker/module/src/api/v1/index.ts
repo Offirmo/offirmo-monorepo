@@ -1,12 +1,38 @@
 import { Hono } from 'hono'
-import { normalizeError } from '@offirmo/error-utils'
-import { create_server_response_body__data, create_server_response_body__error } from '@offirmo-private/offirmo-api--interface'
+
+import * as SvgGenLib from '@offirmo-private/generator--svg'
+import { getꓽcontentꘌcat } from '@offirmo-private/generator--svg/examples'
+
+/////////////////////////////////////////////////
 
 const app = new Hono()
 
 /////////////////////////////////////////////////
 
+app.get('/placeholder.svg', (c) => {
+
+	// TODO get params
+
+	const svg = (() => {
+		let svg = SvgGenLib.createꓽempty()
+
+		svg = SvgGenLib.addꓽcontent(svg, getꓽcontentꘌcat())
+
+		return svg
+	})(
+
+	)
+	return new Response(SvgGenLib.getꓽsvg‿str(svg), {
+		headers: {
+			'Content-Type': 'image/svg+xml'
+		}
+	})
+})
+
+/////////////////////////////////////////////////
+
 app.all('*', (c) => {
+	// TODO link to doc
 	return c.text('404 from Hono /v1!', 404)
 })
 
