@@ -1,0 +1,14 @@
+-		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
+-		"clean": "npm-run-all _clean--pkg",
+-
+-		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
+-		"check--ts": "echo \"@offirmo-private/cloudflare--worker\" && tsc --noEmit",
+-		"check--ts--watch": "tsc --noEmit --watch",
+-		"start": "wrangler --no-bundle dev",
+-		"refresh-types": "wrangler types",
+-
+-		"build:worker": "node --experimental-strip-types ./module/++gen/bundle/index.ts",
+-		"xbuild": "npm-run-all  clean  build:worker",
+-
+-		"dev": "run-s check--ts--watch",
+-		"_check": "run-s tests check--ts"

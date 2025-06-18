@@ -180,6 +180,8 @@ P6 should be driving action in your teams, after identifying opportunities thems
 
 ## TOSORT
 
+cold email https://www.linkedin.com/posts/renoperry_a-cold-email-can-open-doors-for-you-activity-7340722889278558208-EIjb
+
 earn or learn (or prestige)
 
 career mistakes https://www.linkedin.com/news/story/lessons-from-career-mistakes-7392714/

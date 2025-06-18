@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-	<configuration default="false" name="@offirmo-private/3-cloudflare-worker -- TESTS -- UNIT" type="mocha-javascript-test-runner">
+	<configuration default="false" name="@offirmo-private/4-cloudflare-worker -- TESTS -- UNIT" type="mocha-javascript-test-runner">
 		<node-interpreter>$USER_HOME$/.nvm/versions/node/v23.11.1/bin/node</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
 		<mocha-package>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/node_modules/mocha</mocha-package>
-		<working-directory>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/V-projects/placeholders/3-cloudflare-worker</working-directory>
+		<working-directory>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/V-projects/placeholders/4-cloudflare-worker</working-directory>
 		<pass-parent-env>true</pass-parent-env>
 		<ui>bdd</ui>
 		<extra-mocha-options>--bail</extra-mocha-options>
