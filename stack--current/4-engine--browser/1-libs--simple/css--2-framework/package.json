@@ -29,8 +29,8 @@
 		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
 		"_start:parcel:demo": "parcel serve module/~~demo/index.html --port 1981 --lazy --no-autoinstall",
 		"demo": "npm-run-all clean --parallel _start:parcel:demo",
-		"_build:custom": "node --experimental-strip-types ./__build/bundle.ts",
-		"build": "run-p _build:custom"
+		"_build:bundle": "node --experimental-strip-types ./++gen/build--bundle/index.ts",
+		"build": "run-s _build:bundle"
 	},
 	"devDependencies": {
 		"@offirmo-private/css--foundation": "*",

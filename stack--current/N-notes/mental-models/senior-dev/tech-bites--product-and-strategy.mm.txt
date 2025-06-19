@@ -1,3 +1,4 @@
+[ ] +++ https://www.threads.com/@prodmgmt.world
 [ ] https://basecamp.com/books
 [ ] https://basecamp.com/books ++ Getting Real https://basecamp.com/gettingreal
 [ ] https://skamille.medium.com/
@@ -30,10 +31,10 @@ churn -- subscription -- involuntary or delinquent churn = missed payments causi
 churn -- subscription -- voluntary = subscriber actively cancelling their subscription
 commoditization -- commodity businesses generally compete on price alone and are plagued by high inventories and low profit margins. In other non-commodity businesses, you would say “innovate”
 commoditization = undifferentiated mass, one no different than the other. We can pick the cheapest.
-compliance -- Enhanced customer due diligence (ECDD) https://www.austrac.gov.au/business/core-guidance/amlctf-programs/enhanced-customer-due-diligence-ecdd-program
+compliance -- due diligence -- Enhanced customer due diligence (ECDD) https://www.austrac.gov.au/business/core-guidance/amlctf-programs/enhanced-customer-due-diligence-ecdd-program
+compliance -- due diligence -- ongoing customer due diligence (OCDD)
 compliance -- know your customer (KYC) https://www.austrac.gov.au/business/core-guidance/customer-identification-and-verification
 compliance -- money laundering and terrorism financing (ML/TF)
-compliance -- ongoing customer due diligence (OCDD)
 compliance -- Politically exposed persons (PEPs) = individual who holds a prominent public position or role in a government body or international organisation. Immediate family members and/or close associates of these individuals are also considered PEPs.
 compliance -- Suspicious matter reports (SMRs)
 computers should adapt to users = not necessarily if the solution is good (ex. typing on a keyboard, Palm Graffiti) https://www.creativitypost.com/technology/the_memory_prediction_framework_of_intelligence_and_the_subject_of_creativi

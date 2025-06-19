@@ -70,7 +70,7 @@ async function present({
 	// prepare: clean up
 
 	const PURE_MODULE_CONTENT_RELPATH = path.basename(pure_module_path)
-	const SRC_RELPATH = path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.main.path‿rel)
+	const SRC_RELPATH = path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧmain.path‿rel)
 	const SRC_DIR_RELPATH = path.dirname(SRC_RELPATH)
 
 	// out-of-source build (NOT working at the moment)
@@ -202,8 +202,8 @@ ${pure_module_details.description || ''}
 			"source": SRC_RELPATH,
 		}
 
-		Object.keys(pure_module_details.extra_entry_points).sort().forEach(k => {
-			pkg.exports[k] = './' + path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.extra_entry_points[k]!.path‿rel)
+		Object.keys(pure_module_details.entrypointⵧexports).sort().forEach(k => {
+			pkg.exports[k] = './' + path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧexports[k]!.path‿rel)
 		})
 
 		const all_declared_deps: Set<string> = (new Set<string>())
@@ -301,61 +301,61 @@ ${pure_module_details.description || ''}
 				// it seems to work for now...
 			].join(' ')
 
-			if (pure_module_details.hasꓽstories || pure_module_details.storypad) {
-				assert(pure_module_details.storypad, `Expected storypad to be defined!`)
-				scripts["_start:parcel:storypad"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.storypad.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
+			if (pure_module_details.hasꓽstories || pure_module_details.entrypointⵧstorypad) {
+				assert(pure_module_details.entrypointⵧstorypad, `Expected storypad to be defined!`)
+				scripts["_start:parcel:storypad"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧstorypad.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
 				scripts['stories'] = `npm-run-all clean --parallel _start:parcel:storypad`
 			}
-			if (pure_module_details.demo) {
-				switch (pure_module_details.demo.ext) {
+			if (pure_module_details.entrypointⵧdemo) {
+				switch (pure_module_details.entrypointⵧdemo.ext) {
 					case '.js': {
-						scripts['demo'] = `node ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.demo.path‿rel)}`
+						scripts['demo'] = `node ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧdemo.path‿rel)}`
 						break
 					}
 					case '.ts': {
-						scripts['demo'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.demo.path‿rel)}`
+						scripts['demo'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧdemo.path‿rel)}`
 						break
 					}
 
 					case '.html': {
-						scripts["_start:parcel:demo"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.demo.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
+						scripts["_start:parcel:demo"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧdemo.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
 						scripts['demo'] = `npm-run-all clean --parallel _start:parcel:demo`
 						break
 					}
 
 					default:
-						throw new Error(`Not implemented: demo with extension "${pure_module_details.demo.ext}"!`)
+						throw new Error(`Not implemented: demo with extension "${pure_module_details.entrypointⵧdemo.ext}"!`)
 				}
 			}
-			if (pure_module_details.sandbox) {
-				switch (pure_module_details.sandbox.ext) {
+			if (pure_module_details.entrypointⵧsandbox) {
+				switch (pure_module_details.entrypointⵧsandbox.ext) {
 					case '.js': {
-						scripts['sandbox'] = `node ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.sandbox.path‿rel)}`
+						scripts['sandbox'] = `node ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧsandbox.path‿rel)}`
 						break
 					}
 					case '.ts': {
-						scripts['sandbox'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.sandbox.path‿rel)}`
+						scripts['sandbox'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧsandbox.path‿rel)}`
 						break
 					}
 
 					case '.html': {
-						scripts["_start:parcel:sandbox"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.sandbox.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
+						scripts["_start:parcel:sandbox"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧsandbox.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
 						scripts['sandbox'] = `npm-run-all clean --parallel _start:parcel:sandbox`
 						break
 					}
 
 					default:
-						throw new Error(`Not implemented: sandbox with extension "${pure_module_details.sandbox.ext}"!`)
+						throw new Error(`Not implemented: sandbox with extension "${pure_module_details.entrypointⵧsandbox.ext}"!`)
 				}
 			}
 
 			/////// Start
-			if (pure_module_details.main.ext === '.html') {
-				scripts["_start:parcel:main"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.main.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
+			if (pure_module_details.entrypointⵧmain.ext === '.html') {
+				scripts["_start:parcel:main"] = `parcel serve ${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧmain.path‿rel)} ${PARCEL__COMMON_OPTIONS}`
 			}
 			if (pure_module_details.isꓽapp) {
 				if (Object.keys(pure_module_details.engines).length === 0 || pure_module_details.engines['node']) {
-					scripts['start'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.main.path‿rel)}`
+					scripts['start'] = `node --experimental-strip-types ./${path.join(PURE_MODULE_CONTENT_RELPATH, pure_module_details.entrypointⵧmain.path‿rel)}`
 				} else {
 					if (scripts['_start:parcel:main']) {
 						scripts['start'] = `npm-run-all clean --parallel _start:parcel:main`
@@ -364,27 +364,31 @@ ${pure_module_details.description || ''}
 			}
 
 			/////// build
-			if (pure_module_details.build) {
-				scripts["_build:custom"] = (() => {
-					if (pure_module_details.build.ext === '.ts') {
-						return `node --experimental-strip-types ./${pure_module_details.build?.path‿rel}`
+			Object.entries(pure_module_details.entrypointsⵧbuild).forEach(([key, entry]) => {
+				if (key.startsWith('build--')) key = key.slice('build--'.length)
+				scripts[`_build:${key}`] = (() => {
+					if (entry.ext === '.ts') {
+						return `node --experimental-strip-types ./${entry.path‿rel}`
 					}
 
-					throw new Error(`Build format not implemented!`)
+					throw new Error(`Build format not implemented! (${entry.path‿rel})`)
 				})()
-			}
-			else if (pure_module_details.isꓽpublished) {
+			})
+
+			if (Object.keys(pure_module_details.entrypointsⵧbuild).length === 0 && pure_module_details.isꓽpublished) {
 				if (pure_module_details.languages.has('ts')) {
 					scripts["_build:prod"] = "monorepo-script--build-typescript-package"
 				}
 			}
+
 			const scriptsⵧbuild = Object.keys(scripts)
 				.filter(k => k.startsWith('build') || k.startsWith('_build'))
+				.sort()
 			if (scriptsⵧbuild.length) {
 				const name = pure_module_details.status === 'stable' // TODO improve this status check
 					? 'build'
 					: '_build'
-				scripts[name] = `run-p ${scriptsⵧbuild.join(' ')}`
+				scripts[name] = `run-s ${scriptsⵧbuild.join(' ')}`
 			}
 
 			// misc
@@ -465,9 +469,9 @@ ${pure_module_details.description || ''}
 		ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--tests--evals.run.xml'), { force: true }))
 	}
 
-	if (pure_module_details.demo) {
+	if (pure_module_details.entrypointⵧdemo) {
 
-		if (pure_module_details.demo.ext === '.ts') {
+		if (pure_module_details.entrypointⵧdemo.ext === '.ts') {
 			_schedule_root_file_creation('webstorm--demo.run.xml', `
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false"
@@ -475,7 +479,7 @@ ${pure_module_details.description || ''}
 		type="NodeJSConfigurationType"
 		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
 		node-parameters="--experimental-strip-types"
-		path-to-js-file="${path.relative(dest_dir, pure_module_details.demo.path‿abs)}"
+		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧdemo.path‿abs)}"
 		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
 		<method v="2" />
 	</configuration>
@@ -486,7 +490,7 @@ ${pure_module_details.description || ''}
 			ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--demo.run.xml'), { force: true }))
 		}
 
-		if (pure_module_details.demo.ext === '.html') {
+		if (pure_module_details.entrypointⵧdemo.ext === '.html') {
 			// no extra file necessary
 		}
 	}
@@ -500,7 +504,7 @@ ${pure_module_details.description || ''}
 		type="NodeJSConfigurationType"
 		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
 		node-parameters="--experimental-strip-types"
-		path-to-js-file="${path.relative(dest_dir, pure_module_details.main.path‿abs)}"
+		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧmain.path‿abs)}"
 		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
 		<method v="2" />
 	</configuration>

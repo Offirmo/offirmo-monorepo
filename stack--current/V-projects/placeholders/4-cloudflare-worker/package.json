@@ -19,7 +19,6 @@
 		"@offirmo-private/soft-execution-context": "*",
 		"@offirmo/error-utils": "^0.0.1",
 		"@offirmo/practical-logger-core": "^3",
-		"@parcel/core": "^2",
 		"hono": "^4",
 		"tiny-invariant": "^1",
 		"tslib": "^2",
@@ -30,15 +29,20 @@
 		"check--ts": "echo \"@offirmo-private/4-cloudflare-worker\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"_check": "run-s tests check--ts"
+		"_check": "run-s tests check--ts",
+		"_build:bundle": "node --experimental-strip-types ./++gen/build--bundle/index.ts",
+		"_build": "run-s _build:bundle"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4",
+		"@offirmo-private/monorepo--decisions": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@offirmo/universal-debug-api-interface": "^1",
+		"@parcel/core": "^2",
 		"@parcel/types": "^2",
 		"@types/node": "^22",
+		"meow": "^13",
 		"npm-run-all": "^4",
 		"typescript": "^5",
 		"wrangler": "^4"

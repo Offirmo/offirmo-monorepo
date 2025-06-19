@@ -62,19 +62,21 @@ interface PureModuleDetails extends PureModuleDetailsAllowedInManifest {
 	author: string
 
 	// entry points
-	main: FileEntry // TODO review fuse with entries?
-	demo?: FileEntry
-	sandbox?: FileEntry
-	storypad?: FileEntry
-	build?: FileEntry // a build script
-	extra_entry_points: {
+	entrypointⵧmain: FileEntry // TODO review fuse with entries?
+	entrypointⵧdemo?: FileEntry
+	entrypointⵧsandbox?: FileEntry
+	entrypointⵧstorypad?: FileEntry
+	entrypointsⵧbuild: { // build scripts (if any)
+		[label: string]: FileEntry
+	}
+	entrypointⵧexports: { // extra exports (if any)
 		[label: string]: FileEntry
 	}
 
 	hasꓽtestsⵧunit: boolean
 	hasꓽtestsⵧevals: boolean
 	hasꓽstories: boolean,
-	//hasꓽtestsⵧsmoke: boolean // TODO one day
+	//hasꓽtestsⵧsmoke: boolean // TODO 1D
 
 	depsⵧnormal: Set<string>
 	depsⵧdev: Set<string>

@@ -29,7 +29,7 @@
 		"_start:parcel:demo": "parcel serve module/~~demo/index.html --port 1981 --lazy --no-autoinstall",
 		"demo": "npm-run-all clean --parallel _start:parcel:demo",
 		"_build:prod": "monorepo-script--build-typescript-package",
-		"build": "run-p _build:prod",
+		"build": "run-s _build:prod",
 		"np": "np --no-publish",
 		"prepublishOnly": "run-s clean build ensure-size"
 	},

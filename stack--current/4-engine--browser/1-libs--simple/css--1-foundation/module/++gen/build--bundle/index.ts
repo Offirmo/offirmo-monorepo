@@ -9,8 +9,8 @@ import { bundleAsync } from 'lightningcss'
 
 /////////////////////////////////////////////////
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const filenameⵧinput = path.join(__dirname, '../src/index.css')
-const filenameⵧoutput = path.join(__dirname, '../../public/index.css')
+const filenameⵧinput = path.join(__dirname, '../../src/index.css')
+const filenameⵧoutput = path.join(__dirname, '../../../public/index.css')
 
 /////////////////////////////////////////////////
 

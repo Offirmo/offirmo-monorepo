@@ -125,7 +125,11 @@ function isꓽignored_file(entry: FileEntry): boolean {
 		return true
 	}
 
-	// no txt -> use another format
+	if (entry.ext === '.txt') {
+		// not recommended vs. better formats such as .md
+		// but happens, ex. "well known" files
+		return true
+	}
 
 	return false
 }
@@ -173,10 +177,13 @@ function inferꓽdeptype_from_caller(entry: FileEntry): DependencyType {
 	let { path‿rel, extⵧsub } = entry
 	path‿rel = '/' + path‿rel
 
-	if (path‿rel.includes('/__'))
+	if (path‿rel.includes('/__')) // temp / technical
 		return 'dev'
 
-	if (path‿rel.includes('/##'))
+	if (path‿rel.includes('/##')) // doc
+		return 'dev'
+
+	if (path‿rel.includes('/++')) // generators
 		return 'dev'
 
 	if (extⵧsub === '.tests')
@@ -430,15 +437,17 @@ function getꓽentrypointⵧsandbox__affinity‿score(entry: FileEntry | undefin
 	return score
 }
 
-function getꓽentrypointⵧbuild__affinity‿score(entry: FileEntry | undefined): Score {
-	if (!entry) return null
+function isꓽentrypointⵧbuild(entry: FileEntry | undefined): boolean {
+	if (!entry) return false
 
-	if (!hasꓽentrypoint_affinity(entry)) return null
+	if (!hasꓽentrypoint_affinity(entry)) return false
 
-	if (!['.ts', '.js', '.bash'].includes(entry.ext)) return null
+	if (!['.ts', '.js', '.bash'].includes(entry.ext)) return false
 
-	if (!entry.path‿rel.includes('build')) return null
+	if (!entry.path‿rel.includes('++gen')) return false
 
+	return (entry.basenameⵧsemantic‿no_ᐧext.startsWith('build'))
+	/*
 	// some path / files have "build" in them without being build scripts
 	// ex. builder.ts
 	// we require at least one perfectly "build" segment
@@ -456,7 +465,7 @@ function getꓽentrypointⵧbuild__affinity‿score(entry: FileEntry | undefined
 	score.push((() => {
 		let score_unit = 0
 
-		if (entry.basenameⵧsemantic‿no_ᐧext === 'build') {
+		 {
 			return score_unit
 		}
 		score_unit++
@@ -466,7 +475,7 @@ function getꓽentrypointⵧbuild__affinity‿score(entry: FileEntry | undefined
 
 	score.push(...getꓽtrailing_score(entry))
 
-	return score
+	return score*/
 }
 
 /////////////////////////////////////////////////
@@ -590,27 +599,27 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 		const demo_entrypoint‿score = getꓽentrypointⵧdemo__affinity‿score(entry)
 		if (demo_entrypoint‿score) {
-			const previous_candidate_score = getꓽentrypointⵧdemo__affinity‿score(result.demo)
+			const previous_candidate_score = getꓽentrypointⵧdemo__affinity‿score(result.entrypointⵧdemo)
 			if (compareꓽscores(previous_candidate_score, demo_entrypoint‿score) < 0) {
 				// "A should come before B"
 				// keep previous
 			}
 			else {
 				console.log(`${indent}    ⭐️new candidate for: demo entry point`)
-				result.demo = entry
+				result.entrypointⵧdemo = entry
 			}
 		}
 
 		const sandbox_entrypoint‿score = getꓽentrypointⵧsandbox__affinity‿score(entry)
 		if (sandbox_entrypoint‿score) {
-			const previous_candidate_score = getꓽentrypointⵧsandbox__affinity‿score(result.sandbox)
+			const previous_candidate_score = getꓽentrypointⵧsandbox__affinity‿score(result.entrypointⵧsandbox)
 			if (compareꓽscores(previous_candidate_score, sandbox_entrypoint‿score) < 0) {
 				// "A should come before B"
 				// keep previous
 			}
 			else {
 				console.log(`${indent}    ⭐️new candidate for: sandbox entry point`)
-				result.sandbox = entry
+				result.entrypointⵧsandbox = entry
 			}
 		}
 
@@ -623,33 +632,28 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 		if (entry.basenameⵧsemantic‿no_ᐧext === 'storypad' && entry.ext === '.html') {
 			console.log(`${indent}    ⭐️new candidate for: storypad`)
-			result.storypad = entry
+			result.entrypointⵧstorypad = entry
 		}
 
-		const build_entrypoint‿score = getꓽentrypointⵧbuild__affinity‿score(entry)
-		if (build_entrypoint‿score) {
-			const previous_candidate_score = getꓽentrypointⵧbuild__affinity‿score(result.build)
-			if (compareꓽscores(previous_candidate_score, build_entrypoint‿score) < 0) {
-				// "A should come before B"
-				// keep previous
-			}
-			else {
-				console.log(`${indent}    ⭐️new candidate for: build entry point`)
-				result.build = entry
-			}
+		if (isꓽentrypointⵧbuild(entry)) {
+			console.log(`${indent}    ⭐️new build entry point`)
+			result.entrypointsⵧbuild[entry.basenameⵧsemantic‿no_ᐧext] = entry
 		}
 
-		if (!demo_entrypoint‿score && !sandbox_entrypoint‿score && !build_entrypoint‿score && result.storypad !== entry) {
+		if (!demo_entrypoint‿score
+			&& !sandbox_entrypoint‿score
+			&& !isꓽentrypointⵧbuild(entry)
+			&& result.entrypointⵧstorypad !== entry) {
 			const main_entrypoint‿score = getꓽentrypointⵧmain__affinity‿score(entry)
 			if (main_entrypoint‿score) {
-				const previous_candidate_score = getꓽentrypointⵧmain__affinity‿score(result.main)
+				const previous_candidate_score = getꓽentrypointⵧmain__affinity‿score(result.entrypointⵧmain)
 				if (compareꓽscores(previous_candidate_score, main_entrypoint‿score) < 0) {
 					// "A should come before B"
 					// keep previous
 				}
 				else {
 					console.log(`${indent}    ⭐️new candidate for: main entry point`)
-					result.main = entry
+					result.entrypointⵧmain = entry
 				}
 			}
 		}
@@ -735,7 +739,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 				const first_line = content.trim().split('\n').at(0)!.trim()
 				const id = first_line.slice(2).trim()
 				console.log(`${indent}    ⭐️new sub entry point "${id}"`)
-				result.extra_entry_points[id] = entry
+				result.entrypointⵧexports[id] = entry
 			}
 		}
 		if (langs.includes('html')) {
@@ -772,12 +776,12 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	})
 
 	await Promise.all(pending_promises)
-	if (!result.main) {
-		if (result.sandbox) {
+	if (!result.entrypointⵧmain) {
+		if (result.entrypointⵧsandbox) {
 			// happens in:
 			// - pure sandbox fake packages, which don't really need a main
 			// - early stage packages
-			result.main ??= result.sandbox
+			result.entrypointⵧmain ??= result.entrypointⵧsandbox
 			result.status = (result.status === 'stable')
 				? (result.name.toLowerCase().includes('sandbox')
 						? 'sandbox'
@@ -785,15 +789,15 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 				: result.status
 		}
 	}
-	assert(result.main, 'No main file found?')
+	assert(result.entrypointⵧmain, 'No main file found?')
 
 	result.isꓽapp = result._manifest.isꓽapp ?? (
 		module_path.includes('sandbox')
-		|| result.main.ext === '.html'
+		|| result.entrypointⵧmain.ext === '.html'
 	)
 
 	// migrations
-	if (result.hasꓽstories && !result.storypad) {
+	if (result.hasꓽstories && !result.entrypointⵧstorypad) {
 		// auto-create storypad in the right place
 		const storypad__path = path.resolve(root‿abspath, '__fixtures', 'storypad')
 		const storypad__content = `
@@ -835,7 +839,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			storypad__content,
 			{encoding: 'utf-8'}
 		)
-		result.storypad = createꓽfile_entry(path.resolve(storypad__path, 'index.html'), root‿abspath)
+		result.entrypointⵧstorypad = createꓽfile_entry(path.resolve(storypad__path, 'index.html'), root‿abspath)
 	}
 
 	// extras
@@ -874,7 +878,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 		|| result.languages.has('jsx')
 		|| result.languages.has('tsx')
 		|| result.hasꓽstories
-		|| result.storypad
+		|| result.entrypointⵧstorypad
 	if (targets_runtimeꓽbrowser)
 		result.engines['browser'] = '*'
 

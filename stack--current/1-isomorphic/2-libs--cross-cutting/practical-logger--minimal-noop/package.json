@@ -25,7 +25,7 @@
 		"check": "run-s tests check--ts",
 		"demo": "node --experimental-strip-types ./module/##demo/demo.ts",
 		"_build:prod": "monorepo-script--build-typescript-package",
-		"build": "run-p _build:prod",
+		"build": "run-s _build:prod",
 		"np": "np --no-publish",
 		"prepublishOnly": "run-s clean build ensure-size"
 	},

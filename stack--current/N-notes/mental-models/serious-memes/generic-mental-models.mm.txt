@@ -799,6 +799,7 @@ once deployed, it’s too late; there’s only escalation (nuclear, euthanazia)
 one-size-fits-all
 opportunity cost
 opportunity Cost: By reading this tweet, you are choosing not to read something else. Everything we do is like this. Doing one thing requires giving up another. Whenever you explicitly choose to do one thing, you implicitly choose not to do another thing.
+opportunity solution trees https://learn.producttalk.org/opportunity-mapping
 optimism = "keep only the one who say it’s possible" https://posthog.com/founders/first-ops-hire
 other people’s problems / pick your battles
 oui, peut-être que personne n’y a encore pensé

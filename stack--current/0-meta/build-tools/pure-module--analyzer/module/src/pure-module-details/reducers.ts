@@ -31,8 +31,9 @@ function create(root‿abspath: AbsolutePath): PureModuleDetails {
 		author: 'Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)', // https://docs.npmjs.com/cli/v11/configuring-npm/package-json#people-fields-author-contributors
 		//license: 'Unlicense',
 
-		main: null as any, // XXX TODO
-		extra_entry_points: {},
+		entrypointⵧmain: null as any, // hack, will be set during the parse and will throw if still null
+		entrypointⵧexports: {},
+		entrypointsⵧbuild: {},
 
 		isꓽapp: false, // most common case
 		hasꓽside_effects: false,

@@ -104,8 +104,6 @@ alias   mono7ltl3='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias   mono7ltlr='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--the-boring-rpg/l3-ui--rich-text/;                   tabset --badge mono7ltlr'
 alias   mono7ltl4='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd libs--the-boring-rpg/l4-ohateoas/;                        tabset --badge mono7ltl4'
 
-alias     monoAcf='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-backend/;        cd cloudflare--frontend/;                                    tabset --badge monoAcf'
-alias     monoAcw='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-backend/;        cd cloudflare--worker/;                                      tabset --badge monoAcw'
 alias    monoAdgm='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-backend/;        cd db--generic-core--migrations/;                            tabset --badge monoAdgm'
 alias     monoAdg='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-backend/;        cd db--generic-core/;                                        tabset --badge monoAdg'
 alias     monoAoc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-backend/;        cd offirmo-api--client/;                                     tabset --badge monoAoc'
