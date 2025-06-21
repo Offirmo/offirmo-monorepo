@@ -1,0 +1,56 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	// At a minimum, the name, main and compatibility_date keys are required to deploy a Worker.
+	"$schema": "node_modules/wrangler/config-schema.json",
+
+
+	// overall project name, will appear in Cloudflare dashboard. BEWARE OF COPY PASTE!
+	"name": "placeholders",
+
+
+	// https://developers.cloudflare.com/workers/configuration/compatibility-dates/
+	"compatibility_date": "2025-06-16",
+	"compatibility_flags": [ "nodejs_compat" ],
+
+
+	/* We bundle ourselves
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#custom-builds
+	 */
+	"main": "dist/index.js",
+
+	/**
+	 * Static Assets
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#assets
+	 * https://developers.cloudflare.com/workers/static-assets/binding/
+	 */
+	"assets": {
+		"directory": "./module/public/",
+		"binding": "ASSETS",
+
+		"html_handling": "auto-trailing-slash",
+
+		//"not_found_handling": "single-page-application"
+		//"not_found_handling": "404-page"
+		"not_found_handling": "none"
+	}
+
+	/**
+	 * Bindings
+	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
+	 * databases, object storage, AI inference, real-time communication and more.
+	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
+	 */
+
+	/**
+	 * Environment Variables
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
+	 */
+	// "vars": { "MY_VARIABLE": "production_value" },
+	/**
+	 * Note: Use secrets to store sensitive data.
+	 * https://developers.cloudflare.com/workers/configuration/secrets/
+	 */
+}

@@ -215,7 +215,7 @@ content age rating -- "Common Sense" Media (private org) https://www.commonsense
 content age rating -- culture = Different cultures have different standards for what is age-appropriate: some find graphic violence more acceptable than nudity, and some vice versa.
 content age rating -- G (General) = aka Safe for School, Appropriate for ages 13+
 content age rating -- identify = content need to be identified and labelled as safe or unsafe for each age rating. Given the volume, human review may not be a practical option.
-content age rating -- PG (Parental Guidance)= aka Not Safe For School (NSFS), Appropriate for ages 15+
+content age rating -- PG (Parental Guidance) = aka Not Safe For School (NSFS) = Appropriate for ages 15+
 context switch
 convention over configuration
 Conway's law https://en.wikipedia.org/wiki/Conway%27s_law
@@ -772,6 +772,7 @@ side effects (avoid them!)
 significant change
 silly "make software silly again" https://www.linkedin.com/posts/addyosmani_softwareengineering-programming-javascript-ugcPost-7296794102514229248-m976
 simple average
+Singe Source of Truth (SSOT) / single point of truth (SPOT) = https://en.wikipedia.org/wiki/Single_source_of_truth
 single executable application "SEA" -- node https://codesnip.sh/posts/building-standalone-nodejs-executables
 single source of truth
 site-specific browser https://en.wikipedia.org/wiki/Site-specific_browser
@@ -789,6 +790,7 @@ SOLID -- 3 Liskov substitution principle https://en.wikipedia.org/wiki/Liskov_su
 SOLID -- 4 Interface segregation principle https://en.wikipedia.org/wiki/Interface_segregation_principle
 SOLID -- 5 principle https://en.wikipedia.org/wiki/Dependency_inversion_principle
 SOLID -- critique https://www.tedinski.com/2019/04/02/solid-critique.html
+solution -- bazel https://github.com/bazelbuild/bazelisk
 space shuttle disasters -- Challenger = https://en.wikipedia.org/wiki/Space_Shuttle_Challenger_disaster
 space shuttle disasters -- Columbia = https://en.wikipedia.org/wiki/Space_Shuttle_Columbia_disaster
 spec

@@ -10,7 +10,6 @@ import {
 } from '@offirmo-private/soft-execution-context'
 
 import { APP } from '../consts'
-import { CHANNEL } from './channel'
 import logger from './logger'
 
 /////////////////////////////////////////////////

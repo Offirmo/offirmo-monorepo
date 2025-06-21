@@ -1,3 +1,4 @@
+
 1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
 1% rule -- lurk, lurker
 1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
@@ -509,6 +510,8 @@ service -- weaving https://serviceweaver.dev/
 service = software functionality https://en.wikipedia.org/wiki/Service_(systems_architecture)
 service tiers -- 0 = most critical bc serving the most critical biz/customer needs
 service tiers = related to capabilities
+services -- microservices -- nanoservices = even further, with performance of a local function call. When one nanoservice calls another, the callee runs in the same thread and process. https://github.com/cloudflare/workerd?tab=readme-ov-file#introduction
+services -- microservices = split your app/monolith into components that are decoupled and independently-deployable
 single point of failure = avoidable with redundancy
 site reliability engineering (SRE) "treat operations as if it’s a software problem" https://sre.google/
 snowflake (Twitter) = distributed k-sorted uuid generator https://blog.x.com/engineering/en_us/a/2010/announcing-snowflake

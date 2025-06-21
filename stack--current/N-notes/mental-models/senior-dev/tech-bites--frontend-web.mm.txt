@@ -18,6 +18,8 @@
 [ ] security https://portswigger.net/web-security/all-topics
 [ ] security https://xsleaks.dev/
 [ ] shearing layers https://en.wikipedia.org/wiki/Shearing_layers
+AI -- If you had a machine that could instantly recall or create any facet of information, do you need a link?
+AI -- super app = LLM becomes the super app? https://aifoc.us/a-link-is-all-you-need/
 AMP "Accelerated Mobile Pages"
 animations -- API https://devdocs.io/dom/web_animations_api
 APIs web
@@ -38,6 +40,7 @@ app -- security
 app -- session
 app -- state
 app -- state -- structure
+app -- super app https://aifoc.us/super-apps/
 app's domain = ex. app.domain.com / https://web.telegram.org/
 application posture -- 1 sovereign = monopolizes the user's attention for long periods of time.
 application posture -- 2 transient = comes and goes, presenting a single, high-relief function with a tightly restricted set of accompanying controls. The program is called when needed, it appears and performs its job, then it quickly leaves, letting the user continue her more normal activity, usually a sovereign application.
@@ -194,6 +197,11 @@ DOM tree = Nodes = text, elements, attributes, comments... includes elements suc
 e18e Ecosystem Performance = initiative to improve the performance of JS packages: Cleanup, Speedup, Levelup. One Package at a time. https://e18e.dev/
 ECMAScript - European Computer Manufacturers Association Script (ES)
 emojis https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
+engine -- deno
+engine -- node
+engine -- v8
+engine -- winter
+engine -- workerd https://github.com/cloudflare/workerd
 events -- event delegation
 fingerprinting https://amiunique.org/fingerprint https://github.com/fingerprintjs/fingerprintjs
 flash of -- empty state = "you have no friends"
@@ -270,6 +278,7 @@ optimisation -- fonts https://nextjs.org/learn/dashboard-app/optimizing-fonts-im
 optimisation -- images https://nextjs.org/learn/dashboard-app/optimizing-fonts-images
 organic vs inorganic concept = coming from a real user or a bot/AI or app etc.
 Page Assembly Service = responsible for generating HTML for pages
+Page Rank
 perf -- content jump = https://css-tricks.com/content-jumping-avoid/
 perf metrics -- "9 must known" https://twitter.com/alexxubyte/status/1769748487317651962
 perf metrics -- core web vitals -- 01 Largest Contentful Paint (LCP) = loading performance. LCP must occur within 2.5 seconds of when the page first starts loading
@@ -356,7 +365,10 @@ test -- jsdom https://github.com/jsdom/jsdom
 testing -- component https://storybook.js.org/blog/component-testing/
 testing -- Netflix's SafeTest https://www.infoq.com/news/2024/02/netflix-safetest-front-end-test/
 testing https://www.testingjavascript.com/
+The web will always win = over confidence? https://aifoc.us/a-link-is-all-you-need/
+There’s an app for that
 Three Cs: 🤝 Concatenate, 🗜️ Compress, 🗳️ Cache https://csswizardry.com/2023/10/the-three-c-concatenate-compress-cache/
+transclusion = the inclusion of part or all of an electronic document into one or more other documents by reference via hypertext. Transclusion is usually performed when the referencing document is displayed and is normally automatic and transparent to the end user. The result of transclusion is a single integrated document made of parts assembled dynamically from separate sources, possibly stored on different computers in disparate places. https://aifoc.us/a-link-is-all-you-need/ https://en.wikipedia.org/wiki/Transclusion
 typology -- dead simple site https://deadsimplesites.com/
 typology -- landing site
 typology -- naked site
@@ -381,6 +393,7 @@ UI -- modals https://en.wikipedia.org/wiki/Modal_window
 UI -- modes https://en.wikipedia.org/wiki/User_interface#Modalities_and_modes
 UI -- popover https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
 UI -- primitives = box, stack, table, grid, flex...
+UI -- principles -- Don Norman
 UI -- properties -- Attentive = manage the user attention deciding when to interrupt the user, the kind of warnings, and the level of detail of the messages presented to the user.
 UI -- properties -- Intelligent = improve the efficiency, effectiveness, and naturalness of human–machine interaction by representing, reasoning, and acting on models of the user, domain, task, discourse, and media (e.g., graphics, natural language, gesture).
 UI -- properties -- Multi-screen = take advantage of multiple displays
@@ -416,6 +429,12 @@ viewport -- small <= dynamic <= large
 viewport -- visual
 viewport -- Visual Viewport API = Window.visualViewport https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport
 virtualization = an advanced technique that uses JS to remove DOM nodes not currently on-screen
+web -- positive aspects as a platform for users and developers -- SLICE -- Composable - Iframes and JavaScript allow us to quickly compose and embed new sites, apps and services just by dropping in some JS and hooking things together.
+web -- positive aspects as a platform for users and developers -- SLICE -- Ephemeral - There is nothing to install, you go to the page and interact with it, leave the page and when you do it stops taking up resources.
+web -- positive aspects as a platform for users and developers -- SLICE -- Indexable - Because you can link to anything, if public it can be discovered by any person or machine that can index it to make it universally discoverable to everyone.
+web -- positive aspects as a platform for users and developers -- SLICE -- Linkable - You can point to any page or piece of content just by sharing a URL
+web -- positive aspects as a platform for users and developers -- SLICE -- Secure - All domains are sand-boxed from each other and sites are sand-boxed away from the users machine. The user can go to any site and know they are safe.
+web -- positive aspects as a platform for users and developers -- SLICE https://paul.kinlan.me/slice-the-web/
 web app dev vs web site dev = so different now that they probably shouldn’t be called the same thing anymore
 Web Application Firewall (WAF)
 web capabilities -- Google's fugu team https://www.chromium.org/teams/web-capabilities-fugu/
