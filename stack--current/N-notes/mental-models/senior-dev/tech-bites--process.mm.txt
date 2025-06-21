@@ -68,6 +68,7 @@ progressive deployment strategy -- 03 Rollout percentages = Progressively roll o
 progressive deployment strategy -- 04 Stage interval = Allow at least 10 minutes interval between each stage during progressive rollout to production environment so that it is long enough for alerts to trigger
 progressive deployment strategy -- 06 old stack retention time = Retain the old stack for at least 60 minutes as a reliable fallback option, so that we can promptly restore service if something goes wrong with the new version shortly after deployment
 progressive deployment strategy for controlled rollouts
+quality = need QC + s/o with authority to shut a project down if it was not meeting spec. "We need that guy!" the manager said, and I came back, "If you had that guy you'd fire him the first time he told you something you didn't want to hear" https://science.slashdot.org/comments.pl?sid=23723043&cid=65462461
 RACI matrix = project role and responsibility assignment chart that maps out every task, milestone, or key decision to: Responsible, Accountable, Consulted or Informed
 revenue -- vibe revenue = are you really creating change?
 role and responsibility

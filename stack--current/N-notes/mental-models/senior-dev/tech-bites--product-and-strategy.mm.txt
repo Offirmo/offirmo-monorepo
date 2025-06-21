@@ -187,6 +187,7 @@ metrics -- CSAT -- hard to move
 metrics -- CSAT -- visual appeal
 metrics -- functional onboarding = If a user has hit all the functional onboarding milestones, it is a strong indication that they have begun to adopt the product. Measured over 2w, chose reqs, ex. have 2 users, 2 core actions...
 metrics -- funnel
+metrics -- lifetime value = https://statwonk.com/lifetime-value-calculation-ltv.html
 metrics -- Monthly Core Action Users = used to measure engagement by tracking users who perform core actions within a specific time frame.
 metrics -- Monthly Core User (MCU) = a user who do core actions at least X times in the last 28 days
 metrics -- retention

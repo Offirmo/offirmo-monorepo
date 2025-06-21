@@ -4,6 +4,7 @@ authorisation
 bad defaults -- firebase https://env.fail/posts/firewreck-1
 buffer overflows and how to protect against them
 cache poisoning https://en.wikipedia.org/wiki/Cache_poisoning
+Capture The Flag (CTF) competitions = hacking contests consisting of challenges in categories such as web security, cryptography, reverse engineering, exploitation which are open to everyone
 CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-benchmarks
 cloud -- Cloudbleed https://en.m.wikipedia.org/wiki/Cloudbleed
 compartmentalize - so your system is not all or nothing
@@ -25,9 +26,11 @@ encryption of stored data
 File Path (Directory) Traversal
 filtering = to pass input data through a logic that will hold parts of input that match a certain criteria and let other input pass through as is. The filter logic then makes a specific decision on the data that is in hold - possibly discarding it or transforming it.
 glassbox review = vs blackbox, looking at what happens when stimulated
+Google Project Zero https://googleprojectzero.blogspot.com/p/about-project-zero.html
 guidelines -- CGI security https://www.cgisecurity.com/owasp/html/ch04.html
 guidelines -- S/O https://stackoverflow.com/questions/2794016/what-should-every-programmer-know-about-security
 have I been pwned? https://www.troyhunt.com/
+In-the-Wild (ITW) exploit
 input -- never trust any input!
 input -- validate input from all untrusted sources - use whitelists not blacklists
 input -- validation -- 2 levels : Syntactical and Semantic
@@ -56,6 +59,8 @@ plan for security from the start - it's not something you can bolt on at the end
 principle of least privilege
 pwned = https://haveibeenpwned.com/API/v3 https://github.com/BlinqOSS/is-pwned
 salting https://en.wikipedia.org/wiki/Salt_(cryptography)
+sandbox
+sandbox -- escape https://googleprojectzero.blogspot.com/2025/05/breaking-sound-barrier-part-i-fuzzing.html
 sanitization -- data as part of database query
 sanitization -- data as part of the query string in a link's URL
 sanitization -- data as the value for a JavaScript variable
@@ -75,6 +80,7 @@ secure data at rest
 security posture = overall cybersecurity strength and readiness of an organization, ability to recognize threats and your readiness to mitigate them or recover from an attack
 Server Side Request Forgery (SSRF) -- defense -- outbound proxy
 Server Side Request Forgery (SSRF) = attacker to send a crafted request from a vulnerable server to an arbitrary destination. The attack can be used to bypass security restrictions and access internal systems and network resources that are not intended to be publicly accessible.
+spectre = class of attacks https://www.cloudflare.com/en-au/learning/security/threats/meltdown-spectre/
 threat modelling
 through obscurity -- ok if not only https://security.stackexchange.com/questions/32064/at-what-point-does-something-count-as-security-through-obscurity
 through obscurity -- still useful https://news.ycombinator.com/item?id=24444497
@@ -82,5 +88,6 @@ through obscurity https://en.wikipedia.org/wiki/Security_through_obscurity
 timed-release encryption scheme = to encrypt messages toward the future that anybody can decrypt when the time has come, even if you or your services are off-line by then https://docs.drand.love/
 TLS "Transport Layer Security"
 XML External Entity (XXE) = attack where an attacker is able to exploit applications processing XML inputs using improperly configured parser
+zero-day = a vulnerability that attackers know about, and there is no patch available from the vendor
 ZK-SNARKs https://vitalik.eth.limo/general/2022/06/15/using_snarks.html
 zxcvbn = password strength estimation https://zxcvbn-ts.github.io/zxcvbn/

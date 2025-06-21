@@ -516,6 +516,7 @@ single point of failure = avoidable with redundancy
 site reliability engineering (SRE) "treat operations as if it’s a software problem" https://sre.google/
 snowflake (Twitter) = distributed k-sorted uuid generator https://blog.x.com/engineering/en_us/a/2010/announcing-snowflake
 solution -- "no cloud Kamal" https://kamal-deploy.org/ https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_deploy-web-apps-anywhere-activity-7305513792275169281-C2-h/
+solution -- sdk https://www.stainless.com/ https://jsr.io/@openai/openai
 SRE -- learning 01 = The riskiness of a mitigation should scale with the severity of the outage
 SRE -- learning 02 = Recovery mechanisms should be fully tested before an emergency
 SRE -- learning 03 = Canary all changes

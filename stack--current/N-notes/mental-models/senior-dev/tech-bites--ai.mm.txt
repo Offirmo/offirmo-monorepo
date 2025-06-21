@@ -13,6 +13,7 @@
 2025-04 Shopify threatening internal memo "Reflexive AI usage is now a baseline expectation" https://x.com/tobi/status/1909251946235437514
 2025-05 AI's Trillion-Dollar Opportunity: Sequoia AI Ascent 2025 Keynote https://www.youtube.com/watch?v=v9JBMnxuPX8
 2025-05 Duolingo "AI crashout" https://www.fastcompany.com/91338068/duolingo-deletes-tiktok-ai-backlash-returns-with-strange-message https://www.reddit.com/r/OutOfTheLoop/comments/1kncne7/whats_going_on_with_duolingo/ https://it.slashdot.org/story/25/06/08/185209/after-ai-first-promise-duolingo-ceo-admits-i-did-not-expect-the-blowback
+2025-06 Apple "The illusion of thinking" -- responses https://slashdot.org/story/25/06/19/165237/reasoning-llms-deliver-value-today-so-agi-hype-doesnt-matter https://garymarcus.substack.com/p/seven-replies-to-the-viral-apple
 2025-06 Apple "The illusion of thinking" https://machinelearning.apple.com/research/illusion-of-thinking
 2025-06 dev AI perf framework
 2025-06 real applied case "composite model architecture" https://vercel.com/blog/v0-composite-model-family
@@ -163,6 +164,7 @@ jobs -- shrinkage of entry-level jobs In Tech https://slashdot.org/story/25/05/2
 knowledge cutoff
 labyrinth https://blog.cloudflare.com/ai-labyrinth/
 langchain = a framework for developing applications powered by language models https://python.langchain.com/docs/get_started/introduction
+Large Reasoning Models (LRMs) = enhanced LLMs
 latency
 latent representation = mysterious neural network representation of an idea/concept, waiting to be converted in text / image etc.
 laziness = cases where the model doesn’t complete a task https://openai.com/blog/new-embedding-models-and-api-updates
@@ -313,6 +315,7 @@ vibe code fixers ;) https://vibecodefixers.com/
 vibe coding -- Leo's example https://x.com/leojr94_/status/1903176192330477729
 vibe coding https://x.com/karpathy/status/1886192184808149383
 vs. low-code / no-code
+vulnerability research https://googleprojectzero.blogspot.com/2024/10/from-naptime-to-big-sleep.html
 watermarking outputs https://proceedings.mlr.press/v202/zhao23i.html
 weak-to-strong generalization https://openai.com/research/weak-to-strong-generalization
 yap -- yap score

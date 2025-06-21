@@ -385,6 +385,7 @@ flatmap
 flow state = deep concentration, enjoyment, and a sense of progress
 flushing
 flux architecture
+format -- container format https://en.wikipedia.org/wiki/Resource_Interchange_File_Format
 framework -- "a new framework a day"
 FTU – First Time Use
 function
