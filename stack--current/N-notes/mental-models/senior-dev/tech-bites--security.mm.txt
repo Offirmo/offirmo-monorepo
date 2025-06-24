@@ -16,6 +16,7 @@ Cross-Site Request Forgery (CSRF / XSRF) -- defense -- double submit
 Cross-Site Request Forgery (CSRF / XSRF) -- defense -- manual confirmation
 Cross-Site Request Forgery (CSRF / XSRF) -- defense -- sync token https://hirunimirando.blogspot.com/2018/10/synchronizer-token-pattern-nodejs.html
 Cross-Site Request Forgery (CSRF / XSRF) = attack where requests can be made from an attacker-controlled site to an endpoint to perform actions on behalf of the victim without the victim’s knowledge or consent.
+crypto -- ciphertext indistinguishability = important security property of encryption schemes = an adversary will be unable to distinguish pairs of ciphertexts based on the message they encrypt. indistinguishability under chosen plaintext attack is considered a basic requirement for most provably secure public key cryptosystems  https://cse.iitkgp.ac.in/~debdeep/courses_iitkgp/FCrypto/scribes/scribe8.pdf
 crypto -- don't write your own
 crypto -- using crypto doesn't mean you're secure (attackers will look for a weaker link)
 defence -- Primary / Secondary / Tertiary

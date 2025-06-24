@@ -320,6 +320,7 @@ Uber model = Make it so useful that you can’t shut it down
 User Experience Research (UXR) https://medium.com/getting-started-in-user-experience-and-design
 USP "Unique Selling Point" = secret sauce, difference with competition
 UX -- stick to established patterns https://medium.com/@daniel.stoyanov/not-following-well-established-ux-design-patterns-is-almost-always-a-bad-idea-58ae01b4f48a
+VC -- founder dilution https://www.linkedin.com/feed/update/urn:li:activity:7341812076463439873/
 wartime vs peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 what got us here won't get us there…
 what is the actual problem we're trying to solve?
