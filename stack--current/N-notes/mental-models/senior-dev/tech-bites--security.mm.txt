@@ -24,6 +24,7 @@ defense in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
 dependency chain abuse = supply chain attack https://www.paloaltonetworks.com.au/cyberpedia/dependency-chain-abuse-cicd-sec3
 device posture
 encryption of stored data
+FIDO Alliance
 File Path (Directory) Traversal
 filtering = to pass input data through a logic that will hold parts of input that match a certain criteria and let other input pass through as is. The filter logic then makes a specific decision on the data that is in hold - possibly discarding it or transforming it.
 glassbox review = vs blackbox, looking at what happens when stimulated
@@ -54,6 +55,7 @@ network ACL
 Open / Unvalidated Redirects
 OS Command Injection = attacker is able to inject and execute malicious code within a command that is passed to an application's operating system shell
 OWASP top 10 https://owasp.org/www-project-top-ten/
+passkeys = a modern cryptographic alternative to passwords and seed phrases. Passkeys combine something you have (a physical device such as a laptop, mobile phone, or a security key like YubiKey) with something you are or know (a fingerprint, face, or PIN) to generate a cryptographic public/private key pair that secures an account.
 pin codes -- most common https://informationisbeautiful.net/visualizations/most-common-pin-codes/
 PKI = Public Key Infrastructure
 plan for security from the start - it's not something you can bolt on at the end
@@ -89,6 +91,7 @@ through obscurity https://en.wikipedia.org/wiki/Security_through_obscurity
 timed-release encryption scheme = to encrypt messages toward the future that anybody can decrypt when the time has come, even if you or your services are off-line by then https://docs.drand.love/
 TLS "Transport Layer Security"
 XML External Entity (XXE) = attack where an attacker is able to exploit applications processing XML inputs using improperly configured parser
+YubiKey = not necessarily safer if no pin = if stolen and no pin, cooked
 zero-day = a vulnerability that attackers know about, and there is no patch available from the vendor
 ZK-SNARKs https://vitalik.eth.limo/general/2022/06/15/using_snarks.html
 zxcvbn = password strength estimation https://zxcvbn-ts.github.io/zxcvbn/

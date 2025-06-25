@@ -1,0 +1,9 @@
+- Cloudflare
+- next.js
+- pnpm
+- React
+- typescript
+- vite
+- vitest
+- yalc
+- zod
