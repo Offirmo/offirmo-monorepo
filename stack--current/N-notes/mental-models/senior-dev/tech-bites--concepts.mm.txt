@@ -80,7 +80,11 @@ API -- should not force developers to do anything that could easily be done for 
 API -- should present the mechanism, not the experience.
 API -- should provide helper functions to compose small features into common use-cases where appropriate.
 API -- tradeoffs = ex. safety / flexibility / extensibility / speed
+architectural decision (AD) = a justified design choice that addresses a functional or non-functional requirement that is architecturally significant
+architectural decision -- or rather "tactical bet"
+architectural decision record (ADR) = captures a single AD and its rationale; can help one understand the reasons for a chosen architectural https://adr.github.io/
 architectural styles = independent of any specific implementation
+architecturally significant requirement (ASR) = a requirement that has a measurable effect on the architecture and quality of a software and/or hardware system
 architecture -- services https://en.wikipedia.org/wiki/Service-oriented_architecture
 asking smart questions (tech) http://www.catb.org/esr/faqs/smart-questions.html
 assembly
@@ -814,9 +818,13 @@ Sustainable Architectural Decisions https://adr.github.io/
 system boundaries = a publicly exposed interface that third-party developers are going to use. It’s the inability to make breaking changes because you have external users to support that really defines a boundary. As a result, you have to pay special attention to get the design of a system boundary right—it’s not easy to make changes in the future. Boundaries are more important than other parts of our programs that we can refactor at will. https://www.tedinski.com/2018/02/06/system-boundaries.html
 system call
 tainting an object https://react.dev/reference/react/experimental_taintObjectReference
-tech debt -- accidental - e.g. bugs due to human error that unknowingly increases the cost of future work.
-tech debt -- deliberate - e.g. optimising for short term delivery, knowing it increases the cost of future work.
-tech debt -- incidental - e.g. organic changes in complexity over time that increases the cost of future work.
+tech debt -- buckets -- 1 strategic = directly impacts business outcomes: what specific user or business capabilities will be blocked? what's our timeline before we hit critical constraints? what's the minimum investment needed to unblock progress?
+tech debt -- buckets -- 2 tactical = slows delivery speed: focus on velocity metrics: "our deploy time has increased from 15 minutes to 4 hours in the last quarter""bug fix turnaround has gone from 2 days to 2 weeks""feature development estimates have doubled"
+tech debt -- buckets -- 3 brand = the product works but doesn't exude quality/trust, ex. slow, clunky, "infantile"
+tech debt -- buckets -- 4 cosmetic = affects code quality but not outcomes
+tech debt -- origin -- accidental - e.g. bugs due to human error that unknowingly increases the cost of future work.
+tech debt -- origin -- deliberate - e.g. optimising for short term delivery, knowing it increases the cost of future work.
+tech debt -- origin -- incidental - e.g. organic changes in complexity over time that increases the cost of future work.
 tech specs https://hybridhacker.email/p/how-to-write-great-tech-specs
 Temporal Dead Zone (TDZ)
 temporary solutions https://80.lv/articles/this-30-year-old-windows-feature-was-created-as-a-temporary-solution/

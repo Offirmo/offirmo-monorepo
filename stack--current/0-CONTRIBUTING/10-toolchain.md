@@ -18,7 +18,6 @@ TODO evaluate https://github.com/pnpm/pnpm
 
 **bolt**
 * complemented by https://github.com/Thinkmill/manypkg
-* downside: bundle duplication
 * downside: maintained but sort of dead
 
 Why not yarn workspaces?
@@ -59,10 +58,10 @@ Why Parcel?
 
 White not Vite?
 * evaluated 2024/01 Vite 5 ~works but not as good as Parcel:
-* rollup (embedded) has trouble with default exports https://stackoverflow.com/questions/58246998/mixing-default-and-named-exports-with-rollup
-* CSS resolver can't resolve from packages npm:xyz
-* needs a "main" in package.json
-* has a "root" preventing from serving files upper in the monorepo
+  * rollup (embedded) has trouble with default exports https://stackoverflow.com/questions/58246998/mixing-default-and-named-exports-with-rollup
+  * CSS resolver can't resolve from packages npm:xyz
+  * needs a "main" in package.json
+  * has a "root" preventing from serving files upper in the monorepo
 
 TODO re-evaluate vite https://blog.logto.io/parcel-to-vite
 TODO evaluate Rpack https://rspack.dev/
@@ -79,6 +78,7 @@ TODO evaluate https://biomejs.dev/
 
 nvm
 
+* TODO review corepack
 * TODO evaluate https://github.com/Schniz/fnm
 * TODO evaluate https://www.honeybadger.io/blog/node-environment-managers/
 * https://docs.volta.sh/guide/understanding
@@ -106,6 +106,7 @@ https://libsql.org/about
 ### Query builder and ORM
 knex
 
+TODO evaluate prisma
 TODO evaluate https://docs.turso.tech/3p-dev-tools
 TODO evaluate https://github.com/drizzle-team/drizzle-orm#readme
 

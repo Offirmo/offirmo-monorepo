@@ -1,4 +1,7 @@
+- ? https://mergify.com/
+- ? turborepo
 - Cloudflare
+- just https://just.systems/man/en/further-ramblings.html
 - next.js
 - pnpm
 - React
@@ -7,3 +10,5 @@
 - vitest
 - yalc
 - zod
+- ✖ npm
+- ✖ xml

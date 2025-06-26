@@ -304,6 +304,7 @@ puppeteer -- firefox https://hacks.mozilla.org/2024/08/puppeteer-support-for-fir
 puppeteer -- vs Selenium, Playwright, Cypress https://www.testim.io/blog/puppeteer-selenium-playwright-cypress-how-to-choose/
 puppeteer https://pptr.dev/
 PWA https://whatpwacando.today/ https://web.dev/learn/pwa
+quality -- why so rare? https://linear.app/blog/why-is-quality-so-rare
 react
 react -- hooks
 React -- RSC "React server components" https://www.joshwcomeau.com/react/server-components/
@@ -377,6 +378,7 @@ UI -- block -- color
 UI -- block -- iconography
 UI -- block -- spacing
 UI -- block -- typography
+UI -- challenges -- template trap = "Overreliance on frameworks as universal solutions rather than adaptable starting points undermines critical thinking and threatens our field's intellectual rigor." https://www.nngroup.com/articles/template-trap/
 UI -- chrome = the graphical framework and elements surrounding the content. means different things depending on the context: In the context of a web browser it is the navigation, toolbar etc. In the context of a website it is navigation, ad-space and other fixed aspects of the design https://stackoverflow.com/a/5072092/587407
 UI -- event -- blur, hover, focus, click, auxclick, double click...
 UI -- floating action button (FAB) = the primary action of a screen in Material UI / Android https://m2.material.io/components/buttons-floating-action-button
