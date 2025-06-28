@@ -1,0 +1,20 @@
+CI/CD -- ? https://mergify.com/
+cloud -- Cloudflare
+frontend -- CSS -- framework -- ? tailwind https://tailwindcss.com/docs
+frontend -- CSS-in-js -- ? https://github.com/vercel/styled-jsx
+frontend -- React
+just https://just.systems/man/en/further-ramblings.html
+linter -- eslint
+linter -- https://biomejs.dev/
+monorepo -- ? bolt
+monorepo -- ? turborepo
+monorepo -- ? yarn workspaces
+next.js https://nextjs.org/docs
+pkg manager -- pnpm
+pkg manager -- ✖ npm
+typescript
+vite
+vitest
+yalc
+zod
+✖ xml

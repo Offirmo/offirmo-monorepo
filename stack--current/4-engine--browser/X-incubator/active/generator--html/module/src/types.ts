@@ -1,5 +1,5 @@
 import { Enum } from 'typescript-string-enums'
-import type { PositiveIntegerInRange, RealInRange, Charset, IETFLanguageType } from '@offirmo-private/ts-types'
+import type { PositiveIntegerInRange, FloatInRange, Charset, IETFLanguageType } from '@offirmo-private/ts-types'
 import type { CssⳇColor‿str, Contentⳇweb } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
@@ -17,9 +17,9 @@ interface HtmlMetaContentⳇContentSecurityPolicy {
 interface HtmlMetaContentⳇViewport {
 	width?: 'device-width' | PositiveIntegerInRange<1, 10_000>
 	height?: 'device-height' | PositiveIntegerInRange<1, 10_000>
-	'initial-scale'?: RealInRange<0.1, 10>
-	'minimum-scale'?: RealInRange<0.1, 10>
-	'maximum-scale'?: RealInRange<0.1, 10>
+	'initial-scale'?: FloatInRange<0.1, 10>
+	'minimum-scale'?: FloatInRange<0.1, 10>
+	'maximum-scale'?: FloatInRange<0.1, 10>
 	'user-scalable'?: 0 |  1 | 'yes' | 'no' // ignored by Safari mobile and nearly all other mobile browser. However will work if installed PWA
 
 	'viewport-fit'?:

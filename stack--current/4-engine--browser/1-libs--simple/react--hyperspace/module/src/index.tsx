@@ -50,7 +50,7 @@ const PRESETS: { [k: string]: HyperspaceEffectSpec } = {
 		],
 	},
 
-	wormhole: { // rename?
+	hyper: {
 		src_image: (new URL(
 			'STScI-01J74E3HZAXK032XB1XKTR3D01-x.jpg',
 			import.meta.url,
@@ -113,6 +113,7 @@ interface Props {
 }
 
 function HyperSpace(props: Props = {}) {
+	console.log(`🔄 <HyperSpace>`)
 	const {
 		preset = 'classic',
 		overrides = {},

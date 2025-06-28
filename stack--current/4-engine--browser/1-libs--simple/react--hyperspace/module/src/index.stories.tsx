@@ -36,9 +36,9 @@ export const Reddish = {
 	} as Props
 }
 
-export const WormHole = {
+export const Hyper = {
 	args: {
-		preset: 'wormhole',
+		preset: 'hyper',
 	} as Props
 }
 
