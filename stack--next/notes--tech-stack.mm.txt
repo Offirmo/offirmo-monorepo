@@ -1,6 +1,6 @@
 CI/CD -- ? https://mergify.com/
 cloud -- Cloudflare
-frontend -- CSS -- framework -- ? tailwind https://tailwindcss.com/docs
+frontend -- CSS -- framework -- ? tailwind https://tailwindcss.com/docs https://github.com/dcastil/tailwind-merge https://tremor.so/
 frontend -- CSS-in-js -- ? https://github.com/vercel/styled-jsx
 frontend -- React
 just https://just.systems/man/en/further-ramblings.html
@@ -18,3 +18,6 @@ vitest
 yalc
 zod
 ✖ xml
+ecosystem -- sdk ?https://liblab.com/ https://www.speakeasy.com/
+auth -- ? https://www.propelauth.com/
+secrets management -- ? https://infisical.com/

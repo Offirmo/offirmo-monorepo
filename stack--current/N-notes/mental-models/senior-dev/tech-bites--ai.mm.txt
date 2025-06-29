@@ -97,6 +97,7 @@ constitution = a list of principles to which the model should adhere https://www
 constitutional AI = AI training themselves from a set of human-given rules, self-critique and revision https://arxiv.org/abs/2212.08073
 constitutional classifiers = method that defends AI models against universal jailbreaks https://www.anthropic.com/research/constitutional-classifiers
 context
+context -- long context trumps everything? https://arxiv.org/pdf/2406.13121
 Contextual Language Models (CLMs) Contextual.ai
 control vector https://vgel.me/posts/representation-engineering/
 ControlNet = a type of model for controlling image diffusion models by conditioning the model with an additional input image https://huggingface.co/docs/diffusers/using-diffusers/controlnet https://github.com/lllyasviel/ControlNet
@@ -262,6 +263,7 @@ slop = unwanted AI generated content https://simonwillison.net/2024/May/8/slop/
 Snowflake Arctic https://www.snowflake.com/blog/arctic-open-efficient-foundation-language-models-snowflake/
 sociotechnic = skilled at analyzing the interaction of technology and society long-term: lawyers, ethicists, sociologists, or rights advocates
 solution -- code -- https://www.anthropic.com/claude-code
+solution -- evals ? https://www.reddit.com/r/node/comments/1d09u4b/introducing_evalkit_the_open_source_typescript/
 solved problems = don't use AI for that
 Stable Diffusion
 superintelligence "AI vastly smarter than humans" https://openai.com/research/weak-to-strong-generalization

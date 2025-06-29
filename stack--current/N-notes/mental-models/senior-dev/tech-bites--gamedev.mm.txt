@@ -174,8 +174,10 @@ overworld / underworld
 overworld https://en.wikipedia.org/wiki/Overworld
 pacifist run
 party
+pay-to-win
 permadeath
 permanently missable content
+play-to-earn
 player taxonomy -- Bartle -- ♠ Explorers
 player taxonomy -- Bartle -- ♣ Killers
 player taxonomy -- Bartle -- ♥ Socializers

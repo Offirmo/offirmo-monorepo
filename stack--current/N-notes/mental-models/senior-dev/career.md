@@ -177,6 +177,49 @@ P6 should be driving action in your teams, after identifying opportunities thems
   * "who should I meet?"
 
 
+## flags
+from https://www.notion.so/deserted-soarer-11e/OFX-Principal-Software-Engineer-1ffe0117a7e28014afc4df36dfb2d690
+
+### green
+What are the Green Flags
+You are collaborative, an excellent communicator and work together with your team to get the best outcomes.
+You are comfortable in ambiguous environments.
+Strong believer of “strong opinions, loosely held” when collaborating with your team.
+Product & Customer focussed Engineer
+You have had experience working with event-driven distributed systems
+Are comfortable with the “ you build it, you run it” way of working
+Passionate about code quality, and instilling good practices within a team
+Enjoy working in fast paced environments, where you get stuff done
+Have built products from the ground up  
+Have been involved in the Design, Architecture and Delivery of products
+Good understanding and experience with Clean Architecture
+Has worked on product company, and product before
+Product led experience is very important
+Engineer has an idea on what they're working on from a product perspective
+Someone who doesn't jump around heaps.
+
+### yellow
+
+What are the Amber Flags in a Developer
+Have worked in more Corporate/Enterprise environments but would really like to move away from that way of working
+Have a lot of experience with event-driven distributed systems in Fintechs, but haven’t had much experience building products in full-stack JS.
+Have had experience in the build & delivery part of a product, however didn’t have a lot of involvement in the overall architecture - however this is something you’d love to do in the future.
+
+
+### red
+
+What are the Red flags in a Developer
+You don’t really like working with teams or collaborating much with your team members
+No experience designing or developing APIs
+Doesn’t feel super comfortable in ambiguous, fast paced environments
+Would prefer to work in very structured environments with a clear line of command.
+You like excelling at one piece of the software development life cycle (i.e. API development), and prefer working in teams where each team member is assigned to one specific task.
+You don’t believe in the “you build it, you run it” mentality
+Not used to that level of autonomy and accountability.
+We need people who are comfortable with that level of accountability
+If candidate who has worked only in large corps/banks they will find it difficult.
+
+
 
 ## TOSORT
 

@@ -46,7 +46,6 @@
 [ ] Nobel https://www.nobelprize.org/all-nobel-prizes-2024/
 [ ] tool https://explorer.globe.engineer/
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
-abandon animaux compagnie
 academic disciplines -- humanities = academic disciplines that study aspects of human society and culture, including certain fundamental questions asked by humans https://en.wikipedia.org/wiki/Humanities
 academic disciplines -- trans / cross
 accent -- miscommunication https://paulgraham.com/accents.html
@@ -395,13 +394,6 @@ femme/homme enfant https://www.wengood.com/fr/developpement-personnel/se-connait
 Fermi paradox  -- see [great filters]
 Fermi paradox -- Drake equation https://en.wikipedia.org/wiki/Drake_equation
 Fermi paradox https://en.wikipedia.org/wiki/Fermi_paradox
-finance -- Benjamin Franklin's The Way to Wealth = 85 maxims https://www.artofmanliness.com/career-wealth/wealth/money-and-career-advice-from-benjamin-franklins-way-to-wealth/
-finance -- buy now pay later (BNPL)
-finance -- debt spiral
-finance -- FIRE "Financial Independence Retire Early" = not necessarily retire, but more like being free from worry / able to pick lower-paying jobs (no gambling / weapons / hyper competitive), not being a scared slave https://www.reddit.com/r/financialindependence/
-finance -- FIRE = be careful of life balance, not all eggs in the same basket, see [flourishing]
-finance -- FIRE = preparing for the 40s = lower motivation, desillusion, sandwich generation...
-financially (il)literate = https://www.smh.com.au/business/the-economy/our-financial-literacy-crisis-can-you-answer-these-5-money-questions-20230109-p5cb6c.html
 Fingerprint for Success (F4S)
 first practice what you preach
 first principles https://fs.blog/first-principles/
@@ -459,7 +451,9 @@ Haiti https://aleteia.org/2025/02/01/kids-without-school-because-of-gangs-are-re
 hand-me-down
 hangry = before lunch (vs. after)
 Hanlon’s razor = Never attribute to malice that which can be adequately explained by stupidity
+happiness -- comparison is the thief of joy
 happiness -- is a skill
+happiness -- pour vivre heureux vivons cachés
 happiness -- score https://www.ted.com/talks/dominic_price_what_s_your_happiness_score
 happiness -- être heureux n'est pas nécessairement confortable
 harassment -- behaviors -- intrusive = such as unwanted touching or sexual attention
@@ -750,7 +744,7 @@ most angry people/customers just want to be heard https://www.reddit.com/r/AskRe
 motivation
 motivation -- addiction
 motivation -- addiction -- chemical
-motivation -- addiction -- comportemental
+motivation -- addiction -- comportmental
 motivation -- addiction -- compulsion
 mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruction
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
@@ -762,7 +756,14 @@ myths -- monomyth = all mythic narratives as variations of a single great story
 myths -- mythopoeia/mythopoesis = creating a myth "artificial mythology" "provides relief from the existential dread that comes with a rational world, and that it can serve as a way to link different cultures and societies" https://en.wikipedia.org/wiki/Mythopoeia
 myths -- origin
 naivety
-naiveté: abus sexuels, mafia
+naivety -- abandon animaux compagnie
+naivety -- corruption
+naivety -- lunch theft in office
+naivety -- mafia
+naivety -- police
+naivety -- school
+naivety -- sexual abuse
+naivety -- world order
 narcissism
 narcissism -- overlaps with neuroticism
 natural order of things in society = established by the dominant ideology
@@ -883,10 +884,7 @@ Pope Francis 15 spiritual diseases -- 14 = closed circles, where belonging to a 
 Pope Francis 15 spiritual diseases -- 15 = disease of worldly profit, of forms of self-exhibition.[17] When an apostle turns his service into power, and his power into a commodity in order to gain worldly profit or even greater power
 Pope Francis 15 spiritual diseases https://www.vatican.va/content/francesco/en/speeches/2014/december/documents/papa-francesco_20141222_curia-romana.html
 porn
-positive good = defense technique arguing an overall "positive good" ex. colonisation = train (which were for stealing rsrcs) https://en.wikipedia.org/wiki/Pro-slavery_ideology_in_the_United_States
-pour vivre heureux vivons cachés
-pouvoir d'achat
-poverty -- Sherman Alexie = It sucks to be poor, and it sucks to feel that you somehow deserve to be poor. You start believing that you're poor because you're stupid and ugly. And then you start believing that you're stupid and ugly because you're Indian. And because you're Indian you start believing you're destined to be poor. It's an ugly circle and there's nothing you can do about it. Poverty doesn't give you strength or teach you lessons about perseverance. No, poverty only teaches you how to be poor.
+positive good = defense technique arguing an overall "positive good" ex. colonisation = trains (which were for stealing rsrcs) hospitals etc. https://en.wikipedia.org/wiki/Pro-slavery_ideology_in_the_United_States
 power -- French and Raven five bases of power = reward, coercion, legitimate, expert, referent, informational https://en.wikipedia.org/wiki/French_and_Raven%27s_bases_of_power
 power -- Tony Benn's' Five Questions About Power -- 01 What power have you got?
 power -- Tony Benn's' Five Questions About Power -- 02 Where did you get it from?
@@ -901,7 +899,7 @@ praise more than criticize
 praise-to-critic ratio https://hbr.org/2013/03/the-ideal-praise-to-criticism
 pre-mortem = imagine the worst possible outcome of a decision and work backwards to prevent it
 preach the water but drink wine / faites ce que je dis mais pas ce que je fais
-preference Falsification: People lie about their true opinions and conform to socially acceptable preferences instead. In private they’ll say one thing. In public, they’ll say another.
+preference falsification = People lie about their true opinions and conform to socially acceptable preferences instead. In private they’ll say one thing. In public, they’ll say another.
 preferential attachment / effet Matthieu
 presentations -- "so what?" after every slide
 pretty privilege -> karen

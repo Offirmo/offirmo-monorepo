@@ -157,3 +157,5 @@ window.addEventListener('pointerover', onꓽpointer_over)
 
 URL cleanup
 - ex. youtube = https://www.youtube-nocookie.com/embed/Xdkkux6OxfM?autoplay=1&state=1
+
+search? https://orama.com/product

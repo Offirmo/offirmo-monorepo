@@ -209,6 +209,8 @@ concurrency -- thread
 concurrency -- thread pool
 concurrency -- wait-free, lock free
 concurrent ownership
+config -- defineConfig()
+config -- json / jsonc / json5 / js / ts
 connascence https://en.wikipedia.org/wiki/Connascence
 considered harmful
 considered harmful -- clever code https://www.joshwcomeau.com/career/clever-code-considered-harmful/
@@ -768,7 +770,9 @@ security -- (see dedicated file)
 semaphore
 semver
 semver -- advanced example https://react.dev/community/versioning-policy (see also TS)
-semver -- alternatives -- compatibility dates https://developers.cloudflare.com/workers/configuration/compatibility-dates/
+semver -- alternatives -- compatibility dates = https://developers.cloudflare.com/workers/configuration/compatibility-dates/
+semver -- major -> minor -> patch
+semver -- preparing a major with a subpath https://github.com/colinhacks/zod/issues/4371
 SHA (Secure Hash Algorithm)
 shaving the yak
 show me the code!
