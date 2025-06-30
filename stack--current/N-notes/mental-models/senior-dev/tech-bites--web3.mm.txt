@@ -11,7 +11,6 @@
 [ ] https://vitalik.eth.limo/
 Airdrop
 Arbitrum
-asset seizure
 bag check
 Bankman-Fried
 Base
@@ -83,6 +82,7 @@ FTX crash
 fungibility
 fungibility -- non-fungible
 gas
+gelato
 HODL
 Howey Test -- four key criteria -- 1 Investment of Money: An investor must put their money into the venture.
 Howey Test -- four key criteria -- 2 Common Enterprise: There must be a shared investment pool or a group of individuals collectively participating in the venture.
@@ -94,12 +94,14 @@ ICO -- boom
 ICO -- crackdown
 immutability
 intermediation
+internet censorship -- 2025 Russia https://news.ycombinator.com/item?id=44392221
 InterPlanetary File System (IPFS) = a decentralized and distributed file storage system that provides a more efficient and resilient way to store and access content on Web 3.0. It gives a unique cryptographic hash (content-based address) to every file. It uses a peer-to-peer network, where each IPFS node acts as a client and server. Nodes cooperate to store, retrieve, and distribute content across the web, eliminating the need for centralized servers. https://docs.ipfs.tech/concepts/
 layer 2 = https://vitalik.eth.limo/general/2024/05/29/l2culture.html
 legal definition -- AU = A type of currency that only exists in digital rather than physical form (not coins or notes, for example). Digital currency: can be exchanged for goods, services, or physical currency; is not issued by or under the authority of a government. https://www.austrac.gov.au/glossary/digital-currency-or-cryptocurrency
 Markets in Crypto Assets (MiCA) regulation to oversee the crypto industry
 memecoin
 mining
+movement
 multi-chain https://arxiv.org/abs/2112.01472
 narratives = to bring interest into crypto
 NFTs -- as collateral -- NFTti
@@ -126,17 +128,16 @@ porn https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
 price oracles = pricing of some resource
 public key cryptography
 read/write/own paradigm = data creators own and control their own data and have a greater say in how it is used and managed
-Resource Description Framework (RDF) = express statements as triples in the form of subject-predicate-object
 rotation = swapping crypto around cycles, ex. BTC-to-ETH
 scalability
 scalability -- transactions per second
-scam -- wash trading = artificially inflating volume https://bitfinexed.medium.com/wash-trading-bitcoin-how-bitfinex-benefits-from-fraudulent-trading-8bd66be73215
 scams -- pig butchering = people are lured by flirtatious strangers online into investing in fraudulent cryptocurrency trading platforms. Victims are coached to invest more and more money into what appears to be an extremely profitable trading platform, only to find their money is gone when they wish to cash out. https://yro.slashdot.org/story/25/05/30/2151248/us-sanctions-cloud-provider-funnull-as-top-source-of-pig-butchering-scams
 scams -- pyramid scheme
 scams -- rug-pull = disappear after cashing early success
+scams -- wash trading = artificially inflating volume https://bitfinexed.medium.com/wash-trading-bitcoin-how-bitfinex-benefits-from-fraudulent-trading-8bd66be73215
 seed phrase
 silk road / Ross Ulbricht
-smart contract -- auditing = https://iosiro.com/services/smart-contract-auditing
+smart contracts -- auditing = https://iosiro.com/services/smart-contract-auditing
 smart contracts -- bug = ex. of loss of everything
 smart contracts = self-implementing contracts with predefined rules written in code. They automatically enforce the terms of the agreement when certain conditions are met. For example, if a contract says that ownership of an item transfers to whoever pays for it, you simply send the asking price to that contract. The ledger then automatically updates by using a transaction in the next block to reflect you as the new owner.
 Solana
@@ -145,12 +146,14 @@ solutions -- Amazon Managed Blockchain (AMB) = https://aws.amazon.com/managed-bl
 solutions -- Cloudflare -- Ethereum gateway https://developers.cloudflare.com/web3/ethereum-gateway/
 solutions -- Cloudflare -- IFPS
 Sonic
-SPARQL = query language for querying RDF data
 spirit -- "Ignoring sensible advice is what we do in crypto"
 spot
 staking
+staking -- active / passive / pooled / delegated / active / liquid https://www.britannica.com/money/what-is-crypto-staking
 staking -- chain-agnostic
 swidge
+swidge
+swidge -- provider
 Synthetix
 tokenization = process of representing real-world or digital assets as digital tokens on a blockchain
 tokens
@@ -161,7 +164,6 @@ tokens = cryptographic representations of ownership, access rights, or other for
 Unichain
 unstable coins https://cointelegraph.com/magazine/unstable-coins-de-pegging-bank-runs-other-risks-2023/
 vault
-virtual currencies -- Bitcoin
 wallet
 wallet -- coinbase https://www.coinbase.com/en-au/wallet/smart-wallet
 wallet -- cross-chain

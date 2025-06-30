@@ -1,13 +1,42 @@
+[ ] https://en.wikipedia.org/wiki/Portal:Money
+accounting system
 applicable laws and regulations
+asset
+asset -- seizure
 banking
+banking -- reserve -- fractional / full https://en.wikipedia.org/wiki/Fractional-reserve_banking
+banking -- reserve -- requirement (legal)
+banknote
+bond https://en.wikipedia.org/wiki/Bond_(finance)
 borrowing
 central bank
+coin
+coinage -- free = bring gold / silver and have it minted for free or low fee
+coinage acts = ex. https://en.wikipedia.org/wiki/Coinage_Act_of_1857
+commodity = tradeable object. Any thing necessary, useful or pleasant in life, an object of human wants, a means of existence in the widest sense of the term (Marx)
+currencies -- virtual -- Bitcoin
+currency -- alternative = ex. https://en.wikipedia.org/wiki/Goldback
+currency -- code USD AUD EUR
 currency -- collapse = ex. hyperinflation
+currency -- debasement
 currency -- digital
+currency -- fiat = government-issued currency, authorized by government regulation to be legal tender https://en.wikipedia.org/wiki/Fiat_money
+currency -- issuer vs holder
+currency -- local https://en.wikipedia.org/wiki/Local_currency
+currency -- manipulation = usually debasement, impopular
 currency -- physical
+currency -- private = ex. https://en.wikipedia.org/wiki/Liberty_dollar_(private_currency)
+currency -- right to issue
+currency -- sign $ €
+currency -- standard = sub standard / high standard = less (weak) / more value (strong)
+currency = a system of money in common use within a specific environment over time, especially for people in a nation state https://en.wikipedia.org/wiki/Currency
 due diligence
 economic hardship
 economic order
+economics -- ecological ex. https://en.wikipedia.org/wiki/Ithaca_Hours
+economics -- ecological https://en.wikipedia.org/wiki/Ecological_economics
+economics https://en.wikipedia.org/wiki/Economics
+equity
 exchange
 finance -- Benjamin Franklin's The Way to Wealth = 85 maxims https://www.artofmanliness.com/career-wealth/wealth/money-and-career-advice-from-benjamin-franklins-way-to-wealth/
 finance -- buy now pay later (BNPL)
@@ -24,21 +53,54 @@ financial -- incapacitation -- political repression -- "designated person" https
 financial -- incapacitation -- political repression -- 2022 Canada Trudeau https://www.cato.org/blog/canadian-court-trudeaus-use-emergency-powers-crush-protests-was-illegal
 financial -- institutions -- trusted / corrupt
 financial -- privacy
+financial -- repression = policies that result in savers earning returns below the rate of inflation https://en.wikipedia.org/wiki/Financial_repression
 financial -- security
+financial -- system -- decentralized (DeFi)
+financial -- system -- global
 financially (il)literate = https://www.smh.com.au/business/the-economy/our-financial-literacy-crisis-can-you-answer-these-5-money-questions-20230109-p5cb6c.html
 funding -- quadratic
 funding -- stock exchange
-inflation
+government -- budget deficit
+government -- fiscal austerity
+government -- high public spending
+government confiscation = forced to give precious metal
+inflation -- greedflation = mainly companies using inflation as a pretext to increase prices = increasing margin & profit https://en.wikipedia.org/wiki/Greedflation
+inflation -- hedge https://en.wikipedia.org/wiki/Inflation_hedge
+inflation -- shrinkflation
+inflation -- unwanted = ex. 2002 https://en.wikipedia.org/wiki/2021%E2%80%932023_inflation_surge
+inflation -- wanted = usually >= 2% https://en.wikipedia.org/wiki/Pound_sterling#Annual_inflation_rate
+inflation / deflation / hyperinflation
 institution
+instrument = https://en.wikipedia.org/wiki/Legal_instrument
 insurance
+interest rate
 KYC
 laws
 ledger
+legal tender
 lending
+macro/micro
+microfoundations = an effort to understand macroeconomic phenomena in terms of individual agents' economic behavior and interactions https://en.wikipedia.org/wiki/Microfoundations
 middleman
+money
+money -- supply
 money laundering
+payment
 pouvoir d'achat
 poverty -- Sherman Alexie = It sucks to be poor, and it sucks to feel that you somehow deserve to be poor. You start believing that you're poor because you're stupid and ugly. And then you start believing that you're stupid and ugly because you're Indian. And because you're Indian you start believing you're destined to be poor. It's an ugly circle and there's nothing you can do about it. Poverty doesn't give you strength or teach you lessons about perseverance. No, poverty only teaches you how to be poor.
+private extortion of debt, labour and waste
+purchasing power https://en.wikipedia.org/wiki/Purchasing_power
+recession
 saving
+scrip = pseudo legal tender ~exploitative payment of employees ex. company scrip / https://en.wikipedia.org/wiki/Truck_wages
+security
+shares
+stock = all the shares https://en.wikipedia.org/wiki/Stock
+stock market
+stock market -- crash = https://en.wikipedia.org/wiki/Stock_market_crash
 value
-value -- store of value
+value -- created internally = ex. fiat money since no backing value
+value -- intrinsic = calculated with regard to an inherent, objective measure https://en.wikipedia.org/wiki/Intrinsic_value_(finance)
+value -- perceived
+value -- store of value = keep value despite inflation etc. ex. gold or house or bitcoin (maybe) https://en.wikipedia.org/wiki/Store_of_value
+value -- use = tangible features of a commodity (a tradeable object) which can satisfy some human requirement, want or need, or which serves a useful purpose https://en.wikipedia.org/wiki/Use_value

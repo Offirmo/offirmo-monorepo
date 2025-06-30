@@ -1,6 +1,5 @@
 /* For documentation only.
- * Obviously this doesn't cause a real additional safety
- * see also: zod
+ * Obviously, this doesn't cause real additional safety
  */
 
 export type Integer = number

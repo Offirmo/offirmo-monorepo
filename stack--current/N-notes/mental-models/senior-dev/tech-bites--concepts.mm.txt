@@ -321,6 +321,7 @@ development containers https://containers.dev/implementors/spec/
 DevEx
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 DevOps Research and Assessment (DORA) = how we should develop our software right and what numbers we should show to our managers to make them happy https://medium.com/booking-com-development/a-step-by-step-guide-on-how-not-to-implement-dora-metrics-85081f0d4484
+discriminated union = a special kind of union in which a) all the options are object schemas that b) share a particular key (the "discriminator"). Based on the value of the discriminator key, the language is able to "narrow" the type signature as you'd expect.
 DNS (Domain Name System)
 do what I mean (DWIM) = computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
 dogfooding = practice of a company using its own products or services internally as a way to test, evaluate, and improve them. Essentially, the company's employees become the primary users of their own products.
@@ -359,6 +360,7 @@ encoding -- binary-to-text https://en.wikipedia.org/wiki/Binary-to-text_encoding
 engineer's notions of simplicity, economies of scale, and design integrity https://en.wikipedia.org/wiki/Planned_obsolescence#History
 entitlements -- non-standard offerings or commercial terms to meet their needs through high touch sales motions. High touch Sales teams work closely with our customers to understand their solution needs and buying preferences like Multi-year billed annual, ELAs, Ramp discounts. There is a significant volume of customers and revenue from such deals
 epochs: a backward-compatible language evolution mechanism https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1881r0.html
+error -- failure type – open / close = open = allow, close = deny, best choice depends on context https://community.opentext.com/cybersec/b/cybersecurity-blog/posts/security-fundamentals-part-1-fail-open-vs-fail-closed
 error -- handling -- exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
 error -- handling -- fail fast = Check input and fail on nonsensical input or invalid state as early as possible, preferably with an exception or error response that will make the exact problem clear to your caller https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 error -- handling -- fail fast and loudly
@@ -426,6 +428,7 @@ hallway usability testing https://en.wikipedia.org/wiki/Usability_testing#Hallwa
 handle
 hashbang (aka. shebang) https://github.com/tc39/proposal-hashbang
 helping -- XY problem = wrongly asking about your attempted solution rather than your actual problem https://xyproblem.info/
+historically bad ideas https://qconlondon.com/london-2009/qconlondon.com/london-2009/tracks/show_trackd04f.html?trackOID=232
 Hofstadter's Law = It always takes longer than you expect, even when you take into account Hofstadter's Law https://en.wikipedia.org/wiki/Hofstadter's_law
 hoisting des vars de boucle for et switch
 homoiconicity https://en.wikipedia.org/wiki/Homoiconicity
@@ -725,12 +728,14 @@ RAM
 ratcheting https://robertgreiner.com/continuous-code-improvement-using-ratcheting/ https://leaddev.com/building-better-software/introducing-quality-ratchets-tool-managing-complex-systems
 rate limiting
 rate limiting -- cost based
+RDF -- SPARQL = query language for querying RDF data
 React
 reactive programming
 recursion
 red / blue deployment -- compatibility window = period, measured either in elapsed time or number of releases, where all versions of a component released during this window must be compatible with all components of the current version, and vice versa.
 regex - 2x problems = Some people, when confronted with a problem, think “I know, I'll use regular expressions.” Now they have two problems. https://regex.info/blog/2006-09-15/247
 regex https://regexlearn.com/
+regex – email https://colinhacks.com/essays/reasonable-email-regex
 register
 release channels = offer a trade-off between feature availability and stability https://support.google.com/chrome/a/answer/9027636?hl=en https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels
 release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-10-insider-program-from-rings-to-release-channels/
@@ -739,6 +744,7 @@ resource -- deletion -- soft = marking a resource as unavailable, rather than re
 resource -- deletion -- undelete = Undeleting shouldn’t be triggered by users, but instead by trusted entities such as support, security
 resource -- subresource = delete them with parent
 resource -- trash can + untrashing = known feature, different from soft deletion
+Resource Description Framework (RDF) = express statements as triples in the form of subject-predicate-object
 REST (REpresentational State Transfer)
 REST HTTP = How to GET a Cup of Coffee https://www.infoq.com/articles/webber-rest-workflow/
 Reverse Polish Notation
