@@ -1,8 +1,17 @@
+? corepack / pnpm ? https://blog.hyperknot.com/p/corepacks-packagemanager-field https://www.reddit.com/r/node/comments/1hw1iyh/the_curious_case_of_the_packagemanager_field_in/
+APS → openapi → openapi trpc / hono ??
+auth -- ? https://www.propelauth.com/
 CI/CD -- ? https://mergify.com/
 cloud -- Cloudflare
+ecosystem -- sdk ?https://liblab.com/ https://www.speakeasy.com/
 frontend -- CSS -- framework -- ? tailwind https://tailwindcss.com/docs https://github.com/dcastil/tailwind-merge https://tremor.so/
 frontend -- CSS-in-js -- ? https://github.com/vercel/styled-jsx
 frontend -- React
+JavaScript -- TypeScript -- https://openapi-ts.dev/
+JavaScript -- TypeScript -- tRPC https://trpc.io/docs/getting-started
+JavaScript -- TypeScript -- zod
+JavaScript -- TypeScript -- zod -- ? alternatives https://valibot.dev/guides/comparison/
+JavaScript -- TypeScript ✅
 just https://just.systems/man/en/further-ramblings.html
 linter -- eslint
 linter -- https://biomejs.dev/
@@ -12,12 +21,8 @@ monorepo -- ? yarn workspaces
 next.js https://nextjs.org/docs
 pkg manager -- pnpm
 pkg manager -- ✖ npm
-typescript
-vite
-vitest
-yalc
-zod
-✖ xml
-ecosystem -- sdk ?https://liblab.com/ https://www.speakeasy.com/
-auth -- ? https://www.propelauth.com/
 secrets management -- ? https://infisical.com/
+vite -- vitest
+vite ✅
+yalc
+✖ xml

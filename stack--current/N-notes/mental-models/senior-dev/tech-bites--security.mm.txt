@@ -83,6 +83,7 @@ secure data at rest
 security posture = overall cybersecurity strength and readiness of an organization, ability to recognize threats and your readiness to mitigate them or recover from an attack
 Server Side Request Forgery (SSRF) -- defense -- outbound proxy
 Server Side Request Forgery (SSRF) = attacker to send a crafted request from a vulnerable server to an arbitrary destination. The attack can be used to bypass security restrictions and access internal systems and network resources that are not intended to be publicly accessible.
+shift left = earlier security
 spectre = class of attacks https://www.cloudflare.com/en-au/learning/security/threats/meltdown-spectre/
 threat modelling
 through obscurity -- ok if not only https://security.stackexchange.com/questions/32064/at-what-point-does-something-count-as-security-through-obscurity

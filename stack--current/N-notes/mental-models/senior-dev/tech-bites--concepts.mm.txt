@@ -42,6 +42,7 @@ access control -- discretionary https://en.wikipedia.org/wiki/Discretionary_acce
 access control -- mandatory https://en.wikipedia.org/wiki/Mandatory_access_control
 access control -- role-based (RBAC)
 actually portable executables https://justine.lol/ape.html
+adapters = specific to sth non-standard
 allocation
 annotation
 anomaly detection
@@ -62,6 +63,10 @@ API -- dev solution -- https://mockapi.io/
 API -- dev solution -- https://reqres.in/
 API -- easy to build one, hard to build the **right** one
 API -- economy = the depth and breadth of APIs that are available for developers to use in the current landscape.
+API -- endpoint type -- mutation = creates, updates, or deletes some data
+API -- endpoint types -- query = gets some data
+API -- endpoint types -- query, mutation, or subscription https://trpc.io/docs/concepts#vocabulary
+API -- endpoint types -- subscription = creates a persistent connection and listens to changes
 API -- enums over booleans https://www.teamten.com/lawrence/programming/prefer-enums-over-booleans.html
 API -- external-facing = are where "design up front" and consideration about future use cases really matters. Changing APIs is a pain for us and for our users, and creating backwards incompatibility is horrible (although sometimes impossible to avoid). https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 API -- features should be small, atomic and composable.
@@ -395,6 +400,9 @@ flushing
 flux architecture
 format -- container format https://en.wikipedia.org/wiki/Resource_Interchange_File_Format
 framework -- "a new framework a day"
+framework -- motivations -- avoiding duplication = BUT premature abstraction
+framework -- motivations -- don't like the language ex. Java style on Javascript
+framework -- motivations -- underlying complexities = BUT may not be still there
 FTU – First Time Use
 function
 function -- 1st-class object
@@ -647,6 +655,7 @@ ORM https://github.com/typeorm/typeorm
 orthogonality https://en.wikipedia.org/wiki/Orthogonality_(programming)
 overengineering https://blog.matt-rickard.com/p/stop-overengineering
 ownership
+ownership -- CODEOWNERS
 ownership -- if you build it, you own it
 ownership -- shift left = lower levels own
 pair-programming
@@ -708,6 +717,7 @@ programming paradigm -- imperative programming
 programming paradigm -- object oriented
 programming paradigm -- reactive
 promises -- deferred
+promises -- pipelining https://capnproto.org/rpc.html
 prompt
 protocol buffers (protobuf) => see data interchange format
 prototypes
@@ -756,7 +766,10 @@ robustness -- principle (beware bad effects) https://en.wikipedia.org/wiki/Robus
 robustness https://en.wikipedia.org/wiki/Robustness_principle
 rollback
 rolling deploy
+RPC -- advocacy https://blog.cloudflare.com/javascript-native-rpc/
 rpc -- deadline https://protobuf.dev/programming-guides/api/
+RPC -- solution -- protocol = ex. https://capnproto.org/rpc.html
+RPC -- solution -- TS https://trpc.io/docs/concepts intro https://colinhacks.com/essays/painless-typesafety
 rule of composition https://www.linfo.org/rule_of_composition.html
 rule of silence https://www.linfo.org/rule_of_silence.html
 Rust -- TRACTOR "Translating All C to Rust"
@@ -777,7 +790,9 @@ semaphore
 semver
 semver -- advanced example https://react.dev/community/versioning-policy (see also TS)
 semver -- alternatives -- compatibility dates = https://developers.cloudflare.com/workers/configuration/compatibility-dates/
+semver -- loose vs strict = "spirit of semver" https://www.learningtypescript.com/articles/why-typescript-doesnt-follow-strict-semantic-versioning https://news.ycombinator.com/item?id=24224975
 semver -- major -> minor -> patch
+semver -- not an obligation!
 semver -- preparing a major with a subpath https://github.com/colinhacks/zod/issues/4371
 SHA (Secure Hash Algorithm)
 shaving the yak
@@ -902,6 +917,7 @@ types -- subtyping -- preconditions = cannot be strengthened in the subtype
 types -- subtyping https://en.wikipedia.org/wiki/Liskov_substitution_principle
 types -- systems -- "modern" https://reasonablypolymorphic.com/blog/protos-are-wrong/
 types -- systems -- role -- (disputable pre-semver citation!) the main challenge in real-world software engineering is not writing code but changing code once it is written and deployed. In general, type systems can be both helpful and harmful when it comes to changing code -- type systems are invaluable for detecting problems introduced by a change, but an overly-rigid type system can be a hindrance if it means common types of changes are difficult to make. https://news.ycombinator.com/item?id=18188519
+typescript -- performance https://trpc.io/blog/typescript-performance-lessons
 typography -- quotes https://smartquotesforsmartpeople.com/
 UI layout algorithms https://www.youtube.com/watch?v=by9lQvpvMIc
 uid -- use strings = "2^64 isn’t as big as it used to be" https://protobuf.dev/programming-guides/api/
@@ -924,6 +940,7 @@ use strict
 User Generated Content (UGC)
 UX (User Experience)
 validate everything
+validation = "Does this input data contain the right stuff?" see zod
 vaporware
 variables pointer / natives
 vendoring https://htmx.org/essays/vendoring/
