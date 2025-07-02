@@ -4,6 +4,7 @@ auth -- ? https://www.propelauth.com/
 CI/CD -- ? https://mergify.com/
 cloud -- Cloudflare
 ecosystem -- sdk ?https://liblab.com/ https://www.speakeasy.com/
+feature flags
 frontend -- CSS -- framework -- ? tailwind https://tailwindcss.com/docs https://github.com/dcastil/tailwind-merge https://tremor.so/
 frontend -- CSS-in-js -- ? https://github.com/vercel/styled-jsx
 frontend -- React
@@ -15,14 +16,19 @@ JavaScript -- TypeScript ✅
 just https://just.systems/man/en/further-ramblings.html
 linter -- eslint
 linter -- https://biomejs.dev/
+microfrontends
 monorepo -- ? bolt
 monorepo -- ? turborepo
 monorepo -- ? yarn workspaces
+nanoservices
 next.js https://nextjs.org/docs
 pkg manager -- pnpm
 pkg manager -- ✖ npm
+React -- https://reactrouter.com/home ?
 secrets management -- ? https://infisical.com/
+transactional emails https://react.email/
 vite -- vitest
 vite ✅
+wire protocol https://capnproto.org/l ?
 yalc
 ✖ xml

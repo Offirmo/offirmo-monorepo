@@ -205,9 +205,11 @@ conformism -- test = do you have any opinions that you would be reluctant to exp
 conformism = https://paulgraham.com/conformism.html
 constructive confrontation -- spot threats/issues/problems, debate aggressively, make bold moves before competitors/enemies
 contempt
-content moderation
-content rating -- "Common Sense" Media (private org) https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings
-content rating -- Hays code https://en.wikipedia.org/wiki/Hays_Code
+content -- creators
+content -- independence https://blog.cloudflare.com/content-independence-day-no-ai-crawl-without-compensation/
+content -- moderation
+content -- rating -- "Common Sense" Media (private org) https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings
+content -- rating -- Hays code https://en.wikipedia.org/wiki/Hays_Code
 continuity of government (COG) = establishing defined procedures that allow a government to continue its essential operations in case of a catastrophic event such as nuclear war https://en.wikipedia.org/wiki/Continuity_of_government
 convex output = look for opportunities with big upsides and low downsides. In addition to increased optionality, your errors will benefit you more than they harm you. Convex payoffs let you tinker your way to success and innovation.
 convex output = the smartest people can be an order of magnitude more productive than others who are only somewhat less smart https://www.8vc.com/resources/lessons-from-peter-thiel
@@ -237,7 +239,7 @@ critical thinking +++  https://strategyu.co/critical-thinking/
 cronyism = specific form of in-group favoritism = spoils system practice of partiality in awarding jobs and other advantages to friends or trusted colleagues, especially in politics and between politicians and supportive organizations https://en.wikipedia.org/wiki/Cronyism
 crucial conversations
 crème solaire vs brossage de dents
-cultural hegemony https://en.wikipedia.org/wiki/Cultural_hegemony https://en.wikipedia.org/wiki/Power_(social_and_political)#Cultural_hegemony
+culture -- cultural hegemony https://en.wikipedia.org/wiki/Cultural_hegemony https://en.wikipedia.org/wiki/Power_(social_and_political)#Cultural_hegemony
 culture -- differences -- https://www.youtube.com/watch?v=vi8pyS076a8
 culture -- Hofstede’s Dimensions http://www.na-businesspress.com/ajm/bergieleb_web12_1_.pdf
 culture -- taijin kyofusho = specific type of social anxiety, occurring primarily in Japanese culture, is called taijin kyofusho. Taijin kyofusho is characterized by an intense fear that one's body parts or functions displease, embarrass or are offensive to others. https://pubmed.ncbi.nlm.nih.gov/21911434/

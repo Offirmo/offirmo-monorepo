@@ -222,6 +222,7 @@ considered harmful -- clever code https://www.joshwcomeau.com/career/clever-code
 considered harmful -- NODE_ENV
 consistency = lack of consistency is the primary long-term killer of large codebases, because it makes it impossible to make any general improvements https://www.seangoedecke.com/large-established-codebases/
 constructor
+containers -- podman https://docs.podman.io/en/latest/Introduction.html
 content age rating -- "Common Sense" Media (private org) https://www.commonsensemedia.org/about-us/our-mission/about-our-ratings
 content age rating -- culture = Different cultures have different standards for what is age-appropriate: some find graphic violence more acceptable than nudity, and some vice versa.
 content age rating -- G (General) = aka Safe for School, Appropriate for ages 13+
@@ -403,6 +404,7 @@ framework -- "a new framework a day"
 framework -- motivations -- avoiding duplication = BUT premature abstraction
 framework -- motivations -- don't like the language ex. Java style on Javascript
 framework -- motivations -- underlying complexities = BUT may not be still there
+framework -- spectrum = spectrum of more features v. loss of architectural control https://reactrouter.com/start/modes
 FTU – First Time Use
 function
 function -- 1st-class object
@@ -749,6 +751,7 @@ regex – email https://colinhacks.com/essays/reasonable-email-regex
 register
 release channels = offer a trade-off between feature availability and stability https://support.google.com/chrome/a/answer/9027636?hl=en https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels
 release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-10-insider-program-from-rings-to-release-channels/
+release phases = alpha → beta → private beta → limited beta → public beta → general availability → deprecated → sunset https://vercel.com/docs/release-phases
 resource -- deletion -- hard
 resource -- deletion -- soft = marking a resource as unavailable, rather than removing it from the datasource completely. Such resources will be said to be soft deleted and should be deleted at a later date. Allow easier restoration in case of an error/attack = undelete
 resource -- deletion -- undelete = Undeleting shouldn’t be triggered by users, but instead by trusted entities such as support, security

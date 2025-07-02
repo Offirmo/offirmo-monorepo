@@ -1,13 +1,16 @@
 [ ] https://techcrunch.com/2025/01/31/techcrunch-reference-guide-to-security-terminology/
+account takeover (ATO) https://www.kasada.io/use-cases/account-takeover/
 authentication
 authorisation
 bad defaults -- firebase https://env.fail/posts/firewreck-1
 buffer overflows and how to protect against them
 cache poisoning https://en.wikipedia.org/wiki/Cache_poisoning
 Capture The Flag (CTF) competitions = hacking contests consisting of challenges in categories such as web security, cryptography, reverse engineering, exploitation which are open to everyone
+checkout fraud = scalpers https://www.kasada.io/use-cases/checkout-fraud/
 CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-benchmarks
 cloud -- Cloudbleed https://en.m.wikipedia.org/wiki/Cloudbleed
 compartmentalize - so your system is not all or nothing
+content scrapping = can be anti-competitive https://www.kasada.io/use-cases/content-scraping/
 Content security policy (CSP) https://web.dev/articles/csp
 credential stuffing https://owasp.org/www-community/attacks/Credential_stuffing
 Cross Site Scripting (XSS) -- defense = escaping
@@ -21,9 +24,11 @@ crypto -- don't write your own
 crypto -- using crypto doesn't mean you're secure (attackers will look for a weaker link)
 defence -- Primary / Secondary / Tertiary
 defense in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
+denial of wallet = like DoS but service down due to no more credits https://www.kasada.io/use-cases/genai-abuse-73-percent-have-experienced-genai-security-incidents/
 dependency chain abuse = supply chain attack https://www.paloaltonetworks.com.au/cyberpedia/dependency-chain-abuse-cicd-sec3
 device posture
 encryption of stored data
+fake account creation = to harm https://www.kasada.io/use-cases/fake-account-creation/
 FIDO Alliance
 File Path (Directory) Traversal
 filtering = to pass input data through a logic that will hold parts of input that match a certain criteria and let other input pass through as is. The filter logic then makes a specific decision on the data that is in hold - possibly discarding it or transforming it.

@@ -4,6 +4,7 @@
 2024-09 fundraising https://cointelegraph.com/news/patronage-model-fix-crypto-fundraising-says-kain-warwick
 2025-05 SEC abandon crypto regulation https://yro.slashdot.org/story/25/05/29/2155215/sec-voluntarily-dismisses-lawsuit-against-binance
 2025-05 USA strategic reserve https://news.slashdot.org/story/25/05/31/0636246/whats-in-the-us-governments-new-strategic-reserve-of-seized-crytocurrencies
+51% attack = attack where a group gains control of the majority of nodes = allow them to defraud the blockchain by reversing transactions and double spending https://ethereum.org/en/glossary/#51%-attack
 [ ] criticism https://bitfinexed.medium.com/
 [ ] endgame https://vitalik.eth.limo/general/2021/12/06/endgame.html
 [ ] Gitcoin https://grants.gitcoin.co/
@@ -11,12 +12,14 @@
 [ ] https://vitalik.eth.limo/
 Airdrop
 Arbitrum
+assets -- top https://www.coingecko.com/
 bag check
 Bankman-Fried
 Base
 Berachain
 Bitcoin = the first decentralized cryptocurrency https://en.wikipedia.org/wiki/Bitcoin
 Blast
+block -- genesis = The first block in a blockchain, used to initialize a particular network and its cryptocurrency https://ethereum.org/en/glossary/#genesis-block
 blockchain -- transaction -- step 1 – Record the transaction
 blockchain -- transaction -- step 2 – Gain consensus = Most participants on the distributed blockchain network must agree that the recorded transaction is valid. Depending on the type of network, rules of agreement can vary but are typically established at the start of the network.
 blockchain -- transaction -- step 3 – Link the blocks = Once the participants have reached a consensus, transactions on the blockchain are written into blocks equivalent to the pages of a ledger book. Along with the transactions, a cryptographic hash is also appended to the new block. The hash acts as a chain that links the blocks together. If the contents of the block are intentionally or unintentionally modified, the hash value changes, providing a way to detect data tampering. Thus, the blocks and chains link securely, and you cannot edit them. Each additional block strengthens the verification of the previous block and therefore the entire blockchain. This is like stacking wooden blocks to make a tower. You can only stack blocks on top, and if you remove a block from the middle of the tower, the whole tower breaks.
@@ -45,6 +48,7 @@ cryptocurrency
 cryptocurrency exchange
 cryptokitties
 culture
+dapp -- stores https://dappradar.com/
 decentralization -- metric -- insider attack test = if your team itself tries to attack the system, how much will break, and how much harm could you do?
 decentralization -- metric -- the walkaway test = if your team and servers disappear tomorrow, will your application still be usable?
 decentralization avoiding points of trust, minimizing censorship vulnerabilities, and minimizing centralized infrastructure dependency. The natural metrics are
@@ -122,10 +126,12 @@ open source -- benefits -- reducing the risk of proprietary lockin
 open standards -- striving for interoperability. If you want to introduce a new feature that is not well-served by existing standards, write a new proposal in collaboration with others. Applications can be rated by which proposals they are compatible with.
 Optimism
 passkey
-perp
+perps = perpetual futures
 Polygon
 porn https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
 price oracles = pricing of some resource
+proof-of-stake
+proof-of-work
 public key cryptography
 read/write/own paradigm = data creators own and control their own data and have a greater say in how it is used and managed
 rotation = swapping crypto around cycles, ex. BTC-to-ETH
@@ -151,9 +157,11 @@ spot
 staking
 staking -- active / passive / pooled / delegated / active / liquid https://www.britannica.com/money/what-is-crypto-staking
 staking -- chain-agnostic
+staking = https://www.britannica.com/money/what-is-crypto-staking https://www.coinbase.com/en-au/learn/crypto-basics/what-is-staking https://www.bitpanda.com/academy/en/lessons/what-is-staking/
 swidge
 swidge
 swidge -- provider
+swidge = "swap and bridge" https://support.infinex.xyz/en/articles/10336734-how-to-swidge https://terablock.com/swidge
 Synthetix
 tokenization = process of representing real-world or digital assets as digital tokens on a blockchain
 tokens
@@ -161,6 +169,7 @@ tokens -- standards
 tokens -- tainted = can be differentiated = less fungible
 tokens -- tokenomics
 tokens = cryptographic representations of ownership, access rights, or other forms of value. Ex. physical and digital assets like real estate, stocks, commodities, art, music, and even in-game items
+tokens = deprecated terminology in favor of "assets"
 Unichain
 unstable coins https://cointelegraph.com/magazine/unstable-coins-de-pegging-bank-runs-other-risks-2023/
 vault
