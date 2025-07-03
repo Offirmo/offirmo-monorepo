@@ -9,6 +9,7 @@ banking -- reserve -- requirement (legal)
 banknote
 bond https://en.wikipedia.org/wiki/Bond_(finance)
 borrowing
+bull/bear = https://www.coinbase.com/en-au/learn/crypto-basics/what-is-a-bull-or-bear-market
 central bank
 coin
 coinage -- free = bring gold / silver and have it minted for free or low fee
@@ -80,6 +81,7 @@ ledger
 legal tender
 lending
 macro/micro
+market making
 microfoundations = an effort to understand macroeconomic phenomena in terms of individual agents' economic behavior and interactions https://en.wikipedia.org/wiki/Microfoundations
 middleman
 money

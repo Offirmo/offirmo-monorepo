@@ -4,7 +4,9 @@ authentication
 authorisation
 bad defaults -- firebase https://env.fail/posts/firewreck-1
 buffer overflows and how to protect against them
+BULLRUN (decryption program)  clandestine, highly classified program to crack encryption of online communications and data, which is run by the United States National Security Agency (NSA) https://en.wikipedia.org/wiki/Bullrun_(decryption_program)
 cache poisoning https://en.wikipedia.org/wiki/Cache_poisoning
+canary -- tokens = https://canarytokens.org/
 Capture The Flag (CTF) competitions = hacking contests consisting of challenges in categories such as web security, cryptography, reverse engineering, exploitation which are open to everyone
 checkout fraud = scalpers https://www.kasada.io/use-cases/checkout-fraud/
 CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-benchmarks

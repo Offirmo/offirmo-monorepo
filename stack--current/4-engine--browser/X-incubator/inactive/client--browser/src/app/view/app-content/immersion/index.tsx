@@ -48,7 +48,7 @@ function Immersion(props: Props) {
 		// TODO reproduce the algorithm of bg position...
 		// https://developer.mozilla.org/en-US/docs/Web/CSS/background-position
 
-		// first are we sliding horizontally or vertically?
+		// first, are we sliding horizontally or vertically?
 		const bg_ratio = bg.width / bg.height
 		const view_ratio = width / height
 		const is_wider = bg_ratio > view_ratio

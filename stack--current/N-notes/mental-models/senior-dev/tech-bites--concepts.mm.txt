@@ -377,6 +377,7 @@ error -- type -- runtime error = errors that can only be detected during runtime
 error = failure = inability of a function to return a valid result, instead producing an error object describing the reason for the failure https://boostorg.github.io/leaf/#tutorial
 ETL “extract, transform, load” = the three interdependent processes of data integration used to pull data from one database and move it to another
 event loop
+every rule is born from blood
 evolution -- "that's the old way and it sucks, do it this way now..."
 evolution -- I'm old and I yell at clouds
 evolution -- nothing ages faster than a (UI) framework
@@ -419,6 +420,7 @@ general dependency injection and inversion of control problem
 git
 global variable
 God object https://en.wikipedia.org/wiki/God_object
+good to great = real expert at a tech (cf. T-shaped)
 graph
 GRASP (object-oriented design) = General Responsibility Assignment Software Patterns = nine fundamental principles in object design and responsibility assignment https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)
 GRASP -- 1 Information expert = Assign responsibility to the class that has the information needed to fulfill it
@@ -617,6 +619,7 @@ naming -- should be precise
 naming -- should be purposeful
 naming -- should be short and simple
 naming https://ntietz.com/blog/when-to-use-cute-names-or-descriptive-names/
+network -- autonomous system (AS) = very large network or group of networks with a single routing policy https://www.cloudflare.com/learning/network-layer/what-is-an-autonomous-system/
 no silver bullet in engineering = we cannot expect ever to see two-fold gains every two years https://en.wikipedia.org/wiki/No_Silver_Bullet
 node.js -- principles https://www.platformatichq.com/node-principles
 not invented here https://en.wikipedia.org/wiki/Not_invented_here
@@ -752,6 +755,7 @@ register
 release channels = offer a trade-off between feature availability and stability https://support.google.com/chrome/a/answer/9027636?hl=en https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels
 release channels https://techcrunch.com/2020/06/15/microsoft-moves-its-windows-10-insider-program-from-rings-to-release-channels/
 release phases = alpha → beta → private beta → limited beta → public beta → general availability → deprecated → sunset https://vercel.com/docs/release-phases
+Religious application of principles learned from a presentation attended at an industry tradeshow is not a substitute for common sense.
 resource -- deletion -- hard
 resource -- deletion -- soft = marking a resource as unavailable, rather than removing it from the datasource completely. Such resources will be said to be soft deleted and should be deleted at a later date. Allow easier restoration in case of an error/attack = undelete
 resource -- deletion -- undelete = Undeleting shouldn’t be triggered by users, but instead by trusted entities such as support, security

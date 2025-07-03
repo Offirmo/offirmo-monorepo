@@ -27,6 +27,7 @@ https://www.famillechretienne.fr/40361/article/remi-brague-nous-voyons-lislam-av
 intrinsic motivation comes from working in an environment where Autonomy, Mastery and Purpose can flourish.
 loi du talion
 military tactics https://civilization.fandom.com/wiki/Military_Tactics_(Civ6)
+numeral system https://en.wikipedia.org/wiki/Positional_notation
 pollution -- 12xx https://en.wikipedia.org/wiki/Pea_soup_fog
 ransom
 slavery
@@ -34,3 +35,4 @@ surproduction d'élite https://pierre-yves-gomez.fr/trop-delite-tue-lelite/
 violence
 war -- https://en.wikipedia.org/wiki/Irredentism
 war -- https://en.wikipedia.org/wiki/July_Crisis
+weights and measures https://en.wikipedia.org/wiki/Apothecaries%27_system

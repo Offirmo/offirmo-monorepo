@@ -3,6 +3,7 @@ APS → openapi → openapi trpc / hono ??
 auth -- ? https://www.propelauth.com/
 CI/CD -- ? https://mergify.com/
 cloud -- Cloudflare
+designed for Cloudflare/Vercel -- https://upstash.com/
 ecosystem -- sdk ?https://liblab.com/ https://www.speakeasy.com/
 feature flags
 frontend -- CSS -- framework -- ? tailwind https://tailwindcss.com/docs https://github.com/dcastil/tailwind-merge https://tremor.so/

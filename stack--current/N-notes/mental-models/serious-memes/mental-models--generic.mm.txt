@@ -105,6 +105,7 @@ best time to plant a tree = was 20 years ago. The second best time is now
 bet you’re fun at parties
 better ask for forgiveness than for permission
 better safe than sorry
+better to have sth to hate than nothing at all
 biases -- attractiveness
 biases -- baby-face
 biases -- Benjamin Franklin effect = ppl like a person more after doing a favor to them
@@ -352,6 +353,7 @@ equity
 eternal september https://en.wikipedia.org/wiki/Eternal_September
 euthanasia https://aleteia.org/2024/09/02/new-australian-study-challenges-the-rise-of-euthanasia
 every occupation has its pro/cons
+every rule is born from blood
 every time you step in, you rob your team of the lessons they need to grow https://www.linkedin.com/posts/tahahussain_at-microsoft-a-junior-engineer-spent-3-days-activity-7291493025334149120-MjEo
 everything must be paid for twice https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/
 evidence based
@@ -436,6 +438,7 @@ good > correct? = "bien trouvé"
 good life questions https://radreads.co/10k-questions/
 good neighbor https://en.wikipedia.org/wiki/Good_Neighbor_policy
 good taste https://paulgraham.com/goodtaste.html
+good to great
 Goodhart's law = When a measure becomes a target, it ceases to be a good measure https://en.wikipedia.org/wiki/Goodhart%27s_law
 Goodhart’s Law -- example: One hospital took too long to admit patients so a penalty was given for 4+ hour wait times. In response, ambulance drivers were asked to slow down so they could shorten wait times.
 Gospel of Wealth -- Help those who will help themselves, to provide part of the means by which those who desire to improve may do so
@@ -489,6 +492,7 @@ Hock Principle: Simple, clear purpose and principles give rise to complex and in
 Hofstede's cultural dimensions theory https://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory
 Holodomor https://en.wikipedia.org/wiki/Holodomor
 hope -- trust in others = “On this day, I would like all of us to hope anew,” Pope Francis had written. “To revive our trust in others … for all of us are children of God.”
+hopium
 hormesis = A low dose of something can have the opposite effect of a high dose. A little bit of stress wakes you up, but a lot of stress is bad for you. Lifting weights for 30 minutes per day is good for you, but lifting weights for 6 hours per day will destroy your muscles. Stress yourself, but not too much.
 Horseshoe Theory = Extreme opposites tend to look the same. For example, a far-right movement and a far-left movement can be equally violent or desire a similar outcome. People on both sides are more similar to each other than they are to people in the center.
 hostile architecture https://en.wikipedia.org/wiki/Hostile_architecture
@@ -830,6 +834,7 @@ passive aggressive
 pattern / antipattern
 paved path = "The paved path" refers to a methodology where the next step to take is evident
 pay it forward
+pay teachers more = really? Or would attract toxic ppl instead of motivated ppl?
 peak earning years -- workers in their 40s and 50s
 penny Problem Gap: Economists assume demand is linear, but people’s behavior totally changes once an action costs money. If the inventors of the Internet had known about it, spam wouldn’t be such a problem. If sending an email cost you $0.001, there’d be way less spam.
 People will think you are judging them (drinking) https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd44714e619a
