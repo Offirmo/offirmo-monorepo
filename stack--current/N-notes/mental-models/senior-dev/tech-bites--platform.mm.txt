@@ -1,0 +1,10 @@
+CD (Continuous Delivery) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
+CD -- Defensive = Expect the unexpected. Expect that devs will break things in novel ways
+CD -- High Frequency = Unreleased code is expensive. Get it out
+CD -- Independent = Components are not tied to each other. They release independently
+CD -- No Downtime = No "maintenance mode" or expected downtime as part of releasing
+CD -- solution -- ? https://mergify.com/
+CI (Continuous Integration) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
+CI -- merge protection
+CI -- should not be blocking a hotfix!
+CI -- solution -- ? https://mergify.com/

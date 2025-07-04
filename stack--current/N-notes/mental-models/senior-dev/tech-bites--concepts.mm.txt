@@ -128,12 +128,7 @@ cargo cult = Let’s face it. You are not Google scale and you never will be. St
 case -- CamelCase
 case -- SHOUTY_CASE
 case -- snake_case
-CD (continuous delivery)
-CD (Continuous Delivery) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
-CD (continuous deployment) -- Defensive = Expect the unexpected. Expect that devs will break things in novel ways
-CD (continuous deployment) -- High Frequency = Unreleased code is expensive. Get it out
-CD (continuous deployment) -- Independent = Components are not tied to each other. They release independently
-CD (continuous deployment) -- No Downtime = No "maintenance mode" or expected downtime as part of releasing
+CD (continuous delivery) -- [see dedicated file]
 change -- category -- C1 = removing a product
 change -- category -- C2 = Widespread change requiring high customer/ecosystem effort
 change -- category -- C3 = Localised change requiring high customer/ecosystem effort
@@ -729,6 +724,7 @@ prototypes
 proxy
 pull vs push (IoC, promises vs observables...)
 pure https://react.dev/learn/keeping-components-pure
+quality in tech https://linear.app/blog/why-is-quality-so-rare
 questions for a new technology -- 1 What problem are we trying to solve? (Tech should never be introduced as an end to itself)
 questions for a new technology -- 2 How could we solve the problem with our current tech stack? (If the answer is we can’t, then we probably haven’t thought about the problem deeply enough)
 questions for a new technology -- 3 Are we clear on what new costs we are taking on with the new technology? (monitoring, training, cognitive load, etc)
