@@ -232,6 +232,7 @@ counterfactuals = contrary to the actual facts. can be a tool for learning, prob
 courses après le repas
 creative process
 creativity -- begins at the edge: Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
+crime -- socially constructed = ex. wage theft not a crime vs. petty theft, fines = crimes for a price
 crimes -- human trafficking
 crimes -- some sociological theories of criminology attributes criminal action to environmental and unconscious factors
 crimes https://en.wikipedia.org/wiki/Criminal_law
@@ -771,6 +772,8 @@ naivety -- mafia
 naivety -- police
 naivety -- school
 naivety -- sexual abuse
+naivety -- sexual abuse -- men as sport teachers / trainers
+naivety -- sexual abuse -- men in childcare https://www.abc.net.au/news/2025-07-05/childcare-worker-colleague-joshua-brown/105497042
 naivety -- world order
 narcissism
 narcissism -- overlaps with neuroticism
@@ -802,6 +805,7 @@ nutrition / diététique
 obligatory XKCD
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
 old boy network = informal system in which wealthy men with similar social or educational backgrounds help each other in business or personal matters https://en.wikipedia.org/wiki/Old_boy_network
+oligopole -- silent = ex. Luxottica
 oligopoly = a market in which pricing control lies in the hands of a few sellers https://en.wikipedia.org/wiki/Oligopoly
 on peut toujours faire mieux
 once deployed, it’s too late; there’s only escalation (nuclear, euthanazia)

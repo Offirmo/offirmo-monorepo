@@ -1,0 +1,35 @@
+{
+	"name": "@offirmo-private/edge--social",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.ts"
+	},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@offirmo-private/normalize-string": "*",
+		"tiny-invariant": "^1"
+	},
+	"scripts": {
+		"check--ts": "echo \"@offirmo-private/edge--social\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s check--ts",
+		"sandbox": "node --experimental-strip-types ./module/src/~~sandbox/index.ts"
+	},
+	"devDependencies": {
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/ts-types": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
+	}
+}

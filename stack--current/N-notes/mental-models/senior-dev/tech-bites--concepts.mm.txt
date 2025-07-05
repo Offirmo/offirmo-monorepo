@@ -564,6 +564,8 @@ linux -- eBPF https://ebpf.io/what-is-ebpf/
 locality
 locality -- conflict locality = reducing conflicts on close changes, ex. enforcing trailing commas, sorting...
 locality -- of behaviour "LoB" https://htmx.org/essays/locality-of-behaviour/
+lock-in
+lock-in -- vendor
 lodash
 log
 long-term support (LTS)
@@ -797,6 +799,7 @@ semver -- loose vs strict = "spirit of semver" https://www.learningtypescript.co
 semver -- major -> minor -> patch
 semver -- not an obligation!
 semver -- preparing a major with a subpath https://github.com/colinhacks/zod/issues/4371
+senior -- "problem solvers who happen to code" "job market is flooded with 8-year JavaScript veterans who can't debug a slow API" https://www.linkedin.com/posts/jordanambra_technicalleadership-hiring-engineeringmanagement-activity-7337913255601848320-t6m4/
 SHA (Secure Hash Algorithm)
 shaving the yak
 show me the code!

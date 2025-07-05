@@ -145,9 +145,8 @@ incumbent inertia -- locked into a specific set of fixed assets
 incumbent inertia -- organizationally inflexible
 incumbent inertia -- reluctant to cannibalize existing product lines
 incumbent inertia https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_start#Incumbent_inertia
-jobs to be done
 Jobs to be Done (JTBD) https://en.wikipedia.org/wiki/Jobs-to-be-done_theory
-Justification Filler = "Best Practice", "Industry Standard", "Security Posture", "" Phrases https://serce.me/posts/2025-05-19-justification-filler-phrases
+Justification Filler = "Best Practice", "Industry Standard", "Security Posture" https://serce.me/posts/2025-05-19-justification-filler-phrases
 knowledge creating company https://hbr.org/2007/07/the-knowledge-creating-company
 kodak moment
 land grab https://fastercapital.com/topics/understanding-the-concept-of-land-grab-strategies.html
@@ -156,8 +155,6 @@ layers in the stack between humans and the money = ex. Google Human - device –
 leadership -- failure -- Quantas example https://www.australianfrequentflyer.com.au/the-chairmans-lounge-joe-aston-book-review/
 learning from users https://paulgraham.com/users.html
 listen, build, ship, tell the customer, then repeat forever
-lock-in
-lock-in -- vendor
 looking like a toy = Disruptive technologies are dismissed as toys because when they are first launched they “undershoot” user needs https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy
 M&A
 M&A -- Apple
@@ -287,6 +284,7 @@ side -- dark side = selling the users https://www.androidpolice.com/mozilla-fire
 side projects -- outside of job https://www.reddit.com/r/SideProject/comments/1br62xb/building_side_projects_outside_fulltime_job/
 simplicity "no ads, no gimmicks, no games"
 sleeper technology
+social features -- complex "block" feature https://dcurt.is/block-carefully
 stalking horse = figure used to test a concept or mount a challenge on behalf of a third party. If the idea proves viable or popular, the third party can then declare its interest and advance the concept with little risk of failure. If the concept fails, the third party will not be tainted by association with the failed concept and can either drop the idea completely or bide its time and wait until a better moment to launch an attack https://en.wikipedia.org/wiki/Stalking_horse
 startups should avoid being held hostage by the preferences of their early user base if it deviates from the broader market, ex. social feed or reels
 Stock Keeping Unit (SKU) = a clearly identified product https://en.wikipedia.org/wiki/Stock_keeping_unit

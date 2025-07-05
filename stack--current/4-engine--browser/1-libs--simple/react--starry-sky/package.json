@@ -34,6 +34,8 @@
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/storypad": "*",
 		"@offirmo-private/toolbox--parcel": "*",
+		"@offirmo-private/ts-types": "*",
+		"@offirmo-private/ts-types-web": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/react": "^19",
 		"npm-run-all": "^4",

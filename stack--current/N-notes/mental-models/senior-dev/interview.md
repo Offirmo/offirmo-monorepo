@@ -45,3 +45,6 @@ TED "you'll never fail an interview again" https://player.vimeo.com/video/850110
 
 
 https://www.artofmanliness.com/career-wealth/career/tell-me-a-little-about-yourself/
+
+
+33 tough questions https://www.linkedin.com/posts/renoperry_33-tough-job-interview-questions-with-a-ugcPost-7339275066385362944-6uYp/

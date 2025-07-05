@@ -154,6 +154,8 @@ mechanics -- time limit
 mechanics -- ultimate
 mechanics -- wanted level
 mechanics -- wave
+mechanics -- world -- biomes
+mechanics -- world -- layers https://terraria.fandom.com/wiki/Layers
 minmax
 MMO -- elements https://www.reddit.com/r/MMORPG/comments/1ezjdeo/if_you_could_transfer_any_element_from_your/
 monetization -- continue

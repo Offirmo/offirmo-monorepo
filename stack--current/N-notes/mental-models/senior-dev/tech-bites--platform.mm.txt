@@ -1,3 +1,12 @@
+"the compelling feature was speed" https://blog.janestreet.com/how-we-accidentally-built-a-better-build-system-for-ocaml-index/
+build chain -- Because you interact with it daily, above all it has to be fast – but it also has to be flexible. https://blog.janestreet.com/how-we-accidentally-built-a-better-build-system-for-ocaml-index/
+build system -- bazel
+build system -- can be hard to migrate if big codebase https://blog.janestreet.com/how-we-accidentally-built-a-better-build-system-for-ocaml-index/
+build system -- make
+build system -- Parcel
+build system -- wrangler
+build system = Roughly, it figures out how to create runnable programs from a bunch of different source files by calling out to the compiler, setting up and executing test suites, and so on. https://blog.janestreet.com/how-we-accidentally-built-a-better-build-system-for-ocaml-index/
+cache
 CD (Continuous Delivery) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
 CD -- Defensive = Expect the unexpected. Expect that devs will break things in novel ways
 CD -- High Frequency = Unreleased code is expensive. Get it out
@@ -8,3 +17,5 @@ CI (Continuous Integration) https://www.browserstack.com/guide/difference-betwee
 CI -- merge protection
 CI -- should not be blocking a hotfix!
 CI -- solution -- ? https://mergify.com/
+editor integration
+monorepo’s requirements

@@ -470,7 +470,6 @@ ${pure_module_details.description || ''}
 	}
 
 	if (pure_module_details.entrypointⵧdemo) {
-
 		if (pure_module_details.entrypointⵧdemo.ext === '.ts') {
 			_schedule_root_file_creation('webstorm--demo.run.xml', `
 <component name="ProjectRunConfigurationManager">
@@ -492,6 +491,27 @@ ${pure_module_details.description || ''}
 
 		if (pure_module_details.entrypointⵧdemo.ext === '.html') {
 			// no extra file necessary
+		}
+	}
+
+	if (pure_module_details.entrypointⵧsandbox) {
+		if (pure_module_details.entrypointⵧsandbox.ext === '.ts') {
+			_schedule_root_file_creation('webstorm--sandbox.run.xml', `
+<component name="ProjectRunConfigurationManager">
+	<configuration default="false"
+		name="${pure_module_details.fqname} -- Sandbox"
+		type="NodeJSConfigurationType"
+		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
+		node-parameters="--experimental-strip-types"
+		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧsandbox.path‿abs)}"
+		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
+		<method v="2" />
+	</configuration>
+</component>
+`)
+		}
+		else {
+			ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--sandbox.run.xml'), { force: true }))
 		}
 	}
 
