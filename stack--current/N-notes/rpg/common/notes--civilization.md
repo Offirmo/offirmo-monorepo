@@ -24,6 +24,7 @@
 
 ### decimalisation
 ex. 20 then 12
+- https://en.wikipedia.org/wiki/Kaktovik_numerals
 
 ### evolution
 - debasement
