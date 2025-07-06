@@ -24,6 +24,8 @@ AMP "Accelerated Mobile Pages"
 animations -- API https://devdocs.io/dom/web_animations_api
 APIs web
 app -- a11y
+app -- a11y -- Heydon's 12 principles https://github.com/Heydon/principles-of-web-accessibility
+app -- a11y -- tracking ex. https://heydonheydon.gumroad.com/l/notion-accessibility-tracker
 app -- architecture: LAMP / JAMStack / SSR...
 app -- auth
 app -- BFFE / GraphQL / REST

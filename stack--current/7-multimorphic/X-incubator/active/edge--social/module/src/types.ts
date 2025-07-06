@@ -19,9 +19,11 @@ interface Person {
 	name?: string
 
 	status:
-		| 'alive'
+		| 'alive' // default
+		// filter out
 		| 'dead'
-		| 'estranged' // filter out
+		| 'estranged' // ~far ?
+		| 'ex'
 
 	known_nationalities: Nationality[]
 	notes: string[]

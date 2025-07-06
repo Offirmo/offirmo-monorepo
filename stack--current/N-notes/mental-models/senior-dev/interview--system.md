@@ -44,6 +44,8 @@ RESHADED method https://levelup.gitconnected.com/7-best-software-design-course-f
 8. Distinctive component/features
 
 
+API https://newsletter.systemdesignclassroom.com/p/a-survival-kit-to-beat-apis-interview
+
 
 https://newsletter.techleadmentor.com/p/stop-parroting-youtube-solutions
 

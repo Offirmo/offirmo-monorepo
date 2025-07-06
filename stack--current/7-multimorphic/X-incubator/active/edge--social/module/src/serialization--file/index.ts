@@ -3,41 +3,14 @@ import type { Immutable } from '@offirmo-private/ts-types'
 
 import {
 	normalize_unicode,
-
-	trim,
-
 	coerce_blanks_to_single_spaces,
-	remove_all_spaces,
-	coerce_delimiters_to_space,
-	convert_spaces_to_camel_case,
-	convert_spaces_to_kebab_case,
-
-	// content
 	normalizeꓽtextⵧsentence,
-
-	// email
 	normalizeꓽemailⵧsafe,
 	normalizeꓽemailⵧreasonable,
 	normalizeꓽemailⵧfull,
-
-	// fs
-	coerce_toꓽsafe_basenameⵧstrictest,
-	normalizeꓽpath,
-
-	// handle
-	coerce_toꓽnicknameⵧsafe,
-
-	// misc
-	coerce_toꓽtokens,
-	coerce_toꓽredeemable_code,
 	normalizeꓽIETFLanguageType,
-
-	// url
 	normalizeꓽurl,
 	normalizeꓽurlⵧhttpₓ,
-
-	// arrays
-	normalizeꓽarrayⵧof_strings,
 } from '@offirmo-private/normalize-string'
 
 import type {
@@ -50,13 +23,21 @@ import type {
 
 	PersonId,
 	Person,
-} from './types.ts'
+} from '../types.ts'
 
-import type { State } from './state/types.ts'
-import * as Reducers from './state/reducers.ts'
+import type { State } from '../state/types.ts'
+import * as Reducers from '../state/reducers.ts'
 
 /////////////////////////////////////////////////
+
 const LINE_SEP = '\n'
+
+const MARKER_EMOJI_DATE = '📅' as const
+const MARKER_EMOJI_ANNIVERSARY_BIRTH = '🎂' as const
+const MARKER_EMOJI_ANNIVERSARY_WEDDING = '💒' as const
+const MARKER_EMOJI_PATRON_DAY = '📛' as const
+
+/////////////////////////////////////////////////
 
 function deserialize(text: string): Immutable<State> {
 	let state = Reducers.create()
@@ -83,9 +64,15 @@ function deserialize(text: string): Immutable<State> {
 						state = Reducers.claim_person_status(state, person_id, 'dead')
 						break
 
-					case claim.startsWith('📅🎂'): {
-						xxx
-						throw new Error(`Bday Not implemented!`)
+					case claim.startsWith(MARKER_EMOJI_DATE): {
+						claim = claim.slice(MARKER_EMOJI_DATE.length)
+
+						let id = ''
+						while (claim.at(0) xxx)
+
+
+
+						throw new Error(`DATE Not implemented!`)
 					}
 
 					default:
@@ -103,6 +90,8 @@ function deserialize(text: string): Immutable<State> {
 
 	return state
 }
+
+/////////////////////////////////////////////////
 
 function serialize(state: Immutable<State>): string {
 	const lines: string[] = []
@@ -158,7 +147,6 @@ function serialize(state: Immutable<State>): string {
 
 	return lines.join(LINE_SEP) + LINE_SEP
 }
-
 
 /////////////////////////////////////////////////
 

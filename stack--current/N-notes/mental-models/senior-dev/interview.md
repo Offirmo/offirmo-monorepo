@@ -37,6 +37,8 @@ Interview questions:
 - Finance? Zone?
 
 
+leetcode prep https://blog.algomaster.io/p/how-to-start-leetcode-in-2025
+
 
 https://www.developerupdates.com/resources
 

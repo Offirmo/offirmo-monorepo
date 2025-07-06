@@ -31,6 +31,7 @@ blockchain = database = stores data in chronologically consistent blocks that yo
 blockchain https://ethereum.org/en/developers/docs/intro-to-ethereum/ https://aws.amazon.com/what-is/blockchain/
 BNB Chain
 bridging
+case study -- https://newsletter.systemdesign.one/p/how-do-airtags-work
 CBDC "Central bank digital currencies" https://cointelegraph.com/magazine/cbdcs-kryptonite-for-crypto/
 Celsius = a risky crypto lending venture masquerading as a safe, bank-like platform that provided unusually high interest on crypto savings accounts
 challenges -- Governance = can be challenging in decentralized systems. It requires effective structures that involve community participation and don’t centralize power.

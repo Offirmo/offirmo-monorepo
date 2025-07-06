@@ -14,8 +14,29 @@ CD -- Independent = Components are not tied to each other. They release independ
 CD -- No Downtime = No "maintenance mode" or expected downtime as part of releasing
 CD -- solution -- ? https://mergify.com/
 CI (Continuous Integration) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
+CI -- best practices -- Mergify = https://blog.mergify.com/continuous-integration-best-practices-drive-results/
+CI -- healing = resolve minor issues ex. lockfile or formatting
+CI -- It Works on My Machine = why not? possible with signed commit?
 CI -- merge protection
+CI -- order by diminishing returns with option to bypass to CD, ex. urgent bug fix
+CI -- principles -- Automate the Build = Manual builds are slow, error-prone, and inconsistent. Automation ensures every change is built the same way, every time. 	Use a CI server (like GitHub Actions, GitLab CI, etc.) to automatically compile code and run tests on every commit.
+CI -- principles -- Commit Frequently = Small, frequent commits are easier to debug and integrate, drastically reducing the risk of massive merge conflicts. 	Encourage developers to commit and push their changes to the shared repository at least once a day.
+CI -- principles -- Everyone Can See Results = Transparency is key. When build results are visible to everyone, it fosters a culture of collective ownership and accountability. 	Make build statuses and test reports easily accessible through dashboards, chat notifications, or repository badges.
+CI -- principles -- Keep the Build Fast = A slow build kills productivity. If developers have to wait 30 minutes for feedback, they'll context-switch and lose focus. 	Optimize your test suite. Run tests in parallel and identify bottlenecks to keep feedback loops under 10 minutes.
+CI -- principles -- Mergify = https://blog.mergify.com/how-to-ci/
+CI -- principles -- Test in a Clone of Production = Testing in an environment that mimics production helps catch issues that only appear under real-world conditions. 	Use containers or virtualization to create a staging environment that mirrors your production setup as closely as possible.
 CI -- should not be blocking a hotfix!
 CI -- solution -- ? https://mergify.com/
+CI/CD -- need to be software-based AND allow branching to introduce a new setup, ex. node version MAY be preloaded but still MUST be installed from nvmrc to allow testing the migration before commiting
 editor integration
+environments -- hierarchy = local -> shared -> staging -> prod
+flaky tests https://blog.mergify.com/flaky-test-detection/
+It Works on My Machine
+little, repetitive tasks that chip away at your day
+merge queue
 monorepo’s requirements
+undesirable -- Customer Satisfaction = Lower due to bugs, performance issues, and unreliable software https://blog.mergify.com/improve-code-quality/
+undesirable -- Development Time = Slowed by frequent bug fixes and rework https://blog.mergify.com/improve-code-quality/
+undesirable -- Maintenance Costs = High due to complex and difficult-to-maintain code https://blog.mergify.com/improve-code-quality/
+undesirable -- Security Risks = Higher vulnerability to exploits due to coding errors and lack of security best practices https://blog.mergify.com/improve-code-quality/
+undesirable -- Team Morale = Lower due to frustration with constant bug fixing and technical debt https://blog.mergify.com/improve-code-quality/
