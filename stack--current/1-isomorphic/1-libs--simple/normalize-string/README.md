@@ -9,7 +9,7 @@ import {
   RECOMMENDED_UNICODE_NORMALIZATION,
   normalize_unicode,
   
-  capitalize,
+  capitalizeⵧfirst,
   to_lower_case,
   to_upper_case,
   

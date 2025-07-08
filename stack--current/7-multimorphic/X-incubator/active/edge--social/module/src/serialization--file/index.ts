@@ -28,7 +28,7 @@ import type {
 
 import type { State } from '../state/types.ts'
 import * as Reducers from '../state/reducers.ts'
-import * as LooseDateLib from '../to-own/loose-date.ts'
+import * as LooseDateLib from '../to-own/loose-dates/index.ts'
 import { hasꓽemoji } from '@offirmo-private/type-detection'
 
 /////////////////////////////////////////////////
@@ -63,95 +63,270 @@ function starts_with_base_face(s: string): boolean {
 	return Object.values(BASES).some(base => s.startsWith(base))
 }
 
+function is_emoji_flag_region(s: string): boolean {
+	// TODO improve
+	return s === '🇨🇵' || s === '🇦🇺'
+}
+
 /////////////////////////////////////////////////
+
+interface InputFileLine {
+	lineno: number
+	lineⵧraw: string
+	line: string
+}
+
+function parseꓽclaimⵧdate(claim: string): [ string, LooseDateAnnotated ] {
+	// 📅🎂1981/07/12
+	// 📅1942/08/09=patron_saint
+
+	if (claim.startsWith(MARKER_EMOJI_DATE)) {
+		claim = claim.slice(MARKER_EMOJI_DATE.length)
+	}
+
+	let date_raw = ''
+	let id = ''
+	let status = 'emoji' as 'emoji' | 'date' | 'rest'
+	claim.split('').forEach(c => {
+		switch (status) {
+			case 'emoji':
+				if (LooseDateLib.isꓽpart(c)) {
+					status = 'date'
+					date_raw += c
+					return
+				}
+
+				id += c
+				return
+			case 'date':
+				if (!LooseDateLib.isꓽpart(c)) {
+					status = 'rest'
+					if (c === '=') {
+						// not informative
+						return
+					}
+					id += c
+					return
+				}
+				date_raw += c
+				return
+			case 'rest':
+				id += c
+				return
+			default:
+				throw new Error(`Unknown status!`)
+		}
+	})
+
+	const lda: LooseDateAnnotated = {
+		...LooseDateLib.createⵧfrom_str(date_raw),
+		description: id, // may be enriched later
+	}
+
+	return [ id, lda ]
+}
+
 
 function deserialize(text: string): Immutable<State> {
 	let state = Reducers.create()
 
-	//////
-	const linesⵧraw = text.split(LINE_SEP)
-		.map(l => coerce_blanks_to_single_spaces(normalize_unicode(l)).trim())
-		.filter(l => !!l)
-		.filter(l => !l.startsWith('#'))
-		.sort()
+	//////////// split + clean lines
+	const lines: InputFileLine[] = text.split(LINE_SEP)
+		.map((lineⵧraw, lineno): InputFileLine => {
+			return {
+				lineno,
+				lineⵧraw,
+				line: coerce_blanks_to_single_spaces(normalize_unicode(lineⵧraw)).trim(),
+			}
+		})
+		.filter(ifl => !!ifl.line)
+		.filter(ifl => !ifl.line.startsWith('#'))
+	//console.log(`Raw non-comment input lines:\n` + lines.map(ifl => `${String(ifl.lineno).padStart(3, ' ')} "${ifl.line}"`).join(`\n`))
 
-	console.log(`Raw lines: `, linesⵧraw)
+	function _on_error(err: any, ifl: InputFileLine): void {
+		console.error(`\nXXXXXXXXXX`)
+		console.error(`Error line #${ifl.lineno} "${ifl.line}"`)
+		console.error(`${err?.message}`)
+		console.error(`XXXXXXXXXX\n`)
+		console.error(err)
+		throw err
+	}
 
-	linesⵧraw.forEach((line, i) => {
-		if (line.startsWith('@')) {
-			console.log(`processig line "${line}"…`)
+	//////////// pass: extract organizations
+	// to not confuse them with persons later
+	const orgs = new Set<OrgId>()
+	lines.forEach(ifl => {
+		const { line } = ifl
+		try {
+			if (!line.startsWith('@')) {
+				// this line is not about a person and/or an org
+				return
+			}
 
-			let ld: LooseDateAnnotated | undefined = undefined
-			let ld_count = 0
 			const segments = line.split(' ')
-			const person_id: PersonId = segments.shift()!.toLowerCase()
-			state = Reducers.ensureꓽperson_and_org(state, person_id)
 
-			const non_claims: string[] = []
+			const person_or_org_id: PersonId | OrgId = segments.shift()!.toLowerCase()
+			if (!person_or_org_id.includes('/')) {
+				// this line doesn't clearly reference an org
+				return
+			}
+			const [ org_id ] = person_or_org_id.split('/')
+			assert(!!org_id, `org_id should not be empty!`)
+
+			orgs.add(org_id)
+			state = Reducers.ensureꓽorg(state, org_id)
+		}
+		catch (err) {
+			_on_error(err, ifl)
+		}
+	})
+	console.log(`Found orgs: `, Array.from(orgs).sort())
+	function isꓽOrgId(s: PersonId | OrgId): s is OrgId {
+		return orgs.has(s)
+	}
+
+	//////////// pass ??
+	lines.forEach(ifl => {
+		let { line } = ifl
+		try {
+			let lda: LooseDateAnnotated | undefined = undefined
+			let lda_count = 0
 			let claims_count = 0
-			segments.forEach((claim, index) => {
-				claims_count++ // optimistic
-				switch (true) {
-					case claim === '--': {
-						// it's a separator, ignore
-						claims_count--
-						assert(non_claims.length === 0 && claims_count === 0, `separator should at start!`)
-						break
-					}
+			const non_claims_segments: string[] = []
 
-					case claim ===  "🪦":
-						state = Reducers.claimꓽperson__status(state, person_id, 'dead')
-						break
+			const segments = line.split(' ')
 
-					case claim.startsWith(MARKER_EMOJI_DATE): {
-						ld_count++
-						claim = claim.slice(MARKER_EMOJI_DATE.length)
+			if (line.startsWith('@')) {
+				// claim about an org and/or person
+				const person_or_orgid: PersonId | OrgId = segments.shift()!.toLowerCase()
 
-						let id = ''
-						let date_raw = claim
-						while (date_raw.length && !LooseDateLib.isꓽpart(date_raw[0]!)) {
-							id += date_raw[0]
-							date_raw = date_raw.slice(1)
-						}
-						assert(id, `date should have an id! "${claim}`)
-						ld = LooseDateLib.createⵧfrom_str(date_raw)
+				state = isꓽOrgId(person_or_orgid)
+					? Reducers.ensureꓽorg(state, person_or_orgid)
+					: Reducers.ensureꓽperson(state, person_or_orgid)
 
-						state = Reducers.claimꓽperson__date(state, person_id, ld, id)
-						break
-					}
+				line = segments.join(' ')
 
-					default:
-						if (hasꓽemoji(claim)) {
-							console.error(`NIMP claim = "${claim}"`)
-							throw new Error(`claim "${claim}" not implemented!`)
-						}
-						else {
-							claims_count--
-							non_claims.push(claim)
-						}
-				}
-			})
-
-			if (non_claims.length) {
-				// must be notes
-				const note_line = non_claims.join(' ')
-
-				if (claims_count === 0) {
-					// pure notes
-					state = Reducers.claimꓽperson__note(state, person_id, note_line)
-				}
-				else if (!!ld) {
-					assert(ld_count < 2, `notes have ambiguous claim!`)
-					ld.notes = note_line
+				if (line.startsWith('=')) {
+					// special "name" claim
+					const name = line.slice(1).trim()
+					state = Reducers.claimꓽperson_or_org__name(state, person_or_orgid, name)
 				}
 				else {
-					assert(!!ld, `notes should refer to an annotatable previous claim! Line = "${line}"`)
-				}
+					segments.forEach((claim, index) => {
+						claims_count++ // optimistic
+						switch (true) {
+							case claim ===  "🪦":
+								state = Reducers.claimꓽperson__status(state, person_or_orgid, 'dead')
+								break
 
+							case claim.startsWith(MARKER_EMOJI_DATE): {
+								lda_count++
+								const [ id, _lda ] = parseꓽclaimⵧdate(claim)
+								state = Reducers.claimꓽperson__date(state, person_or_orgid, id, _lda)
+								lda = _lda
+								break
+							}
+
+							case is_emoji_flag_region(claim): {
+								assert(!isꓽOrgId(person_or_orgid))
+								state = Reducers.claimꓽperson__nationality(state, person_or_orgid, claim)
+								break
+							}
+
+							/*
+							case claim === '--': {
+								// it's a separator, ignore
+								claims_count--
+								assert(non_claims_segments.length === 0 && claims_count === 0, `separator should at start!`)
+								break
+							}
+
+
+							if (hasꓽemoji(claim)) {
+									console.error(`NIMP claim = "${claim}"`)
+									throw new Error(`claim "${claim}" not implemented!`)
+								}
+								else {
+							 */
+
+							default:
+								// ignore, will be stored as notes and not lost, TODO implement later
+								claims_count--
+								non_claims_segments.push(claim)
+						}
+					})
+
+					if (non_claims_segments.length) {
+						// must be notes OR unrecognized claim = we store it as notes
+						const note_line = non_claims_segments.join(' ')
+
+						if (lda_count) {
+							assert(lda_count === 1, `Unclear notes on line with multiple date claims!`)
+							// mutation 🫢 but so convenient 😅
+							lda!.description = note_line
+						}
+						else {
+							state = Reducers.claimꓽperson_or_org__note(state, person_or_orgid, note_line)
+						}
+					}
+				}
+			}
+			else if (line.startsWith(MARKER_EMOJI_DATE)) {
+				const claim = line.slice(MARKER_EMOJI_DATE.length)
+				let emoji = ''
+				let date_raw = ''
+				let description = ''
+				let status = 'emoji' as 'emoji' | 'date' | 'rest'
+				claim.split('').forEach(c => {
+					switch (status) {
+						case 'emoji':
+							if (LooseDateLib.isꓽpart(c)) {
+								date_raw += c
+								status = 'date'
+								return
+							}
+
+							emoji += c
+							return
+						case 'date':
+							if (!LooseDateLib.isꓽpart(c)) {
+								description += c
+								status = 'rest'
+								return
+							}
+							date_raw += c
+							return
+						case 'rest':
+							description += c
+							return
+						default:
+							throw new Error(`Unknown status!`)
+					}
+				})
+				emoji = emoji.trim()
+				date_raw = date_raw.trim()
+				description = (() => {
+					description = description.trim()
+
+					if (description.startsWith('='))
+						description = description.slice(1)
+
+					return description.trim()
+				})()
+
+				const lda: LooseDateAnnotated = {
+					...LooseDateLib.createⵧfrom_str(date_raw),
+					description,
+				}
+				//console.log(`XXX `, { emoji, lda })
+				state = Reducers.addꓽdateⵧfree(state, emoji, lda)
+			}
+			else {
+				throw new Error(`Unknown line format!`)
 			}
 		}
-		else {
-			throw new Error(`Unknown line format: "${line}"`)
+		catch (err) {
+			_on_error(err, ifl)
 		}
 	})
 

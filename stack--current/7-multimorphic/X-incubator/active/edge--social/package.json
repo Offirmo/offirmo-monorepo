@@ -7,14 +7,16 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts"
+		".": "./module/src/state/index.ts"
 	},
-	"source": "module/src/index.ts",
+	"source": "module/src/state/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
 		"@offirmo-private/normalize-string": "*",
+		"@offirmo-private/type-detection": "*",
+		"temporal-polyfill": "^0.3",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {

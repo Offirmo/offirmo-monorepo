@@ -1,9 +1,9 @@
-import type { LooseDate } from './to-own/loose-date.ts'
+import type { LooseDate } from './to-own/loose-dates/index.ts'
 
 /////////////////////////////////////////////////
 
 interface LooseDateAnnotated extends LooseDate {
-	notes?: string
+	description?: string
 }
 
 type EmojiRegionFlag = string
@@ -12,6 +12,8 @@ type OrgId = string
 interface Org {
 	id: OrgId
 	name?: string
+
+	notes: string[]
 }
 
 type PersonId = string
@@ -31,9 +33,11 @@ interface Person {
 
 	known_nationalities: Nationality[]
 
-	notes: string[]
-
 	dates: Record<string, LooseDateAnnotated>
+
+	// children
+
+	notes: string[]
 }
 
 /////////////////////////////////////////////////

@@ -40,9 +40,11 @@ function createⵧfrom_str(raw: string): LooseDate {
 			return undefined
 
 		//assert(isꓽexact_stringified_number(RDD), `RD format issue! "${RDD}"`)
-		parseInt(RDD, 10)
+		return parseInt(RDD, 10)
 	})()
 
+	assert(YYYY || MM, `LD format issue! "${raw}"`) // can't have just DD
+	assert(!YYYY || MM, `LD format issue! "${raw}"`) // can't have YYYY//DD
 
 	return {
 		...(YYYY && { YYYY }),
