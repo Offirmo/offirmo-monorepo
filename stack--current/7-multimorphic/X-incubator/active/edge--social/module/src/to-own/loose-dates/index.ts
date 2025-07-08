@@ -57,6 +57,14 @@ function isꓽpart(c: string): boolean {
 	return '0123456789/'.includes(c)
 }
 
+function getꓽPlainDateIso(loose_date: Immutable<LooseDate>): string {
+	assert(loose_date.YYYY, `get_plain_date_iso: no YYYY!`)
+	const YYYY = String(loose_date.YYYY).padStart(4, '0')
+	const MM = String(loose_date.MM || 1).padStart(2, '0')
+	const DD = String(loose_date.DD || 1).padStart(2, '0')
+	return `${YYYY}-${MM}-${DD}`
+}
+
 /////////////////////////////////////////////////
 
 export {
@@ -64,4 +72,5 @@ export {
 
 	createⵧfrom_str,
 	isꓽpart,
+	getꓽPlainDateIso,
 }

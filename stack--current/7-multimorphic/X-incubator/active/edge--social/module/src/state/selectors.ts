@@ -4,12 +4,16 @@ import type { Immutable } from '@offirmo-private/ts-types'
 
 import {
 	capitalizeⵧfirst,
+	remove_all_spaces,
 } from '@offirmo-private/normalize-string'
 
+import * as LooseDateLib from '../to-own/loose-dates/index.ts'
 import type { State } from './types.ts'
 import type { OrgId, PersonId } from '../types.ts'
 
 /////////////////////////////////////////////////
+
+const formatter_duration_narrow = new Intl.DurationFormat("en-us", { style: "narrow" });
 
 /////////////////////////////////////////////////
 
@@ -40,15 +44,31 @@ function getꓽone_linerⵧperson(state: Immutable<State>, id: PersonId): string
 		if (!birth_day‿lda)
 			return undefined
 
-		if (!lda.YYYY)
+		if (!birth_day‿lda.YYYY)
 			return undefined // no way to know
 
-		return '999yo' // nimp
+		const birth_day‿temporal = Temporal.PlainDate.from(LooseDateLib.getꓽPlainDateIso(birth_day‿lda));
+		const now = Temporal.Now.plainDateISO();
+		const duration_y = now.since(birth_day‿temporal, {
+			largestUnit: "years",
+			smallestUnit: "years",
+		});
+		const duration_ym = now.since(birth_day‿temporal, {
+			largestUnit: "years",
+			smallestUnit: "months",
+		});
+
+		let result = formatter_duration_narrow.format(duration_y) + 'o'
+		if (birth_day‿lda.MM)
+			result += ' (' + remove_all_spaces(formatter_duration_narrow.format(duration_ym)) + ')'
+		return result
 	})()
 
 	return [
-		//id, no need, the caller has it, can add if needed
+		//id : no need, the caller has it, can add if needed
 		getꓽname(state, person.id),
+		age,
+		...person.known_nationalities
 	].filter(s => !!s)
 	.join(' ')
 }

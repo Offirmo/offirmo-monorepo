@@ -18,26 +18,45 @@ import stylize_string from 'chalk'
 import * as SELib from '../state/index.ts'
 
 console.log(stylize_string.bold('🤜 DASHBOARD  🤛'))
+const handled = new Set<string>()
 
+
+// circle 0 = me
 ;(() => {
 	console.log(stylize_string.bold.green('ME'))
 	console.log(SELib.getꓽone_linerⵧperson(state, '@me'))
-	throw new Error(`Not implemented!`)
 })()
 
+// circle 1 = partner
 ;(function partner() {
-	console.log(stylize_string.red('PARTNER'))
+	console.log(stylize_string.bold.magentaBright('PARTNER'))
 
 	const partnerId = SELib.getꓽpartner(state)
 	if (!partnerId) {
 		console.log('no partner')
 	}
 	else {
-		console.log(`partner = ${partnerId}`)
+		console.log(`${partnerId} ${SELib.getꓽone_linerⵧperson(state, partnerId)}`)
 		birthday
 		anniversaries
+		handled.add(partnerId)
 	}
 })()
+
+// circle 2 = family -- close
+;(function familyⵧclose() {
+	console.log(stylize_string.bold.green('CLOSE FAMILY'))
+
+	const closeFamilyIds = SELib.getꓽfamilyⵧclose(state)
+})()
+
+// circle 3 = family -- rest
+
+// circle 4 = friends
+
+// circle 5 = orgs -- active
+
+// circle 6 = rest
 
 /////////////////////////////////////////////////
 
@@ -50,7 +69,7 @@ console.log(serialize(state))
 
 // objective
 // - next anniversaries (birth, fête, work...)
-// TO priority by "circle" me -> closest -> close family -> family -> work/neighbors -> onlookers
+// TO priority by "circle" me -> closest -> close family -> family -> friends -> work/neighbors -> onlookers
 // - time since last called mum
 
 

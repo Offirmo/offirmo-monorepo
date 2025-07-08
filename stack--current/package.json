@@ -170,6 +170,7 @@
 		"sinon": "^21",
 		"sinon-chai": "^4",
 		"strip-ansi": "^7",
+		"temporal-polyfill": "^0.3",
 		"terminal-size": "^4",
 		"tildify": "^3",
 		"tslib": "^2",

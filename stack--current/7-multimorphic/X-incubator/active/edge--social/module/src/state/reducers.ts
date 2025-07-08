@@ -50,7 +50,6 @@ import {
 import type { State } from './types.ts'
 import type { PersonId, Person, Org, OrgId, LooseDateAnnotated, Nationality } from '../types.ts'
 import assert from "tiny-invariant";
-import type { LooseDate } from '../to-own/loose-dates/loose-date.ts'
 
 /////////////////////////////////////////////////
 
