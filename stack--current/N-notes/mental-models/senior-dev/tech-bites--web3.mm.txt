@@ -156,6 +156,7 @@ scams -- rug-pull = disappear after cashing early success
 scams -- wash trading = artificially inflating volume https://bitfinexed.medium.com/wash-trading-bitcoin-how-bitfinex-benefits-from-fraudulent-trading-8bd66be73215
 seed phrase
 silk road / Ross Ulbricht
+slang https://www.coinbase.com/en-au/learn/tip-and-tutorials/crypto-slang-guide
 smart contracts -- auditing = https://iosiro.com/services/smart-contract-auditing
 smart contracts -- bug = ex. of loss of everything
 smart contracts = self-implementing contracts with predefined rules written in code. They automatically enforce the terms of the agreement when certain conditions are met. For example, if a contract says that ownership of an item transfers to whoever pays for it, you simply send the asking price to that contract. The ledger then automatically updates by using a transaction in the next block to reflect you as the new owner.

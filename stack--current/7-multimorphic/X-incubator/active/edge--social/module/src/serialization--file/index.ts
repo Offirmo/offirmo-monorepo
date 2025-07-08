@@ -14,6 +14,7 @@ import {
 } from '@offirmo-private/normalize-string'
 
 import type {
+	LooseDateAnnotated,
 	EmojiRegionFlag,
 
 	Nationality,
@@ -27,6 +28,8 @@ import type {
 
 import type { State } from '../state/types.ts'
 import * as Reducers from '../state/reducers.ts'
+import * as LooseDateLib from '../to-own/loose-date.ts'
+import { hasꓽemoji } from '@offirmo-private/type-detection'
 
 /////////////////////////////////////////////////
 
@@ -36,6 +39,29 @@ const MARKER_EMOJI_DATE = '📅' as const
 const MARKER_EMOJI_ANNIVERSARY_BIRTH = '🎂' as const
 const MARKER_EMOJI_ANNIVERSARY_WEDDING = '💒' as const
 const MARKER_EMOJI_PATRON_DAY = '📛' as const
+
+const BASES = {
+
+	baby: '👶',
+
+	childⵧboy: '👦',
+	childⵧgirl: '👧', // U+1F467
+	childⵧunknown: '🧒',
+
+	adultⵧman: '👱',
+	adultⵧmanⵧbearded: '🧔',
+	adultⵧunknown: '🧑',
+	adultⵧwoman: '👩',
+
+	elderⵧman: '👴',
+	elderⵧunknown: '🧓',
+	elderⵧwoman: '👵',
+
+	//person_with_blond_hair: '👱', // U+1F471
+}
+function starts_with_base_face(s: string): boolean {
+	return Object.values(BASES).some(base => s.startsWith(base))
+}
 
 /////////////////////////////////////////////////
 
@@ -53,33 +79,76 @@ function deserialize(text: string): Immutable<State> {
 
 	linesⵧraw.forEach((line, i) => {
 		if (line.startsWith('@')) {
+			console.log(`processig line "${line}"…`)
+
+			let ld: LooseDateAnnotated | undefined = undefined
+			let ld_count = 0
 			const segments = line.split(' ')
 			const person_id: PersonId = segments.shift()!.toLowerCase()
-			state = Reducers.ensure_person_and_org(state, person_id)
+			state = Reducers.ensureꓽperson_and_org(state, person_id)
 
 			const non_claims: string[] = []
+			let claims_count = 0
 			segments.forEach((claim, index) => {
+				claims_count++ // optimistic
 				switch (true) {
+					case claim === '--': {
+						// it's a separator, ignore
+						claims_count--
+						assert(non_claims.length === 0 && claims_count === 0, `separator should at start!`)
+						break
+					}
+
 					case claim ===  "🪦":
-						state = Reducers.claim_person_status(state, person_id, 'dead')
+						state = Reducers.claimꓽperson__status(state, person_id, 'dead')
 						break
 
 					case claim.startsWith(MARKER_EMOJI_DATE): {
+						ld_count++
 						claim = claim.slice(MARKER_EMOJI_DATE.length)
 
 						let id = ''
-						while (claim.at(0) xxx)
+						let date_raw = claim
+						while (date_raw.length && !LooseDateLib.isꓽpart(date_raw[0]!)) {
+							id += date_raw[0]
+							date_raw = date_raw.slice(1)
+						}
+						assert(id, `date should have an id! "${claim}`)
+						ld = LooseDateLib.createⵧfrom_str(date_raw)
 
-
-
-						throw new Error(`DATE Not implemented!`)
+						state = Reducers.claimꓽperson__date(state, person_id, ld, id)
+						break
 					}
 
 					default:
-						console.error(`NIMP claim = "${claim}"`)
-						throw new Error(`Not implemented!`)
+						if (hasꓽemoji(claim)) {
+							console.error(`NIMP claim = "${claim}"`)
+							throw new Error(`claim "${claim}" not implemented!`)
+						}
+						else {
+							claims_count--
+							non_claims.push(claim)
+						}
 				}
 			})
+
+			if (non_claims.length) {
+				// must be notes
+				const note_line = non_claims.join(' ')
+
+				if (claims_count === 0) {
+					// pure notes
+					state = Reducers.claimꓽperson__note(state, person_id, note_line)
+				}
+				else if (!!ld) {
+					assert(ld_count < 2, `notes have ambiguous claim!`)
+					ld.notes = note_line
+				}
+				else {
+					assert(!!ld, `notes should refer to an annotatable previous claim! Line = "${line}"`)
+				}
+
+			}
 		}
 		else {
 			throw new Error(`Unknown line format: "${line}"`)

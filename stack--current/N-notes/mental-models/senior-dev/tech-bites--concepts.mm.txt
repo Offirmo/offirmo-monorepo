@@ -121,7 +121,10 @@ C++ 26 https://thenewstack.io/coming-to-iso-c-26-standard-an-ai-acceleration-edg
 C10k problem https://en.wikipedia.org/wiki/C10k_problem
 cache
 cache -- stampede https://en.wikipedia.org/wiki/Cache_stampede
+caching -- caching tiers = edge cache → upper tier cache → central data store https://developers.cloudflare.com/kv/concepts/how-kv-works/
+caching -- hot and cold reads https://developers.cloudflare.com/kv/concepts/how-kv-works/
 caching -- S3 FIFO https://s3fifo.com/
+caching -- service affinity = some apps can't be cached, ex. atomic or read-write in transaction, but good for immutable assets, config, etc https://developers.cloudflare.com/kv/concepts/how-kv-works/#guidance
 capability = an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
 career -- small business programmer https://smallbusinessprogramming.com/how-to-be-a-wildly-successful-small-business-programmer/
 career -- staff engineer https://www.linkedin.com/posts/alexewerlof_no-one-is-talking-about-staff-engineer-mental-activity-7297125140159471617-_J1-
@@ -276,6 +279,7 @@ data format -- serialization -- wire format -- https://capnproto.org/ = serializ
 data format -- TODO find TS stuff
 data residency -- storing = storing user data in the same jurisdiction as the customer’s residence.
 data residency = helps customers feel confident that the data they own (or about them) is subject to their local laws and regulations. This is especially important for enterprise, education, and government customers, many of whom might have rules and regulations mandating the use of data-resident software.
+database fundamentals https://tontinton.com/posts/database-fundementals/
 databases
 databases -- joins https://justinjaffray.com/joins-13-ways/
 databases -- normalization
@@ -336,6 +340,7 @@ DRY -- WET (write everything twice) https://overreacted.io/the-wet-codebase/
 dry run
 DSL (Domain Specific Language)
 durable execution = development paradigm that preserves complete application state so that upon host or software failure it can seamlessly migrate execution to another machine https://stackoverflow.blog/2024/05/28/an-open-source-development-paradigm/
+dynamic config https://docs.getjoystick.com/quick/
 ecosystem -- ADK "App Development Kit" = https://medium.com/disney-streaming/introducing-the-disney-application-development-kit-adk-ad85ca139073
 ecosystem -- Apps
 ecosystem -- create
@@ -361,6 +366,7 @@ encoding -- binary-to-text -- risk of accidental words
 encoding -- binary-to-text https://en.wikipedia.org/wiki/Binary-to-text_encoding
 engineer's notions of simplicity, economies of scale, and design integrity https://en.wikipedia.org/wiki/Planned_obsolescence#History
 entitlements -- non-standard offerings or commercial terms to meet their needs through high touch sales motions. High touch Sales teams work closely with our customers to understand their solution needs and buying preferences like Multi-year billed annual, ELAs, Ramp discounts. There is a significant volume of customers and revenue from such deals
+EOL software "end of life" https://www.herodevs.com/support
 epochs: a backward-compatible language evolution mechanism https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1881r0.html
 error -- failure type – open / close = open = allow, close = deny, best choice depends on context https://community.opentext.com/cybersec/b/cybersecurity-blog/posts/security-fundamentals-part-1-fail-open-vs-fail-closed
 error -- handling -- exceptions, error codes, monads, etc. https://www.boost.org/doc/libs/1_84_0/libs/outcome/doc/html/alternatives.html
@@ -520,7 +526,9 @@ l10n -- i18n -- pseudolocalization = [Lóôõrēĕėęm iìíîpsúûüũm]
 l10n -- i18n -- text size change https://www.w3.org/International/articles/article-text-size
 l10n -- truly local = more than just translation
 lang -- Bend = massively parallel, high-level programming language https://github.com/HigherOrderCO/Bend
+lang -- Clojure https://clojure.org/guides/getting_started
 lang -- Clojure ~lisp https://clojure.org/
+lang -- E = https://www.crockford.com/ec/etut.html
 lang -- go
 lang -- go -- advocacy https://github.com/microsoft/typescript-go/discussions/411
 lang -- JS -- engines http://developer.telerik.com/featured/a-guide-to-javascript-engines-for-idiots/
@@ -528,8 +536,10 @@ lang -- JS -- equality
 lang -- JS -- interview http://www.toptal.com/javascript/interview-questions
 lang -- JS -- interview https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
 lang -- JS -- parseInt http://stackoverflow.com/questions/17106681/parseint-vs-unary-plus-when-to-use-which/17106702#17106702
+lang -- JS -- realms https://stackoverflow.com/questions/49832187/how-to-understand-js-realms/49832343#49832343
 lang -- JSON
 lang -- JSX – Javascript XML, from React
+lang -- OCaml
 lang -- Rust https://www.rust-lang.org/
 lang -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
 lang -- wasp = high level website / SaaS https://wasp.sh/
@@ -599,6 +609,7 @@ mixins -- considered harmful https://legacy.reactjs.org/blog/2016/07/13/mixins-c
 mocha / chai
 monads
 monitoring = observing systems, collecting metrics, evaluating those metrics over time, and then using them to make decisions or take actions
+Monitoring vs. Observability = Traditional monitoring is about watching for pre-defined failure states, while observability is about building a system that can be interrogated to understand any state, expected or not. https://blog.mergify.com/software-observability/
 monolith = over time become poorly structured, containing many different, sometimes competing conventions. These conventions and “styles” sprawl throughout the monolith and make it difficult to understand what is going on. Because structures are built with different conventions, to work in the monolith safely, you have to examine everything to make sure you understand this instance of this pattern. It’s not safe to assume anything. This, combined with the lack of boundaries in the monolith means that every change incurs a huge cost in examination and understanding before it can be safely implemented. This skews developer performance to tenure - the longer you have been staring at the code, the more you have wrapped your head around and the faster you can go (mostly). New developers should not be worried about the time it takes to be effective in the monolith - it's the monolith’s fault, not yours."
 monolith refactoring -- 1. Move code into a good module structure, unpicking code and dependencies along the way
 monolith refactoring -- 2. Understand the domain and build good and scalable abstractions in the form of new APIs which are backed directly by the database (no managers, etc.)
@@ -722,6 +733,7 @@ programming paradigm -- reactive
 promises -- deferred
 promises -- pipelining https://capnproto.org/rpc.html
 prompt
+protobufs -- outdated by capnproto (same author)
 protocol buffers (protobuf) => see data interchange format
 prototypes
 proxy
@@ -765,17 +777,15 @@ REST (REpresentational State Transfer)
 REST HTTP = How to GET a Cup of Coffee https://www.infoq.com/articles/webber-rest-workflow/
 Reverse Polish Notation
 revisions
-EOL software "end of life" https://www.herodevs.com/support
-Monitoring vs. Observability = Traditional monitoring is about watching for pre-defined failure states, while observability is about building a system that can be interrogated to understand any state, expected or not. https://blog.mergify.com/software-observability/
 rewrite trap https://medium.com/@herbcaudill/lessons-from-6-software-rewrite-stories-635e4c8f7c22 https://skamille.medium.com/avoiding-the-rewrite-trap-b1283b8dd39e
+rewrites -- don't
+rewrites -- foundational rewrites
+rewrites -- rearchitectures
 RFC (Request For Comments) https://rfc.fyi/
 RFC 2119 terminology = must, must not, should, should not, and may. The terms prefer and avoid correspond to should and should not, respectively. Imperative and declarative statements are prescriptive and correspond to must.
 robustness -- principle (beware bad effects) https://en.wikipedia.org/wiki/Robustness_principle
 robustness https://en.wikipedia.org/wiki/Robustness_principle
 rollback
-lang -- Clojure https://clojure.org/guides/getting_started
-lang -- OCaml
-database fundamentals https://tontinton.com/posts/database-fundementals/
 rolling deploy
 RPC -- advocacy https://blog.cloudflare.com/javascript-native-rpc/
 rpc -- deadline https://protobuf.dev/programming-guides/api/
@@ -788,6 +798,7 @@ SAAS -- Shared responsibility model
 safety -- defense in depth = incident only when all the layers failed (rare but happens)
 scatter/gather (datastreams)
 schema
+schema -- validation -- standard interface https://standardschema.dev/
 schema explorer
 science -- Sokal affair = hoax leftist https://en.wikipedia.org/wiki/Sokal_affair
 SCM (Source Control Management)

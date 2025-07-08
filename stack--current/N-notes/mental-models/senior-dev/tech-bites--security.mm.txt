@@ -8,6 +8,7 @@ BULLRUN (decryption program)  clandestine, highly classified program to crack en
 cache poisoning https://en.wikipedia.org/wiki/Cache_poisoning
 canary -- tokens = https://canarytokens.org/
 Capture The Flag (CTF) competitions = hacking contests consisting of challenges in categories such as web security, cryptography, reverse engineering, exploitation which are open to everyone
+castle-and-moat concept (legacy) = In castle-and-moat security, it is hard to obtain access from outside the network, but everyone inside the network is trusted by default. The problem with this approach is that once an attacker gains access to the network, they have free rein over everything inside. https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/
 checkout fraud = scalpers https://www.kasada.io/use-cases/checkout-fraud/
 CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-benchmarks
 cloud -- Cloudbleed https://en.m.wikipedia.org/wiki/Cloudbleed
@@ -48,9 +49,11 @@ input -- validation -- semantic validation = correctness of their values in the 
 input -- validation -- syntactic validation = correct syntax of structured fields (e.g. SSN, date, currency symbol).
 input -- validation aka data validation = testing of any input (or data) provided by a user or application against expected criteria i.e. to confirm that the data is in the correct format and within the constraints set by the application
 insufficient Transport Layer  Security (TLS)
+Internet Security Research Group (ISRG) https://www.abetterinternet.org/
 keep it simple - complexity increases the likelihood of security holes
 keep your attack surface to a minimum
 key stretching https://en.wikipedia.org/wiki/Key_stretching
+least privilege = https://www.cloudflare.com/learning/access-management/principle-of-least-privilege/
 list -- allow list -- predefined set
 list -- allow list -- regex = more flexible but less secure
 list -- allow list = operate on a deny by default policy, where anything that hasn’t been expressly allowed will be blocked.
@@ -58,7 +61,12 @@ list -- deny list -- WARNING not sufficient to provide strong validation. They c
 list -- deny list = opposite of allowlist. It operates on an allow by default policy where everything is permitted except for the cases that a user has specified.
 make sure you fail securely
 Malicious File Upload
+memory safe -- rewrites https://www.memorysafety.org/
+Microsegmentation = practice of breaking up security perimeters into small zones to maintain separate access for separate parts of the network https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/
 network ACL
+network security -- lateral movement = when an attacker moves within a network after gaining access to that network. Lateral movement can be difficult to detect even if the attacker's entry point is discovered, because the attacker will have gone on to compromise other parts of the network. https://www.cloudflare.com/learning/security/glossary/what-is-lateral-movement/
+NIST "United States National Institute of Standards and Technology"  https://blog.cloudflare.com/nist-sp-1300-85/
+NIST -- Computer Security Resource Center https://csrc.nist.gov/
 Open / Unvalidated Redirects
 OS Command Injection = attacker is able to inject and execute malicious code within a command that is passed to an application's operating system shell
 OWASP top 10 https://owasp.org/www-project-top-ten/
@@ -68,6 +76,7 @@ PKI = Public Key Infrastructure
 plan for security from the start - it's not something you can bolt on at the end
 principle of least privilege
 pwned = https://haveibeenpwned.com/API/v3 https://github.com/BlinqOSS/is-pwned
+request smuggling https://blog.cloudflare.com/resolving-a-request-smuggling-vulnerability-in-pingora/#what-is-request-smuggling
 salting https://en.wikipedia.org/wiki/Salt_(cryptography)
 sandbox
 sandbox -- escape https://googleprojectzero.blogspot.com/2025/05/breaking-sound-barrier-part-i-fuzzing.html
@@ -91,6 +100,7 @@ security posture = overall cybersecurity strength and readiness of an organizati
 Server Side Request Forgery (SSRF) -- defense -- outbound proxy
 Server Side Request Forgery (SSRF) = attacker to send a crafted request from a vulnerable server to an arbitrary destination. The attack can be used to bypass security restrictions and access internal systems and network resources that are not intended to be publicly accessible.
 shift left = earlier security
+software-defined perimeter (SDP) https://www.cloudflare.com/learning/access-management/software-defined-perimeter/
 spectre = class of attacks https://www.cloudflare.com/en-au/learning/security/threats/meltdown-spectre/
 threat modelling
 through obscurity -- ok if not only https://security.stackexchange.com/questions/32064/at-what-point-does-something-count-as-security-through-obscurity
@@ -100,6 +110,9 @@ timed-release encryption scheme = to encrypt messages toward the future that any
 TLS "Transport Layer Security"
 XML External Entity (XXE) = attack where an attacker is able to exploit applications processing XML inputs using improperly configured parser
 YubiKey = not necessarily safer if no pin = if stolen and no pin, cooked
+Zero Trust  = an IT security model that requires strict identity verification for every person and device trying to access resources on a private network, regardless of whether they are sitting within or outside of the network perimeter https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/
+Zero Trust -- Architecture (ZTA) https://blog.cloudflare.com/nist-sp-1300-85/
+Zero Trust -- Network Access (ZTNA) https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/
 zero-day = a vulnerability that attackers know about, and there is no patch available from the vendor
 ZK-SNARKs https://vitalik.eth.limo/general/2022/06/15/using_snarks.html
 zxcvbn = password strength estimation https://zxcvbn-ts.github.io/zxcvbn/

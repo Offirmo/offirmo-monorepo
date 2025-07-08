@@ -14,7 +14,7 @@ function isꓽnegative_zero(x: number): x is -0 {
 // strings
 
 // use case: avoid wrong ordering of numeric keys
-function isꓽexact_stringified_number(s: string): boolean {
+function isꓽexact_stringified_number(s: string): s is string {
 	if (typeof s !== 'string')
 		return false
 

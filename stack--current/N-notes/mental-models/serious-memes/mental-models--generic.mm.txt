@@ -58,6 +58,7 @@ advocacy
 agency
 agile -- "what the client wanted"
 alcohol https://podcastnotes.org/huberman-lab/episode-86-what-alcohol-does-to-your-body-brain-health-huberman-lab/  https://www.soberonadrunkplanet.com/
+alignment -- DnD 9 https://dungeonsdragons.fandom.com/wiki/Alignment
 ally -- barriers = Diffusion of Responsibility, Lack of Awareness or Skills, Fear of Retaliation, Fear of Causing Disruption or Embarrassment
 ally -- howto = Be Present, Provide Options, Know Your Role, follow/beware laws/policies
 ally = s/o who actively seeks to bridge differences, stand for fairness or harmony, and encourage equal opportunities for others in the workplace through thoughtful and respectful communication
@@ -708,6 +709,8 @@ mainstream scientific consensus
 make it work, make it good, make it fast, make it work again
 making one's luck
 man in the arena = from a speech https://en.wikipedia.org/wiki/Citizenship_in_a_Republic
+marketing -- content amplification https://miromind.com/blog/content-amplification-strategies
+marketing -- KOL "key opinion leader" = marketing term to describe an individual who is highly respected and influential within a specific industry or niche. KOLs possess expertise, knowledge, and a strong reputation, which makes their opinions and recommendations carry significant weight with their audience.
 marxist philosophy
 Maslow's pyramid
 maturity = judgement of persons
@@ -1165,6 +1168,8 @@ survivorship bias https://en.wikipedia.org/wiki/Survivorship_bias
 survivor’s guilt = the feeling of guilt that arises when a person survives a traumatic event while others do not https://en.wikipedia.org/wiki/Killing_of_Yoshihiro_Hattori#Aftermath
 SWOT
 SWOT "Strengths, Weaknesses, Opportunities, Threats"
+synaesthesia -- grapheme color https://otherthings.com/uw/syn/
+synaesthesia = It's estimated that around 4% of the world’s population are synesthetes: people with a neurological trait that enables them to enjoy additional perceptions in response to certain sensory or conceptual stimuli such as hearing sounds or music, tasting food or perceiving numbers or letters https://en.wikipedia.org/wiki/Synesthesia https://www.reddit.com/r/Synesthesia/
 syndrome fée clochette https://www.psychologies.com/Couple/Seduction/Rencontres/Articles-et-Dossiers/Syndrome-de-la-fee-Clochette-ces-femmes-insatisfaites-et-en-manque-d-affection
 synesthesia -- Ordinal Linguistic Personification = numbers and (to a certain extent) letters have genders and personalities to me https://www.exocomics.com/93/
 T-Shape -- develop https://jchyip.medium.com/how-to-develop-t-shaped-people-993349932f90
@@ -1202,6 +1207,7 @@ tools -- checklists
 tools -- spreadsheet
 tools -- trello
 top-down/bottom-up
+toxic -- example https://www.news.com.au/national/victoria/crime/scutter-the-nutter-lies-that-got-erin-patterson-fired-from-air-traffic-control-job/news-story/fcf457c595c4ab1fbeed33ebc8a3709b
 tradeoffs / can't have everything
 tragedy of the commons = Self-interests causing depletion of a shared resource https://en.wikipedia.org/wiki/Tragedy_of_the_commons
 transferable skills

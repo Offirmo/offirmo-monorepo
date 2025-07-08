@@ -230,11 +230,14 @@ processing -- Meta Training and Inference Accelerator (MTIA) https://ai.meta.com
 processing -- TPU = Tensor Processing Units
 prompt -- design -- anthropic https://docs.anthropic.com/claude/docs/introduction-to-prompt-design
 prompt -- design -- google https://ai.google.dev/gemini-api/docs/prompting-strategies?hl=en
+prompt -- dev ex. https://developers.cloudflare.com/workers/get-started/prompting/#build-workers-using-a-prompt
 prompt -- generation https://www.anthropic.com/news/evaluate-prompts
 prompt -- library = per role https://www.threads.com/@prodmgmt.world/post/DK4rQzpMapx
 prompt -- optimization https://app.hamming.ai/prompt-optimizer
 prompt -- ROC = [Role] + [Output] + [Context], ex. You are an engineering manager, how many story points do you think this will be and why? https://community.atlassian.com/t5/Jira-Software-articles/Be-an-AI-Rockstar-Prompts-in-Jira-Software/ba-p/2636811
 prompt injection = attack where a malicious third party hides a secret message somewhere where AI may see it while using the computer, potentially tricking it into taking actions the user didn’t intend https://www.anthropic.com/research/visible-extended-thinking
+prompts -- best practices https://developers.cloudflare.com/workers/get-started/prompting/#additional-resources
+prompts -- dev tools https://developers.cloudflare.com/workers/get-started/prompting/#additional-uses
 Pytorch
 RAG 2.0 https://medium.com/towards-artificial-intelligence/rag-2-0-finally-getting-rag-right-f74d0194a720
 rat race https://www.cnbc.com/2024/05/03/ai-engineers-face-burnout-as-rat-race-to-stay-competitive-hits-tech.html

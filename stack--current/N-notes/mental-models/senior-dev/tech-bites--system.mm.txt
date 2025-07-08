@@ -475,6 +475,8 @@ requirements -- non-functional -- Security
 requirements -- non-functional/non-behavioral  = quality constraints that the system must satisfy outside of the immediate feature
 resilience
 retire, retain, rehost, re-platform, repurchase, refactor/re-architect
+proxy
+proxy -- reverse proxy https://www.memorysafety.org/blog/introducing-river/
 routing -- hot/cold potato https://www.usenix.org/legacy/publications/library/proceedings/usenix02/full_papers/subramanian/subramanian_html/node28.html
 scaling -- "internet scale", C10k, C10M problem  https://en.wikipedia.org/wiki/C10k_problem
 scaling -- auto-scaling
