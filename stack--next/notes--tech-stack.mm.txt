@@ -31,7 +31,9 @@ React -- https://reactrouter.com/home ?
 secrets management -- ? https://infisical.com/
 transactional emails https://react.email/
 vite -- vitest
-vite ✅
+vite ✅ https://vite.dev/
 wire protocol https://capnproto.org/l ?
 yalc
 ✖ xml
+? SVW Speedy Web Compiler https://swc.rs/
+-- vite -- npm create vite@latest my-project

@@ -105,10 +105,11 @@ function ensureꓽperson(state: Immutable<State>, person_id: PersonId): Immutabl
 	const person: Person = {
 		id: person_id,
 		...(org_id && { org_id }),
-		status: 'alive', // so far
+		status: 'active', // so far
+		relationships: {},
 		known_nationalities: [],
-		notes: [],
 		dates: {},
+		notes: [],
 	}
 
 	return {

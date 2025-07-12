@@ -16,6 +16,7 @@ import type { OrgId, PersonId } from '../types.ts'
 const formatter_duration_narrow = new Intl.DurationFormat("en-us", { style: "narrow" });
 
 /////////////////////////////////////////////////
+// person
 
 function getꓽname(state: Immutable<State>, id: PersonId | OrgId): string {
 	const org = state.orgs[id]
@@ -58,9 +59,10 @@ function getꓽone_linerⵧperson(state: Immutable<State>, id: PersonId): string
 			smallestUnit: "months",
 		});
 
-		let result = formatter_duration_narrow.format(duration_y) + 'o'
-		if (birth_day‿lda.MM)
-			result += ' (' + remove_all_spaces(formatter_duration_narrow.format(duration_ym)) + ')'
+		let result = birth_day‿lda.MM
+			? remove_all_spaces(formatter_duration_narrow.format(duration_ym))
+			: formatter_duration_narrow.format(duration_y) + 'o'
+
 		return result
 	})()
 
@@ -73,14 +75,39 @@ function getꓽone_linerⵧperson(state: Immutable<State>, id: PersonId): string
 	.join(' ')
 }
 
+/////////////////////////////////////////////////
+// personS
+
+function getꓽall(state: Immutable<State>, { status = 'active' } = {}): Array<PersonId> {
+	const ids = Object.keys(state.persons)
+	return ids.filter(id => state.persons[id]!.status === status)
+}
+
+function getꓽfamily(state: Immutable<State>, { status = 'active' } = {}): Array<PersonId> {
+	const person_ids = getꓽall(state, { status })
+	const candidates = person_ids.filter(id => !id.includes('/'))
+	return candidates
+}
+
+function getꓽfamilyⵧclose(state: Immutable<State>, { status = 'active' } = {}): Array<PersonId> {
+	const candidates_ids = getꓽfamily(state, { status })
+	// TODO how to filer?
+	return candidates_ids
+}
+
 function getꓽpartner(state: Immutable<State>): PersonId | undefined {
-	// TODO filter dead / estranged if many
-	return undefined // NIMP
+	const candidates_ids = getꓽfamilyⵧclose(state, { status: 'active' })
+	// TODO how to filer?
+	return candidates_ids[0]
 }
 
 /////////////////////////////////////////////////
 
 export {
 	getꓽone_linerⵧperson,
+
+	getꓽall,
+	getꓽfamily,
+	getꓽfamilyⵧclose,
 	getꓽpartner,
 }

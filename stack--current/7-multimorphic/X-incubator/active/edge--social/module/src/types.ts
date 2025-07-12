@@ -20,14 +20,25 @@ type PersonId = string
 
 type Nationality = EmojiRegionFlag
 
+// careful of duplicates!
+// TODO deprecations? ex. ex-partner_of
+const RELATIONSHIPS = [
+	'parent_of',
+	'child_of',
+	'partner_of',
+	'coworker_of',
+	'unknown',
+] as const
+type Relationship = typeof RELATIONSHIPS[number]
+
 interface Person {
 	id: PersonId
 	orgId?: OrgId
 	name?: string
 
-	status: 'alive' // = default, active
+	status: 'active' // = default
 		// filtered out:
-		| 'dead'
+		| 'dead' // TODO 1D could still qualify for death anniversary
 		| 'estranged' // ~far ?
 		| 'ex'
 
@@ -35,7 +46,7 @@ interface Person {
 
 	dates: Record<string, LooseDateAnnotated>
 
-	// children
+	relationships: { [Relationship]: Array<PersonId> }
 
 	notes: string[]
 }

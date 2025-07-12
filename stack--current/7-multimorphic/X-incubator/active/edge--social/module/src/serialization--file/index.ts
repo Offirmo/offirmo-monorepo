@@ -36,6 +36,7 @@ import { hasꓽemoji } from '@offirmo-private/type-detection'
 const LINE_SEP = '\n'
 
 const MARKER_EMOJI_DATE = '📅' as const
+const MARKER_EMOJI_PARTNER = '💞' as const
 const MARKER_EMOJI_ANNIVERSARY_BIRTH = '🎂' as const
 const MARKER_EMOJI_ANNIVERSARY_WEDDING = '💒' as const
 const MARKER_EMOJI_PATRON_DAY = '📛' as const
@@ -204,15 +205,16 @@ function deserialize(text: string): Immutable<State> {
 					? Reducers.ensureꓽorg(state, person_or_orgid)
 					: Reducers.ensureꓽperson(state, person_or_orgid)
 
-				line = segments.join(' ')
-
-				if (line.startsWith('=')) {
-					// special "name" claim
-					const name = line.slice(1).trim()
-					state = Reducers.claimꓽperson_or_org__name(state, person_or_orgid, name)
-				}
-				else {
-					segments.forEach((claim, index) => {
+				while (segments.length) {
+					line = segments.join(' ')
+					if (line.startsWith('=')) {
+						// special "name" claim
+						const name = line.slice(1).trim()
+						state = Reducers.claimꓽperson_or_org__name(state, person_or_orgid, name)
+						segments.length = 0
+					}
+					else {
+						const claim = segments.shift()!
 						claims_count++ // optimistic
 						switch (true) {
 							case claim ===  "🪦":
@@ -224,6 +226,11 @@ function deserialize(text: string): Immutable<State> {
 								const [ id, _lda ] = parseꓽclaimⵧdate(claim)
 								state = Reducers.claimꓽperson__date(state, person_or_orgid, id, _lda)
 								lda = _lda
+								break
+							}
+
+							case claim.startsWith(MARKER_EMOJI_PARTNER): {
+								throw new Error(`Not implemented!`)
 								break
 							}
 
@@ -253,21 +260,23 @@ function deserialize(text: string): Immutable<State> {
 								// ignore, will be stored as notes and not lost, TODO implement later
 								claims_count--
 								non_claims_segments.push(claim)
+								break
 						}
-					})
+					}
+				}
 
-					if (non_claims_segments.length) {
-						// must be notes OR unrecognized claim = we store it as notes
-						const note_line = non_claims_segments.join(' ')
+				if (non_claims_segments.length) {
+					// must be notes OR unrecognized claim = we store it as notes
+					const note_line = non_claims_segments.join(' ')
 
-						if (lda_count) {
-							assert(lda_count === 1, `Unclear notes on line with multiple date claims!`)
-							// mutation 🫢 but so convenient 😅
-							lda!.description = note_line
-						}
-						else {
-							state = Reducers.claimꓽperson_or_org__note(state, person_or_orgid, note_line)
-						}
+					if (lda_count) {
+						assert(lda_count === 1, `Unclear notes on line with multiple date claims!`)
+						// mutation 🫢 but so convenient 😅
+						lda!.description = note_line
+					}
+					else {
+						console.log(`Assuming notes: "${note_line}"`)
+						state = Reducers.claimꓽperson_or_org__note(state, person_or_orgid, note_line)
 					}
 				}
 			}
@@ -353,7 +362,7 @@ function serialize(state: Immutable<State>): string {
 			let lines_other = []
 
 			switch (p.status) {
-				case 'alive':
+				case 'active':
 					// default, nothing to do
 					unhandled_keys.delete('status')
 					break
