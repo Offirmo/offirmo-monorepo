@@ -26,7 +26,7 @@ import type {
 	Person,
 } from '../types.ts'
 
-import type { State } from '../state/types.ts'
+import type { Relationship, State } from '../state/types.ts'
 import * as Reducers from '../state/reducers.ts'
 import * as LooseDateLib from '../to-own/loose-dates/index.ts'
 import { hasꓽemoji } from '@offirmo-private/type-detection'
@@ -230,7 +230,10 @@ function deserialize(text: string): Immutable<State> {
 							}
 
 							case claim.startsWith(MARKER_EMOJI_PARTNER): {
-								throw new Error(`Not implemented!`)
+								const target = normalize_unicode(claim.slice(MARKER_EMOJI_PARTNER.length)).toLowerCase()
+								state = Reducers.ensureꓽperson(state, target)
+								const [a, b] = [person_or_orgid, target].sort()
+								state = Reducers.claimꓽrelationship(state, 'partnered_with', a, b)
 								break
 							}
 

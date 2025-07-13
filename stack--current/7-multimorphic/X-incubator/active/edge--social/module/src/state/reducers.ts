@@ -47,7 +47,7 @@ import {
 	normalizeꓽarrayⵧof_strings,
 } from '@offirmo-private/normalize-string'
 
-import type { State } from './types.ts'
+import type { RelationshipType, Relationship, State } from './types.ts'
 import type { PersonId, Person, Org, OrgId, LooseDateAnnotated, Nationality } from '../types.ts'
 import assert from "tiny-invariant";
 
@@ -57,6 +57,7 @@ function create(): Immutable<State> {
 	return {
 		orgs: {},
 		persons: {},
+		relationships: [],
 		dates: {},
 	}
 }
@@ -268,6 +269,28 @@ function claimꓽperson_or_org__name(state: Immutable<State>, person_or_org_id: 
 	return claimꓽperson__name(state, person_or_org_id, name)
 }
 
+function claimꓽrelationship(state: Immutable<State>, type: RelationshipType, a: PersonId, b: PersonId): Immutable<State> {
+	state = ensureꓽperson(state, a)
+	state = ensureꓽperson(state, b)
+
+	if(state.relationships.find(r => r.type === type && r.a === a && r.b === b)) return state
+
+	const relationship: Relationship = {
+		type,
+		a,
+		b,
+	}
+
+	return {
+		...state,
+		relationships: [
+			...state.relationships,
+			relationship,
+		],
+	}
+}
+
+
 function addꓽdateⵧfree(state: Immutable<State>, group: string, lda: LooseDateAnnotated): Immutable<State> {
 	return {
 		...state,
@@ -296,6 +319,7 @@ export {
 	claimꓽperson__status,
 	claimꓽperson__date,
 	claimꓽperson__note,
+	claimꓽrelationship,
 
 	addꓽdateⵧfree,
 }

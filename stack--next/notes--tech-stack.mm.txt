@@ -1,4 +1,5 @@
 ? corepack / pnpm ? https://blog.hyperknot.com/p/corepacks-packagemanager-field https://www.reddit.com/r/node/comments/1hw1iyh/the_curious_case_of_the_packagemanager_field_in/
+? SVW Speedy Web Compiler https://swc.rs/
 APS → openapi → openapi trpc / hono ??
 auth -- ? https://www.propelauth.com/
 CI/CD -- ? https://mergify.com/
@@ -30,10 +31,9 @@ pkg manager -- ✖ npm
 React -- https://reactrouter.com/home ?
 secrets management -- ? https://infisical.com/
 transactional emails https://react.email/
+vite -- npm create vite@latest my-project
 vite -- vitest
 vite ✅ https://vite.dev/
 wire protocol https://capnproto.org/l ?
 yalc
 ✖ xml
-? SVW Speedy Web Compiler https://swc.rs/
--- vite -- npm create vite@latest my-project

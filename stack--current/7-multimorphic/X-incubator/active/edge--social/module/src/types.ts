@@ -20,17 +20,6 @@ type PersonId = string
 
 type Nationality = EmojiRegionFlag
 
-// careful of duplicates!
-// TODO deprecations? ex. ex-partner_of
-const RELATIONSHIPS = [
-	'parent_of',
-	'child_of',
-	'partner_of',
-	'coworker_of',
-	'unknown',
-] as const
-type Relationship = typeof RELATIONSHIPS[number]
-
 interface Person {
 	id: PersonId
 	orgId?: OrgId
@@ -45,8 +34,6 @@ interface Person {
 	known_nationalities: Nationality[]
 
 	dates: Record<string, LooseDateAnnotated>
-
-	relationships: { [Relationship]: Array<PersonId> }
 
 	notes: string[]
 }

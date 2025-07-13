@@ -30,12 +30,18 @@ const to_upper_case: StringNormalizer = s => s.toUpperCase()
 
 // simplest = capitalize the 1st letter
 const capitalizeⵧfirst: StringNormalizer = s => to_upper_case(s[0] ?? '') + s.slice(1)
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize#value
+const capitalizeⵧwords: StringNormalizer = s => s.split(' ').map(s => capitalizeⵧfirst(s)).join(' ')
+// a / an / -
+const capitalizeⵧwordsⵧadvanced: StringNormalizer = s => s.split(' ')
+	.map(s => s.split('-').map(s => capitalizeⵧfirst(s)).join('-'))
+	.map(s => capitalizeⵧfirst(s))
+	.join(' ')
 
 // lodash style 1st letter + force rest lowercase https://devdocs.io/lodash~4/index#capitalize
 // = NO! trivial for the caller to do "to_lower_case" before calling a capitalizer
 
 // TODO more on demand https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize#value
-// const capitalizeⵧwords: StringNormalizer =
 // const capitalizeⵧwordsⵧnon_trivial: StringNormalizer = (no the / a / an etc.)
 
 /////////////////////////////////////////////////
@@ -59,6 +65,9 @@ function remove_all_spaces(s: string): string {
 const ANY_DELIMITER_REGEXP = new RegExp('[-+()*/:? _\.ⵧ]', 'g')
 const coerce_delimiters_to_space: StringNormalizer = s => s.replace(ANY_DELIMITER_REGEXP, ' ')
 
+// common way to encode spaces
+const coerce_underscores_to_space: StringNormalizer = s => s.replaceAll('_', ' ')
+
 const convert_spaces_to_camel_case: StringNormalizer = s =>
 		s.split(' ')
 		.filter(s => !!s)
@@ -81,6 +90,8 @@ export {
 	normalize_unicode,
 
 	capitalizeⵧfirst,
+	capitalizeⵧwords,
+	capitalizeⵧwordsⵧadvanced,
 
 	to_lower_case,
 	to_upper_case,
@@ -90,6 +101,7 @@ export {
 	coerce_blanks_to_single_spaces,
 	remove_all_spaces,
 	coerce_delimiters_to_space,
+	coerce_underscores_to_space,
 	convert_spaces_to_camel_case,
 	convert_spaces_to_kebab_case,
 }

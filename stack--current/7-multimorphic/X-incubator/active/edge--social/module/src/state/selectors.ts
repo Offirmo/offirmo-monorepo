@@ -4,7 +4,10 @@ import type { Immutable } from '@offirmo-private/ts-types'
 
 import {
 	capitalizeⵧfirst,
+	capitalizeⵧwordsⵧadvanced,
 	remove_all_spaces,
+	coerce_underscores_to_space,
+	coerce_delimiters_to_space,
 } from '@offirmo-private/normalize-string'
 
 import * as LooseDateLib from '../to-own/loose-dates/index.ts'
@@ -30,10 +33,10 @@ function getꓽname(state: Immutable<State>, id: PersonId | OrgId): string {
 		return person.name
 
 	if (!person.id.includes('/'))
-		return capitalizeⵧfirst(person.id.slice(1))
+		return capitalizeⵧwordsⵧadvanced(coerce_underscores_to_space(person.id.slice(1)))
 
 	const [org_id, alias] = person.id.split('/')
-	return capitalizeⵧfirst(org_id!.slice(1)) + '/' + capitalizeⵧfirst(alias!)
+	return capitalizeⵧfirst(org_id!.slice(1)) + '/' + capitalizeⵧwordsⵧadvanced(coerce_underscores_to_space(alias!))
 }
 
 function getꓽone_linerⵧperson(state: Immutable<State>, id: PersonId): string {
@@ -78,27 +81,55 @@ function getꓽone_linerⵧperson(state: Immutable<State>, id: PersonId): string
 /////////////////////////////////////////////////
 // personS
 
-function getꓽall(state: Immutable<State>, { status = 'active' } = {}): Array<PersonId> {
+function getꓽall(state: Immutable<State>, { status = 'active' } = {}): Set<PersonId> {
 	const ids = Object.keys(state.persons)
-	return ids.filter(id => state.persons[id]!.status === status)
+	const matching_status = ids.filter(id => state.persons[id]!.status === status)
+	return new Set<PersonId>(matching_status)
 }
 
-function getꓽfamily(state: Immutable<State>, { status = 'active' } = {}): Array<PersonId> {
-	const person_ids = getꓽall(state, { status })
-	const candidates = person_ids.filter(id => !id.includes('/'))
-	return candidates
+function getꓽfamily(state: Immutable<State>, { status = 'active' } = {}): Set<PersonId> {
+	const person_ids = getꓽall(state, { status }).values()
+
+	// heuristic: no org = family
+	const candidates = Array.from(person_ids).filter(id => !id.includes('/'))
+
+	return new Set<PersonId>(candidates)
 }
 
-function getꓽfamilyⵧclose(state: Immutable<State>, { status = 'active' } = {}): Array<PersonId> {
-	const candidates_ids = getꓽfamily(state, { status })
-	// TODO how to filer?
-	return candidates_ids
+
+function getꓽfamilyⵧclosest(state: Immutable<State>, { status = 'active' } = {}): Set<PersonId> {
+	const all = new Set<PersonId>()
+
+	state.relationships.forEach(r => {
+		if (r.a !== '@me' && r.b !== '@me')
+			return
+
+		all.add(r.a === '@me' ? r.b : r.a)
+	})
+
+	// TODO filter alive
+	return all
+}
+
+function getꓽfamilyⵧclose(state: Immutable<State>, { status = 'active' } = {}): Set<PersonId> {
+	// TODO
+	return getꓽfamilyⵧclosest(state)
 }
 
 function getꓽpartner(state: Immutable<State>): PersonId | undefined {
-	const candidates_ids = getꓽfamilyⵧclose(state, { status: 'active' })
-	// TODO how to filer?
-	return candidates_ids[0]
+	const me_partnership = state.relationships.find(r => {
+		if (r.type !== 'married_with' && r.type !== 'partnered_with')
+			return false
+		if (r.a !== '@me' && r.b !== '@me')
+			return false
+
+		return true
+	})
+	if (!me_partnership) return undefined
+
+	const partner_id = me_partnership.a === '@me' ? me_partnership.b : me_partnership.a
+
+	return partner_id
 }
 
 /////////////////////////////////////////////////
@@ -109,5 +140,6 @@ export {
 	getꓽall,
 	getꓽfamily,
 	getꓽfamilyⵧclose,
+	getꓽfamilyⵧclosest,
 	getꓽpartner,
 }
