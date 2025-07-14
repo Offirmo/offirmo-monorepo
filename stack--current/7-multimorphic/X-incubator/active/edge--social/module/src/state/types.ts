@@ -4,32 +4,40 @@ import type { LooseDateAnnotated, Org, OrgId, Person, PersonId } from '../types.
 
 // careful of duplicates!
 // TODO deprecations? ex. ex-partner_of
-const RELATIONSHIP_TYPES = [
-	// partner
-	'married_with', // normalized a < b
-	'partnered_with', // normalized a < b
+const RELATIONSHIP_TYPES__PARTNER = [
+	'spouse_of', // normalized a < b
+	'partner_of', // normalized a < b
 	'husband_of',
 	'wife_of',
+] as const
+// closest only if @me AND initiator
+const RELATIONSHIP_TYPES__CLOSEST = [
+	...RELATIONSHIP_TYPES__PARTNER,
+	'father_of',
+	'mother_of',
+	//'parent_of', // normalized = -- target
+] as const
+const RELATIONSHIP_TYPES__CLOSE = [
+	...RELATIONSHIP_TYPES__CLOSEST,
 	'twin_sister_of',
 	'twin_brother_of',
 
-	// family -- closest (if @me)
-	// family -- close (if related to @me)
-	'father_of',
-	'mother_of',
-	'parent_of', // normalized = -- target
-	'child_of', // normalized = -- target or else parent_of/mother_of/father_of
+	//'child_of', // normalized = -- target or else parent_of/mother_of/father_of
 	'son_of',
 	'daughter_of',
-	'sibling_of', // normalized a < b
+	//'sibling_of', // normalized a < b
 	'sister_of',
 	'brother_of',
 
 	'godfather_of',
 	'godmother_of',
-	'godparent_of',
-
-	// ...
+	//'godparent_of',
+	'goddaughter_of',
+	'godson_of',
+	//'godchild_of',
+] as const
+const RELATIONSHIP_TYPES = [
+	...RELATIONSHIP_TYPES__CLOSE,
 	'coworker_of', // normalized a < b
 	'neighbor_of',
 	'teacher_of',
@@ -38,6 +46,9 @@ const RELATIONSHIP_TYPES = [
 	'other', // normalized a < b
 ] as const
 type RelationshipType = typeof RELATIONSHIP_TYPES[number]
+function isꓽRelationshipType(r: string): r is RelationshipType {
+	return RELATIONSHIP_TYPES.includes(r)
+}
 
 interface Relationship {
 	a: PersonId
@@ -61,6 +72,8 @@ interface State {
 /////////////////////////////////////////////////
 
 export {
-	RELATIONSHIP_TYPES, type RelationshipType, type Relationship,
+	RELATIONSHIP_TYPES__PARTNER, RELATIONSHIP_TYPES__CLOSEST, RELATIONSHIP_TYPES__CLOSE,
+	RELATIONSHIP_TYPES, type RelationshipType, isꓽRelationshipType,
+	type Relationship,
 	type State
 }

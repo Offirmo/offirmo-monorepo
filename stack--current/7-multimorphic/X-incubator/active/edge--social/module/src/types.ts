@@ -20,6 +20,8 @@ type PersonId = string
 
 type Nationality = EmojiRegionFlag
 
+type Culture = string // TODO 1D ex. christian, starwars...
+
 interface Person {
 	id: PersonId
 	orgId?: OrgId
@@ -31,7 +33,10 @@ interface Person {
 		| 'estranged' // ~far ?
 		| 'ex'
 
+	gender?: 'male' | 'female'
+
 	known_nationalities: Nationality[]
+	known_cultures: Culture[]
 
 	dates: Record<string, LooseDateAnnotated>
 

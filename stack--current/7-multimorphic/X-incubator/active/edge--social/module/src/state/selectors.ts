@@ -11,7 +11,7 @@ import {
 } from '@offirmo-private/normalize-string'
 
 import * as LooseDateLib from '../to-own/loose-dates/index.ts'
-import type { State } from './types.ts'
+import { RELATIONSHIP_TYPES__PARTNER, RELATIONSHIP_TYPES__CLOSEST, RELATIONSHIP_TYPES__CLOSE, type State } from './types.ts'
 import type { OrgId, PersonId } from '../types.ts'
 
 /////////////////////////////////////////////////
@@ -87,6 +87,7 @@ function getꓽall(state: Immutable<State>, { status = 'active' } = {}): Set<Per
 	return new Set<PersonId>(matching_status)
 }
 
+// TODO fix with tree
 function getꓽfamily(state: Immutable<State>, { status = 'active' } = {}): Set<PersonId> {
 	const person_ids = getꓽall(state, { status }).values()
 
@@ -96,12 +97,14 @@ function getꓽfamily(state: Immutable<State>, { status = 'active' } = {}): Set<
 	return new Set<PersonId>(candidates)
 }
 
-
 function getꓽfamilyⵧclosest(state: Immutable<State>, { status = 'active' } = {}): Set<PersonId> {
 	const all = new Set<PersonId>()
 
 	state.relationships.forEach(r => {
-		if (r.a !== '@me' && r.b !== '@me')
+		if (r.a !== '@me') // special
+			return
+
+		if (!RELATIONSHIP_TYPES__CLOSEST.includes(r.type))
 			return
 
 		all.add(r.a === '@me' ? r.b : r.a)
@@ -112,16 +115,29 @@ function getꓽfamilyⵧclosest(state: Immutable<State>, { status = 'active' } =
 }
 
 function getꓽfamilyⵧclose(state: Immutable<State>, { status = 'active' } = {}): Set<PersonId> {
-	// TODO
-	return getꓽfamilyⵧclosest(state)
+	const all = new Set<PersonId>()
+
+	state.relationships.forEach(r => {
+		if (r.a !== '@me' && r.b !== '@me')
+			return
+
+		if (!RELATIONSHIP_TYPES__CLOSE.includes(r.type))
+			return
+
+		all.add(r.a === '@me' ? r.b : r.a)
+	})
+
+	// TODO filter alive
+	return all
 }
 
 function getꓽpartner(state: Immutable<State>): PersonId | undefined {
 	const me_partnership = state.relationships.find(r => {
-		if (r.type !== 'married_with' && r.type !== 'partnered_with')
+		if (!RELATIONSHIP_TYPES__PARTNER.includes(r.type))
 			return false
 		if (r.a !== '@me' && r.b !== '@me')
 			return false
+		// TODO filter alive
 
 		return true
 	})

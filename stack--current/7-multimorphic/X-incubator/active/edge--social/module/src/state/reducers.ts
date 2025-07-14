@@ -69,7 +69,7 @@ function ensureꓽorg(state: Immutable<State>, org_id: OrgId): Immutable<State> 
 	assert(org_id.length > 1, 'org_id must not be empty!')
 	assert(remove_all_spaces(normalize_unicode(org_id.toLowerCase())) === org_id, 'org_id must be normalized!')
 
-	assert(!Object.keys(state.persons).includes(org_id), `org_id ${org_id} is conflicting with an existing person!`)
+	assert(!Object.keys(state.persons).includes(org_id), `org_id ${org_id} is conflicting with a person!`)
 
 	const org: Org = {
 		id: org_id,
@@ -97,18 +97,18 @@ function ensureꓽperson(state: Immutable<State>, person_id: PersonId): Immutabl
 		: undefined
 	if (org_id) {
 		assert(person_id.length > org_id.length + 1, 'person_id must not be longer than org_id!')
-		assert(state.orgs[org_id], `org_id ${org_id} should exist!`)
+		state = ensureꓽorg(state, org_id)
 	}
 	else {
-		assert(!Object.keys(state.orgs).includes(person_id), `person_id ${person_id} is conflicting with an existing org!`)
+		assert(!Object.keys(state.orgs).includes(person_id), `person_id ${person_id} is conflicting with an org!`)
 	}
 
 	const person: Person = {
 		id: person_id,
 		...(org_id && { org_id }),
 		status: 'active', // so far
-		relationships: {},
 		known_nationalities: [],
+		known_cultures: [],
 		dates: {},
 		notes: [],
 	}
@@ -134,6 +134,23 @@ function claimꓽperson__status(state: Immutable<State>, person_id: PersonId, st
 			[person_id]: {
 				...state.persons[person_id],
 				status,
+			}
+		},
+	}
+}
+
+function claimꓽperson__gender(state: Immutable<State>, person_id: PersonId, gender: NonNullable<Person['gender']>): Immutable<State> {
+	assert(state.persons[person_id], `person_id ${person_id} should exist!`)
+
+	if (state.persons[person_id].gender === gender) return state
+
+	return {
+		...state,
+		persons: {
+			...state.persons,
+			[person_id]: {
+				...state.persons[person_id],
+				gender,
 			}
 		},
 	}
@@ -273,7 +290,85 @@ function claimꓽrelationship(state: Immutable<State>, type: RelationshipType, a
 	state = ensureꓽperson(state, a)
 	state = ensureꓽperson(state, b)
 
-	if(state.relationships.find(r => r.type === type && r.a === a && r.b === b)) return state
+	let person_a = state.persons[a]!
+	let person_b = state.persons[b]!
+
+
+	// normalization
+	// ungendered to gendered
+	switch (type) {
+		case 'spouse_of': // bc emoji
+			if (person_a.gender === 'male') {
+				type = 'husband_of'
+			}
+			else if (person_a.gender === 'female') {
+				type = 'wife_of'
+			}
+			else if (person_b.gender === 'male') {
+				type = 'wife_of'
+			}
+			else if (person_b.gender === 'female') {
+				type = 'husband_of'
+			}
+			else {
+				[a, b] = [a, b].sort()!
+			}
+			break
+		default:
+			break
+	}
+
+	// order
+	switch (type) {
+		case 'spouse_of':
+		case 'partner_of'
+
+			break
+
+			, // normalized a < b
+				'husband_of',
+				'wife_of',
+		] as const
+// closest only if @me AND initiator
+			const RELATIONSHIP_TYPES__CLOSEST = [
+			...RELATIONSHIP_TYPES__PARTNER,
+			'father_of',
+			'mother_of',
+			'parent_of', // normalized = -- target
+		] as const
+			const RELATIONSHIP_TYPES__CLOSE = [
+				...RELATIONSHIP_TYPES__CLOSEST,
+				'twin_sister_of',
+				'twin_brother_of',
+
+				'child_of', // normalized = -- target or else parent_of/mother_of/father_of
+				'son_of',
+				'daughter_of',
+				'sibling_of', // normalized a < b
+				'sister_of',
+				'brother_of',
+
+				'godfather_of',
+				'godmother_of',
+				'godparent_of',
+				'goddaughter_of',
+				'godson_of',
+				'godchild_of',
+			] as const
+			const RELATIONSHIP_TYPES = [
+				...RELATIONSHIP_TYPES__CLOSE,
+				'coworker_of', // normalized a < b
+				'neighbor_of',
+				'teacher_of',
+				'student_of',
+
+				'other', // normalized a < b
+
+		default:
+			throw new Error(`Unknown relationship type for nomalization! "${type}`)
+	}
+
+	if (state.relationships.find(r => r.type === type && r.a === a && r.b === b)) return state
 
 	const relationship: Relationship = {
 		type,
@@ -317,6 +412,7 @@ export {
 	claimꓽperson_or_org__note,
 
 	claimꓽperson__status,
+	claimꓽperson__gender,
 	claimꓽperson__date,
 	claimꓽperson__note,
 	claimꓽrelationship,

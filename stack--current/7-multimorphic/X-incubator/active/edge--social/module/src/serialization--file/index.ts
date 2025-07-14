@@ -26,7 +26,7 @@ import type {
 	Person,
 } from '../types.ts'
 
-import type { Relationship, State } from '../state/types.ts'
+import { type Relationship, RELATIONSHIP_TYPES, isꓽRelationshipType, type State } from '../state/types.ts'
 import * as Reducers from '../state/reducers.ts'
 import * as LooseDateLib from '../to-own/loose-dates/index.ts'
 import { hasꓽemoji } from '@offirmo-private/type-detection'
@@ -127,6 +127,11 @@ function parseꓽclaimⵧdate(claim: string): [ string, LooseDateAnnotated ] {
 	return [ id, lda ]
 }
 
+function normalizeꓽid(raw: string): PersonId | OrgId {
+	assert(raw.startsWith('@'), `id should start with @!`)
+	assert(raw.length > 1, `id should not be empty!`)
+	return normalize_unicode(raw).toLowerCase()
+}
 
 function deserialize(text: string): Immutable<State> {
 	let state = Reducers.create()
@@ -229,17 +234,29 @@ function deserialize(text: string): Immutable<State> {
 								break
 							}
 
-							case claim.startsWith(MARKER_EMOJI_PARTNER): {
-								const target = normalize_unicode(claim.slice(MARKER_EMOJI_PARTNER.length)).toLowerCase()
+							case !isꓽOrgId(person_or_orgid) && claim.startsWith(MARKER_EMOJI_PARTNER): {
+								const target = normalizeꓽid(claim.slice(MARKER_EMOJI_PARTNER.length))
 								state = Reducers.ensureꓽperson(state, target)
 								const [a, b] = [person_or_orgid, target].sort()
-								state = Reducers.claimꓽrelationship(state, 'partnered_with', a, b)
+								state = Reducers.claimꓽrelationship(state, 'partner_of', a!, b!)
 								break
 							}
 
-							case is_emoji_flag_region(claim): {
+							case !isꓽOrgId(person_or_orgid) && is_emoji_flag_region(claim): {
 								assert(!isꓽOrgId(person_or_orgid))
 								state = Reducers.claimꓽperson__nationality(state, person_or_orgid, claim)
+								break
+							}
+
+							case !isꓽOrgId(person_or_orgid) && claim.includes('_of:'): {
+								let [rel_type, target, ...rest] = claim.split(':')
+								assert(!!target, `relationship claim: target should not be empty!`)
+								assert(rest.length === 0, `relationship claim: rest should be empty!`)
+								assert(!!rel_type && isꓽRelationshipType(rel_type), `relationship claim: unknown "${rel_type}"!`)
+								target = normalizeꓽid(target)
+								state = Reducers.ensureꓽperson(state, target)
+								const [a, b] = [person_or_orgid, target].sort()
+								state = Reducers.claimꓽrelationship(state, rel_type, a!, b!)
 								break
 							}
 

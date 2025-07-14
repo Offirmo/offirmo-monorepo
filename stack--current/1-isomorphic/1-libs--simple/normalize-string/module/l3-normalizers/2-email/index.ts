@@ -122,7 +122,7 @@ function hasꓽemail_structure(possible_email: string): boolean {
 ////////////////////////////////////
 // We need different levels of normalization
 // for ex. using "+" foo+test@gmail.com is not known and very likely to be an attempt to double register
-// however using "." foo.bar@gmail.com is well known and not all pp know it can be removed
+// however, using "." foo.bar@gmail.com is well known, and not all pp know it can be removed
 // normalizing too hard prevents us from using gravatar
 // ex. offirmo.net@gmail.com is not matching gravatar offirmonet@gmail.com
 
