@@ -56,7 +56,6 @@
 			"3-engine--node/0-dev-tools/*",
 			"3-engine--node/1-libs--simple/*",
 			"3-engine--node/2-libs--cross-cutting/*",
-			"xx3-engine--node/A-tools/*  <-- memory sorter",
 			"xx3-engine--node/X-incubator/active/*    <-- nothing",
 
 			"4-engine--browser/0-dev-tools/*",
@@ -64,15 +63,12 @@
 			"4-engine--browser/2-libs--cross-cutting/*",
 			"4-engine--browser/X-incubator/active/*",
 
-			"7-multimorphic/libs--rpg/*",
-			"7-multimorphic/libs--the-boring-rpg/*",
-			"7-multimorphic/X-incubator/active/*",
+			"A-multimorphic/libs--rpg/*",
+			"A-multimorphic/libs--the-boring-rpg/*",
 
-			"A-backend/*",
+			"B-backend/*",
 
-			"M-minisites/*",
-			"V-projects/placeholders/*",
-			"X-incubator/active/*"
+			"C-final/active/*"
 		]
 	},
 
