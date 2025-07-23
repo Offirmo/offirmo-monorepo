@@ -18,7 +18,7 @@ import * as sinon_chai from 'sinon-chai'
 import * as chai_moment from 'chai-moment'
 chai.use(chai_as_promised.default) // order is important: https://github.com/prodatakey/dirty-chai#use-with-chai-as-promised
 chai.use(sinon_chai.default)
-chai.use(chai_subset.default)
+//chai.use(chai_subset.default) no longer needed https://github.com/chaijs/chai/pull/1664
 chai.use(chai_moment.default)
 try {
 	const chai_fetch_mock = await import('chai-fetch-mock')
