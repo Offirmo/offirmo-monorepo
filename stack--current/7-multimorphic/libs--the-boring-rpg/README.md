@@ -1,6 +1,6 @@
 ## The boring RPG
 
-This app is built from a monorepo, please go at the root and follow the instructions.
+This app is built from a monorepo, please go to the root and follow the instructions.
 
 
 ;-)

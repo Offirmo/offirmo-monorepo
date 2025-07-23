@@ -2,7 +2,7 @@
 	<configuration default="false"
 		name="@offirmo-private/pure-module--analyzer -- Demo"
 		type="NodeJSConfigurationType"
-		path-to-node="$USER_HOME$/.nvm/versions/node/v23.11.1/bin/node"
+		path-to-node="$USER_HOME$/.nvm/versions/node/v22.17.1/bin/node"
 		node-parameters="--experimental-strip-types"
 		path-to-js-file="module/##demo/index.ts"
 		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/0-meta/build-tools/pure-module--analyzer">
