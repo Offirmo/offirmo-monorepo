@@ -5,7 +5,7 @@
 		path-to-node="$USER_HOME$/.nvm/versions/node/v22.17.1/bin/node"
 		node-parameters="--experimental-strip-types"
 		path-to-js-file="module/deps.ts"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/A-backend/db--generic-core--migrations">
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/B-backend/db--generic-core--migrations">
 		<method v="2" />
 	</configuration>
 </component>

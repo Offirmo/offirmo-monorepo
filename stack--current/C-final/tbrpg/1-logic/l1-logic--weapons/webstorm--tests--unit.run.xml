@@ -3,7 +3,7 @@
 		<node-interpreter>$USER_HOME$/.nvm/versions/node/v22.17.1/bin/node</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
 		<mocha-package>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/node_modules/mocha</mocha-package>
-		<working-directory>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/7-multimorphic/libs--the-boring-rpg/l1-logic--weapons</working-directory>
+		<working-directory>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/C-final/tbrpg/1-logic/l1-logic--weapons</working-directory>
 		<pass-parent-env>true</pass-parent-env>
 		<ui>bdd</ui>
 		<extra-mocha-options>--bail</extra-mocha-options>
