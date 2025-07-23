@@ -31,7 +31,7 @@
 		"build": "bolt ws run build",
 		"test": "bolt ws run test",
 
-		"serve":       "serve --listen 1987 --debug",
+		"serve":           "serve --listen 1987 --debug",
 		"serve--pub":      "ngrok http 1987 --domain=national-rat-supreme.ngrok-free.app",
 		"serve--pub--dev": "ngrok http 8080 --domain=national-rat-supreme.ngrok-free.app"
 	},
@@ -63,12 +63,13 @@
 			"4-engine--browser/2-libs--cross-cutting/*",
 			"4-engine--browser/X-incubator/active/*",
 
-			"A-multimorphic/libs--rpg/*",
-			"A-multimorphic/libs--the-boring-rpg/*",
+			"7-multimorphic/libs--rpg/*",
 
 			"B-backend/*",
 
-			"C-final/active/*"
+			"C-final/api--placeholders/*",
+			"C-final/single-pkg/*",
+			"C-final/tbrpg/1-logic/*"
 		]
 	},
 
