@@ -27,15 +27,16 @@ bolt --only-fs "[0-9]-*/**/*" ws run check
     bolt --only-fs "1-isomorphic/2-libs--cross-cutting/*" ws run check
     bolt --only-fs "1-isomorphic/3-libs--advanced/*" ws run check
     bolt --only-fs "1-isomorphic/X-incubator/active/*" ws run check
-  bolt --only-fs "2-engine--nod*/**/*" ws run check
-    bolt --only-fs "2-engine--node/0-dev-tools/*" ws run check
-    bolt --only-fs "2-engine--node/1-libs--simple/*" ws run check
-    bolt --only-fs "2-engine--node/2-libs--cross-cutting/*" ws run check
-  bolt --only-fs "3-engine--browse*/**/*" ws run check
-    bolt --only-fs "3-engine--browser/0-dev-tools/*" ws run check
-    bolt --only-fs "3-engine--browser/1-libs--simple/*" ws run check
-    bolt --only-fs "3-engine--browser/2-libs--cross-cutting/*" ws run check
-    bolt --only-fs "3-engine--browser/X-incubator/active/*" ws run check
+  bolt --only-fs "2-engine--winte*/**/*" ws run check
+  bolt --only-fs "3-engine--nod*/**/*" ws run check
+    bolt --only-fs "3-engine--node/0-dev-tools/*" ws run check
+    bolt --only-fs "3-engine--node/1-libs--simple/*" ws run check
+    bolt --only-fs "3-engine--node/2-libs--cross-cutting/*" ws run check
+  bolt --only-fs "4-engine--browse*/**/*" ws run check
+    bolt --only-fs "4-engine--browser/0-dev-tools/*" ws run check
+    bolt --only-fs "4-engine--browser/1-libs--simple/*" ws run check
+    bolt --only-fs "4-engine--browser/2-libs--cross-cutting/*" ws run check
+    bolt --only-fs "4-engine--browser/X-incubator/active/*" ws run check
   bolt --only-fs "7-multimorphi*/**/*" ws run check
     bolt --only-fs "7-multimorphic/libs--rpg/*" ws run check
     bolt --only-fs "7-multimorphic/libs--the-boring-rpg/*" ws run check
