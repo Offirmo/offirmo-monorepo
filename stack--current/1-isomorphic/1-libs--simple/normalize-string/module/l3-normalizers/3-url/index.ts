@@ -9,6 +9,7 @@ import { normalizeꓽemailⵧreasonable, hasꓽemail_structure } from '../2-emai
 /////////////////////////////////////////////////
 // https://en.wikipedia.org/wiki/URL
 
+// TODO use current origin?
 const FAKE_ORIGIN = 'https://placeholder.fake'
 
 function _normalizeꓽschemeꘌhttpₓ(url: string): string {
