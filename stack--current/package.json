@@ -67,8 +67,9 @@
 
 			"B-backend/*",
 
+			"C-final/@infinite-monorepo/*",
 			"C-final/api--placeholders/*",
-			"C-final/single-pkg/*",
+			"C-final/api--placeholders/*",
 			"C-final/tbrpg/1-logic/*"
 		]
 	},

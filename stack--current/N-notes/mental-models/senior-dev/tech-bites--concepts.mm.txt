@@ -797,6 +797,8 @@ RPC -- solution -- protocol = ex. https://capnproto.org/rpc.html
 RPC -- solution -- TS https://trpc.io/docs/concepts intro https://colinhacks.com/essays/painless-typesafety
 rule of composition https://www.linfo.org/rule_of_composition.html
 rule of silence https://www.linfo.org/rule_of_silence.html
+runtime -- environment = collection of software and resources that support the execution of a program. It includes things like the virtual machine (e.g., the Java Virtual Machine), libraries, garbage collection, and other services the program needs while running.
+runtime = period during which a program is running — after it’s been compiled (if applicable) and while it’s executing instructions
 Rust -- TRACTOR "Translating All C to Rust"
 SAAS -- Shared responsibility model
 safety -- defense in depth = incident only when all the layers failed (rare but happens)
