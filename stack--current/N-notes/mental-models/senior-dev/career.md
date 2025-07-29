@@ -25,6 +25,9 @@ when hunted, take the opportunity
 
 save like crazy to get FI (not necessarily RE)
 
+https://martinfowler.com/articles/expert-generalist.html
+
+junior = 37 signals recruiting https://world.hey.com/jorge/anyone-can-cook-c6346f84
 
 ------------------------------------------------------------------------------------------
 https://www.teamblind.com/post/Made-it-to-FAANG-Director-without-a-single-promotion-ever-NS2LaxE7

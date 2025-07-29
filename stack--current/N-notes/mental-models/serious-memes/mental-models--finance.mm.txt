@@ -15,6 +15,7 @@ coin
 coinage -- free = bring gold / silver and have it minted for free or low fee
 coinage acts = ex. https://en.wikipedia.org/wiki/Coinage_Act_of_1857
 commodity = tradeable object. Any thing necessary, useful or pleasant in life, an object of human wants, a means of existence in the widest sense of the term (Marx)
+Confirmation of Payee (CoP) = cross-checks the details of customer payments to ensure that the account name, BSB and account number of the recipient’s account match what the sender believes them to be. https://www.ausbanking.org.au/scam-safe-accord/confirmation-of-payee/
 currencies -- virtual -- Bitcoin
 currency -- alternative = ex. https://en.wikipedia.org/wiki/Goldback
 currency -- code USD AUD EUR
@@ -65,6 +66,7 @@ government -- budget deficit
 government -- fiscal austerity
 government -- high public spending
 government confiscation = forced to give precious metal
+https://www.auspayplus.com.au/about-us
 inflation -- greedflation = mainly companies using inflation as a pretext to increase prices = increasing margin & profit https://en.wikipedia.org/wiki/Greedflation
 inflation -- hedge https://en.wikipedia.org/wiki/Inflation_hedge
 inflation -- shrinkflation

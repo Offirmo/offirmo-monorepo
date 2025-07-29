@@ -48,6 +48,7 @@ annotation
 anomaly detection
 anti-pattern -- constants file = https://softwareengineering.stackexchange.com/a/290009/39510 https://bytedev.medium.com/the-god-constant-class-30d82cd4f677
 anti-pattern -- god class / file
+anyone can code https://world.hey.com/jorge/anyone-can-cook-c6346f84
 API (Application Programming Interface) = interface (set of subroutine definitions, protocols, and tools) for exposing a software feature, defines interactions that allows two applications to talk to each other https://www.postman.com/what-is-an-api/
 API -- AIPs (API Improvement Proposals) https://google.aip.dev/
 API -- approach design with real-life scenarios and code in mind.
@@ -295,6 +296,7 @@ debugging
 defensive programming = Always think about what can go wrong, what will happen on invalid input, and what might fail, which will help you catch many bugs before they happen https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actually-healthy-5flj
 define “good” = what “good” looks like to your org. Achieving that ideal doesn’t depend on which technology you use. It depends on understanding your company’s requirements and what assumptions will remain true regardless of the tools you use.
+degrees https://world.hey.com/jorge/programmers-and-degrees-94eaa940
 demos
 dependencies
 dependency -- hell https://en.wikipedia.org/wiki/Dependency_hell
