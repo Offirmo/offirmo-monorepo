@@ -1,6 +1,5 @@
 {
-	"name": "@offirmo-private/pure-module--analyzer",
-	"description": "Walk/parse a pure module and extract infos from it in order to generate build-related files",
+	"name": "@infinite-monorepo/types",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -15,25 +14,17 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/pkg-infos-resolver": "*",
-		"ignore-walk": "^8",
-		"json5": "^2",
-		"parse-imports-ts": "^1",
-		"tiny-invariant": "^1",
-		"write-json-file": "^6"
+		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/pure-module--analyzer\" && tsc --noEmit",
+		"check--ts": "echo \"@infinite-monorepo/types\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"check": "run-s check--ts",
-		"demo": "node --experimental-strip-types ./module/##demo/index.ts"
+		"check": "run-s check--ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"@types/ignore-walk": "^4",
-		"@types/node": "^22",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

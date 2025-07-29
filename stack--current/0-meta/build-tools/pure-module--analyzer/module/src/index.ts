@@ -489,9 +489,24 @@ interface Options {
 async function getꓽpure_module_details(module_path: AnyPath, options: Partial<Options> = {}): Promise<PureModuleDetails> {
 	const {
 		indent = '',
-		getꓽdefault_namespace = () => { throw new Error(`getꓽdefault_namespace() not provided!`) },
+		getꓽdefault_namespace,
 		pkg_infos_resolver = new PkgInfosResolver(),
 	} = options
+
+	function getꓽnamespace(details_so_far: PureModuleDetails): PureModuleDetails['namespace'] {
+		const path_segments = details_so_far.root‿abspath.split('/')
+		const candidate_from_path = path_segments.find(s => s.startsWith('@'))
+		if (candidate_from_path)
+			return candidate_from_path
+
+		if (getꓽdefault_namespace) {
+			const candidate = getꓽdefault_namespace(details_so_far)
+			if (candidate)
+				return candidate
+		}
+
+		return '@monorepo'
+	}
 
 	const root‿abspath = path.resolve(module_path)
 	console.log(`${indent}🗂  analysing pure code module at "${root‿abspath}"…`)
@@ -543,7 +558,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 			const [ namespace = undefined, name = undefined ] = packageᐧjson.name?.split('/') || []
 
 			return {
-				...(namespace !== getꓽdefault_namespace({
+				...(namespace !== getꓽnamespace({
 					...result,
 					isꓽpublished: !packageᐧjson.private,
 				}) && { namespace }),
@@ -569,7 +584,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 	// start aggregating
 	// we need the fully qualified name of the module
-	result.namespace = getꓽdefault_namespace(result)
+	result.namespace = getꓽnamespace(result)
 	result.fqname = result.namespace + '/' + result.name
 
 	const pending_promises: Array<Promise<void>> = []

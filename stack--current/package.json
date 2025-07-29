@@ -63,14 +63,14 @@
 			"4-engine--browser/2-libs--cross-cutting/*",
 			"4-engine--browser/X-incubator/active/*",
 
-			"7-multimorphic/libs--rpg/*",
+			"7-multimorphic/@oh-my-rpg/*",
 
 			"B-backend/*",
 
 			"C-final/@infinite-monorepo/*",
+			"C-final/@tbrpg/1-logic/*",
 			"C-final/api--placeholders/*",
-			"C-final/api--placeholders/*",
-			"C-final/tbrpg/1-logic/*"
+			"C-final/single-pkg/*"
 		]
 	},
 
