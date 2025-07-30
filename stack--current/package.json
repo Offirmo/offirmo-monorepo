@@ -141,7 +141,7 @@
 		"fraction.js": "^4",
 		"hono": "^4",
 		"icepick": "^2",
-		"ignore-walk": "^7",
+		"ignore-walk": "^8",
 		"json5": "^2",
 		"jsondiffpatch": "^0.7",
 		"knex": "^3",

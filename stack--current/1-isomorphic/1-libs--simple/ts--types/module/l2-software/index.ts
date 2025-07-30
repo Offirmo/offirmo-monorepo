@@ -1,7 +1,23 @@
+import type { YYYYᝍMMᝍDD } from '../l1-dates'
 
 /////////////////////////////////////////////////
+// https://semver.org/
+// https://www.npmjs.com/package/@types/semver?activeTab=code
+// specifier / specification /  constraint / range / requirement
 
-export type SemVer = string // TODO better? https://semver.org/
+
+export type SemVerⳇExact = string // ex. 1.2.3
+export type SemVerⳇRange =
+	| `^${SemVerⳇExact}`
+	| `~${SemVerⳇExact}`
+	| (SemVerⳇExact & {})
+
+export type SemVer = // unclear, try not to use?
+	| SemVerⳇExact
+	| SemVerⳇRange
+
+// https://developers.cloudflare.com/workers/configuration/compatibility-dates/
+export type CompatibilityDate = YYYYᝍMMᝍDD
 
 /////////////////////////////////////////////////
 

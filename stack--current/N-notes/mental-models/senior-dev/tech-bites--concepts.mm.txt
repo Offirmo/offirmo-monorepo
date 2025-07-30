@@ -817,7 +817,7 @@ security -- (see dedicated file)
 semaphore
 semver
 semver -- advanced example https://react.dev/community/versioning-policy (see also TS)
-semver -- alternatives -- compatibility dates = https://developers.cloudflare.com/workers/configuration/compatibility-dates/
+semver -- alternatives -- compatibility date = https://developers.cloudflare.com/workers/configuration/compatibility-dates/
 semver -- loose vs strict = "spirit of semver" https://www.learningtypescript.com/articles/why-typescript-doesnt-follow-strict-semantic-versioning https://news.ycombinator.com/item?id=24224975
 semver -- major -> minor -> patch
 semver -- not an obligation!
