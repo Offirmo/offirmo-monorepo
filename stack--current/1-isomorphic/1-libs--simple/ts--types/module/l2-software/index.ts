@@ -5,6 +5,7 @@ import type { YYYYᝍMMᝍDD } from '../l1-dates'
 // https://www.npmjs.com/package/@types/semver?activeTab=code
 // specifier / specification /  constraint / range / requirement
 
+export type SemVerⳇLoose = string
 
 export type SemVerⳇExact = string // ex. 1.2.3
 export type SemVerⳇRange =
@@ -18,6 +19,16 @@ export type SemVer = // unclear, try not to use?
 
 // https://developers.cloudflare.com/workers/configuration/compatibility-dates/
 export type CompatibilityDate = YYYYᝍMMᝍDD
+
+// LTS
+// latest
+
+/*
+export type MajorVersionRequirement =
+	| SemVerⳇLoose
+	| 'lts'
+	| CompatibilityDate // equivalent
+*/
 
 /////////////////////////////////////////////////
 

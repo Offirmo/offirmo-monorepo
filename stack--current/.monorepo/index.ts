@@ -1,63 +1,12 @@
-
-/////////////////////////////////////////////////
-// https://www.npmjs.com/package/@types/semver?activeTab=code
-// specifier / specification /  constraint / range / requirement
-
-//type SemverMajor
-type SemverExact = string // ex. 1.2.3
-type SemverRange =
-	| `^${SemverExact}`
-	| `~${SemverExact}`
-	| (SemverExact & {})
-
-type CompatibilityDate = string // TODO
+import type { MonorepoSpec } from '@infinite-monorepo/types'
 
 /////////////////////////////////////////////////
 
 export const NODE_MAJOR_VERSION = 22
 
-
-type JsRuntimeKey =
-	| 'node' // https://nodejs.org/
-	| 'deno' // https://deno.com/
-	| 'browserⵧdocument'
-	| 'browserⵧworker'
-	| 'aws-lambda'
-	| 'cloudflare-worker'
-	// add more as needed
-	| (string & {});
-
-
-interface JsRuntimeSpec {
-	type: JsRuntimeKey
-	acceptable_versions: SemverRange
-}
-
-/////////////////////////////////////////////////
-
-interface DevRuntimeSpec {
-	runtime: RuntimeConfig
-	version: SemverExact
-}
-
-interface MonorepoSpec {
-	runtime_envⵧdev: { [key: string]: JsRuntimeSpec }
-
-	EOL:
-		| '\n'
-
-	PATH_SEP:
-		| '/'
-
-}
-
 /////////////////////////////////////////////////
 
 const SPEC: Partial<MonorepoSpec> = {
-	runtime_envⵧdev: {
-		'node': '^24',
-	},
-
 	package_manager: 'bolt',
 
 	workspaces: [
@@ -88,4 +37,6 @@ const SPEC: Partial<MonorepoSpec> = {
 		"C-final/single-pkg/*",
 		"C-final/tbrpg/1-logic/*"
 	],
+
+
 }

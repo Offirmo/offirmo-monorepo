@@ -176,6 +176,7 @@ command query separation (CQS)
 comments
 comments -- conventional
 comments -- leading, trailing, detached https://github.com/microsoft/TypeScript/wiki/FAQ#trailing-leading-and-detached-comments
+commit
 commits
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
 compatibility -- backward = consumer's new version can read producer's old data
@@ -302,6 +303,7 @@ dependencies
 dependency -- hell https://en.wikipedia.org/wiki/Dependency_hell
 dependency -- transitive problem https://htmx.org/essays/vendoring/
 dependency -- vendoring = a technique where you copy the source of another project directly into your own project https://htmx.org/essays/vendoring/
+dependency hell = https://en.wikipedia.org/wiki/Dependency_hell
 dependency injection -- containers = frameworks that manage the dependencies of objects https://blog.ploeh.dk/2014/06/10/pure-di/
 dependency injection -- pure = no framework https://blog.ploeh.dk/2014/06/10/pure-di/
 dependency injection -- vs. func = if magic, makes everything functionally impure https://blog.ploeh.dk/2017/01/30/partial-application-is-dependency-injection/
@@ -815,13 +817,16 @@ scrum
 SDK (Software Development Kit)
 security -- (see dedicated file)
 semaphore
-semver
 semver -- advanced example https://react.dev/community/versioning-policy (see also TS)
 semver -- alternatives -- compatibility date = https://developers.cloudflare.com/workers/configuration/compatibility-dates/
+semver -- considered harmful = https://jolynch.github.io/posts/semver_considered_harmful/
 semver -- loose vs strict = "spirit of semver" https://www.learningtypescript.com/articles/why-typescript-doesnt-follow-strict-semantic-versioning https://news.ycombinator.com/item?id=24224975
 semver -- major -> minor -> patch
 semver -- not an obligation!
+semver -- online tools = https://semver.npmjs.com/
+semver -- operators = https://www.npmjs.com/package/semver
 semver -- preparing a major with a subpath https://github.com/colinhacks/zod/issues/4371
+semver = https://docs.npmjs.com/about-semantic-versioning
 senior -- "problem solvers who happen to code" "job market is flooded with 8-year JavaScript veterans who can't debug a slow API" https://www.linkedin.com/posts/jordanambra_technicalleadership-hiring-engineeringmanagement-activity-7337913255601848320-t6m4/
 SHA (Secure Hash Algorithm)
 shaving the yak

@@ -1,3 +1,4 @@
++++ https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/dagger-hashimoto/
 +++ https://www.geeksforgeeks.org/courses/data-structures-and-algorithms-in-javascript
 [ ] count bits
 [ ] Elements of Programming Interviews (EPI) book https://elementsofprogramminginterviews.com/2017/11/27/2017-11-27-buying-epi/
@@ -59,6 +60,7 @@ computational complexity -- Other = operations specific to the problem in questi
 computational complexity -- Query time = time required to answer a query;
 computational complexity -- Space = the amount of memory space required to store the data structure;
 consensus -- raft https://en.wikipedia.org/wiki/Raft_(algorithm)  https://raft.github.io/
+cryptocurrency mining
 Day–Stout–Warren = amortized binary tree balancing https://en.wikipedia.org/wiki/Day%E2%80%93Stout%E2%80%93Warren_algorithm
 deque = double-ended queue
 disjoint set union
@@ -139,6 +141,7 @@ reflexive
 resolution -- 01 brute force = to understand the problem. usually recursion. Sometimes it's enough or missing considerations, ex. time vs space
 resolution -- 02 evaluate complexity
 resolution -- 03 improve -- remove useless work = remove recursion? remove duplicated computations? prune areas of the search space that can't yield a good solution
+RNG -- Lehmer https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/dagger-hashimoto/#lehmer-random-number
 S3FIFO https://blog.jasony.me/system/cache/2023/08/01/s3fifo
 search -- binary O(log n) = half-interval, logarithmic, binary chop, dichotomic https://en.wikipedia.org/wiki/Binary_search_algorithm
 search -- exponential https://en.wikipedia.org/wiki/Exponential_search

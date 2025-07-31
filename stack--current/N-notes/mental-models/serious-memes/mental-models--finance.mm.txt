@@ -12,6 +12,7 @@ borrowing
 bull/bear = https://www.coinbase.com/en-au/learn/crypto-basics/what-is-a-bull-or-bear-market
 central bank
 coin
+compliance -- AU -- AUSTRAC https://www.austrac.gov.au/business/new-to-austrac
 coinage -- free = bring gold / silver and have it minted for free or low fee
 coinage acts = ex. https://en.wikipedia.org/wiki/Coinage_Act_of_1857
 commodity = tradeable object. Any thing necessary, useful or pleasant in life, an object of human wants, a means of existence in the widest sense of the term (Marx)
@@ -80,10 +81,12 @@ interest rate
 KYC
 laws
 ledger
+ledger = data store that keeps track of transactions https://ethereum.org/en/developers/docs/intro-to-ether/#what-is-a-cryptocurrency
 legal tender
 lending
 macro/micro
 market making
+medium of exchange = anything widely accepted as payment for goods and services https://ethereum.org/en/developers/docs/intro-to-ether/#what-is-a-cryptocurrency
 microfoundations = an effort to understand macroeconomic phenomena in terms of individual agents' economic behavior and interactions https://en.wikipedia.org/wiki/Microfoundations
 middleman
 money

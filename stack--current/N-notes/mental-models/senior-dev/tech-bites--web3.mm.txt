@@ -1,11 +1,20 @@
++++ https://ethereum.org/en/whitepaper/
 - https://www.coingecko.com/
 - https://yaps.kaito.ai/social-card
 1% using crypto, then 3% paying with it https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
-2017 bitfinex packaged loss https://bitfinexed.medium.com/bitfinex-never-repaid-their-tokens-bitfinex-started-a-ponzi-scheme-86a9291add29
+1980 (pre history) https://ethereum.org/en/whitepaper/#history
+2005 (pre history) -- reusable proof of work https://nakamotoinstitute.org/finney/rpow/
+2009 Bitcoin by Satoshi Nakamoto
+2014 Ethereum whitepaper by Vitalik Buterin https://ethereum.org/en/whitepaper/
+2017 Binance created https://www.binance.com/
+2017 bitfinex "packaged loss" https://bitfinexed.medium.com/bitfinex-never-repaid-their-tokens-bitfinex-started-a-ponzi-scheme-86a9291add29
+2017-09 China bans crypto
+2019-04 Bankman-Fried found the FTX cryptocurrency derivatives exchange
 2020 "DeFi summer"
 2024-09 fundraising https://cointelegraph.com/news/patronage-model-fix-crypto-fundraising-says-kain-warwick
 2025-05 SEC abandon crypto regulation https://yro.slashdot.org/story/25/05/29/2155215/sec-voluntarily-dismisses-lawsuit-against-binance
 2025-05 USA strategic reserve https://news.slashdot.org/story/25/05/31/0636246/whats-in-the-us-governments-new-strategic-reserve-of-seized-crytocurrencies
+2025-06 crypto fully bnnaed in China https://www.idnfinancials.com/news/54986/china-tightens-financial-control-crypto-now-fully-banned
 51% attack = attack where a group gains control of the majority of nodes = allow them to defraud the blockchain by reversing transactions and double spending https://ethereum.org/en/glossary/#51%-attack
 [ ] criticism https://bitfinexed.medium.com/
 [ ] endgame https://vitalik.eth.limo/general/2021/12/06/endgame.html
@@ -16,12 +25,13 @@ Airdrop
 Arbitrum
 assets -- top https://www.coingecko.com/
 bag check
-Bankman-Fried
 Base
 Berachain
+Binance = largest cryptocurrency exchange in terms of daily trading volume of cryptocurrencies https://en.wikipedia.org/wiki/Binance https://www.binance.com/
 Bitcoin = the first decentralized cryptocurrency https://en.wikipedia.org/wiki/Bitcoin
 Blast
 block -- genesis = The first block in a blockchain, used to initialize a particular network and its cryptocurrency https://ethereum.org/en/glossary/#genesis-block
+block = batch of transactions
 blockchain -- transaction -- step 1 – Record the transaction
 blockchain -- transaction -- step 2 – Gain consensus = Most participants on the distributed blockchain network must agree that the recorded transaction is valid. Depending on the type of network, rules of agreement can vary but are typically established at the start of the network.
 blockchain -- transaction -- step 3 – Link the blocks = Once the participants have reached a consensus, transactions on the blockchain are written into blocks equivalent to the pages of a ledger book. Along with the transactions, a cryptographic hash is also appended to the new block. The hash acts as a chain that links the blocks together. If the contents of the block are intentionally or unintentionally modified, the hash value changes, providing a way to detect data tampering. Thus, the blocks and chains link securely, and you cannot edit them. Each additional block strengthens the verification of the previous block and therefore the entire blockchain. This is like stacking wooden blocks to make a tower. You can only stack blocks on top, and if you remove a block from the middle of the tower, the whole tower breaks.
@@ -41,17 +51,20 @@ challenges -- Regulatory compliance = Web3 applications must follow existing dat
 challenges -- scalability = a primary concern, because lack of trust is expensive: blockchain networks get very expensive and computationally demanding as data volumes increase
 challenges -- User experience and adoption = Complex interfaces and a steep learning curve limit mainstream adoption. Improving the user experience by designing intuitive interfaces that abstract the complexities of blockchain technology is essential.
 CoinGecko
+colored coins = on-blockchain digital assets to represent custom currencies and financial instruments https://docs.google.com/a/buterin.com/document/d/1AnkP_cVZTCMLIzw4DvsW6M8Q2JC0lIzrTLuoWu2z1BE/edit
 compliance -- AU -- AUSTRAC https://www.austrac.gov.au/business/new-to-austrac
-consensus
+consensus -- mechanisms = complete stack of ideas, protocols and incentives that enable a distributed set of nodes to agree on the state of a blockchain https://ethereum.org/en/developers/docs/consensus-mechanisms/
+consensus = a general agreement has been reached. Consider a group of people going to the cinema. If there is no disagreement on a proposed choice of film, then a consensus is achieved. If there is disagreement, the group must have the means to decide which film to see. In extreme cases, the group will eventually split https://ethereum.org/en/developers/docs/consensus-mechanisms/
 crapto = anything not BitCoin (maybe Ether?)
 cross-chain
 cross-chain -- chain abstraction
 cross-chain -- swaps = swidge??
 crypto signals = advice to invest https://www.tokenmetrics.com/blog/crypto-signals
-cryptocurrency
+cryptocurrency = a medium of exchange secured by a blockchain-based ledger https://ethereum.org/en/developers/docs/intro-to-ether/#what-is-a-cryptocurrency
 cryptocurrency exchange
 cryptokitties
 culture
+dapp "decentralized application" = app built on a decentralized network that combines a smart contract and a frontend user interface https://ethereum.org/en/developers/docs/dapps/#definition-of-a-dapp
 dapp -- stores https://dappradar.com/
 decentralization -- metric -- insider attack test = if your team itself tries to attack the system, how much will break, and how much harm could you do?
 decentralization -- metric -- the walkaway test = if your team and servers disappear tomorrow, will your application still be usable?
@@ -78,6 +91,7 @@ Ethereum -- protocol
 Ethereum -- REth https://github.com/paradigmxyz/reth
 Ethereum -- roadmap https://ethereum.org/en/roadmap/
 Ethereum = a decentralized open-source blockchain platform that people can use to build public blockchain applications. Ethereum Enterprise is designed for business use cases. https://ethereum.org/en/what-is-ethereum/ https://aws.amazon.com/blockchain/what-is-ethereum/
+Ethereum = blockchain with a built-in fully fledged Turing-complete programming language that can be used to create "contracts" that can be used to encode arbitrary state transition functions, allowing users to create any systems we have not yet imagined, simply by writing up the logic in a few lines of code https://ethereum.org/en/whitepaper/#a-next-generation-smart-contract-and-decentralized-application-platform
 EVM and non-EVM chains
 EVM network
 fiat
@@ -87,6 +101,8 @@ finance -- security -- stocks, bonds, ETFs (exchange traded funds), options, and
 finance -- security = a financial asset that can be sold or traded in a financial market + investments that can be exchanged and used to raise capital. https://gordonlaw.com/learn/what-is-a-security/
 fork -- hard
 fork -- soft
+FTX -- FTT = FTX's token
+FTX = cryptocurrency derivatives exchanges known for bankruptcy https://en.wikipedia.org/wiki/Bankruptcy_of_FTX
 FTX crash
 fungibility
 fungibility -- non-fungible
@@ -112,12 +128,28 @@ jobs https://cryptojobslist.com/
 kaito -- Yaps As Proof-of-Attention https://yaps.kaito.ai/social-card
 layer 2 = https://vitalik.eth.limo/general/2024/05/29/l2culture.html
 legal definition -- AU = A type of currency that only exists in digital rather than physical form (not coins or notes, for example). Digital currency: can be exchanged for goods, services, or physical currency; is not issued by or under the authority of a government. https://www.austrac.gov.au/glossary/digital-currency-or-cryptocurrency
+mantras of blockchain -- Don’t trust, verify.
 market maker = easy to move the price, espc ICO -> need right incentives
 Markets in Crypto Assets (MiCA) regulation to oversee the crypto industry
 memecoin
 mining
+mining -- algorithms -- Ethash = used by Ethereum when PoW https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/ethash/
+mining -- algorithms -- goals -- ASIC-resistance = the benefit from creating specialized hardware for the algorithm should be as small as possible
+mining -- algorithms -- goals -- Full chain storage = mining should require storage of the complete blockchain state (due to the irregular structure of the Ethereum state trie, we anticipate that some pruning will be possible, particularly of some often-used contracts, but we want to minimize this).
+mining -- algorithms -- goals -- Light client verifiability = a block should be efficiently verifiable by a light client.
+mining -- algorithms -- goals = https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/dagger-hashimoto/#dagger-hashimoto
+mining -- algorithms -- Scrypt, Dagger, Hashimoto, Dagger-Hashimoto = https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/dagger-hashimoto/ https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/#dagger-hashimoto
+mining -- algorithms = https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/
+mining -- cost = quickly goes up, hence pools https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/#cost-of-mining
+mining -- pool https://casebitcoin.com/critiques/china-controls-bitcoin
+mining -- profitability = complex, ex. using cheap power, stolen computing etc.
+mining = process of creating a block of transactions to be added to a blockchain using proof-of-work  https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/
+mining = proof-of-work way to mint new tokens
+minting -- burning = remove from circulation permanently
+minting = https://ethereum.org/en/developers/docs/intro-to-ether/#minting-ether
 movement
 multi-chain https://arxiv.org/abs/2112.01472
+namecoin = non-fungible assets such as domain names http://namecoin.org/
 narratives = to bring interest into crypto
 NFT -- blur https://blur.io/
 NFTs -- as collateral -- NFTti
@@ -129,25 +161,30 @@ NFTs -- marketplaces = Rare, SuperRare
 NFTs -- Patrons -- locked/unlocked
 NFTs -- Patrons = ~shares with no return = not a security = not under law, but get exclusive rewards and benefits? https://cointelegraph.com/magazine/crypto-four-years-grow-cant-be-shut-down-kain-warwick-infinex/
 NFTs = https://www.youtube-nocookie.com/embed/Xdkkux6OxfM
+node
 non-custodial = "even if someone goes and nukes the platform, censors it, DDoS’s it, or takes down AWS, you can still go to the chain and get your assets back."
 normie friendly = to break out of the limited circle
 onchain protocols such as Ethena, Synthetix, Wormhole
-open source -- benefits -- code being inspectable = to ensure security, and more importantly
+open source -- benefits -- code being inspectable = to ensure security
 open source -- benefits -- enabling permissionless third-party improvements
-open source -- benefits -- reducing the risk of proprietary lockin
+open source -- benefits -- reducing the risk of proprietary lock-in
 open standards -- striving for interoperability. If you want to introduce a new feature that is not well-served by existing standards, write a new proposal in collaboration with others. Applications can be rated by which proposals they are compatible with.
 Optimism
 passkey
 perps = perpetual futures
 Polygon
-ponzi schemes -- expectation of new people depositing, once new people stop depositing, the system can collapse with hour
+ponzi schemes -- expectation of new people depositing, once new people stop depositing, the system can collapse within hour
 porn https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
 price oracles = pricing of some resource
-proof-of-stake
-proof-of-work
+proof-of -- 1999 proof of work (PoW) = keep chain secure by needing 51% of the network's computing power to defraud the chain. This would require such huge investments in equipment and energy; you're likely to spend more than you'd gain. https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/ https://en.wikipedia.org/wiki/Proof_of_work
+proof-of -- 2011 proof of stake (PoS) = keep chain secure by needing to destroy tokens to control the chain + rewards incentives https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/
+proof-of -- 2017 proof of authority (PoA) = modified version of proof-of-stake (PoS) that is a reputation-based consensus algorithm instead https://ethereum.org/en/developers/docs/consensus-mechanisms/poa/
+proof-of -- 2018 proof of history -- https://medium.com/solana-labs/proof-of-history-a-clock-for-blockchain-cf47a61a9274 https://quark.house/en/2024/12/11/what-is-proof-of-history-poh/
+proof-of = component in consensus mechanisms that protect against Sybil attacks by making it "crypto-economically" not worth it to do a Sybil attack https://ethereum.org/en/developers/docs/consensus-mechanisms/
 public key cryptography
 read/write/own paradigm = data creators own and control their own data and have a greater say in how it is used and managed
 rotation = swapping crypto around cycles, ex. BTC-to-ETH
+Sam Bankman-Fried https://en.wikipedia.org/wiki/Sam_Bankman-Fried
 scalability
 scalability -- transactions per second
 scams -- pig butchering = people are lured by flirtatious strangers online into investing in fraudulent cryptocurrency trading platforms. Victims are coached to invest more and more money into what appears to be an extremely profitable trading platform, only to find their money is gone when they wish to cash out. https://yro.slashdot.org/story/25/05/30/2151248/us-sanctions-cloud-provider-funnull-as-top-source-of-pig-butchering-scams
@@ -159,8 +196,11 @@ silk road / Ross Ulbricht
 slang https://www.coinbase.com/en-au/learn/tip-and-tutorials/crypto-slang-guide
 smart contracts -- auditing = https://iosiro.com/services/smart-contract-auditing
 smart contracts -- bug = ex. of loss of everything
+smart contracts = more complex applications involving having digital assets being directly controlled by a piece of code implementing arbitrary rules http://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/idea.html
 smart contracts = self-implementing contracts with predefined rules written in code. They automatically enforce the terms of the agreement when certain conditions are met. For example, if a contract says that ownership of an item transfers to whoever pays for it, you simply send the asking price to that contract. The ledger then automatically updates by using a transaction in the next block to reflect you as the new owner.
+smart property = ownership of an underlying physical device https://en.bitcoin.it/wiki/Smart_Property
 Solana
+Solana https://medium.com/solana-labs
 Solana network
 solutions -- Amazon Managed Blockchain (AMB) = https://aws.amazon.com/managed-blockchain/
 solutions -- Cloudflare -- Ethereum gateway https://developers.cloudflare.com/web3/ethereum-gateway/
@@ -176,14 +216,18 @@ swidge
 swidge
 swidge -- provider
 swidge = "swap and bridge" https://support.infinex.xyz/en/articles/10336734-how-to-swidge https://terablock.com/swidge
+Sybil attack = actor pretending to be a lot of actors to control the chain. Resistance to this type of attack is essential for a decentralized blockchain and enables miners and validators to be rewarded equally based on resources put in. Proof-of-work and proof-of-stake protect against this. https://ethereum.org/en/developers/docs/consensus-mechanisms/#sybil-chain
+Sybil resistance = measures how a protocol fares against a Sybil attack.
 Synthetix
 tokenization = process of representing real-world or digital assets as digital tokens on a blockchain
 tokens
+tokens -- Ether (ETH) = the cryptocurrency used for many things on the Ethereum network. Fundamentally, it is the only acceptable form of payment for transaction fees, and after The Merge, ether is required to validate and propose blocks on Mainnet the cryptocurrency used for many things on the Ethereum network. Fundamentally, it is the only acceptable form of payment for transaction fees, and after The Merge, ether is required to validate and propose blocks on Mainnet
 tokens -- standards
 tokens -- tainted = can be differentiated = less fungible
 tokens -- tokenomics
 tokens = cryptographic representations of ownership, access rights, or other forms of value. Ex. physical and digital assets like real estate, stocks, commodities, art, music, and even in-game items
 tokens = deprecated terminology in favor of "assets"
+transaction -- fee = higher = picked by nodes https://ethereum.org/en/developers/docs/gas/
 Unichain
 unstable coins https://cointelegraph.com/magazine/unstable-coins-de-pegging-bank-runs-other-risks-2023/
 value -- extraction = just profit, not delivering anything
