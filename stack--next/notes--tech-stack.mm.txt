@@ -19,6 +19,7 @@ JavaScript -- TypeScript ✅
 just https://just.systems/man/en/further-ramblings.html
 linter -- eslint
 linter -- https://biomejs.dev/
+meta -- https://stackshare.io/
 microfrontends
 mobile -- capacitor https://capacitorjs.com/  https://capawesome.io/  https://capgo.app/
 monorepo -- ? bolt
@@ -36,5 +37,5 @@ vite -- vitest
 vite ✅ https://vite.dev/
 wire protocol https://capnproto.org/l ?
 yalc
+✖ Nix https://nixos.org/
 ✖ xml
-meta -- https://stackshare.io/

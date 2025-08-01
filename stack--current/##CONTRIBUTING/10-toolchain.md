@@ -79,10 +79,11 @@ TODO evaluate https://biomejs.dev/
 nvm
 
 * TODO review corepack
+* TODO evaluate https://asdf-vm.com/
 * TODO evaluate https://github.com/Schniz/fnm
 * TODO evaluate https://www.honeybadger.io/blog/node-environment-managers/
-* https://docs.volta.sh/guide/understanding
-* https://asdf-vm.com/guide/introduction.html#nvm-n-rbenv-etc
+* TODO evaluate https://docs.volta.sh/guide/understanding
+* TODO evaluate https://asdf-vm.com/guide/introduction.html#nvm-n-rbenv-etc
 ```
 12. Which version manager do you use? 
 none

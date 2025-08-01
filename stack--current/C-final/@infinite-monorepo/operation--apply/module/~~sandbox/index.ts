@@ -1,9 +1,8 @@
 
-import type { PathSegment, AbsolutePath, RelativePath, AnyPath, Immutable, PathSegment } from '@offirmo-private/ts-types'
+import type { PathSegment, AbsolutePath, RelativePath, AnyPath, Immutable } from '@offirmo-private/ts-types'
 
 import type { MonorepoSpec } from '@infinite-monorepo/types'
 import * as process from 'node:process'
-import { string } from 'prop-types'
 
 /////////////////////////////////////////////////
 
@@ -11,9 +10,8 @@ function search_forꓽroot(starting_point: AnyPath) {
 	throw new Error(`Not implemented!`)
 }
 
-function findꓽconfig(starting_point?: AnyPath) {
+function findꓽconfig() {
 	const cwd = process.cwd()
-
 
 }
 
@@ -51,6 +49,9 @@ interface StructuredFsOutputⳇFileManifest {
 		// TODO sortable
 		[k: string]: any
 	}
+
+	// TODO json schema etc.
+	doc: Array<string>
 }
 
 interface StructuredFsOutputⳇFullFile {
@@ -76,10 +77,10 @@ interface StructuredFsOutputⳇEnsureKeyValue {
 }
 
 type StructuredFsOutput =
-	| ({type: 'file--manifest'} & StructuredFsOutputⳇFileManifest)
-	| ({type: 'file--full'} & StructuredFsOutputⳇFullFile)
-	| ({type: 'file--line--ensure'} & StructuredFsOutputⳇEnsureLine)
-	| ({type: 'file--kv--ensure'} & StructuredFsOutputⳇEnsureKeyValue)
+	| ({type: 'fileⵧmanifest'} & StructuredFsOutputⳇFileManifest)
+	| ({type: 'fileⵧfull'} & StructuredFsOutputⳇFullFile)
+	| ({type: 'fileⵧlineⵧensure'} & StructuredFsOutputⳇEnsureLine)
+	| ({type: 'fileⵧkvⵧensure'} & StructuredFsOutputⳇEnsureKeyValue)
 
 /////////////////////////////////////////////////
 
@@ -88,8 +89,15 @@ class Output {
 
 	pushManifest(manifest: StructuredFsOutputⳇFileManifest) {
 		this.#queue.push({
-			type: 'file--manifest',
+			type: 'fileⵧmanifest',
 			...manifest,
+		})
+	}
+
+	pushFile(content: StructuredFsOutputⳇFullFile) {
+		this.#queue.push({
+			type: 'fileⵧfull',
+			...content,
 		})
 	}
 }
@@ -102,22 +110,28 @@ async function apply() {
 
 	const config = loadꓽconfig()
 
-	const output: Array<StructuredFsOutput>
+	const output = new Output()
 
-	;(function ᐧnvmrc(){
+	;(function nvm(){
 		const file_path: StructuredFsOutput['file_path'] = [ '$MONOREPO_ROOT', '.nvmrc']
 
 		const nvmrcⵧmanifest: StructuredFsOutputⳇFileManifest = {
 			file_path,
 			intent: 'ensure',
 			format: 'text',
+			doc: [
+				'https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc',
+				'https://www.npmjs.com/package/nvmrc'
+			],
 		}
-		output.push(nvmrcⵧmanifest)
+		output.pushManifest(nvmrcⵧmanifest)
 
 		const nvmrcⵧcontent: StructuredFsOutputⳇFullFile = {
 			file_path,
 			lines: [ XXX ]
 		}
+		output.pushFile(nvmrcⵧcontent)
+
 	})()
 
 	// TODO all root files

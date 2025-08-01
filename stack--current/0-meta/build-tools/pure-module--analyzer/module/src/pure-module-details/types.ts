@@ -50,6 +50,7 @@ interface PureModuleManifest extends Partial<PureModuleDetailsAllowedInManifest>
 	}
 }
 
+// TODO PATH FROM ROOT!
 // Should contain everything needed to build
 // - package.json
 // - tsconfig.json

@@ -7,6 +7,9 @@ export const NODE_MAJOR_VERSION = 22
 /////////////////////////////////////////////////
 
 const SPEC: Partial<MonorepoSpec> = {
+
+	runtimeⵧlocal: 'node',
+
 	package_manager: 'bolt',
 
 	workspaces: [
@@ -37,6 +40,5 @@ const SPEC: Partial<MonorepoSpec> = {
 		"C-final/single-pkg/*",
 		"C-final/tbrpg/1-logic/*"
 	],
-
 
 }
