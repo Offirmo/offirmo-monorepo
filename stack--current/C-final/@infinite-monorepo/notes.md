@@ -1,0 +1,12 @@
+
+- JS/TS oriented
+- manage the "cruft" = everything not our cool source code
+- high level
+  - above runtime node/deno/bun...
+  - above pkg manager bolt/pnpm
+    - can even help transitioning between
+- favor multiple small packages
+- "resurrect" mode
+- allow "focus" mode
+- allow "extraction" ex. to "source available"
+- catalogs https://bun.com/docs/install/catalogs
