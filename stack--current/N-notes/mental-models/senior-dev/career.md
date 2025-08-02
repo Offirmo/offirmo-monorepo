@@ -256,3 +256,5 @@ staff engineer https://staffeng.com/
 https://www.entrepreneur.com/business-news/meta-fires-400000-employee-over-25-uber-eats-meal-voucher/481473
 
 https://www.threads.net/@iam_digitalclaudia/post/DGYmZ7_sdvu
+
+https://martinfowler.com/articles/expert-generalist.html

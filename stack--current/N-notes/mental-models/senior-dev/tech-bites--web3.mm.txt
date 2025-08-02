@@ -1,3 +1,4 @@
++++ https://casebitcoin.com/critiques
 +++ https://ethereum.org/en/whitepaper/
 - https://www.coingecko.com/
 - https://yaps.kaito.ai/social-card

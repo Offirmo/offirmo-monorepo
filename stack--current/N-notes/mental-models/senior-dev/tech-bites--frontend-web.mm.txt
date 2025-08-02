@@ -103,6 +103,7 @@ composition -- shared view
 contrast ratio https://www.siegemedia.com/contrast-ratio
 CORS "Cross-Origin Resource Sharing"
 CSS -- atomic = small, single-purpose classes with names based on visual function https://css-tricks.com/lets-define-exactly-atomic-css/
+CSS -- BEM https://getbem.com/introduction/
 CSS -- breakpoints https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
 CSS -- cascade https://2019.wattenberger.com/blog/css-cascade
 CSS -- color -- formats = hex, rgb(), hsl(), lch() https://www.joshwcomeau.com/css/color-formats/
@@ -151,8 +152,10 @@ CSS -- transforms
 CSS -- triggers https://csstriggers.com/ https://css-triggers.com/
 CSS -- width = auto, fit-content, min-content https://courses.joshwcomeau.com/css-for-js/01-rendering-logic-1/10-widths
 CSS -- z-index
+CSS -- zen garden https://www.csszengarden.com/pages/alldesigns/
 CSS -- zoom https://www.oddbird.net/2024/07/09/zoomies/
 CSS https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
+CSS vs HTML separation of concerns = Tailwind intro blog https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
 CSS-in-JS
 dark patterns -- hall of shame https://hallofshame.design/
 dark patterns https://www.uxtigers.com/post/dark-design
@@ -405,9 +408,10 @@ UI -- properties -- Multi-screen = take advantage of multiple displays
 UI -- properties -- Natural-language = User types in a question and waits for a response. used for search engines and on webpages.
 UI -- properties -- Permission-driven = show or conceal menu options or functions depending on the user's level of permissions. The system is intended to improve the user experience by removing items that are unavailable to the user. A user who sees functions that are unavailable for use may become frustrated. It also provides an enhancement to security by hiding functional items from unauthorized persons.
 UI -- proximal toolbar = a small toolbar appearing like a tooltip on an item when interacting with it
+UI -- snowflake = +++ "web design in 4 minutes" https://jgthms.com/web-design-in-4-minutes/
 UI -- transitions
 UI -- views
-UI https://en.wikipedia.org/wiki/User_interface
+UI = https://en.wikipedia.org/wiki/User_interface
 User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#large-viewport
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
 UX -- challenges -- information overload

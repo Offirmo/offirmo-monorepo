@@ -345,6 +345,7 @@ dry run
 DSL (Domain Specific Language)
 durable execution = development paradigm that preserves complete application state so that upon host or software failure it can seamlessly migrate execution to another machine https://stackoverflow.blog/2024/05/28/an-open-source-development-paradigm/
 dynamic config https://docs.getjoystick.com/quick/
+eBPF https://ebpf.io/ https://en.wikipedia.org/wiki/EBPF
 ecosystem -- ADK "App Development Kit" = https://medium.com/disney-streaming/introducing-the-disney-application-development-kit-adk-ad85ca139073
 ecosystem -- Apps
 ecosystem -- create
@@ -543,6 +544,7 @@ lang -- JS -- parseInt http://stackoverflow.com/questions/17106681/parseint-vs-u
 lang -- JS -- realms https://stackoverflow.com/questions/49832187/how-to-understand-js-realms/49832343#49832343
 lang -- JSON
 lang -- JSX – Javascript XML, from React
+lang -- Lean = Math language https://lean-lang.org/ https://overreacted.io/the-math-is-haunted/
 lang -- OCaml
 lang -- Rust https://www.rust-lang.org/
 lang -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
@@ -678,6 +680,7 @@ ownership -- if you build it, you own it
 ownership -- shift left = lower levels own
 pair-programming
 partial application = creating a new version of a function with one or more of its parameters bound to some predefined value
+pattern -- actor model https://en.wikipedia.org/wiki/Actor_model
 pattern -- anti -- lava flow = code written under sub-optimal conditions is deployed into a production environment and subsequently expanded upon while still in a developmental state https://en.wikipedia.org/wiki/Lava_flow_(programming)
 pattern -- matching = checking a given sequence of tokens for the presence of the constituents of some pattern. In contrast to pattern recognition, the match usually has to be exact: "either it will or will not be a match." The patterns generally have the form of either sequences or tree structures. Uses of pattern matching include outputting the locations (if any) of a pattern within a token sequence, to output some component of the matched pattern, and to substitute the matching pattern with some other token sequence (i.e., search and replace).
 pattern -- recognition = same but not exact match

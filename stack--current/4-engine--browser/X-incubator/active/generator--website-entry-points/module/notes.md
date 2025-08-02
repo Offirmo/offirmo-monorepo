@@ -1,12 +1,43 @@
 
+= higher level web property generator
 
 
+index.html are a mess:
+- security
+- huge list of meta
+  - including social ones (with lots of repetition!)
+  - favicons
+- critical CSS
+- preload
+- 3rd party scripts
+- webmanifest with repetition: titles, favicons...
+
+And above all it's hard to properly comment!
+
+I need a tool.
+
+
+NOT IN SCOPE
+* minification = not this tool's job
+* SSR = maybe one day? but ideally we want full static on CDN
+
+
+TODO evaluate https://posthog.com
+TODO rename "web property" ?
+
+
+
+
+TODO all sections of https://github.com/about
 TODO sitelinks? https://developers.google.com/search/docs/appearance/sitelinks
 TODO https://developer.mozilla.org/en-US/docs/Web/Manifest#splash_screens
 TODO https://github.com/h5bp/html5-boilerplate#quick-start
 TODO real example https://www.domain.com.au/guides/the-ultimate-guide-to-renovating-your-home-982295/
 TODO https://developers.google.com/digital-asset-links/v1/getting-started
 TODO app stores declarations https://github.com/BlinqOSS/yurl
+
+
+legal = all of https://vercel.com/
 
 
 ## fitting inside the box

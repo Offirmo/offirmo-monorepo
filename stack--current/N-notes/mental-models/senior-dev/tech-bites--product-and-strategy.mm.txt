@@ -49,6 +49,7 @@ core actions
 core actions -- active users
 core mental models (of the product)
 corporate cannibalism = prioritize short-term profits over long-term sustainability
+cost of delay = decision tool https://en.wikipedia.org/wiki/Cost_of_delay
 costs -- consolidation & switching https://www.cloudflare.com/the-net/platform-consolidation-costs/?
 creator/user gap https://blog.jpl-consulting.com/2010/03/creator-user-gap/
 Critical User Journeys (CUJ)

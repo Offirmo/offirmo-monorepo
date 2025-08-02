@@ -262,7 +262,7 @@ debanking = close/refuse account https://www.austrac.gov.au/news-and-media/media
 debate -- https://en.wikipedia.org/wiki/Principle_of_charity
 decoy effect https://en.wikipedia.org/wiki/Decoy_effect
 DEI
-deliberate intentional practice https://ghuntley.com/play/
+deliberate intentional practice / play = intention of not achieving much, but just picking it up, giving it a strum and then having an open mind to the possibilities that you might discover something new or a new meta https://ghuntley.com/play/
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
 democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
 democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
