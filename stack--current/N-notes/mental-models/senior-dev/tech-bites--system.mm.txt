@@ -2,6 +2,7 @@
 1% rule -- 90-9-1 = 90% consume, 9% edit, 1% add
 1% rule -- lurk, lurker
 1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
+1.1.1.1 https://one.one.one.one/dns/
 12 factors = see [architecture -- 12 factors]
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 [ ] +++ https://github.com/donnemartin/system-design-primer
@@ -82,6 +83,7 @@ API -- view -- scope -- types = "raw / user defined scope" ex. a user-entered fi
 API -- view -- scope = the limit of where to conduct a search for domain objects for display on a view
 API -- view = an API is a view on the resources, or is a certain resource mapping over the business objects
 API -- visibility = public/external > internal > team > private beta. Guidelines: Consider a public-by-default approach, even if you are starting at a lower level of access (helps dogfooding, new use cases. Treat your internal APIs as candidates for Public level access (bc happens quickly, sometimes for merging with a public one)
+API https://www.hyrumslaw.com/
 API-first = Built with APIs from the ground up. All functionality is exposed through an API
 Architectural Decisions -- bets = to revisit them
 Architectural Decisions -- register
@@ -147,6 +149,7 @@ CAP Theorem -> see also PACELC theorem
 capacity planning
 cascading failures
 cascading failures -- exponential backoff + jitter
+case study -- distributed KV store = +++ designing a distributed high scale, high perf, sequentially consistent KV https://blog.cloudflare.com/quicksilver-v2-evolution-of-a-globally-distributed-key-value-store-part-1/
 cell-based architecture = isolated feature (titanic))
 change -- release tracks -- bundled = will get all of the features that were released to Preview Release Track during the previous months (pro tier)
 change -- release tracks -- continuous = see new features when they are released (free tier)
@@ -174,7 +177,9 @@ data -- 2. predictive = forecast and predict from data
 data -- 3. prescriptive = recommend actions based on data
 Data Layer Abstraction (DLA)
 data loss
+data loss prevention (DLP) = ensures that business-critical or sensitive data does not leave an organization's network and is not damaged or erased https://www.cloudflare.com/learning/access-management/what-is-dlp/
 data retrieval
+data store -- compaction filter = logic/heuristic to garbage/evict some data to avoid size explosion https://github.com/facebook/rocksdb/wiki/Compaction-Filter
 data store -- data type -- BLOB (Binary Large Object) https://stackoverflow.com/questions/211895/storing-documents-as-blobs-in-a-database-any-disadvantages
 data store -- data type -- CLOB (character large object) value can be up to 2,147,483,647 characters long. A CLOB is used to store unicode character-based data, such as large documents in any character set. https://docs.oracle.com/javadb/10.10.1.2/ref/rrefclob.html
 data store -- data type -- JSON, BSON = BSON supposed to be more efficient in space but at the same time also wants to improve traversal by storing extra data, so not always better. depends on the data.
@@ -207,14 +212,19 @@ data store -- file system -- Hadoop Distributed File System (HDFS)
 data store -- file system -- local / distributed
 data store -- file system = for binary, hierarchical (tree)
 data store -- google sheets https://www.jacobparis.com/content/submit-form-google-sheet https://thenewstack.io/how-to-use-google-sheets-as-a-database-with-react-and-ssr/
+data store -- KV -- negative lookups = requests for keys which don't exist in the database, perf issue if distributed as it's mistaken for a cache miss
 data store -- KV store
 data store -- KV store -- Memcached
 data store -- KV store -- Redis
 data store -- live query: A live query is a query that is re-run when the data it depends on changes.
 data store -- live store: Manages live query subscribers and invalidations on the server. The current implementation is in-memory. Other stores can be implemented in the future (Redis, etc.).
+data store -- monotonic reads = ensures that if a process performs read r1, then r2, then r2 cannot observe a state prior to the writes which were reflected in r1; intuitively, reads cannot go backwards. Monotonic reads does not apply to operations performed by different processes, only reads by the same process. https://jepsen.io/consistency/models/monotonic-reads
 data store -- object store -- AWS S3
 data store -- object store -- Cloudflare R2
 data store -- object store = flat structure of objects + uid + metadata
+data store -- sequential consistency https://jepsen.io/consistency/models/sequential
+data store -- tombstone = a deleted record in a replica of a distributed data store. The tombstone is necessary, as distributed data stores use eventual consistency, where only a subset of nodes where the data is stored must respond before an operation is considered to be successful.  https://en.wikipedia.org/wiki/Tombstone_(data_store)
+DB -- multiversion concurrency control (MVCC) = a popular database mechanism for tracking changes in a non-blocking fashion, where for any key we can keep multiple versions of its values for different points in time https://en.wikipedia.org/wiki/Multiversion_concurrency_control
 DDOS (incl. self)
 deploy -- stages -- 1 build = converts a code repo into an executable bundle known as a build. Using a version of the code at a commit specified by the deployment process, the build stage fetches vendors dependencies and compiles binaries and assets.
 deploy -- stages -- 2 release = takes the build produced by the build stage and combines it with the deploy’s current config. The resulting release contains both the build and the config and is ready for immediate execution in the execution environment.
@@ -287,6 +297,7 @@ finops
 flux architecture
 full stack trade offs https://zknill.io/posts/backend-for-the-frontend/
 gateway (ingress) = universal vs dedicated ( se page assemble service, API gateway...))
+gateway https://www.cloudflare.com/learning/access-management/what-is-a-secure-web-gateway/
 Google - Site Reliability Engineering
 graceful degradation = ex. of batteries in flashlight
 Hadoop https://en.wikipedia.org/wiki/Apache_Hadoop
@@ -438,6 +449,10 @@ polyglot persistence https://en.wikipedia.org/wiki/Polyglot_persistence
 private cloud = https://threadreaderapp.com/thread/1800291897245835616.html
 product -- envoy = open source edge and service proxy, designed for cloud-native applications https://www.envoyproxy.io/
 protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https://stackoverflow.com/questions/731233/activemq-or-rabbitmq-or-zeromq-or https://news.ycombinator.com/item?id=9634801
+proxy
+proxy -- l4 https://blog.cloudflare.com/egress-policies-by-hostname/#why-was-this-so-hard-to-build
+proxy -- l7 https://blog.cloudflare.com/egress-policies-by-hostname/#why-was-this-so-hard-to-build
+proxy -- reverse proxy https://www.memorysafety.org/blog/introducing-river/
 proxy server = intermediaries between client and servers. improve performance by caching, provide security by filtering incoming traffic, enable load balancing for efficient distribution of requests
 pub/sub -- event -- identifier -- amqp convention https://www.rabbitmq.com/tutorials/amqp-concepts
 pub/sub -- event -- identifier = usually should help with topics, see "topics"
@@ -475,9 +490,8 @@ requirements -- non-functional -- Security
 requirements -- non-functional/non-behavioral  = quality constraints that the system must satisfy outside of the immediate feature
 resilience
 retire, retain, rehost, re-platform, repurchase, refactor/re-architect
-proxy
-proxy -- reverse proxy https://www.memorysafety.org/blog/introducing-river/
 routing -- hot/cold potato https://www.usenix.org/legacy/publications/library/proceedings/usenix02/full_papers/subramanian/subramanian_html/node28.html
+SASE (pronounced “sassy”) = architectural model that delivers network connectivity and security functions, and delivers them through a single cloud platform and/or centralized policy control. https://blog.cloudflare.com/cloudflare-sase-gartner-magic-quadrant-2025/
 scaling -- "internet scale", C10k, C10M problem  https://en.wikipedia.org/wiki/C10k_problem
 scaling -- auto-scaling
 scaling -- cliff = systems can't scale past a certain point. The cliff moves, usually to the database. https://www.linkedin.com/feed/update/share:7273025401101156352/
@@ -519,6 +533,7 @@ site reliability engineering (SRE) "treat operations as if it’s a software pro
 snowflake (Twitter) = distributed k-sorted uuid generator https://blog.x.com/engineering/en_us/a/2010/announcing-snowflake
 solution -- "no cloud Kamal" https://kamal-deploy.org/ https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_deploy-web-apps-anywhere-activity-7305513792275169281-C2-h/
 solution -- sdk https://www.stainless.com/ https://jsr.io/@openai/openai
+solutions -- KV -- RockDB = by Meta https://rocksdb.org/
 SRE -- learning 01 = The riskiness of a mitigation should scale with the severity of the outage
 SRE -- learning 02 = Recovery mechanisms should be fully tested before an emergency
 SRE -- learning 03 = Canary all changes

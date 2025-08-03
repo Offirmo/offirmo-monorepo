@@ -27,6 +27,7 @@ crypto -- ciphertext indistinguishability = important security property of encry
 crypto -- don't write your own
 crypto -- using crypto doesn't mean you're secure (attackers will look for a weaker link)
 dark web https://www.group-ib.com/blog/dark-web-fraud/
+ddos -- report http://www.ddosreport.com
 defence -- Primary / Secondary / Tertiary
 defense in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
 denial of wallet = like DoS but service down due to no more credits https://www.kasada.io/use-cases/genai-abuse-73-percent-have-experienced-genai-security-incidents/
@@ -106,6 +107,7 @@ Server Side Request Forgery (SSRF) = attacker to send a crafted request from a v
 shift left = earlier security
 software-defined perimeter (SDP) https://www.cloudflare.com/learning/access-management/software-defined-perimeter/
 spectre = class of attacks https://www.cloudflare.com/en-au/learning/security/threats/meltdown-spectre/
+supply chain -- dependency confusion = abusing internal packages (not just typo squatting) https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
 threat modeling
 through obscurity -- ok if not only https://security.stackexchange.com/questions/32064/at-what-point-does-something-count-as-security-through-obscurity
 through obscurity -- still useful https://news.ycombinator.com/item?id=24444497

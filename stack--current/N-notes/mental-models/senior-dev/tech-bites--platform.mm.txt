@@ -33,10 +33,12 @@ CI/CD -- need to be software-based AND allow branching to introduce a new setup,
 editor integration
 environments -- hierarchy = local -> shared -> staging -> prod
 flaky tests https://blog.mergify.com/flaky-test-detection/
+focus mode, as in yarn focus
 It Works on My Machine
 little, repetitive tasks that chip away at your day
 merge queue
 monorepo’s requirements
+topological execution
 undesirable -- Customer Satisfaction = Lower due to bugs, performance issues, and unreliable software https://blog.mergify.com/improve-code-quality/
 undesirable -- Development Time = Slowed by frequent bug fixes and rework https://blog.mergify.com/improve-code-quality/
 undesirable -- Maintenance Costs = High due to complex and difficult-to-maintain code https://blog.mergify.com/improve-code-quality/

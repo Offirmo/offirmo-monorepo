@@ -57,6 +57,7 @@ addictions -- casino -- maison qui gagne
 advocacy
 agency
 agile -- "what the client wanted"
+aging -- photoaging https://en.wikipedia.org/wiki/Photoaging
 alcohol https://podcastnotes.org/huberman-lab/episode-86-what-alcohol-does-to-your-body-brain-health-huberman-lab/  https://www.soberonadrunkplanet.com/
 alignment -- DnD 9 https://dungeonsdragons.fandom.com/wiki/Alignment
 ally -- barriers = Diffusion of Responsibility, Lack of Awareness or Skills, Fear of Retaliation, Fear of Causing Disruption or Embarrassment
@@ -260,6 +261,8 @@ death -- mortality salience -- terror management theory = asserts that almost al
 death -- mortality salience = awareness that one's death is inevitable and that all attempts to defer it indefinitely are ultimately futile https://en.wikipedia.org/wiki/Mortality_salience
 debanking = close/refuse account https://www.austrac.gov.au/news-and-media/media-release/austrac-statement-2021-de-banking
 debate -- https://en.wikipedia.org/wiki/Principle_of_charity
+decision -- doors -- 1 way = If you walk through and don’t like what you see on the other side, you can’t get back to where you were before
+decision -- doors -- 2 ways doors = If you’ve made a suboptimal Type 2 decision, you don’t have to live with the consequences for that long. You can reopen the door and go back through. https://growthmethod.com/two-way-doors/
 decoy effect https://en.wikipedia.org/wiki/Decoy_effect
 DEI
 deliberate intentional practice / play = intention of not achieving much, but just picking it up, giving it a strum and then having an open mind to the possibilities that you might discover something new or a new meta https://ghuntley.com/play/
@@ -322,9 +325,11 @@ dreams and aspirations -- interpersonal = as a team, couple, or family. an ally 
 dreams and aspirations -- intrapersonal
 dreams and aspirations -- pursuit
 dreams and aspirations = ppl may want to acquire desirable traits such as warmth, confidence, or decisiveness; to achieve professional success in the form of advancement, peer respect, or financial benefits; or to advance important pursuits involving religion, travel, or athletics
+dress code don't make leaders but they sure announce them
 drinking https://medium.com/@k.kozmana/common-side-effects-of-not-drinking-dd44714e619a
 drive by
 due diligence
+DYOR "do your own research"
 dysthymia https://en.wikipedia.org/wiki/Dysthymia
 ecosystem -- engineers https://fr.wikipedia.org/wiki/Esp%C3%A8ce_ing%C3%A9nieure
 education -- checklist +++ https://www.artofmanliness.com/people/relationships/avoid-falling-in-love-with-the-wrong-person/
@@ -426,6 +431,7 @@ Gall’s Law: A complex system that works is invariably found to have evolved fr
 game theory
 game theory -- prisoner's dilemma https://www.bennorthrop.com/Home/Blog/2007_11_17_prisoners_dilemma.php
 gateway effect / gateway hypothesis = gateway drug (cannabis), gateway gambling (gacha games) = pathway to dangerous addictions https://www.library.hbs.edu/working-knowledge/the-15-billion-question-have-loot-boxes-turned-video-gaming-into-gambling
+gender shade =  accuracy of AI powered gender classification products http://gendershades.org/
 giftedness and talent https://campbellms.typepad.com/files/gagne-a-differentiated-model-of-giftedness-and-talent-dmgt.pdf https://www.gigers.com/matthias/gifted/gagne_dmgt.html
 go go before you go
 go slow to go fast
@@ -504,6 +510,7 @@ how to ask questions http://www.catb.org/esr/faqs/smart-questions.html
 how to fail well = https://www.linkedin.com/posts/davidkline_7-lessons-on-how-to-fail-well-activity-7330569803084034049-U4Hx/
 https://36questionsinlove.com/
 https://cobeats.com/folder/ryfTgPr9H
+https://en.wikipedia.org/wiki/Great_Recession
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
 humanities and social sciences = includes some of the biggest and easiest undergrad majors
 humble bragging https://www.linkedin.com/posts/staceychampagne_womenincybersecurity-cybersecurity-certifications-activity-7284636641648889857-B_y_/
@@ -687,6 +694,7 @@ life span -- maximum https://en.m.wikipedia.org/wiki/Maximum_life_span
 lifeboat strategy = to avoid annihilation of the human race
 lifestyle
 lifestyle inflation
+Limited Life Experience + Overgeneralization = ADVICE https://blog.daryn.net/post/32264049/paul-buchheit-limited-life-experience
 Lindy effect = a theorized phenomenon by which the future life expectancy of some non-perishable things, like a technology or an idea, is proportional to their current age https://en.wikipedia.org/wiki/Lindy_effect
 linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_relativity
 living history = activity that incorporates historical tools, activities and dress into an interactive presentation that seeks to give observers and participants a sense of stepping back in time https://en.wikipedia.org/wiki/Living_history
@@ -826,6 +834,7 @@ oui, peut-être que personne n’y a encore pensé
 out of your league
 outside context problem (OCP) = a problem that is "outside the context" as it is generally not considered until it occurs, and the capacity to actually conceive of or consider the OCP in the first place may not be possible or very limited (i.e., the majority of the group's population may not have the knowledge or ability to realize that the OCP can arise, or assume it is extremely unlikely). An example of OCP is an event in which a civilization does not consider the possibility that a much more technologically advanced society can exist, and then encounters one https://en.wikipedia.org/wiki/Excession#Outside_Context_Problem
 overachiever
+overnight success takes a long time = https://paulbuchheit.blogspot.com/2009/01/overnight-success-takes-long-time.html
 Overton window: You can control thought without limiting speech. You can do it by defining the limits of acceptable thought while allowing for lively debate within these barriers. For example, Fox News and MSNBC set limits on what political thoughts they consider acceptable, but in the grand scheme of things, they’re both fairly conventional. The political spectrum stretches far beyond the ideas they entertain, but ideas outside their limits are shunned.
 paradigm shift https://en.wikipedia.org/wiki/Paradigm_shift
 paradox -- du réformateur https://pierre-yves-gomez.fr/le-paradoxe-du-reformateur/
@@ -1108,6 +1117,9 @@ sinecure = position with a ~salary that requires or involves little or no respon
 Situation Complication Question Answer (SCQA) = A Framework For Defining Problems & Hypotheses https://strategyu.co/scqa-a-framework-for-defining-problems-hypotheses/
 skin in the game
 skin in the game -- absorbing barrier = anything that prevents people with skin in the game from emerging from it, and to which the system will invariably tend. Let us call these situations ruin, as the entity cannot emerge from the condition https://en.wikipedia.org/wiki/Ergodic_hypothesis#Ergodic_hypothesis_in_finance
+skin tones -- Fitzpatrick https://www.ncbi.nlm.nih.gov/books/NBK481857/table/chapter6.t1/
+skin tones -- Monk https://skintone.google/the-scale
+skin tones -- tanning https://en.wikipedia.org/wiki/Sun_tanning#Tanning_behavior_of_different_skin_colors
 slavery -- Atlantic trade https://en.wikipedia.org/wiki/Atlantic_slave_trade
 slavery -- France https://en.wikipedia.org/wiki/Slavery_in_France
 slavery -- USA https://en.wikipedia.org/wiki/Slavery_in_the_United_States
@@ -1147,6 +1159,7 @@ standards of proof https://en.wikipedia.org/wiki/Burden_of_proof_(law)
 standing on the shoulders of giants https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants
 start with the most risky / complicated
 start with why
+state terrorism https://en.wikipedia.org/wiki/Infernal_columns
 statistical significance
 stereotypes -- karen -- https://en.wikipedia.org/wiki/Central_Park_birdwatching_incident
 stereotypes -- karen -- Miss Ann / Becky / Barbecue Becky / Cornerstore Caroline / Permit Patty

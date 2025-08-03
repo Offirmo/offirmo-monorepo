@@ -1,5 +1,4 @@
 import type { SemVerⳇExact, SemVerⳇRange, PathSeparator, EndOfLine } from '@offirmo-private/ts-types'
-import { getꓽdefault_namespace } from '@offirmo-private/monorepo--decisions'
 
 /////////////////////////////////////////////////
 
@@ -44,18 +43,37 @@ export interface JsRuntimeSpec<_JsRuntimeKey = JsRuntimeKey> extends VersionSpec
 
 /////////////////////////////////////////////////
 
+export const PKG_MANAGERS = [
+	'bolt', // https://github.com/boltpkg/bolt
+	'bun', // https://bun.com/docs/install/workspaces
+	'deno',
+	'npm',
+	'pnpm', // https://pnpm.io/
+	'yarn--v1',
+	'yarnⵧberry', // https://yarnpkg.com/
+] as const
 export type PackageManagerKey =
-	| 'bolt'
-	| 'npm'
-	| 'pnpm'
-	| 'yarn--v1'
-	| 'yarn--berry'
-	| 'deno'
-	| 'bun' // https://bun.com/docs/install/workspaces
+	| typeof PKG_MANAGERS[number]
 	| (string & {});
 
 export interface PackageManagerSpec extends VersionSpecification {
 	name: PackageManagerKey
+}
+
+/////////////////////////////////////////////////
+
+
+// in the sense of a ~npm package with a package.json
+export interface Package {
+	namespace?: string
+	name: string // NOT including the namespace
+
+	// fqname?
+}
+
+// a workspace is a Package which appears in the monorepo
+export interface Workspace extends Package {
+	//path...
 }
 
 /////////////////////////////////////////////////

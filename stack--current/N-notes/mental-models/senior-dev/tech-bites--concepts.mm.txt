@@ -121,6 +121,10 @@ build & delivery part of a product
 C++ 26 https://thenewstack.io/coming-to-iso-c-26-standard-an-ai-acceleration-edge/
 C10k problem https://en.wikipedia.org/wiki/C10k_problem
 cache
+cache -- lock = a small program, possibly distinct from your cache, that indicates if a request is already going to your origin. This is called request collapsing. https://developers.cloudflare.com/cache/concepts/revalidation/ https://blog.cloudflare.com/sometimes-i-cache/ https://developers.cloudflare.com/cache/concepts/revalidation/
+cache -- revalidation https://developers.cloudflare.com/cache/concepts/revalidation/
+cache -- stampede
+cache -- stampede -- prevention = Optimal Probabilistic Cache Stampede Prevention https://cseweb.ucsd.edu/~avattani/papers/cache_stampede.pdf
 cache -- stampede https://en.wikipedia.org/wiki/Cache_stampede
 caching -- caching tiers = edge cache → upper tier cache → central data store https://developers.cloudflare.com/kv/concepts/how-kv-works/
 caching -- hot and cold reads https://developers.cloudflare.com/kv/concepts/how-kv-works/
@@ -809,6 +813,8 @@ SAAS -- Shared responsibility model
 safety -- defense in depth = incident only when all the layers failed (rare but happens)
 scatter/gather (datastreams)
 schema
+schema -- normalization https://www.npmjs.com/package/normalize-url
+schema -- sanitization  https://www.npmjs.com/package/normalize-url
 schema -- validation -- standard interface https://standardschema.dev/
 schema explorer
 science -- Sokal affair = hoax leftist https://en.wikipedia.org/wiki/Sokal_affair

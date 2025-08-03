@@ -25,7 +25,9 @@ array -- dynamic = mutable https://en.wikipedia.org/wiki/Dynamic_array
 array -- lookup table (LUT) = replace runtime computation, ex. table of logs (or rainbow table). If "universe" of keys is too big for mem, hash table is better
 AST "abstract syntax tree" = data structure used in computer science to represent the structure of a program or code snippet https://en.wikipedia.org/wiki/Abstract_syntax_tree
 bloom filter = space-efficient probabilistic data structure that is used to test whether an element is a member of a set. False positive matches are possible, but false negatives are not https://en.wikipedia.org/wiki/Bloom_filter
+bloom filter = space-efficient probabilistic data structure used to test whether an element is a member of a set. False positive matches are possible, but false negatives are not https://en.wikipedia.org/wiki/Bloom_filter
 Conflict-Free Replicated Data type (CRDT)
+cuckoo filter = space-efficient probabilistic data structure used to test whether an element is a member of a set. False positive matches are possible, but false negatives are not. Sometimes better than Bloom depending on the application. https://en.wikipedia.org/wiki/Cuckoo_filter
 data structures -- active/passive -- active  = data structure with an associated thread or process that performs internal operations https://en.wikipedia.org/wiki/Active_data_structure
 data structures -- active/passive -- passive = plain old data structure or plain old data (POD) = a record
 data structures -- plain old (POD)
@@ -113,4 +115,7 @@ tree -- traversal -- DFS (Depth-first search) = deepest first, pre-order, in-ord
 tree -- traversal -- DFS -- iterative deepening
 tree -- traversal https://en.wikipedia.org/wiki/Tree_traversal
 tree https://en.wikipedia.org/wiki/Tree_(data_structure)
+trees -- syntax trees -- abstract vs. concrete https://github.com/syntax-tree/unist
+trees -- syntax trees https://github.com/syntax-tree/unist https://unifiedjs.com/learn/guide/introduction-to-syntax-trees/
+trees -- terminology https://github.com/syntax-tree/unist#glossary
 zipper https://en.wikipedia.org/wiki/Zipper_(data_structure)

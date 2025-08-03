@@ -10,3 +10,8 @@
 - allow "focus" mode
 - allow "extraction" ex. to "source available"
 - catalogs https://bun.com/docs/install/catalogs
+
+
+- folder based
+- can (re)generate package.json / configs
+- plugins

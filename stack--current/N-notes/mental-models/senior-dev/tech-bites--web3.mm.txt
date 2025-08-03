@@ -12,18 +12,22 @@
 2017-09 China bans crypto
 2019-04 Bankman-Fried found the FTX cryptocurrency derivatives exchange
 2020 "DeFi summer"
+2024 Ethereum 7702 https://blog.quicknode.com/eip-7702-explained-the-future-of-ethereum/
 2024-09 fundraising https://cointelegraph.com/news/patronage-model-fix-crypto-fundraising-says-kain-warwick
 2025-05 SEC abandon crypto regulation https://yro.slashdot.org/story/25/05/29/2155215/sec-voluntarily-dismisses-lawsuit-against-binance
 2025-05 USA strategic reserve https://news.slashdot.org/story/25/05/31/0636246/whats-in-the-us-governments-new-strategic-reserve-of-seized-crytocurrencies
 2025-06 crypto fully bnnaed in China https://www.idnfinancials.com/news/54986/china-tightens-financial-control-crypto-now-fully-banned
+2025-07 Mainnet = Ethereum relevant again https://blog.synthetix.io/synthetix-mainnet/
 51% attack = attack where a group gains control of the majority of nodes = allow them to defraud the blockchain by reversing transactions and double spending https://ethereum.org/en/glossary/#51%-attack
 [ ] criticism https://bitfinexed.medium.com/
 [ ] endgame https://vitalik.eth.limo/general/2021/12/06/endgame.html
 [ ] Gitcoin https://grants.gitcoin.co/
 [ ] great videos on DeFi https://www.youtube.com/@Finematics
 [ ] https://vitalik.eth.limo/
+account abstraction (AA) = allows the creation of smart contract accounts to initiate and execute transactions without needing an externally owned account (EOA). Put simply, account abstraction aims to make web3 so seamless that everyday users might not even notice they're using it, while still reaping all its benefits. https://blog.quicknode.com/eip-7702-explained-the-future-of-ethereum/
 Airdrop
 Arbitrum
+asset tokenization layer ???
 assets -- top https://www.coingecko.com/
 bag check
 Base
@@ -64,6 +68,7 @@ crypto signals = advice to invest https://www.tokenmetrics.com/blog/crypto-signa
 cryptocurrency = a medium of exchange secured by a blockchain-based ledger https://ethereum.org/en/developers/docs/intro-to-ether/#what-is-a-cryptocurrency
 cryptocurrency exchange
 cryptokitties
+CT "Crypto Twitter" a subset of the popular social media platform Twitter, specifically focused on cryptocurrency, blockchain technology, and decentralized finance https://www.bitget.com/wiki/what-is-ct-in-crypto
 culture
 dapp "decentralized application" = app built on a decentralized network that combines a smart contract and a frontend user interface https://ethereum.org/en/developers/docs/dapps/#definition-of-a-dapp
 dapp -- stores https://dappradar.com/
@@ -115,7 +120,15 @@ Howey Test -- four key criteria -- 2 Common Enterprise: There must be a shared i
 Howey Test -- four key criteria -- 3 Expectation of Profit: The investor anticipates a financial return from the investment.
 Howey Test -- four key criteria -- 4 Reliance on Efforts of Others: The investor's profits are primarily derived from the efforts of the promoters or a third party, not their own efforts.
 Howey Test = a legal framework used to determine if a transaction or scheme constitutes an "investment contract" and is therefore subject to U.S. securities law https://gordonlaw.com/learn/howey-test-is-your-token-security/
+https://www.pudgypenguins.com/
 Hyperledger Fabric = open-source project with a suite of tools and libraries. Enterprises can use it to build private blockchain applications quickly and effectively. It is a modular, general-purpose framework that offers unique identity management and access control features. These features make it suitable for various applications, such as track-and-trace of supply chains, trade finance, loyalty and rewards, and clearing settlement of financial assets. https://aws.amazon.com/blockchain/what-is-hyperledger-fabric/
+Hyperliquid -- ? https://hyperunit.xyz/
+Hyperliquid -- app = https://app.hyperliquid.xyz/join/INFINEXPERPS
+Hyperliquid -- HYPE
+Hyperliquid -- HyperBFT consensus
+Hyperliquid -- HyperCore
+Hyperliquid -- HyperEVM
+Hyperliquid = https://hyperfoundation.org/
 ICO (banned)
 ICO -- alternatives -- patrons https://finance.yahoo.com/news/infinex-raises-67-7-million-140229371.html
 ICO -- boom
@@ -186,6 +199,7 @@ public key cryptography
 read/write/own paradigm = data creators own and control their own data and have a greater say in how it is used and managed
 rotation = swapping crypto around cycles, ex. BTC-to-ETH
 Sam Bankman-Fried https://en.wikipedia.org/wiki/Sam_Bankman-Fried
+Satochi
 scalability
 scalability -- transactions per second
 scams -- pig butchering = people are lured by flirtatious strangers online into investing in fraudulent cryptocurrency trading platforms. Victims are coached to invest more and more money into what appears to be an extremely profitable trading platform, only to find their money is gone when they wish to cash out. https://yro.slashdot.org/story/25/05/30/2151248/us-sanctions-cloud-provider-funnull-as-top-source-of-pig-butchering-scams
@@ -234,6 +248,7 @@ unstable coins https://cointelegraph.com/magazine/unstable-coins-de-pegging-bank
 value -- extraction = just profit, not delivering anything
 vault
 verifiable compute = a way to run complex tasks off-chain & then prove to the chain that it was properly done
+Vitalik Buterin
 wallet
 wallet -- coinbase https://www.coinbase.com/en-au/wallet/smart-wallet
 wallet -- cross-chain

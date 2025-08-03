@@ -263,9 +263,41 @@ js -- latest features by year https://github.com/tc39/proposals/blob/main/finish
 js -- learning rsrcs -- Exploring JavaScript (ES2024 Edition) https://exploringjs.com/js/book/index.html
 js -- promises -- withResolvers
 js -- promises https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md
+JS -- string litterals -- raw vs cooked https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw#building_an_identity_tag
 js -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
 JSON "Javascript Object Notation"
 latency -- high latency environments https://csswizardry.com/2024/09/optimising-for-high-latency-environments/
+lawsofux.com -- Aesthetic-Usability Effect = Users often perceive aesthetically pleasing design as design that’s more usable.
+lawsofux.com -- Choice Overload = The tendency for people to get overwhelmed when they are presented with a large number of options, often used interchangeably with the term paradox of choice.
+lawsofux.com -- Chunking = A process by which individual pieces of an information set are broken down and then grouped together in a meaningful whole.
+lawsofux.com -- Cognitive Bias = systematic error of thinking or rationality in judgment that influence our perception of the world and our decision-making ability.
+lawsofux.com -- Cognitive Load = amount of mental resources needed to understand and interact with an interface.
+lawsofux.com -- cVon Restorff Effect = also known as The Isolation Effect, predicts that when multiple similar objects are present, the one that differs from the rest is most likely to be remembered.
+lawsofux.com -- Doherty threshold = Productivity soars when a computer and its users interact at a pace (<400ms) that ensures that neither has to wait on the other. https://lawsofux.com/doherty-threshold/
+lawsofux.com -- Fitts’s Law =
+lawsofux.com -- Flow = mental state in which a person performing some activity is fully immersed in a feeling of energized focus, full involvement, and enjoyment in the process of the activity.
+lawsofux.com -- Goal-Gradient Effect = tendency to approach a goal increases with proximity to the goal.
+lawsofux.com -- Hick’s Law = the time it takes to make a decision increases with the number and complexity of choices.
+lawsofux.com -- Jakob’s Law = Users spend most of their time on other sites. This means that users prefer your site to work the same way as all the other sites they already know.
+lawsofux.com -- Law of Common Region = elements tend to be perceived into groups if they are sharing an area with a clearly defined boundary.
+lawsofux.com -- Law of Proximity = objects that are near, or proximate to each other, tend to be grouped together.
+lawsofux.com -- Law of Prägnanz = people will perceive and interpret ambiguous or complex images as the simplest form possible, because it is the interpretation that requires the least cognitive effort of us.
+lawsofux.com -- Law of Similarity = the human eye tends to perceive similar elements as a complete picture, shape, or group, even if those elements are separated.
+lawsofux.com -- Law of Uniform Connectedness = elements that are visually connected are perceived as more related than elements with no connection.
+lawsofux.com -- Mental Model = a compressed model based on what we think we know about a system and how it works.
+lawsofux.com -- Miller’s Law = the average person can only keep 7 (plus or minus 2) items in their working memory.
+lawsofux.com -- Occam’s Razor = among competing hypotheses that predict equally well, the one with the fewest assumptions should be selected.
+lawsofux.com -- Paradox of the Active User = users never read manuals but start using the software immediately.
+lawsofux.com -- Pareto Principle = for many events, roughly 80% of the effects come from 20% of the causes.
+lawsofux.com -- Parkinson’s Law = Any task will inflate until all of the available time is spent.
+lawsofux.com -- Peak-End Rule = people judge an experience largely based on how they felt at its peak and at its end, rather than the total sum or average of every moment of the experience.
+lawsofux.com -- Postel’s Law = be liberal in what you accept, and conservative in what you send. (IT DEPENDS)
+lawsofux.com -- Selective Attention = the process of focusing our attention only to a subset of stimuli in an environment — usually those related to our goals.
+lawsofux.com -- Serial Position Effect = users have a propensity to best remember the first and last items in a series.
+lawsofux.com -- Tesler’s Law = also known as The Law of Conservation of Complexity, states that for any system there is a certain amount of complexity which cannot be reduced.
+lawsofux.com -- Working Memory = a cognitive system that temporarily holds and manipulates information needed to complete tasks.
+lawsofux.com -- Zeigarnik Effect = People remember uncompleted or interrupted tasks better than completed tasks.
+lawsofux.com = collection of best practices that designers can consider when building user interfaces https://lawsofux.com/
 layout -- composer https://github.com/namecheap/ilc
 layout -- trashing https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing
 lazy loading -- preloading https://www.differentshelf.com/lazy-loading-isnt-just-lazy-its-late-the-web-deserves-faster/
@@ -278,6 +310,7 @@ monitoring -- synthetic = own test bot https://en.wikipedia.org/wiki/Synthetic_m
 native apps with JS https://v2.tauri.app/
 navigation -- client side vs full refresh
 node -- tenant isolation = node is single thread, hence issues with security, esp. AWS lambda! solutions: workerd?
+oklch https://oklch.com/
 Open Web Advocacy https://open-web-advocacy.org/
 optimisation -- fonts https://nextjs.org/learn/dashboard-app/optimizing-fonts-images
 optimisation -- images https://nextjs.org/learn/dashboard-app/optimizing-fonts-images
@@ -303,6 +336,7 @@ perf metrics -- Time to above-the-fold load
 perf metrics -- Time to First Byte (TTFB) = from the browser, time taken to receive the first byte of data from the web server. TTFB is crucial because it indicates the general ability of the server to handle traffic
 perf metrics -- Time to Interactive (TTI) = time at which the page becomes consistently responsive to user input. This is a less well-defined milestone, but is sometimes calculated as the point when the CPU and network both become idle
 perf metrics -- Time to Visually Complete (TTVC) = time of the last visible paint event. Nothing on the user’s screen should change without user input https://dropbox.tech/frontend/measuring-ttvc-web-performance-metric-open-source-library
+postXYZ = postCSS, postHTML https://postcss.org/ https://posthtml.org/
 progressive enhancement -- "next billion" = They’ll mostly be running Android. They’ll have decent specs (1GB RAM, quad-core processors). They’ll have an evergreen browser and WebView (Android 5+). What they won’t have, however, is a reliable internet connection.
 progressive enhancement https://nolanlawson.com/2016/10/13/progressive-enhancement-isnt-dead-but-it-smells-funny/
 puppeteer -- firefox https://hacks.mozilla.org/2024/08/puppeteer-support-for-firefox/
@@ -348,6 +382,7 @@ security -- domain registration, DNS, hosting = don't use the same provider so t
 security -- Google Tag Manager = a handy way for people you’ve never met to inject JavaScript into your site without the hindrance of a code review https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
 Server Side Rendering = an umbrella term that includes several different rendering strategies. They all have one thing in common: the initial render happens in a server runtime like Node.js, using the ReactDOMServer APIs. It doesn't actually matter when this happens, whether it's on-demand or at compile-time. https://www.joshwcomeau.com/react/server-components/
+settings -- Mac = https://aresluna.org/frame-of-preference/
 skew -- flags skew
 skew -- occurs when different versions of your application run on client and server, causing application errors and other unexpected behavior https://www.industrialempathy.com/posts/version-skew/
 skew -- version skew -- protection https://vercel.com/docs/skew-protection
@@ -371,6 +406,7 @@ test -- jsdom https://github.com/jsdom/jsdom
 testing -- component https://storybook.js.org/blog/component-testing/
 testing -- Netflix's SafeTest https://www.infoq.com/news/2024/02/netflix-safetest-front-end-test/
 testing https://www.testingjavascript.com/
+The time to acquire a target is a function of the distance to and size of the target.
 The web will always win = over confidence? https://aifoc.us/a-link-is-all-you-need/
 There’s an app for that
 Three Cs: 🤝 Concatenate, 🗜️ Compress, 🗳️ Cache https://csswizardry.com/2023/10/the-three-c-concatenate-compress-cache/

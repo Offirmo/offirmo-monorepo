@@ -14,6 +14,12 @@ alignment -- of tech
 alignment -- of values
 barriers -- to entry = moat against competitors
 barriers -- to exit = users can't leave (switch) ex. cost
+Bezos principles -- customer obsession rather than competitor obsession
+Bezos principles -- eagerness to invent and pioneer
+Bezos principles -- https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm
+Bezos principles -- patience to think long-term
+Bezos principles -- taking of professional pride in operational excellence
+Bezos principles -- willingness to fail
 billing model -- one-time purchase with lifetime access
 billing model -- pay-as-you-go
 billing model -- subscription = everyone hates it
@@ -118,6 +124,7 @@ first-mover advantage -- handicap of a head start https://en.wikipedia.org/wiki/
 first-mover advantage -- second mover advantage / "fast followers" / "free riders" https://en.wikipedia.org/wiki/First-mover_advantage#Second-mover_advantage
 first-mover advantage https://en.wikipedia.org/wiki/First-mover_advantage
 flexible planning = scope changes and unexpected risks: adaptability is crucial
+flintstoning = when your app, product, or business itself lacks a feature… buuuuuuuuut, you can make up for it manually https://stackingthebricks.com/the-fine-art-of-flintstoning/
 funnel
 get big fast / get large or get lost
 go-to-market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
@@ -212,6 +219,7 @@ only the paranoid survive (Andy Grove) = success breeds complacency, complacency
 only the paranoid survive -- 1 assume disaster is coming
 only the paranoid survive -- 2 spot threats before they explode = if you wait until a crisis is obvious, it's already too late
 only the paranoid survive -- 3 reinvent before you're forced to = industries shit, adapt or die
+overfitting = the solution accomplishes one goal — but as soon as it needs to do something else, it’s almost back to square one https://medium.com/design-bootcamp/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7
 path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
 personas -- data savvy vs data shy
 piracy -- anti = do not make the product worse for paying customers, pirates wouldn't have paid anyway

@@ -4,6 +4,7 @@ APS → openapi → openapi trpc / hono ??
 auth -- ? https://www.propelauth.com/
 CI/CD -- ? https://mergify.com/
 cloud -- Cloudflare
+corepack https://www.totaltypescript.com/how-to-use-corepack
 corepack still considered experimental? https://vercel.com/docs/builds/configure-a-build#corepack
 designed for Cloudflare/Vercel -- https://upstash.com/
 ecosystem -- sdk ?https://liblab.com/ https://www.speakeasy.com/
@@ -11,6 +12,7 @@ feature flags
 frontend -- CSS -- framework -- ? tailwind https://tailwindcss.com/docs https://github.com/dcastil/tailwind-merge https://tremor.so/
 frontend -- CSS-in-js -- ? https://github.com/vercel/styled-jsx
 frontend -- React
+GraphQL https://gql-tada.0no.co/
 JavaScript -- TypeScript -- https://openapi-ts.dev/
 JavaScript -- TypeScript -- tRPC https://trpc.io/docs/getting-started
 JavaScript -- TypeScript -- zod
@@ -19,6 +21,7 @@ JavaScript -- TypeScript ✅
 just https://just.systems/man/en/further-ramblings.html
 linter -- eslint
 linter -- https://biomejs.dev/
+localias = securely manage local aliases for development servers https://github.com/peterldowns/localias
 meta -- https://stackshare.io/
 microfrontends
 mobile -- capacitor https://capacitorjs.com/  https://capawesome.io/  https://capgo.app/
@@ -31,13 +34,13 @@ pkg manager -- pnpm
 pkg manager -- ✖ npm
 React -- https://reactrouter.com/home ?
 secrets management -- ? https://infisical.com/
+Talwind https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
 transactional emails https://react.email/
 vite -- npm create vite@latest my-project
 vite -- vitest
 vite ✅ https://vite.dev/
 wire protocol https://capnproto.org/l ?
 yalc
+⚠ Tailwind https://www.mux.com/blog/tailwind-is-the-worst-form-of-css-except-for-all-the-others
 ✖ Nix https://nixos.org/
 ✖ xml
-⚠ Tailwind https://www.mux.com/blog/tailwind-is-the-worst-form-of-css-except-for-all-the-others
-Talwind https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
