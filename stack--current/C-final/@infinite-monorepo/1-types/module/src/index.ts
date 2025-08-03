@@ -1,4 +1,5 @@
 import type { SemVerⳇExact, SemVerⳇRange, PathSeparator, EndOfLine } from '@offirmo-private/ts-types'
+import { getꓽdefault_namespace } from '@offirmo-private/monorepo--decisions'
 
 /////////////////////////////////////////////////
 
@@ -72,20 +73,21 @@ export interface ToolSpec extends VersionSpecification {
 
 export interface MonorepoSpec {
 
-	////////////
+	/////// RUNTIME ///////
 
 	// the runtime used to do monorepo operations such as running tasks, building, etc.
 	// (should we support multiple at once? Not for now, complex, need actual use case)
 	runtimeⵧlocal: LocalJsRuntimeKey | JsRuntimeSpec<LocalJsRuntimeKey>
 
-	////////////
-	package_manager: PackageManagerKey | PackageManagerSpec
-
+	/////// WORKSPACES ///////
+	namespace: `@${string}` // will be suffixed with -private
 	workspaces: Array<string> // TODO refine
 
+	/////// TOOLING ///////
+	package_manager: PackageManagerKey | PackageManagerSpec
 	//runtime_envⵧdev: { [key: string]: JsRuntimeSpec }
 
+	/////// CODEGEN ///////
 	EOL: EndOfLine // useful?
-
 	PATH_SEP: PathSeparator // useful?
 }

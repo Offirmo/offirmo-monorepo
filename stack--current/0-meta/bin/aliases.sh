@@ -93,7 +93,11 @@ alias     monoBoc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias     monoBoi='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd B-backend/;        cd offirmo-api--interface/;                                  tabset --badge monoBoi'
 
 alias     monoC@1='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/1-types/;                              tabset --badge monoC@1'
+alias     monoC@2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/2-spec-defaults/;                      tabset --badge monoC@2'
+alias     monoC@l='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/load-config/;                          tabset --badge monoC@l'
 alias    monoC@oa='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/operation--apply/;                     tabset --badge monoC@oa'
+alias    monoC@pn='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--node/;                         tabset --badge monoC@pn'
+alias   monoC@pn2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/plugin--nvm/;                          tabset --badge monoC@pn2'
 alias    monoC@1l='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @tbrpg/1-logic/l1-definitions/;                           tabset --badge monoC@1l'
 alias  monoC@1lar='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @tbrpg/1-logic/l1-logic--adventure--resolved/;            tabset --badge monoC@1lar'
 alias   monoC@1la='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @tbrpg/1-logic/l1-logic--adventures/;                     tabset --badge monoC@1la'

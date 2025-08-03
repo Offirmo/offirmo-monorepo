@@ -7,16 +7,27 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/~~sandbox/index.ts"
+		".": "./module/src/index.ts"
 	},
-	"source": "module/~~sandbox/index.ts",
-	"dependencies": {},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"tiny-invariant": "^1"
+	},
 	"scripts": {
+		"check--ts": "echo \"@infinite-monorepo/operation--apply\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s check--ts",
 		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo/unit-test-toolbox": "^9",
-		"npm-run-all": "^4"
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
 	}
 }

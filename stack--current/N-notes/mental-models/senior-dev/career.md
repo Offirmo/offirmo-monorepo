@@ -258,3 +258,9 @@ https://www.entrepreneur.com/business-news/meta-fires-400000-employee-over-25-ub
 https://www.threads.net/@iam_digitalclaudia/post/DGYmZ7_sdvu
 
 https://martinfowler.com/articles/expert-generalist.html
+
+"unboxed" https://www.generalist.world/unboxed
+
+marketable skills
+
+dev potfolio https://storage.googleapis.com/joshwcomeau/building-an-effective-dev-portfolio.pdf

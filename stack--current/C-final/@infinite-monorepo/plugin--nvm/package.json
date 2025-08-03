@@ -1,6 +1,5 @@
 {
-	"name": "@offirmo-private/ts-types",
-	"description": "TypeScript base types definitions",
+	"name": "@infinite-monorepo/plugin--nvm",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -8,9 +7,9 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/index.ts"
+		".": "./module/src/index.ts"
 	},
-	"source": "module/index.ts",
+	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
@@ -18,7 +17,7 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/ts-types\" && tsc --noEmit",
+		"check--ts": "echo \"@infinite-monorepo/plugin--nvm\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts"
@@ -28,7 +27,6 @@
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"type-fest": "^4",
 		"typescript": "^5"
 	}
 }

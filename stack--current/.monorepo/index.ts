@@ -2,16 +2,17 @@ import type { MonorepoSpec } from '@infinite-monorepo/types'
 
 /////////////////////////////////////////////////
 
+// TODO remove
 export const NODE_MAJOR_VERSION = 22
 
 /////////////////////////////////////////////////
 
 const SPEC: Partial<MonorepoSpec> = {
-
 	runtimeⵧlocal: 'node',
 
 	package_manager: 'bolt',
 
+	namespace: '@offirmo',
 	workspaces: [
 		"0-meta/build-tools/*",
 
