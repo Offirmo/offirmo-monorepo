@@ -43,3 +43,5 @@ const SPEC: Partial<MonorepoSpec> = {
 	],
 
 }
+
+export default SPEC

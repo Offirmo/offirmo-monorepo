@@ -2,28 +2,19 @@
 import type { PathSegment, AbsolutePath, RelativePath, AnyPath, Immutable } from '@offirmo-private/ts-types'
 
 import type { MonorepoSpec } from '@infinite-monorepo/types'
+import { loadꓽconfig } from '@infinite-monorepo/load-config'
+import { completeꓽspec } from '@infinite-monorepo/spec-defaults'
 import * as process from 'node:process'
 
 /////////////////////////////////////////////////
 
-function search_forꓽroot(starting_point: AnyPath) {
-	throw new Error(`Not implemented!`)
+async function loadꓽspecⵧraw(): Promise<Partial<MonorepoSpec>> {
+	return await loadꓽconfig('.monorepo')
 }
 
-function findꓽconfig() {
-	const cwd = process.cwd()
-
-}
-
-function loadꓽconfigⵧraw(): Partial<MonorepoSpec> {
-	throw new Error(`Not implemented!`)
-}
-
-function loadꓽconfig(): Immutable<MonorepoSpec> {
-	const raw = loadꓽconfigⵧraw()
-	return {
-		...raw,
-	}
+async function loadꓽspec(): Promise<Immutable<MonorepoSpec>> {
+	const raw = await loadꓽspecⵧraw()
+	return completeꓽspec(raw)
 }
 
 /////////////////////////////////////////////////
@@ -108,7 +99,8 @@ class Output {
 async function apply() {
 	console.log(`Applying...`)
 
-	const config = loadꓽconfig()
+	const spec = await loadꓽspec()
+	console.log(`XXX spec:`, spec)
 
 	const output = new Output()
 
@@ -128,7 +120,7 @@ async function apply() {
 
 		const nvmrcⵧcontent: StructuredFsOutputⳇFullFile = {
 			file_path,
-			lines: [ XXX ]
+			lines: [ 'TODO XXX' ]
 		}
 		output.pushFile(nvmrcⵧcontent)
 

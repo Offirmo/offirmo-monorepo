@@ -20,7 +20,6 @@ async function loadꓽconfig(radix: string, options: Options = {}): Promise<JSON
 		if (dirs.includes(radix)) {
 			const target = path.join(current_path, radix, 'index.ts')
 			const imported = await import(target)
-			console.log(`${target} =`, imported)
 			return imported.default
 		}
 
