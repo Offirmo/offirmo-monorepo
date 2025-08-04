@@ -167,6 +167,7 @@ data fetching -- extra: preload-on-intent
 data fetching https://17.reactjs.org/docs/concurrent-mode-suspense.html#traditional-approaches-vs-suspense
 data fetching https://martinfowler.com/articles/data-fetch-spa.html
 Data Layer Abstraction (DLA)
+data-testid https://www.educative.io/answers/what-is-the-data-testid-attribute-in-testing
 design -- design aesthetic
 design -- ease of use vs. clunky, all over the place,
 design -- guides https://owickstrom.github.io/the-monospace-web/
@@ -401,6 +402,7 @@ spirit -- the web is for everyone
 spirit -- view source affordance https://htmx.org/essays/right-click-view-source/
 spirit https://info.cern.ch/hypertext/WWW/Summary.html
 SSR good explanation https://single-spa.js.org/docs/ssr-overview/
+SVG = https://www.joshwcomeau.com/svg/friendly-introduction-to-svg/
 temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
 test -- jsdom https://github.com/jsdom/jsdom
 testing -- component https://storybook.js.org/blog/component-testing/

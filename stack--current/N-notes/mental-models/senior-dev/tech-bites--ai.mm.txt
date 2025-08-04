@@ -17,6 +17,7 @@
 2025-06 Apple "The illusion of thinking" https://machinelearning.apple.com/research/illusion-of-thinking
 2025-06 dev AI perf framework
 2025-06 real applied case "composite model architecture" https://vercel.com/blog/v0-composite-model-family
+2025-07 USA White House AI action plan https://blog.cloudflare.com/the-white-house-ai-action-plan-a-new-chapter-in-u-s-ai-policy/
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://ghuntley.com/
@@ -44,6 +45,7 @@ AI 50 2023 https://www.forbes.com/lists/ai50/?sh=5f9503cc290f
 AI doomer https://www.wheresyoured.at/wheres-the-money/ https://www.wheresyoured.at/longcon/
 AI Driven Organisations (AIDO)
 AI gateway = convenient self-service integration point for internal teams who want to utilise turnkey AI APIs, proxy for the external and internal AI offerings + additional set of capabilities that empower usage and tracking of AI functionalities at an enterprise level.
+AI Labyrinth = new, next generation honeypot and cybersecurity defensive tool that uses AI to trap AI = leverages AI to confuse crawlers and bots that ignore "no crawl" directives. Instead of blocking these bots, AI Labyrinth directs bots into an endless maze of convincing, AI-generated pages. https://blog.cloudflare.com/ai-labyrinth/
 AI model collapse = as AI grows, systems are trained on their own outputs, gradually losing accuracy, diversity, and reliability. This occurs because errors compound across successive model generations, leading to distorted data distributions and "irreversible defects" in performance. The model becomes poisoned with its own projection of reality. https://slashdot.org/story/25/05/28/0242240/some-signs-of-ai-model-collapse-begin-to-reveal-themselves
 AI transition = https://www.youtube.com/watch?v=v9JBMnxuPX8
 AI winter
@@ -108,6 +110,7 @@ dataset https://www.fatml.org/media/documents/datasheets_for_datasets.pdf
 day 2 = The challenge of revising, maintaining, further developing, and deploying an AI-generated app https://manual.bubble.io/beta-features/bubbles-ai-app-generator#the-day-1-and-day-2-dilemma-in-ai-driven-app-development
 deep reinforcement learning (deep RL) course: https://spinningup.openai.com/
 Deep Research
+Defensive AI = some vague Cloudflare framework/tech https://blog.cloudflare.com/defensive-ai/
 delvish dialect https://bruces.medium.com/preliminary-notes-on-the-delvish-dialect-by-bruce-sterling-ce68a476247b
 developer vs sociotechnic vs project organizer
 diffusers

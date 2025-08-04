@@ -123,7 +123,6 @@ async function apply() {
 			lines: [ 'TODO XXX' ]
 		}
 		output.pushFile(nvmrcⵧcontent)
-
 	})()
 
 	// TODO all root files

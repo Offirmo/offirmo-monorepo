@@ -13,6 +13,7 @@
 2019-04 Bankman-Fried found the FTX cryptocurrency derivatives exchange
 2020 "DeFi summer"
 2024 Ethereum 7702 https://blog.quicknode.com/eip-7702-explained-the-future-of-ethereum/
+2024-02 Genesis bankrupt https://www.reuters.com/legal/bankrupt-genesis-global-settles-ny-attorney-generals-lawsuit-2024-02-09/
 2024-09 fundraising https://cointelegraph.com/news/patronage-model-fix-crypto-fundraising-says-kain-warwick
 2025-05 SEC abandon crypto regulation https://yro.slashdot.org/story/25/05/29/2155215/sec-voluntarily-dismisses-lawsuit-against-binance
 2025-05 USA strategic reserve https://news.slashdot.org/story/25/05/31/0636246/whats-in-the-us-governments-new-strategic-reserve-of-seized-crytocurrencies
@@ -20,9 +21,11 @@
 2025-07 Mainnet = Ethereum relevant again https://blog.synthetix.io/synthetix-mainnet/
 51% attack = attack where a group gains control of the majority of nodes = allow them to defraud the blockchain by reversing transactions and double spending https://ethereum.org/en/glossary/#51%-attack
 [ ] criticism https://bitfinexed.medium.com/
+[ ] digital security -- solutions --  https://www.privacyguides.org/en/tools/
 [ ] endgame https://vitalik.eth.limo/general/2021/12/06/endgame.html
 [ ] Gitcoin https://grants.gitcoin.co/
 [ ] great videos on DeFi https://www.youtube.com/@Finematics
+[ ] https://brave.com/web3/
 [ ] https://vitalik.eth.limo/
 account abstraction (AA) = allows the creation of smart contract accounts to initiate and execute transactions without needing an externally owned account (EOA). Put simply, account abstraction aims to make web3 so seamless that everyday users might not even notice they're using it, while still reaping all its benefits. https://blog.quicknode.com/eip-7702-explained-the-future-of-ethereum/
 Airdrop
@@ -65,6 +68,7 @@ cross-chain
 cross-chain -- chain abstraction
 cross-chain -- swaps = swidge??
 crypto signals = advice to invest https://www.tokenmetrics.com/blog/crypto-signals
+crypto-adjacent = pejorative for "borderline crypto" = "borderline scam/shit"
 cryptocurrency = a medium of exchange secured by a blockchain-based ledger https://ethereum.org/en/developers/docs/intro-to-ether/#what-is-a-cryptocurrency
 cryptocurrency exchange
 cryptokitties
@@ -80,7 +84,14 @@ decentralized identity = technology that aims to give individuals more control a
 DeFi
 DeFi -- lending / borrowing -- Compound, AAVE
 degen = slang derived from "degenerate", typically refers to someone who engages in high-risk, speculative trading or investment with the potential for high rewards. It describes individuals who prioritize potential gains over calculated risks and are known for their aggressive and sometimes reckless approach.
+digital security -- solution -- browser -- brave https://www.reddit.com/r/browsers/comments/1j1pq7b/list_of_brave_browser_controversies/
+digital security -- solutions -- browser -- PrivacyTests https://privacytests.org/ (close to Brave)
+digital security -- solutions -- browser -- Tor
+digital security = an important pre-requisite https://securitylab.amnesty.org/digital-resources/
 Dogecoin https://cointelegraph.com/magazine/elon-musk-dogecoin-rally-bitcoin-ethereum-solana-predictions-trade-secrets/
+domain names -- Ethereum Name Service (ENS) domain names
+domain names -- Solana Name Service (SNS) domain names
+domain names -- Unstoppable = https://github.com/brave/brave-browser/wiki/Resolve-Methods-for-Unstoppable-Domains https://unstoppabledomains.com/
 domains = .crypto https://support.unstoppabledomains.com/support/solutions/articles/48001181690-what-are-web3-domains-
 domains = .eth
 drain = attack?
@@ -100,6 +111,7 @@ Ethereum = a decentralized open-source blockchain platform that people can use t
 Ethereum = blockchain with a built-in fully fledged Turing-complete programming language that can be used to create "contracts" that can be used to encode arbitrary state transition functions, allowing users to create any systems we have not yet imagined, simply by writing up the logic in a few lines of code https://ethereum.org/en/whitepaper/#a-next-generation-smart-contract-and-decentralized-application-platform
 EVM and non-EVM chains
 EVM network
+exchange -- solution -- uphold https://uphold.com/ = the only one for BAT
 fiat
 fiat ramps
 fiat-backed
@@ -165,6 +177,18 @@ movement
 multi-chain https://arxiv.org/abs/2112.01472
 namecoin = non-fungible assets such as domain names http://namecoin.org/
 narratives = to bring interest into crypto
+networks -- Avalanche C-Chain
+networks -- Base
+networks -- Bitcoin Mainnet
+networks -- BNB Smart Chain
+networks -- Ethereum Mainnet
+networks -- Filecoin EVM Mainnet
+networks -- Filecoin Mainnet
+networks -- Neon EVM
+networks -- Optimism
+networks -- Polygon Mainnet
+networks -- Solana Mainnet Beta
+networks -- Zcash Mainnet
 NFT -- blur https://blur.io/
 NFTs -- as collateral -- NFTti
 NFTs -- games -- CryptoKitties
@@ -234,6 +258,7 @@ swidge = "swap and bridge" https://support.infinex.xyz/en/articles/10336734-how-
 Sybil attack = actor pretending to be a lot of actors to control the chain. Resistance to this type of attack is essential for a decentralized blockchain and enables miners and validators to be rewarded equally based on resources put in. Proof-of-work and proof-of-stake protect against this. https://ethereum.org/en/developers/docs/consensus-mechanisms/#sybil-chain
 Sybil resistance = measures how a protocol fares against a Sybil attack.
 Synthetix
+token -- BAT "Basic Attention Token" = Brave Browser's own cryptocurrency that users can earn by viewing advertisements shown by Brave
 tokenization = process of representing real-world or digital assets as digital tokens on a blockchain
 tokens
 tokens -- Ether (ETH) = the cryptocurrency used for many things on the Ethereum network. Fundamentally, it is the only acceptable form of payment for transaction fees, and after The Merge, ether is required to validate and propose blocks on Mainnet the cryptocurrency used for many things on the Ethereum network. Fundamentally, it is the only acceptable form of payment for transaction fees, and after The Merge, ether is required to validate and propose blocks on Mainnet
@@ -250,11 +275,24 @@ vault
 verifiable compute = a way to run complex tasks off-chain & then prove to the chain that it was properly done
 Vitalik Buterin
 wallet
+wallet
 wallet -- coinbase https://www.coinbase.com/en-au/wallet/smart-wallet
 wallet -- cross-chain
 wallet -- hot
 wallet -- metamask https://metamask.io/download
 wallet -- okx https://web3.okx.com/
+wallet -- password
+wallet -- recovery phrase = 24 words to recover/transfer a wallet
+wallet -- self-custody = "​​I understand that this is a self-custody wallet, and that I am solely responsible for any associated funds, assets or accounts, and for taking any appropriate action to secure, protect and back up my wallet. I understand that X cannot access my wallet or reverse transactions on my behalf and that my recovery phrase is the ONLY way to regain access in the event of a lost password, stolen device or similar circumstance."
+wallet -- solution -- brave https://brave.com/wallet/
+wallet -- solution -- coinbase
+wallet -- solution -- ledger
+wallet -- solution -- metamask
+wallet -- solution -- phantom
+wallet -- solution -- rabby
+wallet -- solution -- trezor
+wallet -- solution -- uphold https://wallet.uphold.com/
+wallet -- supported networks =
 Web Ontology Language (OWL) = language for defining ontologies, or formal representations of knowledge and relationships between concepts. You can use it to specify classes, properties, and instances, as well as facilitate reasoning and inferencing.
 Web1 = read-only
 Web2 = interactive, but challenges with centralized providers: data portability, data abuse (privacy), censorship, ban (democracy)...

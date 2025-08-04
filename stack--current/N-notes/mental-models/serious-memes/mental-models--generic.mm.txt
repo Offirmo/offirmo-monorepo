@@ -54,8 +54,14 @@ accepting oneself
 action -- deep dive & low-hanging fruits
 addictions -- casino -- "je vais me refaire"
 addictions -- casino -- maison qui gagne
+advices -- flaw -- Curse of Brilliance = when dissecting what makes them successful, people unwittingly tend to overemphasize the things they found very difficult and underplay (or altogether ignore) the importance of things at which they were naturally good/brilliant. Ex. a successful repeat founder will often say things like “speed is all that matters” = bc. they take the vision & strategy part for granted. https://x.com/shreyas/status/1442165965769240577
+advices -- flaw -- Curse of Brilliance, Survivorship Bias & the Halo Effect will conspire together to create an inaccurate view of what it really takes to succeed
+advices -- flaw -- Halo Effect
+advices -- flaw -- Survivorship Bias
 advocacy
 agency
+agency -- agency / talent quadrant https://x.com/shreyas/status/1276956836856393728
+agency -- high = finding a way to get what you want, without waiting for conditions to be perfect or otherwise blaming the circumstances. High Agency People either push through in the face of adverse conditions or manage to reverse the adverse conditions to achieve goals https://x.com/shreyas/status/1276956838840295425
 agile -- "what the client wanted"
 aging -- photoaging https://en.wikipedia.org/wiki/Photoaging
 alcohol https://podcastnotes.org/huberman-lab/episode-86-what-alcohol-does-to-your-body-brain-health-huberman-lab/  https://www.soberonadrunkplanet.com/
@@ -145,6 +151,7 @@ brainstorming -- technique -- wrong = try to come up with the worst ideas https:
 brainstorming -- veto technique = "anyone who vetoes a suggestion has to pay for that veto with a suggestion of their own" https://www.reddit.com/r/LifeProTips/comments/1cyvsz/lpt_cant_decide_on_dinner_use_the_veto_rule/
 Brandolini's Law = The amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it
 breaking through
+brilliance -- Identify your own brilliance, don't be like somebody https://x.com/shreyas/status/1442165986908524545
 broken window theory
 bullying = Lack of consideration and empathy for those without power, Disrespectful behavior that is overt or subtle (in public or behind closed doors), Verbal aggression, sarcasm, or psychological manipulation. Unreasonable or constantly changing directives and deadlines. Singling out individuals. “Mobbing,” in which a group of people gang up on an individual
 bullying = repeated pattern of offensive, intimidating, or hostile behavior(s) or language, often by a strong or other person of authority. Bullying creates a toxic atmosphere for everyone, but may be accepted by many as “part of the workplace culture”
@@ -158,6 +165,7 @@ Byron Katie's "The Work" https://thework.com/
 cadre = should lead, can change the world (cf. "du role social de l'officier")
 Can the Subaltern Speak? = highlights the challenges faced by marginalised groups in having their voices heard within dominant power structure https://en.wikipedia.org/wiki/Gayatri_Chakravorty_Spivak#%22Can_the_Subaltern_Speak?%22
 can't satisfy others
+cancel culture -- ex. of Brendan Eich https://www.spacebar.news/stop-using-brave-browser/
 care -- doesn't scale https://stevenscrawls.com/care-doesnt-scale/
 career -- career limiting (action/move)
 cargo cult
@@ -188,12 +196,17 @@ cognitive dissonance
 collaboration issue -- Compromise, where the estimates contain only "lowest common denominator" language
 collaboration issue -- Gridlock, where many different interests slow the analytic process
 collaboration issue -- Groupthink, where opposing views are subconsciously discouraged
+collective blind spots = To most, they appear to be bad ideas, or simply unimportant. If everyone could see the opportunity, someone else would have already taken it. https://paulbuchheit.blogspot.com/2014/07/the-technology.html
 comfort zone
 common sense
 communication -- breaking bad news https://boz.com/articles/bad-news
 communication -- ELI5 https://boz.com/articles/eli5
 communication -- non violente
 communication -- plainspoken https://boz.com/articles/be-plainspoken https://debliu.substack.com/p/the-importance-of-being-plainspoken
+communities -- faith based = Faith-based organizations and Houses of Worship https://www.cisa.gov/audiences/faith-based-community
+communities -- high risk = activists, journalists, human rights defenders, academics, and other employees associated with civil society organizations that are at heightened risk of being targeted by cyber threat actors because of their identity or work https://www.cisa.gov/audiences/high-risk-communities
+communities -- individual and families
+communities -- State, Local, Tribal, and Territorial Government (SLTT) = https://www.cisa.gov/audiences/state-local-tribal-and-territorial-government
 comparison -- is the thief of joy
 comparison -- the only comparison worth making is you vs. you 1y ago
 competition -- healthy = critical source of progress and innovation
@@ -252,6 +265,8 @@ curses -- curse of knowledge = person having a specialized knowledge assumse tha
 curses -- resource curse -- Dutch disease https://en.wikipedia.org/wiki/Dutch_disease
 curses -- resource curse = the paradox of plenty: Countries with an abundance of natural resources such as diamonds and fossil fuels tend to have less economic growth and worse development than countries with fewer natural resources https://en.wikipedia.org/wiki/Resource_curse
 Cynefin https://en.wikipedia.org/wiki/Cynefin_framework
+danger of danger dogma and ideology = They provide us with the answers, and put boundaries around our thinking. Ignoring the dogma invites ridicule, or even punishment. More ideological societies are less innovative. If we aren't free to wander outside the realms of conventional thinking, then we won't happen upon the opportunities that others have missed. https://paulbuchheit.blogspot.com/2014/07/the-technology.html
+danger of experience = We already know better, we already know that an idea or business won't work. This is one reason that naive, young founders are often the ones who start the most successful companies -- they just don't know any better, and they're often too arrogant to listen to those who do.  https://paulbuchheit.blogspot.com/2014/07/the-technology.html
 dark forest https://en.wikipedia.org/wiki/Dark_forest_hypothesis
 data driven
 dead horse theory https://www.linkedin.com/posts/kais-mejri-tunisie_deadabrhorseabrtheory-activity-7286736656194310146-MrM7
@@ -300,6 +315,7 @@ differences -- introvert/extrovert
 disability
 disability -- flag +++
 disability -- overcoming
+discernement -- Choose the more interesting path. Interestingness is a sign of unexplored or under-explored territory.  If I already know what the outcome is going to be, that's not very interesting https://paulbuchheit.blogspot.com/2014/07/the-technology.html
 discernement -- coin flipping = don't look, which one do you wish is not?
 discernement -- example avec plusieurs questions https://archive.md/zpgip
 discernement -- regret minimization https://theprokit.com/posts/a-jeff-bezos-classic-the-regret-minimization-framework/
@@ -460,6 +476,7 @@ grit
 group polarization https://en.wikipedia.org/wiki/Group_polarization
 growth -- should never be a goal in itself, engagement is
 growth mindset  https://www.khanacademy.org/college-careers-more/learnstorm-growth-mindset-activities-us/high-school-activities/activity-1-the-truth-about-your-brain-hs-02/a/the-truth-about-your-brain-part-1-3  https://www.youtube.com/watch?v=-71zdXCMU6A
+guilt by association = ex. "15 years ago Brendan Eich donated to some cause that the author finds repugnant, hence you shouldn't use his browser today. I also oppose Eich's views, but I believe that he has the right for his political belief, and anyway it shouldn't have any bearing on his professional contributions." https://news.ycombinator.com/item?id=37060232
 hacker -- jargon http://catb.org/jargon/html/index.html
 hacking (tech)
 Haiti https://aleteia.org/2025/02/01/kids-without-school-because-of-gangs-are-recruited-by-gangs
@@ -545,6 +562,7 @@ infotainment
 ingratitude = is a crime more despicable than revenge, which is only returning evil for evil, while ingratitude returns evil for good (William George Jordan)
 ingroup/outgroup
 innate desire to be useful, resourceful, valuable…and needed
+integrity -- high = https://x.com/shreyas/status/1276956843361763328
 intellectual honesty -- 1 Is this true?
 intellectual honesty -- 2 What evidence do I have for and against this?
 intellectual honesty -- 3 Am I telling myself a certain narrative to avoid facing a truth I don’t like?
@@ -697,6 +715,7 @@ lifestyle inflation
 Limited Life Experience + Overgeneralization = ADVICE https://blog.daryn.net/post/32264049/paul-buchheit-limited-life-experience
 Lindy effect = a theorized phenomenon by which the future life expectancy of some non-perishable things, like a technology or an idea, is proportional to their current age https://en.wikipedia.org/wiki/Lindy_effect
 linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_relativity
+little decisions = We often sweat life's big decisions, but it's the little decisions that matter the most -- the ones we make thousands of times a day, often without even realizing it. The big decisions are the inevitable result of those small decisions. They steered the ship into port, created the conditions that gave rise to the situation. https://paulbuchheit.blogspot.com/2014/07/the-technology.html
 living history = activity that incorporates historical tools, activities and dress into an interactive presentation that seeks to give observers and participants a sense of stepping back in time https://en.wikipedia.org/wiki/Living_history
 living the good life
 locally special and globally average
@@ -719,10 +738,12 @@ mainstream scientific consensus
 make it work, make it good, make it fast, make it work again
 making one's luck
 man in the arena = from a speech https://en.wikipedia.org/wiki/Citizenship_in_a_Republic
+many of the best things are rooted in some of the worst events = I would not have one without the other. Every day is full of setbacks and disappointments, but I do my best to say, "Yes, and thank you" https://paulbuchheit.blogspot.com/2014/07/the-technology.html
 marketing -- content amplification https://miromind.com/blog/content-amplification-strategies
 marketing -- KOL "key opinion leader" = marketing term to describe an individual who is highly respected and influential within a specific industry or niche. KOLs possess expertise, knowledge, and a strong reputation, which makes their opinions and recommendations carry significant weight with their audience.
 marxist philosophy
 Maslow's pyramid
+mass surveillance -- Snowden 2013 https://www.theguardian.com/world/interactive/2013/nov/01/snowden-nsa-files-surveillance-revelations-decoded#section/1
 maturity = judgement of persons
 McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
 measurable = at the end you can look, and without any arguments: Did I do that or did I not do it? Yes? No? Simple. No judgments in it.
@@ -1057,6 +1078,7 @@ scrum
 scrum -- myths https://www.youtube.com/watch?v=mgMk3KBsxnQ
 scrum -- scrumbut = Scrum, but...
 sculpting = process whereby the artist releases an ideal figure from the block of stone
+seasteading = creation of permanent dwellings in international waters, so-called seasteads, that are independent of established governments. No structure on the high seas has yet been created and recognized as a sovereign state. https://en.wikipedia.org/wiki/Seasteading
 second Law of Thermodynamics: The world tends towards disorder. That’s why your room becomes messier and messier over time. It’s also why an engine converts only ~35% of its energy into useful work. Time moves towards increasing one direction: increasing entropy.
 secrets are Hidden in Plain Sight:  Most people think of secrets as Easter eggs. They assume that if a secret is important, it’s necessarily going to be hard to find. The best ideas can come from things that are so well-known that they aren’t well-seen.
 seizing the means of production
@@ -1172,6 +1194,7 @@ straw-dog proposal = (biz jargon) a brainstormed simple draft proposal intended 
 Streisand effect = Increased awareness of information caused by efforts to suppress it
 Sturgeon's law = "90% of everything is crap" https://en.wikipedia.org/wiki/Sturgeon%27s_law
 submarine = hidden project until ready
+success -- redefine success = If your venture has only one definition of success, then you're setting yourself up for failure. I can guarantee success by simply redefining success to include learning something interesting. In this way, I've always succeeded, and also learned a lot :) https://paulbuchheit.blogspot.com/2014/07/the-technology.html
 success? power, influence, money, genius IQ, infinite resources
 suicide -- assisted https://aleteia.org/2024/12/07/is-the-united-kingdom-still-a-christian-nation
 Sun Tsu’s three rules of warfare -- Only fight when there is a prize worth fighting for
@@ -1287,6 +1310,7 @@ workaholic
 works of mercy -- corporal
 works of mercy -- spiritual
 works of mercy = https://en.wikipedia.org/wiki/Works_of_mercy
+world-class = aspiration to be world-class at something? https://x.com/shreyas/status/1442165985490833415
 worldview defense = a psychological mechanism that strengthens people's connection with their in-group as a defense mechanism against threats https://en.wikipedia.org/wiki/Mortality_salience#Potential_to_cause_worldview_defense
 xenia https://greekmythcomix.com/comic/how-to-do-xenia/
 XY problem = "what are you trying to achieve?" https://xyproblem.info/

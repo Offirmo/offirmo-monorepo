@@ -431,6 +431,7 @@ outage -- generic mitigations -- drain
 outage -- generic mitigations -- quarantine
 outage -- generic mitigations -- upsize
 outage -- generic mitigations https://www.oreilly.com/content/generic-mitigations/
+overlay network = logical computer network that is layered on top of a physical network. The concept of overlay networking is distinct from the traditional model of OSI layered networks, and almost always assumes that the underlay network is an IP network of some kind. Ex. Tor. https://en.wikipedia.org/wiki/Overlay_network
 PACELC theorem = extension of CAP https://en.wikipedia.org/wiki/PACELC_theorem
 peak hours, off-peak hours
 performance

@@ -1,17 +1,29 @@
+[ ] ATT&CK® is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations https://attack.mitre.org/
+[ ] d3fend® matrix https://d3fend.mitre.org/
+[ ] https://cwe.mitre.org/documents/glossary/index.html
 [ ] https://techcrunch.com/2025/01/31/techcrunch-reference-guide-to-security-terminology/
+[ ] https://www.cisa.gov/audiences/high-risk-communities/projectupskill
+[ ] https://www.cisa.gov/spotlight
+[ ] https://www.reddit.com/r/privacy/ https://www.reddit.com/r/PrivacyGuides/
 account takeover (ATO) https://www.kasada.io/use-cases/account-takeover/
 attacks -- business email compromise (BEC)
 authentication
 authorisation
 bad defaults -- firebase https://env.fail/posts/firewreck-1
+best practices https://www.cisa.gov/topics/cybersecurity-best-practices
+browser security -- PrivacyTests https://privacytests.org/ (close to Brave)
+browser security https://hackread.com/why-browser-security-matters-more-than-you-think/
 buffer overflows and how to protect against them
 BULLRUN (decryption program)  clandestine, highly classified program to crack encryption of online communications and data, which is run by the United States National Security Agency (NSA) https://en.wikipedia.org/wiki/Bullrun_(decryption_program)
+by the organization using it. If exploited, shadow APIs can lead to data exposure, unpatched vulnerabilities, data compliance violations, lateral movement, and other threats
 cache poisoning https://en.wikipedia.org/wiki/Cache_poisoning
 canary -- tokens = https://canarytokens.org/
 Capture The Flag (CTF) competitions = hacking contests consisting of challenges in categories such as web security, cryptography, reverse engineering, exploitation which are open to everyone
 castle-and-moat concept (legacy) = In castle-and-moat security, it is hard to obtain access from outside the network, but everyone inside the network is trusted by default. The problem with this approach is that once an attacker gains access to the network, they have free rein over everything inside. https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/
+cat-phishing
 checkout fraud = scalpers https://www.kasada.io/use-cases/checkout-fraud/
 CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-benchmarks
+CISA = https://www.cisa.gov/
 cloud -- Cloudbleed https://en.m.wikipedia.org/wiki/Cloudbleed
 compartmentalize - so your system is not all or nothing
 content scrapping = can be anti-competitive https://www.kasada.io/use-cases/content-scraping/
@@ -26,14 +38,21 @@ Cross-Site Request Forgery (CSRF / XSRF) = attack where requests can be made fro
 crypto -- ciphertext indistinguishability = important security property of encryption schemes = an adversary will be unable to distinguish pairs of ciphertexts based on the message they encrypt. indistinguishability under chosen plaintext attack is considered a basic requirement for most provably secure public key cryptosystems  https://cse.iitkgp.ac.in/~debdeep/courses_iitkgp/FCrypto/scribes/scribe8.pdf
 crypto -- don't write your own
 crypto -- using crypto doesn't mean you're secure (attackers will look for a weaker link)
+CVE "Common Vulnerabilities and Exposures" = a catalog of publicly disclosed vulnerabilities and exposures. Each CVE includes a unique identifier, summary, associated metadata like the Common Weakness Enumeration (CWE) and Common Platform Enumeration (CPE), and a severity score that can range from None to Critical. The format of a CVE ID consists of a fixed prefix, the year of the disclosure and an arbitrary sequence number ​​like CVE-2017-0144. Memorable names such as "EternalBlue"  (CVE-2017-0144)  are often associated with high-profile exploits to enhance recall. https://blog.cloudflare.com/vulnerability-transparency-strengthening-security-through-responsible/#what-is-a-cve
+CVE -- CNA "CVE Numbering Authority" = an authorized party that  can assign CVE identifiers for vulnerabilities discovered within its products and ecosystems https://blog.cloudflare.com/vulnerability-transparency-strengthening-security-through-responsible/#what-is-a-cna
+Cybersecurity Assessment Tool (CAT) https://cybercat.tools/#assessment
+cybervolunteer https://www.cisa.gov/audiences/high-risk-communities/cybervolunteerresourcecenter
 dark web https://www.group-ib.com/blog/dark-web-fraud/
 ddos -- report http://www.ddosreport.com
+DEF CON = one of the oldest continuously running hacker conventions around, and also one of the largest https://defcon.org/
 defence -- Primary / Secondary / Tertiary
 defense in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
 denial of wallet = like DoS but service down due to no more credits https://www.kasada.io/use-cases/genai-abuse-73-percent-have-experienced-genai-security-incidents/
 dependency chain abuse = supply chain attack https://www.paloaltonetworks.com.au/cyberpedia/dependency-chain-abuse-cicd-sec3
 device posture
+digital security https://securitylab.amnesty.org/digital-resources/
 encryption of stored data
+eviction / eradication = the process of removing a cyber threat actor or malicious code from a compromised environment https://www.cisa.gov/resources-tools/resources/eviction-strategies-tool
 fake account creation = to harm https://www.kasada.io/use-cases/fake-account-creation/
 FIDO Alliance
 File Path (Directory) Traversal
@@ -43,6 +62,7 @@ Google Project Zero https://googleprojectzero.blogspot.com/p/about-project-zero.
 guidelines -- CGI security https://www.cgisecurity.com/owasp/html/ch04.html
 guidelines -- S/O https://stackoverflow.com/questions/2794016/what-should-every-programmer-know-about-security
 have I been pwned? https://www.troyhunt.com/
+high-risk communities = activists, journalists, human rights defenders, academics, and other employees associated with civil society organizations that are at heightened risk of being targeted by cyber threat actors because of their identity or work https://www.cisa.gov/audiences/high-risk-communities
 In-the-Wild (ITW) exploit
 input -- never trust any input!
 input -- validate input from all untrusted sources - use whitelists not blacklists
@@ -53,8 +73,10 @@ input -- validation -- syntactic validation = correct syntax of structured field
 input -- validation aka data validation = testing of any input (or data) provided by a user or application against expected criteria i.e. to confirm that the data is in the correct format and within the constraints set by the application
 insufficient Transport Layer  Security (TLS)
 Internet Security Research Group (ISRG) https://www.abetterinternet.org/
+iphone lockdown mode an optional, extreme protection that’s designed for the very few individuals who, because of who they are or what they do, might be personally targeted by some of the most sophisticated digital threats. Most people are never targeted by attacks of this nature. https://support.apple.com/en-us/105120
 keep it simple - complexity increases the likelihood of security holes
 keep your attack surface to a minimum
+KEV "Known Exploited Vulnerability" = https://www.cisa.gov/known-exploited-vulnerabilities-catalog
 key stretching https://en.wikipedia.org/wiki/Key_stretching
 least privilege = https://www.cloudflare.com/learning/access-management/principle-of-least-privilege/
 list -- allow list -- predefined set
@@ -62,10 +84,12 @@ list -- allow list -- regex = more flexible but less secure
 list -- allow list = operate on a deny by default policy, where anything that hasn’t been expressly allowed will be blocked.
 list -- deny list -- WARNING not sufficient to provide strong validation. They can be often bypassed very easily and should rather be used as part of defence in depth mechanisms  i.e. they should be used in conjunction with other validation mechanisms like allow lists, Regex checks etc.
 list -- deny list = opposite of allowlist. It operates on an allow by default policy where everything is permitted except for the cases that a user has specified.
+Living-off-the-Land techniques
 make sure you fail securely
 Malicious File Upload
 memory safe -- rewrites https://www.memorysafety.org/
 Microsegmentation = practice of breaking up security perimeters into small zones to maintain separate access for separate parts of the network https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/
+MITRE = "the most important company you’ve never heard of" https://www.fastcompany.com/3017927/30mitre https://www.mitre.org/who-we-are
 network ACL
 network security -- lateral movement = when an attacker moves within a network after gaining access to that network. Lateral movement can be difficult to detect even if the attacker's entry point is discovered, because the attacker will have gone on to compromise other parts of the network. https://www.cloudflare.com/learning/security/glossary/what-is-lateral-movement/
 NIST "United States National Institute of Standards and Technology"  https://blog.cloudflare.com/nist-sp-1300-85/
@@ -78,6 +102,7 @@ pin codes -- most common https://informationisbeautiful.net/visualizations/most-
 PKI = Public Key Infrastructure
 plan for security from the start - it's not something you can bolt on at the end
 principle of least privilege
+privacy advices -- https://tails.net/doc/about/warnings/index.en.html
 pwned = https://haveibeenpwned.com/API/v3 https://github.com/BlinqOSS/is-pwned
 request smuggling https://blog.cloudflare.com/resolving-a-request-smuggling-vulnerability-in-pingora/#what-is-request-smuggling
 salting https://en.wikipedia.org/wiki/Salt_(cryptography)
@@ -101,19 +126,36 @@ secrets -- hiding secrets is hard - and secrets hidden in code won't stay secret
 secure by default = security is ON by default, need to be manually disabled if not needed (ex. dev).  Historically, many libraries had to be configured for them to be used securely.  For example, user content in JSP applications presented a cross site scripting risk, and developers needed to use special functions such as c:out or fn:escapeXml in order to prevent such vulnerabilities.  In a secure by default library, the risk is inherently prevented in the library implying that the developer does not need to think about special functionality in order to use it securely.
 Secure Cryptographic Hashing
 secure data at rest
+secure-by-design -- CISA https://www.cisa.gov/securebydesign
+secure-by-design -- CISA’s Secure By Design pledge = https://blog.cloudflare.com/vulnerability-transparency-strengthening-security-through-responsible/
+secure-by-design -- pledge = voluntary pledge focused on enterprise software products and services. software manufacturers are pledging to make a good-faith effort to work towards the goals listed below over the following year. https://www.cisa.gov/securebydesign/pledge
+secure-by-design = https://blog.cloudflare.com/tag/cisa/
+secure-by-design = prioritize the security of customers as a core business requirement, rather than merely treating it as a technical feature https://www.cisa.gov/securebydesign
 security posture = overall cybersecurity strength and readiness of an organization, ability to recognize threats and your readiness to mitigate them or recover from an attack
+security-in-a-box = digital security tools and tactics https://securityinabox.org/en/
 Server Side Request Forgery (SSRF) -- defense -- outbound proxy
 Server Side Request Forgery (SSRF) = attacker to send a crafted request from a vulnerable server to an arbitrary destination. The attack can be used to bypass security restrictions and access internal systems and network resources that are not intended to be publicly accessible.
+shadow APIs = APIs that have not been managed or secured
 shift left = earlier security
 software-defined perimeter (SDP) https://www.cloudflare.com/learning/access-management/software-defined-perimeter/
 spectre = class of attacks https://www.cloudflare.com/en-au/learning/security/threats/meltdown-spectre/
 supply chain -- dependency confusion = abusing internal packages (not just typo squatting) https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
+surveillance self-defense = Tips, Tools and How-tos for Safer Online Communications https://ssd.eff.org/
+Tails = a portable operating system that protects your privacy and helps you avoid censorship https://tails.net/about/
 threat modeling
 through obscurity -- ok if not only https://security.stackexchange.com/questions/32064/at-what-point-does-something-count-as-security-through-obscurity
 through obscurity -- still useful https://news.ycombinator.com/item?id=24444497
 through obscurity https://en.wikipedia.org/wiki/Security_through_obscurity
 timed-release encryption scheme = to encrypt messages toward the future that anybody can decrypt when the time has come, even if you or your services are off-line by then https://docs.drand.love/
 TLS "Transport Layer Security"
+Tor "The Onion Routing" network https://en.wikipedia.org/wiki/Tor_(network)
+Tor -- .onion
+Tor -- onion addresses
+Tor -- oniux = Kernel-level Tor isolation for any Linux app  https://blog.torproject.org/introducing-oniux-tor-isolation-using-linux-namespaces/
+Tor -- relay https://blog.torproject.org/happy-families/
+vulnerability -- open redirect = a trusted website lets user-controlled input redirect users to external URLs and does not validate it properly. Malicious actors can craft scenarios where a malicious website, through the open redirect, appears as a trusted source https://hackread.com/brave-desktop-browser-vulnerability-malicious-sites-trusted/
+weakness -- CWE "Common Weakness Enumeration" https://cwe.mitre.org/
+weakness =
 XML External Entity (XXE) = attack where an attacker is able to exploit applications processing XML inputs using improperly configured parser
 YubiKey = not necessarily safer if no pin = if stolen and no pin, cooked
 Zero Trust  = an IT security model that requires strict identity verification for every person and device trying to access resources on a private network, regardless of whether they are sitting within or outside of the network perimeter https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/

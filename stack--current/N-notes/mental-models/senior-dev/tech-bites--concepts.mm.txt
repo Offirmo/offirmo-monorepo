@@ -582,6 +582,7 @@ linked list
 linting
 linux
 linux -- eBPF https://ebpf.io/what-is-ebpf/
+linux -- namespaces = an isolation feature found in the Linux kernel that were introduced around the year 2000 https://blog.torproject.org/introducing-oniux-tor-isolation-using-linux-namespaces/
 locality
 locality -- conflict locality = reducing conflicts on close changes, ex. enforcing trailing commas, sorting...
 locality -- of behaviour "LoB" https://htmx.org/essays/locality-of-behaviour/
@@ -911,6 +912,7 @@ testing -- test double -- 04 spy = stubs that also record some information based
 testing -- test double -- 05 mock = objects pre-programmed with expectations which form a specification of the calls they are expected to receive.
 testing -- test double = dummy, fake, stub, spy, mock - Every class or object created is a fake. It is a mock if you assert against it. Otherwise it is a stub. https://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub
 testing -- test double https://martinfowler.com/articles/mocksArentStubs.html
+testing -- testing library https://testing-library.com/docs/guiding-principles
 The Mythical Man-Month
 the room https://lethain.com/getting-in-the-room/
 this
