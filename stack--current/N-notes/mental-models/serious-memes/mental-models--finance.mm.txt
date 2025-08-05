@@ -12,10 +12,10 @@ borrowing
 bull/bear = https://www.coinbase.com/en-au/learn/crypto-basics/what-is-a-bull-or-bear-market
 central bank
 coin
-compliance -- AU -- AUSTRAC https://www.austrac.gov.au/business/new-to-austrac
 coinage -- free = bring gold / silver and have it minted for free or low fee
 coinage acts = ex. https://en.wikipedia.org/wiki/Coinage_Act_of_1857
 commodity = tradeable object. Any thing necessary, useful or pleasant in life, an object of human wants, a means of existence in the widest sense of the term (Marx)
+compliance -- AU -- AUSTRAC https://www.austrac.gov.au/business/new-to-austrac
 Confirmation of Payee (CoP) = cross-checks the details of customer payments to ensure that the account name, BSB and account number of the recipient’s account match what the sender believes them to be. https://www.ausbanking.org.au/scam-safe-accord/confirmation-of-payee/
 currencies -- virtual -- Bitcoin
 currency -- alternative = ex. https://en.wikipedia.org/wiki/Goldback
@@ -101,6 +101,8 @@ recession
 saving
 scrip = pseudo legal tender ~exploitative payment of employees ex. company scrip / https://en.wikipedia.org/wiki/Truck_wages
 security
+security -- stocks, bonds, ETFs (exchange traded funds), options, and mutual funds
+security = a financial asset that can be sold or traded in a financial market + investments that can be exchanged and used to raise capital. https://gordonlaw.com/learn/what-is-a-security/
 shares
 stock = all the shares https://en.wikipedia.org/wiki/Stock
 stock market

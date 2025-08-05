@@ -54,7 +54,9 @@ digital security https://securitylab.amnesty.org/digital-resources/
 encryption of stored data
 eviction / eradication = the process of removing a cyber threat actor or malicious code from a compromised environment https://www.cisa.gov/resources-tools/resources/eviction-strategies-tool
 fake account creation = to harm https://www.kasada.io/use-cases/fake-account-creation/
+FIDO "Fast IDentity Online" keys = physical pieces of hardware containing cryptographic keys. One of several hardware-based MFA tools designed to protect users from inherent weaknesses in some forms of MFA. Often regarded as one of the pinnacles of secure MFA https://expel.com/blog/poisonseed-downgrading-fido-key-authentications-to-fetch-user-accounts/
 FIDO Alliance
+FIDO keys -- attack https://expel.com/blog/poisonseed-downgrading-fido-key-authentications-to-fetch-user-accounts/
 File Path (Directory) Traversal
 filtering = to pass input data through a logic that will hold parts of input that match a certain criteria and let other input pass through as is. The filter logic then makes a specific decision on the data that is in hold - possibly discarding it or transforming it.
 glassbox review = vs blackbox, looking at what happens when stimulated
@@ -87,7 +89,9 @@ list -- deny list = opposite of allowlist. It operates on an allow by default po
 Living-off-the-Land techniques
 make sure you fail securely
 Malicious File Upload
+managed detection and response (MDR) = ~outsourced security https://expel.com/
 memory safe -- rewrites https://www.memorysafety.org/
+MFA = email, SMS, biometrics, FIDO keys, and authenticator apps. If an attacker gains access to either of these sources, they can gain access to the resource that the authentication source protects. https://expel.com/blog/poisonseed-downgrading-fido-key-authentications-to-fetch-user-accounts/
 Microsegmentation = practice of breaking up security perimeters into small zones to maintain separate access for separate parts of the network https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/
 MITRE = "the most important company you’ve never heard of" https://www.fastcompany.com/3017927/30mitre https://www.mitre.org/who-we-are
 network ACL

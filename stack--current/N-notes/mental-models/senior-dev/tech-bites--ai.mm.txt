@@ -18,6 +18,7 @@
 2025-06 dev AI perf framework
 2025-06 real applied case "composite model architecture" https://vercel.com/blog/v0-composite-model-family
 2025-07 USA White House AI action plan https://blog.cloudflare.com/the-white-house-ai-action-plan-a-new-chapter-in-u-s-ai-policy/
+2025-08 Perplexity crawler ban https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://ghuntley.com/
@@ -104,6 +105,7 @@ context -- long context trumps everything? https://arxiv.org/pdf/2406.13121
 Contextual Language Models (CLMs) Contextual.ai
 control vector https://vgel.me/posts/representation-engineering/
 ControlNet = a type of model for controlling image diffusion models by conditioning the model with an additional input image https://huggingface.co/docs/diffusers/using-diffusers/controlnet https://github.com/lllyasviel/ControlNet
+crawlers -- robots.txt / legal https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/
 cross encoder https://www.sbert.net/examples/applications/cross-encoder/README.html
 custom instructions https://www.reddit.com/r/ChatGPTPro/comments/15ffpx3/reddit_what_are_your_best_custom_instructions_for/
 dataset https://www.fatml.org/media/documents/datasheets_for_datasets.pdf

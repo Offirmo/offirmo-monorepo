@@ -1,41 +1,38 @@
 +++ https://casebitcoin.com/critiques
 +++ https://ethereum.org/en/whitepaper/
-- https://www.coingecko.com/
-- https://yaps.kaito.ai/social-card
 1% using crypto, then 3% paying with it https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
-1980 (pre history) https://ethereum.org/en/whitepaper/#history
-2005 (pre history) -- reusable proof of work https://nakamotoinstitute.org/finney/rpow/
+1980 precursors https://ethereum.org/en/whitepaper/#history
+2005 precursors -- reusable proof of work https://nakamotoinstitute.org/finney/rpow/
 2009 Bitcoin by Satoshi Nakamoto
 2014 Ethereum whitepaper by Vitalik Buterin https://ethereum.org/en/whitepaper/
 2017 Binance created https://www.binance.com/
 2017 bitfinex "packaged loss" https://bitfinexed.medium.com/bitfinex-never-repaid-their-tokens-bitfinex-started-a-ponzi-scheme-86a9291add29
 2017-09 China bans crypto
 2019-04 Bankman-Fried found the FTX cryptocurrency derivatives exchange
-2020 "DeFi summer"
-2024 Ethereum 7702 https://blog.quicknode.com/eip-7702-explained-the-future-of-ethereum/
+2020 "DeFi summer" = ???
+2024 Ethereum 7702 = https://blog.quicknode.com/eip-7702-explained-the-future-of-ethereum/
 2024-02 Genesis bankrupt https://www.reuters.com/legal/bankrupt-genesis-global-settles-ny-attorney-generals-lawsuit-2024-02-09/
-2024-09 fundraising https://cointelegraph.com/news/patronage-model-fix-crypto-fundraising-says-kain-warwick
+2024-09 alternative fundraising https://cointelegraph.com/news/patronage-model-fix-crypto-fundraising-says-kain-warwick
 2025-05 SEC abandon crypto regulation https://yro.slashdot.org/story/25/05/29/2155215/sec-voluntarily-dismisses-lawsuit-against-binance
 2025-05 USA strategic reserve https://news.slashdot.org/story/25/05/31/0636246/whats-in-the-us-governments-new-strategic-reserve-of-seized-crytocurrencies
-2025-06 crypto fully bnnaed in China https://www.idnfinancials.com/news/54986/china-tightens-financial-control-crypto-now-fully-banned
+2025-06 crypto fully banned in China https://www.idnfinancials.com/news/54986/china-tightens-financial-control-crypto-now-fully-banned
 2025-07 Mainnet = Ethereum relevant again https://blog.synthetix.io/synthetix-mainnet/
 51% attack = attack where a group gains control of the majority of nodes = allow them to defraud the blockchain by reversing transactions and double spending https://ethereum.org/en/glossary/#51%-attack
 [ ] criticism https://bitfinexed.medium.com/
-[ ] digital security -- solutions --  https://www.privacyguides.org/en/tools/
+[ ] digital security -- solutions -- https://www.privacyguides.org/
 [ ] endgame https://vitalik.eth.limo/general/2021/12/06/endgame.html
 [ ] Gitcoin https://grants.gitcoin.co/
 [ ] great videos on DeFi https://www.youtube.com/@Finematics
 [ ] https://brave.com/web3/
 [ ] https://vitalik.eth.limo/
-account abstraction (AA) = allows the creation of smart contract accounts to initiate and execute transactions without needing an externally owned account (EOA). Put simply, account abstraction aims to make web3 so seamless that everyday users might not even notice they're using it, while still reaping all its benefits. https://blog.quicknode.com/eip-7702-explained-the-future-of-ethereum/
+account abstraction (AA) = allows the creation of smart contract accounts to initiate and execute transactions without needing an externally owned account (EOA). "Aims to make web3 so seamless that everyday users might not even notice they're using it, while still reaping all its benefits" https://blog.quicknode.com/eip-7702-explained-the-future-of-ethereum/
 Airdrop
 Arbitrum
-asset tokenization layer ???
-assets -- top https://www.coingecko.com/
+asset tokenization layer = ???
+assets -- top = ranking website https://www.coingecko.com/
+AT Protocol = an open, decentralized network for building social applications https://atproto.com/
 bag check
-Base
 Berachain
-Binance = largest cryptocurrency exchange in terms of daily trading volume of cryptocurrencies https://en.wikipedia.org/wiki/Binance https://www.binance.com/
 Bitcoin = the first decentralized cryptocurrency https://en.wikipedia.org/wiki/Bitcoin
 Blast
 block -- genesis = The first block in a blockchain, used to initialize a particular network and its cryptocurrency https://ethereum.org/en/glossary/#genesis-block
@@ -45,12 +42,11 @@ blockchain -- transaction -- step 2 – Gain consensus = Most participants on th
 blockchain -- transaction -- step 3 – Link the blocks = Once the participants have reached a consensus, transactions on the blockchain are written into blocks equivalent to the pages of a ledger book. Along with the transactions, a cryptographic hash is also appended to the new block. The hash acts as a chain that links the blocks together. If the contents of the block are intentionally or unintentionally modified, the hash value changes, providing a way to detect data tampering. Thus, the blocks and chains link securely, and you cannot edit them. Each additional block strengthens the verification of the previous block and therefore the entire blockchain. This is like stacking wooden blocks to make a tower. You can only stack blocks on top, and if you remove a block from the middle of the tower, the whole tower breaks.
 blockchain -- transaction -- step 4 – Share the ledger = The system distributes the latest copy of the central ledger to all participants.
 blockchain -- transaction = shows the movement of physical or digital assets from one party to another in the blockchain network. It is recorded as a data block and can include details like these: who, what, when, where, why, how much, preconditions
-blockchain = database = stores data in chronologically consistent blocks that you can delete or modify only with consensus from the peer-to-peer network. Built-in mechanisms prevent unauthorized transaction entries and create consistency in the shared view of these transactions. As a result, you can use it to create an unalterable or immutable ledger for tracking all types of transactions.
-blockchain https://ethereum.org/en/developers/docs/intro-to-ethereum/ https://aws.amazon.com/what-is/blockchain/
+blockchain = database = stores data in chronologically consistent blocks that you can delete or modify only with consensus from the peer-to-peer network. Built-in mechanisms prevent unauthorized transaction entries and create consistency in the shared view of these transactions. As a result, you can use it to create an unalterable or immutable ledger for tracking all types of transactions https://ethereum.org/en/developers/docs/intro-to-ethereum/ https://aws.amazon.com/what-is/blockchain/
 BNB Chain
 bridging
 case study -- https://newsletter.systemdesign.one/p/how-do-airtags-work
-CBDC "Central bank digital currencies" https://cointelegraph.com/magazine/cbdcs-kryptonite-for-crypto/
+CBDC "Central bank digital currencies" = https://cointelegraph.com/magazine/cbdcs-kryptonite-for-crypto/
 Celsius = a risky crypto lending venture masquerading as a safe, bank-like platform that provided unusually high interest on crypto savings accounts
 challenges -- Governance = can be challenging in decentralized systems. It requires effective structures that involve community participation and don’t centralize power.
 challenges -- multibillion-dollar implosions of FTX, BlockFi, Celsius, and Voyager Digital
@@ -58,7 +54,7 @@ challenges -- need to purchase crypto first, have to endure a steep learning cur
 challenges -- Regulatory compliance = Web3 applications must follow existing data protection and financial security requirements.
 challenges -- scalability = a primary concern, because lack of trust is expensive: blockchain networks get very expensive and computationally demanding as data volumes increase
 challenges -- User experience and adoption = Complex interfaces and a steep learning curve limit mainstream adoption. Improving the user experience by designing intuitive interfaces that abstract the complexities of blockchain technology is essential.
-CoinGecko
+CoinGecko = ranking website https://www.coingecko.com/
 colored coins = on-blockchain digital assets to represent custom currencies and financial instruments https://docs.google.com/a/buterin.com/document/d/1AnkP_cVZTCMLIzw4DvsW6M8Q2JC0lIzrTLuoWu2z1BE/edit
 compliance -- AU -- AUSTRAC https://www.austrac.gov.au/business/new-to-austrac
 consensus -- mechanisms = complete stack of ideas, protocols and incentives that enable a distributed set of nodes to agree on the state of a blockchain https://ethereum.org/en/developers/docs/consensus-mechanisms/
@@ -70,30 +66,30 @@ cross-chain -- swaps = swidge??
 crypto signals = advice to invest https://www.tokenmetrics.com/blog/crypto-signals
 crypto-adjacent = pejorative for "borderline crypto" = "borderline scam/shit"
 cryptocurrency = a medium of exchange secured by a blockchain-based ledger https://ethereum.org/en/developers/docs/intro-to-ether/#what-is-a-cryptocurrency
-cryptocurrency exchange
 cryptokitties
-CT "Crypto Twitter" a subset of the popular social media platform Twitter, specifically focused on cryptocurrency, blockchain technology, and decentralized finance https://www.bitget.com/wiki/what-is-ct-in-crypto
-culture
+CT "Crypto Twitter" = a subset of the popular social media platform Twitter, specifically focused on cryptocurrency, blockchain technology, and decentralized finance https://www.bitget.com/wiki/what-is-ct-in-crypto
+culture -- degen = slang derived from "degenerate", typically refers to someone who engages in high-risk, speculative trading or investment with the potential for high rewards. It describes individuals who prioritize potential gains over calculated risks and are known for their aggressive and sometimes reckless approach.
+culture -- slang https://www.coinbase.com/en-au/learn/tip-and-tutorials/crypto-slang-guide
+custody -- self custody = funds are not waived
 dapp "decentralized application" = app built on a decentralized network that combines a smart contract and a frontend user interface https://ethereum.org/en/developers/docs/dapps/#definition-of-a-dapp
-dapp -- stores https://dappradar.com/
+dapp -- stores = https://dappradar.com/
 decentralization -- metric -- insider attack test = if your team itself tries to attack the system, how much will break, and how much harm could you do?
 decentralization -- metric -- the walkaway test = if your team and servers disappear tomorrow, will your application still be usable?
-decentralization avoiding points of trust, minimizing censorship vulnerabilities, and minimizing centralized infrastructure dependency. The natural metrics are
+decentralization = avoiding points of trust, minimizing censorship vulnerabilities and minimizing centralized infrastructure dependency
 decentralized autonomous organization (DAO) = agreed-upon smart contract that automates decentralized decision-making over a pool of resources (tokens). Users with tokens vote on how resources get spent, and the code automatically performs the voting outcome.
 decentralized identity = technology that aims to give individuals more control and ownership over their digital identity. In traditional online systems, users often rely on centralized identity providers (like social media platforms or email services) to manage their identities and access various online services. Decentralized identity shifts the control of identity information back to the individual user. It uses globally unique identifiers associated with a decentralized identifier (DID) document. This document contains public keys, cryptographic material, and service endpoints related to identity. The technology uses selective disclosure to share specific identity attributes and minimize exposure to personally identifiable information (PII) during identity verification processes.
 DeFi
 DeFi -- lending / borrowing -- Compound, AAVE
-degen = slang derived from "degenerate", typically refers to someone who engages in high-risk, speculative trading or investment with the potential for high rewards. It describes individuals who prioritize potential gains over calculated risks and are known for their aggressive and sometimes reckless approach.
-digital security -- solution -- browser -- brave https://www.reddit.com/r/browsers/comments/1j1pq7b/list_of_brave_browser_controversies/
-digital security -- solutions -- browser -- PrivacyTests https://privacytests.org/ (close to Brave)
+digital security -- solutions -- browser -- brave? https://www.reddit.com/r/browsers/comments/1j1pq7b/list_of_brave_browser_controversies/
+digital security -- solutions -- browser -- PrivacyTests = browser ranking https://privacytests.org/ (close to Brave)
 digital security -- solutions -- browser -- Tor
 digital security = an important pre-requisite https://securitylab.amnesty.org/digital-resources/
 Dogecoin https://cointelegraph.com/magazine/elon-musk-dogecoin-rally-bitcoin-ethereum-solana-predictions-trade-secrets/
 domain names -- Ethereum Name Service (ENS) domain names
 domain names -- Solana Name Service (SNS) domain names
 domain names -- Unstoppable = https://github.com/brave/brave-browser/wiki/Resolve-Methods-for-Unstoppable-Domains https://unstoppabledomains.com/
-domains = .crypto https://support.unstoppabledomains.com/support/solutions/articles/48001181690-what-are-web3-domains-
-domains = .eth
+domain names = .crypto https://support.unstoppabledomains.com/support/solutions/articles/48001181690-what-are-web3-domains-
+domain names = .eth
 drain = attack?
 Enjin
 ERC-1155 = fungible + non-fungible tokens = good for games currency + items
@@ -107,20 +103,20 @@ Ethereum -- platform
 Ethereum -- protocol
 Ethereum -- REth https://github.com/paradigmxyz/reth
 Ethereum -- roadmap https://ethereum.org/en/roadmap/
-Ethereum = a decentralized open-source blockchain platform that people can use to build public blockchain applications. Ethereum Enterprise is designed for business use cases. https://ethereum.org/en/what-is-ethereum/ https://aws.amazon.com/blockchain/what-is-ethereum/
-Ethereum = blockchain with a built-in fully fledged Turing-complete programming language that can be used to create "contracts" that can be used to encode arbitrary state transition functions, allowing users to create any systems we have not yet imagined, simply by writing up the logic in a few lines of code https://ethereum.org/en/whitepaper/#a-next-generation-smart-contract-and-decentralized-application-platform
+Ethereum = blockchain with a built-in fully fledged Turing-complete programming language that can be used to create "contracts" that can be used to encode arbitrary state transition functions, allowing users to create any systems we have not yet imagined, simply by writing up the logic in a few lines of code https://ethereum.org/en/whitepaper/#a-next-generation-smart-contract-and-decentralized-application-platform https://ethereum.org/en/what-is-ethereum/ https://aws.amazon.com/blockchain/what-is-ethereum/
 EVM and non-EVM chains
 EVM network
-exchange -- solution -- uphold https://uphold.com/ = the only one for BAT
+exchange -- decentralized = ?? https://www.coingecko.com/en/exchanges/decentralized
+exchange -- solution -- uphold https://uphold.com/ = the only one for Brave's BAT
+exchange = cryptocurrency exchange
+exchanges -- Binance = largest cryptocurrency exchange in terms of daily trading volume of cryptocurrencies https://en.wikipedia.org/wiki/Binance https://www.binance.com/
 fiat
 fiat ramps
 fiat-backed
-finance -- security -- stocks, bonds, ETFs (exchange traded funds), options, and mutual funds
-finance -- security = a financial asset that can be sold or traded in a financial market + investments that can be exchanged and used to raise capital. https://gordonlaw.com/learn/what-is-a-security/
 fork -- hard
 fork -- soft
 FTX -- FTT = FTX's token
-FTX = cryptocurrency derivatives exchanges known for bankruptcy https://en.wikipedia.org/wiki/Bankruptcy_of_FTX
+FTX = cryptocurrency derivatives exchanges known for its bankruptcy https://en.wikipedia.org/wiki/Bankruptcy_of_FTX
 FTX crash
 fungibility
 fungibility -- non-fungible
@@ -132,17 +128,16 @@ Howey Test -- four key criteria -- 2 Common Enterprise: There must be a shared i
 Howey Test -- four key criteria -- 3 Expectation of Profit: The investor anticipates a financial return from the investment.
 Howey Test -- four key criteria -- 4 Reliance on Efforts of Others: The investor's profits are primarily derived from the efforts of the promoters or a third party, not their own efforts.
 Howey Test = a legal framework used to determine if a transaction or scheme constitutes an "investment contract" and is therefore subject to U.S. securities law https://gordonlaw.com/learn/howey-test-is-your-token-security/
-https://www.pudgypenguins.com/
 Hyperledger Fabric = open-source project with a suite of tools and libraries. Enterprises can use it to build private blockchain applications quickly and effectively. It is a modular, general-purpose framework that offers unique identity management and access control features. These features make it suitable for various applications, such as track-and-trace of supply chains, trade finance, loyalty and rewards, and clearing settlement of financial assets. https://aws.amazon.com/blockchain/what-is-hyperledger-fabric/
 Hyperliquid -- ? https://hyperunit.xyz/
-Hyperliquid -- app = https://app.hyperliquid.xyz/join/INFINEXPERPS
+Hyperliquid -- app = https://app.hyperliquid.xyz/
 Hyperliquid -- HYPE
 Hyperliquid -- HyperBFT consensus
 Hyperliquid -- HyperCore
 Hyperliquid -- HyperEVM
 Hyperliquid = https://hyperfoundation.org/
 ICO (banned)
-ICO -- alternatives -- patrons https://finance.yahoo.com/news/infinex-raises-67-7-million-140229371.html
+ICO -- alternatives -- patrons https://cointelegraph.com/news/patronage-model-fix-crypto-fundraising-says-kain-warwick https://finance.yahoo.com/news/infinex-raises-67-7-million-140229371.html
 ICO -- boom
 ICO -- crackdown
 ICO -- mills = help ICO for a % then immediately sell
@@ -150,7 +145,6 @@ immutability
 intermediation
 internet censorship -- 2025 Russia https://news.ycombinator.com/item?id=44392221
 InterPlanetary File System (IPFS) = a decentralized and distributed file storage system that provides a more efficient and resilient way to store and access content on Web 3.0. It gives a unique cryptographic hash (content-based address) to every file. It uses a peer-to-peer network, where each IPFS node acts as a client and server. Nodes cooperate to store, retrieve, and distribute content across the web, eliminating the need for centralized servers. https://docs.ipfs.tech/concepts/
-jobs https://cryptojobslist.com/
 kaito -- Yaps As Proof-of-Attention https://yaps.kaito.ai/social-card
 layer 2 = https://vitalik.eth.limo/general/2024/05/29/l2culture.html
 legal definition -- AU = A type of currency that only exists in digital rather than physical form (not coins or notes, for example). Digital currency: can be exchanged for goods, services, or physical currency; is not issued by or under the authority of a government. https://www.austrac.gov.au/glossary/digital-currency-or-cryptocurrency
@@ -170,7 +164,6 @@ mining -- cost = quickly goes up, hence pools https://ethereum.org/en/developers
 mining -- pool https://casebitcoin.com/critiques/china-controls-bitcoin
 mining -- profitability = complex, ex. using cheap power, stolen computing etc.
 mining = process of creating a block of transactions to be added to a blockchain using proof-of-work  https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/mining/
-mining = proof-of-work way to mint new tokens
 minting -- burning = remove from circulation permanently
 minting = https://ethereum.org/en/developers/docs/intro-to-ether/#minting-ether
 movement
@@ -189,10 +182,9 @@ networks -- Optimism
 networks -- Polygon Mainnet
 networks -- Solana Mainnet Beta
 networks -- Zcash Mainnet
-NFT -- blur https://blur.io/
 NFTs -- as collateral -- NFTti
 NFTs -- games -- CryptoKitties
-NFTs -- games -- Decentraland
+NFTs -- games -- Decentraland https://decentraland.org/
 NFTs -- games -- Gods Unchained
 NFTs -- marketplaces -- aggregators = OpenSea
 NFTs -- marketplaces = Rare, SuperRare
@@ -202,7 +194,7 @@ NFTs = https://www.youtube-nocookie.com/embed/Xdkkux6OxfM
 node
 non-custodial = "even if someone goes and nukes the platform, censors it, DDoS’s it, or takes down AWS, you can still go to the chain and get your assets back."
 normie friendly = to break out of the limited circle
-onchain protocols such as Ethena, Synthetix, Wormhole
+onchain protocols = such as Ethena, Synthetix, Wormhole
 open source -- benefits -- code being inspectable = to ensure security
 open source -- benefits -- enabling permissionless third-party improvements
 open source -- benefits -- reducing the risk of proprietary lock-in
@@ -232,7 +224,6 @@ scams -- rug-pull = disappear after cashing early success
 scams -- wash trading = artificially inflating volume https://bitfinexed.medium.com/wash-trading-bitcoin-how-bitfinex-benefits-from-fraudulent-trading-8bd66be73215
 seed phrase
 silk road / Ross Ulbricht
-slang https://www.coinbase.com/en-au/learn/tip-and-tutorials/crypto-slang-guide
 smart contracts -- auditing = https://iosiro.com/services/smart-contract-auditing
 smart contracts -- bug = ex. of loss of everything
 smart contracts = more complex applications involving having digital assets being directly controlled by a piece of code implementing arbitrary rules http://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/idea.html
@@ -244,6 +235,7 @@ Solana network
 solutions -- Amazon Managed Blockchain (AMB) = https://aws.amazon.com/managed-blockchain/
 solutions -- Cloudflare -- Ethereum gateway https://developers.cloudflare.com/web3/ethereum-gateway/
 solutions -- Cloudflare -- IFPS
+solutions -- Lighter = a decentralized trading platform that is designed to deliver unmatched security and scale. Lighter is the first and only exchange that provides verifiable matching and liquidations, while operating at the best in class traditional exchange level performances.
 Sonic
 spirit -- "Ignoring sensible advice is what we do in crypto"
 spot
@@ -251,16 +243,14 @@ staking
 staking -- active / passive / pooled / delegated / active / liquid https://www.britannica.com/money/what-is-crypto-staking
 staking -- chain-agnostic
 staking = https://www.britannica.com/money/what-is-crypto-staking https://www.coinbase.com/en-au/learn/crypto-basics/what-is-staking https://www.bitpanda.com/academy/en/lessons/what-is-staking/
-swidge
-swidge
 swidge -- provider
 swidge = "swap and bridge" https://support.infinex.xyz/en/articles/10336734-how-to-swidge https://terablock.com/swidge
 Sybil attack = actor pretending to be a lot of actors to control the chain. Resistance to this type of attack is essential for a decentralized blockchain and enables miners and validators to be rewarded equally based on resources put in. Proof-of-work and proof-of-stake protect against this. https://ethereum.org/en/developers/docs/consensus-mechanisms/#sybil-chain
 Sybil resistance = measures how a protocol fares against a Sybil attack.
 Synthetix
-token -- BAT "Basic Attention Token" = Brave Browser's own cryptocurrency that users can earn by viewing advertisements shown by Brave
 tokenization = process of representing real-world or digital assets as digital tokens on a blockchain
 tokens
+tokens -- BAT "Basic Attention Token" = Brave Browser's own cryptocurrency that users can earn by viewing advertisements shown by Brave
 tokens -- Ether (ETH) = the cryptocurrency used for many things on the Ethereum network. Fundamentally, it is the only acceptable form of payment for transaction fees, and after The Merge, ether is required to validate and propose blocks on Mainnet the cryptocurrency used for many things on the Ethereum network. Fundamentally, it is the only acceptable form of payment for transaction fees, and after The Merge, ether is required to validate and propose blocks on Mainnet
 tokens -- standards
 tokens -- tainted = can be differentiated = less fungible
@@ -268,6 +258,7 @@ tokens -- tokenomics
 tokens = cryptographic representations of ownership, access rights, or other forms of value. Ex. physical and digital assets like real estate, stocks, commodities, art, music, and even in-game items
 tokens = deprecated terminology in favor of "assets"
 transaction -- fee = higher = picked by nodes https://ethereum.org/en/developers/docs/gas/
+trust = needed to avoid scams, see CoinGecko trust score
 Unichain
 unstable coins https://cointelegraph.com/magazine/unstable-coins-de-pegging-bank-runs-other-risks-2023/
 value -- extraction = just profit, not delivering anything
@@ -275,24 +266,23 @@ vault
 verifiable compute = a way to run complex tasks off-chain & then prove to the chain that it was properly done
 Vitalik Buterin
 wallet
-wallet
-wallet -- coinbase https://www.coinbase.com/en-au/wallet/smart-wallet
 wallet -- cross-chain
+wallet -- embedded = (Defi App) latest gen, seedless, self-custodial ??
 wallet -- hot
-wallet -- metamask https://metamask.io/download
-wallet -- okx https://web3.okx.com/
 wallet -- password
 wallet -- recovery phrase = 24 words to recover/transfer a wallet
 wallet -- self-custody = "​​I understand that this is a self-custody wallet, and that I am solely responsible for any associated funds, assets or accounts, and for taking any appropriate action to secure, protect and back up my wallet. I understand that X cannot access my wallet or reverse transactions on my behalf and that my recovery phrase is the ONLY way to regain access in the event of a lost password, stolen device or similar circumstance."
 wallet -- solution -- brave https://brave.com/wallet/
 wallet -- solution -- coinbase
+wallet -- solution -- coinbase https://www.coinbase.com/en-au/wallet/smart-wallet
 wallet -- solution -- ledger
-wallet -- solution -- metamask
+wallet -- solution -- metamask https://metamask.io/download
+wallet -- solution -- okx https://web3.okx.com/
 wallet -- solution -- phantom
 wallet -- solution -- rabby
 wallet -- solution -- trezor
 wallet -- solution -- uphold https://wallet.uphold.com/
-wallet -- supported networks =
+wallet -- supported networks
 Web Ontology Language (OWL) = language for defining ontologies, or formal representations of knowledge and relationships between concepts. You can use it to specify classes, properties, and instances, as well as facilitate reasoning and inferencing.
 Web1 = read-only
 Web2 = interactive, but challenges with centralized providers: data portability, data abuse (privacy), censorship, ban (democracy)...
@@ -303,4 +293,4 @@ Web3 -- semantic web = enables applications to perform complex tasks by understa
 Web3 -- trustlessness = In centralized web applications and services, users often need to place trust in a central authority to manage their data, transactions, and interactions. These central authorities have control over user data, and they can manipulate the system's rules. The data may be subject to security risks or mismanagement, potentially resulting in the loss or misuse of user information. In contrast, Web3 introduces trustlessness, so users can engage in transactions and interactions without trusting any specific party.
 Web3 = "the distributed web" = a set of technologies that enables hosting of content and web applications in a serverless manner by leveraging distributed systems and consensus protocols https://developers.cloudflare.com/web3/
 Web3 = umbrella term for technologies like blockchain that decentralize data ownership and control on the internet. Most internet applications are controlled by centralized entities that determine how they save and use end-user data. https://aws.amazon.com/what-is/web3/
-whale??
+whale?= ?

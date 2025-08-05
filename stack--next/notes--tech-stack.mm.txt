@@ -7,11 +7,13 @@ cloud -- Cloudflare
 corepack https://www.totaltypescript.com/how-to-use-corepack
 corepack still considered experimental? https://vercel.com/docs/builds/configure-a-build#corepack
 designed for Cloudflare/Vercel -- https://upstash.com/
+durable workflows https://www.inngest.com/uses/durable-workflows
 ecosystem -- sdk ?https://liblab.com/ https://www.speakeasy.com/
 feature flags
 frontend -- CSS -- framework -- ? tailwind https://tailwindcss.com/docs https://github.com/dcastil/tailwind-merge https://tremor.so/
 frontend -- CSS-in-js -- ? https://github.com/vercel/styled-jsx
 frontend -- React
+git -- git crypt https://github.com/AGWA/git-crypt
 GraphQL https://gql-tada.0no.co/
 JavaScript -- TypeScript -- https://openapi-ts.dev/
 JavaScript -- TypeScript -- tRPC https://trpc.io/docs/getting-started
@@ -30,11 +32,13 @@ monorepo -- ? turborepo
 monorepo -- ? yarn workspaces
 nanoservices
 next.js https://nextjs.org/docs
-pkg manager -- pnpm
+pkg manager -- ⚠ pnpm
+pkg manager -- ✅ yarn v4
 pkg manager -- ✖ npm
 React -- https://reactrouter.com/home ?
 secrets management -- ? https://infisical.com/
 Talwind https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
+terraform https://github.com/cloudflare/terraform-provider-cloudflare/issues/5573
 transactional emails https://react.email/
 vite -- npm create vite@latest my-project
 vite -- vitest

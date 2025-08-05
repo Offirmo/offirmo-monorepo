@@ -9,17 +9,17 @@ adaptability = turn the challenges into opportunities
 adoption -- technology adoption -- usually non-linear = due to so-called complementary network effects
 aha moment
 alignment -- challenges -- risk of social layer capture: means "having the right friends"
-alignment -- of incentives https://vitalik.eth.limo/general/2024/09/28/alignment.html
+alignment -- of incentives = https://vitalik.eth.limo/general/2024/09/28/alignment.html
 alignment -- of tech
 alignment -- of values
 barriers -- to entry = moat against competitors
 barriers -- to exit = users can't leave (switch) ex. cost
 Bezos principles -- customer obsession rather than competitor obsession
 Bezos principles -- eagerness to invent and pioneer
-Bezos principles -- https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm
 Bezos principles -- patience to think long-term
 Bezos principles -- taking of professional pride in operational excellence
 Bezos principles -- willingness to fail
+Bezos principles = https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm
 billing model -- one-time purchase with lifetime access
 billing model -- pay-as-you-go
 billing model -- subscription = everyone hates it
@@ -35,6 +35,7 @@ CEO "If I/we got fired today, what would the new CEO do?"
 churn
 churn -- subscription -- involuntary or delinquent churn = missed payments causing an automated cancellation
 churn -- subscription -- voluntary = subscriber actively cancelling their subscription
+click fraud = very important, we can't trust anything / analytics / etc. https://www.cloudflare.com/learning/bots/what-is-click-fraud/
 commoditization -- commodity businesses generally compete on price alone and are plagued by high inventories and low profit margins. In other non-commodity businesses, you would say “innovate”
 commoditization = undifferentiated mass, one no different than the other. We can pick the cheapest.
 compliance -- due diligence -- Enhanced customer due diligence (ECDD) https://www.austrac.gov.au/business/core-guidance/amlctf-programs/enhanced-customer-due-diligence-ecdd-program

@@ -718,6 +718,7 @@ linguistic -- Sapir–Whorf hypothesis https://en.wikipedia.org/wiki/Linguistic_
 little decisions = We often sweat life's big decisions, but it's the little decisions that matter the most -- the ones we make thousands of times a day, often without even realizing it. The big decisions are the inevitable result of those small decisions. They steered the ship into port, created the conditions that gave rise to the situation. https://paulbuchheit.blogspot.com/2014/07/the-technology.html
 living history = activity that incorporates historical tools, activities and dress into an interactive presentation that seeks to give observers and participants a sense of stepping back in time https://en.wikipedia.org/wiki/Living_history
 living the good life
+local ego maximum = Many times, someone reaches a local ego maximum: standing on top of a mountain built on false assumptions, a lack of self-awareness, and poor judgment about their surroundings. The higher that mountain gets (especially when reinforced by confirmation bias and inertia), the more people hesitate to tell you the hard truth. Depending on how well you take feedback without backfiring, they might never say it: that you’ve completely misunderstood the situation, and that mountain you're standing on doesn't even exist. https://amitaycohen.substack.com/p/backstabbed-by-truth
 locally special and globally average
 Logical Problem of Evil https://christianity.stackexchange.com/questions/100110/what-are-christian-responses-to-the-logical-problem-of-evil
 lois somptuaires https://en.wikipedia.org/wiki/Tyrian_purple
@@ -905,6 +906,7 @@ personality -- traits -- HEXACO -- 4 Agreeableness (A) = {patient, tolerant, pea
 personality -- traits -- HEXACO -- 5 Conscientiousness (C) = {organized, disciplined, diligent, careful, thorough, precise} versus {sloppy, negligent, reckless, lazy, irresponsible, absent-minded}
 personality -- traits -- HEXACO -- 6 Openness to experience (O) = {intellectual, creative, unconventional, innovative, ironic} versus {shallow, unimaginative, conventional}
 personality -- traits -- HEXACO https://en.wikipedia.org/wiki/HEXACO_model_of_personality_structure
+perspective = Some people see the world with greater clarity, while others see a distorted version. The more filters (biases, assumptions, insecurities, bad/lacking data) you carry, the more warped your view becomes, and the less accurate your perception of reality is. https://amitaycohen.substack.com/p/backstabbed-by-truth
 perverse incentive https://en.wikipedia.org/wiki/Perverse_incentive
 Peter principle = people in a hierarchy tend to rise to "a level of respective incompetence" https://en.wikipedia.org/wiki/Peter_principle
 petrified forest = program to stop stealing
@@ -1150,6 +1152,7 @@ sleep on it
 SMART goal-setting framework
 so bad you don't even realize you are bad = https://workplace.stackexchange.com/a/25756
 sober thoughts are drunk words
+social -- friendship paradox https://en.wikipedia.org/wiki/Friendship_paradox
 social capital
 social capital (white male)
 social circles -- ring theory = "support in, complaints/vent/dump out" https://en.wikipedia.org/wiki/Ring_theory_(psychology) https://speakinggrief.org/get-better-at-grief/supporting-grief/ring-theory
