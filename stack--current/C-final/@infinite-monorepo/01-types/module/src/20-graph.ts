@@ -44,3 +44,6 @@ export interface MultiRepository {
 }
 
 /////////////////////////////////////////////////
+
+export interface NodeⳇPackage extends Package { type: 'package'}
+export type Node = NodeⳇPackage

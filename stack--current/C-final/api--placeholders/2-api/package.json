@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/2-api",
+	"name": "@offirmo-private/api",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -17,7 +17,7 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@offirmo-private/2-api\" && tsc --noEmit",
+		"check--ts": "echo \"@offirmo-private/api\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts"

@@ -1,5 +1,5 @@
 {
-	"name": "@offirmo-private/3-static-assets",
+	"name": "@offirmo-private/static-assets",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -17,7 +17,7 @@
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"check--ts": "echo \"@offirmo-private/3-static-assets\" && tsc --noEmit",
+		"check--ts": "echo \"@offirmo-private/static-assets\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"check": "run-s check--ts",
