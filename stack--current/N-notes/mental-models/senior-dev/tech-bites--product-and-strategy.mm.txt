@@ -61,6 +61,7 @@ costs -- consolidation & switching https://www.cloudflare.com/the-net/platform-c
 creator/user gap https://blog.jpl-consulting.com/2010/03/creator-user-gap/
 Critical User Journeys (CUJ)
 customer segmentation = Strategic, Enterprise, Mid-Market, SMB
+decision -- avoiding hard decisions (bad)  https://newsletter.manager.dev/p/feature-flags-are-ruining-your-codebase
 decision maker https://www.youtube.com/watch?v=qf-_bRjZ38U
 deep appeal = something that a few people love, even if most people don't get it right away https://paulbuchheit.blogspot.com/
 disruptive -- Clay Christensen’s theory = the next big thing always starts out being dismissed as a “toy.” observation that technologies tend to get better at a faster rate than users’ needs increase. From this simple insight follows all kinds of interesting conclusions about how markets and products change over time. https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy
@@ -200,6 +201,7 @@ metrics -- funnel
 metrics -- lifetime value = https://statwonk.com/lifetime-value-calculation-ltv.html
 metrics -- Monthly Core Action Users = used to measure engagement by tracking users who perform core actions within a specific time frame.
 metrics -- Monthly Core User (MCU) = a user who do core actions at least X times in the last 28 days
+metrics -- product velocity -- core 4 = https://www.lennysnewsletter.com/p/introducing-core-4-the-best-way-to
 metrics -- retention
 metrics -- serviceable addressable market (SAM) = TAM we can reasonably reach
 metrics -- total addressable market (TAM)

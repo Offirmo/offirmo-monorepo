@@ -76,6 +76,7 @@ anti-fragile
 anyone can cook -- motto from Ratatouille = craft is open to everyone
 applied = vs. theoretic. practical. Not always need to be an expert / scientist / priest. Applying (citizen, engineer, lay) is complementary and can be, at times, more useful/concrete than expertise ("perché")
 are you actually trying? = are you stuck at a low point? what would you advise another person to do? https://open.substack.com/pub/usefulfictions/p/maybe-youre-not-actually-trying?r=85879&utm_medium=ios
+arenas = diverse arenas such as politics, diplomacy, media, public service and business https://www.thomsonreuters.com/en/about-us/trust-principles
 artisanal and small scale mining (ASM) https://www.glencore.com/sustainability/esg-a-z/artisanal-and-small-scale-mining
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
 assume the microphone is on https://www.bbc.com/news/world-50662928 https://www.theguardian.com/commentisfree/2006/jul/23/comment.politics
@@ -445,6 +446,7 @@ fulfillment https://longform.asmartbear.com/fulfillment/
 fundamental attribution error https://en.wikipedia.org/wiki/Fundamental_attribution_error
 future of Earth https://en.wikipedia.org/wiki/Future_of_Earth https://en.wikipedia.org/wiki/Timeline_of_the_far_future
 Gall’s Law: A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system.
+gambling https://www.gamblinghelponline.org.au/
 game theory
 game theory -- prisoner's dilemma https://www.bennorthrop.com/Home/Blog/2007_11_17_prisoners_dilemma.php
 gateway effect / gateway hypothesis = gateway drug (cannabis), gateway gambling (gacha games) = pathway to dangerous addictions https://www.library.hbs.edu/working-knowledge/the-15-billion-question-have-loot-boxes-turned-video-gaming-into-gambling
@@ -793,6 +795,7 @@ motivation -- addiction
 motivation -- addiction -- chemical
 motivation -- addiction -- comportmental
 motivation -- addiction -- compulsion
+motivation -- social environment = +++ "motivational origins of social loafing to be the lack of an understanding of individual contributions, unchallenging tasks given to the individual, low personal satisfaction from the task, and lack of a united group. Theories investigating why social loafing occurs range from group members' feeling that their contributions will not be noticed to group members' realizing their efforts are not necessary." (+ rest) https://en.wikipedia.org/wiki/Social_loafing
 mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruction
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
 myths -- "true myth"
@@ -1159,6 +1162,7 @@ social capital (white male)
 social circles -- ring theory = "support in, complaints/vent/dump out" https://en.wikipedia.org/wiki/Ring_theory_(psychology) https://speakinggrief.org/get-better-at-grief/supporting-grief/ring-theory
 social circles = me -> closest -> close family -> work/neighbor -> onlooker
 social debt = friends, family, and strangers who feel entitled to ask, beg, and steal https://collabfund.com/blog/rich-and-anonymous/
+social loafing = less effort when in a group (could be accountability?) https://en.wikipedia.org/wiki/Social_loafing
 social norm of reciprocity https://en.wikipedia.org/wiki/Norm_of_reciprocity
 social pressure / free will
 society -- high -- 400 = only 400 people in fashionable New York Society "If you go outside that number you strike people who are either not at ease in a ballroom or else make other people not at ease" https://en.wikipedia.org/wiki/The_Four_Hundred_(Gilded_Age)
@@ -1200,6 +1204,7 @@ Sturgeon's law = "90% of everything is crap" https://en.wikipedia.org/wiki/Sturg
 submarine = hidden project until ready
 success -- redefine success = If your venture has only one definition of success, then you're setting yourself up for failure. I can guarantee success by simply redefining success to include learning something interesting. In this way, I've always succeeded, and also learned a lot :) https://paulbuchheit.blogspot.com/2014/07/the-technology.html
 success? power, influence, money, genius IQ, infinite resources
+sucker https://en.wikipedia.org/wiki/Social_loafing#%22Sucker%22_effect/Aversion
 suicide -- assisted https://aleteia.org/2024/12/07/is-the-united-kingdom-still-a-christian-nation
 Sun Tsu’s three rules of warfare -- Only fight when there is a prize worth fighting for
 Sun Tsu’s three rules of warfare -- Only fight when there is no other way of achieving your goal
@@ -1258,6 +1263,7 @@ Tree Decision Rights Model http://www.cio.com/article/2386119/careers-staffing/h
 tribal knowledge
 trolley problem https://neal.fun/absurd-trolley-problems/
 trust -- is earned
+trust -- principles -- Reuters =  integrity, independence, and freedom from bias https://www.thomsonreuters.com/en/about-us/trust-principles
 trust -- takes years to earn but seconds to lose / Trust is built slowly, and lost quickly
 trust -- trust, but verify
 truth -- false documents -- hoaxes https://en.wikipedia.org/wiki/False_document#Hoaxes
@@ -1276,6 +1282,7 @@ universe -- cosmological model -- cyclic (various)
 universe -- cosmological model https://en.wikipedia.org/wiki/Physical_cosmology
 universe -- end big chill, big freeze, big crunch
 unlearn
+values -- companies ex. Atlassian, Canva, Dashlane…
 vanilla
 Veblen good https://en.wikipedia.org/wiki/Veblen_good
 veridical = seems wrong at first glance but is, in fact, true https://en.wikipedia.org/wiki/Birthday_problem

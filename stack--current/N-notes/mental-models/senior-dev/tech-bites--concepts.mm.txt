@@ -399,6 +399,7 @@ extreme programming
 FAANG https://www.faangfire.com/
 feature flag -- also called toggle, feature control
 feature flag = dynamically change the state of production
+feature flags -- addiction https://newsletter.manager.dev/p/feature-flags-are-ruining-your-codebase
 feedback loop -- speed needed
 FIFO
 file read

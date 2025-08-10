@@ -73,6 +73,7 @@ blocking -- js -- scripts are parse blocking
 blocking -- not = async, defer, and type=module
 blocking render https://csswizardry.com/2024/08/blocking-render-why-whould-you-do-that/
 bot detection
+bounce tracking https://brave.com/glossary/bounce-tracking/
 browser compatibility data -- watch https://bcd-watch.igalia.com/
 browsers -- Chrome -- is not the standard https://v4.chriskrycho.com/2017/chrome-is-not-the-standard.html
 browsers -- supported browsers https://support.atlassian.com/atlassian-account/docs/supported-browsers-for-atlassian-cloud-products/  https://www.canva.com/en_au/help/technical-requirements/

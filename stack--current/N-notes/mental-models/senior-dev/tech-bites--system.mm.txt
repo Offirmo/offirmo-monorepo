@@ -78,7 +78,8 @@ API -- Richardson Maturity Model -- Level 1 - Resources = now rather than making
 API -- Richardson Maturity Model -- Level 2 - HTTP Verbs (correct semantic)
 API -- Richardson Maturity Model -- Level 3 - Hypermedia Controls = HATEOAS (Hypertext As The Engine Of Application State)
 API -- Richardson Maturity Model https://martinfowler.com/articles/richardsonMaturityModel.html
-API -- unofficial = nables programmatic access to data or functionality that providers don’t officially support https://blog.supergood.ai/p/what-is-an-unofficial-api
+API -- solution -- Unkey = https://www.unkey.com/
+API -- unofficial = enables programmatic access to data or functionality that providers don’t officially support https://blog.supergood.ai/p/what-is-an-unofficial-api
 API -- view -- scope -- types = "raw / user defined scope" ex. a user-entered filter, "natural object scope" = when the object is a natural container, "persisted scope" = saved filter / board / custom view
 API -- view -- scope = the limit of where to conduct a search for domain objects for display on a view
 API -- view = an API is a view on the resources, or is a certain resource mapping over the business objects
@@ -105,6 +106,7 @@ architecture -- 12 factors https://12factor.net/
 architecture -- entitlement (vs. billing) = a customer’s access to a specific feature or product, within a given plan https://arnon.dk/why-you-should-separate-your-billing-from-entitlement/
 audit
 audit trail
+auth -- beware of coupling! "user management, team management, and settings features were so tightly coupled to the auth provider's implementation that contributors couldn't work on these critical areas without first understanding the auth provider's internals" https://www.unkey.com/blog/auth-abstraction
 authentication (authn) = making sure that a person or device is who (or what) they claim to be
 authentication vs authorization https://www.cloudflare.com/en-gb/learning/access-management/authn-vs-authz/
 authorization (authz) = determines what an authenticated user can see and do
@@ -333,6 +335,10 @@ jumpbox = see [[jump server]]
 kafka = pub/sub + store + process
 kubernetes
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
+latency -- "sub-10ms API" https://www.unkey.com/blog/serverless-exit
+latency -- cascading = esp. for critical always first API such as auth/session check
+latency -- minimum expected = processing + speed of light https://blog.cloudflare.com/reducing-double-spend-latency-from-40-ms-to-less-than-1-ms-on-privacy-proxy/
+latency -- troubleshooting example https://blog.cloudflare.com/reducing-double-spend-latency-from-40-ms-to-less-than-1-ms-on-privacy-proxy/
 latency = the time that passes between an action and the resulting response
 latency https://www.a10networks.com/glossary/osi-network-model-and-types-of-load-balancers/
 latency numbers -- frontend -- duration of time perceived by humans as sluggish = 200ms. a reaction response slower than this value will be perceived as having to wait
@@ -505,11 +511,13 @@ search -- https://vespa.ai/ (NO OpenSearch)
 secrets management https://www.pulumi.com/what-is/what-is-secrets-management/
 security
 serverless
+serverless -- against 2025 = latency + batching  https://www.unkey.com/blog/serverless-exit
 serverless -- debugging sucks, but can be alleviated by fast dev-cycle, using unit tests, not including too much code in Lambda itself
 serverless -- Default architecture everyone arrives at seems to be: Lambda → SQS/SNS/Kinesis → Lambda
 serverless -- Deploy your app as one (all Lambdas as one, rather than each Lambda individually). Cloudformation helps (blue green deployments FTW)
 serverless -- Don’t break things down too small (dare I say microservices). Keep your lambdas and code grouped logically rather than striving for smallest unit of work
 serverless -- forces devs into working within limits - mainly memory and time per lambda function invocation. This then forces good habits around breaking down complex operations, which by default results in better resilience and scalability. E.g. we have to break down large rule executions into multiple executions per issue (instead of processing 1000s of issues in bulk)
+serverless -- solution -- Fargate = https://aws.amazon.com/fargate/
 service
 service -- availability
 service -- backing -- inferred = dependencies for an instrumented service, such as databases, queues, or third-party APIs, even if that dependency hasn’t been directly instrumented

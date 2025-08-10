@@ -18,7 +18,9 @@
 2025-06 dev AI perf framework
 2025-06 real applied case "composite model architecture" https://vercel.com/blog/v0-composite-model-family
 2025-07 USA White House AI action plan https://blog.cloudflare.com/the-white-house-ai-action-plan-a-new-chapter-in-u-s-ai-policy/
+2025-08 ex. of Gemini giving hints at a Cloudflare latency issue https://blog.cloudflare.com/reducing-double-spend-latency-from-40-ms-to-less-than-1-ms-on-privacy-proxy/
 2025-08 Perplexity crawler ban https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/
+2025-08-07 GPT 5 https://x.com/i/trending/1953256633385271319
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://ghuntley.com/
