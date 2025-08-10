@@ -1,5 +1,6 @@
 export * from './01-primitives.ts'
 export * from './10-tools.ts'
 export * from './20-graph.ts'
+export * from './30-plugins.ts'
 export * from './50-spec.ts'
-//export * from './01-primitives.ts'
+export * from './60-output.ts'

@@ -1,5 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="@infinite-monorepo/operation--apply -- Sandbox" type="NodeJSConfigurationType" path-to-node="$USER_HOME$/.nvm/versions/node/v22.18.0/bin/node" node-parameters="--experimental-strip-types" path-to-js-file="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/C-final/@infinite-monorepo/70-operation--apply/module/~~sandbox/index.ts" working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/C-final/@infinite-monorepo/70-operation--apply">
-    <method v="2" />
-  </configuration>
-</component>

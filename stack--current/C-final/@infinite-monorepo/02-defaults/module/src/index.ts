@@ -1,19 +1,21 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import type { MonorepoSpec } from '@infinite-monorepo/types'
+import type { MultiMonorepoSpec } from '@infinite-monorepo/types'
 
 /////////////////////////////////////////////////
 
-const MONOREPO_SPEC_DEFAULT: Immutable<MonorepoSpec> = {
+const MONOREPO_SPEC_DEFAULT: Immutable<MultiMonorepoSpec> = {
 	runtimeⵧlocal: 'node',
 	namespace: `@monorepo`,
 	workspaces: [],
 	package_manager: 'yarn--berry',
 	EOL: '\n',
-	PATH_SEP: '/'
+	PATH_SEP: '/',
+	root_path: 'NOT_YET_LOADED/',
+	_config_fileⵧroot: undefined,
 }
 
-function completeꓽspec(spec: Immutable<Partial<MonorepoSpec>>): Immutable<MonorepoSpec> {
+function completeꓽspec(spec: Immutable<Partial<MultiMonorepoSpec>>): Immutable<MultiMonorepoSpec> {
 	return {
 		...MONOREPO_SPEC_DEFAULT,
 		...spec,

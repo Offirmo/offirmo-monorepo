@@ -1,14 +1,16 @@
 import process from 'node:process'
 import path from 'node:path'
 
-import type { JSONObject } from '@offirmo-private/ts-types'
+import type { JSONObject, AbsoluteDirPath, AbsoluteFilePath } from '@offirmo-private/ts-types'
 import { lsDirsSync } from '@offirmo-private/fs--ls'
 
 /////////////////////////////////////////////////
 
-interface Options {}
+interface Options {
+	defaults?: JSONObject
+}
 
-async function loadꓽconfig(radix: string, options: Options = {}): Promise<JSONObject> {
+async function loadꓽconfig(radix: string, options: Options = {}): Promise<[JSONObject, AbsoluteDirPath, AbsoluteFilePath | null]> {
 	const cwd = process.cwd()
 	const segments = cwd.split(path.sep)
 
@@ -20,11 +22,22 @@ async function loadꓽconfig(radix: string, options: Options = {}): Promise<JSON
 		if (dirs.includes(radix)) {
 			const target = path.join(current_path, radix, 'index.ts')
 			const imported = await import(target)
-			return imported.default
+			return [
+					imported.default,
+					current_path + path.sep,
+					target,
+				]
 		}
 
 		if (dirs.includes('.git')) {
 			// we're at the usual boundary
+			if (options.defaults) {
+				return [
+					options.defaults,
+					current_path + path.sep,
+					null,
+				]
+			}
 			break
 		}
 

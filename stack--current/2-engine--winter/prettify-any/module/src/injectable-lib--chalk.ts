@@ -4,15 +4,13 @@ import type { ChalkInstance } from 'chalk'
 
 
 /////////////////////////////////////////////////
-/*
-let _chalk: ChalkInstance | undefined = undefined
+/*let _chalk: ChalkInstance | undefined = undefined
 
 function injectꓽlibꓽchalk(chalk_lib: ChalkInstance) {
-   or TODO dynamic import instead!!
 	assert(!!chalk_lib, `prettify-any: chalk injection should be used with the real lib!`)
 	_chalk = chalk_lib
-}
-*/
+}*/
+
 /////////////////////////////////////////////////
 import chalk from 'chalk'
 

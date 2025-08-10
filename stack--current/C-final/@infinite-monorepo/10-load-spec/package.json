@@ -1,5 +1,5 @@
 {
-	"name": "@infinite-monorepo/defaults",
+	"name": "@infinite-monorepo/load-spec",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -14,10 +14,12 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@infinite-monorepo/defaults": "^0.0.1",
+		"@infinite-monorepo/load-config": "^0.0.1",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@infinite-monorepo/defaults\" && tsc --noEmit",
+		"check--ts": "echo \"@infinite-monorepo/load-spec\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts"

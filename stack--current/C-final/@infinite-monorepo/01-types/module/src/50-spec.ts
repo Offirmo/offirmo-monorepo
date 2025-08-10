@@ -1,4 +1,4 @@
-import type { SemVerⳇExact, SemVerⳇRange, PathSeparator, EndOfLine } from '@offirmo-private/ts-types'
+import type { SemVerⳇExact, SemVerⳇRange, PathSeparator, EndOfLine, AbsoluteDirPath, AbsoluteFilePath } from '@offirmo-private/ts-types'
 
 import type { VersionSpecification } from './01-primitives.ts'
 import type { LocalJsRuntimeKey, JsRuntimeSpec, PackageManagerKey, PackageManagerSpec } from './10-tools.ts'
@@ -16,7 +16,7 @@ export interface ToolSpec extends VersionSpecification {
 
 /////////////////////////////////////////////////
 
-export interface MonorepoSpec {
+export interface MultiMonorepoSpec {
 
 	/////// RUNTIME ///////
 
@@ -24,15 +24,26 @@ export interface MonorepoSpec {
 	// (should we support multiple at once? Not for now, complex, need actual use case)
 	runtimeⵧlocal: LocalJsRuntimeKey | JsRuntimeSpec<LocalJsRuntimeKey>
 
-	/////// WORKSPACES ///////
-	namespace: `@${string}` // will be suffixed with -private
+
+
+	/////// GRAPH ///////
+	root_path: AbsoluteDirPath
 	workspaces: Array<string> // TODO refine
+
+
 
 	/////// TOOLING ///////
 	package_manager: PackageManagerKey | PackageManagerSpec
 	//runtime_envⵧdev: { [key: string]: JsRuntimeSpec }
 
+
+
 	/////// CODEGEN ///////
+	namespace: `@${string}` // will be suffixed with -private
 	EOL: EndOfLine // useful?
 	PATH_SEP: PathSeparator // useful?
+
+
+	/////// META ///////
+	_config_fileⵧroot: AbsoluteFilePath | null | undefined
 }

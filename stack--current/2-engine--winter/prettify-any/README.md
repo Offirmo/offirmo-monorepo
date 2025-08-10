@@ -26,6 +26,8 @@ Missing features (worse than util.inspect)
 
 ```ts
 // "@offirmo-private/prettify-any": "*",
+
+import 
 import {
 	prettifyꓽany,
 	prettifyꓽjson,
@@ -36,6 +38,6 @@ prettifyꓽjson(foo)
 
 import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 
-dumpꓽanyⵧprettified('hello', {foo}, {outline: true})
+dumpꓽanyⵧprettified('hello', {foo})
 
 ```
