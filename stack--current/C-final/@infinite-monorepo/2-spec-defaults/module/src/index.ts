@@ -6,7 +6,7 @@ import type { MonorepoSpec } from '@infinite-monorepo/types'
 
 const MONOREPO_SPEC_DEFAULT: Immutable<MonorepoSpec> = {
 	runtimeⵧlocal: 'node',
-	namespace: `@acme`,
+	namespace: `@monorepo`,
 	workspaces: [],
 	package_manager: 'yarn--berry',
 	EOL: '\n',

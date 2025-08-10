@@ -8,11 +8,11 @@ export const NODE_MAJOR_VERSION = 22
 /////////////////////////////////////////////////
 
 const SPEC: Partial<MonorepoSpec> = {
-	runtimeⵧlocal: 'node',
-
-	package_manager: 'bolt',
+	//runtimeⵧlocal: 'node',
 
 	namespace: '@offirmo',
+
+	package_manager: 'bolt',
 	workspaces: [
 		"0-meta/build-tools/*",
 
