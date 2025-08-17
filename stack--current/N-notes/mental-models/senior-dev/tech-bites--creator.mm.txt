@@ -1,0 +1,7 @@
+castle
+content authenticity initiative https://contentauthenticity.org/
+content credentials -- C2PA "Coalition for Content Provenance and Authenticity" https://c2pa.org/
+content credentials -- tools https://opensource.contentauthenticity.org/docs/getting-started/
+content credentials https://contentcredentials.org/
+content independence https://blog.cloudflare.com/content-independence-day-no-ai-crawl-without-compensation/
+mailing list

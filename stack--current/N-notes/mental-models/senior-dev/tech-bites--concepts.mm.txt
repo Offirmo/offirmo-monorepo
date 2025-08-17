@@ -1,3 +1,4 @@
++++ important history https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/RodJohnson_JavaEnterpriseApplicationStandardsAndWhyTheIndustryMovedToLightweightOpenSource.pdf
 2025 https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/
 5 min zoom vs 10 emails/comments volley https://blog.jpl-consulting.com/2010/04/ten-email-volley-or-five-minute-phone-call/
 [ ] +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
@@ -270,6 +271,7 @@ data format -- future proofing = vastly overrated now that we have semver!! (+ m
 data format -- interchange -- https://en.wikipedia.org/wiki/Advanced_Scientific_Data_Format
 data format -- interchange -- JSON -- binary https://msgpack.org/
 data format -- interchange -- JSON -- RPC https://www.jsonrpc.org/
+data format -- interchange -- JSON -- schema = https://json.schemastore.org/
 data format -- interchange -- JSON https://www.json.org/
 data format -- interchange -- JSON mini = some sort of protobuf-derived space-saving representation (single letters for keys)
 data format -- interchange -- JSON5 https://json5.org/ https://github.com/json5/json5
@@ -547,6 +549,7 @@ lang -- JS -- interview http://www.toptal.com/javascript/interview-questions
 lang -- JS -- interview https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
 lang -- JS -- parseInt http://stackoverflow.com/questions/17106681/parseint-vs-unary-plus-when-to-use-which/17106702#17106702
 lang -- JS -- realms https://stackoverflow.com/questions/49832187/how-to-understand-js-realms/49832343#49832343
+lang -- js/ts --tsconfig https://json.schemastore.org/tsconfig
 lang -- JSON
 lang -- JSX – Javascript XML, from React
 lang -- Lean = Math language https://lean-lang.org/ https://overreacted.io/the-math-is-haunted/
@@ -645,6 +648,7 @@ no silver bullet in engineering = we cannot expect ever to see two-fold gains ev
 node.js -- principles https://www.platformatichq.com/node-principles
 not invented here https://en.wikipedia.org/wiki/Not_invented_here
 npm
+null -- The Billion Dollar Mistake = opinion that null is bad (I disagree) https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/Null%2bReferences_%2bThe%2bBillion%2bDollar%2bMistake.html
 nyan cat
 o11y observability https://o11y.eu/blog/what-is-o11y/
 object
@@ -804,6 +808,7 @@ rollback
 rolling deploy
 RPC -- advocacy https://blog.cloudflare.com/javascript-native-rpc/
 rpc -- deadline https://protobuf.dev/programming-guides/api/
+RPC -- flawed = "RPC and its Offspring: Convenient, Yet Fundamentally Flawed" = can't hide the underlying distributed system  https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/RPC%2band%2bits%2bOffspring_%2bConvenient%2c%2bYet%2bFundamentally%2bFlawed.html
 RPC -- solution -- protocol = ex. https://capnproto.org/rpc.html
 RPC -- solution -- TS https://trpc.io/docs/concepts intro https://colinhacks.com/essays/painless-typesafety
 rule of composition https://www.linfo.org/rule_of_composition.html
@@ -872,6 +877,19 @@ spec
 SSH (Secure Shell)
 stack overflow
 standard deviation
+standards -- checklist -- 01 Will the pace of change and innovation required
+standards -- checklist -- 02 Do we benefit from competing implementations?
+standards -- checklist -- 03 Does this affect wire protocols (in which standards are probably outside Java)
+standards -- checklist -- 04 Is there an entrenched open source solution, in which case competition may not occur?
+standards -- checklist -- 05 Is the field mature and well understood? Has the proposal been tested in the market? Do not want design by committee?
+standards -- checklist -- 06 Is the standards committee representative of the users of the technology?
+standards -- checklist -- 07 Does the standard exist to lock out newcomers? When standards become too complex, like J2EE, they effectively lock out new entrants and benefit existing franchisees, not consumers
+standards -- checklist https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/RodJohnson_JavaEnterpriseApplicationStandardsAndWhyTheIndustryMovedToLightweightOpenSource.pdf
+standards -- dangerous when not based on experience and actual implementations
+standards -- do not ignore prior art s39 https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/RodJohnson_JavaEnterpriseApplicationStandardsAndWhyTheIndustryMovedToLightweightOpenSource.pdf
+standards -- standardization -- death by committee
+standards -- vs. standardization = If standards represent peace, then formal standardisation can be war. Dark, political, expensive and exclusive games played out between large vendors often behind closed doors. https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/Standards%2bare%2bGreat%2c%2bbut%2bStandardisation%2bis%2ba%2bReally%2bBad%2bIdea.html
+standards = good, arise from consensus between competitors signaling maturity in a marketplace. Can ensure interoperability and assist portability, allowing the switching of suppliers. A widely adopted standard can create new markets, and impose useful constraints which in turn foster good design and innovation. Standards are great, and as the old joke goes, that's why we have so many of them! https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/Standards%2bare%2bGreat%2c%2bbut%2bStandardisation%2bis%2ba%2bReally%2bBad%2bIdea.html
 state
 state -- making impossible states impossible https://medium.com/elm-shorts/how-to-make-impossible-states-impossible-c12a07e907b5
 state -- management

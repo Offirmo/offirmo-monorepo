@@ -1,3 +1,4 @@
+[ ] https://posthog.com/handbook/company/management
 assumptions -- check assumptions
 assumptions -- do not assume
 bets
@@ -7,6 +8,8 @@ challenges -- questions = address the meta concern, not just the surface questio
 create space for the best ideas to emerge
 dress code don't make leaders but they sure announce them
 executive presence
+failures modes = possible wrong ways https://newsletter.posthog.com/p/tech-lead-failure-modes
+feedback -- Keeper Test = "If this person resigned today, would I fight to keep them?"
 high growth handbook https://growth.eladgil.com/
 leadership -- ask questions
 managing stakeholder expectations

@@ -1,4 +1,5 @@
 [ ] https://vitalik.eth.limo/general/2024/09/28/alignment.html
+commercial vs non-commercial OSS https://leerob.substack.com/p/reflections-on-the-react-community
 definition -- FSF free software definition
 definition -- OSI open source definition
 fellowship https://clerk.com/blog/zod-fellowship
@@ -10,10 +11,12 @@ https://oss.love/
 https://polar.sh/
 licence -- vanity
 license -- proliferation https://en.wikipedia.org/wiki/License_proliferation
+lightweight opensource = response to mixed results of open standards (ex. J2EE standard) when trying to avoid vendor lock-in  https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/Java%2benterprise%2bapplication%2bstandards%2band%2bwhy%2bthe%2bindustry%2bmoved%2bto%2blightweight%2bopen%2bsource.html
 monetary value https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4693148
 source available = https://news.itsfoss.com/open-source-source-available/
 sponsors -- corporate tiers https://zod.dev/?id=sponsors
 sponsors https://zod.dev/?id=sponsors
+standards vs standardization https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/Standards%2bare%2bGreat%2c%2bbut%2bStandardisation%2bis%2ba%2bReally%2bBad%2bIdea.html
 tea https://tea.xyz/rewards-for-oss-contributions
 tidelift https://tidelift.com/
 UN Open Source Principles https://unite.un.org/fr/news/france-becomes-first-government-endorse-un-open-source-principles-joined-19-organizations

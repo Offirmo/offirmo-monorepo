@@ -75,6 +75,7 @@ Anna Karenina principle = https://en.wikipedia.org/wiki/Anna_Karenina_principle
 anti-fragile
 anyone can cook -- motto from Ratatouille = craft is open to everyone
 applied = vs. theoretic. practical. Not always need to be an expert / scientist / priest. Applying (citizen, engineer, lay) is complementary and can be, at times, more useful/concrete than expertise ("perché")
+are we the bad guys?
 are you actually trying? = are you stuck at a low point? what would you advise another person to do? https://open.substack.com/pub/usefulfictions/p/maybe-youre-not-actually-trying?r=85879&utm_medium=ios
 arenas = diverse arenas such as politics, diplomacy, media, public service and business https://www.thomsonreuters.com/en/about-us/trust-principles
 artisanal and small scale mining (ASM) https://www.glencore.com/sustainability/esg-a-z/artisanal-and-small-scale-mining
@@ -276,6 +277,7 @@ death -- https://en.wikipedia.org/wiki/Awareness_of_Dying
 death -- memento mori = Latin for "remember (that you have) to die" https://en.wikipedia.org/wiki/Memento_mori
 death -- mortality salience -- terror management theory = asserts that almost all human activity is driven by the fear of death https://en.wikipedia.org/wiki/Terror_management_theory
 death -- mortality salience = awareness that one's death is inevitable and that all attempts to defer it indefinitely are ultimately futile https://en.wikipedia.org/wiki/Mortality_salience
+death by committee
 debanking = close/refuse account https://www.austrac.gov.au/news-and-media/media-release/austrac-statement-2021-de-banking
 debate -- https://en.wikipedia.org/wiki/Principle_of_charity
 decision -- doors -- 1 way = If you walk through and don’t like what you see on the other side, you can’t get back to where you were before
@@ -1059,6 +1061,7 @@ rights -- of initiative https://en.wikipedia.org/wiki/Popular_initiative
 ring theory -- 01 The person in the center ring can say anything she wants to anyone, anywhere. She can kvetch and complain and whine and moan and curse the heavens and say, "Life is unfair," and, "Why me?" That's the one payoff for being in the center ring. Everyone else can say those things too, but only to people in larger rings.
 ring theory -- 02 When you are talking to a person in a ring smaller than yours, someone closer to the center of the crisis, the goal is to help. Listening is often more helpful than talking. But if you're going to open your mouth, first ask yourself if what you are about to say is likely to provide comfort and support. If it isn't, don't say it. Don't, for example, give advice. People who are suffering from trauma don't need advice. They need comfort and support. So say, "I'm sorry," or, "This must really be hard for you," or, "Can I bring you a pot roast?" Don't say, "You should hear what happened to me," or, "Here's what I would do if I were you." And don't say, "This is really bringing me down."
 ring theory https://en.wikipedia.org/wiki/Ring_theory_(psychology)
+robber barons https://en.wikipedia.org/wiki/Robber_baron_(industrialist)
 robustness principle = be conservative in what you do, be liberal in what you accept from others. It’s a design guideline for software and a good rule for life: Hold yourself to a higher standard than you hold others to.
 rock the boat -- permission to (speak freely)
 root cause misattribution https://www.zeptonaut.com/posts/rocket-league-and-root-cause-misattribution/
@@ -1071,6 +1074,7 @@ SBI https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-be
 SBI https://www.mindtools.com/pages/article/situation-behavior-impact-feedback.htm
 schadenfreude = happy ppl misfortune
 science -- currently most accurate model
+science -- ethics -- "Your scientists were so preoccupied with whether or not they could, they didn't stop to think if they should" https://www.reddit.com/r/videos/comments/1at69qj/your_scientists_were_so_preoccupied_with_whether/
 science -- flat Earth -- https://en.wikipedia.org/wiki/Bedford_Level_experiment
 science -- null result = didn't see the expected effect/prevision https://en.wikipedia.org/wiki/Null_result
 science -- pseudoscience

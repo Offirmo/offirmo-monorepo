@@ -1,4 +1,6 @@
 {
+	"$schema": "https://json.schemastore.org/tsconfig",
+
 	"compileOnSave": false,
 	"compilerOptions": {
 

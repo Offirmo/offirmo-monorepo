@@ -48,6 +48,7 @@ bridging
 case study -- https://newsletter.systemdesign.one/p/how-do-airtags-work
 CBDC "Central bank digital currencies" = https://cointelegraph.com/magazine/cbdcs-kryptonite-for-crypto/
 Celsius = a risky crypto lending venture masquerading as a safe, bank-like platform that provided unusually high interest on crypto savings accounts
+chains -- list https://chainlist.org/
 challenges -- Governance = can be challenging in decentralized systems. It requires effective structures that involve community participation and don’t centralize power.
 challenges -- multibillion-dollar implosions of FTX, BlockFi, Celsius, and Voyager Digital
 challenges -- need to purchase crypto first, have to endure a steep learning curve with wallets and exchanges as well as additional costs "It’s really hard to get non crypto people to use it" https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
@@ -55,20 +56,25 @@ challenges -- Regulatory compliance = Web3 applications must follow existing dat
 challenges -- scalability = a primary concern, because lack of trust is expensive: blockchain networks get very expensive and computationally demanding as data volumes increase
 challenges -- User experience and adoption = Complex interfaces and a steep learning curve limit mainstream adoption. Improving the user experience by designing intuitive interfaces that abstract the complexities of blockchain technology is essential.
 CLOB = ??
+coin loss https://blockworks.co/news/bitomat-exchange-deleted-17000-bitcoin
 CoinGecko = ranking website https://www.coingecko.com/
 colored coins = on-blockchain digital assets to represent custom currencies and financial instruments https://docs.google.com/a/buterin.com/document/d/1AnkP_cVZTCMLIzw4DvsW6M8Q2JC0lIzrTLuoWu2z1BE/edit
 compliance -- AU -- AUSTRAC https://www.austrac.gov.au/business/new-to-austrac
 consensus -- mechanisms = complete stack of ideas, protocols and incentives that enable a distributed set of nodes to agree on the state of a blockchain https://ethereum.org/en/developers/docs/consensus-mechanisms/
 consensus = a general agreement has been reached. Consider a group of people going to the cinema. If there is no disagreement on a proposed choice of film, then a consensus is achieved. If there is disagreement, the group must have the means to decide which film to see. In extreme cases, the group will eventually split https://ethereum.org/en/developers/docs/consensus-mechanisms/
+corporate blockchains = "Big companies launching L1s is kind of a rejection of the L2 thesis, but it’s even more of a rejection of the Solana thesis" https://blockworks.co/news/stripe-circle-l1s-solana
 crapto = anything not BitCoin (maybe Ether?)
 cross-chain
 cross-chain -- chain abstraction
 cross-chain -- swaps = swidge??
+crypto image problem = "growing perception that most of the industry’s profits accrue to a small number of insiders at the expense of its retail investors.  (...)  especially unfortunate because a big part of crypto’s original appeal was that bitcoin was fair-launched and equally accessible to all.  " https://mail.blockworks.com/p/when-100m-isn-t-enough
 crypto signals = advice to invest https://www.tokenmetrics.com/blog/crypto-signals
 crypto-adjacent = pejorative for "borderline crypto" = "borderline scam/shit"
 cryptocurrency = a medium of exchange secured by a blockchain-based ledger https://ethereum.org/en/developers/docs/intro-to-ether/#what-is-a-cryptocurrency
 cryptokitties
 CT "Crypto Twitter" = a subset of the popular social media platform Twitter, specifically focused on cryptocurrency, blockchain technology, and decentralized finance https://www.bitget.com/wiki/what-is-ct-in-crypto
+culture -- "to the moon"
+culture -- cypherpunk = (1993) "The Cypherpunks are actively engaged in making the networks safer for privacy" https://www.activism.net/cypherpunk/manifesto.html
 culture -- degen = slang derived from "degenerate", typically refers to someone who engages in high-risk, speculative trading or investment with the potential for high rewards. It describes individuals who prioritize potential gains over calculated risks and are known for their aggressive and sometimes reckless approach.
 culture -- slang https://www.coinbase.com/en-au/learn/tip-and-tutorials/crypto-slang-guide
 custody -- self custody = funds are not waived
@@ -111,6 +117,7 @@ exchange -- decentralized = ?? https://www.coingecko.com/en/exchanges/decentrali
 exchange -- solution -- uphold https://uphold.com/ = the only one for Brave's BAT
 exchange = cryptocurrency exchange
 exchanges -- Binance = largest cryptocurrency exchange in terms of daily trading volume of cryptocurrencies https://en.wikipedia.org/wiki/Binance https://www.binance.com/
+exchanges -- Mt. Gox
 fiat
 fiat ramps
 fiat-backed
@@ -197,6 +204,7 @@ NFTs = https://www.youtube-nocookie.com/embed/Xdkkux6OxfM
 node
 non-custodial = "even if someone goes and nukes the platform, censors it, DDoS’s it, or takes down AWS, you can still go to the chain and get your assets back."
 normie friendly = to break out of the limited circle
+not your keys, not your coins = custodiality. only keep bitcoin in exchanges for as long as you need to https://blockworks.co/news/bitomat-exchange-deleted-17000-bitcoin
 onchain protocols = such as Ethena, Synthetix, Wormhole
 open source -- benefits -- code being inspectable = to ensure security
 open source -- benefits -- enabling permissionless third-party improvements
@@ -210,6 +218,7 @@ perps = perpetual futures
 Polygon
 ponzi schemes -- expectation of new people depositing, once new people stop depositing, the system can collapse within hour
 porn https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
+predictions https://polymarket.com/
 price oracles = pricing of some resource
 proof-of -- 1999 proof of work (PoW) = keep chain secure by needing 51% of the network's computing power to defraud the chain. This would require such huge investments in equipment and energy; you're likely to spend more than you'd gain. https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/ https://en.wikipedia.org/wiki/Proof_of_work
 proof-of -- 2011 proof of stake (PoS) = keep chain secure by needing to destroy tokens to control the chain + rewards incentives https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/
@@ -235,6 +244,7 @@ smart contracts = more complex applications involving having digital assets bein
 smart contracts = self-implementing contracts with predefined rules written in code. They automatically enforce the terms of the agreement when certain conditions are met. For example, if a contract says that ownership of an item transfers to whoever pays for it, you simply send the asking price to that contract. The ledger then automatically updates by using a transaction in the next block to reflect you as the new owner.
 smart property = ownership of an underlying physical device https://en.bitcoin.it/wiki/Smart_Property
 Solana
+Solana -- thesis = ???
 Solana https://medium.com/solana-labs
 Solana network
 solutions -- Amazon Managed Blockchain (AMB) = https://aws.amazon.com/managed-blockchain/

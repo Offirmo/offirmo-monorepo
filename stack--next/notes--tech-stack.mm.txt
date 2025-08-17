@@ -4,6 +4,7 @@ APS → openapi → openapi trpc / hono ??
 auth -- ? https://www.propelauth.com/
 CI/CD -- ? https://mergify.com/
 cloud -- Cloudflare
+corepack https://github.com/nodejs/corepack?tab=readme-ov-file
 corepack https://www.totaltypescript.com/how-to-use-corepack
 corepack still considered experimental? https://vercel.com/docs/builds/configure-a-build#corepack
 designed for Cloudflare/Vercel -- https://upstash.com/
@@ -24,6 +25,8 @@ just https://just.systems/man/en/further-ramblings.html
 linter -- eslint
 linter -- https://biomejs.dev/
 localias = securely manage local aliases for development servers https://github.com/peterldowns/localias
+meta -- CNCF -- landscape = https://landscape.cncf.io/
+meta -- CNCF = the open source, vendor-neutral hub of cloud native computing, hosting projects like Kubernetes and Prometheus to make cloud native universal and sustainable https://landscape.cncf.io/
 meta -- https://stackshare.io/
 microfrontends
 mobile -- capacitor https://capacitorjs.com/  https://capawesome.io/  https://capgo.app/
@@ -40,6 +43,7 @@ secrets management -- ? https://infisical.com/
 Talwind https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
 terraform https://github.com/cloudflare/terraform-provider-cloudflare/issues/5573
 transactional emails https://react.email/
+typescript -- bases https://github.com/tsconfig/bases
 vite -- npm create vite@latest my-project
 vite -- vitest
 vite ✅ https://vite.dev/

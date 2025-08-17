@@ -126,6 +126,10 @@ DL Deep Learning (NN)
 effort paradox -- optimal human touchpoints
 effort paradox https://uxdesign.cc/the-effort-paradox-in-ai-design-996a0bc2f7f6
 embeddings = raw underlying representation of a concept preserving aspects of its content and/or its meaning (Of course it's model-dependent?) https://platform.openai.com/docs/guides/embeddings/use-cases
+error analysis = "the most important metric" monitoring the LLM convos and tracking what's not working https://newsletter.eng-leadership.com/p/guide-to-rapidly-improving-ai-products
+evals -- big FAQ https://www.gregorojstersek.com/evals-faq.pdf
+evals -- should not pass at 100% or there is an issue https://newsletter.eng-leadership.com/p/biggest-mistakes-engineering-leaders
+evals https://newsletter.eng-leadership.com/p/ai-evals-how-to-systematically-improve
 extended thinking https://www.anthropic.com/research/visible-extended-thinking
 faithfulness = not certain that what’s in the thought process truly represents what’s going on in the model’s mind https://www.anthropic.com/research/visible-extended-thinking
 fine-tuning
