@@ -21,3 +21,10 @@ Pre-emptive Control Framework = "after failing spectacularly in front of senior 
 shut up
 tech -- neverending support https://www.herodevs.com/support
 why does it matter? = need link to company goals, customer experience, or competitive advantage
+10x - PostHog -- https://newsletter.posthog.com/p/beyond-the-10x-engineer
+10x - PostHog -- 1. Always prototyping and experimenting
+10x - PostHog -- 2. Comfortable writing
+10x - PostHog -- 3. A genuine love for building
+10x - PostHog -- 4. Customer obsessed
+10x - PostHog -- 5. Understands the broader context
+10x - PostHog -- 6. Easy to work with

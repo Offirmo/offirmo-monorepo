@@ -303,6 +303,7 @@ sleeper technology
 social features -- complex "block" feature https://dcurt.is/block-carefully
 stalking horse = figure used to test a concept or mount a challenge on behalf of a third party. If the idea proves viable or popular, the third party can then declare its interest and advance the concept with little risk of failure. If the concept fails, the third party will not be tainted by association with the failed concept and can either drop the idea completely or bide its time and wait until a better moment to launch an attack https://en.wikipedia.org/wiki/Stalking_horse
 startups should avoid being held hostage by the preferences of their early user base if it deviates from the broader market, ex. social feed or reels
+stay fast https://newsletter.posthog.com/p/how-to-design-your-company-for-speed
 Stock Keeping Unit (SKU) = a clearly identified product https://en.wikipedia.org/wiki/Stock_keeping_unit
 strategic dissonance = (Andy Grove) = mismatch between a company's current strategies and changes in the industry due to strategic inflection points
 strategic inflection point = a moment when everything changes (most react too late)
