@@ -208,6 +208,7 @@ metrics -- total addressable market (TAM)
 mind share = When people think of examples of a product type or category, they usually think of a limited number of brand names https://en.wikipedia.org/wiki/Mind_share
 moat https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
 Most Advanced Yet Acceptable (MAYA) UX concept
+MVP -- SRP "sales ready product" = converts prospects in the moment—during a demo, and then shortens the sales cycle, ramps revenue quickly, and pushes a company towards market dominance https://www.sequoiacap.com/article/the-templeton-compression/
 network -- defensible? path to critical mass?
 network -- degrees, clustering, clusters types
 network -- heterogeneous -- chicken and egg problem = which side comes first?
@@ -244,6 +245,11 @@ pitch -- Q -- If you get no investments what alternatives do you have in mind
 policy -- internal -- no politics https://www.linkedin.com/posts/jason-fried_inevitably-around-major-elections-or-political-activity-7260061274544234496-tSB1
 PRD "product requirements document" https://www.atlassian.com/agile/product-management/requirements
 pricing
+pricing -- capability
+pricing -- competitive pricing reaction strategy.
+pricing -- position
+pricing -- segment
+pricing -- strategy = strategic choice from a business, need to chose the most effective https://en.wikipedia.org/wiki/Pricing_strategy
 pricing strategy
 principle -- end-to-end principle = fundamental principle of the Internet in which the role of a network is to reliably deliver data from willing senders to willing receivers
 principle -- right of exit = users of a platform can easily go elsewhere if they are dissatisfied with it. This requires interoperability, countering the network effects
@@ -281,6 +287,9 @@ risk = effect of uncertainty on an organisation’s ability to meet its objectiv
 sales -- high-skills sales reps https://blog.staysaasy.com/p/this-is-the-person-selling-your-product
 sales -- operations = it's hard for many customers to "just buy" they need a lot of support from dedicated teams
 sales -- Sales Development Representative (SDR) https://www.salesforce.com/blog/sales-development-representative/
+sales learning curve -- compression -- [SRP] https://www.sequoiacap.com/article/the-templeton-compression/
+sales learning curve -- compression -- provocative demo = convert prospects in the moment. Instead of showcasing lots of features, the product squarely addressed customer pain. Because the product had such incredible fit with market needs, Don’s companies could shrink the sales cycle, hence the term the Templeton Compression.
+sales learning curve = need time and money to climb the sales learning curve, don't ramp up sales too quickly https://www.sequoiacap.com/article/the-templeton-compression/
 satisficing = satisfy + suffice = good enough even if not optimal https://en.wikipedia.org/wiki/Satisficing
 scalability -- organisational -- collaboration = bigger team size can no longer efficiently collaborate, ex. merge conflicts, coordination
 scalability -- organisational -- collaboration = no limiting "gate keeping" core team

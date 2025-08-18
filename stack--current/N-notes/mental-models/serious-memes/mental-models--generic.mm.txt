@@ -107,6 +107,8 @@ Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 barbarians at the gate https://en.wikipedia.org/wiki/Barbarians_at_the_Gate
 base rate: The average outcome for an event over time. They’re like batting averages for life, and they work best with big sample sizes. For example, if you’re starting a business, avoid the restaurant business where margins are low and competition is high.
 be prepared
+be right for the right reason
+be right for the wrong reason = ex. being carried along by momentum or catching a narrative
 bee browsing
 being enough
 being in the details https://www.theengineeringmanager.com/managing-managers/being-in-the-details/
@@ -237,6 +239,7 @@ convex output curve = better than linear = more effort/rsrc -> much more results
 copernican principle = humans are not privileged observers of the universe "The more we learn about astronomy, the less it seems that earth is special. It’s a small part of the universe, and each human is a small part of the earth. We are all spinning through the solar system — nowhere near the beginning or end of time." https://en.wikipedia.org/wiki/Copernican_principle
 corporate slave (but also never achieving anything?)
 correlation is not causation https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation
+corruption -- 2025 Qatar gifting AirForce 1 https://www.theguardian.com/us-news/2025/may/11/trump-accept-luxury-plane-gift-qatar
 cosmological models
 cosmological models -- alternative -- Janus https://januscosmologicalmodel.com/
 cosmological models -- alternative -- Quantised Inertia https://physicsfromtheedge.blogspot.com/2024/11/a-potted-history-of-qi.html
@@ -329,6 +332,7 @@ discrimination -- indirect = when a neutral rule, policy, practice or criterion 
 discrimination -- positive / affirmative action = policies and practices seeking to address systemic discrimination https://en.wikipedia.org/wiki/Affirmative_action
 disease -- definition? https://en.wikipedia.org/wiki/Unsolved_problems_in_medicine
 disfranchisement = voter disqualification, is the restriction of suffrage (the right to vote) of a person or group of people https://en.wikipedia.org/wiki/Disfranchisement
+dismissal with prejudice = cannot pursue the case again
 disrespect = lack of consideration or regard for others’ privacy, physical or emotional space, viewpoints, or belongings. Intimidation, aggressive behavior, “the silent treatment”. Thoughtless or arrogant behavior, like using profanity when someone objects to it.
 distance sociale = ne pas être accessible pour être plus désirable (ex. mannequins) https://www.linkedin.com/posts/maud-alaves_je-suis-consultante-en-r%C3%A9putation-et-je-souris-activity-7305283449576148992-5BvV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABCMjsBlsnsypQrujQIErVuOdIdbCIH5O0
 diversité des esprits humains
@@ -1042,6 +1046,7 @@ regrets -- People report regretting such things as -- marrying the wrong person
 regrets -- People report regretting such things as -- opting for a secure job near home over an adventurous position overseas
 regrets -- romantic = males, who are thought to be more promotion-oriented in relation to romance and sexual activity, tend to regret their failures to seize romantic opportunities, females are more likely to regret their past actions in this domain
 regrets https://walkerd.people.charleston.edu/317/Regrets2018.pdf
+regulation by prosecution
 regulatory crackdown
 regulatory focus
 relationships -- 4 questions to test the strength https://www.today.com/health/behavior/4-questions-test-relationship-strength-rcna202125
@@ -1331,4 +1336,18 @@ xenia https://greekmythcomix.com/comic/how-to-do-xenia/
 XY problem = "what are you trying to achieve?" https://xyproblem.info/
 you are the company you keep
 you can bring a horse to water...
+you feel like shit -- 1. Physical -- 1. Have you eaten in the last four hours?
+you feel like shit -- 1. Physical -- 2. Have you taken any medication you need to take?
+you feel like shit -- 1. Physical -- 3. Drink a glass of whatever liquid you like best. Water is ideal, but don't beat yourself up…
+you feel like shit -- 1. Physical -- 4. how many hours you've slept out of the last 24?
+you feel like shit -- 1. Physical -- 5. Are you in pain?
+you feel like shit -- 1. Physical -- 6. Is something about your environment distressing or uncomfortable? temperature, smelly, crowded/alone
+you feel like shit -- 1. Physical -- 7. Does your body feel uncomfortable, sweaty, or dirty?
+you feel like shit -- 2. Emotional -- 1. Do you know why you're in a bad mood, or not feeling well emotionally?
+you feel like shit -- 2. Emotional -- 2. Do you feel anxious, nervous, keyed-up, paranoid, scared, or on edge?
+you feel like shit -- 2. Emotional -- 3. Do you feel triggered? Are you having flashbacks? Is something traumatic or upsetting from the past weighing on your mind? Did you have a vivid nightmare?
+you feel like shit -- 2. Emotional -- 4. Are you feeling dissociated, depersonalized, or derealized? Do you feel far away, foggy, or unreal? Are you not sure who you are?
+you feel like shit -- 2. Emotional -- 5. Are you feeling depressed, sad, or upset?
+you feel like shit -- 2. Emotional -- 6. Are you feeling lonely or in need of attention?
+you feel like shit = a self care game https://youfeellikeshit.com/
 zero-sum game https://en.wikipedia.org/wiki/Zero-sum_game

@@ -108,6 +108,10 @@ PKI = Public Key Infrastructure
 plan for security from the start - it's not something you can bolt on at the end
 principle of least privilege
 privacy advices -- https://tails.net/doc/about/warnings/index.en.html
+privacy pass -- issuance protocol https://www.rfc-editor.org/rfc/rfc9578.html
+privacy pass -- token
+privacy pass = ???  token
+private relay -- iCloud = "ensures that no single party handling user data has complete information on both who the user is and what they are trying to access." = Internet privacy service from Apple that allows users with iOS 15, iPadOS 15, or macOS Monterey on (...) their devices and an iCloud+ subscription, to connect to the Internet and browse with Safari in a more secure and private way  https://blog.cloudflare.com/icloud-private-relay/
 pwned = https://haveibeenpwned.com/API/v3 https://github.com/BlinqOSS/is-pwned
 request smuggling https://blog.cloudflare.com/resolving-a-request-smuggling-vulnerability-in-pingora/#what-is-request-smuggling
 salting https://en.wikipedia.org/wiki/Salt_(cryptography)

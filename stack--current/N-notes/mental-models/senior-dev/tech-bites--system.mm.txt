@@ -300,6 +300,9 @@ flux architecture
 full stack trade offs https://zknill.io/posts/backend-for-the-frontend/
 gateway (ingress) = universal vs dedicated ( se page assemble service, API gateway...))
 gateway https://www.cloudflare.com/learning/access-management/what-is-a-secure-web-gateway/
+geolocation -- geolocation database = must be kept up to date
+geolocation -- geolocation database providers
+geolocation -- “local pizza test”: with location services disabled, are the results returned for the search term “pizza near me” geographically relevant? https://blog.cloudflare.com/icloud-private-relay/
 Google - Site Reliability Engineering
 graceful degradation = ex. of batteries in flashlight
 Hadoop https://en.wikipedia.org/wiki/Apache_Hadoop
@@ -471,6 +474,7 @@ pub/sub -- topics = a way to shard a large event stream so that consumers don't 
 PubSub = Publish-Subscribe
 push -- long polling, server-side events (SSE), and WebSockets
 push vs pull
+queue -- queueing theory = mathematical study of waiting lines, or queues. A queueing model is constructed so that queue lengths and waiting time can be predicted. Very important in general business as well https://en.wikipedia.org/wiki/Queueing_theory
 real-time -- hard real-time = a system is said to be hard real-time if it must meet strict timing constraints
 real-time -- protocols -- 01 Session Traversal Utilities for NAT (STUN) - Used to establish a direct UDP connection between two clients.
 real-time -- protocols -- 02 Traversal Using Relay around NAT (TURN) - Used to establish a relayed UDP or TCP connection between two clients. Here, the traffic must be relayed through the TURN server to bypass restrictive firewall rules, and the preference is UDP over TCP because TCP's guaranteed ordered delivery of packets implies overhead that is undesirable for real-time communications.
@@ -542,6 +546,7 @@ site reliability engineering (SRE) "treat operations as if it’s a software pro
 snowflake (Twitter) = distributed k-sorted uuid generator https://blog.x.com/engineering/en_us/a/2010/announcing-snowflake
 solution -- "no cloud Kamal" https://kamal-deploy.org/ https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_deploy-web-apps-anywhere-activity-7305513792275169281-C2-h/
 solution -- sdk https://www.stainless.com/ https://jsr.io/@openai/openai
+solutions -- Cloudflare Argo smart routing = just faster internet??  https://blog.cloudflare.com/argo/
 solutions -- KV -- RockDB = by Meta https://rocksdb.org/
 SRE -- learning 01 = The riskiness of a mitigation should scale with the severity of the outage
 SRE -- learning 02 = Recovery mechanisms should be fully tested before an emergency

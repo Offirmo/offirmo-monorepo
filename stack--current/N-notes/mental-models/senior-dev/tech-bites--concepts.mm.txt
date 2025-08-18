@@ -431,6 +431,7 @@ GAFAM -- "megacap companies"
 GAFAM -- Amazon https://www.vanityfair.com/news/story/inside-amazon-business-practices
 garbage collector
 general dependency injection and inversion of control problem
+geohash = compact representations of latitude and longitude https://en.wikipedia.org/wiki/Geohash
 git
 global variable
 God object https://en.wikipedia.org/wiki/God_object

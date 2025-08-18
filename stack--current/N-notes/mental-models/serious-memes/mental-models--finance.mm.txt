@@ -1,5 +1,7 @@
 [ ] https://en.wikipedia.org/wiki/Portal:Money
 accounting system
+alt currency -- frequent flyer miles = building a currency in that airline’s name, has ~intrinsic value (to the specific airline) 1) “Fun with accounting” 2) the airlines can release the liability in a breakage process if "look like lost account" https://weekly.visualapproach.io/p/airlines-as-loss-leaders
+alt currency -- gift cards
 applicable laws and regulations
 asset
 asset -- seizure
@@ -88,6 +90,7 @@ ledger
 ledger = data store that keeps track of transactions https://ethereum.org/en/developers/docs/intro-to-ether/#what-is-a-cryptocurrency
 legal tender
 lending
+loss leader = a pricing strategy where a product is sold at a price below its market cost[2] to stimulate other sales of more profitable goods or services. With this sales promotion/marketing strategy, a "leader" is any popular article, i.e., sold at a low price to attract customers. https://en.wikipedia.org/wiki/Loss_leader
 macro/micro
 market making
 medium of exchange = anything widely accepted as payment for goods and services https://ethereum.org/en/developers/docs/intro-to-ether/#what-is-a-cryptocurrency
@@ -102,6 +105,7 @@ poverty -- Sherman Alexie = It sucks to be poor, and it sucks to feel that you s
 private extortion of debt, labour and waste
 purchasing power https://en.wikipedia.org/wiki/Purchasing_power
 recession
+reserve banking -- fractional = https://en.wikipedia.org/wiki/Fractional-reserve_banking
 saving
 scrip = pseudo legal tender ~exploitative payment of employees ex. company scrip / https://en.wikipedia.org/wiki/Truck_wages
 security
@@ -117,3 +121,4 @@ value -- intrinsic = calculated with regard to an inherent, objective measure ht
 value -- perceived
 value -- store of value = keep value despite inflation etc. ex. gold or house or bitcoin (maybe) https://en.wikipedia.org/wiki/Store_of_value
 value -- use = tangible features of a commodity (a tradeable object) which can satisfy some human requirement, want or need, or which serves a useful purpose https://en.wikipedia.org/wiki/Use_value
+Wells Notice https://en.wikipedia.org/wiki/Wells_notice

@@ -30,9 +30,9 @@ meta -- CNCF = the open source, vendor-neutral hub of cloud native computing, ho
 meta -- https://stackshare.io/
 microfrontends
 mobile -- capacitor https://capacitorjs.com/  https://capawesome.io/  https://capgo.app/
-monorepo -- ? bolt
 monorepo -- ? turborepo
 monorepo -- ? yarn workspaces
+monorepo -- ✖ bolt
 nanoservices
 next.js https://nextjs.org/docs
 pkg manager -- ⚠ pnpm
@@ -42,6 +42,7 @@ React -- https://reactrouter.com/home ?
 secrets management -- ? https://infisical.com/
 Talwind https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
 terraform https://github.com/cloudflare/terraform-provider-cloudflare/issues/5573
+tracing https://www.jaegertracing.io/ (used by Cloudflare)
 transactional emails https://react.email/
 typescript -- bases https://github.com/tsconfig/bases
 vite -- npm create vite@latest my-project
