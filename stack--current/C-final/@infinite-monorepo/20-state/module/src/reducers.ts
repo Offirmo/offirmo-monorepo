@@ -1,15 +1,25 @@
 import assert from 'tiny-invariant'
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import type { MultiMonorepoSpec, Node, StructuredFsOutput, StructuredFsOutputⳇFullFile, StructuredFsOutputⳇFileManifest, NodeⳇWorkspace } from '@infinite-monorepo/types'
+import type {
+	InfiniteMonorepoSpec,
+	Node,
+	StructuredFsOutputⳇFullFile,
+	NodeⳇWorkspace,
+	MultiRepoRelativePath,
+	StructuredFsⳇFileManifest,
+	MultiRepoRelativeFilePath,
+} from '@infinite-monorepo/types'
 import { completeꓽspec } from '@infinite-monorepo/defaults'
 
 import type { State } from './types.ts'
 
-
 /////////////////////////////////////////////////
+const DEBUG = true
 
 function create(): Immutable<State> {
+	DEBUG && console.debug('Creating state...')
+
 	return {
 		spec: completeꓽspec({}),
 
@@ -17,26 +27,33 @@ function create(): Immutable<State> {
 			nodesⵧall: {},
 		},
 
-		file_manifests: [],
-
-		file_output: [],
+		files_existing: {},
+		file_manifests: {},
 	}
 }
 
-function onꓽspec_loaded(state: Immutable<State>, spec: MultiMonorepoSpec): Immutable<State> {
+function onꓽspec_loaded(state: Immutable<State>, spec: InfiniteMonorepoSpec): Immutable<State> {
+	DEBUG && console.debug('On spec loaded...', spec.root_path‿abs)
+
 	// as of now, spec = workspace
 	const root_node: NodeⳇWorkspace = {
 		type: 'workspace',
-		path: spec.root_path,
+		path‿abs: spec.root_path‿abs,
+		path‿ar: '$WORKSPACE_ROOT/',
 	}
 
-	return registerꓽnode({
-		...state,
-		spec,
-	}, root_node)
+	return registerꓽnode(
+		{
+			...state,
+			spec,
+		},
+		root_node,
+	)
 }
 
-function registerꓽnode(state: Immutable<State>, node: Node): Immutable<State> {
+function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
+	DEBUG && console.debug('Registering node...', node.path)
+
 	assert(state.graph.nodesⵧall[node.path] === undefined, `Node already registered: ${node.path}!`)
 	return {
 		...state,
@@ -44,17 +61,68 @@ function registerꓽnode(state: Immutable<State>, node: Node): Immutable<State> 
 			...state.graph,
 			nodesⵧall: {
 				...state.graph.nodesⵧall,
-				[node.path]: node,
-			}
-		}
+				[node.path]: {
+					...node,
+					isꓽanalyzed: false,
+				},
+			},
+		},
+	}
+}
+function reportꓽnodeⵧanalyzed(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
+	DEBUG && console.debug('Marking node analyzed...', node.path)
+
+	assert(!!state.graph.nodesⵧall[node.path], `Node expected: ${node.path}!`)
+	return {
+		...state,
+		graph: {
+			...state.graph,
+			nodesⵧall: {
+				...state.graph.nodesⵧall,
+				[node.path]: {
+					...node,
+					isꓽanalyzed: true,
+				},
+			},
+		},
 	}
 }
 
-function declareꓽfile_manifest(manifest: StructuredFsOutputⳇFileManifest): Immutable<State> {
-	throw new Error(`Not implemented!`)
+function declareꓽfile_manifest(
+	state: Immutable<State>,
+	manifest: StructuredFsⳇFileManifest,
+): Immutable<State> {
+	DEBUG && console.debug('Declaring manifest...', manifest)
+
+	const existing = state.file_manifests[manifest.path‿ar]
+	if (existing) {
+		throw new Error(`File manifest already declared for ${manifest.path‿ar}!`)
+	}
+
+	return {
+		...state,
+		file_manifests: {
+			...state.file_manifests,
+			[manifest.path‿ar]: manifest,
+		},
+	}
 }
 
-function requestꓽfile_output(content: StructuredFsOutputⳇFullFile): Immutable<State> {
+function ensureꓽfile_loading(
+	state: Immutable<State>,
+	arpath: MultiRepoRelativeFilePath,
+	parent_node?: Immutable<Node>,
+): Immutable<State> {
+	DEBUG && console.debug('Ensuring load...', arpath, parent_node)
+
+	const key =
+	throw new Error('not implemented!')
+}
+
+function requestꓽfile_output(
+	state: Immutable<State>,
+	content: StructuredFsOutputⳇFullFile,
+): Immutable<State> {
 	throw new Error(`Not implemented!`)
 }
 
@@ -63,4 +131,8 @@ function requestꓽfile_output(content: StructuredFsOutputⳇFullFile): Immutabl
 export {
 	create,
 	onꓽspec_loaded,
+	registerꓽnode,
+	reportꓽnodeⵧanalyzed,
+	declareꓽfile_manifest,
+	ensureꓽfile_loading,
 }

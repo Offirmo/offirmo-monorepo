@@ -1,10 +1,10 @@
 import type { Immutable } from '@offirmo-private/ts-types'
 
-import type { MultiMonorepoSpec } from '@infinite-monorepo/types'
+import type { InfiniteMonorepoSpec } from '@infinite-monorepo/types'
 
 /////////////////////////////////////////////////
 
-const MONOREPO_SPEC_DEFAULT: Immutable<MultiMonorepoSpec> = {
+const MONOREPO_SPEC_DEFAULT: Immutable<InfiniteMonorepoSpec> = {
 	runtimeⵧlocal: 'node',
 	namespace: `@monorepo`,
 	workspaces: [],
@@ -15,7 +15,9 @@ const MONOREPO_SPEC_DEFAULT: Immutable<MultiMonorepoSpec> = {
 	_config_fileⵧroot: undefined,
 }
 
-function completeꓽspec(spec: Immutable<Partial<MultiMonorepoSpec>>): Immutable<MultiMonorepoSpec> {
+function completeꓽspec(
+	spec: Immutable<Partial<InfiniteMonorepoSpec>>,
+): Immutable<InfiniteMonorepoSpec> {
 	return {
 		...MONOREPO_SPEC_DEFAULT,
 		...spec,
@@ -24,7 +26,4 @@ function completeꓽspec(spec: Immutable<Partial<MultiMonorepoSpec>>): Immutable
 
 /////////////////////////////////////////////////
 
-export {
-	MONOREPO_SPEC_DEFAULT,
-	completeꓽspec,
-}
+export { MONOREPO_SPEC_DEFAULT, completeꓽspec }
