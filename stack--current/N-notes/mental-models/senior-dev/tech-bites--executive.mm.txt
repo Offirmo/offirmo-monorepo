@@ -1,3 +1,10 @@
+10x - PostHog -- 1. Always prototyping and experimenting
+10x - PostHog -- 2. Comfortable writing
+10x - PostHog -- 3. A genuine love for building
+10x - PostHog -- 4. Customer obsessed
+10x - PostHog -- 5. Understands the broader context
+10x - PostHog -- 6. Easy to work with
+10x - PostHog -- https://newsletter.posthog.com/p/beyond-the-10x-engineer
 [ ] https://posthog.com/handbook/company/management
 assumptions -- check assumptions
 assumptions -- do not assume
@@ -6,6 +13,7 @@ challenges -- "Why is this our priority right now?" = CEO Actually asking about:
 challenges -- questions -- use AI to simulate!
 challenges -- questions = address the meta concern, not just the surface question
 create space for the best ideas to emerge
+DORA = (Google) largest and longest running research program  (...) to understand the capabilities that drive software delivery and operations performance https://dora.dev/
 dress code don't make leaders but they sure announce them
 executive presence
 failures modes = possible wrong ways https://newsletter.posthog.com/p/tech-lead-failure-modes
@@ -13,6 +21,7 @@ feedback -- Keeper Test = "If this person resigned today, would I fight to keep 
 high growth handbook https://growth.eladgil.com/
 leadership -- ask questions
 managing stakeholder expectations
+next scale issue?
 outputs vs. outcomes
 Pre-emptive Control Framework -- Control the flow before walking in
 Pre-emptive Control Framework -- Make their objections work for you
@@ -21,10 +30,3 @@ Pre-emptive Control Framework = "after failing spectacularly in front of senior 
 shut up
 tech -- neverending support https://www.herodevs.com/support
 why does it matter? = need link to company goals, customer experience, or competitive advantage
-10x - PostHog -- https://newsletter.posthog.com/p/beyond-the-10x-engineer
-10x - PostHog -- 1. Always prototyping and experimenting
-10x - PostHog -- 2. Comfortable writing
-10x - PostHog -- 3. A genuine love for building
-10x - PostHog -- 4. Customer obsessed
-10x - PostHog -- 5. Understands the broader context
-10x - PostHog -- 6. Easy to work with

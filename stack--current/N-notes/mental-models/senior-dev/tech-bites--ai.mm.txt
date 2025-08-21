@@ -13,14 +13,18 @@
 2025-04 Shopify threatening internal memo "Reflexive AI usage is now a baseline expectation" https://x.com/tobi/status/1909251946235437514
 2025-05 AI's Trillion-Dollar Opportunity: Sequoia AI Ascent 2025 Keynote https://www.youtube.com/watch?v=v9JBMnxuPX8
 2025-05 Duolingo "AI crashout" https://www.fastcompany.com/91338068/duolingo-deletes-tiktok-ai-backlash-returns-with-strange-message https://www.reddit.com/r/OutOfTheLoop/comments/1kncne7/whats_going_on_with_duolingo/ https://it.slashdot.org/story/25/06/08/185209/after-ai-first-promise-duolingo-ceo-admits-i-did-not-expect-the-blowback
+2025-05-20 infamous Copilot .net PR https://github.com/dotnet/runtime/pull/115762
 2025-06 Apple "The illusion of thinking" -- responses https://slashdot.org/story/25/06/19/165237/reasoning-llms-deliver-value-today-so-agi-hype-doesnt-matter https://garymarcus.substack.com/p/seven-replies-to-the-viral-apple
 2025-06 Apple "The illusion of thinking" https://machinelearning.apple.com/research/illusion-of-thinking
+2025-06 blog fight about ai coding https://ludic.mataroa.blog/blog/contra-ptaceks-terrible-article-on-ai/
 2025-06 dev AI perf framework
 2025-06 real applied case "composite model architecture" https://vercel.com/blog/v0-composite-model-family
+2025-07 AI Productivity Paradox = helping devs but not company overall https://www.faros.ai/blog/ai-software-engineering
 2025-07 USA White House AI action plan https://blog.cloudflare.com/the-white-house-ai-action-plan-a-new-chapter-in-u-s-ai-policy/
 2025-08 ex. of Gemini giving hints at a Cloudflare latency issue https://blog.cloudflare.com/reducing-double-spend-latency-from-40-ms-to-less-than-1-ms-on-privacy-proxy/
 2025-08 Perplexity crawler ban https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/
 2025-08-07 GPT 5 https://x.com/i/trending/1953256633385271319
+2025-08-27 The reality of AI-Assisted software engineering productivity https://addyo.substack.com/p/the-reality-of-ai-assisted-software
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://ghuntley.com/
@@ -157,6 +161,7 @@ hype cycle -- coding https://www.linkedin.com/posts/svpino_literally-everyone-is
 illusion of understanding = hypothesis that LLMs don't actually perform formal reasoning and instead mimic it with probabilistic pattern-matching of the closest similar data seen in their vast training sets https://arstechnica.com/ai/2024/10/llms-cant-perform-genuine-logical-reasoning-apple-researchers-suggest/
 impostors https://cloud.google.com/blog/topics/threat-intelligence/mitigating-dprk-it-worker-threat
 in-context learning = ~long prompt / many shots https://www.anthropic.com/research/many-shot-jailbreaking
+induced precarity = precarity. Your boss can't actually fire you and replace you with AI, but he can make you feel like he could, and maybe not ask for that raise.
 inference
 inference = what happens when we prompt
 instruction hierarchy / nested prompting = layered prompting with different levels of authority

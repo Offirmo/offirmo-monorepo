@@ -43,6 +43,7 @@ economics -- ecological https://en.wikipedia.org/wiki/Ecological_economics
 economics https://en.wikipedia.org/wiki/Economics
 equity
 exchange
+executive order 6102 = 1933 relinquish all gold https://en.wikipedia.org/wiki/Executive_Order_6102
 finance -- Benjamin Franklin's The Way to Wealth = 85 maxims https://www.artofmanliness.com/career-wealth/wealth/money-and-career-advice-from-benjamin-franklins-way-to-wealth/
 finance -- buy now pay later (BNPL)
 finance -- debt spiral
@@ -65,6 +66,7 @@ financial -- system -- global
 financially (il)literate = https://www.smh.com.au/business/the-economy/our-financial-literacy-crisis-can-you-answer-these-5-money-questions-20230109-p5cb6c.html
 funding -- quadratic
 funding -- stock exchange
+gold clause = clause on contracts to be paid in gold in case currency changes https://en.wikipedia.org/wiki/Gold_clause
 government -- budget deficit
 government -- fiscal austerity
 government -- high public spending
@@ -80,6 +82,7 @@ inflation -- shrinkflation
 inflation -- unwanted = ex. 2002 https://en.wikipedia.org/wiki/2021%E2%80%932023_inflation_surge
 inflation -- wanted = usually >= 2% https://en.wikipedia.org/wiki/Pound_sterling#Annual_inflation_rate
 inflation / deflation / hyperinflation
+insider trading "funding secured" https://www.latimes.com/business/story/2020-04-15/tesla-musk-funding-secured-trial
 institution
 instrument = https://en.wikipedia.org/wiki/Legal_instrument
 insurance

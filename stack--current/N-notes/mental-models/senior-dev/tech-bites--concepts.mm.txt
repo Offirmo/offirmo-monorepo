@@ -1,4 +1,5 @@
 +++ important history https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/RodJohnson_JavaEnterpriseApplicationStandardsAndWhyTheIndustryMovedToLightweightOpenSource.pdf
+2010's tech bubble, a period where mediocre people could raise ludicrous money amid a venture capitalist echo chamber fueled by low-interest rates https://www.sandofsky.com/lambda-school/
 2025 https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/
 5 min zoom vs 10 emails/comments volley https://blog.jpl-consulting.com/2010/04/ten-email-volley-or-five-minute-phone-call/
 [ ] +++ https://en.wikipedia.org/wiki/List_of_software_development_philosophies
@@ -109,6 +110,7 @@ Beyoncé Principle = If you liked it, then you shoulda put a test on it
 big companies software = At big companies, software tends to be written by large and frequently changing teams of mediocre programmers https://paulgraham.com/noop.html
 blocking
 blocklist/blacklist -- https://paulgraham.com/spamhausblacklist.html
+bootcamps https://www.sandofsky.com/lambda-school/
 bro culture in tech https://www.smh.com.au/technology/australias-tech-darling-atlassian-in-sexism-row-20140605-zryjd.html
 BSOD "blue screen of death" https://ia.acs.org.au/article/2025/microsoft-retires-blue-screen-of-death-after-40-years.html?ref=newsletter&deliveryName=DM26606
 bug -- 3 questions -- 1. Have I made this error anywhere else?
@@ -262,7 +264,7 @@ data -- hydration
 data -- lake
 data -- lineage tracking = who created it, transformed it, enriched it...
 data -- privacy
-data -- re-extraction = of v3.4.5
+data -- re-extraction = of vx.y.z
 data -- versioning = of content + schema
 data format -- consumer vs producer
 data format -- consumer vs producer -- independent release/deploy
@@ -557,6 +559,7 @@ lang -- Lean = Math language https://lean-lang.org/ https://overreacted.io/the-m
 lang -- OCaml
 lang -- Rust https://www.rust-lang.org/
 lang -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
+lang -- There are only two kinds of languages: the ones people complain about and the ones nobody uses.
 lang -- wasp = high level website / SaaS https://wasp.sh/
 language -- type -- markup = a text-encoding system which specifies the structure and formatting of a document and potentially the relationships among its parts.[1] Markup can control the display of a document or enrich its content to facilitate automated processing https://en.wikipedia.org/wiki/Markup_language
 language features -- contract enforcement
@@ -915,6 +918,7 @@ tech debt -- origin -- accidental - e.g. bugs due to human error that unknowingl
 tech debt -- origin -- deliberate - e.g. optimising for short term delivery, knowing it increases the cost of future work.
 tech debt -- origin -- incidental - e.g. organic changes in complexity over time that increases the cost of future work.
 tech specs https://hybridhacker.email/p/how-to-write-great-tech-specs
+technostress = negative psychological relationship between people and the introduction of new technologies. can erode productivity, dampen morale, and even impact overall wellbeing https://ia.acs.org.au/article/2025/are-you--technostressed--.html
 Temporal Dead Zone (TDZ)
 temporary solutions https://80.lv/articles/this-30-year-old-windows-feature-was-created-as-a-temporary-solution/
 tenant -- isolation -- sandboxing / isolates / individual processes / individual VMs / individual containers
@@ -1009,6 +1013,11 @@ validation = "Does this input data contain the right stuff?" see zod
 vaporware
 variables pointer / natives
 vendoring https://htmx.org/essays/vendoring/
+versioning -- outdated -- ecosystem drift https://nodejs.org/en/eol
+versioning -- outdated -- EOL "End-Of-Life" = no longer receive updates, including security patches https://nodejs.org/en/eol
+versioning -- outdated -- NES "never ending support" https://nodejs.org/esp/herodevs
+versioning -- outdated -- tool-chain breakage https://nodejs.org/en/eol
+versioning -- outdated -- vulnerabilities https://nodejs.org/en/eol
 vibe coding https://x.com/karpathy/status/1886192184808149383
 virtual private cloud (VPC)
 web assembly (asm.js)

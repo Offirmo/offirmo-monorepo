@@ -1,4 +1,5 @@
 "the compelling feature was speed" https://blog.janestreet.com/how-we-accidentally-built-a-better-build-system-for-ocaml-index/
+alpine images = not such a good idea https://tinplavec.medium.com/gitlab-ci-cd-best-practices-i-recommend-after-2-years-of-experience-dfc0e349e4d6
 build chain -- Because you interact with it daily, above all it has to be fast – but it also has to be flexible. https://blog.janestreet.com/how-we-accidentally-built-a-better-build-system-for-ocaml-index/
 build system -- bazel
 build system -- can be hard to migrate if big codebase https://blog.janestreet.com/how-we-accidentally-built-a-better-build-system-for-ocaml-index/
@@ -26,9 +27,9 @@ CI -- principles -- Keep the Build Fast = A slow build kills productivity. If de
 CI -- principles -- Mergify = https://blog.mergify.com/how-to-ci/
 CI -- principles -- Test in a Clone of Production = Testing in an environment that mimics production helps catch issues that only appear under real-world conditions. 	Use containers or virtualization to create a staging environment that mirrors your production setup as closely as possible.
 CI -- should not be blocking a hotfix!
-CI -- solution -- ? https://mergify.com/
-CI -- solution -- Gcloud
-CI -- solution -- GitHub actions
+CI -- solutions -- ? https://mergify.com/
+CI -- solutions -- GitHub actions
+CI -- solutions -- Google Cloud Build https://cloud.google.com/build
 CI/CD -- need to be software-based AND allow branching to introduce a new setup, ex. node version MAY be preloaded but still MUST be installed from nvmrc to allow testing the migration before commiting
 editor integration
 environments -- hierarchy = local -> shared -> staging -> prod
@@ -37,7 +38,13 @@ focus mode, as in yarn focus
 It Works on My Machine
 little, repetitive tasks that chip away at your day
 merge queue
+metrics -- Change fail rate = should be 0% to 20 %
+metrics -- Deploy frequency = should be one day to one week.
+metrics -- Failed deployment recovery time = should be less than one hour to one day
+metrics -- lead time = should be one day to one week.
+metrics https://www.linkedin.com/pulse/best-measure-values-cicd-kazem-gheisari-hagaf
 monorepo’s requirements
+some best practices https://tinplavec.medium.com/gitlab-ci-cd-best-practices-i-recommend-after-2-years-of-experience-dfc0e349e4d6
 topological execution
 undesirable -- Customer Satisfaction = Lower due to bugs, performance issues, and unreliable software https://blog.mergify.com/improve-code-quality/
 undesirable -- Development Time = Slowed by frequent bug fixes and rework https://blog.mergify.com/improve-code-quality/

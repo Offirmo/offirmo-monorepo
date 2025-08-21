@@ -404,6 +404,7 @@ spirit -- view source affordance https://htmx.org/essays/right-click-view-source
 spirit https://info.cern.ch/hypertext/WWW/Summary.html
 SSR good explanation https://single-spa.js.org/docs/ssr-overview/
 SVG = https://www.joshwcomeau.com/svg/friendly-introduction-to-svg/
+Tailwind -- pro/cons https://colton.dev/blog/tailwind-is-the-worst-of-all-worlds/
 temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
 test -- jsdom https://github.com/jsdom/jsdom
 testing -- component https://storybook.js.org/blog/component-testing/

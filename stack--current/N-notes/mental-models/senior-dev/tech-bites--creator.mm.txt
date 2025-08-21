@@ -3,5 +3,9 @@ content authenticity initiative https://contentauthenticity.org/
 content credentials -- C2PA "Coalition for Content Provenance and Authenticity" https://c2pa.org/
 content credentials -- tools https://opensource.contentauthenticity.org/docs/getting-started/
 content credentials https://contentcredentials.org/
+content gating -- patreon
+content gating -- web3 https://www.coinbase.com/en-au/learn/crypto-basics/what-is-token-gating-and-what-are-the-benefits-of-doing-it
 content independence https://blog.cloudflare.com/content-independence-day-no-ai-crawl-without-compensation/
 mailing list
+skibidi toilet https://speedrun.substack.com/p/meet-the-obsessive-creator-behind-skibidi-toilet
+social tokens = digital assets issued by creators to monetize their content and engage with their fan base https://www.coinbase.com/en-au/learn/crypto-basics/what-are-social-tokens-and-how-do-they-redefine-value-in-the-creator-economy

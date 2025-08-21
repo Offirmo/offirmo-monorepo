@@ -4,6 +4,7 @@
 [ ] https://skamille.medium.com/
 [ ] https://stratechery.com/category/year-in-review/
 [ ] personal MBA
+[ ] public relations https://vannattapr.com/2020/12/03/dont-yell-at-clouds/
 [ ] strategy https://stratechery.com/
 adaptability = turn the challenges into opportunities
 adoption -- technology adoption -- usually non-linear = due to so-called complementary network effects
@@ -12,6 +13,7 @@ alignment -- challenges -- risk of social layer capture: means "having the right
 alignment -- of incentives = https://vitalik.eth.limo/general/2024/09/28/alignment.html
 alignment -- of tech
 alignment -- of values
+another Uber = unethical, untenable, profit-driven startup who took a gambit evading the law, hoping to grow too big to fail before the law catches up. Except Uber was good at being bad, and * combined malfeasance with incompetence https://www.sandofsky.com/lambda-school/
 barriers -- to entry = moat against competitors
 barriers -- to exit = users can't leave (switch) ex. cost
 Bezos principles -- customer obsession rather than competitor obsession
@@ -65,6 +67,7 @@ decision -- avoiding hard decisions (bad)  https://newsletter.manager.dev/p/feat
 decision maker https://www.youtube.com/watch?v=qf-_bRjZ38U
 deep appeal = something that a few people love, even if most people don't get it right away https://paulbuchheit.blogspot.com/
 disruptive -- Clay Christensen’s theory = the next big thing always starts out being dismissed as a “toy.” observation that technologies tend to get better at a faster rate than users’ needs increase. From this simple insight follows all kinds of interesting conclusions about how markets and products change over time. https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy
+dogfooding "Eating our own Dogfood" = ranges wider than testing your end-product, and can be the difference between good and great products https://gregtidanian.substack.com/p/eating-our-own-dog-food
 don't build castles in others people's kingdoms
 DTC (direct-to-consumer) companies = sell products directly to consumers, bypassing traditional retail channels, allowing them to control the entire customer experience and build strong brand relationships
 DTC -- often do well at the beginning, then a bunch of copycats come out and it's a race to the bottom funded by VC dollars https://www.youtube.com/watch?v=WcNbIm0fRxk
@@ -130,6 +133,10 @@ first-mover advantage -- second mover advantage / "fast followers" / "free rider
 first-mover advantage https://en.wikipedia.org/wiki/First-mover_advantage
 flexible planning = scope changes and unexpected risks: adaptability is crucial
 flintstoning = when your app, product, or business itself lacks a feature… buuuuuuuuut, you can make up for it manually https://stackingthebricks.com/the-fine-art-of-flintstoning/
+founder-market fit = Why are you the right team to do this? Why are you amazing? And then why is the problem you're working on important to you? https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
+full-stack builder = If you're going it alone, you can't afford to be blocked on anything. You need to build, sell, recruit, and fundraise, all by yourself https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
+funding -- CAP table = ???
+funding -- SAFE: Simple Agreement for Future Equity
 funnel
 get big fast / get large or get lost
 go-to-market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
@@ -168,6 +175,7 @@ layers in the stack between humans and the money -- for every layer: dominate it
 layers in the stack between humans and the money = ex. Google Human - device – OS – browser – bandwidth –  websites - ads – ad tech – relationship to advertiser – $$$ https://cdixon.org/2009/12/30/whats-strategic-for-google
 leadership -- failure -- Quantas example https://www.australianfrequentflyer.com.au/the-chairmans-lounge-joe-aston-book-review/
 learning from users https://paulgraham.com/users.html
+lighthouse customer = a customer that brings other customers in. But sometimes if there's not a good lighthouse customer, going deep in a narrow vertical can be really interesting. https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 listen, build, ship, tell the customer, then repeat forever
 looking like a toy = Disruptive technologies are dismissed as toys because when they are first launched they “undershoot” user needs https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy
 M&A
@@ -226,6 +234,7 @@ only the paranoid survive (Andy Grove) = success breeds complacency, complacency
 only the paranoid survive -- 1 assume disaster is coming
 only the paranoid survive -- 2 spot threats before they explode = if you wait until a crisis is obvious, it's already too late
 only the paranoid survive -- 3 reinvent before you're forced to = industries shit, adapt or die
+outsiders = Sometimes you need folks who have a “beginner’s mind” when looking at a problem and haven’t been jaded by the status quo https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 overfitting = the solution accomplishes one goal — but as soon as it needs to do something else, it’s almost back to square one https://medium.com/design-bootcamp/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7
 path to commercial viability = Ex. X moonshots "proved much longer and riskier than hoped"
 personas -- data savvy vs data shy
@@ -241,9 +250,12 @@ pitch -- extra -- How much money do you want? How will you spend it in the comin
 pitch -- extra -- references
 pitch -- extra -- YC application https://docs.google.com/document/d/1lkRIGrssL5W3DbrFTE-PoY8KctN1dtCBWg_Yuoq8RT4/edit#heading=h.b76a5v3s4kuy
 pitch -- extra -- “what we don’t know” or “what assumptions we’ve made that need to be true” (to make it more rounded and less pitchy. Maybe that’s why I’ve never got an investor! Ha)
+pitch -- first = The goal of the first pitch should be to get a second meeting https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 pitch -- Q -- If you get no investments what alternatives do you have in mind
 policy -- internal -- no politics https://www.linkedin.com/posts/jason-fried_inevitably-around-major-elections-or-political-activity-7260061274544234496-tSB1
 PRD "product requirements document" https://www.atlassian.com/agile/product-management/requirements
+pre-product = doesn't mean that you don't have a waitlist or LOIs (letters of intent) https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
+pre-revenue (lol)
 pricing
 pricing -- capability
 pricing -- competitive pricing reaction strategy.
@@ -325,6 +337,7 @@ strategy tax = negative pattern in a big company where every project / new produ
 support loops = ex. help desk + social media + phone etc.
 system of work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams
 target
+team = proving you're the exact right people to pursue the idea, whether from your experience or because you've somehow gone super deep into “the idea maze” https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 teams moving from spreadsheet
 tool tech stack -- review https://www.lennysnewsletter.com/p/whats-in-your-stack-the-state-of
 top complaints -- actual case J. -- 01 Performance and Speed
@@ -338,6 +351,7 @@ top complaints -- actual case J. -- 08 Integration and Automation: Enhance integ
 top complaints -- actual case J. -- 09 Blended Features and Cross-Platform Integration: Explore the possibility of blending features from the suite to offer a more holistic project management experience.
 top complaints -- actual case J. -- 10 Training and Support: Provide dedicated training resources and support tailored for targe teams, including guides on using the product for targeted tasks.
 top complaints -- actual case J. -- 11 Positioning and Value Proposition
+traction = measurable proof that you’re already making progress toward product-market fit. just whatever validation you can get from the outside world https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 triad -- sometimes + data analyst
 triad = product, design, engineering
 try/test/graduate
@@ -345,6 +359,7 @@ Uber model = Make it so useful that you can’t shut it down
 User Experience Research (UXR) https://medium.com/getting-started-in-user-experience-and-design
 USP "Unique Selling Point" = secret sauce, difference with competition
 UX -- stick to established patterns https://medium.com/@daniel.stoyanov/not-following-well-established-ux-design-patterns-is-almost-always-a-bad-idea-58ae01b4f48a
+value extraction -- creating value, not extracting it
 VC -- founder dilution https://www.linkedin.com/feed/update/urn:li:activity:7341812076463439873/
 wartime vs peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
 what got us here won't get us there…

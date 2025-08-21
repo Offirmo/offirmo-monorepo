@@ -39,6 +39,7 @@ pkg manager -- ⚠ pnpm
 pkg manager -- ✅ yarn v4
 pkg manager -- ✖ npm
 React -- https://reactrouter.com/home ?
+search -- postgress https://tech.instacart.com/how-instacart-built-a-modern-search-infrastructure-on-postgres-c528fa601d54
 secrets management -- ? https://infisical.com/
 Talwind https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
 terraform https://github.com/cloudflare/terraform-provider-cloudflare/issues/5573
