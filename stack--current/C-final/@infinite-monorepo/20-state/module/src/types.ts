@@ -21,16 +21,19 @@ export interface State {
 	spec: InfiniteMonorepoSpec
 
 	graph: {
-		nodesⵧall: { [path: string]: Node & { isꓽanalyzed: boolean } }
+		nodesⵧall: { [path: string]: Node & { status: 'new' | 'analyzed' } }
 	}
 
 	file_manifests: Record<MultiRepoRelativeFilePath, StructuredFsⳇFileManifest>
 
+	// XXX
 	files_existing: Record<
 		AbsoluteFilePath,
 		{
+			manifest_key: MultiRepoRelativeFilePath
 			abspath: AbsoluteFilePath
-			manifest: StructuredFsⳇFileManifest
+
+			data: unknown // TODO
 		}
 	>
 

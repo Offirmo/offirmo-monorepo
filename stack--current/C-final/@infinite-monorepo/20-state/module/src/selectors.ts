@@ -14,10 +14,10 @@ import type { State } from './types.ts'
 
 /////////////////////////////////////////////////
 
-function getꓽnodesⵧnot_analyzed(state: Immutable<State>): Immutable<Array<Node>> {
-	return Object.values(state.graph.nodesⵧall).filter(node => !node.isꓽanalyzed)
+function getꓽnodesⵧnew(state: Immutable<State>): Immutable<Array<Node>> {
+	return Object.values(state.graph.nodesⵧall).filter(node => node.status === 'new')
 }
 
 /////////////////////////////////////////////////
 
-export { getꓽnodesⵧnot_analyzed }
+export { getꓽnodesⵧnew }

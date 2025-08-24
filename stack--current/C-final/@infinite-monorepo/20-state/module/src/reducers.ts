@@ -1,5 +1,5 @@
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable, AbsolutePath } from '@offirmo-private/ts-types'
 
 import type {
 	InfiniteMonorepoSpec,
@@ -63,7 +63,7 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 				...state.graph.nodesⵧall,
 				[node.path]: {
 					...node,
-					isꓽanalyzed: false,
+					status: 'new',
 				},
 			},
 		},
@@ -73,6 +73,8 @@ function reportꓽnodeⵧanalyzed(state: Immutable<State>, node: Immutable<Node>
 	DEBUG && console.debug('Marking node analyzed...', node.path)
 
 	assert(!!state.graph.nodesⵧall[node.path], `Node expected: ${node.path}!`)
+	assert(state.graph.nodesⵧall[node.path].status === 'new', `Node not new: ${node.path}!`)
+
 	return {
 		...state,
 		graph: {
@@ -81,7 +83,7 @@ function reportꓽnodeⵧanalyzed(state: Immutable<State>, node: Immutable<Node>
 				...state.graph.nodesⵧall,
 				[node.path]: {
 					...node,
-					isꓽanalyzed: true,
+					status: 'analyzed',
 				},
 			},
 		},
@@ -108,6 +110,11 @@ function declareꓽfile_manifest(
 	}
 }
 
+function _resolveꓽarpath(
+	arpath: MultiRepoRelativeFilePath,
+	parent_node?: Immutable<Node>,
+): AbsolutePath {}
+
 function ensureꓽfile_loading(
 	state: Immutable<State>,
 	arpath: MultiRepoRelativeFilePath,
@@ -115,7 +122,11 @@ function ensureꓽfile_loading(
 ): Immutable<State> {
 	DEBUG && console.debug('Ensuring load...', arpath, parent_node)
 
-	const key =
+	const path_abs = _resolveꓽarpath(arpath, parent_node)
+	if (state.files_existing[path_abs]) {
+		DEBUG && console.debug('Already loaded', path_abs)
+		return state
+	}
 	throw new Error('not implemented!')
 }
 

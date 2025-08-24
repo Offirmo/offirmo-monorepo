@@ -20,9 +20,10 @@ async function apply() {
 	let state = StateLib.create()
 
 	async function _propagate() {
+		console.log('------------ propagating new infos… ------------')
 		//dumpꓽanyⵧprettified('state', state)
 		let node: Immutable<Node> | undefined
-		while ((node = StateLib.getꓽnodesⵧnot_analyzed(state)[0])) {
+		while ((node = StateLib.getꓽnodesⵧnew(state)[0])) {
 			state = plugins.reduce((state, plugin) => {
 				return plugin.onꓽnodeⵧdiscovered(state, node)
 			}, state)
