@@ -4,6 +4,7 @@
 1% rule = only 1% participants add content https://en.wikipedia.org/wiki/1%25_rule
 1.1.1.1 https://one.one.one.one/dns/
 12 factors = see [architecture -- 12 factors]
+2025-07 moving to cloud https://stackoverflow.blog/2025/07/16/the-great-unracking-saying-goodbye-to-the-servers-at-our-physical-datacenter/
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 [ ] +++ https://github.com/donnemartin/system-design-primer
 [ ] +++ https://lethain.com/distributed-systems-vocabulary/
@@ -38,6 +39,8 @@ ACID -- 3 Isolation = "independent transactions"
 ACID -- 4 Durability = transaction resistance to system failures "once committed, always committed"
 ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
 alternative service (header) = indicate that another network location (the "alternative service") can be treated as authoritative for that origin when making future requests https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Alt-Svc
+API -- API description standard -- example https://github.com/OnlineOrNot/api-schemas
+API -- API description standard = https://www.openapis.org/
 API -- best practices -- 1 DO - help client's "render-as-you-fetch" by co-loading critical data. Do not defer too much logic on the front-end.
 API -- best practices -- 1 DON’T - Build overly ‘flexible’ APIs that require client side logic and input manipulation (in the context of relay EntryPoints))
 API -- best practices -- 2 Be pragmatic - if there are many types, consider using frontend renderers instead of an interface
@@ -47,11 +50,13 @@ API -- best practices -- 3 DO - Use GraphQL interfaces to make scenario created 
 API -- best practices -- 3 DON’T - Try and coerce objects that are different into the same GraphQL concrete type
 API -- best practices -- 4 ALWAYS paginate collection responses
 API -- best practices -- 4 NEVER allow an endpoint to perform an unbounded number of reads or writes. That means you cannot have an endpoint to export all your bank transactions (potentially unbounded reads), or an endpoint to import all transactions from another platform (potentially unbounded writes) https://www.linkedin.com/posts/thecodingteacher_an-api-endpoint-should-never-perform-an-unbounded-activity-7268647549333299200-NxP_/
-API -- best practices -- Microsoft's internal company-wide REST API design guidelines https://github.com/microsoft/api-guidelines https://github.com/microsoft/api-guidelines/blob/vNext/graph/Guidelines-deprecated.md
+API -- best practices -- Microsoft's internal company-wide REST API design guidelines (alt) https://github.com/microsoft/api-guidelines/blob/vNext/graph/Guidelines-deprecated.md
+API -- best practices -- Microsoft's internal company-wide REST API design guidelines https://github.com/microsoft/api-guidelines
 API -- constraints -- Relay EntryPoints = a loading mechanism that makes implementing the parallel loading pattern render-as-you-fetch simple, as it encapsulates information about an experience’s UI assets and its required GraphQL data into a single loadable resource. https://github.com/relay-tools/typescript-relayjs-examples/issues/1
 API -- contracts
 API -- Diogo Lucas classification = far-team, near-team and inner-team. inner team = used within a team or between partner teams, near team = "Conway APIs" between teams that don't always communicate with each other, Far-team API = between teams that have low-bandwidth communications
 API -- gateway
+API -- headers -- fetch metadata = https://developer.mozilla.org/en-US/docs/Glossary/Fetch_metadata_request_header
 API -- hybrids = reconcile the need for a stable public API that will not constantly disrupt your carefully tended ecosystem with your team’s ability to move fast and (eventually) break stuff? cater for different requirements regarding security and SLAs or to radically different client natures? https://www.youtube.com/watch?v=eqy609JleoE
 API -- pagination -- current page, total pages https://google.aip.dev/158 https://graphql.org/learn/pagination/
 API -- pagination -- cursor https://graphql.org/learn/pagination/
@@ -79,6 +84,7 @@ API -- Richardson Maturity Model -- Level 2 - HTTP Verbs (correct semantic)
 API -- Richardson Maturity Model -- Level 3 - Hypermedia Controls = HATEOAS (Hypertext As The Engine Of Application State)
 API -- Richardson Maturity Model https://martinfowler.com/articles/richardsonMaturityModel.html
 API -- solution -- Unkey = https://www.unkey.com/
+API -- solutions -- https://apidog.com/ ?
 API -- unofficial = enables programmatic access to data or functionality that providers don’t officially support https://blog.supergood.ai/p/what-is-an-unofficial-api
 API -- view -- scope -- types = "raw / user defined scope" ex. a user-entered filter, "natural object scope" = when the object is a natural container, "persisted scope" = saved filter / board / custom view
 API -- view -- scope = the limit of where to conduct a search for domain objects for display on a view

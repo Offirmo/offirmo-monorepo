@@ -5,7 +5,9 @@
 10x - PostHog -- 5. Understands the broader context
 10x - PostHog -- 6. Easy to work with
 10x - PostHog -- https://newsletter.posthog.com/p/beyond-the-10x-engineer
+[ ] high growth handbook https://growth.eladgil.com/
 [ ] https://posthog.com/handbook/company/management
+[ ] Thinkies https://tidyfirst.substack.com/s/thinkies
 assumptions -- check assumptions
 assumptions -- do not assume
 bets
@@ -18,7 +20,6 @@ dress code don't make leaders but they sure announce them
 executive presence
 failures modes = possible wrong ways https://newsletter.posthog.com/p/tech-lead-failure-modes
 feedback -- Keeper Test = "If this person resigned today, would I fight to keep them?"
-high growth handbook https://growth.eladgil.com/
 leadership -- ask questions
 managing stakeholder expectations
 next scale issue?

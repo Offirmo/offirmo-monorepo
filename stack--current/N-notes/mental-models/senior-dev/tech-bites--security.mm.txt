@@ -149,6 +149,11 @@ shift left = earlier security
 software-defined perimeter (SDP) https://www.cloudflare.com/learning/access-management/software-defined-perimeter/
 spectre = class of attacks https://www.cloudflare.com/en-au/learning/security/threats/meltdown-spectre/
 supply chain -- dependency confusion = abusing internal packages (not just typo squatting) https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
+supply chain -- famous examples web3.js https://www.theregister.com/2024/12/05/solana_javascript_sdk_compromised/
+supply chain -- famous examples https://www.wiz.io/blog/github-action-tj-actions-changed-files-supply-chain-attack-cve-2025-30066
+supply chain -- famous examples zx https://www.akamai.com/blog/security-research/critical-linux-backdoor-xz-utils-discovered-what-to-know
+supply chain -- solutions https://github.com/google/oss-rebuild
+supply chain -- solutions https://github.blog/changelog/2025-07-31-npm-trusted-publishing-with-oidc-is-generally-available/
 surveillance self-defense = Tips, Tools and How-tos for Safer Online Communications https://ssd.eff.org/
 Tails = a portable operating system that protects your privacy and helps you avoid censorship https://tails.net/about/
 threat modeling

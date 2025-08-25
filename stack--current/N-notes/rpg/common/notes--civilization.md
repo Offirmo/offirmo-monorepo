@@ -111,3 +111,5 @@ What power have you got? Where did you get it from? In whose interests do you ex
 “The House of Lords is the British Outer Mongolia for retired politicians.”
 
 “We are not just here to manage capitalism but to change society and to define its finer values.”
+
+https://history.stackexchange.com/questions/79285/was-the-silk-road-really-a-conduit-of-ideas
