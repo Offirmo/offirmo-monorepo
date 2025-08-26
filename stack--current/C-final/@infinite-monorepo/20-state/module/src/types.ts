@@ -11,10 +11,10 @@ import type {
 
 /////////////////////////////////////////////////
 
-export type Reducer = (
+export type AsyncCallbackReducer = <T>(
 	state: Immutable<State>,
-	result: unknown | null,
-	error: Error | null,
+	result: T | null,
+	error: null | Error,
 ) => Immutable<State>
 
 export interface State {

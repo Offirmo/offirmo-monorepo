@@ -18,6 +18,10 @@ function getꓽnodesⵧnew(state: Immutable<State>): Immutable<Array<Node>> {
 	return Object.values(state.graph.nodesⵧall).filter(node => node.status === 'new')
 }
 
+function getꓽfile__content(state: Immutable<State>): Immutable<Array<Node>> {
+	return Object.values(state.graph.nodesⵧall).filter(node => node.status === 'new')
+}
+
 /////////////////////////////////////////////////
 
 export { getꓽnodesⵧnew }

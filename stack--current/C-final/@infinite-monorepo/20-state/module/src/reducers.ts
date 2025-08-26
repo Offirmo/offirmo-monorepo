@@ -117,8 +117,8 @@ function _resolveꓽarpath(
 
 function ensureꓽfile_loading(
 	state: Immutable<State>,
+	parent_node: Immutable<Node>,
 	arpath: MultiRepoRelativeFilePath,
-	parent_node?: Immutable<Node>,
 ): Immutable<State> {
 	DEBUG && console.debug('Ensuring load...', arpath, parent_node)
 
