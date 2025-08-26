@@ -47,6 +47,7 @@ Arbitrum
 asset tokenization layer = ???
 assets -- top = ranking website https://www.coingecko.com/
 AT Protocol = an open, decentralized network for building social applications https://atproto.com/
+attacks -- supply chain https://cointelegraph.com/explained/what-is-a-supply-chain-attack-in-crypto-and-how-to-prevent-it
 bag check
 Berachain
 Bitcoin = the first decentralized cryptocurrency https://en.wikipedia.org/wiki/Bitcoin
@@ -61,6 +62,7 @@ blockchain -- transaction -- step 4 – Share the ledger = The system distribute
 blockchain -- transaction = shows the movement of physical or digital assets from one party to another in the blockchain network. It is recorded as a data block and can include details like these: who, what, when, where, why, how much, preconditions
 blockchain = database = stores data in chronologically consistent blocks that you can delete or modify only with consensus from the peer-to-peer network. Built-in mechanisms prevent unauthorized transaction entries and create consistency in the shared view of these transactions. As a result, you can use it to create an unalterable or immutable ledger for tracking all types of transactions https://ethereum.org/en/developers/docs/intro-to-ethereum/ https://aws.amazon.com/what-is/blockchain/
 BNB Chain
+boosters = ppl who try to pump a tech/coin2025-01 Sony's Soneium https://blockworks.co/news/soneium-mainnet-censorship-complaints
 bridging
 case study -- https://newsletter.systemdesign.one/p/how-do-airtags-work
 CBDC "Central bank digital currencies" = https://cointelegraph.com/magazine/cbdcs-kryptonite-for-crypto/
@@ -100,6 +102,7 @@ culture -- cypherpunk = (1993) "The Cypherpunks are actively engaged in making t
 culture -- degen = slang derived from "degenerate", typically refers to someone who engages in high-risk, speculative trading or investment with the potential for high rewards. It describes individuals who prioritize potential gains over calculated risks and are known for their aggressive and sometimes reckless approach.
 culture -- slang https://www.coinbase.com/en-au/learn/tip-and-tutorials/crypto-slang-guide
 currency -- native = the native currency of a chain, ex. ETH for Ethereum, SOL for Solana
+custodial -- counter example 3M frozen https://x.com/TheWhiteWhaleHL/status/1959650308319047902
 custody -- self custody = funds are not waived
 DAO -- DUNA "Decentralized Unincorporated Nonprofit Association" https://a16zcrypto.com/posts/article/duna-for-daos/
 dapp "decentralized application" = app built on a decentralized network that combines a smart contract and a frontend user interface https://ethereum.org/en/developers/docs/dapps/#definition-of-a-dapp
@@ -149,6 +152,7 @@ exchanges -- Binance = largest exchange (Malta) https://en.wikipedia.org/wiki/Bi
 exchanges -- Binance against https://www.theguardian.com/business/binance
 exchanges -- Coinbase = the largest US cryptocurrency exchange
 exchanges -- Mt. Gox
+exchanges -- proof of reserve https://www.binance.com/en/proof-of-reserves
 Executive Order 6102 = no right to hold gold coins
 fiat
 fiat ramps
@@ -298,6 +302,7 @@ social tokens = digital assets issued by creators to monetize their content and 
 Solana
 Solana -- Meteora platform ??
 Solana -- thesis = ???
+Solana -- vision -- “everything can fit in one computer”
 solana = better Ethereum? https://solana.com/learn/what-is-solana
 Solana https://medium.com/solana-labs
 Solana network

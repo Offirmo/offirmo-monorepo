@@ -1,6 +1,7 @@
 +++ https://courses.joshwcomeau.com/
 +++ https://developer.mozilla.org/en-US/curriculum/
 +++ https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3 + https://medium.com/@cramforce/designing-even-larger-applications-460ee029012d
+1979-05-28 Design Considerations for an Anthropophilic Computer https://web.stanford.edu/dept/SUL/sites/mac/primary/docs/bom/anthrophilic.html
 2023-09 React -- server components https://www.joshwcomeau.com/react/server-components/
 2024 https://socket.dev/blog/tc39-advances-10-ecmascript-proposals-key-features-to-watch
 [ ] +++ https://dev.to/anze_kop1tar/acronyms-you-should-know-when-going-to-a-job-interview-369l
@@ -338,6 +339,7 @@ perf metrics -- Time to above-the-fold load
 perf metrics -- Time to First Byte (TTFB) = from the browser, time taken to receive the first byte of data from the web server. TTFB is crucial because it indicates the general ability of the server to handle traffic
 perf metrics -- Time to Interactive (TTI) = time at which the page becomes consistently responsive to user input. This is a less well-defined milestone, but is sometimes calculated as the point when the CPU and network both become idle
 perf metrics -- Time to Visually Complete (TTVC) = time of the last visible paint event. Nothing on the user’s screen should change without user input https://dropbox.tech/frontend/measuring-ttvc-web-performance-metric-open-source-library
+Person In The Street (PITS) = normal user, need ease of use https://web.stanford.edu/dept/SUL/sites/mac/primary/docs/bom/anthrophilic.html
 postXYZ = postCSS, postHTML https://postcss.org/ https://posthtml.org/
 progressive enhancement -- "next billion" = They’ll mostly be running Android. They’ll have decent specs (1GB RAM, quad-core processors). They’ll have an evergreen browser and WebView (Android 5+). What they won’t have, however, is a reliable internet connection.
 progressive enhancement https://nolanlawson.com/2016/10/13/progressive-enhancement-isnt-dead-but-it-smells-funny/
@@ -346,11 +348,11 @@ puppeteer -- vs Selenium, Playwright, Cypress https://www.testim.io/blog/puppete
 puppeteer https://pptr.dev/
 PWA https://whatpwacando.today/ https://web.dev/learn/pwa
 quality -- why so rare? https://linear.app/blog/why-is-quality-so-rare
-react
-react -- hooks
+React
+React -- hooks
 React -- RSC "React server components" https://www.joshwcomeau.com/react/server-components/
 React -- trigger, render, commit https://react.dev/learn/render-and-commit
-react -- v19 https://vercel.com/blog/whats-new-in-react-19
+React -- v19 https://vercel.com/blog/whats-new-in-react-19
 realtime -- patterns -- poke/pull
 realtime -- patterns -- push biz events
 realtime -- patterns -- push state

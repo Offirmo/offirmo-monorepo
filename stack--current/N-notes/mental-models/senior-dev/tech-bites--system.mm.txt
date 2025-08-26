@@ -284,6 +284,7 @@ domains -- expired https://www.dropcatch.com/
 edge
 edge -- "So, @vercel reverted all edge rendering back to Node.js" https://twitter.com/leeerob/status/1780705942734331983
 edge -- lambda@edge (AWS) = a lambda closer to the user. Downside is being away from the backend/DB
+edge computing -- case study -- Vercel (against) = latency when DB https://x.com/leerob/status/1780705942734331983
 efficiency
 emergency response
 encryption

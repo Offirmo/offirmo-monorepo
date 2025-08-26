@@ -8,6 +8,7 @@
 account takeover (ATO) https://www.kasada.io/use-cases/account-takeover/
 attacks -- business email compromise (BEC)
 attacks -- supply chain -- npm https://blog.vlt.sh/blog/the-massive-hole-in-the-npm-ecosystem
+attacks -- SVG https://arstechnica.com/security/2025/08/adult-sites-use-malicious-svg-files-to-rack-up-likes-on-facebook/
 authentication
 authorisation
 bad defaults -- firebase https://env.fail/posts/firewreck-1
@@ -44,6 +45,7 @@ CVE -- CNA "CVE Numbering Authority" = an authorized party that  can assign CVE 
 Cybersecurity Assessment Tool (CAT) https://cybercat.tools/#assessment
 cybervolunteer https://www.cisa.gov/audiences/high-risk-communities/cybervolunteerresourcecenter
 dark web https://www.group-ib.com/blog/dark-web-fraud/
+DDoS -- interstitial challenge = https://developers.cloudflare.com/cloudflare-challenges/challenge-types/challenge-pages/
 ddos -- report http://www.ddosreport.com
 DEF CON = one of the oldest continuously running hacker conventions around, and also one of the largest https://defcon.org/
 defence -- Primary / Secondary / Tertiary
@@ -103,6 +105,7 @@ Open / Unvalidated Redirects
 OS Command Injection = attacker is able to inject and execute malicious code within a command that is passed to an application's operating system shell
 OWASP top 10 https://owasp.org/www-project-top-ten/
 passkeys = a modern cryptographic alternative to passwords and seed phrases. Passkeys combine something you have (a physical device such as a laptop, mobile phone, or a security key like YubiKey) with something you are or know (a fingerprint, face, or PIN) to generate a cryptographic public/private key pair that secures an account.
+password -- peppering (pwd managers) https://passwordbits.com/salting-passwords/
 pin codes -- most common https://informationisbeautiful.net/visualizations/most-common-pin-codes/
 PKI = Public Key Infrastructure
 plan for security from the start - it's not something you can bolt on at the end
@@ -129,7 +132,10 @@ sanitization -- filtering -- filtering and transforming (replacing) the unwanted
 sanitization -- filtering -- filtering out (removing)
 sanitization -- using a well-tested library
 sanitization = elimination of unwanted characters from the input by means of removing, replacing, encoding, or escaping the characters. Sanitization should be implemented before the data is passed across a trust boundary (output sanitization). The appropriate method for escaping content will depend a lot on the context in which the data will be used.
+scams -- dream job
 scams -- fake invoice https://ia.acs.org.au/article/2024/how-ai-is-helping-beat-invoice-scammers.html
+scams -- poison ad
+scams -- problem with your account
 scams -- scam payments = receiver is a scammer https://ia.acs.org.au/article/2025/banks-finally-unite-to-block-scam-payments.html
 secrets -- hiding secrets is hard - and secrets hidden in code won't stay secret for long
 secure by default = security is ON by default, need to be manually disabled if not needed (ex. dev).  Historically, many libraries had to be configured for them to be used securely.  For example, user content in JSP applications presented a cross site scripting risk, and developers needed to use special functions such as c:out or fn:escapeXml in order to prevent such vulnerabilities.  In a secure by default library, the risk is inherently prevented in the library implying that the developer does not need to think about special functionality in order to use it securely.
@@ -149,11 +155,11 @@ shift left = earlier security
 software-defined perimeter (SDP) https://www.cloudflare.com/learning/access-management/software-defined-perimeter/
 spectre = class of attacks https://www.cloudflare.com/en-au/learning/security/threats/meltdown-spectre/
 supply chain -- dependency confusion = abusing internal packages (not just typo squatting) https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
-supply chain -- famous examples web3.js https://www.theregister.com/2024/12/05/solana_javascript_sdk_compromised/
 supply chain -- famous examples https://www.wiz.io/blog/github-action-tj-actions-changed-files-supply-chain-attack-cve-2025-30066
+supply chain -- famous examples web3.js https://www.theregister.com/2024/12/05/solana_javascript_sdk_compromised/
 supply chain -- famous examples zx https://www.akamai.com/blog/security-research/critical-linux-backdoor-xz-utils-discovered-what-to-know
-supply chain -- solutions https://github.com/google/oss-rebuild
 supply chain -- solutions https://github.blog/changelog/2025-07-31-npm-trusted-publishing-with-oidc-is-generally-available/
+supply chain -- solutions https://github.com/google/oss-rebuild
 surveillance self-defense = Tips, Tools and How-tos for Safer Online Communications https://ssd.eff.org/
 Tails = a portable operating system that protects your privacy and helps you avoid censorship https://tails.net/about/
 threat modeling

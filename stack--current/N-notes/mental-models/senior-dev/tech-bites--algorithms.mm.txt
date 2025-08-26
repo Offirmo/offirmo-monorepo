@@ -60,6 +60,7 @@ computational complexity -- Other = operations specific to the problem in questi
 computational complexity -- Query time = time required to answer a query;
 computational complexity -- Space = the amount of memory space required to store the data structure;
 consensus -- raft https://en.wikipedia.org/wiki/Raft_(algorithm)  https://raft.github.io/
+crossword generation https://puzzling.stackexchange.com/a/132987
 cryptocurrency mining
 Day–Stout–Warren = amortized binary tree balancing https://en.wikipedia.org/wiki/Day%E2%80%93Stout%E2%80%93Warren_algorithm
 deque = double-ended queue

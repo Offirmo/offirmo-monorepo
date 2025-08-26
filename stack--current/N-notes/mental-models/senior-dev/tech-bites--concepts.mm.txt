@@ -178,6 +178,7 @@ codebase -- type -- large established codebase = single-digit million lines of c
 codebase -- type -- open source
 codebase -- type https://www.seangoedecke.com/large-established-codebases/
 codemod
+CODEOWNERS = file defining individuals or teams that are responsible for code in a repository. Code owners are automatically requested for review when someone opens a pull request that modifies code that they own.  https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 cohesion = degree to which the elements inside a module belong together https://en.wikipedia.org/wiki/Cohesion_(computer_science)
 command query separation (CQS)
 comments
@@ -272,6 +273,8 @@ data format -- do NOT conflate serialization w/ working representation w/ persis
 data format -- future proofing = vastly overrated now that we have semver!! (+ migrations)
 data format -- interchange -- https://en.wikipedia.org/wiki/Advanced_Scientific_Data_Format
 data format -- interchange -- JSON -- binary https://msgpack.org/
+data format -- interchange -- JSON -- JSX wire https://overreacted.io/jsx-over-the-wire/
+data format -- interchange -- JSON -- progressive https://overreacted.io/progressive-json/
 data format -- interchange -- JSON -- RPC https://www.jsonrpc.org/
 data format -- interchange -- JSON -- schema = https://json.schemastore.org/
 data format -- interchange -- JSON https://www.json.org/
@@ -435,6 +438,7 @@ garbage collector
 general dependency injection and inversion of control problem
 geohash = compact representations of latitude and longitude https://en.wikipedia.org/wiki/Geohash
 git
+gitignore https://git-scm.com/docs/gitignore#_pattern_format
 global variable
 God object https://en.wikipedia.org/wiki/God_object
 good to great = real expert at a tech (cf. T-shaped)

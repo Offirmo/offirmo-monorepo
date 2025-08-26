@@ -10,6 +10,8 @@ build system = Roughly, it figures out how to create runnable programs from a bu
 cache
 CD (Continuous Delivery) https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery https://spinnaker.io/
 CD -- Defensive = Expect the unexpected. Expect that devs will break things in novel ways
+CD -- delivery = ready to deploy but not automated
+CD -- deployment = >delivery = even the deploy is auto https://www.techtarget.com/searchitoperations/tip/Continuous-delivery-vs-continuous-deployment-Which-to-choose
 CD -- High Frequency = Unreleased code is expensive. Get it out
 CD -- Independent = Components are not tied to each other. They release independently
 CD -- No Downtime = No "maintenance mode" or expected downtime as part of releasing
@@ -19,6 +21,7 @@ CI -- best practices -- Mergify = https://blog.mergify.com/continuous-integratio
 CI -- healing = resolve minor issues ex. lockfile or formatting
 CI -- It Works on My Machine = why not? possible with signed commit?
 CI -- merge protection
+CI -- need to be software-based AND allow branching to introduce a new setup, ex. node version MAY be preloaded but still MUST be installed from nvmrc to allow testing the migration before commiting
 CI -- order by diminishing returns with option to bypass to CD, ex. urgent bug fix
 CI -- principles -- Automate the Build = Manual builds are slow, error-prone, and inconsistent. Automation ensures every change is built the same way, every time. 	Use a CI server (like GitHub Actions, GitLab CI, etc.) to automatically compile code and run tests on every commit.
 CI -- principles -- Commit Frequently = Small, frequent commits are easier to debug and integrate, drastically reducing the risk of massive merge conflicts. 	Encourage developers to commit and push their changes to the shared repository at least once a day.
@@ -27,10 +30,26 @@ CI -- principles -- Keep the Build Fast = A slow build kills productivity. If de
 CI -- principles -- Mergify = https://blog.mergify.com/how-to-ci/
 CI -- principles -- Test in a Clone of Production = Testing in an environment that mimics production helps catch issues that only appear under real-world conditions. 	Use containers or virtualization to create a staging environment that mirrors your production setup as closely as possible.
 CI -- should not be blocking a hotfix!
-CI -- solutions -- ? https://mergify.com/
-CI -- solutions -- GitHub actions
-CI -- solutions -- Google Cloud Build https://cloud.google.com/build
-CI/CD -- need to be software-based AND allow branching to introduce a new setup, ex. node version MAY be preloaded but still MUST be installed from nvmrc to allow testing the migration before commiting
+CI/CD -- solutions -- ? https://mergify.com/
+CI/CD -- solutions -- GA "GitHub Actions" = a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline https://docs.github.com/en/actions/get-started/quickstart
+CI/CD -- solutions -- GA -- action = a reusable extension that can simplify your workflow
+CI/CD -- solutions -- GA -- actions -- composite = allows you to combine multiple workflow steps within one action https://docs.github.com/en/actions/creating-actions/creating-a-composite-action https://docs.github.com/en/actions/concepts/workflows-and-actions/reusable-workflows#key-differences-between-reusable-workflows-and-composite-actions
+CI/CD -- solutions -- GA -- actions -- custom https://docs.github.com/en/actions/concepts/workflows-and-actions/custom-actions
+CI/CD -- solutions -- GA -- artifacts https://docs.github.com/en/actions/concepts/workflows-and-actions/workflow-artifacts
+CI/CD -- solutions -- GA -- billing https://docs.github.com/en/billing/concepts/product-billing/github-actions
+CI/CD -- solutions -- GA -- blacksmith https://www.blacksmith.sh/
+CI/CD -- solutions -- GA -- concurrency https://docs.github.com/en/actions/concepts/workflows-and-actions/concurrency https://docs.github.com/en/actions/how-tos/writing-workflows/choosing-when-your-workflow-runs/control-the-concurrency-of-workflows-and-jobs
+CI/CD -- solutions -- GA -- contexts https://docs.github.com/en/actions/reference/workflows-and-actions/contexts https://docs.github.com/en/actions/reference/accessing-contextual-information-about-workflow-runs#context-availability
+CI/CD -- solutions -- GA -- events = a specific activity in a repository that triggers a workflow run: pull request, opens an issue, pushes a commit, schedule, REST API, manually https://docs.github.com/en/actions/get-started/understand-github-actions#events
+CI/CD -- solutions -- GA -- expressions https://docs.github.com/en/actions/concepts/workflows-and-actions/expressions https://docs.github.com/en/actions/reference/evaluate-expressions-in-workflows-and-actions
+CI/CD -- solutions -- GA -- jobs = a set of steps in a workflow that is executed on the same runner. Each step is either a shell script that will be executed, or an action that will be run. Steps are executed in order and are dependent on each other https://docs.github.com/en/actions/get-started/understand-github-actions#jobs
+CI/CD -- solutions -- GA -- runners = a server that runs your workflows when they're triggered. Each runner can run a single job at a time https://docs.github.com/en/actions/get-started/understand-github-actions#runners
+CI/CD -- solutions -- GA -- secrets https://docs.github.com/en/actions/security-for-github-actions/security-guides/about-secrets
+CI/CD -- solutions -- GA -- triggers
+CI/CD -- solutions -- GA -- variables https://docs.github.com/en/actions/concepts/workflows-and-actions/variables https://docs.github.com/en/actions/reference/variables-reference
+CI/CD -- solutions -- GA -- workflows -- reusable = caller, called https://docs.github.com/en/actions/concepts/workflows-and-actions/reusable-workflows#key-differences-between-reusable-workflows-and-composite-actions
+CI/CD -- solutions -- GA -- workflows = a configurable automated process that will run one or more jobs. Workflows are defined by a YAML file https://docs.github.com/en/actions/get-started/understand-github-actions#workflows https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows
+CI/CD -- solutions -- Google Cloud Build = https://cloud.google.com/build
 editor integration
 environments -- hierarchy = local -> shared -> staging -> prod
 flaky tests https://blog.mergify.com/flaky-test-detection/

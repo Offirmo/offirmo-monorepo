@@ -90,6 +90,7 @@ sparse = (array or matrix) only needed elements
 table -- hash = implements maps, uses a hash to pre-index + chaining/bucket (bc. collisions), see also trie (trade-offs)
 tree -- B-Tree https://en.wikipedia.org/wiki/B-tree
 tree -- check if balanced
+tree -- Merkle -- example use https://www.binance.com/en/proof-of-reserves
 tree -- Merkle = hierarchical data structure that facilitates efficient verification of large datasets
 tree -- node -- internal
 tree -- node -- leaf

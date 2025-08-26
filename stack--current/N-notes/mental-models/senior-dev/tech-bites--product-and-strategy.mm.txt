@@ -13,6 +13,7 @@ alignment -- challenges -- risk of social layer capture: means "having the right
 alignment -- of incentives = https://vitalik.eth.limo/general/2024/09/28/alignment.html
 alignment -- of tech
 alignment -- of values
++++ https://www.sequoiacap.com/article/the-templeton-compression/
 another Uber = unethical, untenable, profit-driven startup who took a gambit evading the law, hoping to grow too big to fail before the law catches up. Except Uber was good at being bad, and * combined malfeasance with incompetence https://www.sandofsky.com/lambda-school/
 barriers -- to entry = moat against competitors
 barriers -- to exit = users can't leave (switch) ex. cost
