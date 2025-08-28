@@ -61,6 +61,7 @@ blockchain -- transaction -- step 3 – Link the blocks = Once the participants 
 blockchain -- transaction -- step 4 – Share the ledger = The system distributes the latest copy of the central ledger to all participants.
 blockchain -- transaction = shows the movement of physical or digital assets from one party to another in the blockchain network. It is recorded as a data block and can include details like these: who, what, when, where, why, how much, preconditions
 blockchain = database = stores data in chronologically consistent blocks that you can delete or modify only with consensus from the peer-to-peer network. Built-in mechanisms prevent unauthorized transaction entries and create consistency in the shared view of these transactions. As a result, you can use it to create an unalterable or immutable ledger for tracking all types of transactions https://ethereum.org/en/developers/docs/intro-to-ethereum/ https://aws.amazon.com/what-is/blockchain/
+blockchains -- sizes = ex. Ethereum Mainnet 2025 2300Gb https://chainstats.org/
 BNB Chain
 boosters = ppl who try to pump a tech/coin2025-01 Sony's Soneium https://blockworks.co/news/soneium-mainnet-censorship-complaints
 bridging
@@ -87,6 +88,7 @@ crapto = anything not BitCoin (maybe Ether?)
 cross-chain
 cross-chain -- chain abstraction
 cross-chain -- swaps = swidge??
+crypto -- form vs substance = "the prosecution asked jurors to ignore the form of X — non-custodial, immutable smart contract code — and instead focus on the substance of what it enabled: money laundering"  In short, prosecutors accused X of using a technical innovation to cleverly sidestep the law. This is what the rest of crypto is often accused of, too. In substance, skeptics say,  tokens are stocks, protocols are companies, labs entities are c-suites, staking yields are dividends, token burns are buybacks, airdrops are sometimes IPOs, DAOs are general partnerships, and stablecoins are bank accounts. It’s often hard to argue with. https://blockworks.co/news/crypto-substance-vs-form
 crypto cash machine
 crypto image problem = "growing perception that most of the industry’s profits accrue to a small number of insiders at the expense of its retail investors.  (...)  especially unfortunate because a big part of crypto’s original appeal was that bitcoin was fair-launched and equally accessible to all.  " https://mail.blockworks.com/p/when-100m-isn-t-enough
 crypto signals = advice to invest https://www.tokenmetrics.com/blog/crypto-signals
@@ -137,10 +139,12 @@ Ethena
 Ethereum -- ENS = .eth
 Ethereum -- ether = the coin
 Ethereum -- Ethereum Improvement Proposals (EIPs) https://eips.ethereum.org/
+ethereum -- gas https://ethereum.stackexchange.com/questions/3/what-is-meant-by-the-term-gas
 Ethereum -- platform
 Ethereum -- protocol
 Ethereum -- REth https://github.com/paradigmxyz/reth
 Ethereum -- roadmap https://ethereum.org/en/roadmap/
+ethereum -- top questions https://ethereum.stackexchange.com/questions?sort=votes
 Ethereum = blockchain with a built-in fully fledged Turing-complete programming language that can be used to create "contracts" that can be used to encode arbitrary state transition functions, allowing users to create any systems we have not yet imagined, simply by writing up the logic in a few lines of code https://ethereum.org/en/whitepaper/#a-next-generation-smart-contract-and-decentralized-application-platform https://ethereum.org/en/what-is-ethereum/ https://aws.amazon.com/blockchain/what-is-ethereum/
 EVM and non-EVM chains
 EVM network
@@ -281,6 +285,7 @@ Sam Bankman-Fried https://en.wikipedia.org/wiki/Sam_Bankman-Fried
 Satochi
 scalability
 scalability -- transactions per second
+scams -- (sort of) example of sweeping the market by a big player https://x.com/mlmabc/status/1960462635314635207
 scams -- artificially inflating trading volumes
 scams -- exchanges -- diverting customer funds
 scams -- exchanges -- misleading investors about its surveillance controls
@@ -289,6 +294,9 @@ scams -- pyramid scheme
 scams -- rug pull -- checker https://rugcheck.xyz/
 scams -- rug-pull = disappear after cashing early success
 scams -- wash trading = artificially inflating volume https://bitfinexed.medium.com/wash-trading-bitcoin-how-bitfinex-benefits-from-fraudulent-trading-8bd66be73215
+seasons -- autumn= ex. altcoin autumn
+seasons -- summer = ex. DeFi summer
+seasons -- winter = ex. AI winter
 seed phrase
 silk road / Ross Ulbricht
 smart contract -- developers https://secure-contracts.com/index.html
@@ -328,6 +336,14 @@ token gating -- examples for brands https://www.arianee.com/post/what-is-token-g
 token gating = exclusive content to token (F/NF) holders https://www.coinbase.com/en-au/learn/crypto-basics/what-is-token-gating-and-what-are-the-benefits-of-doing-it
 tokenization = process of representing real-world or digital assets as digital tokens on a blockchain
 tokens
+tokens -- a16z categories -- Arcade tokens
+tokens -- a16z categories -- Asset-backed tokens
+tokens -- a16z categories -- Collectible tokens
+tokens -- a16z categories -- Company-backed tokens
+tokens -- a16z categories -- Memecoins
+tokens -- a16z categories -- Network tokens
+tokens -- a16z categories -- Security tokens
+tokens -- a16z categories https://a16zcrypto.com/posts/article/defining-tokens/
 tokens -- BAT "Basic Attention Token" = Brave Browser's own cryptocurrency that users can earn by viewing advertisements shown by Brave
 tokens -- Ether (ETH) = the cryptocurrency used for many things on the Ethereum network. Fundamentally, it is the only acceptable form of payment for transaction fees, and after The Merge, ether is required to validate and propose blocks on Mainnet the cryptocurrency used for many things on the Ethereum network. Fundamentally, it is the only acceptable form of payment for transaction fees, and after The Merge, ether is required to validate and propose blocks on Mainnet
 tokens -- standards
@@ -348,6 +364,7 @@ verifiable compute = a way to run complex tasks off-chain & then prove to the ch
 Vitalik Buterin
 wallet
 wallet -- cross-chain
+wallet -- drain -- example https://x.com/0xzak/status/1955265807807545763
 wallet -- embedded = (Defi App) latest gen, seedless, self-custodial ??
 wallet -- hot
 wallet -- password

@@ -54,3 +54,4 @@ yalc
 ⚠ Tailwind https://www.mux.com/blog/tailwind-is-the-worst-form-of-css-except-for-all-the-others
 ✖ Nix https://nixos.org/
 ✖ xml
+https://stackingthebricks.com/bootstrapper-tech-stack/

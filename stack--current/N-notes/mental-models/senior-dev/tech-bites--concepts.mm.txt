@@ -22,6 +22,7 @@
 [ ] https://github.com/charlax/professional-programming
 [ ] https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md
 [ ] https://github.com/kilimchoi/engineering-blogs
+[ ] https://learnxinyminutes.com/
 [ ] https://matklad.github.io/2023/08/06/fantastic-learning-resources.html
 [ ] https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
 [ ] https://tratt.net/laurie/blog/
@@ -111,6 +112,7 @@ big companies software = At big companies, software tends to be written by large
 blocking
 blocklist/blacklist -- https://paulgraham.com/spamhausblacklist.html
 bootcamps https://www.sandofsky.com/lambda-school/
+bossware https://ia.acs.org.au/article/2024/workers-and-bosses-engage-in-sneaky-tactics.html
 bro culture in tech https://www.smh.com.au/technology/australias-tech-darling-atlassian-in-sexism-row-20140605-zryjd.html
 BSOD "blue screen of death" https://ia.acs.org.au/article/2025/microsoft-retires-blue-screen-of-death-after-40-years.html?ref=newsletter&deliveryName=DM26606
 bug -- 3 questions -- 1. Have I made this error anywhere else?
@@ -380,6 +382,9 @@ emscripten
 encabulator https://en.wikipedia.org/wiki/Turbo_encabulator  https://www.youtube.com/watch?v=RXJKdh1KZ0w
 encoding -- binary-to-text -- risk of accidental words
 encoding -- binary-to-text https://en.wikipedia.org/wiki/Binary-to-text_encoding
+end-of-life -- "stuck upgrading" https://github.com/NullVoxPopuli/package-majors
+end-of-life -- debate https://github.com/endoflife-date/endoflife.date/pull/6684
+end-of-life https://endoflife.date/
 engineer's notions of simplicity, economies of scale, and design integrity https://en.wikipedia.org/wiki/Planned_obsolescence#History
 entitlements -- non-standard offerings or commercial terms to meet their needs through high touch sales motions. High touch Sales teams work closely with our customers to understand their solution needs and buying preferences like Multi-year billed annual, ELAs, Ramp discounts. There is a significant volume of customers and revenue from such deals
 EOL software "end of life" https://www.herodevs.com/support
@@ -927,6 +932,8 @@ Temporal Dead Zone (TDZ)
 temporary solutions https://80.lv/articles/this-30-year-old-windows-feature-was-created-as-a-temporary-solution/
 tenant -- isolation -- sandboxing / isolates / individual processes / individual VMs / individual containers
 tenant -- multi-tenant
+terminal -- ENV -- DO_NOT_TRACK https://consoledonottrack.com/
+terminal -- ENV -- NO_COLOR https://no-color.org/
 testing -- fixture -- general = setup designed to hold the OUT in place and allow it to be tested by being subjected to controlled test signals https://en.wikipedia.org/wiki/Test_fixture
 testing -- fixture = (also called "test context") setup of state and input data designed to allow the OUT to be tested by being subjected to controlled test signals, ex. a fake database with data https://en.wikipedia.org/wiki/Test_fixture#Software
 testing -- mutation testing = tests your test suite by introducing a bug into the code under test, running the tests, and verifying the tests failed (i.e. that your tests are good enough to catch the bug) https://sentry.engineering/blog/js-mutation-testing-our-sdks https://stryker-mutator.io/
@@ -990,6 +997,7 @@ types -- subtyping -- preconditions = cannot be strengthened in the subtype
 types -- subtyping https://en.wikipedia.org/wiki/Liskov_substitution_principle
 types -- systems -- "modern" https://reasonablypolymorphic.com/blog/protos-are-wrong/
 types -- systems -- role -- (disputable pre-semver citation!) the main challenge in real-world software engineering is not writing code but changing code once it is written and deployed. In general, type systems can be both helpful and harmful when it comes to changing code -- type systems are invaluable for detecting problems introduced by a change, but an overly-rigid type system can be a hindrance if it means common types of changes are difficult to make. https://news.ycombinator.com/item?id=18188519
+typescript -- learning resource https://github.com/type-challenges/type-challenges
 typescript -- performance https://trpc.io/blog/typescript-performance-lessons
 typography -- quotes https://smartquotesforsmartpeople.com/
 UI layout algorithms https://www.youtube.com/watch?v=by9lQvpvMIc

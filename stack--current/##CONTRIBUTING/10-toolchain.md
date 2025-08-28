@@ -10,24 +10,31 @@ Why not npm?
 * npm requires "run" `npm run dev`
 * overall npm doesn't seem as reliable as yarn
 
-TODO use yarn v4!
-TODO use corepack (2023/10 impossible to set up with yarn v1, too bleeding edge)
+TODO use yarn v4! https://yarnpkg.com/blog/bun
+TODO use corepack (2025 not compatible with bolt)
 TODO evaluate https://github.com/pnpm/pnpm
+
 
 ## monorepo
 
 **bolt**
 * complemented by https://github.com/Thinkmill/manypkg
 * downside: maintained but sort of dead
+* downside: not compatible with corepack yarn
 
 Why not yarn workspaces?
-* they can't run commands in the dependency order
-* they can't run commands on a glob
+* they can't run commands in the dependency order (TODO reevaluate TODO review turborepo)
+* they can't run commands on a glob (TODO reevaluate TODO review turborepo)
 
-Why not rush? https://rushjs.io/
+Why not rush? https://github.com/pnpm/pnpm
+* has benefits = many features
+* real experience: bugs, missing confidence
+
+Why not pnpm? https://rushjs.io/
 * has benefits
   * https://hello.atlassian.net/wiki/spaces/~790620688/blog/2021/03/30/1071416904/A+ShipIt+review+of+Rush+a+scalable+monorepo+manager+for+the+web
 * too complicated, needs every pkg declared in a huge config
+
 
 Recent news
 * 2023 https://www.robinwieruch.de/web-development-trends/ ("Monorepos")
@@ -77,6 +84,12 @@ TODO evaluate https://biomejs.dev/
 ## environment manager
 
 nvm
+
+bolt
+
+https://github.com/1111mp/nvmd-command
+
+
 
 * TODO review corepack
 * TODO evaluate https://asdf-vm.com/

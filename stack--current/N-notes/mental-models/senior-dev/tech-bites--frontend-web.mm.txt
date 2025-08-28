@@ -1,6 +1,7 @@
 +++ https://courses.joshwcomeau.com/
 +++ https://developer.mozilla.org/en-US/curriculum/
 +++ https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3 + https://medium.com/@cramforce/designing-even-larger-applications-460ee029012d
++++ macintosh -- folklore = Anecdotes about the development of Apple's original Macintosh, and the people who made it https://folklore.org/
 1979-05-28 Design Considerations for an Anthropophilic Computer https://web.stanford.edu/dept/SUL/sites/mac/primary/docs/bom/anthrophilic.html
 2023-09 React -- server components https://www.joshwcomeau.com/react/server-components/
 2024 https://socket.dev/blog/tc39-advances-10-ecmascript-proposals-key-features-to-watch
@@ -182,6 +183,8 @@ design system -- CSS is tech debt ;)
 design system -- design tokens
 Design System -- vs. Web Pattern Library (WPL) = Built specifically for web, with the intention of helping makers publish pages with speed, scale, and consistency.
 Design System = foundational base for which all other user interfaces are built upon. DS built with the intention to make it easy for makers (designers and developers) to design, develop, and deliver UI at scale.
+desk metaphor
+desk metaphor -- ornaments https://folklore.org/Desk_Ornaments.html
 devices -- support
 dialog
 DNS = distributed database for IP address translation
