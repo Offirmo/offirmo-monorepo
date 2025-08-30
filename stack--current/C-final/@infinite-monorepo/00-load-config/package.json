@@ -14,6 +14,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@infinite-monorepo/load-any-structured-file": "*",
 		"@offirmo-private/fs--ls": "*",
 		"tiny-invariant": "^1"
 	},
@@ -25,7 +26,6 @@
 		"sandbox": "node --experimental-strip-types ./module/sandbox/index.ts"
 	},
 	"devDependencies": {
-		"@infinite-monorepo/load-any-structured-file": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",

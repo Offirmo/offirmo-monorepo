@@ -1,0 +1,35 @@
+{
+	"name": "@infinite-monorepo/plugin--changelog",
+	"version": "0.0.1",
+	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
+	"license": "Unlicense",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./module/src/index.ts"
+	},
+	"source": "module/src/index.ts",
+	"peerDependencies": {
+		"tslib": "^2"
+	},
+	"dependencies": {
+		"@infinite-monorepo/state": "*",
+		"tiny-invariant": "^1"
+	},
+	"scripts": {
+		"check--ts": "echo \"@infinite-monorepo/plugin--changelog\" && tsc --noEmit",
+		"check--ts--watch": "tsc --noEmit --watch",
+		"dev": "run-s check--ts--watch",
+		"check": "run-s check--ts"
+	},
+	"devDependencies": {
+		"@infinite-monorepo/types": "*",
+		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/ts-types": "*",
+		"@offirmo/unit-test-toolbox": "^9",
+		"npm-run-all": "^4",
+		"tslib": "^2",
+		"typescript": "^5"
+	}
+}

@@ -18,7 +18,8 @@
 		"json5": "^2",
 		"split-lines": "^3",
 		"strip-bom": "^5",
-		"tiny-invariant": "^1"
+		"tiny-invariant": "^1",
+		"yaml": "^2"
 	},
 	"scripts": {
 		"check--ts": "echo \"@infinite-monorepo/load-any-structured-file\" && tsc --noEmit",

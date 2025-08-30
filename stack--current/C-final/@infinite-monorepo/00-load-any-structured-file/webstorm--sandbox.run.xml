@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+	<configuration default="false"
+		name="@infinite-monorepo/load-any-structured-file -- Sandbox"
+		type="NodeJSConfigurationType"
+		path-to-node="$USER_HOME$/.nvm/versions/node/v22.19.0/bin/node"
+		node-parameters="--experimental-strip-types"
+		path-to-js-file="module/sandbox/index.ts"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/C-final/@infinite-monorepo/00-load-any-structured-file">
+		<method v="2" />
+	</configuration>
+</component>

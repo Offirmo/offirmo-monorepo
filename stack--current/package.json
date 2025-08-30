@@ -126,6 +126,7 @@
 		"@types/semver": "^7",
 		"@types/sinon": "^17",
 		"@types/sinon-chai": "^4",
+		"@types/strip-bom": "^4",
 		"bowser": "^2",
 		"browserslist": "^4",
 		"chai": "^5",
@@ -179,7 +180,8 @@
 		"type-fest": "^4",
 		"typescript": "^5",
 		"typescript-string-enums": "^1",
-		"wrangler": "^4"
+		"wrangler": "^4",
+		"yaml": "^2"
 	},
 	"resolutions": {
 		"sharp": "^0.34"
