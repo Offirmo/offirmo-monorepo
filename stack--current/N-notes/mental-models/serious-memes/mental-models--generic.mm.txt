@@ -364,6 +364,8 @@ dysthymia https://en.wikipedia.org/wiki/Dysthymia
 ecosystem -- engineers https://fr.wikipedia.org/wiki/Esp%C3%A8ce_ing%C3%A9nieure
 education -- checklist +++ https://www.artofmanliness.com/people/relationships/avoid-falling-in-love-with-the-wrong-person/
 effective altruism
+effective altruism -- Giving What We Can (GWWC) nonprofit that promotes effective giving through education, outreach, and advocacy around the 10% Pledge https://en.wikipedia.org/wiki/Giving_What_We_Can
+effective altruism -- https://en.wikipedia.org/wiki/Effective_altruism
 effet projecteur
 effet rétroviseur
 efficient market hypothesis = (false) https://quant.stackexchange.com/questions/81684/why-is-efficient-market-hypothesis-still-unanswered-and-no-one-really-seems-to-c
@@ -934,6 +936,7 @@ petrified forest = program to stop stealing
 phenomenology (physics) = branch of theoretical physics in which physicists construct realistic models of nature from more abstract theoretical ideas https://en.wikipedia.org/wiki/Phenomenology_(physics)
 picture the success
 pit of success = place where it’s easier to do the right thing than the wrong thing
+pizzo https://fr.wikipedia.org/wiki/Pizzo_(mafia)
 Planck’s Principle: Science doesn’t progress because people change their views. Rather, each new generation of scientists has different views. As old generations pass away, new ideas are accepted and the scientific consensus changes.
 planned obsolescence = Instilling in the buyer the desire to own something a little newer, a little better, a little sooner than is necessary https://en.wikipedia.org/wiki/Planned_obsolescence#History
 planning fallacy
@@ -1016,6 +1019,7 @@ race -- Nigeria
 race -- slavery
 race -- white supremacy -- hidden intent behind laws ex. https://en.wikipedia.org/wiki/Grandfather_clause
 race to the bottom
+Racketeering is a type of organized crime in which the perpetrators set up a coercive, fraudulent, extortionary, or otherwise illegal coordinated scheme or operation (a "racket") to repeatedly or consistently collect a profit https://en.wikipedia.org/wiki/Racketeering
 radical candor
 rainbow code https://en.m.wikipedia.org/wiki/Rainbow_Code
 random acts of kindness -- bingo
