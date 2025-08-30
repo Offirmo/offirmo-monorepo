@@ -220,13 +220,17 @@ class PkgInfosResolver {
 	}
 
 	// TODO review usage!!
+	// TODO should be auto-detected!!
 	// internal = from this monorepo
 	// vs. external = npm
 	// TODO externalize
 	private is_unpublished_monorepo_package(pkg_name: string) {
-		if (pkg_name.startsWith('@offirmo-private/')
+		if (
+			pkg_name.startsWith('@offirmo-private/')
+			|| pkg_name.startsWith('@infinite-monorepo/')
 			|| pkg_name.startsWith('@oh-my-rpg/')
-			|| pkg_name.startsWith('@tbrpg/'))
+			|| pkg_name.startsWith('@tbrpg/')
+		)
 			return true // always for those one
 
 		/*if (pkg_name.startsWith('@offirmo/')) {

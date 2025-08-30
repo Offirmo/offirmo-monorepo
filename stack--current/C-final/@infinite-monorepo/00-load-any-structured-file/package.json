@@ -1,5 +1,5 @@
 {
-	"name": "@infinite-monorepo/plugin--nvm",
+	"name": "@infinite-monorepo/load-any-structured-file",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -14,20 +14,25 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@infinite-monorepo/state": "*",
-		"@infinite-monorepo/types": "*",
+		"@offirmo-private/fs--ls": "*",
+		"json5": "^2",
+		"split-lines": "^3",
+		"strip-bom": "^5",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@infinite-monorepo/plugin--nvm\" && tsc --noEmit",
+		"check--ts": "echo \"@infinite-monorepo/load-any-structured-file\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"check": "run-s check--ts"
+		"check": "run-s check--ts",
+		"sandbox": "node --experimental-strip-types ./module/sandbox/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^22",
+		"@types/strip-bom": "^4",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

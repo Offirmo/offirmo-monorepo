@@ -29,10 +29,12 @@ export type AnyPath =
 
 export type RelativeDirPath = `${RelativePath}${PathSeparator}`
 export type AbsoluteDirPath = `${AbsolutePath}${PathSeparator}`
+export type AnyDirPath = RelativeDirPath | AbsoluteDirPath
 
 /////////////////////////////////////////////////
 
 export type RelativeFilePath = RelativePath
 export type AbsoluteFilePath = AbsolutePath
+export type AnyFilePath = RelativeFilePath | AbsoluteFilePath
 
 /////////////////////////////////////////////////

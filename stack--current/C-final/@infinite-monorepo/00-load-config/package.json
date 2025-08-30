@@ -21,9 +21,11 @@
 		"check--ts": "echo \"@infinite-monorepo/load-config\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
-		"check": "run-s check--ts"
+		"check": "run-s check--ts",
+		"sandbox": "node --experimental-strip-types ./module/sandbox/index.ts"
 	},
 	"devDependencies": {
+		"@infinite-monorepo/load-any-structured-file": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",

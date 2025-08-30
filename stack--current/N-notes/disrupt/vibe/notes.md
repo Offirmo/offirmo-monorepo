@@ -7,7 +7,18 @@
 
 
 ## security
+
+"lock" all APIs, all input/output
 securitypolicyviolation
+
+CORS
+
+Do not track
+
+
+## troubleshooting
+- detect ad blocker blocking critical stuff
+- detec ad blocker blocking ads
 
 
 ## outbound navigation

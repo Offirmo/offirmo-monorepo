@@ -23,7 +23,7 @@
 		"check": "run-s check--ts"
 	},
 	"devDependencies": {
-		"@infinite-monorepo/types": "^0.0.1",
+		"@infinite-monorepo/types": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
