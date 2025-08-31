@@ -1,4 +1,4 @@
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable, JSONObject } from '@offirmo-private/ts-types'
 import type { AbsoluteFilePath } from '@offirmo-private/ts-types'
 import type {
 	InfiniteMonorepoSpec,
@@ -6,10 +6,32 @@ import type {
 	StructuredFsOutput,
 	StructuredFsOutputⳇFileManifest,
 	MultiRepoRelativeFilePath,
-	StructuredFsⳇFileManifest,
+	StructuredFsⳇFileManifest, NodeRelativePath,
 } from '@infinite-monorepo/types'
 
 /////////////////////////////////////////////////
+
+export type FileOutputIntent =
+	| 'present--exact'
+	| 'present--containing'
+	| 'not-present'
+
+interface BaseFileOutput {
+	path: MultiRepoRelativeFilePath
+	node?: Node // if needed to resolve the path
+	intent: FileOutputIntent
+}
+
+export interface FileOutputAbsent extends BaseFileOutput {
+
+}
+export interface FileOutputPresent extends BaseFileOutput {
+	manifest: StructuredFsⳇFileManifest,
+	content: JSONObject,
+}
+
+/////////////////////////////////////////////////
+
 
 export type AsyncCallbackReducer = <T>(
 	state: Immutable<State>,
@@ -26,8 +48,12 @@ export interface State {
 
 	file_manifests: Record<MultiRepoRelativeFilePath, StructuredFsⳇFileManifest>
 
+	output_files: {
+		[path: string]: FileOutputAbsent | FileOutputPresent
+	}
+
 	// XXX
-	files_existing: Record<
+	/*files_existing: Record<
 		AbsoluteFilePath,
 		{
 			manifest_key: MultiRepoRelativeFilePath
@@ -39,7 +65,5 @@ export interface State {
 
 	pending_async_ops: {
 		[key: string]: Promise<Reducer>
-	}
-
-	//file_output: Array<StructuredFsOutput>
+	}*/
 }

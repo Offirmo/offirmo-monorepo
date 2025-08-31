@@ -15,7 +15,13 @@ export type WorkspaceRelativePath = `${typeof PATHVARⵧROOTⵧWORKSPACE}/${stri
 export const PATHVARⵧROOTⵧPACKAGE = `$${NODE_TYPEⵧPACKAGE.toUpperCase()}_ROOT$` as const
 export type PackageRelativePath = `${typeof PATHVARⵧROOTⵧPACKAGE}/${string}`
 
-export type MultiRepoRelativePath = WorkspaceRelativePath | PackageRelativePath
+export const PATHVARⵧROOTⵧANY = `$NODE_ROOT$` as const
+export type NodeRelativePath = `${typeof PATHVARⵧROOTⵧANY}/${string}`
+
+export type MultiRepoRelativePath =
+	| WorkspaceRelativePath
+	| PackageRelativePath
+	| NodeRelativePath
 
 export type MultiRepoRelativeFilePath = MultiRepoRelativePath
 export type MultiRepoRelativeDirPath = MultiRepoRelativePath

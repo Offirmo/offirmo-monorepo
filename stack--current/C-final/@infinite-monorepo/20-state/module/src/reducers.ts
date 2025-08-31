@@ -1,18 +1,20 @@
 import assert from 'tiny-invariant'
-import type { Immutable, AbsolutePath } from '@offirmo-private/ts-types'
+import type { JSONObject, Immutable, AbsolutePath } from '@offirmo-private/ts-types'
 
 import type {
 	InfiniteMonorepoSpec,
 	Node,
-	StructuredFsOutputⳇFullFile,
 	NodeⳇWorkspace,
-	MultiRepoRelativePath,
 	StructuredFsⳇFileManifest,
-	MultiRepoRelativeFilePath,
+	MultiRepoRelativeFilePath, NodeRelativePath,
 } from '@infinite-monorepo/types'
 import { completeꓽspec } from '@infinite-monorepo/defaults'
 
-import type { State } from './types.ts'
+import type {
+	State,
+	FileOutputAbsent, FileOutputPresent,
+} from './types.ts'
+import * as semver from 'semver'
 
 /////////////////////////////////////////////////
 const DEBUG = true
@@ -23,12 +25,13 @@ function create(): Immutable<State> {
 	return {
 		spec: completeꓽspec({}),
 
+		file_manifests: {},
+
 		graph: {
 			nodesⵧall: {},
 		},
 
-		files_existing: {},
-		file_manifests: {},
+		output_files: {},
 	}
 }
 
@@ -112,8 +115,10 @@ function declareꓽfile_manifest(
 
 function _resolveꓽarpath(
 	arpath: MultiRepoRelativeFilePath,
-	parent_node?: Immutable<Node>,
-): AbsolutePath {}
+	node?: Immutable<Node> | undefined,
+): AbsolutePath {
+	throw new Error(`Not implemented!`)
+}
 
 function ensureꓽfile_loading(
 	state: Immutable<State>,
@@ -130,11 +135,24 @@ function ensureꓽfile_loading(
 	throw new Error('not implemented!')
 }
 
-function requestꓽfile_output(
-	state: Immutable<State>,
-	content: StructuredFsOutputⳇFullFile,
-): Immutable<State> {
-	throw new Error(`Not implemented!`)
+function requestꓽfile_output(state: Immutable<State>, spec: Immutable<FileOutputAbsent>): Immutable<State>;
+function requestꓽfile_output(state: Immutable<State>, spec: Immutable<FileOutputPresent>): Immutable<State>;
+function requestꓽfile_output(state: Immutable<State>, spec: Immutable<FileOutputAbsent | FileOutputPresent>): Immutable<State> {
+	const path‿abs = _resolveꓽarpath(spec.path, spec.node)
+
+	const existing = state.output_files[path‿abs]
+	if (existing) {
+		// TODO 1D merge or check for conflict
+		throw new Error(`Not implemented!`)
+	}
+
+	return {
+		...state,
+		output_files: {
+			...state.output_files,
+			[path‿abs]: spec,
+		}
+	}
 }
 
 /////////////////////////////////////////////////
@@ -146,4 +164,5 @@ export {
 	reportꓽnodeⵧanalyzed,
 	declareꓽfile_manifest,
 	ensureꓽfile_loading,
+	requestꓽfile_output,
 }

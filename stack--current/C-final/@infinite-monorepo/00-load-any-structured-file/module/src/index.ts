@@ -11,7 +11,7 @@ import { lsDirsSync, lsFilesSync } from '@offirmo-private/fs--ls'
 
 /////////////////////////////////////////////////
 
-type Parser =
+export type Parser =
 	| 'import' // js/ts exporting a default JSONObject
 	| 'json5' // https://json5.org/
 	| 'yaml'

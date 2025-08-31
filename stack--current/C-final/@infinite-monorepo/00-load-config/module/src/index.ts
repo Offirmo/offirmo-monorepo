@@ -5,6 +5,7 @@ import { ↆloadꓽfileⵧimport, ↆloadꓽfile } from '@infinite-monorepo/load
 
 import type { JSONObject, AbsoluteDirPath, AbsoluteFilePath } from '@offirmo-private/ts-types'
 import { lsDirsSync, lsFilesSync } from '@offirmo-private/fs--ls'
+import { strict as assert } from 'node:assert'
 
 /////////////////////////////////////////////////
 
@@ -13,7 +14,8 @@ interface Result {
 	parent_folder_path‿abs: AbsoluteDirPath
 	exact_file_path‿abs: AbsoluteFilePath | null // can be null if no file
 	boundary?: // is that a boundary?
-	| 'git' // parent_folder_path‿abs is a git repo root
+		| 'git' // parent_folder_path‿abs is a git repo root
+		        // NOTE could there be more than one? (if git submodules)
 		| 'home' // parent_folder_path‿abs is a user folder (home, ~)
 		| 'fs' // parent_folder_path‿abs is a fs root
 		| 'package' // if has package.json. Lowest priority compared to the other boundaries. will only appear if no other boundary found yet. (won't have package twice in the chain)
@@ -21,19 +23,17 @@ interface Result {
 
 /////////////////////////////////////////////////
 
-interface Options {
-	defaults?: JSONObject
-	json?: boolean // if true, will treat non-ts files as JSON and parse them, else will { raw: xxxx }
-	// TODO 1D starting folder?
-	// TODO 1D arch repo support?
-}
+
 
 /* get a full chain of configs
  * ordered from top (fs root) to bottom (closest to cwd)
  * This should be only used internally.
  * TODO 1D allow branching to a sibling folder = arch repo / multi mono repo
  */
-async function loadꓽconfigⵧchain(radix: string, options: Options = {}): Promise<Array<Result>> {
+interface LoadChainOptions {
+	defaults?: JSONObject | undefined
+}
+async function loadꓽconfigⵧchain(radix: string, options: Partial<LoadChainOptions> = {}): Promise<Array<Result>> {
 	const chain: Array<Result> = []
 	const promises: Array<Promise<any>> = []
 
@@ -63,7 +63,7 @@ async function loadꓽconfigⵧchain(radix: string, options: Options = {}): Prom
 
 			return undefined
 		})()
-		found_boundary_yet = !!boundary
+		found_boundary_yet ||= boundary !== undefined
 
 		if (child_dirs_pathes‿rel.includes(radix)) {
 			// to mts / cts = ESM is standard now, module is implicit
@@ -114,8 +114,24 @@ async function loadꓽconfigⵧchain(radix: string, options: Options = {}): Prom
 	return chain
 }
 
-async function loadꓽconfigⵧtopmost(radix: string, options: Options = {}): Promise<Result> {
-	throw new Error(`No "${radix}/index.ts" found within the closest git repo!`)
+interface LoadTopmostOptions {
+	defaults?: JSONObject
+	boundary?: Result['boundary']
+}
+async function loadꓽconfigⵧtopmost(radix: string, options: LoadTopmostOptions = {}): Promise<Result> {
+	const chain = await loadꓽconfigⵧchain(radix, { defaults: options['defaults'] })
+
+	const start_index = options['boundary']
+		? chain.findIndex(result => result.boundary === options['boundary'])
+		: 0
+	assert(start_index >= 0, `Requested boundary not found!`)
+
+	for (let i = start_index; i < chain.length; i++) {
+		if (chain[i]?.data)
+			return chain[i]!
+	}
+
+	throw new Error(`No config found within the requested boundary!`)
 }
 
 async function loadꓽconfigⵧclosest(

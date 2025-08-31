@@ -57,6 +57,7 @@ async function apply() {
 	}, Promise.resolve(state))*/
 
 	////////////
+	// XXX topological order!!!
 	plugins.forEach(plugin => {
 		state = plugin.onꓽapply(state)
 	})

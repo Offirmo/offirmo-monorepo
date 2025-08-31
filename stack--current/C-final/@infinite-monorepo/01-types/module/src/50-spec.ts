@@ -29,7 +29,7 @@ export interface InfiniteMonorepoSpec {
 	/////// RUNTIME ///////
 
 	// the runtime used to do monorepo operations such as running tasks, building, etc.
-	// (should we support multiple at once? Not for now, complex, need actual use case)
+	// (should we support multiple at once? Not for now, complex, need an actual use case)
 	runtimeⵧlocal: LocalJsRuntimeKey | JsRuntimeSpec<LocalJsRuntimeKey>
 
 	/////// GRAPH ///////
