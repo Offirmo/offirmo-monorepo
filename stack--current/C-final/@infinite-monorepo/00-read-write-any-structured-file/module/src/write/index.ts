@@ -13,7 +13,7 @@ import type {
 	ContentⳇYaml,
 	StructuredFileFormat,
 } from '../types.ts'
-import { inferꓽformat_from_path } from '../common'
+import { inferꓽformat_from_path } from '../common/index.ts'
 
 /////////////////////////////////////////////////
 /*

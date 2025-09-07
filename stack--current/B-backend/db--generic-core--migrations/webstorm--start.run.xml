@@ -2,7 +2,6 @@
 	<configuration default="false"
 		name="@offirmo-private/db--generic-core--migrations -- Start"
 		type="NodeJSConfigurationType"
-		path-to-node="$USER_HOME$/.nvm/versions/node/v22.19.0/bin/node"
 		node-parameters="--experimental-strip-types"
 		path-to-js-file="module/deps.ts"
 		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/B-backend/db--generic-core--migrations">

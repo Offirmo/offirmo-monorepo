@@ -8,10 +8,10 @@
 	"type": "module",
 	"exports": {
 		".": "./module/src/types.ts",
-		"./read": "./module/src/read/index.ts",
-		"./write": "./module/src/write/index.ts"
+		"./read": "./module/src/read/_entrypoint.ts",
+		"./write": "./module/src/write/_entrypoint.ts"
 	},
-	"source": "module/src/index.ts",
+	"source": "module/src/write/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
@@ -27,7 +27,7 @@
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts",
-		"sandbox": "node --experimental-strip-types ./module/sandbox/index.ts"
+		"sandbox": "node --experimental-strip-types ./module/sandbox/read.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
