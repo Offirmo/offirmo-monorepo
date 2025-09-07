@@ -11,7 +11,7 @@ const MONOREPO_SPEC_DEFAULT: Immutable<InfiniteMonorepoSpec> = {
 	package_manager: 'yarn--berry',
 	EOL: '\n',
 	PATH_SEP: '/',
-	root_path: 'NOT_YET_LOADED/',
+	root_path‿abs: 'NOT_YET_LOADED/',
 	_config_fileⵧroot: undefined,
 }
 

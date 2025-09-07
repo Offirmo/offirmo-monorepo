@@ -2,7 +2,7 @@ import * as semver from 'semver'
 import type { Immutable } from '@offirmo-private/ts-types'
 import {
 	NODE_TYPEⵧWORKSPACE,
-	PATHVARⵧROOTⵧANY,
+	PATHVARⵧROOTⵧNODE,
 	type Plugin,
 	type StructuredFsOutput,
 	type StructuredFsⳇFileManifest,
@@ -14,7 +14,7 @@ import * as StateLib from '@infinite-monorepo/state'
 
 /////////////////////////////////////////////////
 
-const ᐧnvmrc__path: NodeRelativePath = `${PATHVARⵧROOTⵧANY}/.nvmrc`
+const ᐧnvmrc__path: NodeRelativePath = `${PATHVARⵧROOTⵧNODE}/.nvmrc`
 
 const ᐧnvmrc__manifest: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧnvmrc__path,
@@ -33,7 +33,6 @@ const ᐧnvmrc__manifest: StructuredFsⳇFileManifest = {
 /////////////////////////////////////////////////
 
 const PLUGIN: Plugin = {
-
 	onꓽload(state: Immutable<StateLib.State>): Immutable<StateLib.State> {
 		state = StateLib.declareꓽfile_manifest(state, ᐧnvmrc__manifest)
 
@@ -44,7 +43,6 @@ const PLUGIN: Plugin = {
 		state: Immutable<StateLib.State>,
 		node: Immutable<Node>,
 	): Immutable<StateLib.State> {
-
 		// TODO 1D
 		//state = StateLib.ensureꓽfile_loading(state, node, ᐧnvmrc__path)
 
@@ -53,26 +51,28 @@ const PLUGIN: Plugin = {
 
 	onꓽapply(state: Immutable<StateLib.State>, node: Immutable<Node>) {
 		const runtimeⵧlocal = StateLib.getꓽruntimeⵧlocal(state, node)
+		if (runtimeⵧlocal.name !== 'node') return state // nvm doesn't apply
 
-		if (runtimeⵧlocal.name !== 'node')
-			return state // nvm doesn't apply
-
-		switch (node.type) {
+		const vmin = semver.minVersion(runtimeⵧlocal.versionsⵧacceptable)
+		const major = semver.major(vmin)
+		switch (node?.type) {
 			// TODO 1D any node where parent node != current node
 			case 'workspace':
 				state = StateLib.requestꓽfile_output(state, {
 					manifest: ᐧnvmrc__manifest,
 					path: ᐧnvmrc__path,
+					node,
 					mode: 'replace',
 					content: {
-						value: semver.major(runtimeⵧlocal.versionsⵧacceptable)
-					}
+						value: major,
+					},
 				})
-				return state
+				break
 			default:
 				state = StateLib.requestꓽfile_output(state, {
 					manifest: ᐧnvmrc__manifest,
 					path: ᐧnvmrc__path,
+					node,
 					mode: 'delete',
 				})
 				break

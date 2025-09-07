@@ -99,6 +99,7 @@ function updateⵧfrom_manifest(details: PureModuleDetails, _manifest: PureModul
 		throw new Error(`Unknown keys in manifest: "${Array.from(unprocessed_keys).join(', ')}"!`)
 	}
 }
+
 /////////////////////////////////////////////////
 
 export {

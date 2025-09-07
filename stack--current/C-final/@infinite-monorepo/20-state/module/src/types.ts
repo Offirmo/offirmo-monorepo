@@ -1,13 +1,11 @@
 import type { Immutable, JSONObject } from '@offirmo-private/ts-types'
-import type { AbsoluteFilePath } from '@offirmo-private/ts-types'
 import type {
 	InfiniteMonorepoSpec,
 	Node,
-	StructuredFsOutput,
-	StructuredFsOutputⳇFileManifest,
 	MultiRepoRelativeFilePath,
-	StructuredFsⳇFileManifest, NodeRelativePath,
+	StructuredFsⳇFileManifest,
 } from '@infinite-monorepo/types'
+import * as StateLib from './index.ts'
 
 /////////////////////////////////////////////////
 
@@ -23,15 +21,15 @@ interface BaseFileOutput {
 }
 
 export interface FileOutputAbsent extends BaseFileOutput {
-
+	intent: 'not-present'
 }
 export interface FileOutputPresent extends BaseFileOutput {
-	manifest: StructuredFsⳇFileManifest,
-	content: JSONObject,
+	intent: 'present--exact' | 'present--containing'
+	manifest: StructuredFsⳇFileManifest
+	content: JSONObject
 }
 
 /////////////////////////////////////////////////
-
 
 export type AsyncCallbackReducer = <T>(
 	state: Immutable<State>,
@@ -66,4 +64,20 @@ export interface State {
 	pending_async_ops: {
 		[key: string]: Promise<Reducer>
 	}*/
+}
+
+/////////////////////////////////////////////////
+
+export interface Plugin {
+	// on plugin load
+	onꓽload: (state: Immutable<StateLib.State>) => Immutable<StateLib.State>
+
+	// to gather facts (and not opinions!)
+	onꓽnodeⵧdiscovered: (
+		state: Immutable<StateLib.State>,
+		node: Immutable<Node>,
+	) => Immutable<StateLib.State>
+
+	// to reac the ideal state (file outputs)
+	onꓽapply: (state: Immutable<StateLib.State>, node: Immutable<Node>) => Immutable<StateLib.State>
 }

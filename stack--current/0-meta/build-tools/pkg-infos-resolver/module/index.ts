@@ -25,6 +25,7 @@ const OVERRIDES: Record<string, {}> = {
 }
 assert(NODE_MAJOR_VERSION === 22, `pkg-infos-resolver should be up to date with NODE_MAJOR_VERSION!`)
 
+// TODO why is type-fest misdetected?
 
 class PkgInfosResolver {
 	#packageᐧjson_cache: Record<string, any> = {}
@@ -90,7 +91,7 @@ class PkgInfosResolver {
 			return
 		}
 
-		console.log(`PkgVersionResolver querying "${pkg_name}"…`)
+		console.log(`PkgVersionResolver now querying "${pkg_name}"…`)
 		this.#pending_promises[pkg_name] = packageJson(pkg_name, {
 			...OVERRIDES[pkg_name],
 			fullMetadata: true
@@ -98,13 +99,13 @@ class PkgInfosResolver {
 			.then(
 				(content) => {
 					this.#packageᐧjson_cache[pkg_name] = content
-					console.log(`${auto ? 'auto' : '    '} package.json loaded for "${pkg_name}" v${semver.clean(content.version)} (${`includes types? ${_has_typescript_types(content as any)}`})`)
+					console.log(`${auto ? 'preemptive' : '    '} package.json loaded for "${pkg_name}" v${semver.clean(content.version)} (${`includes types? ${_has_typescript_types(content as any)}`})`)
 					//console.log(`XXX content`, content)
 					return content // for chaining
 				},
 				err => {
 					if (auto && (err as any)?.name === 'PackageNotFoundError') {
-						console.log(`Auto pkg ${pkg_name} not found, ignoring.`)
+						console.log(`Preemptive pkg ${pkg_name} not found, ignoring.`)
 						return
 					}
 					throw err
@@ -124,10 +125,12 @@ class PkgInfosResolver {
 				.then(content => {
 					if (_has_typescript_types(content)) {
 						// no need to search for a types package, it's already included
+						console.log(`Preemptive "${potential_types_pkg_name}" is not needed, types are already included in "${pkg_name}"`)
 						return
 					}
 
 					// this will replace the previous promise
+					console.log(`types are NOT already included in "${pkg_name}", continuing preemptive "${potential_types_pkg_name}" preload`)
 					// MAY FAIL, it's ok
 					this.preload(potential_types_pkg_name, true)
 					return this.#pending_promises[potential_types_pkg_name]
@@ -279,6 +282,9 @@ function _has_typescript_types(packageᐧjson: PackageJson): boolean {
 	)
 		return true
 
+	if (packageᐧjson.name === 'strip-bom') {
+		console.log(`XXX @types/strip-bom`, packageᐧjson)
+	}
 	return false
 }
 

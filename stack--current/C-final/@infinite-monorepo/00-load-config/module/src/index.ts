@@ -1,7 +1,10 @@
 import * as process from 'node:process'
 import * as path from 'node:path'
 import { homedir } from 'node:os'
-import { ↆloadꓽfileⵧimport, ↆloadꓽfile } from '@infinite-monorepo/load-any-structured-file'
+import {
+	ↆloadꓽfileⵧimport,
+	ↆloadꓽfile,
+} from '@infinite-monorepo/read-write-any-structured-file/read'
 
 import type { JSONObject, AbsoluteDirPath, AbsoluteFilePath } from '@offirmo-private/ts-types'
 import { lsDirsSync, lsFilesSync } from '@offirmo-private/fs--ls'
@@ -14,16 +17,14 @@ interface Result {
 	parent_folder_path‿abs: AbsoluteDirPath
 	exact_file_path‿abs: AbsoluteFilePath | null // can be null if no file
 	boundary?: // is that a boundary?
-		| 'git' // parent_folder_path‿abs is a git repo root
-		        // NOTE could there be more than one? (if git submodules)
+	| 'git' // parent_folder_path‿abs is a git repo root
+		// NOTE could there be more than one? (if git submodules)
 		| 'home' // parent_folder_path‿abs is a user folder (home, ~)
 		| 'fs' // parent_folder_path‿abs is a fs root
 		| 'package' // if has package.json. Lowest priority compared to the other boundaries. will only appear if no other boundary found yet. (won't have package twice in the chain)
 }
 
 /////////////////////////////////////////////////
-
-
 
 /* get a full chain of configs
  * ordered from top (fs root) to bottom (closest to cwd)
@@ -33,7 +34,10 @@ interface Result {
 interface LoadChainOptions {
 	defaults?: JSONObject | undefined
 }
-async function loadꓽconfigⵧchain(radix: string, options: Partial<LoadChainOptions> = {}): Promise<Array<Result>> {
+async function loadꓽconfigⵧchain(
+	radix: string,
+	options: Partial<LoadChainOptions> = {},
+): Promise<Array<Result>> {
 	const chain: Array<Result> = []
 	const promises: Array<Promise<any>> = []
 
@@ -118,17 +122,18 @@ interface LoadTopmostOptions {
 	defaults?: JSONObject
 	boundary?: Result['boundary']
 }
-async function loadꓽconfigⵧtopmost(radix: string, options: LoadTopmostOptions = {}): Promise<Result> {
+async function loadꓽconfigⵧtopmost(
+	radix: string,
+	options: LoadTopmostOptions = {},
+): Promise<Result> {
 	const chain = await loadꓽconfigⵧchain(radix, { defaults: options['defaults'] })
 
-	const start_index = options['boundary']
-		? chain.findIndex(result => result.boundary === options['boundary'])
-		: 0
+	const start_index =
+		options['boundary'] ? chain.findIndex(result => result.boundary === options['boundary']) : 0
 	assert(start_index >= 0, `Requested boundary not found!`)
 
 	for (let i = start_index; i < chain.length; i++) {
-		if (chain[i]?.data)
-			return chain[i]!
+		if (chain[i]?.data) return chain[i]!
 	}
 
 	throw new Error(`No config found within the requested boundary!`)

@@ -14,7 +14,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@infinite-monorepo/load-any-structured-file": "*",
+		"@infinite-monorepo/read-write-any-structured-file": "*",
 		"@offirmo-private/fs--ls": "*",
 		"tiny-invariant": "^1"
 	},

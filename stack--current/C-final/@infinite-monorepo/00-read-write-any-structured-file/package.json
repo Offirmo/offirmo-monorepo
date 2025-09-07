@@ -1,5 +1,5 @@
 {
-	"name": "@infinite-monorepo/load-any-structured-file",
+	"name": "@infinite-monorepo/read-write-any-structured-file",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -7,14 +7,15 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/src/index.ts"
+		".": "./module/src/types.ts",
+		"./read": "./module/src/read/index.ts",
+		"./write": "./module/src/write/index.ts"
 	},
 	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
 	"dependencies": {
-		"@offirmo-private/fs--ls": "*",
 		"json5": "^2",
 		"split-lines": "^3",
 		"strip-bom": "^5",
@@ -22,7 +23,7 @@
 		"yaml": "^2"
 	},
 	"scripts": {
-		"check--ts": "echo \"@infinite-monorepo/load-any-structured-file\" && tsc --noEmit",
+		"check--ts": "echo \"@infinite-monorepo/read-write-any-structured-file\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts",

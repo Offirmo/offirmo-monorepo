@@ -92,8 +92,8 @@ alias     monoBdg='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias     monoBoc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd B-backend/;        cd offirmo-api--client/;                                     tabset --badge monoBoc'
 alias     monoBoi='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd B-backend/;        cd offirmo-api--interface/;                                  tabset --badge monoBoi'
 
-alias     monoC@0='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/00-load-any-structured-file/;          tabset --badge monoC@0'
-alias    monoC@02='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/00-load-config/;                       tabset --badge monoC@02'
+alias     monoC@0='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/00-load-config/;                       tabset --badge monoC@0'
+alias    monoC@02='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/00-read-write-any-structured-file/;    tabset --badge monoC@02'
 alias    monoC@03='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/01-types/;                             tabset --badge monoC@03'
 alias    monoC@04='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/02-defaults/;                          tabset --badge monoC@04'
 alias     monoC@1='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd C-final/;          cd @infinite-monorepo/10-load-spec/;                         tabset --badge monoC@1'

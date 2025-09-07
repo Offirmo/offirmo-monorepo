@@ -725,6 +725,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 
 				switch (type ?? 1) {
 					case 0: {
+						console.log(`${indent}    ↘ adding dep ${dependency_name} as ${dep_type}`)
 						raw_deps.push({ label: dependency_name, type: dep_type })
 						break
 					}
@@ -732,6 +733,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 					case 1:
 						// types are needed in dev only
 						// even if published as pure TS module, node type stripping will remove those deps in prod
+						console.log(`${indent}    ↘ adding dep ${dependency_name} as dev`)
 						raw_deps.push({ label: dependency_name, type: 'dev' })
 						break
 
@@ -740,11 +742,14 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 				}
 
 				if (langs.includes('ts')) {
-					console.log(`${indent}      ↳ Checking for potential @types/ package for "${dependency_name}"…`)
+					console.log(`${indent}      ↳ Preemtively checking for potential @types/ package for "${dependency_name}"…`)
 					pending_promises.push(
 						pkg_infos_resolver.ↆgetꓽextra_typings_pkg_name_for(dependency_name)
 							.then(name => {
-								if (name) raw_deps.push({ label: name, type: 'dev' })
+								if (name) {
+									console.log(`${indent} found @types/ package for "${dependency_name}": "${name}, adding it!`)
+									raw_deps.push({ label: name, type: 'dev' })
+								}
 							})
 					)
 				}
@@ -873,6 +878,7 @@ async function getꓽpure_module_details(module_path: AnyPath, options: Partial<
 	Object.entries(result._manifest._overrides?.dependencies || {}).forEach(([label, details]) => {
 		if (details === 'ignore') return
 
+		console.log(`${indent}    ↘ adding *overrides* dep ${label} as ${details.type || 'normal'}`)
 		raw_deps.push({label, type: details.type || 'normal'})
 	})
 	const hasꓽdependency_onꓽReact = raw_deps.some(({label}) => label === 'react')

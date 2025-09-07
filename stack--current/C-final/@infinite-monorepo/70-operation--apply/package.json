@@ -14,6 +14,11 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@infinite-monorepo/load-spec": "*",
+		"@infinite-monorepo/plugin--nvm": "*",
+		"@infinite-monorepo/read-write-any-structured-file": "*",
+		"@infinite-monorepo/state": "*",
+		"@offirmo-private/prettify-any": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
@@ -25,7 +30,9 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@types/node": "^22",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

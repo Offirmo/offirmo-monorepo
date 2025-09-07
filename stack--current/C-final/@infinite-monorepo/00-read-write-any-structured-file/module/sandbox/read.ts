@@ -1,4 +1,4 @@
-import { ↆloadꓽfile } from '@infinite-monorepo/load-any-structured-file'
+import { ↆloadꓽfile } from '@infinite-monorepo/read-write-any-structured-file/read'
 import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -19,7 +19,7 @@ console.log(result2)
 //const result4 = await ↆloadꓽfile(path.join(__root, '.yarnrc'))
 //console.log(result4)
 
-// 'lines' // multiple lines  ex. .gitignore WILL STRIP COMMENTS
+// 'list' // multiple lines  ex. .gitignore WILL STRIP COMMENTS
 const result5 = await ↆloadꓽfile(path.join(__root, '.gitignore'))
 console.log(result5)
 

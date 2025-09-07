@@ -1,19 +1,20 @@
+import * as path from 'node:path'
 import assert from 'tiny-invariant'
 import type { JSONObject, Immutable, AbsolutePath } from '@offirmo-private/ts-types'
 
-import type {
-	InfiniteMonorepoSpec,
-	Node,
-	NodeⳇWorkspace,
-	StructuredFsⳇFileManifest,
-	MultiRepoRelativeFilePath, NodeRelativePath,
+import {
+	type InfiniteMonorepoSpec,
+	type Node,
+	type NodeⳇWorkspace,
+	type StructuredFsⳇFileManifest,
+	type MultiRepoRelativeFilePath,
+	type NodeRelativePath,
+	PATHVARⵧROOTⵧWORKSPACE,
+	PATHVARⵧROOTⵧNODE,
 } from '@infinite-monorepo/types'
 import { completeꓽspec } from '@infinite-monorepo/defaults'
 
-import type {
-	State,
-	FileOutputAbsent, FileOutputPresent,
-} from './types.ts'
+import type { State, FileOutputAbsent, FileOutputPresent } from './types.ts'
 import * as semver from 'semver'
 
 /////////////////////////////////////////////////
@@ -42,7 +43,8 @@ function onꓽspec_loaded(state: Immutable<State>, spec: InfiniteMonorepoSpec): 
 	const root_node: NodeⳇWorkspace = {
 		type: 'workspace',
 		path‿abs: spec.root_path‿abs,
-		path‿ar: '$WORKSPACE_ROOT/',
+		path‿ar: '$WORKSPACE_ROOT$/',
+		parent: null,
 	}
 
 	return registerꓽnode(
@@ -54,17 +56,22 @@ function onꓽspec_loaded(state: Immutable<State>, spec: InfiniteMonorepoSpec): 
 	)
 }
 
+// XXX TODO parent!
 function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
-	DEBUG && console.debug('Registering node...', node.path)
+	DEBUG && console.debug('Registering node...', node.path‿abs)
 
-	assert(state.graph.nodesⵧall[node.path] === undefined, `Node already registered: ${node.path}!`)
+	assert(
+		state.graph.nodesⵧall[node.path‿abs] === undefined,
+		`Node already registered: ${node.path‿abs}!`,
+	)
+
 	return {
 		...state,
 		graph: {
 			...state.graph,
 			nodesⵧall: {
 				...state.graph.nodesⵧall,
-				[node.path]: {
+				[node.path‿abs]: {
 					...node,
 					status: 'new',
 				},
@@ -73,10 +80,10 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 	}
 }
 function reportꓽnodeⵧanalyzed(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
-	DEBUG && console.debug('Marking node analyzed...', node.path)
+	DEBUG && console.debug('Marking node analyzed...', node.path‿abs)
 
-	assert(!!state.graph.nodesⵧall[node.path], `Node expected: ${node.path}!`)
-	assert(state.graph.nodesⵧall[node.path].status === 'new', `Node not new: ${node.path}!`)
+	assert(!!state.graph.nodesⵧall[node.path‿abs], `Node expected: ${node.path‿abs}!`)
+	assert(state.graph.nodesⵧall[node.path‿abs]?.status === 'new', `Node not new: ${node.path‿abs}!`)
 
 	return {
 		...state,
@@ -84,7 +91,7 @@ function reportꓽnodeⵧanalyzed(state: Immutable<State>, node: Immutable<Node>
 			...state.graph,
 			nodesⵧall: {
 				...state.graph.nodesⵧall,
-				[node.path]: {
+				[node.path‿abs]: {
 					...node,
 					status: 'analyzed',
 				},
@@ -114,12 +121,28 @@ function declareꓽfile_manifest(
 }
 
 function _resolveꓽarpath(
+	state: Immutable<State>,
 	arpath: MultiRepoRelativeFilePath,
 	node?: Immutable<Node> | undefined,
 ): AbsolutePath {
-	throw new Error(`Not implemented!`)
+	const first_segment = arpath.split('/')[0]
+	assert(
+		!!first_segment && first_segment.startsWith('$') && first_segment.endsWith('$'),
+		`Invalid arpath NOT starting with a $PATHVAR$: "${arpath}"!`,
+	)
+
+	switch (first_segment) {
+		case PATHVARⵧROOTⵧNODE: {
+			assert(!!node, `Need a node to resolve ${PATHVARⵧROOTⵧNODE}!`)
+
+			return path.resolve(node.path‿abs, arpath.slice(first_segment.length + 1))
+		}
+		default:
+			throw new Error(`Unknown or unsupported $PATHVAR$: "${first_segment}"!`)
+	}
 }
 
+/*
 function ensureꓽfile_loading(
 	state: Immutable<State>,
 	parent_node: Immutable<Node>,
@@ -133,12 +156,21 @@ function ensureꓽfile_loading(
 		return state
 	}
 	throw new Error('not implemented!')
-}
+}*/
 
-function requestꓽfile_output(state: Immutable<State>, spec: Immutable<FileOutputAbsent>): Immutable<State>;
-function requestꓽfile_output(state: Immutable<State>, spec: Immutable<FileOutputPresent>): Immutable<State>;
-function requestꓽfile_output(state: Immutable<State>, spec: Immutable<FileOutputAbsent | FileOutputPresent>): Immutable<State> {
-	const path‿abs = _resolveꓽarpath(spec.path, spec.node)
+function requestꓽfile_output(
+	state: Immutable<State>,
+	spec: Immutable<FileOutputAbsent>,
+): Immutable<State>
+function requestꓽfile_output(
+	state: Immutable<State>,
+	spec: Immutable<FileOutputPresent>,
+): Immutable<State>
+function requestꓽfile_output(
+	state: Immutable<State>,
+	spec: Immutable<FileOutputAbsent | FileOutputPresent>,
+): Immutable<State> {
+	const path‿abs = _resolveꓽarpath(state, spec.path, spec.node)
 
 	const existing = state.output_files[path‿abs]
 	if (existing) {
@@ -151,7 +183,7 @@ function requestꓽfile_output(state: Immutable<State>, spec: Immutable<FileOutp
 		output_files: {
 			...state.output_files,
 			[path‿abs]: spec,
-		}
+		},
 	}
 }
 
@@ -163,6 +195,5 @@ export {
 	registerꓽnode,
 	reportꓽnodeⵧanalyzed,
 	declareꓽfile_manifest,
-	ensureꓽfile_loading,
 	requestꓽfile_output,
 }

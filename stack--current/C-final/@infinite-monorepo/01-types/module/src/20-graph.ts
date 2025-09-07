@@ -15,8 +15,8 @@ export type WorkspaceRelativePath = `${typeof PATHVARⵧROOTⵧWORKSPACE}/${stri
 export const PATHVARⵧROOTⵧPACKAGE = `$${NODE_TYPEⵧPACKAGE.toUpperCase()}_ROOT$` as const
 export type PackageRelativePath = `${typeof PATHVARⵧROOTⵧPACKAGE}/${string}`
 
-export const PATHVARⵧROOTⵧANY = `$NODE_ROOT$` as const
-export type NodeRelativePath = `${typeof PATHVARⵧROOTⵧANY}/${string}`
+export const PATHVARⵧROOTⵧNODE = `$NODE_ROOT$` as const
+export type NodeRelativePath = `${typeof PATHVARⵧROOTⵧNODE}/${string}`
 
 export type MultiRepoRelativePath =
 	| WorkspaceRelativePath
@@ -84,6 +84,6 @@ export interface NodeⳇPackage extends Package {
 }
 export interface NodeⳇWorkspace extends Workspace {
 	type: typeof NODE_TYPEⵧWORKSPACE
-	parent: unknown // so far
+	parent: null // so far
 }
 export type Node = NodeⳇPackage | NodeⳇWorkspace
