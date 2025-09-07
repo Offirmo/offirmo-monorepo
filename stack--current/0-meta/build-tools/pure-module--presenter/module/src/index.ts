@@ -427,7 +427,6 @@ ${pure_module_details.description || ''}
 		_schedule_root_file_creation('webstorm--tests--unit.run.xml', `
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" name="${pure_module_details.fqname} -- TESTS -- UNIT" type="mocha-javascript-test-runner">
-		<node-interpreter>$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
 		<mocha-package>$USER_HOME$/${path.relative(process.env['HOME'], path.resolve(bolt_root))}/node_modules/mocha</mocha-package>
 		<working-directory>$USER_HOME$/${dest_dir__from_HOME‿rel}</working-directory>
@@ -439,7 +438,8 @@ ${pure_module_details.description || ''}
 		<method v="2" />
 	</configuration>
 </component>
-`)
+`) // 		<node-interpreter>$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node</node-interpreter>
+
 	}
 	else {
 		ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--tests--unit.xml'), { force: true }))
@@ -451,7 +451,6 @@ ${pure_module_details.description || ''}
 		_schedule_root_file_creation('webstorm--tests--evals.run.xml', `
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" name="${pure_module_details.fqname} -- TESTS -- EVALS" type="mocha-javascript-test-runner">
-		<node-interpreter>$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
 		<mocha-package>$USER_HOME$/${path.relative(process.env['HOME'], path.resolve(bolt_root))}/node_modules/mocha</mocha-package>
 		<working-directory>$USER_HOME$/${dest_dir__from_HOME‿rel}</working-directory>
@@ -463,7 +462,7 @@ ${pure_module_details.description || ''}
 		<method v="2" />
 	</configuration>
 </component>
-`)
+`) // 		<node-interpreter>$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node</node-interpreter>
 	}
 	else {
 		ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--tests--evals.run.xml'), { force: true }))
@@ -476,14 +475,13 @@ ${pure_module_details.description || ''}
 	<configuration default="false"
 		name="${pure_module_details.fqname} -- Demo"
 		type="NodeJSConfigurationType"
-		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
 		node-parameters="--experimental-strip-types"
 		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧdemo.path‿abs)}"
 		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
 		<method v="2" />
 	</configuration>
 </component>
-`)
+`)// 		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
 		}
 		else {
 			ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--demo.run.xml'), { force: true }))
@@ -501,7 +499,6 @@ ${pure_module_details.description || ''}
 	<configuration default="false"
 		name="${pure_module_details.fqname} -- Sandbox"
 		type="NodeJSConfigurationType"
-		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
 		node-parameters="--experimental-strip-types"
 		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧsandbox.path‿abs)}"
 		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
@@ -509,6 +506,7 @@ ${pure_module_details.description || ''}
 	</configuration>
 </component>
 `)
+			// 		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
 		}
 		else {
 			ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--sandbox.run.xml'), { force: true }))
@@ -522,14 +520,13 @@ ${pure_module_details.description || ''}
 	<configuration default="false"
 		name="${pure_module_details.fqname} -- Start"
 		type="NodeJSConfigurationType"
-		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
 		node-parameters="--experimental-strip-types"
 		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧmain.path‿abs)}"
 		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
 		<method v="2" />
 	</configuration>
 </component>
-`)
+`) // 		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
 		}
 		else {
 			ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--start.run.xml'), { force: true }))
