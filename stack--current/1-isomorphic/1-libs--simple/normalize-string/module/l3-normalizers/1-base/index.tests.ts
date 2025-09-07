@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import { LIB } from '../../consts.ts'
 import type { StringNormalizer } from '../../l1-types/types.ts'
 import * as NORMALIZERS from './index.ts'
-import { ensure_string } from './index.ts'
+import { capitalizeⵧwords, capitalizeⵧwordsⵧadvanced, ensure_string } from './index.ts'
 
 /////////////////////////////////////////////////
 
@@ -24,6 +24,25 @@ describe(`${LIB} -- base`, function() {
 			' a': ' a',
 			'foo': 'Foo',
 			'FoO': 'FoO',
+			' foo  bar-baz ': ' foo  bar-baz ',
+		},
+		capitalizeⵧwords: {
+			'': '',
+			' ': ' ',
+			'a': 'A',
+			' a': ' A',
+			'foo': 'Foo',
+			'FoO': 'FoO',
+			' foo  bar-baz ': ' Foo  Bar-baz ',
+		},
+		capitalizeⵧwordsⵧadvanced: {
+			'': '',
+			' ': ' ',
+			'a': 'A',
+			' a': ' A',
+			'foo': 'Foo',
+			'FoO': 'FoO',
+			' foo  bar-baz ': ' Foo  Bar-Baz ',
 		},
 
 		to_lower_case: {
@@ -97,6 +116,10 @@ describe(`${LIB} -- base`, function() {
 			'foo-bar': 'foo bar',
 			'++foo/bar++': '  foo bar  ',
 			'Lord_Mok': 'Lord Mok',
+		},
+
+		coerce_underscores_to_space: {
+			'_hello_world__bob_': ' hello world  bob ',
 		},
 
 		convert_spaces_to_camel_case: {

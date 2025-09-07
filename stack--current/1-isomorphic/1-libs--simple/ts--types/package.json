@@ -28,7 +28,6 @@
 		"@offirmo/unit-test-toolbox": "^9",
 		"npm-run-all": "^4",
 		"tslib": "^2",
-		"type-fest": "^4",
 		"typescript": "^5"
 	}
 }

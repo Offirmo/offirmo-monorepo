@@ -16,7 +16,7 @@ function create(root‿abspath: AbsolutePath): PureModuleDetails {
 			_path.pop()
 
 		let segment = _path.pop()!
-		while ('0123456789-'.includes(segment[0]))
+		while (segment.length > 1 && '0123456789-'.includes(segment[0]!))
 			segment = segment.slice(1)
 		return segment
 	})()

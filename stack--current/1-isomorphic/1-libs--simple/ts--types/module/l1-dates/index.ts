@@ -1,4 +1,4 @@
-import type { DigitCharacter } from 'type-fest'
+import type { DigitCharacter } from '../l0-broken-type-fest/index.ts'
 
 export type YYYY = `2${DigitCharacter}${DigitCharacter}${DigitCharacter}`
 
@@ -30,4 +30,6 @@ export type DD =
 	| '30'
 	| '31'
 
-export type YYYYᝍMMᝍDD = `${YYYY}-${MM}-${DD}`
+// too complex to represent
+//export type YYYYᝍMMᝍDD = `${YYYY}-${MM}-${DD}`
+export type YYYYᝍMMᝍDD = `${string}-${string}-${string}`
