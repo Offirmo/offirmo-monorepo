@@ -6,7 +6,7 @@ import {
 	ↆloadꓽfile,
 } from '@infinite-monorepo/read-write-any-structured-file/read'
 
-import type { JSONObject, AbsoluteDirPath, AbsoluteFilePath } from '@offirmo-private/ts-types'
+import type { JSONObject, AbsoluteDirPath, AbsoluteFilePath, PathSeparator } from '@offirmo-private/ts-types'
 import { lsDirsSync, lsFilesSync } from '@offirmo-private/fs--ls'
 import { strict as assert } from 'node:assert'
 
@@ -47,7 +47,7 @@ async function loadꓽconfigⵧchain(
 	let found_boundary_yet = false
 
 	while (segments.length > 0) {
-		const current_path‿abs: AbsoluteDirPath = segments.join(path.sep) + path.sep // trailing sep also handles root
+		const current_path‿abs: AbsoluteDirPath = `${segments.join(path.sep)}${path.sep as PathSeparator}` // trailing sep also handles root
 
 		// TODO 1D handle possible permission issues, esp. close to root
 		const child_dirs_pathes‿rel = lsDirsSync(current_path‿abs, { full_path: false })
@@ -141,7 +141,7 @@ async function loadꓽconfigⵧtopmost(
 
 async function loadꓽconfigⵧclosest(
 	radix: string,
-	options: Options = {},
+	options = {},
 ): Promise<[JSONObject, AbsoluteDirPath, AbsoluteFilePath | null]> {
 	throw new Error(`No "${radix}/index.ts" found within the closest git repo!`)
 }

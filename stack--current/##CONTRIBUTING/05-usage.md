@@ -48,6 +48,7 @@ bolt --only-fs "[0-9]-*/**/*" ws run check
       bolt --only-fs "C-final/@tbrpg/1-logic/l3-*" ws run check
 
 ## Alt:
+bolt --only @infinite-monorepo/* ws run check
 bolt --only @oh-my-rpg/* ws run check
 bolt --only-fs "A-apps--core/**/*" ws run check
 bolt --only-fs "B-apps--support/**/*" ws run check
