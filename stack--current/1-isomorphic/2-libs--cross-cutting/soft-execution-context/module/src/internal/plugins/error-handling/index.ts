@@ -185,8 +185,8 @@ const PLUGIN: SXCPlugin = {
 
 			const params = SXC.getInjectedDependencies()
 
-			// @ts-expect-error @types/node 22 missing it
-			return Promise.try(() => fn(params))
+			// TODO actual Promise.try in 2026
+			return Promise.resolve().then(() => fn(params))
 				.catch((err: unknown) => {
 					_handleError({
 						SXC,

@@ -1,5 +1,6 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" name="@tbrpg/definitions -- TESTS -- UNIT" type="mocha-javascript-test-runner">
+		<node-interpreter>project</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
 		<mocha-package>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/node_modules/mocha</mocha-package>
 		<working-directory>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/C-final/@tbrpg/1-logic/l1-definitions</working-directory>

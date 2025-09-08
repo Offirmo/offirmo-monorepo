@@ -177,7 +177,6 @@
 		"terminal-size": "^4",
 		"tildify": "^3",
 		"tslib": "^2",
-		"type-fest": "^4",
 		"typescript": "^5",
 		"typescript-string-enums": "^1",
 		"wrangler": "^4",

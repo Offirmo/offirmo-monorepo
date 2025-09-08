@@ -2,6 +2,7 @@
 	<configuration default="false"
 		name="@infinite-monorepo/read-write-any-structured-file -- Sandbox"
 		type="NodeJSConfigurationType"
+		<node-interpreter>project</node-interpreter>
 		node-parameters="--experimental-strip-types"
 		path-to-js-file="module/sandbox/read.ts"
 		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/C-final/@infinite-monorepo/00-read-write-any-structured-file">

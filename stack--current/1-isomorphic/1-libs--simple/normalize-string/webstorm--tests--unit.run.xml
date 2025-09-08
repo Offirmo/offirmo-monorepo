@@ -1,5 +1,6 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" name="@offirmo-private/normalize-string -- TESTS -- UNIT" type="mocha-javascript-test-runner">
+		<node-interpreter>project</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
 		<mocha-package>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/node_modules/mocha</mocha-package>
 		<working-directory>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/1-libs--simple/normalize-string</working-directory>

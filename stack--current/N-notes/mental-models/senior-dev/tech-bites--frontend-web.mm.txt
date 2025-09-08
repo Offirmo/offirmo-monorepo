@@ -24,6 +24,7 @@ AI -- If you had a machine that could instantly recall or create any facet of in
 AI -- super app = LLM becomes the super app? https://aifoc.us/a-link-is-all-you-need/
 AMP "Accelerated Mobile Pages"
 animations -- API https://devdocs.io/dom/web_animations_api
+API intl https://intlin.site/
 APIs web
 app -- a11y
 app -- a11y -- Heydon's 12 principles https://github.com/Heydon/principles-of-web-accessibility
@@ -402,6 +403,7 @@ SPA https://www.matuzo.at/blog/2023/single-page-applications-criticism
 SPA vs MPA
 speed -- best practices -- yahoo https://developer.yahoo.com/performance/rules.html
 speed -- cookie-free domain https://sstatic.net/
+speeding up the JS ecosystem https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-12/
 spirit -- browsing https://christianheilmann.com/2024/09/15/lets-bring-back-browsing/
 spirit -- fun websites, silly websites, curious websites, websites that bend, delight, amuse and entertain, websites for people on planet earth, and there will be no shareholder value, but the websites will be built, and they will be enjoyed https://dev.to/whitep4nth3r/the-promise-that-wasnt-kept-3554
 spirit -- the web contract = Everyone who publishes on the Web knows that their content can be copied and used by anyone for any purpose. This has always been a risk of providing content on the Web. https://meiert.com/en/blog/the-web-contract/

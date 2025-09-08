@@ -1,6 +1,6 @@
-const {
+import {
 	promiseTry,
-} = require('../../dist/src.es2024.esm/index.ts')
+} from '@offirmo-private/promise-try'
 
 promiseTry(() => { throw new Error('Oups!') })
 	.then(

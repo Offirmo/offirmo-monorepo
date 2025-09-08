@@ -14,6 +14,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/promise-try": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {

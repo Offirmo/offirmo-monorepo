@@ -2,3 +2,4 @@ code editor
 color scheme
 programming font https://www.programmingfonts.org/
 terminal
+https://musicforprogramming.net/latest/

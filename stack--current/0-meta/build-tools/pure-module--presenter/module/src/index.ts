@@ -427,6 +427,7 @@ ${pure_module_details.description || ''}
 		_schedule_root_file_creation('webstorm--tests--unit.run.xml', `
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" name="${pure_module_details.fqname} -- TESTS -- UNIT" type="mocha-javascript-test-runner">
+		<node-interpreter>project</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
 		<mocha-package>$USER_HOME$/${path.relative(process.env['HOME'], path.resolve(bolt_root))}/node_modules/mocha</mocha-package>
 		<working-directory>$USER_HOME$/${dest_dir__from_HOME‿rel}</working-directory>
@@ -451,6 +452,7 @@ ${pure_module_details.description || ''}
 		_schedule_root_file_creation('webstorm--tests--evals.run.xml', `
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false" name="${pure_module_details.fqname} -- TESTS -- EVALS" type="mocha-javascript-test-runner">
+		<node-interpreter>project</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
 		<mocha-package>$USER_HOME$/${path.relative(process.env['HOME'], path.resolve(bolt_root))}/node_modules/mocha</mocha-package>
 		<working-directory>$USER_HOME$/${dest_dir__from_HOME‿rel}</working-directory>
@@ -475,6 +477,7 @@ ${pure_module_details.description || ''}
 	<configuration default="false"
 		name="${pure_module_details.fqname} -- Demo"
 		type="NodeJSConfigurationType"
+		<node-interpreter>project</node-interpreter>
 		node-parameters="--experimental-strip-types"
 		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧdemo.path‿abs)}"
 		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
@@ -499,6 +502,7 @@ ${pure_module_details.description || ''}
 	<configuration default="false"
 		name="${pure_module_details.fqname} -- Sandbox"
 		type="NodeJSConfigurationType"
+		<node-interpreter>project</node-interpreter>
 		node-parameters="--experimental-strip-types"
 		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧsandbox.path‿abs)}"
 		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
@@ -520,6 +524,7 @@ ${pure_module_details.description || ''}
 	<configuration default="false"
 		name="${pure_module_details.fqname} -- Start"
 		type="NodeJSConfigurationType"
+		<node-interpreter>project</node-interpreter>
 		node-parameters="--experimental-strip-types"
 		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧmain.path‿abs)}"
 		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">

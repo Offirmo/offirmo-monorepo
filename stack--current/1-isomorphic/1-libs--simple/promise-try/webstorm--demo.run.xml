@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+	<configuration default="false"
+		name="@offirmo-private/promise-try -- Demo"
+		type="NodeJSConfigurationType"
+		<node-interpreter>project</node-interpreter>
+		node-parameters="--experimental-strip-types"
+		path-to-js-file="module/##demo/demo.ts"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/1-libs--simple/promise-try">
+		<method v="2" />
+	</configuration>
+</component>
