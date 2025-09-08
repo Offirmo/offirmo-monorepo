@@ -98,7 +98,7 @@ function decorateWithDetectedEnv<Injections, AnalyticsDetails, ErrorDetails>(SXC
 		OS_NAME: browser.getOSName(),
 		OS_RELEASE: browser.getOSVersion(),
 		BROWSER_NAME: browser.getBrowserName(),
-		BROWSER_VERSION: browser.getBrowserVersion(),
+		BROWSER_VERSION: browser.getBrowserVersion() || 'unknown',
 		DEVICE_TYPE: browser.getPlatformType(),
 	}
 

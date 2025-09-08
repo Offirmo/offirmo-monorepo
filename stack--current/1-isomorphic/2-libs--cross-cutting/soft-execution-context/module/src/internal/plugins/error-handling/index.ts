@@ -193,7 +193,7 @@ const PLUGIN: SXCPlugin = {
 						debugId: 'xPromiseTry',
 						shouldRethrow: true, // <-- Note this!!
 					}, err)
-				})
+				}) as any // stupid TS
 		}
 	},
 }

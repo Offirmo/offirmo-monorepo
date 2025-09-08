@@ -38,11 +38,14 @@ bolt --only-fs "[0-9]-*/**/*" ws run check
     bolt --only-fs "4-engine--browser/2-libs--cross-cutting/*" ws run check
     bolt --only-fs "4-engine--browser/X-incubator/active/*" ws run check
   bolt --only-fs "7-multimorphi*/**/*" ws run check
-    bolt --only-fs "7-multimorphic/libs--rpg/*" ws run check
-    bolt --only-fs "7-multimorphic/libs--the-boring-rpg/*" ws run check
-      bolt --only-fs "7-multimorphic/libs--the-boring-rpg/l1-*" ws run check
-      bolt --only-fs "7-multimorphic/libs--the-boring-rpg/l2-*" ws run check
-      bolt --only-fs "7-multimorphic/libs--the-boring-rpg/l3-*" ws run check
+    bolt --only-fs "7-multimorphic/@oh-my-rpg/*" ws run check
+  bolt --only-fs "B-backend/*" ws run check
+  bolt --only-fs "C-fina*/**/*" ws run check
+    bolt --only-fs "C-final/@infinite-monorepo/*" ws run check
+    bolt --only-fs "C-final/@tbrp*/**/*" ws run check
+      bolt --only-fs "C-final/@tbrpg/1-logic/l1-*" ws run check
+      bolt --only-fs "C-final/@tbrpg/1-logic/l2-*" ws run check
+      bolt --only-fs "C-final/@tbrpg/1-logic/l3-*" ws run check
 
 ## Alt:
 bolt --only @oh-my-rpg/* ws run check
