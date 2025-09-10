@@ -16,7 +16,7 @@
 	"dependencies": {
 		"@infinite-monorepo/defaults": "*",
 		"@infinite-monorepo/types": "*",
-		"semver": "^7",
+		"@offirmo-private/type-detection": "*",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
@@ -30,7 +30,6 @@
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@types/node": "^22",
-		"@types/semver": "^7",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"

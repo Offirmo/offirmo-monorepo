@@ -15,7 +15,9 @@
 	},
 	"dependencies": {
 		"@infinite-monorepo/load-spec": "*",
+		"@infinite-monorepo/plugin--git": "*",
 		"@infinite-monorepo/plugin--nvm": "*",
+		"@infinite-monorepo/plugin--parcel": "*",
 		"@infinite-monorepo/read-write-any-structured-file": "*",
 		"@infinite-monorepo/state": "*",
 		"@offirmo-private/prettify-any": "*",

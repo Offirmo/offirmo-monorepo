@@ -8,15 +8,11 @@ import {
 	type NodeⳇWorkspace,
 	type StructuredFsⳇFileManifest,
 	type MultiRepoRelativeFilePath,
-	type NodeRelativePath,
-	PATHVARⵧROOTⵧWORKSPACE,
 	PATHVARⵧROOTⵧNODE,
 } from '@infinite-monorepo/types'
 import { completeꓽspec } from '@infinite-monorepo/defaults'
 
 import type { State, FileOutputAbsent, FileOutputPresent } from './types.ts'
-import * as semver from 'semver'
-import type { JSONValue } from '@parcel/types'
 import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
 
 /////////////////////////////////////////////////
