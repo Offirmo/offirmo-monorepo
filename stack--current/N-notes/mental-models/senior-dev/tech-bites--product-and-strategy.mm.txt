@@ -1,3 +1,5 @@
++++ https://www.sequoiacap.com/article/the-templeton-compression/
+1997 Amazon shareowners letter https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm
 [ ] +++ https://www.threads.com/@prodmgmt.world
 [ ] https://basecamp.com/books
 [ ] https://basecamp.com/books ++ Getting Real https://basecamp.com/gettingreal
@@ -13,8 +15,10 @@ alignment -- challenges -- risk of social layer capture: means "having the right
 alignment -- of incentives = https://vitalik.eth.limo/general/2024/09/28/alignment.html
 alignment -- of tech
 alignment -- of values
-+++ https://www.sequoiacap.com/article/the-templeton-compression/
 another Uber = unethical, untenable, profit-driven startup who took a gambit evading the law, hoping to grow too big to fail before the law catches up. Except Uber was good at being bad, and * combined malfeasance with incompetence https://www.sandofsky.com/lambda-school/
+B2B (Business to Business)
+B2C (Business to Customer)
+B2G (Business to Government)
 barriers -- to entry = moat against competitors
 barriers -- to exit = users can't leave (switch) ex. cost
 Bezos principles -- customer obsession rather than competitor obsession
@@ -141,6 +145,7 @@ funnel
 get big fast / get large or get lost
 go-to-market (GTM) = plan of an organization, utilizing their outside resources (e.g., sales force and distributors), to deliver their unique value proposition to customers and to achieve a competitive advantage https://en.wikipedia.org/wiki/Go-to-market_strategy
 gold rush tools = during a gold rush, the one selling tools is the one making money
+good business = one that makes good products at a fair price to a sustainable and loyal market OR one that can display the most stock price growth from quarter to quarter? https://www.wheresyoured.at/the-era-of-the-business-idiot/
 growth +++ https://growth.design/
 growth -- bootstrapping
 growth -- bundles
@@ -193,6 +198,7 @@ management maturity = high-management-maturity organisations https://infrequentl
 marketing -- "killer app"
 marketing -- case studies
 marketing -- case studies -- "flagship app" It's not that there wasn't a lot of interest in WPF, it's just there weren't any flagship apps showing off what it could do that previous frameworks couldn't. Even if Evernote had stayed with it, they still have a fairly simple client so a lot of people would simply shrug and say "I can do that in WinForms." They aren't wrong. https://www.reddit.com/r/csharp/comments/x0nu7h/comment/im9kesb/
+marketing = transfer of enthusiasm https://x.com/jasonfried/status/1961157371235111304
 mature market
 mediocre success = the worst thing that can happen to your startup = enough to keep you going but not enough to change your life. most founders are trapped there. respect to shutting down or doubling down on projects https://x.com/gregisenberg/status/1906697683089101113
 metrics -- 40 something
@@ -201,6 +207,7 @@ metrics -- active users -- monthly (MAU) https://www.socialmediatoday.com/news/l
 metrics -- Annual Recurring Revenue (ARR)
 metrics -- ARR
 metrics -- average revenue per user (ARPU)
+metrics -- bad practices -- exotic = hard to compute, move, etc https://www.linkedin.com/pulse/exotic-metrics-parable-product-people-shreyas-doshi-8ghje/
 metrics -- CSAT
 metrics -- CSAT -- hard to move
 metrics -- CSAT -- visual appeal

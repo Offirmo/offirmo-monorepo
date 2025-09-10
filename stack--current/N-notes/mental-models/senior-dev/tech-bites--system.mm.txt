@@ -482,6 +482,8 @@ PubSub = Publish-Subscribe
 push -- long polling, server-side events (SSE), and WebSockets
 push vs pull
 queue -- queueing theory = mathematical study of waiting lines, or queues. A queueing model is constructed so that queue lengths and waiting time can be predicted. Very important in general business as well https://en.wikipedia.org/wiki/Queueing_theory
+rate limiting
+rate limiting -- cost based
 real-time -- hard real-time = a system is said to be hard real-time if it must meet strict timing constraints
 real-time -- protocols -- 01 Session Traversal Utilities for NAT (STUN) - Used to establish a direct UDP connection between two clients.
 real-time -- protocols -- 02 Traversal Using Relay around NAT (TURN) - Used to establish a relayed UDP or TCP connection between two clients. Here, the traffic must be relayed through the TURN server to bypass restrictive firewall rules, and the preference is UDP over TCP because TCP's guaranteed ordered delivery of packets implies overhead that is undesirable for real-time communications.
@@ -519,6 +521,7 @@ scaling -- separation of storage and compute
 scaling -- vertically = more power
 scaling ~ elasticity
 search -- https://vespa.ai/ (NO OpenSearch)
+secrets https://docs.github.com/en/actions/concepts/security/secrets
 secrets management https://www.pulumi.com/what-is/what-is-secrets-management/
 security
 serverless

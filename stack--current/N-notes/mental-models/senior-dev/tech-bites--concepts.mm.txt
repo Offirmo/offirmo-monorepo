@@ -103,9 +103,6 @@ async -- sync = By synchronous we mean a function that calls its callback on the
 atomic
 audit trail = what happened, when, who made the request and how?
 authentication
-B2B (Business to Business)
-B2C (Business to Customer)
-B2G (Business to Government)
 BDD (Behavior-Driven Development) https://cucumber.io/school/   Discovery -> Formulation -> Automation
 Beyoncé Principle = If you liked it, then you shoulda put a test on it
 big companies software = At big companies, software tends to be written by large and frequently changing teams of mediocre programmers https://paulgraham.com/noop.html
@@ -115,13 +112,13 @@ bootcamps https://www.sandofsky.com/lambda-school/
 bossware https://ia.acs.org.au/article/2024/workers-and-bosses-engage-in-sneaky-tactics.html
 bro culture in tech https://www.smh.com.au/technology/australias-tech-darling-atlassian-in-sexism-row-20140605-zryjd.html
 BSOD "blue screen of death" https://ia.acs.org.au/article/2025/microsoft-retires-blue-screen-of-death-after-40-years.html?ref=newsletter&deliveryName=DM26606
-bug -- 3 questions -- 1. Have I made this error anywhere else?
-bug -- 3 questions -- 2. What happens when I fix the bug?
-bug -- 3 questions -- 3. How can I change my ways to make this bug impossible?
-bug -- 3 questions https://mental-reverb.com/blog.php?id=42
 bugs -- $370M bug https://en.wikipedia.org/wiki/Ariane_flight_V88
+bugs -- 3 questions -- 1. Have I made this error anywhere else?
+bugs -- 3 questions -- 2. What happens when I fix the bug?
+bugs -- 3 questions -- 3. How can I change my ways to make this bug impossible?
+bugs -- 3 questions https://mental-reverb.com/blog.php?id=42
 bugs -- mail in 500 miles radius https://www.ibiblio.org/harris/500milemail.html
-bugs -- significants https://en.wikipedia.org/wiki/List_of_software_bugs
+bugs -- significant https://en.wikipedia.org/wiki/List_of_software_bugs
 build & delivery part of a product
 C++ 26 https://thenewstack.io/coming-to-iso-c-26-standard-an-ai-acceleration-edge/
 C10k problem https://en.wikipedia.org/wiki/C10k_problem
@@ -186,7 +183,6 @@ command query separation (CQS)
 comments
 comments -- conventional
 comments -- leading, trailing, detached https://github.com/microsoft/TypeScript/wiki/FAQ#trailing-leading-and-detached-comments
-commit
 commits
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
 compatibility -- backward = consumer's new version can read producer's old data
@@ -425,6 +421,7 @@ flow state = deep concentration, enjoyment, and a sense of progress
 flushing
 flux architecture
 format -- container format https://en.wikipedia.org/wiki/Resource_Interchange_File_Format
+forward deployed engineer https://engineering.ramp.com/post/forward-deployed-engineering
 framework -- "a new framework a day"
 framework -- motivations -- avoiding duplication = BUT premature abstraction
 framework -- motivations -- don't like the language ex. Java style on Javascript
@@ -443,6 +440,7 @@ garbage collector
 general dependency injection and inversion of control problem
 geohash = compact representations of latitude and longitude https://en.wikipedia.org/wiki/Geohash
 git
+gitattributes
 gitignore https://git-scm.com/docs/gitignore#_pattern_format
 global variable
 God object https://en.wikipedia.org/wiki/God_object
@@ -575,7 +573,7 @@ language features -- contract enforcement
 language features -- data hiding
 language features -- encapsulation
 language features -- polymorphism
-language interprété types simples / types par référence
+language interpreted -- types simples / types par référence
 Language Server Index Format (LSIF)
 Language Server Protocol https://microsoft.github.io/language-server-protocol/
 language tags
@@ -783,11 +781,7 @@ questions for a new technology -- 8 Have you gotten a mixed discipline group of 
 questions for a new technology https://kellanem.com/notes/new-tech
 queue
 RAM
-ratcheting https://robertgreiner.com/continuous-code-improvement-using-ratcheting/ https://leaddev.com/building-better-software/introducing-quality-ratchets-tool-managing-complex-systems
-rate limiting
-rate limiting -- cost based
 RDF -- SPARQL = query language for querying RDF data
-React
 reactive programming
 recursion
 red / blue deployment -- compatibility window = period, measured either in elapsed time or number of releases, where all versions of a component released during this window must be compatible with all components of the current version, and vice versa.

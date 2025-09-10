@@ -63,6 +63,7 @@ metrics -- Failed deployment recovery time = should be less than one hour to one
 metrics -- lead time = should be one day to one week.
 metrics https://www.linkedin.com/pulse/best-measure-values-cicd-kazem-gheisari-hagaf
 monorepo’s requirements
+ratcheting https://robertgreiner.com/continuous-code-improvement-using-ratcheting/ https://leaddev.com/building-better-software/introducing-quality-ratchets-tool-managing-complex-systems
 some best practices https://tinplavec.medium.com/gitlab-ci-cd-best-practices-i-recommend-after-2-years-of-experience-dfc0e349e4d6
 topological execution
 undesirable -- Customer Satisfaction = Lower due to bugs, performance issues, and unreliable software https://blog.mergify.com/improve-code-quality/
@@ -70,3 +71,4 @@ undesirable -- Development Time = Slowed by frequent bug fixes and rework https:
 undesirable -- Maintenance Costs = High due to complex and difficult-to-maintain code https://blog.mergify.com/improve-code-quality/
 undesirable -- Security Risks = Higher vulnerability to exploits due to coding errors and lack of security best practices https://blog.mergify.com/improve-code-quality/
 undesirable -- Team Morale = Lower due to frustration with constant bug fixing and technical debt https://blog.mergify.com/improve-code-quality/
+workflow -- vulnerable = real attack https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c

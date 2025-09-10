@@ -65,6 +65,7 @@ financial -- security
 financial -- system -- decentralized (DeFi)
 financial -- system -- global
 financially (il)literate = https://www.smh.com.au/business/the-economy/our-financial-literacy-crisis-can-you-answer-these-5-money-questions-20230109-p5cb6c.html
+fintech au https://www.thefinnies.org.au/
 funding -- quadratic
 funding -- stock exchange
 gold clause = clause on contracts to be paid in gold in case currency changes https://en.wikipedia.org/wiki/Gold_clause

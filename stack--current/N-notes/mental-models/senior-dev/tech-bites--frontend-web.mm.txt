@@ -270,7 +270,7 @@ js -- latest features by year https://github.com/tc39/proposals/blob/main/finish
 js -- learning rsrcs -- Exploring JavaScript (ES2024 Edition) https://exploringjs.com/js/book/index.html
 js -- promises -- withResolvers
 js -- promises https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md
-JS -- string litterals -- raw vs cooked https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw#building_an_identity_tag
+JS -- string literals -- raw vs cooked https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw#building_an_identity_tag
 js -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
 JSON "Javascript Object Notation"
 latency -- high latency environments https://csswizardry.com/2024/09/optimising-for-high-latency-environments/
@@ -353,6 +353,7 @@ puppeteer https://pptr.dev/
 PWA https://whatpwacando.today/ https://web.dev/learn/pwa
 quality -- why so rare? https://linear.app/blog/why-is-quality-so-rare
 React
+React
 React -- hooks
 React -- RSC "React server components" https://www.joshwcomeau.com/react/server-components/
 React -- trigger, render, commit https://react.dev/learn/render-and-commit
@@ -388,8 +389,8 @@ security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
 security -- domain registration, DNS, hosting = don't use the same provider so that a compromise don't allow to access everything (from a domain recovery expert) https://www.reddit.com/r/Domains/comments/1gdpqdk/comment/miu1osc/
 security -- Google Tag Manager = a handy way for people you’ve never met to inject JavaScript into your site without the hindrance of a code review
-security -- supply chain https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5 https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
+security -- supply chain https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5 https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
 Server Side Rendering = an umbrella term that includes several different rendering strategies. They all have one thing in common: the initial render happens in a server runtime like Node.js, using the ReactDOMServer APIs. It doesn't actually matter when this happens, whether it's on-demand or at compile-time. https://www.joshwcomeau.com/react/server-components/
 settings -- Mac = https://aresluna.org/frame-of-preference/
 skew -- flags skew
@@ -513,6 +514,7 @@ web workers -- service = proxy https://devdocs.io/dom/service_worker_api
 web workers -- shared = can be utilized by multiple scripts running in different windows, IFrames, etc., as long as they are in the same domain as the worker https://devdocs.io/dom/sharedworker
 WebDriver BiDi https://developer.chrome.com/blog/firefox-support-in-puppeteer-with-webdriver-bidi
 WebGPU / WebGL = https://devdocs.io/dom/webgpu_api
+website critique https://americabydesign.fail/ https://americabydesign.gov/
 WebXR / WebVR = VR / AR
 Wep pages UX design -- concepts https://www.nngroup.com/courses/web-page-design/
 XSS -- injection sinks https://devdocs.io/dom/trusted_types_api

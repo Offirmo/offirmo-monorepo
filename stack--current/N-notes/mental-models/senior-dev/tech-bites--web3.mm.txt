@@ -52,6 +52,7 @@ bag check
 Berachain
 Bitcoin = the first decentralized cryptocurrency https://en.wikipedia.org/wiki/Bitcoin
 Blast
+blind sign
 block -- genesis = The first block in a blockchain, used to initialize a particular network and its cryptocurrency https://ethereum.org/en/glossary/#genesis-block
 block = batch of transactions
 blockchain -- intelligence = for investigations, risk, and security https://www.chainalysis.com/
@@ -98,6 +99,7 @@ CryptoArt
 cryptocurrency = a medium of exchange secured by a blockchain-based ledger https://ethereum.org/en/developers/docs/intro-to-ether/#what-is-a-cryptocurrency
 cryptokitties
 CryptoPunks = 24x24 pixel art images, generated algorithmically. Most are punky-looking guys and girls, but there are a few rarer types mixed in: Apes, Zombies and even the odd Alien. Every Punk has their own profile page that shows their attributes as well as their ownership/for-sale status https://cryptopunks.app/ https://github.com/larvalabs/cryptopunks
+cryptostealer -- example https://gist.github.com/jdstaerk/9e73837f0ba23735ef04a736c6b97c09
 CT "Crypto Twitter" = a subset of the popular social media platform Twitter, specifically focused on cryptocurrency, blockchain technology, and decentralized finance https://www.bitget.com/wiki/what-is-ct-in-crypto
 culture -- "to the moon"
 culture -- cypherpunk = (1993) "The Cypherpunks are actively engaged in making the networks safer for privacy" https://www.activism.net/cypherpunk/manifesto.html
@@ -233,6 +235,7 @@ multi-chain https://arxiv.org/abs/2112.01472
 multichain strategy
 namecoin = non-fungible assets such as domain names http://namecoin.org/
 narratives = to bring interest into crypto
+near https://www.near.org/
 networks -- Avalanche C-Chain
 networks -- Base
 networks -- Bitcoin Mainnet
@@ -301,6 +304,7 @@ seasons -- summer = ex. DeFi summer
 seasons -- winter = ex. AI winter
 seed phrase
 silk road / Ross Ulbricht
+slippage https://github.com/jup-ag/dynamic-slippage-config
 smart contract -- developers https://secure-contracts.com/index.html
 smart contract -- secure https://secure-contracts.com/index.html
 smart contracts -- auditing = https://iosiro.com/services/smart-contract-auditing
@@ -320,6 +324,7 @@ solutions -- Amazon Managed Blockchain (AMB) = https://aws.amazon.com/managed-bl
 solutions -- Cloudflare -- Ethereum gateway https://developers.cloudflare.com/web3/ethereum-gateway/
 solutions -- Cloudflare -- IFPS
 solutions -- Lighter = a decentralized trading platform that is designed to deliver unmatched security and scale. Lighter is the first and only exchange that provides verifiable matching and liquidations, while operating at the best in class traditional exchange level performances.
+solutions -- Swapper
 Sonic
 spirit -- "Ignoring sensible advice is what we do in crypto"
 spot
@@ -365,9 +370,11 @@ vault
 verifiable compute = a way to run complex tasks off-chain & then prove to the chain that it was properly done
 Vitalik Buterin
 wallet
+wallet -- cold/hot
 wallet -- cross-chain
 wallet -- drain -- example https://x.com/0xzak/status/1955265807807545763
 wallet -- embedded = (Defi App) latest gen, seedless, self-custodial ??
+wallet -- hardware -- replaced by passkeys? https://www.youtube.com/shorts/OncIJSV6hBE
 wallet -- hot
 wallet -- password
 wallet -- recovery phrase = 24 words to recover/transfer a wallet

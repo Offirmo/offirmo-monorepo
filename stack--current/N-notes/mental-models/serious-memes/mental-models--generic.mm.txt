@@ -32,6 +32,7 @@
 [ ] ++ https://savoir-sans-frontieres.com/
 [ ] +++ https://flinkliv.com/
 [ ] +++ https://fs.blog/mental-models/
+[ ] +++ https://github.com/dwmkerr/hacker-laws
 [ ] +++ https://paulgraham.com/articles.html
 [ ] +++ https://thewokesalaryman.com/
 [ ] Ash Lamb visuals https://www.linkedin.com/in/ashlamb/recent-activity/all/
@@ -547,6 +548,7 @@ how to ask questions http://www.catb.org/esr/faqs/smart-questions.html
 how to fail well = https://www.linkedin.com/posts/davidkline_7-lessons-on-how-to-fail-well-activity-7330569803084034049-U4Hx/
 https://36questionsinlove.com/
 https://cobeats.com/folder/ryfTgPr9H
+https://dontdie.bryanjohnson.com/
 https://en.wikipedia.org/wiki/Great_Recession
 https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
 humanities and social sciences = includes some of the biggest and easiest undergrad majors
@@ -623,6 +625,7 @@ journalism -- scandal sheets
 journalism -- tabloid https://en.wikipedia.org/wiki/Tabloid_journalism
 journalism -- yellow-press = exaggerated headlines, unverified claims, partisan agendas, and a focus on topics like crime, scandal, sports, and violence
 journalism -- yellow-press = journalist associated with the style characterized by sensationalism, eye-catching headlines, and often exaggerated or fabricated stories, primarily used to boost circulation and sales https://en.wikipedia.org/wiki/Yellow_journalism
+jugaad = concept of non-conventional, frugal innovation on the Indian subcontinent.[1] It also includes innovative fixes or simple workarounds, solutions that bend the rules, or resources that can be used in such a way. It is considered creative to make existing things work and create new things with meager resources.  https://en.wikipedia.org/wiki/Jugaad
 juger vs. évaluer
 justifiable homicide = interesting cultural differences https://en.wikipedia.org/wiki/Justifiable_homicide
 juvenile and impertinent https://yro.slashdot.org/story/25/05/02/0521233/federal-judge-orders-lawyer-to-remove-dragon-watermark-from-court-filings
@@ -1303,6 +1306,7 @@ tycoon = highly successful businessman (oil and rail being in the typical indust
 typography -- quotes https://smartquotesforsmartpeople.com/
 tyranny of the majority
 tyranny of the urgent https://www.psychologytoday.com/us/blog/human-flourishing-101/202309/how-to-conquer-the-tyranny-of-the-urgent
+underdog spirit = What do you got? Hunger. Drive. Grit. Scrappiness. Independence. You’re on offense. You don’t have enough, which is why you’re dangerous. You have no choice but to be clever and creative. To make up for what you don’t have with something they can’t have: The underdog spirit. https://x.com/jasonfried/status/1656717766374875137
 universal human truths of existence = such as death, freedom, isolation and the search for the meaning of life
 universe
 universe -- cosmological model -- +++ Lambda cold dark matter (ΛCDM) = current best (2024) https://en.wikipedia.org/wiki/Lambda-CDM_model

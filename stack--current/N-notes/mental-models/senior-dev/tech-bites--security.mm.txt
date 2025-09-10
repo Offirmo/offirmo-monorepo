@@ -6,6 +6,7 @@
 [ ] https://www.cisa.gov/spotlight
 [ ] https://www.reddit.com/r/privacy/ https://www.reddit.com/r/PrivacyGuides/
 account takeover (ATO) https://www.kasada.io/use-cases/account-takeover/
+attack -- process over cryptographic strength "Though Enigma had some cryptographic weaknesses, in practice it was German procedural flaws, operator mistakes, failure to systematically introduce changes in encipherment procedures, and Allied capture of key tables and hardware that, during the war, enabled Allied cryptologists to succeed." https://history.stackexchange.com/a/79374
 attacks -- business email compromise (BEC)
 attacks -- supply chain -- npm https://blog.vlt.sh/blog/the-massive-hole-in-the-npm-ecosystem
 attacks -- SVG https://arstechnica.com/security/2025/08/adult-sites-use-malicious-svg-files-to-rack-up-likes-on-facebook/
@@ -68,6 +69,7 @@ guidelines -- CGI security https://www.cgisecurity.com/owasp/html/ch04.html
 guidelines -- S/O https://stackoverflow.com/questions/2794016/what-should-every-programmer-know-about-security
 have I been pwned? https://www.troyhunt.com/
 high-risk communities = activists, journalists, human rights defenders, academics, and other employees associated with civil society organizations that are at heightened risk of being targeted by cyber threat actors because of their identity or work https://www.cisa.gov/audiences/high-risk-communities
+https://libsodium.gitbook.io/doc
 In-the-Wild (ITW) exploit
 input -- never trust any input!
 input -- validate input from all untrusted sources - use whitelists not blacklists
@@ -146,6 +148,7 @@ secure-by-design -- CISA’s Secure By Design pledge = https://blog.cloudflare.c
 secure-by-design -- pledge = voluntary pledge focused on enterprise software products and services. software manufacturers are pledging to make a good-faith effort to work towards the goals listed below over the following year. https://www.cisa.gov/securebydesign/pledge
 secure-by-design = https://blog.cloudflare.com/tag/cisa/
 secure-by-design = prioritize the security of customers as a core business requirement, rather than merely treating it as a technical feature https://www.cisa.gov/securebydesign
+security -- supply chain https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5 https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
 security posture = overall cybersecurity strength and readiness of an organization, ability to recognize threats and your readiness to mitigate them or recover from an attack
 security-in-a-box = digital security tools and tactics https://securityinabox.org/en/
 Server Side Request Forgery (SSRF) -- defense -- outbound proxy
@@ -173,6 +176,7 @@ Tor -- .onion
 Tor -- onion addresses
 Tor -- oniux = Kernel-level Tor isolation for any Linux app  https://blog.torproject.org/introducing-oniux-tor-isolation-using-linux-namespaces/
 Tor -- relay https://blog.torproject.org/happy-families/
+VPN = spy and sell private data https://ia.acs.org.au/article/2025/popular-free-vpn-caught-spying-on-users.html
 vulnerability -- open redirect = a trusted website lets user-controlled input redirect users to external URLs and does not validate it properly. Malicious actors can craft scenarios where a malicious website, through the open redirect, appears as a trusted source https://hackread.com/brave-desktop-browser-vulnerability-malicious-sites-trusted/
 weakness -- CWE "Common Weakness Enumeration" https://cwe.mitre.org/
 weakness =

@@ -8,16 +8,16 @@
 [ ] high growth handbook https://growth.eladgil.com/
 [ ] https://posthog.com/handbook/company/management
 [ ] Thinkies https://tidyfirst.substack.com/s/thinkies
-assumptions -- check assumptions
+assumptions -- check them
 assumptions -- do not assume
 bets
+business idiot / symbolic executive https://www.wheresyoured.at/the-era-of-the-business-idiot/
 challenges -- "Why is this our priority right now?" = CEO Actually asking about: Resource allocation; Market timing; Competitive threats; Revenue impact
 challenges -- questions -- use AI to simulate!
 challenges -- questions = address the meta concern, not just the surface question
 create space for the best ideas to emerge
 DORA = (Google) largest and longest running research program  (...) to understand the capabilities that drive software delivery and operations performance https://dora.dev/
 dress code don't make leaders but they sure announce them
-executive presence
 executive presence
 failures modes = possible wrong ways https://newsletter.posthog.com/p/tech-lead-failure-modes
 feedback -- Keeper Test = "If this person resigned today, would I fight to keep them?"
