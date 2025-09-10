@@ -51,7 +51,7 @@ DEF CON = one of the oldest continuously running hacker conventions around, and 
 defence -- Primary / Secondary / Tertiary
 defense in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
 denial of wallet = like DoS but service down due to no more credits https://www.kasada.io/use-cases/genai-abuse-73-percent-have-experienced-genai-security-incidents/
-dependency chain abuse = supply chain attack https://www.paloaltonetworks.com.au/cyberpedia/dependency-chain-abuse-cicd-sec3
+dependency chain abuse = (~ supply chain at CICD time) exploitation of vulnerabilities within a project's dependency chains in a CI/CD https://www.paloaltonetworks.com.au/cyberpedia/dependency-chain-abuse-cicd-sec3
 device posture
 digital security https://securitylab.amnesty.org/digital-resources/
 encryption of stored data

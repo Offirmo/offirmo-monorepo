@@ -15,12 +15,13 @@ export type FileOutputIntent =
 	| 'not-present'
 
 interface BaseFileOutput {
-	path: MultiRepoRelativeFilePath
-	node?: Node // if needed to resolve the path
+	path‿ar?: MultiRepoRelativeFilePath // optional if manifest is provided
+	parent_node?: Node | Immutable<Node> // if path and needed to resolve the path
 	intent: FileOutputIntent
 }
 
 export interface FileOutputAbsent extends BaseFileOutput {
+	path‿ar: MultiRepoRelativeFilePath // mandatory
 	intent: 'not-present'
 }
 export interface FileOutputPresent extends BaseFileOutput {

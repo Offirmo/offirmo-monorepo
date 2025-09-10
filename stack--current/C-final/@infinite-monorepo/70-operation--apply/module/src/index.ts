@@ -4,16 +4,25 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import { loadꓽspec } from '@infinite-monorepo/load-spec'
 import * as StateLib from '@infinite-monorepo/state'
 import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
+import pluginꓽgit from '@infinite-monorepo/plugin--git'
 import pluginꓽnvm from '@infinite-monorepo/plugin--nvm'
-import type { State, Plugin } from '@infinite-monorepo/state'
+import pluginꓽparcel from '@infinite-monorepo/plugin--parcel'
+import type { State, Plugin, FileOutputPresent, FileOutputAbsent } from '@infinite-monorepo/state'
 import { ೱwriteꓽfile } from '@infinite-monorepo/read-write-any-structured-file/write'
 
 /////////////////////////////////////////////////
 
 const plugins: Array<Plugin> = [
+	// TODO a way to include on-demand
+	pluginꓽgit,
 	pluginꓽnvm,
-	// TODO a plugin for all root files
+	pluginꓽparcel,
+	// TODO a plugin for all root files!
 ]
+
+function noop(state: Immutable<State>): Immutable<State> {
+	return state
+}
 
 async function apply() {
 	console.log(`@infinite-monorepo/apply…`)
@@ -28,7 +37,7 @@ async function apply() {
 		let node: Immutable<Node> | undefined
 		while ((node = StateLib.getꓽnodesⵧnew(state)[0])) {
 			state = plugins.reduce((state, plugin) => {
-				return plugin.onꓽnodeⵧdiscovered(state, node)
+				return (plugin.onꓽnodeⵧdiscovered ?? noop)(state, node)
 			}, state)
 			state = StateLib.reportꓽnodeⵧanalyzed(state, node)
 		}
@@ -41,7 +50,7 @@ async function apply() {
 
 	////////////
 	state = plugins.reduce((state, plugin) => {
-		return plugin.onꓽload(state)
+		return (plugin.onꓽload ?? noop)(state)
 	}, state)
 	await _propagate()
 
@@ -65,7 +74,7 @@ async function apply() {
 		.sort()
 		.forEach(([path, node]) => {
 			state = plugins.reduce((state, plugin) => {
-				return plugin.onꓽapply(state, node)
+				return (plugin.onꓽapply ?? noop)(state, node)
 			}, state)
 		})
 
@@ -86,14 +95,17 @@ async function apply() {
 					fs.rm(path, { force: true })
 					break
 				case 'present--exact':
+				case 'present--containing':
 					console.log(`- Writing file ${path}…`)
 					ೱwriteꓽfile(path, spec.content, spec.manifest.format)
+					break
+				default:
+					assert(false, `Unsupported intent: ${spec.intent}!`)
 			}
-			// TODO
 		})
 
 	////////////
-	console.log('DONE!', state)
+	console.log('DONE!')
 	//dumpꓽanyⵧprettified('state', state)
 }
 

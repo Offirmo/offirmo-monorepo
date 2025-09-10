@@ -18,6 +18,7 @@ create space for the best ideas to emerge
 DORA = (Google) largest and longest running research program  (...) to understand the capabilities that drive software delivery and operations performance https://dora.dev/
 dress code don't make leaders but they sure announce them
 executive presence
+executive presence
 failures modes = possible wrong ways https://newsletter.posthog.com/p/tech-lead-failure-modes
 feedback -- Keeper Test = "If this person resigned today, would I fight to keep them?"
 leadership -- ask questions

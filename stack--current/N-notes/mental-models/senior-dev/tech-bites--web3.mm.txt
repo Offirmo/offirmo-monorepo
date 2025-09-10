@@ -371,7 +371,7 @@ wallet -- embedded = (Defi App) latest gen, seedless, self-custodial ??
 wallet -- hot
 wallet -- password
 wallet -- recovery phrase = 24 words to recover/transfer a wallet
-wallet -- self-custody = "​​I understand that this is a self-custody wallet, and that I am solely responsible for any associated funds, assets or accounts, and for taking any appropriate action to secure, protect and back up my wallet. I understand that X cannot access my wallet or reverse transactions on my behalf and that my recovery phrase is the ONLY way to regain access in the event of a lost password, stolen device or similar circumstance."
+wallet -- self-custody = "I understand that this is a self-custody wallet, and that I am solely responsible for any associated funds, assets or accounts, and for taking any appropriate action to secure, protect and back up my wallet. I understand that X cannot access my wallet or reverse transactions on my behalf and that my recovery phrase is the ONLY way to regain access in the event of a lost password, stolen device or similar circumstance."
 wallet -- solution -- brave https://brave.com/wallet/
 wallet -- solution -- coinbase
 wallet -- solution -- coinbase https://www.coinbase.com/en-au/wallet/smart-wallet

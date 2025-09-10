@@ -76,14 +76,15 @@ describe(`${LIB} -- base`, function() {
 			' ': ' ',
 			'a': 'a',
 			'Côte et Ciel': 'Cote et Ciel',
+			'🐯éçę’s iPadೱ': "ece's iPad?",
 		},
 
 		normalize_unicode: {
 			'': '',
 			' ': ' ',
 			'a': 'a',
-			// TODO real cases!
-			'Côte et Ciel': 'Côte et Ciel',
+			['Côte et Ciel'.normalize('NFKD')]: 'Côte et Ciel',
+			['Côte et Ciel'.normalize('NFD')]: 'Côte et Ciel',
 		},
 
 		coerce_blanks_to_single_spaces: {

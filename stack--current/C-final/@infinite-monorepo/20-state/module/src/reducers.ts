@@ -1,6 +1,6 @@
 import * as path from 'node:path'
 import assert from 'tiny-invariant'
-import type { JSONObject, Immutable, AbsolutePath } from '@offirmo-private/ts-types'
+import type { JSONObject, Immutable, AbsolutePath, JSON } from '@offirmo-private/ts-types'
 
 import {
 	type InfiniteMonorepoSpec,
@@ -16,6 +16,8 @@ import { completeꓽspec } from '@infinite-monorepo/defaults'
 
 import type { State, FileOutputAbsent, FileOutputPresent } from './types.ts'
 import * as semver from 'semver'
+import type { JSONValue } from '@parcel/types'
+import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
 
 /////////////////////////////////////////////////
 const DEBUG = true
@@ -108,7 +110,8 @@ function declareꓽfile_manifest(
 
 	const existing = state.file_manifests[manifest.path‿ar]
 	if (existing) {
-		throw new Error(`File manifest already declared for ${manifest.path‿ar}!`)
+		const is_equal = manifest === existing
+		assert(is_equal, `Conflicting file manifests for ${manifest.path‿ar}!`)
 	}
 
 	return {
@@ -122,24 +125,22 @@ function declareꓽfile_manifest(
 
 function _resolveꓽarpath(
 	state: Immutable<State>,
-	arpath: MultiRepoRelativeFilePath,
+	path‿ar: MultiRepoRelativeFilePath,
 	node?: Immutable<Node> | undefined,
 ): AbsolutePath {
-	const first_segment = arpath.split('/')[0]
+	const first_segment = path‿ar.split('/')[0]
 	assert(
 		!!first_segment && first_segment.startsWith('$') && first_segment.endsWith('$'),
-		`Invalid arpath NOT starting with a $PATHVAR$: "${arpath}"!`,
+		`Invalid arpath NOT starting with a $PATHVAR$: "${path‿ar}"!`,
 	)
 
-	switch (first_segment) {
-		case PATHVARⵧROOTⵧNODE: {
-			assert(!!node, `Need a node to resolve ${PATHVARⵧROOTⵧNODE}!`)
-
-			return path.resolve(node.path‿abs, arpath.slice(first_segment.length + 1))
-		}
-		default:
-			throw new Error(`Unknown or unsupported $PATHVAR$: "${first_segment}"!`)
+	if (node && (first_segment === PATHVARⵧROOTⵧNODE || node.path‿ar.startsWith(first_segment))) {
+		// easy, the node is the one we need
+		return path.resolve(node.path‿abs, path‿ar.slice(first_segment.length + 1))
 	}
+
+	// need to find the correct node by walking up the tree
+	throw new Error(`_resolveꓽarpath(): not implemented!`)
 }
 
 /*
@@ -158,6 +159,59 @@ function ensureꓽfile_loading(
 	throw new Error('not implemented!')
 }*/
 
+function _getJsonType(a: JSON): 'object' | 'array' | 'primitive' | 'undef' {
+	if (a === undefined) {
+		return 'undef'
+	}
+
+	if (Array.isArray(a)) {
+		return 'array'
+	}
+
+	if (a === null) return 'primitive'
+	if (['string', 'number', 'boolean'].includes(typeof a)) return 'primitive'
+
+	if (isꓽobjectⵧliteral(a)) {
+		return 'object'
+	}
+
+	throw new Error('Incorrect JSON!')
+}
+
+function _mergeJson(a: JSON, b: JSON): JSON {
+	const ta = _getJsonType(a)
+	const tb = _getJsonType(b)
+	if (ta === undefined) {
+		return b
+	}
+	if (tb === undefined) {
+		return a
+	}
+	if (ta !== tb) {
+		throw new Error(`Cannot merge different JSON types: ${ta} vs ${tb}!`)
+	}
+	switch (ta) {
+		case 'primitive':
+			if (a === b) return a
+			throw new Error(`Cannot merge conflicting primitive JSON values: ${a} vs ${b}!`)
+		case 'array':
+			// TODO set for uniqueness!
+			return [...(a as JSON[]), ...(b as JSON[])].sort()
+		case 'object': {
+			const result: JSONObject = {}
+			const k1 = Object.keys(a as JSONObject)
+			const k2 = Object.keys(b as JSONObject)
+			const all_keys = Array.from(new Set([...k1, ...k2])).sort()
+			for (const k of all_keys) {
+				result[k] = _mergeJson((a as JSONObject)[k], (b as JSONObject)[k])
+			}
+			return result
+		}
+		default:
+			throw new Error('Unexpected JSON type!')
+	}
+}
+
 function requestꓽfile_output(
 	state: Immutable<State>,
 	spec: Immutable<FileOutputAbsent>,
@@ -168,14 +222,39 @@ function requestꓽfile_output(
 ): Immutable<State>
 function requestꓽfile_output(
 	state: Immutable<State>,
-	spec: Immutable<FileOutputAbsent | FileOutputPresent>,
+	candidate_spec: Immutable<FileOutputAbsent | FileOutputPresent>,
 ): Immutable<State> {
-	const path‿abs = _resolveꓽarpath(state, spec.path, spec.node)
+	const path‿ar =
+		candidate_spec.path‿ar || (candidate_spec as any as FileOutputPresent)?.manifest?.path‿ar
+	assert(!!path‿ar, `requestꓽfile_output(): should provide a path!`)
+	const path‿abs = _resolveꓽarpath(state, path‿ar, candidate_spec.parent_node)
 
+	let spec = candidate_spec
 	const existing = state.output_files[path‿abs]
 	if (existing) {
-		// TODO 1D merge or check for conflict
-		throw new Error(`Not implemented!`)
+		assert(
+			existing.intent === candidate_spec.intent,
+			`Conflict! Multiple intents for file ${path‿abs}!`,
+		)
+		assert(
+			(existing as any).manifest?.path‿ar === (candidate_spec as any).manifest?.path‿ar,
+			`Conflict! Multiple manifests for file ${path‿abs}!`,
+		)
+		assert(
+			(existing as any).manifest?.format === (candidate_spec as any).manifest?.format,
+			`Conflict! Multiple manifests for file ${path‿abs}!`,
+		)
+
+		if (candidate_spec.intent === 'present--exact') {
+			// check same content
+			assert(false, 'Not implemented!')
+		} else if (candidate_spec.intent === 'present--containing') {
+			spec = {
+				...candidate_spec,
+				content: _mergeJson(existing.content, candidate_spec.content),
+			}
+			//console.log('TODO check')
+		}
 	}
 
 	return {

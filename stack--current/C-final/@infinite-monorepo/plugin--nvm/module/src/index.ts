@@ -1,24 +1,22 @@
 import * as semver from 'semver'
 import type { Immutable } from '@offirmo-private/ts-types'
 import {
-	NODE_TYPEⵧWORKSPACE,
 	PATHVARⵧROOTⵧNODE,
-	type Plugin,
-	type StructuredFsOutput,
 	type StructuredFsⳇFileManifest,
-	type StructuredFsOutputⳇFullFile,
 	type Node,
 	type NodeRelativePath,
 } from '@infinite-monorepo/types'
+import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
+import type { FileOutputPresent } from '@infinite-monorepo/state'
 
 /////////////////////////////////////////////////
 
-const ᐧnvmrc__path: NodeRelativePath = `${PATHVARⵧROOTⵧNODE}/.nvmrc`
+const ᐧnvmrc__path‿ar: NodeRelativePath = `${PATHVARⵧROOTⵧNODE}/.nvmrc`
 
-const ᐧnvmrc__manifest: StructuredFsⳇFileManifest = {
-	path‿ar: ᐧnvmrc__path,
-	format: 'text',
+const manifestꓽᐧnvmrc: StructuredFsⳇFileManifest = {
+	path‿ar: ᐧnvmrc__path‿ar,
+	format: 'single-value',
 	doc: [
 		/* Note: <version> refers to any version-like string nvm understands. This includes:
 			- full or partial version numbers, starting with an optional "v" (0.10, v0.1.2, v1)
@@ -32,24 +30,21 @@ const ᐧnvmrc__manifest: StructuredFsⳇFileManifest = {
 
 /////////////////////////////////////////////////
 
-const PLUGIN: Plugin = {
-	onꓽload(state: Immutable<StateLib.State>): Immutable<StateLib.State> {
-		state = StateLib.declareꓽfile_manifest(state, ᐧnvmrc__manifest)
+const pluginꓽnvm: Plugin = {
+	onꓽload(state: Immutable<State>): Immutable<State> {
+		state = StateLib.declareꓽfile_manifest(state, manifestꓽᐧnvmrc)
 
 		return state
 	},
 
-	onꓽnodeⵧdiscovered(
-		state: Immutable<StateLib.State>,
-		node: Immutable<Node>,
-	): Immutable<StateLib.State> {
+	onꓽnodeⵧdiscovered(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
 		// TODO 1D
-		//state = StateLib.ensureꓽfile_loading(state, node, ᐧnvmrc__path)
+		//state = StateLib.ensureꓽfile_loading(state, node, ᐧnvmrc__path‿ar)
 
 		return state
 	},
 
-	onꓽapply(state: Immutable<StateLib.State>, node: Immutable<Node>) {
+	onꓽapply(state: Immutable<State>, node: Immutable<Node>) {
 		const runtimeⵧlocal = StateLib.getꓽruntimeⵧlocal(state, node)
 		if (runtimeⵧlocal.name !== 'node') return state // nvm doesn't apply
 
@@ -57,23 +52,23 @@ const PLUGIN: Plugin = {
 		const major = semver.major(vmin)
 		switch (node?.type) {
 			// TODO 1D any node where parent node != current node
-			case 'workspace':
-				state = StateLib.requestꓽfile_output(state, {
-					manifest: ᐧnvmrc__manifest,
-					path: ᐧnvmrc__path,
-					node,
-					mode: 'replace',
+			case 'workspace': {
+				const output_spec: FileOutputPresent = {
+					parent_node: node,
+					manifest: manifestꓽᐧnvmrc,
+					intent: 'present--exact',
 					content: {
 						value: major,
 					},
-				})
+				}
+				state = StateLib.requestꓽfile_output(state, output_spec)
 				break
+			}
 			default:
 				state = StateLib.requestꓽfile_output(state, {
-					manifest: ᐧnvmrc__manifest,
-					path: ᐧnvmrc__path,
-					node,
-					mode: 'delete',
+					parent_node: node,
+					path‿ar: ᐧnvmrc__path‿ar,
+					intent: 'not-present',
 				})
 				break
 		}
@@ -84,4 +79,5 @@ const PLUGIN: Plugin = {
 
 /////////////////////////////////////////////////
 
-export default PLUGIN
+export default pluginꓽnvm
+export { manifestꓽᐧnvmrc, pluginꓽnvm }

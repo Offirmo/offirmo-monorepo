@@ -3,11 +3,15 @@ import type { InfiniteMonorepoSpec } from './50-spec.ts'
 
 /////////////////////////////////////////////////
 
+export const NODE_TYPEⵧREPO = 'repository' as const
 export const NODE_TYPEⵧWORKSPACE = 'workspace' as const
 export const NODE_TYPEⵧPACKAGE = 'package' as const
 
 /////////////////////////////////////////////////
 // inspired by https://www.jetbrains.com/help/idea/absolute-path-variables.html
+
+export const PATHVARⵧROOTⵧREPO = `$REPO_ROOT$` as const
+export type RepoRelativePath = `${typeof PATHVARⵧROOTⵧREPO}/${string}`
 
 export const PATHVARⵧROOTⵧWORKSPACE = `$${NODE_TYPEⵧWORKSPACE.toUpperCase()}_ROOT$` as const
 export type WorkspaceRelativePath = `${typeof PATHVARⵧROOTⵧWORKSPACE}/${string}`
@@ -19,6 +23,7 @@ export const PATHVARⵧROOTⵧNODE = `$NODE_ROOT$` as const
 export type NodeRelativePath = `${typeof PATHVARⵧROOTⵧNODE}/${string}`
 
 export type MultiRepoRelativePath =
+	| RepoRelativePath
 	| WorkspaceRelativePath
 	| PackageRelativePath
 	| NodeRelativePath
@@ -78,12 +83,18 @@ export interface ArchRepository extends NodeBase {}
 
 /////////////////////////////////////////////////
 
+export interface NodeⳇRepo extends Workspace {
+	type: typeof NODE_TYPEⵧREPO
+	parent: null // so far
+}
+// XXX note that a workspace could be directly at the root of the repo = same path
+export interface NodeⳇWorkspace extends Workspace {
+	type: typeof NODE_TYPEⵧWORKSPACE
+	parent: NodeⳇRepo
+}
 export interface NodeⳇPackage extends Package {
 	type: typeof NODE_TYPEⵧPACKAGE
 	parent: NodeⳇWorkspace // so far
 }
-export interface NodeⳇWorkspace extends Workspace {
-	type: typeof NODE_TYPEⵧWORKSPACE
-	parent: null // so far
-}
-export type Node = NodeⳇPackage | NodeⳇWorkspace
+
+export type Node = NodeⳇRepo | NodeⳇWorkspace | NodeⳇPackage

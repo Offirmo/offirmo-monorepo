@@ -27,17 +27,6 @@ function lsDirsSync(srcpath: string, options: Partial<Options> = {}): Array<stri
 			if (!dirent.parentPath) {
 				throw new Error('Missing dirent.parentPath! Are you properly using node >= 20?')
 			}
-			/*console.log('from dirent:', {
-				path: dirent.parentPath,
-				name: dirent.name,
-				type: dirent.isSymbolicLink()
-					? 'symlink'
-					: dirent.isDirectory()
-						? 'dir'
-						: dirent.isFile()
-							? 'file'
-							: '???'
-			})*/
 			return dirent
 		})
 		.filter(dirent => dirent.isDirectory())
@@ -60,17 +49,6 @@ function lsFilesSync(srcpath: string, options: Partial<Options> = {}): Array<str
 			if (!dirent.parentPath) {
 				throw new Error('Missing dirent.parentPath! Are you properly using node >= 20?')
 			}
-			/*console.log('from dirent:', {
-				path: dirent.parentPath,
-				name: dirent.name,
-				type: dirent.isSymbolicLink()
-					? 'symlink'
-					: dirent.isDirectory()
-						? 'dir'
-						: dirent.isFile()
-							? 'file'
-							: '???'
-			})*/
 			return dirent
 		})
 		.filter(dirent => dirent.isFile())

@@ -387,7 +387,8 @@ routing -- uri -- 3 fragment
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
 security -- domain registration, DNS, hosting = don't use the same provider so that a compromise don't allow to access everything (from a domain recovery expert) https://www.reddit.com/r/Domains/comments/1gdpqdk/comment/miu1osc/
-security -- Google Tag Manager = a handy way for people you’ve never met to inject JavaScript into your site without the hindrance of a code review https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
+security -- Google Tag Manager = a handy way for people you’ve never met to inject JavaScript into your site without the hindrance of a code review
+security -- supply chain https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5 https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
 Server Side Rendering = an umbrella term that includes several different rendering strategies. They all have one thing in common: the initial render happens in a server runtime like Node.js, using the ReactDOMServer APIs. It doesn't actually matter when this happens, whether it's on-demand or at compile-time. https://www.joshwcomeau.com/react/server-components/
 settings -- Mac = https://aresluna.org/frame-of-preference/

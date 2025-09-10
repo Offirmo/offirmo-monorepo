@@ -11,6 +11,8 @@ export const STRUCTURED_FILE_FORMATS = [
 	//| 'kv-simple' // multiple lines `k v` ex. .yarnrc
 	'list', // multiple lines ex. .gitignore WILL STRIP COMMENTS
 	'single-value', // single line, ex .nvmrc
+	// last resort
+	'text', // no known or supported structure, just text with EOL and trailing line
 	'unknown',
 ] as const
 export type StructuredFileFormat = (typeof STRUCTURED_FILE_FORMATS)[number]
@@ -21,6 +23,7 @@ export const STRUCTURED_FILE_FORMATS__PARSERS = [
 	'yaml',
 	'list', // multiple lines ex. .gitignore WILL STRIP COMMENTS
 	'single-value', // single line, ex .nvmrc
+	'text', // no structure, just text
 ]
 export type StructuredFileFormatⳇParser = (typeof STRUCTURED_FILE_FORMATS__PARSERS)[number]
 
@@ -29,3 +32,4 @@ export type ContentⳇJson5 = JSONObject
 export type ContentⳇYaml = JSONObject
 export type ContentⳇList = { entries: string[] }
 export type ContentⳇSingleValue = { value: string }
+export type ContentⳇText = { text: string }

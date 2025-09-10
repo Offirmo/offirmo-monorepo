@@ -9,9 +9,15 @@ function ensure_string(s: any): string { return String(s ?? '') }
 /////////////////////////////////////////////////
 
 // https://thread.engineering/2018-08-29-searching-and-sorting-text-with-diacritical-marks-in-javascript/
-const coerce_toꓽascii: StringNormalizer = s => s
-	.normalize('NFD') // D = Decompose = technique to remove non-ascii part
-	.replace(/[\u0300-\u036f]/g, '')
+// (link above broken, ask your LLM instead)
+const coerce_toꓽascii: StringNormalizer = s =>
+	s
+		.normalize('NFD') // D = Decompose = split some chars into base + diacritics (doesn't work for all chars)
+		.replace(/[\u0300-\u036f]/g, '') // remove the diacritics = keep the base char, ex. é -> e
+		.replace(/ß/g, 'ss') // replace some common chars not handled by NFD
+		.replace(/’/g, "'")
+		// TODO 1D cleanly remove emojis (which sometimes are converted to ???)
+		.replace(/[^\x00-\x7F]/g, '?') // finally, wipes any remaining non-ascii char
 
 // https://devdocs.io/javascript/global_objects/string/normalize
 // https://withblue.ink/2019/03/11/why-you-need-to-normalize-unicode-strings.html

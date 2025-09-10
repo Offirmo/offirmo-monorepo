@@ -11,20 +11,21 @@ export interface StructuredFsⳇFileManifest {
 	format?: StructuredFileFormat
 
 	hints?: {
-		// TODO remove trailing spaces
-		// TODO remove trailing line
-		// TODO ensure line break
-		// TODO sortable
-		[k: string]: any
+		comment_prefixⵧsingle_line?: string | null
+		sort_siblings?: boolean
+		trailing_line?: 'ensure-present' | 'ensure-absent'
+		trim_trailing_spaces?: boolean
 	}
 
 	$schema?: `https://${string}/schema.json`
 	doc: Array<string>
 }
 
-//	priority:
-//	| 'default' // can be overriden
-//| 'normal' // conflicts between normal will be reported
-// important: TODO see if important
+export const DEFAULT_HINTS: NonNullable<StructuredFsⳇFileManifest['hints']> = {
+	comment_prefixⵧsingle_line: null,
+	sort_siblings: true,
+	trailing_line: 'ensure-present',
+	trim_trailing_spaces: true,
+}
 
 /////////////////////////////////////////////////

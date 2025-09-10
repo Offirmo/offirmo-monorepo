@@ -58,13 +58,14 @@ function inferꓽformat_from_path(file_path: AnyFilePath): StructuredFileFormat 
 
 	return undefined
 }
-
+/*
 function inferꓽformat_from_content_shape(
 	content: Immutable<JSONObject>,
 ): StructuredFileFormat | undefined {
 	return undefined
 }
+*/
 
 /////////////////////////////////////////////////
 
-export { inferꓽformat_from_path, inferꓽformat_from_content_shape }
+export { inferꓽformat_from_path }
