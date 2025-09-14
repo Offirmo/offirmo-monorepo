@@ -30,6 +30,7 @@
 		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts"
 	},
 	"devDependencies": {
+		"@infinite-monorepo/types": "*",
 		"@offirmo-private/monorepo-scripts": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
