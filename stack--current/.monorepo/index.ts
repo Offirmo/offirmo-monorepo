@@ -1,5 +1,4 @@
 import type { MonorepoSpec } from '@infinite-monorepo/types'
-import pluginꓽnvm from '@infinite-monorepo/plugin--nvm'
 
 /////////////////////////////////////////////////
 

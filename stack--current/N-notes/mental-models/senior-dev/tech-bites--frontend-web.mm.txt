@@ -88,6 +88,7 @@ button vs link -- Button = Use when you want to trigger an immediate action on t
 button vs link -- Link = Use when you want to navigate to a different page, or to a different part of the same page without causing any action to the current page. Used for basic navigation, mailto: links, phone numbers, or changing the URL path in some way.
 button vs link -- Link button = Use when you want to navigate to a different page or a different part of the same page, but maintain visual consistency with other buttons. Works like a link (for navigation), but looks like a button. Use to maintain consistent visual styles and semantic accuracy. Link button shares visual style with Button but shares behaviour & semantics with Link.
 cache https://csswizardry.com/2024/08/cache-grab-how-much-are-you-leaving-on-the-table/
+can I -- webview https://caniwebview.com/
 case study -- 2024/09 Josh Comeau's blog https://www.joshwcomeau.com/blog/how-i-built-my-blog-v2/
 CDN
 CDN -- quality = hot/cold potato routing https://vercel.com/blog/latency-numbers-every-web-developer-should-know
@@ -287,7 +288,7 @@ lawsofux.com -- Goal-Gradient Effect = tendency to approach a goal increases wit
 lawsofux.com -- Hick’s Law = the time it takes to make a decision increases with the number and complexity of choices.
 lawsofux.com -- Jakob’s Law = Users spend most of their time on other sites. This means that users prefer your site to work the same way as all the other sites they already know.
 lawsofux.com -- Law of Common Region = elements tend to be perceived into groups if they are sharing an area with a clearly defined boundary.
-lawsofux.com -- Law of Proximity = objects that are near, or proximate to each other, tend to be grouped together.
+lawsofux.com -- Law of Proximity = objects that are near or proximate to each other tend to be grouped together.
 lawsofux.com -- Law of Prägnanz = people will perceive and interpret ambiguous or complex images as the simplest form possible, because it is the interpretation that requires the least cognitive effort of us.
 lawsofux.com -- Law of Similarity = the human eye tends to perceive similar elements as a complete picture, shape, or group, even if those elements are separated.
 lawsofux.com -- Law of Uniform Connectedness = elements that are visually connected are perceived as more related than elements with no connection.
@@ -507,6 +508,8 @@ web components -- templates
 web components -- templates -- slots https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/slot
 web components https://developer.mozilla.org/en-US/docs/Web/API/Web_components
 web design https://www.webdesignmuseum.org/
+web features -- baseline https://web-platform-dx.github.io/web-features/
+web features https://github.com/web-platform-dx/web-features
 Web Linking (RFC 5988) https://datatracker.ietf.org/doc/html/rfc5988
 web text editing https://lord.io/text-editing-hates-you-too/
 web workers -- dedicated = utilized by a single script https://devdocs.io/dom/worker
