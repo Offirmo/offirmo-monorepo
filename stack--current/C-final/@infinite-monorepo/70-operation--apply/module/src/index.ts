@@ -1,6 +1,7 @@
 import * as fs from 'node:fs/promises'
 import assert from 'tiny-invariant'
 import type { Immutable, AnyPath } from '@offirmo-private/ts-types'
+import type { Node } from '@infinite-monorepo/types'
 import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
 import * as StateLib from '@infinite-monorepo/state'
 import pluginꓽgit from '@infinite-monorepo/plugin--git'
@@ -103,7 +104,7 @@ async function apply(from?: AnyPath) {
 				case 'present--exact':
 				case 'present--containing':
 					console.log(`- Writing file ${path}…`)
-					ೱwriteꓽfile(path, spec.content, spec.manifest.format)
+					ೱwriteꓽfile(path, spec.content as any, spec.manifest.format)
 					break
 				default:
 					assert(false, `Unsupported intent: ${spec.intent}!`)

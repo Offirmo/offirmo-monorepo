@@ -1,3 +1,4 @@
+import assert from 'tiny-invariant'
 import * as semver from 'semver'
 import type { Immutable } from '@offirmo-private/ts-types'
 import {
@@ -49,6 +50,7 @@ const pluginꓽnvm: Plugin = {
 		if (runtimeⵧlocal.name !== 'node') return state // nvm doesn't apply
 
 		const vmin = semver.minVersion(runtimeⵧlocal.versionsⵧacceptable)
+		assert(!!vmin, 'semver issue')
 		const major = semver.major(vmin)
 		switch (node?.type) {
 			// TODO 1D any node where parent node != current node

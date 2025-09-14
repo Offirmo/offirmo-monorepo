@@ -14,7 +14,23 @@ export interface JSONObject {
 	[k: string]: JSON
 }
 
+export type JSONArray = Array<JSON>
+
 export type JSON =
 	| JSONPrimitiveType
 	| JSONObject
-	| JSON[]
+	| JSONArray
+
+/////////////////////////////////////////////////
+// useful to avoid "excessive deep instantiation" errors"
+
+export interface ImmutableJSONObject {
+	[k: string]: ImmutableJSON
+}
+
+export type ImmutableJSONArray = ReadonlyArray<ImmutableJSON>
+
+export type ImmutableJSON =
+	| JSONPrimitiveType
+	| ImmutableJSONObject
+	| ImmutableJSONArray

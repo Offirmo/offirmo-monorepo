@@ -149,6 +149,7 @@ good business = one that makes good products at a fair price to a sustainable an
 growth +++ https://growth.design/
 growth -- bootstrapping
 growth -- bundles
+growth -- case studies https://growth.design/case-studies
 growth -- cognitive load
 growth -- concepts https://growth.design/psychology
 growth -- friction

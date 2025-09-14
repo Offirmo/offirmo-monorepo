@@ -14,7 +14,7 @@ import { completeꓽspec } from '@infinite-monorepo/defaults'
 
 // useful to build the graph
 async function loadꓽspecⵧchainⵧraw(from?: AnyPath): ReturnType<typeof loadꓽconfigⵧchain> {
-	return await loadꓽconfigⵧchain('.monorepo', { from })
+	return await loadꓽconfigⵧchain('.monorepo', { ...(from && { from }) })
 }
 
 async function loadꓽspecⵧraw(): Promise<Partial<InfiniteMonorepoSpec>> {

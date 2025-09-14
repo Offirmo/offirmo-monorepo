@@ -6,6 +6,7 @@ import type {
 	AbsolutePath,
 	JSON,
 	AbsoluteDirPath,
+	ImmutableJSON, ImmutableJSONObject,
 } from '@offirmo-private/ts-types'
 import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
 
@@ -81,15 +82,15 @@ function onꓽspec_chain_loaded(
 
 		// reminder that scm root and workspace can be the same
 		if (result.data) {
+			topmost_spec_under_workspace = result.data as any // TODO 1D schema validation
 			if (nodeⵧworkspace_root.path‿abs === PENDING) {
 				assert(nodeⵧscm_root.path‿abs !== PENDING, `SCM root must be known before workspace!`)
 				nodeⵧworkspace_root.path‿abs = result.parent_folder_path‿abs
-				topmost_spec_under_workspace = nodeⵧworkspace_root.spec = result.data
+				topmost_spec_under_workspace = topmost_spec_under_workspace
 				state = registerꓽnode(state, nodeⵧworkspace_root)
 			} else {
 				// must be a subfolder modifier, ignore
 				// TODO 1D handle config not at root of workspace
-				topmost_spec_under_workspace ||= result.data
 			}
 		}
 	})
@@ -102,7 +103,7 @@ function onꓽspec_chain_loaded(
 			if (result.hasꓽpackageᐧjson) {
 				if (nodeⵧworkspace_root.path‿abs === PENDING) {
 					nodeⵧworkspace_root.path‿abs = result.parent_folder_path‿abs
-					nodeⵧworkspace_root.spec = topmost_spec_under_workspace
+					nodeⵧworkspace_root.spec = topmost_spec_under_workspace || {}
 					state = registerꓽnode(state, nodeⵧworkspace_root)
 				} else {
 					// must be a subfolder modifier, ignore
@@ -262,7 +263,7 @@ function ensureꓽfile_loading(
 	throw new Error('not implemented!')
 }*/
 
-function _getJsonType(a: JSON): 'object' | 'array' | 'primitive' | 'undef' {
+function _getJsonType(a: ImmutableJSON): 'object' | 'array' | 'primitive' | 'undef' {
 	if (a === undefined) {
 		return 'undef'
 	}
@@ -274,14 +275,14 @@ function _getJsonType(a: JSON): 'object' | 'array' | 'primitive' | 'undef' {
 	if (a === null) return 'primitive'
 	if (['string', 'number', 'boolean'].includes(typeof a)) return 'primitive'
 
-	if (isꓽobjectⵧliteral(a)) {
+	if (isꓽobjectⵧliteral(a as any)) {
 		return 'object'
 	}
 
 	throw new Error('Incorrect JSON!')
 }
 
-function _mergeJson(a: JSON, b: JSON): JSON {
+function _mergeJson(a: ImmutableJSON, b: ImmutableJSON): ImmutableJSON {
 	const ta = _getJsonType(a)
 	const tb = _getJsonType(b)
 	if (ta === undefined) {
@@ -301,12 +302,12 @@ function _mergeJson(a: JSON, b: JSON): JSON {
 			// TODO set for uniqueness!
 			return [...(a as JSON[]), ...(b as JSON[])].sort()
 		case 'object': {
-			const result: JSONObject = {}
+			const result: ImmutableJSONObject = {}
 			const k1 = Object.keys(a as JSONObject)
 			const k2 = Object.keys(b as JSONObject)
 			const all_keys = Array.from(new Set([...k1, ...k2])).sort()
 			for (const k of all_keys) {
-				result[k] = _mergeJson((a as JSONObject)[k], (b as JSONObject)[k])
+				result[k] = _mergeJson((a as ImmutableJSONObject)[k], (b as ImmutableJSONObject)[k])
 			}
 			return result
 		}
@@ -352,10 +353,11 @@ function requestꓽfile_output(
 			// check same content
 			assert(false, 'Not implemented!')
 		} else if (candidate_spec.intent === 'present--containing') {
-			spec = {
+			const merge_spec: Immutable<FileOutputPresent> = {
 				...candidate_spec,
-				content: _mergeJson(existing.content, candidate_spec.content),
+				content: _mergeJson((existing as any as FileOutputPresent).content, (candidate_spec as any as FileOutputPresent).content!) as any,
 			}
+			spec = merge_spec
 			//console.log('TODO check')
 		}
 	}

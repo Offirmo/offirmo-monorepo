@@ -1,4 +1,4 @@
-import type { Immutable, JSONObject } from '@offirmo-private/ts-types'
+import type { Immutable, ImmutableJSONObject } from '@offirmo-private/ts-types'
 import type {
 	InfiniteMonorepoSpec,
 	Node,
@@ -27,7 +27,7 @@ export interface FileOutputAbsent extends BaseFileOutput {
 export interface FileOutputPresent extends BaseFileOutput {
 	intent: 'present--exact' | 'present--containing'
 	manifest: StructuredFsⳇFileManifest
-	content: JSONObject
+	content: ImmutableJSONObject
 }
 
 /////////////////////////////////////////////////
@@ -73,14 +73,14 @@ export interface State {
 
 export interface Plugin {
 	// on plugin load
-	onꓽload: (state: Immutable<StateLib.State>) => Immutable<StateLib.State>
+	onꓽload?: (state: Immutable<StateLib.State>) => Immutable<StateLib.State>
 
 	// to gather facts (and not opinions!)
-	onꓽnodeⵧdiscovered: (
+	onꓽnodeⵧdiscovered?: (
 		state: Immutable<StateLib.State>,
 		node: Immutable<Node>,
 	) => Immutable<StateLib.State>
 
-	// to reac the ideal state (file outputs)
-	onꓽapply: (state: Immutable<StateLib.State>, node: Immutable<Node>) => Immutable<StateLib.State>
+	// to reach the ideal state (file outputs)
+	onꓽapply?: (state: Immutable<StateLib.State>, node: Immutable<Node>) => Immutable<StateLib.State>
 }

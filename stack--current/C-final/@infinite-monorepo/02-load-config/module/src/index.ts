@@ -9,9 +9,10 @@ import {
 import type {
 	JSONObject,
 	AbsoluteDirPath,
+	AbsolutePath,
 	AbsoluteFilePath,
 	PathSeparator,
-	AnyDirPath,
+	AnyPath,
 } from '@offirmo-private/ts-types'
 import { lsDirsSync, lsFilesSync } from '@offirmo-private/fs--ls'
 import { strict as assert } from 'node:assert'
