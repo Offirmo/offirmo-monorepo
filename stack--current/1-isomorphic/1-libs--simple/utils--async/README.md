@@ -1,5 +1,7 @@
 
 
+2025/08 interesting deep dive https://nolanlawson.com/2025/08/31/why-do-browsers-throttle-javascript-timers/
+
 NEW 2024/09 [Scheduling APIs](https://chromestatus.com/feature/6031161734201344)
 > Userspace tasks often have varying degrees of importance (related to user experience),
 > but the Platform lacks a unified API to schedule prioritized work.
@@ -13,7 +15,6 @@ What we want (semantic)
 - dezalgo
 - critical but out of the main thread (when loading a webpage for ex.)
 - 3 levels of priority: user-blocking, user-visible, and background https://chromestatus.com/feature/6031161734201344
--
 
 Current primitives (not semantic):
 1. sync

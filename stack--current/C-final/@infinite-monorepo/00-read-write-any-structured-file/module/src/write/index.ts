@@ -57,6 +57,8 @@ async function ೱwriteꓽfile(
 			return await ೱwriteꓽfileⵧlist(file_path, content as any)
 		case 'single-value':
 			return await ೱwriteꓽfileⵧsingle_value(file_path, content as any)
+		case 'text':
+			return await ೱwriteꓽfileⵧtext(file_path, content as any)
 		default:
 			throw new Error(`Writing to format ${format} not implemented!`)
 	}
@@ -106,6 +108,17 @@ async function ೱwriteꓽfileⵧsingle_value(
 	})
 }
 
+// TODO details EOL / trailing
+async function ೱwriteꓽfileⵧtext(
+	file_path: AnyFilePath,
+	content: Immutable<ContentⳇSingleValue>,
+): Promise<void> {
+	let content_serialized = `${content.text}`
+	await fs.writeFile(path.resolve(process.cwd(), file_path), content_serialized, {
+		encoding: 'utf8',
+	})
+}
+
 /////////////////////////////////////////////////
 
 export {
@@ -114,4 +127,5 @@ export {
 	ೱwriteꓽfileⵧjson5,
 	ೱwriteꓽfileⵧlist,
 	ೱwriteꓽfileⵧsingle_value,
+	ೱwriteꓽfileⵧtext,
 }

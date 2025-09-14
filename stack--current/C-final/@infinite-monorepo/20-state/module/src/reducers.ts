@@ -1,6 +1,13 @@
 import * as path from 'node:path'
 import assert from 'tiny-invariant'
-import type { JSONObject, Immutable, AbsolutePath, JSON } from '@offirmo-private/ts-types'
+import type {
+	JSONObject,
+	Immutable,
+	AbsolutePath,
+	JSON,
+	AbsoluteDirPath,
+} from '@offirmo-private/ts-types'
+import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
 
 import {
 	type InfiniteMonorepoSpec,
@@ -9,6 +16,9 @@ import {
 	type StructuredFsⳇFileManifest,
 	type MultiRepoRelativeFilePath,
 	PATHVARⵧROOTⵧNODE,
+	PATHVARⵧROOTⵧREPO,
+	PATHVARⵧROOTⵧWORKSPACE,
+	type NodeⳇRepo,
 } from '@infinite-monorepo/types'
 import { completeꓽspec } from '@infinite-monorepo/defaults'
 
@@ -27,48 +37,120 @@ function create(): Immutable<State> {
 		file_manifests: {},
 
 		graph: {
-			nodesⵧall: {},
+			nodesⵧscm: {},
+			nodesⵧsemantic: {},
 		},
 
 		output_files: {},
 	}
 }
 
-function onꓽspec_loaded(state: Immutable<State>, spec: InfiniteMonorepoSpec): Immutable<State> {
-	DEBUG && console.debug('On spec loaded...', spec.root_path‿abs)
+function onꓽspec_chain_loaded(
+	state: Immutable<State>,
+	spec_chain: Awaited<ReturnType<typeof loadꓽspecⵧchainⵧraw>>,
+): Immutable<State> {
+	DEBUG && console.debug('On spec chain loaded...')
 
-	// as of now, spec = workspace
-	const root_node: NodeⳇWorkspace = {
-		type: 'workspace',
-		path‿abs: spec.root_path‿abs,
-		path‿ar: '$WORKSPACE_ROOT$/',
-		parent: null,
+	// traverse the chain, discovering nodes
+	const PENDING: AbsoluteDirPath = 'PENDING/'
+	const nodeⵧscm_root: NodeⳇRepo = {
+		type: 'repository',
+		path‿abs: PENDING,
+		path‿ar: `${PATHVARⵧROOTⵧREPO}/`,
+		parent_id: null,
 	}
+	const nodeⵧworkspace_root: NodeⳇWorkspace = {
+		type: 'workspace',
+		path‿abs: PENDING,
+		path‿ar: `${PATHVARⵧROOTⵧWORKSPACE}/`,
+		parent_id: null,
+	}
+	let topmost_spec_under_workspace: InfiniteMonorepoSpec | undefined
 
-	return registerꓽnode(
-		{
-			...state,
-			spec,
-		},
-		root_node,
-	)
+	spec_chain.forEach(result => {
+		//console.log('Spec loaded:', result)
+
+		if (result.boundary === 'git') {
+			if (nodeⵧscm_root.path‿abs === PENDING) {
+				nodeⵧscm_root.path‿abs = result.parent_folder_path‿abs
+				state = registerꓽnode(state, nodeⵧscm_root)
+			} else {
+				// must be a git submodule, ignore
+			}
+		}
+
+		// reminder that scm root and workspace can be the same
+		if (result.data) {
+			if (nodeⵧworkspace_root.path‿abs === PENDING) {
+				assert(nodeⵧscm_root.path‿abs !== PENDING, `SCM root must be known before workspace!`)
+				nodeⵧworkspace_root.path‿abs = result.parent_folder_path‿abs
+				topmost_spec_under_workspace = nodeⵧworkspace_root.spec = result.data
+				state = registerꓽnode(state, nodeⵧworkspace_root)
+			} else {
+				// must be a subfolder modifier, ignore
+				// TODO 1D handle config not at root of workspace
+				topmost_spec_under_workspace ||= result.data
+			}
+		}
+	})
+	assert(nodeⵧscm_root.path‿abs !== PENDING, `SCM root must exist!`)
+
+	if (nodeⵧworkspace_root.path‿abs === PENDING) {
+		// do a second pass using package.json as a hint
+		spec_chain.forEach(result => {
+			//console.log('Spec loaded:', result)
+			if (result.hasꓽpackageᐧjson) {
+				if (nodeⵧworkspace_root.path‿abs === PENDING) {
+					nodeⵧworkspace_root.path‿abs = result.parent_folder_path‿abs
+					nodeⵧworkspace_root.spec = topmost_spec_under_workspace
+					state = registerꓽnode(state, nodeⵧworkspace_root)
+				} else {
+					// must be a subfolder modifier, ignore
+				}
+			}
+		})
+	}
+	assert(nodeⵧworkspace_root.path‿abs !== PENDING, `Workspace root must exist!`)
+
+	return state
 }
 
-// XXX TODO parent!
+// XXX TODO link parent!
 function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
-	DEBUG && console.debug('Registering node...', node.path‿abs)
+	DEBUG && console.debug('Registering node...', node.path‿abs, node.type)
+
+	if (node.type === 'repository') {
+		assert(
+			state.graph.nodesⵧscm[node.path‿abs] === undefined,
+			`SCM node already registered: ${node.path‿abs}!`,
+		)
+
+		return {
+			...state,
+			graph: {
+				...state.graph,
+				nodesⵧscm: {
+					...state.graph.nodesⵧscm,
+					[node.path‿abs]: {
+						...node,
+						status: 'new',
+					},
+				},
+			},
+		}
+	}
 
 	assert(
-		state.graph.nodesⵧall[node.path‿abs] === undefined,
-		`Node already registered: ${node.path‿abs}!`,
+		state.graph.nodesⵧsemantic[node.path‿abs] === undefined,
+		`Semantic node already registered: ${node.path‿abs}!`,
 	)
 
 	return {
 		...state,
 		graph: {
 			...state.graph,
-			nodesⵧall: {
-				...state.graph.nodesⵧall,
+			nodesⵧsemantic: {
+				...state.graph.nodesⵧsemantic,
 				[node.path‿abs]: {
 					...node,
 					status: 'new',
@@ -78,17 +160,42 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 	}
 }
 function reportꓽnodeⵧanalyzed(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
-	DEBUG && console.debug('Marking node analyzed...', node.path‿abs)
+	DEBUG && console.debug('Marking node analyzed...', node.path‿abs, node.type)
 
-	assert(!!state.graph.nodesⵧall[node.path‿abs], `Node expected: ${node.path‿abs}!`)
-	assert(state.graph.nodesⵧall[node.path‿abs]?.status === 'new', `Node not new: ${node.path‿abs}!`)
+	if (node.type === 'repository') {
+		assert(!!state.graph.nodesⵧscm[node.path‿abs], `Node expected: ${node.path‿abs}!`)
+		assert(
+			state.graph.nodesⵧscm[node.path‿abs]?.status === 'new',
+			`Node not new: ${node.path‿abs}!`,
+		)
+
+		return {
+			...state,
+			graph: {
+				...state.graph,
+				nodesⵧscm: {
+					...state.graph.nodesⵧscm,
+					[node.path‿abs]: {
+						...node,
+						status: 'analyzed',
+					},
+				},
+			},
+		}
+	}
+
+	assert(!!state.graph.nodesⵧsemantic[node.path‿abs], `Node expected: ${node.path‿abs}!`)
+	assert(
+		state.graph.nodesⵧsemantic[node.path‿abs]?.status === 'new',
+		`Node not new: ${node.path‿abs}!`,
+	)
 
 	return {
 		...state,
 		graph: {
 			...state.graph,
-			nodesⵧall: {
-				...state.graph.nodesⵧall,
+			nodesⵧsemantic: {
+				...state.graph.nodesⵧsemantic,
 				[node.path‿abs]: {
 					...node,
 					status: 'analyzed',
@@ -266,7 +373,7 @@ function requestꓽfile_output(
 
 export {
 	create,
-	onꓽspec_loaded,
+	onꓽspec_chain_loaded,
 	registerꓽnode,
 	reportꓽnodeⵧanalyzed,
 	declareꓽfile_manifest,

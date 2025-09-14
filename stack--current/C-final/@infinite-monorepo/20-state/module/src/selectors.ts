@@ -1,21 +1,18 @@
 import assert from 'tiny-invariant'
-import type { Immutable, SemVerⳇExact, SemVerⳇRange } from '@offirmo-private/ts-types'
+import type { Immutable } from '@offirmo-private/ts-types'
 
-import type {
-	Node,
-	JsRuntimeSpec,
-} from '@infinite-monorepo/types'
+import type { Node, JsRuntimeSpec, NodeId } from '@infinite-monorepo/types'
 
 import type { State } from './types.ts'
 
 /////////////////////////////////////////////////
 
 function getꓽnodesⵧnew(state: Immutable<State>): Immutable<Array<Node>> {
-	return Object.values(state.graph.nodesⵧall).filter(node => node.status === 'new')
+	return Object.values(state.graph.nodesⵧsemantic).filter(node => node.status === 'new')
 }
 
 function getꓽfile__content(state: Immutable<State>): Immutable<Array<Node>> {
-	return Object.values(state.graph.nodesⵧall).filter(node => node.status === 'new')
+	throw new Error('nimp!')
 }
 
 function getꓽruntimeⵧlocal(state: Immutable<State>, node: Immutable<Node>): JsRuntimeSpec {
@@ -32,7 +29,4 @@ function getꓽruntimeⵧlocal(state: Immutable<State>, node: Immutable<Node>): 
 
 /////////////////////////////////////////////////
 
-export {
-	getꓽnodesⵧnew,
-	getꓽruntimeⵧlocal,
-}
+export { getꓽnodesⵧnew, getꓽruntimeⵧlocal }

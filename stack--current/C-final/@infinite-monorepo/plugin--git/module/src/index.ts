@@ -71,6 +71,23 @@ const pluginꓽgit: Plugin = {
 						entries: [
 							// each plugin is free to add their own entries, we don't cargo cult a huge list
 							'node_modules/',
+							// generic clearly local-only
+							'*.local',
+							// generic clearly temp
+							'tmp-*/',
+							'.cache/',
+							// for security: dotenv, Vercel https://nextjs.org/docs/app/guides/environment-variables#environment-variable-load-order
+							'.env',
+							'.env.dev',
+							'.env.staging',
+							'*.env.staging',
+							'.env.test',
+							'.env.test.local',
+							'.env.prod',
+							'.env.production.local',
+							'.env.local',
+							// for security: ?
+							'.*.vars',
 						],
 					},
 				}
@@ -79,11 +96,14 @@ const pluginꓽgit: Plugin = {
 			}
 			// TODO 1D any node where parent node != current node
 			default:
+				// NO! what if overlapping nodes?
+				/*
 				state = StateLib.requestꓽfile_output(state, {
 					parent_node: node,
 					path‿ar: ᐧgitattributes__path‿ar,
 					intent: 'not-present',
 				})
+				*/
 				break
 		}
 

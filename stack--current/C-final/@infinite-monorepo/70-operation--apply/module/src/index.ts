@@ -1,13 +1,12 @@
 import * as fs from 'node:fs/promises'
 import assert from 'tiny-invariant'
-import type { Immutable } from '@offirmo-private/ts-types'
-import { loadꓽspec } from '@infinite-monorepo/load-spec'
+import type { Immutable, AnyPath } from '@offirmo-private/ts-types'
+import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
 import * as StateLib from '@infinite-monorepo/state'
-import { dumpꓽanyⵧprettified } from '@offirmo-private/prettify-any'
 import pluginꓽgit from '@infinite-monorepo/plugin--git'
 import pluginꓽnvm from '@infinite-monorepo/plugin--nvm'
 import pluginꓽparcel from '@infinite-monorepo/plugin--parcel'
-import type { State, Plugin, FileOutputPresent, FileOutputAbsent } from '@infinite-monorepo/state'
+import type { State, Plugin } from '@infinite-monorepo/state'
 import { ೱwriteꓽfile } from '@infinite-monorepo/read-write-any-structured-file/write'
 
 /////////////////////////////////////////////////
@@ -24,7 +23,7 @@ function noop(state: Immutable<State>): Immutable<State> {
 	return state
 }
 
-async function apply() {
+async function apply(from?: AnyPath) {
 	console.log(`@infinite-monorepo/apply…`)
 
 	////////////
@@ -55,8 +54,8 @@ async function apply() {
 	await _propagate()
 
 	////////////
-	const spec = await loadꓽspec()
-	state = StateLib.onꓽspec_loaded(state, spec)
+	const spec_chain = await loadꓽspecⵧchainⵧraw(from)
+	state = StateLib.onꓽspec_chain_loaded(state, spec_chain)
 	// TODO 1D plugin onꓽspec_loaded?
 	await _propagate()
 
@@ -70,9 +69,16 @@ async function apply() {
 
 	////////////
 	// TODO topological order!!!
-	Object.entries(state.graph.nodesⵧall)
+	Object.entries(state.graph.nodesⵧscm)
 		.sort()
-		.forEach(([path, node]) => {
+		.forEach(([, node]) => {
+			state = plugins.reduce((state, plugin) => {
+				return (plugin.onꓽapply ?? noop)(state, node)
+			}, state)
+		})
+	Object.entries(state.graph.nodesⵧsemantic)
+		.sort()
+		.forEach(([, node]) => {
 			state = plugins.reduce((state, plugin) => {
 				return (plugin.onꓽapply ?? noop)(state, node)
 			}, state)

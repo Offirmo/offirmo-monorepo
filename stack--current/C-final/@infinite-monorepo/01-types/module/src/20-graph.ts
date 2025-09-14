@@ -33,6 +33,9 @@ export type MultiRepoRelativeDirPath = MultiRepoRelativePath
 
 /////////////////////////////////////////////////
 
+// id ~path with a minor conflict hack
+export type NodeId = string
+
 export interface NodeBase {
 	path‿abs: AbsoluteDirPath
 	path‿ar: MultiRepoRelativePath
@@ -40,6 +43,8 @@ export interface NodeBase {
 	// any node can override stuff from the root spec
 	// intelligently cascaded from parents
 	spec?: Partial<InfiniteMonorepoSpec>
+
+	parent_id: NodeId | null
 }
 
 /////////////////////////////////////////////////
@@ -85,16 +90,14 @@ export interface ArchRepository extends NodeBase {}
 
 export interface NodeⳇRepo extends Workspace {
 	type: typeof NODE_TYPEⵧREPO
-	parent: null // so far
+	parent_id: null // so far until multi-repo / arch-repo
 }
 // XXX note that a workspace could be directly at the root of the repo = same path
 export interface NodeⳇWorkspace extends Workspace {
 	type: typeof NODE_TYPEⵧWORKSPACE
-	parent: NodeⳇRepo
 }
 export interface NodeⳇPackage extends Package {
 	type: typeof NODE_TYPEⵧPACKAGE
-	parent: NodeⳇWorkspace // so far
 }
 
 export type Node = NodeⳇRepo | NodeⳇWorkspace | NodeⳇPackage

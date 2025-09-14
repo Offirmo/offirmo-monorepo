@@ -42,7 +42,9 @@ export interface State {
 	spec: InfiniteMonorepoSpec
 
 	graph: {
-		nodesⵧall: { [path: string]: Node & { status: 'new' | 'analyzed' } }
+		// SCM nodes may overlap with semantic nodes, so we store them separately
+		nodesⵧscm: { [id: string]: Node & { status: 'new' | 'analyzed' } }
+		nodesⵧsemantic: { [id: string]: Node & { status: 'new' | 'analyzed' } }
 	}
 
 	file_manifests: Record<MultiRepoRelativeFilePath, StructuredFsⳇFileManifest>

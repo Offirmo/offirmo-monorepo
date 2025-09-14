@@ -65,11 +65,13 @@ const pluginꓽnvm: Plugin = {
 				break
 			}
 			default:
+				/* NO! what if graphs overlaps?
 				state = StateLib.requestꓽfile_output(state, {
 					parent_node: node,
 					path‿ar: ᐧnvmrc__path‿ar,
 					intent: 'not-present',
 				})
+				*/
 				break
 		}
 
