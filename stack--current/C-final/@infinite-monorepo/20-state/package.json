@@ -15,6 +15,7 @@
 	},
 	"dependencies": {
 		"@infinite-monorepo/defaults": "*",
+		"@infinite-monorepo/load-spec": "*",
 		"@infinite-monorepo/types": "*",
 		"@offirmo-private/type-detection": "*",
 		"tiny-invariant": "^1"

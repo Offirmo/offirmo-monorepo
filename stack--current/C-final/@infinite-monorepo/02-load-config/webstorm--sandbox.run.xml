@@ -1,11 +1,11 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false"
-		name="@infinite-monorepo/read-write-any-structured-file -- Sandbox"
+		name="@infinite-monorepo/load-config -- Sandbox"
 		type="NodeJSConfigurationType"
 		<node-interpreter>project</node-interpreter>
 		node-parameters="--experimental-strip-types"
-		path-to-js-file="module/sandbox/read.ts"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/C-final/@infinite-monorepo/00-read-write-any-structured-file">
+		path-to-js-file="module/sandbox/index.ts"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/C-final/@infinite-monorepo/02-load-config">
 		<method v="2" />
 	</configuration>
 </component>
