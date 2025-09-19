@@ -248,15 +248,31 @@ networks -- Optimism
 networks -- Polygon Mainnet
 networks -- Solana Mainnet Beta
 networks -- Zcash Mainnet
-NFT -- wrapping = taking an existing NFT and creating a new type of fungible token that represents ownership of that NFT. Wrapping makes it possible to use a non-fungible token (like a CryptoPunk) on platforms or in ecosystems that primarily support fungible tokens, like NFT marketplaces and decentralized finance applications https://721.cryptopunks.app/
+NFTs -- "BAYC wall" = pricier than BAYC
+NFTs -- "buy before the news"
 NFTs -- as collateral -- NFTti
+NFTs -- blue chip = "most wanted" "have taken hold" "demonstrated high and stable market value" https://dappradar.com/blog/what-are-blue-chip-nft-collections
+NFTs -- Bored Ape Yacht Club (BAYC) = https://dappradar.com/blog/what-is-bored-ape-yacht-club
+NFTs -- collections -- dominance = https://dappradar.com/rankings/nft/collections
+NFTs -- CryptoPunks = the OG
 NFTs -- games -- CryptoKitties
 NFTs -- games -- Decentraland https://decentraland.org/
 NFTs -- games -- Gods Unchained
+NFTs -- https://www.artblocks.io/
 NFTs -- marketplaces -- aggregators = OpenSea
-NFTs -- marketplaces = Rare, SuperRare
+NFTs -- marketplaces -- Rare, SuperRare
+NFTs -- marketplaces = https://dappradar.com/blog/best-nft-marketplaces-to-buy-sell-nfts
+NFTs -- OpenSea Flagship Collection = https://opensea.io/OpenSeaFlagshipCollection https://opensea.io/learn/nft/the-opensea-flagship-collection https://blockworks.co/news/opensea-nft-archive-with-1m-acquisition-plan
 NFTs -- Patrons -- locked/unlocked
 NFTs -- Patrons = ~shares with no return = not a security = not under law, but get exclusive rewards and benefits? https://cointelegraph.com/magazine/crypto-four-years-grow-cant-be-shut-down-kain-warwick-infinex/
+NFTs -- royalties -- issue https://mirror.xyz/blurdao.eth/vYOjzk4cQCQ7AtuJWWiZPoNZ04YKQmTMsos0NNq_hYs
+NFTs -- secondary = derived from another one, ex. BAYC -> BAKC (kennel), BAYC -> MAYC (mutant)
+NFTS -- simple profile picture (PFP) = simple NFT usable as a profile picture https://dappradar.com/blog/best-top-nft-pfp-avatars
+NFTs -- standards -- ERC-1155 = https://eips.ethereum.org/EIPS/eip-1155#non-fungible-tokens
+NFTs -- standards -- ERC-20 = the original https://dappradar.com/blog/ten-things-everybody-should-know-about-nfts
+NFTs -- standards = https://transak.com/blog/popular-nft-types https://scand.com/company/blog/nft-standards-erc-721-vs-erc-1155-and-beyond/
+NFTs -- traits
+NFTs -- wrapping = taking an existing NFT and creating a new type of fungible token that represents ownership of that NFT. Wrapping makes it possible to use a non-fungible token (like a CryptoPunk) on platforms or in ecosystems that primarily support fungible tokens, like NFT marketplaces and decentralized finance applications https://721.cryptopunks.app/
 NFTs = https://www.youtube-nocookie.com/embed/Xdkkux6OxfM
 node
 non-custodial = "even if someone goes and nukes the platform, censors it, DDoS’s it, or takes down AWS, you can still go to the chain and get your assets back."

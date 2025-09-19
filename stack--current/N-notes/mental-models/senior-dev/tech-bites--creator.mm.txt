@@ -7,5 +7,15 @@ content gating -- patreon
 content gating -- web3 https://www.coinbase.com/en-au/learn/crypto-basics/what-is-token-gating-and-what-are-the-benefits-of-doing-it
 content independence https://blog.cloudflare.com/content-independence-day-no-ai-crawl-without-compensation/
 mailing list
+NFTs -- creation -- chain = ex. Ethereum
+NFTs -- creation -- collection image = ex. 800x800 or 1000x1000
+NFTs -- creation -- description --
+NFTs -- creation -- name = ex.
+NFTs -- creation -- standard = ex. ERC1155
+NFTs -- creation -- token symbol = ex. BAYC
+NFTs -- creation -- type
+NFTs -- marketplaces = https://dappradar.com/blog/best-nft-marketplaces-to-buy-sell-nfts
+NFTs -- studios -- https://magiceden.io/mint-terminal/create
+NFTs -- studios -- https://opensea.io/studio/create/collection
 skibidi toilet https://speedrun.substack.com/p/meet-the-obsessive-creator-behind-skibidi-toilet
 social tokens = digital assets issued by creators to monetize their content and engage with their fan base https://www.coinbase.com/en-au/learn/crypto-basics/what-are-social-tokens-and-how-do-they-redefine-value-in-the-creator-economy

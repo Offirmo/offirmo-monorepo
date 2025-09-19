@@ -146,6 +146,7 @@ biohacking https://www.medicalnewstoday.com/articles/biohacking
 birthday problem = counterintuitive https://en.wikipedia.org/wiki/Birthday_problem
 birthday/christmas/21 effect = increased death around certain dates / milestones https://en.wikipedia.org/wiki/Birthday_effect
 black swan https://en.wikipedia.org/wiki/Black_swan_theory
+blue-chip = (publicly traded company) known for its stability, consistent earnings, sound financials, and long-standing reputation = "most wanted in the industry (investment)"
 bonnes et mauvaises cartes
 brain -- fast & slow
 brain -- fast & slow -- fast = training / education / culture = biased = knee-jerk = LLM
