@@ -1,15 +1,8 @@
 import * as path from 'node:path'
-import type { JSONObject, AnyFilePath, Immutable } from '@offirmo-private/ts-types'
+import type { JSONObject, AnyFilePath, Immutable, JSON } from '@offirmo-private/ts-types'
 
-import type {
-	ContentⳇJson5,
-	ContentⳇList,
-	ContentⳇSingleValue,
-	ContentⳇTsImport,
-	ContentⳇYaml,
-	StructuredFileFormat,
-	StructuredFileFormatⳇParser,
-} from '../types.ts'
+import type { StructuredFileFormat } from '../types.ts'
+import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
 
 /////////////////////////////////////////////////
 
@@ -66,6 +59,60 @@ function inferꓽformat_from_content_shape(
 }
 */
 
+function _getꓽjson__type(a: Immutable<JSON>): 'object' | 'array' | 'primitive' | 'undef' {
+	if (a === undefined) {
+		return 'undef'
+	}
+
+	if (Array.isArray(a)) {
+		return 'array'
+	}
+
+	if (a === null) return 'primitive'
+	if (['string', 'number', 'boolean'].includes(typeof a)) return 'primitive'
+
+	if (isꓽobjectⵧliteral(a as any)) {
+		return 'object'
+	}
+
+	throw new Error('Incorrect JSON!')
+}
+
+function mergeꓽjson(a: Immutable<JSON>, b: Immutable<JSON>): Immutable<JSON> {
+	if (a === undefined) {
+		return b
+	}
+	if (b === undefined) {
+		return a
+	}
+
+	const ta = _getꓽjson__type(a)
+	const tb = _getꓽjson__type(b)
+	if (ta !== tb) {
+		throw new Error(`Cannot merge different JSON types: ${ta} vs ${tb}!`)
+	}
+	switch (ta) {
+		case 'primitive':
+			if (a === b) return a
+			throw new Error(`Cannot merge conflicting primitive JSON values: ${a} vs ${b}!`)
+		case 'array':
+			// TODO set for uniqueness!
+			return [...(a as JSON[]), ...(b as JSON[])].sort()
+		case 'object': {
+			const result: Immutable<JSONObject> = {}
+			const k1 = Object.keys(a as JSONObject)
+			const k2 = Object.keys(b as JSONObject)
+			const all_keys = Array.from(new Set([...k1, ...k2])).sort()
+			for (const k of all_keys) {
+				result[k] = mergeꓽjson((a as Immutable<JSONObject>)[k], (b as Immutable<JSONObject>)[k])
+			}
+			return result
+		}
+		default:
+			throw new Error('Unexpected JSON type!')
+	}
+}
+
 /////////////////////////////////////////////////
 
-export { inferꓽformat_from_path }
+export { inferꓽformat_from_path, mergeꓽjson }

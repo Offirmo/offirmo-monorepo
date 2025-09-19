@@ -1,4 +1,5 @@
 "the compelling feature was speed" https://blog.janestreet.com/how-we-accidentally-built-a-better-build-system-for-ocaml-index/
+[ ] https://martinfowler.com/tags/continuous%20delivery.html
 alpine images = not such a good idea https://tinplavec.medium.com/gitlab-ci-cd-best-practices-i-recommend-after-2-years-of-experience-dfc0e349e4d6
 build chain -- Because you interact with it daily, above all it has to be fast – but it also has to be flexible. https://blog.janestreet.com/how-we-accidentally-built-a-better-build-system-for-ocaml-index/
 build system -- bazel
@@ -50,6 +51,7 @@ CI/CD -- solutions -- GA -- variables https://docs.github.com/en/actions/concept
 CI/CD -- solutions -- GA -- workflows -- reusable = caller, called https://docs.github.com/en/actions/concepts/workflows-and-actions/reusable-workflows#key-differences-between-reusable-workflows-and-composite-actions
 CI/CD -- solutions -- GA -- workflows = a configurable automated process that will run one or more jobs. Workflows are defined by a YAML file https://docs.github.com/en/actions/get-started/understand-github-actions#workflows https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows
 CI/CD -- solutions -- Google Cloud Build = https://cloud.google.com/build
+docker -- multi stage https://docs.docker.com/build/building/multi-stage/
 editor integration
 environments -- hierarchy = local -> shared -> staging -> prod
 flaky tests https://blog.mergify.com/flaky-test-detection/
@@ -64,6 +66,7 @@ metrics -- lead time = should be one day to one week.
 metrics https://www.linkedin.com/pulse/best-measure-values-cicd-kazem-gheisari-hagaf
 monorepo’s requirements
 ratcheting https://robertgreiner.com/continuous-code-improvement-using-ratcheting/ https://leaddev.com/building-better-software/introducing-quality-ratchets-tool-managing-complex-systems
+semantic conflicts https://martinfowler.com/bliki/SemanticConflict.html
 some best practices https://tinplavec.medium.com/gitlab-ci-cd-best-practices-i-recommend-after-2-years-of-experience-dfc0e349e4d6
 topological execution
 undesirable -- Customer Satisfaction = Lower due to bugs, performance issues, and unreliable software https://blog.mergify.com/improve-code-quality/

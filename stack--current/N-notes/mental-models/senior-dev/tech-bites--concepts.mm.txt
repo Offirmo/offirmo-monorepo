@@ -103,6 +103,7 @@ async -- sync = By synchronous we mean a function that calls its callback on the
 atomic
 audit trail = what happened, when, who made the request and how?
 authentication
+bash -- pitfalls https://mywiki.wooledge.org/BashPitfalls
 BDD (Behavior-Driven Development) https://cucumber.io/school/   Discovery -> Formulation -> Automation
 Beyoncé Principle = If you liked it, then you shoulda put a test on it
 big companies software = At big companies, software tends to be written by large and frequently changing teams of mediocre programmers https://paulgraham.com/noop.html

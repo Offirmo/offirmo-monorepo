@@ -607,6 +607,11 @@ third-party risk management
 time -- leap second
 time -- leap second -- leap smear https://googleblog.blogspot.com/2011/09/time-technology-and-leaping-seconds.html
 time = difficult yet important for distributed https://unix4lyfe.org/time/
+tokens -- "assume they're being stolen" https://fly.io/blog/macaroons-escalated-quickly/
+tokens -- bearer = too powerful https://fly.io/blog/macaroons-escalated-quickly/
+tokens -- biscuits = ambitious better macaroons https://fly.io/blog/api-tokens-a-tedious-survey/
+tokens -- macaroons = better tokens "user-editable tokens that enable JIT-generated least-privilege tokens" https://fly.io/blog/macaroons-escalated-quickly/
+tokens -- survey https://fly.io/blog/api-tokens-a-tedious-survey/
 user flow -- error rate = percentage of unique users encountering at least one failure when attempting to perform one of the user operations composing the user flow
 user flow = actions users can perform to achieve a specific outcome, for example, uploading media or sharing a document
 user management -- Domain Enabled Signup

@@ -3,7 +3,7 @@ import * as path from 'node:path'
 import { homedir } from 'node:os'
 import {
 	ↆloadꓽfileⵧimport,
-	ↆloadꓽfile,
+	ↆreadꓽfile,
 } from '@infinite-monorepo/read-write-any-structured-file/read'
 
 import type {
@@ -111,7 +111,7 @@ export async function loadꓽconfigⵧchain(
 				)
 			} else if (child_files_pathes‿rel.includes(radix)) {
 				const candidate_file_path‿abs = path.join(current_path‿abs, radix)
-				const ೱdata = ↆloadꓽfile(candidate_file_path‿abs)
+				const ೱdata = ↆreadꓽfile(candidate_file_path‿abs)
 				const result: Result = {
 					data: { loading: '…' },
 					parent_folder_path‿abs: current_path‿abs,

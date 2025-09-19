@@ -15,7 +15,9 @@
 	},
 	"dependencies": {
 		"@infinite-monorepo/load-spec": "*",
+		"@infinite-monorepo/plugin--bolt": "*",
 		"@infinite-monorepo/plugin--git": "*",
+		"@infinite-monorepo/plugin--npm": "*",
 		"@infinite-monorepo/plugin--nvm": "*",
 		"@infinite-monorepo/plugin--parcel": "*",
 		"@infinite-monorepo/read-write-any-structured-file": "*",

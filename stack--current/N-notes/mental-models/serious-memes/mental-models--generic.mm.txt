@@ -1323,6 +1323,7 @@ verifiability https://en.wikipedia.org/wiki/Wikipedia:Verifiability
 verisimilitude
 via negativa = When we have a problem, our natural instinct is to add a new habit or purchase a fix. But sometimes, you can improve your life by taking things away. For example, the foods you avoid are more important than the foods you eat.
 victimisation/retaliation = subject to or threatened with some kind of disadvantage or unfair treatment (often referred to as detriment) because they made (or plan to make) a workplace complaint, or helped someone else to do so
+violence -- physical punishment https://fr.wikipedia.org/wiki/Affaire_B%C3%A9tharram
 vitality curve / stack ranking / forced ranking / rank and yank = performance management practice that calls for individuals to be ranked or rated against their coworkers https://en.wikipedia.org/wiki/Vitality_curve
 viz
 viz -- diagrams -- charts

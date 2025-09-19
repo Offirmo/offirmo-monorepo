@@ -15,11 +15,11 @@
 	"dependencies": {
 		"@tsconfig/strictest": "^2",
 		"chalk": "^5",
-		"meow": "^13",
+		"meow": "^14",
 		"node-typescript-compiler": "*",
 		"semver": "^7",
 		"tiny-invariant": "^1",
 		"typescript": "^5",
-		"write-json-file": "^6"
+		"write-json-file": "^7"
 	}
 }

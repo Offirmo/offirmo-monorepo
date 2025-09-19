@@ -21,7 +21,7 @@ import { inferꓽformat_from_path } from '../common/index.ts'
 
 /////////////////////////////////////////////////
 
-async function ↆloadꓽfile(
+async function ↆreadꓽfile(
 	file_path: AnyFilePath,
 	hints?: { format?: StructuredFileFormat },
 ): Promise<JSONObject> {
@@ -137,9 +137,10 @@ async function ↆloadꓽfileⵧsingle_value(
 
 export {
 	type StructuredFileFormatⳇParser,
-	ↆloadꓽfile,
+	ↆreadꓽfile,
 	ↆloadꓽfileⵧjson5,
 	ↆloadꓽfileⵧlist,
 	ↆloadꓽfileⵧsingle_value,
 	ↆloadꓽfileⵧimport,
 }
+export { mergeꓽjson } from '../common/index.ts' // for convenience

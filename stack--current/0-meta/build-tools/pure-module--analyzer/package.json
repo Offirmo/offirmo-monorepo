@@ -20,7 +20,7 @@
 		"json5": "^2",
 		"parse-imports-ts": "^1",
 		"tiny-invariant": "^1",
-		"write-json-file": "^6"
+		"write-json-file": "^7"
 	},
 	"scripts": {
 		"check--ts": "echo \"@offirmo-private/pure-module--analyzer\" && tsc --noEmit",

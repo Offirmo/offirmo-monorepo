@@ -44,7 +44,7 @@ aꓺbꘌc
 notᝍbadₓasⳇwell‿no
 fooǃfooꓽfoo𖾚foo
 fooꜛbarꜜfoo
-ꓽpackageᐧjson
+ꓽpackageᝍlockᐧjson
 matching? (formerly 𝝣 which causes issues)
 TODO express a resilient function who technically should never crash?
 ᄆComponent

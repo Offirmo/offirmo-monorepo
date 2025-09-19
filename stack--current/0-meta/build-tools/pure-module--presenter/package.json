@@ -18,7 +18,7 @@
 		"@offirmo-private/pkg-infos-resolver": "*",
 		"@offirmo-private/set-deep-property": "*",
 		"tiny-invariant": "^1",
-		"write-json-file": "^6"
+		"write-json-file": "^7"
 	},
 	"scripts": {
 		"check--ts": "echo \"@offirmo-private/pure-module--presenter\" && tsc --noEmit",

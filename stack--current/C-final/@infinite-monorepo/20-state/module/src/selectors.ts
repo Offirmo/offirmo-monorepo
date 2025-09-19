@@ -8,7 +8,7 @@ import type { State } from './types.ts'
 /////////////////////////////////////////////////
 
 function getꓽnodesⵧnew(state: Immutable<State>): Immutable<Array<Node>> {
-	return Object.values(state.graph.nodesⵧsemantic).filter(node => node.status === 'new')
+	return Object.values(state.graphs.nodesⵧworkspace).filter(node => node.status === 'new')
 }
 
 function getꓽfile__content(state: Immutable<State>): Immutable<Array<Node>> {
@@ -23,6 +23,7 @@ function getꓽruntimeⵧlocal(state: Immutable<State>, node: Immutable<Node>): 
 	}
 
 	// TODO 1D get from spec & node
+	// https://github.com/nodejs/Release/blob/main/schedule.json
 
 	return result
 }

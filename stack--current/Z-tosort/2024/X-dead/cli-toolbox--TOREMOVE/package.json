@@ -28,8 +28,8 @@
 		"fs-extra": "^11",
 		"load-json-file": "^7",
 		"log-symbols": "^7",
-		"meow": "^13",
-		"write-json-file": "^6"
+		"meow": "^14",
+		"write-json-file": "^7"
 	},
 
 	"scripts": {

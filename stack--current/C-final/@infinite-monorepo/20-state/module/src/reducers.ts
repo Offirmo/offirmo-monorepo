@@ -6,8 +6,8 @@ import type {
 	AbsolutePath,
 	JSON,
 	AbsoluteDirPath,
-	ImmutableJSON, ImmutableJSONObject,
 } from '@offirmo-private/ts-types'
+import { mergeꓽjson } from '@infinite-monorepo/read-write-any-structured-file'
 import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
 
 import {
@@ -20,6 +20,7 @@ import {
 	PATHVARⵧROOTⵧREPO,
 	PATHVARⵧROOTⵧWORKSPACE,
 	type NodeⳇRepo,
+	PATHVARⵧROOTⵧPACKAGE,
 } from '@infinite-monorepo/types'
 import { completeꓽspec } from '@infinite-monorepo/defaults'
 
@@ -37,9 +38,9 @@ function create(): Immutable<State> {
 
 		file_manifests: {},
 
-		graph: {
+		graphs: {
 			nodesⵧscm: {},
-			nodesⵧsemantic: {},
+			nodesⵧworkspace: {},
 		},
 
 		output_files: {},
@@ -59,12 +60,14 @@ function onꓽspec_chain_loaded(
 		path‿abs: PENDING,
 		path‿ar: `${PATHVARⵧROOTⵧREPO}/`,
 		parent_id: null,
+		plugin_area: {},
 	}
 	const nodeⵧworkspace_root: NodeⳇWorkspace = {
 		type: 'workspace',
 		path‿abs: PENDING,
 		path‿ar: `${PATHVARⵧROOTⵧWORKSPACE}/`,
 		parent_id: null,
+		plugin_area: {},
 	}
 	let topmost_spec_under_workspace: InfiniteMonorepoSpec | undefined
 
@@ -120,18 +123,20 @@ function onꓽspec_chain_loaded(
 function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
 	DEBUG && console.debug('Registering node...', node.path‿abs, node.type)
 
+	assert(!!node.plugin_area, `Node must have a plugin_area!`)
+
 	if (node.type === 'repository') {
 		assert(
-			state.graph.nodesⵧscm[node.path‿abs] === undefined,
+			state.graphs.nodesⵧscm[node.path‿abs] === undefined,
 			`SCM node already registered: ${node.path‿abs}!`,
 		)
 
 		return {
 			...state,
-			graph: {
-				...state.graph,
+			graphs: {
+				...state.graphs,
 				nodesⵧscm: {
-					...state.graph.nodesⵧscm,
+					...state.graphs.nodesⵧscm,
 					[node.path‿abs]: {
 						...node,
 						status: 'new',
@@ -142,16 +147,16 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 	}
 
 	assert(
-		state.graph.nodesⵧsemantic[node.path‿abs] === undefined,
+		state.graphs.nodesⵧworkspace[node.path‿abs] === undefined,
 		`Semantic node already registered: ${node.path‿abs}!`,
 	)
 
 	return {
 		...state,
-		graph: {
-			...state.graph,
-			nodesⵧsemantic: {
-				...state.graph.nodesⵧsemantic,
+		graphs: {
+			...state.graphs,
+			nodesⵧworkspace: {
+				...state.graphs.nodesⵧworkspace,
 				[node.path‿abs]: {
 					...node,
 					status: 'new',
@@ -164,18 +169,18 @@ function reportꓽnodeⵧanalyzed(state: Immutable<State>, node: Immutable<Node>
 	DEBUG && console.debug('Marking node analyzed...', node.path‿abs, node.type)
 
 	if (node.type === 'repository') {
-		assert(!!state.graph.nodesⵧscm[node.path‿abs], `Node expected: ${node.path‿abs}!`)
+		assert(!!state.graphs.nodesⵧscm[node.path‿abs], `Node expected: ${node.path‿abs}!`)
 		assert(
-			state.graph.nodesⵧscm[node.path‿abs]?.status === 'new',
+			state.graphs.nodesⵧscm[node.path‿abs]?.status === 'new',
 			`Node not new: ${node.path‿abs}!`,
 		)
 
 		return {
 			...state,
-			graph: {
-				...state.graph,
+			graphs: {
+				...state.graphs,
 				nodesⵧscm: {
-					...state.graph.nodesⵧscm,
+					...state.graphs.nodesⵧscm,
 					[node.path‿abs]: {
 						...node,
 						status: 'analyzed',
@@ -185,18 +190,18 @@ function reportꓽnodeⵧanalyzed(state: Immutable<State>, node: Immutable<Node>
 		}
 	}
 
-	assert(!!state.graph.nodesⵧsemantic[node.path‿abs], `Node expected: ${node.path‿abs}!`)
+	assert(!!state.graphs.nodesⵧworkspace[node.path‿abs], `Node expected: ${node.path‿abs}!`)
 	assert(
-		state.graph.nodesⵧsemantic[node.path‿abs]?.status === 'new',
+		state.graphs.nodesⵧworkspace[node.path‿abs]?.status === 'new',
 		`Node not new: ${node.path‿abs}!`,
 	)
 
 	return {
 		...state,
-		graph: {
-			...state.graph,
-			nodesⵧsemantic: {
-				...state.graph.nodesⵧsemantic,
+		graphs: {
+			...state.graphs,
+			nodesⵧworkspace: {
+				...state.graphs.nodesⵧworkspace,
 				[node.path‿abs]: {
 					...node,
 					status: 'analyzed',
@@ -238,20 +243,31 @@ function _resolveꓽarpath(
 		`Invalid arpath NOT starting with a $PATHVAR$: "${path‿ar}"!`,
 	)
 
-	if (node && (first_segment === PATHVARⵧROOTⵧNODE || node.path‿ar.startsWith(first_segment))) {
-		// easy, the node is the one we need
-		return path.resolve(node.path‿abs, path‿ar.slice(first_segment.length + 1))
+	if (node) {
+		if (first_segment === PATHVARⵧROOTⵧNODE) {
+			// joker, matches any node
+			return path.resolve(node.path‿abs, path‿ar.slice(first_segment.length + 1))
+		}
+
+		if (node.path‿ar.startsWith(first_segment)) {
+			// the node is the one we need
+			return path.resolve(node.path‿abs, path‿ar.slice(first_segment.length + 1))
+		}
+
+		if (first_segment === PATHVARⵧROOTⵧPACKAGE && node.type === 'workspace') {
+			// special: the workspace root is also a package
+			return path.resolve(node.path‿abs, path‿ar.slice(first_segment.length + 1))
+		}
 	}
 
 	// need to find the correct node by walking up the tree
 	throw new Error(`_resolveꓽarpath(): not implemented!`)
 }
 
-/*
-function ensureꓽfile_loading(
+function requestꓽfactsⵧabout_file(
 	state: Immutable<State>,
-	parent_node: Immutable<Node>,
-	arpath: MultiRepoRelativeFilePath,
+	manifest: StructuredFsⳇFileManifest,
+	parent_node: Immutable<Node>
 ): Immutable<State> {
 	DEBUG && console.debug('Ensuring load...', arpath, parent_node)
 
@@ -262,59 +278,6 @@ function ensureꓽfile_loading(
 	}
 	throw new Error('not implemented!')
 }*/
-
-function _getJsonType(a: ImmutableJSON): 'object' | 'array' | 'primitive' | 'undef' {
-	if (a === undefined) {
-		return 'undef'
-	}
-
-	if (Array.isArray(a)) {
-		return 'array'
-	}
-
-	if (a === null) return 'primitive'
-	if (['string', 'number', 'boolean'].includes(typeof a)) return 'primitive'
-
-	if (isꓽobjectⵧliteral(a as any)) {
-		return 'object'
-	}
-
-	throw new Error('Incorrect JSON!')
-}
-
-function _mergeJson(a: ImmutableJSON, b: ImmutableJSON): ImmutableJSON {
-	const ta = _getJsonType(a)
-	const tb = _getJsonType(b)
-	if (ta === undefined) {
-		return b
-	}
-	if (tb === undefined) {
-		return a
-	}
-	if (ta !== tb) {
-		throw new Error(`Cannot merge different JSON types: ${ta} vs ${tb}!`)
-	}
-	switch (ta) {
-		case 'primitive':
-			if (a === b) return a
-			throw new Error(`Cannot merge conflicting primitive JSON values: ${a} vs ${b}!`)
-		case 'array':
-			// TODO set for uniqueness!
-			return [...(a as JSON[]), ...(b as JSON[])].sort()
-		case 'object': {
-			const result: ImmutableJSONObject = {}
-			const k1 = Object.keys(a as JSONObject)
-			const k2 = Object.keys(b as JSONObject)
-			const all_keys = Array.from(new Set([...k1, ...k2])).sort()
-			for (const k of all_keys) {
-				result[k] = _mergeJson((a as ImmutableJSONObject)[k], (b as ImmutableJSONObject)[k])
-			}
-			return result
-		}
-		default:
-			throw new Error('Unexpected JSON type!')
-	}
-}
 
 function requestꓽfile_output(
 	state: Immutable<State>,
@@ -355,7 +318,10 @@ function requestꓽfile_output(
 		} else if (candidate_spec.intent === 'present--containing') {
 			const merge_spec: Immutable<FileOutputPresent> = {
 				...candidate_spec,
-				content: _mergeJson((existing as any as FileOutputPresent).content, (candidate_spec as any as FileOutputPresent).content!) as any,
+				content: mergeꓽjson(
+					(existing as any as FileOutputPresent).content,
+					(candidate_spec as any as FileOutputPresent).content!,
+				) as any,
 			}
 			spec = merge_spec
 			//console.log('TODO check')

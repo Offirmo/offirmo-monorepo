@@ -26,6 +26,7 @@ AMP "Accelerated Mobile Pages"
 animations -- API https://devdocs.io/dom/web_animations_api
 API intl https://intlin.site/
 APIs web
+security https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5
 app -- a11y
 app -- a11y -- Heydon's 12 principles https://github.com/Heydon/principles-of-web-accessibility
 app -- a11y -- tracking ex. https://heydonheydon.gumroad.com/l/notion-accessibility-tracker
@@ -69,6 +70,7 @@ architecture -- SSR, ISR, CSR, PPR (see 'rendering')
 ARIA "Accessible Rich Internet Applications" https://www.w3.org/WAI/ARIA/apg/
 awards -- awwwards https://www.awwwards.com/websites/developer/
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
+background patterns https://heropatterns.com/
 blocking -- css -- Stylesheets are render blocking
 blocking -- fetching -> parsing -> rendering https://csswizardry.com/2024/08/blocking-render-why-whould-you-do-that/
 blocking -- inline = still blocking but not as bad
@@ -107,6 +109,7 @@ composition -- embed
 composition -- shared view
 contrast ratio https://www.siegemedia.com/contrast-ratio
 CORS "Cross-Origin Resource Sharing"
+CSS -- alignment https://css-tip.com/explore/alignment/
 CSS -- atomic = small, single-purpose classes with names based on visual function https://css-tricks.com/lets-define-exactly-atomic-css/
 CSS -- BEM https://getbem.com/introduction/
 CSS -- breakpoints https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
@@ -207,6 +210,7 @@ DOM -- Nodes -- 10 Document Type = <!DOCTYPE html>
 DOM -- Nodes -- 11 Fragment
 DOM -- Nodes -- types =  ELEMENT, ATTRIBUTE, TEXT, CDATA, PROCESSING_INSTRUCTION, COMMENT, DOCUMENT, DOCUMENT_TYPE https://devdocs.io/dom/node/nodetype
 DOM tree = Nodes = text, elements, attributes, comments... includes elements such as <body> and <table>, among many others.
+domain -- http://theofficialabsolutelongestdomainnameregisteredontheworldwideweb.international/
 e18e Ecosystem Performance = initiative to improve the performance of JS packages: Cleanup, Speedup, Levelup. One Package at a time. https://e18e.dev/
 ECMAScript - European Computer Manufacturers Association Script (ES)
 emojis https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
@@ -394,6 +398,7 @@ security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-
 security -- supply chain https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5 https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
 Server Side Rendering = an umbrella term that includes several different rendering strategies. They all have one thing in common: the initial render happens in a server runtime like Node.js, using the ReactDOMServer APIs. It doesn't actually matter when this happens, whether it's on-demand or at compile-time. https://www.joshwcomeau.com/react/server-components/
 settings -- Mac = https://aresluna.org/frame-of-preference/
+settings -- Mac https://aresluna.org/frame-of-preference/ (with cool virtual machines)
 skew -- flags skew
 skew -- occurs when different versions of your application run on client and server, causing application errors and other unexpected behavior https://www.industrialempathy.com/posts/version-skew/
 skew -- version skew -- protection https://vercel.com/docs/skew-protection

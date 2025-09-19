@@ -19,6 +19,7 @@ export type WorkspaceRelativePath = `${typeof PATHVARⵧROOTⵧWORKSPACE}/${stri
 export const PATHVARⵧROOTⵧPACKAGE = `$${NODE_TYPEⵧPACKAGE.toUpperCase()}_ROOT$` as const
 export type PackageRelativePath = `${typeof PATHVARⵧROOTⵧPACKAGE}/${string}`
 
+// any node
 export const PATHVARⵧROOTⵧNODE = `$NODE_ROOT$` as const
 export type NodeRelativePath = `${typeof PATHVARⵧROOTⵧNODE}/${string}`
 
@@ -45,6 +46,9 @@ export interface NodeBase {
 	spec?: Partial<InfiniteMonorepoSpec>
 
 	parent_id: NodeId | null
+
+	// anchor for plugins to put their stuff. Will not be mutated.
+	plugin_area: {}
 }
 
 /////////////////////////////////////////////////

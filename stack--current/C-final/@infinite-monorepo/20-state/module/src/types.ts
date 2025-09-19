@@ -1,4 +1,4 @@
-import type { Immutable, ImmutableJSONObject } from '@offirmo-private/ts-types'
+import type { Immutable, JSONObject } from '@offirmo-private/ts-types'
 import type {
 	InfiniteMonorepoSpec,
 	Node,
@@ -27,7 +27,7 @@ export interface FileOutputAbsent extends BaseFileOutput {
 export interface FileOutputPresent extends BaseFileOutput {
 	intent: 'present--exact' | 'present--containing'
 	manifest: StructuredFsⳇFileManifest
-	content: ImmutableJSONObject
+	content: Immutable<JSONObject>
 }
 
 /////////////////////////////////////////////////
@@ -41,13 +41,21 @@ export type AsyncCallbackReducer = <T>(
 export interface State {
 	spec: InfiniteMonorepoSpec
 
-	graph: {
-		// SCM nodes may overlap with semantic nodes, so we store them separately
+	graphs: {
+		// different graph nodes may overlap, so we store them separately
+		// ex. repo root may also be the workspace root
 		nodesⵧscm: { [id: string]: Node & { status: 'new' | 'analyzed' } }
-		nodesⵧsemantic: { [id: string]: Node & { status: 'new' | 'analyzed' } }
+		nodesⵧworkspace: { [id: string]: Node & { status: 'new' | 'analyzed' } }
 	}
 
 	file_manifests: Record<MultiRepoRelativeFilePath, StructuredFsⳇFileManifest>
+
+	facts: {
+		files: {
+			// would be pre-existing files, discovered on-demand
+			[path: string]: Immutable<JSONObject> | null // null = file is absent
+		}
+	}
 
 	output_files: {
 		[path: string]: FileOutputAbsent | FileOutputPresent

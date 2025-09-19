@@ -21,14 +21,17 @@ const ᐧgitignore__path‿ar: WorkspaceRelativePath = `${PATHVARⵧROOTⵧWORKS
 const manifestꓽᐧgitignore: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧgitignore__path‿ar,
 	format: 'list',
-	doc: ['https://git-scm.com/docs/gitignore'],
+	doc: [
+		'https://git-scm.com/docs/gitignore',
+		'https://www.atlassian.com/git/tutorials/saving-changes/gitignore#git-ignore-patterns',
+	],
 }
 
 const ᐧgitattributes__path‿ar: RepoRelativePath = `${PATHVARⵧROOTⵧREPO}/.gitattributes`
 const manifestꓽᐧgitattributes: StructuredFsⳇFileManifest = {
 	path‿ar: ᐧgitattributes__path‿ar,
 	format: 'text',
-	doc: ['https://git-scm.com/docs/gitattributes'],
+	doc: ['https://git-scm.com/docs/gitattributes', 'https://stackoverflow.com/a/73095814/31353119'],
 }
 
 /////////////////////////////////////////////////
@@ -42,8 +45,6 @@ const pluginꓽgit: Plugin = {
 	},
 
 	onꓽnodeⵧdiscovered(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
-		// TODO 1D gitignore
-
 		return state
 	},
 

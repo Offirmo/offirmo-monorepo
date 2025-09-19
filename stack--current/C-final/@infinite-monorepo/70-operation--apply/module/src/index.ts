@@ -7,17 +7,22 @@ import * as StateLib from '@infinite-monorepo/state'
 import pluginꓽgit from '@infinite-monorepo/plugin--git'
 import pluginꓽnvm from '@infinite-monorepo/plugin--nvm'
 import pluginꓽparcel from '@infinite-monorepo/plugin--parcel'
+import pluginꓽbolt from '@infinite-monorepo/plugin--bolt'
+import pluginꓽnpm from '@infinite-monorepo/plugin--npm'
 import type { State, Plugin } from '@infinite-monorepo/state'
-import { ೱwriteꓽfile } from '@infinite-monorepo/read-write-any-structured-file/write'
+import { ↆreadꓽfile } from '@infinite-monorepo/read-write-any-structured-file/read'
+import { mergeꓽjson, ೱwriteꓽfile } from '@infinite-monorepo/read-write-any-structured-file/write'
 
 /////////////////////////////////////////////////
 
 const plugins: Array<Plugin> = [
 	// TODO a way to include on-demand
+	pluginꓽbolt,
 	pluginꓽgit,
+	pluginꓽnpm,
 	pluginꓽnvm,
 	pluginꓽparcel,
-	// TODO a plugin for all root files!
+	// TODO plugins for everything!
 ]
 
 function noop(state: Immutable<State>): Immutable<State> {
@@ -33,6 +38,8 @@ async function apply(from?: AnyPath) {
 	async function _propagate() {
 		console.log('------------ propagating new infos… ------------')
 		//dumpꓽanyⵧprettified('state', state)
+
+		// TODO wait for async tasks
 
 		let node: Immutable<Node> | undefined
 		while ((node = StateLib.getꓽnodesⵧnew(state)[0])) {
@@ -70,14 +77,14 @@ async function apply(from?: AnyPath) {
 
 	////////////
 	// TODO topological order!!!
-	Object.entries(state.graph.nodesⵧscm)
+	Object.entries(state.graphs.nodesⵧscm)
 		.sort()
 		.forEach(([, node]) => {
 			state = plugins.reduce((state, plugin) => {
 				return (plugin.onꓽapply ?? noop)(state, node)
 			}, state)
 		})
-	Object.entries(state.graph.nodesⵧsemantic)
+	Object.entries(state.graphs.nodesⵧworkspace)
 		.sort()
 		.forEach(([, node]) => {
 			state = plugins.reduce((state, plugin) => {
@@ -102,9 +109,29 @@ async function apply(from?: AnyPath) {
 					fs.rm(path, { force: true })
 					break
 				case 'present--exact':
-				case 'present--containing':
-					console.log(`- Writing file ${path}…`)
+					console.log(`- Writing exact file ${path}…`)
 					ೱwriteꓽfile(path, spec.content as any, spec.manifest.format)
+					break
+				case 'present--containing':
+					console.log(`- Augmenting file ${path}…`)
+					// TODO 1D SSoT
+					const ↆexisting_content = ↆreadꓽfile(path, { format: spec.manifest.format })
+					ↆexisting_content.then(
+						content => {
+							return ೱwriteꓽfile(
+								path,
+								mergeꓽjson(content, spec.content as any),
+								spec.manifest.format,
+							)
+						},
+						err => {
+							if ((err as any)?.code !== 'ENOENT') {
+								throw err
+							} else {
+								return ೱwriteꓽfile(path, spec.content as any, spec.manifest.format)
+							}
+						},
+					)
 					break
 				default:
 					assert(false, `Unsupported intent: ${spec.intent}!`)
