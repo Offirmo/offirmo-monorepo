@@ -6,7 +6,7 @@ import {
 } from '@offirmo-private/ts-types-web'
 
 import type { OHAHyperLink, OHAHyperLink‿x, OHALinkRelation } from './types.ts'
-import { isꓽOHAHyperLink } from './guards.ts'
+import { isꓽOHAHyperLink } from './type-guards.ts'
 
 /////////////////////////////////////////////////
 

@@ -4,7 +4,7 @@ import type {
 	OHAHyperMedia,
 	OHAHyperLink,
 	OHAHyperAction,
-} from '../types/types.ts'
+} from '../01-types/types.ts'
 
 /////////////////////////////////////////////////
 

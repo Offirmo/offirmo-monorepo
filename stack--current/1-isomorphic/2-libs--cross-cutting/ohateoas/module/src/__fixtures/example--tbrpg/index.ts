@@ -6,18 +6,18 @@ import {
 	getꓽscheme_specific_part,
 } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
-import { OHALinkRelation } from '../../types/types.ts'
+import { OHALinkRelation } from '../../01-types/types.ts'
 import type {
 	OHAHyperMedia, OHARichTextHints,
 	OHAHyperActionBlueprint,
 	OHAHyperAction,
 	OHAPendingEngagement,
 	OHAHyperLink, OHAHyper,
-} from '../../types/types.ts'
+} from '../../01-types/types.ts'
 import {
 	type OHAServer,
 	DEFAULT_ROOT_URI,
-} from '../../server/index.ts'
+} from '../../30-server/index.ts'
 
 /////////////////////////////////////////////////
 

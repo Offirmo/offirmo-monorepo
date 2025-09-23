@@ -22,11 +22,11 @@ type OHAStory = Story<OHAHyperMedia>
 
 /////////////////////////////////////////////////
 // 2a. Hyperlinks
+// A more generic hyperlink than HTML's <a>
+// following the hypermedia theory
+// @see https://hypermedia.systems/
 
-/** A more generic hyperlink than HTML's <a> following hypermedia theory
- * see https://hypermedia.systems/
- */
-	// as usual, the client is free to ignore all hints, it should still work
+// as usual, the client is free to ignore all hints, it should still work
 interface OHAHyperHints {
 	cta?: RichTextNodeLike // optional bc 1) not always needed (ex. already an anchor) 2) SSoT = should ideally be derived BUT useful bc same action could have different CTA following the context (ex. equip the best equipment)
 	keyboard_shortcut?: string // TODO 1D high level format
@@ -60,7 +60,7 @@ export const OHALinkRelation = Enum(
 	// new OHA
 	'continueᝍto', // automatically navigates to this resource once the current one is displayed (assuming some timing/next/skip/no need?)
 
-	// classic "well known" expected pages
+	// classic "well-known" expected pages
 	'about',
 	'status',
 	'support', // where users should go if they need help with your thing

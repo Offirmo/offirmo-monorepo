@@ -8,10 +8,10 @@ import {
 	type OHAHyperAction,
 	type OHAPendingEngagement,
 	type OHAHyperLink, type OHARichTextHints, OHALinkRelation,
-} from '../../types/types.ts'
+} from '../../01-types/types.ts'
 import type {
 	OHAServer,
-} from '../../server/types.ts'
+} from '../../30-server/types.ts'
 import { getꓽscheme_specific_part, normalizeꓽuri‿str } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////

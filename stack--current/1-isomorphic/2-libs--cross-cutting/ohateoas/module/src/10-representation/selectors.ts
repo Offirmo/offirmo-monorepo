@@ -11,15 +11,15 @@ import {
 } from '@offirmo-private/normalize-string'
 
 
-import { OHALinkRelation } from '../types/types.ts'
+import { OHALinkRelation } from '../01-types/types.ts'
 import type {
 	OHARichTextHints,
 	OHAHyperMedia,
 	OHAHyperActionBlueprint,
 	OHAHyperLink, OHAPendingEngagement,
-} from '../types/types.ts'
-import { promote_toꓽOHAHyperLink } from '../types/selectors.ts'
-import { isꓽOHAHyperLink, isꓽOHAHyperActionBlueprint } from '../types/guards.ts'
+} from '../01-types/types.ts'
+import { promote_toꓽOHAHyperLink } from '../01-types/selectors.ts'
+import { isꓽOHAHyperLink, isꓽOHAHyperActionBlueprint } from '../01-types/type-guards.ts'
 import { getꓽuriⵧnormalized‿str } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////

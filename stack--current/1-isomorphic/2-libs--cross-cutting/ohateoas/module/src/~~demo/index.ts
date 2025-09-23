@@ -18,7 +18,7 @@ import { createꓽserver } from '../__fixtures/example--check-for-update/index.t
 //import { createꓽserver } from '../~~sandbox/example--tbrpg/server/index.ts'
 //import { createꓽserver } from '../~~sandbox/example--tbrpg/server/index.ts'
 
-import { OHALinkRelation } from '../types/types.ts'
+import { OHALinkRelation } from '../01-types/types.ts'
 import {
 	type OHAHyperActionBlueprint, type OHAHyperAction,
 	type OHAFeedback,

@@ -10,9 +10,9 @@ import {
 	type OHAHyperLink‿x,
 	type OHAHyperMedia,
 	getꓽuriⵧnormalized‿str,
-} from '../../types/index.ts'
+} from '../../01-types/index.ts'
 
-import { getꓽlinks } from '../../representation/index.ts'
+import { getꓽlinks } from '../../10-representation/index.ts'
 
 /////////////////////////////////////////////////
 const LIB = 'OHAFrameState'

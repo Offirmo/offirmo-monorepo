@@ -6,12 +6,13 @@ import {
 	getꓽscheme_specific_part,
 } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
-import {
-	type OHAHyperMedia, type OHARichTextHints,
-	type OHAHyperActionBlueprint,
-	type OHAHyperAction,
-	type OHAPendingEngagement,
-	type OHAHyperLink, type OHAHyper, OHALinkRelation,
+import { OHALinkRelation } from '../../01-types/types.ts'
+import type {
+	OHAHyperMedia, OHARichTextHints,
+	OHAHyperActionBlueprint,
+	OHAHyperAction,
+	OHAPendingEngagement,
+	OHAHyperLink, OHAHyper,
 } from '../../01-types/types.ts'
 import {
 	type OHAServer,
@@ -20,20 +21,9 @@ import {
 
 /////////////////////////////////////////////////
 
-const DEBUG = false
+const DEBUG = true
 
 /////////////////////////////////////////////////
-
-const URIꘌROOT = normalizeꓽuri‿str('/session/adventures/')
-
-const URIꘌEQUIPMENT: OHAHyperLink = {
-	href: '/session/equipment/',
-	target: 'character_sheet/equipment',
-	rel: [],
-	hints: {
-		cta: 'Manage equipment & inventory…',
-	}
-}
 
 function createꓽserver(): OHAServer {
 
@@ -49,8 +39,8 @@ function createꓽserver(): OHAServer {
 		let $builder = RichText.fragmentⵧblock() // "block" bc maps to a ~frame/sub-browser
 
 		const links: OHARichTextHints['links'] = {
-			[OHALinkRelation.self]: normalizeꓽuri‿str(path), // intentionally strip query & path until considered relevant
-			[OHALinkRelation.home]: URIꘌROOT, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
+			//[OHALinkRelation.self]: normalizeꓽuri‿str(path), // intentionally strip query & path until considered relevant
+			//[OHALinkRelation.home]: URIꘌROOT, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
 		}
 
 		const actions: OHARichTextHints['actions'] = {
@@ -60,34 +50,15 @@ function createꓽserver(): OHAServer {
 
 		////////////
 
-		engagements.push({
-			flow: 'out',
-			sequence: 'session',
-			attention_needed: 'warning',
-			story: 'This is a demo of a broken server ;)',
-			uid: -1
-		} as OHAPendingEngagement)
-
-
 		switch (path) {
 			case DEFAULT_ROOT_URI: { // root, expected to redirect
-				$builder = $builder.pushBlockFragment('What do you want to do?')
-
-				actions['will-crash'] = {
-					type: 'will-crash',
-				} as OHAHyperActionBlueprint
-
-				actions['will-never-resolve'] = {
-					type: 'will-never-resolve',
-				} as OHAHyperActionBlueprint
-
-				links['404'] = '/missing-url'
-
+				$builder = $builder
+					.pushText('Hello, world!')
 				break
 			}
 
 			default:
-				throw new Error(`404!`)
+				throw new Error(`404 on "${path}"!`)
 		}
 
 		////////////
@@ -104,14 +75,7 @@ function createꓽserver(): OHAServer {
 	}
 
 	const dispatch: OHAServer['dispatch'] = async (action) => {
-		console.log(`Server: asked to dispatch action…`, action)
-
-		switch (action.type) {
-			case 'will-never-resolve':
-				return new Promise(resolve => {})
-			default:
-				throw new Error(`Unknown action type "${action.type}"!`)
-		}
+		throw new Error(`No supported actions!`)
 	}
 
 	return {
