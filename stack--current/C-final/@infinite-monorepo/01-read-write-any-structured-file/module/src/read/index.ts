@@ -23,7 +23,7 @@ import { inferꓽformat_from_path } from '../common/index.ts'
 
 async function ↆreadꓽfile(
 	file_path: AnyFilePath,
-	hints?: { format?: StructuredFileFormat },
+	hints?: Partial<{ format: StructuredFileFormat | undefined }>,
 ): Promise<JSONObject> {
 	let content: string | undefined = undefined
 

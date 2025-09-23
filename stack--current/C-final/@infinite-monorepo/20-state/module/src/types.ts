@@ -32,11 +32,22 @@ export interface FileOutputPresent extends BaseFileOutput {
 
 /////////////////////////////////////////////////
 
-export type AsyncCallbackReducer = <T>(
+export type AsyncCallbackReducer<T> = (
 	state: Immutable<State>,
+	error: null | Error, // useful?? not found = no error, other error = crash?
 	result: T | null,
-	error: null | Error,
 ) => Immutable<State>
+
+export interface SubStateⳇFactsFile {
+	manifest: StructuredFsⳇFileManifest // useful to validate compat if concurrent requests
+	content:
+		| undefined // not loaded yet (promise pending)
+		| null // null = file not found
+		| JSONObject
+	// those props are only present when content is undefined
+	ↆretrieval: Promise<JSONObject>
+	pending_callbacks?: Array<AsyncCallbackReducer<JSONObject>>
+}
 
 export interface State {
 	spec: InfiniteMonorepoSpec
@@ -53,7 +64,7 @@ export interface State {
 	facts: {
 		files: {
 			// would be pre-existing files, discovered on-demand
-			[path: string]: Immutable<JSONObject> | null // null = file is absent
+			[path: string]: SubStateⳇFactsFile
 		}
 	}
 

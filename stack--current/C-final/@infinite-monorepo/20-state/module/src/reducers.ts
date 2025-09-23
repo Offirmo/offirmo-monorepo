@@ -9,6 +9,7 @@ import type {
 } from '@offirmo-private/ts-types'
 import { mergeꓽjson } from '@infinite-monorepo/read-write-any-structured-file'
 import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
+import { ↆreadꓽfile } from '@infinite-monorepo/read-write-any-structured-file/read'
 
 import {
 	type InfiniteMonorepoSpec,
@@ -24,8 +25,13 @@ import {
 } from '@infinite-monorepo/types'
 import { completeꓽspec } from '@infinite-monorepo/defaults'
 
-import type { State, FileOutputAbsent, FileOutputPresent } from './types.ts'
-import { isꓽobjectⵧliteral } from '@offirmo-private/type-detection'
+import type {
+	State,
+	FileOutputAbsent,
+	FileOutputPresent,
+	AsyncCallbackReducer,
+	SubStateⳇFactsFile,
+} from './types.ts'
 
 /////////////////////////////////////////////////
 const DEBUG = true
@@ -41,6 +47,10 @@ function create(): Immutable<State> {
 		graphs: {
 			nodesⵧscm: {},
 			nodesⵧworkspace: {},
+		},
+
+		facts: {
+			files: {},
 		},
 
 		output_files: {},
@@ -59,14 +69,14 @@ function onꓽspec_chain_loaded(
 		type: 'repository',
 		path‿abs: PENDING,
 		path‿ar: `${PATHVARⵧROOTⵧREPO}/`,
-		parent_id: null,
+		parent_id: null, // bc root in its graph
 		plugin_area: {},
 	}
 	const nodeⵧworkspace_root: NodeⳇWorkspace = {
 		type: 'workspace',
 		path‿abs: PENDING,
 		path‿ar: `${PATHVARⵧROOTⵧWORKSPACE}/`,
-		parent_id: null,
+		parent_id: null, // bc root in its graph
 		plugin_area: {},
 	}
 	let topmost_spec_under_workspace: InfiniteMonorepoSpec | undefined
@@ -121,11 +131,15 @@ function onꓽspec_chain_loaded(
 
 // XXX TODO link parent!
 function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immutable<State> {
-	DEBUG && console.debug('Registering node...', node.path‿abs, node.type)
+	DEBUG && console.debug(`Registering "${node.type}" node...`, node.path‿abs)
 
-	assert(!!node.plugin_area, `Node must have a plugin_area!`)
+	node = {
+		plugin_area: {},
+		...node,
+	}
 
 	if (node.type === 'repository') {
+		assert(!node.spec, `SCM node should not have a spec!`)
 		assert(
 			state.graphs.nodesⵧscm[node.path‿abs] === undefined,
 			`SCM node already registered: ${node.path‿abs}!`,
@@ -150,6 +164,11 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 		state.graphs.nodesⵧworkspace[node.path‿abs] === undefined,
 		`Semantic node already registered: ${node.path‿abs}!`,
 	)
+
+	node = {
+		spec: {},
+		...node,
+	}
 
 	return {
 		...state,
@@ -267,17 +286,49 @@ function _resolveꓽarpath(
 function requestꓽfactsⵧabout_file(
 	state: Immutable<State>,
 	manifest: StructuredFsⳇFileManifest,
-	parent_node: Immutable<Node>
+	parent_node: Immutable<Node> | undefined,
+	callback: AsyncCallbackReducer,
 ): Immutable<State> {
-	DEBUG && console.debug('Ensuring load...', arpath, parent_node)
+	DEBUG
+		&& console.debug(
+			`requestꓽfactsⵧabout_file("${manifest.path‿ar}" from "${parent_node?.path‿ar}")`,
+		)
 
-	const path_abs = _resolveꓽarpath(arpath, parent_node)
-	if (state.files_existing[path_abs]) {
-		DEBUG && console.debug('Already loaded', path_abs)
-		return state
+	const path_abs = _resolveꓽarpath(state, manifest.path‿ar, parent_node)
+	const x: Immutable<SubStateⳇFactsFile> =
+		state.facts.files[path_abs]
+		|| ((): Immutable<SubStateⳇFactsFile> => {
+			DEBUG && console.debug('New fact file request', path_abs)
+			return {
+				manifest,
+				content: undefined,
+				ↆretrieval: ↆreadꓽfile(path_abs, { format: manifest.format }),
+				pending_callbacks: [],
+			} as SubStateⳇFactsFile
+		})()
+
+	assert(x.manifest.format === manifest.format, `File manifest conflict!`)
+
+	if (!x.ↆretrieval) {
+		DEBUG && console.debug('Already read', path_abs)
+		assert(x.content !== undefined, `File must have been read!`)
+		return callback(state, null, x.content) // direct invocation
 	}
-	throw new Error('not implemented!')
-}*/
+
+	return {
+		...state,
+		facts: {
+			...state.facts,
+			files: {
+				...state.facts.files,
+				[path_abs]: {
+					...x,
+					pending_callbacks: [...(x.pending_callbacks || []), callback],
+				},
+			},
+		},
+	}
+}
 
 function requestꓽfile_output(
 	state: Immutable<State>,
@@ -339,11 +390,51 @@ function requestꓽfile_output(
 
 /////////////////////////////////////////////////
 
+// special async
+
+async function resolveꓽasync(state: Immutable<State>): Promise<Immutable<State>> {
+	const pending: Array<Promise<void>> = []
+
+	Object.entries(state.facts.files).forEach(([path, substate]) => {
+		if (substate.ↆretrieval) {
+			const p: Promise<void> = substate.ↆretrieval.then(content => {
+				DEBUG && console.debug('File read:', path)
+				const new_substate: Immutable<SubStateⳇFactsFile> = {
+					manifest: substate.manifest,
+					content,
+				}
+				state = {
+					...state,
+					facts: {
+						...state.facts,
+						files: {
+							...state.facts.files,
+							[path]: new_substate,
+						},
+					},
+				}
+				state = (substate.pending_callbacks || []).reduce((state, acb) => {
+					return acb(state, null, content)
+				}, state)
+			})
+			pending.push(p)
+		}
+	})
+
+	await Promise.all(pending)
+
+	return state
+}
+
+/////////////////////////////////////////////////
+
 export {
 	create,
 	onꓽspec_chain_loaded,
 	registerꓽnode,
 	reportꓽnodeⵧanalyzed,
 	declareꓽfile_manifest,
+	requestꓽfactsⵧabout_file,
+	resolveꓽasync,
 	requestꓽfile_output,
 }

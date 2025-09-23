@@ -5,6 +5,7 @@ import type { InfiniteMonorepoSpec } from './50-spec.ts'
 
 export const NODE_TYPEⵧREPO = 'repository' as const
 export const NODE_TYPEⵧWORKSPACE = 'workspace' as const
+export const NODE_TYPEⵧWORKSPACE__LINE = 'workspace__line' as const
 export const NODE_TYPEⵧPACKAGE = 'package' as const
 
 /////////////////////////////////////////////////
@@ -16,6 +17,10 @@ export type RepoRelativePath = `${typeof PATHVARⵧROOTⵧREPO}/${string}`
 export const PATHVARⵧROOTⵧWORKSPACE = `$${NODE_TYPEⵧWORKSPACE.toUpperCase()}_ROOT$` as const
 export type WorkspaceRelativePath = `${typeof PATHVARⵧROOTⵧWORKSPACE}/${string}`
 
+export const PATHVARⵧROOTⵧWORKSPACE__LINE =
+	`$${NODE_TYPEⵧWORKSPACE__LINE.toUpperCase()}_ROOT$` as const
+export type WorkspaceLineRelativePath = `${typeof PATHVARⵧROOTⵧWORKSPACE__LINE}/${string}`
+
 export const PATHVARⵧROOTⵧPACKAGE = `$${NODE_TYPEⵧPACKAGE.toUpperCase()}_ROOT$` as const
 export type PackageRelativePath = `${typeof PATHVARⵧROOTⵧPACKAGE}/${string}`
 
@@ -26,6 +31,7 @@ export type NodeRelativePath = `${typeof PATHVARⵧROOTⵧNODE}/${string}`
 export type MultiRepoRelativePath =
 	| RepoRelativePath
 	| WorkspaceRelativePath
+	| WorkspaceLineRelativePath
 	| PackageRelativePath
 	| NodeRelativePath
 
@@ -34,15 +40,16 @@ export type MultiRepoRelativeDirPath = MultiRepoRelativePath
 
 /////////////////////////////////////////////////
 
-// id ~path with a minor conflict hack
+// id = path so far
 export type NodeId = string
 
 export interface NodeBase {
 	path‿abs: AbsoluteDirPath
 	path‿ar: MultiRepoRelativePath
 
-	// any node can override stuff from the root spec
-	// intelligently cascaded from parents
+	// Any node can override stuff from the root spec
+	// Will be intelligently cascaded from parents (prototypically)
+	// Optional bc we have several graphs and only the "semantic" one is expected to have a spec (TODO review)
 	spec?: Partial<InfiniteMonorepoSpec>
 
 	parent_id: NodeId | null
@@ -59,7 +66,7 @@ export interface NodeBase {
 
 // in the sense of a ~npm package with a package.json
 export interface Package extends NodeBase {
-	path‿ar: PackageRelativePath
+	path‿ar: WorkspaceRelativePath | WorkspaceLineRelativePath
 
 	name: string // NOT including the namespace
 }
@@ -100,8 +107,11 @@ export interface NodeⳇRepo extends Workspace {
 export interface NodeⳇWorkspace extends Workspace {
 	type: typeof NODE_TYPEⵧWORKSPACE
 }
+export interface NodeⳇWorkspaceLine extends WorkspaceLine {
+	type: typeof NODE_TYPEⵧWORKSPACE__LINE
+}
 export interface NodeⳇPackage extends Package {
 	type: typeof NODE_TYPEⵧPACKAGE
 }
 
-export type Node = NodeⳇRepo | NodeⳇWorkspace | NodeⳇPackage
+export type Node = NodeⳇRepo | NodeⳇWorkspace | NodeⳇWorkspaceLine | NodeⳇPackage

@@ -39,7 +39,12 @@ async function apply(from?: AnyPath) {
 		console.log('------------ propagating new infos… ------------')
 		//dumpꓽanyⵧprettified('state', state)
 
-		// TODO wait for async tasks
+		// wait for async tasks
+		let prev = state
+		do {
+			prev = state
+			state = await StateLib.resolveꓽasync(state)
+		} while (prev !== state)
 
 		let node: Immutable<Node> | undefined
 		while ((node = StateLib.getꓽnodesⵧnew(state)[0])) {
@@ -53,6 +58,8 @@ async function apply(from?: AnyPath) {
 
 		// TODO new row
 		//dumpꓽanyⵧprettified('state', state)
+
+		// TODO loop?
 	}
 
 	////////////

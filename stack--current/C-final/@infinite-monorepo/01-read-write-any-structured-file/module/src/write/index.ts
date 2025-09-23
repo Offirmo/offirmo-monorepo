@@ -124,7 +124,10 @@ async function ೱwriteꓽfileⵧlist(
 	file_path: AnyFilePath,
 	content: Immutable<ContentⳇList>,
 ): Promise<void> {
-	let content_serialized = content.entries.join('\n') + '\n'
+	// assume it's a set
+	// TODO 1D options
+	const entries = new Set<string>(content.entries.map(s => s.trim()))
+	let content_serialized = Array.from(entries.keys()).sort().join('\n') + '\n'
 	await fs.writeFile(
 		path.resolve(process.cwd(), file_path),
 		_post_process_text(content_serialized),
