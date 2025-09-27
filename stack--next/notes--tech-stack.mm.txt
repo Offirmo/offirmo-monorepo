@@ -8,6 +8,7 @@ corepack https://github.com/nodejs/corepack?tab=readme-ov-file
 corepack https://www.totaltypescript.com/how-to-use-corepack
 corepack still considered experimental? https://vercel.com/docs/builds/configure-a-build#corepack
 designed for Cloudflare/Vercel -- https://upstash.com/
+docker -- macos https://github.com/dockur/macos
 durable workflows https://www.inngest.com/uses/durable-workflows
 ecosystem -- sdk ?https://liblab.com/ https://www.speakeasy.com/
 feature flags
@@ -16,6 +17,9 @@ frontend -- CSS-in-js -- ? https://github.com/vercel/styled-jsx
 frontend -- React
 git -- git crypt https://github.com/AGWA/git-crypt
 GraphQL https://gql-tada.0no.co/
+https://stackingthebricks.com/bootstrapper-tech-stack/
+IaC -- pulumi
+IaC -- terraform
 JavaScript -- TypeScript -- https://openapi-ts.dev/
 JavaScript -- TypeScript -- tRPC https://trpc.io/docs/getting-started
 JavaScript -- TypeScript -- zod
@@ -38,6 +42,7 @@ next.js https://nextjs.org/docs
 pkg manager -- ⚠ pnpm
 pkg manager -- ✅ yarn v4
 pkg manager -- ✖ npm
+polish https://number-flow.barvian.me/
 React -- https://reactrouter.com/home ?
 search -- postgress https://tech.instacart.com/how-instacart-built-a-modern-search-infrastructure-on-postgres-c528fa601d54
 secrets management -- ? https://infisical.com/
@@ -46,6 +51,7 @@ terraform https://github.com/cloudflare/terraform-provider-cloudflare/issues/557
 tracing https://www.jaegertracing.io/ (used by Cloudflare)
 transactional emails https://react.email/
 typescript -- bases https://github.com/tsconfig/bases
+ui - markdown -- editor https://overtype.dev/
 vite -- npm create vite@latest my-project
 vite -- vitest
 vite ✅ https://vite.dev/
@@ -54,4 +60,3 @@ yalc
 ⚠ Tailwind https://www.mux.com/blog/tailwind-is-the-worst-form-of-css-except-for-all-the-others
 ✖ Nix https://nixos.org/
 ✖ xml
-https://stackingthebricks.com/bootstrapper-tech-stack/

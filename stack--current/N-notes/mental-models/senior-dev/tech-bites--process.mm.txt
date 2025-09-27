@@ -90,6 +90,7 @@ team -- Tuckman model "Forming, Storming, Norming, and Performing"
 toxic = worst than low perf https://hbr.org/2016/11/isolate-toxic-employees-to-reduce-their-negative-effects
 vision -> goal -> milestones -> build -> refine -> launch (+ learn, repeat)
 wartime/peacetime https://newsletter.pragmaticengineer.com/p/wartime-vs-peacetime
+we'll know it when we see it = bad, need clear expectations
 X alarm fire -- "alarm" conditions = Inability to obtain a proper balance between reliability and delivery
 X alarm fire -- "alarm" conditions = Not meeting SLOs
 X alarm fire -- "alarm" conditions = Practices that lead to re-work in production

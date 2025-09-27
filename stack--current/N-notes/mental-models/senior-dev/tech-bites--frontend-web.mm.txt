@@ -26,7 +26,6 @@ AMP "Accelerated Mobile Pages"
 animations -- API https://devdocs.io/dom/web_animations_api
 API intl https://intlin.site/
 APIs web
-security https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5
 app -- a11y
 app -- a11y -- Heydon's 12 principles https://github.com/Heydon/principles-of-web-accessibility
 app -- a11y -- tracking ex. https://heydonheydon.gumroad.com/l/notion-accessibility-tracker
@@ -115,6 +114,8 @@ CSS -- BEM https://getbem.com/introduction/
 CSS -- breakpoints https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
 CSS -- cascade https://2019.wattenberger.com/blog/css-cascade
 CSS -- color -- formats = hex, rgb(), hsl(), lch() https://www.joshwcomeau.com/css/color-formats/
+CSS -- color -- interpolation https://css-tricks.com/what-you-need-to-know-about-css-color-interpolation/
+CSS -- color -- oklch = recommended https://jakub.kr/components/oklch-colors
 CSS -- combinators https://courses.joshwcomeau.com/css-for-js/00-recap/04.03-combinators
 CSS -- containing block
 CSS -- directions = block (vertical) and inline (horizontal)
@@ -147,6 +148,7 @@ CSS -- nesting
 CSS -- optimization -- containment https://blogs.igalia.com/mrego/2019/01/11/an-introduction-to-css-containment/ https://developer.mozilla.org/en-US/docs/Web/CSS/contain https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Using_CSS_containment
 CSS -- overflow https://www.bram.us/2024/02/14/scroll-driven-animations-you-want-overflow-clip-not-overflow-hidden/ https://frontendmasters.com/blog/single-directionally-allowed-overflow/
 CSS -- perf -- avoid modifying the layout (geometric properties)
+CSS -- properties -- full list https://nikolai-shabalin.github.io/css-properties/en/
 CSS -- properties -- inheritance (or not)
 CSS -- pseudo-classes :xyz https://courses.joshwcomeau.com/css-for-js/00-recap/04.01-pseudo-classes
 CSS -- pseudo-elements ::xyz  https://courses.joshwcomeau.com/css-for-js/00-recap/04.02-pseudo-elements
@@ -225,6 +227,7 @@ flash of -- empty state = "you have no friends"
 flash of -- fallback font (FOFT)
 flash of -- Undefined Custom Elements (FOUCE) https://www.abeautifulsite.net/posts/flash-of-undefined-custom-elements/
 flash of -- unstyled content (FOUC) https://dev.to/lyqht/what-the-fouc-is-happening-flash-of-unstyled-content-413j
+font -- loading https://www.jonoalderson.com/performance/youre-loading-fonts-wrong/
 fonts
 fonts -- calibration https://web.dev/articles/css-size-adjust#calibrating_fonts
 fonts -- concepts +++ https://fonts.google.com/knowledge/glossary
@@ -396,6 +399,7 @@ security -- domain registration, DNS, hosting = don't use the same provider so t
 security -- Google Tag Manager = a handy way for people you’ve never met to inject JavaScript into your site without the hindrance of a code review
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
 security -- supply chain https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5 https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9
+security https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5
 Server Side Rendering = an umbrella term that includes several different rendering strategies. They all have one thing in common: the initial render happens in a server runtime like Node.js, using the ReactDOMServer APIs. It doesn't actually matter when this happens, whether it's on-demand or at compile-time. https://www.joshwcomeau.com/react/server-components/
 settings -- Mac = https://aresluna.org/frame-of-preference/
 settings -- Mac https://aresluna.org/frame-of-preference/ (with cool virtual machines)
@@ -526,3 +530,4 @@ website critique https://americabydesign.fail/ https://americabydesign.gov/
 WebXR / WebVR = VR / AR
 Wep pages UX design -- concepts https://www.nngroup.com/courses/web-page-design/
 XSS -- injection sinks https://devdocs.io/dom/trusted_types_api
+“Your” vs “My” in user interfaces = In summary 1) Use “your” when communicating to the user 2) Use “my” when the user is communicating to us https://adamsilver.io/blog/your-vs-my-in-user-interfaces/

@@ -33,6 +33,7 @@ analysis -- big O -- intro https://builtin.com/software-engineering-perspectives
 analysis -- big O -- warning, O(1) is not necessarily better than O(N) (because O notation is asymptotic). There is a point where O(1) will be faster for a big N, but may be high, ex. O(1) could be asymptotised 100, O(n) could be asymptotised 10*n
 analysis -- big O / asymptotic notation https://en.wikipedia.org/wiki/Big_O_notation#Infinite_asymptotics
 analysis -- big O = good intro https://adrianmejia.com/how-you-can-change-the-world-learning-data-structures-algorithms-free-online-course-tutorial/
+analysis -- big O = interactive https://samwho.dev/big-o/
 analysis -- big Oa -- O(1) = constant
 analysis -- big Ob -- O(log n) = logarithm
 analysis -- big Oc -- O(n) = linear
