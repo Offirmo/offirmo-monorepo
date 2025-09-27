@@ -16,6 +16,7 @@
 		"tslib": "^2"
 	},
 	"dependencies": {
+		"@offirmo-private/type-detection": "*",
 		"json5": "^2",
 		"split-lines": "^3",
 		"strip-bom": "^5",
