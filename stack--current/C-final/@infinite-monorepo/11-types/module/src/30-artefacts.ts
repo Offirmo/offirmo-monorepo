@@ -17,7 +17,7 @@ export interface StructuredFsⳇFileManifest {
 		trim_trailing_spaces?: boolean
 	}
 
-	$schema?: `https://${string}/schema.json`
+	$schema?: `https://www.schemastore.org/${string}.json`
 	doc: Array<string>
 }
 

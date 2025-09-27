@@ -1,5 +1,6 @@
 import type { AbsoluteDirPath, RelativeFilePath, RelativeDirPath } from '@offirmo-private/ts-types'
 import type { InfiniteMonorepoSpec } from './50-spec.ts'
+import type { PureModuleDetails } from './module-details'
 
 /////////////////////////////////////////////////
 
@@ -67,6 +68,8 @@ export interface NodeBase {
 // in the sense of a ~npm package with a package.json
 export interface Package extends NodeBase {
 	path‿ar: WorkspaceRelativePath | WorkspaceLineRelativePath
+
+	details: PureModuleDetails
 
 	name: string // NOT including the namespace
 }

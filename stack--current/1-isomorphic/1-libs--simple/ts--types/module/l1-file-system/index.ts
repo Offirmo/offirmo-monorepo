@@ -16,6 +16,7 @@ export type EndOfLine =
 // no sep
 export type PathSegment = string
 export type Basename = PathSegment
+export type Extension = string // '.' included, ex. '.ts'
 
 /////////////////////////////////////////////////
 

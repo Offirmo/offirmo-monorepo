@@ -18,3 +18,30 @@ export interface VersionSpecification {
 }
 
 /////////////////////////////////////////////////
+
+export type ProgLang =
+	| 'css'
+	| 'html'
+	| 'js'
+	| 'json'
+	| 'jsx' // also covers tsx
+	| 'md'
+	| 'ts'
+
+/////////////////////////////////////////////////
+
+export type DependencyFQName = string // ex. @offirmo/cli
+
+export type DependencyType = 'normal' | 'dev' | 'peer' | 'optional' | 'vendored' // special, TODO
+
+export interface Dependency {
+	label: DependencyFQName
+	type: DependencyType
+}
+
+export interface DependencyDetails {
+	type?: DependencyType
+	v?: Semver
+}
+
+/////////////////////////////////////////////////

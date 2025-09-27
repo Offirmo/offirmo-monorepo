@@ -138,6 +138,7 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 		...node,
 	}
 
+	//////////// SCM GRAPH ////////////
 	if (node.type === 'repository') {
 		assert(!node.spec, `SCM node should not have a spec!`)
 		assert(
@@ -160,6 +161,7 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 		}
 	}
 
+	//////////// WORKSPACE GRAPH ////////////
 	assert(
 		state.graphs.nodesⵧworkspace[node.path‿abs] === undefined,
 		`Semantic node already registered: ${node.path‿abs}!`,
@@ -168,6 +170,17 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 	node = {
 		spec: {},
 		...node,
+	}
+
+	switch (node.type) {
+		case 'package': {
+			node = {
+				details: c
+				...node,
+			}
+		}
+		default:
+			break
 	}
 
 	return {

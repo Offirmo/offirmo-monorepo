@@ -395,6 +395,7 @@ error -- type -- domain error = out of the specification, ex. sqrt(-x) https://c
 error -- type -- logic error = errors in the internal logical of the program, such as violation of logical preconditions or class invariants https://cplusplus.com/reference/stdexcept/logic_error/
 error -- type -- runtime error = errors that can only be detected during runtime https://cplusplus.com/reference/stdexcept/runtime_error/
 error = failure = inability of a function to return a valid result, instead producing an error object describing the reason for the failure https://boostorg.github.io/leaf/#tutorial
+Ethereum Virtual Machine (EVM) is a decentralized virtual environment that executes code consistently and securely across all Ethereum nodes. Nodes run the EVM to execute smart contracts, using "gas" to measure the computational effort required for operations, ensuring efficient resource allocation and network security. https://ethereum.org/en/developers/docs/evm/
 ETL “extract, transform, load” = the three interdependent processes of data integration used to pull data from one database and move it to another
 event loop
 every rule is born from blood
@@ -552,6 +553,7 @@ lang -- Bend = massively parallel, high-level programming language https://githu
 lang -- Clojure https://clojure.org/guides/getting_started
 lang -- Clojure ~lisp https://clojure.org/
 lang -- E = https://www.crockford.com/ec/etut.html
+lang -- F# https://en.wikipedia.org/wiki/F_Sharp_(programming_language)
 lang -- go
 lang -- go -- advocacy https://github.com/microsoft/typescript-go/discussions/411
 lang -- JS -- engines http://developer.telerik.com/featured/a-guide-to-javascript-engines-for-idiots/
@@ -787,6 +789,7 @@ reactive programming
 recursion
 red / blue deployment -- compatibility window = period, measured either in elapsed time or number of releases, where all versions of a component released during this window must be compatible with all components of the current version, and vice versa.
 regex - 2x problems = Some people, when confronted with a problem, think “I know, I'll use regular expressions.” Now they have two problems. https://regex.info/blog/2006-09-15/247
+regex -- lookahead/lookbehind https://www.regular-expressions.info/lookaround.html
 regex https://regexlearn.com/
 regex – email https://colinhacks.com/essays/reasonable-email-regex
 register

@@ -1,4 +1,6 @@
 export * from './01-primitives.ts'
+export * from './file-entry/index.ts'
+export * from './module-details/index.ts'
 export * from './10-tools.ts'
 export * from './20-graph.ts'
 export * from './30-artefacts.ts'

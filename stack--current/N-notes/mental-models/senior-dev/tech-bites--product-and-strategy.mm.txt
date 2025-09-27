@@ -15,10 +15,12 @@ alignment -- challenges -- risk of social layer capture: means "having the right
 alignment -- of incentives = https://vitalik.eth.limo/general/2024/09/28/alignment.html
 alignment -- of tech
 alignment -- of values
-another Uber = unethical, untenable, profit-driven startup who took a gambit evading the law, hoping to grow too big to fail before the law catches up. Except Uber was good at being bad, and * combined malfeasance with incompetence https://www.sandofsky.com/lambda-school/
+another Uber = unethical, untenable, profit-driven startup who took a gambit evading the law, hoping to grow too big to fail before the law catches up. Except Uber was good at being bad, but X combined malfeasance with incompetence https://www.sandofsky.com/lambda-school/
 B2B (Business to Business)
 B2C (Business to Customer)
+B2C -- DTC (direct-to-consumer) companies = sell products directly to consumers, bypassing traditional retail channels, allowing them to control the entire customer experience and build strong brand relationships
 B2G (Business to Government)
+B@C -- DTC -- often do well at the beginning, then a bunch of copycats come out and it's a race to the bottom funded by VC dollars https://www.youtube.com/watch?v=WcNbIm0fRxk
 barriers -- to entry = moat against competitors
 barriers -- to exit = users can't leave (switch) ex. cost
 Bezos principles -- customer obsession rather than competitor obsession
@@ -29,7 +31,9 @@ Bezos principles -- willingness to fail
 Bezos principles = https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm
 billing model -- one-time purchase with lifetime access
 billing model -- pay-as-you-go
+billing model -- portion of future income = dangerous (coding bootcamps) https://www.sandofsky.com/lambda-school/
 billing model -- subscription = everyone hates it
+billing model -- transaction fees
 bloated, forgettable software dripping with mediocrity. Blech. https://basecamp.com/gettingreal/01.1-what-is-getting-real
 boring -- culture
 boring -- plans https://skamille.medium.com/make-boring-plans-9438ce5cb053
@@ -74,8 +78,6 @@ deep appeal = something that a few people love, even if most people don't get it
 disruptive -- Clay Christensen’s theory = the next big thing always starts out being dismissed as a “toy.” observation that technologies tend to get better at a faster rate than users’ needs increase. From this simple insight follows all kinds of interesting conclusions about how markets and products change over time. https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy
 dogfooding "Eating our own Dogfood" = ranges wider than testing your end-product, and can be the difference between good and great products https://gregtidanian.substack.com/p/eating-our-own-dog-food
 don't build castles in others people's kingdoms
-DTC (direct-to-consumer) companies = sell products directly to consumers, bypassing traditional retail channels, allowing them to control the entire customer experience and build strong brand relationships
-DTC -- often do well at the beginning, then a bunch of copycats come out and it's a race to the bottom funded by VC dollars https://www.youtube.com/watch?v=WcNbIm0fRxk
 earliest -- 01 feedback-able product (EFP)
 earliest -- 02 testable product = first release that customers can actually do something with
 earliest -- 03 usable product = first release that early adopters will actually use, willingly
@@ -87,13 +89,14 @@ earliest = MVP https://every.to/p/the-most-advanced-yet-acceptable-products-win
 economies of scale = aren’t available to smaller players in a market, including increased visibility, increased buying power, and lower customer acquisition costs https://dealroom.net/blog/industry-consolidation
 ecosystem -- Application Development Kit (ADK) = encompasses the code that enables licensed distributors to port the application onto their own platforms and streamline the process straight to testing and QA with us. The ADK is available as a software package that contains all the tools a distributor could need to build on their diverse device platform. https://medium.com/disney-streaming/introducing-the-disney-application-development-kit-adk-ad85ca139073
 Embrace, Extend, and Extinguish https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish
-enshitification https://doflo.com/blog/what-is-enshitification-and-can-we-stop-it
 enshittification -- hate = ex. Adobe https://petapixel.com/2025/04/10/adobe-deletes-bluesky-posts-after-furious-backlash/
-enshittification = first, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die. https://en.wikipedia.org/wiki/Enshittification
+enshittification = first, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die. https://doflo.com/blog/what-is-enshitification-and-can-we-stop-it https://en.wikipedia.org/wiki/Enshittification
 entry -- barrier -- low = low entry barrier to enable global adoption
-Ethereum Virtual Machine (EVM) is a decentralized virtual environment that executes code consistently and securely across all Ethereum nodes. Nodes run the EVM to execute smart contracts, using "gas" to measure the computational effort required for operations, ensuring efficient resource allocation and network security. https://ethereum.org/en/developers/docs/evm/
-extract value vs. claw back all the value (enshitification)
+extract value vs. claw back all the value (enshittification)
 failures -- inVision -- https://www.linkedin.com/pulse/one-reason-why-invision-failed-greg-nudelman/
+failures -- kodak
+failures -- kodak -- "kodak moment"
+failures -- leadership -- Quantas https://www.australianfrequentflyer.com.au/the-chairmans-lounge-joe-aston-book-review/
 features -- 6 Reasons Users Hate Your New Feature -- The Feature’s Not Finishable
 features -- 6 Reasons Users Hate Your New Feature -- The Feature’s Not Finished
 features -- 6 Reasons Users Hate Your New Feature -- You Built EXACTLY What They Asked For
@@ -137,7 +140,6 @@ first-mover advantage -- second mover advantage / "fast followers" / "free rider
 first-mover advantage https://en.wikipedia.org/wiki/First-mover_advantage
 flexible planning = scope changes and unexpected risks: adaptability is crucial
 flintstoning = when your app, product, or business itself lacks a feature… buuuuuuuuut, you can make up for it manually https://stackingthebricks.com/the-fine-art-of-flintstoning/
-founder-market fit = Why are you the right team to do this? Why are you amazing? And then why is the problem you're working on important to you? https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 full-stack builder = If you're going it alone, you can't afford to be blocked on anything. You need to build, sell, recruit, and fundraise, all by yourself https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 funding -- CAP table = ???
 funding -- SAFE: Simple Agreement for Future Equity
@@ -175,11 +177,9 @@ incumbent inertia https://en.wikipedia.org/wiki/Law_of_the_handicap_of_a_head_st
 Jobs to be Done (JTBD) https://en.wikipedia.org/wiki/Jobs-to-be-done_theory
 Justification Filler = "Best Practice", "Industry Standard", "Security Posture" https://serce.me/posts/2025-05-19-justification-filler-phrases
 knowledge creating company https://hbr.org/2007/07/the-knowledge-creating-company
-kodak moment
 land grab https://fastercapital.com/topics/understanding-the-concept-of-land-grab-strategies.html
 layers in the stack between humans and the money -- for every layer: dominate it or commoditize it
 layers in the stack between humans and the money = ex. Google Human - device – OS – browser – bandwidth –  websites - ads – ad tech – relationship to advertiser – $$$ https://cdixon.org/2009/12/30/whats-strategic-for-google
-leadership -- failure -- Quantas example https://www.australianfrequentflyer.com.au/the-chairmans-lounge-joe-aston-book-review/
 learning from users https://paulgraham.com/users.html
 lighthouse customer = a customer that brings other customers in. But sometimes if there's not a good lighthouse customer, going deep in a narrow vertical can be really interesting. https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 listen, build, ship, tell the customer, then repeat forever
@@ -196,6 +196,13 @@ management maturity -- Level 3: P75+, Site-specific Baselines & Metrics
 management maturity -- Level 4: Variance Control & Regression Prevention
 management maturity -- Level 5: Strategic Performance
 management maturity = high-management-maturity organisations https://infrequently.org/2022/05/performance-management-maturity/
+market fit -- founder-market = proving you're the exact right people to pursue the idea, whether from your experience or because you've somehow gone super deep into “the idea maze” https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
+market fit -- product-market -- Arc archetype -- Future Vision = enable a new reality through visionary innovation
+market fit -- product-market -- Arc archetype -- Hair on Fire = solve a problem that’s a clear, urgent need for customers
+market fit -- product-market -- Arc archetype -- Hard Fact = pain point universally accepted as a hard fact of life, and see that it’s merely a hard problem that your product solves
+market fit -- product-market = PMF https://www.sequoiacap.com/article/pmf-framework/
+market fit -- team-market = Why are you the right team to do this? Why are you amazing? And then why is the problem you're working on important to you? https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
+market fit -- traction = measurable proof that you’re already making progress toward product-market fit. just whatever validation you can get from the outside world https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 marketing -- "killer app"
 marketing -- case studies
 marketing -- case studies -- "flagship app" It's not that there wasn't a lot of interest in WPF, it's just there weren't any flagship apps showing off what it could do that previous frameworks couldn't. Even if Evernote had stayed with it, they still have a fairly simple client so a lot of people would simply shrug and say "I can do that in WinForms." They aren't wrong. https://www.reddit.com/r/csharp/comments/x0nu7h/comment/im9kesb/
@@ -206,7 +213,6 @@ metrics -- 40 something
 metrics -- active users -- daily (DAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
 metrics -- active users -- monthly (MAU) https://www.socialmediatoday.com/news/look-comparative-mau-and-dau-stats-major-social-apps/694563/
 metrics -- Annual Recurring Revenue (ARR)
-metrics -- ARR
 metrics -- average revenue per user (ARPU)
 metrics -- bad practices -- exotic = hard to compute, move, etc https://www.linkedin.com/pulse/exotic-metrics-parable-product-people-shreyas-doshi-8ghje/
 metrics -- CSAT
@@ -270,9 +276,6 @@ pricing -- competitive pricing reaction strategy.
 pricing -- position
 pricing -- segment
 pricing -- strategy = strategic choice from a business, need to chose the most effective https://en.wikipedia.org/wiki/Pricing_strategy
-pricing strategy
-principle -- end-to-end principle = fundamental principle of the Internet in which the role of a network is to reliably deliver data from willing senders to willing receivers
-principle -- right of exit = users of a platform can easily go elsewhere if they are dissatisfied with it. This requires interoperability, countering the network effects
 principles -- canva -- Beginners become experts = While we should make sure that new customers have a great experience creating their first design, they should also find it exciting to create their 100th design and be able to create new and unique content each time they come back. This means gradually handing over the reins of design to them as they become more confident with the product and with their own skills.
 principles -- canva -- Great defaults = It's not a sin to have more powerful options available to our customers, but if they don't tweak any settings or change any values, they should still end up with a great design. Make sure that any new feature is optimized to create great design right out of the box
 principles -- canva -- Just simple enough  = We always strive for a simple product that is understandable by a non-designer. This means no jargon and no knobs that only a professional can figure out how to use. But "simple" is not the opposite of "powerful". Canva needs to provide the flexibility and usefulness of a real design tool in an easy-to-use package.
@@ -280,15 +283,13 @@ principles -- canva -- Understand the problem = Having a clear definition of the
 principles -- canva -- Weigh up every line = We want customers to feel a connection with the people who make Canva. This should be reflected in the tone of voice and interface cues that we use to communicate with our customers. We are all humans, so let your human side show, but know when it's appropriate to be more playful and when you have to communicate serious matters.
 principles -- canva -- Words are design = What customers read is as important to their experience as the interactions and visuals. Clear and meaningful labels and written content are an important part of an interface, therefore language and writing are an important skill to have as a designer.
 principles -- canva https://www.canva.dev/docs/apps/design-guidelines/principles/
+principles -- end-to-end principle = fundamental principle of the Internet in which the role of a network is to reliably deliver data from willing senders to willing receivers
+principles -- right of exit = users of a platform can easily go elsewhere if they are dissatisfied with it. This requires interoperability, countering the network effects
 procurement
 product life cycle -- stage 1 = Market Development is where you engage in experiments and innovation
 product life cycle -- stage 2 = Growth is where you iterate on differentiation features
 product life cycle -- stage 3 = Maturity is where you shift to “good enough” and start optimising for cost of operation
 product life cycle -- stage 4 = Decline is where you look at how to efficiently exit.
-product market fit (PMF) https://www.sequoiacap.com/article/pmf-framework/
-product market fit -- Arc archetype -- Future Vision = enable a new reality through visionary innovation
-product market fit -- Arc archetype -- Hair on Fire = solve a problem that’s a clear, urgent need for customers
-product market fit -- Arc archetype -- Hard Fact = pain point universally accepted as a hard fact of life, and see that it’s merely a hard problem that your product solves
 product mode -- come for the tool, stay for the network "best X I've ever used"
 product mode -- multiplayer = no utility for a single user or until a critical mass of users is reached
 product mode -- single = has immediate value for a single user
@@ -345,7 +346,6 @@ strategy tax = negative pattern in a big company where every project / new produ
 support loops = ex. help desk + social media + phone etc.
 system of work = A connected portfolio of products with clear and discrete value propositions; built on a common platform and data model; can help implement an opinionated set of practices for effective teamwork across all kinds of teams
 target
-team = proving you're the exact right people to pursue the idea, whether from your experience or because you've somehow gone super deep into “the idea maze” https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 teams moving from spreadsheet
 tool tech stack -- review https://www.lennysnewsletter.com/p/whats-in-your-stack-the-state-of
 top complaints -- actual case J. -- 01 Performance and Speed
@@ -359,7 +359,6 @@ top complaints -- actual case J. -- 08 Integration and Automation: Enhance integ
 top complaints -- actual case J. -- 09 Blended Features and Cross-Platform Integration: Explore the possibility of blending features from the suite to offer a more holistic project management experience.
 top complaints -- actual case J. -- 10 Training and Support: Provide dedicated training resources and support tailored for targe teams, including guides on using the product for targeted tasks.
 top complaints -- actual case J. -- 11 Positioning and Value Proposition
-traction = measurable proof that you’re already making progress toward product-market fit. just whatever validation you can get from the outside world https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 triad -- sometimes + data analyst
 triad = product, design, engineering
 try/test/graduate
