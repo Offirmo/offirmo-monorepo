@@ -75,6 +75,7 @@ ally -- howto = Be Present, Provide Options, Know Your Role, follow/beware laws/
 ally = s/o who actively seeks to bridge differences, stand for fairness or harmony, and encourage equal opportunities for others in the workplace through thoughtful and respectful communication
 alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community
 amour vs attraction
+amour = vouloir le bien
 animals -- pigeons https://thewhshatchet.org/why-pigeons-might-be-the-best-pet-bird/
 Anna Karenina principle = https://en.wikipedia.org/wiki/Anna_Karenina_principle
 anti-fragile
@@ -117,7 +118,7 @@ be right for the wrong reason = ex. being carried along by momentum or catching 
 bee browsing
 being enough
 being in the details https://www.theengineeringmanager.com/managing-managers/being-in-the-details/
-being like planes: they only make news when they crash, even though so many of them are in the air
+being like planes = they only make news when they crash, even though so many of them are in the air
 Bell curve = bottom 20%, middle 60%, top 20%
 best decision based on the information available at the time
 best time to plant a tree = was 20 years ago. The second best time is now
@@ -137,7 +138,7 @@ biases -- mean world syndrome = perceive the world as more dangerous than it is
 biases -- resulting = the tendency to judge a decision by its eventual outcome instead of based on the quality of the decision at the time it was made https://www.artofmanliness.com/career-wealth/career/one-mistake-never-to-make-when-leading-a-meeting/
 biases -- rhyme-as-reason = sayings that rhyme are perceived more accurate or truthful
 biases -- well travelled road = perceived shorter time
-biases -- wet forecast = wheather forecasters exaggerate the chance of rain
+biases -- wet forecast = weather forecasters exaggerate the chance of rain
 bike shed effect = A group of people working on a project will fight over the most trivial ideas. They’ll ignore what’s complicated. They’ll focus too much on easy-to-understand ideas at the expense of important, but hard to talk about ideas. For example, instead of approving plans for a complicated spaceship, the team would argue over the color of the astronaut’s uniforms.
 biodiversity -- global https://en.wikipedia.org/wiki/Global_biodiversity
 biodiversity -- loss https://en.wikipedia.org/wiki/Biodiversity_loss
@@ -156,10 +157,10 @@ brain -- left & right & hippocamp (debunked?)
 brain -- reptilian
 brain rot = the sort of stuff that keeps you watching, but doesn’t provide lasting value
 brain rot https://en.wikipedia.org/wiki/Brain_rot
-brainstorming -- decoy technique = suggest sth bad as a bottom baseline to trigger defense of better alternatives
+brainstorming -- technique -- decoy = suggest sth bad as a bottom baseline to trigger defense of better alternatives
 brainstorming -- technique -- reverse = come up with ideas to make things worse https://www.mural.co/blog/reverse-brainstorming
 brainstorming -- technique -- wrong = try to come up with the worst ideas https://hbr.org/2017/08/to-come-up-with-a-good-idea-start-by-imagining-the-worst-idea-possible
-brainstorming -- veto technique = "anyone who vetoes a suggestion has to pay for that veto with a suggestion of their own" https://www.reddit.com/r/LifeProTips/comments/1cyvsz/lpt_cant_decide_on_dinner_use_the_veto_rule/
+brainstorming -- technique -- veto = "anyone who vetoes a suggestion has to pay for that veto with a suggestion of their own" https://www.reddit.com/r/LifeProTips/comments/1cyvsz/lpt_cant_decide_on_dinner_use_the_veto_rule/
 Brandolini's Law = The amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it
 breaking through
 brilliance -- Identify your own brilliance, don't be like somebody https://x.com/shreyas/status/1442165986908524545
@@ -259,7 +260,7 @@ counterfactuals -- useful if stimulating, not if regret = may evoke deleterious 
 counterfactuals = contrary to the actual facts. can be a tool for learning, problem-solving, and managing emotions https://www.sciencedirect.com/science/article/abs/pii/S0065260117300187
 courses après le repas
 creative process
-creativity -- begins at the edge: Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
+creativity -- begins at the edge = Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
 crime -- socially constructed = ex. wage theft not a crime vs. petty theft, fines = crimes for a price
 crimes -- human trafficking
 crimes -- some sociological theories of criminology attributes criminal action to environmental and unconscious factors
@@ -548,18 +549,18 @@ Horseshoe Theory = Extreme opposites tend to look the same. For example, a far-r
 hostile architecture https://en.wikipedia.org/wiki/Hostile_architecture
 how to ask questions http://www.catb.org/esr/faqs/smart-questions.html
 how to fail well = https://www.linkedin.com/posts/davidkline_7-lessons-on-how-to-fail-well-activity-7330569803084034049-U4Hx/
-https://36questionsinlove.com/
-https://cobeats.com/folder/ryfTgPr9H
-https://dontdie.bryanjohnson.com/
-https://en.wikipedia.org/wiki/Great_Recession
-https://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
+[ ] https://36questionsinlove.com/
+[ ] https://cobeats.com/folder/ryfTgPr9H
+[ ] https://dontdie.bryanjohnson.com/
+[ ] https://en.wikipedia.org/wiki/Great_Recession
+htt[ ] ps://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
 humanities and social sciences = includes some of the biggest and easiest undergrad majors
 humble bragging https://www.linkedin.com/posts/staceychampagne_womenincybersecurity-cybersecurity-certifications-activity-7284636641648889857-B_y_/
 hustlers
 I know it when I see it = unclear thresholds, ex. obscenity https://en.wikipedia.org/wiki/I_know_it_when_I_see_it
 I might be reading too much into it but...
 ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/ https://strategyu.co/pyramid-principle-part-2-communicate-top-down/
-identity -- " I’d tied my identity and reputation to hard work"
+identity -- "I’d tied my identity and reputation to hard work"
 idées (no natural upper bound) ne s'usent que si l'on ne s'en sert pas (contre intuitif) https://en.wikipedia.org/wiki/Lindy_effect#History
 if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
 IKEA effect = labor leads to love https://www.hbs.edu/ris/Publication%20Files/11-091.pdf
@@ -586,7 +587,7 @@ infotainment
 infotainment https://amitaycohen.substack.com/p/rip-traditional-news
 ingratitude = is a crime more despicable than revenge, which is only returning evil for evil, while ingratitude returns evil for good (William George Jordan)
 ingroup/outgroup
-innate desire to be useful, resourceful, valuable…and needed
+innate desire to be useful, resourceful, valuable …and needed
 integrity -- high = https://x.com/shreyas/status/1276956843361763328
 intellectual honesty -- 1 Is this true?
 intellectual honesty -- 2 What evidence do I have for and against this?
@@ -603,7 +604,7 @@ inversion: Avoiding stupidity is easier than trying to be brilliant. Instead of 
 investing
 investing -- fund vs index = index always better
 investing -- Nancy Pelosi Stock Tracker ♟ https://x.com/PelosiTracker_/status/1874859312616759754
-invictus https://en.wikipedia.org/wiki/Invictus
+[ ] invictus https://en.wikipedia.org/wiki/Invictus
 invisible hand: Markets aggregate knowledge. Rising prices signal falling supply or increased demand, which incentivizes an increase in production. The opposite is true for falling prices. Prices are a signal wrapped in an incentive.
 IQ -- it exists, it's measurable
 irredentism https://www.reddit.com/r/history/comments/sji919/is_there_a_term_for_this_phenomenon/
@@ -616,7 +617,7 @@ Jack Welch A/B/C players -- A = filled with passion, committed to "making things
 Jack Welch A/B/C players -- B = not visionary or the most driven, but "vital" because they make up the majority
 Jack Welch A/B/C players -- C = nonproducers, likely to "enervate" rather than "energize". Procrastination, failure to deliver on promises
 Jack Welch A/B/C players https://en.wikipedia.org/wiki/Vitality_curve#Ratings
-jaded  by the status quo = outsiders = Sometimes you need folks who have a “beginner’s mind” when looking at a problem and haven’t been jaded by the status quo https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
+jaded by the status quo = outsiders = Sometimes you need folks who have a “beginner’s mind” when looking at a problem and haven’t been jaded by the status quo https://speedrun.substack.com/p/sr005-apps-reviewed-the-3-signals-that-get-startups-in
 jamais assez / 1st times
 job readiness
 Johari window https://en.wikipedia.org/wiki/Johari_window
@@ -954,7 +955,7 @@ Pope Francis 15 spiritual diseases -- 03 = mental and spiritual “petrification
 Pope Francis 15 spiritual diseases -- 04 = excessive planning and of functionalism
 Pope Francis 15 spiritual diseases -- 05 = poor coordination. Once its members lose communion among themselves, the body loses its harmonious functioning and its equilibrium
 Pope Francis 15 spiritual diseases -- 06 = “spiritual Alzheimer’s disease”. It consists in losing the memory of our personal “salvation history”, our past history with the Lord and our “first love”
-Pope Francis 15 spiritual diseases -- 07 = rivalry and vainglory.[11] When appearances, the colour of our clothes and our titles of honour become the primary object in life
+Pope Francis 15 spiritual diseases -- 07 = rivalry and vainglory. When appearances, the colour of our clothes and our titles of honour become the primary object in life
 Pope Francis 15 spiritual diseases -- 08 = existential schizophrenia. This is the disease of those who live a double life, the fruit of that hypocrisy typical of the mediocre and of a progressive spiritual emptiness which no doctorates or academic titles can fill. It is a disease which often strikes those who abandon pastoral service and restrict themselves to bureaucratic matters, thus losing contact with reality, with concrete people
 Pope Francis 15 spiritual diseases -- 09 = gossiping, grumbling and back-biting. I have already spoken many times about this disease, but never enough. It is a grave illness which begins simply, perhaps even in small talk, and takes over a person, making him become a “sower of weeds”
 Pope Francis 15 spiritual diseases -- 10 = idolizing superiors. This is the disease of those who court their superiors in the hope of gaining their favour. They are victims of careerism and opportunism; they honour persons and not God
@@ -962,7 +963,7 @@ Pope Francis 15 spiritual diseases -- 11 = indifference to others. This is where
 Pope Francis 15 spiritual diseases -- 12 = lugubrious face. Those glum and dour persons who think that to be serious we have to put on a face of melancholy and severity, and treat others – especially those we consider our inferiors – with rigour, brusqueness and arrogance
 Pope Francis 15 spiritual diseases -- 13 = hoarding. When an apostle tries to fill an existential void in his heart by accumulating material goods, not out of need but only in order to feel secure. The fact is that we are not able to bring material goods with us
 Pope Francis 15 spiritual diseases -- 14 = closed circles, where belonging to a clique becomes more powerful than belonging to the Body and, in some circumstances, to Christ himself. This disease too always begins with good intentions
-Pope Francis 15 spiritual diseases -- 15 = disease of worldly profit, of forms of self-exhibition.[17] When an apostle turns his service into power, and his power into a commodity in order to gain worldly profit or even greater power
+Pope Francis 15 spiritual diseases -- 15 = disease of worldly profit, of forms of self-exhibition. When an apostle turns his service into power, and his power into a commodity in order to gain worldly profit or even greater power
 Pope Francis 15 spiritual diseases https://www.vatican.va/content/francesco/en/speeches/2014/december/documents/papa-francesco_20141222_curia-romana.html
 porn
 positive good = defense technique arguing an overall "positive good" ex. colonisation = trains (which were for stealing rsrcs) hospitals etc. https://en.wikipedia.org/wiki/Pro-slavery_ideology_in_the_United_States

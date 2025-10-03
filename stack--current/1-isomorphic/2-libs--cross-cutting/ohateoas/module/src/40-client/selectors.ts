@@ -31,9 +31,8 @@ function deriveꓽaction(action_blueprint: Immutable<OHAHyperActionBlueprint>, p
 			case 'number--integer--timestamp--utc--ms':
 				final_payload.set(k, getꓽUTC_timestamp‿ms()) // or should be standard?
 				break
-			// TODO llid?
 			default:
-				throw new Error(`Resolving action: unknown input "${k}" of type "${spec.type}"!`)
+				throw new Error(`Deriving/resolving action: input "${k}" of type "${spec.type}" not provided/auto-populate-able!`)
 		}
 	})
 

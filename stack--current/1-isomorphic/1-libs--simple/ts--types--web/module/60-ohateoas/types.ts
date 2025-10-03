@@ -13,7 +13,8 @@ export interface BaseReducerAction {
 	}
 }
 export interface ReducerAction extends BaseReducerAction {
-	type: string // a unique identifier of this action
+	type: string // a unique identifier of this action TODO type is too generic! should be name instead? or Id?
+	// html form uses name TODO rename
 
 	[k: string]: any // TODO better type
 }

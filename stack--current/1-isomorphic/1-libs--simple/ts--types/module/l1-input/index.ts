@@ -2,25 +2,50 @@
  * inspired by <input> https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
  * Ex. Action "rename player"
  * requiring a "string", length >= n, no multiline, not already taken, ascii only etc.
+ *
+ * TODO full review of this together with
+ *  - html forms
+ *  - zod
+ *  - JSON schema
+ * and extract all the best practices (incl. i18n)
  */
 
 /////////////////////////////////////////////////
-// SPEC = JSON so that it can be passed across client/server through hypermedia
+// SPEC
+// MUST be JSON so that it can be passed across client/server through hypermedia (wire)
+// MUST be as semantic as possible and not imply a certain implementation
 
 
 // OPTIONAL hint to improve the input experience
+// Or even AUTOFILL the input when possible
 // inspired by https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
 // underlying primitive is free to use or ignore
 // can be used for both validation and normalization
 export type InputType =
-// from https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
-	| 'text' // A single-line text field. Line-breaks are automatically removed from the input value.
-	| 'checkbox' // = confirmation
-	// TODO more types as needed. try to use https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types as much as possible
+	// TODO semantic or technical???
+	// from https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
+	//| 'text' // A single-line text field. Line-breaks are automatically removed from the input value. TODO shouldn't that be the default??
+	//| 'checkbox' // = confirmation
+	// technical
+	| 'string' // any string (default, not recommended)
+	| 'string--line' // A single-line text field. Line-breaks are automatically removed from the input value.
+	| 'string--email'
+	| 'string--url'
+	| 'string--url--http'
+	| 'string--password'
+	| 'number' // any number (not recommended)
+	| 'number--integer--timestamp--utc--ms'
+	// useful for selecting an installer or an app store
+	| 'env--os' // can be auto-populated
+	| 'env--arch' // can be auto-populated
+  // TODO more types as needed.
+	// TODO inspired by HTML5 input types try to use https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types as much as possible
+	// TODO inspired by https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
+	// TODO inspired by schemas https://standardschema.dev/
 
 export type StringNormalizationStepId =
-	| 'strⳇnormalize_unicode' // ideally default
-	| 'strⳇtrim'
+	//| 'strⳇnormalize_unicode' // no, default
+	| 'strⳇtrim' // should also be default and opt-out
 	| 'strⳇcoerce_toꓽascii'
 	| 'strⳇcapitalizeⵧwords'
 	| 'strⳇcaseⵧto_lower'
@@ -48,19 +73,17 @@ export type ValidatorId =
 // everything needed for an <input>
 // Note: the primitive is free to ignore some params if not needed/supported
 interface BaseInputSpec<T, RichTextType> {
+	type?: InputType // overarching hint, may imply everything else: messaging, normalizers and validators...
 
-	// core input VALUE spec
-	default_value?: T,
-	normalizers?: NormalizationStepId[] // order matters
-
-	// associated messaging
-	prompt: RichTextType | string,
+	// messaging
+	prompt?: RichTextType | string, // optional bc sometimes the input name itself is enough
 	placeholder?: RichTextType | string,
 
-	// mixed
+	//
+	normalizers?: NormalizationStepId[] // order matters
 	validators?: {
 		[id: ValidatorId]: {
-			params?: any // depending on the validator
+			params?: any // depending on the validator TODO should be k/v ?
 			msgⵧvalid?: RichTextType | string // override. the validator will provide defaults if not provided
 			msgⵧinvalid?: RichTextType | string // override. the validator will provide defaults if not provided
 			evidence?:
@@ -70,14 +93,16 @@ interface BaseInputSpec<T, RichTextType> {
 		}
 	}
 
-	// hints
-	input_type?: InputType // may imply some normalizers and validators
+	// hints XXX TODO isn't everything a hint??
+	// Everything should be validated on the server anyway!
+	hidden?: boolean // if true, the input is not shown/requested to the user, implies a default/autopopulated value
+	advanced?: boolean // if true, the input is only shown/requested to the user on their explicit request. implies a good, safe default/autopopulated value
 	// extensibility point for any other hints we may want to provide
 	// not already covered above.
 	// Use sparingly.
 	// If semantic, try to update the spec itself.
-	_extra_hints?: {
-		suggestion_generator_id?: string // 'avatar_name' would auto generate names on demand
+	_hints__extra?: {
+		valueⵧgenerator__id?: string // ex. 'avatar_name' would auto generate names on demand
 
 		[k:string]: any
 	}
@@ -87,6 +112,14 @@ interface BaseInputSpec<T, RichTextType> {
 
 export interface ValueInputSpec<T, RichTextType> extends BaseInputSpec<T, RichTextType> {
 	kind: 'value',
+
+	valueⵧdefault?: T // ~suggested/recommended
+
+	// TODO review
+	// this prevent us from making a long-term spec?
+	// or is it? easy to derive one at the end
+	valueⵧcurrent?: T // useful in case [intent = change] to discourage using the same value or move it last in UI
+
 }
 
 
@@ -127,7 +160,9 @@ export type InputSpec<T, RichTextType> =
 
 /////////////////////////////////////////////////
 // RESOLVED
+// = derives from InputSpec
 // = the stuff that will be passed to a UI primitive
+// = no longer JSON
 
 export type InputNormalizer<T> = (raw: any) => T // raw is most likely string
 
@@ -136,7 +171,6 @@ export type InputValidator<T, RichTextType> = (value: T) => Promise<[ // Promise
 	RichTextType | string // feedback msg. Should follow the result. Can be empty for 'pass' case = don't display anything. Useful for obvious stuff such as length > 0
 ]>
 
-// this derives from InputSpec
 /*
 export interface InputParams<T, RichTextType> {
 	input_type?: InputSpec<T, RichTextType>['input_type']

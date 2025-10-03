@@ -2,8 +2,8 @@
 
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
-import type { JSON, JSONPrimitiveType, Story, WithHints } from '@offirmo-private/ts-types'
-import { type Hyperlink, type ReducerAction, type Uri‿x } from '@offirmo-private/ts-types-web'
+import type { JSON, JSONPrimitiveType, Story, WithHints, InputSpec } from '@offirmo-private/ts-types'
+import type { ReducerAction, Uri‿x } from '@offirmo-private/ts-types-web'
 import type { Hints as RichTextHints, NodeLike as RichTextNodeLike } from '@offirmo-private/rich-text-format'
 import {
 	type TrackedEngagement,
@@ -26,7 +26,7 @@ type OHAStory = Story<OHAHyperMedia>
 // following the hypermedia theory
 // @see https://hypermedia.systems/
 
-// as usual, the client is free to ignore all hints, it should still work
+// as usual, the client is free to ignore all hints; it should still work
 interface OHAHyperHints {
 	cta?: RichTextNodeLike // optional bc 1) not always needed (ex. already an anchor) 2) SSoT = should ideally be derived BUT useful bc same action could have different CTA following the context (ex. equip the best equipment)
 	keyboard_shortcut?: string // TODO 1D high level format
@@ -122,46 +122,19 @@ type StateChangeCategory =
 	//| 'admin'    // any kind of admin not covered by the above
 	| 'reduce'     // any other change, moderate risk (~semver major)
 
-type InputType =
-	| 'string' // any string (not recommended)
-	| 'string--email'
-	| 'string--url'
-	| 'string--url--http'
-	| 'string--password'
-	| 'number' // any number (not recommended)
-	// useful for selecting an installer or an app store
-	// will be autopopulated
-	| 'number--integer--timestamp--utc--ms'
-	| 'env--os'
-	| 'env--arch'
-	// TODO add more types
-	// TODO inspired by HTML5 input types
-	// TODO inspired by https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
-	// TODO inspired by schemas https://standardschema.dev/
-
-interface InputSpec<T = JSONPrimitiveType> {
-	type: InputType
-	normalizers?: string[] // pre-defined normalizers (TODO)
-	hidden?: boolean // if true, the input is not shown/requested to the user, implies a default/autopopulated value
-	advanced?: boolean // if true, the input is only shown/requested to the user on their explicit request. implies a good, safe default/autopopulated value
-	valueⵧdefault?: T // ~suggested/recommended
-	valueⵧcurrent?: T // useful in case [intent = change] to discourage using the same value or move it last in UI
-}
-
 // a simple feedback on action, without waiting for a server answer
 // ex. ack "your request has been received"
 // ex. wait "processing..."
 // ex. prepare transition "hyperspace" from planet A to planet B
 interface OHAFeedback extends WithHints {
-	tracking:
-		| 'forget'     // as in "fire-and-forget" = no tracking UI of the action is needed. Ex. sending a mail
+	tracking?:
+		| 'forget'     // as in "fire-and-forget" = no tracking UI of the action is needed. Ex. sending an email
 		| 'background' // tracking UI recommended but doesn't prevent sending other actions
 		| 'foreground' // (default) full "waiting/loading" UI, no other action can be sent until this one is resolved
 
 	story?: OHAStory // the message to show to the user. not mandatory bc can also be inferred from the action's CTA
 
-	// TODO is this relevant for tracking = bg/fg?
-	//[continueᝍto]?: Uri‿x // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
+	[OHALinkRelation.continueᝍto]?: Uri‿x // if present, ultimately navigate to this resource once the action is dispatched and no other UI/engagement is pending
 
 	// XXX should this be in the story itself?
 	/*hints?: {
@@ -176,12 +149,15 @@ interface OHAFeedback extends WithHints {
 // actions dispatched from the client should originate from the server
 // so the client shouldn't have to know about strict typing
 interface OHAHyperActionBlueprint extends OHAHyper, ReducerAction {
+	href: never // this differentiates it from a hyperlink
+	            // if a navigation is needed, use feedback
+
 	// required parameters we need to get from the user (or pre-supplied)
 	// input as in "form"
-	input?: Record<string, InputSpec>// the data of the action, could be anything (or nothing)
+	input?: Record<string, InputSpec<JSONPrimitiveType, OHAHyperMedia>> // the data of the action, could be anything (or nothing)
 
 	hints?: OHAHyper['hints'] & {
-		change?: StateChangeCategory
+		change_type?: StateChangeCategory
 		// TODO some sort of risk?
 	}
 
@@ -214,6 +190,9 @@ interface OHARichTextHints<UnderlyingData = JSON> extends RichTextHints<Underlyi
 
 /////////////////////////////////////////////////
 
+export type {
+	InputType, InputSpec,
+} from '@offirmo-private/ts-types'
 
 export {
 	type Uri‿str, type Url‿str,
@@ -228,7 +207,7 @@ export {
 	type OHARichTextHints,
 
 	type OHAHyper,
-	type OHALinkTarget,	type OHAHyperLink,
+	type OHALinkTarget, type OHAHyperLink,
 	type OHAHyperLink‿x,
 
 	type OHAHyperActionBlueprint, type OHAHyperAction,
