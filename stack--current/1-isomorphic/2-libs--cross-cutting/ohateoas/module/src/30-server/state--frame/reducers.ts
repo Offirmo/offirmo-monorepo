@@ -16,7 +16,7 @@ import { getꓽlinks } from '../../10-representation/index.ts'
 
 /////////////////////////////////////////////////
 const LIB = 'OHAFrameState'
-const DEBUG = true
+const DEBUG = false
 
 function create(starting_url: Url‿str = DEFAULT_ROOT_URI): Immutable<State> {
 	//DEBUG && console.log(`↘ ${LIB}: create()`, { starting_url })
@@ -30,7 +30,7 @@ function create(starting_url: Url‿str = DEFAULT_ROOT_URI): Immutable<State> {
 		$representation: undefined, // so far
 		urlⵧself: undefined, // so far
 
-		status: getꓽstatusꘌloading(starting_url),
+		status_msg: getꓽstatus_msgꘌloading(starting_url),
 	}
 }
 
@@ -40,10 +40,10 @@ function onꓽloaded(state: Immutable<State>, $representation: Immutable<OHAHype
 		$representation,
 	})
 
-	if (state.status !== '') {
+	if (state.status_msg !== '') {
 		state = {
 			...state,
-			status: '',
+			status_msg: '',
 		}
 	}
 
@@ -74,30 +74,25 @@ function onꓽloaded(state: Immutable<State>, $representation: Immutable<OHAHype
 
 		const links = getꓽlinks($representation)
 
-		const linkⵧself = links[OHALinkRelation.self]
-		if (linkⵧself) {
-			const urlⵧself = getꓽuriⵧnormalized‿str(linkⵧself)
-			if (urlⵧself !== state.urlⵧself)
-				state = {
-					...state,
-					urlⵧself,
-				}
+		const urlⵧself = getꓽuriⵧnormalized‿str(links[OHALinkRelation.self] || state.urlⵧload)
+		if (urlⵧself !== state.urlⵧself) {
+			state = {
+				...state,
+				urlⵧself,
+			}
 		}
 
-		const linkⵧhome = links[OHALinkRelation.home]
-		if (linkⵧhome) {
-			const urlⵧhome = getꓽuriⵧnormalized‿str(linkⵧhome)
-			if (urlⵧhome !== state.urlⵧhome)
-				state = {
-					...state,
-					urlⵧhome,
-				}
+		const urlⵧhome = getꓽuriⵧnormalized‿str(links[OHALinkRelation.home] || DEFAULT_ROOT_URI)
+		if (urlⵧhome !== state.urlⵧhome) {
+			state = {
+				...state,
+				urlⵧhome,
+			}
 		}
 
 		const linkⵧcontinue = links[OHALinkRelation.continueᝍto]
 		if (linkⵧcontinue) {
 			const linkⵧcontinue_str = getꓽuriⵧnormalized‿str(linkⵧcontinue)
-			assert(!linkⵧself || linkⵧcontinue_str !== getꓽuriⵧnormalized‿str(linkⵧself), `linkⵧcontinue should not be the same as linkⵧself!`)
 			assert(linkⵧcontinue_str !== state.urlⵧself, `linkⵧcontinue should not be the same as urlⵧself!`)
 			assert(linkⵧcontinue_str !== state.urlⵧload, `linkⵧcontinue should not be the same as urlⵧload!`)
 			state = navigate_to(state, linkⵧcontinue)
@@ -136,13 +131,13 @@ function navigate_to(state: Immutable<State>, options: {
 		urlⵧload: target_str,
 		urlⵧself: target_str, // so far
 		...(isꓽsame_url && reload && { reload_counter: state.reload_counter + 1}),
-		status: getꓽstatusꘌloading(target_str),
+		status_msg: getꓽstatus_msgꘌloading(target_str),
 	}
 }
 
 /////////////////////////////////////////////////
 
-function getꓽstatusꘌloading(url: string): string {
+function getꓽstatus_msgꘌloading(url: string): string {
 	return `Loading: "${url}"…`
 }
 

@@ -117,7 +117,7 @@ function ᄆComponent({state, available_width, onꓽinteraction}: Props) {
 				{$doc ? <ᄆViewport  available_width={available_width} $doc={$doc} onꓽinteraction={_onꓽinteraction} background_tasks={[]}/> : "[Loading…]"}
 			</div>
 
-			<StatusBar text={state.status} />
+			<StatusBar text={state.status_msg} />
 
 			{/* TODO dialog should only cover the viewport!*/}
 			<dialog open={!!fg_action} ref={refⵧdialog}>

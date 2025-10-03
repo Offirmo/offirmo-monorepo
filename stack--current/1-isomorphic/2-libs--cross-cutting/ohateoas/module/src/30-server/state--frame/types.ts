@@ -17,7 +17,7 @@ interface State {
 	$representation: OHAHyperMedia | undefined
 	urlⵧself: Url‿str | undefined // "self" advertised by the $representation. can be != load if the rsrc returns a different "self"
 
-	status: string
+	status_msg: string
 
 	// TODO one day
 	//url_history: []
