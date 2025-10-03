@@ -29,11 +29,11 @@ function backend() {
 
 /////////////////////////////////////////////////
 
-const URIꘌROOT = normalizeꓽuri‿str('/')
+const URIꘌROOT = normalizeꓽuri‿str('')
 
 function createꓽserver(): OHAServer {
 
-	const ↆget: OHAServer['ↆget'] = async (url = DEFAULT_ROOT_URI) => {
+	const ↆget: OHAServer['ↆget'] = async (url = URIꘌROOT) => {
 		////////////
 		const { path, query, fragment } = getꓽscheme_specific_part(url)
 
@@ -118,7 +118,7 @@ function createꓽserver(): OHAServer {
 			},
 
 			hints: {
-				change: 'update',
+				change_type: 'update',
 			},
 
 			feedback: {
