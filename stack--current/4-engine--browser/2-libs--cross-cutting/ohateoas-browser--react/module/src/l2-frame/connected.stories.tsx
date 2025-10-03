@@ -2,10 +2,12 @@ import type { Meta‿v3, Story‿v3 } from '@offirmo-private/storypad'
 
 import { ᄆComponent } from './connected.tsx'
 
-import { createꓽserver as createꓽserverⵧcfu } from '@offirmo-private/ohateoas/examples/check-for-updates'
-import { createꓽserver as createꓽserverⵧtbrpg } from '@offirmo-private/ohateoas/examples/tbrpg'
-import { createꓽserver as createꓽserverⵧhyp } from '@offirmo-private/ohateoas/examples/hyperspace'
-import { createꓽserver as createꓽserverⵧbroken } from '@offirmo-private/ohateoas/examples/broken'
+import { createꓽserver as createꓽserverⵧhello_world } from '@offirmo-private/ohateoas/examples/01-hello-world'
+import { createꓽserver as createꓽserverⵧhello_world_interactive } from '@offirmo-private/ohateoas/examples/02-hello-world-interactive'
+import { createꓽserver as createꓽserverⵧcfu } from '@offirmo-private/ohateoas/examples/10-check-for-updates'
+import { createꓽserver as createꓽserverⵧtbrpg } from '@offirmo-private/ohateoas/examples/30-tbrpg'
+import { createꓽserver as createꓽserverⵧhyp } from '@offirmo-private/ohateoas/examples/40-hyperspace'
+import { createꓽserver as createꓽserverⵧbroken } from '@offirmo-private/ohateoas/examples/90-errors'
 
 /////////////////////////////////////////////////
 
@@ -23,6 +25,18 @@ export default {
 } satisfies Meta‿v3
 
 /////////////////////////////////////////////////
+
+export const HelloWorld: Story‿v3 = {
+	args: {
+		server: createꓽserverⵧhello_world(),
+	},
+}
+
+export const HelloWorldInteractive: Story‿v3 = {
+	args: {
+		server: createꓽserverⵧhello_world_interactive(),
+	},
+}
 
 export const CheckForUpdates: Story‿v3 = {
 	args: {

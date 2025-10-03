@@ -10,6 +10,11 @@
 	window.oᐧextra ??= { flagꓽdebug_render: true }
 
 	// important to load async so that the stories don't pollute the global scope too early (ex. before SXC)
+	//const stories = import('../../l0-hyper-anchor/*.stories.@(js|jsx|ts|tsx|mdx)')
+	//const stories = import('../../l1-viewport/*.stories.@(js|jsx|ts|tsx|mdx)')
+	//const stories = import('../../l2-frame/chrome/*.stories.@(js|jsx|ts|tsx|mdx)')
+	//const stories = import('../../l2-frame/c*.stories.@(js|jsx|ts|tsx|mdx)')
+	//const stories = import('../../l2-frame/chrome/*.stories.@(js|jsx|ts|tsx|mdx)')
 	const stories = import('../../**/*.stories.@(js|jsx|ts|tsx|mdx)')
 	if (DEBUG) console.log('BOOTSTRAP stories', {
 		stories,

@@ -14,12 +14,16 @@ import { ᄆComponent } from './component.tsx'
 
 export default {
 	component: ᄆComponent,
+	parameters: {
+		layout: 'fullscreen'
+	},
+	/*
 	decorators: [
 		(story) => {
 			document.getElementById('react-root').classList.add('o⋄full-viewport')
 			return story
 		},
-	]
+	]*/
 } satisfies Meta‿v3
 
 /////////////////////////////////////////////////

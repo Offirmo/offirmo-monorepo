@@ -28,7 +28,7 @@ interface Props {
 	background_tasks: Array<unknown>
 	onꓽinteraction: (x: OHAHyperActionBlueprint | OHAHyperLink) => void
 }
-function ᄆComponent({available_width, $doc, background_tasks, onꓽinteraction}: Props) {
+function ᄆComponent({available_width = '100%', $doc, background_tasks = [], onꓽinteraction}: Props) {
 	if (window.oᐧextra?.flagꓽdebug_render) console.log(`🔄 ${NAME}`)
 
 	const engagements = getꓽengagements($doc)

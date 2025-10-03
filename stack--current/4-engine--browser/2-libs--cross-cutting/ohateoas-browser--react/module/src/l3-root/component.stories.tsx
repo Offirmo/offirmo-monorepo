@@ -2,10 +2,11 @@ import type { Meta‿v3, Story‿v3 } from '@offirmo-private/storypad'
 
 import { ᄆComponent } from './component.tsx'
 
-import { createꓽserver as createꓽserverⵧcfu } from '@offirmo-private/ohateoas/examples/check-for-updates'
-import { createꓽserver as createꓽserverⵧtbrpg } from '@offirmo-private/ohateoas/examples/tbrpg'
-import { createꓽserver as createꓽserverⵧhyp } from '@offirmo-private/ohateoas/examples/hyperspace'
-import { createꓽserver as createꓽserverⵧbroken } from '@offirmo-private/ohateoas/examples/broken'
+import { createꓽserver as createꓽserverⵧhello_world } from '@offirmo-private/ohateoas/examples/01-hello_world'
+//import { createꓽserver as createꓽserverⵧcfu } from '@offirmo-private/ohateoas/examples/10-check-for-updates'
+//import { createꓽserver as createꓽserverⵧtbrpg } from '@offirmo-private/ohateoas/examples/30-tbrpg'
+//import { createꓽserver as createꓽserverⵧhyp } from '@offirmo-private/ohateoas/examples/40-hyperspace'
+//import { createꓽserver as createꓽserverⵧbroken } from '@offirmo-private/ohateoas/examples/90-errors'
 
 /////////////////////////////////////////////////
 
@@ -25,6 +26,7 @@ export default {
 
 /////////////////////////////////////////////////
 
+/*
 export const CheckForUpdates: Story‿v3 = {
 	args: {
 		server: createꓽserverⵧcfu(),
@@ -48,3 +50,4 @@ export const Broken: Story‿v3 = {
 		server: createꓽserverⵧbroken(),
 	},
 }
+*/
