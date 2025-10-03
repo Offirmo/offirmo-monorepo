@@ -56,7 +56,9 @@ function createꓽserver(): OHAServer {
 		// TODO recursive routing
 		const data = await backend().ↆgetꓽproducts()
 
-		$builder.pushHeading('Installed')
+		$builder.pushHeading('Toolbox')
+			.pushText("Installed products:")
+
 
 		const _products = RichText.listⵧordered()
 		Object.entries(data).forEach(([name, version_info]) => {
@@ -107,7 +109,10 @@ function createꓽserver(): OHAServer {
 
 		$builder.pushNode(_products.done())
 
-		links['faq'] = 'https://jb.gg/toolbox-app-faq'
+		links['faq'] = {
+			href:'https://jb.gg/toolbox-app-faq',
+			target: '_help',
+		}
 
 		actions['check-for-updates'] = {
 			type: 'check-for-updates',
@@ -123,6 +128,7 @@ function createꓽserver(): OHAServer {
 
 			feedback: {
 				tracking: 'background',
+				story: 'Checking for updates...'
 			} as OHAFeedback,
 		} as OHAHyperActionBlueprint
 

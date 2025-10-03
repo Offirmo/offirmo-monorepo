@@ -15,8 +15,8 @@ import {
 } from '@offirmo-private/normalize-string'
 
 //import { createꓽserver } from '../__fixtures/example--01-hello-world/index.ts'
-import { createꓽserver } from '../__fixtures/example--02-hello-world-interactive/index.ts'
-//import { createꓽserver } from '../__fixtures/example--check-for-update/index.ts'
+//import { createꓽserver } from '../__fixtures/example--02-hello-world-interactive/index.ts'
+import { createꓽserver } from '../__fixtures/example--10-check-for-updates/index.ts'
 //import { createꓽserver } from '../~~sandbox/example--tbrpg/server/index.ts'
 //import { createꓽserver } from '../~~sandbox/example--tbrpg/server/index.ts'
 
@@ -24,10 +24,13 @@ import {
 	deriveꓽaction,
 	getꓽlinks, getꓽlink‿str,
 	getꓽaction_blueprints,
-	getꓽcta,
+	getꓽcta, OHALinkRelation,
 } from '@offirmo-private/ohateoas'
+import assert from 'tiny-invariant'
 
 /////////////////////////////////////////////////
+
+const URI__ROOT = normalizeꓽuri‿str('')
 
 const SERVER = createꓽserver()
 
@@ -35,12 +38,12 @@ const SERVER = createꓽserver()
 
 async function main() {
 	let previous_url: Uri‿str | undefined = undefined
-	let url: Uri‿str = '/'
-	let pending_stuff = false
-	let infine_loop_detection = 10
+	let url: Uri‿str = URI__ROOT
+	let infine_loop_detection = 5
 	loop: do {
 		--infine_loop_detection
 		if (infine_loop_detection < 0) {
+			console.log(`[Auto-browse: too many decisions. exiting...]`)
 			break loop
 		}
 
@@ -49,7 +52,6 @@ async function main() {
 ┏━━━━━━━┯━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╍╍╍
 ┃ 🏠 ⬅️ │ ${url}
 ┣━━━━━━━┷━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╍╍╍`)
-		pending_stuff = false
 		const $doc = await SERVER.ↆget(url)
 		if (previous_url !== url) {
 			previous_url = url
@@ -64,7 +66,8 @@ async function main() {
 		const action_blueprints = getꓽaction_blueprints($doc)
 		for (const key in action_blueprints) {
 			const action_blueprint = action_blueprints[key]
-			console.log(`- ${getꓽcta(action_blueprint)} ` + prettifyꓽjson(action_blueprints[key], {outline: true}))
+			console.log(`- ${getꓽcta(action_blueprint)}`)
+			//console.log(prettifyꓽjson(action_blueprints[key]))
 		}
 
 		const links = getꓽlinks($doc)
@@ -76,22 +79,21 @@ async function main() {
 		//console.log('- reload')
 		//console.log('- home')
 
-		/////////////////////////////////////////////////
-		// act
-
-		/* TODO review
-		if (links[LINK__RELꘌCONTINUE_TO]) {
-			const { href } = links[LINK__RELꘌCONTINUE_TO]
+		if (links[OHALinkRelation.continueᝍto]) {
+			const { href } = links[OHALinkRelation.continueᝍto]
+			assert(href !== url, `continue-to should be different!`)
+			console.log(`[Continuing to "${OHALinkRelation.continueᝍto}"...]`)
 			url = href
-			pending_stuff = true
 			continue loop
 		}
-		 */
+
+		/////////////////////////////////////////////////
+		// act
 
 		if (Object.keys(action_blueprints).length > 0) {
 			// TODO 1D selector to pick an action
 			// pick one at random
-			console.log('[Auto-selecting an action...]')
+			console.log(`[Auto-browse: selecting an action...]`)
 			const action_blueprint = action_blueprints[Object.keys(action_blueprints)[0]]
 			const inputs_payload: any = {
 			}
@@ -102,14 +104,36 @@ async function main() {
 
 			const { action, feedback } = deriveꓽaction(action_blueprint, inputs_payload)
 			console.log('Dispatching action:', action)
-			console.log('Feedback:', feedback)
-			await SERVER.dispatch(action)
+			if (feedback.story) {
+				//console.log('Feedback:', feedback)
+				console.log(RichText.renderⵧto_text(feedback.story))
+			}
+
+			const action_story = await SERVER.dispatch(action)
+			console.log(`[Dispatch of action "${action.type}" processed.]`)
 			if (feedback.continueᝍto)
 				url = feedback.continueᝍto
-			pending_stuff = true
+			if (action_story) {
+				console.log(RichText.renderⵧto_text(action_story.message || action_story))
+			}
+
 			continue loop
 		}
-	} while (pending_stuff)
+
+		// TODO pick a link
+
+		// meanwhile
+		// let's play around
+		if (url !== URI__ROOT) {
+			// let's try to go back home
+			console.log(`[Auto-browse: navigating to root...]`)
+			url = URI__ROOT
+			continue loop
+		}
+
+		console.log(`[Auto-browse: I don't know what to do...]`)
+		break loop
+	} while (true)
 }
 main()
 	.catch((err) => {
@@ -117,5 +141,5 @@ main()
 		console.error(err)
 	})
 	.finally(() => {
-	console.log('Exiting. Bye!')
+		console.log(`[The OHA browser has exited.]`)
 	})

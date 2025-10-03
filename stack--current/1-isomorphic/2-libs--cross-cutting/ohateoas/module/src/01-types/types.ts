@@ -81,6 +81,7 @@ export type OHALinkRelation = Enum<typeof OHALinkRelation> // eslint-disable-lin
 type OHALinkTarget =
 	// inspired by https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/target
 	| '_self' // The current browsing context (default)
+	| '_help' // ideally aside the current browsing context if possible, new window if not
 	//| '_blank'  // Usually a new tab, but users can configure browsers to open a new window instead.
 	//| '_parent' // The parent browsing context of the current one. If no parent, behaves as _self.
 	//| '_top'    // The topmost browsing context. To be specific, this means the "highest" context that's an ancestor of the current one. If no ancestors, behaves as _self.
