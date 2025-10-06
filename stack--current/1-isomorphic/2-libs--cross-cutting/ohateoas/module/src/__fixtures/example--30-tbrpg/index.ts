@@ -16,7 +16,7 @@ import type {
 } from '../../01-types/types.ts'
 import {
 	type OHAServer,
-	DEFAULT_ROOT_URI,
+	ROOT_URI,
 } from '../../30-server/index.ts'
 
 /////////////////////////////////////////////////
@@ -38,7 +38,7 @@ const URIꘌEQUIPMENT: OHAHyperLink = {
 
 function createꓽserver(): OHAServer {
 
-	const ↆget: OHAServer['ↆget'] = async (url = DEFAULT_ROOT_URI) => {
+	const ↆget: OHAServer['ↆget'] = async (url = ROOT_URI) => {
 		DEBUG && console.group(`↘ OHA ↆget("${url}")`)
 
 		////////////
@@ -75,7 +75,7 @@ function createꓽserver(): OHAServer {
 		// TODO recursive routing
 
 		switch (path) {
-			case DEFAULT_ROOT_URI: { // root, expected to redirect
+			case ROOT_URI: { // root, expected to redirect
 				$builder = $builder
 					.pushText('Welcome to The Boring RPG!')
 					.pushLineBreak()

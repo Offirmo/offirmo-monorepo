@@ -45,8 +45,13 @@ interface OHAHyper extends WithHints<OHAHyperHints> {
 export const OHALinkRelation = Enum(
 	// inspired by https://www.iana.org/assignments/link-relations/link-relations.xhtml
 	'self',
-	'home',     // or root ? TODO clarify
-	//| 'back'  TODO review what need? shouldn't it be handled by the browser?
+	'home',     // != root
+	            // root = is always '/', it's a bit of a "forced home / restart from start"
+	            // home = recommended by the app, ex game with loader / select character / play, home would be the "home" just after character selection
+	'up', // the recommended 1-level above, NOT the same as "back":
+	      // back = could be a previously browsed sibling node
+	      // up = a parent node
+	//| 'back'  TODO review the use case: shouldn't it be handled by the browser? (history API)
 	//| 'external' // Refers to a resource that is not part of the same site as the current context
 	//| 'item'     // The target IRI points to a resource that is a member of the collection represented by the context IRI
 	// no need: no follow/open/ref is the default in our Hyper Architecture
@@ -74,6 +79,7 @@ export const OHALinkRelation = Enum(
 	'faq',
 	'source',
 	'contact',
+	// TODO llm?
 )
 export type OHALinkRelation = Enum<typeof OHALinkRelation> // eslint-disable-line no-redeclare
 
@@ -81,7 +87,7 @@ export type OHALinkRelation = Enum<typeof OHALinkRelation> // eslint-disable-lin
 type OHALinkTarget =
 	// inspired by https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/target
 	| '_self' // The current browsing context (default)
-	| '_help' // ideally aside the current browsing context if possible, new window if not
+	| '_help' // ideally aside the current browsing context if possible, new window if not TODO review name
 	//| '_blank'  // Usually a new tab, but users can configure browsers to open a new window instead.
 	//| '_parent' // The parent browsing context of the current one. If no parent, behaves as _self.
 	//| '_top'    // The topmost browsing context. To be specific, this means the "highest" context that's an ancestor of the current one. If no ancestors, behaves as _self.

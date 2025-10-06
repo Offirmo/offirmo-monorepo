@@ -24,11 +24,20 @@ import { getꓽuriⵧnormalized‿str } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 
-function getꓽcta(hyper: OHAHyperLink | OHAHyperActionBlueprint): RichText.NodeLike {
-	const { hints = {} } = hyper
+function getꓽcta(hyper: OHAHyperLink | OHAHyperActionBlueprint | string): RichText.NodeLike {
 	let is_code = false
 
 	let candidate: string = (() => {
+		if (typeof hyper === 'string') {
+			switch (hyper) {
+				case OHALinkRelation.self:
+					return 'Reload'
+				default:
+					return hyper
+			}
+		}
+
+		const { hints = {} } = hyper
 		if (hints.cta) return RichText.renderⵧto_text(hints.cta)
 
 		if (isꓽOHAHyperLink(hyper)) {
@@ -59,7 +68,7 @@ function getꓽcta(hyper: OHAHyperLink | OHAHyperActionBlueprint): RichText.Node
 
 	if (isꓽOHAHyperActionBlueprint(hyper)) {
 		const { hints = {} } = hyper
-		switch (hints.change) {
+		switch (hints.change_type) {
 			case 'none':
 				break
 			case 'create':

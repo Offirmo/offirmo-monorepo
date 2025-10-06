@@ -18,7 +18,6 @@ import type {
 } from '@offirmo-private/ohateoas'
 import {
 	OHALinkRelation,
-	DEFAULT_ROOT_URI,
 } from '@offirmo-private/ohateoas'
 
 /////////////////////////////////////////////////

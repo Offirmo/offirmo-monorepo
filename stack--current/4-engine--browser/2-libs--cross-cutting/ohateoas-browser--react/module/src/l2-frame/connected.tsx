@@ -11,7 +11,6 @@ import {
 	create,
 	navigate_to,
 	onꓽloaded, isꓽOHAHyperLink,
-	DEFAULT_ROOT_URI,
 } from '@offirmo-private/ohateoas'
 
 import { ᄆComponent as ᄆComponent_ } from './component.tsx'

@@ -4,6 +4,7 @@
 ## Introduction
 Goal:
 * new Hypermedia format to be used as "representation" for **true** REST / HATEOAS architecture
+  * HATEOAS = Hypermedia as the ?? 
   * would need a new kind of browser, of course
 * higher level
 * AI compatible = text/markdown compatible + "context"-compatible (summary)

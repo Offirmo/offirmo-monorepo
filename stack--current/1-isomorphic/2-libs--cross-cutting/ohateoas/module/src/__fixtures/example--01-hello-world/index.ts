@@ -9,7 +9,7 @@ import type {
 } from '@offirmo-private/ohateoas'
 import {
 	OHALinkRelation,
-	DEFAULT_ROOT_URI,
+	ROOT_URI,
 } from '@offirmo-private/ohateoas'
 
 /////////////////////////////////////////////////
@@ -20,7 +20,7 @@ const DEBUG = false
 
 function createꓽserver(): OHAServer {
 
-	const ↆget: OHAServer['ↆget'] = async (url = DEFAULT_ROOT_URI) => {
+	const ↆget: OHAServer['ↆget'] = async (url = ROOT_URI) => {
 		DEBUG && console.group(`↘ OHA ↆget("${url}")`)
 
 		////////////
@@ -33,7 +33,7 @@ function createꓽserver(): OHAServer {
 
 		const ꓺlinks: OHARichTextHints['links'] = {
 			//[OHALinkRelation.self]: normalizeꓽuri‿str(path), // intentionally strip query & path until considered relevant
-			[OHALinkRelation.home]: DEFAULT_ROOT_URI, // cam be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
+			[OHALinkRelation.home]: ROOT_URI, // cam be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
 		}
 
 		const ꓺactions: OHARichTextHints['actions'] = {
@@ -44,7 +44,7 @@ function createꓽserver(): OHAServer {
 		////////////
 
 		switch (path) {
-			case DEFAULT_ROOT_URI: { // root, expected to redirect
+			case ROOT_URI: { // root, expected to redirect
 				ꓺ$representation = ꓺ$representation
 					.pushText('Hello, world!')
 				break

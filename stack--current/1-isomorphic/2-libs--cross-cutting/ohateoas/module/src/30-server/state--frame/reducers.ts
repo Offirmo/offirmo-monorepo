@@ -3,7 +3,7 @@ import type { Immutable, Url‿str } from '@offirmo-private/ts-types'
 import * as RichText from '@offirmo-private/rich-text-format'
 
 import type { State } from './types.js'
-import { DEFAULT_ROOT_URI } from '../index.ts'
+import { ROOT_URI } from '../index.ts'
 
 import {
 	OHALinkRelation,
@@ -13,22 +13,23 @@ import {
 } from '../../01-types/index.ts'
 
 import { getꓽlinks } from '../../10-representation/index.ts'
+import { getꓽurlⵧself } from './selectors.ts'
 
 /////////////////////////////////////////////////
 const LIB = 'OHAFrameState'
 const DEBUG = false
 
-function create(starting_url: Url‿str = DEFAULT_ROOT_URI): Immutable<State> {
+function create(starting_url: Url‿str = ROOT_URI): Immutable<State> {
 	//DEBUG && console.log(`↘ ${LIB}: create()`, { starting_url })
 
 	return {
-		urlⵧhome: DEFAULT_ROOT_URI,
+		//urlⵧhome: ROOT_URI,
 
 		urlⵧload: starting_url,
 		reload_counter: 0,
 
 		$representation: undefined, // so far
-		urlⵧself: undefined, // so far
+		//urlⵧself: undefined, // so far
 
 		status_msg: getꓽstatus_msgꘌloading(starting_url),
 	}
@@ -75,25 +76,25 @@ function onꓽloaded(state: Immutable<State>, $representation: Immutable<OHAHype
 		const links = getꓽlinks($representation)
 
 		const urlⵧself = getꓽuriⵧnormalized‿str(links[OHALinkRelation.self] || state.urlⵧload)
-		if (urlⵧself !== state.urlⵧself) {
+		/*if (urlⵧself !== state.urlⵧself) {
 			state = {
 				...state,
 				urlⵧself,
 			}
-		}
+		}*/
 
-		const urlⵧhome = getꓽuriⵧnormalized‿str(links[OHALinkRelation.home] || DEFAULT_ROOT_URI)
-		if (urlⵧhome !== state.urlⵧhome) {
+		const urlⵧhome = getꓽuriⵧnormalized‿str(links[OHALinkRelation.home] || ROOT_URI)
+		/*if (urlⵧhome !== state.urlⵧhome) {
 			state = {
 				...state,
 				urlⵧhome,
 			}
-		}
+		}*/
 
 		const linkⵧcontinue = links[OHALinkRelation.continueᝍto]
 		if (linkⵧcontinue) {
 			const linkⵧcontinue_str = getꓽuriⵧnormalized‿str(linkⵧcontinue)
-			assert(linkⵧcontinue_str !== state.urlⵧself, `linkⵧcontinue should not be the same as urlⵧself!`)
+			//assert(linkⵧcontinue_str !== state.urlⵧself, `linkⵧcontinue should not be the same as urlⵧself!`)
 			assert(linkⵧcontinue_str !== state.urlⵧload, `linkⵧcontinue should not be the same as urlⵧload!`)
 			state = navigate_to(state, linkⵧcontinue)
 		}
@@ -112,8 +113,9 @@ function navigate_to(state: Immutable<State>, options: {
 		options,
 	})
 
+	const urlⵧself = getꓽurlⵧself(state)
 	let {
-		href = state.urlⵧself,
+		href = urlⵧself,
 		type = 'push',
 		reload = false,
 	} = options
@@ -121,7 +123,7 @@ function navigate_to(state: Immutable<State>, options: {
 
 	const target_str = getꓽuriⵧnormalized‿str(href)
 
-	const isꓽsame_url = target_str === state.urlⵧload || target_str === state.urlⵧself
+	const isꓽsame_url = target_str === state.urlⵧload || target_str === urlⵧself
 	if (isꓽsame_url && !reload) {
 		return state // no change
 	}
@@ -129,7 +131,7 @@ function navigate_to(state: Immutable<State>, options: {
 	return {
 		...state,
 		urlⵧload: target_str,
-		urlⵧself: target_str, // so far
+		//urlⵧself: target_str, // so far
 		...(isꓽsame_url && reload && { reload_counter: state.reload_counter + 1}),
 		status_msg: getꓽstatus_msgꘌloading(target_str),
 	}

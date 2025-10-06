@@ -6,7 +6,7 @@ import {
 } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 import {
-	DEFAULT_ROOT_URI,
+	ROOT_URI,
 	type OHARichTextHints,
 	type OHAServer,
 	type OHAStory,
@@ -48,7 +48,7 @@ function createꓽserver(): OHAServer {
 	const all_store_fns = createꓽall_store_fns()
 
 
-	const ↆget: OHAServer['ↆget'] = async (url = DEFAULT_ROOT_URI) => {
+	const ↆget: OHAServer['ↆget'] = async (url = ROOT_URI) => {
 		DEBUG && console.group(`↘ OHA ↆget("${url}")`)
 
 		////////////
@@ -88,7 +88,7 @@ a fantasy RPG where you play as a hero and try to maximise your power and explor
 
 		// TODO 1D recursive routing
 		switch (path) {
-			case DEFAULT_ROOT_URI: { // root, expected to redirect
+			case ROOT_URI: { // root, expected to redirect
 				// imagining a login screen, then continue on login
 
 				$builder = $builder

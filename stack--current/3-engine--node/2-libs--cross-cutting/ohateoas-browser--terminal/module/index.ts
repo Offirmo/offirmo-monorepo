@@ -107,6 +107,7 @@ async function main() {
 			choices.push(URI__ROOT)
 		}
 		choices.push('reload')
+		choices.push('exit')
 
 		choices.forEach((choice, index) => {
 			let cta = choice === 'reload'

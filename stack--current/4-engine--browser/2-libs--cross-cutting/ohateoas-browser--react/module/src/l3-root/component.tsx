@@ -2,7 +2,7 @@ import assert from 'tiny-invariant'
 import React, { type CSSProperties, type PropsWithChildren } from 'react'
 
 import {
-	DEFAULT_ROOT_URI,
+	ROOT_URI,
 	type OHAServer,
 	isꓽOHAHyperLink,
 	type OHAHyperLink, type OHAHyperLink‿x, type OHAHyperAction,
@@ -69,7 +69,7 @@ function ᄆComponent({available_width = '100vw', server}: Props) {
 				const spec = frame_specs[name]
 
 				assert(spec.urlⵧpattern ? spec.urlⵧhome : true, `urlⵧhome is mandatory if urlⵧpattern is present`)
-				const urlⵧhome = getꓽuriⵧnormalized‿str(spec.urlⵧhome ?? DEFAULT_ROOT_URI)
+				const urlⵧhome = getꓽuriⵧnormalized‿str(spec.urlⵧhome ?? ROOT_URI)
 
 				return (
 					<ᄆFrameContainer key={name} spec={spec}>

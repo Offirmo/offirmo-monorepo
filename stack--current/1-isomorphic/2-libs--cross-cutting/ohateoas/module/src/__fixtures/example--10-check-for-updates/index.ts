@@ -2,7 +2,6 @@ import type { SemVer } from '@offirmo-private/ts-types'
 import { normalizeꓽuri‿str, getꓽscheme_specific_part } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
 import {
-	DEFAULT_ROOT_URI,
 	type OHARichTextHints,
 	type OHAServer,
 	type OHAStory,
