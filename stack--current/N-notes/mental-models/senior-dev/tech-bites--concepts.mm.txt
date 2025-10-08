@@ -1,4 +1,7 @@
 +++ important history https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/RodJohnson_JavaEnterpriseApplicationStandardsAndWhyTheIndustryMovedToLightweightOpenSource.pdf
+1969 ARPANET, forerunner of the Internet, starts operating
+1971 email
+1973 FTP
 2010's tech bubble, a period where mediocre people could raise ludicrous money amid a venture capitalist echo chamber fueled by low-interest rates https://www.sandofsky.com/lambda-school/
 2025 https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/
 5 min zoom vs 10 emails/comments volley https://blog.jpl-consulting.com/2010/04/ten-email-volley-or-five-minute-phone-call/
@@ -195,6 +198,7 @@ compile to js
 compiler
 compiler -- stanford course http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=Compilers
 compiler = translates code from one language to another at a different level of abstraction. As a result, the compiled code from a compiler is much harder for a human to read than the original.
+complexity -- tends to increase exponentially in multi-threaded systems, and quadratically in distributed parallel systems https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/CameronPurdy_TraditionalProgrammingModelsStoneKnivesAndBearskinsInTheGoogleAge.pdf
 complexity budget https://htmx.org/essays/complexity-budget/
 compute
 compute -- hosted compute

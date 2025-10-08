@@ -2,7 +2,9 @@
 1 or 2 way door
 10th dentist = someone who sincerely, or professionally, disagree with the broad majority of people "9 dentists out of 10 recommends..." https://www.reddit.com/r/The10thDentist/
 12 steps
+change -- Old ideas give way slowly; for they are more than abstract logical forms and categories, they are habits, predispositions,they are habits, predispositions, deeply ingrained attitudes of diversion and preference.diversion and preference John Dewey
 1856 LLC "limited liability corporation" = is the greatest single discovery of modern times “Even steam and electricity are far less important than the limited liability corporation” https://blockworks.co/news/uniswap-duna-decentralization
+1970 missing kids https://www.bbc.co.uk/news/articles/c1ed4g1q52no = no "free range" kids anymore
 1984
 1st thought v.s 2nd thought = 2nd = what we truly are
 2023 skibidi toilet https://speedrun.substack.com/p/meet-the-obsessive-creator-behind-skibidi-toilet
@@ -38,13 +40,18 @@
 [ ] Ash Lamb visuals https://www.linkedin.com/in/ashlamb/recent-activity/all/
 [ ] ex. of edited interview misleading https://paulgraham.com/wids.html
 [ ] Futures studies https://en.wikipedia.org/wiki/Futures_studies + many concepts
+[ ] https://36questionsinlove.com/
 [ ] https://amir.rachum.com/mental-models/
 [ ] https://boz.com/
+[ ] https://cobeats.com/folder/ryfTgPr9H
+[ ] https://dontdie.bryanjohnson.com/
+[ ] https://en.wikipedia.org/wiki/Great_Recession
 [ ] https://en.wikipedia.org/wiki/Power_(social_and_political)
 [ ] https://fs.blog/mental-models/
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
 [ ] https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
 [ ] https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time
+[ ] invictus https://en.wikipedia.org/wiki/Invictus
 [ ] leadership development https://jchyip.medium.com/diy-leadership-development-develop-leadership-skills-74479cde0c05
 [ ] Nobel https://www.nobelprize.org/all-nobel-prizes-2024/
 [ ] Thinkies https://tidyfirst.substack.com/s/thinkies
@@ -74,8 +81,8 @@ ally -- barriers = Diffusion of Responsibility, Lack of Awareness or Skills, Fea
 ally -- howto = Be Present, Provide Options, Know Your Role, follow/beware laws/policies
 ally = s/o who actively seeks to bridge differences, stand for fairness or harmony, and encourage equal opportunities for others in the workplace through thoughtful and respectful communication
 alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community
-amour vs attraction
 amour = vouloir le bien
+amour vs attraction
 animals -- pigeons https://thewhshatchet.org/why-pigeons-might-be-the-best-pet-bird/
 Anna Karenina principle = https://en.wikipedia.org/wiki/Anna_Karenina_principle
 anti-fragile
@@ -159,8 +166,8 @@ brain rot = the sort of stuff that keeps you watching, but doesn’t provide las
 brain rot https://en.wikipedia.org/wiki/Brain_rot
 brainstorming -- technique -- decoy = suggest sth bad as a bottom baseline to trigger defense of better alternatives
 brainstorming -- technique -- reverse = come up with ideas to make things worse https://www.mural.co/blog/reverse-brainstorming
-brainstorming -- technique -- wrong = try to come up with the worst ideas https://hbr.org/2017/08/to-come-up-with-a-good-idea-start-by-imagining-the-worst-idea-possible
 brainstorming -- technique -- veto = "anyone who vetoes a suggestion has to pay for that veto with a suggestion of their own" https://www.reddit.com/r/LifeProTips/comments/1cyvsz/lpt_cant_decide_on_dinner_use_the_veto_rule/
+brainstorming -- technique -- wrong = try to come up with the worst ideas https://hbr.org/2017/08/to-come-up-with-a-good-idea-start-by-imagining-the-worst-idea-possible
 Brandolini's Law = The amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it
 breaking through
 brilliance -- Identify your own brilliance, don't be like somebody https://x.com/shreyas/status/1442165986908524545
@@ -549,10 +556,6 @@ Horseshoe Theory = Extreme opposites tend to look the same. For example, a far-r
 hostile architecture https://en.wikipedia.org/wiki/Hostile_architecture
 how to ask questions http://www.catb.org/esr/faqs/smart-questions.html
 how to fail well = https://www.linkedin.com/posts/davidkline_7-lessons-on-how-to-fail-well-activity-7330569803084034049-U4Hx/
-[ ] https://36questionsinlove.com/
-[ ] https://cobeats.com/folder/ryfTgPr9H
-[ ] https://dontdie.bryanjohnson.com/
-[ ] https://en.wikipedia.org/wiki/Great_Recession
 htt[ ] ps://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
 humanities and social sciences = includes some of the biggest and easiest undergrad majors
 humble bragging https://www.linkedin.com/posts/staceychampagne_womenincybersecurity-cybersecurity-certifications-activity-7284636641648889857-B_y_/
@@ -604,7 +607,6 @@ inversion: Avoiding stupidity is easier than trying to be brilliant. Instead of 
 investing
 investing -- fund vs index = index always better
 investing -- Nancy Pelosi Stock Tracker ♟ https://x.com/PelosiTracker_/status/1874859312616759754
-[ ] invictus https://en.wikipedia.org/wiki/Invictus
 invisible hand: Markets aggregate knowledge. Rising prices signal falling supply or increased demand, which incentivizes an increase in production. The opposite is true for falling prices. Prices are a signal wrapped in an incentive.
 IQ -- it exists, it's measurable
 irredentism https://www.reddit.com/r/history/comments/sji919/is_there_a_term_for_this_phenomenon/
@@ -940,6 +942,7 @@ perverse incentive https://en.wikipedia.org/wiki/Perverse_incentive
 Peter principle = people in a hierarchy tend to rise to "a level of respective incompetence" https://en.wikipedia.org/wiki/Peter_principle
 petrified forest = program to stop stealing
 phenomenology (physics) = branch of theoretical physics in which physicists construct realistic models of nature from more abstract theoretical ideas https://en.wikipedia.org/wiki/Phenomenology_(physics)
+philosopher king =  hypothetical ruler in whom political skill is combined with philosophical knowledge (Plato's Republic) https://en.wikipedia.org/wiki/Philosopher_king
 picture the success
 pit of success = place where it’s easier to do the right thing than the wrong thing
 pizzo https://fr.wikipedia.org/wiki/Pizzo_(mafia)
@@ -1048,6 +1051,7 @@ rebound effect https://blog.jim-nielsen.com/2024/notes-on-making-software-by-pet
 recruiting others to support you in addressing issue
 red herring
 reduce reuse recycle
+reference work = a document to which one can refer for information to be found quickly when needed https://en.wikipedia.org/wiki/Reference_work
 regeneration -- urban = restoring wildlife
 regrets -- "biggest mistakes in life" = ppl more likely to mention failures to act on opportunities than regrettable actions
 regrets -- 5 top regrets of the dying -- 1 I wish I'd had the courage to live a life true to myself, not the life others expected of me
@@ -1345,6 +1349,10 @@ What’s in a name?
 when in Rome…
 whitewashing
 who moved my cheese?
+Who's Who -- Aristote
+Who's Who -- Jesus
+Who's Who -- Platon
+Who's Who = biographical entries of notable people https://en.wikipedia.org/wiki/Who%27s_Who
 why do things go right? https://safetydifferently.com/why-do-things-go-right/
 winner takes it all
 wisdom

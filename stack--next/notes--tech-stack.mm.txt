@@ -51,6 +51,7 @@ terraform https://github.com/cloudflare/terraform-provider-cloudflare/issues/557
 tracing https://www.jaegertracing.io/ (used by Cloudflare)
 transactional emails https://react.email/
 typescript -- bases https://github.com/tsconfig/bases
+typescript -- scaling issues https://engineering.usemotion.com/moving-off-of-typescript-e7bb1f3ad091
 ui - markdown -- editor https://overtype.dev/
 vite -- npm create vite@latest my-project
 vite -- vitest

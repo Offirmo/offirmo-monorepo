@@ -20,7 +20,7 @@ TODO one day prettify
 
 ```ts
 /* PROMPT
- * ’
+ * ’…
  */
 
 import assert from 'tiny-invariant'

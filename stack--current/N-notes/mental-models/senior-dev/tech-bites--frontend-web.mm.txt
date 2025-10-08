@@ -212,7 +212,7 @@ DOM -- Nodes -- 10 Document Type = <!DOCTYPE html>
 DOM -- Nodes -- 11 Fragment
 DOM -- Nodes -- types =  ELEMENT, ATTRIBUTE, TEXT, CDATA, PROCESSING_INSTRUCTION, COMMENT, DOCUMENT, DOCUMENT_TYPE https://devdocs.io/dom/node/nodetype
 DOM tree = Nodes = text, elements, attributes, comments... includes elements such as <body> and <table>, among many others.
-domain -- http://theofficialabsolutelongestdomainnameregisteredontheworldwideweb.international/
+domain -- longest = http://theofficialabsolutelongestdomainnameregisteredontheworldwideweb.international/
 e18e Ecosystem Performance = initiative to improve the performance of JS packages: Cleanup, Speedup, Levelup. One Package at a time. https://e18e.dev/
 ECMAScript - European Computer Manufacturers Association Script (ES)
 emojis https://nolanlawson.com/2024/09/17/the-continuing-tragedy-of-emoji-on-the-web/
@@ -395,7 +395,7 @@ routing -- uri -- 2 query (incl query params)
 routing -- uri -- 3 fragment
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
-security -- domain registration, DNS, hosting = don't use the same provider so that a compromise don't allow to access everything (from a domain recovery expert) https://www.reddit.com/r/Domains/comments/1gdpqdk/comment/miu1osc/
+security -- domain name registration, DNS, hosting = don't use the same provider so that a compromise don't allow to access everything (from a domain recovery expert) https://www.reddit.com/r/Domains/comments/1gdpqdk/comment/miu1osc/
 security -- Google Tag Manager = a handy way for people you’ve never met to inject JavaScript into your site without the hindrance of a code review
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
 security -- supply chain https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5 https://david-gilbertson.medium.com/part-2-how-to-stop-me-harvesting-credit-card-numbers-and-passwords-from-your-site-844f739659b9

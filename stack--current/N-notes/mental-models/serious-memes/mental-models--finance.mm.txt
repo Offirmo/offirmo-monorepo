@@ -106,6 +106,10 @@ money
 money -- supply
 money laundering
 payment
+payment rail -- blockchain
+payment rail -- credit card
+payment rail -- PayPal / Venmo...
+payment rail = a payment platform or a payment network that moves money from a payer to a payee. Either party could be a consumer or business, and both parties are able to move funds on the network https://en.wikipedia.org/wiki/Payment_rail
 pouvoir d'achat
 poverty -- Sherman Alexie = It sucks to be poor, and it sucks to feel that you somehow deserve to be poor. You start believing that you're poor because you're stupid and ugly. And then you start believing that you're stupid and ugly because you're Indian. And because you're Indian you start believing you're destined to be poor. It's an ugly circle and there's nothing you can do about it. Poverty doesn't give you strength or teach you lessons about perseverance. No, poverty only teaches you how to be poor.
 private extortion of debt, labour and waste

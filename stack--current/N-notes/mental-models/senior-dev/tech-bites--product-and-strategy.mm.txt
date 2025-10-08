@@ -49,6 +49,9 @@ churn -- subscription -- voluntary = subscriber actively cancelling their subscr
 click fraud = very important, we can't trust anything / analytics / etc. https://www.cloudflare.com/learning/bots/what-is-click-fraud/
 commoditization -- commodity businesses generally compete on price alone and are plagued by high inventories and low profit margins. In other non-commodity businesses, you would say “innovate”
 commoditization = undifferentiated mass, one no different than the other. We can pick the cheapest.
+competition -- for narrative
+competition -- for revenue
+competition -- for users
 compliance -- due diligence -- Enhanced customer due diligence (ECDD) https://www.austrac.gov.au/business/core-guidance/amlctf-programs/enhanced-customer-due-diligence-ecdd-program
 compliance -- due diligence -- ongoing customer due diligence (OCDD)
 compliance -- know your customer (KYC) https://www.austrac.gov.au/business/core-guidance/customer-identification-and-verification
@@ -97,6 +100,7 @@ failures -- inVision -- https://www.linkedin.com/pulse/one-reason-why-invision-f
 failures -- kodak
 failures -- kodak -- "kodak moment"
 failures -- leadership -- Quantas https://www.australianfrequentflyer.com.au/the-chairmans-lounge-joe-aston-book-review/
+fake door testing https://www.chameleon.io/blog/fake-door-testing
 features -- 6 Reasons Users Hate Your New Feature -- The Feature’s Not Finishable
 features -- 6 Reasons Users Hate Your New Feature -- The Feature’s Not Finished
 features -- 6 Reasons Users Hate Your New Feature -- You Built EXACTLY What They Asked For
@@ -302,6 +306,9 @@ real-world context https://contextsdk.com/insights#product
 realistic scheduling = overly optimistic deadlines lead to burnout and missed milestones. Always add a (secret?) buffer.
 reputation management
 reputation management -- REPCOM
+revenue -- evergreen = able to survive to bear markets
+revenue -- hyper-revenue = catch on
+revenue -- multiple diversified revenue streams
 risk -- management = be proactive instead of reactive
 risk -- management = coordinated set of activities carried out throughout an organisation aimed at identifying, understanding and controlling its risks
 risk = effect of uncertainty on an organisation’s ability to meet its objectives
@@ -373,4 +380,5 @@ what got us here won't get us there…
 what is the actual problem we're trying to solve?
 what the product is NOT = ex. https://en.wikipedia.org/wiki/Wikipedia:What_Wikipedia_is_not
 winner takes it all
+winner-take-all
 You can develop the best strategy in the world, but if it isn’t producing the desired results, it’s time to reassess. "It’s not that we aren’t doing as well as we could, but it’s not the best strategy we could be doing to win." https://worldofwarcraft.blizzard.com/en-us/news/21952451/midgame-moves-adapt-survive-and-thrive

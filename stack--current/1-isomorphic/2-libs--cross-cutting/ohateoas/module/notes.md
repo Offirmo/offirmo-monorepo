@@ -4,7 +4,7 @@
 ## Introduction
 Goal:
 * new Hypermedia format to be used as "representation" for **true** REST / HATEOAS architecture
-  * HATEOAS = Hypermedia as the ?? 
+  * HATEOAS = Hypermedia as the Engine of Application State https://htmx.org/essays/hateoas/
   * would need a new kind of browser, of course
 * higher level
 * AI compatible = text/markdown compatible + "context"-compatible (summary)
@@ -127,3 +127,5 @@ ex. TBRPG's play = action/engagement? or /aventure -> /adventure/last -> adventu
 terminal
 https://jvns.ca/blog/2024/10/01/terminal-colours/
 https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences
+
+alerts processing https://support.rabby.io/hc/en-us/articles/11495471837071-What-does-Please-process-the-alert-before-signing-mean

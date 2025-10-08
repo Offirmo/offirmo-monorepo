@@ -23,6 +23,7 @@ Médiévale
 * le vin gaulois https://www.youtube.com/watch?v=4zKOLGwku8o
 * starwars inspired https://www.youtube.com/watch?v=KhktXWzMHKU&list=PL9PLUrw0CbcSx6jZ5sO1W8wY_P0QsiVkb&index=8
 * https://www.youtube.com/channel/UCW9-gzkFzVOmtu9Tvb7pqgA/videos?view=0&sort=p
+* ethnic / orc https://www.youtube.com/watch?v=QAEXS9OJwuk
 
 * Irish
   * https://www.youtube.com/watch?v=qHMvlV0-_lk
