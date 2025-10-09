@@ -1,11 +1,11 @@
 <component name="ProjectRunConfigurationManager">
 	<configuration default="false"
-		name="@offirmo-private/generator--html -- Demo"
+		name="@offirmo-private/ohateoas -- Demo"
 		type="NodeJSConfigurationType"
 		<node-interpreter>project</node-interpreter>
 		node-parameters="--experimental-strip-types"
-		path-to-js-file="module/##demo/demo--personal-blog/index.ts"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/2-engine--winter/generator--html">
+		path-to-js-file="module/src/~~demo/index.ts"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/2-libs--cross-cutting/ohateoas">
 		<method v="2" />
 	</configuration>
 </component>

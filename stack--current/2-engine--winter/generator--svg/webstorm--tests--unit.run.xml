@@ -3,7 +3,7 @@
 		<node-interpreter>project</node-interpreter>
 		<node-options>--experimental-strip-types</node-options>
 		<mocha-package>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/node_modules/mocha</mocha-package>
-		<working-directory>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/4-engine--browser/1-libs--simple/generator--svg</working-directory>
+		<working-directory>$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/2-engine--winter/generator--svg</working-directory>
 		<pass-parent-env>true</pass-parent-env>
 		<ui>bdd</ui>
 		<extra-mocha-options>--bail</extra-mocha-options>

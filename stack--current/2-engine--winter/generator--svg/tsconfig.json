@@ -1,5 +1,5 @@
 {
-	"extends": "../../../0-meta/tsconfig.json",
+	"extends": "../../0-meta/tsconfig.json",
 	"compilerOptions": {
 		"lib": [
 			"ES2024",
@@ -8,7 +8,7 @@
 		"pretty": true
 	},
 	"include": [
-		"../../../0-meta/typescript-custom-typings/*.d.ts",
+		"../../0-meta/typescript-custom-typings/*.d.ts",
 		"module/**/*.ts"
 	],
 	"exclude": [

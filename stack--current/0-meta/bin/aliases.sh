@@ -44,6 +44,8 @@ alias     mono13o='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias     mono13s='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/;     cd 3-libs--advanced/sync-store/;                             tabset --badge mono13s'
 alias    mono1Xad='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/;     cd X-incubator/active/data-structures/;                      tabset --badge mono1Xad'
 
+alias     mono2gh='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--winter/; cd generator--html/;                                         tabset --badge mono2gh'
+alias     mono2gs='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--winter/; cd generator--svg/;                                          tabset --badge mono2gs'
 alias      mono2p='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-engine--winter/; cd prettify-any/;                                            tabset --badge mono2p'
 
 alias     mono30o='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-engine--node/;   cd 0-dev-tools/offirmo-state-migration-tester/;              tabset --badge mono30o'
@@ -66,7 +68,6 @@ alias    mono41c2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias    mono41fc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/font--comics/;                             tabset --badge mono41fc'
 alias    mono41fp='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/font--pixel/;                              tabset --badge mono41fp'
 alias    mono41fs='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/font--smallest/;                           tabset --badge mono41fs'
-alias    mono41gs='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/generator--svg/;                           tabset --badge mono41gs'
 alias     mono41p='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/page-loaded/;                              tabset --badge mono41p'
 alias    mono41p2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/poll-window-variable/;                     tabset --badge mono41p2'
 alias    mono41rh='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 1-libs--simple/react--hyperspace/;                        tabset --badge mono41rh'
@@ -80,7 +81,6 @@ alias    mono42re='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; 
 alias    mono42rt='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 2-libs--cross-cutting/rich-text-format--to-react/;        tabset --badge mono42rt'
 alias    mono42sb='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 2-libs--cross-cutting/soft-execution-context--browser/;   tabset --badge mono42sb'
 alias    mono42ub='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd 2-libs--cross-cutting/universal-debug-api--browser/;      tabset --badge mono42ub'
-alias   mono4Xagh='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd X-incubator/active/generator--html/;                      tabset --badge mono4Xagh'
 alias   mono4Xagw='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-engine--browser/;cd X-incubator/active/generator--website-entry-points/;      tabset --badge mono4Xagw'
 
 alias    mono7@sc='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 7-multimorphic/;   cd @oh-my-rpg/state--codes/;                                 tabset --badge mono7@sc'
