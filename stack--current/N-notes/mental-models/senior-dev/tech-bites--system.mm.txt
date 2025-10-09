@@ -281,6 +281,10 @@ distributed system -- failures -- Method failure = the distributed system is gen
 distributed system -- failures -- Secondary storage device failure = occurred once the keep information can’t be accessed. This failure is sometimes caused by parity error, head crash, or dirt particles settled on the medium.
 distributed system -- failures -- System failure = the processor associated with the distributed system fails to perform the execution. This is caused by computer code errors and hardware issues. Hardware issues may involve CPU/memory/bus failure. This is assumed that whenever the system stops its execution due to some fault then the interior state is lost.
 domains -- expired https://www.dropcatch.com/
+durable execution -- durable functions (aka. durable workflows) = can throw errors or exceptions and automatically retry, resuming execution from the point of failure. Durable functions are designed to be long-running and stateful, meaning that they can persist state across function invocations and retries.
+durable execution -- fault-tolerance = Errors or exceptions are caught by the execution layer and are automatically retried. Retry behavior can be customized to handle the accepted number of retries and handle different types of errors.
+durable execution -- state persistance = Function state is persisted outside of the function execution context. This enables function execution to be resumed from the point of failure on the same or different infrastructure.
+durable execution = a fault-tolerant approach to executing code that is achieved by handling failures and interruptions gracefully with automatic retries and state persistence = Your code can continue to run even if there are issues like network failures, timeouts, infrastructure outages, and other transient errors https://www.inngest.com/docs/learn/how-functions-are-executed
 edge
 edge -- lambda@edge (AWS) = a lambda closer to the user. Downside is being away from the backend/DB
 edge computing -- case study -- Vercel (against) = latency when DB "So, @vercel reverted all edge rendering back to Node.js" https://twitter.com/leeerob/status/1780705942734331983
