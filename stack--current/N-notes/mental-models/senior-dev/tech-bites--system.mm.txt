@@ -142,9 +142,10 @@ BASE = properties of certain databases, usually NoSQL databases. A BASE system g
 bastion host = special-purpose computer on a network specifically designed and configured to withstand attacks = usually security hardened public host within a security zone https://en.wikipedia.org/wiki/Bastion_host
 blue/green deployment
 cache
-cache -- counter cache = solution to an active record issue in RoR https://thoughtbot.com/blog/what-is-counter-cache
-cache -- eviction = Time-Based Eviction, Count-Based Eviction, Query Result Eviction, Cache Region Clearing
-cache -- invalidation/control
+cache -- &eviction = Time-Based Eviction, Count-Based Eviction, Query Result Eviction, Cache Region Clearing
+cache -- &invalidation -- &busting = using url modifiers to avoid incorrect caching https://www.keycdn.com/support/what-is-cache-busting
+cache -- counter& = solution to an active record issue in RoR https://thoughtbot.com/blog/what-is-counter-cache
+cache -- invalidation|control
 caching -- stale-if-error
 caching -- stale-while-revalidate https://www.mnot.net/blog/2007/12/12/stale
 canary releasing
@@ -156,7 +157,7 @@ CAP Theorem -> see also PACELC theorem
 capacity planning
 cascading failures
 cascading failures -- exponential backoff + jitter
-case study -- distributed KV store = +++ designing a distributed high scale, high perf, sequentially consistent KV https://blog.cloudflare.com/quicksilver-v2-evolution-of-a-globally-distributed-key-value-store-part-1/
+case studies -- distributed KV store = +++ designing a distributed high scale, high perf, sequentially consistent KV https://blog.cloudflare.com/quicksilver-v2-evolution-of-a-globally-distributed-key-value-store-part-1/
 cell-based architecture = isolated feature (titanic))
 change -- release tracks -- bundled = will get all of the features that were released to Preview Release Track during the previous months (pro tier)
 change -- release tracks -- continuous = see new features when they are released (free tier)
@@ -167,8 +168,8 @@ compliance
 compliance -- stakeholder = someone responsible for ensuring system, processes, and operations comply with relevant laws and practices related to security, data, privacy, legal, or other legislative or industry practice requirements
 compute
 confidentiality
-config -- drift = when a config drifts from the original / standard
-config -- drift https://score.dev/
+config -- &drift -- solution -- score https://score.dev/
+config -- &drift = when a config drifts from the original / standard
 consistent hashing
 containers
 containers -- images -- golden = pre-configured and optimised container images that serve as standardised and reusable foundations for building other images (apps, services...)
@@ -178,13 +179,13 @@ Content Delivery Network (CDN) ex. CloudFront
 coordination -- quorum, leader election
 cron
 CRUD "Create, Read, Update, Delete" = In SQL, the four related commands are: INSERT/POST (for Create), SELECT/GET (for Read), UPDATE/PUT (for Update), and DELETE (for Delete).
-data -- 0. raw need to be processed, OLAP, OLTP https://www.snowflake.com/guides/olap-vs-oltp/
-data -- 1. analytics = useful
-data -- 2. predictive = forecast and predict from data
-data -- 3. prescriptive = recommend actions based on data
+data -- 0. raw& = need to be processed, OLAP, OLTP https://www.snowflake.com/guides/olap-vs-oltp/
+data -- 1. &analytics = useful
+data -- 2. predictive& = forecast and predict from data
+data -- 3. prescriptive& = recommend actions based on data
 Data Layer Abstraction (DLA)
 data loss
-data loss prevention (DLP) = ensures that business-critical or sensitive data does not leave an organization's network and is not damaged or erased https://www.cloudflare.com/learning/access-management/what-is-dlp/
+data loss -- &prevention (DLP) = ensures that business-critical or sensitive data does not leave an organization's network and is not damaged or erased https://www.cloudflare.com/learning/access-management/what-is-dlp/
 data retrieval
 data store -- compaction filter = logic/heuristic to garbage/evict some data to avoid size explosion https://github.com/facebook/rocksdb/wiki/Compaction-Filter
 data store -- data type -- BLOB (Binary Large Object) https://stackoverflow.com/questions/211895/storing-documents-as-blobs-in-a-database-any-disadvantages
@@ -318,10 +319,10 @@ HTTP response status codes -- 400–499 = Client error
 HTTP response status codes -- 500–599 = Server error
 HTTP response status codes -- pragmatic -- Shopify https://shopify.dev/docs/api/usage/response-codes
 hypermedia
-hypermedia -- as the engine of application state (HATEOAS)
+hypermedia -- &as the engine of application state (HATEOAS)
+incident -- &management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
 incident -- post-mortem
 incident -- Time to Detection (TTD)
-incident management = prepare, detect, triage, mitigate, resolve, learn, remediate https://sre.google/resources/practices-and-processes/incident-management-guide/
 incident values -- 01 Detect = knows before our customers do. A balanced service includes enough monitoring and alerting to detect incidents before our customers do. The best monitoring alerts us to problems before they even become incidents.
 incident values -- 02 Respond = Escalate, escalate, escalate. Nobody will mind getting woken up for an incident that it turns out they aren't needed for. But they will mind if they don't get woken up for an incident when they should have been. We won't always have all the answers, so "don't hesitate to escalate".
 incident values -- 03 Recover = Shit happens, clean it up quickly. Our customers don't care why their service is down, only that we restore service as quickly as possible. Never hesitate in getting an incident resolved quickly so that we can minimise impact to our customers.
@@ -334,7 +335,7 @@ infrastructure as code (IaC) https://bluelight.co/blog/best-infrastructure-as-co
 infrastructure as code (IaC) https://www.pulumi.com/what-is/what-is-infrastructure-as-code/
 Infrastructure as Code -- AWS CDK
 Infrastructure as Code -- AWS CDK -- flaws https://sst.dev/blog/moving-away-from-cdk#design-flaws
-Infrastructure as Code -- Terraform = to abstract CDK / Cloudformation
+Infrastructure as Code -- Terraform/OpenTofu = to abstract CDK / Cloudformation
 Infrastructure as Software = supposedly better than IaC https://www.pulumi.com/what-is/what-is-infrastructure-as-software/ https://www.pulumi.com/what-is/what-is-infrastructure-as-software/
 ingress/egress = “the act of entering”, “the right of entering”, or “the means of entering”
 integrity

@@ -1,5 +1,6 @@
 +++ https://www.sequoiacap.com/article/the-templeton-compression/
 1997 Amazon shareowners letter https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm
+[ ] +++ growth.design
 [ ] +++ https://www.threads.com/@prodmgmt.world
 [ ] https://basecamp.com/books
 [ ] https://basecamp.com/books ++ Getting Real https://basecamp.com/gettingreal
@@ -8,6 +9,7 @@
 [ ] personal MBA
 [ ] public relations https://vannattapr.com/2020/12/03/dont-yell-at-clouds/
 [ ] strategy https://stratechery.com/
+absolute advantage = a situation in which a company can produce the same product as other companies using fewer resources https://coinmarketcap.com/academy/glossary/absolute-advantage
 adaptability = turn the challenges into opportunities
 adoption -- technology adoption -- usually non-linear = due to so-called complementary network effects
 aha moment
@@ -42,6 +44,7 @@ brand -- 6 what's? = what we stand for, what we believe in, what people we seek 
 build vs buy = example https://www.svix.com/build-vs-buy/
 build-boost-discard cycle of internet applications = scourge https://www.linkedin.com/posts/david-heinemeier-hansson-374b18221_deploy-web-apps-anywhere-activity-7305513792275169281-C2-h
 business -- as a by-product = structure that ultimately has to exist around a group of people to make things and service customers over the long term, but not inherently interesting https://www.linkedin.com/posts/jason-fried_ive-always-thought-of-business-as-a-by-product-activity-7236805665627717632-_s96/
+case studies -- growth, funnel, onboarding https://growth.design/case-studies
 CEO "If I/we got fired today, what would the new CEO do?"
 churn
 churn -- subscription -- involuntary or delinquent churn = missed payments causing an automated cancellation
@@ -372,6 +375,7 @@ try/test/graduate
 Uber model = Make it so useful that you can’t shut it down
 User Experience Research (UXR) https://medium.com/getting-started-in-user-experience-and-design
 USP "Unique Selling Point" = secret sauce, difference with competition
+UX -- principles and cognitive bias relevant https://growth.design/psychology
 UX -- stick to established patterns https://medium.com/@daniel.stoyanov/not-following-well-established-ux-design-patterns-is-almost-always-a-bad-idea-58ae01b4f48a
 value extraction -- creating value, not extracting it
 VC -- founder dilution https://www.linkedin.com/feed/update/urn:li:activity:7341812076463439873/

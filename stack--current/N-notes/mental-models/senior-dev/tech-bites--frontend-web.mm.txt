@@ -107,6 +107,7 @@ components https://www.componentdriven.org/
 composition -- embed
 composition -- shared view
 contrast ratio https://www.siegemedia.com/contrast-ratio
+core web vitals = https://addyosmani.com/blog/core-web-vitals/
 CORS "Cross-Origin Resource Sharing"
 CSS -- alignment https://css-tip.com/explore/alignment/
 CSS -- atomic = small, single-purpose classes with names based on visual function https://css-tricks.com/lets-define-exactly-atomic-css/
@@ -481,6 +482,7 @@ UX -- delightful = "the app cares about my experience" easy to sell to stakehold
 UX -- evaluation/review -- "User Experience Honeycomb" = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb
 UX -- good practices -- stick to established patterns https://medium.com/@daniel.stoyanov/not-following-well-established-ux-design-patterns-is-almost-always-a-bad-idea-58ae01b4f48a https://www.nngroup.com/articles/power-law-learning/
 UX -- principle of least astonishment (POLA) = general principle in the design of all kinds of interfaces. It is based on the idea that human beings can only pay full attention to one thing at one time, leading to the conclusion that novelty should be minimized.
+UX -- principles and cognitive bias relevant https://growth.design/psychology
 UX -- properties https://en.wikipedia.org/wiki/User_interface#Types
 UX -- types -- Batch = non-interactive user interfaces, where the user specifies all the details of the batch job in advance to batch processing, and receives the output when all the processing is done. The computer does not prompt for further input after the processing has started.
 UX -- types -- Command line interfaces (CLIs) = provide input by typing a command string with the computer keyboard and respond by outputting text to the computer monitor. Used by programmers and system administrators, in engineering and scientific environments, and by technically advanced personal computer users.

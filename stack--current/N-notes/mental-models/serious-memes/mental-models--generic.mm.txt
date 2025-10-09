@@ -2,7 +2,6 @@
 1 or 2 way door
 10th dentist = someone who sincerely, or professionally, disagree with the broad majority of people "9 dentists out of 10 recommends..." https://www.reddit.com/r/The10thDentist/
 12 steps
-change -- Old ideas give way slowly; for they are more than abstract logical forms and categories, they are habits, predispositions,they are habits, predispositions, deeply ingrained attitudes of diversion and preference.diversion and preference John Dewey
 1856 LLC "limited liability corporation" = is the greatest single discovery of modern times “Even steam and electricity are far less important than the limited liability corporation” https://blockworks.co/news/uniswap-duna-decentralization
 1970 missing kids https://www.bbc.co.uk/news/articles/c1ed4g1q52no = no "free range" kids anymore
 1984
@@ -23,7 +22,12 @@ change -- Old ideas give way slowly; for they are more than abstract logical for
 3-strike pivot strategy -- Strike 3: Make the Pivot
 3-strike pivot strategy = give 3 chances https://blog.gouravkhanijoe.com/p/3-strike-pivot-strategy-to-become
 4-Hour Workweek
-5 Harsh Truths for Success from Linus Torvalds https://medium.com/codex/5-harsh-truths-from-linus-torvalds-406ab20cea02
+5 Harsh Truths -- Being Nice is Not Nice
+5 Harsh Truths -- Distractions Are Potential Killers
+5 Harsh Truths -- Goals, Ideas… are all Lies
+5 Harsh Truths -- Nobody is Special
+5 Harsh Truths -- There is No Intelligent Design
+5 Harsh Truths for Success from Linus Torvalds https://www.linkedin.com/posts/altanatabarut_5-harsh-truths-from-linus-torvalds-activity-7008389396659859456-CKr6
 5 mantras -- 1% better = You don’t need to change the world. Just make something — anything — 1% better, every day. Movement of the smallest rocks can cause the greatest landslides.
 5 mantras -- Don’t get stuck = when I feel stuck it is because I am being too stubborn to change, too egotistical to ask for help, or too tired to invite creativity into my thinking. There is rarely no way out.
 5 mantras -- Find joy in the journey = We give so much of our lives to our work, so we should put some effort into making it something that brings us joy. We probably find that joy in different places, but it’s important that we know what fuels us. Our work, and our lives, are better for it.
@@ -57,6 +61,7 @@ change -- Old ideas give way slowly; for they are more than abstract logical for
 [ ] Thinkies https://tidyfirst.substack.com/s/thinkies
 [ ] tool https://explorer.globe.engineer/
 [ ] wish I knew https://medium.com/mind-cafe/cheat-codes-for-life-i-know-at-36-that-i-wish-i-knew-at-26-294f6e865db5
+Abenomics = the economic strategy implemented by Shinzo Abe of Japan and is comprised of three arrows: monetary policy, fiscal stimulus and structural reforms https://coinmarketcap.com/academy/glossary/abenomics
 academic disciplines -- humanities = academic disciplines that study aspects of human society and culture, including certain fundamental questions asked by humans https://en.wikipedia.org/wiki/Humanities
 academic disciplines -- trans / cross
 accent -- miscommunication https://paulgraham.com/accents.html
@@ -65,6 +70,7 @@ accepting oneself
 action -- deep dive & low-hanging fruits
 addictions -- casino -- "je vais me refaire"
 addictions -- casino -- maison qui gagne
+Adventure is any inconvenience taken in the right spirit - Flower Hill Center
 advices -- flaw -- Curse of Brilliance = when dissecting what makes them successful, people unwittingly tend to overemphasize the things they found very difficult and underplay (or altogether ignore) the importance of things at which they were naturally good/brilliant. Ex. a successful repeat founder will often say things like “speed is all that matters” = bc. they take the vision & strategy part for granted. https://x.com/shreyas/status/1442165965769240577
 advices -- flaw -- Curse of Brilliance, Survivorship Bias & the Halo Effect will conspire together to create an inaccurate view of what it really takes to succeed
 advices -- flaw -- Halo Effect
@@ -191,9 +197,11 @@ cargo cult
 CER framework = answer with Claim, Evidence, Reasoning (+ use keywords) https://www.edutopia.org/blog/science-inquiry-claim-evidence-reasoning-eric-brunsell
 chacun chez soi et les vaches sont bien gardées
 chaine trophique = salsepareille <- schtroumpf <- Gargamel
+change -- consensus/standard https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/PaulDowney_StandardsAreGreatButStandardisationIsAReallyBadIdea.pdf
 change -- introduction -- 1 What are we doing?
 change -- introduction -- 2 Why are we doing it?
 change -- introduction -- 3 When are we making the change?
+change -- Old ideas give way slowly; for they are more than abstract logical forms and categories, they are habits, predispositions,they are habits, predispositions, deeply ingrained attitudes of diversion and preference.diversion and preference John Dewey
 changemaker
 charbonnier est maître chez soi
 charged issues = fractally contentious, causing disagreement among people who hold all but identical opinions https://en.wikipedia.org/wiki/Narcissism_of_small_differences
@@ -708,6 +716,7 @@ learned helplessness
 learner types -- visual
 learning -- compounding effect
 learning -- compounding effect -- NOT! fast at start, but then plateau or very hard to improve. Need breakthrough or lateral/diversification
+learning -- Don’t be afraid of not understanding everything at once. Confusion is the mist in the enchanted forest. You will find your way. https://x.com/KatalinKult/status/1911544793357754592
 learning -- fast reading
 learning -- lifelong = learning never stops
 learning -- membership of mutual improvement group https://www.artofmanliness.com/career-wealth/wealth/andrew-carnegie-financial-lessons/
@@ -823,6 +832,7 @@ motivation -- addiction -- chemical
 motivation -- addiction -- comportmental
 motivation -- addiction -- compulsion
 motivation -- social environment = +++ "motivational origins of social loafing to be the lack of an understanding of individual contributions, unchallenging tasks given to the individual, low personal satisfaction from the task, and lack of a united group. Theories investigating why social loafing occurs range from group members' feeling that their contributions will not be noticed to group members' realizing their efforts are not necessary." (+ rest) https://en.wikipedia.org/wiki/Social_loafing
+must be nice = jealousy
 mutual assured destruction https://en.wikipedia.org/wiki/Mutual_assured_destruction
 Mutually Exclusive, Collectively Exhaustive (MECE) https://strategyu.co/wtf-is-mece-mutually-exclusive-collectively-exhaustive/
 myths -- "true myth"

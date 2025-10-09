@@ -75,3 +75,6 @@ undesirable -- Maintenance Costs = High due to complex and difficult-to-maintain
 undesirable -- Security Risks = Higher vulnerability to exploits due to coding errors and lack of security best practices https://blog.mergify.com/improve-code-quality/
 undesirable -- Team Morale = Lower due to frustration with constant bug fixing and technical debt https://blog.mergify.com/improve-code-quality/
 workflow -- vulnerable = real attack https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c
+[ ] learn custom eslint'ing
+[ ] learn auto change
+[ ] hack some ~generic ratcheting

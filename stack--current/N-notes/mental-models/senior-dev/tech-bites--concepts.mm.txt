@@ -40,6 +40,7 @@
 [ ] testing https://testing.googleblog.com/
 a11y = Accessibility
 abort controller https://kettanaito.com/blog/dont-sleep-on-abort-controller
+abstract = something that exists in thought as an idea
 abstraction -- level
 abstraction -- wrong, premature "most of the issues arise from trying to eagerly solve a problem before it fully exists in reality" https://www.transcendsoftware.se/posts/the-perils-of-premature-abstraction/ https://zackoverflow.dev/writing/premature-abstraction
 abstraction https://www.merrickchristensen.com/articles/abstraction/
@@ -350,13 +351,15 @@ DNS (Domain Name System)
 do what I mean (DWIM) = computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
 dogfooding = practice of a company using its own products or services internally as a way to test, evaluate, and improve them. Essentially, the company's employees become the primary users of their own products.
 domain -- Domain Driven Design (DDD) https://en.wikipedia.org/wiki/Domain-driven_design
+domain -- DSL (Domain Specific Language)
 domain -- top-level = collection of services, libraries, and other components you can logically group into an API for a specific business function to represent a unit of autonomous decision-making.
-domain -- top-level = should be A grouping based on functionality, not organizational hierarchy; Able to operate as an independent area of decision-making; Stable in the face of organizational changes.
+domain -- top-level = should be a grouping based on functionality, not organizational hierarchy; Able to operate as an independent area of decision-making; Stable in the face of organizational changes.
 domain = a targeted subject area of a computer program
+domain name -- &reverse syntax ordering = ex. com.example.subdomain
 DRY (don't repeat yourself)
+DRY -- see premature abstraction
 DRY -- WET (write everything twice) https://overreacted.io/the-wet-codebase/
 dry run
-DSL (Domain Specific Language)
 durable execution = development paradigm that preserves complete application state so that upon host or software failure it can seamlessly migrate execution to another machine https://stackoverflow.blog/2024/05/28/an-open-source-development-paradigm/
 dynamic config https://docs.getjoystick.com/quick/
 eBPF https://ebpf.io/ https://en.wikipedia.org/wiki/EBPF
@@ -476,6 +479,14 @@ hoisting des vars de boucle for et switch
 homoiconicity https://en.wikipedia.org/wiki/Homoiconicity
 hooks
 hotfix
+how to stay on the cutting edge without drawing blood? -- always keep experimenting
+how to stay on the cutting edge without drawing blood? -- build projects to test new ideas
+how to stay on the cutting edge without drawing blood? -- DON’T watch every new shiny new thing that appears... a new framework, a new approach, a new library. Sometimes the new hotness doesn’t really do anything new. But, if it fills a gap or expands a capability, I dive deeper. If it’s hype without a clear use case, I file it away. Maybe it’ll be useful some day, maybe it won’t… but I’ll at least be familiar with the idea, the name, and what it purports to do.
+how to stay on the cutting edge without drawing blood? -- focus on understanding the fundamentals
+how to stay on the cutting edge without drawing blood? -- If you’re feeling overwhelmed by the pace of change, just getting started, or spent some time away from the technology treadmill: get your bearings
+how to stay on the cutting edge without drawing blood? -- reach out to folks in your network and chat to them
+how to stay on the cutting edge without drawing blood? -- read the stuff no-one else bothers to read: the documentation
+how to stay on the cutting edge without drawing blood? = suggested by Matt Pocock in an email (no link)
 http -- ohttp "oblivious" https://support.mozilla.org/en-US/kb/ohttp-explained
 hypermedia
 hypertext
@@ -572,6 +583,7 @@ lang -- JSX – Javascript XML, from React
 lang -- Lean = Math language https://lean-lang.org/ https://overreacted.io/the-math-is-haunted/
 lang -- OCaml
 lang -- Rust https://www.rust-lang.org/
+lang -- swiftlang = from Apple https://x.com/awesomekling/status/1822236888188498031
 lang -- Tcl = very compact, often embedded https://en.wikipedia.org/wiki/Tcl
 lang -- There are only two kinds of languages: the ones people complain about and the ones nobody uses.
 lang -- wasp = high level website / SaaS https://wasp.sh/
@@ -905,6 +917,8 @@ standards -- do not ignore prior art s39 https://qconlondon.com/london-2009/qcon
 standards -- standardization -- death by committee
 standards -- vs. standardization = If standards represent peace, then formal standardisation can be war. Dark, political, expensive and exclusive games played out between large vendors often behind closed doors. https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/Standards%2bare%2bGreat%2c%2bbut%2bStandardisation%2bis%2ba%2bReally%2bBad%2bIdea.html
 standards = good, arise from consensus between competitors signaling maturity in a marketplace. Can ensure interoperability and assist portability, allowing the switching of suppliers. A widely adopted standard can create new markets, and impose useful constraints which in turn foster good design and innovation. Standards are great, and as the old joke goes, that's why we have so many of them! https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/Standards%2bare%2bGreat%2c%2bbut%2bStandardisation%2bis%2ba%2bReally%2bBad%2bIdea.html
+standards/standardization -- "build sth -> build a community -> observe, edit" https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/PaulDowney_StandardsAreGreatButStandardisationIsAReallyBadIdea.pdf
+standards/standardization = history https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/PaulDowney_StandardsAreGreatButStandardisationIsAReallyBadIdea.pdf
 state
 state -- making impossible states impossible https://medium.com/elm-shorts/how-to-make-impossible-states-impossible-c12a07e907b5
 state -- management
@@ -956,6 +970,7 @@ this
 thread
 threads -- virtual https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html
 time-travel https://docs.snowflake.com/en/user-guide/data-time-travel
+tool -- ast-grep https://ast-grep.github.io/guide/quick-start.html
 tool -- curl = https://curl.se/
 tool -- grep -- ast-grep https://ast-grep.github.io/
 tool -- http://devdocs.io/
@@ -1036,11 +1051,12 @@ vibe coding https://x.com/karpathy/status/1886192184808149383
 virtual private cloud (VPC)
 web assembly (asm.js)
 WebAuth
+who's who -- https://tom.preston-werner.com/
+who's who -- Linus Torvald https://www.goodreads.com/author/quotes/92867.Linus_Torvalds
 Wirth's law = software systems grow faster in size and complexity than methods to handle complexity are invented. software is getting slower more rapidly than hardware is becoming faster. https://en.wikipedia.org/wiki/Wirth%27s_law
 WORA "write once, run anywhere" https://en.m.wikipedia.org/wiki/Write_once,_run_anywhere
 WORA -- Write Once, Debug Everywhere = because of subtle incompatibilities
 worse is better https://www.dreamsongs.com/WorseIsBetter.html
-XML
 XML (Extensible Markup Language)
 xml - zalgo is tony the pony = You can't parse [X]HTML with regex https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454
 XSLT

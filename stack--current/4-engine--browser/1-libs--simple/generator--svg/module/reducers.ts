@@ -65,7 +65,7 @@ function addꓽcontent(svg: Immutable<SVG>, content: Immutable<SVG['content'][0]
 
 function addꓽcontentꘌcontour(svg: Immutable<SVG>, border_width?: number): Immutable<SVG> {
 	const { width, height } = getꓽviewbox__dimensions(svg)
-	const sw = Math.min(width, height) / 50
+	const sw = border_width || Math.min(width, height) / 50
 
 	return addꓽcontent(svg, `
 <rect width="${width}" height="${height}" style="fill:transparent; stroke-width:${sw}; stroke:black" />

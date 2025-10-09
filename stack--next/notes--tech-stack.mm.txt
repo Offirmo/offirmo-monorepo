@@ -12,14 +12,15 @@ docker -- macos https://github.com/dockur/macos
 durable workflows https://www.inngest.com/uses/durable-workflows
 ecosystem -- sdk ?https://liblab.com/ https://www.speakeasy.com/
 feature flags
+libs -- https://itty.dev/
 frontend -- CSS -- framework -- ? tailwind https://tailwindcss.com/docs https://github.com/dcastil/tailwind-merge https://tremor.so/
 frontend -- CSS-in-js -- ? https://github.com/vercel/styled-jsx
 frontend -- React
 git -- git crypt https://github.com/AGWA/git-crypt
 GraphQL https://gql-tada.0no.co/
 https://stackingthebricks.com/bootstrapper-tech-stack/
-IaC -- pulumi
-IaC -- terraform
+IaC -- pulumi https://www.pulumi.com/
+IaC -- terraform / opentofu = more established but strange syntax
 JavaScript -- TypeScript -- https://openapi-ts.dev/
 JavaScript -- TypeScript -- tRPC https://trpc.io/docs/getting-started
 JavaScript -- TypeScript -- zod
