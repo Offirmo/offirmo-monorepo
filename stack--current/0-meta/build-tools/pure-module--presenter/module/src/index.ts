@@ -474,17 +474,15 @@ ${pure_module_details.description || ''}
 		if (pure_module_details.entrypointⵧdemo.ext === '.ts') {
 			_schedule_root_file_creation('webstorm--demo.run.xml', `
 <component name="ProjectRunConfigurationManager">
-	<configuration default="false"
+	<configuration default="false" type="NodeJSConfigurationType"
 		name="${pure_module_details.fqname} -- Demo"
-		type="NodeJSConfigurationType"
+		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}"
+		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧdemo.path‿abs)}">
 		<node-interpreter>project</node-interpreter>
-		node-parameters="--experimental-strip-types"
-		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧdemo.path‿abs)}"
-		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
 		<method v="2" />
 	</configuration>
 </component>
-`)// 		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
+`)
 		}
 		else {
 			ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--demo.run.xml'), { force: true }))
@@ -499,18 +497,15 @@ ${pure_module_details.description || ''}
 		if (pure_module_details.entrypointⵧsandbox.ext === '.ts') {
 			_schedule_root_file_creation('webstorm--sandbox.run.xml', `
 <component name="ProjectRunConfigurationManager">
-	<configuration default="false"
+	<configuration default="false" type="NodeJSConfigurationType"
 		name="${pure_module_details.fqname} -- Sandbox"
-		type="NodeJSConfigurationType"
+		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}"
+		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧsandbox.path‿abs)}">
 		<node-interpreter>project</node-interpreter>
-		node-parameters="--experimental-strip-types"
-		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧsandbox.path‿abs)}"
-		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
 		<method v="2" />
 	</configuration>
 </component>
 `)
-			// 		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
 		}
 		else {
 			ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--sandbox.run.xml'), { force: true }))
@@ -521,17 +516,15 @@ ${pure_module_details.description || ''}
 		if (Object.keys(pure_module_details.engines).length === 0 || pure_module_details.engines['node']) {
 			_schedule_root_file_creation('webstorm--start.run.xml', `
 <component name="ProjectRunConfigurationManager">
-	<configuration default="false"
+	<configuration default="false" type="NodeJSConfigurationType"
 		name="${pure_module_details.fqname} -- Start"
-		type="NodeJSConfigurationType"
+		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}"
+		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧmain.path‿abs)}">
 		<node-interpreter>project</node-interpreter>
-		node-parameters="--experimental-strip-types"
-		path-to-js-file="${path.relative(dest_dir, pure_module_details.entrypointⵧmain.path‿abs)}"
-		working-dir="$USER_HOME$/${dest_dir__from_HOME‿rel}">
 		<method v="2" />
 	</configuration>
 </component>
-`) // 		path-to-node="$USER_HOME$/.nvm/versions/node/v${process.versions.node}/bin/node"
+`)
 		}
 		else {
 			ೱpromises.push(fs.rm(path.resolve(dest_dir‿abspath, 'webstorm--start.run.xml'), { force: true }))

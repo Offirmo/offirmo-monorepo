@@ -1,11 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-	<configuration default="false"
+	<configuration default="false" type="NodeJSConfigurationType"
 		name="@offirmo-private/db--generic-core--migrations -- Start"
-		type="NodeJSConfigurationType"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/B-backend/db--generic-core--migrations"
+		path-to-js-file="module/deps.ts">
 		<node-interpreter>project</node-interpreter>
-		node-parameters="--experimental-strip-types"
-		path-to-js-file="module/deps.ts"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/B-backend/db--generic-core--migrations">
 		<method v="2" />
 	</configuration>
 </component>

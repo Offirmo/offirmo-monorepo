@@ -133,6 +133,7 @@ cryptocurrency = a medium of exchange secured by a blockchain-based ledger https
 CT "Crypto Twitter" = a subset of the popular social media platform Twitter, specifically focused on cryptocurrency, blockchain technology, and decentralized finance https://www.bitget.com/wiki/what-is-ct-in-crypto
 culture -- "Be your own bank" and personally secure your assets
 culture -- "HODL"
+culture -- "skill issue" = newbie hostile culture, learn by yourself etc.
 culture -- "to the moon"
 culture -- cypherpunk = (1993) "The Cypherpunks are actively engaged in making the networks safer for privacy" https://www.activism.net/cypherpunk/manifesto.html
 culture -- slang -- degen = slang derived from "degenerate", typically refers to someone who engages in high-risk, speculative trading or investment with the potential for high rewards. It describes individuals who prioritize potential gains over calculated risks and are known for their aggressive and sometimes reckless approach.
@@ -468,22 +469,29 @@ vault
 verifiable compute = a way to run complex tasks off-chain & then prove to the chain that it was properly done
 wallet
 wallet -- &consolidation
+wallet -- &ops = draining, refilling, sweeping...
+wallet -- &structure = usually starts from a seed phrase, derived according to the preferences of each chain, then HD'd derivation paths...
 wallet -- active& = with balance or recent activity
 wallet -- blind sign
 wallet -- burner& = a single-use account, designed to interact with potentially risky blockchain applications. similar to a burner phone, meant to be discarded after serving its purpose. However, unlike getting a new phone, creating a burner wallet is a quick and easy process.
 wallet -- cold/hot
 wallet -- cold/hot -- cold& = safe
-wallet -- cold/hot -- hot& = loss acceptable
+wallet -- cold/hot -- hot& = the most vulnerable, need to assume will be compromised, must be balanced to the minimum needed amount
 wallet -- cross-chain&
+wallet -- deposit& = ~public and stable wallets we expect to receive funds into (must be sweeped regularly!)
 wallet -- derivation path -- deduplication = recognize same root but different paths? (possible?)
 wallet -- derivation path = ex. m/44'/60'/0'/0/0
 wallet -- drain
 wallet -- drain -- example https://x.com/0xzak/status/1955265807807545763
 wallet -- embedded = (Defi App) latest gen, seedless, self-custodial ??
 wallet -- hardware -- replaced by passkeys? https://www.youtube.com/shorts/OncIJSV6hBE
+wallet -- MPC& = ???
+wallet -- multisig& = ??
 wallet -- password
 wallet -- recovery = ex. https://rewallet.de/en/
 wallet -- recovery phrase = 24 words to recover/transfer a wallet
+wallet -- refill& = intermediate between hot and cold, buffer used to refill hot wallets when needed + target of sweeps. If too full, go cold wallet
+wallet -- refilling
 wallet -- seed phrase = BEWARE 1) it's equivalent to the private key! 2) it's interpreted differently by different wallets!!! https://www.reddit.com/r/sui/comments/1bplcvh/different_wallet_address_when_importing_account/
 wallet -- self-custody = "I understand that this is a self-custody wallet, and that I am solely responsible for any associated funds, assets or accounts, and for taking any appropriate action to secure, protect and back up my wallet. I understand that X cannot access my wallet or reverse transactions on my behalf and that my recovery phrase is the ONLY way to regain access in the event of a lost password, stolen device or similar circumstance."
 wallet -- solution -- brave https://brave.com/wallet/
@@ -498,6 +506,8 @@ wallet -- solution -- rabby = best ETH? https://rabby.io/
 wallet -- solution -- telegram
 wallet -- solution -- uphold = https://wallet.uphold.com/
 wallet -- supported networks
+wallet -- sweeping = transfer all assets (esp. from hot) to another "deposit" wallet
+wallet -- withdrawal& =
 Wallet Provider = A user agent that manages keys and facilitates transactions with Ethereum https://eips.ethereum.org/EIPS/eip-6963
 Web Ontology Language (OWL) = language for defining ontologies, or formal representations of knowledge and relationships between concepts. You can use it to specify classes, properties, and instances, as well as facilitate reasoning and inferencing.
 Web1 = read-only

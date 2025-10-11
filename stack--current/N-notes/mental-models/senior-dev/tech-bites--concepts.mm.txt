@@ -663,6 +663,7 @@ monorepo -- boundaries = don't conflate the main codebase vs things needed to ru
 monorepo -- megarepo
 multi tenant -- isolation
 MVC (Model View Controller)
+myth of the code monkey = belief that developers are dumb, can't use advanced features, will make wrong decisions and need to be forced to use good practices https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/RodJohnson_JavaEnterpriseApplicationStandardsAndWhyTheIndustryMovedToLightweightOpenSource.pdf
 namespace
 naming -- must leave no room for interpretation
 naming -- must not overload pre-existing, well known meanings
@@ -904,7 +905,7 @@ spec
 SSH (Secure Shell)
 stack overflow
 standard deviation
-standards -- checklist -- 01 Will the pace of change and innovation required
+standards -- checklist -- 01 Will the pace of change and innovation required be met in a standards process cycle
 standards -- checklist -- 02 Do we benefit from competing implementations?
 standards -- checklist -- 03 Does this affect wire protocols (in which standards are probably outside Java)
 standards -- checklist -- 04 Is there an entrenched open source solution, in which case competition may not occur?

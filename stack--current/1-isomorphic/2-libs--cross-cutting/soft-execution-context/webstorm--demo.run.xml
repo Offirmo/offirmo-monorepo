@@ -1,11 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-	<configuration default="false"
+	<configuration default="false" type="NodeJSConfigurationType"
 		name="@offirmo-private/soft-execution-context -- Demo"
-		type="NodeJSConfigurationType"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/2-libs--cross-cutting/soft-execution-context"
+		path-to-js-file="module/##doc/demo.ts">
 		<node-interpreter>project</node-interpreter>
-		node-parameters="--experimental-strip-types"
-		path-to-js-file="module/##doc/demo.ts"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/2-libs--cross-cutting/soft-execution-context">
 		<method v="2" />
 	</configuration>
 </component>

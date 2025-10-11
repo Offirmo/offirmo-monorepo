@@ -1,11 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-	<configuration default="false"
+	<configuration default="false" type="NodeJSConfigurationType"
 		name="@offirmo-private/ohateoas -- Demo"
-		type="NodeJSConfigurationType"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/2-libs--cross-cutting/ohateoas"
+		path-to-js-file="module/src/~~demo/index.ts">
 		<node-interpreter>project</node-interpreter>
-		node-parameters="--experimental-strip-types"
-		path-to-js-file="module/src/~~demo/index.ts"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/1-isomorphic/2-libs--cross-cutting/ohateoas">
 		<method v="2" />
 	</configuration>
 </component>

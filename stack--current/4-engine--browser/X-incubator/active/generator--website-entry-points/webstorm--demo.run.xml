@@ -1,11 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-	<configuration default="false"
+	<configuration default="false" type="NodeJSConfigurationType"
 		name="@offirmo-private/generator--website-entry-points -- Demo"
-		type="NodeJSConfigurationType"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/4-engine--browser/X-incubator/active/generator--website-entry-points"
+		path-to-js-file="module/##demos/demo--pwa--tbrpg/index.ts">
 		<node-interpreter>project</node-interpreter>
-		node-parameters="--experimental-strip-types"
-		path-to-js-file="module/##demos/demo--pwa--tbrpg/index.ts"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/4-engine--browser/X-incubator/active/generator--website-entry-points">
 		<method v="2" />
 	</configuration>
 </component>

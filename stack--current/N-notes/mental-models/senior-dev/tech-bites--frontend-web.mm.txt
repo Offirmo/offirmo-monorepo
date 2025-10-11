@@ -193,6 +193,7 @@ Design System -- vs. Web Pattern Library (WPL) = Built specifically for web, wit
 Design System = foundational base for which all other user interfaces are built upon. DS built with the intention to make it easy for makers (designers and developers) to design, develop, and deliver UI at scale.
 desk metaphor
 desk metaphor -- ornaments https://folklore.org/Desk_Ornaments.html
+desktop app wrapping -- solution -- https://jslegenddev.substack.com/p/the-struggle-of-wrapping-a-javascript
 devices -- support
 dialog
 DNS = distributed database for IP address translation
@@ -355,6 +356,7 @@ perf metrics -- Time to Visually Complete (TTVC) = time of the last visible pain
 Person In The Street (PITS) = normal user, need ease of use https://web.stanford.edu/dept/SUL/sites/mac/primary/docs/bom/anthrophilic.html
 postXYZ = postCSS, postHTML https://postcss.org/ https://posthtml.org/
 progressive enhancement -- "next billion" = They’ll mostly be running Android. They’ll have decent specs (1GB RAM, quad-core processors). They’ll have an evergreen browser and WebView (Android 5+). What they won’t have, however, is a reliable internet connection.
+progressive enhancement -- solution -- https://csswizardry.com/Obs.js/demo/
 progressive enhancement https://nolanlawson.com/2016/10/13/progressive-enhancement-isnt-dead-but-it-smells-funny/
 puppeteer -- firefox https://hacks.mozilla.org/2024/08/puppeteer-support-for-firefox/
 puppeteer -- vs Selenium, Playwright, Cypress https://www.testim.io/blog/puppeteer-selenium-playwright-cypress-how-to-choose/

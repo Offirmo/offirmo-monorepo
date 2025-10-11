@@ -1,11 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-	<configuration default="false"
+	<configuration default="false" type="NodeJSConfigurationType"
 		name="@offirmo/practical-logger-node -- Demo"
-		type="NodeJSConfigurationType"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/3-engine--node/2-libs--cross-cutting/practical-logger--node"
+		path-to-js-file="module/##doc/demo.ts">
 		<node-interpreter>project</node-interpreter>
-		node-parameters="--experimental-strip-types"
-		path-to-js-file="module/##doc/demo.ts"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/3-engine--node/2-libs--cross-cutting/practical-logger--node">
 		<method v="2" />
 	</configuration>
 </component>

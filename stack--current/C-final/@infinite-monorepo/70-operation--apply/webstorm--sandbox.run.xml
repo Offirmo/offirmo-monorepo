@@ -1,11 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-	<configuration default="false"
+	<configuration default="false" type="NodeJSConfigurationType"
 		name="@infinite-monorepo/operation--apply -- Sandbox"
-		type="NodeJSConfigurationType"
+		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/C-final/@infinite-monorepo/70-operation--apply"
+		path-to-js-file="module/~~sandbox/index.ts">
 		<node-interpreter>project</node-interpreter>
-		node-parameters="--experimental-strip-types"
-		path-to-js-file="module/~~sandbox/index.ts"
-		working-dir="$USER_HOME$/work/src/off/offirmo-monorepo/stack--current/C-final/@infinite-monorepo/70-operation--apply">
 		<method v="2" />
 	</configuration>
 </component>
