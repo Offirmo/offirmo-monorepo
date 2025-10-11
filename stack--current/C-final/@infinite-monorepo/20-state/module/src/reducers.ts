@@ -95,11 +95,15 @@ function onꓽspec_chain_loaded(
 
 		// reminder that scm root and workspace can be the same
 		if (result.data) {
-			topmost_spec_under_workspace = result.data as any // TODO 1D schema validation
+			topmost_spec_under_workspace = {
+				...result.data as any, // TODO 1D schema validation
+				_config_fileⵧroot: result.exact_file_path‿abs,
+				root_path‿abs: result.parent_folder_path‿abs,
+			}
 			if (nodeⵧworkspace_root.path‿abs === PENDING) {
 				assert(nodeⵧscm_root.path‿abs !== PENDING, `SCM root must be known before workspace!`)
 				nodeⵧworkspace_root.path‿abs = result.parent_folder_path‿abs
-				topmost_spec_under_workspace = topmost_spec_under_workspace
+				nodeⵧworkspace_root.spec = completeꓽspec(topmost_spec_under_workspace || {})
 				state = registerꓽnode(state, nodeⵧworkspace_root)
 			} else {
 				// must be a subfolder modifier, ignore
@@ -116,7 +120,7 @@ function onꓽspec_chain_loaded(
 			if (result.hasꓽpackageᐧjson) {
 				if (nodeⵧworkspace_root.path‿abs === PENDING) {
 					nodeⵧworkspace_root.path‿abs = result.parent_folder_path‿abs
-					nodeⵧworkspace_root.spec = topmost_spec_under_workspace || {}
+					nodeⵧworkspace_root.spec = completeꓽspec(topmost_spec_under_workspace || {})
 					state = registerꓽnode(state, nodeⵧworkspace_root)
 				} else {
 					// must be a subfolder modifier, ignore
@@ -125,6 +129,14 @@ function onꓽspec_chain_loaded(
 		})
 	}
 	assert(nodeⵧworkspace_root.path‿abs !== PENDING, `Workspace root must exist!`)
+
+	// TODO review, duplicate??
+	if (topmost_spec_under_workspace) { // TODO review can be falsy?
+		state = {
+			...state,
+			spec: nodeⵧworkspace_root.spec
+		}
+	}
 
 	return state
 }

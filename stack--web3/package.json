@@ -1,6 +1,20 @@
 {
-	"name": "@offirmo-private/hacks-monorepo--web3",
-	"version": "0.0.1",
-	"description": "",
-	"private": true
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "onFail": "error"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "error"
+    }
+  },
+  "engines": {
+    "node": "24",
+    "pnpm": "10"
+  },
+  "name": "@offirmo/monorepo",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0"
 }

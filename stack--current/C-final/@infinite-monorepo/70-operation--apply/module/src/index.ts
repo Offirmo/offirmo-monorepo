@@ -121,8 +121,10 @@ async function apply(from?: AnyPath) {
 					break
 				case 'present--containing':
 					console.log(`- Augmenting file ${path}…`)
-					// TODO 1D SSoT
-					const ↆexisting_content = ↆreadꓽfile(path, { format: spec.manifest.format })
+					const SSoT = true
+					const ↆexisting_content = SSoT
+						? Promise.resolve({})
+						: ↆreadꓽfile(path, { format: spec.manifest.format })
 					ↆexisting_content.then(
 						content => {
 							return ೱwriteꓽfile(
@@ -134,9 +136,9 @@ async function apply(from?: AnyPath) {
 						err => {
 							if ((err as any)?.code !== 'ENOENT') {
 								throw err
-							} else {
-								return ೱwriteꓽfile(path, spec.content as any, spec.manifest.format)
 							}
+
+							return ೱwriteꓽfile(path, spec.content as any, spec.manifest.format)
 						},
 					)
 					break

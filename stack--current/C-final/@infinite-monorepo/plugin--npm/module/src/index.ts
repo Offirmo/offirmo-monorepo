@@ -50,17 +50,32 @@ const pluginꓽnpm: Plugin = {
 			// TODO 1D any node where parent node != current node
 			case 'workspace': {
 				const runtimeⵧlocal = StateLib.getꓽruntimeⵧlocal(state, node)
+				const runtimeⵧlocal__selector = (() => {
+					const vmin‿obj = semver.minVersion(runtimeⵧlocal.versionsⵧacceptable)
+					assert(!!vmin‿obj, 'semver issue')
 
-				const vmin‿obj = semver.minVersion(runtimeⵧlocal.versionsⵧacceptable)
-				assert(!!vmin‿obj, 'semver issue')
+					const relevant = [vmin‿obj.major, vmin‿obj.minor, vmin‿obj.minor]
+					while (relevant.at(-1) === 0) {
+						relevant.pop()
+					}
+					// examples features a ~^>= https://docs.npmjs.com/cli/v11/configuring-npm/package-json#engines
+					// HOWEVER not having a prefix helps other tools to parse it more easily
+					return `${relevant.join('.')}`
+				})()
 
-				const relevant = [vmin‿obj.major, vmin‿obj.minor, vmin‿obj.minor]
-				while (relevant.at(-1) === 0) {
-					relevant.pop()
-				}
-				// examples features a ~^>= https://docs.npmjs.com/cli/v11/configuring-npm/package-json#engines
-				// HOWEVER not having a prefix helps other tools to parse it more easily
-				const selector = `${relevant.join('.')}`
+				const package_manager = StateLib.getꓽpackage_manager(state, node)
+				const package_manager__selector = (() => {
+					const vmin‿obj = semver.minVersion(package_manager.versionsⵧacceptable)
+					assert(!!vmin‿obj, 'semver issue')
+
+					const relevant = [vmin‿obj.major, vmin‿obj.minor, vmin‿obj.minor]
+					while (relevant.at(-1) === 0) {
+						relevant.pop()
+					}
+					// examples features a ~^>= https://docs.npmjs.com/cli/v11/configuring-npm/package-json#engines
+					// HOWEVER not having a prefix helps other tools to parse it more easily
+					return `${relevant.join('.')}`
+				})()
 
 				const output_spec: FileOutputPresent = {
 					parent_node: node,
@@ -68,11 +83,15 @@ const pluginꓽnpm: Plugin = {
 					intent: 'present--containing',
 					content: {
 						// https://docs.npmjs.com/cli/v11/configuring-npm/package-json
-
+						name: `${state.spec.namespace}/monorepo`,
+						version: '0.0.0',
 						private: true, // why would we publish the workspace root?
+						//sideEffects: false,
+						type: 'module', // we're modern!
 						engines: {
 							// https://docs.npmjs.com/cli/v11/configuring-npm/package-json#engines
-							[runtimeⵧlocal.name]: selector,
+							[runtimeⵧlocal.name]: runtimeⵧlocal__selector,
+							[package_manager.name]: package_manager__selector,
 						},
 
 						devEngines: {
@@ -81,11 +100,10 @@ const pluginꓽnpm: Plugin = {
 								name: 'node',
 								onFail: 'error',
 							},
-							/* TODO
-							"packageManager": {
-								"name": "npm",
-								"onFail": "error"
-							}*/
+							packageManager: {
+								name: package_manager.name,
+								onFail: "error"
+							}
 						},
 					},
 				}
