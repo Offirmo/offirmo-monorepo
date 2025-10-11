@@ -9,6 +9,7 @@ import pluginꓽnvm from '@infinite-monorepo/plugin--nvm'
 import pluginꓽparcel from '@infinite-monorepo/plugin--parcel'
 import pluginꓽbolt from '@infinite-monorepo/plugin--bolt'
 import pluginꓽnpm from '@infinite-monorepo/plugin--npm'
+import pluginꓽpnpm from '@infinite-monorepo/plugin--pnpm'
 import type { State, Plugin } from '@infinite-monorepo/state'
 import { ↆreadꓽfile } from '@infinite-monorepo/read-write-any-structured-file/read'
 import { mergeꓽjson, ೱwriteꓽfile } from '@infinite-monorepo/read-write-any-structured-file/write'
@@ -20,6 +21,7 @@ const plugins: Array<Plugin> = [
 	pluginꓽbolt,
 	pluginꓽgit,
 	pluginꓽnpm,
+	pluginꓽpnpm,
 	pluginꓽnvm,
 	pluginꓽparcel,
 	// TODO plugins for everything!
@@ -121,7 +123,7 @@ async function apply(from?: AnyPath) {
 					break
 				case 'present--containing':
 					console.log(`- Augmenting file ${path}…`)
-					const SSoT = true
+					const SSoT = true // XXX advanced!
 					const ↆexisting_content = SSoT
 						? Promise.resolve({})
 						: ↆreadꓽfile(path, { format: spec.manifest.format })

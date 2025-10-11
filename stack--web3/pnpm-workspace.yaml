@@ -1,0 +1,13 @@
+autoInstallPeers: false
+catalogMode: strict
+disallowWorkspaceCycles: true
+hoist: false
+hoistWorkspacePackages: false
+minimumReleaseAge: 10080
+preferWorkspacePackages: true
+resolutionMode: time-based
+resolvePeersFromWorkspaceRoot: false
+savePrefix: ""
+saveWorkspaceProtocol: rolling
+strictDepBuilds: true
+strictPeerDependencies: true
