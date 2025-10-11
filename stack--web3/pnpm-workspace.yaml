@@ -6,11 +6,12 @@ catalog:
   '@scure/bip39': 2.0.0
   '@scure/btc-signer': 2.0.1
   '@scure/starknet': 2.0.0
+  ethereum-cryptography: 3.2.0
   micro-eth-signer: 0.17.3
   micro-ordinals: 0.3.0
   micro-sol-signer: 0.8.2
   qr: 0.5.2
-  viem: 'catalog:'
+  viem: 2.38.0
 
 catalogMode: strict
 
@@ -21,6 +22,9 @@ hoist: false
 hoistWorkspacePackages: false
 
 minimumReleaseAge: 10080
+
+minimumReleaseAgeExclude:
+  - '@noble/*' ## strange error
 
 preferWorkspacePackages: true
 

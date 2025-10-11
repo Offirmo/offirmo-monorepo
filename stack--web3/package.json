@@ -24,6 +24,7 @@
     "@scure/bip39": "catalog:",
     "@scure/btc-signer": "catalog:",
     "@scure/starknet": "catalog:",
+    "ethereum-cryptography": "catalog:",
     "micro-eth-signer": "catalog:",
     "micro-ordinals": "catalog:",
     "micro-sol-signer": "catalog:",

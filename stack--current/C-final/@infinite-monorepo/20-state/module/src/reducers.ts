@@ -187,7 +187,7 @@ function registerꓽnode(state: Immutable<State>, node: Immutable<Node>): Immuta
 	switch (node.type) {
 		case 'package': {
 			node = {
-				details: c
+				//details: c ??
 				...node,
 			}
 		}
