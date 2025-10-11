@@ -20,6 +20,7 @@
 [ ] security https://portswigger.net/web-security/all-topics
 [ ] security https://xsleaks.dev/
 [ ] shearing layers https://en.wikipedia.org/wiki/Shearing_layers
+a11y -- support https://a11ysupport.io/
 AI -- If you had a machine that could instantly recall or create any facet of information, do you need a link?
 AI -- super app = LLM becomes the super app? https://aifoc.us/a-link-is-all-you-need/
 AMP "Accelerated Mobile Pages"

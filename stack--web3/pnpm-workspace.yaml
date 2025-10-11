@@ -1,13 +1,37 @@
 autoInstallPeers: false
+
+catalog:
+  '@scure/base': 2.0.0
+  '@scure/bip32': 2.0.0
+  '@scure/bip39': 2.0.0
+  '@scure/btc-signer': 2.0.1
+  '@scure/starknet': 2.0.0
+  micro-eth-signer: 0.17.3
+  micro-ordinals: 0.3.0
+  micro-sol-signer: 0.8.2
+  qr: 0.5.2
+  viem: 'catalog:'
+
 catalogMode: strict
+
 disallowWorkspaceCycles: true
+
 hoist: false
+
 hoistWorkspacePackages: false
+
 minimumReleaseAge: 10080
+
 preferWorkspacePackages: true
+
 resolutionMode: time-based
+
 resolvePeersFromWorkspaceRoot: false
-savePrefix: ""
+
+savePrefix: ''
+
 saveWorkspaceProtocol: rolling
+
 strictDepBuilds: true
+
 strictPeerDependencies: true

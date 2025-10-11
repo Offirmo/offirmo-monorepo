@@ -12,6 +12,8 @@ import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
 import type { FileOutputPresent } from '@infinite-monorepo/state'
 import assert from 'tiny-invariant'
+import { manifestꓽpackageᐧjson } from '@infinite-monorepo/plugin--npm'
+
 
 /////////////////////////////////////////////////
 
@@ -46,7 +48,7 @@ const pluginꓽnpm: Plugin = {
 		switch (node?.type) {
 			// TODO 1D any node where parent node != current node
 			case 'workspace': {
-				const output_spec: FileOutputPresent = {
+				const pnpm_config_output_spec: FileOutputPresent = {
 					parent_node: node,
 					manifest: manifestꓽpnpmᝍworkspaceᐧyaml,
 					intent: 'present--containing',
@@ -67,7 +69,18 @@ const pluginꓽnpm: Plugin = {
 						minimumReleaseAge: 10080, // https://pnpm.io/supply-chain-security
 					},
 				}
-				state = StateLib.requestꓽfile_output(state, output_spec)
+				state = StateLib.requestꓽfile_output(state, pnpm_config_output_spec)
+
+				const packageᐧjson_output_spec: FileOutputPresent = {
+					parent_node: node,
+					manifest: manifestꓽpackageᐧjson,
+					intent: 'present--containing',
+					content: {
+						// TODO dynamic
+						"packageManager": "pnpm@10.18.2+sha512.9fb969fa749b3ade6035e0f109f0b8a60b5d08a1a87fdf72e337da90dcc93336e2280ca4e44f2358a649b83c17959e9993e777c2080879f3801e6f0d999ad3dd"
+					},
+				}
+				state = StateLib.requestꓽfile_output(state, packageᐧjson_output_spec)
 				break
 			}
 			default:
