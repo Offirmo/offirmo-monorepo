@@ -8,10 +8,10 @@
 	"sideEffects": false,
 	"type": "module",
 	"exports": {
-		".": "./module/index.ts",
+		".": "./module/src/index.ts",
 		"./examples": "./module/__fixtures/examples/_entrypoint.ts"
 	},
-	"source": "module/index.ts",
+	"source": "module/src/index.ts",
 	"peerDependencies": {
 		"tslib": "^2"
 	},
@@ -22,13 +22,12 @@
 	"scripts": {
 		"_clean--pkg": "monorepo-script--clean-package …cache …dist",
 		"clean": "npm-run-all _clean--pkg",
-		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/**/*.tests.ts'",
+		"tests": "node --experimental-strip-types ./node_modules/.bin/mocha -- --bail --config ./node_modules/@offirmo/unit-test-toolbox/module/mocharc.json ./node_modules/@offirmo/unit-test-toolbox/module/mocha-chai-init-node.mjs './module/src/**/*.tests.ts'",
 		"check--ts": "echo \"@offirmo-private/generator--svg\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s clean check--ts--watch",
 		"_check": "run-s tests check--ts",
 		"_start:parcel:storypad": "parcel serve module/__fixtures/storypad/index.html --port 1981 --lazy --no-autoinstall",
-		"stories": "npm-run-all clean --parallel _start:parcel:storypad"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
