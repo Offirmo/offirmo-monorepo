@@ -20,6 +20,7 @@
 		"@infinite-monorepo/plugin--npm": "*",
 		"@infinite-monorepo/plugin--nvm": "*",
 		"@infinite-monorepo/plugin--parcel": "*",
+		"@infinite-monorepo/plugin--pnpm": "*",
 		"@infinite-monorepo/read-write-any-structured-file": "*",
 		"@infinite-monorepo/state": "*",
 		"tiny-invariant": "^1"

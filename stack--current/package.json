@@ -104,6 +104,7 @@
 		"@parcel/resolver-glob": "^2",
 		"@parcel/transformer-webmanifest": "^2",
 		"@parcel/types": "^2",
+		"@prettier/plugin-xml": "^3",
 		"@resvg/resvg-js": "^2",
 		"@total-typescript/ts-reset": "^0.6",
 		"@tsconfig/strictest": "^2",

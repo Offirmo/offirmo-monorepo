@@ -4,7 +4,7 @@ import type { Dimensions2D } from '@offirmo-private/ts-types-web'
 
 import { EOL, TAB } from './consts.ts'
 import type { SVG, Svg‿str } from './types.ts'
-import { is_SVG } from './types-guards.ts'
+import { isꓽSVG } from './types-guards.ts'
 
 /////////////////////////////////////////////////
 
@@ -15,7 +15,7 @@ function getꓽviewbox__dimensions(svg: Immutable<SVG>): Dimensions2D {
 	}
 }
 
-// Note that we use single quotes for embeddability in head / css
+// Note that we use single quotes for embeddability in head / CSS
 function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 	width?: number, // default is auto
 	height?: number // default is auto
@@ -47,7 +47,7 @@ function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 		...(svg.content.map((x): string => {
 			if (typeof x === 'string') return x
 
-			if (is_SVG(x)) { // TODO type guard
+			if (isꓽSVG(x)) { // TODO type guard
 				// sub-svg
 				return getꓽsvg‿str(x, options)
 			}

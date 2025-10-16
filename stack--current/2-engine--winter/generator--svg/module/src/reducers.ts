@@ -62,7 +62,6 @@ function addꓽcontent(svg: Immutable<SVG>, content: Immutable<SVG['content'][0]
 	}
 }
 
-
 function addꓽcontentꘌcontour(svg: Immutable<SVG>, border_width?: number): Immutable<SVG> {
 	const { width, height } = getꓽviewbox__dimensions(svg)
 	const sw = border_width || Math.min(width, height) / 50

@@ -125,7 +125,7 @@ interface SVG extends SVGContainerElement {
 	// - helps when rasterizing (cf. options of https://github.com/yisibl/resvg-js#nodejs-1)
 	background_color?: CssⳇColor‿str
 
-	// in order
+	// order is important
 	content: Array<
 		| SVGElement
 		| SVG

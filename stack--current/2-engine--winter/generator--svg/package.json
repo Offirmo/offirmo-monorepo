@@ -28,6 +28,8 @@
 		"dev": "run-s clean check--ts--watch",
 		"_check": "run-s tests check--ts",
 		"_start:parcel:storypad": "parcel serve module/__fixtures/storypad/index.html --port 1981 --lazy --no-autoinstall",
+		"stories": "npm-run-all clean --parallel _start:parcel:storypad",
+		"sandbox": "node --experimental-strip-types ./module/~~sandbox/index.ts"
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
@@ -35,7 +37,9 @@
 		"@offirmo-private/toolbox--parcel": "*",
 		"@offirmo-private/ts-types": "*",
 		"@offirmo/unit-test-toolbox": "^9",
+		"@prettier/plugin-xml": "^3",
 		"npm-run-all": "^4",
+		"prettier": "^3",
 		"tslib": "^2",
 		"typescript": "^5"
 	}
