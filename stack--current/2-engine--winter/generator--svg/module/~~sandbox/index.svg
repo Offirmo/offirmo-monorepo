@@ -1,10 +1,25 @@
 <svg
 	xmlns='http://www.w3.org/2000/svg'
+	xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape'
+	xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd'
+	xmlns:svg='http://www.w3.org/2000/svg'
 	viewBox='0 0 5000 5000'
 >
-	<rect
-		height="5000"
-		style="fill:transparent; stroke-width:100; stroke:black"
-		width="5000"
+	<sodipodi:namedview
+		inkscape:deskcolor="#d1d1d1"
+		inkscape:pagecheckerboard="true"
+		inkscape:pageopacity="0.0"
+		inkscape:showpageshadow="true"
+		bordercolor="#ff0000"
+		borderopacity="1"
+		id="namedview1"
+		pagecolor="#ffffff"
 	/>
+	<g id='layer-auto'>
+		<rect
+			height="5000"
+			style="fill:none; stroke-width:100; stroke:black"
+			width="5000"
+		/>
+	</g>
 </svg>

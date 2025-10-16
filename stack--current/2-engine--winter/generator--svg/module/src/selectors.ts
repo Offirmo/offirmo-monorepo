@@ -3,7 +3,7 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import type { Dimensions2D } from '@offirmo-private/ts-types-web'
 
 import { EOL, TAB } from './consts.ts'
-import type { SVG, Svg‿str } from './types.ts'
+import type { SVG, SVGGroupElement, Svg‿str, WithId } from './types.ts'
 import { isꓽSVG } from './types-guards.ts'
 
 /////////////////////////////////////////////////
@@ -13,6 +13,42 @@ function getꓽviewbox__dimensions(svg: Immutable<SVG>): Dimensions2D {
 		width: svg.viewBox[2],
 		height: svg.viewBox[3],
 	}
+}
+
+function getꓽlayer(svg: Immutable<SVG>, { id }: WithId): Immutable<SVGGroupElement> {
+	const layer = svg.layers.find(x => x.id === id)
+	assert(!!layer, `Layer ${id} not found!`)
+	return layer
+}
+
+function getꓽsvg‿strⵧgroup(svg_group: Immutable<SVGGroupElement>, options: {
+	drop_g_if_possible?: boolean
+	wantsꓽcompact?: boolean // if true, omit EOL, tabs and maybe pedantic stuff
+} = {}): Svg‿str {
+	const wantsꓽcompact = options.wantsꓽcompact ?? false
+	const drop_g_if_possible = options.drop_g_if_possible ?? (svg_group.id === 'layer-auto')
+
+	const svg__atributes‿str = [
+		svg_group.id ? `id='${svg_group.id}'` : '',
+		// TODO
+	].filter(a => !!a.trim()).join(wantsꓽcompact ? ' ' : `${EOL}${TAB}`)
+
+	return [
+		drop_g_if_possible ? '' : `<g  ${svg__atributes‿str}>`,
+
+		...(svg_group.content.map((x): string => {
+			if (typeof x === 'string') return x
+
+			if (isꓽSVG(x)) { // TODO type guard
+				// sub-svg
+				return getꓽsvg‿str(x, options)
+			}
+
+			throw new Error(`Not implemented!`)
+		})),
+
+		drop_g_if_possible ? '' : `</g>`
+	].map(x => x.trim()).filter(x => !!x).join(wantsꓽcompact ? '' : `${EOL}${TAB}`).trim()
 }
 
 // Note that we use single quotes for embeddability in head / CSS
@@ -29,9 +65,13 @@ function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 
 	const svg__atributes‿str = [
 		isꓽnested ? '' : `xmlns='http://www.w3.org/2000/svg'`,
+
 		(options.width || svg.width) ? `width='${options.width || svg.width}'` : '',
 		(options.height || svg.height) ? `height='${options.height || svg.height}'` : '',
-		`viewBox='${svg.viewBox.join(' ')}'`
+
+		`viewBox='${svg.viewBox.join(' ')}'`,
+
+		...Object.entries(svg.xml_namespaces).map(([prefix, uri]) => `xmlns:${prefix}='${uri}'`),
 	].filter(a => !!a).join(wantsꓽcompact ? ' ' : `${EOL}${TAB}`)
 
 	return [
@@ -44,7 +84,7 @@ function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 			? `<rect id='background-color' fill='${svg.background_color}' x='${svg.viewBox[0]}' y='${svg.viewBox[1]}' width='${svg.viewBox[2]}' height='${svg.viewBox[3]}' />`
 			: '',
 
-		...(svg.content.map((x): string => {
+		...(svg.contentⵧpre.map((x): string => {
 			if (typeof x === 'string') return x
 
 			if (isꓽSVG(x)) { // TODO type guard
@@ -55,6 +95,13 @@ function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 			throw new Error(`Not implemented!`)
 		})),
 
+		...(svg.layers.map((x): string => {
+			return getꓽsvg‿strⵧgroup(x, {
+				...options,
+				drop_g_if_possible: wantsꓽcompact && svg.layers.length === 1,
+			})
+		})),
+
 		`</svg>`
 	].map(x => x.trim()).filter(x => !!x).join(wantsꓽcompact ? '' : `${EOL}${TAB}`).trim()
 }
@@ -63,5 +110,6 @@ function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 
 export {
 	getꓽviewbox__dimensions,
+	getꓽlayer,
 	getꓽsvg‿str,
 }

@@ -5,41 +5,61 @@ import type { Url‿str, CssⳇColor‿str } from '@offirmo-private/ts-types-web
 
 /////////////////////////////////////////////////
 
-type Svg‿str = string
+export type Svg‿str = string
 
-type SVGViewBox = [ xmin: number, ymin: number, width: number, height: number]
+export type SVGViewBox = [ xmin: number, ymin: number, width: number, height: number]
 
-type SVGId = string // TODO refine
+export type SVGId = string // TODO refine
 
 /////////////////////////////////////////////////
 
 // TODO better https://developer.mozilla.org/en-US/docs/Web/SVG/Content_type#length
-type LengthUnit = 'px' | 'em'
-type PercentageString = `${number}%`
+export type LengthUnit = 'px' | 'em'
+export type PercentageString = `${number}%`
 //type Length = number | `${number}${LengthUnit}` | PercentageString
-type Length = string
+export type Length = string
 
-interface Withꓽcoordinates {
+export interface Withꓽcoordinates {
 	x?: Length
 	y?: Length
+}
+
+
+export type WithLayerId = {
+	layer_id: string
+}
+export type WithId = {
+	id: string
 }
 
 /////////////////////////////////////////////////
 
 // https://developer.mozilla.org/en-US/docs/Web/SVG/Element#svg_elements_by_category
-interface SVGElement {}
+export interface SVGElement {}
 
 // https://developer.mozilla.org/en-US/docs/Web/SVG/Element#container_elements
-interface SVGContainerElement extends SVGElement {
+export interface SVGContainerElement extends SVGElement {
 	desc?: string // https://developer.mozilla.org/en-US/docs/Web/SVG/Element/desc
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
-interface SVGGroupElement extends SVGContainerElement {
+export interface SVGGroupElement extends SVGContainerElement {
+	id?: string
+
+	attributes: {
+		[k: string]: string
+	}
+
+	// order is important
+	content: Array<
+		| SVGElement
+		| SVG
+		| string
+	>
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/SVG/Element#graphics_elements
-interface SVGGraphicElement extends SVGElement {
+export interface SVGGraphicElement extends SVGElement {
 	desc?: string // https://developer.mozilla.org/en-US/docs/Web/SVG/Element/desc
 }
 
@@ -47,7 +67,7 @@ interface SVGGraphicElement extends SVGElement {
 // https://www.sarasoueidan.com/blog/mimic-relative-positioning-in-svg/
 // TODO special handling?
 
-interface SVG extends SVGContainerElement {
+export interface SVG extends SVGContainerElement {
 	/////////////////////////////////////////////////
 	// Overall properties
 
@@ -126,11 +146,8 @@ interface SVG extends SVGContainerElement {
 	background_color?: CssⳇColor‿str
 
 	// order is important
-	content: Array<
-		| SVGElement
-		| SVG
-		| string
-	>
+	contentⵧpre: SVGGroupElement['content']
+	layers: SVGGroupElement[]
 
 	// https://developer.mozilla.org/en-US/docs/Web/SVG/Element/view
 	// A view is a defined way to view the image, like a zoom level or a detail view.
@@ -143,16 +160,3 @@ interface SVG extends SVGContainerElement {
 }
 
 /////////////////////////////////////////////////
-
-export {
-	type Svg‿str,
-
-	type SVGViewBox,
-	type SVGId,
-
-	type SVGElement,
-	type SVGContainerElement,
-	type SVGGraphicElement,
-
-	type SVG,
-}

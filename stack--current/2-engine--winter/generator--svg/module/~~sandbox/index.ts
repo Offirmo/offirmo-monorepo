@@ -1,10 +1,14 @@
 import * as SVGLib from '@offirmo-private/generator--svg'
 
-let $builder = SVGLib.createꓽempty()
-$builder = SVGLib.setꓽviewBox($builder, [ 0, 0, 5000, 5000])
-$builder = SVGLib.addꓽcontentꘌcontour($builder)
+let $svg = SVGLib.createꓽempty()
+$svg = SVGLib.setꓽviewBox($svg, [ 0, 0, 5000, 5000])
+$svg = SVGLib.addꓽcontentꘌcontour($svg)
 
-const svg‿str = SVGLib.getꓽsvg‿str($builder)
+//let $layer = SVGLib.createꓽgroup()
+//$svg = SVGLib.addꓽlayer($svg, $layer)
+
+$svg = SVGLib.decorate_for_editors($svg)
+const svg‿str = SVGLib.getꓽsvg‿str($svg)
 //console.log(svg‿str)
 
 
@@ -21,6 +25,7 @@ const PRETTIER_OPTIONS = {
 	quoteProps: 'consistent',
 	arrowParens: 'avoid',
 
+	// https://github.com/prettier/plugin-xml
 	singleAttributePerLine: true,
 	xmlSortAttributesByKey: true,
 	xmlWhitespaceSensitivity: 'ignore'
