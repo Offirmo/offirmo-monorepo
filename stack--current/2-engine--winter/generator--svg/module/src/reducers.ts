@@ -132,11 +132,13 @@ function addꓽcontent(svg: Immutable<SVG>, content: Immutable<SVGGroupElement['
 
 function addꓽcontentꘌcontour(svg: Immutable<SVG>, border_width?: number): Immutable<SVG> {
 	const { width, height } = getꓽviewbox__dimensions(svg)
-	const sw = border_width || Math.min(width, height) / 50
+	border_width = border_width || Math.min(width, height) / 100
+
+	const stroke_width = border_width * 2 // half of it will be out of the viewBox
 
 	// inkscape doesn't recognize `fill:transparent`
 	return addꓽcontent(svg, `
-<rect width="${width}" height="${height}" style="fill:none; stroke-width:${sw}; stroke:black" />
+<rect width="${width}" height="${height}" style="fill:none; stroke-width:${stroke_width}; stroke:black" />
 	`)
 }
 

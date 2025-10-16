@@ -75,6 +75,11 @@ function getꓽsvg‿str(svg: Immutable<SVG>, options: {
 	].filter(a => !!a).join(wantsꓽcompact ? ' ' : `${EOL}${TAB}`)
 
 	return [
+		//<?xml version="1.0" encoding="utf-8"?>
+		//<!-- Generator: xxx  -->
+		//<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+		//<!-- License: ... -->
+
 		`<svg ${svg__atributes‿str}>`,
 
 		// https://stackoverflow.com/questions/11293026/default-background-color-of-svg-root-element
