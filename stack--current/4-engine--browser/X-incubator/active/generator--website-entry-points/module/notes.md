@@ -121,4 +121,5 @@ Log reference: xxx-yyy-zzz
 
 TODO https://opengraphgenerator.org/
 TODO https://colinkeany.github.io/brandgrab/
-TODO https://llmstxt.org
+TODO https://llmstxt.org https://github.com/harlan-zw/mdream
+TODO https://www.debugbear.com/blog/optimize-viewport-for-mobile

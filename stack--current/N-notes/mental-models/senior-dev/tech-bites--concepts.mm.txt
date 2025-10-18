@@ -13,6 +13,7 @@
 [ ] 165 things https://news.slashdot.org/story/17/03/19/2323250/oreilly-site-lists-165-things-every-programmer-should-know
 [ ] 97 Things Every Programmer Should Know http://programmer.97things.oreilly.com/wiki/index.php/Contributions_Appearing_in_the_Book
 [ ] awesome falsehoods https://github.com/kdeldycke/awesome-falsehood
+[ ] eng laws https://newsletter.manager.dev/p/the-13-software-engineering-laws
 [ ] http://meta.programmers.stackexchange.com/questions/6166/open-letter-to-students-with-homework-problems
 [ ] http://nodeschool.io/#workshoppers
 [ ] http://rethinkdb.com/blog/node-4/
@@ -117,6 +118,7 @@ bootcamps https://www.sandofsky.com/lambda-school/
 bossware https://ia.acs.org.au/article/2024/workers-and-bosses-engage-in-sneaky-tactics.html
 bro culture in tech https://www.smh.com.au/technology/australias-tech-darling-atlassian-in-sexism-row-20140605-zryjd.html
 BSOD "blue screen of death" https://ia.acs.org.au/article/2025/microsoft-retires-blue-screen-of-death-after-40-years.html?ref=newsletter&deliveryName=DM26606
+bug-for-bug compatibility
 bugs -- $370M bug https://en.wikipedia.org/wiki/Ariane_flight_V88
 bugs -- 3 questions -- 1. Have I made this error anywhere else?
 bugs -- 3 questions -- 2. What happens when I fix the bug?

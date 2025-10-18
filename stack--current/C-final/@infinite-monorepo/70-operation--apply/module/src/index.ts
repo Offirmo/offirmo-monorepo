@@ -10,6 +10,7 @@ import pluginꓽparcel from '@infinite-monorepo/plugin--parcel'
 import pluginꓽbolt from '@infinite-monorepo/plugin--bolt'
 import pluginꓽnpm from '@infinite-monorepo/plugin--npm'
 import pluginꓽpnpm from '@infinite-monorepo/plugin--pnpm'
+import pluginꓽeditorconfig from '@infinite-monorepo/plugin--editorconfig'
 import type { State, Plugin } from '@infinite-monorepo/state'
 import { ↆreadꓽfile } from '@infinite-monorepo/read-write-any-structured-file/read'
 import { mergeꓽjson, ೱwriteꓽfile } from '@infinite-monorepo/read-write-any-structured-file/write'
@@ -19,11 +20,12 @@ import { mergeꓽjson, ೱwriteꓽfile } from '@infinite-monorepo/read-write-any
 const plugins: Array<Plugin> = [
 	// TODO a way to include on-demand
 	pluginꓽbolt,
+	pluginꓽeditorconfig,
 	pluginꓽgit,
 	pluginꓽnpm,
-	pluginꓽpnpm,
 	pluginꓽnvm,
 	pluginꓽparcel,
+	pluginꓽpnpm,
 	// TODO plugins for everything!
 ]
 
@@ -44,24 +46,25 @@ async function apply(from?: AnyPath) {
 		// wait for async tasks
 		let prev = state
 		do {
+			do {
+				prev = state
+				state = await StateLib.resolveꓽasync(state)
+			} while (prev !== state)
+
 			prev = state
-			state = await StateLib.resolveꓽasync(state)
-		} while (prev !== state)
+			let node: Immutable<Node> | undefined
+			while ((node = StateLib.getꓽnodesⵧnew(state)[0])) {
+				state = plugins.reduce((state, plugin) => {
+					return (plugin.onꓽnodeⵧdiscovered ?? noop)(state, node)
+				}, state)
+				state = StateLib.reportꓽnodeⵧanalyzed(state, node)
+			}
 
-		let node: Immutable<Node> | undefined
-		while ((node = StateLib.getꓽnodesⵧnew(state)[0])) {
-			state = plugins.reduce((state, plugin) => {
-				return (plugin.onꓽnodeⵧdiscovered ?? noop)(state, node)
-			}, state)
-			state = StateLib.reportꓽnodeⵧanalyzed(state, node)
-		}
-
-		// TODO wait for all pending async funcs
-
-		// TODO new row
-		//dumpꓽanyⵧprettified('state', state)
-
-		// TODO loop?
+			do {
+				prev = state
+				state = await StateLib.resolveꓽasync(state)
+			} while (prev !== state)
+		} while (StateLib.getꓽnodesⵧnew(state).length)
 	}
 
 	////////////
@@ -124,9 +127,8 @@ async function apply(from?: AnyPath) {
 				case 'present--containing':
 					console.log(`- Augmenting file ${path}…`)
 					const SSoT = true // XXX advanced!
-					const ↆexisting_content = SSoT
-						? Promise.resolve({})
-						: ↆreadꓽfile(path, { format: spec.manifest.format })
+					const ↆexisting_content =
+						SSoT ? Promise.resolve({}) : ↆreadꓽfile(path, { format: spec.manifest.format })
 					ↆexisting_content.then(
 						content => {
 							return ೱwriteꓽfile(

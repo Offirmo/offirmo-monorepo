@@ -110,6 +110,7 @@ composition -- shared view
 contrast ratio https://www.siegemedia.com/contrast-ratio
 core web vitals = https://addyosmani.com/blog/core-web-vitals/
 CORS "Cross-Origin Resource Sharing"
+CSS -- @function https://una.im/5-css-functions/
 CSS -- alignment https://css-tip.com/explore/alignment/
 CSS -- atomic = small, single-purpose classes with names based on visual function https://css-tricks.com/lets-define-exactly-atomic-css/
 CSS -- BEM https://getbem.com/introduction/
@@ -160,6 +161,7 @@ CSS -- selectors -- descendant combinator `ul li {`
 CSS -- specificity
 CSS -- stacking context https://github.com/andreadev-it/stacking-contexts-inspector
 CSS -- styled components https://styled-components.com/ https://emotion.sh/docs/introduction
+CSS -- targeting chars https://shkspr.mobi/blog/2025/09/targetting-specific-characters-with-css-rules/
 CSS -- transforms
 CSS -- triggers https://csstriggers.com/ https://css-triggers.com/
 CSS -- width = auto, fit-content, min-content https://courses.joshwcomeau.com/css-for-js/01-rendering-logic-1/10-widths

@@ -1,4 +1,3 @@
-
 +++ https://casebitcoin.com/critiques
 +++ https://ethereum.org/en/whitepaper/
 1% using crypto, then 3% paying with it https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
@@ -38,6 +37,7 @@
 2025-08-13 Google briefly bans wallets webextensions https://blocknews.com/google-bans-crypto-wallets-the-u-s-and-eu-here-is-why/ https://blocknews.com/google-drops-plans-to-ban-non-custodial-crypto-wallets-here-is-the-full-story/
 2025-08-21 Kanye West launches his coin https://crypto.news/kanye-west-launches-yzy-memecoin-on-solana-2025/
 51% attack = attack where a group gains control of the majority of nodes = allow them to defraud the blockchain by reversing transactions and double spending https://ethereum.org/en/glossary/#51%-attack
+[ ] +++ https://support.ledger.com/topic?topic=Crypto_Concepts https://support.ledger.com/topic?topic=Ledger_Live
 [ ] criticism https://bitfinexed.medium.com/
 [ ] digital security -- solutions -- https://www.privacyguides.org/
 [ ] endgame https://vitalik.eth.limo/general/2021/12/06/endgame.html
@@ -51,7 +51,9 @@ address gap limit = chains that use address derivation recommend a limit of deri
 Airdrop = gift of assets, usually as an incentive to use a new thing
 airdrops -- double claiming
 altcoin = anything not BitCoin (or maybe Ether, depending on who you ask)
+Aptos https://aptosfoundation.org/whitepaper
 Arbitrum
+armed heist = extorting crypto ex. https://x.com/beausecurity/status/1972333331049312437
 asset tokenization layer = ???
 assets -- top = ranking website https://www.coingecko.com/
 AT Protocol = an open, decentralized network for building social applications https://atproto.com/
@@ -60,6 +62,7 @@ attack -- new vault https://www.halborn.com/blog/post/explained-the-resupply-hac
 attacks -- supply chain https://cointelegraph.com/explained/what-is-a-supply-chain-attack-in-crypto-and-how-to-prevent-it
 bag check
 bear/bull markets = alternance of several months of falling prices (bear) and several months of rising prices (bull). Hard to time. Need to survive a bear market.
+beginner issues -- network mismatches https://www.reddit.com/r/CoinBase/comments/1jh0xgp/coinbase_wrapped_bitcoin_stuck_in_coinbase_wallet/
 Berachain
 BIP https://www.ledger.com/academy/what-is-a-bitcoin-improvement-proposal-bip
 BIP-32 Hierarchical Deterministic Wallets https://www.ledger.com/academy/crypto/what-are-hierarchical-deterministic-hd-wallets
@@ -116,6 +119,7 @@ CLOB "Central Limit Order Book" = system where all buy and sell orders for an as
 colored coins = on-blockchain digital assets to represent custom currencies and financial instruments https://docs.google.com/a/buterin.com/document/d/1AnkP_cVZTCMLIzw4DvsW6M8Q2JC0lIzrTLuoWu2z1BE/edit
 compliance -- AU -- AUSTRAC https://www.austrac.gov.au/business/new-to-austrac
 compliance -- US
+concepts -- key pairs -- unicity = astronomically low chance of collision, cf. https://keys.lol/
 consensus -- &mechanisms = complete stack of ideas, protocols and incentives that enable a distributed set of nodes to agree on the state of a blockchain https://ethereum.org/en/developers/docs/consensus-mechanisms/
 consensus = a general agreement has been reached. Consider a group of people going to the cinema. If there is no disagreement on a proposed choice of film, then a consensus is achieved. If there is disagreement, the group must have the means to decide which film to see. In extreme cases, the group will eventually split https://ethereum.org/en/developers/docs/consensus-mechanisms/
 corporate blockchains = "Big companies launching L1s is kind of a rejection of the L2 thesis, but it’s even more of a rejection of the Solana thesis" https://blockworks.co/news/stripe-circle-l1s-solana
@@ -250,6 +254,7 @@ internet censorship -- 2025 Russia https://news.ycombinator.com/item?id=44392221
 InterPlanetary File System (IPFS) = a decentralized and distributed file storage system that provides a more efficient and resilient way to store and access content on Web 3.0. It gives a unique cryptographic hash (content-based address) to every file. It uses a peer-to-peer network, where each IPFS node acts as a client and server. Nodes cooperate to store, retrieve, and distribute content across the web, eliminating the need for centralized servers. https://docs.ipfs.tech/concepts/
 ISO/TC 307 = standardization effort "Blockchain and distributed ledger technologies" https://www.iso.org/committee/6266604.html
 kaito -- Yaps As Proof-of-Attention https://yaps.kaito.ai/social-card
+katana https://app.katana.network/
 L2 saturation point https://x.com/DefiIgnas/status/1951238740526993611
 launchpad tokens
 launchpads
@@ -341,6 +346,8 @@ on-chain -- off-chain = not really on the blockchain, ex. exchanges, custodial w
 on-chain = also describes a provider of services that operates directly on a blockchain = not a CEX
 on-chain = really on the blockchain, vs. off-chain
 on-chain protocols = such as Ethena, Synthetix, Wormhole
+on/off ramp -- off-ramp = sell crypto for fiat
+on/off ramp -- on-ramp = buy crypto with fiat
 open source -- benefits -- code being inspectable = to ensure security
 open source -- benefits -- enabling permissionless third-party improvements
 open source -- benefits -- reducing the risk of proprietary lock-in
@@ -405,6 +412,7 @@ solana = better Ethereum? https://solana.com/learn/what-is-solana
 Solana https://medium.com/solana-labs
 Solana network
 solution -- Geth (Go Ethereum) = an open source blockchain protocol implementing the standard Ethereum specification plus other useful features such as a pluggable consensus engine. Geth is among the most widely used implementations of Ethereum nodes. It supports both the standard DAG based Proof-of-Work consensus and Proof-of-Authority (PoA) consensus with its implementation called Clique https://github.com/ethereum/go-ethereum
+solution -- typescript -- https://vercel.com/blog/ai-sdk-5
 solutions -- Amazon Managed Blockchain (AMB) = https://aws.amazon.com/managed-blockchain/
 solutions -- Cloudflare -- Ethereum gateway https://developers.cloudflare.com/web3/ethereum-gateway/
 solutions -- Cloudflare -- IFPS
@@ -428,8 +436,8 @@ talent -- network https://careers.near.org/talent-network
 talent pools -- New-York = #1 many finance turned to crypto
 talent pools -- San Francisco = #3, focused on AI / robotics
 TG = token generation?
-thesis -- Solana
-thesis -- superapp
+thesis -- Solana = ??
+thesis -- superapp = Infinex https://mirror.xyz/kain.eth/HbaT4MYs6uZXVymRJDRSyZpCFVMAoyeBSv7wVrAQe2o
 thesis = some sort of hypothesis a project believes in / is based on
 token gating -- examples for brands https://www.arianee.com/post/what-is-token-gating
 token gating = exclusive content to token (F/NF) holders https://www.coinbase.com/en-au/learn/crypto-basics/what-is-token-gating-and-what-are-the-benefits-of-doing-it
@@ -453,7 +461,17 @@ tokens = cryptographic representations of ownership, access rights, or other for
 tokens = deprecated terminology in favor of "assets"
 trading -- limit orders = instructions like “buy 1 ETH at $3,000 or lower.”
 trading -- orders = buy/bid/long = buy the asset, sell/ask/short = sell the asset
+trading -- OTC = ex. https://x.com/TheWhiteWhaleHL/status/1976001057483288991
+trading -- pattern recognition https://mojo3324106.substack.com/p/everyone-has-a-process
+trading -- process https://mojo3324106.substack.com/p/everyone-has-a-process
+trading -- revenge trading = ex. https://x.com/TheWhiteWhaleHL/status/1977101908583088458
 transaction -- fee = higher = picked by nodes https://ethereum.org/en/developers/docs/gas/
+transaction processing -- stages -- batch storage
+transaction processing -- stages -- block metadata ordering
+transaction processing -- stages -- ledger certification
+transaction processing -- stages -- parallel transaction execution
+transaction processing -- stages -- transaction dissemination
+transaction processing -- stages = needed, can happen concurrently on some runtimes https://aptosfoundation.org/whitepaper
 transaction simulation https://support.rabby.io/hc/en-us/articles/11495560464143-Why-do-I-see-Simulation-Failed-error
 transactions per second -- 2024 https://a16zcrypto.com/posts/article/state-of-crypto-report-2024/#section--5
 trust = needed to avoid scams, see CoinGecko trust score
@@ -472,6 +490,8 @@ wallet -- &consolidation
 wallet -- &ops = draining, refilling, sweeping...
 wallet -- &structure = usually starts from a seed phrase, derived according to the preferences of each chain, then HD'd derivation paths...
 wallet -- active& = with balance or recent activity
+wallet -- address -- change ex. https://support.ledger.com/article/360034336713-zd
+wallet -- address -- constant change = UTxO BitCoin, Cardano https://support.ledger.com/article/360033802154-zd
 wallet -- blind sign
 wallet -- burner& = a single-use account, designed to interact with potentially risky blockchain applications. similar to a burner phone, meant to be discarded after serving its purpose. However, unlike getting a new phone, creating a burner wallet is a quick and easy process.
 wallet -- cold/hot
@@ -481,17 +501,23 @@ wallet -- cross-chain&
 wallet -- deposit& = ~public and stable wallets we expect to receive funds into (must be sweeped regularly!)
 wallet -- derivation path -- deduplication = recognize same root but different paths? (possible?)
 wallet -- derivation path = ex. m/44'/60'/0'/0/0
+wallet -- derived address = ??? related to KP
+wallet -- derived key pair = ??? standard? different tools / wallets may derive differently
+wallet -- doxx'ing = linking to an identity https://support.ledger.com/article/5989580852125-zd
 wallet -- drain
 wallet -- drain -- example https://x.com/0xzak/status/1955265807807545763
 wallet -- embedded = (Defi App) latest gen, seedless, self-custodial ??
+wallet -- Extended public key (xPub) = ?? https://support.ledger.com/article/360011069619-zd
 wallet -- hardware -- replaced by passkeys? https://www.youtube.com/shorts/OncIJSV6hBE
 wallet -- MPC& = ???
 wallet -- multisig& = ??
 wallet -- password
+wallet -- phishing = ex. https://www.ledger.com/phishing-campaigns-status
 wallet -- recovery = ex. https://rewallet.de/en/
 wallet -- recovery phrase = 24 words to recover/transfer a wallet
 wallet -- refill& = intermediate between hot and cold, buffer used to refill hot wallets when needed + target of sweeps. If too full, go cold wallet
 wallet -- refilling
+wallet -- seed
 wallet -- seed phrase = BEWARE 1) it's equivalent to the private key! 2) it's interpreted differently by different wallets!!! https://www.reddit.com/r/sui/comments/1bplcvh/different_wallet_address_when_importing_account/
 wallet -- self-custody = "I understand that this is a self-custody wallet, and that I am solely responsible for any associated funds, assets or accounts, and for taking any appropriate action to secure, protect and back up my wallet. I understand that X cannot access my wallet or reverse transactions on my behalf and that my recovery phrase is the ONLY way to regain access in the event of a lost password, stolen device or similar circumstance."
 wallet -- solution -- brave https://brave.com/wallet/

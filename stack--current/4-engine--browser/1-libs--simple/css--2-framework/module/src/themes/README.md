@@ -52,3 +52,4 @@ TODO cool design https://voidzero.dev/posts/announcing-voidzero-inc
 
 TODO convert to LCH when supported ? https://caniuse.com/css-lch-lab
 TODO LCH palette https://uchu.style/
+TODO https://css-tricks.com/thinking-deeply-about-theming-and-color-naming/

@@ -4,7 +4,9 @@ import type { StringNormalizer } from '../../l1-types/types.ts'
 
 // nullish => empty string
 // other => String()'ed
-function ensure_string(s: any): string { return String(s ?? '') }
+function ensure_string(s: any): string {
+	return String(s ?? '')
+}
 
 /////////////////////////////////////////////////
 
@@ -24,8 +26,7 @@ const coerce_toꓽascii: StringNormalizer = s =>
 const RECOMMENDED_UNICODE_NORMALIZATION = 'NFC' // https://www.win.tue.nl/~aeb/linux/uc/nfc_vs_nfd.html
 const normalize_unicode: StringNormalizer = s => {
 	s = s.normalize(RECOMMENDED_UNICODE_NORMALIZATION)
-	if ((s as any).toWellFormed)
-		s = (s as any).toWellFormed() // https://devdocs.io/javascript/global_objects/string/iswellformed
+	if ((s as any).toWellFormed) s = (s as any).toWellFormed() // https://devdocs.io/javascript/global_objects/string/towellformed
 	return s
 }
 
@@ -37,12 +38,23 @@ const to_upper_case: StringNormalizer = s => s.toUpperCase()
 // simplest = capitalize the 1st letter
 const capitalizeⵧfirst: StringNormalizer = s => to_upper_case(s[0] ?? '') + s.slice(1)
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize#value
-const capitalizeⵧwords: StringNormalizer = s => s.split(' ').map(s => capitalizeⵧfirst(s)).join(' ')
+const capitalizeⵧwords: StringNormalizer = s =>
+	s
+		.split(' ')
+		.map(s => capitalizeⵧfirst(s))
+		.join(' ')
 // a / an / -
-const capitalizeⵧwordsⵧadvanced: StringNormalizer = s => s.split(' ')
-	.map(s => s.split('-').map(s => capitalizeⵧfirst(s)).join('-'))
-	.map(s => capitalizeⵧfirst(s))
-	.join(' ')
+const capitalizeⵧwordsⵧadvanced: StringNormalizer = s =>
+	s
+		.split(' ')
+		.map(s =>
+			s
+				.split('-')
+				.map(s => capitalizeⵧfirst(s))
+				.join('-'),
+		)
+		.map(s => capitalizeⵧfirst(s))
+		.join(' ')
 
 // lodash style 1st letter + force rest lowercase https://devdocs.io/lodash~4/index#capitalize
 // = NO! trivial for the caller to do "to_lower_case" before calling a capitalizer
@@ -75,13 +87,15 @@ const coerce_delimiters_to_space: StringNormalizer = s => s.replace(ANY_DELIMITE
 const coerce_underscores_to_space: StringNormalizer = s => s.replaceAll('_', ' ')
 
 const convert_spaces_to_camel_case: StringNormalizer = s =>
-		s.split(' ')
+	s
+		.split(' ')
 		.filter(s => !!s)
 		.map(capitalizeⵧfirst)
 		.join('')
 
 const convert_spaces_to_kebab_case: StringNormalizer = s =>
-		s.split(' ')
+	s
+		.split(' ')
 		.filter(s => !!s)
 		.join('-')
 
