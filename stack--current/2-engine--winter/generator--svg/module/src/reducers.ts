@@ -11,9 +11,10 @@ import { getꓽviewbox__dimensions, getꓽlayer } from './selectors.ts'
 
 /////////////////////////////////////////////////
 
-function createꓽgroup(options: Partial<WithId> = {}): Immutable<SVGGroupElement> {
+function createꓽgroup(options: Partial<WithId & Pick<SVGGroupElement, 'attributes'>> = {}): Immutable<SVGGroupElement> {
 	return {
 		...(options.id && { id: options.id }),
+		attributes: {},
 		content: [],
 	}
 }
@@ -134,12 +135,75 @@ function addꓽcontentꘌcontour(svg: Immutable<SVG>, border_width?: number): Im
 	const { width, height } = getꓽviewbox__dimensions(svg)
 	border_width = border_width || Math.min(width, height) / 100
 
-	const stroke_width = border_width * 2 // half of it will be out of the viewBox
+	const stroke_width = border_width * 2
 
 	// inkscape doesn't recognize `fill:transparent`
 	return addꓽcontent(svg, `
 <rect width="${width}" height="${height}" style="fill:none; stroke-width:${stroke_width}; stroke:black" />
 	`)
+}
+
+function addꓽcontentꘌmire(svg: Immutable<SVG>, border_width?: number): Immutable<SVG> {
+	const [ xmin, ymin, width, height] = svg.viewBox
+	const stroke_width = border_width || Math.min(width, height) / 100
+
+	let layer = createꓽgroup({
+		id: 'mire',
+		attributes: {
+			'stroke': 'blue',
+			'stroke-linecap': 'round',
+		}
+	})
+
+	let content = `
+<!-- X -->
+<line x1="${xmin}" y1="${ymin}" x2="${xmin+width}" y2="${ymin+height}" style="stroke-width:${stroke_width};" />
+<line x1="${xmin}" y1="${ymin+height}" x2="${xmin+width}" y2="${ymin}" style="stroke-width:${stroke_width};" />
+
+<!-- # -->
+<line x1="${xmin + width * 1./3}" y1="${ymin}"        x2="${xmin + width * 1./3}" y2="${ymin+height}" style="stroke-width:${stroke_width / 2.};" />
+<line x1="${xmin + width * 2./3}" y1="${ymin+height}" x2="${xmin + width * 2./3}" y2="${ymin}"        style="stroke-width:${stroke_width / 2.}; stroke:${stroke};" />
+<line x1="${xmin}" y1="${ymin + width * 1./3}" x2="${xmin+width}" y2="${ymin + width * 1./3}" style="stroke-width:${stroke_width}; stroke:${stroke};" />
+<line x1="${xmin}" y1="${ymin + width * 2./3}" x2="${xmin+width}" y2="${ymin + width * 2./3}" style="stroke-width:${stroke_width}; stroke:${stroke};" />
+
+<!-- ᄆ -->
+<rect width="${width}" height="${height}" style="stroke-width:${stroke_width * 2 /* half of it will be out of the viewBox */}; stroke:${stroke}; fill:none;" />
+
+<!-- gradations -->
+	`
+
+	function addHorzGrad(spacing: number): SVGGroupElement {
+		let stroke_width = spacing / 10
+		let group = createꓽgroup({
+			attributes: {
+				'stroke-width': String(stroke_width),
+			}
+		})
+		let content = ''
+		let xmid = xmin + width / 2.
+		for (let i = 0; i <= width / 100 / 2; i++) {
+			content += `
+<line x1="${xmid + i * 100}" y1="${ymin}"          x2="${xmid + i * 100}" y2="${ymin + 100}"          />
+<line x1="${xmid + i * 100}" y1="${ymin + height}" x2="${xmid + i * 100}" y2="${ymin + height - 100}" />
+<line x1="${xmid - i * 100}" y1="${ymin}"          x2="${xmid - i * 100}" y2="${ymin + 100}"          />
+<line x1="${xmid - i * 100}" y1="${ymin + height}" x2="${xmid - i * 100}" y2="${ymin + height - 100}" />
+		`
+		}
+		group = addꓽcontentⵧto_group(group, content)
+		layer = addꓽcontentⵧto_group(layer, group)
+	}
+	addHorzGrad(100)
+
+	/*
+	for (let i = 1; i <= width / 1000; i++) {
+		content += `
+<line x1="${xmin + i * 1000}" y1="${ymin}"        x2="${xmin + i * 1000}" y2="${ymin+1000 * 0.5}"          style="stroke-width:${100 * 0.5}; stroke:${stroke};" />
+<line x1="${xmin + i * 1000}" y1="${ymin+height}" x2="${xmin + i * 1000}" y2="${ymin+height - 1000 * 0.5}" style="stroke-width:${100 * 0.5}; stroke:${stroke};" />
+		`
+	}*/
+
+	layer = addꓽcontentⵧto_group(layer, content)
+	return addꓽlayer(svg, layer)
 }
 
 function decorate_for_editors(svg: Immutable<SVG>): Immutable<SVG> {
@@ -182,7 +246,6 @@ inkscape:deskcolor="#d1d1d1"
 		}
 	}
 }
-
 
 /////////////////////////////////////////////////
 
@@ -232,6 +295,7 @@ export {
 	addꓽlayer,
 	updateꓽlayer,
 	addꓽcontentꘌcontour,
+	addꓽcontentꘌmire,
 	decorate_for_editors,
 
 	setꓽdimensions_ǃnot_recommended,

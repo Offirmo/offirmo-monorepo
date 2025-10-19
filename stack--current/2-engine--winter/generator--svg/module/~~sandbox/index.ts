@@ -2,7 +2,7 @@ import * as SVGLib from '@offirmo-private/generator--svg'
 
 let $svg = SVGLib.createꓽempty()
 $svg = SVGLib.setꓽviewBox($svg, [ 0, 0, 5000, 5000])
-$svg = SVGLib.addꓽcontentꘌcontour($svg)
+$svg = SVGLib.addꓽcontentꘌmire($svg)
 
 //let $layer = SVGLib.createꓽgroup()
 //$svg = SVGLib.addꓽlayer($svg, $layer)
@@ -46,6 +46,7 @@ await fs.writeFile(path.join(__dirname, 'index.svg'), svgⵧformatted‿str)
 /////////////////////////////////////////////////
 // render to png
 import { Resvg } from '@resvg/resvg-js'
+import { addꓽcontentꘌmire } from '@offirmo-private/generator--svg'
 
 const resvg__opts = {
 	font: {

@@ -411,7 +411,9 @@ Solana -- vision -- “everything can fit in one computer”
 solana = better Ethereum? https://solana.com/learn/what-is-solana
 Solana https://medium.com/solana-labs
 Solana network
+solution -- "the only nationally chartered bank built to enable developers and builders to create new financial products" https://column.com/
 solution -- Geth (Go Ethereum) = an open source blockchain protocol implementing the standard Ethereum specification plus other useful features such as a pluggable consensus engine. Geth is among the most widely used implementations of Ethereum nodes. It supports both the standard DAG based Proof-of-Work consensus and Proof-of-Authority (PoA) consensus with its implementation called Clique https://github.com/ethereum/go-ethereum
+solution -- https://www.moderntreasury.com/
 solution -- typescript -- https://vercel.com/blog/ai-sdk-5
 solutions -- Amazon Managed Blockchain (AMB) = https://aws.amazon.com/managed-blockchain/
 solutions -- Cloudflare -- Ethereum gateway https://developers.cloudflare.com/web3/ethereum-gateway/
