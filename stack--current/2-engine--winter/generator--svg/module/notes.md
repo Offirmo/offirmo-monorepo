@@ -8,3 +8,6 @@ TODO some prettify? (separate entry point? isomorphic lib)
 TODO 1D advanced manipulation svgjson
 
 https://svg.wtf/
+
+
+TODO use an xml builder? https://github.com/oozcitak/xmlbuilder2

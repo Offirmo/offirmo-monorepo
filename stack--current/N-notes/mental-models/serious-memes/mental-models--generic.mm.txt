@@ -729,6 +729,7 @@ legibility = We are blind to what we cannot measure. Not everything that counts 
 Lencioni model of team dysfunction https://www.linkedin.com/posts/addyosmani_softwareengineering-productivity-leadership-activity-7000540911050907648-vxzN
 lend-lease https://en.wikipedia.org/wiki/Lend-Lease
 less is more
+Let's roll -- Todd Beamer
 Lev Landau classification of physicists -- league 0 = super league
 Lev Landau classification of physicists -- league 1 = △ extremely original, brilliant and independent + great deal of energy and care = most productive and influential
 Lev Landau classification of physicists -- league 2 = ೱ full of energy but not very original, dislike intellectual challenges, devotion to the field is somehow greater than their ability
@@ -1096,6 +1097,7 @@ relationships -- how to Avoid Falling in Love with a Jerk: The Foolproof Way to 
 relationships -- love at first sight = a “fantasy” that can clash with the reality of day-to-day life
 relationships -- regrets -- Madame Bovary
 rent seeking https://en.wikipedia.org/wiki/Rent-seeking
+reputation = "a social game where every introduction and transaction matters"
 resentment = Resentment, born of weakness, harms no one more than the weak person himself (Nietzsche
 respect
 rest and vest https://news.ycombinator.com/item?id=14943146
@@ -1319,6 +1321,7 @@ trust -- is earned
 trust -- principles -- Reuters =  integrity, independence, and freedom from bias https://www.thomsonreuters.com/en/about-us/trust-principles
 trust -- takes years to earn but seconds to lose / Trust is built slowly, and lost quickly
 trust -- trust, but verify
+trust -- trustworthy -- Linus Torvald = a lot about not surprising people "the fact that people know my opinions and where I stand on things. While they may not necessarily like or agree with them all, at least they can trust me to be reliable" https://www.cio.com/article/276384/open-source-tools-five-things-linus-torvalds-has-learned-about-managing-software-projects.html
 truth -- circular reporting https://en.wikipedia.org/wiki/Circular_reporting
 truth -- false documents -- hoaxes https://en.wikipedia.org/wiki/False_document#Hoaxes
 truth -- fiction is often the best fact -- gonzo https://en.wikipedia.org/wiki/Gonzo_journalism

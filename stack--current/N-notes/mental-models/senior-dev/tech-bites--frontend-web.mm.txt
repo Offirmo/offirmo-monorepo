@@ -202,6 +202,7 @@ dialog
 DNS = distributed database for IP address translation
 Document = The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. It provides functionality globally to the document, like how to obtain the page's URL and create new elements in the document.
 DOM -- CSSOM "CSS Object Model" = part of the DOM
+DOM -- fake = JSDOM, HappyDOM https://github.com/capricorn86/happy-dom/wiki/
 DOM -- Nodes -- 01 Elements = like <p> or <div>.
 DOM -- Nodes -- 02 Attributes -- data-* https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*
 DOM -- Nodes -- 02 Attributes -- global https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
@@ -371,7 +372,7 @@ React
 React -- hooks
 React -- RSC "React server components" https://www.joshwcomeau.com/react/server-components/
 React -- trigger, render, commit https://react.dev/learn/render-and-commit
-React -- v19 https://vercel.com/blog/whats-new-in-react-19
+React -- v19 = https://vercel.com/blog/whats-new-in-react-19
 realtime -- patterns -- poke/pull
 realtime -- patterns -- push biz events
 realtime -- patterns -- push state

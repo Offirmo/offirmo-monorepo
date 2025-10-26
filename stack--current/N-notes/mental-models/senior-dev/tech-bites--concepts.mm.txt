@@ -286,6 +286,7 @@ data format -- interchange -- JSON -- schema = https://json.schemastore.org/
 data format -- interchange -- JSON https://www.json.org/
 data format -- interchange -- JSON mini = some sort of protobuf-derived space-saving representation (single letters for keys)
 data format -- interchange -- JSON5 https://json5.org/ https://github.com/json5/json5
+data format -- interchange -- JS https://github.com/yahoo/serialize-javascript
 data format -- interoperability, fungibility, hackability, debuggability, anti-fragility
 data format -- linting = ex. for JSON compatibility, for backward/forward compatibility...
 data format -- one goal of defining the type once then generating code in various languages (hard!)

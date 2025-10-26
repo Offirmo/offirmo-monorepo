@@ -11,6 +11,7 @@
 2017 bitfinex "packaged loss" https://bitfinexed.medium.com/bitfinex-never-repaid-their-tokens-bitfinex-started-a-ponzi-scheme-86a9291add29
 2017 CryptoPunks introduced for free https://cryptopunks.app/cryptopunks/details/7804
 2017-09 China bans crypto
+2018-07 Augur "assasination market" https://www.newsweek.com/welcome-augur-cryptocurrency-death-market-where-you-can-bet-donald-trump-1043571
 2019-04 Bankman-Fried founds the FTX cryptocurrency derivatives exchange
 2020 "DeFi summer" = ???
 2021 NFT "EVERYDAYS: THE FIRST 5000 DAYS" sold at Christies for MM https://onlineonly.christies.com/s/beeple-first-5000-days/beeple-b-1981-1/112924
@@ -36,7 +37,10 @@
 2025-08-08 Trump signs order to allow crypto and real estate investments in retirement plans (despite being risky) https://www.theguardian.com/us-news/2025/aug/07/trump-executive-order-cryptocurrency
 2025-08-13 Google briefly bans wallets webextensions https://blocknews.com/google-bans-crypto-wallets-the-u-s-and-eu-here-is-why/ https://blocknews.com/google-drops-plans-to-ban-non-custodial-crypto-wallets-here-is-the-full-story/
 2025-08-21 Kanye West launches his coin https://crypto.news/kanye-west-launches-yzy-memecoin-on-solana-2025/
+2025-10-10 crypto crash https://caladan.xyz/crypto-black-friday/
+2025-10-11 huge liquidation https://blockworks.co/news/crypto-liquidations-drive-historic-market-turbulence
 51% attack = attack where a group gains control of the majority of nodes = allow them to defraud the blockchain by reversing transactions and double spending https://ethereum.org/en/glossary/#51%-attack
+? https://intel.arkm.com/
 [ ] +++ https://support.ledger.com/topic?topic=Crypto_Concepts https://support.ledger.com/topic?topic=Ledger_Live
 [ ] criticism https://bitfinexed.medium.com/
 [ ] digital security -- solutions -- https://www.privacyguides.org/
@@ -45,12 +49,15 @@
 [ ] great videos on DeFi https://www.youtube.com/@Finematics
 [ ] https://blog.labeleven.dev
 [ ] https://brave.com/web3/
+[ ] https://info.etherscan.com/
 [ ] https://vitalik.eth.limo/
 [ ] https://www.kaleido.io/blog-categories/product-technology
+address -- evm = the right-most 160 bits of a Keccak hash of an ECDSA public key https://info.etherscan.com/what-is-an-ethereum-address/
 address gap limit = chains that use address derivation recommend a limit of derived checks https://support.ledger.com/article/360010892360-zd
 Airdrop = gift of assets, usually as an incentive to use a new thing
 airdrops -- double claiming
 altcoin = anything not BitCoin (or maybe Ether, depending on who you ask)
+antifragility = ?? https://www.reddit.com/r/ethereum/comments/7beq39/ethereum_and_antifragility/
 Aptos https://aptosfoundation.org/whitepaper
 Arbitrum
 armed heist = extorting crypto ex. https://x.com/beausecurity/status/1972333331049312437
@@ -128,6 +135,7 @@ cross-chain
 cross-chain -- chain abstraction
 cross-chain -- swaps = swidge??
 crypto cash machine
+crypto crashes (at the bottom) https://caladan.xyz/crypto-black-friday/
 crypto image problem -- crypto-adjacent = pejorative for "borderline crypto" = "borderline scam/shit"
 crypto image problem = "growing perception that most of the industry’s profits accrue to a small number of insiders at the expense of its retail investors.  (...)  especially unfortunate because a big part of crypto’s original appeal was that bitcoin was fair-launched and equally accessible to all.  " https://mail.blockworks.com/p/when-100m-isn-t-enough
 crypto signals = advice to invest https://www.tokenmetrics.com/blog/crypto-signals
@@ -249,6 +257,8 @@ ICO -- mills = help ICO for a % then immediately sell
 illegal -- exchanges -- unlawfully facilitating the trading of several cryptocurrency tokens that SEC leadership (...) believed should have been registered as securities
 immutability
 inflationary rewards = ??
+InfoFi "Information Finance" -- Today’s dominant approach tracks social sentiment. Leading platforms scan Crypto Twitter for mentions, measure engagement rates, and rank projects by mindshare. These tools excel at capturing conversation volume but miss a fundamental truth: talk is cheap, especially in crypto https://caladan.xyz/layer3/
+InfoFi -- challenge, esp farmers and bullposters https://caladan.xyz/layer3/
 intermediation
 internet censorship -- 2025 Russia https://news.ycombinator.com/item?id=44392221
 InterPlanetary File System (IPFS) = a decentralized and distributed file storage system that provides a more efficient and resilient way to store and access content on Web 3.0. It gives a unique cryptographic hash (content-based address) to every file. It uses a peer-to-peer network, where each IPFS node acts as a client and server. Nodes cooperate to store, retrieve, and distribute content across the web, eliminating the need for centralized servers. https://docs.ipfs.tech/concepts/
@@ -263,6 +273,7 @@ legal definition -- AU = A type of currency that only exists in digital rather t
 licenses -- MiCA license in the European Union
 licenses -- Money Service Business (MSB) license in the U.S
 Liquid staking derivatives (LSD) https://notes.ethereum.org/@djrtwo/risks-of-lsd
+liquidity -- incentives = attracting liquidity and retaining it are fundamentally different challenges https://caladan.xyz/report-the-ten-commandments-of-liquidity-incentives/
 liquidity drive
 liquidity mining = ??
 list https://en.wikipedia.org/wiki/List_of_cryptocurrencies
@@ -354,6 +365,7 @@ open source -- benefits -- reducing the risk of proprietary lock-in
 open standards -- striving for interoperability. If you want to introduce a new feature that is not well-served by existing standards, write a new proposal in collaboration with others. Applications can be rated by which proposals they are compatible with.
 Optimism
 passkey
+perps -- Auto-Deleveraging (ADL) = When massive long liquidations occur simultaneously without new willing counterparties, the system closes profitable positions to maintain system solvency, ranking positions by... https://caladan.xyz/crypto-black-friday/
 perps -- hyperliquid
 perps = perpetual futures
 physical cryptocurrency -- woodchain = more of a mind experiment https://woodcoincrypto.com/
@@ -425,6 +437,8 @@ some goals = immune to inflationary abuse, resistant to seizure, and adaptable t
 Sonic
 spirit -- "Ignoring sensible advice is what we do in crypto"
 spot
+stablecoin -- peg -- depeg = can't withstand a bank run. https://www.theblock.co/post/261727/large-cap-stablecoins-have-depegged-609-times-this-year-moodys-analytics-says
+stablecoin -- peg https://privatebank.jpmorgan.com/apac/en/insights/markets-and-investing/demystifying-stablecoins
 staking -- active / passive / pooled / delegated / active / liquid https://www.britannica.com/money/what-is-crypto-staking
 staking -- chain-agnostic
 staking -- types -- solo / non-custodial / custodial / liquid https://www.sec.gov/newsroom/speeches-statements/corpfin-certain-liquid-staking-activities-080525
@@ -433,7 +447,7 @@ swidge -- provider
 swidge = "swap and bridge" https://support.infinex.xyz/en/articles/10336734-how-to-swidge https://terablock.com/swidge
 Sybil attack = actor pretending to be a lot of actors to control the chain. Resistance to this type of attack is essential for a decentralized blockchain and enables miners and validators to be rewarded equally based on resources put in. Proof-of-work and proof-of-stake protect against this. https://ethereum.org/en/developers/docs/consensus-mechanisms/#sybil-chain
 Sybil resistance = measures how a protocol fares against a Sybil attack.
-Synthetix
+Synthetix = ??
 talent -- network https://careers.near.org/talent-network
 talent pools -- New-York = #1 many finance turned to crypto
 talent pools -- San Francisco = #3, focused on AI / robotics
@@ -476,6 +490,7 @@ transaction processing -- stages -- transaction dissemination
 transaction processing -- stages = needed, can happen concurrently on some runtimes https://aptosfoundation.org/whitepaper
 transaction simulation https://support.rabby.io/hc/en-us/articles/11495560464143-Why-do-I-see-Simulation-Failed-error
 transactions per second -- 2024 https://a16zcrypto.com/posts/article/state-of-crypto-report-2024/#section--5
+trust -- digital = reflexion https://consensys.io/ethereum/trust
 trust = needed to avoid scams, see CoinGecko trust score
 Unichain
 unspent transaction output (UTxO) = a certain amount of cryptocurrency that has been authorized by a sender and is available to be spent by a recipient https://en.wikipedia.org/wiki/Unspent_transaction_output
@@ -554,3 +569,4 @@ who's who -- Sam Bankman-Fried https://en.wikipedia.org/wiki/Sam_Bankman-Fried
 who's who -- Satoshi Nakamoto = https://en.wikipedia.org/wiki/Satoshi_Nakamoto
 who's who -- Vitalik Buterin = https://en.wikipedia.org/wiki/Vitalik_Buterin
 WLF "World Liberty Financial" = "Inspired by Trump" https://worldlibertyfinancial.com/
+zCash https://z.cash/learn/

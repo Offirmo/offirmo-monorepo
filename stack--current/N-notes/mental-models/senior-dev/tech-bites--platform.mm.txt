@@ -1,5 +1,8 @@
 "the compelling feature was speed" https://blog.janestreet.com/how-we-accidentally-built-a-better-build-system-for-ocaml-index/
+[ ] hack some ~generic ratcheting
 [ ] https://martinfowler.com/tags/continuous%20delivery.html
+[ ] learn auto change
+[ ] learn custom eslint'ing
 alpine images = not such a good idea https://tinplavec.medium.com/gitlab-ci-cd-best-practices-i-recommend-after-2-years-of-experience-dfc0e349e4d6
 build chain -- Because you interact with it daily, above all it has to be fast – but it also has to be flexible. https://blog.janestreet.com/how-we-accidentally-built-a-better-build-system-for-ocaml-index/
 build system -- bazel
@@ -75,6 +78,3 @@ undesirable -- Maintenance Costs = High due to complex and difficult-to-maintain
 undesirable -- Security Risks = Higher vulnerability to exploits due to coding errors and lack of security best practices https://blog.mergify.com/improve-code-quality/
 undesirable -- Team Morale = Lower due to frustration with constant bug fixing and technical debt https://blog.mergify.com/improve-code-quality/
 workflow -- vulnerable = real attack https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c
-[ ] learn custom eslint'ing
-[ ] learn auto change
-[ ] hack some ~generic ratcheting

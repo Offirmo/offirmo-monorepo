@@ -123,3 +123,4 @@ TODO https://opengraphgenerator.org/
 TODO https://colinkeany.github.io/brandgrab/
 TODO https://llmstxt.org https://github.com/harlan-zw/mdream
 TODO https://www.debugbear.com/blog/optimize-viewport-for-mobile
+TODO /.well-known/appspecific/com.chrome.devtools.json

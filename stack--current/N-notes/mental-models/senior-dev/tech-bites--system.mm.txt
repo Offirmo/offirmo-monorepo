@@ -4,6 +4,7 @@
 1.1.1.1 https://one.one.one.one/dns/
 12 factors = see [architecture -- 12 factors]
 2025-07 moving to cloud https://stackoverflow.blog/2025/07/16/the-great-unracking-saying-goodbye-to-the-servers-at-our-physical-datacenter/
+2025-10 interesting perf deep dive https://blog.cloudflare.com/unpacking-cloudflare-workers-cpu-performance-benchmarks/
 3 nines / 4 nines / 5 nines -- 3 nines == 99.9% uptime 5 nines == 99.999% uptime, this means your service is down less than 6 min in a year!
 [ ] +++ https://github.com/donnemartin/system-design-primer
 [ ] +++ https://lethain.com/distributed-systems-vocabulary/
@@ -140,6 +141,7 @@ BASE -- 2. S = Soft state = state of the system may change over time, even witho
 BASE -- 3. E = Eventual consistency = the system will become consistent over time, given that the system doesn't receive input during that time.
 BASE = properties of certain databases, usually NoSQL databases. A BASE system gives up on consistency in CAP. opposite of ACID
 bastion host = special-purpose computer on a network specifically designed and configured to withstand attacks = usually security hardened public host within a security zone https://en.wikipedia.org/wiki/Bastion_host
+benchmarks https://planetscale.com/benchmarks
 blue/green deployment
 cache
 cache -- &eviction = Time-Based Eviction, Count-Based Eviction, Query Result Eviction, Cache Region Clearing
@@ -232,6 +234,11 @@ data store -- object store -- Cloudflare R2
 data store -- object store = flat structure of objects + uid + metadata
 data store -- sequential consistency https://jepsen.io/consistency/models/sequential
 data store -- tombstone = a deleted record in a replica of a distributed data store. The tombstone is necessary, as distributed data stores use eventual consistency, where only a subset of nodes where the data is stored must respond before an operation is considered to be successful.  https://en.wikipedia.org/wiki/Tombstone_(data_store)
+DB -- benchmarking -- How does the database perform under a "typical" OLTP load? (TPS, QPS, etc)
+DB -- benchmarking -- How does the database perform under high read / write pressure? (IOPS, caching)
+DB -- benchmarking -- How much does it cost to achieve some bar of performance relative to other options? (price:performance ratio)
+DB -- benchmarking -- How quickly can I reach my database? (latency)
+DB -- benchmarking https://planetscale.com/benchmarks
 DB -- multiversion concurrency control (MVCC) = a popular database mechanism for tracking changes in a non-blocking fashion, where for any key we can keep multiple versions of its values for different points in time https://en.wikipedia.org/wiki/Multiversion_concurrency_control
 DDOS (incl. self)
 deploy -- stages -- 1 build = converts a code repo into an executable bundle known as a build. Using a version of the code at a commit specified by the deployment process, the build stage fetches vendors dependencies and compiles binaries and assets.
@@ -624,6 +631,15 @@ user management -- Domain Enabled Signup
 user management -- request, invitation
 user management = +++ https://workos.com/blog/the-developers-guide-to-user-management/
 user management = broader process of managing user accounts, profiles, and access privileges. It determines what a user is authorized to do or access within the system, after they have been authenticated
+UUID "Universally Unique Identifier" = label used to uniquely identify a resource among all other resources of that type https://developer.mozilla.org/en-US/docs/Glossary/UUID
+UUID -- challenges -- perf, security, privacy
+UUID -- db = supported as type, ex. MySQL
+UUID -- snowflakes = twitter https://en.wikipedia.org/wiki/Snowflake_ID
+UUID -- v4 -- challenges -- perf = UUIDv4's completely random structure significantly impacts performance by forcing random insertions into B-tree indexes, leading to index page splits and reduced cache efficiency. https://aiven.io/blog/exploring-postgresql-18-new-uuidv7-support
+UUID -- v4 = completely random
+UUID -- v4 https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID
+UUID -- v7 -- challenges -- privacy = generally discouraged for security when the primary key is exposed to end users in external-facing applications or APIs. The main issue is that UUIDv7 incorporates a 48-bit Unix timestamp as its most significant part, meaning the identifier itself leaks the record's creation time. This leakage is primarily a privacy concern https://aiven.io/blog/exploring-postgresql-18-new-uuidv7-support
+UUID -- v7 = 128-bit structure, incorporates a timestamp as the most significant part, allowing for natural sortability based on the creation time https://aiven.io/blog/exploring-postgresql-18-new-uuidv7-support
 VPN
 WebAssembly (Wasm) is a fast, light alternative to Linux and Windows containers
 WebAssembly -- docker https://docs.docker.com/desktop/features/wasm/

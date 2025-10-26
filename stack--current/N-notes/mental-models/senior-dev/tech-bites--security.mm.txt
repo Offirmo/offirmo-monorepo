@@ -6,6 +6,7 @@
 [ ] https://www.cisa.gov/spotlight
 [ ] https://www.reddit.com/r/privacy/ https://www.reddit.com/r/PrivacyGuides/
 account takeover (ATO) https://www.kasada.io/use-cases/account-takeover/
+attacks -- 0 click& = exploit security flaws in software that handles incoming data, like messaging apps, email clients, or web browsers https://medium.com/@davidsehyeonbaek/zero-click-attacks-how-your-device-can-be-infected-with-spyware-without-even-opening-a-message-1e1699850ecc
 attacks -- business email compromise (BEC)
 attacks -- credential stuffing https://owasp.org/www-community/attacks/Credential_stuffing
 attacks -- process over cryptographic strength "Though Enigma had some cryptographic weaknesses, in practice it was German procedural flaws, operator mistakes, failure to systematically introduce changes in encipherment procedures, and Allied capture of key tables and hardware that, during the war, enabled Allied cryptologists to succeed." https://history.stackexchange.com/a/79374
@@ -13,7 +14,6 @@ attacks -- supply chain -- npm https://blog.vlt.sh/blog/the-massive-hole-in-the-
 attacks -- SVG https://arstechnica.com/security/2025/08/adult-sites-use-malicious-svg-files-to-rack-up-likes-on-facebook/
 authentication
 authorisation
-attacks -- 0 click& = exploit security flaws in software that handles incoming data, like messaging apps, email clients, or web browsers https://medium.com/@davidsehyeonbaek/zero-click-attacks-how-your-device-can-be-infected-with-spyware-without-even-opening-a-message-1e1699850ecc
 best practices https://www.cisa.gov/topics/cybersecurity-best-practices
 browser security -- PrivacyTests https://privacytests.org/ (close to Brave)
 browser security https://hackread.com/why-browser-security-matters-more-than-you-think/

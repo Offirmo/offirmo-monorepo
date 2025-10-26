@@ -1,3 +1,4 @@
+2023 skibidi toilet https://speedrun.substack.com/p/meet-the-obsessive-creator-behind-skibidi-toilet
 castle
 content authenticity initiative https://contentauthenticity.org/
 content credentials -- C2PA "Coalition for Content Provenance and Authenticity" https://c2pa.org/
@@ -19,3 +20,5 @@ NFTs -- studios -- https://magiceden.io/mint-terminal/create
 NFTs -- studios -- https://opensea.io/studio/create/collection
 skibidi toilet https://speedrun.substack.com/p/meet-the-obsessive-creator-behind-skibidi-toilet
 social tokens = digital assets issued by creators to monetize their content and engage with their fan base https://www.coinbase.com/en-au/learn/crypto-basics/what-are-social-tokens-and-how-do-they-redefine-value-in-the-creator-economy
+solutions -- https://github.com/humanwhocodes/crosspost
+solutions -- https://utteranc.es/

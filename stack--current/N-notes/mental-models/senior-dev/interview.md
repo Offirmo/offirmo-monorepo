@@ -36,6 +36,13 @@ Interview questions:
 - Where is the team?
 - Finance? Zone?
 
+https://medium.com/@kanishks772/i-interviewed-20-engineers-heres-why-most-can-t-code-b647d23f8c89
+Problem 1 (Intern/SDE-1):
+"Design a rate limiter that allows 100 requests per user per hour"
+
+Problem 2 (SDE-2):
+"Implement a cache with TTL that can handle 10k ops/sec"
+
 
 leetcode prep https://blog.algomaster.io/p/how-to-start-leetcode-in-2025
 
