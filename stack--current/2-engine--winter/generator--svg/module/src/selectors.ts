@@ -4,7 +4,7 @@ import type { Dimensions2D } from '@offirmo-private/ts-types-web'
 
 import { EOL, TAB } from './consts.ts'
 import type { SVG, SVGGroupElement, Svg‿str, WithId } from './types.ts'
-import { isꓽSVG } from './types-guards.ts'
+import { isꓽSVG, isꓽSVGGroupElement } from './types-guards.ts'
 
 /////////////////////////////////////////////////
 
@@ -30,25 +30,34 @@ function getꓽsvg‿strⵧgroup(svg_group: Immutable<SVGGroupElement>, options:
 
 	const svg__atributes‿str = [
 		svg_group.id ? `id='${svg_group.id}'` : '',
-		// TODO
-	].filter(a => !!a.trim()).join(wantsꓽcompact ? ' ' : `${EOL}${TAB}`)
+		...Object.entries(svg_group.attributes).map(([k, v]) => `${k}="${v}"`),
+	].filter(a => !!a.trim()).join(wantsꓽcompact ? ' ' : `${EOL}${TAB}`).trim()
 
-	return [
-		drop_g_if_possible ? '' : `<g  ${svg__atributes‿str}>`,
-
+	const parts = [
 		...(svg_group.content.map((x): string => {
 			if (typeof x === 'string') return x
 
-			if (isꓽSVG(x)) { // TODO type guard
+			if (isꓽSVG(x)) {
 				// sub-svg
 				return getꓽsvg‿str(x, options)
 			}
 
-			throw new Error(`Not implemented!`)
-		})),
+			if (isꓽSVGGroupElement(x)) {
+				return getꓽsvg‿strⵧgroup(x, options)
+			}
 
-		drop_g_if_possible ? '' : `</g>`
-	].map(x => x.trim()).filter(x => !!x).join(wantsꓽcompact ? '' : `${EOL}${TAB}`).trim()
+			throw new Error(`Content unrecognized!`)
+		})),
+	].map(x => x.trim()).filter(x => !!x)
+
+	if (!drop_g_if_possible || svg__atributes‿str) {
+		parts.unshift(`<g ${svg__atributes‿str}>`)
+		parts.push(`</g>`)
+	}
+
+	return parts
+		.join(wantsꓽcompact ? '' : `${EOL}${TAB}`)
+		.trim()
 }
 
 // Note that we use single quotes for embeddability in head / CSS

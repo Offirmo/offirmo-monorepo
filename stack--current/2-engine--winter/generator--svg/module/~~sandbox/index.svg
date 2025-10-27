@@ -1,856 +1,731 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   viewBox="0 0 5000 5000"
-   version="1.1"
-   id="svg116"
-   sodipodi:docname="index.svg"
-   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs116" />
-  <sodipodi:namedview
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:pagecheckerboard="true"
-     inkscape:pageopacity="0.0"
-     inkscape:showpageshadow="true"
-     bordercolor="#ff0000"
-     borderopacity="1"
-     id="namedview1"
-     pagecolor="#ffffff"
-     inkscape:zoom="0.1696"
-     inkscape:cx="2497.0519"
-     inkscape:cy="2500"
-     inkscape:window-width="1608"
-     inkscape:window-height="1367"
-     inkscape:window-x="2240"
-     inkscape:window-y="25"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg116" />
-  <g
-     id="mire">
-    <!-- X -->
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="0"
-       x2="5000"
-       y1="0"
-       y2="5000"
-       id="line1" />
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="0"
-       x2="5000"
-       y1="5000"
-       y2="0"
-       id="line2" />
-    <!-- # -->
-    <line
-       style="stroke-width:25; stroke:black;"
-       x1="1666.6666666666667"
-       x2="1666.6666666666667"
-       y1="0"
-       y2="5000"
-       id="line3" />
-    <line
-       style="stroke-width:25; stroke:black;"
-       x1="3333.3333333333335"
-       x2="3333.3333333333335"
-       y1="5000"
-       y2="0"
-       id="line4" />
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="0"
-       x2="5000"
-       y1="1666.6666666666667"
-       y2="1666.6666666666667"
-       id="line5" />
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="0"
-       x2="5000"
-       y1="3333.3333333333335"
-       y2="3333.3333333333335"
-       id="line6" />
-    <!-- ᄆ -->
-    <rect
-       height="5000"
-       style="stroke-width:100; stroke:black; fill:none;"
-       width="5000"
-       id="rect6" />
-    <!-- gradation -->
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="100"
-       x2="100"
-       y1="0"
-       y2="100"
-       id="line7" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="100"
-       x2="100"
-       y1="5000"
-       y2="4900"
-       id="line8" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="200"
-       x2="200"
-       y1="0"
-       y2="100"
-       id="line9" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="200"
-       x2="200"
-       y1="5000"
-       y2="4900"
-       id="line10" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="300"
-       x2="300"
-       y1="0"
-       y2="100"
-       id="line11" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="300"
-       x2="300"
-       y1="5000"
-       y2="4900"
-       id="line12" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="400"
-       x2="400"
-       y1="0"
-       y2="100"
-       id="line13" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="400"
-       x2="400"
-       y1="5000"
-       y2="4900"
-       id="line14" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="500"
-       x2="500"
-       y1="0"
-       y2="100"
-       id="line15" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="500"
-       x2="500"
-       y1="5000"
-       y2="4900"
-       id="line16" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="600"
-       x2="600"
-       y1="0"
-       y2="100"
-       id="line17" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="600"
-       x2="600"
-       y1="5000"
-       y2="4900"
-       id="line18" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="700"
-       x2="700"
-       y1="0"
-       y2="100"
-       id="line19" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="700"
-       x2="700"
-       y1="5000"
-       y2="4900"
-       id="line20" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="800"
-       x2="800"
-       y1="0"
-       y2="100"
-       id="line21" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="800"
-       x2="800"
-       y1="5000"
-       y2="4900"
-       id="line22" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="900"
-       x2="900"
-       y1="0"
-       y2="100"
-       id="line23" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="900"
-       x2="900"
-       y1="5000"
-       y2="4900"
-       id="line24" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1000"
-       x2="1000"
-       y1="0"
-       y2="100"
-       id="line25" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1000"
-       x2="1000"
-       y1="5000"
-       y2="4900"
-       id="line26" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1100"
-       x2="1100"
-       y1="0"
-       y2="100"
-       id="line27" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1100"
-       x2="1100"
-       y1="5000"
-       y2="4900"
-       id="line28" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1200"
-       x2="1200"
-       y1="0"
-       y2="100"
-       id="line29" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1200"
-       x2="1200"
-       y1="5000"
-       y2="4900"
-       id="line30" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1300"
-       x2="1300"
-       y1="0"
-       y2="100"
-       id="line31" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1300"
-       x2="1300"
-       y1="5000"
-       y2="4900"
-       id="line32" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1400"
-       x2="1400"
-       y1="0"
-       y2="100"
-       id="line33" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1400"
-       x2="1400"
-       y1="5000"
-       y2="4900"
-       id="line34" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1500"
-       x2="1500"
-       y1="0"
-       y2="100"
-       id="line35" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1500"
-       x2="1500"
-       y1="5000"
-       y2="4900"
-       id="line36" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1600"
-       x2="1600"
-       y1="0"
-       y2="100"
-       id="line37" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1600"
-       x2="1600"
-       y1="5000"
-       y2="4900"
-       id="line38" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1700"
-       x2="1700"
-       y1="0"
-       y2="100"
-       id="line39" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1700"
-       x2="1700"
-       y1="5000"
-       y2="4900"
-       id="line40" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1800"
-       x2="1800"
-       y1="0"
-       y2="100"
-       id="line41" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1800"
-       x2="1800"
-       y1="5000"
-       y2="4900"
-       id="line42" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1900"
-       x2="1900"
-       y1="0"
-       y2="100"
-       id="line43" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="1900"
-       x2="1900"
-       y1="5000"
-       y2="4900"
-       id="line44" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2000"
-       x2="2000"
-       y1="0"
-       y2="100"
-       id="line45" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2000"
-       x2="2000"
-       y1="5000"
-       y2="4900"
-       id="line46" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2100"
-       x2="2100"
-       y1="0"
-       y2="100"
-       id="line47" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2100"
-       x2="2100"
-       y1="5000"
-       y2="4900"
-       id="line48" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2200"
-       x2="2200"
-       y1="0"
-       y2="100"
-       id="line49" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2200"
-       x2="2200"
-       y1="5000"
-       y2="4900"
-       id="line50" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2300"
-       x2="2300"
-       y1="0"
-       y2="100"
-       id="line51" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2300"
-       x2="2300"
-       y1="5000"
-       y2="4900"
-       id="line52" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2400"
-       x2="2400"
-       y1="0"
-       y2="100"
-       id="line53" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2400"
-       x2="2400"
-       y1="5000"
-       y2="4900"
-       id="line54" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2500"
-       x2="2500"
-       y1="0"
-       y2="100"
-       id="line55" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2500"
-       x2="2500"
-       y1="5000"
-       y2="4900"
-       id="line56" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2600"
-       x2="2600"
-       y1="0"
-       y2="100"
-       id="line57" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2600"
-       x2="2600"
-       y1="5000"
-       y2="4900"
-       id="line58" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2700"
-       x2="2700"
-       y1="0"
-       y2="100"
-       id="line59" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2700"
-       x2="2700"
-       y1="5000"
-       y2="4900"
-       id="line60" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2800"
-       x2="2800"
-       y1="0"
-       y2="100"
-       id="line61" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2800"
-       x2="2800"
-       y1="5000"
-       y2="4900"
-       id="line62" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2900"
-       x2="2900"
-       y1="0"
-       y2="100"
-       id="line63" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="2900"
-       x2="2900"
-       y1="5000"
-       y2="4900"
-       id="line64" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3000"
-       x2="3000"
-       y1="0"
-       y2="100"
-       id="line65" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3000"
-       x2="3000"
-       y1="5000"
-       y2="4900"
-       id="line66" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3100"
-       x2="3100"
-       y1="0"
-       y2="100"
-       id="line67" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3100"
-       x2="3100"
-       y1="5000"
-       y2="4900"
-       id="line68" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3200"
-       x2="3200"
-       y1="0"
-       y2="100"
-       id="line69" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3200"
-       x2="3200"
-       y1="5000"
-       y2="4900"
-       id="line70" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3300"
-       x2="3300"
-       y1="0"
-       y2="100"
-       id="line71" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3300"
-       x2="3300"
-       y1="5000"
-       y2="4900"
-       id="line72" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3400"
-       x2="3400"
-       y1="0"
-       y2="100"
-       id="line73" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3400"
-       x2="3400"
-       y1="5000"
-       y2="4900"
-       id="line74" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3500"
-       x2="3500"
-       y1="0"
-       y2="100"
-       id="line75" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3500"
-       x2="3500"
-       y1="5000"
-       y2="4900"
-       id="line76" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3600"
-       x2="3600"
-       y1="0"
-       y2="100"
-       id="line77" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3600"
-       x2="3600"
-       y1="5000"
-       y2="4900"
-       id="line78" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3700"
-       x2="3700"
-       y1="0"
-       y2="100"
-       id="line79" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3700"
-       x2="3700"
-       y1="5000"
-       y2="4900"
-       id="line80" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3800"
-       x2="3800"
-       y1="0"
-       y2="100"
-       id="line81" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3800"
-       x2="3800"
-       y1="5000"
-       y2="4900"
-       id="line82" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3900"
-       x2="3900"
-       y1="0"
-       y2="100"
-       id="line83" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="3900"
-       x2="3900"
-       y1="5000"
-       y2="4900"
-       id="line84" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4000"
-       x2="4000"
-       y1="0"
-       y2="100"
-       id="line85" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4000"
-       x2="4000"
-       y1="5000"
-       y2="4900"
-       id="line86" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4100"
-       x2="4100"
-       y1="0"
-       y2="100"
-       id="line87" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4100"
-       x2="4100"
-       y1="5000"
-       y2="4900"
-       id="line88" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4200"
-       x2="4200"
-       y1="0"
-       y2="100"
-       id="line89" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4200"
-       x2="4200"
-       y1="5000"
-       y2="4900"
-       id="line90" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4300"
-       x2="4300"
-       y1="0"
-       y2="100"
-       id="line91" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4300"
-       x2="4300"
-       y1="5000"
-       y2="4900"
-       id="line92" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4400"
-       x2="4400"
-       y1="0"
-       y2="100"
-       id="line93" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4400"
-       x2="4400"
-       y1="5000"
-       y2="4900"
-       id="line94" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4500"
-       x2="4500"
-       y1="0"
-       y2="100"
-       id="line95" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4500"
-       x2="4500"
-       y1="5000"
-       y2="4900"
-       id="line96" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4600"
-       x2="4600"
-       y1="0"
-       y2="100"
-       id="line97" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4600"
-       x2="4600"
-       y1="5000"
-       y2="4900"
-       id="line98" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4700"
-       x2="4700"
-       y1="0"
-       y2="100"
-       id="line99" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4700"
-       x2="4700"
-       y1="5000"
-       y2="4900"
-       id="line100" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4800"
-       x2="4800"
-       y1="0"
-       y2="100"
-       id="line101" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4800"
-       x2="4800"
-       y1="5000"
-       y2="4900"
-       id="line102" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4900"
-       x2="4900"
-       y1="0"
-       y2="100"
-       id="line103" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="4900"
-       x2="4900"
-       y1="5000"
-       y2="4900"
-       id="line104" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="5000"
-       x2="5000"
-       y1="0"
-       y2="100"
-       id="line105" />
-    <line
-       style="stroke-width:10; stroke:black;"
-       x1="5000"
-       x2="5000"
-       y1="5000"
-       y2="4900"
-       id="line106" />
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="1000"
-       x2="1000"
-       y1="0"
-       y2="500"
-       id="line107" />
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="1000"
-       x2="1000"
-       y1="5000"
-       y2="4500"
-       id="line108" />
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="2000"
-       x2="2000"
-       y1="0"
-       y2="500"
-       id="line109" />
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="2000"
-       x2="2000"
-       y1="5000"
-       y2="4500"
-       id="line110" />
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="3000"
-       x2="3000"
-       y1="0"
-       y2="500"
-       id="line111" />
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="3000"
-       x2="3000"
-       y1="5000"
-       y2="4500"
-       id="line112" />
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="4000"
-       x2="4000"
-       y1="0"
-       y2="500"
-       id="line113" />
-    <line
-       style="stroke-width:50;stroke:black;stroke-linejoin:bevel;stroke-linecap:round;paint-order:stroke markers fill"
-       x1="4000"
-       x2="4000"
-       y1="5000"
-       y2="4500"
-       id="line114" />
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="5000"
-       x2="5000"
-       y1="0"
-       y2="500"
-       id="line115" />
-    <line
-       style="stroke-width:50; stroke:black;"
-       x1="5000"
-       x2="5000"
-       y1="5000"
-       y2="4500"
-       id="line116" />
-  </g>
+	xmlns='http://www.w3.org/2000/svg'
+	xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape'
+	xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd'
+	xmlns:svg='http://www.w3.org/2000/svg'
+	viewBox='0 0 5000 5000'
+>
+	<sodipodi:namedview
+		inkscape:deskcolor="#d1d1d1"
+		inkscape:pagecheckerboard="true"
+		inkscape:pageopacity="0.0"
+		inkscape:showpageshadow="true"
+		bordercolor="#ff0000"
+		borderopacity="1"
+		id="namedview1"
+		pagecolor="#ffffff"
+	/>
+	<g
+		inkscape:groupmode="layer"
+		class="layer"
+		id='mire'
+		stroke="blue"
+		stroke-linecap="round"
+	>
+		<g stroke-width="10">
+			<line
+				x1="2500"
+				x2="2500"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="2500"
+				x2="2500"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="2500"
+				x2="2500"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="2500"
+				x2="2500"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="2600"
+				x2="2600"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="2600"
+				x2="2600"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="2400"
+				x2="2400"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="2400"
+				x2="2400"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="2700"
+				x2="2700"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="2700"
+				x2="2700"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="2300"
+				x2="2300"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="2300"
+				x2="2300"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="2800"
+				x2="2800"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="2800"
+				x2="2800"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="2200"
+				x2="2200"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="2200"
+				x2="2200"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="2900"
+				x2="2900"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="2900"
+				x2="2900"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="2100"
+				x2="2100"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="2100"
+				x2="2100"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="3000"
+				x2="3000"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="3000"
+				x2="3000"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="2000"
+				x2="2000"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="2000"
+				x2="2000"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="3100"
+				x2="3100"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="3100"
+				x2="3100"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="1900"
+				x2="1900"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="1900"
+				x2="1900"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="3200"
+				x2="3200"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="3200"
+				x2="3200"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="1800"
+				x2="1800"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="1800"
+				x2="1800"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="3300"
+				x2="3300"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="3300"
+				x2="3300"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="1700"
+				x2="1700"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="1700"
+				x2="1700"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="3400"
+				x2="3400"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="3400"
+				x2="3400"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="1600"
+				x2="1600"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="1600"
+				x2="1600"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="3500"
+				x2="3500"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="3500"
+				x2="3500"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="1500"
+				x2="1500"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="1500"
+				x2="1500"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="3600"
+				x2="3600"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="3600"
+				x2="3600"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="1400"
+				x2="1400"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="1400"
+				x2="1400"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="3700"
+				x2="3700"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="3700"
+				x2="3700"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="1300"
+				x2="1300"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="1300"
+				x2="1300"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="3800"
+				x2="3800"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="3800"
+				x2="3800"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="1200"
+				x2="1200"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="1200"
+				x2="1200"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="3900"
+				x2="3900"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="3900"
+				x2="3900"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="1100"
+				x2="1100"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="1100"
+				x2="1100"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="4000"
+				x2="4000"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="4000"
+				x2="4000"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="1000"
+				x2="1000"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="1000"
+				x2="1000"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="4100"
+				x2="4100"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="4100"
+				x2="4100"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="900"
+				x2="900"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="900"
+				x2="900"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="4200"
+				x2="4200"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="4200"
+				x2="4200"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="800"
+				x2="800"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="800"
+				x2="800"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="4300"
+				x2="4300"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="4300"
+				x2="4300"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="700"
+				x2="700"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="700"
+				x2="700"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="4400"
+				x2="4400"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="4400"
+				x2="4400"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="600"
+				x2="600"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="600"
+				x2="600"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="4500"
+				x2="4500"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="4500"
+				x2="4500"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="500"
+				x2="500"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="500"
+				x2="500"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="4600"
+				x2="4600"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="4600"
+				x2="4600"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="400"
+				x2="400"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="400"
+				x2="400"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="4700"
+				x2="4700"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="4700"
+				x2="4700"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="300"
+				x2="300"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="300"
+				x2="300"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="4800"
+				x2="4800"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="4800"
+				x2="4800"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="200"
+				x2="200"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="200"
+				x2="200"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="4900"
+				x2="4900"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="4900"
+				x2="4900"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="100"
+				x2="100"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="100"
+				x2="100"
+				y1="5000"
+				y2="4900"
+			/>
+
+			<line
+				x1="5000"
+				x2="5000"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="5000"
+				x2="5000"
+				y1="5000"
+				y2="4900"
+			/>
+			<line
+				x1="0"
+				x2="0"
+				y1="0"
+				y2="100"
+			/>
+			<line
+				x1="0"
+				x2="0"
+				y1="5000"
+				y2="4900"
+			/>
+		</g>
+		<!-- X -->
+		<line
+			style="stroke-width:50;"
+			x1="0"
+			x2="5000"
+			y1="0"
+			y2="5000"
+		/>
+		<line
+			style="stroke-width:50;"
+			x1="0"
+			x2="5000"
+			y1="5000"
+			y2="0"
+		/>
+
+		<!-- # -->
+		<line
+			style="stroke-width:25;"
+			x1="1666.6666666666667"
+			x2="1666.6666666666667"
+			y1="0"
+			y2="5000"
+		/>
+		<line
+			style="stroke-width:25;"
+			x1="3333.3333333333335"
+			x2="3333.3333333333335"
+			y1="5000"
+			y2="0"
+		/>
+		<line
+			style="stroke-width:50;"
+			x1="0"
+			x2="5000"
+			y1="1666.6666666666667"
+			y2="1666.6666666666667"
+		/>
+		<line
+			style="stroke-width:50;"
+			x1="0"
+			x2="5000"
+			y1="3333.3333333333335"
+			y2="3333.3333333333335"
+		/>
+
+		<!-- ᄆ -->
+		<rect
+			height="5000"
+			style="stroke-width:100; fill:none;"
+			width="5000"
+		/>
+
+		<!-- gradations -->
+	</g>
 </svg>

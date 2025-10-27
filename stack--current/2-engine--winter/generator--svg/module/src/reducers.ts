@@ -14,7 +14,7 @@ import { getꓽviewbox__dimensions, getꓽlayer } from './selectors.ts'
 function createꓽgroup(options: Partial<WithId & Pick<SVGGroupElement, 'attributes'>> = {}): Immutable<SVGGroupElement> {
 	return {
 		...(options.id && { id: options.id }),
-		attributes: {},
+		attributes: { ...options.attributes},
 		content: [],
 	}
 }
@@ -162,12 +162,12 @@ function addꓽcontentꘌmire(svg: Immutable<SVG>, border_width?: number): Immut
 
 <!-- # -->
 <line x1="${xmin + width * 1./3}" y1="${ymin}"        x2="${xmin + width * 1./3}" y2="${ymin+height}" style="stroke-width:${stroke_width / 2.};" />
-<line x1="${xmin + width * 2./3}" y1="${ymin+height}" x2="${xmin + width * 2./3}" y2="${ymin}"        style="stroke-width:${stroke_width / 2.}; stroke:${stroke};" />
-<line x1="${xmin}" y1="${ymin + width * 1./3}" x2="${xmin+width}" y2="${ymin + width * 1./3}" style="stroke-width:${stroke_width}; stroke:${stroke};" />
-<line x1="${xmin}" y1="${ymin + width * 2./3}" x2="${xmin+width}" y2="${ymin + width * 2./3}" style="stroke-width:${stroke_width}; stroke:${stroke};" />
+<line x1="${xmin + width * 2./3}" y1="${ymin+height}" x2="${xmin + width * 2./3}" y2="${ymin}"        style="stroke-width:${stroke_width / 2.};" />
+<line x1="${xmin}" y1="${ymin + width * 1./3}" x2="${xmin+width}" y2="${ymin + width * 1./3}" style="stroke-width:${stroke_width};" />
+<line x1="${xmin}" y1="${ymin + width * 2./3}" x2="${xmin+width}" y2="${ymin + width * 2./3}" style="stroke-width:${stroke_width};" />
 
 <!-- ᄆ -->
-<rect width="${width}" height="${height}" style="stroke-width:${stroke_width * 2 /* half of it will be out of the viewBox */}; stroke:${stroke}; fill:none;" />
+<rect width="${width}" height="${height}" style="stroke-width:${stroke_width * 2 /* half of it will be out of the viewBox */}; fill:none;" />
 
 <!-- gradations -->
 	`
@@ -206,6 +206,8 @@ function addꓽcontentꘌmire(svg: Immutable<SVG>, border_width?: number): Immut
 	return addꓽlayer(svg, layer)
 }
 
+/////////////////////////////////////////////////
+
 function decorate_for_editors(svg: Immutable<SVG>): Immutable<SVG> {
 
 	const layers = svg.layers.map(layer => {
@@ -213,7 +215,8 @@ function decorate_for_editors(svg: Immutable<SVG>): Immutable<SVG> {
 			...layer,
 			attributes: {
 				...layer.attributes,
-				['class']: 'layer' // seen on https://svgedit.netlify.app not sure if useful
+				['class']: 'layer', // seen on https://svgedit.netlify.app not sure if useful
+				'inkscape:groupmode': "layer", // seen on inkscape
 			}
 		}
 
