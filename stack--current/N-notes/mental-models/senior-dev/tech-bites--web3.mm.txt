@@ -105,6 +105,7 @@ blockchain -- transaction = shows the movement of physical or digital assets fro
 blockchain -- transaction model -- UTxO (BitCoin?) vs Account (Eth?) = an architecture decision with pro & cons https://www.kaleido.io/blockchain-blog/utxo-vs-account-model
 blockchain -- vs. network = blockchain is only a block of Bitchoin/Eth, and is only a database
 blockchain = database = stores data in chronologically consistent blocks that you can delete or modify only with consensus from the peer-to-peer network. Built-in mechanisms prevent unauthorized transaction entries and create consistency in the shared view of these transactions. As a result, you can use it to create an unalterable or immutable ledger for tracking all types of transactions https://ethereum.org/en/developers/docs/intro-to-ethereum/ https://aws.amazon.com/what-is/blockchain/
+blockchains -- arrow of time = the way of solving double spending ~forcing the "database" to only move forward (with PoW initially) https://mail.blockworks.com/p/bitcoin-s-arrow-of-time
 blockchains -- sizes = ex. Ethereum Mainnet 2025 2300Gb https://chainstats.org/
 BNB Chain
 boosters = ppl who try to pump a tech/coin

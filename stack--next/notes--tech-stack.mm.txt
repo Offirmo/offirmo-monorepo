@@ -1,5 +1,6 @@
 ? corepack / pnpm ? https://blog.hyperknot.com/p/corepacks-packagemanager-field https://www.reddit.com/r/node/comments/1hw1iyh/the_curious_case_of_the_packagemanager_field_in/
 ? GraphQL https://gql-tada.0no.co/
+? logs https://betterstack.com/
 ? SVW Speedy Web Compiler https://swc.rs/
 [ ] https://stackingthebricks.com/bootstrapper-tech-stack/
 API → openapi → openapi trpc / hono ??
@@ -26,8 +27,7 @@ IaC -- terraform https://github.com/cloudflare/terraform-provider-cloudflare/iss
 JavaScript -- TypeScript -- https://openapi-ts.dev/
 JavaScript -- TypeScript -- tRPC https://trpc.io/docs/getting-started
 JavaScript -- TypeScript -- ts-pattern https://github.com/gvergnaud/ts-pattern
-JavaScript -- TypeScript -- zod
-JavaScript -- TypeScript -- zod -- ? alternatives https://valibot.dev/guides/comparison/ ow
+JavaScript -- TypeScript -- zod, https://valibot.dev/guides/comparison/, typebox, ow
 just https://just.systems/man/en/further-ramblings.html
 lang -- typescript -- bases https://github.com/tsconfig/bases
 lang -- typescript -- scaling issues https://engineering.usemotion.com/moving-off-of-typescript-e7bb1f3ad091
@@ -50,6 +50,7 @@ pkg manager -- ✖ npm
 polish https://number-flow.barvian.me/
 search -- postgres https://tech.instacart.com/how-instacart-built-a-modern-search-infrastructure-on-postgres-c528fa601d54
 secrets management -- ? https://infisical.com/
+solutions -- https://drizzle.team/
 tracing https://www.jaegertracing.io/ (used by Cloudflare)
 transactional emails https://react.email/
 ui - markdown -- editor https://overtype.dev/

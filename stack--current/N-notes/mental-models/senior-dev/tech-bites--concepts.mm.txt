@@ -139,6 +139,7 @@ caching -- caching tiers = edge cache → upper tier cache → central data stor
 caching -- hot and cold reads https://developers.cloudflare.com/kv/concepts/how-kv-works/
 caching -- S3 FIFO https://s3fifo.com/
 caching -- service affinity = some apps can't be cached, ex. atomic or read-write in transaction, but good for immutable assets, config, etc https://developers.cloudflare.com/kv/concepts/how-kv-works/#guidance
+Cambrian explosion = time of quick development / pattern emergence, alluding to the period of rapid animal diversification 540 million years ago
 capability = an end-to-end user experience or a set of related functionality. Example: “a user can create a ticket in a Jira project”
 career -- small business programmer https://smallbusinessprogramming.com/how-to-be-a-wildly-successful-small-business-programmer/
 career -- staff engineer https://www.linkedin.com/posts/alexewerlof_no-one-is-talking-about-staff-engineer-mental-activity-7297125140159471617-_J1-
@@ -278,6 +279,7 @@ data format -- consumer vs producer -- independent release/deploy
 data format -- do NOT conflate serialization w/ working representation w/ persisted w/ interchange! (cf. protobuf)
 data format -- future proofing = vastly overrated now that we have semver!! (+ migrations)
 data format -- interchange -- https://en.wikipedia.org/wiki/Advanced_Scientific_Data_Format
+data format -- interchange -- JS https://github.com/yahoo/serialize-javascript
 data format -- interchange -- JSON -- binary https://msgpack.org/
 data format -- interchange -- JSON -- JSX wire https://overreacted.io/jsx-over-the-wire/
 data format -- interchange -- JSON -- progressive https://overreacted.io/progressive-json/
@@ -286,7 +288,6 @@ data format -- interchange -- JSON -- schema = https://json.schemastore.org/
 data format -- interchange -- JSON https://www.json.org/
 data format -- interchange -- JSON mini = some sort of protobuf-derived space-saving representation (single letters for keys)
 data format -- interchange -- JSON5 https://json5.org/ https://github.com/json5/json5
-data format -- interchange -- JS https://github.com/yahoo/serialize-javascript
 data format -- interoperability, fungibility, hackability, debuggability, anti-fragility
 data format -- linting = ex. for JSON compatibility, for backward/forward compatibility...
 data format -- one goal of defining the type once then generating code in various languages (hard!)
@@ -439,6 +440,7 @@ framework -- motivations -- avoiding duplication = BUT premature abstraction
 framework -- motivations -- don't like the language ex. Java style on Javascript
 framework -- motivations -- underlying complexities = BUT may not be still there
 framework -- spectrum = spectrum of more features v. loss of architectural control https://reactrouter.com/start/modes
+frameworks = you have to build projects around them and not with them https://orm.drizzle.team/docs/overview#headless-orm
 FTU – First Time Use
 function
 function -- 1st-class object
@@ -715,6 +717,7 @@ optimization -- we believe that we can easily know how to make the slow parts of
 optimization -- we believe that we can easily know where a program spends most of its time.
 optimization https://tratt.net/laurie/blog/2023/four_kinds_of_optimisation.html
 ORM (Object-Relational Mapping)
+ORM -- vs. data frameworks https://orm.drizzle.team/docs/overview#headless-orm
 ORM https://github.com/typeorm/typeorm
 orthogonality https://en.wikipedia.org/wiki/Orthogonality_(programming)
 overengineering https://blog.matt-rickard.com/p/stop-overengineering
