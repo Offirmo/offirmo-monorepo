@@ -453,6 +453,7 @@ talent -- network https://careers.near.org/talent-network
 talent pools -- New-York = #1 many finance turned to crypto
 talent pools -- San Francisco = #3, focused on AI / robotics
 TG = token generation?
+TGE / ICO / liquidity incentives -- 10 commandments for success https://caladan.xyz/wp-content/uploads/2025/10/Caladan_Mercenary_Report.pdf
 thesis -- Solana = ??
 thesis -- superapp = Infinex https://mirror.xyz/kain.eth/HbaT4MYs6uZXVymRJDRSyZpCFVMAoyeBSv7wVrAQe2o
 thesis = some sort of hypothesis a project believes in / is based on

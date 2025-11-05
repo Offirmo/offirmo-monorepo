@@ -311,6 +311,7 @@ failure modes -- response = response is flawed. value could be off or transmitte
 failure modes -- timing (perf) = outside the expected time interval (usually = too slow BUT rare cases of too fast, following an upgrade for ex.)
 failure modes https://medium.com/baseds/modes-of-failure-part-1-6687504bfed6
 fan-out https://www.pubnub.com/guides/what-is-fan-out-software/
+fault https://perspectives.mvdirona.com/2013/02/the-power-failure-seen-around-the-world/
 fault tolerance +++https://medium.com/baseds/ready-and-available-distributed-systems-161023aca378
 finops
 flux architecture
@@ -657,5 +658,6 @@ well architected -- pillar -- performance efficiency = using IT and computing re
 well architected -- pillar -- reliability = consistently and correctly perform intended functions, Recover from infrastructure or service disruptions, Dynamically acquire computing resources to meet demand, Mitigate disruptions such as misconfigurations or transient network issues -- includes testing recovery procedures, scaling horizontally to increase aggregate system availability, and automatically recovering from failure.
 well architected -- pillar -- security = protecting information, systems, and assets while delivering business value through risk assessments and mitigation strategies -- Automate security best practices when possible, Apply security at all layers, Protect data in transit and at rest.
 well architected -- pillar -- sustainability = minimizing the environmental impact of your technology -- Understand your impact, Establish sustainability goals, Maximize utilization, Anticipate and adopt new, more efficient hardware and software offerings, Use managed services, Reduce the downstream impact of your cloud workloads
+who's who -- James Hamilton https://perspectives.mvdirona.com/
 WinterCG "Web-interoperable Runtimes Community Group" https://wintercg.org/
 workload https://score.dev/
