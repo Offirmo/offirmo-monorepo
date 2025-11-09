@@ -11,3 +11,7 @@ https://svg.wtf/
 
 
 TODO use an xml builder? https://github.com/oozcitak/xmlbuilder2
+
+-		"@prettier/plugin-xml": "^3",
+-		"prettier": "^3",
+- 

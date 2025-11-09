@@ -16,6 +16,7 @@
 	"dependencies": {
 		"@infinite-monorepo/load-spec": "*",
 		"@infinite-monorepo/plugin--bolt": "*",
+		"@infinite-monorepo/plugin--editorconfig": "*",
 		"@infinite-monorepo/plugin--git": "*",
 		"@infinite-monorepo/plugin--npm": "*",
 		"@infinite-monorepo/plugin--nvm": "*",
