@@ -32,3 +32,4 @@ TODO similar https://dev.to/lowlighter/make-naked-websites-look-great-with-match
 TODO https://smolcss.dev/
 
 TODO https://github.com/finnhvman/matter
+TODO https://www.htmhell.dev/adventcalendar/2023/2/

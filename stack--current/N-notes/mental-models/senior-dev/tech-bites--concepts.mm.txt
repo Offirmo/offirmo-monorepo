@@ -172,6 +172,7 @@ close / destroy / terminate / dispose / release / free / delete / destruct / fin
 code -- range -- prompt "make it pop" https://theoatmeal.com/comics/design_hell
 code -- range -- spec = less formal
 code -- range = prompt > spec > code
+code is read more than written https://olano.dev/blog/code-is-run-more-than-read/
 code is the enemy = It can go wrong, and it needs maintenance. Write less code. Delete code. Don’t write code you don’t need https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 code quality = the only definition of quality in code that makes any sense is our ability to change the code. If it's easy to change, it's high quality; if it's hard to change, it's not.
 code quality https://blog.jim-nielsen.com/2024/easy-changes/
@@ -430,6 +431,7 @@ file write
 finished software https://josem.co/the-beauty-of-finished-software/
 finops
 flatmap
+floating point math https://0.30000000000000004.com
 flow state = deep concentration, enjoyment, and a sense of progress
 flushing
 flux architecture
@@ -457,6 +459,7 @@ git
 gitattributes
 gitignore https://git-scm.com/docs/gitignore#_pattern_format
 global variable
+go-to person = becoming one gets you promoted https://read.highgrowthengineer.com/p/becoming-a-go-to-person-gets-you
 God object https://en.wikipedia.org/wiki/God_object
 good to great = real expert at a tech (cf. T-shaped)
 graph
@@ -555,6 +558,7 @@ Joel test -- revised -- 13 Do you watch people actually try to use your software
 Joel test -- revised https://dev.to/checkgit/the-joel-test-20-years-later-1kjk
 Joel test https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/
 jump/goto
+junior -- https://vadimkravcenko.com/shorts/falsehoods-junior-developers-believe-about-becoming-senior/
 kebab-case vs snake etc
 kill switch
 KISS
@@ -652,6 +656,7 @@ MFA -- 2FA
 MFA -- double auth
 microcode
 microprocessor https://firstmicroprocessor.com/
+mid-level https://www.developing.dev/p/what-i-wish-i-knew-as-a-mid-level
 middleware
 migrations
 mission-critical software
@@ -1058,6 +1063,7 @@ vibe coding https://x.com/karpathy/status/1886192184808149383
 virtual private cloud (VPC)
 web assembly (asm.js)
 WebAuth
+who's who -- Eric Elliot https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
 who's who -- https://tom.preston-werner.com/
 who's who -- Linus Torvald https://www.goodreads.com/author/quotes/92867.Linus_Torvalds
 Wirth's law = software systems grow faster in size and complexity than methods to handle complexity are invented. software is getting slower more rapidly than hardware is becoming faster. https://en.wikipedia.org/wiki/Wirth%27s_law

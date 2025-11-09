@@ -11,10 +11,7 @@
 5 venoms: centipede, scorpion, spider, lizard, viper
 7 emotions and 6 pleasures
 8 principles https://en.wikipedia.org/wiki/Eight_principles
-Classic of Mountains and Seas https://en.wikipedia.org/wiki/Classic_of_Mountains_and_Seas
-Fengdu Ghost City https://en.wikipedia.org/wiki/Fengdu_Ghost_City
-Immortality  https://en.wikipedia.org/wiki/Immortality
-Xiuzhen Tu  https://en.wikipedia.org/wiki/Xiuzhen_Tu
+[ ] https://china.mrdonn.org/
 acupuncture
 alchemy
 allheaven
@@ -47,6 +44,7 @@ breakthrough
 breathing
 bridge of Immortality
 clans
+Classic of Mountains and Seas https://en.wikipedia.org/wiki/Classic_of_Mountains_and_Seas
 command medallion
 commoner -> minister -> emperor
 compass
@@ -92,6 +90,7 @@ eccentric
 energy of heaven and earth
 energy of the world
 feng shui
+Fengdu Ghost City https://en.wikipedia.org/wiki/Fengdu_Ghost_City
 frigid 2 adept
 frigid 3 master
 frigid 4 paragon
@@ -103,6 +102,7 @@ herbology   https://en.wikipedia.org/wiki/Chinese_herbology
 hex
 immortal -- false
 immortal ruins
+Immortality  https://en.wikipedia.org/wiki/Immortality
 incantations
 jades
 laws
@@ -176,6 +176,7 @@ spell formations
 spirit jades
 spirit stones
 strategy
+superstition https://china.mrdonn.org/superstitions.html
 sword, king of weapons
 teleportation -- minor, greater
 teleportation portals, vortex, spatial cracks
@@ -189,3 +190,4 @@ tui na   https://en.wikipedia.org/wiki/Tui_na
 weapons
 willpower
 wounds
+Xiuzhen Tu  https://en.wikipedia.org/wiki/Xiuzhen_Tu

@@ -147,7 +147,7 @@ CSS -- margin -- negative https://www.quirksmode.org/blog/archives/2020/02/negat
 CSS -- Media Queries https://courses.joshwcomeau.com/css-for-js/00-recap/03-media-queries
 CSS -- methodologies -- BEM
 CSS -- modules https://github.com/css-modules/css-modules
-CSS -- nesting
+CSS -- nesting https://developer.chrome.com/blog/css-nesting-relaxed-syntax-update/
 CSS -- optimization -- containment https://blogs.igalia.com/mrego/2019/01/11/an-introduction-to-css-containment/ https://developer.mozilla.org/en-US/docs/Web/CSS/contain https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Using_CSS_containment
 CSS -- overflow https://www.bram.us/2024/02/14/scroll-driven-animations-you-want-overflow-clip-not-overflow-hidden/ https://frontendmasters.com/blog/single-directionally-allowed-overflow/
 CSS -- perf -- avoid modifying the layout (geometric properties)
