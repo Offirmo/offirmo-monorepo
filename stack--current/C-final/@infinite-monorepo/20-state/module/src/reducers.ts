@@ -134,7 +134,7 @@ function onꓽspec_chain_loaded(
 	if (topmost_spec_under_workspace) { // TODO review can be falsy?
 		state = {
 			...state,
-			spec: nodeⵧworkspace_root.spec
+			spec: nodeⵧworkspace_root.spec,
 		}
 	}
 

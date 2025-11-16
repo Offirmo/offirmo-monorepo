@@ -1,13 +1,14 @@
 // explanation of those fields is in ./fields.ts
 /////////////////////////////////////////////////
 
-// eXtended error
-interface XError extends Error {
+export type ErrorStack = string // TODO 1D more complex
 
+// eXtended error
+export interface XError extends Error {
 	// redefine the standard fields in case the target ES lib doesn't have all of them
 	name: string
 	message: string
-	stack?: string
+	stack?: ErrorStack
 	cause?: XError | Error
 	errors?: Array<XError | Error>
 	suppressed?: XError | Error
@@ -19,8 +20,7 @@ interface XError extends Error {
 	framesToPop?: number
 }
 
-interface XXError extends XError {
-
+export interface XXError extends XError {
 	cause?: XXError | XError | Error
 	errors?: Array<XXError | XError | Error>
 	suppressed?: XXError | XError | Error
@@ -40,7 +40,7 @@ interface XXError extends XError {
 
 const DEBUG = false
 const DEMO_ERROR = new Error('[Test!]')
-function isꓽError(err_like: any): err_like is XXError {
+export function isꓽError(err_like: any): err_like is XXError {
 	if (typeof err_like?.message !== 'string' || !err_like?.message) {
 		DEBUG && console.error('hasErrorShape() BAD message', {
 			type: typeof err_like?.message,

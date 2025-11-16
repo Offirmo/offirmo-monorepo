@@ -18,6 +18,7 @@ https://www.programmingfonts.org/
 I'm good at what I spend time on https://www.noidea.dog/glue
 The Absolute Minimum Every Software Developer Must Know About Unicode in 2023 (Still No Excuses!) https://tonsky.me/blog/unicode/
 the customer doesn't know what they want
+tools -- font -- https://www.monolisa.dev/
 tools -- IDE -- debug
 tools -- IDE -- multiple cursors = https://code.visualstudio.com/docs/editing/codebasics#_multiple-selections-multicursor
 tools -- IDE -- refactor

@@ -11,11 +11,12 @@
 2017 bitfinex "packaged loss" https://bitfinexed.medium.com/bitfinex-never-repaid-their-tokens-bitfinex-started-a-ponzi-scheme-86a9291add29
 2017 CryptoPunks introduced for free https://cryptopunks.app/cryptopunks/details/7804
 2017-09 China bans crypto
-2018-07 Augur "assasination market" https://www.newsweek.com/welcome-augur-cryptocurrency-death-market-where-you-can-bet-donald-trump-1043571
+2018-07 Augur "assassination market" https://www.newsweek.com/welcome-augur-cryptocurrency-death-market-where-you-can-bet-donald-trump-1043571
 2019-04 Bankman-Fried founds the FTX cryptocurrency derivatives exchange
 2020 "DeFi summer" = ???
 2021 NFT "EVERYDAYS: THE FIRST 5000 DAYS" sold at Christies for MM https://onlineonly.christies.com/s/beeple-first-5000-days/beeple-b-1981-1/112924
 2022-01 facebook abandons its Libra/Diem cryptocurrency project https://en.wikipedia.org/wiki/Diem_(digital_currency)
+2022-11-11 "never again"
 2023 Binance pleads guilty to violating US money-laundering laws and other violations and the justice department fined it a whopping $4bn
 2024 Ethereum 7702 = https://blog.quicknode.com/eip-7702-explained-the-future-of-ethereum/
 2024 Trump promises during his White House run to be a “crypto president”, becoming the first major presidential candidate to accept crypto donations, and pledged to reverse an industry crackdown
@@ -50,6 +51,7 @@
 [ ] https://blog.labeleven.dev
 [ ] https://brave.com/web3/
 [ ] https://info.etherscan.com/
+[ ] https://support.infinex.xyz/en/articles/9719898-crypto-terms
 [ ] https://vitalik.eth.limo/
 [ ] https://www.kaleido.io/blog-categories/product-technology
 address -- evm = the right-most 160 bits of a Keccak hash of an ECDSA public key https://info.etherscan.com/what-is-an-ethereum-address/
@@ -64,19 +66,23 @@ armed heist = extorting crypto ex. https://x.com/beausecurity/status/19723333310
 asset tokenization layer = ???
 assets -- top = ranking website https://www.coingecko.com/
 AT Protocol = an open, decentralized network for building social applications https://atproto.com/
+attack -- 7702 delegation to drainer https://x.com/wiimee/status/1985074040781070716?s=46&t=Vf4wSrK5GroKAVnaytpTJw
 attack -- donation https://www.cyfrin.io/blog/solodit-checklist-explained-3-donation-attacks https://medium.com/@ankitacode11/part-3-protecting-smart-contracts-from-donation-attacks-a-guide-to-secure-eth-handling-b05561228ab2
 attack -- new vault https://www.halborn.com/blog/post/explained-the-resupply-hack-june-2025
 attacks -- supply chain https://cointelegraph.com/explained/what-is-a-supply-chain-attack-in-crypto-and-how-to-prevent-it
+automated market-making (AMM)
 bag check
 bear/bull markets = alternance of several months of falling prices (bear) and several months of rising prices (bull). Hard to time. Need to survive a bear market.
 beginner issues -- network mismatches https://www.reddit.com/r/CoinBase/comments/1jh0xgp/coinbase_wrapped_bitcoin_stuck_in_coinbase_wallet/
 Berachain
+BIP -- statuses -- process = “Workflow > Progression through BIP Statuses > Deployed > Process BIPs”  “A Process BIP may change status from Complete to Deployed when... https://groups.google.com/g/bitcoindev/c/j4_toD-ofEc/m/TgSc-CRvAwAJ
 BIP https://www.ledger.com/academy/what-is-a-bitcoin-improvement-proposal-bip
 BIP-32 Hierarchical Deterministic Wallets https://www.ledger.com/academy/crypto/what-are-hierarchical-deterministic-hd-wallets
 BIP-39 seed phrases https://www.ledger.com/academy/bip-39-the-low-key-guardian-of-your-crypto-freedom
 BIPs "Bitcoin Improvement Proposals" = https://github.com/bitcoin/bips
 Bitcoin -- Alkanes = ???
 BitCoin -- dev mailing list https://groups.google.com/g/bitcoindev
+Bitcoin -- fundamental principle = Bitcoin constitutes a peer-to-peer electronic cash system for the bitcoin currency.
 Bitcoin -- Ordinals = ???
 Bitcoin -- Runes = ???
 Bitcoin = the first decentralized cryptocurrency https://en.wikipedia.org/wiki/Bitcoin
@@ -274,10 +280,12 @@ legal definition -- AU = A type of currency that only exists in digital rather t
 licenses -- MiCA license in the European Union
 licenses -- Money Service Business (MSB) license in the U.S
 Liquid staking derivatives (LSD) https://notes.ethereum.org/@djrtwo/risks-of-lsd
+liquidity -- &drive = ??
+liquidity -- &mining = ??
+liquidity -- &pools https://support.infinex.xyz/en/articles/9924193-liquidity-pools
 liquidity -- incentives = attracting liquidity and retaining it are fundamentally different challenges https://caladan.xyz/report-the-ten-commandments-of-liquidity-incentives/
-liquidity drive
-liquidity mining = ??
 list https://en.wikipedia.org/wiki/List_of_cryptocurrencies
+Litecoin = "You can dislike me all you want, but I was here before most of your pet projects and I will be here after you die. I'm not fiat and I'm not some software to fill the pockets of VC's. I'm sound money and I don't bend the knee to anyone."
 mantras of blockchain -- Don’t trust, verify
 mantras of blockchain -- not your keys, not your coins = see custodiality. only keep bitcoin in exchanges for as long as you need to https://blockworks.co/news/bitomat-exchange-deleted-17000-bitcoin
 market maker = easy to move the price, esp. ICO -> need right incentives
@@ -404,8 +412,10 @@ scams -- wash trading = artificially inflating volume https://bitfinexed.medium.
 seasons -- autumn = ex. altcoin autumn
 seasons -- summer = ex. DeFi summer
 seasons -- winter = ex. AI winter
+secure enclave https://whitepaper.turnkey.com/
 seed phrase
 silk road / Ross Ulbricht
+slippage = the difference the expected price of a trade against the actual executed price with slippage being most common in times of high volatility, low liquidity or when there is insufficient liquidity to meet a large order https://support.infinex.xyz/en/articles/9719898-crypto-terms#h_cd4c6697b8
 slippage https://github.com/jup-ag/dynamic-slippage-config
 smart contract -- auditing = https://iosiro.com/services/smart-contract-auditing
 smart contract -- bug = ex. of loss of everything

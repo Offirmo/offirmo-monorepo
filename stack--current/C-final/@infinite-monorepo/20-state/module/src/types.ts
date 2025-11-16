@@ -43,7 +43,8 @@ export interface SubStateⳇFactsFile {
 	content:
 		| undefined // not loaded yet (promise pending)
 		| null // null = file not found
-		| JSONObject
+		| 'error' // issue reading this structured file, ex. parse error
+		| JSONObject // structured result
 	// those props are only present when content is undefined
 	ↆretrieval: Promise<JSONObject>
 	pending_callbacks?: Array<AsyncCallbackReducer<JSONObject>>

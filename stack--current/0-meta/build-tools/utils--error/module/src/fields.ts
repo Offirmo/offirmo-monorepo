@@ -50,6 +50,7 @@ const COMMON_ERROR_FIELDS_EXTENDED = new Set<keyof XXError>([
 	// first inherit from previous
 	...COMMON_ERROR_FIELDS,
 
+	// TODO review
 	// My (Offirmo) extensions:
 	'_temp', // used for passing state around during error handling
 	'details', // hash to store any other property not defined in this set
@@ -67,3 +68,5 @@ export {
 	COMMON_ERROR_FIELDS,
 	COMMON_ERROR_FIELDS_EXTENDED,
 }
+
+// TODO TRPCError

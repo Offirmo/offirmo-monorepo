@@ -341,6 +341,7 @@ diagrams -- UML -- behavioral -- state
 diagrams -- UML -- structural -- class
 diagrams -- UML https://creately.com/blog/diagrams/uml-diagram-types-examples/
 diagrams -- Venn ex. Ikigai
+did all the right things and no-one is happy
 differences -- introvert/extrovert
 disability
 disability -- flag +++
@@ -656,6 +657,7 @@ labor of love
 laisser-aller
 language -- any word exists in any language in order to describe something relevant to speakers of that language
 language -- colors https://www.richardcarrier.info/archives/7307
+language -- the cube rule https://cuberule.com/
 law -- crimes -- arson
 law -- crimes -- assault -- aggravated
 law -- crimes -- assault -- simple
@@ -790,6 +792,7 @@ Maslow's pyramid
 mass surveillance -- Snowden 2013 https://www.theguardian.com/world/interactive/2013/nov/01/snowden-nsa-files-surveillance-revelations-decoded#section/1
 maturity = judgement of persons
 McNamara fallacy https://en.wikipedia.org/wiki/McNamara_fallacy
+me, myself & I
 measurable = at the end you can look, and without any arguments: Did I do that or did I not do it? Yes? No? Simple. No judgments in it.
 measurable = some things are not easily measurable
 measurable = wrong hyper-optimization
@@ -1207,6 +1210,8 @@ slavery -- USA https://en.wikipedia.org/wiki/Slavery_in_the_United_States
 slavery https://www.sbs.com.au/nitv/article/10-things-you-should-know-about-slavery-in-australia/i0nc7x4vw
 sleep on it
 SMART goal-setting framework
+smile
+smile -- Duchenne https://en.wikipedia.org/wiki/Smile
 so bad you don't even realize you are bad = https://workplace.stackexchange.com/a/25756
 sober thoughts are drunk words
 social -- friendship paradox https://en.wikipedia.org/wiki/Friendship_paradox

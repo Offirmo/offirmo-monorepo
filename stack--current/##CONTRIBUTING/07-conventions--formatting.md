@@ -56,7 +56,6 @@ TODO express a resilient function who technically should never crash?
 export {
 
 }
-
 ```
 
 ```ts
@@ -85,5 +84,31 @@ describe(`${LIB} -- examples`, function() {
 		})
 	})
 })
+```
 
+## Core unicode
+
+Arrows and supplemental https://jrgraphix.net/r/Unicode/2190-21FF https://jrgraphix.net/r/Unicode/2900-297F https://jrgraphix.net/r/Unicode/2B00-2BFF
+```
+⇱   ↰ ↱       ↕ ↔
+  ↖  ↑  ↗     ↢ ↣ 
+  ←  ↻  → ↴   ⇐ ⇒
+  ↙  ↓  ↘     ↻ ↩ ↪ ↺ ⟲ ⟳
+  ↵ ↲ ↳   ⇲   ⇄ ⇅ ⇆ ⮂ ⮃
+   ⮐ ⮑      ↯
+  ˹  ˄  ˺
+‹ « ˂ ˃ » ›
+  ˻  ˅  ˼
+```
+box drawing https://jrgraphix.net/r/Unicode/2500-257F
+Logs https://jrgraphix.net/r/Unicode/2600-26FF https://jrgraphix.net/r/Unicode/2700-27BF
+```
+☐ ☑ ☒ ⚿ ⛫ ⛉ ⛊ 
+⚐ ⚑ ⚠ ⚡ ❓❔❕❗
+⛀ ⛁ ⛂ ⛃
+✓ ✔ ✕ ✖ ✗ ✘ ❌ ❎ ✅ ⛔
+⌥ ⌦ ⌘
+⚙
+
+console.log(`🔄 <Component />`, { prop });
 ```

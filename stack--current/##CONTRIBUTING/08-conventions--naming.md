@@ -35,6 +35,7 @@ All the "components/parts" are organized in such a structure:
 We follow a **FOLDER based approach**, where each component is in a named folder which contains standard-named files.
 This is bc source files usually have "related" files, ex:
 /my-component/
+- `__specs/` heavy specs...
 - `__fixtures/` for unit tests
 - `__snapshots/` for unit tests https://jestjs.io/docs/snapshot-testing
 - `*.spec.ts` (unit tests)
