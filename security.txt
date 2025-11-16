@@ -13,7 +13,7 @@ Thanks for your contribution!
 
 This site is not advertised but publicly accessible for testing reasons.
 
-Just tell me if there is anything that could be harmful for the community.
+Just tell me if there is anything that could be harmful to the community.
 
 
 ## Source code

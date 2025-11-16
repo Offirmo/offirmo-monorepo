@@ -1,6 +1,8 @@
 [ ] list of books to learn history https://paulgraham.com/raq.html
 a country is a farm
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
+bateau https://en.wikipedia.org/wiki/File:Uluburun1.jpg
+bateau https://en.wikipedia.org/wiki/List_of_surviving_ancient_ships
 capitalism
 capitalism -- issues -- inability to collectively improve, ex. global warming
 capitalism -- late stage
@@ -20,8 +22,10 @@ golden rule
 génération spontanée
 hammurabi
 https://en.wikipedia.org/wiki/Baby_farming
+https://en.wikipedia.org/wiki/Currency
 https://en.wikipedia.org/wiki/Late_Bronze_Age_collapse
 https://en.wikipedia.org/wiki/Makuria
+https://en.wikipedia.org/wiki/Urnfield_culture
 https://politiquemagazine.fr/civilisation/redecouvrir-les-origines-de-la-france/
 https://worldoffinewine.com/news-features/did-charles-darwin-save-wine
 https://www.atlassian.com/loop/about
@@ -34,6 +38,7 @@ pollution -- 12xx https://en.wikipedia.org/wiki/Pea_soup_fog
 ransom
 slavery
 surproduction d'élite https://pierre-yves-gomez.fr/trop-delite-tue-lelite/
+video games https://en.wikipedia.org/wiki/List_of_best-selling_video_games
 violence
 war -- Allied Plans to Occupy France, 1942-1944 https://web.archive.org/web/20060507015256/http://www.rall.com/longarticle_011.htm
 war -- https://en.wikipedia.org/wiki/Irredentism
