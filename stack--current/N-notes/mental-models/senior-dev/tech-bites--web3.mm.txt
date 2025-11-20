@@ -40,6 +40,7 @@
 2025-08-21 Kanye West launches his coin https://crypto.news/kanye-west-launches-yzy-memecoin-on-solana-2025/
 2025-10-10 crypto crash https://caladan.xyz/crypto-black-friday/
 2025-10-11 huge liquidation https://blockworks.co/news/crypto-liquidations-drive-historic-market-turbulence
+2025-11-11 Ethereum's trustless manifesto https://trustlessness.eth.limo/general/2025/11/11/the-trustless-manifesto.html
 51% attack = attack where a group gains control of the majority of nodes = allow them to defraud the blockchain by reversing transactions and double spending https://ethereum.org/en/glossary/#51%-attack
 ? https://intel.arkm.com/
 [ ] +++ https://support.ledger.com/topic?topic=Crypto_Concepts https://support.ledger.com/topic?topic=Ledger_Live
@@ -69,6 +70,7 @@ AT Protocol = an open, decentralized network for building social applications ht
 attack -- 7702 delegation to drainer https://x.com/wiimee/status/1985074040781070716?s=46&t=Vf4wSrK5GroKAVnaytpTJw
 attack -- donation https://www.cyfrin.io/blog/solodit-checklist-explained-3-donation-attacks https://medium.com/@ankitacode11/part-3-protecting-smart-contracts-from-donation-attacks-a-guide-to-secure-eth-handling-b05561228ab2
 attack -- new vault https://www.halborn.com/blog/post/explained-the-resupply-hack-june-2025
+attacks -- spam tokens = sent to leaked address to pollute and maybe
 attacks -- supply chain https://cointelegraph.com/explained/what-is-a-supply-chain-attack-in-crypto-and-how-to-prevent-it
 automated market-making (AMM)
 bag check
@@ -118,6 +120,7 @@ boosters = ppl who try to pump a tech/coin
 bridging
 case study -- privacy https://newsletter.systemdesign.one/p/how-do-airtags-work
 CBDC "Central bank digital currencies" = cryptonite for crypto? (centralized) https://cointelegraph.com/magazine/cbdcs-kryptonite-for-crypto/
+CEX-like -- beware, ex. storing private keys in DB https://x.com/retardmode/status/1991067539539902942?s=46
 chains -- &"that matters" = chain that matters. BSC, HyperEVM, Solana, Base, ETH L1, etc. (2025) https://x.com/dwr/status/1976029779783790680
 chains -- list -- EVM-based https://chainlist.org/
 chains -- tribalism
@@ -209,6 +212,7 @@ Ethereum -- protocol
 Ethereum -- REth https://github.com/paradigmxyz/reth
 Ethereum -- roadmap https://ethereum.org/en/roadmap/
 ethereum -- top questions https://ethereum.stackexchange.com/questions?sort=votes
+Ethereum -- trustlessness https://trustlessness.eth.limo/general/2025/11/11/the-trustless-manifesto.html
 Ethereum = blockchain with a built-in fully fledged Turing-complete programming language that can be used to create "contracts" that can be used to encode arbitrary state transition functions, allowing users to create any systems we have not yet imagined, simply by writing up the logic in a few lines of code https://ethereum.org/en/whitepaper/#a-next-generation-smart-contract-and-decentralized-application-platform https://ethereum.org/en/what-is-ethereum/ https://aws.amazon.com/blockchain/what-is-ethereum/
 EVM and non-EVM chains
 EVM network

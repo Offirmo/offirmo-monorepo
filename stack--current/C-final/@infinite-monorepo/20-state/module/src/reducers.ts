@@ -10,6 +10,8 @@ import type {
 import { mergeꓽjson } from '@infinite-monorepo/read-write-any-structured-file'
 import { loadꓽspecⵧchainⵧraw } from '@infinite-monorepo/load-spec'
 import { ↆreadꓽfile } from '@infinite-monorepo/read-write-any-structured-file/read'
+import { isꓽErrorⵧrsrc_not_found } from '@offirmo/error-utils/v2'
+import { normalizeError } from '@offirmo/error-utils'
 
 import {
 	type InfiniteMonorepoSpec,
@@ -96,7 +98,7 @@ function onꓽspec_chain_loaded(
 		// reminder that scm root and workspace can be the same
 		if (result.data) {
 			topmost_spec_under_workspace = {
-				...result.data as any, // TODO 1D schema validation
+				...(result.data as any), // TODO 1D schema validation
 				_config_fileⵧroot: result.exact_file_path‿abs,
 				root_path‿abs: result.parent_folder_path‿abs,
 			}
@@ -131,7 +133,8 @@ function onꓽspec_chain_loaded(
 	assert(nodeⵧworkspace_root.path‿abs !== PENDING, `Workspace root must exist!`)
 
 	// TODO review, duplicate??
-	if (topmost_spec_under_workspace) { // TODO review can be falsy?
+	if (topmost_spec_under_workspace) {
+		// TODO review can be falsy?
 		state = {
 			...state,
 			spec: nodeⵧworkspace_root.spec,
@@ -259,7 +262,8 @@ function declareꓽfile_manifest(
 	state: Immutable<State>,
 	manifest: StructuredFsⳇFileManifest,
 ): Immutable<State> {
-	DEBUG && console.debug('Declaring manifest...', manifest)
+	DEBUG && console.debug(`Declaring manifest… ${manifest.path‿ar} [${manifest.format ?? 'auto'}]`)
+	//DEBUG && console.debug('Declaring manifest…', manifest)
 
 	const existing = state.file_manifests[manifest.path‿ar]
 	if (existing) {
@@ -312,7 +316,7 @@ function requestꓽfactsⵧabout_file(
 	state: Immutable<State>,
 	manifest: StructuredFsⳇFileManifest,
 	parent_node: Immutable<Node> | undefined,
-	callback: AsyncCallbackReducer,
+	callback: AsyncCallbackReducer<JSONObject | null>,
 ): Immutable<State> {
 	DEBUG
 		&& console.debug(
@@ -323,11 +327,15 @@ function requestꓽfactsⵧabout_file(
 	const x: Immutable<SubStateⳇFactsFile> =
 		state.facts.files[path_abs]
 		|| ((): Immutable<SubStateⳇFactsFile> => {
-			DEBUG && console.debug('New fact file request', path_abs)
+			DEBUG && console.debug('↳ New fact file request:', path_abs)
 			return {
 				manifest,
 				content: undefined,
-				ↆretrieval: ↆreadꓽfile(path_abs, { format: manifest.format }),
+				ↆretrieval: ↆreadꓽfile(path_abs, { format: manifest.format }).catch(err => {
+					if (isꓽErrorⵧrsrc_not_found(err)) return null
+
+					return normalizeError(err) // NOTE: throw turned into a RETURN
+				}),
 				pending_callbacks: [],
 			} as SubStateⳇFactsFile
 		})()
@@ -439,7 +447,7 @@ async function resolveꓽasync(state: Immutable<State>): Promise<Immutable<State
 					},
 				}
 				state = (substate.pending_callbacks || []).reduce((state, acb) => {
-					return acb(state, null, content)
+					return acb(state, content)
 				}, state)
 			})
 			pending.push(p)

@@ -3,8 +3,8 @@ import type { Immutable } from '@offirmo-private/ts-types'
 import { type Url‿str } from '@offirmo-private/ts-types-web'
 
 import type { State } from './types.js'
-import { getꓽlinks, getꓽlink‿str } from '../../10-representation'
-import { OHALinkRelation } from '../../01-types'
+import { getꓽlinks, getꓽlink‿str } from '../../10-representation/index.ts'
+import { OHALinkRelation } from '../../01-types/index.ts'
 
 /////////////////////////////////////////////////
 

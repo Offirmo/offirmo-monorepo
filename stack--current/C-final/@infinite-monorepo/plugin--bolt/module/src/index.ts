@@ -11,9 +11,9 @@ import {
 import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
 import { manifestꓽpackageᐧjson } from '@infinite-monorepo/plugin--npm'
-import path from 'node:path'
+import * as path from 'node:path'
 import { lsDirsSync } from '@offirmo-private/fs--ls'
-import { existsSync, renameSync } from 'node:fs'
+import { isꓽError } from '@offirmo/error-utils/v2'
 
 /////////////////////////////////////////////////
 
@@ -31,13 +31,16 @@ const pluginꓽbolt: Plugin = {
 			state,
 			manifestꓽpackageᐧjson,
 			node,
-			(state, error, content) => {
-				assert(!error)
+			(state, result) => {
+				if (!result) return state // no file = fact "not using bolt"
 
-				const bolt_stuff = content?.['bolt']
+				if (isꓽError(result)) {
+					// what to do?
+					throw result
+				}
+
+				const bolt_stuff = result?.['bolt']
 				if (!bolt_stuff) return state // not using bolt
-
-				// TODO register that we're using bolt
 
 				// discover new node
 				const { workspaces } = bolt_stuff
@@ -82,7 +85,13 @@ const pluginꓽbolt: Plugin = {
 					})
 				}
 
-				return state
+				return {
+					...state,
+					spec: {
+						...state.spec,
+						package_manager: 'bolt',
+					},
+				}
 			},
 		)
 

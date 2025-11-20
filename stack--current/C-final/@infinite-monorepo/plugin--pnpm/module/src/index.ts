@@ -5,12 +5,18 @@ import {
 	type Node,
 	type WorkspaceRelativePath,
 	PATHVARⵧROOTⵧWORKSPACE,
+	type NodeⳇWorkspaceLine,
+	type NodeⳇPackage,
+	PATHVARⵧROOTⵧWORKSPACE__LINE,
 } from '@infinite-monorepo/types'
 import type { State, Plugin } from '@infinite-monorepo/state'
 import * as StateLib from '@infinite-monorepo/state'
 import type { FileOutputPresent } from '@infinite-monorepo/state'
 import assert from 'tiny-invariant'
 import { manifestꓽpackageᐧjson } from '@infinite-monorepo/plugin--npm'
+import { isꓽError } from '@offirmo/error-utils/v2'
+import path from 'node:path'
+import { lsDirsSync } from '@offirmo-private/fs--ls'
 
 /////////////////////////////////////////////////
 
@@ -43,10 +49,56 @@ const pluginꓽpnpm: Plugin = {
 			state,
 			manifestꓽpnpmᝍworkspaceᐧyaml,
 			node,
-			(state, error, content) => {
-				assert(!error) // possible?
+			(state, result) => {
+				if (!result) return state // no file = fact "not using pnpm"
 
-				assert(!!content) // case not present?
+				if (isꓽError(result)) {
+					// file present but problem reading it
+					throw result
+				}
+
+				// discover new node
+				const { workspaces } = bolt_stuff
+				if (workspaces) {
+					// TODO 1D use a glob lib
+
+					const MONOREPO_WORKSPACES_RELPATHS = (workspaces as string[])
+						.filter((p: RelPath) => {
+							return !p.startsWith('#') && !p.startsWith('xx') // we allow "commenting" a workspace to help "progressive resurrection"
+						})
+						.map(p => p.slice(0, -2)) // slice to remove trailing "/*"
+						.sort()
+
+					MONOREPO_WORKSPACES_RELPATHS.forEach(path_rel => {
+						const line_node: NodeⳇWorkspaceLine = {
+							type: 'workspace__line',
+							parent_id: node.path‿abs,
+							path‿ar: `${PATHVARⵧROOTⵧWORKSPACE}/${path_rel}`,
+							path‿abs: path.join(node.path‿abs, path_rel) + '/',
+							plugin_area: {},
+						}
+						state = StateLib.registerꓽnode(state, line_node)
+
+						const candidate_package_dirs = lsDirsSync(line_node.path‿abs, {
+							full_path: false,
+						}).filter(relpath => {
+							// TODO 1D check if package.json BUT I recall that Bolt isn't checking that and fails, so no
+							return true
+						})
+
+						candidate_package_dirs.forEach(path_rel => {
+							const pkg_node: NodeⳇPackage = {
+								type: 'package',
+								parent_id: line_node.path‿abs,
+								path‿ar: `${PATHVARⵧROOTⵧWORKSPACE__LINE}/${path_rel}/`,
+								path‿abs: path.join(line_node.path‿abs, path_rel) + '/',
+								spec: {},
+								plugin_area: {},
+							}
+							state = StateLib.registerꓽnode(state, pkg_node)
+						})
+					})
+				}
 
 				return {
 					...state,

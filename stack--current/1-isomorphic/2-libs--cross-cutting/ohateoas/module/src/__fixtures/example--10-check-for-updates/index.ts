@@ -6,14 +6,15 @@ import {
 	type OHAServer,
 	type OHAStory,
 	type OHAHyperActionBlueprint,
-	type OHAFeedback, OHALinkRelation,
+	type OHAFeedback,
+	OHALinkRelation,
 } from '@offirmo-private/ohateoas'
 
 /////////////////////////////////////////////////
 
 // In this demo, the state is LOCAL
 const state = {
-	'Webstorm': { installed: '2024.3.5', latest: undefined as SemVer | undefined },
+	Webstorm: { installed: '2024.3.5', latest: undefined as SemVer | undefined },
 	'JetBrains Gateway': { installed: '2024.3.2', latest: undefined as SemVer | undefined },
 	'IntelliJ IDEA': { installed: '2024.3.5', latest: undefined as SemVer | undefined },
 }
@@ -22,7 +23,7 @@ function backend() {
 	return {
 		async ↆgetꓽproducts() {
 			return state
-		}
+		},
 	}
 }
 
@@ -31,7 +32,6 @@ function backend() {
 const URIꘌROOT = normalizeꓽuri‿str('')
 
 function createꓽserver(): OHAServer {
-
 	const ↆget: OHAServer['ↆget'] = async (url = URIꘌROOT) => {
 		////////////
 		const { path, query, fragment } = getꓽscheme_specific_part(url)
@@ -45,8 +45,7 @@ function createꓽserver(): OHAServer {
 			[OHALinkRelation.home]: URIꘌROOT, // could be DEFAULT_ROOT_URI or sth else, ex. /user/:xyz/savegame/:xyz/
 		}
 
-		const actions: OHARichTextHints['actions'] = {
-		}
+		const actions: OHARichTextHints['actions'] = {}
 
 		const engagements: OHARichTextHints['engagements'] = []
 
@@ -55,20 +54,13 @@ function createꓽserver(): OHAServer {
 		// TODO recursive routing
 		const data = await backend().ↆgetꓽproducts()
 
-		$builder.pushHeading('Toolbox')
-			.pushText("Installed products:")
-
+		$builder.pushHeading('Toolbox').pushText('Installed products:')
 
 		const _products = RichText.listⵧordered()
 		Object.entries(data).forEach(([name, version_info]) => {
-			const {
-				installed: versionⵧinstalled,
-				latest: versionⵧlatest,
-			} = version_info
+			const { installed: versionⵧinstalled, latest: versionⵧlatest } = version_info
 
-			const $name = RichText.fragmentⵧinline(name)
-				.addHints({ })
-				.done()
+			const $name = RichText.fragmentⵧinline(name).addHints({}).done()
 
 			const $version = (() => {
 				const builder = RichText.fragmentⵧinline()
@@ -109,7 +101,7 @@ function createꓽserver(): OHAServer {
 		$builder.pushNode(_products.done())
 
 		links['faq'] = {
-			href:'https://jb.gg/toolbox-app-faq',
+			href: 'https://jb.gg/toolbox-app-faq',
 			target: '_help',
 		}
 
@@ -117,8 +109,8 @@ function createꓽserver(): OHAServer {
 			type: 'check-for-updates',
 
 			input: {
-				'os': { type: 'env--os' },
-				'arch': { type: 'env--arch' },
+				os: { type: 'env--os' },
+				arch: { type: 'env--arch' },
 			},
 
 			hints: {
@@ -127,7 +119,7 @@ function createꓽserver(): OHAServer {
 
 			feedback: {
 				tracking: 'background',
-				story: 'Checking for updates...'
+				story: 'Checking for updates...',
 			} as OHAFeedback,
 		} as OHAHyperActionBlueprint
 
@@ -142,13 +134,13 @@ function createꓽserver(): OHAServer {
 		return $builder.done()
 	}
 
-	const dispatch: OHAServer['dispatch'] = async (action) => {
+	const dispatch: OHAServer['dispatch'] = async action => {
 		console.log(`Server: asked to dispatch action…`, action)
 
 		switch (action.type) {
 			case 'check-for-updates': {
 				// fake a call to a remote server
-				return new Promise<OHAStory>((resolve) => {
+				return new Promise<OHAStory>(resolve => {
 					// pretend work
 					setTimeout(() => {
 						if (state.Webstorm.latest !== '2025.1') {
@@ -156,8 +148,7 @@ function createꓽserver(): OHAServer {
 							resolve({
 								message: 'Updates found!',
 							} as OHAStory)
-						}
-						else {
+						} else {
 							resolve({
 								message: 'No updates available',
 							} as OHAStory)
@@ -178,6 +169,4 @@ function createꓽserver(): OHAServer {
 
 /////////////////////////////////////////////////
 
-export {
-	createꓽserver,
-}
+export { createꓽserver }

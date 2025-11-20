@@ -72,10 +72,3 @@ export function isꓽError(err_like: any): err_like is XXError {
 }
 
 /////////////////////////////////////////////////
-
-export {
-	type XError,
-	type XXError,
-
-	isꓽError,
-}

@@ -23,6 +23,7 @@
 a11y -- support https://a11ysupport.io/
 AI -- If you had a machine that could instantly recall or create any facet of information, do you need a link?
 AI -- super app = LLM becomes the super app? https://aifoc.us/a-link-is-all-you-need/
+alert fatigue = desensitized
 AMP "Accelerated Mobile Pages"
 animations -- API https://devdocs.io/dom/web_animations_api
 API intl https://intlin.site/
@@ -200,6 +201,8 @@ desklet / desk accessory = small transient or auxiliary application that can be 
 desktop app wrapping -- solution -- https://jslegenddev.substack.com/p/the-struggle-of-wrapping-a-javascript
 devices -- support
 dialog
+dialogs -- alert
+dialogs -- confirmation
 DNS = distributed database for IP address translation
 Document = The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. It provides functionality globally to the document, like how to obtain the page's URL and create new elements in the document.
 DOM -- CSSOM "CSS Object Model" = part of the DOM
@@ -296,7 +299,6 @@ lawsofux.com -- Choice Overload = The tendency for people to get overwhelmed whe
 lawsofux.com -- Chunking = A process by which individual pieces of an information set are broken down and then grouped together in a meaningful whole.
 lawsofux.com -- Cognitive Bias = systematic error of thinking or rationality in judgment that influence our perception of the world and our decision-making ability.
 lawsofux.com -- Cognitive Load = amount of mental resources needed to understand and interact with an interface.
-lawsofux.com -- cVon Restorff Effect = also known as The Isolation Effect, predicts that when multiple similar objects are present, the one that differs from the rest is most likely to be remembered.
 lawsofux.com -- Doherty threshold = Productivity soars when a computer and its users interact at a pace (<400ms) that ensures that neither has to wait on the other. https://lawsofux.com/doherty-threshold/
 lawsofux.com -- Fitts’s Law = The time to acquire a target is a function of the distance to and size of the target.
 lawsofux.com -- Flow = mental state in which a person performing some activity is fully immersed in a feeling of energized focus, full involvement, and enjoyment in the process of the activity.
@@ -319,26 +321,30 @@ lawsofux.com -- Postel’s Law = be liberal in what you accept, and conservative
 lawsofux.com -- Selective Attention = the process of focusing our attention only to a subset of stimuli in an environment — usually those related to our goals.
 lawsofux.com -- Serial Position Effect = users have a propensity to best remember the first and last items in a series.
 lawsofux.com -- Tesler’s Law = also known as The Law of Conservation of Complexity, states that for any system there is a certain amount of complexity which cannot be reduced.
+lawsofux.com -- Von Restorff Effect = also known as The Isolation Effect, predicts that when multiple similar objects are present, the one that differs from the rest is most likely to be remembered.
 lawsofux.com -- Working Memory = a cognitive system that temporarily holds and manipulates information needed to complete tasks.
 lawsofux.com -- Zeigarnik Effect = People remember uncompleted or interrupted tasks better than completed tasks.
 lawsofux.com = collection of best practices that designers can consider when building user interfaces https://lawsofux.com/
-layout -- composer https://github.com/namecheap/ilc
-layout -- trashing https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing
+layout -- &composer https://github.com/namecheap/ilc
+layout -- &trashing https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing
 lazy loading -- preloading https://www.differentshelf.com/lazy-loading-isnt-just-lazy-its-late-the-web-deserves-faster/
 MDN
 MDN curriculum https://developer.mozilla.org/en-US/curriculum/
-MIME - Multipurpose Internet Mail Extensions
+MIME "Multipurpose Internet Mail Extensions"
+modals -- avoid https://modalzmodalzmodalz.com/
 monitoring -- labs = made by a lab, ex. camera
-monitoring -- Real user monitoring (RUM) = passive monitoring technology that records all user interaction with a website or client interacting with a server or cloud-based application (vs. lab) https://en.wikipedia.org/wiki/Real_user_monitoring
+monitoring -- real user & (RUM) = passive monitoring technology that records all user interaction with a website or client interacting with a server or cloud-based application (vs. lab) https://en.wikipedia.org/wiki/Real_user_monitoring
 monitoring -- synthetic = own test bot https://en.wikipedia.org/wiki/Synthetic_monitoring
 native apps with JS https://v2.tauri.app/
 navigation -- client side vs full refresh
 node -- tenant isolation = node is single thread, hence issues with security, esp. AWS lambda! solutions: workerd?
 oklch https://oklch.com/
 Open Web Advocacy https://open-web-advocacy.org/
+optical alignment = to look nice, vs, mathematical alignment. Ex. centering a digit inside a circle
 optimisation -- fonts https://nextjs.org/learn/dashboard-app/optimizing-fonts-images
 optimisation -- images https://nextjs.org/learn/dashboard-app/optimizing-fonts-images
 organic vs inorganic concept = coming from a real user or a bot/AI or app etc.
+overlays -- avoid https://www.nngroup.com/articles/overuse-of-overlays/
 Page Assembly Service = responsible for generating HTML for pages
 Page Rank
 perf -- content jump = https://css-tricks.com/content-jumping-avoid/

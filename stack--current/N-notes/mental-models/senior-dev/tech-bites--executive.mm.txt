@@ -17,6 +17,7 @@ challenges -- "Why is this our priority right now?" = CEO Actually asking about:
 challenges -- questions -- use AI to simulate!
 challenges -- questions = address the meta concern, not just the surface question
 create space for the best ideas to emerge
+dog energy vs cat energy = junior = dog, senior = cat?
 DORA = (Google) largest and longest running research program (...) to understand the capabilities that drive software delivery and operations performance https://dora.dev/
 executive presence
 executive presence -- don't panic

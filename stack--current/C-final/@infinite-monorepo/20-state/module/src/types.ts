@@ -34,8 +34,7 @@ export interface FileOutputPresent extends BaseFileOutput {
 
 export type AsyncCallbackReducer<T> = (
 	state: Immutable<State>,
-	error: null | Error, // useful?? not found = no error, other error = crash?
-	result: T | null,
+	result: T | Error,
 ) => Immutable<State>
 
 export interface SubStateⳇFactsFile {
@@ -47,7 +46,7 @@ export interface SubStateⳇFactsFile {
 		| JSONObject // structured result
 	// those props are only present when content is undefined
 	ↆretrieval: Promise<JSONObject>
-	pending_callbacks?: Array<AsyncCallbackReducer<JSONObject>>
+	pending_callbacks?: Array<AsyncCallbackReducer<JSONObject | null>>
 }
 
 export interface State {

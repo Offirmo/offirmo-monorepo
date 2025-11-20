@@ -1,5 +1,10 @@
 /////////////////////////////////////////////////
 
-export type UnknowThrown = unknown
+export interface ErrorShapeⳇBase {
+	name: string
+	message: string
+}
+
+export type Errorᐧstack = string // TODO 1D more complex
 
 /////////////////////////////////////////////////

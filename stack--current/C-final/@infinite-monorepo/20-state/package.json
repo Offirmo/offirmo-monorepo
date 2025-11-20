@@ -19,6 +19,7 @@
 		"@infinite-monorepo/read-write-any-structured-file": "*",
 		"@infinite-monorepo/types": "*",
 		"@offirmo-private/type-detection": "*",
+		"@offirmo/error-utils": "^0.0.1",
 		"tiny-invariant": "^1"
 	},
 	"scripts": {

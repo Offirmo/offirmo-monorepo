@@ -129,6 +129,7 @@ shares
 stock = all the shares https://en.wikipedia.org/wiki/Stock
 stock market
 stock market -- crash = https://en.wikipedia.org/wiki/Stock_market_crash
+tax loss harvesting https://en.wikipedia.org/wiki/Tax_loss_harvesting
 value
 value -- created internally = ex. fiat money since no backing value
 value -- intrinsic = calculated with regard to an inherent, objective measure https://en.wikipedia.org/wiki/Intrinsic_value_(finance)

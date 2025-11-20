@@ -46,6 +46,12 @@ This is bc source files usually have "related" files, ex:
 - `types.ts`
 - `index.tsx` (the infamous barrel file ;))
 - `reducers.ts`, `selectors.ts`...
+- `_entrypoint.ts`
+```
+// ./examples
+export * from './index.ts'
+```
+
 
 
 ## Code
