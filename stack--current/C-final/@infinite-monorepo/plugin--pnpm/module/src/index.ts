@@ -135,6 +135,8 @@ const pluginꓽpnpm: Plugin = {
 						resolutionMode: 'time-based',
 						catalogMode: 'strict',
 						minimumReleaseAge: 10080, // https://pnpm.io/supply-chain-security
+
+						// https://github.com/pnpm/pnpm.io/issues/667
 					},
 				}
 				state = StateLib.requestꓽfile_output(state, pnpm_config_output_spec)
