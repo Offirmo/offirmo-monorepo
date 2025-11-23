@@ -59,6 +59,7 @@
 [ ] https://support.infinex.xyz/en/articles/9719898-crypto-terms
 [ ] https://vitalik.eth.limo/
 [ ] https://www.kaleido.io/blog-categories/product-technology
+Aave = decentralized lending protocol https://aave.com/
 address -- evm = the right-most 160 bits of a Keccak hash of an ECDSA public key https://info.etherscan.com/what-is-an-ethereum-address/
 address gap limit = chains that use address derivation recommend a limit of derived checks https://support.ledger.com/article/360010892360-zd
 Airdrop = gift of assets, usually as an incentive to use a new thing
@@ -208,6 +209,7 @@ ERC-1155 = fungible + non-fungible tokens = good for games currency + items
 ERC-20 = fungible tokens
 ERC-721 = non-fungible tokens
 Ethena
+Ether -- value? https://medium.com/ethhub/why-ether-is-valuable-2b4e39e01eb3
 Ethereum -- EIP "Ethereum Improvement Proposal" https://eips.ethereum.org/
 Ethereum -- ENS = .eth
 Ethereum -- ERC "Ethereum Request for Comment" https://eips.ethereum.org/erc
@@ -343,6 +345,7 @@ networks -- Optimism
 networks -- Polygon Mainnet
 networks -- Solana Mainnet Beta
 networks -- Zcash Mainnet
+networks = groups of connected computers that communicate using a protocol. There is only one Mainnet, but independent networks conforming to the same protocol rules can be created for testing and development purposes. There are many independent "networks" that conform to the protocol without interacting with each other. You can even start one locally on your own computer for testing your smart contracts and web3 apps. https://ethereum.org/developers/docs/networks/
 NFTs -- "BAYC wall" = pricier than BAYC
 NFTs -- "buy before the news"
 NFTs -- 2023 war https://blockworks.co/news/blur-opensea-royalties-nft-creators
@@ -448,7 +451,6 @@ smart contract = self-implementing contracts with predefined rules written in co
 smart property = ownership of an underlying physical device https://en.bitcoin.it/wiki/Smart_Property
 social tokens = digital assets issued by creators to monetize their content and engage with their fan base https://www.coinbase.com/en-au/learn/crypto-basics/what-are-social-tokens-and-how-do-they-redefine-value-in-the-creator-economy
 Solana
-Ether -- value? https://medium.com/ethhub/why-ether-is-valuable-2b4e39e01eb3
 Solana -- advocacy = fastest, cheapest, designed from the ground up to maximise the throughput of the chain https://blog.labeleven.dev/why-solana
 Solana -- gaming https://www.playsolana.com/about
 Solana -- Meteora platform ??
@@ -531,6 +533,7 @@ transactions per second -- 2024 https://a16zcrypto.com/posts/article/state-of-cr
 Trezor https://github.com/trezor
 trust -- digital = reflexion https://consensys.io/ethereum/trust
 trust = needed to avoid scams, see CoinGecko trust score
+Trusted Execution Environments (TEEs) = see security
 trustlessness manifesto -- A system is trustless when any honest participant can join, verify, and act without permission and without fear. https://trustlessness.eth.limo/general/2025/11/11/the-trustless-manifesto.html
 trustlessness manifesto -- Accessibility = participation must be within reach of ordinary users, not only experts with servers and capital.
 trustlessness manifesto -- Censorship resistance = any valid action can be included, within a reasonable timeframe and without undue cost.
@@ -572,6 +575,7 @@ wallet -- drain -- example https://x.com/0xzak/status/1955265807807545763
 wallet -- embedded = (Defi App) latest gen, seedless, self-custodial ??
 wallet -- Extended public key (xPub) = ?? https://support.ledger.com/article/360011069619-zd
 wallet -- hardware -- replaced by passkeys? https://www.youtube.com/shorts/OncIJSV6hBE
+wallet -- metal https://keyst.one/shop/products/keystone-tablet-plus
 wallet -- MPC& = ???
 wallet -- multisig& = ??
 wallet -- password

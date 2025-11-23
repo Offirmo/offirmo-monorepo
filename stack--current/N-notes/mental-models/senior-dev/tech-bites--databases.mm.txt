@@ -26,6 +26,7 @@ best practices -- timestamp Columns = should be named in the past tense (when pr
 cardinality
 case-sensitivity = The concept of “case” isn’t as simple as it may seem and conversion is a non-trivial. https://dba.stackexchange.com/a/217502
 data retrieval
+differential dataflow = a data-parallel programming framework designed to efficiently process large volumes of data and to quickly respond to arbitrary changes in input collections https://github.com/TimelyDataflow/differential-dataflow
 graph
 in-memory
 index lookup

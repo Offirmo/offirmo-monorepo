@@ -270,6 +270,7 @@ hydration = rendering a web app from existing (pre-rendered) HTML instead of fro
 hypercard https://hypercard.org
 hypermedia
 hypertext
+i18n -- MessageFormat https://github.com/unicode-org/message-format-wg/tree/main/spec
 i18n -- tab order
 iframe
 iframe -- fenced
@@ -486,6 +487,7 @@ UI -- properties -- Natural-language = User types in a question and waits for a 
 UI -- properties -- Permission-driven = show or conceal menu options or functions depending on the user's level of permissions. The system is intended to improve the user experience by removing items that are unavailable to the user. A user who sees functions that are unavailable for use may become frustrated. It also provides an enhancement to security by hiding functional items from unauthorized persons.
 UI -- proximal toolbar = a small toolbar appearing like a tooltip on an item when interacting with it
 UI -- snowflake = +++ "web design in 4 minutes" https://jgthms.com/web-design-in-4-minutes/
+UI -- tooltip -- should not exist https://tkdodo.eu/blog/tooltip-components-should-not-exist
 UI -- transitions
 UI -- views
 UI = https://en.wikipedia.org/wiki/User_interface

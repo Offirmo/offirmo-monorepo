@@ -6,6 +6,6 @@ https://learnmeabitcoin.com/technical/keys/hd-wallets/derivation-paths/
 
 ethers
 
-web3.js
-
 https://github.com/dajiaji/hpke-js
+
+https://www.anza.xyz/blog/meet-kit-the-new-solana-javascript-sdk https://www.solanakit.com/ (ex. web3.js)
