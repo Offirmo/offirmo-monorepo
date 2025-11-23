@@ -109,6 +109,7 @@ atomic
 audit trail = what happened, when, who made the request and how?
 authentication
 bash -- pitfalls https://mywiki.wooledge.org/BashPitfalls
+battle short = a condition in which some military equipment can be placed so it does not shut down when circumstances would be damaging to the equipment or personnel. The origin of the term is to bridge or "short" the fuses of an electrical apparatus before entering combat, so that the fuse blowing will not stop the equipment from operating. https://en.wikipedia.org/wiki/Battleshort
 BDD (Behavior-Driven Development) https://cucumber.io/school/   Discovery -> Formulation -> Automation
 Beyoncé Principle = If you liked it, then you shoulda put a test on it
 big companies software = At big companies, software tends to be written by large and frequently changing teams of mediocre programmers https://paulgraham.com/noop.html
@@ -1061,10 +1062,13 @@ versioning -- outdated -- tool-chain breakage https://nodejs.org/en/eol
 versioning -- outdated -- vulnerabilities https://nodejs.org/en/eol
 vibe coding https://x.com/karpathy/status/1886192184808149383
 virtual private cloud (VPC)
+war emergency power (WEP) = a throttle setting that is present on some military aircraft engines: In emergency situations, it produced more than 100% of the engine's normal rated power for a limited amount of time, often about five minutes https://en.wikipedia.org/wiki/War_emergency_power
 web assembly (asm.js)
 WebAuth
+flank speed = American nautical term referring to a ship's true maximum speed, in case of immediate danger. It is not equivalent to the term full speed ahead.
 who's who -- Eric Elliot https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
-who's who -- https://tom.preston-werner.com/
+who's who -- TPW https://tom.preston-werner.com/
+who's who -- James Hamilton (AWS) https://perspectives.mvdirona.com/
 who's who -- Linus Torvald https://www.goodreads.com/author/quotes/92867.Linus_Torvalds
 Wirth's law = software systems grow faster in size and complexity than methods to handle complexity are invented. software is getting slower more rapidly than hardware is becoming faster. https://en.wikipedia.org/wiki/Wirth%27s_law
 WORA "write once, run anywhere" https://en.m.wikipedia.org/wiki/Write_once,_run_anywhere

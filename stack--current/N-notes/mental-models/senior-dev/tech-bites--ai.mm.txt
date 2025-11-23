@@ -27,6 +27,7 @@
 2025-08-07 GPT 5 https://x.com/i/trending/1953256633385271319
 2025-08-27 The reality of AI-Assisted software engineering productivity https://addyo.substack.com/p/the-reality-of-ai-assisted-software
 2025-10-17 "AGI is still 10y away" influential podcast https://www.dwarkesh.com/p/andrej-karpathy
+2025-11-14 AI espionage? https://www.anthropic.com/news/disrupting-AI-espionage
 2025-11-20 A Microsoft executive is questioning why more people aren't impressed with AI (...) immediately triggered backlash.https://au.pcmag.com/ai/114305/microsoft-exec-asks-why-arent-more-people-impressed-with-ai
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
@@ -93,6 +94,7 @@ bitter lesson = generic + Moore law beats specific https://www.cs.utexas.edu/~eu
 blindspots https://ezyang.github.io/ai-blindspots/
 BLOOM = "BigScience Large Open-science Open-access Multilingual Language Model" = deprecated former big model
 BM25 (Best Matching 25) = a ranking function that uses lexical matching to find precise word or phrase matches. It's particularly effective for queries that include unique identifiers or technical terms https://www.anthropic.com/news/contextual-retrieval
+BMAD https://github.com/bmad-code-org/BMAD-METHOD
 BPE Byte Pair Encoding is a way of converting text into tokens
 canny edge (generative AI) https://en.wikipedia.org/wiki/Canny_edge_detector
 capability stack = interaction, generation, automation, recommendation, prediction, classification, recognition
@@ -160,6 +162,7 @@ hallucinations -- leaderboard https://github.com/vectara/hallucination-leaderboa
 helpful, harmless and honest
 HHH helpful, honest, and harmless
 Hierarchical Navigable Small World (HNSW) = graph for vector search https://www.pinecone.io/learn/series/faiss/hnsw/
+https://nonbot.org/
 Hugging Face = "the GitHub of machine learning" = the collaboration platform for the machine learning community https://www.techtarget.com/whatis/definition/Hugging-Face
 huggingface.co "space"
 hype cycle -- coding https://www.linkedin.com/posts/svpino_literally-everyone-is-freaking-out-over-codex-activity-7329865083411402752-T8KU

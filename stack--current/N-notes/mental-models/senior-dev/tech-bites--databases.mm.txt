@@ -1,0 +1,70 @@
+
+ACID -- 1 Atomicity = transactions are "all or nothing"
+ACID -- 2 Consistency = integrity constraints: "valid state" before AND after a transaction
+ACID -- 3 Isolation = "independent transactions"
+ACID -- 4 Durability = transaction resistance to system failures "once committed, always committed"
+ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
+backup
+batch
+benchmarking -- How does the database perform under a "typical" OLTP load? (TPS, QPS, etc)
+benchmarking -- How does the database perform under high read / write pressure? (IOPS, caching)
+benchmarking -- How much does it cost to achieve some bar of performance relative to other options? (price:performance ratio)
+benchmarking -- How quickly can I reach my database? (latency)
+benchmarking https://planetscale.com/benchmarks
+best practices -- binary Columns = Should generally be avoided for data that has a well established text encoding (eg. hex, base64, base58, etc.). In these case a varchar column should be used. Binary may be a reasonable type for data that has no established text representation (eg. an image) but such data probably doesn’t belong in the DB to start with.
+best practices -- boolean Columns -- 1 = The column/field name should start with is... or was... if grammar demands it. Eg: isEnabled not simply enabled. This improves readability and makes conditional statements more natural.
+best practices -- boolean Columns -- 2 = should be non-nullable and have a default value. An explicit false is always clearer than null and null equality is evaluated differently in JavaScript and SQL. In theory, a nullable boolean column can be used to store a value that can exist in 3 discrete states but in practice, once you get beyond true and false, you’re better off labelling your states with an enum-like varchar column.
+best practices -- Dates, Times and timestamp = All stored should be in UTC. If the value relates to an event in a specific time zone, an additional column should be used to store the time zone. Time zones are reference using their identifier from the tz database (https://www.iana.org/time-zones https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). Offset information should be resolved from the time zone at runtime, not stored.
+best practices -- enum Columns = Should only be used when the list of options is well established and unlikely to change. Eg. months of the year. Values defined by biz domain are unlikely to fulfill this requirement: are better as varchar columns with options restricted in code. However these columns should be well protected by type validation.
+best practices -- naming -- Lowercase – all names should be lowercase
+best practices -- naming -- Pluralisation – table names should be singular (eg. user not users)
+best practices -- naming -- Reserved terms – it’s preferable to avoid reserved terms wherever possible. Usually names will be correctly escaped by the tooling (ie. Drizzle) but it’s still a pain https://dev.mysql.com/doc/refman/8.4/en/keywords.html
+best practices -- naming -- Underscores – use underscores to separate terms in all DB objects names (tables, columns, etc.)
+best practices -- primary keys = All tables should have a non-compound, varchar, primary key, called id. It should be populated with something UUID-shaped, usually either UUID v4 or something smarter (see below). Beyond sharding considerations, id values should not attempt to store, represent or encode meaning and should not have a natural order
+best practices -- Segmentation by user_id = Any table that can be related back to a single user should have a non-nullable user_id column, storing the user’s id in a varchar column
+best practices -- timestamp Columns = should be named in the past tense (when practical) and should end with ..._at, (eg. created_at, not created or create_at). This convention should be followed even for columns that schedule events in the future (eg. expired_at not expires_at).
+cardinality
+case-sensitivity = The concept of “case” isn’t as simple as it may seem and conversion is a non-trivial. https://dba.stackexchange.com/a/217502
+data retrieval
+graph
+in-memory
+index lookup
+indexes
+indexes -- cost -- Only When Needed = you shouldn’t create index a column unless there’s a clear need, such as: The column is regularly used to filter the table; You want to enforce the uniqueness of values
+indexes -- cost = Indexes aren’t free. All indexes take time to maintain (on insert and update) but in the worst case, using an index can slow query performance down as well by adding additional steps without reducing the records that need to be retrieved (see cardinality and selectivity).
+indexes -- Knowing which indexes to add to a table often isn’t trivial. The best and only true way to determine the value of an index is to test it against real world data. Run your queries in a DB IDE (like Table Plus) and use EXPLAIN ANALYZE (docs) to see how they’re being run and which indexes are used.
+indexes -- trade-offs
+joins
+latency / distance to
+locking -- should be avoided at all cost
+multiversion concurrency control (MVCC) = a popular database mechanism for tracking changes in a non-blocking fashion, where for any key we can keep multiple versions of its values for different points in time https://en.wikipedia.org/wiki/Multiversion_concurrency_control
+MySQL -- gotchas -- varchar columns return data with the case stored but, by default, are case-insensitive for comparisons.
+normalization
+normalization -- de& = ex. for perf or ease of query
+NoSQL
+orm
+orm -- drizzle
+orm -- drizzle -- gotchas -- insert behaviour = references all known cols
+polyglot persistence = using multiple data storage technologies within a single system, in order to meet varying data storage needs https://en.wikipedia.org/wiki/Polyglot_persistence
+Postgres
+primary / replica
+ranged scan
+relational
+row security
+scaling
+search
+selectivity
+sharding
+solution -- GUI tool -- DataGrip
+solution -- GUI tool -- TablePlus https://tableplus.com/
+solution -- MySQL https://dev.mysql.com/
+sql
+sql -- EXPLAIN = show the execution plan of a statement https://www.postgresql.org/docs/current/sql-explain.html
+sql -- LIMIT
+sql -- ORDER BY
+sql -- RETURNING
+sql -- SELECT = can be slow
+sql -- UPDATE = very tricky, usually lock
+sql -- WHERE
+sqlite
+transaction

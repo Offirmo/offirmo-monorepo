@@ -1,6 +1,7 @@
 [ ] list of books to learn history https://paulgraham.com/raq.html
 a country is a farm
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
+backwardness https://en.wikipedia.org/wiki/The_Moral_Basis_of_a_Backward_Society
 bateau https://en.wikipedia.org/wiki/File:Uluburun1.jpg
 bateau https://en.wikipedia.org/wiki/List_of_surviving_ancient_ships
 capitalism
@@ -23,18 +24,27 @@ génération spontanée
 hammurabi
 https://en.wikipedia.org/wiki/Baby_farming
 https://en.wikipedia.org/wiki/Currency
+https://en.wikipedia.org/wiki/Historical_European_martial_arts
 https://en.wikipedia.org/wiki/Late_Bronze_Age_collapse
 https://en.wikipedia.org/wiki/Makuria
+https://en.wikipedia.org/wiki/Tragedy_of_the_commons
 https://en.wikipedia.org/wiki/Urnfield_culture
 https://politiquemagazine.fr/civilisation/redecouvrir-les-origines-de-la-france/
 https://worldoffinewine.com/news-features/did-charles-darwin-save-wine
 https://www.atlassian.com/loop/about
 https://www.famillechretienne.fr/40361/article/remi-brague-nous-voyons-lislam-avec-des-lunettes-chretiennes
+infrastructure = roads, canals, telephone networks...
 intrinsic motivation comes from working in an environment where Autonomy, Mastery and Purpose can flourish.
 loi du talion
+making big things
 military tactics https://civilization.fandom.com/wiki/Military_Tactics_(Civ6)
 numeral system https://en.wikipedia.org/wiki/Positional_notation
 pollution -- 12xx https://en.wikipedia.org/wiki/Pea_soup_fog
+problems -- & are the conduit of progress https://mail.blockworks.com/p/problems-are-the-conduit-of-progress
+problems -- Kevin Kelly "Most of the problems we have today are created by the solutions we had in the past." https://www.ted.com/talks/kevin_kelly_the_future_will_be_shaped_by_optimists
+problems -- The problem of near-universal poverty was solved by fossil fuels, but now we have the problem of climate change.
+problems -- The problem of routine infections becoming deadly was solved by antibiotics, but now we have antibiotic-resistant superbugs.
+problems -- The problem of widespread hunger, for example, was solved by industrialized farming — but now food is so cheap and industrialized we have an epidemic of obesity.
 ransom
 slavery
 surproduction d'élite https://pierre-yves-gomez.fr/trop-delite-tue-lelite/
@@ -43,4 +53,5 @@ violence
 war -- Allied Plans to Occupy France, 1942-1944 https://web.archive.org/web/20060507015256/http://www.rall.com/longarticle_011.htm
 war -- https://en.wikipedia.org/wiki/Irredentism
 war -- https://en.wikipedia.org/wiki/July_Crisis
+war https://en.wikipedia.org/wiki/List_of_established_military_terms
 weights and measures https://en.wikipedia.org/wiki/Apothecaries%27_system

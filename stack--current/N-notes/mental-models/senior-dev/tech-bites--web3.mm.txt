@@ -1,3 +1,6 @@
+& = "the distributed web" = a set of technologies that enables hosting of content and web applications in a serverless manner by leveraging distributed systems and consensus protocols https://developers.cloudflare.com/web3/
+& = umbrella term for technologies like blockchain that decentralize data ownership and control on the internet. Most internet applications are controlled by centralized entities that determine how they save and use end-user data. https://aws.amazon.com/what-is/web3/
+&-enabled browser = Open this page in a Web3-enabled browser (e.g. MetaMask, Rainbow, Coinbase Wallet) to sign.
 +++ https://casebitcoin.com/critiques
 +++ https://ethereum.org/en/whitepaper/
 1% using crypto, then 3% paying with it https://cointelegraph.com/magazine/porn-payments-crypto-killer-app/
@@ -40,6 +43,7 @@
 2025-08-21 Kanye West launches his coin https://crypto.news/kanye-west-launches-yzy-memecoin-on-solana-2025/
 2025-10-10 crypto crash https://caladan.xyz/crypto-black-friday/
 2025-10-11 huge liquidation https://blockworks.co/news/crypto-liquidations-drive-historic-market-turbulence
+2025-11 list of some crypto problems https://mail.blockworks.com/p/problems-are-the-conduit-of-progress
 2025-11-11 Ethereum's trustless manifesto https://trustlessness.eth.limo/general/2025/11/11/the-trustless-manifesto.html
 51% attack = attack where a group gains control of the majority of nodes = allow them to defraud the blockchain by reversing transactions and double spending https://ethereum.org/en/glossary/#51%-attack
 ? https://intel.arkm.com/
@@ -118,6 +122,7 @@ blockchains -- sizes = ex. Ethereum Mainnet 2025 2300Gb https://chainstats.org/
 BNB Chain
 boosters = ppl who try to pump a tech/coin
 bridging
+Cairo paper https://eprint.iacr.org/2021/1063.pdf
 case study -- privacy https://newsletter.systemdesign.one/p/how-do-airtags-work
 CBDC "Central bank digital currencies" = cryptonite for crypto? (centralized) https://cointelegraph.com/magazine/cbdcs-kryptonite-for-crypto/
 CEX-like -- beware, ex. storing private keys in DB https://x.com/retardmode/status/1991067539539902942?s=46
@@ -133,6 +138,7 @@ challenges -- Regulatory compliance = Web3 applications must follow existing dat
 challenges -- scalability = a primary concern, because lack of trust is expensive: blockchain networks get very expensive and computationally demanding as data volumes increase
 challenges -- User experience and adoption = Complex interfaces and a steep learning curve limit mainstream adoption. Improving the user experience by designing intuitive interfaces that abstract the complexities of blockchain technology is essential.
 CLOB "Central Limit Order Book" = system where all buy and sell orders for an asset are collected, sorted, and matched based on price and time priority
+code is law "Hundreds of millions stolen in a spree of massive crypto heists - but the hackers say they broke no laws" https://www.journeyman.tv/film/8785
 colored coins = on-blockchain digital assets to represent custom currencies and financial instruments https://docs.google.com/a/buterin.com/document/d/1AnkP_cVZTCMLIzw4DvsW6M8Q2JC0lIzrTLuoWu2z1BE/edit
 compliance -- AU -- AUSTRAC https://www.austrac.gov.au/business/new-to-austrac
 compliance -- US
@@ -207,13 +213,18 @@ Ethereum -- ENS = .eth
 Ethereum -- ERC "Ethereum Request for Comment" https://eips.ethereum.org/erc
 Ethereum -- ether = the coin
 ethereum -- gas https://ethereum.stackexchange.com/questions/3/what-is-meant-by-the-term-gas
+Ethereum -- https://devcon.org/
+Ethereum -- lean & = https://blog.ethereum.org/2025/07/31/lean-ethereum https://leanroadmap.org/ https://github.com/leanEthereum
 Ethereum -- platform
 Ethereum -- protocol
 Ethereum -- REth https://github.com/paradigmxyz/reth
 Ethereum -- roadmap https://ethereum.org/en/roadmap/
 ethereum -- top questions https://ethereum.stackexchange.com/questions?sort=votes
+Ethereum -- trustlessness "Ethereum was not created to make finance efficient or apps convenient. It was created to set people free — to empower anyone, anywhere to coordinate without permission and without trusting anyone they cannot hold accountable." https://trustlessness.eth.limo/general/2025/11/11/the-trustless-manifesto.html
 Ethereum -- trustlessness https://trustlessness.eth.limo/general/2025/11/11/the-trustless-manifesto.html
+Ethereum 2.0 (Serenity) = users able to become a validator and help secure the network by providing computational resources and locking up 32 Ether per validator
 Ethereum = blockchain with a built-in fully fledged Turing-complete programming language that can be used to create "contracts" that can be used to encode arbitrary state transition functions, allowing users to create any systems we have not yet imagined, simply by writing up the logic in a few lines of code https://ethereum.org/en/whitepaper/#a-next-generation-smart-contract-and-decentralized-application-platform https://ethereum.org/en/what-is-ethereum/ https://aws.amazon.com/blockchain/what-is-ethereum/
+Etheruem staking https://rocketpool.net/ https://x.com/Rocket_Pool
 EVM and non-EVM chains
 EVM network
 exchanges -- Binance = largest cryptocurrency exchange in terms of daily trading volume of cryptocurrencies https://en.wikipedia.org/wiki/Binance https://www.binance.com/
@@ -246,6 +257,8 @@ gas -- market? https://blog.gas.network/
 gas-optimized = a contract using less gas (how?)
 gelato
 gossip
+governance -- plutocracy? https://www.reddit.com/r/CryptoCurrency/comments/zy6koh/onchain_cryptocurrency_governance_is_an_example/
+governance -- skin in the game
 Howey Test -- four key criteria -- 1 Investment of Money: An investor must put their money into the venture.
 Howey Test -- four key criteria -- 2 Common Enterprise: There must be a shared investment pool or a group of individuals collectively participating in the venture.
 Howey Test -- four key criteria -- 3 Expectation of Profit: The investor anticipates a financial return from the investment.
@@ -313,6 +326,7 @@ minting = https://ethereum.org/en/developers/docs/intro-to-ether/#minting-ether
 movement
 multi-chain https://arxiv.org/abs/2112.01472
 multichain strategy
+multisig
 namecoin = non-fungible assets such as domain names http://namecoin.org/
 narratives = to bring interest into crypto
 near https://www.near.org/
@@ -377,6 +391,7 @@ open source -- benefits -- enabling permissionless third-party improvements
 open source -- benefits -- reducing the risk of proprietary lock-in
 open standards -- striving for interoperability. If you want to introduce a new feature that is not well-served by existing standards, write a new proposal in collaboration with others. Applications can be rated by which proposals they are compatible with.
 Optimism
+ossification
 passkey
 perps -- Auto-Deleveraging (ADL) = When massive long liquidations occur simultaneously without new willing counterparties, the system closes profitable positions to maintain system solvency, ranking positions by... https://caladan.xyz/crypto-black-friday/
 perps -- hyperliquid
@@ -393,6 +408,7 @@ proof-of -- 2018 proof of history -- https://medium.com/solana-labs/proof-of-his
 proof-of = component in consensus mechanisms that protect against Sybil attacks by making it "crypto-economically" not worth it to do a Sybil attack https://ethereum.org/en/developers/docs/consensus-mechanisms/
 Provider Discovery Library = A library or piece of software that assists a DApp to interact with the Wallet https://eips.ethereum.org/EIPS/eip-6963
 public key cryptography
+r/CryptoCurrency https://www.reddit.com/r/CryptoCurrency/
 read/write/own paradigm = data creators own and control their own data and have a greater say in how it is used and managed
 RICO Act "Racketeer Influenced and Corrupt Organizations Act" = a U.S. federal law originally created in 1970 to combat organized crime (like the Mafia). It allows prosecutors to charge people or organizations who engage in a pattern of criminal activity (called racketeering) as part of an enterprise — even if they didn’t personally commit every crime.
 risks -- cryptostealer -- example https://gist.github.com/jdstaerk/9e73837f0ba23735ef04a736c6b97c09
@@ -416,6 +432,8 @@ scams -- wash trading = artificially inflating volume https://bitfinexed.medium.
 seasons -- autumn = ex. altcoin autumn
 seasons -- summer = ex. DeFi summer
 seasons -- winter = ex. AI winter
+secret splitting -- 2-of-3 multisig
+secret splitting -- https://groups.google.com/g/bitcoindev/c/8LkdxVc_nI0
 secure enclave https://whitepaper.turnkey.com/
 seed phrase
 silk road / Ross Ulbricht
@@ -430,6 +448,7 @@ smart contract = self-implementing contracts with predefined rules written in co
 smart property = ownership of an underlying physical device https://en.bitcoin.it/wiki/Smart_Property
 social tokens = digital assets issued by creators to monetize their content and engage with their fan base https://www.coinbase.com/en-au/learn/crypto-basics/what-are-social-tokens-and-how-do-they-redefine-value-in-the-creator-economy
 Solana
+Ether -- value? https://medium.com/ethhub/why-ether-is-valuable-2b4e39e01eb3
 Solana -- advocacy = fastest, cheapest, designed from the ground up to maximise the throughput of the chain https://blog.labeleven.dev/why-solana
 Solana -- gaming https://www.playsolana.com/about
 Solana -- Meteora platform ??
@@ -438,6 +457,7 @@ Solana -- vision -- “everything can fit in one computer”
 solana = better Ethereum? https://solana.com/learn/what-is-solana
 Solana https://medium.com/solana-labs
 Solana network
+solo validating
 solution -- "the only nationally chartered bank built to enable developers and builders to create new financial products" https://column.com/
 solution -- Geth (Go Ethereum) = an open source blockchain protocol implementing the standard Ethereum specification plus other useful features such as a pluggable consensus engine. Geth is among the most widely used implementations of Ethereum nodes. It supports both the standard DAG based Proof-of-Work consensus and Proof-of-Authority (PoA) consensus with its implementation called Clique https://github.com/ethereum/go-ethereum
 solution -- https://www.moderntreasury.com/
@@ -454,6 +474,7 @@ spirit -- "Ignoring sensible advice is what we do in crypto"
 spot
 stablecoin -- peg -- depeg = can't withstand a bank run. https://www.theblock.co/post/261727/large-cap-stablecoins-have-depegged-609-times-this-year-moodys-analytics-says
 stablecoin -- peg https://privatebank.jpmorgan.com/apac/en/insights/markets-and-investing/demystifying-stablecoins
+stablecoins -- pro/cons https://mail.blockworks.com/p/thursday-links-448a
 staking -- active / passive / pooled / delegated / active / liquid https://www.britannica.com/money/what-is-crypto-staking
 staking -- chain-agnostic
 staking -- types -- solo / non-custodial / custodial / liquid https://www.sec.gov/newsroom/speeches-statements/corpfin-certain-liquid-staking-activities-080525
@@ -466,6 +487,7 @@ Synthetix = ??
 talent -- network https://careers.near.org/talent-network
 talent pools -- New-York = #1 many finance turned to crypto
 talent pools -- San Francisco = #3, focused on AI / robotics
+techno-optimism
 TG = token generation?
 TGE / ICO / liquidity incentives -- 10 commandments for success https://caladan.xyz/wp-content/uploads/2025/10/Caladan_Mercenary_Report.pdf
 thesis -- Solana = ??
@@ -506,8 +528,16 @@ transaction processing -- stages -- transaction dissemination
 transaction processing -- stages = needed, can happen concurrently on some runtimes https://aptosfoundation.org/whitepaper
 transaction simulation https://support.rabby.io/hc/en-us/articles/11495560464143-Why-do-I-see-Simulation-Failed-error
 transactions per second -- 2024 https://a16zcrypto.com/posts/article/state-of-crypto-report-2024/#section--5
+Trezor https://github.com/trezor
 trust -- digital = reflexion https://consensys.io/ethereum/trust
 trust = needed to avoid scams, see CoinGecko trust score
+trustlessness manifesto -- A system is trustless when any honest participant can join, verify, and act without permission and without fear. https://trustlessness.eth.limo/general/2025/11/11/the-trustless-manifesto.html
+trustlessness manifesto -- Accessibility = participation must be within reach of ordinary users, not only experts with servers and capital.
+trustlessness manifesto -- Censorship resistance = any valid action can be included, within a reasonable timeframe and without undue cost.
+trustlessness manifesto -- Self-sovereignty = each user authorizes their own actions; no one acts on their behalf.
+trustlessness manifesto -- Transparency of incentives = participants are governed by protocol rules, not private contracts or opaque APIs.
+trustlessness manifesto -- Verifiability = anyone can confirm what happened from public data.
+trustlessness manifesto -- Walkaway test = if one operator disappears or misbehaves, another can step in without approval.
 Unichain
 unspent transaction output (UTxO) = a certain amount of cryptocurrency that has been authorized by a sender and is available to be spent by a recipient https://en.wikipedia.org/wiki/Unspent_transaction_output
 unstable coins https://cointelegraph.com/magazine/unstable-coins-de-pegging-bank-runs-other-risks-2023/
@@ -551,6 +581,7 @@ wallet -- recovery phrase = 24 words to recover/transfer a wallet
 wallet -- refill& = intermediate between hot and cold, buffer used to refill hot wallets when needed + target of sweeps. If too full, go cold wallet
 wallet -- refilling
 wallet -- seed
+wallet -- seed phrase -- splitting
 wallet -- seed phrase = BEWARE 1) it's equivalent to the private key! 2) it's interpreted differently by different wallets!!! https://www.reddit.com/r/sui/comments/1bplcvh/different_wallet_address_when_importing_account/
 wallet -- self-custody = "I understand that this is a self-custody wallet, and that I am solely responsible for any associated funds, assets or accounts, and for taking any appropriate action to secure, protect and back up my wallet. I understand that X cannot access my wallet or reverse transactions on my behalf and that my recovery phrase is the ONLY way to regain access in the event of a lost password, stolen device or similar circumstance."
 wallet -- solution -- brave https://brave.com/wallet/
@@ -576,8 +607,6 @@ Web3 -- decentralization = aim to distribute and store data in decentralized net
 Web3 -- interoperability = Web 3.0 aims to create more interconnections between diverse technologies, so data flows between different platforms without intermediaries. Interoperability makes data portable so users can seamlessly switch between services while maintaining their preferences, profiles, and settings.
 Web3 -- semantic web = enables applications to perform complex tasks by understanding the content and context of web data. It uses metadata and artificial intelligence to provide meanings (semantics) to user-generated data. Web 3.0 aims to move more fully towards semantic web technologies currently found in some aspects of existing web technologies. For example, a search engine provides more accurate and contextually relevant search results, and intelligent agents assist users in performing tasks more efficiently.
 Web3 -- trustlessness = In centralized web applications and services, users often need to place trust in a central authority to manage their data, transactions, and interactions. These central authorities have control over user data, and they can manipulate the system's rules. The data may be subject to security risks or mismanagement, potentially resulting in the loss or misuse of user information. In contrast, Web3 introduces trustlessness, so users can engage in transactions and interactions without trusting any specific party.
-Web3 = "the distributed web" = a set of technologies that enables hosting of content and web applications in a serverless manner by leveraging distributed systems and consensus protocols https://developers.cloudflare.com/web3/
-Web3 = umbrella term for technologies like blockchain that decentralize data ownership and control on the internet. Most internet applications are controlled by centralized entities that determine how they save and use end-user data. https://aws.amazon.com/what-is/web3/
 whale = ?
 whale = big asset holder
 who's who -- Kain
@@ -586,3 +615,4 @@ who's who -- Satoshi Nakamoto = https://en.wikipedia.org/wiki/Satoshi_Nakamoto
 who's who -- Vitalik Buterin = https://en.wikipedia.org/wiki/Vitalik_Buterin
 WLF "World Liberty Financial" = "Inspired by Trump" https://worldlibertyfinancial.com/
 zCash https://z.cash/learn/
+zkVM

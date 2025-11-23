@@ -84,6 +84,7 @@ deep appeal = something that a few people love, even if most people don't get it
 disruptive -- Clay Christensen’s theory = the next big thing always starts out being dismissed as a “toy.” observation that technologies tend to get better at a faster rate than users’ needs increase. From this simple insight follows all kinds of interesting conclusions about how markets and products change over time. https://cdixon.org/2010/01/03/the-next-big-thing-will-start-out-looking-like-a-toy
 dogfooding "Eating our own Dogfood" = ranges wider than testing your end-product, and can be the difference between good and great products https://gregtidanian.substack.com/p/eating-our-own-dog-food
 don't build castles in others people's kingdoms
+duty of care = actively shield users from harm — “rather than the reactive system that exists now” https://ia.acs.org.au/article/2025/govt-ramps-up-big-tech--duty-of-care--reforms.html
 earliest -- 01 feedback-able product (EFP)
 earliest -- 02 testable product = first release that customers can actually do something with
 earliest -- 03 usable product = first release that early adopters will actually use, willingly

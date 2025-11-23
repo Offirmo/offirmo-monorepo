@@ -33,11 +33,6 @@
 [ ] real case https://deno.com/blog/how-we-built-jsr
 [ ] research papers: https://medium.com/@rohitverma_87831/my-interview-experience-at-google-afc1080df175
 [ ] Software Engineering Advice from Building Large-Scale Distributed Systems
-ACID -- 1 Atomicity = transactions are "all or nothing"
-ACID -- 2 Consistency = integrity constraints: "valid state" before AND after a transaction
-ACID -- 3 Isolation = "independent transactions"
-ACID -- 4 Durability = transaction resistance to system failures "once committed, always committed"
-ACID = a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps https://en.wikipedia.org/wiki/ACID
 alternative service (header) = indicate that another network location (the "alternative service") can be treated as authoritative for that origin when making future requests https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Alt-Svc
 API -- API description standard -- example https://github.com/OnlineOrNot/api-schemas
 API -- API description standard = https://www.openapis.org/
@@ -90,7 +85,7 @@ API -- view -- scope -- types = "raw / user defined scope" ex. a user-entered fi
 API -- view -- scope = the limit of where to conduct a search for domain objects for display on a view
 API -- view = an API is a view on the resources, or is a certain resource mapping over the business objects
 API -- visibility = public/external > internal > team > private beta. Guidelines: Consider a public-by-default approach, even if you are starting at a lower level of access (helps dogfooding, new use cases. Treat your internal APIs as candidates for Public level access (bc happens quickly, sometimes for merging with a public one)
-API https://www.hyrumslaw.com/
+API -- Hyrum's Law = With a sufficient number of users of an API, it does not matter what you promise in the contract: all observable behaviors of your system will be depended on by somebody. https://www.hyrumslaw.com/
 API-first = Built with APIs from the ground up. All functionality is exposed through an API
 Architectural Decisions -- bets = to revisit them
 Architectural Decisions -- register
@@ -129,6 +124,7 @@ back-off and retry mechanisms
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 Backends For Frontends -- composable https://bff-patterns.com/
 Backends For Frontends -- tradeoffs https://zknill.io/posts/backend-for-the-frontend/
+background jobs = see durable execution
 background jobs -- durable functions = "durable" = workflow's ability to maintain state and logic through failures, retries, and pauses. A Durable Function guarantees a start-to-finish execution; once it's started, it will eventually complete its execution regardless of any unexpected issues. https://www.inngest.com/blog/durable-functions-a-visual-javascript-primer
 background jobs -- issues -- Inefficient Error Handling: While we can implement basic retry mechanisms, it's challenging to manage complex error handling and recovery scenarios.
 background jobs -- issues -- Lack of State Management: Background jobs typically don't maintain their state between executions. If a job fails midway, it often needs to start from the beginning, potentially leading to duplicate work or inconsistent results.
@@ -234,12 +230,6 @@ data store -- object store -- Cloudflare R2
 data store -- object store = flat structure of objects + uid + metadata
 data store -- sequential consistency https://jepsen.io/consistency/models/sequential
 data store -- tombstone = a deleted record in a replica of a distributed data store. The tombstone is necessary, as distributed data stores use eventual consistency, where only a subset of nodes where the data is stored must respond before an operation is considered to be successful.  https://en.wikipedia.org/wiki/Tombstone_(data_store)
-DB -- benchmarking -- How does the database perform under a "typical" OLTP load? (TPS, QPS, etc)
-DB -- benchmarking -- How does the database perform under high read / write pressure? (IOPS, caching)
-DB -- benchmarking -- How much does it cost to achieve some bar of performance relative to other options? (price:performance ratio)
-DB -- benchmarking -- How quickly can I reach my database? (latency)
-DB -- benchmarking https://planetscale.com/benchmarks
-DB -- multiversion concurrency control (MVCC) = a popular database mechanism for tracking changes in a non-blocking fashion, where for any key we can keep multiple versions of its values for different points in time https://en.wikipedia.org/wiki/Multiversion_concurrency_control
 DDOS (incl. self)
 deploy -- stages -- 1 build = converts a code repo into an executable bundle known as a build. Using a version of the code at a commit specified by the deployment process, the build stage fetches vendors dependencies and compiles binaries and assets.
 deploy -- stages -- 2 release = takes the build produced by the build stage and combines it with the deploy’s current config. The resulting release contains both the build and the config and is ready for immediate execution in the execution environment.
@@ -255,7 +245,7 @@ design -- 03 high level diagram (HLD)
 design -- high-level -- high-level design document (HLDD)
 design -- high-level https://en.wikipedia.org/wiki/High-level_design
 design -- low-level https://en.wikipedia.org/wiki/Low-level_design
-destructive engineering = kill and get strong in response
+destructive engineering = kill and get strong in response, see chaos monkey
 dev/prod parity https://12factor.net/dev-prod-parity
 DevOps
 DevSecOps
@@ -473,14 +463,13 @@ perspective -- non-tech -- people
 perspective -- tech -- operations = focuses on operating and recovering IT workloads to meet the requirements of your business stakeholders
 perspective -- tech -- platform (cloud!)
 perspective -- tech -- security
-polyglot persistence https://en.wikipedia.org/wiki/Polyglot_persistence
 private cloud = https://threadreaderapp.com/thread/1800291897245835616.html
 product -- envoy = open source edge and service proxy, designed for cloud-native applications https://www.envoyproxy.io/
 protocol -- Advanced Message Queuing Protocol (AMQP) -- ZeroMQ, RabbitMQ https://stackoverflow.com/questions/731233/activemq-or-rabbitmq-or-zeromq-or https://news.ycombinator.com/item?id=9634801
 proxy
 proxy -- l4 https://blog.cloudflare.com/egress-policies-by-hostname/#why-was-this-so-hard-to-build
 proxy -- l7 https://blog.cloudflare.com/egress-policies-by-hostname/#why-was-this-so-hard-to-build
-proxy -- reverse proxy https://www.memorysafety.org/blog/introducing-river/
+proxy -- reverse & = https://www.memorysafety.org/blog/introducing-river/
 proxy server = intermediaries between client and servers. improve performance by caching, provide security by filtering incoming traffic, enable load balancing for efficient distribution of requests
 pub/sub -- event -- identifier -- amqp convention https://www.rabbitmq.com/tutorials/amqp-concepts
 pub/sub -- event -- identifier = usually should help with topics, see "topics"

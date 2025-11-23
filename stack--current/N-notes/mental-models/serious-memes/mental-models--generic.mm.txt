@@ -87,6 +87,7 @@ ally -- barriers = Diffusion of Responsibility, Lack of Awareness or Skills, Fea
 ally -- howto = Be Present, Provide Options, Know Your Role, follow/beware laws/policies
 ally = s/o who actively seeks to bridge differences, stand for fairness or harmony, and encourage equal opportunities for others in the workplace through thoughtful and respectful communication
 alpha / dominance / socials https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community
+amoral familism = backwardness, inability to act together for their common good or, indeed, for any end transcending the immediate, material interest of the nuclear family https://en.wikipedia.org/wiki/The_Moral_Basis_of_a_Backward_Society
 amour = vouloir le bien
 amour vs attraction
 animals -- pigeons https://thewhshatchet.org/why-pigeons-might-be-the-best-pet-bird/
@@ -122,6 +123,8 @@ bad randomness -- color + single digit = blue & 7
 bad randomness -- tool + color = hammer red
 baker’s dozen: The key to good hospitality is to delight your guests with an unexpected gift. If you run a hotel, leave a chocolate on the bed. If you run a bakery, give your customers one extra bagel. If you write a tweetstorm, share an extra idea.
 balayer devant sa porte
+aristocracy = a form of government that places power in the hands of a small, privileged ruling class, the aristocrats https://en.wikipedia.org/wiki/Aristocracy
+capitalism -- state-corporate & = prioritize the accumulation of wealth over other interests
 Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 barbarians at the gate https://en.wikipedia.org/wiki/Barbarians_at_the_Gate
 base rate: The average outcome for an event over time. They’re like batting averages for life, and they work best with big sample sizes. For example, if you’re starting a business, avoid the restaurant business where margins are low and competition is high.
@@ -284,6 +287,7 @@ criminal act = fraud, theft, dishonesty, arson, wilful damage or malicious damag
 critical thinking +++  https://strategyu.co/critical-thinking/
 cronyism = specific form of in-group favoritism = spoils system practice of partiality in awarding jobs and other advantages to friends or trusted colleagues, especially in politics and between politicians and supportive organizations https://en.wikipedia.org/wiki/Cronyism
 crucial conversations
+cruelty = intentional infliction of suffering or the inaction towards another's suffering when a clear remedy is readily available https://en.wikipedia.org/wiki/Cruelty
 crème solaire vs brossage de dents
 culture -- cultural hegemony https://en.wikipedia.org/wiki/Cultural_hegemony https://en.wikipedia.org/wiki/Power_(social_and_political)#Cultural_hegemony
 culture -- differences -- https://www.youtube.com/watch?v=vi8pyS076a8
@@ -486,6 +490,7 @@ Gall’s Law: A complex system that works is invariably found to have evolved fr
 gambling https://www.gamblinghelponline.org.au/
 game theory
 game theory -- prisoner's dilemma https://www.bennorthrop.com/Home/Blog/2007_11_17_prisoners_dilemma.php
+game theory -- the ultimatum game = consists of two players – the proposer and the responder – deciding how to split a sum of money (e.g. 10 dollars). The proposer can offer any split they like, but if the responder rejects the offer, neither player receives any money. From a purely rational point of view, the responder should never reject the proposer's offer. In practice, however, responders will typically punish proposers who make deals perceived to be unfair, even though this means walking away with nothing. https://en.wikipedia.org/wiki/Ultimatum_game
 gateway effect / gateway hypothesis = gateway drug (cannabis), gateway gambling (gacha games) = pathway to dangerous addictions https://www.library.hbs.edu/working-knowledge/the-15-billion-question-have-loot-boxes-turned-video-gaming-into-gambling
 gender shade =  accuracy of AI powered gender classification products http://gendershades.org/
 giftedness and talent https://campbellms.typepad.com/files/gagne-a-differentiated-model-of-giftedness-and-talent-dmgt.pdf https://www.gigers.com/matthias/gifted/gagne_dmgt.html
@@ -567,6 +572,7 @@ hostile architecture https://en.wikipedia.org/wiki/Hostile_architecture
 how to ask questions http://www.catb.org/esr/faqs/smart-questions.html
 how to fail well = https://www.linkedin.com/posts/davidkline_7-lessons-on-how-to-fail-well-activity-7330569803084034049-U4Hx/
 htt[ ] ps://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
+https://en.wikipedia.org/wiki/Chicago_school_of_economics
 humanities and social sciences = includes some of the biggest and easiest undergrad majors
 humble bragging https://www.linkedin.com/posts/staceychampagne_womenincybersecurity-cybersecurity-certifications-activity-7284636641648889857-B_y_/
 hustlers
@@ -575,6 +581,7 @@ I might be reading too much into it but...
 ideas -- structuring -- "Pyramid Principle" https://strategyu.co/structure-your-ideas-pyramid-principle-part-1/ https://strategyu.co/pyramid-principle-part-2-communicate-top-down/
 identity -- "I’d tied my identity and reputation to hard work"
 idées (no natural upper bound) ne s'usent que si l'on ne s'en sert pas (contre intuitif) https://en.wikipedia.org/wiki/Lindy_effect#History
+If I can't have it, neither can you = (crab mentality / panier de crabes) mindset of people who try to prevent others from gaining a favorable position, even if attaining such position would not directly impact those trying to stop them. It is usually summarized with the phrase: "If I can't have it, neither can you" https://en.wikipedia.org/wiki/Crab_mentality
 if you grow as a frog, you become a shinier, jump higher frog. But you need a kiss from the princess to become you. a core deep in oneself able to do things beyond ordinary
 IKEA effect = labor leads to love https://www.hbs.edu/ris/Publication%20Files/11-091.pdf
 ikigai = a reason for being what you love ∩ what you're good at ∩ what the world needs ∩ what you can be paid for
@@ -893,6 +900,8 @@ nutrition / diététique
 obligatory XKCD
 Occam’s Razor: If there are multiple explanations for why something happened and they are equally persuasive, assume the simplest one is true. In the search for truth, remove unnecessary assumptions. Trust the lowest-complexity answer.
 old boy network = informal system in which wealthy men with similar social or educational backgrounds help each other in business or personal matters https://en.wikipedia.org/wiki/Old_boy_network
+oligarchy -- plutocracy = a society that is ruled or controlled by people of great wealth or income. It can be considered a specific form of oligarchy (rule by the few) where the ruling few are wealthy.  https://en.wikipedia.org/wiki/Plutocracy
+oligarchy = rule by the few https://en.wikipedia.org/wiki/Oligarchy
 oligopole -- silent = ex. Luxottica
 oligopoly = a market in which pricing control lies in the hands of a few sellers https://en.wikipedia.org/wiki/Oligopoly
 on peut toujours faire mieux
@@ -971,6 +980,7 @@ planned obsolescence = Instilling in the buyer the desire to own something a lit
 planning fallacy
 pointy-haired boss
 political correctness -- rise of = due to lack of other things to be morally pure about. Previous generations of prigs had been prigs mostly about religion and sex.
+political philosophy https://en.wikipedia.org/wiki/Political_philosophy
 Ponzi, Madoff
 Pope Francis 15 spiritual diseases -- 01 = thinking we are “immortal”, “immune” or downright “indispensable”, neglecting the need for regular check-ups. One who is not self-critical, which does not seek to be more fit, is a sick body
 Pope Francis 15 spiritual diseases -- 02 = “Martha complex”, excessive busy-ness. It is found in those who immerse themselves in work and inevitably neglect “the better part”: sitting at the feet of Jesus
@@ -1022,6 +1032,7 @@ privilege
 privilege -- as "original sin" = "An able-bodied straight white American male is born with such a load of sin that only by the most abject repentance can he be saved." https://paulgraham.com/woke.html
 prix au kilo
 problem solving -- structured https://strategyu.co/mckinsey-structured-problem-solving-secrets/
+problems -- more problems because new solutions create many more problems https://mail.blockworks.com/p/problems-are-the-conduit-of-progress
 processes and outcomes https://surfingcomplexity.blog/2025/05/10/on-work-processes-and-outcomes/
 procrastination
 productivity
@@ -1218,6 +1229,7 @@ sober thoughts are drunk words
 social -- friendship paradox https://en.wikipedia.org/wiki/Friendship_paradox
 social capital
 social capital (white male)
+social capital = networks of relationships which are productive towards advancing the goals of individuals and groups https://en.wikipedia.org/wiki/Social_capital
 social circles -- ring theory = "support in, complaints/vent/dump out" https://en.wikipedia.org/wiki/Ring_theory_(psychology) https://speakinggrief.org/get-better-at-grief/supporting-grief/ring-theory
 social circles = me -> closest -> close family -> work/neighbor -> onlooker
 social debt = friends, family, and strangers who feel entitled to ask, beg, and steal https://collabfund.com/blog/rich-and-anonymous/
@@ -1229,6 +1241,8 @@ society -- high -- crème de la crème
 soft skills https://newsletter.weskao.com/p/how-to-give-a-senior-leader-feedback-without-getting-fired
 soft skills https://softskills.audio/
 solution / excuses
+spite -- house / fence https://en.wikipedia.org/wiki/Spite_house
+spite = a narrower definition could be: to intentionally annoy, hurt, or upset even when there might be no (apparent) gain, and even when those actions might cause the person spiting harm as well https://en.wikipedia.org/wiki/Spite_(sentiment)
 sponcon "sponsored content" = a form of influencer marketing popular on social media
 stages of life / seasons of life
 staggered contour trenches
@@ -1287,6 +1301,7 @@ T-Shape -- T-shaped = (best) expert at one thing and expert in one of them
 T-Shape https://jchyip.medium.com/why-t-shaped-people-e8706198e437
 table selection = This idea comes from poker, where you’re advised to choose your opponents carefully. That means you shouldn’t compete against the best people. You don’t need to get good at doing difficult things if you get good at avoiding difficult things. If you want to win, pick an easy table and nail your execution.
 talent vs. Genius = Society is good at training talent but terrible at cultivating genius. Talented people are good at hitting targets others can’t hit, but geniuses find targets others can’t see. They are opposite modes of excellence. Talent is predictable, genius is unpredictable.
+tall poppy syndrome = people with notable public success or achievements being ostracised by others as a form of egalitarianism https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://en.wikipedia.org/wiki/Tall_poppy_syndrome
 tax -- lazy https://www.insurancewatch.com.au/lazy-tax-insurance.html
 taxation -- Bernie Senders https://imgur.com/gallery/im-member-of-1-im-voting-bernie-sanders-heres-why-v5hWg
 teacher https://paulgraham.com/raq.html

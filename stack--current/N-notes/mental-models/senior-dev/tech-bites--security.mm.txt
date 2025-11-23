@@ -14,7 +14,7 @@ attacks -- supply chain -- npm https://blog.vlt.sh/blog/the-massive-hole-in-the-
 attacks -- SVG https://arstechnica.com/security/2025/08/adult-sites-use-malicious-svg-files-to-rack-up-likes-on-facebook/
 authentication
 authorisation
-best practices https://www.cisa.gov/topics/cybersecurity-best-practices
+best practices -- CISA = https://www.cisa.gov/topics/cybersecurity-best-practices
 browser security -- PrivacyTests https://privacytests.org/ (close to Brave)
 browser security https://hackread.com/why-browser-security-matters-more-than-you-think/
 BULLRUN (decryption program) clandestine, highly classified program to crack encryption of online communications and data, which is run by the United States National Security Agency (NSA) https://en.wikipedia.org/wiki/Bullrun_(decryption_program)
@@ -91,6 +91,17 @@ network ACL
 network security -- lateral movement = when an attacker moves within a network after gaining access to that network. Lateral movement can be difficult to detect even if the attacker's entry point is discovered, because the attacker will have gone on to compromise other parts of the network. https://www.cloudflare.com/learning/security/glossary/what-is-lateral-movement/
 NIST "United States National Institute of Standards and Technology"  https://blog.cloudflare.com/nist-sp-1300-85/
 NIST -- Computer Security Resource Center https://csrc.nist.gov/
+OWASP Top 10:2025 -- A01:2025 - Broken Access Control
+OWASP Top 10:2025 -- A02:2025 - Security Misconfiguration
+OWASP Top 10:2025 -- A03:2025 - Software Supply Chain Failures
+OWASP Top 10:2025 -- A04:2025 - Cryptographic Failures
+OWASP Top 10:2025 -- A05:2025 - Injection
+OWASP Top 10:2025 -- A06:2025 - Insecure Design
+OWASP Top 10:2025 -- A07:2025 - Authentication Failures
+OWASP Top 10:2025 -- A08:2025 - Software or Data Integrity Failures
+OWASP Top 10:2025 -- A09:2025 - Logging & Alerting Failures
+OWASP Top 10:2025 -- A10:2025 - Mishandling of Exceptional Conditions
+OWASP Top 10:2025 https://owasp.org/Top10/2025/0x00_2025-Introduction/
 passkeys = a modern cryptographic alternative to passwords and seed phrases. Passkeys combine something you have (a physical device such as a laptop, mobile phone, or a security key like YubiKey) with something you are or know (a fingerprint, face, or PIN) to generate a cryptographic public/private key pair that secures an account.
 password -- peppering (pwd managers) https://passwordbits.com/salting-passwords/
 pin codes -- most common https://informationisbeautiful.net/visualizations/most-common-pin-codes/

@@ -1,5 +1,5 @@
 import * as semver from 'semver'
-import type { Immutable } from '@offirmo-private/ts-types'
+import type { Immutable, JSONObject } from '@offirmo-private/ts-types'
 import {
 	type StructuredFsⳇFileManifest,
 	type Node,
@@ -34,6 +34,16 @@ const manifestꓽᐧpnpmfileᐧcjs: StructuredFsⳇFileManifest = {
 
 /////////////////////////////////////////////////
 
+const PLUGIN_ENTRY = Symbol('pnpm')
+
+interface Spec = JSONObject
+
+interface NodeState {
+	spec: Spec
+}
+
+/////////////////////////////////////////////////
+
 const pluginꓽpnpm: Plugin = {
 	onꓽload(state: Immutable<State>): Immutable<State> {
 		state = StateLib.declareꓽfile_manifest(state, manifestꓽpnpmᝍworkspaceᐧyaml)
@@ -44,6 +54,25 @@ const pluginꓽpnpm: Plugin = {
 
 	onꓽnodeⵧdiscovered(state: Immutable<State>, node: Immutable<Node>) {
 		if (node.type !== 'workspace') return state
+
+		node.plugin_area[PLUGIN_ENTRY] = {
+			spec: {
+				// strictest 2025/10
+				hoist: false,
+				hoistWorkspacePackages: false,
+				autoInstallPeers: false,
+				strictPeerDependencies: true,
+				resolvePeersFromWorkspaceRoot: false,
+				strictDepBuilds: true,
+				preferWorkspacePackages: true, // avoid some attacks
+				savePrefix: '', // safer
+				saveWorkspaceProtocol: 'rolling',
+				disallowWorkspaceCycles: true,
+				resolutionMode: 'time-based',
+				catalogMode: 'strict',
+				minimumReleaseAge: 10080, // https://pnpm.io/supply-chain-security
+			}
+		} satisfies NodeState
 
 		state = StateLib.requestꓽfactsⵧabout_file(
 			state,
@@ -58,11 +87,11 @@ const pluginꓽpnpm: Plugin = {
 				}
 
 				// discover new node
-				const { workspaces } = bolt_stuff
-				if (workspaces) {
+				const { packages } = result
+				if (packages) {
 					// TODO 1D use a glob lib
 
-					const MONOREPO_WORKSPACES_RELPATHS = (workspaces as string[])
+					const MONOREPO_WORKSPACES_RELPATHS = (packages as string[])
 						.filter((p: RelPath) => {
 							return !p.startsWith('#') && !p.startsWith('xx') // we allow "commenting" a workspace to help "progressive resurrection"
 						})
