@@ -10,9 +10,12 @@ import { LIB, SCHEMA_VERSION } from '../consts.ts'
 
 import {
 	NodeType,
+	type SubNodeId,
 	type Hints as DefaultHints,
 	type CheckedNode,
-	type Node, type Document, type NodeLike,
+	type Node,
+	type Document,
+	type NodeLike,
 	isꓽNode,
 	getꓽtype,
 	getꓽdisplay_type,
@@ -22,7 +25,7 @@ import { promoteꓽto_node, promoteꓽto_string_for_node_content } from '../l1-u
 /////////////////////////////////////////////////
 
 interface CommonOptions {
-	id?: string
+	id?: SubNodeId
 	classes?: string[]
 }
 
@@ -51,6 +54,7 @@ interface Builder {
 
 	// node ref is auto added into content
 	pushNode(node: SubNode, options?: Immutable<Pick<CommonOptions, 'id'>>): Builder
+	pushNode2(nodeInObj: { [id: SubNodeId]: SubNode }): Builder
 
 	// Raw = NOTHING is added into content (this node may end up not being referenced)
 	// useful for
@@ -73,6 +77,7 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		pushEmoji,
 
 		pushNode,
+		pushNode2,
 		pushRawNode,
 		pushRawNodes,
 
@@ -103,14 +108,13 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 	function addClass(...classes: ReadonlyArray<string>): Builder {
 		try {
 			classes.forEach(assertꓽstringⵧnormalized_and_trimmed)
-		}
-		catch (cause) {
+		} catch (cause) {
 			const err = new Error(`${LIB}: sugar: addClass(): Invalid class name(s) !`)
 			err.cause = cause
 			throw err
 		}
 
-		$node.$classes = Array.from(new Set<string>([ ...$node.$classes, ...classes]))
+		$node.$classes = Array.from(new Set<string>([...$node.$classes, ...classes]))
 		return builder
 	}
 
@@ -123,10 +127,9 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 	}
 
 	function pushText(str: Immutable<Exclude<NodeLike, Node>>): Builder {
-
 		switch (typeof str) {
 			case 'number':
-				// fallthrough
+			// fallthrough
 			case 'string': {
 				str = promoteꓽto_string_for_node_content(str) // contains assertions
 
@@ -135,7 +138,7 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 
 				// TODO one day
 				//if (hasꓽemoji(str)) {
-					//assert($node.$type === NodeType.emoji, `${LIB}: sugar: pushText(): Emoji detected in a non-emoji node!`)
+				//assert($node.$type === NodeType.emoji, `${LIB}: sugar: pushText(): Emoji detected in a non-emoji node!`)
 				//}
 				break
 			}
@@ -196,6 +199,15 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		const id = options.id || _get_next_id()
 		$node.$content += `⎨⎨${id}⎬⎬`
 		return pushRawNode(node, { ...options, id })
+	}
+	function pushNode2(nodeInObj: { [id: string]: SubNode }): Builder {
+		const keys = Object.keys(nodeInObj)
+		keys.forEach(key => {
+			const node = nodeInObj[key]!
+			$node.$content += `⎨⎨${key}⎬⎬`
+			pushRawNode(node, { id: key })
+		})
+		return builder
 	}
 
 	function pushInlineFragment(str: SubNode, options?: Immutable<CommonOptions>): Builder {
@@ -287,7 +299,7 @@ function _create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
 		return promoteꓽto_node(content)
 	})()
 
-	const $node: CheckedNode =  {
+	const $node: CheckedNode = {
 		$v: SCHEMA_VERSION,
 		$type,
 		$classes: [...($node_base.$classes || [])],

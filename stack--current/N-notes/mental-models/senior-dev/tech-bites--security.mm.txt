@@ -9,6 +9,7 @@ account takeover (ATO) https://www.kasada.io/use-cases/account-takeover/
 attacks -- 0 click& = exploit security flaws in software that handles incoming data, like messaging apps, email clients, or web browsers https://medium.com/@davidsehyeonbaek/zero-click-attacks-how-your-device-can-be-infected-with-spyware-without-even-opening-a-message-1e1699850ecc
 attacks -- business email compromise (BEC)
 attacks -- credential stuffing https://owasp.org/www-community/attacks/Credential_stuffing
+attacks -- direct blackmail = example of letter to individual https://www.reddit.com/r/cybersecurity_help/comments/1f7tbec/demand_for_bitcoin_payment_made_with_threats/
 attacks -- process over cryptographic strength "Though Enigma had some cryptographic weaknesses, in practice it was German procedural flaws, operator mistakes, failure to systematically introduce changes in encipherment procedures, and Allied capture of key tables and hardware that, during the war, enabled Allied cryptologists to succeed." https://history.stackexchange.com/a/79374
 attacks -- supply chain -- npm https://blog.vlt.sh/blog/the-massive-hole-in-the-npm-ecosystem
 attacks -- SVG https://arstechnica.com/security/2025/08/adult-sites-use-malicious-svg-files-to-rack-up-likes-on-facebook/
@@ -102,6 +103,7 @@ OWASP Top 10:2025 -- A08:2025 - Software or Data Integrity Failures
 OWASP Top 10:2025 -- A09:2025 - Logging & Alerting Failures
 OWASP Top 10:2025 -- A10:2025 - Mishandling of Exceptional Conditions
 OWASP Top 10:2025 https://owasp.org/Top10/2025/0x00_2025-Introduction/
+passkeys -- test https://github.com/Dashlane/passkeys-resources
 passkeys = a modern cryptographic alternative to passwords and seed phrases. Passkeys combine something you have (a physical device such as a laptop, mobile phone, or a security key like YubiKey) with something you are or know (a fingerprint, face, or PIN) to generate a cryptographic public/private key pair that secures an account.
 password -- peppering (pwd managers) https://passwordbits.com/salting-passwords/
 pin codes -- most common https://informationisbeautiful.net/visualizations/most-common-pin-codes/
@@ -111,10 +113,9 @@ principle of least privilege
 privacy advices -- https://tails.net/doc/about/warnings/index.en.html
 privacy pass -- issuance protocol https://www.rfc-editor.org/rfc/rfc9578.html
 privacy pass -- token
-privacy pass = ???  token
+privacy pass = ???
 private relay -- iCloud = "ensures that no single party handling user data has complete information on both who the user is and what they are trying to access." = Internet privacy service from Apple that allows users with iOS 15, iPadOS 15, or macOS Monterey on (...) their devices and an iCloud+ subscription, to connect to the Internet and browse with Safari in a more secure and private way  https://blog.cloudflare.com/icloud-private-relay/
 pwned = https://haveibeenpwned.com/API/v3 https://github.com/BlinqOSS/is-pwned
-ransom -- example of letter to individual https://www.reddit.com/r/cybersecurity_help/comments/1f7tbec/demand_for_bitcoin_payment_made_with_threats/
 risks -- software -- bad defaults -- firebase https://env.fail/posts/firewreck-1
 risks -- software -- buffer overflows and how to protect against them
 risks -- software -- cache poisoning https://en.wikipedia.org/wiki/Cache_poisoning

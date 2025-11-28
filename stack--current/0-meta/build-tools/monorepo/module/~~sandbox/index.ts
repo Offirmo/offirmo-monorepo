@@ -77,7 +77,7 @@ async function refreshꓽmonorepo() {
 		const alias = [
 			'alias',
 			`mono${radix}='cd`.padStart(15),
-			`~/${path.relative(process.env['HOME']!, MONOREPO_ROOT)}/;`,
+			`"$OFFIRMO_MONOREPO_ROOT";`,
 			'nvm use;',
 			'git--offirmo.sh;',
 			(
@@ -93,6 +93,8 @@ async function refreshꓽmonorepo() {
 		path.resolve(MONOREPO_ROOT, '0-meta', 'bin', 'aliases.sh'),
 		`#@IgnoreInspection BashAddShebang
 [ "$VERBOSE__RC" == true ] && echo "* […monorepo/…/aliases.sh] hello!"
+
+export OFFIRMO_MONOREPO_ROOT=~/${path.relative(process.env['HOME']!, MONOREPO_ROOT)}/;
 
 ${aliases.join('\n')}
 `,

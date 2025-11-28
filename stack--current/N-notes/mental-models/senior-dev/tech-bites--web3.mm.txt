@@ -439,6 +439,7 @@ secret splitting -- 2-of-3 multisig
 secret splitting -- https://groups.google.com/g/bitcoindev/c/8LkdxVc_nI0
 secure enclave https://whitepaper.turnkey.com/
 seed phrase
+seed phrase -- split penlock.io
 silk road / Ross Ulbricht
 slippage = the difference the expected price of a trade against the actual executed price with slippage being most common in times of high volatility, low liquidity or when there is insufficient liquidity to meet a large order https://support.infinex.xyz/en/articles/9719898-crypto-terms#h_cd4c6697b8
 slippage https://github.com/jup-ag/dynamic-slippage-config
@@ -559,6 +560,7 @@ wallet -- active& = with balance or recent activity
 wallet -- address -- change ex. https://support.ledger.com/article/360034336713-zd
 wallet -- address -- constant change = UTxO BitCoin, Cardano https://support.ledger.com/article/360033802154-zd
 wallet -- blind sign
+wallet -- brainwallet = don't https://bitcointalk.org/index.php?topic=311000.msg3345309#msg3345309
 wallet -- burner& = a single-use account, designed to interact with potentially risky blockchain applications. similar to a burner phone, meant to be discarded after serving its purpose. However, unlike getting a new phone, creating a burner wallet is a quick and easy process.
 wallet -- cold/hot
 wallet -- cold/hot -- cold& = safe
@@ -619,4 +621,5 @@ who's who -- Satoshi Nakamoto = https://en.wikipedia.org/wiki/Satoshi_Nakamoto
 who's who -- Vitalik Buterin = https://en.wikipedia.org/wiki/Vitalik_Buterin
 WLF "World Liberty Financial" = "Inspired by Trump" https://worldlibertyfinancial.com/
 zCash https://z.cash/learn/
+zk-SNARKs = zero-knowledge succinct non-interactive arguments of knowledge
 zkVM

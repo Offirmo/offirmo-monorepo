@@ -66,6 +66,8 @@ interface Hints<UnderlyingData = any, HyperLink = Hyperlink‿x> {
 	[k: string]: any
 }
 
+type SubNodeId = string
+
 // using type instead of interface to prevent extra properties
 // (bc not supposed to extend this)
 type CheckedNode = {
@@ -77,7 +79,7 @@ type CheckedNode = {
 	$sub: {
 		// sub-nodes MAYBE referenced in the content by their id
 		// Note: extraneous sub-nodes are allowed for convenience, excess will not be checked
-		[id: string]: Immutable<NodeLike> // Immutable to clearly convey that a node will not modify its given sub-nodes
+		[id: SubNodeId]: Immutable<NodeLike> // Immutable to clearly convey that a node will not modify its given sub-nodes
 	}
 
 	// hints for renderers. May or may not be used.
@@ -105,6 +107,7 @@ export {
 
 	type Hints,
 
+	type SubNodeId,
 	type CheckedNode,
 	type Node,
 	type NodeLike,

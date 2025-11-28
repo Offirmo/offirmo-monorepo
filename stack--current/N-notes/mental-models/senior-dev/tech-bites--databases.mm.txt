@@ -25,6 +25,8 @@ best practices -- Segmentation by user_id = Any table that can be related back t
 best practices -- timestamp Columns = should be named in the past tense (when practical) and should end with ..._at, (eg. created_at, not created or create_at). This convention should be followed even for columns that schedule events in the future (eg. expired_at not expires_at).
 cardinality
 case-sensitivity = The concept of “case” isn’t as simple as it may seem and conversion is a non-trivial. https://dba.stackexchange.com/a/217502
+common table expressions (CTEs) = smaller sub-queries for expressing complex SQL queries
+connection string ex. mysql://user:pass@host:port/dbname
 data retrieval
 differential dataflow = a data-parallel programming framework designed to efficiently process large volumes of data and to quickly respond to arbitrary changes in input collections https://github.com/TimelyDataflow/differential-dataflow
 graph
@@ -48,6 +50,7 @@ orm -- drizzle
 orm -- drizzle -- gotchas -- insert behaviour = references all known cols
 polyglot persistence = using multiple data storage technologies within a single system, in order to meet varying data storage needs https://en.wikipedia.org/wiki/Polyglot_persistence
 Postgres
+prepared statements = you do SQL concatenation once on the ORM side and then database driver is able to reuse precompiled binary SQL instead of parsing query all the time. It has extreme performance benefits on large SQL queries.
 primary / replica
 ranged scan
 relational
@@ -60,6 +63,8 @@ solution -- GUI tool -- DataGrip
 solution -- GUI tool -- TablePlus https://tableplus.com/
 solution -- MySQL https://dev.mysql.com/
 sql
+sql -- CURRENT_TIMESTAMP()
+sql -- dialect = ex. Postgres vs Mysql
 sql -- EXPLAIN = show the execution plan of a statement https://www.postgresql.org/docs/current/sql-explain.html
 sql -- LIMIT
 sql -- ORDER BY
@@ -68,4 +73,13 @@ sql -- SELECT = can be slow
 sql -- UPDATE = very tricky, usually lock
 sql -- WHERE
 sqlite
+subqueries = WHERE user_id IN (SELECT id FROM users)
+tables -- columns
+tables -- columns -- computed & = generated from other
+tables -- rows
 transaction
+transactions -- isolation levels -- READ COMMITTED
+transactions -- isolation levels -- READ UNCOMMITTED
+transactions -- isolation levels -- REPEATABLE READ
+transactions -- isolation levels -- SERIALIZABLE
+transactions -- isolation levels =  https://dev.mysql.com/doc/refman/8.4/en/innodb-transaction-isolation-levels.html

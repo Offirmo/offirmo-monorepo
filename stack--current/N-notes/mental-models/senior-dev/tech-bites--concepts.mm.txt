@@ -260,6 +260,8 @@ courbe d'expertise
 CPU https://cpu.land/
 CQRS (command query responsibility segregation)
 CRDT / automerge / local first https://automerge.org/
+cron -- explainer https://onlineornot.com/cron-jobs/crontab
+cron -- monitoring
 cron https://onlineornot.com/the-complete-guide-to-cron-jobs
 cross cutting concerns = aspects of a program that affect several modules without the possibility of being encapsulated in any of them https://en.wikipedia.org/wiki/Cross-cutting_concern
 cross-platform https://en.m.wikipedia.org/wiki/Cross-platform_software
@@ -431,6 +433,7 @@ file watcher https://github.com/parcel-bundler/watcher
 file write
 finished software https://josem.co/the-beauty-of-finished-software/
 finops
+flank speed = American nautical term referring to a ship's true maximum speed, in case of immediate danger. It is not equivalent to the term full speed ahead.
 flatmap
 floating point math https://0.30000000000000004.com
 flow state = deep concentration, enjoyment, and a sense of progress
@@ -1065,11 +1068,11 @@ virtual private cloud (VPC)
 war emergency power (WEP) = a throttle setting that is present on some military aircraft engines: In emergency situations, it produced more than 100% of the engine's normal rated power for a limited amount of time, often about five minutes https://en.wikipedia.org/wiki/War_emergency_power
 web assembly (asm.js)
 WebAuth
-flank speed = American nautical term referring to a ship's true maximum speed, in case of immediate danger. It is not equivalent to the term full speed ahead.
 who's who -- Eric Elliot https://medium.com/javascript-scene/the-single-biggest-mistake-programmers-make-every-day-62366b432308
-who's who -- TPW https://tom.preston-werner.com/
 who's who -- James Hamilton (AWS) https://perspectives.mvdirona.com/
 who's who -- Linus Torvald https://www.goodreads.com/author/quotes/92867.Linus_Torvalds
+who's who -- Terry A. Davis = TempleOS https://en.wikipedia.org/wiki/Terry_A._Davis
+who's who -- Tim Berners-Lee https://en.wikipedia.org/wiki/Tim_Berners-Lee
 Wirth's law = software systems grow faster in size and complexity than methods to handle complexity are invented. software is getting slower more rapidly than hardware is becoming faster. https://en.wikipedia.org/wiki/Wirth%27s_law
 WORA "write once, run anywhere" https://en.m.wikipedia.org/wiki/Write_once,_run_anywhere
 WORA -- Write Once, Debug Everywhere = because of subtle incompatibilities

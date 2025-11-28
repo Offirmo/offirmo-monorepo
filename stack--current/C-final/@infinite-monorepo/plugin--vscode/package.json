@@ -1,6 +1,5 @@
 {
 	"name": "@infinite-monorepo/plugin--vscode",
-	"description": "TODO description in MANIFEST.json5",
 	"version": "0.0.1",
 	"author": "Offirmo <offirmo.net@gmail.com> (https://www.offirmo.net/)",
 	"license": "Unlicense",
@@ -19,7 +18,7 @@
 		"tiny-invariant": "^1"
 	},
 	"scripts": {
-		"check--ts": "echo \"@infinite-monorepo/plugin--jetbrains\" && tsc --noEmit",
+		"check--ts": "echo \"@infinite-monorepo/plugin--vscode\" && tsc --noEmit",
 		"check--ts--watch": "tsc --noEmit --watch",
 		"dev": "run-s check--ts--watch",
 		"check": "run-s check--ts"

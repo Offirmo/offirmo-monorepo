@@ -53,6 +53,7 @@ API -- Diogo Lucas classification = far-team, near-team and inner-team. inner te
 API -- gateway
 API -- headers -- fetch metadata = https://developer.mozilla.org/en-US/docs/Glossary/Fetch_metadata_request_header
 API -- hybrids = reconcile the need for a stable public API that will not constantly disrupt your carefully tended ecosystem with your team’s ability to move fast and (eventually) break stuff? cater for different requirements regarding security and SLAs or to radically different client natures? https://www.youtube.com/watch?v=eqy609JleoE
+API -- Hyrum's Law = With a sufficient number of users of an API, it does not matter what you promise in the contract: all observable behaviors of your system will be depended on by somebody. https://www.hyrumslaw.com/
 API -- pagination -- current page, total pages https://google.aip.dev/158 https://graphql.org/learn/pagination/
 API -- pagination -- cursor https://graphql.org/learn/pagination/
 API -- resilience
@@ -85,7 +86,6 @@ API -- view -- scope -- types = "raw / user defined scope" ex. a user-entered fi
 API -- view -- scope = the limit of where to conduct a search for domain objects for display on a view
 API -- view = an API is a view on the resources, or is a certain resource mapping over the business objects
 API -- visibility = public/external > internal > team > private beta. Guidelines: Consider a public-by-default approach, even if you are starting at a lower level of access (helps dogfooding, new use cases. Treat your internal APIs as candidates for Public level access (bc happens quickly, sometimes for merging with a public one)
-API -- Hyrum's Law = With a sufficient number of users of an API, it does not matter what you promise in the contract: all observable behaviors of your system will be depended on by somebody. https://www.hyrumslaw.com/
 API-first = Built with APIs from the ground up. All functionality is exposed through an API
 Architectural Decisions -- bets = to revisit them
 Architectural Decisions -- register
@@ -124,12 +124,12 @@ back-off and retry mechanisms
 Backends For Frontends (BFF) https://samnewman.io/patterns/architectural/bff/
 Backends For Frontends -- composable https://bff-patterns.com/
 Backends For Frontends -- tradeoffs https://zknill.io/posts/backend-for-the-frontend/
-background jobs = see durable execution
 background jobs -- durable functions = "durable" = workflow's ability to maintain state and logic through failures, retries, and pauses. A Durable Function guarantees a start-to-finish execution; once it's started, it will eventually complete its execution regardless of any unexpected issues. https://www.inngest.com/blog/durable-functions-a-visual-javascript-primer
 background jobs -- issues -- Inefficient Error Handling: While we can implement basic retry mechanisms, it's challenging to manage complex error handling and recovery scenarios.
 background jobs -- issues -- Lack of State Management: Background jobs typically don't maintain their state between executions. If a job fails midway, it often needs to start from the beginning, potentially leading to duplicate work or inconsistent results.
 background jobs -- issues -- Long-Running Processes: Background jobs are usually designed for relatively short-lived tasks. Managing processes that may run for hours or days becomes increasingly complex.
 background jobs -- issues -- Scalability Concerns: As the number of background jobs grows, it becomes increasingly challenging to manage their execution, monitor them, and handle errors.
+background jobs = see durable execution
 backpressure
 backup
 BASE -- 1. BA = Basically available = the system does guarantee availability, in terms of the CAP theorem.
@@ -175,7 +175,6 @@ containers -- images -- hardened = see docker
 containers -- images -- Red Hat Universal Base Image (UBI) = minimal, freely redistributable base image for containerised applications, providing a consistent foundation with essential packages from Red Hat Enterprise Linux (RHEL) to build and deploy reliable and secure containers https://developers.redhat.com/products/rhel/ubi
 Content Delivery Network (CDN) ex. CloudFront
 coordination -- quorum, leader election
-cron
 CRUD "Create, Read, Update, Delete" = In SQL, the four related commands are: INSERT/POST (for Create), SELECT/GET (for Read), UPDATE/PUT (for Update), and DELETE (for Delete).
 data -- 0. raw& = need to be processed, OLAP, OLTP https://www.snowflake.com/guides/olap-vs-oltp/
 data -- 1. &analytics = useful
@@ -345,6 +344,8 @@ jump server = jump server is a virtual machine that is used to manage other syst
 jumpbox = see [[jump server]]
 kafka = pub/sub + store + process
 kubernetes
+kubernetes -- Horizontal Pod Autoscaler (HPA) = enables admins to improve the cost and resource efficiency of their clusters by automatically resizing their deployments to meet demand without overprovisioning
+kubernetes -- Karpenter = ?
 lambdalith https://rehanvdm.com/blog/should-you-use-a-lambda-monolith-lambdalith-for-the-api
 latency -- "sub-10ms API" https://www.unkey.com/blog/serverless-exit
 latency -- cascading = esp. for critical always first API such as auth/session check
