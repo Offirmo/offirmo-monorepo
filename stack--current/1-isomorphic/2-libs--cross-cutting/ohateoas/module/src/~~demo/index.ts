@@ -53,9 +53,9 @@ async function main() {
 
 		url = normalizeꓽuri‿str(url)
 		console.log(`
-╔═══════╤════════════════════════════╍╍╍
+╔═══════╤═══════════════════════════╍╍╍
 ║ 🏠 ⬅️ │ ${url}
-╠═══════╧════════════════════════════╍╍╍`)
+╠═══════╧═══════════════════════════╍╍╍`)
 		const $doc = await SERVER.ↆget(url)
 		if (previous_url !== url) {
 			previous_url = url
@@ -75,7 +75,7 @@ async function main() {
 
 		const action_blueprints = getꓽaction_blueprints($doc)
 		if (Object.keys(action_blueprints).length > 0) {
-			console.log('╟──────────────')
+			console.log('╟───────────────────────────────────╌╌╌')
 			for (const key in action_blueprints) {
 				const action_blueprint = action_blueprints[key]
 				console.log(`║ → ${getꓽcta(action_blueprint)}`)
@@ -84,18 +84,27 @@ async function main() {
 		}
 
 		const links = getꓽlinks($doc)
-		if (Object.keys(links).length > 0) {
-			console.log('╟──────────────')
-			for (const rel in links) {
-				const link = links[rel]
-				console.log(`║ ⇒ ${getꓽcta(link)}: ${getꓽlink‿str(link)}`)
+		const linksⵧrelevants = Object.fromEntries(
+			Object.entries(links)
+				.filter(([rel]) => rel !== OHALinkRelation.home && rel !== OHALinkRelation.self)
+		)
+		if (Object.keys(linksⵧrelevants).length > 0) {
+			console.log('╟───────────────────────────────────╌╌╌')
+			for (const rel in linksⵧrelevants) {
+				const link = linksⵧrelevants[rel]
+				console.log(`║ → ${getꓽcta(link)} [url: ${getꓽlink‿str(link)}]`)
 			}
 		}
 		//console.log('- back')
 		//console.log('- reload')
 		//console.log('- home')
+
 		console.log('╚═══════════════════════════════════╍╍╍')
 
+		if (links[OHALinkRelation.self]) {
+			const { href } = links[OHALinkRelation.self]
+			assert(href === url, `self should be equal!`)
+		}
 		if (links[OHALinkRelation.continueᝍto]) {
 			const { href } = links[OHALinkRelation.continueᝍto]
 			assert(href !== url, `continue-to should be different!`)
@@ -121,19 +130,19 @@ async function main() {
 			const { action, feedback } = deriveꓽaction(action_blueprint, inputs_payload)
 			console.log('Dispatching action:', action)
 			if (feedback.story) {
-				console.log('╔═══════════════════════════════════╍╍╍')
+				console.log('╓───────────────────────────────────╌╌╌')
 				//console.log('Feedback:', feedback)
 				console.log(prefixed(RichText.renderⵧto_text(feedback.story)))
-				console.log('╚═══════════════════════════════════╍╍╍')
+				console.log('╙───────────────────────────────────╌╌╌')
 			}
 
 			const action_story = await SERVER.dispatch(action)
 			console.log(`[Dispatch of action "${action.type}" processed.]`)
 			if (feedback.continueᝍto) url = feedback.continueᝍto
 			if (action_story) {
-				console.log('╔═══════════════════════════════════╍╍╍')
+				console.log('╓───────────────────────────────────╌╌╌')
 				console.log(prefixed(RichText.renderⵧto_text(action_story.message || action_story)))
-				console.log('╚═══════════════════════════════════╍╍╍')
+				console.log('╙───────────────────────────────────╌╌╌')
 			}
 
 			continue
@@ -154,6 +163,7 @@ async function main() {
 		break
 	} while (true)
 }
+
 main()
 	.catch(err => {
 		console.error('\nXXX Error XXX')

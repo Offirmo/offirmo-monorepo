@@ -4,6 +4,8 @@ amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
 backwardness https://en.wikipedia.org/wiki/The_Moral_Basis_of_a_Backward_Society
 bateau https://en.wikipedia.org/wiki/File:Uluburun1.jpg
 bateau https://en.wikipedia.org/wiki/List_of_surviving_ancient_ships
+Bronze Age -- Europe https://en.wikipedia.org/wiki/Bronze_Age_Europe
+Bronze Age -- late & collapse = https://en.wikipedia.org/wiki/Late_Bronze_Age_collapse
 capitalism
 capitalism -- issues -- inability to collectively improve, ex. global warming
 capitalism -- late stage
@@ -24,11 +26,16 @@ génération spontanée
 hammurabi
 https://en.wikipedia.org/wiki/Baby_farming
 https://en.wikipedia.org/wiki/Currency
+https://en.wikipedia.org/wiki/Currency
+https://en.wikipedia.org/wiki/Decimalisation
+https://en.wikipedia.org/wiki/File:Molzbach_1.jpg
+https://en.wikipedia.org/wiki/Hallstatt_culture
 https://en.wikipedia.org/wiki/Historical_European_martial_arts
-https://en.wikipedia.org/wiki/Late_Bronze_Age_collapse
 https://en.wikipedia.org/wiki/Makuria
+https://en.wikipedia.org/wiki/Native_metal
+https://en.wikipedia.org/wiki/Smelting
 https://en.wikipedia.org/wiki/Tragedy_of_the_commons
-https://en.wikipedia.org/wiki/Urnfield_culture
+https://en.wikipedia.org/wiki/Tumulus_culture
 https://politiquemagazine.fr/civilisation/redecouvrir-les-origines-de-la-france/
 https://worldoffinewine.com/news-features/did-charles-darwin-save-wine
 https://www.atlassian.com/loop/about
@@ -48,6 +55,8 @@ problems -- The problem of widespread hunger, for example, was solved by industr
 ransom
 slavery
 surproduction d'élite https://pierre-yves-gomez.fr/trop-delite-tue-lelite/
+touchstone https://en.wikipedia.org/wiki/Touchstone_(assaying_tool)
+Urnfield culture https://en.wikipedia.org/wiki/Urnfield_culture
 video games https://en.wikipedia.org/wiki/List_of_best-selling_video_games
 violence
 war -- Allied Plans to Occupy France, 1942-1944 https://web.archive.org/web/20060507015256/http://www.rall.com/longarticle_011.htm

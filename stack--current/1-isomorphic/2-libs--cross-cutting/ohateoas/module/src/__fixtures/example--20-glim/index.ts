@@ -1,4 +1,5 @@
 import { normalizeꓽuri‿str, getꓽscheme_specific_part } from '@offirmo-private/ts-types-web'
+import chalk from 'chalk'
 import * as RichText from '@offirmo-private/rich-text-format'
 import {
 	type OHARichTextHints,
@@ -12,8 +13,14 @@ import {
 import type { Story } from '@offirmo-private/ts-types'
 
 /////////////////////////////////////////////////
+import { getꓽrandom, getꓽengine } from '@offirmo/random'
 
-const state = {}
+//const gen = getꓽrandom.picker.of(ARMOR_BASES)
+//const gen getꓽrandom.generator_of.integer.in_interval(BASE_STRENGTH_INTERVAL_BY_QUALITY[quality]!)
+
+const state = {
+	rng: getꓽengine.for_unit_tests(),
+}
 
 /////////////////////////////////////////////////
 
@@ -68,7 +75,7 @@ function createꓽserver(): OHAServer {
 				21: 'night',
 				22: 'late night',
 				23: 'late night',
-			}[now.getHours()], // TODO 1D timzones / day length / sun position
+			}[now.getHours()], // TODO 1D timezones / day length / sun position
 		).done()
 
 		$builder.pushNode2({ time: $time_local_24h })
@@ -76,13 +83,15 @@ function createꓽserver(): OHAServer {
 		$builder.pushNode2({ time_desc: $time_local_descr })
 
 		const root = RichText.listⵧunordered()
-		root.pushNode2({ location: RichText.fragmentⵧinline('location: 🏠 Home').done() })
+		root.pushNode2({ location: RichText.fragmentⵧinline('⚐ location: 🏠 Home').done() })
 
 		$builder.pushNode(root.done())
 
-		actions['adventure--random'] = {
-			type: 'adventure--random',
+		actions['adventure'] = {
+			type: 'adventure',
+
 			hints: {
+				cta: 'Tiny adventure',
 				change_type: 'update',
 			},
 
@@ -107,8 +116,35 @@ function createꓽserver(): OHAServer {
 		console.log(`Server: asked to dispatch action…`, action)
 
 		switch (action.type) {
-			case 'adventure--random':
-				return 'TODO' as Story<OHAHyperMedia>
+			case 'adventure': {
+				const FLAVOURS = [
+					{name: 'strawberry', color‿hex: '#FF0000'},
+
+					{name: 'pistacchio', color‿hex: '#00FF00'},
+					{name: 'vanilla', color‿hex: '#FFFFFF'},
+				]
+				const flavours_picker = getꓽrandom.picker.of(FLAVOURS)
+
+				// TODO travel
+				// TODO consecutively unique
+				const scoops = [
+				]
+
+				const scoops_count = getꓽrandom.generator_of.integer.between(1, 4)(state.rng)
+				for (let i = 0; i < scoops_count; i++) {
+					const flavour = flavours_picker(state.rng)
+					scoops.push(
+						chalk.hex(flavour.color‿hex).bold('●')
+						+ ' ' + flavour.name
+					)
+				}
+
+				return [
+				`You get a ${scoops_count} scoop${scoops_count > 1 ? 's' : ''} ice-cream cone:`,
+					...scoops,
+					'▼'
+				] .join('\n') as OHAStory
+			}
 			default:
 				throw new Error(`Unknown action type "${action.type}"!`)
 		}
