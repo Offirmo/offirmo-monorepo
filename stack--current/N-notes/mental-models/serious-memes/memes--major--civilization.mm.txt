@@ -1,6 +1,7 @@
 [ ] list of books to learn history https://paulgraham.com/raq.html
 a country is a farm
 amity-enmity complex https://en.m.wikipedia.org/wiki/Amity-enmity_complex
+aristocracy = a form of government that places power in the hands of a small, privileged ruling class, the aristocrats https://en.wikipedia.org/wiki/Aristocracy
 backwardness https://en.wikipedia.org/wiki/The_Moral_Basis_of_a_Backward_Society
 bateau https://en.wikipedia.org/wiki/File:Uluburun1.jpg
 bateau https://en.wikipedia.org/wiki/List_of_surviving_ancient_ships
@@ -19,9 +20,14 @@ corruption -- Abscam
 cosmos -- 1610 https://en.wikipedia.org/wiki/Copernican_Revolution
 cosmos -- 1920 galaxies https://en.wikipedia.org/wiki/Great_Debate_(astronomy)
 cosmos -- 1965 no life on Mars https://en.wikipedia.org/wiki/Martian_canals
+democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
 democracy -- guided https://en.wikipedia.org/wiki/Guided_democracy
+democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
+divine kingship
 family
 golden rule
+great filter https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
+group polarization https://en.wikipedia.org/wiki/Group_polarization
 génération spontanée
 hammurabi
 https://en.wikipedia.org/wiki/Baby_farming
@@ -54,6 +60,8 @@ problems -- The problem of routine infections becoming deadly was solved by anti
 problems -- The problem of widespread hunger, for example, was solved by industrialized farming — but now food is so cheap and industrialized we have an epidemic of obesity.
 ransom
 slavery
+societal -- & collapse = fall of a complex human society characterized by the loss of cultural identity and of social complexity as an adaptive system, the downfall of government, and the rise of violence https://en.wikipedia.org/wiki/Societal_collapse
+societal -- & longevity = https://en.wikipedia.org/wiki/Societal_collapse
 surproduction d'élite https://pierre-yves-gomez.fr/trop-delite-tue-lelite/
 touchstone https://en.wikipedia.org/wiki/Touchstone_(assaying_tool)
 Urnfield culture https://en.wikipedia.org/wiki/Urnfield_culture

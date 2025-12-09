@@ -18,3 +18,10 @@ Libs:
 
 
 TODO test own gateway? https://developers.cloudflare.com/web3/ethereum-gateway/
+
+
+https://secure.reown.com
+https://secure.walletconnect.com
+https://secure.walletconnect.org
+https://verify.walletconnect.com
+https://verify.walletconnect.org

@@ -2,7 +2,7 @@
 +++ https://platform.openai.com/docs/introduction/key-concepts
 +++ official OpenAI doc https://platform.openai.com/docs/introduction
 2022 -- 2030 self driving car bet https://blog.codinghorror.com/the-2030-self-driving-car-bet/
-2022 ChatGPT https://openai.com/index/chatgpt/
+2022-12 ChatGPT lauched https://x.com/sama/status/1599668808285028353 https://openai.com/index/chatgpt/
 2023-10 Claude 2
 2024 "Her" moment for voice = crossed the uncanny valley
 2024 Google I/O AI built-in Chrome

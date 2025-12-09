@@ -1,3 +1,5 @@
+2014-04-07 heart bleed = serious vulnerability in the popular OpenSSL cryptographic software library. This weakness allows stealing the information protected https://heartbleed.com/
+2025-11-24 Shai Hulud 2 https://helixguard.ai/blog/malicious-sha1hulud-2025-11-24
 [ ] ATT&CK® is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations https://attack.mitre.org/
 [ ] d3fend® matrix https://d3fend.mitre.org/
 [ ] https://cwe.mitre.org/documents/glossary/index.html
@@ -13,6 +15,7 @@ attacks -- direct blackmail = example of letter to individual https://www.reddit
 attacks -- process over cryptographic strength "Though Enigma had some cryptographic weaknesses, in practice it was German procedural flaws, operator mistakes, failure to systematically introduce changes in encipherment procedures, and Allied capture of key tables and hardware that, during the war, enabled Allied cryptologists to succeed." https://history.stackexchange.com/a/79374
 attacks -- supply chain -- npm https://blog.vlt.sh/blog/the-massive-hole-in-the-npm-ecosystem
 attacks -- SVG https://arstechnica.com/security/2025/08/adult-sites-use-malicious-svg-files-to-rack-up-likes-on-facebook/
+attacks -- griefing
 authentication
 authorisation
 best practices -- CISA = https://www.cisa.gov/topics/cybersecurity-best-practices

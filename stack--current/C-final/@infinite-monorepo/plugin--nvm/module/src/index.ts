@@ -26,6 +26,7 @@ const manifestꓽᐧnvmrc: StructuredFsⳇFileManifest = {
 		 */
 		'https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc',
 		'https://www.npmjs.com/package/nvmrc',
+		'https://www.nvmnode.com/extend/nvmrc.html',
 	],
 }
 

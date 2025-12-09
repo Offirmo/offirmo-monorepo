@@ -326,8 +326,10 @@ lawsofux.com -- Von Restorff Effect = also known as The Isolation Effect, predic
 lawsofux.com -- Working Memory = a cognitive system that temporarily holds and manipulates information needed to complete tasks.
 lawsofux.com -- Zeigarnik Effect = People remember uncompleted or interrupted tasks better than completed tasks.
 lawsofux.com = collection of best practices that designers can consider when building user interfaces https://lawsofux.com/
+layout -- & engine = ex. https://www.yogalayout.dev/docs/about-yoga
 layout -- &composer https://github.com/namecheap/ilc
 layout -- &trashing https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing
+layout = determining the size and position of boxes https://www.yogalayout.dev/docs/about-yoga
 lazy loading -- preloading https://www.differentshelf.com/lazy-loading-isnt-just-lazy-its-late-the-web-deserves-faster/
 MDN
 MDN curriculum https://developer.mozilla.org/en-US/curriculum/
@@ -345,7 +347,6 @@ optical alignment = to look nice, vs, mathematical alignment. Ex. centering a di
 optimisation -- fonts https://nextjs.org/learn/dashboard-app/optimizing-fonts-images
 optimisation -- images https://nextjs.org/learn/dashboard-app/optimizing-fonts-images
 organic vs inorganic concept = coming from a real user or a bot/AI or app etc.
-overlays -- avoid https://www.nngroup.com/articles/overuse-of-overlays/
 Page Assembly Service = responsible for generating HTML for pages
 Page Rank
 perf -- content jump = https://css-tricks.com/content-jumping-avoid/
@@ -477,6 +478,8 @@ UI -- loading skeleton = a simplified version of the UI shown during loading
 UI -- modals -- sheets = ~semi-modal https://en.wikipedia.org/wiki/Modal_window#Modal_sheets_in_Mac_OS_X
 UI -- modals https://en.wikipedia.org/wiki/Modal_window
 UI -- modes https://en.wikipedia.org/wiki/User_interface#Modalities_and_modes
+UI -- overlays -- avoid https://www.nngroup.com/articles/overuse-of-overlays/
+UI -- overlays -- dismissal https://www.nngroup.com/articles/accidental-overlay-dismissal/
 UI -- popover https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
 UI -- primitives = box, stack, table, grid, flex...
 UI -- principles -- Don Norman
@@ -493,6 +496,7 @@ UI -- views
 UI = https://en.wikipedia.org/wiki/User_interface
 User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#large-viewport
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
+UX -- cancel vs close https://www.nngroup.com/articles/cancel-vs-close/
 UX -- challenges -- information overload
 UX -- collaborative experiences https://zknill.io/posts/collaboration-no-crdts/
 UX -- delightful = "the app cares about my experience" easy to sell to stakeholders

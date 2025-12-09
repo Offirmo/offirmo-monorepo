@@ -1,5 +1,6 @@
 import type { Immutable, JSONPrimitiveType } from '@offirmo-private/ts-types'
 import { getꓽUTC_timestamp‿ms } from '@offirmo-private/timestamps'
+import { getꓽrandom, getꓽengine } from '@offirmo/random'
 
 import { normalizeꓽuri‿str, type Uri‿str } from '@offirmo-private/ts-types-web'
 import * as RichText from '@offirmo-private/rich-text-format'
@@ -41,6 +42,7 @@ const SERVER = createꓽserver()
 /////////////////////////////////////////////////
 
 async function main() {
+	const rng = getꓽengine.for_unit_tests()
 	let previous_url: Uri‿str | undefined = undefined
 	let url: Uri‿str = URI__ROOT
 	let infine_loop_detection = 5
@@ -85,8 +87,9 @@ async function main() {
 
 		const links = getꓽlinks($doc)
 		const linksⵧrelevants = Object.fromEntries(
-			Object.entries(links)
-				.filter(([rel]) => rel !== OHALinkRelation.home && rel !== OHALinkRelation.self)
+			Object.entries(links).filter(
+				([rel]) => rel !== OHALinkRelation.home && rel !== OHALinkRelation.self,
+			),
 		)
 		if (Object.keys(linksⵧrelevants).length > 0) {
 			console.log('╟───────────────────────────────────╌╌╌')
@@ -118,9 +121,12 @@ async function main() {
 
 		if (Object.keys(action_blueprints).length > 0) {
 			// TODO 1D selector to pick an action
+
 			// pick one at random
 			console.log(`[Auto-browse: selecting an action...]`)
-			const action_blueprint = action_blueprints[Object.keys(action_blueprints)[0]]
+
+			const action_blueprint =
+				action_blueprints[getꓽrandom.picker.of(Object.keys(action_blueprints))(rng)]
 			const inputs_payload: any = {}
 			// TODO auto fill any input
 			if (action_blueprint.input?.username) {
@@ -149,6 +155,12 @@ async function main() {
 		}
 
 		// TODO pick a link
+		if (Object.keys(linksⵧrelevants).length > 0) {
+			const link = linksⵧrelevants[Object.keys(linksⵧrelevants)[0]]
+			console.log(`[Auto-browse: navigating to "${getꓽcta(link)}"...]`)
+			url = getꓽlink‿str(link)
+			continue
+		}
 
 		// meanwhile
 		// let's play around

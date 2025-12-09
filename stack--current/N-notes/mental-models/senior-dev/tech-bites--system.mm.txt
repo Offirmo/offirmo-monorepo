@@ -367,6 +367,7 @@ load balancer
 load balancer -- affinity = grouping related in the same server, when desirable
 load balancer -- google sth
 load balancer -- L4 vs L7 https://www.a10networks.com/glossary/how-do-layer-4-and-layer-7-load-balancing-differ/  https://www.nginx.com/resources/glossary/layer-4-load-balancing/
+load balancer -- opinion = "is a 1st class citizen in application composition and should reside as close to the app as possible in infrastructure. We should avoid implicit dependencies and control the blast radius by isolating by domain (rather than by component). That is the proper way to keep loose isolation without making footguns. With that I'd propose to organize projects/stacks coupling in a way when all the components of stack (workloads, lb, db/cache if any) live together and they follow the same deployment model (branched/single) they share the hostname (and we try to prefer host based routing if possible)
 load balancer -- scope, ex. region "AWS ELB Elastic Load Balancer"
 load shedding
 log consolidation

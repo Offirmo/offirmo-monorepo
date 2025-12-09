@@ -2,13 +2,19 @@
 
 import assert from 'tiny-invariant'
 import { Enum } from 'typescript-string-enums'
-import type { JSON, JSONPrimitiveType, Story, WithHints, InputSpec } from '@offirmo-private/ts-types'
+import type {
+	JSON,
+	JSONPrimitiveType,
+	Story,
+	WithHints,
+	InputSpec,
+} from '@offirmo-private/ts-types'
 import type { ReducerAction, Uri‿x } from '@offirmo-private/ts-types-web'
-import type { Hints as RichTextHints, NodeLike as RichTextNodeLike } from '@offirmo-private/rich-text-format'
-import {
-	type TrackedEngagement,
-	type Engagement,
-} from '@oh-my-rpg/state--engagement'
+import type {
+	Hints as RichTextHints,
+	NodeLike as RichTextNodeLike,
+} from '@offirmo-private/rich-text-format'
+import { type TrackedEngagement, type Engagement } from '@oh-my-rpg/state--engagement'
 
 /////////////////////////////////////////////////
 // 1. Hypertext / Hypermedia

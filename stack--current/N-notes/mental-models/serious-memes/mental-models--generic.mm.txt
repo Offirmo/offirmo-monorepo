@@ -1,3 +1,5 @@
+
+
 0-sum game
 1 or 2 way door
 10th dentist = someone who sincerely, or professionally, disagree with the broad majority of people "9 dentists out of 10 recommends..." https://www.reddit.com/r/The10thDentist/
@@ -54,6 +56,7 @@
 [ ] https://fs.blog/mental-models/
 [ ] https://perell.com/essay/50-ideas-that-changed-my-life/
 [ ] https://www.forbes.com/sites/joshsteimle/2013/05/27/five-war-books-for-entrepreneurs/
+[ ] https://www.reddit.com/r/explainlikeimfive/
 [ ] https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time
 [ ] invictus https://en.wikipedia.org/wiki/Invictus
 [ ] leadership development https://jchyip.medium.com/diy-leadership-development-develop-leadership-skills-74479cde0c05
@@ -96,7 +99,7 @@ anti-fragile
 anyone can cook -- motto from Ratatouille = craft is open to everyone
 applied = vs. theoretic. practical. Not always need to be an expert / scientist / priest. Applying (citizen, engineer, lay) is complementary and can be, at times, more useful/concrete than expertise ("perché")
 are we the bad guys?
-are you actually trying? = are you stuck at a low point? what would you advise another person to do? https://open.substack.com/pub/usefulfictions/p/maybe-youre-not-actually-trying?r=85879&utm_medium=ios
+are you actually trying? = are you stuck at a low point? what would you advise another person to do? https://open.substack.com/pub/usefulfictions/p/maybe-youre-not-actually-trying?r=85879
 arenas = diverse arenas such as politics, diplomacy, media, public service and business https://www.thomsonreuters.com/en/about-us/trust-principles
 artisanal and small scale mining (ASM) https://www.glencore.com/sustainability/esg-a-z/artisanal-and-small-scale-mining
 asshole (https://en.wikipedia.org/wiki/The_No_Asshole_Rule) Insults, Violation of personal space, Unsolicited touching, Threats, Sarcasm, Flames, Humiliation, Shaming, Interruption, Backbiting, Glaring, Snubbing BUT not spineless!
@@ -123,18 +126,16 @@ bad randomness -- color + single digit = blue & 7
 bad randomness -- tool + color = hammer red
 baker’s dozen: The key to good hospitality is to delight your guests with an unexpected gift. If you run a hotel, leave a chocolate on the bed. If you run a bakery, give your customers one extra bagel. If you write a tweetstorm, share an extra idea.
 balayer devant sa porte
-aristocracy = a form of government that places power in the hands of a small, privileged ruling class, the aristocrats https://en.wikipedia.org/wiki/Aristocracy
-capitalism -- state-corporate & = prioritize the accumulation of wealth over other interests
 Baptists and Bootleggers https://a16z.com/ai-will-save-the-world/
 barbarians at the gate https://en.wikipedia.org/wiki/Barbarians_at_the_Gate
 base rate: The average outcome for an event over time. They’re like batting averages for life, and they work best with big sample sizes. For example, if you’re starting a business, avoid the restaurant business where margins are low and competition is high.
 be prepared
-be right for the right reason
-be right for the wrong reason = ex. being carried along by momentum or catching a narrative
 bee browsing
 being enough
 being in the details https://www.theengineeringmanager.com/managing-managers/being-in-the-details/
 being like planes = they only make news when they crash, even though so many of them are in the air
+being right for the right reason
+being right for the wrong reason = ex. being carried along by momentum or catching a narrative
 Bell curve = bottom 20%, middle 60%, top 20%
 best decision based on the information available at the time
 best time to plant a tree = was 20 years ago. The second best time is now
@@ -194,6 +195,7 @@ cadre = should lead, can change the world (cf. "du role social de l'officier")
 Can the Subaltern Speak? = highlights the challenges faced by marginalised groups in having their voices heard within dominant power structure https://en.wikipedia.org/wiki/Gayatri_Chakravorty_Spivak#%22Can_the_Subaltern_Speak?%22
 can't satisfy others
 cancel culture -- ex. of Brendan Eich https://www.spacebar.news/stop-using-brave-browser/
+capitalism -- state-corporate & = prioritize the accumulation of wealth over other interests
 care -- doesn't scale https://stevenscrawls.com/care-doesnt-scale/
 career -- career limiting (action/move)
 cargo cult
@@ -279,8 +281,8 @@ counterfactuals = contrary to the actual facts. can be a tool for learning, prob
 courses après le repas
 creative process
 creativity -- begins at the edge = Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
-crime -- socially constructed = ex. wage theft not a crime vs. petty theft, fines = crimes for a price
 crimes -- human trafficking
+crimes -- socially constructed = ex. wage theft not a crime vs. petty theft, fines = crimes for a price
 crimes -- some sociological theories of criminology attributes criminal action to environmental and unconscious factors
 crimes https://en.wikipedia.org/wiki/Criminal_law
 criminal act = fraud, theft, dishonesty, arson, wilful damage or malicious damage
@@ -316,8 +318,6 @@ degree mills = https://www.dice.com/career-advice/coding-bootcamp-popularity-gro
 DEI
 deliberate intentional practice / play = intention of not achieving much, but just picking it up, giving it a strum and then having an open mind to the possibilities that you might discover something new or a new meta https://ghuntley.com/play/
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
-democracy -- education https://politics.stackexchange.com/questions/84583/is-democracy-possible-in-a-country-with-a-relatively-low-educated-population
-democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
 dependability https://posthog.com/founders/first-ops-hire
 deterrence
 diagrams -- charts
@@ -399,7 +399,6 @@ ego
 ego -- vs. craftman's pride?
 Eisenhower's Urgent/Important https://www.mindtools.com/al1e0k5/eisenhowers-urgentimportant-principle
 elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
-ELI5 https://www.reddit.com/r/explainlikeimfive/
 email -- burner https://au.lifehacker.com/apple/49245/news/how-to-get-a-burner-email-address-with-iclouds-hide-my-email
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
 emotionally secure https://www.cnbc.com/2024/01/03/harvard-psychologist-if-you-answer-yes-to-any-of-these-questions-youre-more-emotionally-secure-than-most-people.html
@@ -433,6 +432,9 @@ evolution vs revolution
 evolutionary theory of mate selection
 excuses vs. solutions
 executive
+experiments -- Dartmouth scar & = "Perceptions of the impact of negatively valued physical characteristics on social interaction" believing they have a scar, perceive discrimination https://psycnet.apa.org/doiLanding?doi=10.1037%2F0022-3514.39.5.861
+experiments -- monkey ladder & = https://factschology.com/factschology-articles-podcast/monkey-ladder-experiment-truth
+experiments -- Universe 25 = "mouse utopia" behavioral sink https://en.wikipedia.org/wiki/Behavioral_sink
 extremum local
 face cachée de l’iceberg
 fact checking
@@ -514,12 +516,9 @@ Goodhart’s Law -- example: One hospital took too long to admit patients so a p
 Gospel of Wealth -- Help those who will help themselves, to provide part of the means by which those who desire to improve may do so
 Gospel of Wealth = responsibility of philanthropy by the new upper class of self-made rich https://en.wikipedia.org/wiki/The_Gospel_of_Wealth
 grapevine
-great filter https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
 great works of literature = works that penetrate to the core of the human experience
 grinders
 grit
-group polarization https://en.wikipedia.org/wiki/Group_polarization
-growth -- should never be a goal in itself, engagement is
 growth mindset  https://www.khanacademy.org/college-careers-more/learnstorm-growth-mindset-activities-us/high-school-activities/activity-1-the-truth-about-your-brain-hs-02/a/the-truth-about-your-brain-part-1-3  https://www.youtube.com/watch?v=-71zdXCMU6A
 guilt by association = ex. "15 years ago Brendan Eich donated to some cause that the author finds repugnant, hence you shouldn't use his browser today. I also oppose Eich's views, but I believe that he has the right for his political belief, and anyway it shouldn't have any bearing on his professional contributions." https://news.ycombinator.com/item?id=37060232
 hacker -- jargon http://catb.org/jargon/html/index.html
@@ -834,7 +833,6 @@ minorities -- vocal minority
 mom and pop -- the worst https://www.reddit.com/r/yimby/comments/1biq3gg/lets_not_romanticize_smalltime_landlords_as_we/?sort=top
 mondegreen https://thehabit.co/knowledge-is-power-france-is-bacon/
 money = by its very nature, is an emotional topic. We all have grown up with different relationships with money—earning it, asking for it, making it, and even spending it
-monkey ladder experiment https://factschology.com/factschology-articles-podcast/monkey-ladder-experiment-truth
 Monkey's Paw = wishes come with an enormous price for interfering with fate https://en.wikipedia.org/wiki/The_Monkey%27s_Paw
 Monty Hall problem https://en.wikipedia.org/wiki/Monty_Hall_problem
 moral hazard = Increases in the exposure to risk when insured, or when another bears the cost

@@ -29,14 +29,16 @@ interface CommonOptions {
 	classes?: string[]
 }
 
-type SubNodes = Immutable<CheckedNode['$sub']>
+type SubNodes = CheckedNode['$sub'] // TODO why Immu?
 type SubNode = CheckedNode['$sub'][string]
 
 interface Builder {
 	addClass(...classes: ReadonlyArray<string>): Builder
 	addHints<Hints = DefaultHints>(hints: Partial<Hints>): Builder
 
-	pushText(str: Immutable<Exclude<NodeLike, Node>>): Builder
+	// content NOT a node = text/number only
+	pushText(str: Exclude<NodeLike, Node>): Builder
+	// TODO refine
 	pushEmoji(e: string, options?: Immutable<CommonOptions>): Builder
 
 	pushInlineFragment(str: SubNode, options?: Immutable<CommonOptions>): Builder
@@ -49,21 +51,25 @@ interface Builder {
 	pushHorizontalRule(): Builder
 	pushLineBreak(): Builder
 
+	// ??
 	pushKeyValue(key: SubNode, value: SubNode, options?: Immutable<CommonOptions>): Builder
 	//pushListItem No! this is an internal node type, just use pushRawNode()/pushKeyValue() instead
 
 	// node ref is auto added into content
 	pushNode(node: SubNode, options?: Immutable<Pick<CommonOptions, 'id'>>): Builder
-	pushNode2(nodeInObj: { [id: SubNodeId]: SubNode }): Builder
+	pushNodes(nodes: SubNodes): Builder
 
 	// Raw = NOTHING is added into content (this node may end up not being referenced)
 	// useful for
 	// 1. lists
 	// 2. manual stuff
 	pushRawNode(node: SubNode, options?: Immutable<CommonOptions>): Builder
-	pushRawNodes(nodes: SubNodes): Builder // batch version
+	pushRawNodes(nodes: SubNodes): Builder
+	pushNodeRef(node_id: SubNodeId): Builder // syntactic sugar for pushText(`⎨⎨${id}⎬⎬`)
 
 	done(): CheckedNode
+
+	$node: CheckedNode
 }
 
 /////////////////////////////////////////////////
@@ -77,9 +83,10 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		pushEmoji,
 
 		pushNode,
-		pushNode2,
+		pushNodes,
 		pushRawNode,
 		pushRawNodes,
+		pushNodeRef,
 
 		pushInlineFragment,
 		pushBlockFragment,
@@ -94,6 +101,8 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		pushKeyValue,
 
 		done,
+
+		$node,
 	}
 
 	const built_node__display_type = getꓽdisplay_type($node)
@@ -152,27 +161,29 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 	}
 
 	function _buildAndPush(builder: Builder, str: SubNode, options: Immutable<CommonOptions> = {}) {
-		if (isꓽNode(str))
-			builder.pushNode(str)
-		else
-			builder.pushText(str)
+		if (isꓽNode(str)) builder.pushNode(str)
+		else builder.pushText(str)
 
 		builder.addClass(...(options.classes || []))
 
 		return pushNode(builder.done(), options.id ? { id: options.id } : undefined)
 	}
 
-
 	function pushRawNode(subnode: SubNode, options: Immutable<CommonOptions> = {}): Builder {
-
 		// params check
 		if (Object.keys(options).filter(k => k !== 'id').length)
 			assert(false, `${LIB}: sugar: pushRawNode(): Cannot pass any option other than id!`) // make no sense at the level of this primitive. Other options should be filtered out by the caller.
 
 		// sanity checks
-		assert(getꓽtype(subnode) !== NodeType._li, `${LIB}: sugar: The LI type is just for internal use during walk, end users should not use it!`)
+		assert(
+			getꓽtype(subnode) !== NodeType._li,
+			`${LIB}: sugar: The LI type is just for internal use during walk, end users should not use it!`,
+		)
 		// 1. inline vs block
-		assert(built_node__display_type === 'block' || getꓽdisplay_type(subnode) !== 'block', `${LIB}: sugar: Cannot push a block node into an inline node!`)
+		assert(
+			built_node__display_type === 'block' || getꓽdisplay_type(subnode) !== 'block',
+			`${LIB}: sugar: Cannot push a block node into an inline node!`,
+		)
 		// 2. list item
 		/*if (isꓽlist($node)) {
 			if (getꓽtype(subnode) !== NodeType.li) {
@@ -194,18 +205,19 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		Object.entries(nodes).forEach(([id, node]) => pushRawNode(node, { id }))
 		return builder
 	}
+	function pushNodeRef(id: SubNodeId): Builder {
+		$node.$content += `⎨⎨${id}⎬⎬`
+		return builder
+	}
 
 	function pushNode(node: SubNode, options: Immutable<CommonOptions> = {}): Builder {
 		const id = options.id || _get_next_id()
-		$node.$content += `⎨⎨${id}⎬⎬`
-		return pushRawNode(node, { ...options, id })
+
+		return pushNodeRef(id).pushRawNode(node, { ...options, id })
 	}
-	function pushNode2(nodeInObj: { [id: string]: SubNode }): Builder {
-		const keys = Object.keys(nodeInObj)
-		keys.forEach(key => {
-			const node = nodeInObj[key]!
-			$node.$content += `⎨⎨${key}⎬⎬`
-			pushRawNode(node, { id: key })
+	function pushNodes(nodes: SubNodes): Builder {
+		Object.entries(nodes).forEach(([id, node]) => {
+			pushNode(node, { id })
 		})
 		return builder
 	}
@@ -241,7 +253,10 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 	}
 
 	function pushHorizontalRule(): Builder {
-		assert(built_node__display_type === 'block', `${LIB}: sugar: Cannot push a hr block node into an inline node!`)
+		assert(
+			built_node__display_type === 'block',
+			`${LIB}: sugar: Cannot push a hr block node into an inline node!`,
+		)
 		$node.$content += '⎨⎨hr⎬⎬'
 		return builder
 	}
@@ -251,14 +266,15 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		return builder
 	}
 
-	function pushKeyValue(key: SubNode, value: SubNode, options: Immutable<CommonOptions> = {}): Builder {
+	function pushKeyValue(
+		key: SubNode,
+		value: SubNode,
+		options: Immutable<CommonOptions> = {},
+	): Builder {
 		if ($node.$type !== NodeType.ol && $node.$type !== NodeType.ul)
 			throw new Error(`${LIB}: Key/value is intended to be used in a ol/ul only!`)
 
-		return pushRawNode(
-				keyꓺvalue(key, value).done(),
-				options,
-			)
+		return pushRawNode(keyꓺvalue(key, value).done(), options)
 	}
 
 	// TODO rename to value() like lodash chain?
@@ -285,12 +301,18 @@ function _create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
 			const typeⵧsource = getꓽtype(content)
 			if (typeⵧsource === $type) {
 				// TODO review, could be an assertion from an unknown type
-				assert(false, `${LIB}: sugar: No reason to lift init node into the same node type! Are you sure you want to do that?`)
+				assert(
+					false,
+					`${LIB}: sugar: No reason to lift init node into the same node type! Are you sure you want to do that?`,
+				)
 			}
 			if (typeⵧsource !== NodeType.fragmentⵧinline && typeⵧsource !== NodeType.fragmentⵧblock) {
 				// we're losing semantic infos. This should be pushed as a sub-node instead
 				// TODO review should this happen automatically?
-				assert(false, `${LIB}: sugar: Cannot lift non-trivial init node into another node type!`)
+				assert(
+					false,
+					`${LIB}: sugar: Cannot lift non-trivial init node into another node type!`,
+				)
 			}
 
 			return content
@@ -305,9 +327,8 @@ function _create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
 		$classes: [...($node_base.$classes || [])],
 		$content: $node_base.$content || '',
 		$sub: $node_base.$sub || {},
-		$hints: $node_base.$hints
-			? structuredClone<CheckedNode['$hints']>($node_base.$hints as any)
-			: {},
+		$hints:
+			$node_base.$hints ? structuredClone<CheckedNode['$hints']>($node_base.$hints as any) : {},
 	}
 
 	return _createꓽbuilder($node)
@@ -337,32 +358,38 @@ function heading(content?: Immutable<NodeLike>): Builder {
 }
 
 // reminder: lists should then be pushed pushRawNode/pushRawNodes/pushKeyValue
-function listⵧordered(content?: Immutable<
-	| Array<NodeLike> // items
-	| Record<string, NodeLike> // KV
->): Builder {
+function listⵧordered(
+	content?: Immutable<
+		| Array<NodeLike> // items
+		| Record<string, NodeLike> // KV
+	>,
+): Builder {
 	const list = _create(NodeType.ol)
 	if (content) {
 		if (Array.isArray(content)) {
-			;(content as Array<NodeLike>).forEach((item) => list.pushRawNode(item))
-		}
-		else {
-			Object.entries(content as Record<string, NodeLike>).forEach(([key, value]) => list.pushKeyValue(key, value))
+			;(content as Array<NodeLike>).forEach(item => list.pushRawNode(item))
+		} else {
+			Object.entries(content as Record<string, NodeLike>).forEach(([key, value]) =>
+				list.pushKeyValue(key, value),
+			)
 		}
 	}
 	return list
 }
-function listⵧunordered(content?: Immutable<
-	| Array<NodeLike> // items
-	| Record<string, NodeLike> // KV
->): Builder {
+function listⵧunordered(
+	content?: Immutable<
+		| Array<NodeLike> // items
+		| Record<string, NodeLike> // KV
+	>,
+): Builder {
 	const list = _create(NodeType.ul)
 	if (content) {
 		if (Array.isArray(content)) {
-			;(content as Array<NodeLike>).forEach((item) => list.pushRawNode(item))
-		}
-		else {
-			Object.entries(content as Record<string, NodeLike>).forEach(([key, value]) => list.pushKeyValue(key, value))
+			;(content as Array<NodeLike>).forEach(item => list.pushRawNode(item))
+		} else {
+			Object.entries(content as Record<string, NodeLike>).forEach(([key, value]) =>
+				list.pushKeyValue(key, value),
+			)
 		}
 	}
 	return list
