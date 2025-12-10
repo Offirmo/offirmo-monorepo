@@ -218,7 +218,7 @@ function do_home(aggreg: Temp): void {
 	aggreg.$builder.pushNodes({
 		surroundings: RichText.listⵧunordered([
 			RichText.fragmentⵧinline()
-				.pushEmoji('☕')
+				.pushEmoji('🫖')
 				.pushText(' A hot beverage is waiting for you')
 				.done(),
 		]).done(),
@@ -228,7 +228,7 @@ function do_home(aggreg: Temp): void {
 		type: 'drink-hot-beverage',
 
 		hints: {
-			cta: 'Drink a hot beverage ☕',
+			cta: 'Drink a hot beverage 🫖☕️',
 			change_type: 'update',
 		},
 
@@ -242,13 +242,28 @@ function do_home(aggreg: Temp): void {
 		type: 'take-a-nap',
 
 		hints: {
-			cta: 'Take a nap 💤',
+			cta: 'Take a nap 🛋️💤',
 			change_type: 'update',
 		},
 
 		feedback: {
 			tracking: 'foreground',
-			story: 'You take a refreshing nap. You feel rested and rejuvenated!',
+			story: 'You nap and wake up when you feel like it. You feel rested and rejuvenated!',
+		} as OHAFeedback,
+	} as OHAHyperActionBlueprint
+
+
+	aggreg.actions['take-a-long-rest'] = {
+		type: 'take-a-long-rest',
+
+		hints: {
+			cta: 'Take a long rest 🛌💤',
+			change_type: 'update',
+		},
+
+		feedback: {
+			tracking: 'foreground',
+			story: 'You sleep for as looong as you want! You feel well rested and full of energy!',
 		} as OHAFeedback,
 	} as OHAHyperActionBlueprint
 
