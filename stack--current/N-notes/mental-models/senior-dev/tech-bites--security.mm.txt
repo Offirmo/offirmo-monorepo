@@ -1,5 +1,6 @@
 2014-04-07 heart bleed = serious vulnerability in the popular OpenSSL cryptographic software library. This weakness allows stealing the information protected https://heartbleed.com/
 2025-11-24 Shai Hulud 2 https://helixguard.ai/blog/malicious-sha1hulud-2025-11-24
+2025-11-29 React2Shell https://react2shell.com/
 [ ] ATT&CK® is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations https://attack.mitre.org/
 [ ] d3fend® matrix https://d3fend.mitre.org/
 [ ] https://cwe.mitre.org/documents/glossary/index.html
@@ -12,12 +13,15 @@ attacks -- 0 click& = exploit security flaws in software that handles incoming d
 attacks -- business email compromise (BEC)
 attacks -- credential stuffing https://owasp.org/www-community/attacks/Credential_stuffing
 attacks -- direct blackmail = example of letter to individual https://www.reddit.com/r/cybersecurity_help/comments/1f7tbec/demand_for_bitcoin_payment_made_with_threats/
+attacks -- griefing
+attacks -- phishing -- (many variants)
+attacks -- phishing https://www.azarask.in/blog/post/a-new-type-of-phishing-attack/
 attacks -- process over cryptographic strength "Though Enigma had some cryptographic weaknesses, in practice it was German procedural flaws, operator mistakes, failure to systematically introduce changes in encipherment procedures, and Allied capture of key tables and hardware that, during the war, enabled Allied cryptologists to succeed." https://history.stackexchange.com/a/79374
 attacks -- supply chain -- npm https://blog.vlt.sh/blog/the-massive-hole-in-the-npm-ecosystem
 attacks -- SVG https://arstechnica.com/security/2025/08/adult-sites-use-malicious-svg-files-to-rack-up-likes-on-facebook/
-attacks -- griefing
+attacks -- webextensions https://ia.acs.org.au/article/2025/four-million-browsers-infected-with-spyware.html
 authentication
-authorisation
+authorization
 best practices -- CISA = https://www.cisa.gov/topics/cybersecurity-best-practices
 browser security -- PrivacyTests https://privacytests.org/ (close to Brave)
 browser security https://hackread.com/why-browser-security-matters-more-than-you-think/
@@ -27,6 +31,7 @@ Capture The Flag (CTF) competitions = hacking contests consisting of challenges 
 castle-and-moat concept (legacy) = In castle-and-moat security, it is hard to obtain access from outside the network, but everyone inside the network is trusted by default. The problem with this approach is that once an attacker gains access to the network, they have free rein over everything inside. https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/
 cat-phishing
 checkout fraud = scalpers https://www.kasada.io/use-cases/checkout-fraud/
+china-nexus
 CIS benchmarks https://www.cisecurity.org/insights/blog/getting-to-know-the-cis-benchmarks
 CISA = https://www.cisa.gov/
 cloud -- Cloudbleed https://en.m.wikipedia.org/wiki/Cloudbleed
@@ -49,6 +54,7 @@ defense -- in depth https://en.wikipedia.org/wiki/Defense_in_depth_(computing)
 denial of wallet = like DoS but service down due to no more credits https://www.kasada.io/use-cases/genai-abuse-73-percent-have-experienced-genai-security-incidents/
 device posture
 digital security https://securitylab.amnesty.org/digital-resources/
+email -- SPF https://www.digitalocean.com/community/tutorials/how-to-use-an-spf-record-to-prevent-spoofing-improve-e-mail-reliability
 encryption of stored data
 eviction / eradication = the process of removing a cyber threat actor or malicious code from a compromised environment https://www.cisa.gov/resources-tools/resources/eviction-strategies-tool
 fake account creation = to harm https://www.kasada.io/use-cases/fake-account-creation/
@@ -57,6 +63,8 @@ FIDO Alliance
 FIDO keys -- attack https://expel.com/blog/poisonseed-downgrading-fido-key-authentications-to-fetch-user-accounts/
 File Path (Directory) Traversal
 filtering = to pass input data through a logic that will hold parts of input that match a certain criteria and let other input pass through as is. The filter logic then makes a specific decision on the data that is in hold - possibly discarding it or transforming it.
+functions -- one-way
+functions -- one-way -- trapdoor & = is easy to compute in one direction, yet difficult to compute in the opposite direction (finding its inverse) without special information, called the "trapdoor" https://en.wikipedia.org/wiki/Trapdoor_function
 glassbox review = vs blackbox, looking at what happens when stimulated
 Google Project Zero https://googleprojectzero.blogspot.com/p/about-project-zero.html
 guidelines -- CGI security https://www.cgisecurity.com/owasp/html/ch04.html
@@ -95,6 +103,7 @@ network ACL
 network security -- lateral movement = when an attacker moves within a network after gaining access to that network. Lateral movement can be difficult to detect even if the attacker's entry point is discovered, because the attacker will have gone on to compromise other parts of the network. https://www.cloudflare.com/learning/security/glossary/what-is-lateral-movement/
 NIST "United States National Institute of Standards and Technology"  https://blog.cloudflare.com/nist-sp-1300-85/
 NIST -- Computer Security Resource Center https://csrc.nist.gov/
+OAuth 2.0 PKCE flow = ???
 OWASP Top 10:2025 -- A01:2025 - Broken Access Control
 OWASP Top 10:2025 -- A02:2025 - Security Misconfiguration
 OWASP Top 10:2025 -- A03:2025 - Software Supply Chain Failures
@@ -180,6 +189,7 @@ shadow APIs = APIs that have not been managed or secured
 shift left = earlier security
 software-defined perimeter (SDP) https://www.cloudflare.com/learning/access-management/software-defined-perimeter/
 solutions -- https://libsodium.gitbook.io/doc
+source maps leaking secrets https://lachlan.nz/blog/x-marks-the-spot
 spectre = class of attacks https://www.cloudflare.com/en-au/learning/security/threats/meltdown-spectre/
 surveillance self-defense = Tips, Tools and How-tos for Safer Online Communications https://ssd.eff.org/
 Tails = a portable operating system that protects your privacy and helps you avoid censorship https://tails.net/about/

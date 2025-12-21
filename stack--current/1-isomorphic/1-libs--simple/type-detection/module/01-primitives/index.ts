@@ -15,8 +15,7 @@ function isꓽnegative_zero(x: number): x is -0 {
 
 // use case: avoid wrong ordering of numeric keys
 function isꓽexact_stringified_number(s: string): s is string {
-	if (typeof s !== 'string')
-		return false
+	if (typeof s !== 'string') return false
 
 	const n = Number(s)
 	if (isNaN(n)) return false // NOT a number
@@ -25,9 +24,9 @@ function isꓽexact_stringified_number(s: string): s is string {
 }
 
 // https://unicode.org/reports/tr51/#Emoji_Sets
-const EMOJI_REGEX = /\p{RGI_Emoji}/v;
+const EMOJI_REGEX = /\p{RGI_Emoji}/v
 function hasꓽemoji(s: string): boolean {
-	return EMOJI_REGEX.test(s);
+	return EMOJI_REGEX.test(s)
 }
 
 /////////////////////////////////////////////////
@@ -36,7 +35,6 @@ function hasꓽemoji(s: string): boolean {
 // {} = any (non-null/undefined) value with zero or more properties, Doesn't Mean object! https://github.com/microsoft/TypeScript/wiki/FAQ#primitives-are---and---doesnt-mean-object
 // object = values which have Object in their prototype chain https://github.com/microsoft/TypeScript/wiki/FAQ#primitives-are---and---doesnt-mean-object
 // Object = ??? accepts numbers??
-
 
 // use case: to avoid it! (why? Which issue?)
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values
@@ -47,15 +45,12 @@ function hasꓽemoji(s: string): boolean {
 // Is it a "key/value" object (not null, not an array)
 // naming: difficult!!!
 // use case: for type guards
-function isꓽobjectⵧkv(o: object): o is object {
-	if (typeof o !== 'object')
-		return false
+function isꓽobjectⵧkv(o: object): o is Record<string, unknown> {
+	if (typeof o !== 'object') return false
 
-	if (!o)
-		return false
+	if (!o) return false
 
-	if (Array.isArray(o))
-		return false
+	if (Array.isArray(o)) return false
 
 	return true
 }
@@ -65,9 +60,8 @@ function isꓽobjectⵧkv(o: object): o is object {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals
 // use case: for type guards
 // also JSON "object is an unordered set of name/value pairs"
-function isꓽobjectⵧliteral(o: object): o is object {
-	if (!isꓽobjectⵧkv(o))
-		return false
+function isꓽobjectⵧliteral(o: object): o is Record<string, unknown> {
+	if (!isꓽobjectⵧkv(o)) return false
 
 	// "normal" objects have Object as constructor
 	// technically we could also accept null proto https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototype_objects

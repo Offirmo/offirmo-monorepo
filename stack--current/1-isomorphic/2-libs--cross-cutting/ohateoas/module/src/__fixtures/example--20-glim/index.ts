@@ -54,9 +54,8 @@ function createꓽserver(): OHAServer {
 		////////////
 
 		const header = RichText.listⵧunordered()
-			.pushKeyValue(
-				'time',
-				(() => {
+			.pushNodes({
+				time: RichText.fragmentⵧinline().assemble($builder => {
 					const $time_local_24h = RichText.fragmentⵧinline(now.toLocaleTimeString('fr')).done()
 					const $time_local_descr = RichText.fragmentⵧinline(
 						{
@@ -87,17 +86,18 @@ function createꓽserver(): OHAServer {
 						}[now.getHours()], // TODO 1D timezones / day length / sun position
 					).done()
 
-					return RichText.fragmentⵧinline()
+					$builder
 						.pushNodes({ time: $time_local_24h })
 						.pushText(' — ')
 						.pushNodes({ time__descr: $time_local_descr })
-						.done()
-				})(),
-			)
-			.pushKeyValue(
-				'location',
-				'⎨⎨location⎬⎬', // To be replaced
-			)
+				}),
+				place: '⎨⎨place⎬⎬', // To be replaced
+				party: RichText.listⵧordered().assemble($builder => {
+					$builder.pushNodes({
+						you: RichText.fragmentⵧinline().pushEmoji('🧑‍🦰').pushText(' You').done(),
+					})
+				}),
+			})
 			.done()
 		aggreg.$builder.pushNodes({ header })
 
@@ -212,8 +212,8 @@ type Temp = {
 	engagements: NonNullable<OHARichTextHints['engagements']>
 }
 function do_home(aggreg: Temp): void {
-	const location = RichText.fragmentⵧinline().pushEmoji('🏠').pushText('Home').done()
-	aggreg.$builder.pushRawNodes({ location })
+	const place = RichText.fragmentⵧinline().pushEmoji('🏠').pushText('Home').done()
+	aggreg.$builder.pushRawNodes({ place })
 
 	aggreg.$builder.pushNodes({
 		surroundings: RichText.listⵧunordered([
@@ -251,7 +251,6 @@ function do_home(aggreg: Temp): void {
 			story: 'You nap and wake up when you feel like it. You feel rested and rejuvenated!',
 		} as OHAFeedback,
 	} as OHAHyperActionBlueprint
-
 
 	aggreg.actions['take-a-long-rest'] = {
 		type: 'take-a-long-rest',

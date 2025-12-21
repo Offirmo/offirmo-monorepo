@@ -2,17 +2,16 @@ autoInstallPeers: false
 
 catalog:
   '@scure/base': 2.0.0
-  '@scure/bip32': 2.0.0
-  '@scure/bip39': 2.0.0
+  '@scure/bip32': 2.0.1
+  '@scure/bip39': 2.0.1
   '@scure/btc-signer': 2.0.1
   '@scure/starknet': 2.0.0
   ethereum-cryptography: 3.2.0
   ethers: 6.15.0
-  micro-eth-signer: 0.17.3
+  micro-eth-signer: 0.18.1
   micro-ordinals: 0.3.0
   micro-sol-signer: 0.8.2
-  qr: 0.5.2
-  viem: 2.38.0
+  viem: 2.41.2
   wagmi: 3.0.1
 
 catalogMode: strict
@@ -41,3 +40,5 @@ saveWorkspaceProtocol: rolling
 strictDepBuilds: true
 
 strictPeerDependencies: true
+
+trustPolicy: no-downgrade

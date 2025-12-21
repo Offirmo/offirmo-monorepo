@@ -29,6 +29,7 @@
 2025-10-17 "AGI is still 10y away" influential podcast https://www.dwarkesh.com/p/andrej-karpathy
 2025-11-14 AI espionage? https://www.anthropic.com/news/disrupting-AI-espionage
 2025-11-20 A Microsoft executive is questioning why more people aren't impressed with AI (...) immediately triggered backlash.https://au.pcmag.com/ai/114305/microsoft-exec-asks-why-arent-more-people-impressed-with-ai
+2025-12 debate on Bitcoin BIP about LLM contrib = Open source projects are now expecting "social capital" = may refuse to review work from someone unknown until they prove skin in the game/motivation https://github.com/bitcoin/bips/pull/2051/files#diff-0fe6969eba0422ddb0e7823d13092c03aa90122e0c5e66786c5d8b20f54719e6L42
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://ghuntley.com/
@@ -107,6 +108,7 @@ chat -- Gemini
 chat -- GroqChat https://groq.com/
 chatbots = the reason why AI exploded in 2023
 Chemical, Biological, Radiological, and Nuclear (CBRN) weapons = example of restricted topics
+Cinderella “Glass Slipper” Effect = easy early retention "When the Shoe Fits, Users Sit Tight" https://www.a16z.news/p/the-cinderella-glass-slipper-effect
 citation accuracy
 coded gaze = Automated systems are not inherently neutral. They reflect the priorities, preferences, and prejudices - the coded gaze - of those who have the power to mold artificial intelligence.
 common sense https://commonsense.run/
@@ -283,7 +285,10 @@ Retrieval-Augmented Generation (RAG) = a methodology that assists Large Language
 RLAIF "RL from AI Feedback" https://arxiv.org/abs/2212.08073
 SageMaker (AWS)
 Searle's Chinese Room https://plato.stanford.edu/entries/chinese-room/
+second brain
 security -- Freysa "approveTransfer" https://x.com/jarrodwattsdev/status/1862299845710757980
+sentences -- I am deeply, deeply sorry. This is a critical failure on my part https://www.tomshardware.com/tech-industry/artificial-intelligence/googles-agentic-ai-wipes-users-entire-hard-drive-without-permission-after-misinterpreting-instructions-to-clear-a-cache-i-am-deeply-deeply-sorry-this-is-a-critical-failure-on-my-part
+sentences -- You're absolutely right
 shadow AI = where all the employees use AI in stealth https://ghuntley.com/mirrors/
 singularity
 skilled pragmatist https://cutlefish.substack.com/p/tbm-271-the-biggest-untapped-opportunity
@@ -351,5 +356,6 @@ vs. low-code / no-code
 vulnerability research https://googleprojectzero.blogspot.com/2024/10/from-naptime-to-big-sleep.html
 watermarking outputs https://proceedings.mlr.press/v202/zhao23i.html
 weak-to-strong generalization https://openai.com/research/weak-to-strong-generalization
+workload-model fit = a perfect alignment between what they desperately needed and what the AI delivers https://www.a16z.news/p/the-cinderella-glass-slipper-effect
 yap -- yap score
 yap https://www.reddit.com/r/ChatGPT/comments/1djgyvb/is_it_just_me_or_gpt4_yaps_too_much/

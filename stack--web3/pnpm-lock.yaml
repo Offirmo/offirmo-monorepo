@@ -10,11 +10,11 @@ catalogs:
       specifier: 2.0.0
       version: 2.0.0
     '@scure/bip32':
-      specifier: 2.0.0
-      version: 2.0.0
+      specifier: 2.0.1
+      version: 2.0.1
     '@scure/bip39':
-      specifier: 2.0.0
-      version: 2.0.0
+      specifier: 2.0.1
+      version: 2.0.1
     '@scure/btc-signer':
       specifier: 2.0.1
       version: 2.0.1
@@ -25,20 +25,17 @@ catalogs:
       specifier: 3.2.0
       version: 3.2.0
     micro-eth-signer:
-      specifier: 0.17.3
-      version: 0.17.3
+      specifier: 0.18.1
+      version: 0.18.1
     micro-ordinals:
       specifier: 0.3.0
       version: 0.3.0
     micro-sol-signer:
       specifier: 0.8.2
       version: 0.8.2
-    qr:
-      specifier: 0.5.2
-      version: 0.5.2
     viem:
-      specifier: 2.38.0
-      version: 2.38.0
+      specifier: 2.41.2
+      version: 2.41.2
 
 importers:
 
@@ -49,10 +46,10 @@ importers:
         version: 2.0.0
       '@scure/bip32':
         specifier: 'catalog:'
-        version: 2.0.0
+        version: 2.0.1
       '@scure/bip39':
         specifier: 'catalog:'
-        version: 2.0.0
+        version: 2.0.1
       '@scure/btc-signer':
         specifier: 'catalog:'
         version: 2.0.1
@@ -64,19 +61,16 @@ importers:
         version: 3.2.0
       micro-eth-signer:
         specifier: 'catalog:'
-        version: 0.17.3
+        version: 0.18.1
       micro-ordinals:
         specifier: 'catalog:'
         version: 0.3.0
       micro-sol-signer:
         specifier: 'catalog:'
         version: 0.8.2
-      qr:
-        specifier: 'catalog:'
-        version: 0.5.2
       viem:
         specifier: 'catalog:'
-        version: 2.38.0
+        version: 2.41.2
 
 packages:
 
@@ -95,10 +89,6 @@ packages:
     resolution: {integrity: sha512-k11yZxZg+t+gWvBbIswW0yoJlu8cHOC7dhunwOzoWH/mXGBiYyR4YY6hAEK/3EUs4UpB8la1RfdRpeGsFHkWsA==}
     engines: {node: ^14.21.3 || >=16}
 
-  '@noble/curves@2.0.0':
-    resolution: {integrity: sha512-RiwZZeJnsTnhT+/gg2KvITJZhK5oagQrpZo+yQyd3mv3D5NAG2qEeEHpw7IkXRlpkoD45wl2o4ydHAvY9wyEfw==}
-    engines: {node: '>= 20.19.0'}
-
   '@noble/curves@2.0.1':
     resolution: {integrity: sha512-vs1Az2OOTBiP4q0pwjW5aF0xp9n4MxVrmkFBxc6EKZc6ddYx5gaZiAsZoq0uRRXWbi3AT/sBqn05eRPtn1JCPw==}
     engines: {node: '>= 20.19.0'}
@@ -106,10 +96,6 @@ packages:
   '@noble/hashes@1.8.0':
     resolution: {integrity: sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==}
     engines: {node: ^14.21.3 || >=16}
-
-  '@noble/hashes@2.0.0':
-    resolution: {integrity: sha512-h8VUBlE8R42+XIDO229cgisD287im3kdY6nbNZJFjc6ZvKIXPYXe6Vc/t+kyjFdMFyt5JpapzTsEg8n63w5/lw==}
-    engines: {node: '>= 20.19.0'}
 
   '@noble/hashes@2.0.1':
     resolution: {integrity: sha512-XlOlEbQcE9fmuXxrVTXCTlG2nlRXa9Rj3rr5Ue/+tX+nmkgbX720YHh0VR3hBF9xDvwnb8D2shVGOwNx+ulArw==}
@@ -124,14 +110,14 @@ packages:
   '@scure/bip32@1.7.0':
     resolution: {integrity: sha512-E4FFX/N3f4B80AKWp5dP6ow+flD1LQZo/w8UnLGYZO674jS6YnYeepycOOksv+vLPSpgN35wgKgy+ybfTb2SMw==}
 
-  '@scure/bip32@2.0.0':
-    resolution: {integrity: sha512-V24pyBWzKQqhB0CrV3Xz7JZr/cC2Nhp9LuIr9gOHkAKxSGwYqTIs8u0AkZgKA7HFqRiyoNg/PymiXOExm+3KlQ==}
+  '@scure/bip32@2.0.1':
+    resolution: {integrity: sha512-4Md1NI5BzoVP+bhyJaY3K6yMesEFzNS1sE/cP+9nuvE7p/b0kx9XbpDHHFl8dHtufcbdHRUUQdRqLIPHN/s7yA==}
 
   '@scure/bip39@1.6.0':
     resolution: {integrity: sha512-+lF0BbLiJNwVlev4eKelw1WWLaiKXw7sSl8T6FvBlWkdX+94aGJ4o8XjUdlyhTCjd8c+B3KT3JfS8P0bLRNU6A==}
 
-  '@scure/bip39@2.0.0':
-    resolution: {integrity: sha512-F2Tza4KyTSFO/13JymY6a6UHfSLzx0YGbkQGz7wjGx2BYJLyG/qXELKnFFsDfeIK+WfV2v2+5XOQftvL4d8RBA==}
+  '@scure/bip39@2.0.1':
+    resolution: {integrity: sha512-PsxdFj/d2AcJcZDX1FXN3dDgitDDTmwf78rKZq1a6c1P1Nan1X/Sxc7667zU3U+AN60g7SxxP0YCVw2H/hBycg==}
 
   '@scure/btc-signer@2.0.1':
     resolution: {integrity: sha512-vk5a/16BbSFZkhh1JIJ0+4H9nceZVo5WzKvJGGWiPp3sQOExeW+L53z3dI6u0adTPoE8ZbL+XEb6hEGzVZSvvQ==}
@@ -175,8 +161,8 @@ packages:
     peerDependencies:
       ws: '*'
 
-  micro-eth-signer@0.17.3:
-    resolution: {integrity: sha512-6NSgzeSAO2oRQmzH3SWPS+/abXrO09E8i4utmufV1O1oez/C1E2hNpeOX/OFOHJghAS7XzPm9tkh625v/49TwA==}
+  micro-eth-signer@0.18.1:
+    resolution: {integrity: sha512-vXKhCZxrytpl+dXR9JeaE41ZVFndi7wCKc1Jd22smOMAeDErvRcXaTxhYUf1yQxis4n2kIdv/pH7iuf+5/cj+Q==}
     engines: {node: '>= 20.19.0'}
 
   micro-ordinals@0.3.0:
@@ -198,16 +184,12 @@ packages:
       typescript:
         optional: true
 
-  qr@0.5.2:
-    resolution: {integrity: sha512-91M3sVlA7xCFpkJtYX5xzVH8tDo4rNZ7jr8v+1CRgPVkZ4D+Vl9y8rtZWJ/YkEUM6U/h0FAu5W/JAK7iowOteA==}
-    engines: {node: '>= 20.19.0'}
-
   strip-ansi@6.0.1:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
     engines: {node: '>=8'}
 
-  viem@2.38.0:
-    resolution: {integrity: sha512-YU5TG8dgBNeYPrCMww0u9/JVeq2ZCk9fzk6QybrPkBooFysamHXL1zC3ua10aLPt9iWoA/gSVf1D9w7nc5B1aA==}
+  viem@2.41.2:
+    resolution: {integrity: sha512-LYliajglBe1FU6+EH9mSWozp+gRA/QcHfxeD9Odf83AdH5fwUS7DroH4gHvlv6Sshqi1uXrYFA2B/EOczxd15g==}
     peerDependencies:
       typescript: '>=5.0.4'
     peerDependenciesMeta:
@@ -240,17 +222,11 @@ snapshots:
     dependencies:
       '@noble/hashes': 1.8.0
 
-  '@noble/curves@2.0.0':
-    dependencies:
-      '@noble/hashes': 2.0.0
-
   '@noble/curves@2.0.1':
     dependencies:
       '@noble/hashes': 2.0.1
 
   '@noble/hashes@1.8.0': {}
-
-  '@noble/hashes@2.0.0': {}
 
   '@noble/hashes@2.0.1': {}
 
@@ -264,10 +240,10 @@ snapshots:
       '@noble/hashes': 1.8.0
       '@scure/base': 1.2.6
 
-  '@scure/bip32@2.0.0':
+  '@scure/bip32@2.0.1':
     dependencies:
-      '@noble/curves': 2.0.0
-      '@noble/hashes': 2.0.0
+      '@noble/curves': 2.0.1
+      '@noble/hashes': 2.0.1
       '@scure/base': 2.0.0
 
   '@scure/bip39@1.6.0':
@@ -275,9 +251,9 @@ snapshots:
       '@noble/hashes': 1.8.0
       '@scure/base': 1.2.6
 
-  '@scure/bip39@2.0.0':
+  '@scure/bip39@2.0.1':
     dependencies:
-      '@noble/hashes': 2.0.0
+      '@noble/hashes': 2.0.1
       '@scure/base': 2.0.0
 
   '@scure/btc-signer@2.0.1':
@@ -317,7 +293,7 @@ snapshots:
     dependencies:
       ws: 8.18.3
 
-  micro-eth-signer@0.17.3:
+  micro-eth-signer@0.18.1:
     dependencies:
       '@noble/curves': 2.0.1
       '@noble/hashes': 2.0.1
@@ -354,13 +330,11 @@ snapshots:
     transitivePeerDependencies:
       - zod
 
-  qr@0.5.2: {}
-
   strip-ansi@6.0.1:
     dependencies:
       ansi-regex: 5.0.1
 
-  viem@2.38.0:
+  viem@2.41.2:
     dependencies:
       '@noble/curves': 1.9.1
       '@noble/hashes': 1.8.0

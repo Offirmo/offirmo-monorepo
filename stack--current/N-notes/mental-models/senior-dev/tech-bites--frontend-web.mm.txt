@@ -231,6 +231,7 @@ engine -- node
 engine -- v8
 engine -- winter
 engine -- workerd https://github.com/cloudflare/workerd
+events -- custom & https://medium.com/@pankajpatil822/understanding-custom-events-in-javascript-ad23cc759617 https://www.aaron-powell.com/posts/2020-08-21-custom-events-in-javascript/
 events -- event delegation
 fetch -- DIFFERENT from async state management = fetch is simple, handling remote (server) state is not https://tkdodo.eu/blog/why-you-want-react-query
 fetch -- why it doesn't reject on error = bc fetch promise is promise of a successful REQUEST https://kettanaito.com/blog/why-fetch-promise-doesnt-reject-on-error-responses
@@ -263,6 +264,7 @@ HTML -- elements
 HTML -- first https://html-first.com/
 HTML -- metadata https://github.com/wikimedia/html-metadata
 HTML -- tags
+html tool = single page tool https://simonwillison.net/2025/Dec/10/html-tools/
 htmx https://htmx.org/
 http "happy eyeballs" https://www.checklyhq.com/blog/how-a-tcpdump-led-us-to-a-bug-in-nodes-ipv6-handli/
 HTTP -- QUERY = safe, idempotent request method that can carry request content https://www.ietf.org/archive/id/draft-ietf-httpbis-safe-method-w-body-05.html
@@ -292,8 +294,11 @@ js -- learning rsrcs -- Exploring JavaScript (ES2024 Edition) https://exploringj
 js -- promises -- withResolvers
 js -- promises https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md
 JS -- string literals -- raw vs cooked https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw#building_an_identity_tag
+js -- style observer https://github.com/LeaVerou/style-observer
 js -- tasks & microtasks https://devdocs.io/dom/html_dom_api/microtask_guide
 JSON "Javascript Object Notation"
+JSX -- transform = the way to do the actual transform https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html
+JSX = a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file (initially for React)  https://react.dev/learn/writing-markup-with-jsx
 latency -- high latency environments https://csswizardry.com/2024/09/optimising-for-high-latency-environments/
 lawsofux.com -- Aesthetic-Usability Effect = Users often perceive aesthetically pleasing design as design that’s more usable.
 lawsofux.com -- Choice Overload = The tendency for people to get overwhelmed when they are presented with a large number of options, often used interchangeably with the term paradox of choice.
@@ -341,6 +346,7 @@ monitoring -- synthetic = own test bot https://en.wikipedia.org/wiki/Synthetic_m
 native apps with JS https://v2.tauri.app/
 navigation -- client side vs full refresh
 node -- tenant isolation = node is single thread, hence issues with security, esp. AWS lambda! solutions: workerd?
+noopener https://mathiasbynens.github.io/rel-noopener/
 oklch https://oklch.com/
 Open Web Advocacy https://open-web-advocacy.org/
 optical alignment = to look nice, vs, mathematical alignment. Ex. centering a digit inside a circle
@@ -380,7 +386,9 @@ PWA https://whatpwacando.today/ https://web.dev/learn/pwa
 quality -- why so rare? https://linear.app/blog/why-is-quality-so-rare
 React
 React
+React -- error boundary = BEWARE it doesn't catch everything! https://github.com/bvaughn/react-error-boundary
 React -- hooks
+React -- render props https://github.com/donavon/render-props/tree/develop
 React -- RSC "React server components" https://www.joshwcomeau.com/react/server-components/
 React -- trigger, render, commit https://react.dev/learn/render-and-commit
 React -- v19 = https://vercel.com/blog/whats-new-in-react-19
@@ -413,6 +421,8 @@ routing -- uri -- 2 query (incl query params)
 routing -- uri -- 3 fragment
 security -- clickjacking https://portswigger.net/web-security/clickjacking
 security -- cross-site leaks https://xsleaks.dev/
+security -- CSP
+security -- CSP -- scanner = good? https://centralcsp.com/
 security -- domain name registration, DNS, hosting = don't use the same provider so that a compromise don't allow to access everything (from a domain recovery expert) https://www.reddit.com/r/Domains/comments/1gdpqdk/comment/miu1osc/
 security -- Google Tag Manager = a handy way for people you’ve never met to inject JavaScript into your site without the hindrance of a code review
 security -- in-app browsers https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser
@@ -444,6 +454,7 @@ spirit https://info.cern.ch/hypertext/WWW/Summary.html
 SSR good explanation https://single-spa.js.org/docs/ssr-overview/
 SVG = https://www.joshwcomeau.com/svg/friendly-introduction-to-svg/
 Tailwind -- pro/cons https://colton.dev/blog/tailwind-is-the-worst-of-all-worlds/
+Tailwind -- responsiveness -- Be careful with responsive visibility classes: <Button className="hidden sm:block" /> The element layout may not behave as expected, if it's expecting e.g. "flex". Prefer the max-* prefix, in most cases: <Button className="max-sm:hidden" />
 temporal dead zone (TDZ) https://devdocs.io/javascript/statements/let#temporal_dead_zone_tdz
 test -- jsdom https://github.com/jsdom/jsdom
 testing -- component https://storybook.js.org/blog/component-testing/
@@ -475,12 +486,18 @@ UI -- layout -- masonry
 UI -- layout -- table
 UI -- layout -- tree
 UI -- loading skeleton = a simplified version of the UI shown during loading
-UI -- modals -- sheets = ~semi-modal https://en.wikipedia.org/wiki/Modal_window#Modal_sheets_in_Mac_OS_X
-UI -- modals https://en.wikipedia.org/wiki/Modal_window
 UI -- modes https://en.wikipedia.org/wiki/User_interface#Modalities_and_modes
 UI -- overlays -- avoid https://www.nngroup.com/articles/overuse-of-overlays/
 UI -- overlays -- dismissal https://www.nngroup.com/articles/accidental-overlay-dismissal/
 UI -- popover https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
+UI -- primitives -- checkbox
+UI -- primitives -- dropdown = avoid https://www.youtube.com/watch?v=hcYAHix-riY
+UI -- primitives -- modals -- sheets = ~semi-modal https://en.wikipedia.org/wiki/Modal_window#Modal_sheets_in_Mac_OS_X
+UI -- primitives -- modals https://en.wikipedia.org/wiki/Modal_window
+UI -- primitives -- radio
+UI -- primitives -- radio -- context chips https://lea.verou.me/blog/2024/context-chips/#idea-4%3A-context-chips
+UI -- primitives -- toggle
+UI -- primitives -- toggle -- triple, ex. system/dark/light mode
 UI -- primitives = box, stack, table, grid, flex...
 UI -- principles -- Don Norman
 UI -- properties -- Attentive = manage the user attention deciding when to interrupt the user, the kind of warnings, and the level of detail of the messages presented to the user.
@@ -494,17 +511,29 @@ UI -- tooltip -- should not exist https://tkdodo.eu/blog/tooltip-components-shou
 UI -- transitions
 UI -- views
 UI = https://en.wikipedia.org/wiki/User_interface
+user -- agency = give them some slack/choice/affordance, ex. "interestingly, they still chose to use it as a two-step process for some of the questions, presumably to reduce cognitive load for difficult to answer questions by breaking down the decision into two smaller ones" https://lea.verou.me/blog/2024/context-chips/#what-worked-well%3A-context-chips
 User Agent Interface (UA) https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#large-viewport
+user effort --
+user effort -- as a currency = Respect user effort. Treat it as a scarce resource — just like regular currency — and keep it close to the minimum necessary to declare intent "to create a product users love, design the tradeoff curve of use case complexity to user effort with the same care you design your pricing scheme" https://lea.verou.me/blog/2025/user-effort/
+user effort -- maximize signal-to-noise ratio = keep user effort close to the minimum necessary to declare intent
+user effort -- usability -- “But I just wanted to _________, why is it so hard?”
+user effort -- usability cliffs = When a small increase in use case complexity results in a disproportionately large increase in user effort cost "Incremental user effort cost should be proportional to incremental value gained"
 UX -- Above the fold = is the area of a webpage that fits in a browser window without a user having to scroll down. This is the content that is first seen by the user and often dictates whether they’ll continue reading the webpage.
+UX -- action limiting = better delay effect than permission "I hate it when I get stopped from doing an action and being told to come back in X days"
 UX -- cancel vs close https://www.nngroup.com/articles/cancel-vs-close/
 UX -- challenges -- information overload
 UX -- collaborative experiences https://zknill.io/posts/collaboration-no-crdts/
 UX -- delightful = "the app cares about my experience" easy to sell to stakeholders
 UX -- evaluation/review -- "User Experience Honeycomb" = useful + usable + findable + desirable + accessible + credible = valuable https://en.wikipedia.org/wiki/User_interface#A_model_of_design_criteria:_User_Experience_Honeycomb
 UX -- good practices -- stick to established patterns https://medium.com/@daniel.stoyanov/not-following-well-established-ux-design-patterns-is-almost-always-a-bad-idea-58ae01b4f48a https://www.nngroup.com/articles/power-law-learning/
+UX -- mobile -- sheet = a modal component that slides in from the bottom edge of the mobile device screen, similar to Tray. However, unlike Tray, Sheet has a fixed height. It's particularly useful for displaying interfaces with long content or those requiring interaction with the virtual keyboard.
+UX -- mobile -- tray = a lightweight, dismissible modal component anchored to the bottom of a mobile device's screen. It slides up from the bottom and overlays existing content. Users can dismiss the tray by swiping down.
+UX -- modality = a design technique that presents UI content in a separate, focused view. This dedicated mode prevents interaction with the parent view and requires a specific action to exit
 UX -- principle of least astonishment (POLA) = general principle in the design of all kinds of interfaces. It is based on the idea that human beings can only pay full attention to one thing at one time, leading to the conclusion that novelty should be minimized.
 UX -- principles and cognitive bias relevant https://growth.design/psychology
 UX -- properties https://en.wikipedia.org/wiki/User_interface#Types
+UX -- surveys -- neutral option = allow or not? https://en.wikipedia.org/wiki/Likert_scale
+UX -- surveys = hard to get right
 UX -- types -- Batch = non-interactive user interfaces, where the user specifies all the details of the batch job in advance to batch processing, and receives the output when all the processing is done. The computer does not prompt for further input after the processing has started.
 UX -- types -- Command line interfaces (CLIs) = provide input by typing a command string with the computer keyboard and respond by outputting text to the computer monitor. Used by programmers and system administrators, in engineering and scientific environments, and by technically advanced personal computer users.
 UX -- types -- Conversational interface agents = attempt to personify the computer interface in the form of an animated person, robot, or other character (such as Microsoft's Clippy the paperclip), and present interactions in a conversational form.
@@ -516,6 +545,7 @@ UX -- types -- Text-based user interfaces (TUIs) are user interfaces which inter
 UX -- types -- Zooming = information objects are represented at different levels of scale and detail, and where the user can change the scale of the viewed area in order to show more detail.
 UX -- unified experience
 UX -- unified experience -- design system, component reuse
+UX -- you don't need animations https://emilkowal.ski/ui/you-dont-need-animations
 vanilla https://plainvanillaweb.com/index.html
 viewport
 viewport -- small <= dynamic <= large

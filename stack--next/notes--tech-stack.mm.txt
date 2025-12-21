@@ -1,3 +1,5 @@
+2024/11 https://vercel.com/blog/how-we-built-the-v0-ios-app
+6 innovations that made the modern world = Glass, Cold, Sound, Clean, Time, Light https://www.theguardian.com/books/2014/oct/03/how-we-got-to-now-by-steven-johnson-six-innovations-made-modern-world
 ? corepack / pnpm ? https://blog.hyperknot.com/p/corepacks-packagemanager-field https://www.reddit.com/r/node/comments/1hw1iyh/the_curious_case_of_the_packagemanager_field_in/
 ? GraphQL https://gql-tada.0no.co/
 ? logs https://betterstack.com/
@@ -12,13 +14,16 @@ corepack https://www.totaltypescript.com/how-to-use-corepack
 corepack still considered experimental? https://vercel.com/docs/builds/configure-a-build#corepack
 designed for Cloudflare/Vercel -- https://upstash.com/
 docker -- macos https://github.com/dockur/macos
+documentation site https://www.mintlify.com/
 durable workflows https://www.inngest.com/uses/durable-workflows
 ecosystem -- sdk ?https://liblab.com/ https://www.speakeasy.com/
+evaluation -- npm https://github.com/antfu/node-modules-inspector
 feature flags
 frontend -- CSS -- framework -- ? tailwind https://tailwindcss.com/docs https://github.com/dcastil/tailwind-merge https://tremor.so/
 frontend -- CSS-in-js -- ? https://github.com/vercel/styled-jsx
 frontend -- React
 frontend -- React -- https://reactrouter.com/home ?
+GHA https://github.com/step-security
 git -- git crypt https://github.com/AGWA/git-crypt
 https://github.com/gvergnaud/ts-pattern
 https://tanstack.com/
@@ -36,6 +41,7 @@ libs -- https://itty.dev/
 linter -- eslint
 linter -- https://biomejs.dev/
 localias = securely manage local aliases for development servers https://github.com/peterldowns/localias
+log -- pino https://www.reddit.com/r/node/comments/eyfhlq/bunyan_hasnt_been_updated_in_almost_3_years_is/
 meta -- CNCF -- landscape = https://landscape.cncf.io/
 meta -- CNCF = the open source, vendor-neutral hub of cloud native computing, hosting projects like Kubernetes and Prometheus to make cloud native universal and sustainable https://landscape.cncf.io/
 meta -- https://stackshare.io/
@@ -45,6 +51,7 @@ monorepo -- aware -- turborepo
 monorepo -- aware -- ✖ bolt
 nanoservices
 next.js https://nextjs.org/docs
+packages -- evaluation https://node-modules.dev/graph#install=@solana/web3.js
 pkg manager -- ⚠ pnpm
 pkg manager -- ✅ yarn v4
 pkg manager -- ✖ npm
@@ -52,8 +59,10 @@ polish https://number-flow.barvian.me/
 search -- postgres https://tech.instacart.com/how-instacart-built-a-modern-search-infrastructure-on-postgres-c528fa601d54
 secrets management -- ? https://infisical.com/
 solutions -- https://drizzle.team/
+syntax highlighter https://prismjs.com/
 tracing https://www.jaegertracing.io/ (used by Cloudflare)
 transactional emails https://react.email/
+ts run = ts-node vs tsx vs node vs ts-exec vs deno vs bun https://github.com/poppinss/ts-exec?tab=readme-ov-file#-why-ts-exec-exists
 ui - markdown -- editor https://overtype.dev/
 vite -- npm create vite@latest my-project
 vite -- vitest

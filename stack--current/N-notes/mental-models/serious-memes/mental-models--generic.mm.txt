@@ -204,6 +204,7 @@ change -- introduction -- 2 Why are we doing it?
 change -- introduction -- 3 When are we making the change?
 change -- Old ideas give way slowly; for they are more than abstract logical forms and categories, they are habits, predispositions,they are habits, predispositions, deeply ingrained attitudes of diversion and preference.diversion and preference John Dewey
 changemaker
+creativity -- the oatmeal https://theoatmeal.com/comics/creativity_things
 charbonnier est maître chez soi
 charged issues = fractally contentious, causing disagreement among people who hold all but identical opinions https://en.wikipedia.org/wiki/Narcissism_of_small_differences
 charisma https://paulgraham.com/charisma.html
@@ -314,6 +315,7 @@ degree mills = https://www.dice.com/career-advice/coding-bootcamp-popularity-gro
 DEI
 deliberate intentional practice / play = intention of not achieving much, but just picking it up, giving it a strum and then having an open mind to the possibilities that you might discover something new or a new meta https://ghuntley.com/play/
 demand curves slope down: The harder something is to do, the fewer people will do it. For example, raise the price of a product and fewer people will buy it. Lower the price and more people will buy it. Economics 101.
+democracy -- no-hope candidate = a candidate who stands for a political party in an electoral division where the party in question enjoys only low levels of support. Although the candidate has little chance of winning, a major party will normally make an effort to ensure it has its name on the ballot paper https://en.wikipedia.org/wiki/Paper_candidate
 dependability https://posthog.com/founders/first-ops-hire
 deterrence
 diagrams -- charts
@@ -397,6 +399,7 @@ Eisenhower's Urgent/Important https://www.mindtools.com/al1e0k5/eisenhowers-urge
 elevator pitch https://www.atlassian.com/team-playbook/plays/elevator-pitch
 email -- burner https://au.lifehacker.com/apple/49245/news/how-to-get-a-burner-email-address-with-iclouds-hide-my-email
 emergence: When things interact, they often birth new, unpredictable forms. Therefore, the sum total of a system is more than its component parts. As a system evolves, its structure can transform — just like how water becomes cold water until it turns into ice.
+emojis https://emojipedia.org/
 emotionally secure https://www.cnbc.com/2024/01/03/harvard-psychologist-if-you-answer-yes-to-any-of-these-questions-youre-more-emotionally-secure-than-most-people.html
 emotions -- agitation = fear, guilt, restlessness
 emotions -- cool = despair, sadness, emptiness
@@ -745,6 +748,7 @@ Lev Landau classification of physicists -- line 2 = originality, genius, intuiti
 Lev Landau classification of physicists https://books.google.com.au/books?id=nGcHEAAAQBAJ&pg=PA115&redir_esc=y#v=onepage&q&f=false
 leçons de vie https://www.ecologiehumaine.eu/osez-laudace/
 life -- balance between living the moment and preparing the long-term = ex. of ppl dying at 50 before planned retirement / travelling (Also Gospel's parable)
+life -- diseases -- heart disfunction = New York Heart Association Functional Classification https://en.wikipedia.org/wiki/New_York_Heart_Association_Functional_Classification
 life -- fallacies -- "you are a tool. It sucks not being on top" = not true, "being of service to something or someone, which gives purpose"
 life -- stages -- 20+ boomerang https://en.wikipedia.org/wiki/Boomerang_Generation
 life -- stages -- 40+ sandwich https://en.wikipedia.org/wiki/Sandwich_generation

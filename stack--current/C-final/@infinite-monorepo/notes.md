@@ -2,6 +2,8 @@
 "mono repo management" https://bit.dev/
 
 
+use this pkg? https://github.com/privatenumber/tasuku
+
 
 - JS/TS oriented
 - manage the "cruft" = everything not our cool source code

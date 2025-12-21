@@ -70,6 +70,8 @@ interface Builder {
 	done(): CheckedNode
 
 	$node: CheckedNode
+
+	assemble(fn: ($builder: Builder) => void): CheckedNode
 }
 
 /////////////////////////////////////////////////
@@ -101,6 +103,7 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		pushKeyValue,
 
 		done,
+		assemble,
 
 		$node,
 	}
@@ -280,6 +283,11 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 	// TODO rename to value() like lodash chain?
 	function done(): CheckedNode {
 		return $node
+	}
+
+	function assemble(fn: ($builder: Builder) => void): CheckedNode {
+		fn(builder)
+		return done()
 	}
 
 	return builder

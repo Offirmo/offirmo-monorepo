@@ -195,6 +195,7 @@ comments -- conventional
 comments -- leading, trailing, detached https://github.com/microsoft/TypeScript/wiki/FAQ#trailing-leading-and-detached-comments
 commits
 commits -- conventional  https://www.conventionalcommits.org/  https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
+commits -- the perfect commit = https://simonwillison.net/2022/Oct/29/the-perfect-commit/
 compatibility -- backward = consumer's new version can read producer's old data
 compatibility -- forward = consumer's old version can read producer's new data
 compatibility -- window = duration deployed code needs to remain compatible
@@ -320,6 +321,8 @@ debugging
 defensive programming = Always think about what can go wrong, what will happen on invalid input, and what might fail, which will help you catch many bugs before they happen https://opensource.com/article/17/5/30-best-practices-software-development-and-testing
 defensive programming https://dev.to/cubiclebuddha/is-defensive-programming-actually-healthy-5flj
 define “good” = what “good” looks like to your org. Achieving that ideal doesn’t depend on which technology you use. It depends on understanding your company’s requirements and what assumptions will remain true regardless of the tools you use.
+definition of done
+definition of done -- proven to work = I tested on my machine, not wasting reviewers/testers time https://simonwillison.net/2025/Dec/18/code-proven-to-work/
 degrees https://world.hey.com/jorge/programmers-and-degrees-94eaa940
 demos
 dependencies
@@ -354,7 +357,6 @@ development containers https://containers.dev/implementors/spec/
 DevEx
 DevOps https://www.browserstack.com/guide/difference-between-continuous-integration-and-continuous-delivery
 DevOps Research and Assessment (DORA) = how we should develop our software right and what numbers we should show to our managers to make them happy https://medium.com/booking-com-development/a-step-by-step-guide-on-how-not-to-implement-dora-metrics-85081f0d4484
-discriminated union = a special kind of union in which a) all the options are object schemas that b) share a particular key (the "discriminator"). Based on the value of the discriminator key, the language is able to "narrow" the type signature as you'd expect.
 DNS (Domain Name System)
 do what I mean (DWIM) = computer systems attempt to anticipate what users intend to do, correcting trivial errors automatically rather than blindly executing users' explicit but potentially incorrect input
 dogfooding = practice of a company using its own products or services internally as a way to test, evaluate, and improve them. Essentially, the company's employees become the primary users of their own products.
@@ -426,6 +428,8 @@ feature flag -- also called toggle, feature control
 feature flag = dynamically change the state of production
 feature flags -- addiction https://newsletter.manager.dev/p/feature-flags-are-ruining-your-codebase
 feedback loop -- speed needed
+fields -- brownfield development = problem spaces needing the development and deployment of new software systems in the immediate presence of existing (legacy) software applications/systems https://en.wikipedia.org/wiki/Brownfield_(software_development)
+fields -- greenfield development = brand new software development projects that are not constrained by prior work
 FIFO
 file read
 file watcher -- watchman
@@ -590,6 +594,7 @@ lang -- JS -- interview http://www.toptal.com/javascript/interview-questions
 lang -- JS -- interview https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
 lang -- JS -- parseInt http://stackoverflow.com/questions/17106681/parseint-vs-unary-plus-when-to-use-which/17106702#17106702
 lang -- JS -- realms https://stackoverflow.com/questions/49832187/how-to-understand-js-realms/49832343#49832343
+lang -- JS -- runtimes https://buttondown.com/whatever_jamie/archive/the-many-many-many-javascript-runtimes-of-the-last-decade/
 lang -- js/ts --tsconfig https://json.schemastore.org/tsconfig
 lang -- JSON
 lang -- JSX – Javascript XML, from React
@@ -851,7 +856,7 @@ rollback
 rolling deploy
 RPC -- advocacy https://blog.cloudflare.com/javascript-native-rpc/
 rpc -- deadline https://protobuf.dev/programming-guides/api/
-RPC -- flawed = "RPC and its Offspring: Convenient, Yet Fundamentally Flawed" = can't hide the underlying distributed system  https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/RPC%2band%2bits%2bOffspring_%2bConvenient%2c%2bYet%2bFundamentally%2bFlawed.html
+RPC -- flawed = "RPC and its Offspring: Convenient, Yet Fundamentally Flawed" = can't hide the underlying distributed system  https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/RPC%2band%2bits%2bOffspring_%2bConvenient%2c%2bYet%2bFundamentally%2bFlawed.html https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/SteveVinoski_RPCAndItsOffspringConvenientYetFundamentallyFlawed.pdf
 RPC -- solution -- protocol = ex. https://capnproto.org/rpc.html
 RPC -- solution -- TS https://trpc.io/docs/concepts intro https://colinhacks.com/essays/painless-typesafety
 rule of composition https://www.linfo.org/rule_of_composition.html
@@ -914,6 +919,9 @@ SOLID -- 4 Interface segregation principle https://en.wikipedia.org/wiki/Interfa
 SOLID -- 5 principle https://en.wikipedia.org/wiki/Dependency_inversion_principle
 SOLID -- critique https://www.tedinski.com/2019/04/02/solid-critique.html
 solution -- bazel https://github.com/bazelbuild/bazelisk
+source maps
+source maps -- blanks, ex. type stripping
+source maps -- should NOT be public = attack vector https://lachlan.nz/blog/x-marks-the-spot
 space shuttle disasters -- Challenger = https://en.wikipedia.org/wiki/Space_Shuttle_Challenger_disaster
 space shuttle disasters -- Columbia = https://en.wikipedia.org/wiki/Space_Shuttle_Columbia_disaster
 spec
@@ -945,6 +953,8 @@ stick to boring architecture for as long as possible https://addyosmani.com/blog
 stories to help you grow as a software developer https://medium.com/@MediumStaff/list/stories-to-help-you-grow-as-a-software-developer-b1d913188c20
 straw-dog proposal = (jargon) a brainstormed simple draft proposal intended to generate discussion of its disadvantages and to spur the generation of new and better proposals https://en.wikipedia.org/wiki/Straw_man_proposal#Software_development
 streams
+strict -- use strict
+stringbool = string vonvertible to a bool, ex.yes, no, Y, false, true, 0, 1...
 style guides https://google.github.io/styleguide/
 superapp
 Sustainable Architectural Decisions https://adr.github.io/
@@ -1013,6 +1023,7 @@ types -- duck typing
 types -- erasure https://github.com/microsoft/TypeScript/wiki/FAQ#what-is-type-erasure https://en.wikipedia.org/wiki/Type_erasure
 types -- interface = An interface decouples what needs to be implemented from how it is implemented
 types -- Liskov substitution principle (L of SOLID) https://en.wikipedia.org/wiki/Liskov_substitution_principle
+types -- litteral
 types -- method bivariance https://github.com/microsoft/TypeScript/wiki/FAQ#why-method-bivariance
 types -- nominal https://github.com/Microsoft/TypeScript/issues/202
 types -- parameter arity variance https://github.com/microsoft/TypeScript/wiki/FAQ#parameter-arity-variance-is-correct
@@ -1030,6 +1041,7 @@ types -- subtyping -- preconditions = cannot be strengthened in the subtype
 types -- subtyping https://en.wikipedia.org/wiki/Liskov_substitution_principle
 types -- systems -- "modern" https://reasonablypolymorphic.com/blog/protos-are-wrong/
 types -- systems -- role -- (disputable pre-semver citation!) the main challenge in real-world software engineering is not writing code but changing code once it is written and deployed. In general, type systems can be both helpful and harmful when it comes to changing code -- type systems are invaluable for detecting problems introduced by a change, but an overly-rigid type system can be a hindrance if it means common types of changes are difficult to make. https://news.ycombinator.com/item?id=18188519
+types -- union -- discriminated & = a special kind of union in which a) all the options are object schemas that b) share a particular key (the "discriminator"). Based on the value of the discriminator key, the language is able to "narrow" the type signature as you'd expect.
 typescript -- learning resource https://github.com/type-challenges/type-challenges
 typescript -- performance https://trpc.io/blog/typescript-performance-lessons
 typography -- quotes https://smartquotesforsmartpeople.com/
@@ -1050,7 +1062,6 @@ Unix philosophy -- A.04 Use tools in preference to unskilled help to lighten a p
 untrusted code
 uptime / downtime
 use boring technology
-use strict
 User Generated Content (UGC)
 UX (User Experience)
 validate everything

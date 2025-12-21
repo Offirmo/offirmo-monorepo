@@ -132,9 +132,9 @@ Arrows and supplemental https://jrgraphix.net/r/Unicode/2190-21FF https://jrgrap
 Logs https://jrgraphix.net/r/Unicode/2600-26FF https://jrgraphix.net/r/Unicode/2700-27BF
 ```
 ☐ ☑ ☒ ⚿ ⛫ ⛉ ⛊ 
-⚐ ⚑ ⚠ ⚡ ❓❔❕❗
+⚐ ⚑ ⚠ ⚡ ⚠️ ❓❔❕❗
 ⛀ ⛁ ⛂ ⛃
-✓ ✔ ✕ ✖ ✗ ✘ ❌ ❎ ✅ ⛔
+✓ ✕ ✗  ✔ ✘ ✖  ✅ ❎ ❌ ⛔
 ⌥ ⌦ ⌘
 ⚙
 

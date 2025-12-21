@@ -47,3 +47,6 @@ https://hubblesite.org/contents/media/images/2008/16/2339-Image.html
 https://webbtelescope.org/images?Type=Artwork&itemsPerPage=100&page=1
 
 +++ https://pablocarlosbudassi.com/2021/02/planet-types.html
+
+
+starry sky https://webkit.org/blog/17285/rolling-the-dice-with-css-random/

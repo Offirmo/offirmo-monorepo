@@ -239,7 +239,16 @@ metrics -- total addressable market (TAM)
 mind share = When people think of examples of a product type or category, they usually think of a limited number of brand names https://en.wikipedia.org/wiki/Mind_share
 moat https://www.semianalysis.com/p/google-we-have-no-moat-and-neither
 Most Advanced Yet Acceptable (MAYA) UX concept
+MullCa 510 = too strong, company went bankrupt https://elsiegreen.com/blogs/musings/the-history-of-the-mullca-510-school-chair
+MVP "minimum viable product" = "why I prefer Earliest Testable/Usable/Lovable" https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp
+MVP -- hovercar = "what if the key to shipping great products wasn’t starting small — but starting big?" https://lea.verou.me/blog/2025/hovercar/
 MVP -- SRP "sales ready product" = converts prospects in the moment—during a demo, and then shortens the sales cycle, ramps revenue quickly, and pushes a company towards market dominance https://www.sequoiacap.com/article/the-templeton-compression/
+MVP -- 🏍️ The Motorcycle = Post-launch highest priority items.
+MVP -- 🏎️ The Hovercar = aka the North Star UI = The ideal experience — unconstrained by time, resources, or backwards compatibility. Unlikely to ship, but a guiding light for all of the above.
+MVP -- 🚗 The Car = Our ultimate vision, taking current constraints into account.
+MVP -- 🚲 The Bicycle = aka the Optimist’s MVP =Stretch goals — UX polish, “sprinkles of delight”, nonessential but high I/E features. Great if we get here, fine if we don’t.
+MVP -- 🛴 The Scooter = aka the Realist’s MVP =The minimum product that delivers value. Usable, but no frills. This is the target.
+MVP -- 🛹 The Skateboard = aka the Pessimist’s MVP = What is the absolute minimum we can ship, if need be? Utilitarian, bare-bones, and somewhat embarrassing, but shippable — barely. Anything that can be flintstoned gets flintstoned.
 network -- defensible? path to critical mass?
 network -- degrees, clustering, clusters types
 network -- heterogeneous -- chicken and egg problem = which side comes first?

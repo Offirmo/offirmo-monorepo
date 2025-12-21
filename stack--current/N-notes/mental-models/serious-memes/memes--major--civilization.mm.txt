@@ -1,3 +1,6 @@
+"Such are the dangers of outsourcing your monetary policy" = https://mail.blockworks.com/p/hard-money-is-bad-money
+"the lights of Europe still trace the paths of ancient Roman roads" https://x.com/ccatalini/status/1983588222921023552
+1751-06-24 start of globalization with the founding of Manilla https://mail.blockworks.com/p/hard-money-is-bad-money
 1856 LLC "limited liability corporation" = is the greatest single discovery of modern times “Even steam and electricity are far less important than the limited liability corporation” https://blockworks.co/news/uniswap-duna-decentralization
 [ ] list of books to learn history https://paulgraham.com/raq.html
 a country is a farm
@@ -17,7 +20,8 @@ class -- high -- old money
 class -- low
 class -- middle
 communism
-corruption -- Abscam
+containers https://x.com/ccatalini/status/1983588222921023552
+corruption -- Abscam - FBI sting operation where member of Congress were approached with a large sum of money in exchange for... "I've got larceny in my blood. I'd take it in a goddamn minute." "I do not consider myself a hero... what have we come to if turning down a bribe is 'heroic'?" https://en.wikipedia.org/wiki/Abscam
 cosmos -- 1610 https://en.wikipedia.org/wiki/Copernican_Revolution
 cosmos -- 1920 galaxies https://en.wikipedia.org/wiki/Great_Debate_(astronomy)
 cosmos -- 1965 no life on Mars https://en.wikipedia.org/wiki/Martian_canals
@@ -25,21 +29,30 @@ democracy -- education https://politics.stackexchange.com/questions/84583/is-dem
 democracy -- guided https://en.wikipedia.org/wiki/Guided_democracy
 democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
 divine kingship
+electricity
+electricity -- light bulb
 family
+games -- chess https://chess.stackexchange.com/questions/47538/why-does-open-position-favor-black
 golden rule
 great filter https://blog.codinghorror.com/the-great-filter-comes-for-us-all/
 group polarization https://en.wikipedia.org/wiki/Group_polarization
 génération spontanée
 hammurabi
+history https://en.wikipedia.org/wiki/History_of_the_Peloponnesian_War
+https://en.prolewiki.org/
+https://en.prolewiki.org/wiki/Library:Simple_Sabotage_Field_Manual
 https://en.wikipedia.org/wiki/Baby_farming
 https://en.wikipedia.org/wiki/Currency
 https://en.wikipedia.org/wiki/Decimalisation
 https://en.wikipedia.org/wiki/File:Molzbach_1.jpg
 https://en.wikipedia.org/wiki/Hallstatt_culture
 https://en.wikipedia.org/wiki/Historical_European_martial_arts
+https://en.wikipedia.org/wiki/History_of_the_Peloponnesian_War https://el.wikisource.org/wiki/%CE%99%CF%83%CF%84%CE%BF%CF%81%CE%AF%CE%B1_%CF%84%CE%BF%CF%85_%CE%A0%CE%B5%CE%BB%CE%BF%CF%80%CE%BF%CE%BD%CE%BD%CE%B7%CF%83%CE%B9%CE%B1%CE%BA%CE%BF%CF%8D_%CE%A0%CE%BF%CE%BB%CE%AD%CE%BC%CE%BF%CF%85
+https://en.wikipedia.org/wiki/Joseph_Swan inventor
 https://en.wikipedia.org/wiki/Makuria
 https://en.wikipedia.org/wiki/Native_metal
 https://en.wikipedia.org/wiki/Smelting
+https://en.wikipedia.org/wiki/The_History_of_the_Decline_and_Fall_of_the_Roman_Empire attributing to christians
 https://en.wikipedia.org/wiki/Tragedy_of_the_commons
 https://en.wikipedia.org/wiki/Tumulus_culture
 https://politiquemagazine.fr/civilisation/redecouvrir-les-origines-de-la-france/
@@ -48,6 +61,21 @@ https://www.atlassian.com/loop/about
 https://www.famillechretienne.fr/40361/article/remi-brague-nous-voyons-lislam-avec-des-lunettes-chretiennes
 infrastructure = roads, canals, telephone networks...
 intrinsic motivation comes from working in an environment where Autonomy, Mastery and Purpose can flourish.
+language -- grading -- EGIDS "Expanded Graded Intergenerational Disruption Scale" https://en.wikipedia.org/wiki/Expanded_Graded_Intergenerational_Disruption_Scale
+language -- grading -- EGIDS -- 00 International = The language is widely used between nations in trade, knowledge exchange, and international policy
+language -- grading -- EGIDS -- 01 National = The language is used in education, work, mass media, and government at the national level
+language -- grading -- EGIDS -- 02 Provincial = The language is used in education, work, mass media, and government within major administrative subdivisions of a nation
+language -- grading -- EGIDS -- 03 Wider Communication = The language is used in work and mass media without official status to transcend language differences across a region
+language -- grading -- EGIDS -- 04 Educational = The language is in vigorous use, with standardization and literature being sustained through a widespread system of institutionally supported education
+language -- grading -- EGIDS -- 05 Developing = The language is in vigorous use, with literature in a standardized form being used by some though this is not yet widespread or sustainable
+language -- grading -- EGIDS -- 06a Vigorous = The language is used for face-to-face communication by all generations and the situation is sustainable
+language -- grading -- EGIDS -- 06b Threatened = The language is used for face-to-face communication within all generations, but it is losing users
+language -- grading -- EGIDS -- 07 Shifting = The child-bearing generation can use the language among themselves, but it is not being transmitted to children
+language -- grading -- EGIDS -- 08a Moribund = The only remaining active speakers of the language are members of the grandparent generation and older
+language -- grading -- EGIDS -- 08b Nearly Extinct = The only remaining speakers of the language are members of the grandparent generation or older who have little opportunity to use the language
+language -- grading -- EGIDS -- 09 Dormant = The language serves as a reminder of heritage identity for an ethnic community, but no one has more than symbolic proficiency
+language -- grading -- EGIDS -- 10 Extinct = The language is no longer used and no one retains a sense of ethnic identity associated with the language
+language -- https://en.wikipedia.org/wiki/Na-Dene_languages
 loi du talion
 making big things
 military tactics https://civilization.fandom.com/wiki/Military_Tactics_(Civ6)
@@ -62,11 +90,28 @@ ransom
 slavery
 societal -- & collapse = fall of a complex human society characterized by the loss of cultural identity and of social complexity as an adaptive system, the downfall of government, and the rise of violence https://en.wikipedia.org/wiki/Societal_collapse
 societal -- & longevity = https://en.wikipedia.org/wiki/Societal_collapse
+Sphere of influence
+state independence -- Banana republic
+state independence -- Buffer state
+state independence -- Client state
+state independence -- Co-belligerence
+state independence -- Failed state
+state independence -- Princely state
+state independence -- Protectorate
+state independence -- puppet
+state independence -- puppet
+state independence -- Satellite state
+state independence -- Satrapy
+state independence -- Tributary state https://en.wikipedia.org/wiki/Tribute
+state independence -- Vassal state
 surproduction d'élite https://pierre-yves-gomez.fr/trop-delite-tue-lelite/
+suzerainty
+tax https://mail.blockworks.com/p/hard-money-is-bad-money
 touchstone https://en.wikipedia.org/wiki/Touchstone_(assaying_tool)
 Urnfield culture https://en.wikipedia.org/wiki/Urnfield_culture
 video games https://en.wikipedia.org/wiki/List_of_best-selling_video_games
 violence
+vs. elements https://en.wikipedia.org/wiki/Megathrust_earthquake
 war -- Allied Plans to Occupy France, 1942-1944 https://web.archive.org/web/20060507015256/http://www.rall.com/longarticle_011.htm
 war -- https://en.wikipedia.org/wiki/Irredentism
 war -- https://en.wikipedia.org/wiki/July_Crisis

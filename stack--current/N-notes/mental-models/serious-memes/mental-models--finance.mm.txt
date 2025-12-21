@@ -5,7 +5,7 @@ alt currency -- gift cards
 applicable laws and regulations
 asset
 asset -- seizure
-bank run https://en.wikipedia.org/wiki/Bank_run
+bank run = when many customers withdraw their funds from a bank due to concerns about the bank's insolvency or bankruptcy. https://en.wikipedia.org/wiki/Bank_run
 banking
 banking -- reserve -- fractional / full https://en.wikipedia.org/wiki/Fractional-reserve_banking
 banking -- reserve -- requirement (legal)
