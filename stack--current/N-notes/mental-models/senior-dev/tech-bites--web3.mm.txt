@@ -68,13 +68,13 @@ altcoin = anything not BitCoin (or maybe Ether, depending on who you ask)
 antifragility = ?? https://www.reddit.com/r/ethereum/comments/7beq39/ethereum_and_antifragility/
 Aptos https://aptosfoundation.org/whitepaper
 Arbitrum
-armed heist = extorting crypto ex. https://x.com/beausecurity/status/1972333331049312437
 asset tokenization layer = ???
 assets -- top = ranking website https://www.coingecko.com/
 AT Protocol = an open, decentralized network for building social applications https://atproto.com/
-attack -- 7702 delegation to drainer https://x.com/wiimee/status/1985074040781070716?s=46&t=Vf4wSrK5GroKAVnaytpTJw
-attack -- donation https://www.cyfrin.io/blog/solodit-checklist-explained-3-donation-attacks https://medium.com/@ankitacode11/part-3-protecting-smart-contracts-from-donation-attacks-a-guide-to-secure-eth-handling-b05561228ab2
-attack -- new vault https://www.halborn.com/blog/post/explained-the-resupply-hack-june-2025
+attacks -- 7702 delegation to drainer https://x.com/wiimee/status/1985074040781070716?s=46&t=Vf4wSrK5GroKAVnaytpTJw
+attacks -- armed heist = extorting crypto ex. https://x.com/beausecurity/status/1972333331049312437
+attacks -- donation https://www.cyfrin.io/blog/solodit-checklist-explained-3-donation-attacks https://medium.com/@ankitacode11/part-3-protecting-smart-contracts-from-donation-attacks-a-guide-to-secure-eth-handling-b05561228ab2
+attacks -- new vault https://www.halborn.com/blog/post/explained-the-resupply-hack-june-2025
 attacks -- spam tokens = sent to leaked address to pollute and maybe
 attacks -- supply chain https://cointelegraph.com/explained/what-is-a-supply-chain-attack-in-crypto-and-how-to-prevent-it
 automated market-making (AMM)
