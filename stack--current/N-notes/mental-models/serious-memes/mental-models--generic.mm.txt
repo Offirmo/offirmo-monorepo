@@ -204,7 +204,6 @@ change -- introduction -- 2 Why are we doing it?
 change -- introduction -- 3 When are we making the change?
 change -- Old ideas give way slowly; for they are more than abstract logical forms and categories, they are habits, predispositions,they are habits, predispositions, deeply ingrained attitudes of diversion and preference.diversion and preference John Dewey
 changemaker
-creativity -- the oatmeal https://theoatmeal.com/comics/creativity_things
 charbonnier est maître chez soi
 charged issues = fractally contentious, causing disagreement among people who hold all but identical opinions https://en.wikipedia.org/wiki/Narcissism_of_small_differences
 charisma https://paulgraham.com/charisma.html
@@ -249,6 +248,7 @@ conformism -- quadrants -- 3 passively     independent-minded = dreamy, don't ca
 conformism -- quadrants -- 4 aggressively  independent-minded = naughty, when they see a rule, their first impulse is to question it. Merely being told what to do makes them inclined to do the opposite.
 conformism -- test = do you have any opinions that you would be reluctant to express in front of a group of your peers? https://paulgraham.com/say.html
 conformism = https://paulgraham.com/conformism.html
+consciousness -- sleepwalking https://en.wikipedia.org/wiki/Sleepwalking
 constructive confrontation -- spot threats/issues/problems, debate aggressively, make bold moves before competitors/enemies
 contempt
 content -- creators
@@ -278,6 +278,7 @@ counterfactuals = contrary to the actual facts. can be a tool for learning, prob
 courses après le repas
 creative process
 creativity -- begins at the edge = Change starts away from the spotlight. Then, it moves towards the center. That’s why the most interesting ideas at a conference never come from the main stage. They come from the hallways and the bar after sunset
+creativity -- the oatmeal https://theoatmeal.com/comics/creativity_things
 crimes -- human trafficking
 crimes -- socially constructed = ex. wage theft not a crime vs. petty theft, fines = crimes for a price
 crimes -- some sociological theories of criminology attributes criminal action to environmental and unconscious factors
@@ -494,6 +495,7 @@ game theory -- prisoner's dilemma https://www.bennorthrop.com/Home/Blog/2007_11_
 game theory -- the ultimatum game = consists of two players – the proposer and the responder – deciding how to split a sum of money (e.g. 10 dollars). The proposer can offer any split they like, but if the responder rejects the offer, neither player receives any money. From a purely rational point of view, the responder should never reject the proposer's offer. In practice, however, responders will typically punish proposers who make deals perceived to be unfair, even though this means walking away with nothing. https://en.wikipedia.org/wiki/Ultimatum_game
 gateway effect / gateway hypothesis = gateway drug (cannabis), gateway gambling (gacha games) = pathway to dangerous addictions https://www.library.hbs.edu/working-knowledge/the-15-billion-question-have-loot-boxes-turned-video-gaming-into-gambling
 gender shade =  accuracy of AI powered gender classification products http://gendershades.org/
+genetics -- linkage https://en.wikipedia.org/wiki/Genetic_linkage
 giftedness and talent https://campbellms.typepad.com/files/gagne-a-differentiated-model-of-giftedness-and-talent-dmgt.pdf https://www.gigers.com/matthias/gifted/gagne_dmgt.html
 go go before you go
 go slow to go fast
@@ -571,6 +573,7 @@ how to ask questions http://www.catb.org/esr/faqs/smart-questions.html
 how to fail well = https://www.linkedin.com/posts/davidkline_7-lessons-on-how-to-fail-well-activity-7330569803084034049-U4Hx/
 htt[ ] ps://www.teamblind.com/post/Made-it-to-FAANG-director-without-a-promotion-ever-HVX5th8f
 https://en.wikipedia.org/wiki/Chicago_school_of_economics
+https://en.wikipedia.org/wiki/Michael_Moore
 humanities and social sciences = includes some of the biggest and easiest undergrad majors
 humble bragging https://www.linkedin.com/posts/staceychampagne_womenincybersecurity-cybersecurity-certifications-activity-7284636641648889857-B_y_/
 hustlers
@@ -790,6 +793,7 @@ Machiavel -- The Prince
 mainstream scientific consensus
 make it work, make it good, make it fast, make it work again
 making one's luck
+malingering = intentional fabrication, feigning, or exaggeration of physical or psychological symptoms to obtain an external benefit, such as personal gain, relief from duty or work, avoidance of arrest, acquisition of medication, or mitigation of criminal sentencing https://en.wikipedia.org/wiki/Malingering
 man in the arena = from a speech https://en.wikipedia.org/wiki/Citizenship_in_a_Republic
 many of the best things are rooted in some of the worst events = I would not have one without the other. Every day is full of setbacks and disappointments, but I do my best to say, "Yes, and thank you" https://paulbuchheit.blogspot.com/2014/07/the-technology.html
 marketing -- content amplification https://miromind.com/blog/content-amplification-strategies

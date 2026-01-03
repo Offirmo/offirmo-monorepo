@@ -12,7 +12,8 @@ catalog:
   micro-ordinals: 0.3.0
   micro-sol-signer: 0.8.2
   viem: 2.41.2
-  wagmi: 3.0.1
+  #wagmi: 3.0.1 requires React, TODO later
+  zod: 4.1.13
 
 catalogMode: strict
 
@@ -25,7 +26,6 @@ hoistWorkspacePackages: false
 minimumReleaseAge: 10080
 
 minimumReleaseAgeExclude:
-  - '@noble/*' ## strange error
 
 preferWorkspacePackages: true
 
@@ -41,4 +41,5 @@ strictDepBuilds: true
 
 strictPeerDependencies: true
 
-trustPolicy: no-downgrade
+## not working?
+#trustPolicy: no-downgrade

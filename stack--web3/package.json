@@ -25,9 +25,11 @@
     "@scure/btc-signer": "catalog:",
     "@scure/starknet": "catalog:",
     "ethereum-cryptography": "catalog:",
+    "ethers": "catalog:",
     "micro-eth-signer": "catalog:",
     "micro-ordinals": "catalog:",
     "micro-sol-signer": "catalog:",
-    "viem": "catalog:"
+    "viem": "catalog:",
+    "zod": "catalog:"
   }
 }

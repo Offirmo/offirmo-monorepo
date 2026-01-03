@@ -10,8 +10,7 @@ function ensure_string(s: any): string {
 
 /////////////////////////////////////////////////
 
-// https://thread.engineering/2018-08-29-searching-and-sorting-text-with-diacritical-marks-in-javascript/
-// (link above broken, ask your LLM instead)
+// https://web.archive.org/web/20220905234027/https://thread.engineering/searching-and-sorting-text-with-diacritical-marks-in-javascript/
 const coerce_toꓽascii: StringNormalizer = s =>
 	s
 		.normalize('NFD') // D = Decompose = split some chars into base + diacritics (doesn't work for all chars)

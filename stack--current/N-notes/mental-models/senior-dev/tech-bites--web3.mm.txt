@@ -628,7 +628,7 @@ wallet -- derivation path -- deduplication = recognize same root but different p
 wallet -- derivation path = ex. m/44'/60'/0'/0/0
 wallet -- derived address = ??? related to KP
 wallet -- derived key pair = ??? standard? different tools / wallets may derive differently
-wallet -- dormant = old, huge wallets that have not been used in a long time
+wallet -- dormant = old, huge wallets that have not been used in a long time https://www.okx.com/en-au/learn/galaxy-btc-wallet-transfer
 wallet -- doxx'ing = linking to an identity https://support.ledger.com/article/5989580852125-zd
 wallet -- drain
 wallet -- drain -- example https://x.com/0xzak/status/1955265807807545763

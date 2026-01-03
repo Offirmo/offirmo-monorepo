@@ -1,6 +1,7 @@
 2014-04-07 heart bleed = serious vulnerability in the popular OpenSSL cryptographic software library. This weakness allows stealing the information protected https://heartbleed.com/
 2025-11-24 Shai Hulud 2 https://helixguard.ai/blog/malicious-sha1hulud-2025-11-24
 2025-11-29 React2Shell https://react2shell.com/
+[ ] +++ http://zesty.ca/capmyths/usenix.pdf
 [ ] ATT&CK® is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations https://attack.mitre.org/
 [ ] d3fend® matrix https://d3fend.mitre.org/
 [ ] https://cwe.mitre.org/documents/glossary/index.html

@@ -24,6 +24,7 @@
 2025-08 backlash against AI auto-review https://ia.acs.org.au/article/2025/hertz-faces-backlash-over-ai-car-scanners.html
 2025-08 ex. of Gemini giving hints at a Cloudflare latency issue https://blog.cloudflare.com/reducing-double-spend-latency-from-40-ms-to-less-than-1-ms-on-privacy-proxy/
 2025-08 Perplexity crawler ban https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/
+2025-08-05 ChatGPT encourage a murder https://x.com/RobertFreundLaw/status/2006111090539687956
 2025-08-07 GPT 5 https://x.com/i/trending/1953256633385271319
 2025-08-27 The reality of AI-Assisted software engineering productivity https://addyo.substack.com/p/the-reality-of-ai-assisted-software
 2025-10-17 "AGI is still 10y away" influential podcast https://www.dwarkesh.com/p/andrej-karpathy
