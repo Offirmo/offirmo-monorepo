@@ -5,6 +5,9 @@ TODO
 - create NFTs
 - test own gateway? https://developers.cloudflare.com/web3/ethereum-gateway/
 - register an ENS
+- tenderly simulation
+- block scan
+- contract interaction / ABI
 
 
 
