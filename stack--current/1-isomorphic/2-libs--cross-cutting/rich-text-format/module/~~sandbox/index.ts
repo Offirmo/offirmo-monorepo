@@ -1,7 +1,31 @@
 
 import * as RichText from '@offirmo-private/rich-text-format'
 
-const $doc = RichText.fragmentⵧinline()
+/////////////////////////////////////////////////
+
+let $doc = RichText.fragmentⵧinline()
+	.pushText('Hello , world!')
+	.done()
+
+console.log('\n------- to text -------\n' + RichText.renderⵧto_text($doc, {
+	style: 'markdown',
+}))
+
+/////////////////////////////////////////////////
+
+$doc = RichText.fragmentⵧinline()
+	.pushText('Hello ')
+	.pushNode('world', { id: 'target'})
+	.pushText('!')
+	.done()
+
+console.log('\n------- to text -------\n' + RichText.renderⵧto_text($doc, {
+	style: 'markdown',
+}))
+
+/////////////////////////////////////////////////
+
+$doc = RichText.fragmentⵧinline()
 	.pushText('Hello ')
 	.pushNode('world', { id: 'target'})
 	.pushText('!')

@@ -4,6 +4,28 @@ import type { Hyperlink‿x } from '@offirmo-private/ts-types-web'
 
 /////////////////////////////////////////////////
 
+
+// using type instead of interface to prevent extra properties
+// (bc not supposed to extend this)
+type CheckedNode = {
+	$v: number // schema version
+
+	$type: NodeType
+
+	$content: string
+	$sub: {
+		// content that can be referenced by their id
+		// Note: unused are allowed for convenience, excess will not be checked
+		[id: SubNodeId]: NodeLike // Immutable to clearly convey that a node will not modify its given sub-nodes NOO! actually it allows to prepare node and improving them later!
+	}
+
+	// hints for renderers. May or may not be used.
+	// NOTE should be still working even if stripped TODO review
+	$classes: string[]
+	$hints: Hints
+}
+
+
 const NodeType = Enum(
 	// https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block
 
@@ -68,24 +90,6 @@ interface Hints<UnderlyingData = any, HyperLink = Hyperlink‿x> {
 
 type SubNodeId = string
 
-// using type instead of interface to prevent extra properties
-// (bc not supposed to extend this)
-type CheckedNode = {
-	$v: number // schema version
-
-	$type: NodeType
-
-	$content: string
-	$sub: {
-		// sub-nodes MAYBE referenced in the content by their id
-		// Note: extraneous sub-nodes are allowed for convenience, excess will not be checked
-		[id: SubNodeId]: NodeLike // Immutable to clearly convey that a node will not modify its given sub-nodes NOO! actually it allows to prepare node and improving them later!
-	}
-
-	// hints for renderers. May or may not be used.
-	$classes: string[]
-	$hints: Hints
-}
 
 type Node = Partial<CheckedNode>
 
@@ -94,6 +98,7 @@ type NodeLike =
 	| string
 	| number
 	| Node
+	// we could have bigint one day
 
 ///////
 

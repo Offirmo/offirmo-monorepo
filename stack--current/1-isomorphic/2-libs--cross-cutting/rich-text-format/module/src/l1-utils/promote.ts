@@ -9,7 +9,7 @@ import {
 	NodeType,
 	type NodeLike,
 	type Node,
-	assertꓽisꓽNode
+	assertꓽNode
 } from '../l1-types/index.ts'
 
 /////////////////////////////////////////////////
@@ -47,7 +47,7 @@ function promoteꓽto_node($raw: Immutable<NodeLike>): Immutable<Node> {
 			// we could be passed anything, (ex false, undef...)
 			// better check it looks like a Node
 			assert(isꓽobjectⵧliteral($raw), `promoteꓽto_node(): passed object should be an object literal!`)
-			assertꓽisꓽNode($raw)
+			assertꓽNode($raw)
 			return $raw
 	}
 }

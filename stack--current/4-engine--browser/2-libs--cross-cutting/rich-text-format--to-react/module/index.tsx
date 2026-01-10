@@ -17,7 +17,7 @@ import {
 	DEFAULT_RENDERING_OPTIONSⵧWalk,
 	SPECIAL_LIST_NODE_CONTENT_KEY,
 	promoteꓽto_node,
-	isꓽblock,
+	isꓽdisplayⵧblock,
 } from '@offirmo-private/rich-text-format'
 
 /////////////////////////////////////////////////

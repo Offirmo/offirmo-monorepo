@@ -15,17 +15,17 @@ const $EXAMPLE_COMPLETE_NODE: CheckedNode = {
 	$sub: {
 		target: 'World',
 	},
-	$classes: [], // TODO some?
+	$classes: ['foo'],
 	$hints: {
 		possible_emoji: '👋',
 	},
 }
 
-function assertꓽisꓽNode(candidate: Immutable<any>): asserts candidate is Immutable<Node>
-function assertꓽisꓽNode(candidate: any): asserts candidate is Node
-function assertꓽisꓽNode(candidate: Immutable<any>): asserts candidate is Immutable<Node> {
+function assertꓽNode(candidate: Immutable<any>): asserts candidate is Immutable<Node>
+function assertꓽNode(candidate: any): asserts candidate is Node
+function assertꓽNode(candidate: Immutable<any>): asserts candidate is Immutable<Node> {
 	return assertꓽshape($EXAMPLE_COMPLETE_NODE, candidate, {
-		// "Node" is quite loose so we only expect at least 1 prop
+		// "Node" is quite loose, so we only expect at least 1 prop
 		match_reference_props: 'some',
 		// but no extra prop
 		allow_extra_props: false,
@@ -36,7 +36,7 @@ function isꓽNode(node: Immutable<any>): node is Immutable<Node>
 function isꓽNode(node: any): node is Node
 function isꓽNode(node: Immutable<any>): node is Immutable<Node> {
 	try {
-		assertꓽisꓽNode(node)
+		assertꓽNode(node)
 		return true
 	}
 	catch (err) {
@@ -65,11 +65,7 @@ const DEFAULT_NODE_TYPE: NodeType = 'fragmentⵧinline'
 function getꓽtype(node: Immutable<NodeLike>): NodeType {
 	if (!isꓽNode(node)) return DEFAULT_NODE_TYPE
 
-	if (!node.$type) {
-		return DEFAULT_NODE_TYPE
-	}
-
-	return node.$type
+	return node.$type ?? DEFAULT_NODE_TYPE
 }
 
 function isꓽlist(node: Immutable<NodeLike>): boolean {
@@ -80,7 +76,7 @@ function isꓽlist(node: Immutable<NodeLike>): boolean {
 
 
 const _NODE_TYPE_to_DISPLAY_MODE: Immutable<{ [k: string]: 'inline' | 'block' }> = {
-// TODO assert completeness and no-intersection of inline and block
+	// TODO assert completeness and no-intersection of inline and block
 
 	// classic inlines
 	[NodeType.fragmentⵧinline]: 'inline',
@@ -112,10 +108,10 @@ function getꓽdisplay_type(node: Immutable<NodeLike>): 'inline' | 'block' {
 	return result
 }
 
-function isꓽinline(node: Immutable<NodeLike>): boolean {
+function isꓽdisplayⵧinline(node: Immutable<NodeLike>): boolean {
 	return getꓽdisplay_type(node) === 'inline'
 }
-function isꓽblock(node: Immutable<NodeLike>): boolean {
+function isꓽdisplayⵧblock(node: Immutable<NodeLike>): boolean {
 	return getꓽdisplay_type(node) === 'block'
 }
 
@@ -124,7 +120,7 @@ function isꓽblock(node: Immutable<NodeLike>): boolean {
 export {
 	$EXAMPLE_COMPLETE_NODE,
 
-	assertꓽisꓽNode,
+	assertꓽNode,
 	isꓽNode,
 	isꓽNodeLike,
 
@@ -134,6 +130,6 @@ export {
 	isꓽlist,
 
 	getꓽdisplay_type,
-	isꓽinline,
-	isꓽblock,
+	isꓽdisplayⵧinline,
+	isꓽdisplayⵧblock,
 }

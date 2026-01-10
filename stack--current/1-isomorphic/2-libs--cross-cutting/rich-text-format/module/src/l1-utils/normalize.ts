@@ -20,7 +20,7 @@ function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<CheckedNode> {
 
 	const {
 		// extract fields
-		$v = 1, // assume oldest format (until we can recognize the version)
+		$v = 1, // assume the oldest format (until we can recognize the version)
 		$type = NodeType.fragmentⵧinline,
 		$content = '',
 		$sub = {},
