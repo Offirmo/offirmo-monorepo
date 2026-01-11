@@ -20,6 +20,7 @@ import {
 	getꓽtype,
 	getꓽdisplay_type,
 } from '../l1-types/index.ts'
+import { simplifyꓽnode } from '../l1-utils/normalize.ts'
 import { promoteꓽto_node, promoteꓽto_string_for_node_content } from '../l1-utils/promote.ts'
 
 /////////////////////////////////////////////////
@@ -53,25 +54,26 @@ interface Builder {
 
 	// ??
 	pushKeyValue(key: SubNode, value: SubNode, options?: Immutable<CommonOptions>): Builder
-	//pushListItem No! this is an internal node type, just use pushRawNode()/pushKeyValue() instead
+	//pushListItem No! this is an internal node type, just use addSub()/pushKeyValue() instead
 
 	// node ref is auto added into content
-	pushNode(node: SubNode, options?: Immutable<Pick<CommonOptions, 'id'>>): Builder
-	pushNodes(nodes: SubNodes): Builder
+	pushSubNode(node: SubNode, options?: Immutable<Pick<CommonOptions, 'id'>>): Builder
+	pushSubNodes(nodes: SubNodes): Builder // order unclear, but useful as a more readable node+ref
 
 	// Raw = NOTHING is added into content (this node may end up not being referenced)
 	// useful for
 	// 1. lists
 	// 2. manual stuff
-	pushRawNode(node: SubNode, options?: Immutable<CommonOptions>): Builder
-	pushRawNodes(nodes: SubNodes): Builder
-	pushNodeRef(node_id: SubNodeId): Builder // syntactic sugar for pushText(`⎨⎨${id}⎬⎬`)
+	addSub(node: SubNode, options?: Immutable<CommonOptions>): Builder
+	addSubs(nodes: SubNodes): Builder
+	pushRef(node_id: SubNodeId): Builder // syntactic sugar for pushText(`⎨⎨${id}⎬⎬`)
 
-	done(): CheckedNode
+	// use $node if not wanting a NodeLike
+	done(): NodeLike
+
+	assemble(fn: ($builder: Builder) => void): NodeLike
 
 	$node: CheckedNode
-
-	assemble(fn: ($builder: Builder) => void): CheckedNode
 }
 
 /////////////////////////////////////////////////
@@ -84,11 +86,11 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		pushText,
 		pushEmoji,
 
-		pushNode,
-		pushNodes,
-		pushRawNode,
-		pushRawNodes,
-		pushNodeRef,
+		pushSubNode,
+		pushSubNodes,
+		addSub,
+		addSubs,
+		pushRef,
 
 		pushInlineFragment,
 		pushBlockFragment,
@@ -164,18 +166,18 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 	}
 
 	function _buildAndPush(builder: Builder, str: SubNode, options: Immutable<CommonOptions> = {}) {
-		if (isꓽNode(str)) builder.pushNode(str)
+		if (isꓽNode(str)) builder.pushSubNode(str)
 		else builder.pushText(str)
 
 		builder.addClass(...(options.classes || []))
 
-		return pushNode(builder.done(), options.id ? { id: options.id } : undefined)
+		return pushSubNode(builder.done(), options.id ? { id: options.id } : undefined)
 	}
 
-	function pushRawNode(subnode: SubNode, options: Immutable<CommonOptions> = {}): Builder {
+	function addSub(subnode: SubNode, options: Immutable<CommonOptions> = {}): Builder {
 		// params check
 		if (Object.keys(options).filter(k => k !== 'id').length)
-			assert(false, `${LIB}: sugar: pushRawNode(): Cannot pass any option other than id!`) // make no sense at the level of this primitive. Other options should be filtered out by the caller.
+			assert(false, `${LIB}: sugar: addSub(): Cannot pass any option other than id!`) // make no sense at the level of this primitive. Other options should be filtered out by the caller.
 
 		// sanity checks
 		assert(
@@ -204,23 +206,23 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		$node.$sub[id] = subnode
 		return builder
 	}
-	function pushRawNodes(nodes: SubNodes): Builder {
-		Object.entries(nodes).forEach(([id, node]) => pushRawNode(node, { id }))
+	function addSubs(nodes: SubNodes): Builder {
+		Object.entries(nodes).forEach(([id, node]) => addSub(node, { id }))
 		return builder
 	}
-	function pushNodeRef(id: SubNodeId): Builder {
+	function pushRef(id: SubNodeId): Builder {
 		$node.$content += `⎨⎨${id}⎬⎬`
 		return builder
 	}
 
-	function pushNode(node: SubNode, options: Immutable<CommonOptions> = {}): Builder {
+	function pushSubNode(node: SubNode, options: Immutable<CommonOptions> = {}): Builder {
 		const id = options.id || _get_next_id()
 
-		return pushNodeRef(id).pushRawNode(node, { ...options, id })
+		return pushRef(id).addSub(node, { ...options, id })
 	}
-	function pushNodes(nodes: SubNodes): Builder {
+	function pushSubNodes(nodes: SubNodes): Builder {
 		Object.entries(nodes).forEach(([id, node]) => {
-			pushNode(node, { id })
+			pushSubNode(node, { id })
 		})
 		return builder
 	}
@@ -277,15 +279,16 @@ function _createꓽbuilder($node: CheckedNode): Builder {
 		if ($node.$type !== NodeType.ol && $node.$type !== NodeType.ul)
 			throw new Error(`${LIB}: Key/value is intended to be used in a ol/ul only!`)
 
-		return pushRawNode(keyꓺvalue(key, value).done(), options)
+		return addSub(keyꓺvalue(key, value).done(), options)
 	}
 
 	// TODO rename to value() like lodash chain?
-	function done(): CheckedNode {
-		return $node
+	// TODO allow to not simplify?
+	function done(): NodeLike {
+		return simplifyꓽnode($node)
 	}
 
-	function assemble(fn: ($builder: Builder) => void): CheckedNode {
+	function assemble(fn: ($builder: Builder) => void): ReturnType<typeof done> {
 		fn(builder)
 		return done()
 	}
@@ -333,7 +336,7 @@ function _create($type: NodeType, content: Immutable<NodeLike> = ''): Builder {
 		$v: SCHEMA_VERSION,
 		$type,
 		$classes: [...($node_base.$classes || [])],
-		$content: $node_base.$content || '',
+		$content: $node_base.$content || [], // XXX
 		$sub: $node_base.$sub || {},
 		$hints:
 			$node_base.$hints ? structuredClone<CheckedNode['$hints']>($node_base.$hints as any) : {},
@@ -365,7 +368,7 @@ function heading(content?: Immutable<NodeLike>): Builder {
 	return _create(NodeType.heading, content)
 }
 
-// reminder: lists should then be pushed pushRawNode/pushRawNodes/pushKeyValue
+// reminder: lists should then be pushed addSub/addSubs/pushKeyValue
 function listⵧordered(
 	content?: Immutable<
 		| Array<NodeLike> // items
@@ -375,7 +378,7 @@ function listⵧordered(
 	const list = _create(NodeType.ol)
 	if (content) {
 		if (Array.isArray(content)) {
-			;(content as Array<NodeLike>).forEach(item => list.pushRawNode(item))
+			;(content as Array<NodeLike>).forEach(item => list.addSub(item))
 		} else {
 			Object.entries(content as Record<string, NodeLike>).forEach(([key, value]) =>
 				list.pushKeyValue(key, value),
@@ -393,7 +396,7 @@ function listⵧunordered(
 	const list = _create(NodeType.ul)
 	if (content) {
 		if (Array.isArray(content)) {
-			;(content as Array<NodeLike>).forEach(item => list.pushRawNode(item))
+			;(content as Array<NodeLike>).forEach(item => list.addSub(item))
 		} else {
 			Object.entries(content as Record<string, NodeLike>).forEach(([key, value]) =>
 				list.pushKeyValue(key, value),
@@ -408,9 +411,9 @@ function listⵧunordered(
 
 function keyꓺvalue(key: SubNode, value: SubNode): Builder {
 	return fragmentⵧblock() // K/V are meant to be separated, they can't be inline
-		.pushNode(key, { id: 'key' })
+		.pushSubNode(key, { id: 'key' })
 		.pushText(': ')
-		.pushNode(value, { id: 'value' })
+		.pushSubNode(value, { id: 'value' })
 }
 
 /////////////////////////////////////////////////

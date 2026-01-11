@@ -12,7 +12,7 @@ import { LIB } from '../consts.ts'
 import {
 	NodeType,
 	type CheckedNode,
-	type Node,
+	type Node, type NodeLike,
 } from '../l1-types/index.ts'
 
 import { normalizeꓽnode } from '../l1-utils/normalize.ts'
@@ -198,138 +198,147 @@ function _walk_content<ExternalWalkState, RenderingOptions extends BaseRendering
 ) {
 	const { $content, $sub: $sub_nodes } = $node
 
-	// $content looks like "Hello ⎨⎨world⎬⎬, welcome to ⎨⎨place|filter1|filter2⎬⎬
-	const splitⵧby_opening_brace = $content.split('⎨⎨')
-	const splitⵧby_closing_brace = $content.split('⎬⎬')
+	const $content_array: Array<Immutable<NodeLike>> = Array.isArray($content) ? $content : [ $content ]
+	$content_array.forEach(node => {
+		if (typeof node === 'string') {
+			const $content = node
+			// $content looks like "Hello ⎨⎨world⎬⎬, welcome to ⎨⎨place|filter1|filter2⎬⎬
+			const splitⵧby_opening_brace = $content.split('⎨⎨')
+			const splitⵧby_closing_brace = $content.split('⎬⎬')
 
-	// quick check for matching
-	// 1. open and close count should match
-	assert(splitⵧby_closing_brace.length === splitⵧby_opening_brace.length, `${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬! (1)`)
-	// 2. should be ordered open - close - open - close...
-	assert(splitⵧby_opening_brace.every(s => s.split('⎬⎬').length <= 2), `${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬! (2a)`)
-	assert(splitⵧby_closing_brace.every(s => s.split('⎨⎨').length <= 2), `${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬! (2b)`)
+			// quick check for matching
+			// 1. open and close count should match
+			assert(splitⵧby_closing_brace.length === splitⵧby_opening_brace.length, `${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬! (1)`)
+			// 2. should be ordered open - close - open - close...
+			assert(splitⵧby_opening_brace.every(s => s.split('⎬⎬').length <= 2), `${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬! (2a)`)
+			assert(splitⵧby_closing_brace.every(s => s.split('⎨⎨').length <= 2), `${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬! (2b)`)
 
-	const initial_str: string = splitⵧby_opening_brace.shift()!
-	if (initial_str) {
-		assert(initial_str.split('⎬⎬').length === 1, `${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬!`)
-		xstate = callbacks.on_concatenateⵧstr({
-			str: initial_str,
-			state: xstate,
-			$node,
-			depth,
-		}, options)
-	}
-
-	xstate = splitⵧby_opening_brace.reduce((xstate: ExternalWalkState, param_and_text: string): ExternalWalkState => {
-		const split_end = param_and_text.split('⎬⎬')
-		if (split_end.length !== 2)
-			throw new Error(`${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬!`)
-
-		// splitting the ⎨⎨place|filter1|filter2⎬⎬ content
-		const [ $sub_node_id, ...$filters ] = split_end.shift()!.split('|')
-		assert($sub_node_id, `${LIB}: syntax error in content "${$content}", empty ⎨⎨⎬⎬!`)
-
-		let $sub_node = promoteꓽto_node((function _resolve_sub_node_by_id(): Immutable<CheckedNode>['$sub'][string] {
-			if ($sub_node_id === 'br') {
-				assert(!$sub_nodes[$sub_node_id], `${LIB}: error in content "${$content}", having a reserved subnode "${$sub_node_id}"!`)
-				return SUB_NODE_BR
-			}
-
-			if ($sub_node_id === 'hr') {
-				assert(!$sub_nodes[$sub_node_id], `${LIB}: error in content "${$content}", having a reserved subnode "${$sub_node_id}"!`)
-				return SUB_NODE_HR
-			}
-
-			if ($sub_nodes[$sub_node_id] !== undefined) { // reminder: can be a falsy node-like 0, ''
-				return $sub_nodes[$sub_node_id]!
-			}
-
-			// sub node is missing on the immediate node, advanced resolution:
-
-			if (options.shouldꓽrecover_from_unknown_sub_nodes === 'root' && $root_node.$sub[$sub_node_id]) {
-				return $root_node.$sub[$sub_node_id]!
-			}
-
-			const candidate_from_resolver = callbacks.resolve_unknown_subnode(
-				$sub_node_id,
-				{
+			const initial_str: string = splitⵧby_opening_brace.shift()!
+			if (initial_str) {
+				assert(initial_str.split('⎬⎬').length === 1, `${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬!`)
+				xstate = callbacks.on_concatenateⵧstr({
+					str: initial_str,
+					state: xstate,
 					$node,
 					depth,
+				}, options)
+			}
+
+			xstate = splitⵧby_opening_brace.reduce((xstate: ExternalWalkState, param_and_text: string): ExternalWalkState => {
+				const split_end = param_and_text.split('⎬⎬')
+				if (split_end.length !== 2)
+					throw new Error(`${LIB}: syntax error in content "${$content}", unmatched ⎨⎨⎬⎬!`)
+
+				// splitting the ⎨⎨place|filter1|filter2⎬⎬ content
+				const [ $sub_node_id, ...$filters ] = split_end.shift()!.split('|')
+				assert($sub_node_id, `${LIB}: syntax error in content "${$content}", empty ⎨⎨⎬⎬!`)
+
+				let $sub_node = promoteꓽto_node((function _resolve_sub_node_by_id(): Immutable<CheckedNode>['$sub'][string] {
+					if ($sub_node_id === 'br') {
+						assert(!$sub_nodes[$sub_node_id], `${LIB}: error in content "${$content}", having a reserved subnode "${$sub_node_id}"!`)
+						return SUB_NODE_BR
+					}
+
+					if ($sub_node_id === 'hr') {
+						assert(!$sub_nodes[$sub_node_id], `${LIB}: error in content "${$content}", having a reserved subnode "${$sub_node_id}"!`)
+						return SUB_NODE_HR
+					}
+
+					if ($sub_nodes[$sub_node_id] !== undefined) { // reminder: can be a falsy node-like 0, ''
+						return $sub_nodes[$sub_node_id]!
+					}
+
+					// sub node is missing on the immediate node, advanced resolution:
+
+					if (options.shouldꓽrecover_from_unknown_sub_nodes === 'root' && $root_node.$sub[$sub_node_id]) {
+						return $root_node.$sub[$sub_node_id]!
+					}
+
+					const candidate_from_resolver = callbacks.resolve_unknown_subnode(
+						$sub_node_id,
+						{
+							$node,
+							depth,
+							state: xstate,
+						},
+						options
+					)
+					if (candidate_from_resolver)
+						return candidate_from_resolver
+
+					if (options.shouldꓽrecover_from_unknown_sub_nodes === 'placeholder') {
+						return { $content: `{{??${$sub_node_id}??}}` }
+					}
+
+					if (true) {
+						console.error('shouldꓽrecover_from_unknown_sub_nodes FAILURE',)
+						console.error($node, { $content, sub_node_id: $sub_node_id })
+					}
+					throw new Error(`${LIB}: syntax error in content "${$content}", it's referencing an unknown sub-node "${$sub_node_id}"! (recover mode = ${options.shouldꓽrecover_from_unknown_sub_nodes})`)
+				})())
+
+				let sub_state = _walk($sub_node, callbacks, options, {
+					$parent_node: $node,
+					$id: $sub_node_id,
+					depth: depth + 1,
+					$root_node,
+				}, xstate)
+
+				//console.log('[filters', $filters, '])
+				sub_state = $filters.reduce(
+					(state, $filter) => {
+						const fine_filter_cb_id = `on_filterꘌ${$filter}`
+						//console.log({fine_filter_cb_id})
+						const fine_filter_callback = callbacks[fine_filter_cb_id] as WalkerReducer<ExternalWalkState, OnFilterParams<ExternalWalkState>, RenderingOptions>
+						if (fine_filter_callback)
+							state = fine_filter_callback({
+								$filter,
+								$filters,
+								state,
+								$node,
+								depth,
+							}, options)
+
+						return callbacks.on_filter({
+							$filter,
+							$filters,
+							state,
+							$node,
+							depth,
+						}, options)
+					},
+					sub_state,
+				)
+
+				// Should we detect unused $subnodes?
+				// NO it's convenient (ex. Oh-my-rpg) to over-set subnodes
+				// and set a content which may or may not use them.
+
+				xstate = callbacks.on_concatenateⵧsub_node({
 					state: xstate,
-				},
-				options
-			)
-			if (candidate_from_resolver)
-				return candidate_from_resolver
+					$node,
+					depth,
 
-			if (options.shouldꓽrecover_from_unknown_sub_nodes === 'placeholder') {
-				return { $content: `{{??${$sub_node_id}??}}` }
-			}
+					$sub_node_id,
+					$sub_node,
+					sub_state,
+				}, options)
 
-			if (true) {
-				console.error('shouldꓽrecover_from_unknown_sub_nodes FAILURE',)
-				console.error($node, { $content, sub_node_id: $sub_node_id })
-			}
-			throw new Error(`${LIB}: syntax error in content "${$content}", it's referencing an unknown sub-node "${$sub_node_id}"! (recover mode = ${options.shouldꓽrecover_from_unknown_sub_nodes})`)
-		})())
-
-		let sub_state = _walk($sub_node, callbacks, options, {
-			$parent_node: $node,
-			$id: $sub_node_id,
-			depth: depth + 1,
-			$root_node,
-		}, xstate)
-
-		//console.log('[filters', $filters, '])
-		sub_state = $filters.reduce(
-			(state, $filter) => {
-				const fine_filter_cb_id = `on_filterꘌ${$filter}`
-				//console.log({fine_filter_cb_id})
-				const fine_filter_callback = callbacks[fine_filter_cb_id] as WalkerReducer<ExternalWalkState, OnFilterParams<ExternalWalkState>, RenderingOptions>
-				if (fine_filter_callback)
-					state = fine_filter_callback({
-						$filter,
-						$filters,
-						state,
+				if (split_end[0])
+					xstate = callbacks.on_concatenateⵧstr({
+						str: split_end[0],
+						state: xstate,
 						$node,
 						depth,
 					}, options)
 
-				return callbacks.on_filter({
-					$filter,
-					$filters,
-					state,
-					$node,
-					depth,
-				}, options)
-			},
-			sub_state,
-		)
-
-		// Should we detect unused $subnodes?
-		// NO it's convenient (ex. Oh-my-rpg) to over-set subnodes
-		// and set a content which may or may not use them.
-
-		xstate = callbacks.on_concatenateⵧsub_node({
-			state: xstate,
-			$node,
-			depth,
-
-			$sub_node_id,
-			$sub_node,
-			sub_state,
-		}, options)
-
-		if (split_end[0])
-			xstate = callbacks.on_concatenateⵧstr({
-				str: split_end[0],
-				state: xstate,
-				$node,
-				depth,
-			}, options)
-
-		return xstate
-	}, xstate)
+				return xstate
+			}, xstate)
+		}
+		else {
+			throw new Error('NIMP array of non strings')
+		}
+	})
 
 	return xstate
 }

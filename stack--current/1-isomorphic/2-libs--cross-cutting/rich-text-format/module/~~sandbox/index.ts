@@ -4,7 +4,7 @@ import * as RichText from '@offirmo-private/rich-text-format'
 /////////////////////////////////////////////////
 
 let $doc = RichText.fragmentⵧinline()
-	.pushText('Hello , world!')
+	.pushText('Hello, world!')
 	.done()
 
 console.log('\n------- to text -------\n' + RichText.renderⵧto_text($doc, {
@@ -12,10 +12,11 @@ console.log('\n------- to text -------\n' + RichText.renderⵧto_text($doc, {
 }))
 
 /////////////////////////////////////////////////
+// using a sub node
 
 $doc = RichText.fragmentⵧinline()
-	.pushText('Hello ')
-	.pushNode('world', { id: 'target'})
+	.pushText('Hello, ')
+	.pushSubNodes({target: 'world'})
 	.pushText('!')
 	.done()
 
@@ -24,14 +25,20 @@ console.log('\n------- to text -------\n' + RichText.renderⵧto_text($doc, {
 }))
 
 /////////////////////////////////////////////////
+// sub-node is provided by the parent
 
 $doc = RichText.fragmentⵧinline()
-	.pushText('Hello ')
-	.pushNode('world', { id: 'target'})
+	.pushText('Hello, ')
+	.pushRef('target')
 	.pushText('!')
 	.done()
 
-console.log('\n------- to text -------\n' + RichText.renderⵧto_text($doc, {
+let $wrapper = RichText.fragmentⵧblock()
+	.addSubs({target: 'world'})
+	.pushSubNodes({greetings: $doc})
+	.done()
+
+console.log('\n------- to text -------\n' + RichText.renderⵧto_text($wrapper, {
 	style: 'markdown',
 }))
 

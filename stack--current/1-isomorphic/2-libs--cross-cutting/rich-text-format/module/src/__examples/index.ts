@@ -81,7 +81,7 @@ const $DEMOⵧKV = (() => {
 
 	builder.pushStrong('Your character:')
 
-	builder.pushNode(
+	builder.pushSubNode(
 		RichText.listⵧordered()
 			// various width to test the alignment
 			.pushKeyValue('Max health', 123)
@@ -358,7 +358,7 @@ const DOC_DEMO_RPG_03 = RichText.fragmentⵧblock()
 	)
 	.pushStrong('A great saga just started.')
 	.pushLineBreak()
-	.pushNode(DOC_DEMO_RPG_01, { id: 'adventure' })
+	.pushSubNode(DOC_DEMO_RPG_01, { id: 'adventure' })
 	.done()
 
 const DOC_DEMO_INVENTORY: RichText.Document = {

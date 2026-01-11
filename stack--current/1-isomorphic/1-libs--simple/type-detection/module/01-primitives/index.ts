@@ -45,7 +45,7 @@ function hasꓽemoji(s: string): boolean {
 // Is it a "key/value" object (not null, not an array)
 // naming: difficult!!!
 // use case: for type guards
-function isꓽobjectⵧkv(o: object): o is Record<string, unknown> {
+function isꓽobjectⵧkv(o: any): o is Record<string, unknown> {
 	if (typeof o !== 'object') return false
 
 	if (!o) return false
@@ -60,7 +60,7 @@ function isꓽobjectⵧkv(o: object): o is Record<string, unknown> {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals
 // use case: for type guards
 // also JSON "object is an unordered set of name/value pairs"
-function isꓽobjectⵧliteral(o: object): o is Record<string, unknown> {
+function isꓽobjectⵧliteral(o: any): o is Record<string, unknown> {
 	if (!isꓽobjectⵧkv(o)) return false
 
 	// "normal" objects have Object as constructor

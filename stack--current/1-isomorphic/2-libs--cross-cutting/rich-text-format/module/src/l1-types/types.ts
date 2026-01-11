@@ -12,7 +12,10 @@ type CheckedNode = {
 
 	$type: NodeType
 
-	$content: string
+	$content:
+		| NodeLike
+		| Array<NodeLike>
+
 	$sub: {
 		// content that can be referenced by their id
 		// Note: unused are allowed for convenience, excess will not be checked
@@ -98,7 +101,8 @@ type NodeLike =
 	| string
 	| number
 	| Node
-	// we could have bigint one day
+	// We want Nodes to be natively JSON serializable, so no BigInt, date...
+	// boolean, null = let's wait before assigning meaning to them
 
 ///////
 

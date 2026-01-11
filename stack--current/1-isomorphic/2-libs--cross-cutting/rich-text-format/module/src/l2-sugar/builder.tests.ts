@@ -126,11 +126,11 @@ describe(`${LIB} -- sugar -- builder`, () => {
 	})
 
 	// this is the basic primitive on top of whom other are built
-	describe('pushRawNode()', function () {
+	describe('addSub()', function () {
 
 		it('should work', () => {
 			const $doc = RichText.fragmentⵧinline()
-				.pushRawNode(RichText.strong('foo').done())
+				.addSub(RichText.strong('foo').done())
 				.done()
 
 			expect(isꓽNode($doc)).to.be.true
@@ -142,10 +142,10 @@ describe(`${LIB} -- sugar -- builder`, () => {
 		it('should detect semantic errors = block in inline', () => {
 			const builder = RichText.fragmentⵧinline()
 
-			expect(() => builder.pushRawNode(RichText.fragmentⵧblock('foo').done()), 'block').to.throw('block node into an inline node')
-			expect(() => builder.pushRawNode(RichText.heading('foo').done()), 'heading').to.throw('block node into an inline node')
-			expect(() => builder.pushRawNode(RichText.listⵧordered().done()), 'ol').to.throw('block node into an inline node')
-			expect(() => builder.pushRawNode(RichText.listⵧunordered().done()), 'ul').to.throw('block node into an inline node')
+			expect(() => builder.addSub(RichText.fragmentⵧblock('foo').done()), 'block').to.throw('block node into an inline node')
+			expect(() => builder.addSub(RichText.heading('foo').done()), 'heading').to.throw('block node into an inline node')
+			expect(() => builder.addSub(RichText.listⵧordered().done()), 'ol').to.throw('block node into an inline node')
+			expect(() => builder.addSub(RichText.listⵧunordered().done()), 'ul').to.throw('block node into an inline node')
 			expect(() => builder.pushHorizontalRule(), 'hr').to.throw('block node into an inline node')
 		})
 
@@ -157,11 +157,11 @@ describe(`${LIB} -- sugar -- builder`, () => {
 		})
 	})
 
-	describe('pushRawNodes()', function () {
+	describe('addSubs()', function () {
 
 		it('should work', () => {
 			const $doc = RichText.fragmentⵧinline()
-				.pushRawNodes({
+				.addSubs({
 					foo: RichText.strong('foo').done(),
 					bar: RichText.strong('bar').done(),
 				})
@@ -174,11 +174,11 @@ describe(`${LIB} -- sugar -- builder`, () => {
 		})
 	})
 
-	describe('pushNode()', function () {
+	describe('pushSubNode()', function () {
 
 		it('should work -- auto id', () => {
 			const $doc = RichText.fragmentⵧinline()
-				.pushNode(RichText.strong('foo').done())
+				.pushSubNode(RichText.strong('foo').done())
 				.done()
 
 			expect(isꓽNode($doc)).to.be.true
@@ -190,7 +190,7 @@ describe(`${LIB} -- sugar -- builder`, () => {
 
 		it('should work -- explicit id', () => {
 			const $doc = RichText.fragmentⵧinline()
-				.pushNode(RichText.strong('foo').done(), { id: 'bar' })
+				.pushSubNode(RichText.strong('foo').done(), { id: 'bar' })
 				.done()
 
 			expect(isꓽNode($doc)).to.be.true
@@ -202,7 +202,7 @@ describe(`${LIB} -- sugar -- builder`, () => {
 
 		it('should check semantic', () => {
 			expect( () => RichText.fragmentⵧinline()
-				.pushNode(RichText.strong('foo').done(), { classes: ['bar'] } as any)
+				.pushSubNode(RichText.strong('foo').done(), { classes: ['bar'] } as any)
 				.done(),
 			).to.throw('option')
 		})
