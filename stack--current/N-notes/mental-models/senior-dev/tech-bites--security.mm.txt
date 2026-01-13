@@ -3,6 +3,7 @@
 2025-11-29 React2Shell https://react2shell.com/
 [ ] +++ http://zesty.ca/capmyths/usenix.pdf
 [ ] ATT&CK® is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations https://attack.mitre.org/
+[ ] crypto primitives https://keccak.team/glossary.html
 [ ] d3fend® matrix https://d3fend.mitre.org/
 [ ] https://cwe.mitre.org/documents/glossary/index.html
 [ ] https://techcrunch.com/2025/01/31/techcrunch-reference-guide-to-security-terminology/

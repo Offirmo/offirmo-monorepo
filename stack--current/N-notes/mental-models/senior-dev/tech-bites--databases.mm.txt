@@ -27,6 +27,7 @@ case-sensitivity = The concept of “case” isn’t as simple as it may seem an
 common table expressions (CTEs) = smaller sub-queries for expressing complex SQL queries
 connection string ex. mysql://user:pass@host:port/dbname
 data retrieval
+DBMS (Database Management System)
 differential dataflow = a data-parallel programming framework designed to efficiently process large volumes of data and to quickly respond to arbitrary changes in input collections https://github.com/TimelyDataflow/differential-dataflow
 graph
 in-memory
@@ -37,6 +38,7 @@ indexes -- cost = Indexes aren’t free. All indexes take time to maintain (on i
 indexes -- Knowing which indexes to add to a table often isn’t trivial. The best and only true way to determine the value of an index is to test it against real world data. Run your queries in a DB IDE (like Table Plus) and use EXPLAIN ANALYZE (docs) to see how they’re being run and which indexes are used.
 indexes -- trade-offs
 joins
+joins https://justinjaffray.com/joins-13-ways/
 latency / distance to
 locking -- should be avoided at all cost
 multiversion concurrency control (MVCC) = a popular database mechanism for tracking changes in a non-blocking fashion, where for any key we can keep multiple versions of its values for different points in time https://en.wikipedia.org/wiki/Multiversion_concurrency_control
@@ -58,6 +60,8 @@ scaling
 search
 selectivity
 sharding
+sharding -- middleware -- gizzard (legacy) = sharding middleware https://github.com/twitter-archive/gizzard
+sharding https://www.mongodb.com/docs/manual/sharding/
 solution -- GUI tool -- DataGrip
 solution -- GUI tool -- TablePlus https://tableplus.com/
 solution -- MySQL https://dev.mysql.com/

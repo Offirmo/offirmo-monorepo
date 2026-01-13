@@ -24,7 +24,7 @@
 5 Harsh Truths -- Distractions Are Potential Killers
 5 Harsh Truths -- Goals, Ideas… are all Lies
 5 Harsh Truths -- Nobody is Special
-5 Harsh Truths -- There is No Intelligent Design
+5 Harsh Truths -- There is No Intelligent Design = big software are made iteratively, with no grand plan
 5 Harsh Truths for Success from Linus Torvalds https://www.linkedin.com/posts/altanatabarut_5-harsh-truths-from-linus-torvalds-activity-7008389396659859456-CKr6
 5 mantras -- 1% better = You don’t need to change the world. Just make something — anything — 1% better, every day. Movement of the smallest rocks can cause the greatest landslides.
 5 mantras -- Don’t get stuck = when I feel stuck it is because I am being too stubborn to change, too egotistical to ask for help, or too tired to invite creativity into my thinking. There is rarely no way out.
@@ -68,7 +68,7 @@ acceptance
 accepting oneself
 action -- deep dive & low-hanging fruits
 addictions -- casino -- "je vais me refaire"
-addictions -- casino -- maison qui gagne
+addictions -- casino -- the house always win
 Adventure is any inconvenience taken in the right spirit - Flower Hill Center
 advices -- flaw -- Curse of Brilliance = when dissecting what makes them successful, people unwittingly tend to overemphasize the things they found very difficult and underplay (or altogether ignore) the importance of things at which they were naturally good/brilliant. Ex. a successful repeat founder will often say things like “speed is all that matters” = bc. they take the vision & strategy part for granted. https://x.com/shreyas/status/1442165965769240577
 advices -- flaw -- Curse of Brilliance, Survivorship Bias & the Halo Effect will conspire together to create an inaccurate view of what it really takes to succeed
@@ -161,6 +161,7 @@ biohacking https://www.medicalnewstoday.com/articles/biohacking
 birthday problem = counterintuitive https://en.wikipedia.org/wiki/Birthday_problem
 birthday/christmas/21 effect = increased death around certain dates / milestones https://en.wikipedia.org/wiki/Birthday_effect
 black swan https://en.wikipedia.org/wiki/Black_swan_theory
+Blue Monday = worse of the year https://en.wikipedia.org/wiki/Blue_Monday_(date)
 blue-chip = (publicly traded company) known for its stability, consistent earnings, sound financials, and long-standing reputation = "most wanted in the industry (investment)"
 bonnes et mauvaises cartes
 brain -- fast & slow
@@ -250,6 +251,7 @@ conformism -- test = do you have any opinions that you would be reluctant to exp
 conformism = https://paulgraham.com/conformism.html
 consciousness -- sleepwalking https://en.wikipedia.org/wiki/Sleepwalking
 constructive confrontation -- spot threats/issues/problems, debate aggressively, make bold moves before competitors/enemies
+constructive discharge = when a worker's resignation or retirement may be found not to be voluntary because the employer has created a hostile or intolerable work environment or has applied other forms of pressure or coercion which forced the employee to quit or resign https://webapps.dol.gov/elaws/eta/warn/glossary.asp?p=constructive%20discharge
 contempt
 content -- creators
 content -- independence https://blog.cloudflare.com/content-independence-day-no-ai-crawl-without-compensation/
@@ -983,6 +985,7 @@ planning fallacy
 pointy-haired boss
 political correctness -- rise of = due to lack of other things to be morally pure about. Previous generations of prigs had been prigs mostly about religion and sex.
 political philosophy https://en.wikipedia.org/wiki/Political_philosophy
+ponzi
 Ponzi, Madoff
 Pope Francis 15 spiritual diseases -- 01 = thinking we are “immortal”, “immune” or downright “indispensable”, neglecting the need for regular check-ups. One who is not self-critical, which does not seek to be more fit, is a sick body
 Pope Francis 15 spiritual diseases -- 02 = “Martha complex”, excessive busy-ness. It is found in those who immerse themselves in work and inevitably neglect “the better part”: sitting at the feet of Jesus
@@ -1381,6 +1384,7 @@ voleur volé
 volume hiring
 vrai vs. bien trouvé (meme)
 wabi-sabi https://en.wikipedia.org/wiki/Wabi-sabi
+wall of shame
 wantrepreneurs
 war https://en.wikipedia.org/wiki/War
 We must remember that entire societies can and often do follow the wrong path for a very long time https://news.vanderbilt.edu/2011/04/13/michael-burry-transcript/

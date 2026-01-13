@@ -32,6 +32,7 @@ democracy -- types https://en.wikipedia.org/wiki/Guided_democracy
 divine kingship
 electricity
 electricity -- light bulb
+elite abuses https://www.theguardian.com/us-news/2025/dec/23/epstein-unredacted-files-social-media
 family
 games -- chess https://chess.stackexchange.com/questions/47538/why-does-open-position-favor-black
 golden rule

@@ -20,7 +20,10 @@
 [ ] security https://portswigger.net/web-security/all-topics
 [ ] security https://xsleaks.dev/
 [ ] shearing layers https://en.wikipedia.org/wiki/Shearing_layers
+a11y -- Heydon's 12 principles https://github.com/Heydon/principles-of-web-accessibility
 a11y -- support https://a11ysupport.io/
+a11y -- tracking ex. https://heydonheydon.gumroad.com/l/notion-accessibility-tracker
+a11y = Accessibility
 AI -- If you had a machine that could instantly recall or create any facet of information, do you need a link?
 AI -- super app = LLM becomes the super app? https://aifoc.us/a-link-is-all-you-need/
 alert fatigue = desensitized
@@ -28,9 +31,8 @@ AMP "Accelerated Mobile Pages"
 animations -- API https://devdocs.io/dom/web_animations_api
 API intl https://intlin.site/
 APIs web
-app -- a11y
-app -- a11y -- Heydon's 12 principles https://github.com/Heydon/principles-of-web-accessibility
-app -- a11y -- tracking ex. https://heydonheydon.gumroad.com/l/notion-accessibility-tracker
+PFP "Profile Picture"
+PFP -- NFT https://opensea.io/learn/nft/what-are-profile-picture-nfts
 app -- architecture: LAMP / JAMStack / SSR...
 app -- auth
 app -- BFFE / GraphQL / REST

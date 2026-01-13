@@ -31,6 +31,7 @@
 2025-11-14 AI espionage? https://www.anthropic.com/news/disrupting-AI-espionage
 2025-11-20 A Microsoft executive is questioning why more people aren't impressed with AI (...) immediately triggered backlash.https://au.pcmag.com/ai/114305/microsoft-exec-asks-why-arent-more-people-impressed-with-ai
 2025-12 debate on Bitcoin BIP about LLM contrib = Open source projects are now expecting "social capital" = may refuse to review work from someone unknown until they prove skin in the game/motivation https://github.com/bitcoin/bips/pull/2051/files#diff-0fe6969eba0422ddb0e7823d13092c03aa90122e0c5e66786c5d8b20f54719e6L42
+2026-01 no more Stask Overflow questions https://data.stackexchange.com/stackoverflow/query/1926661#graph https://news.ycombinator.com/item?id=46482345
 [ ] ??? https://github.com/SkalskiP/courses "crème de la crème of AI courses"
 [ ] https://aleteia.org/tag/artificial-intelligence/
 [ ] https://ghuntley.com/
@@ -301,6 +302,7 @@ Snowflake Arctic https://www.snowflake.com/blog/arctic-open-efficient-foundation
 sociotechnic = skilled at analyzing the interaction of technology and society long-term: lawyers, ethicists, sociologists, or rights advocates
 solution -- code -- https://www.anthropic.com/claude-code
 solution -- evals ? https://www.reddit.com/r/node/comments/1d09u4b/introducing_evalkit_the_open_source_typescript/
+solutions -- typescript -- https://vercel.com/blog/ai-sdk-5
 solved problems = don't use AI for that
 Stable Diffusion
 superintelligence "AI vastly smarter than humans" https://openai.com/research/weak-to-strong-generalization

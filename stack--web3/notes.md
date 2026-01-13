@@ -41,3 +41,11 @@ https://verify.walletconnect.com
 https://verify.walletconnect.org
 https://www.dynamic.xyz/
 privy
+
+SaaS
+- Codex
+- Gelato
+- Zerion
+- Quicknode
+- Turnkey
+- NEAR https://docs.near.org/

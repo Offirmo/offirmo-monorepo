@@ -39,7 +39,6 @@
 [ ] SWE at Google https://abseil.io/resources/swe-book/html/toc.html
 [ ] technical things every software developer should know https://github.com/mtdvio/every-programmer-should-know
 [ ] testing https://testing.googleblog.com/
-a11y = Accessibility
 abort controller https://kettanaito.com/blog/dont-sleep-on-abort-controller
 abstract = something that exists in thought as an idea
 abstraction -- level
@@ -100,7 +99,12 @@ architectural decision record (ADR) = captures a single AD and its rationale; ca
 architectural styles = independent of any specific implementation
 architecturally significant requirement (ASR) = a requirement that has a measurable effect on the architecture and quality of a software and/or hardware system
 architecture -- services https://en.wikipedia.org/wiki/Service-oriented_architecture
-asking smart questions (tech) http://www.catb.org/esr/faqs/smart-questions.html
+arithmetic -- decimal
+arithmetic -- floating point math] https://0.30000000000000004.com
+arithmetic -- integers encoding
+arithmetic -- precision
+arithmetic -- rounding
+asking smart questions http://www.catb.org/esr/faqs/smart-questions.html
 assembly
 async -- "coloring" https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/
 async -- design pattern -- reactor pattern
@@ -133,7 +137,6 @@ C10k problem https://en.wikipedia.org/wiki/C10k_problem
 cache
 cache -- lock = a small program, possibly distinct from your cache, that indicates if a request is already going to your origin. This is called request collapsing. https://developers.cloudflare.com/cache/concepts/revalidation/ https://blog.cloudflare.com/sometimes-i-cache/ https://developers.cloudflare.com/cache/concepts/revalidation/
 cache -- revalidation https://developers.cloudflare.com/cache/concepts/revalidation/
-cache -- stampede
 cache -- stampede -- prevention = Optimal Probabilistic Cache Stampede Prevention https://cseweb.ucsd.edu/~avattani/papers/cache_stampede.pdf
 cache -- stampede https://en.wikipedia.org/wiki/Cache_stampede
 caching -- caching tiers = edge cache → upper tier cache → central data store https://developers.cloudflare.com/kv/concepts/how-kv-works/
@@ -202,7 +205,6 @@ compatibility -- window = duration deployed code needs to remain compatible
 compatibility = 2x things being able to live together without issues
 compatibility window = how long should we attempt to ensure that a deployment of code doesn’t get blown up by incompatible payloads. Ex. mobile app = 6 month, web page = 1d, server = 1 release
 compile to js
-compiler
 compiler -- stanford course http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=Compilers
 compiler = translates code from one language to another at a different level of abstraction. As a result, the compiled code from a compiler is much harder for a human to read than the original.
 complexity -- tends to increase exponentially in multi-threaded systems, and quadratically in distributed parallel systems https://qconlondon.com/london-2009/qconlondon.com/dl/qcon-london-2009/slides/CameronPurdy_TraditionalProgrammingModelsStoneKnivesAndBearskinsInTheGoogleAge.pdf
@@ -298,23 +300,18 @@ data format -- linting = ex. for JSON compatibility, for backward/forward compat
 data format -- one goal of defining the type once then generating code in various languages (hard!)
 data format -- protobuf -- XXX criticized "the worst serialization format and schema" BC conflate transport representation w work representation + bad type system https://news.ycombinator.com/item?id=21871514
 data format -- protobuf = (at the time of XML, before JSON, also bc Java doesn't work well with JSON) language-neutral, platform-neutral extensible mechanisms for serializing structured data https://protobuf.dev/overview/ https://github.com/protocolbuffers/protobuf
-data format -- serialization = converting a complex data structure/object into a format (like a stream of bytes or text) that can be easily stored (in a file/database) or transmitted (over a network) and later reconstructed back into its original form (deserialization) https://en.wikipedia.org/wiki/Serialization
-data format -- serialization -- persistence
 data format -- serialization -- interchange = more complex usually aiming at interoperability between byte encodings, endianess, languages, platforms...
+data format -- serialization -- persistence
 data format -- serialization -- stability! ex. sorting by keys in k/v, important for immutability! (ex. stable hashing, caching, diff...)
 data format -- serialization -- wire format
 data format -- serialization -- wire format -- https://capnproto.org/ = serialization only! (better than protobuf)
+data format -- serialization = converting a complex data structure/object into a format (like a stream of bytes or text) that can be easily stored (in a file/database) or transmitted (over a network) and later reconstructed back into its original form (deserialization) https://en.wikipedia.org/wiki/Serialization
 data format -- TODO find TS stuff
 data residency -- storing = storing user data in the same jurisdiction as the customer’s residence.
 data residency = helps customers feel confident that the data they own (or about them) is subject to their local laws and regulations. This is especially important for enterprise, education, and government customers, many of whom might have rules and regulations mandating the use of data-resident software.
 database fundamentals https://tontinton.com/posts/database-fundementals/
-databases
-databases -- joins https://justinjaffray.com/joins-13-ways/
-databases -- normalization
-databases -- sharding -- middleware -- gizzard (legacy) = sharding middleware https://github.com/twitter-archive/gizzard
-databases -- sharding https://www.mongodb.com/docs/manual/sharding/
+databases = (see dedicated file)
 dataset
-DBMS (Database Management System)
 DDD (Domain-Driven Design) https://en.wikipedia.org/wiki/Domain-driven_design
 DDOS
 DDOS -- self https://waxy.org/2023/07/twitter-bug-causes-self-ddos-possibly-causing-elon-musks-emergency-blocks-and-rate-limits-its-amateur-hour/
@@ -331,7 +328,6 @@ dependencies
 dependency -- hell https://en.wikipedia.org/wiki/Dependency_hell
 dependency -- transitive problem https://htmx.org/essays/vendoring/
 dependency -- vendoring = a technique where you copy the source of another project directly into your own project https://htmx.org/essays/vendoring/
-dependency hell = https://en.wikipedia.org/wiki/Dependency_hell
 dependency injection -- containers = frameworks that manage the dependencies of objects https://blog.ploeh.dk/2014/06/10/pure-di/
 dependency injection -- pure = no framework https://blog.ploeh.dk/2014/06/10/pure-di/
 dependency injection -- vs. func = if magic, makes everything functionally impure https://blog.ploeh.dk/2017/01/30/partial-application-is-dependency-injection/
@@ -382,16 +378,16 @@ ecosystem -- repositories = npm, jsr https://deno.com/blog/openai-on-jsr
 ecosystem -- SDK
 ecosystem -- templates
 Effect<Success, Error, Requirements> https://effect.website/docs/guides/essentials/the-effect-type
-effective engineer -- LeadDev -- 1. Care about the user and their needs
+effective engineer -- LeadDev -- 01. Care about the user and their needs
+effective engineer -- LeadDev -- 02. Be a great problem solver
+effective engineer -- LeadDev -- 03. Keep things simple, while caring about quality
+effective engineer -- LeadDev -- 04. Communicate effectively with your team
+effective engineer -- LeadDev -- 05. Build trust, autonomy, and social capital
+effective engineer -- LeadDev -- 06. Understand team strategy
+effective engineer -- LeadDev -- 07. Prioritize appropriately and execute independently
+effective engineer -- LeadDev -- 08. Think long term (e.g. implications of decisions)
+effective engineer -- LeadDev -- 09. Leave software projects better than you found them
 effective engineer -- LeadDev -- 10. Be comfortable taking on new challenges
-effective engineer -- LeadDev -- 2. Be a great problem solver
-effective engineer -- LeadDev -- 3. Keep things simple, while caring about quality
-effective engineer -- LeadDev -- 4. Communicate effectively with your team
-effective engineer -- LeadDev -- 5. Build trust, autonomy, and social capital
-effective engineer -- LeadDev -- 6. Understand team strategy
-effective engineer -- LeadDev -- 7. Prioritize appropriately and execute independently
-effective engineer -- LeadDev -- 8. Think long term (e.g. implications of decisions)
-effective engineer -- LeadDev -- 9. Leave software projects better than you found them
 effective engineer -- LeadDev https://www.linkedin.com/posts/addyosmani_softwareengineering-programming-effectiveness-activity-7018966411389661184-pVev
 egress/ingress
 emscripten
@@ -414,7 +410,6 @@ error -- type -- domain error = out of the specification, ex. sqrt(-x) https://c
 error -- type -- logic error = errors in the internal logical of the program, such as violation of logical preconditions or class invariants https://cplusplus.com/reference/stdexcept/logic_error/
 error -- type -- runtime error = errors that can only be detected during runtime https://cplusplus.com/reference/stdexcept/runtime_error/
 error = failure = inability of a function to return a valid result, instead producing an error object describing the reason for the failure https://boostorg.github.io/leaf/#tutorial
-Ethereum Virtual Machine (EVM) is a decentralized virtual environment that executes code consistently and securely across all Ethereum nodes. Nodes run the EVM to execute smart contracts, using "gas" to measure the computational effort required for operations, ensuring efficient resource allocation and network security. https://ethereum.org/en/developers/docs/evm/
 ETL “extract, transform, load” = the three interdependent processes of data integration used to pull data from one database and move it to another
 event loop
 every rule is born from blood
@@ -441,7 +436,6 @@ finished software https://josem.co/the-beauty-of-finished-software/
 finops
 flank speed = American nautical term referring to a ship's true maximum speed, in case of immediate danger. It is not equivalent to the term full speed ahead.
 flatmap
-floating point math https://0.30000000000000004.com
 flow state = deep concentration, enjoyment, and a sense of progress
 flushing
 flux architecture
