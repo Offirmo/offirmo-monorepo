@@ -11,6 +11,7 @@ import { NodeType } from './types.ts'
 const $EXAMPLE_COMPLETE_NODE: CheckedNode = {
 	$v: 1,
 	$type: 'fragmentⵧinline',
+	$heading: null,
 	$content: 'Hello, ⎨⎨target⎬⎬!',
 	$sub: {
 		target: 'World',
@@ -87,7 +88,7 @@ const _NODE_TYPE_to_DISPLAY_MODE: Immutable<{ [k: string]: 'inline' | 'block' }>
 
 	// classic blocks
 	[NodeType.fragmentⵧblock]:  'block',
-	[NodeType.heading]:         'block',
+	//[NodeType.heading]:         'block',
 	[NodeType.ol]:              'block',
 	[NodeType.ul]:              'block',
 	[NodeType.hr]:              'block',

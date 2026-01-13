@@ -12,6 +12,7 @@ type CheckedNode = {
 
 	$type: NodeType
 
+	$heading: NodeLike | null
 	$content:
 		| NodeLike
 		| Array<NodeLike>
@@ -47,7 +48,7 @@ const NodeType = Enum(
 	'fragmentⵧinline', // = span
 
 	// display "block"
-	'heading',
+	//'heading', integrated
 	'ol',
 	'ul',
 	'hr',

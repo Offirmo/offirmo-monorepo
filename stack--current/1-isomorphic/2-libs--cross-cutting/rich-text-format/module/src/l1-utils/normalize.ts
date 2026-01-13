@@ -23,6 +23,7 @@ function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<CheckedNode> {
 		// extract fields
 		$v = 1, // assume the oldest format (until we can recognize the version)
 		$type = NodeType.fragmentⵧinline,
+		$heading = null,
 		$content = '',
 		$sub = {},
 		$classes = [],
@@ -40,6 +41,7 @@ function normalizeꓽnode($raw_node: Immutable<Node>): Immutable<CheckedNode> {
 		$v,
 		$type,
 		$classes,
+		$heading,
 		$content: normalize_unicode($content),
 		$sub,
 		$hints,
@@ -60,20 +62,22 @@ function simplifyꓽnode($any_node: Immutable<NodeLike>): Immutable<NodeLike> {
 		// extract fields
 		$v = 1, // assume the oldest format (until we can recognize the version)
 		$type = NodeType.fragmentⵧinline,
+		$heading = null,
 		$content = '',
 		$sub = {},
 		$classes = [],
 		$hints = {},
 	} = $any_node
 
-	let $node: CheckedNode = {
+	let $node: Node = {
 		$v,
 		$type,
+		$heading,
 		$content,
 		$sub,
 		$classes,
 		$hints,
-	}
+	} satisfies CheckedNode
 
 	if ($v === SCHEMA_VERSION) {
 		delete $node.$v

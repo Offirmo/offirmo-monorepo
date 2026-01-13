@@ -43,6 +43,24 @@ console.log('\n------- to text -------\n' + RichText.renderⵧto_text($wrapper, 
 }))
 
 /////////////////////////////////////////////////
+// lists
+
+$doc = RichText.listⵧordered()
+	.setHeading('3 sector model')
+	.pushSubNodes([
+		'primary = raw materials',
+		'secondary = manufacturing',
+		'tertiary = services'
+	])
+	.done()
+
+console.log('\n------- to text -------\n' + RichText.renderⵧto_text($wrapper, {
+	style: 'markdown',
+}))
+
+/////////////////////////////////////////////////
+// tables
+
 
 /*
 import * as DEMOS from '@offirmo-private/rich-text-format/demos'
