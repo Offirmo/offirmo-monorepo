@@ -34,23 +34,20 @@ type SubNodes = CheckedNode['$sub'] // TODO why Immu?
 type SubNode = CheckedNode['$sub'][string]
 
 interface Builder {
-	addClass(...classes: ReadonlyArray<string>): Builder
-	addHints<Hints = DefaultHints>(hints: Partial<Hints>): Builder
-
 	// content NOT a node = text/number only
+
 	pushText(str: Exclude<NodeLike, Node>): Builder
-	// TODO refine
-	pushEmoji(e: string, options?: Immutable<CommonOptions>): Builder
-
-	pushInlineFragment(str: SubNode, options?: Immutable<CommonOptions>): Builder
-	pushBlockFragment(str: SubNode, options?: Immutable<CommonOptions>): Builder
-
 	pushStrong(str: SubNode, options?: Immutable<CommonOptions>): Builder
-	pushEm(str: SubNode, options?: Immutable<CommonOptions>): Builder
 	pushWeak(str: SubNode, options?: Immutable<CommonOptions>): Builder
+	pushEm(str: SubNode, options?: Immutable<CommonOptions>): Builder
+	pushEmoji(e: string, options?: Immutable<CommonOptions>): Builder // TODO review
+	pushInlineFragment($doc: SubNode, options?: Immutable<CommonOptions>): Builder
+
 	pushHeading(str: SubNode, options?: Immutable<CommonOptions>): Builder
 	pushHorizontalRule(): Builder
 	pushLineBreak(): Builder
+	pushBlockFragment($doc: SubNode, options?: Immutable<CommonOptions>): Builder
+
 
 	// ??
 	pushKeyValue(key: SubNode, value: SubNode, options?: Immutable<CommonOptions>): Builder
@@ -67,6 +64,10 @@ interface Builder {
 	addSub(node: SubNode, options?: Immutable<CommonOptions>): Builder
 	addSubs(nodes: SubNodes): Builder
 	pushRef(node_id: SubNodeId): Builder // syntactic sugar for pushText(`⎨⎨${id}⎬⎬`)
+
+	addClass(...classes: ReadonlyArray<string>): Builder
+	addHints<Hints = DefaultHints>(hints: Partial<Hints>): Builder
+
 
 	// use $node if not wanting a NodeLike
 	done(): NodeLike
@@ -351,11 +352,11 @@ function fragmentⵧinline(content?: Immutable<NodeLike>): Builder {
 function strong(content?: Immutable<NodeLike>): Builder {
 	return _create(NodeType.strong, content)
 }
-function em(content?: Immutable<NodeLike>): Builder {
-	return _create(NodeType.em, content)
-}
 function weak(content?: Immutable<NodeLike>): Builder {
 	return _create(NodeType.weak, content)
+}
+function em(content?: Immutable<NodeLike>): Builder {
+	return _create(NodeType.em, content)
 }
 function emoji(content?: Immutable<NodeLike>): Builder {
 	return _create(NodeType.emoji, content)
