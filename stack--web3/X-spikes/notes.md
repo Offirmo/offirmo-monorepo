@@ -13,3 +13,9 @@ ex. of seed phrases
 
 https://www.iancoleman.net/ethereum-bip39/
 `skin behind silver concert pave edge because similar major payment critic inch battle frame unlock`
+
+https://ethereum.org/developers/docs/apis/javascript/
+
+https://blog.chainsafe.io/web3-js-sunset/
+
+https://docs.web3js.org/ deprecated but good doc

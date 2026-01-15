@@ -98,6 +98,7 @@ attacks -- fake price (illiquid) = manipulating the price of a low-liquidity tok
 attacks -- new vault https://www.halborn.com/blog/post/explained-the-resupply-hack-june-2025
 attacks -- spam tokens = sent to leaked address to pollute and maybe phish
 attacks -- supply chain https://cointelegraph.com/explained/what-is-a-supply-chain-attack-in-crypto-and-how-to-prevent-it
+attacks -- transaction malleability (BitCoin) = old vulnerability in Bitcoin that caused the closure of Mt Gox https://en.wikipedia.org/wiki/Transaction_malleability_problem
 automated market-making (AMM)
 bag check
 bear/bull markets = alternance of several months of falling prices (bear) and several months of rising prices (bull). Hard to time. Need to survive a bear market.
@@ -113,6 +114,7 @@ Bitcoin "2023, over 70% of BTC hadn’t moved in over a year." https://x.com/Arc
 Bitcoin -- Alkanes = ???
 Bitcoin -- challenges -- miner subsidies "the block subsidy is disappearing fast. And it’s by design. How do you keep miners incentivized to secure the network when block rewards dwindle below the cost to mine and trend closer to zero?" https://x.com/ArchNtwrk/status/1991527213473083614
 BitCoin -- dev mailing list https://groups.google.com/g/bitcoindev
+Bitcoin -- forks https://en.wikipedia.org/wiki/List_of_bitcoin_forks
 Bitcoin -- fundamental principle = Bitcoin constitutes a peer-to-peer electronic cash system for the bitcoin currency.
 Bitcoin -- OCEAN mining https://ocean.xyz/about
 Bitcoin -- Ordinals = ???
@@ -174,6 +176,7 @@ challenges -- scalability = a primary concern, because lack of trust is expensiv
 challenges -- User experience and adoption = Complex interfaces and a steep learning curve limit mainstream adoption. Improving the user experience by designing intuitive interfaces that abstract the complexities of blockchain technology is essential.
 CLOB "Central Limit Order Book" = system where all buy and sell orders for an asset are collected, sorted, and matched based on price and time priority
 code is law "Hundreds of millions stolen in a spree of massive crypto heists - but the hackers say they broke no laws" https://www.journeyman.tv/film/8785
+coinbase = some bitcoin concept
 colored coins = on-blockchain digital assets to represent custom currencies and financial instruments https://docs.google.com/a/buterin.com/document/d/1AnkP_cVZTCMLIzw4DvsW6M8Q2JC0lIzrTLuoWu2z1BE/edit
 compliance -- AU -- AUSTRAC https://www.austrac.gov.au/business/new-to-austrac
 compliance -- US
@@ -263,7 +266,6 @@ Ethereum -- EIP "Ethereum Improvement Proposal" https://eips.ethereum.org/
 Ethereum -- ENS = .eth
 Ethereum -- ERC "Ethereum Request for Comment" https://eips.ethereum.org/erc
 Ethereum -- ether = the coin
-coinbase = some bitcoin concept
 ethereum -- gas https://ethereum.stackexchange.com/questions/3/what-is-meant-by-the-term-gas
 Ethereum -- https://devcon.org/
 Ethereum -- lean & = https://blog.ethereum.org/2025/07/31/lean-ethereum https://leanroadmap.org/ https://github.com/leanEthereum
@@ -462,6 +464,7 @@ ossification
 P2WPKH-nested-in-P2SH (BIP 141) serialization format for segregated witness transactions.
 passkey
 Pay-to-script-hash (P2SH)
+peer-to-peer -- distributed hash table https://en.wikipedia.org/wiki/Kademlia#System_details
 perps -- Auto-Deleveraging (ADL) = When massive long liquidations occur simultaneously without new willing counterparties, the system closes profitable positions to maintain system solvency, ranking positions by... https://caladan.xyz/crypto-black-friday/
 perps -- hyperliquid
 perps = perpetual futures
