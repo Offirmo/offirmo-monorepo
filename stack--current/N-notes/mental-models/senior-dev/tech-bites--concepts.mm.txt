@@ -594,6 +594,7 @@ lang -- JS -- runtimes https://buttondown.com/whatever_jamie/archive/the-many-ma
 lang -- js/ts --tsconfig https://json.schemastore.org/tsconfig
 lang -- JSON
 lang -- JSX – Javascript XML, from React
+lang -- language types https://en.wikipedia.org/wiki/List_of_programming_languages_by_type
 lang -- Lean = Math language https://lean-lang.org/ https://overreacted.io/the-math-is-haunted/
 lang -- OCaml
 lang -- Rust https://www.rust-lang.org/

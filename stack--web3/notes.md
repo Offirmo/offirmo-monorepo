@@ -8,8 +8,7 @@ TODO
 - tenderly simulation
 - block scan
 - contract interaction / ABI
-
-
+- deploy a smart contract https://hardhat.org/docs/getting-started
 
 
 

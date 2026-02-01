@@ -36,8 +36,10 @@
 	},
 	"devDependencies": {
 		"@offirmo-private/monorepo-scripts": "*",
+		"@offirmo/random": "^3",
 		"@offirmo/unit-test-toolbox": "^9",
 		"@oh-my-rpg/state--engagement": "*",
+		"chalk": "^5",
 		"npm-run-all": "^4",
 		"tslib": "^2",
 		"typescript": "^5"
