@@ -38,33 +38,34 @@ const DEFAULT_RENDERING_OPTIONSⵧWalk = Object.freeze<BaseRenderingOptions>({
 
 interface BaseWalkState {
 	depthⵧh: number // header depth
+	depthⵧnodes: number // overall depth ((no known usage for now / debug only)
 
 	//$parent_node: Immutable<CheckedNode> | null
 	//$id: string // ??
-	//depthⵧnodes: number // overall depth
+
 	//$root_node: Immutable<CheckedNode> // for sub-node resolution "root" mode
 }
 
 interface BaseHookParams<RendererState> {
 	// shared generic state, see BaseWalkState for explanations
 	$node: Immutable<CheckedNode>
-	base_state: Immutable<BaseWalkState> // hooks can look, but are not allowed to mutate it
+	bstate: Immutable<BaseWalkState> // hooks can look, but are not allowed to mutate it
 
 	// custom state
-	state: RendererState
+	xstate: RendererState // hooks can freely mutate or derive
 }
 
 // known usages:
 // - tracking (increasing) depths
 interface OnNodeEnterParams<RendererState> extends BaseHookParams<RendererState> {
-	$id: string
+	//$id: string
 }
 
 // known usages:
 // - perform normalization/linting/autofixes of the node
 // - finally collate all the sub-nodes (in some cases)
 interface OnNodeExitParams<RendererState> extends BaseHookParams<RendererState> {
-	$id: string
+	//$id: string
 }
 
 // CONCAT STRING
@@ -74,10 +75,12 @@ interface OnConcatenateStringParams<RendererState> extends BaseHookParams<Render
 // CONCAT SUB-NODE
 // REMINDER this is done at the PARENT level => node, state, depth all refer to the PARENT node concatenating the child
 interface OnConcatenateSubNodeParams<RendererState> extends BaseHookParams<RendererState> {
-	$sub_node_id: string
+	//$sub_node_id: string
 	$sub_node: Immutable<Node>
-	sub_state: RendererState // IMPORTANT: this is where the parent node can "consume" the child state into its own state
+	XXX sub_state: RendererState // IMPORTANT: this is where the parent node can "consume" the child state into its own state
 }
+
+/*
 // FILTER TODO review
 interface OnFilterParams<RendererState> extends BaseHookParams<RendererState> {
 	$filter: string
@@ -91,6 +94,7 @@ interface OnClassParams<RendererState> extends BaseHookParams<RendererState> {
 interface OnTypeParams<RendererState> extends BaseHookParams<RendererState> {
 	$type: NodeType
 }
+*/
 
 interface UnknownSubNodeResolver<RendererState, RenderingOptions> {
 	(
@@ -101,7 +105,7 @@ interface UnknownSubNodeResolver<RendererState, RenderingOptions> {
 }
 
 interface WalkerStateCreator<RendererState, RenderingOptions> {
-	(parent_state: RendererState | undefined, options: RenderingOptions): RendererState
+	(options: RenderingOptions): RendererState
 }
 
 interface WalkerReducer<RendererState, P extends BaseHookParams<RendererState>, RenderingOptions> {
@@ -163,14 +167,14 @@ function _getꓽcallbacksⵧdefault<
 	RenderingOptions extends BaseRenderingOptions = any,
 >(): WalkerCallbacks<RendererState, RenderingOptions> {
 	function nothing(): void {}
-	function identity({ state }: { state: RendererState }): RendererState {
-		return state
+	function identity({ xstate }: { xstate: RendererState }): RendererState {
+		return xstate
 	}
 
 	return {
 		createꓽstate: () => 'YOU NEED TO IMPLEMENT createꓽstate()!' as any, // tricky to get right
 
-		onꓽnodeⵧenter: identity, //() => { throw new Error('Please define onꓽnodeⵧenter()!') },
+		onꓽnodeⵧenter: identity,
 		onꓽnodeⵧexit: identity,
 
 		onꓽconcatenateⵧstr: identity,
@@ -219,19 +223,13 @@ const SUB_NODE_HR: Node = Object.freeze<Node>({
 	$type: 'hr',
 })
 
-// special prop for lists
-const SPECIAL_LIST_NODE_CONTENT_KEY = '_content'
-
 function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
-	$node: Immutable<CheckedNode>,
 	callbacks: WalkerCallbacks<CustomWalkState, RenderingOptions>,
-	xstate: CustomWalkState,
-	depth: number,
-	$root_node: Immutable<CheckedNode>,
 	options: RenderingOptions,
+	bstate: BaseWalkState,
+	xstate: CustomWalkState,
+	$node: Immutable<CheckedNode>,
 ) {
-	const { $content, $sub: $sub_nodes } = $node
-
 	const $content_array = getꓽcontent_nodes‿array($node)
 	$content_array.forEach(node => {
 		if (typeof node === 'string') {
@@ -431,103 +429,19 @@ function _walk_content<CustomWalkState, RenderingOptions extends BaseRenderingOp
  * Must return a NEW "node" state.
  */
 function _walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
-	$raw_node: Immutable<NodeLike>,
 	callbacks: Immutable<WalkerCallbacks<CustomWalkState, RenderingOptions>>,
 	options: RenderingOptions,
 	bstate: BaseWalkState,
-	xstate: CustomWalkState | undefined,
+	xstate: CustomWalkState,
+	$raw_node: Immutable<NodeLike>,
 ) {
 	const $node = normalizeꓽnode(promoteꓽto_node($raw_node))
 
-	let xstate = callbacks.createꓽstate(xstate, options)
-	xstate = callbacks.onꓽnodeⵧenter({ state: xstate, $node }, options)
+	xstate = callbacks.onꓽnodeⵧenter({ $node, bstate, xstate }, options)
 
-	// TODO one day if needed: class begin / start
+	xstate = _walk_content(callbacks, options, bstate, xstate, $node)
 
-	const { $type, $classes, $sub: $refs } = $node
-
-
-	xstate = $classes.reduce(
-		(state, $class) =>
-			callbacks.onꓽclassⵧbefore(
-				{
-					$class,
-					state,
-					$node,
-				},
-				options,
-			),
-		xstate,
-	)
-
-	// walk down the content
-	if ($type === 'ul' || $type === 'ol') {
-		// special walk of sub-content for those
-		xxx NO changed
-		const sorted_keys = Object.keys($refs).sort()
-		//console.log('walk ul/ol', sorted_keys)
-		sorted_keys.forEach(key => {
-			if (isꓽexact_stringified_number(key)) {
-				console.warn(
-					`in sub-node '${$id}', the ul/ol key '${key}' suspiciously looks like a number: Beware of auto sorting!`,
-					{
-						$node,
-						sorted_keys,
-					},
-				)
-			}
-		})
-		sorted_keys.forEach(key => {
-			const $sub_node: Immutable<Node> = {
-				$type: NodeType._li,
-				$content: `⎨⎨${SPECIAL_LIST_NODE_CONTENT_KEY}⎬⎬`,
-				$sub: {
-					[SPECIAL_LIST_NODE_CONTENT_KEY]: $refs[key]!,
-				},
-			}
-			const sub_xstate = _walk(
-				$sub_node,
-				callbacks,
-				options,
-				{
-					$parent_node: $node,
-					depth: depth + 1,
-					$id: key,
-					$root_node,
-				},
-				xstate,
-			)
-			xstate = callbacks.onꓽconcatenateⵧsub_node(
-				{
-					state: xstate,
-					$node,
-					depth,
-
-					$sub_node,
-					sub_state: sub_xstate,
-					$sub_node_id: key,
-				},
-				options,
-			)
-		})
-	} else xstate = _walk_content($node, callbacks, xstate, options)
-
-	xstate = $classes.reduce(
-		(state, $class) => callbacks.onꓽclassⵧafter({ $class, state, $node }, options),
-		xstate,
-	)
-
-	const fine_type_cb_id = `onꓽtypeꘌ${$type}`
-	const fine_type_callback = callbacks[fine_type_cb_id] as WalkerReducer<
-		CustomWalkState,
-		OnTypeParams<CustomWalkState>,
-		RenderingOptions
-	>
-	if (fine_type_callback)
-		xstate = fine_type_callback({ $type, state: xstate, $node }, options)
-	xstate = callbacks.onꓽtype({ $type, state: xstate, $node }, options)
-
-	xstate = callbacks.onꓽnodeⵧexit({ state: xstate, $node }, options)
+	xstate = callbacks.onꓽnodeⵧexit({ $node, bstate, xstate }, options)
 
 	return xstate
 }
@@ -568,9 +482,9 @@ function walk<CustomWalkState, RenderingOptions extends BaseRenderingOptions>(
 		depthⵧh: 0, // TODO 1D allow starting at different depth through options
 		//$root_node,
 	}
-	const xstate = undefined // simpler than having a special creation
+	const xstate = callbacks.createꓽstate(options)
 
-	return _walk($raw_node, callbacks, options, bstate, xstate)
+	return _walk(callbacks, options, bstate, xstate, $raw_node)
 }
 
 /////////////////////////////////////////////////
